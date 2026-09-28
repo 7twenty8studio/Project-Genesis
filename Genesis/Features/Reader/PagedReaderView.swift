@@ -309,7 +309,9 @@ final class ReaderPageViewController: UIViewController {
         view.addSubview(textView)
         view.addSubview(headerLabel)
         view.addSubview(footerLabel)
-        headerLabel.isAccessibilityElement = false
+        textView.accessibilityIdentifier = "reader.page"
+        headerLabel.accessibilityIdentifier = "reader.header"
+        footerLabel.accessibilityIdentifier = "reader.footer"
     }
 
     override func viewDidLayoutSubviews() {

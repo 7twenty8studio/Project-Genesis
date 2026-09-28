@@ -18,6 +18,7 @@ struct ReaderControls: View {
                 iconButton("chevron.left", label: "Previous chapter", enabled: reader.chapterID.previous != nil) {
                     reader.goToPreviousChapter()
                 }
+                .accessibilityIdentifier("reader.previousChapter")
                 Button(action: onChapterPicker) {
                     Text(reader.chapterID.description)
                         .font(.headline)
@@ -26,9 +27,11 @@ struct ReaderControls: View {
                         .padding(.horizontal, 6)
                 }
                 .accessibilityHint("Choose a book and chapter")
+                .accessibilityIdentifier("reader.chapterButton")
                 iconButton("chevron.right", label: "Next chapter", enabled: reader.chapterID.next != nil) {
                     reader.goToNextChapter()
                 }
+                .accessibilityIdentifier("reader.nextChapter")
             }
             .padding(.horizontal, 6)
             .padding(.vertical, 4)
@@ -49,14 +52,17 @@ struct ReaderControls: View {
                         .frame(minWidth: 40, minHeight: 36)
                 }
                 .accessibilityLabel("Translation, \(reader.translation.name)")
+                .accessibilityIdentifier("reader.translation")
 
                 let bookmarked = reader.isCurrentChapterBookmarked
                 iconButton(bookmarked ? "bookmark.fill" : "bookmark", label: bookmarked ? "Remove bookmark" : "Add bookmark") {
                     reader.toggleBookmark()
                 }
                 .sensoryFeedback(.selection, trigger: bookmarked)
+                .accessibilityIdentifier("reader.bookmark")
 
                 iconButton("textformat.size", label: "Reading settings", action: onSettings)
+                    .accessibilityIdentifier("reader.settings")
 
                 if showsCompanionToggle {
                     iconButton("sidebar.right", label: "Toggle study panel", action: onToggleCompanion)

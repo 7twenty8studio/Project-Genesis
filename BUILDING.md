@@ -33,6 +33,29 @@ beta, point the command line at it once: `sudo xcode-select -s /Applications/Xco
 4. **Running from Xcode.** Pick the **Genesis** scheme and **iPhone Duo** in the
    run-destination menu in the toolbar, then press **⌘R**.
 
+## Automated UI tests
+
+UI tests launch Genesis in the Simulator and use it like a person would:
+onboarding, turning pages, the controls, chapter navigation, highlighting,
+notes, bookmarks, search and reading settings. Each test starts from a clean
+slate (a `-uiTesting` launch flag wipes settings and keeps notes in memory).
+
+```bash
+./Scripts/build.sh --ui        # iPhone Duo, iPhone Pro and iPad, in parallel
+./Scripts/build.sh --ui-full   # plus passes with large text, Slate theme,
+                               # scroll mode and page curl, and launch timing
+```
+
+Results are saved in `build/TestResults/*.xcresult`. Double-click one to see
+each test in Xcode, with screenshots of any failure.
+
+In Xcode, choose the **GenesisUITests** scheme and press **⌘U** to run them on
+the selected simulator. The **Genesis** scheme's ⌘U runs only the fast unit tests.
+
+The tests live in `GenesisUITests/`. They find controls by accessibility
+identifiers such as `reader.chapterButton` or `selection.highlight.yellow`, so
+wording changes don't break them.
+
 ## When something fails
 
 `build.sh` writes every compiler error to **`build-errors.txt`** in the project

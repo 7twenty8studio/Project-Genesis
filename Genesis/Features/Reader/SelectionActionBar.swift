@@ -18,6 +18,7 @@ struct SelectionActionBar: View {
                 Text(reader.selectedReference?.description ?? "")
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(palette.accent)
+                    .accessibilityIdentifier("selection.reference")
                 Spacer()
                 Button {
                     reader.clearSelection()
@@ -27,6 +28,7 @@ struct SelectionActionBar: View {
                         .frame(width: 28, height: 28)
                 }
                 .accessibilityLabel("Done selecting")
+                .accessibilityIdentifier("selection.done")
             }
 
             HStack(spacing: 12) {
@@ -41,6 +43,7 @@ struct SelectionActionBar: View {
                             .overlay(Circle().strokeBorder(palette.separator, lineWidth: 1))
                     }
                     .accessibilityLabel("Highlight \(color.title)")
+                    .accessibilityIdentifier("selection.highlight.\(color.rawValue)")
                 }
                 Button {
                     reader.removeHighlightFromSelection()
@@ -49,20 +52,25 @@ struct SelectionActionBar: View {
                         .frame(width: 30, height: 30)
                 }
                 .accessibilityLabel("Remove highlight")
+                .accessibilityIdentifier("selection.removeHighlight")
             }
 
             HStack {
                 action("Note", systemImage: "note.text.badge.plus", perform: onNote)
+                    .accessibilityIdentifier("selection.note")
                 action("Bookmark", systemImage: "bookmark") { reader.toggleBookmark() }
+                    .accessibilityIdentifier("selection.bookmark")
                 action(copied ? "Copied" : "Copy", systemImage: copied ? "checkmark" : "doc.on.doc") {
                     UIPasteboard.general.string = reader.shareTextForSelection
                     copied = true
                 }
+                .accessibilityIdentifier("selection.copy")
                 ShareLink(item: reader.shareTextForSelection) {
                     actionLabel("Share", systemImage: "square.and.arrow.up")
                 }
                 if reader.selection.count == 1 {
                     action("Related", systemImage: "arrow.triangle.branch", perform: onCrossReferences)
+                        .accessibilityIdentifier("selection.related")
                 }
             }
         }

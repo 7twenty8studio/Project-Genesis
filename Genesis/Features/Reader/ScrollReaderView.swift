@@ -17,6 +17,7 @@ struct ScrollReaderView: UIViewRepresentable {
 
     func makeUIView(context: Context) -> ReaderTextView {
         let textView = ReaderTextView(scrollable: true)
+        textView.accessibilityIdentifier = "reader.scroll"
         textView.delegate = context.coordinator
         textView.onEvent = { [weak coordinator = context.coordinator] event in coordinator?.handle(event) }
 

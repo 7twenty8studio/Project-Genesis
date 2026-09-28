@@ -47,12 +47,14 @@ struct OnboardingView: View {
                             .frame(maxWidth: .infinity, minHeight: 50)
                     }
                     .buttonStyle(.glassProminent)
+                    .accessibilityIdentifier("onboarding.begin")
 
                     Button("Or start with the Gospel of John") {
                         begin(at: .john1)
                     }
                     .font(.subheadline)
                     .foregroundStyle(palette.accent)
+                    .accessibilityIdentifier("onboarding.john")
                 }
             }
             .padding(.horizontal, 24)
@@ -112,5 +114,6 @@ private struct TranslationOption: View {
         }
         .buttonStyle(.plain)
         .accessibilityAddTraits(isSelected ? .isSelected : [])
+        .accessibilityIdentifier("onboarding.translation.\(translation.id)")
     }
 }

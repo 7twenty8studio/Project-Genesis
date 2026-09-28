@@ -105,6 +105,7 @@ struct ReaderSettingsSheet: View {
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { dismiss() }
+                        .accessibilityIdentifier("settings.done")
                 }
             }
         }
@@ -137,6 +138,7 @@ struct ReaderSettingsSheet: View {
                     }
                     .buttonStyle(.plain)
                     .accessibilityLabel("\(theme.title) theme")
+                    .accessibilityIdentifier("settings.theme.\(theme.rawValue)")
                     .accessibilityAddTraits(isSelected ? .isSelected : [])
                 }
             }

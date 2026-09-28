@@ -37,6 +37,7 @@ struct NoteEditorView: View {
                     .font(settings.preferences.font.font(size: 18))
                     .lineSpacing(5)
                     .focused($focusedField, equals: .body)
+                    .accessibilityIdentifier("note.body")
                     .frame(minHeight: 240, alignment: .topLeading)
             }
             .padding(20)
@@ -47,6 +48,7 @@ struct NoteEditorView: View {
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Button("Done") { dismiss() }
+                    .accessibilityIdentifier("note.done")
             }
             ToolbarItem(placement: .bottomBar) {
                 Button("Delete", systemImage: "trash", role: .destructive) { confirmDelete = true }

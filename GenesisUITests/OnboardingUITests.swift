@@ -1,0 +1,28 @@
+import XCTest
+
+/// First launch: choose a translation and be reading quickly (PRD: within 30 seconds).
+final class OnboardingUITests: XCTestCase {
+    @MainActor
+    func testChooseTranslationAndBeginReading() {
+        let start = Date()
+        let app = Genesis.launch(onboarding: true)
+
+        let web = app.buttons["onboarding.translation.WEB"]
+        XCTAssertTrue(web.waitForExistence(timeout: Genesis.timeout), "Translation choices should appear")
+        web.tap()
+        app.buttons["onboarding.begin"].tap()
+
+        XCTAssertEqual(Genesis.chapterTitle(app), "Genesis 1")
+        XCTAssertEqual(app.buttons["reader.translation"].label, "Translation, World English Bible")
+        XCTAssertLessThan(Date().timeIntervalSince(start), 30, "Reading should begin within 30 seconds")
+    }
+
+    @MainActor
+    func testStartWithJohn() {
+        let app = Genesis.launch(onboarding: true)
+        let john = app.buttons["onboarding.john"]
+        XCTAssertTrue(john.waitForExistence(timeout: Genesis.timeout))
+        john.tap()
+        XCTAssertEqual(Genesis.chapterTitle(app), "John 1")
+    }
+}

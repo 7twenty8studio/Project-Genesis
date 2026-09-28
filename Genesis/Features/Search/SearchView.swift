@@ -92,6 +92,7 @@ struct SearchContent: View {
                                 .font(.headline)
                                 .foregroundStyle(palette.accent)
                         }
+                        .accessibilityIdentifier("search.goToReference")
                         .listRowBackground(palette.surface)
                     }
                 }
@@ -123,6 +124,7 @@ struct SearchContent: View {
                 } header: {
                     if !results.verses.isEmpty {
                         Text(countLabel)
+                            .accessibilityIdentifier("search.resultCount")
                     }
                 } footer: {
                     if results.isEmpty {

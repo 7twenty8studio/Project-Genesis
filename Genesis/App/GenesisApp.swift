@@ -11,19 +11,27 @@ struct GenesisApp: App {
     private let modelContainer: ModelContainer
 
     init() {
-        CrashReporter.start()
+        let testing = UITestingOptions.current
+        if testing.isEnabled {
+            testing.resetPersistentState()
+        } else {
+            CrashReporter.start()
+        }
 
         let library = BibleLibrary()
         let progress = ReadingProgress()
+        let settings = ReaderSettings()
         let reader = ReaderViewModel(library: library, progress: progress)
+        let router = AppRouter(reader: reader)
         _library = State(initialValue: library)
-        _settings = State(initialValue: ReaderSettings())
+        _settings = State(initialValue: settings)
         _progress = State(initialValue: progress)
         _reader = State(initialValue: reader)
-        _router = State(initialValue: AppRouter(reader: reader))
-        modelContainer = Self.makeModelContainer()
+        _router = State(initialValue: router)
+        modelContainer = Self.makeModelContainer(inMemory: testing.isEnabled)
         // Available before the first page draws, so highlights show immediately.
         reader.modelContext = modelContainer.mainContext
+        testing.apply(settings: settings, router: router)
     }
 
     var body: some Scene {
@@ -40,10 +48,10 @@ struct GenesisApp: App {
 
     /// On-device store for highlights, notes and bookmarks. If the store can't
     /// be opened, fall back to memory so the Bible still opens.
-    private static func makeModelContainer() -> ModelContainer {
+    private static func makeModelContainer(inMemory: Bool) -> ModelContainer {
         let schema = Schema(UserDataSchema.models)
         do {
-            return try ModelContainer(for: schema, configurations: ModelConfiguration(schema: schema))
+            return try ModelContainer(for: schema, configurations: ModelConfiguration(schema: schema, isStoredInMemoryOnly: inMemory))
         } catch {
             CrashReporter.record(error, context: "ModelContainer")
             do {

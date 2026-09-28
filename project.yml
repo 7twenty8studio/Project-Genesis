@@ -86,7 +86,21 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis.tests
         GENERATE_INFOPLIST_FILE: YES
 
+  GenesisUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: GenesisUITests
+    dependencies:
+      - target: Genesis
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis.uitests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_TARGET_NAME: Genesis
+
 schemes:
+  # Everyday scheme: ⌘R runs the app, ⌘U runs the fast unit tests.
   Genesis:
     build:
       targets:
@@ -101,3 +115,14 @@ schemes:
         - GenesisTests
     archive:
       config: Release
+
+  # UI automation: select this scheme and press ⌘U to drive the app in the Simulator.
+  GenesisUITests:
+    build:
+      targets:
+        Genesis: all
+        GenesisUITests: [test]
+    test:
+      config: Debug
+      targets:
+        - GenesisUITests
