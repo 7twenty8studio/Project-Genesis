@@ -31,8 +31,7 @@ beta, point the command line at it once: `sudo xcode-select -s /Applications/Xco
    - Skip tests: `./Scripts/build.sh --no-tests`
 
 4. **Running from Xcode.** Pick the **Genesis** scheme and **iPhone Duo** in the
-   run-destination menu in the toolbar, then press **⌘R**. In the Simulator,
-   use the Duo's fold control to switch between closed and open.
+   run-destination menu in the toolbar, then press **⌘R**.
 
 ## When something fails
 
