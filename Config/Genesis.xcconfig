@@ -1,0 +1,10 @@
+// Shared build settings for Genesis.
+// Secrets live in Secrets.xcconfig, which is git-ignored. Copy
+// Secrets.example.xcconfig to Secrets.xcconfig and fill it in.
+// The app builds and runs without it; sync and crash reporting stay off.
+
+SUPABASE_URL =
+SUPABASE_ANON_KEY =
+SENTRY_DSN =
+
+#include? "Secrets.xcconfig"

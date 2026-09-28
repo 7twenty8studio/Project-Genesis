@@ -1,0 +1,103 @@
+# XcodeGen spec. Generate the Xcode project with:  xcodegen generate
+# The .xcodeproj is not committed; this file is the source of truth.
+name: Genesis
+
+options:
+  bundleIdPrefix: com.7twenty8studio
+  deploymentTarget:
+    iOS: "26.0"
+  createIntermediateGroups: true
+  developmentLanguage: en
+
+configFiles:
+  Debug: Config/Genesis.xcconfig
+  Release: Config/Genesis.xcconfig
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    TARGETED_DEVICE_FAMILY: "1,2"
+    CODE_SIGN_STYLE: Automatic
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+
+packages:
+  Sentry:
+    url: https://github.com/getsentry/sentry-cocoa
+    from: "8.40.0"
+
+targets:
+  Genesis:
+    type: application
+    platform: iOS
+    sources:
+      - path: Genesis
+    dependencies:
+      - package: Sentry
+        product: Sentry
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis
+        PRODUCT_NAME: Genesis
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        SUPPORTS_MACCATALYST: NO
+    info:
+      path: Config/Genesis-Info.plist
+      properties:
+        CFBundleDisplayName: Genesis
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        ITSAppUsesNonExemptEncryption: false
+        UILaunchScreen:
+          UIColorName: LaunchBackground
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: true
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UIAppFonts:
+          - AtkinsonHyperlegible-Regular.ttf
+          - AtkinsonHyperlegible-Bold.ttf
+          - AtkinsonHyperlegible-Italic.ttf
+          - AtkinsonHyperlegible-BoldItalic.ttf
+        # Values come from Config/Secrets.xcconfig (not committed).
+        GenesisSupabaseURL: $(SUPABASE_URL)
+        GenesisSupabaseAnonKey: $(SUPABASE_ANON_KEY)
+        GenesisSentryDSN: $(SENTRY_DSN)
+
+  GenesisTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: GenesisTests
+    dependencies:
+      - target: Genesis
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis.tests
+        GENERATE_INFOPLIST_FILE: YES
+
+schemes:
+  Genesis:
+    build:
+      targets:
+        Genesis: all
+        GenesisTests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - GenesisTests
+    archive:
+      config: Release
