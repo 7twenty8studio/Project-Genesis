@@ -1,6 +1,11 @@
 # Building Genesis
 
-You need a Mac with **Xcode 27** (with the iOS 27 simulator) and **Homebrew**.
+You need a Mac with **Xcode 27.1 or later** (the iPhone Duo simulator arrived in
+Xcode 27.1 beta), its **iOS simulator platform**, and **Homebrew**.
+
+If Xcode is missing the iOS platform, the build script offers to download it.
+You can also run `xcodebuild -downloadPlatform iOS` yourself. If you use the
+beta, point the command line at it once: `sudo xcode-select -s /Applications/Xcode-beta.app`.
 
 ## First time
 
@@ -15,15 +20,19 @@ You need a Mac with **Xcode 27** (with the iOS 27 simulator) and **Homebrew**.
    and runs, but Sentry crash reporting is off. To make one yourself, copy
    `Config/Secrets.example.xcconfig` to `Config/Secrets.xcconfig` and fill it in.
 
-3. **Build and test with one command**
+3. **Build, test and launch with one command**
    ```bash
    ./Scripts/build.sh --open
    ```
    This installs XcodeGen if needed, generates `Genesis.xcodeproj`, builds the
-   app, runs the unit tests on an iPhone simulator and opens the project in Xcode.
+   app, runs the unit tests, launches Genesis in the **iPhone Duo** simulator
+   (creating one if needed) and opens the project in Xcode.
+   - Another simulator: `SIMULATOR="iPhone 17 Pro" ./Scripts/build.sh`
+   - Skip tests: `./Scripts/build.sh --no-tests`
 
-4. **Run the app.** In Xcode, pick the **Genesis** scheme and an iPhone
-   simulator in the toolbar, then press **⌘R**.
+4. **Running from Xcode.** Pick the **Genesis** scheme and **iPhone Duo** in the
+   run-destination menu in the toolbar, then press **⌘R**. In the Simulator,
+   use the Duo's fold control to switch between closed and open.
 
 ## When something fails
 
