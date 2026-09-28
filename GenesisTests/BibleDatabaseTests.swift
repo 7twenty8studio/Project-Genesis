@@ -26,14 +26,16 @@ struct BibleDatabaseTests {
         let kjv = try repository(.kjv)
         let verse = try #require(try kjv.verse(VerseID(book: 43, chapter: 3, verse: 16)))
         #expect(verse.text == "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.")
-        #expect(try kjv.chapter(.genesis1).verses.count == 31)
+        let genesis = try kjv.chapter(.genesis1)
+        #expect(genesis.verses.count == 31)
     }
 
     @Test func webKeepsPoetryAndHeadings() throws {
         let web = try repository(.web)
         let psalm = try web.chapter(ChapterID(book: 19, chapter: 23))
         #expect(psalm.headings.first?.text == "A Psalm by David.")
-        #expect(psalm.verses.allSatisfy(\.isPoetry))
+        let allPoetry = psalm.verses.allSatisfy { $0.isPoetry }
+        #expect(allPoetry)
         #expect(psalm.verses[0].text.contains("\n"))
     }
 
@@ -68,6 +70,7 @@ struct BibleDatabaseTests {
         let url = try #require(Bundle.main.url(forResource: "CrossReferences", withExtension: "sqlite"))
         let references = try CrossReferenceRepository(url: url).references(from: VerseID(book: 43, chapter: 3, verse: 16))
         #expect(references.count > 5)
-        #expect(references.first.map { $0.votes >= references.last!.votes } == true)
+        let sortedByVotes = zip(references, references.dropFirst()).allSatisfy { $0.votes >= $1.votes }
+        #expect(sortedByVotes)
     }
 }

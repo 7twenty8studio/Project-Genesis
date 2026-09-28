@@ -49,7 +49,8 @@ struct ReaderRenderingTests {
 
     @Test func shareTextIncludesReference() throws {
         let chapter = try chapter(ChapterID(book: 43, chapter: 11))
-        let verse = try #require(chapter.verses.first { $0.id.verse == 35 })
+        let match = chapter.verses.first { $0.id.verse == 35 }
+        let verse = try #require(match)
         let text = ChapterTextBuilder.shareText(for: [verse], translation: .kjv)
         #expect(text == "\u{201C}Jesus wept.\u{201D}\n\u{2014} John 11:35 (KJV)")
     }

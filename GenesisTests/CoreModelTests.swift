@@ -35,7 +35,8 @@ struct VerseIDTests {
     @Test func dailyVerseIsStableForADay() {
         let date = Date(timeIntervalSince1970: 1_790_000_000)
         #expect(DailyVerse.verse(for: date) == DailyVerse.verse(for: date.addingTimeInterval(60)))
-        #expect(DailyVerse.curated.allSatisfy { $0.chapter <= BibleBook.withNumber($0.book).chapterCount })
+        let allValid = DailyVerse.curated.allSatisfy { $0.chapter <= BibleBook.withNumber($0.book).chapterCount }
+        #expect(allValid)
     }
 }
 
@@ -73,6 +74,7 @@ struct FullTextQueryTests {
     @Test func highlighterMatchesWordStarts() {
         let text = "For God so loved the world"
         let ranges = SearchHighlighter.matchRanges(in: text, terms: ["love", "world"])
-        #expect(ranges.map { String(text[$0]) } == ["loved", "world"])
+        let words = ranges.map { String(text[$0]) }
+        #expect(words == ["loved", "world"])
     }
 }
