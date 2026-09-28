@@ -73,9 +73,16 @@ struct ReaderSettingsSheet: View {
                     .pickerStyle(.segmented)
 
                     if settings.preferences.readingMode == .page {
-                        Picker("Page turn", selection: $settings.preferences.pageTurn) {
+                        Picker("Page turn", selection: Binding(
+                            get: { settings.preferences.pageTurn },
+                            set: {
+                                settings.preferences.pageTurn = $0
+                                settings.preferences.pageTurnChosen = true
+                            }
+                        )) {
                             ForEach(PageTurnStyle.allCases) { Text($0.title).tag($0) }
                         }
+                        .pickerStyle(.segmented)
                     }
                     Picker("Text", selection: $settings.preferences.layout) {
                         ForEach(TextLayout.allCases) { Text($0.title).tag($0) }

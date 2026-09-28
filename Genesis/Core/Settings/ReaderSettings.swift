@@ -57,7 +57,11 @@ struct ReaderPreferences: Codable, Equatable, Sendable {
     var paragraphSpacing: Double = 0.55
     var margins: ReaderMargins = .regular
     var readingMode: ReadingMode = .page
-    var pageTurn: PageTurnStyle = .slide
+    /// Kindle-like page curl by default. Use `choosePageTurn` to change it.
+    var pageTurn: PageTurnStyle = .curl
+    /// True once the person picks a page turn, so later default changes
+    /// never override their choice.
+    var pageTurnChosen = false
     var showsVerseNumbers = true
     var layout: TextLayout = .paragraphs
     var leftHanded = false
@@ -80,7 +84,9 @@ struct ReaderPreferences: Codable, Equatable, Sendable {
         paragraphSpacing = (try? c.decode(Double.self, forKey: .paragraphSpacing)) ?? d.paragraphSpacing
         margins = (try? c.decode(ReaderMargins.self, forKey: .margins)) ?? d.margins
         readingMode = (try? c.decode(ReadingMode.self, forKey: .readingMode)) ?? d.readingMode
-        pageTurn = (try? c.decode(PageTurnStyle.self, forKey: .pageTurn)) ?? d.pageTurn
+        pageTurnChosen = (try? c.decode(Bool.self, forKey: .pageTurnChosen)) ?? false
+        // Early builds saved "slide" as an untouched default; only keep an explicit choice.
+        pageTurn = pageTurnChosen ? ((try? c.decode(PageTurnStyle.self, forKey: .pageTurn)) ?? d.pageTurn) : d.pageTurn
         showsVerseNumbers = (try? c.decode(Bool.self, forKey: .showsVerseNumbers)) ?? d.showsVerseNumbers
         layout = (try? c.decode(TextLayout.self, forKey: .layout)) ?? d.layout
         leftHanded = (try? c.decode(Bool.self, forKey: .leftHanded)) ?? d.leftHanded

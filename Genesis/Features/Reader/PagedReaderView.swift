@@ -37,6 +37,11 @@ struct PagedReaderView: UIViewControllerRepresentable {
             options: options
         )
         controller.isDoubleSided = false
+        // Page curl adds its own edge-tap recognisers. Our taps already turn
+        // pages (and respect left-handed mode), so keep only the drag-to-curl.
+        for recognizer in controller.gestureRecognizers where recognizer is UITapGestureRecognizer {
+            recognizer.isEnabled = false
+        }
         controller.dataSource = context.coordinator
         controller.delegate = context.coordinator
         controller.view.backgroundColor = layout.style.palette.uiBackground
