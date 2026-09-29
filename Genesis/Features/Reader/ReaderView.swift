@@ -95,7 +95,7 @@ struct ReaderView: View {
                         onSettings: { sheet = .settings },
                         onToggleCompanion: { showsCompanion.toggle() }
                     )
-                    .padding(.top, readerSafeArea.top + 4)
+                    .padding(.top, readerSafeArea.top + controlsTopClearance)
                     .frame(maxHeight: .infinity, alignment: .top)
                     .transition(.opacity)
                 }
@@ -144,6 +144,12 @@ struct ReaderView: View {
                 chapterID: reader.chapterID
             )
         }
+    }
+
+    /// On iPad the tab bar floats at the top of the screen, so the reader's
+    /// controls sit below it rather than underneath it.
+    private var controlsTopClearance: CGFloat {
+        UIDevice.current.userInterfaceIdiom == .pad ? 64 : 4
     }
 
     /// Stable insets from the window, so text doesn't reflow as bars show and hide.

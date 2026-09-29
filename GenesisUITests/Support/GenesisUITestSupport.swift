@@ -127,12 +127,18 @@ enum Genesis {
     // MARK: Navigation
 
     /// Taps a tab. Works for the bottom tab bar and the iPad/Duo top tab bar.
+    /// The tab bar hides while reading, so bring the reader controls back first.
     static func openTab(_ name: String, in app: XCUIApplication) {
         let tabBarButton = app.tabBars.buttons[name]
-        if tabBarButton.exists {
+        let anyButton = app.buttons[name].firstMatch
+        if !tabBarButton.exists && !anyButton.exists && app.textViews.firstMatch.exists {
+            showControls(app)
+        }
+        if tabBarButton.waitForExistence(timeout: 2) {
             tabBarButton.tap()
         } else {
-            app.buttons[name].firstMatch.tap()
+            XCTAssertTrue(anyButton.waitForExistence(timeout: timeout), "The \(name) tab should be reachable")
+            anyButton.tap()
         }
     }
 
