@@ -14,7 +14,11 @@ final class SettingsUITests: XCTestCase {
         slate.tap()
         XCTAssertTrue(slate.isSelected, "Slate should be marked as the chosen theme")
 
-        app.buttons["Scroll"].firstMatch.tap()
+        // Layout options sit lower in the sheet.
+        let scroll = app.buttons["Scroll"].firstMatch
+        Genesis.scrollIntoView(scroll, in: app)
+        XCTAssertTrue(scroll.exists, "The Scroll option is reachable")
+        scroll.tap()
         app.buttons["settings.done"].tap()
 
         XCTAssertTrue(app.textViews["reader.scroll"].waitForExistence(timeout: Genesis.timeout), "Reader switches to scroll mode")

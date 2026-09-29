@@ -41,10 +41,17 @@ struct ReaderControls: View {
 
             HStack(spacing: 2) {
                 Menu {
-                    Picker("Translation", selection: translationBinding) {
-                        ForEach(library.translations) { translation in
-                            Text("\(translation.abbreviation) · \(translation.name)").tag(translation)
+                    ForEach(library.translations) { translation in
+                        Button {
+                            reader.switchTranslation(to: translation)
+                        } label: {
+                            if translation == reader.translation {
+                                Label("\(translation.abbreviation) · \(translation.name)", systemImage: "checkmark")
+                            } else {
+                                Text("\(translation.abbreviation) · \(translation.name)")
+                            }
                         }
+                        .accessibilityIdentifier("reader.translation.\(translation.id)")
                     }
                 } label: {
                     Text(reader.translation.abbreviation)
@@ -74,13 +81,6 @@ struct ReaderControls: View {
         }
         .foregroundStyle(palette.text)
         .padding(.horizontal, 16)
-    }
-
-    private var translationBinding: Binding<Translation> {
-        Binding(
-            get: { reader.translation },
-            set: { reader.switchTranslation(to: $0) }
-        )
     }
 
     private func iconButton(_ systemImage: String, label: String, enabled: Bool = true, action: @escaping () -> Void) -> some View {

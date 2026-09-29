@@ -182,7 +182,14 @@ if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
         PASS_STATUS=${PIPESTATUS[0]}
         if [ "$PASS_STATUS" -ne 0 ]; then
             UI_STATUS=$PASS_STATUS
-            echo "   Failures, with screenshots, are in $RESULT (double-click to open in Xcode)."
+            FAILURES="build/TestResults/UI-$(echo "$NAME" | tr ' ' '-')-failures.txt"
+            python3 Scripts/ui_failures.py "$RESULT" > "$FAILURES" 2>/dev/null
+            if [ -s "$FAILURES" ]; then
+                echo "   Failures ($NAME):"
+                sed 's/^/     /' "$FAILURES"
+                { echo "== UI failures: $NAME =="; cat "$FAILURES"; } >> build.log
+            fi
+            echo "   Screenshots of each failure: open $RESULT in Xcode."
         fi
     done
 fi

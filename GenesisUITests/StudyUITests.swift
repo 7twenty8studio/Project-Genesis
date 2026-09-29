@@ -9,9 +9,8 @@ final class StudyUITests: XCTestCase {
         let app = Genesis.launch(verse: john3)
         XCTAssertTrue(Genesis.readerText(app).waitForExistence(timeout: Genesis.timeout))
 
-        Genesis.selectVerse(app)
+        XCTAssertTrue(Genesis.selectVerse(app), "Long-press should select a verse")
         let reference = app.staticTexts["selection.reference"]
-        XCTAssertTrue(reference.waitForExistence(timeout: Genesis.timeout), "Long-press should select a verse")
         XCTAssertTrue(reference.label.hasPrefix("John 3:"), "Selected \(reference.label)")
         let selected = reference.label
 
@@ -28,7 +27,7 @@ final class StudyUITests: XCTestCase {
         let app = Genesis.launch(verse: john3)
         XCTAssertTrue(Genesis.readerText(app).waitForExistence(timeout: Genesis.timeout))
 
-        Genesis.selectVerse(app)
+        XCTAssertTrue(Genesis.selectVerse(app), "Long-press should select a verse")
         XCTAssertTrue(app.buttons["selection.note"].waitForExistence(timeout: Genesis.timeout))
         app.buttons["selection.note"].tap()
 
@@ -48,7 +47,7 @@ final class StudyUITests: XCTestCase {
     func testBookmarkFromControls() {
         let app = Genesis.launch(verse: 19_023_001)
         let bookmark = app.buttons["reader.bookmark"]
-        XCTAssertTrue(bookmark.waitForExistence(timeout: Genesis.timeout))
+        XCTAssertTrue(bookmark.waitForExistence(timeout: Genesis.launchTimeout))
         XCTAssertEqual(bookmark.label, "Add bookmark")
         bookmark.tap()
         XCTAssertTrue(Genesis.wait { bookmark.label == "Remove bookmark" })
@@ -62,7 +61,7 @@ final class StudyUITests: XCTestCase {
     func testCancelSelection() {
         let app = Genesis.launch(verse: john3)
         XCTAssertTrue(Genesis.readerText(app).waitForExistence(timeout: Genesis.timeout))
-        Genesis.selectVerse(app)
+        XCTAssertTrue(Genesis.selectVerse(app), "Long-press should select a verse")
         XCTAssertTrue(app.buttons["selection.done"].waitForExistence(timeout: Genesis.timeout))
         app.buttons["selection.done"].tap()
         XCTAssertTrue(Genesis.wait { !app.staticTexts["selection.reference"].exists })

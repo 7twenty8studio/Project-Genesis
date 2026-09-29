@@ -27,11 +27,12 @@ final class SearchUITests: XCTestCase {
     @MainActor
     func testWordSearchListsVerses() {
         let app = Genesis.launch()
-        search("shepherd", in: app)
+        // An exact phrase keeps the list short, so the expected verse is on screen.
+        search("\"my shepherd\"", in: app)
 
         let count = app.staticTexts["search.resultCount"]
         XCTAssertTrue(count.waitForExistence(timeout: Genesis.timeout), "A result count appears")
-        XCTAssertTrue(count.label.contains("verses"))
+        XCTAssertTrue(count.label.contains("verse"), "Count reads \(count.label)")
         XCTAssertTrue(Genesis.element(containing: "Psalms 23:1", in: app).waitForExistence(timeout: Genesis.timeout))
     }
 

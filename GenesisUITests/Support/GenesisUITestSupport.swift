@@ -10,6 +10,9 @@ import XCTest
 @MainActor
 enum Genesis {
     static let timeout: TimeInterval = 10
+    /// The first launch on a freshly booted simulator can be slow, especially
+    /// with several simulators running at once.
+    static let launchTimeout: TimeInterval = 45
 
     /// Extra arguments for this test pass, e.g. "-uiTestingReadingMode scroll".
     static var passArguments: [String] {
@@ -69,9 +72,32 @@ enum Genesis {
         element.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.55)).tap()
     }
 
-    /// Long-presses a verse in the middle of the page to start selection.
-    static func selectVerse(_ app: XCUIApplication) {
-        readerText(app).coordinate(withNormalizedOffset: CGVector(dx: 0.45, dy: 0.5)).press(forDuration: 0.8)
+    /// Long-presses a verse to start selection. A press can land in the gap
+    /// between lines or paragraphs, so a few spots are tried.
+    @discardableResult
+    static func selectVerse(_ app: XCUIApplication) -> Bool {
+        let reference = app.staticTexts["selection.reference"]
+        let spots: [CGVector] = [.init(dx: 0.3, dy: 0.45), .init(dx: 0.4, dy: 0.6), .init(dx: 0.3, dy: 0.35), .init(dx: 0.5, dy: 0.7)]
+        for spot in spots {
+            readerText(app).coordinate(withNormalizedOffset: spot).press(forDuration: 0.8)
+            if reference.waitForExistence(timeout: 2) { return true }
+        }
+        return false
+    }
+
+    /// Swipes up inside a sheet or list until the element is on screen.
+    static func scrollIntoView(_ element: XCUIElement, in app: XCUIApplication, maxSwipes: Int = 6) {
+        var swipes = 0
+        while !(element.exists && element.isHittable) && swipes < maxSwipes {
+            let list = app.collectionViews.firstMatch
+            if list.exists { list.swipeUp() } else { app.swipeUp() }
+            swipes += 1
+        }
+    }
+
+    /// A button whose label starts with the text, e.g. "Romans" for a "Romans, 16" row.
+    static func button(startingWith text: String, in app: XCUIApplication) -> XCUIElement {
+        app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", text)).firstMatch
     }
 
     // MARK: Navigation

@@ -70,14 +70,21 @@ final class ReaderUITests: XCTestCase {
     @MainActor
     func testChapterPickerOpensChosenChapter() {
         let app = Genesis.launch(verse: 1_001_001)
-        app.buttons["reader.chapterButton"].tap()
+        let chapterButton = app.buttons["reader.chapterButton"]
+        XCTAssertTrue(chapterButton.waitForExistence(timeout: Genesis.launchTimeout))
+        chapterButton.tap()
 
         let search = app.searchFields.firstMatch
         XCTAssertTrue(search.waitForExistence(timeout: Genesis.timeout))
         search.tap()
         search.typeText("Romans")
-        app.buttons["Romans"].firstMatch.tap()
-        app.buttons["Chapter 8"].tap()
+        // The row reads "Romans, 16" (name and chapter count).
+        let romans = Genesis.button(startingWith: "Romans", in: app)
+        XCTAssertTrue(romans.waitForExistence(timeout: Genesis.timeout))
+        romans.tap()
+        let chapter8 = app.buttons["Chapter 8"]
+        XCTAssertTrue(chapter8.waitForExistence(timeout: Genesis.timeout))
+        chapter8.tap()
 
         XCTAssertTrue(Genesis.wait { Genesis.chapterTitle(app) == "Romans 8" })
     }
@@ -88,7 +95,10 @@ final class ReaderUITests: XCTestCase {
         let translation = app.buttons["reader.translation"]
         XCTAssertTrue(translation.waitForExistence(timeout: Genesis.timeout))
         translation.tap()
-        Genesis.element(containing: "ASV", in: app).tap()
+        let byIdentifier = app.buttons["reader.translation.ASV"]
+        let asv = byIdentifier.waitForExistence(timeout: 3) ? byIdentifier : Genesis.button(startingWith: "ASV", in: app)
+        XCTAssertTrue(asv.waitForExistence(timeout: Genesis.timeout), "The translation menu lists ASV")
+        asv.tap()
         XCTAssertTrue(Genesis.wait { translation.label == "Translation, American Standard Version" })
         XCTAssertEqual(Genesis.chapterTitle(app), "John 3", "Switching translation keeps your place")
     }

@@ -8,7 +8,7 @@ final class OnboardingUITests: XCTestCase {
         let app = Genesis.launch(onboarding: true)
 
         let web = app.buttons["onboarding.translation.WEB"]
-        XCTAssertTrue(web.waitForExistence(timeout: Genesis.timeout), "Translation choices should appear")
+        XCTAssertTrue(web.waitForExistence(timeout: Genesis.launchTimeout), "Translation choices should appear")
         web.tap()
         app.buttons["onboarding.begin"].tap()
 
@@ -21,7 +21,7 @@ final class OnboardingUITests: XCTestCase {
     func testStartWithJohn() {
         let app = Genesis.launch(onboarding: true)
         let john = app.buttons["onboarding.john"]
-        XCTAssertTrue(john.waitForExistence(timeout: Genesis.timeout))
+        XCTAssertTrue(john.waitForExistence(timeout: Genesis.launchTimeout))
         john.tap()
         XCTAssertEqual(Genesis.chapterTitle(app), "John 1")
     }
