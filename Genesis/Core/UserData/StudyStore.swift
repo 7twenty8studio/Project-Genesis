@@ -31,9 +31,15 @@ struct StudyStore {
 
     func removeHighlights(_ verses: some Collection<VerseID>) {
         for highlight in highlights(for: verses) {
-            context.delete(highlight)
+            delete(highlight)
         }
         save()
+    }
+
+    /// Deletes a highlight and records the deletion for sync. Doesn't save.
+    func delete(_ highlight: Highlight) {
+        recordDeletion(of: highlight.id, in: SyncTable.highlights)
+        context.delete(highlight)
     }
 
     func highlightColors(in chapter: ChapterID) -> [VerseID: HighlightColor] {
@@ -82,6 +88,7 @@ struct StudyStore {
             return true
         }
         for bookmark in existing {
+            recordDeletion(of: bookmark.id, in: SyncTable.bookmarks)
             context.delete(bookmark)
         }
         save()
@@ -110,15 +117,47 @@ struct StudyStore {
     }
 
     func delete(_ note: Note) {
+        recordDeletion(of: note.id, in: SyncTable.notes)
         context.delete(note)
         save()
+    }
+
+    func delete(_ bookmark: Bookmark) {
+        recordDeletion(of: bookmark.id, in: SyncTable.bookmarks)
+        context.delete(bookmark)
+        save()
+    }
+
+    func delete(_ collection: HighlightCollection) {
+        for highlight in collection.highlights {
+            highlight.collection = nil
+            highlight.updatedAt = .now
+        }
+        recordDeletion(of: collection.id, in: SyncTable.highlightCollections)
+        context.delete(collection)
+        save()
+    }
+
+    /// Remembers a deletion so sync can tell the cloud. Cheap, so it is
+    /// recorded even for guests (their first sign-in sends it).
+    func recordDeletion(of id: UUID, in table: String) {
+        let key = id
+        let existing = (try? context.fetch(FetchDescriptor<Tombstone>(predicate: #Predicate { $0.recordID == key }))) ?? []
+        guard existing.isEmpty else { return }
+        context.insert(Tombstone(recordID: id, table: table))
     }
 
     func save() {
         do {
             try context.save()
+            NotificationCenter.default.post(name: .genesisUserDataDidChange, object: nil)
         } catch {
             CrashReporter.record(error, context: "StudyStore.save")
         }
     }
+}
+
+extension Notification.Name {
+    /// Posted after personal data is saved; sync listens for it.
+    static let genesisUserDataDidChange = Notification.Name("genesisUserDataDidChange")
 }

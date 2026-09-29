@@ -8,6 +8,8 @@ struct GenesisApp: App {
     @State private var progress: ReadingProgress
     @State private var reader: ReaderViewModel
     @State private var router: AppRouter
+    @State private var auth: AuthService
+    @State private var sync: SyncService
     private let modelContainer: ModelContainer
 
     init() {
@@ -31,6 +33,14 @@ struct GenesisApp: App {
         modelContainer = Self.makeModelContainer(inMemory: testing.isEnabled)
         // Available before the first page draws, so highlights show immediately.
         reader.modelContext = modelContainer.mainContext
+
+        // UI tests never touch a real account.
+        let auth = AuthService(client: testing.isEnabled ? nil : SupabaseClient.fromConfiguration(), restoresSession: !testing.isEnabled)
+        let sync = SyncService(auth: auth, container: modelContainer)
+        auth.onSignIn = { [weak sync] user in sync?.accountDidSignIn(user) }
+        _auth = State(initialValue: auth)
+        _sync = State(initialValue: sync)
+
         testing.apply(settings: settings, router: router)
     }
 
@@ -42,6 +52,8 @@ struct GenesisApp: App {
                 .environment(progress)
                 .environment(reader)
                 .environment(router)
+                .environment(auth)
+                .environment(sync)
         }
         .modelContainer(modelContainer)
     }

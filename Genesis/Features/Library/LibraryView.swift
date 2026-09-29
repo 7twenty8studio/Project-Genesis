@@ -287,8 +287,8 @@ private struct BookmarksList: View {
                 .listRowBackground(palette.surface)
             }
             .onDelete { offsets in
-                for index in offsets { modelContext.delete(bookmarks[index]) }
-                StudyStore(context: modelContext).save()
+                let store = StudyStore(context: modelContext)
+                for index in offsets { store.delete(bookmarks[index]) }
             }
         }
         .themedScreen()

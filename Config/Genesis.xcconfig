@@ -7,4 +7,10 @@ SUPABASE_URL =
 SUPABASE_ANON_KEY =
 SENTRY_DSN =
 
+// Entitlements (App Group for widgets, Sign in with Apple) need a development
+// team. They stay off until Config/Signing.xcconfig exists; see PHASE2_SETUP.md.
+GENESIS_APP_ENTITLEMENTS =
+GENESIS_WIDGET_ENTITLEMENTS =
+
 #include? "Secrets.xcconfig"
+#include? "Signing.xcconfig"

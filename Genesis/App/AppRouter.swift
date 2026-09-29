@@ -5,12 +5,21 @@ enum AppTab: Hashable {
     case home, read, library, search
 }
 
+/// Screens pushed on the Home tab.
+enum HomeRoute: Hashable {
+    case plans
+    case plan(UUID)
+    case prayerJournal
+}
+
 /// App-wide navigation: which tab is showing, and opening the reader at a
 /// passage from anywhere.
 @MainActor
 @Observable
 final class AppRouter {
     var tab: AppTab = .home
+    var homePath: [HomeRoute] = []
+    var showsAccount = false
     @ObservationIgnored let reader: ReaderViewModel
 
     init(reader: ReaderViewModel) {
@@ -32,6 +41,30 @@ final class AppRouter {
 
     func continueReading() {
         tab = .read
+    }
+
+    func open(_ route: HomeRoute) {
+        tab = .home
+        homePath = [route]
+    }
+
+    /// Handles genesis:// links from widgets and notifications.
+    func handle(_ url: URL) {
+        guard url.scheme == GenesisLink.scheme else { return }
+        switch url.host() {
+        case "read":
+            if let raw = Int(url.lastPathComponent), raw > 1_000_000 {
+                read(VerseID(rawValue: raw))
+            } else {
+                continueReading()
+            }
+        case "plans":
+            open(.plans)
+        case "prayer":
+            open(.prayerJournal)
+        default:
+            tab = .home
+        }
     }
 }
 

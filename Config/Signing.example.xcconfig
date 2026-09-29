@@ -1,0 +1,7 @@
+// Copy to Config/Signing.xcconfig once the Apple Developer account is active.
+// Find your Team ID at developer.apple.com -> Account -> Membership details.
+DEVELOPMENT_TEAM = YOURTEAMID
+
+// Turns on the App Group (widgets share data with the app) and Sign in with Apple.
+GENESIS_APP_ENTITLEMENTS = Config/Genesis.entitlements
+GENESIS_WIDGET_ENTITLEMENTS = Config/GenesisWidgets.entitlements

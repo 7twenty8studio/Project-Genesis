@@ -37,10 +37,13 @@ targets:
     dependencies:
       - package: Sentry
         product: Sentry
+      - target: GenesisWidgets
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis
         PRODUCT_NAME: Genesis
+        # Empty until Config/Signing.xcconfig names your team (see PHASE2_SETUP.md).
+        CODE_SIGN_ENTITLEMENTS: $(GENESIS_APP_ENTITLEMENTS)
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
         SUPPORTS_MACCATALYST: NO
@@ -66,6 +69,10 @@ targets:
           - UIInterfaceOrientationPortraitUpsideDown
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
+        CFBundleURLTypes:
+          - CFBundleURLName: com.7twenty8studio.genesis
+            CFBundleURLSchemes:
+              - genesis
         UIAppFonts:
           - AtkinsonHyperlegible-Regular.ttf
           - AtkinsonHyperlegible-Bold.ttf
@@ -75,6 +82,27 @@ targets:
         GenesisSupabaseURL: $(SUPABASE_URL)
         GenesisSupabaseAnonKey: $(SUPABASE_ANON_KEY)
         GenesisSentryDSN: $(SENTRY_DSN)
+
+  GenesisWidgets:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: GenesisWidgets
+      - path: Genesis/Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis.widgets
+        PRODUCT_NAME: GenesisWidgets
+        CODE_SIGN_ENTITLEMENTS: $(GENESIS_WIDGET_ENTITLEMENTS)
+        SKIP_INSTALL: YES
+    info:
+      path: Config/GenesisWidgets-Info.plist
+      properties:
+        CFBundleDisplayName: Genesis
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
 
   GenesisTests:
     type: bundle.unit-test

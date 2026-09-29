@@ -20,6 +20,18 @@ shares; README.md has the architecture.
   Write code carefully for Swift 6 strict concurrency (view models are
   `@MainActor @Observable`; SQLite repositories are `Sendable`).
 - `Config/Secrets.xcconfig` is git-ignored (Supabase URL + anon key, Sentry DSN).
+- `Config/Signing.xcconfig` (git-ignored) sets the team and turns on entitlements
+  (App Group, Sign in with Apple). Without it builds have no entitlements.
+- UI tests: `./Scripts/build.sh --ui` / `--ui-full`; failures are extracted from
+  .xcresult into build/TestResults/*-failures.txt.
+
+## Sync
+- Supabase schema lives in `supabase/migrations`; every table has user_id,
+  updated_at (client edit time, last writer wins), deleted_at (soft delete) and
+  server_updated_at (trigger-stamped pull cursor). Keep RLS on every table.
+- Local deletions must go through StudyStore so a Tombstone is recorded.
+- New synced models need: a Remote* row in SyncRows.swift, pull/apply and push
+  in SyncService, a table + RLS in a new migration.
 
 ## Conventions
 - MVVM, composition, one responsibility per type, small view files.

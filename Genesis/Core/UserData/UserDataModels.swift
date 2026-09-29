@@ -215,5 +215,8 @@ final class Note {
 }
 
 enum UserDataSchema {
-    static var models: [any PersistentModel.Type] { [Bookmark.self, Highlight.self, HighlightCollection.self, Note.self] }
+    static var models: [any PersistentModel.Type] { [
+        Bookmark.self, Highlight.self, HighlightCollection.self, Note.self,
+        PlanEnrollment.self, Prayer.self, Tombstone.self,
+    ] }
 }

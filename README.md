@@ -28,6 +28,20 @@ See [BUILDING.md](BUILDING.md) to build and run.
 - **Home**: continue reading, verse of the day, recent highlights and notes,
   Bibles on this device.
 
+## Phase 2 (built; switch on with [PHASE2_SETUP.md](PHASE2_SETUP.md))
+
+- **Accounts**: email, Sign in with Apple, or guest (fully offline).
+- **Cloud sync** with Supabase: highlights, collections, notes, bookmarks,
+  reading plans and prayers. Offline first, newest edit wins, deletions sync,
+  row-level security per user.
+- **Reading plans**: Bible in a Year, Chronological, New Testament in 90 Days,
+  Gospels in 30 Days, Psalms in 30 Days, and custom plans from any books.
+- **Prayer journal**: private requests by category, answered prayers with
+  notes, daily or one-off reminders.
+- **Home**: today's reading, prayer journal, streak and progress.
+- **Widgets**: verse of the day, continue reading, reading progress (large),
+  lock screen streak, verse and continue reading. Tapping opens the app in place.
+
 ## Architecture
 
 ```
@@ -38,12 +52,18 @@ Genesis/
     Search/         Reference parser, FTS5 query builder, search
     Settings/       Reader preferences, themes, fonts
     Storage/        Minimal read-only SQLite wrapper
-    UserData/       SwiftData models (highlights, notes, bookmarks) + StudyStore
-    Services/       Config, Sentry crash reporting, reading progress, daily verse
+    UserData/       SwiftData models (highlights, notes, bookmarks, plans, prayers) + StudyStore
+    Cloud/          Supabase client, auth, sync engine
+    Plans/          Reading plan schedules
+    Services/       Config, Sentry, reading progress/streaks, reminders, widget snapshot
+  Shared/           Code shared with the widget extension
   Features/         Reader, Home, Search, Library, Study, Onboarding (SwiftUI)
   DesignSystem/     Shared components
   Resources/        Bible databases, fonts, assets
+GenesisWidgets/     WidgetKit extension
 GenesisTests/       Swift Testing unit tests
+GenesisUITests/     XCUITest UI automation
+supabase/           Database schema (SQL migrations)
 Tools/BibleData/    Script that builds the Bible databases
 ```
 

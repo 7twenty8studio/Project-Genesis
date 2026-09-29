@@ -15,3 +15,6 @@ Config/Secrets.xcconfig
 
 # Python
 __pycache__/
+
+# Per-developer signing (team ID)
+Config/Signing.xcconfig
