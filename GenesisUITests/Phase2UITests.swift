@@ -18,7 +18,7 @@ final class Phase2UITests: XCTestCase {
         let gospels = app.buttons["plans.start.gospels-30"]
         XCTAssertTrue(gospels.waitForExistence(timeout: Genesis.timeout))
         gospels.tap()
-        let start = app.buttons["Start Today"]
+        let start = app.buttons["plans.confirmStart"].firstMatch
         XCTAssertTrue(start.waitForExistence(timeout: Genesis.timeout))
         start.tap()
 
@@ -39,7 +39,7 @@ final class Phase2UITests: XCTestCase {
         scrollHome(to: plansCard, in: app)
         plansCard.tap()
         app.buttons["plans.start.psalms-30"].tap()
-        app.buttons["Start Today"].tap()
+        app.buttons["plans.confirmStart"].firstMatch.tap()
 
         let read = app.buttons["plan.read"]
         XCTAssertTrue(read.waitForExistence(timeout: Genesis.timeout))
