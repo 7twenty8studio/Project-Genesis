@@ -38,8 +38,13 @@ final class Phase2UITests: XCTestCase {
         XCTAssertTrue(plansCard.waitForExistence(timeout: Genesis.launchTimeout))
         scrollHome(to: plansCard, in: app)
         plansCard.tap()
-        app.buttons["plans.start.psalms-30"].tap()
-        app.buttons["plans.confirmStart"].firstMatch.tap()
+        let psalms = app.buttons["plans.start.psalms-30"]
+        XCTAssertTrue(psalms.waitForExistence(timeout: Genesis.timeout))
+        Genesis.scrollIntoView(psalms, in: app)
+        psalms.tap()
+        let start = app.buttons["plans.confirmStart"].firstMatch
+        XCTAssertTrue(start.waitForExistence(timeout: Genesis.timeout))
+        start.tap()
 
         let read = app.buttons["plan.read"]
         XCTAssertTrue(read.waitForExistence(timeout: Genesis.timeout))
