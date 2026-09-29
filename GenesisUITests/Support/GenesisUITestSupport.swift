@@ -34,7 +34,31 @@ enum Genesis {
         arguments += passArguments
         app.launchArguments = arguments
         app.launch()
+        if verse != nil { ensureReaderTab(app) }
         return app
+    }
+
+    /// iPadOS restores the last selected tab when an app relaunches, which can
+    /// override where the test asked to start. Make sure the reader is showing.
+    static func ensureReaderTab(_ app: XCUIApplication) {
+        let chapterButton = app.buttons["reader.chapterButton"]
+        if chapterButton.waitForExistence(timeout: launchTimeout) { return }
+        openTab("Read", in: app)
+        _ = chapterButton.waitForExistence(timeout: timeout)
+    }
+
+    /// Opens a menu button. On iPad a menu can surface as a pop-up button that
+    /// ignores an element tap, so fall back to tapping its centre point.
+    static func openMenu(_ button: XCUIElement, expecting item: XCUIElement) {
+        button.tap()
+        if item.waitForExistence(timeout: 2) { return }
+        button.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+        _ = item.waitForExistence(timeout: timeout)
+    }
+
+    /// Any element (button or menu item) whose label starts with the text.
+    static func anyElement(startingWith text: String, in app: XCUIApplication) -> XCUIElement {
+        app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH %@", text)).firstMatch
     }
 
     // MARK: Reader

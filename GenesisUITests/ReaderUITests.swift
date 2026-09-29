@@ -94,10 +94,10 @@ final class ReaderUITests: XCTestCase {
         let app = Genesis.launch(verse: 43_003_016)
         let translation = app.buttons["reader.translation"]
         XCTAssertTrue(translation.waitForExistence(timeout: Genesis.timeout))
-        translation.tap()
-        let byIdentifier = app.buttons["reader.translation.ASV"]
-        let asv = byIdentifier.waitForExistence(timeout: 3) ? byIdentifier : Genesis.button(startingWith: "ASV", in: app)
-        XCTAssertTrue(asv.waitForExistence(timeout: Genesis.timeout), "The translation menu lists ASV")
+        // Menu items can appear as buttons (iPhone) or menu items (iPad).
+        let asv = Genesis.anyElement(startingWith: "ASV", in: app)
+        Genesis.openMenu(translation, expecting: asv)
+        XCTAssertTrue(asv.exists, "The translation menu lists ASV")
         asv.tap()
         XCTAssertTrue(Genesis.wait { translation.label == "Translation, American Standard Version" })
         XCTAssertEqual(Genesis.chapterTitle(app), "John 3", "Switching translation keeps your place")

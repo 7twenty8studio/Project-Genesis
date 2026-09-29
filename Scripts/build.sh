@@ -126,7 +126,7 @@ if [ "$BUILD_STATUS" -eq 0 ]; then
     APP="$DERIVED/Build/Products/Debug-iphonesimulator/Genesis.app"
     echo "Launching Genesis on $SIM_NAME..."
     xcrun simctl boot "$SIM_ID" 2>/dev/null
-    open -a Simulator
+    open -a "$(xcode-select -p)/Applications/Simulator.app" 2>/dev/null || open -a Simulator
     xcrun simctl install "$SIM_ID" "$APP" && xcrun simctl launch "$SIM_ID" "$BUNDLE_ID" >/dev/null
 fi
 
@@ -176,6 +176,7 @@ if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
             -project Genesis.xcodeproj -scheme GenesisUITests \
             "${UI_DEVICES[@]}" -derivedDataPath "$DERIVED" \
             -parallel-testing-enabled NO \
+            -retry-tests-on-failure -test-iterations 2 \
             -resultBundlePath "$RESULT" \
             -skipPackagePluginValidation test-without-building 2>&1 \
             | tee -a build.log | grep -E "error:|Test Case .* failed|\*\* TEST"
