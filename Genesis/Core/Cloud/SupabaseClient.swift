@@ -187,7 +187,8 @@ final class SupabaseClient: Sendable {
             components?.queryItems = query
             // "+" is legal in a query but PostgREST reads it as a space, which
             // would break timestamp cursors like "...+00:00".
-            components?.percentEncodedQuery = components?.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+            let encoded = components?.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+            components?.percentEncodedQuery = encoded
         }
         var request = URLRequest(url: components?.url ?? baseURL.appending(path: path))
         request.httpMethod = method
