@@ -16,7 +16,7 @@ final class SettingsUITests: XCTestCase {
 
         // Layout options sit lower in the sheet.
         let scroll = app.buttons["Scroll"].firstMatch
-        Genesis.scrollIntoView(scroll, in: app)
+        Genesis.scrollIntoView(scroll, in: app, container: Genesis.settingsList(app))
         XCTAssertTrue(scroll.exists, "The Scroll option is reachable")
         scroll.tap()
         app.buttons["settings.done"].tap()
@@ -31,14 +31,20 @@ final class SettingsUITests: XCTestCase {
         XCTAssertTrue(settings.waitForExistence(timeout: Genesis.timeout))
         settings.tap()
 
+        let larger = app.buttons["Larger text"]
+        XCTAssertTrue(app.buttons["settings.theme.automatic"].waitForExistence(timeout: Genesis.timeout))
+        // With large accessibility text the size controls may be below the fold.
+        Genesis.scrollIntoView(larger, in: app, container: Genesis.settingsList(app))
         XCTAssertTrue(app.staticTexts["19 pt"].waitForExistence(timeout: Genesis.timeout), "Default size is 19 pt")
-        app.buttons["Larger text"].tap()
-        app.buttons["Larger text"].tap()
+        larger.tap()
+        larger.tap()
         XCTAssertTrue(app.staticTexts["21 pt"].waitForExistence(timeout: Genesis.timeout))
         app.buttons["settings.done"].tap()
 
         Genesis.showControls(app)
         app.buttons["reader.settings"].tap()
+        XCTAssertTrue(app.buttons["settings.theme.automatic"].waitForExistence(timeout: Genesis.timeout))
+        Genesis.scrollIntoView(app.staticTexts["21 pt"], in: app, container: Genesis.settingsList(app))
         XCTAssertTrue(app.staticTexts["21 pt"].waitForExistence(timeout: Genesis.timeout), "The new size is kept")
     }
 }

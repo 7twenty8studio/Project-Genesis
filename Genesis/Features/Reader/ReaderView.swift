@@ -206,7 +206,9 @@ struct ReaderView: View {
             }
         case .settings:
             ReaderSettingsSheet()
-                .presentationDetents([.medium, .large])
+                // With accessibility text sizes a half-height sheet hides most
+                // options, so open it full height.
+                .presentationDetents(dynamicTypeSize.isAccessibilitySize ? [.large] : [.medium, .large])
         case let .note(note):
             NavigationStack {
                 NoteEditorView(note: note)

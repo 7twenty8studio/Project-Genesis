@@ -110,13 +110,20 @@ enum Genesis {
     }
 
     /// Swipes up inside a sheet or list until the element is on screen.
-    static func scrollIntoView(_ element: XCUIElement, in app: XCUIApplication, maxSwipes: Int = 6) {
+    /// `container` should be the scrolling list that holds the element; on
+    /// iPad other lists (like the study panel) are on screen behind a sheet.
+    static func scrollIntoView(_ element: XCUIElement, in app: XCUIApplication, container: XCUIElement? = nil, maxSwipes: Int = 8) {
         var swipes = 0
         while !(element.exists && element.isHittable) && swipes < maxSwipes {
-            let list = app.collectionViews.firstMatch
+            let list = container ?? app.collectionViews.firstMatch
             if list.exists { list.swipeUp() } else { app.swipeUp() }
             swipes += 1
         }
+    }
+
+    /// The reading settings sheet's scrolling list.
+    static func settingsList(_ app: XCUIApplication) -> XCUIElement {
+        app.collectionViews.containing(.button, identifier: "settings.theme.automatic").firstMatch
     }
 
     /// A button whose label starts with the text, e.g. "Romans" for a "Romans, 16" row.

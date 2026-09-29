@@ -149,7 +149,8 @@ if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
     xcodebuild -project Genesis.xcodeproj -scheme GenesisUITests \
         -destination "generic/platform=iOS Simulator" -derivedDataPath "$DERIVED" \
         -skipPackagePluginValidation build-for-testing 2>&1 | tee -a build.log | grep -E "error:|\*\* (BUILD|TEST)"
-    UI_STATUS=${PIPESTATUS[0]}
+    UI_BUILD_STATUS=${PIPESTATUS[0]}
+    UI_STATUS=$UI_BUILD_STATUS
 
     # Each pass: a name and the extra launch arguments the tests pass to the app.
     PASSES=("Standard|")
@@ -164,7 +165,8 @@ if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
 
     mkdir -p build/TestResults
     for pass in "${PASSES[@]}"; do
-        [ "$UI_STATUS" -ne 0 ] && break
+        # A failed build stops everything; failed tests don't stop later passes.
+        [ "$UI_BUILD_STATUS" -ne 0 ] && break
         NAME=${pass%%|*}
         ARGS=${pass#*|}
         RESULT="build/TestResults/UI-$(echo "$NAME" | tr ' ' '-').xcresult"
