@@ -54,7 +54,9 @@ targets:
         UILaunchScreen:
           UIColorName: LaunchBackground
         UIApplicationSceneManifest:
-          UIApplicationSupportsMultipleScenes: true
+          # One window. The shared reader state isn't built for several windows
+          # yet, and restored iPad windows confused the UI tests.
+          UIApplicationSupportsMultipleScenes: false
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
           - UIInterfaceOrientationLandscapeLeft

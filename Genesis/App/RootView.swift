@@ -43,5 +43,10 @@ struct MainTabView: View {
             }
         }
         .tabBarMinimizeBehavior(.onScrollDown)
+        .task {
+            // iPadOS can restore a previously selected tab after launch; a UI
+            // test that asked to start in the reader must land there.
+            if UITestingOptions.current.startVerse != nil { router.tab = .read }
+        }
     }
 }

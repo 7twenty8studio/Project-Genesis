@@ -32,7 +32,8 @@ final class SearchUITests: XCTestCase {
 
         let count = app.staticTexts["search.resultCount"]
         XCTAssertTrue(count.waitForExistence(timeout: Genesis.timeout), "A result count appears")
-        XCTAssertTrue(count.label.contains("verse"), "Count reads \(count.label)")
+        // Section headers may be shown in capitals ("3 VERSES").
+        XCTAssertTrue(count.label.lowercased().contains("verse"), "Count reads \(count.label)")
         XCTAssertTrue(Genesis.element(containing: "Psalms 23:1", in: app).waitForExistence(timeout: Genesis.timeout))
     }
 

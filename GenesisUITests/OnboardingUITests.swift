@@ -4,11 +4,13 @@ import XCTest
 final class OnboardingUITests: XCTestCase {
     @MainActor
     func testChooseTranslationAndBeginReading() {
-        let start = Date()
         let app = Genesis.launch(onboarding: true)
 
         let web = app.buttons["onboarding.translation.WEB"]
         XCTAssertTrue(web.waitForExistence(timeout: Genesis.launchTimeout), "Translation choices should appear")
+        // Timed from the first screen, not simulator start-up, which is slow
+        // when several simulators run at once.
+        let start = Date()
         web.tap()
         app.buttons["onboarding.begin"].tap()
 
