@@ -62,7 +62,7 @@ if [ -z "$ACTUAL" ]; then
 fi
 DIFF=$(echo "$ACTUAL $ANGLE" | awk '{ d = $1 - $2; if (d < 0) d = -d; print int(d) }')
 if [ "$DIFF" -gt 10 ]; then
-    echo "duo_hinge: asked for $ANGLE°, the simulator reports $ACTUAL°" >&2
+    echo "duo_hinge: asked for ${ANGLE}°, the simulator reports ${ACTUAL}°" >&2
     exit 1
 fi
-echo "duo_hinge: $POSTURE ($ACTUAL°)"
+echo "duo_hinge: ${POSTURE} (${ACTUAL}°)"
