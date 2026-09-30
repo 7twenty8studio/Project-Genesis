@@ -33,28 +33,33 @@ class GenesisUITestCase: XCTestCase {
 
     override func tearDown() {
         if let run = testRun, !run.hasSucceeded {
-            // Synchronous tearDown runs on the main thread.
-            MainActor.assumeIsolated {
-                for attachment in Self.failureAttachments() { add(attachment) }
+            // Synchronous tearDown runs on the main thread. Only plain data
+            // crosses to the main actor and back, so `self` stays here.
+            let state = MainActor.assumeIsolated { Self.captureFailureState() }
+            let screenshot = XCTAttachment(data: state.screenshotPNG, uniformTypeIdentifier: "public.png")
+            screenshot.name = "Screen at failure"
+            screenshot.lifetime = .keepAlways
+            add(screenshot)
+            if let tree = state.accessibilityTree {
+                let attachment = XCTAttachment(string: tree)
+                attachment.name = "Accessibility tree at failure"
+                attachment.lifetime = .keepAlways
+                add(attachment)
             }
         }
         super.tearDown()
     }
 
-    @MainActor
-    private static func failureAttachments() -> [XCTAttachment] {
-        let screenshot = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
-        screenshot.name = "Screen at failure"
-        screenshot.lifetime = .keepAlways
-        var attachments = [screenshot]
+    private struct FailureState: Sendable {
+        let screenshotPNG: Data
+        let accessibilityTree: String?
+    }
 
+    @MainActor
+    private static func captureFailureState() -> FailureState {
+        let png = XCUIScreen.main.screenshot().pngRepresentation
         let app = XCUIApplication()
-        if app.state == .runningForeground || app.state == .runningBackground {
-            let tree = XCTAttachment(string: app.debugDescription)
-            tree.name = "Accessibility tree at failure"
-            tree.lifetime = .keepAlways
-            attachments.append(tree)
-        }
-        return attachments
+        let running = app.state == .runningForeground || app.state == .runningBackground
+        return FailureState(screenshotPNG: png, accessibilityTree: running ? app.debugDescription : nil)
     }
 }

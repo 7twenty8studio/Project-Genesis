@@ -265,6 +265,9 @@ if [ "$BUILD_STATUS" -ne 0 ]; then
 elif [ "$TEST_STATUS" -ne 0 ]; then
     echo "⚠️  The app built and launched, but some tests failed."
     echo "   Send build.log back to Claude."
+elif [ "${UI_BUILD_STATUS:-0}" -ne 0 ]; then
+    echo "❌ The app built and unit tests passed, but the UI tests didn't compile."
+    echo "   Send build-errors.txt back to Claude."
 elif [ "$UI_STATUS" -ne 0 ]; then
     echo "⚠️  The app built and unit tests passed, but some UI tests failed."
     echo "   Send the UI-*-failures.txt and UI-*-screenshots.zip files in build/TestResults back to Claude."
