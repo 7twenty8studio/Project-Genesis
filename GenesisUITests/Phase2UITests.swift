@@ -67,11 +67,11 @@ final class Phase2UITests: GenesisUITestCase {
         journal.tap()
 
         let add = app.buttons["prayer.new"]
-        XCTAssertTrue(add.waitForExistence(timeout: Genesis.timeout))
+        XCTAssertTrue(add.waitForExistence(timeout: Genesis.timeout), "The prayer journal opens")
         add.tap()
 
         let title = app.descendants(matching: .any).matching(identifier: "prayer.title").firstMatch
-        XCTAssertTrue(title.waitForExistence(timeout: Genesis.timeout))
+        XCTAssertTrue(title.waitForExistence(timeout: Genesis.timeout), "A new prayer opens for editing")
         title.tap()
         title.typeText("Healing for Grandma")
         Genesis.tapToolbarButton("prayer.done", in: app)
@@ -81,7 +81,10 @@ final class Phase2UITests: GenesisUITestCase {
         row.tap()
 
         let answered = app.buttons["prayer.markAnswered"]
-        XCTAssertTrue(answered.waitForExistence(timeout: Genesis.timeout))
+        XCTAssertTrue(app.buttons["prayer.done"].waitForExistence(timeout: Genesis.timeout), "The prayer opens for editing")
+        // In landscape the editor's lower rows start off screen and load as they scroll in.
+        Genesis.scrollIntoView(answered, in: app)
+        XCTAssertTrue(answered.exists, "Mark as Answered is offered")
         answered.tap()
         Genesis.tapToolbarButton("prayer.done", in: app)
 
