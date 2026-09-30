@@ -56,6 +56,8 @@ struct ChapterNotesView: View {
     @Environment(\.palette) private var palette
     @Query private var notes: [Note]
     @State private var editing: Note?
+    @State private var premium: PremiumFeature?
+    @Environment(EntitlementService.self) private var entitlements
 
     init(chapter: ChapterID) {
         self.chapter = chapter
@@ -89,7 +91,12 @@ struct ChapterNotesView: View {
         .themedScreen()
         .safeAreaInset(edge: .bottom) {
             Button {
-                editing = StudyStore(context: modelContext).createNote(kind: .study, anchor: .chapter(chapter))
+                let store = StudyStore(context: modelContext)
+                guard entitlements.canAddNote(existing: store.noteCount()) else {
+                    premium = .unlimitedNotes
+                    return
+                }
+                editing = store.createNote(kind: .study, anchor: .chapter(chapter))
             } label: {
                 Label("Note on \(chapter.description)", systemImage: "square.and.pencil")
                     .frame(maxWidth: .infinity)
@@ -97,6 +104,7 @@ struct ChapterNotesView: View {
             .buttonStyle(.bordered)
             .padding(16)
         }
+        .premiumSheet($premium)
         .sheet(item: $editing, onDismiss: { reader.notesDidChange() }) { note in
             NavigationStack { NoteEditorView(note: note) }
         }

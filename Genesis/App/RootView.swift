@@ -8,6 +8,7 @@ struct RootView: View {
     @Environment(ReadingProgress.self) private var progress
     @Environment(AppRouter.self) private var router
     @Environment(SyncService.self) private var sync
+    @Environment(EntitlementService.self) private var entitlements
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.scenePhase) private var scenePhase
@@ -31,9 +32,15 @@ struct RootView: View {
             router.handle(url)
         }
         .task {
+            entitlements.start()
             sync.start()
             refreshWidgets()
         }
+        .onChange(of: entitlements.isPremium) { _, isPremium in
+            if isPremium { sync.schedule(after: .zero) }
+            keepThemeAvailable()
+        }
+        .onChange(of: entitlements.hasLoaded) { keepThemeAvailable() }
         .onChange(of: scenePhase) { _, phase in
             switch phase {
             case .active:
@@ -48,6 +55,12 @@ struct RootView: View {
         .onReceive(NotificationCenter.default.publisher(for: .genesisUserDataDidChange)) { _ in refreshWidgets() }
         .onReceive(NotificationCenter.default.publisher(for: .genesisDidSync)) { _ in refreshWidgets() }
         .onChange(of: library.currentTranslation) { refreshWidgets() }
+    }
+
+    /// If Premium has ended, a premium theme falls back to Auto.
+    private func keepThemeAvailable() {
+        guard entitlements.hasLoaded, !entitlements.allows(settings.preferences.theme) else { return }
+        settings.preferences.theme = .automatic
     }
 
     private func refreshWidgets() {

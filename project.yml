@@ -82,6 +82,8 @@ targets:
         GenesisSupabaseURL: $(SUPABASE_URL)
         GenesisSupabaseAnonKey: $(SUPABASE_ANON_KEY)
         GenesisSentryDSN: $(SENTRY_DSN)
+        GenesisTermsURL: $(GENESIS_TERMS_URL)
+        GenesisPrivacyURL: $(GENESIS_PRIVACY_URL)
 
   GenesisWidgets:
     type: app-extension
@@ -138,6 +140,8 @@ schemes:
         GenesisTests: [test]
     run:
       config: Debug
+      # Local App Store for trying Premium in the Simulator (⌘R from Xcode).
+      storeKitConfiguration: Config/Genesis.storekit
     test:
       config: Debug
       gatherCoverageData: true

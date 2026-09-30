@@ -108,6 +108,12 @@ struct StudyStore {
         return (try? context.fetch(descriptor)) ?? []
     }
 
+    /// Notes with any content; an empty note someone opened and left doesn't count.
+    func noteCount() -> Int {
+        let descriptor = FetchDescriptor<Note>(predicate: #Predicate { !$0.title.isEmpty || !$0.body.isEmpty })
+        return (try? context.fetchCount(descriptor)) ?? 0
+    }
+
     @discardableResult
     func createNote(kind: NoteKind, anchor: NoteAnchor, title: String = "", body: String = "") -> Note {
         let note = Note(kind: kind, anchor: anchor, title: title, body: body)

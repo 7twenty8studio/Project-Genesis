@@ -11,6 +11,7 @@ import Foundation
 ///     -uiTestingTheme slate           a ReaderTheme raw value
 ///     -uiTestingReadingMode scroll    page | scroll
 ///     -uiTestingPageTurn slide        slide | curl
+///     -uiTestingPremium               act as a Premium subscriber (default: free)
 struct UITestingOptions {
     let isEnabled: Bool
     let skipsOnboarding: Bool
@@ -18,6 +19,7 @@ struct UITestingOptions {
     let theme: ReaderTheme?
     let readingMode: ReadingMode?
     let pageTurn: PageTurnStyle?
+    let isPremium: Bool
 
     static let current = UITestingOptions(arguments: ProcessInfo.processInfo.arguments)
 
@@ -32,6 +34,7 @@ struct UITestingOptions {
         theme = value(after: "-uiTestingTheme").flatMap(ReaderTheme.init(rawValue:))
         readingMode = value(after: "-uiTestingReadingMode").flatMap(ReadingMode.init(rawValue:))
         pageTurn = value(after: "-uiTestingPageTurn").flatMap(PageTurnStyle.init(rawValue:))
+        isPremium = arguments.contains("-uiTestingPremium")
     }
 
     /// Wipes saved state. Must run before any store reads UserDefaults.

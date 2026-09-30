@@ -15,6 +15,8 @@ struct PrayerJournalView: View {
     @State private var filter: Filter = .praying
     @State private var category: PrayerCategory?
     @State private var editing: Prayer?
+    @State private var premium: PremiumFeature?
+    @Environment(EntitlementService.self) private var entitlements
 
     private var visible: [Prayer] {
         prayers.filter { prayer in
@@ -77,11 +79,17 @@ struct PrayerJournalView: View {
             }
         }
         .themedScreen()
+        .premiumSheet($premium)
         .navigationTitle("Prayer Journal")
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button {
-                    editing = StudyStore(context: modelContext).createPrayer(category: category ?? .personal)
+                    let store = StudyStore(context: modelContext)
+                    guard entitlements.canAddPrayer(existing: store.prayerCount()) else {
+                        premium = .unlimitedPrayers
+                        return
+                    }
+                    editing = store.createPrayer(category: category ?? .personal)
                 } label: {
                     Label("New Prayer", systemImage: "plus")
                 }

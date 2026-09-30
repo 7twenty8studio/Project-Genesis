@@ -21,6 +21,9 @@ final class SyncService {
     private(set) var lastSyncedAt: Date?
 
     @ObservationIgnored let auth: AuthService
+    /// Cloud backup is part of Premium; the app sets this from the entitlement.
+    /// Signing in still works without it (the study assistant needs an account).
+    @ObservationIgnored var isAllowed: @MainActor () -> Bool = { true }
     @ObservationIgnored private let container: ModelContainer
     @ObservationIgnored private let defaults: UserDefaults
     @ObservationIgnored private var scheduled: Task<Void, Never>?
@@ -54,7 +57,7 @@ final class SyncService {
 
     /// Syncs soon, coalescing bursts of edits into one sync.
     func schedule(after delay: Duration = .seconds(2)) {
-        guard auth.isSignedIn else { return }
+        guard auth.isSignedIn, isAllowed() else { return }
         scheduled?.cancel()
         scheduled = Task { [weak self] in
             if delay > .zero { try? await Task.sleep(for: delay) }
@@ -64,7 +67,7 @@ final class SyncService {
     }
 
     func syncNow() async {
-        guard let user = auth.user, let client = auth.client else { return }
+        guard let user = auth.user, let client = auth.client, isAllowed() else { return }
         guard !isRunning else {
             runAgain = true
             return

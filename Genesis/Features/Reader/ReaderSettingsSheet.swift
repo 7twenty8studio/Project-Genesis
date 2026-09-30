@@ -6,6 +6,8 @@ struct ReaderSettingsSheet: View {
     @Environment(\.palette) private var palette
     @Environment(\.dismiss) private var dismiss
     @State private var brightness: CGFloat = 0.5
+    @State private var premium: PremiumFeature?
+    @Environment(EntitlementService.self) private var entitlements
 
     var body: some View {
         @Bindable var settings = settings
@@ -103,6 +105,7 @@ struct ReaderSettingsSheet: View {
             .navigationTitle("Reading")
             .navigationBarTitleDisplayMode(.inline)
             .onAppear { brightness = DeviceScreen.brightness }
+            .premiumSheet($premium)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done", systemImage: "checkmark") { dismiss() }
@@ -117,8 +120,13 @@ struct ReaderSettingsSheet: View {
             HStack(spacing: 14) {
                 ForEach(ReaderTheme.allCases) { theme in
                     let isSelected = selection.wrappedValue == theme
+                    let isLocked = !entitlements.allows(theme)
                     Button {
-                        selection.wrappedValue = theme
+                        if isLocked {
+                            premium = .premiumThemes
+                        } else {
+                            selection.wrappedValue = theme
+                        }
                     } label: {
                         VStack(spacing: 6) {
                             ZStack {
@@ -132,13 +140,16 @@ struct ReaderSettingsSheet: View {
                             }
                             .frame(width: 48, height: 48)
                             .overlay(Circle().strokeBorder(isSelected ? palette.accent : palette.separator, lineWidth: isSelected ? 2.5 : 1))
+                            .overlay(alignment: .topTrailing) {
+                                if isLocked { PremiumBadge().padding(2).background(palette.background, in: Circle()) }
+                            }
                             Text(theme.title)
                                 .font(.caption2)
                                 .foregroundStyle(isSelected ? palette.accent : palette.secondaryText)
                         }
                     }
                     .buttonStyle(.plain)
-                    .accessibilityLabel("\(theme.title) theme")
+                    .accessibilityLabel(isLocked ? "\(theme.title) theme, Premium" : "\(theme.title) theme")
                     .accessibilityIdentifier("settings.theme.\(theme.rawValue)")
                     .accessibilityAddTraits(isSelected ? .isSelected : [])
                 }

@@ -187,8 +187,10 @@ private struct SignedInView: View {
 
     @Environment(AuthService.self) private var auth
     @Environment(SyncService.self) private var sync
+    @Environment(EntitlementService.self) private var entitlements
     @Environment(\.palette) private var palette
     @State private var confirmSignOut = false
+    @State private var premium: PremiumFeature?
 
     var body: some View {
         Form {
@@ -197,6 +199,20 @@ private struct SignedInView: View {
                     .accessibilityIdentifier("account.signedInAs")
             }
 
+            if !entitlements.allows(.cloudBackup) {
+                Section {
+                    Button {
+                        premium = .cloudBackup
+                    } label: {
+                        Label("Back up with Premium", systemImage: "icloud")
+                    }
+                    .accessibilityIdentifier("account.backupPremium")
+                } header: {
+                    Text("Cloud Backup")
+                } footer: {
+                    Text("Your highlights, notes, plans and prayers are saved on this device. Cloud backup and sync across devices are part of Genesis Premium.")
+                }
+            } else {
             Section {
                 HStack {
                     Label(statusText, systemImage: statusSymbol)
@@ -213,12 +229,14 @@ private struct SignedInView: View {
             } footer: {
                 Text("Highlights, notes, bookmarks, reading plans and prayers sync automatically. Prayers are private to your account.")
             }
+            }
 
             Section {
                 Button("Sign Out", role: .destructive) { confirmSignOut = true }
                     .accessibilityIdentifier("account.signOut")
             }
         }
+        .premiumSheet($premium)
         .confirmationDialog("Sign out?", isPresented: $confirmSignOut, titleVisibility: .visible) {
             Button("Sign Out and Keep Data on This Device") { signOut(removeLocalData: false) }
             Button("Sign Out and Remove Data from This Device", role: .destructive) { signOut(removeLocalData: true) }

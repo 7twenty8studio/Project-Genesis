@@ -195,6 +195,8 @@ private struct NotesList: View {
     @Query(sort: \Note.updatedAt, order: .reverse) private var notes: [Note]
     @State private var kindFilter: NoteKind?
     @State private var editing: Note?
+    @State private var premium: PremiumFeature?
+    @Environment(EntitlementService.self) private var entitlements
 
     private var filtered: [Note] {
         guard let kindFilter else { return notes }
@@ -240,7 +242,12 @@ private struct NotesList: View {
                 Menu {
                     ForEach(NoteKind.allCases) { kind in
                         Button(kind.title, systemImage: kind.systemImage) {
-                            editing = StudyStore(context: modelContext).createNote(kind: kind, anchor: kind == .study ? .theme("") : .none)
+                            let store = StudyStore(context: modelContext)
+                            guard entitlements.canAddNote(existing: store.noteCount()) else {
+                                premium = .unlimitedNotes
+                                return
+                            }
+                            editing = store.createNote(kind: kind, anchor: kind == .study ? .theme("") : .none)
                         }
                     }
                 } label: {
@@ -251,6 +258,7 @@ private struct NotesList: View {
         .sheet(item: $editing) { note in
             NavigationStack { NoteEditorView(note: note) }
         }
+        .premiumSheet($premium)
     }
 }
 

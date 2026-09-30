@@ -10,6 +10,7 @@ struct GenesisApp: App {
     @State private var router: AppRouter
     @State private var auth: AuthService
     @State private var sync: SyncService
+    @State private var entitlements: EntitlementService
     private let modelContainer: ModelContainer
 
     init() {
@@ -41,6 +42,11 @@ struct GenesisApp: App {
         _auth = State(initialValue: auth)
         _sync = State(initialValue: sync)
 
+        // UI tests never reach StoreKit: Premium is on only with -uiTestingPremium.
+        let entitlements = EntitlementService(override: testing.isEnabled ? testing.isPremium : nil)
+        sync.isAllowed = { [weak entitlements] in entitlements?.allows(.cloudBackup) ?? false }
+        _entitlements = State(initialValue: entitlements)
+
         testing.apply(settings: settings, router: router)
     }
 
@@ -54,6 +60,7 @@ struct GenesisApp: App {
                 .environment(router)
                 .environment(auth)
                 .environment(sync)
+                .environment(entitlements)
         }
         .modelContainer(modelContainer)
     }

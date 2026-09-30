@@ -7,6 +7,7 @@ import UIKit
 /// beside the text for notes, cross references and search.
 struct ReaderView: View {
     @Environment(ReaderViewModel.self) private var reader
+    @Environment(EntitlementService.self) private var entitlements
     @Environment(ReaderSettings.self) private var settings
     @Environment(\.modelContext) private var modelContext
     @Environment(\.palette) private var palette
@@ -200,6 +201,10 @@ struct ReaderView: View {
     }
 
     private func openNoteForSelection() {
+        guard entitlements.canAddNote(existing: StudyStore(context: modelContext).noteCount()) else {
+            sheet = .premium(.unlimitedNotes)
+            return
+        }
         if let note = reader.makeNoteForSelection() {
             sheet = .note(note)
         }
@@ -235,6 +240,8 @@ struct ReaderView: View {
                 NoteEditorView(note: note)
             }
             .onDisappear { reader.notesDidChange() }
+        case let .premium(feature):
+            PremiumView(highlighted: feature)
         case let .crossReferences(verse):
             NavigationStack {
                 CrossReferencesView(verse: verse) { target in
@@ -252,6 +259,7 @@ enum ReaderSheet: Identifiable {
     case settings
     case note(Note)
     case crossReferences(VerseID)
+    case premium(PremiumFeature)
 
     var id: String {
         switch self {
@@ -259,6 +267,7 @@ enum ReaderSheet: Identifiable {
         case .settings: "settings"
         case let .note(note): "note-\(note.id)"
         case let .crossReferences(verse): "xref-\(verse.rawValue)"
+        case let .premium(feature): "premium-\(feature.rawValue)"
         }
     }
 }

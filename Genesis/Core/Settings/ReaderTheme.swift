@@ -12,6 +12,8 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
     case parchment
     case slate
     case highContrast
+    case midnight
+    case sage
 
     var id: String { rawValue }
 
@@ -24,6 +26,8 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
         case .parchment: "Parchment"
         case .slate: "Slate"
         case .highContrast: "Contrast"
+        case .midnight: "Midnight"
+        case .sage: "Sage"
         }
     }
 
@@ -33,7 +37,17 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
         return scheme == .dark ? .slate : .paper
     }
 
-    var isDark: Bool { self == .slate || self == .highContrast }
+    var isDark: Bool { self == .slate || self == .highContrast || self == .midnight }
+
+    /// Themes that come with Genesis Premium. Auto, Paper, Sepia, Slate and
+    /// High Contrast stay free, so a readable light, dark and high-contrast
+    /// choice is always available.
+    var isPremium: Bool {
+        switch self {
+        case .cream, .parchment, .midnight, .sage: true
+        case .automatic, .paper, .sepia, .slate, .highContrast: false
+        }
+    }
 
     var palette: ThemePalette {
         switch self {
@@ -49,6 +63,10 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
             ThemePalette(background: 0x1E2226, surface: 0x272C31, text: 0xDAD5C8, secondaryText: 0x8D9196, accent: 0xC9A96E, separator: 0x353B41)
         case .highContrast:
             ThemePalette(background: 0x000000, surface: 0x141414, text: 0xFFFFFF, secondaryText: 0xC8C8C8, accent: 0xF0CF86, separator: 0x3A3A3A)
+        case .midnight:
+            ThemePalette(background: 0x161B26, surface: 0x1E2432, text: 0xD6D9E0, secondaryText: 0x8A91A0, accent: 0xB9A77C, separator: 0x2C3342)
+        case .sage:
+            ThemePalette(background: 0xEEF0E6, surface: 0xE3E7D8, text: 0x2C3128, secondaryText: 0x6F7866, accent: 0x6E7F5A, separator: 0xD3D9C4)
         }
     }
 }

@@ -40,6 +40,12 @@ extension StudyStore {
 
     // MARK: Prayer journal
 
+    /// Prayers with any content (answered ones included).
+    func prayerCount() -> Int {
+        let descriptor = FetchDescriptor<Prayer>(predicate: #Predicate { !$0.title.isEmpty || !$0.body.isEmpty })
+        return (try? context.fetchCount(descriptor)) ?? 0
+    }
+
     @discardableResult
     func createPrayer(category: PrayerCategory = .personal) -> Prayer {
         let prayer = Prayer(category: category)
