@@ -6,6 +6,7 @@ import UIKit
 struct SelectionActionBar: View {
     let onNote: () -> Void
     let onCrossReferences: () -> Void
+    let onExplain: () -> Void
 
     @Environment(ReaderViewModel.self) private var reader
     @Environment(\.palette) private var palette
@@ -20,6 +21,13 @@ struct SelectionActionBar: View {
                     .foregroundStyle(palette.accent)
                     .accessibilityIdentifier("selection.reference")
                 Spacer()
+                Button(action: onExplain) {
+                    Label("Explain", systemImage: "sparkles")
+                        .font(.footnote.weight(.semibold))
+                }
+                .buttonStyle(.bordered)
+                .controlSize(.small)
+                .accessibilityIdentifier("selection.explain")
                 Button {
                     reader.clearSelection()
                 } label: {

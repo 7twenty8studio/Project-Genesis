@@ -92,7 +92,8 @@ struct ReaderView: View {
                 if reader.isSelecting {
                     SelectionActionBar(
                         onNote: openNoteForSelection,
-                        onCrossReferences: showCrossReferencesForSelection
+                        onCrossReferences: showCrossReferencesForSelection,
+                        onExplain: explainSelection
                     )
                     .padding(.bottom, readerSafeArea.bottom + 8)
                     .frame(maxHeight: .infinity, alignment: .bottom)
@@ -112,6 +113,7 @@ struct ReaderView: View {
                         showsCompanionToggle: isWide,
                         onChapterPicker: { sheet = .chapterPicker },
                         onSettings: { sheet = .settings },
+                        onStudy: studyChapter,
                         onToggleCompanion: { showsCompanion.toggle() }
                     )
                     // At least a little below the live safe area, and never
@@ -210,6 +212,21 @@ struct ReaderView: View {
         }
     }
 
+    /// The whole chapter being read.
+    private func studyChapter() {
+        let chapter = reader.chapterID
+        let last = (try? reader.library.current.chapter(chapter))?.verses.last?.id.verse ?? 1
+        sheet = .study(StudyPassage(chapter: chapter, lastVerse: last), .summarize)
+    }
+
+    /// The selected verses (kept within one book).
+    private func explainSelection() {
+        guard let first = reader.selection.min(), let last = reader.selection.max() else { return }
+        let end = last.book == first.book ? last : first
+        reader.clearSelection()
+        sheet = .study(StudyPassage(start: first, end: end), .explain)
+    }
+
     private func showCrossReferencesForSelection() {
         guard let verse = reader.selection.min() else { return }
         if isWide {
@@ -242,6 +259,8 @@ struct ReaderView: View {
             .onDisappear { reader.notesDidChange() }
         case let .premium(feature):
             PremiumView(highlighted: feature)
+        case let .study(passage, action):
+            StudyAssistantView(passage: passage, initialAction: action)
         case let .crossReferences(verse):
             NavigationStack {
                 CrossReferencesView(verse: verse) { target in
@@ -260,6 +279,7 @@ enum ReaderSheet: Identifiable {
     case note(Note)
     case crossReferences(VerseID)
     case premium(PremiumFeature)
+    case study(StudyPassage, StudyAction)
 
     var id: String {
         switch self {
@@ -268,6 +288,7 @@ enum ReaderSheet: Identifiable {
         case let .note(note): "note-\(note.id)"
         case let .crossReferences(verse): "xref-\(verse.rawValue)"
         case let .premium(feature): "premium-\(feature.rawValue)"
+        case let .study(passage, action): "study-\(passage.start.rawValue)-\(passage.end.rawValue)-\(action.rawValue)"
         }
     }
 }

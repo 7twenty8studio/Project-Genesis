@@ -8,6 +8,7 @@ struct PremiumView: View {
     var highlighted: PremiumFeature?
 
     @Environment(EntitlementService.self) private var entitlements
+    @Environment(AuthService.self) private var auth
     @Environment(\.palette) private var palette
     @Environment(\.dismiss) private var dismiss
     @State private var selected: PremiumProduct = .yearly
@@ -212,7 +213,7 @@ struct PremiumView: View {
 
     private func buy() async {
         message = nil
-        switch await entitlements.purchase(selected) {
+        switch await entitlements.purchase(selected, accountID: auth.user?.id) {
         case .purchased:
             dismiss()
         case .pending:

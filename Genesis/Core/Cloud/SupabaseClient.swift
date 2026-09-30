@@ -179,6 +179,19 @@ final class SupabaseClient: Sendable {
         _ = try await perform(request)
     }
 
+    // MARK: Edge Functions
+
+    /// Calls an Edge Function with a JSON body; returns the raw body and status
+    /// so callers can read structured errors.
+    func callFunction(_ name: String, body: Data, accessToken: String) async throws -> (data: Data, status: Int) {
+        var request = makeRequest(path: "functions/v1/\(name)", query: [], method: "POST", accessToken: accessToken)
+        request.timeoutInterval = 60
+        request.httpBody = body
+        let (data, response) = try await session.data(for: request)
+        guard let http = response as? HTTPURLResponse else { throw SupabaseError.invalidResponse }
+        return (data, http.statusCode)
+    }
+
     // MARK: Plumbing
 
     func makeRequest(path: String, query: [URLQueryItem], method: String, accessToken: String?) -> URLRequest {

@@ -94,7 +94,9 @@ final class EntitlementService {
         }
     }
 
-    func purchase(_ id: PremiumProduct) async -> PurchaseOutcome {
+    /// - Parameter accountID: the signed-in Genesis account, recorded on the
+    ///   purchase so the study assistant's server can tie it to that account.
+    func purchase(_ id: PremiumProduct, accountID: UUID? = nil) async -> PurchaseOutcome {
         if products.isEmpty { await loadProducts() }
         guard let product = product(id) else {
             return .failed("The App Store isn't available right now. Please try again later.")
@@ -102,7 +104,8 @@ final class EntitlementService {
         isPurchasing = true
         defer { isPurchasing = false }
         do {
-            switch try await product.purchase() {
+            let options: Set<Product.PurchaseOption> = accountID.map { [.appAccountToken($0)] } ?? []
+            switch try await product.purchase(options: options) {
             case let .success(verification):
                 guard case let .verified(transaction) = verification else {
                     return .failed("The purchase couldn't be verified.")

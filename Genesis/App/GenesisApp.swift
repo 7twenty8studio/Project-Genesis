@@ -11,6 +11,7 @@ struct GenesisApp: App {
     @State private var auth: AuthService
     @State private var sync: SyncService
     @State private var entitlements: EntitlementService
+    @State private var assistant: StudyAssistant
     private let modelContainer: ModelContainer
 
     init() {
@@ -47,6 +48,10 @@ struct GenesisApp: App {
         sync.isAllowed = { [weak entitlements] in entitlements?.allows(.cloudBackup) ?? false }
         _entitlements = State(initialValue: entitlements)
 
+        // UI tests get canned answers: no network and no AI cost.
+        let backend: StudyAssistantBackend? = testing.isEnabled ? StubStudyBackend() : StudyAssistant.liveBackend(client: auth.client)
+        _assistant = State(initialValue: StudyAssistant(auth: auth, entitlements: entitlements, library: library, backend: backend))
+
         testing.apply(settings: settings, router: router)
     }
 
@@ -61,6 +66,7 @@ struct GenesisApp: App {
                 .environment(auth)
                 .environment(sync)
                 .environment(entitlements)
+                .environment(assistant)
         }
         .modelContainer(modelContainer)
     }

@@ -6,6 +6,7 @@ struct ReaderControls: View {
     let showsCompanionToggle: Bool
     let onChapterPicker: () -> Void
     let onSettings: () -> Void
+    let onStudy: () -> Void
     let onToggleCompanion: () -> Void
 
     @Environment(ReaderViewModel.self) private var reader
@@ -67,6 +68,9 @@ struct ReaderControls: View {
                 }
                 .sensoryFeedback(.selection, trigger: bookmarked)
                 .accessibilityIdentifier("reader.bookmark")
+
+                iconButton("sparkles", label: "Study this chapter", action: onStudy)
+                    .accessibilityIdentifier("reader.study")
 
                 iconButton("textformat.size", label: "Reading settings", action: onSettings)
                     .accessibilityIdentifier("reader.settings")
