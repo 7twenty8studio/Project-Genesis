@@ -7,9 +7,10 @@
 #   ./Scripts/build.sh              build, unit tests, launch in the Simulator
 #   ./Scripts/build.sh --open       same, then open the project in Xcode
 #   ./Scripts/build.sh --no-tests   build and launch only
-#   ./Scripts/build.sh --ui         also run the UI tests on iPhone Duo, iPhone and iPad
-#   ./Scripts/build.sh --ui-full    UI tests again with large text, dark theme and
-#                                   scroll mode, plus a launch-time measurement
+#   ./Scripts/build.sh --ui         also run the UI tests: iPhone Duo (folded and open),
+#                                   iPhone Pro (portrait and landscape) and iPad
+#   ./Scripts/build.sh --ui-full    also the open Duo in landscape, large text, dark
+#                                   theme, scroll mode, page curl and launch time
 #   SIMULATOR="iPhone 17 Pro" ./Scripts/build.sh   use a specific simulator
 set -uo pipefail
 cd "$(dirname "$0")/.."
@@ -130,21 +131,36 @@ if [ "$BUILD_STATUS" -eq 0 ]; then
     xcrun simctl install "$SIM_ID" "$APP" && xcrun simctl launch "$SIM_ID" "$BUNDLE_ID" >/dev/null
 fi
 
-# 6. UI tests on several simulators at once.
+# 6. UI tests. Each pass runs the suite on a set of simulators in one posture
+#    and orientation:
+#      duo = iPhone Duo, pro = iPhone Pro, ipad = iPad
+#      posture = the Duo's hinge (folded or open), orientation = portrait or landscape
 UI_STATUS=0
-UI_SUMMARY=""
 if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
-    UI_DEVICES=()
-    for pattern in "\|iPhone Duo$" "\|iPhone [0-9]+ Pro$" "\|iPad"; do
-        match=$(echo "$DESTINATIONS" | grep -m1 -E "$pattern")
-        if [ -n "$match" ]; then
-            UI_DEVICES+=("-destination" "id=${match%%|*}")
-            UI_SUMMARY="$UI_SUMMARY ${match##*|},"
-        fi
-    done
-    echo
-    echo "UI tests on:${UI_SUMMARY%,}"
+    sim_id() { echo "$DESTINATIONS" | grep -m1 -E "$1" | cut -d'|' -f1; }
+    sim_name() { echo "$DESTINATIONS" | grep -m1 -E "$1" | cut -d'|' -f3; }
+    DUO_ID=$(sim_id "\|iPhone Duo$");            DUO_NAME=$(sim_name "\|iPhone Duo$")
+    PRO_ID=$(sim_id "\|iPhone [0-9]+ Pro$");     PRO_NAME=$(sim_name "\|iPhone [0-9]+ Pro$")
+    IPAD_ID=$(sim_id "\|iPad");                  IPAD_NAME=$(sim_name "\|iPad")
 
+    # Name | devices | Duo posture | orientation | extra launch arguments
+    PASSES=(
+        "Standard|duo pro ipad|folded|portrait|"
+        "Duo open|duo|open|portrait|"
+        "Landscape|duo pro|folded|landscape|"
+    )
+    if [ "$UI_TESTS" = full ]; then
+        PASSES+=(
+            "Duo open landscape|duo|open|landscape|"
+            "Large text|duo pro ipad|folded|portrait|-UIPreferredContentSizeCategoryName UICTContentSizeCategoryAccessibilityL"
+            "Slate theme|duo pro ipad|folded|portrait|-uiTestingTheme slate"
+            "Scroll mode|duo pro ipad|folded|portrait|-uiTestingReadingMode scroll"
+            "Page curl|duo pro ipad|folded|portrait|-uiTestingPageTurn curl"
+        )
+    fi
+
+    echo
+    echo "UI tests on: ${DUO_NAME:-no iPhone Duo}, ${PRO_NAME:-no iPhone Pro}, ${IPAD_NAME:-no iPad}"
     echo "Building UI tests..."
     xcodebuild -project Genesis.xcodeproj -scheme GenesisUITests \
         -destination "generic/platform=iOS Simulator" -derivedDataPath "$DERIVED" \
@@ -152,31 +168,60 @@ if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
     UI_BUILD_STATUS=${PIPESTATUS[0]}
     UI_STATUS=$UI_BUILD_STATUS
 
-    # Each pass: a name and the extra launch arguments the tests pass to the app.
-    PASSES=("Standard|")
-    if [ "$UI_TESTS" = full ]; then
-        PASSES+=(
-            "Large text|-UIPreferredContentSizeCategoryName UICTContentSizeCategoryAccessibilityL"
-            "Slate theme|-uiTestingTheme slate"
-            "Scroll mode|-uiTestingReadingMode scroll"
-            "Page curl|-uiTestingPageTurn curl"
-        )
-    fi
+    DUO_POSTURE=""
+    set_duo_posture() {
+        [ -z "$DUO_ID" ] && return 1
+        [ "$DUO_POSTURE" = "$1" ] && return 0
+        if ./Scripts/duo_hinge.sh "$DUO_ID" "$1"; then
+            DUO_POSTURE=$1
+            return 0
+        fi
+        DUO_POSTURE=""
+        return 1
+    }
 
     mkdir -p build/TestResults
     for pass in "${PASSES[@]}"; do
         # A failed build stops everything; failed tests don't stop later passes.
         [ "$UI_BUILD_STATUS" -ne 0 ] && break
-        NAME=${pass%%|*}
-        ARGS=${pass#*|}
-        RESULT="build/TestResults/UI-$(echo "$NAME" | tr ' ' '-').xcresult"
+        IFS='|' read -r NAME DEVICES POSTURE ORIENTATION ARGS <<< "$pass"
+
+        DESTS=()
+        for device in $DEVICES; do
+            case "$device" in
+                duo) [ -n "$DUO_ID" ] && DESTS+=("-destination" "id=$DUO_ID") ;;
+                pro) [ -n "$PRO_ID" ] && DESTS+=("-destination" "id=$PRO_ID") ;;
+                ipad) [ -n "$IPAD_ID" ] && DESTS+=("-destination" "id=$IPAD_ID") ;;
+            esac
+        done
+
+        # Fold or unfold the Duo for this pass. A Duo-only pass that can't get
+        # the right posture is skipped rather than run in the wrong one.
+        EXPECT_POSTURE=""
+        if [[ " $DEVICES " == *" duo "* ]] && [ -n "$DUO_ID" ]; then
+            if set_duo_posture "$POSTURE"; then
+                [ "$DEVICES" = duo ] && EXPECT_POSTURE=$POSTURE
+            elif [ "$DEVICES" = duo ]; then
+                echo "UI pass: $NAME... skipped (couldn't set the iPhone Duo to $POSTURE)"
+                continue
+            fi
+        fi
+        if [ ${#DESTS[@]} -eq 0 ]; then
+            echo "UI pass: $NAME... skipped (no matching simulator)"
+            continue
+        fi
+
+        SLUG=$(echo "$NAME" | tr ' ' '-')
+        RESULT="build/TestResults/UI-$SLUG.xcresult"
         rm -rf "$RESULT"
         echo "UI pass: $NAME..."
         PERF=0
         [ "$UI_TESTS" = full ] && [ "$NAME" = Standard ] && PERF=1
-        TEST_RUNNER_GENESIS_UI_ARGS="$ARGS" TEST_RUNNER_GENESIS_PERF="$PERF" xcodebuild \
+        TEST_RUNNER_GENESIS_UI_ARGS="$ARGS" TEST_RUNNER_GENESIS_PERF="$PERF" \
+        TEST_RUNNER_GENESIS_ORIENTATION="$ORIENTATION" TEST_RUNNER_GENESIS_POSTURE="$EXPECT_POSTURE" \
+        xcodebuild \
             -project Genesis.xcodeproj -scheme GenesisUITests \
-            "${UI_DEVICES[@]}" -derivedDataPath "$DERIVED" \
+            "${DESTS[@]}" -derivedDataPath "$DERIVED" \
             -parallel-testing-enabled NO \
             -retry-tests-on-failure -test-iterations 2 \
             -resultBundlePath "$RESULT" \
@@ -185,7 +230,7 @@ if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
         PASS_STATUS=${PIPESTATUS[0]}
         if [ "$PASS_STATUS" -ne 0 ]; then
             UI_STATUS=$PASS_STATUS
-            FAILURES="build/TestResults/UI-$(echo "$NAME" | tr ' ' '-')-failures.txt"
+            FAILURES="build/TestResults/UI-$SLUG-failures.txt"
             python3 Scripts/ui_failures.py "$RESULT" > "$FAILURES" 2>/dev/null
             if [ -s "$FAILURES" ]; then
                 echo "   Failures ($NAME):"
@@ -194,7 +239,7 @@ if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
             fi
             # Save the screenshots XCTest took at each failure, so they can be
             # sent back without opening Xcode.
-            SHOTS="build/TestResults/UI-$(echo "$NAME" | tr ' ' '-')-screenshots"
+            SHOTS="build/TestResults/UI-$SLUG-screenshots"
             rm -rf "$SHOTS" "$SHOTS.zip"
             if xcrun xcresulttool export attachments --path "$RESULT" --output-path "$SHOTS" --only-failures >/dev/null 2>&1 \
                 && [ -n "$(ls -A "$SHOTS" 2>/dev/null)" ]; then
@@ -205,6 +250,9 @@ if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
             fi
         fi
     done
+
+    # Leave the Duo folded, the way it starts.
+    [ "$DUO_POSTURE" = open ] && set_duo_posture folded >/dev/null
 fi
 
 grep -E "error:" build.log | sort -u > build-errors.txt

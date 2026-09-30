@@ -41,13 +41,25 @@ notes, bookmarks, search and reading settings. Each test starts from a clean
 slate (a `-uiTesting` launch flag wipes settings and keeps notes in memory).
 
 ```bash
-./Scripts/build.sh --ui        # iPhone Duo, iPhone Pro and iPad, in parallel
-./Scripts/build.sh --ui-full   # plus passes with large text, Slate theme,
-                               # scroll mode and page curl, and launch timing
+./Scripts/build.sh --ui        # the passes below
+./Scripts/build.sh --ui-full   # plus the open Duo in landscape, large text,
+                               # Slate theme, scroll mode, page curl, launch timing
 ```
 
-Results are saved in `build/TestResults/*.xcresult`. Double-click one to see
-each test in Xcode, with screenshots of any failure.
+| Pass | Simulators | iPhone Duo | Orientation |
+|---|---|---|---|
+| Standard | iPhone Duo, iPhone Pro, iPad | folded | portrait |
+| Duo open | iPhone Duo | open | portrait |
+| Landscape | iPhone Duo, iPhone Pro | folded | landscape |
+
+The script folds and unfolds the Duo itself (`Scripts/duo_hinge.sh`, which
+sends the same event as the fold buttons in the Simulator; you don't need to
+touch it). Tests check the screen shape at launch, so a pass never quietly runs
+in the wrong posture or orientation.
+
+Results are saved in `build/TestResults/`: an `.xcresult` per pass (double-click
+to open in Xcode), and for any pass with failures a `-failures.txt` and a
+`-screenshots.zip` with the screen at each failure.
 
 In Xcode, choose the **GenesisUITests** scheme and press **⌘U** to run them on
 the selected simulator. The **Genesis** scheme's ⌘U runs only the fast unit tests.

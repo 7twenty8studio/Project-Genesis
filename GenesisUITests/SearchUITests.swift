@@ -5,8 +5,8 @@ final class SearchUITests: XCTestCase {
     @MainActor
     private func search(_ text: String, in app: XCUIApplication) {
         Genesis.openTab("Search", in: app)
-        let field = app.searchFields.firstMatch
-        XCTAssertTrue(field.waitForExistence(timeout: Genesis.timeout))
+        let field = Genesis.searchField(in: app)
+        XCTAssertTrue(field.exists)
         field.tap()
         field.typeText(text)
     }

@@ -36,7 +36,7 @@ final class StudyUITests: XCTestCase {
         XCTAssertTrue(body.waitForExistence(timeout: Genesis.timeout), "The note editor opens")
         body.tap()
         body.typeText("Born of water and the Spirit")
-        app.buttons["note.done"].tap()
+        Genesis.tapToolbarButton("note.done", in: app)
 
         Genesis.openTab("Library", in: app)
         app.buttons["Notes"].firstMatch.tap()

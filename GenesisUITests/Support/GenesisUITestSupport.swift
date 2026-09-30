@@ -22,10 +22,24 @@ enum Genesis {
 
     static var isScrollPass: Bool { passArguments.contains("scroll") }
 
+    /// "landscape" when this pass runs with the device turned sideways
+    /// (`TEST_RUNNER_GENESIS_ORIENTATION`); portrait otherwise.
+    static var isLandscapePass: Bool {
+        ProcessInfo.processInfo.environment["GENESIS_ORIENTATION"] == "landscape"
+    }
+
+    /// "open" or "folded" when build.sh has set the iPhone Duo's hinge for
+    /// this pass (`TEST_RUNNER_GENESIS_POSTURE`).
+    static var expectedPosture: String? {
+        ProcessInfo.processInfo.environment["GENESIS_POSTURE"]
+    }
+
     /// Launches the app. By default onboarding is skipped and the reader opens
     /// at `verse` (a VerseID raw value, e.g. 43003016 for John 3:16).
     @discardableResult
     static func launch(onboarding: Bool = false, verse: Int? = nil, extra: [String] = []) -> XCUIApplication {
+        // Every launch sets the orientation, so one pass never leaks into the next.
+        XCUIDevice.shared.orientation = isLandscapePass ? .landscapeLeft : .portrait
         let app = XCUIApplication()
         var arguments = ["-uiTesting"]
         if !onboarding { arguments.append("-skipOnboarding") }
@@ -34,8 +48,52 @@ enum Genesis {
         arguments += passArguments
         app.launchArguments = arguments
         app.launch()
+        XCUIDevice.shared.orientation = isLandscapePass ? .landscapeLeft : .portrait
+        checkScreenShape(app)
         if verse != nil { ensureReaderTab(app) }
         return app
+    }
+
+    /// Fails fast if the device isn't in the orientation or posture this pass
+    /// is meant to test, so a pass never silently tests the wrong thing.
+    private static func checkScreenShape(_ app: XCUIApplication) {
+        let window = app.windows.firstMatch
+        guard window.waitForExistence(timeout: launchTimeout) else { return }
+        let size = window.frame.size
+        guard size.width > 0, size.height > 0 else { return }
+        let ratio = min(size.width, size.height) / max(size.width, size.height)
+        if isLandscapePass {
+            XCTAssertGreaterThan(size.width, size.height, "This pass runs in landscape")
+        }
+        switch expectedPosture {
+        case "open":
+            // The unfolded Duo's inner screen is close to square; a folded phone is tall and narrow.
+            XCTAssertGreaterThan(ratio, 0.6, "The iPhone Duo should be unfolded for this pass (window \(size))")
+        case "folded":
+            XCTAssertLessThan(ratio, 0.6, "The iPhone Duo should be folded for this pass (window \(size))")
+        default:
+            break
+        }
+    }
+
+    /// A sheet's search field. iOS tucks the search bar away once a list has
+    /// scrolled, so pull the list down to reveal it if needed.
+    static func searchField(in app: XCUIApplication) -> XCUIElement {
+        let field = app.searchFields.firstMatch
+        if field.waitForExistence(timeout: timeout) { return field }
+        for list in [app.collectionViews.firstMatch, app.tables.firstMatch] where list.exists {
+            list.swipeDown()
+            if field.waitForExistence(timeout: 2) { break }
+        }
+        return field
+    }
+
+    /// Taps a toolbar button such as "settings.done", waiting for it first:
+    /// a sheet's bar can take a moment to settle after the content changes.
+    static func tapToolbarButton(_ identifier: String, in app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {
+        let button = app.buttons.matching(identifier: identifier).firstMatch
+        XCTAssertTrue(button.waitForExistence(timeout: timeout), "\(identifier) is showing", file: file, line: line)
+        button.tap()
     }
 
     /// iPadOS restores the last selected tab when an app relaunches, which can

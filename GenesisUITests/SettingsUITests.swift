@@ -19,7 +19,7 @@ final class SettingsUITests: XCTestCase {
         Genesis.scrollIntoView(scroll, in: app, container: Genesis.settingsList(app))
         XCTAssertTrue(scroll.exists, "The Scroll option is reachable")
         scroll.tap()
-        app.buttons["settings.done"].tap()
+        Genesis.tapToolbarButton("settings.done", in: app)
 
         XCTAssertTrue(app.textViews["reader.scroll"].waitForExistence(timeout: Genesis.timeout), "Reader switches to scroll mode")
     }
@@ -39,7 +39,7 @@ final class SettingsUITests: XCTestCase {
         larger.tap()
         larger.tap()
         XCTAssertTrue(app.staticTexts["21 pt"].waitForExistence(timeout: Genesis.timeout))
-        app.buttons["settings.done"].tap()
+        Genesis.tapToolbarButton("settings.done", in: app)
 
         Genesis.showControls(app)
         app.buttons["reader.settings"].tap()

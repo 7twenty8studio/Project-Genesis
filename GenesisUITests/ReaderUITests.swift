@@ -74,7 +74,7 @@ final class ReaderUITests: XCTestCase {
         XCTAssertTrue(chapterButton.waitForExistence(timeout: Genesis.launchTimeout))
         chapterButton.tap()
 
-        let search = app.searchFields.firstMatch
+        let search = Genesis.searchField(in: app)
         XCTAssertTrue(search.waitForExistence(timeout: Genesis.timeout))
         search.tap()
         search.typeText("Romans")

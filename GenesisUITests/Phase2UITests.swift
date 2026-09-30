@@ -68,7 +68,7 @@ final class Phase2UITests: XCTestCase {
         XCTAssertTrue(title.waitForExistence(timeout: Genesis.timeout))
         title.tap()
         title.typeText("Healing for Grandma")
-        app.buttons["prayer.done"].tap()
+        Genesis.tapToolbarButton("prayer.done", in: app)
 
         let row = Genesis.element(containing: "Healing for Grandma", in: app)
         XCTAssertTrue(row.waitForExistence(timeout: Genesis.timeout), "The prayer is listed")
@@ -77,7 +77,7 @@ final class Phase2UITests: XCTestCase {
         let answered = app.buttons["prayer.markAnswered"]
         XCTAssertTrue(answered.waitForExistence(timeout: Genesis.timeout))
         answered.tap()
-        app.buttons["prayer.done"].tap()
+        Genesis.tapToolbarButton("prayer.done", in: app)
 
         XCTAssertTrue(Genesis.wait { !row.exists }, "It leaves the Praying list")
         app.buttons["Answered"].firstMatch.tap()
@@ -93,7 +93,7 @@ final class Phase2UITests: XCTestCase {
         journal.tap()
         app.buttons["prayer.new"].tap()
         XCTAssertTrue(app.buttons["prayer.done"].waitForExistence(timeout: Genesis.timeout))
-        app.buttons["prayer.done"].tap()
+        Genesis.tapToolbarButton("prayer.done", in: app)
         XCTAssertTrue(Genesis.element(containing: "No prayer requests", in: app).waitForExistence(timeout: Genesis.timeout))
     }
 
