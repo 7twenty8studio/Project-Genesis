@@ -41,9 +41,12 @@ final class Phase3UITests: GenesisUITestCase {
         let settings = app.buttons["reader.settings"]
         XCTAssertTrue(settings.waitForExistence(timeout: Genesis.timeout))
         settings.tap()
+        // The themes are a sideways row at the top of the sheet.
+        XCTAssertTrue(app.buttons["settings.theme.automatic"].waitForExistence(timeout: Genesis.timeout))
         let midnight = app.buttons["settings.theme.midnight"]
-        Genesis.scrollIntoView(midnight, in: app, container: Genesis.settingsList(app))
-        XCTAssertTrue(midnight.waitForExistence(timeout: Genesis.timeout), "Premium themes are shown")
+        let themes = app.scrollViews.containing(.button, identifier: "settings.theme.automatic").firstMatch
+        Genesis.scrollHorizontallyIntoView(midnight, in: themes, in: app)
+        XCTAssertTrue(midnight.exists, "Premium themes are shown")
         XCTAssertTrue(midnight.label.contains("Premium"), "…and marked as Premium")
         midnight.tap()
         XCTAssertTrue(app.buttons["premium.subscribe"].waitForExistence(timeout: Genesis.timeout), "Choosing one opens Premium")
@@ -103,6 +106,9 @@ final class Phase3UITests: GenesisUITestCase {
         openExplore(app, section: "Timeline")
         let jesus = app.buttons["timeline.era.jesus"]
         XCTAssertTrue(jesus.waitForExistence(timeout: Genesis.timeout), "Eras are listed")
+        // The era strip scrolls sideways; later eras start off screen.
+        let strip = app.scrollViews.containing(.button, identifier: "timeline.era.creation").firstMatch
+        Genesis.scrollHorizontallyIntoView(jesus, in: strip, in: app)
         jesus.tap()
 
         let birth = Genesis.button(startingWith: "Birth of Jesus", in: app)

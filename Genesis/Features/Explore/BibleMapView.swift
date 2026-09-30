@@ -46,13 +46,14 @@ struct BibleMapView: View {
             MapCompass()
             MapScaleView()
         }
+        // On the map itself, not the buttons floating over it.
+        .accessibilityIdentifier("map.view")
         .safeAreaInset(edge: .top) { journeyPicker }
         .safeAreaInset(edge: .bottom) {
             if let selected = selectedPlace {
                 placeCard(selected)
             }
         }
-        .accessibilityIdentifier("map.view")
         .task { load() }
     }
 

@@ -200,6 +200,24 @@ enum Genesis {
         }
     }
 
+    /// Scrolls a sideways row (theme picker, era strip) until the element is
+    /// fully on screen.
+    static func scrollHorizontallyIntoView(_ element: XCUIElement, in row: XCUIElement, in app: XCUIApplication, maxSwipes: Int = 8) {
+        let window = app.windows.firstMatch.frame
+        for _ in 0..<maxSwipes {
+            if element.exists {
+                let frame = element.frame
+                if element.isHittable && frame.minX >= window.minX && frame.maxX <= window.maxX { return }
+                let toLeft = frame.maxX <= window.minX + 20
+                let from = row.coordinate(withNormalizedOffset: CGVector(dx: toLeft ? 0.25 : 0.75, dy: 0.5))
+                let to = row.coordinate(withNormalizedOffset: CGVector(dx: toLeft ? 0.75 : 0.25, dy: 0.5))
+                from.press(forDuration: 0.05, thenDragTo: to)
+            } else {
+                row.swipeLeft()
+            }
+        }
+    }
+
     /// A slow drag (no fling) between two heights of an element, as fractions.
     private static func drag(_ element: XCUIElement, from start: CGFloat, to end: CGFloat) {
         let from = element.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: start))

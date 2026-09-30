@@ -22,6 +22,8 @@ struct TimelineBrowser: View {
                         Section {
                             eraHeader(era)
                                 .listRowBackground(palette.surface)
+                                // A List scrolls to rows, not sections, so the era chips target this row.
+                                .id(era.id)
                             ForEach(events[era.id] ?? []) { event in
                                 NavigationLink(value: ExploreRoute.event(event.id)) {
                                     EventRow(event: event)
@@ -29,7 +31,6 @@ struct TimelineBrowser: View {
                                 .listRowBackground(palette.surface)
                             }
                         }
-                        .id(era.id)
                     }
                 }
                 .scrollContentBackground(.hidden)
