@@ -88,18 +88,6 @@ struct ReaderView: View {
                         .accessibilityAction(named: "Show controls") { reader.showsControls = true }
                 }
 
-                if reader.showsControls && !reader.isSelecting {
-                    ReaderControls(
-                        showsCompanionToggle: isWide,
-                        onChapterPicker: { sheet = .chapterPicker },
-                        onSettings: { sheet = .settings },
-                        onToggleCompanion: { showsCompanion.toggle() }
-                    )
-                    .padding(.top, readerSafeArea.top + controlsTopClearance)
-                    .frame(maxHeight: .infinity, alignment: .top)
-                    .transition(.opacity)
-                }
-
                 if reader.isSelecting {
                     SelectionActionBar(
                         onNote: openNoteForSelection,
@@ -112,9 +100,42 @@ struct ReaderView: View {
             }
         }
         .ignoresSafeArea()
+        // The controls live in an overlay that respects the *live* safe area,
+        // so they always clear the status bar, Dynamic Island and camera
+        // cut-outs (the iPhone Duo's camera sits in a corner), whichever of
+        // those is showing right now.
+        .overlay {
+            GeometryReader { overlay in
+                if reader.showsControls && !reader.isSelecting {
+                    ReaderControls(
+                        showsCompanionToggle: isWide,
+                        onChapterPicker: { sheet = .chapterPicker },
+                        onSettings: { sheet = .settings },
+                        onToggleCompanion: { showsCompanion.toggle() }
+                    )
+                    // At least a little below the live safe area, and never
+                    // higher than the stable position (which on iPad clears
+                    // the floating tab bar).
+                    .padding(.top, max(4, readerSafeArea.top + controlsTopClearance - overlay.safeAreaInsets.top))
+                    .frame(maxHeight: .infinity, alignment: .top)
+                    .transition(.opacity)
+                }
+            }
+        }
         .onGeometryChange(for: CGSize.self) { $0.size } action: { _ in
             // Rotation changes which edges have insets.
             windowSafeArea = DeviceScreen.safeAreaInsets
+        }
+        .onChange(of: reader.showsControls) {
+            // Some screens report a smaller top inset while the status bar is
+            // hidden. If a larger one shows up, keep the text clear of it too
+            // (grow only, so the page doesn't reflow every time controls toggle).
+            let live = DeviceScreen.safeAreaInsets
+            if let current = windowSafeArea, live.top > current.top {
+                var grown = current
+                grown.top = live.top
+                windowSafeArea = grown
+            }
         }
     }
 
