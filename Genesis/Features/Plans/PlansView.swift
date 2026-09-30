@@ -150,7 +150,7 @@ struct PlanDetailView: View {
         let store = StudyStore(context: modelContext)
         let scheduled = progress.scheduledDay()
 
-        return ScrollViewReader { proxy in
+        return Group {
             List {
                 Section {
                     VStack(alignment: .leading, spacing: 10) {
@@ -225,7 +225,6 @@ struct PlanDetailView: View {
             .themedScreen()
             .navigationTitle(plan.title)
             .navigationBarTitleDisplayMode(.inline)
-            .onAppear { proxy.scrollTo(max(scheduled - 2, 1), anchor: .top) }
             .confirmationDialog("Restart from today?", isPresented: $confirmRestart, titleVisibility: .visible) {
                 Button("Restart", role: .destructive) { store.restart(enrollment) }
             } message: {

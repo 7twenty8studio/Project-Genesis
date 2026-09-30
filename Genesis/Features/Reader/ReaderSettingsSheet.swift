@@ -98,6 +98,7 @@ struct ReaderSettingsSheet: View {
                     Button("Reset to Defaults", role: .destructive) { settings.reset() }
                 }
             }
+            .accessibilityIdentifier("settings.list")
             .themedScreen()
             .navigationTitle("Reading")
             .navigationBarTitleDisplayMode(.inline)

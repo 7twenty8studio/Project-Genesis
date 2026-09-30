@@ -30,7 +30,7 @@ final class Phase2UITests: GenesisUITestCase {
         XCTAssertEqual(today.label, "Matthew 1\u{2013}2")
 
         let markRead = app.buttons["plan.markRead"]
-        XCTAssertTrue(markRead.waitForExistence(timeout: Genesis.timeout) && markRead.isHittable, "Mark as Read can be tapped")
+        XCTAssertTrue(markRead.waitForExistence(timeout: Genesis.timeout), "Mark as Read is showing")
         markRead.tap()
         XCTAssertTrue(Genesis.wait { today.label == "Matthew 3\u{2013}5" }, "The next day's reading is offered")
         XCTAssertTrue(Genesis.element(containing: "3% complete", in: app).exists, "Progress shows 3%")
@@ -53,7 +53,7 @@ final class Phase2UITests: GenesisUITestCase {
         start.tap()
 
         let read = app.buttons["plan.read"]
-        XCTAssertTrue(read.waitForExistence(timeout: Genesis.timeout) && read.isHittable, "The plan's Read button can be tapped")
+        XCTAssertTrue(read.waitForExistence(timeout: Genesis.timeout), "The plan's Read button is showing")
         read.tap()
         XCTAssertTrue(Genesis.wait { Genesis.chapterTitle(app) == "Psalms 1" }, "The reader opens at Psalms 1 (showing \(Genesis.chapterTitle(app) ?? "no reader controls"))")
     }

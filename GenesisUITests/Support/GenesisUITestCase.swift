@@ -31,8 +31,17 @@ class GenesisUITestCase: XCTestCase {
         return false
     }
 
+    /// Set when the test records a failure. (`testRun.hasSucceeded` isn't
+    /// final until after tearDown, so it can't be used there.)
+    private var didFail = false
+
+    override func record(_ issue: XCTIssue) {
+        didFail = true   // skips aren't issues, so they don't land here
+        super.record(issue)
+    }
+
     override func tearDown() {
-        if let run = testRun, !run.hasSucceeded {
+        if didFail {
             // Synchronous tearDown runs on the main thread. Only plain data
             // crosses to the main actor and back, so `self` stays here.
             let state = MainActor.assumeIsolated { Self.captureFailureState() }

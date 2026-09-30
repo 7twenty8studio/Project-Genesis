@@ -209,7 +209,7 @@ enum Genesis {
 
     /// The reading settings sheet's scrolling list.
     static func settingsList(_ app: XCUIApplication) -> XCUIElement {
-        app.collectionViews.containing(.button, identifier: "settings.theme.automatic").firstMatch
+        app.collectionViews["settings.list"]
     }
 
     /// A button whose label starts with the text, e.g. "Romans" for a "Romans, 16" row.
