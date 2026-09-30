@@ -1,64 +1,74 @@
 import SwiftUI
 
 /// The interactive Bible timeline: eras from Creation to Revelation, with the
-/// events of each. Tap an era to jump to it, an event for its details.
+/// events of each. Tap an era to show just that era, an event for its details.
 struct TimelineBrowser: View {
     @Environment(\.studyData) private var studyData
     @Environment(AppRouter.self) private var router
     @Environment(\.palette) private var palette
     @State private var eras: [Era] = []
     @State private var events: [String: [TimelineEvent]] = [:]
+    /// The era being shown, or nil for the whole timeline.
+    @State private var selectedEra: String?
+
+    private var shownEras: [Era] {
+        guard let selectedEra else { return eras }
+        return eras.filter { $0.id == selectedEra }
+    }
 
     var body: some View {
-        ScrollViewReader { proxy in
-            VStack(spacing: 0) {
-                eraStrip(proxy)
-                List {
-                    Text(StudyRepository.chronologyNote)
-                        .font(.footnote)
-                        .foregroundStyle(palette.secondaryText)
-                        .listRowBackground(Color.clear)
-                    ForEach(eras) { era in
-                        Section {
-                            eraHeader(era)
-                                .listRowBackground(palette.surface)
-                                // A List scrolls to rows, not sections, so the era chips target this row.
-                                .id(era.id)
-                            ForEach(events[era.id] ?? []) { event in
-                                NavigationLink(value: ExploreRoute.event(event.id)) {
-                                    EventRow(event: event)
-                                }
-                                .listRowBackground(palette.surface)
+        VStack(spacing: 0) {
+            eraStrip
+            List {
+                Text(StudyRepository.chronologyNote)
+                    .font(.footnote)
+                    .foregroundStyle(palette.secondaryText)
+                    .listRowBackground(Color.clear)
+                ForEach(shownEras) { era in
+                    Section {
+                        eraHeader(era)
+                            .listRowBackground(palette.surface)
+                        ForEach(events[era.id] ?? []) { event in
+                            NavigationLink(value: ExploreRoute.event(event.id)) {
+                                EventRow(event: event)
                             }
+                            .listRowBackground(palette.surface)
                         }
                     }
                 }
-                .scrollContentBackground(.hidden)
-                .accessibilityIdentifier("timeline.list")
             }
+            .scrollContentBackground(.hidden)
+            // A fresh list per era, so it opens at the top. (Jumping far down a
+            // long lazy list isn't reliable.)
+            .id(selectedEra ?? "all")
+            .accessibilityIdentifier("timeline.list")
         }
         .task { load() }
     }
 
-    private func eraStrip(_ proxy: ScrollViewProxy) -> some View {
+    private var eraStrip: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
+                chip("All", id: "all", selected: selectedEra == nil) { selectedEra = nil }
                 ForEach(eras) { era in
-                    Button(era.title) {
-                        withAnimation { proxy.scrollTo(era.id, anchor: .top) }
-                    }
-                    .font(.subheadline.weight(.medium))
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 7)
-                    .foregroundStyle(palette.text)
-                    .background(palette.surface, in: Capsule())
-                    .buttonStyle(.plain)
-                    .accessibilityIdentifier("timeline.era.\(era.id)")
+                    chip(era.title, id: era.id, selected: selectedEra == era.id) { selectedEra = era.id }
                 }
             }
             .padding(.horizontal, 16)
             .padding(.bottom, 8)
         }
+    }
+
+    private func chip(_ title: String, id: String, selected: Bool, action: @escaping () -> Void) -> some View {
+        Button(title, action: action)
+            .font(.subheadline.weight(.medium))
+            .padding(.horizontal, 12)
+            .padding(.vertical, 7)
+            .foregroundStyle(selected ? palette.background : palette.text)
+            .background(selected ? palette.accent : palette.surface, in: Capsule())
+            .buttonStyle(.plain)
+            .accessibilityAddTraits(selected ? .isSelected : [])
+            .accessibilityIdentifier("timeline.era.\(id)")
     }
 
     private func eraHeader(_ era: Era) -> some View {

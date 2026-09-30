@@ -110,6 +110,7 @@ final class Phase3UITests: GenesisUITestCase {
         let strip = app.scrollViews.containing(.button, identifier: "timeline.era.creation").firstMatch
         Genesis.scrollHorizontallyIntoView(jesus, in: strip, in: app)
         jesus.tap()
+        XCTAssertTrue(Genesis.wait { jesus.isSelected }, "The era is shown on its own")
 
         let birth = Genesis.button(startingWith: "Birth of Jesus", in: app)
         Genesis.scrollIntoView(birth, in: app)

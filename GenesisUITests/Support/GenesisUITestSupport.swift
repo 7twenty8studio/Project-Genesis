@@ -207,7 +207,10 @@ enum Genesis {
         for _ in 0..<maxSwipes {
             if element.exists {
                 let frame = element.frame
-                if element.isHittable && frame.minX >= window.minX && frame.maxX <= window.maxX { return }
+                // Check the position first: asking an off-screen element if it's
+                // hittable is itself an error.
+                let onScreen = frame.minX >= window.minX && frame.maxX <= window.maxX
+                if onScreen && element.isHittable { return }
                 let toLeft = frame.maxX <= window.minX + 20
                 let from = row.coordinate(withNormalizedOffset: CGVector(dx: toLeft ? 0.25 : 0.75, dy: 0.5))
                 let to = row.coordinate(withNormalizedOffset: CGVector(dx: toLeft ? 0.75 : 0.25, dy: 0.5))
