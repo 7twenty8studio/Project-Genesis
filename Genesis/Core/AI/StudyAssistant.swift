@@ -197,7 +197,6 @@ struct EdgeFunctionBackend: StudyAssistantBackend {
         let action: String
         let start: Int
         let end: Int
-        let reference: String
         let text: String
         let signedTransaction: String?
     }
@@ -216,7 +215,6 @@ struct EdgeFunctionBackend: StudyAssistantBackend {
             action: action.rawValue,
             start: passage.start.rawValue,
             end: passage.end.rawValue,
-            reference: passage.title.replacingOccurrences(of: "\u{2013}", with: "-"),
             text: text,
             signedTransaction: signedTransaction
         ))

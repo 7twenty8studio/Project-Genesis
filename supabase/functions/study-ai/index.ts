@@ -1,14 +1,15 @@
 // study-ai: the Genesis study assistant.
 //
 // POST /functions/v1/study-ai with the user's access token and
-//   { action, start, end, reference, text, signedTransaction? }
+//   { action, start, end, text, signedTransaction? }
 // returns
 //   { content, cached, tier, usedToday, limit, model }
 //
 // - Uses Claude Haiku 4.5 through the Anthropic API. The API key is the
 //   ANTHROPIC_API_KEY secret; it never ships in the app.
 // - Answers are cached per passage and action and shared by everyone, so each
-//   is paid for once.
+//   is paid for once. Only server-built values go into the prompt, so a
+//   modified app can't plant content in the shared cache.
 // - Never returns Scripture: the prompt forbids quoting and removeQuotes()
 //   strips any run of six or more words from the passage. The app shows verse
 //   text from its own database and labels this content as AI-generated.
@@ -19,7 +20,9 @@ import {
   buildUserMessage,
   cacheKey,
   decideAccess,
+  FREE_DAILY_LIMIT,
   MODEL,
+  PREMIUM_DAILY_LIMIT,
   parseRequest,
   removeQuotes,
   RequestError,
@@ -36,8 +39,13 @@ const ANTHROPIC_API_KEY = Deno.env.get("ANTHROPIC_API_KEY");
 const BUNDLE_ID = Deno.env.get("GENESIS_BUNDLE_ID") ?? "com.7twenty8studio.genesis";
 // Development only: accept purchases made with Xcode's local StoreKit testing.
 const ALLOW_XCODE_STOREKIT = Deno.env.get("ALLOW_XCODE_STOREKIT") === "true";
+if (ALLOW_XCODE_STOREKIT) {
+  console.warn("ALLOW_XCODE_STOREKIT is on: Xcode test purchases unlock Premium. Remove this secret before release.");
+}
 const PRODUCT_IDS = ["com.7twenty8studio.genesis.premium.monthly", "com.7twenty8studio.genesis.premium.yearly"];
 const APPLE_ROOT_URL = "https://www.apple.com/certificateauthority/AppleRootCA-G3.cer";
+/** A saved subscription is re-verified at least this often, so a refund ends it. */
+const REVERIFY_AFTER_MS = 7 * 24 * 60 * 60 * 1000;
 
 const admin = createClient(SUPABASE_URL, SERVICE_ROLE_KEY, { auth: { persistSession: false } });
 let appleRoot: Uint8Array | undefined;
@@ -63,30 +71,42 @@ Deno.serve(async (req) => {
     // 3. Free or Premium?
     const tier = await tierFor(userID, signedTransaction);
 
-    // 4. Allowed today? Free counts every answer; Premium counts new ones only.
+    // 4. Is this tool included? (Limits are reserved below, in one database step.)
     const day = new Date().toISOString().slice(0, 10);
-    const usedToday = await usage(userID, day);
-    const access = decideAccess(tier, request.action, usedToday);
+    const limit = tier === "free" ? FREE_DAILY_LIMIT : PREMIUM_DAILY_LIMIT;
+    const access = decideAccess(tier, request.action, 0);
     if (!access.allowed) {
-      const message = access.reason === "premium_required"
-        ? "This study tool is part of Genesis Premium."
-        : `You've used today's ${access.limit} study assistant answers. They reset tomorrow.`;
-      return json({ error: message, reason: access.reason, tier, usedToday, limit: access.limit }, 403);
+      return json({ error: "This study tool is part of Genesis Premium.", reason: access.reason, tier, limit }, 403);
     }
+    const overLimit = () =>
+      json({ error: `You've used today's ${limit} study assistant answers. They reset tomorrow.`, reason: "daily_limit", tier, usedToday: limit, limit }, 403);
 
-    // 5. Cached?
+    // 5. Cached? Free accounts count every answer; Premium counts new ones only.
     const key = cacheKey(request);
     const { data: cached } = await admin.from("ai_cache").select("content").eq("key", key).maybeSingle();
     if (cached) {
-      const used = tier === "free" ? await countUsage(userID, day) : usedToday;
-      return json({ content: cached.content, cached: true, tier, usedToday: used, limit: access.limit, model: MODEL });
+      let used: number | undefined;
+      if (tier === "free") {
+        used = await reserve(userID, day, limit);
+        if (used < 0) return overLimit();
+      }
+      return json({ content: cached.content, cached: true, tier, usedToday: used, limit, model: MODEL });
     }
 
-    // 6. Ask the model.
+    // 6. Reserve one answer, then ask the model; give it back if that fails.
     if (!ANTHROPIC_API_KEY) return json({ error: "The study assistant isn't set up yet." }, 503);
-    const raw = await askClaude(buildUserMessage(request));
-    const { text: content, removed } = removeQuotes(raw, request.text, request.reference);
-    if (removed > 0) console.log(`Removed ${removed} quoted passage(s) from ${key}`);
+    const used = await reserve(userID, day, limit);
+    if (used < 0) return overLimit();
+    let content: string;
+    try {
+      const raw = await askClaude(buildUserMessage(request));
+      const cleaned = removeQuotes(raw, request.text, request.reference);
+      if (cleaned.removed > 0) console.log(`Removed ${cleaned.removed} quoted passage(s) from ${key}`);
+      content = cleaned.text;
+    } catch (error) {
+      await admin.rpc("release_ai_usage", { p_user: userID, p_day: day });
+      throw error;
+    }
 
     await admin.from("ai_cache").upsert({
       key,
@@ -96,8 +116,7 @@ Deno.serve(async (req) => {
       content,
       model: MODEL,
     });
-    const used = await countUsage(userID, day);
-    return json({ content, cached: false, tier, usedToday: used, limit: access.limit, model: MODEL });
+    return json({ content, cached: false, tier, usedToday: used, limit, model: MODEL });
   } catch (error) {
     if (error instanceof RequestError) return json({ error: error.message }, error.status);
     console.error(error);
@@ -105,56 +124,89 @@ Deno.serve(async (req) => {
   }
 });
 
-/** Premium if a recently verified subscription is on file, or the one sent now verifies. */
+/**
+ * Premium if a subscription verified in the last week is on file, or the one
+ * sent now verifies. Re-verifying weekly means a refund or cancellation ends
+ * Premium here too.
+ */
 async function tierFor(userID: string, signedTransaction?: string): Promise<Tier> {
   const { data: saved } = await admin
     .from("premium_entitlements")
-    .select("expires_at")
+    .select("expires_at, updated_at")
     .eq("user_id", userID)
     .maybeSingle();
-  if (saved && new Date(saved.expires_at) > new Date()) return "premium";
-  if (!signedTransaction) return "free";
+  const now = Date.now();
+  const savedIsCurrent = saved && new Date(saved.expires_at).getTime() > now &&
+    now - new Date(saved.updated_at).getTime() < REVERIFY_AFTER_MS;
+  if (savedIsCurrent && !signedTransaction) return "premium";
+  if (!signedTransaction) {
+    if (saved) await admin.from("premium_entitlements").delete().eq("user_id", userID);
+    return "free";
+  }
 
   try {
-    appleRoot ??= new Uint8Array(await (await fetch(APPLE_ROOT_URL)).arrayBuffer());
+    const root = await appleRootCertificate();
     const transaction = await verifyTransaction(signedTransaction, {
-      appleRoot,
+      appleRoot: root,
       bundleId: BUNDLE_ID,
       productIds: PRODUCT_IDS,
       now: new Date(),
       allowXcode: ALLOW_XCODE_STOREKIT,
     });
-    // A purchase made while signed in carries the account id; it must match.
-    if (transaction.appAccountToken && transaction.appAccountToken !== userID.toLowerCase()) return "free";
-    // One subscription unlocks one account: the first to present it keeps it.
-    const { data: owner } = await admin
-      .from("premium_entitlements")
-      .select("user_id")
-      .eq("original_transaction_id", transaction.originalTransactionId)
-      .maybeSingle();
-    if (owner && owner.user_id !== userID) return "free";
-    await admin.from("premium_entitlements").upsert({
+    // Family members sharing a subscription carry the purchaser's details, so
+    // the account checks below apply only to the purchaser.
+    let ownershipKey = transaction.originalTransactionId;
+    if (transaction.familyShared) {
+      ownershipKey = `${transaction.originalTransactionId}:family:${userID}`;
+    } else {
+      // A purchase made while signed in carries the account id; it must match.
+      if (transaction.appAccountToken && transaction.appAccountToken !== userID.toLowerCase()) return "free";
+      // One subscription unlocks one account: the first to present it keeps it.
+      const { data: owner } = await admin
+        .from("premium_entitlements")
+        .select("user_id")
+        .eq("original_transaction_id", ownershipKey)
+        .maybeSingle();
+      if (owner && owner.user_id !== userID) return "free";
+    }
+    const { error } = await admin.from("premium_entitlements").upsert({
       user_id: userID,
-      original_transaction_id: transaction.originalTransactionId,
+      original_transaction_id: ownershipKey,
       product_id: transaction.productId,
       environment: transaction.environment,
       expires_at: new Date(transaction.expiresDate!).toISOString(),
+      updated_at: new Date().toISOString(),
     });
+    // A unique clash means another account claimed it at the same moment.
+    if (error) return "free";
     return "premium";
   } catch (error) {
-    if (!(error instanceof VerificationError)) console.error(error);
-    return "free";
+    if (error instanceof VerificationError) {
+      // Expired, refunded or not valid: whatever was saved no longer applies.
+      if (saved) await admin.from("premium_entitlements").delete().eq("user_id", userID);
+      return "free";
+    }
+    // Couldn't check right now (e.g. Apple's certificate didn't download):
+    // keep a recent verification rather than locking a subscriber out.
+    console.error(error);
+    return savedIsCurrent ? "premium" : "free";
   }
 }
 
-async function usage(userID: string, day: string): Promise<number> {
-  const { data } = await admin.from("ai_usage").select("count").eq("user_id", userID).eq("day", day).maybeSingle();
-  return data?.count ?? 0;
+/** Apple Root CA - G3, downloaded once per instance; a failed download is retried next time. */
+async function appleRootCertificate(): Promise<Uint8Array> {
+  if (appleRoot) return appleRoot;
+  const response = await fetch(APPLE_ROOT_URL);
+  if (!response.ok) throw new Error(`Apple root certificate: HTTP ${response.status}`);
+  const bytes = new Uint8Array(await response.arrayBuffer());
+  if (bytes.length < 400 || bytes[0] !== 0x30) throw new Error("Apple root certificate: unexpected download");
+  appleRoot = bytes;
+  return bytes;
 }
 
-/** Records one answer and returns the new total for the day. */
-async function countUsage(userID: string, day: string): Promise<number> {
-  const { data, error } = await admin.rpc("increment_ai_usage", { p_user: userID, p_day: day });
+/** Reserves one of today's answers: the new count, or -1 at the limit. */
+async function reserve(userID: string, day: string, limit: number): Promise<number> {
+  const { data, error } = await admin.rpc("reserve_ai_usage", { p_user: userID, p_day: day, p_limit: limit });
   if (error) throw error;
   return data as number;
 }

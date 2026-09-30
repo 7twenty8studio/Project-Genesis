@@ -81,8 +81,10 @@ struct StudyAssistantTests {
     @Test func referencesBecomeReaderLinks() {
         let linked = StudyText.linked("Compare [[John 3:16]] and [[Rom 8:28-30]]; not [[Hezekiah 1:1]].")
         #expect(linked == "Compare [John 3:16](genesis://read/43003016) and [Rom 8:28-30](genesis://read/45008028); not Hezekiah 1:1.")
+        let outside = StudyText.linked("See [a website](https://example.com).")
+        #expect(outside == "See a website.", "Only verse links are kept")
         let styled = StudyText.attributed("**Meaning** of [[John 3:16]]")
-        let links = styled.runs.compactMap(\.link)
+        let links = styled.runs.compactMap { $0.link }
         #expect(links == [URL(string: "genesis://read/43003016")!])
         #expect(String(styled.characters) == "Meaning of John 3:16")
     }

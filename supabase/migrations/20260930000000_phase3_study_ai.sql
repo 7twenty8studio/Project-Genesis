@@ -53,22 +53,47 @@ begin
 end;
 $$;
 
--- Adds one to today's count and returns the new total, in one step so
--- simultaneous requests can't both slip under the limit.
-create or replace function public.increment_ai_usage(p_user uuid, p_day date)
+-- Reserves one answer for today if the person is under the limit and returns
+-- the new count, or -1 at the limit. The update locks the row, so requests
+-- made at the same moment can't all slip under the limit.
+create or replace function public.reserve_ai_usage(p_user uuid, p_day date, p_limit integer)
 returns integer
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  new_count integer;
+begin
+  insert into public.ai_usage (user_id, day, count)
+  values (p_user, p_day, 0)
+  on conflict (user_id, day) do nothing;
+
+  update public.ai_usage
+  set count = count + 1
+  where user_id = p_user and day = p_day and count < p_limit
+  returning count into new_count;
+
+  return coalesce(new_count, -1);
+end;
+$$;
+
+-- Gives a reserved answer back when the model couldn't answer.
+create or replace function public.release_ai_usage(p_user uuid, p_day date)
+returns void
 language sql
 security definer
 set search_path = ''
 as $$
-  insert into public.ai_usage (user_id, day, count)
-  values (p_user, p_day, 1)
-  on conflict (user_id, day) do update set count = public.ai_usage.count + 1
-  returning count;
+  update public.ai_usage set count = greatest(count - 1, 0) where user_id = p_user and day = p_day;
 $$;
 
--- Only the Edge Function (service role) may call it.
-revoke all on function public.increment_ai_usage(uuid, date) from public;
-revoke all on function public.increment_ai_usage(uuid, date) from anon;
-revoke all on function public.increment_ai_usage(uuid, date) from authenticated;
-grant execute on function public.increment_ai_usage(uuid, date) to service_role;
+-- Only the Edge Function (service role) may call them.
+revoke all on function public.reserve_ai_usage(uuid, date, integer) from public;
+revoke all on function public.reserve_ai_usage(uuid, date, integer) from anon;
+revoke all on function public.reserve_ai_usage(uuid, date, integer) from authenticated;
+grant execute on function public.reserve_ai_usage(uuid, date, integer) to service_role;
+revoke all on function public.release_ai_usage(uuid, date) from public;
+revoke all on function public.release_ai_usage(uuid, date) from anon;
+revoke all on function public.release_ai_usage(uuid, date) from authenticated;
+grant execute on function public.release_ai_usage(uuid, date) to service_role;

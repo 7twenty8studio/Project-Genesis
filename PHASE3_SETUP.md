@@ -90,8 +90,15 @@ Xcode's local test signatures.
 - The app shows the Scripture from its own database and the answer in a
   separate card labelled **AI-generated study notes · not Scripture**.
 - Premium is checked on the server by verifying the App Store's signed
-  transaction against Apple's root certificate. One subscription unlocks one
-  account.
+  transaction against Apple's root certificate, and re-checked at least weekly
+  so a refund or cancellation ends it. One subscription unlocks one account,
+  plus family members through Family Sharing. TestFlight (sandbox) purchases
+  are accepted, so testers can try Premium.
+- Only the passage reference (built on the server) and the task go into the
+  prompt, and answers can't contain links, so a modified app can't plant
+  content in the shared cache.
+- Daily limits are reserved in one database step before the model is called,
+  so simultaneous requests can't exceed them; a failed answer isn't counted.
 - Cost: roughly $0.003 per new answer. Cached answers cost nothing, and each
   device also keeps the answers it has already seen.
 

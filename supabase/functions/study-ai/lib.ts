@@ -32,10 +32,33 @@ export interface StudyRequest {
   /** VerseID raw values: book*1_000_000 + chapter*1_000 + verse. */
   start: number;
   end: number;
-  /** e.g. "John 3:16-18", shown to the model and used when removing quotes. */
+  /** Built on the server from start and end, e.g. "John 3:16-18". Nothing
+   * the app sends is put into the prompt, so a modified app can't steer the
+   * answers everyone shares. */
   reference: string;
-  /** The passage text the reader is looking at, for context only. */
+  /** The passage text the app shows, used only to remove quotes from the
+   * answer (never sent to the model). */
   text: string;
+}
+
+const BOOKS = [
+  "Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Joshua", "Judges", "Ruth", "1 Samuel", "2 Samuel",
+  "1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles", "Ezra", "Nehemiah", "Esther", "Job", "Psalms", "Proverbs",
+  "Ecclesiastes", "Song of Solomon", "Isaiah", "Jeremiah", "Lamentations", "Ezekiel", "Daniel", "Hosea", "Joel", "Amos",
+  "Obadiah", "Jonah", "Micah", "Nahum", "Habakkuk", "Zephaniah", "Haggai", "Zechariah", "Malachi",
+  "Matthew", "Mark", "Luke", "John", "Acts", "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians",
+  "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians", "1 Timothy", "2 Timothy", "Titus", "Philemon",
+  "Hebrews", "James", "1 Peter", "2 Peter", "1 John", "2 John", "3 John", "Jude", "Revelation",
+];
+
+/** "John 3:16", "John 3:16-18", "Genesis 1:1-2:25". */
+export function referenceFor(start: number, end: number): string {
+  const book = BOOKS[Math.floor(start / 1_000_000) - 1];
+  const [c1, v1] = [Math.floor(start / 1_000) % 1_000, start % 1_000];
+  const [c2, v2] = [Math.floor(end / 1_000) % 1_000, end % 1_000];
+  if (start === end) return `${book} ${c1}:${v1}`;
+  if (c1 === c2) return `${book} ${c1}:${v1}-${v2}`;
+  return `${book} ${c1}:${v1}-${c2}:${v2}`;
 }
 
 export class RequestError extends Error {
@@ -62,10 +85,8 @@ export function parseRequest(body: unknown): StudyRequest {
   if (Math.floor(end / 1_000_000) !== book) throw new RequestError("A passage must be within one book.");
   const chapters = Math.floor(end / 1_000) - Math.floor(start / 1_000);
   if (chapters > 2) throw new RequestError("Choose up to three chapters at a time.");
-  const reference = typeof b.reference === "string" ? b.reference.trim().slice(0, 80) : "";
-  if (!reference) throw new RequestError("Missing reference.");
   const text = typeof b.text === "string" ? b.text.slice(0, MAX_TEXT_LENGTH) : "";
-  return { action: action as Action, start, end, reference, text };
+  return { action: action as Action, start, end, reference: referenceFor(start, end), text };
 }
 
 function isVerseID(value: number): boolean {
@@ -117,11 +138,9 @@ const TASKS: Record<Action, string> = {
   comprehension: "Write 5 reading comprehension questions about what this passage says, as a numbered list. After the list, under a bold heading **Answers**, give a short answer to each, pointing to the verse by reference.",
 };
 
+/** Only server-built values go into the prompt. */
 export function buildUserMessage(request: StudyRequest): string {
-  const passage = request.text
-    ? `\n\nPassage text, for your reference only. Do not quote it:\n"""\n${request.text}\n"""`
-    : "";
-  return `Passage: ${request.reference}${passage}\n\nTask: ${TASKS[request.action]}`;
+  return `Passage: ${request.reference}\n\nTask: ${TASKS[request.action]}`;
 }
 
 // ---------------------------------------------------------------------------
@@ -134,12 +153,32 @@ function words(text: string): string[] {
 }
 
 /**
- * Replaces any run of six or more consecutive words that also appear, in
- * order, in the passage text with a pointer to the passage. A safety net: the
- * prompt already forbids quoting, and the app always shows verses from its
- * own database.
+ * Safety net for "never return Scripture" (the prompt already forbids
+ * quoting, and the app shows verses from its own database):
+ * - any run of six or more consecutive words that also appears in the passage
+ *   text is replaced with a pointer to the passage, and
+ * - any quoted span of six or more words is removed too, whatever the passage
+ *   text, since answers should never quote at length.
+ * Markdown links are reduced to their text, so answers can't carry links.
  */
 export function removeQuotes(output: string, passageText: string, reference: string): { text: string; removed: number } {
+  const unlinked = output.replace(/\[([^\]\[]+)\]\([^)]*\)/g, "$1");
+  const fromPassage = removePassageRuns(unlinked, passageText, reference);
+  const quoted = removeLongQuotations(fromPassage.text, reference);
+  return { text: quoted.text, removed: fromPassage.removed + quoted.removed };
+}
+
+function removeLongQuotations(output: string, reference: string): { text: string; removed: number } {
+  let removed = 0;
+  const text = output.replace(/["“]([^"“”]+)["”]/g, (match, inner: string) => {
+    if (words(inner).length < QUOTE_RUN) return match;
+    removed += 1;
+    return `(see [[${reference}]])`;
+  });
+  return { text, removed };
+}
+
+function removePassageRuns(output: string, passageText: string, reference: string): { text: string; removed: number } {
   const source = words(passageText);
   if (source.length < QUOTE_RUN) return { text: output, removed: 0 };
   const shingles = new Set<string>();
@@ -181,6 +220,8 @@ export function removeQuotes(output: string, passageText: string, reference: str
 // App Store transactions (StoreKit 2 JWS), verified with Web Crypto.
 
 export interface VerifiedTransaction {
+  /** True when a family member shares the subscription (Family Sharing). */
+  familyShared: boolean;
   bundleId: string;
   productId: string;
   originalTransactionId: string;
@@ -242,6 +283,7 @@ export async function verifyTransaction(jws: string, options: VerifyOptions): Pr
   if (!valid) throw new VerificationError("Signature is invalid.");
 
   const transaction: VerifiedTransaction = {
+    familyShared: payload.inAppOwnershipType === "FAMILY_SHARED",
     bundleId: String(payload.bundleId ?? ""),
     productId: String(payload.productId ?? ""),
     originalTransactionId: String(payload.originalTransactionId ?? ""),

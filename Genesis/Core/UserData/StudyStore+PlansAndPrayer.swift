@@ -42,7 +42,7 @@ extension StudyStore {
 
     /// Prayers with any content (answered ones included).
     func prayerCount() -> Int {
-        let descriptor = FetchDescriptor<Prayer>(predicate: #Predicate { !$0.title.isEmpty || !$0.body.isEmpty })
+        let descriptor = FetchDescriptor<Prayer>(predicate: #Predicate { $0.title != "" || $0.body != "" })
         return (try? context.fetchCount(descriptor)) ?? 0
     }
 

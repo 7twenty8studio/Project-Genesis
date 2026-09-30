@@ -4,13 +4,16 @@ import SwiftUI
 struct StudyAssistantView: View {
     let passage: StudyPassage
     var initialAction: StudyAction = .explain
+    /// False when opened for a whole chapter by a free account, so an answer
+    /// is only fetched (and counted) when asked for.
+    var autoLoads = true
 
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         NavigationStack {
             ScrollView {
-                StudyAssistantContent(passage: passage, initialAction: initialAction, onLeave: { dismiss() })
+                StudyAssistantContent(passage: passage, initialAction: initialAction, autoLoads: autoLoads, onLeave: { dismiss() })
                     .padding(20)
                     .frame(maxWidth: 680)
                     .frame(maxWidth: .infinity)
@@ -71,7 +74,8 @@ struct StudyAssistantContent: View {
             answerSection
         }
         .environment(\.openURL, OpenURLAction { url in
-            guard url.scheme == GenesisLink.scheme else { return .systemAction }
+            // Answers may only link within the app.
+            guard url.scheme == GenesisLink.scheme else { return .discarded }
             onLeave()
             router.handle(url)
             return .handled
@@ -270,12 +274,17 @@ struct StudyAssistantContent: View {
         error = nil
         guard answer == nil, autoLoads || requested == key else { return }
         isLoading = true
-        defer { isLoading = false }
+        defer { if !Task.isCancelled { isLoading = false } }
         do {
-            answer = try await assistant.answer(action, passage: passage)
+            let result = try await assistant.answer(action, passage: passage)
+            guard !Task.isCancelled else { return }
+            answer = result
         } catch let failure as StudyAssistantError {
+            guard !Task.isCancelled else { return }
             error = failure
         } catch {
+            // Switching tools cancels the previous request; that isn't an error.
+            guard !Task.isCancelled, !(error is CancellationError) else { return }
             self.error = .server(error.localizedDescription)
         }
     }
@@ -285,8 +294,10 @@ struct StudyAssistantContent: View {
 /// references written as [[John 3:16]] become links that open the reader.
 enum StudyText {
     static func linked(_ content: String) -> String {
+        // Drop any Markdown link the text already has: only verse links are made here.
+        let plain = content.replacing(/\[([^\]\[]+)\]\([^)]*\)/) { String($0.output.1) }
         var result = ""
-        var rest = Substring(content)
+        var rest = Substring(plain)
         while let open = rest.range(of: "[["), let close = rest[open.upperBound...].range(of: "]]") {
             result += rest[..<open.lowerBound]
             let reference = String(rest[open.upperBound..<close.lowerBound])

@@ -261,7 +261,9 @@ struct ReaderView: View {
         case let .premium(feature):
             PremiumView(highlighted: feature)
         case let .study(passage, action):
-            StudyAssistantView(passage: passage, initialAction: action)
+            // Explaining a selection was asked for; a whole chapter waits for a tap
+            // unless Premium, so a free account's daily answers aren't spent by accident.
+            StudyAssistantView(passage: passage, initialAction: action, autoLoads: action == .explain || entitlements.allows(.advancedAI))
         case let .crossReferences(verse):
             NavigationStack {
                 CrossReferencesView(verse: verse) { target in
