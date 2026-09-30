@@ -136,6 +136,7 @@ fi
 #      duo = iPhone Duo, pro = iPhone Pro, ipad = iPad
 #      posture = the Duo's hinge (folded or open), orientation = portrait or landscape
 UI_STATUS=0
+SKIPPED_PASSES=""
 if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
     sim_id() { echo "$DESTINATIONS" | grep -m1 -E "$1" | cut -d'|' -f1; }
     sim_name() { echo "$DESTINATIONS" | grep -m1 -E "$1" | cut -d'|' -f3; }
@@ -203,11 +204,13 @@ if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
                 EXPECT_POSTURE=$POSTURE    # the tests check it on the Duo only
             elif [ "$DEVICES" = duo ]; then
                 echo "UI pass: $NAME... skipped (couldn't set the iPhone Duo to $POSTURE)"
+                SKIPPED_PASSES="$SKIPPED_PASSES $NAME,"
                 continue
             fi
         fi
         if [ ${#DESTS[@]} -eq 0 ]; then
             echo "UI pass: $NAME... skipped (no matching simulator)"
+            SKIPPED_PASSES="$SKIPPED_PASSES $NAME,"
             continue
         fi
 
@@ -273,6 +276,9 @@ elif [ "$UI_STATUS" -ne 0 ]; then
     echo "   Send the UI-*-failures.txt and UI-*-screenshots.zip files in build/TestResults back to Claude."
 else
     echo "✅ Build succeeded$([ "$RUN_TESTS" = true ] && echo " and all tests passed")$([ "$UI_TESTS" != none ] && echo ", including UI tests")."
+    if [ -n "$SKIPPED_PASSES" ]; then
+        echo "   Not run:${SKIPPED_PASSES%,} (see the messages above)."
+    fi
     rm -f build-errors.txt
 fi
 

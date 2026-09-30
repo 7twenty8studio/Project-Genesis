@@ -1,8 +1,8 @@
 #!/bin/bash
 # Folds or unfolds an iPhone Duo simulator.
 #
-#   ./Scripts/duo_hinge.sh <simulator-id> open      unfold flat (180°)
-#   ./Scripts/duo_hinge.sh <simulator-id> folded    fold closed (0°)
+#   ./Scripts/duo_hinge.sh <simulator-id> open      unfold flat (180 degrees)
+#   ./Scripts/duo_hinge.sh <simulator-id> folded    fold closed (0 degrees)
 #
 # simctl has no fold command, so this runs a tiny helper inside the simulator
 # that sends the same event as the fold buttons in Xcode's Device Hub
@@ -62,7 +62,7 @@ if [ -z "$ACTUAL" ]; then
 fi
 DIFF=$(echo "$ACTUAL $ANGLE" | awk '{ d = $1 - $2; if (d < 0) d = -d; print int(d) }')
 if [ "$DIFF" -gt 10 ]; then
-    echo "duo_hinge: asked for ${ANGLE}°, the simulator reports ${ACTUAL}°" >&2
+    echo "duo_hinge: asked for ${ANGLE} degrees, the simulator reports ${ACTUAL}" >&2
     exit 1
 fi
-echo "duo_hinge: ${POSTURE} (${ACTUAL}°)"
+echo "duo_hinge: ${POSTURE} (${ACTUAL} degrees)"
