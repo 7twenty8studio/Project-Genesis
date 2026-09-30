@@ -16,6 +16,9 @@ final class Phase2UITests: GenesisUITestCase {
         plansCard.tap()
 
         let gospels = app.buttons["plans.start.gospels-30"]
+        XCTAssertTrue(app.buttons["plans.start.one-year"].waitForExistence(timeout: Genesis.timeout), "The plans list opens")
+        // The list is lazy and landscape screens are short: scroll the plan into view first.
+        Genesis.scrollIntoView(gospels, in: app)
         XCTAssertTrue(gospels.waitForExistence(timeout: Genesis.timeout), "The Gospels plan is listed")
         gospels.tap()
         let start = app.buttons["plans.confirmStart"].firstMatch
@@ -41,8 +44,9 @@ final class Phase2UITests: GenesisUITestCase {
         scrollHome(to: plansCard, in: app)
         plansCard.tap()
         let psalms = app.buttons["plans.start.psalms-30"]
-        XCTAssertTrue(psalms.waitForExistence(timeout: Genesis.timeout), "The Psalms plan is listed")
+        XCTAssertTrue(app.buttons["plans.start.one-year"].waitForExistence(timeout: Genesis.timeout), "The plans list opens")
         Genesis.scrollIntoView(psalms, in: app)
+        XCTAssertTrue(psalms.waitForExistence(timeout: Genesis.timeout), "The Psalms plan is listed")
         psalms.tap()
         let start = app.buttons["plans.confirmStart"].firstMatch
         XCTAssertTrue(start.waitForExistence(timeout: Genesis.timeout), "Start Today is offered")
@@ -103,11 +107,13 @@ final class Phase2UITests: GenesisUITestCase {
     func testAccountOffersGuestMode() {
         let app = Genesis.launch()
         let account = app.buttons["home.account"]
-        XCTAssertTrue(account.waitForExistence(timeout: Genesis.launchTimeout))
+        XCTAssertTrue(account.waitForExistence(timeout: Genesis.launchTimeout), "Home shows the account button")
         account.tap()
 
         XCTAssertTrue(app.buttons["account.apple"].waitForExistence(timeout: Genesis.timeout), "Sign in with Apple is offered")
-        XCTAssertTrue(app.textFields["account.email"].exists)
+        let email = app.textFields["account.email"]
+        Genesis.scrollIntoView(email, in: app)
+        XCTAssertTrue(email.exists, "Email sign-in is offered")
         let guest = app.buttons["account.guest"]
         Genesis.scrollIntoView(guest, in: app)
         guest.tap()

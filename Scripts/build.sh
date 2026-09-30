@@ -237,11 +237,12 @@ if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
                 sed 's/^/     /' "$FAILURES"
                 { echo "== UI failures: $NAME =="; cat "$FAILURES"; } >> build.log
             fi
-            # Save the screenshots XCTest took at each failure, so they can be
-            # sent back without opening Xcode.
+            # Save the screenshots and screen layouts kept for failed tests, so
+            # they can be sent back without opening Xcode. (Passing tests keep no
+            # attachments, so this exports only what the failures left.)
             SHOTS="build/TestResults/UI-$SLUG-screenshots"
             rm -rf "$SHOTS" "$SHOTS.zip"
-            if xcrun xcresulttool export attachments --path "$RESULT" --output-path "$SHOTS" --only-failures >/dev/null 2>&1 \
+            if xcrun xcresulttool export attachments --path "$RESULT" --output-path "$SHOTS" >/dev/null 2>&1 \
                 && [ -n "$(ls -A "$SHOTS" 2>/dev/null)" ]; then
                 (cd build/TestResults && zip -qr "$(basename "$SHOTS").zip" "$(basename "$SHOTS")")
                 echo "   Screenshots of each failure: $SHOTS.zip"

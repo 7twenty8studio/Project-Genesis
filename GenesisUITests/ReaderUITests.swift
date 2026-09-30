@@ -15,14 +15,22 @@ final class ReaderUITests: GenesisUITestCase {
         var first: String?
         XCTAssertTrue(Genesis.wait { first = Genesis.visiblePageSignature(app); return first != nil })
 
-        text.coordinate(withNormalizedOffset: CGVector(dx: 0.95, dy: 0.5)).tap()
+        // Tap relative to the window, not a page view: while a page turns two
+        // page views exist, and in landscape the text view can be offset.
+        let window = app.windows.firstMatch
+        let page = text.frame.intersection(window.frame)
+        let origin = window.coordinate(withNormalizedOffset: .zero)
+        func tapPage(at fraction: CGFloat) {
+            origin.withOffset(CGVector(dx: page.minX + page.width * fraction, dy: page.midY)).tap()
+        }
+        tapPage(at: 0.9)
         var second: String?
         XCTAssertTrue(Genesis.wait {
             second = Genesis.visiblePageSignature(app)
             return second != nil && second != first
         }, "Tapping the right edge should turn to the next page")
 
-        Genesis.readerText(app).coordinate(withNormalizedOffset: CGVector(dx: 0.05, dy: 0.5)).tap()
+        tapPage(at: 0.1)
         XCTAssertTrue(Genesis.wait { Genesis.visiblePageSignature(app) == first }, "Tapping the left edge should turn back")
     }
 

@@ -174,13 +174,37 @@ enum Genesis {
     /// Swipes up inside a sheet or list until the element is on screen.
     /// `container` should be the scrolling list that holds the element; on
     /// iPad other lists (like the study panel) are on screen behind a sheet.
+    ///
+    /// Scrolls in short drags (a swipe can fling right past the element on a
+    /// short landscape screen) and in whichever direction the element lies,
+    /// until it sits clear of the edges where floating bars may cover it.
     static func scrollIntoView(_ element: XCUIElement, in app: XCUIApplication, container: XCUIElement? = nil, maxSwipes: Int = 8) {
-        var swipes = 0
-        while !(element.exists && element.isHittable) && swipes < maxSwipes {
-            let list = container ?? app.collectionViews.firstMatch
-            if list.exists { list.swipeUp() } else { app.swipeUp() }
-            swipes += 1
+        let list: XCUIElement = {
+            if let container, container.exists { return container }
+            if app.collectionViews.firstMatch.exists { return app.collectionViews.firstMatch }
+            if app.scrollViews.firstMatch.exists { return app.scrollViews.firstMatch }
+            return app.windows.firstMatch
+        }()
+        for _ in 0..<(maxSwipes * 3) {
+            let visible = list.frame.intersection(app.windows.firstMatch.frame)
+            let margin = min(60, visible.height / 6)
+            if element.exists {
+                let frame = element.frame
+                if element.isHittable && frame.minY >= visible.minY && frame.maxY <= visible.maxY - margin { return }
+                if frame.maxY <= visible.minY + margin {
+                    drag(list, from: 0.3, to: 0.7)   // it's above: scroll back up
+                    continue
+                }
+            }
+            drag(list, from: 0.7, to: 0.3)           // below, or not loaded yet
         }
+    }
+
+    /// A slow drag (no fling) between two heights of an element, as fractions.
+    private static func drag(_ element: XCUIElement, from start: CGFloat, to end: CGFloat) {
+        let from = element.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: start))
+        let to = element.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: end))
+        from.press(forDuration: 0.05, thenDragTo: to)
     }
 
     /// The reading settings sheet's scrolling list.
