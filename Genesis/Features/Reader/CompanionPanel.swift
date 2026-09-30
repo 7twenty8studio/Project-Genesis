@@ -5,7 +5,7 @@ import SwiftUI
 /// or search beside the text, so study never covers Scripture.
 struct CompanionPanel: View {
     enum Mode: String, CaseIterable, Identifiable {
-        case notes, crossReferences, search
+        case notes, crossReferences, study, context, search
 
         var id: String { rawValue }
 
@@ -13,6 +13,8 @@ struct CompanionPanel: View {
             switch self {
             case .notes: "Notes"
             case .crossReferences: "Related"
+            case .study: "Study"
+            case .context: "Context"
             case .search: "Search"
             }
         }
@@ -30,6 +32,10 @@ struct CompanionPanel: View {
                     ChapterNotesView(chapter: reader.chapterID)
                 case .crossReferences:
                     CrossReferencesView(verse: reader.studyVerse ?? reader.focusVerse) { reader.open($0) }
+                case .study:
+                    ChapterStudyPanel(chapter: reader.chapterID)
+                case .context:
+                    ChapterContextView(chapter: reader.chapterID)
                 case .search:
                     SearchContent(compact: true) { reader.open($0) }
                 }

@@ -84,6 +84,9 @@ struct MainTabView: View {
             Tab("Library", systemImage: "books.vertical", value: AppTab.library) {
                 LibraryView()
             }
+            Tab("Explore", systemImage: "map", value: AppTab.explore) {
+                ExploreView()
+            }
             Tab(value: AppTab.search, role: .search) {
                 SearchView()
             }

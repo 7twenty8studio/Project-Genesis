@@ -1,41 +1,19 @@
 import SwiftUI
 
-/// The study assistant for a passage: the Scripture (from the local database)
-/// and, separately and clearly labelled, AI-generated study notes.
+/// The study assistant as a sheet, for a passage chosen in the reader.
 struct StudyAssistantView: View {
     let passage: StudyPassage
+    var initialAction: StudyAction = .explain
 
-    @Environment(StudyAssistant.self) private var assistant
-    @Environment(EntitlementService.self) private var entitlements
-    @Environment(BibleLibrary.self) private var library
-    @Environment(AppRouter.self) private var router
-    @Environment(\.palette) private var palette
     @Environment(\.dismiss) private var dismiss
-
-    @State private var action: StudyAction
-    @State private var answer: StudyAnswer?
-    @State private var error: StudyAssistantError?
-    @State private var isLoading = false
-    @State private var showsFullPassage = false
-    @State private var premium: PremiumFeature?
-    @State private var showsAccount = false
-
-    init(passage: StudyPassage, initialAction: StudyAction = .explain) {
-        self.passage = passage
-        _action = State(initialValue: initialAction)
-    }
 
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    scripture
-                    actions
-                    answerSection
-                }
-                .padding(20)
-                .frame(maxWidth: 680)
-                .frame(maxWidth: .infinity)
+                StudyAssistantContent(passage: passage, initialAction: initialAction, onLeave: { dismiss() })
+                    .padding(20)
+                    .frame(maxWidth: 680)
+                    .frame(maxWidth: .infinity)
             }
             .themedScreen()
             .navigationTitle(passage.title)
@@ -46,23 +24,75 @@ struct StudyAssistantView: View {
                         .accessibilityIdentifier("study.done")
                 }
             }
-            .environment(\.openURL, OpenURLAction { url in
-                guard url.scheme == GenesisLink.scheme else { return .systemAction }
-                dismiss()
-                router.handle(url)
-                return .handled
-            })
-            .premiumSheet($premium)
-            .sheet(isPresented: $showsAccount) { AccountView() }
-            .task(id: action) {
-                // A free account opening a Premium tool starts with an explanation.
-                guard assistant.canUse(action) else {
-                    action = .explain
-                    return
-                }
-                await load()
-            }
         }
+    }
+}
+
+/// The study assistant for a passage: the Scripture (from the local database)
+/// and, separately and clearly labelled, AI-generated study notes. Used in the
+/// sheet and, beside the text, in the study panel on wide screens.
+struct StudyAssistantContent: View {
+    let passage: StudyPassage
+    /// False in the study panel, where the text is already beside it.
+    var showsScripture = true
+    /// Called before following a link that leaves this view (e.g. to close a sheet).
+    var onLeave: () -> Void = {}
+    /// False in the study panel: notes are fetched only when asked for, so
+    /// turning pages doesn't use up a free account's daily answers.
+    var autoLoads = true
+
+    @Environment(StudyAssistant.self) private var assistant
+    @Environment(EntitlementService.self) private var entitlements
+    @Environment(BibleLibrary.self) private var library
+    @Environment(AppRouter.self) private var router
+    @Environment(\.palette) private var palette
+
+    @State private var action: StudyAction
+    @State private var answer: StudyAnswer?
+    @State private var error: StudyAssistantError?
+    @State private var isLoading = false
+    @State private var showsFullPassage = false
+    @State private var premium: PremiumFeature?
+    @State private var showsAccount = false
+    @State private var requested: TaskKey?
+
+    init(passage: StudyPassage, initialAction: StudyAction = .explain, showsScripture: Bool = true, autoLoads: Bool = true, onLeave: @escaping () -> Void = {}) {
+        self.passage = passage
+        self.showsScripture = showsScripture
+        self.autoLoads = autoLoads
+        self.onLeave = onLeave
+        _action = State(initialValue: initialAction)
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 20) {
+            if showsScripture { scripture }
+            actions
+            answerSection
+        }
+        .environment(\.openURL, OpenURLAction { url in
+            guard url.scheme == GenesisLink.scheme else { return .systemAction }
+            onLeave()
+            router.handle(url)
+            return .handled
+        })
+        .premiumSheet($premium)
+        .sheet(isPresented: $showsAccount) { AccountView() }
+        .task(id: TaskKey(passage: passage, action: action)) {
+            // A free account opening a Premium tool starts with an explanation.
+            guard assistant.canUse(action) else {
+                action = .explain
+                return
+            }
+            await load()
+        }
+    }
+
+    private var key: TaskKey { TaskKey(passage: passage, action: action) }
+
+    private struct TaskKey: Hashable {
+        let passage: StudyPassage
+        let action: StudyAction
     }
 
     // MARK: Scripture
@@ -81,7 +111,7 @@ struct StudyAssistantView: View {
                     .foregroundStyle(palette.secondaryText)
                 Spacer()
                 Button("Open") {
-                    dismiss()
+                    onLeave()
                     router.read(passage.start)
                 }
                 .font(.caption.weight(.semibold))
@@ -125,7 +155,12 @@ struct StudyAssistantView: View {
                     let locked = !assistant.canUse(item)
                     let isSelected = item == action
                     Button {
-                        if locked { premium = .advancedAI } else { action = item }
+                        if locked {
+                            premium = .advancedAI
+                        } else {
+                            action = item
+                            requested = TaskKey(passage: passage, action: item)
+                        }
                     } label: {
                         HStack(spacing: 6) {
                             Image(systemName: item.systemImage)
@@ -178,6 +213,15 @@ struct StudyAssistantView: View {
                     .accessibilityIdentifier("study.answer")
             } else if let error {
                 errorView(error)
+            } else {
+                Button {
+                    requested = key
+                    Task { await load() }
+                } label: {
+                    Label("\(action.title) \(passage.title)", systemImage: action.systemImage)
+                }
+                .buttonStyle(.bordered)
+                .accessibilityIdentifier("study.request")
             }
 
             Text("AI can make mistakes. Weigh these notes against Scripture itself. Explanations aim to be non-denominational and note where Christian traditions differ.")
@@ -224,7 +268,7 @@ struct StudyAssistantView: View {
     private func load() async {
         answer = assistant.savedAnswer(action, passage: passage)
         error = nil
-        guard answer == nil else { return }
+        guard answer == nil, autoLoads || requested == key else { return }
         isLoading = true
         defer { isLoading = false }
         do {

@@ -14,6 +14,8 @@ final class ReadingProgress {
     private(set) var readingDays: Set<String>
     /// Raw `ChapterID` keys (book * 1000 + chapter) of chapters opened.
     private(set) var chaptersRead: Set<Int>
+    /// Seconds spent in the reader per day ("yyyy-MM-dd").
+    private(set) var readingSeconds: [String: Int]
 
     @ObservationIgnored private let defaults: UserDefaults
     @ObservationIgnored private let calendar: Calendar
@@ -21,6 +23,10 @@ final class ReadingProgress {
     private static let dateKey = "progress.lastReadAt"
     private static let daysKey = "progress.readingDays"
     private static let chaptersKey = "progress.chaptersRead"
+    private static let secondsKey = "progress.readingSeconds"
+    /// A session longer than this is counted as this long, so a reader left
+    /// open on the table doesn't inflate the total.
+    static let longestSession: TimeInterval = 45 * 60
 
     init(defaults: UserDefaults = .standard, calendar: Calendar = .current) {
         self.defaults = defaults
@@ -30,6 +36,56 @@ final class ReadingProgress {
         lastReadAt = defaults.object(forKey: Self.dateKey) as? Date
         readingDays = Set(defaults.stringArray(forKey: Self.daysKey) ?? [])
         chaptersRead = Set((defaults.array(forKey: Self.chaptersKey) as? [Int]) ?? [])
+        readingSeconds = (defaults.dictionary(forKey: Self.secondsKey) as? [String: Int]) ?? [:]
+    }
+
+    /// Adds time spent reading, ending at `date`.
+    func addReadingTime(_ duration: TimeInterval, endingAt date: Date = .now) {
+        let seconds = Int(min(max(duration, 0), Self.longestSession))
+        guard seconds >= 5 else { return }
+        let day = Timestamp.dayString(from: date, calendar: calendar)
+        readingSeconds[day, default: 0] += seconds
+        defaults.set(readingSeconds, forKey: Self.secondsKey)
+    }
+
+    var totalReadingTime: TimeInterval {
+        TimeInterval(readingSeconds.values.reduce(0, +))
+    }
+
+    /// Reading time on each of the last `days` days, oldest first.
+    func dailyReadingTime(days: Int, endingOn date: Date = .now) -> [(day: Date, seconds: Int)] {
+        let today = calendar.startOfDay(for: date)
+        return (0..<days).reversed().compactMap { offset in
+            guard let day = calendar.date(byAdding: .day, value: -offset, to: today) else { return nil }
+            return (day, readingSeconds[Timestamp.dayString(from: day, calendar: calendar)] ?? 0)
+        }
+    }
+
+    /// Books by chapters opened, the most read first.
+    func favoriteBooks(limit: Int = 5) -> [(book: BibleBook, chapters: Int)] {
+        let counts = Dictionary(grouping: chaptersRead, by: { $0 / 1_000 }).mapValues(\.count)
+        return counts
+            .sorted { $0.value == $1.value ? $0.key < $1.key : $0.value > $1.value }
+            .prefix(limit)
+            .map { (BibleBook.withNumber($0.key), $0.value) }
+    }
+
+    /// The longest run of consecutive reading days.
+    var longestStreak: Int {
+        let dates = readingDays.compactMap { Timestamp.day(from: $0, calendar: calendar) }.sorted()
+        var best = 0
+        var run = 0
+        var previous: Date?
+        for day in dates {
+            if let previous, calendar.date(byAdding: .day, value: 1, to: previous) == day {
+                run += 1
+            } else {
+                run = 1
+            }
+            best = max(best, run)
+            previous = day
+        }
+        return best
     }
 
     var hasStartedReading: Bool { lastReadAt != nil }

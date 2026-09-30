@@ -9,6 +9,7 @@ struct HomeView: View {
     @Environment(ReadingProgress.self) private var progress
     @Environment(ReaderSettings.self) private var settings
     @Environment(AuthService.self) private var auth
+    @Environment(EntitlementService.self) private var entitlements
     @Environment(\.modelContext) private var modelContext
     @Environment(\.palette) private var palette
 
@@ -17,6 +18,7 @@ struct HomeView: View {
     @Query(sort: \PlanEnrollment.updatedAt, order: .reverse) private var enrollments: [PlanEnrollment]
     @Query(filter: #Predicate<Prayer> { !$0.isAnswered }) private var activePrayers: [Prayer]
     @State private var editingNote: Note?
+    @State private var premium: PremiumFeature?
 
     var body: some View {
         @Bindable var router = router
@@ -32,6 +34,7 @@ struct HomeView: View {
                     if !recentHighlights.isEmpty { highlights }
                     if !recentNotes.isEmpty { notes }
                     bibles
+                    if !entitlements.isPremium { premiumCard }
                 }
                 .padding(.horizontal, 20)
                 .padding(.bottom, 40)
@@ -46,11 +49,13 @@ struct HomeView: View {
             .sheet(isPresented: $router.showsAccount) {
                 AccountView()
             }
+            .premiumSheet($premium)
             .navigationDestination(for: HomeRoute.self) { route in
                 switch route {
                 case .plans: PlansView()
                 case let .plan(id): PlanDetailView(enrollmentID: id)
                 case .prayerJournal: PrayerJournalView()
+                case .insights: InsightsView()
                 }
             }
         }
@@ -194,7 +199,7 @@ struct HomeView: View {
     private var readingProgress: some View {
         if progress.hasStartedReading {
             VStack(alignment: .leading, spacing: 12) {
-                SectionHeader(title: "Progress")
+                SectionHeader(title: "Progress", action: ("Insights", { router.homePath.append(.insights) }))
                 HStack(spacing: 12) {
                     stat(value: progress.streak(), label: "day streak", symbol: "flame")
                     stat(value: progress.chaptersRead.count, label: "chapters read", symbol: "book.pages")
@@ -202,6 +207,34 @@ struct HomeView: View {
                 }
             }
         }
+    }
+
+    private var premiumCard: some View {
+        Button {
+            premium = .historicalContent
+        } label: {
+            HStack(spacing: 14) {
+                Image(systemName: "sparkles")
+                    .font(.title3)
+                    .foregroundStyle(palette.accent)
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("Genesis Premium")
+                        .font(.headline)
+                        .foregroundStyle(palette.text)
+                    Text("Timeline, maps and people, the study assistant, cloud backup and more.")
+                        .font(.subheadline)
+                        .foregroundStyle(palette.secondaryText)
+                        .multilineTextAlignment(.leading)
+                }
+                Spacer(minLength: 0)
+                Image(systemName: "chevron.right")
+                    .foregroundStyle(palette.secondaryText)
+            }
+            .padding(16)
+            .background(palette.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("home.premium")
     }
 
     private func stat(value: Int, label: String, symbol: String) -> some View {

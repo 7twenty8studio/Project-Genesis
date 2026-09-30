@@ -13,6 +13,7 @@ struct GenesisApp: App {
     @State private var entitlements: EntitlementService
     @State private var assistant: StudyAssistant
     private let modelContainer: ModelContainer
+    private let studyData = StudyRepository.bundled()
 
     init() {
         let testing = UITestingOptions.current
@@ -67,6 +68,7 @@ struct GenesisApp: App {
                 .environment(sync)
                 .environment(entitlements)
                 .environment(assistant)
+                .environment(\.studyData, studyData)
         }
         .modelContainer(modelContainer)
     }

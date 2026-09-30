@@ -213,22 +213,22 @@ private struct SignedInView: View {
                     Text("Your highlights, notes, plans and prayers are saved on this device. Cloud backup and sync across devices are part of Genesis Premium.")
                 }
             } else {
-            Section {
-                HStack {
-                    Label(statusText, systemImage: statusSymbol)
-                        .foregroundStyle(statusColor)
-                    Spacer()
-                    if sync.status == .syncing { ProgressView() }
+                Section {
+                    HStack {
+                        Label(statusText, systemImage: statusSymbol)
+                            .foregroundStyle(statusColor)
+                        Spacer()
+                        if sync.status == .syncing { ProgressView() }
+                    }
+                    Button("Sync Now") {
+                        Task { await sync.syncNow() }
+                    }
+                    .disabled(sync.status == .syncing)
+                } header: {
+                    Text("Cloud Sync")
+                } footer: {
+                    Text("Highlights, notes, bookmarks, reading plans and prayers sync automatically. Prayers are private to your account.")
                 }
-                Button("Sync Now") {
-                    Task { await sync.syncNow() }
-                }
-                .disabled(sync.status == .syncing)
-            } header: {
-                Text("Cloud Sync")
-            } footer: {
-                Text("Highlights, notes, bookmarks, reading plans and prayers sync automatically. Prayers are private to your account.")
-            }
             }
 
             Section {

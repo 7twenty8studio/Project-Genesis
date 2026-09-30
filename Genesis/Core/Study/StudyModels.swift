@@ -132,5 +132,6 @@ struct Route: Identifiable, Hashable, Sendable {
 struct BookMentions: Identifiable, Hashable, Sendable {
     let book: BibleBook
     let count: Int
+    let firstVerse: VerseID
     var id: Int { book.id }
 }

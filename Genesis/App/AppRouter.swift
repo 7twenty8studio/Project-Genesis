@@ -2,7 +2,14 @@ import Observation
 import SwiftUI
 
 enum AppTab: Hashable {
-    case home, read, library, search
+    case home, read, library, explore, search
+}
+
+/// Screens pushed on the Explore tab (timeline, maps, people).
+enum ExploreRoute: Hashable {
+    case event(Int)
+    case person(Int)
+    case place(Int)
 }
 
 /// Screens pushed on the Home tab.
@@ -10,6 +17,7 @@ enum HomeRoute: Hashable {
     case plans
     case plan(UUID)
     case prayerJournal
+    case insights
 }
 
 /// App-wide navigation: which tab is showing, and opening the reader at a
@@ -19,6 +27,7 @@ enum HomeRoute: Hashable {
 final class AppRouter {
     var tab: AppTab = .home
     var homePath: [HomeRoute] = []
+    var explorePath: [ExploreRoute] = []
     var showsAccount = false
     @ObservationIgnored let reader: ReaderViewModel
 
@@ -41,6 +50,11 @@ final class AppRouter {
 
     func continueReading() {
         tab = .read
+    }
+
+    func explore(_ route: ExploreRoute) {
+        tab = .explore
+        explorePath.append(route)
     }
 
     func open(_ route: HomeRoute) {
@@ -71,4 +85,6 @@ final class AppRouter {
 extension EnvironmentValues {
     /// Colours for the active paper theme.
     @Entry var palette: ThemePalette = ReaderTheme.paper.palette
+    /// People, places and events (nil if Study.sqlite is missing from the build).
+    @Entry var studyData: StudyRepository? = nil
 }

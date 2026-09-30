@@ -144,9 +144,9 @@ final class StudyRepository: Sendable {
     /// Books that mention the person, in canonical order.
     func books(forPerson id: Int) throws -> [BookMentions] {
         try database.query(
-            "SELECT verse / 1000000, COUNT(*) FROM person_verses WHERE person_id = ? GROUP BY 1 ORDER BY 1",
+            "SELECT verse / 1000000, COUNT(*), MIN(verse) FROM person_verses WHERE person_id = ? GROUP BY 1 ORDER BY 1",
             [.int(id)]
-        ) { BookMentions(book: .withNumber($0.int(0)), count: $0.int(1)) }
+        ) { BookMentions(book: .withNumber($0.int(0)), count: $0.int(1), firstVerse: VerseID(rawValue: $0.int(2))) }
     }
 
     func verses(forPerson id: Int, limit: Int = 200) throws -> [VerseID] {
@@ -162,6 +162,14 @@ final class StudyRepository: Sendable {
         return try database.query(
             "\(Self.personColumns) WHERE p.id IN (SELECT person_id FROM person_verses WHERE verse BETWEEN ? AND ?) ORDER BY p.verse_count DESC LIMIT ?",
             [.int(range.lowerBound), .int(range.upperBound), .int(limit)], map: Self.personSummary
+        )
+    }
+
+    /// Mapped places where the person's events happen.
+    func places(forPerson id: Int, limit: Int = 30) throws -> [PlaceSummary] {
+        try database.query(
+            "\(Self.placeColumns) WHERE p.latitude IS NOT NULL AND p.id IN (SELECT ep.place_id FROM event_places ep JOIN event_people e ON e.event_id = ep.event_id WHERE e.person_id = ?) ORDER BY p.verse_count DESC LIMIT ?",
+            [.int(id), .int(limit)], map: Self.placeSummary
         )
     }
 

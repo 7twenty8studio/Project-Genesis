@@ -57,6 +57,7 @@ struct ReaderView: View {
         .focusable()
         .focused($isFocused)
         .focusEffectDisabled()
+        .tracksReadingTime()
         .onKeyPress(.rightArrow) { turnPage(forward: true) }
         .onKeyPress(.leftArrow) { turnPage(forward: false) }
         .onKeyPress(.space) { turnPage(forward: true) }
