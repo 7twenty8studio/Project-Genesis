@@ -192,7 +192,17 @@ if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
                 sed 's/^/     /' "$FAILURES"
                 { echo "== UI failures: $NAME =="; cat "$FAILURES"; } >> build.log
             fi
-            echo "   Screenshots of each failure: open $RESULT in Xcode."
+            # Save the screenshots XCTest took at each failure, so they can be
+            # sent back without opening Xcode.
+            SHOTS="build/TestResults/UI-$(echo "$NAME" | tr ' ' '-')-screenshots"
+            rm -rf "$SHOTS" "$SHOTS.zip"
+            if xcrun xcresulttool export attachments --path "$RESULT" --output-path "$SHOTS" --only-failures >/dev/null 2>&1 \
+                && [ -n "$(ls -A "$SHOTS" 2>/dev/null)" ]; then
+                (cd build/TestResults && zip -qr "$(basename "$SHOTS").zip" "$(basename "$SHOTS")")
+                echo "   Screenshots of each failure: $SHOTS.zip"
+            else
+                echo "   Screenshots of each failure: open $RESULT in Xcode."
+            fi
         fi
     done
 fi
@@ -208,7 +218,7 @@ elif [ "$TEST_STATUS" -ne 0 ]; then
     echo "   Send build.log back to Claude."
 elif [ "$UI_STATUS" -ne 0 ]; then
     echo "⚠️  The app built and unit tests passed, but some UI tests failed."
-    echo "   Send build.log back to Claude (and a screenshot from the .xcresult if useful)."
+    echo "   Send the UI-*-failures.txt and UI-*-screenshots.zip files in build/TestResults back to Claude."
 else
     echo "✅ Build succeeded$([ "$RUN_TESTS" = true ] && echo " and all tests passed")$([ "$UI_TESTS" != none ] && echo ", including UI tests")."
     rm -f build-errors.txt
