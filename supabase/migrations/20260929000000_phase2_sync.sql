@@ -1,7 +1,8 @@
 -- Project Genesis: Phase 2 cloud sync schema.
 --
 -- Run once in the Supabase dashboard: SQL Editor -> New query -> paste -> Run.
--- Safe to re-run (everything is "if not exists" / "or replace").
+-- Safe to re-run: it only creates what is missing and never drops or
+-- deletes anything.
 --
 -- Design
 --   * Every row belongs to one user (user_id = auth.uid()) and row-level
@@ -20,6 +21,7 @@
 create or replace function public.genesis_touch_server_updated_at()
 returns trigger
 language plpgsql
+set search_path = ''
 as $$
 begin
   new.server_updated_at := now();
@@ -122,34 +124,136 @@ create table if not exists public.prayers (
   server_updated_at timestamptz not null default now()
 );
 
--- Indexes, triggers and row-level security for every synced table ----------
+-- Row-level security: each person can only see and change their own rows.
+
+alter table public.bookmarks enable row level security;
+alter table public.highlight_collections enable row level security;
+alter table public.highlights enable row level security;
+alter table public.notes enable row level security;
+alter table public.reading_plans enable row level security;
+alter table public.prayers enable row level security;
+
+-- Indexes and the server_updated_at trigger.
+
+create index if not exists bookmarks_sync_idx on public.bookmarks (user_id, server_updated_at);
+create or replace trigger genesis_touch before insert or update on public.bookmarks
+  for each row execute function public.genesis_touch_server_updated_at();
+create index if not exists highlight_collections_sync_idx on public.highlight_collections (user_id, server_updated_at);
+create or replace trigger genesis_touch before insert or update on public.highlight_collections
+  for each row execute function public.genesis_touch_server_updated_at();
+create index if not exists highlights_sync_idx on public.highlights (user_id, server_updated_at);
+create or replace trigger genesis_touch before insert or update on public.highlights
+  for each row execute function public.genesis_touch_server_updated_at();
+create index if not exists notes_sync_idx on public.notes (user_id, server_updated_at);
+create or replace trigger genesis_touch before insert or update on public.notes
+  for each row execute function public.genesis_touch_server_updated_at();
+create index if not exists reading_plans_sync_idx on public.reading_plans (user_id, server_updated_at);
+create or replace trigger genesis_touch before insert or update on public.reading_plans
+  for each row execute function public.genesis_touch_server_updated_at();
+create index if not exists prayers_sync_idx on public.prayers (user_id, server_updated_at);
+create or replace trigger genesis_touch before insert or update on public.prayers
+  for each row execute function public.genesis_touch_server_updated_at();
+
+-- Policies (created only if missing).
 
 do $$
-declare
-  t text;
 begin
-  foreach t in array array['bookmarks', 'highlight_collections', 'highlights', 'notes', 'reading_plans', 'prayers']
-  loop
-    execute format('create index if not exists %I on public.%I (user_id, server_updated_at)', t || '_sync_idx', t);
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'bookmarks' and policyname = 'Owner can read') then
+    create policy "Owner can read" on public.bookmarks for select to authenticated using (user_id = (select auth.uid()));
+  end if;
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'bookmarks' and policyname = 'Owner can insert') then
+    create policy "Owner can insert" on public.bookmarks for insert to authenticated with check (user_id = (select auth.uid()));
+  end if;
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'bookmarks' and policyname = 'Owner can update') then
+    create policy "Owner can update" on public.bookmarks for update to authenticated using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
+  end if;
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'bookmarks' and policyname = 'Owner can delete') then
+    create policy "Owner can delete" on public.bookmarks for delete to authenticated using (user_id = (select auth.uid()));
+  end if;
+end;
+$$;
 
-    execute format('drop trigger if exists genesis_touch on public.%I', t);
-    execute format(
-      'create trigger genesis_touch before insert or update on public.%I
-         for each row execute function public.genesis_touch_server_updated_at()', t);
+do $$
+begin
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'highlight_collections' and policyname = 'Owner can read') then
+    create policy "Owner can read" on public.highlight_collections for select to authenticated using (user_id = (select auth.uid()));
+  end if;
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'highlight_collections' and policyname = 'Owner can insert') then
+    create policy "Owner can insert" on public.highlight_collections for insert to authenticated with check (user_id = (select auth.uid()));
+  end if;
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'highlight_collections' and policyname = 'Owner can update') then
+    create policy "Owner can update" on public.highlight_collections for update to authenticated using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
+  end if;
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'highlight_collections' and policyname = 'Owner can delete') then
+    create policy "Owner can delete" on public.highlight_collections for delete to authenticated using (user_id = (select auth.uid()));
+  end if;
+end;
+$$;
 
-    execute format('alter table public.%I enable row level security', t);
+do $$
+begin
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'highlights' and policyname = 'Owner can read') then
+    create policy "Owner can read" on public.highlights for select to authenticated using (user_id = (select auth.uid()));
+  end if;
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'highlights' and policyname = 'Owner can insert') then
+    create policy "Owner can insert" on public.highlights for insert to authenticated with check (user_id = (select auth.uid()));
+  end if;
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'highlights' and policyname = 'Owner can update') then
+    create policy "Owner can update" on public.highlights for update to authenticated using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
+  end if;
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'highlights' and policyname = 'Owner can delete') then
+    create policy "Owner can delete" on public.highlights for delete to authenticated using (user_id = (select auth.uid()));
+  end if;
+end;
+$$;
 
-    execute format('drop policy if exists "Owner can read" on public.%I', t);
-    execute format('create policy "Owner can read" on public.%I for select to authenticated using (user_id = auth.uid())', t);
+do $$
+begin
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'notes' and policyname = 'Owner can read') then
+    create policy "Owner can read" on public.notes for select to authenticated using (user_id = (select auth.uid()));
+  end if;
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'notes' and policyname = 'Owner can insert') then
+    create policy "Owner can insert" on public.notes for insert to authenticated with check (user_id = (select auth.uid()));
+  end if;
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'notes' and policyname = 'Owner can update') then
+    create policy "Owner can update" on public.notes for update to authenticated using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
+  end if;
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'notes' and policyname = 'Owner can delete') then
+    create policy "Owner can delete" on public.notes for delete to authenticated using (user_id = (select auth.uid()));
+  end if;
+end;
+$$;
 
-    execute format('drop policy if exists "Owner can insert" on public.%I', t);
-    execute format('create policy "Owner can insert" on public.%I for insert to authenticated with check (user_id = auth.uid())', t);
+do $$
+begin
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'reading_plans' and policyname = 'Owner can read') then
+    create policy "Owner can read" on public.reading_plans for select to authenticated using (user_id = (select auth.uid()));
+  end if;
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'reading_plans' and policyname = 'Owner can insert') then
+    create policy "Owner can insert" on public.reading_plans for insert to authenticated with check (user_id = (select auth.uid()));
+  end if;
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'reading_plans' and policyname = 'Owner can update') then
+    create policy "Owner can update" on public.reading_plans for update to authenticated using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
+  end if;
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'reading_plans' and policyname = 'Owner can delete') then
+    create policy "Owner can delete" on public.reading_plans for delete to authenticated using (user_id = (select auth.uid()));
+  end if;
+end;
+$$;
 
-    execute format('drop policy if exists "Owner can update" on public.%I', t);
-    execute format('create policy "Owner can update" on public.%I for update to authenticated using (user_id = auth.uid()) with check (user_id = auth.uid())', t);
-
-    execute format('drop policy if exists "Owner can delete" on public.%I', t);
-    execute format('create policy "Owner can delete" on public.%I for delete to authenticated using (user_id = auth.uid())', t);
-  end loop;
+do $$
+begin
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'prayers' and policyname = 'Owner can read') then
+    create policy "Owner can read" on public.prayers for select to authenticated using (user_id = (select auth.uid()));
+  end if;
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'prayers' and policyname = 'Owner can insert') then
+    create policy "Owner can insert" on public.prayers for insert to authenticated with check (user_id = (select auth.uid()));
+  end if;
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'prayers' and policyname = 'Owner can update') then
+    create policy "Owner can update" on public.prayers for update to authenticated using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
+  end if;
+  if not exists (select 1 from pg_policies where schemaname = 'public' and tablename = 'prayers' and policyname = 'Owner can delete') then
+    create policy "Owner can delete" on public.prayers for delete to authenticated using (user_id = (select auth.uid()));
+  end if;
 end;
 $$;
