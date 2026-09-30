@@ -38,6 +38,23 @@ final class SQLiteDatabase: @unchecked Sendable {
             sqlite3_column_int64(statement, column) != 0
         }
 
+        func double(_ column: Int32) -> Double {
+            sqlite3_column_double(statement, column)
+        }
+
+        func isNull(_ column: Int32) -> Bool {
+            sqlite3_column_type(statement, column) == SQLITE_NULL
+        }
+
+        /// Nil for SQL NULL.
+        func optionalInt(_ column: Int32) -> Int? {
+            isNull(column) ? nil : int(column)
+        }
+
+        func optionalDouble(_ column: Int32) -> Double? {
+            isNull(column) ? nil : double(column)
+        }
+
         func text(_ column: Int32) -> String {
             guard let pointer = sqlite3_column_text(statement, column) else { return "" }
             return String(cString: pointer)
