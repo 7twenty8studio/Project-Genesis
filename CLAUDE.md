@@ -11,6 +11,11 @@ shares; README.md has the architecture.
 - Phase 1 ships public-domain translations only (KJV, WEB, ASV). Licensed
   translations wait until the owner confirms a license.
 - AI content must be non-denominational and presented as distinct from Scripture.
+  The study-ai Edge Function (Claude Haiku 4.5) is told never to quote and
+  removes 6+ word runs from the passage; the app labels answers "AI-generated
+  study notes · not Scripture" in a separate card. Keep both safeguards.
+- Study.sqlite (people/places/events) is CC BY-SA 4.0: keep the attribution
+  and LICENSE.txt with it. It holds verse ids only, never verse text.
 
 ## Building
 - The Xcode project is generated: `xcodegen generate` from `project.yml`.
@@ -32,6 +37,16 @@ shares; README.md has the architecture.
 - Local deletions must go through StudyStore so a Tombstone is recorded.
 - New synced models need: a Remote* row in SyncRows.swift, pull/apply and push
   in SyncService, a table + RLS in a new migration.
+
+## Premium and AI
+- Free limits live in `FreeLimits` (25 notes, 25 prayers, 3 AI a day) and are
+  checked with `EntitlementService` at each entry point; the server enforces
+  AI limits again (supabase/functions/study-ai/lib.ts).
+- UI tests are free unless launched with `-uiTestingPremium`; the study
+  assistant uses `StubStudyBackend` in UI tests (no network, no cost).
+- Server logic tests: `node --experimental-strip-types --test supabase/functions/study-ai/lib.test.ts`.
+- Supabase SQL: explicit statements, no drops, RLS enabled in plain
+  `alter table` lines (the dashboard's checker flags anything else).
 
 ## Conventions
 - MVVM, composition, one responsibility per type, small view files.

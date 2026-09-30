@@ -42,6 +42,26 @@ See [BUILDING.md](BUILDING.md) to build and run.
 - **Widgets**: verse of the day, continue reading, reading progress (large),
   lock screen streak, verse and continue reading. Tapping opens the app in place.
 
+## Phase 3 (built; switch on with [PHASE3_SETUP.md](PHASE3_SETUP.md))
+
+- **Study assistant**: explain a passage, summarize a chapter, historical
+  background, discussion questions, an explanation for children, reading
+  comprehension. Claude Haiku 4.5 through a Supabase Edge Function; answers are
+  cached and shared. Non-denominational, never quotes Scripture, always shown
+  apart from the text and labelled as AI-generated.
+- **Timeline**: twelve eras from Creation to Revelation with 450 events; tap an
+  event for its people, places and chapters.
+- **Maps**: 1,250 located places on Apple Maps, Paul's journeys and a
+  traditional Exodus route.
+- **People**: 3,000+ people with biographies, family trees, timelines, books,
+  verses and places.
+- **Insights**: streaks, reading time, chapters, books, highlights, favourite
+  books and topics.
+- **Premium** with StoreKit 2: $4.99/month or $39.99/year, per the PRD's
+  Premium Features list.
+- **Wide screens**: the study panel adds Study (AI notes beside the text) and
+  Context (people, places and events in the chapter).
+
 ## Architecture
 
 ```
@@ -54,17 +74,22 @@ Genesis/
     Storage/        Minimal read-only SQLite wrapper
     UserData/       SwiftData models (highlights, notes, bookmarks, plans, prayers) + StudyStore
     Cloud/          Supabase client, auth, sync engine
+    AI/             Study assistant client
+    Premium/        StoreKit 2 entitlements and free limits
+    Study/          People, places, events and routes (Study.sqlite)
     Plans/          Reading plan schedules
     Services/       Config, Sentry, reading progress/streaks, reminders, widget snapshot
   Shared/           Code shared with the widget extension
-  Features/         Reader, Home, Search, Library, Study, Onboarding (SwiftUI)
+  Features/         Reader, Home, Search, Library, Study, Explore, Insights,
+                    Premium, Plans, Prayer, Account, Onboarding (SwiftUI)
   DesignSystem/     Shared components
   Resources/        Bible databases, fonts, assets
 GenesisWidgets/     WidgetKit extension
 GenesisTests/       Swift Testing unit tests
 GenesisUITests/     XCUITest UI automation
-supabase/           Database schema (SQL migrations)
+supabase/           Database schema (SQL migrations) and the study-ai Edge Function
 Tools/BibleData/    Script that builds the Bible databases
+Tools/StudyData/    Script that builds Study.sqlite
 ```
 
 - **MVVM** with `@Observable` view models; dependencies passed through the
@@ -89,3 +114,10 @@ Tools/BibleData/    Script that builds the Bible databases
   and [TehShrike/world-english-bible](https://github.com/TehShrike/world-english-bible) (WEB). All translations are public domain;
   "World English Bible" is a trademark of eBible.org.
 - Atkinson Hyperlegible: Braille Institute, SIL Open Font License.
+- People, places and events: [Theographic Bible Metadata](https://github.com/robertrouse/theographic-bible-metadata)
+  by Robert Rouse, CC BY-SA 4.0; place coordinates from
+  [OpenBible.info](https://github.com/openbibleinfo/Bible-Geocoding-Data), CC BY 4.0;
+  descriptions from Easton's Bible Dictionary (1897, public domain). The
+  derived `Study.sqlite` is CC BY-SA 4.0 (see `Genesis/Resources/Study/LICENSE.txt`).
+- iPhone Duo hinge helper for UI tests adapted from
+  [hinge](https://github.com/artemnovichkov/hinge) by Artem Novichkov, MIT.
