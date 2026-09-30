@@ -1,7 +1,7 @@
 import XCTest
 
 /// Reading settings and app launch performance.
-final class SettingsUITests: XCTestCase {
+final class SettingsUITests: GenesisUITestCase {
     @MainActor
     func testSwitchToScrollModeAndDarkTheme() {
         let app = Genesis.launch(verse: 1_001_001, extra: ["-uiTestingReadingMode", "page"])
@@ -51,7 +51,7 @@ final class SettingsUITests: XCTestCase {
 
 /// Launch time against the PRD target of under one second. Runs five launches,
 /// so it only runs when requested (`./Scripts/build.sh --ui-full`).
-final class LaunchPerformanceUITests: XCTestCase {
+final class LaunchPerformanceUITests: GenesisUITestCase {
     @MainActor
     func testLaunchTime() throws {
         try XCTSkipUnless(ProcessInfo.processInfo.environment["GENESIS_PERF"] == "1", "Runs with --ui-full")

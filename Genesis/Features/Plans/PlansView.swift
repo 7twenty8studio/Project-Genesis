@@ -77,9 +77,15 @@ struct PlansView: View {
     }
 
     private func start(_ plan: ReadingPlan) {
-        let enrollment = StudyStore(context: modelContext).start(plan)
+        let enrollmentID = StudyStore(context: modelContext).start(plan).id
         pendingPlan = nil
-        router.homePath.append(.plan(enrollment.id))
+        // On iPad the dialog is a popover (and custom plans come from a sheet).
+        // Pushing while it's still closing can leave the next tap swallowed, so
+        // open the plan once the dismissal has finished.
+        Task {
+            try? await Task.sleep(for: .milliseconds(400))
+            router.homePath.append(.plan(enrollmentID))
+        }
     }
 }
 

@@ -1,7 +1,7 @@
 import XCTest
 
 /// First launch: choose a translation and be reading quickly (PRD: within 30 seconds).
-final class OnboardingUITests: XCTestCase {
+final class OnboardingUITests: GenesisUITestCase {
     @MainActor
     func testChooseTranslationAndBeginReading() {
         let app = Genesis.launch(onboarding: true)

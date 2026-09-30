@@ -1,7 +1,7 @@
 import XCTest
 
 /// The Search tab: references and full-text search.
-final class SearchUITests: XCTestCase {
+final class SearchUITests: GenesisUITestCase {
     @MainActor
     private func search(_ text: String, in app: XCUIApplication) {
         Genesis.openTab("Search", in: app)

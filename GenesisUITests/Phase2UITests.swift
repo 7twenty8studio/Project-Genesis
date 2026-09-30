@@ -1,7 +1,7 @@
 import XCTest
 
 /// Reading plans, the prayer journal and the account screen.
-final class Phase2UITests: XCTestCase {
+final class Phase2UITests: GenesisUITestCase {
     @MainActor
     private func scrollHome(to element: XCUIElement, in app: XCUIApplication) {
         Genesis.scrollIntoView(element, in: app, container: app.scrollViews.firstMatch)
@@ -11,45 +11,47 @@ final class Phase2UITests: XCTestCase {
     func testStartPlanAndMarkTodayRead() {
         let app = Genesis.launch()
         let plansCard = app.buttons["home.plans"]
-        XCTAssertTrue(plansCard.waitForExistence(timeout: Genesis.launchTimeout))
+        XCTAssertTrue(plansCard.waitForExistence(timeout: Genesis.launchTimeout), "Home shows the plans card")
         scrollHome(to: plansCard, in: app)
         plansCard.tap()
 
         let gospels = app.buttons["plans.start.gospels-30"]
-        XCTAssertTrue(gospels.waitForExistence(timeout: Genesis.timeout))
+        XCTAssertTrue(gospels.waitForExistence(timeout: Genesis.timeout), "The Gospels plan is listed")
         gospels.tap()
         let start = app.buttons["plans.confirmStart"].firstMatch
-        XCTAssertTrue(start.waitForExistence(timeout: Genesis.timeout))
+        XCTAssertTrue(start.waitForExistence(timeout: Genesis.timeout), "Start Today is offered")
         start.tap()
 
         let today = app.staticTexts["plan.todayTitle"]
-        XCTAssertTrue(today.waitForExistence(timeout: Genesis.timeout))
+        XCTAssertTrue(today.waitForExistence(timeout: Genesis.timeout), "The plan opens on today's reading")
         XCTAssertEqual(today.label, "Matthew 1\u{2013}2")
 
-        app.buttons["plan.markRead"].tap()
+        let markRead = app.buttons["plan.markRead"]
+        XCTAssertTrue(markRead.waitForExistence(timeout: Genesis.timeout) && markRead.isHittable, "Mark as Read can be tapped")
+        markRead.tap()
         XCTAssertTrue(Genesis.wait { today.label == "Matthew 3\u{2013}5" }, "The next day's reading is offered")
-        XCTAssertTrue(Genesis.element(containing: "3% complete", in: app).exists)
+        XCTAssertTrue(Genesis.element(containing: "3% complete", in: app).exists, "Progress shows 3%")
     }
 
     @MainActor
     func testPlanReadButtonOpensReader() {
         let app = Genesis.launch()
         let plansCard = app.buttons["home.plans"]
-        XCTAssertTrue(plansCard.waitForExistence(timeout: Genesis.launchTimeout))
+        XCTAssertTrue(plansCard.waitForExistence(timeout: Genesis.launchTimeout), "Home shows the plans card")
         scrollHome(to: plansCard, in: app)
         plansCard.tap()
         let psalms = app.buttons["plans.start.psalms-30"]
-        XCTAssertTrue(psalms.waitForExistence(timeout: Genesis.timeout))
+        XCTAssertTrue(psalms.waitForExistence(timeout: Genesis.timeout), "The Psalms plan is listed")
         Genesis.scrollIntoView(psalms, in: app)
         psalms.tap()
         let start = app.buttons["plans.confirmStart"].firstMatch
-        XCTAssertTrue(start.waitForExistence(timeout: Genesis.timeout))
+        XCTAssertTrue(start.waitForExistence(timeout: Genesis.timeout), "Start Today is offered")
         start.tap()
 
         let read = app.buttons["plan.read"]
-        XCTAssertTrue(read.waitForExistence(timeout: Genesis.timeout))
+        XCTAssertTrue(read.waitForExistence(timeout: Genesis.timeout) && read.isHittable, "The plan's Read button can be tapped")
         read.tap()
-        XCTAssertTrue(Genesis.wait { Genesis.chapterTitle(app) == "Psalms 1" })
+        XCTAssertTrue(Genesis.wait { Genesis.chapterTitle(app) == "Psalms 1" }, "The reader opens at Psalms 1 (showing \(Genesis.chapterTitle(app) ?? "no reader controls"))")
     }
 
     @MainActor

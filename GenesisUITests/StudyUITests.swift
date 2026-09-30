@@ -1,7 +1,7 @@
 import XCTest
 
 /// Selecting verses, highlighting, notes and bookmarks.
-final class StudyUITests: XCTestCase {
+final class StudyUITests: GenesisUITestCase {
     private let john3 = 43_003_001
 
     @MainActor

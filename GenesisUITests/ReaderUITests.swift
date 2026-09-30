@@ -1,7 +1,7 @@
 import XCTest
 
 /// The reader: page turns, controls, chapter navigation.
-final class ReaderUITests: XCTestCase {
+final class ReaderUITests: GenesisUITestCase {
     /// Psalm 119 is long, so there are always pages to turn in both directions.
     private let psalm119 = 19_119_001
 
