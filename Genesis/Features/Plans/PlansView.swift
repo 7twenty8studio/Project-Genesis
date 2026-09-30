@@ -328,10 +328,10 @@ struct CustomPlanView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { dismiss() }
+                    Button("Cancel", systemImage: "xmark") { dismiss() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Start") {
+                    Button("Start", systemImage: "checkmark") {
                         let name = title.trimmingCharacters(in: .whitespacesAndNewlines)
                         onCreate(ReadingPlan.custom(title: name.isEmpty ? "My Plan" : name, books: orderedBooks, days: days))
                         dismiss()

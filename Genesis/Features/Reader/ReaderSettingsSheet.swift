@@ -104,7 +104,7 @@ struct ReaderSettingsSheet: View {
             .onAppear { brightness = DeviceScreen.brightness }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") { dismiss() }
+                    Button("Done", systemImage: "checkmark") { dismiss() }
                         .accessibilityIdentifier("settings.done")
                 }
             }

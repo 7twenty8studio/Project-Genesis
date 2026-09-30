@@ -47,7 +47,7 @@ struct NoteEditorView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
-                Button("Done") { dismiss() }
+                Button("Done", systemImage: "checkmark") { dismiss() }
                     .accessibilityIdentifier("note.done")
             }
             ToolbarItem(placement: .bottomBar) {

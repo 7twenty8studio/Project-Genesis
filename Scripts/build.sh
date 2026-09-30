@@ -200,7 +200,7 @@ if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
         EXPECT_POSTURE=""
         if [[ " $DEVICES " == *" duo "* ]] && [ -n "$DUO_ID" ]; then
             if set_duo_posture "$POSTURE"; then
-                [ "$DEVICES" = duo ] && EXPECT_POSTURE=$POSTURE
+                EXPECT_POSTURE=$POSTURE    # the tests check it on the Duo only
             elif [ "$DEVICES" = duo ]; then
                 echo "UI pass: $NAME... skipped (couldn't set the iPhone Duo to $POSTURE)"
                 continue

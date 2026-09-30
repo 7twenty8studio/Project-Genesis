@@ -30,8 +30,11 @@ enum Genesis {
 
     /// "open" or "folded" when build.sh has set the iPhone Duo's hinge for
     /// this pass (`TEST_RUNNER_GENESIS_POSTURE`).
+    /// Only checked on the Duo itself; other simulators in the same pass ignore it.
     static var expectedPosture: String? {
-        ProcessInfo.processInfo.environment["GENESIS_POSTURE"]
+        let environment = ProcessInfo.processInfo.environment
+        guard environment["SIMULATOR_DEVICE_NAME"]?.contains("Duo") == true else { return nil }
+        return environment["GENESIS_POSTURE"].flatMap { $0.isEmpty ? nil : $0 }
     }
 
     /// Launches the app. By default onboarding is skipped and the reader opens
@@ -61,16 +64,17 @@ enum Genesis {
         guard window.waitForExistence(timeout: launchTimeout) else { return }
         let size = window.frame.size
         guard size.width > 0, size.height > 0 else { return }
-        let ratio = min(size.width, size.height) / max(size.width, size.height)
+        // The Duo's two screens have almost the same shape (outer 466 × 678 pt,
+        // inner 669 × 951 pt), so tell them apart by size, not proportions.
+        let shortSide = min(size.width, size.height)
         if isLandscapePass {
             XCTAssertGreaterThan(size.width, size.height, "This pass runs in landscape")
         }
         switch expectedPosture {
         case "open":
-            // The unfolded Duo's inner screen is close to square; a folded phone is tall and narrow.
-            XCTAssertGreaterThan(ratio, 0.6, "The iPhone Duo should be unfolded for this pass (window \(size))")
+            XCTAssertGreaterThan(shortSide, 600, "The iPhone Duo should be unfolded for this pass (window \(size))")
         case "folded":
-            XCTAssertLessThan(ratio, 0.6, "The iPhone Duo should be folded for this pass (window \(size))")
+            XCTAssertLessThan(shortSide, 600, "The iPhone Duo should be folded for this pass (window \(size))")
         default:
             break
         }

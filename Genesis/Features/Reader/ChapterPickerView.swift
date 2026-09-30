@@ -52,10 +52,10 @@ struct ChapterPickerView: View {
             .themedScreen()
             .navigationTitle("Books")
             .navigationBarTitleDisplayMode(.inline)
-            .searchable(text: $filter, prompt: "Find a book")
+            .searchable(text: $filter, placement: .navigationBarDrawer(displayMode: .always), prompt: "Find a book")
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Close") { dismiss() }
+                    Button("Close", systemImage: "xmark") { dismiss() }
                 }
             }
             .navigationDestination(for: BibleBook.self) { book in
