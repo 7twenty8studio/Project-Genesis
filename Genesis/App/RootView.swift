@@ -10,6 +10,7 @@ struct RootView: View {
     @Environment(SyncService.self) private var sync
     @Environment(EntitlementService.self) private var entitlements
     @Environment(FeatureFlagService.self) private var flags
+    @Environment(WhatsNewService.self) private var whatsNew
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.scenePhase) private var scenePhase
@@ -21,14 +22,20 @@ struct RootView: View {
             if onboardingComplete {
                 MainTabView()
             } else {
-                OnboardingView { onboardingComplete = true }
+                OnboardingView {
+                    // A new install: what shipped with the app isn't news.
+                    whatsNew.markShippedFeaturesSeen()
+                    onboardingComplete = true
+                }
             }
         }
+        .whatsNewSheet(isReady: onboardingComplete && scenePhase == .active)
         .environment(\.palette, theme.palette)
         .tint(theme.palette.accent)
         // Explicit themes pin light or dark chrome; Auto follows the system.
         .preferredColorScheme(settings.preferences.theme == .automatic ? nil : (theme.isDark ? .dark : .light))
         .onOpenURL { url in
+            if !onboardingComplete { whatsNew.markShippedFeaturesSeen() }
             onboardingComplete = true
             router.handle(url)
         }

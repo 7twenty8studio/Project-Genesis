@@ -52,6 +52,12 @@ shares; README.md has the architecture.
 - Supabase SQL: explicit statements, no drops, RLS enabled in plain
   `alter table` lines (the dashboard's checker flags anything else).
 
+## What's New
+- Every new user-facing feature gets a one-time announcement in
+  `WhatsNewCatalog.all` (Genesis/Core/WhatsNew/WhatsNew.swift) with a new,
+  never-reused id. Features behind a Supabase switch set `flag` so the note
+  appears when the switch turns on. UI tests only see it with `-uiTestingWhatsNew`.
+
 ## Conventions
 - MVVM, composition, one responsibility per type, small view files.
 - SwiftUI first; UIKit only for the TextKit reader text and page curl.

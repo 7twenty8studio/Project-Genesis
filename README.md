@@ -42,6 +42,14 @@ See [BUILDING.md](BUILDING.md) to build and run.
 - **Widgets**: verse of the day, continue reading, reading progress (large),
   lock screen streak, verse and continue reading. Tapping opens the app in place.
 
+## What's New
+
+A one-time sheet tells people about new features. Add an entry to
+`WhatsNewCatalog` in `Genesis/Core/WhatsNew/WhatsNew.swift`: features that ship
+in an update are shown to existing users after they update (new installs skip
+them); features behind a Supabase switch are shown the first time the switch is
+on. The study assistant's announcement is ready and waits for its switch.
+
 ## Phase 3 (built; switch on with [PHASE3_SETUP.md](PHASE3_SETUP.md))
 
 - **Study assistant**: explain a passage, summarize a chapter, historical

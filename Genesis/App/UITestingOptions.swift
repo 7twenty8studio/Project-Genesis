@@ -13,6 +13,7 @@ import Foundation
 ///     -uiTestingPageTurn slide        slide | curl
 ///     -uiTestingPremium               act as a Premium subscriber (default: free)
 ///     -uiTestingAI                    turn the study assistant on (default: off, like release)
+///     -uiTestingWhatsNew              show What's New announcements (default: never)
 struct UITestingOptions {
     let isEnabled: Bool
     let skipsOnboarding: Bool
@@ -22,6 +23,7 @@ struct UITestingOptions {
     let pageTurn: PageTurnStyle?
     let isPremium: Bool
     let enablesAI: Bool
+    let showsWhatsNew: Bool
 
     static let current = UITestingOptions(arguments: ProcessInfo.processInfo.arguments)
 
@@ -38,6 +40,7 @@ struct UITestingOptions {
         pageTurn = value(after: "-uiTestingPageTurn").flatMap(PageTurnStyle.init(rawValue:))
         isPremium = arguments.contains("-uiTestingPremium")
         enablesAI = arguments.contains("-uiTestingAI")
+        showsWhatsNew = arguments.contains("-uiTestingWhatsNew")
     }
 
     /// Wipes saved state. Must run before any store reads UserDefaults.

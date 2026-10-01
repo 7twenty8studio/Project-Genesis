@@ -13,6 +13,7 @@ struct GenesisApp: App {
     @State private var entitlements: EntitlementService
     @State private var assistant: StudyAssistant
     @State private var flags: FeatureFlagService
+    @State private var whatsNew: WhatsNewService
     private let modelContainer: ModelContainer
     private let studyData = StudyRepository.bundled()
 
@@ -59,6 +60,7 @@ struct GenesisApp: App {
             override: testing.isEnabled ? [.studyAssistant: testing.enablesAI] : nil
         )
         _flags = State(initialValue: flags)
+        _whatsNew = State(initialValue: WhatsNewService(isEnabled: !testing.isEnabled || testing.showsWhatsNew))
         _assistant = State(initialValue: StudyAssistant(auth: auth, entitlements: entitlements, library: library, backend: backend, flags: flags))
 
         testing.apply(settings: settings, router: router)
@@ -77,6 +79,7 @@ struct GenesisApp: App {
                 .environment(entitlements)
                 .environment(assistant)
                 .environment(flags)
+                .environment(whatsNew)
                 .environment(\.studyData, studyData)
         }
         .modelContainer(modelContainer)
