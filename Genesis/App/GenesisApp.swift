@@ -12,6 +12,7 @@ struct GenesisApp: App {
     @State private var sync: SyncService
     @State private var entitlements: EntitlementService
     @State private var assistant: StudyAssistant
+    @State private var flags: FeatureFlagService
     private let modelContainer: ModelContainer
     private let studyData = StudyRepository.bundled()
 
@@ -51,9 +52,14 @@ struct GenesisApp: App {
 
         // UI tests get canned answers: no network and no AI cost.
         let backend: StudyAssistantBackend? = testing.isEnabled ? StubStudyBackend() : StudyAssistant.liveBackend(client: auth.client)
-        // The assistant is behind a switch (GENESIS_AI_ENABLED); UI tests turn it on with -uiTestingAI.
-        let aiEnabled = testing.isEnabled ? testing.enablesAI : AppConfiguration.current.isAIEnabled
-        _assistant = State(initialValue: StudyAssistant(auth: auth, entitlements: entitlements, library: library, backend: backend, isEnabled: aiEnabled))
+        // Server-side switches (Supabase feature_flags). UI tests never ask the
+        // server: the assistant is on only with -uiTestingAI.
+        let flags = FeatureFlagService(
+            client: testing.isEnabled ? nil : auth.client,
+            override: testing.isEnabled ? [.studyAssistant: testing.enablesAI] : nil
+        )
+        _flags = State(initialValue: flags)
+        _assistant = State(initialValue: StudyAssistant(auth: auth, entitlements: entitlements, library: library, backend: backend, flags: flags))
 
         testing.apply(settings: settings, router: router)
     }
@@ -70,6 +76,7 @@ struct GenesisApp: App {
                 .environment(sync)
                 .environment(entitlements)
                 .environment(assistant)
+                .environment(flags)
                 .environment(\.studyData, studyData)
         }
         .modelContainer(modelContainer)

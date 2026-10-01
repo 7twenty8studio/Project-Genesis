@@ -8,14 +8,27 @@ server or the App Store.
 |---|---|---|
 | Timeline, maps, people, insights | Yes, with Premium | Nothing (try Premium with ⌘R, below) |
 | Buying Premium | With ⌘R from Xcode | Nothing for testing; App Store Connect for real purchases |
-| Study assistant | **Switched off for now** | `GENESIS_AI_ENABLED = YES`, then steps 2–3 |
+| Study assistant | **Switched off for now** | The switch below, then steps 2–3 |
 
-**The study assistant is switched off.** `GENESIS_AI_ENABLED = NO` in
-`Config/Genesis.xcconfig` hides Explain, the Study button, the Study panel and
-the assistant on the Premium screen, and the app never calls the server. To turn
-it back on, set it to `YES` (or override it in your `Secrets.xcconfig`), do
-steps 2 and 3 below, and rebuild. Until then you can skip steps 2 and 3; no
-Anthropic account is needed.
+## The study assistant switch (no app update needed)
+
+The assistant is controlled by a switch in Supabase. While it's off, the app
+hides Explain, the Study button, the Study panel and the assistant on the
+Premium screen, never calls the server, and the study-ai function refuses
+requests. The app checks the switch at launch and whenever it comes back to the
+front.
+
+1. **Create the switch (once):** SQL Editor → New query → paste
+   `supabase/migrations/20261001000000_feature_flags.sql` → Run. It starts off.
+2. **Turn it on later:** do steps 2 and 3 below first (API key, deploy), then
+   Table Editor → `feature_flags` → set `enabled` to `true` on the
+   `study_assistant` row. Or in the SQL Editor:
+   `update public.feature_flags set enabled = true, updated_at = now() where key = 'study_assistant';`
+3. **Turn it off again:** set `enabled` back to `false`. Devices pick it up the
+   next time Genesis opens; a device that's offline keeps its last setting
+   (a new install starts off).
+
+Until you turn it on you can skip steps 2 and 3; no Anthropic account is needed.
 
 ## 1. Create the study assistant's tables (Supabase, 1 minute)
 

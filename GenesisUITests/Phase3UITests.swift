@@ -11,7 +11,7 @@ final class Phase3UITests: GenesisUITestCase {
     }
 
     /// The study assistant is switched off in release builds for now
-    /// (GENESIS_AI_ENABLED); its tests turn it on.
+    /// (Supabase feature_flags); its tests turn it on.
     @MainActor
     private func launchWithAI(verse: Int, premium: Bool = false) -> XCUIApplication {
         Genesis.launch(verse: verse, extra: ["-uiTestingAI"] + (premium ? ["-uiTestingPremium"] : []))

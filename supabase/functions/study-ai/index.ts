@@ -50,6 +50,12 @@ const REVERIFY_AFTER_MS = 7 * 24 * 60 * 60 * 1000;
 const admin = createClient(SUPABASE_URL, SERVICE_ROLE_KEY, { auth: { persistSession: false } });
 let appleRoot: Uint8Array | undefined;
 
+/** Reads the study_assistant switch; a missing row or a failed read means off. */
+async function assistantIsOn(): Promise<boolean> {
+  const { data, error } = await admin.from("feature_flags").select("enabled").eq("key", "study_assistant").maybeSingle();
+  return !error && data?.enabled === true;
+}
+
 Deno.serve(async (req) => {
   if (req.method !== "POST") return json({ error: "Use POST." }, 405);
   try {
@@ -63,15 +69,21 @@ Deno.serve(async (req) => {
     if (userError || !userData.user) return json({ error: "Sign in to use the study assistant." }, 401);
     const userID = userData.user.id;
 
-    // 2. What do they want?
+    // 2. Is the assistant switched on? (public.feature_flags, so it can be
+    //    turned off without an app update; older apps get the same answer.)
+    if (!(await assistantIsOn())) {
+      return json({ error: "The study assistant isn't available right now.", reason: "disabled" }, 503);
+    }
+
+    // 3. What do they want?
     const body = await req.json().catch(() => null);
     const request = parseRequest(body);
     const signedTransaction = typeof body?.signedTransaction === "string" ? body.signedTransaction : undefined;
 
-    // 3. Free or Premium?
+    // 4. Free or Premium?
     const tier = await tierFor(userID, signedTransaction);
 
-    // 4. Is this tool included? (Limits are reserved below, in one database step.)
+    // 5. Is this tool included? (Limits are reserved below, in one database step.)
     const day = new Date().toISOString().slice(0, 10);
     const limit = tier === "free" ? FREE_DAILY_LIMIT : PREMIUM_DAILY_LIMIT;
     const access = decideAccess(tier, request.action, 0);
@@ -81,7 +93,7 @@ Deno.serve(async (req) => {
     const overLimit = () =>
       json({ error: `You've used today's ${limit} study assistant answers. They reset tomorrow.`, reason: "daily_limit", tier, usedToday: limit, limit }, 403);
 
-    // 5. Cached? Free accounts count every answer; Premium counts new ones only.
+    // 6. Cached? Free accounts count every answer; Premium counts new ones only.
     const key = cacheKey(request);
     const { data: cached } = await admin.from("ai_cache").select("content").eq("key", key).maybeSingle();
     if (cached) {
@@ -93,7 +105,7 @@ Deno.serve(async (req) => {
       return json({ content: cached.content, cached: true, tier, usedToday: used, limit, model: MODEL });
     }
 
-    // 6. Reserve one answer, then ask the model; give it back if that fails.
+    // 7. Reserve one answer, then ask the model; give it back if that fails.
     if (!ANTHROPIC_API_KEY) return json({ error: "The study assistant isn't set up yet." }, 503);
     const used = await reserve(userID, day, limit);
     if (used < 0) return overLimit();

@@ -9,6 +9,7 @@ struct RootView: View {
     @Environment(AppRouter.self) private var router
     @Environment(SyncService.self) private var sync
     @Environment(EntitlementService.self) private var entitlements
+    @Environment(FeatureFlagService.self) private var flags
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.scenePhase) private var scenePhase
@@ -34,6 +35,7 @@ struct RootView: View {
         .task {
             entitlements.start()
             sync.start()
+            Task { await flags.refresh() }
             refreshWidgets()
         }
         .onChange(of: entitlements.isPremium) { _, isPremium in
@@ -45,6 +47,7 @@ struct RootView: View {
             switch phase {
             case .active:
                 sync.schedule(after: .zero)
+                Task { await flags.refresh() }
                 refreshWidgets()
             case .background:
                 refreshWidgets()

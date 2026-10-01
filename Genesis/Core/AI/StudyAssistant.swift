@@ -90,7 +90,7 @@ enum StudyAssistantError: LocalizedError, Equatable {
         case .signInRequired: "Sign in to use the study assistant. A free account includes \(FreeLimits.aiRequestsPerDay) explanations a day."
         case .premiumRequired: "This study tool is part of Genesis Premium."
         case let .dailyLimit(limit): "You've used today's \(limit) study assistant answers. They reset tomorrow."
-        case .notConfigured: "The study assistant isn't set up in this build yet."
+        case .notConfigured: "The study assistant isn't available right now."
         case .offline: "The study assistant needs an internet connection."
         case let .server(message): message
         }
@@ -115,17 +115,18 @@ final class StudyAssistant {
     private(set) var usedToday: Int?
     private(set) var dailyLimit: Int?
     /// When false the app hides every study assistant entry point and never
-    /// calls the server (GENESIS_AI_ENABLED).
-    let isEnabled: Bool
+    /// calls the server. Switched in Supabase (feature_flags.study_assistant).
+    var isEnabled: Bool { flags.isOn(.studyAssistant) }
 
     @ObservationIgnored private let auth: AuthService
     @ObservationIgnored private let entitlements: EntitlementService
     @ObservationIgnored private let library: BibleLibrary
     @ObservationIgnored private let backend: StudyAssistantBackend?
+    private let flags: FeatureFlagService
     @ObservationIgnored private let cacheDirectory: URL
 
-    init(auth: AuthService, entitlements: EntitlementService, library: BibleLibrary, backend: StudyAssistantBackend?, isEnabled: Bool = true, cacheDirectory: URL = StudyAssistant.defaultCacheDirectory) {
-        self.isEnabled = isEnabled
+    init(auth: AuthService, entitlements: EntitlementService, library: BibleLibrary, backend: StudyAssistantBackend?, flags: FeatureFlagService, cacheDirectory: URL = StudyAssistant.defaultCacheDirectory) {
+        self.flags = flags
         self.auth = auth
         self.entitlements = entitlements
         self.library = library

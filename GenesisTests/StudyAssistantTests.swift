@@ -26,6 +26,7 @@ struct StudyAssistantTests {
             entitlements: EntitlementService(defaults: defaults, override: premium),
             library: BibleLibrary(defaults: defaults),
             backend: backend,
+            flags: FeatureFlagService(client: nil, override: [.studyAssistant: true]),
             cacheDirectory: cache
         )
     }
@@ -71,6 +72,7 @@ struct StudyAssistantTests {
             entitlements: EntitlementService(defaults: UserDefaults(suiteName: "x-\(UUID())")!, override: true),
             library: BibleLibrary(),
             backend: nil,
+            flags: FeatureFlagService(client: nil, override: [.studyAssistant: true]),
             cacheDirectory: URL.temporaryDirectory.appending(path: "none-\(UUID())")
         )
         await #expect(throws: StudyAssistantError.notConfigured) {
@@ -85,7 +87,7 @@ struct StudyAssistantTests {
             entitlements: EntitlementService(defaults: UserDefaults(suiteName: "off-\(UUID())")!, override: true),
             library: BibleLibrary(),
             backend: backend,
-            isEnabled: false,
+            flags: FeatureFlagService(client: nil, override: [.studyAssistant: false]),
             cacheDirectory: URL.temporaryDirectory.appending(path: "off-\(UUID())")
         )
         #expect(!assistant.isEnabled)
@@ -95,12 +97,16 @@ struct StudyAssistantTests {
         #expect(backend.calls.isEmpty)
     }
 
-    @Test func aiSwitchReadsTheBuildSetting() {
-        #expect(AppConfiguration.isOn("YES"))
-        #expect(AppConfiguration.isOn("true"))
-        #expect(AppConfiguration.isOn("1"))
-        #expect(!AppConfiguration.isOn("NO"))
-        #expect(!AppConfiguration.isOn(nil))
+    @Test func switchesDefaultOffAndRememberTheServer() {
+        let defaults = UserDefaults(suiteName: "flags-\(UUID())")!
+        let fresh = FeatureFlagService(client: nil, defaults: defaults)
+        #expect(!fresh.isOn(.studyAssistant), "Off until the server says otherwise")
+        fresh.apply(["study_assistant": true, "something_else": true])
+        #expect(fresh.isOn(.studyAssistant))
+        let relaunched = FeatureFlagService(client: nil, defaults: defaults)
+        #expect(relaunched.isOn(.studyAssistant), "The last answer is kept for offline launches")
+        relaunched.apply([:])
+        #expect(!relaunched.isOn(.studyAssistant), "A missing row means off")
         #expect(UITestingOptions(arguments: ["-uiTesting", "-uiTestingAI"]).enablesAI)
         #expect(!UITestingOptions(arguments: ["-uiTesting"]).enablesAI)
     }

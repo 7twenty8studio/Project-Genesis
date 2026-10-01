@@ -179,6 +179,21 @@ final class SupabaseClient: Sendable {
         _ = try await perform(request)
     }
 
+    // MARK: Feature switches
+
+    private struct FlagRow: Decodable {
+        let key: String
+        let enabled: Bool
+    }
+
+    /// Server-side switches (the public.feature_flags table), readable without
+    /// signing in.
+    func featureFlags() async throws -> [String: Bool] {
+        let request = makeRequest(path: "rest/v1/feature_flags", query: [URLQueryItem(name: "select", value: "key,enabled")], method: "GET", accessToken: nil)
+        let rows = try JSONDecoder().decode([FlagRow].self, from: try await perform(request))
+        return Dictionary(rows.map { ($0.key, $0.enabled) }, uniquingKeysWith: { _, last in last })
+    }
+
     // MARK: Edge Functions
 
     /// Calls an Edge Function with a JSON body; returns the raw body and status

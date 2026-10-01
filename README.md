@@ -48,8 +48,8 @@ See [BUILDING.md](BUILDING.md) to build and run.
   background, discussion questions, an explanation for children, reading
   comprehension. Claude Haiku 4.5 through a Supabase Edge Function; answers are
   cached and shared. Non-denominational, never quotes Scripture, always shown
-  apart from the text and labelled as AI-generated. **Switched off for now**
-  (`GENESIS_AI_ENABLED` in Config/Genesis.xcconfig).
+  apart from the text and labelled as AI-generated. **Switched off for now** by a
+  server-side switch (Supabase `feature_flags`; see PHASE3_SETUP.md).
 - **Timeline**: twelve eras from Creation to Revelation with 450 events; tap an
   event for its people, places and chapters.
 - **Maps**: 1,250 located places on Apple Maps, Paul's journeys and a

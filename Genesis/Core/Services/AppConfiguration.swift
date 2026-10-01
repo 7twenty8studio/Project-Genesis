@@ -11,9 +11,6 @@ struct AppConfiguration: Sendable {
     /// Your privacy policy (required by App Review before release); the link is
     /// hidden until it's set.
     let privacyURL: URL?
-    /// The AI study assistant (GENESIS_AI_ENABLED in Genesis.xcconfig). Off
-    /// unless set to YES.
-    let isAIEnabled: Bool
 
     static let appleStandardEULA = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!
 
@@ -31,12 +28,5 @@ struct AppConfiguration: Sendable {
         sentryDSN = value("GenesisSentryDSN")
         termsURL = value("GenesisTermsURL").flatMap(URL.init(string:)) ?? Self.appleStandardEULA
         privacyURL = value("GenesisPrivacyURL").flatMap(URL.init(string:))
-        isAIEnabled = Self.isOn(value("GenesisAIEnabled"))
-    }
-
-    /// Reads an xcconfig switch: YES, true or 1 turn it on; anything else is off.
-    static func isOn(_ raw: String?) -> Bool {
-        guard let raw else { return false }
-        return ["yes", "true", "1"].contains(raw.lowercased())
     }
 }
