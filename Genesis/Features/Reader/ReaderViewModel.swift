@@ -112,6 +112,13 @@ final class ReaderViewModel {
         progress.update(verse)
     }
 
+    /// A downloaded edition replaced the text: reload what's on screen.
+    func translationEditionChanged() {
+        chapterCache.removeAll()
+        cacheOrder.removeAll()
+        navigationToken += 1
+    }
+
     func switchTranslation(to translation: Translation) {
         guard translation != library.currentTranslation else { return }
         library.currentTranslation = translation

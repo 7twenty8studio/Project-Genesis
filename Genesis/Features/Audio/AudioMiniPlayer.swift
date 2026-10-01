@@ -42,6 +42,7 @@ struct AudioMiniPlayer: View {
         .frame(maxWidth: 560)
         .glassEffect(.regular, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
         .padding(.horizontal, 12)
+        .sensoryFeedback(.selection, trigger: audio.isPlaying)
         .accessibilityElement(children: .contain)
         .accessibilityIdentifier("audio.player")
     }

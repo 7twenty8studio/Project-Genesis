@@ -244,6 +244,7 @@ struct GroupPrayersView: View {
             .listRowBackground(palette.surface)
         }
         .buttonStyle(.borderless)
+        .sensoryFeedback(.impact(weight: .light), trigger: model.prayedFor.count) { old, new in new > old }
     }
 
     private func row(_ prayer: GroupPrayer) -> some View {

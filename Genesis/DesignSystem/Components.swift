@@ -64,14 +64,15 @@ struct VerseSnippet: View {
 
     @Environment(\.palette) private var palette
     @Environment(ReaderSettings.self) private var settings
+    @Environment(\.accessibilityDifferentiateWithoutColor) private var differentiateWithoutColor
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack(spacing: 6) {
                 if let highlight {
-                    Circle()
-                        .fill(highlight.swatch)
-                        .frame(width: 8, height: 8)
+                    Image(systemName: differentiateWithoutColor ? highlight.symbol : "circle.fill")
+                        .font(.system(size: differentiateWithoutColor ? 10 : 8))
+                        .foregroundStyle(highlight.swatch)
                         .accessibilityLabel("\(highlight.title) highlight")
                 }
                 Text(reference)

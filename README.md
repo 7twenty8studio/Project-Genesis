@@ -63,6 +63,13 @@ on. The study assistant's announcement is ready and waits for its switch.
   anonymous) and reflections, with guidelines, a word filter, reporting,
   blocking, auto-hiding after three reports and a moderation queue.
 - **Android planning**: [docs/ANDROID_PLAN.md](docs/ANDROID_PLAN.md).
+- **Feature choices**: "Make Genesis yours" at setup and Settings › Features
+  (listen, plans and prayer, explore, study notes, groups and community), with
+  one-time TipKit hints instead of a tutorial.
+- **Topic search** (Nave's Topical Bible, 5,000+ topics), **Bible downloads**
+  (Berean Standard Bible first, automatic updates), Bible + Reading Plan and
+  Bible + Prayer Journal side panels, a lock-screen prayer widget, and
+  highlight patterns for Differentiate Without Colour.
 
 ## Phase 3 (built; switch on with [PHASE3_SETUP.md](PHASE3_SETUP.md))
 

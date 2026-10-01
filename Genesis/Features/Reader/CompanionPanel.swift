@@ -5,7 +5,7 @@ import SwiftUI
 /// or search beside the text, so study never covers Scripture.
 struct CompanionPanel: View {
     enum Mode: String, CaseIterable, Identifiable {
-        case notes, crossReferences, study, context, search
+        case notes, crossReferences, study, context, search, plan, prayer
 
         var id: String { rawValue }
 
@@ -16,6 +16,20 @@ struct CompanionPanel: View {
             case .study: "Study"
             case .context: "Context"
             case .search: "Search"
+            case .plan: "Reading Plan"
+            case .prayer: "Prayer Journal"
+            }
+        }
+
+        var systemImage: String {
+            switch self {
+            case .notes: "note.text"
+            case .crossReferences: "arrow.triangle.branch"
+            case .study: "sparkles"
+            case .context: "map"
+            case .search: "magnifyingglass"
+            case .plan: "calendar"
+            case .prayer: "hands.and.sparkles"
             }
         }
     }
@@ -24,10 +38,18 @@ struct CompanionPanel: View {
     @Environment(ReaderViewModel.self) private var reader
     @Environment(\.palette) private var palette
     @Environment(StudyAssistant.self) private var assistant
+    @Environment(FeaturePreferences.self) private var features
 
-    /// Study is the AI assistant, so it's left out while that's switched off.
+    /// Only the panels for features that are switched on.
     private var modes: [Mode] {
-        assistant.isEnabled ? Mode.allCases : Mode.allCases.filter { $0 != .study }
+        Mode.allCases.filter { mode in
+            switch mode {
+            case .study: assistant.isEnabled
+            case .context: features.isOn(.explore)
+            case .plan, .prayer: features.isOn(.plansAndPrayer)
+            case .notes, .crossReferences, .search: true
+            }
+        }
     }
 
     var body: some View {
@@ -48,17 +70,37 @@ struct CompanionPanel: View {
                     ChapterContextView(chapter: reader.chapterID)
                 case .search:
                     SearchContent(compact: true) { reader.open($0) }
+                case .plan:
+                    CompanionPlanView()
+                case .prayer:
+                    PrayerJournalView()
+                }
+            }
+            .navigationDestination(for: HomeRoute.self) { route in
+                switch route {
+                case .plans: PlansView()
+                case let .plan(id): PlanDetailView(enrollmentID: id)
+                case .prayerJournal: PrayerJournalView()
+                case .insights: InsightsView()
                 }
             }
             .safeAreaInset(edge: .top) {
+                // Seven panels don't fit a segmented control in 360 points.
                 Picker("Panel", selection: $mode) {
-                    ForEach(modes) { Text($0.title).tag($0) }
+                    ForEach(modes) { Label($0.title, systemImage: $0.systemImage).tag($0) }
                 }
-                .pickerStyle(.segmented)
-                .padding(.horizontal, 16)
-                .padding(.vertical, 8)
+                .pickerStyle(.menu)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .accessibilityIdentifier("companion.mode")
             }
-            .toolbar(.hidden, for: .navigationBar)
+            .onChange(of: modes) {
+                if !modes.contains(mode) { mode = .notes }
+            }
+            // Plans and the prayer journal have their own toolbar buttons (New Prayer).
+            .toolbar(mode == .plan || mode == .prayer ? .visible : .hidden, for: .navigationBar)
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
@@ -159,5 +201,19 @@ struct NoteRow: View {
             }
         }
         .padding(.vertical, 4)
+    }
+}
+
+/// Bible + Reading Plan: today's reading in the plan you're following, or the
+/// plans to choose from.
+struct CompanionPlanView: View {
+    @Query(sort: \PlanEnrollment.createdAt, order: .reverse) private var enrollments: [PlanEnrollment]
+
+    var body: some View {
+        if let active = enrollments.first(where: { $0.isActive && $0.plan != nil }) {
+            PlanDetailView(enrollmentID: active.id)
+        } else {
+            PlansView(opensStartedPlan: false)
+        }
     }
 }

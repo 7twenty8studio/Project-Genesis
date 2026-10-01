@@ -10,8 +10,18 @@ struct OnboardingView: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var selection: Translation = .kjv
     @State private var appeared = false
+    @State private var choosingFeatures = false
 
     var body: some View {
+        if choosingFeatures {
+            FeatureChoicesView(onFinish: onFinish)
+                .transition(.move(edge: .trailing).combined(with: .opacity))
+        } else {
+            translationStep
+        }
+    }
+
+    private var translationStep: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 32) {
                 VStack(alignment: .leading, spacing: 10) {
@@ -72,7 +82,7 @@ struct OnboardingView: View {
     private func begin(at chapter: ChapterID) {
         library.currentTranslation = selection
         router.read(chapter)
-        onFinish()
+        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.3)) { choosingFeatures = true }
     }
 }
 

@@ -101,6 +101,10 @@ enum ChapterTextBuilder {
             }
 
             var textAttributes = attributes
+            if style.differentiatesWithoutColor, let color = decorations.highlights[verse.id] {
+                textAttributes[.underlineStyle] = color.underline.rawValue
+                textAttributes[.underlineColor] = palette.uiText.withAlphaComponent(0.55)
+            }
             if decorations.selection.contains(verse.id) {
                 textAttributes[.underlineStyle] = NSUnderlineStyle.thick.rawValue | NSUnderlineStyle.patternDot.rawValue
                 textAttributes[.underlineColor] = palette.uiAccent

@@ -1,4 +1,5 @@
 import SwiftUI
+import TipKit
 
 /// The Search tab.
 struct SearchView: View {
@@ -9,7 +10,7 @@ struct SearchView: View {
         NavigationStack {
             SearchContent(text: $text) { router.read($0) }
                 .navigationTitle("Search")
-                .searchable(text: $text, placement: .navigationBarDrawer(displayMode: .always), prompt: "Words, phrases or a reference")
+                .searchable(text: $text, placement: .navigationBarDrawer(displayMode: .always), prompt: "Words, topics or a reference")
                 .autocorrectionDisabled()
                 .textInputAutocapitalization(.never)
         }
@@ -46,7 +47,9 @@ struct SearchContent: View {
     let onOpen: (VerseID) -> Void
 
     @Environment(BibleLibrary.self) private var library
+    @Environment(\.topics) private var topics
     @Environment(\.palette) private var palette
+    @State private var topicResults: [TopicSummary] = []
     @State private var scope: SearchScopeOption = .all
     @State private var order: SearchOrder = .relevance
     @State private var results: SearchResults = .empty
@@ -107,6 +110,22 @@ struct SearchContent: View {
                     }
                 }
 
+                if !topicResults.isEmpty {
+                    Section("Topics") {
+                        ForEach(topicResults) { topic in
+                            NavigationLink {
+                                TopicDetailView(topicID: topic.id, onOpen: onOpen)
+                                    .onAppear { GenesisTips.topics.invalidate(reason: .actionPerformed) }
+                            } label: {
+                                LabeledContent(topic.name, value: "\(topic.referenceCount) passages")
+                                    .foregroundStyle(palette.text)
+                            }
+                            .listRowBackground(palette.surface)
+                            .accessibilityIdentifier("search.topic")
+                        }
+                    }
+                }
+
                 Section {
                     ForEach(results.verses) { verse in
                         Button {
@@ -163,7 +182,11 @@ struct SearchContent: View {
 
     private var suggestions: some View {
         Section("Try") {
-            ForEach(["John 3:16", "Psalm 23", "love one another", "\u{201C}the Lord is my shepherd\u{201D}", "Romans 8"], id: \.self) { example in
+            TipView(GenesisTips.topics)
+                .tipBackground(palette.surface)
+                .listRowBackground(Color.clear)
+                .listRowInsets(EdgeInsets())
+            ForEach(["John 3:16", "Psalm 23", "forgiveness", "love one another", "\u{201C}the Lord is my shepherd\u{201D}", "Romans 8"], id: \.self) { example in
                 Button(example) {
                     if usesOwnField { ownText = example } else { text = example }
                 }
@@ -177,6 +200,7 @@ struct SearchContent: View {
         let input = query
         guard !input.trimmingCharacters(in: .whitespaces).isEmpty else {
             results = .empty
+            topicResults = []
             return
         }
         // Brief pause so fast typists don't search on every keystroke.
@@ -186,11 +210,18 @@ struct SearchContent: View {
         let repository = library.current
         let searchScope = scope.scope
         let searchOrder = order
+        let topicIndex = topics
+        async let foundTopics = Task.detached(priority: .userInitiated) {
+            // A reference like "John 3" isn't a topic search.
+            ReferenceParser.parse(input) == nil ? ((try? topicIndex?.search(input, limit: 6)) ?? []) : []
+        }.value
         let found = await Task.detached(priority: .userInitiated) {
             try? BibleSearch.run(input, in: repository, scope: searchScope, order: searchOrder)
         }.value
+        let matchedTopics = await foundTopics
         guard !Task.isCancelled else { return }
         results = found ?? .empty
+        topicResults = matchedTopics
     }
 }
 

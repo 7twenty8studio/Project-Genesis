@@ -9,6 +9,7 @@ struct GenesisWidgetsBundle: WidgetBundle {
         ContinueReadingWidget()
         ReadingProgressWidget()
         StreakWidget()
+        PrayerReminderWidget()
     }
 }
 
@@ -304,5 +305,54 @@ struct StreakView: View {
         }
         .containerBackground(for: .widget) { Color.clear }
         .widgetURL(GenesisLink.read(entry.snapshot.continueReading?.verse ?? 1_001_001))
+    }
+}
+
+// MARK: - Lock screen prayer reminder
+
+struct PrayerReminderWidget: Widget {
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: "PrayerReminder", provider: SnapshotProvider()) { entry in
+            PrayerReminderView(entry: entry)
+        }
+        .configurationDisplayName("Prayer Reminder")
+        .description("Your next prayer reminder and how many requests you're praying for.")
+        .supportedFamilies([.accessoryRectangular, .accessoryInline, .accessoryCircular])
+    }
+}
+
+struct PrayerReminderView: View {
+    let entry: SnapshotEntry
+    @Environment(\.widgetFamily) private var family
+
+    var body: some View {
+        let snapshot = entry.snapshot
+        // Prayer text is private: only counts and times appear here.
+        let count = snapshot.activePrayerCount == 1 ? "1 prayer" : "\(snapshot.activePrayerCount) prayers"
+        let next = snapshot.nextPrayerReminder.map { $0.formatted(date: .omitted, time: .shortened) }
+        Group {
+            switch family {
+            case .accessoryInline:
+                Label(next.map { "Pray at \($0)" } ?? count, systemImage: "hands.and.sparkles")
+            case .accessoryCircular:
+                ZStack {
+                    AccessoryWidgetBackground()
+                    VStack(spacing: 0) {
+                        Image(systemName: "hands.and.sparkles")
+                        Text("\(snapshot.activePrayerCount)").font(.headline)
+                    }
+                }
+            default:
+                VStack(alignment: .leading, spacing: 2) {
+                    Label("Prayer", systemImage: "hands.and.sparkles")
+                        .font(.headline)
+                    Text(next.map { "Next reminder \($0)" } ?? "No reminder set")
+                    Text(count).foregroundStyle(.secondary)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+        }
+        .containerBackground(for: .widget) { Color.clear }
+        .widgetURL(GenesisLink.prayer)
     }
 }

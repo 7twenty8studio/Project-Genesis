@@ -141,10 +141,13 @@ struct ReaderStyle: Equatable {
     let theme: ReaderTheme
     let showsVerseNumbers: Bool
     let layout: TextLayout
+    /// Accessibility: mark highlights with patterns as well as colour.
+    let differentiatesWithoutColor: Bool
 
     var palette: ThemePalette { theme.palette }
 
-    init(preferences: ReaderPreferences, theme: ReaderTheme, contentSizeCategory: UIContentSizeCategory) {
+    init(preferences: ReaderPreferences, theme: ReaderTheme, contentSizeCategory: UIContentSizeCategory, differentiatesWithoutColor: Bool = false) {
+        self.differentiatesWithoutColor = differentiatesWithoutColor
         font = preferences.font
         var size = CGFloat(preferences.fontSize)
         if preferences.followsDynamicType {

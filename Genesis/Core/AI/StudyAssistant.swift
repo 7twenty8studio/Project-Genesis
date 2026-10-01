@@ -115,18 +115,23 @@ final class StudyAssistant {
     private(set) var usedToday: Int?
     private(set) var dailyLimit: Int?
     /// When false the app hides every study assistant entry point and never
-    /// calls the server. Switched in Supabase (feature_flags.study_assistant).
-    var isEnabled: Bool { flags.isOn(.studyAssistant) }
+    /// calls the server: switched off in Supabase (feature_flags.study_assistant)
+    /// or by the person (Settings › Features).
+    var isEnabled: Bool {
+        flags.isOn(.studyAssistant) && (preferences?.isOn(.studyAssistant) ?? true)
+    }
 
     @ObservationIgnored private let auth: AuthService
     @ObservationIgnored private let entitlements: EntitlementService
     @ObservationIgnored private let library: BibleLibrary
     @ObservationIgnored private let backend: StudyAssistantBackend?
     private let flags: FeatureFlagService
+    private let preferences: FeaturePreferences?
     @ObservationIgnored private let cacheDirectory: URL
 
-    init(auth: AuthService, entitlements: EntitlementService, library: BibleLibrary, backend: StudyAssistantBackend?, flags: FeatureFlagService, cacheDirectory: URL = StudyAssistant.defaultCacheDirectory) {
+    init(auth: AuthService, entitlements: EntitlementService, library: BibleLibrary, backend: StudyAssistantBackend?, flags: FeatureFlagService, preferences: FeaturePreferences? = nil, cacheDirectory: URL = StudyAssistant.defaultCacheDirectory) {
         self.flags = flags
+        self.preferences = preferences
         self.auth = auth
         self.entitlements = entitlements
         self.library = library

@@ -17,8 +17,10 @@ struct GenesisApp: App {
     @State private var whatsNew: WhatsNewService
     @State private var audio: AudioPlayerService
     @State private var community: CommunityStore
+    @State private var features: FeaturePreferences
     private let modelContainer: ModelContainer
     private let studyData = StudyRepository.bundled()
+    private let topics = TopicRepository.bundled()
 
     init() {
         let testing = UITestingOptions.current
@@ -27,6 +29,12 @@ struct GenesisApp: App {
         } else {
             CrashReporter.start()
         }
+
+        // Read before anything changes it: someone who set up Genesis before
+        // feature choices existed keeps everything they had.
+        let features = FeaturePreferences(existingUser: UserDefaults.standard.bool(forKey: "onboarding.complete"))
+        if testing.isSimple { features.choose([]) }
+        _features = State(initialValue: features)
 
         let library = BibleLibrary()
         let progress = ReadingProgress()
@@ -51,6 +59,8 @@ struct GenesisApp: App {
         }
         auth.beforeSignOut = { await PushNotifications.shared.signingOut() }
         _auth = State(initialValue: auth)
+        // More translations to download (none in UI tests).
+        library.setDownloader(TranslationDownloader(client: testing.isEnabled ? nil : auth.client))
         _sync = State(initialValue: sync)
 
         // UI tests never reach StoreKit: Premium is on only with -uiTestingPremium.
@@ -68,7 +78,7 @@ struct GenesisApp: App {
         )
         _flags = State(initialValue: flags)
         _whatsNew = State(initialValue: WhatsNewService(isEnabled: !testing.isEnabled || testing.showsWhatsNew))
-        _assistant = State(initialValue: StudyAssistant(auth: auth, entitlements: entitlements, library: library, backend: backend, flags: flags))
+        _assistant = State(initialValue: StudyAssistant(auth: auth, entitlements: entitlements, library: library, backend: backend, flags: flags, preferences: features))
 
         // Listening. UI tests use a silent narrator that moves through verses
         // on a timer, and no recorded narration.
@@ -101,6 +111,7 @@ struct GenesisApp: App {
         push.onOpenGroup = { [weak router] id in router?.openGroup(id) }
         push.onOpenPrayerJournal = { [weak router] in router?.open(.prayerJournal) }
 
+        GenesisTips.configure(testing: testing.isEnabled)
         testing.apply(settings: settings, router: router)
     }
 
@@ -120,7 +131,9 @@ struct GenesisApp: App {
                 .environment(whatsNew)
                 .environment(audio)
                 .environment(community)
+                .environment(features)
                 .environment(\.studyData, studyData)
+                .environment(\.topics, topics)
         }
         .modelContainer(modelContainer)
     }

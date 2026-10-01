@@ -10,6 +10,7 @@ struct SelectionActionBar: View {
 
     @Environment(ReaderViewModel.self) private var reader
     @Environment(\.palette) private var palette
+    @Environment(\.accessibilityDifferentiateWithoutColor) private var differentiateWithoutColor
     @Environment(StudyAssistant.self) private var assistant
     @State private var copied = false
     @State private var highlightTrigger = 0
@@ -52,6 +53,13 @@ struct SelectionActionBar: View {
                             .fill(color.swatch)
                             .frame(width: 30, height: 30)
                             .overlay(Circle().strokeBorder(palette.separator, lineWidth: 1))
+                            .overlay {
+                                if differentiateWithoutColor {
+                                    Image(systemName: color.symbol)
+                                        .font(.system(size: 11, weight: .bold))
+                                        .foregroundStyle(.black.opacity(0.6))
+                                }
+                            }
                     }
                     .accessibilityLabel("Highlight \(color.title)")
                     .accessibilityIdentifier("selection.highlight.\(color.rawValue)")
@@ -91,6 +99,7 @@ struct SelectionActionBar: View {
         .glassEffect(.regular, in: RoundedRectangle(cornerRadius: 28, style: .continuous))
         .padding(.horizontal, 12)
         .sensoryFeedback(.impact(weight: .light), trigger: highlightTrigger)
+        .sensoryFeedback(.success, trigger: copied) { _, now in now }
         .onChange(of: reader.selection) { copied = false }
     }
 

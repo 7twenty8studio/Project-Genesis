@@ -64,6 +64,21 @@ shares; README.md has the architecture.
 - Anything people post needs report, block and (for its author) delete:
   `.contentActions(...)`. App Store guideline 1.2.
 - Switches: `groups` (on) and `community` (off until the owner moderates).
+- Topic search: Resources/Study/Topics.sqlite (Nave's, CC BY 4.0 via BibleData),
+  built by Tools/TopicData/build_topics.py; ids only, never verse text.
+- Translation downloads: public.bible_translations + the public `bibles`
+  bucket; Tools/BibleData/package_translation.py builds a file and its row.
+  Public-domain (or licensed) translations only.
+
+## Feature choices
+- People choose optional features at setup ("Make Genesis yours") and in
+  Settings › Features: `FeaturePreferences` (listen, plansAndPrayer, explore,
+  studyAssistant, together). Reading, notes, highlights and search are always
+  on. A feature shows only if its server switch allows it *and* the person
+  wants it: use `features.shows(_:flags:)` / `isOn(_:)` at every entry point
+  of a new optional feature, and give it a case in `OptionalFeature`.
+- Hiding never deletes data. One-time tips use TipKit (`GenesisTips`),
+  hidden in UI tests.
 
 ## What's New
 - Every new user-facing feature gets a one-time announcement in

@@ -15,3 +15,12 @@ Changes: converted to SQLite; verse references converted to numeric ids;
 dictionary markup removed; eras, era summaries and map routes added;
 God and the Holy Spirit omitted from the people list. The app's source
 code is not covered by this license.
+
+Topics.sqlite (the topic index used by search) is adapted from
+NavesTopicalDictionary.csv in BibleData by Brady Stephenson, licensed under
+the Creative Commons Attribution 4.0 International License:
+https://creativecommons.org/licenses/by/4.0/
+https://github.com/BradyStephenson/bible-data
+It is based on Nave's Topical Bible by Orville J. Nave (1896), public domain.
+Changes: converted to SQLite; references converted to numeric ids and checked
+against the KJV; topic names set in title case.

@@ -1,4 +1,5 @@
 import SwiftUI
+import TipKit
 
 /// Floating controls shown when the reader is tapped: chapter navigation,
 /// translation, bookmark and reading settings.
@@ -8,6 +9,7 @@ struct ReaderControls: View {
     let onSettings: () -> Void
     let onStudy: () -> Void
     let onListen: () -> Void
+    let onMoreBibles: () -> Void
     let onToggleCompanion: () -> Void
 
     @Environment(ReaderViewModel.self) private var reader
@@ -15,6 +17,7 @@ struct ReaderControls: View {
     @Environment(\.palette) private var palette
     @Environment(StudyAssistant.self) private var assistant
     @Environment(AudioPlayerService.self) private var audio
+    @Environment(FeaturePreferences.self) private var features
 
     var body: some View {
         HStack(spacing: 10) {
@@ -57,6 +60,9 @@ struct ReaderControls: View {
                         }
                         .accessibilityIdentifier("reader.translation.\(translation.id)")
                     }
+                    Divider()
+                    Button("More Bibles\u{2026}", systemImage: "arrow.down.circle", action: onMoreBibles)
+                        .accessibilityIdentifier("reader.moreBibles")
                 } label: {
                     Text(reader.translation.abbreviation)
                         .font(.subheadline.weight(.semibold))
@@ -72,9 +78,12 @@ struct ReaderControls: View {
                 .sensoryFeedback(.selection, trigger: bookmarked)
                 .accessibilityIdentifier("reader.bookmark")
 
-                let listening = audio.isPlaying && audio.chapter == reader.chapterID
-                iconButton(listening ? "pause.circle" : "headphones", label: listening ? "Pause listening" : "Listen to this chapter", action: onListen)
-                    .accessibilityIdentifier("reader.listen")
+                if features.isOn(.listen) {
+                    let listening = audio.isPlaying && audio.chapter == reader.chapterID
+                    iconButton(listening ? "pause.circle" : "headphones", label: listening ? "Pause listening" : "Listen to this chapter", action: onListen)
+                        .accessibilityIdentifier("reader.listen")
+                        .popoverTip(GenesisTips.listen)
+                }
 
                 if assistant.isEnabled {
                     iconButton("sparkles", label: "Study this chapter", action: onStudy)

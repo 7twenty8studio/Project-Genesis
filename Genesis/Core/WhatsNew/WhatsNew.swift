@@ -21,11 +21,13 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
     let title: String
     let items: [WhatsNewItem]
     var flag: FeatureFlag?
+    /// The feature people can switch on from the note if they've hidden it.
+    var feature: OptionalFeature?
 }
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay]
 
     static let audioBible = WhatsNewAnnouncement(
         id: "audio-bible",
@@ -45,6 +47,34 @@ enum WhatsNewCatalog {
                 systemImage: "moon",
                 title: "Speed and sleep timer",
                 detail: "Listen faster or slower, and stop after a set time or at the end of the chapter."
+            ),
+        ],
+        feature: .listen
+    )
+
+    static let yourWay = WhatsNewAnnouncement(
+        id: "your-way",
+        title: "Genesis, your way",
+        items: [
+            WhatsNewItem(
+                systemImage: "square.grid.2x2",
+                title: "Choose your features",
+                detail: "Keep Genesis as simple as you like: turn listening, plans, explore and more on or off in Settings › Features (the gear on Home)."
+            ),
+            WhatsNewItem(
+                systemImage: "tag",
+                title: "Search by topic",
+                detail: "Search for a subject like forgiveness or fear to see the passages about it."
+            ),
+            WhatsNewItem(
+                systemImage: "arrow.down.circle",
+                title: "More Bibles",
+                detail: "Download the Berean Standard Bible from the translation menu. Downloads work offline and stay up to date."
+            ),
+            WhatsNewItem(
+                systemImage: "hands.and.sparkles",
+                title: "Prayer on your Lock Screen",
+                detail: "Add the Prayer Reminder widget to see your next reminder at a glance."
             ),
         ]
     )
@@ -69,7 +99,8 @@ enum WhatsNewCatalog {
                 detail: "Discuss each day's reading, and get a notification when a leader posts an announcement."
             ),
         ],
-        flag: .groups
+        flag: .groups,
+        feature: .together
     )
 
     static let community = WhatsNewAnnouncement(
@@ -92,7 +123,8 @@ enum WhatsNewCatalog {
                 detail: "Everyone agrees to the community guidelines. Report or block anyone from the … menu on any post."
             ),
         ],
-        flag: .community
+        flag: .community,
+        feature: .together
     )
 
     static let studyAssistant = WhatsNewAnnouncement(
@@ -115,7 +147,8 @@ enum WhatsNewCatalog {
                 detail: "Answers are AI-generated study notes, shown apart from the text and never in place of Scripture. They don't take sides between traditions."
             ),
         ],
-        flag: .studyAssistant
+        flag: .studyAssistant,
+        feature: .studyAssistant
     )
 }
 

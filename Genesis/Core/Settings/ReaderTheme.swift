@@ -126,6 +126,32 @@ enum HighlightColor: String, Codable, CaseIterable, Identifiable, Sendable {
     /// The swatch colour shown in pickers.
     var swatch: Color { Color(uiColor: UIColor(hex: hex)) }
 
+    /// A shape for each colour, shown on swatches when Differentiate Without
+    /// Colour is on (Settings › Accessibility › Display & Text Size).
+    var symbol: String {
+        switch self {
+        case .yellow: "circle.fill"
+        case .blue: "square.fill"
+        case .green: "triangle.fill"
+        case .purple: "diamond.fill"
+        case .pink: "heart.fill"
+        case .orange: "star.fill"
+        }
+    }
+
+    /// A distinct underline for each colour in the reader, with Differentiate
+    /// Without Colour on, so highlights can be told apart without colour.
+    var underline: NSUnderlineStyle {
+        switch self {
+        case .yellow: [.single]
+        case .blue: [.double]
+        case .green: [.single, .patternDash]
+        case .purple: [.single, .patternDot]
+        case .pink: [.single, .patternDashDot]
+        case .orange: [.thick]
+        }
+    }
+
     /// The wash drawn behind highlighted text. Softer on dark themes.
     func textBackground(onDarkTheme isDark: Bool) -> UIColor {
         UIColor(hex: hex).withAlphaComponent(isDark ? 0.32 : 0.6)

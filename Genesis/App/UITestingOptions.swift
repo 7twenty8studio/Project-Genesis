@@ -15,6 +15,7 @@ import Foundation
 ///     -uiTestingAI                    turn the study assistant on (default: off, like release)
 ///     -uiTestingWhatsNew              show What's New announcements (default: never)
 ///     -uiTestingSignedOut             groups and community as a signed-out guest
+///     -uiTestingSimple                every optional feature switched off
 struct UITestingOptions {
     let isEnabled: Bool
     let skipsOnboarding: Bool
@@ -26,6 +27,7 @@ struct UITestingOptions {
     let enablesAI: Bool
     let showsWhatsNew: Bool
     let isSignedOut: Bool
+    let isSimple: Bool
 
     static let current = UITestingOptions(arguments: ProcessInfo.processInfo.arguments)
 
@@ -44,6 +46,7 @@ struct UITestingOptions {
         enablesAI = arguments.contains("-uiTestingAI")
         showsWhatsNew = arguments.contains("-uiTestingWhatsNew")
         isSignedOut = arguments.contains("-uiTestingSignedOut")
+        isSimple = arguments.contains("-uiTestingSimple")
     }
 
     /// Wipes saved state. Must run before any store reads UserDefaults.

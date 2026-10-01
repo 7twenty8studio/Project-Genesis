@@ -10,6 +10,8 @@ free (no Premium needed).
 | Church groups | After step 2 | The groups SQL (one paste) |
 | Prayer wall and reflections | After step 2 + switch | The same SQL, then turn `community` on |
 | Announcement notifications | After step 3 | Apple Developer account, an APNs key |
+| Topic search, feature choices, Duo panels, lock-screen prayer widget | Yes | Nothing |
+| Downloading more Bibles (Berean Standard Bible) | After step 4 | The Bibles SQL and one upload |
 
 The new **Together** tab appears once the groups SQL has run. Groups and the
 community need people to sign in (free).
@@ -145,3 +147,34 @@ post; nobody is notified.
   blocking and bans.
 - `node --experimental-strip-types --test supabase/functions/group-notify/lib.test.ts`
   checks the notification signing and payload.
+
+## 4. More Bibles to download (Berean Standard Bible)
+
+The KJV, WEB and ASV come with the app. More translations are downloaded from
+Home › Bibles on This Device › Get More, Home › Settings (gear) › Bibles, or
+the reader's translation menu › More Bibles. Downloads work offline for good, and when you
+publish a corrected edition the app updates them automatically on Wi-Fi.
+
+1. **Create the table and storage (once):** SQL Editor → paste
+   `supabase/migrations/20261004000000_bible_translations.sql` → Run. It also
+   creates a public storage bucket called `bibles`.
+2. **Upload the file:** Storage → `bibles` → Upload →
+   `BSB-1.sqlite.deflate` (sent to you; or build it yourself with
+   `Tools/BibleData/package_translation.py`, see the top of that file).
+3. **List it:** SQL Editor → paste `BSB-1.sql` → Run.
+
+The Berean Standard Bible has been public domain since April 30, 2023. Its
+translators ask only that the Berean name isn't used for altered text; Genesis
+shows it word for word. Licensed translations (NIV, ESV, NLT, CSB, NKJV) can be
+listed the same way once you have a license that allows offline use.
+
+## Feature choices
+
+New people choose what they'd like at the end of setup ("Make Genesis yours"),
+or tap Keep It Simple for just the reader, notes, highlights and search. Anyone
+can change this in Home › Settings (gear) › Features. Your Supabase switches
+still decide what exists; people only choose among what's switched on.
+
+People who set Genesis up before this screen existed keep everything. Groups
+and the community start hidden for new people; the What's New note for a
+feature someone has hidden offers a Turn On button.

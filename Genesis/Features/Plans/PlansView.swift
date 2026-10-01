@@ -3,6 +3,9 @@ import SwiftUI
 
 /// Plans the person is following, plus plans they can start.
 struct PlansView: View {
+    /// False in the reader's side panel, which shows the new plan by itself.
+    var opensStartedPlan = true
+
     @Environment(AppRouter.self) private var router
     @Environment(\.modelContext) private var modelContext
     @Environment(\.palette) private var palette
@@ -79,6 +82,7 @@ struct PlansView: View {
     private func start(_ plan: ReadingPlan) {
         let enrollmentID = StudyStore(context: modelContext).start(plan).id
         pendingPlan = nil
+        guard opensStartedPlan else { return }
         // On iPad the dialog is a popover (and custom plans come from a sheet).
         // Pushing while it's still closing can leave the next tap swallowed, so
         // open the plan once the dismissal has finished.
@@ -223,6 +227,7 @@ struct PlanDetailView: View {
                 }
             }
             .themedScreen()
+            .sensoryFeedback(.success, trigger: enrollment.completedDays.count) { old, new in new > old }
             .navigationTitle(plan.title)
             .navigationBarTitleDisplayMode(.inline)
             .confirmationDialog("Restart from today?", isPresented: $confirmRestart, titleVisibility: .visible) {

@@ -12,6 +12,7 @@ struct RootView: View {
     @Environment(FeatureFlagService.self) private var flags
     @Environment(WhatsNewService.self) private var whatsNew
     @Environment(AudioPlayerService.self) private var audio
+    @Environment(FeaturePreferences.self) private var features
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.scenePhase) private var scenePhase
@@ -36,7 +37,10 @@ struct RootView: View {
         // Explicit themes pin light or dark chrome; Auto follows the system.
         .preferredColorScheme(settings.preferences.theme == .automatic ? nil : (theme.isDark ? .dark : .light))
         .onOpenURL { url in
-            if !onboardingComplete { whatsNew.markShippedFeaturesSeen() }
+            if !onboardingComplete {
+                whatsNew.markShippedFeaturesSeen()
+                if !features.hasChosen { features.choose(OptionalFeature.defaults) }
+            }
             onboardingComplete = true
             router.handle(url)
         }
@@ -46,6 +50,7 @@ struct RootView: View {
             Task { await flags.refresh() }
             Task { await audio.catalog.refresh() }
             Task { await PushNotifications.shared.refreshRegistration() }
+            Task { await library.refreshCatalog() }
             refreshWidgets()
         }
         .onChange(of: entitlements.isPremium) { _, isPremium in
@@ -67,6 +72,7 @@ struct RootView: View {
         }
         .onReceive(NotificationCenter.default.publisher(for: .genesisUserDataDidChange)) { _ in refreshWidgets() }
         .onReceive(NotificationCenter.default.publisher(for: .genesisDidSync)) { _ in refreshWidgets() }
+        .onChange(of: library.editionVersion) { router.reader.translationEditionChanged() }
         .onChange(of: library.currentTranslation) {
             refreshWidgets()
             // Keep listening in the new translation.
@@ -88,6 +94,7 @@ struct RootView: View {
 struct MainTabView: View {
     @Environment(AppRouter.self) private var router
     @Environment(FeatureFlagService.self) private var flags
+    @Environment(FeaturePreferences.self) private var features
     @Environment(\.palette) private var palette
 
     var body: some View {
@@ -102,10 +109,12 @@ struct MainTabView: View {
             Tab("Library", systemImage: "books.vertical", value: AppTab.library) {
                 LibraryView()
             }
-            Tab("Explore", systemImage: "map", value: AppTab.explore) {
-                ExploreView()
+            if features.isOn(.explore) {
+                Tab("Explore", systemImage: "map", value: AppTab.explore) {
+                    ExploreView()
+                }
             }
-            if flags.isOn(.groups) || flags.isOn(.community) {
+            if features.shows(.together, flags: flags) {
                 Tab("Together", systemImage: "person.3", value: AppTab.together) {
                     TogetherView()
                 }
@@ -115,10 +124,24 @@ struct MainTabView: View {
             }
         }
         .tabBarMinimizeBehavior(.onScrollDown)
+        .onChange(of: router.tab) { keepTabAvailable() }
+        .onChange(of: features.enabled) { keepTabAvailable() }
         .task {
             // iPadOS can restore a previously selected tab after launch; a UI
             // test that asked to start in the reader must land there.
             if UITestingOptions.current.startVerse != nil { router.tab = .read }
+        }
+    }
+
+    /// A hidden feature's tab (from a link or notification) falls back to Home.
+    private func keepTabAvailable() {
+        switch router.tab {
+        case .explore where !features.isOn(.explore):
+            router.tab = .home
+        case .together where !features.shows(.together, flags: flags):
+            router.tab = .home
+        default:
+            break
         }
     }
 }

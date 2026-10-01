@@ -125,6 +125,11 @@ final class BibleRepository: Sendable {
         ) { $0.int(0) }.first ?? 0
     }
 
+    /// Verses in the whole translation (to check a download is complete).
+    func verseCount() throws -> Int {
+        try database.query("SELECT COUNT(*) FROM verses") { $0.int(0) }.first ?? 0
+    }
+
     /// Number of verses in a chapter, used for navigation and progress.
     func verseCount(in chapter: ChapterID) throws -> Int {
         let range = chapter.verseRange

@@ -38,6 +38,12 @@ TRANSLATIONS = {
         "license": "Public domain",
         "language": "en",
     },
+    "BSB": {
+        "name": "Berean Standard Bible",
+        "year": "2023",
+        "license": "Public domain (dedicated April 30, 2023). With thanks to Bible Hub, Discovery Bible, OpenBible.com and the Berean Bible Translation Committee.",
+        "language": "en",
+    },
     "WEB": {
         "name": "World English Bible",
         "year": "2020",
@@ -108,6 +114,10 @@ def load_scrollmapper(path, abbreviation):
     for number, book in enumerate(data["books"], start=1):
         for chapter in book["chapters"]:
             for v in chapter["verses"]:
+                # Some modern texts leave out verses that later manuscripts
+                # added (e.g. Matthew 17:21); the source keeps them empty.
+                if not v["text"].strip():
+                    continue
                 verse = Verse(number, chapter["chapter"], v["verse"])
                 verse.parts.append(v["text"])
                 verses.append(verse)

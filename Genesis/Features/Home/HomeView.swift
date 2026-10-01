@@ -10,6 +10,10 @@ struct HomeView: View {
     @Environment(ReaderSettings.self) private var settings
     @Environment(AuthService.self) private var auth
     @Environment(EntitlementService.self) private var entitlements
+    @State private var showsBibles = false
+    @State private var showsSettings = false
+    @Environment(FeaturePreferences.self) private var features
+    @Environment(FeatureFlagService.self) private var flags
     @Environment(StudyAssistant.self) private var assistant
     @Environment(\.modelContext) private var modelContext
     @Environment(\.palette) private var palette
@@ -28,9 +32,9 @@ struct HomeView: View {
                 VStack(alignment: .leading, spacing: 28) {
                     greeting
                     continueReading
-                    todaysReading
+                    if features.isOn(.plansAndPrayer) { todaysReading }
                     dailyVerse
-                    prayerJournal
+                    if features.isOn(.plansAndPrayer) { prayerJournal }
                     readingProgress
                     if !recentHighlights.isEmpty { highlights }
                     if !recentNotes.isEmpty { notes }
@@ -47,6 +51,8 @@ struct HomeView: View {
             .sheet(item: $editingNote) { note in
                 NavigationStack { NoteEditorView(note: note) }
             }
+            .sheet(isPresented: $showsBibles) { BibleDownloadsView() }
+            .sheet(isPresented: $showsSettings) { SettingsView() }
             .sheet(isPresented: $router.showsAccount) {
                 AccountView()
             }
@@ -76,6 +82,16 @@ struct HomeView: View {
             }
             .accessibilityElement(children: .combine)
             Spacer()
+            Button {
+                showsSettings = true
+            } label: {
+                Image(systemName: "gearshape")
+                    .font(.title2)
+                    .foregroundStyle(palette.accent)
+                    .frame(width: 44, height: 44)
+            }
+            .accessibilityLabel("Settings")
+            .accessibilityIdentifier("home.settings")
             Button {
                 router.showsAccount = true
             } label: {
@@ -393,7 +409,7 @@ struct HomeView: View {
 
     private var bibles: some View {
         VStack(alignment: .leading, spacing: 12) {
-            SectionHeader(title: "Bibles on This Device")
+            SectionHeader(title: "Bibles on This Device", action: ("Get More", { showsBibles = true }))
             VStack(spacing: 0) {
                 ForEach(library.translations) { translation in
                     Button {

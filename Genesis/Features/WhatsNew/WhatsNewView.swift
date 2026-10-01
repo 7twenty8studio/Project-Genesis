@@ -6,6 +6,7 @@ struct WhatsNewView: View {
     let onDone: () -> Void
 
     @Environment(\.palette) private var palette
+    @Environment(FeaturePreferences.self) private var features
 
     var body: some View {
         NavigationStack {
@@ -69,6 +70,21 @@ struct WhatsNewView: View {
                     }
                 }
                 .accessibilityElement(children: .combine)
+            }
+            if let feature = announcement.feature, !features.isOn(feature) {
+                // They hid this kind of feature; let them choose.
+                Button {
+                    features.set(feature, on: true)
+                } label: {
+                    Label("Turn On \(feature.title)", systemImage: "plus.circle")
+                        .font(.subheadline.weight(.semibold))
+                }
+                .buttonStyle(.bordered)
+                .accessibilityIdentifier("whatsNew.turnOn.\(feature.rawValue)")
+            } else if announcement.feature != nil {
+                Text("On. You can change this in Settings › Features.")
+                    .font(.footnote)
+                    .foregroundStyle(palette.secondaryText)
             }
         }
         .accessibilityIdentifier("whatsNew.\(announcement.id)")

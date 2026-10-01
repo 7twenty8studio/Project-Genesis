@@ -1,5 +1,6 @@
 import SwiftData
 import SwiftUI
+import TipKit
 import UIKit
 
 /// The heart of the app: distraction-free reading with controls that appear
@@ -10,12 +11,14 @@ struct ReaderView: View {
     @Environment(EntitlementService.self) private var entitlements
     @Environment(ReaderSettings.self) private var settings
     @Environment(AudioPlayerService.self) private var audio
+    @Environment(FeaturePreferences.self) private var features
     @Environment(\.modelContext) private var modelContext
     @Environment(\.palette) private var palette
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    @Environment(\.accessibilityDifferentiateWithoutColor) private var differentiateWithoutColor
 
     @State private var sheet: ReaderSheet?
     @State private var showsCompanion = true
@@ -59,6 +62,9 @@ struct ReaderView: View {
         .focused($isFocused)
         .focusEffectDisabled()
         .tracksReadingTime()
+        .onChange(of: reader.isSelecting) { _, selecting in
+            if selecting { GenesisTips.highlight.invalidate(reason: .actionPerformed) }
+        }
         .onKeyPress(.rightArrow) { turnPage(forward: true) }
         .onKeyPress(.leftArrow) { turnPage(forward: false) }
         .onKeyPress(.space) { turnPage(forward: true) }
@@ -78,7 +84,8 @@ struct ReaderView: View {
                 style: ReaderStyle(
                     preferences: preferences,
                     theme: preferences.theme.resolved(for: colorScheme),
-                    contentSizeCategory: UIContentSizeCategory(dynamicTypeSize)
+                    contentSizeCategory: UIContentSizeCategory(dynamicTypeSize),
+                    differentiatesWithoutColor: differentiateWithoutColor
                 ),
                 margins: preferences.margins
             )
@@ -117,6 +124,7 @@ struct ReaderView: View {
                         onSettings: { sheet = .settings },
                         onStudy: studyChapter,
                         onListen: listen,
+                        onMoreBibles: { sheet = .bibles },
                         onToggleCompanion: { showsCompanion.toggle() }
                     )
                     // At least a little below the live safe area, and never
@@ -126,7 +134,15 @@ struct ReaderView: View {
                     .frame(maxHeight: .infinity, alignment: .top)
                     .transition(.opacity)
                 }
-                if audio.isActive && reader.showsControls && !reader.isSelecting {
+                if reader.showsControls && !reader.isSelecting && !audio.isActive {
+                    TipView(GenesisTips.highlight)
+                        .tipBackground(palette.surface)
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 12)
+                        .frame(maxWidth: 520)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                }
+                if audio.isActive && features.isOn(.listen) && reader.showsControls && !reader.isSelecting {
                     AudioMiniPlayer { sheet = .audio }
                         .padding(.bottom, 8)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
@@ -223,6 +239,7 @@ struct ReaderView: View {
 
     /// Listen from the top of this page, or play/pause if this chapter is playing.
     private func listen() {
+        GenesisTips.listen.invalidate(reason: .actionPerformed)
         if audio.isActive, audio.chapter == reader.chapterID {
             audio.togglePlayback()
             return
@@ -283,6 +300,8 @@ struct ReaderView: View {
             // Explaining a selection was asked for; a whole chapter waits for a tap
             // unless Premium, so a free account's daily answers aren't spent by accident.
             StudyAssistantView(passage: passage, initialAction: action, autoLoads: action == .explain || entitlements.allows(.advancedAI))
+        case .bibles:
+            BibleDownloadsView()
         case .audio:
             AudioSettingsView()
                 .presentationDetents([.medium, .large])
@@ -306,12 +325,14 @@ enum ReaderSheet: Identifiable {
     case premium(PremiumFeature)
     case study(StudyPassage, StudyAction)
     case audio
+    case bibles
 
     var id: String {
         switch self {
         case .chapterPicker: "chapters"
         case .settings: "settings"
         case .audio: "audio"
+        case .bibles: "bibles"
         case let .note(note): "note-\(note.id)"
         case let .crossReferences(verse): "xref-\(verse.rawValue)"
         case let .premium(feature): "premium-\(feature.rawValue)"
