@@ -227,7 +227,7 @@ enum Genesis {
                 let y = frame.midY
                 let from = origin.withOffset(CGVector(dx: window.width * (toLeft ? 0.25 : 0.75), dy: y))
                 let to = origin.withOffset(CGVector(dx: window.width * (toLeft ? 0.75 : 0.25), dy: y))
-                from.press(forDuration: 0.05, thenDragTo: to)
+                settle(from, to)
             } else {
                 row.swipeLeft()
             }
@@ -238,7 +238,15 @@ enum Genesis {
     private static func drag(_ element: XCUIElement, from start: CGFloat, to end: CGFloat) {
         let from = element.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: start))
         let to = element.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: end))
-        from.press(forDuration: 0.05, thenDragTo: to)
+        settle(from, to)
+    }
+
+    /// Drags slowly and holds at the end so the list doesn't keep coasting
+    /// (momentum can carry a found row away, or unload it, before the tap),
+    /// then gives it a moment to come to rest.
+    private static func settle(_ from: XCUICoordinate, _ to: XCUICoordinate) {
+        from.press(forDuration: 0.05, thenDragTo: to, withVelocity: .slow, thenHoldForDuration: 0.3)
+        RunLoop.current.run(until: Date().addingTimeInterval(0.3))
     }
 
     /// The reading settings sheet's scrolling list.
