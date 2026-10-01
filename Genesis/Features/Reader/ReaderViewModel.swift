@@ -20,6 +20,9 @@ final class ReaderViewModel {
     var showsControls = true
     /// Bumped whenever highlights, notes or bookmarks change, so views redraw.
     private(set) var decorationsVersion = 0
+    /// The verse being read aloud, marked and kept on screen while listening
+    /// with "follow along" on.
+    private(set) var playingVerse: VerseID?
 
     var isSelecting: Bool { !selection.isEmpty }
 
@@ -61,7 +64,7 @@ final class ReaderViewModel {
     }
 
     func decorations(for id: ChapterID) -> ChapterDecorations {
-        guard let modelContext else { return ChapterDecorations(selection: selection) }
+        guard let modelContext else { return ChapterDecorations(selection: selection, playing: playingVerse?.chapterID == id ? playingVerse : nil) }
         let store = StudyStore(context: modelContext)
         let noted = store.notes(in: id).compactMap { note -> VerseID? in
             if case let .verses(_, end) = note.anchor { return end }
@@ -70,7 +73,8 @@ final class ReaderViewModel {
         return ChapterDecorations(
             highlights: store.highlightColors(in: id),
             selection: selection,
-            notedVerses: Set(noted)
+            notedVerses: Set(noted),
+            playing: playingVerse?.chapterID == id ? playingVerse : nil
         )
     }
 
@@ -114,6 +118,22 @@ final class ReaderViewModel {
         chapterCache.removeAll()
         cacheOrder.removeAll()
         navigationToken += 1
+    }
+
+    // MARK: Listening
+
+    /// Audio moved on. With `follow`, the reader opens the chapter being read
+    /// and marks the verse; the page and scroll views bring it into view.
+    func audioMoved(chapter: ChapterID?, verse: VerseID?, follow: Bool) {
+        let marked = follow ? verse : nil
+        if follow, let chapter, chapter != chapterID {
+            playingVerse = marked
+            open(marked ?? chapter.firstVerse)
+            return
+        }
+        guard marked != playingVerse else { return }
+        playingVerse = marked
+        decorationsVersion += 1
     }
 
     // MARK: Interaction

@@ -9,6 +9,7 @@ struct ReaderView: View {
     @Environment(ReaderViewModel.self) private var reader
     @Environment(EntitlementService.self) private var entitlements
     @Environment(ReaderSettings.self) private var settings
+    @Environment(AudioPlayerService.self) private var audio
     @Environment(\.modelContext) private var modelContext
     @Environment(\.palette) private var palette
     @Environment(\.colorScheme) private var colorScheme
@@ -115,6 +116,7 @@ struct ReaderView: View {
                         onChapterPicker: { sheet = .chapterPicker },
                         onSettings: { sheet = .settings },
                         onStudy: studyChapter,
+                        onListen: listen,
                         onToggleCompanion: { showsCompanion.toggle() }
                     )
                     // At least a little below the live safe area, and never
@@ -123,6 +125,12 @@ struct ReaderView: View {
                     .padding(.top, max(4, readerSafeArea.top + controlsTopClearance - overlay.safeAreaInsets.top))
                     .frame(maxHeight: .infinity, alignment: .top)
                     .transition(.opacity)
+                }
+                if audio.isActive && reader.showsControls && !reader.isSelecting {
+                    AudioMiniPlayer { sheet = .audio }
+                        .padding(.bottom, 8)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                        .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
             }
         }
@@ -213,6 +221,17 @@ struct ReaderView: View {
         }
     }
 
+    /// Listen from the top of this page, or play/pause if this chapter is playing.
+    private func listen() {
+        if audio.isActive, audio.chapter == reader.chapterID {
+            audio.togglePlayback()
+            return
+        }
+        let verse = reader.focusVerse
+        let start = verse.chapterID == reader.chapterID && verse.verse > 1 ? verse : nil
+        audio.play(reader.chapterID, from: start)
+    }
+
     /// The whole chapter being read.
     private func studyChapter() {
         let chapter = reader.chapterID
@@ -264,6 +283,9 @@ struct ReaderView: View {
             // Explaining a selection was asked for; a whole chapter waits for a tap
             // unless Premium, so a free account's daily answers aren't spent by accident.
             StudyAssistantView(passage: passage, initialAction: action, autoLoads: action == .explain || entitlements.allows(.advancedAI))
+        case .audio:
+            AudioSettingsView()
+                .presentationDetents([.medium, .large])
         case let .crossReferences(verse):
             NavigationStack {
                 CrossReferencesView(verse: verse) { target in
@@ -283,11 +305,13 @@ enum ReaderSheet: Identifiable {
     case crossReferences(VerseID)
     case premium(PremiumFeature)
     case study(StudyPassage, StudyAction)
+    case audio
 
     var id: String {
         switch self {
         case .chapterPicker: "chapters"
         case .settings: "settings"
+        case .audio: "audio"
         case let .note(note): "note-\(note.id)"
         case let .crossReferences(verse): "xref-\(verse.rawValue)"
         case let .premium(feature): "premium-\(feature.rawValue)"

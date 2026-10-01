@@ -10,6 +10,8 @@ struct ChapterDecorations: Equatable {
     var highlights: [VerseID: HighlightColor] = [:]
     var selection: Set<VerseID> = []
     var notedVerses: Set<VerseID> = []
+    /// The verse being read aloud.
+    var playing: VerseID?
 }
 
 /// A chapter laid out as styled text, plus where each verse starts.
@@ -84,6 +86,9 @@ enum ChapterTextBuilder {
             ]
             if let color = decorations.highlights[verse.id] {
                 attributes[.backgroundColor] = color.textBackground(onDarkTheme: style.theme.isDark)
+            }
+            if decorations.playing == verse.id {
+                attributes[.backgroundColor] = palette.uiAccent.withAlphaComponent(style.theme.isDark ? 0.28 : 0.16)
             }
 
             if style.showsVerseNumbers {

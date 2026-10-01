@@ -7,12 +7,14 @@ struct ReaderControls: View {
     let onChapterPicker: () -> Void
     let onSettings: () -> Void
     let onStudy: () -> Void
+    let onListen: () -> Void
     let onToggleCompanion: () -> Void
 
     @Environment(ReaderViewModel.self) private var reader
     @Environment(BibleLibrary.self) private var library
     @Environment(\.palette) private var palette
     @Environment(StudyAssistant.self) private var assistant
+    @Environment(AudioPlayerService.self) private var audio
 
     var body: some View {
         HStack(spacing: 10) {
@@ -69,6 +71,10 @@ struct ReaderControls: View {
                 }
                 .sensoryFeedback(.selection, trigger: bookmarked)
                 .accessibilityIdentifier("reader.bookmark")
+
+                let listening = audio.isPlaying && audio.chapter == reader.chapterID
+                iconButton(listening ? "pause.circle" : "headphones", label: listening ? "Pause listening" : "Listen to this chapter", action: onListen)
+                    .accessibilityIdentifier("reader.listen")
 
                 if assistant.isEnabled {
                     iconButton("sparkles", label: "Study this chapter", action: onStudy)

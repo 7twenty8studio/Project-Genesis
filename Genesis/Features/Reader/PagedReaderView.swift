@@ -78,6 +78,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
         private var navigationToken = -1
         private var decorationsVersion = -1
         private var translationID = ""
+        private var followedVerse: VerseID?
 
         init(viewModel: ReaderViewModel) {
             self.viewModel = viewModel
@@ -117,9 +118,21 @@ struct PagedReaderView: UIViewControllerRepresentable {
                 // These don't move text, so the same page index stays correct.
                 guard let location = currentLocation else { return }
                 cache[location.chapter] = nil
-                if let chapter = paginated(location.chapter) {
-                    show(location: PageLocation(chapter: location.chapter, index: min(location.index, chapter.pages.count - 1)))
+                guard let chapter = paginated(location.chapter) else { return }
+                var index = min(location.index, chapter.pages.count - 1)
+                // Listening with follow-along: turn to the verse being read
+                // when it moves onto another page.
+                if let playing = viewModel.playingVerse, playing != followedVerse, playing.chapterID == location.chapter {
+                    followedVerse = playing
+                    let target = chapter.pageIndex(containing: playing)
+                    if target != index {
+                        let forward = target > index
+                        index = target
+                        show(location: PageLocation(chapter: location.chapter, index: index), direction: forward ? .forward : .reverse, animated: !UIAccessibility.isReduceMotionEnabled)
+                        return
+                    }
                 }
+                show(location: PageLocation(chapter: location.chapter, index: index))
             }
         }
 

@@ -54,6 +54,9 @@ targets:
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         ITSAppUsesNonExemptEncryption: false
+        # Listening carries on with the screen locked.
+        UIBackgroundModes:
+          - audio
         UILaunchScreen:
           UIColorName: LaunchBackground
         UIApplicationSceneManifest:

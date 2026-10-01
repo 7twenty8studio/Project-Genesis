@@ -11,6 +11,7 @@ struct RootView: View {
     @Environment(EntitlementService.self) private var entitlements
     @Environment(FeatureFlagService.self) private var flags
     @Environment(WhatsNewService.self) private var whatsNew
+    @Environment(AudioPlayerService.self) private var audio
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.scenePhase) private var scenePhase
@@ -43,6 +44,7 @@ struct RootView: View {
             entitlements.start()
             sync.start()
             Task { await flags.refresh() }
+            Task { await audio.catalog.refresh() }
             refreshWidgets()
         }
         .onChange(of: entitlements.isPremium) { _, isPremium in
@@ -64,7 +66,11 @@ struct RootView: View {
         }
         .onReceive(NotificationCenter.default.publisher(for: .genesisUserDataDidChange)) { _ in refreshWidgets() }
         .onReceive(NotificationCenter.default.publisher(for: .genesisDidSync)) { _ in refreshWidgets() }
-        .onChange(of: library.currentTranslation) { refreshWidgets() }
+        .onChange(of: library.currentTranslation) {
+            refreshWidgets()
+            // Keep listening in the new translation.
+            audio.settingsChanged()
+        }
     }
 
     /// If Premium has ended, a premium theme falls back to Auto.

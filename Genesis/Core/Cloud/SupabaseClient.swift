@@ -179,6 +179,15 @@ final class SupabaseClient: Sendable {
         _ = try await perform(request)
     }
 
+    // MARK: Public tables
+
+    /// Rows from a table anyone may read (feature switches, the audio
+    /// catalog). `query` holds PostgREST parameters such as `select` and filters.
+    func select<Row: Decodable & Sendable>(_ table: String, query: [URLQueryItem], accessToken: String? = nil, as type: Row.Type = Row.self) async throws -> [Row] {
+        let request = makeRequest(path: "rest/v1/\(table)", query: query, method: "GET", accessToken: accessToken)
+        return try JSONDecoder().decode([Row].self, from: try await perform(request))
+    }
+
     // MARK: Feature switches
 
     private struct FlagRow: Decodable {

@@ -25,7 +25,29 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible]
+
+    static let audioBible = WhatsNewAnnouncement(
+        id: "audio-bible",
+        title: "Listen to the Bible",
+        items: [
+            WhatsNewItem(
+                systemImage: "headphones",
+                title: "Listen to any chapter",
+                detail: "Tap the headphones in the reader. The page turns and the verse being read is marked as you go, and it keeps playing with your phone locked."
+            ),
+            WhatsNewItem(
+                systemImage: "person.wave.2",
+                title: "Choose a voice",
+                detail: "Use your device's voices in every translation, offline, or a recorded narration where one is available. Change it under Audio Settings."
+            ),
+            WhatsNewItem(
+                systemImage: "moon",
+                title: "Speed and sleep timer",
+                detail: "Listen faster or slower, and stop after a set time or at the end of the chapter."
+            ),
+        ]
+    )
 
     static let studyAssistant = WhatsNewAnnouncement(
         id: "study-assistant",

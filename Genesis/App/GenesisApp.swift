@@ -14,6 +14,7 @@ struct GenesisApp: App {
     @State private var assistant: StudyAssistant
     @State private var flags: FeatureFlagService
     @State private var whatsNew: WhatsNewService
+    @State private var audio: AudioPlayerService
     private let modelContainer: ModelContainer
     private let studyData = StudyRepository.bundled()
 
@@ -63,6 +64,20 @@ struct GenesisApp: App {
         _whatsNew = State(initialValue: WhatsNewService(isEnabled: !testing.isEnabled || testing.showsWhatsNew))
         _assistant = State(initialValue: StudyAssistant(auth: auth, entitlements: entitlements, library: library, backend: backend, flags: flags))
 
+        // Listening. UI tests use a silent narrator that moves through verses
+        // on a timer, and no recorded narration.
+        let audioSettings = AudioSettings()
+        let audio = AudioPlayerService(
+            library: library,
+            settings: audioSettings,
+            catalog: AudioRecordingCatalog(client: testing.isEnabled ? nil : auth.client),
+            narrator: testing.isEnabled ? StubNarrator() : SpeechNarrator()
+        )
+        audio.onPosition = { [weak reader, weak audioSettings] chapter, verse in
+            reader?.audioMoved(chapter: chapter, verse: verse, follow: audioSettings?.followsAlong ?? true)
+        }
+        _audio = State(initialValue: audio)
+
         testing.apply(settings: settings, router: router)
     }
 
@@ -80,6 +95,7 @@ struct GenesisApp: App {
                 .environment(assistant)
                 .environment(flags)
                 .environment(whatsNew)
+                .environment(audio)
                 .environment(\.studyData, studyData)
         }
         .modelContainer(modelContainer)

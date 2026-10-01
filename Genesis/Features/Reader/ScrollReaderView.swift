@@ -54,6 +54,7 @@ struct ScrollReaderView: UIViewRepresentable {
         private var navigationToken = -1
         private var decorationsVersion = -1
         private var translationID = ""
+        private var followedVerse: VerseID?
 
         init(viewModel: ReaderViewModel) {
             self.viewModel = viewModel
@@ -91,6 +92,7 @@ struct ScrollReaderView: UIViewRepresentable {
                 textView.attributedText = built.text
                 textView.layoutIfNeeded()
                 textView.setContentOffset(offset, animated: false)
+                keepPlayingVerseVisible()
                 return
             }
 
@@ -98,6 +100,18 @@ struct ScrollReaderView: UIViewRepresentable {
             textView.layoutIfNeeded()
             let target = previousVerse ?? viewModel.focusVerse
             scroll(to: target, animated: false)
+        }
+
+        /// Listening with follow-along: scroll when the verse being read is off screen.
+        private func keepPlayingVerseVisible() {
+            guard let textView, let built, let playing = viewModel.playingVerse, playing != followedVerse,
+                  playing.chapterID == built.chapter.id, let offset = built.verseOffsets[playing] else { return }
+            followedVerse = playing
+            let y = textView.yOffset(ofCharacter: offset)
+            let top = textView.contentOffset.y + textView.textContainerInset.top
+            let bottom = textView.contentOffset.y + textView.bounds.height - textView.textContainerInset.bottom - 60
+            guard y < top || y > bottom else { return }
+            scroll(to: playing, animated: !UIAccessibility.isReduceMotionEnabled)
         }
 
         private func scroll(to verse: VerseID, animated: Bool) {
