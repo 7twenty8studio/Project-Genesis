@@ -18,7 +18,9 @@ final class FeatureChoicesUITests: GenesisUITestCase {
         XCTAssertTrue(listen.waitForExistence(timeout: Genesis.timeout), "Each feature has a switch")
         listen.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.5)).tap()
         XCTAssertTrue(Genesis.wait { (listen.value as? String) == "0" }, "Listen is switched off")
-        app.navigationBars.buttons.firstMatch.tap()  // back to Settings
+        // Back to Settings, whose Done button closes the sheet.
+        let back = app.buttons["BackButton"].firstMatch
+        if back.exists { back.tap() } else { app.navigationBars.buttons.firstMatch.tap() }
         Genesis.tapToolbarButton("appSettings.done", in: app)
 
         Genesis.openTab("Read", in: app)
@@ -50,7 +52,8 @@ final class FeatureChoicesUITests: GenesisUITestCase {
         topic.tap()
         let passage = app.buttons.matching(identifier: "topic.passage").firstMatch
         XCTAssertTrue(passage.waitForExistence(timeout: Genesis.timeout), "The topic lists passages")
-        XCTAssertTrue(Genesis.element(containing: "Instances of", in: app).exists || Genesis.element(containing: "INSTANCES OF", in: app).exists, "…under headings")
+        // The first heading ("Of enemies"); later ones are further down the list.
+        XCTAssertTrue(Genesis.wait { Genesis.element(containing: "Of Enemies", in: app).exists || Genesis.element(containing: "OF ENEMIES", in: app).exists }, "…under headings")
     }
 
     @MainActor

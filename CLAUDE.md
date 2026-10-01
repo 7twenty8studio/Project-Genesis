@@ -86,6 +86,14 @@ shares; README.md has the architecture.
   never-reused id. Features behind a Supabase switch set `flag` so the note
   appears when the switch turns on. UI tests only see it with `-uiTestingWhatsNew`.
 
+## Navigation
+- iPhone (compact width) shows at most five tabs: Home, Read, Library,
+  Explore, Together. Search is a button there (Home, Library) opening
+  `SearchSheet`, as in the Bible app; iPad and the open Duo keep the Search
+  tab. Don't add tabs without moving something out.
+- Don't put `.accessibilityIdentifier` on a container whose children have
+  their own identifiers (SwiftUI passes it down and replaces theirs).
+
 ## Conventions
 - MVVM, composition, one responsibility per type, small view files.
 - SwiftUI first; UIKit only for the TextKit reader text and page curl.

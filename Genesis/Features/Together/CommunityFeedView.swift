@@ -143,7 +143,6 @@ struct CommunityPostRow: View {
             onBlock: { _ = await community.blockAuthor(ofPost: post.id) },
             onHidden: { model.hide(post.id) }
         )
-        .accessibilityIdentifier("community.post")
     }
 }
 

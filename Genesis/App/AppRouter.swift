@@ -36,6 +36,8 @@ final class AppRouter {
     var explorePath: [ExploreRoute] = []
     var togetherPath: [TogetherRoute] = []
     var showsAccount = false
+    /// Search as a full-screen sheet, used on iPhone where Search isn't a tab.
+    var showsSearch = false
     @ObservationIgnored let reader: ReaderViewModel
 
     init(reader: ReaderViewModel) {
@@ -53,6 +55,11 @@ final class AppRouter {
 
     func read(_ reference: PassageReference) {
         read(reference.firstVerse)
+    }
+
+    /// Opens search: the Search tab on iPad and the open Duo, a sheet on iPhone.
+    func openSearch(asTab: Bool) {
+        if asTab { tab = .search } else { showsSearch = true }
     }
 
     func continueReading() {

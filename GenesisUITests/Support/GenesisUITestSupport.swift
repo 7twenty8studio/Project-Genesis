@@ -264,6 +264,16 @@ enum Genesis {
     /// Taps a tab. Works for the bottom tab bar and the iPad/Duo top tab bar.
     /// The tab bar hides while reading, so bring the reader controls back first.
     static func openTab(_ name: String, in app: XCUIApplication) {
+        // On iPhone Search is a button on Home (and Library), not a tab.
+        if name == "Search", !app.tabBars.buttons["Search"].exists {
+            let search = app.buttons["home.search"]
+            if !search.exists { openTab("Home", in: app) }
+            if search.waitForExistence(timeout: 3) {
+                search.tap()
+                return
+            }
+            // iPad: Search is a tab in the top bar; fall through.
+        }
         let tabBarButton = app.tabBars.buttons[name]
         let anyButton = app.buttons[name].firstMatch
         if !tabBarButton.exists && !anyButton.exists && app.textViews.firstMatch.exists {

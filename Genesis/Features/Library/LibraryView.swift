@@ -3,6 +3,8 @@ import SwiftUI
 
 /// Everything the person has saved: highlights (with collections), notes and bookmarks.
 struct LibraryView: View {
+    @Environment(\.searchIsTab) private var searchIsTab
+    @Environment(AppRouter.self) private var router
     enum Shelf: String, CaseIterable, Identifiable {
         case highlights, notes, bookmarks
         var id: String { rawValue }
@@ -29,6 +31,14 @@ struct LibraryView: View {
                 .padding(.bottom, 8)
             }
             .navigationTitle("Library")
+            .toolbar {
+                if !searchIsTab {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button("Search", systemImage: "magnifyingglass") { router.openSearch(asTab: false) }
+                            .accessibilityIdentifier("library.search")
+                    }
+                }
+            }
         }
     }
 }

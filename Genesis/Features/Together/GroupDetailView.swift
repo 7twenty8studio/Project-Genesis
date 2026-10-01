@@ -173,7 +173,6 @@ struct DiscussionSection: View {
                     onBlock: { await community.block(post.userID) },
                     onHidden: { model.hide(post.id) }
                 )
-                .accessibilityIdentifier("group.post")
             }
             HStack(alignment: .bottom) {
                 TextField(day == nil ? "Write a message" : "Share a thought on today's reading", text: $draft, axis: .vertical)
@@ -292,7 +291,6 @@ struct GroupPrayersView: View {
             onBlock: { await community.block(prayer.userID) },
             onHidden: { model.hide(prayer.id) }
         )
-        .accessibilityIdentifier("group.prayer")
     }
 }
 
@@ -345,7 +343,6 @@ struct GroupAnnouncementsView: View {
                         onBlock: { await community.block(announcement.userID) },
                         onHidden: { model.hide(announcement.id) }
                     )
-                    .accessibilityIdentifier("group.announcement")
                 }
             }
             .listRowBackground(palette.surface)

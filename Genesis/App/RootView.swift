@@ -96,6 +96,12 @@ struct MainTabView: View {
     @Environment(FeatureFlagService.self) private var flags
     @Environment(FeaturePreferences.self) private var features
     @Environment(\.palette) private var palette
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
+    /// iPhone tab bars fit five tabs before iOS adds "More". Like the Bible
+    /// app, Search moves to a button (Home, Library) on compact widths so
+    /// Home, Read, Library, Explore and Together always fit.
+    private var searchIsTab: Bool { horizontalSizeClass == .regular }
 
     var body: some View {
         @Bindable var router = router
@@ -119,13 +125,20 @@ struct MainTabView: View {
                     TogetherView()
                 }
             }
-            Tab(value: AppTab.search, role: .search) {
-                SearchView()
+            if searchIsTab {
+                Tab(value: AppTab.search, role: .search) {
+                    SearchView()
+                }
             }
         }
         .tabBarMinimizeBehavior(.onScrollDown)
+        .environment(\.searchIsTab, searchIsTab)
+        .sheet(isPresented: $router.showsSearch) {
+            SearchSheet()
+        }
         .onChange(of: router.tab) { keepTabAvailable() }
         .onChange(of: features.enabled) { keepTabAvailable() }
+        .onChange(of: searchIsTab) { keepTabAvailable() }
         .task {
             // iPadOS can restore a previously selected tab after launch; a UI
             // test that asked to start in the reader must land there.
@@ -140,6 +153,10 @@ struct MainTabView: View {
             router.tab = .home
         case .together where !features.shows(.together, flags: flags):
             router.tab = .home
+        case .search where !searchIsTab:
+            // Folding a Duo: carry on searching in the sheet.
+            router.tab = .home
+            router.showsSearch = true
         default:
             break
         }

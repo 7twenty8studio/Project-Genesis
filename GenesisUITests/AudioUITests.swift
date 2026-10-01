@@ -41,8 +41,18 @@ final class AudioUITests: GenesisUITestCase {
         XCTAssertTrue(options.waitForExistence(timeout: Genesis.timeout))
         Genesis.openMenu(options, expecting: app.buttons["audio.settings"])
         app.buttons["audio.settings"].tap()
-        XCTAssertTrue(app.buttons["Device voice"].waitForExistence(timeout: Genesis.timeout) || app.staticTexts["Device voice"].exists, "Device voice is offered")
-        XCTAssertTrue(app.switches["audio.follow"].exists, "Follow Along can be turned off")
+        let done = app.buttons["audio.settings.done"]
+        if !done.waitForExistence(timeout: 3) {
+            // A menu item tap can be missed while the menu is still opening.
+            app.buttons["audio.settings"].firstMatch.tap()
+        }
+        XCTAssertTrue(done.waitForExistence(timeout: Genesis.timeout), "Audio settings open")
+        let deviceVoice = Genesis.element(containing: "Device voice", in: app)
+        XCTAssertTrue(deviceVoice.waitForExistence(timeout: Genesis.timeout), "Device voice is offered")
+        // Further down the form, which only builds rows as they scroll into view.
+        let follow = app.switches["audio.follow"]
+        Genesis.scrollIntoView(follow, in: app)
+        XCTAssertTrue(follow.exists, "Follow Along can be turned off")
         Genesis.tapToolbarButton("audio.settings.done", in: app)
     }
 }

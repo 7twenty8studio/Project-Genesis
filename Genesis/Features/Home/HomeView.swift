@@ -12,6 +12,7 @@ struct HomeView: View {
     @Environment(EntitlementService.self) private var entitlements
     @State private var showsBibles = false
     @State private var showsSettings = false
+    @Environment(\.searchIsTab) private var searchIsTab
     @Environment(FeaturePreferences.self) private var features
     @Environment(FeatureFlagService.self) private var flags
     @Environment(StudyAssistant.self) private var assistant
@@ -82,6 +83,7 @@ struct HomeView: View {
             }
             .accessibilityElement(children: .combine)
             Spacer()
+            if !searchIsTab { SearchButton() }
             Button {
                 showsSettings = true
             } label: {

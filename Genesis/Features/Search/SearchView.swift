@@ -17,6 +17,58 @@ struct SearchView: View {
     }
 }
 
+/// Search on iPhone, where it opens from a button rather than a tab.
+struct SearchSheet: View {
+    @Environment(AppRouter.self) private var router
+    @Environment(\.dismiss) private var dismiss
+    @State private var text = ""
+
+    var body: some View {
+        NavigationStack {
+            SearchContent(text: $text) { verse in
+                dismiss()
+                router.read(verse)
+            }
+            .navigationTitle("Search")
+            .navigationBarTitleDisplayMode(.inline)
+            .searchable(text: $text, placement: .navigationBarDrawer(displayMode: .always), prompt: "Words, topics or a reference")
+            .autocorrectionDisabled()
+            .textInputAutocapitalization(.never)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Close", systemImage: "xmark") { dismiss() }
+                        .accessibilityIdentifier("search.close")
+                }
+            }
+        }
+    }
+}
+
+extension EnvironmentValues {
+    /// False on iPhone, where Search is a button that opens a sheet.
+    @Entry var searchIsTab: Bool = true
+}
+
+/// A magnifying-glass button that opens Search (the tab or the sheet).
+struct SearchButton: View {
+    @Environment(AppRouter.self) private var router
+    @Environment(\.searchIsTab) private var searchIsTab
+    @Environment(\.palette) private var palette
+
+    var body: some View {
+        Button {
+            router.openSearch(asTab: searchIsTab)
+        } label: {
+            Image(systemName: "magnifyingglass")
+                .font(.title2)
+                .foregroundStyle(palette.accent)
+                .frame(width: 44, height: 44)
+        }
+        .accessibilityLabel("Search")
+        .accessibilityIdentifier("home.search")
+    }
+}
+
 enum SearchScopeOption: String, CaseIterable, Identifiable {
     case all, oldTestament, newTestament
 
