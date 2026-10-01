@@ -185,18 +185,27 @@ enum Genesis {
             if app.scrollViews.firstMatch.exists { return app.scrollViews.firstMatch }
             return app.windows.firstMatch
         }()
-        for _ in 0..<(maxSwipes * 3) {
+        let attempts = maxSwipes * 3
+        for attempt in 0..<attempts {
             let visible = list.frame.intersection(app.windows.firstMatch.frame)
             let margin = min(60, visible.height / 6)
             if element.exists {
                 let frame = element.frame
-                if element.isHittable && frame.minY >= visible.minY && frame.maxY <= visible.maxY - margin { return }
+                if frame.minY >= visible.minY && frame.maxY <= visible.maxY - margin && element.isHittable { return }
                 if frame.maxY <= visible.minY + margin {
                     drag(list, from: 0.3, to: 0.7)   // it's above: scroll back up
                     continue
                 }
+                drag(list, from: 0.7, to: 0.3)       // it's below
+                continue
             }
-            drag(list, from: 0.7, to: 0.3)           // below, or not loaded yet
+            // Not loaded: look further down first, then back up (a lazy list
+            // drops rows that scrolled away, so an overshoot hides the element).
+            if attempt < attempts / 2 {
+                drag(list, from: 0.7, to: 0.3)
+            } else {
+                drag(list, from: 0.3, to: 0.7)
+            }
         }
     }
 
@@ -212,8 +221,12 @@ enum Genesis {
                 let onScreen = frame.minX >= window.minX && frame.maxX <= window.maxX
                 if onScreen && element.isHittable { return }
                 let toLeft = frame.maxX <= window.minX + 20
-                let from = row.coordinate(withNormalizedOffset: CGVector(dx: toLeft ? 0.25 : 0.75, dy: 0.5))
-                let to = row.coordinate(withNormalizedOffset: CGVector(dx: toLeft ? 0.75 : 0.25, dy: 0.5))
+                // Drag at the element's own height: the row's reported frame can
+                // include bars above it (the Duo reports the whole top area).
+                let origin = app.windows.firstMatch.coordinate(withNormalizedOffset: .zero)
+                let y = frame.midY
+                let from = origin.withOffset(CGVector(dx: window.width * (toLeft ? 0.25 : 0.75), dy: y))
+                let to = origin.withOffset(CGVector(dx: window.width * (toLeft ? 0.75 : 0.25), dy: y))
                 from.press(forDuration: 0.05, thenDragTo: to)
             } else {
                 row.swipeLeft()
