@@ -11,6 +11,10 @@
 #                                   iPhone Pro (portrait and landscape) and iPad
 #   ./Scripts/build.sh --ui-full    also the open Duo in landscape, large text, dark
 #                                   theme, scroll mode, page curl and launch time
+#   --workers N                     UI test copies per simulator (default: chosen
+#                                   from your Mac's memory; 1 = one at a time)
+#   --only Phase3UITests            run only these UI tests (a class, or
+#                                   Class/testMethod); repeat for more
 #   SIMULATOR="iPhone 17 Pro" ./Scripts/build.sh   use a specific simulator
 set -uo pipefail
 cd "$(dirname "$0")/.."
@@ -18,14 +22,31 @@ cd "$(dirname "$0")/.."
 OPEN_XCODE=false
 RUN_TESTS=true
 UI_TESTS=none
-for arg in "$@"; do
-    case "$arg" in
+WORKERS=""
+ONLY=()
+while [ $# -gt 0 ]; do
+    case "$1" in
         --open) OPEN_XCODE=true ;;
         --no-tests) RUN_TESTS=false ;;
         --ui) UI_TESTS=standard ;;
         --ui-full) UI_TESTS=full ;;
+        --workers) WORKERS=${2:-}; shift ;;
+        --only)
+            [ "$UI_TESTS" = none ] && UI_TESTS=standard
+            ONLY+=("-only-testing:GenesisUITests/${2:-}"); shift ;;
     esac
+    shift
 done
+
+# How many copies of each simulator run UI tests at once. Each copy needs
+# roughly 2.5 GB of memory and three simulators run side by side, so the
+# default comes from the Mac's memory (leaving 8 GB for macOS and Xcode).
+if [ -z "$WORKERS" ]; then
+    MEMORY_GB=$(( $(sysctl -n hw.memsize 2>/dev/null || echo 17179869184) / 1073741824 ))
+    WORKERS=$(( (MEMORY_GB - 8) * 2 / 15 ))
+    [ "$WORKERS" -lt 1 ] && WORKERS=1
+    [ "$WORKERS" -gt 4 ] && WORKERS=4
+fi
 
 PREFERRED="${SIMULATOR:-iPhone Duo}"
 DERIVED=build/DerivedData
@@ -162,6 +183,8 @@ if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
 
     echo
     echo "UI tests on: ${DUO_NAME:-no iPhone Duo}, ${PRO_NAME:-no iPhone Pro}, ${IPAD_NAME:-no iPad}"
+    echo "Workers per simulator: $WORKERS (change with --workers N)"
+    [ ${#ONLY[@]} -gt 0 ] && echo "Only: ${ONLY[*]#-only-testing:GenesisUITests/}"
     echo "Building UI tests..."
     xcodebuild -project Genesis.xcodeproj -scheme GenesisUITests \
         -destination "generic/platform=iOS Simulator" -derivedDataPath "$DERIVED" \
@@ -220,12 +243,18 @@ if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
         echo "UI pass: $NAME..."
         PERF=0
         [ "$UI_TESTS" = full ] && [ "$NAME" = Standard ] && PERF=1
+        # Copies of a simulator start folded, so the open-Duo pass runs on the
+        # Duo itself, one test at a time.
+        PARALLEL=(-parallel-testing-enabled NO)
+        if [ "$WORKERS" -gt 1 ] && [ "$POSTURE" != open ]; then
+            PARALLEL=(-parallel-testing-enabled YES -parallel-testing-worker-count "$WORKERS")
+        fi
         TEST_RUNNER_GENESIS_UI_ARGS="$ARGS" TEST_RUNNER_GENESIS_PERF="$PERF" \
         TEST_RUNNER_GENESIS_ORIENTATION="$ORIENTATION" TEST_RUNNER_GENESIS_POSTURE="$EXPECT_POSTURE" \
         xcodebuild \
             -project Genesis.xcodeproj -scheme GenesisUITests \
             "${DESTS[@]}" -derivedDataPath "$DERIVED" \
-            -parallel-testing-enabled NO \
+            "${PARALLEL[@]}" ${ONLY[@]+"${ONLY[@]}"} \
             -retry-tests-on-failure -test-iterations 2 \
             -resultBundlePath "$RESULT" \
             -skipPackagePluginValidation test-without-building 2>&1 \

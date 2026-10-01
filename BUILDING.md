@@ -52,6 +52,12 @@ slate (a `-uiTesting` launch flag wipes settings and keeps notes in memory).
 | Duo open | iPhone Duo | open | portrait |
 | Landscape | iPhone Duo, iPhone Pro | folded | landscape |
 
+**Faster runs.**
+
+- `--only` runs just the tests you're working on: `./Scripts/build.sh --ui --only Phase3UITests`, or a single test with `--only ReaderUITests/testSwipeTurnsPage`. Repeat `--only` for more.
+- Tests also run on several copies of each simulator at once. The number is chosen from your Mac's memory (about 2.5 GB per copy, three simulators side by side). Set it yourself with `--workers N`, and use `--workers 1` if runs get flaky or the Mac slows down.
+- The open-Duo pass always uses one copy, because copies start folded.
+
 The script folds and unfolds the Duo itself (`Scripts/duo_hinge.sh`, which
 sends the same event as the fold buttons in the Simulator; you don't need to
 touch it). Tests check the screen shape at launch, so a pass never quietly runs
