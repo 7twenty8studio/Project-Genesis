@@ -51,7 +51,9 @@ struct GenesisApp: App {
 
         // UI tests get canned answers: no network and no AI cost.
         let backend: StudyAssistantBackend? = testing.isEnabled ? StubStudyBackend() : StudyAssistant.liveBackend(client: auth.client)
-        _assistant = State(initialValue: StudyAssistant(auth: auth, entitlements: entitlements, library: library, backend: backend))
+        // The assistant is behind a switch (GENESIS_AI_ENABLED); UI tests turn it on with -uiTestingAI.
+        let aiEnabled = testing.isEnabled ? testing.enablesAI : AppConfiguration.current.isAIEnabled
+        _assistant = State(initialValue: StudyAssistant(auth: auth, entitlements: entitlements, library: library, backend: backend, isEnabled: aiEnabled))
 
         testing.apply(settings: settings, router: router)
     }

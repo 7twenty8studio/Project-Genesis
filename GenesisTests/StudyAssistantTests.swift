@@ -78,6 +78,33 @@ struct StudyAssistantTests {
         }
     }
 
+    @Test func switchedOffNeverCallsTheServer() async {
+        let backend = CountingBackend()
+        let assistant = StudyAssistant(
+            auth: AuthService(client: nil, restoresSession: false),
+            entitlements: EntitlementService(defaults: UserDefaults(suiteName: "off-\(UUID())")!, override: true),
+            library: BibleLibrary(),
+            backend: backend,
+            isEnabled: false,
+            cacheDirectory: URL.temporaryDirectory.appending(path: "off-\(UUID())")
+        )
+        #expect(!assistant.isEnabled)
+        await #expect(throws: StudyAssistantError.notConfigured) {
+            _ = try await assistant.answer(.explain, passage: john3)
+        }
+        #expect(backend.calls.isEmpty)
+    }
+
+    @Test func aiSwitchReadsTheBuildSetting() {
+        #expect(AppConfiguration.isOn("YES"))
+        #expect(AppConfiguration.isOn("true"))
+        #expect(AppConfiguration.isOn("1"))
+        #expect(!AppConfiguration.isOn("NO"))
+        #expect(!AppConfiguration.isOn(nil))
+        #expect(UITestingOptions(arguments: ["-uiTesting", "-uiTestingAI"]).enablesAI)
+        #expect(!UITestingOptions(arguments: ["-uiTesting"]).enablesAI)
+    }
+
     @Test func referencesBecomeReaderLinks() {
         let linked = StudyText.linked("Compare [[John 3:16]] and [[Rom 8:28-30]]; not [[Hezekiah 1:1]].")
         #expect(linked == "Compare [John 3:16](genesis://read/43003016) and [Rom 8:28-30](genesis://read/45008028); not Hezekiah 1:1.")

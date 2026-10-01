@@ -9,6 +9,7 @@ struct PremiumView: View {
 
     @Environment(EntitlementService.self) private var entitlements
     @Environment(AuthService.self) private var auth
+    @Environment(StudyAssistant.self) private var assistant
     @Environment(\.palette) private var palette
     @Environment(\.dismiss) private var dismiss
     @State private var selected: PremiumProduct = .yearly
@@ -62,8 +63,10 @@ struct PremiumView: View {
     }
 
     private var orderedFeatures: [PremiumFeature] {
-        guard let highlighted else { return PremiumFeature.allCases }
-        return [highlighted] + PremiumFeature.allCases.filter { $0 != highlighted }
+        // The study assistant isn't offered while it's switched off.
+        let offered = PremiumFeature.allCases.filter { $0 != .advancedAI || assistant.isEnabled }
+        guard let highlighted, offered.contains(highlighted) else { return offered }
+        return [highlighted] + offered.filter { $0 != highlighted }
     }
 
     private var features: some View {

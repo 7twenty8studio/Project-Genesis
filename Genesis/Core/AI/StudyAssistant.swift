@@ -114,6 +114,9 @@ final class StudyAssistant {
     /// Answers used today and today's limit, as last reported by the server.
     private(set) var usedToday: Int?
     private(set) var dailyLimit: Int?
+    /// When false the app hides every study assistant entry point and never
+    /// calls the server (GENESIS_AI_ENABLED).
+    let isEnabled: Bool
 
     @ObservationIgnored private let auth: AuthService
     @ObservationIgnored private let entitlements: EntitlementService
@@ -121,7 +124,8 @@ final class StudyAssistant {
     @ObservationIgnored private let backend: StudyAssistantBackend?
     @ObservationIgnored private let cacheDirectory: URL
 
-    init(auth: AuthService, entitlements: EntitlementService, library: BibleLibrary, backend: StudyAssistantBackend?, cacheDirectory: URL = StudyAssistant.defaultCacheDirectory) {
+    init(auth: AuthService, entitlements: EntitlementService, library: BibleLibrary, backend: StudyAssistantBackend?, isEnabled: Bool = true, cacheDirectory: URL = StudyAssistant.defaultCacheDirectory) {
+        self.isEnabled = isEnabled
         self.auth = auth
         self.entitlements = entitlements
         self.library = library
@@ -150,6 +154,7 @@ final class StudyAssistant {
     }
 
     func answer(_ action: StudyAction, passage: StudyPassage) async throws -> StudyAnswer {
+        guard isEnabled else { throw StudyAssistantError.notConfigured }
         if let saved = savedAnswer(action, passage: passage) { return saved }
         guard canUse(action) else { throw StudyAssistantError.premiumRequired }
         guard let backend else { throw StudyAssistantError.notConfigured }

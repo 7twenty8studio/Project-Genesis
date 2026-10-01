@@ -8,7 +8,14 @@ server or the App Store.
 |---|---|---|
 | Timeline, maps, people, insights | Yes, with Premium | Nothing (try Premium with ⌘R, below) |
 | Buying Premium | With ⌘R from Xcode | Nothing for testing; App Store Connect for real purchases |
-| Study assistant | After steps 1–3 | Supabase CLI, an Anthropic API key |
+| Study assistant | **Switched off for now** | `GENESIS_AI_ENABLED = YES`, then steps 2–3 |
+
+**The study assistant is switched off.** `GENESIS_AI_ENABLED = NO` in
+`Config/Genesis.xcconfig` hides Explain, the Study button, the Study panel and
+the assistant on the Premium screen, and the app never calls the server. To turn
+it back on, set it to `YES` (or override it in your `Secrets.xcconfig`), do
+steps 2 and 3 below, and rebuild. Until then you can skip steps 2 and 3; no
+Anthropic account is needed.
 
 ## 1. Create the study assistant's tables (Supabase, 1 minute)
 

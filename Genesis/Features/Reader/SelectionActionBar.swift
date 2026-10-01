@@ -10,6 +10,7 @@ struct SelectionActionBar: View {
 
     @Environment(ReaderViewModel.self) private var reader
     @Environment(\.palette) private var palette
+    @Environment(StudyAssistant.self) private var assistant
     @State private var copied = false
     @State private var highlightTrigger = 0
 
@@ -21,13 +22,15 @@ struct SelectionActionBar: View {
                     .foregroundStyle(palette.accent)
                     .accessibilityIdentifier("selection.reference")
                 Spacer()
-                Button(action: onExplain) {
-                    Label("Explain", systemImage: "sparkles")
-                        .font(.footnote.weight(.semibold))
+                if assistant.isEnabled {
+                    Button(action: onExplain) {
+                        Label("Explain", systemImage: "sparkles")
+                            .font(.footnote.weight(.semibold))
+                    }
+                    .buttonStyle(.bordered)
+                    .controlSize(.small)
+                    .accessibilityIdentifier("selection.explain")
                 }
-                .buttonStyle(.bordered)
-                .controlSize(.small)
-                .accessibilityIdentifier("selection.explain")
                 Button {
                     reader.clearSelection()
                 } label: {

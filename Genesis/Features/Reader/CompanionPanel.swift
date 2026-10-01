@@ -23,6 +23,12 @@ struct CompanionPanel: View {
     @Binding var mode: Mode
     @Environment(ReaderViewModel.self) private var reader
     @Environment(\.palette) private var palette
+    @Environment(StudyAssistant.self) private var assistant
+
+    /// Study is the AI assistant, so it's left out while that's switched off.
+    private var modes: [Mode] {
+        assistant.isEnabled ? Mode.allCases : Mode.allCases.filter { $0 != .study }
+    }
 
     var body: some View {
         NavigationStack {
@@ -33,7 +39,11 @@ struct CompanionPanel: View {
                 case .crossReferences:
                     CrossReferencesView(verse: reader.studyVerse ?? reader.focusVerse) { reader.open($0) }
                 case .study:
-                    ChapterStudyPanel(chapter: reader.chapterID)
+                    if assistant.isEnabled {
+                        ChapterStudyPanel(chapter: reader.chapterID)
+                    } else {
+                        ChapterNotesView(chapter: reader.chapterID)
+                    }
                 case .context:
                     ChapterContextView(chapter: reader.chapterID)
                 case .search:
@@ -42,7 +52,7 @@ struct CompanionPanel: View {
             }
             .safeAreaInset(edge: .top) {
                 Picker("Panel", selection: $mode) {
-                    ForEach(Mode.allCases) { Text($0.title).tag($0) }
+                    ForEach(modes) { Text($0.title).tag($0) }
                 }
                 .pickerStyle(.segmented)
                 .padding(.horizontal, 16)

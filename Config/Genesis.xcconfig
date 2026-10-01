@@ -11,6 +11,11 @@ SENTRY_DSN =
 GENESIS_TERMS_URL =
 GENESIS_PRIVACY_URL =
 
+// The AI study assistant (Explain, chapter study tools). Off until there are
+// users to justify the cost; set to YES to turn it back on. Everything behind
+// it, including the study-ai Edge Function, stays in place.
+GENESIS_AI_ENABLED = NO
+
 // Entitlements (App Group for widgets, Sign in with Apple) need a development
 // team. They stay off until Config/Signing.xcconfig exists; see PHASE2_SETUP.md.
 GENESIS_APP_ENTITLEMENTS =

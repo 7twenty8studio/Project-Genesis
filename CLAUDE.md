@@ -42,6 +42,9 @@ shares; README.md has the architecture.
 - Free limits live in `FreeLimits` (25 notes, 25 prayers, 3 AI a day) and are
   checked with `EntitlementService` at each entry point; the server enforces
   AI limits again (supabase/functions/study-ai/lib.ts).
+- The study assistant is behind `GENESIS_AI_ENABLED` (Genesis.xcconfig, off for
+  now). Check `StudyAssistant.isEnabled` before showing any AI entry point; UI
+  tests turn it on with `-uiTestingAI`.
 - UI tests are free unless launched with `-uiTestingPremium`; the study
   assistant uses `StubStudyBackend` in UI tests (no network, no cost).
 - Server logic tests: `node --experimental-strip-types --test supabase/functions/study-ai/lib.test.ts`.

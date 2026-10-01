@@ -12,6 +12,7 @@ struct ReaderControls: View {
     @Environment(ReaderViewModel.self) private var reader
     @Environment(BibleLibrary.self) private var library
     @Environment(\.palette) private var palette
+    @Environment(StudyAssistant.self) private var assistant
 
     var body: some View {
         HStack(spacing: 10) {
@@ -69,8 +70,10 @@ struct ReaderControls: View {
                 .sensoryFeedback(.selection, trigger: bookmarked)
                 .accessibilityIdentifier("reader.bookmark")
 
-                iconButton("sparkles", label: "Study this chapter", action: onStudy)
-                    .accessibilityIdentifier("reader.study")
+                if assistant.isEnabled {
+                    iconButton("sparkles", label: "Study this chapter", action: onStudy)
+                        .accessibilityIdentifier("reader.study")
+                }
 
                 iconButton("textformat.size", label: "Reading settings", action: onSettings)
                     .accessibilityIdentifier("reader.settings")

@@ -12,6 +12,7 @@ import Foundation
 ///     -uiTestingReadingMode scroll    page | scroll
 ///     -uiTestingPageTurn slide        slide | curl
 ///     -uiTestingPremium               act as a Premium subscriber (default: free)
+///     -uiTestingAI                    turn the study assistant on (default: off, like release)
 struct UITestingOptions {
     let isEnabled: Bool
     let skipsOnboarding: Bool
@@ -20,6 +21,7 @@ struct UITestingOptions {
     let readingMode: ReadingMode?
     let pageTurn: PageTurnStyle?
     let isPremium: Bool
+    let enablesAI: Bool
 
     static let current = UITestingOptions(arguments: ProcessInfo.processInfo.arguments)
 
@@ -35,6 +37,7 @@ struct UITestingOptions {
         readingMode = value(after: "-uiTestingReadingMode").flatMap(ReadingMode.init(rawValue:))
         pageTurn = value(after: "-uiTestingPageTurn").flatMap(PageTurnStyle.init(rawValue:))
         isPremium = arguments.contains("-uiTestingPremium")
+        enablesAI = arguments.contains("-uiTestingAI")
     }
 
     /// Wipes saved state. Must run before any store reads UserDefaults.

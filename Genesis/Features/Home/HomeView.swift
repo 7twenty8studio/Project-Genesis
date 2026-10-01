@@ -10,6 +10,7 @@ struct HomeView: View {
     @Environment(ReaderSettings.self) private var settings
     @Environment(AuthService.self) private var auth
     @Environment(EntitlementService.self) private var entitlements
+    @Environment(StudyAssistant.self) private var assistant
     @Environment(\.modelContext) private var modelContext
     @Environment(\.palette) private var palette
 
@@ -221,7 +222,7 @@ struct HomeView: View {
                     Text("Genesis Premium")
                         .font(.headline)
                         .foregroundStyle(palette.text)
-                    Text("Timeline, maps and people, the study assistant, cloud backup and more.")
+                    Text(assistant.isEnabled ? "Timeline, maps and people, the study assistant, cloud backup and more." : "Timeline, maps and people, cloud backup, themes and more.")
                         .font(.subheadline)
                         .foregroundStyle(palette.secondaryText)
                         .multilineTextAlignment(.leading)

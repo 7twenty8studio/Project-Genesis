@@ -10,6 +10,13 @@ final class Phase3UITests: GenesisUITestCase {
         Genesis.launch(verse: verse, extra: ["-uiTestingPremium"])
     }
 
+    /// The study assistant is switched off in release builds for now
+    /// (GENESIS_AI_ENABLED); its tests turn it on.
+    @MainActor
+    private func launchWithAI(verse: Int, premium: Bool = false) -> XCUIApplication {
+        Genesis.launch(verse: verse, extra: ["-uiTestingAI"] + (premium ? ["-uiTestingPremium"] : []))
+    }
+
     @MainActor
     private func openExplore(_ app: XCUIApplication, section: String? = nil) {
         Genesis.openTab("Explore", in: app)
@@ -55,8 +62,18 @@ final class Phase3UITests: GenesisUITestCase {
     // MARK: Study assistant
 
     @MainActor
-    func testExplainSelectionShowsScriptureAndLabelledNotes() {
+    func testStudyAssistantIsHiddenWhileSwitchedOff() {
         let app = Genesis.launch(verse: john316)
+        XCTAssertTrue(app.buttons["reader.settings"].waitForExistence(timeout: Genesis.timeout))
+        XCTAssertFalse(app.buttons["reader.study"].exists, "No Study button without the assistant")
+        XCTAssertTrue(Genesis.selectVerse(app), "A verse can be selected")
+        XCTAssertTrue(app.buttons["selection.done"].waitForExistence(timeout: Genesis.timeout))
+        XCTAssertFalse(app.buttons["selection.explain"].exists, "No Explain button without the assistant")
+    }
+
+    @MainActor
+    func testExplainSelectionShowsScriptureAndLabelledNotes() {
+        let app = launchWithAI(verse: john316)
         XCTAssertTrue(Genesis.selectVerse(app), "A verse can be selected")
         let explain = app.buttons["selection.explain"]
         XCTAssertTrue(explain.waitForExistence(timeout: Genesis.timeout), "Explain is offered for a selection")
@@ -73,7 +90,7 @@ final class Phase3UITests: GenesisUITestCase {
 
     @MainActor
     func testPremiumStudyToolsAreLockedForFreeAccounts() {
-        let app = Genesis.launch(verse: john316)
+        let app = launchWithAI(verse: john316)
         let study = app.buttons["reader.study"]
         XCTAssertTrue(study.waitForExistence(timeout: Genesis.timeout), "The reader offers Study")
         study.tap()
@@ -86,7 +103,7 @@ final class Phase3UITests: GenesisUITestCase {
 
     @MainActor
     func testPremiumCanUseEveryStudyTool() {
-        let app = launchPremium(verse: john316)
+        let app = launchWithAI(verse: john316, premium: true)
         let study = app.buttons["reader.study"]
         XCTAssertTrue(study.waitForExistence(timeout: Genesis.timeout))
         study.tap()
