@@ -46,8 +46,9 @@ struct ContentActions: ViewModifier {
                     Button(reason) {
                         Task {
                             if await community.report(kind, id: id, reason: reason) {
+                                // Hide it once the thank-you is dismissed: hiding first
+                                // removes this row, and its alert with it.
                                 thanks = true
-                                onHidden()
                             }
                         }
                     }
@@ -71,7 +72,7 @@ struct ContentActions: ViewModifier {
                 }
             }
             .alert("Thank you", isPresented: $thanks) {
-                Button("OK", role: .cancel) {}
+                Button("OK", role: .cancel) { onHidden() }
             } message: {
                 Text("Thanks for helping keep Genesis a safe place. You can also block this person from the same menu.")
             }
