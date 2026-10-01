@@ -50,6 +50,20 @@ in an update are shown to existing users after they update (new installs skip
 them); features behind a Supabase switch are shown the first time the switch is
 on. The study assistant's announcement is ready and waits for its switch.
 
+## Phase 4 (built; set up with [PHASE4_SETUP.md](PHASE4_SETUP.md))
+
+- **Audio Bible** (free): device voices read verse by verse with the page
+  following along, or recorded narration (WEB, Basil Sands, public domain)
+  listed in Supabase; lock-screen controls, speed, sleep timer, offline
+  downloads.
+- **Church groups** (free): create or join with an invite code; a shared
+  reading plan with "who's read today", prayer requests with "I prayed",
+  a discussion per day, leader announcements with push notifications.
+- **Community** (free, off until switched on): a public prayer wall (optionally
+  anonymous) and reflections, with guidelines, a word filter, reporting,
+  blocking, auto-hiding after three reports and a moderation queue.
+- **Android planning**: [docs/ANDROID_PLAN.md](docs/ANDROID_PLAN.md).
+
 ## Phase 3 (built; switch on with [PHASE3_SETUP.md](PHASE3_SETUP.md))
 
 - **Study assistant**: explain a passage, summarize a chapter, historical

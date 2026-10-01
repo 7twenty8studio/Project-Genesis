@@ -7,6 +7,12 @@ free (no Premium needed).
 |---|---|---|
 | Audio Bible, device voices | Yes, every translation, offline | Nothing |
 | Audio Bible, recorded narration | After step 1 | The audio SQL and one recording added |
+| Church groups | After step 2 | The groups SQL (one paste) |
+| Prayer wall and reflections | After step 2 + switch | The same SQL, then turn `community` on |
+| Announcement notifications | After step 3 | Apple Developer account, an APNs key |
+
+The new **Together** tab appears once the groups SQL has run. Groups and the
+community need people to sign in (free).
 
 ## Audio Bible
 
@@ -58,3 +64,84 @@ same way later.
 **Small differences.** The recording is of the "WEB Updated" edition, so a
 word here and there may differ from the WEB text on screen. Recorded audio
 plays chapter by chapter and doesn't mark individual verses.
+
+## 2. Church groups and the community
+
+**Run the SQL (once):** SQL Editor → New query → paste
+`supabase/migrations/20261003000000_groups_community.sql` → Run. Safe to run
+again.
+
+That creates everything with row-level security on every table, and two
+switches in `feature_flags`:
+
+- `groups`: **on**. People can start groups, join with an invite code, read a
+  plan together, share prayer requests, discuss each day's reading and post
+  announcements (leaders).
+- `community`: **off**. The public prayer wall and reflections. Turn it on
+  (Table Editor → `feature_flags` → `enabled`) when you're ready to look at
+  reports regularly; see below.
+
+Groups are private to their members. Leaders can edit the group, make a new
+invite code, make others leaders, remove members and delete any post in their
+group.
+
+### Keeping the community safe (App Store guideline 1.2)
+
+Apple requires apps with user posts to have a content filter, reporting,
+blocking and someone acting on reports. Genesis has all four:
+
+- **Guidelines:** people agree to the community guidelines before their first
+  post.
+- **Filter:** posts, names and group content are checked against the
+  `blocked_terms` table (a starter list is included; add words in Table Editor,
+  lowercase, one per row). Posting is limited to 20 an hour per person.
+- **Report and block:** every post and comment has a … menu with Report and
+  Block. Reported posts disappear for the reporter; **three reports hide a post
+  for everyone** until you review it. Blocked people's posts disappear for the
+  person who blocked them.
+- **Your review list:** Table Editor → `moderation_queue` shows open reports
+  with the content and author. Then, in the SQL Editor:
+  ```sql
+  -- Dealt with (keeps it hidden if it was hidden):
+  update public.content_reports set resolved_at = now() where content_id = '<id>';
+  -- It was fine, show it again:
+  update public.community_posts set hidden_at = null where id = '<id>';
+  -- Stop someone posting in the community:
+  insert into public.community_bans (user_id, reason) values ('<author>', 'reason');
+  ```
+  Apple expects reports to be acted on within 24 hours. Check daily while the
+  community is on.
+- **Contact:** App Review also wants a way to reach you. Put a support email on
+  the App Store listing and your website.
+
+### 3. Notifications for announcements
+
+When a leader posts an announcement, members get a push notification (they
+can turn it off per group). This needs your Apple Developer account:
+
+1. Apple Developer → Certificates, Identifiers & Profiles → **Keys** → add a key
+   with **Apple Push Notifications service (APNs)**. Download the `.p8` file
+   (only once) and note the **Key ID** and your **Team ID**.
+2. In Xcode, the app needs the Push Notifications capability. It's already in
+   `Config/Genesis.entitlements`; it switches on with your
+   `Config/Signing.xcconfig` (see PHASE2_SETUP.md).
+3. Add three Supabase secrets (Edge Functions → Secrets). **Don't paste them in
+   chat.**
+   - `APNS_KEY`: the whole text of the `.p8` file
+   - `APNS_KEY_ID`: the Key ID
+   - `APNS_TEAM_ID`: your Team ID
+4. Deploy the function: `supabase functions deploy group-notify`
+
+Builds run from Xcode use Apple's test (sandbox) push service; TestFlight and
+App Store builds use the live one. Without the secrets, announcements still
+post; nobody is notified.
+
+## Testing it
+
+- `./Scripts/build.sh --ui` runs the groups and community tests against a
+  built-in test server (no network, no account).
+- Server rules: the SQL was tested on Postgres for outsiders, faked names,
+  leader-only actions, the word filter, rate limits, reports hiding posts,
+  blocking and bans.
+- `node --experimental-strip-types --test supabase/functions/group-notify/lib.test.ts`
+  checks the notification signing and payload.

@@ -5,6 +5,10 @@ import Foundation
 enum FeatureFlag: String, CaseIterable, Sendable {
     /// The AI study assistant: Explain, chapter study tools and the Study panel.
     case studyAssistant = "study_assistant"
+    /// Church groups (on once the groups SQL has been run).
+    case groups
+    /// The public prayer wall and reflections.
+    case community
 }
 
 /// Reads the server-side switches at launch and whenever the app comes to the

@@ -50,6 +50,9 @@ final class AudioPlayerService {
     /// (nil, nil) when listening stops.
     @ObservationIgnored var onPosition: ((ChapterID?, VerseID?) -> Void)?
     @ObservationIgnored private var pausedByInterruption = false
+    /// Set when what's queued no longer matches (the chapter ended, or speed
+    /// or position changed while paused); resuming starts afresh.
+    @ObservationIgnored private var restartOnResume = false
 
     init(library: BibleLibrary, settings: AudioSettings, catalog: AudioRecordingCatalog, narrator: VerseNarrator) {
         self.library = library
@@ -77,6 +80,7 @@ final class AudioPlayerService {
         narrator.stop()
         recordingPlayer.stop()
         errorMessage = nil
+        restartOnResume = false
         translation = library.currentTranslation
         source = resolvedSource()
         self.chapter = chapter
@@ -140,7 +144,7 @@ final class AudioPlayerService {
         guard state == .paused, let chapter else { return }
         // After an error, or with a different translation or source since
         // pausing, start the chapter afresh.
-        if errorMessage != nil || library.currentTranslation != translation || resolvedSource() != source {
+        if restartOnResume || errorMessage != nil || library.currentTranslation != translation || resolvedSource() != source {
             play(chapter, from: verse)
             return
         }
@@ -200,9 +204,15 @@ final class AudioPlayerService {
                   let verses = try? library.current.chapter(chapter).verses.map(\.id),
                   let index = verses.firstIndex(of: current) else { return }
             let target = verses[min(max(index + (forward ? 1 : -1), 0), verses.count - 1)]
-            let wasPaused = state == .paused
-            play(chapter, from: target)
-            if wasPaused { pause() }
+            if state == .paused {
+                // Move without speaking; Play picks up from here.
+                verse = target
+                restartOnResume = true
+                onPosition?(chapter, target)
+                updateNowPlaying()
+            } else {
+                play(chapter, from: target)
+            }
         }
     }
 
@@ -218,7 +228,11 @@ final class AudioPlayerService {
             recordingPlayer.setSpeed(speed)
         case .deviceVoice:
             // Speech can't change speed mid-sentence; pick up from this verse.
-            if state == .playing, let chapter { play(chapter, from: verse) }
+            if state == .playing, let chapter {
+                play(chapter, from: verse)
+            } else if state == .paused {
+                restartOnResume = true
+            }
         }
         updateNowPlaying()
     }
@@ -226,9 +240,11 @@ final class AudioPlayerService {
     /// Applies a new voice or source right away if something is playing.
     func settingsChanged() {
         guard state == .playing || state == .paused, let chapter else { return }
-        let wasPaused = state == .paused
-        play(chapter, from: verse)
-        if wasPaused { pause() }
+        if state == .paused {
+            restartOnResume = true
+        } else {
+            play(chapter, from: verse)
+        }
     }
 
     // MARK: Sleep timer
@@ -270,12 +286,14 @@ final class AudioPlayerService {
             cancelSleepTimer()
             verse = nil
             state = .paused
+            restartOnResume = true
             updateNowPlaying()
             return
         }
         guard settings.continuesToNextChapter, let next = chapter.next else {
             verse = nil
             state = .paused
+            restartOnResume = true
             updateNowPlaying()
             return
         }

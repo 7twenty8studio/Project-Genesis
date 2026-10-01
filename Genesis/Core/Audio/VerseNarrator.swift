@@ -28,6 +28,9 @@ final class SpeechNarrator: NSObject, VerseNarrator {
     /// Which verse each queued utterance reads (nil for the chapter title).
     private var verseByUtterance: [ObjectIdentifier: VerseID] = [:]
     private var lastUtterance: ObjectIdentifier?
+    /// Every utterance of this and recent chapters, kept alive so a late
+    /// callback from a stopped one can never match a new one at the same address.
+    private var queued: [AVSpeechUtterance] = []
 
     override init() {
         super.init()
@@ -50,6 +53,7 @@ final class SpeechNarrator: NSObject, VerseNarrator {
             utterance.postUtteranceDelay = pauseAfter / max(speed, 0.5)
             if let verse { verseByUtterance[ObjectIdentifier(utterance)] = verse }
             lastUtterance = ObjectIdentifier(utterance)
+            queued.append(utterance)
             synthesizer.speak(utterance)
         }
 
@@ -73,6 +77,8 @@ final class SpeechNarrator: NSObject, VerseNarrator {
     func stop() {
         verseByUtterance.removeAll()
         lastUtterance = nil
+        // Keep the last chapter or two alive; drop older ones.
+        if queued.count > 600 { queued.removeFirst(queued.count - 600) }
         if synthesizer.isSpeaking || synthesizer.isPaused {
             synthesizer.stopSpeaking(at: .immediate)
         }

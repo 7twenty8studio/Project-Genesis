@@ -23,6 +23,8 @@ final class WhatsNewUITests: GenesisUITestCase {
         let app = Genesis.launch(verse: 43_003_016, extra: ["-uiTestingWhatsNew"])
         XCTAssertTrue(app.buttons["reader.settings"].waitForExistence(timeout: Genesis.launchTimeout))
         RunLoop.current.run(until: Date().addingTimeInterval(2.5))
-        XCTAssertFalse(app.buttons["whatsNew.continue"].exists, "No announcement for a feature that's switched off")
+        // Other features may be announced; the switched-off assistant isn't.
+        let assistant = app.descendants(matching: .any).matching(identifier: "whatsNew.study-assistant").firstMatch
+        XCTAssertFalse(assistant.exists, "No announcement for a feature that's switched off")
     }
 }

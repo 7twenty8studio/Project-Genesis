@@ -86,15 +86,16 @@ struct NarrationVoice: Identifiable, Hashable, Sendable {
                 return lhs.name < rhs.name
             }
             .map { voice in
-                NarrationVoice(
+                let quality: String? = switch voice.quality {
+                case .premium: "Premium"
+                case .enhanced: "Enhanced"
+                default: nil
+                }
+                return NarrationVoice(
                     id: voice.identifier,
                     name: voice.name,
                     language: Locale.current.localizedString(forIdentifier: voice.language) ?? voice.language,
-                    qualityLabel: switch voice.quality {
-                    case .premium: "Premium"
-                    case .enhanced: "Enhanced"
-                    default: nil
-                    }
+                    qualityLabel: quality
                 )
             }
     }

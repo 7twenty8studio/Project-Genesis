@@ -188,6 +188,25 @@ final class SupabaseClient: Sendable {
         return try JSONDecoder().decode([Row].self, from: try await perform(request))
     }
 
+    // MARK: Raw requests
+
+    /// A PostgREST or RPC request with a JSON body, returning the raw response
+    /// body. Callers decode it; errors arrive as `SupabaseError.http` whose
+    /// message is the database's error text (e.g. "objectionable_content").
+    func send(
+        _ method: String,
+        path: String,
+        query: [URLQueryItem] = [],
+        body: Data? = nil,
+        prefer: String? = nil,
+        accessToken: String?
+    ) async throws -> Data {
+        var request = makeRequest(path: path, query: query, method: method, accessToken: accessToken)
+        if let prefer { request.setValue(prefer, forHTTPHeaderField: "Prefer") }
+        request.httpBody = body
+        return try await perform(request)
+    }
+
     // MARK: Feature switches
 
     private struct FlagRow: Decodable {

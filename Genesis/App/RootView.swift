@@ -45,6 +45,7 @@ struct RootView: View {
             sync.start()
             Task { await flags.refresh() }
             Task { await audio.catalog.refresh() }
+            Task { await PushNotifications.shared.refreshRegistration() }
             refreshWidgets()
         }
         .onChange(of: entitlements.isPremium) { _, isPremium in
@@ -86,6 +87,7 @@ struct RootView: View {
 
 struct MainTabView: View {
     @Environment(AppRouter.self) private var router
+    @Environment(FeatureFlagService.self) private var flags
     @Environment(\.palette) private var palette
 
     var body: some View {
@@ -102,6 +104,11 @@ struct MainTabView: View {
             }
             Tab("Explore", systemImage: "map", value: AppTab.explore) {
                 ExploreView()
+            }
+            if flags.isOn(.groups) || flags.isOn(.community) {
+                Tab("Together", systemImage: "person.3", value: AppTab.together) {
+                    TogetherView()
+                }
             }
             Tab(value: AppTab.search, role: .search) {
                 SearchView()

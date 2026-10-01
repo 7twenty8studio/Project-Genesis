@@ -25,7 +25,7 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community]
 
     static let audioBible = WhatsNewAnnouncement(
         id: "audio-bible",
@@ -47,6 +47,52 @@ enum WhatsNewCatalog {
                 detail: "Listen faster or slower, and stop after a set time or at the end of the chapter."
             ),
         ]
+    )
+
+    static let churchGroups = WhatsNewAnnouncement(
+        id: "church-groups",
+        title: "Church groups",
+        items: [
+            WhatsNewItem(
+                systemImage: "person.3",
+                title: "Read together",
+                detail: "Start a group or join one with an invite code in the new Together tab. Follow a reading plan as a group and see who's kept up."
+            ),
+            WhatsNewItem(
+                systemImage: "hands.and.sparkles",
+                title: "Pray for each other",
+                detail: "Share prayer requests with your group, tap \"I prayed\", and mark requests answered."
+            ),
+            WhatsNewItem(
+                systemImage: "megaphone",
+                title: "Talk and stay in touch",
+                detail: "Discuss each day's reading, and get a notification when a leader posts an announcement."
+            ),
+        ],
+        flag: .groups
+    )
+
+    static let community = WhatsNewAnnouncement(
+        id: "community",
+        title: "The Genesis community",
+        items: [
+            WhatsNewItem(
+                systemImage: "hands.and.sparkles",
+                title: "Prayer wall",
+                detail: "Share a prayer request with everyone in Genesis, anonymously if you like, and pray for others."
+            ),
+            WhatsNewItem(
+                systemImage: "text.quote",
+                title: "Reflections",
+                detail: "Share a short thought on a passage and encourage one another."
+            ),
+            WhatsNewItem(
+                systemImage: "shield",
+                title: "Kind and safe",
+                detail: "Everyone agrees to the community guidelines. Report or block anyone from the … menu on any post."
+            ),
+        ],
+        flag: .community
     )
 
     static let studyAssistant = WhatsNewAnnouncement(

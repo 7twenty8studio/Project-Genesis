@@ -20,6 +20,8 @@ final class AuthService {
     @ObservationIgnored private var session: AuthSession?
     @ObservationIgnored private var refreshTask: Task<AuthSession, Error>?
     @ObservationIgnored var onSignIn: (@MainActor (AuthUser) -> Void)?
+    /// Runs while still signed in, e.g. to stop this device's notifications.
+    @ObservationIgnored var beforeSignOut: (@MainActor () async -> Void)?
 
     private static let sessionAccount = "session"
 
@@ -61,6 +63,7 @@ final class AuthService {
     }
 
     func signOut() async {
+        await beforeSignOut?()
         if let client, let session { await client.signOut(session) }
         session = nil
         user = nil

@@ -52,6 +52,19 @@ shares; README.md has the architecture.
 - Supabase SQL: explicit statements, no drops, RLS enabled in plain
   `alter table` lines (the dashboard's checker flags anything else).
 
+## Phase 4: audio, groups, community
+- Audio: `AudioPlayerService` (device voices via `SpeechNarrator`, recordings
+  via `RecordingPlayer`, catalog in public.audio_recordings). UI tests use the
+  silent `StubNarrator`. Recorded narration must be public domain.
+- Groups and community: `CommunityBackend` (Supabase, `InMemoryCommunityBackend`
+  in UI tests). The database enforces membership, leader-only actions, author
+  names, the word filter and rate limits; keep it that way rather than trusting
+  the app. The community feed comes from `community_feed()` so anonymous
+  authors stay anonymous; `user_id` on community_posts isn't readable.
+- Anything people post needs report, block and (for its author) delete:
+  `.contentActions(...)`. App Store guideline 1.2.
+- Switches: `groups` (on) and `community` (off until the owner moderates).
+
 ## What's New
 - Every new user-facing feature gets a one-time announcement in
   `WhatsNewCatalog.all` (Genesis/Core/WhatsNew/WhatsNew.swift) with a new,

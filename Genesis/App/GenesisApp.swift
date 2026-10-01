@@ -3,6 +3,7 @@ import SwiftUI
 
 @main
 struct GenesisApp: App {
+    @UIApplicationDelegateAdaptor(GenesisAppDelegate.self) private var appDelegate
     @State private var library: BibleLibrary
     @State private var settings: ReaderSettings
     @State private var progress: ReadingProgress
@@ -15,6 +16,7 @@ struct GenesisApp: App {
     @State private var flags: FeatureFlagService
     @State private var whatsNew: WhatsNewService
     @State private var audio: AudioPlayerService
+    @State private var community: CommunityStore
     private let modelContainer: ModelContainer
     private let studyData = StudyRepository.bundled()
 
@@ -43,7 +45,11 @@ struct GenesisApp: App {
         // UI tests never touch a real account.
         let auth = AuthService(client: testing.isEnabled ? nil : SupabaseClient.fromConfiguration(), restoresSession: !testing.isEnabled)
         let sync = SyncService(auth: auth, container: modelContainer)
-        auth.onSignIn = { [weak sync] user in sync?.accountDidSignIn(user) }
+        auth.onSignIn = { [weak sync] user in
+            sync?.accountDidSignIn(user)
+            Task { await PushNotifications.shared.upload() }
+        }
+        auth.beforeSignOut = { await PushNotifications.shared.signingOut() }
         _auth = State(initialValue: auth)
         _sync = State(initialValue: sync)
 
@@ -58,7 +64,7 @@ struct GenesisApp: App {
         // server: the assistant is on only with -uiTestingAI.
         let flags = FeatureFlagService(
             client: testing.isEnabled ? nil : auth.client,
-            override: testing.isEnabled ? [.studyAssistant: testing.enablesAI] : nil
+            override: testing.isEnabled ? [.studyAssistant: testing.enablesAI, .groups: true, .community: true] : nil
         )
         _flags = State(initialValue: flags)
         _whatsNew = State(initialValue: WhatsNewService(isEnabled: !testing.isEnabled || testing.showsWhatsNew))
@@ -78,6 +84,23 @@ struct GenesisApp: App {
         }
         _audio = State(initialValue: audio)
 
+        // Groups and the community. UI tests use an in-memory server with a
+        // signed-in person (or none with -uiTestingSignedOut).
+        let communityBackend: CommunityBackend
+        if testing.isEnabled {
+            communityBackend = testing.isSignedOut ? SignedOutCommunityBackend() as CommunityBackend : InMemoryCommunityBackend()
+        } else if let client = auth.client {
+            communityBackend = SupabaseCommunityBackend(client: client, auth: auth)
+        } else {
+            communityBackend = SignedOutCommunityBackend()
+        }
+        _community = State(initialValue: CommunityStore(backend: communityBackend))
+        let push = PushNotifications.shared
+        push.isEnabled = !testing.isEnabled
+        push.backend = communityBackend
+        push.onOpenGroup = { [weak router] id in router?.openGroup(id) }
+        push.onOpenPrayerJournal = { [weak router] in router?.open(.prayerJournal) }
+
         testing.apply(settings: settings, router: router)
     }
 
@@ -96,6 +119,7 @@ struct GenesisApp: App {
                 .environment(flags)
                 .environment(whatsNew)
                 .environment(audio)
+                .environment(community)
                 .environment(\.studyData, studyData)
         }
         .modelContainer(modelContainer)

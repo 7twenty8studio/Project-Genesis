@@ -2,7 +2,13 @@ import Observation
 import SwiftUI
 
 enum AppTab: Hashable {
-    case home, read, library, explore, search
+    case home, read, library, explore, together, search
+}
+
+/// Screens pushed on the Together tab (groups and the community).
+enum TogetherRoute: Hashable {
+    case group(UUID)
+    case post(CommunityPost)
 }
 
 /// Screens pushed on the Explore tab (timeline, maps, people).
@@ -28,6 +34,7 @@ final class AppRouter {
     var tab: AppTab = .home
     var homePath: [HomeRoute] = []
     var explorePath: [ExploreRoute] = []
+    var togetherPath: [TogetherRoute] = []
     var showsAccount = false
     @ObservationIgnored let reader: ReaderViewModel
 
@@ -57,6 +64,12 @@ final class AppRouter {
         explorePath.append(route)
     }
 
+    /// A group's page, e.g. from an announcement notification.
+    func openGroup(_ id: UUID) {
+        tab = .together
+        togetherPath = [.group(id)]
+    }
+
     func open(_ route: HomeRoute) {
         tab = .home
         homePath = [route]
@@ -76,6 +89,8 @@ final class AppRouter {
             open(.plans)
         case "prayer":
             open(.prayerJournal)
+        case "group":
+            if let id = UUID(uuidString: url.lastPathComponent) { openGroup(id) } else { tab = .together }
         default:
             tab = .home
         }
