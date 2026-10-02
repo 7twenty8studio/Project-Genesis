@@ -19,6 +19,8 @@ struct PagedReaderView: UIViewControllerRepresentable {
     let decorationsVersion: Int
     let translationID: String
     let pageTurnToken: Int
+    /// Fades the running head and "pages left" footer (while the controls show).
+    var hidesPageChrome = false
 
     func makeCoordinator() -> Coordinator {
         Coordinator(viewModel: viewModel)
@@ -52,6 +54,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
     func updateUIViewController(_ controller: UIPageViewController, context: Context) {
         let coordinator = context.coordinator
         coordinator.leftHanded = leftHanded
+        coordinator.setPageChromeHidden(hidesPageChrome)
         controller.view.backgroundColor = layout.style.palette.uiBackground
         coordinator.update(
             layout: layout,
@@ -72,6 +75,15 @@ struct PagedReaderView: UIViewControllerRepresentable {
         weak var pageController: UIPageViewController?
         var leftHanded = false
         var pageTurnToken = -1
+        private var pageChromeHidden = false
+
+        func setPageChromeHidden(_ hidden: Bool) {
+            guard hidden != pageChromeHidden else { return }
+            pageChromeHidden = hidden
+            for case let page as ReaderPageViewController in pageController?.viewControllers ?? [] {
+                page.setChromeHidden(hidden, animated: true)
+            }
+        }
 
         private var layout: ReaderLayout?
         private var cache: [ChapterID: PaginatedChapter] = [:]
@@ -167,6 +179,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
                 footer: footerText(pageIndex: location.index, pageCount: chapter.pages.count)
             )
             page.onEvent = { [weak self] event in self?.handle(event) }
+            page.setChromeHidden(pageChromeHidden, animated: false)
             return page
         }
 
@@ -286,6 +299,7 @@ final class ReaderPageViewController: UIViewController {
     private let headerLabel = UILabel()
     private let footerLabel = UILabel()
     private var layout: ReaderLayout?
+    private var chromeHidden = false
 
     init(location: PageLocation) {
         self.location = location
@@ -308,13 +322,35 @@ final class ReaderPageViewController: UIViewController {
 
         for label in [headerLabel, footerLabel] {
             label.font = .systemFont(ofSize: 12, weight: .medium)
-            label.textColor = palette.uiSecondaryText
+            label.textColor = chromeColor
             label.textAlignment = .center
             label.adjustsFontForContentSizeCategory = false
         }
-        headerLabel.attributedText = NSAttributedString(string: header.uppercased(), attributes: [.kern: 1.2])
+        headerLabel.attributedText = NSAttributedString(string: header.uppercased(), attributes: [.kern: 1.2, .foregroundColor: chromeColor])
         footerLabel.text = footer
         view.setNeedsLayout()
+    }
+
+    /// Hides the running head and footer by making their text clear rather
+    /// than hiding the labels, so VoiceOver and the UI tests still find them.
+    func setChromeHidden(_ hidden: Bool, animated: Bool) {
+        chromeHidden = hidden
+        guard isViewLoaded else { return }
+        let apply = { [self] in
+            headerLabel.textColor = chromeColor
+            footerLabel.textColor = chromeColor
+        }
+        if animated && !UIAccessibility.isReduceMotionEnabled {
+            for label in [headerLabel, footerLabel] {
+                UIView.transition(with: label, duration: 0.2, options: .transitionCrossDissolve, animations: apply)
+            }
+        } else {
+            apply()
+        }
+    }
+
+    private var chromeColor: UIColor {
+        chromeHidden ? .clear : (layout?.style.palette.uiSecondaryText ?? .secondaryLabel)
     }
 
     override func viewDidLoad() {

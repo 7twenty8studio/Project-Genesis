@@ -28,7 +28,17 @@ struct ReaderView: View {
     @State private var windowSafeArea: UIEdgeInsets?
     @FocusState private var isFocused: Bool
 
-    private var isWide: Bool { horizontalSizeClass == .regular }
+    /// The reader's whole width, side panel included.
+    @State private var surfaceWidth: CGFloat = 0
+
+    /// The side panel sits beside the text only when the text keeps a
+    /// comfortable width: iPad, and the open iPhone Duo held sideways. Held
+    /// upright (669 pt) the Duo reads full width, as a phone does.
+    private var isWide: Bool {
+        horizontalSizeClass == .regular && surfaceWidth >= Self.companionWidth + Self.minimumReadingWidth
+    }
+    private static let companionWidth: CGFloat = 360
+    private static let minimumReadingWidth: CGFloat = 440
     private var preferences: ReaderPreferences { settings.preferences }
 
     var body: some View {
@@ -44,6 +54,7 @@ struct ReaderView: View {
             }
         }
         .background(palette.background.ignoresSafeArea())
+        .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { surfaceWidth = $0 }
         .toolbarVisibility(reader.showsControls && !reader.isSelecting ? .visible : .hidden, for: .tabBar)
         .statusBarHidden(!reader.showsControls)
         .animation(reduceMotion ? nil : .easeInOut(duration: 0.25), value: reader.showsControls)
@@ -179,7 +190,10 @@ struct ReaderView: View {
                 navigationToken: reader.navigationToken,
                 decorationsVersion: reader.decorationsVersion,
                 translationID: reader.translation.id,
-                pageTurnToken: reader.pageTurnToken
+                pageTurnToken: reader.pageTurnToken,
+                // The running head and page count make way for the controls
+                // and tab bar, which would otherwise sit on top of them.
+                hidesPageChrome: reader.showsControls && !reader.isSelecting
             )
             // The transition style can only be set when the controller is created.
             .id(turn)
@@ -210,7 +224,7 @@ struct ReaderView: View {
 
     private var companion: some View {
         CompanionPanel(mode: $companionMode)
-            .frame(width: 360)
+            .frame(width: Self.companionWidth)
             .background(palette.surface.ignoresSafeArea())
     }
 

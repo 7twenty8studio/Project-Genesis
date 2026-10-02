@@ -112,6 +112,9 @@ shares; README.md has the architecture.
   Explore, Together. Search is a button there (Home, Library) opening
   `SearchSheet`, as in the Bible app; iPad and the open Duo keep the Search
   tab. Don't add tabs without moving something out.
+- The reader's side panel (notes, plans, prayer) shows only when the text
+  keeps 440 pt beside it (iPad; the open Duo held sideways). Reader controls
+  fall back to tighter buttons, then a "More" menu, rather than squeezing.
 - Don't put `.accessibilityIdentifier` on a container whose children have
   their own identifiers (SwiftUI passes it down and replaces theirs).
 

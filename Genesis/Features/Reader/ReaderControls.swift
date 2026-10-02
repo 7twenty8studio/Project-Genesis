@@ -20,96 +20,154 @@ struct ReaderControls: View {
     @Environment(FeaturePreferences.self) private var features
 
     var body: some View {
-        HStack(spacing: 10) {
-            HStack(spacing: 2) {
-                iconButton("chevron.left", label: String(localized: "Previous chapter"), enabled: reader.chapterID.previous != nil) {
-                    reader.goToPreviousChapter()
-                }
-                .accessibilityIdentifier("reader.previousChapter")
-                Button(action: onChapterPicker) {
-                    Text(reader.chapterID.description)
-                        .font(.headline)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.8)
-                        .padding(.horizontal, 6)
-                }
-                .accessibilityHint("Choose a book and chapter")
-                .accessibilityIdentifier("reader.chapterButton")
-                iconButton("chevron.right", label: String(localized: "Next chapter"), enabled: reader.chapterID.next != nil) {
-                    reader.goToNextChapter()
-                }
-                .accessibilityIdentifier("reader.nextChapter")
-            }
-            .padding(.horizontal, 6)
-            .padding(.vertical, 4)
-            .glassEffect(.regular, in: Capsule())
-
-            Spacer(minLength: 0)
-
-            HStack(spacing: 2) {
-                Menu {
-                    ForEach(library.translations) { translation in
-                        Button {
-                            reader.switchTranslation(to: translation)
-                        } label: {
-                            if translation == reader.translation {
-                                Label("\(translation.abbreviation) · \(translation.name)", systemImage: "checkmark")
-                            } else {
-                                Text("\(translation.abbreviation) · \(translation.name)")
-                            }
-                        }
-                        .accessibilityIdentifier("reader.translation.\(translation.id)")
-                    }
-                    Divider()
-                    Button("More Bibles\u{2026}", systemImage: "arrow.down.circle", action: onMoreBibles)
-                        .accessibilityIdentifier("reader.moreBibles")
-                } label: {
-                    Text(reader.translation.abbreviation)
-                        .font(.subheadline.weight(.semibold))
-                        .frame(minWidth: 40, minHeight: 36)
-                }
-                .accessibilityLabel("Translation, \(reader.translation.name)")
-                .accessibilityIdentifier("reader.translation")
-
-                let bookmarked = reader.isCurrentChapterBookmarked
-                iconButton(bookmarked ? "bookmark.fill" : "bookmark", label: bookmarked ? String(localized: "Remove bookmark") : String(localized: "Add bookmark")) {
-                    reader.toggleBookmark()
-                }
-                .sensoryFeedback(.selection, trigger: bookmarked)
-                .accessibilityIdentifier("reader.bookmark")
-
-                if features.isOn(.listen) {
-                    let listening = audio.isPlaying && audio.chapter == reader.chapterID
-                    iconButton(listening ? "pause.circle" : "headphones", label: listening ? String(localized: "Pause listening") : String(localized: "Listen to this chapter"), action: onListen)
-                        .accessibilityIdentifier("reader.listen")
-                        .popoverTip(GenesisTips.listen)
-                }
-
-                if assistant.isEnabled {
-                    iconButton("sparkles", label: String(localized: "Study this chapter"), action: onStudy)
-                        .accessibilityIdentifier("reader.study")
-                }
-
-                iconButton("textformat.size", label: String(localized: "Reading settings"), action: onSettings)
-                    .accessibilityIdentifier("reader.settings")
-
-                if showsCompanionToggle {
-                    iconButton("sidebar.right", label: String(localized: "Toggle study panel"), action: onToggleCompanion)
-                }
-            }
-            .padding(.horizontal, 6)
-            .padding(.vertical, 4)
-            .glassEffect(.regular, in: Capsule())
+        // Narrow reading areas (a phone, iPad Split View) get tighter buttons,
+        // then a "More" menu, instead of squeezing the chapter name away.
+        ViewThatFits(in: .horizontal) {
+            row(iconWidth: 36, overflow: false)
+            row(iconWidth: 30, overflow: false)
+            row(iconWidth: 30, overflow: true)
         }
         .foregroundStyle(palette.text)
         .padding(.horizontal, 16)
     }
 
-    private func iconButton(_ systemImage: String, label: String, enabled: Bool = true, action: @escaping () -> Void) -> some View {
+    private func row(iconWidth: CGFloat, overflow: Bool) -> some View {
+        HStack(spacing: iconWidth < 36 ? 6 : 10) {
+            navigation(iconWidth: iconWidth)
+            Spacer(minLength: 0)
+            tools(iconWidth: iconWidth, overflow: overflow)
+        }
+    }
+
+    private func navigation(iconWidth: CGFloat) -> some View {
+        HStack(spacing: 2) {
+            iconButton("chevron.left", label: String(localized: "Previous chapter"), width: iconWidth, enabled: reader.chapterID.previous != nil) {
+                reader.goToPreviousChapter()
+            }
+            .accessibilityIdentifier("reader.previousChapter")
+            Button(action: onChapterPicker) {
+                Text(reader.chapterID.description)
+                    .font(.headline)
+                    .lineLimit(1)
+                    .fixedSize()
+                    .padding(.horizontal, 6)
+            }
+            .accessibilityHint("Choose a book and chapter")
+            .accessibilityIdentifier("reader.chapterButton")
+            iconButton("chevron.right", label: String(localized: "Next chapter"), width: iconWidth, enabled: reader.chapterID.next != nil) {
+                reader.goToNextChapter()
+            }
+            .accessibilityIdentifier("reader.nextChapter")
+        }
+        .padding(.horizontal, 6)
+        .padding(.vertical, 4)
+        .glassEffect(.regular, in: Capsule())
+    }
+
+    private func tools(iconWidth: CGFloat, overflow: Bool) -> some View {
+        HStack(spacing: 2) {
+            translationMenu
+
+            if !overflow {
+                bookmarkButton(width: iconWidth)
+            }
+
+            if features.isOn(.listen) {
+                let listening = audio.isPlaying && audio.chapter == reader.chapterID
+                iconButton(listening ? "pause.circle" : "headphones", label: listening ? String(localized: "Pause listening") : String(localized: "Listen to this chapter"), width: iconWidth, action: onListen)
+                    .accessibilityIdentifier("reader.listen")
+                    .popoverTip(GenesisTips.listen)
+            }
+
+            if assistant.isEnabled && !overflow {
+                iconButton("sparkles", label: String(localized: "Study this chapter"), width: iconWidth, action: onStudy)
+                    .accessibilityIdentifier("reader.study")
+            }
+
+            iconButton("textformat.size", label: String(localized: "Reading settings"), width: iconWidth, action: onSettings)
+                .accessibilityIdentifier("reader.settings")
+
+            if showsCompanionToggle && !overflow {
+                iconButton("sidebar.right", label: String(localized: "Toggle study panel"), width: iconWidth, action: onToggleCompanion)
+            }
+
+            if overflow {
+                moreMenu(width: iconWidth)
+            }
+        }
+        .padding(.horizontal, 6)
+        .padding(.vertical, 4)
+        .glassEffect(.regular, in: Capsule())
+    }
+
+    private var translationMenu: some View {
+        Menu {
+            ForEach(library.translations) { translation in
+                Button {
+                    reader.switchTranslation(to: translation)
+                } label: {
+                    if translation == reader.translation {
+                        Label("\(translation.abbreviation) · \(translation.name)", systemImage: "checkmark")
+                    } else {
+                        Text("\(translation.abbreviation) · \(translation.name)")
+                    }
+                }
+                .accessibilityIdentifier("reader.translation.\(translation.id)")
+            }
+            Divider()
+            Button("More Bibles\u{2026}", systemImage: "arrow.down.circle", action: onMoreBibles)
+                .accessibilityIdentifier("reader.moreBibles")
+        } label: {
+            Text(reader.translation.abbreviation)
+                .font(.subheadline.weight(.semibold))
+                .lineLimit(1)
+                .fixedSize()
+                .padding(.horizontal, 4)
+                .frame(minWidth: 40, minHeight: 36)
+        }
+        .accessibilityLabel("Translation, \(reader.translation.name)")
+        .accessibilityIdentifier("reader.translation")
+    }
+
+    private func bookmarkButton(width: CGFloat) -> some View {
+        let bookmarked = reader.isCurrentChapterBookmarked
+        return iconButton(bookmarked ? "bookmark.fill" : "bookmark", label: bookmarked ? String(localized: "Remove bookmark") : String(localized: "Add bookmark"), width: width) {
+            reader.toggleBookmark()
+        }
+        .sensoryFeedback(.selection, trigger: bookmarked)
+        .accessibilityIdentifier("reader.bookmark")
+    }
+
+    /// The less frequent actions, when the row is too narrow for them all.
+    private func moreMenu(width: CGFloat) -> some View {
+        Menu {
+            let bookmarked = reader.isCurrentChapterBookmarked
+            Button(bookmarked ? "Remove Bookmark" : "Add Bookmark", systemImage: bookmarked ? "bookmark.fill" : "bookmark") {
+                reader.toggleBookmark()
+            }
+            .accessibilityIdentifier("reader.bookmark")
+            if assistant.isEnabled {
+                Button("Study This Chapter", systemImage: "sparkles", action: onStudy)
+                    .accessibilityIdentifier("reader.study")
+            }
+            if showsCompanionToggle {
+                Button("Study Panel", systemImage: "sidebar.right", action: onToggleCompanion)
+            }
+        } label: {
+            Image(systemName: "ellipsis.circle")
+                .font(.body.weight(.medium))
+                .frame(width: width, height: 36)
+                .contentShape(Rectangle())
+        }
+        .accessibilityLabel("More")
+        .accessibilityIdentifier("reader.more")
+    }
+
+    private func iconButton(_ systemImage: String, label: String, width: CGFloat = 36, enabled: Bool = true, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             Image(systemName: systemImage)
                 .font(.body.weight(.medium))
-                .frame(width: 36, height: 36)
+                .frame(width: width, height: 36)
                 .contentShape(Rectangle())
         }
         .disabled(!enabled)

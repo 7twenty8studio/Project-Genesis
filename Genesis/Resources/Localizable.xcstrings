@@ -564,6 +564,16 @@
         }
       }
     },
+    "Add Bookmark": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir marcador"
+          }
+        }
+      }
+    },
     "Add a comment": {
       "localizations": {
         "es": {
@@ -5001,6 +5011,16 @@
         }
       }
     },
+    "Remove Bookmark": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar marcador"
+          }
+        }
+      }
+    },
     "Remove Highlight": {
       "localizations": {
         "es": {
@@ -5973,6 +5993,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Notas de estudio"
+          }
+        }
+      }
+    },
+    "Study Panel": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Panel de estudio"
+          }
+        }
+      }
+    },
+    "Study This Chapter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estudiar este capítulo"
           }
         }
       }
