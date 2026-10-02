@@ -12,6 +12,8 @@ final class TogetherUITests: GenesisUITestCase {
         field.tap()
         field.typeText(name)
         app.buttons["together.saveName"].tap()
+        XCTAssertTrue(app.segmentedControls["together.section"].waitForExistence(timeout: Genesis.timeout), "Then they see Together")
+        Genesis.scrollIntoView(app.buttons["groups.create"], in: app)
         XCTAssertTrue(app.buttons["groups.create"].waitForExistence(timeout: Genesis.timeout), "Then they see their groups")
     }
 

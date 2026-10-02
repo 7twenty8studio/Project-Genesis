@@ -325,6 +325,9 @@ if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
             rm -rf "$SHOTS" "$SHOTS.zip"
             if xcrun xcresulttool export attachments --path "$RESULT" --output-path "$SHOTS" >/dev/null 2>&1 \
                 && [ -n "$(ls -A "$SHOTS" 2>/dev/null | grep -v '^manifest.json$')" ]; then
+                # Keep the pictures and text; screen recordings and Xcode's binary
+                # snapshots make the zip ten times bigger and aren't needed.
+                find "$SHOTS" -type f \( -name "*.mp4" -o ! -name "*.*" \) -delete
                 (cd build/TestResults && zip -qr "$(basename "$SHOTS").zip" "$(basename "$SHOTS")")
                 echo "   Screenshots of each failure: $SHOTS.zip"
             else

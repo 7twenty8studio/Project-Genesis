@@ -33,6 +33,13 @@ def load(path, kind):
     return run(["get", "test-results", kind, "--path", path, "--compact"])
 
 
+def has_message(node):
+    return any(
+        child.get("nodeType") == "Failure Message" or has_message(child)
+        for child in node.get("children", []) or []
+    )
+
+
 def walk(node, test=None, device=None, found=None, silent=None):
     found = [] if found is None else found
     silent = [] if silent is None else silent
@@ -48,8 +55,7 @@ def walk(node, test=None, device=None, found=None, silent=None):
     for child in children:
         walk(child, test, device, found, silent)
     # A test case marked failed with no message (a crash can do this).
-    if kind == "Test Case" and node.get("result") == "Failed" \
-            and not any(c.get("nodeType") == "Failure Message" for c in children):
+    if kind == "Test Case" and node.get("result") == "Failed" and not has_message(node):
         silent.append(f"{test} [{device or '?'}]: failed with no message (crash or timeout?)")
     return found, silent
 
@@ -82,7 +88,8 @@ def main():
     if not failures:
         for failure in summary.get("testFailures", []) or []:
             failures.append(f"{failure.get('testIdentifierString') or failure.get('testName')}: {failure.get('failureText')}")
-    failures += silent
+    named = {line.split(" [", 1)[0] for line in failures}
+    failures += [line for line in silent if line.split(" [", 1)[0] not in named]
     if not failures:
         failures += legacy_errors(path)
         build = run(["get", "build-results", "--path", path, "--compact"]) or {}

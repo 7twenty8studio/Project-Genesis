@@ -12,6 +12,24 @@ struct GroupsListView: View {
         var id: String { rawValue }
     }
 
+    private var actions: some View {
+        Section {
+            Button {
+                sheet = .join
+            } label: {
+                Label("Join with an Invite Code", systemImage: "ticket")
+            }
+            .accessibilityIdentifier("groups.join")
+            Button {
+                sheet = .create
+            } label: {
+                Label("Start a Group", systemImage: "plus.circle")
+            }
+            .accessibilityIdentifier("groups.create")
+        }
+        .listRowBackground(palette.surface)
+    }
+
     var body: some View {
         List {
             if let error = community.errorMessage {
@@ -21,6 +39,9 @@ struct GroupsListView: View {
                     .listRowBackground(Color.clear)
             }
             if community.groups.isEmpty {
+                // Join and Start come first here: below the empty-state message
+                // they fall off screen on a phone in landscape.
+                actions
                 QuietEmptyState(
                     systemImage: "person.3",
                     title: "No groups yet",
@@ -37,22 +58,8 @@ struct GroupsListView: View {
                         .accessibilityIdentifier("groups.row")
                     }
                 }
+                actions
             }
-            Section {
-                Button {
-                    sheet = .join
-                } label: {
-                    Label("Join with an Invite Code", systemImage: "ticket")
-                }
-                .accessibilityIdentifier("groups.join")
-                Button {
-                    sheet = .create
-                } label: {
-                    Label("Start a Group", systemImage: "plus.circle")
-                }
-                .accessibilityIdentifier("groups.create")
-            }
-            .listRowBackground(palette.surface)
         }
         .refreshable { await community.refresh() }
         .sheet(item: $sheet) { sheet in
