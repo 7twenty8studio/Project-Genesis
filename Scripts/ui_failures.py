@@ -17,7 +17,10 @@ import sys
 
 
 def run(args):
-    output = subprocess.run(["xcrun", "xcresulttool", *args], capture_output=True, text=True)
+    try:
+        output = subprocess.run(["xcrun", "xcresulttool", *args], capture_output=True, text=True, timeout=120)
+    except (OSError, subprocess.SubprocessError):
+        return None
     if output.returncode != 0 or not output.stdout.strip():
         return None
     try:
