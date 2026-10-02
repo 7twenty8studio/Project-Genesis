@@ -77,14 +77,36 @@ struct NarrationVoice: Identifiable, Hashable, Sendable {
     /// download them in Settings › Accessibility › Spoken Content › Voices.
     let qualityLabel: String?
 
-    /// English voices on this device, best first.
-    static func available() -> [NarrationVoice] {
-        AVSpeechSynthesisVoice.speechVoices()
-            .filter { $0.language.hasPrefix("en") && !$0.voiceTraits.contains(.isNoveltyVoice) }
+    /// English voices suited to reading Scripture, best first. Leaves out the
+    /// novelty voices and the older Eloquence voices (Eddy, Flo, Reed, Grandma
+    /// and the rest), which sound robotic.
+    static func candidates() -> [AVSpeechSynthesisVoice] {
+        let region = Locale.current.region?.identifier
+        return AVSpeechSynthesisVoice.speechVoices()
+            .filter { voice in
+                voice.language.hasPrefix("en")
+                    && !voice.voiceTraits.contains(.isNoveltyVoice)
+                    && !voice.identifier.contains(".eloquence.")
+            }
             .sorted { lhs, rhs in
                 if lhs.quality != rhs.quality { return lhs.quality.rawValue > rhs.quality.rawValue }
+                // Then the person's own accent (en-GB in the UK, say).
+                let lhsLocal = region.map { lhs.language.hasSuffix($0) } ?? false
+                let rhsLocal = region.map { rhs.language.hasSuffix($0) } ?? false
+                if lhsLocal != rhsLocal { return lhsLocal }
                 return lhs.name < rhs.name
             }
+    }
+
+    /// What "Automatic" uses: the most natural English voice installed, so a
+    /// downloaded Premium or Enhanced voice is used without choosing it.
+    static func bestInstalled() -> AVSpeechSynthesisVoice? {
+        candidates().first ?? AVSpeechSynthesisVoice(language: "en-US")
+    }
+
+    /// English voices on this device, best first.
+    static func available() -> [NarrationVoice] {
+        candidates()
             .map { voice in
                 let quality: String? = switch voice.quality {
                 case .premium: "Premium"

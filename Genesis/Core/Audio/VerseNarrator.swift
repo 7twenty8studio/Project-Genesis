@@ -43,7 +43,7 @@ final class SpeechNarrator: NSObject, VerseNarrator {
     func read(_ chapter: Chapter, from verse: VerseID?, speed: Double, voiceIdentifier: String?) {
         stop()
         let voice = voiceIdentifier.flatMap(AVSpeechSynthesisVoice.init(identifier:))
-            ?? AVSpeechSynthesisVoice(language: "en-US")
+            ?? NarrationVoice.bestInstalled()
         let rate = Self.rate(forSpeed: speed)
 
         func enqueue(_ text: String, verse: VerseID?, pauseAfter: TimeInterval) {

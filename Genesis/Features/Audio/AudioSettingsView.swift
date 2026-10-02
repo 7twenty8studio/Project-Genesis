@@ -106,7 +106,7 @@ struct AudioSettingsView: View {
         } header: {
             Text("Voice")
         } footer: {
-            Text("For the most natural sound, download an Enhanced or Premium voice in Settings › Accessibility › Spoken Content › Voices › English.")
+            Text("Automatic uses the most natural voice on this device. For a much more natural sound, download a Premium voice (Zoe, Ava, Evan or Nathan, for example) in Settings › Accessibility › Spoken Content › Voices › English, then come back here.")
         }
     }
 

@@ -23,9 +23,12 @@ Tap the headphones in the reader. The device voice reads verse by verse; with
 marked. Listening continues with the phone locked, from the lock screen,
 Control Center and headphones, with speed (0.75×–2×) and a sleep timer.
 
-Device voices sound best with an Enhanced or Premium voice: on the iPhone,
-Settings › Accessibility › Spoken Content › Voices › English, then pick it in
-Genesis under Audio Settings.
+Device voices sound best with a Premium voice (Zoe, Ava, Evan, Nathan and
+others): on the iPhone, Settings › Accessibility › Spoken Content › Voices ›
+English, download one (about 100–200 MB). Genesis's Automatic setting then
+uses it; a particular voice can be chosen under Audio Settings. The older
+robotic voices (Eddy, Flo, Reed, Grandma and the like) aren't offered.
+Simulators usually have only the basic voices, so judge the sound on a phone.
 
 ### 1. Recorded narration (optional)
 
