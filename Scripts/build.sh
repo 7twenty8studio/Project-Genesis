@@ -81,8 +81,13 @@ NEEDED_GB=20
 [ "$UI_TESTS" = none ] && NEEDED_GB=10
 if [ "$(free_gb)" -lt "$NEEDED_GB" ]; then
     echo "❌ Only $(free_gb) GB free on this disk; Genesis needs about $NEEDED_GB GB to build and test."
-    echo "   Run ./Scripts/build.sh --clean first (add --ui as usual). If that isn't enough, see"
-    echo "   \"Disk space\" in README.md for what else takes room."
+    if [ "$CLEAN" = false ]; then
+        echo "   Run ./Scripts/build.sh --clean first (add --ui as usual)."
+    fi
+    echo "   Largest Xcode folders on this Mac:"
+    du -sh "$HOME/Library/Developer"/{Xcode/DerivedData,Xcode/Archives,"Xcode/iOS DeviceSupport",CoreSimulator/Devices,CoreSimulator/Caches,XCTestDevices} \
+        /Library/Developer/CoreSimulator/Volumes 2>/dev/null | sort -rh | sed 's/^/     /'
+    echo "   See \"Disk space\" in README.md for what's safe to remove."
     exit 1
 fi
 
