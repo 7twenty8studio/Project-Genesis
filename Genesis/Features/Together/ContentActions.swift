@@ -20,7 +20,20 @@ struct ContentActions: ViewModifier {
     @State private var confirmingRemove = false
     @State private var thanks = false
 
-    static let reasons = ["Abusive or hateful", "Sexual or inappropriate", "Spam or advertising", "Shares private information", "Something else"]
+    /// `value` is sent to the server as the report reason (kept in English);
+    /// `title` is what people see.
+    struct Reason: Sendable {
+        let value: String
+        let title: String
+    }
+
+    static let reasons: [Reason] = [
+        Reason(value: "Abusive or hateful", title: String(localized: "Abusive or hateful")),
+        Reason(value: "Sexual or inappropriate", title: String(localized: "Sexual or inappropriate")),
+        Reason(value: "Spam or advertising", title: String(localized: "Spam or advertising")),
+        Reason(value: "Shares private information", title: String(localized: "Shares private information")),
+        Reason(value: "Something else", title: String(localized: "Something else")),
+    ]
 
     @Environment(\.palette) private var palette
 
@@ -42,10 +55,10 @@ struct ContentActions: ViewModifier {
         }
             .contextMenu { menuItems }
             .confirmationDialog("Report this?", isPresented: $reporting, titleVisibility: .visible) {
-                ForEach(Self.reasons, id: \.self) { reason in
-                    Button(reason) {
+                ForEach(Self.reasons, id: \.value) { reason in
+                    Button(reason.title) {
                         Task {
-                            if await community.report(kind, id: id, reason: reason) {
+                            if await community.report(kind, id: id, reason: reason.value) {
                                 // Hide it once the thank-you is dismissed: hiding first
                                 // removes this row, and its alert with it.
                                 thanks = true

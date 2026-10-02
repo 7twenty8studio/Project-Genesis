@@ -142,9 +142,7 @@ struct DeviceSupportNote: View {
             Label("This device", systemImage: "iphone")
                 .font(.headline)
                 .foregroundStyle(palette.text)
-            Text(naturalVoices > 0
-                ? "Listening can use \(naturalVoices) natural-sounding voice\(naturalVoices == 1 ? "" : "s") installed on this device."
-                : "Listening uses the standard voice. For a more natural sound, download an Enhanced voice in Settings › Accessibility › Spoken Content › Voices.")
+            voicesText
                 .font(.subheadline)
                 .foregroundStyle(palette.secondaryText)
             Text("Everything else in Genesis works on every iPhone and iPad that runs iOS 26. Groups, the community, sync and study notes need an internet connection; reading, listening with the device voice, search and your notes work offline.")
@@ -154,6 +152,16 @@ struct DeviceSupportNote: View {
         .padding(.vertical, 4)
         .task {
             naturalVoices = NarrationVoice.available().filter { $0.qualityLabel != nil }.count
+        }
+    }
+
+    private var voicesText: Text {
+        if naturalVoices == 1 {
+            Text("Listening can use 1 natural-sounding voice installed on this device.")
+        } else if naturalVoices > 1 {
+            Text("Listening can use \(naturalVoices) natural-sounding voices installed on this device.")
+        } else {
+            Text("Listening uses the standard voice. For a more natural sound, download an Enhanced voice in Settings › Accessibility › Spoken Content › Voices.")
         }
     }
 }

@@ -61,8 +61,8 @@ struct CommunityFeedView: View {
             if model.visiblePosts.isEmpty, !model.isLoading {
                 QuietEmptyState(
                     systemImage: kind.reactionSymbol,
-                    title: kind == .prayer ? "No prayer requests yet" : "No reflections yet",
-                    message: kind == .prayer ? "Be the first to share a request." : "Share what you're reading."
+                    title: kind == .prayer ? String(localized: "No prayer requests yet") : String(localized: "No reflections yet"),
+                    message: kind == .prayer ? String(localized: "Be the first to share a request.") : String(localized: "Share what you're reading.")
                 )
                 .listRowBackground(Color.clear)
             }
@@ -118,7 +118,7 @@ struct CommunityPostRow: View {
                     Task { await model.toggleReaction(post) }
                 } label: {
                     Label(
-                        post.reactionCount > 0 ? "\(post.kind.reactionTitle) · \(post.reactionCount)" : post.kind.reactionTitle,
+                        post.reactionCount > 0 ? String(localized: "\(post.kind.reactionTitle) · \(post.reactionCount)") : post.kind.reactionTitle,
                         systemImage: reacted ? post.kind.reactionSymbol + ".fill" : post.kind.reactionSymbol
                     )
                 }
@@ -179,7 +179,7 @@ struct CommunityComposeView: View {
                     TextField("Passage (optional), e.g. Psalm 23", text: $referenceText)
                         .autocorrectionDisabled()
                     if !referenceText.isEmpty {
-                        Text(reference?.description ?? "Not a passage Genesis recognises")
+                        Text(reference?.description ?? String(localized: "Not a passage Genesis recognises"))
                             .font(.footnote)
                             .foregroundStyle(reference == nil ? .orange : .secondary)
                     }

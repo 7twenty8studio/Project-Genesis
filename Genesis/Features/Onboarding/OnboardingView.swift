@@ -37,7 +37,7 @@ struct OnboardingView: View {
                 .offset(y: appeared || reduceMotion ? 0 : 12)
 
                 VStack(alignment: .leading, spacing: 12) {
-                    SectionHeader(title: "Choose a translation")
+                    SectionHeader(title: String(localized: "Choose a translation"))
                     ForEach(library.translations) { translation in
                         TranslationOption(translation: translation, isSelected: translation == selection) {
                             selection = translation

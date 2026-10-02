@@ -22,7 +22,7 @@ struct ReaderControls: View {
     var body: some View {
         HStack(spacing: 10) {
             HStack(spacing: 2) {
-                iconButton("chevron.left", label: "Previous chapter", enabled: reader.chapterID.previous != nil) {
+                iconButton("chevron.left", label: String(localized: "Previous chapter"), enabled: reader.chapterID.previous != nil) {
                     reader.goToPreviousChapter()
                 }
                 .accessibilityIdentifier("reader.previousChapter")
@@ -35,7 +35,7 @@ struct ReaderControls: View {
                 }
                 .accessibilityHint("Choose a book and chapter")
                 .accessibilityIdentifier("reader.chapterButton")
-                iconButton("chevron.right", label: "Next chapter", enabled: reader.chapterID.next != nil) {
+                iconButton("chevron.right", label: String(localized: "Next chapter"), enabled: reader.chapterID.next != nil) {
                     reader.goToNextChapter()
                 }
                 .accessibilityIdentifier("reader.nextChapter")
@@ -72,7 +72,7 @@ struct ReaderControls: View {
                 .accessibilityIdentifier("reader.translation")
 
                 let bookmarked = reader.isCurrentChapterBookmarked
-                iconButton(bookmarked ? "bookmark.fill" : "bookmark", label: bookmarked ? "Remove bookmark" : "Add bookmark") {
+                iconButton(bookmarked ? "bookmark.fill" : "bookmark", label: bookmarked ? String(localized: "Remove bookmark") : String(localized: "Add bookmark")) {
                     reader.toggleBookmark()
                 }
                 .sensoryFeedback(.selection, trigger: bookmarked)
@@ -80,21 +80,21 @@ struct ReaderControls: View {
 
                 if features.isOn(.listen) {
                     let listening = audio.isPlaying && audio.chapter == reader.chapterID
-                    iconButton(listening ? "pause.circle" : "headphones", label: listening ? "Pause listening" : "Listen to this chapter", action: onListen)
+                    iconButton(listening ? "pause.circle" : "headphones", label: listening ? String(localized: "Pause listening") : String(localized: "Listen to this chapter"), action: onListen)
                         .accessibilityIdentifier("reader.listen")
                         .popoverTip(GenesisTips.listen)
                 }
 
                 if assistant.isEnabled {
-                    iconButton("sparkles", label: "Study this chapter", action: onStudy)
+                    iconButton("sparkles", label: String(localized: "Study this chapter"), action: onStudy)
                         .accessibilityIdentifier("reader.study")
                 }
 
-                iconButton("textformat.size", label: "Reading settings", action: onSettings)
+                iconButton("textformat.size", label: String(localized: "Reading settings"), action: onSettings)
                     .accessibilityIdentifier("reader.settings")
 
                 if showsCompanionToggle {
-                    iconButton("sidebar.right", label: "Toggle study panel", action: onToggleCompanion)
+                    iconButton("sidebar.right", label: String(localized: "Toggle study panel"), action: onToggleCompanion)
                 }
             }
             .padding(.horizontal, 6)

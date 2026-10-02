@@ -45,7 +45,7 @@ struct GroupSummary: Identifiable, Hashable, Sendable {
         // Only real books, and a sensible length, whatever the server holds.
         let books = (planBooks ?? []).filter { (1...66).contains($0) }
         guard !books.isEmpty, let planDays, (1...730).contains(planDays) else { return nil }
-        return ReadingPlan.custom(id: planID ?? "group-\(id.uuidString.lowercased())", title: planTitle ?? "Group plan", books: books, days: planDays)
+        return ReadingPlan.custom(id: planID ?? "group-\(id.uuidString.lowercased())", title: planTitle ?? String(localized: "Group plan"), books: books, days: planDays)
     }
 
     /// Today's day number in the plan (1-based), 0 before it starts, nil
@@ -170,16 +170,16 @@ enum CommunityPostKind: String, Codable, Sendable, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .prayer: "Prayer Wall"
-        case .reflection: "Reflections"
+        case .prayer: String(localized: "Prayer Wall")
+        case .reflection: String(localized: "Reflections")
         }
     }
 
     /// The reaction: "I prayed" on a prayer request, "Amen" on a reflection.
     var reactionTitle: String {
         switch self {
-        case .prayer: "I prayed"
-        case .reflection: "Amen"
+        case .prayer: String(localized: "I prayed", comment: "Reaction button on a prayer request")
+        case .reflection: String(localized: "Amen", comment: "Reaction button on a reflection")
         }
     }
 
@@ -278,10 +278,10 @@ enum CommunityError: LocalizedError, Equatable {
 
     var errorDescription: String? {
         switch self {
-        case .signInRequired: "Sign in to join groups and the community."
-        case .notConfigured: "Groups and the community aren't set up in this build."
-        case .offline: "You're offline. Groups and the community need an internet connection."
-        case .duplicate: "That's already done."
+        case .signInRequired: String(localized: "Sign in to join groups and the community.")
+        case .notConfigured: String(localized: "Groups and the community aren't set up in this build.")
+        case .offline: String(localized: "You're offline. Groups and the community need an internet connection.")
+        case .duplicate: String(localized: "That's already done.")
         case let .message(text): text
         }
     }
@@ -296,26 +296,26 @@ enum CommunityError: LocalizedError, Equatable {
             return .message(error.localizedDescription)
         }
         let friendly: [String: String] = [
-            "objectionable_content": "Please rephrase. Some words aren't allowed in Genesis.",
-            "rate_limited": "You've posted a lot in the last hour. Please try again later.",
-            "name_required": "Choose a display name first.",
-            "invalid_name": "Display names are 1 to 40 characters.",
-            "invalid_code": "That invite code wasn't found. Check it with your group leader.",
-            "group_full": "This group is full.",
-            "groups_off": "Groups aren't available right now.",
-            "too_many_groups": "You've created the most groups one person can lead.",
-            "leaders_only": "Only group leaders can do that.",
-            "last_leader": "Make someone else a leader first.",
-            "not_allowed": "You can't do that.",
-            "not_found": "That's no longer there.",
-            "not_signed_in": "Sign in first.",
+            "objectionable_content": String(localized: "Please rephrase. Some words aren't allowed in Genesis."),
+            "rate_limited": String(localized: "You've posted a lot in the last hour. Please try again later."),
+            "name_required": String(localized: "Choose a display name first."),
+            "invalid_name": String(localized: "Display names are 1 to 40 characters."),
+            "invalid_code": String(localized: "That invite code wasn't found. Check it with your group leader."),
+            "group_full": String(localized: "This group is full."),
+            "groups_off": String(localized: "Groups aren't available right now."),
+            "too_many_groups": String(localized: "You've created the most groups one person can lead."),
+            "leaders_only": String(localized: "Only group leaders can do that."),
+            "last_leader": String(localized: "Make someone else a leader first."),
+            "not_allowed": String(localized: "You can't do that."),
+            "not_found": String(localized: "That's no longer there."),
+            "not_signed_in": String(localized: "Sign in first."),
         ]
         if let text = friendly[message] { return .message(text) }
         if status == 409 || message.contains("duplicate key") { return .duplicate }
         if status == 401 { return .signInRequired }
         if status == 403 || message.contains("row-level security") {
-            return .message("That isn't allowed. If you were removed from a group or the community is closed, pull to refresh.")
+            return .message(String(localized: "That isn't allowed. If you were removed from a group or the community is closed, pull to refresh."))
         }
-        return .message("Something went wrong. Please try again.")
+        return .message(String(localized: "Something went wrong. Please try again."))
     }
 }

@@ -181,7 +181,7 @@ struct PremiumView: View {
             Button("Restore Purchases") {
                 Task {
                     let restored = await entitlements.restore()
-                    message = restored ? "Premium restored." : "No active subscription was found for this Apple Account."
+                    message = restored ? String(localized: "Premium restored.") : String(localized: "No active subscription was found for this Apple Account.")
                 }
             }
             .accessibilityIdentifier("premium.restore")
@@ -206,12 +206,12 @@ struct PremiumView: View {
 
     private var savingsText: String {
         guard let monthly = entitlements.product(.monthly), let yearly = entitlements.product(.yearly), monthly.price > 0 else {
-            return "Save 33%"
+            return String(localized: "Save 33%")
         }
         let full = monthly.price * 12
         let saving = (full - yearly.price) / full * 100
         let percent = NSDecimalNumber(decimal: saving).intValue
-        return percent > 0 ? "Save \(percent)%" : "Best value"
+        return percent > 0 ? String(localized: "Save \(percent)%") : String(localized: "Best value")
     }
 
     private func buy() async {
@@ -220,7 +220,7 @@ struct PremiumView: View {
         case .purchased:
             dismiss()
         case .pending:
-            message = "Your purchase is waiting for approval."
+            message = String(localized: "Your purchase is waiting for approval.")
         case .cancelled:
             break
         case let .failed(reason):

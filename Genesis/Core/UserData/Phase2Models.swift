@@ -65,7 +65,16 @@ enum PrayerCategory: String, Codable, CaseIterable, Identifiable, Sendable {
     case family, church, work, personal, health, friends
 
     var id: String { rawValue }
-    var title: String { rawValue.capitalized }
+    var title: String {
+        switch self {
+        case .family: String(localized: "Family")
+        case .church: String(localized: "Church")
+        case .work: String(localized: "Work")
+        case .personal: String(localized: "Personal")
+        case .health: String(localized: "Health")
+        case .friends: String(localized: "Friends")
+        }
+    }
 
     var systemImage: String {
         switch self {
@@ -112,7 +121,7 @@ final class Prayer {
         let trimmed = title.trimmingCharacters(in: .whitespacesAndNewlines)
         if !trimmed.isEmpty { return trimmed }
         let firstLine = body.split(separator: "\n", maxSplits: 1).first.map(String.init) ?? ""
-        return firstLine.isEmpty ? "Prayer" : firstLine
+        return firstLine.isEmpty ? String(localized: "Prayer") : firstLine
     }
 }
 

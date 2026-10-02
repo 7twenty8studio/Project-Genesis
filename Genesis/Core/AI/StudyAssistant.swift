@@ -9,12 +9,12 @@ enum StudyAction: String, CaseIterable, Identifiable, Sendable {
 
     var title: String {
         switch self {
-        case .explain: "Explain"
-        case .summarize: "Summarize"
-        case .context: "Background"
-        case .questions: "Discussion"
-        case .children: "For Children"
-        case .comprehension: "Comprehension"
+        case .explain: String(localized: "Explain", comment: "Study assistant action")
+        case .summarize: String(localized: "Summarize", comment: "Study assistant action")
+        case .context: String(localized: "Background", comment: "Study assistant action: historical background")
+        case .questions: String(localized: "Discussion", comment: "Study assistant action: discussion questions")
+        case .children: String(localized: "For Children", comment: "Study assistant action")
+        case .comprehension: String(localized: "Comprehension", comment: "Study assistant action: comprehension questions")
         }
     }
 
@@ -89,11 +89,11 @@ enum StudyAssistantError: LocalizedError, Equatable {
 
     var errorDescription: String? {
         switch self {
-        case .signInRequired: "Sign in to use the study assistant. A free account includes \(FreeLimits.aiRequestsPerDay) explanations a day."
-        case .premiumRequired: "This study tool is part of Genesis Premium."
-        case let .dailyLimit(limit): "You've used today's \(limit) study assistant answers. They reset tomorrow."
-        case .notConfigured: "The study assistant isn't available right now."
-        case .offline: "The study assistant needs an internet connection."
+        case .signInRequired: String(localized: "Sign in to use the study assistant. A free account includes \(FreeLimits.aiRequestsPerDay) explanations a day.")
+        case .premiumRequired: String(localized: "This study tool is part of Genesis Premium.")
+        case let .dailyLimit(limit): String(localized: "You've used today's \(limit) study assistant answers. They reset tomorrow.")
+        case .notConfigured: String(localized: "The study assistant isn't available right now.")
+        case .offline: String(localized: "The study assistant needs an internet connection.")
         case let .server(message): message
         }
     }
@@ -243,7 +243,7 @@ struct EdgeFunctionBackend: StudyAssistantBackend {
         let reply = try? JSONDecoder().decode(Reply.self, from: response.data)
         switch response.status {
         case 200:
-            guard let content = reply?.content, !content.isEmpty else { throw StudyAssistantError.server("The study assistant sent an empty answer.") }
+            guard let content = reply?.content, !content.isEmpty else { throw StudyAssistantError.server(String(localized: "The study assistant sent an empty answer.")) }
             return (StudyAnswer(content: content, wasCached: reply?.cached ?? false), reply?.usedToday, reply?.limit)
         case 401:
             throw StudyAssistantError.signInRequired
@@ -254,7 +254,7 @@ struct EdgeFunctionBackend: StudyAssistantBackend {
         case 404, 503:
             throw StudyAssistantError.notConfigured
         default:
-            throw StudyAssistantError.server(reply?.error ?? "The study assistant couldn't answer just now. Please try again.")
+            throw StudyAssistantError.server(reply?.error ?? String(localized: "The study assistant couldn't answer just now. Please try again."))
         }
     }
 }

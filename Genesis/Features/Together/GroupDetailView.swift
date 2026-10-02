@@ -10,10 +10,10 @@ struct GroupDetailView: View {
         var id: String { rawValue }
         var title: String {
             switch self {
-            case .today: "Today"
-            case .prayer: "Prayer"
-            case .news: "News"
-            case .members: "Members"
+            case .today: String(localized: "Today")
+            case .prayer: String(localized: "Prayer")
+            case .news: String(localized: "News", comment: "Group tab: announcements from the group's leaders")
+            case .members: String(localized: "Members")
             }
         }
     }
@@ -29,7 +29,7 @@ struct GroupDetailView: View {
                 content(model, group: group)
                     .navigationTitle(group.name)
             } else if community.hasLoaded, community.group(groupID) == nil {
-                QuietEmptyState(systemImage: "person.3", title: "Not available", message: "You're no longer in this group, or it was closed.")
+                QuietEmptyState(systemImage: "person.3", title: String(localized: "Not available"), message: String(localized: "You're no longer in this group, or it was closed."))
             } else {
                 ProgressView()
             }
@@ -87,8 +87,11 @@ struct GroupTodayView: View {
         List {
             if let plan = group.plan, let day {
                 Section {
-                    if day == 0 {
-                        Text("\(plan.title) starts \(group.planStart?.formatted(date: .abbreviated, time: .omitted) ?? "soon").")
+                    if day == 0, let start = group.planStart {
+                        Text("\(plan.title) starts \(start.formatted(date: .abbreviated, time: .omitted)).")
+                            .foregroundStyle(palette.secondaryText)
+                    } else if day == 0 {
+                        Text("\(plan.title) starts soon.")
                             .foregroundStyle(palette.secondaryText)
                     } else {
                         reading(plan.days[day - 1], plan: plan, day: day)
@@ -127,13 +130,19 @@ struct GroupTodayView: View {
                 .accessibilityIdentifier("group.markRead")
             }
             let readCount = model.readToday.count
-            Text(model.members.isEmpty ? "" : "\(readCount) of \(model.members.count) \(model.members.count == 1 ? "member has" : "members have") read today")
+            Text(model.members.isEmpty ? "" : Self.readSummary(readCount: readCount, memberCount: model.members.count))
                 .font(.footnote)
                 .foregroundStyle(palette.secondaryText)
                 .accessibilityIdentifier("group.readCount")
         }
         .buttonStyle(.borderless)
         .padding(.vertical, 4)
+    }
+
+    private static func readSummary(readCount: Int, memberCount: Int) -> String {
+        memberCount == 1
+            ? String(localized: "\(readCount) of 1 member has read today")
+            : String(localized: "\(readCount) of \(memberCount) members have read today")
     }
 }
 

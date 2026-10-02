@@ -44,7 +44,7 @@ final class RecordingPlayer {
                 guard let self, !Task.isCancelled, self.player.currentItem === item else { return }
                 switch item.status {
                 case .failed:
-                    self.onFailure?(item.error?.localizedDescription ?? "This chapter couldn't be played.")
+                    self.onFailure?(item.error?.localizedDescription ?? String(localized: "This chapter couldn't be played."))
                     return
                 case .readyToPlay:
                     return

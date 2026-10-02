@@ -58,7 +58,7 @@ struct AudioMiniPlayer: View {
         if audio.settings.speed != 1 { parts.append(Self.speedLabel(audio.settings.speed)) }
         if let timer = audio.sleepTimer {
             if let end = audio.sleepEndsAt {
-                parts.append("Sleep at \(end.formatted(date: .omitted, time: .shortened))")
+                parts.append(String(localized: "Sleep at \(end.formatted(date: .omitted, time: .shortened))"))
             } else {
                 parts.append(timer.title)
             }
@@ -133,7 +133,7 @@ struct AudioMiniPlayer: View {
         }
     }
 
-    private func control(_ systemImage: String, label: String, id: String, action: @escaping () -> Void) -> some View {
+    private func control(_ systemImage: String, label: LocalizedStringKey, id: String, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             Image(systemName: systemImage)
                 .font(.body)
@@ -146,6 +146,8 @@ struct AudioMiniPlayer: View {
     }
 
     static func speedLabel(_ speed: Double) -> String {
-        speed == 1 ? "1× speed" : "\(speed.formatted(.number.precision(.fractionLength(0...2))))× speed"
+        speed == 1
+            ? String(localized: "1× speed")
+            : String(localized: "\(speed.formatted(.number.precision(.fractionLength(0...2))))× speed")
     }
 }

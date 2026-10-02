@@ -24,11 +24,11 @@ enum ReaderFont: String, Codable, CaseIterable, Identifiable, Sendable {
 
     var caption: String {
         switch self {
-        case .newYork: "Apple's bookish serif"
-        case .sfPro: "Clean and modern"
-        case .georgia: "Warm, classic serif"
-        case .baskerville: "Traditional book face"
-        case .atkinsonHyperlegible: "Designed for low vision"
+        case .newYork: String(localized: "Apple's bookish serif")
+        case .sfPro: String(localized: "Clean and modern")
+        case .georgia: String(localized: "Warm, classic serif")
+        case .baskerville: String(localized: "Traditional book face")
+        case .atkinsonHyperlegible: String(localized: "Designed for low vision")
         }
     }
 

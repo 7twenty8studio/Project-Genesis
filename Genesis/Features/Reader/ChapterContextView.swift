@@ -60,7 +60,7 @@ struct ChapterContextView: View {
                     .foregroundStyle(palette.secondaryText)
             }
             if !events.isEmpty {
-                DetailSection(title: "Events") {
+                DetailSection(title: String(localized: "Events")) {
                     VStack(alignment: .leading, spacing: 10) {
                         ForEach(events) { event in
                             Button { router.explore(.event(event.id)) } label: { EventRow(event: event) }
@@ -70,7 +70,7 @@ struct ChapterContextView: View {
                 }
             }
             if !places.isEmpty {
-                DetailSection(title: "Places") {
+                DetailSection(title: String(localized: "Places")) {
                     PlacesMap(places: places)
                         .frame(height: 180)
                         .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
@@ -78,7 +78,7 @@ struct ChapterContextView: View {
                 }
             }
             if !people.isEmpty {
-                DetailSection(title: "People") {
+                DetailSection(title: String(localized: "People")) {
                     ChipFlow(items: people, title: \.name) { router.explore(.person($0.id)) }
                 }
             }

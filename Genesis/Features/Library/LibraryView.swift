@@ -8,7 +8,13 @@ struct LibraryView: View {
     enum Shelf: String, CaseIterable, Identifiable {
         case highlights, notes, bookmarks
         var id: String { rawValue }
-        var title: String { rawValue.capitalized }
+        var title: String {
+            switch self {
+            case .highlights: String(localized: "Highlights")
+            case .notes: String(localized: "Notes")
+            case .bookmarks: String(localized: "Bookmarks")
+            }
+        }
     }
 
     @State private var shelf: Shelf = .highlights
@@ -79,8 +85,8 @@ private struct HighlightsList: View {
             if filtered.isEmpty {
                 QuietEmptyState(
                     systemImage: "highlighter",
-                    title: highlights.isEmpty ? "No highlights yet" : "Nothing matches",
-                    message: highlights.isEmpty ? "In the reader, long-press a verse and pick a colour." : "Try a different colour or collection."
+                    title: highlights.isEmpty ? String(localized: "No highlights yet") : String(localized: "Nothing matches"),
+                    message: highlights.isEmpty ? String(localized: "In the reader, long-press a verse and pick a colour.") : String(localized: "Try a different colour or collection.")
                 )
                 .listRowBackground(Color.clear)
             }
@@ -148,7 +154,7 @@ private struct HighlightsList: View {
     private var filters: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
-                chip("All", selected: colorFilter == nil && collectionFilter == nil) {
+                chip(String(localized: "All", comment: "Highlight filter: every highlight"), selected: colorFilter == nil && collectionFilter == nil) {
                     colorFilter = nil
                     collectionFilter = nil
                 }
@@ -227,8 +233,8 @@ private struct NotesList: View {
             if filtered.isEmpty {
                 QuietEmptyState(
                     systemImage: "note.text",
-                    title: "No notes yet",
-                    message: "Write about a verse from the reader, or start a journal entry with the button below."
+                    title: String(localized: "No notes yet"),
+                    message: String(localized: "Write about a verse from the reader, or start a journal entry with the button below.")
                 )
                 .listRowBackground(Color.clear)
             }
@@ -287,8 +293,8 @@ private struct BookmarksList: View {
             if bookmarks.isEmpty {
                 QuietEmptyState(
                     systemImage: "bookmark",
-                    title: "No bookmarks yet",
-                    message: "Tap the bookmark in the reader to mark your place."
+                    title: String(localized: "No bookmarks yet"),
+                    message: String(localized: "Tap the bookmark in the reader to mark your place.")
                 )
                 .listRowBackground(Color.clear)
             }

@@ -27,7 +27,8 @@ struct TimelineEvent: Identifiable, Hashable, Sendable {
     }
 
     static func label(forYear year: Int) -> String {
-        year <= 0 ? "c. \(1 - year) BC" : "c. AD \(year)"
+        // Years as plain text: an Int would be formatted with a grouping separator ("c. 1,491 BC").
+        year <= 0 ? String(localized: "c. \(String(1 - year)) BC", comment: "Approximate year before Christ") : String(localized: "c. AD \(String(year))", comment: "Approximate year after Christ")
     }
 
     var reference: PassageReference? {
@@ -62,9 +63,9 @@ struct Person: Identifiable, Hashable, Sendable {
     /// "c. 1085 BC – c. 1015 BC", or nil when neither date is known.
     var lifespan: String? {
         switch (birthYear, deathYear) {
-        case let (born?, died?): "\(TimelineEvent.label(forYear: born)) – \(TimelineEvent.label(forYear: died))"
-        case let (born?, nil): "Born \(TimelineEvent.label(forYear: born))"
-        case let (nil, died?): "Died \(TimelineEvent.label(forYear: died))"
+        case let (born?, died?): String(localized: "\(TimelineEvent.label(forYear: born)) – \(TimelineEvent.label(forYear: died))", comment: "Lifespan: birth year – death year")
+        case let (born?, nil): String(localized: "Born \(TimelineEvent.label(forYear: born))")
+        case let (nil, died?): String(localized: "Died \(TimelineEvent.label(forYear: died))")
         case (nil, nil): nil
         }
     }
@@ -75,11 +76,11 @@ enum RelationKind: String, CaseIterable, Sendable {
 
     var title: String {
         switch self {
-        case .father: "Father"
-        case .mother: "Mother"
-        case .partner: "Spouse"
-        case .child: "Children"
-        case .sibling: "Siblings"
+        case .father: String(localized: "Father")
+        case .mother: String(localized: "Mother")
+        case .partner: String(localized: "Spouse")
+        case .child: String(localized: "Children")
+        case .sibling: String(localized: "Siblings")
         }
     }
 }

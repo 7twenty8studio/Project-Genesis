@@ -101,9 +101,11 @@ final class BibleLibrary {
         !isBundled(translation) && installed[translation.id] != nil
     }
 
-    /// Catalog entries not yet on this device.
+    /// Catalog entries not yet on this device, those in the app's language
+    /// first (the Reina-Valera leads for someone using Genesis in Spanish).
     var available: [DownloadableTranslation] {
-        catalog.filter { item in !translations.contains { $0.id == item.id } }
+        let missing = catalog.filter { item in !translations.contains { $0.id == item.id } }
+        return missing.filter { $0.language == AppLanguage.code } + missing.filter { $0.language != AppLanguage.code }
     }
 
     nonisolated static var downloadsDirectory: URL {

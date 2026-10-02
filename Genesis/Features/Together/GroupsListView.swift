@@ -44,8 +44,8 @@ struct GroupsListView: View {
                 actions
                 QuietEmptyState(
                     systemImage: "person.3",
-                    title: "No groups yet",
-                    message: "Ask your group leader for an invite code, or start a group for your church, small group or family."
+                    title: String(localized: "No groups yet"),
+                    message: String(localized: "Ask your group leader for an invite code, or start a group for your church, small group or family.")
                 )
                 .listRowBackground(Color.clear)
             } else {
@@ -231,7 +231,7 @@ struct JoinGroupView: View {
                         .onSubmit(join)
                         .accessibilityIdentifier("joinGroup.code")
                 } footer: {
-                    Text(community.errorMessage ?? "Your group leader can share the code from the group's Members page.")
+                    Text(community.errorMessage ?? String(localized: "Your group leader can share the code from the group's Members page."))
                         .foregroundStyle(community.errorMessage == nil ? Color.secondary : Color.orange)
                 }
             }

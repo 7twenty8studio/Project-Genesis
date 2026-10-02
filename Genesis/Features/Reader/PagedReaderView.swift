@@ -173,9 +173,9 @@ struct PagedReaderView: UIViewControllerRepresentable {
         private func footerText(pageIndex: Int, pageCount: Int) -> String {
             let remaining = pageCount - pageIndex - 1
             switch remaining {
-            case 0: return "Last page in chapter"
-            case 1: return "1 page left in chapter"
-            default: return "\(remaining) pages left in chapter"
+            case 0: return String(localized: "Last page in chapter")
+            case 1: return String(localized: "1 page left in chapter")
+            default: return String(localized: "\(remaining) pages left in chapter")
             }
         }
 

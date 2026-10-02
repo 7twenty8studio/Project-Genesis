@@ -1,0 +1,320 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "%lld prayers": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld oraciones"
+          }
+        }
+      }
+    },
+    "%lld-day streak": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Racha de %lld días"
+          }
+        }
+      }
+    },
+    "1 prayer": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 oración"
+          }
+        }
+      }
+    },
+    "A new verse each morning.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un versículo nuevo cada mañana."
+          }
+        }
+      }
+    },
+    "Begin Reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comenzar a leer"
+          }
+        }
+      }
+    },
+    "Begin reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comienza a leer"
+          }
+        }
+      }
+    },
+    "Continue": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar"
+          }
+        }
+      }
+    },
+    "Continue Reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar leyendo"
+          }
+        }
+      }
+    },
+    "Day %lld of %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Día %lld de %lld"
+          }
+        }
+      }
+    },
+    "Days in a row you've read.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Días seguidos que has leído."
+          }
+        }
+      }
+    },
+    "Done": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "Genesis 1": {
+      "comment": "Bible reference: the book of Genesis, chapter 1",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Génesis 1"
+          }
+        }
+      }
+    },
+    "John 3": {
+      "comment": "Bible reference: the Gospel of John, chapter 3",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Juan 3"
+          }
+        }
+      }
+    },
+    "John 3–5": {
+      "comment": "Bible reference: the Gospel of John, chapters 3 to 5",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Juan 3–5"
+          }
+        }
+      }
+    },
+    "Next reminder %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Próximo recordatorio: %@"
+          }
+        }
+      }
+    },
+    "No reminder set": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin recordatorio"
+          }
+        }
+      }
+    },
+    "Open Genesis": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir Genesis"
+          }
+        }
+      }
+    },
+    "Pick up where you left off.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retoma donde te quedaste."
+          }
+        }
+      }
+    },
+    "Pray at %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orar: %@"
+          }
+        }
+      }
+    },
+    "Prayer": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oración"
+          }
+        }
+      }
+    },
+    "Prayer Reminder": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recordatorio de oración"
+          }
+        }
+      }
+    },
+    "Psalms 119:105": {
+      "comment": "Bible reference",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salmos 119:105"
+          }
+        }
+      }
+    },
+    "Reading Progress": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Progreso de lectura"
+          }
+        }
+      }
+    },
+    "Reading Streak": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Racha de lectura"
+          }
+        }
+      }
+    },
+    "The Gospels in 30 Days": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los Evangelios en 30 días"
+          }
+        }
+      }
+    },
+    "Today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoy"
+          }
+        }
+      }
+    },
+    "Today's plan reading, your streak and prayer reminders.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La lectura de hoy de tu plan, tu racha y tus recordatorios de oración."
+          }
+        }
+      }
+    },
+    "Verse of the Day": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versículo del día"
+          }
+        }
+      }
+    },
+    "Your next prayer reminder and how many requests you're praying for.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu próximo recordatorio de oración y cuántas peticiones tienes en oración."
+          }
+        }
+      }
+    },
+    "chapters read": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "capítulos leídos"
+          }
+        }
+      }
+    },
+    "day streak": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "días de racha"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

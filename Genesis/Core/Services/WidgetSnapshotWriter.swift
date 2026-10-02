@@ -56,7 +56,8 @@ enum WidgetSnapshotWriter {
             let planProgress = PlanProgress(plan: definition, startDate: enrollment.startDate, completedDays: enrollment.completedDays)
             if let today = planProgress.todaysDay(on: now, calendar: calendar) {
                 plan = WidgetSnapshot.Plan(
-                    title: enrollment.title,
+                    // The definition's title follows the app's language for built-in plans.
+                    title: definition.title,
                     todayTitle: today.title,
                     dayNumber: today.number,
                     dayCount: definition.dayCount,

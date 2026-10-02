@@ -178,7 +178,7 @@ struct StudyAssistantContent: View {
                         .background(isSelected ? palette.accent : palette.surface, in: Capsule())
                     }
                     .buttonStyle(.plain)
-                    .accessibilityLabel(locked ? "\(item.title), Premium" : item.title)
+                    .accessibilityLabel(locked ? String(localized: "\(item.title), Premium", comment: "Accessibility label for a locked study tool") : item.title)
                     .accessibilityAddTraits(isSelected ? .isSelected : [])
                     .accessibilityIdentifier("study.action.\(item.rawValue)")
                 }

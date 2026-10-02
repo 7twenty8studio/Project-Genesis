@@ -7,7 +7,7 @@ enum ReadingMode: String, Codable, CaseIterable, Identifiable, Sendable {
     case scroll
 
     var id: String { rawValue }
-    var title: String { self == .page ? "Pages" : "Scroll" }
+    var title: String { self == .page ? String(localized: "Pages", comment: "Reading mode: page by page") : String(localized: "Scroll", comment: "Reading mode: continuous scrolling") }
 }
 
 enum PageTurnStyle: String, Codable, CaseIterable, Identifiable, Sendable {
@@ -15,7 +15,7 @@ enum PageTurnStyle: String, Codable, CaseIterable, Identifiable, Sendable {
     case curl
 
     var id: String { rawValue }
-    var title: String { self == .slide ? "Slide" : "Page Curl" }
+    var title: String { self == .slide ? String(localized: "Slide", comment: "Page turn animation") : String(localized: "Page Curl") }
 }
 
 enum TextLayout: String, Codable, CaseIterable, Identifiable, Sendable {
@@ -25,14 +25,20 @@ enum TextLayout: String, Codable, CaseIterable, Identifiable, Sendable {
     case versePerLine
 
     var id: String { rawValue }
-    var title: String { self == .paragraphs ? "Paragraphs" : "Verse by Verse" }
+    var title: String { self == .paragraphs ? String(localized: "Paragraphs") : String(localized: "Verse by Verse") }
 }
 
 enum ReaderMargins: String, Codable, CaseIterable, Identifiable, Sendable {
     case narrow, regular, wide
 
     var id: String { rawValue }
-    var title: String { rawValue.capitalized }
+    var title: String {
+        switch self {
+        case .narrow: String(localized: "Narrow", comment: "Reader margins")
+        case .regular: String(localized: "Regular", comment: "Reader margins")
+        case .wide: String(localized: "Wide", comment: "Reader margins")
+        }
+    }
 
     /// Horizontal inset in points for a given container width.
     func inset(forWidth width: CGFloat) -> CGFloat {

@@ -13,21 +13,21 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
 
     var title: String {
         switch self {
-        case .listen: "Listen"
-        case .plansAndPrayer: "Plans & Prayer"
-        case .explore: "Timeline, Maps & People"
-        case .studyAssistant: "Study Notes"
-        case .together: "Groups & Community"
+        case .listen: String(localized: "Listen", comment: "Optional feature: hear chapters read aloud")
+        case .plansAndPrayer: String(localized: "Plans & Prayer")
+        case .explore: String(localized: "Timeline, Maps & People")
+        case .studyAssistant: String(localized: "Study Notes")
+        case .together: String(localized: "Groups & Community")
         }
     }
 
     var detail: String {
         switch self {
-        case .listen: "Hear any chapter read aloud, with the page following along."
-        case .plansAndPrayer: "Reading plans and a private prayer journal on your Home screen."
-        case .explore: "Explore the Bible's story, places and people."
-        case .studyAssistant: "Short explanations of a passage, clearly labelled as AI-generated."
-        case .together: "Read and pray with your church group, and the community prayer wall."
+        case .listen: String(localized: "Hear any chapter read aloud, with the page following along.")
+        case .plansAndPrayer: String(localized: "Reading plans and a private prayer journal on your Home screen.")
+        case .explore: String(localized: "Explore the Bible's story, places and people.")
+        case .studyAssistant: String(localized: "Short explanations of a passage, clearly labelled as AI-generated.")
+        case .together: String(localized: "Read and pray with your church group, and the community prayer wall.")
         }
     }
 

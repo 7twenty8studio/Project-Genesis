@@ -59,6 +59,7 @@ enum ReferenceParser {
     private static let ordinals: [(prefix: String, digit: String)] = [
         ("first ", "1"), ("second ", "2"), ("third ", "3"),
         ("1st ", "1"), ("2nd ", "2"), ("3rd ", "3"),
+        ("primera de ", "1"), ("segunda de ", "2"), ("tercera de ", "3"),
         ("primera ", "1"), ("primero ", "1"), ("segunda ", "2"), ("segundo ", "2"), ("tercera ", "3"), ("tercero ", "3"),
         ("1ra ", "1"), ("1ro ", "1"), ("2da ", "2"), ("2do ", "2"), ("3ra ", "3"), ("3ro ", "3"),
         ("iii ", "3"), ("ii ", "2"), ("i ", "1"),

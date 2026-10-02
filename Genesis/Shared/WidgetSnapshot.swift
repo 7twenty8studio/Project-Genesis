@@ -67,11 +67,11 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
     static let placeholder = WidgetSnapshot(
         generatedAt: .now,
         translation: "KJV",
-        dailyVerses: [DailyVerse(day: "", reference: "Psalms 119:105", text: "Thy word is a lamp unto my feet, and a light unto my path.", verse: 19_119_105)],
-        continueReading: ContinueReading(reference: "John 3", snippet: "There was a man of the Pharisees, named Nicodemus, a ruler of the Jews:", verse: 43_003_001, bookProgress: 0.1),
+        dailyVerses: [DailyVerse(day: "", reference: String(localized: "Psalms 119:105", comment: "Bible reference"), text: "Thy word is a lamp unto my feet, and a light unto my path.", verse: 19_119_105)],
+        continueReading: ContinueReading(reference: String(localized: "John 3", comment: "Bible reference: the Gospel of John, chapter 3"), snippet: "There was a man of the Pharisees, named Nicodemus, a ruler of the Jews:", verse: 43_003_001, bookProgress: 0.1),
         streakDays: 7,
         chaptersRead: 42,
-        plan: Plan(title: "The Gospels in 30 Days", todayTitle: "John 3\u{2013}5", dayNumber: 26, dayCount: 30, isTodayComplete: false, fractionComplete: 0.83),
+        plan: Plan(title: String(localized: "The Gospels in 30 Days"), todayTitle: String(localized: "John 3\u{2013}5", comment: "Bible reference: the Gospel of John, chapters 3 to 5"), dayNumber: 26, dayCount: 30, isTodayComplete: false, fractionComplete: 0.83),
         activePrayerCount: 3,
         nextPrayerReminder: nil
     )

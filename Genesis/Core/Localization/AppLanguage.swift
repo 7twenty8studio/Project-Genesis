@@ -10,11 +10,12 @@ enum AppLanguage {
     /// Languages the screens are translated into.
     static let supported = ["en", "es"]
 
-    /// "en" or "es".
-    static var code: String {
+    /// "en" or "es". Fixed for the life of the process: iOS restarts the app
+    /// when its language changes.
+    static let code: String = {
         let preferred = Bundle.main.preferredLocalizations.first ?? "en"
         return supported.first { preferred.hasPrefix($0) } ?? "en"
-    }
+    }()
 
     static var isSpanish: Bool { code == "es" }
 

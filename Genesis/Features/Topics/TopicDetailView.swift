@@ -50,7 +50,7 @@ struct TopicDetailView: View {
             }
         }
         .themedScreen()
-        .navigationTitle(topic?.summary.name ?? "Topic")
+        .navigationTitle(topic?.summary.name ?? String(localized: "Topic"))
         .navigationBarTitleDisplayMode(.inline)
         .task(id: shownID ?? topicID) {
             topic = try? topics?.topic(id: shownID ?? topicID)

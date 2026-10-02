@@ -132,7 +132,7 @@ final class SupabaseCommunityBackend: CommunityBackend {
 
     private static func uuid(_ data: Data) throws -> UUID {
         let text = String(decoding: data, as: UTF8.self).trimmingCharacters(in: CharacterSet(charactersIn: "\" \n"))
-        guard let id = UUID(uuidString: text) else { throw CommunityError.message("The server sent an unexpected response.") }
+        guard let id = UUID(uuidString: text) else { throw CommunityError.message(String(localized: "The server sent an unexpected response.")) }
         return id
     }
 

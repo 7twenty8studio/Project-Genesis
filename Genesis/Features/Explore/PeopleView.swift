@@ -72,13 +72,13 @@ struct PersonDetailView: View {
                 VStack(alignment: .leading, spacing: 26) {
                     header(person)
                     if !person.biography.isEmpty {
-                        DetailSection(title: "Biography") { DictionaryText(text: person.biography) }
+                        DetailSection(title: String(localized: "Biography")) { DictionaryText(text: person.biography) }
                     }
                     if !family.isEmpty {
-                        DetailSection(title: "Family Tree") { FamilyTreeView(person: person.summary, family: family) }
+                        DetailSection(title: String(localized: "Family Tree")) { FamilyTreeView(person: person.summary, family: family) }
                     }
                     if !events.isEmpty {
-                        DetailSection(title: "Timeline") {
+                        DetailSection(title: String(localized: "Timeline")) {
                             VStack(alignment: .leading, spacing: 10) {
                                 ForEach(events) { event in
                                     Button { router.explore(.event(event.id)) } label: { EventRow(event: event) }
@@ -88,7 +88,7 @@ struct PersonDetailView: View {
                         }
                     }
                     if !places.isEmpty {
-                        DetailSection(title: "Places") {
+                        DetailSection(title: String(localized: "Places")) {
                             PlacesMap(places: places)
                                 .frame(height: 200)
                                 .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
@@ -96,13 +96,13 @@ struct PersonDetailView: View {
                         }
                     }
                     if !books.isEmpty {
-                        DetailSection(title: "Books") {
+                        DetailSection(title: String(localized: "Books")) {
                             ChipFlow(items: books, title: { "\($0.book.name) \u{00B7} \($0.count)" }) { router.read($0.firstVerse) }
                         }
                         .accessibilityIdentifier("person.books")
                     }
                     if !verses.isEmpty {
-                        DetailSection(title: "Verses") { VerseMentionList(verses: verses) }
+                        DetailSection(title: String(localized: "Verses")) { VerseMentionList(verses: verses) }
                     }
                     Text(StudyRepository.attribution)
                         .font(.caption2)
@@ -127,7 +127,7 @@ struct PersonDetailView: View {
                 .foregroundStyle(palette.text)
                 .accessibilityIdentifier("person.name")
             let details = [
-                person.summary.alsoCalled.isEmpty ? nil : "Also called \(person.summary.alsoCalled)",
+                person.summary.alsoCalled.isEmpty ? nil : String(localized: "Also called \(person.summary.alsoCalled)"),
                 person.group.isEmpty ? nil : person.group,
                 person.lifespan,
             ].compactMap { $0 }
@@ -161,7 +161,7 @@ struct FamilyTreeView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
             if !family.parents.isEmpty {
-                generation("Parents", family.parents)
+                generation(String(localized: "Parents"), family.parents)
                 connector
             }
             HStack(spacing: 8) {
@@ -181,10 +181,10 @@ struct FamilyTreeView: View {
             .frame(maxWidth: .infinity)
             if !family.children.isEmpty {
                 connector
-                generation("Children", family.children)
+                generation(String(localized: "Children"), family.children)
             }
             if !family.siblings.isEmpty {
-                generation("Siblings", family.siblings)
+                generation(String(localized: "Siblings"), family.siblings)
                     .padding(.top, 18)
             }
         }

@@ -49,7 +49,7 @@ struct TimelineBrowser: View {
     private var eraStrip: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
-                chip("All", id: "all", selected: selectedEra == nil) { selectedEra = nil }
+                chip(String(localized: "All", comment: "Timeline filter: every era"), id: "all", selected: selectedEra == nil) { selectedEra = nil }
                 ForEach(eras) { era in
                     chip(era.title, id: era.id, selected: selectedEra == era.id) { selectedEra = era.id }
                 }
@@ -165,20 +165,20 @@ struct EventDetailView: View {
                             .foregroundStyle(palette.secondaryText)
                     }
                     if !chapters.isEmpty {
-                        DetailSection(title: "Read") {
+                        DetailSection(title: String(localized: "Read", comment: "Section title: chapters to read")) {
                             ChipFlow(items: chapters.map(IdentifiedChapter.init), title: { $0.chapter.description }) { item in
                                 router.read(item.chapter)
                             }
                         }
                     }
                     if !people.isEmpty {
-                        DetailSection(title: "People") {
+                        DetailSection(title: String(localized: "People")) {
                             ChipFlow(items: people, title: \.name) { router.explore(.person($0.id)) }
                         }
                     }
                     let mapped = places.filter(\.isMapped)
                     if !places.isEmpty {
-                        DetailSection(title: "Places") {
+                        DetailSection(title: String(localized: "Places")) {
                             if !mapped.isEmpty {
                                 PlacesMap(places: mapped)
                                     .frame(height: 200)
@@ -193,7 +193,7 @@ struct EventDetailView: View {
                 .frame(maxWidth: .infinity)
             }
             .themedScreen()
-            .navigationTitle(event.yearLabel ?? "Event")
+            .navigationTitle(event.yearLabel ?? String(localized: "Event"))
             .navigationBarTitleDisplayMode(.inline)
         } else {
             StudyDataMissingView()

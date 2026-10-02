@@ -25,13 +25,13 @@ enum SupabaseError: LocalizedError, Equatable {
     var errorDescription: String? {
         switch self {
         case .notConfigured:
-            "Cloud sync isn't set up in this build."
+            String(localized: "Cloud sync isn't set up in this build.")
         case let .http(_, message):
             message
         case .emailConfirmationRequired:
-            "Check your email to confirm your account, then sign in."
+            String(localized: "Check your email to confirm your account, then sign in.")
         case .invalidResponse:
-            "The server sent an unexpected response."
+            String(localized: "The server sent an unexpected response.")
         }
     }
 }

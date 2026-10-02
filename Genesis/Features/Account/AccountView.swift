@@ -36,7 +36,7 @@ private struct SignInView: View {
     enum Mode: String, CaseIterable, Identifiable {
         case signIn, createAccount
         var id: String { rawValue }
-        var title: String { self == .signIn ? "Sign In" : "Create Account" }
+        var title: String { self == .signIn ? String(localized: "Sign In") : String(localized: "Create Account") }
     }
 
     @Environment(AuthService.self) private var auth
@@ -168,14 +168,14 @@ private struct SignInView: View {
         switch result {
         case let .success(authorization):
             guard let token = authorization.appleIdentityToken else {
-                auth.errorMessage = "Apple didn't return a sign-in token. Please try again."
+                auth.errorMessage = String(localized: "Apple didn't return a sign-in token. Please try again.")
                 return
             }
             let nonce = appleNonce
             Task { await auth.signInWithApple(idToken: token, nonce: nonce) }
         case let .failure(error):
             if (error as? ASAuthorizationError)?.code == .canceled { return }
-            auth.errorMessage = "Sign in with Apple isn't available yet: \(error.localizedDescription)"
+            auth.errorMessage = String(localized: "Sign in with Apple isn't available yet: \(error.localizedDescription)")
         }
     }
 }
@@ -195,7 +195,7 @@ private struct SignedInView: View {
     var body: some View {
         Form {
             Section {
-                LabeledContent("Signed in as", value: user.email ?? "Apple ID")
+                LabeledContent("Signed in as", value: user.email ?? String(localized: "Apple ID"))
                     .accessibilityIdentifier("account.signedInAs")
             }
 
@@ -247,13 +247,13 @@ private struct SignedInView: View {
 
     private var statusText: String {
         switch sync.status {
-        case .syncing: "Syncing\u{2026}"
+        case .syncing: String(localized: "Syncing\u{2026}")
         case let .failed(message): message
         case .idle:
             if let last = sync.lastSyncedAt {
-                "Synced \(last.formatted(.relative(presentation: .named)))"
+                String(localized: "Synced \(last.formatted(.relative(presentation: .named)))", comment: "Sync status, e.g. Synced 5 minutes ago")
             } else {
-                "Waiting to sync"
+                String(localized: "Waiting to sync")
             }
         }
     }

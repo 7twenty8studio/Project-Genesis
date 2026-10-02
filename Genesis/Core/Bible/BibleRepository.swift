@@ -26,8 +26,8 @@ enum SearchOrder: String, Hashable, Sendable, CaseIterable {
 
     var title: String {
         switch self {
-        case .relevance: "Best Match"
-        case .canonical: "Bible Order"
+        case .relevance: String(localized: "Best Match", comment: "Search result order")
+        case .canonical: String(localized: "Bible Order", comment: "Search result order")
         }
     }
 }

@@ -70,10 +70,10 @@ struct NoteEditorView: View {
 
     private var placeholder: String {
         switch note.kind {
-        case .prayer: "Write your prayer\u{2026}"
-        case .journal: "What's on your heart today?"
-        case .study: "Observations, questions, connections\u{2026}"
-        case .text: "Write a note\u{2026}"
+        case .prayer: String(localized: "Write your prayer\u{2026}")
+        case .journal: String(localized: "What's on your heart today?")
+        case .study: String(localized: "Observations, questions, connections\u{2026}")
+        case .text: String(localized: "Write a note\u{2026}")
         }
     }
 

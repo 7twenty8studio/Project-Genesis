@@ -11,13 +11,13 @@ struct CompanionPanel: View {
 
         var title: String {
             switch self {
-            case .notes: "Notes"
-            case .crossReferences: "Related"
-            case .study: "Study"
-            case .context: "Context"
-            case .search: "Search"
-            case .plan: "Reading Plan"
-            case .prayer: "Prayer Journal"
+            case .notes: String(localized: "Notes")
+            case .crossReferences: String(localized: "Related", comment: "Panel title: related passages (cross-references)")
+            case .study: String(localized: "Study")
+            case .context: String(localized: "Context")
+            case .search: String(localized: "Search")
+            case .plan: String(localized: "Reading Plan")
+            case .prayer: String(localized: "Prayer Journal")
             }
         }
 
@@ -132,8 +132,8 @@ struct ChapterNotesView: View {
             if notes.isEmpty {
                 QuietEmptyState(
                     systemImage: "note.text",
-                    title: "No notes in \(chapter.description)",
-                    message: "Long-press a verse and choose Note, or add a note for the whole chapter."
+                    title: String(localized: "No notes in \(chapter.description)"),
+                    message: String(localized: "Long-press a verse and choose Note, or add a note for the whole chapter.")
                 )
                 .listRowBackground(Color.clear)
             }

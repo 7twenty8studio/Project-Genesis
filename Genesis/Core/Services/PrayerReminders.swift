@@ -29,7 +29,7 @@ enum PrayerReminders {
         if !prayer.reminderRepeatsDaily, date < .now { return }
 
         let content = UNMutableNotificationContent()
-        content.title = "A moment to pray"
+        content.title = String(localized: "A moment to pray")
         // Prayer text is private: the notification shows only the title the
         // person chose, never the body.
         content.body = prayer.displayTitle

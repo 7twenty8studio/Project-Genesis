@@ -20,7 +20,7 @@ struct CrossReference: Hashable, Sendable, Identifiable {
 /// Cross references from OpenBible.info (CC-BY), based on the Treasury of
 /// Scripture Knowledge. Attribution is shown wherever they appear.
 final class CrossReferenceRepository: Sendable {
-    static let attribution = "Cross references from OpenBible.info, CC-BY."
+    static let attribution = String(localized: "Cross references from OpenBible.info, CC-BY.")
 
     private let database: SQLiteDatabase
 

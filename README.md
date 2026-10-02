@@ -70,6 +70,10 @@ on. The study assistant's announcement is ready and waits for its switch.
   (Berean Standard Bible first, automatic updates), Bible + Reading Plan and
   Bible + Prayer Journal side panels, a lock-screen prayer widget, and
   highlight patterns for Differentiate Without Colour.
+- **Spanish**: every screen, book names, Spanish references ("Juan 3:16"),
+  study assistant answers in Spanish, and the Reina-Valera 1909 to download,
+  read aloud in a Spanish voice. String Catalogs are generated from
+  `Tools/Localization/es.json` (see CLAUDE.md › Languages).
 
 ## Phase 3 (built; switch on with [PHASE3_SETUP.md](PHASE3_SETUP.md))
 

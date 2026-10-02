@@ -59,8 +59,8 @@ struct ReaderSettingsSheet: View {
                     }
                     .buttonStyle(.borderless)
 
-                    labeledSlider("Line spacing", value: $settings.preferences.lineSpacing, in: ReaderPreferences.lineSpacingRange)
-                    labeledSlider("Paragraph spacing", value: $settings.preferences.paragraphSpacing, in: ReaderPreferences.paragraphSpacingRange)
+                    labeledSlider(String(localized: "Line spacing"), value: $settings.preferences.lineSpacing, in: ReaderPreferences.lineSpacingRange)
+                    labeledSlider(String(localized: "Paragraph spacing"), value: $settings.preferences.paragraphSpacing, in: ReaderPreferences.paragraphSpacingRange)
 
                     Picker("Margins", selection: $settings.preferences.margins) {
                         ForEach(ReaderMargins.allCases) { Text($0.title).tag($0) }

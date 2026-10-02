@@ -102,7 +102,7 @@ struct DailyVerseView: View {
         Group {
             switch family {
             case .accessoryInline:
-                Text(verse?.reference ?? "Verse of the Day")
+                Text(verse?.reference ?? String(localized: "Verse of the Day"))
             case .accessoryRectangular:
                 VStack(alignment: .leading, spacing: 2) {
                     Text(verse?.reference ?? "").font(.headline)
@@ -110,7 +110,7 @@ struct DailyVerseView: View {
                 }
             default:
                 VStack(alignment: .leading, spacing: 8) {
-                    Eyebrow(text: "Verse of the Day")
+                    Eyebrow(text: String(localized: "Verse of the Day"))
                     Text(verse?.text ?? "")
                         .font(.system(family == .systemSmall ? .footnote : .body, design: .serif))
                         .foregroundStyle(WidgetPalette.text)
@@ -149,17 +149,17 @@ struct ContinueReadingView: View {
         Group {
             switch family {
             case .accessoryInline:
-                Label(reading?.reference ?? "Open Genesis", systemImage: "book")
+                Label(reading?.reference ?? String(localized: "Open Genesis"), systemImage: "book")
             case .accessoryRectangular:
                 VStack(alignment: .leading, spacing: 2) {
                     Label("Continue", systemImage: "book").font(.caption)
-                    Text(reading?.reference ?? "Begin reading").font(.headline)
+                    Text(reading?.reference ?? String(localized: "Begin reading")).font(.headline)
                     if let reading { ProgressView(value: reading.bookProgress) }
                 }
             default:
                 VStack(alignment: .leading, spacing: 8) {
-                    Eyebrow(text: reading == nil ? "Begin Reading" : "Continue Reading")
-                    Text(reading?.reference ?? "Genesis 1")
+                    Eyebrow(text: reading == nil ? String(localized: "Begin Reading") : String(localized: "Continue Reading"))
+                    Text(reading?.reference ?? String(localized: "Genesis 1", comment: "Bible reference: the book of Genesis, chapter 1"))
                         .font(.system(.title3, design: .serif, weight: .semibold))
                         .foregroundStyle(WidgetPalette.text)
                     Text(reading?.snippet ?? "In the beginning God created the heaven and the earth.")
@@ -197,7 +197,7 @@ struct ReadingProgressView: View {
     var body: some View {
         let snapshot = entry.snapshot
         VStack(alignment: .leading, spacing: 14) {
-            Eyebrow(text: "Today")
+            Eyebrow(text: String(localized: "Today"))
             if let plan = snapshot.plan {
                 Link(destination: GenesisLink.plans) {
                     VStack(alignment: .leading, spacing: 6) {
@@ -230,8 +230,8 @@ struct ReadingProgressView: View {
             Divider()
 
             HStack(spacing: 12) {
-                statTile(value: "\(snapshot.streakDays)", label: "day streak", symbol: "flame")
-                statTile(value: "\(snapshot.chaptersRead)", label: "chapters read", symbol: "book.pages")
+                statTile(value: "\(snapshot.streakDays)", label: String(localized: "day streak"), symbol: "flame")
+                statTile(value: "\(snapshot.chaptersRead)", label: String(localized: "chapters read"), symbol: "book.pages")
             }
 
             Link(destination: GenesisLink.prayer) {
@@ -328,12 +328,12 @@ struct PrayerReminderView: View {
     var body: some View {
         let snapshot = entry.snapshot
         // Prayer text is private: only counts and times appear here.
-        let count = snapshot.activePrayerCount == 1 ? "1 prayer" : "\(snapshot.activePrayerCount) prayers"
+        let count = snapshot.activePrayerCount == 1 ? String(localized: "1 prayer") : String(localized: "\(snapshot.activePrayerCount) prayers")
         let next = snapshot.nextPrayerReminder.map { $0.formatted(date: .omitted, time: .shortened) }
         Group {
             switch family {
             case .accessoryInline:
-                Label(next.map { "Pray at \($0)" } ?? count, systemImage: "hands.and.sparkles")
+                Label(next.map { String(localized: "Pray at \($0)") } ?? count, systemImage: "hands.and.sparkles")
             case .accessoryCircular:
                 ZStack {
                     AccessoryWidgetBackground()
@@ -346,7 +346,7 @@ struct PrayerReminderView: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Label("Prayer", systemImage: "hands.and.sparkles")
                         .font(.headline)
-                    Text(next.map { "Next reminder \($0)" } ?? "No reminder set")
+                    Text(next.map { String(localized: "Next reminder \($0)") } ?? String(localized: "No reminder set"))
                     Text(count).foregroundStyle(.secondary)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)

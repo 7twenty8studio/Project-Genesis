@@ -56,7 +56,7 @@ final class AuthService {
         defer { isWorking = false }
         do {
             try await client.sendPasswordReset(email: Self.clean(email))
-            infoMessage = "If an account exists for that email, a reset link is on its way."
+            infoMessage = String(localized: "If an account exists for that email, a reset link is on its way.")
         } catch {
             errorMessage = error.localizedDescription
         }
@@ -85,7 +85,7 @@ final class AuthService {
         } catch SupabaseError.http(let status, _) where status == 400 || status == 401 {
             // The refresh token was revoked: the person needs to sign in again.
             await signOut()
-            throw SupabaseError.http(status: status, message: "Your session has ended. Please sign in again.")
+            throw SupabaseError.http(status: status, message: String(localized: "Your session has ended. Please sign in again."))
         }
     }
 

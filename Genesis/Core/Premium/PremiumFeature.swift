@@ -14,25 +14,25 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
 
     var title: String {
         switch self {
-        case .unlimitedNotes: "Unlimited notes"
-        case .unlimitedPrayers: "Unlimited prayer journal"
-        case .cloudBackup: "Cloud backup and sync"
-        case .premiumThemes: "Premium themes"
-        case .advancedAI: "Advanced study assistant"
-        case .historicalContent: "Timeline, maps and people"
-        case .readingInsights: "Reading insights"
+        case .unlimitedNotes: String(localized: "Unlimited notes")
+        case .unlimitedPrayers: String(localized: "Unlimited prayer journal")
+        case .cloudBackup: String(localized: "Cloud backup and sync")
+        case .premiumThemes: String(localized: "Premium themes")
+        case .advancedAI: String(localized: "Advanced study assistant")
+        case .historicalContent: String(localized: "Timeline, maps and people")
+        case .readingInsights: String(localized: "Reading insights")
         }
     }
 
     var detail: String {
         switch self {
-        case .unlimitedNotes: "Free includes \(FreeLimits.notes) notes."
-        case .unlimitedPrayers: "Free includes \(FreeLimits.prayers) prayer requests."
-        case .cloudBackup: "Keep highlights, notes, plans and prayers on all your devices."
-        case .premiumThemes: "Cream, Parchment, Midnight and Sage."
-        case .advancedAI: "Summaries, historical background, discussion questions and more, without the daily limit."
-        case .historicalContent: "An interactive timeline, Bible maps and journeys, and a character explorer with family trees."
-        case .readingInsights: "Time spent reading, favourite books and your reading history."
+        case .unlimitedNotes: String(localized: "Free includes \(FreeLimits.notes) notes.")
+        case .unlimitedPrayers: String(localized: "Free includes \(FreeLimits.prayers) prayer requests.")
+        case .cloudBackup: String(localized: "Keep highlights, notes, plans and prayers on all your devices.")
+        case .premiumThemes: String(localized: "Cream, Parchment, Midnight and Sage.")
+        case .advancedAI: String(localized: "Summaries, historical background, discussion questions and more, without the daily limit.")
+        case .historicalContent: String(localized: "An interactive timeline, Bible maps and journeys, and a character explorer with family trees.")
+        case .readingInsights: String(localized: "Time spent reading, favourite books and your reading history.")
         }
     }
 
@@ -74,15 +74,15 @@ enum PremiumProduct: String, CaseIterable, Sendable {
 
     var periodTitle: String {
         switch self {
-        case .monthly: "Monthly"
-        case .yearly: "Yearly"
+        case .monthly: String(localized: "Monthly", comment: "Subscription period")
+        case .yearly: String(localized: "Yearly", comment: "Subscription period")
         }
     }
 
     var periodUnit: String {
         switch self {
-        case .monthly: "month"
-        case .yearly: "year"
+        case .monthly: String(localized: "month", comment: "Subscription period unit, as in $4.99 / month")
+        case .yearly: String(localized: "year", comment: "Subscription period unit, as in $4.99 / month")
         }
     }
 

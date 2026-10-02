@@ -144,7 +144,7 @@ struct PlanDetailView: View {
         if let enrollment = matches.first, let plan = enrollment.plan {
             content(enrollment: enrollment, plan: plan)
         } else {
-            QuietEmptyState(systemImage: "book.closed", title: "Plan not found", message: "It may have been removed on another device.")
+            QuietEmptyState(systemImage: "book.closed", title: String(localized: "Plan not found"), message: String(localized: "It may have been removed on another device."))
                 .themedScreen()
         }
     }
@@ -267,7 +267,7 @@ private struct DayRow: View {
 
             Button(action: onRead) {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Day \(day.number)\(isToday ? " \u{00B7} Today" : "")")
+                    Text(isToday ? "Day \(day.number) \u{00B7} Today" : "Day \(day.number)")
                         .font(.caption.weight(.semibold))
                         .foregroundStyle(isToday ? palette.accent : palette.secondaryText)
                     Text(day.title)
@@ -343,7 +343,7 @@ struct CustomPlanView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Start", systemImage: "checkmark") {
                         let name = title.trimmingCharacters(in: .whitespacesAndNewlines)
-                        onCreate(ReadingPlan.custom(title: name.isEmpty ? "My Plan" : name, books: orderedBooks, days: days))
+                        onCreate(ReadingPlan.custom(title: name.isEmpty ? String(localized: "My Plan") : name, books: orderedBooks, days: days))
                         dismiss()
                     }
                     .disabled(selectedBooks.isEmpty)

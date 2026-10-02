@@ -40,8 +40,8 @@ struct InsightsView: View {
         let columns = [GridItem(.adaptive(minimum: 150), spacing: 12)]
         return LazyVGrid(columns: columns, spacing: 12) {
             stat("\(progress.streak())", "day streak", "flame")
-            stat("\(progress.chaptersRead.count) of \(Self.totalChapters)", "chapters read", "book.pages")
-            stat("\(progress.booksCompleted) of 66", "books finished", "books.vertical")
+            stat(String(localized: "\(progress.chaptersRead.count) of \(Self.totalChapters)"), "chapters read", "book.pages")
+            stat(String(localized: "\(progress.booksCompleted) of 66"), "books finished", "books.vertical")
             if entitlements.allows(.readingInsights) {
                 stat("\(progress.longestStreak)", "longest streak", "trophy")
                 stat("\(highlights.count)", "verses highlighted", "highlighter")
@@ -53,7 +53,7 @@ struct InsightsView: View {
         .accessibilityIdentifier("insights.stats")
     }
 
-    private func stat(_ value: String, _ label: String, _ symbol: String) -> some View {
+    private func stat(_ value: String, _ label: LocalizedStringKey, _ symbol: String) -> some View {
         VStack(alignment: .leading, spacing: 6) {
             Image(systemName: symbol)
                 .foregroundStyle(palette.accent)
@@ -74,7 +74,7 @@ struct InsightsView: View {
 
     private var readingTime: some View {
         let days = progress.dailyReadingTime(days: 14)
-        return DetailSection(title: "Reading Time, Last Two Weeks") {
+        return DetailSection(title: String(localized: "Reading Time, Last Two Weeks")) {
             Chart(days, id: \.day) { entry in
                 BarMark(
                     x: .value("Day", entry.day, unit: .day),
@@ -98,7 +98,7 @@ struct InsightsView: View {
     private var favoriteBooks: some View {
         let books = progress.favoriteBooks()
         if !books.isEmpty {
-            DetailSection(title: "Favourite Books") {
+            DetailSection(title: String(localized: "Favourite Books")) {
                 VStack(spacing: 12) {
                     ForEach(books, id: \.book.id) { entry in
                         VStack(alignment: .leading, spacing: 4) {
@@ -126,7 +126,7 @@ struct InsightsView: View {
             .filter { $0.count > 0 }
             .sorted { $0.count > $1.count }
             .prefix(5)
-        DetailSection(title: "Favourite Topics") {
+        DetailSection(title: String(localized: "Favourite Topics")) {
             if topics.isEmpty {
                 Text("Group highlights into collections in the Library, and your favourite topics appear here.")
                     .font(.subheadline)
@@ -159,7 +159,7 @@ struct InsightsView: View {
 
     static func duration(_ seconds: TimeInterval) -> String {
         let minutes = Int(seconds / 60)
-        if minutes < 60 { return "\(minutes) min" }
-        return "\(minutes / 60) h \(minutes % 60) min"
+        if minutes < 60 { return String(localized: "\(minutes) min") }
+        return String(localized: "\(minutes / 60) h \(minutes % 60) min")
     }
 }

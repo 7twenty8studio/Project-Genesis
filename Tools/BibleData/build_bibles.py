@@ -44,6 +44,18 @@ TRANSLATIONS = {
         "license": "Public domain (dedicated April 30, 2023). With thanks to Bible Hub, Discovery Bible, OpenBible.com and the Berean Bible Translation Committee.",
         "language": "en",
     },
+    "RV1909": {
+        "name": "Reina-Valera 1909",
+        "year": "1909",
+        # Shown as written, so in the Bible's language.
+        "license": "Dominio público",
+        "language": "es",
+        # From github.com/seven1m/open-bibles (spa-rv1909.usfx.xml), which keeps
+        # the Spanish verse numbering (Jonah 2 has 11 verses). Not
+        # scrollmapper's SpaRV, which drops the verses where Spanish and
+        # English numbering differ.
+        "usfx": "spa-rv1909.usfx.xml",
+    },
     "WEB": {
         "name": "World English Bible",
         "year": "2020",
@@ -107,7 +119,61 @@ class Verse:
         return clean(sep.join(self.parts))
 
 
+USFX_BOOKS = [
+    "GEN", "EXO", "LEV", "NUM", "DEU", "JOS", "JDG", "RUT", "1SA", "2SA", "1KI", "2KI", "1CH", "2CH",
+    "EZR", "NEH", "EST", "JOB", "PSA", "PRO", "ECC", "SNG", "ISA", "JER", "LAM", "EZK", "DAN", "HOS",
+    "JOL", "AMO", "OBA", "JON", "MIC", "NAM", "HAB", "ZEP", "HAG", "ZEC", "MAL",
+    "MAT", "MRK", "LUK", "JHN", "ACT", "ROM", "1CO", "2CO", "GAL", "EPH", "PHP", "COL", "1TH", "2TH",
+    "1TI", "2TI", "TIT", "PHM", "HEB", "JAS", "1PE", "2PE", "1JN", "2JN", "3JN", "JUD", "REV",
+]
+
+
+def load_usfx(path):
+    """Verses from a USFX file (open-bibles). Word tags (<w>, Strong's
+    numbers) and supplied-word tags (<add>) are removed, keeping their words;
+    the text itself is not changed. Verses with no words (a number the
+    translation doesn't use) are left out."""
+    import re as _re
+    source = open(path, encoding="utf-8-sig").read()
+    verses = []
+    for number, code in enumerate(USFX_BOOKS, start=1):
+        start = source.find(f'<book id="{code}">')
+        assert start >= 0, f"{code} missing"
+        end = source.find("</book>", start)
+        book = source[start:end]
+        assert "<f " not in book and "<f>" not in book and "<x" not in book, f"{code}: footnotes need handling"
+        chapter = 0
+        # Split into tokens: chapter markers, verse markers, verse ends, text.
+        for token in _re.split(r'(<c id="\d+"\s*/>|<v id="\d+"\s*/>|<ve\s*/>)', book):
+            c = _re.match(r'<c id="(\d+)"', token)
+            v = _re.match(r'<v id="(\d+)"', token)
+            if c:
+                chapter = int(c.group(1))
+            elif v:
+                verse = Verse(number, chapter, int(v.group(1)))
+                verses.append(verse)
+            elif token.startswith("<ve") or not verses or verses[-1].book != number:
+                continue
+            else:
+                current = verses[-1]
+                if current.parts and current.parts[-1] is None:
+                    continue  # after <ve/>: text between verses (headings) isn't verse text
+                text = _re.sub(r"</?(w|add)\b[^>]*>", "", token)
+                text = _re.sub(r"</?p\b[^>]*>", " ", text)
+                assert "<" not in text, f"unexpected markup in {code} {chapter}:{current.verse}: {text[:80]}"
+                current.parts.append(text)
+            if token.startswith("<ve"):
+                if verses and verses[-1].book == number:
+                    verses[-1].parts.append(None)
+        for verse in verses:
+            verse.parts = [part for part in verse.parts if part is not None]
+    return [v for v in verses if v.text.strip()], []
+
+
 def load_scrollmapper(path, abbreviation):
+    usfx = TRANSLATIONS.get(abbreviation, {}).get("usfx")
+    if usfx:
+        return load_usfx(os.path.join(path, usfx))
     data = json.load(open(os.path.join(path, "formats", "json", f"{abbreviation}.json")))
     assert len(data["books"]) == 66, "expected the 66-book canon"
     verses = []
@@ -160,6 +226,9 @@ def create_bible_db(out_path, abbreviation, verses, headings):
         os.remove(out_path)
     db = sqlite3.connect(out_path)
     meta = TRANSLATIONS[abbreviation]
+    # The Porter stemmer is English-only ("loving" finds "love"); other
+    # languages are matched by whole words and prefixes, accents ignored.
+    tokenizer = "porter unicode61 remove_diacritics 2" if meta["language"] == "en" else "unicode61 remove_diacritics 2"
     db.executescript(
         """
         PRAGMA page_size = 4096;
@@ -193,10 +262,10 @@ def create_bible_db(out_path, abbreviation, verses, headings):
         CREATE VIRTUAL TABLE verses_fts USING fts5(
             text,
             content='',
-            tokenize='porter unicode61 remove_diacritics 2',
+            tokenize='TOKENIZER',
             prefix='2 3 4'
         );
-        """
+        """.replace("TOKENIZER", tokenizer)
     )
     for key, value in {
         "abbreviation": abbreviation,

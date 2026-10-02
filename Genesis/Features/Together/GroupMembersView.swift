@@ -93,13 +93,13 @@ struct GroupMembersView: View {
     }
 
     private var inviteMessage: String {
-        "Join \(group.name) on Genesis to read and pray together. Open Together › Join with an Invite Code and enter \(group.formattedInviteCode)."
+        String(localized: "Join \(group.name) on Genesis to read and pray together. Open Together › Join with an Invite Code and enter \(group.formattedInviteCode).")
     }
 
     private func memberRow(_ member: GroupMember) -> some View {
         HStack {
             VStack(alignment: .leading, spacing: 2) {
-                Text(member.displayName + (community.isMine(member.userID) ? " (you)" : ""))
+                Text(community.isMine(member.userID) ? String(localized: "\(member.displayName) (you)") : member.displayName)
                     .foregroundStyle(palette.text)
                 if member.role == .leader {
                     Text("Leader").font(.caption).foregroundStyle(palette.accent)

@@ -29,9 +29,9 @@ enum AudioRecordingError: LocalizedError, Equatable {
 
     var errorDescription: String? {
         switch self {
-        case .notConfigured: "Recorded narration isn't available in this build."
-        case .chapterMissing: "This recording doesn't include this chapter."
-        case .offline: "Recorded narration needs an internet connection, or download the book first."
+        case .notConfigured: String(localized: "Recorded narration isn't available in this build.")
+        case .chapterMissing: String(localized: "This recording doesn't include this chapter.")
+        case .offline: String(localized: "Recorded narration needs an internet connection, or download the book first.")
         }
     }
 }

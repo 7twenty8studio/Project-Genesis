@@ -27,26 +27,48 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish]
+
+    static let spanish = WhatsNewAnnouncement(
+        id: "spanish",
+        title: String(localized: "Genesis in Spanish"),
+        items: [
+            WhatsNewItem(
+                systemImage: "globe",
+                title: String(localized: "Genesis en español"),
+                detail: String(localized: "Use Genesis in Spanish: Settings › Language (the gear on Home). It follows your iPhone's language too.")
+            ),
+            WhatsNewItem(
+                systemImage: "book",
+                title: String(localized: "Reina-Valera 1909"),
+                detail: String(localized: "Download the Reina-Valera 1909 from Bibles on This Device › Get More. It's read aloud in a Spanish voice.")
+            ),
+            WhatsNewItem(
+                systemImage: "text.magnifyingglass",
+                title: String(localized: "Spanish references"),
+                detail: String(localized: "Search and go to passages by their Spanish names too, like Juan 3:16 or Salmos 23.")
+            ),
+        ]
+    )
 
     static let audioBible = WhatsNewAnnouncement(
         id: "audio-bible",
-        title: "Listen to the Bible",
+        title: String(localized: "Listen to the Bible"),
         items: [
             WhatsNewItem(
                 systemImage: "headphones",
-                title: "Listen to any chapter",
-                detail: "Tap the headphones in the reader. The page turns and the verse being read is marked as you go, and it keeps playing with your phone locked."
+                title: String(localized: "Listen to any chapter"),
+                detail: String(localized: "Tap the headphones in the reader. The page turns and the verse being read is marked as you go, and it keeps playing with your phone locked.")
             ),
             WhatsNewItem(
                 systemImage: "person.wave.2",
-                title: "Choose a voice",
-                detail: "Use your device's voices in every translation, offline, or a recorded narration where one is available. Change it under Audio Settings."
+                title: String(localized: "Choose a voice"),
+                detail: String(localized: "Use your device's voices in every translation, offline, or a recorded narration where one is available. Change it under Audio Settings.")
             ),
             WhatsNewItem(
                 systemImage: "moon",
-                title: "Speed and sleep timer",
-                detail: "Listen faster or slower, and stop after a set time or at the end of the chapter."
+                title: String(localized: "Speed and sleep timer"),
+                detail: String(localized: "Listen faster or slower, and stop after a set time or at the end of the chapter.")
             ),
         ],
         feature: .listen
@@ -54,49 +76,49 @@ enum WhatsNewCatalog {
 
     static let yourWay = WhatsNewAnnouncement(
         id: "your-way",
-        title: "Genesis, your way",
+        title: String(localized: "Genesis, your way"),
         items: [
             WhatsNewItem(
                 systemImage: "square.grid.2x2",
-                title: "Choose your features",
-                detail: "Keep Genesis as simple as you like: turn listening, plans, explore and more on or off in Settings › Features (the gear on Home)."
+                title: String(localized: "Choose your features"),
+                detail: String(localized: "Keep Genesis as simple as you like: turn listening, plans, explore and more on or off in Settings › Features (the gear on Home).")
             ),
             WhatsNewItem(
                 systemImage: "tag",
-                title: "Search by topic",
-                detail: "Search for a subject like forgiveness or fear to see the passages about it."
+                title: String(localized: "Search by topic"),
+                detail: String(localized: "Search for a subject like forgiveness or fear to see the passages about it.")
             ),
             WhatsNewItem(
                 systemImage: "arrow.down.circle",
-                title: "More Bibles",
-                detail: "Download the Berean Standard Bible from the translation menu. Downloads work offline and stay up to date."
+                title: String(localized: "More Bibles"),
+                detail: String(localized: "Download the Berean Standard Bible from the translation menu. Downloads work offline and stay up to date.")
             ),
             WhatsNewItem(
                 systemImage: "hands.and.sparkles",
-                title: "Prayer on your Lock Screen",
-                detail: "Add the Prayer Reminder widget to see your next reminder at a glance."
+                title: String(localized: "Prayer on your Lock Screen"),
+                detail: String(localized: "Add the Prayer Reminder widget to see your next reminder at a glance.")
             ),
         ]
     )
 
     static let churchGroups = WhatsNewAnnouncement(
         id: "church-groups",
-        title: "Church groups",
+        title: String(localized: "Church groups"),
         items: [
             WhatsNewItem(
                 systemImage: "person.3",
-                title: "Read together",
-                detail: "Start a group or join one with an invite code in the new Together tab. Follow a reading plan as a group and see who's kept up."
+                title: String(localized: "Read together"),
+                detail: String(localized: "Start a group or join one with an invite code in the new Together tab. Follow a reading plan as a group and see who's kept up.")
             ),
             WhatsNewItem(
                 systemImage: "hands.and.sparkles",
-                title: "Pray for each other",
-                detail: "Share prayer requests with your group, tap \"I prayed\", and mark requests answered."
+                title: String(localized: "Pray for each other"),
+                detail: String(localized: "Share prayer requests with your group, tap \"I prayed\", and mark requests answered.")
             ),
             WhatsNewItem(
                 systemImage: "megaphone",
-                title: "Talk and stay in touch",
-                detail: "Discuss each day's reading, and get a notification when a leader posts an announcement."
+                title: String(localized: "Talk and stay in touch"),
+                detail: String(localized: "Discuss each day's reading, and get a notification when a leader posts an announcement.")
             ),
         ],
         flag: .groups,
@@ -105,22 +127,22 @@ enum WhatsNewCatalog {
 
     static let community = WhatsNewAnnouncement(
         id: "community",
-        title: "The Genesis community",
+        title: String(localized: "The Genesis community"),
         items: [
             WhatsNewItem(
                 systemImage: "hands.and.sparkles",
-                title: "Prayer wall",
-                detail: "Share a prayer request with everyone in Genesis, anonymously if you like, and pray for others."
+                title: String(localized: "Prayer wall"),
+                detail: String(localized: "Share a prayer request with everyone in Genesis, anonymously if you like, and pray for others.")
             ),
             WhatsNewItem(
                 systemImage: "text.quote",
-                title: "Reflections",
-                detail: "Share a short thought on a passage and encourage one another."
+                title: String(localized: "Reflections"),
+                detail: String(localized: "Share a short thought on a passage and encourage one another.")
             ),
             WhatsNewItem(
                 systemImage: "shield",
-                title: "Kind and safe",
-                detail: "Everyone agrees to the community guidelines. Report or block anyone from the … menu on any post."
+                title: String(localized: "Kind and safe"),
+                detail: String(localized: "Everyone agrees to the community guidelines. Report or block anyone from the … menu on any post.")
             ),
         ],
         flag: .community,
@@ -129,22 +151,22 @@ enum WhatsNewCatalog {
 
     static let studyAssistant = WhatsNewAnnouncement(
         id: "study-assistant",
-        title: "The study assistant",
+        title: String(localized: "The study assistant"),
         items: [
             WhatsNewItem(
                 systemImage: "sparkles",
-                title: "Explain a passage",
-                detail: "Long-press a verse, then tap Explain for a short, plain-language explanation. Free accounts include \(FreeLimits.aiRequestsPerDay) a day after signing in."
+                title: String(localized: "Explain a passage"),
+                detail: String(localized: "Long-press a verse, then tap Explain for a short, plain-language explanation. Free accounts include \(FreeLimits.aiRequestsPerDay) a day after signing in.")
             ),
             WhatsNewItem(
                 systemImage: "text.book.closed",
-                title: "Study a chapter",
-                detail: "Tap the sparkles in the reader for summaries, historical background, discussion questions and more with Premium."
+                title: String(localized: "Study a chapter"),
+                detail: String(localized: "Tap the sparkles in the reader for summaries, historical background, discussion questions and more with Premium.")
             ),
             WhatsNewItem(
                 systemImage: "checkmark.shield",
-                title: "Clearly labelled",
-                detail: "Answers are AI-generated study notes, shown apart from the text and never in place of Scripture. They don't take sides between traditions."
+                title: String(localized: "Clearly labelled"),
+                detail: String(localized: "Answers are AI-generated study notes, shown apart from the text and never in place of Scripture. They don't take sides between traditions.")
             ),
         ],
         flag: .studyAssistant,

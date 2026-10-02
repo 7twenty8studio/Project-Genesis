@@ -65,8 +65,8 @@ struct ReadingPlan: Identifiable, Hashable, Sendable {
         let days = (0..<365).map { PlanDay(number: $0 + 1, spans: spans(for: old[$0]) + spans(for: new[$0])) }
         return ReadingPlan(
             id: oneYearID,
-            title: "The Bible in a Year",
-            summary: "Old and New Testament readings each day, about 15 minutes.",
+            title: String(localized: "The Bible in a Year"),
+            summary: String(localized: "Old and New Testament readings each day, about 15 minutes."),
             kind: .builtIn,
             days: days
         )
@@ -74,8 +74,8 @@ struct ReadingPlan: Identifiable, Hashable, Sendable {
 
     static let newTestament90 = make(
         id: newTestament90ID,
-        title: "New Testament in 90 Days",
-        summary: "Matthew through Revelation, about three chapters a day.",
+        title: String(localized: "New Testament in 90 Days"),
+        summary: String(localized: "Matthew through Revelation, about three chapters a day."),
         books: Array(40...66),
         days: 90
     )
@@ -90,24 +90,24 @@ struct ReadingPlan: Identifiable, Hashable, Sendable {
 
     static let chronological = make(
         id: chronologicalID,
-        title: "Chronological Bible",
-        summary: "The whole Bible in a year, with books in the order events happened.",
+        title: String(localized: "Chronological Bible"),
+        summary: String(localized: "The whole Bible in a year, with books in the order events happened."),
         books: chronologicalBookOrder,
         days: 365
     )
 
     static let gospels = make(
         id: gospelsID,
-        title: "The Gospels in 30 Days",
-        summary: "Matthew, Mark, Luke and John: the life of Jesus in a month.",
+        title: String(localized: "The Gospels in 30 Days"),
+        summary: String(localized: "Matthew, Mark, Luke and John: the life of Jesus in a month."),
         books: [40, 41, 42, 43],
         days: 30
     )
 
     static let psalms = make(
         id: psalmsID,
-        title: "Psalms in 30 Days",
-        summary: "Five psalms a day, a month of prayer and praise.",
+        title: String(localized: "Psalms in 30 Days"),
+        summary: String(localized: "Five psalms a day, a month of prayer and praise."),
         books: [19],
         days: 30
     )
@@ -122,8 +122,8 @@ struct ReadingPlan: Identifiable, Hashable, Sendable {
         let chapterTotal = books.reduce(0) { $0 + BibleBook.withNumber($1).chapterCount }
         let names = books.count <= 3
             ? books.map { BibleBook.withNumber($0).name }.formatted(.list(type: .and))
-            : "\(books.count) books"
-        return "\(names), \(chapterTotal) chapters over \(days) days."
+            : String(localized: "\(books.count) books")
+        return String(localized: "\(names), \(chapterTotal) chapters over \(days) days.", comment: "Custom reading plan summary: books, chapter count, day count")
     }
 
     // MARK: Schedule building

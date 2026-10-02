@@ -76,9 +76,9 @@ enum SearchScopeOption: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .all: "All"
-        case .oldTestament: "Old Testament"
-        case .newTestament: "New Testament"
+        case .all: String(localized: "All", comment: "Search scope: the whole Bible")
+        case .oldTestament: String(localized: "Old Testament")
+        case .newTestament: String(localized: "New Testament")
         }
     }
 
@@ -169,7 +169,7 @@ struct SearchContent: View {
                                 TopicDetailView(topicID: topic.id, onOpen: onOpen)
                                     .onAppear { GenesisTips.topics.invalidate(reason: .actionPerformed) }
                             } label: {
-                                LabeledContent(topic.name, value: "\(topic.referenceCount) passages")
+                                LabeledContent(topic.name, value: topic.referenceCount == 1 ? String(localized: "1 passage") : String(localized: "\(topic.referenceCount) passages"))
                                     .foregroundStyle(palette.text)
                             }
                             .listRowBackground(palette.surface)
@@ -212,9 +212,12 @@ struct SearchContent: View {
 
     private var countLabel: String {
         let count = results.totalMatches
-        let noun = count == 1 ? "verse" : "verses"
-        let shown = results.verses.count < count ? " · showing \(results.verses.count)" : ""
-        return "\(count.formatted()) \(noun)\(shown)"
+        let total = count.formatted()
+        let shown = results.verses.count
+        if shown < count {
+            return String(localized: "\(total) verses · showing \(shown)", comment: "Search results header: total matches, of which some are listed")
+        }
+        return count == 1 ? String(localized: "1 verse") : String(localized: "\(total) verses")
     }
 
     private var filters: some View {

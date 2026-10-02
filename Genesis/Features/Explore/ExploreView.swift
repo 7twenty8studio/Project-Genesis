@@ -7,9 +7,9 @@ struct ExploreView: View {
         var id: String { rawValue }
         var title: String {
             switch self {
-            case .timeline: "Timeline"
-            case .map: "Map"
-            case .people: "People"
+            case .timeline: String(localized: "Timeline")
+            case .map: String(localized: "Map")
+            case .people: String(localized: "People")
             }
         }
     }

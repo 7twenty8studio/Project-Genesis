@@ -99,7 +99,7 @@ final class EntitlementService {
     func purchase(_ id: PremiumProduct, accountID: UUID? = nil) async -> PurchaseOutcome {
         if products.isEmpty { await loadProducts() }
         guard let product = product(id) else {
-            return .failed("The App Store isn't available right now. Please try again later.")
+            return .failed(String(localized: "The App Store isn't available right now. Please try again later."))
         }
         isPurchasing = true
         defer { isPurchasing = false }
@@ -108,7 +108,7 @@ final class EntitlementService {
             switch try await product.purchase(options: options) {
             case let .success(verification):
                 guard case let .verified(transaction) = verification else {
-                    return .failed("The purchase couldn't be verified.")
+                    return .failed(String(localized: "The purchase couldn't be verified."))
                 }
                 await transaction.finish()
                 await refresh()

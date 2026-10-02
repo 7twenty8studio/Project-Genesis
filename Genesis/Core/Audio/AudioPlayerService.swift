@@ -16,8 +16,8 @@ final class AudioPlayerService {
 
         var title: String {
             switch self {
-            case let .minutes(minutes): "\(minutes) minutes"
-            case .endOfChapter: "End of chapter"
+            case let .minutes(minutes): String(localized: "\(minutes) minutes")
+            case .endOfChapter: String(localized: "End of chapter")
             }
         }
     }
@@ -92,7 +92,7 @@ final class AudioPlayerService {
         switch source {
         case .deviceVoice:
             guard let text = try? library.current.chapter(chapter) else {
-                fail("This chapter couldn't be loaded.")
+                fail(String(localized: "This chapter couldn't be loaded."))
                 return
             }
             state = .playing
@@ -323,8 +323,10 @@ final class AudioPlayerService {
 
     var sourceTitle: String {
         switch source {
-        case .deviceVoice: "\(translation.abbreviation) · Device voice"
-        case let .recording(id): "\(translation.abbreviation) · \(catalog.recording(id: id)?.title ?? "Recording")"
+        case .deviceVoice: return String(localized: "\(translation.abbreviation) · Device voice")
+        case let .recording(id):
+            let title = catalog.recording(id: id)?.title ?? String(localized: "Recording", comment: "Fallback name for a recorded narration")
+            return "\(translation.abbreviation) · \(title)"
         }
     }
 

@@ -51,7 +51,7 @@ final class TopicRepository: Sendable {
         bundle.url(forResource: "Topics", withExtension: "sqlite").flatMap { try? TopicRepository(url: $0) }
     }
 
-    static let attribution = "Topics from Nave's Topical Bible (public domain), via BibleData by Brady Stephenson, CC BY 4.0."
+    static let attribution = String(localized: "Topics from Nave's Topical Bible (public domain), via BibleData by Brady Stephenson, CC BY 4.0.")
 
     /// Topics whose name starts with the query first, then those containing it.
     func search(_ query: String, limit: Int = 12) throws -> [TopicSummary] {

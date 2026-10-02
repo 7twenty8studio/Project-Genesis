@@ -1,0 +1,7493 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "%@ (you)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ (tú)"
+          }
+        }
+      }
+    },
+    "%@ highlight": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resaltado %@"
+          }
+        }
+      }
+    },
+    "%@ highlights": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resaltados %@"
+          }
+        }
+      }
+    },
+    "%@ of %lld free explanations used today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ de %lld explicaciones gratuitas usadas hoy"
+          }
+        }
+      }
+    },
+    "%@ plan": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plan %@"
+          }
+        }
+      }
+    },
+    "%@ starts %@.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ comienza el %@."
+          }
+        }
+      }
+    },
+    "%@ starts soon.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ comienza pronto."
+          }
+        }
+      }
+    },
+    "%@ theme": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tema %@"
+          }
+        }
+      }
+    },
+    "%@ theme, Premium": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tema %@, Premium"
+          }
+        }
+      }
+    },
+    "%@ · %lld mentions": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %lld menciones"
+          }
+        }
+      }
+    },
+    "%@ · 1 mention": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · 1 mención"
+          }
+        }
+      }
+    },
+    "%@ · Device voice": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · Voz del dispositivo"
+          }
+        }
+      }
+    },
+    "%@ · day %lld of %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · día %lld de %lld"
+          }
+        }
+      }
+    },
+    "%@ · starts soon": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · comienza pronto"
+          }
+        }
+      }
+    },
+    "%@, %lld chapters over %lld days.": {
+      "comment": "Custom reading plan summary: books, chapter count, day count",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@, %2$lld capítulos en %3$lld días."
+          }
+        }
+      }
+    },
+    "%@, Premium": {
+      "comment": "Accessibility label for a locked study tool",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@, Premium"
+          }
+        }
+      }
+    },
+    "%@× speed": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Velocidad %@×"
+          }
+        }
+      }
+    },
+    "%lld books": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld libros"
+          }
+        }
+      }
+    },
+    "%lld days": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld días"
+          }
+        }
+      }
+    },
+    "%lld earlier days to catch up on": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld días anteriores por ponerte al día"
+          }
+        }
+      }
+    },
+    "%lld h %lld min": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld h %lld min"
+          }
+        }
+      }
+    },
+    "%lld highlights": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld resaltados"
+          }
+        }
+      }
+    },
+    "%lld min": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld min"
+          }
+        }
+      }
+    },
+    "%lld minutes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld minutos"
+          }
+        }
+      }
+    },
+    "%lld of %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld de %lld"
+          }
+        }
+      }
+    },
+    "%lld of %lld chapters": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld de %lld capítulos"
+          }
+        }
+      }
+    },
+    "%lld of %lld members have read today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld de %lld miembros leyeron hoy"
+          }
+        }
+      }
+    },
+    "%lld of 1 member has read today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld de 1 miembro leyó hoy"
+          }
+        }
+      }
+    },
+    "%lld of 66": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld de 66"
+          }
+        }
+      }
+    },
+    "%lld pages left in chapter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quedan %lld páginas en el capítulo"
+          }
+        }
+      }
+    },
+    "%lld passages": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld pasajes"
+          }
+        }
+      }
+    },
+    "%lld prayers you're holding up": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld oraciones por las que estás orando"
+          }
+        }
+      }
+    },
+    "%lld praying": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld orando"
+          }
+        }
+      }
+    },
+    "%lld pt": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld pt"
+          }
+        }
+      }
+    },
+    "%lld verses": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld versículos"
+          }
+        }
+      }
+    },
+    "%lld verses · showing %lld": {
+      "comment": "Search results header: total matches, of which some are listed",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld versículos · se muestran %lld"
+          }
+        }
+      }
+    },
+    "%lld%% complete": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld%% completado"
+          }
+        }
+      }
+    },
+    "1 earlier day to catch up on": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 día anterior por ponerte al día"
+          }
+        }
+      }
+    },
+    "1 highlight": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 resaltado"
+          }
+        }
+      }
+    },
+    "1 page left in chapter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Queda 1 página en el capítulo"
+          }
+        }
+      }
+    },
+    "1 passage": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 pasaje"
+          }
+        }
+      }
+    },
+    "1 prayer you're holding up": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 oración por la que estás orando"
+          }
+        }
+      }
+    },
+    "1 verse": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 versículo"
+          }
+        }
+      }
+    },
+    "1× speed": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Velocidad 1×"
+          }
+        }
+      }
+    },
+    "A modern, readable translation in everyday English.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una traducción moderna y fácil de leer, en inglés cotidiano."
+          }
+        }
+      }
+    },
+    "A moment to pray": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un momento para orar"
+          }
+        }
+      }
+    },
+    "A precise, literal translation valued for careful study.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una traducción precisa y literal, apreciada para el estudio detallado."
+          }
+        }
+      }
+    },
+    "AI can make mistakes. Weigh these notes against Scripture itself. Explanations aim to be non-denominational and note where Christian traditions differ.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La IA puede equivocarse. Contrasta estas notas con la propia Escritura. Las explicaciones buscan no ser denominacionales e indican dónde difieren las tradiciones cristianas."
+          }
+        }
+      }
+    },
+    "AI-generated study notes · not Scripture": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas de estudio generadas por IA · no son Escritura"
+          }
+        }
+      }
+    },
+    "Aa": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aa"
+          }
+        }
+      }
+    },
+    "About": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acerca de"
+          }
+        }
+      }
+    },
+    "Abusive or hateful": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abusivo u ofensivo"
+          }
+        }
+      }
+    },
+    "Accept the community guidelines first.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primero acepta las normas de la comunidad."
+          }
+        }
+      }
+    },
+    "Account": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuenta"
+          }
+        }
+      }
+    },
+    "Account, sign in to sync": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuenta, inicia sesión para sincronizar"
+          }
+        }
+      }
+    },
+    "Account, signed in": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuenta, sesión iniciada"
+          }
+        }
+      }
+    },
+    "Add a comment": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agrega un comentario"
+          }
+        }
+      }
+    },
+    "Add bookmark": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir marcador"
+          }
+        }
+      }
+    },
+    "Add the Prayer Reminder widget to see your next reminder at a glance.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añade el widget Recordatorio de oración para ver tu próximo recordatorio de un vistazo."
+          }
+        }
+      }
+    },
+    "Add the people and needs you're praying for. Your journal is private to you.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añade las personas y necesidades por las que oras. Tu diario es solo para ti."
+          }
+        }
+      }
+    },
+    "Add to Collection": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir a colección"
+          }
+        }
+      }
+    },
+    "Advanced study assistant": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Asistente de estudio avanzado"
+          }
+        }
+      }
+    },
+    "All": {
+      "comment": "Timeline filter: every era",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todo"
+          }
+        }
+      }
+    },
+    "All Days": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos los días"
+          }
+        }
+      }
+    },
+    "All Places": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos los lugares"
+          }
+        }
+      }
+    },
+    "All Plans": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos los planes"
+          }
+        }
+      }
+    },
+    "Also %@": {
+      "comment": "Other names for a place",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "También %@"
+          }
+        }
+      }
+    },
+    "Also called %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "También llamado %@"
+          }
+        }
+      }
+    },
+    "Amen": {
+      "comment": "Reaction button on a reflection",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amén"
+          }
+        }
+      }
+    },
+    "An interactive timeline from Creation to Revelation, Bible maps with Paul's journeys and the Exodus, and more than 3,000 people with family trees and every verse that mentions them.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una cronología interactiva desde la Creación hasta Apocalipsis, mapas bíblicos con los viajes de Pablo y el Éxodo, y más de 3000 personas con árboles genealógicos y cada versículo que las menciona."
+          }
+        }
+      }
+    },
+    "An interactive timeline, Bible maps and journeys, and a character explorer with family trees.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una cronología interactiva, mapas y viajes bíblicos, y un explorador de personajes con árboles genealógicos."
+          }
+        }
+      }
+    },
+    "And %lld more": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Y %lld más"
+          }
+        }
+      }
+    },
+    "Announcement": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anuncio"
+          }
+        }
+      }
+    },
+    "Announcement Notifications": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notificaciones de anuncios"
+          }
+        }
+      }
+    },
+    "Answered": {
+      "comment": "Prayer journal filter: answered prayers",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Respondida"
+          }
+        }
+      }
+    },
+    "Answered %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Respondida el %@"
+          }
+        }
+      }
+    },
+    "Answered Prayer": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oración respondida"
+          }
+        }
+      }
+    },
+    "Answers are AI-generated study notes, shown apart from the text and never in place of Scripture. They don't take sides between traditions.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las respuestas son notas de estudio generadas por IA, mostradas aparte del texto y nunca en lugar de la Escritura. No toman partido entre tradiciones."
+          }
+        }
+      }
+    },
+    "Anyone with the code can join. Make a new code to stop the old one working.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cualquiera con el código puede unirse. Crea un código nuevo para que el anterior deje de funcionar."
+          }
+        }
+      }
+    },
+    "Apple ID": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ID de Apple"
+          }
+        }
+      }
+    },
+    "Apple didn't return a sign-in token. Please try again.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple no devolvió un token de inicio de sesión. Inténtalo de nuevo."
+          }
+        }
+      }
+    },
+    "Apple's bookish serif": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La serif de libro de Apple"
+          }
+        }
+      }
+    },
+    "As a guest, everything stays on this device. You can sign in any time and your notes will come with you.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Como invitado, todo se queda en este dispositivo. Puedes iniciar sesión cuando quieras y tus notas vendrán contigo."
+          }
+        }
+      }
+    },
+    "Ask your group leader for an invite code, or start a group for your church, small group or family.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pide un código de invitación al líder de tu grupo o crea un grupo para tu iglesia, grupo pequeño o familia."
+          }
+        }
+      }
+    },
+    "Audio": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Audio"
+          }
+        }
+      }
+    },
+    "Audio Settings": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustes de audio"
+          }
+        }
+      }
+    },
+    "Auto": {
+      "comment": "Reader theme name",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automático"
+          }
+        }
+      }
+    },
+    "Automatic": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automática"
+          }
+        }
+      }
+    },
+    "Automatic uses the most natural voice on this device. For a much more natural sound, download a Premium voice (Zoe, Ava, Evan or Nathan, for example) in Settings › Accessibility › Spoken Content › Voices › English, then come back here.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La opción automática usa la voz más natural de este dispositivo. Para un sonido mucho más natural, descarga una voz Premium (por ejemplo, Zoe, Ava, Evan o Nathan) en Ajustes › Accesibilidad › Contenido leído › Voces › Inglés y luego vuelve aquí."
+          }
+        }
+      }
+    },
+    "Available offline": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disponible sin conexión"
+          }
+        }
+      }
+    },
+    "Available to download": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disponibles para descargar"
+          }
+        }
+      }
+    },
+    "Back up with Premium": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haz copia de seguridad con Premium"
+          }
+        }
+      }
+    },
+    "Background": {
+      "comment": "Study assistant action: historical background",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contexto"
+          }
+        }
+      }
+    },
+    "Be kind. Encourage one another and disagree gently.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sé amable. Anímense unos a otros y discrepen con respeto."
+          }
+        }
+      }
+    },
+    "Be the first to share a request.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sé el primero en compartir una petición."
+          }
+        }
+      }
+    },
+    "Before you post, please agree to keep the community a safe, encouraging place for everyone.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antes de publicar, acepta mantener la comunidad como un lugar seguro y alentador para todos."
+          }
+        }
+      }
+    },
+    "Begin Reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comenzar a leer"
+          }
+        }
+      }
+    },
+    "Begin with Genesis": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empezar con Génesis"
+          }
+        }
+      }
+    },
+    "Best Match": {
+      "comment": "Search result order",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más relevantes"
+          }
+        }
+      }
+    },
+    "Best value": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mejor precio"
+          }
+        }
+      }
+    },
+    "Bible Order": {
+      "comment": "Search result order",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orden bíblico"
+          }
+        }
+      }
+    },
+    "Bibles": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biblias"
+          }
+        }
+      }
+    },
+    "Bibles on This Device": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biblias en este dispositivo"
+          }
+        }
+      }
+    },
+    "Biography": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biografía"
+          }
+        }
+      }
+    },
+    "Block": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bloquear"
+          }
+        }
+      }
+    },
+    "Block %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bloquear a %@"
+          }
+        }
+      }
+    },
+    "Block %@?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Bloquear a %@?"
+          }
+        }
+      }
+    },
+    "Blue": {
+      "comment": "Highlight colour",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Azul"
+          }
+        }
+      }
+    },
+    "Bookmark": {
+      "comment": "Verse selection action: bookmark the verse",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marcador"
+          }
+        }
+      }
+    },
+    "Bookmarks": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marcadores"
+          }
+        }
+      }
+    },
+    "Books": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Libros"
+          }
+        }
+      }
+    },
+    "Born %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nació %@"
+          }
+        }
+      }
+    },
+    "Brightness": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brillo"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancelar"
+          }
+        }
+      }
+    },
+    "Category": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Categoría"
+          }
+        }
+      }
+    },
+    "Chapter %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capítulo %lld"
+          }
+        }
+      }
+    },
+    "Chapter progress": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Progreso del capítulo"
+          }
+        }
+      }
+    },
+    "Check your email to confirm your account, then sign in.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revisa tu correo para confirmar tu cuenta y luego inicia sesión."
+          }
+        }
+      }
+    },
+    "Children": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hijos"
+          }
+        }
+      }
+    },
+    "Choose a book and chapter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige un libro y un capítulo"
+          }
+        }
+      }
+    },
+    "Choose a display name first.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primero elige un nombre para mostrar."
+          }
+        }
+      }
+    },
+    "Choose a translation": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige una traducción"
+          }
+        }
+      }
+    },
+    "Choose a voice": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige una voz"
+          }
+        }
+      }
+    },
+    "Choose your features": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige tus funciones"
+          }
+        }
+      }
+    },
+    "Chronological Bible": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biblia cronológica"
+          }
+        }
+      }
+    },
+    "Church": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iglesia"
+          }
+        }
+      }
+    },
+    "Church groups": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grupos de la iglesia"
+          }
+        }
+      }
+    },
+    "City": {
+      "comment": "Kind of Bible place",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ciudad"
+          }
+        }
+      }
+    },
+    "Clean and modern": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limpia y moderna"
+          }
+        }
+      }
+    },
+    "Clear All": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Borrar todo"
+          }
+        }
+      }
+    },
+    "Clearly labelled": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Claramente identificadas"
+          }
+        }
+      }
+    },
+    "Close": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerrar"
+          }
+        }
+      }
+    },
+    "Close %@ for everyone?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Cerrar %@ para todos?"
+          }
+        }
+      }
+    },
+    "Close Group": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerrar grupo"
+          }
+        }
+      }
+    },
+    "Cloud Backup": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copia de seguridad en la nube"
+          }
+        }
+      }
+    },
+    "Cloud Sync": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sincronización en la nube"
+          }
+        }
+      }
+    },
+    "Cloud backup and sync": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copia de seguridad y sincronización en la nube"
+          }
+        }
+      }
+    },
+    "Cloud sync isn't set up in this build.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La sincronización en la nube no está configurada en esta versión."
+          }
+        }
+      }
+    },
+    "Colour": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color"
+          }
+        }
+      }
+    },
+    "Comment": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comentar"
+          }
+        }
+      }
+    },
+    "Comments": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comentarios"
+          }
+        }
+      }
+    },
+    "Community Guidelines": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Normas de la comunidad"
+          }
+        }
+      }
+    },
+    "Completed": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completado"
+          }
+        }
+      }
+    },
+    "Comprehension": {
+      "comment": "Study assistant action: comprehension questions",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comprensión"
+          }
+        }
+      }
+    },
+    "Connect to the internet to see more Bibles.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conéctate a internet para ver más Biblias."
+          }
+        }
+      }
+    },
+    "Context": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contexto"
+          }
+        }
+      }
+    },
+    "Continue": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar"
+          }
+        }
+      }
+    },
+    "Continue Reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar leyendo"
+          }
+        }
+      }
+    },
+    "Continue as Guest": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar como invitado"
+          }
+        }
+      }
+    },
+    "Continue to Next Chapter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar con el siguiente capítulo"
+          }
+        }
+      }
+    },
+    "Contrast": {
+      "comment": "Reader theme name",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contraste"
+          }
+        }
+      }
+    },
+    "Copied": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copiado"
+          }
+        }
+      }
+    },
+    "Copy": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copiar"
+          }
+        }
+      }
+    },
+    "Cream": {
+      "comment": "Reader theme name",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crema"
+          }
+        }
+      }
+    },
+    "Cream, Parchment, Midnight and Sage.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crema, Pergamino, Medianoche y Salvia."
+          }
+        }
+      }
+    },
+    "Create": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crear"
+          }
+        }
+      }
+    },
+    "Create Account": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crear cuenta"
+          }
+        }
+      }
+    },
+    "Create Your Own Plan": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crea tu propio plan"
+          }
+        }
+      }
+    },
+    "Cross References": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Referencias cruzadas"
+          }
+        }
+      }
+    },
+    "Cross references from OpenBible.info, CC-BY.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Referencias cruzadas de OpenBible.info, CC-BY."
+          }
+        }
+      }
+    },
+    "Current translation": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Traducción actual"
+          }
+        }
+      }
+    },
+    "Currently reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leyendo ahora"
+          }
+        }
+      }
+    },
+    "Dates are approximate and follow a traditional chronology. Events before Abraham are shown in order without dates.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las fechas son aproximadas y siguen una cronología tradicional. Los acontecimientos anteriores a Abraham se muestran en orden, sin fechas."
+          }
+        }
+      }
+    },
+    "Day %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Día %lld"
+          }
+        }
+      }
+    },
+    "Day %lld of %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Día %lld de %lld"
+          }
+        }
+      }
+    },
+    "Day %lld · Today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Día %lld · Hoy"
+          }
+        }
+      }
+    },
+    "Day %lld, not read": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Día %lld, sin leer"
+          }
+        }
+      }
+    },
+    "Day %lld, read": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Día %lld, leído"
+          }
+        }
+      }
+    },
+    "Day %lld: %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Día %lld: %@"
+          }
+        }
+      }
+    },
+    "Delete": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar"
+          }
+        }
+      }
+    },
+    "Delete Prayer": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar oración"
+          }
+        }
+      }
+    },
+    "Delete this note?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Eliminar esta nota?"
+          }
+        }
+      }
+    },
+    "Delete this prayer?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Eliminar esta oración?"
+          }
+        }
+      }
+    },
+    "Delete this?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Eliminar esto?"
+          }
+        }
+      }
+    },
+    "Designed for low vision": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diseñada para baja visión"
+          }
+        }
+      }
+    },
+    "Details": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Detalles"
+          }
+        }
+      }
+    },
+    "Details (optional)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Detalles (opcional)"
+          }
+        }
+      }
+    },
+    "Device voice": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voz del dispositivo"
+          }
+        }
+      }
+    },
+    "Died %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Murió %@"
+          }
+        }
+      }
+    },
+    "Discuss each day's reading, and get a notification when a leader posts an announcement.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conversa sobre la lectura de cada día y recibe una notificación cuando un líder publique un anuncio."
+          }
+        }
+      }
+    },
+    "Discussion": {
+      "comment": "Study assistant action: discussion questions",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conversación"
+          }
+        }
+      }
+    },
+    "Display name": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre visible"
+          }
+        }
+      }
+    },
+    "Display names are 1 to 40 characters.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El nombre para mostrar debe tener de 1 a 40 caracteres."
+          }
+        }
+      }
+    },
+    "Done": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "Done selecting": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminar selección"
+          }
+        }
+      }
+    },
+    "Download %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descargar %@"
+          }
+        }
+      }
+    },
+    "Download for Offline Listening": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descargar para escuchar sin conexión"
+          }
+        }
+      }
+    },
+    "Download the Berean Standard Bible from the translation menu. Downloads work offline and stay up to date.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descarga la Berean Standard Bible desde el menú de traducciones. Las descargas funcionan sin conexión y se mantienen actualizadas."
+          }
+        }
+      }
+    },
+    "Download the Reina-Valera 1909 from Bibles on This Device › Get More. It's read aloud in a Spanish voice.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descarga la Reina-Valera 1909 en Biblias en este dispositivo › Obtener más. Se lee en voz alta con una voz en español."
+          }
+        }
+      }
+    },
+    "Downloaded": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descargada"
+          }
+        }
+      }
+    },
+    "Downloading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descargando"
+          }
+        }
+      }
+    },
+    "Downloads aren't set up in this build.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las descargas no están configuradas en esta versión."
+          }
+        }
+      }
+    },
+    "Edit Group": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Editar grupo"
+          }
+        }
+      }
+    },
+    "Email": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Correo electrónico"
+          }
+        }
+      }
+    },
+    "End of chapter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fin del capítulo"
+          }
+        }
+      }
+    },
+    "Enhanced": {
+      "comment": "Voice quality",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mejorada"
+          }
+        }
+      }
+    },
+    "Event": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acontecimiento"
+          }
+        }
+      }
+    },
+    "Events": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acontecimientos"
+          }
+        }
+      }
+    },
+    "Events Here": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acontecimientos aquí"
+          }
+        }
+      }
+    },
+    "Every Bible here works offline.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todas estas Biblias funcionan sin conexión."
+          }
+        }
+      }
+    },
+    "Every day": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos los días"
+          }
+        }
+      }
+    },
+    "Everyone agrees to the community guidelines. Report or block anyone from the … menu on any post.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos aceptan las normas de la comunidad. Reporta o bloquea a cualquiera desde el menú … de cualquier publicación."
+          }
+        }
+      }
+    },
+    "Everyone sees the same day's reading, who has read it, and a discussion for each day.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos ven la lectura del mismo día, quién la ha leído y una conversación para cada día."
+          }
+        }
+      }
+    },
+    "Everyone signed in to Genesis can see and pray for these.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos los que iniciaron sesión en Genesis pueden verlas y orar por ellas."
+          }
+        }
+      }
+    },
+    "Everything else in Genesis works on every iPhone and iPad that runs iOS 26. Groups, the community, sync and study notes need an internet connection; reading, listening with the device voice, search and your notes work offline.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todo lo demás en Genesis funciona en cualquier iPhone y iPad con iOS 26. Los grupos, la comunidad, la sincronización y las notas de estudio necesitan conexión a internet; la lectura, escuchar con la voz del dispositivo, la búsqueda y tus notas funcionan sin conexión."
+          }
+        }
+      }
+    },
+    "Explain": {
+      "comment": "Study assistant action",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Explicar"
+          }
+        }
+      }
+    },
+    "Explain a passage": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Explica un pasaje"
+          }
+        }
+      }
+    },
+    "Explore": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Explorar"
+          }
+        }
+      }
+    },
+    "Explore the Bible's story, places and people.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Explora la historia, los lugares y las personas de la Biblia."
+          }
+        }
+      }
+    },
+    "Family": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Familia"
+          }
+        }
+      }
+    },
+    "Family Tree": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Árbol genealógico"
+          }
+        }
+      }
+    },
+    "Father": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Padre"
+          }
+        }
+      }
+    },
+    "Favourite Books": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Libros favoritos"
+          }
+        }
+      }
+    },
+    "Favourite Topics": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temas favoritos"
+          }
+        }
+      }
+    },
+    "Features": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Funciones"
+          }
+        }
+      }
+    },
+    "Find a book": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar un libro"
+          }
+        }
+      }
+    },
+    "Find a person": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar una persona"
+          }
+        }
+      }
+    },
+    "First mentioned in %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mencionado por primera vez en %@"
+          }
+        }
+      }
+    },
+    "Five psalms a day, a month of prayer and praise.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cinco salmos al día: un mes de oración y alabanza."
+          }
+        }
+      }
+    },
+    "Follow Along": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seguir la lectura"
+          }
+        }
+      }
+    },
+    "Follow Along turns the pages and marks the verse being read (device voice), or opens each chapter as it plays (recorded narration).": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seguir la lectura pasa las páginas y marca el versículo que se lee (voz del dispositivo), o abre cada capítulo mientras se reproduce (narración grabada)."
+          }
+        }
+      }
+    },
+    "Follow Dynamic Type": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usar el tamaño de texto del sistema"
+          }
+        }
+      }
+    },
+    "Font": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Letra"
+          }
+        }
+      }
+    },
+    "For Children": {
+      "comment": "Study assistant action",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para niños"
+          }
+        }
+      }
+    },
+    "Forgot password?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Olvidaste tu contraseña?"
+          }
+        }
+      }
+    },
+    "Free includes %lld notes.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La versión gratuita incluye %lld notas."
+          }
+        }
+      }
+    },
+    "Free includes %lld prayer requests.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La versión gratuita incluye %lld peticiones de oración."
+          }
+        }
+      }
+    },
+    "Friends": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amigos"
+          }
+        }
+      }
+    },
+    "From Easton's Bible Dictionary (1897)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Del Diccionario Bíblico de Easton (1897)"
+          }
+        }
+      }
+    },
+    "Genesis": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genesis"
+          }
+        }
+      }
+    },
+    "Genesis Premium": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genesis Premium"
+          }
+        }
+      }
+    },
+    "Genesis en español": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genesis en español"
+          }
+        }
+      }
+    },
+    "Genesis in Spanish": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genesis en español"
+          }
+        }
+      }
+    },
+    "Genesis is available in English and Spanish. Tap to choose in the Settings app; Genesis restarts in the new language.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genesis está disponible en inglés y español. Toca para elegir en la app Ajustes; Genesis se reinicia en el nuevo idioma."
+          }
+        }
+      }
+    },
+    "Genesis offers public-domain translations. More will come as licenses allow.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genesis ofrece traducciones de dominio público. Habrá más a medida que las licencias lo permitan."
+          }
+        }
+      }
+    },
+    "Genesis reads aloud and turns the pages as it goes, even with your phone locked.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genesis lee en voz alta y pasa las páginas a medida que avanza, incluso con el teléfono bloqueado."
+          }
+        }
+      }
+    },
+    "Genesis, your way": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genesis, a tu manera"
+          }
+        }
+      }
+    },
+    "Get More": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Obtener más"
+          }
+        }
+      }
+    },
+    "Go deeper with Premium": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Profundiza con Premium"
+          }
+        }
+      }
+    },
+    "Go to %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ir a %@"
+          }
+        }
+      }
+    },
+    "Good afternoon": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buenas tardes"
+          }
+        }
+      }
+    },
+    "Good evening": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buenas noches"
+          }
+        }
+      }
+    },
+    "Good morning": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buenos días"
+          }
+        }
+      }
+    },
+    "Green": {
+      "comment": "Highlight colour",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verde"
+          }
+        }
+      }
+    },
+    "Group highlights into collections in the Library, and your favourite topics appear here.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agrupa los resaltados en colecciones en la Biblioteca y tus temas favoritos aparecerán aquí."
+          }
+        }
+      }
+    },
+    "Group name": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre del grupo"
+          }
+        }
+      }
+    },
+    "Group plan": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plan del grupo"
+          }
+        }
+      }
+    },
+    "Groups": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grupos"
+          }
+        }
+      }
+    },
+    "Groups & Community": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grupos y comunidad"
+          }
+        }
+      }
+    },
+    "Groups and the community aren't set up in this build.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los grupos y la comunidad no están configurados en esta versión."
+          }
+        }
+      }
+    },
+    "Groups aren't available right now.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los grupos no están disponibles en este momento."
+          }
+        }
+      }
+    },
+    "Health": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salud"
+          }
+        }
+      }
+    },
+    "Hear any chapter read aloud, with the page following along.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escucha cualquier capítulo en voz alta mientras la página avanza contigo."
+          }
+        }
+      }
+    },
+    "Here's what has been added to Genesis.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esto es lo nuevo en Genesis."
+          }
+        }
+      }
+    },
+    "Highlight %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resaltar en %@"
+          }
+        }
+      }
+    },
+    "Highlight, note, share": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resalta, anota, comparte"
+          }
+        }
+      }
+    },
+    "Highlights": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resaltados"
+          }
+        }
+      }
+    },
+    "Highlights, notes, bookmarks, reading plans and prayers sync automatically. Prayers are private to your account.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los resaltados, notas, marcadores, planes de lectura y oraciones se sincronizan automáticamente. Las oraciones son privadas de tu cuenta."
+          }
+        }
+      }
+    },
+    "Home": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inicio"
+          }
+        }
+      }
+    },
+    "How was it answered?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Cómo fue respondida?"
+          }
+        }
+      }
+    },
+    "I Agree": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acepto"
+          }
+        }
+      }
+    },
+    "I prayed": {
+      "comment": "Reaction button on a prayer request",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oré"
+          }
+        }
+      }
+    },
+    "If an account exists for that email, a reset link is on its way.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Si existe una cuenta con ese correo, te enviaremos un enlace para restablecerla."
+          }
+        }
+      }
+    },
+    "In the reader, long-press a verse and pick a colour.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En el lector, mantén pulsado un versículo y elige un color."
+          }
+        }
+      }
+    },
+    "Included": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Incluida"
+          }
+        }
+      }
+    },
+    "Insights": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estadísticas"
+          }
+        }
+      }
+    },
+    "Invite People": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitar personas"
+          }
+        }
+      }
+    },
+    "Invite code": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Código de invitación"
+          }
+        }
+      }
+    },
+    "Island": {
+      "comment": "Kind of Bible place",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Isla"
+          }
+        }
+      }
+    },
+    "It may have been removed on another device.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puede que se haya eliminado en otro dispositivo."
+          }
+        }
+      }
+    },
+    "John 3": {
+      "comment": "Bible reference: the Gospel of John, chapter 3",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Juan 3"
+          }
+        }
+      }
+    },
+    "John 3–5": {
+      "comment": "Bible reference: the Gospel of John, chapters 3 to 5",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Juan 3–5"
+          }
+        }
+      }
+    },
+    "Join": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unirse"
+          }
+        }
+      }
+    },
+    "Join %@ on Genesis to read and pray together. Open Together › Join with an Invite Code and enter %@.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Únete a %@ en Genesis para leer y orar juntos. Abre Juntos › Unirse con un código de invitación e ingresa %@."
+          }
+        }
+      }
+    },
+    "Join a Group": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unirse a un grupo"
+          }
+        }
+      }
+    },
+    "Join with an Invite Code": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unirse con un código de invitación"
+          }
+        }
+      }
+    },
+    "Join your church's group to follow a reading plan together, share prayer requests and talk about the day's passage. Sign in to get started; it's free.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Únete al grupo de tu iglesia para seguir juntos un plan de lectura, compartir peticiones de oración y conversar sobre el pasaje del día. Inicia sesión para comenzar; es gratis."
+          }
+        }
+      }
+    },
+    "Journal": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diario"
+          }
+        }
+      }
+    },
+    "Journeys": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recorridos"
+          }
+        }
+      }
+    },
+    "Keep Genesis as simple as you like: turn listening, plans, explore and more on or off in Settings › Features (the gear on Home).": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantén Genesis tan sencillo como quieras: activa o desactiva Escuchar, Planes, Explorar y más en Ajustes › Funciones (el engranaje en Inicio)."
+          }
+        }
+      }
+    },
+    "Keep It Simple": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantenerlo sencillo"
+          }
+        }
+      }
+    },
+    "Keep a private record of what you're praying for.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lleva un registro privado de lo que estás orando."
+          }
+        }
+      }
+    },
+    "Keep highlights, notes, plans and prayers on all your devices.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ten tus resaltados, notas, planes y oraciones en todos tus dispositivos."
+          }
+        }
+      }
+    },
+    "Keep others' private details private. Don't share anyone's prayer request outside Genesis.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantén en privado los datos personales de los demás. No compartas la petición de oración de nadie fuera de Genesis."
+          }
+        }
+      }
+    },
+    "Keep your notes safe": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantén tus notas a salvo"
+          }
+        }
+      }
+    },
+    "Kind": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tipo"
+          }
+        }
+      }
+    },
+    "Kind and safe": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amable y seguro"
+          }
+        }
+      }
+    },
+    "Landmark": {
+      "comment": "Kind of Bible place",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Punto de referencia"
+          }
+        }
+      }
+    },
+    "Language": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Idioma"
+          }
+        }
+      }
+    },
+    "Larger text": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texto más grande"
+          }
+        }
+      }
+    },
+    "Last page in chapter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Última página del capítulo"
+          }
+        }
+      }
+    },
+    "Layout": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diseño"
+          }
+        }
+      }
+    },
+    "Leader": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Líder"
+          }
+        }
+      }
+    },
+    "Leave": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salir"
+          }
+        }
+      }
+    },
+    "Leave %@?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Salir de %@?"
+          }
+        }
+      }
+    },
+    "Leave Group": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salir del grupo"
+          }
+        }
+      }
+    },
+    "Left-handed mode": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modo para zurdos"
+          }
+        }
+      }
+    },
+    "Library": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biblioteca"
+          }
+        }
+      }
+    },
+    "Line spacing": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Interlineado"
+          }
+        }
+      }
+    },
+    "Listen": {
+      "comment": "Optional feature: hear chapters read aloud",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escuchar"
+          }
+        }
+      }
+    },
+    "Listen faster or slower, and stop after a set time or at the end of the chapter.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escucha más rápido o más lento, y detén la lectura después de un tiempo o al final del capítulo."
+          }
+        }
+      }
+    },
+    "Listen to any chapter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escucha cualquier capítulo"
+          }
+        }
+      }
+    },
+    "Listen to the Bible": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escucha la Biblia"
+          }
+        }
+      }
+    },
+    "Listen to this chapter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escuchar este capítulo"
+          }
+        }
+      }
+    },
+    "Listening can use %lld natural-sounding voices installed on this device.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para escuchar puedes usar %lld voces naturales instaladas en este dispositivo."
+          }
+        }
+      }
+    },
+    "Listening can use 1 natural-sounding voice installed on this device.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para escuchar puedes usar 1 voz natural instalada en este dispositivo."
+          }
+        }
+      }
+    },
+    "Listening options": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opciones de escucha"
+          }
+        }
+      }
+    },
+    "Listening uses the standard voice. For a more natural sound, download an Enhanced voice in Settings › Accessibility › Spoken Content › Voices.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para escuchar se usa la voz estándar. Para un sonido más natural, descarga una voz mejorada en Ajustes › Accesibilidad › Contenido leído › Voces."
+          }
+        }
+      }
+    },
+    "Loading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cargando"
+          }
+        }
+      }
+    },
+    "Long-press a verse and choose Note, or add a note for the whole chapter.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantén pulsado un versículo y elige Nota, o añade una nota para todo el capítulo."
+          }
+        }
+      }
+    },
+    "Long-press a verse, then tap Explain for a short, plain-language explanation. Free accounts include %lld a day after signing in.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantén pulsado un versículo y toca Explicar para ver una explicación breve y sencilla. Las cuentas gratuitas incluyen %lld al día después de iniciar sesión."
+          }
+        }
+      }
+    },
+    "Make Genesis yours": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haz tuyo Genesis"
+          }
+        }
+      }
+    },
+    "Make Leader": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hacer líder"
+          }
+        }
+      }
+    },
+    "Make Member": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hacer miembro"
+          }
+        }
+      }
+    },
+    "Make someone else a leader first.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primero haz líder a otra persona."
+          }
+        }
+      }
+    },
+    "Manage %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Administrar a %@"
+          }
+        }
+      }
+    },
+    "Manage Subscription": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gestionar suscripción"
+          }
+        }
+      }
+    },
+    "Map": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mapa"
+          }
+        }
+      }
+    },
+    "Map of %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mapa de %@"
+          }
+        }
+      }
+    },
+    "Margins": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Márgenes"
+          }
+        }
+      }
+    },
+    "Mark answered": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marcar como respondida"
+          }
+        }
+      }
+    },
+    "Mark as Answered": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marcar como respondida"
+          }
+        }
+      }
+    },
+    "Mark as Read": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marcar como leído"
+          }
+        }
+      }
+    },
+    "Mark as read": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marcar como leído"
+          }
+        }
+      }
+    },
+    "Matthew through Revelation, about three chapters a day.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De Mateo a Apocalipsis, unos tres capítulos al día."
+          }
+        }
+      }
+    },
+    "Matthew, Mark, Luke and John: the life of Jesus in a month.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mateo, Marcos, Lucas y Juan: la vida de Jesús en un mes."
+          }
+        }
+      }
+    },
+    "Members": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Miembros"
+          }
+        }
+      }
+    },
+    "Members lose access to its prayer requests, discussion and announcements.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los miembros perderán el acceso a sus peticiones de oración, conversaciones y anuncios."
+          }
+        }
+      }
+    },
+    "Members who allow notifications get one.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los miembros que permiten notificaciones recibirán una."
+          }
+        }
+      }
+    },
+    "Mentioned In": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mencionado en"
+          }
+        }
+      }
+    },
+    "Midnight": {
+      "comment": "Reader theme name",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medianoche"
+          }
+        }
+      }
+    },
+    "Mode": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modo"
+          }
+        }
+      }
+    },
+    "Monthly": {
+      "comment": "Subscription period",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mensual"
+          }
+        }
+      }
+    },
+    "More": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más"
+          }
+        }
+      }
+    },
+    "More Bibles": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más Biblias"
+          }
+        }
+      }
+    },
+    "More Bibles…": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más Biblias…"
+          }
+        }
+      }
+    },
+    "Mother": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Madre"
+          }
+        }
+      }
+    },
+    "Mountain": {
+      "comment": "Kind of Bible place",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monte"
+          }
+        }
+      }
+    },
+    "Move Back to Praying": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volver a En oración"
+          }
+        }
+      }
+    },
+    "My Plan": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mi plan"
+          }
+        }
+      }
+    },
+    "Name": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre"
+          }
+        }
+      }
+    },
+    "Narration": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Narración"
+          }
+        }
+      }
+    },
+    "Narration · %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Narración · %@"
+          }
+        }
+      }
+    },
+    "Narrow": {
+      "comment": "Reader margins",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estrechos"
+          }
+        }
+      }
+    },
+    "New Announcement": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nuevo anuncio"
+          }
+        }
+      }
+    },
+    "New Code": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nuevo código"
+          }
+        }
+      }
+    },
+    "New Collection": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nueva colección"
+          }
+        }
+      }
+    },
+    "New Collection…": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nueva colección…"
+          }
+        }
+      }
+    },
+    "New Note": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nueva nota"
+          }
+        }
+      }
+    },
+    "New Plan": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nuevo plan"
+          }
+        }
+      }
+    },
+    "New Prayer": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nueva oración"
+          }
+        }
+      }
+    },
+    "New Testament": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nuevo Testamento"
+          }
+        }
+      }
+    },
+    "New Testament in 90 Days": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nuevo Testamento en 90 días"
+          }
+        }
+      }
+    },
+    "New collection": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nueva colección"
+          }
+        }
+      }
+    },
+    "News": {
+      "comment": "Group tab: announcements from the group's leaders",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anuncios"
+          }
+        }
+      }
+    },
+    "Next chapter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capítulo siguiente"
+          }
+        }
+      }
+    },
+    "Next page": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Página siguiente"
+          }
+        }
+      }
+    },
+    "No abuse, harassment, hate, sexual content or threats. There's no tolerance for objectionable content or abusive users.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nada de abuso, acoso, odio, contenido sexual ni amenazas. No se tolera el contenido inaceptable ni a los usuarios abusivos."
+          }
+        }
+      }
+    },
+    "No active subscription was found for this Apple Account.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se encontró ninguna suscripción activa para esta cuenta de Apple."
+          }
+        }
+      }
+    },
+    "No advertising, spam or fundraising.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nada de publicidad, spam ni recaudación de fondos."
+          }
+        }
+      }
+    },
+    "No announcements yet.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay anuncios."
+          }
+        }
+      }
+    },
+    "No answered prayers yet": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay oraciones respondidas"
+          }
+        }
+      }
+    },
+    "No bookmarks yet": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay marcadores"
+          }
+        }
+      }
+    },
+    "No cross references for this verse.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay referencias cruzadas para este versículo."
+          }
+        }
+      }
+    },
+    "No groups yet": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay grupos"
+          }
+        }
+      }
+    },
+    "No highlights yet": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay resaltados"
+          }
+        }
+      }
+    },
+    "No notes in %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay notas en %@"
+          }
+        }
+      }
+    },
+    "No notes yet": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay notas"
+          }
+        }
+      }
+    },
+    "No people, places or events are recorded for this chapter.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay personas, lugares ni acontecimientos registrados para este capítulo."
+          }
+        }
+      }
+    },
+    "No prayer requests": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay peticiones de oración"
+          }
+        }
+      }
+    },
+    "No prayer requests yet": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay peticiones de oración"
+          }
+        }
+      }
+    },
+    "No prayer requests yet.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay peticiones de oración."
+          }
+        }
+      }
+    },
+    "No reflections yet": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay reflexiones"
+          }
+        }
+      }
+    },
+    "No verses found in the %@. Try fewer words or a different spelling.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se encontraron versículos en la %@. Prueba con menos palabras o con otra ortografía."
+          }
+        }
+      }
+    },
+    "Not a passage Genesis recognises": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genesis no reconoce este pasaje"
+          }
+        }
+      }
+    },
+    "Not answered yet": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún sin respuesta"
+          }
+        }
+      }
+    },
+    "Not available": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No disponible"
+          }
+        }
+      }
+    },
+    "Not downloaded": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No descargada"
+          }
+        }
+      }
+    },
+    "Note": {
+      "comment": "Verse selection action: add a note",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nota"
+          }
+        }
+      }
+    },
+    "Note on %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nota sobre %@"
+          }
+        }
+      }
+    },
+    "Notes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas"
+          }
+        }
+      }
+    },
+    "Nothing matches": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay coincidencias"
+          }
+        }
+      }
+    },
+    "Notifications are off for Genesis. Turn them on in Settings to get reminders.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las notificaciones de Genesis están desactivadas. Actívalas en Ajustes para recibir recordatorios."
+          }
+        }
+      }
+    },
+    "OK": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "Observations, questions, connections…": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Observaciones, preguntas, conexiones…"
+          }
+        }
+      }
+    },
+    "Old Testament": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antiguo Testamento"
+          }
+        }
+      }
+    },
+    "Old and New Testament readings each day, about 15 minutes.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lecturas del Antiguo y del Nuevo Testamento cada día, unos 15 minutos."
+          }
+        }
+      }
+    },
+    "On this device": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En este dispositivo"
+          }
+        }
+      }
+    },
+    "On. You can change this in Settings › Features.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activado. Puedes cambiarlo en Ajustes › Funciones."
+          }
+        }
+      }
+    },
+    "Only group leaders can do that.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solo los líderes del grupo pueden hacer eso."
+          }
+        }
+      }
+    },
+    "Only members of this group can see these.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solo los miembros de este grupo pueden verlas."
+          }
+        }
+      }
+    },
+    "Open": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir"
+          }
+        }
+      }
+    },
+    "Opens the passage in the reader": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abre el pasaje en el lector"
+          }
+        }
+      }
+    },
+    "Options for %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opciones para %@"
+          }
+        }
+      }
+    },
+    "Or start with the Gospel of John": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O empieza con el Evangelio de Juan"
+          }
+        }
+      }
+    },
+    "Orange": {
+      "comment": "Highlight colour",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Naranja"
+          }
+        }
+      }
+    },
+    "Order": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orden"
+          }
+        }
+      }
+    },
+    "Page Curl": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasar hoja"
+          }
+        }
+      }
+    },
+    "Page turn": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paso de página"
+          }
+        }
+      }
+    },
+    "Pages": {
+      "comment": "Reading mode: page by page",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Páginas"
+          }
+        }
+      }
+    },
+    "Panel": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Panel"
+          }
+        }
+      }
+    },
+    "Paper": {
+      "comment": "Reader theme name",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Papel"
+          }
+        }
+      }
+    },
+    "Paragraph spacing": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Espacio entre párrafos"
+          }
+        }
+      }
+    },
+    "Paragraphs": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Párrafos"
+          }
+        }
+      }
+    },
+    "Parchment": {
+      "comment": "Reader theme name",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pergamino"
+          }
+        }
+      }
+    },
+    "Parents": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Padres"
+          }
+        }
+      }
+    },
+    "Passage (optional), e.g. Psalm 23": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasaje (opcional), p. ej., Salmo 23"
+          }
+        }
+      }
+    },
+    "Password": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contraseña"
+          }
+        }
+      }
+    },
+    "Password (6+ characters)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contraseña (6 caracteres o más)"
+          }
+        }
+      }
+    },
+    "Path": {
+      "comment": "Kind of Bible place",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Camino"
+          }
+        }
+      }
+    },
+    "Pause": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausar"
+          }
+        }
+      }
+    },
+    "Pause listening": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausar la escucha"
+          }
+        }
+      }
+    },
+    "Paused": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En pausa"
+          }
+        }
+      }
+    },
+    "Payment is charged to your Apple Account. The subscription renews automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel it in Settings > Apple Account > Subscriptions.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El pago se carga a tu cuenta de Apple. La suscripción se renueva automáticamente salvo que la canceles al menos 24 horas antes del final del periodo actual. Gestiónala o cancélala en Ajustes > Cuenta de Apple > Suscripciones."
+          }
+        }
+      }
+    },
+    "People": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Personas"
+          }
+        }
+      }
+    },
+    "People, places and events from Theographic Bible Metadata (CC BY-SA 4.0). Map locations from OpenBible.info (CC BY 4.0). Descriptions from Easton's Bible Dictionary (1897).": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Personas, lugares y acontecimientos de Theographic Bible Metadata (CC BY-SA 4.0). Ubicaciones del mapa de OpenBible.info (CC BY 4.0). Descripciones del Easton's Bible Dictionary (1897)."
+          }
+        }
+      }
+    },
+    "People, places and events in this chapter, with maps and the timeline.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Personas, lugares y acontecimientos de este capítulo, con mapas y la cronología."
+          }
+        }
+      }
+    },
+    "Personal": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Personal"
+          }
+        }
+      }
+    },
+    "Pink": {
+      "comment": "Highlight colour",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rosa"
+          }
+        }
+      }
+    },
+    "Place": {
+      "comment": "Kind of Bible place",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lugar"
+          }
+        }
+      }
+    },
+    "Places": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lugares"
+          }
+        }
+      }
+    },
+    "Plan": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plan"
+          }
+        }
+      }
+    },
+    "Plan complete": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plan completado"
+          }
+        }
+      }
+    },
+    "Plan not found": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se encontró el plan"
+          }
+        }
+      }
+    },
+    "Plan progress": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Progreso del plan"
+          }
+        }
+      }
+    },
+    "Plans & Prayer": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Planes y oración"
+          }
+        }
+      }
+    },
+    "Play": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reproducir"
+          }
+        }
+      }
+    },
+    "Playback": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reproducción"
+          }
+        }
+      }
+    },
+    "Playing": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reproduciendo"
+          }
+        }
+      }
+    },
+    "Please rephrase. Some words aren't allowed in Genesis.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escríbelo de otra forma. Algunas palabras no están permitidas en Genesis."
+          }
+        }
+      }
+    },
+    "Post": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Publicar"
+          }
+        }
+      }
+    },
+    "Post anonymously": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Publicar de forma anónima"
+          }
+        }
+      }
+    },
+    "Posts are public to everyone signed in to Genesis. You can block anyone, and report any post or comment.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las publicaciones son visibles para todos los que iniciaron sesión en Genesis. Puedes bloquear a cualquiera y reportar cualquier publicación o comentario."
+          }
+        }
+      }
+    },
+    "Pray for each other": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oren unos por otros"
+          }
+        }
+      }
+    },
+    "Prayed": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oré"
+          }
+        }
+      }
+    },
+    "Prayer": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oración"
+          }
+        }
+      }
+    },
+    "Prayer Journal": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diario de oración"
+          }
+        }
+      }
+    },
+    "Prayer Request": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Petición de oración"
+          }
+        }
+      }
+    },
+    "Prayer Wall": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Muro de oración"
+          }
+        }
+      }
+    },
+    "Prayer on your Lock Screen": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oración en tu pantalla bloqueada"
+          }
+        }
+      }
+    },
+    "Prayer wall": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Muro de oración"
+          }
+        }
+      }
+    },
+    "Praying": {
+      "comment": "Prayer journal filter: prayers still being prayed",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En oración"
+          }
+        }
+      }
+    },
+    "Premium": {
+      "comment": "Voice quality",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium"
+          }
+        }
+      }
+    },
+    "Premium restored.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium restaurado."
+          }
+        }
+      }
+    },
+    "Premium themes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temas Premium"
+          }
+        }
+      }
+    },
+    "Preparing study notes…": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparando notas de estudio…"
+          }
+        }
+      }
+    },
+    "Press and hold a verse to highlight it, add a note, copy or share it.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantén presionado un versículo para resaltarlo, añadir una nota, copiarlo o compartirlo."
+          }
+        }
+      }
+    },
+    "Previous chapter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capítulo anterior"
+          }
+        }
+      }
+    },
+    "Previous page": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Página anterior"
+          }
+        }
+      }
+    },
+    "Privacy Policy": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Política de privacidad"
+          }
+        }
+      }
+    },
+    "Progress": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Progreso"
+          }
+        }
+      }
+    },
+    "Progress through %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Progreso en %@"
+          }
+        }
+      }
+    },
+    "Psalms 119:105": {
+      "comment": "Bible reference",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salmos 119:105"
+          }
+        }
+      }
+    },
+    "Psalms in 30 Days": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salmos en 30 días"
+          }
+        }
+      }
+    },
+    "Purple": {
+      "comment": "Highlight colour",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Morado"
+          }
+        }
+      }
+    },
+    "Read": {
+      "comment": "Section title: chapters to read",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leer"
+          }
+        }
+      }
+    },
+    "Read %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leer %@"
+          }
+        }
+      }
+    },
+    "Read a plan together": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leer un plan juntos"
+          }
+        }
+      }
+    },
+    "Read and pray together": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lean y oren juntos"
+          }
+        }
+      }
+    },
+    "Read and pray with your church group, and the community prayer wall.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee y ora con tu grupo de la iglesia y en el muro de oración de la comunidad."
+          }
+        }
+      }
+    },
+    "Read more": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leer más"
+          }
+        }
+      }
+    },
+    "Read the whole Bible in a year, or a book at a time.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee toda la Biblia en un año, o un libro a la vez."
+          }
+        }
+      }
+    },
+    "Read together": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lean juntos"
+          }
+        }
+      }
+    },
+    "Reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lectura"
+          }
+        }
+      }
+    },
+    "Reading Plan": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plan de lectura"
+          }
+        }
+      }
+    },
+    "Reading Plans": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Planes de lectura"
+          }
+        }
+      }
+    },
+    "Reading Time, Last Two Weeks": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiempo de lectura, últimas dos semanas"
+          }
+        }
+      }
+    },
+    "Reading insights": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estadísticas de lectura"
+          }
+        }
+      }
+    },
+    "Reading mode": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modo de lectura"
+          }
+        }
+      }
+    },
+    "Reading plan": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plan de lectura"
+          }
+        }
+      }
+    },
+    "Reading plans and a private prayer journal on your Home screen.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Planes de lectura y un diario de oración privado en tu pantalla de Inicio."
+          }
+        }
+      }
+    },
+    "Reading settings": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustes de lectura"
+          }
+        }
+      }
+    },
+    "Reading settings such as font, theme and page turns are in the reader under Aa.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los ajustes de lectura, como la letra, el tema y el paso de página, están en el lector, en Aa."
+          }
+        }
+      }
+    },
+    "Reading time over the last two weeks: %@ in total": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiempo de lectura en las últimas dos semanas: %@ en total"
+          }
+        }
+      }
+    },
+    "Reading, highlights, notes and search are always here. Choose anything else you'd like; you can change this any time in Settings.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La lectura, los resaltados, las notas y la búsqueda siempre están aquí. Elige lo que quieras además; puedes cambiarlo cuando quieras en Ajustes."
+          }
+        }
+      }
+    },
+    "Reading, search and the full Bible stay free, always.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La lectura, la búsqueda y la Biblia completa siguen siendo gratis, siempre."
+          }
+        }
+      }
+    },
+    "Recent Notes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas recientes"
+          }
+        }
+      }
+    },
+    "Recently Highlighted": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resaltados recientes"
+          }
+        }
+      }
+    },
+    "Recorded narration isn't available in this build.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La narración grabada no está disponible en esta versión."
+          }
+        }
+      }
+    },
+    "Recorded narration needs an internet connection, or download the book first.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La narración grabada necesita conexión a internet, o descarga el libro primero."
+          }
+        }
+      }
+    },
+    "Recorded narration streams over the internet. Download books to listen offline.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La narración grabada se transmite por internet. Descarga libros para escuchar sin conexión."
+          }
+        }
+      }
+    },
+    "Recorded · %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grabada · %@"
+          }
+        }
+      }
+    },
+    "Recording": {
+      "comment": "Fallback name for a recorded narration",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grabación"
+          }
+        }
+      }
+    },
+    "Reflection": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reflexión"
+          }
+        }
+      }
+    },
+    "Reflections": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reflexiones"
+          }
+        }
+      }
+    },
+    "Region": {
+      "comment": "Kind of Bible place",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Región"
+          }
+        }
+      }
+    },
+    "Regular": {
+      "comment": "Reader margins",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Normales"
+          }
+        }
+      }
+    },
+    "Reina-Valera 1909": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reina-Valera 1909"
+          }
+        }
+      }
+    },
+    "Reinstall Genesis to restore the timeline, maps and people.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reinstala Genesis para restaurar la cronología, los mapas y las personas."
+          }
+        }
+      }
+    },
+    "Related": {
+      "comment": "Panel title: related passages (cross-references)",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Relacionados"
+          }
+        }
+      }
+    },
+    "Related passages": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasajes relacionados"
+          }
+        }
+      }
+    },
+    "Remind me to pray": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recordarme orar"
+          }
+        }
+      }
+    },
+    "Reminder set": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recordatorio activado"
+          }
+        }
+      }
+    },
+    "Reminders show only the title above, never your prayer.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los recordatorios solo muestran el título de arriba, nunca tu oración."
+          }
+        }
+      }
+    },
+    "Remove": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar"
+          }
+        }
+      }
+    },
+    "Remove Highlight": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar resaltado"
+          }
+        }
+      }
+    },
+    "Remove Plan": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar plan"
+          }
+        }
+      }
+    },
+    "Remove bookmark": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar marcador"
+          }
+        }
+      }
+    },
+    "Remove from Collection": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar de la colección"
+          }
+        }
+      }
+    },
+    "Remove from Group": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar del grupo"
+          }
+        }
+      }
+    },
+    "Remove from This Device": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar de este dispositivo"
+          }
+        }
+      }
+    },
+    "Remove highlight": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar resaltado"
+          }
+        }
+      }
+    },
+    "Remove this plan?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Quitar este plan?"
+          }
+        }
+      }
+    },
+    "Renews or ends on %@.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se renueva o termina el %@."
+          }
+        }
+      }
+    },
+    "Report": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reportar"
+          }
+        }
+      }
+    },
+    "Report anything that breaks these rules. Reported posts are reviewed, and people who break them are removed.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reporta todo lo que incumpla estas normas. Las publicaciones reportadas se revisan, y quienes las incumplen son expulsados."
+          }
+        }
+      }
+    },
+    "Report this?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Reportar esto?"
+          }
+        }
+      }
+    },
+    "Reports are private. It will be hidden for you and reviewed.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los reportes son privados. Se ocultará para ti y se revisará."
+          }
+        }
+      }
+    },
+    "Reset to Defaults": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restablecer valores predeterminados"
+          }
+        }
+      }
+    },
+    "Restart": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reiniciar"
+          }
+        }
+      }
+    },
+    "Restart Plan": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reiniciar plan"
+          }
+        }
+      }
+    },
+    "Restart from today?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Reiniciar desde hoy?"
+          }
+        }
+      }
+    },
+    "Restore Purchases": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurar compras"
+          }
+        }
+      }
+    },
+    "Sage": {
+      "comment": "Reader theme name",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvia"
+          }
+        }
+      }
+    },
+    "Save": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar"
+          }
+        }
+      }
+    },
+    "Save %lld%%": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ahorra %lld%%"
+          }
+        }
+      }
+    },
+    "Save 33%%": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ahorra 33%%"
+          }
+        }
+      }
+    },
+    "Scope": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alcance"
+          }
+        }
+      }
+    },
+    "Scripture is shown from your Bible in the reader; posts link to the passage rather than quoting it.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La Escritura se muestra desde tu Biblia en el lector; las publicaciones enlazan al pasaje en lugar de citarlo."
+          }
+        }
+      }
+    },
+    "Scripture · %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escritura · %@"
+          }
+        }
+      }
+    },
+    "Scripture, quietly and beautifully. Everything works offline.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La Escritura, con calma y belleza. Todo funciona sin conexión."
+          }
+        }
+      }
+    },
+    "Scroll": {
+      "comment": "Reading mode: continuous scrolling",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desplazamiento"
+          }
+        }
+      }
+    },
+    "Search": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar"
+          }
+        }
+      }
+    },
+    "Search and go to passages by their Spanish names too, like Juan 3:16 or Salmos 23.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Busca y abre pasajes también con los nombres en español, como Juan 3:16 o Salmos 23."
+          }
+        }
+      }
+    },
+    "Search by topic": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar por tema"
+          }
+        }
+      }
+    },
+    "Search for a subject like forgiveness or fear to see the passages about it.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Busca un tema como el perdón o el miedo para ver los pasajes que hablan de él."
+          }
+        }
+      }
+    },
+    "See All": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ver todo"
+          }
+        }
+      }
+    },
+    "See Premium": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ver Premium"
+          }
+        }
+      }
+    },
+    "See also": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ver también"
+          }
+        }
+      }
+    },
+    "See your reading time, longest streak, favourite books and topics, and more with Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Consulta tu tiempo de lectura, tu racha más larga, tus libros y temas favoritos, y más con Premium."
+          }
+        }
+      }
+    },
+    "Select All": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seleccionar todo"
+          }
+        }
+      }
+    },
+    "Send": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enviar"
+          }
+        }
+      }
+    },
+    "Send encouragement": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enviar ánimo"
+          }
+        }
+      }
+    },
+    "Sepia": {
+      "comment": "Reader theme name",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sepia"
+          }
+        }
+      }
+    },
+    "Settings": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustes"
+          }
+        }
+      }
+    },
+    "Sexual or inappropriate": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sexual o inapropiado"
+          }
+        }
+      }
+    },
+    "Share": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compartir"
+          }
+        }
+      }
+    },
+    "Share a Prayer Request": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compartir una petición de oración"
+          }
+        }
+      }
+    },
+    "Share a Reflection": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compartir una reflexión"
+          }
+        }
+      }
+    },
+    "Share a prayer request": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comparte una petición de oración"
+          }
+        }
+      }
+    },
+    "Share a prayer request with everyone in Genesis, anonymously if you like, and pray for others.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comparte una petición de oración con todos en Genesis, de forma anónima si quieres, y ora por los demás."
+          }
+        }
+      }
+    },
+    "Share a short thought on a passage and encourage one another.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comparte una breve reflexión sobre un pasaje y anímense unos a otros."
+          }
+        }
+      }
+    },
+    "Share a thought on today's reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comparte un pensamiento sobre la lectura de hoy"
+          }
+        }
+      }
+    },
+    "Share prayer requests with your group, tap \"I prayed\", and mark requests answered.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comparte peticiones de oración con tu grupo, toca “Oré” y marca las peticiones respondidas."
+          }
+        }
+      }
+    },
+    "Share the code with people you'd like to join.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comparte el código con las personas que quieras que se unan."
+          }
+        }
+      }
+    },
+    "Share what you're reading.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comparte lo que estás leyendo."
+          }
+        }
+      }
+    },
+    "Shares private information": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comparte información privada"
+          }
+        }
+      }
+    },
+    "Short explanations of a passage, clearly labelled as AI-generated.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Explicaciones breves de un pasaje, claramente identificadas como generadas por IA."
+          }
+        }
+      }
+    },
+    "Short thoughts on a passage. Everyone signed in to Genesis can see these.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Breves pensamientos sobre un pasaje. Todos los que iniciaron sesión en Genesis pueden verlos."
+          }
+        }
+      }
+    },
+    "Show": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar"
+          }
+        }
+      }
+    },
+    "Show all %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar los %lld"
+          }
+        }
+      }
+    },
+    "Show all %lld verses": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar los %lld versículos"
+          }
+        }
+      }
+    },
+    "Show controls": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar controles"
+          }
+        }
+      }
+    },
+    "Show less": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar menos"
+          }
+        }
+      }
+    },
+    "Shows just the Bible, notes and highlights": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Muestra solo la Biblia, las notas y los resaltados"
+          }
+        }
+      }
+    },
+    "Siblings": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hermanos"
+          }
+        }
+      }
+    },
+    "Sign In": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iniciar sesión"
+          }
+        }
+      }
+    },
+    "Sign In or Create Account": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iniciar sesión o crear cuenta"
+          }
+        }
+      }
+    },
+    "Sign Out": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerrar sesión"
+          }
+        }
+      }
+    },
+    "Sign Out and Keep Data on This Device": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerrar sesión y conservar los datos en este dispositivo"
+          }
+        }
+      }
+    },
+    "Sign Out and Remove Data from This Device": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerrar sesión y eliminar los datos de este dispositivo"
+          }
+        }
+      }
+    },
+    "Sign in first.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primero inicia sesión."
+          }
+        }
+      }
+    },
+    "Sign in to back up your highlights, notes, reading plans and prayers, and see them on all your devices. Everything also works without an account.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inicia sesión para hacer copia de seguridad de tus resaltados, notas, planes de lectura y oraciones, y verlos en todos tus dispositivos. Todo funciona también sin cuenta."
+          }
+        }
+      }
+    },
+    "Sign in to join groups and the community.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inicia sesión para unirte a grupos y a la comunidad."
+          }
+        }
+      }
+    },
+    "Sign in to use the study assistant. A free account includes %lld explanations a day.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inicia sesión para usar el asistente de estudio. Una cuenta gratuita incluye %lld explicaciones al día."
+          }
+        }
+      }
+    },
+    "Sign in with Apple isn't available yet: %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iniciar sesión con Apple aún no está disponible: %@"
+          }
+        }
+      }
+    },
+    "Sign out?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Cerrar sesión?"
+          }
+        }
+      }
+    },
+    "Signed in as": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sesión iniciada como"
+          }
+        }
+      }
+    },
+    "Slate": {
+      "comment": "Reader theme name",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pizarra"
+          }
+        }
+      }
+    },
+    "Sleep Timer": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temporizador"
+          }
+        }
+      }
+    },
+    "Sleep at %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se detiene: %@"
+          }
+        }
+      }
+    },
+    "Slide": {
+      "comment": "Page turn animation",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deslizar"
+          }
+        }
+      }
+    },
+    "Smaller text": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texto más pequeño"
+          }
+        }
+      }
+    },
+    "Something else": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otro motivo"
+          }
+        }
+      }
+    },
+    "Something went wrong. Please try again.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo salió mal. Inténtalo de nuevo."
+          }
+        }
+      }
+    },
+    "Space used": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Espacio usado"
+          }
+        }
+      }
+    },
+    "Spam or advertising": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spam o publicidad"
+          }
+        }
+      }
+    },
+    "Spanish references": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Citas en español"
+          }
+        }
+      }
+    },
+    "Speed": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Velocidad"
+          }
+        }
+      }
+    },
+    "Speed and sleep timer": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Velocidad y temporizador"
+          }
+        }
+      }
+    },
+    "Spouse": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cónyuge"
+          }
+        }
+      }
+    },
+    "Start": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empezar"
+          }
+        }
+      }
+    },
+    "Start Today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empezar hoy"
+          }
+        }
+      }
+    },
+    "Start a Group": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crear un grupo"
+          }
+        }
+      }
+    },
+    "Start a Plan": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empezar un plan"
+          }
+        }
+      }
+    },
+    "Start a group or join one with an invite code in the new Together tab. Follow a reading plan as a group and see who's kept up.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crea un grupo o únete a uno con un código de invitación en la nueva pestaña Juntos. Sigan un plan de lectura en grupo y mira quién va al día."
+          }
+        }
+      }
+    },
+    "Start the conversation.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inicia la conversación."
+          }
+        }
+      }
+    },
+    "Starts": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comienza"
+          }
+        }
+      }
+    },
+    "Still Praying": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sigo orando"
+          }
+        }
+      }
+    },
+    "Stop listening": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dejar de escuchar"
+          }
+        }
+      }
+    },
+    "Study": {
+      "comment": "Note kind",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estudio"
+          }
+        }
+      }
+    },
+    "Study Notes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas de estudio"
+          }
+        }
+      }
+    },
+    "Study a chapter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estudia un capítulo"
+          }
+        }
+      }
+    },
+    "Study data unavailable": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datos de estudio no disponibles"
+          }
+        }
+      }
+    },
+    "Study this chapter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estudiar este capítulo"
+          }
+        }
+      }
+    },
+    "Subscribe": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suscribirse"
+          }
+        }
+      }
+    },
+    "Summaries, historical background, discussion questions and more, without the daily limit.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resúmenes, contexto histórico, preguntas para conversar y más, sin límite diario."
+          }
+        }
+      }
+    },
+    "Summarize": {
+      "comment": "Study assistant action",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resumir"
+          }
+        }
+      }
+    },
+    "Sync Now": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sincronizar ahora"
+          }
+        }
+      }
+    },
+    "Synced %@": {
+      "comment": "Sync status, e.g. Synced 5 minutes ago",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sincronizado %@"
+          }
+        }
+      }
+    },
+    "Syncing…": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sincronizando…"
+          }
+        }
+      }
+    },
+    "TODAY · DAY %lld OF %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HOY · DÍA %lld DE %lld"
+          }
+        }
+      }
+    },
+    "Talk and stay in touch": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conversen y manténganse en contacto"
+          }
+        }
+      }
+    },
+    "Tap the bookmark in the reader to mark your place.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca el marcador en el lector para guardar por dónde vas."
+          }
+        }
+      }
+    },
+    "Tap the headphones in the reader. The page turns and the verse being read is marked as you go, and it keeps playing with your phone locked.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca los auriculares en el lector. La página avanza y el versículo que se lee se marca a medida que avanzas, y sigue sonando con el teléfono bloqueado."
+          }
+        }
+      }
+    },
+    "Tap the left edge to turn forward; study panel on the left.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca el borde izquierdo para avanzar; el panel de estudio queda a la izquierda."
+          }
+        }
+      }
+    },
+    "Tap the sparkles in the reader for summaries, historical background, discussion questions and more with Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca los destellos en el lector para ver resúmenes, contexto histórico, preguntas para conversar y más con Premium."
+          }
+        }
+      }
+    },
+    "Terms of Use": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Condiciones de uso"
+          }
+        }
+      }
+    },
+    "Testament": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testamento"
+          }
+        }
+      }
+    },
+    "Text": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texto"
+          }
+        }
+      }
+    },
+    "Thank you": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gracias"
+          }
+        }
+      }
+    },
+    "Thanks for helping keep Genesis a safe place. You can also block this person from the same menu.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gracias por ayudar a que Genesis sea un lugar seguro. También puedes bloquear a esta persona desde el mismo menú."
+          }
+        }
+      }
+    },
+    "That file isn't a Bible Genesis can read.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ese archivo no es una Biblia que Genesis pueda leer."
+          }
+        }
+      }
+    },
+    "That invite code wasn't found. Check it with your group leader.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se encontró ese código de invitación. Confírmalo con el líder de tu grupo."
+          }
+        }
+      }
+    },
+    "That isn't allowed. If you were removed from a group or the community is closed, pull to refresh.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eso no está permitido. Si te quitaron de un grupo o la comunidad está cerrada, desliza hacia abajo para actualizar."
+          }
+        }
+      }
+    },
+    "That's already done.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eso ya está hecho."
+          }
+        }
+      }
+    },
+    "That's no longer there.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eso ya no está disponible."
+          }
+        }
+      }
+    },
+    "The %@ is read by a Spanish voice. For a much more natural sound, download an Enhanced or Premium Spanish voice in Settings › Accessibility › Spoken Content › Voices › Spanish, then come back here.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La %@ la lee una voz en español. Para un sonido mucho más natural, descarga una voz en español mejorada o Premium en Ajustes › Accesibilidad › Contenido leído › Voces › Español y luego vuelve aquí."
+          }
+        }
+      }
+    },
+    "The App Store isn't available right now. Please try again later.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El App Store no está disponible en este momento. Inténtalo de nuevo más tarde."
+          }
+        }
+      }
+    },
+    "The Bible in a Year": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La Biblia en un año"
+          }
+        }
+      }
+    },
+    "The Genesis community": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La comunidad de Genesis"
+          }
+        }
+      }
+    },
+    "The Gospels in 30 Days": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los Evangelios en 30 días"
+          }
+        }
+      }
+    },
+    "The classic English Bible, cherished for its majestic, poetic language.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La Biblia clásica en inglés, apreciada por su lenguaje majestuoso y poético."
+          }
+        }
+      }
+    },
+    "The device voice reads along with the text and works offline. Recorded narration is read by a person and plays chapter by chapter.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La voz del dispositivo lee junto con el texto y funciona sin conexión. La narración grabada la lee una persona y se reproduce capítulo por capítulo."
+          }
+        }
+      }
+    },
+    "The device voice reads along with the text and works offline. Recorded narration isn't available for the %@ yet.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La voz del dispositivo lee junto con el texto y funciona sin conexión. La narración grabada aún no está disponible para la %@."
+          }
+        }
+      }
+    },
+    "The download was damaged. Please try again.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La descarga está dañada. Inténtalo de nuevo."
+          }
+        }
+      }
+    },
+    "The exact location is uncertain.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La ubicación exacta es incierta."
+          }
+        }
+      }
+    },
+    "The purchase couldn't be verified.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo verificar la compra."
+          }
+        }
+      }
+    },
+    "The server sent an unexpected response.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El servidor envió una respuesta inesperada."
+          }
+        }
+      }
+    },
+    "The study assistant": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El asistente de estudio"
+          }
+        }
+      }
+    },
+    "The study assistant couldn't answer just now. Please try again.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El asistente de estudio no pudo responder en este momento. Inténtalo de nuevo."
+          }
+        }
+      }
+    },
+    "The study assistant isn't available right now.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El asistente de estudio no está disponible en este momento."
+          }
+        }
+      }
+    },
+    "The study assistant needs an internet connection.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El asistente de estudio necesita conexión a internet."
+          }
+        }
+      }
+    },
+    "The study assistant sent an empty answer.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El asistente de estudio envió una respuesta vacía."
+          }
+        }
+      }
+    },
+    "The whole Bible in a year, with books in the order events happened.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toda la Biblia en un año, con los libros en el orden en que ocurrieron los acontecimientos."
+          }
+        }
+      }
+    },
+    "Theme, e.g. Grace": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tema, p. ej., Gracia"
+          }
+        }
+      }
+    },
+    "This chapter couldn't be loaded.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo cargar este capítulo."
+          }
+        }
+      }
+    },
+    "This chapter couldn't be played.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo reproducir este capítulo."
+          }
+        }
+      }
+    },
+    "This device": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este dispositivo"
+          }
+        }
+      }
+    },
+    "This group is full.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este grupo está lleno."
+          }
+        }
+      }
+    },
+    "This recording doesn't include this chapter.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta grabación no incluye este capítulo."
+          }
+        }
+      }
+    },
+    "This study tool is part of Genesis Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta herramienta de estudio es parte de Genesis Premium."
+          }
+        }
+      }
+    },
+    "Time": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hora"
+          }
+        }
+      }
+    },
+    "Time spent reading, favourite books and your reading history.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiempo de lectura, libros favoritos y tu historial de lectura."
+          }
+        }
+      }
+    },
+    "Timeline": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cronología"
+          }
+        }
+      }
+    },
+    "Timeline, Maps & People": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cronología, mapas y personas"
+          }
+        }
+      }
+    },
+    "Timeline, maps and people": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cronología, mapas y personas"
+          }
+        }
+      }
+    },
+    "Timeline, maps and people, cloud backup, themes and more.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cronología, mapas y personas, copia de seguridad en la nube, temas y más."
+          }
+        }
+      }
+    },
+    "Timeline, maps and people, the study assistant, cloud backup and more.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cronología, mapas y personas, el asistente de estudio, copia de seguridad en la nube y más."
+          }
+        }
+      }
+    },
+    "Title": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Título"
+          }
+        }
+      }
+    },
+    "Today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoy"
+          }
+        }
+      }
+    },
+    "Today's Reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lectura de hoy"
+          }
+        }
+      }
+    },
+    "Today's discussion": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conversación de hoy"
+          }
+        }
+      }
+    },
+    "Together": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Juntos"
+          }
+        }
+      }
+    },
+    "Toggle study panel": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar u ocultar el panel de estudio"
+          }
+        }
+      }
+    },
+    "Toggles whether this day is read": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marca o desmarca este día como leído"
+          }
+        }
+      }
+    },
+    "Topic": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tema"
+          }
+        }
+      }
+    },
+    "Topics": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temas"
+          }
+        }
+      }
+    },
+    "Topics from Nave's Topical Bible (public domain), via BibleData by Brady Stephenson, CC BY 4.0.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temas de Nave's Topical Bible (dominio público), a través de BibleData de Brady Stephenson, CC BY 4.0."
+          }
+        }
+      }
+    },
+    "Traditional book face": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Letra clásica de libro"
+          }
+        }
+      }
+    },
+    "Translation, %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Traducción, %@"
+          }
+        }
+      }
+    },
+    "Try": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prueba"
+          }
+        }
+      }
+    },
+    "Try Again": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reintentar"
+          }
+        }
+      }
+    },
+    "Try a different colour or collection.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prueba con otro color u otra colección."
+          }
+        }
+      }
+    },
+    "Try a subject like forgiveness, fear or marriage to see the passages about it.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prueba un tema como perdón, miedo o matrimonio para ver los pasajes que hablan de él."
+          }
+        }
+      }
+    },
+    "Turn Off Timer": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desactivar temporizador"
+          }
+        }
+      }
+    },
+    "Turn On %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activar %@"
+          }
+        }
+      }
+    },
+    "Turning something off only hides it. Your plans, prayers, groups and notes stay, and come back when you turn it on.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desactivar algo solo lo oculta. Tus planes, oraciones, grupos y notas se conservan y vuelven cuando lo activas."
+          }
+        }
+      }
+    },
+    "Unblock": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desbloquear"
+          }
+        }
+      }
+    },
+    "Under review": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En revisión"
+          }
+        }
+      }
+    },
+    "Unlimited notes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas ilimitadas"
+          }
+        }
+      }
+    },
+    "Unlimited prayer journal": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diario de oración ilimitado"
+          }
+        }
+      }
+    },
+    "Unlock Insights": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desbloquear Estadísticas"
+          }
+        }
+      }
+    },
+    "Unlock with Premium": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desbloquear con Premium"
+          }
+        }
+      }
+    },
+    "Updating": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Actualizando"
+          }
+        }
+      }
+    },
+    "Use Genesis in Spanish: Settings › Language (the gear on Home). It follows your iPhone's language too.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usa Genesis en español desde Ajustes › Idioma (el engranaje en Inicio). También sigue el idioma de tu iPhone."
+          }
+        }
+      }
+    },
+    "Use your device's voices in every translation, offline, or a recorded narration where one is available. Change it under Audio Settings.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usa las voces de tu dispositivo en todas las traducciones, sin conexión, o una narración grabada donde esté disponible. Cámbialo en Ajustes de audio."
+          }
+        }
+      }
+    },
+    "Valley": {
+      "comment": "Kind of Bible place",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Valle"
+          }
+        }
+      }
+    },
+    "Verse by Verse": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versículo por versículo"
+          }
+        }
+      }
+    },
+    "Verse numbers": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Números de versículo"
+          }
+        }
+      }
+    },
+    "Verse of the Day": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versículo del día"
+          }
+        }
+      }
+    },
+    "Verses": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versículos"
+          }
+        }
+      }
+    },
+    "Verses from the %@. %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versículos de la %@. %@"
+          }
+        }
+      }
+    },
+    "Voice": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voz"
+          }
+        }
+      }
+    },
+    "Waiting to sync": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esperando para sincronizar"
+          }
+        }
+      }
+    },
+    "Walk through the story of Scripture": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recorre la historia de la Escritura"
+          }
+        }
+      }
+    },
+    "Warm, classic serif": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serif cálida y clásica"
+          }
+        }
+      }
+    },
+    "Water": {
+      "comment": "Kind of Bible place",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agua"
+          }
+        }
+      }
+    },
+    "What can people pray for?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Por qué pueden orar los demás?"
+          }
+        }
+      }
+    },
+    "What did you notice?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué te llamó la atención?"
+          }
+        }
+      }
+    },
+    "What should people call you?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Cómo quieres que te llamen?"
+          }
+        }
+      }
+    },
+    "What stood out to you today?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué te llamó la atención hoy?"
+          }
+        }
+      }
+    },
+    "What's New": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Novedades"
+          }
+        }
+      }
+    },
+    "What's it for? (optional)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Para qué es? (opcional)"
+          }
+        }
+      }
+    },
+    "What's on your heart today?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué hay en tu corazón hoy?"
+          }
+        }
+      }
+    },
+    "When a prayer is answered, mark it here to remember God's faithfulness.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuando una oración sea respondida, márcala aquí para recordar la fidelidad de Dios."
+          }
+        }
+      }
+    },
+    "Who or what are you praying for?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Por quién o por qué estás orando?"
+          }
+        }
+      }
+    },
+    "Wide": {
+      "comment": "Reader margins",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amplios"
+          }
+        }
+      }
+    },
+    "Words, topics or a reference": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Palabras, temas o una referencia"
+          }
+        }
+      }
+    },
+    "Work": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trabajo"
+          }
+        }
+      }
+    },
+    "Write a message": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escribe un mensaje"
+          }
+        }
+      }
+    },
+    "Write a note…": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escribe una nota…"
+          }
+        }
+      }
+    },
+    "Write about a verse from the reader, or start a journal entry with the button below.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escribe sobre un versículo desde el lector o empieza una entrada de diario con el botón de abajo."
+          }
+        }
+      }
+    },
+    "Write your prayer…": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escribe tu oración…"
+          }
+        }
+      }
+    },
+    "Yearly": {
+      "comment": "Subscription period",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anual"
+          }
+        }
+      }
+    },
+    "Yellow": {
+      "comment": "Highlight colour",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amarillo"
+          }
+        }
+      }
+    },
+    "You can join again with the invite code.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puedes volver a unirte con el código de invitación."
+          }
+        }
+      }
+    },
+    "You can switch any time from the reader.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puedes cambiarla cuando quieras desde el lector."
+          }
+        }
+      }
+    },
+    "You can't do that.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No puedes hacer eso."
+          }
+        }
+      }
+    },
+    "You finished this plan": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminaste este plan"
+          }
+        }
+      }
+    },
+    "You have Genesis Premium": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tienes Genesis Premium"
+          }
+        }
+      }
+    },
+    "You have every Bible that's available.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ya tienes todas las Biblias disponibles."
+          }
+        }
+      }
+    },
+    "You won't see their posts, prayer requests or comments. They aren't told.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No verás sus publicaciones, peticiones de oración ni comentarios. No se le notificará."
+          }
+        }
+      }
+    },
+    "You're no longer in this group, or it was closed.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ya no estás en este grupo o se cerró."
+          }
+        }
+      }
+    },
+    "You're offline. Changes are saved on this device and will sync later.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No tienes conexión. Los cambios se guardan en este dispositivo y se sincronizarán más tarde."
+          }
+        }
+      }
+    },
+    "You're offline. Connect to the internet to download Bibles.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No tienes conexión. Conéctate a internet para descargar Biblias."
+          }
+        }
+      }
+    },
+    "You're offline. Groups and the community need an internet connection.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No tienes conexión. Los grupos y la comunidad necesitan conexión a internet."
+          }
+        }
+      }
+    },
+    "You've created the most groups one person can lead.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ya creaste el máximo de grupos que una persona puede dirigir."
+          }
+        }
+      }
+    },
+    "You've posted a lot in the last hour. Please try again later.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Publicaste mucho en la última hora. Inténtalo de nuevo más tarde."
+          }
+        }
+      }
+    },
+    "You've used today's %lld study assistant answers. They reset tomorrow.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ya usaste las %lld respuestas del asistente de estudio de hoy. Se renuevan mañana."
+          }
+        }
+      }
+    },
+    "Your Plans": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus planes"
+          }
+        }
+      }
+    },
+    "Your checkmarks for this plan will be cleared.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se borrarán las marcas de este plan."
+          }
+        }
+      }
+    },
+    "Your data stays safe in your account either way.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus datos quedan a salvo en tu cuenta de todos modos."
+          }
+        }
+      }
+    },
+    "Your group leader can share the code from the group's Members page.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El líder de tu grupo puede compartir el código desde la página Miembros del grupo."
+          }
+        }
+      }
+    },
+    "Your highlights and notes stay. You can download it again any time.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus resaltados y notas se conservan. Puedes volver a descargarla cuando quieras."
+          }
+        }
+      }
+    },
+    "Your highlights, notes, plans and prayers are saved on this device. Cloud backup and sync across devices are part of Genesis Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus resaltados, notas, planes y oraciones se guardan en este dispositivo. La copia de seguridad en la nube y la sincronización entre dispositivos forman parte de Genesis Premium."
+          }
+        }
+      }
+    },
+    "Your name is shown with your prayer requests and messages. Your first name, or how your church knows you, works well.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu nombre se muestra con tus peticiones de oración y mensajes. Tu nombre de pila, o como te conocen en tu iglesia, funciona bien."
+          }
+        }
+      }
+    },
+    "Your prayer": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu oración"
+          }
+        }
+      }
+    },
+    "Your purchase is waiting for approval.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu compra está pendiente de aprobación."
+          }
+        }
+      }
+    },
+    "Your session has ended. Please sign in again.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu sesión terminó. Vuelve a iniciar sesión."
+          }
+        }
+      }
+    },
+    "books finished": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "libros terminados"
+          }
+        }
+      }
+    },
+    "c. %@ BC": {
+      "comment": "Approximate year before Christ",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "c. %@ a. C."
+          }
+        }
+      }
+    },
+    "c. AD %@": {
+      "comment": "Approximate year after Christ",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "c. %@ d. C."
+          }
+        }
+      }
+    },
+    "chapters read": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "capítulos leídos"
+          }
+        }
+      }
+    },
+    "day streak": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "días de racha"
+          }
+        }
+      }
+    },
+    "e.g. Paul's Letters": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "p. ej., Cartas de Pablo"
+          }
+        }
+      }
+    },
+    "longest streak": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "racha más larga"
+          }
+        }
+      }
+    },
+    "month": {
+      "comment": "Subscription period unit, as in $4.99 / month",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mes"
+          }
+        }
+      }
+    },
+    "notes written": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "notas escritas"
+          }
+        }
+      }
+    },
+    "total reading time": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "tiempo total de lectura"
+          }
+        }
+      }
+    },
+    "verses highlighted": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "versículos resaltados"
+          }
+        }
+      }
+    },
+    "year": {
+      "comment": "Subscription period unit, as in $4.99 / month",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "año"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

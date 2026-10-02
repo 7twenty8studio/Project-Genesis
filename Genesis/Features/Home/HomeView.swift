@@ -119,9 +119,9 @@ struct HomeView: View {
         if let enrollment = activeEnrollment, let plan = enrollment.plan {
             let planProgress = PlanProgress(plan: plan, startDate: enrollment.startDate, completedDays: enrollment.completedDays)
             VStack(alignment: .leading, spacing: 12) {
-                SectionHeader(title: "Today's Reading", action: ("All Plans", { router.homePath.append(.plans) }))
+                SectionHeader(title: String(localized: "Today's Reading"), action: (String(localized: "All Plans"), { router.homePath.append(.plans) }))
                 VStack(alignment: .leading, spacing: 10) {
-                    Text(enrollment.title)
+                    Text(plan.title)  // follows the app's language for built-in plans
                         .font(.caption.weight(.semibold))
                         .foregroundStyle(palette.accent)
                     if planProgress.isComplete {
@@ -197,9 +197,7 @@ struct HomeView: View {
                     Text("Prayer Journal")
                         .font(.headline)
                         .foregroundStyle(palette.text)
-                    Text(activePrayers.isEmpty
-                        ? "Keep a private record of what you're praying for."
-                        : "\(activePrayers.count) \(activePrayers.count == 1 ? "prayer" : "prayers") you're holding up")
+                    prayerSummary
                         .font(.subheadline)
                         .foregroundStyle(palette.secondaryText)
                         .multilineTextAlignment(.leading)
@@ -214,15 +212,25 @@ struct HomeView: View {
         .accessibilityIdentifier("home.prayer")
     }
 
+    private var prayerSummary: Text {
+        if activePrayers.isEmpty {
+            Text("Keep a private record of what you're praying for.")
+        } else if activePrayers.count == 1 {
+            Text("1 prayer you're holding up")
+        } else {
+            Text("\(activePrayers.count) prayers you're holding up")
+        }
+    }
+
     @ViewBuilder
     private var readingProgress: some View {
         if progress.hasStartedReading {
             VStack(alignment: .leading, spacing: 12) {
-                SectionHeader(title: "Progress", action: ("Insights", { router.homePath.append(.insights) }))
+                SectionHeader(title: String(localized: "Progress"), action: (String(localized: "Insights"), { router.homePath.append(.insights) }))
                 HStack(spacing: 12) {
-                    stat(value: progress.streak(), label: "day streak", symbol: "flame")
-                    stat(value: progress.chaptersRead.count, label: "chapters read", symbol: "book.pages")
-                    stat(value: progress.booksCompleted, label: "books finished", symbol: "books.vertical")
+                    stat(value: progress.streak(), label: String(localized: "day streak"), symbol: "flame")
+                    stat(value: progress.chaptersRead.count, label: String(localized: "chapters read"), symbol: "book.pages")
+                    stat(value: progress.booksCompleted, label: String(localized: "books finished"), symbol: "books.vertical")
                 }
             }
         }
@@ -276,9 +284,9 @@ struct HomeView: View {
 
     private var greetingText: String {
         switch Calendar.current.component(.hour, from: .now) {
-        case 4..<12: "Good morning"
-        case 12..<17: "Good afternoon"
-        default: "Good evening"
+        case 4..<12: String(localized: "Good morning")
+        case 12..<17: String(localized: "Good afternoon")
+        default: String(localized: "Good evening")
         }
     }
 
@@ -322,7 +330,7 @@ struct HomeView: View {
         let id = DailyVerse.verse()
         let verse = try? library.current.verse(id)
         return VStack(alignment: .leading, spacing: 12) {
-            SectionHeader(title: "Verse of the Day")
+            SectionHeader(title: String(localized: "Verse of the Day"))
             Button {
                 router.read(id)
             } label: {
@@ -363,7 +371,7 @@ struct HomeView: View {
     private var highlights: some View {
         let texts = (try? library.current.verses(withIDs: recentHighlights.map(\.verse))) ?? [:]
         return VStack(alignment: .leading, spacing: 12) {
-            SectionHeader(title: "Recently Highlighted", action: ("See All", { router.tab = .library }))
+            SectionHeader(title: String(localized: "Recently Highlighted"), action: (String(localized: "See All"), { router.tab = .library }))
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 12) {
                     ForEach(recentHighlights) { highlight in
@@ -389,7 +397,7 @@ struct HomeView: View {
 
     private var notes: some View {
         VStack(alignment: .leading, spacing: 12) {
-            SectionHeader(title: "Recent Notes", action: ("See All", { router.tab = .library }))
+            SectionHeader(title: String(localized: "Recent Notes"), action: (String(localized: "See All"), { router.tab = .library }))
             VStack(spacing: 0) {
                 ForEach(recentNotes) { note in
                     Button {
@@ -411,7 +419,7 @@ struct HomeView: View {
 
     private var bibles: some View {
         VStack(alignment: .leading, spacing: 12) {
-            SectionHeader(title: "Bibles on This Device", action: ("Get More", { showsBibles = true }))
+            SectionHeader(title: String(localized: "Bibles on This Device"), action: (String(localized: "Get More"), { showsBibles = true }))
             VStack(spacing: 0) {
                 ForEach(library.translations) { translation in
                     Button {

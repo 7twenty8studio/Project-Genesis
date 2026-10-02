@@ -75,20 +75,20 @@ struct SelectionActionBar: View {
             }
 
             HStack {
-                action("Note", systemImage: "note.text.badge.plus", perform: onNote)
+                action(String(localized: "Note", comment: "Verse selection action: add a note"), systemImage: "note.text.badge.plus", perform: onNote)
                     .accessibilityIdentifier("selection.note")
-                action("Bookmark", systemImage: "bookmark") { reader.toggleBookmark() }
+                action(String(localized: "Bookmark", comment: "Verse selection action: bookmark the verse"), systemImage: "bookmark") { reader.toggleBookmark() }
                     .accessibilityIdentifier("selection.bookmark")
-                action(copied ? "Copied" : "Copy", systemImage: copied ? "checkmark" : "doc.on.doc") {
+                action(copied ? String(localized: "Copied") : String(localized: "Copy"), systemImage: copied ? "checkmark" : "doc.on.doc") {
                     UIPasteboard.general.string = reader.shareTextForSelection
                     copied = true
                 }
                 .accessibilityIdentifier("selection.copy")
                 ShareLink(item: reader.shareTextForSelection) {
-                    actionLabel("Share", systemImage: "square.and.arrow.up")
+                    actionLabel(String(localized: "Share"), systemImage: "square.and.arrow.up")
                 }
                 if reader.selection.count == 1 {
-                    action("Related", systemImage: "arrow.triangle.branch", perform: onCrossReferences)
+                    action(String(localized: "Related", comment: "Panel title: related passages (cross-references)"), systemImage: "arrow.triangle.branch", perform: onCrossReferences)
                         .accessibilityIdentifier("selection.related")
                 }
             }

@@ -7,8 +7,8 @@ import Foundation
 /// OpenBible.info (CC BY 4.0) and descriptions from Easton's Bible Dictionary
 /// (public domain). It holds verse ids only, never Scripture text.
 final class StudyRepository: Sendable {
-    static let attribution = "People, places and events from Theographic Bible Metadata (CC BY-SA 4.0). Map locations from OpenBible.info (CC BY 4.0). Descriptions from Easton's Bible Dictionary (1897)."
-    static let chronologyNote = "Dates are approximate and follow a traditional chronology. Events before Abraham are shown in order without dates."
+    static let attribution = String(localized: "People, places and events from Theographic Bible Metadata (CC BY-SA 4.0). Map locations from OpenBible.info (CC BY 4.0). Descriptions from Easton's Bible Dictionary (1897).")
+    static let chronologyNote = String(localized: "Dates are approximate and follow a traditional chronology. Events before Abraham are shown in order without dates.")
 
     private let database: SQLiteDatabase
 

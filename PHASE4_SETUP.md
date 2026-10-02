@@ -12,6 +12,8 @@ free (no Premium needed).
 | Announcement notifications | After step 3 | Apple Developer account, an APNs key |
 | Topic search, feature choices, Duo panels, lock-screen prayer widget | Yes | Nothing |
 | Downloading more Bibles (Berean Standard Bible) | After step 4 | The Bibles SQL and one upload |
+| Genesis in Spanish | Yes | Nothing |
+| The Reina-Valera 1909 (Spanish Bible) | After step 5 | One SQL paste and one upload |
 
 The new **Together** tab appears once the groups SQL has run. Groups and the
 community need people to sign in (free).
@@ -181,3 +183,31 @@ still decide what exists; people only choose among what's switched on.
 People who set Genesis up before this screen existed keep everything. Groups
 and the community start hidden for new people; the What's New note for a
 feature someone has hidden offers a Turn On button.
+
+## 5. Spanish
+
+Genesis's screens are in English and Spanish. People switch in Genesis ›
+Settings (gear on Home) › Language, which opens Genesis's page in the iPhone's
+Settings app (that's where iOS keeps each app's language), or Genesis simply
+follows the iPhone's language. Book names, dates and the study assistant's
+answers follow too, and references can be typed in Spanish ("Juan 3:16").
+
+The Spanish Bible is the **Reina-Valera 1909** (public domain), downloaded like
+the Berean Standard Bible. Spanish-speaking people see it first under Get More,
+and it's read aloud in a Spanish voice.
+
+1. **Add the language column (once):** SQL Editor → paste
+   `supabase/migrations/20261005000000_translation_language.sql` → Run.
+2. **Upload the file:** Storage → `bibles` → Upload → `RV1909-1.sqlite.deflate`
+   (sent to you; or build it with `Tools/BibleData/package_translation.py`,
+   see the top of that file).
+3. **List it:** SQL Editor → paste `RV1909-1.sql` → Run.
+
+The translations were written for Genesis and read well, but have a native
+Spanish speaker look over the app before release. Strings live in
+`Tools/Localization/es.json`; send corrections and they'll be applied.
+`./Scripts/localization_check.sh` lists any screen text without Spanish.
+
+Still in English: people, places and events in Explore, topic names in topic
+search, and anything people write themselves.
+

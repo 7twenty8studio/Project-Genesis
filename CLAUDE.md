@@ -86,6 +86,27 @@ shares; README.md has the architecture.
   never-reused id. Features behind a Supabase switch set `flag` so the note
   appears when the switch turns on. UI tests only see it with `-uiTestingWhatsNew`.
 
+## Languages
+- Screens are in English and Spanish (String Catalogs:
+  Genesis/Resources/Localizable.xcstrings and GenesisWidgets/Localizable.xcstrings).
+  Don't edit the catalogs by hand: write new text in English in code (a Text/
+  Button literal, or `String(localized:)` for any String that's displayed), add
+  its Spanish to Tools/Localization/es.json, then run
+  `python3 Tools/Localization/build_catalogs.py` (it fails on missing Spanish
+  or mismatched %@/%lld). One sentence per string; no English fragments glued
+  together. On the Mac, `./Scripts/localization_check.sh` lists anything Xcode
+  sees without Spanish.
+- People choose the language in the iPhone's Settings (Settings › Language in
+  Genesis opens it). `AppLanguage.code` is "en" or "es".
+- `BibleBook.name` follows the app's language (`englishName` is fixed);
+  the reference parser accepts English and Spanish names, accents optional.
+- Each Translation has a `language`; narration picks a voice in it. The study
+  assistant answers in the app's language (`language` in the request; the
+  cache key gets a suffix for non-English).
+- Spanish Bible: Reina-Valera 1909 (public domain), downloadable, built from
+  open-bibles' USFX with Spanish verse numbering. Scripture is never
+  translated or edited; data from Study.sqlite and Topics.sqlite stays English.
+
 ## Navigation
 - iPhone (compact width) shows at most five tabs: Home, Read, Library,
   Explore, Together. Search is a button there (Home, Library) opening

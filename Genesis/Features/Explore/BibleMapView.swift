@@ -70,7 +70,7 @@ struct BibleMapView: View {
                     Button(item.title) { show(item) }
                 }
             } label: {
-                Label(route?.title ?? "Journeys", systemImage: "point.topleft.down.to.point.bottomright.curvepath")
+                Label(route?.title ?? String(localized: "Journeys"), systemImage: "point.topleft.down.to.point.bottomright.curvepath")
                     .font(.subheadline.weight(.semibold))
                     .padding(.horizontal, 14)
                     .padding(.vertical, 9)
@@ -150,8 +150,22 @@ extension PlaceSummary {
         }
     }
 
-    /// "City", "Region", …; "Place" where the dataset doesn't say.
-    var kindTitle: String { kind.isEmpty ? "Place" : kind }
+    /// "City", "Region", …; "Place" where the dataset doesn't say. The
+    /// dataset's kinds are a small fixed set, shown in the app's language.
+    var kindTitle: String {
+        switch kind {
+        case "": String(localized: "Place", comment: "Kind of Bible place")
+        case "City": String(localized: "City", comment: "Kind of Bible place")
+        case "Mountain": String(localized: "Mountain", comment: "Kind of Bible place")
+        case "Valley": String(localized: "Valley", comment: "Kind of Bible place")
+        case "Water": String(localized: "Water", comment: "Kind of Bible place")
+        case "Region": String(localized: "Region", comment: "Kind of Bible place")
+        case "Landmark": String(localized: "Landmark", comment: "Kind of Bible place")
+        case "Island": String(localized: "Island", comment: "Kind of Bible place")
+        case "Path": String(localized: "Path", comment: "Kind of Bible place")
+        default: kind
+        }
+    }
 }
 
 /// A small map of a few places, for detail screens.
@@ -192,7 +206,7 @@ struct PlaceDetailView: View {
                             .font(.system(.title2, design: .serif, weight: .semibold))
                             .foregroundStyle(palette.text)
                             .accessibilityIdentifier("place.name")
-                        Text([place.summary.kindTitle, place.aliases.isEmpty ? nil : "Also \(place.aliases)"].compactMap { $0 }.joined(separator: " \u{00B7} "))
+                        Text([place.summary.kindTitle, place.aliases.isEmpty ? nil : String(localized: "Also \(place.aliases)", comment: "Other names for a place")].compactMap { $0 }.joined(separator: " \u{00B7} "))
                             .font(.subheadline)
                             .foregroundStyle(palette.secondaryText)
                     }
@@ -209,10 +223,10 @@ struct PlaceDetailView: View {
                         }
                     }
                     if !place.description.isEmpty {
-                        DetailSection(title: "About") { DictionaryText(text: place.description) }
+                        DetailSection(title: String(localized: "About")) { DictionaryText(text: place.description) }
                     }
                     if !events.isEmpty {
-                        DetailSection(title: "Events Here") {
+                        DetailSection(title: String(localized: "Events Here")) {
                             VStack(alignment: .leading, spacing: 10) {
                                 ForEach(events) { event in
                                     Button { router.explore(.event(event.id)) } label: { EventRow(event: event) }
@@ -222,7 +236,7 @@ struct PlaceDetailView: View {
                         }
                     }
                     if !verses.isEmpty {
-                        DetailSection(title: "Mentioned In") { VerseMentionList(verses: verses) }
+                        DetailSection(title: String(localized: "Mentioned In")) { VerseMentionList(verses: verses) }
                     }
                     Text(StudyRepository.attribution)
                         .font(.caption2)

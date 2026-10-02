@@ -19,15 +19,15 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
 
     var title: String {
         switch self {
-        case .automatic: "Auto"
-        case .paper: "Paper"
-        case .cream: "Cream"
-        case .sepia: "Sepia"
-        case .parchment: "Parchment"
-        case .slate: "Slate"
-        case .highContrast: "Contrast"
-        case .midnight: "Midnight"
-        case .sage: "Sage"
+        case .automatic: String(localized: "Auto", comment: "Reader theme name")
+        case .paper: String(localized: "Paper", comment: "Reader theme name")
+        case .cream: String(localized: "Cream", comment: "Reader theme name")
+        case .sepia: String(localized: "Sepia", comment: "Reader theme name")
+        case .parchment: String(localized: "Parchment", comment: "Reader theme name")
+        case .slate: String(localized: "Slate", comment: "Reader theme name")
+        case .highContrast: String(localized: "Contrast", comment: "Reader theme name")
+        case .midnight: String(localized: "Midnight", comment: "Reader theme name")
+        case .sage: String(localized: "Sage", comment: "Reader theme name")
         }
     }
 
@@ -110,7 +110,16 @@ enum HighlightColor: String, Codable, CaseIterable, Identifiable, Sendable {
 
     var id: String { rawValue }
 
-    var title: String { rawValue.capitalized }
+    var title: String {
+        switch self {
+        case .yellow: String(localized: "Yellow", comment: "Highlight colour")
+        case .blue: String(localized: "Blue", comment: "Highlight colour")
+        case .green: String(localized: "Green", comment: "Highlight colour")
+        case .purple: String(localized: "Purple", comment: "Highlight colour")
+        case .pink: String(localized: "Pink", comment: "Highlight colour")
+        case .orange: String(localized: "Orange", comment: "Highlight colour")
+        }
+    }
 
     private var hex: UInt32 {
         switch self {

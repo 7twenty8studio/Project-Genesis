@@ -6,7 +6,7 @@ struct PrayerJournalView: View {
     enum Filter: String, CaseIterable, Identifiable {
         case praying, answered
         var id: String { rawValue }
-        var title: String { self == .praying ? "Praying" : "Answered" }
+        var title: String { self == .praying ? String(localized: "Praying", comment: "Prayer journal filter: prayers still being prayed") : String(localized: "Answered", comment: "Prayer journal filter: answered prayers") }
     }
 
     @Environment(\.modelContext) private var modelContext
@@ -35,7 +35,7 @@ struct PrayerJournalView: View {
 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 8) {
-                        chip("All", systemImage: nil, selected: category == nil) { category = nil }
+                        chip(String(localized: "All", comment: "Prayer category filter: every category"), systemImage: nil, selected: category == nil) { category = nil }
                         ForEach(PrayerCategory.allCases) { item in
                             chip(item.title, systemImage: item.systemImage, selected: category == item) {
                                 category = category == item ? nil : item
@@ -51,10 +51,10 @@ struct PrayerJournalView: View {
             if visible.isEmpty {
                 QuietEmptyState(
                     systemImage: filter == .praying ? "hands.and.sparkles" : "checkmark.seal",
-                    title: filter == .praying ? "No prayer requests" : "No answered prayers yet",
+                    title: filter == .praying ? String(localized: "No prayer requests") : String(localized: "No answered prayers yet"),
                     message: filter == .praying
-                        ? "Add the people and needs you're praying for. Your journal is private to you."
-                        : "When a prayer is answered, mark it here to remember God's faithfulness."
+                        ? String(localized: "Add the people and needs you're praying for. Your journal is private to you.")
+                        : String(localized: "When a prayer is answered, mark it here to remember God's faithfulness.")
                 )
                 .listRowBackground(Color.clear)
             }

@@ -109,13 +109,18 @@ struct BibleDownloadsView: View {
             Text(item.id)
                 .font(.system(.subheadline, design: .serif, weight: .bold))
                 .foregroundStyle(palette.accent)
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
                 .frame(width: 48, alignment: .leading)
             VStack(alignment: .leading, spacing: 3) {
                 Text(item.name).foregroundStyle(palette.text)
                 if !item.summary.isEmpty {
                     Text(item.summary).font(.footnote).foregroundStyle(palette.secondaryText)
                 }
-                Text("\(ByteCountFormatter.string(fromByteCount: Int64(item.fileBytes), countStyle: .file)) · \(item.license)")
+                // The Bible's language when it isn't the app's ("Español").
+                Text(([item.language == AppLanguage.code ? nil : AppLanguage.displayName(item.language),
+                       ByteCountFormatter.string(fromByteCount: Int64(item.fileBytes), countStyle: .file),
+                       item.license] as [String?]).compactMap { $0 }.joined(separator: " · "))
                     .font(.caption)
                     .foregroundStyle(palette.secondaryText)
             }

@@ -408,7 +408,7 @@ final class SyncService {
     private static func message(for error: Error) -> String {
         if let urlError = error as? URLError,
            [.notConnectedToInternet, .networkConnectionLost, .timedOut, .cannotFindHost].contains(urlError.code) {
-            return "You're offline. Changes are saved on this device and will sync later."
+            return String(localized: "You're offline. Changes are saved on this device and will sync later.")
         }
         return error.localizedDescription
     }

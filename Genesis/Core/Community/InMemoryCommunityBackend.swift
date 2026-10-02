@@ -43,7 +43,7 @@ actor InMemoryCommunityBackend: CommunityBackend {
     }
 
     private func requireProfile() throws -> CommunityProfile {
-        guard let profileRow else { throw CommunityError.message("Choose a display name first.") }
+        guard let profileRow else { throw CommunityError.message(String(localized: "Choose a display name first.")) }
         return profileRow
     }
 
@@ -52,7 +52,7 @@ actor InMemoryCommunityBackend: CommunityBackend {
     private func check(_ text: String) throws {
         let words = text.lowercased().split { !$0.isLetter && !$0.isNumber }.map(String.init)
         if words.contains(where: Self.blockedWords.contains) {
-            throw CommunityError.message("Please rephrase. Some words aren't allowed in Genesis.")
+            throw CommunityError.message(String(localized: "Please rephrase. Some words aren't allowed in Genesis."))
         }
     }
 
@@ -68,7 +68,7 @@ actor InMemoryCommunityBackend: CommunityBackend {
 
     func setDisplayName(_ name: String) async throws {
         let cleaned = name.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard (1...40).contains(cleaned.count) else { throw CommunityError.message("Display names are 1 to 40 characters.") }
+        guard (1...40).contains(cleaned.count) else { throw CommunityError.message(String(localized: "Display names are 1 to 40 characters.")) }
         try check(cleaned)
         profileRow = CommunityProfile(userID: me, displayName: cleaned, communityTermsAcceptedAt: profileRow?.communityTermsAcceptedAt)
         for (group, list) in members {
@@ -140,7 +140,7 @@ actor InMemoryCommunityBackend: CommunityBackend {
         let profile = try requireProfile()
         let cleaned = code.uppercased().filter { $0.isLetter || $0.isNumber }
         guard let group = groups.values.first(where: { $0.inviteCode == cleaned }) else {
-            throw CommunityError.message("That invite code wasn't found. Check it with your group leader.")
+            throw CommunityError.message(String(localized: "That invite code wasn't found. Check it with your group leader."))
         }
         if myRole(in: group.id) == nil {
             members[group.id, default: []].append(GroupMember(groupID: group.id, userID: me, role: .member, displayName: profile.displayName, joinedAt: .now))
@@ -149,7 +149,7 @@ actor InMemoryCommunityBackend: CommunityBackend {
     }
 
     func updateGroup(_ group: UUID, draft: GroupDraft) async throws {
-        guard myRole(in: group) == .leader, var existing = groups[group] else { throw CommunityError.message("Only group leaders can do that.") }
+        guard myRole(in: group) == .leader, var existing = groups[group] else { throw CommunityError.message(String(localized: "Only group leaders can do that.")) }
         existing.name = draft.name
         existing.description = draft.description
         existing.planID = draft.plan?.id
@@ -159,7 +159,7 @@ actor InMemoryCommunityBackend: CommunityBackend {
     }
 
     func newInviteCode(_ group: UUID) async throws -> String {
-        guard myRole(in: group) == .leader else { throw CommunityError.message("Only group leaders can do that.") }
+        guard myRole(in: group) == .leader else { throw CommunityError.message(String(localized: "Only group leaders can do that.")) }
         let code = "NEW" + String(UUID().uuidString.prefix(7)).uppercased().filter { $0.isLetter || $0.isNumber }
         groups[group]?.inviteCode = code
         return code
@@ -170,7 +170,7 @@ actor InMemoryCommunityBackend: CommunityBackend {
     }
 
     func deleteGroup(_ group: UUID) async throws {
-        guard myRole(in: group) == .leader else { throw CommunityError.message("Only group leaders can do that.") }
+        guard myRole(in: group) == .leader else { throw CommunityError.message(String(localized: "Only group leaders can do that.")) }
         groups[group] = nil
         members[group] = nil
     }
@@ -180,7 +180,7 @@ actor InMemoryCommunityBackend: CommunityBackend {
     }
 
     func setRole(_ role: GroupRole, for user: UUID, in group: UUID) async throws {
-        guard myRole(in: group) == .leader else { throw CommunityError.message("Only group leaders can do that.") }
+        guard myRole(in: group) == .leader else { throw CommunityError.message(String(localized: "Only group leaders can do that.")) }
         members[group] = members[group]?.map { member in
             var member = member
             if member.userID == user { member.role = role }
@@ -189,7 +189,7 @@ actor InMemoryCommunityBackend: CommunityBackend {
     }
 
     func removeMember(_ user: UUID, from group: UUID) async throws {
-        guard myRole(in: group) == .leader else { throw CommunityError.message("Only group leaders can do that.") }
+        guard myRole(in: group) == .leader else { throw CommunityError.message(String(localized: "Only group leaders can do that.")) }
         members[group]?.removeAll { $0.userID == user }
     }
 
@@ -220,7 +220,7 @@ actor InMemoryCommunityBackend: CommunityBackend {
 
     func addPrayer(_ body: String, to group: UUID) async throws {
         try check(body)
-        guard let name = members[group]?.first(where: { $0.userID == me })?.displayName else { throw CommunityError.message("You can't do that.") }
+        guard let name = members[group]?.first(where: { $0.userID == me })?.displayName else { throw CommunityError.message(String(localized: "You can't do that.")) }
         prayerRows.append(GroupPrayer(id: UUID(), groupID: group, userID: me, displayName: name, body: body, prayedCount: 0, createdAt: .now, answeredAt: nil))
     }
 
@@ -236,7 +236,7 @@ actor InMemoryCommunityBackend: CommunityBackend {
     }
 
     func setAnswered(_ answered: Bool, prayer: UUID) async throws {
-        guard let index = prayerRows.firstIndex(where: { $0.id == prayer && $0.userID == me }) else { throw CommunityError.message("You can't do that.") }
+        guard let index = prayerRows.firstIndex(where: { $0.id == prayer && $0.userID == me }) else { throw CommunityError.message(String(localized: "You can't do that.")) }
         prayerRows[index].answeredAt = answered ? .now : nil
     }
 
@@ -246,7 +246,7 @@ actor InMemoryCommunityBackend: CommunityBackend {
 
     func addPost(_ body: String, day: Int?, to group: UUID) async throws {
         try check(body)
-        guard let name = members[group]?.first(where: { $0.userID == me })?.displayName else { throw CommunityError.message("You can't do that.") }
+        guard let name = members[group]?.first(where: { $0.userID == me })?.displayName else { throw CommunityError.message(String(localized: "You can't do that.")) }
         postRows.append(GroupPost(id: UUID(), groupID: group, userID: me, displayName: name, day: day, body: body, createdAt: .now))
     }
 
@@ -256,7 +256,7 @@ actor InMemoryCommunityBackend: CommunityBackend {
 
     func addAnnouncement(title: String, body: String, to group: UUID) async throws {
         guard myRole(in: group) == .leader, let name = members[group]?.first(where: { $0.userID == me })?.displayName else {
-            throw CommunityError.message("Only group leaders can do that.")
+            throw CommunityError.message(String(localized: "Only group leaders can do that."))
         }
         try check(title + " " + body)
         announcementRows.append(GroupAnnouncement(id: UUID(), groupID: group, userID: me, displayName: name, title: title, body: body, createdAt: .now))
@@ -279,7 +279,7 @@ actor InMemoryCommunityBackend: CommunityBackend {
     }
 
     func addCommunityPost(_ draft: CommunityDraft) async throws {
-        guard let profile = profileRow, profile.hasAcceptedTerms else { throw CommunityError.message("Accept the community guidelines first.") }
+        guard let profile = profileRow, profile.hasAcceptedTerms else { throw CommunityError.message(String(localized: "Accept the community guidelines first.")) }
         try check(draft.body)
         let id = UUID()
         postAuthors[id] = me
@@ -307,7 +307,7 @@ actor InMemoryCommunityBackend: CommunityBackend {
     }
 
     func addComment(_ body: String, on post: UUID) async throws {
-        guard let profile = profileRow, profile.hasAcceptedTerms else { throw CommunityError.message("Accept the community guidelines first.") }
+        guard let profile = profileRow, profile.hasAcceptedTerms else { throw CommunityError.message(String(localized: "Accept the community guidelines first.")) }
         try check(body)
         commentRows.append(CommunityComment(id: UUID(), postID: post, userID: me, displayName: profile.displayName, body: body, createdAt: .now))
         if let index = communityRows.firstIndex(where: { $0.id == post }) { communityRows[index].commentCount += 1 }

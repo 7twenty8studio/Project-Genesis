@@ -8,9 +8,9 @@ struct TogetherView: View {
         var id: String { rawValue }
         var title: String {
             switch self {
-            case .groups: "Groups"
-            case .prayer: "Prayer Wall"
-            case .reflections: "Reflections"
+            case .groups: String(localized: "Groups")
+            case .prayer: String(localized: "Prayer Wall")
+            case .reflections: String(localized: "Reflections")
             }
         }
     }
@@ -84,8 +84,8 @@ struct TogetherView: View {
             VStack(spacing: 18) {
                 QuietEmptyState(
                     systemImage: "person.3",
-                    title: "Read and pray together",
-                    message: "Join your church's group to follow a reading plan together, share prayer requests and talk about the day's passage. Sign in to get started; it's free."
+                    title: String(localized: "Read and pray together"),
+                    message: String(localized: "Join your church's group to follow a reading plan together, share prayer requests and talk about the day's passage. Sign in to get started; it's free.")
                 )
                 Button {
                     showsAccount = true
@@ -171,11 +171,11 @@ struct CommunityGuidelinesView: View {
     @State private var isSaving = false
 
     static let rules: [(String, String)] = [
-        ("heart", "Be kind. Encourage one another and disagree gently."),
-        ("hand.raised", "No abuse, harassment, hate, sexual content or threats. There's no tolerance for objectionable content or abusive users."),
-        ("lock", "Keep others' private details private. Don't share anyone's prayer request outside Genesis."),
-        ("megaphone", "No advertising, spam or fundraising."),
-        ("flag", "Report anything that breaks these rules. Reported posts are reviewed, and people who break them are removed."),
+        ("heart", String(localized: "Be kind. Encourage one another and disagree gently.")),
+        ("hand.raised", String(localized: "No abuse, harassment, hate, sexual content or threats. There's no tolerance for objectionable content or abusive users.")),
+        ("lock", String(localized: "Keep others' private details private. Don't share anyone's prayer request outside Genesis.")),
+        ("megaphone", String(localized: "No advertising, spam or fundraising.")),
+        ("flag", String(localized: "Report anything that breaks these rules. Reported posts are reviewed, and people who break them are removed.")),
     ]
 
     var body: some View {

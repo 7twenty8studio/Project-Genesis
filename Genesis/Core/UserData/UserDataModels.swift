@@ -76,10 +76,10 @@ enum NoteKind: String, Codable, CaseIterable, Identifiable, Sendable {
 
     var title: String {
         switch self {
-        case .text: "Note"
-        case .prayer: "Prayer"
-        case .study: "Study"
-        case .journal: "Journal"
+        case .text: String(localized: "Note")
+        case .prayer: String(localized: "Prayer")
+        case .study: String(localized: "Study", comment: "Note kind")
+        case .journal: String(localized: "Journal")
         }
     }
 

@@ -110,8 +110,8 @@ struct NarrationVoice: Identifiable, Hashable, Sendable {
         candidates(language: language)
             .map { voice in
                 let quality: String? = switch voice.quality {
-                case .premium: "Premium"
-                case .enhanced: "Enhanced"
+                case .premium: String(localized: "Premium", comment: "Voice quality")
+                case .enhanced: String(localized: "Enhanced", comment: "Voice quality")
                 default: nil
                 }
                 return NarrationVoice(

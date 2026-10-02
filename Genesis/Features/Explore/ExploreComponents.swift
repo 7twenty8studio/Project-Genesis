@@ -180,6 +180,6 @@ struct DictionaryText: View {
 /// A short placeholder when the bundled study data is missing.
 struct StudyDataMissingView: View {
     var body: some View {
-        QuietEmptyState(systemImage: "exclamationmark.triangle", title: "Study data unavailable", message: "Reinstall Genesis to restore the timeline, maps and people.")
+        QuietEmptyState(systemImage: "exclamationmark.triangle", title: String(localized: "Study data unavailable"), message: String(localized: "Reinstall Genesis to restore the timeline, maps and people."))
     }
 }
