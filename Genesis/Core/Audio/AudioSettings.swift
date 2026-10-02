@@ -77,14 +77,14 @@ struct NarrationVoice: Identifiable, Hashable, Sendable {
     /// download them in Settings › Accessibility › Spoken Content › Voices.
     let qualityLabel: String?
 
-    /// English voices suited to reading Scripture, best first. Leaves out the
+    /// Voices in a language suited to reading Scripture, best first. Leaves out the
     /// novelty voices and the older Eloquence voices (Eddy, Flo, Reed, Grandma
     /// and the rest), which sound robotic.
-    static func candidates() -> [AVSpeechSynthesisVoice] {
+    static func candidates(language: String = "en") -> [AVSpeechSynthesisVoice] {
         let region = Locale.current.region?.identifier
         return AVSpeechSynthesisVoice.speechVoices()
             .filter { voice in
-                voice.language.hasPrefix("en")
+                voice.language.hasPrefix(language)
                     && !voice.voiceTraits.contains(.isNoveltyVoice)
                     && !voice.identifier.contains(".eloquence.")
             }
@@ -98,15 +98,16 @@ struct NarrationVoice: Identifiable, Hashable, Sendable {
             }
     }
 
-    /// What "Automatic" uses: the most natural English voice installed, so a
+    /// What "Automatic" uses: the most natural voice installed, so a
     /// downloaded Premium or Enhanced voice is used without choosing it.
-    static func bestInstalled() -> AVSpeechSynthesisVoice? {
-        candidates().first ?? AVSpeechSynthesisVoice(language: "en-US")
+    static func bestInstalled(language: String = "en") -> AVSpeechSynthesisVoice? {
+        candidates(language: language).first
+            ?? AVSpeechSynthesisVoice(language: language == "es" ? "es-MX" : "en-US")
     }
 
-    /// English voices on this device, best first.
-    static func available() -> [NarrationVoice] {
-        candidates()
+    /// Voices in a language on this device, best first.
+    static func available(language: String = "en") -> [NarrationVoice] {
+        candidates(language: language)
             .map { voice in
                 let quality: String? = switch voice.quality {
                 case .premium: "Premium"

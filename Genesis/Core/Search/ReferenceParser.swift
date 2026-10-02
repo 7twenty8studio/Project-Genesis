@@ -1,7 +1,9 @@
 import Foundation
 
 /// Parses typed Bible references such as "John 3:16", "jn 3", "1 Cor 13:4-7",
-/// "I John 1:9", "Ps 23" or "Song of Songs 2".
+/// "I John 1:9", "Ps 23" or "Song of Songs 2", and the Spanish names
+/// ("Juan 3:16", "1 Corintios 13", "Sal 23", "Génesis" or "genesis") whatever
+/// the app's language.
 enum ReferenceParser {
     /// Parses a complete reference. Returns nil if the text isn't a reference.
     static func parse(_ input: String) -> PassageReference? {
@@ -36,7 +38,7 @@ enum ReferenceParser {
         guard !bookText.isEmpty, numberText.isEmpty else { return [] }
         let key = compact(bookText)
         if let exact = index[key] { return [exact] }
-        return BibleBook.all.filter { book in keys(for: book).contains { $0.hasPrefix(key) } }
+        return BibleBook.all.filter { book in (keys(for: book) + spanishKeys(for: book)).contains { $0.hasPrefix(key) } }
     }
 
     /// Resolves a book from any accepted spelling.
@@ -46,7 +48,9 @@ enum ReferenceParser {
         if let book = index[key] { return book }
         // Fall back to an unambiguous prefix of a book name ("gene", "phile").
         guard key.count >= 3 else { return nil }
-        let matches = BibleBook.all.filter { compact($0.name).hasPrefix(key) }
+        let matches = BibleBook.all.filter { book in
+            [book.englishName, book.name(in: "es")].contains { compact($0).hasPrefix(key) }
+        }
         return matches.count == 1 ? matches[0] : nil
     }
 
@@ -55,6 +59,8 @@ enum ReferenceParser {
     private static let ordinals: [(prefix: String, digit: String)] = [
         ("first ", "1"), ("second ", "2"), ("third ", "3"),
         ("1st ", "1"), ("2nd ", "2"), ("3rd ", "3"),
+        ("primera ", "1"), ("primero ", "1"), ("segunda ", "2"), ("segundo ", "2"), ("tercera ", "3"), ("tercero ", "3"),
+        ("1ra ", "1"), ("1ro ", "1"), ("2da ", "2"), ("2do ", "2"), ("3ra ", "3"), ("3ro ", "3"),
         ("iii ", "3"), ("ii ", "2"), ("i ", "1"),
     ]
 
@@ -144,18 +150,31 @@ enum ReferenceParser {
         return result
     }
 
+    /// Lowercase, without spaces, dots or accents: "1 Crónicas" → "1cronicas".
     private static func compact(_ text: String) -> String {
-        text.lowercased().filter { !$0.isWhitespace && $0 != "." }
+        text.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: nil)
+            .filter { !$0.isWhitespace && $0 != "." }
     }
 
+    /// English spellings first, so an English abbreviation wins where the two
+    /// languages share one ("Mc" is Micah, as in English).
     private static func keys(for book: BibleBook) -> [String] {
-        [book.name, book.abbreviation, book.osis].map(compact) + book.aliases.map(compact)
+        ([book.englishName, book.englishAbbreviation, book.osis] + book.aliases).map(compact)
+    }
+
+    private static func spanishKeys(for book: BibleBook) -> [String] {
+        ([book.name(in: "es"), book.abbreviation(in: "es")] + book.spanishAliases).map(compact)
     }
 
     private static let index: [String: BibleBook] = {
         var index: [String: BibleBook] = [:]
         for book in BibleBook.all {
             for key in keys(for: book) where index[key] == nil {
+                index[key] = book
+            }
+        }
+        for book in BibleBook.all {
+            for key in spanishKeys(for: book) where index[key] == nil {
                 index[key] = book
             }
         }

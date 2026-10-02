@@ -39,7 +39,12 @@ export interface StudyRequest {
   /** The passage text the app shows, used only to remove quotes from the
    * answer (never sent to the model). */
   text: string;
+  /** The language to answer in: the app's language. Only these values. */
+  language: Language;
 }
+
+export const LANGUAGES = ["en", "es"] as const;
+export type Language = (typeof LANGUAGES)[number];
 
 const BOOKS = [
   "Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Joshua", "Judges", "Ruth", "1 Samuel", "2 Samuel",
@@ -86,7 +91,9 @@ export function parseRequest(body: unknown): StudyRequest {
   const chapters = Math.floor(end / 1_000) - Math.floor(start / 1_000);
   if (chapters > 2) throw new RequestError("Choose up to three chapters at a time.");
   const text = typeof b.text === "string" ? b.text.slice(0, MAX_TEXT_LENGTH) : "";
-  return { action: action as Action, start, end, reference: referenceFor(start, end), text };
+  // Older apps send no language: English.
+  const language: Language = (LANGUAGES as readonly unknown[]).includes(b.language) ? (b.language as Language) : "en";
+  return { action: action as Action, start, end, reference: referenceFor(start, end), text, language };
 }
 
 function isVerseID(value: number): boolean {
@@ -97,9 +104,12 @@ function isVerseID(value: number): boolean {
   return book >= 1 && book <= 66 && chapter >= 1 && chapter <= 150 && verse >= 1 && verse <= 176;
 }
 
-/** Answers are shared by everyone: they never depend on who asked or the translation. */
+/** Answers are shared by everyone who reads in the same language: they never
+ * depend on who asked or the translation. English keys are unchanged from
+ * before languages were added, so existing answers stay cached. */
 export function cacheKey(request: StudyRequest): string {
-  return `v${PROMPT_VERSION}:${request.action}:${request.start}-${request.end}`;
+  const base = `v${PROMPT_VERSION}:${request.action}:${request.start}-${request.end}`;
+  return request.language === "en" ? base : `${base}:${request.language}`;
 }
 
 export type AccessDecision =
@@ -138,9 +148,14 @@ const TASKS: Record<Action, string> = {
   comprehension: "Write 5 reading comprehension questions about what this passage says, as a numbered list. After the list, under a bold heading **Answers**, give a short answer to each, pointing to the verse by reference.",
 };
 
+const LANGUAGE_NOTES: Record<Language, string> = {
+  en: "",
+  es: "\n\nWrite the whole answer in Spanish, in neutral Latin American Spanish, addressing the reader as \"tú\". Write references with Spanish book names as in the Reina-Valera, for example [[Juan 3:16]] or [[Romanos 8:28-30]]. Headings such as **Answers** are in Spanish too (**Respuestas**).",
+};
+
 /** Only server-built values go into the prompt. */
 export function buildUserMessage(request: StudyRequest): string {
-  return `Passage: ${request.reference}\n\nTask: ${TASKS[request.action]}`;
+  return `Passage: ${request.reference}\n\nTask: ${TASKS[request.action]}${LANGUAGE_NOTES[request.language]}`;
 }
 
 // ---------------------------------------------------------------------------

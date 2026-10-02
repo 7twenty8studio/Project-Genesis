@@ -5,6 +5,7 @@ import SwiftUI
 struct SettingsView: View {
     @Environment(\.palette) private var palette
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.openURL) private var openURL
     @State private var showsBibles = false
     @State private var showsAccount = false
 
@@ -28,6 +29,25 @@ struct SettingsView: View {
                     } label: {
                         Label("Account", systemImage: "person.crop.circle")
                     }
+                }
+                .listRowBackground(palette.surface)
+                .foregroundStyle(palette.text)
+
+                Section {
+                    // iOS keeps each app's language in the Settings app (and
+                    // restarts the app when it changes), so this opens it there.
+                    Button {
+                        if let url = URL(string: UIApplication.openSettingsURLString) { openURL(url) }
+                    } label: {
+                        LabeledContent {
+                            Text(AppLanguage.displayName(AppLanguage.code))
+                        } label: {
+                            Label("Language", systemImage: "globe")
+                        }
+                    }
+                    .accessibilityIdentifier("settings.language")
+                } footer: {
+                    Text("Genesis is available in English and Spanish. Tap to choose in the Settings app; Genesis restarts in the new language.")
                 }
                 .listRowBackground(palette.surface)
                 .foregroundStyle(palette.text)

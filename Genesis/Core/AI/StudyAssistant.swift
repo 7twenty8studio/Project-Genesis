@@ -65,8 +65,10 @@ struct StudyPassage: Hashable, Sendable {
         return "\(BibleBook.withNumber(start.book).name) \(start.chapter):\(start.verse)\u{2013}\(end.chapter):\(end.verse)"
     }
 
-    func cacheKey(_ action: StudyAction) -> String {
-        "v1:\(action.rawValue):\(start.rawValue)-\(end.rawValue)"
+    /// Matches the server's key; answers are kept per language.
+    func cacheKey(_ action: StudyAction, language: String = AppLanguage.code) -> String {
+        let base = "v1:\(action.rawValue):\(start.rawValue)-\(end.rawValue)"
+        return language == "en" ? base : "\(base):\(language)"
     }
 }
 
@@ -210,6 +212,8 @@ struct EdgeFunctionBackend: StudyAssistantBackend {
         let end: Int
         let text: String
         let signedTransaction: String?
+        /// The app's language; the answer is written in it.
+        let language: String
     }
 
     private struct Reply: Decodable {
@@ -227,7 +231,8 @@ struct EdgeFunctionBackend: StudyAssistantBackend {
             start: passage.start.rawValue,
             end: passage.end.rawValue,
             text: text,
-            signedTransaction: signedTransaction
+            signedTransaction: signedTransaction,
+            language: AppLanguage.code
         ))
         let response: (data: Data, status: Int)
         do {

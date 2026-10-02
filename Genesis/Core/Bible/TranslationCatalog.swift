@@ -13,16 +13,36 @@ struct DownloadableTranslation: Identifiable, Hashable, Codable, Sendable {
     let databaseBytes: Int
     let sha256: String
     let version: Int
+    /// "en", "es". Older catalogs without the column are English.
+    var language: String = "en"
 
     var translation: Translation {
-        Translation(id: id, name: name, year: year, license: license, summary: summary)
+        Translation(id: id, name: name, year: year, license: license, summary: summary, language: language)
     }
 
     enum CodingKeys: String, CodingKey {
-        case id, name, year, license, summary, version, sha256
+        case id, name, year, license, summary, version, sha256, language
         case fileURL = "file_url"
         case fileBytes = "file_bytes"
         case databaseBytes = "database_bytes"
+    }
+}
+
+extension DownloadableTranslation {
+    // In an extension so the memberwise initializer stays.
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        year = try container.decode(String.self, forKey: .year)
+        license = try container.decode(String.self, forKey: .license)
+        summary = try container.decode(String.self, forKey: .summary)
+        fileURL = try container.decode(String.self, forKey: .fileURL)
+        fileBytes = try container.decode(Int.self, forKey: .fileBytes)
+        databaseBytes = try container.decode(Int.self, forKey: .databaseBytes)
+        sha256 = try container.decode(String.self, forKey: .sha256)
+        version = try container.decode(Int.self, forKey: .version)
+        language = try container.decodeIfPresent(String.self, forKey: .language) ?? "en"
     }
 }
 
@@ -59,7 +79,8 @@ struct TranslationDownloader: Sendable {
         guard let client else { throw TranslationDownloadError.notConfigured }
         do {
             return try await client.select("bible_translations", query: [
-                URLQueryItem(name: "select", value: "id,name,year,license,summary,file_url,file_bytes,database_bytes,sha256,version"),
+                // All columns, so a server without the newer `language` column still works.
+                URLQueryItem(name: "select", value: "*"),
                 URLQueryItem(name: "enabled", value: "eq.true"),
                 URLQueryItem(name: "order", value: "sort.asc,name.asc"),
             ])

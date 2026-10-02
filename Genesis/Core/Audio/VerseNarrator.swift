@@ -10,7 +10,7 @@ protocol VerseNarrator: AnyObject {
     /// Called when the last verse has been read (not when stopped).
     var onFinish: (() -> Void)? { get set }
 
-    func read(_ chapter: Chapter, from verse: VerseID?, speed: Double, voiceIdentifier: String?)
+    func read(_ chapter: Chapter, from verse: VerseID?, speed: Double, voiceIdentifier: String?, language: String)
     func pause()
     func resume()
     func stop()
@@ -40,10 +40,13 @@ final class SpeechNarrator: NSObject, VerseNarrator {
         synthesizer.usesApplicationAudioSession = true
     }
 
-    func read(_ chapter: Chapter, from verse: VerseID?, speed: Double, voiceIdentifier: String?) {
+    func read(_ chapter: Chapter, from verse: VerseID?, speed: Double, voiceIdentifier: String?, language: String) {
         stop()
+        // The chosen voice, if it speaks the translation's language (an English
+        // voice can't read the Reina-Valera); otherwise the best one that does.
         let voice = voiceIdentifier.flatMap(AVSpeechSynthesisVoice.init(identifier:))
-            ?? NarrationVoice.bestInstalled()
+            .flatMap { $0.language.hasPrefix(language) ? $0 : nil }
+            ?? NarrationVoice.bestInstalled(language: language)
         let rate = Self.rate(forSpeed: speed)
 
         func enqueue(_ text: String, verse: VerseID?, pauseAfter: TimeInterval) {
@@ -59,7 +62,10 @@ final class SpeechNarrator: NSObject, VerseNarrator {
 
         let start = verse.flatMap { wanted in chapter.verses.first { $0.id >= wanted } }?.id ?? chapter.verses.first?.id
         if start == chapter.verses.first?.id {
-            enqueue("\(chapter.id.bibleBook.name), chapter \(chapter.id.chapter).", verse: nil, pauseAfter: 0.6)
+            // Announced in the translation's language, whatever the app's.
+            let book = chapter.id.bibleBook.name(in: language)
+            let title = language.hasPrefix("es") ? "\(book), capítulo \(chapter.id.chapter)." : "\(book), chapter \(chapter.id.chapter)."
+            enqueue(title, verse: nil, pauseAfter: 0.6)
         }
         for item in chapter.verses where start.map({ item.id >= $0 }) ?? true {
             enqueue(item.plainText, verse: item.id, pauseAfter: item.startsParagraph ? 0.35 : 0.15)
@@ -134,7 +140,7 @@ final class StubNarrator: VerseNarrator {
         self.interval = interval
     }
 
-    func read(_ chapter: Chapter, from verse: VerseID?, speed: Double, voiceIdentifier: String?) {
+    func read(_ chapter: Chapter, from verse: VerseID?, speed: Double, voiceIdentifier: String?, language: String) {
         stop()
         queue = chapter.verses.map(\.id).filter { id in verse.map { id >= $0 } ?? true }
         isPaused = false

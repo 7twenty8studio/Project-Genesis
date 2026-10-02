@@ -36,8 +36,31 @@ struct Translation: Identifiable, Hashable, Codable, Sendable {
     let year: String
     let license: String
     let summary: String
+    /// The language of the text: "en", "es". Decides the narrating voice and
+    /// the language of book names read aloud.
+    let language: String
 
     var abbreviation: String { id }
+
+    init(id: String, name: String, year: String, license: String, summary: String, language: String = "en") {
+        self.id = id
+        self.name = name
+        self.year = year
+        self.license = license
+        self.summary = summary
+        self.language = language
+    }
+
+    // Translations saved before languages were added have none: English.
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        year = try container.decode(String.self, forKey: .year)
+        license = try container.decode(String.self, forKey: .license)
+        summary = try container.decode(String.self, forKey: .summary)
+        language = try container.decodeIfPresent(String.self, forKey: .language) ?? "en"
+    }
 }
 
 extension Translation {
@@ -46,21 +69,21 @@ extension Translation {
         name: "King James Version",
         year: "1769",
         license: "Public domain",
-        summary: "The classic English Bible, cherished for its majestic, poetic language."
+        summary: String(localized: "The classic English Bible, cherished for its majestic, poetic language.")
     )
     static let web = Translation(
         id: "WEB",
         name: "World English Bible",
         year: "2020",
         license: "Public domain. \u{201C}World English Bible\u{201D} is a trademark of eBible.org.",
-        summary: "A modern, readable translation in everyday English."
+        summary: String(localized: "A modern, readable translation in everyday English.")
     )
     static let asv = Translation(
         id: "ASV",
         name: "American Standard Version",
         year: "1901",
         license: "Public domain",
-        summary: "A precise, literal translation valued for careful study."
+        summary: String(localized: "A precise, literal translation valued for careful study.")
     )
 
     /// Translations shipped inside the app bundle, in display order.

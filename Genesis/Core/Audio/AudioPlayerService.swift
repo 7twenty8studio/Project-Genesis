@@ -97,7 +97,7 @@ final class AudioPlayerService {
             }
             state = .playing
             onPosition?(chapter, nil)
-            narrator.read(text, from: verse, speed: settings.speed, voiceIdentifier: settings.voiceIdentifier)
+            narrator.read(text, from: verse, speed: settings.speed, voiceIdentifier: settings.voiceIdentifier, language: translation.language)
         case let .recording(id):
             guard let recording = catalog.recording(id: id) else {
                 // The recording was withdrawn: fall back to the device voice.

@@ -53,6 +53,10 @@ targets:
         CFBundleDisplayName: Genesis
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        # The screens are in English and Spanish (Localizable.xcstrings). Listing
+        # both makes iOS offer the choice under Settings › Apps › Genesis.
+        CFBundleDevelopmentRegion: en
+        CFBundleLocalizations: [en, es]
         ITSAppUsesNonExemptEncryption: false
         # Listening carries on with the screen locked.
         UIBackgroundModes:
@@ -106,6 +110,8 @@ targets:
         CFBundleDisplayName: Genesis
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleDevelopmentRegion: en
+        CFBundleLocalizations: [en, es]
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
 

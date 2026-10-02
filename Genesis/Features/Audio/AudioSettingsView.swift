@@ -43,7 +43,7 @@ struct AudioSettingsView: View {
                 }
             }
             .task {
-                voices = NarrationVoice.available()
+                voices = NarrationVoice.available(language: translation.language)
                 await audio.catalog.refresh()
             }
         }
@@ -106,7 +106,11 @@ struct AudioSettingsView: View {
         } header: {
             Text("Voice")
         } footer: {
-            Text("Automatic uses the most natural voice on this device. For a much more natural sound, download a Premium voice (Zoe, Ava, Evan or Nathan, for example) in Settings › Accessibility › Spoken Content › Voices › English, then come back here.")
+            if translation.language == "es" {
+                Text("The \(translation.name) is read by a Spanish voice. For a much more natural sound, download an Enhanced or Premium Spanish voice in Settings › Accessibility › Spoken Content › Voices › Spanish, then come back here.")
+            } else {
+                Text("Automatic uses the most natural voice on this device. For a much more natural sound, download a Premium voice (Zoe, Ava, Evan or Nathan, for example) in Settings › Accessibility › Spoken Content › Voices › English, then come back here.")
+            }
         }
     }
 
