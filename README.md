@@ -137,6 +137,26 @@ Tools/StudyData/    Script that builds Study.sqlite
 - Personal data lives in **SwiftData** with UUIDs and timestamps, ready for
   Phase 2 Supabase sync.
 
+## Disk space
+
+Building and UI-testing Genesis needs about 20 GB free. `./Scripts/build.sh`
+stops early with a message when there's less. `./Scripts/build.sh --clean`
+deletes this project's build folder, old test results, leftover test copies
+of simulators and simulators for iOS versions that are gone; Xcode rebuilds
+all of it as needed.
+
+Other big, safe-to-clear places on the Mac:
+
+- `~/Library/Developer/Xcode/DerivedData`: other projects' builds.
+- Xcode › Settings › Components: simulator runtimes you no longer use
+  (each is several GB). Keep the one the Duo simulator uses.
+- `xcrun simctl runtime list` and `xcrun simctl runtime delete <id>` do the same
+  from Terminal.
+- `~/Library/Developer/Xcode/iOS DeviceSupport`: files for phones you once
+  plugged in.
+- `~/Library/Developer/CoreSimulator/Caches`.
+- System Settings › General › Storage shows what else is large.
+
 ## Attribution
 
 - Cross references: [OpenBible.info](https://www.openbible.info/labs/cross-references/), CC-BY.

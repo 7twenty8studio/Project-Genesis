@@ -15,6 +15,9 @@
 #                                   from your Mac's memory; 1 = one at a time)
 #   --only Phase3UITests            run only these UI tests (a class, or
 #                                   Class/testMethod); repeat for more
+#   --clean                         first free disk space: this project's build
+#                                   folder, old test results, leftover test copies of
+#                                   simulators and simulators Xcode can't use any more
 #   SIMULATOR="iPhone 17 Pro" ./Scripts/build.sh   use a specific simulator
 set -uo pipefail
 cd "$(dirname "$0")/.."
@@ -24,6 +27,7 @@ RUN_TESTS=true
 UI_TESTS=none
 WORKERS=""
 ONLY=()
+CLEAN=false
 while [ $# -gt 0 ]; do
     case "$1" in
         --open) OPEN_XCODE=true ;;
@@ -31,6 +35,7 @@ while [ $# -gt 0 ]; do
         --ui) UI_TESTS=standard ;;
         --ui-full) UI_TESTS=full ;;
         --workers) WORKERS=${2:-}; shift ;;
+        --clean) CLEAN=true ;;
         --only)
             [ "$UI_TESTS" = none ] && UI_TESTS=standard
             ONLY+=("-only-testing:GenesisUITests/${2:-}"); shift ;;
@@ -53,6 +58,33 @@ DERIVED=build/DerivedData
 BUNDLE_ID=com.7twenty8studio.genesis
 
 echo "Using $(xcodebuild -version | head -1) at $(xcode-select -p)"
+
+# Free space, in GB, on the disk this project is on.
+free_gb() { df -Pk . | awk 'NR==2 { printf "%d", $4 / 1048576 }'; }
+
+# 0. Disk space. A full disk makes builds and UI tests fail in confusing ways
+#    (simulators won't start, "No space left on device"). --clean removes only
+#    things Xcode rebuilds by itself.
+if [ "$CLEAN" = true ]; then
+    BEFORE=$(free_gb)
+    echo "Freeing disk space..."
+    rm -rf build/DerivedData build/TestResults
+    # Copies of simulators made for parallel UI tests, sometimes left behind.
+    xcrun simctl --set testing shutdown all >/dev/null 2>&1
+    xcrun simctl --set testing delete all >/dev/null 2>&1
+    rm -rf "$HOME/Library/Developer/XCTestDevices"
+    # Simulators for iOS versions no longer installed.
+    xcrun simctl delete unavailable >/dev/null 2>&1
+    echo "   Freed about $(( $(free_gb) - BEFORE )) GB ($(free_gb) GB free now)."
+fi
+NEEDED_GB=20
+[ "$UI_TESTS" = none ] && NEEDED_GB=10
+if [ "$(free_gb)" -lt "$NEEDED_GB" ]; then
+    echo "❌ Only $(free_gb) GB free on this disk; Genesis needs about $NEEDED_GB GB to build and test."
+    echo "   Run ./Scripts/build.sh --clean first (add --ui as usual). If that isn't enough, see"
+    echo "   \"Disk space\" in README.md for what else takes room."
+    exit 1
+fi
 
 # 1. XcodeGen generates the project from project.yml.
 if ! command -v xcodegen >/dev/null 2>&1; then
