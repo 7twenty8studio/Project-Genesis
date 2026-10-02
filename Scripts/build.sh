@@ -258,12 +258,24 @@ if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
             -retry-tests-on-failure -test-iterations 2 \
             -resultBundlePath "$RESULT" \
             -skipPackagePluginValidation test-without-building 2>&1 \
-            | tee -a build.log | grep -E "error:|Test Case .* failed|\*\* TEST"
+            | tee "build/TestResults/UI-$SLUG.log" | tee -a build.log \
+            | grep -E "error:|Test Case .* failed|\*\* TEST"
         PASS_STATUS=${PIPESTATUS[0]}
         if [ "$PASS_STATUS" -ne 0 ]; then
             UI_STATUS=$PASS_STATUS
             FAILURES="build/TestResults/UI-$SLUG-failures.txt"
             python3 Scripts/ui_failures.py "$RESULT" > "$FAILURES" 2>/dev/null
+            # Nothing named a failed test, so the run itself went wrong (a crash,
+            # a simulator that wouldn't start). Keep what xcodebuild said.
+            if ! grep -q "\[" "$FAILURES" 2>/dev/null; then
+                {
+                    echo "-- xcodebuild ($NAME) --"
+                    grep -iE "error|fail|crash|unexpected|never began|timed out|lost connection|terminated|exited" \
+                        "build/TestResults/UI-$SLUG.log" | grep -v "^ *$" | tail -n 40
+                    echo "-- last lines --"
+                    tail -n 30 "build/TestResults/UI-$SLUG.log"
+                } >> "$FAILURES"
+            fi
             if [ -s "$FAILURES" ]; then
                 echo "   Failures ($NAME):"
                 sed 's/^/     /' "$FAILURES"
@@ -275,7 +287,7 @@ if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
             SHOTS="build/TestResults/UI-$SLUG-screenshots"
             rm -rf "$SHOTS" "$SHOTS.zip"
             if xcrun xcresulttool export attachments --path "$RESULT" --output-path "$SHOTS" >/dev/null 2>&1 \
-                && [ -n "$(ls -A "$SHOTS" 2>/dev/null)" ]; then
+                && [ -n "$(ls -A "$SHOTS" 2>/dev/null | grep -v '^manifest.json$')" ]; then
                 (cd build/TestResults && zip -qr "$(basename "$SHOTS").zip" "$(basename "$SHOTS")")
                 echo "   Screenshots of each failure: $SHOTS.zip"
             else

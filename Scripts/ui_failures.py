@@ -5,6 +5,10 @@
 
 Xcode hides failure messages in the console when several simulators run at
 once, so build.sh calls this after each UI test pass.
+
+When a pass fails without any failed check (the test runner or the app
+crashed, a simulator wouldn't boot, the run was cut short), it prints the
+run-level errors instead, so the failures file is never empty.
 Usage: ui_failures.py path/to/Result.xcresult
 """
 import json
@@ -12,18 +16,23 @@ import subprocess
 import sys
 
 
-def load(path, kind):
-    output = subprocess.run(
-        ["xcrun", "xcresulttool", "get", "test-results", kind, "--path", path, "--compact"],
-        capture_output=True, text=True,
-    )
+def run(args):
+    output = subprocess.run(["xcrun", "xcresulttool", *args], capture_output=True, text=True)
     if output.returncode != 0 or not output.stdout.strip():
         return None
-    return json.loads(output.stdout)
+    try:
+        return json.loads(output.stdout)
+    except json.JSONDecodeError:
+        return None
 
 
-def walk(node, test=None, device=None, found=None):
+def load(path, kind):
+    return run(["get", "test-results", kind, "--path", path, "--compact"])
+
+
+def walk(node, test=None, device=None, found=None, silent=None):
     found = [] if found is None else found
+    silent = [] if silent is None else silent
     kind = node.get("nodeType", "")
     name = node.get("name", "")
     if kind == "Test Case":
@@ -32,22 +41,60 @@ def walk(node, test=None, device=None, found=None):
         device = name
     elif kind == "Failure Message":
         found.append(f"{test} [{device or '?'}]: {name}")
-    for child in node.get("children", []) or []:
-        walk(child, test, device, found)
+    children = node.get("children", []) or []
+    for child in children:
+        walk(child, test, device, found, silent)
+    # A test case marked failed with no message (a crash can do this).
+    if kind == "Test Case" and node.get("result") == "Failed" \
+            and not any(c.get("nodeType") == "Failure Message" for c in children):
+        silent.append(f"{test} [{device or '?'}]: failed with no message (crash or timeout?)")
+    return found, silent
+
+
+def legacy_errors(path):
+    """Run-level errors ("Test runner never began executing tests", "Early
+    unexpected exit…") live in the action results of the older format."""
+    root = run(["get", "object", "--legacy", "--path", path, "--format", "json"])
+    if not root:
+        return []
+    found = []
+    for action in (root.get("actions", {}) or {}).get("_values", []) or []:
+        for key in ("actionResult", "buildResult"):
+            issues = (action.get(key, {}) or {}).get("issues", {}) or {}
+            for summary in (issues.get("errorSummaries", {}) or {}).get("_values", []) or []:
+                message = (summary.get("message", {}) or {}).get("_value", "")
+                if message:
+                    found.append(f"Run error: {message}")
     return found
 
 
 def main():
     path = sys.argv[1]
     tree = load(path, "tests")
-    failures = []
+    failures, silent = [], []
     if tree:
         for node in tree.get("testNodes", []):
-            walk(node, found=failures)
+            walk(node, found=failures, silent=silent)
+    summary = load(path, "summary") or {}
     if not failures:
-        summary = load(path, "summary") or {}
-        for failure in summary.get("testFailures", []):
+        for failure in summary.get("testFailures", []) or []:
             failures.append(f"{failure.get('testIdentifierString') or failure.get('testName')}: {failure.get('failureText')}")
+    failures += silent
+    if not failures:
+        failures += legacy_errors(path)
+        build = run(["get", "build-results", "--path", path, "--compact"]) or {}
+        for error in build.get("errors", []) or []:
+            failures.append(f"Run error: {error.get('message') or error}")
+        if summary:
+            failures.append(
+                "Result: {} · {} passed, {} failed, {} skipped of {}".format(
+                    summary.get("result", "?"), summary.get("passedTests", "?"),
+                    summary.get("failedTests", "?"), summary.get("skippedTests", "?"),
+                    summary.get("totalTestCount", "?"),
+                )
+            )
+        elif not tree:
+            failures.append("No test results were written: the run stopped before any test started.")
     for line in dict.fromkeys(failures):  # de-duplicate, keep order
         print(line)
 
