@@ -971,6 +971,16 @@
         }
       }
     },
+    "Based on OpenBible.info, which weighs over 70 Bible atlases, dictionaries and commentaries.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Según OpenBible.info, que reúne más de 70 atlas, diccionarios y comentarios bíblicos."
+          }
+        }
+      }
+    },
     "Be kind. Encourage one another and disagree gently.": {
       "localizations": {
         "es": {
@@ -2051,6 +2061,16 @@
         }
       }
     },
+    "Every place on the Bible map now shows how sure scholars are of where it was. Uncertain sites have a question mark, and you can hide them from the Journeys menu.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada lugar del mapa bíblico muestra ahora qué tan seguros están los estudiosos de dónde estaba. Los lugares inciertos tienen un signo de interrogación y puedes ocultarlos desde el menú Recorridos."
+          }
+        }
+      }
+    },
     "Everyone agrees to the community guidelines. Report or block anyone from the … menu on any post.": {
       "localizations": {
         "es": {
@@ -2634,6 +2654,36 @@
         }
       }
     },
+    "How certain are these places?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué tan seguros son estos lugares?"
+          }
+        }
+      }
+    },
+    "How certain the locations are": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qué tan seguras son las ubicaciones"
+          }
+        }
+      }
+    },
+    "How sure is the map?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué tan seguro es el mapa?"
+          }
+        }
+      }
+    },
     "How was it answered?": {
       "localizations": {
         "es": {
@@ -2918,6 +2968,26 @@
         }
       }
     },
+    "Known location": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ubicación conocida"
+          }
+        }
+      }
+    },
+    "Known, likely or uncertain": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conocida, probable o incierta"
+          }
+        }
+      }
+    },
     "Landmark": {
       "comment": "Kind of Bible place",
       "localizations": {
@@ -3035,6 +3105,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Biblioteca"
+          }
+        }
+      }
+    },
+    "Likely location": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ubicación probable"
           }
         }
       }
@@ -3418,6 +3498,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Más Biblias…"
+          }
+        }
+      }
+    },
+    "Most scholars place it here, though not all.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La mayoría de los estudiosos lo sitúan aquí, aunque no todos."
           }
         }
       }
@@ -4221,12 +4311,12 @@
         }
       }
     },
-    "People, places and events from Theographic Bible Metadata (CC BY-SA 4.0). Map locations from OpenBible.info (CC BY 4.0). Descriptions from Easton's Bible Dictionary (1897).": {
+    "People, places and events from Theographic Bible Metadata (CC BY-SA 4.0). Map locations and how certain they are from OpenBible.info (CC BY 4.0). Descriptions from Easton's Bible Dictionary (1897).": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Personas, lugares y acontecimientos de Theographic Bible Metadata (CC BY-SA 4.0). Ubicaciones del mapa de OpenBible.info (CC BY 4.0). Descripciones del Easton's Bible Dictionary (1897)."
+            "value": "Personas, lugares y acontecimientos de Theographic Bible Metadata (CC BY-SA 4.0). Ubicaciones del mapa y su grado de certeza de OpenBible.info (CC BY 4.0). Descripciones del Diccionario Bíblico de Easton (1897), en inglés."
           }
         }
       }
@@ -5283,6 +5373,16 @@
         }
       }
     },
+    "Scholars agree on where this was.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los estudiosos coinciden en dónde estaba."
+          }
+        }
+      }
+    },
     "Scope": {
       "localizations": {
         "es": {
@@ -5642,6 +5742,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mostrar"
+          }
+        }
+      }
+    },
+    "Show Uncertain Places": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar lugares inciertos"
           }
         }
       }
@@ -6473,12 +6583,12 @@
         }
       }
     },
-    "The exact location is uncertain.": {
+    "The pin marks the general area.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "La ubicación exacta es incierta."
+            "value": "El marcador indica la zona aproximada."
           }
         }
       }
@@ -6903,6 +7013,16 @@
         }
       }
     },
+    "Uncertain location": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ubicación incierta"
+          }
+        }
+      }
+    },
     "Under review": {
       "localizations": {
         "es": {
@@ -7171,6 +7291,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cuando una oración sea respondida, márcala aquí para recordar la fidelidad de Dios."
+          }
+        }
+      }
+    },
+    "Where this was is debated or unknown. The pin shows one suggested site.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se sabe con certeza dónde estaba. El marcador muestra una ubicación propuesta."
           }
         }
       }

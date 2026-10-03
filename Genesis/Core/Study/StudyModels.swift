@@ -103,8 +103,55 @@ struct PlaceSummary: Identifiable, Hashable, Sendable {
     let latitude: Double?
     let longitude: Double?
     let verseCount: Int
+    /// How sure scholars are of the location, 0–1000 (OpenBible.info); nil
+    /// when unknown.
+    var confidence: Int? = nil
 
     var isMapped: Bool { latitude != nil && longitude != nil }
+    var certainty: PlaceCertainty { PlaceCertainty(confidence: confidence) }
+}
+
+/// How sure we can be where a place was, from OpenBible.info's confidence
+/// score, which weighs 70+ atlases, Bible dictionaries and commentaries.
+enum PlaceCertainty: Sendable, CaseIterable {
+    /// Scholars agree (Jerusalem, Corinth, Capernaum).
+    case known
+    /// Most scholars put it here (Elim, Rameses).
+    case likely
+    /// Debated or unknown; the pin is one suggestion (Mount Sinai, Emmaus).
+    case uncertain
+
+    init(confidence: Int?) {
+        switch confidence ?? 0 {
+        case 750...: self = .known
+        case 500..<750: self = .likely
+        default: self = .uncertain
+        }
+    }
+
+    var title: String {
+        switch self {
+        case .known: String(localized: "Known location")
+        case .likely: String(localized: "Likely location")
+        case .uncertain: String(localized: "Uncertain location")
+        }
+    }
+
+    var explanation: String {
+        switch self {
+        case .known: String(localized: "Scholars agree on where this was.")
+        case .likely: String(localized: "Most scholars place it here, though not all.")
+        case .uncertain: String(localized: "Where this was is debated or unknown. The pin shows one suggested site.")
+        }
+    }
+
+    var symbol: String {
+        switch self {
+        case .known: "checkmark.seal"
+        case .likely: "circle.dashed"
+        case .uncertain: "questionmark.circle"
+        }
+    }
 }
 
 struct Place: Identifiable, Hashable, Sendable {

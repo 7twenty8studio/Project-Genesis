@@ -27,7 +27,20 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty]
+
+    static let mapCertainty = WhatsNewAnnouncement(
+        id: "map-certainty",
+        title: String(localized: "How sure is the map?"),
+        items: [
+            WhatsNewItem(
+                systemImage: "checkmark.seal",
+                title: String(localized: "Known, likely or uncertain"),
+                detail: String(localized: "Every place on the Bible map now shows how sure scholars are of where it was. Uncertain sites have a question mark, and you can hide them from the Journeys menu.")
+            ),
+        ],
+        feature: .explore
+    )
 
     static let seasons = WhatsNewAnnouncement(
         id: "seasonal-themes",

@@ -10,6 +10,31 @@ struct StudyDataTests {
         return try StudyRepository(url: url)
     }
 
+    @Test func placesSayHowCertainTheirLocationIs() throws {
+        let study = try repository()
+        let jerusalem = try #require(try study.searchPlaces("Jerusalem").first { $0.name == "Jerusalem" })
+        #expect(jerusalem.certainty == .known)
+        let sinai = try #require(try study.searchPlaces("Mount Sinai").first { $0.name == "Mount Sinai" })
+        #expect(sinai.certainty == .uncertain)
+        let elim = try #require(try study.place(id: try #require(try study.searchPlaces("Elim").first { $0.name == "Elim" }).id))
+        #expect(elim.summary.certainty == .likely)
+        // The Exodus route mixes all three; Paul's journeys are well known.
+        let routes = try study.routes()
+        let exodus = try #require(routes.first { $0.id == "exodus" })
+        #expect(Set(exodus.stops.map(\.certainty)) == Set(PlaceCertainty.allCases))
+        let rome = try #require(routes.first { $0.id == "paul-rome" })
+        #expect(rome.stops.filter { $0.certainty == .known }.count >= rome.stops.count - 1)
+    }
+
+    @Test func certaintyThresholds() {
+        #expect(PlaceCertainty(confidence: 1000) == .known)
+        #expect(PlaceCertainty(confidence: 750) == .known)
+        #expect(PlaceCertainty(confidence: 749) == .likely)
+        #expect(PlaceCertainty(confidence: 500) == .likely)
+        #expect(PlaceCertainty(confidence: 499) == .uncertain)
+        #expect(PlaceCertainty(confidence: nil) == .uncertain)
+    }
+
     @Test func erasFollowThePRDOrder() throws {
         let eras = try repository().eras()
         let titles = eras.map(\.title)

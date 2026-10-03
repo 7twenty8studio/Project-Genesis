@@ -12,10 +12,18 @@ The app's code is not affected by that license.
 
 No Scripture text is stored here, only verse ids.
 
+How sure each place's location is comes from OpenBible.info's Bible
+Geocoding Data (CC BY 4.0): its current confidence score (0–1000) for the
+best identification, drawn from 70+ atlases, dictionaries and commentaries.
+The app shows places as known (750+), likely (500–749) or uncertain.
+
 Usage:
     git clone --depth 1 https://github.com/robertrouse/theographic-bible-metadata /tmp/theographic
-    python3 Tools/StudyData/build_study.py /tmp/theographic
+    git clone --depth 1 https://github.com/openbibleinfo/Bible-Geocoding-Data /tmp/openbible
+    python3 Tools/StudyData/build_study.py /tmp/theographic /tmp/openbible
 """
+import collections
+import json
 import csv
 import os
 import re
@@ -154,6 +162,48 @@ def year(field: str):
     return int(value) if value is not None else None
 
 
+def place_confidence(openbible: str):
+    """Returns a function from a Theographic place row to OpenBible's current
+    confidence (0–1000) in its location, or None when it can't be matched.
+
+    Places are matched by the verses that mention them (the two datasets
+    use the same OSIS references), preferring an OpenBible place with the
+    same name; otherwise the place sharing most of its verses."""
+    ancient = []
+    with open(os.path.join(openbible, "data", "ancient.jsonl"), encoding="utf-8") as handle:
+        for line in handle:
+            ancient.append(json.loads(line))
+    by_verse = collections.defaultdict(set)
+    for index, place in enumerate(ancient):
+        for verse in place.get("verses", []):
+            by_verse[verse["osis"]].add(index)
+
+    def best_score(place):
+        scores = [i["score"]["time_total"] for i in place["identifications"] if "time_total" in i.get("score", {})]
+        return max(0, min(1000, max(scores))) if scores else None
+
+    def simple(name):
+        return re.sub(r"[^a-z]", "", re.sub(r"\s*\d+$", "", (name or "").lower()))
+
+    def confidence(row):
+        refs = [v for v in (row["verses"] or "").split(",") if v]
+        shared = collections.Counter()
+        for ref in refs:
+            for index in by_verse.get(ref, ()):
+                shared[index] += 1
+        names = {simple(row["kjvName"]), simple(row["displayTitle"]), simple(row["esvName"])}
+        same_name = [(count, index) for index, count in shared.items() if simple(ancient[index]["friendly_id"]) in names]
+        if same_name:
+            return best_score(ancient[max(same_name)[1]])
+        if shared:
+            index, count = shared.most_common(1)[0]
+            if count >= max(1, len(refs) * 0.6):
+                return best_score(ancient[index])
+        return None
+
+    return confidence
+
+
 def rows(directory: str, name: str):
     with open(os.path.join(directory, "CSV", name), encoding="utf-8-sig") as handle:
         yield from csv.DictReader(handle)
@@ -186,7 +236,8 @@ ROUTES = [
 ]
 
 
-def build(source: str) -> None:
+def build(source: str, openbible: str) -> None:
+    confidence = place_confidence(openbible)
     os.makedirs(os.path.dirname(OUTPUT), exist_ok=True)
     if os.path.exists(OUTPUT):
         os.remove(OUTPUT)
@@ -205,7 +256,8 @@ def build(source: str) -> None:
         CREATE TABLE places (
             id INTEGER PRIMARY KEY, slug TEXT NOT NULL UNIQUE, name TEXT NOT NULL,
             aliases TEXT NOT NULL, kind TEXT NOT NULL, latitude REAL, longitude REAL,
-            precise INTEGER NOT NULL, bio TEXT NOT NULL, verse_count INTEGER NOT NULL, first_verse INTEGER);
+            precise INTEGER NOT NULL, bio TEXT NOT NULL, verse_count INTEGER NOT NULL, first_verse INTEGER,
+            confidence INTEGER);  -- OpenBible.info, 0-1000; NULL when unknown
         CREATE TABLE place_verses (place_id INTEGER NOT NULL, verse INTEGER NOT NULL, PRIMARY KEY (place_id, verse)) WITHOUT ROWID;
         CREATE TABLE events (
             id INTEGER PRIMARY KEY, title TEXT NOT NULL, era TEXT NOT NULL REFERENCES eras(id),
@@ -254,10 +306,10 @@ def build(source: str) -> None:
         vs = verses(p["verses"])
         name = p["displayTitle"] or p["kjvName"]
         db.execute(
-            "INSERT INTO places VALUES (?,?,?,?,?,?,?,?,?,?,?)",
+            "INSERT INTO places VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
             (pid, p["placeLookup"], name, p["aliases"] or "", p["featureType"] or "",
              lat, lon, 1 if (p["precision"] or "").lower() == "precise" else 0,
-             clean_text(p["dictText"]), len(vs), vs[0] if vs else None),
+             clean_text(p["dictText"]), len(vs), vs[0] if vs else None, confidence(p)),
         )
         db.executemany("INSERT INTO place_verses VALUES (?, ?)", [(pid, v) for v in vs])
         # Prefer the best-attested, mapped place when names repeat.
@@ -329,8 +381,8 @@ def resolve_place(stop: str, names_to_place: dict):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
+    if len(sys.argv) != 3:
         sys.exit(__doc__)
-    build(sys.argv[1])
+    build(sys.argv[1], sys.argv[2])
     size = os.path.getsize(OUTPUT) / 1_000_000
     print(f"Wrote {OUTPUT} ({size:.1f} MB)")

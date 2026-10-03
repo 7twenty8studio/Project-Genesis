@@ -12,6 +12,12 @@ struct BibleMapView: View {
     @State private var route: Route?
     @State private var selection: Int?
     @State private var position: MapCameraPosition = .region(BibleMapView.biblicalWorld)
+    @State private var showsUncertain = true
+    @State private var showsKey = false
+
+    private var visiblePlaces: [PlaceSummary] {
+        showsUncertain ? places : places.filter { $0.certainty != .uncertain }
+    }
 
     /// Egypt to Mesopotamia, Israel in the middle.
     static let biblicalWorld = MKCoordinateRegion(
@@ -27,15 +33,15 @@ struct BibleMapView: View {
                 ForEach(Array(route.stops.enumerated()), id: \.offset) { index, stop in
                     if let coordinate = stop.coordinate {
                         Marker(stop.name, monogram: Text("\(index + 1)"), coordinate: coordinate)
-                            .tint(palette.accent)
+                            .tint(stop.certainty.tint(palette))
                             .tag(stop.id)
                     }
                 }
             } else {
-                ForEach(places) { place in
+                ForEach(visiblePlaces) { place in
                     if let coordinate = place.coordinate {
-                        Marker(place.name, systemImage: place.symbol, coordinate: coordinate)
-                            .tint(palette.accent)
+                        Marker(place.name, systemImage: place.markerSymbol, coordinate: coordinate)
+                            .tint(place.certainty.tint(palette))
                             .tag(place.id)
                     }
                 }
@@ -69,6 +75,9 @@ struct BibleMapView: View {
                 ForEach(routes) { item in
                     Button(item.title) { show(item) }
                 }
+                Divider()
+                Toggle("Show Uncertain Places", isOn: $showsUncertain)
+                    .accessibilityIdentifier("map.showUncertain")
             } label: {
                 Label(route?.title ?? String(localized: "Journeys"), systemImage: "point.topleft.down.to.point.bottomright.curvepath")
                     .font(.subheadline.weight(.semibold))
@@ -77,6 +86,20 @@ struct BibleMapView: View {
                     .glassEffect(.regular, in: Capsule())
             }
             .accessibilityIdentifier("map.journeys")
+            Button {
+                showsKey = true
+            } label: {
+                Image(systemName: "info")
+                    .font(.subheadline.weight(.semibold))
+                    .frame(width: 36, height: 36)
+                    .glassEffect(.regular, in: Circle())
+            }
+            .accessibilityLabel("How certain the locations are")
+            .accessibilityIdentifier("map.key")
+            .popover(isPresented: $showsKey) {
+                CertaintyKey()
+                    .presentationCompactAdaptation(.popover)
+            }
             Spacer()
             if let route {
                 Button {
@@ -104,6 +127,10 @@ struct BibleMapView: View {
                 Text(place.verseCount == 1 ? "\(place.kindTitle) \u{00B7} 1 mention" : "\(place.kindTitle) \u{00B7} \(place.verseCount) mentions")
                     .font(.caption)
                     .foregroundStyle(palette.secondaryText)
+                Label(place.certainty.title, systemImage: place.certainty.symbol)
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(place.certainty == .uncertain ? palette.secondaryText : palette.accent)
+                    .accessibilityIdentifier("map.placeCertainty")
             }
             Spacer()
             Button("Details") { router.explore(.place(place.id)) }
@@ -133,6 +160,10 @@ struct BibleMapView: View {
 }
 
 extension PlaceSummary {
+    /// Uncertain places get a question mark instead of their kind, so the
+    /// difference never depends on colour alone.
+    var markerSymbol: String { certainty == .uncertain ? "questionmark" : symbol }
+
     var coordinate: CLLocationCoordinate2D? {
         guard let latitude, let longitude else { return nil }
         return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
@@ -177,8 +208,8 @@ struct PlacesMap: View {
         Map(initialPosition: .automatic, interactionModes: [.pan, .zoom]) {
             ForEach(places) { place in
                 if let coordinate = place.coordinate {
-                    Marker(place.name, coordinate: coordinate)
-                        .tint(palette.accent)
+                    Marker(place.name, systemImage: place.markerSymbol, coordinate: coordinate)
+                        .tint(place.certainty.tint(palette))
                 }
             }
         }
@@ -215,11 +246,21 @@ struct PlaceDetailView: View {
                             PlacesMap(places: [place.summary])
                                 .frame(height: 220)
                                 .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                            if !place.isPrecise {
-                                Label("The exact location is uncertain.", systemImage: "questionmark.circle")
+                            VStack(alignment: .leading, spacing: 2) {
+                                Label(place.summary.certainty.title, systemImage: place.summary.certainty.symbol)
+                                    .font(.subheadline.weight(.semibold))
+                                    .foregroundStyle(place.summary.certainty == .uncertain ? palette.secondaryText : palette.accent)
+                                Text(place.summary.certainty.explanation)
                                     .font(.caption)
                                     .foregroundStyle(palette.secondaryText)
+                                if !place.isPrecise && place.summary.certainty != .uncertain {
+                                    Text("The pin marks the general area.")
+                                        .font(.caption)
+                                        .foregroundStyle(palette.secondaryText)
+                                }
                             }
+                            .accessibilityElement(children: .combine)
+                            .accessibilityIdentifier("place.certainty")
                         }
                     }
                     if !place.description.isEmpty {
@@ -252,5 +293,50 @@ struct PlaceDetailView: View {
         } else {
             StudyDataMissingView()
         }
+    }
+}
+
+extension PlaceCertainty {
+    /// Known places in the accent colour, likely ones paler, uncertain ones grey.
+    func tint(_ palette: ThemePalette) -> Color {
+        switch self {
+        case .known: palette.accent
+        case .likely: palette.accent.opacity(0.55)
+        case .uncertain: palette.secondaryText
+        }
+    }
+}
+
+/// The map key: what known, likely and uncertain mean.
+struct CertaintyKey: View {
+    @Environment(\.palette) private var palette
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Text("How certain are these places?")
+                .font(.headline)
+                .foregroundStyle(palette.text)
+            ForEach(PlaceCertainty.allCases, id: \.self) { certainty in
+                HStack(alignment: .top, spacing: 10) {
+                    Image(systemName: certainty.symbol)
+                        .foregroundStyle(certainty.tint(palette))
+                        .frame(width: 22)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(certainty.title)
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(palette.text)
+                        Text(certainty.explanation)
+                            .font(.caption)
+                            .foregroundStyle(palette.secondaryText)
+                    }
+                }
+                .accessibilityElement(children: .combine)
+            }
+            Text("Based on OpenBible.info, which weighs over 70 Bible atlases, dictionaries and commentaries.")
+                .font(.caption2)
+                .foregroundStyle(palette.secondaryText)
+        }
+        .padding(18)
+        .frame(width: 300)
     }
 }

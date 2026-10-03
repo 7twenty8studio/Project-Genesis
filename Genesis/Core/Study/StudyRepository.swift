@@ -7,7 +7,7 @@ import Foundation
 /// OpenBible.info (CC BY 4.0) and descriptions from Easton's Bible Dictionary
 /// (public domain). It holds verse ids only, never Scripture text.
 final class StudyRepository: Sendable {
-    static let attribution = String(localized: "People, places and events from Theographic Bible Metadata (CC BY-SA 4.0). Map locations from OpenBible.info (CC BY 4.0). Descriptions from Easton's Bible Dictionary (1897).")
+    static let attribution = String(localized: "People, places and events from Theographic Bible Metadata (CC BY-SA 4.0). Map locations and how certain they are from OpenBible.info (CC BY 4.0). Descriptions from Easton's Bible Dictionary (1897).")
     static let chronologyNote = String(localized: "Dates are approximate and follow a traditional chronology. Events before Abraham are shown in order without dates.")
 
     private let database: SQLiteDatabase
@@ -55,7 +55,7 @@ final class StudyRepository: Sendable {
     func places(inEvent id: Int) throws -> [PlaceSummary] {
         try database.query(
             "\(Self.placeColumns) JOIN event_places e ON e.place_id = p.id WHERE e.event_id = ? ORDER BY p.verse_count DESC",
-            [.int(id)], map: Self.placeSummary
+            [.int(id)], map: { Self.placeSummary($0) }
         )
     }
 
@@ -169,7 +169,7 @@ final class StudyRepository: Sendable {
     func places(forPerson id: Int, limit: Int = 30) throws -> [PlaceSummary] {
         try database.query(
             "\(Self.placeColumns) WHERE p.latitude IS NOT NULL AND p.id IN (SELECT ep.place_id FROM event_places ep JOIN event_people e ON e.event_id = ep.event_id WHERE e.person_id = ?) ORDER BY p.verse_count DESC LIMIT ?",
-            [.int(id), .int(limit)], map: Self.placeSummary
+            [.int(id), .int(limit)], map: { Self.placeSummary($0) }
         )
     }
 
@@ -177,11 +177,11 @@ final class StudyRepository: Sendable {
 
     func place(id: Int) throws -> Place? {
         try database.query(
-            "SELECT p.id, p.name, p.kind, p.latitude, p.longitude, p.verse_count, p.aliases, p.bio, p.precise, p.first_verse FROM places p WHERE p.id = ?",
+            "SELECT p.id, p.name, p.kind, p.latitude, p.longitude, p.verse_count, p.aliases, p.bio, p.precise, p.first_verse, p.confidence FROM places p WHERE p.id = ?",
             [.int(id)]
         ) {
             Place(
-                summary: Self.placeSummary($0),
+                summary: Self.placeSummary($0, confidenceColumn: 10),
                 aliases: $0.text(6),
                 description: $0.text(7),
                 isPrecise: $0.bool(8),
@@ -194,7 +194,7 @@ final class StudyRepository: Sendable {
     func mappedPlaces(minimumMentions: Int = 1, limit: Int = 2000) throws -> [PlaceSummary] {
         try database.query(
             "\(Self.placeColumns) WHERE p.latitude IS NOT NULL AND p.verse_count >= ? ORDER BY p.verse_count DESC LIMIT ?",
-            [.int(minimumMentions), .int(limit)], map: Self.placeSummary
+            [.int(minimumMentions), .int(limit)], map: { Self.placeSummary($0) }
         )
     }
 
@@ -204,7 +204,7 @@ final class StudyRepository: Sendable {
         let pattern = Self.likePrefix(trimmed)
         return try database.query(
             "\(Self.placeColumns) WHERE p.name LIKE ? ESCAPE '\\' OR p.aliases LIKE ? ESCAPE '\\' ORDER BY p.verse_count DESC LIMIT ?",
-            [.text(pattern), .text("%" + pattern), .int(limit)], map: Self.placeSummary
+            [.text(pattern), .text("%" + pattern), .int(limit)], map: { Self.placeSummary($0) }
         )
     }
 
@@ -213,7 +213,7 @@ final class StudyRepository: Sendable {
         let range = chapter.verseRange
         return try database.query(
             "\(Self.placeColumns) WHERE p.latitude IS NOT NULL AND p.id IN (SELECT place_id FROM place_verses WHERE verse BETWEEN ? AND ?) ORDER BY p.verse_count DESC LIMIT ?",
-            [.int(range.lowerBound), .int(range.upperBound), .int(limit)], map: Self.placeSummary
+            [.int(range.lowerBound), .int(range.upperBound), .int(limit)], map: { Self.placeSummary($0) }
         )
     }
 
@@ -232,8 +232,8 @@ final class StudyRepository: Sendable {
         }
         return try headers.map { id, title, passage, first in
             let stops = try database.query(
-                "SELECT p.id, p.name, p.kind, p.latitude, p.longitude, p.verse_count FROM route_stops s JOIN places p ON p.id = s.place_id WHERE s.route_id = ? ORDER BY s.position",
-                [.text(id)], map: Self.placeSummary
+                "SELECT p.id, p.name, p.kind, p.latitude, p.longitude, p.verse_count, p.confidence FROM route_stops s JOIN places p ON p.id = s.place_id WHERE s.route_id = ? ORDER BY s.position",
+                [.text(id)], map: { Self.placeSummary($0) }
             )
             return Route(id: id, title: title, passage: passage, firstVerse: first, stops: stops)
         }
@@ -243,7 +243,7 @@ final class StudyRepository: Sendable {
 
     private static let eventColumns = "SELECT id, title, era, year, first_verse, last_verse FROM events"
     private static let personColumns = "SELECT p.id, p.name, p.also_called, p.verse_count FROM people p"
-    private static let placeColumns = "SELECT p.id, p.name, p.kind, p.latitude, p.longitude, p.verse_count FROM places p"
+    private static let placeColumns = "SELECT p.id, p.name, p.kind, p.latitude, p.longitude, p.verse_count, p.confidence FROM places p"
 
     private static func event(_ row: SQLiteDatabase.Row) -> TimelineEvent {
         TimelineEvent(
@@ -260,14 +260,16 @@ final class StudyRepository: Sendable {
         PersonSummary(id: row.int(0), name: row.text(1), alsoCalled: row.text(2), verseCount: row.int(3))
     }
 
-    private static func placeSummary(_ row: SQLiteDatabase.Row) -> PlaceSummary {
+    /// Columns 0–5 as in `placeColumns`; the confidence is column 6 there.
+    private static func placeSummary(_ row: SQLiteDatabase.Row, confidenceColumn: Int32 = 6) -> PlaceSummary {
         PlaceSummary(
             id: row.int(0),
             name: row.text(1),
             kind: row.text(2),
             latitude: row.optionalDouble(3),
             longitude: row.optionalDouble(4),
-            verseCount: row.int(5)
+            verseCount: row.int(5),
+            confidence: row.optionalInt(confidenceColumn)
         )
     }
 

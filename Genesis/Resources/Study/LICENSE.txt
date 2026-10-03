@@ -6,14 +6,16 @@ https://creativecommons.org/licenses/by-sa/4.0/
 It is adapted from:
 - Theographic Bible Metadata by Robert Rouse, CC BY-SA 4.0
   https://github.com/robertrouse/theographic-bible-metadata
-- Bible Geocoding Data by OpenBible.info, CC BY 4.0 (place coordinates)
+- Bible Geocoding Data by OpenBible.info, CC BY 4.0 (place coordinates and
+  confidence scores for each identification)
   https://github.com/openbibleinfo/Bible-Geocoding-Data
 - Easton's Bible Dictionary by M. G. Easton (1897), public domain
   (biographies and place descriptions)
 
 Changes: converted to SQLite; verse references converted to numeric ids;
 dictionary markup removed; eras, era summaries and map routes added;
-God and the Holy Spirit omitted from the people list. The app's source
+God and the Holy Spirit omitted from the people list; each place given
+OpenBible.info's current confidence score for its best identification. The app's source
 code is not covered by this license.
 
 Topics.sqlite (the topic index used by search) is adapted from
