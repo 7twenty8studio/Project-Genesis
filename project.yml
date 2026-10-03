@@ -63,6 +63,8 @@ targets:
         # Listening carries on with the screen locked.
         UIBackgroundModes:
           - audio
+        # The Lock Screen Live Activity while listening (Premium).
+        NSSupportsLiveActivities: true
         UILaunchScreen:
           UIColorName: LaunchBackground
         UIApplicationSceneManifest:

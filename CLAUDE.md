@@ -60,6 +60,14 @@ shares; README.md has the architecture.
 - The Memorise widget reads `WidgetSnapshot.memorise` (written with the
   entitlement); deep link `genesis://memorise`.
 
+## Premium widgets
+- `.widgets`: the Today's Reading widget (tick via `TogglePlanDayIntent`,
+  which leaves `PendingPlanDays` in the App Group for the app to apply), and
+  the listening Live Activity (`ListeningActivityController`, driven by
+  `AudioPlayerService`; buttons are `LiveActivityIntent`s that call
+  `ListeningControl`). Shared types live in Genesis/Shared/WidgetIntents.swift.
+  The widgets that were free before stay free.
+
 ## Phase 4: audio, groups, community
 - Audio: `AudioPlayerService` (device voices via `SpeechNarrator`, recordings
   via `RecordingPlayer`, catalog in public.audio_recordings). UI tests use the

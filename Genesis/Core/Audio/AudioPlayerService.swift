@@ -45,6 +45,8 @@ final class AudioPlayerService {
     @ObservationIgnored private let narrator: VerseNarrator
     @ObservationIgnored private let recordingPlayer = RecordingPlayer()
     @ObservationIgnored private let nowPlaying = NowPlayingController()
+    /// The Lock Screen Live Activity (Premium; the app sets `isAllowed`).
+    @ObservationIgnored let liveActivity = ListeningActivityController()
     @ObservationIgnored private var sleepTask: Task<Void, Never>?
     @ObservationIgnored private var loadTask: Task<Void, Never>?
     /// Told about each chapter and verse so the reader can follow along;
@@ -70,6 +72,14 @@ final class AudioPlayerService {
             self.elapsed = elapsed
             self.duration = duration
         }
+
+        // Buttons on the Live Activity.
+        ListeningControl.toggle = { [weak self] in
+            guard let self, self.isActive else { return }
+            self.togglePlayback()
+        }
+        ListeningControl.next = { [weak self] in self?.nextChapter() }
+        liveActivity.endStale()
 
         // Read the device's voice list in the background now, so starting to
         // listen never waits for it; read it again when voices change.
@@ -180,6 +190,7 @@ final class AudioPlayerService {
         errorMessage = nil
         nowPlaying.clear()
         nowPlaying.deactivateSession()
+        liveActivity.end()
         onPosition?(nil, nil)
     }
 
@@ -349,6 +360,25 @@ final class AudioPlayerService {
             speed: settings.speed,
             elapsed: recording ? elapsed : nil,
             duration: recording ? duration : nil
+        )
+        updateLiveActivity(title: title)
+    }
+
+    /// The verse being read, verbatim, on the Lock Screen.
+    private func updateLiveActivity(title: String) {
+        guard let chapter else { return }
+        let repository = library.repository(for: translation)
+        var text: String?
+        var progress: Double?
+        if let verse {
+            text = (try? repository.verse(verse))?.plainText
+            if let count = try? repository.verseCount(in: chapter), count > 0 {
+                progress = Double(verse.verse) / Double(count)
+            }
+        }
+        liveActivity.show(
+            .init(reference: title, verseText: text, isPlaying: state == .playing || state == .loading, progress: progress),
+            translation: translation.abbreviation
         )
     }
 

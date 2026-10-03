@@ -6,8 +6,8 @@ import WidgetKit
 /// refresh. Cheap, so it runs whenever the app becomes active or data changes.
 @MainActor
 enum WidgetSnapshotWriter {
-    static func refresh(library: BibleLibrary, progress: ReadingProgress, context: ModelContext, memoriseUnlocked: Bool, now: Date = .now) {
-        let snapshot = make(library: library, progress: progress, context: context, memoriseUnlocked: memoriseUnlocked, now: now)
+    static func refresh(library: BibleLibrary, progress: ReadingProgress, context: ModelContext, isPremium: Bool, now: Date = .now) {
+        let snapshot = make(library: library, progress: progress, context: context, isPremium: isPremium, now: now)
         // Skip the write (and widget reload) when nothing visible changed.
         if var saved = WidgetSnapshot.load() {
             saved.generatedAt = snapshot.generatedAt
@@ -21,7 +21,21 @@ enum WidgetSnapshotWriter {
         }
     }
 
-    static func make(library: BibleLibrary, progress: ReadingProgress, context: ModelContext, memoriseUnlocked: Bool = false, now: Date = .now) -> WidgetSnapshot {
+    /// Days ticked off on the Today's Reading widget since the app last ran.
+    static func applyPendingPlanDays(context: ModelContext) {
+        let changes = PendingPlanDays.take()
+        guard !changes.isEmpty else { return }
+        let store = StudyStore(context: context)
+        for change in changes {
+            let id = change.enrollmentID
+            var descriptor = FetchDescriptor<PlanEnrollment>(predicate: #Predicate { $0.id == id })
+            descriptor.fetchLimit = 1
+            guard let enrollment = (try? context.fetch(descriptor))?.first else { continue }
+            store.setDay(change.day, completed: change.completed, in: enrollment)
+        }
+    }
+
+    static func make(library: BibleLibrary, progress: ReadingProgress, context: ModelContext, isPremium: Bool = false, now: Date = .now) -> WidgetSnapshot {
         let repository = library.current
         let calendar = Calendar.current
 
@@ -62,7 +76,9 @@ enum WidgetSnapshotWriter {
                     dayNumber: today.number,
                     dayCount: definition.dayCount,
                     isTodayComplete: planProgress.completedDays.contains(planProgress.scheduledDay(on: now, calendar: calendar)),
-                    fractionComplete: planProgress.fractionComplete
+                    fractionComplete: planProgress.fractionComplete,
+                    enrollmentID: enrollment.id,
+                    scheduledDay: planProgress.scheduledDay(on: now, calendar: calendar)
                 )
             }
         }
@@ -72,8 +88,8 @@ enum WidgetSnapshotWriter {
 
         // Memorise: the passage due soonest, as a first-letters prompt.
         let memory = (try? context.fetch(FetchDescriptor<MemoryVerse>(sortBy: [SortDescriptor(\.dueAt)]))) ?? []
-        var memorise = WidgetSnapshot.Memorise(isUnlocked: memoriseUnlocked, dueDates: [], total: 0, reference: nil, hint: nil, translation: nil)
-        if memoriseUnlocked, let next = memory.first {
+        var memorise = WidgetSnapshot.Memorise(isUnlocked: isPremium, dueDates: [], total: 0, reference: nil, hint: nil, translation: nil)
+        if isPremium, let next = memory.first {
             let translation = library.translations.first { $0.id == next.translationID } ?? library.currentTranslation
             let text = ((try? library.repository(for: translation).verses(from: next.start, through: next.end)) ?? []).map(\.plainText).joined(separator: " ")
             memorise = WidgetSnapshot.Memorise(
@@ -96,7 +112,8 @@ enum WidgetSnapshotWriter {
             plan: plan,
             activePrayerCount: prayers.count,
             nextPrayerReminder: nextReminder,
-            memorise: memorise
+            memorise: memorise,
+            isPremium: isPremium
         )
     }
 }

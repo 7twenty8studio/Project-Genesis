@@ -105,7 +105,8 @@ struct RootView: View {
     }
 
     private func refreshWidgets() {
-        WidgetSnapshotWriter.refresh(library: library, progress: progress, context: modelContext, memoriseUnlocked: entitlements.allows(.memorise))
+        WidgetSnapshotWriter.applyPendingPlanDays(context: modelContext)
+        WidgetSnapshotWriter.refresh(library: library, progress: progress, context: modelContext, isPremium: entitlements.isPremium)
     }
 }
 

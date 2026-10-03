@@ -174,6 +174,16 @@
         }
       }
     },
+    "Mark Read": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marcar leída"
+          }
+        }
+      }
+    },
     "Memorise": {
       "localizations": {
         "es": {
@@ -190,6 +200,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Memoriza las Escrituras con Genesis Premium."
+          }
+        }
+      }
+    },
+    "Next chapter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capítulo siguiente"
           }
         }
       }
@@ -224,12 +244,42 @@
         }
       }
     },
+    "Pause": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausar"
+          }
+        }
+      }
+    },
     "Pick up where you left off.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Retoma donde te quedaste."
+          }
+        }
+      }
+    },
+    "Plan": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plan"
+          }
+        }
+      }
+    },
+    "Play": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reproducir"
           }
         }
       }
@@ -305,6 +355,16 @@
         }
       }
     },
+    "Start a reading plan in Genesis to see today's reading here.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empieza un plan de lectura en Genesis para ver aquí la lectura de hoy."
+          }
+        }
+      }
+    },
     "Tap to review": {
       "localizations": {
         "es": {
@@ -325,6 +385,16 @@
         }
       }
     },
+    "Tick off your daily reading with Genesis Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marca tu lectura diaria con Genesis Premium."
+          }
+        }
+      }
+    },
     "Today": {
       "localizations": {
         "es": {
@@ -335,12 +405,32 @@
         }
       }
     },
+    "Today's Reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lectura de hoy"
+          }
+        }
+      }
+    },
     "Today's plan reading, your streak and prayer reminders.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "La lectura de hoy de tu plan, tu racha y tus recordatorios de oración."
+          }
+        }
+      }
+    },
+    "Today's reading from your plan. Tick it off when you're done.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La lectura de hoy de tu plan. Márcala cuando termines."
           }
         }
       }

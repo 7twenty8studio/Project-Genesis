@@ -24,8 +24,12 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
         let todayTitle: String
         let dayNumber: Int
         let dayCount: Int
-        let isTodayComplete: Bool
+        var isTodayComplete: Bool
         let fractionComplete: Double
+        /// For ticking off today's reading from a widget.
+        var enrollmentID: UUID?
+        /// The day scheduled for today (what the tick marks).
+        var scheduledDay: Int?
     }
 
     /// Memorise Scripture (Premium): the next passage to review.
@@ -52,6 +56,8 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
     var activePrayerCount: Int
     var nextPrayerReminder: Date?
     var memorise: Memorise?
+    /// Premium widgets (ticking off reading, Memorise) are unlocked.
+    var isPremium: Bool?
 
     static let appGroup = "group.com.7twenty8studio.genesis"
     static let fileName = "widget-snapshot.json"
@@ -89,7 +95,8 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
         plan: Plan(title: String(localized: "The Gospels in 30 Days"), todayTitle: String(localized: "John 3\u{2013}5", comment: "Bible reference: the Gospel of John, chapters 3 to 5"), dayNumber: 26, dayCount: 30, isTodayComplete: false, fractionComplete: 0.83),
         activePrayerCount: 3,
         nextPrayerReminder: nil,
-        memorise: Memorise(isUnlocked: true, dueDates: [.distantPast, .distantPast], total: 6, reference: String(localized: "Psalms 119:105", comment: "Bible reference"), hint: "T w i a l u m f, a a l u m p.", translation: "KJV")
+        memorise: Memorise(isUnlocked: true, dueDates: [.distantPast, .distantPast], total: 6, reference: String(localized: "Psalms 119:105", comment: "Bible reference"), hint: "T w i a l u m f, a a l u m p.", translation: "KJV"),
+        isPremium: true
     )
 }
 

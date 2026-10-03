@@ -93,6 +93,11 @@ struct GenesisApp: App {
         audio.onPosition = { [weak reader, weak audioSettings] chapter, verse in
             reader?.audioMoved(chapter: chapter, verse: verse, follow: audioSettings?.followsAlong ?? true)
         }
+        // The Lock Screen Live Activity is a Premium widget; never in UI tests.
+        let testingEnabled = testing.isEnabled
+        audio.liveActivity.isAllowed = { [weak entitlements, weak features] in
+            !testingEnabled && entitlements?.allows(.widgets) == true && features?.isOn(.listen) == true
+        }
         _audio = State(initialValue: audio)
         // Ambient sounds: silent in UI tests.
         _ambient = State(initialValue: AmbientSoundService(output: testing.isEnabled ? SilentAmbientOutput() : EngineAmbientOutput()))

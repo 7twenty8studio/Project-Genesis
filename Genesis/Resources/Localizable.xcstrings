@@ -3694,6 +3694,16 @@
         }
       }
     },
+    "Listening on the Lock Screen": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escuchar en la pantalla de bloqueo"
+          }
+        }
+      }
+    },
     "Listening options": {
       "localizations": {
         "es": {
@@ -4063,6 +4073,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Más Biblias…"
+          }
+        }
+      }
+    },
+    "More widgets": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más widgets"
           }
         }
       }
@@ -7730,6 +7750,26 @@
         }
       }
     },
+    "Tick off today's reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marca la lectura de hoy"
+          }
+        }
+      }
+    },
+    "Tick off today's reading from your Home Screen, and follow along on the Lock Screen while you listen.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marca la lectura de hoy desde tu pantalla de inicio y sigue el texto en la pantalla de bloqueo mientras escuchas."
+          }
+        }
+      }
+    },
     "Time": {
       "localizations": {
         "es": {
@@ -8382,6 +8422,16 @@
         }
       }
     },
+    "While the Bible is read aloud, the Lock Screen and Dynamic Island show the verse being read, with play and pause.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mientras se lee la Biblia en voz alta, la pantalla de bloqueo y la Dynamic Island muestran el versículo que se está leyendo, con reproducir y pausar."
+          }
+        }
+      }
+    },
     "Who or what are you praying for?": {
       "localizations": {
         "es": {
@@ -8441,6 +8491,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Con Premium, selecciona versículos y toca Memorizar. Las tarjetas te traen cada uno justo antes de que lo olvides. Están en Inicio."
+          }
+        }
+      }
+    },
+    "With Premium, the Today's Reading widget shows your plan's reading and lets you mark it read without opening the app.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Premium, el widget Lectura de hoy muestra la lectura de tu plan y te permite marcarla como leída sin abrir la app."
           }
         }
       }
