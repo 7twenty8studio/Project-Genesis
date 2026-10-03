@@ -644,6 +644,16 @@
         }
       }
     },
+    "Add Ambient Sounds": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir sonidos ambientales"
+          }
+        }
+      }
+    },
     "Add Bookmark": {
       "localizations": {
         "es": {
@@ -1423,6 +1433,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Categoría"
+          }
+        }
+      }
+    },
+    "Change Sounds": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cambiar sonidos"
           }
         }
       }
@@ -2589,16 +2609,6 @@
         }
       }
     },
-    "First letters": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Primeras letras"
-          }
-        }
-      }
-    },
     "First mentioned in %@": {
       "localizations": {
         "es": {
@@ -3014,16 +3024,6 @@
         }
       }
     },
-    "Hide Hint": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ocultar pista"
-          }
-        }
-      }
-    },
     "Highlight %@": {
       "localizations": {
         "es": {
@@ -3065,7 +3065,7 @@
       }
     },
     "Hint": {
-      "comment": "Memorise: show the first letters",
+      "comment": "Memorise: show the opening words",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -3674,6 +3674,16 @@
         }
       }
     },
+    "Listening": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escuchando"
+          }
+        }
+      }
+    },
     "Listening can use %lld natural-sounding voices installed on this device.": {
       "localizations": {
         "es": {
@@ -4073,6 +4083,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Más Biblias…"
+          }
+        }
+      }
+    },
+    "More Words": {
+      "comment": "Memorise: show a few more words of the verse",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más palabras"
           }
         }
       }
@@ -4654,6 +4675,16 @@
         }
       }
     },
+    "Now Playing": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reproduciendo"
+          }
+        }
+      }
+    },
     "OK": {
       "localizations": {
         "es": {
@@ -4761,6 +4792,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Abrir"
+          }
+        }
+      }
+    },
+    "Open in Reader": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir en el lector"
           }
         }
       }
@@ -6721,6 +6762,16 @@
         }
       }
     },
+    "Shows what's playing": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Muestra lo que se está reproduciendo"
+          }
+        }
+      }
+    },
     "Siblings": {
       "localizations": {
         "es": {
@@ -7101,6 +7152,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sigo orando"
+          }
+        }
+      }
+    },
+    "Stop": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Detener"
+          }
+        }
+      }
+    },
+    "Stop Ambient Sounds": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Detener los sonidos ambientales"
+          }
+        }
+      }
+    },
+    "Stop Listening": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dejar de escuchar"
           }
         }
       }

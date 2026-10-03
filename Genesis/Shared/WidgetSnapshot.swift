@@ -39,7 +39,7 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
         let dueDates: [Date]
         let total: Int
         let reference: String?
-        /// The first letter of each word, as a prompt.
+        /// The passage's opening words, as a prompt.
         let hint: String?
         let translation: String?
 
@@ -95,7 +95,7 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
         plan: Plan(title: String(localized: "The Gospels in 30 Days"), todayTitle: String(localized: "John 3\u{2013}5", comment: "Bible reference: the Gospel of John, chapters 3 to 5"), dayNumber: 26, dayCount: 30, isTodayComplete: false, fractionComplete: 0.83),
         activePrayerCount: 3,
         nextPrayerReminder: nil,
-        memorise: Memorise(isUnlocked: true, dueDates: [.distantPast, .distantPast], total: 6, reference: String(localized: "Psalms 119:105", comment: "Bible reference"), hint: "T w i a l u m f, a a l u m p.", translation: "KJV"),
+        memorise: Memorise(isUnlocked: true, dueDates: [.distantPast, .distantPast], total: 6, reference: String(localized: "Psalms 119:105", comment: "Bible reference"), hint: "Thy word is a lamp\u{2026}", translation: "KJV"),
         isPremium: true
     )
 }

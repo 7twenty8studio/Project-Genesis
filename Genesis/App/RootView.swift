@@ -113,6 +113,9 @@ struct RootView: View {
 
 struct MainTabView: View {
     @Environment(AppRouter.self) private var router
+    @Environment(AudioPlayerService.self) private var audio
+    @Environment(AmbientSoundService.self) private var ambient
+    @State private var showsNowPlaying = false
     @Environment(FeatureFlagService.self) private var flags
     @Environment(FeaturePreferences.self) private var features
     @Environment(\.palette) private var palette
@@ -152,6 +155,12 @@ struct MainTabView: View {
             }
         }
         .tabBarMinimizeBehavior(.onScrollDown)
+        // What's playing, on every tab but the reader (which has its own bar).
+        .modifier(NowPlayingAccessoryModifier(isEnabled: showsPlayer, onOpen: { showsNowPlaying = true }))
+        .sheet(isPresented: $showsNowPlaying) {
+            NowPlayingSheet()
+                .presentationDetents([.medium, .large])
+        }
         .environment(\.searchIsTab, searchIsTab)
         .sheet(isPresented: $router.showsSearch) {
             SearchSheet()
@@ -164,6 +173,10 @@ struct MainTabView: View {
             // test that asked to start in the reader must land there.
             if UITestingOptions.current.startVerse != nil { router.tab = .read }
         }
+    }
+
+    private var showsPlayer: Bool {
+        router.tab != .read && ((audio.isActive && features.isOn(.listen)) || ambient.showsControls)
     }
 
     /// A hidden feature's tab (from a link or notification) falls back to Home.

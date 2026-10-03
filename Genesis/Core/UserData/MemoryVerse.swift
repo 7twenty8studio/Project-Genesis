@@ -136,26 +136,20 @@ struct MemorySchedule: Equatable, Sendable {
     }
 }
 
-/// A hint for recalling a passage: the first letter of each word, keeping
-/// punctuation ("Jesus wept." → "J w."). A practice aid shown beside, never
-/// instead of, the verse itself.
+/// A hint for recalling a passage: its opening words, verbatim, followed by
+/// an ellipsis ("For God so loved the world…"). Each step reveals a few more.
 enum MemoryHint {
-    static func firstLetters(_ text: String) -> String {
-        text.split(separator: " ", omittingEmptySubsequences: true).map { word -> String in
-            var result = ""
-            var tookLetter = false
-            for character in word {
-                if character.isLetter || character.isNumber {
-                    if !tookLetter {
-                        result.append(character)
-                        tookLetter = true
-                    }
-                } else if !(character == "'" || character == "\u{2019}") || !tookLetter {
-                    result.append(character)
-                }
-            }
-            return result
-        }
-        .joined(separator: " ")
+    static let wordsPerStep = 4
+
+    /// The first `words` words of the passage (all of it if that's shorter).
+    static func opening(_ text: String, words: Int) -> String {
+        let all = text.split(separator: " ", omittingEmptySubsequences: true)
+        guard words < all.count else { return text }
+        return all.prefix(max(words, 1)).joined(separator: " ") + "\u{2026}"
+    }
+
+    /// True once `words` shows the whole passage.
+    static func isComplete(_ text: String, words: Int) -> Bool {
+        words >= text.split(separator: " ", omittingEmptySubsequences: true).count
     }
 }

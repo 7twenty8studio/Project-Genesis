@@ -17,7 +17,8 @@ struct MemoryReviewView: View {
     @State private var queue: [UUID] = []
     @State private var reviewed = 0
     @State private var revealed = false
-    @State private var showsHint = false
+    /// Opening words shown as a hint (0: none).
+    @State private var hintWords = 0
     @State private var started = false
 
     var body: some View {
@@ -81,17 +82,12 @@ struct MemoryReviewView: View {
                             .foregroundStyle(palette.text)
                             .lineSpacing(6)
                             .accessibilityIdentifier("memorise.card.text")
-                    } else if showsHint {
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text("First letters", comment: "Memorise hint label")
-                                .font(.caption.weight(.semibold))
-                                .foregroundStyle(palette.accent)
-                            Text(MemoryHint.firstLetters(text))
-                                .font(settings.preferences.font.font(size: 21))
-                                .foregroundStyle(palette.secondaryText)
-                                .lineSpacing(6)
-                                .accessibilityIdentifier("memorise.card.hint")
-                        }
+                    } else if hintWords > 0 {
+                        Text(MemoryHint.opening(text, words: hintWords))
+                            .font(settings.preferences.font.font(size: 21))
+                            .foregroundStyle(palette.text)
+                            .lineSpacing(6)
+                            .accessibilityIdentifier("memorise.card.hint")
                     } else {
                         Text("Say the passage to yourself, then turn the card.")
                             .font(.body)
@@ -134,11 +130,14 @@ struct MemoryReviewView: View {
                 }
             }
         } else {
+            let text = passageText(verse)
             HStack(spacing: 12) {
                 Button {
-                    withAnimation { showsHint.toggle() }
+                    // A few more words each time; the last step shows it all.
+                    withAnimation { hintWords += MemoryHint.wordsPerStep }
+                    if MemoryHint.isComplete(text, words: hintWords) { reveal() }
                 } label: {
-                    Label(showsHint ? String(localized: "Hide Hint") : String(localized: "Hint", comment: "Memorise: show the first letters"), systemImage: "lightbulb")
+                    Label(hintWords == 0 ? String(localized: "Hint", comment: "Memorise: show the opening words") : String(localized: "More Words", comment: "Memorise: show a few more words of the verse"), systemImage: "lightbulb")
                         .frame(maxWidth: .infinity, minHeight: 44)
                 }
                 .buttonStyle(.bordered)
@@ -187,7 +186,7 @@ struct MemoryReviewView: View {
             let id = queue.removeFirst()
             if grade == .again { queue.append(id) } else { reviewed += 1 }
             revealed = false
-            showsHint = false
+            hintWords = 0
         }
     }
 

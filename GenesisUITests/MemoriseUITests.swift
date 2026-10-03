@@ -37,7 +37,7 @@ final class MemoriseUITests: GenesisUITestCase {
 
         XCTAssertTrue(app.staticTexts["memorise.card.reference"].waitForExistence(timeout: Genesis.timeout), "A card shows the reference")
         app.buttons["memorise.hint"].tap()
-        XCTAssertTrue(app.staticTexts["memorise.card.hint"].waitForExistence(timeout: Genesis.timeout), "A hint shows the first letters")
+        XCTAssertTrue(app.staticTexts["memorise.card.hint"].waitForExistence(timeout: Genesis.timeout), "A hint shows the opening words")
         app.buttons["memorise.reveal"].tap()
         XCTAssertTrue(app.staticTexts["memorise.card.text"].waitForExistence(timeout: Genesis.timeout), "Turning the card shows the verse")
         app.buttons["memorise.grade.good"].tap()

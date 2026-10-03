@@ -55,8 +55,8 @@ shares; README.md has the architecture.
 ## Memorise Scripture
 - Premium (`.memorise`), shown with Plans & Prayer. `MemoryVerse` (SwiftData,
   synced as `memory_verses`) stores the passage's verse ids, translation and
-  `MemorySchedule` (a gentle SM-2); never the text. `MemoryHint.firstLetters`
-  is a practice prompt only; the card always reveals the verbatim verse.
+  `MemorySchedule` (a gentle SM-2); never the text. Hints are the passage's
+  opening words, verbatim (`MemoryHint.opening`), never altered text.
 - The Memorise widget reads `WidgetSnapshot.memorise` (written with the
   entitlement); deep link `genesis://memorise`.
 
@@ -83,6 +83,9 @@ shares; README.md has the architecture.
   `EngineAmbientOutput`; UI tests use `SilentAmbientOutput`. Narration and
   ambient share the session through `AudioSession.begin/end`; don't call
   AVAudioSession directly.
+- What's playing shows on every tab but the reader as a tab-bar accessory
+  (`NowPlayingAccessory`, iOS 26.1+) that opens `NowPlayingSheet` with full
+  controls for both; the reader keeps its own listening and ambient bars.
 - Groups and community: `CommunityBackend` (Supabase, `InMemoryCommunityBackend`
   in UI tests). The database enforces membership, leader-only actions, author
   names, the word filter and rate limits; keep it that way rather than trusting

@@ -55,4 +55,22 @@ final class AudioUITests: GenesisUITestCase {
         XCTAssertTrue(follow.exists, "Follow Along can be turned off")
         Genesis.tapToolbarButton("audio.settings.done", in: app)
     }
+
+    @MainActor
+    func testWhatsPlayingCanBeStoppedFromAnyTab() {
+        let app = Genesis.launch(verse: 43_003_016)
+        let listen = app.buttons["reader.listen"]
+        XCTAssertTrue(listen.waitForExistence(timeout: Genesis.launchTimeout))
+        listen.tap()
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "audio.player").firstMatch.waitForExistence(timeout: Genesis.timeout))
+
+        Genesis.openTab("Home", in: app)
+        let player = app.buttons["nowPlaying.open"]
+        XCTAssertTrue(player.waitForExistence(timeout: Genesis.timeout), "Home shows what's playing")
+        player.tap()
+        let stop = app.buttons["nowPlaying.audio.stop"]
+        XCTAssertTrue(stop.waitForExistence(timeout: Genesis.timeout), "The full controls open")
+        stop.tap()
+        XCTAssertTrue(Genesis.wait { !player.exists }, "Stopping takes the player away")
+    }
 }

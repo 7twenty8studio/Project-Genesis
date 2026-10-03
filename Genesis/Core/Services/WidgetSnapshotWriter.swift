@@ -99,7 +99,7 @@ enum WidgetSnapshotWriter {
                 dueDates: memory.map(\.dueAt),
                 total: memory.count,
                 reference: next.reference.description,
-                hint: text.isEmpty ? nil : MemoryHint.firstLetters(text),
+                hint: text.isEmpty ? nil : MemoryHint.opening(text, words: 5),
                 translation: translation.abbreviation
             )
         }

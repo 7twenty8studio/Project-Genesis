@@ -42,10 +42,13 @@ struct MemoriseTests {
         #expect(schedule.ease == MemorySchedule.minimumEase)
     }
 
-    @Test func firstLettersKeepPunctuation() {
-        #expect(MemoryHint.firstLetters("Jesus wept.") == "J w.")
-        #expect(MemoryHint.firstLetters("Trust in the LORD with all thine heart; and lean not") == "T i t L w a t h; a l n")
-        #expect(MemoryHint.firstLetters("I'm here, (Lord)") == "I h, (L)")
+    @Test func hintsRevealTheOpeningWords() {
+        let text = "Trust in the LORD with all thine heart; and lean not"
+        #expect(MemoryHint.opening(text, words: 4) == "Trust in the LORD\u{2026}")
+        #expect(MemoryHint.opening(text, words: 50) == text, "The whole passage, with no ellipsis")
+        #expect(MemoryHint.opening("Jesus wept.", words: 4) == "Jesus wept.")
+        #expect(!MemoryHint.isComplete(text, words: 8))
+        #expect(MemoryHint.isComplete(text, words: 11))
     }
 
     @Test func addingTheSamePassageTwiceKeepsOne() throws {
