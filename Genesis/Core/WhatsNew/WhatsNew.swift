@@ -27,7 +27,24 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons]
+
+    static let seasons = WhatsNewAnnouncement(
+        id: "seasonal-themes",
+        title: String(localized: "Read through the seasons"),
+        items: [
+            WhatsNewItem(
+                systemImage: "leaf",
+                title: String(localized: "Seasonal themes"),
+                detail: String(localized: "Autumn, Winter, Spring and Summer, or Seasons to change with the calendar. Leaves, snow or blossom drift by for a moment when you open the reader. In Aa › Theme, with Premium.")
+            ),
+            WhatsNewItem(
+                systemImage: "doc.richtext",
+                title: String(localized: "Textured paper"),
+                detail: String(localized: "Premium themes now have the gentle grain and fibres of real book paper.")
+            ),
+        ]
+    )
 
     static let spanish = WhatsNewAnnouncement(
         id: "spanish",

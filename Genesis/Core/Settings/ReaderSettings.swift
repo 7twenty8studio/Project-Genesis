@@ -72,6 +72,9 @@ struct ReaderPreferences: Codable, Equatable, Sendable {
     var layout: TextLayout = .paragraphs
     var leftHanded = false
     var followsDynamicType = true
+    /// Leaves, snow, blossom or summer light drifting by for a few seconds
+    /// when the reader opens with a seasonal theme.
+    var seasonalEffects = true
 
     static let fontSizeRange: ClosedRange<Double> = 13...36
     static let lineSpacingRange: ClosedRange<Double> = 1.1...2.1
@@ -97,6 +100,7 @@ struct ReaderPreferences: Codable, Equatable, Sendable {
         layout = (try? c.decode(TextLayout.self, forKey: .layout)) ?? d.layout
         leftHanded = (try? c.decode(Bool.self, forKey: .leftHanded)) ?? d.leftHanded
         followsDynamicType = (try? c.decode(Bool.self, forKey: .followsDynamicType)) ?? d.followsDynamicType
+        seasonalEffects = (try? c.decode(Bool.self, forKey: .seasonalEffects)) ?? d.seasonalEffects
     }
 
     private static let defaults = ReaderPreferences()

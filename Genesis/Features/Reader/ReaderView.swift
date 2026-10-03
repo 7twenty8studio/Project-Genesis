@@ -26,6 +26,8 @@ struct ReaderView: View {
     /// Read from the window once it exists; nil until then so text is laid
     /// out once with the right insets rather than twice.
     @State private var windowSafeArea: UIEdgeInsets?
+    /// Bumped to play the seasonal effect again (see `playSeasonalEffect`).
+    @State private var seasonalRun = 0
     @FocusState private var isFocused: Bool
 
     /// The reader's whole width, side panel included.
@@ -63,6 +65,7 @@ struct ReaderView: View {
             sheetContent(sheet)
         }
         .onAppear {
+            playSeasonalEffect(onlyIfRested: true)
             windowSafeArea = DeviceScreen.safeAreaInsets
             reader.modelContext = modelContext
             // Highlights or notes may have changed in the Library tab.
@@ -76,6 +79,7 @@ struct ReaderView: View {
         .onChange(of: reader.isSelecting) { _, selecting in
             if selecting { GenesisTips.highlight.invalidate(reason: .actionPerformed) }
         }
+        .onChange(of: preferences.theme) { playSeasonalEffect(onlyIfRested: false) }
         .onKeyPress(.rightArrow) { turnPage(forward: true) }
         .onKeyPress(.leftArrow) { turnPage(forward: false) }
         .onKeyPress(.space) { turnPage(forward: true) }
@@ -107,6 +111,11 @@ struct ReaderView: View {
                         .accessibilityAction(named: "Next page") { _ = turnPage(forward: true) }
                         .accessibilityAction(named: "Previous page") { _ = turnPage(forward: false) }
                         .accessibilityAction(named: "Show controls") { reader.showsControls = true }
+                }
+
+                if let season = layout.style.theme.season, preferences.seasonalEffects, !reduceMotion, seasonalRun > 0 {
+                    SeasonalEffectView(season: season)
+                        .id(seasonalRun)
                 }
 
                 if reader.isSelecting {
@@ -207,6 +216,16 @@ struct ReaderView: View {
                 chapterID: reader.chapterID
             )
         }
+    }
+
+    /// Plays the seasonal effect: whenever a seasonal theme is chosen (so it
+    /// can be seen), and on opening the reader at most every half hour, so
+    /// it greets rather than interrupts.
+    private func playSeasonalEffect(onlyIfRested: Bool) {
+        if onlyIfRested, let last = SeasonalEffectClock.lastPlayed, Date.now.timeIntervalSince(last) < 30 * 60 { return }
+        guard preferences.theme.resolved(for: colorScheme).season != nil else { return }
+        SeasonalEffectClock.lastPlayed = .now
+        seasonalRun += 1
     }
 
     /// On iPad the tab bar floats at the top of the screen, so the reader's
@@ -353,4 +372,10 @@ enum ReaderSheet: Identifiable {
         case let .study(passage, action): "study-\(passage.start.rawValue)-\(passage.end.rawValue)-\(action.rawValue)"
         }
     }
+}
+
+/// When the seasonal effect last played, for the whole app run.
+@MainActor
+private enum SeasonalEffectClock {
+    static var lastPlayed: Date?
 }

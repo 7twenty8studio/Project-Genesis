@@ -25,6 +25,16 @@ struct ReaderSettingsSheet: View {
                         Image(systemName: "sun.max")
                     }
                     .foregroundStyle(palette.secondaryText)
+
+                    if settings.preferences.theme.season != nil {
+                        Toggle("Seasonal Touches", isOn: $settings.preferences.seasonalEffects)
+                            .tint(palette.accent)
+                            .accessibilityIdentifier("settings.seasonalEffects")
+                    }
+                } footer: {
+                    if settings.preferences.theme.season != nil {
+                        Text("Leaves, snow, blossom or summer light drift across the page for a few seconds when you open the reader. Not shown when Reduce Motion is on.")
+                    }
                 }
 
                 Section("Text") {
@@ -115,6 +125,18 @@ struct ReaderSettingsSheet: View {
         }
     }
 
+    /// A small mark on seasonal swatches.
+    private static func seasonSymbol(_ theme: ReaderTheme) -> String? {
+        switch theme {
+        case .seasons: "calendar"
+        case .autumn: "leaf.fill"
+        case .winter: "snowflake"
+        case .spring: "camera.macro"
+        case .summer: "sun.max.fill"
+        default: nil
+        }
+    }
+
     private func themePicker(selection: Binding<ReaderTheme>) -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 14) {
@@ -137,6 +159,16 @@ struct ReaderSettingsSheet: View {
                                 Text("Aa")
                                     .font(.system(size: 15, weight: .medium, design: .serif))
                                     .foregroundStyle(theme == .automatic ? ReaderTheme.paper.palette.text : theme.palette.text)
+                            }
+                            .overlay(alignment: .bottomTrailing) {
+                                if let symbol = Self.seasonSymbol(theme) {
+                                    Image(systemName: symbol)
+                                        .font(.system(size: 10, weight: .semibold))
+                                        .foregroundStyle(theme.palette.accent)
+                                        .padding(3)
+                                        .background(theme.palette.surface, in: Circle())
+                                        .accessibilityHidden(true)
+                                }
                             }
                             .frame(width: 48, height: 48)
                             .overlay(Circle().strokeBorder(isSelected ? palette.accent : palette.separator, lineWidth: isSelected ? 2.5 : 1))

@@ -315,7 +315,7 @@ final class ReaderPageViewController: UIViewController {
         self.layout = layout
         loadViewIfNeeded()
         let palette = layout.style.palette
-        view.backgroundColor = palette.uiBackground
+        view.backgroundColor = PaperTexture.pageColor(for: layout.style.theme)
         textView.attributedText = text
         textView.textContainerInset = layout.textInsets
         textView.accessibilityLabel = header

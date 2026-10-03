@@ -909,6 +909,27 @@
         }
       }
     },
+    "Autumn": {
+      "comment": "Reader theme name",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otoño"
+          }
+        }
+      }
+    },
+    "Autumn, Winter, Spring and Summer, or Seasons to change with the calendar. Leaves, snow or blossom drift by for a moment when you open the reader. In Aa › Theme, with Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otoño, Invierno, Primavera y Verano, o Estaciones para que cambie con el calendario. Al abrir el lector caen hojas, nieve o flores por un momento. En Aa › Tema, con Premium."
+          }
+        }
+      }
+    },
     "Available offline": {
       "localizations": {
         "es": {
@@ -1564,16 +1585,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Crema"
-          }
-        }
-      }
-    },
-    "Cream, Parchment, Midnight and Sage.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Crema, Pergamino, Medianoche y Salvia."
           }
         }
       }
@@ -2994,6 +3005,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Salir del grupo"
+          }
+        }
+      }
+    },
+    "Leaves, snow, blossom or summer light drift across the page for a few seconds when you open the reader. Not shown when Reduce Motion is on.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Al abrir el lector, hojas, nieve, flores o luz de verano cruzan la página durante unos segundos. No se muestra si Reducir movimiento está activado."
           }
         }
       }
@@ -4504,6 +4525,16 @@
         }
       }
     },
+    "Premium themes now have the gentle grain and fibres of real book paper.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los temas Premium ahora tienen el grano y las fibras suaves del papel de un libro de verdad."
+          }
+        }
+      }
+    },
     "Preparing study notes…": {
       "localizations": {
         "es": {
@@ -4673,6 +4704,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lee toda la Biblia en un año, o un libro a la vez."
+          }
+        }
+      }
+    },
+    "Read through the seasons": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee a lo largo del año"
           }
         }
       }
@@ -5333,6 +5374,37 @@
         }
       }
     },
+    "Seasonal Touches": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toques de temporada"
+          }
+        }
+      }
+    },
+    "Seasonal themes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temas de temporada"
+          }
+        }
+      }
+    },
+    "Seasons": {
+      "comment": "Reader theme name: follows the time of year",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estaciones"
+          }
+        }
+      }
+    },
     "See All": {
       "localizations": {
         "es": {
@@ -5886,6 +5958,17 @@
         }
       }
     },
+    "Spring": {
+      "comment": "Reader theme name",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primavera"
+          }
+        }
+      }
+    },
     "Start": {
       "localizations": {
         "es": {
@@ -6078,6 +6161,17 @@
         }
       }
     },
+    "Summer": {
+      "comment": "Reader theme name",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verano"
+          }
+        }
+      }
+    },
     "Sync Now": {
       "localizations": {
         "es": {
@@ -6195,6 +6289,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Texto"
+          }
+        }
+      }
+    },
+    "Textured paper": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Papel con textura"
+          }
+        }
+      }
+    },
+    "Textured paper in Cream, Parchment, Midnight and Sage, and seasonal themes with falling leaves, snow and blossom.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Papel con textura en Crema, Pergamino, Medianoche y Salvia, y temas de temporada con hojas, nieve y flores que caen."
           }
         }
       }
@@ -7078,6 +7192,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Amplios"
+          }
+        }
+      }
+    },
+    "Winter": {
+      "comment": "Reader theme name",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invierno"
           }
         }
       }

@@ -80,7 +80,7 @@ struct ScrollReaderView: UIViewRepresentable {
             let built = ChapterTextBuilder.build(chapter, style: newLayout.style, decorations: viewModel.decorations(for: chapterID))
             self.built = built
 
-            textView.backgroundColor = newLayout.style.palette.uiBackground
+            textView.backgroundColor = PaperTexture.pageColor(for: newLayout.style.theme)
             var insets = newLayout.textInsets
             insets.bottom += 80
             textView.textContainerInset = insets

@@ -14,6 +14,13 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
     case highContrast
     case midnight
     case sage
+    /// Follows the calendar: Autumn, Winter, Spring or Summer (southern
+    /// hemisphere seasons where the person lives there).
+    case seasons
+    case autumn
+    case winter
+    case spring
+    case summer
 
     var id: String { rawValue }
 
@@ -28,23 +35,47 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
         case .highContrast: String(localized: "Contrast", comment: "Reader theme name")
         case .midnight: String(localized: "Midnight", comment: "Reader theme name")
         case .sage: String(localized: "Sage", comment: "Reader theme name")
+        case .seasons: String(localized: "Seasons", comment: "Reader theme name: follows the time of year")
+        case .autumn: String(localized: "Autumn", comment: "Reader theme name")
+        case .winter: String(localized: "Winter", comment: "Reader theme name")
+        case .spring: String(localized: "Spring", comment: "Reader theme name")
+        case .summer: String(localized: "Summer", comment: "Reader theme name")
         }
     }
 
     /// Resolves `.automatic` for the current appearance.
-    func resolved(for scheme: ColorScheme) -> ReaderTheme {
-        guard self == .automatic else { return self }
-        return scheme == .dark ? .slate : .paper
+    func resolved(for scheme: ColorScheme, on date: Date = .now) -> ReaderTheme {
+        switch self {
+        case .automatic: scheme == .dark ? .slate : .paper
+        case .seasons: Season.current(on: date).theme
+        default: self
+        }
     }
+
+    /// The season a seasonal theme belongs to (its colours and drifting leaves,
+    /// snow, blossom or summer light).
+    var season: Season? {
+        switch self {
+        case .autumn: .autumn
+        case .winter: .winter
+        case .spring: .spring
+        case .summer: .summer
+        case .seasons: Season.current()
+        default: nil
+        }
+    }
+
+    /// Premium themes are printed on textured paper: a faint grain and fibres.
+    var hasPaperTexture: Bool { isPremium }
 
     var isDark: Bool { self == .slate || self == .highContrast || self == .midnight }
 
-    /// Themes that come with Genesis Premium. Auto, Paper, Sepia, Slate and
-    /// High Contrast stay free, so a readable light, dark and high-contrast
-    /// choice is always available.
+    /// Themes that come with Genesis Premium (including the seasons). Auto,
+    /// Paper, Sepia, Slate and High Contrast stay free, so a readable light,
+    /// dark and high-contrast choice is always available.
     var isPremium: Bool {
         switch self {
-        case .cream, .parchment, .midnight, .sage: true
+        case .cream, .parchment, .midnight, .sage, .seasons, .autumn, .winter, .spring, .summer: true
         case .automatic, .paper, .sepia, .slate, .highContrast: false
         }
     }
@@ -67,8 +98,57 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
             ThemePalette(background: 0x161B26, surface: 0x1E2432, text: 0xD6D9E0, secondaryText: 0x8A91A0, accent: 0xB9A77C, separator: 0x2C3342)
         case .sage:
             ThemePalette(background: 0xEEF0E6, surface: 0xE3E7D8, text: 0x2C3128, secondaryText: 0x6F7866, accent: 0x6E7F5A, separator: 0xD3D9C4)
+        case .seasons:
+            Season.current().theme.palette
+        // Seasonal papers: muted, like a book's endpapers through the year.
+        case .autumn:
+            ThemePalette(background: 0xF3E8D6, surface: 0xEADBC3, text: 0x36291F, secondaryText: 0x80695A, accent: 0xA65F34, separator: 0xDDCAAE)
+        case .winter:
+            ThemePalette(background: 0xEEF1F2, surface: 0xE2E7EA, text: 0x262C33, secondaryText: 0x6E7782, accent: 0x5D7A8E, separator: 0xD3DADF)
+        case .spring:
+            ThemePalette(background: 0xF6EFEC, surface: 0xEDE2DE, text: 0x2F2A2B, secondaryText: 0x7C7072, accent: 0xA86F7E, separator: 0xE3D5D1)
+        case .summer:
+            ThemePalette(background: 0xF5EFE1, surface: 0xEBE2CF, text: 0x2C2B25, secondaryText: 0x76725F, accent: 0x4E8481, separator: 0xDDD3BC)
         }
     }
+}
+
+/// A season of the year, for the seasonal themes.
+enum Season: String, CaseIterable, Sendable {
+    case autumn, winter, spring, summer
+
+    var theme: ReaderTheme {
+        switch self {
+        case .autumn: .autumn
+        case .winter: .winter
+        case .spring: .spring
+        case .summer: .summer
+        }
+    }
+
+    /// Meteorological seasons (autumn is September to November in the
+    /// north), flipped for the southern hemisphere.
+    static func current(on date: Date = .now, region: String? = Locale.current.region?.identifier) -> Season {
+        let month = Calendar(identifier: .gregorian).component(.month, from: date)
+        let northern: Season = switch month {
+        case 3...5: .spring
+        case 6...8: .summer
+        case 9...11: .autumn
+        default: .winter
+        }
+        guard let region, southernRegions.contains(region) else { return northern }
+        return switch northern {
+        case .spring: .autumn
+        case .summer: .winter
+        case .autumn: .spring
+        case .winter: .summer
+        }
+    }
+
+    private static let southernRegions: Set<String> = [
+        "AR", "AU", "BO", "BR", "BW", "CL", "FJ", "LS", "MG", "MU", "MZ", "NA", "NZ",
+        "PE", "PG", "PY", "SZ", "UY", "ZA", "ZM", "ZW",
+    ]
 }
 
 /// Resolved colours for one theme, usable from both SwiftUI and UIKit.
