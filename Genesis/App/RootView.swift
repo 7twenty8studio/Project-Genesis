@@ -12,6 +12,7 @@ struct RootView: View {
     @Environment(FeatureFlagService.self) private var flags
     @Environment(WhatsNewService.self) private var whatsNew
     @Environment(AudioPlayerService.self) private var audio
+    @Environment(AmbientSoundService.self) private var ambient
     @Environment(FeaturePreferences.self) private var features
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
@@ -60,8 +61,14 @@ struct RootView: View {
         .onChange(of: entitlements.isPremium) { _, isPremium in
             if isPremium { sync.schedule(after: .zero) }
             keepThemeAvailable()
+            keepAmbientAvailable()
         }
-        .onChange(of: entitlements.hasLoaded) { keepThemeAvailable() }
+        .onChange(of: entitlements.hasLoaded) {
+            keepThemeAvailable()
+            keepAmbientAvailable()
+        }
+        // Ambient sounds sit quieter while the Bible is read aloud.
+        .onChange(of: audio.isPlaying) { _, playing in ambient.setDucked(playing) }
         .onChange(of: scenePhase) { _, phase in
             switch phase {
             case .active:
@@ -88,6 +95,12 @@ struct RootView: View {
     private func keepThemeAvailable() {
         guard entitlements.hasLoaded, !entitlements.allows(settings.preferences.theme) else { return }
         settings.preferences.theme = .automatic
+    }
+
+    /// Ambient sounds are Premium: stop them if Premium has ended.
+    private func keepAmbientAvailable() {
+        guard entitlements.hasLoaded, !entitlements.allows(.ambientSounds), ambient.showsControls else { return }
+        ambient.close()
     }
 
     private func refreshWidgets() {

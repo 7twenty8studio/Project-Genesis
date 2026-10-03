@@ -49,17 +49,11 @@ final class NowPlayingController {
     }
 
     func activateSession() {
-        let session = AVAudioSession.sharedInstance()
-        do {
-            try session.setCategory(.playback, mode: .spokenAudio)
-            try session.setActive(true)
-        } catch {
-            CrashReporter.record(error, context: "Audio.activateSession")
-        }
+        AudioSession.begin(.narration)
     }
 
     func deactivateSession() {
-        try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+        AudioSession.end(.narration)
     }
 
     func update(title: String, subtitle: String, isPlaying: Bool, speed: Double, elapsed: Double? = nil, duration: Double? = nil) {

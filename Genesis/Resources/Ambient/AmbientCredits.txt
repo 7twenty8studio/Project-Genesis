@@ -1,0 +1,19 @@
+Ambient sounds in Genesis
+=========================
+
+Built by Tools/Ambient/make_ambient.py. The recordings below were trimmed
+to seamless loops, levelled and re-encoded, and are mixed in the app with
+each other and with the generated sounds.
+
+Recordings (Pixabay Content License, https://pixabay.com/service/license/;
+free for commercial use, no attribution required). Credited anyway, with thanks:
+
+- ambient-rain.m4a       "Calming Rain" by liecio (Pixabay, sound 257596)
+- ambient-fireplace.m4a  "Fireplace Loop Original Noise" by King_of_the_Christmas (Pixabay, sound 178209)
+- ambient-birdsong.m4a   "Beautiful Birdsong 3" by audiopapkin (Pixabay, sound 301866)
+- ambient-pad.m4a        "C Pad" by Arisen_Worship (Pixabay, sound 311499)
+
+Generated in make_ambient.py (no third-party material):
+
+- ambient-waves.m4a      ocean waves, synthesised from filtered noise
+- ambient-wind.m4a       wind, synthesised from filtered noise

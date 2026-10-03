@@ -11,6 +11,7 @@ struct ReaderView: View {
     @Environment(EntitlementService.self) private var entitlements
     @Environment(ReaderSettings.self) private var settings
     @Environment(AudioPlayerService.self) private var audio
+    @Environment(AmbientSoundService.self) private var ambient
     @Environment(FeaturePreferences.self) private var features
     @Environment(\.modelContext) private var modelContext
     @Environment(\.palette) private var palette
@@ -151,7 +152,7 @@ struct ReaderView: View {
                     .frame(maxHeight: .infinity, alignment: .top)
                     .transition(.opacity)
                 }
-                if reader.showsControls && !reader.isSelecting && !audio.isActive {
+                if reader.showsControls && !reader.isSelecting && !audio.isActive && !ambient.showsControls {
                     TipView(GenesisTips.highlight)
                         .tipBackground(palette.surface)
                         .padding(.horizontal, 16)
@@ -160,7 +161,12 @@ struct ReaderView: View {
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                 }
                 if audio.isActive && features.isOn(.listen) && reader.showsControls && !reader.isSelecting {
-                    AudioMiniPlayer { sheet = .audio }
+                    AudioMiniPlayer(onSettings: { sheet = .audio }, onAmbient: openAmbient)
+                        .padding(.bottom, 8)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                        .transition(.move(edge: .bottom).combined(with: .opacity))
+                } else if ambient.showsControls && reader.showsControls && !reader.isSelecting {
+                    AmbientMiniBar(onOpen: openAmbient)
                         .padding(.bottom, 8)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                         .transition(.move(edge: .bottom).combined(with: .opacity))
@@ -277,6 +283,11 @@ struct ReaderView: View {
         audio.play(reader.chapterID, from: start)
     }
 
+    /// Ambient sounds are Premium.
+    private func openAmbient() {
+        sheet = entitlements.allows(.ambientSounds) ? .ambient : .premium(.ambientSounds)
+    }
+
     /// The whole chapter being read.
     private func studyChapter() {
         let chapter = reader.chapterID
@@ -344,6 +355,9 @@ struct ReaderView: View {
         case .audio:
             AudioSettingsView()
                 .presentationDetents([.medium, .large])
+        case .ambient:
+            AmbientSoundsSheet()
+                .presentationDetents([.medium, .large])
         case let .crossReferences(verse):
             NavigationStack {
                 CrossReferencesView(verse: verse) { target in
@@ -364,6 +378,7 @@ enum ReaderSheet: Identifiable {
     case premium(PremiumFeature)
     case study(StudyPassage, StudyAction)
     case audio
+    case ambient
     case bibles
     case verseImage(VerseCard)
 
@@ -373,6 +388,7 @@ enum ReaderSheet: Identifiable {
         case .chapterPicker: "chapters"
         case .settings: "settings"
         case .audio: "audio"
+        case .ambient: "ambient"
         case .bibles: "bibles"
         case let .note(note): "note-\(note.id)"
         case let .crossReferences(verse): "xref-\(verse.rawValue)"

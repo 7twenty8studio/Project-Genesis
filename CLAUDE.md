@@ -56,6 +56,12 @@ shares; README.md has the architecture.
 - Audio: `AudioPlayerService` (device voices via `SpeechNarrator`, recordings
   via `RecordingPlayer`, catalog in public.audio_recordings). UI tests use the
   silent `StubNarrator`. Recorded narration must be public domain.
+- Ambient sounds (Premium, `.ambientSounds`): `AmbientSoundService` mixes the
+  bundled loops (`ambient-*.m4a`, built by Tools/Ambient/make_ambient.py;
+  sources and licences in Resources/Ambient/AmbientCredits.txt) through
+  `EngineAmbientOutput`; UI tests use `SilentAmbientOutput`. Narration and
+  ambient share the session through `AudioSession.begin/end`; don't call
+  AVAudioSession directly.
 - Groups and community: `CommunityBackend` (Supabase, `InMemoryCommunityBackend`
   in UI tests). The database enforces membership, leader-only actions, author
   names, the word filter and rate limits; keep it that way rather than trusting

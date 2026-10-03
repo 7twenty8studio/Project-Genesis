@@ -101,6 +101,16 @@
         }
       }
     },
+    "%@ volume": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volumen de %@"
+          }
+        }
+      }
+    },
     "%@ · %lld mentions": {
       "localizations": {
         "es": {
@@ -484,6 +494,16 @@
         }
       }
     },
+    "A timer that fades out": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un temporizador que se desvanece"
+          }
+        }
+      }
+    },
     "AI can make mistakes. Weigh these notes against Scripture itself. Explanations aim to be non-denominational and note where Christian traditions differ.": {
       "localizations": {
         "es": {
@@ -702,6 +722,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "También llamado %@"
+          }
+        }
+      }
+    },
+    "Ambient Sounds": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonidos ambientales"
+          }
+        }
+      }
+    },
+    "Ambient sounds": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonidos ambientales"
+          }
+        }
+      }
+    },
+    "Ambient sounds, %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonidos ambientales, %@"
           }
         }
       }
@@ -1123,6 +1173,17 @@
         }
       }
     },
+    "Birdsong": {
+      "comment": "Ambient sound",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Canto de aves"
+          }
+        }
+      }
+    },
     "Block": {
       "localizations": {
         "es": {
@@ -1311,6 +1372,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Primero elige un nombre para mostrar."
+          }
+        }
+      }
+    },
+    "Choose a sound": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige un sonido"
           }
         }
       }
@@ -2222,6 +2293,16 @@
         }
       }
     },
+    "Fades out at %@.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se desvanece a las %@."
+          }
+        }
+      }
+    },
     "Family": {
       "localizations": {
         "es": {
@@ -2298,6 +2379,28 @@
           "stringUnit": {
             "state": "translated",
             "value": "Buscar una persona"
+          }
+        }
+      }
+    },
+    "Fireplace": {
+      "comment": "Ambient sound",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chimenea"
+          }
+        }
+      }
+    },
+    "Fireside": {
+      "comment": "Ambient mix: fire with rain outside",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Junto al fuego"
           }
         }
       }
@@ -3563,6 +3666,16 @@
         }
       }
     },
+    "Mixes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mezclas"
+          }
+        }
+      }
+    },
     "Mode": {
       "localizations": {
         "es": {
@@ -3610,6 +3723,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Más Biblias…"
+          }
+        }
+      }
+    },
+    "Morning Garden": {
+      "comment": "Ambient mix",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jardín al amanecer"
           }
         }
       }
@@ -4179,6 +4303,27 @@
         }
       }
     },
+    "Ocean Waves": {
+      "comment": "Ambient sound",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Olas del mar"
+          }
+        }
+      }
+    },
+    "Off": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desactivado"
+          }
+        }
+      }
+    },
     "Old Testament": {
       "localizations": {
         "es": {
@@ -4465,6 +4610,7 @@
       }
     },
     "Paused": {
+      "comment": "Ambient sounds status",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -4627,6 +4773,7 @@
       }
     },
     "Playing": {
+      "comment": "Ambient sounds status",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -4920,6 +5067,48 @@
         }
       }
     },
+    "Quiet Rain": {
+      "comment": "Ambient mix",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lluvia suave"
+          }
+        }
+      }
+    },
+    "Rain": {
+      "comment": "Ambient sound",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lluvia"
+          }
+        }
+      }
+    },
+    "Rain, ocean waves, wind, a crackling fire, birdsong and a soft worship pad to read and pray with, mixed your way.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lluvia, olas del mar, viento, el crepitar del fuego, canto de aves y un suave fondo de adoración para leer y orar, mezclados a tu gusto."
+          }
+        }
+      }
+    },
+    "Rain, waves, a fire or birdsong while you read and pray.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lluvia, olas, fuego o canto de aves mientras lees y oras."
+          }
+        }
+      }
+    },
     "Read": {
       "comment": "Section title: chapters to read",
       "localizations": {
@@ -5037,6 +5226,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lee dos traducciones lado a lado, versículo por versículo. Toca la traducción en el lector y luego Leer en paralelo. En el iPhone Duo abierto, cada una tiene su propia pantalla."
+          }
+        }
+      }
+    },
+    "Read with rain, waves or a fire": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee con lluvia, olas o fuego"
           }
         }
       }
@@ -5576,6 +5775,17 @@
         }
       }
     },
+    "Sanctuary": {
+      "comment": "Ambient mix: worship pad with soft rain",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Santuario"
+          }
+        }
+      }
+    },
     "Save": {
       "localizations": {
         "es": {
@@ -5703,6 +5913,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Busca un tema como el perdón o el miedo para ver los pasajes que hablan de él."
+          }
+        }
+      }
+    },
+    "Seaside": {
+      "comment": "Ambient mix",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Junto al mar"
           }
         }
       }
@@ -5835,6 +6056,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sepia"
+          }
+        }
+      }
+    },
+    "Set a timer and the sounds fade gently away, for reading before sleep.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pon un temporizador y los sonidos se desvanecerán suavemente, para leer antes de dormir."
           }
         }
       }
@@ -6281,6 +6512,26 @@
         }
       }
     },
+    "Sounds": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonidos"
+          }
+        }
+      }
+    },
+    "Sounds keep playing when you lock your iPhone, play alongside music from other apps, and sit quieter while the Bible is read aloud.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los sonidos siguen sonando con el iPhone bloqueado, suenan junto con la música de otras apps y bajan de volumen mientras se lee la Biblia en voz alta."
+          }
+        }
+      }
+    },
     "Space used": {
       "localizations": {
         "es": {
@@ -6449,6 +6700,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dejar de leer en paralelo"
+          }
+        }
+      }
+    },
+    "Stop ambient sounds": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Detener los sonidos ambientales"
           }
         }
       }
@@ -7048,6 +7309,16 @@
         }
       }
     },
+    "This sound couldn't be played.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo reproducir este sonido."
+          }
+        }
+      }
+    },
     "This study tool is part of Genesis Premium.": {
       "localizations": {
         "es": {
@@ -7134,6 +7405,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cronología, mapas y personas, el asistente de estudio, copia de seguridad en la nube y más."
+          }
+        }
+      }
+    },
+    "Timer": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temporizador"
           }
         }
       }
@@ -7681,6 +7962,17 @@
         }
       }
     },
+    "Wind": {
+      "comment": "Ambient sound",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Viento"
+          }
+        }
+      }
+    },
     "Winter": {
       "comment": "Reader theme name",
       "localizations": {
@@ -7688,6 +7980,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Invierno"
+          }
+        }
+      }
+    },
+    "With Premium, mix rain, ocean waves, wind, a crackling fire, birdsong and a soft worship pad while you read and pray. Find them in the reader under Aa.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Premium, mezcla lluvia, olas del mar, viento, el crepitar del fuego, canto de aves y un suave fondo de adoración mientras lees y oras. Están en el lector, en Aa."
           }
         }
       }
@@ -7708,6 +8010,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Trabajo"
+          }
+        }
+      }
+    },
+    "Worship Pad": {
+      "comment": "Ambient sound: a soft sustained keyboard chord",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fondo de adoración"
           }
         }
       }

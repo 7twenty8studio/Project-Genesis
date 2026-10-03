@@ -16,6 +16,7 @@ struct GenesisApp: App {
     @State private var flags: FeatureFlagService
     @State private var whatsNew: WhatsNewService
     @State private var audio: AudioPlayerService
+    @State private var ambient: AmbientSoundService
     @State private var community: CommunityStore
     @State private var features: FeaturePreferences
     private let modelContainer: ModelContainer
@@ -93,6 +94,8 @@ struct GenesisApp: App {
             reader?.audioMoved(chapter: chapter, verse: verse, follow: audioSettings?.followsAlong ?? true)
         }
         _audio = State(initialValue: audio)
+        // Ambient sounds: silent in UI tests.
+        _ambient = State(initialValue: AmbientSoundService(output: testing.isEnabled ? SilentAmbientOutput() : EngineAmbientOutput()))
 
         // Groups and the community. UI tests use an in-memory server with a
         // signed-in person (or none with -uiTestingSignedOut).
@@ -130,6 +133,7 @@ struct GenesisApp: App {
                 .environment(flags)
                 .environment(whatsNew)
                 .environment(audio)
+                .environment(ambient)
                 .environment(community)
                 .environment(features)
                 .environment(\.studyData, studyData)

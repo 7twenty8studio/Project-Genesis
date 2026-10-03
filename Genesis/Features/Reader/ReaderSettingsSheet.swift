@@ -8,6 +8,8 @@ struct ReaderSettingsSheet: View {
     @State private var brightness: CGFloat = 0.5
     @State private var premium: PremiumFeature?
     @Environment(EntitlementService.self) private var entitlements
+    @Environment(AmbientSoundService.self) private var ambient
+    @State private var showsAmbient = false
 
     var body: some View {
         @Bindable var settings = settings
@@ -36,6 +38,36 @@ struct ReaderSettingsSheet: View {
                         if settings.preferences.theme.season != nil {
                             Text("Leaves, snow, blossom or summer sunlight drift gently across the page while you read. Paused in Low Power Mode and not shown when Reduce Motion is on.")
                         }
+                    }
+
+                    Section {
+                        Button {
+                            if entitlements.allows(.ambientSounds) {
+                                showsAmbient = true
+                            } else {
+                                premium = .ambientSounds
+                            }
+                        } label: {
+                            HStack {
+                                Label("Ambient Sounds", systemImage: "speaker.wave.2")
+                                    .foregroundStyle(palette.text)
+                                Spacer()
+                                if !entitlements.allows(.ambientSounds) {
+                                    PremiumBadge()
+                                } else if ambient.isPlaying {
+                                    Text(ambient.summary)
+                                        .lineLimit(1)
+                                        .foregroundStyle(palette.secondaryText)
+                                }
+                                Image(systemName: "chevron.right")
+                                    .font(.footnote.weight(.semibold))
+                                    .foregroundStyle(palette.secondaryText)
+                            }
+                            .contentShape(Rectangle())
+                        }
+                        .accessibilityIdentifier("settings.ambient")
+                    } footer: {
+                        Text("Rain, waves, a fire or birdsong while you read and pray.")
                     }
 
                     Section("Text") {
@@ -118,6 +150,7 @@ struct ReaderSettingsSheet: View {
             .navigationBarTitleDisplayMode(.inline)
             .onAppear { brightness = DeviceScreen.brightness }
             .premiumSheet($premium)
+            .navigationDestination(isPresented: $showsAmbient) { AmbientSoundsView() }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done", systemImage: "checkmark") { dismiss() }

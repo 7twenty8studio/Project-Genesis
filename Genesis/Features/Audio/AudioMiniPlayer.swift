@@ -4,6 +4,7 @@ import SwiftUI
 /// pause, chapter skips, speed, sleep timer and audio settings.
 struct AudioMiniPlayer: View {
     let onSettings: () -> Void
+    var onAmbient: (() -> Void)?
 
     @Environment(AudioPlayerService.self) private var audio
     @Environment(\.palette) private var palette
@@ -106,6 +107,11 @@ struct AudioMiniPlayer: View {
                 if audio.sleepTimer != nil {
                     Button("Turn Off Timer", role: .destructive) { audio.setSleepTimer(nil) }
                 }
+            }
+
+            if let onAmbient {
+                Button("Ambient Sounds", systemImage: "speaker.wave.2", action: onAmbient)
+                    .accessibilityIdentifier("audio.ambient")
             }
 
             Button("Audio Settings", systemImage: "slider.horizontal.3", action: onSettings)
