@@ -67,6 +67,11 @@ shares; README.md has the architecture.
   `AudioPlayerService`; buttons are `LiveActivityIntent`s that call
   `ListeningControl`). Shared types live in Genesis/Shared/WidgetIntents.swift.
   The widgets that were free before stay free.
+- Apple Watch (verse of the day, Premium): GenesisWatch + GenesisWatchWidgets
+  targets, fed by `WatchConnector` (WatchConnectivity application context,
+  `WatchPayload`). Built with `./Scripts/build.sh --watch`; not embedded in
+  the iPhone app until the owner is ready (add `- target: GenesisWatch` to
+  Genesis's dependencies), so everyday builds don't need watchOS.
 
 ## Phase 4: audio, groups, community
 - Audio: `AudioPlayerService` (device voices via `SpeechNarrator`, recordings

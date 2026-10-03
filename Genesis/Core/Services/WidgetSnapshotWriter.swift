@@ -8,6 +8,8 @@ import WidgetKit
 enum WidgetSnapshotWriter {
     static func refresh(library: BibleLibrary, progress: ReadingProgress, context: ModelContext, isPremium: Bool, now: Date = .now) {
         let snapshot = make(library: library, progress: progress, context: context, isPremium: isPremium, now: now)
+        // Apple Watch gets the verses of the day too (sent only when they change).
+        WatchConnector.shared.send(WatchPayload(generatedAt: now, translation: snapshot.translation, isPremium: isPremium, verses: snapshot.dailyVerses))
         // Skip the write (and widget reload) when nothing visible changed.
         if var saved = WidgetSnapshot.load() {
             saved.generatedAt = snapshot.generatedAt

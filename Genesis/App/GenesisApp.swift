@@ -119,6 +119,9 @@ struct GenesisApp: App {
         push.onOpenGroup = { [weak router] id in router?.openGroup(id) }
         push.onOpenPrayerJournal = { [weak router] in router?.open(.prayerJournal) }
 
+        // Verses of the day for Apple Watch (not in UI tests).
+        if !testing.isEnabled { WatchConnector.shared.start() }
+
         GenesisTips.configure(testing: testing.isEnabled)
         testing.apply(settings: settings, router: router)
     }

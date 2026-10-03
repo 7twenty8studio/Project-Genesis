@@ -40,4 +40,16 @@ struct WidgetIntentTests {
         #expect(snapshot.isPremium == nil)
         #expect(snapshot.plan?.enrollmentID == nil)
     }
+
+    @Test func watchFindsTheVerseForAnyDay() {
+        let calendar = Calendar(identifier: .gregorian)
+        let verses = (1...3).map { day in
+            WidgetSnapshot.DailyVerse(day: String(format: "2026-10-%02d", day), reference: "R\(day)", text: "T\(day)", verse: 43_003_016)
+        }
+        let payload = WatchPayload(generatedAt: .now, translation: "KJV", isPremium: true, verses: verses)
+        let october2 = calendar.date(from: DateComponents(year: 2026, month: 10, day: 2, hour: 9))!
+        let october9 = calendar.date(from: DateComponents(year: 2026, month: 10, day: 9))!
+        #expect(payload.verse(on: october2, calendar: calendar)?.reference == "R2")
+        #expect(payload.verse(on: october9, calendar: calendar)?.reference == "R3", "Past the last day, the latest verse stays")
+    }
 }

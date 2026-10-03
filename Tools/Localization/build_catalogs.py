@@ -7,6 +7,7 @@ Extracts the strings the code uses (extract_strings.py), takes their Spanish
 from Tools/Localization/es.json (English key → Spanish) and writes:
   Genesis/Resources/Localizable.xcstrings   the app
   GenesisWidgets/Localizable.xcstrings      the widgets (+ Genesis/Shared)
+  GenesisWatch/, GenesisWatchWidgets/       the Apple Watch app and complication
 
 Fails, listing them, if a string has no Spanish or a translation's
 placeholders (%@, %lld, %%) don't match the English. To add a language later,
@@ -26,6 +27,8 @@ LANGUAGES = ["es"]
 TARGETS = {
     "Genesis/Resources/Localizable.xcstrings": ["Genesis"],
     "GenesisWidgets/Localizable.xcstrings": ["GenesisWidgets", "Genesis/Shared"],
+    "GenesisWatch/Localizable.xcstrings": ["GenesisWatch"],
+    "GenesisWatchWidgets/Localizable.xcstrings": ["GenesisWatchWidgets"],
 }
 SPECIFIER = re.compile(r"%(?:\d+\$)?(@|lld|d|ld|f|lf)")
 

@@ -15,6 +15,7 @@ GENESIS_PRIVACY_URL =
 // team. They stay off until Config/Signing.xcconfig exists; see PHASE2_SETUP.md.
 GENESIS_APP_ENTITLEMENTS =
 GENESIS_WIDGET_ENTITLEMENTS =
+GENESIS_WATCH_ENTITLEMENTS =
 
 #include? "Secrets.xcconfig"
 #include? "Signing.xcconfig"

@@ -1,0 +1,46 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "Genesis": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genesis"
+          }
+        }
+      }
+    },
+    "Open Genesis on your iPhone to bring the verse of the day to your watch.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abre Genesis en tu iPhone para traer el versículo del día a tu reloj."
+          }
+        }
+      }
+    },
+    "The verse of the day on Apple Watch is part of Genesis Premium. Subscribe in Genesis on your iPhone.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El versículo del día en el Apple Watch es parte de Genesis Premium. Suscríbete en Genesis en tu iPhone."
+          }
+        }
+      }
+    },
+    "Verse of the Day": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versículo del día"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

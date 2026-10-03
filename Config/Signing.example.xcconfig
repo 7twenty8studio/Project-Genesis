@@ -5,3 +5,5 @@ DEVELOPMENT_TEAM = YOURTEAMID
 // Turns on the App Group (widgets share data with the app) and Sign in with Apple.
 GENESIS_APP_ENTITLEMENTS = Config/Genesis.entitlements
 GENESIS_WIDGET_ENTITLEMENTS = Config/GenesisWidgets.entitlements
+// The watch app and its complication share the App Group on the watch.
+GENESIS_WATCH_ENTITLEMENTS = Config/GenesisWidgets.entitlements

@@ -15,6 +15,8 @@
 #                                   from your Mac's memory; 1 = one at a time)
 #   --only Phase3UITests            run only these UI tests (a class, or
 #                                   Class/testMethod); repeat for more
+#   --watch                         also build the Apple Watch app (needs the watchOS
+#                                   platform: Xcode › Settings › Components)
 #   --clean                         first free disk space: this project's build
 #                                   folder, old test results, leftover test copies of
 #                                   simulators and simulators Xcode can't use any more
@@ -28,6 +30,7 @@ UI_TESTS=none
 WORKERS=""
 ONLY=()
 CLEAN=false
+WATCH=false
 while [ $# -gt 0 ]; do
     case "$1" in
         --open) OPEN_XCODE=true ;;
@@ -36,6 +39,7 @@ while [ $# -gt 0 ]; do
         --ui-full) UI_TESTS=full ;;
         --workers) WORKERS=${2:-}; shift ;;
         --clean) CLEAN=true ;;
+        --watch) WATCH=true ;;
         --only)
             [ "$UI_TESTS" = none ] && UI_TESTS=standard
             ONLY+=("-only-testing:GenesisUITests/${2:-}"); shift ;;
@@ -172,6 +176,18 @@ rm -f build.log
 echo "Building..."
 run_xcodebuild build-for-testing
 BUILD_STATUS=$?
+
+# The Apple Watch app builds on its own scheme (not embedded in the iPhone app yet).
+if [ "$WATCH" = true ]; then
+    echo "Building the Apple Watch app..."
+    xcodebuild -project Genesis.xcodeproj -scheme GenesisWatch \
+        -destination "generic/platform=watchOS Simulator" -derivedDataPath "$DERIVED" \
+        -skipPackagePluginValidation build 2>&1 | tee -a build.log | grep -E "error:|\*\* BUILD"
+    WATCH_STATUS=${PIPESTATUS[0]}
+    if [ "$WATCH_STATUS" -ne 0 ]; then
+        echo "The watch app didn't build (errors are in build-errors.txt). If it says watchOS isn't installed, add it in Xcode › Settings › Components."
+    fi
+fi
 
 TEST_STATUS=0
 if [ "$BUILD_STATUS" -eq 0 ] && [ "$RUN_TESTS" = true ]; then

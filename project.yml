@@ -6,6 +6,7 @@ options:
   bundleIdPrefix: com.7twenty8studio
   deploymentTarget:
     iOS: "26.0"
+    watchOS: "26.0"
   createIntermediateGroups: true
   developmentLanguage: en
 
@@ -144,6 +145,62 @@ targets:
         GENERATE_INFOPLIST_FILE: YES
         TEST_TARGET_NAME: Genesis
 
+  # Apple Watch: verse of the day (Premium), sent from the iPhone. Built on its
+  # own (./Scripts/build.sh --watch, needs the watchOS platform in Xcode ›
+  # Settings › Components). Not yet embedded in the iPhone app, so everyday
+  # builds don't need watchOS; add `- target: GenesisWatch` to Genesis's
+  # dependencies when it's ready to ship.
+  GenesisWatch:
+    type: application
+    platform: watchOS
+    sources:
+      - path: GenesisWatch
+      - path: Genesis/Shared/WidgetSnapshot.swift
+      - path: Genesis/Shared/WatchPayload.swift
+    dependencies:
+      - target: GenesisWatchWidgets
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis.watchkitapp
+        PRODUCT_NAME: GenesisWatch
+        CODE_SIGN_ENTITLEMENTS: $(GENESIS_WATCH_ENTITLEMENTS)
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        SKIP_INSTALL: YES
+    info:
+      path: Config/GenesisWatch-Info.plist
+      properties:
+        CFBundleDisplayName: Genesis
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleDevelopmentRegion: en
+        CFBundleLocalizations: [en, es]
+        WKApplication: true
+        WKCompanionAppBundleIdentifier: com.7twenty8studio.genesis
+
+  GenesisWatchWidgets:
+    type: app-extension
+    platform: watchOS
+    sources:
+      - path: GenesisWatchWidgets
+      - path: Genesis/Shared/WidgetSnapshot.swift
+      - path: Genesis/Shared/WatchPayload.swift
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis.watchkitapp.widgets
+        PRODUCT_NAME: GenesisWatchWidgets
+        CODE_SIGN_ENTITLEMENTS: $(GENESIS_WATCH_ENTITLEMENTS)
+        SKIP_INSTALL: YES
+    info:
+      path: Config/GenesisWatchWidgets-Info.plist
+      properties:
+        CFBundleDisplayName: Genesis
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleDevelopmentRegion: en
+        CFBundleLocalizations: [en, es]
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+
 schemes:
   # Everyday scheme: ⌘R runs the app, ⌘U runs the fast unit tests.
   Genesis:
@@ -173,3 +230,11 @@ schemes:
       config: Debug
       targets:
         - GenesisUITests
+
+  # Apple Watch app and complication (needs the watchOS platform installed).
+  GenesisWatch:
+    build:
+      targets:
+        GenesisWatch: all
+    run:
+      config: Debug
