@@ -112,19 +112,7 @@ struct ReaderView: View {
                         .accessibilityAction(named: "Show controls") { reader.showsControls = true }
                 }
 
-                if let confirmation {
-                    Label(confirmation, systemImage: "checkmark.circle.fill")
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(palette.text)
-                        .padding(.horizontal, 18)
-                        .padding(.vertical, 10)
-                        .glassEffect(.regular, in: Capsule())
-                        .frame(maxHeight: .infinity, alignment: .top)
-                        .padding(.top, readerSafeArea.top + 70)
-                        .transition(.move(edge: .top).combined(with: .opacity))
-                        .accessibilityIdentifier("reader.confirmation")
-                        .zIndex(2)
-                }
+                confirmationBanner
 
                 if let season = layout.style.theme.season, preferences.seasonalEffects, !reduceMotion {
                     SeasonalEffectView(season: season)
@@ -137,7 +125,7 @@ struct ReaderView: View {
                         onNote: openNoteForSelection,
                         onCrossReferences: showCrossReferencesForSelection,
                         onExplain: explainSelection,
-                        onMemorise: features.isOn(.plansAndPrayer) ? memoriseSelection : nil
+                        onMemorise: memoriseAction
                     )
                     .padding(.bottom, readerSafeArea.bottom + 8)
                     .frame(maxHeight: .infinity, alignment: .bottom)
@@ -177,17 +165,7 @@ struct ReaderView: View {
                         .frame(maxWidth: 520)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                 }
-                if audio.isActive && features.isOn(.listen) && reader.showsControls && !reader.isSelecting {
-                    AudioMiniPlayer(onSettings: { sheet = .audio }, onAmbient: openAmbient)
-                        .padding(.bottom, 8)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-                        .transition(.move(edge: .bottom).combined(with: .opacity))
-                } else if ambient.showsControls && reader.showsControls && !reader.isSelecting {
-                    AmbientMiniBar(onOpen: openAmbient)
-                        .padding(.bottom, 8)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-                        .transition(.move(edge: .bottom).combined(with: .opacity))
-                }
+                bottomBar
             }
         }
         .onGeometryChange(for: CGSize.self) { $0.size } action: { _ in
@@ -298,6 +276,48 @@ struct ReaderView: View {
         let verse = reader.focusVerse
         let start = verse.chapterID == reader.chapterID && verse.verse > 1 ? verse : nil
         audio.play(reader.chapterID, from: start)
+    }
+
+    /// "Added to Memorise", briefly, near the top.
+    @ViewBuilder
+    private var confirmationBanner: some View {
+        if let confirmation {
+            Label(confirmation, systemImage: "checkmark.circle.fill")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(palette.text)
+                .padding(.horizontal, 18)
+                .padding(.vertical, 10)
+                .glassEffect(.regular, in: Capsule())
+                .frame(maxHeight: .infinity, alignment: .top)
+                .padding(.top, readerSafeArea.top + 70)
+                .transition(.move(edge: .top).combined(with: .opacity))
+                .accessibilityIdentifier("reader.confirmation")
+                .zIndex(2)
+        }
+    }
+
+    /// The listening bar, or the ambient sounds bar, at the bottom of the reader.
+    @ViewBuilder
+    private var bottomBar: some View {
+        if reader.showsControls && !reader.isSelecting {
+            if audio.isActive && features.isOn(.listen) {
+                AudioMiniPlayer(onSettings: { sheet = .audio }, onAmbient: openAmbient)
+                    .padding(.bottom, 8)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+            } else if ambient.showsControls {
+                AmbientMiniBar(onOpen: openAmbient)
+                    .padding(.bottom, 8)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+            }
+        }
+    }
+
+    /// Memorise in the selection bar, when Plans & Prayer is switched on.
+    private var memoriseAction: (() -> Void)? {
+        guard features.isOn(.plansAndPrayer) else { return nil }
+        return { memoriseSelection() }
     }
 
     /// Adds the selected verses to Memorise (Premium).
