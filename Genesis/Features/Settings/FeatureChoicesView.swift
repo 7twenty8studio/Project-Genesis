@@ -151,7 +151,7 @@ struct DeviceSupportNote: View {
         }
         .padding(.vertical, 4)
         .task {
-            naturalVoices = NarrationVoice.available().filter { $0.qualityLabel != nil }.count
+            naturalVoices = await NarrationVoice.available().filter { $0.qualityLabel != nil }.count
         }
     }
 

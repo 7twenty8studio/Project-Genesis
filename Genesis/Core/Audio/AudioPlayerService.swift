@@ -1,3 +1,4 @@
+import AVFoundation
 import Foundation
 
 /// Listening to the Bible: device voices (verse by verse, with the reader
@@ -68,6 +69,13 @@ final class AudioPlayerService {
             guard let self else { return }
             self.elapsed = elapsed
             self.duration = duration
+        }
+
+        // Read the device's voice list in the background now, so starting to
+        // listen never waits for it; read it again when voices change.
+        VoiceList.preload("en", AppLanguage.code)
+        _ = NotificationCenter.default.addObserver(forName: AVSpeechSynthesizer.availableVoicesDidChangeNotification, object: nil, queue: nil) { _ in
+            VoiceList.reset()
         }
     }
 

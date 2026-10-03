@@ -43,7 +43,7 @@ struct AudioSettingsView: View {
                 }
             }
             .task {
-                voices = NarrationVoice.available(language: translation.language)
+                voices = await NarrationVoice.available(language: translation.language)
                 await audio.catalog.refresh()
             }
         }
