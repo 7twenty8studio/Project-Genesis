@@ -1,5 +1,6 @@
 import ActivityKit
 import Foundation
+import UIKit
 
 /// The Lock Screen and Dynamic Island while the Bible is read aloud
 /// (Premium): the chapter, the verse being read and play/pause. Started,
@@ -11,6 +12,11 @@ final class ListeningActivityController {
 
     private var activity: Activity<ListeningActivityAttributes>?
     private var lastState: ListeningActivityAttributes.ContentState?
+    /// Swiped away: don't bring it back until listening starts afresh.
+    private var swipedAway = false
+    /// Couldn't start from the background: try again in the foreground.
+    private var waitingForForeground = false
+    private var heldBack: Bool { swipedAway || waitingForForeground }
 
     /// Starts the activity, or updates it if it's already showing.
     func show(_ state: ListeningActivityAttributes.ContentState, translation: String) {
@@ -18,23 +24,49 @@ final class ListeningActivityController {
             end()
             return
         }
-        guard state != lastState || activity == nil else { return }
+        guard state != lastState, !heldBack else { return }
         lastState = state
         let content = ActivityContent(state: state, staleDate: nil)
-        if let activity, activity.activityState == .active, activity.attributes.translation == translation {
-            Task { await activity.update(content) }
+        if let activity {
+            if activity.activityState == .active, activity.attributes.translation == translation {
+                Task { await activity.update(content) }
+                return
+            }
+            if activity.activityState != .active {
+                // Swiped away: respect that until the next time listening starts.
+                self.activity = nil
+                swipedAway = true
+                return
+            }
+            dismiss()
+        }
+        guard UIApplication.shared.applicationState != .background else {
+            waitingForForeground = true
             return
         }
-        end()
         do {
             activity = try Activity.request(attributes: ListeningActivityAttributes(translation: translation), content: content, pushType: nil)
         } catch {
-            CrashReporter.record(error, context: "LiveActivity.request")
+            waitingForForeground = true
         }
     }
 
+    /// Listening stopped: take the activity away and allow a new one next time.
     func end() {
         lastState = nil
+        swipedAway = false
+        waitingForForeground = false
+        dismiss()
+    }
+
+    /// The app came to the foreground: a refused start can be tried again.
+    func appBecameActive() {
+        guard waitingForForeground else { return }
+        waitingForForeground = false
+        lastState = nil
+    }
+
+    private func dismiss() {
         guard let activity else { return }
         self.activity = nil
         Task { await activity.end(nil, dismissalPolicy: .immediate) }

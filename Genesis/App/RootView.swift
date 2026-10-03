@@ -74,6 +74,7 @@ struct RootView: View {
             switch phase {
             case .active:
                 sync.schedule(after: .zero)
+                audio.liveActivity.appBecameActive()
                 Task { await flags.refresh() }
                 refreshWidgets()
             case .background:

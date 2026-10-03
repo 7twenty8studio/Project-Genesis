@@ -163,6 +163,7 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis.watchkitapp
         PRODUCT_NAME: GenesisWatch
+        TARGETED_DEVICE_FAMILY: "4"
         CODE_SIGN_ENTITLEMENTS: $(GENESIS_WATCH_ENTITLEMENTS)
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         SKIP_INSTALL: YES
@@ -188,6 +189,7 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis.watchkitapp.widgets
         PRODUCT_NAME: GenesisWatchWidgets
+        TARGETED_DEVICE_FAMILY: "4"
         CODE_SIGN_ENTITLEMENTS: $(GENESIS_WATCH_ENTITLEMENTS)
         SKIP_INSTALL: YES
     info:

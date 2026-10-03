@@ -244,6 +244,16 @@
         }
       }
     },
+    "Open Genesis to see today's reading from %@.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abre Genesis para ver la lectura de hoy de %@."
+          }
+        }
+      }
+    },
     "Pause": {
       "localizations": {
         "es": {

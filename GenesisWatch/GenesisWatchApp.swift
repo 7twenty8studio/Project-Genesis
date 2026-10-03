@@ -13,6 +13,11 @@ struct GenesisWatchApp: App {
             TodayVerseView()
                 .environment(store)
         }
+        // New verses from the phone while the app isn't open: take them, so
+        // the complication updates.
+        .backgroundTask(.watchConnectivity) { [store] in
+            await store.receivePendingContent()
+        }
     }
 }
 
@@ -28,6 +33,16 @@ final class WatchVerseStore: NSObject {
         if WCSession.isSupported() {
             WCSession.default.delegate = self
             WCSession.default.activate()
+        }
+    }
+
+    /// Waits (briefly) for WatchConnectivity to deliver what's queued.
+    func receivePendingContent() async {
+        guard WCSession.isSupported() else { return }
+        let session = WCSession.default
+        if session.activationState != .activated { session.activate() }
+        for _ in 0..<20 where session.activationState != .activated || session.hasContentPending {
+            try? await Task.sleep(for: .milliseconds(500))
         }
     }
 

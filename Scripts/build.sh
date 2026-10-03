@@ -371,6 +371,9 @@ elif [ "${UI_BUILD_STATUS:-0}" -ne 0 ]; then
 elif [ "$UI_STATUS" -ne 0 ]; then
     echo "⚠️  The app built and unit tests passed, but some UI tests failed."
     echo "   Send the UI-*-failures.txt and UI-*-screenshots.zip files in build/TestResults back to Claude."
+elif [ "${WATCH_STATUS:-0}" -ne 0 ]; then
+    echo "⚠️  The iPhone app is fine, but the Apple Watch app didn't build."
+    echo "   Send build-errors.txt back to Claude."
 else
     echo "✅ Build succeeded$([ "$RUN_TESTS" = true ] && echo " and all tests passed")$([ "$UI_TESTS" != none ] && echo ", including UI tests")."
     if [ -n "$SKIPPED_PASSES" ]; then
@@ -385,4 +388,5 @@ fi
 
 [ "$BUILD_STATUS" -ne 0 ] && exit "$BUILD_STATUS"
 [ "$TEST_STATUS" -ne 0 ] && exit "$TEST_STATUS"
-exit "$UI_STATUS"
+[ "$UI_STATUS" -ne 0 ] && exit "$UI_STATUS"
+exit "${WATCH_STATUS:-0}"

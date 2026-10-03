@@ -47,6 +47,8 @@ final class AudioPlayerService {
     @ObservationIgnored private let nowPlaying = NowPlayingController()
     /// The Lock Screen Live Activity (Premium; the app sets `isAllowed`).
     @ObservationIgnored let liveActivity = ListeningActivityController()
+    /// Verses per chapter, by translation (numbering differs between Bibles).
+    @ObservationIgnored private var verseCounts: [String: Int] = [:]
     @ObservationIgnored private var sleepTask: Task<Void, Never>?
     @ObservationIgnored private var loadTask: Task<Void, Never>?
     /// Told about each chapter and verse so the reader can follow along;
@@ -372,9 +374,12 @@ final class AudioPlayerService {
         var progress: Double?
         if let verse {
             text = (try? repository.verse(verse))?.plainText
-            if let count = try? repository.verseCount(in: chapter), count > 0 {
-                progress = Double(verse.verse) / Double(count)
-            }
+            let key = "\(translation.id)-\(chapter.book)-\(chapter.chapter)"
+            let count = verseCounts[key] ?? (try? repository.verseCount(in: chapter)) ?? 0
+            verseCounts[key] = count
+            if count > 0 { progress = Double(verse.verse) / Double(count) }
+        } else if isRecording, duration > 0 {
+            progress = elapsed / duration
         }
         liveActivity.show(
             .init(reference: title, verseText: text, isPlaying: state == .playing || state == .loading, progress: progress),

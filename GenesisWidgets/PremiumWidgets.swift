@@ -25,6 +25,9 @@ struct TodaysReadingView: View {
         Group {
             if snapshot.isPremium != true {
                 prompt(String(localized: "Tick off your daily reading with Genesis Premium."), link: GenesisLink.plans)
+            } else if let plan = snapshot.plan, !Calendar.current.isDate(snapshot.generatedAt, inSameDayAs: entry.date) {
+                // Written yesterday: today's reading isn't known until the app runs.
+                prompt(String(localized: "Open Genesis to see today's reading from \(plan.title)."), link: GenesisLink.plans)
             } else if let plan = snapshot.plan {
                 planView(plan)
             } else {
