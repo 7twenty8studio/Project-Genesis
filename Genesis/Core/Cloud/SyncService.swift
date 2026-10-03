@@ -124,6 +124,7 @@ final class SyncService {
             try context.delete(model: Note.self)
             try context.delete(model: PlanEnrollment.self)
             try context.delete(model: Prayer.self)
+            try context.delete(model: MemoryVerse.self)
             try context.delete(model: Tombstone.self)
             try context.save()
         } catch {
@@ -145,6 +146,7 @@ final class SyncService {
         try await pull(SyncTable.notes, RemoteNote.self, client, token, user, apply: apply)
         try await pull(SyncTable.readingPlans, RemotePlan.self, client, token, user, apply: apply)
         try await pull(SyncTable.prayers, RemotePrayer.self, client, token, user, apply: apply)
+        try await pull(SyncTable.memoryVerses, RemoteMemoryVerse.self, client, token, user, apply: apply)
 
         // Push everything edited since the last successful push.
         let since = defaults.object(forKey: key("lastPushedAt", user.id)) as? Date ?? .distantPast
@@ -154,6 +156,7 @@ final class SyncService {
         try await push(changed(Note.self, since).map { RemoteNote($0, userID: user.id) }, SyncTable.notes, client, token)
         try await push(changed(PlanEnrollment.self, since).map { RemotePlan($0, userID: user.id) }, SyncTable.readingPlans, client, token)
         try await push(changed(Prayer.self, since).map { RemotePrayer($0, userID: user.id) }, SyncTable.prayers, client, token)
+        try await push(changed(MemoryVerse.self, since).map { RemoteMemoryVerse($0, userID: user.id) }, SyncTable.memoryVerses, client, token)
         try await pushDeletions(client, token)
 
         defaults.set(pushStartedAt, forKey: key("lastPushedAt", user.id))
@@ -231,6 +234,10 @@ final class SyncService {
 
     private func existing(_ type: Prayer.Type, id: UUID) -> Prayer? {
         first(FetchDescriptor<Prayer>(predicate: #Predicate { $0.id == id }))
+    }
+
+    private func existing(_ type: MemoryVerse.Type, id: UUID) -> MemoryVerse? {
+        first(FetchDescriptor<MemoryVerse>(predicate: #Predicate { $0.id == id }))
     }
 
     private func first<Model: PersistentModel>(_ descriptor: FetchDescriptor<Model>) -> Model? {
@@ -369,6 +376,32 @@ final class SyncService {
         }
     }
 
+    private func apply(_ row: RemoteMemoryVerse) {
+        let local = existing(MemoryVerse.self, id: row.id)
+        switch decision(for: row, local: local?.updatedAt) {
+        case .keepLocal: return
+        case .deleteLocal: if let local { context.delete(local) }
+        case .applyRemote:
+            let verse = local ?? {
+                let created = MemoryVerse(start: VerseID(rawValue: row.startVerse), end: VerseID(rawValue: row.endVerse), translationID: row.translationId)
+                created.id = row.id
+                context.insert(created)
+                return created
+            }()
+            verse.startRaw = row.startVerse
+            verse.endRaw = row.endVerse
+            verse.translationID = row.translationId
+            verse.ease = row.ease
+            verse.intervalDays = row.intervalDays
+            verse.repetitions = row.repetitions
+            verse.dueAt = row.dueAt
+            verse.lastReviewedAt = row.lastReviewedAt
+            verse.reviewCount = row.reviewCount
+            verse.createdAt = row.createdAt
+            verse.updatedAt = row.updatedAt
+        }
+    }
+
     private func apply(_ row: RemotePrayer) {
         let local = existing(Prayer.self, id: row.id)
         switch decision(for: row, local: local?.updatedAt) {
@@ -430,3 +463,4 @@ extension HighlightCollection: SyncTimestamped {}
 extension Note: SyncTimestamped {}
 extension PlanEnrollment: SyncTimestamped {}
 extension Prayer: SyncTimestamped {}
+extension MemoryVerse: SyncTimestamped {}

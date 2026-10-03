@@ -6,8 +6,8 @@ import WidgetKit
 /// refresh. Cheap, so it runs whenever the app becomes active or data changes.
 @MainActor
 enum WidgetSnapshotWriter {
-    static func refresh(library: BibleLibrary, progress: ReadingProgress, context: ModelContext, now: Date = .now) {
-        let snapshot = make(library: library, progress: progress, context: context, now: now)
+    static func refresh(library: BibleLibrary, progress: ReadingProgress, context: ModelContext, memoriseUnlocked: Bool, now: Date = .now) {
+        let snapshot = make(library: library, progress: progress, context: context, memoriseUnlocked: memoriseUnlocked, now: now)
         // Skip the write (and widget reload) when nothing visible changed.
         if var saved = WidgetSnapshot.load() {
             saved.generatedAt = snapshot.generatedAt
@@ -21,7 +21,7 @@ enum WidgetSnapshotWriter {
         }
     }
 
-    static func make(library: BibleLibrary, progress: ReadingProgress, context: ModelContext, now: Date = .now) -> WidgetSnapshot {
+    static func make(library: BibleLibrary, progress: ReadingProgress, context: ModelContext, memoriseUnlocked: Bool = false, now: Date = .now) -> WidgetSnapshot {
         let repository = library.current
         let calendar = Calendar.current
 
@@ -70,6 +70,22 @@ enum WidgetSnapshotWriter {
         let prayers = (try? context.fetch(FetchDescriptor<Prayer>(predicate: #Predicate { !$0.isAnswered }))) ?? []
         let nextReminder = prayers.compactMap(\.reminderAt).filter { $0 > now }.min()
 
+        // Memorise: the passage due soonest, as a first-letters prompt.
+        let memory = (try? context.fetch(FetchDescriptor<MemoryVerse>(sortBy: [SortDescriptor(\.dueAt)]))) ?? []
+        var memorise = WidgetSnapshot.Memorise(isUnlocked: memoriseUnlocked, dueDates: [], total: 0, reference: nil, hint: nil, translation: nil)
+        if memoriseUnlocked, let next = memory.first {
+            let translation = library.translations.first { $0.id == next.translationID } ?? library.currentTranslation
+            let text = ((try? library.repository(for: translation).verses(from: next.start, through: next.end)) ?? []).map(\.plainText).joined(separator: " ")
+            memorise = WidgetSnapshot.Memorise(
+                isUnlocked: true,
+                dueDates: memory.map(\.dueAt),
+                total: memory.count,
+                reference: next.reference.description,
+                hint: text.isEmpty ? nil : MemoryHint.firstLetters(text),
+                translation: translation.abbreviation
+            )
+        }
+
         return WidgetSnapshot(
             generatedAt: now,
             translation: library.currentTranslation.abbreviation,
@@ -79,7 +95,8 @@ enum WidgetSnapshotWriter {
             chaptersRead: progress.chaptersRead.count,
             plan: plan,
             activePrayerCount: prayers.count,
-            nextPrayerReminder: nextReminder
+            nextPrayerReminder: nextReminder,
+            memorise: memorise
         )
     }
 }

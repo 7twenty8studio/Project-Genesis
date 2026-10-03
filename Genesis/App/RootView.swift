@@ -62,6 +62,7 @@ struct RootView: View {
             if isPremium { sync.schedule(after: .zero) }
             keepThemeAvailable()
             keepAmbientAvailable()
+            refreshWidgets()
         }
         .onChange(of: entitlements.hasLoaded) {
             keepThemeAvailable()
@@ -104,7 +105,7 @@ struct RootView: View {
     }
 
     private func refreshWidgets() {
-        WidgetSnapshotWriter.refresh(library: library, progress: progress, context: modelContext)
+        WidgetSnapshotWriter.refresh(library: library, progress: progress, context: modelContext, memoriseUnlocked: entitlements.allows(.memorise))
     }
 }
 

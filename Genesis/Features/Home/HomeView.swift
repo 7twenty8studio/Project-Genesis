@@ -24,6 +24,7 @@ struct HomeView: View {
     @Query(HomeView.recentNotesQuery) private var recentNotes: [Note]
     @Query(sort: \PlanEnrollment.updatedAt, order: .reverse) private var enrollments: [PlanEnrollment]
     @Query(filter: #Predicate<Prayer> { !$0.isAnswered }) private var activePrayers: [Prayer]
+    @Query private var memoryVerses: [MemoryVerse]
     @State private var editingNote: Note?
     @State private var premium: PremiumFeature?
 
@@ -38,6 +39,7 @@ struct HomeView: View {
                     if features.isOn(.plansAndPrayer) { todaysReading }
                     dailyVerse
                     if features.isOn(.plansAndPrayer) { prayerJournal }
+                    if features.isOn(.plansAndPrayer) { memorise }
                     readingProgress
                     if !recentHighlights.isEmpty { highlights }
                     if !recentNotes.isEmpty { notes }
@@ -67,6 +69,12 @@ struct HomeView: View {
                 case let .plan(id): PlanDetailView(enrollmentID: id)
                 case .prayerJournal: PrayerJournalView()
                 case .insights: InsightsView()
+                case .memorise:
+                    if entitlements.allows(.memorise) {
+                        MemoriseView()
+                    } else {
+                        PremiumView(highlighted: .memorise)
+                    }
                 }
             }
         }
@@ -241,6 +249,49 @@ struct HomeView: View {
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("home.prayer")
+    }
+
+    /// Memorise Scripture (Premium).
+    private var memorise: some View {
+        let unlocked = entitlements.allows(.memorise)
+        let due = memoryVerses.filter { $0.isDue() }.count
+        return Button {
+            if unlocked {
+                router.homePath.append(.memorise)
+            } else {
+                premium = .memorise
+            }
+        } label: {
+            HStack(spacing: 14) {
+                Image(systemName: "brain.head.profile")
+                    .font(.title2)
+                    .foregroundStyle(palette.accent)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Memorise Scripture")
+                        .font(.headline)
+                        .foregroundStyle(palette.text)
+                    Group {
+                        if !unlocked || memoryVerses.isEmpty {
+                            Text("Learn verses by heart, a minute a day.")
+                        } else if due == 0 {
+                            Text("All caught up for today")
+                        } else {
+                            Text("\(due) to review today")
+                        }
+                    }
+                    .font(.subheadline)
+                    .foregroundStyle(palette.secondaryText)
+                    .multilineTextAlignment(.leading)
+                }
+                Spacer(minLength: 0)
+                if !unlocked { PremiumBadge() }
+                Image(systemName: "chevron.right")
+                    .foregroundStyle(palette.secondaryText)
+            }
+            .card()
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("home.memorise")
     }
 
     private var prayerSummary: Text {

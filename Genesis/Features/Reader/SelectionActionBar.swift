@@ -8,6 +8,7 @@ struct SelectionActionBar: View {
     let onNote: () -> Void
     let onCrossReferences: () -> Void
     let onExplain: () -> Void
+    var onMemorise: (() -> Void)?
 
     @Environment(ReaderViewModel.self) private var reader
     @Environment(\.palette) private var palette
@@ -24,6 +25,13 @@ struct SelectionActionBar: View {
                     .foregroundStyle(palette.accent)
                     .accessibilityIdentifier("selection.reference")
                 Spacer()
+                if let onMemorise {
+                    // The words where there's room, the icon where there isn't.
+                    ViewThatFits(in: .horizontal) {
+                        memoriseButton(onMemorise, compact: false)
+                        memoriseButton(onMemorise, compact: true)
+                    }
+                }
                 if assistant.isEnabled {
                     Button(action: onExplain) {
                         Label("Explain", systemImage: "sparkles")
@@ -104,6 +112,22 @@ struct SelectionActionBar: View {
         .sensoryFeedback(.impact(weight: .light), trigger: highlightTrigger)
         .sensoryFeedback(.success, trigger: copied) { _, now in now }
         .onChange(of: reader.selection) { copied = false }
+    }
+
+    private func memoriseButton(_ perform: @escaping () -> Void, compact: Bool) -> some View {
+        Button(action: perform) {
+            if compact {
+                Image(systemName: "brain.head.profile")
+                    .font(.footnote.weight(.semibold))
+            } else {
+                Label("Memorise", systemImage: "brain.head.profile")
+                    .font(.footnote.weight(.semibold))
+            }
+        }
+        .buttonStyle(.bordered)
+        .controlSize(.small)
+        .accessibilityLabel("Memorise")
+        .accessibilityIdentifier("selection.memorise")
     }
 
     private func action(_ title: String, systemImage: String, perform: @escaping () -> Void) -> some View {

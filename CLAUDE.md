@@ -52,6 +52,14 @@ shares; README.md has the architecture.
 - Supabase SQL: explicit statements, no drops, RLS enabled in plain
   `alter table` lines (the dashboard's checker flags anything else).
 
+## Memorise Scripture
+- Premium (`.memorise`), shown with Plans & Prayer. `MemoryVerse` (SwiftData,
+  synced as `memory_verses`) stores the passage's verse ids, translation and
+  `MemorySchedule` (a gentle SM-2); never the text. `MemoryHint.firstLetters`
+  is a practice prompt only; the card always reveals the verbatim verse.
+- The Memorise widget reads `WidgetSnapshot.memorise` (written with the
+  entitlement); deep link `genesis://memorise`.
+
 ## Phase 4: audio, groups, community
 - Audio: `AudioPlayerService` (device voices via `SpeechNarrator`, recordings
   via `RecordingPlayer`, catalog in public.audio_recordings). UI tests use the

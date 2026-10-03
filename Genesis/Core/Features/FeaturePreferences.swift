@@ -24,7 +24,7 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
     var detail: String {
         switch self {
         case .listen: String(localized: "Hear any chapter read aloud, with the page following along.")
-        case .plansAndPrayer: String(localized: "Reading plans and a private prayer journal on your Home screen.")
+        case .plansAndPrayer: String(localized: "Reading plans, memorising Scripture and a private prayer journal on your Home screen.")
         case .explore: String(localized: "Explore the Bible's story, places and people.")
         case .studyAssistant: String(localized: "Short explanations of a passage, clearly labelled as AI-generated.")
         case .together: String(localized: "Read and pray with your church group, and the community prayer wall.")

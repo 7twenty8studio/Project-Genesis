@@ -167,6 +167,40 @@ struct RemotePrayer: SyncRow, Equatable {
     }
 }
 
+struct RemoteMemoryVerse: SyncRow, Equatable {
+    var id: UUID
+    var userId: UUID
+    var startVerse: Int
+    var endVerse: Int
+    var translationId: String
+    var ease: Double
+    var intervalDays: Double
+    var repetitions: Int
+    var dueAt: Date
+    var lastReviewedAt: Date?
+    var reviewCount: Int
+    var createdAt: Date
+    var updatedAt: Date
+    var deletedAt: Date?
+    var serverUpdatedAt: String?
+
+    init(_ verse: MemoryVerse, userID: UUID) {
+        id = verse.id
+        userId = userID
+        startVerse = verse.startRaw
+        endVerse = verse.endRaw
+        translationId = verse.translationID
+        ease = verse.ease
+        intervalDays = verse.intervalDays
+        repetitions = verse.repetitions
+        dueAt = verse.dueAt
+        lastReviewedAt = verse.lastReviewedAt
+        reviewCount = verse.reviewCount
+        createdAt = verse.createdAt
+        updatedAt = verse.updatedAt
+    }
+}
+
 /// Last-writer-wins decision for a pulled row against the local copy.
 enum SyncMerge {
     enum Decision: Equatable {

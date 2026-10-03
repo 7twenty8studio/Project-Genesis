@@ -10,6 +10,7 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
     case historicalContent
     case readingInsights
     case ambientSounds
+    case memorise
 
     var id: String { rawValue }
 
@@ -23,6 +24,7 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
         case .historicalContent: String(localized: "Timeline, maps and people")
         case .readingInsights: String(localized: "Reading insights")
         case .ambientSounds: String(localized: "Ambient sounds")
+        case .memorise: String(localized: "Memorise Scripture")
         }
     }
 
@@ -35,6 +37,7 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
         case .advancedAI: String(localized: "Summaries, historical background, discussion questions and more, without the daily limit.")
         case .historicalContent: String(localized: "An interactive timeline, Bible maps and journeys, and a character explorer with family trees.")
         case .readingInsights: String(localized: "Time spent reading, favourite books and your reading history.")
+        case .memorise: String(localized: "Flashcards that bring each verse back just before you'd forget it, with a widget for your Home Screen.")
         case .ambientSounds: String(localized: "Rain, ocean waves, wind, a crackling fire, birdsong and a soft worship pad to read and pray with, mixed your way.")
         }
     }
@@ -49,6 +52,7 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
         case .historicalContent: "map"
         case .readingInsights: "chart.bar"
         case .ambientSounds: "speaker.wave.2"
+        case .memorise: "brain.head.profile"
         }
     }
 }

@@ -22,6 +22,8 @@ struct ReaderView: View {
     @Environment(\.accessibilityDifferentiateWithoutColor) private var differentiateWithoutColor
 
     @State private var sheet: ReaderSheet?
+    /// "Added to Memorise", shown briefly.
+    @State private var confirmation: String?
     @State private var showsCompanion = true
     @State private var companionMode: CompanionPanel.Mode = .notes
     /// Read from the window once it exists; nil until then so text is laid
@@ -110,6 +112,20 @@ struct ReaderView: View {
                         .accessibilityAction(named: "Show controls") { reader.showsControls = true }
                 }
 
+                if let confirmation {
+                    Label(confirmation, systemImage: "checkmark.circle.fill")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(palette.text)
+                        .padding(.horizontal, 18)
+                        .padding(.vertical, 10)
+                        .glassEffect(.regular, in: Capsule())
+                        .frame(maxHeight: .infinity, alignment: .top)
+                        .padding(.top, readerSafeArea.top + 70)
+                        .transition(.move(edge: .top).combined(with: .opacity))
+                        .accessibilityIdentifier("reader.confirmation")
+                        .zIndex(2)
+                }
+
                 if let season = layout.style.theme.season, preferences.seasonalEffects, !reduceMotion {
                     SeasonalEffectView(season: season)
                         .id(season)
@@ -120,7 +136,8 @@ struct ReaderView: View {
                         onImage: imageForSelection,
                         onNote: openNoteForSelection,
                         onCrossReferences: showCrossReferencesForSelection,
-                        onExplain: explainSelection
+                        onExplain: explainSelection,
+                        onMemorise: features.isOn(.plansAndPrayer) ? memoriseSelection : nil
                     )
                     .padding(.bottom, readerSafeArea.bottom + 8)
                     .frame(maxHeight: .infinity, alignment: .bottom)
@@ -281,6 +298,25 @@ struct ReaderView: View {
         let verse = reader.focusVerse
         let start = verse.chapterID == reader.chapterID && verse.verse > 1 ? verse : nil
         audio.play(reader.chapterID, from: start)
+    }
+
+    /// Adds the selected verses to Memorise (Premium).
+    private func memoriseSelection() {
+        guard entitlements.allows(.memorise) else {
+            sheet = .premium(.memorise)
+            return
+        }
+        guard let first = reader.selection.min(), let last = reader.selection.max() else { return }
+        let end = last.chapterID == first.chapterID && last.verse - first.verse < MemoriseSuggestions.maximumVerses ? last : first
+        StudyStore(context: modelContext).memorise(from: first, through: end, translationID: reader.translation.id)
+        reader.clearSelection()
+        let message = String(localized: "Added to Memorise")
+        withAnimation { confirmation = message }
+        UIAccessibility.post(notification: .announcement, argument: message)
+        Task {
+            try? await Task.sleep(for: .seconds(2))
+            withAnimation { confirmation = nil }
+        }
     }
 
     /// Ambient sounds are Premium.

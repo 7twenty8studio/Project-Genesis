@@ -36,7 +36,7 @@ INT_HINTS = re.compile(
     r"(count|Count|total|Total|number|Number|days|Days|minutes|limit|Limit|percent|remaining|shown|"
     r"chapter|Chapter|verse\b|streak|Streak|year|Year|completed|Completed|notes|prayers|"
     r"aiRequestsPerDay|referenceCount|memberCount|readCount|dayNumber|Chapters|\bn\b|index|rank|"
-    r"ofDays|dayCount|longestStreak|booksCompleted|chapterTotal|\bday\b|behind|Voices|Minutes|Finished|^Int\()"
+    r"ofDays|dayCount|longestStreak|booksCompleted|chapterTotal|\bday\b|behind|Voices|Minutes|Finished|^Int\(|\breviewed\b|\bdue\b|\bmemorised\b|maximumVerses)"
 )
 
 

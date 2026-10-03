@@ -363,12 +363,32 @@
         }
       }
     },
+    "%lld to review today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld para repasar hoy"
+          }
+        }
+      }
+    },
     "%lld verses": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld versículos"
+          }
+        }
+      }
+    },
+    "%lld verses · %lld memorised": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld versículos · %lld memorizados"
           }
         }
       }
@@ -460,6 +480,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Velocidad 1×"
+          }
+        }
+      }
+    },
+    "A Memorise widget": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un widget para memorizar"
           }
         }
       }
@@ -594,12 +624,52 @@
         }
       }
     },
+    "Add": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir"
+          }
+        }
+      }
+    },
+    "Add %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir %@"
+          }
+        }
+      }
+    },
     "Add Bookmark": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Añadir marcador"
+          }
+        }
+      }
+    },
+    "Add Verse": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir versículo"
+          }
+        }
+      }
+    },
+    "Add a Verse": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir un versículo"
           }
         }
       }
@@ -614,12 +684,32 @@
         }
       }
     },
+    "Add a verse, then review it for a minute a day. Each time you remember it, the next review comes a little later.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añade un versículo y repásalo un minuto al día. Cada vez que lo recuerdes, el siguiente repaso llegará un poco más tarde."
+          }
+        }
+      }
+    },
     "Add bookmark": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Añadir marcador"
+          }
+        }
+      }
+    },
+    "Add the Memorise widget to your Home Screen or Lock Screen to recall a verse at a glance.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añade el widget Memorizar a tu pantalla de inicio o de bloqueo para recordar un versículo de un vistazo."
           }
         }
       }
@@ -654,12 +744,33 @@
         }
       }
     },
+    "Added to Memorise": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadido a Memorizar"
+          }
+        }
+      }
+    },
     "Advanced study assistant": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Asistente de estudio avanzado"
+          }
+        }
+      }
+    },
+    "Again": {
+      "comment": "Memorise: I didn't remember it",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otra vez"
           }
         }
       }
@@ -701,6 +812,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Todos los planes"
+          }
+        }
+      }
+    },
+    "All caught up": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todo al día"
+          }
+        }
+      }
+    },
+    "All caught up for today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todo al día por hoy"
           }
         }
       }
@@ -1406,6 +1537,16 @@
         }
       }
     },
+    "Choose up to %lld verses at a time.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige hasta %lld versículos a la vez."
+          }
+        }
+      }
+    },
     "Choose your features": {
       "localizations": {
         "es": {
@@ -1705,6 +1846,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Copiar"
+          }
+        }
+      }
+    },
+    "Couldn't Add That": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo añadir"
           }
         }
       }
@@ -2101,6 +2252,28 @@
         }
       }
     },
+    "Due": {
+      "comment": "Memorise: ready to review now",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pendiente"
+          }
+        }
+      }
+    },
+    "Easy": {
+      "comment": "Memorise: I knew it easily",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fácil"
+          }
+        }
+      }
+    },
     "Edit Group": {
       "localizations": {
         "es": {
@@ -2303,6 +2476,17 @@
         }
       }
     },
+    "Familiar": {
+      "comment": "Memorise progress",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conocido"
+          }
+        }
+      }
+    },
     "Family": {
       "localizations": {
         "es": {
@@ -2405,6 +2589,16 @@
         }
       }
     },
+    "First letters": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primeras letras"
+          }
+        }
+      }
+    },
     "First mentioned in %@": {
       "localizations": {
         "es": {
@@ -2421,6 +2615,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cinco salmos al día: un mes de oración y alabanza."
+          }
+        }
+      }
+    },
+    "Flashcards that bring each verse back just before you'd forget it, with a widget for your Home Screen.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tarjetas que te traen cada versículo justo antes de que lo olvides, con un widget para tu pantalla de inicio."
           }
         }
       }
@@ -2637,6 +2841,17 @@
         }
       }
     },
+    "Good": {
+      "comment": "Memorise: I remembered it",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bien"
+          }
+        }
+      }
+    },
     "Good afternoon": {
       "localizations": {
         "es": {
@@ -2748,6 +2963,17 @@
         }
       }
     },
+    "Hard": {
+      "comment": "Memorise: I remembered with difficulty",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Difícil"
+          }
+        }
+      }
+    },
     "Health": {
       "localizations": {
         "es": {
@@ -2774,6 +3000,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Esto es lo nuevo en Genesis."
+          }
+        }
+      }
+    },
+    "Hide God's word in your heart": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guarda la palabra de Dios en tu corazón"
+          }
+        }
+      }
+    },
+    "Hide Hint": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ocultar pista"
           }
         }
       }
@@ -2818,6 +3064,17 @@
         }
       }
     },
+    "Hint": {
+      "comment": "Memorise: show the first letters",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pista"
+          }
+        }
+      }
+    },
     "Home": {
       "localizations": {
         "es": {
@@ -2844,6 +3101,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qué tan seguras son las ubicaciones"
+          }
+        }
+      }
+    },
+    "How did you do?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Cómo te fue?"
           }
         }
       }
@@ -2988,6 +3255,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Juan 3"
+          }
+        }
+      }
+    },
+    "John 3:16": {
+      "comment": "Example Bible reference",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Juan 3:16"
           }
         }
       }
@@ -3230,6 +3508,37 @@
           "stringUnit": {
             "state": "translated",
             "value": "Líder"
+          }
+        }
+      }
+    },
+    "Learn verses by heart": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aprende versículos de memoria"
+          }
+        }
+      }
+    },
+    "Learn verses by heart, a minute a day.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aprende versículos de memoria, un minuto al día."
+          }
+        }
+      }
+    },
+    "Learning": {
+      "comment": "Memorise progress",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aprendiendo"
           }
         }
       }
@@ -3645,6 +3954,37 @@
         }
       }
     },
+    "Memorise": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memorizar"
+          }
+        }
+      }
+    },
+    "Memorise Scripture": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memorizar las Escrituras"
+          }
+        }
+      }
+    },
+    "Memorised": {
+      "comment": "Memorise progress",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memorizado"
+          }
+        }
+      }
+    },
     "Mentioned In": {
       "localizations": {
         "es": {
@@ -3856,6 +4196,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Estrechos"
+          }
+        }
+      }
+    },
+    "New": {
+      "comment": "Memorise: not reviewed yet",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nuevo"
           }
         }
       }
@@ -5320,12 +5671,12 @@
         }
       }
     },
-    "Reading plans and a private prayer journal on your Home screen.": {
+    "Reading plans, memorising Scripture and a private prayer journal on your Home screen.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Planes de lectura y un diario de oración privado en tu pantalla de Inicio."
+            "value": "Planes de lectura, memorización de las Escrituras y un diario de oración privado en tu pantalla de inicio."
           }
         }
       }
@@ -5764,6 +6115,26 @@
         }
       }
     },
+    "Review": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repasar"
+          }
+        }
+      }
+    },
+    "Review Now": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repasar ahora"
+          }
+        }
+      }
+    },
     "Sage": {
       "comment": "Reader theme name",
       "localizations": {
@@ -5812,6 +6183,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ahorra 33%%"
+          }
+        }
+      }
+    },
+    "Say the passage to yourself, then turn the card.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Di el pasaje para ti mismo y luego da la vuelta a la tarjeta."
           }
         }
       }
@@ -6256,6 +6637,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mostrar lugares inciertos"
+          }
+        }
+      }
+    },
+    "Show Verse": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar versículo"
           }
         }
       }
@@ -7049,6 +7440,16 @@
         }
       }
     },
+    "That verse isn't in this Bible.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ese versículo no está en esta Biblia."
+          }
+        }
+      }
+    },
     "That's already done.": {
       "localizations": {
         "es": {
@@ -7609,6 +8010,26 @@
         }
       }
     },
+    "Type a book, chapter and verse, such as John 3:16.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escribe un libro, capítulo y versículo, como Juan 3:16."
+          }
+        }
+      }
+    },
+    "Type a reference, such as Psalm 23:1–3.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escribe una referencia, como Salmos 23:1–3."
+          }
+        }
+      }
+    },
     "Unblock": {
       "localizations": {
         "es": {
@@ -7800,6 +8221,16 @@
         }
       }
     },
+    "Verses to Start With": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versículos para empezar"
+          }
+        }
+      }
+    },
     "Voice": {
       "localizations": {
         "es": {
@@ -7847,6 +8278,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Agua"
+          }
+        }
+      }
+    },
+    "Well done": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¡Bien hecho!"
           }
         }
       }
@@ -7990,6 +8431,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Con Premium, mezcla lluvia, olas del mar, viento, el crepitar del fuego, canto de aves y un suave fondo de adoración mientras lees y oras. Están en el lector, en Aa."
+          }
+        }
+      }
+    },
+    "With Premium, select verses and tap Memorise. Flashcards bring each one back just before you'd forget it. Find them on Home.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Premium, selecciona versículos y toca Memorizar. Las tarjetas te traen cada uno justo antes de que lo olvides. Están en Inicio."
           }
         }
       }
@@ -8167,6 +8618,26 @@
         }
       }
     },
+    "You reviewed %lld verses.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repasaste %lld versículos."
+          }
+        }
+      }
+    },
+    "You reviewed 1 verse.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repasaste 1 versículo."
+          }
+        }
+      }
+    },
     "You spent the most time in %@.": {
       "localizations": {
         "es": {
@@ -8293,6 +8764,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tus planes"
+          }
+        }
+      }
+    },
+    "Your Verses": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus versículos"
           }
         }
       }

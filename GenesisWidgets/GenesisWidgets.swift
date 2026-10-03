@@ -10,6 +10,7 @@ struct GenesisWidgetsBundle: WidgetBundle {
         ReadingProgressWidget()
         StreakWidget()
         PrayerReminderWidget()
+        MemoriseWidget()
     }
 }
 

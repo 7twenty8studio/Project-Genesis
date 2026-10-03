@@ -1,6 +1,16 @@
 {
   "sourceLanguage": "en",
   "strings": {
+    "%lld due": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld pendientes"
+          }
+        }
+      }
+    },
     "%lld prayers": {
       "localizations": {
         "es": {
@@ -37,6 +47,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Un versículo nuevo cada mañana."
+          }
+        }
+      }
+    },
+    "Add a verse to memorise in Genesis.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añade un versículo para memorizar en Genesis."
+          }
+        }
+      }
+    },
+    "All caught up": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todo al día"
           }
         }
       }
@@ -144,6 +174,26 @@
         }
       }
     },
+    "Memorise": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memorizar"
+          }
+        }
+      }
+    },
+    "Memorise Scripture with Genesis Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memoriza las Escrituras con Genesis Premium."
+          }
+        }
+      }
+    },
     "Next reminder %@": {
       "localizations": {
         "es": {
@@ -241,6 +291,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Racha de lectura"
+          }
+        }
+      }
+    },
+    "Recall a verse you're learning by heart.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recuerda un versículo que estás aprendiendo de memoria."
+          }
+        }
+      }
+    },
+    "Tap to review": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca para repasar"
           }
         }
       }

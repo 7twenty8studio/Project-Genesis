@@ -28,6 +28,20 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
         let fractionComplete: Double
     }
 
+    /// Memorise Scripture (Premium): the next passage to review.
+    struct Memorise: Codable, Equatable, Sendable {
+        let isUnlocked: Bool
+        /// When each passage is next due, so the count stays right as days pass.
+        let dueDates: [Date]
+        let total: Int
+        let reference: String?
+        /// The first letter of each word, as a prompt.
+        let hint: String?
+        let translation: String?
+
+        func dueCount(on date: Date) -> Int { dueDates.filter { $0 <= date }.count }
+    }
+
     var generatedAt: Date
     var translation: String
     var dailyVerses: [DailyVerse]
@@ -37,6 +51,7 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
     var plan: Plan?
     var activePrayerCount: Int
     var nextPrayerReminder: Date?
+    var memorise: Memorise?
 
     static let appGroup = "group.com.7twenty8studio.genesis"
     static let fileName = "widget-snapshot.json"
@@ -73,7 +88,8 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
         chaptersRead: 42,
         plan: Plan(title: String(localized: "The Gospels in 30 Days"), todayTitle: String(localized: "John 3\u{2013}5", comment: "Bible reference: the Gospel of John, chapters 3 to 5"), dayNumber: 26, dayCount: 30, isTodayComplete: false, fractionComplete: 0.83),
         activePrayerCount: 3,
-        nextPrayerReminder: nil
+        nextPrayerReminder: nil,
+        memorise: Memorise(isUnlocked: true, dueDates: [.distantPast, .distantPast], total: 6, reference: String(localized: "Psalms 119:105", comment: "Bible reference"), hint: "T w i a l u m f, a a l u m p.", translation: "KJV")
     )
 }
 
@@ -84,4 +100,5 @@ enum GenesisLink {
     static func read(_ verse: Int) -> URL { URL(string: "\(scheme)://read/\(verse)")! }
     static let plans = URL(string: "\(scheme)://plans")!
     static let prayer = URL(string: "\(scheme)://prayer")!
+    static let memorise = URL(string: "\(scheme)://memorise")!
 }
