@@ -115,10 +115,33 @@ struct ReaderControls: View {
                 .accessibilityIdentifier("reader.translation.\(translation.id)")
             }
             Divider()
+            // Read two Bibles side by side.
+            Menu("Read in Parallel", systemImage: "rectangle.split.2x1") {
+                ForEach(library.translations.filter { $0 != reader.translation }) { other in
+                    Button {
+                        reader.readInParallel(with: other)
+                    } label: {
+                        if other.id == reader.parallelTranslation?.id {
+                            Label("\(other.abbreviation) · \(other.name)", systemImage: "checkmark")
+                        } else {
+                            Text("\(other.abbreviation) · \(other.name)")
+                        }
+                    }
+                    .accessibilityIdentifier("reader.parallel.\(other.id)")
+                }
+                if reader.parallelTranslation != nil {
+                    Divider()
+                    Button("Stop Parallel Reading", systemImage: "rectangle") {
+                        reader.readInParallel(with: nil)
+                    }
+                    .accessibilityIdentifier("reader.parallel.off")
+                }
+            }
+            .accessibilityIdentifier("reader.parallelMenu")
             Button("More Bibles\u{2026}", systemImage: "arrow.down.circle", action: onMoreBibles)
                 .accessibilityIdentifier("reader.moreBibles")
         } label: {
-            Text(reader.translation.abbreviation)
+            Text(reader.parallelTranslation.map { "\(reader.translation.abbreviation) | \($0.abbreviation)" } ?? reader.translation.abbreviation)
                 .font(.subheadline.weight(.semibold))
                 .lineLimit(1)
                 .fixedSize()

@@ -42,6 +42,22 @@ final class ReaderViewModel {
     var translation: Translation { library.currentTranslation }
     var chapter: Chapter? { loadChapter(chapterID) }
 
+    // MARK: Parallel reading
+
+    /// The second Bible shown beside the current one, if any (remembered).
+    private(set) var parallelTranslationID: String? = UserDefaults.standard.string(forKey: "reader.parallel")
+
+    var parallelTranslation: Translation? {
+        guard let id = parallelTranslationID, id != translation.id else { return nil }
+        return library.translations.first { $0.id == id }
+    }
+
+    func readInParallel(with translation: Translation?) {
+        parallelTranslationID = translation?.id
+        UserDefaults.standard.set(translation?.id, forKey: "reader.parallel")
+        clearSelection()
+    }
+
     // MARK: Loading
 
     /// Loads a chapter from the current translation, with a small cache so

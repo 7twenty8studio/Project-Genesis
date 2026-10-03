@@ -27,7 +27,34 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare]
+
+    static let readAndShare = WhatsNewAnnouncement(
+        id: "parallel-images-icons-review",
+        title: String(localized: "Read side by side, share beautifully"),
+        items: [
+            WhatsNewItem(
+                systemImage: "rectangle.split.2x1",
+                title: String(localized: "Parallel Bibles"),
+                detail: String(localized: "Read two translations side by side, verse by verse. Tap the translation in the reader, then Read in Parallel. On the open iPhone Duo each gets its own screen.")
+            ),
+            WhatsNewItem(
+                systemImage: "photo",
+                title: String(localized: "Verse images"),
+                detail: String(localized: "Select a verse and tap Image to make a picture to share, on paper or with the seasons.")
+            ),
+            WhatsNewItem(
+                systemImage: "app.badge",
+                title: String(localized: "App icons"),
+                detail: String(localized: "Choose a Night or seasonal icon, or let it change with the seasons, in Settings › App Icon.")
+            ),
+            WhatsNewItem(
+                systemImage: "sparkles",
+                title: String(localized: "Year in Review"),
+                detail: String(localized: "Look back on your year of reading, highlights and prayer, from Insights, and on Home in December and January.")
+            ),
+        ]
+    )
 
     static let mapCertainty = WhatsNewAnnouncement(
         id: "map-certainty",

@@ -30,6 +30,12 @@ struct SettingsView: View {
                         } label: {
                             Label("Account", systemImage: "person.crop.circle")
                         }
+                        NavigationLink {
+                            AppIconPickerView()
+                        } label: {
+                            Label("App Icon", systemImage: "app.badge")
+                        }
+                        .accessibilityIdentifier("settings.appIcon")
                     }
                     .listRowBackground(palette.surface)
                     .foregroundStyle(palette.text)

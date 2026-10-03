@@ -16,6 +16,9 @@ final class ReadingProgress {
     private(set) var chaptersRead: Set<Int>
     /// Seconds spent in the reader per day ("yyyy-MM-dd").
     private(set) var readingSeconds: [String: Int]
+    /// Chapters opened in each year ("2026" → chapter keys), for Year in
+    /// Review. Recorded from the release that added it.
+    private(set) var chaptersByYear: [String: Set<Int>]
 
     @ObservationIgnored private let defaults: UserDefaults
     @ObservationIgnored private let calendar: Calendar
@@ -24,6 +27,7 @@ final class ReadingProgress {
     private static let daysKey = "progress.readingDays"
     private static let chaptersKey = "progress.chaptersRead"
     private static let secondsKey = "progress.readingSeconds"
+    private static let yearChaptersKey = "progress.chaptersByYear"
     /// A session longer than this is counted as this long, so a reader left
     /// open on the table doesn't inflate the total.
     static let longestSession: TimeInterval = 45 * 60
@@ -37,6 +41,8 @@ final class ReadingProgress {
         readingDays = Set(defaults.stringArray(forKey: Self.daysKey) ?? [])
         chaptersRead = Set((defaults.array(forKey: Self.chaptersKey) as? [Int]) ?? [])
         readingSeconds = (defaults.dictionary(forKey: Self.secondsKey) as? [String: Int]) ?? [:]
+        let byYear = (defaults.dictionary(forKey: Self.yearChaptersKey) as? [String: [Int]]) ?? [:]
+        chaptersByYear = byYear.mapValues { Set($0) }
     }
 
     /// Adds time spent reading, ending at `date`.
@@ -96,6 +102,10 @@ final class ReadingProgress {
         let isNewChapter = chaptersRead.insert(chapterKey).inserted
         if isNewDay { defaults.set(Array(readingDays), forKey: Self.daysKey) }
         if isNewChapter { defaults.set(Array(chaptersRead), forKey: Self.chaptersKey) }
+        let year = String(calendar.component(.year, from: date))
+        if chaptersByYear[year, default: []].insert(chapterKey).inserted {
+            defaults.set(chaptersByYear.mapValues { Array($0) }, forKey: Self.yearChaptersKey)
+        }
 
         guard verse != position || lastReadAt == nil || isNewDay else { return }
         position = verse

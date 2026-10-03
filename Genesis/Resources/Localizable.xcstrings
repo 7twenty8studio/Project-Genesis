@@ -11,6 +11,16 @@
         }
       }
     },
+    "%@ and %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ y %@"
+          }
+        }
+      }
+    },
     "%@ highlight": {
       "localizations": {
         "es": {
@@ -808,6 +818,26 @@
         }
       }
     },
+    "App Icon": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Icono de la app"
+          }
+        }
+      }
+    },
+    "App icons": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iconos de la app"
+          }
+        }
+      }
+    },
     "Apple ID": {
       "localizations": {
         "es": {
@@ -1225,6 +1255,16 @@
         }
       }
     },
+    "Chapters read": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capítulos leídos"
+          }
+        }
+      }
+    },
     "Check your email to confirm your account, then sign in.": {
       "localizations": {
         "es": {
@@ -1241,6 +1281,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hijos"
+          }
+        }
+      }
+    },
+    "Choose a Night or seasonal icon, or let it change with the seasons, in Settings › App Icon.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige un icono Noche o de temporada, o deja que cambie con las estaciones, en Ajustes › Icono de la app."
           }
         }
       }
@@ -1739,6 +1789,16 @@
         }
       }
     },
+    "Days in the Word": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Días en la Palabra"
+          }
+        }
+      }
+    },
     "Delete": {
       "localizations": {
         "es": {
@@ -2061,6 +2121,16 @@
         }
       }
     },
+    "Every day you opened the Bible counts.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada día que abriste la Biblia cuenta."
+          }
+        }
+      }
+    },
     "Every place on the Bible map now shows how sure scholars are of where it was. Uncertain sites have a question mark, and you can hide them from the Journeys menu.": {
       "localizations": {
         "es": {
@@ -2354,6 +2424,7 @@
       }
     },
     "Genesis": {
+      "comment": "App icon name: the standard icon",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -2721,6 +2792,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si existe una cuenta con ese correo, te enviaremos un enlace para restablecerla."
+          }
+        }
+      }
+    },
+    "Image": {
+      "comment": "Verse selection action: make a shareable image",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imagen"
           }
         }
       }
@@ -3250,6 +3332,36 @@
         }
       }
     },
+    "Look back on your year of reading, highlights and prayer, from Insights, and on Home in December and January.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repasa tu año de lectura, resaltados y oración desde Estadísticas, y en Inicio en diciembre y enero."
+          }
+        }
+      }
+    },
+    "Look back on your year of reading, highlights and prayer.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repasa tu año de lectura, resaltados y oración."
+          }
+        }
+      }
+    },
+    "MY YEAR WITH GENESIS": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MI AÑO CON GENESIS"
+          }
+        }
+      }
+    },
     "Make Genesis yours": {
       "localizations": {
         "es": {
@@ -3502,6 +3614,26 @@
         }
       }
     },
+    "Most of them in %@.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La mayoría en %@."
+          }
+        }
+      }
+    },
+    "Most read: %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lo más leído: %@"
+          }
+        }
+      }
+    },
     "Most scholars place it here, though not all.": {
       "localizations": {
         "es": {
@@ -3539,6 +3671,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Volver a En oración"
+          }
+        }
+      }
+    },
+    "My %@ with Genesis": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mi %@ con Genesis"
           }
         }
       }
@@ -3721,6 +3863,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Página siguiente"
+          }
+        }
+      }
+    },
+    "Night": {
+      "comment": "App icon name",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noche"
           }
         }
       }
@@ -3966,12 +4119,32 @@
         }
       }
     },
+    "Notes and prayers": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas y oraciones"
+          }
+        }
+      }
+    },
     "Nothing matches": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "No hay coincidencias"
+          }
+        }
+      }
+    },
+    "Nothing to review yet": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay nada que repasar"
           }
         }
       }
@@ -4195,6 +4368,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Párrafos"
+          }
+        }
+      }
+    },
+    "Parallel Bibles": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biblias en paralelo"
           }
         }
       }
@@ -4645,6 +4828,16 @@
         }
       }
     },
+    "Preview: %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vista previa: %@"
+          }
+        }
+      }
+    },
     "Previous chapter": {
       "localizations": {
         "es": {
@@ -4778,12 +4971,32 @@
         }
       }
     },
+    "Read in Parallel": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leer en paralelo"
+          }
+        }
+      }
+    },
     "Read more": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Leer más"
+          }
+        }
+      }
+    },
+    "Read side by side, share beautifully": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee lado a lado, comparte con belleza"
           }
         }
       }
@@ -4814,6 +5027,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lean juntos"
+          }
+        }
+      }
+    },
+    "Read two translations side by side, verse by verse. Tap the translation in the reader, then Read in Parallel. On the open iPhone Duo each gets its own screen.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee dos traducciones lado a lado, versículo por versículo. Toca la traducción en el lector y luego Leer en paralelo. En el iPhone Duo abierto, cada una tiene su propia pantalla."
+          }
+        }
+      }
+    },
+    "Read, highlight and pray with Genesis this year, and your year in review will appear here.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee, resalta y ora con Genesis este año, y aquí aparecerá el repaso de tu año."
           }
         }
       }
@@ -5505,6 +5738,16 @@
         }
       }
     },
+    "Seasons changes the icon through the year: Autumn, Winter, Spring and Summer, by where you live. iPhone shows a short notice whenever an app's icon changes.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estaciones cambia el icono a lo largo del año: Otoño, Invierno, Primavera y Verano, según donde vives. El iPhone muestra un aviso breve cada vez que cambia el icono de una app."
+          }
+        }
+      }
+    },
     "See All": {
       "localizations": {
         "es": {
@@ -5551,6 +5794,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Seleccionar todo"
+          }
+        }
+      }
+    },
+    "Select a verse and tap Image to make a picture to share, on paper or with the seasons.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selecciona un versículo y toca Imagen para crear una imagen para compartir, en papel o con las estaciones."
           }
         }
       }
@@ -5602,6 +5855,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sexual o inapropiado"
+          }
+        }
+      }
+    },
+    "Shape": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Forma"
           }
         }
       }
@@ -5702,6 +5965,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Comparte lo que estás leyendo."
+          }
+        }
+      }
+    },
+    "Share your year with the button at the top.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comparte tu año con el botón de arriba."
           }
         }
       }
@@ -6079,6 +6352,17 @@
         }
       }
     },
+    "Square": {
+      "comment": "Verse image shape",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuadrada"
+          }
+        }
+      }
+    },
     "Start": {
       "localizations": {
         "es": {
@@ -6159,12 +6443,33 @@
         }
       }
     },
+    "Stop Parallel Reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dejar de leer en paralelo"
+          }
+        }
+      }
+    },
     "Stop listening": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Dejar de escuchar"
+          }
+        }
+      }
+    },
+    "Story": {
+      "comment": "Verse image shape: tall, for stories",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Historia"
           }
         }
       }
@@ -6278,6 +6583,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verano"
+          }
+        }
+      }
+    },
+    "Swipe to look back on what you read, highlighted and prayed.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desliza para repasar lo que leíste, resaltaste y oraste."
           }
         }
       }
@@ -6753,6 +7068,16 @@
         }
       }
     },
+    "Time reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiempo de lectura"
+          }
+        }
+      }
+    },
     "Time spent reading, favourite books and your reading history.": {
       "localizations": {
         "es": {
@@ -7114,12 +7439,32 @@
         }
       }
     },
+    "Verse Image": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imagen del versículo"
+          }
+        }
+      }
+    },
     "Verse by Verse": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Versículo por versículo"
+          }
+        }
+      }
+    },
+    "Verse images": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imágenes de versículos"
           }
         }
       }
@@ -7160,6 +7505,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Versículos de la %@. %@"
+          }
+        }
+      }
+    },
+    "Verses highlighted": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versículos resaltados"
           }
         }
       }
@@ -7397,6 +7752,16 @@
         }
       }
     },
+    "Year in Review": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu año en repaso"
+          }
+        }
+      }
+    },
     "Yearly": {
       "comment": "Subscription period",
       "localizations": {
@@ -7479,12 +7844,52 @@
         }
       }
     },
+    "You read %lld books from beginning to end.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leíste %lld libros de principio a fin."
+          }
+        }
+      }
+    },
+    "You spent the most time in %@.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasaste más tiempo en %@."
+          }
+        }
+      }
+    },
     "You won't see their posts, prayer requests or comments. They aren't told.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "No verás sus publicaciones, peticiones de oración ni comentarios. No se le notificará."
+          }
+        }
+      }
+    },
+    "You wrote %lld notes and %lld prayers, and marked %lld prayers answered.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escribiste %1$lld notas y %2$lld oraciones, y marcaste %3$lld oraciones como respondidas."
+          }
+        }
+      }
+    },
+    "You wrote %lld notes and %lld prayers.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escribiste %1$lld notas y %2$lld oraciones."
           }
         }
       }
@@ -7559,6 +7964,16 @@
         }
       }
     },
+    "Your %@ in Review": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu %@ en repaso"
+          }
+        }
+      }
+    },
     "Your Plans": {
       "localizations": {
         "es": {
@@ -7619,6 +8034,26 @@
         }
       }
     },
+    "Your longest day was %@, with %lld minutes.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu día más largo fue el %1$@, con %2$lld minutos."
+          }
+        }
+      }
+    },
+    "Your longest streak was %lld days in a row.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu racha más larga fue de %lld días seguidos."
+          }
+        }
+      }
+    },
     "Your name is shown with your prayer requests and messages. Your first name, or how your church knows you, works well.": {
       "localizations": {
         "es": {
@@ -7655,6 +8090,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu sesión terminó. Vuelve a iniciar sesión."
+          }
+        }
+      }
+    },
+    "Your year with Genesis": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu año con Genesis"
           }
         }
       }
@@ -7701,12 +8146,32 @@
         }
       }
     },
+    "day longest streak": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "días de racha más larga"
+          }
+        }
+      }
+    },
     "day streak": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "días de racha"
+          }
+        }
+      }
+    },
+    "days in the Word": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "días en la Palabra"
           }
         }
       }
@@ -7748,6 +8213,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "notas escritas"
+          }
+        }
+      }
+    },
+    "prayers answered": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "oraciones respondidas"
           }
         }
       }

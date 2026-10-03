@@ -8,21 +8,25 @@ import SwiftUI
 /// left out with Reduce Motion (ReaderView checks).
 struct SeasonalEffectView: View {
     let season: Season
+    /// Draws one still moment instead of animating (for verse images).
+    var stillTime: TimeInterval?
 
     @State private var start = Date.now
     @State private var lowPower = ProcessInfo.processInfo.isLowPowerModeEnabled
 
     var body: some View {
-        // 30 frames a second is plenty for drifting things and halves the cost.
-        TimelineView(.animation(minimumInterval: 1.0 / 30, paused: lowPower)) { context in
-            Canvas { canvas, size in
-                let time = context.date.timeIntervalSince(start)
-                canvas.opacity = min(1, time / 1.5) // fade in when it starts
-                if season == .summer {
-                    SummerLight.draw(in: canvas, size: size, time: time)
-                } else {
-                    for particle in SeasonParticle.make(for: season) {
-                        particle.draw(in: canvas, size: size, time: time, season: season)
+        Group {
+            if let stillTime {
+                Canvas { canvas, size in
+                    Self.draw(season, in: canvas, size: size, time: stillTime)
+                }
+            } else {
+                // 30 frames a second is plenty for drifting things and halves the cost.
+                TimelineView(.animation(minimumInterval: 1.0 / 30, paused: lowPower)) { context in
+                    Canvas { canvas, size in
+                        let time = context.date.timeIntervalSince(start)
+                        canvas.opacity = min(1, time / 1.5) // fade in when it starts
+                        Self.draw(season, in: canvas, size: size, time: time)
                     }
                 }
             }
@@ -31,6 +35,16 @@ struct SeasonalEffectView: View {
         .accessibilityHidden(true)
         .onReceive(NotificationCenter.default.publisher(for: .NSProcessInfoPowerStateDidChange)) { _ in
             lowPower = ProcessInfo.processInfo.isLowPowerModeEnabled
+        }
+    }
+
+    nonisolated private static func draw(_ season: Season, in canvas: GraphicsContext, size: CGSize, time: TimeInterval) {
+        if season == .summer {
+            SummerLight.draw(in: canvas, size: size, time: time)
+        } else {
+            for particle in SeasonParticle.make(for: season) {
+                particle.draw(in: canvas, size: size, time: time, season: season)
+            }
         }
     }
 }

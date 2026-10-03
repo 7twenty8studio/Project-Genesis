@@ -32,6 +32,10 @@ struct RootView: View {
             }
         }
         .whatsNewSheet(isReady: onboardingComplete && scenePhase == .active)
+        // With the Seasons icon, move the Home Screen icon on with the season.
+        .onChange(of: scenePhase) { _, phase in
+            if phase == .active { AppIcon.apply() }
+        }
         .environment(\.palette, theme.palette)
         .tint(theme.palette.accent)
         // Explicit themes pin light or dark chrome; Auto follows the system.

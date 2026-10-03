@@ -68,3 +68,43 @@ final class FeatureChoicesUITests: GenesisUITestCase {
         Genesis.tapToolbarButton("bibles.done", in: app)
     }
 }
+
+/// Parallel Bibles and verse images.
+final class ReadAndShareUITests: GenesisUITestCase {
+    @MainActor
+    func testReadTwoBiblesInParallel() {
+        let app = Genesis.launch(verse: 43_003_016)
+        let translation = app.buttons["reader.translation"]
+        XCTAssertTrue(translation.waitForExistence(timeout: Genesis.launchTimeout))
+        Genesis.openMenu(translation, expecting: app.buttons["reader.parallelMenu"])
+        app.buttons["reader.parallelMenu"].tap()
+        let web = app.buttons["reader.parallel.WEB"]
+        XCTAssertTrue(web.waitForExistence(timeout: Genesis.timeout), "The other Bibles are offered")
+        web.tap()
+        let header = app.descendants(matching: .any)["reader.parallel"]
+        XCTAssertTrue(header.waitForExistence(timeout: Genesis.timeout), "Two Bibles are shown side by side")
+        XCTAssertTrue(Genesis.element(containing: "There was a man of the Pharisees", in: app).waitForExistence(timeout: Genesis.timeout), "The KJV is there")
+
+        // Turning it off again.
+        Genesis.showControls(app)
+        Genesis.openMenu(app.buttons["reader.translation"], expecting: app.buttons["reader.parallelMenu"])
+        app.buttons["reader.parallelMenu"].tap()
+        let off = app.buttons["reader.parallel.off"]
+        XCTAssertTrue(off.waitForExistence(timeout: Genesis.timeout))
+        off.tap()
+        XCTAssertTrue(Genesis.wait { !header.exists }, "Back to one Bible")
+    }
+
+    @MainActor
+    func testMakeAVerseImage() {
+        let app = Genesis.launch(verse: 43_003_016)
+        XCTAssertTrue(Genesis.readerText(app).waitForExistence(timeout: Genesis.launchTimeout))
+        XCTAssertTrue(Genesis.selectVerse(app), "A verse can be selected")
+        let image = app.buttons["selection.image"]
+        XCTAssertTrue(image.waitForExistence(timeout: Genesis.timeout))
+        image.tap()
+        XCTAssertTrue(app.buttons["verseImage.style.autumn"].waitForExistence(timeout: Genesis.timeout), "Backgrounds are offered")
+        app.buttons["verseImage.style.autumn"].tap()
+        XCTAssertTrue(app.buttons["verseImage.share"].waitForExistence(timeout: Genesis.timeout), "The image can be shared")
+    }
+}

@@ -116,6 +116,7 @@ struct ReaderView: View {
 
                 if reader.isSelecting {
                     SelectionActionBar(
+                        onImage: imageForSelection,
                         onNote: openNoteForSelection,
                         onCrossReferences: showCrossReferencesForSelection,
                         onExplain: explainSelection
@@ -185,7 +186,15 @@ struct ReaderView: View {
 
     @ViewBuilder
     private func textView(layout: ReaderLayout) -> some View {
-        if preferences.readingMode == .page {
+        if let secondary = reader.parallelTranslation {
+            ParallelChapterView(
+                chapterID: reader.chapterID,
+                primary: reader.translation,
+                secondary: secondary,
+                topInset: layout.safeArea.top + 64,
+                bottomInset: layout.safeArea.bottom + 60
+            )
+        } else if preferences.readingMode == .page {
             let turn: PageTurnStyle = reduceMotion ? .slide : preferences.pageTurn
             PagedReaderView(
                 viewModel: reader,
@@ -283,6 +292,15 @@ struct ReaderView: View {
         sheet = .study(StudyPassage(start: first, end: end), .explain)
     }
 
+    /// A verse image of the selected verses (verbatim from the database).
+    private func imageForSelection() {
+        guard let reference = reader.selectedReference else { return }
+        let text = reader.selectedVerses.map(\.plainText).joined(separator: " ")
+        guard !text.isEmpty else { return }
+        reader.clearSelection()
+        sheet = .verseImage(VerseCard(text: text, reference: reference.description, translation: reader.translation.name))
+    }
+
     private func showCrossReferencesForSelection() {
         guard let verse = reader.selection.min() else { return }
         if isWide {
@@ -298,6 +316,8 @@ struct ReaderView: View {
     @ViewBuilder
     private func sheetContent(_ sheet: ReaderSheet) -> some View {
         switch sheet {
+        case let .verseImage(card):
+            VerseImageView(card: card)
         case .chapterPicker:
             ChapterPickerView { chapter in
                 reader.open(chapter)
@@ -345,9 +365,11 @@ enum ReaderSheet: Identifiable {
     case study(StudyPassage, StudyAction)
     case audio
     case bibles
+    case verseImage(VerseCard)
 
     var id: String {
         switch self {
+        case let .verseImage(card): "image-\(card.id)"
         case .chapterPicker: "chapters"
         case .settings: "settings"
         case .audio: "audio"

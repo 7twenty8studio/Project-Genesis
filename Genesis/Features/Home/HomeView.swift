@@ -12,6 +12,7 @@ struct HomeView: View {
     @Environment(EntitlementService.self) private var entitlements
     @State private var showsBibles = false
     @State private var showsSettings = false
+    @State private var showsYearInReview = false
     @Environment(\.searchIsTab) private var searchIsTab
     @Environment(FeaturePreferences.self) private var features
     @Environment(FeatureFlagService.self) private var flags
@@ -32,6 +33,7 @@ struct HomeView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 28) {
                     greeting
+                    if YearInReview.isSeason(), progress.hasStartedReading { yearInReviewCard }
                     continueReading
                     if features.isOn(.plansAndPrayer) { todaysReading }
                     dailyVerse
@@ -54,6 +56,7 @@ struct HomeView: View {
             }
             .sheet(isPresented: $showsBibles) { BibleDownloadsView() }
             .sheet(isPresented: $showsSettings) { SettingsView() }
+            .fullScreenCover(isPresented: $showsYearInReview) { YearInReviewView(year: YearInReview.reviewedYear()) }
             .sheet(isPresented: $router.showsAccount) {
                 AccountView()
             }
@@ -70,6 +73,34 @@ struct HomeView: View {
     }
 
     // MARK: Sections
+
+    /// December and January: "Your 2026 in review".
+    private var yearInReviewCard: some View {
+        Button {
+            showsYearInReview = true
+        } label: {
+            HStack(spacing: 14) {
+                Image(systemName: "sparkles")
+                    .font(.title2)
+                    .foregroundStyle(palette.accent)
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("Your \(String(YearInReview.reviewedYear())) in Review")
+                        .font(.headline)
+                        .foregroundStyle(palette.text)
+                    Text("Look back on your year of reading, highlights and prayer.")
+                        .font(.subheadline)
+                        .foregroundStyle(palette.secondaryText)
+                }
+                Spacer(minLength: 0)
+                Image(systemName: "chevron.right")
+                    .foregroundStyle(palette.secondaryText)
+            }
+            .padding(18)
+            .background(palette.surface, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("home.yearInReview")
+    }
 
     private var greeting: some View {
         HStack(alignment: .top) {

@@ -4,6 +4,7 @@ import UIKit
 /// Appears when verses are selected (long-press a verse). Highlight, note,
 /// bookmark, copy, share and cross references.
 struct SelectionActionBar: View {
+    let onImage: () -> Void
     let onNote: () -> Void
     let onCrossReferences: () -> Void
     let onExplain: () -> Void
@@ -87,6 +88,8 @@ struct SelectionActionBar: View {
                 ShareLink(item: reader.shareTextForSelection) {
                     actionLabel(String(localized: "Share"), systemImage: "square.and.arrow.up")
                 }
+                action(String(localized: "Image", comment: "Verse selection action: make a shareable image"), systemImage: "photo", perform: onImage)
+                    .accessibilityIdentifier("selection.image")
                 if reader.selection.count == 1 {
                     action(String(localized: "Related", comment: "Panel title: related passages (cross-references)"), systemImage: "arrow.triangle.branch", perform: onCrossReferences)
                         .accessibilityIdentifier("selection.related")

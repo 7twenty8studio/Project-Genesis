@@ -7,7 +7,8 @@ import UIKit
 @MainActor
 enum PaperTexture {
     private static var cache: [UInt32: UIColor] = [:]
-    private static let tile: CGFloat = 256
+    private static var tileCache: [UInt32: UIImage] = [:]
+    private static let tileSize: CGFloat = 256
 
     /// The page colour for a theme: textured paper for Premium themes, the
     /// plain colour otherwise.
@@ -20,10 +21,19 @@ enum PaperTexture {
         return color
     }
 
+    /// One tile of a theme's paper, for drawing in SwiftUI (verse images).
+    static func tile(for theme: ReaderTheme) -> UIImage {
+        let key = theme.palette.backgroundHex
+        if let cached = tileCache[key] { return cached }
+        let image = render(base: theme.palette.uiBackground, dark: theme.isDark)
+        tileCache[key] = image
+        return image
+    }
+
     private static func render(base: UIColor, dark: Bool) -> UIImage {
         let format = UIGraphicsImageRendererFormat()
         format.opaque = true
-        let size = CGSize(width: tile, height: tile)
+        let size = CGSize(width: tileSize, height: tileSize)
         return UIGraphicsImageRenderer(size: size, format: format).image { context in
             let cg = context.cgContext
             base.setFill()
@@ -37,7 +47,7 @@ enum PaperTexture {
 
             // Fine grain.
             for _ in 0..<5200 {
-                let point = CGPoint(x: random.next() * tile, y: random.next() * tile)
+                let point = CGPoint(x: random.next() * tileSize, y: random.next() * tileSize)
                 let radius = 0.35 + random.next() * 0.55
                 let color = random.next() < 0.6 ? ink(0.035 + random.next() * 0.045) : light
                 drawTiled(cg, around: point) { origin in
@@ -47,7 +57,7 @@ enum PaperTexture {
             }
             // A few soft blotches, so the paper isn't perfectly even.
             for _ in 0..<14 {
-                let point = CGPoint(x: random.next() * tile, y: random.next() * tile)
+                let point = CGPoint(x: random.next() * tileSize, y: random.next() * tileSize)
                 let radius = 18 + random.next() * 40
                 let color = ink(0.012 + random.next() * 0.015)
                 drawTiled(cg, around: point) { origin in
@@ -58,7 +68,7 @@ enum PaperTexture {
             // Fibres: short, thin curved strokes.
             cg.setLineCap(.round)
             for _ in 0..<70 {
-                let start = CGPoint(x: random.next() * tile, y: random.next() * tile)
+                let start = CGPoint(x: random.next() * tileSize, y: random.next() * tileSize)
                 let angle = random.next() * .pi * 2
                 let length = 6 + random.next() * 18
                 let bend = (random.next() - 0.5) * 6
@@ -80,11 +90,11 @@ enum PaperTexture {
     /// Draws at a point and at its copies across the tile's edges, so the
     /// texture repeats without seams.
     private static func drawTiled(_ cg: CGContext, around point: CGPoint, draw: (CGPoint) -> Void) {
-        for dx in [-tile, 0, tile] {
-            for dy in [-tile, 0, tile] {
+        for dx in [-tileSize, 0, tileSize] {
+            for dy in [-tileSize, 0, tileSize] {
                 let origin = CGPoint(x: point.x + dx, y: point.y + dy)
                 // Only copies that can reach into the tile.
-                guard origin.x > -60, origin.x < tile + 60, origin.y > -60, origin.y < tile + 60 else { continue }
+                guard origin.x > -60, origin.x < tileSize + 60, origin.y > -60, origin.y < tileSize + 60 else { continue }
                 draw(origin)
             }
         }

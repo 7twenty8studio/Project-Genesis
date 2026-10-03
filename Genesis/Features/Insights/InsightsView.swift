@@ -12,12 +12,25 @@ struct InsightsView: View {
     @Query private var notes: [Note]
     @Query(sort: \HighlightCollection.name) private var collections: [HighlightCollection]
     @State private var premium: PremiumFeature?
+    @State private var showsYearInReview = false
 
     private static let totalChapters = BibleBook.all.reduce(0) { $0 + $1.chapterCount }
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 28) {
+                Button {
+                    showsYearInReview = true
+                } label: {
+                    Label("Your \(String(YearInReview.reviewedYear())) in Review", systemImage: "sparkles")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(16)
+                        .background(palette.surface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                }
+                .buttonStyle(.plain)
+                .foregroundStyle(palette.accent)
+                .accessibilityIdentifier("insights.yearInReview")
                 stats
                 if entitlements.allows(.readingInsights) {
                     readingTime
@@ -34,6 +47,7 @@ struct InsightsView: View {
         .themedScreen()
         .navigationTitle("Insights")
         .premiumSheet($premium)
+        .fullScreenCover(isPresented: $showsYearInReview) { YearInReviewView(year: YearInReview.reviewedYear()) }
     }
 
     private var stats: some View {
