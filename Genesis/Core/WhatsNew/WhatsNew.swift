@@ -36,7 +36,7 @@ enum WhatsNewCatalog {
             WhatsNewItem(
                 systemImage: "leaf",
                 title: String(localized: "Seasonal themes"),
-                detail: String(localized: "Autumn, Winter, Spring and Summer, or Seasons to change with the calendar. Leaves, snow or blossom drift by for a moment when you open the reader. In Aa › Theme, with Premium.")
+                detail: String(localized: "Autumn, Winter, Spring and Summer, or Seasons to change with the calendar. Leaves, snow, blossom or summer sunlight drift gently across the page as you read. In Aa › Theme, with Premium.")
             ),
             WhatsNewItem(
                 systemImage: "doc.richtext",

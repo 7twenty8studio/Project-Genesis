@@ -33,7 +33,7 @@ struct ReaderSettingsSheet: View {
                     }
                 } footer: {
                     if settings.preferences.theme.season != nil {
-                        Text("Leaves, snow, blossom or summer light drift across the page for a few seconds when you open the reader. Not shown when Reduce Motion is on.")
+                        Text("Leaves, snow, blossom or summer sunlight drift gently across the page while you read. Paused in Low Power Mode and not shown when Reduce Motion is on.")
                     }
                 }
 

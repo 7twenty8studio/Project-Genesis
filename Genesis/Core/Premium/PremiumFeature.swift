@@ -29,7 +29,7 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
         case .unlimitedNotes: String(localized: "Free includes \(FreeLimits.notes) notes.")
         case .unlimitedPrayers: String(localized: "Free includes \(FreeLimits.prayers) prayer requests.")
         case .cloudBackup: String(localized: "Keep highlights, notes, plans and prayers on all your devices.")
-        case .premiumThemes: String(localized: "Textured paper in Cream, Parchment, Midnight and Sage, and seasonal themes with falling leaves, snow and blossom.")
+        case .premiumThemes: String(localized: "Textured paper in Cream, Parchment, Midnight and Sage, and seasonal themes with falling leaves, snow, blossom and summer sunlight.")
         case .advancedAI: String(localized: "Summaries, historical background, discussion questions and more, without the daily limit.")
         case .historicalContent: String(localized: "An interactive timeline, Bible maps and journeys, and a character explorer with family trees.")
         case .readingInsights: String(localized: "Time spent reading, favourite books and your reading history.")
