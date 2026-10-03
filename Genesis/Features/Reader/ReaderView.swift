@@ -307,7 +307,11 @@ struct ReaderView: View {
             return
         }
         guard let first = reader.selection.min(), let last = reader.selection.max() else { return }
-        let end = last.chapterID == first.chapterID && last.verse - first.verse < MemoriseSuggestions.maximumVerses ? last : first
+        // One chapter, at most 15 verses.
+        let sameChapter = last.chapterID == first.chapterID ? last : first
+        let end = sameChapter.verse - first.verse < MemoriseSuggestions.maximumVerses
+            ? sameChapter
+            : VerseID(book: first.book, chapter: first.chapter, verse: first.verse + MemoriseSuggestions.maximumVerses - 1)
         StudyStore(context: modelContext).memorise(from: first, through: end, translationID: reader.translation.id)
         reader.clearSelection()
         let message = String(localized: "Added to Memorise")

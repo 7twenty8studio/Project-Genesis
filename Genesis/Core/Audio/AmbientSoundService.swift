@@ -75,6 +75,7 @@ final class AmbientSoundService {
             if mix.isEmpty {
                 // The output fades this last sound out and lets the session go.
                 isPlaying = false
+                showsControls = false
                 setTimer(minutes: nil)
             }
         } else {
@@ -150,6 +151,8 @@ final class AmbientSoundService {
     func setTimer(minutes: Int?) {
         timerTask?.cancel()
         timerTask = nil
+        // A timer only makes sense while something plays.
+        let minutes = isPlaying ? minutes : nil
         timerMinutes = minutes
         guard let minutes else {
             timerEndsAt = nil

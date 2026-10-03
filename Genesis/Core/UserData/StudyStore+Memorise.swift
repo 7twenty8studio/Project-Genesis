@@ -18,7 +18,7 @@ extension StudyStore {
     @discardableResult
     func memorise(from start: VerseID, through end: VerseID, translationID: String) -> MemoryVerse {
         let first = start.rawValue
-        let last = end.rawValue
+        let last = max(end.rawValue, start.rawValue)
         let existing = (try? context.fetch(FetchDescriptor<MemoryVerse>(predicate: #Predicate { $0.startRaw == first && $0.endRaw == last }))) ?? []
         if let found = existing.first { return found }
         let verse = MemoryVerse(start: start, end: end, translationID: translationID)

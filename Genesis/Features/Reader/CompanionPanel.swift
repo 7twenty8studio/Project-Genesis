@@ -39,6 +39,7 @@ struct CompanionPanel: View {
     @Environment(\.palette) private var palette
     @Environment(StudyAssistant.self) private var assistant
     @Environment(FeaturePreferences.self) private var features
+    @Environment(EntitlementService.self) private var entitlements
 
     /// Only the panels for features that are switched on.
     private var modes: [Mode] {
@@ -82,6 +83,12 @@ struct CompanionPanel: View {
                 case let .plan(id): PlanDetailView(enrollmentID: id)
                 case .prayerJournal: PrayerJournalView()
                 case .insights: InsightsView()
+                case .memorise:
+                    if entitlements.allows(.memorise) {
+                        MemoriseView()
+                    } else {
+                        PremiumView(highlighted: .memorise)
+                    }
                 }
             }
             .safeAreaInset(edge: .top) {
