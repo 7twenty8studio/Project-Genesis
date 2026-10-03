@@ -74,7 +74,12 @@ final class TogetherUITests: GenesisUITestCase {
         XCTAssertTrue(title.waitForExistence(timeout: Genesis.timeout))
         title.tap()
         title.typeText("Picnic on Saturday")
+        // On the open Duo the first tap on Post can be swallowed while the
+        // keyboard is up; tap again only if the sheet is still there.
         Genesis.tapToolbarButton("announcement.post", in: app)
+        if !Genesis.wait(timeout: 3, until: { !title.exists }) {
+            app.buttons["announcement.post"].firstMatch.tap()
+        }
         XCTAssertTrue(Genesis.element(containing: "Picnic on Saturday", in: app).waitForExistence(timeout: Genesis.timeout), "The announcement is posted")
 
         // Members: the invite code to share.

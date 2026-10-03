@@ -9,9 +9,11 @@ final class SpanishUITests: GenesisUITestCase {
     @MainActor
     func testScreensAreInSpanish() {
         let app = Genesis.launch(extra: Self.spanish)
-        let home = app.buttons["house"].firstMatch
-        XCTAssertTrue(home.waitForExistence(timeout: Genesis.launchTimeout), "The Home tab is there")
-        XCTAssertEqual(home.label, "Inicio", "Tab titles are in Spanish")
+        // The tab's identifier comes from its title, so it changes with the
+        // language: find it by its Spanish title.
+        let home = app.buttons["Inicio"].firstMatch
+        XCTAssertTrue(home.waitForExistence(timeout: Genesis.launchTimeout), "The Home tab is titled in Spanish")
+        XCTAssertFalse(app.buttons["Home"].exists, "No English tab titles")
 
         let settings = app.buttons["home.settings"]
         XCTAssertTrue(settings.waitForExistence(timeout: Genesis.timeout))
