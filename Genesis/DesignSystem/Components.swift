@@ -43,6 +43,19 @@ extension View {
     func themedScreen() -> some View { modifier(ThemedScreen()) }
 }
 
+/// List and form rows in the theme's surface colour. Without it, rows keep
+/// the system's white (or dark grey) whatever the theme. Wrap a List's or
+/// Form's content in it; a row's own `.listRowBackground` still wins.
+struct ThemedRows<Content: View>: View {
+    @Environment(\.palette) private var palette
+    @ViewBuilder let content: Content
+
+    var body: some View {
+        Group { content }
+            .listRowBackground(palette.surface)
+    }
+}
+
 private struct ThemedScreen: ViewModifier {
     @Environment(\.palette) private var palette
 

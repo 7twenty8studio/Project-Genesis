@@ -13,37 +13,39 @@ struct BibleDownloadsView: View {
     var body: some View {
         NavigationStack {
             List {
-                Section {
-                    ForEach(library.translations) { translation in
-                        row(translation)
+                ThemedRows {
+                    Section {
+                        ForEach(library.translations) { translation in
+                            row(translation)
+                        }
+                    } header: {
+                        Text("On this device")
+                    } footer: {
+                        Text("Every Bible here works offline.")
                     }
-                } header: {
-                    Text("On this device")
-                } footer: {
-                    Text("Every Bible here works offline.")
-                }
-                .listRowBackground(palette.surface)
+                    .listRowBackground(palette.surface)
 
-                Section {
-                    if !hasLoaded {
-                        ProgressView().frame(maxWidth: .infinity)
-                    } else if library.available.isEmpty {
-                        Text(library.catalog.isEmpty ? "Connect to the internet to see more Bibles." : "You have every Bible that's available.")
-                            .foregroundStyle(palette.secondaryText)
+                    Section {
+                        if !hasLoaded {
+                            ProgressView().frame(maxWidth: .infinity)
+                        } else if library.available.isEmpty {
+                            Text(library.catalog.isEmpty ? "Connect to the internet to see more Bibles." : "You have every Bible that's available.")
+                                .foregroundStyle(palette.secondaryText)
+                        }
+                        ForEach(library.available) { item in
+                            downloadRow(item)
+                        }
+                    } header: {
+                        Text("Available to download")
+                    } footer: {
+                        if let error = library.downloadError {
+                            Text(error).foregroundStyle(.orange)
+                        } else {
+                            Text("Genesis offers public-domain translations. More will come as licenses allow.")
+                        }
                     }
-                    ForEach(library.available) { item in
-                        downloadRow(item)
-                    }
-                } header: {
-                    Text("Available to download")
-                } footer: {
-                    if let error = library.downloadError {
-                        Text(error).foregroundStyle(.orange)
-                    } else {
-                        Text("Genesis offers public-domain translations. More will come as licenses allow.")
-                    }
+                    .listRowBackground(palette.surface)
                 }
-                .listRowBackground(palette.surface)
             }
             .themedScreen()
             .navigationTitle("Bibles")

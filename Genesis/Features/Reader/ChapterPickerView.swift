@@ -14,39 +14,41 @@ struct ChapterPickerView: View {
     var body: some View {
         NavigationStack(path: $path) {
             List {
-                if filter.isEmpty {
-                    Picker("Testament", selection: $testament) {
-                        ForEach(Testament.allCases, id: \.self) { Text($0.title).tag($0) }
+                ThemedRows {
+                    if filter.isEmpty {
+                        Picker("Testament", selection: $testament) {
+                            ForEach(Testament.allCases, id: \.self) { Text($0.title).tag($0) }
+                        }
+                        .pickerStyle(.segmented)
+                        .listRowBackground(Color.clear)
+                        .listRowInsets(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
                     }
-                    .pickerStyle(.segmented)
-                    .listRowBackground(Color.clear)
-                    .listRowInsets(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
-                }
 
-                ForEach(books) { book in
-                    Button {
-                        if book.chapterCount == 1 {
-                            onSelect(ChapterID(book: book.id, chapter: 1))
-                        } else {
-                            path.append(book)
-                        }
-                    } label: {
-                        HStack {
-                            Text(book.name)
-                                .foregroundStyle(palette.text)
-                            Spacer()
-                            if book.id == reader.chapterID.book {
-                                Image(systemName: "bookmark.fill")
-                                    .font(.caption)
-                                    .foregroundStyle(palette.accent)
-                                    .accessibilityLabel("Currently reading")
+                    ForEach(books) { book in
+                        Button {
+                            if book.chapterCount == 1 {
+                                onSelect(ChapterID(book: book.id, chapter: 1))
+                            } else {
+                                path.append(book)
                             }
-                            Text("\(book.chapterCount)")
-                                .font(.footnote.monospacedDigit())
-                                .foregroundStyle(palette.secondaryText)
+                        } label: {
+                            HStack {
+                                Text(book.name)
+                                    .foregroundStyle(palette.text)
+                                Spacer()
+                                if book.id == reader.chapterID.book {
+                                    Image(systemName: "bookmark.fill")
+                                        .font(.caption)
+                                        .foregroundStyle(palette.accent)
+                                        .accessibilityLabel("Currently reading")
+                                }
+                                Text("\(book.chapterCount)")
+                                    .font(.footnote.monospacedDigit())
+                                    .foregroundStyle(palette.secondaryText)
+                            }
                         }
+                        .listRowBackground(palette.surface)
                     }
-                    .listRowBackground(palette.surface)
                 }
             }
             .themedScreen()

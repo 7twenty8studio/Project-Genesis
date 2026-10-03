@@ -123,4 +123,6 @@ shares; README.md has the architecture.
 - SwiftUI first; UIKit only for the TextKit reader text and page curl.
 - Verses are addressed by `VerseID` (book*1_000_000 + chapter*1_000 + verse).
 - Swift Testing for unit tests of business logic.
-- Muted colours only; themes live in `ReaderTheme`.
+- Muted colours only; themes live in `ReaderTheme`. Every List/Form wraps its
+  content in `ThemedRows { }` so rows take the theme's surface colour
+  (otherwise they stay system white), plus `.themedScreen()` on the list.

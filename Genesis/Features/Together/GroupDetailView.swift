@@ -85,23 +85,25 @@ struct GroupTodayView: View {
     var body: some View {
         let day = model.today
         List {
-            if let plan = group.plan, let day {
-                Section {
-                    if day == 0, let start = group.planStart {
-                        Text("\(plan.title) starts \(start.formatted(date: .abbreviated, time: .omitted)).")
-                            .foregroundStyle(palette.secondaryText)
-                    } else if day == 0 {
-                        Text("\(plan.title) starts soon.")
-                            .foregroundStyle(palette.secondaryText)
-                    } else {
-                        reading(plan.days[day - 1], plan: plan, day: day)
+            ThemedRows {
+                if let plan = group.plan, let day {
+                    Section {
+                        if day == 0, let start = group.planStart {
+                            Text("\(plan.title) starts \(start.formatted(date: .abbreviated, time: .omitted)).")
+                                .foregroundStyle(palette.secondaryText)
+                        } else if day == 0 {
+                            Text("\(plan.title) starts soon.")
+                                .foregroundStyle(palette.secondaryText)
+                        } else {
+                            reading(plan.days[day - 1], plan: plan, day: day)
+                        }
+                    } header: {
+                        Text(day == 0 ? "Reading plan" : "Day \(day) of \(plan.dayCount)")
                     }
-                } header: {
-                    Text(day == 0 ? "Reading plan" : "Day \(day) of \(plan.dayCount)")
+                    .listRowBackground(palette.surface)
                 }
-                .listRowBackground(palette.surface)
+                DiscussionSection(model: model, day: (day ?? 0) > 0 ? day : nil)
             }
-            DiscussionSection(model: model, day: (day ?? 0) > 0 ? day : nil)
         }
     }
 
@@ -218,38 +220,40 @@ struct GroupPrayersView: View {
 
     var body: some View {
         List {
-            Section {
-                HStack(alignment: .bottom) {
-                    TextField("Share a prayer request", text: $draft, axis: .vertical)
-                        .lineLimit(1...6)
-                        .accessibilityIdentifier("group.prayerField")
-                    Button {
-                        isSending = true
-                        Task {
-                            if await model.addPrayer(draft) { draft = "" }
-                            isSending = false
+            ThemedRows {
+                Section {
+                    HStack(alignment: .bottom) {
+                        TextField("Share a prayer request", text: $draft, axis: .vertical)
+                            .lineLimit(1...6)
+                            .accessibilityIdentifier("group.prayerField")
+                        Button {
+                            isSending = true
+                            Task {
+                                if await model.addPrayer(draft) { draft = "" }
+                                isSending = false
+                            }
+                        } label: {
+                            Image(systemName: "arrow.up.circle.fill").font(.title2)
                         }
-                    } label: {
-                        Image(systemName: "arrow.up.circle.fill").font(.title2)
+                        .disabled(draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || isSending)
+                        .accessibilityLabel("Share")
+                        .accessibilityIdentifier("group.sharePrayer")
                     }
-                    .disabled(draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || isSending)
-                    .accessibilityLabel("Share")
-                    .accessibilityIdentifier("group.sharePrayer")
+                } footer: {
+                    Text("Only members of this group can see these.")
                 }
-            } footer: {
-                Text("Only members of this group can see these.")
-            }
-            .listRowBackground(palette.surface)
+                .listRowBackground(palette.surface)
 
-            Section {
-                if model.visiblePrayers.isEmpty {
-                    Text("No prayer requests yet.").foregroundStyle(palette.secondaryText)
+                Section {
+                    if model.visiblePrayers.isEmpty {
+                        Text("No prayer requests yet.").foregroundStyle(palette.secondaryText)
+                    }
+                    ForEach(model.visiblePrayers) { prayer in
+                        row(prayer)
+                    }
                 }
-                ForEach(model.visiblePrayers) { prayer in
-                    row(prayer)
-                }
+                .listRowBackground(palette.surface)
             }
-            .listRowBackground(palette.surface)
         }
         .buttonStyle(.borderless)
         .sensoryFeedback(.impact(weight: .light), trigger: model.prayedFor.count) { old, new in new > old }
@@ -314,47 +318,49 @@ struct GroupAnnouncementsView: View {
 
     var body: some View {
         List {
-            if group.isLeader {
-                Section {
-                    Button {
-                        composing = true
-                    } label: {
-                        Label("New Announcement", systemImage: "megaphone")
+            ThemedRows {
+                if group.isLeader {
+                    Section {
+                        Button {
+                            composing = true
+                        } label: {
+                            Label("New Announcement", systemImage: "megaphone")
+                        }
+                        .accessibilityIdentifier("group.announce")
+                    } footer: {
+                        Text("Members who allow notifications get one.")
                     }
-                    .accessibilityIdentifier("group.announce")
-                } footer: {
-                    Text("Members who allow notifications get one.")
+                    .listRowBackground(palette.surface)
+                }
+                Section {
+                    if model.visibleAnnouncements.isEmpty {
+                        Text("No announcements yet.").foregroundStyle(palette.secondaryText)
+                    }
+                    ForEach(model.visibleAnnouncements) { announcement in
+                        VStack(alignment: .leading, spacing: 6) {
+                            Text(announcement.title)
+                                .font(.headline)
+                                .foregroundStyle(palette.text)
+                            if !announcement.body.isEmpty {
+                                Text(announcement.body).foregroundStyle(palette.text)
+                            }
+                            Text("\(announcement.displayName) · \(announcement.createdAt.formatted(.relative(presentation: .named)))")
+                                .font(.caption)
+                                .foregroundStyle(palette.secondaryText)
+                        }
+                        .padding(.vertical, 4)
+                        .contentActions(
+                            .groupAnnouncement, id: announcement.id, authorName: announcement.displayName,
+                            isMine: community.isMine(announcement.userID),
+                            canRemove: community.isMine(announcement.userID) || group.isLeader,
+                            onRemove: { await model.remove(.groupAnnouncement, id: announcement.id) },
+                            onBlock: { await community.block(announcement.userID) },
+                            onHidden: { model.hide(announcement.id) }
+                        )
+                    }
                 }
                 .listRowBackground(palette.surface)
             }
-            Section {
-                if model.visibleAnnouncements.isEmpty {
-                    Text("No announcements yet.").foregroundStyle(palette.secondaryText)
-                }
-                ForEach(model.visibleAnnouncements) { announcement in
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text(announcement.title)
-                            .font(.headline)
-                            .foregroundStyle(palette.text)
-                        if !announcement.body.isEmpty {
-                            Text(announcement.body).foregroundStyle(palette.text)
-                        }
-                        Text("\(announcement.displayName) · \(announcement.createdAt.formatted(.relative(presentation: .named)))")
-                            .font(.caption)
-                            .foregroundStyle(palette.secondaryText)
-                    }
-                    .padding(.vertical, 4)
-                    .contentActions(
-                        .groupAnnouncement, id: announcement.id, authorName: announcement.displayName,
-                        isMine: community.isMine(announcement.userID),
-                        canRemove: community.isMine(announcement.userID) || group.isLeader,
-                        onRemove: { await model.remove(.groupAnnouncement, id: announcement.id) },
-                        onBlock: { await community.block(announcement.userID) },
-                        onHidden: { model.hide(announcement.id) }
-                    )
-                }
-            }
-            .listRowBackground(palette.surface)
         }
         .sheet(isPresented: $composing) {
             AnnouncementComposer(model: model)
@@ -373,12 +379,14 @@ private struct AnnouncementComposer: View {
     var body: some View {
         NavigationStack {
             Form {
-                TextField("Title", text: $title)
-                    .accessibilityIdentifier("announcement.title")
-                TextField("Details (optional)", text: $message, axis: .vertical)
-                    .lineLimit(3...8)
-                if let error = model.errorMessage {
-                    Text(error).foregroundStyle(.orange)
+                ThemedRows {
+                    TextField("Title", text: $title)
+                        .accessibilityIdentifier("announcement.title")
+                    TextField("Details (optional)", text: $message, axis: .vertical)
+                        .lineLimit(3...8)
+                    if let error = model.errorMessage {
+                        Text(error).foregroundStyle(.orange)
+                    }
                 }
             }
             .navigationTitle("Announcement")

@@ -114,34 +114,36 @@ struct DisplayNameView: View {
 
     var body: some View {
         Form {
-            Section {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("What should people call you?")
-                        .font(.system(.title2, design: .serif, weight: .semibold))
-                    Text("Your name is shown with your prayer requests and messages. Your first name, or how your church knows you, works well.")
-                        .font(.subheadline)
-                        .foregroundStyle(palette.secondaryText)
+            ThemedRows {
+                Section {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("What should people call you?")
+                            .font(.system(.title2, design: .serif, weight: .semibold))
+                        Text("Your name is shown with your prayer requests and messages. Your first name, or how your church knows you, works well.")
+                            .font(.subheadline)
+                            .foregroundStyle(palette.secondaryText)
+                    }
+                    .listRowBackground(Color.clear)
                 }
-                .listRowBackground(Color.clear)
-            }
-            Section {
-                TextField("Display name", text: $name)
-                    .textContentType(.givenName)
-                    .focused($focused)
-                    .submitLabel(.done)
-                    .onSubmit(save)
-                    .accessibilityIdentifier("together.displayName")
-            } footer: {
-                if let error = community.errorMessage {
-                    Text(error).foregroundStyle(.orange)
+                Section {
+                    TextField("Display name", text: $name)
+                        .textContentType(.givenName)
+                        .focused($focused)
+                        .submitLabel(.done)
+                        .onSubmit(save)
+                        .accessibilityIdentifier("together.displayName")
+                } footer: {
+                    if let error = community.errorMessage {
+                        Text(error).foregroundStyle(.orange)
+                    }
                 }
-            }
-            Section {
-                Button(action: save) {
-                    if isSaving { ProgressView() } else { Text("Continue") }
+                Section {
+                    Button(action: save) {
+                        if isSaving { ProgressView() } else { Text("Continue") }
+                    }
+                    .disabled(name.trimmingCharacters(in: .whitespaces).isEmpty || isSaving)
+                    .accessibilityIdentifier("together.saveName")
                 }
-                .disabled(name.trimmingCharacters(in: .whitespaces).isEmpty || isSaving)
-                .accessibilityIdentifier("together.saveName")
             }
         }
         .onAppear {

@@ -16,19 +16,21 @@ struct AudioSettingsView: View {
     var body: some View {
         NavigationStack {
             Form {
-                narrationSection
-                if case .deviceVoice = settings.source(for: translation) {
-                    voiceSection
-                }
-                playbackSection
-                if case let .recording(id) = settings.source(for: translation), let recording = audio.catalog.recording(id: id) {
-                    Section {
-                        NavigationLink("Download for Offline Listening") {
-                            AudioDownloadsView(recording: recording)
+                ThemedRows {
+                    narrationSection
+                    if case .deviceVoice = settings.source(for: translation) {
+                        voiceSection
+                    }
+                    playbackSection
+                    if case let .recording(id) = settings.source(for: translation), let recording = audio.catalog.recording(id: id) {
+                        Section {
+                            NavigationLink("Download for Offline Listening") {
+                                AudioDownloadsView(recording: recording)
+                            }
+                            .accessibilityIdentifier("audio.downloads")
+                        } footer: {
+                            Text("Recorded narration streams over the internet. Download books to listen offline.")
                         }
-                        .accessibilityIdentifier("audio.downloads")
-                    } footer: {
-                        Text("Recorded narration streams over the internet. Download books to listen offline.")
                     }
                 }
             }
@@ -144,17 +146,19 @@ struct AudioDownloadsView: View {
     var body: some View {
         let catalog = audio.catalog
         List {
-            Section {
-                LabeledContent("Space used", value: ByteCountFormatter.string(fromByteCount: catalog.downloadedBytes(), countStyle: .file))
-            } footer: {
-                if let errorMessage {
-                    Text(errorMessage).foregroundStyle(.orange)
+            ThemedRows {
+                Section {
+                    LabeledContent("Space used", value: ByteCountFormatter.string(fromByteCount: catalog.downloadedBytes(), countStyle: .file))
+                } footer: {
+                    if let errorMessage {
+                        Text(errorMessage).foregroundStyle(.orange)
+                    }
                 }
-            }
-            ForEach(Testament.allCases, id: \.self) { testament in
-                Section(testament.title) {
-                    ForEach(BibleBook.all.filter { $0.testament == testament }) { book in
-                        row(book, catalog: catalog)
+                ForEach(Testament.allCases, id: \.self) { testament in
+                    Section(testament.title) {
+                        ForEach(BibleBook.all.filter { $0.testament == testament }) { book in
+                            row(book, catalog: catalog)
+                        }
                     }
                 }
             }

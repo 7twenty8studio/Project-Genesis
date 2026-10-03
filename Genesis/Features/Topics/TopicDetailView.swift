@@ -14,39 +14,41 @@ struct TopicDetailView: View {
 
     var body: some View {
         List {
-            if let topic {
-                ForEach(topLevel(topic)) { entry in
-                    Section {
-                        passages(entry)
-                        ForEach(children(of: entry, in: topic)) { child in
-                            VStack(alignment: .leading, spacing: 8) {
-                                Text(child.label)
-                                    .font(.subheadline.weight(.semibold))
-                                    .foregroundStyle(palette.text)
-                                passages(child)
+            ThemedRows {
+                if let topic {
+                    ForEach(topLevel(topic)) { entry in
+                        Section {
+                            passages(entry)
+                            ForEach(children(of: entry, in: topic)) { child in
+                                VStack(alignment: .leading, spacing: 8) {
+                                    Text(child.label)
+                                        .font(.subheadline.weight(.semibold))
+                                        .foregroundStyle(palette.text)
+                                    passages(child)
+                                }
+                                .padding(.vertical, 2)
                             }
-                            .padding(.vertical, 2)
+                        } header: {
+                            Text(entry.label)
                         }
-                    } header: {
-                        Text(entry.label)
+                        .listRowBackground(palette.surface)
                     }
-                    .listRowBackground(palette.surface)
-                }
-                if !topic.seeAlso.isEmpty {
-                    Section("See also") {
-                        ForEach(topic.seeAlso) { other in
-                            Button(other.name) { shownID = other.id }
-                                .foregroundStyle(palette.accent)
+                    if !topic.seeAlso.isEmpty {
+                        Section("See also") {
+                            ForEach(topic.seeAlso) { other in
+                                Button(other.name) { shownID = other.id }
+                                    .foregroundStyle(palette.accent)
+                            }
                         }
+                        .listRowBackground(palette.surface)
                     }
-                    .listRowBackground(palette.surface)
+                    Section {
+                    } footer: {
+                        Text("Verses from the \(library.currentTranslation.abbreviation). \(TopicRepository.attribution)")
+                    }
+                } else {
+                    ProgressView().frame(maxWidth: .infinity)
                 }
-                Section {
-                } footer: {
-                    Text("Verses from the \(library.currentTranslation.abbreviation). \(TopicRepository.attribution)")
-                }
-            } else {
-                ProgressView().frame(maxWidth: .infinity)
             }
         }
         .themedScreen()

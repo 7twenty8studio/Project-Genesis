@@ -13,101 +13,103 @@ struct ReaderSettingsSheet: View {
         @Bindable var settings = settings
         NavigationStack {
             Form {
-                Section {
-                    themePicker(selection: $settings.preferences.theme)
-                        .listRowInsets(EdgeInsets(top: 12, leading: 12, bottom: 12, trailing: 12))
+                ThemedRows {
+                    Section {
+                        themePicker(selection: $settings.preferences.theme)
+                            .listRowInsets(EdgeInsets(top: 12, leading: 12, bottom: 12, trailing: 12))
 
-                    HStack(spacing: 12) {
-                        Image(systemName: "sun.min")
-                        Slider(value: $brightness, in: 0...1)
-                            .onChange(of: brightness) { DeviceScreen.brightness = brightness }
-                            .accessibilityLabel("Brightness")
-                        Image(systemName: "sun.max")
-                    }
-                    .foregroundStyle(palette.secondaryText)
+                        HStack(spacing: 12) {
+                            Image(systemName: "sun.min")
+                            Slider(value: $brightness, in: 0...1)
+                                .onChange(of: brightness) { DeviceScreen.brightness = brightness }
+                                .accessibilityLabel("Brightness")
+                            Image(systemName: "sun.max")
+                        }
+                        .foregroundStyle(palette.secondaryText)
 
-                    if settings.preferences.theme.season != nil {
-                        Toggle("Seasonal Touches", isOn: $settings.preferences.seasonalEffects)
-                            .tint(palette.accent)
-                            .accessibilityIdentifier("settings.seasonalEffects")
-                    }
-                } footer: {
-                    if settings.preferences.theme.season != nil {
-                        Text("Leaves, snow, blossom or summer sunlight drift gently across the page while you read. Paused in Low Power Mode and not shown when Reduce Motion is on.")
-                    }
-                }
-
-                Section("Text") {
-                    NavigationLink {
-                        FontList(selection: $settings.preferences.font)
-                    } label: {
-                        LabeledContent("Font") {
-                            Text(settings.preferences.font.title)
-                                .font(settings.preferences.font.font(size: 17))
+                        if settings.preferences.theme.season != nil {
+                            Toggle("Seasonal Touches", isOn: $settings.preferences.seasonalEffects)
+                                .tint(palette.accent)
+                                .accessibilityIdentifier("settings.seasonalEffects")
+                        }
+                    } footer: {
+                        if settings.preferences.theme.season != nil {
+                            Text("Leaves, snow, blossom or summer sunlight drift gently across the page while you read. Paused in Low Power Mode and not shown when Reduce Motion is on.")
                         }
                     }
 
-                    HStack {
-                        Button {
-                            settings.preferences.fontSize = max(ReaderPreferences.fontSizeRange.lowerBound, settings.preferences.fontSize - 1)
+                    Section("Text") {
+                        NavigationLink {
+                            FontList(selection: $settings.preferences.font)
                         } label: {
-                            Image(systemName: "textformat.size.smaller").frame(maxWidth: .infinity, minHeight: 36)
-                        }
-                        .accessibilityLabel("Smaller text")
-                        Divider()
-                        Text("\(Int(settings.preferences.fontSize)) pt")
-                            .font(.footnote.monospacedDigit())
-                            .foregroundStyle(palette.secondaryText)
-                            .frame(minWidth: 56)
-                        Divider()
-                        Button {
-                            settings.preferences.fontSize = min(ReaderPreferences.fontSizeRange.upperBound, settings.preferences.fontSize + 1)
-                        } label: {
-                            Image(systemName: "textformat.size.larger").frame(maxWidth: .infinity, minHeight: 36)
-                        }
-                        .accessibilityLabel("Larger text")
-                    }
-                    .buttonStyle(.borderless)
-
-                    labeledSlider(String(localized: "Line spacing"), value: $settings.preferences.lineSpacing, in: ReaderPreferences.lineSpacingRange)
-                    labeledSlider(String(localized: "Paragraph spacing"), value: $settings.preferences.paragraphSpacing, in: ReaderPreferences.paragraphSpacingRange)
-
-                    Picker("Margins", selection: $settings.preferences.margins) {
-                        ForEach(ReaderMargins.allCases) { Text($0.title).tag($0) }
-                    }
-                    Toggle("Follow Dynamic Type", isOn: $settings.preferences.followsDynamicType)
-                }
-
-                Section("Layout") {
-                    Picker("Reading mode", selection: $settings.preferences.readingMode) {
-                        ForEach(ReadingMode.allCases) { Text($0.title).tag($0) }
-                    }
-                    .pickerStyle(.segmented)
-
-                    if settings.preferences.readingMode == .page {
-                        Picker("Page turn", selection: Binding(
-                            get: { settings.preferences.pageTurn },
-                            set: {
-                                settings.preferences.pageTurn = $0
-                                settings.preferences.pageTurnChosen = true
+                            LabeledContent("Font") {
+                                Text(settings.preferences.font.title)
+                                    .font(settings.preferences.font.font(size: 17))
                             }
-                        )) {
-                            ForEach(PageTurnStyle.allCases) { Text($0.title).tag($0) }
+                        }
+
+                        HStack {
+                            Button {
+                                settings.preferences.fontSize = max(ReaderPreferences.fontSizeRange.lowerBound, settings.preferences.fontSize - 1)
+                            } label: {
+                                Image(systemName: "textformat.size.smaller").frame(maxWidth: .infinity, minHeight: 36)
+                            }
+                            .accessibilityLabel("Smaller text")
+                            Divider()
+                            Text("\(Int(settings.preferences.fontSize)) pt")
+                                .font(.footnote.monospacedDigit())
+                                .foregroundStyle(palette.secondaryText)
+                                .frame(minWidth: 56)
+                            Divider()
+                            Button {
+                                settings.preferences.fontSize = min(ReaderPreferences.fontSizeRange.upperBound, settings.preferences.fontSize + 1)
+                            } label: {
+                                Image(systemName: "textformat.size.larger").frame(maxWidth: .infinity, minHeight: 36)
+                            }
+                            .accessibilityLabel("Larger text")
+                        }
+                        .buttonStyle(.borderless)
+
+                        labeledSlider(String(localized: "Line spacing"), value: $settings.preferences.lineSpacing, in: ReaderPreferences.lineSpacingRange)
+                        labeledSlider(String(localized: "Paragraph spacing"), value: $settings.preferences.paragraphSpacing, in: ReaderPreferences.paragraphSpacingRange)
+
+                        Picker("Margins", selection: $settings.preferences.margins) {
+                            ForEach(ReaderMargins.allCases) { Text($0.title).tag($0) }
+                        }
+                        Toggle("Follow Dynamic Type", isOn: $settings.preferences.followsDynamicType)
+                    }
+
+                    Section("Layout") {
+                        Picker("Reading mode", selection: $settings.preferences.readingMode) {
+                            ForEach(ReadingMode.allCases) { Text($0.title).tag($0) }
                         }
                         .pickerStyle(.segmented)
-                    }
-                    Picker("Text", selection: $settings.preferences.layout) {
-                        ForEach(TextLayout.allCases) { Text($0.title).tag($0) }
-                    }
-                    Toggle("Verse numbers", isOn: $settings.preferences.showsVerseNumbers)
-                    Toggle(isOn: $settings.preferences.leftHanded) {
-                        Text("Left-handed mode")
-                        Text("Tap the left edge to turn forward; study panel on the left.")
-                    }
-                }
 
-                Section {
-                    Button("Reset to Defaults", role: .destructive) { settings.reset() }
+                        if settings.preferences.readingMode == .page {
+                            Picker("Page turn", selection: Binding(
+                                get: { settings.preferences.pageTurn },
+                                set: {
+                                    settings.preferences.pageTurn = $0
+                                    settings.preferences.pageTurnChosen = true
+                                }
+                            )) {
+                                ForEach(PageTurnStyle.allCases) { Text($0.title).tag($0) }
+                            }
+                            .pickerStyle(.segmented)
+                        }
+                        Picker("Text", selection: $settings.preferences.layout) {
+                            ForEach(TextLayout.allCases) { Text($0.title).tag($0) }
+                        }
+                        Toggle("Verse numbers", isOn: $settings.preferences.showsVerseNumbers)
+                        Toggle(isOn: $settings.preferences.leftHanded) {
+                            Text("Left-handed mode")
+                            Text("Tap the left edge to turn forward; study panel on the left.")
+                        }
+                    }
+
+                    Section {
+                        Button("Reset to Defaults", role: .destructive) { settings.reset() }
+                    }
                 }
             }
             .accessibilityIdentifier("settings.list")

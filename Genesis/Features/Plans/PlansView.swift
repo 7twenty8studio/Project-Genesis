@@ -15,50 +15,52 @@ struct PlansView: View {
 
     var body: some View {
         List {
-            if !enrollments.isEmpty {
-                Section("Your Plans") {
-                    ForEach(enrollments) { enrollment in
-                        NavigationLink(value: HomeRoute.plan(enrollment.id)) {
-                            EnrollmentRow(enrollment: enrollment)
+            ThemedRows {
+                if !enrollments.isEmpty {
+                    Section("Your Plans") {
+                        ForEach(enrollments) { enrollment in
+                            NavigationLink(value: HomeRoute.plan(enrollment.id)) {
+                                EnrollmentRow(enrollment: enrollment)
+                            }
+                            .listRowBackground(palette.surface)
                         }
+                        .onDelete { offsets in
+                            let store = StudyStore(context: modelContext)
+                            offsets.map { enrollments[$0] }.forEach { store.delete($0) }
+                        }
+                    }
+                }
+
+                Section("Start a Plan") {
+                    ForEach(ReadingPlan.builtIns) { plan in
+                        Button {
+                            pendingPlan = plan
+                        } label: {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(plan.title)
+                                    .font(.headline)
+                                    .foregroundStyle(palette.text)
+                                Text(plan.summary)
+                                    .font(.subheadline)
+                                    .foregroundStyle(palette.secondaryText)
+                                Text("\(plan.dayCount) days")
+                                    .font(.caption.weight(.semibold))
+                                    .foregroundStyle(palette.accent)
+                            }
+                            .padding(.vertical, 4)
+                        }
+                        .accessibilityIdentifier("plans.start.\(plan.id)")
                         .listRowBackground(palette.surface)
                     }
-                    .onDelete { offsets in
-                        let store = StudyStore(context: modelContext)
-                        offsets.map { enrollments[$0] }.forEach { store.delete($0) }
-                    }
-                }
-            }
 
-            Section("Start a Plan") {
-                ForEach(ReadingPlan.builtIns) { plan in
                     Button {
-                        pendingPlan = plan
+                        showsCustomPlan = true
                     } label: {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(plan.title)
-                                .font(.headline)
-                                .foregroundStyle(palette.text)
-                            Text(plan.summary)
-                                .font(.subheadline)
-                                .foregroundStyle(palette.secondaryText)
-                            Text("\(plan.dayCount) days")
-                                .font(.caption.weight(.semibold))
-                                .foregroundStyle(palette.accent)
-                        }
-                        .padding(.vertical, 4)
+                        Label("Create Your Own Plan", systemImage: "plus")
                     }
-                    .accessibilityIdentifier("plans.start.\(plan.id)")
+                    .accessibilityIdentifier("plans.custom")
                     .listRowBackground(palette.surface)
                 }
-
-                Button {
-                    showsCustomPlan = true
-                } label: {
-                    Label("Create Your Own Plan", systemImage: "plus")
-                }
-                .accessibilityIdentifier("plans.custom")
-                .listRowBackground(palette.surface)
             }
         }
         .themedScreen()
@@ -156,74 +158,76 @@ struct PlanDetailView: View {
 
         return Group {
             List {
-                Section {
-                    VStack(alignment: .leading, spacing: 10) {
-                        if progress.isComplete {
-                            Label("You finished this plan", systemImage: "checkmark.seal.fill")
-                                .font(.headline)
-                                .foregroundStyle(palette.accent)
-                        } else if let today = progress.todaysDay() {
-                            Text("TODAY \u{00B7} DAY \(today.number) OF \(plan.dayCount)")
-                                .font(.caption.weight(.semibold))
-                                .kerning(1.1)
-                                .foregroundStyle(palette.accent)
-                            Text(today.title)
-                                .font(.system(.title2, design: .serif, weight: .semibold))
-                                .foregroundStyle(palette.text)
-                                .accessibilityIdentifier("plan.todayTitle")
-                            HStack {
-                                Button {
-                                    if let first = today.spans.first { router.read(first.first) }
-                                } label: {
-                                    Label("Read", systemImage: "book")
-                                }
-                                .buttonStyle(.borderedProminent)
-                                .accessibilityIdentifier("plan.read")
+                ThemedRows {
+                    Section {
+                        VStack(alignment: .leading, spacing: 10) {
+                            if progress.isComplete {
+                                Label("You finished this plan", systemImage: "checkmark.seal.fill")
+                                    .font(.headline)
+                                    .foregroundStyle(palette.accent)
+                            } else if let today = progress.todaysDay() {
+                                Text("TODAY \u{00B7} DAY \(today.number) OF \(plan.dayCount)")
+                                    .font(.caption.weight(.semibold))
+                                    .kerning(1.1)
+                                    .foregroundStyle(palette.accent)
+                                Text(today.title)
+                                    .font(.system(.title2, design: .serif, weight: .semibold))
+                                    .foregroundStyle(palette.text)
+                                    .accessibilityIdentifier("plan.todayTitle")
+                                HStack {
+                                    Button {
+                                        if let first = today.spans.first { router.read(first.first) }
+                                    } label: {
+                                        Label("Read", systemImage: "book")
+                                    }
+                                    .buttonStyle(.borderedProminent)
+                                    .accessibilityIdentifier("plan.read")
 
-                                Button {
-                                    store.setDay(today.number, completed: true, in: enrollment)
-                                } label: {
-                                    Label("Mark as Read", systemImage: "checkmark")
+                                    Button {
+                                        store.setDay(today.number, completed: true, in: enrollment)
+                                    } label: {
+                                        Label("Mark as Read", systemImage: "checkmark")
+                                    }
+                                    .buttonStyle(.bordered)
+                                    .accessibilityIdentifier("plan.markRead")
                                 }
-                                .buttonStyle(.bordered)
-                                .accessibilityIdentifier("plan.markRead")
+                                let behind = progress.daysBehind()
+                                if behind > 0 {
+                                    Text(behind == 1 ? "1 earlier day to catch up on" : "\(behind) earlier days to catch up on")
+                                        .font(.footnote)
+                                        .foregroundStyle(palette.secondaryText)
+                                }
                             }
-                            let behind = progress.daysBehind()
-                            if behind > 0 {
-                                Text(behind == 1 ? "1 earlier day to catch up on" : "\(behind) earlier days to catch up on")
-                                    .font(.footnote)
+                            ProgressView(value: progress.fractionComplete) {
+                                Text("\(Int(progress.fractionComplete * 100))% complete")
+                                    .font(.caption)
                                     .foregroundStyle(palette.secondaryText)
                             }
+                            .tint(palette.accent)
+                            .accessibilityIdentifier("plan.progress")
                         }
-                        ProgressView(value: progress.fractionComplete) {
-                            Text("\(Int(progress.fractionComplete * 100))% complete")
-                                .font(.caption)
-                                .foregroundStyle(palette.secondaryText)
-                        }
-                        .tint(palette.accent)
-                        .accessibilityIdentifier("plan.progress")
-                    }
-                    .padding(.vertical, 6)
-                    .listRowBackground(palette.surface)
-                }
-
-                Section("All Days") {
-                    ForEach(plan.days, id: \.number) { day in
-                        DayRow(
-                            day: day,
-                            isComplete: enrollment.completedDays.contains(day.number),
-                            isToday: day.number == scheduled,
-                            onToggle: { store.setDay(day.number, completed: !enrollment.completedDays.contains(day.number), in: enrollment) },
-                            onRead: { if let first = day.spans.first { router.read(first.first) } }
-                        )
-                        .id(day.number)
+                        .padding(.vertical, 6)
                         .listRowBackground(palette.surface)
                     }
-                }
 
-                Section {
-                    Button("Restart Plan") { confirmRestart = true }
-                    Button("Remove Plan", role: .destructive) { confirmDelete = true }
+                    Section("All Days") {
+                        ForEach(plan.days, id: \.number) { day in
+                            DayRow(
+                                day: day,
+                                isComplete: enrollment.completedDays.contains(day.number),
+                                isToday: day.number == scheduled,
+                                onToggle: { store.setDay(day.number, completed: !enrollment.completedDays.contains(day.number), in: enrollment) },
+                                onRead: { if let first = day.spans.first { router.read(first.first) } }
+                            )
+                            .id(day.number)
+                            .listRowBackground(palette.surface)
+                        }
+                    }
+
+                    Section {
+                        Button("Restart Plan") { confirmRestart = true }
+                        Button("Remove Plan", role: .destructive) { confirmDelete = true }
+                    }
                 }
             }
             .themedScreen()
@@ -297,38 +301,40 @@ struct CustomPlanView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("Name") {
-                    TextField("e.g. Paul's Letters", text: $title)
-                        .accessibilityIdentifier("customPlan.name")
-                }
-                Section {
-                    Stepper("\(days) days", value: $days, in: 1...730)
-                    if !selectedBooks.isEmpty {
-                        Text(ReadingPlan.customSummary(books: orderedBooks, days: days))
-                            .font(.footnote)
-                            .foregroundStyle(palette.secondaryText)
+                ThemedRows {
+                    Section("Name") {
+                        TextField("e.g. Paul's Letters", text: $title)
+                            .accessibilityIdentifier("customPlan.name")
                     }
-                }
-                ForEach(Testament.allCases, id: \.self) { testament in
-                    Section(testament.title) {
-                        let books = testament == .old ? BibleBook.oldTestament : BibleBook.newTestament
-                        Button(books.allSatisfy { selectedBooks.contains($0.id) } ? "Clear All" : "Select All") {
-                            let ids = Set(books.map(\.id))
-                            if ids.isSubset(of: selectedBooks) { selectedBooks.subtract(ids) } else { selectedBooks.formUnion(ids) }
+                    Section {
+                        Stepper("\(days) days", value: $days, in: 1...730)
+                        if !selectedBooks.isEmpty {
+                            Text(ReadingPlan.customSummary(books: orderedBooks, days: days))
+                                .font(.footnote)
+                                .foregroundStyle(palette.secondaryText)
                         }
-                        ForEach(books) { book in
-                            Button {
-                                if selectedBooks.contains(book.id) { selectedBooks.remove(book.id) } else { selectedBooks.insert(book.id) }
-                            } label: {
-                                HStack {
-                                    Text(book.name).foregroundStyle(palette.text)
-                                    Spacer()
-                                    if selectedBooks.contains(book.id) {
-                                        Image(systemName: "checkmark").foregroundStyle(palette.accent)
+                    }
+                    ForEach(Testament.allCases, id: \.self) { testament in
+                        Section(testament.title) {
+                            let books = testament == .old ? BibleBook.oldTestament : BibleBook.newTestament
+                            Button(books.allSatisfy { selectedBooks.contains($0.id) } ? "Clear All" : "Select All") {
+                                let ids = Set(books.map(\.id))
+                                if ids.isSubset(of: selectedBooks) { selectedBooks.subtract(ids) } else { selectedBooks.formUnion(ids) }
+                            }
+                            ForEach(books) { book in
+                                Button {
+                                    if selectedBooks.contains(book.id) { selectedBooks.remove(book.id) } else { selectedBooks.insert(book.id) }
+                                } label: {
+                                    HStack {
+                                        Text(book.name).foregroundStyle(palette.text)
+                                        Spacer()
+                                        if selectedBooks.contains(book.id) {
+                                            Image(systemName: "checkmark").foregroundStyle(palette.accent)
+                                        }
                                     }
                                 }
+                                .accessibilityAddTraits(selectedBooks.contains(book.id) ? .isSelected : [])
                             }
-                            .accessibilityAddTraits(selectedBooks.contains(book.id) ? .isSelected : [])
                         }
                     }
                 }

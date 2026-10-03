@@ -129,21 +129,23 @@ struct ChapterNotesView: View {
 
     var body: some View {
         List {
-            if notes.isEmpty {
-                QuietEmptyState(
-                    systemImage: "note.text",
-                    title: String(localized: "No notes in \(chapter.description)"),
-                    message: String(localized: "Long-press a verse and choose Note, or add a note for the whole chapter.")
-                )
-                .listRowBackground(Color.clear)
-            }
-            ForEach(notes) { note in
-                Button {
-                    editing = note
-                } label: {
-                    NoteRow(note: note)
+            ThemedRows {
+                if notes.isEmpty {
+                    QuietEmptyState(
+                        systemImage: "note.text",
+                        title: String(localized: "No notes in \(chapter.description)"),
+                        message: String(localized: "Long-press a verse and choose Note, or add a note for the whole chapter.")
+                    )
+                    .listRowBackground(Color.clear)
                 }
-                .listRowBackground(palette.background)
+                ForEach(notes) { note in
+                    Button {
+                        editing = note
+                    } label: {
+                        NoteRow(note: note)
+                    }
+                    .listRowBackground(palette.background)
+                }
             }
         }
         .themedScreen()

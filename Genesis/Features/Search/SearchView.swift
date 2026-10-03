@@ -125,81 +125,83 @@ struct SearchContent: View {
 
     var body: some View {
         List {
-            if usesOwnField {
-                TextField("Search", text: $ownText)
-                    .textFieldStyle(.roundedBorder)
-                    .autocorrectionDisabled()
-                    .textInputAutocapitalization(.never)
-                    .listRowBackground(Color.clear)
-            }
-
-            if query.trimmingCharacters(in: .whitespaces).isEmpty {
-                suggestions
-            } else {
-                filters
-
-                if let reference = results.reference {
-                    Section {
-                        Button {
-                            onOpen(reference.firstVerse)
-                        } label: {
-                            Label("Go to \(reference.description)", systemImage: "arrow.right.circle")
-                                .font(.headline)
-                                .foregroundStyle(palette.accent)
-                        }
-                        .accessibilityIdentifier("search.goToReference")
-                        .listRowBackground(palette.surface)
-                    }
+            ThemedRows {
+                if usesOwnField {
+                    TextField("Search", text: $ownText)
+                        .textFieldStyle(.roundedBorder)
+                        .autocorrectionDisabled()
+                        .textInputAutocapitalization(.never)
+                        .listRowBackground(Color.clear)
                 }
 
-                if !results.bookSuggestions.isEmpty {
-                    Section("Books") {
-                        ForEach(results.bookSuggestions) { book in
-                            Button(book.name) { onOpen(ChapterID(book: book.id, chapter: 1).firstVerse) }
-                                .foregroundStyle(palette.text)
-                                .listRowBackground(palette.surface)
-                        }
-                    }
-                }
+                if query.trimmingCharacters(in: .whitespaces).isEmpty {
+                    suggestions
+                } else {
+                    filters
 
-                if !topicResults.isEmpty {
-                    Section("Topics") {
-                        ForEach(topicResults) { topic in
-                            NavigationLink {
-                                TopicDetailView(topicID: topic.id, onOpen: onOpen)
-                                    .onAppear { GenesisTips.topics.invalidate(reason: .actionPerformed) }
+                    if let reference = results.reference {
+                        Section {
+                            Button {
+                                onOpen(reference.firstVerse)
                             } label: {
-                                LabeledContent(topic.name, value: topic.referenceCount == 1 ? String(localized: "1 passage") : String(localized: "\(topic.referenceCount) passages"))
+                                Label("Go to \(reference.description)", systemImage: "arrow.right.circle")
+                                    .font(.headline)
+                                    .foregroundStyle(palette.accent)
+                            }
+                            .accessibilityIdentifier("search.goToReference")
+                            .listRowBackground(palette.surface)
+                        }
+                    }
+
+                    if !results.bookSuggestions.isEmpty {
+                        Section("Books") {
+                            ForEach(results.bookSuggestions) { book in
+                                Button(book.name) { onOpen(ChapterID(book: book.id, chapter: 1).firstVerse) }
                                     .foregroundStyle(palette.text)
+                                    .listRowBackground(palette.surface)
+                            }
+                        }
+                    }
+
+                    if !topicResults.isEmpty {
+                        Section("Topics") {
+                            ForEach(topicResults) { topic in
+                                NavigationLink {
+                                    TopicDetailView(topicID: topic.id, onOpen: onOpen)
+                                        .onAppear { GenesisTips.topics.invalidate(reason: .actionPerformed) }
+                                } label: {
+                                    LabeledContent(topic.name, value: topic.referenceCount == 1 ? String(localized: "1 passage") : String(localized: "\(topic.referenceCount) passages"))
+                                        .foregroundStyle(palette.text)
+                                }
+                                .listRowBackground(palette.surface)
+                                .accessibilityIdentifier("search.topic")
+                            }
+                        }
+                    }
+
+                    Section {
+                        ForEach(results.verses) { verse in
+                            Button {
+                                onOpen(verse.id)
+                            } label: {
+                                VerseSnippet(
+                                    reference: PassageReference(verse: verse.id).description,
+                                    text: verse.plainText,
+                                    terms: results.terms,
+                                    lineLimit: compact ? 3 : nil
+                                )
                             }
                             .listRowBackground(palette.surface)
-                            .accessibilityIdentifier("search.topic")
                         }
-                    }
-                }
-
-                Section {
-                    ForEach(results.verses) { verse in
-                        Button {
-                            onOpen(verse.id)
-                        } label: {
-                            VerseSnippet(
-                                reference: PassageReference(verse: verse.id).description,
-                                text: verse.plainText,
-                                terms: results.terms,
-                                lineLimit: compact ? 3 : nil
-                            )
+                    } header: {
+                        if !results.verses.isEmpty {
+                            Text(countLabel)
+                                .accessibilityIdentifier("search.resultCount")
                         }
-                        .listRowBackground(palette.surface)
-                    }
-                } header: {
-                    if !results.verses.isEmpty {
-                        Text(countLabel)
-                            .accessibilityIdentifier("search.resultCount")
-                    }
-                } footer: {
-                    if results.isEmpty {
-                        Text("No verses found in the \(library.currentTranslation.abbreviation). Try fewer words or a different spelling.")
+                    } footer: {
+                        if results.isEmpty {
+                            Text("No verses found in the \(library.currentTranslation.abbreviation). Try fewer words or a different spelling.")
+                        }
                     }
                 }
             }

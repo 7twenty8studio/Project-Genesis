@@ -106,25 +106,27 @@ struct FeaturesSettingsView: View {
 
     var body: some View {
         List {
-            Section {
-                ForEach(FeaturePreferences.offered(flags: flags)) { feature in
-                    FeatureToggleCard(feature: feature, isOn: Binding(
-                        get: { features.isOn(feature) },
-                        set: { on in
-                            features.set(feature, on: on)
-                            if feature == .listen, !on { audio.stop() }
-                        }
-                    ))
-                    .listRowInsets(EdgeInsets(top: 6, leading: 0, bottom: 6, trailing: 0))
-                    .listRowBackground(Color.clear)
+            ThemedRows {
+                Section {
+                    ForEach(FeaturePreferences.offered(flags: flags)) { feature in
+                        FeatureToggleCard(feature: feature, isOn: Binding(
+                            get: { features.isOn(feature) },
+                            set: { on in
+                                features.set(feature, on: on)
+                                if feature == .listen, !on { audio.stop() }
+                            }
+                        ))
+                        .listRowInsets(EdgeInsets(top: 6, leading: 0, bottom: 6, trailing: 0))
+                        .listRowBackground(Color.clear)
+                    }
+                } footer: {
+                    Text("Turning something off only hides it. Your plans, prayers, groups and notes stay, and come back when you turn it on.")
                 }
-            } footer: {
-                Text("Turning something off only hides it. Your plans, prayers, groups and notes stay, and come back when you turn it on.")
+                Section {
+                    DeviceSupportNote()
+                }
+                .listRowBackground(palette.surface)
             }
-            Section {
-                DeviceSupportNote()
-            }
-            .listRowBackground(palette.surface)
         }
         .themedScreen()
         .navigationTitle("Features")

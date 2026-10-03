@@ -26,56 +26,58 @@ struct PrayerJournalView: View {
 
     var body: some View {
         List {
-            Section {
-                Picker("Show", selection: $filter) {
-                    ForEach(Filter.allCases) { Text($0.title).tag($0) }
-                }
-                .pickerStyle(.segmented)
-                .accessibilityIdentifier("prayer.filter")
+            ThemedRows {
+                Section {
+                    Picker("Show", selection: $filter) {
+                        ForEach(Filter.allCases) { Text($0.title).tag($0) }
+                    }
+                    .pickerStyle(.segmented)
+                    .accessibilityIdentifier("prayer.filter")
 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 8) {
-                        chip(String(localized: "All", comment: "Prayer category filter: every category"), systemImage: nil, selected: category == nil) { category = nil }
-                        ForEach(PrayerCategory.allCases) { item in
-                            chip(item.title, systemImage: item.systemImage, selected: category == item) {
-                                category = category == item ? nil : item
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 8) {
+                            chip(String(localized: "All", comment: "Prayer category filter: every category"), systemImage: nil, selected: category == nil) { category = nil }
+                            ForEach(PrayerCategory.allCases) { item in
+                                chip(item.title, systemImage: item.systemImage, selected: category == item) {
+                                    category = category == item ? nil : item
+                                }
                             }
                         }
+                        .padding(.vertical, 2)
                     }
-                    .padding(.vertical, 2)
                 }
-            }
-            .listRowBackground(Color.clear)
-            .listRowInsets(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
-
-            if visible.isEmpty {
-                QuietEmptyState(
-                    systemImage: filter == .praying ? "hands.and.sparkles" : "checkmark.seal",
-                    title: filter == .praying ? String(localized: "No prayer requests") : String(localized: "No answered prayers yet"),
-                    message: filter == .praying
-                        ? String(localized: "Add the people and needs you're praying for. Your journal is private to you.")
-                        : String(localized: "When a prayer is answered, mark it here to remember God's faithfulness.")
-                )
                 .listRowBackground(Color.clear)
-            }
+                .listRowInsets(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
 
-            ForEach(visible) { prayer in
-                Button {
-                    editing = prayer
-                } label: {
-                    PrayerRow(prayer: prayer)
+                if visible.isEmpty {
+                    QuietEmptyState(
+                        systemImage: filter == .praying ? "hands.and.sparkles" : "checkmark.seal",
+                        title: filter == .praying ? String(localized: "No prayer requests") : String(localized: "No answered prayers yet"),
+                        message: filter == .praying
+                            ? String(localized: "Add the people and needs you're praying for. Your journal is private to you.")
+                            : String(localized: "When a prayer is answered, mark it here to remember God's faithfulness.")
+                    )
+                    .listRowBackground(Color.clear)
                 }
-                .listRowBackground(palette.surface)
-                .swipeActions(edge: .leading) {
-                    Button(prayer.isAnswered ? "Still Praying" : "Answered") {
-                        StudyStore(context: modelContext).markAnswered(prayer, answered: !prayer.isAnswered)
+
+                ForEach(visible) { prayer in
+                    Button {
+                        editing = prayer
+                    } label: {
+                        PrayerRow(prayer: prayer)
                     }
-                    .tint(palette.accent)
+                    .listRowBackground(palette.surface)
+                    .swipeActions(edge: .leading) {
+                        Button(prayer.isAnswered ? "Still Praying" : "Answered") {
+                            StudyStore(context: modelContext).markAnswered(prayer, answered: !prayer.isAnswered)
+                        }
+                        .tint(palette.accent)
+                    }
                 }
-            }
-            .onDelete { offsets in
-                let store = StudyStore(context: modelContext)
-                offsets.map { visible[$0] }.forEach { store.delete($0) }
+                .onDelete { offsets in
+                    let store = StudyStore(context: modelContext)
+                    offsets.map { visible[$0] }.forEach { store.delete($0) }
+                }
             }
         }
         .themedScreen()
@@ -175,62 +177,64 @@ struct PrayerEditorView: View {
 
     var body: some View {
         Form {
-            Section {
-                TextField("Who or what are you praying for?", text: $prayer.title, axis: .vertical)
-                    .font(.headline)
-                    .accessibilityIdentifier("prayer.title")
-                TextField("Your prayer", text: $prayer.body, axis: .vertical)
-                    .font(settings.preferences.font.font(size: 17))
-                    .lineLimit(4...)
-                    .accessibilityIdentifier("prayer.body")
-            }
-
-            Section("Category") {
-                Picker("Category", selection: $prayer.category) {
-                    ForEach(PrayerCategory.allCases) { category in
-                        Label(category.title, systemImage: category.systemImage).tag(category)
-                    }
-                }
-                .pickerStyle(.menu)
-            }
-
-            if !prayer.isAnswered {
+            ThemedRows {
                 Section {
-                    Toggle("Remind me to pray", isOn: $hasReminder)
-                        .accessibilityIdentifier("prayer.reminder")
-                    if hasReminder {
-                        DatePicker("Time", selection: $reminderDate, displayedComponents: prayer.reminderRepeatsDaily ? [.hourAndMinute] : [.date, .hourAndMinute])
-                        Toggle("Every day", isOn: $prayer.reminderRepeatsDaily)
+                    TextField("Who or what are you praying for?", text: $prayer.title, axis: .vertical)
+                        .font(.headline)
+                        .accessibilityIdentifier("prayer.title")
+                    TextField("Your prayer", text: $prayer.body, axis: .vertical)
+                        .font(settings.preferences.font.font(size: 17))
+                        .lineLimit(4...)
+                        .accessibilityIdentifier("prayer.body")
+                }
+
+                Section("Category") {
+                    Picker("Category", selection: $prayer.category) {
+                        ForEach(PrayerCategory.allCases) { category in
+                            Label(category.title, systemImage: category.systemImage).tag(category)
+                        }
                     }
-                } footer: {
-                    if notificationsDenied {
-                        Text("Notifications are off for Genesis. Turn them on in Settings to get reminders.")
+                    .pickerStyle(.menu)
+                }
+
+                if !prayer.isAnswered {
+                    Section {
+                        Toggle("Remind me to pray", isOn: $hasReminder)
+                            .accessibilityIdentifier("prayer.reminder")
+                        if hasReminder {
+                            DatePicker("Time", selection: $reminderDate, displayedComponents: prayer.reminderRepeatsDaily ? [.hourAndMinute] : [.date, .hourAndMinute])
+                            Toggle("Every day", isOn: $prayer.reminderRepeatsDaily)
+                        }
+                    } footer: {
+                        if notificationsDenied {
+                            Text("Notifications are off for Genesis. Turn them on in Settings to get reminders.")
+                        } else {
+                            Text("Reminders show only the title above, never your prayer.")
+                        }
+                    }
+                }
+
+                Section {
+                    if prayer.isAnswered {
+                        TextField("How was it answered?", text: $answerNote, axis: .vertical)
+                        Button("Move Back to Praying") {
+                            StudyStore(context: modelContext).markAnswered(prayer, answered: false)
+                        }
                     } else {
-                        Text("Reminders show only the title above, never your prayer.")
+                        Button {
+                            StudyStore(context: modelContext).markAnswered(prayer, note: answerNote)
+                        } label: {
+                            Label("Mark as Answered", systemImage: "checkmark.seal")
+                        }
+                        .accessibilityIdentifier("prayer.markAnswered")
                     }
+                } header: {
+                    Text(prayer.isAnswered ? "Answered" : "")
                 }
-            }
 
-            Section {
-                if prayer.isAnswered {
-                    TextField("How was it answered?", text: $answerNote, axis: .vertical)
-                    Button("Move Back to Praying") {
-                        StudyStore(context: modelContext).markAnswered(prayer, answered: false)
-                    }
-                } else {
-                    Button {
-                        StudyStore(context: modelContext).markAnswered(prayer, note: answerNote)
-                    } label: {
-                        Label("Mark as Answered", systemImage: "checkmark.seal")
-                    }
-                    .accessibilityIdentifier("prayer.markAnswered")
+                Section {
+                    Button("Delete Prayer", role: .destructive) { confirmDelete = true }
                 }
-            } header: {
-                Text(prayer.isAnswered ? "Answered" : "")
-            }
-
-            Section {
-                Button("Delete Prayer", role: .destructive) { confirmDelete = true }
             }
         }
         .themedScreen()

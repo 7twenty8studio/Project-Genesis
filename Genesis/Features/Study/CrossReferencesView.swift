@@ -19,29 +19,31 @@ struct CrossReferencesView: View {
 
     var body: some View {
         List {
-            Section {
-                VerseSnippet(reference: PassageReference(verse: verse).description, text: sourceText, lineLimit: nil)
-                    .listRowBackground(palette.surface)
-            }
-
-            Section {
-                if items.isEmpty {
-                    Text("No cross references for this verse.")
-                        .foregroundStyle(palette.secondaryText)
+            ThemedRows {
+                Section {
+                    VerseSnippet(reference: PassageReference(verse: verse).description, text: sourceText, lineLimit: nil)
                         .listRowBackground(palette.surface)
                 }
-                ForEach(items) { item in
-                    Button {
-                        onOpen(item.reference.target)
-                    } label: {
-                        VerseSnippet(reference: item.reference.reference.description, text: item.text)
+
+                Section {
+                    if items.isEmpty {
+                        Text("No cross references for this verse.")
+                            .foregroundStyle(palette.secondaryText)
+                            .listRowBackground(palette.surface)
                     }
-                    .listRowBackground(palette.surface)
+                    ForEach(items) { item in
+                        Button {
+                            onOpen(item.reference.target)
+                        } label: {
+                            VerseSnippet(reference: item.reference.reference.description, text: item.text)
+                        }
+                        .listRowBackground(palette.surface)
+                    }
+                } header: {
+                    Text("Related passages")
+                } footer: {
+                    Text(CrossReferenceRepository.attribution)
                 }
-            } header: {
-                Text("Related passages")
-            } footer: {
-                Text(CrossReferenceRepository.attribution)
             }
         }
         .themedScreen()

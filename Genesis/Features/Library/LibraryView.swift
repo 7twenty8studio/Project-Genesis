@@ -76,63 +76,65 @@ private struct HighlightsList: View {
     var body: some View {
         let texts = (try? library.current.verses(withIDs: filtered.map(\.verse))) ?? [:]
         List {
-            SwiftUI.Section {
-                filters
-            }
-            .listRowBackground(Color.clear)
-            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-
-            if filtered.isEmpty {
-                QuietEmptyState(
-                    systemImage: "highlighter",
-                    title: highlights.isEmpty ? String(localized: "No highlights yet") : String(localized: "Nothing matches"),
-                    message: highlights.isEmpty ? String(localized: "In the reader, long-press a verse and pick a colour.") : String(localized: "Try a different colour or collection.")
-                )
+            ThemedRows {
+                SwiftUI.Section {
+                    filters
+                }
                 .listRowBackground(Color.clear)
-            }
+                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
 
-            ForEach(filtered) { highlight in
-                Button {
-                    router.read(highlight.verse)
-                } label: {
-                    VerseSnippet(
-                        reference: PassageReference(verse: highlight.verse).description,
-                        text: texts[highlight.verse]?.plainText ?? "",
-                        highlight: highlight.color
+                if filtered.isEmpty {
+                    QuietEmptyState(
+                        systemImage: "highlighter",
+                        title: highlights.isEmpty ? String(localized: "No highlights yet") : String(localized: "Nothing matches"),
+                        message: highlights.isEmpty ? String(localized: "In the reader, long-press a verse and pick a colour.") : String(localized: "Try a different colour or collection.")
                     )
+                    .listRowBackground(Color.clear)
                 }
-                .listRowBackground(palette.surface)
-                .contextMenu {
-                    Menu("Colour") {
-                        ForEach(HighlightColor.allCases) { color in
-                            Button(color.title) {
-                                StudyStore(context: modelContext).highlight([highlight.verse], color: color)
-                            }
-                        }
+
+                ForEach(filtered) { highlight in
+                    Button {
+                        router.read(highlight.verse)
+                    } label: {
+                        VerseSnippet(
+                            reference: PassageReference(verse: highlight.verse).description,
+                            text: texts[highlight.verse]?.plainText ?? "",
+                            highlight: highlight.color
+                        )
                     }
-                    Menu("Add to Collection") {
-                        ForEach(collections) { collection in
-                            Button(collection.name) {
-                                StudyStore(context: modelContext).add([highlight], to: collection)
+                    .listRowBackground(palette.surface)
+                    .contextMenu {
+                        Menu("Colour") {
+                            ForEach(HighlightColor.allCases) { color in
+                                Button(color.title) {
+                                    StudyStore(context: modelContext).highlight([highlight.verse], color: color)
+                                }
                             }
                         }
-                        Button("New Collection\u{2026}") {
-                            pendingHighlight = highlight
-                            showsNewCollection = true
-                        }
-                        if highlight.collection != nil {
-                            Button("Remove from Collection") {
-                                StudyStore(context: modelContext).add([highlight], to: nil)
+                        Menu("Add to Collection") {
+                            ForEach(collections) { collection in
+                                Button(collection.name) {
+                                    StudyStore(context: modelContext).add([highlight], to: collection)
+                                }
+                            }
+                            Button("New Collection\u{2026}") {
+                                pendingHighlight = highlight
+                                showsNewCollection = true
+                            }
+                            if highlight.collection != nil {
+                                Button("Remove from Collection") {
+                                    StudyStore(context: modelContext).add([highlight], to: nil)
+                                }
                             }
                         }
-                    }
-                    Button("Remove Highlight", role: .destructive) {
-                        StudyStore(context: modelContext).removeHighlights([highlight.verse])
+                        Button("Remove Highlight", role: .destructive) {
+                            StudyStore(context: modelContext).removeHighlights([highlight.verse])
+                        }
                     }
                 }
-            }
-            .onDelete { offsets in
-                StudyStore(context: modelContext).removeHighlights(offsets.map { filtered[$0].verse })
+                .onDelete { offsets in
+                    StudyStore(context: modelContext).removeHighlights(offsets.map { filtered[$0].verse })
+                }
             }
         }
         .themedScreen()
@@ -221,35 +223,37 @@ private struct NotesList: View {
 
     var body: some View {
         List {
-            SwiftUI.Section {
-                Picker("Kind", selection: $kindFilter) {
-                    Text("All").tag(NoteKind?.none)
-                    ForEach(NoteKind.allCases) { Text($0.title).tag(NoteKind?.some($0)) }
+            ThemedRows {
+                SwiftUI.Section {
+                    Picker("Kind", selection: $kindFilter) {
+                        Text("All").tag(NoteKind?.none)
+                        ForEach(NoteKind.allCases) { Text($0.title).tag(NoteKind?.some($0)) }
+                    }
+                    .pickerStyle(.segmented)
                 }
-                .pickerStyle(.segmented)
-            }
-            .listRowBackground(Color.clear)
-
-            if filtered.isEmpty {
-                QuietEmptyState(
-                    systemImage: "note.text",
-                    title: String(localized: "No notes yet"),
-                    message: String(localized: "Write about a verse from the reader, or start a journal entry with the button below.")
-                )
                 .listRowBackground(Color.clear)
-            }
 
-            ForEach(filtered) { note in
-                Button {
-                    editing = note
-                } label: {
-                    NoteRow(note: note)
+                if filtered.isEmpty {
+                    QuietEmptyState(
+                        systemImage: "note.text",
+                        title: String(localized: "No notes yet"),
+                        message: String(localized: "Write about a verse from the reader, or start a journal entry with the button below.")
+                    )
+                    .listRowBackground(Color.clear)
                 }
-                .listRowBackground(palette.surface)
-            }
-            .onDelete { offsets in
-                let store = StudyStore(context: modelContext)
-                offsets.map { filtered[$0] }.forEach { store.delete($0) }
+
+                ForEach(filtered) { note in
+                    Button {
+                        editing = note
+                    } label: {
+                        NoteRow(note: note)
+                    }
+                    .listRowBackground(palette.surface)
+                }
+                .onDelete { offsets in
+                    let store = StudyStore(context: modelContext)
+                    offsets.map { filtered[$0] }.forEach { store.delete($0) }
+                }
             }
         }
         .themedScreen()
@@ -290,29 +294,31 @@ private struct BookmarksList: View {
     var body: some View {
         let texts = (try? library.current.verses(withIDs: bookmarks.map(\.verse))) ?? [:]
         List {
-            if bookmarks.isEmpty {
-                QuietEmptyState(
-                    systemImage: "bookmark",
-                    title: String(localized: "No bookmarks yet"),
-                    message: String(localized: "Tap the bookmark in the reader to mark your place.")
-                )
-                .listRowBackground(Color.clear)
-            }
-            ForEach(bookmarks) { bookmark in
-                Button {
-                    router.read(bookmark.verse)
-                } label: {
-                    VerseSnippet(
-                        reference: PassageReference(verse: bookmark.verse).description,
-                        text: texts[bookmark.verse]?.plainText ?? "",
-                        lineLimit: 2
+            ThemedRows {
+                if bookmarks.isEmpty {
+                    QuietEmptyState(
+                        systemImage: "bookmark",
+                        title: String(localized: "No bookmarks yet"),
+                        message: String(localized: "Tap the bookmark in the reader to mark your place.")
                     )
+                    .listRowBackground(Color.clear)
                 }
-                .listRowBackground(palette.surface)
-            }
-            .onDelete { offsets in
-                let store = StudyStore(context: modelContext)
-                for index in offsets { store.delete(bookmarks[index]) }
+                ForEach(bookmarks) { bookmark in
+                    Button {
+                        router.read(bookmark.verse)
+                    } label: {
+                        VerseSnippet(
+                            reference: PassageReference(verse: bookmark.verse).description,
+                            text: texts[bookmark.verse]?.plainText ?? "",
+                            lineLimit: 2
+                        )
+                    }
+                    .listRowBackground(palette.surface)
+                }
+                .onDelete { offsets in
+                    let store = StudyStore(context: modelContext)
+                    for index in offsets { store.delete(bookmarks[index]) }
+                }
             }
         }
         .themedScreen()

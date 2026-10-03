@@ -20,19 +20,21 @@ struct TimelineBrowser: View {
         VStack(spacing: 0) {
             eraStrip
             List {
-                Text(StudyRepository.chronologyNote)
-                    .font(.footnote)
-                    .foregroundStyle(palette.secondaryText)
-                    .listRowBackground(Color.clear)
-                ForEach(shownEras) { era in
-                    Section {
-                        eraHeader(era)
-                            .listRowBackground(palette.surface)
-                        ForEach(events[era.id] ?? []) { event in
-                            NavigationLink(value: ExploreRoute.event(event.id)) {
-                                EventRow(event: event)
+                ThemedRows {
+                    Text(StudyRepository.chronologyNote)
+                        .font(.footnote)
+                        .foregroundStyle(palette.secondaryText)
+                        .listRowBackground(Color.clear)
+                    ForEach(shownEras) { era in
+                        Section {
+                            eraHeader(era)
+                                .listRowBackground(palette.surface)
+                            ForEach(events[era.id] ?? []) { event in
+                                NavigationLink(value: ExploreRoute.event(event.id)) {
+                                    EventRow(event: event)
+                                }
+                                .listRowBackground(palette.surface)
                             }
-                            .listRowBackground(palette.surface)
                         }
                     }
                 }

@@ -41,40 +41,42 @@ struct CommunityFeedView: View {
 
     private func list(_ model: CommunityFeedModel) -> some View {
         List {
-            Section {
-                Button {
-                    if community.profile?.hasAcceptedTerms == true { composing = true } else { showsGuidelines = true }
-                } label: {
-                    Label(kind == .prayer ? "Share a Prayer Request" : "Share a Reflection", systemImage: kind == .prayer ? "hands.and.sparkles" : "text.quote")
+            ThemedRows {
+                Section {
+                    Button {
+                        if community.profile?.hasAcceptedTerms == true { composing = true } else { showsGuidelines = true }
+                    } label: {
+                        Label(kind == .prayer ? "Share a Prayer Request" : "Share a Reflection", systemImage: kind == .prayer ? "hands.and.sparkles" : "text.quote")
+                    }
+                    .accessibilityIdentifier("community.compose")
+                } footer: {
+                    Text(kind == .prayer
+                        ? "Everyone signed in to Genesis can see and pray for these."
+                        : "Short thoughts on a passage. Everyone signed in to Genesis can see these.")
                 }
-                .accessibilityIdentifier("community.compose")
-            } footer: {
-                Text(kind == .prayer
-                    ? "Everyone signed in to Genesis can see and pray for these."
-                    : "Short thoughts on a passage. Everyone signed in to Genesis can see these.")
-            }
-            .listRowBackground(palette.surface)
+                .listRowBackground(palette.surface)
 
-            if let error = model.errorMessage {
-                Text(error).font(.footnote).foregroundStyle(.orange).listRowBackground(Color.clear)
-            }
-            if model.visiblePosts.isEmpty, !model.isLoading {
-                QuietEmptyState(
-                    systemImage: kind.reactionSymbol,
-                    title: kind == .prayer ? String(localized: "No prayer requests yet") : String(localized: "No reflections yet"),
-                    message: kind == .prayer ? String(localized: "Be the first to share a request.") : String(localized: "Share what you're reading.")
-                )
-                .listRowBackground(Color.clear)
-            }
-            Section {
-                ForEach(model.visiblePosts) { post in
-                    CommunityPostRow(post: post, model: model)
-                        .onAppear {
-                            if post.id == model.visiblePosts.last?.id { Task { await model.loadMore() } }
-                        }
+                if let error = model.errorMessage {
+                    Text(error).font(.footnote).foregroundStyle(.orange).listRowBackground(Color.clear)
                 }
+                if model.visiblePosts.isEmpty, !model.isLoading {
+                    QuietEmptyState(
+                        systemImage: kind.reactionSymbol,
+                        title: kind == .prayer ? String(localized: "No prayer requests yet") : String(localized: "No reflections yet"),
+                        message: kind == .prayer ? String(localized: "Be the first to share a request.") : String(localized: "Share what you're reading.")
+                    )
+                    .listRowBackground(Color.clear)
+                }
+                Section {
+                    ForEach(model.visiblePosts) { post in
+                        CommunityPostRow(post: post, model: model)
+                            .onAppear {
+                                if post.id == model.visiblePosts.last?.id { Task { await model.loadMore() } }
+                            }
+                    }
+                }
+                .listRowBackground(palette.surface)
             }
-            .listRowBackground(palette.surface)
         }
         .refreshable { await model.refresh() }
     }
@@ -168,29 +170,31 @@ struct CommunityComposeView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section {
-                    TextField(draft.kind == .prayer ? "What can people pray for?" : "What did you notice?", text: $draft.body, axis: .vertical)
-                        .lineLimit(4...10)
-                        .accessibilityIdentifier("community.text")
-                } footer: {
-                    Text("\(draft.body.count)/1500")
-                }
-                Section {
-                    TextField("Passage (optional), e.g. Psalm 23", text: $referenceText)
-                        .autocorrectionDisabled()
-                    if !referenceText.isEmpty {
-                        Text(reference?.description ?? String(localized: "Not a passage Genesis recognises"))
-                            .font(.footnote)
-                            .foregroundStyle(reference == nil ? .orange : .secondary)
+                ThemedRows {
+                    Section {
+                        TextField(draft.kind == .prayer ? "What can people pray for?" : "What did you notice?", text: $draft.body, axis: .vertical)
+                            .lineLimit(4...10)
+                            .accessibilityIdentifier("community.text")
+                    } footer: {
+                        Text("\(draft.body.count)/1500")
                     }
-                    if draft.kind == .prayer {
-                        Toggle("Post anonymously", isOn: $draft.isAnonymous)
+                    Section {
+                        TextField("Passage (optional), e.g. Psalm 23", text: $referenceText)
+                            .autocorrectionDisabled()
+                        if !referenceText.isEmpty {
+                            Text(reference?.description ?? String(localized: "Not a passage Genesis recognises"))
+                                .font(.footnote)
+                                .foregroundStyle(reference == nil ? .orange : .secondary)
+                        }
+                        if draft.kind == .prayer {
+                            Toggle("Post anonymously", isOn: $draft.isAnonymous)
+                        }
+                    } footer: {
+                        Text("Scripture is shown from your Bible in the reader; posts link to the passage rather than quoting it.")
                     }
-                } footer: {
-                    Text("Scripture is shown from your Bible in the reader; posts link to the passage rather than quoting it.")
-                }
-                if let error = model.errorMessage {
-                    Section { Text(error).foregroundStyle(.orange) }
+                    if let error = model.errorMessage {
+                        Section { Text(error).foregroundStyle(.orange) }
+                    }
                 }
             }
             .navigationTitle(draft.kind == .prayer ? "Prayer Request" : "Reflection")
@@ -245,48 +249,50 @@ struct CommunityPostDetailView: View {
 
     var body: some View {
         List {
-            if let feed {
-                Section {
-                    CommunityPostRow(post: feed.posts.first { $0.id == post.id } ?? post, model: feed, showsComments: false)
+            ThemedRows {
+                if let feed {
+                    Section {
+                        CommunityPostRow(post: feed.posts.first { $0.id == post.id } ?? post, model: feed, showsComments: false)
+                    }
+                    .listRowBackground(palette.surface)
+                }
+                Section("Comments") {
+                    ForEach(comments.filter { !community.blocked.contains($0.userID) }) { comment in
+                        VStack(alignment: .leading, spacing: 4) {
+                            HStack {
+                                Text(comment.displayName).font(.subheadline.weight(.semibold))
+                                Text(comment.createdAt, format: .relative(presentation: .named))
+                                    .font(.caption)
+                                    .foregroundStyle(palette.secondaryText)
+                            }
+                            Text(comment.body).foregroundStyle(palette.text)
+                        }
+                        .contentActions(
+                            .communityComment, id: comment.id, authorName: comment.displayName,
+                            isMine: community.isMine(comment.userID),
+                            canRemove: community.isMine(comment.userID),
+                            onRemove: { await removeComment(comment) },
+                            onBlock: { await community.block(comment.userID) },
+                            onHidden: { comments.removeAll { $0.id == comment.id } }
+                        )
+                    }
+                    HStack(alignment: .bottom) {
+                        TextField(post.kind == .prayer ? "Send encouragement" : "Add a comment", text: $draft, axis: .vertical)
+                            .lineLimit(1...5)
+                            .accessibilityIdentifier("community.commentField")
+                        Button(action: send) {
+                            Image(systemName: "arrow.up.circle.fill").font(.title2)
+                        }
+                        .disabled(draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || isSending)
+                        .accessibilityLabel("Send")
+                        .accessibilityIdentifier("community.sendComment")
+                    }
+                    if let errorMessage {
+                        Text(errorMessage).font(.footnote).foregroundStyle(.orange)
+                    }
                 }
                 .listRowBackground(palette.surface)
             }
-            Section("Comments") {
-                ForEach(comments.filter { !community.blocked.contains($0.userID) }) { comment in
-                    VStack(alignment: .leading, spacing: 4) {
-                        HStack {
-                            Text(comment.displayName).font(.subheadline.weight(.semibold))
-                            Text(comment.createdAt, format: .relative(presentation: .named))
-                                .font(.caption)
-                                .foregroundStyle(palette.secondaryText)
-                        }
-                        Text(comment.body).foregroundStyle(palette.text)
-                    }
-                    .contentActions(
-                        .communityComment, id: comment.id, authorName: comment.displayName,
-                        isMine: community.isMine(comment.userID),
-                        canRemove: community.isMine(comment.userID),
-                        onRemove: { await removeComment(comment) },
-                        onBlock: { await community.block(comment.userID) },
-                        onHidden: { comments.removeAll { $0.id == comment.id } }
-                    )
-                }
-                HStack(alignment: .bottom) {
-                    TextField(post.kind == .prayer ? "Send encouragement" : "Add a comment", text: $draft, axis: .vertical)
-                        .lineLimit(1...5)
-                        .accessibilityIdentifier("community.commentField")
-                    Button(action: send) {
-                        Image(systemName: "arrow.up.circle.fill").font(.title2)
-                    }
-                    .disabled(draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || isSending)
-                    .accessibilityLabel("Send")
-                    .accessibilityIdentifier("community.sendComment")
-                }
-                if let errorMessage {
-                    Text(errorMessage).font(.footnote).foregroundStyle(.orange)
-                }
-            }
-            .listRowBackground(palette.surface)
         }
         .buttonStyle(.borderless)
         .themedScreen()

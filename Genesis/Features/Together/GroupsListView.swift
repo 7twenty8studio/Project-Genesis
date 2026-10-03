@@ -32,33 +32,35 @@ struct GroupsListView: View {
 
     var body: some View {
         List {
-            if let error = community.errorMessage {
-                Text(error)
-                    .font(.footnote)
-                    .foregroundStyle(.orange)
-                    .listRowBackground(Color.clear)
-            }
-            if community.groups.isEmpty {
-                // Join and Start come first here: below the empty-state message
-                // they fall off screen on a phone in landscape.
-                actions
-                QuietEmptyState(
-                    systemImage: "person.3",
-                    title: String(localized: "No groups yet"),
-                    message: String(localized: "Ask your group leader for an invite code, or start a group for your church, small group or family.")
-                )
-                .listRowBackground(Color.clear)
-            } else {
-                Section {
-                    ForEach(community.groups) { group in
-                        NavigationLink(value: TogetherRoute.group(group.id)) {
-                            GroupRow(group: group)
-                        }
-                        .listRowBackground(palette.surface)
-                        .accessibilityIdentifier("groups.row")
-                    }
+            ThemedRows {
+                if let error = community.errorMessage {
+                    Text(error)
+                        .font(.footnote)
+                        .foregroundStyle(.orange)
+                        .listRowBackground(Color.clear)
                 }
-                actions
+                if community.groups.isEmpty {
+                    // Join and Start come first here: below the empty-state message
+                    // they fall off screen on a phone in landscape.
+                    actions
+                    QuietEmptyState(
+                        systemImage: "person.3",
+                        title: String(localized: "No groups yet"),
+                        message: String(localized: "Ask your group leader for an invite code, or start a group for your church, small group or family.")
+                    )
+                    .listRowBackground(Color.clear)
+                } else {
+                    Section {
+                        ForEach(community.groups) { group in
+                            NavigationLink(value: TogetherRoute.group(group.id)) {
+                                GroupRow(group: group)
+                            }
+                            .listRowBackground(palette.surface)
+                            .accessibilityIdentifier("groups.row")
+                        }
+                    }
+                    actions
+                }
             }
         }
         .refreshable { await community.refresh() }
@@ -128,30 +130,32 @@ struct GroupFormView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section {
-                    TextField("Group name", text: $draft.name)
-                        .accessibilityIdentifier("groupForm.name")
-                    TextField("What's it for? (optional)", text: $draft.description, axis: .vertical)
-                        .lineLimit(2...4)
-                }
-                Section {
-                    Toggle("Read a plan together", isOn: $hasPlan)
-                    if hasPlan {
-                        Picker("Plan", selection: $planID) {
-                            if let custom = existingCustomPlan {
-                                Text(custom.title).tag(Self.keepExisting)
-                            }
-                            ForEach(ReadingPlan.builtIns) { plan in
-                                Text(plan.title).tag(plan.id)
-                            }
-                        }
-                        DatePicker("Starts", selection: $draft.planStart, displayedComponents: .date)
+                ThemedRows {
+                    Section {
+                        TextField("Group name", text: $draft.name)
+                            .accessibilityIdentifier("groupForm.name")
+                        TextField("What's it for? (optional)", text: $draft.description, axis: .vertical)
+                            .lineLimit(2...4)
                     }
-                } footer: {
-                    Text("Everyone sees the same day's reading, who has read it, and a discussion for each day.")
-                }
-                if let error = community.errorMessage {
-                    Section { Text(error).foregroundStyle(.orange) }
+                    Section {
+                        Toggle("Read a plan together", isOn: $hasPlan)
+                        if hasPlan {
+                            Picker("Plan", selection: $planID) {
+                                if let custom = existingCustomPlan {
+                                    Text(custom.title).tag(Self.keepExisting)
+                                }
+                                ForEach(ReadingPlan.builtIns) { plan in
+                                    Text(plan.title).tag(plan.id)
+                                }
+                            }
+                            DatePicker("Starts", selection: $draft.planStart, displayedComponents: .date)
+                        }
+                    } footer: {
+                        Text("Everyone sees the same day's reading, who has read it, and a discussion for each day.")
+                    }
+                    if let error = community.errorMessage {
+                        Section { Text(error).foregroundStyle(.orange) }
+                    }
                 }
             }
             .navigationTitle(existing == nil ? "Start a Group" : "Edit Group")
@@ -221,18 +225,20 @@ struct JoinGroupView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section {
-                    TextField("Invite code", text: $code)
-                        .textInputAutocapitalization(.characters)
-                        .autocorrectionDisabled()
-                        .font(.title3.monospaced())
-                        .focused($focused)
-                        .submitLabel(.join)
-                        .onSubmit(join)
-                        .accessibilityIdentifier("joinGroup.code")
-                } footer: {
-                    Text(community.errorMessage ?? String(localized: "Your group leader can share the code from the group's Members page."))
-                        .foregroundStyle(community.errorMessage == nil ? Color.secondary : Color.orange)
+                ThemedRows {
+                    Section {
+                        TextField("Invite code", text: $code)
+                            .textInputAutocapitalization(.characters)
+                            .autocorrectionDisabled()
+                            .font(.title3.monospaced())
+                            .focused($focused)
+                            .submitLabel(.join)
+                            .onSubmit(join)
+                            .accessibilityIdentifier("joinGroup.code")
+                    } footer: {
+                        Text(community.errorMessage ?? String(localized: "Your group leader can share the code from the group's Members page."))
+                            .foregroundStyle(community.errorMessage == nil ? Color.secondary : Color.orange)
+                    }
                 }
             }
             .navigationTitle("Join a Group")

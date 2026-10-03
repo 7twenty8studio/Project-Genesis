@@ -15,54 +15,56 @@ struct GroupMembersView: View {
 
     var body: some View {
         List {
-            Section {
-                LabeledContent("Invite code") {
-                    Text(group.formattedInviteCode)
-                        .font(.body.monospaced())
-                        .textSelection(.enabled)
-                        .accessibilityIdentifier("group.inviteCode")
-                }
-                ShareLink(item: inviteMessage) {
-                    Label("Invite People", systemImage: "square.and.arrow.up")
-                }
-                if group.isLeader {
-                    Button("New Code", systemImage: "arrow.triangle.2.circlepath") {
-                        Task { await community.newInviteCode(group.id) }
+            ThemedRows {
+                Section {
+                    LabeledContent("Invite code") {
+                        Text(group.formattedInviteCode)
+                            .font(.body.monospaced())
+                            .textSelection(.enabled)
+                            .accessibilityIdentifier("group.inviteCode")
                     }
-                }
-            } footer: {
-                Text(group.isLeader ? "Anyone with the code can join. Make a new code to stop the old one working." : "Share the code with people you'd like to join.")
-            }
-            .listRowBackground(palette.surface)
-
-            Section("Members") {
-                ForEach(model.members) { member in
-                    memberRow(member)
-                }
-            }
-            .listRowBackground(palette.surface)
-
-            Section {
-                Toggle("Announcement Notifications", isOn: Binding(
-                    get: { community.group(group.id)?.notifications ?? true },
-                    set: { on in
-                        Task {
-                            await community.setNotifications(on, for: group.id)
-                            if on { await PushNotifications.shared.enable() }
+                    ShareLink(item: inviteMessage) {
+                        Label("Invite People", systemImage: "square.and.arrow.up")
+                    }
+                    if group.isLeader {
+                        Button("New Code", systemImage: "arrow.triangle.2.circlepath") {
+                            Task { await community.newInviteCode(group.id) }
                         }
                     }
-                ))
-                .accessibilityIdentifier("group.notifications")
-                if group.isLeader {
-                    Button("Edit Group", systemImage: "pencil") { editing = true }
+                } footer: {
+                    Text(group.isLeader ? "Anyone with the code can join. Make a new code to stop the old one working." : "Share the code with people you'd like to join.")
                 }
-                Button("Leave Group", systemImage: "rectangle.portrait.and.arrow.right", role: .destructive) { confirmingLeave = true }
-                    .accessibilityIdentifier("group.leave")
-                if group.isLeader {
-                    Button("Close Group", systemImage: "trash", role: .destructive) { confirmingDelete = true }
+                .listRowBackground(palette.surface)
+
+                Section("Members") {
+                    ForEach(model.members) { member in
+                        memberRow(member)
+                    }
                 }
+                .listRowBackground(palette.surface)
+
+                Section {
+                    Toggle("Announcement Notifications", isOn: Binding(
+                        get: { community.group(group.id)?.notifications ?? true },
+                        set: { on in
+                            Task {
+                                await community.setNotifications(on, for: group.id)
+                                if on { await PushNotifications.shared.enable() }
+                            }
+                        }
+                    ))
+                    .accessibilityIdentifier("group.notifications")
+                    if group.isLeader {
+                        Button("Edit Group", systemImage: "pencil") { editing = true }
+                    }
+                    Button("Leave Group", systemImage: "rectangle.portrait.and.arrow.right", role: .destructive) { confirmingLeave = true }
+                        .accessibilityIdentifier("group.leave")
+                    if group.isLeader {
+                        Button("Close Group", systemImage: "trash", role: .destructive) { confirmingDelete = true }
+                    }
+                }
+                .listRowBackground(palette.surface)
             }
-            .listRowBackground(palette.surface)
         }
         .sheet(isPresented: $editing) {
             GroupFormView(existing: group) { _ in }

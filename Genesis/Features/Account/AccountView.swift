@@ -57,94 +57,96 @@ private struct SignInView: View {
 
     var body: some View {
         Form {
-            Section {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Keep your notes safe")
-                        .font(.system(.title2, design: .serif, weight: .semibold))
-                    Text("Sign in to back up your highlights, notes, reading plans and prayers, and see them on all your devices. Everything also works without an account.")
-                        .font(.subheadline)
-                        .foregroundStyle(palette.secondaryText)
-                }
-                .listRowBackground(Color.clear)
-            }
-
-            if !auth.isAvailable {
+            ThemedRows {
                 Section {
-                    Label("Cloud sync isn't set up in this build.", systemImage: "icloud.slash")
-                        .foregroundStyle(palette.secondaryText)
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Keep your notes safe")
+                            .font(.system(.title2, design: .serif, weight: .semibold))
+                        Text("Sign in to back up your highlights, notes, reading plans and prayers, and see them on all your devices. Everything also works without an account.")
+                            .font(.subheadline)
+                            .foregroundStyle(palette.secondaryText)
+                    }
+                    .listRowBackground(Color.clear)
                 }
-            }
 
-            Section {
-                SignInWithAppleButton(.signIn) { request in
-                    let nonce = AppleSignInNonce.random()
-                    appleNonce = nonce
-                    request.requestedScopes = [.email]
-                    request.nonce = AppleSignInNonce.sha256(nonce)
-                } onCompletion: { result in
-                    handleApple(result)
-                }
-                .signInWithAppleButtonStyle(colorScheme == .dark ? .white : .black)
-                .frame(height: 50)
-                .listRowInsets(EdgeInsets())
-                .disabled(!auth.isAvailable || auth.isWorking)
-                .accessibilityIdentifier("account.apple")
-            }
-
-            Section {
-                Picker("Mode", selection: $mode) {
-                    ForEach(Mode.allCases) { Text($0.title).tag($0) }
-                }
-                .pickerStyle(.segmented)
-                .listRowBackground(Color.clear)
-                .listRowInsets(EdgeInsets())
-
-                TextField("Email", text: $email)
-                    .textContentType(.emailAddress)
-                    .keyboardType(.emailAddress)
-                    .textInputAutocapitalization(.never)
-                    .autocorrectionDisabled()
-                    .focused($focused, equals: .email)
-                    .submitLabel(.next)
-                    .onSubmit { focused = .password }
-                    .accessibilityIdentifier("account.email")
-                SecureField(mode == .signIn ? "Password" : "Password (6+ characters)", text: $password)
-                    .textContentType(mode == .signIn ? .password : .newPassword)
-                    .focused($focused, equals: .password)
-                    .submitLabel(.go)
-                    .onSubmit(submit)
-                    .accessibilityIdentifier("account.password")
-
-                Button(action: submit) {
-                    HStack {
-                        Spacer()
-                        if auth.isWorking { ProgressView() } else { Text(mode.title).bold() }
-                        Spacer()
+                if !auth.isAvailable {
+                    Section {
+                        Label("Cloud sync isn't set up in this build.", systemImage: "icloud.slash")
+                            .foregroundStyle(palette.secondaryText)
                     }
                 }
-                .disabled(!canSubmit || !auth.isAvailable)
-                .accessibilityIdentifier("account.submit")
 
-                if mode == .signIn {
-                    Button("Forgot password?") {
-                        Task { await auth.sendPasswordReset(email: email) }
+                Section {
+                    SignInWithAppleButton(.signIn) { request in
+                        let nonce = AppleSignInNonce.random()
+                        appleNonce = nonce
+                        request.requestedScopes = [.email]
+                        request.nonce = AppleSignInNonce.sha256(nonce)
+                    } onCompletion: { result in
+                        handleApple(result)
                     }
-                    .font(.footnote)
-                    .disabled(!email.contains("@"))
+                    .signInWithAppleButtonStyle(colorScheme == .dark ? .white : .black)
+                    .frame(height: 50)
+                    .listRowInsets(EdgeInsets())
+                    .disabled(!auth.isAvailable || auth.isWorking)
+                    .accessibilityIdentifier("account.apple")
                 }
-            } footer: {
-                if let message = auth.errorMessage {
-                    Text(message).foregroundStyle(.red)
-                } else if let message = auth.infoMessage {
-                    Text(message)
-                }
-            }
 
-            Section {
-                Button("Continue as Guest") { dismiss() }
-                    .accessibilityIdentifier("account.guest")
-            } footer: {
-                Text("As a guest, everything stays on this device. You can sign in any time and your notes will come with you.")
+                Section {
+                    Picker("Mode", selection: $mode) {
+                        ForEach(Mode.allCases) { Text($0.title).tag($0) }
+                    }
+                    .pickerStyle(.segmented)
+                    .listRowBackground(Color.clear)
+                    .listRowInsets(EdgeInsets())
+
+                    TextField("Email", text: $email)
+                        .textContentType(.emailAddress)
+                        .keyboardType(.emailAddress)
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled()
+                        .focused($focused, equals: .email)
+                        .submitLabel(.next)
+                        .onSubmit { focused = .password }
+                        .accessibilityIdentifier("account.email")
+                    SecureField(mode == .signIn ? "Password" : "Password (6+ characters)", text: $password)
+                        .textContentType(mode == .signIn ? .password : .newPassword)
+                        .focused($focused, equals: .password)
+                        .submitLabel(.go)
+                        .onSubmit(submit)
+                        .accessibilityIdentifier("account.password")
+
+                    Button(action: submit) {
+                        HStack {
+                            Spacer()
+                            if auth.isWorking { ProgressView() } else { Text(mode.title).bold() }
+                            Spacer()
+                        }
+                    }
+                    .disabled(!canSubmit || !auth.isAvailable)
+                    .accessibilityIdentifier("account.submit")
+
+                    if mode == .signIn {
+                        Button("Forgot password?") {
+                            Task { await auth.sendPasswordReset(email: email) }
+                        }
+                        .font(.footnote)
+                        .disabled(!email.contains("@"))
+                    }
+                } footer: {
+                    if let message = auth.errorMessage {
+                        Text(message).foregroundStyle(.red)
+                    } else if let message = auth.infoMessage {
+                        Text(message)
+                    }
+                }
+
+                Section {
+                    Button("Continue as Guest") { dismiss() }
+                        .accessibilityIdentifier("account.guest")
+                } footer: {
+                    Text("As a guest, everything stays on this device. You can sign in any time and your notes will come with you.")
+                }
             }
         }
         .onChange(of: auth.isSignedIn) { _, signedIn in
@@ -194,46 +196,48 @@ private struct SignedInView: View {
 
     var body: some View {
         Form {
-            Section {
-                LabeledContent("Signed in as", value: user.email ?? String(localized: "Apple ID"))
-                    .accessibilityIdentifier("account.signedInAs")
-            }
-
-            if !entitlements.allows(.cloudBackup) {
+            ThemedRows {
                 Section {
-                    Button {
-                        premium = .cloudBackup
-                    } label: {
-                        Label("Back up with Premium", systemImage: "icloud")
-                    }
-                    .accessibilityIdentifier("account.backupPremium")
-                } header: {
-                    Text("Cloud Backup")
-                } footer: {
-                    Text("Your highlights, notes, plans and prayers are saved on this device. Cloud backup and sync across devices are part of Genesis Premium.")
+                    LabeledContent("Signed in as", value: user.email ?? String(localized: "Apple ID"))
+                        .accessibilityIdentifier("account.signedInAs")
                 }
-            } else {
-                Section {
-                    HStack {
-                        Label(statusText, systemImage: statusSymbol)
-                            .foregroundStyle(statusColor)
-                        Spacer()
-                        if sync.status == .syncing { ProgressView() }
-                    }
-                    Button("Sync Now") {
-                        Task { await sync.syncNow() }
-                    }
-                    .disabled(sync.status == .syncing)
-                } header: {
-                    Text("Cloud Sync")
-                } footer: {
-                    Text("Highlights, notes, bookmarks, reading plans and prayers sync automatically. Prayers are private to your account.")
-                }
-            }
 
-            Section {
-                Button("Sign Out", role: .destructive) { confirmSignOut = true }
-                    .accessibilityIdentifier("account.signOut")
+                if !entitlements.allows(.cloudBackup) {
+                    Section {
+                        Button {
+                            premium = .cloudBackup
+                        } label: {
+                            Label("Back up with Premium", systemImage: "icloud")
+                        }
+                        .accessibilityIdentifier("account.backupPremium")
+                    } header: {
+                        Text("Cloud Backup")
+                    } footer: {
+                        Text("Your highlights, notes, plans and prayers are saved on this device. Cloud backup and sync across devices are part of Genesis Premium.")
+                    }
+                } else {
+                    Section {
+                        HStack {
+                            Label(statusText, systemImage: statusSymbol)
+                                .foregroundStyle(statusColor)
+                            Spacer()
+                            if sync.status == .syncing { ProgressView() }
+                        }
+                        Button("Sync Now") {
+                            Task { await sync.syncNow() }
+                        }
+                        .disabled(sync.status == .syncing)
+                    } header: {
+                        Text("Cloud Sync")
+                    } footer: {
+                        Text("Highlights, notes, bookmarks, reading plans and prayers sync automatically. Prayers are private to your account.")
+                    }
+                }
+
+                Section {
+                    Button("Sign Out", role: .destructive) { confirmSignOut = true }
+                        .accessibilityIdentifier("account.signOut")
+                }
             }
         }
         .premiumSheet($premium)

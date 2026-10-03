@@ -12,49 +12,51 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             List {
-                Section {
-                    NavigationLink {
-                        FeaturesSettingsView()
-                    } label: {
-                        Label("Features", systemImage: "square.grid.2x2")
-                    }
-                    .accessibilityIdentifier("settings.features")
-                    Button {
-                        showsBibles = true
-                    } label: {
-                        Label("Bibles", systemImage: "books.vertical")
-                    }
-                    Button {
-                        showsAccount = true
-                    } label: {
-                        Label("Account", systemImage: "person.crop.circle")
-                    }
-                }
-                .listRowBackground(palette.surface)
-                .foregroundStyle(palette.text)
-
-                Section {
-                    // iOS keeps each app's language in the Settings app (and
-                    // restarts the app when it changes), so this opens it there.
-                    Button {
-                        if let url = URL(string: UIApplication.openSettingsURLString) { openURL(url) }
-                    } label: {
-                        LabeledContent {
-                            Text(AppLanguage.displayName(AppLanguage.code))
+                ThemedRows {
+                    Section {
+                        NavigationLink {
+                            FeaturesSettingsView()
                         } label: {
-                            Label("Language", systemImage: "globe")
+                            Label("Features", systemImage: "square.grid.2x2")
+                        }
+                        .accessibilityIdentifier("settings.features")
+                        Button {
+                            showsBibles = true
+                        } label: {
+                            Label("Bibles", systemImage: "books.vertical")
+                        }
+                        Button {
+                            showsAccount = true
+                        } label: {
+                            Label("Account", systemImage: "person.crop.circle")
                         }
                     }
-                    .accessibilityIdentifier("settings.language")
-                } footer: {
-                    Text("Genesis is available in English and Spanish. Tap to choose in the Settings app; Genesis restarts in the new language.")
-                }
-                .listRowBackground(palette.surface)
-                .foregroundStyle(palette.text)
+                    .listRowBackground(palette.surface)
+                    .foregroundStyle(palette.text)
 
-                Section {
-                } footer: {
-                    Text("Reading settings such as font, theme and page turns are in the reader under Aa.")
+                    Section {
+                        // iOS keeps each app's language in the Settings app (and
+                        // restarts the app when it changes), so this opens it there.
+                        Button {
+                            if let url = URL(string: UIApplication.openSettingsURLString) { openURL(url) }
+                        } label: {
+                            LabeledContent {
+                                Text(AppLanguage.displayName(AppLanguage.code))
+                            } label: {
+                                Label("Language", systemImage: "globe")
+                            }
+                        }
+                        .accessibilityIdentifier("settings.language")
+                    } footer: {
+                        Text("Genesis is available in English and Spanish. Tap to choose in the Settings app; Genesis restarts in the new language.")
+                    }
+                    .listRowBackground(palette.surface)
+                    .foregroundStyle(palette.text)
+
+                    Section {
+                    } footer: {
+                        Text("Reading settings such as font, theme and page turns are in the reader under Aa.")
+                    }
                 }
             }
             .themedScreen()
