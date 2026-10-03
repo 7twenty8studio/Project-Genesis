@@ -16,7 +16,8 @@ struct StudyDataTests {
         #expect(jerusalem.certainty == .known)
         let sinai = try #require(try study.searchPlaces("Mount Sinai").first { $0.name == "Mount Sinai" })
         #expect(sinai.certainty == .uncertain)
-        let elim = try #require(try study.place(id: try #require(try study.searchPlaces("Elim").first { $0.name == "Elim" }).id))
+        let elimSummary = try #require(try study.searchPlaces("Elim").first { $0.name == "Elim" })
+        let elim = try #require(try study.place(id: elimSummary.id))
         #expect(elim.summary.certainty == .likely)
         // The Exodus route mixes all three; Paul's journeys are well known.
         let routes = try study.routes()
