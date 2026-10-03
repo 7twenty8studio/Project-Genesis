@@ -29,7 +29,8 @@ final class ListeningActivityController {
         let content = ActivityContent(state: state, staleDate: nil)
         if let activity {
             if activity.activityState == .active, activity.attributes.translation == translation {
-                Task { await activity.update(content) }
+                let id = activity.id
+                Task { await Self.update(id: id, with: content) }
                 return
             }
             if activity.activityState != .active {
@@ -69,14 +70,31 @@ final class ListeningActivityController {
     private func dismiss() {
         guard let activity else { return }
         self.activity = nil
-        Task { await activity.end(nil, dismissalPolicy: .immediate) }
+        let id = activity.id
+        Task { await Self.end(ids: [id]) }
     }
 
     /// Clears activities left over from an earlier run (the app was closed
     /// while listening).
     func endStale() {
-        for stale in Activity<ListeningActivityAttributes>.activities where stale.id != activity?.id {
-            Task { await stale.end(nil, dismissalPolicy: .immediate) }
+        let current = activity?.id
+        let stale = Activity<ListeningActivityAttributes>.activities.map(\.id).filter { $0 != current }
+        guard !stale.isEmpty else { return }
+        Task { await Self.end(ids: stale) }
+    }
+
+    // `Activity` isn't Sendable, so it never crosses into a task: these look
+    // each one up by id where they run.
+
+    nonisolated private static func update(id: String, with content: ActivityContent<ListeningActivityAttributes.ContentState>) async {
+        for activity in Activity<ListeningActivityAttributes>.activities where activity.id == id {
+            await activity.update(content)
+        }
+    }
+
+    nonisolated private static func end(ids: [String]) async {
+        for activity in Activity<ListeningActivityAttributes>.activities where ids.contains(activity.id) {
+            await activity.end(nil, dismissalPolicy: .immediate)
         }
     }
 }
