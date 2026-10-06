@@ -201,7 +201,11 @@ if [ "$BUILD_STATUS" -eq 0 ]; then
     APP="$DERIVED/Build/Products/Debug-iphonesimulator/Genesis.app"
     echo "Launching Genesis on $SIM_NAME..."
     xcrun simctl boot "$SIM_ID" 2>/dev/null
-    open -a "$(xcode-select -p)/Applications/Simulator.app" 2>/dev/null || open -a Simulator
+    # By bundle id first: newer Xcodes don't always keep Simulator.app where older ones did.
+    open -b com.apple.iphonesimulator 2>/dev/null \
+        || open -a "$(xcode-select -p)/Applications/Simulator.app" 2>/dev/null \
+        || open -a Simulator 2>/dev/null \
+        || echo "   (Open the Simulator from Xcode › Open Developer Tool › Simulator to see the app.)"
     xcrun simctl install "$SIM_ID" "$APP" && xcrun simctl launch "$SIM_ID" "$BUNDLE_ID" >/dev/null
 fi
 
