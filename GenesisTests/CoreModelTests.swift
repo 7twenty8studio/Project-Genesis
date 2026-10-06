@@ -35,6 +35,14 @@ struct VerseIDTests {
     @Test func dailyVerseIsStableForADay() {
         let date = Date(timeIntervalSince1970: 1_790_000_000)
         #expect(DailyVerse.verse(for: date) == DailyVerse.verse(for: date.addingTimeInterval(60)))
+        // Early morning and late evening in a time zone behind UTC: one day, one verse.
+        var chicago = Calendar(identifier: .gregorian)
+        chicago.timeZone = TimeZone(identifier: "America/Chicago")!
+        let early = chicago.date(from: DateComponents(year: 2026, month: 10, day: 6, hour: 0, minute: 30))!
+        let late = chicago.date(from: DateComponents(year: 2026, month: 10, day: 6, hour: 23, minute: 30))!
+        let nextDay = chicago.date(from: DateComponents(year: 2026, month: 10, day: 7, hour: 0, minute: 30))!
+        #expect(DailyVerse.verse(for: early, calendar: chicago) == DailyVerse.verse(for: late, calendar: chicago))
+        #expect(DailyVerse.verse(for: late, calendar: chicago) != DailyVerse.verse(for: nextDay, calendar: chicago))
         let allValid = DailyVerse.curated.allSatisfy { $0.chapter <= BibleBook.withNumber($0.book).chapterCount }
         #expect(allValid)
     }

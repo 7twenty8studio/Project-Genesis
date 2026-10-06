@@ -4,8 +4,11 @@ import Foundation
 /// on a given date and available offline.
 enum DailyVerse {
     static func verse(for date: Date = .now, calendar: Calendar = .current) -> VerseID {
-        let day = calendar.ordinality(of: .day, in: .era, for: date) ?? 0
-        return curated[day % curated.count]
+        // Whole days between two local midnights, so the verse changes at
+        // midnight where the person is, not partway through their day.
+        let reference = calendar.startOfDay(for: Date(timeIntervalSinceReferenceDate: 0))
+        let day = calendar.dateComponents([.day], from: reference, to: calendar.startOfDay(for: date)).day ?? 0
+        return curated[((day % curated.count) + curated.count) % curated.count]
     }
 
     /// Well-loved verses that stand on their own. Book, chapter, verse.

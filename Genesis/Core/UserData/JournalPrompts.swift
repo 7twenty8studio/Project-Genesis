@@ -29,7 +29,10 @@ enum JournalPrompts {
     /// Today's prompt: the same all day, a different one the next day.
     static func prompt(on date: Date = .now, calendar: Calendar = .current) -> String {
         let prompts = all
-        let day = calendar.ordinality(of: .day, in: .era, for: date) ?? 0
+        // Whole days between two local midnights, so the prompt changes at
+        // midnight where the person is, not partway through their day.
+        let reference = calendar.startOfDay(for: Date(timeIntervalSinceReferenceDate: 0))
+        let day = calendar.dateComponents([.day], from: reference, to: calendar.startOfDay(for: date)).day ?? 0
         return prompts[((day % prompts.count) + prompts.count) % prompts.count]
     }
 
