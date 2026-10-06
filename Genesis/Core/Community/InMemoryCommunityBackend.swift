@@ -210,6 +210,14 @@ actor InMemoryCommunityBackend: CommunityBackend {
         if done { progressRows[group, default: []].insert(key) } else { progressRows[group]?.remove(key) }
     }
 
+    func myReadDays(in group: UUID) async throws -> Set<Int> {
+        Set((progressRows[group] ?? []).compactMap { key -> Int? in
+            let parts = key.split(separator: "|")
+            guard parts.count == 2, parts[0] == Substring(me.uuidString) else { return nil }
+            return Int(parts[1])
+        })
+    }
+
     func progressSummary(in group: UUID) async throws -> [MemberProgress] {
         let rows = (progressRows[group] ?? []).compactMap { key -> (UUID, Int)? in
             let parts = key.split(separator: "|")
@@ -356,6 +364,7 @@ struct SignedOutCommunityBackend: CommunityBackend {
     func progress(in group: UUID, day: Int) async throws -> [GroupProgress] { [] }
     func setDayDone(_ done: Bool, day: Int, in group: UUID) async throws { throw CommunityError.signInRequired }
     func progressSummary(in group: UUID) async throws -> [MemberProgress] { [] }
+    func myReadDays(in group: UUID) async throws -> Set<Int> { [] }
     func prayers(in group: UUID) async throws -> [GroupPrayer] { [] }
     func myPrayerMarks(_ prayers: [UUID]) async throws -> Set<UUID> { [] }
     func addPrayer(_ body: String, to group: UUID) async throws { throw CommunityError.signInRequired }

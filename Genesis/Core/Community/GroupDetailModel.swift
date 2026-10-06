@@ -17,6 +17,8 @@ final class GroupDetailModel {
     private(set) var memberProgress: [UUID: MemberProgress] = [:]
     /// Who read each earlier day, loaded when that day is opened.
     private(set) var dayReaders: [Int: Set<UUID>] = [:]
+    /// The days I've marked read (for the ticks on Every Day of the Plan).
+    private(set) var myReadDays: Set<Int> = []
     private(set) var isLoading = false
     var errorMessage: String?
 
@@ -70,6 +72,7 @@ final class GroupDetailModel {
             if group?.plan != nil {
                 let summary = try await backend.progressSummary(in: groupID)
                 memberProgress = Dictionary(summary.map { ($0.userID, $0) }, uniquingKeysWith: { first, _ in first })
+                myReadDays = try await backend.myReadDays(in: groupID)
             }
             errorMessage = nil
             writeWidget()
@@ -98,16 +101,19 @@ final class GroupDetailModel {
     }
 
     func hasRead(day: Int) -> Bool {
-        guard let me = store.userID else { return false }
-        return dayReaders[day]?.contains(me) ?? false
+        if let me = store.userID, let readers = dayReaders[day] { return readers.contains(me) }
+        return myReadDays.contains(day)
     }
 
     /// Marks any day of the plan read (or not), for catching up.
     func setRead(_ done: Bool, day: Int) async {
         guard let me = store.userID else { return }
         // Show it straight away; put it back if saving fails.
-        let before = (dayReaders[day], readToday, memberProgress[me])
+        let before = (dayReaders[day], readToday, memberProgress[me], myReadDays)
+        // Who read this day isn't loaded yet: start from what I know of my own.
+        if dayReaders[day] == nil, myReadDays.contains(day) { dayReaders[day] = [me] }
         apply(done, day: day, user: me)
+        if done { myReadDays.insert(day) } else { myReadDays.remove(day) }
         let saved = await run { try await backend.setDayDone(done, day: day, in: groupID) }
         if saved {
             writeWidget()
@@ -115,6 +121,7 @@ final class GroupDetailModel {
             dayReaders[day] = before.0
             readToday = before.1
             memberProgress[me] = before.2
+            myReadDays = before.3
         }
     }
 
@@ -145,11 +152,12 @@ final class GroupDetailModel {
     var progressRows: [(member: GroupMember, progress: MemberProgress)] {
         members
             .filter { !store.blocked.contains($0.userID) }
-            .map { ($0, memberProgress[$0.userID] ?? MemberProgress(userID: $0.userID, daysDone: 0, lastDay: 0)) }
+            .map { (member: $0, progress: memberProgress[$0.userID] ?? MemberProgress(userID: $0.userID, daysDone: 0, lastDay: 0)) }
             .sorted { lhs, rhs in
-                lhs.progress.daysDone == rhs.progress.daysDone
-                    ? lhs.member.displayName.localizedCompare(rhs.member.displayName) == .orderedAscending
-                    : lhs.progress.daysDone > rhs.progress.daysDone
+                if lhs.progress.daysDone != rhs.progress.daysDone {
+                    return lhs.progress.daysDone > rhs.progress.daysDone
+                }
+                return lhs.member.displayName.localizedCompare(rhs.member.displayName) == .orderedAscending
             }
     }
 

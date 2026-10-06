@@ -34,6 +34,8 @@ protocol CommunityBackend: Sendable {
     func setDayDone(_ done: Bool, day: Int, in group: UUID) async throws
     /// Every member's days read and latest day (group_progress_summary).
     func progressSummary(in group: UUID) async throws -> [MemberProgress]
+    /// The days the signed-in person has marked read in a group's plan.
+    func myReadDays(in group: UUID) async throws -> Set<Int>
     func prayers(in group: UUID) async throws -> [GroupPrayer]
     func myPrayerMarks(_ prayers: [UUID]) async throws -> Set<UUID>
     func addPrayer(_ body: String, to group: UUID) async throws
@@ -296,6 +298,12 @@ final class SupabaseCommunityBackend: CommunityBackend {
     func progressSummary(in group: UUID) async throws -> [MemberProgress] {
         let data = try await rpc("group_progress_summary", ["p_group": .string(group.uuidString.lowercased())])
         return try Self.makeDecoder().decode([MemberProgress].self, from: data)
+    }
+
+    func myReadDays(in group: UUID) async throws -> Set<Int> {
+        let me = try await me()
+        let rows: [GroupProgress] = try await get("group_progress", ["select": "user_id,day", "group_id": "eq.\(group.uuidString.lowercased())", "user_id": "eq.\(me.uuidString.lowercased())"])
+        return Set(rows.map(\.day))
     }
 
     func setDayDone(_ done: Bool, day: Int, in group: UUID) async throws {

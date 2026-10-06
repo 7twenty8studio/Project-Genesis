@@ -39,8 +39,15 @@ struct GroupWidgetSnapshot: Codable, Equatable, Sendable {
 
     func save() throws {
         guard let url = Self.fileURL else { return }
-        if Self.load() == self { return }
+        // Unchanged apart from the time: leave the widget alone.
+        if let saved = Self.load(), saved.isSame(as: self) { return }
         try JSONEncoder().encode(self).write(to: url, options: .atomic)
+    }
+
+    func isSame(as other: GroupWidgetSnapshot) -> Bool {
+        groupID == other.groupID && groupName == other.groupName && planTitle == other.planTitle && day == other.day
+            && dayCount == other.dayCount && dayTitle == other.dayTitle && readTodayCount == other.readTodayCount
+            && memberCount == other.memberCount && members == other.members
     }
 
     static func reloadWidget() {
