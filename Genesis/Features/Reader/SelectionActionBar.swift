@@ -20,7 +20,7 @@ struct SelectionActionBar: View {
     var body: some View {
         VStack(spacing: 14) {
             HStack {
-                Text(reader.selectedReference?.description ?? "")
+                Text(reader.selectedReference?.description(in: reader.translation.language) ?? "")
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(palette.accent)
                     .accessibilityIdentifier("selection.reference")

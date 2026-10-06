@@ -174,9 +174,4 @@ struct ParallelRow: Identifiable, Equatable, Sendable {
     }
 }
 
-extension ChapterID {
-    /// "John 3" or "Juan 3", in a Bible's language.
-    func description(in language: String) -> String {
-        "\(bibleBook.name(in: language)) \(chapter)"
-    }
-}
+

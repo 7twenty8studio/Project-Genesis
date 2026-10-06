@@ -60,7 +60,7 @@ struct BibleMapView: View {
                 placeCard(selected)
             }
         }
-        .task { load() }
+        .task { await load() }
     }
 
     private var selectedPlace: PlaceSummary? {
@@ -151,11 +151,15 @@ struct BibleMapView: View {
         }
     }
 
-    private func load() {
+    private func load() async {
         guard places.isEmpty, let studyData else { return }
-        // The best-attested places keep the map readable; all of them are in search.
-        places = (try? studyData.mappedPlaces(minimumMentions: 3, limit: 400)) ?? []
-        routes = (try? studyData.routes()) ?? []
+        // Off the main thread. The best-attested places keep the map readable
+        // (and quick to draw); all of them are in search.
+        let loaded = await Task.detached(priority: .userInitiated) {
+            ((try? studyData.mappedPlaces(minimumMentions: 4, limit: 250)) ?? [], (try? studyData.routes()) ?? [])
+        }.value
+        places = loaded.0
+        routes = loaded.1
     }
 }
 
@@ -226,10 +230,15 @@ struct PlaceDetailView: View {
     @Environment(AppRouter.self) private var router
     @Environment(\.palette) private var palette
 
+    @State private var loaded: Loaded?
+    @State private var didLoad = false
+
     var body: some View {
-        if let studyData, let place = try? studyData.place(id: placeID) {
-            let events = (try? studyData.events(atPlace: placeID)) ?? []
-            let verses = (try? studyData.verses(forPlace: placeID)) ?? []
+        Group {
+            if let loaded {
+                let place = loaded.place
+                let events = loaded.events
+                let verses = loaded.verses
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
                     VStack(alignment: .leading, spacing: 6) {
@@ -290,9 +299,40 @@ struct PlaceDetailView: View {
             .themedScreen()
             .navigationTitle(place.name)
             .navigationBarTitleDisplayMode(.inline)
-        } else {
-            StudyDataMissingView()
+            } else if didLoad {
+                StudyDataMissingView()
+            } else {
+                ProgressView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .themedScreen()
+            }
         }
+        // Read once, off the main thread: these queries used to run on every
+        // redraw, which made Explore feel slow.
+        .task(id: placeID) { await load() }
+    }
+
+    private struct Loaded: Sendable {
+        let place: Place
+        let events: [TimelineEvent]
+        let verses: [VerseID]
+    }
+
+    private func load() async {
+        guard let studyData else {
+            didLoad = true
+            return
+        }
+        let id = placeID
+        loaded = await Task.detached(priority: .userInitiated) { () -> Loaded? in
+            guard let place = try? studyData.place(id: id) else { return nil }
+            return Loaded(
+                place: place,
+                events: (try? studyData.events(atPlace: id)) ?? [],
+                verses: (try? studyData.verses(forPlace: id)) ?? []
+            )
+        }.value
+        didLoad = true
     }
 }
 

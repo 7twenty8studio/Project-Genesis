@@ -4898,6 +4898,7 @@
         }
       }
     },
+    "Panel, %@": {},
     "Paper": {
       "comment": "Reader theme name",
       "localizations": {
@@ -7054,6 +7055,16 @@
         }
       }
     },
+    "Spouses": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cónyuges"
+          }
+        }
+      }
+    },
     "Spring": {
       "comment": "Reader theme name",
       "localizations": {
@@ -9121,6 +9132,7 @@
         }
       }
     },
+    "genesis.audio-session": {},
     "longest streak": {
       "localizations": {
         "es": {

@@ -153,11 +153,15 @@ struct ReaderStyle: Equatable {
     let layout: TextLayout
     /// Accessibility: mark highlights with patterns as well as colour.
     let differentiatesWithoutColor: Bool
+    /// The language of the Bible being read ("en", "es"): book names in the
+    /// text and running heads follow it, not the app's language.
+    let bibleLanguage: String
 
     var palette: ThemePalette { theme.palette }
 
-    init(preferences: ReaderPreferences, theme: ReaderTheme, contentSizeCategory: UIContentSizeCategory, differentiatesWithoutColor: Bool = false) {
+    init(preferences: ReaderPreferences, theme: ReaderTheme, contentSizeCategory: UIContentSizeCategory, differentiatesWithoutColor: Bool = false, bibleLanguage: String = "en") {
         self.differentiatesWithoutColor = differentiatesWithoutColor
+        self.bibleLanguage = bibleLanguage
         font = preferences.font
         var size = CGFloat(preferences.fontSize)
         if preferences.followsDynamicType {

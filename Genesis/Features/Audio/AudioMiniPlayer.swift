@@ -50,8 +50,8 @@ struct AudioMiniPlayer: View {
 
     private var title: String {
         guard let chapter = audio.chapter else { return "" }
-        if let verse = audio.verse { return "\(chapter.description):\(verse.verse)" }
-        return chapter.description
+        if let verse = audio.verse { return "\(chapter.description(in: audio.translation.language)):\(verse.verse)" }
+        return chapter.description(in: audio.translation.language)
     }
 
     private var subtitle: String {

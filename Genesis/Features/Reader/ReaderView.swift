@@ -99,7 +99,8 @@ struct ReaderView: View {
                     preferences: preferences,
                     theme: preferences.theme.resolved(for: colorScheme),
                     contentSizeCategory: UIContentSizeCategory(dynamicTypeSize),
-                    differentiatesWithoutColor: differentiateWithoutColor
+                    differentiatesWithoutColor: differentiateWithoutColor,
+                    bibleLanguage: reader.translation.language
                 ),
                 margins: preferences.margins
             )
@@ -210,8 +211,11 @@ struct ReaderView: View {
                 // and tab bar, which would otherwise sit on top of them.
                 hidesPageChrome: reader.showsControls && !reader.isSelecting
             )
-            // The transition style can only be set when the controller is created.
-            .id(turn)
+            // The transition style can only be set when the controller is
+            // created. Turning the device builds it afresh too: a page curl
+            // controller can otherwise keep a page laid out for the old shape
+            // (half a page of text after turning back upright).
+            .id(PageControllerKey(turn: turn, landscape: layout.size.width > layout.size.height))
         } else {
             ScrollReaderView(
                 viewModel: reader,
@@ -369,7 +373,7 @@ struct ReaderView: View {
         let text = reader.selectedVerses.map(\.plainText).joined(separator: " ")
         guard !text.isEmpty else { return }
         reader.clearSelection()
-        sheet = .verseImage(VerseCard(text: text, reference: reference.description, translation: reader.translation.name))
+        sheet = .verseImage(VerseCard(text: text, reference: reference.description(in: reader.translation.language), translation: reader.translation.name))
     }
 
     private func showCrossReferencesForSelection() {
@@ -456,4 +460,11 @@ enum ReaderSheet: Identifiable {
         case let .study(passage, action): "study-\(passage.start.rawValue)-\(passage.end.rawValue)-\(action.rawValue)"
         }
     }
+}
+
+/// Identity of the page view controller: rebuilt when the page turn style or
+/// the orientation changes.
+private struct PageControllerKey: Hashable {
+    let turn: PageTurnStyle
+    let landscape: Bool
 }

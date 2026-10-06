@@ -128,7 +128,7 @@ enum ChapterTextBuilder {
     static func shareText(for verses: [Verse], translation: Translation) -> String {
         guard let reference = PassageReference(verses: verses.map(\.id)) else { return "" }
         let body = verses.map { verses.count > 1 ? "\($0.id.verse) \($0.plainText)" : $0.plainText }.joined(separator: " ")
-        return "\u{201C}\(body)\u{201D}\n\u{2014} \(reference) (\(translation.abbreviation))"
+        return "\u{201C}\(body)\u{201D}\n\u{2014} \(reference.description(in: translation.language)) (\(translation.abbreviation))"
     }
 
     // MARK: - Pieces
@@ -143,7 +143,7 @@ enum ChapterTextBuilder {
         bookTitle.alignment = .center
         bookTitle.paragraphSpacing = size * 0.2
 
-        result.append(NSAttributedString(string: chapter.book.name.uppercased() + "\n", attributes: [
+        result.append(NSAttributedString(string: chapter.book.name(in: style.bibleLanguage).uppercased() + "\n", attributes: [
             .font: style.font.uiFont(size: size * 0.7, weight: .medium),
             .foregroundColor: palette.uiSecondaryText,
             .kern: size * 0.12,

@@ -93,10 +93,23 @@ struct CompanionPanel: View {
             }
             .safeAreaInset(edge: .top) {
                 // Seven panels don't fit a segmented control in 360 points.
-                Picker("Panel", selection: $mode) {
-                    ForEach(modes) { Label($0.title, systemImage: $0.systemImage).tag($0) }
+                // A menu with its own label: the system picker's label wraps
+                // ("Not / es") in a narrow panel.
+                Menu {
+                    Picker("Panel", selection: $mode) {
+                        ForEach(modes) { Label($0.title, systemImage: $0.systemImage).tag($0) }
+                    }
+                } label: {
+                    HStack(spacing: 6) {
+                        Label(mode.title, systemImage: mode.systemImage)
+                            .lineLimit(1)
+                            .fixedSize()
+                        Image(systemName: "chevron.up.chevron.down")
+                            .font(.caption2.weight(.semibold))
+                    }
+                    .foregroundStyle(palette.accent)
                 }
-                .pickerStyle(.menu)
+                .accessibilityLabel("Panel, \(mode.title)")
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, 12)
                 .padding(.vertical, 6)

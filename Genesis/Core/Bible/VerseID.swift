@@ -75,3 +75,10 @@ struct ChapterID: Hashable, Comparable, Codable, Sendable, CustomStringConvertib
     static let genesis1 = ChapterID(book: 1, chapter: 1)
     static let john1 = ChapterID(book: 43, chapter: 1)
 }
+
+extension ChapterID {
+    /// "John 3" or "Juan 3", in a Bible's language.
+    func description(in language: String) -> String {
+        "\(bibleBook.name(in: language)) \(chapter)"
+    }
+}

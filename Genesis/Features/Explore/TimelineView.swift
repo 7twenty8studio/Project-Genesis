@@ -45,7 +45,7 @@ struct TimelineBrowser: View {
             .id(selectedEra ?? "all")
             .accessibilityIdentifier("timeline.list")
         }
-        .task { load() }
+        .task { await load() }
     }
 
     private var eraStrip: some View {
@@ -108,12 +108,19 @@ struct TimelineBrowser: View {
         return first == last ? TimelineEvent.label(forYear: first) : "\(TimelineEvent.label(forYear: first)) – \(TimelineEvent.label(forYear: last))"
     }
 
-    private func load() {
+    private func load() async {
         guard eras.isEmpty, let studyData else { return }
-        eras = (try? studyData.eras()) ?? []
-        for era in eras {
-            events[era.id] = (try? studyData.events(inEra: era.id)) ?? []
-        }
+        // Off the main thread, so switching to the timeline stays smooth.
+        let loaded = await Task.detached(priority: .userInitiated) { () -> ([Era], [String: [TimelineEvent]]) in
+            let eras = (try? studyData.eras()) ?? []
+            var events: [String: [TimelineEvent]] = [:]
+            for era in eras {
+                events[era.id] = (try? studyData.events(inEra: era.id)) ?? []
+            }
+            return (eras, events)
+        }.value
+        events = loaded.1
+        eras = loaded.0
     }
 }
 
@@ -149,12 +156,17 @@ struct EventDetailView: View {
     @Environment(AppRouter.self) private var router
     @Environment(\.palette) private var palette
 
+    @State private var loaded: Loaded?
+    @State private var didLoad = false
+
     var body: some View {
-        if let studyData, let event = try? studyData.event(id: eventID) {
-            let chapters = (try? studyData.chapters(forEvent: eventID)) ?? []
-            let people = (try? studyData.people(inEvent: eventID)) ?? []
-            let places = (try? studyData.places(inEvent: eventID)) ?? []
-            let eraTitle = ((try? studyData.eras()) ?? []).first { $0.id == event.eraID }?.title
+        Group {
+            if let loaded {
+                let event = loaded.event
+                let chapters = loaded.chapters
+                let people = loaded.people
+                let places = loaded.places
+                let eraTitle = loaded.eraTitle
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
                     VStack(alignment: .leading, spacing: 6) {
@@ -197,9 +209,44 @@ struct EventDetailView: View {
             .themedScreen()
             .navigationTitle(event.yearLabel ?? String(localized: "Event"))
             .navigationBarTitleDisplayMode(.inline)
-        } else {
-            StudyDataMissingView()
+            } else if didLoad {
+                StudyDataMissingView()
+            } else {
+                ProgressView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .themedScreen()
+            }
         }
+        // Read once, off the main thread: these queries used to run on every
+        // redraw, which made Explore feel slow.
+        .task(id: eventID) { await load() }
+    }
+
+    private struct Loaded: Sendable {
+        let event: TimelineEvent
+        let chapters: [ChapterID]
+        let people: [PersonSummary]
+        let places: [PlaceSummary]
+        let eraTitle: String?
+    }
+
+    private func load() async {
+        guard let studyData else {
+            didLoad = true
+            return
+        }
+        let id = eventID
+        loaded = await Task.detached(priority: .userInitiated) { () -> Loaded? in
+            guard let event = try? studyData.event(id: id) else { return nil }
+            return Loaded(
+                event: event,
+                chapters: (try? studyData.chapters(forEvent: id)) ?? [],
+                people: (try? studyData.people(inEvent: id)) ?? [],
+                places: (try? studyData.places(inEvent: id)) ?? [],
+                eraTitle: ((try? studyData.eras()) ?? []).first { $0.id == event.eraID }?.title
+            )
+        }.value
+        didLoad = true
     }
 }
 

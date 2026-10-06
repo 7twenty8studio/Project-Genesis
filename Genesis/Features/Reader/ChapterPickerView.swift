@@ -11,6 +11,9 @@ struct ChapterPickerView: View {
     @State private var filter = ""
     @State private var path: [BibleBook] = []
 
+    /// Book names follow the Bible being read ("Marcos" in a Spanish Bible).
+    private var language: String { reader.translation.language }
+
     var body: some View {
         NavigationStack(path: $path) {
             List {
@@ -33,7 +36,7 @@ struct ChapterPickerView: View {
                             }
                         } label: {
                             HStack {
-                                Text(book.name)
+                                Text(book.name(in: language))
                                     .foregroundStyle(palette.text)
                                 Spacer()
                                 if book.id == reader.chapterID.book {
@@ -61,7 +64,7 @@ struct ChapterPickerView: View {
                 }
             }
             .navigationDestination(for: BibleBook.self) { book in
-                ChapterGrid(book: book, current: reader.chapterID, onSelect: onSelect)
+                ChapterGrid(book: book, current: reader.chapterID, language: language, onSelect: onSelect)
             }
             .onAppear {
                 testament = reader.chapterID.bibleBook.testament
@@ -74,13 +77,14 @@ struct ChapterPickerView: View {
             return testament == .old ? BibleBook.oldTestament : BibleBook.newTestament
         }
         let matches = ReferenceParser.books(matching: filter)
-        return matches.isEmpty ? BibleBook.all.filter { $0.name.localizedCaseInsensitiveContains(filter) } : matches
+        return matches.isEmpty ? BibleBook.all.filter { $0.name(in: language).localizedCaseInsensitiveContains(filter) || $0.name.localizedCaseInsensitiveContains(filter) } : matches
     }
 }
 
 private struct ChapterGrid: View {
     let book: BibleBook
     let current: ChapterID
+    let language: String
     let onSelect: (ChapterID) -> Void
 
     @Environment(\.palette) private var palette
@@ -105,7 +109,7 @@ private struct ChapterGrid: View {
             .padding(20)
         }
         .themedScreen()
-        .navigationTitle(book.name)
+        .navigationTitle(book.name(in: language))
         .navigationBarTitleDisplayMode(.inline)
     }
 }

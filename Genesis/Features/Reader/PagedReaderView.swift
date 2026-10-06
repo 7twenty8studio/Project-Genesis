@@ -175,7 +175,9 @@ struct PagedReaderView: UIViewControllerRepresentable {
             page.configure(
                 text: chapter.built.text.attributedSubstring(from: chapter.pages[location.index]),
                 layout: layout,
-                header: chapter.built.chapter.id.description,
+                header: chapter.built.chapter.id.description(in: layout.style.bibleLanguage),
+                // The chapter's first page already shows its title in the text.
+                showsHeader: location.index > 0,
                 footer: footerText(pageIndex: location.index, pageCount: chapter.pages.count)
             )
             page.onEvent = { [weak self] event in self?.handle(event) }
@@ -262,6 +264,16 @@ struct PagedReaderView: UIViewControllerRepresentable {
                   let target = forward ? location(after: current) : location(before: current) else { return }
             let reduceMotion = UIAccessibility.isReduceMotionEnabled
             show(location: target, direction: forward ? .forward : .reverse, animated: !reduceMotion)
+            hideControlsForReading()
+        }
+
+        /// Turning a page means reading: put the controls, tab bar and
+        /// players away so they don't cover the text (a tap brings them back).
+        private func hideControlsForReading() {
+            Task { @MainActor [weak self] in
+                guard let self, self.viewModel.showsControls, !self.viewModel.isSelecting else { return }
+                self.viewModel.showsControls = false
+            }
         }
 
         // MARK: UIPageViewControllerDataSource
@@ -284,6 +296,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
             guard completed, let location = currentLocation else { return }
             if viewModel.isSelecting { viewModel.clearSelection() }
             didSettle(on: location)
+            hideControlsForReading()
         }
     }
 }
@@ -311,7 +324,7 @@ final class ReaderPageViewController: UIViewController {
         fatalError("init(coder:) is not supported")
     }
 
-    func configure(text: NSAttributedString, layout: ReaderLayout, header: String, footer: String) {
+    func configure(text: NSAttributedString, layout: ReaderLayout, header: String, showsHeader: Bool = true, footer: String) {
         self.layout = layout
         loadViewIfNeeded()
         let palette = layout.style.palette
@@ -326,7 +339,10 @@ final class ReaderPageViewController: UIViewController {
             label.textAlignment = .center
             label.adjustsFontForContentSizeCategory = false
         }
-        headerLabel.attributedText = NSAttributedString(string: header.uppercased(), attributes: [.kern: 1.2, .foregroundColor: chromeColor])
+        headerLabel.attributedText = NSAttributedString(string: showsHeader ? header.uppercased() : "", attributes: [.kern: 1.2, .foregroundColor: chromeColor])
+        // Still read out (and found by UI tests) on a chapter's first page.
+        headerLabel.isAccessibilityElement = true
+        headerLabel.accessibilityLabel = header.uppercased()
         footerLabel.text = footer
         view.setNeedsLayout()
     }

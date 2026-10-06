@@ -84,7 +84,7 @@ struct ScrollReaderView: UIViewRepresentable {
             var insets = newLayout.textInsets
             insets.bottom += 80
             textView.textContainerInset = insets
-            textView.accessibilityLabel = chapter.id.description
+            textView.accessibilityLabel = chapter.id.description(in: newLayout.style.bibleLanguage)
 
             if redecorated && !restyled && !chapterChanged && !navigated {
                 // Only colours or underlines changed: keep the exact scroll position.

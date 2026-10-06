@@ -353,7 +353,7 @@ final class AudioPlayerService {
 
     private func updateNowPlaying() {
         guard let chapter else { return }
-        let title = verse.map { "\(chapter.description):\($0.verse)" } ?? chapter.description
+        let title = verse.map { "\(chapter.description(in: translation.language)):\($0.verse)" } ?? chapter.description(in: translation.language)
         let recording = isRecording
         nowPlaying.update(
             title: title,

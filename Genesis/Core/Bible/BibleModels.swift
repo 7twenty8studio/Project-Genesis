@@ -123,11 +123,15 @@ struct PassageReference: Hashable, Sendable, CustomStringConvertible {
 
     var firstVerse: VerseID { VerseID(book: book.id, chapter: chapter ?? 1, verse: verseStart ?? 1) }
 
-    var description: String {
-        guard let chapter else { return book.name }
+    var description: String { description(in: AppLanguage.code) }
+
+    /// The reference with the book named in a given language ("en", "es").
+    func description(in language: String) -> String {
+        let name = book.name(in: language)
+        guard let chapter else { return name }
         // Single-chapter books are usually cited by verse alone ("Jude 3").
-        guard let verseStart else { return "\(book.name) \(chapter)" }
-        let prefix = book.chapterCount == 1 ? "\(book.name) " : "\(book.name) \(chapter):"
+        guard let verseStart else { return "\(name) \(chapter)" }
+        let prefix = book.chapterCount == 1 ? "\(name) " : "\(name) \(chapter):"
         if let verseEnd, verseEnd != verseStart {
             return "\(prefix)\(verseStart)\u{2013}\(verseEnd)"
         }

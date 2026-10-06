@@ -81,8 +81,8 @@ struct NowPlayingAccessory: View {
 
     private var title: String {
         if audio.isActive, let chapter = audio.chapter {
-            if let verse = audio.verse { return "\(chapter.description):\(verse.verse)" }
-            return chapter.description
+            if let verse = audio.verse { return "\(chapter.description(in: audio.translation.language)):\(verse.verse)" }
+            return chapter.description(in: audio.translation.language)
         }
         return ambient.summary
     }
@@ -195,8 +195,8 @@ struct NowPlayingSheet: View {
 
     private var chapterTitle: String {
         guard let chapter = audio.chapter else { return "" }
-        if let verse = audio.verse { return "\(chapter.description):\(verse.verse)" }
-        return chapter.description
+        if let verse = audio.verse { return "\(chapter.description(in: audio.translation.language)):\(verse.verse)" }
+        return chapter.description(in: audio.translation.language)
     }
 
     private func transport(_ systemImage: String, label: LocalizedStringKey, size: CGFloat = 22, action: @escaping () -> Void) -> some View {

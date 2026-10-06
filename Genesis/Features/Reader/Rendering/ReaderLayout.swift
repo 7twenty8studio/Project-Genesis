@@ -9,7 +9,9 @@ struct ReaderLayout: Equatable {
     var margins: ReaderMargins
 
     /// Space above and below the text for the running head and page footer.
-    static let headHeight: CGFloat = 40
+    /// Tall enough that the floating reader controls (shown on a tap) sit
+    /// in the margin above the first line rather than over it.
+    static let headHeight: CGFloat = 56
     static let footHeight: CGFloat = 36
 
     var textInsets: UIEdgeInsets {

@@ -25,7 +25,13 @@ struct PeopleBrowser: View {
             // A short pause so typing doesn't query on every keystroke.
             if !query.isEmpty { try? await Task.sleep(for: .milliseconds(150)) }
             guard !Task.isCancelled else { return }
-            people = (try? studyData?.searchPeople(query, limit: query.isEmpty ? 100 : 60)) ?? []
+            guard let studyData else { return }
+            let text = query
+            let found = await Task.detached(priority: .userInitiated) {
+                (try? studyData.searchPeople(text, limit: text.isEmpty ? 100 : 60)) ?? []
+            }.value
+            guard !Task.isCancelled else { return }
+            people = found
         }
         .accessibilityIdentifier("people.list")
     }
@@ -61,13 +67,18 @@ struct PersonDetailView: View {
     @Environment(AppRouter.self) private var router
     @Environment(\.palette) private var palette
 
+    @State private var loaded: Loaded?
+    @State private var didLoad = false
+
     var body: some View {
-        if let studyData, let person = try? studyData.person(id: personID) {
-            let family = (try? studyData.family(ofPerson: personID)) ?? Family()
-            let events = (try? studyData.events(forPerson: personID)) ?? []
-            let books = (try? studyData.books(forPerson: personID)) ?? []
-            let verses = (try? studyData.verses(forPerson: personID)) ?? []
-            let places = (try? studyData.places(forPerson: personID)) ?? []
+        Group {
+            if let loaded {
+                let person = loaded.person
+                let family = loaded.family
+                let events = loaded.events
+                let books = loaded.books
+                let verses = loaded.verses
+                let places = loaded.places
             ScrollView {
                 VStack(alignment: .leading, spacing: 26) {
                     header(person)
@@ -115,9 +126,46 @@ struct PersonDetailView: View {
             .themedScreen()
             .navigationTitle(person.name)
             .navigationBarTitleDisplayMode(.inline)
-        } else {
-            StudyDataMissingView()
+            } else if didLoad {
+                StudyDataMissingView()
+            } else {
+                ProgressView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .themedScreen()
+            }
         }
+        // Read once, off the main thread: these queries used to run on every
+        // redraw, which made Explore feel slow.
+        .task(id: personID) { await load() }
+    }
+
+    private struct Loaded: Sendable {
+        let person: Person
+        let family: Family
+        let events: [TimelineEvent]
+        let books: [BookMentions]
+        let verses: [VerseID]
+        let places: [PlaceSummary]
+    }
+
+    private func load() async {
+        guard let studyData else {
+            didLoad = true
+            return
+        }
+        let id = personID
+        loaded = await Task.detached(priority: .userInitiated) { () -> Loaded? in
+            guard let person = try? studyData.person(id: id) else { return nil }
+            return Loaded(
+                person: person,
+                family: (try? studyData.family(ofPerson: id)) ?? Family(),
+                events: (try? studyData.events(forPerson: id)) ?? [],
+                books: (try? studyData.books(forPerson: id)) ?? [],
+                verses: (try? studyData.verses(forPerson: id)) ?? [],
+                places: (try? studyData.places(forPerson: id)) ?? []
+            )
+        }.value
+        didLoad = true
     }
 
     private func header(_ person: Person) -> some View {
@@ -164,21 +212,29 @@ struct FamilyTreeView: View {
                 generation(String(localized: "Parents"), family.parents)
                 connector
             }
-            HStack(spacing: 8) {
-                Text(person.name)
-                    .font(.subheadline.weight(.semibold))
-                    .padding(.horizontal, 14)
-                    .padding(.vertical, 8)
-                    .foregroundStyle(palette.background)
-                    .background(palette.accent, in: Capsule())
-                ForEach(family.partners) { partner in
-                    Image(systemName: "heart")
-                        .font(.caption2)
+            // The person on their own line (never squeezed letter by letter),
+            // with husbands or wives wrapping underneath.
+            Text(person.name)
+                .font(.subheadline.weight(.semibold))
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
+                .padding(.horizontal, 14)
+                .padding(.vertical, 8)
+                .foregroundStyle(palette.background)
+                .background(palette.accent, in: Capsule())
+                .fixedSize(horizontal: true, vertical: false)
+            if !family.partners.isEmpty {
+                VStack(spacing: 6) {
+                    Label("Spouses", systemImage: "heart")
+                        .font(.caption2.weight(.semibold))
                         .foregroundStyle(palette.secondaryText)
-                    chip(partner)
+                    FlowLayout(spacing: 6) {
+                        ForEach(family.partners) { chip($0) }
+                    }
                 }
+                .frame(maxWidth: .infinity)
+                .padding(.top, 10)
             }
-            .frame(maxWidth: .infinity)
             if !family.children.isEmpty {
                 connector
                 generation(String(localized: "Children"), family.children)
@@ -215,6 +271,7 @@ struct FamilyTreeView: View {
     private func chip(_ relative: PersonSummary) -> some View {
         Button(relative.name) { router.explore(.person(relative.id)) }
             .font(.subheadline)
+            .lineLimit(1)
             .padding(.horizontal, 12)
             .padding(.vertical, 7)
             .foregroundStyle(palette.text)

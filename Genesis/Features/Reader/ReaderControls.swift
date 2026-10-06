@@ -46,7 +46,7 @@ struct ReaderControls: View {
             }
             .accessibilityIdentifier("reader.previousChapter")
             Button(action: onChapterPicker) {
-                Text(reader.chapterID.description)
+                Text(reader.chapterID.description(in: reader.translation.language))
                     .font(.headline)
                     .lineLimit(1)
                     .fixedSize()
