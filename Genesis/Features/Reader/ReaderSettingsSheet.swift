@@ -136,10 +136,7 @@ struct ReaderSettingsSheet: View {
                         Toggle("Large first letter", isOn: $settings.preferences.largeInitial)
                             .accessibilityIdentifier("settings.largeInitial")
                         if settings.preferences.readingMode == .page {
-                            Toggle("Page-turn sound", isOn: $settings.preferences.pageTurnSound)
-                                .accessibilityIdentifier("settings.pageTurnSound")
-                            Toggle("Page-turn haptic", isOn: $settings.preferences.pageTurnHaptic)
-                                .accessibilityIdentifier("settings.pageTurnHaptic")
+                            PageTurnFeedbackSettings()
                         }
                         Toggle(isOn: $settings.preferences.leftHanded) {
                             Text("Left-handed mode")

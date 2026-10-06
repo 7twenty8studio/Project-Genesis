@@ -81,6 +81,12 @@ struct ReaderPreferences: Codable, Equatable, Sendable {
     var pageTurnSound = false
     /// A light tap when a page turns.
     var pageTurnHaptic = true
+    /// How loud the rustle is, 0…1 (five steps; 0.5 is the middle level).
+    var pageTurnVolume = 0.5
+    /// How firm the tap is, 0.2…1.
+    var pageTurnHapticStrength = 0.9
+
+    static let hapticStrengthRange: ClosedRange<Double> = 0.2...1
 
     static let fontSizeRange: ClosedRange<Double> = 13...36
     static let lineSpacingRange: ClosedRange<Double> = 1.1...2.1
@@ -110,6 +116,9 @@ struct ReaderPreferences: Codable, Equatable, Sendable {
         largeInitial = (try? c.decode(Bool.self, forKey: .largeInitial)) ?? d.largeInitial
         pageTurnSound = (try? c.decode(Bool.self, forKey: .pageTurnSound)) ?? d.pageTurnSound
         pageTurnHaptic = (try? c.decode(Bool.self, forKey: .pageTurnHaptic)) ?? d.pageTurnHaptic
+        pageTurnVolume = (try? c.decode(Double.self, forKey: .pageTurnVolume)).map { min(max($0, 0), 1) } ?? d.pageTurnVolume
+        pageTurnHapticStrength = (try? c.decode(Double.self, forKey: .pageTurnHapticStrength))
+            .map { min(max($0, Self.hapticStrengthRange.lowerBound), Self.hapticStrengthRange.upperBound) } ?? d.pageTurnHapticStrength
     }
 
     private static let defaults = ReaderPreferences()

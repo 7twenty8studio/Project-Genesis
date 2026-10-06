@@ -213,7 +213,9 @@ struct ReaderView: View {
                 // and tab bar, which would otherwise sit on top of them.
                 hidesPageChrome: reader.showsControls && !reader.isSelecting,
                 pageTurnSound: preferences.pageTurnSound,
-                pageTurnHaptic: preferences.pageTurnHaptic
+                pageTurnHaptic: preferences.pageTurnHaptic,
+                pageTurnVolume: preferences.pageTurnVolume,
+                pageTurnHapticStrength: preferences.pageTurnHapticStrength
             )
             // The transition style can only be set when the controller is
             // created. Turning the device builds it afresh too: a page curl

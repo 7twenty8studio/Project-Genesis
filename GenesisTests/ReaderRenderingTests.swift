@@ -49,6 +49,17 @@ struct ReaderRenderingTests {
         #expect((without.text.string as NSString).substring(with: NSRange(location: plainStart, length: 1)) == "1", "Turned off, verse 1 is numbered as before")
     }
 
+    @Test func pageTurnVolumePicksOneOfFiveLevels() {
+        #expect(PageTurnFeedback.level(forVolume: 0) == 1)
+        #expect(PageTurnFeedback.level(forVolume: 0.25) == 2)
+        #expect(PageTurnFeedback.level(forVolume: 0.5) == 3, "The default is the middle level")
+        #expect(PageTurnFeedback.level(forVolume: 1) == 5)
+        #expect(PageTurnFeedback.level(forVolume: 7) == 5)
+        for level in 1...PageTurnFeedback.levels {
+            #expect(Bundle.main.url(forResource: "page-turn-\(level)", withExtension: "caf") != nil, "Level \(level) is bundled")
+        }
+    }
+
     @Test func pagesCoverTextExactlyOnce() throws {
         let chapter = try chapter(ChapterID(book: 19, chapter: 119), translation: .web)
         let built = ChapterTextBuilder.build(chapter, style: style, decorations: ChapterDecorations())

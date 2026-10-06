@@ -5926,6 +5926,26 @@
         }
       }
     },
+    "Page-turn strength": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Intensidad al pasar página"
+          }
+        }
+      }
+    },
+    "Page-turn volume": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volumen al pasar página"
+          }
+        }
+      }
+    },
     "Pages": {
       "comment": "Reading mode: page by page",
       "localizations": {

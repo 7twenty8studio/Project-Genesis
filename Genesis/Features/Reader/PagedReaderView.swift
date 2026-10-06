@@ -24,6 +24,8 @@ struct PagedReaderView: UIViewControllerRepresentable {
     /// Reading touches: a paper rustle and a light tap as a page turns.
     var pageTurnSound = false
     var pageTurnHaptic = false
+    var pageTurnVolume = 0.5
+    var pageTurnHapticStrength = 0.9
 
     func makeCoordinator() -> Coordinator {
         Coordinator(viewModel: viewModel)
@@ -59,6 +61,8 @@ struct PagedReaderView: UIViewControllerRepresentable {
         coordinator.leftHanded = leftHanded
         coordinator.pageTurnSound = pageTurnSound
         coordinator.pageTurnHaptic = pageTurnHaptic
+        coordinator.pageTurnVolume = pageTurnVolume
+        coordinator.pageTurnHapticStrength = pageTurnHapticStrength
         coordinator.feedback.prepare(in: controller.view, haptic: pageTurnHaptic)
         coordinator.setPageChromeHidden(hidesPageChrome)
         controller.view.backgroundColor = layout.style.palette.uiBackground
@@ -83,6 +87,8 @@ struct PagedReaderView: UIViewControllerRepresentable {
         var pageTurnToken = -1
         var pageTurnSound = false
         var pageTurnHaptic = false
+        var pageTurnVolume = 0.5
+        var pageTurnHapticStrength = 0.9
         let feedback = PageTurnFeedback.shared
         private var pageChromeHidden = false
 
@@ -273,7 +279,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
                   let target = forward ? location(after: current) : location(before: current) else { return }
             let reduceMotion = UIAccessibility.isReduceMotionEnabled
             show(location: target, direction: forward ? .forward : .reverse, animated: !reduceMotion)
-            feedback.pageTurned(sound: pageTurnSound, haptic: pageTurnHaptic)
+            feedback.pageTurned(sound: pageTurnSound, volume: pageTurnVolume, haptic: pageTurnHaptic, strength: pageTurnHapticStrength)
             hideControlsForReading()
         }
 
@@ -305,7 +311,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
         func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
             guard completed, let location = currentLocation else { return }
             if viewModel.isSelecting { viewModel.clearSelection() }
-            feedback.pageTurned(sound: pageTurnSound, haptic: pageTurnHaptic)
+            feedback.pageTurned(sound: pageTurnSound, volume: pageTurnVolume, haptic: pageTurnHaptic, strength: pageTurnHapticStrength)
             didSettle(on: location)
             hideControlsForReading()
         }
