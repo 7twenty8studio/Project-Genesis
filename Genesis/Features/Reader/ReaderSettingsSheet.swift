@@ -133,6 +133,14 @@ struct ReaderSettingsSheet: View {
                             ForEach(TextLayout.allCases) { Text($0.title).tag($0) }
                         }
                         Toggle("Verse numbers", isOn: $settings.preferences.showsVerseNumbers)
+                        Toggle("Large first letter", isOn: $settings.preferences.largeInitial)
+                            .accessibilityIdentifier("settings.largeInitial")
+                        if settings.preferences.readingMode == .page {
+                            Toggle("Page-turn sound", isOn: $settings.preferences.pageTurnSound)
+                                .accessibilityIdentifier("settings.pageTurnSound")
+                            Toggle("Page-turn haptic", isOn: $settings.preferences.pageTurnHaptic)
+                                .accessibilityIdentifier("settings.pageTurnHaptic")
+                        }
                         Toggle(isOn: $settings.preferences.leftHanded) {
                             Text("Left-handed mode")
                             Text("Tap the left edge to turn forward; study panel on the left.")

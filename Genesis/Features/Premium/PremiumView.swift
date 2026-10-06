@@ -1,7 +1,8 @@
 import StoreKit
 import SwiftUI
 
-/// The Genesis Premium screen: what it includes, the two plans, restore, and
+/// The Genesis Premium screen: what it includes, Individual or Family, monthly
+/// or yearly, restore, and
 /// the subscription terms App Review requires.
 struct PremiumView: View {
     /// The feature that led here, shown first.
@@ -12,7 +13,8 @@ struct PremiumView: View {
     @Environment(StudyAssistant.self) private var assistant
     @Environment(\.palette) private var palette
     @Environment(\.dismiss) private var dismiss
-    @State private var selected: PremiumProduct = .yearly
+    @State private var plan: PremiumPlan = .individual
+    @State private var yearly = true
     @State private var message: String?
     /// Days of free trial the selected plan offers this Apple Account.
     @State private var trialDays: Int?
@@ -26,6 +28,7 @@ struct PremiumView: View {
                         activeCard
                     } else {
                         features
+                        planPicker
                         plans
                         purchaseButton
                     }
@@ -96,25 +99,44 @@ struct PremiumView: View {
         }
     }
 
+    /// The product the buttons below describe.
+    private var selected: PremiumProduct { .product(plan, yearly: yearly) }
+
+    /// Individual or Family.
+    private var planPicker: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Picker("Plan", selection: $plan) {
+                ForEach(PremiumPlan.allCases, id: \.self) { Text($0.title).tag($0) }
+            }
+            .pickerStyle(.segmented)
+            .accessibilityIdentifier("premium.tier")
+            Text(plan.detail)
+                .font(.footnote)
+                .foregroundStyle(palette.secondaryText)
+                .accessibilityIdentifier("premium.tierDetail")
+        }
+    }
+
     private var plans: some View {
         VStack(spacing: 10) {
-            ForEach([PremiumProduct.yearly, .monthly], id: \.self) { plan in
-                let isSelected = selected == plan
+            ForEach([true, false], id: \.self) { isYearly in
+                let product = PremiumProduct.product(plan, yearly: isYearly)
+                let isSelected = yearly == isYearly
                 Button {
-                    selected = plan
+                    yearly = isYearly
                 } label: {
                     HStack {
                         VStack(alignment: .leading, spacing: 2) {
-                            Text(plan.periodTitle)
+                            Text(product.periodTitle)
                                 .font(.headline)
-                            if plan == .yearly {
+                            if isYearly {
                                 Text(savingsText)
                                     .font(.caption)
                                     .foregroundStyle(palette.accent)
                             }
                         }
                         Spacer()
-                        Text("\(price(plan)) / \(plan.periodUnit)")
+                        Text("\(price(product)) / \(product.periodUnit)")
                             .font(.body.weight(.semibold))
                     }
                     .foregroundStyle(palette.text)
@@ -124,7 +146,7 @@ struct PremiumView: View {
                 }
                 .buttonStyle(.plain)
                 .accessibilityAddTraits(isSelected ? .isSelected : [])
-                .accessibilityIdentifier("premium.plan.\(plan == .yearly ? "yearly" : "monthly")")
+                .accessibilityIdentifier("premium.plan.\(isYearly ? "yearly" : "monthly")")
             }
         }
     }
@@ -177,7 +199,7 @@ struct PremiumView: View {
                     .foregroundStyle(palette.text)
             }
             if let product = entitlements.activeProduct {
-                Text("\(product.periodTitle) plan")
+                Text(product.planDescription)
                     .font(.headline)
                     .foregroundStyle(palette.text)
             }
@@ -225,7 +247,8 @@ struct PremiumView: View {
     }
 
     private var savingsText: String {
-        guard let monthly = entitlements.product(.monthly), let yearly = entitlements.product(.yearly), monthly.price > 0 else {
+        guard let monthly = entitlements.product(.product(plan, yearly: false)),
+              let yearly = entitlements.product(.product(plan, yearly: true)), monthly.price > 0 else {
             return String(localized: "Save 33%")
         }
         let full = monthly.price * 12

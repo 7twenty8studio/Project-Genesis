@@ -75,6 +75,12 @@ struct ReaderPreferences: Codable, Equatable, Sendable {
     /// Leaves, snow, blossom or summer light drifting by for a few seconds
     /// when the reader opens with a seasonal theme.
     var seasonalEffects = true
+    /// A large first letter at the start of each chapter, as in printed Bibles.
+    var largeInitial = true
+    /// A soft paper rustle when a page turns (follows the silent switch).
+    var pageTurnSound = false
+    /// A light tap when a page turns.
+    var pageTurnHaptic = true
 
     static let fontSizeRange: ClosedRange<Double> = 13...36
     static let lineSpacingRange: ClosedRange<Double> = 1.1...2.1
@@ -101,6 +107,9 @@ struct ReaderPreferences: Codable, Equatable, Sendable {
         leftHanded = (try? c.decode(Bool.self, forKey: .leftHanded)) ?? d.leftHanded
         followsDynamicType = (try? c.decode(Bool.self, forKey: .followsDynamicType)) ?? d.followsDynamicType
         seasonalEffects = (try? c.decode(Bool.self, forKey: .seasonalEffects)) ?? d.seasonalEffects
+        largeInitial = (try? c.decode(Bool.self, forKey: .largeInitial)) ?? d.largeInitial
+        pageTurnSound = (try? c.decode(Bool.self, forKey: .pageTurnSound)) ?? d.pageTurnSound
+        pageTurnHaptic = (try? c.decode(Bool.self, forKey: .pageTurnHaptic)) ?? d.pageTurnHaptic
     }
 
     private static let defaults = ReaderPreferences()
@@ -156,6 +165,8 @@ struct ReaderStyle: Equatable {
     /// The language of the Bible being read ("en", "es"): book names in the
     /// text and running heads follow it, not the app's language.
     let bibleLanguage: String
+    /// A large first letter at the start of the chapter.
+    let largeInitial: Bool
 
     var palette: ThemePalette { theme.palette }
 
@@ -175,5 +186,6 @@ struct ReaderStyle: Equatable {
         self.theme = theme
         showsVerseNumbers = preferences.showsVerseNumbers
         layout = preferences.layout
+        largeInitial = preferences.largeInitial
     }
 }

@@ -246,7 +246,7 @@ private struct NotesList: View {
                     Button {
                         editing = note
                     } label: {
-                        NoteRow(note: note)
+                        NoteListRow(note: note)
                     }
                     .listRowBackground(palette.surface)
                 }
@@ -269,6 +269,7 @@ private struct NotesList: View {
                 } label: {
                     Label("New Note", systemImage: "square.and.pencil")
                 }
+                .accessibilityIdentifier("library.newNote")
             }
         }
         .sheet(item: $editing) { note in

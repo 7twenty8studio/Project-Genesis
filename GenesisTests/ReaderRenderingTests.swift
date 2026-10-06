@@ -25,6 +25,30 @@ struct ReaderRenderingTests {
         }
     }
 
+    @Test func largeInitialOnlyRestylesTheFirstLetter() throws {
+        let plainSplit = try #require(ChapterTextBuilder.initialSplit("In the beginning"))
+        #expect(plainSplit.initial == "I" && plainSplit.rest == "n the beginning")
+        let quoted = try #require(ChapterTextBuilder.initialSplit("\u{201C}Comfort ye"))
+        #expect(quoted.initial == "\u{201C}C" && quoted.rest == "omfort ye", "An opening quotation mark stays with the letter")
+        #expect(ChapterTextBuilder.initialSplit("…") == nil)
+
+        let genesis = try chapter(ChapterID(book: 1, chapter: 1))
+        let built = ChapterTextBuilder.build(genesis, style: style, decorations: ChapterDecorations())
+        let first = try #require(genesis.verses.first)
+        let start = try #require(built.verseOffsets[first.id])
+        // No "1" before the first verse: the large initial opens the chapter.
+        #expect((built.text.string as NSString).substring(with: NSRange(location: start, length: 1)) == "I")
+        let initialFont = try #require(built.text.attribute(.font, at: start, effectiveRange: nil) as? UIFont)
+        let bodyFont = try #require(built.text.attribute(.font, at: start + 1, effectiveRange: nil) as? UIFont)
+        #expect(initialFont.pointSize > bodyFont.pointSize * 2)
+
+        var plain = ReaderPreferences()
+        plain.largeInitial = false
+        let without = ChapterTextBuilder.build(genesis, style: ReaderStyle(preferences: plain, theme: .paper, contentSizeCategory: .large), decorations: ChapterDecorations())
+        let plainStart = try #require(without.verseOffsets[first.id])
+        #expect((without.text.string as NSString).substring(with: NSRange(location: plainStart, length: 1)) == "1", "Turned off, verse 1 is numbered as before")
+    }
+
     @Test func pagesCoverTextExactlyOnce() throws {
         let chapter = try chapter(ChapterID(book: 19, chapter: 119), translation: .web)
         let built = ChapterTextBuilder.build(chapter, style: style, decorations: ChapterDecorations())

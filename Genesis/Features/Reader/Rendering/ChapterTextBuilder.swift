@@ -91,7 +91,10 @@ enum ChapterTextBuilder {
                 attributes[.backgroundColor] = palette.uiAccent.withAlphaComponent(style.theme.isDark ? 0.28 : 0.16)
             }
 
-            if style.showsVerseNumbers {
+            // The chapter opens with a large first letter instead of "1",
+            // as printed Bibles do (the chapter number is above it).
+            let opensWithInitial = index == 0 && verse.id.verse == 1 && style.largeInitial
+            if style.showsVerseNumbers && !opensWithInitial {
                 var numberAttributes = attributes
                 numberAttributes[.font] = style.font.uiFont(size: size * 0.58, weight: .semibold)
                 numberAttributes[.foregroundColor] = palette.uiAccent
@@ -111,7 +114,16 @@ enum ChapterTextBuilder {
             }
             // Poetry lines stay in one paragraph so indentation is consistent.
             let text = verse.text.replacingOccurrences(of: "\n", with: "\u{2028}")
-            result.append(NSAttributedString(string: text, attributes: textAttributes))
+            if opensWithInitial, let split = initialSplit(text) {
+                // Only the styling changes: the letters are the verse's own.
+                var initialAttributes = textAttributes
+                initialAttributes[.font] = style.font.uiFont(size: size * 2.6)
+                initialAttributes[.foregroundColor] = palette.uiAccent
+                result.append(NSAttributedString(string: split.initial, attributes: initialAttributes))
+                result.append(NSAttributedString(string: split.rest, attributes: textAttributes))
+            } else {
+                result.append(NSAttributedString(string: text, attributes: textAttributes))
+            }
 
             if decorations.notedVerses.contains(verse.id), let noteMarker {
                 let marker = NSMutableAttributedString(string: "\u{2009}")
@@ -132,6 +144,15 @@ enum ChapterTextBuilder {
     }
 
     // MARK: - Pieces
+
+    /// The text up to and including its first letter (so an opening quotation
+    /// mark stays with it), and the rest; nil if there's no letter. The two
+    /// parts together are exactly the original text.
+    nonisolated static func initialSplit(_ text: String) -> (initial: String, rest: String)? {
+        guard let letter = text.firstIndex(where: \.isLetter) else { return nil }
+        let end = text.index(after: letter)
+        return (String(text[..<end]), String(text[end...]))
+    }
 
     private static func appendTitle(for chapter: Chapter, style: ReaderStyle, into result: NSMutableAttributedString) {
         let palette = style.palette

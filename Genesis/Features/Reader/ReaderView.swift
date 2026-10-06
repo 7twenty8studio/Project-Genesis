@@ -9,6 +9,7 @@ import UIKit
 struct ReaderView: View {
     @Environment(ReaderViewModel.self) private var reader
     @Environment(EntitlementService.self) private var entitlements
+    @Environment(\.wordStudy) private var wordStudy
     @Environment(ReaderSettings.self) private var settings
     @Environment(AudioPlayerService.self) private var audio
     @Environment(AmbientSoundService.self) private var ambient
@@ -126,7 +127,10 @@ struct ReaderView: View {
                         onNote: openNoteForSelection,
                         onCrossReferences: showCrossReferencesForSelection,
                         onExplain: explainSelection,
-                        onMemorise: memoriseAction
+                        onMemorise: memoriseAction,
+                        // The word data follows English (KJV) verse numbering; the
+                        // Spanish Bible numbers some verses differently.
+                        onWordStudy: wordStudy != nil && reader.translation.language == "en" ? studyWordsForSelection : nil
                     )
                     .padding(.bottom, readerSafeArea.bottom + 8)
                     .frame(maxHeight: .infinity, alignment: .bottom)
@@ -209,7 +213,9 @@ struct ReaderView: View {
                 pageTurnToken: reader.pageTurnToken,
                 // The running head and page count make way for the controls
                 // and tab bar, which would otherwise sit on top of them.
-                hidesPageChrome: reader.showsControls && !reader.isSelecting
+                hidesPageChrome: reader.showsControls && !reader.isSelecting,
+                pageTurnSound: preferences.pageTurnSound,
+                pageTurnHaptic: preferences.pageTurnHaptic
             )
             // The transition style can only be set when the controller is
             // created. Turning the device builds it afresh too: a page curl
@@ -355,6 +361,13 @@ struct ReaderView: View {
         sheet = .study(StudyPassage(chapter: chapter, lastVerse: last), .summarize)
     }
 
+    /// The Hebrew or Greek and the commentary for the first selected verse.
+    private func studyWordsForSelection() {
+        guard let verse = reader.selection.min() else { return }
+        reader.clearSelection()
+        sheet = .wordStudy(verse)
+    }
+
     /// The selected verses (kept within one book).
     private func explainSelection() {
         guard let first = reader.selection.min(), let last = reader.selection.max() else { return }
@@ -389,6 +402,8 @@ struct ReaderView: View {
         switch sheet {
         case let .verseImage(card):
             VerseImageView(card: card)
+        case let .wordStudy(verse):
+            VerseStudyView(verse: verse)
         case .chapterPicker:
             ChapterPickerView { chapter in
                 reader.open(chapter)
@@ -441,6 +456,7 @@ enum ReaderSheet: Identifiable {
     case ambient
     case bibles
     case verseImage(VerseCard)
+    case wordStudy(VerseID)
 
     var id: String {
         switch self {
@@ -452,6 +468,7 @@ enum ReaderSheet: Identifiable {
         case .bibles: "bibles"
         case let .note(note): "note-\(note.id)"
         case let .crossReferences(verse): "xref-\(verse.rawValue)"
+        case let .wordStudy(verse): "words-\(verse.rawValue)"
         case let .premium(feature): "premium-\(feature.rawValue)"
         case let .study(passage, action): "study-\(passage.start.rawValue)-\(passage.end.rawValue)-\(action.rawValue)"
         }

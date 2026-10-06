@@ -51,16 +51,6 @@
         }
       }
     },
-    "%@ plan": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Plan %@"
-          }
-        }
-      }
-    },
     "%@ starts %@.": {
       "localizations": {
         "es": {
@@ -1078,6 +1068,16 @@
         }
       }
     },
+    "Another prompt": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otra pregunta"
+          }
+        }
+      }
+    },
     "Answered": {
       "comment": "Prayer journal filter: answered prayers",
       "localizations": {
@@ -1859,6 +1859,26 @@
         }
       }
     },
+    "Clear Page": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Borrar página"
+          }
+        }
+      }
+    },
+    "Clear this page?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Borrar esta página?"
+          }
+        }
+      }
+    },
     "Clearly labelled": {
       "localizations": {
         "es": {
@@ -1955,6 +1975,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Comentar"
+          }
+        }
+      }
+    },
+    "Commentary": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comentario"
           }
         }
       }
@@ -2272,6 +2302,16 @@
         }
       }
     },
+    "Definition": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Definición"
+          }
+        }
+      }
+    },
     "Delete": {
       "localizations": {
         "es": {
@@ -2443,6 +2483,16 @@
         }
       }
     },
+    "Dismiss prompt": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descartar pregunta"
+          }
+        }
+      }
+    },
     "Display name": {
       "localizations": {
         "es": {
@@ -2560,6 +2610,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pendiente"
+          }
+        }
+      }
+    },
+    "Each chapter opens with a large first letter, and pages can turn with a soft sound and tap (Aa in the reader).": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada capítulo empieza con una letra inicial grande, y las páginas pueden pasar con un sonido y una vibración suaves (Aa en el lector)."
           }
         }
       }
@@ -2860,6 +2920,7 @@
       }
     },
     "Family": {
+      "comment": "Premium plan shared with family",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -2875,6 +2936,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Árbol genealógico"
+          }
+        }
+      }
+    },
+    "Family plan, billed monthly": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plan familiar, facturado mensualmente"
+          }
+        }
+      }
+    },
+    "Family plan, billed yearly": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plan familiar, facturado anualmente"
           }
         }
       }
@@ -3132,6 +3213,26 @@
         }
       }
     },
+    "For up to six people in your Apple family, each with their own notes and progress.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para hasta seis personas de tu familia de Apple, cada una con sus propias notas y progreso."
+          }
+        }
+      }
+    },
+    "For you, on all your devices.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para ti, en todos tus dispositivos."
+          }
+        }
+      }
+    },
     "Forgot password?": {
       "localizations": {
         "es": {
@@ -3179,6 +3280,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Del Diccionario Bíblico de Easton (1897)"
+          }
+        }
+      }
+    },
+    "From Strong's": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Según Strong"
           }
         }
       }
@@ -3406,6 +3517,16 @@
         }
       }
     },
+    "Greek": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Griego"
+          }
+        }
+      }
+    },
     "Green": {
       "comment": "Highlight colour",
       "localizations": {
@@ -3497,6 +3618,46 @@
         }
       }
     },
+    "Handwriting": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escritura a mano"
+          }
+        }
+      }
+    },
+    "Handwriting page": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Página de escritura a mano"
+          }
+        }
+      }
+    },
+    "Handwritten journaling": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diario escrito a mano"
+          }
+        }
+      }
+    },
+    "Handwritten note": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nota escrita a mano"
+          }
+        }
+      }
+    },
     "Hard": {
       "comment": "Memorise: I remembered with difficulty",
       "localizations": {
@@ -3524,6 +3685,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Escucha cualquier capítulo en voz alta mientras la página avanza contigo."
+          }
+        }
+      }
+    },
+    "Hebrew": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hebreo"
+          }
+        }
+      }
+    },
+    "Hebrew and Greek words, glosses and Greek definitions from STEPBible.org, based on work at Tyndale House Cambridge (CC BY 4.0). Hebrew definitions from Strong's Hebrew Dictionary via the Open Scriptures Hebrew Bible project (CC BY 4.0). Commentary from Matthew Henry's Concise Commentary (public domain).": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Palabras hebreas y griegas, glosas y definiciones griegas de STEPBible.org, basadas en el trabajo de Tyndale House Cambridge (CC BY 4.0). Definiciones hebreas del Diccionario hebreo de Strong, mediante el proyecto Open Scriptures Hebrew Bible (CC BY 4.0). Comentario: Matthew Henry's Concise Commentary (dominio público)."
           }
         }
       }
@@ -3639,6 +3820,16 @@
         }
       }
     },
+    "How have you grown since this time last year?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Cómo has crecido desde esta época el año pasado?"
+          }
+        }
+      }
+    },
     "How it reads": {
       "localizations": {
         "es": {
@@ -3721,6 +3912,26 @@
         }
       }
     },
+    "In the KJV": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En la KJV"
+          }
+        }
+      }
+    },
+    "In the original word order. Tap a word for its definition and where else it's used.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En el orden original de las palabras. Toca una palabra para ver su definición y dónde más se usa."
+          }
+        }
+      }
+    },
     "In the reader, long-press a verse and pick a colour.": {
       "localizations": {
         "es": {
@@ -3737,6 +3948,37 @@
           "stringUnit": {
             "state": "translated",
             "value": "Incluir detalles de la app y del dispositivo"
+          }
+        }
+      }
+    },
+    "Individual": {
+      "comment": "Premium plan for one person",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Individual"
+          }
+        }
+      }
+    },
+    "Individual plan, billed monthly": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plan individual, facturado mensualmente"
+          }
+        }
+      }
+    },
+    "Individual plan, billed yearly": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plan individual, facturado anualmente"
           }
         }
       }
@@ -4027,6 +4269,16 @@
         }
       }
     },
+    "Large first letter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Letra inicial grande"
+          }
+        }
+      }
+    },
     "Larger text": {
       "localizations": {
         "es": {
@@ -4195,6 +4447,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Interlineado"
+          }
+        }
+      }
+    },
+    "Lined paper": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Papel rayado"
           }
         }
       }
@@ -4516,6 +4778,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Marcar como leído"
+          }
+        }
+      }
+    },
+    "Matthew Henry, %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matthew Henry, %@"
           }
         }
       }
@@ -5201,6 +5473,16 @@
         }
       }
     },
+    "No original-language words are listed for this verse.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay palabras en el idioma original para este versículo."
+          }
+        }
+      }
+    },
     "No people, places or events are recorded for this chapter.": {
       "localizations": {
         "es": {
@@ -5574,6 +5856,36 @@
         }
       }
     },
+    "Origin": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Origen"
+          }
+        }
+      }
+    },
+    "Original Words": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Palabras originales"
+          }
+        }
+      }
+    },
+    "Page": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Página"
+          }
+        }
+      }
+    },
     "Page Curl": {
       "localizations": {
         "es": {
@@ -5590,6 +5902,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Paso de página"
+          }
+        }
+      }
+    },
+    "Page-turn haptic": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vibración al pasar página"
+          }
+        }
+      }
+    },
+    "Page-turn sound": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonido al pasar página"
           }
         }
       }
@@ -5848,6 +6180,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lugares"
+          }
+        }
+      }
+    },
+    "Plain paper": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Papel liso"
           }
         }
       }
@@ -6350,6 +6692,16 @@
         }
       }
     },
+    "Read Matthew Henry's commentary on every chapter, with Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Premium, lee el comentario de Matthew Henry sobre cada capítulo."
+          }
+        }
+      }
+    },
     "Read a plan together": {
       "localizations": {
         "es": {
@@ -6611,6 +6963,16 @@
         }
       }
     },
+    "Reading touches": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Detalles de lectura"
+          }
+        }
+      }
+    },
     "Reading, highlights, notes and search are always here. Choose anything else you'd like; you can change this any time in Settings.": {
       "localizations": {
         "es": {
@@ -6718,6 +7080,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Reflexión"
+          }
+        }
+      }
+    },
+    "Reflection prompt": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pregunta para reflexionar"
           }
         }
       }
@@ -7360,6 +7732,16 @@
         }
       }
     },
+    "See every Hebrew and Greek word in this verse, with Strong's definitions, with Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Premium, mira cada palabra hebrea y griega de este versículo, con las definiciones de Strong."
+          }
+        }
+      }
+    },
     "See how each Bible is translated, how it reads, its audio, and whether it's public domain.": {
       "localizations": {
         "es": {
@@ -7406,6 +7788,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Selecciona un versículo y toca Imagen para crear una imagen para compartir, en papel o con las estaciones."
+          }
+        }
+      }
+    },
+    "Select a verse and tap Word Study to see its Hebrew or Greek, Strong's definitions and Matthew Henry's commentary.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selecciona un versículo y toca Estudio de palabras para ver su hebreo o griego, las definiciones de Strong y el comentario de Matthew Henry."
           }
         }
       }
@@ -8156,6 +8548,16 @@
         }
       }
     },
+    "Starts your entry with this prompt.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empieza tu entrada con esta pregunta."
+          }
+        }
+      }
+    },
     "Stays close to the original wording but smooths it where a literal rendering would be hard to follow.": {
       "localizations": {
         "es": {
@@ -8304,6 +8706,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Datos de estudio no disponibles"
+          }
+        }
+      }
+    },
+    "Study deeper, write freely": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estudia a fondo, escribe libremente"
           }
         }
       }
@@ -8701,6 +9113,16 @@
         }
       }
     },
+    "The Hebrew and Greek words behind every verse, with Strong's definitions, and Matthew Henry's commentary on the whole Bible.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las palabras hebreas y griegas de cada versículo, con las definiciones de Strong, y el comentario de Matthew Henry sobre toda la Biblia."
+          }
+        }
+      }
+    },
     "The classic English Bible, cherished for its majestic, poetic language.": {
       "localizations": {
         "es": {
@@ -8737,6 +9159,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "La descarga está dañada. Inténtalo de nuevo."
+          }
+        }
+      }
+    },
+    "The first %lld verses.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los primeros %lld versículos."
           }
         }
       }
@@ -8911,6 +9343,16 @@
         }
       }
     },
+    "There's no commentary on this verse.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay comentario sobre este versículo."
+          }
+        }
+      }
+    },
     "There's one Bible in %@ so far: %@.": {
       "localizations": {
         "es": {
@@ -8961,6 +9403,16 @@
         }
       }
     },
+    "This page is too large to sync, so it stays on this device.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta página es demasiado grande para sincronizarse, así que se queda en este dispositivo."
+          }
+        }
+      }
+    },
     "This permanently deletes your account and your data in the cloud. It can't be undone.": {
       "localizations": {
         "es": {
@@ -8997,6 +9449,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Esta herramienta de estudio es parte de Genesis Premium."
+          }
+        }
+      }
+    },
+    "This word isn't in the dictionary.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta palabra no está en el diccionario."
           }
         }
       }
@@ -9433,6 +9895,26 @@
         }
       }
     },
+    "Used %lld times in the Bible.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se usa %lld veces en la Biblia."
+          }
+        }
+      }
+    },
+    "Used once in the Bible.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se usa una vez en la Biblia."
+          }
+        }
+      }
+    },
     "Used with the publisher's permission. Genesis will add licensed Bibles as agreements allow.": {
       "localizations": {
         "es": {
@@ -9605,12 +10087,42 @@
         }
       }
     },
+    "What are you grateful for today?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Por qué estás agradecido hoy?"
+          }
+        }
+      }
+    },
+    "What brought you peace today?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué te dio paz hoy?"
+          }
+        }
+      }
+    },
     "What can people pray for?": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "¿Por qué pueden orar los demás?"
+          }
+        }
+      }
+    },
+    "What did today's reading show you about love?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué te mostró la lectura de hoy sobre el amor?"
           }
         }
       }
@@ -9625,12 +10137,62 @@
         }
       }
     },
+    "What does a quiet, faithful day look like for you?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Cómo es para ti un día sereno y fiel?"
+          }
+        }
+      }
+    },
     "What happened, and what did you expect? Steps to repeat it help a lot.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué pasó y qué esperabas? Los pasos para repetirlo ayudan mucho."
+          }
+        }
+      }
+    },
+    "What is one hope you have for the week ahead?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué esperanza tienes para la semana que viene?"
+          }
+        }
+      }
+    },
+    "What is something you are learning to let go of?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué estás aprendiendo a soltar?"
+          }
+        }
+      }
+    },
+    "What is weighing on your heart right now?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué pesa en tu corazón ahora mismo?"
+          }
+        }
+      }
+    },
+    "What question would you like to sit with for a while?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué pregunta te gustaría meditar por un tiempo?"
           }
         }
       }
@@ -9645,6 +10207,16 @@
         }
       }
     },
+    "What small kindness did you receive or give today?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué pequeña bondad recibiste o diste hoy?"
+          }
+        }
+      }
+    },
     "What stood out to you in this reading?": {
       "localizations": {
         "es": {
@@ -9655,12 +10227,52 @@
         }
       }
     },
+    "What stood out to you in today's reading?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué te llamó la atención en la lectura de hoy?"
+          }
+        }
+      }
+    },
     "What stood out to you today?": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué te llamó la atención hoy?"
+          }
+        }
+      }
+    },
+    "What surprised you in your reading today?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué te sorprendió en tu lectura de hoy?"
+          }
+        }
+      }
+    },
+    "What would you like to pray or reflect on for someone else?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Por qué te gustaría orar o reflexionar por otra persona?"
+          }
+        }
+      }
+    },
+    "What would you like to remember about this season of your life?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué te gustaría recordar de esta etapa de tu vida?"
           }
         }
       }
@@ -9715,6 +10327,46 @@
         }
       }
     },
+    "When did you feel most at rest recently?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Cuándo te sentiste más en paz últimamente?"
+          }
+        }
+      }
+    },
+    "Where did you notice hope this week?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Dónde notaste esperanza esta semana?"
+          }
+        }
+      }
+    },
+    "Where do you need patience right now?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Dónde necesitas paciencia ahora mismo?"
+          }
+        }
+      }
+    },
+    "Where it's used": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dónde se usa"
+          }
+        }
+      }
+    },
     "Where this was is debated or unknown. The pin shows one suggested site.": {
       "localizations": {
         "es": {
@@ -9731,6 +10383,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué Biblia es la adecuada para mí?"
+          }
+        }
+      }
+    },
+    "Which part of your reading felt hard to understand?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué parte de tu lectura te resultó difícil de entender?"
+          }
+        }
+      }
+    },
+    "Which words from your reading would you like to carry into tomorrow?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué palabras de tu lectura te gustaría llevar contigo mañana?"
           }
         }
       }
@@ -9752,6 +10424,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Blanco"
+          }
+        }
+      }
+    },
+    "Who could you encourage this week, and how?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿A quién podrías animar esta semana, y cómo?"
           }
         }
       }
@@ -9859,12 +10541,32 @@
         }
       }
     },
+    "Word Study": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estudio de palabras"
+          }
+        }
+      }
+    },
     "Word for word": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Palabra por palabra"
+          }
+        }
+      }
+    },
+    "Word study and commentary": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estudio de palabras y comentario"
           }
         }
       }
@@ -9926,6 +10628,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Escribe sobre un versículo desde el lector o empieza una entrada de diario con el botón de abajo."
+          }
+        }
+      }
+    },
+    "Write or sketch in any note with Apple Pencil or your finger, and start a journal entry from a gentle prompt.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escribe o dibuja en cualquier nota con el Apple Pencil o con el dedo, y empieza una entrada del diario con una pregunta sencilla."
+          }
+        }
+      }
+    },
+    "Write or sketch with Apple Pencil or your finger.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escribe o dibuja con el Apple Pencil o con el dedo."
           }
         }
       }
@@ -10259,6 +10981,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "El líder de tu grupo puede compartir el código desde la página Miembros del grupo."
+          }
+        }
+      }
+    },
+    "Your handwriting on this page will be removed.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se borrará tu escritura de esta página."
           }
         }
       }

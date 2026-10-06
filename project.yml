@@ -39,6 +39,8 @@ targets:
       - package: Sentry
         product: Sentry
       - target: GenesisWidgets
+      # The Apple Watch app ships inside the iPhone app.
+      - target: GenesisWatch
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis
@@ -151,11 +153,9 @@ targets:
         GENERATE_INFOPLIST_FILE: YES
         TEST_TARGET_NAME: Genesis
 
-  # Apple Watch: verse of the day (Premium), sent from the iPhone. Built on its
-  # own (./Scripts/build.sh --watch, needs the watchOS platform in Xcode ›
-  # Settings › Components). Not yet embedded in the iPhone app, so everyday
-  # builds don't need watchOS; add `- target: GenesisWatch` to Genesis's
-  # dependencies when it's ready to ship.
+  # Apple Watch: verse of the day (Premium), sent from the iPhone. Embedded in
+  # the iPhone app, so every build needs the watchOS platform (Xcode ›
+  # Settings › Components). ./Scripts/build.sh --watch also builds it on its own.
   GenesisWatch:
     type: application
     platform: watchOS

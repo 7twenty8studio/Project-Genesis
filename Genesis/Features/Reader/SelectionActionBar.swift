@@ -9,6 +9,8 @@ struct SelectionActionBar: View {
     let onCrossReferences: () -> Void
     let onExplain: () -> Void
     var onMemorise: (() -> Void)?
+    /// Original words and commentary (nil when the data isn't in the app).
+    var onWordStudy: (() -> Void)?
 
     @Environment(ReaderViewModel.self) private var reader
     @Environment(\.palette) private var palette
@@ -30,6 +32,12 @@ struct SelectionActionBar: View {
                     ViewThatFits(in: .horizontal) {
                         memoriseButton(onMemorise, compact: false)
                         memoriseButton(onMemorise, compact: true)
+                    }
+                }
+                if let onWordStudy {
+                    ViewThatFits(in: .horizontal) {
+                        wordStudyButton(onWordStudy, compact: false)
+                        wordStudyButton(onWordStudy, compact: true)
                     }
                 }
                 if assistant.isEnabled {
@@ -112,6 +120,22 @@ struct SelectionActionBar: View {
         .sensoryFeedback(.impact(weight: .light), trigger: highlightTrigger)
         .sensoryFeedback(.success, trigger: copied) { _, now in now }
         .onChange(of: reader.selection) { copied = false }
+    }
+
+    private func wordStudyButton(_ perform: @escaping () -> Void, compact: Bool) -> some View {
+        Button(action: perform) {
+            if compact {
+                Image(systemName: "character.book.closed")
+                    .font(.footnote.weight(.semibold))
+            } else {
+                Label("Word Study", systemImage: "character.book.closed")
+                    .font(.footnote.weight(.semibold))
+            }
+        }
+        .buttonStyle(.bordered)
+        .controlSize(.small)
+        .accessibilityLabel("Word Study")
+        .accessibilityIdentifier("selection.wordStudy")
     }
 
     private func memoriseButton(_ perform: @escaping () -> Void, compact: Bool) -> some View {

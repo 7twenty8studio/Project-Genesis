@@ -75,13 +75,20 @@ Xcode's local test signatures.
 
 ## 5. Before release (App Store Connect)
 
-1. Create the subscription group **Genesis Premium** with two auto-renewable
+1. Create the subscription group **Genesis Premium** with four auto-renewable
    subscriptions whose product IDs match exactly:
-   - `com.7twenty8studio.genesis.premium.monthly` at $7.99
-   - `com.7twenty8studio.genesis.premium.yearly` at $59.99
-   Turn on Family Sharing (the PRD lists it as a Premium feature), and add a
-   1-week free introductory offer to each (the paywall shows the trial when
-   the App Store offers it).
+
+   | Product ID | Price | Level | Family Sharing |
+   |---|---|---|---|
+   | `com.7twenty8studio.genesis.premium.family.monthly` | $12.99 | 1 | **On** |
+   | `com.7twenty8studio.genesis.premium.family.yearly` | $99.99 | 1 | **On** |
+   | `com.7twenty8studio.genesis.premium.monthly` | $7.99 | 2 | **Off** |
+   | `com.7twenty8studio.genesis.premium.yearly` | $59.99 | 2 | **Off** |
+
+   Family Sharing can't be turned off once it's on, so leave it off for the
+   two Individual products. Family is level 1, so moving from Individual to
+   Family is an upgrade (Apple prorates it). Add a 1-week free introductory
+   offer to each (the paywall shows the trial when the App Store offers it).
 2. Publish a privacy policy and set `GENESIS_PRIVACY_URL` in
    `Config/Secrets.xcconfig` (e.g. `https:$(SLASH)$(SLASH)example.com/privacy`).
    App Review requires it on the Premium screen. Terms default to Apple's
@@ -90,7 +97,7 @@ Xcode's local test signatures.
 
 ## What's free and what's Premium
 
-| Free | Premium ($7.99/month or $59.99/year, 7-day free trial) |
+| Free | Premium: Individual $7.99/month or $59.99/year; Family (up to 6) $12.99/month or $99.99/year; 7-day free trial |
 |---|---|
 | Reading, every public-domain translation, cross references | Everything in Free |
 | Word and reference search | Advanced search: topics, one testament or book, sorting |
@@ -98,7 +105,8 @@ Xcode's local test signatures.
 | Prayer journal and reading plans (no limits) | Themes: Cream, Parchment, Midnight, Sage and the seasons |
 | Cloud backup and sync with a free account | Every study tool, up to 30 new answers a day |
 | Groups, with the shared plan and progress | Family trees, the Bible map and journeys, the reader's Context panel |
-| Explore: the timeline and people | |
+| Explore: the timeline and people | Word study: Hebrew and Greek with Strong's, Matthew Henry's commentary |
+| Handwritten notes and journal prompts | |
 | Themes: Auto, Paper, Sepia, Slate, High Contrast | |
 | 3 passage explanations a day (with a free account) | Reading insights and Year in Review stats |
 | The original widgets (verse, continue reading, streak, prayer) | New widgets: Today's Reading, Memorise, Group Progress, listening on the Lock Screen, Apple Watch |

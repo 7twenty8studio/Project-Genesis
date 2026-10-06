@@ -177,7 +177,7 @@ echo "Building..."
 run_xcodebuild build-for-testing
 BUILD_STATUS=$?
 
-# The Apple Watch app builds on its own scheme (not embedded in the iPhone app yet).
+# The Apple Watch app is embedded in the iPhone app; --watch also builds its own scheme.
 if [ "$WATCH" = true ]; then
     echo "Building the Apple Watch app..."
     xcodebuild -project Genesis.xcodeproj -scheme GenesisWatch \

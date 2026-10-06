@@ -42,7 +42,13 @@ const ALLOW_XCODE_STOREKIT = Deno.env.get("ALLOW_XCODE_STOREKIT") === "true";
 if (ALLOW_XCODE_STOREKIT) {
   console.warn("ALLOW_XCODE_STOREKIT is on: Xcode test purchases unlock Premium. Remove this secret before release.");
 }
-const PRODUCT_IDS = ["com.7twenty8studio.genesis.premium.monthly", "com.7twenty8studio.genesis.premium.yearly"];
+// Individual (one person) and Family (shared through Family Sharing) plans.
+const PRODUCT_IDS = [
+  "com.7twenty8studio.genesis.premium.monthly",
+  "com.7twenty8studio.genesis.premium.yearly",
+  "com.7twenty8studio.genesis.premium.family.monthly",
+  "com.7twenty8studio.genesis.premium.family.yearly",
+];
 const APPLE_ROOT_URL = "https://www.apple.com/certificateauthority/AppleRootCA-G3.cer";
 /** A saved subscription is re-verified at least this often, so a refund ends it. */
 const REVERIFY_AFTER_MS = 7 * 24 * 60 * 60 * 1000;

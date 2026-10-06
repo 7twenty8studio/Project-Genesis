@@ -66,6 +66,11 @@ on. The study assistant's announcement is ready and waits for its switch.
 - **Feature choices**: "Make Genesis yours" at setup and Settings › Features
   (listen, plans and prayer, explore, study notes, groups and community), with
   one-time TipKit hints instead of a tutorial.
+- **Word study and commentary** (Premium): the Hebrew or Greek behind each
+  verse with Strong's definitions (STEPBible, Open Scriptures) and Matthew
+  Henry's Concise Commentary. **Handwritten journaling** with Apple Pencil or a
+  finger (free, synced), with reflection prompts. **Reading touches**: a large
+  first letter for each chapter, optional page-turn sound and haptic.
 - **Global Reading Library**: Bibles grouped by language, most read first,
   each with its translation approach, reading level, audio and rights, and a
   "Which Bible is right for me?" guide with suggestions.
@@ -94,7 +99,8 @@ on. The study assistant's announcement is ready and waits for its switch.
   verses and places.
 - **Insights**: streaks, reading time, chapters, books, highlights, favourite
   books and topics.
-- **Premium** with StoreKit 2: $7.99/month or $59.99/year with a 7-day free
+- **Premium** with StoreKit 2: Individual $7.99/month or $59.99/year, Family
+  (up to six people) $12.99/month or $99.99/year, each with a 7-day free
   trial (see PHASE3_SETUP.md for what's free and what's Premium). Every Bible,
   sync, and Explore's timeline and people are free; Premium adds the morning
   welcome, family trees and maps, Memorise, ambient sounds and more.

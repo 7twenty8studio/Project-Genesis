@@ -40,6 +40,12 @@ final class Phase3UITests: GenesisUITestCase {
         unlock.tap()
         XCTAssertTrue(app.buttons["premium.subscribe"].waitForExistence(timeout: Genesis.timeout), "Unlock opens Premium")
         XCTAssertTrue(app.buttons["premium.restore"].exists, "Restore Purchases is offered")
+        // Individual or Family.
+        let family = app.segmentedControls.buttons["Family"]
+        Genesis.scrollIntoView(family, in: app)
+        XCTAssertTrue(family.waitForExistence(timeout: Genesis.timeout), "A Family plan is offered")
+        family.tap()
+        XCTAssertTrue(Genesis.element(containing: "12.99", in: app).waitForExistence(timeout: Genesis.timeout) || Genesis.element(containing: "99.99", in: app).exists, "…at the Family price")
         Genesis.tapToolbarButton("premium.close", in: app)
         XCTAssertTrue(Genesis.wait { !app.buttons["premium.subscribe"].exists })
     }
@@ -114,6 +120,37 @@ final class Phase3UITests: GenesisUITestCase {
         questions.tap()
         let answer = app.staticTexts["study.answer"]
         XCTAssertTrue(Genesis.wait { answer.exists && answer.label.contains("discussion") }, "Discussion questions load")
+    }
+
+    // MARK: Word study
+
+    @MainActor
+    func testWordStudyShowsGreekAndCommentary() {
+        let app = launchPremium(verse: john316)
+        XCTAssertTrue(Genesis.selectVerse(app), "A verse can be selected")
+        let study = app.buttons["selection.wordStudy"]
+        XCTAssertTrue(study.waitForExistence(timeout: Genesis.timeout), "Word Study is offered for a selection")
+        study.tap()
+        let word = app.descendants(matching: .any).matching(identifier: "wordStudy.word").firstMatch
+        XCTAssertTrue(word.waitForExistence(timeout: Genesis.timeout), "The original words are listed")
+        word.tap()
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "lexicon.header").firstMatch.waitForExistence(timeout: Genesis.timeout), "A word opens its Strong's entry")
+        app.navigationBars.buttons.firstMatch.tap()
+        let commentary = app.segmentedControls.buttons["Commentary"]
+        XCTAssertTrue(commentary.waitForExistence(timeout: Genesis.timeout))
+        commentary.tap()
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "wordStudy.commentary").firstMatch.waitForExistence(timeout: Genesis.timeout), "Matthew Henry's commentary on the passage")
+    }
+
+    @MainActor
+    func testWordStudyPreviewsForFreeAccounts() {
+        let app = Genesis.launch(verse: john316)
+        XCTAssertTrue(Genesis.selectVerse(app), "A verse can be selected")
+        let study = app.buttons["selection.wordStudy"]
+        XCTAssertTrue(study.waitForExistence(timeout: Genesis.timeout))
+        study.tap()
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "wordStudy.word").firstMatch.waitForExistence(timeout: Genesis.timeout), "A few words are shown")
+        XCTAssertTrue(app.buttons["teaser.unlock"].waitForExistence(timeout: Genesis.timeout), "…and the way to unlock the rest")
     }
 
     // MARK: Timeline, people, maps

@@ -45,7 +45,9 @@ shares; README.md has the architecture.
   day, enforced again on the server (supabase/functions/study-ai/lib.ts;
   Premium gets 30 new answers a day). Premium extras are
   `PremiumFeature` cases checked with `EntitlementService.allows` at each entry
-  point (the tier table is in PHASE3_SETUP.md). Prices: $7.99 / $59.99.
+  point (the tier table is in PHASE3_SETUP.md). Plans (`PremiumPlan`, `PremiumProduct`):
+  Individual $7.99 / $59.99 (Family Sharing off) and Family $12.99 / $99.99
+  (Family Sharing on), one subscription group; study-ai accepts all four.
 - The study assistant is behind a server-side switch (public.feature_flags row
   `study_assistant`, read by `FeatureFlagService`; off for now). Check
   `StudyAssistant.isEnabled` before showing any AI entry point; study-ai also
@@ -78,6 +80,21 @@ shares; README.md has the architecture.
   (`PremiumTeaser`), the Map tab and the reader's Context panel need
   `.historicalContent`.
 
+## Word study, journaling, reading touches
+- Word study (Premium, `.wordStudy`): Resources/Study/WordStudy.sqlite, built
+  by Tools/StudyData/build_wordstudy.py from STEPBible TAHOT/TAGNT/TBESG
+  (CC BY 4.0), Strong's Hebrew via Open Scriptures (CC BY 4.0) and Matthew
+  Henry's Concise Commentary (public domain); keep LICENSE.txt and
+  `WordStudyRepository.attribution`. Hebrew/Greek shown verbatim; English
+  verses always come from the Bible databases. `VerseStudyView` opens from the
+  selection bar (Word Study); free accounts see two words and a teaser.
+- Handwritten pages (free): `Note.drawing` (PencilKit data, external storage),
+  synced as base64 in notes.drawing (≤ 2 MB; larger stays on the device).
+  Journal entries offer `JournalPrompts`.
+- Reading touches: `ReaderPreferences.largeInitial` (restyles, never changes,
+  the first letter; verse 1's number is dropped), `pageTurnSound`
+  (`PageTurnFeedback`, a system sound so no audio session) and `pageTurnHaptic`.
+
 ## Memorise Scripture
 - Premium (`.memorise`), shown with Plans & Prayer. `MemoryVerse` (SwiftData,
   synced as `memory_verses`) stores the passage's verse ids, translation and
@@ -95,9 +112,9 @@ shares; README.md has the architecture.
   The widgets that were free before stay free.
 - Apple Watch (verse of the day, Premium): GenesisWatch + GenesisWatchWidgets
   targets, fed by `WatchConnector` (WatchConnectivity application context,
-  `WatchPayload`). Built with `./Scripts/build.sh --watch`; not embedded in
-  the iPhone app until the owner is ready (add `- target: GenesisWatch` to
-  Genesis's dependencies), so everyday builds don't need watchOS.
+  `WatchPayload`). Embedded in the iPhone app (a dependency of Genesis in
+  project.yml), so every build needs the watchOS platform installed in Xcode;
+  `./Scripts/build.sh --watch` also builds it on its own.
 
 ## Phase 4: audio, groups, community
 - Audio: `AudioPlayerService` (device voices via `SpeechNarrator`, recordings

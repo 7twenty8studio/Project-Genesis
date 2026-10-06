@@ -140,6 +140,9 @@ final class Note {
     var bookNumber: Int? = nil
     var chapterNumber: Int? = nil
     var theme: String? = nil
+    /// A handwritten page: `PKDrawing.dataRepresentation()`, or nil for none.
+    /// Optional with a default, so existing stores migrate automatically.
+    @Attribute(.externalStorage) var drawing: Data? = nil
     var createdAt: Date
     var updatedAt: Date
 

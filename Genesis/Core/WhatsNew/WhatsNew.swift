@@ -27,7 +27,29 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal]
+
+    static let studyAndJournal = WhatsNewAnnouncement(
+        id: "word-study-handwriting-touches",
+        title: String(localized: "Study deeper, write freely"),
+        items: [
+            WhatsNewItem(
+                systemImage: "character.book.closed",
+                title: String(localized: "Word study and commentary"),
+                detail: String(localized: "Select a verse and tap Word Study to see its Hebrew or Greek, Strong's definitions and Matthew Henry's commentary.")
+            ),
+            WhatsNewItem(
+                systemImage: "pencil.tip",
+                title: String(localized: "Handwritten journaling"),
+                detail: String(localized: "Write or sketch in any note with Apple Pencil or your finger, and start a journal entry from a gentle prompt.")
+            ),
+            WhatsNewItem(
+                systemImage: "textformat.size.larger",
+                title: String(localized: "Reading touches"),
+                detail: String(localized: "Each chapter opens with a large first letter, and pages can turn with a soft sound and tap (Aa in the reader).")
+            ),
+        ]
+    )
 
     static let freeSyncAndWelcome = WhatsNewAnnouncement(
         id: "free-sync-explore-welcome",

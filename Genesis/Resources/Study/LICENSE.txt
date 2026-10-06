@@ -26,3 +26,32 @@ https://github.com/BradyStephenson/bible-data
 It is based on Nave's Topical Bible by Orville J. Nave (1896), public domain.
 Changes: converted to SQLite; references converted to numeric ids and checked
 against the KJV; topic names set in title case.
+
+WordStudy.sqlite (original-language words, lexicon and commentary for word
+study) is built by Tools/StudyData/build_wordstudy.py from:
+- STEPBible-Data: TAHOT (Translators Amalgamated Hebrew OT), TAGNT
+  (Translators Amalgamated Greek NT), TBESH and TBESG (Translators Brief
+  lexicons of Extended Strongs for Hebrew and Greek).
+  Data created by www.STEPBible.org based on work at Tyndale House Cambridge,
+  licensed under the Creative Commons Attribution 4.0 International License:
+  https://creativecommons.org/licenses/by/4.0/
+  Source: https://github.com/STEPBible/STEPBible-Data
+  TBESG's definitions are from Abbott-Smith's Manual Greek Lexicon of the New
+  Testament (1922) and Middle Liddell (1889), both public domain. TBESH's
+  "Meaning" definitions (from Online Bible's Abridged BDB) are not used.
+- Strong's Hebrew Dictionary (James Strong, 1890, public domain), as edited
+  in HebrewStrong.xml by the Open Scriptures Hebrew Bible project, licensed
+  under the Creative Commons Attribution 4.0 International License:
+  https://github.com/openscriptures/HebrewLexicon
+- Matthew Henry's Concise Commentary on the Whole Bible (1706-1721), public
+  domain, from the CrossWire SWORD module MHCC as converted to JSON in
+  https://github.com/daiyip/interactive-bible (data/commentary).
+Changes: converted to SQLite; STEPBible's references converted to numeric
+verse ids in KJV versification (Psalm titles joined to verse 1; KJV
+references used where TAGNT gives them); Hebrew words reconstructed from the
+LXX ("X") and Greek words not in the Textus Receptus left out; prefix and
+punctuation separators, paragraph marks and editorial brackets removed from
+the words; repeated word forms stored once; lexicon markup removed (line
+breaks kept); Hebrew definitions, derivations and KJV renderings taken from
+Strong's; commentary reference links and markup removed, and section headings
+taken from Henry's chapter outlines. No English Bible text is included.

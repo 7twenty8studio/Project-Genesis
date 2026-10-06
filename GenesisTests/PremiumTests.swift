@@ -41,3 +41,23 @@ struct PremiumTests {
         #expect(store.noteCount() == 1)
     }
 }
+
+@Suite("Premium plans")
+struct PremiumPlanTests {
+    @Test func everyPlanAndPeriodHasItsOwnProduct() {
+        #expect(PremiumProduct.product(.individual, yearly: true) == .yearly)
+        #expect(PremiumProduct.product(.individual, yearly: false) == .monthly)
+        #expect(PremiumProduct.product(.family, yearly: true) == .familyYearly)
+        #expect(PremiumProduct.product(.family, yearly: false) == .familyMonthly)
+        #expect(PremiumProduct.ids.count == 4)
+        for product in PremiumProduct.allCases {
+            #expect(PremiumProduct.product(product.plan, yearly: product.isYearly) == product)
+        }
+    }
+
+    @Test func familyCostsMoreThanIndividual() {
+        #expect(PremiumProduct.familyMonthly.fallbackPrice == "$12.99")
+        #expect(PremiumProduct.familyYearly.fallbackPrice == "$99.99")
+        #expect(PremiumProduct.monthly.fallbackPrice == "$7.99")
+    }
+}

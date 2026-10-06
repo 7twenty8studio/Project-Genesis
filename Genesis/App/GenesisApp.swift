@@ -22,6 +22,7 @@ struct GenesisApp: App {
     @State private var features: FeaturePreferences
     private let modelContainer: ModelContainer
     private let studyData = StudyRepository.bundled()
+    private let wordStudy = WordStudyRepository.bundled()
     private let topics = TopicRepository.bundled()
 
     init() {
@@ -155,6 +156,7 @@ struct GenesisApp: App {
                 .environment(community)
                 .environment(features)
                 .environment(\.studyData, studyData)
+                .environment(\.wordStudy, wordStudy)
                 .environment(\.topics, topics)
         }
         .modelContainer(modelContainer)

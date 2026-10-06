@@ -44,6 +44,41 @@ final class StudyUITests: GenesisUITestCase {
     }
 
     @MainActor
+    func testJournalEntryOffersPromptAndHandwritingPage() throws {
+        let app = Genesis.launch()
+        Genesis.openTab("Library", in: app)
+        app.buttons["Notes"].firstMatch.tap()
+
+        // The New Note menu's "Journal" item, not the kind filter's "Journal" segment.
+        let newNote = app.buttons["library.newNote"].firstMatch
+        XCTAssertTrue(newNote.waitForExistence(timeout: Genesis.timeout))
+        let filterSegment = app.segmentedControls.buttons["Journal"].firstMatch
+        let journalItems = app.buttons.matching(NSPredicate(format: "label == %@", "Journal"))
+        Genesis.openMenu(newNote, expecting: journalItems.element(boundBy: filterSegment.exists ? 1 : 0))
+        var menuItem: XCUIElement?
+        for index in 0..<journalItems.count {
+            let item = journalItems.element(boundBy: index)
+            if !filterSegment.exists || item.frame != filterSegment.frame { menuItem = item }
+        }
+        try XCTUnwrap(menuItem, "The New Note menu lists Journal").tap()
+
+        // A new journal entry offers a reflection prompt.
+        XCTAssertTrue(app.buttons["note.prompt"].waitForExistence(timeout: Genesis.timeout), "A reflection prompt is offered")
+
+        // Switch to the handwritten page; the canvas appears (no drawing here).
+        let pageControl = app.segmentedControls["note.handwriting"]
+        let handwriting = pageControl.exists
+            ? pageControl.buttons.element(boundBy: 1)
+            : app.buttons.matching(NSPredicate(format: "label == %@", "Handwriting")).firstMatch
+        XCTAssertTrue(handwriting.waitForExistence(timeout: Genesis.timeout), "The Text / Handwriting switch is showing")
+        handwriting.tap()
+        let canvas = app.descendants(matching: .any).matching(identifier: "note.canvas").firstMatch
+        XCTAssertTrue(canvas.waitForExistence(timeout: Genesis.timeout), "The handwriting canvas appears")
+
+        Genesis.tapToolbarButton("note.done", in: app)
+    }
+
+    @MainActor
     func testBookmarkFromControls() {
         let app = Genesis.launch(verse: 19_023_001)
         let bookmark = app.buttons["reader.bookmark"]

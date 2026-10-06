@@ -102,7 +102,8 @@ with expected (migration, kind, name) as (
     ('20261009000000_translation_guide.sql', 'column', 'bible_translations.approach'),
     ('20261009000000_translation_guide.sql', 'column', 'bible_translations.reading_level'),
     ('20261009000000_translation_guide.sql', 'column', 'bible_translations.rights'),
-    ('20261009000000_translation_guide.sql', 'column', 'bible_translations.popularity')
+    ('20261009000000_translation_guide.sql', 'column', 'bible_translations.popularity'),
+    ('20261010000000_note_drawings.sql', 'column', 'notes.drawing')
 ),
 checked as (
   select e.migration, e.kind, e.name,

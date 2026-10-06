@@ -162,7 +162,7 @@ struct ChapterNotesView: View {
                     Button {
                         editing = note
                     } label: {
-                        NoteRow(note: note)
+                        NoteListRow(note: note)
                     }
                     .listRowBackground(palette.background)
                 }

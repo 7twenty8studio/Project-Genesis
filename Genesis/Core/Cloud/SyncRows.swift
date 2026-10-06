@@ -10,6 +10,33 @@ protocol SyncRow: Codable, Sendable {
     var updatedAt: Date { get }
     var deletedAt: Date? { get }
     var serverUpdatedAt: String? { get }
+    /// Rough size of the row's large fields in bytes, so pushes can be
+    /// split into requests of a sensible size.
+    var payloadWeight: Int { get }
+}
+
+extension SyncRow {
+    var payloadWeight: Int { 0 }
+}
+
+/// Splits rows into push requests: at most `maxCount` rows, and no more than
+/// `maxWeight` bytes of large fields unless a single row is that big alone.
+enum SyncBatching {
+    static func ranges(weights: [Int], maxCount: Int, maxWeight: Int) -> [Range<Int>] {
+        var result: [Range<Int>] = []
+        var start = 0
+        var weight = 0
+        for (index, rowWeight) in weights.enumerated() {
+            if index > start, index - start >= maxCount || weight + rowWeight > maxWeight {
+                result.append(start..<index)
+                start = index
+                weight = 0
+            }
+            weight += rowWeight
+        }
+        if start < weights.count { result.append(start..<weights.count) }
+        return result
+    }
 }
 
 struct RemoteBookmark: SyncRow, Equatable {
@@ -82,10 +109,20 @@ struct RemoteNote: SyncRow, Equatable {
     var book: Int?
     var chapter: Int?
     var theme: String?
+    /// The handwritten page as base64 (JSON's usual encoding for `Data`).
+    var drawing: String?
     var createdAt: Date
     var updatedAt: Date
     var deletedAt: Date?
     var serverUpdatedAt: String?
+    /// False when the drawing is too large to sync: the push then leaves the
+    /// `drawing` key out, so the server keeps what it had. Not sent.
+    var sendsDrawing = true
+
+    enum CodingKeys: String, CodingKey {
+        case id, userId, title, body, kind, anchorType, startVerse, endVerse, book, chapter, theme, drawing
+        case createdAt, updatedAt, deletedAt, serverUpdatedAt
+    }
 
     init(_ note: Note, userID: UUID) {
         id = note.id
@@ -99,8 +136,45 @@ struct RemoteNote: SyncRow, Equatable {
         book = note.bookNumber
         chapter = note.chapterNumber
         theme = note.theme
+        let drawingData = note.drawing
+        sendsDrawing = NoteDrawing.fitsSync(drawingData)
+        drawing = sendsDrawing ? drawingData?.base64EncodedString() : nil
         createdAt = note.createdAt
         updatedAt = note.updatedAt
+    }
+
+    /// The drawing's PencilKit data; nil when there is none or it isn't valid base64.
+    var drawingData: Data? {
+        drawing.flatMap { Data(base64Encoded: $0) }
+    }
+
+    var payloadWeight: Int {
+        (drawing?.utf8.count ?? 0) + body.utf8.count
+    }
+
+    // Written by hand so `drawing` goes up as an explicit null when a drawing
+    // is cleared (every row in a request then has the same keys), and is left
+    // out entirely when it's too large to sync.
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(userId, forKey: .userId)
+        try container.encode(title, forKey: .title)
+        try container.encode(body, forKey: .body)
+        try container.encode(kind, forKey: .kind)
+        try container.encode(anchorType, forKey: .anchorType)
+        try container.encodeIfPresent(startVerse, forKey: .startVerse)
+        try container.encodeIfPresent(endVerse, forKey: .endVerse)
+        try container.encodeIfPresent(book, forKey: .book)
+        try container.encodeIfPresent(chapter, forKey: .chapter)
+        try container.encodeIfPresent(theme, forKey: .theme)
+        if sendsDrawing {
+            try container.encode(drawing, forKey: .drawing)
+        }
+        try container.encode(createdAt, forKey: .createdAt)
+        try container.encode(updatedAt, forKey: .updatedAt)
+        try container.encodeIfPresent(deletedAt, forKey: .deletedAt)
+        try container.encodeIfPresent(serverUpdatedAt, forKey: .serverUpdatedAt)
     }
 }
 

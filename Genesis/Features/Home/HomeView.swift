@@ -485,7 +485,7 @@ struct HomeView: View {
                     Button {
                         editingNote = note
                     } label: {
-                        NoteRow(note: note)
+                        NoteListRow(note: note)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.vertical, 8)
                     }

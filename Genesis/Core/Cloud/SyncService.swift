@@ -1,5 +1,6 @@
 import Foundation
 import Observation
+import os
 import SwiftData
 
 /// Keeps highlights, notes, bookmarks, reading plans and prayers in step
@@ -32,7 +33,12 @@ final class SyncService {
     @ObservationIgnored private var observer: NSObjectProtocol?
 
     private let pageSize = 500
+    private let notesPageSize = 50
     private let pushBatchSize = 200
+    /// Large fields (handwritten pages) per push request, so one request
+    /// never carries hundreds of drawings at once.
+    private let pushBatchBytes = 4_000_000
+    private static let log = Logger(subsystem: "com.7twenty8studio.genesis", category: "sync")
     private static let ownerKey = "sync.localDataOwner"
 
     init(auth: AuthService, container: ModelContainer, defaults: UserDefaults = .standard) {
@@ -153,7 +159,7 @@ final class SyncService {
         try await push(changed(HighlightCollection.self, since).map { RemoteCollection($0, userID: user.id) }, SyncTable.highlightCollections, client, token)
         try await push(changed(Highlight.self, since).map { RemoteHighlight($0, userID: user.id) }, SyncTable.highlights, client, token)
         try await push(changed(Bookmark.self, since).map { RemoteBookmark($0, userID: user.id) }, SyncTable.bookmarks, client, token)
-        try await push(changed(Note.self, since).map { RemoteNote($0, userID: user.id) }, SyncTable.notes, client, token)
+        try await pushNotes(changed(Note.self, since).map { RemoteNote($0, userID: user.id) }, client, token)
         try await push(changed(PlanEnrollment.self, since).map { RemotePlan($0, userID: user.id) }, SyncTable.readingPlans, client, token)
         try await push(changed(Prayer.self, since).map { RemotePrayer($0, userID: user.id) }, SyncTable.prayers, client, token)
         try await push(changed(MemoryVerse.self, since).map { RemoteMemoryVerse($0, userID: user.id) }, SyncTable.memoryVerses, client, token)
@@ -173,25 +179,38 @@ final class SyncService {
     ) async throws {
         let cursorKey = key("cursor.\(table)", user.id)
         var cursor = defaults.string(forKey: cursorKey)
+        // Notes can carry handwritten pages (up to 2 MB each), so they come in
+        // smaller pages to keep each response and its decoding small.
+        let limit = table == "notes" ? notesPageSize : pageSize
         while true {
-            let rows: [Row] = try await client.changes(in: table, since: cursor, limit: pageSize, accessToken: token)
+            let rows: [Row] = try await client.changes(in: table, since: cursor, limit: limit, accessToken: token)
             for row in rows { apply(row) }
             try context.save()
             if let last = rows.last?.serverUpdatedAt {
                 cursor = last
                 defaults.set(last, forKey: cursorKey)
             }
-            if rows.count < pageSize { break }
+            if rows.count < limit { break }
         }
     }
 
     private func push<Row: SyncRow>(_ rows: [Row], _ table: String, _ client: SupabaseClient, _ token: String) async throws {
-        var start = 0
-        while start < rows.count {
-            let batch = Array(rows[start..<min(start + pushBatchSize, rows.count)])
-            try await client.upsert(batch, into: table, accessToken: token)
-            start += pushBatchSize
+        let ranges = SyncBatching.ranges(weights: rows.map(\.payloadWeight), maxCount: pushBatchSize, maxWeight: pushBatchBytes)
+        for range in ranges {
+            try await client.upsert(Array(rows[range]), into: table, accessToken: token)
         }
+    }
+
+    /// Notes whose handwritten page is over the server's limit go up without
+    /// it (in their own requests, so every request has the same columns);
+    /// the drawing stays on this device and everything else keeps syncing.
+    private func pushNotes(_ rows: [RemoteNote], _ client: SupabaseClient, _ token: String) async throws {
+        let oversized = rows.filter { !$0.sendsDrawing }
+        for row in oversized {
+            Self.log.notice("Note \(row.id.uuidString, privacy: .public): handwritten page is too large to sync; it stays on this device.")
+        }
+        try await push(rows.filter(\.sendsDrawing), SyncTable.notes, client, token)
+        try await push(oversized, SyncTable.notes, client, token)
     }
 
     private func pushDeletions(_ client: SupabaseClient, _ token: String) async throws {
@@ -347,6 +366,16 @@ final class SyncService {
             note.bookNumber = row.book
             note.chapterNumber = row.chapter
             note.theme = row.theme
+            // A drawing too large to sync never reached the server: the
+            // server's copy (none, or an older smaller page echoed back after
+            // this device pushed the note's text) mustn't replace it. Only a
+            // drawing made later on another device does.
+            let remoteDrawing = row.drawingData
+            if NoteDrawing.fitsSync(note.drawing) {
+                note.drawing = remoteDrawing
+            } else if remoteDrawing != nil, row.updatedAt.timeIntervalSince(note.updatedAt) > 0.001 {
+                note.drawing = remoteDrawing
+            }
             note.createdAt = row.createdAt
             note.updatedAt = row.updatedAt
         }
