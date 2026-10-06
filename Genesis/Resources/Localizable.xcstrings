@@ -9405,6 +9405,17 @@
         }
       }
     },
+    "Your Photo": {
+      "comment": "Verse image background: the photo already chosen",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu foto"
+          }
+        }
+      }
+    },
     "Your Plans": {
       "localizations": {
         "es": {

@@ -227,25 +227,25 @@ struct VerseImageView: View {
                         style = item
                     }
                 }
+                if photo != nil {
+                    // A photo already chosen: tap to use it again.
+                    swatch(title: String(localized: "Your Photo", comment: "Verse image background: the photo already chosen"), selected: style == .photo, id: "verseImage.style.yourPhoto") {
+                        if let photo { Image(uiImage: photo).resizable().scaledToFill().clipShape(Circle()) }
+                    } action: {
+                        style = .photo
+                    }
+                }
                 PhotosPicker(selection: $photoItem, matching: .images) {
                     VStack(spacing: 6) {
-                        Group {
-                            if let photo {
-                                Image(uiImage: photo).resizable().scaledToFill()
-                            } else {
-                                Image(systemName: "photo.badge.plus")
-                                    .font(.title3)
-                                    .foregroundStyle(palette.accent)
-                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                    .background(palette.surface)
-                            }
-                        }
-                        .frame(width: 44, height: 44)
-                        .clipShape(Circle())
-                        .overlay(Circle().strokeBorder(style == .photo ? palette.accent : palette.separator, lineWidth: style == .photo ? 2.5 : 1))
+                        Image(systemName: "photo.badge.plus")
+                            .font(.title3)
+                            .foregroundStyle(palette.accent)
+                            .frame(width: 44, height: 44)
+                            .background(palette.surface, in: Circle())
+                            .overlay(Circle().strokeBorder(palette.separator, lineWidth: 1))
                         Text(VerseImageStyle.photo.title)
                             .font(.caption2)
-                            .foregroundStyle(style == .photo ? palette.accent : palette.secondaryText)
+                            .foregroundStyle(palette.secondaryText)
                     }
                 }
                 .buttonStyle(.plain)
@@ -325,6 +325,8 @@ struct VerseImageView: View {
         photo = image.preparingThumbnail(of: CGSize(width: 2160, height: 2160)) ?? image
         style = .photo
         if options.ink == .automatic { options.ink = .white }
+        // Let the same photo be picked again later.
+        photoItem = nil
     }
 
     private func render() {

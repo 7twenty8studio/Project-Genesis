@@ -104,8 +104,12 @@ struct RootView: View {
 
     /// Premium given by the owner (public.premium_grants) for this account.
     private func refreshGrant() async {
-        var token: String?
-        if auth.isSignedIn { token = try? await auth.accessToken() }
+        guard auth.isSignedIn else {
+            await entitlements.refreshGrant(client: auth.client, accessToken: nil)
+            return
+        }
+        // Offline (the token can't refresh): keep what we knew.
+        guard let token = try? await auth.accessToken() else { return }
         await entitlements.refreshGrant(client: auth.client, accessToken: token)
     }
 

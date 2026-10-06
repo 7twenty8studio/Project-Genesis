@@ -356,6 +356,7 @@ private struct ChangePasswordView: View {
                 }
             }
             .themedScreen()
+            .onAppear { auth.errorMessage = nil }
             .navigationTitle("Change Password")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
