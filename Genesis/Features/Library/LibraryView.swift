@@ -263,10 +263,6 @@ private struct NotesList: View {
                     ForEach(NoteKind.allCases) { kind in
                         Button(kind.title, systemImage: kind.systemImage) {
                             let store = StudyStore(context: modelContext)
-                            guard entitlements.canAddNote(existing: store.noteCount()) else {
-                                premium = .unlimitedNotes
-                                return
-                            }
                             editing = store.createNote(kind: kind, anchor: kind == .study ? .theme("") : .none)
                         }
                     }

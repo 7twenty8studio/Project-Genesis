@@ -834,6 +834,16 @@
         }
       }
     },
+    "Advanced search": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Búsqueda avanzada"
+          }
+        }
+      }
+    },
     "Advanced study assistant": {
       "localizations": {
         "es": {
@@ -2966,26 +2976,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Olvidaste tu contraseña?"
-          }
-        }
-      }
-    },
-    "Free includes %lld notes.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "La versión gratuita incluye %lld notas."
-          }
-        }
-      }
-    },
-    "Free includes %lld prayer requests.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "La versión gratuita incluye %lld peticiones de oración."
           }
         }
       }
@@ -6216,12 +6206,12 @@
         }
       }
     },
-    "Reading, search and the full Bible stay free, always.": {
+    "Reading, search, notes, highlights, the prayer journal and reading plans stay free, always.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "La lectura, la búsqueda y la Biblia completa siguen siendo gratis, siempre."
+            "value": "La lectura, la búsqueda, las notas, los resaltados, el diario de oración y los planes de lectura siguen siendo gratis, siempre."
           }
         }
       }
@@ -6803,12 +6793,32 @@
         }
       }
     },
+    "Search by topic across the whole Bible, and narrow searches to a testament or book.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Busca por tema en toda la Biblia y limita la búsqueda a un testamento o libro."
+          }
+        }
+      }
+    },
     "Search for a subject like forgiveness or fear to see the passages about it.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Busca un tema como el perdón o el miedo para ver los pasajes que hablan de él."
+          }
+        }
+      }
+    },
+    "Search one testament or book, find topics, and sort results": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Busca en un testamento o libro, encuentra temas y ordena los resultados"
           }
         }
       }
@@ -8817,26 +8827,6 @@
         }
       }
     },
-    "Unlimited notes": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Notas ilimitadas"
-          }
-        }
-      }
-    },
-    "Unlimited prayer journal": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Diario de oración ilimitado"
-          }
-        }
-      }
-    },
     "Unlock Insights": {
       "localizations": {
         "es": {
@@ -9890,7 +9880,7 @@
       }
     },
     "month": {
-      "comment": "Subscription period unit, as in $4.99 / month",
+      "comment": "Subscription period unit, as in $7.99 / month",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -9941,7 +9931,7 @@
       }
     },
     "year": {
-      "comment": "Subscription period unit, as in $4.99 / month",
+      "comment": "Subscription period unit, as in $7.99 / month",
       "localizations": {
         "es": {
           "stringUnit": {

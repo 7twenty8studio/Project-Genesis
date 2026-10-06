@@ -40,7 +40,8 @@ final class FeatureChoicesUITests: GenesisUITestCase {
 
     @MainActor
     func testSearchByTopic() {
-        let app = Genesis.launch()
+        // Topic search is part of Premium's advanced search.
+        let app = Genesis.launch(extra: ["-uiTestingPremium"])
         XCTAssertTrue(app.buttons["home.account"].waitForExistence(timeout: Genesis.launchTimeout))
         Genesis.openTab("Search", in: app)
         let field = Genesis.searchField(in: app)

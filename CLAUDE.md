@@ -39,9 +39,11 @@ shares; README.md has the architecture.
   in SyncService, a table + RLS in a new migration.
 
 ## Premium and AI
-- Free limits live in `FreeLimits` (25 notes, 25 prayers, 3 AI a day) and are
-  checked with `EntitlementService` at each entry point; the server enforces
-  AI limits again (supabase/functions/study-ai/lib.ts).
+- Notes, highlights, the prayer journal and reading plans are free with no
+  limits. `FreeLimits` holds only the 3 AI answers a day, enforced again on
+  the server (supabase/functions/study-ai/lib.ts). Premium extras are
+  `PremiumFeature` cases checked with `EntitlementService.allows` at each entry
+  point (the tier table is in PHASE3_SETUP.md). Prices: $7.99 / $59.99.
 - The study assistant is behind a server-side switch (public.feature_flags row
   `study_assistant`, read by `FeatureFlagService`; off for now). Check
   `StudyAssistant.isEnabled` before showing any AI entry point; study-ai also

@@ -172,10 +172,6 @@ struct ChapterNotesView: View {
         .safeAreaInset(edge: .bottom) {
             Button {
                 let store = StudyStore(context: modelContext)
-                guard entitlements.canAddNote(existing: store.noteCount()) else {
-                    premium = .unlimitedNotes
-                    return
-                }
                 editing = store.createNote(kind: .study, anchor: .chapter(chapter))
             } label: {
                 Label("Note on \(chapter.description)", systemImage: "square.and.pencil")

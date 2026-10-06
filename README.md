@@ -91,8 +91,8 @@ on. The study assistant's announcement is ready and waits for its switch.
   verses and places.
 - **Insights**: streaks, reading time, chapters, books, highlights, favourite
   books and topics.
-- **Premium** with StoreKit 2: $4.99/month or $39.99/year, per the PRD's
-  Premium Features list.
+- **Premium** with StoreKit 2: $7.99/month or $59.99/year with a 7-day free
+  trial (see PHASE3_SETUP.md for what's free and what's Premium).
 - **Wide screens**: the study panel adds Study (AI notes beside the text) and
   Context (people, places and events in the chapter).
 

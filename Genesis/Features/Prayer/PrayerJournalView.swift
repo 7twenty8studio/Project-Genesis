@@ -87,10 +87,6 @@ struct PrayerJournalView: View {
             ToolbarItem(placement: .primaryAction) {
                 Button {
                     let store = StudyStore(context: modelContext)
-                    guard entitlements.canAddPrayer(existing: store.prayerCount()) else {
-                        premium = .unlimitedPrayers
-                        return
-                    }
                     editing = store.createPrayer(category: category ?? .personal)
                 } label: {
                     Label("New Prayer", systemImage: "plus")

@@ -144,13 +144,6 @@ final class EntitlementService {
         isPremium
     }
 
-    func canAddNote(existing count: Int) -> Bool {
-        isPremium || count < FreeLimits.notes
-    }
-
-    func canAddPrayer(existing count: Int) -> Bool {
-        isPremium || count < FreeLimits.prayers
-    }
 
     func allows(_ theme: ReaderTheme) -> Bool {
         isPremium || !theme.isPremium

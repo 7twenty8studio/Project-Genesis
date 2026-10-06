@@ -60,7 +60,7 @@ struct PremiumView: View {
                 .font(.system(.title, design: .serif, weight: .semibold))
                 .foregroundStyle(palette.text)
             if !entitlements.isPremium {
-                Text("Reading, search and the full Bible stay free, always.")
+                Text("Reading, search, notes, highlights, the prayer journal and reading plans stay free, always.")
                     .font(.subheadline)
                     .foregroundStyle(palette.secondaryText)
             }

@@ -77,9 +77,11 @@ Xcode's local test signatures.
 
 1. Create the subscription group **Genesis Premium** with two auto-renewable
    subscriptions whose product IDs match exactly:
-   - `com.7twenty8studio.genesis.premium.monthly` at $4.99
-   - `com.7twenty8studio.genesis.premium.yearly` at $39.99
-   Turn on Family Sharing (the PRD lists it as a Premium feature).
+   - `com.7twenty8studio.genesis.premium.monthly` at $7.99
+   - `com.7twenty8studio.genesis.premium.yearly` at $59.99
+   Turn on Family Sharing (the PRD lists it as a Premium feature), and add a
+   1-week free introductory offer to each (the paywall shows the trial when
+   the App Store offers it).
 2. Publish a privacy policy and set `GENESIS_PRIVACY_URL` in
    `Config/Secrets.xcconfig` (e.g. `https:$(SLASH)$(SLASH)example.com/privacy`).
    App Review requires it on the Premium screen. Terms default to Apple's
@@ -88,15 +90,20 @@ Xcode's local test signatures.
 
 ## What's free and what's Premium
 
-| Free | Premium ($4.99/month or $39.99/year) |
+| Free | Premium ($7.99/month or $59.99/year, 7-day free trial) |
 |---|---|
-| Reading, search, every translation, cross references | Everything in Free |
-| Highlights, bookmarks, reading plans | Unlimited notes and prayer journal |
-| 25 notes, 25 prayer requests | Cloud backup and sync |
-| Themes: Auto, Paper, Sepia, Slate, High Contrast | Themes: Cream, Parchment, Midnight, Sage |
-| 3 passage explanations a day (with a free account) | Every study tool: summaries, background, discussion, children's explanations, comprehension (fair use: 50 new answers a day) |
-| Streak, chapters and books on Home | Timeline, maps and journeys, people and family trees |
-| | Reading insights |
+| Reading, every public-domain translation, cross references | Everything in Free |
+| Word and reference search | Advanced search: topics, one testament or book, sorting |
+| Notes, highlights, bookmarks (no limits) | Cloud backup and sync |
+| Prayer journal and reading plans (no limits) | Themes: Cream, Parchment, Midnight, Sage and the seasons |
+| Groups, with the shared plan and progress | Study assistant without the daily limit |
+| Themes: Auto, Paper, Sepia, Slate, High Contrast | Timeline, maps and journeys, people and family trees |
+| 3 passage explanations a day (with a free account) | Reading insights and Year in Review stats |
+| The original widgets (verse, continue reading, streak, prayer) | New widgets: Today's Reading, Memorise, Group Progress, listening on the Lock Screen, Apple Watch |
+| | Memorise Scripture, ambient sounds |
+
+Licensed translations (ESV, NLT and others) would be a later add-on, once a
+licence is signed.
 
 ## How the study assistant works (for reference)
 

@@ -10,18 +10,17 @@ struct PremiumTests {
         EntitlementService(defaults: UserDefaults(suiteName: "PremiumTests-\(UUID())")!, override: premium)
     }
 
-    @Test func freeCapsNotesAndPrayersAt25() {
+    @Test func freeAccountsGetTheEssentials() {
         let free = service(premium: false)
-        #expect(free.canAddNote(existing: 24))
-        #expect(!free.canAddNote(existing: 25))
-        #expect(free.canAddPrayer(existing: 24))
-        #expect(!free.canAddPrayer(existing: 25))
+        // Notes, highlights, prayers and reading plans have no limits or gates;
+        // these are the Premium extras.
+        #expect(!free.allows(.advancedSearch))
+        #expect(!free.allows(.widgets))
+        #expect(!free.allows(.readingInsights))
     }
 
-    @Test func premiumHasNoCaps() {
+    @Test func premiumHasEverything() {
         let premium = service(premium: true)
-        #expect(premium.canAddNote(existing: 10_000))
-        #expect(premium.canAddPrayer(existing: 10_000))
         let allowed = PremiumFeature.allCases.filter { premium.allows($0) }
         #expect(allowed.count == PremiumFeature.allCases.count)
     }

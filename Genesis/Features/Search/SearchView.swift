@@ -101,6 +101,8 @@ struct SearchContent: View {
     @Environment(BibleLibrary.self) private var library
     @Environment(\.topics) private var topics
     @Environment(\.palette) private var palette
+    @Environment(EntitlementService.self) private var entitlements
+    @State private var premium: PremiumFeature?
     @State private var topicResults: [TopicSummary] = []
     @State private var scope: SearchScopeOption = .all
     @State private var order: SearchOrder = .relevance
@@ -166,15 +168,28 @@ struct SearchContent: View {
                     if !topicResults.isEmpty {
                         Section("Topics") {
                             ForEach(topicResults) { topic in
-                                NavigationLink {
-                                    TopicDetailView(topicID: topic.id, onOpen: onOpen)
-                                        .onAppear { GenesisTips.topics.invalidate(reason: .actionPerformed) }
-                                } label: {
-                                    LabeledContent(topic.name, value: topic.referenceCount == 1 ? String(localized: "1 passage") : String(localized: "\(topic.referenceCount) passages"))
-                                        .foregroundStyle(palette.text)
+                                // Topic search is part of Premium's advanced search.
+                                if entitlements.allows(.advancedSearch) {
+                                    NavigationLink {
+                                        TopicDetailView(topicID: topic.id, onOpen: onOpen)
+                                            .onAppear { GenesisTips.topics.invalidate(reason: .actionPerformed) }
+                                    } label: {
+                                        topicLabel(topic)
+                                    }
+                                    .listRowBackground(palette.surface)
+                                    .accessibilityIdentifier("search.topic")
+                                } else {
+                                    Button {
+                                        premium = .advancedSearch
+                                    } label: {
+                                        HStack {
+                                            topicLabel(topic)
+                                            PremiumBadge()
+                                        }
+                                    }
+                                    .listRowBackground(palette.surface)
+                                    .accessibilityIdentifier("search.topic")
                                 }
-                                .listRowBackground(palette.surface)
-                                .accessibilityIdentifier("search.topic")
                             }
                         }
                     }
@@ -207,6 +222,7 @@ struct SearchContent: View {
             }
         }
         .themedScreen()
+        .premiumSheet($premium)
         .task(id: SearchKey(text: query, scope: scope, order: order, translation: library.currentTranslation.id)) {
             await runSearch()
         }
@@ -222,7 +238,35 @@ struct SearchContent: View {
         return count == 1 ? String(localized: "1 verse") : String(localized: "\(total) verses")
     }
 
+    private func topicLabel(_ topic: TopicSummary) -> some View {
+        LabeledContent(topic.name, value: topic.referenceCount == 1 ? String(localized: "1 passage") : String(localized: "\(topic.referenceCount) passages"))
+            .foregroundStyle(palette.text)
+    }
+
+    @ViewBuilder
     private var filters: some View {
+        if entitlements.allows(.advancedSearch) {
+            filterPickers
+        } else {
+            Section {
+                Button {
+                    premium = .advancedSearch
+                } label: {
+                    HStack {
+                        Label("Search one testament or book, find topics, and sort results", systemImage: "line.3.horizontal.decrease.circle")
+                            .font(.subheadline)
+                            .foregroundStyle(palette.secondaryText)
+                        Spacer()
+                        PremiumBadge()
+                    }
+                }
+                .accessibilityIdentifier("search.filtersLocked")
+            }
+            .listRowBackground(palette.surface)
+        }
+    }
+
+    private var filterPickers: some View {
         Section {
             Picker("Scope", selection: $scope) {
                 ForEach(SearchScopeOption.allCases) { Text($0.title).tag($0) }

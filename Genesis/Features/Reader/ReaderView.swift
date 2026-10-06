@@ -261,10 +261,6 @@ struct ReaderView: View {
     }
 
     private func openNoteForSelection() {
-        guard entitlements.canAddNote(existing: StudyStore(context: modelContext).noteCount()) else {
-            sheet = .premium(.unlimitedNotes)
-            return
-        }
         if let note = reader.makeNoteForSelection() {
             sheet = .note(note)
         }

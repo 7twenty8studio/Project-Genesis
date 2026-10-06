@@ -46,4 +46,14 @@ final class SearchUITests: GenesisUITestCase {
         result.tap()
         XCTAssertTrue(Genesis.wait { Genesis.chapterTitle(app) == "John 11" })
     }
+
+    @MainActor
+    func testTopicSearchIsPremium() {
+        let app = Genesis.launch()
+        search("forgiveness", in: app)
+        let topic = app.buttons.matching(identifier: "search.topic").firstMatch
+        XCTAssertTrue(topic.waitForExistence(timeout: Genesis.timeout), "Topics are shown to everyone")
+        topic.tap()
+        XCTAssertTrue(app.buttons["premium.subscribe"].waitForExistence(timeout: Genesis.timeout), "Opening one offers Premium")
+    }
 }
