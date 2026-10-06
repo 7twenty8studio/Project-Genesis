@@ -173,6 +173,24 @@ translators ask only that the Berean name isn't used for altered text; Genesis
 shows it word for word. Licensed translations (NIV, ESV, NLT, CSB, NKJV) can be
 listed the same way once you have a license that allows offline use.
 
+### The Global Reading Library
+
+The Bibles screen groups translations by language (the person's own first),
+most read first. Each card shows how the Bible is translated (word for word,
+balanced, thought for thought), how it reads (traditional, formal, everyday),
+its audio (a recording from `audio_recordings`, or a device voice) and whether
+it's public domain or licensed. **Which Bible is right for me?** explains the
+differences and suggests one for study, everyday reading and reading aloud.
+
+The details come from four columns added by
+`supabase/migrations/20261009000000_translation_guide.sql` (already applied):
+`approach`, `reading_level`, `rights` and `popularity` (1 = most read in its
+language). The BSB and Reina-Valera rows are filled in. For a new Bible, pass
+`--approach`, `--reading-level`, `--rights` and `--popularity` to
+`package_translation.py`, or edit the row in Table Editor; changes show the
+next time the screen opens, without an app update. Empty values fall back to
+what the app knows (KJV, WEB, ASV, BSB, RV1909: `TranslationProfile.builtIn`).
+
 ## Feature choices
 
 New people choose what they'd like at the end of setup ("Make Genesis yours"),

@@ -66,6 +66,9 @@ on. The study assistant's announcement is ready and waits for its switch.
 - **Feature choices**: "Make Genesis yours" at setup and Settings › Features
   (listen, plans and prayer, explore, study notes, groups and community), with
   one-time TipKit hints instead of a tutorial.
+- **Global Reading Library**: Bibles grouped by language, most read first,
+  each with its translation approach, reading level, audio and rights, and a
+  "Which Bible is right for me?" guide with suggestions.
 - **Topic search** (Nave's Topical Bible, 5,000+ topics), **Bible downloads**
   (Berean Standard Bible first, automatic updates), Bible + Reading Plan and
   Bible + Prayer Journal side panels, a lock-screen prayer widget, and

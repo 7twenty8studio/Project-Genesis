@@ -594,6 +594,16 @@
         }
       }
     },
+    "A short guide explains the differences and suggests a Bible for study, everyday reading or reading aloud.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una breve guía explica las diferencias y sugiere una Biblia para el estudio, la lectura diaria o la lectura en voz alta."
+          }
+        }
+      }
+    },
     "A timer that fades out": {
       "localizations": {
         "es": {
@@ -1281,16 +1291,6 @@
         }
       }
     },
-    "Available to download": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Disponibles para descargar"
-          }
-        }
-      }
-    },
     "Back up with Premium": {
       "localizations": {
         "es": {
@@ -1308,6 +1308,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Contexto"
+          }
+        }
+      }
+    },
+    "Balanced": {
+      "comment": "Bible translation approach between word for word and thought for thought",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Equilibrada"
           }
         }
       }
@@ -1410,6 +1421,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Biblias"
+          }
+        }
+      }
+    },
+    "Bibles by language": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biblias por idioma"
           }
         }
       }
@@ -1757,6 +1778,16 @@
         }
       }
     },
+    "Choosing a Bible": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cómo elegir una Biblia"
+          }
+        }
+      }
+    },
     "Chronological Bible": {
       "localizations": {
         "es": {
@@ -1854,6 +1885,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cerrar grupo"
+          }
+        }
+      }
+    },
+    "Closer to everyday speech": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más cerca del habla cotidiana"
+          }
+        }
+      }
+    },
+    "Closer to the original wording": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más cerca de las palabras originales"
           }
         }
       }
@@ -2442,6 +2493,16 @@
         }
       }
     },
+    "Download": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descargar"
+          }
+        }
+      }
+    },
     "Download %@": {
       "localizations": {
         "es": {
@@ -2478,16 +2539,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Descarga la Reina-Valera 1909 en Biblias en este dispositivo › Obtener más. Se lee en voz alta con una voz en español."
-          }
-        }
-      }
-    },
-    "Downloaded": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Descargada"
           }
         }
       }
@@ -2615,12 +2666,22 @@
         }
       }
     },
-    "Every Bible here works offline.": {
+    "Every Bible can be read aloud by a device voice. Some also have a recording by a narrator.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Todas estas Biblias funcionan sin conexión."
+            "value": "Cualquier Biblia puede leerse en voz alta con una voz del dispositivo. Algunas también tienen una grabación de un narrador."
+          }
+        }
+      }
+    },
+    "Every Bible here is free, and works offline once it's on your device.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todas estas Biblias son gratuitas y funcionan sin conexión una vez en tu dispositivo."
           }
         }
       }
@@ -2671,6 +2732,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cada lugar del mapa bíblico muestra ahora qué tan seguros están los estudiosos de dónde estaba. Los lugares inciertos tienen un signo de interrogación y puedes ocultarlos desde el menú Recorridos."
+          }
+        }
+      }
+    },
+    "Everyday language": {
+      "comment": "Reading level of a Bible: modern, conversational wording",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lenguaje cotidiano"
           }
         }
       }
@@ -2867,6 +2939,16 @@
         }
       }
     },
+    "Find the right Bible": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encuentra la Biblia adecuada"
+          }
+        }
+      }
+    },
     "Fireplace": {
       "comment": "Ambient sound",
       "localizations": {
@@ -2949,6 +3031,16 @@
         }
       }
     },
+    "Follows the original wording and word order as closely as the language allows. Good for close study.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sigue las palabras y el orden del original tan de cerca como el idioma lo permite. Ideal para el estudio detallado."
+          }
+        }
+      }
+    },
     "Font": {
       "localizations": {
         "es": {
@@ -2970,12 +3062,63 @@
         }
       }
     },
+    "For close study": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para el estudio detallado"
+          }
+        }
+      }
+    },
+    "For everyday reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para la lectura diaria"
+          }
+        }
+      }
+    },
+    "For reading aloud and memorising": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para leer en voz alta y memorizar"
+          }
+        }
+      }
+    },
     "Forgot password?": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "¿Olvidaste tu contraseña?"
+          }
+        }
+      }
+    },
+    "Formal language": {
+      "comment": "Reading level of a Bible",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lenguaje formal"
+          }
+        }
+      }
+    },
+    "Free for anyone to read and share. Every Bible in Genesis today is public domain.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cualquiera puede leerla y compartirla libremente. Hoy todas las Biblias de Genesis son de dominio público."
           }
         }
       }
@@ -3386,6 +3529,26 @@
         }
       }
     },
+    "How it reads": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cómo se lee"
+          }
+        }
+      }
+    },
+    "How it's translated": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cómo se traduce"
+          }
+        }
+      }
+    },
     "How sure is the map?": {
       "localizations": {
         "es": {
@@ -3464,16 +3627,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Incluir detalles de la app y del dispositivo"
-          }
-        }
-      }
-    },
-    "Included": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Incluida"
           }
         }
       }
@@ -3723,6 +3876,16 @@
         }
       }
     },
+    "Know what you're choosing": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige con conocimiento"
+          }
+        }
+      }
+    },
     "Known location": {
       "localizations": {
         "es": {
@@ -3891,6 +4054,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Biblioteca"
+          }
+        }
+      }
+    },
+    "Licensed": {
+      "comment": "A Bible translation used under a publisher's licence",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con licencia"
           }
         }
       }
@@ -4364,6 +4538,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Modo"
+          }
+        }
+      }
+    },
+    "Modern but dignified language, close to the original's tone.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lenguaje moderno pero digno, cercano al tono del original."
+          }
+        }
+      }
+    },
+    "Modern, conversational language that reads like today's speech.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lenguaje moderno y conversacional, como se habla hoy."
           }
         }
       }
@@ -5105,6 +5299,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lecturas del Antiguo y del Nuevo Testamento cada día, unos 15 minutos."
+          }
+        }
+      }
+    },
+    "Older wording such as “thee” and “thou”, much loved for reading aloud and memorising.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lenguaje antiguo, con formas como «vosotros» y verbos clásicos, muy apreciado para leer en voz alta y memorizar."
           }
         }
       }
@@ -5882,6 +6086,16 @@
         }
       }
     },
+    "Public domain": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dominio público"
+          }
+        }
+      }
+    },
     "Purple": {
       "comment": "Highlight colour",
       "localizations": {
@@ -5889,6 +6103,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Morado"
+          }
+        }
+      }
+    },
+    "Puts each sentence's meaning into natural, everyday language. Easy to read at length.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Expresa el sentido de cada frase en un lenguaje natural y cotidiano. Fácil de leer durante largo rato."
           }
         }
       }
@@ -5962,6 +6186,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Leer un plan juntos"
+          }
+        }
+      }
+    },
+    "Read aloud by a device voice": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lectura con voz del dispositivo"
           }
         }
       }
@@ -6156,6 +6390,17 @@
         }
       }
     },
+    "Reading now": {
+      "comment": "On a Bible's card: this is the Bible being read",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leyendo ahora"
+          }
+        }
+      }
+    },
     "Reading plan": {
       "localizations": {
         "es": {
@@ -6232,6 +6477,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Resaltados recientes"
+          }
+        }
+      }
+    },
+    "Recorded audio": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Audio grabado"
           }
         }
       }
@@ -6640,6 +6895,16 @@
         }
       }
     },
+    "Rights and audio": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Derechos y audio"
+          }
+        }
+      }
+    },
     "Sage": {
       "comment": "Reader theme name",
       "localizations": {
@@ -6911,6 +7176,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ver también"
+          }
+        }
+      }
+    },
+    "See how each Bible is translated, how it reads, its audio, and whether it's public domain.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mira cómo se traduce cada Biblia, cómo se lee, su audio y si es de dominio público."
           }
         }
       }
@@ -7681,6 +7956,16 @@
         }
       }
     },
+    "Stays close to the original wording but smooths it where a literal rendering would be hard to follow.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se mantiene cerca de las palabras originales, pero las suaviza donde una traducción literal sería difícil de seguir."
+          }
+        }
+      }
+    },
     "Still Praying": {
       "localizations": {
         "es": {
@@ -7839,6 +8124,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Suscribirse"
+          }
+        }
+      }
+    },
+    "Suggestions in %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sugerencias en %@"
           }
         }
       }
@@ -8166,6 +8461,16 @@
         }
       }
     },
+    "The Bibles screen now groups translations by language, with the most read first.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La pantalla de Biblias ahora agrupa las traducciones por idioma, con las más leídas primero."
+          }
+        }
+      }
+    },
     "The Genesis community": {
       "localizations": {
         "es": {
@@ -8222,6 +8527,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "La descarga está dañada. Inténtalo de nuevo."
+          }
+        }
+      }
+    },
+    "The most read are listed first.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las más leídas aparecen primero."
           }
         }
       }
@@ -8366,6 +8681,16 @@
         }
       }
     },
+    "There's one Bible in %@ so far: %@.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Por ahora hay una Biblia en %@: %@."
+          }
+        }
+      }
+    },
     "This chapter couldn't be loaded.": {
       "localizations": {
         "es": {
@@ -8442,6 +8767,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Esta herramienta de estudio es parte de Genesis Premium."
+          }
+        }
+      }
+    },
+    "Thought for thought": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pensamiento por pensamiento"
           }
         }
       }
@@ -8666,12 +9001,33 @@
         }
       }
     },
+    "Traditional language": {
+      "comment": "Reading level of a Bible: older, classic wording",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lenguaje tradicional"
+          }
+        }
+      }
+    },
     "Translation, %@": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Traducción, %@"
+          }
+        }
+      }
+    },
+    "Translations differ in how closely they follow the original Hebrew, Aramaic and Greek, and in how they sound. Many people read more than one.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las traducciones difieren en cuánto siguen el hebreo, el arameo y el griego originales, y en cómo suenan. Muchas personas leen más de una."
           }
         }
       }
@@ -8873,6 +9229,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Usa las voces de tu dispositivo en todas las traducciones, sin conexión, o una narración grabada donde esté disponible. Cámbialo en Ajustes de audio."
+          }
+        }
+      }
+    },
+    "Used with the publisher's permission. Genesis will add licensed Bibles as agreements allow.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se usa con permiso de la editorial. Genesis añadirá Biblias con licencia a medida que los acuerdos lo permitan."
           }
         }
       }
@@ -9159,6 +9525,16 @@
         }
       }
     },
+    "Which Bible is right for me?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué Biblia es la adecuada para mí?"
+          }
+        }
+      }
+    },
     "While the Bible is read aloud, the Lock Screen and Dynamic Island show the verse being read, with play and pause.": {
       "localizations": {
         "es": {
@@ -9259,6 +9635,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Con Premium, el widget Lectura de hoy muestra la lectura de tu plan y te permite marcarla como leída sin abrir la app."
+          }
+        }
+      }
+    },
+    "Word for word": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Palabra por palabra"
           }
         }
       }
@@ -9422,16 +9808,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tienes Genesis Premium"
-          }
-        }
-      }
-    },
-    "You have every Bible that's available.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ya tienes todas las Biblias disponibles."
           }
         }
       }

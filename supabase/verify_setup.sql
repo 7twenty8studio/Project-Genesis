@@ -98,7 +98,11 @@ with expected (migration, kind, name) as (
     ('20261007000000_feedback_and_grants.sql', 'table', 'premium_grants'),
     ('20261007000000_feedback_and_grants.sql', 'rls', 'app_feedback'),
     ('20261007000000_feedback_and_grants.sql', 'rls', 'premium_grants'),
-    ('20261008000000_group_progress_summary.sql', 'function', 'group_progress_summary')
+    ('20261008000000_group_progress_summary.sql', 'function', 'group_progress_summary'),
+    ('20261009000000_translation_guide.sql', 'column', 'bible_translations.approach'),
+    ('20261009000000_translation_guide.sql', 'column', 'bible_translations.reading_level'),
+    ('20261009000000_translation_guide.sql', 'column', 'bible_translations.rights'),
+    ('20261009000000_translation_guide.sql', 'column', 'bible_translations.popularity')
 ),
 checked as (
   select e.migration, e.kind, e.name,

@@ -116,6 +116,12 @@ shares; README.md has the architecture.
 - Translation downloads: public.bible_translations + the public `bibles`
   bucket; Tools/BibleData/package_translation.py builds a file and its row.
   Public-domain (or licensed) translations only.
+- Global Reading Library (the Bibles screen, `BibleDownloadsView`): Bibles by
+  language, most read first, as `TranslationCardView`s, plus
+  `TranslationGuideView` ("Which Bible is right for me?"). Logic in
+  `ReadingLibrary`; details (`TranslationProfile`: approach, reading level,
+  rights, popularity) come from bible_translations columns, falling back to
+  `TranslationProfile.builtIn`. Free, like every Bible.
 
 ## Feature choices
 - People choose optional features at setup ("Make Genesis yours") and in

@@ -65,7 +65,31 @@ final class FeatureChoicesUITests: GenesisUITestCase {
         Genesis.openMenu(translation, expecting: app.buttons["reader.moreBibles"])
         app.buttons["reader.moreBibles"].tap()
         XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "bibles.installed.KJV").firstMatch.waitForExistence(timeout: Genesis.timeout), "Bundled Bibles are listed")
-        XCTAssertTrue(Genesis.element(containing: "Connect to the internet", in: app).waitForExistence(timeout: Genesis.timeout), "No catalog without a server")
+        // Each Bible says what it's like.
+        let facts = app.descendants(matching: .any).matching(identifier: "bibles.facts.KJV").firstMatch
+        XCTAssertTrue(facts.waitForExistence(timeout: Genesis.timeout), "The KJV's details are shown")
+        XCTAssertTrue(facts.label.contains("Word for word") && facts.label.contains("Traditional language"), "How it's translated and how it reads: \(facts.label)")
+
+        // The guide places them and suggests one for each way of reading.
+        app.buttons["bibles.guide"].tap()
+        let suggestion = app.descendants(matching: .any).matching(identifier: "guide.suggestion.KJV").firstMatch
+        XCTAssertTrue(suggestion.waitForExistence(timeout: Genesis.timeout), "The KJV for reading aloud")
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "guide.suggestion.WEB").firstMatch.exists, "The WEB for study and everyday reading")
+        let spectrum = app.descendants(matching: .any).matching(identifier: "guide.spectrum").firstMatch
+        Genesis.scrollIntoView(spectrum, in: app)
+        XCTAssertTrue(spectrum.exists, "The guide shows where each Bible sits")
+        Genesis.tapToolbarButton("guide.done", in: app)
+
+        // Reading another Bible from its card.
+        let readWEB = app.buttons["bibles.read.WEB"]
+        Genesis.scrollIntoView(readWEB, in: app)
+        XCTAssertTrue(readWEB.waitForExistence(timeout: Genesis.timeout), "Another Bible on the device can be opened")
+        readWEB.tap()
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "bibles.current.WEB").firstMatch.waitForExistence(timeout: Genesis.timeout), "The WEB is now the one being read")
+
+        let offline = Genesis.element(containing: "Connect to the internet", in: app)
+        Genesis.scrollIntoView(offline, in: app)
+        XCTAssertTrue(offline.waitForExistence(timeout: Genesis.timeout), "No catalog without a server")
         Genesis.tapToolbarButton("bibles.done", in: app)
     }
 }

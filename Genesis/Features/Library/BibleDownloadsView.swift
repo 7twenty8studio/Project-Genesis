@@ -1,50 +1,61 @@
 import SwiftUI
 
-/// Bibles on this device and more to download. Downloads are kept offline
-/// for good and updated automatically when a corrected edition comes out.
+/// The Global Reading Library: every Bible by language, the most read first,
+/// each with how it's translated, how it reads, its audio and its rights, and
+/// a guide to choosing. Bibles on the device work offline; downloads are
+/// updated automatically when a corrected edition comes out.
 struct BibleDownloadsView: View {
     @Environment(BibleLibrary.self) private var library
     @Environment(ReaderViewModel.self) private var reader
+    @Environment(AudioPlayerService.self) private var audio
     @Environment(\.palette) private var palette
     @Environment(\.dismiss) private var dismiss
+    @State private var chosenLanguage: String?
     @State private var removing: Translation?
     @State private var hasLoaded = false
+    @State private var showsGuide = false
+
+    private var languages: [String] {
+        ReadingLibrary.languages(installed: library.translations, catalog: library.catalog, preferred: AppLanguage.code)
+    }
+
+    /// The language picked here; otherwise the app's language when it has a
+    /// Bible, else the language of the Bible being read.
+    private var language: String {
+        if let chosenLanguage, languages.contains(chosenLanguage) { return chosenLanguage }
+        return languages.contains(AppLanguage.code) ? AppLanguage.code : library.currentTranslation.language
+    }
+
+    private var entries: [LibraryEntry] {
+        ReadingLibrary.entries(
+            in: language,
+            installed: library.translations,
+            catalog: library.catalog,
+            recordedTranslationIDs: Set(audio.catalog.recordings.map(\.translation))
+        )
+    }
 
     var body: some View {
         NavigationStack {
             List {
                 ThemedRows {
                     Section {
-                        ForEach(library.translations) { translation in
-                            row(translation)
+                        if languages.count > 1 {
+                            languagePicker
                         }
-                    } header: {
-                        Text("On this device")
+                        Button {
+                            showsGuide = true
+                        } label: {
+                            Label("Which Bible is right for me?", systemImage: "questionmark.circle")
+                                .foregroundStyle(palette.accent)
+                        }
+                        .accessibilityIdentifier("bibles.guide")
                     } footer: {
-                        Text("Every Bible here works offline.")
+                        Text("Every Bible here is free, and works offline once it's on your device.")
                     }
                     .listRowBackground(palette.surface)
 
-                    Section {
-                        if !hasLoaded {
-                            ProgressView().frame(maxWidth: .infinity)
-                        } else if library.available.isEmpty {
-                            Text(library.catalog.isEmpty ? "Connect to the internet to see more Bibles." : "You have every Bible that's available.")
-                                .foregroundStyle(palette.secondaryText)
-                        }
-                        ForEach(library.available) { item in
-                            downloadRow(item)
-                        }
-                    } header: {
-                        Text("Available to download")
-                    } footer: {
-                        if let error = library.downloadError {
-                            Text(error).foregroundStyle(.orange)
-                        } else {
-                            Text("Genesis offers public-domain translations. More will come as licenses allow.")
-                        }
-                    }
-                    .listRowBackground(palette.surface)
+                    bibles
                 }
             }
             .themedScreen()
@@ -60,6 +71,9 @@ struct BibleDownloadsView: View {
                 await library.refreshCatalog()
                 hasLoaded = true
             }
+            .sheet(isPresented: $showsGuide) {
+                TranslationGuideView(language: language)
+            }
             .confirmationDialog("Remove \(removing?.name ?? "")?", isPresented: Binding(get: { removing != nil }, set: { if !$0 { removing = nil } }), titleVisibility: .visible) {
                 Button("Remove", role: .destructive) {
                     if let removing { library.remove(removing) }
@@ -70,75 +84,70 @@ struct BibleDownloadsView: View {
         }
     }
 
-    private func row(_ translation: Translation) -> some View {
-        HStack(spacing: 14) {
-            Text(translation.abbreviation)
-                .font(.system(.subheadline, design: .serif, weight: .bold))
-                .foregroundStyle(palette.accent)
-                .frame(width: 48, alignment: .leading)
-            VStack(alignment: .leading, spacing: 2) {
-                Text(translation.name).foregroundStyle(palette.text)
-                Text(library.isBundled(translation) ? "Included" : "Downloaded")
-                    .font(.caption)
-                    .foregroundStyle(palette.secondaryText)
-            }
-            Spacer()
-            if library.downloading.contains(translation.id) {
-                ProgressView().accessibilityLabel("Updating")
-            } else if translation == library.currentTranslation {
-                Image(systemName: "checkmark").foregroundStyle(palette.accent).accessibilityLabel("Current translation")
-            }
-        }
-        .contentShape(Rectangle())
-        .onTapGesture { reader.switchTranslation(to: translation) }
-        .swipeActions {
-            if library.isRemovable(translation) {
-                Button("Remove", role: .destructive) { removing = translation }
+    // MARK: Parts
+
+    private var languagePicker: some View {
+        let selection = Binding(get: { language }, set: { chosenLanguage = $0 })
+        return Group {
+            if languages.count <= 3 {
+                Picker("Language", selection: selection) {
+                    ForEach(languages, id: \.self) { Text(AppLanguage.displayName($0)).tag($0) }
+                }
+                .pickerStyle(.segmented)
+            } else {
+                Picker("Language", selection: selection) {
+                    ForEach(languages, id: \.self) { Text(AppLanguage.displayName($0)).tag($0) }
+                }
+                .pickerStyle(.menu)
+                .tint(palette.accent)
             }
         }
-        .contextMenu {
-            if library.isRemovable(translation) {
-                Button("Remove from This Device", systemImage: "trash", role: .destructive) { removing = translation }
-            }
-        }
-        .accessibilityElement(children: .combine)
-        .accessibilityAddTraits(.isButton)
-        .accessibilityIdentifier("bibles.installed.\(translation.id)")
+        .accessibilityIdentifier("bibles.language")
     }
 
-    private func downloadRow(_ item: DownloadableTranslation) -> some View {
-        HStack(alignment: .top, spacing: 14) {
-            Text(item.id)
-                .font(.system(.subheadline, design: .serif, weight: .bold))
-                .foregroundStyle(palette.accent)
-                .lineLimit(1)
-                .minimumScaleFactor(0.7)
-                .frame(width: 48, alignment: .leading)
-            VStack(alignment: .leading, spacing: 3) {
-                Text(item.name).foregroundStyle(palette.text)
-                if !item.summary.isEmpty {
-                    Text(item.summary).font(.footnote).foregroundStyle(palette.secondaryText)
+    private var bibles: some View {
+        Section {
+            ForEach(entries) { entry in
+                TranslationCardView(
+                    entry: entry,
+                    isCurrent: entry.translation.id == library.currentTranslation.id,
+                    isDownloading: library.downloading.contains(entry.id),
+                    read: { reader.switchTranslation(to: entry.translation) },
+                    download: {
+                        guard let item = entry.download else { return }
+                        Task { await library.download(item) }
+                    }
+                )
+                .swipeActions {
+                    if library.isRemovable(entry.translation) {
+                        Button("Remove", role: .destructive) { removing = entry.translation }
+                    }
                 }
-                // The Bible's language when it isn't the app's ("Español").
-                Text(([item.language == AppLanguage.code ? nil : AppLanguage.displayName(item.language),
-                       ByteCountFormatter.string(fromByteCount: Int64(item.fileBytes), countStyle: .file),
-                       item.license] as [String?]).compactMap { $0 }.joined(separator: " · "))
-                    .font(.caption)
+                .contextMenu {
+                    if library.isRemovable(entry.translation) {
+                        Button("Remove from This Device", systemImage: "trash", role: .destructive) { removing = entry.translation }
+                    }
+                }
+            }
+            if !hasLoaded {
+                ProgressView().frame(maxWidth: .infinity)
+            } else if library.catalog.isEmpty {
+                Text("Connect to the internet to see more Bibles.")
+                    .font(.footnote)
                     .foregroundStyle(palette.secondaryText)
             }
-            Spacer()
-            if library.downloading.contains(item.id) {
-                ProgressView().accessibilityLabel("Downloading")
+        } header: {
+            Text(AppLanguage.displayName(language))
+        } footer: {
+            if let error = library.downloadError {
+                Text(error).foregroundStyle(.orange)
             } else {
-                Button {
-                    Task { await library.download(item) }
-                } label: {
-                    Image(systemName: "arrow.down.circle").font(.title2)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("The most read are listed first.")
+                    Text("Genesis offers public-domain translations. More will come as licenses allow.")
                 }
-                .buttonStyle(.borderless)
-                .accessibilityLabel("Download \(item.name)")
-                .accessibilityIdentifier("bibles.download.\(item.id)")
             }
         }
+        .listRowBackground(palette.surface)
     }
 }

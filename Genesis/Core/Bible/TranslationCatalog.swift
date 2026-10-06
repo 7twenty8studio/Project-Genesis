@@ -15,13 +15,26 @@ struct DownloadableTranslation: Identifiable, Hashable, Codable, Sendable {
     let version: Int
     /// "en", "es". Older catalogs without the column are English.
     var language: String = "en"
+    /// The Bibles screen's details; nil where the server doesn't say.
+    var approach: TranslationApproach?
+    var readingLevel: ReadingLevel?
+    var rights: TranslationRights?
+    var popularity: Int?
+
+    /// The server's details, completed with what the app knows.
+    var profile: TranslationProfile {
+        TranslationProfile(approach: approach, readingLevel: readingLevel, rights: rights, popularity: popularity)
+            .filling(from: TranslationProfile.builtIn[id])
+            .filling(from: TranslationProfile(rights: TranslationProfile.rights(fromLicense: license)))
+    }
 
     var translation: Translation {
         Translation(id: id, name: name, year: year, license: license, summary: summary, language: language)
     }
 
     enum CodingKeys: String, CodingKey {
-        case id, name, year, license, summary, version, sha256, language
+        case id, name, year, license, summary, version, sha256, language, approach, rights, popularity
+        case readingLevel = "reading_level"
         case fileURL = "file_url"
         case fileBytes = "file_bytes"
         case databaseBytes = "database_bytes"
@@ -43,6 +56,12 @@ extension DownloadableTranslation {
         sha256 = try container.decode(String.self, forKey: .sha256)
         version = try container.decode(Int.self, forKey: .version)
         language = try container.decodeIfPresent(String.self, forKey: .language) ?? "en"
+        // Newer columns: an older server, or a value this version doesn't
+        // know, leaves them empty rather than hiding the Bible.
+        approach = (try? container.decodeIfPresent(String.self, forKey: .approach)).flatMap(TranslationApproach.init(rawValue:))
+        readingLevel = (try? container.decodeIfPresent(String.self, forKey: .readingLevel)).flatMap(ReadingLevel.init(rawValue:))
+        rights = (try? container.decodeIfPresent(String.self, forKey: .rights)).flatMap(TranslationRights.init(rawValue:))
+        popularity = try? container.decodeIfPresent(Int.self, forKey: .popularity)
     }
 }
 
