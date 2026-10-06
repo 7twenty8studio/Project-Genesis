@@ -14,7 +14,7 @@
 //   strips any run of six or more words from the passage. The app shows verse
 //   text from its own database and labels this content as AI-generated.
 // - Free accounts: 3 passage explanations a day. Premium (a verified App Store
-//   subscription): every action, up to 50 new answers a day.
+//   subscription or a grant): every action, up to 30 new answers a day.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import {
   buildUserMessage,

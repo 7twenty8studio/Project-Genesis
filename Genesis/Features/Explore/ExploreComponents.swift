@@ -183,3 +183,34 @@ struct StudyDataMissingView: View {
         QuietEmptyState(systemImage: "exclamationmark.triangle", title: String(localized: "Study data unavailable"), message: String(localized: "Reinstall Genesis to restore the timeline, maps and people."))
     }
 }
+
+/// A Premium part of a free page: what it offers and the way to unlock it.
+struct PremiumTeaser: View {
+    let message: String
+    let feature: PremiumFeature
+
+    @Environment(\.palette) private var palette
+    @State private var premium: PremiumFeature?
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Label {
+                Text(message)
+                    .foregroundStyle(palette.secondaryText)
+                    .fixedSize(horizontal: false, vertical: true)
+            } icon: {
+                Image(systemName: "lock")
+                    .foregroundStyle(palette.accent)
+            }
+            .font(.subheadline)
+            Button("Unlock with Premium") { premium = feature }
+                .buttonStyle(.bordered)
+                .tint(palette.accent)
+                .accessibilityIdentifier("teaser.unlock")
+        }
+        .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(palette.surface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .premiumSheet($premium)
+    }
+}

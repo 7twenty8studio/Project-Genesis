@@ -189,10 +189,8 @@ private struct SignedInView: View {
 
     @Environment(AuthService.self) private var auth
     @Environment(SyncService.self) private var sync
-    @Environment(EntitlementService.self) private var entitlements
     @Environment(\.palette) private var palette
     @State private var confirmSignOut = false
-    @State private var premium: PremiumFeature?
     @State private var showsPasswordChange = false
     @State private var confirmDelete = false
 
@@ -204,36 +202,22 @@ private struct SignedInView: View {
                         .accessibilityIdentifier("account.signedInAs")
                 }
 
-                if !entitlements.allows(.cloudBackup) {
-                    Section {
-                        Button {
-                            premium = .cloudBackup
-                        } label: {
-                            Label("Back up with Premium", systemImage: "icloud")
-                        }
-                        .accessibilityIdentifier("account.backupPremium")
-                    } header: {
-                        Text("Cloud Backup")
-                    } footer: {
-                        Text("Your highlights, notes, plans and prayers are saved on this device. Cloud backup and sync across devices are part of Genesis Premium.")
+                Section {
+                    HStack {
+                        Label(statusText, systemImage: statusSymbol)
+                            .foregroundStyle(statusColor)
+                        Spacer()
+                        if sync.status == .syncing { ProgressView() }
                     }
-                } else {
-                    Section {
-                        HStack {
-                            Label(statusText, systemImage: statusSymbol)
-                                .foregroundStyle(statusColor)
-                            Spacer()
-                            if sync.status == .syncing { ProgressView() }
-                        }
-                        Button("Sync Now") {
-                            Task { await sync.syncNow() }
-                        }
-                        .disabled(sync.status == .syncing)
-                    } header: {
-                        Text("Cloud Sync")
-                    } footer: {
-                        Text("Highlights, notes, bookmarks, reading plans and prayers sync automatically. Prayers are private to your account.")
+                    Button("Sync Now") {
+                        Task { await sync.syncNow() }
                     }
+                    .disabled(sync.status == .syncing)
+                    .accessibilityIdentifier("account.syncNow")
+                } header: {
+                    Text("Cloud Sync")
+                } footer: {
+                    Text("Highlights, notes, bookmarks, reading plans, prayers and memory verses sync automatically, free. Prayers are private to your account.")
                 }
 
                 Section {
@@ -269,7 +253,6 @@ private struct SignedInView: View {
                 }
             }
         }
-        .premiumSheet($premium)
         .confirmationDialog("Sign out?", isPresented: $confirmSignOut, titleVisibility: .visible) {
             Button("Sign Out and Keep Data on This Device") { signOut(removeLocalData: false) }
             Button("Sign Out and Remove Data from This Device", role: .destructive) { signOut(removeLocalData: true) }

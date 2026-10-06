@@ -2,10 +2,10 @@ import Foundation
 
 /// What Genesis Premium unlocks (from the PRD's Premium Features list).
 enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
-    case cloudBackup
-    case premiumThemes
+    case morningWelcome
     case advancedAI
     case historicalContent
+    case premiumThemes
     case readingInsights
     case advancedSearch
     case ambientSounds
@@ -16,10 +16,10 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
 
     var title: String {
         switch self {
-        case .cloudBackup: String(localized: "Cloud backup and sync")
+        case .morningWelcome: String(localized: "Morning welcome")
         case .premiumThemes: String(localized: "Premium themes")
         case .advancedAI: String(localized: "Advanced study assistant")
-        case .historicalContent: String(localized: "Timeline, maps and people")
+        case .historicalContent: String(localized: "Family trees, maps and journeys")
         case .readingInsights: String(localized: "Reading insights")
         case .advancedSearch: String(localized: "Advanced search")
         case .ambientSounds: String(localized: "Ambient sounds")
@@ -30,10 +30,10 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
 
     var detail: String {
         switch self {
-        case .cloudBackup: String(localized: "Keep highlights, notes, plans and prayers on all your devices.")
+        case .morningWelcome: String(localized: "Begin each day with a quiet welcome: your name, today's verse and reading, and your sounds easing in.")
         case .premiumThemes: String(localized: "Textured paper in Cream, Parchment, Midnight and Sage, and seasonal themes with falling leaves, snow, blossom and summer sunlight.")
-        case .advancedAI: String(localized: "Summaries, historical background, discussion questions and more, without the daily limit.")
-        case .historicalContent: String(localized: "An interactive timeline, Bible maps and journeys, and a character explorer with family trees.")
+        case .advancedAI: String(localized: "Summaries, historical background, discussion questions and more, with up to 30 new answers a day.")
+        case .historicalContent: String(localized: "Family trees for 3,000 people, interactive maps with Paul's journeys and the Exodus, and the people and places beside the chapter you're reading.")
         case .readingInsights: String(localized: "Time spent reading, favourite books and your reading history.")
         case .advancedSearch: String(localized: "Search by topic across the whole Bible, and narrow searches to a testament or book.")
         case .widgets: String(localized: "Tick off today's reading from your Home Screen, and follow along on the Lock Screen while you listen.")
@@ -44,7 +44,7 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
 
     var systemImage: String {
         switch self {
-        case .cloudBackup: "icloud"
+        case .morningWelcome: "sun.horizon"
         case .premiumThemes: "paintpalette"
         case .advancedAI: "sparkles"
         case .historicalContent: "map"

@@ -574,6 +574,16 @@
         }
       }
     },
+    "A morning welcome": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una bienvenida cada mañana"
+          }
+        }
+      }
+    },
     "A precise, literal translation valued for careful study.": {
       "localizations": {
         "es": {
@@ -1038,26 +1048,6 @@
         }
       }
     },
-    "An interactive timeline from Creation to Revelation, Bible maps with Paul's journeys and the Exodus, and more than 3,000 people with family trees and every verse that mentions them.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Una cronología interactiva desde la Creación hasta Apocalipsis, mapas bíblicos con los viajes de Pablo y el Éxodo, y más de 3000 personas con árboles genealógicos y cada versículo que las menciona."
-          }
-        }
-      }
-    },
-    "An interactive timeline, Bible maps and journeys, and a character explorer with family trees.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Una cronología interactiva, mapas y viajes bíblicos, y un explorador de personajes con árboles genealógicos."
-          }
-        }
-      }
-    },
     "And %lld more": {
       "localizations": {
         "es": {
@@ -1291,16 +1281,6 @@
         }
       }
     },
-    "Back up with Premium": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Haz copia de seguridad con Premium"
-          }
-        }
-      }
-    },
     "Background": {
       "comment": "Study assistant action: historical background",
       "localizations": {
@@ -1369,6 +1349,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Comenzar a leer"
+          }
+        }
+      }
+    },
+    "Begin each day with a quiet welcome: your name, today's verse and reading, and your sounds easing in.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empieza cada día con una bienvenida serena: tu nombre, el versículo y la lectura de hoy, y tus sonidos entrando suavemente."
           }
         }
       }
@@ -1554,6 +1544,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Brillo"
+          }
+        }
+      }
+    },
+    "Browse the story of Scripture and more than 3,000 people, free.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recorre la historia de las Escrituras y más de 3.000 personas, gratis."
           }
         }
       }
@@ -1778,6 +1778,16 @@
         }
       }
     },
+    "Choose your sounds first in Settings › Ambient Sounds.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primero elige tus sonidos en Ajustes › Sonidos ambientales."
+          }
+        }
+      }
+    },
     "Choosing a Bible": {
       "localizations": {
         "es": {
@@ -1909,32 +1919,12 @@
         }
       }
     },
-    "Cloud Backup": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copia de seguridad en la nube"
-          }
-        }
-      }
-    },
     "Cloud Sync": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Sincronización en la nube"
-          }
-        }
-      }
-    },
-    "Cloud backup and sync": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copia de seguridad y sincronización en la nube"
           }
         }
       }
@@ -2574,6 +2564,16 @@
         }
       }
     },
+    "Ease In My Ambient Sounds": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iniciar suavemente mis sonidos ambientales"
+          }
+        }
+      }
+    },
     "Easy": {
       "comment": "Memorise: I knew it easily",
       "localizations": {
@@ -2828,6 +2828,16 @@
         }
       }
     },
+    "Explore the timeline and people": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Explora la cronología y los personajes"
+          }
+        }
+      }
+    },
     "Fades out at %@.": {
       "localizations": {
         "es": {
@@ -2865,6 +2875,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "Árbol genealógico"
+          }
+        }
+      }
+    },
+    "Family trees and maps, Memorise, ambient sounds and more.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Árboles genealógicos y mapas, Memorizar, sonidos ambientales y más."
+          }
+        }
+      }
+    },
+    "Family trees for 3,000 people, interactive maps with Paul's journeys and the Exodus, and the people and places beside the chapter you're reading.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Árboles genealógicos de 3.000 personas, mapas interactivos con los viajes de Pablo y el Éxodo, y las personas y lugares junto al capítulo que lees."
+          }
+        }
+      }
+    },
+    "Family trees, maps and journeys": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Árboles genealógicos, mapas y viajes"
           }
         }
       }
@@ -3286,12 +3326,52 @@
         }
       }
     },
+    "Good afternoon, %@.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buenas tardes, %@."
+          }
+        }
+      }
+    },
+    "Good afternoon.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buenas tardes."
+          }
+        }
+      }
+    },
     "Good evening": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Buenas noches"
+          }
+        }
+      }
+    },
+    "Good evening, %@.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buenas noches, %@."
+          }
+        }
+      }
+    },
+    "Good evening.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buenas noches."
           }
         }
       }
@@ -3306,6 +3386,26 @@
         }
       }
     },
+    "Good morning, %@.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buenos días, %@."
+          }
+        }
+      }
+    },
+    "Good morning.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buenos días."
+          }
+        }
+      }
+    },
     "Green": {
       "comment": "Highlight colour",
       "localizations": {
@@ -3313,6 +3413,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verde"
+          }
+        }
+      }
+    },
+    "Greeting": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saludo"
           }
         }
       }
@@ -3468,12 +3578,12 @@
         }
       }
     },
-    "Highlights, notes, bookmarks, reading plans and prayers sync automatically. Prayers are private to your account.": {
+    "Highlights, notes, bookmarks, reading plans, prayers and memory verses sync automatically, free. Prayers are private to your account.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Los resaltados, notas, marcadores, planes de lectura y oraciones se sincronizan automáticamente. Las oraciones son privadas de tu cuenta."
+            "value": "Los resaltados, notas, marcadores, planes de lectura, oraciones y versículos para memorizar se sincronizan automáticamente y gratis. Las oraciones son privadas para tu cuenta."
           }
         }
       }
@@ -3826,16 +3936,6 @@
         }
       }
     },
-    "Keep highlights, notes, plans and prayers on all your devices.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ten tus resaltados, notas, planes y oraciones en todos tus dispositivos."
-          }
-        }
-      }
-    },
     "Keep others' private details private. Don't share anyone's prayer request outside Genesis.": {
       "localizations": {
         "es": {
@@ -4024,6 +4124,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Salir del grupo"
+          }
+        }
+      }
+    },
+    "Leave it empty to use your name in groups, or no name at all.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Déjalo vacío para usar tu nombre en los grupos, o ningún nombre."
           }
         }
       }
@@ -4614,6 +4724,16 @@
         }
       }
     },
+    "More for everyone": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más para todos"
+          }
+        }
+      }
+    },
     "More ways to make verse images": {
       "localizations": {
         "es": {
@@ -4641,6 +4761,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Jardín al amanecer"
+          }
+        }
+      }
+    },
+    "Morning Welcome": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bienvenida matinal"
+          }
+        }
+      }
+    },
+    "Morning welcome": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bienvenida matinal"
           }
         }
       }
@@ -5117,6 +5257,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "No se encontraron versículos en la %@. Prueba con menos palabras o con otra ortografía."
+          }
+        }
+      }
+    },
+    "Not Now": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ahora no"
           }
         }
       }
@@ -5783,6 +5933,16 @@
         }
       }
     },
+    "Plays %@, fading in gently.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reproduce %@, entrando suavemente."
+          }
+        }
+      }
+    },
     "Please include the Bible, book, chapter and verse.": {
       "localizations": {
         "es": {
@@ -6001,6 +6161,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mantén presionado un versículo para resaltarlo, añadir una nota, copiarlo o compartirlo."
+          }
+        }
+      }
+    },
+    "Preview": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vista previa"
           }
         }
       }
@@ -7150,6 +7320,16 @@
         }
       }
     },
+    "See %@'s parents, spouses and children, and follow the family across generations, with Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Premium, mira los padres, cónyuges e hijos de %@ y sigue a la familia a través de las generaciones."
+          }
+        }
+      }
+    },
     "See All": {
       "localizations": {
         "es": {
@@ -7471,6 +7651,16 @@
         }
       }
     },
+    "Show Each Day": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar cada día"
+          }
+        }
+      }
+    },
     "Show Uncertain Places": {
       "localizations": {
         "es": {
@@ -7637,6 +7827,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Inicia sesión para unirte a grupos y a la comunidad."
+          }
+        }
+      }
+    },
+    "Sign in to keep your highlights, notes, plans and prayers on all your devices.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inicia sesión para tener tus resaltados, notas, planes y oraciones en todos tus dispositivos."
           }
         }
       }
@@ -8138,12 +8338,12 @@
         }
       }
     },
-    "Summaries, historical background, discussion questions and more, without the daily limit.": {
+    "Summaries, historical background, discussion questions and more, with up to 30 new answers a day.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Resúmenes, contexto histórico, preguntas para conversar y más, sin límite diario."
+            "value": "Resúmenes, contexto histórico, preguntas para conversar y más, con hasta 30 respuestas nuevas al día."
           }
         }
       }
@@ -8186,6 +8386,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sincronizar ahora"
+          }
+        }
+      }
+    },
+    "Sync is now free": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La sincronización ahora es gratis"
           }
         }
       }
@@ -8531,6 +8741,16 @@
         }
       }
     },
+    "The first time you open Genesis each day, a quiet welcome shows today's verse and reading.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La primera vez que abres Genesis cada día, una bienvenida serena te muestra el versículo y la lectura de hoy."
+          }
+        }
+      }
+    },
     "The most read are listed first.": {
       "localizations": {
         "es": {
@@ -8627,6 +8847,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "El asistente de estudio envió una respuesta vacía."
+          }
+        }
+      }
+    },
+    "The study assistant, family trees and maps, Memorise and more.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El asistente de estudio, árboles genealógicos y mapas, Memorizar y más."
           }
         }
       }
@@ -8847,36 +9077,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cronología, mapas y personas"
-          }
-        }
-      }
-    },
-    "Timeline, maps and people": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cronología, mapas y personas"
-          }
-        }
-      }
-    },
-    "Timeline, maps and people, cloud backup, themes and more.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cronología, mapas y personas, copia de seguridad en la nube, temas y más."
-          }
-        }
-      }
-    },
-    "Timeline, maps and people, the study assistant, cloud backup and more.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cronología, mapas y personas, el asistente de estudio, copia de seguridad en la nube y más."
           }
         }
       }
@@ -9364,12 +9564,12 @@
         }
       }
     },
-    "Walk through the story of Scripture": {
+    "Walk the lands of the Bible": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Recorre la historia de la Escritura"
+            "value": "Recorre las tierras de la Biblia"
           }
         }
       }
@@ -9599,6 +9799,16 @@
         }
       }
     },
+    "With Premium, explore 1,250 places on the map and follow Paul's journeys and the Exodus step by step.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Premium, explora 1.250 lugares en el mapa y sigue paso a paso los viajes de Pablo y el Éxodo."
+          }
+        }
+      }
+    },
     "With Premium, keep your group's reading on your Home Screen.": {
       "localizations": {
         "es": {
@@ -9625,6 +9835,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Con Premium, selecciona versículos y toca Memorizar. Las tarjetas te traen cada uno justo antes de que lo olvides. Están en Inicio."
+          }
+        }
+      }
+    },
+    "With Premium, start each day with today's verse and reading, and your sounds easing in.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Premium, empieza cada día con el versículo y la lectura de hoy, y tus sonidos entrando suavemente."
           }
         }
       }
@@ -10023,6 +10243,16 @@
         }
       }
     },
+    "Your first name": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu nombre"
+          }
+        }
+      }
+    },
     "Your group leader can share the code from the group's Members page.": {
       "localizations": {
         "es": {
@@ -10039,16 +10269,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tus resaltados y notas se conservan. Puedes volver a descargarla cuando quieras."
-          }
-        }
-      }
-    },
-    "Your highlights, notes, plans and prayers are saved on this device. Cloud backup and sync across devices are part of Genesis Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tus resaltados, notas, planes y oraciones se guardan en este dispositivo. La copia de seguridad en la nube y la sincronización entre dispositivos forman parte de Genesis Premium."
           }
         }
       }

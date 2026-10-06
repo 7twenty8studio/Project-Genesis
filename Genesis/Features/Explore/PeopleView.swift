@@ -59,12 +59,13 @@ struct PersonRow: View {
     }
 }
 
-/// One person: biography, family tree, timeline, books, verses and places.
+/// One person: biography, family tree (Premium), timeline, books, verses and places.
 struct PersonDetailView: View {
     let personID: Int
 
     @Environment(\.studyData) private var studyData
     @Environment(AppRouter.self) private var router
+    @Environment(EntitlementService.self) private var entitlements
     @Environment(\.palette) private var palette
 
     @State private var loaded: Loaded?
@@ -86,7 +87,13 @@ struct PersonDetailView: View {
                         DetailSection(title: String(localized: "Biography")) { DictionaryText(text: person.biography) }
                     }
                     if !family.isEmpty {
-                        DetailSection(title: String(localized: "Family Tree")) { FamilyTreeView(person: person.summary, family: family) }
+                        DetailSection(title: String(localized: "Family Tree")) {
+                            if entitlements.allows(.historicalContent) {
+                                FamilyTreeView(person: person.summary, family: family)
+                            } else {
+                                PremiumTeaser(message: String(localized: "See \(person.name)'s parents, spouses and children, and follow the family across generations, with Premium."), feature: .historicalContent)
+                            }
+                        }
                     }
                     if !events.isEmpty {
                         DetailSection(title: String(localized: "Timeline")) {

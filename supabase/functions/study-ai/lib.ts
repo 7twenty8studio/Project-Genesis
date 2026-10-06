@@ -19,7 +19,7 @@ export type Action = (typeof ACTIONS)[number];
 export const FREE_ACTIONS: readonly Action[] = ["explain"];
 export const FREE_DAILY_LIMIT = 3;
 /** Premium fair use, to keep costs predictable. */
-export const PREMIUM_DAILY_LIMIT = 50;
+export const PREMIUM_DAILY_LIMIT = 30;
 
 export const MODEL = "claude-haiku-4-5-20251001";
 /** Bump when prompts change, so cached answers are regenerated. */

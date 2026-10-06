@@ -2,7 +2,7 @@ import Foundation
 import Observation
 
 /// Who is signed in. Without an account the app works fully offline as a
-/// guest; signing in adds cloud backup and sync across devices.
+/// guest; signing in adds free cloud backup and sync across devices.
 @MainActor
 @Observable
 final class AuthService {

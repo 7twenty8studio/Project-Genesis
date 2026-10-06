@@ -15,8 +15,10 @@ struct RootView: View {
     @Environment(AudioPlayerService.self) private var audio
     @Environment(AmbientSoundService.self) private var ambient
     @Environment(FeaturePreferences.self) private var features
+    @Environment(MorningWelcome.self) private var welcome
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
+    @State private var showsWelcome = false
     @Environment(\.scenePhase) private var scenePhase
     @AppStorage("onboarding.complete") private var onboardingComplete = false
 
@@ -27,13 +29,19 @@ struct RootView: View {
                 MainTabView()
             } else {
                 OnboardingView {
-                    // A new install: what shipped with the app isn't news.
+                    // A new install: what shipped with the app isn't news,
+                    // and setup was today's welcome.
                     whatsNew.markShippedFeaturesSeen()
+                    welcome.markShown()
                     onboardingComplete = true
                 }
             }
         }
-        .whatsNewSheet(isReady: onboardingComplete && scenePhase == .active)
+        .whatsNewSheet(isReady: onboardingComplete && scenePhase == .active && !showsWelcome)
+        // Premium: a quiet welcome the first time Genesis opens each day.
+        .fullScreenCover(isPresented: $showsWelcome) {
+            MorningWelcomeView { showsWelcome = false }
+        }
         // With the Seasons icon, move the Home Screen icon on with the season.
         .onChange(of: scenePhase) { _, phase in
             if phase == .active { AppIcon.apply() }
@@ -48,6 +56,9 @@ struct RootView: View {
                 if !features.hasChosen { features.choose(OptionalFeature.defaults) }
             }
             onboardingComplete = true
+            // Opened from a link or widget: go there, not to the welcome.
+            welcome.markShown()
+            showsWelcome = false
             router.handle(url)
         }
         .task {
@@ -58,9 +69,9 @@ struct RootView: View {
             Task { await PushNotifications.shared.refreshRegistration() }
             Task { await library.refreshCatalog() }
             refreshWidgets()
+            offerWelcome()
         }
-        .onChange(of: entitlements.isPremium) { _, isPremium in
-            if isPremium { sync.schedule(after: .zero) }
+        .onChange(of: entitlements.isPremium) {
             keepThemeAvailable()
             keepAmbientAvailable()
             refreshWidgets()
@@ -69,6 +80,7 @@ struct RootView: View {
         .onChange(of: entitlements.hasLoaded) {
             keepThemeAvailable()
             keepAmbientAvailable()
+            offerWelcome()
         }
         // Ambient sounds sit quieter while the Bible is read aloud.
         .onChange(of: audio.isPlaying) { _, playing in ambient.setDucked(playing) }
@@ -80,8 +92,12 @@ struct RootView: View {
                 audio.liveActivity.appBecameActive()
                 Task { await flags.refresh() }
                 refreshWidgets()
+                offerWelcome()
             case .background:
                 refreshWidgets()
+                // A welcome that couldn't be shown (another sheet was up) is
+                // offered again next time, and What's New isn't held back.
+                showsWelcome = false
             default:
                 break
             }
@@ -94,6 +110,14 @@ struct RootView: View {
             // Keep listening in the new translation.
             audio.settingsChanged()
         }
+    }
+
+    /// The morning welcome, once a day, once Premium is known and the app is
+    /// in front. The view marks the day as greeted when it actually appears.
+    private func offerWelcome() {
+        guard onboardingComplete, scenePhase == .active, entitlements.hasLoaded, !showsWelcome,
+              welcome.shouldShow(isPremium: entitlements.isPremium) else { return }
+        showsWelcome = true
     }
 
     /// If Premium has ended, a premium theme falls back to Auto.

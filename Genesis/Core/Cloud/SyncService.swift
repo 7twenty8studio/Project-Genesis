@@ -21,8 +21,8 @@ final class SyncService {
     private(set) var lastSyncedAt: Date?
 
     @ObservationIgnored let auth: AuthService
-    /// Cloud backup is part of Premium; the app sets this from the entitlement.
-    /// Signing in still works without it (the study assistant needs an account).
+    /// Sync is free for every signed-in account; this stays as a switch for
+    /// tests and for turning it off if ever needed.
     @ObservationIgnored var isAllowed: @MainActor () -> Bool = { true }
     @ObservationIgnored private let container: ModelContainer
     @ObservationIgnored private let defaults: UserDefaults

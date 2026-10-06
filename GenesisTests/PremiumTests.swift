@@ -29,7 +29,7 @@ struct PremiumTests {
         let free = service(premium: false)
         let available = ReaderTheme.allCases.filter { free.allows($0) }
         #expect(available == [.automatic, .paper, .sepia, .slate, .highContrast])
-        #expect(!free.allows(.cloudBackup))
+        #expect(!free.allows(.morningWelcome))
         #expect(!free.allows(.historicalContent))
     }
 

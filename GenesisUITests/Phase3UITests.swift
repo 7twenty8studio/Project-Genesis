@@ -29,12 +29,14 @@ final class Phase3UITests: GenesisUITestCase {
     // MARK: Premium gates
 
     @MainActor
-    func testExploreIsLockedForFreeAccounts() {
+    func testExploreIsFreeExceptMaps() {
         let app = Genesis.launch()
         XCTAssertTrue(app.buttons["home.account"].waitForExistence(timeout: Genesis.launchTimeout))
-        openExplore(app)
+        openExplore(app, section: "Timeline")
+        XCTAssertTrue(app.buttons["timeline.era.creation"].waitForExistence(timeout: Genesis.timeout), "Free accounts browse the timeline")
+        openExplore(app, section: "Map")
         let unlock = app.buttons["explore.unlock"]
-        XCTAssertTrue(unlock.waitForExistence(timeout: Genesis.timeout), "Free accounts see the preview")
+        XCTAssertTrue(unlock.waitForExistence(timeout: Genesis.timeout), "The map is a Premium preview")
         unlock.tap()
         XCTAssertTrue(app.buttons["premium.subscribe"].waitForExistence(timeout: Genesis.timeout), "Unlock opens Premium")
         XCTAssertTrue(app.buttons["premium.restore"].exists, "Restore Purchases is offered")

@@ -39,9 +39,11 @@ shares; README.md has the architecture.
   in SyncService, a table + RLS in a new migration.
 
 ## Premium and AI
-- Notes, highlights, the prayer journal and reading plans are free with no
-  limits. `FreeLimits` holds only the 3 AI answers a day, enforced again on
-  the server (supabase/functions/study-ai/lib.ts). Premium extras are
+- Every Bible is free. Notes, highlights, the prayer journal, reading plans
+  and cloud sync (with a free account) are free with no limits, and so are
+  Explore's timeline and people. `FreeLimits` holds only the 3 AI answers a
+  day, enforced again on the server (supabase/functions/study-ai/lib.ts;
+  Premium gets 30 new answers a day). Premium extras are
   `PremiumFeature` cases checked with `EntitlementService.allows` at each entry
   point (the tier table is in PHASE3_SETUP.md). Prices: $7.99 / $59.99.
 - The study assistant is behind a server-side switch (public.feature_flags row
@@ -64,6 +66,17 @@ shares; README.md has the architecture.
 - Settings › Send Feedback writes public.app_feedback (insert-only RLS; read
   in the dashboard). Account › Delete Account calls the `delete-account` Edge
   Function (App Store 5.1.1(v)); every table cascades from auth.users.
+
+## Morning welcome
+- Premium (`.morningWelcome`): the first open each day shows
+  `MorningWelcomeView` (greeting by name, today's verse verbatim from the
+  current Bible, today's plan reading, the person's ambient mix easing in).
+  `MorningWelcome` keeps the settings (Settings › Morning Welcome) and the
+  once-a-day rule; RootView presents it and skips it when opened from a link.
+  UI tests only see it with `-uiTestingWelcome`.
+- Explore: the timeline, people and places are free; family trees
+  (`PremiumTeaser`), the Map tab and the reader's Context panel need
+  `.historicalContent`.
 
 ## Memorise Scripture
 - Premium (`.memorise`), shown with Plans & Prayer. `MemoryVerse` (SwiftData,

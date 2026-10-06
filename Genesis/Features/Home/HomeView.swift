@@ -330,7 +330,7 @@ struct HomeView: View {
                     Text("Genesis Premium")
                         .font(.headline)
                         .foregroundStyle(palette.text)
-                    Text(assistant.isEnabled ? "Timeline, maps and people, the study assistant, cloud backup and more." : "Timeline, maps and people, cloud backup, themes and more.")
+                    Text(assistant.isEnabled ? "The study assistant, family trees and maps, Memorise and more." : "Family trees and maps, Memorise, ambient sounds and more.")
                         .font(.subheadline)
                         .foregroundStyle(palette.secondaryText)
                         .multilineTextAlignment(.leading)

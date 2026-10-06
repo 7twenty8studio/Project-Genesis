@@ -59,8 +59,8 @@ test("free accounts: three explanations a day, nothing else", () => {
 });
 
 test("premium: every action, fair-use limit", () => {
-  assert.deepEqual(decideAccess("premium", "questions", 0), { allowed: true, limit: 50 });
-  assert.deepEqual(decideAccess("premium", "context", 50), { allowed: false, reason: "daily_limit", limit: 50 });
+  assert.deepEqual(decideAccess("premium", "questions", 0), { allowed: true, limit: 30 });
+  assert.deepEqual(decideAccess("premium", "context", 30), { allowed: false, reason: "daily_limit", limit: 30 });
 });
 
 test("the reference is built on the server", () => {

@@ -1,6 +1,7 @@
 import SwiftUI
 
-/// The Explore tab: the Bible timeline, maps and people (Genesis Premium).
+/// The Explore tab: the Bible timeline and people (free), and maps and
+/// journeys (Genesis Premium; free accounts see a preview).
 struct ExploreView: View {
     enum Section: String, CaseIterable, Identifiable {
         case timeline, map, people
@@ -26,18 +27,21 @@ struct ExploreView: View {
             Group {
                 if studyData == nil {
                     StudyDataMissingView()
-                } else if !entitlements.allows(.historicalContent) {
-                    ExploreLockedView()
                 } else {
                     switch section {
                     case .timeline: TimelineBrowser()
-                    case .map: BibleMapView()
+                    case .map:
+                        if entitlements.allows(.historicalContent) {
+                            BibleMapView()
+                        } else {
+                            MapLockedView()
+                        }
                     case .people: PeopleBrowser()
                     }
                 }
             }
             .safeAreaInset(edge: .top, spacing: 0) {
-                if studyData != nil && entitlements.allows(.historicalContent) {
+                if studyData != nil {
                     Picker("Explore", selection: $section) {
                         ForEach(Section.allCases) { Text($0.title).tag($0) }
                     }
@@ -55,29 +59,30 @@ struct ExploreView: View {
     }
 }
 
-/// What free accounts see: a preview of the eras and the way to unlock.
-private struct ExploreLockedView: View {
+/// What free accounts see on the Map: a preview of the journeys and the way
+/// to unlock. The timeline and people are free.
+private struct MapLockedView: View {
     @Environment(\.studyData) private var studyData
     @Environment(\.palette) private var palette
     @State private var premium: PremiumFeature?
+    @State private var journeys: [String] = []
 
     var body: some View {
-        let eras = (try? studyData?.eras()) ?? []
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 VStack(alignment: .leading, spacing: 8) {
                     Image(systemName: "map")
                         .font(.title)
                         .foregroundStyle(palette.accent)
-                    Text("Walk through the story of Scripture")
+                    Text("Walk the lands of the Bible")
                         .font(.system(.title2, design: .serif, weight: .semibold))
                         .foregroundStyle(palette.text)
-                    Text("An interactive timeline from Creation to Revelation, Bible maps with Paul's journeys and the Exodus, and more than 3,000 people with family trees and every verse that mentions them.")
+                    Text("With Premium, explore 1,250 places on the map and follow Paul's journeys and the Exodus step by step.")
                         .foregroundStyle(palette.secondaryText)
                 }
                 FlowLayout(spacing: 8) {
-                    ForEach(eras) { era in
-                        Text(era.title)
+                    ForEach(journeys, id: \.self) { journey in
+                        Text(journey)
                             .font(.subheadline)
                             .padding(.horizontal, 12)
                             .padding(.vertical, 7)
@@ -102,5 +107,8 @@ private struct ExploreLockedView: View {
             .frame(maxWidth: .infinity)
         }
         .premiumSheet($premium)
+        .task {
+            journeys = ((try? studyData?.routes()) ?? []).map(\.title)
+        }
     }
 }

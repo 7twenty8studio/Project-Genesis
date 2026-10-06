@@ -72,6 +72,25 @@ struct SettingsView: View {
                             }
                         }
                         .accessibilityIdentifier("settings.ambientSounds")
+                        if entitlements.allows(.morningWelcome) {
+                            NavigationLink {
+                                MorningWelcomeSettingsView()
+                            } label: {
+                                Label("Morning Welcome", systemImage: "sun.horizon")
+                            }
+                            .accessibilityIdentifier("settings.welcome")
+                        } else {
+                            Button {
+                                premium = .morningWelcome
+                            } label: {
+                                HStack {
+                                    Label("Morning Welcome", systemImage: "sun.horizon")
+                                    Spacer()
+                                    PremiumBadge()
+                                }
+                            }
+                            .accessibilityIdentifier("settings.welcome")
+                        }
                     } header: {
                         Text("Reading")
                     }

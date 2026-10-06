@@ -14,6 +14,7 @@ import Foundation
 ///     -uiTestingPremium               act as a Premium subscriber (default: free)
 ///     -uiTestingAI                    turn the study assistant on (default: off, like release)
 ///     -uiTestingWhatsNew              show What's New announcements (default: never)
+///     -uiTestingWelcome               show the Premium morning welcome (default: never)
 ///     -uiTestingSignedOut             groups and community as a signed-out guest
 ///     -uiTestingSimple                every optional feature switched off
 struct UITestingOptions {
@@ -26,6 +27,7 @@ struct UITestingOptions {
     let isPremium: Bool
     let enablesAI: Bool
     let showsWhatsNew: Bool
+    let showsWelcome: Bool
     let isSignedOut: Bool
     let isSimple: Bool
 
@@ -45,6 +47,7 @@ struct UITestingOptions {
         isPremium = arguments.contains("-uiTestingPremium")
         enablesAI = arguments.contains("-uiTestingAI")
         showsWhatsNew = arguments.contains("-uiTestingWhatsNew")
+        showsWelcome = arguments.contains("-uiTestingWelcome")
         isSignedOut = arguments.contains("-uiTestingSignedOut")
         isSimple = arguments.contains("-uiTestingSimple")
     }

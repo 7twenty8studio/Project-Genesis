@@ -94,10 +94,12 @@ Xcode's local test signatures.
 |---|---|
 | Reading, every public-domain translation, cross references | Everything in Free |
 | Word and reference search | Advanced search: topics, one testament or book, sorting |
-| Notes, highlights, bookmarks (no limits) | Cloud backup and sync |
+| Notes, highlights, bookmarks (no limits) | Morning welcome: greeting, today's verse and reading, sounds easing in |
 | Prayer journal and reading plans (no limits) | Themes: Cream, Parchment, Midnight, Sage and the seasons |
-| Groups, with the shared plan and progress | Study assistant without the daily limit |
-| Themes: Auto, Paper, Sepia, Slate, High Contrast | Timeline, maps and journeys, people and family trees |
+| Cloud backup and sync with a free account | Every study tool, up to 30 new answers a day |
+| Groups, with the shared plan and progress | Family trees, the Bible map and journeys, the reader's Context panel |
+| Explore: the timeline and people | |
+| Themes: Auto, Paper, Sepia, Slate, High Contrast | |
 | 3 passage explanations a day (with a free account) | Reading insights and Year in Review stats |
 | The original widgets (verse, continue reading, streak, prayer) | New widgets: Today's Reading, Memorise, Group Progress, listening on the Lock Screen, Apple Watch |
 | | Memorise Scripture, ambient sounds |

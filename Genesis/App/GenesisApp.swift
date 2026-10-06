@@ -15,6 +15,7 @@ struct GenesisApp: App {
     @State private var assistant: StudyAssistant
     @State private var flags: FeatureFlagService
     @State private var whatsNew: WhatsNewService
+    @State private var welcome: MorningWelcome
     @State private var audio: AudioPlayerService
     @State private var ambient: AmbientSoundService
     @State private var community: CommunityStore
@@ -66,7 +67,6 @@ struct GenesisApp: App {
 
         // UI tests never reach StoreKit: Premium is on only with -uiTestingPremium.
         let entitlements = EntitlementService(override: testing.isEnabled ? testing.isPremium : nil)
-        sync.isAllowed = { [weak entitlements] in entitlements?.allows(.cloudBackup) ?? false }
         _entitlements = State(initialValue: entitlements)
 
         // UI tests get canned answers: no network and no AI cost.
@@ -79,6 +79,8 @@ struct GenesisApp: App {
         )
         _flags = State(initialValue: flags)
         _whatsNew = State(initialValue: WhatsNewService(isEnabled: !testing.isEnabled || testing.showsWhatsNew))
+        let welcome = MorningWelcome(isEnabled: !testing.isEnabled || testing.showsWelcome)
+        _welcome = State(initialValue: welcome)
         _assistant = State(initialValue: StudyAssistant(auth: auth, entitlements: entitlements, library: library, backend: backend, flags: flags, preferences: features))
 
         // Listening. UI tests use a silent narrator that moves through verses
@@ -116,8 +118,15 @@ struct GenesisApp: App {
         let push = PushNotifications.shared
         push.isEnabled = !testing.isEnabled
         push.backend = communityBackend
-        push.onOpenGroup = { [weak router] id in router?.openGroup(id) }
-        push.onOpenPrayerJournal = { [weak router] in router?.open(.prayerJournal) }
+        // A notification tap goes where it points, not to the morning welcome.
+        push.onOpenGroup = { [weak router, weak welcome] id in
+            welcome?.markShown()
+            router?.openGroup(id)
+        }
+        push.onOpenPrayerJournal = { [weak router, weak welcome] in
+            welcome?.markShown()
+            router?.open(.prayerJournal)
+        }
 
         // Verses of the day for Apple Watch (not in UI tests).
         if !testing.isEnabled { WatchConnector.shared.start() }
@@ -140,6 +149,7 @@ struct GenesisApp: App {
                 .environment(assistant)
                 .environment(flags)
                 .environment(whatsNew)
+                .environment(welcome)
                 .environment(audio)
                 .environment(ambient)
                 .environment(community)
