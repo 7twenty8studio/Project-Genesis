@@ -93,7 +93,9 @@ shares; README.md has the architecture.
   Journal entries offer `JournalPrompts`.
 - Reading touches: `ReaderPreferences.largeInitial` (restyles, never changes,
   the first letter; verse 1's number is dropped), `pageTurnSound`
-  (`PageTurnFeedback`, a system sound so no audio session) and `pageTurnHaptic`.
+  (`PageTurnFeedback`, a system sound so no audio session; page-turn.caf is a
+  Pixabay recording built by Tools/Sounds/make_page_turn.py, credited in
+  Resources/Sounds/SoundCredits.txt) and `pageTurnHaptic` (medium, 0.9).
 
 ## Memorise Scripture
 - Premium (`.memorise`), shown with Plans & Prayer. `MemoryVerse` (SwiftData,

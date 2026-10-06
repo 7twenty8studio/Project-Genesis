@@ -3,8 +3,8 @@ import UIKit
 
 /// The page-turn touches: a soft paper rustle and a light tap.
 ///
-/// The rustle (Resources/Sounds/page-turn.caf, made by
-/// Tools/Sounds/make_page_turn.py) plays as a system sound, so it follows the
+/// The rustle (Resources/Sounds/page-turn.caf, a real page turn trimmed and
+/// softened by Tools/Sounds/make_page_turn.py) plays as a system sound, so it follows the
 /// silent switch and never touches the audio session that narration and
 /// ambient sounds share.
 @MainActor
@@ -29,7 +29,8 @@ final class PageTurnFeedback {
             return
         }
         if haptic == nil || hapticView !== view {
-            haptic = UIImpactFeedbackGenerator(style: .soft, view: view)
+            // Medium: firm enough to feel on every turn, like a page settling.
+            haptic = UIImpactFeedbackGenerator(style: .medium, view: view)
             hapticView = view
         }
         haptic?.prepare()
@@ -38,7 +39,7 @@ final class PageTurnFeedback {
     func pageTurned(sound: Bool, haptic wantsHaptic: Bool) {
         if sound, soundID != 0 { AudioServicesPlaySystemSound(soundID) }
         if wantsHaptic {
-            haptic?.impactOccurred(intensity: 0.55)
+            haptic?.impactOccurred(intensity: 0.9)
             haptic?.prepare()
         }
     }
