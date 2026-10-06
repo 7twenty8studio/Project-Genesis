@@ -103,6 +103,13 @@ final class SupabaseClient: Sendable {
         _ = try? await session.data(for: request)
     }
 
+    /// Sets a new password for the signed-in account.
+    func updatePassword(_ password: String, accessToken: String) async throws {
+        var request = makeRequest(path: "auth/v1/user", query: [], method: "PUT", accessToken: accessToken)
+        request.httpBody = try JSONEncoder().encode(["password": password])
+        _ = try await perform(request)
+    }
+
     func sendPasswordReset(email: String) async throws {
         var request = makeRequest(path: "auth/v1/recover", query: [], method: "POST", accessToken: nil)
         request.httpBody = try JSONEncoder().encode(["email": email])

@@ -17,7 +17,8 @@ enum AudioSession {
     }
 
     private static var users: Set<User> = []
-    private static let queue = DispatchQueue(label: "genesis.audio-session", qos: .userInitiated)
+    private static let queue = DispatchQueue(label: AudioSession.queueName, qos: .userInitiated)
+    private nonisolated static let queueName = "genesis.audio-session"
 
     static func begin(_ user: User) {
         users.insert(user)

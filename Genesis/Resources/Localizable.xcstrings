@@ -494,6 +494,16 @@
         }
       }
     },
+    "A mistake in a Bible text": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un error en un texto bíblico"
+          }
+        }
+      }
+    },
     "A modern, readable translation in everyday English.": {
       "localizations": {
         "es": {
@@ -520,6 +530,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Una traducción precisa y literal, apreciada para el estudio detallado."
+          }
+        }
+      }
+    },
+    "A question": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una pregunta"
           }
         }
       }
@@ -785,6 +805,26 @@
         }
       }
     },
+    "Align left": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alinear a la izquierda"
+          }
+        }
+      }
+    },
+    "Alignment": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alineación"
+          }
+        }
+      }
+    },
     "All": {
       "comment": "Timeline filter: every era",
       "localizations": {
@@ -904,6 +944,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Amén"
+          }
+        }
+      }
+    },
+    "An elegant old-style book face": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una elegante letra de libro clásica"
+          }
+        }
+      }
+    },
+    "An idea": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una idea"
           }
         }
       }
@@ -1437,6 +1497,26 @@
         }
       }
     },
+    "Centre": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Centrar"
+          }
+        }
+      }
+    },
+    "Change Password": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cambiar contraseña"
+          }
+        }
+      }
+    },
     "Change Sounds": {
       "localizations": {
         "es": {
@@ -1527,6 +1607,16 @@
         }
       }
     },
+    "Choose a photo": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elegir una foto"
+          }
+        }
+      }
+    },
     "Choose a sound": {
       "localizations": {
         "es": {
@@ -1553,6 +1643,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Elige una voz"
+          }
+        }
+      }
+    },
+    "Choose the font, colour, size and alignment, or put the verse on one of your own photos.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige la letra, el color, el tamaño y la alineación, o pon el versículo sobre una de tus fotos."
           }
         }
       }
@@ -1775,6 +1875,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Comprensión"
+          }
+        }
+      }
+    },
+    "Confirm new password": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Confirmar la nueva contraseña"
           }
         }
       }
@@ -2051,6 +2161,16 @@
         }
       }
     },
+    "Delete Account": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar cuenta"
+          }
+        }
+      }
+    },
     "Delete Prayer": {
       "localizations": {
         "es": {
@@ -2091,6 +2211,26 @@
         }
       }
     },
+    "Delete your account?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Eliminar tu cuenta?"
+          }
+        }
+      }
+    },
+    "Deletes your account and everything saved with it in the cloud: highlights, notes, plans, prayers, memory verses and group posts. A Premium subscription is managed by Apple: cancel it in Settings › Apple Account › Subscriptions.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elimina tu cuenta y todo lo guardado con ella en la nube: resaltados, notas, planes, oraciones, versículos para memorizar y publicaciones de grupo. La suscripción Premium la gestiona Apple: cancélala en Ajustes › Cuenta de Apple › Suscripciones."
+          }
+        }
+      }
+    },
     "Designed for low vision": {
       "localizations": {
         "es": {
@@ -2117,6 +2257,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Detalles (opcional)"
+          }
+        }
+      }
+    },
+    "Details: %@ · iOS %@ · %@. Nothing else from your device is sent.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Detalles: %@ · iOS %@ · %@. No se envía nada más de tu dispositivo."
           }
         }
       }
@@ -2310,6 +2460,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Correo electrónico"
+          }
+        }
+      }
+    },
+    "Email (optional, for a reply)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Correo (opcional, para responderte)"
           }
         }
       }
@@ -2563,6 +2723,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Funciones"
+          }
+        }
+      }
+    },
+    "Feedback can't be sent from this build. Please try again later.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pueden enviar comentarios desde esta versión. Inténtalo más tarde."
           }
         }
       }
@@ -2847,6 +3017,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ir a %@"
+          }
+        }
+      }
+    },
+    "Gold": {
+      "comment": "Verse image text colour",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dorado"
           }
         }
       }
@@ -3187,12 +3368,33 @@
         }
       }
     },
+    "Include app and device details": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Incluir detalles de la app y del dispositivo"
+          }
+        }
+      }
+    },
     "Included": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Incluida"
+          }
+        }
+      }
+    },
+    "Ink": {
+      "comment": "Verse image text colour",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tinta"
           }
         }
       }
@@ -3734,6 +3936,16 @@
         }
       }
     },
+    "Literata and EB Garamond, in the reader under Aa › Font.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Literata y EB Garamond, en el lector, en Aa › Letra."
+          }
+        }
+      }
+    },
     "Loading": {
       "localizations": {
         "es": {
@@ -3790,6 +4002,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "MI AÑO CON GENESIS"
+          }
+        }
+      }
+    },
+    "Made for long reading on screens": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pensada para leer mucho en pantalla"
           }
         }
       }
@@ -4015,6 +4237,16 @@
         }
       }
     },
+    "Message": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mensaje"
+          }
+        }
+      }
+    },
     "Midnight": {
       "comment": "Reader theme name",
       "localizations": {
@@ -4094,6 +4326,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Más palabras"
+          }
+        }
+      }
+    },
+    "More ways to make verse images": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más formas de crear imágenes de versículos"
           }
         }
       }
@@ -4241,6 +4483,17 @@
         }
       }
     },
+    "Navy": {
+      "comment": "Verse image text colour",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Azul marino"
+          }
+        }
+      }
+    },
     "New": {
       "comment": "Memorise: not reviewed yet",
       "localizations": {
@@ -4348,6 +4601,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nueva colección"
+          }
+        }
+      }
+    },
+    "New password (6+ characters)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nueva contraseña (6 caracteres o más)"
           }
         }
       }
@@ -4898,7 +5161,16 @@
         }
       }
     },
-    "Panel, %@": {},
+    "Panel, %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Panel, %@"
+          }
+        }
+      }
+    },
     "Paper": {
       "comment": "Reader theme name",
       "localizations": {
@@ -5083,6 +5355,17 @@
         }
       }
     },
+    "Photo": {
+      "comment": "Verse image background: one of your photos",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto"
+          }
+        }
+      }
+    },
     "Pink": {
       "comment": "Highlight colour",
       "localizations": {
@@ -5192,6 +5475,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Reproduciendo"
+          }
+        }
+      }
+    },
+    "Please include the Bible, book, chapter and verse.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Indica la Biblia, el libro, el capítulo y el versículo."
           }
         }
       }
@@ -5364,6 +5657,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Los temas Premium ahora tienen el grano y las fibras suaves del papel de un libro de verdad."
+          }
+        }
+      }
+    },
+    "Premium was given to your account until %@.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu cuenta recibió Premium hasta el %@."
+          }
+        }
+      }
+    },
+    "Premium was given to your account.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu cuenta recibió Premium."
           }
         }
       }
@@ -5753,16 +6066,6 @@
         }
       }
     },
-    "Reading settings such as font, theme and page turns are in the reader under Aa.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Los ajustes de lectura, como la letra, el tema y el paso de página, están en el lector, en Aa."
-          }
-        }
-      }
-    },
     "Reading time over the last two weeks: %@ in total": {
       "localizations": {
         "es": {
@@ -6097,6 +6400,26 @@
         }
       }
     },
+    "Report a problem or share an idea from Settings › Send Feedback. Theme and listening settings are there too.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Informa de un problema o comparte una idea desde Ajustes › Enviar comentarios. Allí también están el tema y los ajustes de audio."
+          }
+        }
+      }
+    },
+    "Report a problem, a mistake in a Bible text, or share an idea.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Informa de un problema, de un error en un texto bíblico o comparte una idea."
+          }
+        }
+      }
+    },
     "Report anything that breaks these rules. Reported posts are reviewed, and people who break them are removed.": {
       "localizations": {
         "es": {
@@ -6412,6 +6735,16 @@
         }
       }
     },
+    "Security": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seguridad"
+          }
+        }
+      }
+    },
     "See All": {
       "localizations": {
         "es": {
@@ -6478,6 +6811,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Enviar"
+          }
+        }
+      }
+    },
+    "Send Feedback": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enviar comentarios"
           }
         }
       }
@@ -6903,6 +7246,16 @@
         }
       }
     },
+    "Signed in with Apple? Setting a password lets you also sign in with your email.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Iniciaste sesión con Apple? Con una contraseña también podrás entrar con tu correo."
+          }
+        }
+      }
+    },
     "Slate": {
       "comment": "Reader theme name",
       "localizations": {
@@ -6956,11 +7309,22 @@
       }
     },
     "Something else": {
+      "comment": "Feedback category",
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Otro motivo"
+          }
+        }
+      }
+    },
+    "Something isn't working": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo no funciona"
           }
         }
       }
@@ -7452,12 +7816,32 @@
         }
       }
     },
+    "Tell us what you think": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuéntanos qué te parece"
+          }
+        }
+      }
+    },
     "Terms of Use": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Condiciones de uso"
+          }
+        }
+      }
+    },
+    "Test as Premium": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Probar como Premium"
           }
         }
       }
@@ -7478,6 +7862,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Texto"
+          }
+        }
+      }
+    },
+    "Text size": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamaño del texto"
           }
         }
       }
@@ -7672,6 +8066,16 @@
         }
       }
     },
+    "The passwords don't match.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las contraseñas no coinciden."
+          }
+        }
+      }
+    },
     "The pin marks the general area.": {
       "localizations": {
         "es": {
@@ -7762,12 +8166,42 @@
         }
       }
     },
+    "Theme & Reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tema y lectura"
+          }
+        }
+      }
+    },
     "Theme, e.g. Grace": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Tema, p. ej., Gracia"
+          }
+        }
+      }
+    },
+    "Theme, font and page turns are also in the reader under Aa.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El tema, la letra y el paso de página también están en el lector, en Aa."
+          }
+        }
+      }
+    },
+    "Then %@ / %@. Cancel anytime in Settings before the trial ends and you won't be charged.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Después, %@ / %@. Cancela en Ajustes antes de que termine la prueba y no se te cobrará."
           }
         }
       }
@@ -7808,6 +8242,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Este grupo está lleno."
+          }
+        }
+      }
+    },
+    "This permanently deletes your account and your data in the cloud. It can't be undone.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esto elimina para siempre tu cuenta y tus datos en la nube. No se puede deshacer."
           }
         }
       }
@@ -8092,6 +8536,16 @@
         }
       }
     },
+    "Try It Free for %lld Days": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pruébalo gratis %lld días"
+          }
+        }
+      }
+    },
     "Try a different colour or collection.": {
       "localizations": {
         "es": {
@@ -8138,6 +8592,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Desactivar algo solo lo oculta. Tus planes, oraciones, grupos y notas se conservan y vuelven cuando lo activas."
+          }
+        }
+      }
+    },
+    "Two new reading fonts": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dos nuevas letras para leer"
           }
         }
       }
@@ -8444,6 +8908,16 @@
         }
       }
     },
+    "What happened, and what did you expect? Steps to repeat it help a lot.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué pasó y qué esperabas? Los pasos para repetirlo ayudan mucho."
+          }
+        }
+      }
+    },
     "What should people call you?": {
       "localizations": {
         "es": {
@@ -8470,6 +8944,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Novedades"
+          }
+        }
+      }
+    },
+    "What's it about?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿De qué se trata?"
           }
         }
       }
@@ -8520,6 +9004,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mientras se lee la Biblia en voz alta, la pantalla de bloqueo y la Dynamic Island muestran el versículo que se está leyendo, con reproducir y pausar."
+          }
+        }
+      }
+    },
+    "White": {
+      "comment": "Verse image text colour",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blanco"
           }
         }
       }
@@ -8930,6 +9425,16 @@
         }
       }
     },
+    "Your account couldn't be deleted. Please try again.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo eliminar tu cuenta. Inténtalo de nuevo."
+          }
+        }
+      }
+    },
     "Your checkmarks for this plan will be cleared.": {
       "localizations": {
         "es": {
@@ -9000,12 +9505,42 @@
         }
       }
     },
+    "Your message couldn't be sent. Check your connection and try again.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo enviar tu mensaje. Revisa tu conexión e inténtalo de nuevo."
+          }
+        }
+      }
+    },
+    "Your message was sent. Every report is read.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu mensaje se envió. Leemos cada informe."
+          }
+        }
+      }
+    },
     "Your name is shown with your prayer requests and messages. Your first name, or how your church knows you, works well.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Tu nombre se muestra con tus peticiones de oración y mensajes. Tu nombre de pila, o como te conocen en tu iglesia, funciona bien."
+          }
+        }
+      }
+    },
+    "Your password was changed.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu contraseña se cambió."
           }
         }
       }
@@ -9036,6 +9571,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu sesión terminó. Vuelve a iniciar sesión."
+          }
+        }
+      }
+    },
+    "Your verse images, your way": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus imágenes de versículos, a tu manera"
           }
         }
       }
@@ -9132,7 +9677,6 @@
         }
       }
     },
-    "genesis.audio-session": {},
     "longest streak": {
       "localizations": {
         "es": {

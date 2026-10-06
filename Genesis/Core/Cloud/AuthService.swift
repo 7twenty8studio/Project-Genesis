@@ -62,6 +62,49 @@ final class AuthService {
         }
     }
 
+    /// Changes the signed-in account's password. True when it worked.
+    func changePassword(to newPassword: String) async -> Bool {
+        guard let client else { return false }
+        isWorking = true
+        errorMessage = nil
+        infoMessage = nil
+        defer { isWorking = false }
+        do {
+            let token = try await accessToken()
+            try await client.updatePassword(newPassword, accessToken: token)
+            infoMessage = String(localized: "Your password was changed.")
+            return true
+        } catch {
+            errorMessage = error.localizedDescription
+            return false
+        }
+    }
+
+    /// Deletes the account and everything stored with it on the server (the
+    /// delete-account Edge Function), then signs out. True when it worked.
+    func deleteAccount() async -> Bool {
+        guard let client else { return false }
+        isWorking = true
+        errorMessage = nil
+        defer { isWorking = false }
+        do {
+            let token = try await accessToken()
+            let (_, status) = try await client.callFunction("delete-account", body: Data("{}".utf8), accessToken: token)
+            guard (200..<300).contains(status) else {
+                errorMessage = String(localized: "Your account couldn't be deleted. Please try again.")
+                return false
+            }
+            await beforeSignOut?()
+            session = nil
+            user = nil
+            keychain.delete(account: Self.sessionAccount)
+            return true
+        } catch {
+            errorMessage = error.localizedDescription
+            return false
+        }
+    }
+
     func signOut() async {
         await beforeSignOut?()
         if let client, let session { await client.signOut(session) }

@@ -52,6 +52,17 @@ shares; README.md has the architecture.
 - Supabase SQL: explicit statements, no drops, RLS enabled in plain
   `alter table` lines (the dashboard's checker flags anything else).
 
+## Premium sources, feedback and accounts
+- `EntitlementService.isPremium` = App Store subscription, or a grant in
+  public.premium_grants (the owner adds rows; `refreshGrant` on launch,
+  foreground and sign-in; study-ai honours grants too), or in DEBUG builds
+  only Settings › Developer › Test as Premium. UI tests' override wins.
+- Free trial: an introductory offer in App Store Connect (and in
+  Config/Genesis.storekit); the paywall shows it when the account is eligible.
+- Settings › Send Feedback writes public.app_feedback (insert-only RLS; read
+  in the dashboard). Account › Delete Account calls the `delete-account` Edge
+  Function (App Store 5.1.1(v)); every table cascades from auth.users.
+
 ## Memorise Scripture
 - Premium (`.memorise`), shown with Plans & Prayer. `MemoryVerse` (SwiftData,
   synced as `memory_verses`) stores the passage's verse ids, translation and
@@ -130,6 +141,9 @@ shares; README.md has the architecture.
   Genesis opens it). `AppLanguage.code` is "en" or "es".
 - `BibleBook.name` follows the app's language (`englishName` is fixed);
   the reference parser accepts English and Spanish names, accents optional.
+  Next to Scripture (reader title and controls, running head, book picker,
+  selection, audio, verse images, shares) names follow the Bible's language:
+  `ChapterID/PassageReference.description(in: translation.language)`.
 - Each Translation has a `language`; narration picks a voice in it. The study
   assistant answers in the app's language (`language` in the request; the
   cache key gets a suffix for non-English).

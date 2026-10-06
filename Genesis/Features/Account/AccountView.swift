@@ -193,6 +193,8 @@ private struct SignedInView: View {
     @Environment(\.palette) private var palette
     @State private var confirmSignOut = false
     @State private var premium: PremiumFeature?
+    @State private var showsPasswordChange = false
+    @State private var confirmDelete = false
 
     var body: some View {
         Form {
@@ -235,8 +237,35 @@ private struct SignedInView: View {
                 }
 
                 Section {
+                    Button("Change Password", systemImage: "key") { showsPasswordChange = true }
+                        .accessibilityIdentifier("account.changePassword")
+                    if let message = auth.infoMessage {
+                        Text(message)
+                            .font(.footnote)
+                            .foregroundStyle(palette.secondaryText)
+                    }
+                } header: {
+                    Text("Security")
+                } footer: {
+                    Text("Signed in with Apple? Setting a password lets you also sign in with your email.")
+                }
+
+                Section {
                     Button("Sign Out", role: .destructive) { confirmSignOut = true }
                         .accessibilityIdentifier("account.signOut")
+                }
+
+                Section {
+                    Button("Delete Account", role: .destructive) { confirmDelete = true }
+                        .disabled(auth.isWorking)
+                        .accessibilityIdentifier("account.delete")
+                    if let error = auth.errorMessage {
+                        Text(error)
+                            .font(.footnote)
+                            .foregroundStyle(.orange)
+                    }
+                } footer: {
+                    Text("Deletes your account and everything saved with it in the cloud: highlights, notes, plans, prayers, memory verses and group posts. A Premium subscription is managed by Apple: cancel it in Settings › Apple Account › Subscriptions.")
                 }
             }
         }
@@ -246,6 +275,19 @@ private struct SignedInView: View {
             Button("Sign Out and Remove Data from This Device", role: .destructive) { signOut(removeLocalData: true) }
         } message: {
             Text("Your data stays safe in your account either way.")
+        }
+        .sheet(isPresented: $showsPasswordChange) { ChangePasswordView() }
+        .alert("Delete your account?", isPresented: $confirmDelete) {
+            Button("Delete Account", role: .destructive) {
+                Task {
+                    if await auth.deleteAccount() {
+                        sync.accountDidSignOut(removeLocalData: true)
+                    }
+                }
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("This permanently deletes your account and your data in the cloud. It can't be undone.")
         }
     }
 
@@ -279,6 +321,55 @@ private struct SignedInView: View {
         Task {
             await auth.signOut()
             sync.accountDidSignOut(removeLocalData: removeLocalData)
+        }
+    }
+}
+
+/// A new password for the signed-in account.
+private struct ChangePasswordView: View {
+    @Environment(AuthService.self) private var auth
+    @Environment(\.palette) private var palette
+    @Environment(\.dismiss) private var dismiss
+    @State private var password = ""
+    @State private var confirmation = ""
+
+    private var isValid: Bool { password.count >= 6 && password == confirmation }
+
+    var body: some View {
+        NavigationStack {
+            Form {
+                ThemedRows {
+                    Section {
+                        SecureField("New password (6+ characters)", text: $password)
+                            .textContentType(.newPassword)
+                            .accessibilityIdentifier("password.new")
+                        SecureField("Confirm new password", text: $confirmation)
+                            .textContentType(.newPassword)
+                            .accessibilityIdentifier("password.confirm")
+                    } footer: {
+                        if !confirmation.isEmpty && password != confirmation {
+                            Text("The passwords don't match.")
+                        } else if let error = auth.errorMessage {
+                            Text(error)
+                        }
+                    }
+                }
+            }
+            .themedScreen()
+            .navigationTitle("Change Password")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel", systemImage: "xmark") { dismiss() }
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Save") {
+                        Task { if await auth.changePassword(to: password) { dismiss() } }
+                    }
+                    .disabled(!isValid || auth.isWorking)
+                    .accessibilityIdentifier("password.save")
+                }
+            }
         }
     }
 }

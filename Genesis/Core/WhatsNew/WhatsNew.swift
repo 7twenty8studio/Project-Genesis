@@ -27,7 +27,29 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate]
+
+    static let octoberUpdate = WhatsNewAnnouncement(
+        id: "images-fonts-feedback",
+        title: String(localized: "Your verse images, your way"),
+        items: [
+            WhatsNewItem(
+                systemImage: "photo.on.rectangle",
+                title: String(localized: "More ways to make verse images"),
+                detail: String(localized: "Choose the font, colour, size and alignment, or put the verse on one of your own photos.")
+            ),
+            WhatsNewItem(
+                systemImage: "textformat",
+                title: String(localized: "Two new reading fonts"),
+                detail: String(localized: "Literata and EB Garamond, in the reader under Aa › Font.")
+            ),
+            WhatsNewItem(
+                systemImage: "envelope",
+                title: String(localized: "Tell us what you think"),
+                detail: String(localized: "Report a problem or share an idea from Settings › Send Feedback. Theme and listening settings are there too.")
+            ),
+        ]
+    )
 
     static let premiumWidgets = WhatsNewAnnouncement(
         id: "premium-widgets",

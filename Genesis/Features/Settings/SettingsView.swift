@@ -8,6 +8,12 @@ struct SettingsView: View {
     @Environment(\.openURL) private var openURL
     @State private var showsBibles = false
     @State private var showsAccount = false
+    @State private var showsReading = false
+    @State private var showsListening = false
+    @State private var showsAmbient = false
+    @State private var premium: PremiumFeature?
+    @Environment(EntitlementService.self) private var entitlements
+    @Environment(FeaturePreferences.self) private var features
 
     var body: some View {
         NavigationStack {
@@ -40,6 +46,65 @@ struct SettingsView: View {
                     .listRowBackground(palette.surface)
                     .foregroundStyle(palette.text)
 
+                    // Reading and listening, also reachable from the reader.
+                    Section {
+                        Button {
+                            showsReading = true
+                        } label: {
+                            Label("Theme & Reading", systemImage: "textformat.size")
+                        }
+                        .accessibilityIdentifier("settings.reading")
+                        if features.isOn(.listen) {
+                            Button {
+                                showsListening = true
+                            } label: {
+                                Label("Listening", systemImage: "headphones")
+                            }
+                            .accessibilityIdentifier("settings.listening")
+                        }
+                        Button {
+                            if entitlements.allows(.ambientSounds) { showsAmbient = true } else { premium = .ambientSounds }
+                        } label: {
+                            HStack {
+                                Label("Ambient Sounds", systemImage: "speaker.wave.2")
+                                Spacer()
+                                if !entitlements.allows(.ambientSounds) { PremiumBadge() }
+                            }
+                        }
+                        .accessibilityIdentifier("settings.ambientSounds")
+                    } header: {
+                        Text("Reading")
+                    }
+                    .listRowBackground(palette.surface)
+                    .foregroundStyle(palette.text)
+
+                    Section {
+                        NavigationLink {
+                            FeedbackView()
+                        } label: {
+                            Label("Send Feedback", systemImage: "envelope")
+                        }
+                        .accessibilityIdentifier("settings.feedback")
+                    } footer: {
+                        Text("Report a problem, a mistake in a Bible text, or share an idea.")
+                    }
+                    .listRowBackground(palette.surface)
+                    .foregroundStyle(palette.text)
+
+                    #if DEBUG
+                    Section {
+                        Toggle("Test as Premium", isOn: Binding(get: { entitlements.isTestingPremium }, set: { entitlements.isTestingPremium = $0 }))
+                            .tint(palette.accent)
+                            .accessibilityIdentifier("settings.testPremium")
+                    } header: {
+                        Text(verbatim: "Developer")
+                    } footer: {
+                        Text(verbatim: "Development builds only: turns on every Premium feature without a purchase. Release builds don't include this switch.")
+                    }
+                    .listRowBackground(palette.surface)
+                    .foregroundStyle(palette.text)
+                    #endif
+
                     Section {
                         // iOS keeps each app's language in the Settings app (and
                         // restarts the app when it changes), so this opens it there.
@@ -61,7 +126,7 @@ struct SettingsView: View {
 
                     Section {
                     } footer: {
-                        Text("Reading settings such as font, theme and page turns are in the reader under Aa.")
+                        Text("Theme, font and page turns are also in the reader under Aa.")
                     }
                 }
             }
@@ -76,6 +141,10 @@ struct SettingsView: View {
             }
             .sheet(isPresented: $showsBibles) { BibleDownloadsView() }
             .sheet(isPresented: $showsAccount) { AccountView() }
+            .sheet(isPresented: $showsReading) { ReaderSettingsSheet() }
+            .sheet(isPresented: $showsListening) { AudioSettingsView() }
+            .sheet(isPresented: $showsAmbient) { AmbientSoundsSheet() }
+            .premiumSheet($premium)
         }
     }
 }

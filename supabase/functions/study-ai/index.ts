@@ -142,6 +142,14 @@ Deno.serve(async (req) => {
  * Premium here too.
  */
 async function tierFor(userID: string, signedTransaction?: string): Promise<Tier> {
+  // Premium granted by the owner (staff, testers, partners): public.premium_grants.
+  const { data: grant } = await admin
+    .from("premium_grants")
+    .select("expires_at")
+    .eq("user_id", userID)
+    .maybeSingle();
+  if (grant && (!grant.expires_at || new Date(grant.expires_at).getTime() > Date.now())) return "premium";
+
   const { data: saved } = await admin
     .from("premium_entitlements")
     .select("expires_at, updated_at")

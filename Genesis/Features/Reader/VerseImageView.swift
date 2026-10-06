@@ -1,3 +1,4 @@
+import PhotosUI
 import SwiftUI
 
 /// What goes on a verse image: verbatim Scripture from the database and its
@@ -11,7 +12,7 @@ struct VerseCard: Identifiable, Hashable, Sendable {
 
 /// A background for a verse image.
 enum VerseImageStyle: String, CaseIterable, Identifiable {
-    case paper, autumn, winter, spring, summer, night
+    case paper, autumn, winter, spring, summer, night, photo
 
     var id: String { rawValue }
 
@@ -23,6 +24,7 @@ enum VerseImageStyle: String, CaseIterable, Identifiable {
         case .spring: String(localized: "Spring")
         case .summer: String(localized: "Summer")
         case .night: String(localized: "Night", comment: "Verse image background")
+        case .photo: String(localized: "Photo", comment: "Verse image background: one of your photos")
         }
     }
 
@@ -34,7 +36,7 @@ enum VerseImageStyle: String, CaseIterable, Identifiable {
         case .winter: .winter
         case .spring: .spring
         case .summer: .summer
-        case .night: .midnight
+        case .night, .photo: .midnight
         }
     }
 
@@ -44,9 +46,45 @@ enum VerseImageStyle: String, CaseIterable, Identifiable {
         case .winter: .winter
         case .spring: .spring
         case .summer: .summer
-        case .paper, .night: nil
+        case .paper, .night, .photo: nil
         }
     }
+}
+
+/// How the words look on a verse image.
+struct VerseImageOptions: Equatable {
+    enum Ink: String, CaseIterable, Identifiable {
+        case automatic, ink, white, cream, gold, navy
+        var id: String { rawValue }
+
+        var title: String {
+            switch self {
+            case .automatic: String(localized: "Auto", comment: "Verse image text colour: follows the background")
+            case .ink: String(localized: "Ink", comment: "Verse image text colour")
+            case .white: String(localized: "White", comment: "Verse image text colour")
+            case .cream: String(localized: "Cream", comment: "Verse image text colour")
+            case .gold: String(localized: "Gold", comment: "Verse image text colour")
+            case .navy: String(localized: "Navy", comment: "Verse image text colour")
+            }
+        }
+
+        func color(theme: ReaderTheme) -> Color {
+            switch self {
+            case .automatic: theme.palette.text
+            case .ink: Color(uiColor: UIColor(hex: 0x2B2A27))
+            case .white: .white
+            case .cream: Color(uiColor: UIColor(hex: 0xF4ECD8))
+            case .gold: Color(uiColor: UIColor(hex: 0xC9A96E))
+            case .navy: Color(uiColor: UIColor(hex: 0x1F2A44))
+            }
+        }
+    }
+
+    var font: ReaderFont
+    var ink: Ink = .automatic
+    /// Scales the text (0.7...1.4).
+    var size: Double = 1
+    var centered = false
 }
 
 enum VerseImageShape: String, CaseIterable, Identifiable {
@@ -69,9 +107,9 @@ enum VerseImageShape: String, CaseIterable, Identifiable {
     }
 }
 
-/// Make an image of the selected verses to share or save: typography in the
-/// reader's font on textured paper, with the season's leaves, snow, blossom
-/// or sunlight held still.
+/// Make an image of the selected verses to share or save: the verse in the
+/// reader's font (or another) on textured paper, a seasonal background or one
+/// of your photos, with colour, size and alignment to taste.
 struct VerseImageView: View {
     let card: VerseCard
 
@@ -81,15 +119,19 @@ struct VerseImageView: View {
     @Environment(\.palette) private var palette
     @State private var style: VerseImageStyle = .paper
     @State private var shape: VerseImageShape = .square
+    @State private var options = VerseImageOptions(font: .newYork)
+    @State private var photoItem: PhotosPickerItem?
+    @State private var photo: UIImage?
     @State private var rendered: UIImage?
+    @State private var didSetFont = false
 
     var body: some View {
         NavigationStack {
-            VStack(spacing: 20) {
+            VStack(spacing: 16) {
                 GeometryReader { proxy in
                     let size = shape.size
                     let scale = min(proxy.size.width / size.width, proxy.size.height / size.height)
-                    VerseImageCanvas(card: card, style: style, shape: shape, font: settings.preferences.font, currentTheme: currentTheme)
+                    canvas
                         .frame(width: size.width, height: size.height)
                         .scaleEffect(scale)
                         .frame(width: size.width * scale, height: size.height * scale)
@@ -101,35 +143,39 @@ struct VerseImageView: View {
                 }
                 .padding(.horizontal, 20)
 
-                Picker("Shape", selection: $shape) {
-                    ForEach(VerseImageShape.allCases) { Text($0.title).tag($0) }
-                }
-                .pickerStyle(.segmented)
-                .padding(.horizontal, 20)
-
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 14) {
-                        ForEach(VerseImageStyle.allCases) { item in
-                            Button {
-                                style = item
-                            } label: {
-                                VStack(spacing: 6) {
-                                    Circle()
-                                        .fill(item.theme(reading: currentTheme).palette.background)
-                                        .overlay(Circle().strokeBorder(style == item ? palette.accent : palette.separator, lineWidth: style == item ? 2.5 : 1))
-                                        .frame(width: 44, height: 44)
-                                    Text(item.title)
-                                        .font(.caption2)
-                                        .foregroundStyle(style == item ? palette.accent : palette.secondaryText)
-                                }
-                            }
-                            .buttonStyle(.plain)
-                            .accessibilityIdentifier("verseImage.style.\(item.rawValue)")
-                            .accessibilityAddTraits(style == item ? .isSelected : [])
+                ScrollView {
+                    VStack(spacing: 16) {
+                        Picker("Shape", selection: $shape) {
+                            ForEach(VerseImageShape.allCases) { Text($0.title).tag($0) }
                         }
+                        .pickerStyle(.segmented)
+
+                        backgrounds
+                        fonts
+                        inks
+
+                        HStack(spacing: 12) {
+                            Image(systemName: "textformat.size.smaller")
+                            Slider(value: $options.size, in: 0.7...1.4)
+                                .tint(palette.accent)
+                                .accessibilityLabel("Text size")
+                                .accessibilityIdentifier("verseImage.size")
+                            Image(systemName: "textformat.size.larger")
+                            Divider().frame(height: 24)
+                            Picker("Alignment", selection: $options.centered) {
+                                Image(systemName: "text.alignleft").tag(false)
+                                    .accessibilityLabel("Align left")
+                                Image(systemName: "text.aligncenter").tag(true)
+                                    .accessibilityLabel("Centre")
+                            }
+                            .pickerStyle(.segmented)
+                            .frame(width: 100)
+                        }
+                        .foregroundStyle(palette.secondaryText)
                     }
                     .padding(.horizontal, 20)
                 }
+                .frame(maxHeight: 260)
             }
             .padding(.vertical, 12)
             .themedScreen()
@@ -153,22 +199,146 @@ struct VerseImageView: View {
                     }
                 }
             }
-            .task(id: "\(style.rawValue)-\(shape.rawValue)") { render() }
+            .onAppear {
+                guard !didSetFont else { return }
+                didSetFont = true
+                options.font = settings.preferences.font
+            }
+            .task(id: RenderKey(style: style, shape: shape, options: options, photo: photo.map { ObjectIdentifier($0) })) { render() }
+            .onChange(of: photoItem) { _, item in
+                Task { await loadPhoto(item) }
+            }
         }
     }
+
+    private var canvas: some View {
+        VerseImageCanvas(card: card, style: style, shape: shape, options: options, photo: photo, currentTheme: currentTheme)
+    }
+
+    // MARK: Controls
+
+    private var backgrounds: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 14) {
+                ForEach(VerseImageStyle.allCases.filter { $0 != .photo }) { item in
+                    swatch(title: item.title, selected: style == item, id: "verseImage.style.\(item.rawValue)") {
+                        Circle().fill(item.theme(reading: currentTheme).palette.background)
+                    } action: {
+                        style = item
+                    }
+                }
+                PhotosPicker(selection: $photoItem, matching: .images) {
+                    VStack(spacing: 6) {
+                        Group {
+                            if let photo {
+                                Image(uiImage: photo).resizable().scaledToFill()
+                            } else {
+                                Image(systemName: "photo.badge.plus")
+                                    .font(.title3)
+                                    .foregroundStyle(palette.accent)
+                                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                    .background(palette.surface)
+                            }
+                        }
+                        .frame(width: 44, height: 44)
+                        .clipShape(Circle())
+                        .overlay(Circle().strokeBorder(style == .photo ? palette.accent : palette.separator, lineWidth: style == .photo ? 2.5 : 1))
+                        Text(VerseImageStyle.photo.title)
+                            .font(.caption2)
+                            .foregroundStyle(style == .photo ? palette.accent : palette.secondaryText)
+                    }
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Choose a photo")
+                .accessibilityIdentifier("verseImage.style.photo")
+            }
+        }
+    }
+
+    private var fonts: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 10) {
+                ForEach(ReaderFont.allCases) { font in
+                    let selected = options.font == font
+                    Button {
+                        options.font = font
+                    } label: {
+                        Text("Aa")
+                            .font(font.font(size: 20))
+                            .frame(width: 52, height: 40)
+                            .foregroundStyle(selected ? palette.background : palette.text)
+                            .background(selected ? palette.accent : palette.surface, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel(font.title)
+                    .accessibilityAddTraits(selected ? .isSelected : [])
+                    .accessibilityIdentifier("verseImage.font.\(font.rawValue)")
+                }
+            }
+        }
+    }
+
+    private var inks: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 14) {
+                ForEach(VerseImageOptions.Ink.allCases) { ink in
+                    swatch(title: ink.title, selected: options.ink == ink, id: "verseImage.ink.\(ink.rawValue)") {
+                        ZStack {
+                            Circle().fill(style.theme(reading: currentTheme).palette.background)
+                            Text(verbatim: "A")
+                                .font(.system(size: 20, weight: .semibold, design: .serif))
+                                .foregroundStyle(ink.color(theme: style.theme(reading: currentTheme)))
+                        }
+                    } action: {
+                        options.ink = ink
+                    }
+                }
+            }
+        }
+    }
+
+    private func swatch(title: String, selected: Bool, id: String, @ViewBuilder content: () -> some View, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            VStack(spacing: 6) {
+                content()
+                    .frame(width: 44, height: 44)
+                    .overlay(Circle().strokeBorder(selected ? palette.accent : palette.separator, lineWidth: selected ? 2.5 : 1))
+                Text(title)
+                    .font(.caption2)
+                    .foregroundStyle(selected ? palette.accent : palette.secondaryText)
+            }
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(title)
+        .accessibilityAddTraits(selected ? .isSelected : [])
+        .accessibilityIdentifier(id)
+    }
+
+    // MARK: Helpers
 
     private var currentTheme: ReaderTheme {
         settings.preferences.theme.resolved(for: colorScheme)
     }
 
+    private func loadPhoto(_ item: PhotosPickerItem?) async {
+        guard let item, let data = try? await item.loadTransferable(type: Data.self), let image = UIImage(data: data) else { return }
+        photo = image.preparingThumbnail(of: CGSize(width: 2160, height: 2160)) ?? image
+        style = .photo
+        if options.ink == .automatic { options.ink = .white }
+    }
+
     private func render() {
-        let renderer = ImageRenderer(content:
-            VerseImageCanvas(card: card, style: style, shape: shape, font: settings.preferences.font, currentTheme: currentTheme)
-                .frame(width: shape.size.width, height: shape.size.height)
-        )
+        let renderer = ImageRenderer(content: canvas.frame(width: shape.size.width, height: shape.size.height))
         renderer.scale = 1
         rendered = renderer.uiImage
     }
+}
+
+private struct RenderKey: Equatable {
+    let style: VerseImageStyle
+    let shape: VerseImageShape
+    let options: VerseImageOptions
+    let photo: ObjectIdentifier?
 }
 
 /// The image itself, drawn at full size (1080 pixels wide).
@@ -176,15 +346,28 @@ struct VerseImageCanvas: View {
     let card: VerseCard
     let style: VerseImageStyle
     let shape: VerseImageShape
-    let font: ReaderFont
+    let options: VerseImageOptions
+    var photo: UIImage?
     let currentTheme: ReaderTheme
 
     var body: some View {
         let theme = style.theme(reading: currentTheme)
         let palette = theme.palette
+        let ink = options.ink.color(theme: theme)
+        let alignment: HorizontalAlignment = options.centered ? .center : .leading
         ZStack {
-            Image(uiImage: PaperTexture.tile(for: theme))
-                .resizable(resizingMode: .tile)
+            if style == .photo, let photo {
+                Image(uiImage: photo)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: shape.size.width, height: shape.size.height)
+                    .clipped()
+                // A soft scrim so the words stay readable on any photo.
+                LinearGradient(colors: [.black.opacity(0.25), .black.opacity(0.5)], startPoint: .top, endPoint: .bottom)
+            } else {
+                Image(uiImage: PaperTexture.tile(for: theme))
+                    .resizable(resizingMode: .tile)
+            }
             if let season = style.season {
                 // Drawn at phone size and enlarged, so leaves and snow keep
                 // the size they have in the reader.
@@ -194,30 +377,39 @@ struct VerseImageCanvas: View {
                     .frame(width: shape.size.width, height: shape.size.height)
                     .opacity(0.9)
             }
-            VStack(alignment: .leading, spacing: 44) {
+            VStack(alignment: alignment, spacing: 44) {
                 Text(verbatim: "\u{201C}")
-                    .font(font.font(size: 160))
-                    .foregroundStyle(palette.accent.opacity(0.5))
+                    .font(options.font.font(size: 160))
+                    .foregroundStyle(ink.opacity(0.45))
                     .frame(height: 70, alignment: .top)
                 Text(card.text)
-                    .font(font.font(size: textSize))
-                    .foregroundStyle(palette.text)
+                    .font(options.font.font(size: textSize))
+                    .foregroundStyle(ink)
+                    .multilineTextAlignment(options.centered ? .center : .leading)
                     .lineSpacing(textSize * 0.32)
                     .minimumScaleFactor(0.35)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: options.centered ? .center : .topLeading)
                 HStack(alignment: .lastTextBaseline) {
-                    VStack(alignment: .leading, spacing: 6) {
+                    if options.centered { Spacer() }
+                    VStack(alignment: alignment, spacing: 6) {
                         Text(card.reference)
-                            .font(font.font(size: 40, weight: .semibold))
-                            .foregroundStyle(palette.accent)
+                            .font(options.font.font(size: 40, weight: .semibold))
+                            .foregroundStyle(options.ink == .automatic ? palette.accent : ink)
                         Text(card.translation)
                             .font(.system(size: 26, weight: .medium))
-                            .foregroundStyle(palette.secondaryText)
+                            .foregroundStyle(ink.opacity(0.7))
                     }
                     Spacer()
+                    if !options.centered {
+                        Text(verbatim: "Genesis")
+                            .font(.system(size: 26, weight: .semibold, design: .serif))
+                            .foregroundStyle(ink.opacity(0.6))
+                    }
+                }
+                if options.centered {
                     Text(verbatim: "Genesis")
                         .font(.system(size: 26, weight: .semibold, design: .serif))
-                        .foregroundStyle(palette.secondaryText.opacity(0.8))
+                        .foregroundStyle(ink.opacity(0.6))
                 }
             }
             .padding(.horizontal, 96)
@@ -227,15 +419,16 @@ struct VerseImageCanvas: View {
         .clipped()
     }
 
-    /// Larger for short verses, smaller for long passages.
+    /// Larger for short verses, smaller for long passages, times the chosen size.
     private var textSize: CGFloat {
         let count = card.text.count
         let base: CGFloat = shape == .story ? 64 : 58
-        switch count {
-        case ..<120: return base * 1.2
-        case ..<260: return base
-        case ..<450: return base * 0.8
-        default: return base * 0.66
+        let fitted: CGFloat = switch count {
+        case ..<120: base * 1.2
+        case ..<260: base
+        case ..<450: base * 0.8
+        default: base * 0.66
         }
+        return fitted * CGFloat(options.size)
     }
 }

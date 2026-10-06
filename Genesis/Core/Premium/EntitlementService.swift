@@ -18,7 +18,15 @@ final class EntitlementService {
         case failed(String)
     }
 
+    /// Premium from any source: the App Store, a grant from the owner, or
+    /// (development builds only) the "Test as Premium" switch.
     private(set) var isPremium: Bool
+    /// An App Store subscription is active.
+    private(set) var hasSubscription: Bool
+    /// The owner gave this account Premium (public.premium_grants).
+    private(set) var hasGrant: Bool
+    /// When the grant ends; nil while there's no grant or it's permanent.
+    private(set) var grantExpiresAt: Date? = nil
     /// True once StoreKit has answered at least once this launch.
     private(set) var hasLoaded = false
     private(set) var products: [Product] = []
@@ -34,13 +42,83 @@ final class EntitlementService {
     @ObservationIgnored private var updates: Task<Void, Never>?
 
     private static let cacheKey = "premium.lastKnown"
+    private static let grantKey = "premium.grant"
+    private static let testKey = "premium.testSwitch"
 
     /// - Parameter override: forces Premium on or off (UI tests); StoreKit is then ignored.
     init(defaults: UserDefaults = .standard, override: Bool? = nil) {
         self.defaults = defaults
         self.override = override
-        isPremium = override ?? defaults.bool(forKey: Self.cacheKey)
+        hasSubscription = defaults.bool(forKey: Self.cacheKey)
+        hasGrant = defaults.bool(forKey: Self.grantKey)
+        isPremium = false
         if override != nil { hasLoaded = true }
+        recompute()
+    }
+
+    private func recompute() {
+        if let override {
+            isPremium = override
+            return
+        }
+        isPremium = hasSubscription || hasGrant || isTestingPremium
+    }
+
+    // MARK: Testing (development builds only)
+
+    #if DEBUG
+    /// Settings › Developer › Test as Premium. Never in release builds.
+    var isTestingPremium: Bool {
+        get { defaults.bool(forKey: Self.testKey) }
+        set {
+            defaults.set(newValue, forKey: Self.testKey)
+            recompute()
+        }
+    }
+    #else
+    var isTestingPremium: Bool { false }
+    #endif
+
+    // MARK: Granted Premium
+
+    private struct GrantRow: Decodable, Sendable {
+        let expires_at: String?
+    }
+
+    /// Checks public.premium_grants for the signed-in account (nil when signed
+    /// out). A permanent grant has no end date.
+    func refreshGrant(client: SupabaseClient?, accessToken: String?) async {
+        guard override == nil else { return }
+        guard let client, let accessToken else {
+            setGrant(active: false, until: nil)
+            return
+        }
+        do {
+            let rows: [GrantRow] = try await client.select("premium_grants", query: [URLQueryItem(name: "select", value: "expires_at")], accessToken: accessToken)
+            guard let row = rows.first else {
+                setGrant(active: false, until: nil)
+                return
+            }
+            let end = row.expires_at.flatMap(Self.parseDate)
+            setGrant(active: end.map { $0 > .now } ?? true, until: end)
+        } catch {
+            // Offline or the table isn't there yet: keep what we knew.
+        }
+    }
+
+    private func setGrant(active: Bool, until: Date?) {
+        hasGrant = active
+        grantExpiresAt = active ? until : nil
+        defaults.set(active, forKey: Self.grantKey)
+        recompute()
+    }
+
+    nonisolated private static func parseDate(_ text: String) -> Date? {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        if let date = formatter.date(from: text) { return date }
+        formatter.formatOptions = [.withInternetDateTime]
+        return formatter.date(from: text)
     }
 
     /// Starts listening for transactions and loads the current state.
@@ -79,6 +157,22 @@ final class EntitlementService {
     }
 
     // MARK: Store
+
+    /// Days of free trial this Apple Account can still get for a plan (an
+    /// introductory offer set up in App Store Connect), or nil.
+    func freeTrialDays(for id: PremiumProduct) async -> Int? {
+        guard let product = product(id), let subscription = product.subscription,
+              let offer = subscription.introductoryOffer, offer.paymentMode == .freeTrial,
+              await subscription.isEligibleForIntroOffer else { return nil }
+        let count = offer.period.value * offer.periodCount
+        switch offer.period.unit {
+        case .day: return count
+        case .week: return count * 7
+        case .month: return count * 30
+        case .year: return count * 365
+        @unknown default: return nil
+        }
+    }
 
     func product(_ id: PremiumProduct) -> Product? {
         products.first { $0.id == id.rawValue }
@@ -150,11 +244,12 @@ final class EntitlementService {
                 best = (transaction, result.jwsRepresentation)
             }
         }
-        isPremium = best != nil
+        hasSubscription = best != nil
+        recompute()
         activeProduct = best.flatMap { PremiumProduct(rawValue: $0.transaction.productID) }
         renewsOrExpiresAt = best?.transaction.expirationDate
         signedTransaction = best?.jws
         hasLoaded = true
-        defaults.set(isPremium, forKey: Self.cacheKey)
+        defaults.set(hasSubscription, forKey: Self.cacheKey)
     }
 }

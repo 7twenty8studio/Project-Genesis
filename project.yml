@@ -90,6 +90,12 @@ targets:
           - AtkinsonHyperlegible-Bold.ttf
           - AtkinsonHyperlegible-Italic.ttf
           - AtkinsonHyperlegible-BoldItalic.ttf
+          - Literata-Regular.ttf
+          - Literata-SemiBold.ttf
+          - Literata-Italic.ttf
+          - EBGaramond-Regular.ttf
+          - EBGaramond-SemiBold.ttf
+          - EBGaramond-Italic.ttf
         # Values come from Config/Secrets.xcconfig (not committed).
         GenesisSupabaseURL: $(SUPABASE_URL)
         GenesisSupabaseAnonKey: $(SUPABASE_ANON_KEY)

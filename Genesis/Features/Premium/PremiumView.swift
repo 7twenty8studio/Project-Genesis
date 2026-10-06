@@ -14,6 +14,8 @@ struct PremiumView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var selected: PremiumProduct = .yearly
     @State private var message: String?
+    /// Days of free trial the selected plan offers this Apple Account.
+    @State private var trialDays: Int?
 
     var body: some View {
         NavigationStack {
@@ -42,7 +44,10 @@ struct PremiumView: View {
                         .accessibilityIdentifier("premium.close")
                 }
             }
-            .task { if entitlements.products.isEmpty { await entitlements.loadProducts() } }
+            .task(id: selected) {
+                if entitlements.products.isEmpty { await entitlements.loadProducts() }
+                trialDays = await entitlements.freeTrialDays(for: selected)
+            }
         }
     }
 
@@ -132,6 +137,8 @@ struct PremiumView: View {
                 Group {
                     if entitlements.isPurchasing {
                         ProgressView()
+                    } else if let trialDays {
+                        Text("Try It Free for \(trialDays) Days")
                     } else {
                         Text("Subscribe")
                     }
@@ -143,6 +150,14 @@ struct PremiumView: View {
             .buttonStyle(.borderedProminent)
             .disabled(entitlements.isPurchasing)
             .accessibilityIdentifier("premium.subscribe")
+
+            if trialDays != nil {
+                Text("Then \(price(selected)) / \(selected.periodUnit). Cancel anytime in Settings before the trial ends and you won't be charged.")
+                    .font(.footnote)
+                    .foregroundStyle(palette.secondaryText)
+                    .multilineTextAlignment(.center)
+                    .accessibilityIdentifier("premium.trialTerms")
+            }
 
             if let message {
                 Text(message)
@@ -156,6 +171,11 @@ struct PremiumView: View {
 
     private var activeCard: some View {
         VStack(alignment: .leading, spacing: 8) {
+            if entitlements.hasGrant && !entitlements.hasSubscription {
+                Text(entitlements.grantExpiresAt.map { String(localized: "Premium was given to your account until \($0.formatted(date: .long, time: .omitted)).") } ?? String(localized: "Premium was given to your account."))
+                    .font(.headline)
+                    .foregroundStyle(palette.text)
+            }
             if let product = entitlements.activeProduct {
                 Text("\(product.periodTitle) plan")
                     .font(.headline)

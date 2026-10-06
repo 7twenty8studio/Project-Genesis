@@ -9,6 +9,7 @@ struct RootView: View {
     @Environment(AppRouter.self) private var router
     @Environment(SyncService.self) private var sync
     @Environment(EntitlementService.self) private var entitlements
+    @Environment(AuthService.self) private var auth
     @Environment(FeatureFlagService.self) private var flags
     @Environment(WhatsNewService.self) private var whatsNew
     @Environment(AudioPlayerService.self) private var audio
@@ -64,6 +65,7 @@ struct RootView: View {
             keepAmbientAvailable()
             refreshWidgets()
         }
+        .onChange(of: auth.user?.id) { Task { await refreshGrant() } }
         .onChange(of: entitlements.hasLoaded) {
             keepThemeAvailable()
             keepAmbientAvailable()
@@ -74,6 +76,7 @@ struct RootView: View {
             switch phase {
             case .active:
                 sync.schedule(after: .zero)
+                Task { await refreshGrant() }
                 audio.liveActivity.appBecameActive()
                 Task { await flags.refresh() }
                 refreshWidgets()
@@ -97,6 +100,13 @@ struct RootView: View {
     private func keepThemeAvailable() {
         guard entitlements.hasLoaded, !entitlements.allows(settings.preferences.theme) else { return }
         settings.preferences.theme = .automatic
+    }
+
+    /// Premium given by the owner (public.premium_grants) for this account.
+    private func refreshGrant() async {
+        var token: String?
+        if auth.isSignedIn { token = try? await auth.accessToken() }
+        await entitlements.refreshGrant(client: auth.client, accessToken: token)
     }
 
     /// Ambient sounds are Premium: stop them if Premium has ended.
