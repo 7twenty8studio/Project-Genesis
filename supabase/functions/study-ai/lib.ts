@@ -164,7 +164,7 @@ export function buildUserMessage(request: StudyRequest): string {
 const QUOTE_RUN = 6;
 
 function words(text: string): string[] {
-  return text.toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "").match(/[a-z0-9]+/g) ?? [];
+  return text.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").match(/[a-z0-9]+/g) ?? [];
 }
 
 /**
@@ -201,7 +201,7 @@ function removePassageRuns(output: string, passageText: string, reference: strin
 
   // Word tokens with their positions in the output.
   const tokens: { word: string; start: number; end: number }[] = [];
-  for (const match of output.matchAll(/[A-Za-z0-9À-ɏ]+/g)) {
+  for (const match of output.matchAll(/[A-Za-z0-9\u00C0-\u024F]+/g)) {
     const normalized = words(match[0]).join("");
     if (normalized) tokens.push({ word: normalized, start: match.index!, end: match.index! + match[0].length });
   }
