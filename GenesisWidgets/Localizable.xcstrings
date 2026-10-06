@@ -11,6 +11,26 @@
         }
       }
     },
+    "%lld of %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld de %lld"
+          }
+        }
+      }
+    },
+    "%lld of %lld read today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld de %lld leyeron hoy"
+          }
+        }
+      }
+    },
     "%lld prayers": {
       "localizations": {
         "es": {
@@ -141,6 +161,16 @@
         }
       }
     },
+    "Follow your group's reading with Genesis Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sigue la lectura de tu grupo con Genesis Premium."
+          }
+        }
+      }
+    },
     "Genesis 1": {
       "comment": "Bible reference: the book of Genesis, chapter 1",
       "localizations": {
@@ -148,6 +178,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Génesis 1"
+          }
+        }
+      }
+    },
+    "Group Progress": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Progreso del grupo"
           }
         }
       }
@@ -250,6 +290,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Abre Genesis para ver la lectura de hoy de %@."
+          }
+        }
+      }
+    },
+    "Open a group with a reading plan in Genesis to see its progress here.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abre en Genesis un grupo con plan de lectura para ver aquí su progreso."
           }
         }
       }
@@ -445,12 +495,43 @@
         }
       }
     },
+    "Tuesday Bible Study": {
+      "comment": "Sample group name in the widget gallery",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estudio bíblico del martes"
+          }
+        }
+      }
+    },
     "Verse of the Day": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Versículo del día"
+          }
+        }
+      }
+    },
+    "You": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tú"
+          }
+        }
+      }
+    },
+    "Your group's reading plan: who has read today and how far everyone has come.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El plan de lectura de tu grupo: quién leyó hoy y cuánto ha avanzado cada uno."
           }
         }
       }
@@ -481,6 +562,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "días de racha"
+          }
+        }
+      }
+    },
+    "read today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "leyeron hoy"
           }
         }
       }

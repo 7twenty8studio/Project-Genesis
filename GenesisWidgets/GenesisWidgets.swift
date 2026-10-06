@@ -12,6 +12,7 @@ struct GenesisWidgetsBundle: WidgetBundle {
         PrayerReminderWidget()
         MemoriseWidget()
         TodaysReadingWidget()
+        GroupProgressWidget()
         ListeningLiveActivity()
     }
 }

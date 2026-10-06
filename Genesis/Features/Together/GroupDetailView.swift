@@ -102,6 +102,9 @@ struct GroupTodayView: View {
                     }
                     .listRowBackground(palette.surface)
                 }
+                if let plan = group.plan, let day, day > 0 {
+                    GroupProgressSection(model: model, plan: plan, today: day)
+                }
                 DiscussionSection(model: model, day: (day ?? 0) > 0 ? day : nil)
             }
         }
@@ -158,11 +161,21 @@ struct DiscussionSection: View {
     @State private var draft = ""
     @State private var isSending = false
 
+    private var emptyPrompt: String {
+        guard let day else { return String(localized: "Start the conversation.") }
+        return day == model.today ? String(localized: "What stood out to you today?") : String(localized: "What stood out to you in this reading?")
+    }
+
+    private var fieldPrompt: String {
+        guard let day else { return String(localized: "Write a message") }
+        return day == model.today ? String(localized: "Share a thought on today's reading") : String(localized: "Share a thought on this reading")
+    }
+
     var body: some View {
         let posts = model.posts(forDay: day)
         Section {
             if posts.isEmpty {
-                Text(day == nil ? "Start the conversation." : "What stood out to you today?")
+                Text(emptyPrompt)
                     .foregroundStyle(palette.secondaryText)
             }
             ForEach(posts) { post in
@@ -186,7 +199,7 @@ struct DiscussionSection: View {
                 )
             }
             HStack(alignment: .bottom) {
-                TextField(day == nil ? "Write a message" : "Share a thought on today's reading", text: $draft, axis: .vertical)
+                TextField(fieldPrompt, text: $draft, axis: .vertical)
                     .lineLimit(1...5)
                     .accessibilityIdentifier("group.postField")
                 Button {
@@ -203,7 +216,11 @@ struct DiscussionSection: View {
                 .accessibilityIdentifier("group.send")
             }
         } header: {
-            Text(day == nil ? "Discussion" : "Today's discussion")
+            if let day, day != model.today {
+                Text("Discussion for day \(day)")
+            } else {
+                Text(day == nil ? "Discussion" : "Today's discussion")
+            }
         }
         .listRowBackground(palette.surface)
     }

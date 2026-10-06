@@ -102,6 +102,10 @@ shares; README.md has the architecture.
   names, the word filter and rate limits; keep it that way rather than trusting
   the app. The community feed comes from `community_feed()` so anonymous
   authors stay anonymous; `user_id` on community_posts isn't readable.
+- Group plan progress: `group_progress_summary(p_group)` (members only) feeds
+  each member's bar; any day can be marked read and has its own discussion
+  (Every Day of the Plan). The Group Progress widget (Premium) reads
+  `GroupWidgetSnapshot` (App Group file written by `GroupDetailModel`).
 - Anything people post needs report, block and (for its author) delete:
   `.contentActions(...)`. App Store guideline 1.2.
 - Switches: `groups` (on) and `community` (off until the owner moderates).

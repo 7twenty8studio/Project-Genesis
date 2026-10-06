@@ -102,6 +102,19 @@ struct GroupProgress: Codable, Hashable, Sendable {
     }
 }
 
+/// How far one member has read in the group's plan.
+struct MemberProgress: Codable, Hashable, Sendable {
+    let userID: UUID
+    let daysDone: Int
+    let lastDay: Int
+
+    enum CodingKeys: String, CodingKey {
+        case userID = "user_id"
+        case daysDone = "days_done"
+        case lastDay = "last_day"
+    }
+}
+
 struct GroupPrayer: Identifiable, Codable, Hashable, Sendable {
     let id: UUID
     let groupID: UUID

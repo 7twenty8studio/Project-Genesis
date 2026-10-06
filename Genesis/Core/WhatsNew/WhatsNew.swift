@@ -27,7 +27,31 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress]
+
+    static let groupProgress = WhatsNewAnnouncement(
+        id: "group-progress",
+        title: String(localized: "Read together"),
+        items: [
+            WhatsNewItem(
+                systemImage: "chart.bar.fill",
+                title: String(localized: "See how your group is doing"),
+                detail: String(localized: "A group with a reading plan now shows everyone's progress, with a tick for who has read today.")
+            ),
+            WhatsNewItem(
+                systemImage: "bubble.left.and.bubble.right",
+                title: String(localized: "Every day has its discussion"),
+                detail: String(localized: "Catch up on earlier days and talk about each one from Every Day of the Plan.")
+            ),
+            WhatsNewItem(
+                systemImage: "square.text.square",
+                title: String(localized: "A Group Progress widget"),
+                detail: String(localized: "With Premium, keep your group's reading on your Home Screen.")
+            ),
+        ],
+        flag: .groups,
+        feature: .together
+    )
 
     static let octoberUpdate = WhatsNewAnnouncement(
         id: "images-fonts-feedback",

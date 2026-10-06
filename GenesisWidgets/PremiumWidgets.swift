@@ -196,3 +196,132 @@ private struct PlayPauseButton: View {
         .accessibilityLabel(isPlaying ? Text("Pause") : Text("Play"))
     }
 }
+
+// MARK: - Group progress (Premium)
+
+struct GroupProgressEntry: TimelineEntry {
+    let date: Date
+    let group: GroupWidgetSnapshot?
+    let isPremium: Bool
+}
+
+struct GroupProgressProvider: TimelineProvider {
+    func placeholder(in context: Context) -> GroupProgressEntry {
+        GroupProgressEntry(date: .now, group: .placeholder, isPremium: true)
+    }
+
+    func getSnapshot(in context: Context, completion: @escaping (GroupProgressEntry) -> Void) {
+        completion(context.isPreview ? placeholder(in: context) : entry())
+    }
+
+    func getTimeline(in context: Context, completion: @escaping (Timeline<GroupProgressEntry>) -> Void) {
+        // The app refreshes it when the group changes; check back hourly too.
+        completion(Timeline(entries: [entry()], policy: .after(.now.addingTimeInterval(3600))))
+    }
+
+    private func entry() -> GroupProgressEntry {
+        GroupProgressEntry(date: .now, group: GroupWidgetSnapshot.load(), isPremium: WidgetSnapshot.load()?.isPremium == true)
+    }
+}
+
+/// How a group is getting on with its reading plan: who has read today and
+/// everyone's progress bar.
+struct GroupProgressWidget: Widget {
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: GroupWidgetSnapshot.widgetKind, provider: GroupProgressProvider()) { entry in
+            GroupProgressView(entry: entry)
+        }
+        .configurationDisplayName("Group Progress")
+        .description("Your group's reading plan: who has read today and how far everyone has come.")
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+    }
+}
+
+struct GroupProgressView: View {
+    let entry: GroupProgressEntry
+    @Environment(\.widgetFamily) private var family
+
+    var body: some View {
+        Group {
+            if !entry.isPremium {
+                note(String(localized: "Follow your group's reading with Genesis Premium."))
+            } else if let group = entry.group {
+                content(group)
+            } else {
+                note(String(localized: "Open a group with a reading plan in Genesis to see its progress here."))
+            }
+        }
+        .containerBackground(for: .widget) { WidgetPalette.background }
+    }
+
+    @ViewBuilder
+    private func content(_ group: GroupWidgetSnapshot) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(group.groupName.uppercased())
+                .font(.system(size: 10, weight: .semibold))
+                .kerning(1)
+                .foregroundStyle(WidgetPalette.accent)
+                .lineLimit(1)
+            if family == .systemSmall {
+                Spacer(minLength: 0)
+                Text("\(group.readTodayCount) of \(group.memberCount)")
+                    .font(.system(.title, design: .serif, weight: .semibold))
+                    .foregroundStyle(WidgetPalette.text)
+                Text("read today")
+                    .font(.caption)
+                    .foregroundStyle(WidgetPalette.secondary)
+                Spacer(minLength: 0)
+                if group.day > 0 {
+                    Text("Day \(group.day) of \(group.dayCount)")
+                        .font(.caption2.weight(.semibold))
+                        .foregroundStyle(WidgetPalette.secondary)
+                }
+            } else {
+                HStack(alignment: .firstTextBaseline) {
+                    Text(group.dayTitle ?? group.planTitle)
+                        .font(.system(.headline, design: .serif))
+                        .foregroundStyle(WidgetPalette.text)
+                        .lineLimit(1)
+                    Spacer()
+                    if group.day > 0 {
+                        Text("Day \(group.day) of \(group.dayCount)")
+                            .font(.caption2.weight(.semibold))
+                            .foregroundStyle(WidgetPalette.secondary)
+                    }
+                }
+                ForEach(Array(group.members.prefix(family == .systemLarge ? 8 : 3).enumerated()), id: \.offset) { _, member in
+                    HStack(spacing: 8) {
+                        Image(systemName: member.readToday ? "checkmark.circle.fill" : "circle")
+                            .font(.caption2)
+                            .foregroundStyle(member.readToday ? WidgetPalette.accent : WidgetPalette.secondary)
+                        Text(member.name)
+                            .font(.caption)
+                            .foregroundStyle(WidgetPalette.text)
+                            .lineLimit(1)
+                            .frame(width: 70, alignment: .leading)
+                        ProgressView(value: member.fraction)
+                            .tint(WidgetPalette.accent)
+                    }
+                }
+                Spacer(minLength: 0)
+                Text("\(group.readTodayCount) of \(group.memberCount) read today")
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(WidgetPalette.secondary)
+            }
+        }
+        .widgetURL(URL(string: "\(GenesisLink.scheme)://group/\(group.groupID.uuidString)"))
+    }
+
+    private func note(_ text: String) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Image(systemName: "person.3")
+                .font(.title3)
+                .foregroundStyle(WidgetPalette.accent)
+            Text(text)
+                .font(.system(.footnote, design: .serif))
+                .foregroundStyle(WidgetPalette.text)
+            Spacer(minLength: 0)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}

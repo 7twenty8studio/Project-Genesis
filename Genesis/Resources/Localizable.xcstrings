@@ -203,6 +203,16 @@
         }
       }
     },
+    "%lld comments": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld comentarios"
+          }
+        }
+      }
+    },
     "%lld days": {
       "localizations": {
         "es": {
@@ -279,6 +289,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld de %lld capítulos"
+          }
+        }
+      }
+    },
+    "%lld of %lld days": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld de %lld días"
           }
         }
       }
@@ -414,6 +434,16 @@
         }
       }
     },
+    "1 comment": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 comentario"
+          }
+        }
+      }
+    },
     "1 earlier day to catch up on": {
       "localizations": {
         "es": {
@@ -484,12 +514,32 @@
         }
       }
     },
+    "A Group Progress widget": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un widget de progreso del grupo"
+          }
+        }
+      }
+    },
     "A Memorise widget": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Un widget para memorizar"
+          }
+        }
+      }
+    },
+    "A group with a reading plan now shows everyone's progress, with a tick for who has read today.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un grupo con plan de lectura ahora muestra el progreso de todos, con una marca para quien ya leyó hoy."
           }
         }
       }
@@ -1487,6 +1537,26 @@
         }
       }
     },
+    "Catch up on earlier days and join their discussions from Every Day of the Plan.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ponte al día con los días anteriores y únete a sus conversaciones desde Todos los días del plan."
+          }
+        }
+      }
+    },
+    "Catch up on earlier days and talk about each one from Every Day of the Plan.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ponte al día con los días anteriores y comenta cada uno desde Todos los días del plan."
+          }
+        }
+      }
+    },
     "Category": {
       "localizations": {
         "es": {
@@ -2312,6 +2382,16 @@
         }
       }
     },
+    "Discussion for day %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conversación del día %lld"
+          }
+        }
+      }
+    },
     "Display name": {
       "localizations": {
         "es": {
@@ -2535,12 +2615,32 @@
         }
       }
     },
+    "Every Day of the Plan": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos los días del plan"
+          }
+        }
+      }
+    },
     "Every day": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Todos los días"
+          }
+        }
+      }
+    },
+    "Every day has its discussion": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada día tiene su conversación"
           }
         }
       }
@@ -4767,6 +4867,16 @@
         }
       }
     },
+    "No one has marked this day yet.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nadie ha marcado este día todavía."
+          }
+        }
+      }
+    },
     "No people, places or events are recorded for this chapter.": {
       "localizations": {
         "es": {
@@ -5886,6 +5996,16 @@
         }
       }
     },
+    "Read by %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leído por %@"
+          }
+        }
+      }
+    },
     "Read in Parallel": {
       "localizations": {
         "es": {
@@ -5932,6 +6052,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lee a lo largo del año"
+          }
+        }
+      }
+    },
+    "Read today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leído hoy"
           }
         }
       }
@@ -6775,6 +6905,16 @@
         }
       }
     },
+    "See how your group is doing": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mira cómo va tu grupo"
+          }
+        }
+      }
+    },
     "See your reading time, longest streak, favourite books and topics, and more with Premium.": {
       "localizations": {
         "es": {
@@ -6942,6 +7082,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Comparte una breve reflexión sobre un pasaje y anímense unos a otros."
+          }
+        }
+      }
+    },
+    "Share a thought on this reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comparte una reflexión sobre esta lectura"
           }
         }
       }
@@ -8566,6 +8716,17 @@
         }
       }
     },
+    "Tuesday Bible Study": {
+      "comment": "Sample group name in the widget gallery",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estudio bíblico del martes"
+          }
+        }
+      }
+    },
     "Turn Off Timer": {
       "localizations": {
         "es": {
@@ -8928,6 +9089,16 @@
         }
       }
     },
+    "What stood out to you in this reading?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué te llamó la atención en esta lectura?"
+          }
+        }
+      }
+    },
     "What stood out to you today?": {
       "localizations": {
         "es": {
@@ -9062,6 +9233,16 @@
         }
       }
     },
+    "With Premium, keep your group's reading on your Home Screen.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Premium, ten la lectura de tu grupo en tu pantalla de inicio."
+          }
+        }
+      }
+    },
     "With Premium, mix rain, ocean waves, wind, a crackling fire, birdsong and a soft worship pad while you read and pray. Find them in the reader under Aa.": {
       "localizations": {
         "es": {
@@ -9191,6 +9372,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Amarillo"
+          }
+        }
+      }
+    },
+    "You": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tú"
           }
         }
       }

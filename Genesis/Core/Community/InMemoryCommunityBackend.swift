@@ -210,6 +210,18 @@ actor InMemoryCommunityBackend: CommunityBackend {
         if done { progressRows[group, default: []].insert(key) } else { progressRows[group]?.remove(key) }
     }
 
+    func progressSummary(in group: UUID) async throws -> [MemberProgress] {
+        let rows = (progressRows[group] ?? []).compactMap { key -> (UUID, Int)? in
+            let parts = key.split(separator: "|")
+            guard parts.count == 2, let user = UUID(uuidString: String(parts[0])), let day = Int(parts[1]) else { return nil }
+            return (user, day)
+        }
+        return (members[group] ?? []).map { member in
+            let days = rows.filter { $0.0 == member.userID }.map(\.1)
+            return MemberProgress(userID: member.userID, daysDone: days.count, lastDay: days.max() ?? 0)
+        }
+    }
+
     func prayers(in group: UUID) async throws -> [GroupPrayer] {
         prayerRows.filter { $0.groupID == group }.sorted { $0.createdAt > $1.createdAt }
     }
@@ -343,6 +355,7 @@ struct SignedOutCommunityBackend: CommunityBackend {
     func setNotifications(_ on: Bool, for group: UUID) async throws { throw CommunityError.signInRequired }
     func progress(in group: UUID, day: Int) async throws -> [GroupProgress] { [] }
     func setDayDone(_ done: Bool, day: Int, in group: UUID) async throws { throw CommunityError.signInRequired }
+    func progressSummary(in group: UUID) async throws -> [MemberProgress] { [] }
     func prayers(in group: UUID) async throws -> [GroupPrayer] { [] }
     func myPrayerMarks(_ prayers: [UUID]) async throws -> Set<UUID> { [] }
     func addPrayer(_ body: String, to group: UUID) async throws { throw CommunityError.signInRequired }

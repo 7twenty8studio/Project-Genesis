@@ -141,4 +141,34 @@ final class TogetherUITests: GenesisUITestCase {
         ok.tap()
         XCTAssertTrue(Genesis.wait { !existing.exists }, "The reported post is hidden")
     }
+
+    @MainActor
+    func testGroupProgressAndEarlierDays() {
+        let app = Genesis.launch()
+        openTogether(app)
+        app.buttons["groups.create"].tap()
+        let name = app.textFields["groupForm.name"]
+        XCTAssertTrue(name.waitForExistence(timeout: Genesis.timeout))
+        name.tap()
+        name.typeText("Progress Group")
+        Genesis.tapToolbarButton("groupForm.save", in: app)
+
+        let markRead = app.buttons["group.markRead"]
+        XCTAssertTrue(markRead.waitForExistence(timeout: Genesis.timeout))
+        markRead.tap()
+        let progress = app.descendants(matching: .any).matching(identifier: "group.memberProgress").firstMatch
+        Genesis.scrollIntoView(progress, in: app)
+        XCTAssertTrue(Genesis.wait { progress.label.contains("1 of") }, "Your progress bar counts the day")
+
+        let allDays = app.buttons["group.allDays"]
+        Genesis.scrollIntoView(allDays, in: app)
+        allDays.tap()
+        let dayOne = app.buttons["group.day.1"]
+        XCTAssertTrue(dayOne.waitForExistence(timeout: Genesis.timeout), "Every day of the plan is listed")
+        dayOne.tap()
+        XCTAssertTrue(app.buttons["group.day.markRead"].waitForExistence(timeout: Genesis.timeout), "A day can be marked read")
+        type("Loved this chapter", into: "group.postField", in: app)
+        app.buttons["group.send"].tap()
+        XCTAssertTrue(Genesis.element(containing: "Loved this chapter", in: app).waitForExistence(timeout: Genesis.timeout), "Each day has its own discussion")
+    }
 }
