@@ -338,7 +338,6 @@ final class ReaderPageViewController: UIViewController {
     func configure(text: NSAttributedString, layout: ReaderLayout, header: String, showsHeader: Bool = true, footer: String) {
         self.layout = layout
         loadViewIfNeeded()
-        let palette = layout.style.palette
         view.backgroundColor = PaperTexture.pageColor(for: layout.style.theme)
         textView.attributedText = text
         textView.textContainerInset = layout.textInsets

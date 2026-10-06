@@ -390,11 +390,11 @@ final class AudioPlayerService {
     private func configureRemoteControls() {
         nowPlaying.configure(
             NowPlayingController.Actions(
-                play: { Task { @MainActor [weak self] in self?.resume() } },
-                pause: { Task { @MainActor [weak self] in self?.pause() } },
-                toggle: { Task { @MainActor [weak self] in self?.togglePlayback() } },
-                next: { Task { @MainActor [weak self] in self?.nextChapter() } },
-                previous: { Task { @MainActor [weak self] in self?.previousChapter() } }
+                play: { [weak self] in Task { @MainActor in self?.resume() } },
+                pause: { [weak self] in Task { @MainActor in self?.pause() } },
+                toggle: { [weak self] in Task { @MainActor in self?.togglePlayback() } },
+                next: { [weak self] in Task { @MainActor in self?.nextChapter() } },
+                previous: { [weak self] in Task { @MainActor in self?.previousChapter() } }
             ),
             onInterruption: { [weak self] began, shouldResume in
                 guard let self else { return }

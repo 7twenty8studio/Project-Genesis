@@ -236,17 +236,7 @@ struct VerseImageView: View {
                     }
                 }
                 PhotosPicker(selection: $photoItem, matching: .images) {
-                    VStack(spacing: 6) {
-                        Image(systemName: "photo.badge.plus")
-                            .font(.title3)
-                            .foregroundStyle(palette.accent)
-                            .frame(width: 44, height: 44)
-                            .background(palette.surface, in: Circle())
-                            .overlay(Circle().strokeBorder(palette.separator, lineWidth: 1))
-                        Text(VerseImageStyle.photo.title)
-                            .font(.caption2)
-                            .foregroundStyle(palette.secondaryText)
-                    }
+                    PhotoChoiceLabel(palette: palette)
                 }
                 .buttonStyle(.plain)
                 .accessibilityLabel("Choose a photo")
@@ -341,6 +331,27 @@ private struct RenderKey: Equatable {
     let shape: VerseImageShape
     let options: VerseImageOptions
     let photo: ObjectIdentifier?
+}
+
+/// The "Photo" choice under verse image backgrounds. Its own view, given the
+/// colours, because the photo picker's label isn't main-actor isolated in
+/// the newer SDK.
+private struct PhotoChoiceLabel: View {
+    let palette: ThemePalette
+
+    var body: some View {
+        VStack(spacing: 6) {
+            Image(systemName: "photo.badge.plus")
+                .font(.title3)
+                .foregroundStyle(palette.accent)
+                .frame(width: 44, height: 44)
+                .background(palette.surface, in: Circle())
+                .overlay(Circle().strokeBorder(palette.separator, lineWidth: 1))
+            Text(VerseImageStyle.photo.title)
+                .font(.caption2)
+                .foregroundStyle(palette.secondaryText)
+        }
+    }
 }
 
 /// The image itself, drawn at full size (1080 pixels wide).

@@ -105,7 +105,7 @@ struct ParallelChapterView: View {
     private func verse(_ text: String?, number: Int?, emphasis: Bool) -> some View {
         let size = CGFloat(settings.preferences.fontSize) * (emphasis ? 1 : 0.88)
         if let text {
-            (numberText(number) + Text(text))
+            Text(numbered(text, number: number))
                 .font(settings.preferences.font.font(size: size))
                 .foregroundStyle(emphasis ? palette.text : palette.secondaryText)
                 .lineSpacing(size * CGFloat(settings.preferences.lineSpacing - 1))
@@ -117,6 +117,21 @@ struct ParallelChapterView: View {
                 .font(settings.preferences.font.font(size: size))
                 .accessibilityHidden(true)
         }
+    }
+
+    /// The verse with its small raised number, as one run of text (the
+    /// verse's words are verbatim; only the number is styled).
+    private func numbered(_ text: String, number: Int?) -> AttributedString {
+        var result = AttributedString()
+        if let number {
+            var label = AttributedString("\(number) ")
+            label.font = .system(size: 11, weight: .semibold)
+            label.foregroundColor = palette.accent
+            label.baselineOffset = 6
+            result += label
+        }
+        result += AttributedString(text)
+        return result
     }
 
     private func numberText(_ number: Int?) -> Text {
