@@ -128,9 +128,7 @@ struct ReaderView: View {
                         onCrossReferences: showCrossReferencesForSelection,
                         onExplain: explainSelection,
                         onMemorise: memoriseAction,
-                        // The word data follows English (KJV) verse numbering; the
-                        // Spanish Bible numbers some verses differently.
-                        onWordStudy: wordStudy != nil && reader.translation.language == "en" ? studyWordsForSelection : nil
+                        onWordStudy: wordStudyAction
                     )
                     .padding(.bottom, readerSafeArea.bottom + 8)
                     .frame(maxHeight: .infinity, alignment: .bottom)
@@ -318,6 +316,13 @@ struct ReaderView: View {
                     .transition(.move(edge: .bottom).combined(with: .opacity))
             }
         }
+    }
+
+    /// Word Study in the selection bar. The word data follows English (KJV)
+    /// verse numbering; the Spanish Bible numbers some verses differently.
+    private var wordStudyAction: (() -> Void)? {
+        guard wordStudy != nil, reader.translation.language == "en" else { return nil }
+        return { studyWordsForSelection() }
     }
 
     /// Memorise in the selection bar, when Plans & Prayer is switched on.
