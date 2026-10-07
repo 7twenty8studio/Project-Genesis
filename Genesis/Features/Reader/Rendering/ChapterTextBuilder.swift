@@ -185,7 +185,9 @@ enum ChapterTextBuilder {
         guard let letter = initial.last else { return nil }
         let palette = style.palette
         let accent = palette.uiAccent
-        let side = (bodyFont.lineHeight * 2 - abs(bodyFont.descender)).rounded(.up)
+        // A fixed share of the line height: fonts' descenders vary too much
+        // (New York's is deep) for "two lines minus the descender" to hold.
+        let side = (bodyFont.lineHeight * 1.8).rounded(.up)
         guard side > 8 else { return nil }
         let gap = (style.fontSize * 0.22).rounded()
         let canvas = CGSize(width: side + gap, height: side)
