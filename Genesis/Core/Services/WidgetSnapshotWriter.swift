@@ -7,8 +7,10 @@ import WidgetKit
 /// refresh. Cheap, so it runs whenever the app becomes active or data changes.
 @MainActor
 enum WidgetSnapshotWriter {
-    static func refresh(library: BibleLibrary, progress: ReadingProgress, context: ModelContext, isPremium: Bool, theme: ReaderTheme = .automatic, now: Date = .now) {
-        let snapshot = make(library: library, progress: progress, context: context, isPremium: isPremium, theme: theme, now: now)
+    /// `memoriseShown`: false while Memorise is switched off in Settings ›
+    /// Features, so its widget shows the off state instead of a passage.
+    static func refresh(library: BibleLibrary, progress: ReadingProgress, context: ModelContext, isPremium: Bool, theme: ReaderTheme = .automatic, memoriseShown: Bool = true, now: Date = .now) {
+        let snapshot = make(library: library, progress: progress, context: context, isPremium: isPremium, theme: theme, memoriseShown: memoriseShown, now: now)
         // Apple Watch gets the verses of the day too (sent only when they change).
         WatchConnector.shared.send(WatchPayload(generatedAt: now, translation: snapshot.translation, isPremium: isPremium, verses: snapshot.dailyVerses))
         // Skip the write (and widget reload) when nothing visible changed.
@@ -57,7 +59,7 @@ enum WidgetSnapshotWriter {
         return WidgetSnapshot.Theme(name: theme.rawValue, light: colors(.light), dark: colors(.dark))
     }
 
-    static func make(library: BibleLibrary, progress: ReadingProgress, context: ModelContext, isPremium: Bool = false, theme: ReaderTheme = .automatic, now: Date = .now) -> WidgetSnapshot {
+    static func make(library: BibleLibrary, progress: ReadingProgress, context: ModelContext, isPremium: Bool = false, theme: ReaderTheme = .automatic, memoriseShown: Bool = true, now: Date = .now) -> WidgetSnapshot {
         let repository = library.current
         let calendar = Calendar.current
 
@@ -109,9 +111,10 @@ enum WidgetSnapshotWriter {
         let nextReminder = prayers.compactMap(\.reminderAt).filter { $0 > now }.min()
 
         // Memorise: the passage due soonest, as a first-letters prompt.
-        let memory = (try? context.fetch(FetchDescriptor<MemoryVerse>(sortBy: [SortDescriptor(\.dueAt)]))) ?? []
-        var memorise = WidgetSnapshot.Memorise(isUnlocked: isPremium, dueDates: [], total: 0, reference: nil, hint: nil, translation: nil)
-        if isPremium, let next = memory.first {
+        // Switched off: nothing about it, just the off state.
+        let memory = memoriseShown ? ((try? context.fetch(FetchDescriptor<MemoryVerse>(sortBy: [SortDescriptor(\.dueAt)]))) ?? []) : []
+        var memorise = WidgetSnapshot.Memorise(isUnlocked: isPremium, dueDates: [], total: 0, reference: nil, hint: nil, translation: nil, isHidden: memoriseShown ? nil : true)
+        if isPremium, memoriseShown, let next = memory.first {
             let translation = library.translations.first { $0.id == next.translationID } ?? library.currentTranslation
             let text = ((try? library.repository(for: translation).verses(from: next.start, through: next.end)) ?? []).map(\.plainText).joined(separator: " ")
             memorise = WidgetSnapshot.Memorise(

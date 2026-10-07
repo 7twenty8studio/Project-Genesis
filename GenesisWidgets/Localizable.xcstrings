@@ -264,12 +264,32 @@
         }
       }
     },
+    "Memorise Scripture is turned off in Genesis.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memorizar las Escrituras está desactivado en Genesis."
+          }
+        }
+      }
+    },
     "Memorise Scripture with Genesis Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Memoriza las Escrituras con Genesis Premium."
+          }
+        }
+      }
+    },
+    "Memorise is turned off": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memorizar está desactivado"
           }
         }
       }

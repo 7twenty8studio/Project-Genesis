@@ -7,6 +7,7 @@ enum GenesisTips {
     static let highlight = HighlightTip()
     static let listen = ListenTip()
     static let topics = TopicSearchTip()
+    static let churchModeFocus = ChurchModeFocusTip()
 
     static func configure(testing: Bool) {
         // UI tests expect the screens without hints on top.
@@ -31,4 +32,11 @@ struct TopicSearchTip: Tip {
     var title: Text { Text("Search by topic") }
     var message: Text? { Text("Try a subject like forgiveness, fear or marriage to see the passages about it.") }
     var image: Image? { Image(systemName: "tag") }
+}
+
+/// Apps can't switch Do Not Disturb on, so Church Mode suggests it once.
+struct ChurchModeFocusTip: Tip {
+    var title: Text { Text("Quiet your phone") }
+    var message: Text? { Text("Turn on Do Not Disturb or a Focus in Control Centre so nothing interrupts the sermon.") }
+    var image: Image? { Image(systemName: "moon") }
 }

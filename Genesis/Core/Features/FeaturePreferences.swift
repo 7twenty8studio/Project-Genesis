@@ -15,6 +15,7 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
     case insights
     case moments
     case together
+    case sermons
 
     var id: String { rawValue }
 
@@ -31,6 +32,7 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
         case .insights: String(localized: "Insights & Year in Review")
         case .moments: String(localized: "Chapter Ribbons", comment: "Optional feature: a gold ribbon when a chapter or plan day is finished")
         case .together: String(localized: "Groups & Community")
+        case .sermons: String(localized: "Sermon Notes")
         }
     }
 
@@ -47,6 +49,7 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
         case .insights: String(localized: "Your reading time, favourite books and a look back on your year.")
         case .moments: String(localized: "A small gold ribbon when you finish a chapter or a day of your plan.")
         case .together: String(localized: "Read and pray with your church group, and the community prayer wall.")
+        case .sermons: String(localized: "Take notes during the sermon, with the verses beside them and Church Mode for a dim, quiet screen.")
         }
     }
 
@@ -63,6 +66,7 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
         case .insights: "chart.bar"
         case .moments: "bookmark"
         case .together: "person.3"
+        case .sermons: "building.columns"
         }
     }
 
@@ -86,7 +90,7 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
     var area: Area {
         switch self {
         case .plans, .prayer, .memorise: .daily
-        case .wordStudy, .explore, .studyAssistant: .study
+        case .wordStudy, .explore, .studyAssistant, .sermons: .study
         case .listen, .ambientSounds: .listening
         case .together: .community
         case .insights, .moments: .touches
@@ -196,7 +200,7 @@ extension FeaturePreferences {
         switch feature {
         case .studyAssistant: flags.isOn(.studyAssistant)
         case .together: flags.isOn(.groups) || flags.isOn(.community)
-        case .plans, .prayer, .memorise, .listen, .ambientSounds, .wordStudy, .explore, .insights, .moments: true
+        case .plans, .prayer, .memorise, .listen, .ambientSounds, .wordStudy, .explore, .insights, .moments, .sermons: true
         }
     }
 

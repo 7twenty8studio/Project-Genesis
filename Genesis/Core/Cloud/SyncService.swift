@@ -3,7 +3,7 @@ import Observation
 import os
 import SwiftData
 
-/// Keeps highlights, notes, bookmarks, reading plans and prayers in step
+/// Keeps highlights, notes, bookmarks, reading plans, prayers and sermon notes in step
 /// between this device and the person's Supabase account.
 ///
 /// Each sync pulls server changes first (newest edit wins per record), then
@@ -131,6 +131,7 @@ final class SyncService {
             try context.delete(model: PlanEnrollment.self)
             try context.delete(model: Prayer.self)
             try context.delete(model: MemoryVerse.self)
+            try context.delete(model: Sermon.self)
             try context.delete(model: Tombstone.self)
             try context.save()
         } catch {
@@ -153,6 +154,7 @@ final class SyncService {
         try await pull(SyncTable.readingPlans, RemotePlan.self, client, token, user, apply: apply)
         try await pull(SyncTable.prayers, RemotePrayer.self, client, token, user, apply: apply)
         try await pull(SyncTable.memoryVerses, RemoteMemoryVerse.self, client, token, user, apply: apply)
+        try await pull(SyncTable.sermons, RemoteSermon.self, client, token, user, apply: apply)
 
         // Push everything edited since the last successful push.
         let since = defaults.object(forKey: key("lastPushedAt", user.id)) as? Date ?? .distantPast
@@ -163,6 +165,7 @@ final class SyncService {
         try await push(changed(PlanEnrollment.self, since).map { RemotePlan($0, userID: user.id) }, SyncTable.readingPlans, client, token)
         try await push(changed(Prayer.self, since).map { RemotePrayer($0, userID: user.id) }, SyncTable.prayers, client, token)
         try await push(changed(MemoryVerse.self, since).map { RemoteMemoryVerse($0, userID: user.id) }, SyncTable.memoryVerses, client, token)
+        try await push(changed(Sermon.self, since).map { RemoteSermon($0, userID: user.id) }, SyncTable.sermons, client, token)
         try await pushDeletions(client, token)
 
         defaults.set(pushStartedAt, forKey: key("lastPushedAt", user.id))
@@ -179,9 +182,10 @@ final class SyncService {
     ) async throws {
         let cursorKey = key("cursor.\(table)", user.id)
         var cursor = defaults.string(forKey: cursorKey)
-        // Notes can carry handwritten pages (up to 2 MB each), so they come in
-        // smaller pages to keep each response and its decoding small.
-        let limit = table == "notes" ? notesPageSize : pageSize
+        // Notes can carry handwritten pages (up to 2 MB each) and sermon notes
+        // long text, so they come in smaller pages to keep each response and
+        // its decoding small.
+        let limit = table == SyncTable.notes || table == SyncTable.sermons ? notesPageSize : pageSize
         while true {
             let rows: [Row] = try await client.changes(in: table, since: cursor, limit: limit, accessToken: token)
             for row in rows { apply(row) }
@@ -257,6 +261,10 @@ final class SyncService {
 
     private func existing(_ type: MemoryVerse.Type, id: UUID) -> MemoryVerse? {
         first(FetchDescriptor<MemoryVerse>(predicate: #Predicate { $0.id == id }))
+    }
+
+    private func existing(_ type: Sermon.Type, id: UUID) -> Sermon? {
+        first(FetchDescriptor<Sermon>(predicate: #Predicate { $0.id == id }))
     }
 
     private func first<Model: PersistentModel>(_ descriptor: FetchDescriptor<Model>) -> Model? {
@@ -466,6 +474,31 @@ final class SyncService {
         }
     }
 
+    private func apply(_ row: RemoteSermon) {
+        let local = existing(Sermon.self, id: row.id)
+        switch decision(for: row, local: local?.updatedAt) {
+        case .keepLocal: return
+        case .deleteLocal: if let local { context.delete(local) }
+        case .applyRemote:
+            let sermon = local ?? {
+                let created = Sermon(church: row.church, preachedAt: row.preachedAt)
+                created.id = row.id
+                context.insert(created)
+                return created
+            }()
+            sermon.title = row.title
+            sermon.preacher = row.preacher
+            sermon.church = row.church
+            sermon.preachedAt = row.preachedAt
+            sermon.series = row.series
+            sermon.body = row.body
+            sermon.passages = row.sermonPassages
+            sermon.isFavourite = row.isFavourite
+            sermon.createdAt = row.createdAt
+            sermon.updatedAt = row.updatedAt
+        }
+    }
+
     // MARK: Helpers
 
     private func key(_ name: String, _ userID: UUID) -> String {
@@ -498,3 +531,4 @@ extension Note: SyncTimestamped {}
 extension PlanEnrollment: SyncTimestamped {}
 extension Prayer: SyncTimestamped {}
 extension MemoryVerse: SyncTimestamped {}
+extension Sermon: SyncTimestamped {}

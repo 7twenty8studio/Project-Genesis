@@ -19,11 +19,29 @@ struct MemoriseWidgetView: View {
     @Environment(\.widgetFamily) private var family
 
     var body: some View {
-        if entry.snapshot.unlocks(.memorise, in: family) {
+        if entry.snapshot.memorise?.isHidden == true {
+            hiddenView(WidgetColors(entry.snapshot))
+        } else if entry.snapshot.unlocks(.memorise, in: family) {
             memoriseView(WidgetColors(entry.snapshot))
         } else {
             PremiumLockedView(message: String(localized: "Memorise Scripture with Genesis Premium."), symbol: "brain.head.profile")
         }
+    }
+
+    /// Memorise is switched off in Genesis: say so, and open the app's switch.
+    private func hiddenView(_ colors: WidgetColors) -> some View {
+        Group {
+            if family == .accessoryRectangular {
+                Label(String(localized: "Memorise is turned off"), systemImage: "brain.head.profile")
+                    .font(.caption)
+            } else {
+                message(String(localized: "Memorise Scripture is turned off in Genesis."), colors: colors)
+            }
+        }
+        .containerBackground(for: .widget) {
+            if family == .accessoryRectangular { Color.clear } else { WidgetBackground(colors: colors) }
+        }
+        .widgetURL(GenesisLink.memorise)
     }
 
     private func memoriseView(_ colors: WidgetColors) -> some View {

@@ -25,6 +25,7 @@ enum HomeRoute: Hashable {
     case prayerJournal
     case insights
     case memorise
+    case sermons
 }
 
 /// App-wide navigation: which tab is showing, and opening the reader at a
@@ -99,6 +100,8 @@ final class AppRouter {
             open(.prayerJournal)
         case "memorise":
             open(.memorise)
+        case "sermons":
+            open(.sermons)
         case "group":
             if let id = UUID(uuidString: url.lastPathComponent) { openGroup(id) } else { tab = .together }
         default:

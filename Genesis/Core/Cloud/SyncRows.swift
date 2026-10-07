@@ -324,6 +324,96 @@ struct RemoteMemoryVerse: SyncRow, Equatable {
     }
 }
 
+/// Sermon notes (supabase/migrations/20261013000000_sermons.sql). The notes
+/// are Markdown text; passages are verse ids only, never verse text.
+struct RemoteSermon: SyncRow, Equatable {
+    var id: UUID
+    var userId: UUID
+    var title: String
+    var preacher: String
+    var church: String
+    var preachedAt: Date
+    var series: String?
+    var body: String
+    var passages: [RemotePrayerPassage]
+    var isFavourite: Bool
+    var createdAt: Date
+    var updatedAt: Date
+    var deletedAt: Date?
+    var serverUpdatedAt: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id, userId, title, preacher, church, preachedAt, series, body, passages, isFavourite
+        case createdAt, updatedAt, deletedAt, serverUpdatedAt
+    }
+
+    init(_ sermon: Sermon, userID: UUID) {
+        id = sermon.id
+        userId = userID
+        title = sermon.title
+        preacher = sermon.preacher
+        church = sermon.church
+        preachedAt = sermon.preachedAt
+        let trimmedSeries = sermon.series?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        series = trimmedSeries.isEmpty ? nil : sermon.series
+        body = sermon.body
+        passages = sermon.passages.map { RemotePrayerPassage(startVerse: $0.start.rawValue, endVerse: $0.end.rawValue) }
+        isFavourite = sermon.isFavourite
+        createdAt = sermon.createdAt
+        updatedAt = sermon.updatedAt
+    }
+
+    // Lenient: a row missing an optional column (or written by a later
+    // version with fewer of them filled in) still reads, with defaults.
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(UUID.self, forKey: .id)
+        userId = try container.decode(UUID.self, forKey: .userId)
+        title = try container.decodeIfPresent(String.self, forKey: .title) ?? ""
+        preacher = try container.decodeIfPresent(String.self, forKey: .preacher) ?? ""
+        church = try container.decodeIfPresent(String.self, forKey: .church) ?? ""
+        createdAt = try container.decode(Date.self, forKey: .createdAt)
+        preachedAt = try container.decodeIfPresent(Date.self, forKey: .preachedAt) ?? createdAt
+        series = try container.decodeIfPresent(String.self, forKey: .series)
+        body = try container.decodeIfPresent(String.self, forKey: .body) ?? ""
+        passages = try container.decodeIfPresent([RemotePrayerPassage].self, forKey: .passages) ?? []
+        isFavourite = try container.decodeIfPresent(Bool.self, forKey: .isFavourite) ?? false
+        updatedAt = try container.decode(Date.self, forKey: .updatedAt)
+        deletedAt = try container.decodeIfPresent(Date.self, forKey: .deletedAt)
+        serverUpdatedAt = try container.decodeIfPresent(String.self, forKey: .serverUpdatedAt)
+    }
+
+    var payloadWeight: Int { body.utf8.count }
+
+    /// The passages to keep locally; anything that isn't a verse id is skipped.
+    var sermonPassages: [PrayerPassage] {
+        passages.compactMap { passage in
+            guard passage.startVerse > 1_000_000, passage.endVerse > 1_000_000 else { return nil }
+            return PrayerPassage(start: VerseID(rawValue: passage.startVerse), end: VerseID(rawValue: passage.endVerse))
+        }
+    }
+
+    // Written by hand so a cleared series goes up as an explicit null and
+    // every row in a request has the same keys.
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(userId, forKey: .userId)
+        try container.encode(title, forKey: .title)
+        try container.encode(preacher, forKey: .preacher)
+        try container.encode(church, forKey: .church)
+        try container.encode(preachedAt, forKey: .preachedAt)
+        try container.encodeOrNull(series, forKey: .series)
+        try container.encode(body, forKey: .body)
+        try container.encode(passages, forKey: .passages)
+        try container.encode(isFavourite, forKey: .isFavourite)
+        try container.encode(createdAt, forKey: .createdAt)
+        try container.encode(updatedAt, forKey: .updatedAt)
+        try container.encodeIfPresent(deletedAt, forKey: .deletedAt)
+        try container.encodeIfPresent(serverUpdatedAt, forKey: .serverUpdatedAt)
+    }
+}
+
 extension KeyedEncodingContainer {
     /// The value, or an explicit JSON null (never a missing key).
     mutating func encodeOrNull<T: Encodable>(_ value: T?, forKey key: Key) throws {

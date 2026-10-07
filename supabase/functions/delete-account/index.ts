@@ -3,7 +3,8 @@
 //
 // Deletes the auth user; every table that references auth.users uses
 // "on delete cascade" (or "set null" for feedback), so their highlights,
-// notes, plans, prayers, memory verses, group memberships and posts go too.
+// notes, plans, prayers, memory verses, sermon notes, group memberships and
+// posts go too.
 //
 // Deploy: supabase functions deploy delete-account
 // (Uses the built-in SUPABASE_URL, SUPABASE_ANON_KEY and

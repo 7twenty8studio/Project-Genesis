@@ -250,6 +250,31 @@ shares; README.md has the architecture.
   prayers.passages), timeline, search, a gentle `PrayerStreak` and
   `PrayerStatistics`.
 
+## Sermon Companion
+- Free, no limits (no `PremiumFeature`, nothing in `FreeLimits`); its own
+  switch `OptionalFeature.sermons` ("Sermon Notes", Study area). Reached from
+  the Library's Sermons shelf (iPhone and iPad), `HomeRoute.sermons` (a Home
+  card on Sunday mornings only, `SermonSunday`) and genesis://sermons.
+- `Sermon` (SwiftData, synced as `sermons`, migration 20261013000000):
+  title, preacher, church (free text; `SermonGrouping.churchSuggestions`),
+  `preachedAt`, optional series, `passages` (`PrayerPassage` verse ids only,
+  never text), `isFavourite`, and the notes as Markdown text in `body`
+  (`SermonMarkdown`: **bold**, *italic*, "## ", "- ", "1. ", "> "). The
+  editor is a plain-text TextEditor with buttons that toggle the marks, and
+  a preview rendered by `SermonMarkdown.blocks` + inline Markdown.
+- List: `SermonGrouping` (this week, then by month; or by church), favourites,
+  search (`SermonSearch`). Passages show verbatim from the current Bible and
+  open in the reader.
+- Church Mode (`sermons.churchMode`, remembered): Night palette, larger text,
+  "Look Up a Verse" (`SermonLookup`, English or Spanish names) that inserts
+  the reference and attaches the passage, the idle timer held through
+  `ScreenAwakeKeeper` (always restored), and a one-time TipKit Focus tip.
+  No recording. Premium extras (photos, audio, Pencil, PDF import/export,
+  AI) are for later, as separate attachment records keyed by the sermon id.
+- Hidden features pause: Prayer Journal off removes pending prayer reminders
+  (`PrayerReminders.follow`, from RootView) and resumes them when on;
+  Memorise off writes the widget snapshot with `memorise.isHidden`.
+
 ## What's New
 - Every new user-facing feature gets a one-time announcement in
   `WhatsNewCatalog.all` (Genesis/Core/WhatsNew/WhatsNew.swift) with a new,

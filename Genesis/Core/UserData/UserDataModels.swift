@@ -220,6 +220,6 @@ final class Note {
 enum UserDataSchema {
     static var models: [any PersistentModel.Type] { [
         Bookmark.self, Highlight.self, HighlightCollection.self, Note.self,
-        PlanEnrollment.self, Prayer.self, MemoryVerse.self, Tombstone.self,
+        PlanEnrollment.self, Prayer.self, MemoryVerse.self, Sermon.self, Tombstone.self,
     ] }
 }

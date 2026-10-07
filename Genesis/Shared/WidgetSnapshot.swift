@@ -42,6 +42,10 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
         /// The passage's opening words, as a prompt.
         let hint: String?
         let translation: String?
+        /// True while Memorise is switched off in the app (Settings ›
+        /// Features): the widget shows that instead of a passage. Missing in
+        /// older snapshots (decodes as nil).
+        var isHidden: Bool? = nil
 
         func dueCount(on date: Date) -> Int { dueDates.filter { $0 <= date }.count }
     }

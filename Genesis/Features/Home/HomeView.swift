@@ -36,6 +36,8 @@ struct HomeView: View {
                     greeting
                     if YearInReview.isSeason(), progress.hasStartedReading, features.isOn(.insights) { yearInReviewCard }
                     continueReading
+                    // Sunday mornings only: a quick way into Sermon Notes.
+                    if features.isOn(.sermons), SermonSunday.isSundayMorning() { sermonNotes }
                     if features.isOn(.plans) { todaysReading }
                     dailyVerse
                     if features.isOn(.prayer) { prayerJournal }
@@ -240,6 +242,33 @@ struct HomeView: View {
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("home.prayer")
+    }
+
+    private var sermonNotes: some View {
+        Button {
+            router.homePath.append(.sermons)
+        } label: {
+            HStack(spacing: 14) {
+                Image(systemName: "building.columns")
+                    .font(.title2)
+                    .foregroundStyle(palette.accent)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Sermon Notes")
+                        .font(.headline)
+                        .foregroundStyle(palette.text)
+                    Text("Heading to church? Take notes with the verses beside them.")
+                        .font(.subheadline)
+                        .foregroundStyle(palette.secondaryText)
+                        .multilineTextAlignment(.leading)
+                }
+                Spacer(minLength: 0)
+                Image(systemName: "chevron.right")
+                    .foregroundStyle(palette.secondaryText)
+            }
+            .card()
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("home.sermons")
     }
 
     /// Memorise Scripture (Premium).

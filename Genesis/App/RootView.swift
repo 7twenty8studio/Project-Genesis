@@ -20,6 +20,8 @@ struct RootView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
     @State private var showsWelcome = false
+    /// The Prayer Journal switch as last seen, so its reminders pause and resume with it.
+    @State private var prayerSwitch: Bool?
     @Environment(\.scenePhase) private var scenePhase
     @AppStorage("onboarding.complete") private var onboardingComplete = false
 
@@ -77,6 +79,13 @@ struct RootView: View {
             refreshWidgets()
             offerWelcome()
         }
+        // A hidden Prayer Journal pauses its reminders; turning it on puts them back.
+        .onChange(of: features.isOn(.prayer), initial: true) { _, on in
+            PrayerReminders.follow(PrayerReminders.change(wasOn: prayerSwitch, isOn: on), context: modelContext)
+            prayerSwitch = on
+        }
+        // A hidden Memorise leaves its widget showing the off state.
+        .onChange(of: features.isOn(.memorise)) { refreshWidgets() }
         .onChange(of: entitlements.isPremium) {
             keepThemeAvailable()
             keepAmbientAvailable()
@@ -169,7 +178,7 @@ struct RootView: View {
 
     private func refreshWidgets() {
         WidgetSnapshotWriter.applyPendingPlanDays(context: modelContext)
-        WidgetSnapshotWriter.refresh(library: library, progress: progress, context: modelContext, isPremium: entitlements.isPremium, theme: settings.preferences.theme)
+        WidgetSnapshotWriter.refresh(library: library, progress: progress, context: modelContext, isPremium: entitlements.isPremium, theme: settings.preferences.theme, memoriseShown: features.isOn(.memorise))
     }
 }
 

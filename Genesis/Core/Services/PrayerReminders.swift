@@ -1,4 +1,5 @@
 import Foundation
+import SwiftData
 import UserNotifications
 
 /// Local notifications for prayer reminders. Scheduled on the device, so they
@@ -20,13 +21,58 @@ enum PrayerReminders {
         }
     }
 
+    /// True while the Prayer Journal is switched off (Settings › Features):
+    /// reminders wait, and come back when it's switched on again. Set by
+    /// RootView from `FeaturePreferences`.
+    @MainActor static var isPaused = false
+
+    /// Whether a prayer's reminder should be on the schedule.
+    static func shouldSchedule(isAnswered: Bool, reminderAt: Date?, repeatsDaily: Bool, paused: Bool, now: Date = .now) -> Bool {
+        guard !paused, !isAnswered, let reminderAt else { return false }
+        return repeatsDaily || reminderAt >= now
+    }
+
+    /// What to do when the Prayer Journal switch is read: `wasOn` is nil the
+    /// first time (at launch), when only switched-off reminders need clearing.
+    enum SwitchChange: Equatable, Sendable {
+        case none, pauseAll, resumeAll
+    }
+
+    static func change(wasOn: Bool?, isOn: Bool) -> SwitchChange {
+        switch (wasOn, isOn) {
+        case (nil, false), (true?, false): .pauseAll
+        case (false?, true): .resumeAll
+        default: .none
+        }
+    }
+
+    /// Follows the Prayer Journal switch: off removes every pending prayer
+    /// reminder; on puts back the ones the prayers still ask for.
+    @MainActor
+    static func follow(_ change: SwitchChange, context: ModelContext) {
+        switch change {
+        case .none:
+            return
+        case .pauseAll:
+            isPaused = true
+            let prayers = (try? context.fetch(FetchDescriptor<Prayer>())) ?? []
+            let ids = prayers.map { identifier(for: $0.id) }
+            guard !ids.isEmpty else { return }
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ids)
+        case .resumeAll:
+            isPaused = false
+            let prayers = (try? context.fetch(FetchDescriptor<Prayer>(predicate: #Predicate { $0.reminderAt != nil }))) ?? []
+            for prayer in prayers { update(for: prayer) }
+        }
+    }
+
     /// Schedules, reschedules or removes the reminder to match the prayer.
     @MainActor
     static func update(for prayer: Prayer) {
         let id = prayer.id
         cancel(prayerID: id)
-        guard !prayer.isAnswered, let date = prayer.reminderAt else { return }
-        if !prayer.reminderRepeatsDaily, date < .now { return }
+        guard shouldSchedule(isAnswered: prayer.isAnswered, reminderAt: prayer.reminderAt, repeatsDaily: prayer.reminderRepeatsDaily, paused: isPaused),
+              let date = prayer.reminderAt else { return }
 
         let content = UNMutableNotificationContent()
         content.title = String(localized: "A moment to pray")

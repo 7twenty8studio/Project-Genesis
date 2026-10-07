@@ -644,6 +644,16 @@
         }
       }
     },
+    "A dim, quiet screen that stays awake, with larger text and a quick verse lookup. All free.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una pantalla tenue y tranquila que no se apaga, con letra más grande y búsqueda rápida de versículos. Todo gratis."
+          }
+        }
+      }
+    },
     "A fuller prayer journal": {
       "localizations": {
         "es": {
@@ -1101,6 +1111,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Añade el widget Recordatorio de oración para ver tu próximo recordatorio de un vistazo."
+          }
+        }
+      }
+    },
+    "Add the passages the sermon was about, such as Romans 8:28–39.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añade los pasajes de los que trató el sermón, como Romanos 8:28–39."
           }
         }
       }
@@ -2018,6 +2038,16 @@
         }
       }
     },
+    "Bold": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Negrita"
+          }
+        }
+      }
+    },
     "Book": {
       "localizations": {
         "es": {
@@ -2085,6 +2115,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "Recorre la historia de las Escrituras y más de 3.000 personas, gratis."
+          }
+        }
+      }
+    },
+    "Bulleted List": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lista con viñetas"
+          }
+        }
+      }
+    },
+    "By Church": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Por iglesia"
+          }
+        }
+      }
+    },
+    "By Date": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Por fecha"
           }
         }
       }
@@ -2508,6 +2568,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Iglesia"
+          }
+        }
+      }
+    },
+    "Church Mode": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modo Iglesia"
+          }
+        }
+      }
+    },
+    "Church Mode keeps the screen awake and dim while you take notes.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El Modo Iglesia mantiene la pantalla encendida y tenue mientras tomas notas."
           }
         }
       }
@@ -2988,6 +3068,16 @@
         }
       }
     },
+    "Date": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fecha"
+          }
+        }
+      }
+    },
     "Dates are approximate and follow a traditional chronology. Events before Abraham are shown in order without dates.": {
       "localizations": {
         "es": {
@@ -3134,6 +3224,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Eliminar oración"
+          }
+        }
+      }
+    },
+    "Delete Sermon Notes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminar notas del sermón"
+          }
+        }
+      }
+    },
+    "Delete these sermon notes?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Eliminar estas notas del sermón?"
           }
         }
       }
@@ -3527,6 +3637,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Editar grupo"
+          }
+        }
+      }
+    },
+    "Edit Notes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Editar notas"
           }
         }
       }
@@ -3966,6 +4086,16 @@
         }
       }
     },
+    "Favourite": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favorito"
+          }
+        }
+      }
+    },
     "Favourite Books": {
       "localizations": {
         "es": {
@@ -3982,6 +4112,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Temas favoritos"
+          }
+        }
+      }
+    },
+    "Favourites": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Favoritos"
           }
         }
       }
@@ -4746,6 +4886,16 @@
         }
       }
     },
+    "Group By": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agrupar por"
+          }
+        }
+      }
+    },
     "Group challenges": {
       "localizations": {
         "es": {
@@ -4923,6 +5073,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tiene pasajes bíblicos"
+          }
+        }
+      }
+    },
+    "Heading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encabezado"
+          }
+        }
+      }
+    },
+    "Heading to church? Take notes with the verses beside them.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Vas a la iglesia? Toma notas con los versículos al lado."
           }
         }
       }
@@ -5454,6 +5624,26 @@
         }
       }
     },
+    "Insert adds the reference to your notes and attaches the passage.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Insertar añade la referencia a tus notas y adjunta el pasaje."
+          }
+        }
+      }
+    },
+    "Insert into Notes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Insertar en las notas"
+          }
+        }
+      }
+    },
     "Insights": {
       "localizations": {
         "es": {
@@ -5541,6 +5731,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Puede que se haya eliminado en otro dispositivo."
+          }
+        }
+      }
+    },
+    "Italic": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cursiva"
           }
         }
       }
@@ -5835,6 +6035,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Letra inicial grande"
+          }
+        }
+      }
+    },
+    "Larger Text": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Letra más grande"
           }
         }
       }
@@ -6271,6 +6481,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mantén pulsado un versículo y toca Explicar para ver una explicación breve y sencilla. Las cuentas gratuitas incluyen %lld al día después de iniciar sesión."
+          }
+        }
+      }
+    },
+    "Look Up a Verse": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar un versículo"
           }
         }
       }
@@ -7207,6 +7427,16 @@
         }
       }
     },
+    "New Sermon Notes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nuevas notas de sermón"
+          }
+        }
+      }
+    },
     "New Testament": {
       "localizations": {
         "es": {
@@ -7339,6 +7569,17 @@
         }
       }
     },
+    "No Church Added": {
+      "comment": "Sermon list section: sermons without a church",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin iglesia"
+          }
+        }
+      }
+    },
     "No abuse, harassment, hate, sexual content or threats. There's no tolerance for objectionable content or abusive users.": {
       "localizations": {
         "es": {
@@ -7429,6 +7670,16 @@
         }
       }
     },
+    "No favourite sermons yet": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay sermones favoritos"
+          }
+        }
+      }
+    },
     "No groups yet": {
       "localizations": {
         "es": {
@@ -7459,6 +7710,16 @@
         }
       }
     },
+    "No matching sermons": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay sermones que coincidan"
+          }
+        }
+      }
+    },
     "No notes in %@": {
       "localizations": {
         "es": {
@@ -7475,6 +7736,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aún no hay notas"
+          }
+        }
+      }
+    },
+    "No notes yet.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay notas."
           }
         }
       }
@@ -7585,6 +7856,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aún no hay reflexiones"
+          }
+        }
+      }
+    },
+    "No sermon notes yet": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay notas de sermones"
           }
         }
       }
@@ -7810,6 +8091,16 @@
         }
       }
     },
+    "Numbered List": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lista numerada"
+          }
+        }
+      }
+    },
     "OK": {
       "localizations": {
         "es": {
@@ -7968,6 +8259,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Abrir en el lector"
+          }
+        }
+      }
+    },
+    "Opens in the reader": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se abre en el lector"
           }
         }
       }
@@ -8945,6 +9246,16 @@
         }
       }
     },
+    "Preacher": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Predicador"
+          }
+        }
+      }
+    },
     "Premium": {
       "comment": "Voice quality",
       "localizations": {
@@ -9042,6 +9353,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vista previa"
+          }
+        }
+      }
+    },
+    "Preview Notes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vista previa de las notas"
           }
         }
       }
@@ -9216,6 +9537,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lluvia suave"
+          }
+        }
+      }
+    },
+    "Quiet your phone": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Silencia tu teléfono"
+          }
+        }
+      }
+    },
+    "Quote": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cita"
           }
         }
       }
@@ -9950,6 +10291,16 @@
         }
       }
     },
+    "Remove Favourite": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar de favoritos"
+          }
+        }
+      }
+    },
     "Remove Highlight": {
       "localizations": {
         "es": {
@@ -10464,6 +10815,16 @@
         }
       }
     },
+    "Search sermons": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar sermones"
+          }
+        }
+      }
+    },
     "Seaside": {
       "comment": "Ambient mix",
       "localizations": {
@@ -10744,6 +11105,47 @@
           "stringUnit": {
             "state": "translated",
             "value": "Perfecto consecutivo"
+          }
+        }
+      }
+    },
+    "Series (optional)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serie (opcional)"
+          }
+        }
+      }
+    },
+    "Sermon Notes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas de sermones"
+          }
+        }
+      }
+    },
+    "Sermon title": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Título del sermón"
+          }
+        }
+      }
+    },
+    "Sermons": {
+      "comment": "Library shelf: sermon notes",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sermones"
           }
         }
       }
@@ -11951,6 +12353,36 @@
         }
       }
     },
+    "Take notes during the sermon, with the verses beside them and Church Mode for a dim, quiet screen.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toma notas durante el sermón, con los versículos al lado y el Modo Iglesia para una pantalla tenue y tranquila."
+          }
+        }
+      }
+    },
+    "Take notes during the sermon, with the verses beside them. Turn on Church Mode for a dim, quiet screen.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toma notas durante el sermón, con los versículos al lado. Activa el Modo Iglesia para una pantalla tenue y tranquila."
+          }
+        }
+      }
+    },
+    "Take sermon notes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toma notas de los sermones"
+          }
+        }
+      }
+    },
     "Talk and stay in touch": {
       "localizations": {
         "es": {
@@ -11997,6 +12429,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Toca los destellos en el lector para ver resúmenes, contexto histórico, preguntas para conversar y más con Premium."
+          }
+        }
+      }
+    },
+    "Tap the star on a sermon you want to come back to.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca la estrella de un sermón al que quieras volver."
           }
         }
       }
@@ -12752,6 +13194,17 @@
         }
       }
     },
+    "This Week": {
+      "comment": "Sermon list section: sermons from this week",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta semana"
+          }
+        }
+      }
+    },
     "This challenge has ended.": {
       "localizations": {
         "es": {
@@ -13256,6 +13709,16 @@
         }
       }
     },
+    "Try a word from the title, the preacher, the church or your notes.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prueba con una palabra del título, el predicador, la iglesia o tus notas."
+          }
+        }
+      }
+    },
     "Try another word from the title or the prayer.": {
       "localizations": {
         "es": {
@@ -13293,6 +13756,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Activar %@"
+          }
+        }
+      }
+    },
+    "Turn on Do Not Disturb or a Focus in Control Centre so nothing interrupts the sermon.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activa No molestar o un modo de concentración en el Centro de control para que nada interrumpa el sermón."
           }
         }
       }
@@ -14402,6 +14875,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Escribe sobre un versículo desde el lector o empieza una entrada de diario con el botón de abajo."
+          }
+        }
+      }
+    },
+    "Write down the sermon with the preacher, church and date, attach the verses, and find any sermon again by church, date or search.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anota el sermón con el predicador, la iglesia y la fecha, adjunta los versículos y encuentra cualquier sermón por iglesia, fecha o búsqueda."
           }
         }
       }

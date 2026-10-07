@@ -18,6 +18,7 @@ struct HomeRouteDestination: View {
             case let .plan(id): PlanDetailView(enrollmentID: id)
             case .prayerJournal: PrayerJournalView()
             case .insights: InsightsView()
+            case .sermons: SermonsView()
             case .memorise:
                 if entitlements.allows(.memorise) {
                     MemoriseView()
@@ -37,6 +38,7 @@ extension HomeRoute {
         case .prayerJournal: .prayer
         case .insights: .insights
         case .memorise: .memorise
+        case .sermons: .sermons
         }
     }
 }

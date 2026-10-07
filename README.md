@@ -40,6 +40,12 @@ See [BUILDING.md](BUILDING.md) to build and run.
   answered prayers with notes, daily or one-off reminders, attached Bible
   passages (verse ids only), a month-by-month timeline, search, a gentle
   prayer streak ("I prayed") and a few statistics.
+- **Sermon Notes** (free, no limits; the Library's Sermons shelf, and a Home
+  card on Sunday mornings): title, preacher, church (with suggestions),
+  date, series, attached passages (verse ids only) and notes with basic
+  Markdown formatting; grouped by date or church, favourites and search.
+  Church Mode: a dim Night-palette screen that stays awake, larger text and
+  a quick verse lookup. Synced as `sermons`.
 - **Home**: today's reading, prayer journal, streak and progress.
 - **Widgets**: verse of the day, continue reading, reading progress (large),
   lock screen streak, verse and continue reading. Tapping opens the app in place.
@@ -67,8 +73,8 @@ on. The study assistant's announcement is ready and waits for its switch.
 - **Android planning**: [docs/ANDROID_PLAN.md](docs/ANDROID_PLAN.md).
 - **Feature choices**: "Make Genesis yours" at setup and Settings › Features
   (each extra has its own switch: plans, prayer, Memorise, listen, ambient
-  sounds, Hebrew & Greek, explore, study notes, insights, chapter ribbons,
-  groups and community, plus the morning welcome), with
+  sounds, Hebrew & Greek, explore, study notes, sermon notes, insights,
+  chapter ribbons, groups and community, plus the morning welcome), with
   one-time TipKit hints instead of a tutorial.
 - **Word study and commentary** (Premium): the Hebrew or Greek behind each
   verse with Strong's definitions (STEPBible, Open Scriptures) and Matthew

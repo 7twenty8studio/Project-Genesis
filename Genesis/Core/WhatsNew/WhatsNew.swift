@@ -27,7 +27,25 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion]
+
+    static let sermonCompanion = WhatsNewAnnouncement(
+        id: "sermon-companion-church-mode",
+        title: String(localized: "Take sermon notes"),
+        items: [
+            WhatsNewItem(
+                systemImage: "building.columns",
+                title: String(localized: "Sermon Notes"),
+                detail: String(localized: "Write down the sermon with the preacher, church and date, attach the verses, and find any sermon again by church, date or search.")
+            ),
+            WhatsNewItem(
+                systemImage: "moon",
+                title: String(localized: "Church Mode"),
+                detail: String(localized: "A dim, quiet screen that stays awake, with larger text and a quick verse lookup. All free.")
+            ),
+        ],
+        feature: .sermons
+    )
 
     static let prayerJournalAndSwitches = WhatsNewAnnouncement(
         id: "prayer-journal-timeline-feature-switches",

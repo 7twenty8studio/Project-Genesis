@@ -1,40 +1,63 @@
 import SwiftData
 import SwiftUI
 
-/// Everything the person has saved: highlights (with collections), notes and bookmarks.
+/// Everything the person has saved: highlights (with collections), notes,
+/// bookmarks and, when Sermon Notes is switched on, sermons.
 struct LibraryView: View {
     @Environment(\.searchIsTab) private var searchIsTab
     @Environment(AppRouter.self) private var router
+    @Environment(FeaturePreferences.self) private var features
     enum Shelf: String, CaseIterable, Identifiable {
-        case highlights, notes, bookmarks
+        case highlights, notes, bookmarks, sermons
         var id: String { rawValue }
         var title: String {
             switch self {
             case .highlights: String(localized: "Highlights")
             case .notes: String(localized: "Notes")
             case .bookmarks: String(localized: "Bookmarks")
+            case .sermons: String(localized: "Sermons", comment: "Library shelf: sermon notes")
             }
         }
+
+        /// The optional feature this shelf belongs to, if any.
+        var feature: OptionalFeature? { self == .sermons ? .sermons : nil }
     }
 
     @State private var shelf: Shelf = .highlights
 
+    /// Shelves for features that are switched on.
+    private var shelves: [Shelf] {
+        Shelf.allCases.filter { item in
+            guard let feature = item.feature else { return true }
+            return features.isOn(feature)
+        }
+    }
+
+    /// A hidden feature's shelf falls back to Highlights.
+    private var visibleShelf: Shelf {
+        shelves.contains(shelf) ? shelf : .highlights
+    }
+
     var body: some View {
         NavigationStack {
             Group {
-                switch shelf {
+                switch visibleShelf {
                 case .highlights: HighlightsList()
                 case .notes: NotesList()
                 case .bookmarks: BookmarksList()
+                case .sermons: SermonsList()
                 }
             }
             .safeAreaInset(edge: .top) {
                 Picker("Show", selection: $shelf) {
-                    ForEach(Shelf.allCases) { Text($0.title).tag($0) }
+                    ForEach(shelves) { Text($0.title).tag($0) }
                 }
                 .pickerStyle(.segmented)
                 .padding(.horizontal, 20)
                 .padding(.bottom, 8)
+            }
+            .onChange(of: features.isOn(.sermons)) { _, on in
+                if !on, shelf == .sermons { shelf = .highlights }
             }
             .navigationTitle("Library")
             .toolbar {
