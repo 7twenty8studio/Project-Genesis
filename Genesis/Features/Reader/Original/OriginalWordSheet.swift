@@ -17,6 +17,8 @@ struct OriginalWordSheet: View {
     private struct Loaded: Sendable {
         let entry: LexiconEntry?
         let count: Int
+        /// For a dotted Greek word: the compared edition's word at the same place.
+        var alternative: String? = nil
     }
 
     private var unlocked: Bool { entitlements.allows(.wordStudy) }
@@ -28,7 +30,13 @@ struct OriginalWordSheet: View {
                 ThemedRows {
                     wordSection
                     if unlocked {
-                        OriginalWordDetails(word: word, morphology: morphology, entry: loaded?.entry, count: loaded?.count ?? 0)
+                        OriginalWordDetails(
+                            word: word,
+                            morphology: morphology,
+                            entry: loaded?.entry,
+                            count: loaded?.count ?? 0,
+                            alternative: loaded?.alternative
+                        )
                     } else {
                         Section {
                             PremiumTeaser(message: String(localized: "See what every Hebrew and Greek word means, its grammar and where else it's used, with Premium."), feature: .wordStudy)
@@ -85,14 +93,18 @@ struct OriginalWordSheet: View {
     }
 
     private func load() async {
-        guard let wordStudy, let strongs = word.strongs else {
+        guard let wordStudy else {
             loaded = Loaded(entry: nil, count: 0)
             return
         }
+        let word = word
         loaded = await Task.detached(priority: .userInitiated) {
-            Loaded(
-                entry: try? wordStudy.entry(strongs: strongs),
-                count: (try? wordStudy.occurrences(of: strongs)) ?? 0
+            let strongs = word.strongs
+            let compared = word.isNotInComparison ? word.edition?.comparison : nil
+            return Loaded(
+                entry: strongs.flatMap { try? wordStudy.entry(strongs: $0) },
+                count: strongs.flatMap { try? wordStudy.occurrences(of: $0) } ?? 0,
+                alternative: compared.flatMap { edition in try? wordStudy.reading(at: word, in: edition) }
             )
         }.value
     }
@@ -105,6 +117,8 @@ private struct OriginalWordDetails: View {
     let morphology: Morphology
     let entry: LexiconEntry?
     let count: Int
+    /// The compared edition's word at the same place, if it has one.
+    let alternative: String?
 
     @Environment(\.palette) private var palette
 
@@ -135,9 +149,9 @@ private struct OriginalWordDetails: View {
             }
             .listRowBackground(palette.surface)
         }
-        if let edition = word.edition {
+        if word.isNotInComparison, let compared = word.edition?.comparison {
             Section("Greek editions") {
-                Text(editionNote(edition))
+                Text(alternative.map { compared.readsInstead($0) } ?? compared.lacksWord)
                     .foregroundStyle(palette.text)
             }
             .listRowBackground(palette.surface)
@@ -168,15 +182,6 @@ private struct OriginalWordDetails: View {
         } else {
             Text("Used \(count) times in the Bible.")
                 .foregroundStyle(palette.accent)
-        }
-    }
-
-    private func editionNote(_ edition: EditionDifference) -> String {
-        switch edition {
-        case .textusReceptusOnly:
-            String(localized: "This word is in the Textus Receptus, the Greek the KJV translates, but not in the Nestle-Aland text most modern Bibles use.")
-        case .minor:
-            String(localized: "The Nestle-Aland text most modern Bibles use has this word in a slightly different spelling or form, which doesn't change the meaning.")
         }
     }
 }

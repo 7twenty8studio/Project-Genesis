@@ -13,7 +13,7 @@ struct InterlinearWordView: View {
             Text(OriginalText.display(word.text))
                 .font(OriginalFont.font(for: word.language, size: OriginalFont.readingSize(fontSize, language: word.language)))
                 .foregroundStyle(palette.text)
-                .underline(word.edition != nil, pattern: .dot, color: palette.accent)
+                .underline(word.isNotInComparison, pattern: .dot, color: palette.accent)
             Text(word.transliteration)
                 .font(.caption.italic())
                 .foregroundStyle(palette.secondaryText)

@@ -1,33 +1,43 @@
 import SwiftUI
 
-/// The top of the Original parallel Bible: what each column holds, the
+/// The top of the Original parallel Bible: what each column holds (the
+/// Hebrew or Greek edition named, with an info sheet about it), the
 /// Interlinear switch, and (New Testament) what the dotted words mean.
 struct OriginalParallelHeader: View {
     let chapterID: ChapterID
     let translation: Translation
     let language: OriginalLanguage
+    /// The Greek edition this Bible follows.
+    let greek: OriginalSource.Greek
     let sideBySide: Bool
-    /// Some Greek words on the page differ between editions.
+    /// Some Greek words on the page aren't in the edition it's compared with.
     let marksEditions: Bool
     @Binding var interlinear: Bool
 
     @Environment(ReaderSettings.self) private var settings
     @Environment(\.palette) private var palette
+    @State private var showsSource = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             titles
                 .accessibilityElement(children: .combine)
                 .accessibilityIdentifier("reader.parallel.originalHeader")
-            interlinearButton
+            HStack(spacing: 10) {
+                interlinearButton
+                sourceButton
+            }
             if marksEditions {
-                Text("Dotted words are in the Textus Receptus, the Greek the KJV translates, but not in the Nestle-Aland text most modern Bibles use.")
+                Text(greek.edition.dottedWords)
                     .font(.caption)
                     .foregroundStyle(palette.secondaryText)
                     .fixedSize(horizontal: false, vertical: true)
             }
         }
         .padding(.bottom, 6)
+        .sheet(isPresented: $showsSource) {
+            OriginalSourceSheet(language: language, greek: greek, translation: translation)
+        }
     }
 
     @ViewBuilder
@@ -77,14 +87,43 @@ struct OriginalParallelHeader: View {
         .accessibilityIdentifier("original.interlinear")
     }
 
+    /// Opens `OriginalSourceSheet`: about the edition and its source.
+    private var sourceButton: some View {
+        Button {
+            showsSource = true
+        } label: {
+            Label(sourceButtonTitle, systemImage: "info.circle")
+                .font(.subheadline.weight(.semibold))
+        }
+        .buttonStyle(.bordered)
+        .tint(palette.secondaryText)
+        .accessibilityIdentifier("original.sourceInfo")
+    }
+
+    private var sourceButtonTitle: String {
+        language == .greek ? String(localized: "About the Greek") : String(localized: "About the Hebrew")
+    }
+
     private var languageName: String {
         language == .greek ? String(localized: "Greek") : String(localized: "Hebrew")
     }
 
-    /// The edition the words come from.
+    /// The edition the words come from: "Greek: Textus Receptus (the KJV's source)".
     private var sourceName: String {
-        language == .greek
-            ? String(localized: "Textus Receptus (STEPBible TAGNT)")
-            : String(localized: "Leningrad Codex (STEPBible TAHOT)")
+        OriginalSourceText.heading(language: language, greek: greek, translation: translation)
+    }
+}
+
+/// How the Original parallel Bible names its source text.
+enum OriginalSourceText {
+    /// "Hebrew: Leningrad Codex", "Greek: Textus Receptus (the KJV's source)",
+    /// "Greek: Westcott–Hort (closest to the ASV's source)".
+    static func heading(language: OriginalLanguage, greek: OriginalSource.Greek, translation: Translation) -> String {
+        guard language == .greek else { return String(localized: "Hebrew: Leningrad Codex") }
+        let name = greek.edition.name
+        let bible = translation.abbreviation
+        return greek.isExact
+            ? String(localized: "Greek: \(name) (the \(bible)'s source)")
+            : String(localized: "Greek: \(name) (closest to the \(bible)'s source)")
     }
 }

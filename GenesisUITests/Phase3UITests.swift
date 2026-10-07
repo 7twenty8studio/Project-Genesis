@@ -198,6 +198,10 @@ final class Phase3UITests: GenesisUITestCase {
         let app = launchPremium(verse: 43_001_001)
         readOriginalInParallel(app)
         XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "original.text").firstMatch.waitForExistence(timeout: Genesis.timeout), "John 1 in Greek")
+        let about = app.buttons["original.sourceInfo"]
+        XCTAssertTrue(about.waitForExistence(timeout: Genesis.timeout), "The Greek edition is named, with more about it")
+        about.tap()
+        Genesis.tapToolbarButton("originalSource.done", in: app)
         tapInterlinearWord(app)
     }
 

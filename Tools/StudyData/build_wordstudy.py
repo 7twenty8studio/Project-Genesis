@@ -12,16 +12,22 @@ Sources and licences
   "Translators Amalgamated OT+NT": TAHOT (Hebrew OT) and TAGNT (Greek NT),
   CC BY 4.0, data created by www.STEPBible.org based on work at Tyndale House
   Cambridge. Hebrew follows the Leningrad codex with the Qere (as the KJV
-  does); words STEPBible adds from the LXX ("X") are left out. Greek keeps
-  the words of the Textus Receptus (edition "TR", the KJV's Greek), spelled
-  as TAGNT spells them (NA28's spelling where NA28 has the word).
-- Editions (table `editions`): TAGNT's word type says which editions have
-  each word: N = Nestle-Aland (the Greek of most modern Bibles), K = the
-  KJV's Textus Receptus, O = others; lower case = a difference too minor to
-  change a translation. Kept words without N (in the Textus Receptus but not
-  in Nestle-Aland) are listed: kind 1 for K (it changes the translation),
-  kind 2 for k (spelling or form only). Words only in Nestle-Aland aren't in
-  `word_forms` at all, since only the Textus Receptus is kept.
+  does); words STEPBible adds from the LXX ("X") are left out.
+- Greek (table `greek_words`): four editions rebuilt from TAGNT, Nestle-Aland
+  28 (NA28), Westcott-Hort 1881 (WH), Scrivener's Textus Receptus 1894 (TR)
+  and Robinson-Pierpont's Byzantine text 2005 (Byz). TAGNT lists each word
+  once, in NA28's order and spelling (another edition's where NA28 lacks
+  it), with the editions that have it; the different words other editions
+  read at the same place (meaning variants); each edition's own spelling
+  where it noted one (spelling variants); and words an edition puts
+  elsewhere ("TR»2": two words later, "TR«3": after the word three before).
+  See greek_words(). Nothing is respelled: a word is TAGNT's text, or the
+  spelling TAGNT gives for that edition, with TAGNT's punctuation after it.
+  Spellings TAGNT doesn't record (some Byzantine forms) follow NA28; complex
+  reorderings that TAGNT notes word by word can come out slightly unlike
+  the printed edition. Checked against Robinson's Scrivener and
+  Robinson-Pierpont texts (github.com/byztxt, unaccented, word for word):
+  the TR matches in 7262 of 7957 verses and the Byzantine in 6964 of 7956.
 - Lexicon, Greek: STEPBible TBESG (Translators Brief lexicon of Extended
   Strongs for Greek), CC BY 4.0; its definitions are Abbott-Smith (1922) and
   Middle Liddell (1889), both public domain.
@@ -68,6 +74,7 @@ import os
 import re
 import sqlite3
 import sys
+import unicodedata
 import xml.etree.ElementTree as ET
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
@@ -159,38 +166,193 @@ def hebrew_words(step):
             yield verse_id(book, chapter, verse), order, text, translit, strongs, gloss, fields[5].strip(), None
 
 
+# Greek editions kept, as bits in greek_words.editions / .found (GreekEdition
+# in WordStudyRepository.swift uses the same values).
+GREEK_EDITIONS = {"NA28": 1, "WH": 2, "TR": 4, "Byz": 8}
+EDITION_TOKEN = re.compile(r"^(NA28|WH|TR|Byz)(?:([«»])(\d+(?:\.\d+)?))?$")
+# "εὐδοκία (t=eudokia) good will - G2107=N-NSF in: TR+Byz"
+MEANING_VARIANT = re.compile(
+    r"^\s*(?P<text>\S.*?) \((?P<kind>[a-zA-Z])=(?P<translit>[^)]*)\) (?P<gloss>.*?) - "
+    r"(?P<tags>[GH]\d\S*=\S+(?: \+ [GH]\d\S*=\S+)*) in: (?P<editions>.+?)\s*$"
+)
+TRAILING_PUNCTUATION = re.compile(r"[,.;\u00b7\u0387\u037e]+$")  # comma, stop, question mark, raised dot
+
+
+def greek_editions(text):
+    """'NA28+NA27+TR»1+Byz«14.24' -> {4: 1, 1: 0, 8: 0}: the kept editions
+    that have the word, each with its displacement (+n: n words later, -n:
+    earlier; 0 in place). A move to another verse (Byz«14.24, the Romans
+    doxology) counts as in place: OriginalVersification lines verses up."""
+    found = {}
+    for token in text.split("+"):
+        match = EDITION_TOKEN.match(token.strip())
+        if not match:
+            continue
+        edition, direction, amount = match.groups()
+        shift = 0
+        if direction and "." not in amount:
+            shift = int(amount) if direction == "»" else -int(amount)
+        found[GREEK_EDITIONS[edition]] = shift
+    return found
+
+
+GREEK_LETTERS = {
+    "α": "a", "β": "b", "γ": "g", "δ": "d", "ε": "e", "ζ": "z", "η": "ē", "θ": "th", "ι": "i", "κ": "k",
+    "λ": "l", "μ": "m", "ν": "n", "ξ": "x", "ο": "o", "π": "p", "ρ": "r", "σ": "s", "ς": "s", "τ": "t",
+    "υ": "u", "φ": "ph", "χ": "ch", "ψ": "ps", "ω": "ō",
+}
+
+
+def transliterate(word):
+    """Greek to TAGNT-style transliteration (agrees with TAGNT's own for
+    99.4% of its words), for edition spellings TAGNT gives no
+    transliteration of. Rough breathing h/rh, γγ ng, η ē, ω ō, υ u,
+    elision kept; a perispomenon η with iota subscript is "ēa" as in TAGNT."""
+    letters = []
+    for char in unicodedata.normalize("NFD", word):
+        if unicodedata.category(char).startswith("M"):
+            if letters:
+                letters[-1][2].add(char)
+        elif char.lower() in GREEK_LETTERS:
+            letters.append([char.lower(), char != char.lower(), set()])
+        elif char == "\u1fbd":  # elision
+            letters.append([char, False, set()])
+    rough = any("\u0314" in marks for _, _, marks in letters[:2])
+    out = ""
+    for index, (letter, _, marks) in enumerate(letters):
+        following = letters[index + 1][0] if index + 1 < len(letters) else ""
+        if letter == "\u1fbd":
+            out += letter
+            continue
+        sound = "n" if letter == "γ" and following == "γ" else GREEK_LETTERS[letter]
+        if letter == "η" and "\u0342" in marks and "\u0345" in marks and index > 0:
+            sound = "ēa"
+        if letter == "ρ" and index == 0 and "\u0314" in marks:
+            sound = "rh"
+        if index == 0 and "\u0314" in marks and letter in "ειυ" and following in "αεηιουω":
+            sound += "'"
+        out += sound
+    if rough and letters and letters[0][0] in "αεηιουωρ" and not out.startswith("rh"):
+        out = "h" + out
+    if letters and letters[0][1]:
+        out = out[:1].upper() + out[1:]
+    return out
+
+
 def greek_words(step):
+    """Every reading of every TAGNT word that one of the kept editions has:
+    (verse id, slot, word number, editions, found, text, translit, strongs,
+    gloss, morph).
+
+    TAGNT lists each word once, in NA28's order, with the editions that have
+    it (column 6: NA28, NA27, Tyn, SBL, WH, Treg, TR, Byz; "TR»2" = two
+    words later in that edition, "TR«3" = placed after the word three
+    before). Column 7 gives the different words other editions have at the
+    same place ("εὐδοκία (t=eudokia) good will - G2107=N-NSF in: TR+Byz",
+    several joined by ¦) and column 8 each edition's own spelling of the
+    word ("TR: Δαβὶδ ; +Tyn+WH: Δαυεὶδ ;"). Column 2 is NA28's spelling, or
+    another edition's where NA28 lacks the word. A row here is one spelling
+    of one word at one place; `editions` says which kept editions read
+    exactly that, `found` which have the word there in any spelling.
+    Punctuation (TAGNT's, after the Tyndale House GNT) is the same for every
+    edition, so an edition's own spelling keeps the punctuation that
+    follows the word in column 2."""
     files = sorted(glob.glob(os.path.join(step, "Translators Amalgamated OT+NT", "TAGNT *.txt")))
     assert len(files) == 2, files
-    order = 0
+    # Words of one TAGNT verse that the KJV numbers as one verse go together;
+    # where the KJV joins parts of two (Mat.17.15[17.14]) the later part's
+    # words are numbered on after the earlier one's.
+    groups, offsets = [], collections.Counter()
     for path in sorted(files, key=lambda p: "Act" in p):  # Mat-Jhn before Act-Rev
         for ref, fields in read_rows(path):
-            if not re.search(r"\bTR\b", fields[5]):  # Keep the Textus Receptus, the KJV's Greek.
-                continue
             book = STEP_BOOK[ref["book"]]
             if ref["kjv"]:
                 chapter, verse = (int(n) for n in ref["kjv"].split("."))
             else:
                 chapter, verse = int(ref["ch"]), int(ref["v"])
-            match = re.match(r"^(.*?)\s*\(([^)]*)\)\s*$", fields[1])
-            text, translit = (match.group(1), match.group(2)) if match else (fields[1], "")
-            # Editorial marks aren't words: paragraph signs and NA's [[double brackets]].
-            text = re.sub(r"\[\[|\]\]|[¶¬]", "", text)
-            gloss = re.sub(r"^\{[\d.]+\}\s*", "", fields[2].strip()).rstrip(",.;:·")
-            parts = [part.strip() for part in fields[3].split("+")]
-            strongs = normalise_strongs(parts[0].split("=")[0])
-            morph = " + ".join(part.split("=", 1)[1] for part in parts if "=" in part)
-            order += 1
-            yield verse_id(book, chapter, verse), order, text.strip(), translit.strip(), strongs, gloss, morph, edition_kind(ref["type"])
+            key = (ref["book"], ref["ch"], ref["v"], verse_id(book, chapter, verse))
+            if not groups or groups[-1][0] != key:
+                groups.append((key, []))
+            groups[-1][1].append((int(ref["word"]), fields))
+    for key, rows in groups:
+        verse = key[3]
+        yield from greek_verse(verse, rows, offsets[verse])
+        offsets[verse] += max(number for number, _ in rows)
 
 
-def edition_kind(word_type):
-    """TAGNT word type -> editions kind: None when Nestle-Aland has the word
-    too, 1 for a Textus Receptus word that changes the translation (K), 2 for
-    a minor one (k)."""
-    if "N" in word_type:
-        return None
-    return 1 if "K" in word_type else 2
+def greek_verse(verse, rows, offset):
+    """The readings of one TAGNT verse's words (or the part of one the KJV
+    gives another verse), numbered from `offset` + 1."""
+    count = max(number for number, _ in rows)
+    seen = collections.Counter()
+    for number, fields in rows:
+        match = re.match(r"^(.*?)\s*\(([^)]*)\)\s*$", fields[1])
+        text, translit = (match.group(1), match.group(2)) if match else (fields[1], "")
+        # Editorial marks aren't words: paragraph signs and NA's [[double brackets]].
+        text = re.sub(r"\[\[|\]\]|[¶¬]", "", text).strip()
+        translit = translit.strip()
+        punctuation = TRAILING_PUNCTUATION.search(text)
+        punctuation = punctuation.group(0) if punctuation else ""
+        gloss = re.sub(r"^\{[\d.]+\}\s*", "", fields[2].strip()).rstrip(",.;:·")
+        parts = [part.strip() for part in fields[3].split("+")]
+        strongs = normalise_strongs(parts[0].split("=")[0])
+        morph = " + ".join(part.split("=", 1)[1] for part in parts if "=" in part)
+
+        base = greek_editions(fields[5])
+        # Each edition's own spelling where it differs (same word, same grammar).
+        spellings = {}
+        for part in fields[7].split(";"):
+            part = part.strip().lstrip("+").strip()
+            if ":" not in part:
+                continue
+            editions, spelling = part.split(":", 1)
+            spelling = spelling.strip()
+            for bit, shift in greek_editions(editions).items():
+                spellings[bit] = (spelling + punctuation, shift)
+        # Different words other editions have here.
+        variants = []
+        for part in fields[6].split("¦"):
+            if not part.strip():
+                continue
+            found = MEANING_VARIANT.match(part)
+            assert found, f"{fields[0]}: unreadable variant {part!r}"
+            tags = [tag.strip() for tag in found["tags"].split(" + ")]
+            variants.append({
+                "text": found["text"].strip() + punctuation,
+                "translit": found["translit"].strip(),
+                "gloss": found["gloss"].strip().rstrip(",.;:·"),
+                # "G0846|G3165«G3450": alternatives, then the tag used (after «).
+                "strongs": normalise_strongs(tags[0].split("=")[0].split("«")[-1].split("|")[0]),
+                "morph": " + ".join(tag.split("=", 1)[1] for tag in tags),
+                "editions": greek_editions(found["editions"]),
+            })
+
+        base_found = sum(set(base) | set(spellings))
+        readings = collections.OrderedDict()  # (text, translit, strongs, gloss, morph, found, shift) -> editions
+        for bit in GREEK_EDITIONS.values():
+            variant = next((v for v in variants if bit in v["editions"]), None)
+            if variant:
+                reading = (variant["text"], variant["translit"], variant["strongs"], variant["gloss"],
+                           variant["morph"], sum(variant["editions"]), variant["editions"][bit])
+            elif bit in base or bit in spellings:
+                spelling, shift = spellings.get(bit, (text, base.get(bit, 0)))
+                shift = shift or base.get(bit, 0)
+                own_translit = translit
+                if spelling != text and transliterate(spelling) != transliterate(text):
+                    own_translit = transliterate(spelling)
+                reading = (spelling, own_translit, strongs, gloss, morph, base_found, shift)
+            else:
+                continue
+            readings[reading] = readings.get(reading, 0) | bit
+        for (word, word_translit, word_strongs, word_gloss, word_morph, found, shift), editions in readings.items():
+            # In place: slot 2n. Moved: just after word n±shift, slot 2(n±shift)+1.
+            anchor = number if shift == 0 else min(max(number + shift, 0), count)
+            slot = 2 * (offset + anchor) + (0 if shift == 0 else 1)
+            for bit in GREEK_EDITIONS.values():
+                if editions & bit:
+                    seen[(number, bit)] += 1
+                    assert seen[(number, bit)] == 1, f"{verse} #{number}: two readings for edition {bit}"
+            yield verse, slot, offset + number, editions, found, word, word_translit, word_strongs, word_gloss, word_morph
 
 
 # MARK: Lexicon
@@ -301,26 +463,34 @@ def main():
     last_verse = {(b, c): v for b, c, v in kjv.execute("SELECT book, chapter, MAX(verse) FROM verses GROUP BY book, chapter")}
     kjv.close()
 
-    # Words, renumbered 1... within each (KJV) verse in source order.
-    words, positions, editions = [], collections.Counter(), []
-    for row in list(hebrew_words(step)) + list(greek_words(step)):
-        verse, _, text, translit, strongs, gloss, morph, edition = row
+    # Hebrew words, renumbered 1... within each (KJV) verse in source order.
+    words, positions = [], collections.Counter()
+    for row in hebrew_words(step):
+        verse, _, text, translit, strongs, gloss, morph, _ = row
         positions[verse] += 1
         words.append((verse, positions[verse], text, translit or None, strongs, gloss or None, morph or None))
-        if edition:
-            editions.append((verse, positions[verse], edition))
-    outside = sorted({w[0] for w in words} - kjv_verses)
+    # Greek: every kept edition's reading of every word (see greek_words).
+    greek = [
+        (verse, slot, number, editions, found, text, translit or None, strongs, gloss or None, morph or None)
+        for verse, slot, number, editions, found, text, translit, strongs, gloss, morph in greek_words(step)
+    ]
+    every_verse = {w[0] for w in words} | {g[0] for g in greek}
+    outside = sorted(every_verse - kjv_verses)
     assert not outside, f"words outside the KJV versification: {outside[:20]}"
-    missing = sorted(kjv_verses - {w[0] for w in words})
-    print(f"words: {len(words)}; KJV verses without words: {len(missing)} {missing[:20]}")
-    print(f"editions: {len(editions)} Textus Receptus words not in Nestle-Aland "
-          f"({sum(1 for e in editions if e[2] == 1)} change the translation)")
+    missing = sorted(kjv_verses - every_verse)
+    print(f"Hebrew words: {len(words)}; Greek readings: {len(greek)}; KJV verses without words: {len(missing)} {missing[:20]}")
+    for name, bit in GREEK_EDITIONS.items():
+        print(f"  {name}: {sum(1 for g in greek if g[3] & bit)} words, "
+              f"{sum(1 for g in greek if g[3] & bit and g[1] % 2)} moved")
+    # Word study (lexicon, counts, verse lists) treats the Greek as one text:
+    # each TAGNT word once per Strong's number, in any kept edition.
+    tagged = [(w[0], w[4]) for w in words] + list({(g[0], g[2], g[7]): (g[0], g[7]) for g in greek}.values())
 
     # Lexicon.
     tbesh = step_lexicon(glob.glob(os.path.join(step, "Lexicons", "TBESH *.txt"))[0], "hebrew")
     tbesg = step_lexicon(glob.glob(os.path.join(step, "Lexicons", "TBESG *.txt"))[0], "greek")
     strong = strongs_hebrew(os.path.join(hebrew_lexicon, "HebrewStrong.xml"))
-    used = {w[4] for w in words if w[4]}
+    used = {tag for _, tag in tagged if tag}
     used_bases = {base_strongs(s) for s in used}
 
     def wanted(key):
@@ -350,11 +520,11 @@ def main():
     unknown = sorted(s for s in used if s not in lexicon_keys and base_strongs(s) not in lexicon_bases)
     print(f"lexicon: {len(lexicon)}; word tags without an entry: {len(unknown)} {unknown[:20]}")
 
-    occurrences = collections.Counter(w[4] for w in words if w[4])
+    occurrences = collections.Counter(tag for _, tag in tagged if tag)
     verses_by_strongs = collections.defaultdict(set)
-    for w in words:
-        if w[4]:
-            verses_by_strongs[w[4]].add(w[0])
+    for verse, tag in tagged:
+        if tag:
+            verses_by_strongs[tag].add(verse)
 
     sections, intros = commentary(os.path.join(interactive_bible, "data", "commentary"), last_verse)
     covered = set()
@@ -377,19 +547,26 @@ def main():
             gloss TEXT,                  -- English gloss in context
             morph TEXT                   -- ETCBC (Hebrew) / Robinson-style (Greek) morphology
         );
+        -- Hebrew words (the Greek is in greek_words).
         CREATE TABLE word_forms (
             verse INTEGER NOT NULL,      -- book*1000000 + chapter*1000 + verse (KJV versification)
             position INTEGER NOT NULL,   -- 1... in the original-language order
             form INTEGER NOT NULL REFERENCES forms(id),
             PRIMARY KEY (verse, position)
         ) WITHOUT ROWID;
-        -- Greek words in the Textus Receptus but not in Nestle-Aland (TAGNT word
-        -- types without N): kind 1 changes the translation (K), 2 is minor (k).
-        CREATE TABLE editions (
-            verse INTEGER NOT NULL,
-            position INTEGER NOT NULL,
-            kind INTEGER NOT NULL,
-            PRIMARY KEY (verse, position)
+        -- The Greek New Testament in four editions (TAGNT): every spelling of
+        -- every word at every place one of them puts it. An edition's text of
+        -- a verse is its rows (editions & bit) ordered by slot, number.
+        -- Bits: 1 Nestle-Aland 28, 2 Westcott-Hort 1881, 4 Textus Receptus
+        -- (Scrivener 1894), 8 Byzantine (Robinson-Pierpont 2005).
+        CREATE TABLE greek_words (
+            verse INTEGER NOT NULL,      -- book*1000000 + chapter*1000 + verse (KJV versification)
+            slot INTEGER NOT NULL,       -- 2 * number in place; 2 * n + 1 when moved after word n
+            number INTEGER NOT NULL,     -- TAGNT's word number in the verse (NA28 order)
+            editions INTEGER NOT NULL,   -- editions that read exactly this word here
+            found INTEGER NOT NULL,      -- editions that have this word here, in any spelling
+            form INTEGER NOT NULL REFERENCES forms(id),
+            PRIMARY KEY (verse, slot, number, editions)
         ) WITHOUT ROWID;
         CREATE VIEW words AS
             SELECT w.verse, w.position, f.text, f.translit, f.strongs, f.gloss, f.morph
@@ -427,11 +604,13 @@ def main():
         ) WITHOUT ROWID;
     """)
     forms = {}
-    for word in sorted(words, key=lambda w: (w[4] or "", w[2], w[3] or "", w[5] or "", w[6] or "")):
-        forms.setdefault(word[2:], len(forms) + 1)
+    every_form = [w[2:] for w in words] + [g[5:] for g in greek]
+    for form in sorted(every_form, key=lambda f: (f[2] or "", f[0], f[1] or "", f[3] or "", f[4] or "")):
+        forms.setdefault(form, len(forms) + 1)
     db.executemany("INSERT INTO forms VALUES (?, ?, ?, ?, ?, ?)", [(i, *f) for f, i in forms.items()])
     db.executemany("INSERT INTO word_forms VALUES (?, ?, ?)", [(w[0], w[1], forms[w[2:]]) for w in words])
-    db.executemany("INSERT INTO editions VALUES (?, ?, ?)", sorted(editions))
+    db.executemany("INSERT INTO greek_words VALUES (?, ?, ?, ?, ?, ?)",
+                   sorted((g[0], g[1], g[2], g[3], g[4], forms[g[5:]]) for g in greek))
     db.executemany("INSERT INTO lexicon VALUES (?, ?, ?, ?, ?, ?, ?, ?)", sorted(lexicon))
     db.executemany("INSERT INTO occurrences VALUES (?, ?, ?)", [
         (tag, count, delta_list(sorted(verses_by_strongs[tag]))) for tag, count in sorted(occurrences.items())
@@ -454,7 +633,7 @@ def main():
         ("commentary_license", "Public domain"),
         ("attribution", "Original-language data created by www.STEPBible.org based on work at Tyndale House Cambridge (CC BY 4.0). Hebrew definitions from Strong's Hebrew Dictionary, Open Scriptures Hebrew Bible project (CC BY 4.0). Commentary: Matthew Henry's Concise Commentary (public domain)."),
         ("versification", "KJV"),
-        ("editions_source", "TAGNT word types (N = Nestle-Aland, K = Textus Receptus)"),
+        ("greek_editions", "1 NA28 (Nestle-Aland 28th edition), 2 WH (Westcott-Hort 1881), 4 TR (Scrivener 1894 Textus Receptus), 8 Byz (Robinson-Pierpont 2005 Byzantine), from TAGNT's editions, meaning-variant and spelling-variant columns"),
     ])
     db.commit()
     db.execute("VACUUM")

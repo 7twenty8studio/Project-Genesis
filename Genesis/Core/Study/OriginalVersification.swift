@@ -68,8 +68,10 @@ enum OriginalVersification {
         }
     }
 
+    /// A Bible offers the original when its verses are lined up here and
+    /// its Greek edition is known (`OriginalSource`).
     static func supports(_ translation: Translation) -> Bool {
-        map(for: translation.id) != nil
+        map(for: translation.id) != nil && OriginalSource.greek(for: translation.id) != nil
     }
 
     private static let web = VersificationMap(exceptions: webExceptions)

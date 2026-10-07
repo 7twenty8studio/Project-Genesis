@@ -815,6 +815,26 @@
         }
       }
     },
+    "About the Greek": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sobre el griego"
+          }
+        }
+      }
+    },
+    "About the Hebrew": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sobre el hebreo"
+          }
+        }
+      }
+    },
     "Absolute": {
       "localizations": {
         "es": {
@@ -1925,6 +1945,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Recorre la historia de las Escrituras y más de 3.000 personas, gratis."
+          }
+        }
+      }
+    },
+    "Byzantine text": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texto bizantino"
+          }
+        }
+      }
+    },
+    "Byzantine text (Robinson and Pierpont, 2005)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texto bizantino (Robinson y Pierpont, 2005)"
           }
         }
       }
@@ -3157,12 +3197,42 @@
         }
       }
     },
-    "Dotted words are in the Textus Receptus, the Greek the KJV translates, but not in the Nestle-Aland text most modern Bibles use.": {
+    "Dotted words are in Nestle-Aland but not in the Textus Receptus, which leaves them out or reads differently.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Las palabras subrayadas con puntos están en el Textus Receptus, el griego que traduce la KJV, pero no en el texto Nestle-Aland que usa la mayoría de las Biblias modernas."
+            "value": "Las palabras subrayadas con puntos están en Nestle-Aland pero no en el Textus Receptus, que las omite o dice otra cosa."
+          }
+        }
+      }
+    },
+    "Dotted words are in Westcott–Hort but not in the Textus Receptus, which leaves them out or reads differently.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las palabras subrayadas con puntos están en Westcott–Hort pero no en el Textus Receptus, que las omite o dice otra cosa."
+          }
+        }
+      }
+    },
+    "Dotted words are in the Byzantine text but not in Nestle-Aland, which leaves them out or reads differently.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las palabras subrayadas con puntos están en el texto bizantino pero no en Nestle-Aland, que las omite o dice otra cosa."
+          }
+        }
+      }
+    },
+    "Dotted words are in the Textus Receptus but not in Nestle-Aland, which leaves them out or reads differently.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las palabras subrayadas con puntos están en el Textus Receptus pero no en Nestle-Aland, que las omite o dice otra cosa."
           }
         }
       }
@@ -4453,6 +4523,36 @@
         }
       }
     },
+    "Greek text from STEPBible TAGNT (Translators Amalgamated Greek New Testament), created by STEPBible.org based on work at Tyndale House Cambridge, CC BY 4.0.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texto griego de STEPBible TAGNT (Translators Amalgamated Greek New Testament), creado por STEPBible.org a partir del trabajo de Tyndale House Cambridge, CC BY 4.0."
+          }
+        }
+      }
+    },
+    "Greek: %@ (closest to the %@'s source)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Griego: %@ (lo más cercano al texto base de la %@)"
+          }
+        }
+      }
+    },
+    "Greek: %@ (the %@'s source)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Griego: %@ (texto base de la %@)"
+          }
+        }
+      }
+    },
     "Green": {
       "comment": "Highlight colour",
       "localizations": {
@@ -4681,6 +4781,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Palabras hebreas y griegas, glosas y definiciones griegas de STEPBible.org, basadas en el trabajo de Tyndale House Cambridge (CC BY 4.0). Definiciones hebreas del Diccionario hebreo de Strong, mediante el proyecto Open Scriptures Hebrew Bible (CC BY 4.0). Comentario: Matthew Henry's Concise Commentary (dominio público)."
+          }
+        }
+      }
+    },
+    "Hebrew text from STEPBible TAHOT (Translators Amalgamated Hebrew Old Testament), created by STEPBible.org based on work at Tyndale House Cambridge, CC BY 4.0.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texto hebreo de STEPBible TAHOT (Translators Amalgamated Hebrew Old Testament), creado por STEPBible.org a partir del trabajo de Tyndale House Cambridge, CC BY 4.0."
+          }
+        }
+      }
+    },
+    "Hebrew: Leningrad Codex": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hebreo: Códice de Leningrado"
           }
         }
       }
@@ -5667,12 +5787,12 @@
         }
       }
     },
-    "Leningrad Codex (STEPBible TAHOT)": {
+    "Leningrad Codex (about 1008)": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Códice de Leningrado (STEPBible TAHOT)"
+            "value": "Códice de Leningrado (hacia 1008)"
           }
         }
       }
@@ -6666,6 +6786,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "Azul marino"
+          }
+        }
+      }
+    },
+    "Nestle-Aland": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nestle-Aland"
+          }
+        }
+      }
+    },
+    "Nestle-Aland doesn't have this word.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nestle-Aland no tiene esta palabra."
+          }
+        }
+      }
+    },
+    "Nestle-Aland has %@ here instead.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En su lugar, Nestle-Aland tiene aquí %@."
+          }
+        }
+      }
+    },
+    "Nestle-Aland, 28th edition (2012)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nestle-Aland, 28.ª edición (2012)"
           }
         }
       }
@@ -8668,6 +8828,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dominio público"
+          }
+        }
+      }
+    },
+    "Punctuation follows the Tyndale House Greek New Testament.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La puntuación sigue el Nuevo Testamento griego de Tyndale House."
           }
         }
       }
@@ -10765,6 +10935,16 @@
         }
       }
     },
+    "Source": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fuente"
+          }
+        }
+      }
+    },
     "Space used": {
       "localizations": {
         "es": {
@@ -10822,6 +11002,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Velocidad y temporizador"
+          }
+        }
+      }
+    },
+    "Spelling follows Nestle-Aland's 28th edition.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La ortografía sigue la 28.ª edición de Nestle-Aland."
           }
         }
       }
@@ -11516,12 +11706,22 @@
         }
       }
     },
-    "Textus Receptus (STEPBible TAGNT)": {
+    "Textus Receptus": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Textus Receptus (STEPBible TAGNT)"
+            "value": "Textus Receptus"
+          }
+        }
+      }
+    },
+    "Textus Receptus (Scrivener, 1894)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Textus Receptus (Scrivener, 1894)"
           }
         }
       }
@@ -11636,6 +11836,26 @@
         }
       }
     },
+    "The %@ was translated from a Greek text very close to this one; this is the closest edition available here.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La %@ se tradujo de un texto griego muy parecido a este; es la edición más cercana que hay aquí."
+          }
+        }
+      }
+    },
+    "The %@ was translated from this text.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La %@ se tradujo de este texto."
+          }
+        }
+      }
+    },
     "The App Store isn't available right now. Please try again later.": {
       "localizations": {
         "es": {
@@ -11666,6 +11886,26 @@
         }
       }
     },
+    "The Byzantine text doesn't have this word.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El texto bizantino no tiene esta palabra."
+          }
+        }
+      }
+    },
+    "The Byzantine text has %@ here instead.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En su lugar, el texto bizantino tiene aquí %@."
+          }
+        }
+      }
+    },
     "The Genesis community": {
       "localizations": {
         "es": {
@@ -11682,6 +11922,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Los Evangelios en 30 días"
+          }
+        }
+      }
+    },
+    "The Greek printed in the 1500s and 1600s; Scrivener's edition gives the readings the King James translators followed.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El griego impreso en los siglos XVI y XVII; la edición de Scrivener recoge las lecturas que siguieron los traductores de la King James."
           }
         }
       }
@@ -11706,22 +11956,32 @@
         }
       }
     },
-    "The Nestle-Aland text most modern Bibles use has this word in a slightly different spelling or form, which doesn't change the meaning.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "El texto Nestle-Aland que usa la mayoría de las Biblias modernas tiene esta palabra con una ortografía o forma algo distinta, que no cambia el significado."
-          }
-        }
-      }
-    },
     "The Passage": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "El pasaje"
+          }
+        }
+      }
+    },
+    "The Textus Receptus doesn't have this word.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El Textus Receptus no tiene esta palabra."
+          }
+        }
+      }
+    },
+    "The Textus Receptus has %@ here instead.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En su lugar, el Textus Receptus tiene aquí %@."
           }
         }
       }
@@ -11786,12 +12046,42 @@
         }
       }
     },
+    "The first widely used critical text, built mainly on the oldest manuscripts. The English revisers of 1881 worked from a very similar Greek text.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El primer texto crítico de uso amplio, basado sobre todo en los manuscritos más antiguos. Los revisores ingleses de 1881 trabajaron con un texto griego muy parecido."
+          }
+        }
+      }
+    },
+    "The modern critical text, which gives most weight to the oldest manuscripts. Most modern Bibles are translated from it.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El texto crítico moderno, que da más peso a los manuscritos más antiguos. La mayoría de las Biblias modernas se traducen de él."
+          }
+        }
+      }
+    },
     "The most read are listed first.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Las más leídas aparecen primero."
+          }
+        }
+      }
+    },
+    "The oldest complete manuscript of the Hebrew Bible, and the basis of printed Hebrew Bibles today.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El manuscrito completo más antiguo de la Biblia hebrea, y la base de las Biblias hebreas impresas hoy."
           }
         }
       }
@@ -11912,6 +12202,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "El asistente de estudio, árboles genealógicos y mapas, Memorizar y más."
+          }
+        }
+      }
+    },
+    "The text found in the majority of Greek manuscripts, read by the Greek-speaking church for centuries.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El texto de la mayoría de los manuscritos griegos, leído durante siglos por la iglesia de habla griega."
           }
         }
       }
@@ -12192,16 +12492,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Esta herramienta de estudio es parte de Genesis Premium."
-          }
-        }
-      }
-    },
-    "This word is in the Textus Receptus, the Greek the KJV translates, but not in the Nestle-Aland text most modern Bibles use.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Esta palabra está en el Textus Receptus, el griego que traduce la KJV, pero no en el texto Nestle-Aland que usa la mayoría de las Biblias modernas."
           }
         }
       }
@@ -13002,6 +13292,46 @@
         }
       }
     },
+    "Westcott and Hort (1881)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Westcott y Hort (1881)"
+          }
+        }
+      }
+    },
+    "Westcott–Hort": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Westcott–Hort"
+          }
+        }
+      }
+    },
+    "Westcott–Hort doesn't have this word.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Westcott–Hort no tiene esta palabra."
+          }
+        }
+      }
+    },
+    "Westcott–Hort has %@ here instead.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En su lugar, Westcott–Hort tiene aquí %@."
+          }
+        }
+      }
+    },
     "What are you grateful for today?": {
       "localizations": {
         "es": {
@@ -13282,6 +13612,16 @@
         }
       }
     },
+    "Where STEPBible records this edition's own spelling, it's shown; otherwise spelling follows Nestle-Aland.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Donde STEPBible registra la ortografía propia de esta edición, se muestra esa; si no, la ortografía sigue a Nestle-Aland."
+          }
+        }
+      }
+    },
     "Where did you notice hope this week?": {
       "localizations": {
         "es": {
@@ -13308,6 +13648,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dónde se usa"
+          }
+        }
+      }
+    },
+    "Where the written text and the traditional reading differ, the reading is shown, as the KJV translates it.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Donde el texto escrito y la lectura tradicional difieren, se muestra la lectura, como la traduce la KJV."
           }
         }
       }
@@ -13533,6 +13883,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Palabra por palabra"
+          }
+        }
+      }
+    },
+    "Word order follows STEPBible's notes on this edition; where a whole phrase is rearranged, it may differ slightly from the printed edition.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El orden de las palabras sigue las notas de STEPBible sobre esta edición; donde se reordena una frase entera, puede diferir un poco de la edición impresa."
           }
         }
       }

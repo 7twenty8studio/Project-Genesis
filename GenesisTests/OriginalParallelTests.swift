@@ -3,8 +3,8 @@ import Testing
 @testable import Genesis
 
 /// The Original parallel Bible: verse alignment between Bibles and the
-/// Hebrew/Greek word data (KJV numbering), joining words verbatim,
-/// morphology, edition notes and the free preview.
+/// Hebrew/Greek word data (KJV numbering), each Bible's Greek edition,
+/// joining words verbatim, morphology, edition marks and the free preview.
 @Suite("Original parallel Bible")
 struct OriginalParallelTests {
     private func wordStudy() throws -> WordStudyRepository {
@@ -20,9 +20,10 @@ struct OriginalParallelTests {
     /// The rows for a chapter, built the way `OriginalParallelView` builds them.
     private func rows(_ translation: Translation, _ chapter: ChapterID, limit: Int? = nil) throws -> [OriginalParallelRow] {
         let map = try #require(OriginalVersification.map(for: translation.id))
+        let edition = try #require(translation.greekSource).edition
         let verses = try bible(translation).chapter(chapter).verses
         let needed = OriginalParallel.kjvVerses(for: verses.map(\.id), map: map)
-        let words = try wordStudy().words(inVerses: needed)
+        let words = try wordStudy().words(inVerses: needed, greek: edition)
         return OriginalParallel.rows(verses: verses, map: map, words: words, limit: limit)
     }
 
@@ -92,6 +93,7 @@ struct OriginalParallelTests {
     @Test func romansDoxologyFollowsEachBible() throws {
         let study = try wordStudy()
         let doxology = try study.words(in: verse(45, 16, 25))
+        let byzantine = try study.words(in: verse(45, 16, 25), greek: .byzantine)
         let kjv = try rows(.kjv, ChapterID(book: 45, chapter: 16))
         let webFourteen = try rows(.web, ChapterID(book: 45, chapter: 14))
         let webSixteen = try rows(.web, ChapterID(book: 45, chapter: 16))
@@ -100,8 +102,9 @@ struct OriginalParallelTests {
         let webEmpty = webSixteen.first { $0.number == 25 }
         #expect(!doxology.isEmpty)
         #expect(kjvTwentyFive == doxology)
-        // The WEB prints the doxology at 14:24–26 and leaves 16:25 empty.
-        #expect(webTwentyFour == doxology)
+        // The WEB prints the doxology (from the Byzantine text) at 14:24–26 and leaves 16:25 empty.
+        #expect(webTwentyFour == byzantine)
+        #expect(byzantine.map(\.text) == doxology.map(\.text))
         #expect(webFourteen.count == 26)
         #expect(webEmpty?.text.isEmpty == true)
         #expect(webEmpty?.words.isEmpty == true)
@@ -196,26 +199,175 @@ struct OriginalParallelTests {
         #expect(leftToRight)
     }
 
-    // MARK: Editions
+    // MARK: Greek editions
 
-    @Test func textusReceptusOnlyWordsAreMarked() throws {
+    /// One Greek edition's words of a verse (KJV numbering).
+    private func greek(_ verse: VerseID, _ edition: GreekEdition) throws -> [OriginalWord] {
+        try wordStudy().words(in: verse, greek: edition)
+    }
+
+    @Test func eachBibleReadsItsOwnGreek() {
+        let kjv = Translation.kjv.greekSource
+        let web = Translation.web.greekSource
+        let asv = Translation.asv.greekSource
+        let reinaValera = OriginalSource.greek(for: "RV1909")
+        let unknown = OriginalSource.greek(for: "BSB")
+        let unknownOffered = OriginalVersification.supports(Translation(id: "BSB", name: "", year: "", license: "", summary: ""))
+        #expect(kjv == OriginalSource.Greek(edition: .textusReceptus, isExact: true))
+        #expect(web == OriginalSource.Greek(edition: .byzantine, isExact: true))
+        #expect(asv == OriginalSource.Greek(edition: .westcottHort, isExact: false))
+        #expect(reinaValera == OriginalSource.Greek(edition: .textusReceptus, isExact: false))
+        #expect(unknown == nil)
+        #expect(!unknownOffered)
+    }
+
+    @Test func comparisonsCrossTheTwoFamilies() {
+        let textusReceptus = GreekEdition.textusReceptus.comparison
+        let byzantine = GreekEdition.byzantine.comparison
+        let nestleAland = GreekEdition.nestleAland.comparison
+        let westcottHort = GreekEdition.westcottHort.comparison
+        #expect(textusReceptus == .nestleAland)
+        #expect(byzantine == .nestleAland)
+        #expect(nestleAland == .textusReceptus)
+        #expect(westcottHort == .textusReceptus)
+    }
+
+    @Test func johannineCommaIsOnlyInTheTextusReceptus() throws {
+        let textusReceptus = try greek(verse(62, 5, 7), .textusReceptus)
+        let nestleAland = try greek(verse(62, 5, 7), .nestleAland)
+        let byzantine = try greek(verse(62, 5, 7), .byzantine)
+        let heaven = textusReceptus.contains { $0.text == "οὐρανῷ" }
+        let marked = textusReceptus.filter(\.isNotInComparison).count
+        let nestleAlandMarked = nestleAland.filter(\.isNotInComparison).count
+        let shared = Array(textusReceptus.prefix(5).map(\.text))
+        #expect(textusReceptus.count == 22)
+        #expect(heaven)
+        #expect(marked == 17, "In heaven, the Father, the Word … these three are one")
+        #expect(nestleAland.count == 5)
+        #expect(byzantine.count == 5)
+        #expect(nestleAlandMarked == 0)
+        #expect(shared == nestleAland.map(\.text))
+    }
+
+    @Test func actsEightThirtySevenIsOnlyInTheTextusReceptus() throws {
+        let textusReceptus = try greek(verse(44, 8, 37), .textusReceptus)
+        let nestleAland = try greek(verse(44, 8, 37), .nestleAland)
+        let byzantine = try greek(verse(44, 8, 37), .byzantine)
+        let allMarked = textusReceptus.allSatisfy(\.isNotInComparison)
+        #expect(textusReceptus.count == 23)
+        #expect(allMarked)
+        #expect(nestleAland.isEmpty)
+        #expect(byzantine.isEmpty)
+    }
+
+    @Test func romansSixteenTwentyFourIsInTheTraditionalTexts() throws {
+        let textusReceptus = try greek(verse(45, 16, 24), .textusReceptus)
+        let byzantine = try greek(verse(45, 16, 24), .byzantine)
+        let nestleAland = try greek(verse(45, 16, 24), .nestleAland)
+        let allMarked = textusReceptus.allSatisfy(\.isNotInComparison)
+        #expect(textusReceptus.count == 11)
+        #expect(byzantine.count == 11)
+        #expect(allMarked)
+        #expect(nestleAland.isEmpty)
+    }
+
+    @Test("Mark 16:9–20 and John 7:53–8:11 are in every edition", arguments: [GreekEdition.textusReceptus, .byzantine, .nestleAland])
+    func longPassagesAreInEveryEdition(edition: GreekEdition) throws {
         let study = try wordStudy()
-        let grace = try study.words(in: verse(45, 16, 24))
-        let philip = try study.words(in: verse(44, 8, 37))
-        let comma = try study.words(in: verse(62, 5, 7))
-        let john = try study.words(in: verse(43, 1, 1))
-        let genesis = try study.words(in: verse(1, 1, 1))
-        let markedComma = comma.filter { $0.edition == .textusReceptusOnly }.count
-        let graceMarked = grace.allSatisfy { $0.edition == .textusReceptusOnly }
-        let philipMarked = philip.allSatisfy { $0.edition != nil }
-        let johnUnmarked = john.allSatisfy { $0.edition == nil }
-        let hebrewUnmarked = genesis.allSatisfy { $0.edition == nil }
-        #expect(!grace.isEmpty)
-        #expect(graceMarked, "Romans 16:24 isn't in Nestle-Aland")
-        #expect(philipMarked, "Nor is Acts 8:37")
-        #expect(markedComma > 10)
-        #expect(johnUnmarked)
-        #expect(hebrewUnmarked)
+        let markEnding = (9...20).map { verse(41, 16, $0) }
+        let adulteress = [verse(43, 7, 53)] + (1...11).map { verse(43, 8, $0) }
+        let mark = try study.words(inVerses: markEnding, greek: edition)
+        let john = try study.words(inVerses: adulteress, greek: edition)
+        // Nestle-Aland prints both in double brackets; TAGNT keeps the words.
+        #expect(mark.count == 12)
+        #expect(john.count == 12)
+    }
+
+    @Test func johnSevenFiftyThreeFollowsEachEdition() throws {
+        let textusReceptus = try greek(verse(43, 7, 53), .textusReceptus)
+        let nestleAland = try greek(verse(43, 7, 53), .nestleAland)
+        let traditional = textusReceptus.dropFirst().first?.text
+        let critical = nestleAland.dropFirst().first?.text
+        #expect(traditional == "ἐπορεύθη")
+        #expect(critical == "ἐπορεύθησαν")
+    }
+
+    @Test func lukeTwoFourteenReadsEachEditionsWord() throws {
+        let study = try wordStudy()
+        let textusReceptus = try greek(verse(42, 2, 14), .textusReceptus)
+        let byzantine = try greek(verse(42, 2, 14), .byzantine)
+        let nestleAland = try greek(verse(42, 2, 14), .nestleAland)
+        let last = try #require(textusReceptus.last)
+        let instead = try study.reading(at: last, in: .nestleAland)
+        #expect(last.text == "εὐδοκία.")
+        #expect(byzantine.last?.text == "εὐδοκία.")
+        #expect(nestleAland.last?.text == "εὐδοκίας.")
+        #expect(last.isNotInComparison)
+        #expect(instead == "εὐδοκίας.")
+        #expect(textusReceptus.count == 11)
+    }
+
+    @Test func revelationTwentyTwoNineteenHasTheBookOrTheTree() throws {
+        let textusReceptus = try greek(verse(66, 22, 19), .textusReceptus).map(\.text)
+        let nestleAland = try greek(verse(66, 22, 19), .nestleAland).map(\.text)
+        let byzantine = try greek(verse(66, 22, 19), .byzantine).map(\.text)
+        let books = textusReceptus.filter { $0 == "βίβλου" }.count
+        let treeInTextusReceptus = textusReceptus.contains("ξύλου")
+        let treeInNestleAland = nestleAland.contains("ξύλου")
+        let treeInByzantine = byzantine.contains("ξύλου")
+        #expect(books == 2)
+        #expect(!treeInTextusReceptus)
+        #expect(treeInNestleAland)
+        #expect(treeInByzantine)
+    }
+
+    @Test func lordsPrayerDoxologyIsInTheTraditionalTexts() throws {
+        let textusReceptus = try greek(verse(40, 6, 13), .textusReceptus)
+        let byzantine = try greek(verse(40, 6, 13), .byzantine)
+        let nestleAland = try greek(verse(40, 6, 13), .nestleAland)
+        let marked = textusReceptus.filter(\.isNotInComparison).count
+        let byzantineMarked = byzantine.filter(\.isNotInComparison).count
+        #expect(textusReceptus.count == 27)
+        #expect(byzantine.count == 27)
+        #expect(textusReceptus.last?.text == "ἀμήν.")
+        #expect(nestleAland.count == 12)
+        #expect(nestleAland.last?.text == "πονηροῦ")
+        #expect(marked == 15)
+        #expect(byzantineMarked == 15)
+    }
+
+    @Test func eachEditionKeepsItsOwnSpellingAndOrder() throws {
+        // Matthew 1:1's sixth word, David.
+        let textusReceptus = try greek(verse(40, 1, 1), .textusReceptus).map(\.text)
+        let westcottHort = try greek(verse(40, 1, 1), .westcottHort).map(\.text)
+        let nestleAland = try greek(verse(40, 1, 1), .nestleAland).map(\.text)
+        let herodTR = try greek(verse(40, 2, 3), .textusReceptus).prefix(5).map(\.text)
+        let herodNA = try greek(verse(40, 2, 3), .nestleAland).prefix(5).map(\.text)
+        let spellingOnly = try greek(verse(40, 1, 1), .textusReceptus).filter(\.isNotInComparison)
+        #expect(textusReceptus.count == 8)
+        #expect(textusReceptus.dropFirst(5).first == "Δαβὶδ")
+        #expect(westcottHort.dropFirst(5).first == "Δαυεὶδ")
+        #expect(nestleAland.dropFirst(5).first == "Δαυὶδ")
+        #expect(spellingOnly.isEmpty, "A spelling difference isn't a missing word")
+        // "Herod the king" (TR) and "the king Herod" (NA): the same words, each in its order.
+        #expect(herodTR == ["Ἀκούσας", "δὲ", "Ἡρῴδης", "ὁ", "βασιλεὺς"])
+        #expect(herodNA == ["Ἀκούσας", "δὲ", "ὁ", "βασιλεὺς", "Ἡρῴδης"])
+    }
+
+    @Test func greekIsJoinedVerbatim() throws {
+        let words = try greek(verse(42, 2, 14), .byzantine)
+        let joined = OriginalText.joined(words.map(\.text))
+        let letters = joined.replacingOccurrences(of: " ", with: "")
+        let verbatim = words.map(\.text).joined()
+        #expect(letters == verbatim)
+        #expect(joined == "δόξα ἐν ὑψίστοις θεῷ, καὶ ἐπὶ γῆς εἰρήνη ἐν ἀνθρώποις εὐδοκία.")
+    }
+
+    @Test func hebrewIsNeverMarked() throws {
+        let genesis = try wordStudy().words(in: verse(1, 1, 1), greek: .nestleAland)
+        let unmarked = genesis.allSatisfy { !$0.isNotInComparison && $0.edition == nil }
+        #expect(genesis.count == 7)
+        #expect(unmarked)
     }
 
     // MARK: Grammar

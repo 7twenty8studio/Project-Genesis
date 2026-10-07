@@ -49,11 +49,15 @@ study) is built by Tools/StudyData/build_wordstudy.py from:
 Changes: converted to SQLite; STEPBible's references converted to numeric
 verse ids in KJV versification (Psalm titles joined to verse 1; KJV
 references used where TAGNT gives them); Hebrew words reconstructed from the
-LXX ("X") and Greek words not in the Textus Receptus left out; prefix and
-punctuation separators, paragraph marks and editorial brackets removed from
-the words; repeated word forms stored once; lexicon markup removed (line
-breaks kept); Hebrew definitions, derivations and KJV renderings taken from
-Strong's; commentary reference links and markup removed, and section headings
-taken from Henry's chapter outlines; TAGNT's word types reduced to a note on
-Greek words of the Textus Receptus that the Nestle-Aland text lacks (table
-editions). No English Bible text is included.
+LXX ("X") left out; prefix and punctuation separators, paragraph marks and
+editorial brackets removed from the words; repeated word forms stored once;
+lexicon markup removed (line breaks kept); Hebrew definitions, derivations
+and KJV renderings taken from Strong's; commentary reference links and markup
+removed, and section headings taken from Henry's chapter outlines. The Greek
+is kept as four editions (Nestle-Aland 28, Westcott-Hort 1881, Scrivener's
+Textus Receptus 1894, Robinson-Pierpont's Byzantine text 2005), each word
+marked with the editions that read it, from TAGNT's editions, meaning-variant
+and spelling-variant columns and its word-order notes (table greek_words); an
+edition's own spelling, where TAGNT gives one, takes the punctuation TAGNT
+prints after the word, and gets a transliteration in TAGNT's style; other
+editions and manuscripts are left out. No English Bible text is included.

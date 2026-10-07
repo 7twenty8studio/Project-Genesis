@@ -205,11 +205,13 @@ struct ReaderView: View {
                 topInset: layout.safeArea.top + 64,
                 bottomInset: layout.safeArea.bottom + 60
             )
-        } else if showsOriginal, let wordStudy, let map = OriginalVersification.map(for: reader.translation.id) {
+        } else if showsOriginal, let wordStudy, let map = OriginalVersification.map(for: reader.translation.id),
+                  let greek = reader.translation.greekSource {
             OriginalParallelView(
                 chapterID: reader.chapterID,
                 translation: reader.translation,
                 map: map,
+                greek: greek,
                 wordStudy: wordStudy,
                 topInset: layout.safeArea.top + 64,
                 bottomInset: layout.safeArea.bottom + 60

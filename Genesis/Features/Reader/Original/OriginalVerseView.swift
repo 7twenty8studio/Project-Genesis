@@ -3,8 +3,8 @@ import SwiftUI
 /// A verse's Hebrew or Greek, every word verbatim and tappable: as running
 /// text (joined as `OriginalText` describes), or interlinear, each word with
 /// its transliteration and gloss beneath. Hebrew reads right to left and
-/// sits against the right edge. Greek words in the Textus Receptus but not
-/// in Nestle-Aland get a dotted underline.
+/// sits against the right edge. Greek words the compared edition doesn't
+/// have (`OriginalWord.isNotInComparison`) get a dotted underline.
 struct OriginalVerseView: View {
     let words: [OriginalWord]
     let language: OriginalLanguage
@@ -73,7 +73,7 @@ struct OriginalVerseView: View {
         for (index, segment) in OriginalText.segments(words.map(\.text)).enumerated() {
             var word = AttributedString(segment.text)
             word.link = URL(string: "\(Self.scheme)://\(index)")
-            if words[index].edition != nil {
+            if words[index].isNotInComparison {
                 word.underlineStyle = Text.LineStyle(pattern: .dot, color: palette.accent)
             }
             result += word

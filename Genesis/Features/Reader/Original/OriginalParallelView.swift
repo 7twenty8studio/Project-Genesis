@@ -2,8 +2,10 @@ import SwiftUI
 
 /// The Bible being read beside the text it was translated from, verse by
 /// verse: the Hebrew Old Testament (Leningrad Codex) and the Greek New
-/// Testament (Textus Receptus), word by word from WordStudy.sqlite (Premium,
-/// `.wordStudy`; free accounts see the first verses of each chapter).
+/// Testament in the edition that Bible follows (`OriginalSource`: the
+/// Textus Receptus for the KJV, the Byzantine text for the WEB, …), word by
+/// word from WordStudy.sqlite (Premium, `.wordStudy`; free accounts see the
+/// first verses of each chapter).
 ///
 /// Verses line up through `OriginalVersification`, so a verse the word data
 /// numbers differently still meets its own Hebrew or Greek; a verse with
@@ -14,6 +16,8 @@ struct OriginalParallelView: View {
     let chapterID: ChapterID
     let translation: Translation
     let map: VersificationMap
+    /// The Greek edition this Bible was translated from (or the closest).
+    let greek: OriginalSource.Greek
     let wordStudy: WordStudyRepository
     /// Space at the top for the floating reader controls.
     let topInset: CGFloat
@@ -40,8 +44,9 @@ struct OriginalParallelView: View {
                         chapterID: chapterID,
                         translation: translation,
                         language: language,
+                        greek: greek,
                         sideBySide: sideBySide,
-                        marksEditions: rows.contains { row in row.words.contains { $0.edition != nil } },
+                        marksEditions: rows.contains { row in row.words.contains(where: \.isNotInComparison) },
                         interlinear: $interlinear
                     )
                     ForEach(Array(rows.enumerated()), id: \.element.id) { index, row in
@@ -70,7 +75,7 @@ struct OriginalParallelView: View {
             .onTapGesture { reader.toggleControls() }
         }
         .background(palette.background)
-        .task(id: "\(chapterID.book)-\(chapterID.chapter)-\(translation.id)-\(unlocked)") { await load() }
+        .task(id: "\(chapterID.book)-\(chapterID.chapter)-\(translation.id)-\(greek.edition.rawValue)-\(unlocked)") { await load() }
         .sheet(item: $picked) { word in
             OriginalWordSheet(word: word)
         }
@@ -103,11 +108,12 @@ struct OriginalParallelView: View {
         let chapter = chapterID
         let map = map
         let wordStudy = wordStudy
+        let edition = greek.edition
         let limit = unlocked ? nil : OriginalParallel.previewVerses
         rows = await Task.detached(priority: .userInitiated) {
             let verses = (try? bible.chapter(chapter))?.verses ?? []
             let needed = OriginalParallel.kjvVerses(for: verses.map(\.id), map: map)
-            let words = (try? wordStudy.words(inVerses: needed)) ?? [:]
+            let words = (try? wordStudy.words(inVerses: needed, greek: edition)) ?? [:]
             return OriginalParallel.rows(verses: verses, map: map, words: words, limit: limit)
         }.value
         // Keep the verse being read (so leaving parallel returns to it).
