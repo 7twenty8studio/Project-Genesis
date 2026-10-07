@@ -64,9 +64,18 @@ struct PremiumLookTests {
     @Test func illuminatedInitialIsAboutTwoLinesTall() throws {
         let bodyFont = ReaderFont.newYork.uiFont(size: 19)
         let ornament = try #require(ChapterTextBuilder.illuminatedInitial("I", style: style(.illuminated, premium: true), bodyFont: bodyFont))
-        #expect(ornament.image != nil)
-        #expect(ornament.bounds.height > bodyFont.lineHeight * 1.5)
-        #expect(ornament.bounds.height < bodyFont.lineHeight * 2.5)
+        let image = try #require(ornament.image)
+        // What's drawn: the picture itself is about two lines tall.
+        let height = image.size.height
+        let line = bodyFont.lineHeight
+        let details = Comment(rawValue: "picture \(height) pt, bounds \(ornament.bounds.height) pt, line \(line) pt")
+        #expect(height > line * 1.5, details)
+        #expect(height < line * 2.5, details)
+        // Where it sits: its foot on the descender, when the system keeps the
+        // bounds we set (a zero rect means it uses the picture's own size).
+        let bounds = ornament.bounds
+        let keptOrDefault = bounds == .zero || abs(bounds.height - height) < 1
+        #expect(keptOrDefault, details)
     }
 
     // MARK: Premium fallback
