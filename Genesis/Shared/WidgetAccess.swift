@@ -27,16 +27,23 @@ enum WidgetSize: CaseIterable, Sendable {
     }
 }
 
-/// Which widgets are free. Only the verse of the day stays free, as the small
-/// Home Screen widget and on the Lock Screen; every other widget and size
-/// needs Genesis Premium (`PremiumFeature.widgets`). Widgets keep all their
-/// sizes in the gallery and show a calm locked card instead of their content.
+/// Which widgets are free. The verse widget is the app's daily welcome: free
+/// as the small and medium Home Screen widget and on the Lock Screen, showing
+/// the verse of the day or a random verse. Its large size, its Premium
+/// options (categories, From Your Reading) and every other widget need
+/// Genesis Premium (`PremiumFeature.widgets`). Widgets keep all their sizes
+/// and options in the gallery and show a calm locked card instead.
 enum WidgetAccess {
     static func isFree(kind: WidgetKind, size: WidgetSize) -> Bool {
-        kind == .dailyVerse && (size == .small || size.isAccessory)
+        kind == .dailyVerse && (size == .small || size == .medium || size.isAccessory)
     }
 
     static func isUnlocked(kind: WidgetKind, size: WidgetSize, isPremium: Bool) -> Bool {
         isPremium || isFree(kind: kind, size: size)
+    }
+
+    /// The verse widget at a size, showing one of its options.
+    static func isUnlocked(_ source: VerseWidgetSource, size: WidgetSize, isPremium: Bool) -> Bool {
+        isPremium || (isFree(kind: .dailyVerse, size: size) && !source.needsPremium)
     }
 }

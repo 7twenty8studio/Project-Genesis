@@ -19,6 +19,10 @@ final class ReadingProgress {
     /// Chapters opened in each year ("2026" → chapter keys), for Year in
     /// Review. Recorded from the release that added it.
     private(set) var chaptersByYear: [String: Set<Int>]
+    /// Chapters opened on each recent day ("yyyy-MM-dd" → chapter keys, in
+    /// reading order), for the verse widget's "From Your Reading". Kept for
+    /// two weeks; recorded from the release that added it.
+    private(set) var chaptersByDay: [String: [Int]]
 
     @ObservationIgnored private let defaults: UserDefaults
     @ObservationIgnored private let calendar: Calendar
@@ -28,6 +32,9 @@ final class ReadingProgress {
     private static let chaptersKey = "progress.chaptersRead"
     private static let secondsKey = "progress.readingSeconds"
     private static let yearChaptersKey = "progress.chaptersByYear"
+    private static let dayChaptersKey = "progress.chaptersByDay"
+    /// Days of `chaptersByDay` kept.
+    static let recentDaysKept = 14
     /// A session longer than this is counted as this long, so a reader left
     /// open on the table doesn't inflate the total.
     static let longestSession: TimeInterval = 45 * 60
@@ -43,6 +50,7 @@ final class ReadingProgress {
         readingSeconds = (defaults.dictionary(forKey: Self.secondsKey) as? [String: Int]) ?? [:]
         let byYear = (defaults.dictionary(forKey: Self.yearChaptersKey) as? [String: [Int]]) ?? [:]
         chaptersByYear = byYear.mapValues { Set($0) }
+        chaptersByDay = (defaults.dictionary(forKey: Self.dayChaptersKey) as? [String: [Int]]) ?? [:]
     }
 
     /// Adds time spent reading, ending at `date`.
@@ -106,12 +114,40 @@ final class ReadingProgress {
         if chaptersByYear[year, default: []].insert(chapterKey).inserted {
             defaults.set(chaptersByYear.mapValues { Array($0) }, forKey: Self.yearChaptersKey)
         }
+        recordRecent(chapterKey, at: date)
 
         guard verse != position || lastReadAt == nil || isNewDay else { return }
         position = verse
         lastReadAt = date
         defaults.set(verse.rawValue, forKey: Self.positionKey)
         defaults.set(date, forKey: Self.dateKey)
+    }
+
+    private func recordRecent(_ chapterKey: Int, at date: Date) {
+        let day = Timestamp.dayString(from: date, calendar: calendar)
+        guard !chaptersByDay[day, default: []].contains(chapterKey) else { return }
+        chaptersByDay[day, default: []].append(chapterKey)
+        if let oldest = calendar.date(byAdding: .day, value: -Self.recentDaysKept, to: date) {
+            // "yyyy-MM-dd" sorts by date.
+            let cutoff = Timestamp.dayString(from: oldest, calendar: calendar)
+            chaptersByDay = chaptersByDay.filter { $0.key > cutoff }
+        }
+        defaults.set(chaptersByDay, forKey: Self.dayChaptersKey)
+    }
+
+    /// Chapters opened in the last `days` days (today included), each once,
+    /// the most recent day first.
+    func recentChapters(days: Int = 7, endingOn date: Date = .now) -> [ChapterID] {
+        let today = calendar.startOfDay(for: date)
+        var seen = Set<Int>()
+        var chapters: [ChapterID] = []
+        for offset in 0..<max(days, 0) {
+            guard let day = calendar.date(byAdding: .day, value: -offset, to: today) else { continue }
+            for key in chaptersByDay[Timestamp.dayString(from: day, calendar: calendar)] ?? [] where seen.insert(key).inserted {
+                chapters.append(ChapterID(book: key / 1_000, chapter: key % 1_000))
+            }
+        }
+        return chapters
     }
 
     /// Fraction of the current book's chapters before this one, 0...1.

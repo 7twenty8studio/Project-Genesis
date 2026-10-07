@@ -5,8 +5,8 @@ import Testing
 @Suite("Widget access and theme-matched widgets")
 @MainActor
 struct WidgetAccessTests {
-    @Test func onlyTheSmallAndLockScreenVerseOfTheDayIsFree() {
-        let free: Set<WidgetSize> = [.small, .accessoryCircular, .accessoryRectangular, .accessoryInline]
+    @Test func onlyTheSmallMediumAndLockScreenVerseWidgetIsFree() {
+        let free: Set<WidgetSize> = [.small, .medium, .accessoryCircular, .accessoryRectangular, .accessoryInline]
         for size in WidgetSize.allCases {
             #expect(WidgetAccess.isFree(kind: .dailyVerse, size: size) == free.contains(size), Comment(rawValue: "Verse of the Day, \(size)"))
         }
@@ -23,9 +23,36 @@ struct WidgetAccessTests {
                 #expect(WidgetAccess.isUnlocked(kind: kind, size: size, isPremium: true))
             }
         }
-        #expect(!WidgetAccess.isUnlocked(kind: .dailyVerse, size: .medium, isPremium: false))
+        #expect(WidgetAccess.isUnlocked(kind: .dailyVerse, size: .medium, isPremium: false))
+        #expect(!WidgetAccess.isUnlocked(kind: .dailyVerse, size: .large, isPremium: false))
         #expect(!WidgetAccess.isUnlocked(kind: .streak, size: .accessoryCircular, isPremium: false))
         #expect(WidgetAccess.isUnlocked(kind: .dailyVerse, size: .accessoryInline, isPremium: false))
+    }
+
+    @Test func verseOfTheDayAndRandomVerseAreFree() {
+        let free: Set<VerseWidgetSource> = [.verseOfTheDay, .random]
+        for source in VerseWidgetSource.allCases {
+            let small = WidgetAccess.isUnlocked(source, size: .small, isPremium: false)
+            let medium = WidgetAccess.isUnlocked(source, size: .medium, isPremium: false)
+            let lockScreen = WidgetAccess.isUnlocked(source, size: .accessoryRectangular, isPremium: false)
+            let large = WidgetAccess.isUnlocked(source, size: .large, isPremium: false)
+            let premium = WidgetAccess.isUnlocked(source, size: .large, isPremium: true)
+            #expect(small == free.contains(source), Comment(rawValue: source.rawValue))
+            #expect(medium == free.contains(source), Comment(rawValue: source.rawValue))
+            #expect(lockScreen == free.contains(source), Comment(rawValue: source.rawValue))
+            #expect(!large, "The large verse widget is Premium")
+            #expect(premium)
+        }
+    }
+
+    @Test func verseWidgetOptionsKeepTheirSavedNames() {
+        // Installed widgets save these; GenesisWidgets' VerseWidgetOption mirrors them.
+        #expect(VerseWidgetSource.allCases.map(\.rawValue) == [
+            "verseOfTheDay", "random", "fromYourReading",
+            "hope", "peace", "faith", "strength", "comfort", "love", "gratitude", "guidance",
+        ])
+        let categories = VerseWidgetSource.allCases.compactMap(\.category)
+        #expect(categories == VerseCategory.allCases)
     }
 
     @Test func widgetKindsKeepTheirInstalledNames() {

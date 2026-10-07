@@ -47,8 +47,10 @@ See [BUILDING.md](BUILDING.md) to build and run.
   Church Mode: a dim Night-palette screen that stays awake, larger text and
   a quick verse lookup. Synced as `sermons`.
 - **Home**: today's reading, prayer journal, streak and progress.
-- **Widgets**: verse of the day, continue reading, reading progress (large),
-  lock screen streak, verse and continue reading. Tapping opens the app in place.
+- **Widgets**: the verse widget (verse of the day, a random verse every few
+  hours, or with Premium a theme such as hope or peace, or a verse from your
+  week's reading), continue reading, reading progress (large), lock screen
+  streak, verse and continue reading. Tapping opens the app in place.
 
 ## What's New
 

@@ -12,6 +12,18 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
         let verse: Int
     }
 
+    /// A verse (or a short passage of up to three verses) for the verse
+    /// widget's other options, verbatim from a Bible database. `translation`
+    /// is the Bible it came from: usually the person's, the KJV where their
+    /// Bible numbers the passage differently.
+    struct Passage: Codable, Equatable, Sendable {
+        let reference: String
+        let text: String
+        /// The first verse, for opening the reader.
+        let verse: Int
+        let translation: String
+    }
+
     struct ContinueReading: Codable, Equatable, Sendable {
         let reference: String
         let snippet: String
@@ -85,6 +97,13 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
     var isPremium: Bool?
     /// Written for Premium only; missing in older snapshots (decodes as nil).
     var theme: Theme? = nil
+    /// The verse widget's "Random Verse" pool for the day (free), shown in
+    /// turn every few hours. Missing in older snapshots (decodes as nil).
+    var randomVerses: [Passage]? = nil
+    /// Premium: each `VerseCategory`'s passages, by its raw value.
+    var categoryVerses: [String: [Passage]]? = nil
+    /// Premium: "From Your Reading", one passage per day ("yyyy-MM-dd").
+    var readingVerses: [String: Passage]? = nil
 
     static let appGroup = "group.com.7twenty8studio.genesis"
     static let fileName = "widget-snapshot.json"
@@ -106,9 +125,14 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
 
     /// The verse for a calendar day, falling back to the first available.
     func dailyVerse(on date: Date, calendar: Calendar = .current) -> DailyVerse? {
-        let parts = calendar.dateComponents([.year, .month, .day], from: date)
-        let day = String(format: "%04d-%02d-%02d", parts.year ?? 0, parts.month ?? 0, parts.day ?? 0)
+        let day = Self.dayKey(for: date, calendar: calendar)
         return dailyVerses.first { $0.day == day } ?? dailyVerses.first
+    }
+
+    /// "yyyy-MM-dd" for a date in the person's calendar.
+    static func dayKey(for date: Date, calendar: Calendar = .current) -> String {
+        let parts = calendar.dateComponents([.year, .month, .day], from: date)
+        return String(format: "%04d-%02d-%02d", parts.year ?? 0, parts.month ?? 0, parts.day ?? 0)
     }
 
     /// Shown in widget galleries before the app has run.

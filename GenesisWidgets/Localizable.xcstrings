@@ -61,12 +61,22 @@
         }
       }
     },
-    "A new verse each morning.": {
+    "A Verse for You": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Un versículo nuevo cada mañana."
+            "value": "Un versículo para ti"
+          }
+        }
+      }
+    },
+    "A new verse each morning, a random verse, or verses on hope, peace and more.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un versículo nuevo cada mañana, uno al azar o versículos sobre esperanza, paz y más."
           }
         }
       }
@@ -111,6 +121,36 @@
         }
       }
     },
+    "Choose which verse the widget shows.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige qué versículo muestra el widget."
+          }
+        }
+      }
+    },
+    "Comfort": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Consuelo"
+          }
+        }
+      }
+    },
+    "Completed": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completado"
+          }
+        }
+      }
+    },
     "Continue": {
       "localizations": {
         "es": {
@@ -127,6 +167,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Continuar leyendo"
+          }
+        }
+      }
+    },
+    "Day": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Día"
           }
         }
       }
@@ -161,12 +211,32 @@
         }
       }
     },
+    "Faith": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fe"
+          }
+        }
+      }
+    },
     "Follow your group's reading with Genesis Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Sigue la lectura de tu grupo con Genesis Premium."
+          }
+        }
+      }
+    },
+    "From Your Reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De tu lectura"
           }
         }
       }
@@ -192,12 +262,42 @@
         }
       }
     },
+    "Gratitude": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gratitud"
+          }
+        }
+      }
+    },
     "Group Progress": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Progreso del grupo"
+          }
+        }
+      }
+    },
+    "Guidance": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guía"
+          }
+        }
+      }
+    },
+    "Hope": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esperanza"
           }
         }
       }
@@ -244,12 +344,32 @@
         }
       }
     },
+    "Love": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amor"
+          }
+        }
+      }
+    },
     "Mark Read": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Marcar leída"
+          }
+        }
+      }
+    },
+    "Mark Today's Reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marcar la lectura de hoy"
           }
         }
       }
@@ -290,6 +410,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Memorizar está desactivado"
+          }
+        }
+      }
+    },
+    "Next Chapter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Siguiente capítulo"
           }
         }
       }
@@ -364,6 +494,16 @@
         }
       }
     },
+    "Peace": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paz"
+          }
+        }
+      }
+    },
     "Pick up where you left off with Genesis Premium.": {
       "localizations": {
         "es": {
@@ -400,6 +540,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Reproducir"
+          }
+        }
+      }
+    },
+    "Play or Pause Listening": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reproducir o pausar la escucha"
           }
         }
       }
@@ -455,6 +605,16 @@
         }
       }
     },
+    "Random Verse": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versículo al azar"
+          }
+        }
+      }
+    },
     "Reading Progress": {
       "localizations": {
         "es": {
@@ -505,12 +665,32 @@
         }
       }
     },
+    "Show": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar"
+          }
+        }
+      }
+    },
     "Start a reading plan in Genesis to see today's reading here.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Empieza un plan de lectura en Genesis para ver aquí la lectura de hoy."
+          }
+        }
+      }
+    },
+    "Strength": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fortaleza"
           }
         }
       }
@@ -596,12 +776,42 @@
         }
       }
     },
+    "Verse": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versículo"
+          }
+        }
+      }
+    },
     "Verse of the Day": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Versículo del día"
+          }
+        }
+      }
+    },
+    "Verses from your own reading come with Genesis Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los versículos de tu propia lectura vienen con Genesis Premium."
+          }
+        }
+      }
+    },
+    "Verses on hope, peace and more come with Genesis Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los versículos sobre esperanza, paz y más vienen con Genesis Premium."
           }
         }
       }

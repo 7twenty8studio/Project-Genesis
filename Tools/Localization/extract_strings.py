@@ -246,6 +246,15 @@ def extract(paths):
                     continue
                 for lit in top_level_literals(arg):
                     add(key_for(lit, True), None, path)
+        # App Intents (widget configuration, widget buttons): titles and
+        # descriptions are LocalizedStringResources Xcode looks up too.
+        for pattern in (r"LocalizedStringResource\s*=\s*", r"LocalizedStringResource\s*\{\s*",
+                        r"@Parameter\(\s*title:\s*", r"(?<!Type)DisplayRepresentation\(\s*title:\s*",
+                        r"TypeDisplayRepresentation\(\s*name:\s*", r"IntentDescription\(\s*"):
+            for m in re.finditer(pattern, source):
+                lit = STRING_LITERAL.match(source, m.end())
+                if lit:
+                    add(key_for(lit.group(0), True), None, path)
         # InsightsView.stat(value, "label", symbol): the label is the second argument.
         for m in re.finditer(r"(?<![\w.])stat\([^,()]*(?:\([^()]*\))?[^,()]*,\s*", source):
             lit = STRING_LITERAL.match(source, m.end())

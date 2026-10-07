@@ -143,10 +143,28 @@ shares; README.md has the architecture.
   the reader (`nightClock` is moved on at each window edge). Starlight
   without Premium falls back to Night, keeping the choice. UI tests never
   switch unless launched with `-uiTestingNight` (then it's always night).
-- Widgets: only the small verse of the day and Lock Screen verse are free
-  (`WidgetAccess` in Genesis/Shared); every other widget/size shows a locked
-  card. Premium widgets use the reading theme (colours carried in
-  `WidgetSnapshot.theme` as hex, since the extension can't use ThemePalette).
+- Widgets: only the verse widget is free, small, medium and on the Lock
+  Screen (`WidgetAccess` in Genesis/Shared); its large size and every other
+  widget show a locked card. Premium widgets use the reading theme (colours
+  carried in `WidgetSnapshot.theme` as hex, since the extension can't use
+  ThemePalette); free ones the default light/dark look.
+- Verse widget options (`VerseWidgetIntent`, an AppIntentConfiguration on
+  the unchanged "DailyVerse" kind; the default `.verseOfTheDay` is what
+  widgets installed before it show): Verse of the Day and Random Verse are
+  free; the categories (`VerseCategory`: hope, peace, faith, strength,
+  comfort, love, gratitude, guidance) and From Your Reading are Premium (a
+  locked card otherwise). `VerseWidgetSource` (Genesis/Shared) holds the
+  rules and `VerseWidgetSchedule` the rotation (random and categories every
+  3 hours, the others at midnight). The extension never opens a Bible:
+  `WidgetSnapshotWriter` writes the text verbatim (`randomVerses`, 24 a day;
+  `categoryVerses` and `readingVerses` for Premium) via `WidgetVerses`,
+  from the person's Bible, or the KJV where their Bible numbers a passage
+  differently (`OriginalVersification`). Categories are ids only in
+  Genesis/Core/Widgets/VerseCategories.swift (15–30 whole sentences each,
+  ≤ 3 verses, no psalm titles), checked by
+  Tools/WidgetData/check_verse_categories.py and VerseWidgetTests. From Your
+  Reading picks from `ReadingProgress.recentChapters` (last 7 days) a verse
+  that's a whole sentence of 60–220 characters (`ReadingVersePicker`).
 - Year in Review: free shares one card; with `.readingInsights`, up to three.
 
 ## Memorise Scripture
@@ -162,12 +180,12 @@ shares; README.md has the architecture.
   entitlement); deep link `genesis://memorise`.
 
 ## Premium widgets
-- `.widgets` (every widget but the small/Lock Screen verse): the Today's Reading widget (tick via `TogglePlanDayIntent`,
+- `.widgets` (every widget but the small/medium/Lock Screen verse, plus the verse widget's Premium options): the Today's Reading widget (tick via `TogglePlanDayIntent`,
   which leaves `PendingPlanDays` in the App Group for the app to apply), and
   the listening Live Activity (`ListeningActivityController`, driven by
   `AudioPlayerService`; buttons are `LiveActivityIntent`s that call
   `ListeningControl`). Shared types live in Genesis/Shared/WidgetIntents.swift.
-  Only the small and Lock Screen verse of the day are free (`WidgetAccess`).
+  Only the small, medium and Lock Screen verse widget are free (`WidgetAccess`).
 - Apple Watch (verse of the day, Premium): GenesisWatch + GenesisWatchWidgets
   targets, fed by `WatchConnector` (WatchConnectivity application context,
   `WatchPayload`). Embedded in the iPhone app (a dependency of Genesis in

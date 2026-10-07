@@ -27,7 +27,29 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions]
+
+    static let verseWidgetOptions = WhatsNewAnnouncement(
+        id: "verse-widget-your-way",
+        title: String(localized: "Your verse, your way"),
+        items: [
+            WhatsNewItem(
+                systemImage: "rectangle.split.2x1",
+                title: String(localized: "A larger verse widget, free"),
+                detail: String(localized: "The medium Verse of the Day widget is now free, on the Home Screen next to the small one and the Lock Screen.")
+            ),
+            WhatsNewItem(
+                systemImage: "shuffle",
+                title: String(localized: "Random verses"),
+                detail: String(localized: "Touch and hold the verse widget, tap Edit Widget and choose Random Verse for a new encouraging verse every few hours.")
+            ),
+            WhatsNewItem(
+                systemImage: "sparkles",
+                title: String(localized: "Verses for how you feel"),
+                detail: String(localized: "With Premium, choose hope, peace, faith, strength, comfort, love, gratitude or guidance, or a verse from what you've read this week.")
+            ),
+        ]
+    )
 
     static let sermonCompanion = WhatsNewAnnouncement(
         id: "sermon-companion-church-mode",

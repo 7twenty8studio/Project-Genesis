@@ -75,65 +75,7 @@ extension Color {
 }
 
 
-// MARK: - Daily verse
-
-/// Free as the small Home Screen widget and on the Lock Screen; the medium
-/// size is Premium.
-struct DailyVerseWidget: Widget {
-    var body: some WidgetConfiguration {
-        StaticConfiguration(kind: WidgetKind.dailyVerse.rawValue, provider: SnapshotProvider()) { entry in
-            DailyVerseView(entry: entry)
-        }
-        .configurationDisplayName("Verse of the Day")
-        .description("A new verse each morning.")
-        .supportedFamilies([.systemSmall, .systemMedium, .accessoryRectangular, .accessoryInline])
-    }
-}
-
-struct DailyVerseView: View {
-    let entry: SnapshotEntry
-    @Environment(\.widgetFamily) private var family
-
-    var body: some View {
-        if entry.snapshot.unlocks(.dailyVerse, in: family) {
-            verseView
-        } else {
-            PremiumLockedView(message: String(localized: "Larger verse widgets come with Genesis Premium."), symbol: "text.quote")
-        }
-    }
-
-    private var verseView: some View {
-        let verse = entry.snapshot.dailyVerse(on: entry.date)
-        let colors = WidgetColors(entry.snapshot)
-        return Group {
-            switch family {
-            case .accessoryInline:
-                Text(verse?.reference ?? String(localized: "Verse of the Day"))
-            case .accessoryRectangular:
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(verse?.reference ?? "").font(.headline)
-                    Text(verse?.text ?? "").font(.caption).lineLimit(3)
-                }
-            default:
-                VStack(alignment: .leading, spacing: 8) {
-                    Eyebrow(text: String(localized: "Verse of the Day"), color: colors.accent)
-                    Text(verse?.text ?? "")
-                        .font(.system(family == .systemSmall ? .footnote : .body, design: .serif))
-                        .foregroundStyle(colors.text)
-                        .minimumScaleFactor(0.75)
-                    Spacer(minLength: 0)
-                    Text("\(verse?.reference ?? "") \u{00B7} \(entry.snapshot.translation)")
-                        .font(.caption2.weight(.semibold))
-                        .foregroundStyle(colors.secondary)
-                }
-            }
-        }
-        .containerBackground(for: .widget) {
-            if WidgetSize(family).isAccessory { Color.clear } else { WidgetBackground(colors: colors) }
-        }
-        .widgetURL(verse.map { GenesisLink.read($0.verse) })
-    }
-}
+// The verse widget (DailyVerseWidget) lives in VerseWidget.swift.
 
 // MARK: - Continue reading (Premium)
 

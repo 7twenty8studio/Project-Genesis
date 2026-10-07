@@ -140,7 +140,12 @@ enum WidgetSnapshotWriter {
             memorise: memorise,
             isPremium: isPremium,
             // Theme-matched widgets are Premium; free widgets keep the default look.
-            theme: isPremium ? widgetTheme(for: theme, now: now) : nil
+            theme: isPremium ? widgetTheme(for: theme, now: now) : nil,
+            // The verse widget's options: Random Verse is free; categories and
+            // From Your Reading are Premium, so they're only written then.
+            randomVerses: WidgetVerses.passages(WidgetVerses.randomPool(on: now, calendar: calendar), library: library),
+            categoryVerses: isPremium ? WidgetVerses.categories(library: library) : nil,
+            readingVerses: isPremium ? WidgetVerses.fromReading(progress: progress, library: library, now: now, calendar: calendar) : nil
         )
     }
 }

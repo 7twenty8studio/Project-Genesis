@@ -715,6 +715,16 @@
         }
       }
     },
+    "A larger verse widget, free": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un widget de versículo más grande, gratis"
+          }
+        }
+      }
+    },
     "A light, refined face made for screens": {
       "localizations": {
         "es": {
@@ -3094,6 +3104,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dativo"
+          }
+        }
+      }
+    },
+    "Day": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Día"
           }
         }
       }
@@ -6645,6 +6665,16 @@
         }
       }
     },
+    "Mark Today's Reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marcar la lectura de hoy"
+          }
+        }
+      }
+    },
     "Mark answered": {
       "localizations": {
         "es": {
@@ -7494,6 +7524,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Siguiente"
+          }
+        }
+      }
+    },
+    "Next Chapter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Siguiente capítulo"
           }
         }
       }
@@ -8893,6 +8933,16 @@
         }
       }
     },
+    "Play or Pause Listening": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reproducir o pausar la escucha"
+          }
+        }
+      }
+    },
     "Playback": {
       "localizations": {
         "es": {
@@ -9588,6 +9638,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lluvia, olas, fuego o canto de aves mientras lees y oras."
+          }
+        }
+      }
+    },
+    "Random verses": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versículos al azar"
           }
         }
       }
@@ -12894,6 +12954,16 @@
         }
       }
     },
+    "The medium Verse of the Day widget is now free, on the Home Screen next to the small one and the Lock Screen.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El widget mediano del Versículo del día ahora es gratis en la pantalla de inicio, junto al pequeño y al de la pantalla de bloqueo."
+          }
+        }
+      }
+    },
     "The modern critical text, which gives most weight to the oldest manuscripts. Most modern Bibles are translated from it.": {
       "localizations": {
         "es": {
@@ -13607,6 +13677,16 @@
         }
       }
     },
+    "Touch and hold the verse widget, tap Edit Widget and choose Random Verse for a new encouraging verse every few hours.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantén pulsado el widget del versículo, toca Editar widget y elige Versículo al azar para recibir un versículo alentador nuevo cada pocas horas."
+          }
+        }
+      }
+    },
     "Traditional book face": {
       "localizations": {
         "es": {
@@ -14068,6 +14148,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Versículos"
+          }
+        }
+      }
+    },
+    "Verses for how you feel": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versículos según cómo te sientes"
           }
         }
       }
@@ -14693,6 +14783,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Con Premium, los capítulos pueden empezar con una letra iluminada, en uno de tres nuevos tipos de letra."
+          }
+        }
+      }
+    },
+    "With Premium, choose hope, peace, faith, strength, comfort, love, gratitude or guidance, or a verse from what you've read this week.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Premium, elige esperanza, paz, fe, fortaleza, consuelo, amor, gratitud o guía, o un versículo de lo que has leído esta semana."
           }
         }
       }
@@ -15588,6 +15688,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tus imágenes de versículos, a tu manera"
+          }
+        }
+      }
+    },
+    "Your verse, your way": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu versículo, a tu manera"
           }
         }
       }
