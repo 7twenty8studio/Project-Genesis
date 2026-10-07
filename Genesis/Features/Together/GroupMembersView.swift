@@ -1,7 +1,7 @@
 import SwiftUI
 
-/// Members, the invite code, notifications, moderation, and leaving or
-/// closing the group.
+/// Members, the invite code, notifications, and leaving or closing the
+/// group. Moderation is the navigation bar's button (GroupModerationToolbar).
 struct GroupMembersView: View {
     let model: GroupDetailModel
     let group: GroupSummary
@@ -11,7 +11,6 @@ struct GroupMembersView: View {
     @State private var editing = false
     @State private var confirmingLeave = false
     @State private var confirmingDelete = false
-    @State private var showsModeration = false
     @State private var removing: GroupMember?
     @State private var banning: GroupMember?
     @State private var newOwner: GroupMember?
@@ -19,9 +18,6 @@ struct GroupMembersView: View {
     var body: some View {
         List {
             ThemedRows {
-                if group.isLeader {
-                    moderationSection
-                }
                 inviteSection
                 Section("Members") {
                     ForEach(model.members) { member in
@@ -35,26 +31,8 @@ struct GroupMembersView: View {
         .sheet(isPresented: $editing) {
             GroupFormView(existing: group) { _ in }
         }
-        .sheet(isPresented: $showsModeration, onDismiss: { Task { await model.refresh() } }) {
-            GroupModerationView(model: model.moderation)
-        }
         .modifier(GroupLeaveAndCloseDialogs(group: group, confirmingLeave: $confirmingLeave, confirmingDelete: $confirmingDelete))
         .modifier(GroupMemberDialogs(model: model, removing: $removing, banning: $banning, newOwner: $newOwner))
-    }
-
-    private var moderationSection: some View {
-        Section {
-            Button {
-                showsModeration = true
-            } label: {
-                Label("Moderation", systemImage: "shield.lefthalf.filled")
-            }
-            .badge(model.moderation.pendingCount)
-            .accessibilityIdentifier("group.moderation")
-        } footer: {
-            Text("Reports, join requests and banned people.")
-        }
-        .listRowBackground(palette.surface)
     }
 
     private var inviteFooter: String {

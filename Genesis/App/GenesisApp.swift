@@ -20,6 +20,7 @@ struct GenesisApp: App {
     @State private var ambient: AmbientSoundService
     @State private var community: CommunityStore
     @State private var features: FeaturePreferences
+    @State private var challengeAutoTick: ChallengeAutoTick
     private let modelContainer: ModelContainer
     private let groupChallenges: any GroupChallengeBackend
     private let studyData = StudyRepository.bundled()
@@ -117,7 +118,8 @@ struct GenesisApp: App {
         } else {
             communityBackend = SignedOutCommunityBackend()
         }
-        _community = State(initialValue: CommunityStore(backend: communityBackend))
+        let community = CommunityStore(backend: communityBackend)
+        _community = State(initialValue: community)
         // Group challenges: in memory in UI tests (the sample group has some).
         if testing.isEnabled {
             groupChallenges = testing.isSignedOut ? SignedOutGroupChallengeBackend() as any GroupChallengeBackend : InMemoryGroupChallengeBackend(community: communityBackend, seeded: true)
@@ -126,6 +128,17 @@ struct GenesisApp: App {
         } else {
             groupChallenges = SignedOutGroupChallengeBackend()
         }
+        // Finishing a chapter in the reader ticks it in running reading
+        // challenges (the in-memory server in UI tests; nothing signed out).
+        let challengeAutoTick = ChallengeAutoTick(
+            backend: groupChallenges,
+            community: community,
+            flags: flags,
+            features: features,
+            isEnabled: !(groupChallenges is SignedOutGroupChallengeBackend)
+        )
+        reader.challengeAutoTick = challengeAutoTick
+        _challengeAutoTick = State(initialValue: challengeAutoTick)
         let push = PushNotifications.shared
         push.isEnabled = !testing.isEnabled
         push.backend = communityBackend
@@ -165,6 +178,7 @@ struct GenesisApp: App {
                 .environment(ambient)
                 .environment(community)
                 .environment(features)
+                .environment(challengeAutoTick)
                 .environment(\.groupChallenges, groupChallenges)
                 .environment(\.studyData, studyData)
                 .environment(\.wordStudy, wordStudy)

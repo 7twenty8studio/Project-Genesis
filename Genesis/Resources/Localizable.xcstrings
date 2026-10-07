@@ -8892,16 +8892,6 @@
         }
       }
     },
-    "Reports, join requests and banned people.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reportes, solicitudes para unirse y personas vetadas."
-          }
-        }
-      }
-    },
     "Request sent. A moderator will let you in.": {
       "localizations": {
         "es": {

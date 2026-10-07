@@ -16,6 +16,10 @@ struct GroupChallengeDetailView: View {
             if let challenge {
                 content(challenge)
                     .navigationTitle(challenge.kind.title)
+            } else if !model.hasLoaded {
+                // Not "ended" until the list has actually loaded.
+                ProgressView()
+                    .accessibilityIdentifier("challenge.loading")
             } else {
                 QuietEmptyState(systemImage: "flag.checkered", title: String(localized: "Challenge ended"), message: String(localized: "This challenge has ended."))
             }
@@ -43,6 +47,7 @@ struct GroupChallengeDetailView: View {
             Text("Everyone's progress is kept, and it moves to Finished.")
         }
         .task {
+            if !model.hasLoaded, !model.isLoading { await model.refresh() }
             if let challenge { await model.loadProgress(challenge) }
         }
     }

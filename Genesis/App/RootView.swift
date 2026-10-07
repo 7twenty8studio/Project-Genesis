@@ -16,6 +16,7 @@ struct RootView: View {
     @Environment(AmbientSoundService.self) private var ambient
     @Environment(FeaturePreferences.self) private var features
     @Environment(MorningWelcome.self) private var welcome
+    @Environment(ChallengeAutoTick.self) private var challengeAutoTick
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
     @State private var showsWelcome = false
@@ -68,6 +69,7 @@ struct RootView: View {
             Task { await audio.catalog.refresh() }
             Task { await PushNotifications.shared.refreshRegistration() }
             Task { await library.refreshCatalog() }
+            Task { await challengeAutoTick.refresh() }
             refreshWidgets()
             offerWelcome()
         }
@@ -76,7 +78,10 @@ struct RootView: View {
             keepAmbientAvailable()
             refreshWidgets()
         }
-        .onChange(of: auth.user?.id) { Task { await refreshGrant() } }
+        .onChange(of: auth.user?.id) {
+            Task { await refreshGrant() }
+            Task { await challengeAutoTick.refresh(force: true) }
+        }
         .onChange(of: entitlements.hasLoaded) {
             keepThemeAvailable()
             keepAmbientAvailable()
@@ -91,6 +96,7 @@ struct RootView: View {
                 Task { await refreshGrant() }
                 audio.liveActivity.appBecameActive()
                 Task { await flags.refresh() }
+                Task { await challengeAutoTick.refresh() }
                 refreshWidgets()
                 offerWelcome()
             case .background:

@@ -29,6 +29,8 @@ final class ReaderViewModel {
     @ObservationIgnored let library: BibleLibrary
     @ObservationIgnored let progress: ReadingProgress
     @ObservationIgnored var modelContext: ModelContext?
+    /// Ticks finished chapters in group reading challenges (set by the app).
+    @ObservationIgnored weak var challengeAutoTick: ChallengeAutoTick?
     @ObservationIgnored private var chapterCache: [String: Chapter] = [:]
     @ObservationIgnored private var cacheOrder: [String] = []
 
@@ -132,6 +134,7 @@ final class ReaderViewModel {
     /// page turn or a scroll, not a jump): a brief moment, once a day.
     func didReachEnd(of chapter: ChapterID) {
         ChapterMoments.shared.chapterFinished(chapter, in: .reader)
+        challengeAutoTick?.chapterFinished(chapter)
     }
 
     /// A downloaded edition replaced the text: reload what's on screen.

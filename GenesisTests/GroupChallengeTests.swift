@@ -389,4 +389,93 @@ struct GroupChallengeTests {
         #expect(!refused)
         #expect(model.errorMessage != nil)
     }
+
+    // MARK: Ticking from the reader
+
+    @Test func finishedChapterTicksOnlyRunningReadingChallengesThatNeedIt() {
+        let now = date(2026, 10, 8)
+        let mark = challenge(.reading, start: "2026-10-06", days: 14, chapters: [41_001, 41_002])
+        let alreadyTicked = challenge(.reading, start: "2026-10-06", days: 14, chapters: [41_001])
+        let notStarted = challenge(.reading, start: "2026-10-20", days: 14, chapters: [41_001])
+        var endedEarly = challenge(.reading, start: "2026-10-06", days: 14, chapters: [41_001])
+        endedEarly.endedAt = date(2026, 10, 7)
+        let over = challenge(.reading, start: "2026-09-01", days: 7, chapters: [41_001])
+        let otherChapters = challenge(.reading, start: "2026-10-06", days: 14, chapters: [43_001])
+        let streak = challenge(.streak, start: "2026-10-06", days: 14)
+        let leftGroup = challenge(.reading, start: "2026-10-06", days: 14, chapters: [41_001])
+
+        let all = [mark, alreadyTicked, notStarted, endedEarly, over, otherChapters, streak, leftGroup]
+        let groups = Set(all.filter { $0.id != leftGroup.id }.map(\.groupID))
+        let ticked: [UUID: Set<Int>] = [alreadyTicked.id: [41_001]]
+        let due = ChallengeAutoTickRule.challenges(
+            toTick: ChapterID(book: 41, chapter: 1), in: all, ticked: ticked, groups: groups, on: now, calendar: chicago
+        )
+        let dueIDs = due.map(\.id)
+        #expect(dueIDs == [mark.id])
+
+        let none = ChallengeAutoTickRule.challenges(
+            toTick: ChapterID(book: 1, chapter: 1), in: all, ticked: ticked, groups: groups, on: now, calendar: chicago
+        )
+        #expect(none.isEmpty)
+    }
+
+    @Test func autoTickCacheRefreshesEveryFewMinutes() {
+        let loaded = date(2026, 10, 8, 9, 0)
+        let never = ChallengeAutoTickRule.isStale(loadedAt: nil, now: loaded, interval: 300)
+        let soon = ChallengeAutoTickRule.isStale(loadedAt: loaded, now: loaded.addingTimeInterval(120), interval: 300)
+        let later = ChallengeAutoTickRule.isStale(loadedAt: loaded, now: loaded.addingTimeInterval(300), interval: 300)
+        #expect(never)
+        #expect(!soon)
+        #expect(later)
+    }
+
+    private func makeAutoTick(backend: InMemoryGroupChallengeBackend, community: InMemoryCommunityBackend, clock: TestClock, groupsOn: Bool = true) -> ChallengeAutoTick {
+        let defaults = UserDefaults(suiteName: "ChallengeAutoTick-\(UUID())")!
+        return ChallengeAutoTick(
+            backend: backend,
+            community: CommunityStore(backend: community),
+            flags: FeatureFlagService(client: nil, override: [.groups: groupsOn]),
+            features: FeaturePreferences(defaults: defaults, existingUser: true),
+            calendar: chicago,
+            now: { clock.date }
+        )
+    }
+
+    @Test func finishingAChapterTicksItOnce() async throws {
+        let clock = TestClock(date(2026, 10, 6))
+        let (backend, community, myGroup) = try await makeBackend(clock: clock)
+        var draft = GroupChallengeDraft(kind: .reading, title: "Read Mark", startsOn: clock.date, days: 14)
+        draft.chapters = ReadingChallengeChapters.chapters(books: [41])
+        let id = try await backend.createChallenge(draft, in: myGroup)
+        let autoTick = makeAutoTick(backend: backend, community: community, clock: clock)
+
+        await autoTick.tick(ChapterID(book: 41, chapter: 1))
+        await autoTick.tick(ChapterID(book: 41, chapter: 1))
+        await autoTick.tick(ChapterID(book: 43, chapter: 1))
+
+        let me = await community.currentUserID()
+        let rows = try await backend.progress(of: id)
+        let mine = rows.first { $0.userID == me }
+        #expect(mine?.items == [41_001])
+        let cached = autoTick.ticked[id] ?? []
+        #expect(cached == [41_001])
+    }
+
+    @Test func nothingIsTickedWhenGroupsAreOff() async throws {
+        let clock = TestClock(date(2026, 10, 6))
+        let (backend, community, myGroup) = try await makeBackend(clock: clock)
+        var draft = GroupChallengeDraft(kind: .reading, title: "Read Mark", startsOn: clock.date, days: 14)
+        draft.chapters = ReadingChallengeChapters.chapters(books: [41])
+        let id = try await backend.createChallenge(draft, in: myGroup)
+        let autoTick = makeAutoTick(backend: backend, community: community, clock: clock, groupsOn: false)
+
+        await autoTick.tick(ChapterID(book: 41, chapter: 1))
+
+        let me = await community.currentUserID()
+        let rows = try await backend.progress(of: id)
+        let mine = rows.first { $0.userID == me }
+        let done = mine?.done ?? 0
+        #expect(done == 0)
+        #expect(autoTick.challenges.isEmpty)
+    }
 }

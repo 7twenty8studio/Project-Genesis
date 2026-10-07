@@ -8,6 +8,7 @@ struct GroupChallengesSection: View {
 
     @Environment(CommunityStore.self) private var community
     @Environment(\.groupChallenges) private var backend
+    @Environment(ChallengeAutoTick.self) private var autoTick
     @Environment(\.palette) private var palette
     @State private var model: GroupChallengesModel?
     @State private var creating = false
@@ -37,7 +38,9 @@ struct GroupChallengesSection: View {
     /// cancel it.
     private func load() async {
         if model == nil {
-            model = GroupChallengesModel(groupID: group.id, backend: backend, store: community)
+            let created = GroupChallengesModel(groupID: group.id, backend: backend, store: community)
+            created.autoTick = autoTick
+            model = created
         }
         guard let model, !model.hasLoaded, !model.isLoading else { return }
         await Task { await model.refresh() }.value

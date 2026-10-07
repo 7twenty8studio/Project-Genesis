@@ -16,6 +16,9 @@ final class GroupChallengesModel {
     @ObservationIgnored private let store: CommunityStore
     @ObservationIgnored let calendar: Calendar
     @ObservationIgnored private let now: () -> Date
+    /// Told what's ticked, so finishing a chapter in the reader doesn't
+    /// tick it again.
+    @ObservationIgnored var autoTick: ChallengeAutoTick?
 
     init(groupID: UUID, backend: any GroupChallengeBackend, store: CommunityStore, calendar: Calendar = .current, now: @escaping () -> Date = { .now }) {
         self.groupID = groupID
@@ -93,16 +96,22 @@ final class GroupChallengesModel {
                 progress[challenge.id] = try await backend.progress(of: challenge.id)
             }
             errorMessage = nil
+            shareProgress()
         } catch {
             errorMessage = GroupChallengeError.from(error).localizedDescription
         }
         hasLoaded = true
     }
 
+    private func shareProgress() {
+        autoTick?.update(group: groupID, challenges: challenges, progress: progress, me: me)
+    }
+
     func loadProgress(_ challenge: GroupChallenge) async {
         do {
             progress[challenge.id] = try await backend.progress(of: challenge.id)
             errorMessage = nil
+            shareProgress()
         } catch {
             errorMessage = GroupChallengeError.from(error).localizedDescription
         }
@@ -130,6 +139,7 @@ final class GroupChallengesModel {
         apply(done, item: item, user: me, challenge: challenge)
         let saved = await run { try await backend.setCheckin(done, item: item, challenge: challenge.id) }
         if !saved { progress[challenge.id] = before }
+        shareProgress()
     }
 
     private func apply(_ done: Bool, item: Int, user: UUID, challenge: GroupChallenge) {

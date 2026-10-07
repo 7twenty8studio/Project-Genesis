@@ -4,6 +4,7 @@ import SwiftUI
 struct GroupsListView: View {
     @Environment(CommunityStore.self) private var community
     @Environment(AppRouter.self) private var router
+    @Environment(ChallengeAutoTick.self) private var challengeAutoTick
     @Environment(\.palette) private var palette
     @State private var sheet: Sheet?
 
@@ -66,6 +67,10 @@ struct GroupsListView: View {
             }
         }
         .refreshable { await community.refresh() }
+        // Joined or left a group: the reader's challenge ticks follow.
+        .onChange(of: community.groups.map(\.id)) {
+            Task { await challengeAutoTick.refresh(force: true) }
+        }
         .sheet(item: $sheet) { sheet in
             switch sheet {
             case .create:
