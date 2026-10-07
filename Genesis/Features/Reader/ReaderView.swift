@@ -135,8 +135,7 @@ struct ReaderView: View {
                         onCrossReferences: showCrossReferencesForSelection,
                         onExplain: explainSelection,
                         onMemorise: memoriseAction,
-                        onWordStudy: wordStudyAction,
-                        onOriginalWord: originalWordAction
+                        onWordStudy: wordStudyAction
                     )
                     .padding(.bottom, readerSafeArea.bottom + 8)
                     .frame(maxHeight: .infinity, alignment: .bottom)
@@ -203,6 +202,15 @@ struct ReaderView: View {
                 chapterID: reader.chapterID,
                 primary: reader.translation,
                 secondary: secondary,
+                topInset: layout.safeArea.top + 64,
+                bottomInset: layout.safeArea.bottom + 60
+            )
+        } else if showsOriginal, let wordStudy, let map = OriginalVersification.map(for: reader.translation.id) {
+            OriginalParallelView(
+                chapterID: reader.chapterID,
+                translation: reader.translation,
+                map: map,
+                wordStudy: wordStudy,
                 topInset: layout.safeArea.top + 64,
                 bottomInset: layout.safeArea.bottom + 60
             )
@@ -333,22 +341,17 @@ struct ReaderView: View {
         entitlements.allows(.premiumThemes)
     }
 
+    /// The Hebrew and Greek beside the Bible being read, when chosen as the
+    /// parallel Bible and the word data lines up with it.
+    private var showsOriginal: Bool {
+        reader.readsOriginalInParallel && wordStudy != nil && OriginalVersification.supports(reader.translation)
+    }
+
     /// Word Study in the selection bar. The word data follows English (KJV)
     /// verse numbering; the Spanish Bible numbers some verses differently.
     private var wordStudyAction: (() -> Void)? {
         guard wordStudy != nil, reader.translation.language == "en" else { return nil }
         return { studyWordsForSelection() }
-    }
-
-    /// The Hebrew or Greek behind a word of one selected verse. Glosses are
-    /// English, so English Bibles only.
-    private var originalWordAction: (() -> Void)? {
-        guard wordStudyAction != nil, reader.selection.count == 1, let verse = reader.selection.first else { return nil }
-        return {
-            let pressed = reader.pressedWord?.verse == verse ? reader.pressedWord : nil
-            reader.clearSelection()
-            sheet = .originalWord(verse, pressed)
-        }
     }
 
     /// Memorise in the selection bar, when Plans & Prayer is switched on.
@@ -433,8 +436,6 @@ struct ReaderView: View {
         switch sheet {
         case let .verseImage(card):
             VerseImageView(card: card)
-        case let .originalWord(verse, pressed):
-            OriginalWordView(verse: verse, pressed: pressed)
         case let .wordStudy(verse):
             VerseStudyView(verse: verse)
         case .chapterPicker:
@@ -490,7 +491,6 @@ enum ReaderSheet: Identifiable {
     case bibles
     case verseImage(VerseCard)
     case wordStudy(VerseID)
-    case originalWord(VerseID, PressedWord?)
 
     var id: String {
         switch self {
@@ -503,7 +503,6 @@ enum ReaderSheet: Identifiable {
         case let .note(note): "note-\(note.id)"
         case let .crossReferences(verse): "xref-\(verse.rawValue)"
         case let .wordStudy(verse): "words-\(verse.rawValue)"
-        case let .originalWord(verse, _): "original-\(verse.rawValue)"
         case let .premium(feature): "premium-\(feature.rawValue)"
         case let .study(passage, action): "study-\(passage.start.rawValue)-\(passage.end.rawValue)-\(action.rawValue)"
         }

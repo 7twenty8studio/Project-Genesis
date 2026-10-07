@@ -10,7 +10,8 @@ import SwiftUI
 /// Scriptures Hebrew Bible project (CC BY 4.0); Matthew Henry's Concise
 /// Commentary (public domain). Built by Tools/StudyData/build_wordstudy.py.
 /// It holds no English verse text: verses come from the Bible databases.
-/// Verse ids follow the KJV's versification.
+/// Verse ids follow the KJV's versification (`OriginalVersification` lines
+/// other Bibles up with it). Greek words carry TAGNT's edition notes.
 final class WordStudyRepository: Sendable {
     static let attribution = String(localized: "Hebrew and Greek words, glosses and Greek definitions from STEPBible.org, based on work at Tyndale House Cambridge (CC BY 4.0). Hebrew definitions from Strong's Hebrew Dictionary via the Open Scriptures Hebrew Bible project (CC BY 4.0). Commentary from Matthew Henry's Concise Commentary (public domain).")
 
@@ -30,19 +31,22 @@ final class WordStudyRepository: Sendable {
     /// The verse's Hebrew or Greek words, in the original order.
     func words(in verse: VerseID) throws -> [OriginalWord] {
         try database.query(
-            "SELECT w.position, f.text, f.translit, f.strongs, f.gloss, f.morph FROM word_forms w JOIN forms f ON f.id = w.form WHERE w.verse = ? ORDER BY w.position",
-            [.int(verse.rawValue)]
-        ) {
-            OriginalWord(
-                verse: verse,
-                position: $0.int(0),
-                text: $0.text(1),
-                transliteration: $0.text(2),
-                strongs: $0.isNull(3) ? nil : $0.text(3),
-                gloss: $0.text(4),
-                morphology: $0.text(5)
-            )
-        }
+            "\(Self.wordColumns) WHERE w.verse = ? ORDER BY w.position",
+            [.int(verse.rawValue)], map: Self.word
+        )
+    }
+
+    /// The words of several verses (KJV numbering) in one query, by verse,
+    /// each in the original order. Meant for a chapter's verses, which lie
+    /// close together; verses with no words are left out.
+    func words(inVerses verses: some Collection<VerseID>) throws -> [VerseID: [OriginalWord]] {
+        guard let low = verses.min(), let high = verses.max() else { return [:] }
+        let wanted = Set(verses)
+        let rows = try database.query(
+            "\(Self.wordColumns) WHERE w.verse BETWEEN ? AND ? ORDER BY w.verse, w.position",
+            [.int(low.rawValue), .int(high.rawValue)], map: Self.word
+        )
+        return Dictionary(grouping: rows.filter { wanted.contains($0.verse) }, by: \.verse)
     }
 
     // MARK: Lexicon
@@ -103,6 +107,25 @@ final class WordStudyRepository: Sendable {
 
     // MARK: Rows
 
+    private static let wordColumns = """
+        SELECT w.verse, w.position, f.text, f.translit, f.strongs, f.gloss, f.morph, e.kind
+        FROM word_forms w JOIN forms f ON f.id = w.form
+        LEFT JOIN editions e ON e.verse = w.verse AND e.position = w.position
+        """
+
+    private static func word(_ row: SQLiteDatabase.Row) -> OriginalWord {
+        OriginalWord(
+            verse: VerseID(rawValue: row.int(0)),
+            position: row.int(1),
+            text: row.text(2),
+            transliteration: row.text(3),
+            strongs: row.isNull(4) ? nil : row.text(4),
+            gloss: row.text(5),
+            morphology: row.text(6),
+            edition: row.isNull(7) ? nil : EditionDifference(rawValue: row.int(7))
+        )
+    }
+
     private static let commentaryColumns = "SELECT id, source, start_verse, end_verse, title, text FROM commentary"
 
     private static func entry(_ row: SQLiteDatabase.Row) -> LexiconEntry {
@@ -160,6 +183,9 @@ final class WordStudyRepository: Sendable {
 enum OriginalLanguage: String, Hashable, Sendable {
     case hebrew
     case greek
+
+    /// Hebrew (and Aramaic) is written right to left.
+    var isRightToLeft: Bool { self == .hebrew }
 }
 
 /// One Hebrew or Greek word of a verse, verbatim from the source text.
@@ -176,9 +202,23 @@ struct OriginalWord: Identifiable, Hashable, Sendable {
     let gloss: String
     /// Morphology code (ETCBC for Hebrew, Robinson style for Greek).
     let morphology: String
+    /// Greek words of the Textus Receptus that the Nestle-Aland text lacks
+    /// (TAGNT); nil when both have the word, and for Hebrew.
+    var edition: EditionDifference? = nil
 
     var id: Int { verse.rawValue * 100 + position }
     var language: OriginalLanguage { verse.book >= 40 ? .greek : .hebrew }
+}
+
+/// How a Greek word of the Textus Receptus (the Greek the KJV was translated
+/// from, which is the text WordStudy.sqlite keeps) stands in the Nestle-Aland
+/// text most modern Bibles translate. From TAGNT's word types.
+enum EditionDifference: Int, Hashable, Sendable {
+    /// Not in Nestle-Aland, and the difference changes the translation.
+    case textusReceptusOnly = 1
+    /// Nestle-Aland differs only slightly (spelling or form), not enough to
+    /// change a translation.
+    case minor = 2
 }
 
 /// A lexicon entry for one Strong's number.

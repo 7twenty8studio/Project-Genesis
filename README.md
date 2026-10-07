@@ -68,7 +68,9 @@ on. The study assistant's announcement is ready and waits for its switch.
   one-time TipKit hints instead of a tutorial.
 - **Word study and commentary** (Premium): the Hebrew or Greek behind each
   verse with Strong's definitions (STEPBible, Open Scriptures) and Matthew
-  Henry's Concise Commentary. **Handwritten journaling** with Apple Pencil or a
+  Henry's Concise Commentary. **Original parallel Bible**: the Hebrew and
+  Greek beside the KJV, WEB, ASV or Reina-Valera, verse by verse, optionally
+  interlinear; tap any word for its meaning and grammar. **Handwritten journaling** with Apple Pencil or a
   finger (free, synced), with reflection prompts. **Reading touches**: a large
   first letter for each chapter, optional page-turn sound and haptic.
 - **Global Reading Library**: Bibles grouped by language, most read first,

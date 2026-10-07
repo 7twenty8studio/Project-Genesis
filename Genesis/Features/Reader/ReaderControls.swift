@@ -18,6 +18,7 @@ struct ReaderControls: View {
     @Environment(StudyAssistant.self) private var assistant
     @Environment(AudioPlayerService.self) private var audio
     @Environment(FeaturePreferences.self) private var features
+    @Environment(\.wordStudy) private var wordStudy
 
     var body: some View {
         // Narrow reading areas (a phone, iPad Split View) get tighter buttons,
@@ -129,7 +130,20 @@ struct ReaderControls: View {
                     }
                     .accessibilityIdentifier("reader.parallel.\(other.id)")
                 }
-                if reader.parallelTranslation != nil {
+                if offersOriginal {
+                    Divider()
+                    Button {
+                        reader.readOriginalInParallel()
+                    } label: {
+                        if showsOriginal {
+                            Label("Original (Hebrew & Greek)", systemImage: "checkmark")
+                        } else {
+                            Text("Original (Hebrew & Greek)")
+                        }
+                    }
+                    .accessibilityIdentifier("reader.parallel.original")
+                }
+                if reader.parallelTranslation != nil || showsOriginal {
                     Divider()
                     Button("Stop Parallel Reading", systemImage: "rectangle") {
                         reader.readInParallel(with: nil)
@@ -141,7 +155,7 @@ struct ReaderControls: View {
             Button("More Bibles\u{2026}", systemImage: "arrow.down.circle", action: onMoreBibles)
                 .accessibilityIdentifier("reader.moreBibles")
         } label: {
-            Text(reader.parallelTranslation.map { "\(reader.translation.abbreviation) | \($0.abbreviation)" } ?? reader.translation.abbreviation)
+            Text(parallelName.map { "\(reader.translation.abbreviation) | \($0)" } ?? reader.translation.abbreviation)
                 .font(.subheadline.weight(.semibold))
                 .lineLimit(1)
                 .fixedSize()
@@ -150,6 +164,21 @@ struct ReaderControls: View {
         }
         .accessibilityLabel("Translation, \(reader.translation.name)")
         .accessibilityIdentifier("reader.translation")
+    }
+
+    /// The Hebrew and Greek can sit beside Bibles whose verse numbers are
+    /// lined up with the word data (`OriginalVersification`).
+    private var offersOriginal: Bool {
+        wordStudy != nil && OriginalVersification.supports(reader.translation)
+    }
+
+    private var showsOriginal: Bool {
+        offersOriginal && reader.readsOriginalInParallel
+    }
+
+    /// The second column's short name, if there is one.
+    private var parallelName: String? {
+        reader.parallelTranslation?.abbreviation ?? (showsOriginal ? String(localized: "Original") : nil)
     }
 
     private func bookmarkButton(width: CGFloat) -> some View {

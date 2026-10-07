@@ -4,9 +4,8 @@ import UIKit
 enum ReaderTextEvent {
     /// A tap; `location` is in the text view's coordinates, `verse` is the verse under it.
     case tap(location: CGPoint, bounds: CGRect, verse: VerseID?)
-    /// A long press on a verse, which starts verse selection; `word` is the
-    /// word under the finger, for looking up its Hebrew or Greek.
-    case longPress(verse: VerseID, word: PressedWord?)
+    /// A long press on a verse, which starts verse selection.
+    case longPress(verse: VerseID)
 }
 
 /// Displays reader text with TextKit 1 (matching `Paginator`) and reports taps
@@ -67,35 +66,6 @@ final class ReaderTextView: UITextView {
         return VerseID(rawValue: raw)
     }
 
-    /// The word drawn at a point, with its verse and which copy of it in the
-    /// verse it is (counted within this view's text).
-    func word(at point: CGPoint, in verse: VerseID) -> PressedWord? {
-        guard textStorage.length > 0 else { return nil }
-        let location = CGPoint(x: point.x - textContainerInset.left, y: point.y - textContainerInset.top)
-        let glyphIndex = layoutManager.glyphIndex(for: location, in: textContainer)
-        let index = layoutManager.characterIndexForGlyph(at: glyphIndex)
-        let text = textStorage.string as NSString
-        guard index < text.length, Self.isWordCharacter(text.character(at: index)) else { return nil }
-        var start = index
-        while start > 0, Self.isWordCharacter(text.character(at: start - 1)) { start -= 1 }
-        var end = index + 1
-        while end < text.length, Self.isWordCharacter(text.character(at: end)) { end += 1 }
-        let word = text.substring(with: NSRange(location: start, length: end - start))
-            .trimmingCharacters(in: CharacterSet(charactersIn: "'\u{2019}"))
-        guard !word.isEmpty else { return nil }
-        // Earlier copies of the word in the same verse.
-        var verseRange = NSRange()
-        _ = textStorage.attribute(.verseID, at: index, longestEffectiveRange: &verseRange, in: NSRange(location: 0, length: textStorage.length))
-        let before = text.substring(with: NSRange(location: verseRange.location, length: max(0, start - verseRange.location)))
-        let occurrence = VerseWords.ranges(in: before).filter { before[$0].caseInsensitiveCompare(word) == .orderedSame }.count
-        return PressedWord(verse: verse, text: word, occurrence: occurrence)
-    }
-
-    private static func isWordCharacter(_ unit: unichar) -> Bool {
-        guard let scalar = Unicode.Scalar(unit) else { return false }
-        return CharacterSet.letters.contains(scalar) || unit == 0x27 || unit == 0x2019
-    }
-
     /// The first verse whose text is visible, for remembering the position.
     func firstVisibleVerse() -> VerseID? {
         guard textStorage.length > 0 else { return nil }
@@ -125,8 +95,7 @@ final class ReaderTextView: UITextView {
     }
 
     @objc private func handleLongPress(_ recognizer: UILongPressGestureRecognizer) {
-        let location = recognizer.location(in: self)
-        guard recognizer.state == .began, let verse = verse(at: location) else { return }
-        onEvent?(.longPress(verse: verse, word: word(at: location, in: verse)))
+        guard recognizer.state == .began, let verse = verse(at: recognizer.location(in: self)) else { return }
+        onEvent?(.longPress(verse: verse))
     }
 }

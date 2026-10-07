@@ -25,8 +25,7 @@ struct VerseStudyView: View {
 }
 
 /// The words and commentary of `VerseStudyView`, without its navigation
-/// stack, so Original Word can show them too. The stack that holds it
-/// handles `LexiconRoute`.
+/// stack. The stack that holds it handles `LexiconRoute`.
 struct VerseStudyList: View {
     let verse: VerseID
 

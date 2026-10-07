@@ -105,7 +105,7 @@ Xcode's local test signatures.
 | Prayer journal and reading plans (no limits) | Themes: Cream, Parchment, Midnight, Sage, Starlight and the seasons |
 | Cloud backup and sync with a free account | Every study tool, up to 30 new answers a day |
 | Groups, with the shared plan and progress | Family trees, the Bible map and journeys, the reader's Context panel |
-| Explore: the timeline and people | Word study: Hebrew and Greek with Strong's, Matthew Henry's commentary |
+| Explore: the timeline and people | Word study: Hebrew and Greek with Strong's, the Original parallel Bible (first verses of each chapter free), Matthew Henry's commentary |
 | Handwritten notes and journal prompts | |
 | Themes: Auto, Paper, Sepia, Slate, High Contrast, Night; night reading (switches to Night at bedtime) | |
 | 3 passage explanations a day (with a free account) | Reading insights and Year in Review stats |

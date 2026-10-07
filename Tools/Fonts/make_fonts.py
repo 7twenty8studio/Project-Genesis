@@ -2,16 +2,18 @@
 """Builds the reader's Literata, EB Garamond, Crimson Pro and Source Serif 4
 fonts (SIL Open Font License) from Google Fonts' variable fonts: static
 Regular, SemiBold and Italic with clean PostScript names, written to
-Genesis/Resources/Fonts.
+Genesis/Resources/Fonts. Also Noto Serif Hebrew Regular, for the Hebrew Old
+Testament (Original parallel Bible): it draws every vowel point and
+cantillation mark in WordStudy.sqlite. Greek uses EB Garamond (polytonic).
 
     git clone --depth 1 --filter=blob:none --sparse https://github.com/google/fonts /tmp/gfonts
-    (cd /tmp/gfonts && git sparse-checkout set ofl/literata ofl/ebgaramond ofl/crimsonpro ofl/sourceserif4)
+    (cd /tmp/gfonts && git sparse-checkout set ofl/literata ofl/ebgaramond ofl/crimsonpro ofl/sourceserif4 ofl/notoserifhebrew)
     python3 Tools/Fonts/make_fonts.py /tmp/gfonts/ofl
 
 Families whose source isn't checked out are skipped. Needs fontTools. None
 of these families declares a Reserved Font Name, so the instances keep their
 names. Copy each OFL.txt alongside (Literata-OFL.txt, EBGaramond-OFL.txt,
-CrimsonPro-OFL.txt, SourceSerif4-OFL.txt).
+CrimsonPro-OFL.txt, SourceSerif4-OFL.txt, NotoSerifHebrew-OFL.txt).
 
 Spectral (Premium) is not built here: Google Fonts ships it as static files,
 copied unmodified (Spectral-Regular, -SemiBold, -Italic, plus
@@ -39,6 +41,7 @@ JOBS = [
     ("sourceserif4/SourceSerif4[opsz,wght].ttf", {"opsz": 20, "wght": 400}, "SourceSerif4-Regular", ("Source Serif 4", "Regular", "Source Serif 4", "Regular")),
     ("sourceserif4/SourceSerif4[opsz,wght].ttf", {"opsz": 20, "wght": 600}, "SourceSerif4-SemiBold", ("Source Serif 4 SemiBold", "Regular", "Source Serif 4", "SemiBold")),
     ("sourceserif4/SourceSerif4-Italic[opsz,wght].ttf", {"opsz": 20, "wght": 400}, "SourceSerif4-Italic", ("Source Serif 4", "Italic", "Source Serif 4", "Italic")),
+    ("notoserifhebrew/NotoSerifHebrew[wdth,wght].ttf", {"wdth": 100, "wght": 400}, "NotoSerifHebrew-Regular", ("Noto Serif Hebrew", "Regular", "Noto Serif Hebrew", "Regular")),
 ]
 
 

@@ -41,7 +41,7 @@ enum WhatsNewCatalog {
             WhatsNewItem(
                 systemImage: "character.book.closed",
                 title: String(localized: "The original word"),
-                detail: String(localized: "Press and hold a word to see the Hebrew or Greek behind it, with its meaning.")
+                detail: String(localized: "Read the Hebrew and Greek beside your Bible, word by word, and tap any word for its meaning.")
             ),
         ]
     )

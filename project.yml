@@ -107,6 +107,7 @@ targets:
           - Spectral-Regular.ttf
           - Spectral-SemiBold.ttf
           - Spectral-Italic.ttf
+          - NotoSerifHebrew-Regular.ttf
         # Values come from Config/Secrets.xcconfig (not committed).
         GenesisSupabaseURL: $(SUPABASE_URL)
         GenesisSupabaseAnonKey: $(SUPABASE_ANON_KEY)

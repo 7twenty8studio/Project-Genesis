@@ -15,8 +15,6 @@ final class ReaderViewModel {
     private(set) var navigationToken = 0
 
     var selection: Set<VerseID> = []
-    /// The word long-pressed to start or extend the selection (for Original Word).
-    private(set) var pressedWord: PressedWord?
     /// The verse the study panel is about; falls back to the top of the page.
     var studyVerse: VerseID?
     var showsControls = true
@@ -59,6 +57,18 @@ final class ReaderViewModel {
     func readInParallel(with translation: Translation?) {
         parallelTranslationID = translation?.id
         UserDefaults.standard.set(translation?.id, forKey: "reader.parallel")
+        clearSelection()
+    }
+
+    /// The second column holds the Hebrew and Greek (`OriginalParallelView`)
+    /// rather than another Bible.
+    static let originalParallelID = "original"
+
+    var readsOriginalInParallel: Bool { parallelTranslationID == Self.originalParallelID }
+
+    func readOriginalInParallel() {
+        parallelTranslationID = Self.originalParallelID
+        UserDefaults.standard.set(Self.originalParallelID, forKey: "reader.parallel")
         clearSelection()
     }
 
@@ -194,12 +204,6 @@ final class ReaderViewModel {
             selection.insert(verse)
         }
         decorationsVersion += 1
-    }
-
-    /// A long press: toggles the verse and remembers the word under the finger.
-    func press(_ verse: VerseID, word: PressedWord?) {
-        toggleSelection(verse)
-        pressedWord = selection.contains(verse) ? word : nil
     }
 
     func clearSelection() {

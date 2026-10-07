@@ -815,6 +815,16 @@
         }
       }
     },
+    "Absolute": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Absoluto"
+          }
+        }
+      }
+    },
     "Abusive or hateful": {
       "localizations": {
         "es": {
@@ -861,6 +871,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cuenta, sesión iniciada"
+          }
+        }
+      }
+    },
+    "Accusative": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acusativo"
+          }
+        }
+      }
+    },
+    "Active": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activa"
+          }
+        }
+      }
+    },
+    "Active participle": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Participio activo"
           }
         }
       }
@@ -1147,16 +1187,6 @@
         }
       }
     },
-    "All words in this verse": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Todas las palabras de este versículo"
-          }
-        }
-      }
-    },
     "Also %@": {
       "comment": "Other names for a place",
       "localizations": {
@@ -1340,6 +1370,16 @@
         }
       }
     },
+    "Aorist": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aoristo"
+          }
+        }
+      }
+    },
     "App Icon": {
       "localizations": {
         "es": {
@@ -1406,6 +1446,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aprobar nuevos miembros"
+          }
+        }
+      }
+    },
+    "Aramaic": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arameo"
           }
         }
       }
@@ -1885,6 +1935,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cancelar"
+          }
+        }
+      }
+    },
+    "Case": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caso"
           }
         }
       }
@@ -2393,16 +2453,6 @@
         }
       }
     },
-    "Closest match": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Coincidencia más cercana"
-          }
-        }
-      }
-    },
     "Cloud Sync": {
       "localizations": {
         "es": {
@@ -2419,6 +2469,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "La sincronización en la nube no está configurada en esta versión."
+          }
+        }
+      }
+    },
+    "Cohortative": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cohortativo"
           }
         }
       }
@@ -2459,6 +2519,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Comentarios"
+          }
+        }
+      }
+    },
+    "Common": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Común"
           }
         }
       }
@@ -2514,12 +2584,32 @@
         }
       }
     },
+    "Conjunctive imperfect": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imperfecto conjuntivo"
+          }
+        }
+      }
+    },
     "Connect to the internet to see more Bibles.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Conéctate a internet para ver más Biblias."
+          }
+        }
+      }
+    },
+    "Construct": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Constructo"
           }
         }
       }
@@ -2702,6 +2792,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Las fechas son aproximadas y siguen una cronología tradicional. Los acontecimientos anteriores a Abraham se muestran en orden, sin fechas."
+          }
+        }
+      }
+    },
+    "Dative": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dativo"
           }
         }
       }
@@ -2926,12 +3026,32 @@
         }
       }
     },
+    "Determined": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Determinado"
+          }
+        }
+      }
+    },
     "Device voice": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Voz del dispositivo"
+          }
+        }
+      }
+    },
+    "Dictionary form": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Forma de diccionario"
           }
         }
       }
@@ -3037,6 +3157,16 @@
         }
       }
     },
+    "Dotted words are in the Textus Receptus, the Greek the KJV translates, but not in the Nestle-Aland text most modern Bibles use.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las palabras subrayadas con puntos están en el Textus Receptus, el griego que traduce la KJV, pero no en el texto Nestle-Aland que usa la mayoría de las Biblias modernas."
+          }
+        }
+      }
+    },
     "Download": {
       "localizations": {
         "es": {
@@ -3103,6 +3233,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Las descargas no están configuradas en esta versión."
+          }
+        }
+      }
+    },
+    "Dual": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dual"
           }
         }
       }
@@ -3624,6 +3764,16 @@
         }
       }
     },
+    "Feminine": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Femenino"
+          }
+        }
+      }
+    },
     "Fill the Gaps": {
       "comment": "Memorise game",
       "localizations": {
@@ -3743,6 +3893,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mencionado por primera vez en %@"
+          }
+        }
+      }
+    },
+    "First person": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primera persona"
           }
         }
       }
@@ -3918,6 +4078,16 @@
         }
       }
     },
+    "Form": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Forma"
+          }
+        }
+      }
+    },
     "Formal language": {
       "comment": "Reading level of a Bible",
       "localizations": {
@@ -3990,12 +4160,12 @@
         }
       }
     },
-    "Full definition and every verse": {
+    "Future": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Definición completa y todos los versículos"
+            "value": "Futuro"
           }
         }
       }
@@ -4006,6 +4176,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Juegos"
+          }
+        }
+      }
+    },
+    "Gender": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Género"
           }
         }
       }
@@ -4087,6 +4267,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Genesis, a tu manera"
+          }
+        }
+      }
+    },
+    "Genitive": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genitivo"
           }
         }
       }
@@ -4233,12 +4423,32 @@
         }
       }
     },
+    "Grammar": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gramática"
+          }
+        }
+      }
+    },
     "Greek": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Griego"
+          }
+        }
+      }
+    },
+    "Greek editions": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ediciones griegas"
           }
         }
       }
@@ -4749,6 +4959,26 @@
         }
       }
     },
+    "Imperative": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imperativo"
+          }
+        }
+      }
+    },
+    "Imperfect": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imperfecto"
+          }
+        }
+      }
+    },
     "In Your Memorise List": {
       "localizations": {
         "es": {
@@ -4789,12 +5019,12 @@
         }
       }
     },
-    "In this verse: %@": {
+    "In this verse": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "En este versículo: %@"
+            "value": "En este versículo"
           }
         }
       }
@@ -4805,6 +5035,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Incluir detalles de la app y del dispositivo"
+          }
+        }
+      }
+    },
+    "Indicative": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Indicativo"
           }
         }
       }
@@ -4840,6 +5080,36 @@
         }
       }
     },
+    "Infinitive": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Infinitivo"
+          }
+        }
+      }
+    },
+    "Infinitive absolute": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Infinitivo absoluto"
+          }
+        }
+      }
+    },
+    "Infinitive construct": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Infinitivo constructo"
+          }
+        }
+      }
+    },
     "Ink": {
       "comment": "Verse image text colour",
       "localizations": {
@@ -4867,6 +5137,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Interjección"
+          }
+        }
+      }
+    },
+    "Interlinear": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Interlineal"
+          }
+        }
+      }
+    },
+    "Interrogative": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Interrogativo"
           }
         }
       }
@@ -5005,6 +5295,16 @@
         }
       }
     },
+    "Joined to": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unida a"
+          }
+        }
+      }
+    },
     "Journal": {
       "localizations": {
         "es": {
@@ -5021,6 +5321,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Recorridos"
+          }
+        }
+      }
+    },
+    "Jussive": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yusivo"
           }
         }
       }
@@ -5357,6 +5667,16 @@
         }
       }
     },
+    "Leningrad Codex (STEPBible TAHOT)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Códice de Leningrado (STEPBible TAHOT)"
+          }
+        }
+      }
+    },
     "Level progress": {
       "localizations": {
         "es": {
@@ -5384,16 +5704,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Con licencia"
-          }
-        }
-      }
-    },
-    "Likely": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Probable"
           }
         }
       }
@@ -5779,12 +6089,12 @@
         }
       }
     },
-    "Matched by each word's English gloss, so treat this as a guide.": {
+    "Masculine": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Se busca por la glosa en inglés de cada palabra, así que tómalo como una orientación."
+            "value": "Masculino"
           }
         }
       }
@@ -5815,6 +6125,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mateo, Marcos, Lucas y Juan: la vida de Jesús en un mes."
+          }
+        }
+      }
+    },
+    "Meaning": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Significado"
           }
         }
       }
@@ -5932,6 +6252,46 @@
         }
       }
     },
+    "Middle": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Media"
+          }
+        }
+      }
+    },
+    "Middle (deponent)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Media (deponente)"
+          }
+        }
+      }
+    },
+    "Middle or passive": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Media o pasiva"
+          }
+        }
+      }
+    },
+    "Middle or passive (deponent)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Media o pasiva (deponente)"
+          }
+        }
+      }
+    },
     "Midnight": {
       "comment": "Reader theme name",
       "localizations": {
@@ -6041,6 +6401,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mensual"
+          }
+        }
+      }
+    },
+    "Mood": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modo"
           }
         }
       }
@@ -6296,6 +6666,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Azul marino"
+          }
+        }
+      }
+    },
+    "Neuter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neutro"
           }
         }
       }
@@ -6603,16 +6983,6 @@
         }
       }
     },
-    "No close match for “%@”. Matching is approximate, so every word of the verse is listed below.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No hay una coincidencia cercana para «%@». La búsqueda es aproximada, así que abajo tienes todas las palabras del versículo."
-          }
-        }
-      }
-    },
     "No cross references for this verse.": {
       "localizations": {
         "es": {
@@ -6779,6 +7149,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "No se encontraron versículos en la %@. Prueba con menos palabras o con otra ortografía."
+          }
+        }
+      }
+    },
+    "Nominative": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nominativo"
           }
         }
       }
@@ -6974,6 +7354,16 @@
         }
       }
     },
+    "Number": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Número"
+          }
+        }
+      }
+    },
     "OK": {
       "localizations": {
         "es": {
@@ -7146,6 +7536,16 @@
         }
       }
     },
+    "Optative": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Optativo"
+          }
+        }
+      }
+    },
     "Options for %@": {
       "localizations": {
         "es": {
@@ -7197,12 +7597,22 @@
         }
       }
     },
-    "Original Word": {
+    "Original": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Palabra original"
+            "value": "Original"
+          }
+        }
+      }
+    },
+    "Original (Hebrew & Greek)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Original (hebreo y griego)"
           }
         }
       }
@@ -7401,6 +7811,26 @@
         }
       }
     },
+    "Part of speech": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Categoría gramatical"
+          }
+        }
+      }
+    },
+    "Participle": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Participio"
+          }
+        }
+      }
+    },
     "Particle": {
       "localizations": {
         "es": {
@@ -7427,6 +7857,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pasaje (opcional), p. ej., Salmo 23"
+          }
+        }
+      }
+    },
+    "Passive": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasiva"
+          }
+        }
+      }
+    },
+    "Passive (deponent)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasiva (deponente)"
+          }
+        }
+      }
+    },
+    "Passive participle": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Participio pasivo"
           }
         }
       }
@@ -7533,6 +7993,26 @@
         }
       }
     },
+    "Perfect": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perfecto"
+          }
+        }
+      }
+    },
+    "Person": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Persona"
+          }
+        }
+      }
+    },
     "Personal": {
       "localizations": {
         "es": {
@@ -7550,26 +8030,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Foto"
-          }
-        }
-      }
-    },
-    "Pick a word to see its Greek": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Elige una palabra para ver su griego"
-          }
-        }
-      }
-    },
-    "Pick a word to see its Hebrew": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Elige una palabra para ver su hebreo"
           }
         }
       }
@@ -7733,6 +8193,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Escríbelo de otra forma. Algunas palabras no están permitidas en Genesis."
+          }
+        }
+      }
+    },
+    "Pluperfect": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pluscuamperfecto"
+          }
+        }
+      }
+    },
+    "Plural": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plural"
           }
         }
       }
@@ -8030,22 +8510,22 @@
         }
       }
     },
+    "Present": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Presente"
+          }
+        }
+      }
+    },
     "Press and hold a verse to highlight it, add a note, copy or share it.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Mantén presionado un versículo para resaltarlo, añadir una nota, copiarlo o compartirlo."
-          }
-        }
-      }
-    },
-    "Press and hold a word to see the Hebrew or Greek behind it, with its meaning.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mantén pulsada una palabra para ver el hebreo o el griego que hay detrás, con su significado."
           }
         }
       }
@@ -8126,6 +8606,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pronombre"
+          }
+        }
+      }
+    },
+    "Pronoun suffix": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sufijo pronominal"
           }
         }
       }
@@ -8433,6 +8923,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lean algo cada día hasta que termine el desafío."
+          }
+        }
+      }
+    },
+    "Read the Hebrew and Greek beside every verse, word by word, with Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Premium, lee el hebreo y el griego junto a cada versículo, palabra por palabra."
+          }
+        }
+      }
+    },
+    "Read the Hebrew and Greek beside your Bible, word by word, and tap any word for its meaning.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee el hebreo y el griego junto a tu Biblia, palabra por palabra, y toca cualquier palabra para ver su significado."
           }
         }
       }
@@ -9480,6 +9990,16 @@
         }
       }
     },
+    "Second person": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segunda persona"
+          }
+        }
+      }
+    },
     "Security": {
       "localizations": {
         "es": {
@@ -9560,12 +10080,12 @@
         }
       }
     },
-    "See the definition of the Hebrew or Greek behind any word, and where else it's used, with Premium.": {
+    "See what every Hebrew and Greek word means, its grammar and where else it's used, with Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Con Premium, consulta la definición del hebreo o el griego que hay detrás de cualquier palabra y dónde más se usa."
+            "value": "Con Premium, descubre qué significa cada palabra hebrea y griega, su gramática y dónde más se usa."
           }
         }
       }
@@ -9658,6 +10178,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sepia"
+          }
+        }
+      }
+    },
+    "Sequential imperfect": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imperfecto consecutivo"
+          }
+        }
+      }
+    },
+    "Sequential perfect": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perfecto consecutivo"
           }
         }
       }
@@ -9932,6 +10472,16 @@
         }
       }
     },
+    "Shows each word's transliteration and meaning beneath it": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Muestra debajo de cada palabra su transliteración y su significado"
+          }
+        }
+      }
+    },
     "Shows just the Bible, notes and highlights": {
       "localizations": {
         "es": {
@@ -10098,6 +10648,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Iniciaste sesión con Apple? Con una contraseña también podrás entrar con tu correo."
+          }
+        }
+      }
+    },
+    "Singular": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Singular"
           }
         }
       }
@@ -10450,12 +11010,32 @@
         }
       }
     },
+    "State": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estado"
+          }
+        }
+      }
+    },
     "Stays close to the original wording but smooths it where a literal rendering would be hard to follow.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Se mantiene cerca de las palabras originales, pero las suaviza donde una traducción literal sería difícil de seguir."
+          }
+        }
+      }
+    },
+    "Stem": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tema verbal"
           }
         }
       }
@@ -10561,6 +11141,16 @@
         }
       }
     },
+    "Strong's number": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Número Strong"
+          }
+        }
+      }
+    },
     "Study": {
       "comment": "Note kind",
       "localizations": {
@@ -10638,6 +11228,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Estudiar este capítulo"
+          }
+        }
+      }
+    },
+    "Subjunctive": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subjuntivo"
           }
         }
       }
@@ -10775,26 +11375,6 @@
         }
       }
     },
-    "Tap a word, or a few words, to see the Greek behind them.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Toca una palabra, o unas pocas, para ver el griego que hay detrás."
-          }
-        }
-      }
-    },
-    "Tap a word, or a few words, to see the Hebrew behind them.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Toca una palabra, o unas pocas, para ver el hebreo que hay detrás."
-          }
-        }
-      }
-    },
     "Tap the bookmark in the reader to mark your place.": {
       "localizations": {
         "es": {
@@ -10852,6 +11432,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cuéntanos qué te parece"
+          }
+        }
+      }
+    },
+    "Tense": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiempo"
           }
         }
       }
@@ -10922,6 +11512,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Temas de papel con textura y de temporada, Noche estrellada para leer de noche, letras iniciales iluminadas, tres tipos de letra más, iconos especiales y una cinta al terminar un capítulo."
+          }
+        }
+      }
+    },
+    "Textus Receptus (STEPBible TAGNT)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Textus Receptus (STEPBible TAGNT)"
           }
         }
       }
@@ -11102,6 +11702,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Las palabras hebreas y griegas de cada versículo, con las definiciones de Strong, y el comentario de Matthew Henry sobre toda la Biblia."
+          }
+        }
+      }
+    },
+    "The Nestle-Aland text most modern Bibles use has this word in a slightly different spelling or form, which doesn't change the meaning.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El texto Nestle-Aland que usa la mayoría de las Biblias modernas tiene esta palabra con una ortografía o forma algo distinta, que no cambia el significado."
           }
         }
       }
@@ -11426,6 +12036,16 @@
         }
       }
     },
+    "Third person": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tercera persona"
+          }
+        }
+      }
+    },
     "This challenge has ended.": {
       "localizations": {
         "es": {
@@ -11572,6 +12192,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Esta herramienta de estudio es parte de Genesis Premium."
+          }
+        }
+      }
+    },
+    "This word is in the Textus Receptus, the Greek the KJV translates, but not in the Nestle-Aland text most modern Bibles use.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta palabra está en el Textus Receptus, el griego que traduce la KJV, pero no en el texto Nestle-Aland que usa la mayoría de las Biblias modernas."
           }
         }
       }
@@ -12287,6 +12917,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Versículos para empezar"
+          }
+        }
+      }
+    },
+    "Vocative": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vocativo"
           }
         }
       }
@@ -13781,36 +14421,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "año"
-          }
-        }
-      }
-    },
-    "“%@” in Greek": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "«%@» en griego"
-          }
-        }
-      }
-    },
-    "“%@” in Hebrew": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "«%@» en hebreo"
-          }
-        }
-      }
-    },
-    "“%@” in the original": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "«%@» en el original"
           }
         }
       }

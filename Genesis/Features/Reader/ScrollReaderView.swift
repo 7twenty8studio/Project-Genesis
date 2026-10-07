@@ -127,8 +127,8 @@ struct ScrollReaderView: UIViewRepresentable {
 
         func handle(_ event: ReaderTextEvent) {
             switch event {
-            case let .longPress(verse, word):
-                viewModel.press(verse, word: word)
+            case let .longPress(verse):
+                viewModel.toggleSelection(verse)
             case let .tap(_, _, verse):
                 if viewModel.isSelecting {
                     if let verse { viewModel.toggleSelection(verse) } else { viewModel.clearSelection() }

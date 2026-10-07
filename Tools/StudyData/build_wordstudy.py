@@ -13,7 +13,15 @@ Sources and licences
   CC BY 4.0, data created by www.STEPBible.org based on work at Tyndale House
   Cambridge. Hebrew follows the Leningrad codex with the Qere (as the KJV
   does); words STEPBible adds from the LXX ("X") are left out. Greek keeps
-  the words of the Textus Receptus (edition "TR", the KJV's Greek).
+  the words of the Textus Receptus (edition "TR", the KJV's Greek), spelled
+  as TAGNT spells them (NA28's spelling where NA28 has the word).
+- Editions (table `editions`): TAGNT's word type says which editions have
+  each word: N = Nestle-Aland (the Greek of most modern Bibles), K = the
+  KJV's Textus Receptus, O = others; lower case = a difference too minor to
+  change a translation. Kept words without N (in the Textus Receptus but not
+  in Nestle-Aland) are listed: kind 1 for K (it changes the translation),
+  kind 2 for k (spelling or form only). Words only in Nestle-Aland aren't in
+  `word_forms` at all, since only the Textus Receptus is kept.
 - Lexicon, Greek: STEPBible TBESG (Translators Brief lexicon of Extended
   Strongs for Greek), CC BY 4.0; its definitions are Abbott-Smith (1922) and
   Middle Liddell (1889), both public domain.
@@ -148,7 +156,7 @@ def hebrew_words(step):
             tag = root.group(1) if root else re.split(r"[/\\+]", tags)[0]
             strongs = normalise_strongs(tag.split("+")[0])
             order += 1
-            yield verse_id(book, chapter, verse), order, text, translit, strongs, gloss, fields[5].strip()
+            yield verse_id(book, chapter, verse), order, text, translit, strongs, gloss, fields[5].strip(), None
 
 
 def greek_words(step):
@@ -173,7 +181,16 @@ def greek_words(step):
             strongs = normalise_strongs(parts[0].split("=")[0])
             morph = " + ".join(part.split("=", 1)[1] for part in parts if "=" in part)
             order += 1
-            yield verse_id(book, chapter, verse), order, text.strip(), translit.strip(), strongs, gloss, morph
+            yield verse_id(book, chapter, verse), order, text.strip(), translit.strip(), strongs, gloss, morph, edition_kind(ref["type"])
+
+
+def edition_kind(word_type):
+    """TAGNT word type -> editions kind: None when Nestle-Aland has the word
+    too, 1 for a Textus Receptus word that changes the translation (K), 2 for
+    a minor one (k)."""
+    if "N" in word_type:
+        return None
+    return 1 if "K" in word_type else 2
 
 
 # MARK: Lexicon
@@ -285,15 +302,19 @@ def main():
     kjv.close()
 
     # Words, renumbered 1... within each (KJV) verse in source order.
-    words, positions = [], collections.Counter()
+    words, positions, editions = [], collections.Counter(), []
     for row in list(hebrew_words(step)) + list(greek_words(step)):
-        verse, _, text, translit, strongs, gloss, morph = row
+        verse, _, text, translit, strongs, gloss, morph, edition = row
         positions[verse] += 1
         words.append((verse, positions[verse], text, translit or None, strongs, gloss or None, morph or None))
+        if edition:
+            editions.append((verse, positions[verse], edition))
     outside = sorted({w[0] for w in words} - kjv_verses)
     assert not outside, f"words outside the KJV versification: {outside[:20]}"
     missing = sorted(kjv_verses - {w[0] for w in words})
     print(f"words: {len(words)}; KJV verses without words: {len(missing)} {missing[:20]}")
+    print(f"editions: {len(editions)} Textus Receptus words not in Nestle-Aland "
+          f"({sum(1 for e in editions if e[2] == 1)} change the translation)")
 
     # Lexicon.
     tbesh = step_lexicon(glob.glob(os.path.join(step, "Lexicons", "TBESH *.txt"))[0], "hebrew")
@@ -362,6 +383,14 @@ def main():
             form INTEGER NOT NULL REFERENCES forms(id),
             PRIMARY KEY (verse, position)
         ) WITHOUT ROWID;
+        -- Greek words in the Textus Receptus but not in Nestle-Aland (TAGNT word
+        -- types without N): kind 1 changes the translation (K), 2 is minor (k).
+        CREATE TABLE editions (
+            verse INTEGER NOT NULL,
+            position INTEGER NOT NULL,
+            kind INTEGER NOT NULL,
+            PRIMARY KEY (verse, position)
+        ) WITHOUT ROWID;
         CREATE VIEW words AS
             SELECT w.verse, w.position, f.text, f.translit, f.strongs, f.gloss, f.morph
             FROM word_forms w JOIN forms f ON f.id = w.form;
@@ -402,6 +431,7 @@ def main():
         forms.setdefault(word[2:], len(forms) + 1)
     db.executemany("INSERT INTO forms VALUES (?, ?, ?, ?, ?, ?)", [(i, *f) for f, i in forms.items()])
     db.executemany("INSERT INTO word_forms VALUES (?, ?, ?)", [(w[0], w[1], forms[w[2:]]) for w in words])
+    db.executemany("INSERT INTO editions VALUES (?, ?, ?)", sorted(editions))
     db.executemany("INSERT INTO lexicon VALUES (?, ?, ?, ?, ?, ?, ?, ?)", sorted(lexicon))
     db.executemany("INSERT INTO occurrences VALUES (?, ?, ?)", [
         (tag, count, delta_list(sorted(verses_by_strongs[tag]))) for tag, count in sorted(occurrences.items())
@@ -424,6 +454,7 @@ def main():
         ("commentary_license", "Public domain"),
         ("attribution", "Original-language data created by www.STEPBible.org based on work at Tyndale House Cambridge (CC BY 4.0). Hebrew definitions from Strong's Hebrew Dictionary, Open Scriptures Hebrew Bible project (CC BY 4.0). Commentary: Matthew Henry's Concise Commentary (public domain)."),
         ("versification", "KJV"),
+        ("editions_source", "TAGNT word types (N = Nestle-Aland, K = Textus Receptus)"),
     ])
     db.commit()
     db.execute("VACUUM")

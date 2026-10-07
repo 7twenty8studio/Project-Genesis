@@ -153,19 +153,62 @@ final class Phase3UITests: GenesisUITestCase {
         XCTAssertTrue(app.buttons["teaser.unlock"].waitForExistence(timeout: Genesis.timeout), "…and the way to unlock the rest")
     }
 
+    // MARK: Original parallel Bible
+
+    /// Chooses "Original (Hebrew & Greek)" as the parallel Bible.
     @MainActor
-    func testOriginalWordOpensFromOneVerse() {
-        let app = launchPremium(verse: john316)
-        XCTAssertTrue(Genesis.selectVerse(app), "A verse can be selected")
-        let original = app.buttons["selection.originalWord"]
-        XCTAssertTrue(original.waitForExistence(timeout: Genesis.timeout), "Original Word is offered for one verse of an English Bible")
+    private func readOriginalInParallel(_ app: XCUIApplication) {
+        let translation = app.buttons["reader.translation"]
+        XCTAssertTrue(translation.waitForExistence(timeout: Genesis.launchTimeout))
+        Genesis.openMenu(translation, expecting: app.buttons["reader.parallelMenu"])
+        app.buttons["reader.parallelMenu"].tap()
+        let original = app.buttons["reader.parallel.original"]
+        XCTAssertTrue(original.waitForExistence(timeout: Genesis.timeout), "The Hebrew and Greek are offered as a parallel Bible")
         original.tap()
-        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "originalWord.verse").firstMatch.waitForExistence(timeout: Genesis.timeout), "The verse is shown to pick words from")
-        let allWords = app.descendants(matching: .any).matching(identifier: "originalWord.allWords").firstMatch
-        Genesis.scrollIntoView(allWords, in: app)
-        XCTAssertTrue(allWords.waitForExistence(timeout: Genesis.timeout), "Every word of the verse is a tap away")
-        allWords.tap()
-        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "wordStudy.word").firstMatch.waitForExistence(timeout: Genesis.timeout), "The verse's original words are listed")
+        let header = app.descendants(matching: .any)["reader.parallel.originalHeader"]
+        XCTAssertTrue(header.waitForExistence(timeout: Genesis.timeout), "The original sits beside the Bible")
+    }
+
+    /// Interlinear on, then a word opens its sheet.
+    @MainActor
+    private func tapInterlinearWord(_ app: XCUIApplication) {
+        let interlinear = app.buttons["original.interlinear"]
+        XCTAssertTrue(interlinear.waitForExistence(timeout: Genesis.timeout))
+        interlinear.tap()
+        let word = app.buttons.matching(identifier: "original.word").firstMatch
+        XCTAssertTrue(word.waitForExistence(timeout: Genesis.timeout), "Each word stands on its own with its gloss")
+        word.tap()
+        XCTAssertTrue(app.descendants(matching: .any)["originalWord.text"].waitForExistence(timeout: Genesis.timeout), "The word opens with its meaning")
+        let usage = app.buttons["originalWord.usage"]
+        Genesis.scrollIntoView(usage, in: app)
+        XCTAssertTrue(usage.waitForExistence(timeout: Genesis.timeout), "Every verse that uses it is a tap away")
+        Genesis.tapToolbarButton("originalWord.done", in: app)
+    }
+
+    @MainActor
+    func testOriginalHebrewBesideGenesis() {
+        let app = launchPremium(verse: 1_001_001)
+        readOriginalInParallel(app)
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "original.text").firstMatch.waitForExistence(timeout: Genesis.timeout), "Genesis 1 in Hebrew")
+        tapInterlinearWord(app)
+    }
+
+    @MainActor
+    func testOriginalGreekBesideJohn() {
+        let app = launchPremium(verse: 43_001_001)
+        readOriginalInParallel(app)
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "original.text").firstMatch.waitForExistence(timeout: Genesis.timeout), "John 1 in Greek")
+        tapInterlinearWord(app)
+    }
+
+    @MainActor
+    func testOriginalPreviewsForFreeAccounts() {
+        let app = Genesis.launch(verse: 43_001_001)
+        readOriginalInParallel(app)
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "original.text").firstMatch.waitForExistence(timeout: Genesis.timeout), "The first verses are shown in Greek")
+        let unlock = app.buttons["teaser.unlock"]
+        Genesis.scrollIntoView(unlock, in: app)
+        XCTAssertTrue(unlock.waitForExistence(timeout: Genesis.timeout), "…and the way to unlock the rest")
     }
 
     // MARK: Timeline, people, maps
