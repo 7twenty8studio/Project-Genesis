@@ -6,7 +6,7 @@ import UIKit
 @MainActor
 @Suite("Premium look: illuminated initials, typefaces and icons")
 struct PremiumLookTests {
-    private func chapter(_ id: ChapterID) throws -> Chapter {
+    private func loadChapter(_ id: ChapterID) throws -> Chapter {
         let url = try #require(Bundle.main.url(forResource: Translation.kjv.id, withExtension: "sqlite"))
         return try BibleRepository(translation: .kjv, url: url).chapter(id)
     }
@@ -26,7 +26,7 @@ struct PremiumLookTests {
 
     @Test(arguments: [ChapterID(book: 1, chapter: 1), ChapterID(book: 43, chapter: 1), ChapterID(book: 19, chapter: 23)])
     func illuminatedInitialKeepsEveryVerseVerbatim(_ id: ChapterID) throws {
-        let chapter = try chapter(id)
+        let chapter = try loadChapter(id)
         let built = ChapterTextBuilder.build(chapter, style: style(.illuminated, premium: true), decorations: ChapterDecorations())
         let text = built.text.string as NSString
         for verse in chapter.verses {
@@ -51,7 +51,7 @@ struct PremiumLookTests {
     }
 
     @Test func illuminatedInitialPaginatesCleanly() throws {
-        let chapter = try chapter(ChapterID(book: 1, chapter: 1))
+        let chapter = try loadChapter(ChapterID(book: 1, chapter: 1))
         let built = ChapterTextBuilder.build(chapter, style: style(.illuminated, premium: true), decorations: ChapterDecorations())
         let pages = Paginator.pages(for: built.text, pageSize: CGSize(width: 340, height: 600))
         #expect(pages.first?.location == 0)
@@ -76,7 +76,7 @@ struct PremiumLookTests {
         #expect(style(.illuminated, premium: true).initialStyle == .illuminated)
         #expect(style(.plain, premium: false).initialStyle == .plain)
 
-        let chapter = try chapter(ChapterID(book: 1, chapter: 1))
+        let chapter = try loadChapter(ChapterID(book: 1, chapter: 1))
         let built = ChapterTextBuilder.build(chapter, style: style(.illuminated, premium: false), decorations: ChapterDecorations())
         #expect(!built.text.string.contains("\u{FFFC}"), "No illuminated picture without Premium")
     }

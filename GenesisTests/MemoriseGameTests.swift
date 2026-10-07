@@ -57,7 +57,9 @@ struct MemoriseGameTests {
         while !game.isSolved {
             let expected = game.words.tokens[game.placed.count].text
             let chip = game.shuffled.first { !game.isPlaced($0) && game.words.tokens[$0].text == expected }!
-            #expect(game.tap(chip))
+            // Mutating calls stay outside #expect (its expansion can't mutate).
+            let placed = game.tap(chip)
+            #expect(placed)
         }
         #expect(game.builtText == verse)
         #expect(game.mistakes == 0)
@@ -67,7 +69,8 @@ struct MemoriseGameTests {
     @Test func wrongChipsDontAdvance() {
         var game = WordOrderGame(text: samples[0], seed: 3)
         let wrong = game.words.tokens.indices.first { game.words.tokens[$0].text != game.words.tokens[0].text }!
-        #expect(!game.tap(wrong))
+        let placedWrong = game.tap(wrong)
+        #expect(!placedWrong)
         #expect(game.placed.isEmpty)
         #expect(game.mistakes == 1)
         #expect(game.builtText.isEmpty)
@@ -141,10 +144,12 @@ struct MemoriseGameTests {
         let firstGap = try #require(game.currentGap)
         #expect(game.isHidden(firstGap))
         let wrong = game.currentChoices.first { !MemoryGame.matches($0, game.words.tokens[firstGap]) }!
-        #expect(!game.choose(wrong))
+        let choseWrong = game.choose(wrong)
+        #expect(!choseWrong)
         #expect(game.currentGap == firstGap, "A wrong word leaves the gap open")
         while let gap = game.currentGap {
-            #expect(game.choose(game.words.tokens[gap].core))
+            let chose = game.choose(game.words.tokens[gap].core)
+            #expect(chose)
             #expect(game.wasFilled(gap))
         }
         #expect(game.isSolved)
@@ -165,10 +170,12 @@ struct MemoriseGameTests {
         let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true))
         let store = StudyStore(context: container.mainContext)
         let verse = store.memorise(from: VerseID(book: 43, chapter: 3, verse: 16), through: VerseID(book: 43, chapter: 3, verse: 16), translationID: "KJV")
-        #expect(store.recordGame(verse, .good), "A new verse is due")
+        let movedFirst = store.recordGame(verse, .good)
+        #expect(movedFirst, "A new verse is due")
         #expect(verse.reviewCount == 1)
         let due = verse.dueAt
-        #expect(!store.recordGame(verse, .good), "Extra practice leaves the schedule alone")
+        let movedAgain = store.recordGame(verse, .good)
+        #expect(!movedAgain, "Extra practice leaves the schedule alone")
         #expect(verse.reviewCount == 1)
         #expect(verse.dueAt == due)
     }
