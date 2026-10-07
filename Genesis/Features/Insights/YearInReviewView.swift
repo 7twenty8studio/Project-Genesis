@@ -3,12 +3,14 @@ import SwiftUI
 
 /// "Your year with Genesis": a few pages to swipe through (days, time,
 /// chapters, highlights, notes and prayers), ending with a summary to share.
-/// Free for everyone; built from what's on this device.
+/// Free for everyone; built from what's on this device. With Reading insights
+/// (Premium) the share holds two more cards: the days and the books.
 struct YearInReviewView: View {
     let year: Int
 
     @Environment(ReadingProgress.self) private var progress
     @Environment(ReaderSettings.self) private var settings
+    @Environment(EntitlementService.self) private var entitlements
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.palette) private var palette
     @Environment(\.dismiss) private var dismiss
@@ -16,7 +18,7 @@ struct YearInReviewView: View {
     @Query private var notes: [Note]
     @Query private var prayers: [Prayer]
     @State private var page = 0
-    @State private var shareImage: UIImage?
+    @State private var shareImages: [UIImage] = []
 
     private var review: YearInReview {
         YearInReview.make(
@@ -67,24 +69,47 @@ struct YearInReviewView: View {
                     Button("Done", systemImage: "checkmark") { dismiss() }
                         .accessibilityIdentifier("yearInReview.done")
                 }
-                if review.hasActivity, let shareImage {
+                if review.hasActivity, !shareImages.isEmpty {
                     ToolbarItem(placement: .primaryAction) {
-                        ShareLink(
-                            item: Image(uiImage: shareImage),
-                            preview: SharePreview(Text("My \(String(year)) with Genesis"), image: Image(uiImage: shareImage))
-                        ) {
-                            Label("Share", systemImage: "square.and.arrow.up")
-                        }
-                        .accessibilityIdentifier("yearInReview.share")
+                        shareButton
                     }
                 }
             }
-            .task(id: review) {
-                let renderer = ImageRenderer(content: YearSummaryCard(review: review, theme: theme, font: font).frame(width: 1080, height: 1350))
-                renderer.scale = 1
-                shareImage = renderer.uiImage
+            .task(id: ShareKey(review: review, includesAll: entitlements.allows(.readingInsights))) {
+                shareImages = renderShareImages(review)
             }
         }
+    }
+
+    /// One card for everyone; with Reading insights, the days and books too.
+    private var shareButton: some View {
+        let year = self.year
+        return ShareLink(
+            items: shareImages.map { Image(uiImage: $0) },
+            preview: { image in SharePreview(Text("My \(String(year)) with Genesis"), image: image) }
+        ) {
+            Label("Share", systemImage: "square.and.arrow.up")
+        }
+        .accessibilityIdentifier("yearInReview.share")
+    }
+
+    private func renderShareImages(_ review: YearInReview) -> [UIImage] {
+        var cards: [UIImage?] = [render(YearSummaryCard(review: review, theme: theme, font: font))]
+        if entitlements.allows(.readingInsights) {
+            if review.daysRead > 0 {
+                cards.append(render(YearDaysCard(review: review, readingDays: progress.readingDays, theme: theme, font: font)))
+            }
+            if review.chaptersRead > 0 {
+                cards.append(render(YearBooksCard(review: review, chapters: progress.chaptersByYear[String(year)] ?? [], theme: theme, font: font)))
+            }
+        }
+        return cards.compactMap { $0 }
+    }
+
+    private func render(_ card: some View) -> UIImage? {
+        let renderer = ImageRenderer(content: card.frame(width: 1080, height: 1350))
+        renderer.scale = 1
+        return renderer.uiImage
     }
 
     private var theme: ReaderTheme {
@@ -162,19 +187,59 @@ struct YearInReviewView: View {
         }
         pages.append(AnyView(
             VStack(spacing: 18) {
-                YearSummaryCard(review: review, theme: theme, font: font)
-                    .frame(width: 1080, height: 1350)
-                    .scaleEffect(0.27)
-                    .frame(width: 1080 * 0.27, height: 1350 * 0.27)
-                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                    .shadow(color: .black.opacity(0.12), radius: 10, y: 5)
-                    .accessibilityHidden(true)
+                if shareImages.count > 1 {
+                    SharedCardsFan(images: shareImages)
+                } else {
+                    YearSummaryCard(review: review, theme: theme, font: font)
+                        .frame(width: 1080, height: 1350)
+                        .scaleEffect(0.27)
+                        .frame(width: 1080 * 0.27, height: 1350 * 0.27)
+                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                        .shadow(color: .black.opacity(0.12), radius: 10, y: 5)
+                        .accessibilityHidden(true)
+                }
                 Text("Share your year with the button at the top.")
                     .font(.footnote)
                     .foregroundStyle(palette.secondaryText)
             }
         ))
         return pages
+    }
+}
+
+/// What the share's cards render from: they change with the review and with access.
+private struct ShareKey: Equatable {
+    let review: YearInReview
+    let includesAll: Bool
+}
+
+/// The cards to share, fanned out like prints on a table (the summary on top).
+private struct SharedCardsFan: View {
+    let images: [UIImage]
+
+    var body: some View {
+        ZStack {
+            ForEach(Array(images.enumerated()).reversed(), id: \.offset) { index, image in
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 280)
+                    .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .shadow(color: .black.opacity(0.14), radius: 8, y: 4)
+                    .rotationEffect(.degrees(angle(for: index)))
+                    .offset(x: offset(for: index))
+            }
+        }
+        .frame(height: 320)
+        .accessibilityHidden(true)
+    }
+
+    private func angle(for index: Int) -> Double {
+        [0, 7, -7][index % 3]
+    }
+
+    private func offset(for index: Int) -> CGFloat {
+        [0, 60, -60][index % 3]
     }
 }
 

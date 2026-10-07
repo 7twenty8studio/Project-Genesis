@@ -128,6 +128,12 @@ final class ReaderViewModel {
         progress.update(verse)
     }
 
+    /// The page or scroll view reached the end of a chapter by reading (a
+    /// page turn or a scroll, not a jump): a brief moment, once a day.
+    func didReachEnd(of chapter: ChapterID) {
+        ChapterMoments.shared.chapterFinished(chapter, in: .reader)
+    }
+
     /// A downloaded edition replaced the text: reload what's on screen.
     func translationEditionChanged() {
         chapterCache.removeAll()

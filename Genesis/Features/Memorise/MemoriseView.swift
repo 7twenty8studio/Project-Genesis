@@ -10,17 +10,42 @@ struct MemoriseView: View {
     @Query(sort: \MemoryVerse.dueAt) private var verses: [MemoryVerse]
 
     @State private var session: MemorySession?
+    @State private var gameSession: MemoryGameSession?
     @State private var showsAdd = false
     @State private var newReference = ""
     @State private var addError: String?
 
     private var due: [MemoryVerse] { verses.filter { $0.isDue() } }
+    private var memorisedCount: Int { verses.filter { $0.mastery == .memorised }.count }
 
     var body: some View {
         List {
             ThemedRows {
                 Section {
                     summary
+                    if !verses.isEmpty {
+                        MemoryProgressCard(memorisedCount: memorisedCount)
+                    }
+                }
+
+                if !verses.isEmpty {
+                    Section {
+                        ForEach(MemoryGameMode.allCases) { mode in
+                            Button {
+                                startGame(mode)
+                            } label: {
+                                MemoryGameRow(mode: mode)
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityIdentifier("memorise.game.\(mode.rawValue)")
+                        }
+                    } header: {
+                        Text("Games")
+                    } footer: {
+                        if due.isEmpty {
+                            Text("Nothing is due, so games are extra practice and won't change your schedule.")
+                        }
+                    }
                 }
 
                 if verses.isEmpty {
@@ -105,6 +130,13 @@ struct MemoriseView: View {
         .fullScreenCover(item: $session) { session in
             MemoryReviewView(session: session)
         }
+        .fullScreenCover(item: $gameSession) { game in
+            if game.mode == .speed {
+                SpeedRoundView(session: game)
+            } else {
+                MemoryGameView(session: game)
+            }
+        }
     }
 
     private var summary: some View {
@@ -141,6 +173,18 @@ struct MemoriseView: View {
         }
         .padding(.vertical, 6)
     }
+
+    /// Games play the passages due today; when none are, any saved passages
+    /// as practice (which doesn't move the schedule, see `recordGame`).
+    private func startGame(_ mode: MemoryGameMode) {
+        let isPractice = due.isEmpty
+        let pool = isPractice ? verses.shuffled() : due
+        // A short game: Speed Round's minute sets its own limit.
+        let cards = mode == .speed ? pool : Array(pool.prefix(Self.gameLength))
+        gameSession = MemoryGameSession(mode: mode, cards: cards.map(\.id), isPractice: isPractice)
+    }
+
+    private static let gameLength = 10
 
     private func translation(for verse: MemoryVerse) -> Translation {
         library.translations.first { $0.id == verse.translationID } ?? library.currentTranslation

@@ -160,6 +160,14 @@ struct ScrollReaderView: UIViewRepresentable {
         private func reportPosition() {
             guard let textView, let built else { return }
             viewModel.didShow(chapter: built.chapter.id, firstVerse: textView.firstVisibleVerse())
+            // Scrolled to the end of a chapter longer than the screen.
+            let visibleBottom = textView.contentOffset.y + textView.bounds.height
+            // Only the person's own scrolling counts, not restoring a position.
+            if textView.isTracking || textView.isDecelerating,
+               textView.contentSize.height > textView.bounds.height * 1.2,
+               visibleBottom >= textView.contentSize.height - textView.textContainerInset.bottom {
+                viewModel.didReachEnd(of: built.chapter.id)
+            }
         }
     }
 }

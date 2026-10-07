@@ -35,6 +35,17 @@ extension StudyStore {
         save()
     }
 
+    /// A finished game (or Speed Round card) counts as a review, but only for
+    /// a passage that is due: practising early would otherwise stretch the
+    /// interval from a day it wasn't meant to be tested, so extra practice
+    /// helps memory without moving the schedule. Returns true when recorded.
+    @discardableResult
+    func recordGame(_ verse: MemoryVerse, _ grade: MemoryGrade, at now: Date = .now) -> Bool {
+        guard verse.isDue(on: now) else { return false }
+        review(verse, grade, at: now)
+        return true
+    }
+
     func changeTranslation(of verse: MemoryVerse, to translationID: String) {
         verse.translationID = translationID
         verse.updatedAt = .now

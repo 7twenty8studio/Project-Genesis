@@ -279,8 +279,28 @@ struct PagedReaderView: UIViewControllerRepresentable {
                   let target = forward ? location(after: current) : location(before: current) else { return }
             let reduceMotion = UIAccessibility.isReduceMotionEnabled
             show(location: target, direction: forward ? .forward : .reverse, animated: !reduceMotion)
+            if forward { reportChapterEnd(from: current, to: target) }
             feedback.pageTurned(sound: pageTurnSound, volume: pageTurnVolume, haptic: pageTurnHaptic, strength: pageTurnHapticStrength)
             hideControlsForReading()
+        }
+
+        /// A forward page turn that reaches a chapter's last page (or turns
+        /// past a one-page chapter) finishes that chapter by reading.
+        private func reportChapterEnd(from previous: PageLocation, to location: PageLocation) {
+            let isForward = location.chapter > previous.chapter || (location.chapter == previous.chapter && location.index > previous.index)
+            guard isForward, let pages = cache[location.chapter]?.pages.count else { return }
+            let finished: ChapterID
+            if location.index > 0, location.index == pages - 1 {
+                finished = location.chapter
+            } else if location.chapter != previous.chapter, cache[previous.chapter]?.pages.count == 1 {
+                finished = previous.chapter
+            } else {
+                return
+            }
+            // Deferred: a keyboard turn arrives inside a SwiftUI update.
+            Task { @MainActor [weak self] in
+                self?.viewModel.didReachEnd(of: finished)
+            }
         }
 
         /// Turning a page means reading: put the controls, tab bar and
@@ -313,6 +333,9 @@ struct PagedReaderView: UIViewControllerRepresentable {
             if viewModel.isSelecting { viewModel.clearSelection() }
             feedback.pageTurned(sound: pageTurnSound, volume: pageTurnVolume, haptic: pageTurnHaptic, strength: pageTurnHapticStrength)
             didSettle(on: location)
+            if let previous = (previousViewControllers.first as? ReaderPageViewController)?.location {
+                reportChapterEnd(from: previous, to: location)
+            }
             hideControlsForReading()
         }
     }

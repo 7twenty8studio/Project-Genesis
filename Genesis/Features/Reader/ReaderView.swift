@@ -26,6 +26,7 @@ struct ReaderView: View {
     /// "Added to Memorise", shown briefly.
     @State private var confirmation: String?
     @State private var showsCompanion = true
+    @State private var showsSanctuary = false
     @State private var companionMode: CompanionPanel.Mode = .notes
     /// Read from the window once it exists; nil until then so text is laid
     /// out once with the right insets rather than twice.
@@ -66,6 +67,9 @@ struct ReaderView: View {
         .sheet(item: $sheet) { sheet in
             sheetContent(sheet)
         }
+        .fullScreenCover(isPresented: $showsSanctuary) {
+            EveningSanctuaryView(startVerse: sanctuaryStartVerse)
+        }
         .onAppear {
             windowSafeArea = DeviceScreen.safeAreaInsets
             reader.modelContext = modelContext
@@ -101,7 +105,8 @@ struct ReaderView: View {
                     theme: preferences.theme.resolved(for: colorScheme),
                     contentSizeCategory: UIContentSizeCategory(dynamicTypeSize),
                     differentiatesWithoutColor: differentiateWithoutColor,
-                    bibleLanguage: reader.translation.language
+                    bibleLanguage: reader.translation.language,
+                    allowsPremiumLook: allowsPremiumLook
                 ),
                 margins: preferences.margins
             )
@@ -115,6 +120,7 @@ struct ReaderView: View {
                 }
 
                 confirmationBanner
+                ChapterMomentOverlay(place: .reader, topInset: readerSafeArea.top)
 
                 if let season = layout.style.theme.season, preferences.seasonalEffects, !reduceMotion {
                     SeasonalEffectView(season: season)
@@ -151,7 +157,8 @@ struct ReaderView: View {
                         onStudy: studyChapter,
                         onListen: listen,
                         onMoreBibles: { sheet = .bibles },
-                        onToggleCompanion: { showsCompanion.toggle() }
+                        onToggleCompanion: { showsCompanion.toggle() },
+                        onSanctuary: openSanctuary
                     )
                     // At least a little below the live safe area, and never
                     // higher than the stable position (which on iPad clears
@@ -320,6 +327,11 @@ struct ReaderView: View {
         }
     }
 
+    /// Premium typefaces and illuminated letters (plain/New York without Premium).
+    private var allowsPremiumLook: Bool {
+        entitlements.allows(.premiumThemes)
+    }
+
     /// Word Study in the selection bar. The word data follows English (KJV)
     /// verse numbering; the Spanish Bible numbers some verses differently.
     private var wordStudyAction: (() -> Void)? {
@@ -354,6 +366,20 @@ struct ReaderView: View {
             try? await Task.sleep(for: .seconds(2))
             withAnimation { confirmation = nil }
         }
+    }
+
+    /// Evening Sanctuary is Premium; free accounts see what it offers.
+    private func openSanctuary() {
+        if entitlements.allows(.eveningSanctuary) {
+            showsSanctuary = true
+        } else {
+            sheet = .premium(.eveningSanctuary)
+        }
+    }
+
+    /// The sanctuary opens at the verse on screen.
+    private var sanctuaryStartVerse: VerseID {
+        reader.focusVerse.chapterID == reader.chapterID ? reader.focusVerse : reader.chapterID.firstVerse
     }
 
     /// Ambient sounds are Premium.

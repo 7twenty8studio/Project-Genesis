@@ -5,7 +5,7 @@ import WidgetKit
 /// letter of each word, and how many are waiting. Tapping opens a review.
 struct MemoriseWidget: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: "Memorise", provider: SnapshotProvider()) { entry in
+        StaticConfiguration(kind: WidgetKind.memorise.rawValue, provider: SnapshotProvider()) { entry in
             MemoriseWidgetView(entry: entry)
         }
         .configurationDisplayName("Memorise")
@@ -19,22 +19,30 @@ struct MemoriseWidgetView: View {
     @Environment(\.widgetFamily) private var family
 
     var body: some View {
+        if entry.snapshot.unlocks(.memorise, in: family) {
+            memoriseView(WidgetColors(entry.snapshot))
+        } else {
+            PremiumLockedView(message: String(localized: "Memorise Scripture with Genesis Premium."), symbol: "brain.head.profile")
+        }
+    }
+
+    private func memoriseView(_ colors: WidgetColors) -> some View {
         let memorise = entry.snapshot.memorise
-        Group {
-            if let memorise, memorise.isUnlocked, let reference = memorise.reference {
-                card(memorise, reference: reference)
-            } else if memorise?.isUnlocked == true {
-                message(String(localized: "Add a verse to memorise in Genesis."))
+        return Group {
+            if let memorise, let reference = memorise.reference {
+                card(memorise, reference: reference, colors: colors)
             } else {
-                message(String(localized: "Memorise Scripture with Genesis Premium."))
+                message(String(localized: "Add a verse to memorise in Genesis."), colors: colors)
             }
         }
-        .containerBackground(for: .widget) { WidgetPalette.background }
+        .containerBackground(for: .widget) {
+            if family == .accessoryRectangular { Color.clear } else { WidgetBackground(colors: colors) }
+        }
         .widgetURL(GenesisLink.memorise)
     }
 
     @ViewBuilder
-    private func card(_ memorise: WidgetSnapshot.Memorise, reference: String) -> some View {
+    private func card(_ memorise: WidgetSnapshot.Memorise, reference: String, colors: WidgetColors) -> some View {
         let due = memorise.dueCount(on: entry.date)
         switch family {
         case .accessoryRectangular:
@@ -45,42 +53,39 @@ struct MemoriseWidgetView: View {
         default:
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
-                    Text(String(localized: "Memorise").uppercased())
-                        .font(.system(size: 10, weight: .semibold))
-                        .kerning(1)
-                        .foregroundStyle(WidgetPalette.accent)
+                    Eyebrow(text: String(localized: "Memorise"), color: colors.accent)
                     Spacer()
                     if due > 0 {
                         Text("\(due) due")
                             .font(.caption2.weight(.semibold))
-                            .foregroundStyle(WidgetPalette.accent)
+                            .foregroundStyle(colors.accent)
                     }
                 }
                 Text(reference)
                     .font(.system(family == .systemSmall ? .headline : .title3, design: .serif, weight: .semibold))
-                    .foregroundStyle(WidgetPalette.text)
+                    .foregroundStyle(colors.text)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
                 Text(memorise.hint ?? "")
                     .font(.system(family == .systemSmall ? .footnote : .body, design: .serif))
-                    .foregroundStyle(WidgetPalette.secondary)
+                    .foregroundStyle(colors.secondary)
                     .minimumScaleFactor(0.7)
                 Spacer(minLength: 0)
                 Text(due > 0 ? String(localized: "Tap to review") : String(localized: "All caught up"))
                     .font(.caption2.weight(.semibold))
-                    .foregroundStyle(WidgetPalette.secondary)
+                    .foregroundStyle(colors.secondary)
             }
         }
     }
 
-    private func message(_ text: String) -> some View {
+    private func message(_ text: String, colors: WidgetColors) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             Image(systemName: "brain.head.profile")
                 .font(.title3)
-                .foregroundStyle(WidgetPalette.accent)
+                .foregroundStyle(colors.accent)
             Text(text)
                 .font(.system(.footnote, design: .serif))
-                .foregroundStyle(WidgetPalette.text)
+                .foregroundStyle(colors.text)
             Spacer(minLength: 0)
         }
         .frame(maxWidth: .infinity, alignment: .leading)

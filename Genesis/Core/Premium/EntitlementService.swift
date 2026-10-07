@@ -246,3 +246,9 @@ final class EntitlementService {
         defaults.set(hasSubscription, forKey: Self.cacheKey)
     }
 }
+
+extension EntitlementService {
+    /// The app's service, for code that builds values outside a view's
+    /// environment (the reader's `ReaderStyle`). Set once by GenesisApp.
+    static weak var app: EntitlementService?
+}

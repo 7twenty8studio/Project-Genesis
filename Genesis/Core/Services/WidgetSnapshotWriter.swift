@@ -1,13 +1,14 @@
 import Foundation
 import SwiftData
+import SwiftUI
 import WidgetKit
 
 /// Builds the widget snapshot from the app's data and asks WidgetKit to
 /// refresh. Cheap, so it runs whenever the app becomes active or data changes.
 @MainActor
 enum WidgetSnapshotWriter {
-    static func refresh(library: BibleLibrary, progress: ReadingProgress, context: ModelContext, isPremium: Bool, now: Date = .now) {
-        let snapshot = make(library: library, progress: progress, context: context, isPremium: isPremium, now: now)
+    static func refresh(library: BibleLibrary, progress: ReadingProgress, context: ModelContext, isPremium: Bool, theme: ReaderTheme = .automatic, now: Date = .now) {
+        let snapshot = make(library: library, progress: progress, context: context, isPremium: isPremium, theme: theme, now: now)
         // Apple Watch gets the verses of the day too (sent only when they change).
         WatchConnector.shared.send(WatchPayload(generatedAt: now, translation: snapshot.translation, isPremium: isPremium, verses: snapshot.dailyVerses))
         // Skip the write (and widget reload) when nothing visible changed.
@@ -37,7 +38,26 @@ enum WidgetSnapshotWriter {
         }
     }
 
-    static func make(library: BibleLibrary, progress: ReadingProgress, context: ModelContext, isPremium: Bool = false, now: Date = .now) -> WidgetSnapshot {
+    /// The reader theme's colours for theme-matched widgets (Premium). Auto
+    /// and Seasons are resolved here: light and dark for Auto, today's
+    /// season for Seasons (the snapshot is rewritten every time the app runs).
+    static func widgetTheme(for theme: ReaderTheme, now: Date = .now) -> WidgetSnapshot.Theme {
+        func colors(_ scheme: ColorScheme) -> WidgetSnapshot.Theme.Colors {
+            let resolved = theme.resolved(for: scheme, on: now)
+            let palette = resolved.palette
+            return WidgetSnapshot.Theme.Colors(
+                background: palette.backgroundHex,
+                text: palette.textHex,
+                secondary: palette.secondaryTextHex,
+                accent: palette.accentHex,
+                hasPaperTexture: resolved.hasPaperTexture,
+                isDark: resolved.isDark
+            )
+        }
+        return WidgetSnapshot.Theme(name: theme.rawValue, light: colors(.light), dark: colors(.dark))
+    }
+
+    static func make(library: BibleLibrary, progress: ReadingProgress, context: ModelContext, isPremium: Bool = false, theme: ReaderTheme = .automatic, now: Date = .now) -> WidgetSnapshot {
         let repository = library.current
         let calendar = Calendar.current
 
@@ -115,7 +135,9 @@ enum WidgetSnapshotWriter {
             activePrayerCount: prayers.count,
             nextPrayerReminder: nextReminder,
             memorise: memorise,
-            isPremium: isPremium
+            isPremium: isPremium,
+            // Theme-matched widgets are Premium; free widgets keep the default look.
+            theme: isPremium ? widgetTheme(for: theme, now: now) : nil
         )
     }
 }

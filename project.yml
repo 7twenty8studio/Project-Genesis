@@ -98,6 +98,15 @@ targets:
           - EBGaramond-Regular.ttf
           - EBGaramond-SemiBold.ttf
           - EBGaramond-Italic.ttf
+          - CrimsonPro-Regular.ttf
+          - CrimsonPro-SemiBold.ttf
+          - CrimsonPro-Italic.ttf
+          - SourceSerif4-Regular.ttf
+          - SourceSerif4-SemiBold.ttf
+          - SourceSerif4-Italic.ttf
+          - Spectral-Regular.ttf
+          - Spectral-SemiBold.ttf
+          - Spectral-Italic.ttf
         # Values come from Config/Secrets.xcconfig (not committed).
         GenesisSupabaseURL: $(SUPABASE_URL)
         GenesisSupabaseAnonKey: $(SUPABASE_ANON_KEY)

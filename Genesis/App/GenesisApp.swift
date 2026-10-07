@@ -69,6 +69,7 @@ struct GenesisApp: App {
         // UI tests never reach StoreKit: Premium is on only with -uiTestingPremium.
         let entitlements = EntitlementService(override: testing.isEnabled ? testing.isPremium : nil)
         _entitlements = State(initialValue: entitlements)
+        EntitlementService.app = entitlements
 
         // UI tests get canned answers: no network and no AI cost.
         let backend: StudyAssistantBackend? = testing.isEnabled ? StubStudyBackend() : StudyAssistant.liveBackend(client: auth.client)

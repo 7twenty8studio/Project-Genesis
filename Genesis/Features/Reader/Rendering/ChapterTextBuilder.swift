@@ -114,7 +114,28 @@ enum ChapterTextBuilder {
             }
             // Poetry lines stay in one paragraph so indentation is consistent.
             let text = verse.text.replacingOccurrences(of: "\n", with: "\u{2028}")
-            if opensWithInitial, let split = initialSplit(text) {
+            if opensWithInitial, let split = initialSplit(text), style.initialStyle == .illuminated,
+               let ornament = illuminatedInitial(split.initial, style: style, bodyFont: bodyFont) {
+                // The illuminated letter is a picture placed just before the
+                // verse. The verse's own characters follow it unchanged: the
+                // drawn letter is hidden (clear and almost no width) so it
+                // isn't shown twice, but it's still there for VoiceOver,
+                // search and the verse offsets. The picture is U+FFFC, an
+                // extra character before the verse, never inside it.
+                let picture = NSMutableAttributedString(attributedString: NSAttributedString(attachment: ornament))
+                var pictureAttributes = attributes
+                pictureAttributes[.font] = bodyFont
+                picture.addAttributes(pictureAttributes, range: NSRange(location: 0, length: picture.length))
+                result.append(picture)
+
+                var hiddenAttributes = textAttributes
+                hiddenAttributes[.font] = UIFont(descriptor: bodyFont.fontDescriptor, size: 0.1)
+                hiddenAttributes[.foregroundColor] = UIColor.clear
+                hiddenAttributes[.backgroundColor] = nil
+                hiddenAttributes[.underlineStyle] = nil
+                result.append(NSAttributedString(string: split.initial, attributes: hiddenAttributes))
+                result.append(NSAttributedString(string: split.rest, attributes: textAttributes))
+            } else if opensWithInitial, let split = initialSplit(text) {
                 // Only the styling changes: the letters are the verse's own.
                 var initialAttributes = textAttributes
                 initialAttributes[.font] = style.font.uiFont(size: size * 2.6)
@@ -152,6 +173,120 @@ enum ChapterTextBuilder {
         guard let letter = text.firstIndex(where: \.isLetter) else { return nil }
         let end = text.index(after: letter)
         return (String(text[..<end]), String(text[end...]))
+    }
+
+    /// An illuminated initial: the opening letter (with any quotation mark
+    /// before it) drawn inside a square frame with a fine double border,
+    /// small corner flourishes and a soft fill in the theme's tones, about two
+    /// lines tall. TextKit 1 can't wrap lines around an inline picture (and
+    /// pages would need matching exclusion paths), so it sits in the first
+    /// line, its foot on the text's descender, and that line grows to fit.
+    static func illuminatedInitial(_ initial: String, style: ReaderStyle, bodyFont: UIFont) -> NSTextAttachment? {
+        guard let letter = initial.last else { return nil }
+        let palette = style.palette
+        let accent = palette.uiAccent
+        let side = (bodyFont.lineHeight * 2 - abs(bodyFont.descender)).rounded(.up)
+        guard side > 8 else { return nil }
+        let gap = (style.fontSize * 0.22).rounded()
+        let canvas = CGSize(width: side + gap, height: side)
+
+        // The letter, with any opening punctuation smaller before it, sized to
+        // sit comfortably inside the inner frame.
+        var letterSize = side * 0.6
+        func makeLettering(_ size: CGFloat) -> NSAttributedString {
+            let font = style.font.uiFont(size: size, weight: .semibold)
+            let text = NSMutableAttributedString()
+            let prefix = String(initial.dropLast())
+            if !prefix.isEmpty {
+                text.append(NSAttributedString(string: prefix, attributes: [
+                    .font: style.font.uiFont(size: size * 0.5),
+                    .foregroundColor: accent,
+                ]))
+            }
+            text.append(NSAttributedString(string: String(letter), attributes: [.font: font, .foregroundColor: accent]))
+            return text
+        }
+        var drawn = makeLettering(letterSize)
+        let maxWidth = side * 0.7
+        if drawn.size().width > maxWidth {
+            letterSize *= maxWidth / drawn.size().width
+            drawn = makeLettering(letterSize)
+        }
+        let letterFont = style.font.uiFont(size: letterSize, weight: .semibold)
+        let lettering = drawn
+
+        let format = UIGraphicsImageRendererFormat.preferred()
+        format.opaque = false
+        let image = UIGraphicsImageRenderer(size: canvas, format: format).image { context in
+            let cg = context.cgContext
+            let unit = side * 0.09
+            let outer = CGRect(x: 0, y: 0, width: side, height: side).insetBy(dx: unit * 0.45, dy: unit * 0.45)
+            let inner = outer.insetBy(dx: unit * 0.55, dy: unit * 0.55)
+
+            // Soft fill: the page's surface, warmed with the accent towards the lower corner.
+            palette.uiSurface.setFill()
+            UIRectFill(outer)
+            cg.saveGState()
+            UIBezierPath(rect: outer).addClip()
+            let tint = style.theme.isDark ? 0.22 : 0.16
+            let colors = [accent.withAlphaComponent(tint * 0.35).cgColor, accent.withAlphaComponent(tint).cgColor] as CFArray
+            if let gradient = CGGradient(colorsSpace: nil, colors: colors, locations: [0, 1]) {
+                cg.drawLinearGradient(gradient, start: CGPoint(x: outer.minX, y: outer.minY), end: CGPoint(x: outer.maxX, y: outer.maxY), options: [])
+            }
+            cg.restoreGState()
+
+            // A fine double border.
+            accent.setStroke()
+            let outerBorder = UIBezierPath(rect: outer)
+            outerBorder.lineWidth = max(1, side * 0.025)
+            outerBorder.stroke()
+            accent.withAlphaComponent(0.75).setStroke()
+            let innerBorder = UIBezierPath(rect: inner)
+            innerBorder.lineWidth = max(0.5, side * 0.012)
+            innerBorder.stroke()
+
+            // Corner flourishes: a diamond on each outer corner and a small
+            // curl with a dot inside each inner corner.
+            let corners: [(CGPoint, CGPoint, CGFloat, CGFloat)] = [
+                (CGPoint(x: outer.minX, y: outer.minY), CGPoint(x: inner.minX, y: inner.minY), 1, 1),
+                (CGPoint(x: outer.maxX, y: outer.minY), CGPoint(x: inner.maxX, y: inner.minY), -1, 1),
+                (CGPoint(x: outer.minX, y: outer.maxY), CGPoint(x: inner.minX, y: inner.maxY), 1, -1),
+                (CGPoint(x: outer.maxX, y: outer.maxY), CGPoint(x: inner.maxX, y: inner.maxY), -1, -1),
+            ]
+            accent.setFill()
+            for (outerCorner, innerCorner, dx, dy) in corners {
+                let r = unit * 0.42
+                let diamond = UIBezierPath()
+                diamond.move(to: CGPoint(x: outerCorner.x, y: outerCorner.y - r))
+                diamond.addLine(to: CGPoint(x: outerCorner.x + r, y: outerCorner.y))
+                diamond.addLine(to: CGPoint(x: outerCorner.x, y: outerCorner.y + r))
+                diamond.addLine(to: CGPoint(x: outerCorner.x - r, y: outerCorner.y))
+                diamond.close()
+                diamond.fill()
+
+                let curl = UIBezierPath()
+                curl.move(to: CGPoint(x: innerCorner.x + dx * unit * 1.9, y: innerCorner.y + dy * unit * 0.4))
+                curl.addQuadCurve(
+                    to: CGPoint(x: innerCorner.x + dx * unit * 0.4, y: innerCorner.y + dy * unit * 1.9),
+                    controlPoint: CGPoint(x: innerCorner.x + dx * unit * 0.45, y: innerCorner.y + dy * unit * 0.45)
+                )
+                curl.lineWidth = max(0.5, side * 0.014)
+                curl.lineCapStyle = .round
+                curl.stroke()
+                let dotRadius = unit * 0.2
+                let dotCenter = CGPoint(x: innerCorner.x + dx * unit * 1.05, y: innerCorner.y + dy * unit * 1.05)
+                UIBezierPath(ovalIn: CGRect(x: dotCenter.x - dotRadius, y: dotCenter.y - dotRadius, width: dotRadius * 2, height: dotRadius * 2)).fill()
+            }
+
+            // The letter, its capital height centred in the frame.
+            let width = lettering.size().width
+            let baseline = outer.midY + letterFont.capHeight / 2
+            lettering.draw(at: CGPoint(x: outer.midX - width / 2, y: baseline - letterFont.ascender))
+        }
+
+        let attachment = NSTextAttachment(image: image)
+        attachment.bounds = CGRect(x: 0, y: bodyFont.descender, width: canvas.width, height: canvas.height)
+        return attachment
     }
 
     private static func appendTitle(for chapter: Chapter, style: ReaderStyle, into result: NSMutableAttributedString) {

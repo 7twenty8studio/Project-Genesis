@@ -11,6 +11,8 @@ struct ReaderControls: View {
     let onListen: () -> Void
     let onMoreBibles: () -> Void
     let onToggleCompanion: () -> Void
+    /// Evening Sanctuary (the paywall for free accounts).
+    let onSanctuary: () -> Void
 
     @Environment(ReaderViewModel.self) private var reader
     @Environment(BibleLibrary.self) private var library
@@ -82,6 +84,11 @@ struct ReaderControls: View {
             if assistant.isEnabled && !overflow {
                 iconButton("sparkles", label: String(localized: "Study this chapter"), width: iconWidth, action: onStudy)
                     .accessibilityIdentifier("reader.study")
+            }
+
+            if !overflow && showsSanctuaryButton {
+                iconButton("moon.stars", label: String(localized: "Evening Sanctuary"), width: iconWidth, action: onSanctuary)
+                    .accessibilityIdentifier("reader.sanctuary")
             }
 
             iconButton("textformat.size", label: String(localized: "Reading settings"), width: iconWidth, action: onSettings)
@@ -161,6 +168,11 @@ struct ReaderControls: View {
         .accessibilityIdentifier("reader.bookmark")
     }
 
+    /// The moon button is an evening touch; by day the row keeps its room.
+    private var showsSanctuaryButton: Bool {
+        EveningSanctuary.showsHomeCard()
+    }
+
     /// The less frequent actions, when the row is too narrow for them all.
     private func moreMenu(width: CGFloat) -> some View {
         Menu {
@@ -173,6 +185,8 @@ struct ReaderControls: View {
                 Button("Study This Chapter", systemImage: "sparkles", action: onStudy)
                     .accessibilityIdentifier("reader.study")
             }
+            Button("Evening Sanctuary", systemImage: "moon.stars", action: onSanctuary)
+                .accessibilityIdentifier("reader.sanctuary")
             if showsCompanionToggle {
                 Button("Study Panel", systemImage: "sidebar.right", action: onToggleCompanion)
             }

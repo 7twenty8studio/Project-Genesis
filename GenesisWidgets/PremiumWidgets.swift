@@ -7,7 +7,7 @@ import WidgetKit
 
 struct TodaysReadingWidget: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: "TodaysReading", provider: SnapshotProvider()) { entry in
+        StaticConfiguration(kind: WidgetKind.todaysReading.rawValue, provider: SnapshotProvider()) { entry in
             TodaysReadingView(entry: entry)
         }
         .configurationDisplayName("Today's Reading")
@@ -21,38 +21,41 @@ struct TodaysReadingView: View {
     @Environment(\.widgetFamily) private var family
 
     var body: some View {
-        let snapshot = entry.snapshot
-        Group {
-            if snapshot.isPremium != true {
-                prompt(String(localized: "Tick off your daily reading with Genesis Premium."), link: GenesisLink.plans)
-            } else if let plan = snapshot.plan, !Calendar.current.isDate(snapshot.generatedAt, inSameDayAs: entry.date) {
-                // Written yesterday: today's reading isn't known until the app runs.
-                prompt(String(localized: "Open Genesis to see today's reading from \(plan.title)."), link: GenesisLink.plans)
-            } else if let plan = snapshot.plan {
-                planView(plan)
-            } else {
-                prompt(String(localized: "Start a reading plan in Genesis to see today's reading here."), link: GenesisLink.plans)
-            }
+        if entry.snapshot.unlocks(.todaysReading, in: family) {
+            readingView(WidgetColors(entry.snapshot))
+        } else {
+            PremiumLockedView(message: String(localized: "Tick off your daily reading with Genesis Premium."), symbol: "checklist")
         }
-        .containerBackground(for: .widget) { WidgetPalette.background }
     }
 
-    private func planView(_ plan: WidgetSnapshot.Plan) -> some View {
+    private func readingView(_ colors: WidgetColors) -> some View {
+        let snapshot = entry.snapshot
+        return Group {
+            if let plan = snapshot.plan, !Calendar.current.isDate(snapshot.generatedAt, inSameDayAs: entry.date) {
+                // Written yesterday: today's reading isn't known until the app runs.
+                prompt(String(localized: "Open Genesis to see today's reading from \(plan.title)."), link: GenesisLink.plans, colors: colors)
+            } else if let plan = snapshot.plan {
+                planView(plan, colors: colors)
+            } else {
+                prompt(String(localized: "Start a reading plan in Genesis to see today's reading here."), link: GenesisLink.plans, colors: colors)
+            }
+        }
+        .containerBackground(for: .widget) { WidgetBackground(colors: colors) }
+    }
+
+    private func planView(_ plan: WidgetSnapshot.Plan, colors: WidgetColors) -> some View {
         let done = plan.isTodayComplete
         return VStack(alignment: .leading, spacing: 8) {
-            Text(String(localized: "Today's Reading").uppercased())
-                .font(.system(size: 10, weight: .semibold))
-                .kerning(1)
-                .foregroundStyle(WidgetPalette.accent)
+            Eyebrow(text: String(localized: "Today's Reading"), color: colors.accent)
             Text(plan.todayTitle)
                 .font(.system(family == .systemSmall ? .headline : .title3, design: .serif, weight: .semibold))
-                .foregroundStyle(WidgetPalette.text)
-                .strikethrough(done, color: WidgetPalette.secondary)
+                .foregroundStyle(colors.text)
+                .strikethrough(done, color: colors.secondary)
                 .lineLimit(2)
                 .minimumScaleFactor(0.75)
             Text(plan.title)
                 .font(.caption)
-                .foregroundStyle(WidgetPalette.secondary)
+                .foregroundStyle(colors.secondary)
                 .lineLimit(1)
             Spacer(minLength: 0)
             HStack(alignment: .center) {
@@ -63,7 +66,7 @@ struct TodaysReadingView: View {
                             .font(.caption.weight(.semibold))
                     }
                     .buttonStyle(.plain)
-                    .foregroundStyle(WidgetPalette.accent)
+                    .foregroundStyle(colors.accent)
                 }
                 Spacer(minLength: 0)
                 if family != .systemSmall {
@@ -71,7 +74,7 @@ struct TodaysReadingView: View {
                         Text("Plan")
                     }
                     .gaugeStyle(.accessoryLinearCapacity)
-                    .tint(WidgetPalette.accent)
+                    .tint(colors.accent)
                     .frame(width: 90)
                 }
             }
@@ -79,14 +82,14 @@ struct TodaysReadingView: View {
         .widgetURL(GenesisLink.plans)
     }
 
-    private func prompt(_ text: String, link: URL) -> some View {
+    private func prompt(_ text: String, link: URL, colors: WidgetColors) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             Image(systemName: "checklist")
                 .font(.title3)
-                .foregroundStyle(WidgetPalette.accent)
+                .foregroundStyle(colors.accent)
             Text(text)
                 .font(.system(.footnote, design: .serif))
-                .foregroundStyle(WidgetPalette.text)
+                .foregroundStyle(colors.text)
             Spacer(minLength: 0)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -203,6 +206,8 @@ struct GroupProgressEntry: TimelineEntry {
     let date: Date
     let group: GroupWidgetSnapshot?
     let isPremium: Bool
+    /// The reader theme, for Premium's theme-matched look.
+    var theme: WidgetSnapshot.Theme? = nil
 }
 
 struct GroupProgressProvider: TimelineProvider {
@@ -220,7 +225,8 @@ struct GroupProgressProvider: TimelineProvider {
     }
 
     private func entry() -> GroupProgressEntry {
-        GroupProgressEntry(date: .now, group: GroupWidgetSnapshot.load(), isPremium: WidgetSnapshot.load()?.isPremium == true)
+        let snapshot = WidgetSnapshot.load()
+        return GroupProgressEntry(date: .now, group: GroupWidgetSnapshot.load(), isPremium: snapshot?.isPremium == true, theme: snapshot?.theme)
     }
 }
 
@@ -228,7 +234,7 @@ struct GroupProgressProvider: TimelineProvider {
 /// everyone's progress bar.
 struct GroupProgressWidget: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: GroupWidgetSnapshot.widgetKind, provider: GroupProgressProvider()) { entry in
+        StaticConfiguration(kind: WidgetKind.groupProgress.rawValue, provider: GroupProgressProvider()) { entry in
             GroupProgressView(entry: entry)
         }
         .configurationDisplayName("Group Progress")
@@ -241,17 +247,27 @@ struct GroupProgressView: View {
     let entry: GroupProgressEntry
     @Environment(\.widgetFamily) private var family
 
+    private var isUnlocked: Bool {
+        WidgetAccess.isUnlocked(kind: .groupProgress, size: WidgetSize(family), isPremium: entry.isPremium)
+    }
+
+    private var colors: WidgetColors {
+        WidgetColors(isPremium: entry.isPremium, theme: entry.theme)
+    }
+
     var body: some View {
-        Group {
-            if !entry.isPremium {
-                note(String(localized: "Follow your group's reading with Genesis Premium."))
-            } else if let group = entry.group {
-                content(group)
-            } else {
-                note(String(localized: "Open a group with a reading plan in Genesis to see its progress here."))
+        if isUnlocked {
+            Group {
+                if let group = entry.group {
+                    content(group)
+                } else {
+                    note(String(localized: "Open a group with a reading plan in Genesis to see its progress here."))
+                }
             }
+            .containerBackground(for: .widget) { WidgetBackground(colors: colors) }
+        } else {
+            PremiumLockedView(message: String(localized: "Follow your group's reading with Genesis Premium."), symbol: "person.3")
         }
-        .containerBackground(for: .widget) { WidgetPalette.background }
     }
 
     @ViewBuilder
@@ -260,53 +276,53 @@ struct GroupProgressView: View {
             Text(group.groupName.uppercased())
                 .font(.system(size: 10, weight: .semibold))
                 .kerning(1)
-                .foregroundStyle(WidgetPalette.accent)
+                .foregroundStyle(colors.accent)
                 .lineLimit(1)
             if family == .systemSmall {
                 Spacer(minLength: 0)
                 Text("\(group.readTodayCount) of \(group.memberCount)")
                     .font(.system(.title, design: .serif, weight: .semibold))
-                    .foregroundStyle(WidgetPalette.text)
+                    .foregroundStyle(colors.text)
                 Text("read today")
                     .font(.caption)
-                    .foregroundStyle(WidgetPalette.secondary)
+                    .foregroundStyle(colors.secondary)
                 Spacer(minLength: 0)
                 if group.day > 0 {
                     Text("Day \(group.day) of \(group.dayCount)")
                         .font(.caption2.weight(.semibold))
-                        .foregroundStyle(WidgetPalette.secondary)
+                        .foregroundStyle(colors.secondary)
                 }
             } else {
                 HStack(alignment: .firstTextBaseline) {
                     Text(group.dayTitle ?? group.planTitle)
                         .font(.system(.headline, design: .serif))
-                        .foregroundStyle(WidgetPalette.text)
+                        .foregroundStyle(colors.text)
                         .lineLimit(1)
                     Spacer()
                     if group.day > 0 {
                         Text("Day \(group.day) of \(group.dayCount)")
                             .font(.caption2.weight(.semibold))
-                            .foregroundStyle(WidgetPalette.secondary)
+                            .foregroundStyle(colors.secondary)
                     }
                 }
                 ForEach(Array(group.members.prefix(family == .systemLarge ? 8 : 3).enumerated()), id: \.offset) { _, member in
                     HStack(spacing: 8) {
                         Image(systemName: member.readToday ? "checkmark.circle.fill" : "circle")
                             .font(.caption2)
-                            .foregroundStyle(member.readToday ? WidgetPalette.accent : WidgetPalette.secondary)
+                            .foregroundStyle(member.readToday ? colors.accent : colors.secondary)
                         Text(member.name)
                             .font(.caption)
-                            .foregroundStyle(WidgetPalette.text)
+                            .foregroundStyle(colors.text)
                             .lineLimit(1)
                             .frame(width: 70, alignment: .leading)
                         ProgressView(value: member.fraction)
-                            .tint(WidgetPalette.accent)
+                            .tint(colors.accent)
                     }
                 }
                 Spacer(minLength: 0)
                 Text("\(group.readTodayCount) of \(group.memberCount) read today")
                     .font(.caption2.weight(.semibold))
-                    .foregroundStyle(WidgetPalette.secondary)
+                    .foregroundStyle(colors.secondary)
             }
         }
         .widgetURL(URL(string: "\(GenesisLink.scheme)://group/\(group.groupID.uuidString)"))
@@ -316,10 +332,10 @@ struct GroupProgressView: View {
         VStack(alignment: .leading, spacing: 8) {
             Image(systemName: "person.3")
                 .font(.title3)
-                .foregroundStyle(WidgetPalette.accent)
+                .foregroundStyle(colors.accent)
             Text(text)
                 .font(.system(.footnote, design: .serif))
-                .foregroundStyle(WidgetPalette.text)
+                .foregroundStyle(colors.text)
             Spacer(minLength: 0)
         }
         .frame(maxWidth: .infinity, alignment: .leading)

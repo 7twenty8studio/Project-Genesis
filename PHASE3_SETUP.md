@@ -109,8 +109,10 @@ Xcode's local test signatures.
 | Handwritten notes and journal prompts | |
 | Themes: Auto, Paper, Sepia, Slate, High Contrast | |
 | 3 passage explanations a day (with a free account) | Reading insights and Year in Review stats |
-| The original widgets (verse, continue reading, streak, prayer) | New widgets: Today's Reading, Memorise, Group Progress, listening on the Lock Screen, Apple Watch |
-| | Memorise Scripture, ambient sounds |
+| Verse of the day widget (small and Lock Screen) | Every other widget and size, in your reading theme; listening on the Lock Screen; Apple Watch |
+| | Memorise Scripture with games, levels and streaks; ambient sounds |
+| | Illuminated first letters, three more book fonts, special app icons, chapter-complete ribbon |
+| | Evening Sanctuary, morning welcome |
 
 Licensed translations (ESV, NLT and others) would be a later add-on, once a
 licence is signed.

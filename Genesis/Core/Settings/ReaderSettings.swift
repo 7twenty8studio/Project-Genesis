@@ -53,6 +53,24 @@ enum ReaderMargins: String, Codable, CaseIterable, Identifiable, Sendable {
     }
 }
 
+/// How the chapter's large first letter is drawn.
+enum InitialStyle: String, Codable, CaseIterable, Identifiable, Sendable {
+    /// The letter, larger and in the accent colour.
+    case plain
+    /// The letter inside an ornamental frame, like a manuscript initial (Premium).
+    case illuminated
+
+    var id: String { rawValue }
+    var title: String {
+        switch self {
+        case .plain: String(localized: "Classic", comment: "Large first letter style: a plain large letter")
+        case .illuminated: String(localized: "Illuminated", comment: "Large first letter style: an ornamental manuscript initial")
+        }
+    }
+
+    var isPremium: Bool { self == .illuminated }
+}
+
 /// Everything a person can adjust about reading. Stored as one JSON value so
 /// new options can be added without migrations.
 struct ReaderPreferences: Codable, Equatable, Sendable {
@@ -77,6 +95,8 @@ struct ReaderPreferences: Codable, Equatable, Sendable {
     var seasonalEffects = true
     /// A large first letter at the start of each chapter, as in printed Bibles.
     var largeInitial = true
+    /// How the large first letter looks; illuminated needs Premium.
+    var initialStyle: InitialStyle = .plain
     /// A soft paper rustle when a page turns (follows the silent switch).
     var pageTurnSound = false
     /// A light tap when a page turns.
@@ -114,6 +134,7 @@ struct ReaderPreferences: Codable, Equatable, Sendable {
         followsDynamicType = (try? c.decode(Bool.self, forKey: .followsDynamicType)) ?? d.followsDynamicType
         seasonalEffects = (try? c.decode(Bool.self, forKey: .seasonalEffects)) ?? d.seasonalEffects
         largeInitial = (try? c.decode(Bool.self, forKey: .largeInitial)) ?? d.largeInitial
+        initialStyle = (try? c.decode(InitialStyle.self, forKey: .initialStyle)) ?? d.initialStyle
         pageTurnSound = (try? c.decode(Bool.self, forKey: .pageTurnSound)) ?? d.pageTurnSound
         pageTurnHaptic = (try? c.decode(Bool.self, forKey: .pageTurnHaptic)) ?? d.pageTurnHaptic
         pageTurnVolume = (try? c.decode(Double.self, forKey: .pageTurnVolume)).map { min(max($0, 0), 1) } ?? d.pageTurnVolume
@@ -176,13 +197,30 @@ struct ReaderStyle: Equatable {
     let bibleLanguage: String
     /// A large first letter at the start of the chapter.
     let largeInitial: Bool
+    /// How that letter is drawn: illuminated only with Premium.
+    let initialStyle: InitialStyle
 
     var palette: ThemePalette { theme.palette }
 
-    init(preferences: ReaderPreferences, theme: ReaderTheme, contentSizeCategory: UIContentSizeCategory, differentiatesWithoutColor: Bool = false, bibleLanguage: String = "en") {
+    /// - Parameter allowsPremiumLook: whether Premium typefaces and the
+    ///   illuminated initial may be used; nil asks the app's
+    ///   `EntitlementService` (`.premiumThemes`). Without Premium they fall
+    ///   back to New York and the plain initial, the way a Premium theme
+    ///   falls back to Automatic, while the saved choice is kept for when
+    ///   Premium returns.
+    @MainActor
+    init(
+        preferences: ReaderPreferences,
+        theme: ReaderTheme,
+        contentSizeCategory: UIContentSizeCategory,
+        differentiatesWithoutColor: Bool = false,
+        bibleLanguage: String = "en",
+        allowsPremiumLook: Bool? = nil
+    ) {
+        let premium = allowsPremiumLook ?? (EntitlementService.app?.allows(.premiumThemes) ?? false)
         self.differentiatesWithoutColor = differentiatesWithoutColor
         self.bibleLanguage = bibleLanguage
-        font = preferences.font
+        font = Self.resolvedFont(preferences.font, premium: premium)
         var size = CGFloat(preferences.fontSize)
         if preferences.followsDynamicType {
             // Scale the chosen size the way Dynamic Type scales body text.
@@ -196,5 +234,16 @@ struct ReaderStyle: Equatable {
         showsVerseNumbers = preferences.showsVerseNumbers
         layout = preferences.layout
         largeInitial = preferences.largeInitial
+        initialStyle = Self.resolvedInitialStyle(preferences.initialStyle, premium: premium)
+    }
+
+    /// A Premium typeface only with Premium; otherwise the default, New York.
+    static func resolvedFont(_ font: ReaderFont, premium: Bool) -> ReaderFont {
+        premium || !font.isPremium ? font : .newYork
+    }
+
+    /// The illuminated initial only with Premium; otherwise plain.
+    static func resolvedInitialStyle(_ style: InitialStyle, premium: Bool) -> InitialStyle {
+        premium || !style.isPremium ? style : .plain
     }
 }

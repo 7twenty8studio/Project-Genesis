@@ -2,6 +2,7 @@ import UIKit
 
 /// The Home Screen icon people choose in Settings › App Icon, including
 /// Seasons, which changes the icon with the calendar (like the Seasons theme).
+/// The standard icon is free; the others are Premium (`isPremium`).
 enum AppIconChoice: String, CaseIterable, Identifiable, Sendable {
     case standard, night, autumn, winter, spring, summer, seasons
 
@@ -18,6 +19,9 @@ enum AppIconChoice: String, CaseIterable, Identifiable, Sendable {
         case .seasons: String(localized: "Seasons", comment: "Reader theme name: follows the time of year")
         }
     }
+
+    /// Night and the seasonal icons come with Premium (`.premiumThemes`).
+    var isPremium: Bool { self != .standard }
 
     /// The preview image in the asset catalog.
     var previewName: String {
@@ -46,6 +50,15 @@ enum AppIconChoice: String, CaseIterable, Identifiable, Sendable {
         case .summer: "AppIcon-Summer"
         case .seasons: "AppIcon-\(Season.current(on: date).rawValue.capitalized)"
         }
+    }
+}
+
+extension EntitlementService {
+    /// The standard icon always; the others with Premium. When Premium ends
+    /// the icon already set stays (iOS shows an alert whenever an icon
+    /// changes, so it's never switched silently); only choosing is locked.
+    func allows(icon: AppIconChoice) -> Bool {
+        !icon.isPremium || allows(.premiumThemes)
     }
 }
 

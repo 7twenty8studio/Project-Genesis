@@ -46,6 +46,27 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
         func dueCount(on date: Date) -> Int { dueDates.filter { $0 <= date }.count }
     }
 
+    /// The person's reader theme, for Premium's theme-matched widgets. The
+    /// colours travel as hex values because the widget extension doesn't
+    /// compile ReaderTheme. Light and dark are the same for a fixed theme;
+    /// Auto differs (Paper by day, Slate by night).
+    struct Theme: Codable, Equatable, Sendable {
+        struct Colors: Codable, Equatable, Sendable {
+            let background: UInt32
+            let text: UInt32
+            let secondary: UInt32
+            let accent: UInt32
+            /// Premium themes are printed on textured paper.
+            let hasPaperTexture: Bool
+            let isDark: Bool
+        }
+
+        /// `ReaderTheme.rawValue` as chosen (e.g. "automatic", "sepia").
+        let name: String
+        let light: Colors
+        let dark: Colors
+    }
+
     var generatedAt: Date
     var translation: String
     var dailyVerses: [DailyVerse]
@@ -58,6 +79,8 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
     var memorise: Memorise?
     /// Premium widgets (ticking off reading, Memorise) are unlocked.
     var isPremium: Bool?
+    /// Written for Premium only; missing in older snapshots (decodes as nil).
+    var theme: Theme? = nil
 
     static let appGroup = "group.com.7twenty8studio.genesis"
     static let fileName = "widget-snapshot.json"
@@ -108,4 +131,7 @@ enum GenesisLink {
     static let plans = URL(string: "\(scheme)://plans")!
     static let prayer = URL(string: "\(scheme)://prayer")!
     static let memorise = URL(string: "\(scheme)://memorise")!
+    /// The app's Home tab (locked Premium widgets open here; the router has
+    /// no Premium route).
+    static let home = URL(string: "\(scheme)://home")!
 }

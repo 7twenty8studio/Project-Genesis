@@ -105,6 +105,8 @@ struct RootView: View {
         .onReceive(NotificationCenter.default.publisher(for: .genesisUserDataDidChange)) { _ in refreshWidgets() }
         .onReceive(NotificationCenter.default.publisher(for: .genesisDidSync)) { _ in refreshWidgets() }
         .onChange(of: library.editionVersion) { router.reader.translationEditionChanged() }
+        // Premium widgets follow the reading theme.
+        .onChange(of: settings.preferences.theme) { refreshWidgets() }
         .onChange(of: library.currentTranslation) {
             refreshWidgets()
             // Keep listening in the new translation.
@@ -145,7 +147,7 @@ struct RootView: View {
 
     private func refreshWidgets() {
         WidgetSnapshotWriter.applyPendingPlanDays(context: modelContext)
-        WidgetSnapshotWriter.refresh(library: library, progress: progress, context: modelContext, isPremium: entitlements.isPremium)
+        WidgetSnapshotWriter.refresh(library: library, progress: progress, context: modelContext, isPremium: entitlements.isPremium, theme: settings.preferences.theme)
     }
 }
 

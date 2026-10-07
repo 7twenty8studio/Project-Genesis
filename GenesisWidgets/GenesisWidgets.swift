@@ -74,21 +74,14 @@ extension Color {
     }
 }
 
-private struct Eyebrow: View {
-    let text: String
-    var body: some View {
-        Text(text.uppercased())
-            .font(.system(size: 10, weight: .semibold))
-            .kerning(1)
-            .foregroundStyle(WidgetPalette.accent)
-    }
-}
 
 // MARK: - Daily verse
 
+/// Free as the small Home Screen widget and on the Lock Screen; the medium
+/// size is Premium.
 struct DailyVerseWidget: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: "DailyVerse", provider: SnapshotProvider()) { entry in
+        StaticConfiguration(kind: WidgetKind.dailyVerse.rawValue, provider: SnapshotProvider()) { entry in
             DailyVerseView(entry: entry)
         }
         .configurationDisplayName("Verse of the Day")
@@ -102,8 +95,17 @@ struct DailyVerseView: View {
     @Environment(\.widgetFamily) private var family
 
     var body: some View {
+        if entry.snapshot.unlocks(.dailyVerse, in: family) {
+            verseView
+        } else {
+            PremiumLockedView(message: String(localized: "Larger verse widgets come with Genesis Premium."), symbol: "text.quote")
+        }
+    }
+
+    private var verseView: some View {
         let verse = entry.snapshot.dailyVerse(on: entry.date)
-        Group {
+        let colors = WidgetColors(entry.snapshot)
+        return Group {
             switch family {
             case .accessoryInline:
                 Text(verse?.reference ?? String(localized: "Verse of the Day"))
@@ -114,28 +116,30 @@ struct DailyVerseView: View {
                 }
             default:
                 VStack(alignment: .leading, spacing: 8) {
-                    Eyebrow(text: String(localized: "Verse of the Day"))
+                    Eyebrow(text: String(localized: "Verse of the Day"), color: colors.accent)
                     Text(verse?.text ?? "")
                         .font(.system(family == .systemSmall ? .footnote : .body, design: .serif))
-                        .foregroundStyle(WidgetPalette.text)
+                        .foregroundStyle(colors.text)
                         .minimumScaleFactor(0.75)
                     Spacer(minLength: 0)
                     Text("\(verse?.reference ?? "") \u{00B7} \(entry.snapshot.translation)")
                         .font(.caption2.weight(.semibold))
-                        .foregroundStyle(WidgetPalette.secondary)
+                        .foregroundStyle(colors.secondary)
                 }
             }
         }
-        .containerBackground(for: .widget) { WidgetPalette.background }
+        .containerBackground(for: .widget) {
+            if WidgetSize(family).isAccessory { Color.clear } else { WidgetBackground(colors: colors) }
+        }
         .widgetURL(verse.map { GenesisLink.read($0.verse) })
     }
 }
 
-// MARK: - Continue reading
+// MARK: - Continue reading (Premium)
 
 struct ContinueReadingWidget: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: "ContinueReading", provider: SnapshotProvider()) { entry in
+        StaticConfiguration(kind: WidgetKind.continueReading.rawValue, provider: SnapshotProvider()) { entry in
             ContinueReadingView(entry: entry)
         }
         .configurationDisplayName("Continue Reading")
@@ -149,8 +153,17 @@ struct ContinueReadingView: View {
     @Environment(\.widgetFamily) private var family
 
     var body: some View {
+        if entry.snapshot.unlocks(.continueReading, in: family) {
+            readingView
+        } else {
+            PremiumLockedView(message: String(localized: "Pick up where you left off with Genesis Premium."), symbol: "book")
+        }
+    }
+
+    private var readingView: some View {
         let reading = entry.snapshot.continueReading
-        Group {
+        let colors = WidgetColors(entry.snapshot)
+        return Group {
             switch family {
             case .accessoryInline:
                 Label(reading?.reference ?? String(localized: "Open Genesis"), systemImage: "book")
@@ -162,31 +175,33 @@ struct ContinueReadingView: View {
                 }
             default:
                 VStack(alignment: .leading, spacing: 8) {
-                    Eyebrow(text: reading == nil ? String(localized: "Begin Reading") : String(localized: "Continue Reading"))
+                    Eyebrow(text: reading == nil ? String(localized: "Begin Reading") : String(localized: "Continue Reading"), color: colors.accent)
                     Text(reading?.reference ?? String(localized: "Genesis 1", comment: "Bible reference: the book of Genesis, chapter 1"))
                         .font(.system(.title3, design: .serif, weight: .semibold))
-                        .foregroundStyle(WidgetPalette.text)
+                        .foregroundStyle(colors.text)
                     Text(reading?.snippet ?? "In the beginning God created the heaven and the earth.")
                         .font(.system(.footnote, design: .serif))
-                        .foregroundStyle(WidgetPalette.secondary)
+                        .foregroundStyle(colors.secondary)
                         .lineLimit(2)
                     Spacer(minLength: 0)
                     if let reading {
-                        ProgressView(value: reading.bookProgress).tint(WidgetPalette.accent)
+                        ProgressView(value: reading.bookProgress).tint(colors.accent)
                     }
                 }
             }
         }
-        .containerBackground(for: .widget) { WidgetPalette.background }
+        .containerBackground(for: .widget) {
+            if WidgetSize(family).isAccessory { Color.clear } else { WidgetBackground(colors: colors) }
+        }
         .widgetURL(GenesisLink.read(reading?.verse ?? 1_001_001))
     }
 }
 
-// MARK: - Reading progress (large)
+// MARK: - Reading progress (large, Premium)
 
 struct ReadingProgressWidget: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: "ReadingProgress", provider: SnapshotProvider()) { entry in
+        StaticConfiguration(kind: WidgetKind.readingProgress.rawValue, provider: SnapshotProvider()) { entry in
             ReadingProgressView(entry: entry)
         }
         .configurationDisplayName("Reading Progress")
@@ -197,36 +212,45 @@ struct ReadingProgressWidget: Widget {
 
 struct ReadingProgressView: View {
     let entry: SnapshotEntry
+    @Environment(\.widgetFamily) private var family
 
     var body: some View {
+        if entry.snapshot.unlocks(.readingProgress, in: family) {
+            progressView(WidgetColors(entry.snapshot))
+        } else {
+            PremiumLockedView(message: String(localized: "See your plan, streak and prayers at a glance with Genesis Premium."), symbol: "chart.bar")
+        }
+    }
+
+    private func progressView(_ colors: WidgetColors) -> some View {
         let snapshot = entry.snapshot
-        VStack(alignment: .leading, spacing: 14) {
-            Eyebrow(text: String(localized: "Today"))
+        return VStack(alignment: .leading, spacing: 14) {
+            Eyebrow(text: String(localized: "Today"), color: colors.accent)
             if let plan = snapshot.plan {
                 Link(destination: GenesisLink.plans) {
                     VStack(alignment: .leading, spacing: 6) {
                         Text(plan.title)
                             .font(.caption.weight(.semibold))
-                            .foregroundStyle(WidgetPalette.secondary)
+                            .foregroundStyle(colors.secondary)
                         Text(plan.todayTitle)
                             .font(.system(.title3, design: .serif, weight: .semibold))
-                            .foregroundStyle(WidgetPalette.text)
+                            .foregroundStyle(colors.text)
                         HStack {
                             Text("Day \(plan.dayNumber) of \(plan.dayCount)")
                             Spacer()
                             if plan.isTodayComplete { Label("Done", systemImage: "checkmark.circle.fill") }
                         }
                         .font(.caption)
-                        .foregroundStyle(WidgetPalette.secondary)
-                        ProgressView(value: plan.fractionComplete).tint(WidgetPalette.accent)
+                        .foregroundStyle(colors.secondary)
+                        ProgressView(value: plan.fractionComplete).tint(colors.accent)
                     }
                 }
             } else if let reading = snapshot.continueReading {
                 Link(destination: GenesisLink.read(reading.verse)) {
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("Continue Reading").font(.caption.weight(.semibold)).foregroundStyle(WidgetPalette.secondary)
-                        Text(reading.reference).font(.system(.title3, design: .serif, weight: .semibold)).foregroundStyle(WidgetPalette.text)
-                        ProgressView(value: reading.bookProgress).tint(WidgetPalette.accent)
+                        Text("Continue Reading").font(.caption.weight(.semibold)).foregroundStyle(colors.secondary)
+                        Text(reading.reference).font(.system(.title3, design: .serif, weight: .semibold)).foregroundStyle(colors.text)
+                        ProgressView(value: reading.bookProgress).tint(colors.accent)
                     }
                 }
             }
@@ -234,21 +258,21 @@ struct ReadingProgressView: View {
             Divider()
 
             HStack(spacing: 12) {
-                statTile(value: "\(snapshot.streakDays)", label: String(localized: "day streak"), symbol: "flame")
-                statTile(value: "\(snapshot.chaptersRead)", label: String(localized: "chapters read"), symbol: "book.pages")
+                statTile(value: "\(snapshot.streakDays)", label: String(localized: "day streak"), symbol: "flame", colors: colors)
+                statTile(value: "\(snapshot.chaptersRead)", label: String(localized: "chapters read"), symbol: "book.pages", colors: colors)
             }
 
             Link(destination: GenesisLink.prayer) {
                 HStack(spacing: 10) {
-                    Image(systemName: "hands.and.sparkles").foregroundStyle(WidgetPalette.accent)
+                    Image(systemName: "hands.and.sparkles").foregroundStyle(colors.accent)
                     VStack(alignment: .leading, spacing: 2) {
                         Text(snapshot.activePrayerCount == 1 ? "1 prayer" : "\(snapshot.activePrayerCount) prayers")
                             .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(WidgetPalette.text)
+                            .foregroundStyle(colors.text)
                         if let reminder = snapshot.nextPrayerReminder {
                             Text("Next reminder \(reminder.formatted(date: .omitted, time: .shortened))")
                                 .font(.caption)
-                                .foregroundStyle(WidgetPalette.secondary)
+                                .foregroundStyle(colors.secondary)
                         }
                     }
                 }
@@ -259,28 +283,28 @@ struct ReadingProgressView: View {
             if let verse = snapshot.dailyVerse(on: entry.date) {
                 Text("\u{201C}\(verse.text)\u{201D} \u{2014} \(verse.reference)")
                     .font(.system(.footnote, design: .serif))
-                    .foregroundStyle(WidgetPalette.secondary)
+                    .foregroundStyle(colors.secondary)
                     .lineLimit(3)
             }
         }
-        .containerBackground(for: .widget) { WidgetPalette.background }
+        .containerBackground(for: .widget) { WidgetBackground(colors: colors) }
     }
 
-    private func statTile(value: String, label: String, symbol: String) -> some View {
+    private func statTile(value: String, label: String, symbol: String, colors: WidgetColors) -> some View {
         VStack(alignment: .leading, spacing: 4) {
-            Image(systemName: symbol).foregroundStyle(WidgetPalette.accent)
-            Text(value).font(.system(.title2, design: .serif, weight: .semibold)).foregroundStyle(WidgetPalette.text)
-            Text(label).font(.caption2).foregroundStyle(WidgetPalette.secondary)
+            Image(systemName: symbol).foregroundStyle(colors.accent)
+            Text(value).font(.system(.title2, design: .serif, weight: .semibold)).foregroundStyle(colors.text)
+            Text(label).font(.caption2).foregroundStyle(colors.secondary)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
-// MARK: - Lock screen streak
+// MARK: - Lock screen streak (Premium)
 
 struct StreakWidget: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: "Streak", provider: SnapshotProvider()) { entry in
+        StaticConfiguration(kind: WidgetKind.streak.rawValue, provider: SnapshotProvider()) { entry in
             StreakView(entry: entry)
         }
         .configurationDisplayName("Reading Streak")
@@ -294,6 +318,14 @@ struct StreakView: View {
     @Environment(\.widgetFamily) private var family
 
     var body: some View {
+        if entry.snapshot.unlocks(.streak, in: family) {
+            streakView
+        } else {
+            PremiumLockedView(message: String(localized: "Keep your reading streak in view with Genesis Premium."), symbol: "flame")
+        }
+    }
+
+    private var streakView: some View {
         Group {
             if family == .accessoryInline {
                 Label("\(entry.snapshot.streakDays)-day streak", systemImage: "flame")
@@ -312,11 +344,11 @@ struct StreakView: View {
     }
 }
 
-// MARK: - Lock screen prayer reminder
+// MARK: - Lock screen prayer reminder (Premium)
 
 struct PrayerReminderWidget: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: "PrayerReminder", provider: SnapshotProvider()) { entry in
+        StaticConfiguration(kind: WidgetKind.prayerReminder.rawValue, provider: SnapshotProvider()) { entry in
             PrayerReminderView(entry: entry)
         }
         .configurationDisplayName("Prayer Reminder")
@@ -330,11 +362,19 @@ struct PrayerReminderView: View {
     @Environment(\.widgetFamily) private var family
 
     var body: some View {
+        if entry.snapshot.unlocks(.prayerReminder, in: family) {
+            prayerView
+        } else {
+            PremiumLockedView(message: String(localized: "See your next prayer reminder with Genesis Premium."), symbol: "hands.and.sparkles")
+        }
+    }
+
+    private var prayerView: some View {
         let snapshot = entry.snapshot
         // Prayer text is private: only counts and times appear here.
         let count = snapshot.activePrayerCount == 1 ? String(localized: "1 prayer") : String(localized: "\(snapshot.activePrayerCount) prayers")
         let next = snapshot.nextPrayerReminder.map { $0.formatted(date: .omitted, time: .shortened) }
-        Group {
+        return Group {
             switch family {
             case .accessoryInline:
                 Label(next.map { String(localized: "Pray at \($0)") } ?? count, systemImage: "hands.and.sparkles")

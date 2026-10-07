@@ -1,10 +1,13 @@
 import SwiftUI
 
 /// Settings › App Icon: the standard icon, Night, the four seasons, or
-/// Seasons to change with the calendar.
+/// Seasons to change with the calendar. The standard icon is free; the rest
+/// are Premium and open the Premium screen when locked.
 struct AppIconPickerView: View {
     @Environment(\.palette) private var palette
+    @Environment(EntitlementService.self) private var entitlements
     @State private var choice = AppIcon.choice
+    @State private var premium: PremiumFeature?
 
     private let columns = [GridItem(.adaptive(minimum: 96), spacing: 18)]
 
@@ -12,9 +15,14 @@ struct AppIconPickerView: View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 22) {
                 ForEach(AppIconChoice.allCases) { item in
+                    let isLocked = !entitlements.allows(icon: item)
                     Button {
-                        choice = item
-                        AppIcon.choice = item
+                        if isLocked {
+                            premium = .premiumThemes
+                        } else {
+                            choice = item
+                            AppIcon.choice = item
+                        }
                     } label: {
                         VStack(spacing: 8) {
                             Image(item.previewName)
@@ -36,13 +44,21 @@ struct AppIconPickerView: View {
                                         .strokeBorder(choice == item ? palette.accent : palette.separator, lineWidth: choice == item ? 3 : 1)
                                         .padding(-4)
                                 )
+                                .overlay(alignment: .topTrailing) {
+                                    if isLocked {
+                                        PremiumBadge()
+                                            .padding(5)
+                                            .background(palette.background, in: Circle())
+                                            .offset(x: 6, y: -6)
+                                    }
+                                }
                             Text(item.title)
                                 .font(.caption)
                                 .foregroundStyle(choice == item ? palette.accent : palette.text)
                         }
                     }
                     .buttonStyle(.plain)
-                    .accessibilityLabel(item.title)
+                    .accessibilityLabel(isLocked ? String(localized: "\(item.title) icon, Premium") : item.title)
                     .accessibilityAddTraits(choice == item ? .isSelected : [])
                     .accessibilityIdentifier("appIcon.\(item.rawValue)")
                 }
@@ -53,8 +69,17 @@ struct AppIconPickerView: View {
                 .font(.footnote)
                 .foregroundStyle(palette.secondaryText)
                 .padding(.horizontal, 24)
+
+            if !entitlements.allows(.premiumThemes) {
+                Text("Night and the seasonal icons come with Genesis Premium.")
+                    .font(.footnote)
+                    .foregroundStyle(palette.secondaryText)
+                    .padding(.horizontal, 24)
+                    .padding(.top, 8)
+            }
         }
         .themedScreen()
+        .premiumSheet($premium)
         .navigationTitle("App Icon")
         .navigationBarTitleDisplayMode(.inline)
     }

@@ -13,6 +13,7 @@ struct MemoryReviewView: View {
     @Environment(\.palette) private var palette
     @Environment(\.dismiss) private var dismiss
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @AppStorage(PracticeStreak.storageKey) private var streak = PracticeStreak()
 
     @State private var queue: [UUID] = []
     @State private var reviewed = 0
@@ -182,6 +183,8 @@ struct MemoryReviewView: View {
 
     private func record(_ grade: MemoryGrade, for verse: MemoryVerse) {
         StudyStore(context: modelContext).review(verse, grade)
+        // A review is practice too: it keeps the days-in-a-row streak going.
+        streak = streak.recording(on: .now)
         withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.3)) {
             let id = queue.removeFirst()
             if grade == .again { queue.append(id) } else { reviewed += 1 }

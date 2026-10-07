@@ -41,6 +41,16 @@
         }
       }
     },
+    "%@ icon, Premium": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Icono %@, Premium"
+          }
+        }
+      }
+    },
     "%@ of %lld free explanations used today": {
       "localizations": {
         "es": {
@@ -209,6 +219,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld días"
+          }
+        }
+      }
+    },
+    "%lld days in a row": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld días seguidos"
           }
         }
       }
@@ -434,6 +454,16 @@
         }
       }
     },
+    "1 day in a row": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 día seguido"
+          }
+        }
+      }
+    },
     "1 earlier day to catch up on": {
       "localizations": {
         "es": {
@@ -524,12 +554,62 @@
         }
       }
     },
+    "A calm, sturdy serif with an even rhythm": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una serif tranquila y sólida, de ritmo uniforme"
+          }
+        }
+      }
+    },
+    "A candle-warm place to read and pray at night, with your sounds, a sleep timer and nothing to interrupt you.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un lugar cálido como una vela para leer y orar de noche, con tus sonidos, un temporizador y nada que te interrumpa."
+          }
+        }
+      }
+    },
+    "A deluxe edition": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una edición de lujo"
+          }
+        }
+      }
+    },
+    "A graceful Garamond-style face for long chapters": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una letra elegante de estilo Garamond para capítulos largos"
+          }
+        }
+      }
+    },
     "A group with a reading plan now shows everyone's progress, with a tick for who has read today.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Un grupo con plan de lectura ahora muestra el progreso de todos, con una marca para quien ya leyó hoy."
+          }
+        }
+      }
+    },
+    "A light, refined face made for screens": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una letra ligera y refinada, hecha para pantallas"
           }
         }
       }
@@ -1598,6 +1678,17 @@
         }
       }
     },
+    "Cedar": {
+      "comment": "Memorise level: the highest",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cedro"
+          }
+        }
+      }
+    },
     "Centre": {
       "localizations": {
         "es": {
@@ -1638,6 +1729,16 @@
         }
       }
     },
+    "Chapter complete": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capítulo completado"
+          }
+        }
+      }
+    },
     "Chapter progress": {
       "localizations": {
         "es": {
@@ -1674,6 +1775,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hijos"
+          }
+        }
+      }
+    },
+    "Choose Sounds": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elegir sonidos"
           }
         }
       }
@@ -1748,12 +1859,33 @@
         }
       }
     },
+    "Choose each missing word from the verse.": {
+      "comment": "Memorise game: Fill the Gaps",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige cada palabra que falta del versículo."
+          }
+        }
+      }
+    },
     "Choose the font, colour, size and alignment, or put the verse on one of your own photos.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Elige la letra, el color, el tamaño y la alineación, o pon el versículo sobre una de tus fotos."
+          }
+        }
+      }
+    },
+    "Choose the missing word.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige la palabra que falta."
           }
         }
       }
@@ -1835,6 +1967,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ciudad"
+          }
+        }
+      }
+    },
+    "Classic": {
+      "comment": "Large first letter style: a plain large letter",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clásica"
           }
         }
       }
@@ -2292,6 +2435,16 @@
         }
       }
     },
+    "Day complete": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Día completado"
+          }
+        }
+      }
+    },
     "Days in the Word": {
       "localizations": {
         "es": {
@@ -2696,6 +2849,16 @@
         }
       }
     },
+    "Evening Sanctuary": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Santuario nocturno"
+          }
+        }
+      }
+    },
     "Event": {
       "localizations": {
         "es": {
@@ -2792,6 +2955,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cada lugar del mapa bíblico muestra ahora qué tan seguros están los estudiosos de dónde estaba. Los lugares inciertos tienen un signo de interrogación y puedes ocultarlos desde el menú Recorridos."
+          }
+        }
+      }
+    },
+    "Every widget": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos los widgets"
+          }
+        }
+      }
+    },
+    "Every widget in every size, in your reading theme: today's reading, progress, prayer, Memorise, your group and listening on the Lock Screen.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos los widgets en todos los tamaños, con tu tema de lectura: la lectura de hoy, el progreso, la oración, Memorizar, tu grupo y la escucha en la pantalla bloqueada."
           }
         }
       }
@@ -3040,6 +3223,27 @@
         }
       }
     },
+    "Fill the Gaps": {
+      "comment": "Memorise game",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completa los huecos"
+          }
+        }
+      }
+    },
+    "Fill the gaps, put the words in order, or try a one-minute speed round, and grow from Seed to Cedar.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completa los huecos, ordena las palabras o prueba una ronda rápida de un minuto, y crece de Semilla a Cedro."
+          }
+        }
+      }
+    },
     "Find a book": {
       "localizations": {
         "es": {
@@ -3092,6 +3296,16 @@
         }
       }
     },
+    "First letter style": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estilo de la letra inicial"
+          }
+        }
+      }
+    },
     "First mentioned in %@": {
       "localizations": {
         "es": {
@@ -3112,12 +3326,12 @@
         }
       }
     },
-    "Flashcards that bring each verse back just before you'd forget it, with a widget for your Home Screen.": {
+    "Flashcards that bring each verse back just before you'd forget it, plus games, levels and a daily streak.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tarjetas que te traen cada versículo justo antes de que lo olvides, con un widget para tu pantalla de inicio."
+            "value": "Tarjetas que te devuelven cada versículo justo antes de olvidarlo, además de juegos, niveles y una racha diaria."
           }
         }
       }
@@ -3290,6 +3504,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Según Strong"
+          }
+        }
+      }
+    },
+    "Games": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Juegos"
           }
         }
       }
@@ -3880,6 +4104,16 @@
         }
       }
     },
+    "I knew it": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Me lo sabía"
+          }
+        }
+      }
+    },
     "I prayed": {
       "comment": "Reaction button on a prayer request",
       "localizations": {
@@ -3897,6 +4131,27 @@
           "stringUnit": {
             "state": "translated",
             "value": "Si existe una cuenta con ese correo, te enviaremos un enlace para restablecerla."
+          }
+        }
+      }
+    },
+    "Illuminated": {
+      "comment": "Large first letter style: an ornamental manuscript initial",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iluminada"
+          }
+        }
+      }
+    },
+    "Illuminated letters and new fonts": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Letras iluminadas y nuevos tipos de letra"
           }
         }
       }
@@ -4410,6 +4665,16 @@
         }
       }
     },
+    "Level progress": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Progreso de nivel"
+          }
+        }
+      }
+    },
     "Library": {
       "localizations": {
         "es": {
@@ -4862,6 +5127,16 @@
         }
       }
     },
+    "Memorise, now with games": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memorizar, ahora con juegos"
+          }
+        }
+      }
+    },
     "Memorised": {
       "comment": "Memorise progress",
       "localizations": {
@@ -4900,6 +5175,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Medianoche"
+          }
+        }
+      }
+    },
+    "Missing word": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Palabra que falta"
+          }
+        }
+      }
+    },
+    "Missing word, choose it below": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Palabra que falta, elígela abajo"
           }
         }
       }
@@ -5322,12 +5617,32 @@
         }
       }
     },
+    "Next": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Siguiente"
+          }
+        }
+      }
+    },
     "Next chapter": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Capítulo siguiente"
+          }
+        }
+      }
+    },
+    "Next level: %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Siguiente nivel: %@"
           }
         }
       }
@@ -5349,6 +5664,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Noche"
+          }
+        }
+      }
+    },
+    "Night and the seasonal icons come with Genesis Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noche y los iconos de temporada vienen con Genesis Premium."
           }
         }
       }
@@ -5593,6 +5918,16 @@
         }
       }
     },
+    "Not yet": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todavía no"
+          }
+        }
+      }
+    },
     "Note": {
       "comment": "Verse selection action: add a note",
       "localizations": {
@@ -5630,6 +5965,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Notas y oraciones"
+          }
+        }
+      }
+    },
+    "Nothing is due, so games are extra practice and won't change your schedule.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay nada pendiente, así que los juegos son práctica extra y no cambian tu calendario."
           }
         }
       }
@@ -5761,6 +6106,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Activado. Puedes cambiarlo en Ajustes › Funciones."
+          }
+        }
+      }
+    },
+    "One minute": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un minuto"
           }
         }
       }
@@ -6090,6 +6445,16 @@
         }
       }
     },
+    "Pause Sounds": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausar sonidos"
+          }
+        }
+      }
+    },
     "Pause listening": {
       "localizations": {
         "es": {
@@ -6274,6 +6639,16 @@
         }
       }
     },
+    "Play Sounds": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reproducir sonidos"
+          }
+        }
+      }
+    },
     "Playback": {
       "localizations": {
         "es": {
@@ -6351,6 +6726,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Las publicaciones son visibles para todos los que iniciaron sesión en Genesis. Puedes bloquear a cualquiera y reportar cualquier publicación o comentario."
+          }
+        }
+      }
+    },
+    "Practise today to start a streak.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Practica hoy para empezar una racha."
           }
         }
       }
@@ -6463,16 +6848,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Premium restaurado."
-          }
-        }
-      }
-    },
-    "Premium themes": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Temas Premium"
           }
         }
       }
@@ -6772,6 +7147,26 @@
         }
       }
     },
+    "Read by candlelight at night, with your sounds and a sleep timer.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee de noche a la luz de una vela, con tus sonidos y un temporizador."
+          }
+        }
+      }
+    },
+    "Read by candlelight tonight, with your sounds and a sleep timer.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee esta noche a la luz de una vela, con tus sonidos y un temporizador."
+          }
+        }
+      }
+    },
     "Read in Parallel": {
       "localizations": {
         "es": {
@@ -7009,6 +7404,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "La lectura, la búsqueda, las notas, los resaltados, el diario de oración y los planes de lectura siguen siendo gratis, siempre."
+          }
+        }
+      }
+    },
+    "Recall as many verses as you can in one minute.": {
+      "comment": "Memorise game: Speed Round",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recuerda tantos versículos como puedas en un minuto."
           }
         }
       }
@@ -7489,6 +7895,17 @@
         }
       }
     },
+    "Sapling": {
+      "comment": "Memorise level",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arbolito"
+          }
+        }
+      }
+    },
     "Save": {
       "localizations": {
         "es": {
@@ -7515,6 +7932,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ahorra 33%%"
+          }
+        }
+      }
+    },
+    "Say each verse to yourself, then show it and mark how you did.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Di cada versículo para ti, luego muéstralo y marca cómo te fue."
+          }
+        }
+      }
+    },
+    "Say the passage to yourself, then show it.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Di el pasaje para ti, luego muéstralo."
           }
         }
       }
@@ -7788,6 +8225,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Consulta tu tiempo de lectura, tu racha más larga, tus libros y temas favoritos, y más con Premium."
+          }
+        }
+      }
+    },
+    "Seed": {
+      "comment": "Memorise level",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Semilla"
           }
         }
       }
@@ -8446,6 +8894,17 @@
         }
       }
     },
+    "Speed Round": {
+      "comment": "Memorise game",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ronda rápida"
+          }
+        }
+      }
+    },
     "Speed and sleep timer": {
       "localizations": {
         "es": {
@@ -8483,6 +8942,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Primavera"
+          }
+        }
+      }
+    },
+    "Sprout": {
+      "comment": "Memorise level",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brote"
           }
         }
       }
@@ -8913,6 +9383,17 @@
         }
       }
     },
+    "Tap the verse's words back into order.": {
+      "comment": "Memorise game: Word Order",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca las palabras del versículo para ponerlas en orden."
+          }
+        }
+      }
+    },
     "Tell us what you think": {
       "localizations": {
         "es": {
@@ -8983,12 +9464,12 @@
         }
       }
     },
-    "Textured paper in Cream, Parchment, Midnight and Sage, and seasonal themes with falling leaves, snow, blossom and summer sunlight.": {
+    "Textured paper and seasonal themes, illuminated first letters, three more book fonts, special app icons and a ribbon when you finish a chapter.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Papel con textura en Crema, Pergamino, Medianoche y Salvia, y temas de temporada con hojas, nieve, flores y luz de verano."
+            "value": "Temas de papel con textura y de temporada, letras iniciales iluminadas, tres tipos de letra más, iconos especiales y una cinta al terminar un capítulo."
           }
         }
       }
@@ -9353,6 +9834,16 @@
         }
       }
     },
+    "Themes, fonts and icons": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temas, letras e iconos"
+          }
+        }
+      }
+    },
     "Then %@ / %@. Cancel anytime in Settings before the trial ends and you won't be charged.": {
       "localizations": {
         "es": {
@@ -9503,16 +9994,6 @@
         }
       }
     },
-    "Tick off today's reading from your Home Screen, and follow along on the Lock Screen while you listen.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Marca la lectura de hoy desde tu pantalla de inicio y sigue el texto en la pantalla de bloqueo mientras escuchas."
-          }
-        }
-      }
-    },
     "Time": {
       "localizations": {
         "es": {
@@ -9579,6 +10060,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Título"
+          }
+        }
+      }
+    },
+    "To keep notifications quiet, turn on Do Not Disturb or another Focus in Control Centre.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para silenciar las notificaciones, activa No molestar u otro modo de concentración en el Centro de control."
           }
         }
       }
@@ -9710,6 +10201,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Las traducciones difieren en cuánto siguen el hebreo, el arameo y el griego originales, y en cómo suenan. Muchas personas leen más de una."
+          }
+        }
+      }
+    },
+    "Tree": {
+      "comment": "Memorise level",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Árbol"
           }
         }
       }
@@ -9952,6 +10454,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Valle"
+          }
+        }
+      }
+    },
+    "Verse %lld of %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versículo %lld de %lld"
           }
         }
       }
@@ -10501,6 +11013,16 @@
         }
       }
     },
+    "With Premium, chapters can open with an illuminated letter, in one of three new book fonts.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Premium, los capítulos pueden empezar con una letra iluminada, en uno de tres nuevos tipos de letra."
+          }
+        }
+      }
+    },
     "With Premium, explore 1,250 places on the map and follow Paul's journeys and the Exodus step by step.": {
       "localizations": {
         "es": {
@@ -10557,6 +11079,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Con Premium, el widget Lectura de hoy muestra la lectura de tu plan y te permite marcarla como leída sin abrir la app."
+          }
+        }
+      }
+    },
+    "Word Order": {
+      "comment": "Memorise game",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orden de palabras"
           }
         }
       }
@@ -10774,6 +11307,36 @@
         }
       }
     },
+    "You knew %lld of %lld verses.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Te sabías %lld de %lld versículos."
+          }
+        }
+      }
+    },
+    "You practised %lld verses.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Practicaste %lld versículos."
+          }
+        }
+      }
+    },
+    "You practised 1 verse.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Practicaste 1 versículo."
+          }
+        }
+      }
+    },
     "You read %lld books from beginning to end.": {
       "localizations": {
         "es": {
@@ -10900,6 +11463,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Publicaste mucho en la última hora. Inténtalo de nuevo más tarde."
+          }
+        }
+      }
+    },
+    "You've reached the highest level.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Has llegado al nivel más alto."
           }
         }
       }
@@ -11141,6 +11714,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "libros terminados"
+          }
+        }
+      }
+    },
+    "books opened": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "libros abiertos"
           }
         }
       }

@@ -184,7 +184,7 @@ struct PlanDetailView: View {
                                     .accessibilityIdentifier("plan.read")
 
                                     Button {
-                                        store.setDay(today.number, completed: true, in: enrollment)
+                                        mark(today.number, completed: true, in: enrollment, store: store)
                                     } label: {
                                         Label("Mark as Read", systemImage: "checkmark")
                                     }
@@ -216,7 +216,7 @@ struct PlanDetailView: View {
                                 day: day,
                                 isComplete: enrollment.completedDays.contains(day.number),
                                 isToday: day.number == scheduled,
-                                onToggle: { store.setDay(day.number, completed: !enrollment.completedDays.contains(day.number), in: enrollment) },
+                                onToggle: { mark(day.number, completed: !enrollment.completedDays.contains(day.number), in: enrollment, store: store) },
                                 onRead: { if let first = day.spans.first { router.read(first.first) } }
                             )
                             .id(day.number)
@@ -232,6 +232,7 @@ struct PlanDetailView: View {
             }
             .themedScreen()
             .sensoryFeedback(.success, trigger: enrollment.completedDays.count) { old, new in new > old }
+            .overlay { ChapterMomentOverlay(place: .plans, playsHaptic: false) }
             .navigationTitle(plan.title)
             .navigationBarTitleDisplayMode(.inline)
             .confirmationDialog("Restart from today?", isPresented: $confirmRestart, titleVisibility: .visible) {
@@ -246,6 +247,16 @@ struct PlanDetailView: View {
                 }
             }
         }
+    }
+}
+
+extension PlanDetailView {
+    /// Marks a day, with a brief moment when it's newly read.
+    @MainActor
+    fileprivate func mark(_ day: Int, completed: Bool, in enrollment: PlanEnrollment, store: StudyStore) {
+        let isNew = completed && !enrollment.completedDays.contains(day)
+        store.setDay(day, completed: completed, in: enrollment)
+        if isNew { ChapterMoments.shared.planDayCompleted(day, planID: enrollment.id.uuidString, in: .plans) }
     }
 }
 

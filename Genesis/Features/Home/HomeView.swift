@@ -34,6 +34,7 @@ struct HomeView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 28) {
                     greeting
+                    if EveningSanctuary.showsHomeCard() { EveningSanctuaryCard() }
                     if YearInReview.isSeason(), progress.hasStartedReading { yearInReviewCard }
                     continueReading
                     if features.isOn(.plansAndPrayer) { todaysReading }
@@ -52,6 +53,7 @@ struct HomeView: View {
                 .frame(maxWidth: .infinity)
             }
             .themedScreen()
+            .overlay { ChapterMomentOverlay(place: .home).ignoresSafeArea(edges: .top) }
             .toolbar(.hidden, for: .navigationBar)
             .sheet(item: $editingNote) { note in
                 NavigationStack { NoteEditorView(note: note) }
@@ -181,6 +183,7 @@ struct HomeView: View {
                             .buttonStyle(.borderedProminent)
                             Button {
                                 StudyStore(context: modelContext).setDay(today.number, completed: !doneToday, in: enrollment)
+                                if !doneToday { ChapterMoments.shared.planDayCompleted(today.number, planID: enrollment.id.uuidString, in: .home) }
                             } label: {
                                 Label(doneToday ? "Done" : "Mark as Read", systemImage: doneToday ? "checkmark.circle.fill" : "checkmark")
                             }

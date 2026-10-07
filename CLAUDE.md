@@ -98,8 +98,29 @@ shares; README.md has the architecture.
   Tools/Sounds/make_page_turn.py and credited in Resources/Sounds/SoundCredits.txt;
   `pageTurnVolume` picks one) and `pageTurnHaptic` (medium, `pageTurnHapticStrength`).
 
+## Premium look and feel
+- Look (`.premiumThemes`): `ReaderPreferences.initialStyle` illuminated (an
+  ornament image as an NSTextAttachment before verse 1, the real letters kept
+  invisible so the text stays verbatim), Premium fonts (Crimson Pro, Source
+  Serif 4, Spectral; OFL, built by Tools/Fonts/make_fonts.py), Premium app
+  icons (all but the standard one), and `ChapterMoments` (a gold ribbon on
+  finishing a chapter or plan day; UI tests only with `-uiTestingMoments`).
+  Without Premium the reader falls back to plain/New York, keeping the choice.
+- Evening Sanctuary (`.eveningSanctuary`): `EveningSanctuaryView` from the
+  reader (moon button or More menu) and a Home card after 6 pm (UI tests only
+  with `-uiTestingEvening`); verses verbatim, ambient sounds, sleep timer.
+- Widgets: only the small verse of the day and Lock Screen verse are free
+  (`WidgetAccess` in Genesis/Shared); every other widget/size shows a locked
+  card. Premium widgets use the reading theme (colours carried in
+  `WidgetSnapshot.theme` as hex, since the extension can't use ThemePalette).
+- Year in Review: free shares one card; with `.readingInsights`, up to three.
+
 ## Memorise Scripture
-- Premium (`.memorise`), shown with Plans & Prayer. `MemoryVerse` (SwiftData,
+- Premium (`.memorise`), shown with Plans & Prayer. Games (`MemoryGame`):
+  Fill the Gaps, Word Order and Speed Round use only the verse's real words
+  and finish on the exact text; results feed the schedule only when the verse
+  is due (never as Easy). Levels Seed → Cedar come from mastered passages;
+  the practice streak is local (`MemoryProgress`, UserDefaults). `MemoryVerse` (SwiftData,
   synced as `memory_verses`) stores the passage's verse ids, translation and
   `MemorySchedule` (a gentle SM-2); never the text. Hints are the passage's
   opening words, verbatim (`MemoryHint.opening`), never altered text.
@@ -107,12 +128,12 @@ shares; README.md has the architecture.
   entitlement); deep link `genesis://memorise`.
 
 ## Premium widgets
-- `.widgets`: the Today's Reading widget (tick via `TogglePlanDayIntent`,
+- `.widgets` (every widget but the small/Lock Screen verse): the Today's Reading widget (tick via `TogglePlanDayIntent`,
   which leaves `PendingPlanDays` in the App Group for the app to apply), and
   the listening Live Activity (`ListeningActivityController`, driven by
   `AudioPlayerService`; buttons are `LiveActivityIntent`s that call
   `ListeningControl`). Shared types live in Genesis/Shared/WidgetIntents.swift.
-  The widgets that were free before stay free.
+  Only the small and Lock Screen verse of the day are free (`WidgetAccess`).
 - Apple Watch (verse of the day, Premium): GenesisWatch + GenesisWatchWidgets
   targets, fed by `WatchConnector` (WatchConnectivity application context,
   `WatchPayload`). Embedded in the iPhone app (a dependency of Genesis in

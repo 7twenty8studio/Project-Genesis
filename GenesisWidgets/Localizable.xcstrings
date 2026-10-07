@@ -182,6 +182,16 @@
         }
       }
     },
+    "Genesis Premium": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genesis Premium"
+          }
+        }
+      }
+    },
     "Group Progress": {
       "localizations": {
         "es": {
@@ -210,6 +220,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Juan 3–5"
+          }
+        }
+      }
+    },
+    "Keep your reading streak in view with Genesis Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ten tu racha de lectura a la vista con Genesis Premium."
+          }
+        }
+      }
+    },
+    "Larger verse widgets come with Genesis Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los widgets de versículo más grandes vienen con Genesis Premium."
           }
         }
       }
@@ -314,6 +344,16 @@
         }
       }
     },
+    "Pick up where you left off with Genesis Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retoma donde lo dejaste con Genesis Premium."
+          }
+        }
+      }
+    },
     "Pick up where you left off.": {
       "localizations": {
         "es": {
@@ -374,6 +414,16 @@
         }
       }
     },
+    "Premium": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium"
+          }
+        }
+      }
+    },
     "Psalms 119:105": {
       "comment": "Bible reference",
       "localizations": {
@@ -411,6 +461,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Recuerda un versículo que estás aprendiendo de memoria."
+          }
+        }
+      }
+    },
+    "See your next prayer reminder with Genesis Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ve tu próximo recordatorio de oración con Genesis Premium."
+          }
+        }
+      }
+    },
+    "See your plan, streak and prayers at a glance with Genesis Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ve tu plan, tu racha y tus oraciones de un vistazo con Genesis Premium."
           }
         }
       }

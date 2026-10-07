@@ -15,6 +15,8 @@ import Foundation
 ///     -uiTestingAI                    turn the study assistant on (default: off, like release)
 ///     -uiTestingWhatsNew              show What's New announcements (default: never)
 ///     -uiTestingWelcome               show the Premium morning welcome (default: never)
+///     -uiTestingEvening               show Evening Sanctuary's Home card and moon button at any hour (default: never)
+///     -uiTestingMoments               show chapter-complete moments (default: never)
 ///     -uiTestingSignedOut             groups and community as a signed-out guest
 ///     -uiTestingSimple                every optional feature switched off
 struct UITestingOptions {

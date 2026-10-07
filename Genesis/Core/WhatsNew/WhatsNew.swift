@@ -27,7 +27,29 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition]
+
+    static let deluxeEdition = WhatsNewAnnouncement(
+        id: "memorise-games-sanctuary-look",
+        title: String(localized: "A deluxe edition"),
+        items: [
+            WhatsNewItem(
+                systemImage: "gamecontroller",
+                title: String(localized: "Memorise, now with games"),
+                detail: String(localized: "Fill the gaps, put the words in order, or try a one-minute speed round, and grow from Seed to Cedar.")
+            ),
+            WhatsNewItem(
+                systemImage: "moon.stars",
+                title: String(localized: "Evening Sanctuary"),
+                detail: String(localized: "Read by candlelight at night, with your sounds and a sleep timer.")
+            ),
+            WhatsNewItem(
+                systemImage: "textformat.alt",
+                title: String(localized: "Illuminated letters and new fonts"),
+                detail: String(localized: "With Premium, chapters can open with an illuminated letter, in one of three new book fonts.")
+            ),
+        ]
+    )
 
     static let studyAndJournal = WhatsNewAnnouncement(
         id: "word-study-handwriting-touches",

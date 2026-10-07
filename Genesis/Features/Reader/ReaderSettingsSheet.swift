@@ -72,11 +72,13 @@ struct ReaderSettingsSheet: View {
 
                     Section("Text") {
                         NavigationLink {
-                            FontList(selection: $settings.preferences.font)
+                            FontList(selection: $settings.preferences.font, premium: $premium)
                         } label: {
+                            // Without Premium the reader falls back from a Premium typeface.
+                            let font = ReaderStyle.resolvedFont(settings.preferences.font, premium: entitlements.allows(.premiumThemes))
                             LabeledContent("Font") {
-                                Text(settings.preferences.font.title)
-                                    .font(settings.preferences.font.font(size: 17))
+                                Text(font.title)
+                                    .font(font.font(size: 17))
                             }
                         }
 
@@ -135,6 +137,9 @@ struct ReaderSettingsSheet: View {
                         Toggle("Verse numbers", isOn: $settings.preferences.showsVerseNumbers)
                         Toggle("Large first letter", isOn: $settings.preferences.largeInitial)
                             .accessibilityIdentifier("settings.largeInitial")
+                        if settings.preferences.largeInitial {
+                            initialStylePicker(selection: $settings.preferences.initialStyle)
+                        }
                         if settings.preferences.readingMode == .page {
                             PageTurnFeedbackSettings()
                         }
@@ -230,6 +235,46 @@ struct ReaderSettingsSheet: View {
         }
     }
 
+    /// Classic or Illuminated, beside "Large first letter". Illuminated is
+    /// Premium: locked, it shows the badge and opens the Premium screen.
+    private func initialStylePicker(selection: Binding<InitialStyle>) -> some View {
+        let allowed = entitlements.allows(.premiumThemes)
+        return HStack {
+            Text("First letter style")
+            Spacer()
+            Menu {
+                ForEach(InitialStyle.allCases) { style in
+                    let isLocked = style.isPremium && !allowed
+                    Button {
+                        if isLocked {
+                            premium = .premiumThemes
+                        } else {
+                            selection.wrappedValue = style
+                        }
+                    } label: {
+                        if isLocked {
+                            Label(style.title, systemImage: "lock.fill")
+                        } else if selection.wrappedValue == style {
+                            Label(style.title, systemImage: "checkmark")
+                        } else {
+                            Text(style.title)
+                        }
+                    }
+                    .accessibilityIdentifier("settings.initialStyle.\(style.rawValue)")
+                }
+            } label: {
+                HStack(spacing: 6) {
+                    // Without Premium the reader shows the classic letter, so say so.
+                    let shown = allowed ? selection.wrappedValue : .plain
+                    Text(shown.title)
+                        .foregroundStyle(palette.accent)
+                    if !allowed { PremiumBadge() }
+                }
+            }
+            .accessibilityIdentifier("settings.initialStyle")
+        }
+    }
+
     private func labeledSlider(_ title: String, value: Binding<Double>, in range: ClosedRange<Double>) -> some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(title)
@@ -241,12 +286,20 @@ struct ReaderSettingsSheet: View {
 
 private struct FontList: View {
     @Binding var selection: ReaderFont
+    /// Set to open the Premium screen for a locked typeface.
+    @Binding var premium: PremiumFeature?
     @Environment(\.palette) private var palette
+    @Environment(EntitlementService.self) private var entitlements
 
     var body: some View {
         List(ReaderFont.allCases) { font in
+            let isLocked = !entitlements.allows(font)
             Button {
-                selection = font
+                if isLocked {
+                    premium = .premiumThemes
+                } else {
+                    selection = font
+                }
             } label: {
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
@@ -258,12 +311,15 @@ private struct FontList: View {
                             .foregroundStyle(palette.secondaryText)
                     }
                     Spacer()
-                    if font == selection {
+                    if isLocked {
+                        PremiumBadge()
+                    } else if font == selection {
                         Image(systemName: "checkmark")
                             .foregroundStyle(palette.accent)
                     }
                 }
             }
+            .accessibilityIdentifier("settings.font.\(font.rawValue)")
             .accessibilityAddTraits(font == selection ? .isSelected : [])
         }
         .themedScreen()

@@ -1,9 +1,10 @@
 import SwiftUI
 import UIKit
 
-/// Typefaces offered in the reader. Literata, EB Garamond and Atkinson
-/// Hyperlegible are bundled under the SIL Open Font License (Resources/Fonts);
-/// the rest are built into iOS.
+/// Typefaces offered in the reader. Literata, EB Garamond, Atkinson
+/// Hyperlegible, Crimson Pro, Source Serif 4 and Spectral are bundled under
+/// the SIL Open Font License (Resources/Fonts, built by Tools/Fonts); the rest
+/// are built into iOS. The last three are Premium (`isPremium`).
 enum ReaderFont: String, Codable, CaseIterable, Identifiable, Sendable {
     case newYork
     case sfPro
@@ -12,6 +13,9 @@ enum ReaderFont: String, Codable, CaseIterable, Identifiable, Sendable {
     case atkinsonHyperlegible
     case literata
     case ebGaramond
+    case crimsonPro
+    case sourceSerif
+    case spectral
 
     var id: String { rawValue }
 
@@ -24,6 +28,9 @@ enum ReaderFont: String, Codable, CaseIterable, Identifiable, Sendable {
         case .atkinsonHyperlegible: "Atkinson Hyperlegible"
         case .literata: "Literata"
         case .ebGaramond: "EB Garamond"
+        case .crimsonPro: "Crimson Pro"
+        case .sourceSerif: "Source Serif"
+        case .spectral: "Spectral"
         }
     }
 
@@ -36,6 +43,29 @@ enum ReaderFont: String, Codable, CaseIterable, Identifiable, Sendable {
         case .atkinsonHyperlegible: String(localized: "Designed for low vision")
         case .literata: String(localized: "Made for long reading on screens")
         case .ebGaramond: String(localized: "An elegant old-style book face")
+        case .crimsonPro: String(localized: "A graceful Garamond-style face for long chapters")
+        case .sourceSerif: String(localized: "A calm, sturdy serif with an even rhythm")
+        case .spectral: String(localized: "A light, refined face made for screens")
+        }
+    }
+
+    /// Premium typefaces (`PremiumFeature.premiumThemes`); the rest are free.
+    var isPremium: Bool {
+        switch self {
+        case .crimsonPro, .sourceSerif, .spectral: true
+        default: false
+        }
+    }
+
+    /// PostScript names of a bundled face: regular, semibold and italic.
+    var bundledFaces: (regular: String, semibold: String, italic: String)? {
+        switch self {
+        case .literata: ("Literata-Regular", "Literata-SemiBold", "Literata-Italic")
+        case .ebGaramond: ("EBGaramond-Regular", "EBGaramond-SemiBold", "EBGaramond-Italic")
+        case .crimsonPro: ("CrimsonPro-Regular", "CrimsonPro-SemiBold", "CrimsonPro-Italic")
+        case .sourceSerif: ("SourceSerif4-Regular", "SourceSerif4-SemiBold", "SourceSerif4-Italic")
+        case .spectral: ("Spectral-Regular", "Spectral-SemiBold", "Spectral-Italic")
+        default: nil
         }
     }
 
@@ -55,14 +85,14 @@ enum ReaderFont: String, Codable, CaseIterable, Identifiable, Sendable {
         case .atkinsonHyperlegible:
             base = UIFont(name: weight.rawValue >= UIFont.Weight.semibold.rawValue ? "AtkinsonHyperlegible-Bold" : "AtkinsonHyperlegible-Regular", size: size)
                 ?? .systemFont(ofSize: size, weight: weight)
-        case .literata:
-            if italic, let face = UIFont(name: "Literata-Italic", size: size) { return face }
-            base = UIFont(name: weight.rawValue >= UIFont.Weight.semibold.rawValue ? "Literata-SemiBold" : "Literata-Regular", size: size)
-                ?? .systemFont(ofSize: size, weight: weight)
-        case .ebGaramond:
-            if italic, let face = UIFont(name: "EBGaramond-Italic", size: size) { return face }
-            base = UIFont(name: weight.rawValue >= UIFont.Weight.semibold.rawValue ? "EBGaramond-SemiBold" : "EBGaramond-Regular", size: size)
-                ?? .systemFont(ofSize: size, weight: weight)
+        case .literata, .ebGaramond, .crimsonPro, .sourceSerif, .spectral:
+            if let faces = bundledFaces {
+                if italic, let face = UIFont(name: faces.italic, size: size) { return face }
+                base = UIFont(name: weight.rawValue >= UIFont.Weight.semibold.rawValue ? faces.semibold : faces.regular, size: size)
+                    ?? .systemFont(ofSize: size, weight: weight)
+            } else {
+                base = .systemFont(ofSize: size, weight: weight)
+            }
         }
         guard italic, let descriptor = base.fontDescriptor.withSymbolicTraits(base.fontDescriptor.symbolicTraits.union(.traitItalic)) else {
             return base
@@ -73,5 +103,12 @@ enum ReaderFont: String, Codable, CaseIterable, Identifiable, Sendable {
     /// A SwiftUI font for previews and app chrome.
     func font(size: CGFloat, weight: UIFont.Weight = .regular) -> Font {
         Font(uiFont(size: size, weight: weight))
+    }
+}
+
+extension EntitlementService {
+    /// Free typefaces always; Premium ones with Premium.
+    func allows(_ font: ReaderFont) -> Bool {
+        !font.isPremium || allows(.premiumThemes)
     }
 }
