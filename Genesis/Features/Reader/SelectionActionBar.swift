@@ -11,6 +11,8 @@ struct SelectionActionBar: View {
     var onMemorise: (() -> Void)?
     /// Original words and commentary (nil when the data isn't in the app).
     var onWordStudy: (() -> Void)?
+    /// The Hebrew or Greek behind a word of one verse (nil when it doesn't apply).
+    var onOriginalWord: (() -> Void)?
 
     @Environment(ReaderViewModel.self) private var reader
     @Environment(\.palette) private var palette
@@ -58,6 +60,10 @@ struct SelectionActionBar: View {
                 }
                 .accessibilityLabel("Done selecting")
                 .accessibilityIdentifier("selection.done")
+            }
+
+            if let onOriginalWord {
+                originalWordButton(onOriginalWord)
             }
 
             HStack(spacing: 12) {
@@ -136,6 +142,37 @@ struct SelectionActionBar: View {
         .controlSize(.small)
         .accessibilityLabel("Word Study")
         .accessibilityIdentifier("selection.wordStudy")
+    }
+
+    /// "“loved” in Greek", for the word long-pressed in the selected verse.
+    private func originalWordButton(_ perform: @escaping () -> Void) -> some View {
+        Button(action: perform) {
+            HStack {
+                Label(originalWordTitle, systemImage: "character.magnify")
+                    .font(.footnote.weight(.semibold))
+                    .lineLimit(1)
+                Spacer(minLength: 4)
+                Image(systemName: "chevron.right")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(palette.secondaryText)
+            }
+            .frame(minHeight: 32)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .foregroundStyle(palette.accent)
+        .accessibilityIdentifier("selection.originalWord")
+    }
+
+    private var originalWordTitle: String {
+        let greek = (reader.selection.first?.book ?? 1) >= 40
+        let word = reader.pressedWord.flatMap { reader.selection.contains($0.verse) ? $0.text : nil }
+        switch (word, greek) {
+        case let (word?, true): return String(localized: "“\(word)” in Greek")
+        case let (word?, false): return String(localized: "“\(word)” in Hebrew")
+        case (nil, true): return String(localized: "Pick a word to see its Greek")
+        case (nil, false): return String(localized: "Pick a word to see its Hebrew")
+        }
     }
 
     private func memoriseButton(_ perform: @escaping () -> Void, compact: Bool) -> some View {

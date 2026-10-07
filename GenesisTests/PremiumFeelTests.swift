@@ -2,7 +2,7 @@ import Foundation
 import Testing
 @testable import Genesis
 
-@Suite("Evening Sanctuary, chapter moments and year cards")
+@Suite("Chapter moments and year cards")
 @MainActor
 struct PremiumFeelTests {
     private var calendar: Calendar {
@@ -18,37 +18,6 @@ struct PremiumFeelTests {
 
     private func defaults() -> UserDefaults {
         UserDefaults(suiteName: "Moments-\(UUID())")!
-    }
-
-    // MARK: Evening rule
-
-    @Test func eveningRunsFromSixPMUntilFourAM() {
-        #expect(!EveningSanctuary.isEvening(date(6, hour: 17, minute: 59), calendar: calendar))
-        #expect(EveningSanctuary.isEvening(date(6, hour: 18), calendar: calendar))
-        #expect(EveningSanctuary.isEvening(date(6, hour: 23, minute: 30), calendar: calendar))
-        #expect(EveningSanctuary.isEvening(date(7, hour: 3, minute: 59), calendar: calendar))
-        #expect(!EveningSanctuary.isEvening(date(7, hour: 4), calendar: calendar))
-        #expect(!EveningSanctuary.isEvening(date(7, hour: 12), calendar: calendar))
-    }
-
-    @Test func homeCardIsHiddenInUITestsUnlessAsked() {
-        let evening = date(6, hour: 21)
-        let noon = date(6, hour: 12)
-        #expect(EveningSanctuary.showsHomeCard(now: evening, calendar: calendar, arguments: []))
-        #expect(!EveningSanctuary.showsHomeCard(now: noon, calendar: calendar, arguments: []))
-        #expect(!EveningSanctuary.showsHomeCard(now: evening, calendar: calendar, arguments: ["-uiTesting"]))
-        #expect(EveningSanctuary.showsHomeCard(now: noon, calendar: calendar, arguments: ["-uiTesting", "-uiTestingEvening"]))
-    }
-
-    // MARK: Sleep timer
-
-    @Test func sleepTimerOffersQuarterHours() {
-        #expect(EveningSanctuary.sleepTimerChoices == [15, 30, 45, 60])
-        let start = date(6, hour: 22)
-        #expect(EveningSanctuary.sleepTimerEnd(minutes: 30, from: start) == start.addingTimeInterval(30 * 60))
-        #expect(EveningSanctuary.sleepTimerEnd(minutes: 60, from: start) == start.addingTimeInterval(60 * 60))
-        #expect(EveningSanctuary.sleepTimerEnd(minutes: nil, from: start) == nil, "Off")
-        #expect(EveningSanctuary.sleepTimerEnd(minutes: 20, from: start) == nil, "Only the offered lengths")
     }
 
     // MARK: Chapter moments

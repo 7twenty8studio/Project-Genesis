@@ -614,16 +614,6 @@
         }
       }
     },
-    "A candle-warm place to read and pray at night, with your sounds, a sleep timer and nothing to interrupt you.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Un lugar cálido como una vela para leer y orar de noche, con tus sonidos, un temporizador y nada que te interrumpa."
-          }
-        }
-      }
-    },
     "A deluxe edition": {
       "localizations": {
         "es": {
@@ -761,6 +751,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Una breve guía explica las diferencias y sugiere una Biblia para el estudio, la lectura diaria o la lectura en voz alta."
+          }
+        }
+      }
+    },
+    "A soft Night page switches on in the evening, or read under the stars with Starlight.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una suave página Noche se activa al anochecer, o lee bajo las estrellas con Noche estrellada."
           }
         }
       }
@@ -1015,6 +1015,16 @@
         }
       }
     },
+    "Adjective": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adjetivo"
+          }
+        }
+      }
+    },
     "Advanced search": {
       "localizations": {
         "es": {
@@ -1031,6 +1041,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Asistente de estudio avanzado"
+          }
+        }
+      }
+    },
+    "Adverb": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adverbio"
           }
         }
       }
@@ -1123,6 +1143,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Todo al día por hoy"
+          }
+        }
+      }
+    },
+    "All words in this verse": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todas las palabras de este versículo"
           }
         }
       }
@@ -1380,6 +1410,16 @@
         }
       }
     },
+    "Article": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Artículo"
+          }
+        }
+      }
+    },
     "As a guest, everything stays on this device. You can sign in any time and your notes will come with you.": {
       "localizations": {
         "es": {
@@ -1406,6 +1446,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Solicitado %@."
+          }
+        }
+      }
+    },
+    "At night, switch to": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De noche, cambiar a"
           }
         }
       }
@@ -2030,16 +2080,6 @@
         }
       }
     },
-    "Choose Sounds": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Elegir sonidos"
-          }
-        }
-      }
-    },
     "Choose a Night or seasonal icon, or let it change with the seasons, in Settings › App Icon.": {
       "localizations": {
         "es": {
@@ -2106,6 +2146,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Elige una voz"
+          }
+        }
+      }
+    },
+    "Choose different hours to switch at night.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige horas distintas para cambiar de noche."
           }
         }
       }
@@ -2343,6 +2393,16 @@
         }
       }
     },
+    "Closest match": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coincidencia más cercana"
+          }
+        }
+      }
+    },
     "Cloud Sync": {
       "localizations": {
         "es": {
@@ -2440,6 +2500,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Confirmar la nueva contraseña"
+          }
+        }
+      }
+    },
+    "Conjunction": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conjunción"
           }
         }
       }
@@ -3170,16 +3240,6 @@
         }
       }
     },
-    "Evening Sanctuary": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Santuario nocturno"
-          }
-        }
-      }
-    },
     "Event": {
       "localizations": {
         "es": {
@@ -3889,6 +3949,17 @@
         }
       }
     },
+    "From": {
+      "comment": "Night reading starts at this hour",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desde"
+          }
+        }
+      }
+    },
     "From Easton's Bible Dictionary (1897)": {
       "localizations": {
         "es": {
@@ -3915,6 +3986,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Desde el capítulo %lld"
+          }
+        }
+      }
+    },
+    "Full definition and every verse": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Definición completa y todos los versículos"
           }
         }
       }
@@ -4708,6 +4789,16 @@
         }
       }
     },
+    "In this verse: %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En este versículo: %@"
+          }
+        }
+      }
+    },
     "Include app and device details": {
       "localizations": {
         "es": {
@@ -4766,6 +4857,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Estadísticas"
+          }
+        }
+      }
+    },
+    "Interjection": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Interjección"
           }
         }
       }
@@ -5287,6 +5388,16 @@
         }
       }
     },
+    "Likely": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Probable"
+          }
+        }
+      }
+    },
     "Likely location": {
       "localizations": {
         "es": {
@@ -5664,6 +5775,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Marcar como leído"
+          }
+        }
+      }
+    },
+    "Matched by each word's English gloss, so treat this as a guide.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se busca por la glosa en inglés de cada palabra, así que tómalo como una orientación."
           }
         }
       }
@@ -6372,12 +6493,32 @@
         }
       }
     },
+    "Night Reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lectura nocturna"
+          }
+        }
+      }
+    },
     "Night and the seasonal icons come with Genesis Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Noche y los iconos de temporada vienen con Genesis Premium."
+          }
+        }
+      }
+    },
+    "Night reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lectura nocturna"
           }
         }
       }
@@ -6458,6 +6599,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Todavía no hay desafíos."
+          }
+        }
+      }
+    },
+    "No close match for “%@”. Matching is approximate, so every word of the verse is listed below.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay una coincidencia cercana para «%@». La búsqueda es aproximada, así que abajo tienes todas las palabras del versículo."
           }
         }
       }
@@ -6803,6 +6954,16 @@
         }
       }
     },
+    "Noun": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sustantivo"
+          }
+        }
+      }
+    },
     "Now Playing": {
       "localizations": {
         "es": {
@@ -6845,6 +7006,7 @@
       }
     },
     "Off": {
+      "comment": "Night reading: don't switch themes at night",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -7031,6 +7193,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Origen"
+          }
+        }
+      }
+    },
+    "Original Word": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Palabra original"
           }
         }
       }
@@ -7229,6 +7401,16 @@
         }
       }
     },
+    "Particle": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Partícula"
+          }
+        }
+      }
+    },
     "Passage": {
       "localizations": {
         "es": {
@@ -7286,16 +7468,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pausar"
-          }
-        }
-      }
-    },
-    "Pause Sounds": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pausar sonidos"
           }
         }
       }
@@ -7378,6 +7550,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Foto"
+          }
+        }
+      }
+    },
+    "Pick a word to see its Greek": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige una palabra para ver su griego"
+          }
+        }
+      }
+    },
+    "Pick a word to see its Hebrew": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige una palabra para ver su hebreo"
           }
         }
       }
@@ -7480,16 +7672,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Reproducir"
-          }
-        }
-      }
-    },
-    "Play Sounds": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reproducir sonidos"
           }
         }
       }
@@ -7838,12 +8020,32 @@
         }
       }
     },
+    "Preposition": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preposición"
+          }
+        }
+      }
+    },
     "Press and hold a verse to highlight it, add a note, copy or share it.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Mantén presionado un versículo para resaltarlo, añadir una nota, copiarlo o compartirlo."
+          }
+        }
+      }
+    },
+    "Press and hold a word to see the Hebrew or Greek behind it, with its meaning.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantén pulsada una palabra para ver el hebreo o el griego que hay detrás, con su significado."
           }
         }
       }
@@ -7914,6 +8116,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Progreso en %@"
+          }
+        }
+      }
+    },
+    "Pronoun": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pronombre"
+          }
+        }
+      }
+    },
+    "Proper noun": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre propio"
           }
         }
       }
@@ -8145,22 +8367,12 @@
         }
       }
     },
-    "Read by candlelight at night, with your sounds and a sleep timer.": {
+    "Read by night, look deeper": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lee de noche a la luz de una vela, con tus sonidos y un temporizador."
-          }
-        }
-      }
-    },
-    "Read by candlelight tonight, with your sounds and a sleep timer.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lee esta noche a la luz de una vela, con tus sonidos y un temporizador."
+            "value": "Lee de noche, mira más a fondo"
           }
         }
       }
@@ -8191,6 +8403,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Leer más"
+          }
+        }
+      }
+    },
+    "Read on a soft, dark page at night, then return to your theme in the morning.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee de noche en una página oscura y suave, y vuelve a tu tema por la mañana."
           }
         }
       }
@@ -9338,6 +9560,16 @@
         }
       }
     },
+    "See the definition of the Hebrew or Greek behind any word, and where else it's used, with Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Premium, consulta la definición del hebreo o el griego que hay detrás de cualquier palabra y dónde más se usa."
+          }
+        }
+      }
+    },
     "See your reading time, longest streak, favourite books and topics, and more with Premium.": {
       "localizations": {
         "es": {
@@ -10087,6 +10319,27 @@
         }
       }
     },
+    "Starlight": {
+      "comment": "Reader theme name: a night-blue page with faint stars",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noche estrellada"
+          }
+        }
+      }
+    },
+    "Starlight comes with Premium. Until then, the reader uses Night.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noche estrellada viene con Premium. Mientras tanto, el lector usa Noche."
+          }
+        }
+      }
+    },
     "Start": {
       "localizations": {
         "es": {
@@ -10522,6 +10775,26 @@
         }
       }
     },
+    "Tap a word, or a few words, to see the Greek behind them.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca una palabra, o unas pocas, para ver el griego que hay detrás."
+          }
+        }
+      }
+    },
+    "Tap a word, or a few words, to see the Hebrew behind them.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca una palabra, o unas pocas, para ver el hebreo que hay detrás."
+          }
+        }
+      }
+    },
     "Tap the bookmark in the reader to mark your place.": {
       "localizations": {
         "es": {
@@ -10643,12 +10916,12 @@
         }
       }
     },
-    "Textured paper and seasonal themes, illuminated first letters, three more book fonts, special app icons and a ribbon when you finish a chapter.": {
+    "Textured paper and seasonal themes, Starlight for reading at night, illuminated first letters, three more book fonts, special app icons and a ribbon when you finish a chapter.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Temas de papel con textura y de temporada, letras iniciales iluminadas, tres tipos de letra más, iconos especiales y una cinta al terminar un capítulo."
+            "value": "Temas de papel con textura y de temporada, Noche estrellada para leer de noche, letras iniciales iluminadas, tres tipos de letra más, iconos especiales y una cinta al terminar un capítulo."
           }
         }
       }
@@ -10913,6 +11186,16 @@
         }
       }
     },
+    "The original word": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La palabra original"
+          }
+        }
+      }
+    },
     "The passwords don't match.": {
       "localizations": {
         "es": {
@@ -10939,6 +11222,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "No se pudo verificar la compra."
+          }
+        }
+      }
+    },
+    "The reader switches at the start time and returns to your theme at the end.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El lector cambia a la hora de inicio y vuelve a tu tema a la hora de fin."
           }
         }
       }
@@ -11423,16 +11716,6 @@
         }
       }
     },
-    "To keep notifications quiet, turn on Do Not Disturb or another Focus in Control Centre.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Para silenciar las notificaciones, activa No molestar u otro modo de concentración en el Centro de control."
-          }
-        }
-      }
-    },
     "To leave the group, use Leave Group.": {
       "localizations": {
         "es": {
@@ -11806,6 +12089,17 @@
         }
       }
     },
+    "Until": {
+      "comment": "Night reading ends at this hour",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hasta"
+          }
+        }
+      }
+    },
     "Up to %lld verses from one chapter, in the Bible you're reading.": {
       "localizations": {
         "es": {
@@ -11883,6 +12177,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Valle"
+          }
+        }
+      }
+    },
+    "Verb": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbo"
           }
         }
       }
@@ -13477,6 +13781,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "año"
+          }
+        }
+      }
+    },
+    "“%@” in Greek": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "«%@» en griego"
+          }
+        }
+      }
+    },
+    "“%@” in Hebrew": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "«%@» en hebreo"
+          }
+        }
+      }
+    },
+    "“%@” in the original": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "«%@» en el original"
           }
         }
       }

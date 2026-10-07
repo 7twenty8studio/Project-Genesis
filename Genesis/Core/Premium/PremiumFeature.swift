@@ -3,7 +3,6 @@ import Foundation
 /// What Genesis Premium unlocks (from the PRD's Premium Features list).
 enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
     case morningWelcome
-    case eveningSanctuary
     case wordStudy
     case advancedAI
     case historicalContent
@@ -19,7 +18,6 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
     var title: String {
         switch self {
         case .morningWelcome: String(localized: "Morning welcome")
-        case .eveningSanctuary: String(localized: "Evening Sanctuary")
         case .wordStudy: String(localized: "Word study and commentary")
         case .premiumThemes: String(localized: "Themes, fonts and icons")
         case .advancedAI: String(localized: "Advanced study assistant")
@@ -35,9 +33,8 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
     var detail: String {
         switch self {
         case .morningWelcome: String(localized: "Begin each day with a quiet welcome: your name, today's verse and reading, and your sounds easing in.")
-        case .eveningSanctuary: String(localized: "A candle-warm place to read and pray at night, with your sounds, a sleep timer and nothing to interrupt you.")
         case .wordStudy: String(localized: "The Hebrew and Greek words behind every verse, with Strong's definitions, and Matthew Henry's commentary on the whole Bible.")
-        case .premiumThemes: String(localized: "Textured paper and seasonal themes, illuminated first letters, three more book fonts, special app icons and a ribbon when you finish a chapter.")
+        case .premiumThemes: String(localized: "Textured paper and seasonal themes, Starlight for reading at night, illuminated first letters, three more book fonts, special app icons and a ribbon when you finish a chapter.")
         case .advancedAI: String(localized: "Summaries, historical background, discussion questions and more, with up to 30 new answers a day.")
         case .historicalContent: String(localized: "Family trees for 3,000 people, interactive maps with Paul's journeys and the Exodus, and the people and places beside the chapter you're reading.")
         case .readingInsights: String(localized: "Time spent reading, favourite books and your reading history.")
@@ -51,7 +48,6 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
     var systemImage: String {
         switch self {
         case .morningWelcome: "sun.horizon"
-        case .eveningSanctuary: "moon.stars"
         case .wordStudy: "character.book.closed"
         case .premiumThemes: "paintpalette"
         case .advancedAI: "sparkles"

@@ -54,6 +54,10 @@ struct WidgetBackground: View {
             if let variant, variant.hasPaperTexture {
                 PaperGrain(isDark: variant.isDark)
             }
+            // Starlight (Premium): the reader's faint field of stars.
+            if colors.theme?.name == "starlight" {
+                WidgetStars()
+            }
         }
     }
 }
@@ -86,6 +90,26 @@ private struct PaperGrain: View {
                 path.move(to: start)
                 path.addLine(to: CGPoint(x: start.x + cos(angle) * length, y: start.y + sin(angle) * length))
                 context.stroke(path, with: .color(ink.opacity(0.04 + random.next() * 0.05)), lineWidth: 0.3 + random.next() * 0.4)
+            }
+        }
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+    }
+}
+
+/// A sparse, faint field of tiny stars for the Starlight theme, behind the text.
+private struct WidgetStars: View {
+    var body: some View {
+        Canvas { context, size in
+            var random = GrainRandom(seed: 29)
+            let count = max(6, Int(size.width * size.height / 2600))
+            for _ in 0..<count {
+                let x = random.next() * size.width
+                let y = random.next() * size.height
+                let bright = random.next() < 0.15
+                let radius = bright ? 0.9 + random.next() * 0.5 : 0.4 + random.next() * 0.45
+                let opacity = bright ? 0.3 : 0.12 + random.next() * 0.12
+                context.fill(Path(ellipseIn: CGRect(x: x - radius, y: y - radius, width: radius * 2, height: radius * 2)), with: .color(.white.opacity(opacity)))
             }
         }
         .allowsHitTesting(false)

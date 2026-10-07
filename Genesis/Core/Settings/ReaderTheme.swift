@@ -12,7 +12,11 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
     case parchment
     case slate
     case highContrast
+    /// A soft, warm dark page for reading in bed (free).
+    case night
     case midnight
+    /// A deep night-blue page with a faint field of stars (Premium).
+    case starlight
     case sage
     /// Follows the calendar: Autumn, Winter, Spring or Summer (southern
     /// hemisphere seasons where the person lives there).
@@ -33,7 +37,9 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
         case .parchment: String(localized: "Parchment", comment: "Reader theme name")
         case .slate: String(localized: "Slate", comment: "Reader theme name")
         case .highContrast: String(localized: "Contrast", comment: "Reader theme name")
+        case .night: String(localized: "Night", comment: "Reader theme name")
         case .midnight: String(localized: "Midnight", comment: "Reader theme name")
+        case .starlight: String(localized: "Starlight", comment: "Reader theme name: a night-blue page with faint stars")
         case .sage: String(localized: "Sage", comment: "Reader theme name")
         case .seasons: String(localized: "Seasons", comment: "Reader theme name: follows the time of year")
         case .autumn: String(localized: "Autumn", comment: "Reader theme name")
@@ -66,17 +72,26 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
     }
 
     /// Premium themes are printed on textured paper: a faint grain and fibres.
-    var hasPaperTexture: Bool { isPremium }
+    /// Night keeps the book feel on its dark page too.
+    var hasPaperTexture: Bool { isPremium || self == .night }
 
-    var isDark: Bool { self == .slate || self == .highContrast || self == .midnight }
+    /// Starlight's paper carries a sparse, faint field of stars.
+    var hasStars: Bool { self == .starlight }
+
+    var isDark: Bool {
+        switch self {
+        case .slate, .highContrast, .night, .midnight, .starlight: true
+        default: false
+        }
+    }
 
     /// Themes that come with Genesis Premium (including the seasons). Auto,
-    /// Paper, Sepia, Slate and High Contrast stay free, so a readable light,
-    /// dark and high-contrast choice is always available.
+    /// Paper, Sepia, Slate, High Contrast and Night stay free, so a readable
+    /// light, dark, night and high-contrast choice is always available.
     var isPremium: Bool {
         switch self {
-        case .cream, .parchment, .midnight, .sage, .seasons, .autumn, .winter, .spring, .summer: true
-        case .automatic, .paper, .sepia, .slate, .highContrast: false
+        case .cream, .parchment, .midnight, .starlight, .sage, .seasons, .autumn, .winter, .spring, .summer: true
+        case .automatic, .paper, .sepia, .slate, .highContrast, .night: false
         }
     }
 
@@ -94,8 +109,14 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
             ThemePalette(background: 0x1E2226, surface: 0x272C31, text: 0xDAD5C8, secondaryText: 0x8D9196, accent: 0xC9A96E, separator: 0x353B41)
         case .highContrast:
             ThemePalette(background: 0x000000, surface: 0x141414, text: 0xFFFFFF, secondaryText: 0xC8C8C8, accent: 0xF0CF86, separator: 0x3A3A3A)
+        // Night: warm, dim and easy on tired eyes (text about 10:1, under
+        // the glare of pure white on black, still well above WCAG AA).
+        case .night:
+            ThemePalette(background: 0x1F1A16, surface: 0x29231E, text: 0xD4C2A2, secondaryText: 0x9C8C78, accent: 0xB89466, separator: 0x3A322B)
         case .midnight:
             ThemePalette(background: 0x161B26, surface: 0x1E2432, text: 0xD6D9E0, secondaryText: 0x8A91A0, accent: 0xB9A77C, separator: 0x2C3342)
+        case .starlight:
+            ThemePalette(background: 0x111A2C, surface: 0x18233A, text: 0xC9CFDB, secondaryText: 0x8E98AB, accent: 0xB8A97F, separator: 0x26324A)
         case .sage:
             ThemePalette(background: 0xEEF0E6, surface: 0xE3E7D8, text: 0x2C3128, secondaryText: 0x6F7866, accent: 0x6E7F5A, separator: 0xD3D9C4)
         case .seasons:

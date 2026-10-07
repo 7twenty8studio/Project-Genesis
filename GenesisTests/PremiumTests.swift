@@ -28,7 +28,7 @@ struct PremiumTests {
     @Test func freeThemesStayAvailable() {
         let free = service(premium: false)
         let available = ReaderTheme.allCases.filter { free.allows($0) }
-        #expect(available == [.automatic, .paper, .sepia, .slate, .highContrast])
+        #expect(available == [.automatic, .paper, .sepia, .slate, .highContrast, .night])
         #expect(!free.allows(.morningWelcome))
         #expect(!free.allows(.historicalContent))
     }

@@ -153,6 +153,21 @@ final class Phase3UITests: GenesisUITestCase {
         XCTAssertTrue(app.buttons["teaser.unlock"].waitForExistence(timeout: Genesis.timeout), "…and the way to unlock the rest")
     }
 
+    @MainActor
+    func testOriginalWordOpensFromOneVerse() {
+        let app = launchPremium(verse: john316)
+        XCTAssertTrue(Genesis.selectVerse(app), "A verse can be selected")
+        let original = app.buttons["selection.originalWord"]
+        XCTAssertTrue(original.waitForExistence(timeout: Genesis.timeout), "Original Word is offered for one verse of an English Bible")
+        original.tap()
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "originalWord.verse").firstMatch.waitForExistence(timeout: Genesis.timeout), "The verse is shown to pick words from")
+        let allWords = app.descendants(matching: .any).matching(identifier: "originalWord.allWords").firstMatch
+        Genesis.scrollIntoView(allWords, in: app)
+        XCTAssertTrue(allWords.waitForExistence(timeout: Genesis.timeout), "Every word of the verse is a tap away")
+        allWords.tap()
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "wordStudy.word").firstMatch.waitForExistence(timeout: Genesis.timeout), "The verse's original words are listed")
+    }
+
     // MARK: Timeline, people, maps
 
     @MainActor

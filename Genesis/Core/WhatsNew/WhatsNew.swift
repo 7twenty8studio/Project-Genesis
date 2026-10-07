@@ -27,7 +27,24 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord]
+
+    static let nightAndOriginalWord = WhatsNewAnnouncement(
+        id: "night-reading-original-word",
+        title: String(localized: "Read by night, look deeper"),
+        items: [
+            WhatsNewItem(
+                systemImage: "moon.stars",
+                title: String(localized: "Night reading"),
+                detail: String(localized: "A soft Night page switches on in the evening, or read under the stars with Starlight.")
+            ),
+            WhatsNewItem(
+                systemImage: "character.book.closed",
+                title: String(localized: "The original word"),
+                detail: String(localized: "Press and hold a word to see the Hebrew or Greek behind it, with its meaning.")
+            ),
+        ]
+    )
 
     static let groupChallenges = WhatsNewAnnouncement(
         id: "group-challenges-moderators",
@@ -56,11 +73,6 @@ enum WhatsNewCatalog {
                 systemImage: "gamecontroller",
                 title: String(localized: "Memorise, now with games"),
                 detail: String(localized: "Fill the gaps, put the words in order, or try a one-minute speed round, and grow from Seed to Cedar.")
-            ),
-            WhatsNewItem(
-                systemImage: "moon.stars",
-                title: String(localized: "Evening Sanctuary"),
-                detail: String(localized: "Read by candlelight at night, with your sounds and a sleep timer.")
             ),
             WhatsNewItem(
                 systemImage: "textformat.alt",

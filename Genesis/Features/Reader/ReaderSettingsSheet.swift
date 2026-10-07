@@ -70,6 +70,8 @@ struct ReaderSettingsSheet: View {
                         Text("Rain, waves, a fire or birdsong while you read and pray.")
                     }
 
+                    NightReadingSettings(premium: $premium)
+
                     Section("Text") {
                         NavigationLink {
                             FontList(selection: $settings.preferences.font, premium: $premium)
@@ -170,7 +172,7 @@ struct ReaderSettingsSheet: View {
         }
     }
 
-    /// A small mark on seasonal swatches.
+    /// A small mark on seasonal (and Starlight's) swatches.
     private static func seasonSymbol(_ theme: ReaderTheme) -> String? {
         switch theme {
         case .seasons: "calendar"
@@ -178,6 +180,7 @@ struct ReaderSettingsSheet: View {
         case .winter: "snowflake"
         case .spring: "camera.macro"
         case .summer: "sun.max.fill"
+        case .starlight: "sparkles"
         default: nil
         }
     }

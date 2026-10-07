@@ -88,6 +88,11 @@ shares; README.md has the architecture.
   `WordStudyRepository.attribution`. Hebrew/Greek shown verbatim; English
   verses always come from the Bible databases. `VerseStudyView` opens from the
   selection bar (Word Study); free accounts see two words and a teaser.
+- Original Word (Premium, `.wordStudy`): long-pressing a word to select its
+  verse records the word (`PressedWord`); the selection bar's row opens
+  `OriginalWordView`, which ranks the verse's Hebrew/Greek forms by their
+  contextual English gloss (`OriginalWordMatcher`, "Likely" vs "Closest
+  match"). English Bibles only; always links to the whole verse's words.
 - Handwritten pages (free): `Note.drawing` (PencilKit data, external storage),
   synced as base64 in notes.drawing (≤ 2 MB; larger stays on the device).
   Journal entries offer `JournalPrompts`.
@@ -106,9 +111,16 @@ shares; README.md has the architecture.
   icons (all but the standard one), and `ChapterMoments` (a gold ribbon on
   finishing a chapter or plan day; UI tests only with `-uiTestingMoments`).
   Without Premium the reader falls back to plain/New York, keeping the choice.
-- Evening Sanctuary (`.eveningSanctuary`): `EveningSanctuaryView` from the
-  reader (moon button or More menu) and a Home card after 6 pm (UI tests only
-  with `-uiTestingEvening`); verses verbatim, ambient sounds, sleep timer.
+- Night reading stays in the normal reader (no separate night screen): the
+  Night theme (free, warm dark page) and Starlight (Premium via
+  `.premiumThemes`, night-blue paper with faint stars and, without Reduce
+  Motion, a slow twinkle in the margins, `StarlightTwinkleView`).
+  `ReaderPreferences.nightReading` ("At night, switch to", start/end hour)
+  is decided by the pure `NightReading.theme(for:dayTheme:now:calendar:premium:)`;
+  `ReaderSettings.effectiveTheme(for:premium:)` resolves it for RootView and
+  the reader (`nightClock` is moved on at each window edge). Starlight
+  without Premium falls back to Night, keeping the choice. UI tests never
+  switch unless launched with `-uiTestingNight` (then it's always night).
 - Widgets: only the small verse of the day and Lock Screen verse are free
   (`WidgetAccess` in Genesis/Shared); every other widget/size shows a locked
   card. Premium widgets use the reading theme (colours carried in

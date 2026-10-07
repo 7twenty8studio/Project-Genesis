@@ -34,7 +34,6 @@ struct HomeView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 28) {
                     greeting
-                    if EveningSanctuary.showsHomeCard() { EveningSanctuaryCard() }
                     if YearInReview.isSeason(), progress.hasStartedReading { yearInReviewCard }
                     continueReading
                     if features.isOn(.plansAndPrayer) { todaysReading }

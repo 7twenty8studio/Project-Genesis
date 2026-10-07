@@ -15,7 +15,7 @@ import Foundation
 ///     -uiTestingAI                    turn the study assistant on (default: off, like release)
 ///     -uiTestingWhatsNew              show What's New announcements (default: never)
 ///     -uiTestingWelcome               show the Premium morning welcome (default: never)
-///     -uiTestingEvening               show Evening Sanctuary's Home card and moon button at any hour (default: never)
+///     -uiTestingNight                 night reading may switch the theme, and it's always night (default: never switches)
 ///     -uiTestingMoments               show chapter-complete moments (default: never)
 ///     -uiTestingSignedOut             groups and community as a signed-out guest
 ///     -uiTestingSimple                every optional feature switched off
@@ -30,6 +30,7 @@ struct UITestingOptions {
     let enablesAI: Bool
     let showsWhatsNew: Bool
     let showsWelcome: Bool
+    let allowsNightReading: Bool
     let isSignedOut: Bool
     let isSimple: Bool
 
@@ -50,6 +51,7 @@ struct UITestingOptions {
         enablesAI = arguments.contains("-uiTestingAI")
         showsWhatsNew = arguments.contains("-uiTestingWhatsNew")
         showsWelcome = arguments.contains("-uiTestingWelcome")
+        allowsNightReading = arguments.contains("-uiTestingNight")
         isSignedOut = arguments.contains("-uiTestingSignedOut")
         isSimple = arguments.contains("-uiTestingSimple")
     }
@@ -68,6 +70,8 @@ struct UITestingOptions {
     @MainActor
     func apply(settings: ReaderSettings, router: AppRouter) {
         guard isEnabled else { return }
+        // The theme never changes with the hour unless a test asks for night.
+        settings.nightReadingOverride = allowsNightReading
         if let theme { settings.preferences.theme = theme }
         if let readingMode { settings.preferences.readingMode = readingMode }
         if let pageTurn {

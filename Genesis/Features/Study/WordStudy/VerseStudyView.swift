@@ -6,6 +6,30 @@ import SwiftUI
 struct VerseStudyView: View {
     let verse: VerseID
 
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        NavigationStack {
+            VerseStudyList(verse: verse)
+                .toolbar {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Done", systemImage: "checkmark") { dismiss() }
+                            .accessibilityIdentifier("wordStudy.done")
+                    }
+                }
+                .navigationDestination(for: LexiconRoute.self) { route in
+                    LexiconEntryView(strongs: route.strongs)
+                }
+        }
+    }
+}
+
+/// The words and commentary of `VerseStudyView`, without its navigation
+/// stack, so Original Word can show them too. The stack that holds it
+/// handles `LexiconRoute`.
+struct VerseStudyList: View {
+    let verse: VerseID
+
     enum Tab: String, CaseIterable, Identifiable {
         case words, commentary
         var id: String { rawValue }
@@ -21,7 +45,6 @@ struct VerseStudyView: View {
     @Environment(BibleLibrary.self) private var library
     @Environment(EntitlementService.self) private var entitlements
     @Environment(\.palette) private var palette
-    @Environment(\.dismiss) private var dismiss
     @State private var tab: Tab = .words
     @State private var loaded: Loaded?
 
@@ -36,51 +59,40 @@ struct VerseStudyView: View {
     private var unlocked: Bool { entitlements.allows(.wordStudy) }
 
     var body: some View {
-        NavigationStack {
-            List {
-                ThemedRows {
-                    Section {
-                        Text((try? library.current.verse(verse))?.plainText ?? "")
-                            .font(.system(.body, design: .serif))
-                            .foregroundStyle(palette.text)
-                            .accessibilityIdentifier("wordStudy.verse")
-                        Picker("Show", selection: $tab) {
-                            ForEach(Tab.allCases) { Text($0.title).tag($0) }
-                        }
-                        .pickerStyle(.segmented)
-                        .accessibilityIdentifier("wordStudy.tab")
+        List {
+            ThemedRows {
+                Section {
+                    Text((try? library.current.verse(verse))?.plainText ?? "")
+                        .font(.system(.body, design: .serif))
+                        .foregroundStyle(palette.text)
+                        .accessibilityIdentifier("wordStudy.verse")
+                    Picker("Show", selection: $tab) {
+                        ForEach(Tab.allCases) { Text($0.title).tag($0) }
                     }
-                    .listRowBackground(palette.surface)
+                    .pickerStyle(.segmented)
+                    .accessibilityIdentifier("wordStudy.tab")
+                }
+                .listRowBackground(palette.surface)
 
-                    if let loaded {
-                        switch tab {
-                        case .words: words(loaded.words)
-                        case .commentary: commentary(loaded.commentary)
-                        }
-                    } else {
-                        ProgressView().frame(maxWidth: .infinity)
+                if let loaded {
+                    switch tab {
+                    case .words: words(loaded.words)
+                    case .commentary: commentary(loaded.commentary)
                     }
+                } else {
+                    ProgressView().frame(maxWidth: .infinity)
+                }
 
-                    Section {
-                    } footer: {
-                        Text(WordStudyRepository.attribution)
-                    }
+                Section {
+                } footer: {
+                    Text(WordStudyRepository.attribution)
                 }
             }
-            .themedScreen()
-            .navigationTitle(PassageReference(verse: verse).description(in: library.currentTranslation.language))
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Done", systemImage: "checkmark") { dismiss() }
-                        .accessibilityIdentifier("wordStudy.done")
-                }
-            }
-            .navigationDestination(for: LexiconRoute.self) { route in
-                LexiconEntryView(strongs: route.strongs)
-            }
-            .task(id: verse) { await load() }
         }
+        .themedScreen()
+        .navigationTitle(PassageReference(verse: verse).description(in: library.currentTranslation.language))
+        .navigationBarTitleDisplayMode(.inline)
+        .task(id: verse) { await load() }
     }
 
     // MARK: Sections

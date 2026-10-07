@@ -1,5 +1,6 @@
 import Foundation
 import Observation
+import SwiftUI
 import UIKit
 
 enum ReadingMode: String, Codable, CaseIterable, Identifiable, Sendable {
@@ -105,6 +106,8 @@ struct ReaderPreferences: Codable, Equatable, Sendable {
     var pageTurnVolume = 0.5
     /// How firm the tap is, 0.2…1.
     var pageTurnHapticStrength = 0.9
+    /// At night, switch to Night or Starlight (off by default).
+    var nightReading = NightReadingSchedule()
 
     static let hapticStrengthRange: ClosedRange<Double> = 0.2...1
 
@@ -140,6 +143,7 @@ struct ReaderPreferences: Codable, Equatable, Sendable {
         pageTurnVolume = (try? c.decode(Double.self, forKey: .pageTurnVolume)).map { min(max($0, 0), 1) } ?? d.pageTurnVolume
         pageTurnHapticStrength = (try? c.decode(Double.self, forKey: .pageTurnHapticStrength))
             .map { min(max($0, Self.hapticStrengthRange.lowerBound), Self.hapticStrengthRange.upperBound) } ?? d.pageTurnHapticStrength
+        nightReading = (try? c.decode(NightReadingSchedule.self, forKey: .nightReading)) ?? d.nightReading
     }
 
     private static let defaults = ReaderPreferences()
@@ -156,6 +160,15 @@ final class ReaderSettings {
         }
     }
 
+    /// The time night reading is judged by. RootView moves it on at each
+    /// edge of the night window and when the app comes to the front, so the
+    /// theme switches without redrawing every minute.
+    var nightClock = Date.now
+
+    /// UI tests: nil follows the clock, false never switches at night, true
+    /// is always night (`-uiTestingNight`). Set once at launch.
+    @ObservationIgnored var nightReadingOverride: Bool?
+
     @ObservationIgnored private let defaults: UserDefaults
     private static let key = "reader.preferences.v1"
 
@@ -171,6 +184,28 @@ final class ReaderSettings {
 
     func reset() {
         preferences = ReaderPreferences()
+    }
+
+    /// The theme the person reads in right now, before Auto and Seasons are
+    /// resolved: their chosen theme, or the night theme inside the night
+    /// window. `premium` is `.premiumThemes` (Starlight falls back to Night).
+    func currentTheme(premium: Bool, calendar: Calendar = .current) -> ReaderTheme {
+        let schedule = preferences.nightReading
+        let day = preferences.theme
+        switch nightReadingOverride {
+        case .some(false):
+            return day
+        case .some(true):
+            return schedule.theme.theme(premium: premium) ?? day
+        case .none:
+            return NightReading.theme(for: schedule, dayTheme: day, now: nightClock, calendar: calendar, premium: premium)
+        }
+    }
+
+    /// The theme to draw with now: night reading applied, then Auto and
+    /// Seasons resolved for the appearance.
+    func effectiveTheme(for scheme: ColorScheme, premium: Bool) -> ReaderTheme {
+        currentTheme(premium: premium).resolved(for: scheme)
     }
 
     private func save() {

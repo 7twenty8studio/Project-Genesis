@@ -24,7 +24,9 @@ struct RootView: View {
     @AppStorage("onboarding.complete") private var onboardingComplete = false
 
     var body: some View {
-        let theme = settings.preferences.theme.resolved(for: colorScheme)
+        // Night reading may swap the person's theme for Night or Starlight.
+        let current = settings.currentTheme(premium: entitlements.allows(.premiumThemes))
+        let theme = current.resolved(for: colorScheme)
         Group {
             if onboardingComplete {
                 MainTabView()
@@ -50,7 +52,9 @@ struct RootView: View {
         .environment(\.palette, theme.palette)
         .tint(theme.palette.accent)
         // Explicit themes pin light or dark chrome; Auto follows the system.
-        .preferredColorScheme(settings.preferences.theme == .automatic ? nil : (theme.isDark ? .dark : .light))
+        .preferredColorScheme(current == .automatic ? nil : (theme.isDark ? .dark : .light))
+        // Switch to and from the night theme on time.
+        .task(id: settings.preferences.nightReading) { await followNightReading() }
         .onOpenURL { url in
             if !onboardingComplete {
                 whatsNew.markShippedFeaturesSeen()
@@ -92,6 +96,7 @@ struct RootView: View {
         .onChange(of: scenePhase) { _, phase in
             switch phase {
             case .active:
+                settings.nightClock = .now
                 sync.schedule(after: .zero)
                 Task { await refreshGrant() }
                 audio.liveActivity.appBecameActive()
@@ -132,6 +137,17 @@ struct RootView: View {
     private func keepThemeAvailable() {
         guard entitlements.hasLoaded, !entitlements.allows(settings.preferences.theme) else { return }
         settings.preferences.theme = .automatic
+    }
+
+    /// Moves the night-reading clock on at each edge of the night window
+    /// (8 pm and 6 am by default), so the theme changes on time without
+    /// redrawing every minute.
+    private func followNightReading() async {
+        while !Task.isCancelled {
+            settings.nightClock = .now
+            guard let next = NightReading.nextChange(after: .now, schedule: settings.preferences.nightReading, calendar: .current) else { return }
+            try? await Task.sleep(for: .seconds(max(1, next.timeIntervalSinceNow + 1)))
+        }
     }
 
     /// Premium given by the owner (public.premium_grants) for this account.

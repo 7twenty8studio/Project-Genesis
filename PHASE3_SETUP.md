@@ -102,17 +102,17 @@ Xcode's local test signatures.
 | Reading, every public-domain translation, cross references | Everything in Free |
 | Word and reference search | Advanced search: topics, one testament or book, sorting |
 | Notes, highlights, bookmarks (no limits) | Morning welcome: greeting, today's verse and reading, sounds easing in |
-| Prayer journal and reading plans (no limits) | Themes: Cream, Parchment, Midnight, Sage and the seasons |
+| Prayer journal and reading plans (no limits) | Themes: Cream, Parchment, Midnight, Sage, Starlight and the seasons |
 | Cloud backup and sync with a free account | Every study tool, up to 30 new answers a day |
 | Groups, with the shared plan and progress | Family trees, the Bible map and journeys, the reader's Context panel |
 | Explore: the timeline and people | Word study: Hebrew and Greek with Strong's, Matthew Henry's commentary |
 | Handwritten notes and journal prompts | |
-| Themes: Auto, Paper, Sepia, Slate, High Contrast | |
+| Themes: Auto, Paper, Sepia, Slate, High Contrast, Night; night reading (switches to Night at bedtime) | |
 | 3 passage explanations a day (with a free account) | Reading insights and Year in Review stats |
 | Verse of the day widget (small and Lock Screen) | Every other widget and size, in your reading theme; listening on the Lock Screen; Apple Watch |
 | | Memorise Scripture with games, levels and streaks; ambient sounds |
 | | Illuminated first letters, three more book fonts, special app icons, chapter-complete ribbon |
-| | Evening Sanctuary, morning welcome |
+| | Morning welcome; Starlight for night reading |
 
 Licensed translations (ESV, NLT and others) would be a later add-on, once a
 licence is signed.

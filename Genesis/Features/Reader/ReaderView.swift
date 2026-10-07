@@ -26,7 +26,6 @@ struct ReaderView: View {
     /// "Added to Memorise", shown briefly.
     @State private var confirmation: String?
     @State private var showsCompanion = true
-    @State private var showsSanctuary = false
     @State private var companionMode: CompanionPanel.Mode = .notes
     /// Read from the window once it exists; nil until then so text is laid
     /// out once with the right insets rather than twice.
@@ -67,9 +66,6 @@ struct ReaderView: View {
         .sheet(item: $sheet) { sheet in
             sheetContent(sheet)
         }
-        .fullScreenCover(isPresented: $showsSanctuary) {
-            EveningSanctuaryView(startVerse: sanctuaryStartVerse)
-        }
         .onAppear {
             windowSafeArea = DeviceScreen.safeAreaInsets
             reader.modelContext = modelContext
@@ -102,7 +98,8 @@ struct ReaderView: View {
                 safeArea: readerSafeArea,
                 style: ReaderStyle(
                     preferences: preferences,
-                    theme: preferences.theme.resolved(for: colorScheme),
+                    // Night reading may read in Night or Starlight instead.
+                    theme: settings.effectiveTheme(for: colorScheme, premium: allowsPremiumLook),
                     contentSizeCategory: UIContentSizeCategory(dynamicTypeSize),
                     differentiatesWithoutColor: differentiateWithoutColor,
                     bibleLanguage: reader.translation.language,
@@ -127,6 +124,10 @@ struct ReaderView: View {
                         .id(season)
                 }
 
+                if layout.style.theme.hasStars, !reduceMotion {
+                    StarlightTwinkleView(textInsets: layout.textInsets)
+                }
+
                 if reader.isSelecting {
                     SelectionActionBar(
                         onImage: imageForSelection,
@@ -134,7 +135,8 @@ struct ReaderView: View {
                         onCrossReferences: showCrossReferencesForSelection,
                         onExplain: explainSelection,
                         onMemorise: memoriseAction,
-                        onWordStudy: wordStudyAction
+                        onWordStudy: wordStudyAction,
+                        onOriginalWord: originalWordAction
                     )
                     .padding(.bottom, readerSafeArea.bottom + 8)
                     .frame(maxHeight: .infinity, alignment: .bottom)
@@ -157,8 +159,7 @@ struct ReaderView: View {
                         onStudy: studyChapter,
                         onListen: listen,
                         onMoreBibles: { sheet = .bibles },
-                        onToggleCompanion: { showsCompanion.toggle() },
-                        onSanctuary: openSanctuary
+                        onToggleCompanion: { showsCompanion.toggle() }
                     )
                     // At least a little below the live safe area, and never
                     // higher than the stable position (which on iPad clears
@@ -339,6 +340,17 @@ struct ReaderView: View {
         return { studyWordsForSelection() }
     }
 
+    /// The Hebrew or Greek behind a word of one selected verse. Glosses are
+    /// English, so English Bibles only.
+    private var originalWordAction: (() -> Void)? {
+        guard wordStudyAction != nil, reader.selection.count == 1, let verse = reader.selection.first else { return nil }
+        return {
+            let pressed = reader.pressedWord?.verse == verse ? reader.pressedWord : nil
+            reader.clearSelection()
+            sheet = .originalWord(verse, pressed)
+        }
+    }
+
     /// Memorise in the selection bar, when Plans & Prayer is switched on.
     private var memoriseAction: (() -> Void)? {
         guard features.isOn(.plansAndPrayer) else { return nil }
@@ -366,20 +378,6 @@ struct ReaderView: View {
             try? await Task.sleep(for: .seconds(2))
             withAnimation { confirmation = nil }
         }
-    }
-
-    /// Evening Sanctuary is Premium; free accounts see what it offers.
-    private func openSanctuary() {
-        if entitlements.allows(.eveningSanctuary) {
-            showsSanctuary = true
-        } else {
-            sheet = .premium(.eveningSanctuary)
-        }
-    }
-
-    /// The sanctuary opens at the verse on screen.
-    private var sanctuaryStartVerse: VerseID {
-        reader.focusVerse.chapterID == reader.chapterID ? reader.focusVerse : reader.chapterID.firstVerse
     }
 
     /// Ambient sounds are Premium.
@@ -435,6 +433,8 @@ struct ReaderView: View {
         switch sheet {
         case let .verseImage(card):
             VerseImageView(card: card)
+        case let .originalWord(verse, pressed):
+            OriginalWordView(verse: verse, pressed: pressed)
         case let .wordStudy(verse):
             VerseStudyView(verse: verse)
         case .chapterPicker:
@@ -490,6 +490,7 @@ enum ReaderSheet: Identifiable {
     case bibles
     case verseImage(VerseCard)
     case wordStudy(VerseID)
+    case originalWord(VerseID, PressedWord?)
 
     var id: String {
         switch self {
@@ -502,6 +503,7 @@ enum ReaderSheet: Identifiable {
         case let .note(note): "note-\(note.id)"
         case let .crossReferences(verse): "xref-\(verse.rawValue)"
         case let .wordStudy(verse): "words-\(verse.rawValue)"
+        case let .originalWord(verse, _): "original-\(verse.rawValue)"
         case let .premium(feature): "premium-\(feature.rawValue)"
         case let .study(passage, action): "study-\(passage.start.rawValue)-\(passage.end.rawValue)-\(action.rawValue)"
         }
