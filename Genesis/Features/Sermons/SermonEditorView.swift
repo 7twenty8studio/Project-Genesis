@@ -18,6 +18,7 @@ struct SermonEditorView: View {
     @State private var selection: TextSelection?
     @State private var wasDeleted = false
     @State private var confirmDelete = false
+    @State private var exporting: JournalExportSubject?
 
     var body: some View {
         let palette = churchMode ? ReaderTheme.night.palette : basePalette
@@ -44,6 +45,7 @@ struct SermonEditorView: View {
                     SermonNotesEditor(text: $sermon.body, selection: $selection, largeText: churchMode && largeText)
                 }
                 SermonPassagesSection(sermon: sermon, onOpen: openInReader)
+                AttachmentsSection(owner: .sermon, ownerID: sermon.id)
                 SermonDetailsSection(sermon: sermon)
                 Section {
                     Button("Delete Sermon Notes", role: .destructive) { confirmDelete = true }
@@ -54,6 +56,9 @@ struct SermonEditorView: View {
         .navigationTitle(churchMode ? "Church Mode" : "Sermon Notes")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar { editorToolbar }
+        .sheet(item: $exporting) { subject in
+            JournalExportSheet(subject: subject)
+        }
         .confirmationDialog("Delete these sermon notes?", isPresented: $confirmDelete, titleVisibility: .visible) {
             Button("Delete", role: .destructive) {
                 wasDeleted = true
@@ -85,6 +90,7 @@ struct SermonEditorView: View {
             }
             .accessibilityAddTraits(sermon.isFavourite ? .isSelected : [])
             .accessibilityIdentifier("sermon.favourite")
+            JournalExtrasMenu(owner: .sermon, onTemplate: apply) { exporting = .sermon(sermon) }
         }
     }
 
@@ -98,6 +104,14 @@ struct SermonEditorView: View {
         StudyStore(context: modelContext).attach(passage, to: sermon)
     }
 
+    /// A template (Premium) in place of empty notes, or at the cursor.
+    private func apply(_ template: JournalTemplate) {
+        let offset = SermonTextSelection.offsets(selection, in: sermon.body)?.upperBound
+        let edit = JournalTemplate.inserting(template.text(), into: sermon.body, at: offset)
+        sermon.body = edit.text
+        selection = SermonTextSelection.selection(edit.cursor..<edit.cursor, in: edit.text)
+    }
+
     private func openInReader(_ passage: PrayerPassage) {
         dismiss()
         router.read(passage.start)
@@ -106,11 +120,15 @@ struct SermonEditorView: View {
     private func save() {
         guard !wasDeleted else { return }
         let store = StudyStore(context: modelContext)
-        // Discard notes that were opened and left empty.
+        // Discard notes that were opened and left empty; notes with only
+        // attachments are kept under a plain title, so they're listed.
         if !sermon.hasContent {
-            wasDeleted = true
-            store.delete(sermon)
-            return
+            guard !store.attachments(for: .sermon, id: sermon.id).isEmpty else {
+                wasDeleted = true
+                store.delete(sermon)
+                return
+            }
+            sermon.title = String(localized: "Untitled Sermon")
         }
         sermon.updatedAt = .now
         store.save()

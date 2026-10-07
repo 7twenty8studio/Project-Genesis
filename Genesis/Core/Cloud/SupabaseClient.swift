@@ -242,6 +242,39 @@ final class SupabaseClient: Sendable {
         return (data, http.statusCode)
     }
 
+    // MARK: Storage
+
+    /// Uploads (or replaces) a file in a private bucket with the person's
+    /// token; the bucket's policies decide which paths they may write.
+    func uploadObject(_ data: Data, bucket: String, path: String, contentType: String, accessToken: String) async throws {
+        var request = makeRequest(path: "storage/v1/object/\(bucket)/\(path)", query: [], method: "POST", accessToken: accessToken)
+        request.setValue(contentType, forHTTPHeaderField: "Content-Type")
+        request.setValue("true", forHTTPHeaderField: "x-upsert")
+        request.timeoutInterval = 300
+        request.httpBody = data
+        _ = try await perform(request)
+    }
+
+    /// Downloads a file from a private bucket with the person's token.
+    func downloadObject(bucket: String, path: String, accessToken: String) async throws -> Data {
+        var request = makeRequest(path: "storage/v1/object/authenticated/\(bucket)/\(path)", query: [], method: "GET", accessToken: accessToken)
+        request.setValue("*/*", forHTTPHeaderField: "Accept")
+        request.timeoutInterval = 300
+        return try await perform(request)
+    }
+
+    private struct RemoveObjectsBody: Encodable {
+        let prefixes: [String]
+    }
+
+    /// Removes files from a bucket. Paths that don't exist are ignored by the server.
+    func removeObjects(_ paths: [String], bucket: String, accessToken: String) async throws {
+        guard !paths.isEmpty else { return }
+        var request = makeRequest(path: "storage/v1/object/\(bucket)", query: [], method: "DELETE", accessToken: accessToken)
+        request.httpBody = try JSONEncoder().encode(RemoveObjectsBody(prefixes: paths))
+        _ = try await perform(request)
+    }
+
     // MARK: Plumbing
 
     func makeRequest(path: String, query: [URLQueryItem], method: String, accessToken: String?) -> URLRequest {

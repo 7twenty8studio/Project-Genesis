@@ -27,7 +27,30 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras]
+
+    static let journalExtras = WhatsNewAnnouncement(
+        id: "journal-photos-voice-pdfs-templates",
+        title: String(localized: "Richer prayers and sermon notes"),
+        items: [
+            WhatsNewItem(
+                systemImage: "photo.on.rectangle",
+                title: String(localized: "Photos and voice recordings"),
+                detail: String(localized: "Add photos and voice notes to a prayer or a sermon, and they sync to your other devices.")
+            ),
+            WhatsNewItem(
+                systemImage: "doc.richtext",
+                title: String(localized: "Your church's PDFs and Pencil pages"),
+                detail: String(localized: "Bring the bulletin or sermon slides into your notes, or sketch with Apple Pencil.")
+            ),
+            WhatsNewItem(
+                systemImage: "doc.text",
+                title: String(localized: "Templates and PDF export"),
+                detail: String(localized: "Start from ACTS, a gratitude list or a sermon outline, and export a beautifully typeset PDF. With Premium.")
+            ),
+        ],
+        feature: .prayer
+    )
 
     static let verseWidgetOptions = WhatsNewAnnouncement(
         id: "verse-widget-your-way",

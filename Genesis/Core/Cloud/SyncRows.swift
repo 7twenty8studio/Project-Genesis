@@ -414,6 +414,95 @@ struct RemoteSermon: SyncRow, Equatable {
     }
 }
 
+/// An attachment's details (supabase/migrations/20261014000000_attachments.sql).
+/// The file itself is in the `attachments` storage bucket at `storagePath`.
+struct RemoteAttachment: SyncRow, Equatable {
+    var id: UUID
+    var userId: UUID
+    var ownerKind: String
+    var ownerId: UUID
+    var kind: String
+    var storagePath: String
+    var bytes: Int
+    var durationSeconds: Double?
+    var pageCount: Int?
+    var caption: String
+    var sortOrder: Int
+    var createdAt: Date
+    var updatedAt: Date
+    var deletedAt: Date?
+    var serverUpdatedAt: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id, userId, ownerKind, ownerId, kind, storagePath, bytes, durationSeconds, pageCount, caption, sortOrder
+        case createdAt, updatedAt, deletedAt, serverUpdatedAt
+    }
+
+    init(_ attachment: Attachment, userID: UUID) {
+        id = attachment.id
+        userId = userID
+        ownerKind = attachment.owner.rawValue
+        ownerId = attachment.ownerID
+        kind = attachment.kind.rawValue
+        storagePath = AttachmentPaths.storagePath(userID: userID, fileName: attachment.fileName)
+        bytes = attachment.byteSize
+        durationSeconds = attachment.duration
+        pageCount = attachment.pageCount
+        caption = attachment.caption
+        sortOrder = attachment.sortOrder
+        createdAt = attachment.createdAt
+        updatedAt = attachment.updatedAt
+    }
+
+    // Lenient: a row missing an optional column still reads, with defaults.
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(UUID.self, forKey: .id)
+        userId = try container.decode(UUID.self, forKey: .userId)
+        ownerKind = try container.decodeIfPresent(String.self, forKey: .ownerKind) ?? ""
+        ownerId = try container.decode(UUID.self, forKey: .ownerId)
+        kind = try container.decodeIfPresent(String.self, forKey: .kind) ?? ""
+        storagePath = try container.decodeIfPresent(String.self, forKey: .storagePath) ?? ""
+        bytes = try container.decodeIfPresent(Int.self, forKey: .bytes) ?? 0
+        durationSeconds = try container.decodeIfPresent(Double.self, forKey: .durationSeconds)
+        pageCount = try container.decodeIfPresent(Int.self, forKey: .pageCount)
+        caption = try container.decodeIfPresent(String.self, forKey: .caption) ?? ""
+        sortOrder = try container.decodeIfPresent(Int.self, forKey: .sortOrder) ?? 0
+        createdAt = try container.decode(Date.self, forKey: .createdAt)
+        updatedAt = try container.decode(Date.self, forKey: .updatedAt)
+        deletedAt = try container.decodeIfPresent(Date.self, forKey: .deletedAt)
+        serverUpdatedAt = try container.decodeIfPresent(String.self, forKey: .serverUpdatedAt)
+    }
+
+    /// The owner and kind, or nil for values this version doesn't know (a
+    /// later version's), so such rows are left alone.
+    var known: (owner: AttachmentOwner, kind: AttachmentKind)? {
+        guard let owner = AttachmentOwner(rawValue: ownerKind), let fileKind = AttachmentKind(rawValue: self.kind) else { return nil }
+        return (owner, fileKind)
+    }
+
+    // Written by hand so cleared values go up as explicit nulls and every row
+    // in a request has the same keys.
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(userId, forKey: .userId)
+        try container.encode(ownerKind, forKey: .ownerKind)
+        try container.encode(ownerId, forKey: .ownerId)
+        try container.encode(kind, forKey: .kind)
+        try container.encode(storagePath, forKey: .storagePath)
+        try container.encode(bytes, forKey: .bytes)
+        try container.encodeOrNull(durationSeconds, forKey: .durationSeconds)
+        try container.encodeOrNull(pageCount, forKey: .pageCount)
+        try container.encode(caption, forKey: .caption)
+        try container.encode(sortOrder, forKey: .sortOrder)
+        try container.encode(createdAt, forKey: .createdAt)
+        try container.encode(updatedAt, forKey: .updatedAt)
+        try container.encodeIfPresent(deletedAt, forKey: .deletedAt)
+        try container.encodeIfPresent(serverUpdatedAt, forKey: .serverUpdatedAt)
+    }
+}
+
 extension KeyedEncodingContainer {
     /// The value, or an explicit JSON null (never a missing key).
     mutating func encodeOrNull<T: Encodable>(_ value: T?, forKey key: Key) throws {

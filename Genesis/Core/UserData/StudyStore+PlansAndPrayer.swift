@@ -95,6 +95,7 @@ extension StudyStore {
 
     func delete(_ prayer: Prayer) {
         PrayerReminders.cancel(prayerID: prayer.id)
+        deleteAttachments(of: .prayer, id: prayer.id)
         recordDeletion(of: prayer.id, in: SyncTable.prayers)
         context.delete(prayer)
         save()

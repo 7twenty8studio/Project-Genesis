@@ -24,12 +24,15 @@ struct PrayerJournalView: View {
 
     @Environment(\.modelContext) private var modelContext
     @Environment(\.palette) private var palette
+    @Environment(EntitlementService.self) private var entitlements
     @Query(sort: \Prayer.updatedAt, order: .reverse) private var prayers: [Prayer]
     @State private var mode: Mode = .list
     @State private var filter: Filter = .praying
     @State private var category: PrayerCategory?
     @State private var query = ""
     @State private var editing: Prayer?
+    @State private var exporting: JournalExportSubject?
+    @State private var premium: PremiumFeature?
 
     /// Prayers matching the search and the category chip.
     private var searched: [Prayer] {
@@ -71,10 +74,25 @@ struct PrayerJournalView: View {
                 }
                 .accessibilityIdentifier("prayer.new")
             }
+            ToolbarItem(placement: .secondaryAction) {
+                // Premium: the journal as a PDF for a range of days.
+                Button("Export as PDF", systemImage: "square.and.arrow.up") {
+                    if entitlements.allows(.journalExtras) {
+                        exporting = .journal
+                    } else {
+                        premium = .journalExtras
+                    }
+                }
+                .accessibilityIdentifier("prayer.exportJournal")
+            }
         }
         .sheet(item: $editing) { prayer in
             NavigationStack { PrayerEditorView(prayer: prayer) }
         }
+        .sheet(item: $exporting) { subject in
+            JournalExportSheet(subject: subject)
+        }
+        .premiumSheet($premium)
     }
 
     private var controls: some View {

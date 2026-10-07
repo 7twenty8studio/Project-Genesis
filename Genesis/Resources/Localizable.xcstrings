@@ -775,6 +775,16 @@
         }
       }
     },
+    "A moment you don't want to forget.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un momento que no quieres olvidar."
+          }
+        }
+      }
+    },
     "A morning welcome": {
       "localizations": {
         "es": {
@@ -861,6 +871,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Un temporizador que se desvanece"
+          }
+        }
+      }
+    },
+    "ACTS (Adoration, Confession, Thanksgiving, Supplication)": {
+      "comment": "Prayer template",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ACAS (Adoración, Confesión, Acción de gracias, Súplica)"
           }
         }
       }
@@ -1045,6 +1066,16 @@
         }
       }
     },
+    "Add Attachment": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir adjunto"
+          }
+        }
+      }
+    },
     "Add Bookmark": {
       "localizations": {
         "es": {
@@ -1075,6 +1106,16 @@
         }
       }
     },
+    "Add a caption": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añade una descripción"
+          }
+        }
+      }
+    },
     "Add a comment": {
       "localizations": {
         "es": {
@@ -1101,6 +1142,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "Añadir marcador"
+          }
+        }
+      }
+    },
+    "Add photos and voice notes to a prayer or a sermon, and they sync to your other devices.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añade fotos y notas de voz a una oración o a un sermón, y se sincronizan con tus otros dispositivos."
+          }
+        }
+      }
+    },
+    "Add photos and voice recordings to prayers and sermon notes, bring in your church's PDFs, sketch with Apple Pencil, start from templates and export a beautifully typeset PDF.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añade fotos y grabaciones de voz a tus oraciones y notas de sermones, trae los PDF de tu iglesia, dibuja con el Apple Pencil, empieza con plantillas y exporta un PDF con un diseño cuidado."
+          }
+        }
+      }
+    },
+    "Add photos, voice recordings, church PDFs and Pencil pages with Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añade fotos, grabaciones de voz, PDF de la iglesia y páginas de Pencil con Premium."
           }
         }
       }
@@ -1185,6 +1256,17 @@
         }
       }
     },
+    "Adoration": {
+      "comment": "ACTS prayer heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adoración"
+          }
+        }
+      }
+    },
     "Advanced search": {
       "localizations": {
         "es": {
@@ -1257,6 +1339,16 @@
         }
       }
     },
+    "All Categories": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todas las categorías"
+          }
+        }
+      }
+    },
     "All Days": {
       "localizations": {
         "es": {
@@ -1314,6 +1406,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "También %@"
+          }
+        }
+      }
+    },
+    "Also attached": {
+      "comment": "PDF export: heading over recordings and PDFs, which can't be printed",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "También adjunto"
           }
         }
       }
@@ -1430,7 +1533,7 @@
       }
     },
     "Answered": {
-      "comment": "Prayer journal filter: answered prayers",
+      "comment": "PDF export: heading over how a prayer was answered",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -1590,6 +1693,17 @@
         }
       }
     },
+    "Application": {
+      "comment": "Sermon template heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aplicación"
+          }
+        }
+      }
+    },
     "Approve": {
       "localizations": {
         "es": {
@@ -1640,6 +1754,27 @@
         }
       }
     },
+    "Ask boldly": {
+      "comment": "Lament prayer heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pide con confianza"
+          }
+        }
+      }
+    },
+    "Ask for what you and others need.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pide lo que tú y otros necesitan."
+          }
+        }
+      }
+    },
     "Ask your group leader for an invite code, or start a group for your church, small group or family.": {
       "localizations": {
         "es": {
@@ -1686,6 +1821,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Añade versículos a una oración, o selecciona versículos en el lector y toca Orar."
+          }
+        }
+      }
+    },
+    "Attachments": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adjuntos"
           }
         }
       }
@@ -1986,6 +2131,17 @@
         }
       }
     },
+    "Big idea": {
+      "comment": "Sermon template heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Idea central"
+          }
+        }
+      }
+    },
     "Biography": {
       "localizations": {
         "es": {
@@ -2115,6 +2271,27 @@
           "stringUnit": {
             "state": "translated",
             "value": "Brillo"
+          }
+        }
+      }
+    },
+    "Bring the bulletin or sermon slides into your notes, or sketch with Apple Pencil.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trae el boletín o las diapositivas del sermón a tus notas, o dibuja con el Apple Pencil."
+          }
+        }
+      }
+    },
+    "Bring your complaint": {
+      "comment": "Lament prayer heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Presenta tu queja"
           }
         }
       }
@@ -2391,6 +2568,16 @@
         }
       }
     },
+    "Choose Photos": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elegir fotos"
+          }
+        }
+      }
+    },
     "Choose Several Books": {
       "localizations": {
         "es": {
@@ -2522,6 +2709,17 @@
         }
       }
     },
+    "Choose to trust": {
+      "comment": "Lament prayer heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige confiar"
+          }
+        }
+      }
+    },
     "Choose up to %lld verses at a time.": {
       "localizations": {
         "es": {
@@ -2598,6 +2796,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "El Modo Iglesia mantiene la pantalla encendida y tenue mientras tomas notas."
+          }
+        }
+      }
+    },
+    "Church and leaders": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La iglesia y sus líderes"
           }
         }
       }
@@ -2845,6 +3053,28 @@
         }
       }
     },
+    "Conclusion": {
+      "comment": "Sermon template heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conclusión"
+          }
+        }
+      }
+    },
+    "Confession": {
+      "comment": "ACTS prayer heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Confesión"
+          }
+        }
+      }
+    },
     "Confirm new password": {
       "localizations": {
         "es": {
@@ -3013,6 +3243,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Crear cuenta"
+          }
+        }
+      }
+    },
+    "Create PDF": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crear PDF"
           }
         }
       }
@@ -3264,6 +3504,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Eliminar estas notas del sermón?"
+          }
+        }
+      }
+    },
+    "Delete this attachment?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Eliminar este adjunto?"
           }
         }
       }
@@ -3589,12 +3839,33 @@
         }
       }
     },
+    "Downloading…": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descargando…"
+          }
+        }
+      }
+    },
     "Downloads aren't set up in this build.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Las descargas no están configuradas en esta versión."
+          }
+        }
+      }
+    },
+    "Drawing": {
+      "comment": "Attachment kind: an Apple Pencil page",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dibujo"
           }
         }
       }
@@ -3647,6 +3918,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Fácil"
+          }
+        }
+      }
+    },
+    "Edit Drawing": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Editar dibujo"
           }
         }
       }
@@ -4004,6 +4285,26 @@
         }
       }
     },
+    "Export PDF": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exportar PDF"
+          }
+        }
+      }
+    },
+    "Export as PDF": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Exportar como PDF"
+          }
+        }
+      }
+    },
     "Fades out at %@.": {
       "localizations": {
         "es": {
@@ -4309,6 +4610,16 @@
         }
       }
     },
+    "First, second, third.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primero, segundo, tercero."
+          }
+        }
+      }
+    },
     "Five psalms a day, a month of prayer and praise.": {
       "localizations": {
         "es": {
@@ -4521,6 +4832,16 @@
         }
       }
     },
+    "Friends and neighbours": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amigos y vecinos"
+          }
+        }
+      }
+    },
     "From": {
       "comment": "Night reading starts at this hour",
       "localizations": {
@@ -4558,6 +4879,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Desde el capítulo %lld"
+          }
+        }
+      }
+    },
+    "From my prayer journal": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De mi diario de oración"
           }
         }
       }
@@ -4609,6 +4940,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Genesis Premium"
+          }
+        }
+      }
+    },
+    "Genesis can't use the microphone. Turn it on in Settings › Privacy & Security › Microphone.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genesis no puede usar el micrófono. Actívalo en Ajustes › Privacidad y seguridad › Micrófono."
           }
         }
       }
@@ -4831,6 +5172,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gramática"
+          }
+        }
+      }
+    },
+    "Gratitude List": {
+      "comment": "Prayer template",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lista de gratitud"
           }
         }
       }
@@ -5188,6 +5540,17 @@
         }
       }
     },
+    "Help me to": {
+      "comment": "Morning offering heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayúdame a"
+          }
+        }
+      }
+    },
     "Here's what has been added to Genesis.": {
       "localizations": {
         "es": {
@@ -5295,6 +5658,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qué tan seguras son las ubicaciones"
+          }
+        }
+      }
+    },
+    "How did it end? What was the call?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Cómo terminó? ¿Cuál fue el llamado?"
+          }
+        }
+      }
+    },
+    "How did the sermon begin?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Cómo empezó el sermón?"
           }
         }
       }
@@ -5498,6 +5881,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Imperfecto"
+          }
+        }
+      }
+    },
+    "Import PDF": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Importar PDF"
           }
         }
       }
@@ -5714,6 +6107,17 @@
         }
       }
     },
+    "Introduction": {
+      "comment": "Sermon template heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Introducción"
+          }
+        }
+      }
+    },
     "Invite People": {
       "localizations": {
         "es": {
@@ -5751,6 +6155,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Puede que se haya eliminado en otro dispositivo."
+          }
+        }
+      }
+    },
+    "It will download when you're online. If you added it on another device, open Genesis there so it can finish uploading.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se descargará cuando tengas conexión. Si lo añadiste en otro dispositivo, abre Genesis allí para que termine de subirse."
           }
         }
       }
@@ -6024,6 +6438,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Conocida, probable o incierta"
+          }
+        }
+      }
+    },
+    "Lament": {
+      "comment": "Prayer template: a prayer of sorrow",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lamento"
           }
         }
       }
@@ -6555,6 +6980,38 @@
         }
       }
     },
+    "Made with Genesis": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hecho con Genesis"
+          }
+        }
+      }
+    },
+    "Main Points": {
+      "comment": "Sermon template",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puntos principales"
+          }
+        }
+      }
+    },
+    "Main points": {
+      "comment": "Sermon template heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puntos principales"
+          }
+        }
+      }
+    },
     "Make %@ the owner?": {
       "localizations": {
         "es": {
@@ -6771,6 +7228,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Significado"
+          }
+        }
+      }
+    },
+    "Meetings, tasks, conversations, worries.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reuniones, tareas, conversaciones, preocupaciones."
           }
         }
       }
@@ -7143,6 +7610,17 @@
         }
       }
     },
+    "Morning Offering": {
+      "comment": "Prayer template",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ofrenda de la mañana"
+          }
+        }
+      }
+    },
     "Morning Welcome": {
       "localizations": {
         "es": {
@@ -7224,6 +7702,26 @@
         }
       }
     },
+    "Move Earlier": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mover antes"
+          }
+        }
+      }
+    },
+    "Move Later": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mover después"
+          }
+        }
+      }
+    },
     "Mute": {
       "localizations": {
         "es": {
@@ -7270,6 +7768,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nombre"
+          }
+        }
+      }
+    },
+    "Name them and what they're carrying.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nómbralos y lo que están cargando."
+          }
+        }
+      }
+    },
+    "Name what you need forgiveness for, honestly and without fear.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombra aquello por lo que necesitas perdón, con sinceridad y sin miedo."
           }
         }
       }
@@ -7990,6 +8508,16 @@
         }
       }
     },
+    "Not on this device yet": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no está en este dispositivo"
+          }
+        }
+      }
+    },
     "Not read": {
       "localizations": {
         "es": {
@@ -8151,6 +8679,17 @@
         }
       }
     },
+    "Observation": {
+      "comment": "Sermon template heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Observación"
+          }
+        }
+      }
+    },
     "Observations, questions, connections…": {
       "localizations": {
         "es": {
@@ -8179,6 +8718,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Desactivado"
+          }
+        }
+      }
+    },
+    "Offer God the hours ahead.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ofrece a Dios las horas que vienen."
           }
         }
       }
@@ -8239,6 +8788,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Un minuto"
+          }
+        }
+      }
+    },
+    "One thing to remember this week.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo para recordar esta semana."
           }
         }
       }
@@ -8441,6 +9000,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Propietarios y moderadores"
+          }
+        }
+      }
+    },
+    "PDF": {
+      "comment": "Attachment kind",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF"
+          }
+        }
+      }
+    },
+    "PDF, %lld pages": {
+      "comment": "PDF export: an imported PDF and its page count",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF, %lld páginas"
+          }
+        }
+      }
+    },
+    "PDFs can be up to 25 MB.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los PDF pueden ocupar hasta 25 MB."
           }
         }
       }
@@ -8658,6 +9249,17 @@
         }
       }
     },
+    "Passages": {
+      "comment": "PDF export: heading over the Bible passages attached",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasajes"
+          }
+        }
+      }
+    },
     "Passive": {
       "localizations": {
         "es": {
@@ -8770,6 +9372,16 @@
         }
       }
     },
+    "People I'm grateful for": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Personas por las que estoy agradecido"
+          }
+        }
+      }
+    },
     "People, places and events from Theographic Bible Metadata (CC BY-SA 4.0). Map locations and how certain they are from OpenBible.info (CC BY 4.0). Descriptions from Easton's Bible Dictionary (1897).": {
       "localizations": {
         "es": {
@@ -8821,12 +9433,32 @@
       }
     },
     "Photo": {
-      "comment": "Verse image background: one of your photos",
+      "comment": "Attachment kind",
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Foto"
+          }
+        }
+      }
+    },
+    "Photos and voice recordings": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fotos y grabaciones de voz"
+          }
+        }
+      }
+    },
+    "Photos, voice and PDFs in your journal": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fotos, voz y PDF en tu diario"
           }
         }
       }
@@ -8859,6 +9491,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lugares"
+          }
+        }
+      }
+    },
+    "Places and people in need, near and far.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lugares y personas necesitadas, cerca y lejos."
           }
         }
       }
@@ -9014,6 +9656,27 @@
         }
       }
     },
+    "Points": {
+      "comment": "Sermon template heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puntos"
+          }
+        }
+      }
+    },
+    "Position": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Posición"
+          }
+        }
+      }
+    },
     "Post": {
       "localizations": {
         "es": {
@@ -9070,6 +9733,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Practica hoy para empezar una racha."
+          }
+        }
+      }
+    },
+    "Praise God for who he is.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alaba a Dios por quién es él."
           }
         }
       }
@@ -9141,6 +9814,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Oren cada día por las peticiones de los demás."
+          }
+        }
+      }
+    },
+    "Pray for your church, its leaders and those who serve.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ora por tu iglesia, sus líderes y quienes sirven."
           }
         }
       }
@@ -9275,6 +9958,16 @@
         }
       }
     },
+    "Prayers": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oraciones"
+          }
+        }
+      }
+    },
     "Prayers and answers appear here by month, so you can look back on God's faithfulness.": {
       "localizations": {
         "es": {
@@ -9292,6 +9985,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "En oración"
+          }
+        }
+      }
+    },
+    "Praying for Others": {
+      "comment": "Prayer template",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orar por otros"
           }
         }
       }
@@ -9363,6 +10067,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Preparando notas de estudio…"
+          }
+        }
+      }
+    },
+    "Preparing your PDF…": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparando tu PDF…"
           }
         }
       }
@@ -9576,6 +10290,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Expresa el sentido de cada frase en un lenguaje natural y cotidiano. Fácil de leer durante largo rato."
+          }
+        }
+      }
+    },
+    "Questions for your group or family.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preguntas para tu grupo o tu familia."
+          }
+        }
+      }
+    },
+    "Questions to Discuss": {
+      "comment": "Sermon template",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preguntas para conversar"
+          }
+        }
+      }
+    },
+    "Questions to discuss": {
+      "comment": "Sermon template heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preguntas para conversar"
           }
         }
       }
@@ -10137,6 +10883,37 @@
         }
       }
     },
+    "Record": {
+      "comment": "Start recording",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grabar"
+          }
+        }
+      }
+    },
+    "Record Again": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grabar de nuevo"
+          }
+        }
+      }
+    },
+    "Record Voice": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grabar voz"
+          }
+        }
+      }
+    },
     "Recorded audio": {
       "localizations": {
         "es": {
@@ -10194,6 +10971,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Grabación"
+          }
+        }
+      }
+    },
+    "Recording couldn't start. Please try again.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo empezar a grabar. Inténtalo de nuevo."
           }
         }
       }
@@ -10287,6 +11074,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pasajes relacionados"
+          }
+        }
+      }
+    },
+    "Remember his faithfulness, even if only in a few words.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recuerda su fidelidad, aunque sea en pocas palabras."
           }
         }
       }
@@ -10631,6 +11428,16 @@
         }
       }
     },
+    "Richer prayers and sermon notes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oraciones y notas de sermones más completas"
+          }
+        }
+      }
+    },
     "Rights and audio": {
       "localizations": {
         "es": {
@@ -10764,6 +11571,17 @@
         }
       }
     },
+    "Scripture": {
+      "comment": "Sermon template heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escritura"
+          }
+        }
+      }
+    },
     "Scripture is shown from your Bible in the reader; posts link to the passage rather than quoting it.": {
       "localizations": {
         "es": {
@@ -10780,6 +11598,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Escritura · %@"
+          }
+        }
+      }
+    },
+    "Scripture, Observation, Application": {
+      "comment": "Sermon template",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escritura, observación, aplicación"
           }
         }
       }
@@ -11260,6 +12089,16 @@
         }
       }
     },
+    "Share PDF": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compartir PDF"
+          }
+        }
+      }
+    },
     "Share a Prayer Request": {
       "localizations": {
         "es": {
@@ -11366,6 +12205,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Comparte tu año con el botón de arriba."
+          }
+        }
+      }
+    },
+    "Share, print or save it to Files. Recordings and imported PDFs are listed, not included.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compártelo, imprímelo o guárdalo en Archivos. Las grabaciones y los PDF importados se mencionan, pero no se incluyen."
           }
         }
       }
@@ -11610,6 +12459,16 @@
         }
       }
     },
+    "Sign in to sync attachments.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inicia sesión para sincronizar los adjuntos."
+          }
+        }
+      }
+    },
     "Sign in to use the study assistant. A free account includes %lld explanations a day.": {
       "localizations": {
         "es": {
@@ -11656,6 +12515,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Iniciaste sesión con Apple? Con una contraseña también podrás entrar con tu correo."
+          }
+        }
+      }
+    },
+    "Simple Outline": {
+      "comment": "Sermon template",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bosquejo sencillo"
           }
         }
       }
@@ -11722,6 +12592,16 @@
         }
       }
     },
+    "Some churches ask that sermons not be recorded. Please check first.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algunas iglesias piden que no se graben los sermones. Consulta primero, por favor."
+          }
+        }
+      }
+    },
     "Something else": {
       "comment": "Feedback category",
       "localizations": {
@@ -11739,6 +12619,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Algo no funciona"
+          }
+        }
+      }
+    },
+    "Something new, or something seen afresh.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Algo nuevo, o algo visto con ojos nuevos."
           }
         }
       }
@@ -11809,6 +12699,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Citas en español"
+          }
+        }
+      }
+    },
+    "Speak to him plainly, as you are.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Háblale con sencillez, tal como eres."
           }
         }
       }
@@ -11988,6 +12888,16 @@
         }
       }
     },
+    "Start from ACTS, a gratitude list or a sermon outline, and export a beautifully typeset PDF. With Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empieza con ACAS, una lista de gratitud o un bosquejo del sermón, y exporta un PDF con un diseño cuidado. Con Premium."
+          }
+        }
+      }
+    },
     "Start the conversation.": {
       "localizations": {
         "es": {
@@ -12099,6 +13009,7 @@
       }
     },
     "Stop": {
+      "comment": "Stop recording",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -12332,6 +13243,17 @@
         }
       }
     },
+    "Supplication": {
+      "comment": "ACTS prayer heading: asking",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Súplica"
+          }
+        }
+      }
+    },
     "Swipe to look back on what you read, highlighted and prayed.": {
       "localizations": {
         "es": {
@@ -12403,6 +13325,16 @@
         }
       }
     },
+    "Take Photo": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tomar foto"
+          }
+        }
+      }
+    },
     "Take a quiet moment with God today.": {
       "localizations": {
         "es": {
@@ -12439,6 +13371,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Toma notas de los sermones"
+          }
+        }
+      }
+    },
+    "Takeaway": {
+      "comment": "Sermon template heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para llevar"
           }
         }
       }
@@ -12520,6 +13463,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cuéntanos qué te parece"
+          }
+        }
+      }
+    },
+    "Templates": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plantillas"
+          }
+        }
+      }
+    },
+    "Templates and PDF export": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plantillas y exportación a PDF"
           }
         }
       }
@@ -12624,6 +13587,16 @@
         }
       }
     },
+    "Thank God for what he has done and given.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Da gracias a Dios por lo que ha hecho y te ha dado."
+          }
+        }
+      }
+    },
     "Thank you": {
       "localizations": {
         "es": {
@@ -12644,12 +13617,53 @@
         }
       }
     },
+    "Thanksgiving": {
+      "comment": "ACTS prayer heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acción de gracias"
+          }
+        }
+      }
+    },
+    "That PDF couldn't be opened.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo abrir ese PDF."
+          }
+        }
+      }
+    },
     "That can't be ticked yet.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Eso todavía no se puede marcar."
+          }
+        }
+      }
+    },
+    "That couldn't be saved on this device.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo guardar en este dispositivo."
+          }
+        }
+      }
+    },
+    "That file is too large to attach.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ese archivo es demasiado grande para adjuntarlo."
           }
         }
       }
@@ -12690,6 +13704,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ese pasaje no está en la Biblia que estás leyendo."
+          }
+        }
+      }
+    },
+    "That photo couldn't be added.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo añadir esa foto."
           }
         }
       }
@@ -12954,6 +13978,16 @@
         }
       }
     },
+    "The grace you need today: patience, courage, kindness.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La gracia que necesitas hoy: paciencia, valor, bondad."
+          }
+        }
+      }
+    },
     "The medium Verse of the Day widget is now free, on the Home Screen next to the small one and the Lock Screen.": {
       "localizations": {
         "es": {
@@ -13054,6 +14088,26 @@
         }
       }
     },
+    "The recording couldn't be saved.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo guardar la grabación."
+          }
+        }
+      }
+    },
+    "The sermon in one sentence.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El sermón en una frase."
+          }
+        }
+      }
+    },
     "The server sent an unexpected response.": {
       "localizations": {
         "es": {
@@ -13140,6 +14194,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Toda la Biblia en un año, con los libros en el orden en que ocurrieron los acontecimientos."
+          }
+        }
+      }
+    },
+    "The world": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El mundo"
           }
         }
       }
@@ -13275,6 +14339,36 @@
         }
       }
     },
+    "This already has the most attachments of that kind it can hold.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ya tiene el máximo de adjuntos de ese tipo."
+          }
+        }
+      }
+    },
+    "This already has the most photos it can hold.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ya tiene el máximo de fotos."
+          }
+        }
+      }
+    },
+    "This attachment hasn't reached the cloud yet. Open it on the device where you added it.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este adjunto aún no ha llegado a la nube. Ábrelo en el dispositivo donde lo añadiste."
+          }
+        }
+      }
+    },
     "This challenge has ended.": {
       "localizations": {
         "es": {
@@ -13321,6 +14415,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "No se pudo reproducir este capítulo."
+          }
+        }
+      }
+    },
+    "This day is yours": {
+      "comment": "Morning offering heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este día es tuyo"
           }
         }
       }
@@ -13455,6 +14560,26 @@
         }
       }
     },
+    "Three things, however small.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tres cosas, por pequeñas que sean."
+          }
+        }
+      }
+    },
+    "Through": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hasta"
+          }
+        }
+      }
+    },
     "Tick each chapter when you've read it.": {
       "localizations": {
         "es": {
@@ -13576,12 +14701,33 @@
         }
       }
     },
+    "To pray about": {
+      "comment": "Sermon template heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para orar"
+          }
+        }
+      }
+    },
     "Today": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Hoy"
+          }
+        }
+      }
+    },
+    "Today I'm thankful for": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoy doy gracias por"
           }
         }
       }
@@ -13850,6 +14996,27 @@
         }
       }
     },
+    "Turn to God": {
+      "comment": "Lament prayer heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vuélvete a Dios"
+          }
+        }
+      }
+    },
+    "Turn what you heard into prayer.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Convierte lo que escuchaste en oración."
+          }
+        }
+      }
+    },
     "Turning something off only hides it. Your plans, prayers, groups and notes stay, and come back when you turn it on.": {
       "localizations": {
         "es": {
@@ -13991,12 +15158,62 @@
         }
       }
     },
+    "Untitled Prayer": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oración sin título"
+          }
+        }
+      }
+    },
+    "Untitled Sermon": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sermón sin título"
+          }
+        }
+      }
+    },
     "Up to %lld verses from one chapter, in the Bible you're reading.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Hasta %lld versículos de un capítulo, en la Biblia que estás leyendo."
+          }
+        }
+      }
+    },
+    "Up to 10 photos and 5 voice recordings.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hasta 10 fotos y 5 grabaciones de voz."
+          }
+        }
+      }
+    },
+    "Up to 10 photos, 5 recordings, 3 PDFs and 5 drawings. Slides can be added once saved as a PDF.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hasta 10 fotos, 5 grabaciones, 3 PDF y 5 dibujos. Las diapositivas se pueden añadir guardadas como PDF."
+          }
+        }
+      }
+    },
+    "Up to two hours. Recordings stay private to you.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hasta dos horas. Las grabaciones son solo para ti."
           }
         }
       }
@@ -14222,6 +15439,28 @@
         }
       }
     },
+    "Voice Recording": {
+      "comment": "Attachment kind",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grabación de voz"
+          }
+        }
+      }
+    },
+    "Voice recording, %@": {
+      "comment": "PDF export: a recording and its length, e.g. 3:05",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grabación de voz, %@"
+          }
+        }
+      }
+    },
     "Waiting to Join": {
       "localizations": {
         "es": {
@@ -14323,6 +15562,28 @@
         }
       }
     },
+    "What I learned": {
+      "comment": "Sermon template heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lo que aprendí"
+          }
+        }
+      }
+    },
+    "What I'm facing": {
+      "comment": "Morning offering heading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lo que tengo por delante"
+          }
+        }
+      }
+    },
     "What are you grateful for today?": {
       "localizations": {
         "es": {
@@ -14373,6 +15634,16 @@
         }
       }
     },
+    "What do you long for him to do?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué anhelas que él haga?"
+          }
+        }
+      }
+    },
     "What does a quiet, faithful day look like for you?": {
       "localizations": {
         "es": {
@@ -14383,12 +15654,32 @@
         }
       }
     },
+    "What does the passage say? What stood out?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué dice el pasaje? ¿Qué te llamó la atención?"
+          }
+        }
+      }
+    },
     "What happened, and what did you expect? Steps to repeat it help a lot.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué pasó y qué esperabas? Los pasos para repetirlo ayudan mucho."
+          }
+        }
+      }
+    },
+    "What hurts? What feels unfair or confusing?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué te duele? ¿Qué te parece injusto o confuso?"
           }
         }
       }
@@ -14503,6 +15794,26 @@
         }
       }
     },
+    "What were the key points?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Cuáles fueron los puntos clave?"
+          }
+        }
+      }
+    },
+    "What will you do differently because of it?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué harás diferente por ello?"
+          }
+        }
+      }
+    },
     "What would you like to pray or reflect on for someone else?": {
       "localizations": {
         "es": {
@@ -14613,6 +15924,16 @@
         }
       }
     },
+    "Where I saw God's goodness": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Donde vi la bondad de Dios"
+          }
+        }
+      }
+    },
     "Where STEPBible records this edition's own spelling, it's shown; otherwise spelling follows Nestle-Aland.": {
       "localizations": {
         "es": {
@@ -14693,6 +16014,16 @@
         }
       }
     },
+    "Which passage was preached? Attach it below.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Qué pasaje se predicó? Adjúntalo abajo."
+          }
+        }
+      }
+    },
     "Which words from your reading would you like to carry into tomorrow?": {
       "localizations": {
         "es": {
@@ -14724,12 +16055,32 @@
         }
       }
     },
+    "Who at home needs prayer today?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Quién en casa necesita oración hoy?"
+          }
+        }
+      }
+    },
     "Who could you encourage this week, and how?": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "¿A quién podrías animar esta semana, y cómo?"
+          }
+        }
+      }
+    },
+    "Who has been a gift to you lately?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Quién ha sido un regalo para ti últimamente?"
           }
         }
       }
@@ -15498,6 +16849,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Se borrarán las marcas de este plan."
+          }
+        }
+      }
+    },
+    "Your church's PDFs and Pencil pages": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los PDF de tu iglesia y páginas de Pencil"
           }
         }
       }

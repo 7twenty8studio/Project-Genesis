@@ -1,11 +1,12 @@
 import AVFoundation
 
-/// The one audio session, shared by Bible narration and ambient sounds so
-/// neither switches it off while the other is still playing.
+/// The one audio session, shared by Bible narration, ambient sounds and voice
+/// recordings on prayers and sermons, so none switches it off while another
+/// is still playing.
 ///
-/// Narration takes the session for spoken audio (other apps' audio stops).
-/// Ambient sounds on their own mix with other apps, so rain can play under
-/// someone's own music.
+/// Narration and playing a voice recording take the session for spoken audio
+/// (other apps' audio stops). Recording uses the microphone. Ambient sounds
+/// on their own mix with other apps, so rain can play under someone's own music.
 ///
 /// Deactivating can block for a moment, so it runs on a serial background
 /// queue; activating waits on the same queue, so a quick stop-then-play never
@@ -14,6 +15,10 @@ import AVFoundation
 enum AudioSession {
     enum User: Hashable {
         case narration, ambient
+        /// Recording a voice note (`VoiceRecorder`).
+        case recording
+        /// Playing a voice note back (`VoiceNotePlayer`).
+        case voiceNote
     }
 
     private static var users: Set<User> = []
@@ -37,12 +42,15 @@ enum AudioSession {
     }
 
     private static func apply() {
-        let spoken = users.contains(.narration)
+        let spoken = users.contains(.narration) || users.contains(.voiceNote)
+        let recording = users.contains(.recording)
         // Waits for any queued deactivation first, so the session ends up on.
         let failure: String? = queue.sync {
             let session = AVAudioSession.sharedInstance()
             do {
-                if spoken {
+                if recording {
+                    try session.setCategory(.playAndRecord, mode: .default, options: [.defaultToSpeaker])
+                } else if spoken {
                     try session.setCategory(.playback, mode: .spokenAudio)
                 } else {
                     try session.setCategory(.playback, mode: .default, options: [.mixWithOthers])

@@ -3,8 +3,8 @@ import Observation
 import os
 import SwiftData
 
-/// Keeps highlights, notes, bookmarks, reading plans, prayers and sermon notes in step
-/// between this device and the person's Supabase account.
+/// Keeps highlights, notes, bookmarks, reading plans, prayers, sermon notes
+/// and attachments in step between this device and the person's Supabase account.
 ///
 /// Each sync pulls server changes first (newest edit wins per record), then
 /// pushes local changes and deletions. Everything works offline; sync simply
@@ -25,6 +25,8 @@ final class SyncService {
     /// Sync is free for every signed-in account; this stays as a switch for
     /// tests and for turning it off if ever needed.
     @ObservationIgnored var isAllowed: @MainActor () -> Bool = { true }
+    /// Moves attachment files to and from cloud storage after each sync.
+    @ObservationIgnored var attachmentTransfers: AttachmentTransfers?
     @ObservationIgnored private let container: ModelContainer
     @ObservationIgnored private let defaults: UserDefaults
     @ObservationIgnored private var scheduled: Task<Void, Never>?
@@ -132,11 +134,13 @@ final class SyncService {
             try context.delete(model: Prayer.self)
             try context.delete(model: MemoryVerse.self)
             try context.delete(model: Sermon.self)
+            try context.delete(model: Attachment.self)
             try context.delete(model: Tombstone.self)
             try context.save()
         } catch {
             CrashReporter.record(error, context: "Sync.eraseLocalData")
         }
+        attachmentTransfers?.eraseAll()
         NotificationCenter.default.post(name: .genesisUserDataDidChange, object: nil)
     }
 
@@ -155,6 +159,7 @@ final class SyncService {
         try await pull(SyncTable.prayers, RemotePrayer.self, client, token, user, apply: apply)
         try await pull(SyncTable.memoryVerses, RemoteMemoryVerse.self, client, token, user, apply: apply)
         try await pull(SyncTable.sermons, RemoteSermon.self, client, token, user, apply: apply)
+        try await pull(SyncTable.attachments, RemoteAttachment.self, client, token, user, apply: apply)
 
         // Push everything edited since the last successful push.
         let since = defaults.object(forKey: key("lastPushedAt", user.id)) as? Date ?? .distantPast
@@ -166,9 +171,13 @@ final class SyncService {
         try await push(changed(Prayer.self, since).map { RemotePrayer($0, userID: user.id) }, SyncTable.prayers, client, token)
         try await push(changed(MemoryVerse.self, since).map { RemoteMemoryVerse($0, userID: user.id) }, SyncTable.memoryVerses, client, token)
         try await push(changed(Sermon.self, since).map { RemoteSermon($0, userID: user.id) }, SyncTable.sermons, client, token)
+        try await push(changed(Attachment.self, since).map { RemoteAttachment($0, userID: user.id) }, SyncTable.attachments, client, token)
         try await pushDeletions(client, token)
 
         defaults.set(pushStartedAt, forKey: key("lastPushedAt", user.id))
+        // Files go up once their rows are on the server; failures retry later
+        // without failing the sync.
+        await attachmentTransfers?.run(context: context)
         NotificationCenter.default.post(name: .genesisDidSync, object: nil)
     }
 
@@ -265,6 +274,10 @@ final class SyncService {
 
     private func existing(_ type: Sermon.Type, id: UUID) -> Sermon? {
         first(FetchDescriptor<Sermon>(predicate: #Predicate { $0.id == id }))
+    }
+
+    private func existing(_ type: Attachment.Type, id: UUID) -> Attachment? {
+        first(FetchDescriptor<Attachment>(predicate: #Predicate { $0.id == id }))
     }
 
     private func first<Model: PersistentModel>(_ descriptor: FetchDescriptor<Model>) -> Model? {
@@ -499,6 +512,40 @@ final class SyncService {
         }
     }
 
+    private func apply(_ row: RemoteAttachment) {
+        // A kind or owner from a later version stays on the server untouched.
+        guard let known = row.known else { return }
+        let local = existing(Attachment.self, id: row.id)
+        switch decision(for: row, local: local?.updatedAt) {
+        case .keepLocal: return
+        case .deleteLocal:
+            if let local {
+                // The other device removes the stored file; only the local copy goes here.
+                attachmentTransfers?.files.remove(local.fileName)
+                context.delete(local)
+            }
+        case .applyRemote:
+            let attachment = local ?? {
+                let created = Attachment(id: row.id, owner: known.owner, ownerID: row.ownerId, kind: known.kind)
+                // The file is in storage already (or will be); it downloads when shown.
+                created.needsUpload = false
+                context.insert(created)
+                return created
+            }()
+            // A Pencil page redrawn on another device: fetch the new file when shown.
+            if let local, !local.needsUpload, local.byteSize != row.bytes {
+                attachmentTransfers?.files.remove(local.fileName)
+            }
+            attachment.byteSize = row.bytes
+            attachment.duration = row.durationSeconds
+            attachment.pageCount = row.pageCount
+            attachment.caption = row.caption
+            attachment.sortOrder = row.sortOrder
+            attachment.createdAt = row.createdAt
+            attachment.updatedAt = row.updatedAt
+        }
+    }
+
     // MARK: Helpers
 
     private func key(_ name: String, _ userID: UUID) -> String {
@@ -532,3 +579,4 @@ extension PlanEnrollment: SyncTimestamped {}
 extension Prayer: SyncTimestamped {}
 extension MemoryVerse: SyncTimestamped {}
 extension Sermon: SyncTimestamped {}
+extension Attachment: SyncTimestamped {}

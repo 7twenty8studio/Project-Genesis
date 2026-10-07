@@ -95,6 +95,22 @@ Xcode's local test signatures.
    standard licence agreement; set `GENESIS_TERMS_URL` to use your own.
 3. Delete the `ALLOW_XCODE_STOREKIT` secret if you added it.
 
+## 6. Journal extras: attachments storage (Supabase, 2 minutes)
+
+Photos, voice recordings, PDFs and Pencil pages on prayers and sermon notes
+(Premium) need a table and a private storage bucket.
+
+1. SQL Editor → New query → paste
+   `supabase/migrations/20261014000000_attachments.sql` → Run. It creates
+   `public.attachments` (with row-level security), the private `attachments`
+   bucket (25 MB a file; JPEG, M4A, PDF and drawing data) and policies that
+   let each person read and write only their own folder. Safe to re-run.
+2. Redeploy account deletion so it also empties the person's folder:
+   `supabase functions deploy delete-account`.
+
+The bucket doesn't check Premium itself (App Store subscriptions are verified
+only inside `study-ai`); the app offers attachments only with Premium.
+
 ## What's free and what's Premium
 
 | Free | Premium: Individual $7.99/month or $59.99/year; Family (up to 6) $12.99/month or $99.99/year; 7-day free trial |
@@ -106,7 +122,7 @@ Xcode's local test signatures.
 | Cloud backup and sync with a free account | Every study tool, up to 30 new answers a day |
 | Groups, with the shared plan and progress | Family trees, the Bible map and journeys, the reader's Context panel |
 | Explore: the timeline and people | Word study: Hebrew and Greek with Strong's, the Original parallel Bible (first verses of each chapter free), Matthew Henry's commentary |
-| Handwritten notes and journal prompts | |
+| Handwritten notes and journal prompts | Journal extras: photos, voice recordings, church PDFs and Pencil pages on prayers and sermon notes; templates; PDF export |
 | Themes: Auto, Paper, Sepia, Slate, High Contrast, Night; night reading (switches to Night at bedtime) | |
 | 3 passage explanations a day (with a free account) | Reading insights and Year in Review stats |
 | Verse widget (small, medium and Lock Screen): verse of the day or a random verse | The large verse widget; verses by theme (hope, peace, faith, strength, comfort, love, gratitude, guidance) and from your reading; every other widget, in your reading theme; listening on the Lock Screen; Apple Watch |

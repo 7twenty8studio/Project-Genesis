@@ -287,11 +287,63 @@ shares; README.md has the architecture.
   "Look Up a Verse" (`SermonLookup`, English or Spanish names) that inserts
   the reference and attaches the passage, the idle timer held through
   `ScreenAwakeKeeper` (always restored), and a one-time TipKit Focus tip.
-  No recording. Premium extras (photos, audio, Pencil, PDF import/export,
-  AI) are for later, as separate attachment records keyed by the sermon id.
+  Recording, photos, Pencil pages and PDFs are the Premium journal extras
+  below (AI for sermons is still for later).
 - Hidden features pause: Prayer Journal off removes pending prayer reminders
   (`PrayerReminders.follow`, from RootView) and resumes them when on;
   Memorise off writes the widget snapshot with `memorise.isHidden`.
+
+## Journal extras (Premium)
+- `PremiumFeature.journalExtras`, checked with `EntitlementService.allows` at
+  each entry point; core prayers and sermon notes stay free. Free accounts
+  see the Attachments section as a `PremiumTeaser` (anything already attached
+  still shows), and the editors' extras menu (`JournalExtrasMenu`: Templates,
+  Export PDF; the journal's "Export as PDF") opens the paywall. No switch of
+  its own: everything lives inside the prayer journal and sermon notes, so
+  their switches hide it; hiding never deletes attachments.
+- `Attachment` (SwiftData, synced as `attachments`, migration
+  20261014000000): owner kind (prayer|sermon) + owner id, kind
+  (photo|audio|pdf|drawing), byte size, duration, page count, caption,
+  sort order; local-only `needsUpload`. The file is NOT in SwiftData: it's
+  Application Support/Attachments/"<id>.<ext>" (`AttachmentFiles`; a fresh
+  temporary folder in UI tests), so a synced attachment can exist before its
+  file is downloaded and players/PDFKit get file URLs.
+- Limits (`AttachmentLimits`): prayers hold photos (10) and recordings (5);
+  sermons also PDFs (3, ≤ 25 MB) and Pencil pages (5). Photos go through
+  `AttachmentMedia.preparedPhoto` (≤ 2048 px, JPEG 0.75, no metadata, so no
+  location); recordings AAC mono 64 kbps ≤ 2 h (`VoiceRecorder`); drawings
+  are `PKDrawing` data edited with the handwritten-notes page.
+- Audio goes through `AudioSession` (`.recording`, `.voiceNote`), never
+  AVAudioSession directly. Sermon recording shows the "Some churches ask…"
+  reminder. Camera and microphone texts are `NS…UsageDescription` in
+  project.yml; their Spanish is generated into
+  Genesis/Resources/InfoPlist.xcstrings by build_catalogs.py (from es.json).
+- Files sync through the private storage bucket `attachments` at
+  "<user id lowercase>/<attachment id>.<ext>" (`AttachmentPaths`; bucket
+  policies allow only the person's own folder; 25 MB; JPEG, audio/mp4, PDF,
+  octet-stream for drawings). `AttachmentTransfers` (environment object,
+  `AttachmentStorage` = `SupabaseAttachmentStorage` with the person's token,
+  `InMemoryAttachmentStorage` in UI tests) uploads after SyncService pushes
+  the rows, retrying with `AttachmentTransferQueue` (30 s doubling to 6 h,
+  saved in UserDefaults); downloads lazily when shown (placeholder meanwhile);
+  deleting an attachment (or its prayer/sermon, which soft-deletes its
+  attachments with tombstones through StudyStore) removes the local file and
+  queues removal of the stored one. Pulled deletions remove the local file.
+  The server doesn't check Premium for uploads (App Store subscriptions are
+  only verified inside study-ai); the delete-account function empties the
+  person's folder before deleting the account.
+- Templates (`JournalTemplate`): prayer (ACTS, gratitude, praying for
+  others, lament, morning offering; plain headings) and sermon (main points,
+  Scripture/Observation/Application, questions, outline; Markdown). The
+  app's words in the app's language, never Scripture; they fill an empty
+  body or go in at the cursor as new paragraphs.
+- PDF export: `JournalExportBuilder` (MainActor; passages verbatim from the
+  current Bible with its abbreviation, photos and drawings from local files,
+  recordings and PDFs listed) → `JournalExport` (Sendable) →
+  `JournalPDFRenderer` (UIGraphicsPDFRenderer + TextKit, title page, reader
+  font resolved for Premium, Markdown rendered, ligatures off so the text
+  extracts exactly, "Made with Genesis" footer; Letter in the US/Canada, A4
+  elsewhere). `JournalExportSheet` previews it and shares it with ShareLink.
 
 ## What's New
 - Every new user-facing feature gets a one-time announcement in

@@ -12,6 +12,9 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
     case ambientSounds
     case memorise
     case widgets
+    /// Photos, voice recordings, church PDFs and Pencil pages on prayers and
+    /// sermon notes, templates, and PDF export.
+    case journalExtras
 
     var id: String { rawValue }
 
@@ -27,6 +30,7 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
         case .ambientSounds: String(localized: "Ambient sounds")
         case .memorise: String(localized: "Memorise Scripture")
         case .widgets: String(localized: "Every widget")
+        case .journalExtras: String(localized: "Photos, voice and PDFs in your journal")
         }
     }
 
@@ -42,6 +46,7 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
         case .widgets: String(localized: "Every widget in every size, in your reading theme: today's reading, progress, prayer, Memorise, your group and listening on the Lock Screen.")
         case .memorise: String(localized: "Flashcards that bring each verse back just before you'd forget it, plus games, levels and a daily streak.")
         case .ambientSounds: String(localized: "Rain, ocean waves, wind, a crackling fire, birdsong and a soft worship pad to read and pray with, mixed your way.")
+        case .journalExtras: String(localized: "Add photos and voice recordings to prayers and sermon notes, bring in your church's PDFs, sketch with Apple Pencil, start from templates and export a beautifully typeset PDF.")
         }
     }
 
@@ -57,6 +62,7 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
         case .ambientSounds: "speaker.wave.2"
         case .memorise: "brain.head.profile"
         case .widgets: "apps.iphone"
+        case .journalExtras: "paperclip"
         }
     }
 }

@@ -21,6 +21,7 @@ struct GenesisApp: App {
     @State private var community: CommunityStore
     @State private var features: FeaturePreferences
     @State private var challengeAutoTick: ChallengeAutoTick
+    @State private var attachments: AttachmentTransfers
     private let modelContainer: ModelContainer
     private let groupChallenges: any GroupChallengeBackend
     private let studyData = StudyRepository.bundled()
@@ -67,6 +68,23 @@ struct GenesisApp: App {
         // More translations to download (none in UI tests).
         library.setDownloader(TranslationDownloader(client: testing.isEnabled ? nil : auth.client))
         _sync = State(initialValue: sync)
+
+        // Attachment files (Premium): the private storage bucket, or memory
+        // and a fresh folder in UI tests (no network).
+        let attachmentStorage: any AttachmentStorage
+        if testing.isEnabled {
+            attachmentStorage = InMemoryAttachmentStorage()
+        } else if let client = auth.client {
+            attachmentStorage = SupabaseAttachmentStorage(client: client, auth: auth)
+        } else {
+            attachmentStorage = SignedOutAttachmentStorage()
+        }
+        let attachments = AttachmentTransfers(files: testing.isEnabled ? .temporary() : .standard, storage: attachmentStorage)
+        attachments.userID = { [weak auth] in auth?.user?.id }
+        attachments.requestSync = { [weak sync] in sync?.schedule(after: .zero) }
+        sync.attachmentTransfers = attachments
+        AttachmentTransfers.app = attachments
+        _attachments = State(initialValue: attachments)
 
         // UI tests never reach StoreKit: Premium is on only with -uiTestingPremium.
         let entitlements = EntitlementService(override: testing.isEnabled ? testing.isPremium : nil)
@@ -179,6 +197,7 @@ struct GenesisApp: App {
                 .environment(community)
                 .environment(features)
                 .environment(challengeAutoTick)
+                .environment(attachments)
                 .environment(\.groupChallenges, groupChallenges)
                 .environment(\.studyData, studyData)
                 .environment(\.wordStudy, wordStudy)

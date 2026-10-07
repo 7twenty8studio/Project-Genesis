@@ -68,6 +68,12 @@ targets:
           - audio
         # The Lock Screen Live Activity while listening (Premium).
         NSSupportsLiveActivities: true
+        # Attachments on prayers and sermon notes (Premium). Photos come
+        # through the system photo picker, which needs no permission. Spanish
+        # in Genesis/Resources/InfoPlist.xcstrings, written by
+        # Tools/Localization/build_catalogs.py from these lines and es.json.
+        NSCameraUsageDescription: "Genesis uses the camera only when you take a photo to add to a prayer or sermon notes."
+        NSMicrophoneUsageDescription: "Genesis uses the microphone only when you record a voice note for a prayer or sermon notes."
         UILaunchScreen:
           UIColorName: LaunchBackground
         UIApplicationSceneManifest:

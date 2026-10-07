@@ -343,7 +343,7 @@ struct SermonFeatureTests {
         #expect(WhatsNewCatalog.sermonCompanion.feature == .sermons)
         #expect(WhatsNewCatalog.sermonCompanion.flag == nil)
         let ids = WhatsNewCatalog.all.map(\.id)
-        #expect(ids.last == "sermon-companion-church-mode")
+        #expect(ids.contains("sermon-companion-church-mode"))
     }
 }
 

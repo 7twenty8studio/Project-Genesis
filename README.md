@@ -46,6 +46,13 @@ See [BUILDING.md](BUILDING.md) to build and run.
   Markdown formatting; grouped by date or church, favourites and search.
   Church Mode: a dim Night-palette screen that stays awake, larger text and
   a quick verse lookup. Synced as `sermons`.
+- **Journal extras** (Premium): photos (downscaled to 2048 px, location
+  removed), voice recordings (AAC, up to two hours), imported church PDFs and
+  Apple Pencil pages on prayers and sermon notes; prayer and sermon
+  templates in English and Spanish; and export of a sermon, a prayer or the
+  prayer journal (date range, category) as a typeset PDF with the passages
+  verbatim. Details sync as `attachments`; files go to the private
+  `attachments` storage bucket and download when shown.
 - **Home**: today's reading, prayer journal, streak and progress.
 - **Widgets**: the verse widget (verse of the day, a random verse every few
   hours, or with Premium a theme such as hope or peace, or a verse from your
@@ -131,8 +138,9 @@ Genesis/
     Search/         Reference parser, FTS5 query builder, search
     Settings/       Reader preferences, themes, fonts
     Storage/        Minimal read-only SQLite wrapper
-    UserData/       SwiftData models (highlights, notes, bookmarks, plans, prayers) + StudyStore
-    Cloud/          Supabase client, auth, sync engine
+    UserData/       SwiftData models (highlights, notes, bookmarks, plans, prayers, sermons, attachments) + StudyStore
+    Cloud/          Supabase client, auth, sync engine, attachment file transfers
+    Export/         The journal PDF (JournalExport, JournalPDFRenderer)
     AI/             Study assistant client
     Premium/        StoreKit 2 entitlements and free limits
     Study/          People, places, events and routes (Study.sqlite)

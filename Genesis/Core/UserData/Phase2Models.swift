@@ -198,4 +198,5 @@ enum SyncTable {
     static let prayers = "prayers"
     static let memoryVerses = "memory_verses"
     static let sermons = "sermons"
+    static let attachments = "attachments"
 }

@@ -15,6 +15,7 @@ struct PrayerEditorView: View {
     @State private var wasDeleted = false
     @State private var confirmDelete = false
     @State private var notificationsDenied = false
+    @State private var exporting: JournalExportSubject?
 
     var body: some View {
         Form {
@@ -40,6 +41,8 @@ struct PrayerEditorView: View {
 
                 PrayerPassagesSection(prayer: prayer)
 
+                AttachmentsSection(owner: .prayer, ownerID: prayer.id)
+
                 if !prayer.isAnswered {
                     reminderSection
                 }
@@ -59,6 +62,12 @@ struct PrayerEditorView: View {
                 Button("Done", systemImage: "checkmark") { dismiss() }
                     .accessibilityIdentifier("prayer.done")
             }
+            ToolbarItem(placement: .topBarLeading) {
+                JournalExtrasMenu(owner: .prayer, onTemplate: apply) { exporting = .prayer(prayer) }
+            }
+        }
+        .sheet(item: $exporting) { subject in
+            JournalExportSheet(subject: subject)
         }
         .confirmationDialog("Delete this prayer?", isPresented: $confirmDelete, titleVisibility: .visible) {
             Button("Delete", role: .destructive) {
@@ -132,14 +141,23 @@ struct PrayerEditorView: View {
         prayer.lastPrayedAt.map { Calendar.current.isDateInToday($0) } ?? false
     }
 
+    /// A template (Premium) in place of an empty prayer, or after what's written.
+    private func apply(_ template: JournalTemplate) {
+        prayer.body = JournalTemplate.inserting(template.text(), into: prayer.body).text
+    }
+
     private func save() {
         guard !wasDeleted else { return }
         let store = StudyStore(context: modelContext)
-        // Discard a prayer that was opened and left empty.
+        // Discard a prayer that was opened and left empty; one with only
+        // attachments is kept under a plain title, so it's listed.
         if !prayer.hasContent {
-            wasDeleted = true
-            store.delete(prayer)
-            return
+            guard !store.attachments(for: .prayer, id: prayer.id).isEmpty else {
+                wasDeleted = true
+                store.delete(prayer)
+                return
+            }
+            prayer.title = String(localized: "Untitled Prayer")
         }
         prayer.reminderAt = hasReminder && !prayer.isAnswered ? reminderDate : nil
         if !hasReminder { prayer.reminderRepeatsDaily = false }

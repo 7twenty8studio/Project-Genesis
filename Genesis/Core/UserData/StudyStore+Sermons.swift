@@ -42,6 +42,7 @@ extension StudyStore {
     }
 
     func delete(_ sermon: Sermon) {
+        deleteAttachments(of: .sermon, id: sermon.id)
         recordDeletion(of: sermon.id, in: SyncTable.sermons)
         context.delete(sermon)
         save()
