@@ -162,6 +162,22 @@ shares; README.md has the architecture.
   each member's bar; any day can be marked read and has its own discussion
   (Every Day of the Plan). The Group Progress widget (Premium) reads
   `GroupWidgetSnapshot` (App Group file written by `GroupDetailModel`).
+- Group roles: one owner (`groups.owner_id`), moderators (role `'leader'`,
+  which the owner also has, so "leader" checks mean owner or moderator) and
+  members. Only the owner chooses moderators, hands the group over
+  (`transfer_group_ownership`) or deletes it; moderators remove, ban
+  (`group_bans`, no rejoining) or mute (`muted_until`) members but never
+  other moderators or the owner (`genesis_can_moderate`). Optional join
+  approval (`requires_approval`, `group_join_requests`). Reports on group
+  posts reach the group's moderators (`group_reports`, `review_group_report`);
+  three hide a post or prayer until reviewed. App: `GroupPermissions`,
+  `GroupModerationView`; the in-memory backend mirrors every rule.
+- Group challenges (free): reading, memorise, streak and prayer
+  (`group_challenges`, check-ins only through `set_challenge_checkin`,
+  progress from `group_challenge_progress`; no rankings). Separate
+  `GroupChallengeBackend` (`\.groupChallenges`, in memory in UI tests).
+  Memorise challenges store verse ids only; the passage is shown verbatim
+  from the person's Bible.
 - Anything people post needs report, block and (for its author) delete:
   `.contentActions(...)`. App Store guideline 1.2.
 - Switches: `groups` (on) and `community` (off until the owner moderates).

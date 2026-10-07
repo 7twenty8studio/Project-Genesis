@@ -108,6 +108,44 @@ final class TogetherUITests: GenesisUITestCase {
     }
 
     @MainActor
+    func testAskToJoinAndOwnAGroup() {
+        let app = Genesis.launch()
+        openTogether(app, name: "Jo")
+
+        // A group that approves its members: the request waits, and can be withdrawn.
+        app.buttons["groups.join"].tap()
+        let code = app.textFields["joinGroup.code"]
+        XCTAssertTrue(code.waitForExistence(timeout: Genesis.timeout))
+        code.typeText("hope-123456")
+        Genesis.tapToolbarButton("joinGroup.join", in: app)
+        XCTAssertTrue(app.staticTexts["joinGroup.requested"].waitForExistence(timeout: Genesis.timeout), "The request is sent")
+        Genesis.tapToolbarButton("joinGroup.done", in: app)
+        let withdraw = app.buttons["groups.withdrawRequest"]
+        Genesis.scrollIntoView(withdraw, in: app)
+        XCTAssertTrue(withdraw.waitForExistence(timeout: Genesis.timeout), "Waiting requests are listed")
+        withdraw.tap()
+        XCTAssertTrue(Genesis.wait { !withdraw.exists }, "The request is withdrawn")
+
+        // Starting a group makes you its owner, with Moderation to hand.
+        let create = app.buttons["groups.create"]
+        Genesis.scrollIntoView(create, in: app)
+        create.tap()
+        let name = app.textFields["groupForm.name"]
+        XCTAssertTrue(name.waitForExistence(timeout: Genesis.timeout))
+        name.tap()
+        name.typeText("Youth Group")
+        Genesis.tapToolbarButton("groupForm.save", in: app)
+        XCTAssertTrue(app.staticTexts["group.reading"].waitForExistence(timeout: Genesis.timeout), "The group opens")
+        showGroupTab("Members", in: app)
+        let role = app.staticTexts["member.role"].firstMatch
+        XCTAssertTrue(role.waitForExistence(timeout: Genesis.timeout), "Roles are shown")
+        XCTAssertEqual(role.label, "Owner")
+        Genesis.tapToolbarButton("group.moderationButton", in: app)
+        XCTAssertTrue(app.switches["moderation.approval"].waitForExistence(timeout: Genesis.timeout), "Moderation opens")
+        Genesis.tapToolbarButton("moderation.done", in: app)
+    }
+
+    @MainActor
     func testPrayerWallGuidelinesPostingAndReporting() {
         let app = Genesis.launch()
         openTogether(app)

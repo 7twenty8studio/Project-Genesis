@@ -21,6 +21,8 @@ final class GroupDetailModel {
     private(set) var myReadDays: Set<Int> = []
     private(set) var isLoading = false
     var errorMessage: String?
+    /// Reports, join requests and bans, for the owner and moderators.
+    let moderation: GroupModerationModel
 
     @ObservationIgnored private let store: CommunityStore
     private var backend: CommunityBackend { store.backend }
@@ -28,10 +30,26 @@ final class GroupDetailModel {
     init(groupID: UUID, store: CommunityStore) {
         self.groupID = groupID
         self.store = store
+        self.moderation = GroupModerationModel(groupID: groupID, store: store)
     }
 
     var group: GroupSummary? { store.group(groupID) }
     var today: Int? { group?.planDay() }
+
+    /// What the signed-in person may do to other members.
+    var permissions: GroupPermissions {
+        GroupPermissions(me: store.userID, ownerID: group?.ownerID, myRole: group?.role)
+    }
+
+    /// When the signed-in person's mute ends, while they're muted.
+    var myMutedUntil: Date? {
+        guard let me = store.userID, let mine = members.first(where: { $0.userID == me }), mine.isMuted() else { return nil }
+        return mine.mutedUntil
+    }
+
+    static func mutedMessage(until date: Date) -> String {
+        String(localized: "You're muted until \(date.formatted(date: .abbreviated, time: .shortened)).")
+    }
 
     var hasReadToday: Bool {
         guard let me = store.userID else { return false }
@@ -79,6 +97,7 @@ final class GroupDetailModel {
         } catch {
             errorMessage = CommunityError.from(error).localizedDescription
         }
+        if group?.isLeader == true { await moderation.refresh() }
     }
 
     @discardableResult
@@ -91,6 +110,21 @@ final class GroupDetailModel {
             errorMessage = CommunityError.from(error).localizedDescription
             return false
         }
+    }
+
+    /// Posting: muted members are told when they can post again (the server
+    /// only says "not allowed", so a refusal reloads the members to check).
+    private func post(_ action: () async throws -> Void) async -> Bool {
+        if let until = myMutedUntil {
+            errorMessage = Self.mutedMessage(until: until)
+            return false
+        }
+        let saved = await run(action)
+        if !saved, let latest = try? await backend.members(of: groupID) {
+            members = latest
+            if let until = myMutedUntil { errorMessage = Self.mutedMessage(until: until) }
+        }
+        return saved
     }
 
     // MARK: Reading
@@ -194,7 +228,7 @@ final class GroupDetailModel {
     // MARK: Prayer
 
     func addPrayer(_ body: String) async -> Bool {
-        await run {
+        await post {
             try await backend.addPrayer(body.trimmingCharacters(in: .whitespacesAndNewlines), to: groupID)
             prayers = try await backend.prayers(in: groupID)
         }
@@ -223,7 +257,7 @@ final class GroupDetailModel {
     // MARK: Discussion and announcements
 
     func addPost(_ body: String, day: Int?) async -> Bool {
-        await run {
+        await post {
             try await backend.addPost(body.trimmingCharacters(in: .whitespacesAndNewlines), day: day, to: groupID)
             posts = try await backend.posts(in: groupID)
         }
@@ -267,9 +301,37 @@ final class GroupDetailModel {
     }
 
     func remove(_ member: GroupMember) async {
-        await run {
+        let removed = await run {
             try await backend.removeMember(member.userID, from: groupID)
             members.removeAll { $0.userID == member.userID }
         }
+        // Removing someone makes a new invite code.
+        if removed { await store.refresh() }
+    }
+
+    /// Mutes a member for a while, or lifts the mute (nil).
+    func mute(_ member: GroupMember, for duration: MuteDuration?) async {
+        await run {
+            try await backend.muteMember(member.userID, in: groupID, hours: duration?.hours ?? 0)
+            members = try await backend.members(of: groupID)
+        }
+    }
+
+    /// Removes a member and keeps them out, whatever code they have.
+    func ban(_ member: GroupMember, reason: String) async {
+        let banned = await run {
+            try await backend.banMember(member.userID, from: groupID, reason: reason)
+            members.removeAll { $0.userID == member.userID }
+        }
+        if banned { await moderation.refresh() }
+    }
+
+    /// Hands the group to another member; the old owner stays a moderator.
+    func makeOwner(_ member: GroupMember) async {
+        await run {
+            try await backend.transferOwnership(of: groupID, to: member.userID)
+            members = try await backend.members(of: groupID)
+        }
+        await store.refresh()
     }
 }

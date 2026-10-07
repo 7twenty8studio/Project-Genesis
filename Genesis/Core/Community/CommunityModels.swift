@@ -19,6 +19,8 @@ struct CommunityProfile: Codable, Hashable, Sendable {
     }
 }
 
+/// The role stored on the server. `leader` is a moderator (the owner is one
+/// too); people see Owner, Moderator or Member (`GroupStanding`).
 enum GroupRole: String, Codable, Sendable {
     case leader, member
 }
@@ -36,8 +38,21 @@ struct GroupSummary: Identifiable, Hashable, Sendable {
     var planStart: Date?
     var role: GroupRole
     var notifications: Bool
+    /// The group's one owner (groups.owner_id).
+    var ownerID: UUID? = nil
+    /// True when the signed-in person owns the group.
+    var isOwner: Bool = false
+    /// New members ask to join and a moderator lets them in.
+    var requiresApproval: Bool = false
 
+    /// A moderator or the owner: edits the group, its invite code and
+    /// announcements, and moderates.
     var isLeader: Bool { role == .leader }
+
+    /// How the signed-in person stands in the group.
+    var standing: GroupStanding {
+        isOwner ? .owner : (role == .leader ? .moderator : .member)
+    }
 
     /// The group's reading plan, if it has one.
     var plan: ReadingPlan? {
@@ -79,8 +94,15 @@ struct GroupMember: Identifiable, Codable, Hashable, Sendable {
     var role: GroupRole
     var displayName: String
     let joinedAt: Date
+    /// Muted members can't post or share prayer requests until then.
+    var mutedUntil: Date? = nil
 
     var id: UUID { userID }
+
+    func isMuted(at date: Date = .now) -> Bool {
+        guard let mutedUntil else { return false }
+        return mutedUntil > date
+    }
 
     enum CodingKeys: String, CodingKey {
         case groupID = "group_id"
@@ -88,6 +110,7 @@ struct GroupMember: Identifiable, Codable, Hashable, Sendable {
         case role
         case displayName = "display_name"
         case joinedAt = "joined_at"
+        case mutedUntil = "muted_until"
     }
 }
 
@@ -124,6 +147,9 @@ struct GroupPrayer: Identifiable, Codable, Hashable, Sendable {
     var prayedCount: Int
     let createdAt: Date
     var answeredAt: Date?
+    /// Set after three reports: only its author and the moderators see it
+    /// until it's reviewed.
+    var hiddenAt: Date? = nil
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -134,6 +160,7 @@ struct GroupPrayer: Identifiable, Codable, Hashable, Sendable {
         case prayedCount = "prayed_count"
         case createdAt = "created_at"
         case answeredAt = "answered_at"
+        case hiddenAt = "hidden_at"
     }
 }
 
@@ -146,6 +173,9 @@ struct GroupPost: Identifiable, Codable, Hashable, Sendable {
     let day: Int?
     let body: String
     let createdAt: Date
+    /// Set after three reports: only its author and the moderators see it
+    /// until it's reviewed.
+    var hiddenAt: Date? = nil
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -154,6 +184,7 @@ struct GroupPost: Identifiable, Codable, Hashable, Sendable {
         case displayName = "display_name"
         case day, body
         case createdAt = "created_at"
+        case hiddenAt = "hidden_at"
     }
 }
 
@@ -322,6 +353,16 @@ enum CommunityError: LocalizedError, Equatable {
             "not_allowed": String(localized: "You can't do that."),
             "not_found": String(localized: "That's no longer there."),
             "not_signed_in": String(localized: "Sign in first."),
+            "banned": String(localized: "You can't join this group."),
+            "approval_required": String(localized: "This group approves new members, so ask to join instead."),
+            "too_many_requests": String(localized: "You've asked to join a lot of groups, so withdraw a request or wait for an answer first."),
+            "owner_only": String(localized: "Only the group's owner can do that."),
+            "moderators_only": String(localized: "Only the group's owner and moderators can do that."),
+            "owner_role_fixed": String(localized: "Make someone else the owner first."),
+            "use_leave": String(localized: "To leave the group, use Leave Group."),
+            "not_a_member": String(localized: "They're no longer in this group."),
+            "invalid_duration": String(localized: "Choose how long to mute them for."),
+            "invalid_reason": String(localized: "Keep the reason under 300 characters."),
         ]
         if let text = friendly[message] { return .message(text) }
         if status == 409 || message.contains("duplicate key") { return .duplicate }

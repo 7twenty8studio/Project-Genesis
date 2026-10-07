@@ -28,6 +28,7 @@ struct GroupDetailView: View {
             if let model, let group = model.group {
                 content(model, group: group)
                     .navigationTitle(group.name)
+                    .modifier(GroupModerationToolbar(model: model))
             } else if community.hasLoaded, community.group(groupID) == nil {
                 QuietEmptyState(systemImage: "person.3", title: String(localized: "Not available"), message: String(localized: "You're no longer in this group, or it was closed."))
             } else {
@@ -105,6 +106,7 @@ struct GroupTodayView: View {
                 if let plan = group.plan, let day, day > 0 {
                     GroupProgressSection(model: model, plan: plan, today: day)
                 }
+                GroupChallengesSection(groupModel: model, group: group)
                 DiscussionSection(model: model, day: (day ?? 0) > 0 ? day : nil)
             }
         }
@@ -188,6 +190,7 @@ struct DiscussionSection: View {
                     }
                     Text(post.body)
                         .foregroundStyle(palette.text)
+                    if post.hiddenAt != nil { HiddenForReviewLabel() }
                 }
                 .padding(.vertical, 2)
                 .contentActions(
@@ -198,6 +201,7 @@ struct DiscussionSection: View {
                     onHidden: { model.hide(post.id) }
                 )
             }
+            if let until = model.myMutedUntil { MutedComposerNotice(until: until) }
             HStack(alignment: .bottom) {
                 TextField(fieldPrompt, text: $draft, axis: .vertical)
                     .lineLimit(1...5)
@@ -215,6 +219,7 @@ struct DiscussionSection: View {
                 .accessibilityLabel("Send")
                 .accessibilityIdentifier("group.send")
             }
+            .disabled(model.myMutedUntil != nil)
         } header: {
             if let day, day != model.today {
                 Text("Discussion for day \(day)")
@@ -239,6 +244,7 @@ struct GroupPrayersView: View {
         List {
             ThemedRows {
                 Section {
+                    if let until = model.myMutedUntil { MutedComposerNotice(until: until) }
                     HStack(alignment: .bottom) {
                         TextField("Share a prayer request", text: $draft, axis: .vertical)
                             .lineLimit(1...6)
@@ -256,6 +262,7 @@ struct GroupPrayersView: View {
                         .accessibilityLabel("Share")
                         .accessibilityIdentifier("group.sharePrayer")
                     }
+                    .disabled(model.myMutedUntil != nil)
                 } footer: {
                     Text("Only members of this group can see these.")
                 }
@@ -290,6 +297,7 @@ struct GroupPrayersView: View {
             }
             Text(prayer.body)
                 .foregroundStyle(palette.text)
+            if prayer.hiddenAt != nil { HiddenForReviewLabel() }
             HStack(spacing: 16) {
                 Button {
                     Task { await model.setPrayed(!prayed, for: prayer) }

@@ -9,6 +9,8 @@ final class CommunityStore {
     private(set) var profile: CommunityProfile?
     private(set) var blocked: Set<UUID> = []
     private(set) var groups: [GroupSummary] = []
+    /// Groups you've asked to join, waiting for a moderator.
+    private(set) var joinRequests: [GroupJoinRequest] = []
     private(set) var hasLoaded = false
     /// True once the profile has actually been read (not just attempted).
     private(set) var profileLoaded = false
@@ -34,6 +36,7 @@ final class CommunityStore {
         guard userID != nil else {
             profile = nil
             groups = []
+            joinRequests = []
             blocked = []
             profileLoaded = false
             hasLoaded = true
@@ -50,6 +53,10 @@ final class CommunityStore {
             errorMessage = nil
         } catch {
             errorMessage = CommunityError.from(error).localizedDescription
+        }
+        // Separately, so groups still load if this fails.
+        if let requests = try? await backend.myJoinRequests() {
+            joinRequests = requests
         }
         hasLoaded = true
     }
@@ -127,13 +134,46 @@ final class CommunityStore {
         return created
     }
 
-    func joinGroup(code: String) async -> UUID? {
-        var joined: UUID?
+    /// Joins with an invite code, or asks to join a group that approves its
+    /// members. Nil if it failed (see `errorMessage`).
+    func requestToJoin(code: String) async -> GroupJoinOutcome? {
+        var outcome: GroupJoinOutcome?
         await perform {
-            joined = try await backend.joinGroup(code: code)
-            groups = try await backend.myGroups()
+            let result = try await backend.requestToJoin(code: code)
+            outcome = result
+            if result.status == .joined {
+                groups = try await backend.myGroups()
+            }
+            joinRequests = try await backend.myJoinRequests()
         }
-        return joined
+        return outcome
+    }
+
+    /// The group's id once you're in it; nil if it failed or you've asked to
+    /// join and are waiting.
+    func joinGroup(code: String) async -> UUID? {
+        guard let outcome = await requestToJoin(code: code), outcome.status == .joined else { return nil }
+        return outcome.groupID
+    }
+
+    /// The name of a group you've asked to join.
+    func requestedGroupName(_ request: GroupJoinRequest) -> String {
+        let name = request.groupName.trimmingCharacters(in: .whitespacesAndNewlines)
+        return name.isEmpty ? String(localized: "A group", comment: "A group you've asked to join whose name isn't known") : name
+    }
+
+    func withdrawJoinRequest(_ request: GroupJoinRequest) async {
+        await perform {
+            try await backend.withdrawJoinRequest(to: request.groupID)
+            joinRequests.removeAll { $0.groupID == request.groupID }
+        }
+    }
+
+    func setRequiresApproval(_ required: Bool, for id: UUID) async -> Bool {
+        await perform {
+            try await backend.setRequiresApproval(required, for: id)
+            if let index = groups.firstIndex(where: { $0.id == id }) { groups[index].requiresApproval = required }
+        }
     }
 
     func updateGroup(_ id: UUID, draft: GroupDraft) async -> Bool {

@@ -43,6 +43,7 @@ struct GroupsListView: View {
                     // Join and Start come first here: below the empty-state message
                     // they fall off screen on a phone in landscape.
                     actions
+                    PendingJoinRequestsSection()
                     QuietEmptyState(
                         systemImage: "person.3",
                         title: String(localized: "No groups yet"),
@@ -59,6 +60,7 @@ struct GroupsListView: View {
                             .accessibilityIdentifier("groups.row")
                         }
                     }
+                    PendingJoinRequestsSection()
                     actions
                 }
             }
@@ -92,7 +94,7 @@ private struct GroupRow: View {
                     .font(.headline)
                     .foregroundStyle(palette.text)
                 if group.isLeader {
-                    Text("Leader")
+                    Text(group.standing.title)
                         .font(.caption2.weight(.semibold))
                         .padding(.horizontal, 6)
                         .padding(.vertical, 2)
@@ -212,7 +214,8 @@ struct GroupFormView: View {
     }
 }
 
-/// Join a group with the code a leader shared.
+/// Join a group with the code a leader shared, or ask to join one that
+/// approves its members.
 struct JoinGroupView: View {
     let onJoined: (UUID) -> Void
 
@@ -220,56 +223,111 @@ struct JoinGroupView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var code = ""
     @State private var isJoining = false
+    /// The group asked to join, once the request is sent.
+    @State private var requested: GroupJoinOutcome?
     @FocusState private var focused: Bool
 
     var body: some View {
         NavigationStack {
-            Form {
-                ThemedRows {
-                    Section {
-                        TextField("Invite code", text: $code)
-                            .textInputAutocapitalization(.characters)
-                            .autocorrectionDisabled()
-                            .font(.title3.monospaced())
-                            .focused($focused)
-                            .submitLabel(.join)
-                            .onSubmit(join)
-                            .accessibilityIdentifier("joinGroup.code")
-                    } footer: {
-                        Text(community.errorMessage ?? String(localized: "Your group leader can share the code from the group's Members page."))
-                            .foregroundStyle(community.errorMessage == nil ? Color.secondary : Color.orange)
-                    }
-                }
-            }
-            .navigationTitle("Join a Group")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel", systemImage: "xmark") { dismiss() }
-                }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Join", systemImage: "checkmark", action: join)
-                        .disabled(code.filter { $0.isLetter || $0.isNumber }.count < 6 || isJoining)
-                        .accessibilityIdentifier("joinGroup.join")
-                }
-            }
-            .onAppear {
-                community.errorMessage = nil
-                focused = true
+            if let requested {
+                RequestSentView(groupName: requested.name) { dismiss() }
+            } else {
+                codeForm
             }
         }
         .presentationDetents([.medium])
+    }
+
+    private var codeForm: some View {
+        Form {
+            ThemedRows {
+                Section {
+                    TextField("Invite code", text: $code)
+                        .textInputAutocapitalization(.characters)
+                        .autocorrectionDisabled()
+                        .font(.title3.monospaced())
+                        .focused($focused)
+                        .submitLabel(.join)
+                        .onSubmit(join)
+                        .accessibilityIdentifier("joinGroup.code")
+                } footer: {
+                    Text(community.errorMessage ?? String(localized: "Your group leader can share the code from the group's Members page."))
+                        .foregroundStyle(community.errorMessage == nil ? Color.secondary : Color.orange)
+                }
+            }
+        }
+        .navigationTitle("Join a Group")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .cancellationAction) {
+                Button("Cancel", systemImage: "xmark") { dismiss() }
+            }
+            ToolbarItem(placement: .confirmationAction) {
+                Button("Join", systemImage: "checkmark", action: join)
+                    .disabled(code.filter { $0.isLetter || $0.isNumber }.count < 6 || isJoining)
+                    .accessibilityIdentifier("joinGroup.join")
+            }
+        }
+        .onAppear {
+            community.errorMessage = nil
+            focused = true
+        }
     }
 
     private func join() {
         guard !isJoining else { return }
         isJoining = true
         Task {
-            if let id = await community.joinGroup(code: code) {
-                await PushNotifications.shared.enable()
-                onJoined(id)
+            if let outcome = await community.requestToJoin(code: code) {
+                switch outcome.status {
+                case .joined:
+                    await PushNotifications.shared.enable()
+                    onJoined(outcome.groupID)
+                case .requested:
+                    requested = outcome
+                }
             }
             isJoining = false
+        }
+    }
+}
+
+/// After asking to join a group that approves its members.
+private struct RequestSentView: View {
+    let groupName: String
+    let onDone: () -> Void
+
+    @Environment(\.palette) private var palette
+
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 12) {
+                Image(systemName: "paperplane")
+                    .font(.system(size: 30, weight: .light))
+                    .foregroundStyle(palette.accent)
+                Text(groupName)
+                    .font(.headline)
+                    .foregroundStyle(palette.text)
+                Text("Request sent. A moderator will let you in.")
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(palette.secondaryText)
+                    .accessibilityIdentifier("joinGroup.requested")
+                Text("You'll find the group in your list once you're in.")
+                    .font(.footnote)
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(palette.secondaryText)
+            }
+            .padding(24)
+            .frame(maxWidth: .infinity)
+        }
+        .themedScreen()
+        .navigationTitle("Join a Group")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .confirmationAction) {
+                Button("Done", systemImage: "checkmark", action: onDone)
+                    .accessibilityIdentifier("joinGroup.done")
+            }
         }
     }
 }

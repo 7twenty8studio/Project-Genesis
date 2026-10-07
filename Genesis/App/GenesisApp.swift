@@ -21,6 +21,7 @@ struct GenesisApp: App {
     @State private var community: CommunityStore
     @State private var features: FeaturePreferences
     private let modelContainer: ModelContainer
+    private let groupChallenges: any GroupChallengeBackend
     private let studyData = StudyRepository.bundled()
     private let wordStudy = WordStudyRepository.bundled()
     private let topics = TopicRepository.bundled()
@@ -117,6 +118,14 @@ struct GenesisApp: App {
             communityBackend = SignedOutCommunityBackend()
         }
         _community = State(initialValue: CommunityStore(backend: communityBackend))
+        // Group challenges: in memory in UI tests (the sample group has some).
+        if testing.isEnabled {
+            groupChallenges = testing.isSignedOut ? SignedOutGroupChallengeBackend() as any GroupChallengeBackend : InMemoryGroupChallengeBackend(community: communityBackend, seeded: true)
+        } else if let client = auth.client {
+            groupChallenges = SupabaseGroupChallengeBackend(client: client, auth: auth)
+        } else {
+            groupChallenges = SignedOutGroupChallengeBackend()
+        }
         let push = PushNotifications.shared
         push.isEnabled = !testing.isEnabled
         push.backend = communityBackend
@@ -156,6 +165,7 @@ struct GenesisApp: App {
                 .environment(ambient)
                 .environment(community)
                 .environment(features)
+                .environment(\.groupChallenges, groupChallenges)
                 .environment(\.studyData, studyData)
                 .environment(\.wordStudy, wordStudy)
                 .environment(\.topics, topics)

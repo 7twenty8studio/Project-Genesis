@@ -21,7 +21,9 @@ protocol CommunityBackend: Sendable {
     // Groups
     func myGroups() async throws -> [GroupSummary]
     func createGroup(_ draft: GroupDraft) async throws -> UUID
-    func joinGroup(code: String) async throws -> UUID
+    /// Joins with an invite code, or asks to join a group that approves its
+    /// members (request_to_join_group).
+    func requestToJoin(code: String) async throws -> GroupJoinOutcome
     func updateGroup(_ group: UUID, draft: GroupDraft) async throws
     func newInviteCode(_ group: UUID) async throws -> String
     func leaveGroup(_ group: UUID) async throws
@@ -46,6 +48,25 @@ protocol CommunityBackend: Sendable {
     func announcements(in group: UUID) async throws -> [GroupAnnouncement]
     /// Posts an announcement and asks the server to notify members.
     func addAnnouncement(title: String, body: String, to group: UUID) async throws
+
+    // Group moderation (owner and moderators)
+    /// The signed-in person's requests to join groups, waiting for an answer.
+    func myJoinRequests() async throws -> [GroupJoinRequest]
+    func withdrawJoinRequest(to group: UUID) async throws
+    /// People asking to join a group (moderators).
+    func joinRequests(in group: UUID) async throws -> [GroupJoinRequest]
+    func answerJoinRequest(from user: UUID, in group: UUID, accept: Bool) async throws
+    func setRequiresApproval(_ required: Bool, for group: UUID) async throws
+    /// Hands the group to another member (owner only); the old owner stays a
+    /// moderator.
+    func transferOwnership(of group: UUID, to user: UUID) async throws
+    func banMember(_ user: UUID, from group: UUID, reason: String) async throws
+    func unbanMember(_ user: UUID, from group: UUID) async throws
+    func bans(in group: UUID) async throws -> [GroupBan]
+    /// Mutes for 1 to 720 hours; 0 lifts the mute.
+    func muteMember(_ user: UUID, in group: UUID, hours: Int) async throws
+    func reports(in group: UUID) async throws -> [GroupReport]
+    func reviewReport(_ kind: ContentKind, id: UUID, action: ReportAction) async throws
 
     // Community
     func feed(_ kind: CommunityPostKind, before: Date?) async throws -> [CommunityPost]
@@ -204,21 +225,25 @@ final class SupabaseCommunityBackend: CommunityBackend {
                 let plan_days: Int?
                 let plan_start: String?
                 let deleted_at: String?
+                let owner_id: UUID?
+                let requires_approval: Bool?
             }
             let role: GroupRole
             let notifications: Bool
             let group: Group?
         }
+        let userID = try await me()
         let rows: [Row] = try await get("group_members", [
-            "select": "role,notifications,group:groups(id,name,description,invite_code,plan_id,plan_title,plan_books,plan_days,plan_start,deleted_at)",
-            "user_id": "eq.\(try await me().uuidString.lowercased())",
+            "select": "role,notifications,group:groups(id,name,description,invite_code,plan_id,plan_title,plan_books,plan_days,plan_start,deleted_at,owner_id,requires_approval)",
+            "user_id": "eq.\(userID.uuidString.lowercased())",
         ])
         return rows.compactMap { row in
             guard let group = row.group, group.deleted_at == nil else { return nil }
             return GroupSummary(
                 id: group.id, name: group.name, description: group.description, inviteCode: group.invite_code,
                 planID: group.plan_id, planTitle: group.plan_title, planBooks: group.plan_books, planDays: group.plan_days,
-                planStart: group.plan_start.flatMap { Timestamp.day(from: $0) }, role: row.role, notifications: row.notifications
+                planStart: group.plan_start.flatMap { Timestamp.day(from: $0) }, role: row.role, notifications: row.notifications,
+                ownerID: group.owner_id, isOwner: group.owner_id == userID, requiresApproval: group.requires_approval ?? false
             )
         }
         .sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
@@ -248,8 +273,13 @@ final class SupabaseCommunityBackend: CommunityBackend {
         try Self.uuid(try await rpc("create_group", Self.planParameters(draft)))
     }
 
-    func joinGroup(code: String) async throws -> UUID {
-        try Self.uuid(try await rpc("join_group", ["p_code": .string(code)]))
+    func requestToJoin(code: String) async throws -> GroupJoinOutcome {
+        let data = try await rpc("request_to_join_group", ["p_code": .string(code)])
+        do {
+            return try JSONDecoder().decode(GroupJoinOutcome.self, from: data)
+        } catch {
+            throw CommunityError.message(String(localized: "The server sent an unexpected response."))
+        }
     }
 
     func updateGroup(_ group: UUID, draft: GroupDraft) async throws {
@@ -273,7 +303,7 @@ final class SupabaseCommunityBackend: CommunityBackend {
 
     func members(of group: UUID) async throws -> [GroupMember] {
         try await get("group_members", [
-            "select": "group_id,user_id,role,display_name,joined_at",
+            "select": "group_id,user_id,role,display_name,joined_at,muted_until",
             "group_id": "eq.\(group.uuidString.lowercased())",
             "order": "joined_at.asc",
         ])
@@ -324,7 +354,7 @@ final class SupabaseCommunityBackend: CommunityBackend {
 
     func prayers(in group: UUID) async throws -> [GroupPrayer] {
         try await get("group_prayers", [
-            "select": "id,group_id,user_id,display_name,body,prayed_count,created_at,answered_at",
+            "select": "id,group_id,user_id,display_name,body,prayed_count,created_at,answered_at,hidden_at",
             "group_id": "eq.\(group.uuidString.lowercased())",
             "order": "created_at.desc",
             "limit": "200",
@@ -360,7 +390,7 @@ final class SupabaseCommunityBackend: CommunityBackend {
     func posts(in group: UUID) async throws -> [GroupPost] {
         // The newest 500, shown oldest first.
         let rows: [GroupPost] = try await get("group_posts", [
-            "select": "id,group_id,user_id,display_name,day,body,created_at",
+            "select": "id,group_id,user_id,display_name,day,body,created_at,hidden_at",
             "group_id": "eq.\(group.uuidString.lowercased())",
             "order": "created_at.desc",
             "limit": "500",
@@ -396,6 +426,86 @@ final class SupabaseCommunityBackend: CommunityBackend {
         // Best effort: the announcement is posted even if notifying fails.
         let payload = try JSONEncoder().encode(["announcementID": id.uuidString.lowercased()])
         _ = try? await client.callFunction("group-notify", body: payload, accessToken: try await token())
+    }
+
+    // MARK: Group moderation
+
+    private static func groupAndUser(_ group: UUID, _ user: UUID) -> [String: JSONValue] {
+        ["p_group": .string(group.uuidString.lowercased()), "p_user": .string(user.uuidString.lowercased())]
+    }
+
+    func myJoinRequests() async throws -> [GroupJoinRequest] {
+        try await get("group_join_requests", [
+            "select": "group_id,user_id,display_name,created_at,group_name",
+            "user_id": "eq.\(try await me().uuidString.lowercased())",
+            "order": "created_at.desc",
+        ])
+    }
+
+    func withdrawJoinRequest(to group: UUID) async throws {
+        try await delete("group_join_requests", [
+            "group_id": "eq.\(group.uuidString.lowercased())",
+            "user_id": "eq.\(try await me().uuidString.lowercased())",
+        ])
+    }
+
+    func joinRequests(in group: UUID) async throws -> [GroupJoinRequest] {
+        try await get("group_join_requests", [
+            "select": "group_id,user_id,display_name,created_at,group_name",
+            "group_id": "eq.\(group.uuidString.lowercased())",
+            "order": "created_at.asc",
+        ])
+    }
+
+    func answerJoinRequest(from user: UUID, in group: UUID, accept: Bool) async throws {
+        var parameters = Self.groupAndUser(group, user)
+        parameters["p_accept"] = .bool(accept)
+        try await rpc("answer_join_request", parameters)
+    }
+
+    func setRequiresApproval(_ required: Bool, for group: UUID) async throws {
+        try await rpc("set_group_approval", ["p_group": .string(group.uuidString.lowercased()), "p_required": .bool(required)])
+    }
+
+    func transferOwnership(of group: UUID, to user: UUID) async throws {
+        try await rpc("transfer_group_ownership", Self.groupAndUser(group, user))
+    }
+
+    func banMember(_ user: UUID, from group: UUID, reason: String) async throws {
+        var parameters = Self.groupAndUser(group, user)
+        parameters["p_reason"] = .string(String(reason.trimmingCharacters(in: .whitespacesAndNewlines).prefix(300)))
+        try await rpc("ban_member", parameters)
+    }
+
+    func unbanMember(_ user: UUID, from group: UUID) async throws {
+        try await rpc("unban_member", Self.groupAndUser(group, user))
+    }
+
+    func bans(in group: UUID) async throws -> [GroupBan] {
+        try await get("group_bans", [
+            "select": "group_id,user_id,display_name,reason,created_at",
+            "group_id": "eq.\(group.uuidString.lowercased())",
+            "order": "created_at.desc",
+        ])
+    }
+
+    func muteMember(_ user: UUID, in group: UUID, hours: Int) async throws {
+        var parameters = Self.groupAndUser(group, user)
+        parameters["p_hours"] = .number(Double(min(max(hours, 0), 720)))
+        try await rpc("mute_member", parameters)
+    }
+
+    func reports(in group: UUID) async throws -> [GroupReport] {
+        let data = try await rpc("group_reports", ["p_group": .string(group.uuidString.lowercased())])
+        return try Self.makeDecoder().decode([GroupReport].self, from: data)
+    }
+
+    func reviewReport(_ kind: ContentKind, id: UUID, action: ReportAction) async throws {
+        try await rpc("review_group_report", [
+            "p_type": .string(kind.rawValue),
+            "p_id": .string(id.uuidString.lowercased()),
+            "p_action": .string(action.rawValue),
+        ])
     }
 
     // MARK: Community

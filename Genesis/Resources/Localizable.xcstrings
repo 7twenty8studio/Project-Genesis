@@ -203,6 +203,16 @@
         }
       }
     },
+    "%lld chapters": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld capítulos"
+          }
+        }
+      }
+    },
     "%lld comments": {
       "localizations": {
         "es": {
@@ -323,12 +333,32 @@
         }
       }
     },
+    "%lld of %lld still going": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld de %lld siguen adelante"
+          }
+        }
+      }
+    },
     "%lld of 1 member has read today": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld de 1 miembro leyó hoy"
+          }
+        }
+      }
+    },
+    "%lld of 1 still going": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld de 1 sigue adelante"
           }
         }
       }
@@ -444,12 +474,32 @@
         }
       }
     },
+    "1 chapter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 capítulo"
+          }
+        }
+      }
+    },
     "1 comment": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "1 comentario"
+          }
+        }
+      }
+    },
+    "1 day": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 día"
           }
         }
       }
@@ -594,6 +644,27 @@
         }
       }
     },
+    "A group": {
+      "comment": "A group you've asked to join whose name isn't known",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un grupo"
+          }
+        }
+      }
+    },
+    "A group can run up to five challenges at once.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un grupo puede tener hasta cinco desafíos a la vez."
+          }
+        }
+      }
+    },
     "A group with a reading plan now shows everyone's progress, with a tick for who has read today.": {
       "localizations": {
         "es": {
@@ -620,6 +691,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Un error en un texto bíblico"
+          }
+        }
+      }
+    },
+    "A moderator will let you in.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un moderador te dejará entrar."
           }
         }
       }
@@ -914,6 +995,16 @@
         }
       }
     },
+    "Add to Memorise": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añadir a Memorizar"
+          }
+        }
+      }
+    },
     "Added to Memorise": {
       "localizations": {
         "es": {
@@ -1199,6 +1290,16 @@
         }
       }
     },
+    "Anyone with the code can ask to join, and a moderator lets them in.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cualquiera con el código puede pedir unirse, y un moderador le deja entrar."
+          }
+        }
+      }
+    },
     "Anyone with the code can join. Make a new code to stop the old one working.": {
       "localizations": {
         "es": {
@@ -1259,6 +1360,26 @@
         }
       }
     },
+    "Approve": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aprobar"
+          }
+        }
+      }
+    },
+    "Approve New Members": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aprobar nuevos miembros"
+          }
+        }
+      }
+    },
     "As a guest, everything stays on this device. You can sign in any time and your notes will come with you.": {
       "localizations": {
         "es": {
@@ -1275,6 +1396,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pide un código de invitación al líder de tu grupo o crea un grupo para tu iglesia, grupo pequeño o familia."
+          }
+        }
+      }
+    },
+    "Asked %@.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solicitado %@."
           }
         }
       }
@@ -1379,6 +1510,56 @@
           "stringUnit": {
             "state": "translated",
             "value": "Equilibrada"
+          }
+        }
+      }
+    },
+    "Ban": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vetar"
+          }
+        }
+      }
+    },
+    "Ban %@?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Vetar a %@?"
+          }
+        }
+      }
+    },
+    "Banned": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vetados"
+          }
+        }
+      }
+    },
+    "Banned people can't rejoin with any invite code.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las personas vetadas no pueden volver a unirse con ningún código de invitación."
+          }
+        }
+      }
+    },
+    "Ban…": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vetar…"
           }
         }
       }
@@ -1577,6 +1758,16 @@
         }
       }
     },
+    "Book": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Libro"
+          }
+        }
+      }
+    },
     "Bookmark": {
       "comment": "Verse selection action: bookmark the verse",
       "localizations": {
@@ -1699,6 +1890,36 @@
         }
       }
     },
+    "Challenge ended": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desafío terminado"
+          }
+        }
+      }
+    },
+    "Challenges": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desafíos"
+          }
+        }
+      }
+    },
+    "Change Books": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cambiar libros"
+          }
+        }
+      }
+    },
     "Change Password": {
       "localizations": {
         "es": {
@@ -1749,12 +1970,32 @@
         }
       }
     },
+    "Chapters": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capítulos"
+          }
+        }
+      }
+    },
     "Chapters read": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Capítulos leídos"
+          }
+        }
+      }
+    },
+    "Check the challenge's title, start date and length.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revisa el título, la fecha de inicio y la duración del desafío."
           }
         }
       }
@@ -1775,6 +2016,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hijos"
+          }
+        }
+      }
+    },
+    "Choose Several Books": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elegir varios libros"
           }
         }
       }
@@ -1866,6 +2117,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Elige cada palabra que falta del versículo."
+          }
+        }
+      }
+    },
+    "Choose how long to mute them for.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige durante cuánto tiempo silenciar a esta persona."
           }
         }
       }
@@ -2455,6 +2716,16 @@
         }
       }
     },
+    "Decline": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rechazar"
+          }
+        }
+      }
+    },
     "Definition": {
       "localizations": {
         "es": {
@@ -2632,6 +2903,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Conversación del día %lld"
+          }
+        }
+      }
+    },
+    "Discussion message": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mensaje de la conversación"
           }
         }
       }
@@ -2828,12 +3109,52 @@
         }
       }
     },
+    "End Challenge": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminar desafío"
+          }
+        }
+      }
+    },
     "End of chapter": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Fin del capítulo"
+          }
+        }
+      }
+    },
+    "End this challenge?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Terminar este desafío?"
+          }
+        }
+      }
+    },
+    "Ended early %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminó antes de tiempo el %@"
+          }
+        }
+      }
+    },
+    "Ends %@.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Termina el %@."
           }
         }
       }
@@ -2905,6 +3226,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Todas estas Biblias son gratuitas y funcionan sin conexión una vez en tu dispositivo."
+          }
+        }
+      }
+    },
+    "Every Day": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada día"
           }
         }
       }
@@ -3016,6 +3347,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Todos los que iniciaron sesión en Genesis pueden verlas y orar por ellas."
+          }
+        }
+      }
+    },
+    "Everyone's progress is kept, and it moves to Finished.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se conserva el progreso de todos y pasa a Terminados."
           }
         }
       }
@@ -3274,6 +3615,36 @@
         }
       }
     },
+    "Finished": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminados"
+          }
+        }
+      }
+    },
+    "Finished %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminó el %@"
+          }
+        }
+      }
+    },
+    "Finished Challenges": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desafíos terminados"
+          }
+        }
+      }
+    },
     "Fireplace": {
       "comment": "Ambient sound",
       "localizations": {
@@ -3382,6 +3753,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "Letra"
+          }
+        }
+      }
+    },
+    "For 1 Day": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Durante 1 día"
+          }
+        }
+      }
+    },
+    "For 1 Hour": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Durante 1 hora"
+          }
+        }
+      }
+    },
+    "For 1 Week": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Durante 1 semana"
           }
         }
       }
@@ -3504,6 +3905,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Según Strong"
+          }
+        }
+      }
+    },
+    "From chapter %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desde el capítulo %lld"
           }
         }
       }
@@ -3772,6 +4183,16 @@
         }
       }
     },
+    "Group challenges": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retos de grupo"
+          }
+        }
+      }
+    },
     "Group highlights into collections in the Library, and your favourite topics appear here.": {
       "localizations": {
         "es": {
@@ -3792,12 +4213,42 @@
         }
       }
     },
+    "Group owners can choose moderators, approve new members, and review anything reported.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los propietarios de grupos pueden elegir moderadores, aprobar nuevos miembros y revisar lo que se denuncie."
+          }
+        }
+      }
+    },
     "Group plan": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Plan del grupo"
+          }
+        }
+      }
+    },
+    "Group post": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Publicación del grupo"
+          }
+        }
+      }
+    },
+    "Group progress": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Progreso del grupo"
           }
         }
       }
@@ -3838,6 +4289,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Los grupos no están disponibles en este momento."
+          }
+        }
+      }
+    },
+    "Grow together": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Crecer juntos"
           }
         }
       }
@@ -3939,6 +4400,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Esto es lo nuevo en Genesis."
+          }
+        }
+      }
+    },
+    "Hidden while it's reviewed": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oculto mientras se revisa"
           }
         }
       }
@@ -4125,6 +4596,36 @@
         }
       }
     },
+    "I prayed today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoy oré"
+          }
+        }
+      }
+    },
+    "I read today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoy leí"
+          }
+        }
+      }
+    },
+    "I've Learned It": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ya me lo sé"
+          }
+        }
+      }
+    },
     "If an account exists for that email, a reset link is on its way.": {
       "localizations": {
         "es": {
@@ -4163,6 +4664,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Imagen"
+          }
+        }
+      }
+    },
+    "In Your Memorise List": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En tu lista de Memorizar"
           }
         }
       }
@@ -4353,6 +4864,16 @@
         }
       }
     },
+    "Join Requests": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solicitudes para unirse"
+          }
+        }
+      }
+    },
     "Join a Group": {
       "localizations": {
         "es": {
@@ -4403,6 +4924,16 @@
         }
       }
     },
+    "Keep": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantener"
+          }
+        }
+      }
+    },
     "Keep Genesis as simple as you like: turn listening, plans, explore and more on or off in Settings › Features (the gear on Home).": {
       "localizations": {
         "es": {
@@ -4443,6 +4974,16 @@
         }
       }
     },
+    "Keep the reason under 300 characters.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El motivo debe tener menos de 300 caracteres."
+          }
+        }
+      }
+    },
     "Keep your notes safe": {
       "localizations": {
         "es": {
@@ -4469,6 +5010,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Amable y seguro"
+          }
+        }
+      }
+    },
+    "Kind of Challenge": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tipo de desafío"
           }
         }
       }
@@ -4564,12 +5115,32 @@
         }
       }
     },
-    "Leader": {
+    "Learn %@ together": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Líder"
+            "value": "Aprender %@ juntos"
+          }
+        }
+      }
+    },
+    "Learn a passage together": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aprender un pasaje juntos"
+          }
+        }
+      }
+    },
+    "Learn the same passage by heart together.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aprendan juntos de memoria el mismo pasaje."
           }
         }
       }
@@ -4590,6 +5161,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aprende versículos de memoria, un minuto al día."
+          }
+        }
+      }
+    },
+    "Learned it": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se lo sabe"
           }
         }
       }
@@ -4661,6 +5242,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Modo para zurdos"
+          }
+        }
+      }
+    },
+    "Length": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Duración"
           }
         }
       }
@@ -4917,6 +5508,16 @@
         }
       }
     },
+    "Make %@ the owner?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Hacer a %@ propietario del grupo?"
+          }
+        }
+      }
+    },
     "Make Genesis yours": {
       "localizations": {
         "es": {
@@ -4927,22 +5528,32 @@
         }
       }
     },
-    "Make Leader": {
+    "Make Moderator": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Hacer líder"
+            "value": "Hacer moderador"
           }
         }
       }
     },
-    "Make Member": {
+    "Make Owner": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Hacer miembro"
+            "value": "Hacer propietario"
+          }
+        }
+      }
+    },
+    "Make Owner…": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hacer propietario…"
           }
         }
       }
@@ -4957,12 +5568,12 @@
         }
       }
     },
-    "Manage %@": {
+    "Make someone else the owner first.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Administrar a %@"
+            "value": "Primero haz propietario a otra persona."
           }
         }
       }
@@ -5027,6 +5638,16 @@
         }
       }
     },
+    "Mark as Learned": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marcar como aprendido"
+          }
+        }
+      }
+    },
     "Mark as Read": {
       "localizations": {
         "es": {
@@ -5077,6 +5698,17 @@
         }
       }
     },
+    "Member": {
+      "comment": "Group role: an ordinary member",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Miembro"
+          }
+        }
+      }
+    },
     "Members": {
       "localizations": {
         "es": {
@@ -5123,6 +5755,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Memorizar las Escrituras"
+          }
+        }
+      }
+    },
+    "Memorise Together": {
+      "comment": "Group challenge kind",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memorizar juntos"
           }
         }
       }
@@ -5215,6 +5858,37 @@
           "stringUnit": {
             "state": "translated",
             "value": "Modo"
+          }
+        }
+      }
+    },
+    "Moderation": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Moderación"
+          }
+        }
+      }
+    },
+    "Moderation, %lld to review": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Moderación, %lld por revisar"
+          }
+        }
+      }
+    },
+    "Moderator": {
+      "comment": "Group role: helps run a group",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Moderador"
           }
         }
       }
@@ -5413,6 +6087,26 @@
         }
       }
     },
+    "Mute": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Silenciar"
+          }
+        }
+      }
+    },
+    "Muted": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Silenciado"
+          }
+        }
+      }
+    },
     "My %@ with Genesis": {
       "localizations": {
         "es": {
@@ -5502,6 +6196,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nuevo anuncio"
+          }
+        }
+      }
+    },
+    "New Challenge": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nuevo desafío"
           }
         }
       }
@@ -5738,6 +6442,26 @@
         }
       }
     },
+    "No challenges right now.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay desafíos en este momento."
+          }
+        }
+      }
+    },
+    "No challenges yet.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todavía no hay desafíos."
+          }
+        }
+      }
+    },
     "No cross references for this verse.": {
       "localizations": {
         "es": {
@@ -5788,12 +6512,42 @@
         }
       }
     },
+    "No one has joined in yet.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todavía no se ha sumado nadie."
+          }
+        }
+      }
+    },
     "No one has marked this day yet.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Nadie ha marcado este día todavía."
+          }
+        }
+      }
+    },
+    "No one is banned.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay nadie vetado."
+          }
+        }
+      }
+    },
+    "No one is waiting to join.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nadie está esperando para unirse."
           }
         }
       }
@@ -5844,6 +6598,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aún no hay peticiones de oración."
+          }
+        }
+      }
+    },
+    "No rankings, just encouragement.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin clasificaciones, solo ánimo."
           }
         }
       }
@@ -5908,12 +6672,32 @@
         }
       }
     },
+    "Not done": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin hacer"
+          }
+        }
+      }
+    },
     "Not downloaded": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "No descargada"
+          }
+        }
+      }
+    },
+    "Not read": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin leer"
           }
         }
       }
@@ -5965,6 +6749,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Notas y oraciones"
+          }
+        }
+      }
+    },
+    "Nothing has been reported.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se ha reportado nada."
           }
         }
       }
@@ -6140,6 +6934,26 @@
         }
       }
     },
+    "Only the group's owner and moderators can do that.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solo el propietario y los moderadores del grupo pueden hacer eso."
+          }
+        }
+      }
+    },
+    "Only the group's owner can do that.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solo el propietario del grupo puede hacer eso."
+          }
+        }
+      }
+    },
     "Open": {
       "localizations": {
         "es": {
@@ -6227,6 +7041,27 @@
           "stringUnit": {
             "state": "translated",
             "value": "Palabras originales"
+          }
+        }
+      }
+    },
+    "Owner": {
+      "comment": "Group role: the one person who owns a group",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Propietario"
+          }
+        }
+      }
+    },
+    "Owners and moderators": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Propietarios y moderadores"
           }
         }
       }
@@ -6390,6 +7225,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Padres"
+          }
+        }
+      }
+    },
+    "Passage": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasaje"
           }
         }
       }
@@ -6649,6 +7494,16 @@
         }
       }
     },
+    "Play a Game": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jugar"
+          }
+        }
+      }
+    },
     "Playback": {
       "localizations": {
         "es": {
@@ -6730,12 +7585,43 @@
         }
       }
     },
+    "Practise": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Practicar"
+          }
+        }
+      }
+    },
+    "Practise this passage with Memorise's flashcards and games, part of Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Practica este pasaje con las tarjetas y los juegos de Memorizar, incluidos en Premium."
+          }
+        }
+      }
+    },
     "Practise today to start a streak.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Practica hoy para empezar una racha."
+          }
+        }
+      }
+    },
+    "Pray Every Day": {
+      "comment": "Group challenge kind",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orar cada día"
           }
         }
       }
@@ -6750,12 +7636,52 @@
         }
       }
     },
+    "Pray for each other for %lld days": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orar unos por otros durante %lld días"
+          }
+        }
+      }
+    },
+    "Pray for each other today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orar unos por otros hoy"
+          }
+        }
+      }
+    },
+    "Pray for each other's requests every day.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oren cada día por las peticiones de los demás."
+          }
+        }
+      }
+    },
     "Prayed": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Oré"
+          }
+        }
+      }
+    },
+    "Prayed today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oré hoy"
           }
         }
       }
@@ -6790,6 +7716,16 @@
         }
       }
     },
+    "Prayer Requests": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Peticiones de oración"
+          }
+        }
+      }
+    },
     "Prayer Wall": {
       "localizations": {
         "es": {
@@ -6806,6 +7742,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Oración en tu pantalla bloqueada"
+          }
+        }
+      }
+    },
+    "Prayer request": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Petición de oración"
           }
         }
       }
@@ -6972,6 +7918,17 @@
         }
       }
     },
+    "Psalm 23:1–3": {
+      "comment": "Example Bible passage",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salmos 23:1–3"
+          }
+        }
+      }
+    },
     "Psalms 119:105": {
       "comment": "Bible reference",
       "localizations": {
@@ -7087,12 +8044,53 @@
         }
       }
     },
+    "Read %@ in %lld days": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leer %@ en %lld días"
+          }
+        }
+      }
+    },
+    "Read %@ in 1 day": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leer %@ en 1 día"
+          }
+        }
+      }
+    },
     "Read Matthew Henry's commentary on every chapter, with Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Con Premium, lee el comentario de Matthew Henry sobre cada capítulo."
+          }
+        }
+      }
+    },
+    "Read Together": {
+      "comment": "Group challenge kind",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leer juntos"
+          }
+        }
+      }
+    },
+    "Read a book together, learn a passage, keep a reading streak or pray every day as a group.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lean un libro juntos, aprendan un pasaje, mantengan una racha de lectura u oren cada día como grupo."
           }
         }
       }
@@ -7167,6 +8165,16 @@
         }
       }
     },
+    "Read every day for %lld days": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leer cada día durante %lld días"
+          }
+        }
+      }
+    },
     "Read in Parallel": {
       "localizations": {
         "es": {
@@ -7193,6 +8201,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lee lado a lado, comparte con belleza"
+          }
+        }
+      }
+    },
+    "Read something every day until the challenge ends.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lean algo cada día hasta que termine el desafío."
+          }
+        }
+      }
+    },
+    "Read the same chapters together, each at your own pace.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lean juntos los mismos capítulos, cada uno a su ritmo."
           }
         }
       }
@@ -7293,6 +8321,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Planes de lectura"
+          }
+        }
+      }
+    },
+    "Reading Streak": {
+      "comment": "Group challenge kind",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Racha de lectura"
           }
         }
       }
@@ -7404,6 +8443,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "La lectura, la búsqueda, las notas, los resaltados, el diario de oración y los planes de lectura siguen siendo gratis, siempre."
+          }
+        }
+      }
+    },
+    "Reason (optional)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motivo (opcional)"
           }
         }
       }
@@ -7633,6 +8682,16 @@
         }
       }
     },
+    "Remove %@?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Quitar a %@?"
+          }
+        }
+      }
+    },
     "Remove Bookmark": {
       "localizations": {
         "es": {
@@ -7659,6 +8718,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Quitar plan"
+          }
+        }
+      }
+    },
+    "Remove as Moderator": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar como moderador"
           }
         }
       }
@@ -7783,12 +8852,62 @@
         }
       }
     },
+    "Reported %lld times": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reportado %lld veces"
+          }
+        }
+      }
+    },
+    "Reported once": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reportado una vez"
+          }
+        }
+      }
+    },
+    "Reports": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reportes"
+          }
+        }
+      }
+    },
     "Reports are private. It will be hidden for you and reviewed.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Los reportes son privados. Se ocultará para ti y se revisará."
+          }
+        }
+      }
+    },
+    "Reports, join requests and banned people.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reportes, solicitudes para unirse y personas vetadas."
+          }
+        }
+      }
+    },
+    "Request sent. A moderator will let you in.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solicitud enviada. Un moderador te dejará entrar."
           }
         }
       }
@@ -7869,6 +8988,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Derechos y audio"
+          }
+        }
+      }
+    },
+    "Running": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En curso"
           }
         }
       }
@@ -9008,6 +10137,16 @@
         }
       }
     },
+    "Start a challenge to read, memorise or pray together.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empieza un desafío para leer, memorizar u orar juntos."
+          }
+        }
+      }
+    },
     "Start a group or join one with an invite code in the new Together tab. Follow a reading plan as a group and see who's kept up.": {
       "localizations": {
         "es": {
@@ -9028,12 +10167,32 @@
         }
       }
     },
+    "Starting Soon": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empiezan pronto"
+          }
+        }
+      }
+    },
     "Starts": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Comienza"
+          }
+        }
+      }
+    },
+    "Starts %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empieza el %@"
           }
         }
       }
@@ -9064,6 +10223,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sigo orando"
+          }
+        }
+      }
+    },
+    "Still going": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sigue adelante"
+          }
+        }
+      }
+    },
+    "Still learning": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aprendiendo"
           }
         }
       }
@@ -9226,6 +10405,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Suscribirse"
+          }
+        }
+      }
+    },
+    "Suggestions": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sugerencias"
           }
         }
       }
@@ -9494,6 +10683,16 @@
         }
       }
     },
+    "That can't be ticked yet.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eso todavía no se puede marcar."
+          }
+        }
+      }
+    },
     "That file isn't a Bible Genesis can read.": {
       "localizations": {
         "es": {
@@ -9520,6 +10719,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Eso no está permitido. Si te quitaron de un grupo o la comunidad está cerrada, desliza hacia abajo para actualizar."
+          }
+        }
+      }
+    },
+    "That passage isn't in the Bible you're reading.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ese pasaje no está en la Biblia que estás leyendo."
           }
         }
       }
@@ -9614,12 +10823,32 @@
         }
       }
     },
+    "The Group's Prayer Requests": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Peticiones de oración del grupo"
+          }
+        }
+      }
+    },
     "The Hebrew and Greek words behind every verse, with Strong's definitions, and Matthew Henry's commentary on the whole Bible.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Las palabras hebreas y griegas de cada versículo, con las definiciones de Strong, y el comentario de Matthew Henry sobre toda la Biblia."
+          }
+        }
+      }
+    },
+    "The Passage": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El pasaje"
           }
         }
       }
@@ -9874,6 +11103,76 @@
         }
       }
     },
+    "They can rejoin only with the new invite code.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solo podrá volver a unirse con el nuevo código de invitación."
+          }
+        }
+      }
+    },
+    "They'll choose moderators and can close the group, and you'll stay on as a moderator.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elegirá a los moderadores y podrá cerrar el grupo, y tú seguirás como moderador."
+          }
+        }
+      }
+    },
+    "They're no longer in this group.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esa persona ya no está en este grupo."
+          }
+        }
+      }
+    },
+    "They're removed from the group and can't rejoin with any invite code.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saldrá del grupo y no podrá volver a unirse con ningún código de invitación."
+          }
+        }
+      }
+    },
+    "This challenge has ended.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este desafío ha terminado."
+          }
+        }
+      }
+    },
+    "This challenge has finished.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este desafío ya terminó."
+          }
+        }
+      }
+    },
+    "This challenge hasn't started yet.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este desafío todavía no ha empezado."
+          }
+        }
+      }
+    },
     "This chapter couldn't be loaded.": {
       "localizations": {
         "es": {
@@ -9904,6 +11203,16 @@
         }
       }
     },
+    "This group approves new members, so ask to join instead.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este grupo aprueba a los nuevos miembros, así que pide unirte."
+          }
+        }
+      }
+    },
     "This group is full.": {
       "localizations": {
         "es": {
@@ -9920,6 +11229,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Esta página es demasiado grande para sincronizarse, así que se queda en este dispositivo."
+          }
+        }
+      }
+    },
+    "This passage is still yours to learn.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este pasaje sigue esperando que lo aprendas."
+          }
+        }
+      }
+    },
+    "This passage isn't in the Bible you're reading.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este pasaje no está en la Biblia que estás leyendo."
           }
         }
       }
@@ -9980,6 +11309,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pensamiento por pensamiento"
+          }
+        }
+      }
+    },
+    "Three reports hide something from everyone but its author and the moderators until it's reviewed.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con tres reportes, algo queda oculto para todos salvo su autor y los moderadores hasta que se revise."
+          }
+        }
+      }
+    },
+    "Tick each chapter when you've read it.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marca cada capítulo cuando lo hayas leído."
+          }
+        }
+      }
+    },
+    "Tick it when you can say it from memory.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Márcalo cuando puedas decirlo de memoria."
           }
         }
       }
@@ -10064,12 +11423,32 @@
         }
       }
     },
+    "To chapter %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hasta el capítulo %lld"
+          }
+        }
+      }
+    },
     "To keep notifications quiet, turn on Do Not Disturb or another Focus in Control Centre.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Para silenciar las notificaciones, activa No molestar u otro modo de concentración en el Centro de control."
+          }
+        }
+      }
+    },
+    "To leave the group, use Leave Group.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para salir del grupo, usa Salir del grupo."
           }
         }
       }
@@ -10110,6 +11489,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Juntos"
+          }
+        }
+      }
+    },
+    "Together, the group is %@ of the way there.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Juntos, el grupo lleva el %@ del camino."
           }
         }
       }
@@ -10307,6 +11696,16 @@
         }
       }
     },
+    "Turning this off lets in everyone waiting.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Al desactivarlo, entran todas las personas que están esperando."
+          }
+        }
+      }
+    },
     "Two new reading fonts": {
       "localizations": {
         "es": {
@@ -10327,12 +11726,32 @@
         }
       }
     },
+    "Type a book, chapter and verses, such as Psalm 23:1–3.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escribe un libro, un capítulo y versículos, como Salmos 23:1–3."
+          }
+        }
+      }
+    },
     "Type a reference, such as Psalm 23:1–3.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Escribe una referencia, como Salmos 23:1–3."
+          }
+        }
+      }
+    },
+    "Unban": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar veto"
           }
         }
       }
@@ -10383,6 +11802,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Desbloquear con Premium"
+          }
+        }
+      }
+    },
+    "Unmute": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dejar de silenciar"
+          }
+        }
+      }
+    },
+    "Up to %lld verses from one chapter, in the Bible you're reading.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hasta %lld versículos de un capítulo, en la Biblia que estás leyendo."
           }
         }
       }
@@ -10564,6 +12003,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Voz"
+          }
+        }
+      }
+    },
+    "Waiting to Join": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esperando para unirte"
           }
         }
       }
@@ -10789,6 +12238,16 @@
         }
       }
     },
+    "What to Read": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qué leer"
+          }
+        }
+      }
+    },
     "What would you like to pray or reflect on for someone else?": {
       "localizations": {
         "es": {
@@ -10849,6 +12308,16 @@
         }
       }
     },
+    "When": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuándo"
+          }
+        }
+      }
+    },
     "When a prayer is answered, mark it here to remember God's faithfulness.": {
       "localizations": {
         "es": {
@@ -10865,6 +12334,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuándo te sentiste más en paz últimamente?"
+          }
+        }
+      }
+    },
+    "When this is on, people with the invite code ask to join and a moderator lets them in.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuando está activado, quienes tienen el código de invitación piden unirse y un moderador les deja entrar."
           }
         }
       }
@@ -11083,6 +12562,16 @@
         }
       }
     },
+    "Withdraw": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Retirar"
+          }
+        }
+      }
+    },
     "Word Order": {
       "comment": "Memorise game",
       "localizations": {
@@ -11277,12 +12766,42 @@
         }
       }
     },
+    "You can tick each day once the challenge begins.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Podrás marcar cada día cuando empiece el desafío."
+          }
+        }
+      }
+    },
     "You can't do that.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "No puedes hacer eso."
+          }
+        }
+      }
+    },
+    "You can't join this group.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No puedes unirte a este grupo."
+          }
+        }
+      }
+    },
+    "You finished %lld of %lld chapters.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terminaste %lld de %lld capítulos."
           }
         }
       }
@@ -11317,6 +12836,16 @@
         }
       }
     },
+    "You learned this passage. Well done.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aprendiste este pasaje. ¡Bien hecho!"
+          }
+        }
+      }
+    },
     "You practised %lld verses.": {
       "localizations": {
         "es": {
@@ -11337,12 +12866,32 @@
         }
       }
     },
+    "You prayed on %lld of %lld days.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oraste %lld de %lld días."
+          }
+        }
+      }
+    },
     "You read %lld books from beginning to end.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Leíste %lld libros de principio a fin."
+          }
+        }
+      }
+    },
+    "You read on %lld of %lld days.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leíste %lld de %lld días."
           }
         }
       }
@@ -11407,6 +12956,26 @@
         }
       }
     },
+    "You'll find the group in your list once you're in.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verás el grupo en tu lista cuando estés dentro."
+          }
+        }
+      }
+    },
+    "You're muted until %@.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estás silenciado hasta el %@."
+          }
+        }
+      }
+    },
     "You're no longer in this group, or it was closed.": {
       "localizations": {
         "es": {
@@ -11447,12 +13016,32 @@
         }
       }
     },
+    "You've asked to join a lot of groups, so withdraw a request or wait for an answer first.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Has pedido unirte a muchos grupos, así que primero retira una solicitud o espera una respuesta."
+          }
+        }
+      }
+    },
     "You've created the most groups one person can lead.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Ya creaste el máximo de grupos que una persona puede dirigir."
+          }
+        }
+      }
+    },
+    "You've learned it": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ya te lo sabes"
           }
         }
       }
@@ -11473,6 +13062,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Has llegado al nivel más alto."
+          }
+        }
+      }
+    },
+    "You've read %lld of %lld chapters": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Has leído %lld de %lld capítulos"
           }
         }
       }
@@ -11514,6 +13113,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tus planes"
+          }
+        }
+      }
+    },
+    "Your Progress": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu progreso"
           }
         }
       }
@@ -11614,6 +13223,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu racha más larga fue de %lld días seguidos."
+          }
+        }
+      }
+    },
+    "Your longest-standing moderator becomes the owner, or your longest-standing member if there are no moderators.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El moderador más antiguo pasará a ser el propietario, o el miembro más antiguo si no hay moderadores."
           }
         }
       }
