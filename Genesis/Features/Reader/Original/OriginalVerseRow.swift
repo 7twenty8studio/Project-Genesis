@@ -9,13 +9,24 @@ struct OriginalVerseRow: View {
     let language: OriginalLanguage
     let sideBySide: Bool
     let interlinear: Bool
+    /// Only the Hebrew or Greek, with the verse number (no translation).
+    var originalOnly = false
     let onWord: @MainActor (OriginalWord) -> Void
 
     @Environment(ReaderSettings.self) private var settings
     @Environment(\.palette) private var palette
 
     var body: some View {
-        if sideBySide {
+        if originalOnly {
+            HStack(alignment: .firstTextBaseline, spacing: 8) {
+                Text(verbatim: "\(row.number)")
+                    .font(.system(size: 11, weight: .semibold))
+                    .foregroundStyle(palette.accent)
+                original
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            .accessibilityElement(children: .contain)
+        } else if sideBySide {
             HStack(alignment: .top, spacing: 0) {
                 verse
                     .frame(maxWidth: .infinity, alignment: .leading)

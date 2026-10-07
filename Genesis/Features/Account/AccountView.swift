@@ -189,6 +189,7 @@ private struct SignedInView: View {
 
     @Environment(AuthService.self) private var auth
     @Environment(SyncService.self) private var sync
+    @Environment(AttachmentTransfers.self) private var attachments
     @Environment(\.palette) private var palette
     @State private var confirmSignOut = false
     @State private var showsPasswordChange = false
@@ -263,7 +264,10 @@ private struct SignedInView: View {
         .alert("Delete your account?", isPresented: $confirmDelete) {
             Button("Delete Account", role: .destructive) {
                 Task {
+                    let userID = user.id
                     if await auth.deleteAccount() {
+                        // Attachment files live in the person's iCloud.
+                        await attachments.deleteCloudFiles(userID: userID)
                         sync.accountDidSignOut(removeLocalData: true)
                     }
                 }

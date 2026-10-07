@@ -1,12 +1,15 @@
 import SwiftUI
 
 /// The listening bar at the bottom of the reader: what's playing, play and
-/// pause, chapter skips, speed, sleep timer and audio settings.
+/// pause, chapter skips, speed, sleep timer and audio settings. Ambient
+/// sounds playing at the same time share it, in a row of their own.
 struct AudioMiniPlayer: View {
     let onSettings: () -> Void
+    /// Opens ambient sounds; nil when they're switched off.
     var onAmbient: (() -> Void)?
 
     @Environment(AudioPlayerService.self) private var audio
+    @Environment(AmbientSoundService.self) private var ambient
     @Environment(\.palette) private var palette
 
     var body: some View {
@@ -36,6 +39,11 @@ struct AudioMiniPlayer: View {
                 ProgressView(value: min(audio.elapsed, audio.duration), total: audio.duration)
                     .tint(palette.accent)
                     .accessibilityLabel("Chapter progress")
+            }
+            if let onAmbient, ambient.showsControls {
+                Divider()
+                    .overlay(palette.separator)
+                AmbientControlsRow(onOpen: onAmbient)
             }
         }
         .padding(.horizontal, 16)

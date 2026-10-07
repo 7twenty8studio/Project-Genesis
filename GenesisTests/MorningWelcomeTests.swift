@@ -41,6 +41,23 @@ struct MorningWelcomeTests {
         #expect(!testing.shouldShow(isPremium: true, now: date(6, hour: 7), calendar: calendar))
     }
 
+    @Test func ambientSoundsStartOffForNewPeople() {
+        let store = defaults()
+        let welcome = MorningWelcome(defaults: store)
+        #expect(!welcome.playsSounds, "Off until turned on")
+        // Setup marks today as greeted; the next launch still has them off.
+        welcome.markShown(now: date(6, hour: 7), calendar: calendar)
+        #expect(!MorningWelcome(defaults: store).playsSounds)
+
+        welcome.playsSounds = true
+        #expect(MorningWelcome(defaults: store).playsSounds, "The choice is remembered")
+
+        // Someone greeted before the default changed keeps their sounds.
+        let earlier = defaults()
+        earlier.set("2026-10-05", forKey: "welcome.lastShownDay")
+        #expect(MorningWelcome(defaults: earlier).playsSounds)
+    }
+
     @Test func dayKeysFollowTheLocalCalendar() {
         // 11 pm in Chicago is already the next day in UTC; it's still the 6th here.
         #expect(MorningWelcome.dayKey(for: date(6, hour: 23), calendar: calendar) == "2026-10-06")

@@ -18,13 +18,13 @@ extension StudyStore {
         return (try? context.fetch(descriptor)) ?? []
     }
 
-    /// True when another attachment of `kind` fits on the owner.
+    /// True when the owner can hold attachments of `kind`.
     func canAttach(_ kind: AttachmentKind, to owner: AttachmentOwner, id ownerID: UUID) -> Bool {
-        AttachmentLimits.canAdd(kind, to: owner, existing: attachments(for: owner, id: ownerID).map(\.kind))
+        AttachmentLimits.canAdd(kind, to: owner)
     }
 
     /// Records an attachment whose file is already in place. Nil when the
-    /// owner is full for that kind or can't hold it.
+    /// owner can't hold that kind.
     @discardableResult
     func addAttachment(
         id: UUID = UUID(),
@@ -37,7 +37,7 @@ extension StudyStore {
         caption: String = ""
     ) -> Attachment? {
         let existing = attachments(for: owner, id: ownerID)
-        guard AttachmentLimits.canAdd(kind, to: owner, existing: existing.map(\.kind)) else { return nil }
+        guard AttachmentLimits.canAdd(kind, to: owner) else { return nil }
         let attachment = Attachment(id: id, owner: owner, ownerID: ownerID, kind: kind)
         attachment.byteSize = byteSize
         attachment.duration = duration

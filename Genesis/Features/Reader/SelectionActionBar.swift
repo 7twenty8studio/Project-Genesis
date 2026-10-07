@@ -168,13 +168,13 @@ struct SelectionActionBar: View {
                 Image(systemName: "brain.head.profile")
                     .font(.footnote.weight(.semibold))
             } else {
-                Label("Memorise", systemImage: "brain.head.profile")
+                Label("Memorize", systemImage: "brain.head.profile")
                     .font(.footnote.weight(.semibold))
             }
         }
         .buttonStyle(.bordered)
         .controlSize(.small)
-        .accessibilityLabel("Memorise")
+        .accessibilityLabel("Memorize")
         .accessibilityIdentifier("selection.memorise")
     }
 

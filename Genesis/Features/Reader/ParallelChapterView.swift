@@ -30,6 +30,7 @@ struct ParallelChapterView: View {
                 LazyVStack(alignment: .leading, spacing: sideBySide ? 14 : 18) {
                     header(sideBySide: sideBySide)
                     ForEach(rows) { row in
+                        Group {
                         if sideBySide {
                             HStack(alignment: .top, spacing: 0) {
                                 verse(row.primary, number: row.number, emphasis: true)
@@ -57,9 +58,13 @@ struct ParallelChapterView: View {
                                 }
                             }
                         }
+                        }
+                        .modifier(PlayingVerseMark(isPlaying: row.number == playingRow))
+                        .id(row.number)
                     }
                     nextChapterButton
                 }
+                .scrollTargetLayout()
                 .padding(.horizontal, sideBySide ? 32 : 22)
                 .padding(.top, topInset)
                 .padding(.bottom, bottomInset + 40)
@@ -67,11 +72,18 @@ struct ParallelChapterView: View {
                 .frame(maxWidth: .infinity)
             }
             .scrollIndicators(.hidden)
+            .modifier(ParallelFollowAlong(playingRow: playingRow, rowCount: rows.count))
             .contentShape(Rectangle())
             .onTapGesture { reader.toggleControls() }
         }
         .background(palette.background)
         .task(id: "\(chapterID.book)-\(chapterID.chapter)-\(primary.id)-\(secondary.id)") { load() }
+    }
+
+    /// The verse being read aloud in this chapter (follow-along on).
+    private var playingRow: Int? {
+        guard let playing = reader.playingVerse, playing.chapterID == chapterID else { return nil }
+        return playing.verse
     }
 
     private func header(sideBySide: Bool) -> some View {

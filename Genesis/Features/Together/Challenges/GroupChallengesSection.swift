@@ -49,7 +49,7 @@ struct GroupChallengesSection: View {
     @ViewBuilder
     private func content(_ model: GroupChallengesModel) -> some View {
         if model.current.isEmpty, model.hasLoaded {
-            Text(model.canManage ? "Start a challenge to read, memorise or pray together." : "No challenges right now.")
+            Text(model.canManage ? "Start a challenge to read, memorize or pray together." : "No challenges right now.")
                 .foregroundStyle(palette.secondaryText)
         }
         ForEach(model.current) { challenge in

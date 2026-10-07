@@ -8,7 +8,7 @@ final class MemoriseUITests: GenesisUITestCase {
     func testMemoriseIsLockedForFreeAccounts() {
         let app = Genesis.launch()
         let card = app.buttons["home.memorise"]
-        XCTAssertTrue(card.waitForExistence(timeout: Genesis.launchTimeout), "Memorise is on Home")
+        XCTAssertTrue(card.waitForExistence(timeout: Genesis.launchTimeout), "Memorize is on Home")
         Genesis.scrollIntoView(card, in: app)
         card.tap()
         XCTAssertTrue(app.buttons["premium.subscribe"].waitForExistence(timeout: Genesis.timeout), "Free accounts are offered Premium")
@@ -20,7 +20,7 @@ final class MemoriseUITests: GenesisUITestCase {
         XCTAssertTrue(Genesis.readerText(app).waitForExistence(timeout: Genesis.launchTimeout))
         XCTAssertTrue(Genesis.selectVerse(app), "A verse can be selected")
         let memorise = app.buttons["selection.memorise"]
-        XCTAssertTrue(memorise.waitForExistence(timeout: Genesis.timeout), "Selected verses can be memorised")
+        XCTAssertTrue(memorise.waitForExistence(timeout: Genesis.timeout), "Selected verses can be memorized")
         memorise.tap()
         XCTAssertTrue(app.descendants(matching: .any)["reader.confirmation"].waitForExistence(timeout: Genesis.timeout), "It says it was added")
 
@@ -54,7 +54,7 @@ final class MemoriseUITests: GenesisUITestCase {
         XCTAssertTrue(Genesis.readerText(app).waitForExistence(timeout: Genesis.launchTimeout))
         XCTAssertTrue(Genesis.selectVerse(app), "A verse can be selected")
         let memorise = app.buttons["selection.memorise"]
-        XCTAssertTrue(memorise.waitForExistence(timeout: Genesis.timeout), "Selected verses can be memorised")
+        XCTAssertTrue(memorise.waitForExistence(timeout: Genesis.timeout), "Selected verses can be memorized")
         memorise.tap()
         XCTAssertTrue(app.descendants(matching: .any)["reader.confirmation"].waitForExistence(timeout: Genesis.timeout), "It says it was added")
 
@@ -77,6 +77,6 @@ final class MemoriseUITests: GenesisUITestCase {
         XCTAssertTrue(app.buttons["memorise.chip.0"].waitForExistence(timeout: Genesis.timeout), "The verse's words appear as chips")
         XCTAssertTrue(app.buttons["memorise.chip.1"].exists)
         app.buttons["memorise.close"].tap()
-        XCTAssertTrue(app.buttons["memorise.game.wordOrder"].waitForExistence(timeout: Genesis.timeout), "Closing returns to Memorise")
+        XCTAssertTrue(app.buttons["memorise.game.wordOrder"].waitForExistence(timeout: Genesis.timeout), "Closing returns to Memorize")
     }
 }

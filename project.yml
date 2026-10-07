@@ -120,6 +120,9 @@ targets:
         GenesisSentryDSN: $(SENTRY_DSN)
         GenesisTermsURL: $(GENESIS_TERMS_URL)
         GenesisPrivacyURL: $(GENESIS_PRIVACY_URL)
+        # The iCloud container for attachment files; empty (files stay on the
+        # device) until Config/Signing.xcconfig turns on the entitlements.
+        GenesisICloudContainer: $(GENESIS_ICLOUD_CONTAINER)
 
   GenesisWidgets:
     type: app-extension

@@ -7,3 +7,6 @@ GENESIS_APP_ENTITLEMENTS = Config/Genesis.entitlements
 GENESIS_WIDGET_ENTITLEMENTS = Config/GenesisWidgets.entitlements
 // The watch app and its complication share the App Group on the watch.
 GENESIS_WATCH_ENTITLEMENTS = Config/GenesisWidgets.entitlements
+// Attachment files sync through the person's iCloud (CloudKit). The same
+// container is in Config/Genesis.entitlements.
+GENESIS_ICLOUD_CONTAINER = iCloud.com.7twenty8studio.genesis

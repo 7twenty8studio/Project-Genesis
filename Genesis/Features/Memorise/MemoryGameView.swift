@@ -153,7 +153,7 @@ struct MemoryGameFinished: View {
             Text("Well done")
                 .font(.title2.weight(.semibold))
                 .foregroundStyle(palette.text)
-            Text(count == 1 ? String(localized: "You practised 1 verse.") : String(localized: "You practised \(count) verses."))
+            Text(count == 1 ? String(localized: "You practiced 1 verse.") : String(localized: "You practiced \(count) verses."))
                 .foregroundStyle(palette.secondaryText)
                 .multilineTextAlignment(.center)
             if let detail {

@@ -3,7 +3,7 @@ import SwiftData
 import Testing
 @testable import Genesis
 
-@Suite("Memorise Scripture")
+@Suite("Memorize Scripture")
 @MainActor
 struct MemoriseTests {
     private let calendar = Calendar(identifier: .gregorian)

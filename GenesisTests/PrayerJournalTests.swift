@@ -339,3 +339,127 @@ struct PrayerSyncTests {
         #expect(prayer.updatedAt >= before)
     }
 }
+
+@Suite("Prayer notes move to the journal")
+@MainActor
+struct PrayerNoteMoveTests {
+    private func makeStore() throws -> (StudyStore, ModelContainer) {
+        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        return (StudyStore(context: container.mainContext), container)
+    }
+
+    /// A note saved as a prayer, as older versions did.
+    private func prayerNote(_ store: StudyStore, anchor: NoteAnchor, title: String = "", body: String = "") -> Note {
+        let note = store.createNote(kind: .text, anchor: anchor, title: title, body: body)
+        note.kindRaw = "prayer"
+        return note
+    }
+
+    @Test func notesCanNoLongerBePrayers() {
+        #expect(!NoteKind.allCases.contains(.prayer))
+        #expect(NoteKind(rawValue: "prayer") == .prayer, "Older rows still read")
+    }
+
+    @Test func aPrayerNoteBecomesAJournalEntry() throws {
+        let (store, container) = try makeStore()
+        let context = container.mainContext
+        let start = VerseID(rawValue: 50_004_006)
+        let end = VerseID(rawValue: 50_004_007)
+        let note = prayerNote(store, anchor: .verses(start, end), title: "Peace", body: "For Sam's surgery")
+        let created = Date(timeIntervalSince1970: 1_790_000_000)
+        note.createdAt = created
+        let noteID = note.id
+
+        let added = store.movePrayerNotesToJournal()
+
+        #expect(added == 1)
+        let prayers = try context.fetch(FetchDescriptor<Prayer>())
+        let prayer = try #require(prayers.first)
+        #expect(prayers.count == 1)
+        #expect(prayer.title == "Peace")
+        #expect(prayer.body == "For Sam's surgery")
+        #expect(prayer.createdAt == created)
+        #expect(prayer.passages == [PrayerPassage(start: start, end: end)])
+        #expect(prayer.id != noteID)
+        #expect(prayer.id == PrayerNoteMove.prayerID(forNote: noteID), "The same on every device")
+        let notes = try context.fetchCount(FetchDescriptor<Note>())
+        #expect(notes == 0)
+        let tombstones = try context.fetch(FetchDescriptor<Tombstone>())
+        #expect(tombstones.map(\.recordID) == [noteID])
+        #expect(tombstones.map(\.table) == [SyncTable.notes])
+    }
+
+    @Test func movingTwiceMakesOnePrayer() throws {
+        let (store, container) = try makeStore()
+        let context = container.mainContext
+        let note = prayerNote(store, anchor: .none, body: "Wisdom at work")
+        let noteID = note.id
+        store.movePrayerNotesToJournal()
+        // The same note arrives again from another device.
+        let again = Note(kind: .text, anchor: .none, body: "Wisdom at work")
+        again.id = noteID
+        again.kindRaw = "prayer"
+        context.insert(again)
+
+        let added = store.movePrayerNotesToJournal()
+
+        #expect(added == 0)
+        let prayers = try context.fetchCount(FetchDescriptor<Prayer>())
+        #expect(prayers == 1)
+    }
+
+    @Test func aWholeChapterBecomesItsPassage() throws {
+        let (store, container) = try makeStore()
+        let chapter = ChapterID(book: 19, chapter: 23)
+        _ = prayerNote(store, anchor: .chapter(chapter), body: "The Lord is my shepherd")
+        store.movePrayerNotesToJournal { _ in 6 }
+        let prayer = try #require(try container.mainContext.fetch(FetchDescriptor<Prayer>()).first)
+        #expect(prayer.passages == [PrayerPassage(start: chapter.firstVerse, end: VerseID(book: 19, chapter: 23, verse: 6))])
+    }
+
+    @Test func aThemeBecomesTheTitle() throws {
+        let (store, container) = try makeStore()
+        _ = prayerNote(store, anchor: .theme("Grace"), body: "Teach me grace")
+        store.movePrayerNotesToJournal()
+        let prayer = try #require(try container.mainContext.fetch(FetchDescriptor<Prayer>()).first)
+        #expect(prayer.title == "Grace")
+        #expect(prayer.passages.isEmpty)
+    }
+
+    @Test func handwrittenPrayersStayAsJournalNotes() throws {
+        let (store, container) = try makeStore()
+        let context = container.mainContext
+        let note = prayerNote(store, anchor: .none, title: "Sketch")
+        note.drawing = Data([1, 2, 3])
+
+        let added = store.movePrayerNotesToJournal()
+
+        #expect(added == 0)
+        #expect(note.kind == .journal)
+        #expect(note.drawing == Data([1, 2, 3]), "Nothing is lost")
+        let prayers = try context.fetchCount(FetchDescriptor<Prayer>())
+        #expect(prayers == 0)
+    }
+
+    @Test func emptyPrayerNotesAreRemoved() throws {
+        let (store, container) = try makeStore()
+        let context = container.mainContext
+        _ = prayerNote(store, anchor: .none)
+        let added = store.movePrayerNotesToJournal()
+        #expect(added == 0)
+        let notes = try context.fetchCount(FetchDescriptor<Note>())
+        let prayers = try context.fetchCount(FetchDescriptor<Prayer>())
+        #expect(notes == 0)
+        #expect(prayers == 0)
+    }
+
+    @Test func otherNotesAreLeftAlone() throws {
+        let (store, container) = try makeStore()
+        let note = store.createNote(kind: .study, anchor: .theme("Faith"), body: "Hebrews 11")
+        let added = store.movePrayerNotesToJournal()
+        #expect(added == 0)
+        #expect(note.kind == .study)
+        let notes = try container.mainContext.fetchCount(FetchDescriptor<Note>())
+        #expect(notes == 1)
+    }
+}

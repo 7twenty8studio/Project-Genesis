@@ -1,881 +1,1006 @@
 {
-  "sourceLanguage": "en",
-  "strings": {
-    "%lld due": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld pendientes"
+  "sourceLanguage" : "en",
+  "strings" : {
+    "“%@” — %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "“%1$@” — %2$@"
           }
         }
       }
     },
-    "%lld of %lld": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld de %lld"
+    "%@" : {
+
+    },
+    "%@ due" : {
+
+    },
+    "%@ of %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ of %2$@"
+          }
+        }
+      }
+    },
+    "%@ of %@ read today" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ of %2$@ read today"
+          }
+        }
+      }
+    },
+    "%lld due" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld pendientes"
+          }
+        }
+      }
+    },
+    "%lld of %lld" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld de %lld"
+          }
+        }
+      }
+    },
+    "%lld of %lld read today" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld de %lld leyeron hoy"
           }
         }
       }
     },
-    "%lld of %lld read today": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld de %lld leyeron hoy"
+    "%lld prayers" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld oraciones"
           }
         }
       }
     },
-    "%lld prayers": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld oraciones"
+    "%lld-day streak" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Racha de %lld días"
           }
         }
       }
     },
-    "%lld-day streak": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Racha de %lld días"
+    "1 prayer" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 oración"
           }
         }
       }
     },
-    "1 prayer": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "1 oración"
+    "A new verse each morning, a random verse, or verses on hope, peace and more." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un versículo nuevo cada mañana, uno al azar o versículos sobre esperanza, paz y más."
           }
         }
       }
     },
-    "A Verse for You": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Un versículo para ti"
+    "A Verse for You" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un versículo para ti"
           }
         }
       }
     },
-    "A new verse each morning, a random verse, or verses on hope, peace and more.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Un versículo nuevo cada mañana, uno al azar o versículos sobre esperanza, paz y más."
+    "Add a verse to memorize in Genesis." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade un versículo para memorizar en Genesis."
           }
         }
       }
     },
-    "Add a verse to memorise in Genesis.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Añade un versículo para memorizar en Genesis."
+    "All caught up" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todo al día"
           }
         }
       }
     },
-    "All caught up": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Todo al día"
+    "Begin reading" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comienza a leer"
           }
         }
       }
     },
-    "Begin Reading": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Comenzar a leer"
+    "Begin Reading" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comenzar a leer"
           }
         }
       }
     },
-    "Begin reading": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Comienza a leer"
+    "chapters read" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "capítulos leídos"
           }
         }
       }
     },
-    "Choose which verse the widget shows.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Elige qué versículo muestra el widget."
+    "Choose which verse the widget shows." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige qué versículo muestra el widget."
           }
         }
       }
     },
-    "Comfort": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Consuelo"
+    "Comfort" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consuelo"
           }
         }
       }
     },
-    "Completed": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Completado"
+    "Completed" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Completado"
           }
         }
       }
     },
-    "Continue": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Continuar"
+    "Continue" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuar"
           }
         }
       }
     },
-    "Continue Reading": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Continuar leyendo"
+    "Continue Reading" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuar leyendo"
           }
         }
       }
     },
-    "Day": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Día"
+    "Day" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Día"
           }
         }
       }
     },
-    "Day %lld of %lld": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Día %lld de %lld"
+    "Day %@ of %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Day %1$@ of %2$@"
           }
         }
       }
     },
-    "Days in a row you've read.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Días seguidos que has leído."
+    "Day %lld of %lld" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Día %lld de %lld"
           }
         }
       }
     },
-    "Done": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "OK"
+    "day streak" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "días de racha"
           }
         }
       }
     },
-    "Faith": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fe"
+    "Days in a row you've read." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Días seguidos que has leído."
           }
         }
       }
     },
-    "Follow your group's reading with Genesis Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sigue la lectura de tu grupo con Genesis Premium."
+    "Done" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         }
       }
     },
-    "From Your Reading": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "De tu lectura"
+    "Faith" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fe"
           }
         }
       }
     },
-    "Genesis 1": {
-      "comment": "Bible reference: the book of Genesis, chapter 1",
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Génesis 1"
+    "Follow your group's reading with Genesis Premium." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sigue la lectura de tu grupo con Genesis Premium."
           }
         }
       }
     },
-    "Genesis Premium": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Genesis Premium"
+    "From Your Reading" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De tu lectura"
           }
         }
       }
     },
-    "Gratitude": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Gratitud"
+    "Genesis 1" : {
+      "comment" : "Bible reference: the book of Genesis, chapter 1",
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Génesis 1"
           }
         }
       }
     },
-    "Group Progress": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Progreso del grupo"
+    "Genesis Premium" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genesis Premium"
           }
         }
       }
     },
-    "Guidance": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Guía"
+    "Gratitude" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gratitud"
           }
         }
       }
     },
-    "Hope": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Esperanza"
+    "Group Progress" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Progreso del grupo"
           }
         }
       }
     },
-    "John 3": {
-      "comment": "Bible reference: the Gospel of John, chapter 3",
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Juan 3"
+    "Guidance" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guía"
           }
         }
       }
     },
-    "John 3–5": {
-      "comment": "Bible reference: the Gospel of John, chapters 3 to 5",
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Juan 3–5"
+    "Hope" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esperanza"
           }
         }
       }
     },
-    "Keep your reading streak in view with Genesis Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ten tu racha de lectura a la vista con Genesis Premium."
+    "John 3" : {
+      "comment" : "Bible reference: the Gospel of John, chapter 3",
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Juan 3"
           }
         }
       }
     },
-    "Larger verse widgets come with Genesis Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Los widgets de versículo más grandes vienen con Genesis Premium."
+    "John 3–5" : {
+      "comment" : "Bible reference: the Gospel of John, chapters 3 to 5",
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Juan 3–5"
           }
         }
       }
     },
-    "Love": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Amor"
+    "Keep your reading streak in view with Genesis Premium." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ten tu racha de lectura a la vista con Genesis Premium."
           }
         }
       }
     },
-    "Mark Read": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Marcar leída"
+    "Larger verse widgets come with Genesis Premium." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los widgets de versículo más grandes vienen con Genesis Premium."
           }
         }
       }
     },
-    "Mark Today's Reading": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Marcar la lectura de hoy"
+    "Love" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amor"
           }
         }
       }
     },
-    "Memorise": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Memorizar"
+    "Mark Read" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marcar leída"
           }
         }
       }
     },
-    "Memorise Scripture is turned off in Genesis.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Memorizar las Escrituras está desactivado en Genesis."
+    "Mark Today's Reading" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marcar la lectura de hoy"
           }
         }
       }
     },
-    "Memorise Scripture with Genesis Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Memoriza las Escrituras con Genesis Premium."
+    "Memorize" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memorizar"
           }
         }
       }
     },
-    "Memorise is turned off": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Memorizar está desactivado"
+    "Memorize is turned off" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memorizar está desactivado"
           }
         }
       }
     },
-    "Next Chapter": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Siguiente capítulo"
+    "Memorize Scripture is turned off in Genesis." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memorizar las Escrituras está desactivado en Genesis."
           }
         }
       }
     },
-    "Next chapter": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Capítulo siguiente"
+    "Memorize Scripture with Genesis Premium." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memoriza las Escrituras con Genesis Premium."
           }
         }
       }
     },
-    "Next reminder %@": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Próximo recordatorio: %@"
+    "Next chapter" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Capítulo siguiente"
           }
         }
       }
     },
-    "No reminder set": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sin recordatorio"
+    "Next Chapter" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siguiente capítulo"
           }
         }
       }
     },
-    "Open Genesis": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Abrir Genesis"
+    "Next reminder %@" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Próximo recordatorio: %@"
           }
         }
       }
     },
-    "Open Genesis to see today's reading from %@.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Abre Genesis para ver la lectura de hoy de %@."
+    "No reminder set" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin recordatorio"
           }
         }
       }
     },
-    "Open a group with a reading plan in Genesis to see its progress here.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Abre en Genesis un grupo con plan de lectura para ver aquí su progreso."
+    "Open a group with a reading plan in Genesis to see its progress here." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre en Genesis un grupo con plan de lectura para ver aquí su progreso."
           }
         }
       }
     },
-    "Pause": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pausar"
+    "Open Genesis" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir Genesis"
           }
         }
       }
     },
-    "Peace": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Paz"
+    "Open Genesis to see today's reading from %@." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre Genesis para ver la lectura de hoy de %@."
           }
         }
       }
     },
-    "Pick up where you left off with Genesis Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retoma donde lo dejaste con Genesis Premium."
+    "Pause" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pausar"
           }
         }
       }
     },
-    "Pick up where you left off.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retoma donde te quedaste."
+    "Peace" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paz"
           }
         }
       }
     },
-    "Plan": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Plan"
+    "Pick up where you left off with Genesis Premium." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retoma donde lo dejaste con Genesis Premium."
           }
         }
       }
     },
-    "Play": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reproducir"
+    "Pick up where you left off." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retoma donde te quedaste."
           }
         }
       }
     },
-    "Play or Pause Listening": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reproducir o pausar la escucha"
+    "Plan" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plan"
           }
         }
       }
     },
-    "Pray at %@": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Orar: %@"
+    "Play" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reproducir"
           }
         }
       }
     },
-    "Prayer": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Oración"
+    "Play or Pause Listening" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reproducir o pausar la escucha"
           }
         }
       }
     },
-    "Prayer Reminder": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Recordatorio de oración"
+    "Pray at %@" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orar: %@"
           }
         }
       }
     },
-    "Premium": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Premium"
+    "Prayer" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oración"
           }
         }
       }
     },
-    "Psalms 119:105": {
-      "comment": "Bible reference",
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Salmos 119:105"
+    "Prayer Reminder" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recordatorio de oración"
           }
         }
       }
     },
-    "Random Verse": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Versículo al azar"
+    "Premium" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premium"
           }
         }
       }
     },
-    "Reading Progress": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Progreso de lectura"
+    "Psalms 119:105" : {
+      "comment" : "Bible reference",
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salmos 119:105"
           }
         }
       }
     },
-    "Reading Streak": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Racha de lectura"
+    "Random Verse" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versículo al azar"
           }
         }
       }
     },
-    "Recall a verse you're learning by heart.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Recuerda un versículo que estás aprendiendo de memoria."
+    "read today" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "leyeron hoy"
           }
         }
       }
     },
-    "See your next prayer reminder with Genesis Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ve tu próximo recordatorio de oración con Genesis Premium."
+    "Reading Progress" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Progreso de lectura"
           }
         }
       }
     },
-    "See your plan, streak and prayers at a glance with Genesis Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ve tu plan, tu racha y tus oraciones de un vistazo con Genesis Premium."
+    "Reading Streak" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Racha de lectura"
           }
         }
       }
     },
-    "Show": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mostrar"
+    "Recall a verse you're learning by heart." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recuerda un versículo que estás aprendiendo de memoria."
           }
         }
       }
     },
-    "Start a reading plan in Genesis to see today's reading here.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Empieza un plan de lectura en Genesis para ver aquí la lectura de hoy."
+    "See your next prayer reminder with Genesis Premium." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ve tu próximo recordatorio de oración con Genesis Premium."
           }
         }
       }
     },
-    "Strength": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fortaleza"
+    "See your plan, streak and prayers at a glance with Genesis Premium." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ve tu plan, tu racha y tus oraciones de un vistazo con Genesis Premium."
           }
         }
       }
     },
-    "Tap to review": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Toca para repasar"
+    "Show" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar"
           }
         }
       }
     },
-    "The Gospels in 30 Days": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Los Evangelios en 30 días"
+    "Start a reading plan in Genesis to see today's reading here." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empieza un plan de lectura en Genesis para ver aquí la lectura de hoy."
           }
         }
       }
     },
-    "Tick off your daily reading with Genesis Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Marca tu lectura diaria con Genesis Premium."
+    "Strength" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fortaleza"
           }
         }
       }
     },
-    "Today": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hoy"
+    "Tap to review" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toca para repasar"
           }
         }
       }
     },
-    "Today's Reading": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lectura de hoy"
+    "The Gospels in 30 Days" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los Evangelios en 30 días"
           }
         }
       }
     },
-    "Today's plan reading, your streak and prayer reminders.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "La lectura de hoy de tu plan, tu racha y tus recordatorios de oración."
+    "Tick off your daily reading with Genesis Premium." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marca tu lectura diaria con Genesis Premium."
           }
         }
       }
     },
-    "Today's reading from your plan. Tick it off when you're done.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "La lectura de hoy de tu plan. Márcala cuando termines."
+    "Today" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoy"
           }
         }
       }
     },
-    "Tuesday Bible Study": {
-      "comment": "Sample group name in the widget gallery",
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Estudio bíblico del martes"
+    "Today's plan reading, your streak and prayer reminders." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La lectura de hoy de tu plan, tu racha y tus recordatorios de oración."
           }
         }
       }
     },
-    "Verse": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Versículo"
+    "Today's Reading" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lectura de hoy"
           }
         }
       }
     },
-    "Verse of the Day": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Versículo del día"
+    "Today's reading from your plan. Tick it off when you're done." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La lectura de hoy de tu plan. Márcala cuando termines."
           }
         }
       }
     },
-    "Verses from your own reading come with Genesis Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Los versículos de tu propia lectura vienen con Genesis Premium."
+    "Tuesday Bible Study" : {
+      "comment" : "Sample group name in the widget gallery",
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estudio bíblico del martes"
           }
         }
       }
     },
-    "Verses on hope, peace and more come with Genesis Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Los versículos sobre esperanza, paz y más vienen con Genesis Premium."
+    "Verse" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versículo"
           }
         }
       }
     },
-    "You": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tú"
+    "Verse of the Day" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versículo del día"
           }
         }
       }
     },
-    "Your group's reading plan: who has read today and how far everyone has come.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "El plan de lectura de tu grupo: quién leyó hoy y cuánto ha avanzado cada uno."
+    "Verses from your own reading come with Genesis Premium." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los versículos de tu propia lectura vienen con Genesis Premium."
           }
         }
       }
     },
-    "Your next prayer reminder and how many requests you're praying for.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tu próximo recordatorio de oración y cuántas peticiones tienes en oración."
+    "Verses on hope, peace and more come with Genesis Premium." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los versículos sobre esperanza, paz y más vienen con Genesis Premium."
           }
         }
       }
     },
-    "chapters read": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "capítulos leídos"
+    "You" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tú"
           }
         }
       }
     },
-    "day streak": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "días de racha"
+    "Your group's reading plan: who has read today and how far everyone has come." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El plan de lectura de tu grupo: quién leyó hoy y cuánto ha avanzado cada uno."
           }
         }
       }
     },
-    "read today": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "leyeron hoy"
+    "Your next prayer reminder and how many requests you're praying for." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu próximo recordatorio de oración y cuántas peticiones tienes en oración."
           }
         }
       }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }

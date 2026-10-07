@@ -13,6 +13,7 @@ struct OriginalParallelHeader: View {
     /// Some Greek words on the page aren't in the edition it's compared with.
     let marksEditions: Bool
     @Binding var interlinear: Bool
+    @Binding var originalOnly: Bool
 
     @Environment(ReaderSettings.self) private var settings
     @Environment(\.palette) private var palette
@@ -23,15 +24,32 @@ struct OriginalParallelHeader: View {
             titles
                 .accessibilityElement(children: .combine)
                 .accessibilityIdentifier("reader.parallel.originalHeader")
-            HStack(spacing: 10) {
-                interlinearButton
-                sourceButton
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: 10) {
+                    interlinearButton
+                    originalOnlyButton
+                    sourceButton
+                }
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack(spacing: 10) {
+                        interlinearButton
+                        originalOnlyButton
+                    }
+                    sourceButton
+                }
             }
             if marksEditions {
                 Text(greek.edition.dottedWords)
                     .font(.caption)
                     .foregroundStyle(palette.secondaryText)
                     .fixedSize(horizontal: false, vertical: true)
+            }
+            if WordStudyRepository.needsEnglishNote(bibleLanguage: translation.language) {
+                Text("Word meanings and grammar are in English for now. More languages are coming soon.")
+                    .font(.caption)
+                    .foregroundStyle(palette.secondaryText)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityIdentifier("original.englishOnly")
             }
         }
         .padding(.bottom, 6)
@@ -42,7 +60,9 @@ struct OriginalParallelHeader: View {
 
     @ViewBuilder
     private var titles: some View {
-        if sideBySide {
+        if originalOnly {
+            column(title: chapterID.description(in: translation.language), subtitle: "\(languageName) · \(sourceName)")
+        } else if sideBySide {
             HStack(alignment: .firstTextBaseline) {
                 column(title: chapterID.description(in: translation.language), subtitle: translation.name)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -85,6 +105,25 @@ struct OriginalParallelHeader: View {
         .accessibilityHint("Shows each word's transliteration and meaning beneath it")
         .accessibilityAddTraits(interlinear ? .isSelected : [])
         .accessibilityIdentifier("original.interlinear")
+    }
+
+    /// Hides the translation so only the Hebrew or Greek is read.
+    private var originalOnlyButton: some View {
+        Button {
+            originalOnly.toggle()
+        } label: {
+            Label(originalOnlyTitle, systemImage: originalOnly ? "checkmark.circle.fill" : "circle")
+                .font(.subheadline.weight(.semibold))
+        }
+        .buttonStyle(.bordered)
+        .tint(originalOnly ? palette.accent : palette.secondaryText)
+        .accessibilityHint("Hides the translation beside the original")
+        .accessibilityAddTraits(originalOnly ? .isSelected : [])
+        .accessibilityIdentifier("original.only")
+    }
+
+    private var originalOnlyTitle: String {
+        language == .greek ? String(localized: "Greek Only") : String(localized: "Hebrew Only")
     }
 
     /// Opens `OriginalSourceSheet`: about the edition and its source.

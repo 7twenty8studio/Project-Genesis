@@ -86,7 +86,7 @@ struct SermonEditorView: View {
             Button {
                 StudyStore(context: modelContext).toggleFavourite(sermon)
             } label: {
-                Label(sermon.isFavourite ? "Remove Favourite" : "Favourite", systemImage: sermon.isFavourite ? "star.fill" : "star")
+                Label(sermon.isFavourite ? "Remove Favorite" : "Favorite", systemImage: sermon.isFavourite ? "star.fill" : "star")
             }
             .accessibilityAddTraits(sermon.isFavourite ? .isSelected : [])
             .accessibilityIdentifier("sermon.favourite")

@@ -135,7 +135,7 @@ private extension JournalTemplate {
         [
             Part(heading: String(localized: "Family", bundle: bundle),
                  prompt: String(localized: "Who at home needs prayer today?", bundle: bundle)),
-            Part(heading: String(localized: "Friends and neighbours", bundle: bundle),
+            Part(heading: String(localized: "Friends and neighbors", bundle: bundle),
                  prompt: String(localized: "Name them and what they're carrying.", bundle: bundle)),
             Part(heading: String(localized: "Church and leaders", bundle: bundle),
                  prompt: String(localized: "Pray for your church, its leaders and those who serve.", bundle: bundle)),

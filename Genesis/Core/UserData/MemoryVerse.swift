@@ -61,10 +61,10 @@ enum MemoryGrade: String, CaseIterable, Identifiable, Sendable {
 
     var title: String {
         switch self {
-        case .again: String(localized: "Again", comment: "Memorise: I didn't remember it")
-        case .hard: String(localized: "Hard", comment: "Memorise: I remembered with difficulty")
-        case .good: String(localized: "Good", comment: "Memorise: I remembered it")
-        case .easy: String(localized: "Easy", comment: "Memorise: I knew it easily")
+        case .again: String(localized: "Again", comment: "Memorize: I didn't remember it")
+        case .hard: String(localized: "Hard", comment: "Memorize: I remembered with difficulty")
+        case .good: String(localized: "Good", comment: "Memorize: I remembered it")
+        case .easy: String(localized: "Easy", comment: "Memorize: I knew it easily")
         }
     }
 }
@@ -76,10 +76,10 @@ enum MemoryMastery: Int, Comparable, Sendable {
 
     var title: String {
         switch self {
-        case .new: String(localized: "New", comment: "Memorise: not reviewed yet")
-        case .learning: String(localized: "Learning", comment: "Memorise progress")
-        case .familiar: String(localized: "Familiar", comment: "Memorise progress")
-        case .memorised: String(localized: "Memorised", comment: "Memorise progress")
+        case .new: String(localized: "New", comment: "Memorize: not reviewed yet")
+        case .learning: String(localized: "Learning", comment: "Memorize progress")
+        case .familiar: String(localized: "Familiar", comment: "Memorize progress")
+        case .memorised: String(localized: "Memorized", comment: "Memorize progress")
         }
     }
 

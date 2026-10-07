@@ -5,14 +5,15 @@ import UniformTypeIdentifiers
 
 /// The attachments on a prayer or sermon notes (Premium, `.journalExtras`):
 /// a strip of photos, PDFs and Pencil pages, the recordings below it, and an
-/// Add menu. Free accounts keep seeing anything already attached and get a
-/// short teaser instead of the menu.
+/// Add menu. Free accounts keep seeing anything already
+/// attached and get a short teaser instead of the menu.
 struct AttachmentsSection: View {
     let owner: AttachmentOwner
     let ownerID: UUID
 
     @Environment(\.palette) private var palette
     @Environment(EntitlementService.self) private var entitlements
+    @Environment(AttachmentTransfers.self) private var transfers
     @Query private var attachments: [Attachment]
 
     init(owner: AttachmentOwner, ownerID: UUID) {
@@ -32,16 +33,13 @@ struct AttachmentsSection: View {
         } header: {
             Text("Attachments")
         } footer: {
-            Text(footer)
-        }
-    }
-
-    private var footer: String {
-        switch owner {
-        case .prayer:
-            String(localized: "Up to 10 photos and 5 voice recordings.")
-        case .sermon:
-            String(localized: "Up to 10 photos, 5 recordings, 3 PDFs and 5 drawings. Slides can be added once saved as a PDF.")
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Attachments are saved on this device first, then copied to your private iCloud when you're online, so they're on your other devices too. They use your iCloud storage.")
+                if let problem = transfers.problem?.errorDescription {
+                    Text(problem)
+                        .accessibilityIdentifier("attachments.iCloudProblem")
+                }
+            }
         }
     }
 }
@@ -81,7 +79,7 @@ private struct AttachmentsRow: View {
                 addMenu
             } else {
                 PremiumTeaser(
-                    message: String(localized: "Add photos, voice recordings, church PDFs and Pencil pages with Premium."),
+                    message: String(localized: "Add photos, voice recordings and Pencil pages with Premium."),
                     feature: .journalExtras
                 )
             }
@@ -92,12 +90,12 @@ private struct AttachmentsRow: View {
             }
         }
         .padding(.vertical, 4)
-        .photosPicker(isPresented: $showsPhotoPicker, selection: $photoItems, maxSelectionCount: max(1, remaining(.photo)), matching: .images)
+        .photosPicker(isPresented: $showsPhotoPicker, selection: $photoItems, maxSelectionCount: nil, matching: .images)
+        .fileImporter(isPresented: $showsPDFImporter, allowedContentTypes: [.pdf]) { importPDF($0) }
         .onChange(of: photoItems) { _, items in
             guard !items.isEmpty else { return }
             Task { await importPhotos(items) }
         }
-        .fileImporter(isPresented: $showsPDFImporter, allowedContentTypes: [.pdf]) { importPDF($0) }
         .fullScreenCover(isPresented: $showsCamera) {
             CameraPicker { data in Task { await addPhoto(data) } }
                 .ignoresSafeArea()
@@ -112,20 +110,16 @@ private struct AttachmentsRow: View {
 
     private var addMenu: some View {
         Menu {
-            if remaining(.photo) > 0 {
-                Button("Choose Photos", systemImage: "photo.on.rectangle") { showsPhotoPicker = true }
-                if CameraPicker.isAvailable {
-                    Button("Take Photo", systemImage: "camera") { showsCamera = true }
-                }
+            Button("Choose Photos", systemImage: "photo.on.rectangle") { showsPhotoPicker = true }
+            if CameraPicker.isAvailable {
+                Button("Take Photo", systemImage: "camera") { showsCamera = true }
             }
-            if remaining(.audio) > 0 {
-                Button("Record Voice", systemImage: "mic") { sheet = .recorder }
-                    .accessibilityIdentifier("attachments.record")
-            }
-            if remaining(.pdf) > 0 {
+            Button("Record Voice", systemImage: "mic") { sheet = .recorder }
+                .accessibilityIdentifier("attachments.record")
+            if allows(.pdf) {
                 Button("Import PDF", systemImage: "doc.badge.plus") { showsPDFImporter = true }
             }
-            if remaining(.drawing) > 0 {
+            if allows(.drawing) {
                 Button("Drawing", systemImage: "pencil.tip.crop.circle.badge.plus") { sheet = .newDrawing }
             }
         } label: {
@@ -136,7 +130,7 @@ private struct AttachmentsRow: View {
             }
             .foregroundStyle(palette.accent)
         }
-        .disabled(isImporting || owner.allowedKinds.allSatisfy { remaining($0) == 0 })
+        .disabled(isImporting)
         .accessibilityIdentifier("attachments.add")
     }
 
@@ -167,8 +161,8 @@ private struct AttachmentsRow: View {
         }
     }
 
-    private func remaining(_ kind: AttachmentKind) -> Int {
-        AttachmentLimits.remaining(kind, for: owner, existing: attachments.map(\.kind))
+    private func allows(_ kind: AttachmentKind) -> Bool {
+        AttachmentLimits.canAdd(kind, to: owner)
     }
 
     private func importPhotos(_ items: [PhotosPickerItem]) async {
@@ -184,10 +178,6 @@ private struct AttachmentsRow: View {
     }
 
     private func addPhoto(_ data: Data) async {
-        guard remaining(.photo) > 0 else {
-            problem = String(localized: "This already has the most photos it can hold.")
-            return
-        }
         let prepared = await Task.detached { AttachmentMedia.preparedPhoto(from: data) }.value
         guard let prepared else {
             problem = String(localized: "That photo couldn't be added.")
@@ -204,8 +194,8 @@ private struct AttachmentsRow: View {
             problem = String(localized: "That PDF couldn't be opened.")
             return
         }
-        guard data.count <= AttachmentLimits.maxPDFBytes else {
-            problem = String(localized: "PDFs can be up to 25 MB.")
+        guard AttachmentLimits.fits(byteCount: data.count, kind: .pdf) else {
+            problem = String(localized: "That file is too large to attach.")
             return
         }
         guard let pages = AttachmentMedia.pdfPageCount(data) else {
@@ -250,7 +240,7 @@ private struct AttachmentsRow: View {
         let added = store.addAttachment(id: id, kind: kind, to: owner, ownerID: ownerID, byteSize: byteSize, duration: duration, pageCount: pageCount, caption: caption)
         if added == nil {
             transfers.files.remove(fileName)
-            problem = String(localized: "This already has the most attachments of that kind it can hold.")
+            problem = String(localized: "That can't be attached here.")
         } else {
             problem = nil
         }

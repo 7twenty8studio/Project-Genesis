@@ -3,7 +3,7 @@ import Observation
 import os
 import SwiftData
 
-/// Moves attachment files between this device and cloud storage.
+/// Moves attachment files between this device and the person's iCloud.
 ///
 /// - Uploads queue after the attachment's row has been pushed (SyncService
 ///   calls `run` at the end of each sync) and retry with a growing wait
@@ -19,10 +19,14 @@ final class AttachmentTransfers {
     private(set) var downloading: Set<UUID> = []
     /// Attachments whose file couldn't be downloaded (not uploaded yet, or offline).
     private(set) var unavailable: Set<UUID> = []
+    /// Why files aren't syncing (iCloud off or full), until a transfer works.
+    private(set) var problem: AttachmentStorageError?
 
     @ObservationIgnored let files: AttachmentFiles
     @ObservationIgnored private let storage: any AttachmentStorage
     @ObservationIgnored private let defaults: UserDefaults
+    /// Files an earlier version kept in the Supabase bucket go up again, to iCloud.
+    @ObservationIgnored private let movesEarlierFiles: Bool
     @ObservationIgnored private var queue: AttachmentTransferQueue
     @ObservationIgnored private var isRunning = false
     @ObservationIgnored private var retry: Task<Void, Never>?
@@ -35,12 +39,14 @@ final class AttachmentTransfers {
     static weak var app: AttachmentTransfers?
 
     private static let queueKey = "attachments.transferQueue"
+    private static let movedKey = "attachments.movedToICloud"
     private static let log = Logger(subsystem: "com.7twenty8studio.genesis", category: "attachments")
 
-    init(files: AttachmentFiles, storage: any AttachmentStorage, defaults: UserDefaults = .standard) {
+    init(files: AttachmentFiles, storage: any AttachmentStorage, defaults: UserDefaults = .standard, movesEarlierFiles: Bool = false) {
         self.files = files
         self.storage = storage
         self.defaults = defaults
+        self.movesEarlierFiles = movesEarlierFiles
         let saved = defaults.data(forKey: Self.queueKey).flatMap { try? JSONDecoder().decode(AttachmentTransferQueue.self, from: $0) }
         queue = saved ?? AttachmentTransferQueue()
     }
@@ -69,6 +75,17 @@ final class AttachmentTransfers {
         saveQueue()
         downloading = []
         unavailable = []
+        problem = nil
+    }
+
+    /// Deleting the account: every file it kept in iCloud. Best effort.
+    func deleteCloudFiles(userID: UUID) async {
+        do {
+            try await storage.removeAll(userID: userID)
+        } catch {
+            let reason = error.localizedDescription
+            Self.log.notice("Attachment files couldn't be deleted from iCloud: \(reason, privacy: .public)")
+        }
     }
 
     // MARK: Downloads
@@ -88,6 +105,7 @@ final class AttachmentTransfers {
             unavailable.remove(id)
         } catch {
             unavailable.insert(id)
+            note(error)
             let reason = error.localizedDescription
             Self.log.notice("Attachment \(id.uuidString, privacy: .public) couldn't be downloaded: \(reason, privacy: .public)")
         }
@@ -101,6 +119,7 @@ final class AttachmentTransfers {
         guard !isRunning, let user = userID() else { return }
         isRunning = true
         defer { isRunning = false }
+        if movesEarlierFiles { queueEarlierFiles(context: context) }
         let waiting = (try? context.fetch(FetchDescriptor<Attachment>(predicate: #Predicate { $0.needsUpload == true }))) ?? []
         for attachment in waiting { queue.enqueue(.upload(attachment.id), now: now) }
         for operation in queue.due(at: now) {
@@ -119,8 +138,10 @@ final class AttachmentTransfers {
                 try await storage.remove(paths: [AttachmentPaths.storagePath(userID: user, fileName: fileName)])
             }
             queue.succeeded(operation)
+            problem = nil
         } catch {
             queue.failed(operation, at: now)
+            note(error)
             let attempts = queue.attempts(for: operation)
             let reason = error.localizedDescription
             Self.log.notice("Attachment transfer failed (attempt \(attempts)): \(reason, privacy: .public)")
@@ -131,8 +152,10 @@ final class AttachmentTransfers {
         let key = id
         var descriptor = FetchDescriptor<Attachment>(predicate: #Predicate { $0.id == key })
         descriptor.fetchLimit = 1
-        // Deleted since it was queued, or its file never came to this device: nothing to send.
-        guard let attachment = try context.fetch(descriptor).first, attachment.needsUpload, files.exists(attachment.fileName) else { return }
+        // Deleted since it was queued, or its file never came to this device:
+        // nothing to send.
+        guard let attachment = try context.fetch(descriptor).first, attachment.needsUpload,
+              files.exists(attachment.fileName) else { return }
         let fileName = attachment.fileName
         let contentType = attachment.kind.contentType
         let store = files
@@ -141,6 +164,30 @@ final class AttachmentTransfers {
         // Local bookkeeping only: no edit time change and no sync notification.
         attachment.needsUpload = false
         try context.save()
+    }
+
+    /// Once: every file on this device goes up to iCloud (they were in the
+    /// Supabase bucket, or recordings that stayed on the device), and the
+    /// upload removes the bucket's copy.
+    private func queueEarlierFiles(context: ModelContext) {
+        guard !defaults.bool(forKey: Self.movedKey) else { return }
+        let all = (try? context.fetch(FetchDescriptor<Attachment>())) ?? []
+        for attachment in all where !attachment.needsUpload && files.exists(attachment.fileName) {
+            attachment.needsUpload = true
+        }
+        do {
+            try context.save()
+            defaults.set(true, forKey: Self.movedKey)
+        } catch {
+            CrashReporter.record(error, context: "Attachments.queueEarlierFiles")
+        }
+    }
+
+    /// Remembers why iCloud refused (shown under attachments).
+    private func note(_ error: any Error) {
+        if let error = error as? AttachmentStorageError, error == .iCloudUnavailable || error == .iCloudFull {
+            problem = error
+        }
     }
 
     private func scheduleRetry(now: Date) {

@@ -108,7 +108,7 @@ struct MemoriseChallengeSections: View {
             Section {
                 MemoriseChallengePractice(challenge: challenge)
             } header: {
-                Text("Practise")
+                Text("Practice")
             }
         }
     }
@@ -169,7 +169,7 @@ private struct MemoriseChallengePractice: View {
             Button {
                 _ = addToMemorise()
             } label: {
-                Label(isInMemorise ? "In Your Memorise List" : "Add to Memorise", systemImage: isInMemorise ? "checkmark" : "plus.circle")
+                Label(isInMemorise ? "In Your Memorize List" : "Add to Memorize", systemImage: isInMemorise ? "checkmark" : "plus.circle")
             }
             .buttonStyle(.borderless)
             .disabled(isInMemorise)
@@ -194,7 +194,7 @@ private struct MemoriseChallengePractice: View {
                 }
             }
         } else {
-            PremiumTeaser(message: String(localized: "Practise this passage with Memorise's flashcards and games, part of Premium."), feature: .memorise)
+            PremiumTeaser(message: String(localized: "Practice this passage with Memorize's flashcards and games, part of Premium."), feature: .memorise)
                 .listRowInsets(EdgeInsets())
                 .listRowBackground(Color.clear)
         }

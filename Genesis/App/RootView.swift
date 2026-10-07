@@ -1,4 +1,5 @@
 import Combine
+import SwiftData
 import SwiftUI
 
 /// Chooses onboarding or the main app, and applies the paper theme everywhere.
@@ -20,6 +21,8 @@ struct RootView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
     @State private var showsWelcome = false
+    /// True once night reading follows the system's Dark Mode.
+    @State private var followsSystemAppearance = false
     /// The Prayer Journal switch as last seen, so its reminders pause and resume with it.
     @State private var prayerSwitch: Bool?
     @Environment(\.scenePhase) private var scenePhase
@@ -69,6 +72,12 @@ struct RootView: View {
             router.handle(url)
         }
         .task {
+            followSystemAppearance()
+            // Prayers live only in the Prayer Journal now.
+            let bible = library.current
+            StudyStore(context: modelContext).movePrayerNotesToJournal { chapter in
+                (try? bible.chapter(chapter))?.verses.last?.id.verse
+            }
             entitlements.start()
             sync.start()
             Task { await flags.refresh() }
@@ -106,6 +115,7 @@ struct RootView: View {
             switch phase {
             case .active:
                 settings.nightClock = .now
+                followSystemAppearance()
                 sync.schedule(after: .zero)
                 Task { await refreshGrant() }
                 audio.liveActivity.appBecameActive()
@@ -148,13 +158,42 @@ struct RootView: View {
         settings.preferences.theme = .automatic
     }
 
+    /// Night reading "With Dark Mode" follows the system's appearance. The
+    /// app's own colour scheme is pinned by the reading theme, and that pin
+    /// reaches the scene and its windows, so `colorScheme` can't tell.
+    private func followSystemAppearance() {
+        guard let scene = UIApplication.shared.connectedScenes.compactMap({ $0 as? UIWindowScene }).first else { return }
+        Self.readSystemAppearance(scene, into: settings)
+        guard !followsSystemAppearance else { return }
+        followsSystemAppearance = true
+        let settings = settings
+        scene.registerForTraitChanges([UITraitUserInterfaceStyle.self]) { (scene: UIWindowScene, _: UITraitCollection) in
+            MainActor.assumeIsolated { Self.readSystemAppearance(scene, into: settings) }
+        }
+    }
+
+    /// The screen's appearance is the system's: the app's pinned colour
+    /// scheme never overrides it. Set only on a change, so nothing redraws.
+    private static func readSystemAppearance(_ scene: UIWindowScene, into settings: ReaderSettings) {
+        let dark = scene.screen.traitCollection.userInterfaceStyle == .dark
+        if settings.systemIsDark != dark { settings.systemIsDark = dark }
+    }
+
     /// Moves the night-reading clock on at each edge of the night window
     /// (8 pm and 6 am by default), so the theme changes on time without
-    /// redrawing every minute.
+    /// redrawing every minute. With Dark Mode, looks at the system's
+    /// appearance now and then instead: Dark Mode can come on by itself (at
+    /// sunset) while Genesis is open, and the pinned scheme hides that.
     private func followNightReading() async {
         while !Task.isCancelled {
+            let schedule = settings.preferences.nightReading
+            if schedule.theme != .off, schedule.timing == .darkMode {
+                followSystemAppearance()
+                try? await Task.sleep(for: .seconds(15))
+                continue
+            }
             settings.nightClock = .now
-            guard let next = NightReading.nextChange(after: .now, schedule: settings.preferences.nightReading, calendar: .current) else { return }
+            guard let next = NightReading.nextChange(after: .now, schedule: schedule, calendar: .current) else { return }
             try? await Task.sleep(for: .seconds(max(1, next.timeIntervalSinceNow + 1)))
         }
     }

@@ -63,10 +63,10 @@ enum AttachmentKind: String, Codable, CaseIterable, Sendable {
 /// (Premium, `.journalExtras`).
 ///
 /// The file itself lives in Application Support/Attachments (`AttachmentFiles`),
-/// never in SwiftData: it can be missing until it's downloaded, players and
-/// viewers need a file URL, and a 25 MB PDF doesn't belong in the store.
-/// Metadata syncs as public.attachments; the file goes to the private
-/// `attachments` storage bucket (`AttachmentTransfers`).
+/// never in SwiftData: it can be missing until it's downloaded, and players
+/// and viewers need a file URL.
+/// Metadata syncs as public.attachments; the file goes to the person's own
+/// iCloud (`ICloudAttachmentStorage`, through `AttachmentTransfers`).
 @Model
 final class Attachment {
     @Attribute(.unique) var id: UUID
@@ -101,37 +101,24 @@ final class Attachment {
     var fileName: String { AttachmentPaths.fileName(id: id, kind: kind) }
 }
 
-/// Size and count rules for attachments.
+/// Size rules for attachments. There's no count limit: files live on the
+/// person's device and in their own iCloud, not in Genesis's storage.
 enum AttachmentLimits {
-    /// Photos are downscaled so the longer side is at most this many pixels.
-    static let maxPhotoPixels = 2048
-    static let jpegQuality: CGFloat = 0.75
-    /// Voice recordings: AAC, mono, 64 kbps, at most two hours.
-    static let audioBitRate = 64_000
-    static let audioSampleRate = 44_100.0
-    static let maxAudioDuration: TimeInterval = 2 * 60 * 60
-    /// The storage bucket's limit, too.
-    static let maxFileBytes = 25 * 1024 * 1024
-    static let maxPDFBytes = maxFileBytes
+    /// Photos are downscaled so the longer side is at most this many pixels
+    /// (about 200–400 KB each), which keeps the person's iCloud and syncing light.
+    static let maxPhotoPixels = 1600
+    static let jpegQuality: CGFloat = 0.7
+    /// Voice recordings: AAC, mono, 32 kbps at 22.05 kHz (clear for speech,
+    /// about 14 MB an hour). The recorder stops itself after 4 hours, in
+    /// case it's left running.
+    static let audioBitRate = 32_000
+    static let audioSampleRate = 22_050.0
+    static let maxAudioDuration: TimeInterval = 4 * 60 * 60
+    /// One file at most; CloudKit takes assets up to 250 MB.
+    static let maxFileBytes = 250 * 1024 * 1024
 
-    /// The most of one kind a prayer or sermon holds; 0 when it can't hold any.
-    static func maximum(_ kind: AttachmentKind, for owner: AttachmentOwner) -> Int {
-        guard owner.allowedKinds.contains(kind) else { return 0 }
-        switch kind {
-        case .photo: return 10
-        case .audio: return 5
-        case .pdf: return 3
-        case .drawing: return 5
-        }
-    }
-
-    /// How many more of `kind` fit, given the kinds already attached.
-    static func remaining(_ kind: AttachmentKind, for owner: AttachmentOwner, existing: [AttachmentKind]) -> Int {
-        max(0, maximum(kind, for: owner) - existing.filter { $0 == kind }.count)
-    }
-
-    static func canAdd(_ kind: AttachmentKind, to owner: AttachmentOwner, existing: [AttachmentKind]) -> Bool {
-        remaining(kind, for: owner, existing: existing) > 0
+    static func canAdd(_ kind: AttachmentKind, to owner: AttachmentOwner) -> Bool {
+        owner.allowedKinds.contains(kind)
     }
 
     /// The pixel size a photo is stored at: the longer side at most
@@ -147,13 +134,14 @@ enum AttachmentLimits {
 
     /// True when a file of this size may be kept and synced.
     static func fits(byteCount: Int, kind: AttachmentKind) -> Bool {
-        byteCount > 0 && byteCount <= (kind == .pdf ? maxPDFBytes : maxFileBytes)
+        byteCount > 0 && byteCount <= maxFileBytes
     }
 }
 
 /// File names and cloud storage paths for attachments.
 enum AttachmentPaths {
-    /// The private storage bucket (20261014000000_attachments.sql).
+    /// The private storage bucket earlier versions used (20261014000000_attachments.sql);
+    /// files now go to iCloud, and ones left here move there.
     static let bucket = "attachments"
 
     /// "<attachment id>.<ext>", lowercased like the server's ids.

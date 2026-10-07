@@ -182,7 +182,7 @@ struct CommunityComposeView: View {
                         TextField("Passage (optional), e.g. Psalm 23", text: $referenceText)
                             .autocorrectionDisabled()
                         if !referenceText.isEmpty {
-                            Text(reference?.description ?? String(localized: "Not a passage Genesis recognises"))
+                            Text(reference?.description ?? String(localized: "Not a passage Genesis recognizes"))
                                 .font(.footnote)
                                 .foregroundStyle(reference == nil ? .orange : .secondary)
                         }

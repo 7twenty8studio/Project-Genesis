@@ -16,6 +16,8 @@ GENESIS_PRIVACY_URL =
 GENESIS_APP_ENTITLEMENTS =
 GENESIS_WIDGET_ENTITLEMENTS =
 GENESIS_WATCH_ENTITLEMENTS =
+// iCloud for attachment files; must match Config/Genesis.entitlements.
+GENESIS_ICLOUD_CONTAINER =
 
 #include? "Secrets.xcconfig"
 #include? "Signing.xcconfig"

@@ -69,20 +69,33 @@ struct GenesisApp: App {
         library.setDownloader(TranslationDownloader(client: testing.isEnabled ? nil : auth.client))
         _sync = State(initialValue: sync)
 
-        // Attachment files (Premium): the private storage bucket, or memory
-        // and a fresh folder in UI tests (no network).
+        // Attachment files (Premium): the person's own iCloud, moving any an
+        // earlier version left in the Supabase bucket; memory and a fresh
+        // folder in UI tests (no network). Builds without iCloud (no
+        // Config/Signing.xcconfig) keep files on the device.
         let attachmentStorage: any AttachmentStorage
+        var movesEarlierFiles = false
         if testing.isEnabled {
             attachmentStorage = InMemoryAttachmentStorage()
-        } else if let client = auth.client {
-            attachmentStorage = SupabaseAttachmentStorage(client: client, auth: auth)
         } else {
-            attachmentStorage = SignedOutAttachmentStorage()
+            let iCloud: any AttachmentStorage = ICloudAttachmentStorage.configuredContainer
+                .map { ICloudAttachmentStorage(containerIdentifier: $0) } ?? UnavailableAttachmentStorage()
+            movesEarlierFiles = ICloudAttachmentStorage.configuredContainer != nil
+            if let client = auth.client {
+                attachmentStorage = MovingAttachmentStorage(iCloud: iCloud, legacy: SupabaseAttachmentStorage(client: client, auth: auth))
+            } else {
+                attachmentStorage = iCloud
+            }
         }
-        let attachments = AttachmentTransfers(files: testing.isEnabled ? .temporary() : .standard, storage: attachmentStorage)
+        let attachments = AttachmentTransfers(
+            files: testing.isEnabled ? .temporary() : .standard,
+            storage: attachmentStorage,
+            movesEarlierFiles: movesEarlierFiles
+        )
         attachments.userID = { [weak auth] in auth?.user?.id }
         attachments.requestSync = { [weak sync] in sync?.schedule(after: .zero) }
         sync.attachmentTransfers = attachments
+        sync.lastVerse = { [weak library] chapter in (try? library?.current.chapter(chapter))?.verses.last?.id.verse }
         AttachmentTransfers.app = attachments
         _attachments = State(initialValue: attachments)
 

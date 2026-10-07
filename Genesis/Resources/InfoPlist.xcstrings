@@ -1,40 +1,64 @@
 {
-  "sourceLanguage": "en",
-  "strings": {
-    "NSCameraUsageDescription": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Genesis uses the camera only when you take a photo to add to a prayer or sermon notes."
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Genesis usa la cámara solo cuando tomas una foto para añadirla a una oración o a tus notas de un sermón."
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "Bundle display name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Genesis"
           }
         }
       }
     },
-    "NSMicrophoneUsageDescription": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Genesis uses the microphone only when you record a voice note for a prayer or sermon notes."
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Genesis"
+          }
+        }
+      }
+    },
+    "NSCameraUsageDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genesis uses the camera only when you take a photo to add to a prayer or sermon notes."
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Genesis usa el micrófono solo cuando grabas una nota de voz para una oración o tus notas de un sermón."
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genesis usa la cámara solo cuando tomas una foto para añadirla a una oración o a tus notas de un sermón."
+          }
+        }
+      }
+    },
+    "NSMicrophoneUsageDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genesis uses the microphone only when you record a voice note for a prayer or sermon notes."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genesis usa el micrófono solo cuando grabas una nota de voz para una oración o tus notas de un sermón."
           }
         }
       }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }

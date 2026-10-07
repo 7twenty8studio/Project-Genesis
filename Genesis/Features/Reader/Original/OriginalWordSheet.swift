@@ -10,6 +10,7 @@ struct OriginalWordSheet: View {
 
     @Environment(\.wordStudy) private var wordStudy
     @Environment(EntitlementService.self) private var entitlements
+    @Environment(BibleLibrary.self) private var library
     @Environment(\.palette) private var palette
     @Environment(\.dismiss) private var dismiss
     @State private var loaded: Loaded?
@@ -46,7 +47,12 @@ struct OriginalWordSheet: View {
                     }
                     Section {
                     } footer: {
-                        Text(WordStudyRepository.attribution)
+                        VStack(alignment: .leading, spacing: 6) {
+                            if WordStudyRepository.needsEnglishNote(bibleLanguage: library.currentTranslation.language) {
+                                Text("Word meanings and grammar are in English for now. More languages are coming soon.")
+                            }
+                            Text(WordStudyRepository.attribution)
+                        }
                     }
                 }
             }

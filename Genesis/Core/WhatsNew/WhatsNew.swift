@@ -27,7 +27,39 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal]
+
+    static let readAlongOriginal = WhatsNewAnnouncement(
+        id: "parallel-follow-along-original-only",
+        title: String(localized: "Read along, side by side"),
+        items: [
+            WhatsNewItem(
+                systemImage: "text.line.first.and.arrowtriangle.forward",
+                title: String(localized: "Follow along in parallel"),
+                detail: String(localized: "While you listen, the verse being read is marked and kept on screen in Read in Parallel too.")
+            ),
+            WhatsNewItem(
+                systemImage: "character.book.closed",
+                title: String(localized: "Hebrew or Greek only"),
+                detail: String(localized: "In Original (Hebrew & Greek), tap Hebrew Only or Greek Only to read the original by itself. With Premium.")
+            ),
+            WhatsNewItem(
+                systemImage: "hands.and.sparkles",
+                title: String(localized: "Prayers in one place"),
+                detail: String(localized: "Prayer notes have moved into the Prayer Journal, with their passages and dates.")
+            ),
+            WhatsNewItem(
+                systemImage: "character.magnify",
+                title: String(localized: "Word Study in the Reina-Valera"),
+                detail: String(localized: "Select a verse in the Reina-Valera 1909 and tap Word Study to see the Hebrew or Greek behind it.")
+            ),
+            WhatsNewItem(
+                systemImage: "icloud",
+                title: String(localized: "Attachments in your iCloud"),
+                detail: String(localized: "Photos, recordings, PDFs and Pencil pages are saved on your device, then synced through your own private iCloud. Add as many as you like.")
+            ),
+        ]
+    )
 
     static let journalExtras = WhatsNewAnnouncement(
         id: "journal-photos-voice-pdfs-templates",
@@ -36,12 +68,12 @@ enum WhatsNewCatalog {
             WhatsNewItem(
                 systemImage: "photo.on.rectangle",
                 title: String(localized: "Photos and voice recordings"),
-                detail: String(localized: "Add photos and voice notes to a prayer or a sermon, and they sync to your other devices.")
+                detail: String(localized: "Add photos and voice recordings to a prayer or a sermon; they sync to your other devices through your iCloud.")
             ),
             WhatsNewItem(
-                systemImage: "doc.richtext",
-                title: String(localized: "Your church's PDFs and Pencil pages"),
-                detail: String(localized: "Bring the bulletin or sermon slides into your notes, or sketch with Apple Pencil.")
+                systemImage: "pencil.tip.crop.circle",
+                title: String(localized: "Pencil pages"),
+                detail: String(localized: "Sketch your sermon notes with Apple Pencil.")
             ),
             WhatsNewItem(
                 systemImage: "doc.text",
@@ -114,7 +146,7 @@ enum WhatsNewCatalog {
             WhatsNewItem(
                 systemImage: "square.grid.2x2",
                 title: String(localized: "Switch off anything you don't use"),
-                detail: String(localized: "Every extra, from Memorise to Hebrew & Greek, now has its own switch in Settings › Features.")
+                detail: String(localized: "Every extra, from Memorize to Hebrew & Greek, now has its own switch in Settings › Features.")
             ),
         ],
         feature: .prayer
@@ -162,7 +194,7 @@ enum WhatsNewCatalog {
         items: [
             WhatsNewItem(
                 systemImage: "gamecontroller",
-                title: String(localized: "Memorise, now with games"),
+                title: String(localized: "Memorize, now with games"),
                 detail: String(localized: "Fill the gaps, put the words in order, or try a one-minute speed round, and grow from Seed to Cedar.")
             ),
             WhatsNewItem(
@@ -270,7 +302,7 @@ enum WhatsNewCatalog {
             WhatsNewItem(
                 systemImage: "photo.on.rectangle",
                 title: String(localized: "More ways to make verse images"),
-                detail: String(localized: "Choose the font, colour, size and alignment, or put the verse on one of your own photos.")
+                detail: String(localized: "Choose the font, color, size and alignment, or put the verse on one of your own photos.")
             ),
             WhatsNewItem(
                 systemImage: "textformat",
@@ -304,17 +336,17 @@ enum WhatsNewCatalog {
 
     static let memorise = WhatsNewAnnouncement(
         id: "memorise-scripture",
-        title: String(localized: "Memorise Scripture"),
+        title: String(localized: "Memorize Scripture"),
         items: [
             WhatsNewItem(
                 systemImage: "brain.head.profile",
                 title: String(localized: "Learn verses by heart"),
-                detail: String(localized: "With Premium, select verses and tap Memorise. Flashcards bring each one back just before you'd forget it. Find them on Home.")
+                detail: String(localized: "With Premium, select verses and tap Memorize. Flashcards bring each one back just before you'd forget it. Find them on Home.")
             ),
             WhatsNewItem(
                 systemImage: "square.text.square",
-                title: String(localized: "A Memorise widget"),
-                detail: String(localized: "Add the Memorise widget to your Home Screen or Lock Screen to recall a verse at a glance.")
+                title: String(localized: "A Memorize widget"),
+                detail: String(localized: "Add the Memorize widget to your Home Screen or Lock Screen to recall a verse at a glance.")
             ),
         ],
         feature: .memorise

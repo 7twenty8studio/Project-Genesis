@@ -39,7 +39,15 @@ final class MorningWelcome {
         self.defaults = defaults
         isOn = defaults.object(forKey: Keys.isOn) as? Bool ?? true
         name = defaults.string(forKey: Keys.name) ?? ""
-        playsSounds = defaults.object(forKey: Keys.playsSounds) as? Bool ?? true
+        // Off until the person turns it on. Someone already greeted before
+        // this default changed keeps the sounds they've been hearing. Saved
+        // straight away, as setup marks today as greeted.
+        if let saved = defaults.object(forKey: Keys.playsSounds) as? Bool {
+            playsSounds = saved
+        } else {
+            playsSounds = defaults.string(forKey: Keys.lastShown) != nil
+            defaults.set(playsSounds, forKey: Keys.playsSounds)
+        }
     }
 
     /// True the first time today the app opens for a Premium member who has it on.

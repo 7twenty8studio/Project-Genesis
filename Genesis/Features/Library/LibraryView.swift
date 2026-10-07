@@ -110,7 +110,7 @@ private struct HighlightsList: View {
                     QuietEmptyState(
                         systemImage: "highlighter",
                         title: highlights.isEmpty ? String(localized: "No highlights yet") : String(localized: "Nothing matches"),
-                        message: highlights.isEmpty ? String(localized: "In the reader, long-press a verse and pick a colour.") : String(localized: "Try a different colour or collection.")
+                        message: highlights.isEmpty ? String(localized: "In the reader, long-press a verse and pick a color.") : String(localized: "Try a different color or collection.")
                     )
                     .listRowBackground(Color.clear)
                 }
@@ -127,7 +127,7 @@ private struct HighlightsList: View {
                     }
                     .listRowBackground(palette.surface)
                     .contextMenu {
-                        Menu("Colour") {
+                        Menu("Color") {
                             ForEach(HighlightColor.allCases) { color in
                                 Button(color.title) {
                                     StudyStore(context: modelContext).highlight([highlight.verse], color: color)
@@ -238,6 +238,7 @@ private struct NotesList: View {
     @State private var editing: Note?
     @State private var premium: PremiumFeature?
     @Environment(EntitlementService.self) private var entitlements
+    @Environment(FeaturePreferences.self) private var features
 
     private var filtered: [Note] {
         guard let kindFilter else { return notes }
@@ -255,6 +256,22 @@ private struct NotesList: View {
                     .pickerStyle(.segmented)
                 }
                 .listRowBackground(Color.clear)
+
+                // Prayers aren't notes: they're kept in the Prayer Journal.
+                if features.isOn(.prayer) {
+                    SwiftUI.Section {
+                        NavigationLink {
+                            PrayerJournalView()
+                        } label: {
+                            Label("Prayer Journal", systemImage: "hands.and.sparkles")
+                                .foregroundStyle(palette.text)
+                        }
+                        .listRowBackground(palette.surface)
+                        .accessibilityIdentifier("library.prayerJournal")
+                    } footer: {
+                        Text("Your prayers are kept in the Prayer Journal.")
+                    }
+                }
 
                 if filtered.isEmpty {
                     QuietEmptyState(

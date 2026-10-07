@@ -97,7 +97,7 @@ struct VoiceRecorderSheet: View {
                 .font(.footnote)
                 .foregroundStyle(.orange)
         default:
-            Text("Up to two hours. Recordings stay private to you.")
+            Text("Saved on this device first, then copied to your private iCloud so it's on your other devices.")
                 .font(.footnote)
                 .foregroundStyle(palette.secondaryText)
         }

@@ -28,6 +28,8 @@ struct OriginalParallelView: View {
     @Environment(EntitlementService.self) private var entitlements
     @Environment(\.palette) private var palette
     @AppStorage("reader.original.interlinear") private var interlinear = false
+    /// Only the Hebrew or Greek, without the translation beside it.
+    @AppStorage("reader.original.only") private var originalOnly = false
 
     @State private var rows: [OriginalParallelRow] = []
     @State private var picked: OriginalWord?
@@ -47,7 +49,8 @@ struct OriginalParallelView: View {
                         greek: greek,
                         sideBySide: sideBySide,
                         marksEditions: rows.contains { row in row.words.contains(where: \.isNotInComparison) },
-                        interlinear: $interlinear
+                        interlinear: $interlinear,
+                        originalOnly: $originalOnly
                     )
                     ForEach(Array(rows.enumerated()), id: \.element.id) { index, row in
                         OriginalVerseRow(
@@ -56,14 +59,18 @@ struct OriginalParallelView: View {
                             language: language,
                             sideBySide: sideBySide,
                             interlinear: interlinear,
+                            originalOnly: originalOnly,
                             onWord: { picked = $0 }
                         )
+                        .modifier(PlayingVerseMark(isPlaying: row.verse == reader.playingVerse))
+                        .id(row.number)
                         if !unlocked && index == OriginalParallel.previewVerses - 1 {
                             PremiumTeaser(message: String(localized: "Read the Hebrew and Greek beside every verse, word by word, with Premium."), feature: .wordStudy)
                         }
                     }
                     footer
                 }
+                .scrollTargetLayout()
                 .padding(.horizontal, sideBySide ? 32 : 22)
                 .padding(.top, topInset)
                 .padding(.bottom, bottomInset + 40)
@@ -71,6 +78,7 @@ struct OriginalParallelView: View {
                 .frame(maxWidth: .infinity)
             }
             .scrollIndicators(.hidden)
+            .modifier(ParallelFollowAlong(playingRow: playingRow, rowCount: rows.count))
             .contentShape(Rectangle())
             .onTapGesture { reader.toggleControls() }
         }
@@ -79,6 +87,12 @@ struct OriginalParallelView: View {
         .sheet(item: $picked) { word in
             OriginalWordSheet(word: word)
         }
+    }
+
+    /// The verse being read aloud in this chapter (follow-along on).
+    private var playingRow: Int? {
+        guard let playing = reader.playingVerse, playing.chapterID == chapterID else { return nil }
+        return rows.first { $0.verse == playing }?.number
     }
 
     private var footer: some View {

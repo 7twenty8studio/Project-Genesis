@@ -102,7 +102,7 @@ struct MemoriseView: View {
             }
         }
         .themedScreen()
-        .navigationTitle("Memorise")
+        .navigationTitle("Memorize")
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button("Add Verse", systemImage: "plus") {
@@ -148,7 +148,7 @@ struct MemoriseView: View {
                         .foregroundStyle(palette.text)
                         .accessibilityIdentifier("memorise.dueCount")
                     let memorised = verses.filter { $0.mastery == .memorised }.count
-                    Text("\(verses.count) verses · \(memorised) memorised")
+                    Text("\(verses.count) verses · \(memorised) memorized")
                         .font(.subheadline)
                         .foregroundStyle(palette.secondaryText)
                 }
@@ -246,7 +246,7 @@ private struct MemoryRow: View {
     }
 
     private var dueText: String {
-        if verse.isDue() { return String(localized: "Due", comment: "Memorise: ready to review now") }
+        if verse.isDue() { return String(localized: "Due", comment: "Memorize: ready to review now") }
         return verse.dueAt.formatted(.relative(presentation: .named))
     }
 }

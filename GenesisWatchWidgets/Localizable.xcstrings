@@ -1,57 +1,62 @@
 {
-  "sourceLanguage": "en",
-  "strings": {
-    "A new verse each morning, from Genesis on your iPhone.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Un versículo nuevo cada mañana, desde Genesis en tu iPhone."
+  "sourceLanguage" : "en",
+  "strings" : {
+    "A new verse each morning, from Genesis on your iPhone." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un versículo nuevo cada mañana, desde Genesis en tu iPhone."
           }
         }
       }
     },
-    "Open Genesis on your iPhone.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Abre Genesis en tu iPhone."
+    "Open Genesis on your iPhone." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre Genesis en tu iPhone."
           }
         }
       }
     },
-    "Part of Genesis Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Parte de Genesis Premium."
+    "Part of Genesis Premium." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parte de Genesis Premium."
           }
         }
       }
     },
-    "Psalms 119:105": {
-      "comment": "Bible reference",
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Salmos 119:105"
+    "Psalms 119:105" : {
+      "comment" : "Bible reference",
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salmos 119:105"
           }
         }
       }
     },
-    "Verse of the Day": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Versículo del día"
+    "Verse of the Day" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versículo del día"
           }
         }
       }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }

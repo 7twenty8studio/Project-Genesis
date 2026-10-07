@@ -9,17 +9,17 @@ enum MemoryGameMode: String, CaseIterable, Identifiable, Sendable {
 
     var title: String {
         switch self {
-        case .fillGaps: String(localized: "Fill the Gaps", comment: "Memorise game")
-        case .wordOrder: String(localized: "Word Order", comment: "Memorise game")
-        case .speed: String(localized: "Speed Round", comment: "Memorise game")
+        case .fillGaps: String(localized: "Fill the Gaps", comment: "Memorize game")
+        case .wordOrder: String(localized: "Word Order", comment: "Memorize game")
+        case .speed: String(localized: "Speed Round", comment: "Memorize game")
         }
     }
 
     var subtitle: String {
         switch self {
-        case .fillGaps: String(localized: "Choose each missing word from the verse.", comment: "Memorise game: Fill the Gaps")
-        case .wordOrder: String(localized: "Tap the verse's words back into order.", comment: "Memorise game: Word Order")
-        case .speed: String(localized: "Recall as many verses as you can in one minute.", comment: "Memorise game: Speed Round")
+        case .fillGaps: String(localized: "Choose each missing word from the verse.", comment: "Memorize game: Fill the Gaps")
+        case .wordOrder: String(localized: "Tap the verse's words back into order.", comment: "Memorize game: Word Order")
+        case .speed: String(localized: "Recall as many verses as you can in one minute.", comment: "Memorize game: Speed Round")
         }
     }
 

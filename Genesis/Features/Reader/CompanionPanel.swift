@@ -54,6 +54,62 @@ struct CompanionPanel: View {
     }
 
     var body: some View {
+        // The picker sits above the panel, not in it, so it stays in the same
+        // place whichever panel shows (some have a navigation bar) and
+        // nothing scrolls underneath it.
+        VStack(spacing: 0) {
+            modePicker
+            panel
+        }
+        .onChange(of: modes) {
+            if !modes.contains(mode) { mode = .notes }
+        }
+    }
+
+    /// Seven panels don't fit a segmented control in 360 points, so a solid
+    /// button opens a menu of them. Its own label: the system picker's label
+    /// wraps ("Not / es") in a narrow panel.
+    private var modePicker: some View {
+        Menu {
+            Picker("Panel", selection: $mode) {
+                ForEach(modes) { Label($0.title, systemImage: $0.systemImage).tag($0) }
+            }
+        } label: {
+            HStack(spacing: 8) {
+                Image(systemName: mode.systemImage)
+                    .foregroundStyle(palette.accent)
+                    .frame(width: 22)
+                Text(mode.title)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(palette.text)
+                    .lineLimit(1)
+                Spacer(minLength: 0)
+                Image(systemName: "chevron.up.chevron.down")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(palette.secondaryText)
+            }
+            .padding(.horizontal, 14)
+            .frame(minHeight: 44)
+            .background(palette.background, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .strokeBorder(palette.separator, lineWidth: 1)
+            }
+            .contentShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("Panel, \(mode.title)")
+        .accessibilityIdentifier("companion.mode")
+        .padding(.horizontal, 12)
+        .padding(.top, 8)
+        .padding(.bottom, 8)
+        .background(palette.surface)
+        .overlay(alignment: .bottom) {
+            palette.separator.frame(height: 1)
+        }
+    }
+
+    private var panel: some View {
         NavigationStack {
             Group {
                 switch mode {
@@ -79,33 +135,6 @@ struct CompanionPanel: View {
             }
             .navigationDestination(for: HomeRoute.self) { route in
                 HomeRouteDestination(route: route)
-            }
-            .safeAreaInset(edge: .top) {
-                // Seven panels don't fit a segmented control in 360 points.
-                // A menu with its own label: the system picker's label wraps
-                // ("Not / es") in a narrow panel.
-                Menu {
-                    Picker("Panel", selection: $mode) {
-                        ForEach(modes) { Label($0.title, systemImage: $0.systemImage).tag($0) }
-                    }
-                } label: {
-                    HStack(spacing: 6) {
-                        Label(mode.title, systemImage: mode.systemImage)
-                            .lineLimit(1)
-                            .fixedSize()
-                        Image(systemName: "chevron.up.chevron.down")
-                            .font(.caption2.weight(.semibold))
-                    }
-                    .foregroundStyle(palette.accent)
-                }
-                .accessibilityLabel("Panel, \(mode.title)")
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal, 12)
-                .padding(.vertical, 6)
-                .accessibilityIdentifier("companion.mode")
-            }
-            .onChange(of: modes) {
-                if !modes.contains(mode) { mode = .notes }
             }
             // Plans and the prayer journal have their own toolbar buttons (New Prayer).
             .toolbar(mode == .plan || mode == .prayer ? .visible : .hidden, for: .navigationBar)

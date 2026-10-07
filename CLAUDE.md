@@ -112,9 +112,18 @@ shares; README.md has the architecture.
   edition but not in its `comparison` (TR/Byz vs Nestle-Aland, NA/WH vs TR;
   `OriginalWord.isNotInComparison`, from greek_words.found); the sheet
   shows the other edition's word there, if any. Spelling-only differences
-  aren't dotted. Free accounts see the first two verses of a chapter and a
+  aren't dotted. Hebrew Only / Greek Only (`reader.original.only`) hides the
+  translation column. Listening with follow-along marks and scrolls to the
+  verse in both parallel views (`ParallelFollowAlong`, `PlayingVerseMark`).
+  Free accounts see the first two verses of a chapter and a
   teaser. Hebrew uses the bundled Noto Serif Hebrew, Greek EB Garamond.
-  Word study elsewhere (VerseStudyView) reads the TR.
+  Word study elsewhere (VerseStudyView) reads the TR, through
+  `OriginalVersification` for the Reina-Valera (English Bibles share the
+  KJV's numbers); definitions and commentary stay English.
+  Glosses, definitions, grammar and commentary are English for now (more
+  languages planned): when the Bible or the app isn't English, the
+  Original header, the word sheet and VerseStudyView say so
+  (`WordStudyRepository.needsEnglishNote`).
 - Handwritten pages (free): `Note.drawing` (PencilKit data, external storage),
   synced as base64 in notes.drawing (≤ 2 MB; larger stays on the device).
   Journal entries offer `JournalPrompts`.
@@ -137,10 +146,14 @@ shares; README.md has the architecture.
   Night theme (free, warm dark page) and Starlight (Premium via
   `.premiumThemes`, night-blue paper with faint stars and, without Reduce
   Motion, a slow twinkle in the margins, `StarlightTwinkleView`).
-  `ReaderPreferences.nightReading` ("At night, switch to", start/end hour)
-  is decided by the pure `NightReading.theme(for:dayTheme:now:calendar:premium:)`;
+  `ReaderPreferences.nightReading` ("At night, switch to" Off/Night/Starlight,
+  and "When": `NightReadingTiming` `.darkMode` (default) or `.hours` with
+  start/end hour; schedules saved before `timing` existed keep `.hours`)
+  is decided by the pure `NightReading.theme(for:dayTheme:now:calendar:systemIsDark:premium:)`;
   `ReaderSettings.effectiveTheme(for:premium:)` resolves it for RootView and
-  the reader (`nightClock` is moved on at each window edge). Starlight
+  the reader (`nightClock` is moved on at each window edge; `systemIsDark`
+  comes from the window scene's traits, since the app's own colour scheme
+  is pinned by the theme). Starlight
   without Premium falls back to Night, keeping the choice. UI tests never
   switch unless launched with `-uiTestingNight` (then it's always night).
 - Widgets: only the verse widget is free, small, medium and on the Lock
@@ -204,7 +217,9 @@ shares; README.md has the architecture.
   AVAudioSession directly.
 - What's playing shows on every tab but the reader as a tab-bar accessory
   (`NowPlayingAccessory`, iOS 26.1+) that opens `NowPlayingSheet` with full
-  controls for both; the reader keeps its own listening and ambient bars.
+  controls for both; the reader keeps its own listening and ambient bars
+  (while both play, `AudioMiniPlayer` holds the ambient row,
+  `AmbientControlsRow`, so there's one player).
 - Groups and community: `CommunityBackend` (Supabase, `InMemoryCommunityBackend`
   in UI tests). The database enforces membership, leader-only actions, author
   names, the word filter and rate limits; keep it that way rather than trusting
@@ -267,6 +282,12 @@ shares; README.md has the architecture.
   `FreeLimits`): passages (`PrayerPassage`, verse ids only, synced as
   prayers.passages), timeline, search, a gentle `PrayerStreak` and
   `PrayerStatistics`.
+- Prayers live only in the journal: notes no longer offer a Prayer kind
+  (`NoteKind.allCases` leaves out `.prayer`, kept only to read old rows).
+  `StudyStore.movePrayerNotesToJournal` (RootView on launch, SyncService
+  after each pull) turns old prayer notes into `Prayer`s (id from
+  `PrayerNoteMove.prayerID`, so devices agree), handwritten ones into
+  journal notes, with tombstones for the notes.
 
 ## Sermon Companion
 - Free, no limits (no `PremiumFeature`, nothing in `FreeLimits`); its own
@@ -287,7 +308,7 @@ shares; README.md has the architecture.
   "Look Up a Verse" (`SermonLookup`, English or Spanish names) that inserts
   the reference and attaches the passage, the idle timer held through
   `ScreenAwakeKeeper` (always restored), and a one-time TipKit Focus tip.
-  Recording, photos, Pencil pages and PDFs are the Premium journal extras
+  Recording, photos and Pencil pages are the Premium journal extras
   below (AI for sermons is still for later).
 - Hidden features pause: Prayer Journal off removes pending prayer reminders
   (`PrayerReminders.follow`, from RootView) and resumes them when on;
@@ -308,30 +329,41 @@ shares; README.md has the architecture.
   Application Support/Attachments/"<id>.<ext>" (`AttachmentFiles`; a fresh
   temporary folder in UI tests), so a synced attachment can exist before its
   file is downloaded and players/PDFKit get file URLs.
-- Limits (`AttachmentLimits`): prayers hold photos (10) and recordings (5);
-  sermons also PDFs (3, ≤ 25 MB) and Pencil pages (5). Photos go through
-  `AttachmentMedia.preparedPhoto` (≤ 2048 px, JPEG 0.75, no metadata, so no
-  location); recordings AAC mono 64 kbps ≤ 2 h (`VoiceRecorder`); drawings
-  are `PKDrawing` data edited with the handwritten-notes page.
+- No count limits (files live on the person's device and in their own
+  iCloud, so they cost Genesis nothing): prayers hold photos and recordings;
+  sermons also PDFs and Pencil pages. One file ≤ 250 MB (CloudKit's asset
+  limit, `AttachmentLimits.maxFileBytes`). Photos go through
+  `AttachmentMedia.preparedPhoto` (≤ 1600 px, JPEG 0.7, no metadata, so no
+  location); recordings AAC mono 32 kbps, stopping itself after 4 hours
+  (`VoiceRecorder`); drawings are `PKDrawing` data edited with the
+  handwritten-notes page. The section footer and the recorder tell people
+  files are saved on the device first, then copied to their private iCloud.
 - Audio goes through `AudioSession` (`.recording`, `.voiceNote`), never
   AVAudioSession directly. Sermon recording shows the "Some churches ask…"
   reminder. Camera and microphone texts are `NS…UsageDescription` in
   project.yml; their Spanish is generated into
   Genesis/Resources/InfoPlist.xcstrings by build_catalogs.py (from es.json).
-- Files sync through the private storage bucket `attachments` at
-  "<user id lowercase>/<attachment id>.<ext>" (`AttachmentPaths`; bucket
-  policies allow only the person's own folder; 25 MB; JPEG, audio/mp4, PDF,
-  octet-stream for drawings). `AttachmentTransfers` (environment object,
-  `AttachmentStorage` = `SupabaseAttachmentStorage` with the person's token,
+- Files sync through the person's own iCloud, never Genesis's storage:
+  `ICloudAttachmentStorage` (CloudKit private database, container
+  iCloud.com.7twenty8studio.genesis from Info.plist `GenesisICloudContainer`,
+  set by Signing.xcconfig with the entitlement; one zone per account
+  "Attachments-<user id lowercase>", one `AttachmentFile` record per file
+  named "<attachment id>.<ext>" with the file as a CKAsset). Without the
+  container (unsigned builds) `UnavailableAttachmentStorage` keeps files on
+  the device. `MovingAttachmentStorage` wraps it with the old Supabase
+  bucket (`SupabaseAttachmentStorage`, read and emptied only): uploads go to
+  iCloud and remove any bucket copy, downloads fall back to the bucket and
+  move the file, and once per device (`attachments.movedToICloud`) every
+  local file is queued again. `AttachmentTransfers` (environment object,
   `InMemoryAttachmentStorage` in UI tests) uploads after SyncService pushes
   the rows, retrying with `AttachmentTransferQueue` (30 s doubling to 6 h,
-  saved in UserDefaults); downloads lazily when shown (placeholder meanwhile);
+  saved in UserDefaults), and shows iCloud off/full (`problem`) under
+  attachments; downloads lazily when shown (placeholder meanwhile);
   deleting an attachment (or its prayer/sermon, which soft-deletes its
   attachments with tombstones through StudyStore) removes the local file and
   queues removal of the stored one. Pulled deletions remove the local file.
-  The server doesn't check Premium for uploads (App Store subscriptions are
-  only verified inside study-ai); the delete-account function empties the
-  person's folder before deleting the account.
+  Deleting the account deletes its iCloud zone (`deleteCloudFiles`); the
+  delete-account function empties any bucket folder left.
 - Templates (`JournalTemplate`): prayer (ACTS, gratitude, praying for
   others, lament, morning offering; plain headings) and sermon (main points,
   Scripture/Observation/Application, questions, outline; Markdown). The
@@ -361,6 +393,10 @@ shares; README.md has the architecture.
   or mismatched %@/%lld). One sentence per string; no English fragments glued
   together. On the Mac, `./Scripts/localization_check.sh` lists anything Xcode
   sees without Spanish.
+- English text uses American spelling (Memorize, color, favorite, center).
+  Code names keep the old spelling (`.memorise`, `Memorise*` types,
+  accessibility ids, defaults keys, What's New ids, the "Memorise" widget
+  kind): renaming those would break saved settings and installed widgets.
 - People choose the language in the iPhone's Settings (Settings › Language in
   Genesis opens it). `AppLanguage.code` is "en" or "es".
 - `BibleBook.name` follows the app's language (`englishName` is fixed);

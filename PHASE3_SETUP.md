@@ -108,6 +108,24 @@ Photos, voice recordings, PDFs and Pencil pages on prayers and sermon notes
 2. Redeploy account deletion so it also empties the person's folder:
    `supabase functions deploy delete-account`.
 
+Attachment files now sync through each person's own iCloud (CloudKit), so
+they cost Genesis nothing to store; the bucket only holds files from earlier
+versions, which the app moves to iCloud and removes. The table above still
+syncs the attachment details.
+
+3. iCloud: Config/Signing.xcconfig needs
+   `GENESIS_ICLOUD_CONTAINER = iCloud.com.7twenty8studio.genesis` (see
+   Signing.example.xcconfig); Config/Genesis.entitlements already lists the
+   container and CloudKit. In Xcode › Genesis target › Signing & Capabilities,
+   check that iCloud shows CloudKit with that container ticked (Xcode
+   registers it on your team the first time; or add it at
+   developer.apple.com › Identifiers › iCloud Containers).
+4. Run the app once signed in to iCloud and add a photo to a prayer: the
+   record type `AttachmentFile` and its zone are created in the Development
+   environment. Then CloudKit Console (icloud.developer.apple.com) › the
+   container › Schema › Deploy Schema Changes… to Production before the
+   TestFlight/App Store build.
+
 The bucket doesn't check Premium itself (App Store subscriptions are verified
 only inside `study-ai`); the app offers attachments only with Premium.
 
