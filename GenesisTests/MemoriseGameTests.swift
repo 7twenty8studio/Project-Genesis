@@ -36,7 +36,8 @@ struct MemoriseGameTests {
 
         let dash = VerseWords(samples[3]).tokens
         #expect(dash.map(\.text) == ["And", "he", "said \u{2014}", "Behold,", "I", "come."], "A lone dash joins the word before it")
-        #expect(dash.allSatisfy(\.hasLetters))
+        let dashWords = dash.allSatisfy(\.hasLetters)
+        #expect(dashWords)
 
         let opening = VerseWords(samples[4]).tokens
         #expect(opening.first?.text == "\u{2014} The", "A dash before the first word joins it")
@@ -98,7 +99,8 @@ struct MemoriseGameTests {
                     #expect(gaps.count <= count)
                     #expect(Set(gaps).count == gaps.count)
                     #expect(gaps == gaps.sorted())
-                    #expect(gaps.allSatisfy { tokens[$0].hasLetters })
+                    let allWords = gaps.allSatisfy { tokens[$0].hasLetters }
+                    #expect(allWords)
                 }
             }
         }
@@ -126,10 +128,15 @@ struct MemoriseGameTests {
                 let choices = MemoryGame.choices(for: answer, among: tokens, extra: extra, seed: seed &+ UInt64(index))
                 #expect(choices.contains(answer.core))
                 #expect(choices.count <= MemoryGame.choiceCount)
-                #expect(choices.allSatisfy { realWords.contains($0) }, "Only the verses' own words")
-                #expect(choices.allSatisfy { passage.contains($0) || nearby.contains($0) })
-                #expect(choices.filter { MemoryGame.matches($0, answer) }.count == 1, "Exactly one right answer")
-                #expect(Set(choices.map(MemoryGame.key)).count == choices.count)
+                // Closures stay outside #expect so its expansion stays simple.
+                let onlyRealWords = choices.allSatisfy { realWords.contains($0) }
+                let fromTheVerses = choices.allSatisfy { passage.contains($0) || nearby.contains($0) }
+                let rightAnswers = choices.filter { MemoryGame.matches($0, answer) }.count
+                #expect(onlyRealWords, "Only the verses' own words")
+                #expect(fromTheVerses)
+                #expect(rightAnswers == 1, "Exactly one right answer")
+                let keys = Set(choices.map(MemoryGame.key))
+                #expect(keys.count == choices.count)
             }
         }
         // A two-word verse with nothing nearby still works.

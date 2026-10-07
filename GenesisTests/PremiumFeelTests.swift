@@ -113,17 +113,21 @@ struct PremiumFeelTests {
 
     @Test func readingWeeksCoverEveryDayOfTheYear() {
         let weeks = YearInReview.readingWeeks(year: 2026, readingDays: ["2026-01-01", "2026-12-31", "2025-12-31"], calendar: calendar)
-        #expect(weeks.allSatisfy { $0.count == 7 })
+        let fullWeeks = weeks.allSatisfy { $0.count == 7 }
+        #expect(fullWeeks)
         let days = weeks.flatMap { $0 }.compactMap { $0 }
         #expect(days.count == 365)
-        #expect(days.filter { $0 }.count == 2, "Only this year's days are filled")
+        let filled = days.filter { $0 }.count
+        #expect(filled == 2, "Only this year's days are filled")
         #expect(days.first == true)
         #expect(days.last == true)
         // 1 January 2026 is a Thursday: four empty cells before it (weeks start on Sunday).
-        #expect(weeks[0].prefix(4).allSatisfy { $0 == nil })
+        let leadingBlanks = weeks[0].prefix(4).allSatisfy { $0 == nil }
+        #expect(leadingBlanks)
 
         let leap = YearInReview.readingWeeks(year: 2028, readingDays: [], calendar: calendar)
-        #expect(leap.flatMap { $0 }.compactMap { $0 }.count == 366)
+        let leapDays = leap.flatMap { $0 }.compactMap { $0 }.count
+        #expect(leapDays == 366)
     }
 
     @Test func bookSharesFollowTheCanon() {

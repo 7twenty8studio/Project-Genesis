@@ -120,7 +120,8 @@ struct PremiumLookTests {
         for font in ReaderFont.allCases where !font.isPremium {
             #expect(free.allows(font))
         }
-        #expect(ReaderFont.allCases.filter(\.isPremium).count == 3)
+        let premiumFonts = ReaderFont.allCases.filter(\.isPremium).count
+        #expect(premiumFonts == 3)
     }
 
     // MARK: App icons
