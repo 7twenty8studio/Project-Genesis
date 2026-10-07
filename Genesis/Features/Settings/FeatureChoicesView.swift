@@ -25,7 +25,7 @@ struct FeatureChoicesView: View {
                 .padding(.top, 40)
 
                 VStack(spacing: 12) {
-                    ForEach(FeaturePreferences.offered(flags: flags)) { feature in
+                    ForEach(FeaturePreferences.offeredInSetup(flags: flags)) { feature in
                         FeatureToggleCard(feature: feature, isOn: Binding(
                             get: { chosen.contains(feature) },
                             set: { on in if on { chosen.insert(feature) } else { chosen.remove(feature) } }
@@ -69,21 +69,38 @@ struct FeatureToggleCard: View {
     let feature: OptionalFeature
     @Binding var isOn: Bool
 
+    var body: some View {
+        FeatureSwitchCard(title: feature.title, detail: feature.detail, systemImage: feature.systemImage, isOn: $isOn)
+            .accessibilityIdentifier("features.toggle.\(feature.rawValue)")
+    }
+}
+
+/// A switch with an icon, a title and a short description.
+struct FeatureSwitchCard: View {
+    let title: String
+    let detail: String
+    let systemImage: String
+    @Binding var isOn: Bool
+    var isPremium = false
+
     @Environment(\.palette) private var palette
 
     var body: some View {
         Toggle(isOn: $isOn) {
             HStack(alignment: .top, spacing: 14) {
-                Image(systemName: feature.systemImage)
+                Image(systemName: systemImage)
                     .font(.title3)
                     .foregroundStyle(palette.accent)
                     .frame(width: 30)
                     .accessibilityHidden(true)
                 VStack(alignment: .leading, spacing: 3) {
-                    Text(feature.title)
-                        .font(.headline)
-                        .foregroundStyle(palette.text)
-                    Text(feature.detail)
+                    HStack(spacing: 6) {
+                        Text(title)
+                            .font(.headline)
+                            .foregroundStyle(palette.text)
+                        if isPremium { PremiumBadge() }
+                    }
+                    Text(detail)
                         .font(.subheadline)
                         .foregroundStyle(palette.secondaryText)
                         .fixedSize(horizontal: false, vertical: true)
@@ -93,32 +110,39 @@ struct FeatureToggleCard: View {
         .tint(palette.accent)
         .padding(16)
         .background(palette.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-        .accessibilityIdentifier("features.toggle.\(feature.rawValue)")
     }
 }
 
-/// Settings › Features: the same choices, any time.
+/// Settings › Features: the same choices, any time, grouped.
 struct FeaturesSettingsView: View {
     @Environment(FeaturePreferences.self) private var features
     @Environment(FeatureFlagService.self) private var flags
     @Environment(AudioPlayerService.self) private var audio
+    @Environment(AmbientSoundService.self) private var ambient
     @Environment(\.palette) private var palette
 
     var body: some View {
+        let offered = FeaturePreferences.offered(flags: flags)
         List {
             ThemedRows {
-                Section {
-                    ForEach(FeaturePreferences.offered(flags: flags)) { feature in
-                        FeatureToggleCard(feature: feature, isOn: Binding(
-                            get: { features.isOn(feature) },
-                            set: { on in
-                                features.set(feature, on: on)
-                                if feature == .listen, !on { audio.stop() }
+                ForEach(OptionalFeature.Area.allCases) { area in
+                    let items = offered.filter { $0.area == area }
+                    if !items.isEmpty || area == .touches {
+                        Section {
+                            ForEach(items) { feature in
+                                FeatureToggleCard(feature: feature, isOn: binding(for: feature))
+                                    .featureCardRow()
                             }
-                        ))
-                        .listRowInsets(EdgeInsets(top: 6, leading: 0, bottom: 6, trailing: 0))
-                        .listRowBackground(Color.clear)
+                            if area == .touches {
+                                MorningWelcomeSwitch()
+                                    .featureCardRow()
+                            }
+                        } header: {
+                            Text(area.title)
+                        }
                     }
+                }
+                Section {
                 } footer: {
                     Text("Turning something off only hides it. Your plans, prayers, groups and notes stay, and come back when you turn it on.")
                 }
@@ -131,6 +155,44 @@ struct FeaturesSettingsView: View {
         .themedScreen()
         .navigationTitle("Features")
         .navigationBarTitleDisplayMode(.inline)
+    }
+
+    private func binding(for feature: OptionalFeature) -> Binding<Bool> {
+        Binding(
+            get: { features.isOn(feature) },
+            set: { on in
+                features.set(feature, on: on)
+                // Hidden things stop playing too.
+                if feature == .listen, !on { audio.stop() }
+                if feature == .ambientSounds, !on, ambient.showsControls { ambient.close() }
+            }
+        )
+    }
+}
+
+/// The morning welcome keeps its own on/off (Settings › Morning Welcome);
+/// shown here too so every extra can be switched off in one place.
+private struct MorningWelcomeSwitch: View {
+    @Environment(MorningWelcome.self) private var welcome
+    @Environment(EntitlementService.self) private var entitlements
+
+    var body: some View {
+        @Bindable var welcome = welcome
+        FeatureSwitchCard(
+            title: String(localized: "Morning Welcome"),
+            detail: String(localized: "A quiet greeting with today's verse the first time you open Genesis each day."),
+            systemImage: "sun.horizon",
+            isOn: $welcome.isOn,
+            isPremium: !entitlements.allows(.morningWelcome)
+        )
+        .accessibilityIdentifier("features.toggle.morningWelcome")
+    }
+}
+
+private extension View {
+    func featureCardRow() -> some View {
+        listRowInsets(EdgeInsets(top: 6, leading: 0, bottom: 6, trailing: 0))
+            .listRowBackground(Color.clear)
     }
 }
 

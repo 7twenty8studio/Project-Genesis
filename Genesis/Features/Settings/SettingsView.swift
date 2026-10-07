@@ -62,16 +62,18 @@ struct SettingsView: View {
                             }
                             .accessibilityIdentifier("settings.listening")
                         }
-                        Button {
-                            if entitlements.allows(.ambientSounds) { showsAmbient = true } else { premium = .ambientSounds }
-                        } label: {
-                            HStack {
-                                Label("Ambient Sounds", systemImage: "speaker.wave.2")
-                                Spacer()
-                                if !entitlements.allows(.ambientSounds) { PremiumBadge() }
+                        if features.isOn(.ambientSounds) {
+                            Button {
+                                if entitlements.allows(.ambientSounds) { showsAmbient = true } else { premium = .ambientSounds }
+                            } label: {
+                                HStack {
+                                    Label("Ambient Sounds", systemImage: "speaker.wave.2")
+                                    Spacer()
+                                    if !entitlements.allows(.ambientSounds) { PremiumBadge() }
+                                }
                             }
+                            .accessibilityIdentifier("settings.ambientSounds")
                         }
-                        .accessibilityIdentifier("settings.ambientSounds")
                         if entitlements.allows(.morningWelcome) {
                             NavigationLink {
                                 MorningWelcomeSettingsView()

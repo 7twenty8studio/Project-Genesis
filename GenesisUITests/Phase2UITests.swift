@@ -94,6 +94,70 @@ final class Phase2UITests: GenesisUITestCase {
     }
 
     @MainActor
+    func testPrayerWithAVerseAppearsInTheTimeline() {
+        let app = Genesis.launch()
+        let journal = app.buttons["home.prayer"]
+        XCTAssertTrue(journal.waitForExistence(timeout: Genesis.launchTimeout))
+        scrollHome(to: journal, in: app)
+        journal.tap()
+
+        let add = app.buttons["prayer.new"]
+        XCTAssertTrue(add.waitForExistence(timeout: Genesis.timeout), "The prayer journal opens")
+        add.tap()
+        let title = app.descendants(matching: .any).matching(identifier: "prayer.title").firstMatch
+        XCTAssertTrue(title.waitForExistence(timeout: Genesis.timeout), "A new prayer opens for editing")
+        title.tap()
+        title.typeText("Strength for Dad")
+
+        // Attach a verse; its words come from the Bible being read.
+        let field = app.textFields["prayer.passageField"]
+        Genesis.scrollIntoView(field, in: app)
+        XCTAssertTrue(field.waitForExistence(timeout: Genesis.timeout), "A passage can be added")
+        field.tap()
+        field.typeText("John 3:16\n")
+        let passage = app.descendants(matching: .any).matching(identifier: "prayer.passage").firstMatch
+        XCTAssertTrue(passage.waitForExistence(timeout: Genesis.timeout), "The verse is attached")
+        XCTAssertTrue(Genesis.element(containing: "For God so loved the world", in: app).exists, "Shown verbatim from the KJV")
+
+        let answered = app.buttons["prayer.markAnswered"]
+        Genesis.scrollIntoView(answered, in: app)
+        XCTAssertTrue(answered.exists, "Mark as Answered is offered")
+        answered.tap()
+        Genesis.tapToolbarButton("prayer.done", in: app)
+
+        let timeline = app.buttons["Timeline"].firstMatch
+        XCTAssertTrue(timeline.waitForExistence(timeout: Genesis.timeout), "The journal offers a timeline")
+        timeline.tap()
+        let answeredEntry = app.descendants(matching: .any).matching(identifier: "prayer.timeline.answered").firstMatch
+        XCTAssertTrue(answeredEntry.waitForExistence(timeout: Genesis.timeout), "The answer is on the timeline")
+        XCTAssertTrue(answeredEntry.label.contains("Strength for Dad"), "…for this prayer: \(answeredEntry.label)")
+        XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "prayer.timeline.asked").firstMatch.exists, "So is when it was asked")
+    }
+
+    @MainActor
+    func testPrayerJournalCanBeSwitchedOff() {
+        let app = Genesis.launch()
+        let journal = app.buttons["home.prayer"]
+        XCTAssertTrue(journal.waitForExistence(timeout: Genesis.launchTimeout), "The journal starts on")
+        let settings = app.buttons["home.settings"]
+        settings.tap()
+        let features = app.buttons["settings.features"]
+        XCTAssertTrue(features.waitForExistence(timeout: Genesis.timeout))
+        features.tap()
+        let prayer = app.switches["features.toggle.prayer"]
+        XCTAssertTrue(prayer.waitForExistence(timeout: Genesis.timeout), "The prayer journal has its own switch")
+        XCTAssertTrue(app.switches["features.toggle.plans"].exists, "…apart from reading plans")
+        prayer.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.5)).tap()
+        XCTAssertTrue(Genesis.wait { (prayer.value as? String) == "0" }, "The journal is switched off")
+        let back = app.buttons["BackButton"].firstMatch
+        if back.exists { back.tap() } else { app.navigationBars.buttons.firstMatch.tap() }
+        Genesis.tapToolbarButton("appSettings.done", in: app)
+
+        XCTAssertTrue(Genesis.wait { !app.buttons["home.prayer"].exists }, "Its Home card is hidden")
+        XCTAssertTrue(app.buttons["home.plans"].exists, "Reading plans stay")
+    }
+
+    @MainActor
     func testEmptyPrayerIsDiscarded() {
         let app = Genesis.launch()
         let journal = app.buttons["home.prayer"]

@@ -209,6 +209,12 @@ struct RemotePlan: SyncRow, Equatable {
     }
 }
 
+/// A passage on a prayer, as stored in prayers.passages (jsonb): verse ids only.
+struct RemotePrayerPassage: Codable, Equatable, Sendable {
+    var startVerse: Int
+    var endVerse: Int
+}
+
 struct RemotePrayer: SyncRow, Equatable {
     var id: UUID
     var userId: UUID
@@ -220,24 +226,67 @@ struct RemotePrayer: SyncRow, Equatable {
     var answerNote: String?
     var reminderAt: Date?
     var reminderRepeatsDaily: Bool
+    /// Nil when the row comes from a server without the column (before
+    /// 20261012000000_prayer_journal.sql); the local passages are then kept.
+    var passages: [RemotePrayerPassage]?
+    var lastPrayedAt: Date?
     var createdAt: Date
     var updatedAt: Date
     var deletedAt: Date?
     var serverUpdatedAt: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id, userId, title, body, category, isAnswered, answeredAt, answerNote, reminderAt, reminderRepeatsDaily
+        case passages, lastPrayedAt, createdAt, updatedAt, deletedAt, serverUpdatedAt
+    }
 
     init(_ prayer: Prayer, userID: UUID) {
         id = prayer.id
         userId = userID
         title = prayer.title
         body = prayer.body
-        category = prayer.categoryRaw
+        // Normalised, so an unusual saved value still passes the table's check.
+        category = prayer.category.rawValue
         isAnswered = prayer.isAnswered
         answeredAt = prayer.answeredAt
         answerNote = prayer.answerNote
         reminderAt = prayer.reminderAt
         reminderRepeatsDaily = prayer.reminderRepeatsDaily
+        passages = prayer.passages.map { RemotePrayerPassage(startVerse: $0.start.rawValue, endVerse: $0.end.rawValue) }
+        lastPrayedAt = prayer.lastPrayedAt
         createdAt = prayer.createdAt
         updatedAt = prayer.updatedAt
+    }
+
+    /// The passages to keep locally, or nil to leave the local ones alone.
+    var prayerPassages: [PrayerPassage]? {
+        passages?.compactMap { passage in
+            guard passage.startVerse > 1_000_000, passage.endVerse > 1_000_000 else { return nil }
+            return PrayerPassage(start: VerseID(rawValue: passage.startVerse), end: VerseID(rawValue: passage.endVerse))
+        }
+    }
+
+    // Written by hand so cleared values go up as explicit nulls (moving a
+    // prayer back to Praying clears answered_at on the server too) and every
+    // row in a request has the same keys.
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(userId, forKey: .userId)
+        try container.encode(title, forKey: .title)
+        try container.encode(body, forKey: .body)
+        try container.encode(category, forKey: .category)
+        try container.encode(isAnswered, forKey: .isAnswered)
+        try container.encodeOrNull(answeredAt, forKey: .answeredAt)
+        try container.encodeOrNull(answerNote, forKey: .answerNote)
+        try container.encodeOrNull(reminderAt, forKey: .reminderAt)
+        try container.encode(reminderRepeatsDaily, forKey: .reminderRepeatsDaily)
+        try container.encode(passages ?? [], forKey: .passages)
+        try container.encodeOrNull(lastPrayedAt, forKey: .lastPrayedAt)
+        try container.encode(createdAt, forKey: .createdAt)
+        try container.encode(updatedAt, forKey: .updatedAt)
+        try container.encodeIfPresent(deletedAt, forKey: .deletedAt)
+        try container.encodeIfPresent(serverUpdatedAt, forKey: .serverUpdatedAt)
     }
 }
 
@@ -272,6 +321,17 @@ struct RemoteMemoryVerse: SyncRow, Equatable {
         reviewCount = verse.reviewCount
         createdAt = verse.createdAt
         updatedAt = verse.updatedAt
+    }
+}
+
+extension KeyedEncodingContainer {
+    /// The value, or an explicit JSON null (never a missing key).
+    mutating func encodeOrNull<T: Encodable>(_ value: T?, forKey key: Key) throws {
+        if let value {
+            try encode(value, forKey: key)
+        } else {
+            try encodeNil(forKey: key)
+        }
     }
 }
 

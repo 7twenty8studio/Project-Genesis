@@ -455,6 +455,11 @@ final class SyncService {
             prayer.answerNote = row.answerNote
             prayer.reminderAt = row.reminderAt
             prayer.reminderRepeatsDaily = row.reminderRepeatsDaily
+            // Rows from before the journal's new columns leave these alone.
+            if let passages = row.prayerPassages {
+                prayer.passages = passages
+                prayer.lastPrayedAt = row.lastPrayedAt
+            }
             prayer.createdAt = row.createdAt
             prayer.updatedAt = row.updatedAt
             PrayerReminders.update(for: prayer)

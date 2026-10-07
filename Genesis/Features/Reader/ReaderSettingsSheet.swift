@@ -9,6 +9,7 @@ struct ReaderSettingsSheet: View {
     @State private var premium: PremiumFeature?
     @Environment(EntitlementService.self) private var entitlements
     @Environment(AmbientSoundService.self) private var ambient
+    @Environment(FeaturePreferences.self) private var features
     @State private var showsAmbient = false
 
     var body: some View {
@@ -40,34 +41,8 @@ struct ReaderSettingsSheet: View {
                         }
                     }
 
-                    Section {
-                        Button {
-                            if entitlements.allows(.ambientSounds) {
-                                showsAmbient = true
-                            } else {
-                                premium = .ambientSounds
-                            }
-                        } label: {
-                            HStack {
-                                Label("Ambient Sounds", systemImage: "speaker.wave.2")
-                                    .foregroundStyle(palette.text)
-                                Spacer()
-                                if !entitlements.allows(.ambientSounds) {
-                                    PremiumBadge()
-                                } else if ambient.isPlaying {
-                                    Text(ambient.summary)
-                                        .lineLimit(1)
-                                        .foregroundStyle(palette.secondaryText)
-                                }
-                                Image(systemName: "chevron.right")
-                                    .font(.footnote.weight(.semibold))
-                                    .foregroundStyle(palette.secondaryText)
-                            }
-                            .contentShape(Rectangle())
-                        }
-                        .accessibilityIdentifier("settings.ambient")
-                    } footer: {
-                        Text("Rain, waves, a fire or birdsong while you read and pray.")
+                    if features.isOn(.ambientSounds) {
+                        ambientSection
                     }
 
                     NightReadingSettings(premium: $premium)
@@ -182,6 +157,39 @@ struct ReaderSettingsSheet: View {
         case .summer: "sun.max.fill"
         case .starlight: "sparkles"
         default: nil
+        }
+    }
+
+    /// Ambient sounds (Premium), when the feature is switched on.
+    private var ambientSection: some View {
+        Section {
+            Button {
+                if entitlements.allows(.ambientSounds) {
+                    showsAmbient = true
+                } else {
+                    premium = .ambientSounds
+                }
+            } label: {
+                HStack {
+                    Label("Ambient Sounds", systemImage: "speaker.wave.2")
+                        .foregroundStyle(palette.text)
+                    Spacer()
+                    if !entitlements.allows(.ambientSounds) {
+                        PremiumBadge()
+                    } else if ambient.isPlaying {
+                        Text(ambient.summary)
+                            .lineLimit(1)
+                            .foregroundStyle(palette.secondaryText)
+                    }
+                    Image(systemName: "chevron.right")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(palette.secondaryText)
+                }
+                .contentShape(Rectangle())
+            }
+            .accessibilityIdentifier("settings.ambient")
+        } footer: {
+            Text("Rain, waves, a fire or birdsong while you read and pray.")
         }
     }
 

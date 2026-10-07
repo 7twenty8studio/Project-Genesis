@@ -62,9 +62,30 @@ final class PlanEnrollment {
 }
 
 enum PrayerCategory: String, Codable, CaseIterable, Identifiable, Sendable {
-    case family, church, work, personal, health, friends
+    // Family, Church, Work, Health and Personal first; Friends kept for
+    // prayers saved with it. The raw values match the prayers table's check.
+    case family, church, work, health, personal, friends
 
     var id: String { rawValue }
+
+    /// Reads any saved value: a known one in any case or spacing, a few
+    /// likely words, and anything else as Personal, so no prayer is lost.
+    init(lenient raw: String) {
+        let key = raw.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        if let known = PrayerCategory(rawValue: key) {
+            self = known
+            return
+        }
+        switch key {
+        case "home", "marriage", "children", "kids", "parents", "relatives": self = .family
+        case "ministry", "congregation", "mission", "missions": self = .church
+        case "job", "career", "school", "study", "business": self = .work
+        case "healing", "illness", "sickness", "wellbeing", "well-being": self = .health
+        case "friend", "friendship", "neighbours", "neighbors": self = .friends
+        default: self = .personal
+        }
+    }
+
     var title: String {
         switch self {
         case .family: String(localized: "Family")
@@ -100,6 +121,11 @@ final class Prayer {
     var answerNote: String? = nil
     var reminderAt: Date? = nil
     var reminderRepeatsDaily: Bool = false
+    /// Passages the prayer holds, as "start-end" verse ids separated by
+    /// commas (`PrayerPassage`). Ids only, never the text.
+    var passagesRaw: String = ""
+    /// The last time the person marked this prayer as prayed.
+    var lastPrayedAt: Date? = nil
     var createdAt: Date
     var updatedAt: Date
 
@@ -113,8 +139,30 @@ final class Prayer {
     }
 
     var category: PrayerCategory {
-        get { PrayerCategory(rawValue: categoryRaw) ?? .personal }
+        get { PrayerCategory(lenient: categoryRaw) }
         set { categoryRaw = newValue.rawValue }
+    }
+
+    var passages: [PrayerPassage] {
+        get { PrayerPassage.decode(passagesRaw) }
+        set { passagesRaw = PrayerPassage.encode(newValue) }
+    }
+
+    var hasContent: Bool {
+        !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            || !body.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
+    var facts: PrayerFacts {
+        PrayerFacts(
+            id: id,
+            category: category,
+            isAnswered: isAnswered,
+            createdAt: createdAt,
+            answeredAt: answeredAt,
+            lastPrayedAt: lastPrayedAt,
+            hasContent: hasContent
+        )
     }
 
     var displayTitle: String {

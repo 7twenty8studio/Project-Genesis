@@ -5,6 +5,7 @@ import SwiftUI
 struct MorningWelcomeSettingsView: View {
     @Environment(MorningWelcome.self) private var welcome
     @Environment(AmbientSoundService.self) private var ambient
+    @Environment(FeaturePreferences.self) private var features
     @Environment(\.palette) private var palette
     @State private var showsPreview = false
 
@@ -33,18 +34,21 @@ struct MorningWelcomeSettingsView: View {
                 }
                 .listRowBackground(palette.surface)
 
-                Section {
-                    Toggle("Ease In My Ambient Sounds", isOn: $welcome.playsSounds)
-                        .tint(palette.accent)
-                        .accessibilityIdentifier("welcome.settings.sounds")
-                } footer: {
-                    if ambient.mix.isEmpty {
-                        Text("Choose your sounds first in Settings › Ambient Sounds.")
-                    } else {
-                        Text("Plays \(ambient.summary), fading in gently.")
+                // Only while Ambient Sounds is switched on (Settings › Features).
+                if features.isOn(.ambientSounds) {
+                    Section {
+                        Toggle("Ease In My Ambient Sounds", isOn: $welcome.playsSounds)
+                            .tint(palette.accent)
+                            .accessibilityIdentifier("welcome.settings.sounds")
+                    } footer: {
+                        if ambient.mix.isEmpty {
+                            Text("Choose your sounds first in Settings › Ambient Sounds.")
+                        } else {
+                            Text("Plays \(ambient.summary), fading in gently.")
+                        }
                     }
+                    .listRowBackground(palette.surface)
                 }
-                .listRowBackground(palette.surface)
 
                 Section {
                     Button("Preview", systemImage: "sun.horizon") { showsPreview = true }

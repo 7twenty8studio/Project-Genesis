@@ -51,6 +51,16 @@
         }
       }
     },
+    "%@ is turned off": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ está desactivado"
+          }
+        }
+      }
+    },
     "%@ of %lld free explanations used today": {
       "localizations": {
         "es": {
@@ -239,6 +249,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld días seguidos"
+          }
+        }
+      }
+    },
+    "%lld days in a row of prayer": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld días seguidos de oración"
           }
         }
       }
@@ -624,6 +644,26 @@
         }
       }
     },
+    "A fuller prayer journal": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un diario de oración más completo"
+          }
+        }
+      }
+    },
+    "A gentle streak": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una racha sin presiones"
+          }
+        }
+      }
+    },
     "A graceful Garamond-style face for long chapters": {
       "localizations": {
         "es": {
@@ -735,6 +775,16 @@
         }
       }
     },
+    "A private journal of what you're praying for and how God answered.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un diario privado de lo que pides en oración y de cómo respondió Dios."
+          }
+        }
+      }
+    },
     "A question": {
       "localizations": {
         "es": {
@@ -745,12 +795,32 @@
         }
       }
     },
+    "A quiet greeting with today's verse the first time you open Genesis each day.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un saludo tranquilo con el versículo del día la primera vez que abres Genesis cada día."
+          }
+        }
+      }
+    },
     "A short guide explains the differences and suggests a Bible for study, everyday reading or reading aloud.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Una breve guía explica las diferencias y sugiere una Biblia para el estudio, la lectura diaria o la lectura en voz alta."
+          }
+        }
+      }
+    },
+    "A small gold ribbon when you finish a chapter or a day of your plan.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una pequeña cinta dorada al terminar un capítulo o un día de tu plan."
           }
         }
       }
@@ -1350,6 +1420,16 @@
         }
       }
     },
+    "Answered %@ · asked %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Respondida el %@ · pedida el %@"
+          }
+        }
+      }
+    },
     "Answered Prayer": {
       "localizations": {
         "es": {
@@ -1366,6 +1446,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "Las respuestas son notas de estudio generadas por IA, mostradas aparte del texto y nunca en lugar de la Escritura. No toman partido entre tradiciones."
+          }
+        }
+      }
+    },
+    "Answers came after about %lld days, on average.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las respuestas llegaron después de unos %lld días, en promedio."
+          }
+        }
+      }
+    },
+    "Answers came after about a day, on average.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las respuestas llegaron después de un día, más o menos, en promedio."
+          }
+        }
+      }
+    },
+    "Answers came within a day, on average.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las respuestas llegaron en menos de un día, en promedio."
           }
         }
       }
@@ -1510,6 +1620,16 @@
         }
       }
     },
+    "Asked %@ · %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pedida el %@ · %@"
+          }
+        }
+      }
+    },
     "Asked %@.": {
       "localizations": {
         "es": {
@@ -1526,6 +1646,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "De noche, cambiar a"
+          }
+        }
+      }
+    },
+    "Attach verses to a prayer, or select verses in the reader and tap Pray.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Añade versículos a una oración, o selecciona versículos en el lector y toca Orar."
           }
         }
       }
@@ -1782,6 +1912,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Orden bíblico"
+          }
+        }
+      }
+    },
+    "Bible Passages": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasajes bíblicos"
           }
         }
       }
@@ -2096,6 +2236,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Capítulo %lld"
+          }
+        }
+      }
+    },
+    "Chapter Ribbons": {
+      "comment": "Optional feature: a gold ribbon when a chapter or plan day is finished",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cintas de capítulo"
           }
         }
       }
@@ -2826,6 +2977,17 @@
         }
       }
     },
+    "Daily Rhythm": {
+      "comment": "Settings › Features section: plans, prayer, memorising",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ritmo diario"
+          }
+        }
+      }
+    },
     "Dates are approximate and follow a traditional chronology. Events before Abraham are shown in order without dates.": {
       "localizations": {
         "es": {
@@ -3546,6 +3708,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cada día que abriste la Biblia cuenta."
+          }
+        }
+      }
+    },
+    "Every extra, from Memorise to Hebrew & Greek, now has its own switch in Settings › Features.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada extra, desde Memorizar hasta Hebreo y griego, tiene ahora su propio interruptor en Ajustes › Funciones."
           }
         }
       }
@@ -4745,6 +4917,16 @@
         }
       }
     },
+    "Has Bible passages": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiene pasajes bíblicos"
+          }
+        }
+      }
+    },
     "Health": {
       "localizations": {
         "es": {
@@ -4771,6 +4953,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hebreo"
+          }
+        }
+      }
+    },
+    "Hebrew & Greek": {
+      "comment": "Optional feature: the original-language Bible and word study",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hebreo y griego"
           }
         }
       }
@@ -4982,6 +5175,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Acepto"
+          }
+        }
+      }
+    },
+    "I Prayed Today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoy oré"
+          }
+        }
+      }
+    },
+    "I Prayed for This": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oré por esto"
           }
         }
       }
@@ -5247,6 +5460,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Estadísticas"
+          }
+        }
+      }
+    },
+    "Insights & Year in Review": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estadísticas y tu año en repaso"
           }
         }
       }
@@ -5686,6 +5909,16 @@
         }
       }
     },
+    "Learn verses by heart with flashcards and short games.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aprende versículos de memoria con tarjetas y juegos cortos."
+          }
+        }
+      }
+    },
     "Learn verses by heart, a minute a day.": {
       "localizations": {
         "es": {
@@ -5858,6 +6091,17 @@
         }
       }
     },
+    "List": {
+      "comment": "Prayer journal view: the list of prayers",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lista"
+          }
+        }
+      }
+    },
     "Listen": {
       "comment": "Optional feature: hear chapters read aloud",
       "localizations": {
@@ -5919,6 +6163,17 @@
         }
       }
     },
+    "Listening & Sounds": {
+      "comment": "Settings › Features section: listening and ambient sounds",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Audio y sonidos"
+          }
+        }
+      }
+    },
     "Listening can use %lld natural-sounding voices installed on this device.": {
       "localizations": {
         "es": {
@@ -5975,6 +6230,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Literata y EB Garamond, en el lector, en Aa › Letra."
+          }
+        }
+      }
+    },
+    "Little Touches": {
+      "comment": "Settings › Features section: small extras",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pequeños detalles"
           }
         }
       }
@@ -6541,6 +6807,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Más"
+          }
+        }
+      }
+    },
+    "More About Your Prayers": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más sobre tus oraciones"
           }
         }
       }
@@ -7173,6 +7449,16 @@
         }
       }
     },
+    "No matching prayers": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay oraciones que coincidan"
+          }
+        }
+      }
+    },
     "No notes in %@": {
       "localizations": {
         "es": {
@@ -7702,6 +7988,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Optativo"
+          }
+        }
+      }
+    },
+    "Optional: a few words to remember how God answered.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opcional: unas palabras para recordar cómo respondió Dios."
           }
         }
       }
@@ -8276,16 +8572,6 @@
         }
       }
     },
-    "Plans & Prayer": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Planes y oración"
-          }
-        }
-      }
-    },
     "Play": {
       "localizations": {
         "es": {
@@ -8437,6 +8723,16 @@
         }
       }
     },
+    "Pray": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orar"
+          }
+        }
+      }
+    },
     "Pray Every Day": {
       "comment": "Group challenge kind",
       "localizations": {
@@ -8444,6 +8740,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Orar cada día"
+          }
+        }
+      }
+    },
+    "Pray These Verses": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orar con estos versículos"
           }
         }
       }
@@ -8488,12 +8794,42 @@
         }
       }
     },
+    "Pray with Scripture": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ora con las Escrituras"
+          }
+        }
+      }
+    },
+    "Pray with Scripture: add a verse or passage, such as Philippians 4:6–7.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ora con las Escrituras: añade un versículo o pasaje, como Filipenses 4:6–7."
+          }
+        }
+      }
+    },
     "Prayed": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Oré"
+          }
+        }
+      }
+    },
+    "Prayed Today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oraste hoy"
           }
         }
       }
@@ -8584,6 +8920,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Muro de oración"
+          }
+        }
+      }
+    },
+    "Prayers and answers appear here by month, so you can look back on God's faithfulness.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus oraciones y respuestas aparecen aquí por mes, para que recuerdes la fidelidad de Dios."
           }
         }
       }
@@ -9127,6 +9473,16 @@
         }
       }
     },
+    "Read the whole Bible in a year, or a book at a time, with today's reading on Home.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee toda la Biblia en un año, o un libro a la vez, con la lectura de hoy en Inicio."
+          }
+        }
+      }
+    },
     "Read the whole Bible in a year, or a book at a time.": {
       "localizations": {
         "es": {
@@ -9285,16 +9641,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Plan de lectura"
-          }
-        }
-      }
-    },
-    "Reading plans, memorising Scripture and a private prayer journal on your Home screen.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Planes de lectura, memorización de las Escrituras y un diario de oración privado en tu pantalla de inicio."
           }
         }
       }
@@ -10108,6 +10454,16 @@
         }
       }
     },
+    "Search prayers": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar oraciones"
+          }
+        }
+      }
+    },
     "Seaside": {
       "comment": "Ambient mix",
       "localizations": {
@@ -10250,12 +10606,32 @@
         }
       }
     },
+    "See the days in a row you've prayed and a few numbers about your prayer life. All free.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mira los días seguidos que has orado y algunos datos sobre tu vida de oración. Todo gratis."
+          }
+        }
+      }
+    },
     "See what every Hebrew and Greek word means, its grammar and where else it's used, with Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Con Premium, descubre qué significa cada palabra hebrea y griega, su gramática y dónde más se usa."
+          }
+        }
+      }
+    },
+    "See what you asked and how God answered, month by month, and search your journal.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mira lo que pediste y cómo respondió Dios, mes a mes, y busca en tu diario."
           }
         }
       }
@@ -11342,7 +11718,7 @@
       }
     },
     "Study": {
-      "comment": "Note kind",
+      "comment": "Settings › Features section",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -11504,6 +11880,16 @@
         }
       }
     },
+    "Switch off anything you don't use": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desactiva lo que no uses"
+          }
+        }
+      }
+    },
     "Sync Now": {
       "localizations": {
         "es": {
@@ -11551,6 +11937,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "HOY · DÍA %lld DE %lld"
+          }
+        }
+      }
+    },
+    "Take a quiet moment with God today.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toma hoy un momento tranquilo con Dios."
           }
         }
       }
@@ -12096,6 +12492,16 @@
         }
       }
     },
+    "The original-language Bible beside yours, and Word Study for any verse.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La Biblia en su idioma original junto a la tuya, y Estudio de palabras para cualquier versículo."
+          }
+        }
+      }
+    },
     "The passwords don't match.": {
       "localizations": {
         "es": {
@@ -12587,6 +12993,7 @@
       }
     },
     "Timeline": {
+      "comment": "Prayer journal view: prayers and answers by month",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -12677,6 +13084,7 @@
       }
     },
     "Together": {
+      "comment": "Settings › Features section: groups and community",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -12844,6 +13252,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prueba un tema como perdón, miedo o matrimonio para ver los pasajes que hablan de él."
+          }
+        }
+      }
+    },
+    "Try another word from the title or the prayer.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prueba con otra palabra del título o de la oración."
           }
         }
       }
@@ -13207,6 +13625,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Versículos para empezar"
+          }
+        }
+      }
+    },
+    "View": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vista"
           }
         }
       }
@@ -13588,6 +14016,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cuando una oración sea respondida, márcala aquí para recordar la fidelidad de Dios."
+          }
+        }
+      }
+    },
+    "When a prayer is answered, you'll see how long the answer took.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuando una oración sea respondida, verás cuánto tardó la respuesta."
           }
         }
       }
@@ -14090,6 +14528,16 @@
         }
       }
     },
+    "You chose to hide this in Settings › Features. Nothing was deleted; turn it on to pick up where you left off.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elegiste ocultarlo en Ajustes › Funciones. No se borró nada; actívalo para continuar donde lo dejaste."
+          }
+        }
+      }
+    },
     "You finished %lld of %lld chapters.": {
       "localizations": {
         "es": {
@@ -14350,6 +14798,16 @@
         }
       }
     },
+    "You've prayed today. Every day is a fresh start.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoy has orado. Cada día es un nuevo comienzo."
+          }
+        }
+      }
+    },
     "You've reached the highest level.": {
       "localizations": {
         "es": {
@@ -14407,6 +14865,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tus planes"
+          }
+        }
+      }
+    },
+    "Your Prayer Life": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu vida de oración"
           }
         }
       }
@@ -14581,6 +15049,16 @@
         }
       }
     },
+    "Your prayers as a timeline": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus oraciones en una cronología"
+          }
+        }
+      }
+    },
     "Your purchase is waiting for approval.": {
       "localizations": {
         "es": {
@@ -14591,12 +15069,32 @@
         }
       }
     },
+    "Your reading time, favourite books and a look back on your year.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu tiempo de lectura, tus libros favoritos y un repaso de tu año."
+          }
+        }
+      }
+    },
     "Your session has ended. Please sign in again.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Tu sesión terminó. Vuelve a iniciar sesión."
+          }
+        }
+      }
+    },
+    "Your story with God": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu historia con Dios"
           }
         }
       }
@@ -14617,6 +15115,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu año con Genesis"
+          }
+        }
+      }
+    },
+    "answered": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "respondidas"
           }
         }
       }
@@ -14744,12 +15252,42 @@
         }
       }
     },
+    "of all answered": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "del total respondidas"
+          }
+        }
+      }
+    },
     "prayers answered": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "oraciones respondidas"
+          }
+        }
+      }
+    },
+    "requests": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "peticiones"
+          }
+        }
+      }
+    },
+    "still praying": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aún en oración"
           }
         }
       }

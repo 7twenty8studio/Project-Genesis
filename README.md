@@ -36,8 +36,10 @@ See [BUILDING.md](BUILDING.md) to build and run.
   row-level security per user.
 - **Reading plans**: Bible in a Year, Chronological, New Testament in 90 Days,
   Gospels in 30 Days, Psalms in 30 Days, and custom plans from any books.
-- **Prayer journal**: private requests by category, answered prayers with
-  notes, daily or one-off reminders.
+- **Prayer journal** (free, no limits): private requests by category,
+  answered prayers with notes, daily or one-off reminders, attached Bible
+  passages (verse ids only), a month-by-month timeline, search, a gentle
+  prayer streak ("I prayed") and a few statistics.
 - **Home**: today's reading, prayer journal, streak and progress.
 - **Widgets**: verse of the day, continue reading, reading progress (large),
   lock screen streak, verse and continue reading. Tapping opens the app in place.
@@ -64,7 +66,9 @@ on. The study assistant's announcement is ready and waits for its switch.
   blocking, auto-hiding after three reports and a moderation queue.
 - **Android planning**: [docs/ANDROID_PLAN.md](docs/ANDROID_PLAN.md).
 - **Feature choices**: "Make Genesis yours" at setup and Settings › Features
-  (listen, plans and prayer, explore, study notes, groups and community), with
+  (each extra has its own switch: plans, prayer, Memorise, listen, ambient
+  sounds, Hebrew & Greek, explore, study notes, insights, chapter ribbons,
+  groups and community, plus the morning welcome), with
   one-time TipKit hints instead of a tutorial.
 - **Word study and commentary** (Premium): the Hebrew or Greek behind each
   verse with Strong's definitions (STEPBible, Open Scriptures) and Matthew

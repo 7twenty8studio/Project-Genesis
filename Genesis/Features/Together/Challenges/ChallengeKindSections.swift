@@ -103,8 +103,8 @@ struct MemoriseChallengeSections: View {
         } footer: {
             Text("Tick it when you can say it from memory.")
         }
-        // Memorise lives with Plans & Prayer.
-        if features.isOn(.plansAndPrayer), text != nil {
+        // Only when Memorise is switched on.
+        if features.isOn(.memorise), text != nil {
             Section {
                 MemoriseChallengePractice(challenge: challenge)
             } header: {

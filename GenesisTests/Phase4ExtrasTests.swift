@@ -40,7 +40,88 @@ struct FeaturePreferencesTests {
         #expect(features.shows(.studyAssistant, flags: on))
         #expect(!features.shows(.together, flags: off))
         #expect(features.shows(.together, flags: on))
-        #expect(FeaturePreferences.offered(flags: off) == [.listen, .plansAndPrayer, .explore])
+        let alwaysOffered = OptionalFeature.allCases.filter { $0 != .studyAssistant && $0 != .together }
+        #expect(FeaturePreferences.offered(flags: off) == alwaysOffered)
+    }
+
+    /// A choice saved before every feature had its own switch.
+    private func legacyDefaults(_ saved: [String]) -> UserDefaults {
+        let defaults = freshDefaults()
+        defaults.set(saved, forKey: "features.enabled")
+        defaults.set(true, forKey: "features.chosen")
+        return defaults
+    }
+
+    @Test func plansAndPrayerOffKeepsPlansPrayerAndMemoriseOff() {
+        let features = FeaturePreferences(defaults: legacyDefaults(["explore", "listen"]))
+        #expect(!features.isOn(.plans))
+        #expect(!features.isOn(.prayer))
+        #expect(!features.isOn(.memorise))
+        #expect(features.isOn(.listen))
+        #expect(features.isOn(.explore))
+        #expect(!features.isOn(.studyAssistant), "Still off, as chosen")
+        #expect(!features.isOn(.together))
+        #expect(features.hasChosen)
+    }
+
+    @Test func plansAndPrayerOnTurnsOnEachOfItsParts() {
+        let features = FeaturePreferences(defaults: legacyDefaults(["plansAndPrayer"]))
+        #expect(features.isOn(.plans))
+        #expect(features.isOn(.prayer))
+        #expect(features.isOn(.memorise))
+        #expect(!features.isOn(.listen), "Listen was switched off")
+    }
+
+    @Test func newSwitchesStartOnForSavedChoices() {
+        // These were always shown before they had a switch, so nobody loses them.
+        let features = FeaturePreferences(defaults: legacyDefaults([]))
+        let newSwitches: [OptionalFeature] = [.ambientSounds, .wordStudy, .insights, .moments]
+        for feature in newSwitches {
+            #expect(features.isOn(feature), "\(feature.rawValue) keeps showing")
+        }
+        #expect(!features.isOn(.plans), "Keep It Simple stays simple for plans")
+    }
+
+    @Test func theMigrationHappensOnce() {
+        let defaults = legacyDefaults(["listen"])
+        let first = FeaturePreferences(defaults: defaults)
+        first.set(.moments, on: false)
+        let relaunched = FeaturePreferences(defaults: defaults)
+        #expect(!relaunched.isOn(.moments), "A switch turned off after the migration stays off")
+        #expect(relaunched.isOn(.ambientSounds))
+        #expect(!relaunched.isOn(.prayer))
+    }
+
+    @Test func pureMigrationRule() {
+        let migrated = FeaturePreferences.migrated(saved: ["plansAndPrayer", "together"], known: OptionalFeature.legacyKnown)
+        #expect(migrated.isSuperset(of: [.plans, .prayer, .memorise, .together]))
+        #expect(!migrated.contains(.listen))
+        let current = Set(OptionalFeature.allCases.map(\.rawValue))
+        let unchanged = FeaturePreferences.migrated(saved: ["prayer"], known: current)
+        #expect(unchanged == [.prayer], "Nothing is added once every switch is known")
+    }
+
+    @Test func everyFeatureHasCopyAndAPlace() {
+        for feature in OptionalFeature.allCases {
+            #expect(!feature.title.isEmpty)
+            #expect(!feature.detail.isEmpty)
+            #expect(!feature.systemImage.isEmpty)
+        }
+        let flags = FeatureFlagService(client: nil, override: [:])
+        let setup = FeaturePreferences.offeredInSetup(flags: flags)
+        #expect(setup.contains(.prayer))
+        #expect(setup.contains(.memorise))
+        #expect(!setup.contains(.moments), "Small touches live in Settings only")
+        #expect(OptionalFeature.defaults == Set(OptionalFeature.allCases).subtracting([.together]))
+    }
+
+    @Test func homeScreensBelongToTheirFeature() {
+        let planRoute = HomeRoute.plan(UUID())
+        #expect(HomeRoute.plans.feature == .plans)
+        #expect(planRoute.feature == .plans)
+        #expect(HomeRoute.prayerJournal.feature == .prayer)
+        #expect(HomeRoute.memorise.feature == .memorise)
+        #expect(HomeRoute.insights.feature == .insights)
     }
 
     @Test func hidingTheAssistantSwitchesItOff() {
@@ -62,6 +143,10 @@ struct FeaturePreferencesTests {
         #expect(WhatsNewCatalog.audioBible.feature == .listen)
         #expect(WhatsNewCatalog.churchGroups.feature == .together)
         #expect(WhatsNewCatalog.studyAssistant.feature == .studyAssistant)
+        #expect(WhatsNewCatalog.memorise.feature == .memorise)
+        #expect(WhatsNewCatalog.ambientSounds.feature == .ambientSounds)
+        #expect(WhatsNewCatalog.prayerJournalAndSwitches.feature == .prayer)
+        #expect(WhatsNewCatalog.prayerJournalAndSwitches.flag == nil)
     }
 }
 

@@ -39,7 +39,6 @@ struct CompanionPanel: View {
     @Environment(\.palette) private var palette
     @Environment(StudyAssistant.self) private var assistant
     @Environment(FeaturePreferences.self) private var features
-    @Environment(EntitlementService.self) private var entitlements
 
     /// Only the panels for features that are switched on.
     private var modes: [Mode] {
@@ -47,7 +46,8 @@ struct CompanionPanel: View {
             switch mode {
             case .study: assistant.isEnabled
             case .context: features.isOn(.explore)
-            case .plan, .prayer: features.isOn(.plansAndPrayer)
+            case .plan: features.isOn(.plans)
+            case .prayer: features.isOn(.prayer)
             case .notes, .crossReferences, .search: true
             }
         }
@@ -78,18 +78,7 @@ struct CompanionPanel: View {
                 }
             }
             .navigationDestination(for: HomeRoute.self) { route in
-                switch route {
-                case .plans: PlansView()
-                case let .plan(id): PlanDetailView(enrollmentID: id)
-                case .prayerJournal: PrayerJournalView()
-                case .insights: InsightsView()
-                case .memorise:
-                    if entitlements.allows(.memorise) {
-                        MemoriseView()
-                    } else {
-                        PremiumView(highlighted: .memorise)
-                    }
-                }
+                HomeRouteDestination(route: route)
             }
             .safeAreaInset(edge: .top) {
                 // Seven panels don't fit a segmented control in 360 points.

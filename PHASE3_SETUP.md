@@ -102,7 +102,7 @@ Xcode's local test signatures.
 | Reading, every public-domain translation, cross references | Everything in Free |
 | Word and reference search | Advanced search: topics, one testament or book, sorting |
 | Notes, highlights, bookmarks (no limits) | Morning welcome: greeting, today's verse and reading, sounds easing in |
-| Prayer journal and reading plans (no limits) | Themes: Cream, Parchment, Midnight, Sage, Starlight and the seasons |
+| Prayer journal (passages, timeline, streak, statistics) and reading plans (no limits) | Themes: Cream, Parchment, Midnight, Sage, Starlight and the seasons |
 | Cloud backup and sync with a free account | Every study tool, up to 30 new answers a day |
 | Groups, with the shared plan and progress | Family trees, the Bible map and journeys, the reader's Context panel |
 | Explore: the timeline and people | Word study: Hebrew and Greek with Strong's, the Original parallel Bible (first verses of each chapter free), Matthew Henry's commentary |

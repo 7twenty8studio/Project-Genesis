@@ -47,11 +47,36 @@ extension StudyStore {
     }
 
     @discardableResult
-    func createPrayer(category: PrayerCategory = .personal) -> Prayer {
+    func createPrayer(category: PrayerCategory = .personal, passages: [PrayerPassage] = []) -> Prayer {
         let prayer = Prayer(category: category)
+        prayer.passages = passages
         context.insert(prayer)
         save()
         return prayer
+    }
+
+    /// "I prayed for this": counts towards the prayer streak.
+    func markPrayed(_ prayer: Prayer, on date: Date = .now) {
+        prayer.lastPrayedAt = date
+        prayer.updatedAt = .now
+        save()
+        PrayerStreak.record(on: date)
+    }
+
+    /// Attaches a passage (ids only), once.
+    func attach(_ passage: PrayerPassage, to prayer: Prayer) {
+        var passages = prayer.passages
+        guard !passages.contains(passage), passages.count < PrayerPassage.maximumPerPrayer else { return }
+        passages.append(passage)
+        prayer.passages = passages
+        prayer.updatedAt = .now
+        save()
+    }
+
+    func detach(_ passage: PrayerPassage, from prayer: Prayer) {
+        prayer.passages = prayer.passages.filter { $0 != passage }
+        prayer.updatedAt = .now
+        save()
     }
 
     func markAnswered(_ prayer: Prayer, note: String? = nil, answered: Bool = true) {
@@ -65,6 +90,7 @@ extension StudyStore {
         prayer.updatedAt = .now
         save()
         PrayerReminders.update(for: prayer)
+        if answered { PrayerStreak.record() }
     }
 
     func delete(_ prayer: Prayer) {

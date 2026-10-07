@@ -229,13 +229,26 @@ shares; README.md has the architecture.
 
 ## Feature choices
 - People choose optional features at setup ("Make Genesis yours") and in
-  Settings › Features: `FeaturePreferences` (listen, plansAndPrayer, explore,
-  studyAssistant, together). Reading, notes, highlights and search are always
-  on. A feature shows only if its server switch allows it *and* the person
+  Settings › Features (grouped by `OptionalFeature.Area`): `FeaturePreferences`
+  (plans, prayer, memorise, listen, ambientSounds, wordStudy, explore,
+  studyAssistant, insights, moments, together). Reading, notes, highlights,
+  bookmarks, search and the Bibles library are always on. The morning welcome
+  keeps its own `MorningWelcome.isOn`, also shown in Settings › Features.
+  A feature shows only if its server switch allows it *and* the person
   wants it: use `features.shows(_:flags:)` / `isOn(_:)` at every entry point
-  of a new optional feature, and give it a case in `OptionalFeature`.
+  (tabs, Home cards, reader menus and selection bar, Settings rows, What's
+  New `feature:`). Home routes for a hidden feature (widgets, notifications)
+  land on `FeatureOffView` via `HomeRouteDestination`.
+- Every optional feature added from now on (e.g. the Sermon Companion) gets
+  its own `OptionalFeature` case and switch, never a ride on another's. A new
+  case starts on for people with a saved choice (the "features.known" list
+  shows it's new); give it `legacyParent` if it splits an older switch.
 - Hiding never deletes data. One-time tips use TipKit (`GenesisTips`),
   hidden in UI tests.
+- The prayer journal is free with no limits (no `PremiumFeature`, nothing in
+  `FreeLimits`): passages (`PrayerPassage`, verse ids only, synced as
+  prayers.passages), timeline, search, a gentle `PrayerStreak` and
+  `PrayerStatistics`.
 
 ## What's New
 - Every new user-facing feature gets a one-time announcement in

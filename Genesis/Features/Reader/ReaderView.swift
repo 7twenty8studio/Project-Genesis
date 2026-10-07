@@ -135,7 +135,8 @@ struct ReaderView: View {
                         onCrossReferences: showCrossReferencesForSelection,
                         onExplain: explainSelection,
                         onMemorise: memoriseAction,
-                        onWordStudy: wordStudyAction
+                        onWordStudy: wordStudyAction,
+                        onPray: prayAction
                     )
                     .padding(.bottom, readerSafeArea.bottom + 8)
                     .frame(maxHeight: .infinity, alignment: .bottom)
@@ -325,11 +326,11 @@ struct ReaderView: View {
     private var bottomBar: some View {
         if reader.showsControls && !reader.isSelecting {
             if audio.isActive && features.isOn(.listen) {
-                AudioMiniPlayer(onSettings: { sheet = .audio }, onAmbient: openAmbient)
+                AudioMiniPlayer(onSettings: { sheet = .audio }, onAmbient: features.isOn(.ambientSounds) ? openAmbient : nil)
                     .padding(.bottom, 8)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                     .transition(.move(edge: .bottom).combined(with: .opacity))
-            } else if ambient.showsControls {
+            } else if ambient.showsControls && features.isOn(.ambientSounds) {
                 AmbientMiniBar(onOpen: openAmbient)
                     .padding(.bottom, 8)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
@@ -346,20 +347,34 @@ struct ReaderView: View {
     /// The Hebrew and Greek beside the Bible being read, when chosen as the
     /// parallel Bible and the word data lines up with it.
     private var showsOriginal: Bool {
-        reader.readsOriginalInParallel && wordStudy != nil && OriginalVersification.supports(reader.translation)
+        reader.readsOriginalInParallel && features.isOn(.wordStudy) && wordStudy != nil && OriginalVersification.supports(reader.translation)
     }
 
     /// Word Study in the selection bar. The word data follows English (KJV)
     /// verse numbering; the Spanish Bible numbers some verses differently.
     private var wordStudyAction: (() -> Void)? {
-        guard wordStudy != nil, reader.translation.language == "en" else { return nil }
+        guard features.isOn(.wordStudy), wordStudy != nil, reader.translation.language == "en" else { return nil }
         return { studyWordsForSelection() }
     }
 
-    /// Memorise in the selection bar, when Plans & Prayer is switched on.
+    /// Memorise in the selection bar, when Memorise is switched on.
     private var memoriseAction: (() -> Void)? {
-        guard features.isOn(.plansAndPrayer) else { return nil }
+        guard features.isOn(.memorise) else { return nil }
         return { memoriseSelection() }
+    }
+
+    /// "Pray" in the selection bar, when the prayer journal is switched on.
+    private var prayAction: (() -> Void)? {
+        guard features.isOn(.prayer) else { return nil }
+        return { prayWithSelection() }
+    }
+
+    /// A new prayer holding the selected verses (ids only), opened to write.
+    private func prayWithSelection() {
+        guard let passage = PrayerPassage(selection: reader.selection) else { return }
+        let prayer = StudyStore(context: modelContext).createPrayer(passages: [passage])
+        reader.clearSelection()
+        sheet = .prayer(prayer)
     }
 
     /// Adds the selected verses to Memorise (Premium).
@@ -455,6 +470,10 @@ struct ReaderView: View {
                 NoteEditorView(note: note)
             }
             .onDisappear { reader.notesDidChange() }
+        case let .prayer(prayer):
+            NavigationStack {
+                PrayerEditorView(prayer: prayer)
+            }
         case let .premium(feature):
             PremiumView(highlighted: feature)
         case let .study(passage, action):
@@ -485,6 +504,7 @@ enum ReaderSheet: Identifiable {
     case chapterPicker
     case settings
     case note(Note)
+    case prayer(Prayer)
     case crossReferences(VerseID)
     case premium(PremiumFeature)
     case study(StudyPassage, StudyAction)
@@ -503,6 +523,7 @@ enum ReaderSheet: Identifiable {
         case .ambient: "ambient"
         case .bibles: "bibles"
         case let .note(note): "note-\(note.id)"
+        case let .prayer(prayer): "prayer-\(prayer.id)"
         case let .crossReferences(verse): "xref-\(verse.rawValue)"
         case let .wordStudy(verse): "words-\(verse.rawValue)"
         case let .premium(feature): "premium-\(feature.rawValue)"

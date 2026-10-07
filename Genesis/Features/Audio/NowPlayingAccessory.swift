@@ -113,6 +113,7 @@ struct NowPlayingSheet: View {
     @Environment(AudioPlayerService.self) private var audio
     @Environment(AmbientSoundService.self) private var ambient
     @Environment(EntitlementService.self) private var entitlements
+    @Environment(FeaturePreferences.self) private var features
     @Environment(AppRouter.self) private var router
     @Environment(\.palette) private var palette
     @Environment(\.dismiss) private var dismiss
@@ -124,7 +125,7 @@ struct NowPlayingSheet: View {
                     if audio.isActive {
                         listening
                     }
-                    if ambient.showsControls || entitlements.allows(.ambientSounds) {
+                    if ambient.showsControls || (entitlements.allows(.ambientSounds) && features.isOn(.ambientSounds)) {
                         ambientSection
                     }
                 }

@@ -238,7 +238,7 @@ struct MainTabView: View {
     }
 
     private var showsPlayer: Bool {
-        router.tab != .read && ((audio.isActive && features.isOn(.listen)) || ambient.showsControls)
+        router.tab != .read && ((audio.isActive && features.isOn(.listen)) || (ambient.showsControls && features.isOn(.ambientSounds)))
     }
 
     /// A hidden feature's tab (from a link or notification) falls back to Home.

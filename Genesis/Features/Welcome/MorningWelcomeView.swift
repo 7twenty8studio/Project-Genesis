@@ -111,7 +111,7 @@ struct MorningWelcomeView: View {
     }
 
     private var todaysReading: Reading? {
-        guard features.isOn(.plansAndPrayer),
+        guard features.isOn(.plans),
               let enrollment = enrollments.first(where: { $0.isActive && $0.plan != nil }),
               let plan = enrollment.plan else { return nil }
         let progress = PlanProgress(plan: plan, startDate: enrollment.startDate, completedDays: enrollment.completedDays)
@@ -194,7 +194,7 @@ struct MorningWelcomeView: View {
     /// The person's own mix, faded in by the ambient player; nothing when
     /// they haven't chosen sounds or something is already playing.
     private func easeInSounds() {
-        guard welcome.playsSounds, entitlements.allows(.ambientSounds), features.isOn(.listen),
+        guard welcome.playsSounds, entitlements.allows(.ambientSounds), features.isOn(.ambientSounds),
               !ambient.mix.isEmpty, !ambient.isPlaying else { return }
         ambient.play()
         startedSounds = true

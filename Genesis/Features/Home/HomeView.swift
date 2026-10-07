@@ -34,12 +34,12 @@ struct HomeView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 28) {
                     greeting
-                    if YearInReview.isSeason(), progress.hasStartedReading { yearInReviewCard }
+                    if YearInReview.isSeason(), progress.hasStartedReading, features.isOn(.insights) { yearInReviewCard }
                     continueReading
-                    if features.isOn(.plansAndPrayer) { todaysReading }
+                    if features.isOn(.plans) { todaysReading }
                     dailyVerse
-                    if features.isOn(.plansAndPrayer) { prayerJournal }
-                    if features.isOn(.plansAndPrayer) { memorise }
+                    if features.isOn(.prayer) { prayerJournal }
+                    if features.isOn(.memorise) { memorise }
                     readingProgress
                     if !recentHighlights.isEmpty { highlights }
                     if !recentNotes.isEmpty { notes }
@@ -65,18 +65,7 @@ struct HomeView: View {
             }
             .premiumSheet($premium)
             .navigationDestination(for: HomeRoute.self) { route in
-                switch route {
-                case .plans: PlansView()
-                case let .plan(id): PlanDetailView(enrollmentID: id)
-                case .prayerJournal: PrayerJournalView()
-                case .insights: InsightsView()
-                case .memorise:
-                    if entitlements.allows(.memorise) {
-                        MemoriseView()
-                    } else {
-                        PremiumView(highlighted: .memorise)
-                    }
-                }
+                HomeRouteDestination(route: route)
             }
         }
     }
@@ -310,7 +299,7 @@ struct HomeView: View {
     private var readingProgress: some View {
         if progress.hasStartedReading {
             VStack(alignment: .leading, spacing: 12) {
-                SectionHeader(title: String(localized: "Progress"), action: (String(localized: "Insights"), { router.homePath.append(.insights) }))
+                SectionHeader(title: String(localized: "Progress"), action: insightsAction)
                 HStack(spacing: 12) {
                     stat(value: progress.streak(), label: String(localized: "day streak"), symbol: "flame")
                     stat(value: progress.chaptersRead.count, label: String(localized: "chapters read"), symbol: "book.pages")
@@ -318,6 +307,12 @@ struct HomeView: View {
                 }
             }
         }
+    }
+
+    /// "Insights" beside Progress, when Insights is switched on.
+    private var insightsAction: (title: String, perform: () -> Void)? {
+        guard features.isOn(.insights) else { return nil }
+        return (String(localized: "Insights"), { router.homePath.append(.insights) })
     }
 
     private var premiumCard: some View {

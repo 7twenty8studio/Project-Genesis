@@ -15,6 +15,7 @@ struct ChapterMomentOverlay: View {
     var playsHaptic = true
 
     @Environment(EntitlementService.self) private var entitlements
+    @Environment(FeaturePreferences.self) private var features
     @Environment(BibleLibrary.self) private var library
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
@@ -52,7 +53,8 @@ struct ChapterMomentOverlay: View {
             if isVisible { withAnimation(.easeIn(duration: 0.3)) { isVisible = false } }
             return
         }
-        guard entitlements.allows(.premiumThemes) else {
+        // Premium's deluxe look, and only for people who keep the ribbons on.
+        guard entitlements.allows(.premiumThemes), features.isOn(.moments) else {
             moments.dismiss(moment)
             return
         }

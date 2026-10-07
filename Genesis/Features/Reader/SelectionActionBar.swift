@@ -11,6 +11,8 @@ struct SelectionActionBar: View {
     var onMemorise: (() -> Void)?
     /// Original words and commentary (nil when the data isn't in the app).
     var onWordStudy: (() -> Void)?
+    /// A new prayer holding the selected verses (nil when the journal is hidden).
+    var onPray: (() -> Void)?
 
     @Environment(ReaderViewModel.self) private var reader
     @Environment(\.palette) private var palette
@@ -38,6 +40,12 @@ struct SelectionActionBar: View {
                     ViewThatFits(in: .horizontal) {
                         wordStudyButton(onWordStudy, compact: false)
                         wordStudyButton(onWordStudy, compact: true)
+                    }
+                }
+                if let onPray {
+                    ViewThatFits(in: .horizontal) {
+                        prayButton(onPray, compact: false)
+                        prayButton(onPray, compact: true)
                     }
                 }
                 if assistant.isEnabled {
@@ -136,6 +144,22 @@ struct SelectionActionBar: View {
         .controlSize(.small)
         .accessibilityLabel("Word Study")
         .accessibilityIdentifier("selection.wordStudy")
+    }
+
+    private func prayButton(_ perform: @escaping () -> Void, compact: Bool) -> some View {
+        Button(action: perform) {
+            if compact {
+                Image(systemName: "hands.and.sparkles")
+                    .font(.footnote.weight(.semibold))
+            } else {
+                Label("Pray", systemImage: "hands.and.sparkles")
+                    .font(.footnote.weight(.semibold))
+            }
+        }
+        .buttonStyle(.bordered)
+        .controlSize(.small)
+        .accessibilityLabel("Pray These Verses")
+        .accessibilityIdentifier("selection.pray")
     }
 
     private func memoriseButton(_ perform: @escaping () -> Void, compact: Bool) -> some View {

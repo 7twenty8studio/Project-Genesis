@@ -169,7 +169,7 @@ struct ReaderControls: View {
     /// The Hebrew and Greek can sit beside Bibles whose verse numbers are
     /// lined up with the word data (`OriginalVersification`).
     private var offersOriginal: Bool {
-        wordStudy != nil && OriginalVersification.supports(reader.translation)
+        features.isOn(.wordStudy) && wordStudy != nil && OriginalVersification.supports(reader.translation)
     }
 
     private var showsOriginal: Bool {

@@ -27,7 +27,35 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches]
+
+    static let prayerJournalAndSwitches = WhatsNewAnnouncement(
+        id: "prayer-journal-timeline-feature-switches",
+        title: String(localized: "A fuller prayer journal"),
+        items: [
+            WhatsNewItem(
+                systemImage: "calendar.day.timeline.left",
+                title: String(localized: "Your prayers as a timeline"),
+                detail: String(localized: "See what you asked and how God answered, month by month, and search your journal.")
+            ),
+            WhatsNewItem(
+                systemImage: "book.closed",
+                title: String(localized: "Pray with Scripture"),
+                detail: String(localized: "Attach verses to a prayer, or select verses in the reader and tap Pray.")
+            ),
+            WhatsNewItem(
+                systemImage: "flame",
+                title: String(localized: "A gentle streak"),
+                detail: String(localized: "See the days in a row you've prayed and a few numbers about your prayer life. All free.")
+            ),
+            WhatsNewItem(
+                systemImage: "square.grid.2x2",
+                title: String(localized: "Switch off anything you don't use"),
+                detail: String(localized: "Every extra, from Memorise to Hebrew & Greek, now has its own switch in Settings › Features.")
+            ),
+        ],
+        feature: .prayer
+    )
 
     static let nightAndOriginalWord = WhatsNewAnnouncement(
         id: "night-reading-original-word",
@@ -226,7 +254,7 @@ enum WhatsNewCatalog {
                 detail: String(localized: "Add the Memorise widget to your Home Screen or Lock Screen to recall a verse at a glance.")
             ),
         ],
-        feature: .plansAndPrayer
+        feature: .memorise
     )
 
     static let ambientSounds = WhatsNewAnnouncement(
@@ -243,7 +271,8 @@ enum WhatsNewCatalog {
                 title: String(localized: "A timer that fades out"),
                 detail: String(localized: "Set a timer and the sounds fade gently away, for reading before sleep.")
             ),
-        ]
+        ],
+        feature: .ambientSounds
     )
 
     static let readAndShare = WhatsNewAnnouncement(
