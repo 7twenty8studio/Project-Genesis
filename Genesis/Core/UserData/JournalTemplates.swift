@@ -92,15 +92,21 @@ enum JournalTemplate: String, CaseIterable, Identifiable, Sendable {
         let position = min(max(0, offset ?? characters.count), characters.count)
         let before = String(characters[..<position])
         let after = String(characters[position...])
-        // A blank line before the template, unless it starts a paragraph already.
+        let (prefix, suffix) = separators(before: before, after: after)
+        let text = before + prefix + template + suffix + after
+        return (text, before.count + prefix.count + template.count)
+    }
+
+    /// The line breaks around a template put between `before` and `after`:
+    /// a blank line before it, unless it starts a paragraph already, and one
+    /// after it when text follows on the same line.
+    static func separators(before: String, after: String) -> (prefix: String, suffix: String) {
         var prefix = ""
         if !before.isEmpty, !before.hasSuffix("\n\n") {
             prefix = before.hasSuffix("\n") ? "\n" : "\n\n"
         }
-        // And one after, when text follows on the same line.
         let suffix = !after.isEmpty && !after.hasPrefix("\n") ? "\n" : ""
-        let text = before + prefix + template + suffix + after
-        return (text, before.count + prefix.count + template.count)
+        return (prefix, suffix)
     }
 }
 

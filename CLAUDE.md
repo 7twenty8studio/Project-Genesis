@@ -299,8 +299,11 @@ shares; README.md has the architecture.
   `preachedAt`, optional series, `passages` (`PrayerPassage` verse ids only,
   never text), `isFavourite`, and the notes as Markdown text in `body`
   (`SermonMarkdown`: **bold**, *italic*, "## ", "- ", "1. ", "> "). The
-  editor is a plain-text TextEditor with buttons that toggle the marks, and
-  a preview rendered by `SermonMarkdown.blocks` + inline Markdown.
+  editor shows them formatted, never the marks: a rich TextEditor
+  (AttributedString + `AttributedTextSelection`) converted both ways by
+  `SermonRichText` (line styles in `SermonLineStyleAttribute`, bullets shown
+  as "• ", Return carries a list on and an empty item ends it). The PDF
+  export reads `SermonMarkdown.blocks` + `inline`.
 - List: `SermonGrouping` (this week, then by month; or by church), favourites,
   search (`SermonSearch`). Passages show verbatim from the current Bible and
   open in the reader.

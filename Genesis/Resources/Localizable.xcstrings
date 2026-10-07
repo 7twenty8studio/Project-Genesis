@@ -9392,6 +9392,7 @@
       }
     },
     "No notes yet." : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {

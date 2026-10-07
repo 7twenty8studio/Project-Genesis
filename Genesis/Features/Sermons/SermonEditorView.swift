@@ -15,7 +15,7 @@ struct SermonEditorView: View {
     @Environment(AppRouter.self) private var router
     @AppStorage("sermons.churchMode") private var churchMode = false
     @AppStorage("sermons.largeText") private var largeText = false
-    @State private var selection: TextSelection?
+    @State private var insertion: SermonNotesInsertion?
     @State private var wasDeleted = false
     @State private var confirmDelete = false
     @State private var exporting: JournalExportSubject?
@@ -42,7 +42,7 @@ struct SermonEditorView: View {
                         .accessibilityIdentifier("sermon.title")
                 }
                 Section("Notes") {
-                    SermonNotesEditor(text: $sermon.body, selection: $selection, largeText: churchMode && largeText)
+                    SermonNotesEditor(text: $sermon.body, insertion: $insertion, largeText: churchMode && largeText)
                 }
                 SermonPassagesSection(sermon: sermon, onOpen: openInReader)
                 AttachmentsSection(owner: .sermon, ownerID: sermon.id)
@@ -97,19 +97,13 @@ struct SermonEditorView: View {
     /// From the lookup: the reference goes into the notes at the cursor and
     /// the passage is attached.
     private func insert(_ passage: PrayerPassage, reference: String) {
-        let offset = SermonTextSelection.offsets(selection, in: sermon.body)?.upperBound
-        let edit = SermonMarkdown.inserting(reference, into: sermon.body, at: offset)
-        sermon.body = edit.text
-        selection = SermonTextSelection.selection(edit.selection, in: edit.text)
+        insertion = SermonNotesInsertion(kind: .reference(reference))
         StudyStore(context: modelContext).attach(passage, to: sermon)
     }
 
     /// A template (Premium) in place of empty notes, or at the cursor.
     private func apply(_ template: JournalTemplate) {
-        let offset = SermonTextSelection.offsets(selection, in: sermon.body)?.upperBound
-        let edit = JournalTemplate.inserting(template.text(), into: sermon.body, at: offset)
-        sermon.body = edit.text
-        selection = SermonTextSelection.selection(edit.cursor..<edit.cursor, in: edit.text)
+        insertion = SermonNotesInsertion(kind: .template(template.text()))
     }
 
     private func openInReader(_ passage: PrayerPassage) {
