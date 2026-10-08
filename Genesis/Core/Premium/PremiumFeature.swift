@@ -37,7 +37,7 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
     var detail: String {
         switch self {
         case .morningWelcome: String(localized: "Begin each day with a quiet welcome: your name, today's verse and reading, and your sounds easing in.")
-        case .wordStudy: String(localized: "The Hebrew and Greek words behind every verse, with Strong's definitions, and Matthew Henry's commentary on the whole Bible.")
+        case .wordStudy: String(localized: "The Hebrew and Greek words behind every verse with Strong's definitions, fuller lexicons, and classic commentaries from Matthew Henry, Spurgeon, Calvin and more.")
         case .premiumThemes: String(localized: "Textured paper and seasonal themes, Starlight for reading at night, illuminated first letters, three more book fonts, special app icons and a ribbon when you finish a chapter.")
         case .advancedAI: String(localized: "Summaries, historical background, discussion questions and more, with up to 30 new answers a day.")
         case .historicalContent: String(localized: "Family trees for 3,000 people, interactive maps with Paul's journeys and the Exodus, and the people and places beside the chapter you're reading.")

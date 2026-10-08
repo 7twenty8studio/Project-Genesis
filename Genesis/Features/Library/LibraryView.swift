@@ -24,6 +24,7 @@ struct LibraryView: View {
     }
 
     @State private var shelf: Shelf = .highlights
+    @State private var showsStudyLibrary = false
 
     /// Shelves for features that are switched on.
     private var shelves: [Shelf] {
@@ -61,12 +62,21 @@ struct LibraryView: View {
             }
             .navigationTitle("Library")
             .toolbar {
+                if features.isOn(.studyLibrary) {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button("Study Library", systemImage: "books.vertical") { showsStudyLibrary = true }
+                            .accessibilityIdentifier("library.studyLibrary")
+                    }
+                }
                 if !searchIsTab {
                     ToolbarItem(placement: .primaryAction) {
                         Button("Search", systemImage: "magnifyingglass") { router.openSearch(asTab: false) }
                             .accessibilityIdentifier("library.search")
                     }
                 }
+            }
+            .sheet(isPresented: $showsStudyLibrary) {
+                StudyResourcesView()
             }
         }
     }

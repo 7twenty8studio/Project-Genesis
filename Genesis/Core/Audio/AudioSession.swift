@@ -19,6 +19,8 @@ enum AudioSession {
         case recording
         /// Playing a voice note back (`VoiceNotePlayer`).
         case voiceNote
+        /// Saying a Hebrew or Greek word (`WordPronouncer`).
+        case pronunciation
     }
 
     private static var users: Set<User> = []
@@ -42,7 +44,7 @@ enum AudioSession {
     }
 
     private static func apply() {
-        let spoken = users.contains(.narration) || users.contains(.voiceNote)
+        let spoken = users.contains(.narration) || users.contains(.voiceNote) || users.contains(.pronunciation)
         let recording = users.contains(.recording)
         // Waits for any queued deactivation first, so the session ends up on.
         let failure: String? = queue.sync {

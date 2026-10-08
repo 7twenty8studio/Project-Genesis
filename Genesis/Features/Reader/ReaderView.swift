@@ -136,7 +136,8 @@ struct ReaderView: View {
                         onExplain: explainSelection,
                         onMemorise: memoriseAction,
                         onWordStudy: wordStudyAction,
-                        onPray: prayAction
+                        onPray: prayAction,
+                        onStudy: studyResourcesAction
                     )
                     .padding(.bottom, readerSafeArea.bottom + 8)
                     .frame(maxHeight: .infinity, alignment: .bottom)
@@ -371,6 +372,17 @@ struct ReaderView: View {
         return { prayWithSelection() }
     }
 
+    /// "Study" in the selection bar: downloaded notes and commentaries on
+    /// the first selected verse, when the Study Library is switched on.
+    private var studyResourcesAction: (() -> Void)? {
+        guard features.isOn(.studyLibrary) else { return nil }
+        return {
+            guard let verse = reader.selection.min() else { return }
+            reader.clearSelection()
+            sheet = .resources(verse)
+        }
+    }
+
     /// Ambient sounds from the listening bar, when switched on.
     private var ambientAction: (() -> Void)? {
         guard features.isOn(.ambientSounds) else { return nil }
@@ -463,6 +475,11 @@ struct ReaderView: View {
             VerseImageView(card: card)
         case let .wordStudy(verse):
             VerseStudyView(verse: verse)
+        case let .resources(verse):
+            VerseResourcesView(verse: verse) { target in
+                reader.open(target)
+                self.sheet = nil
+            }
         case .chapterPicker:
             ChapterPickerView { chapter in
                 reader.open(chapter)
@@ -521,6 +538,7 @@ enum ReaderSheet: Identifiable {
     case bibles
     case verseImage(VerseCard)
     case wordStudy(VerseID)
+    case resources(VerseID)
 
     var id: String {
         switch self {
@@ -534,6 +552,7 @@ enum ReaderSheet: Identifiable {
         case let .prayer(prayer): "prayer-\(prayer.id)"
         case let .crossReferences(verse): "xref-\(verse.rawValue)"
         case let .wordStudy(verse): "words-\(verse.rawValue)"
+        case let .resources(verse): "resources-\(verse.rawValue)"
         case let .premium(feature): "premium-\(feature.rawValue)"
         case let .study(passage, action): "study-\(passage.start.rawValue)-\(passage.end.rawValue)-\(action.rawValue)"
         }

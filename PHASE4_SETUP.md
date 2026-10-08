@@ -229,3 +229,39 @@ Spanish speaker look over the app before release. Strings live in
 Still in English: people, places and events in Explore, topic names in topic
 search, and anything people write themselves.
 
+## 6. Study resources (the Study Library)
+
+Study notes, commentaries, Bible dictionaries and lexicons are optional
+downloads, like Bibles. People open them from Library › Study Library (the
+books button) and read them from the reader: select a verse › Study. Lexicons
+add Brown-Driver-Briggs and Liddell-Scott-Jones to Word Study's word pages.
+
+| Pack | What | Access | License |
+|---|---|---|---|
+| tyndale-notes | Tyndale Open Study Notes, book intros, profiles and themes | Free | CC BY-SA 4.0 |
+| tyndale-dictionary | Tyndale Open Bible Dictionary | Free | CC BY-SA 4.0 |
+| es-palabras | unfoldingWord Palabras de Traducción (Spanish key terms) | Free | CC BY-SA 4.0 |
+| lexicons | Brown-Driver-Briggs (Open Scriptures) + LSJ (STEPBible) | Premium | CC BY 4.0 |
+| jfb, mhc, barnes, gill, clarke, wesley, calvin, keil-delitzsch, treasury-of-david, burkitt | Classic commentaries | Premium | Public domain |
+
+1. **Create the table and storage (once):** SQL Editor → paste
+   `supabase/migrations/20261015000000_study_resources.sql` → Run. It also
+   creates a public storage bucket called `study`.
+2. **Upload the files:** Storage → `study` → Upload → every
+   `build/study/*.sqlite.deflate` (about 90 MB in all; build them with
+   `Tools/StudyResources/build_resources.py`, see the top of that file).
+3. **List them:** SQL Editor → paste `build/study/study_resources.sql` → Run.
+   Rows are upserts, so running it again after a rebuild is safe.
+
+Rows start enabled, except Adam Clarke's commentary (`enabled=False` in
+`PACKS`: he denied Christ's eternal sonship). To hold one back, set `enabled`
+to false in Table Editor (and in `PACKS`, or the next run re-enables it);
+`sort` orders them within each kind. To publish a corrected edition, bump its
+version in `PACKS` in the build tool, rebuild, upload and run the SQL again;
+downloaded copies update on Wi-Fi.
+
+Keep the attributions: the CC BY-SA and CC BY packs show theirs on the pack's
+About page (from the `attribution` column). Left out on purpose: Vincent's
+Word Studies and Ellicott (no clean source), Robertson's Word Pictures (its
+digital edition is non-commercial) and the Scofield notes.
+

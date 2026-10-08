@@ -6,6 +6,7 @@ import SwiftUI
 struct RootView: View {
     @Environment(ReaderSettings.self) private var settings
     @Environment(BibleLibrary.self) private var library
+    @Environment(StudyResourceLibrary.self) private var studyResources
     @Environment(ReadingProgress.self) private var progress
     @Environment(AppRouter.self) private var router
     @Environment(SyncService.self) private var sync
@@ -84,6 +85,10 @@ struct RootView: View {
             Task { await audio.catalog.refresh() }
             Task { await PushNotifications.shared.refreshRegistration() }
             Task { await library.refreshCatalog() }
+            // Corrected editions of downloaded study packs, on Wi-Fi.
+            if studyResources.hasAnyInstalled {
+                Task { await studyResources.refreshCatalog() }
+            }
             Task { await challengeAutoTick.refresh() }
             refreshWidgets()
             offerWelcome()

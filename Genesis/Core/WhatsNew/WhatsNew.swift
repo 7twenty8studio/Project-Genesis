@@ -27,7 +27,48 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords]
+
+    static let hearOriginalWords = WhatsNewAnnouncement(
+        id: "original-word-pronunciation",
+        title: String(localized: "Hear the Hebrew and Greek"),
+        items: [
+            WhatsNewItem(
+                systemImage: "speaker.wave.2",
+                title: String(localized: "Say it aloud"),
+                detail: String(localized: "Tap a word in Original (Hebrew & Greek) or Word Study, then the speaker, to hear how it sounds.")
+            ),
+        ],
+        feature: .wordStudy
+    )
+
+    static let studyLibrary = WhatsNewAnnouncement(
+        id: "study-library-notes-commentaries",
+        title: String(localized: "The Study Library"),
+        items: [
+            WhatsNewItem(
+                systemImage: "text.book.closed",
+                title: String(localized: "Study notes and a Bible dictionary"),
+                detail: String(localized: "Download free study notes, book introductions and a Bible dictionary. Select a verse and tap Study to read them.")
+            ),
+            WhatsNewItem(
+                systemImage: "books.vertical",
+                title: String(localized: "Classic commentaries"),
+                detail: String(localized: "Matthew Henry, Spurgeon, Calvin, Wesley and more, beside every verse. With Premium.")
+            ),
+            WhatsNewItem(
+                systemImage: "character.magnify",
+                title: String(localized: "Fuller Hebrew and Greek lexicons"),
+                detail: String(localized: "Brown-Driver-Briggs and Liddell-Scott-Jones in Word Study. With Premium.")
+            ),
+            WhatsNewItem(
+                systemImage: "globe",
+                title: String(localized: "Key terms in Spanish"),
+                detail: String(localized: "A Spanish dictionary of key Bible words, names and ideas, linked to the verses that use them.")
+            ),
+        ],
+        feature: .studyLibrary
+    )
 
     static let readAlongOriginal = WhatsNewAnnouncement(
         id: "parallel-follow-along-original-only",

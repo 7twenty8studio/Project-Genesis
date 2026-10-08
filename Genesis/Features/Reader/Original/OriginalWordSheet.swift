@@ -13,6 +13,7 @@ struct OriginalWordSheet: View {
     @Environment(BibleLibrary.self) private var library
     @Environment(\.palette) private var palette
     @Environment(\.dismiss) private var dismiss
+    @Environment(WordPronouncer.self) private var pronouncer
     @State private var loaded: Loaded?
 
     private struct Loaded: Sendable {
@@ -69,26 +70,38 @@ struct OriginalWordSheet: View {
                 LexiconEntryView(strongs: route.strongs)
             }
             .task(id: word.id) { await load() }
+            .onAppear { WordPronouncer.preloadVoices() }
+            .onDisappear { pronouncer.stop() }
         }
     }
 
     private var wordSection: some View {
         Section {
-            VStack(alignment: word.language == .hebrew ? .trailing : .leading, spacing: 4) {
-                Text(OriginalText.display(word.text))
-                    .font(OriginalFont.font(for: word.language, size: word.language == .hebrew ? 44 : 38))
-                    .foregroundStyle(palette.text)
-                    .accessibilityIdentifier("originalWord.text")
-                Text(word.transliteration)
-                    .font(.title3.italic())
-                    .foregroundStyle(palette.secondaryText)
+            HStack(spacing: 8) {
+                if word.language == .hebrew {
+                    PronounceButton(word: word.text, language: word.language)
+                }
+                VStack(alignment: word.language == .hebrew ? .trailing : .leading, spacing: 4) {
+                    Text(OriginalText.display(word.text))
+                        .font(OriginalFont.font(for: word.language, size: word.language == .hebrew ? 44 : 38))
+                        .foregroundStyle(palette.text)
+                        .accessibilityIdentifier("originalWord.text")
+                    Text(word.transliteration)
+                        .font(.title3.italic())
+                        .foregroundStyle(palette.secondaryText)
+                }
+                .frame(maxWidth: .infinity, alignment: word.language == .hebrew ? .trailing : .leading)
+                if word.language == .greek {
+                    PronounceButton(word: word.text, language: word.language)
+                }
             }
-            .frame(maxWidth: .infinity, alignment: word.language == .hebrew ? .trailing : .leading)
             .padding(.vertical, 4)
             LabeledContent("In this verse", value: word.gloss)
             if let strongs = word.strongs {
                 LabeledContent("Strong's number", value: strongs)
             }
+        } footer: {
+            PronunciationNote(language: word.language)
         }
         .listRowBackground(palette.surface)
     }
@@ -131,15 +144,23 @@ private struct OriginalWordDetails: View {
     var body: some View {
         if let entry {
             Section("Dictionary form") {
-                VStack(alignment: word.language == .hebrew ? .trailing : .leading, spacing: 2) {
-                    Text(entry.lemma)
-                        .font(OriginalFont.font(for: word.language, size: 28))
-                        .foregroundStyle(palette.text)
-                    Text(entry.transliteration)
-                        .font(.subheadline.italic())
-                        .foregroundStyle(palette.secondaryText)
+                HStack(spacing: 8) {
+                    if word.language == .hebrew {
+                        PronounceButton(word: entry.lemma, language: word.language)
+                    }
+                    VStack(alignment: word.language == .hebrew ? .trailing : .leading, spacing: 2) {
+                        Text(entry.lemma)
+                            .font(OriginalFont.font(for: word.language, size: 28))
+                            .foregroundStyle(palette.text)
+                        Text(entry.transliteration)
+                            .font(.subheadline.italic())
+                            .foregroundStyle(palette.secondaryText)
+                    }
+                    .frame(maxWidth: .infinity, alignment: word.language == .hebrew ? .trailing : .leading)
+                    if word.language == .greek {
+                        PronounceButton(word: entry.lemma, language: word.language)
+                    }
                 }
-                .frame(maxWidth: .infinity, alignment: word.language == .hebrew ? .trailing : .leading)
                 if !entry.gloss.isEmpty {
                     LabeledContent("Meaning", value: entry.gloss)
                 }

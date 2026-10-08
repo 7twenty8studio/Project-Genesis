@@ -18,10 +18,12 @@ struct GenesisApp: App {
     @State private var welcome: MorningWelcome
     @State private var audio: AudioPlayerService
     @State private var ambient: AmbientSoundService
+    @State private var pronouncer: WordPronouncer
     @State private var community: CommunityStore
     @State private var features: FeaturePreferences
     @State private var challengeAutoTick: ChallengeAutoTick
     @State private var attachments: AttachmentTransfers
+    @State private var studyResources: StudyResourceLibrary
     private let modelContainer: ModelContainer
     private let groupChallenges: any GroupChallengeBackend
     private let studyData = StudyRepository.bundled()
@@ -67,6 +69,14 @@ struct GenesisApp: App {
         _auth = State(initialValue: auth)
         // More translations to download (none in UI tests).
         library.setDownloader(TranslationDownloader(client: testing.isEnabled ? nil : auth.client))
+        // Study notes, commentaries and lexicons to download (none in UI
+        // tests, which get an empty folder of their own).
+        _studyResources = State(initialValue: StudyResourceLibrary(
+            directory: testing.isEnabled
+                ? URL.temporaryDirectory.appending(path: "StudyResources-\(UUID().uuidString)", directoryHint: .isDirectory)
+                : StudyResourceLibrary.downloadsDirectory,
+            downloader: StudyResourceDownloader(client: testing.isEnabled ? nil : auth.client)
+        ))
         _sync = State(initialValue: sync)
 
         // Attachment files (Premium): the person's own iCloud, moving any an
@@ -138,6 +148,8 @@ struct GenesisApp: App {
         _audio = State(initialValue: audio)
         // Ambient sounds: silent in UI tests.
         _ambient = State(initialValue: AmbientSoundService(output: testing.isEnabled ? SilentAmbientOutput() : EngineAmbientOutput()))
+        // Hebrew and Greek words said aloud: silent in UI tests.
+        _pronouncer = State(initialValue: WordPronouncer(isSilent: testing.isEnabled))
 
         // Groups and the community. UI tests use an in-memory server with a
         // signed-in person (or none with -uiTestingSignedOut).
@@ -194,6 +206,7 @@ struct GenesisApp: App {
         WindowGroup {
             RootView()
                 .environment(library)
+                .environment(studyResources)
                 .environment(settings)
                 .environment(progress)
                 .environment(reader)
@@ -207,6 +220,7 @@ struct GenesisApp: App {
                 .environment(welcome)
                 .environment(audio)
                 .environment(ambient)
+                .environment(pronouncer)
                 .environment(community)
                 .environment(features)
                 .environment(challengeAutoTick)

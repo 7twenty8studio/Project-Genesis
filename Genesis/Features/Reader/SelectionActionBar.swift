@@ -13,6 +13,8 @@ struct SelectionActionBar: View {
     var onWordStudy: (() -> Void)?
     /// A new prayer holding the selected verses (nil when the journal is hidden).
     var onPray: (() -> Void)?
+    /// Downloaded study notes and commentaries on the verse (nil when the Study Library is hidden).
+    var onStudy: (() -> Void)?
 
     @Environment(ReaderViewModel.self) private var reader
     @Environment(\.palette) private var palette
@@ -118,6 +120,10 @@ struct SelectionActionBar: View {
                     action(String(localized: "Related", comment: "Panel title: related passages (cross-references)"), systemImage: "arrow.triangle.branch", perform: onCrossReferences)
                         .accessibilityIdentifier("selection.related")
                 }
+                if let onStudy {
+                    action(String(localized: "Study", comment: "Verse selection action: study notes and commentaries on the verse"), systemImage: "books.vertical", perform: onStudy)
+                        .accessibilityIdentifier("selection.study")
+                }
             }
         }
         .foregroundStyle(palette.text)
@@ -190,6 +196,8 @@ struct SelectionActionBar: View {
                 .font(.body)
             Text(title)
                 .font(.caption2)
+                .lineLimit(1)
+                .minimumScaleFactor(0.75)
         }
         .frame(maxWidth: .infinity, minHeight: 44)
         .contentShape(Rectangle())

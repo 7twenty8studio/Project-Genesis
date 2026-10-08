@@ -124,6 +124,13 @@ shares; README.md has the architecture.
   languages planned): when the Bible or the app isn't English, the
   Original header, the word sheet and VerseStudyView say so
   (`WordStudyRepository.needsEnglishNote`).
+- Pronunciation (free): `PronounceButton` on `OriginalWordSheet` (word and
+  dictionary form) and `LexiconEntryView` says the word with the device's
+  Hebrew (he) or Greek (el) voice via `WordPronouncer` (environment; silent
+  in UI tests; `AudioSession` user `.pronunciation`; pauses listening).
+  Only the spoken copy is simplified (`PronunciationText`: Hebrew without
+  cantillation, Greek monotonic); the word shown stays verbatim.
+  `PronunciationNote` says it's modern pronunciation, or how to add a voice.
 - Handwritten pages (free): `Note.drawing` (PencilKit data, external storage),
   synced as base64 in notes.drawing (≤ 2 MB; larger stays on the device).
   Journal entries offer `JournalPrompts`.
@@ -379,6 +386,32 @@ shares; README.md has the architecture.
   font resolved for Premium, Markdown rendered, ligatures off so the text
   extracts exactly, "Made with Genesis" footer; Letter in the US/Canada, A4
   elsewhere). `JournalExportSheet` previews it and shares it with ShareLink.
+
+## Study Library
+- Downloadable study packs, like Bibles: public.study_resources (migration
+  20261015000000, RLS: anyone reads enabled rows) + the public `study`
+  bucket. Built by Tools/StudyResources/build_resources.py (one SQLite
+  shape: info, notes, introductions, articles, article_verses, lexicon;
+  raw DEFLATE + SHA-256); bump a pack's version in `PACKS` to update
+  installed copies (on Wi-Fi). Upload steps: PHASE4_SETUP.md › 6.
+- Free: tyndale-notes, tyndale-dictionary (CC BY-SA 4.0, Tyndale) and
+  es-palabras (unfoldingWord es-419 Translation Words, CC BY-SA 4.0).
+  Premium (`.wordStudy`): the lexicons pack (BDB via Open Scriptures, LSJ
+  via STEPBible, CC BY 4.0) and the public-domain commentaries (jfb, mhc,
+  barnes, gill, clarke, wesley, calvin, keil-delitzsch, treasury-of-david,
+  burkitt). Keep each pack's `attribution` shown on its About page.
+- Packs hold verse ids only (KJV numbering; other Bibles map through
+  `OriginalVersification`), never verse text: verse links open
+  `StudyPassageSheet`, verbatim from the current Bible. Commentaries carry
+  the "one writer's explanation, shown apart from Scripture" note; keep it.
+- App: `StudyResourceLibrary` (environment, Application Support/
+  StudyResources, installed.json; temp folder and no network in UI tests),
+  `StudyResourceRepository` (queries), `StudyMarkup` (the packs' light
+  Markdown and verse:/article: links; `StudyText` is the assistant's).
+  Own switch `OptionalFeature.studyLibrary`. Entry points: the selection
+  bar's Study action (`ReaderSheet.resources`, `VerseResourcesView`:
+  Notes and Commentary tabs), Library's toolbar (`StudyResourcesView`) and
+  BDB/LSJ sections in `LexiconEntryView`.
 
 ## What's New
 - Every new user-facing feature gets a one-time announcement in
