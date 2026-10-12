@@ -10,11 +10,19 @@
 // notes, plans, prayers, memory verses, sermon notes, attachment details,
 // group memberships and posts go too.
 //
-// Deploy: supabase functions deploy delete-account
-// (Uses the built-in SUPABASE_URL, SUPABASE_ANON_KEY and
-// SUPABASE_SERVICE_ROLE_KEY; nothing to configure.)
+// Sign in with Apple accounts: the app confirms with Apple right before
+// deleting and sends { appleAuthorizationCode }. Before the auth user is
+// deleted, the code is exchanged for Apple's refresh token, which is revoked
+// (guideline 5.1.1(v); lib.ts). Deletion goes ahead even if that fails or the
+// Apple secrets aren't set; the response says { deleted, appleRevoked }.
+//
+// Deploy: supabase functions deploy delete-account (verify_jwt stays on).
+// Uses the built-in SUPABASE_URL, SUPABASE_ANON_KEY and
+// SUPABASE_SERVICE_ROLE_KEY, plus the secrets APPLE_SIGNIN_KEY (the .p8
+// contents), APPLE_SIGNIN_KEY_ID and APPLE_TEAM_ID (APPLE_SETUP.md).
 
 import { createClient } from "jsr:@supabase/supabase-js@2";
+import { appleConfig, parseDeleteRequest, revokeAppleTokens } from "./lib.ts";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SUPABASE_ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY")!;
@@ -34,6 +42,7 @@ Deno.serve(async (req) => {
   });
   const { data, error } = await userClient.auth.getUser(token);
   if (error || !data.user) return json({ error: "Sign in again to delete your account." }, 401);
+  const { appleAuthorizationCode } = parseDeleteRequest(await req.json().catch(() => null));
 
   const removal = await removeAttachments(data.user.id);
   if (removal) {
@@ -41,13 +50,27 @@ Deno.serve(async (req) => {
     return json({ error: "Your account couldn't be deleted. Please try again." }, 500);
   }
 
+  const appleRevoked = appleAuthorizationCode ? await revokeApple(appleAuthorizationCode) : false;
+
   const { error: deleteError } = await admin.auth.admin.deleteUser(data.user.id);
   if (deleteError) {
     console.error("delete-account", deleteError.message);
     return json({ error: "Your account couldn't be deleted. Please try again." }, 500);
   }
-  return json({ deleted: true }, 200);
+  return json({ deleted: true, appleRevoked }, 200);
 });
+
+/** Revokes Genesis's Apple tokens; logs and returns false when it can't. */
+async function revokeApple(code: string): Promise<boolean> {
+  const config = appleConfig((name) => Deno.env.get(name));
+  if (!config) {
+    console.warn("delete-account: Apple secrets aren't set (APPLE_SIGNIN_KEY, APPLE_SIGNIN_KEY_ID, APPLE_TEAM_ID); Apple tokens not revoked");
+    return false;
+  }
+  const result = await revokeAppleTokens(config, code, (url, init) => fetch(url, init));
+  if (!result.revoked) console.error("delete-account: Apple revocation failed", result.reason);
+  return result.revoked;
+}
 
 /**
  * Removes every file in the person's folder ("<user id>/...") of the

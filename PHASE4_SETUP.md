@@ -126,18 +126,11 @@ blocking and someone acting on reports. Genesis has all four:
 When a leader posts an announcement, members get a push notification (they
 can turn it off per group). This needs your Apple Developer account:
 
-1. Apple Developer → Certificates, Identifiers & Profiles → **Keys** → add a key
-   with **Apple Push Notifications service (APNs)**. Download the `.p8` file
-   (only once) and note the **Key ID** and your **Team ID**.
-2. In Xcode, the app needs the Push Notifications capability. It's already in
-   `Config/Genesis.entitlements`; it switches on with your
-   `Config/Signing.xcconfig` (see PHASE2_SETUP.md).
-3. Add three Supabase secrets (Edge Functions → Secrets). **Don't paste them in
-   chat.**
-   - `APNS_KEY`: the whole text of the `.p8` file
-   - `APNS_KEY_ID`: the Key ID
-   - `APNS_TEAM_ID`: your Team ID
-4. Deploy the function: `supabase functions deploy group-notify`
+1. Create the APNs key and add the `APNS_KEY`, `APNS_KEY_ID` and
+   `APNS_TEAM_ID` secrets: [APPLE_SETUP.md](APPLE_SETUP.md), step 3. The
+   Push Notifications capability is already in `Config/Genesis.entitlements`
+   and switches on with your `Config/Signing.xcconfig`.
+2. Deploy the function: `supabase functions deploy group-notify`
 
 Builds run from Xcode use Apple's test (sandbox) push service; TestFlight and
 App Store builds use the live one. Without the secrets, announcements still

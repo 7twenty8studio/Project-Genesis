@@ -90,6 +90,19 @@ struct GenesisApp: App {
         let entitlements = EntitlementService(override: testing.isEnabled ? testing.isPremium : nil)
         _entitlements = State(initialValue: entitlements)
         EntitlementService.app = entitlements
+        // The server learns about the subscription (premium-sync), so storage
+        // uploads (Premium) are allowed. Never in UI tests.
+        entitlements.accountID = { [weak auth] in auth?.user?.id }
+        if !testing.isEnabled, let client = auth.client {
+            let premiumSync = PremiumSyncClient(client: client)
+            entitlements.reportToServer = { [weak auth] signedTransaction in
+                guard let auth, auth.isSignedIn, let token = try? await auth.accessToken() else { return nil }
+                return await premiumSync.sync(signedTransaction: signedTransaction, accessToken: token)?.premium
+            }
+        }
+        attachments.recordPremium = { [weak entitlements] in
+            await entitlements?.syncWithServer(force: true) == true
+        }
 
         // UI tests get canned answers: no network and no AI cost.
         let backend: StudyAssistantBackend? = testing.isEnabled ? StubStudyBackend() : StudyAssistant.liveBackend(client: auth.client)

@@ -262,15 +262,35 @@ private struct SignedInView: View {
         .sheet(isPresented: $showsPasswordChange) { ChangePasswordView() }
         .alert("Delete your account?", isPresented: $confirmDelete) {
             Button("Delete Account", role: .destructive) {
-                Task {
-                    if await auth.deleteAccount() {
-                        sync.accountDidSignOut(removeLocalData: true)
-                    }
-                }
+                Task { await deleteAccount() }
             }
             Button("Cancel", role: .cancel) {}
         } message: {
-            Text("This permanently deletes your account and your data in the cloud. It can't be undone.")
+            if user.usesSignInWithApple {
+                Text("This permanently deletes your account and your data in the cloud. It can't be undone. You'll confirm with Apple next so Genesis also stops using your Apple ID.")
+            } else {
+                Text("This permanently deletes your account and your data in the cloud. It can't be undone.")
+            }
+        }
+    }
+
+    /// Deletes the account; a Sign in with Apple account first confirms with
+    /// Apple so the server can revoke Genesis's Apple tokens. Cancelling the
+    /// Apple sheet leaves the account as it is.
+    private func deleteAccount() async {
+        guard let appleAccount = await auth.usesSignInWithApple() else { return }
+        var appleCode: String?
+        if appleAccount {
+            switch await AppleReauthorization().authorizationCode() {
+            case let .code(code): appleCode = code
+            case .cancelled: return
+            case let .failed(message):
+                auth.errorMessage = message
+                return
+            }
+        }
+        if await auth.deleteAccount(appleAuthorizationCode: appleCode) {
+            sync.accountDidSignOut(removeLocalData: true)
         }
     }
 

@@ -12,6 +12,9 @@ import SwiftData
 ///   isn't on this device yet; screens show a placeholder meanwhile.
 /// - Deleting an attachment removes its local file at once and its stored
 ///   object on the next run (best effort; retried like uploads).
+/// - Uploads need Premium on the server (`public.genesis_is_premium()`). An
+///   upload refused for that tells the server about the subscription
+///   (`recordPremium`, premium-sync) once per run and tries again.
 @MainActor
 @Observable
 final class AttachmentTransfers {
@@ -30,6 +33,17 @@ final class AttachmentTransfers {
     @ObservationIgnored var userID: @MainActor () -> UUID? = { nil }
     /// Asks for a sync (which ends by calling `run`) when a retry is due.
     @ObservationIgnored var requestSync: (@MainActor () -> Void)?
+    /// Tells the server about the App Store subscription (premium-sync):
+    /// true when it now knows the account is Premium.
+    @ObservationIgnored var recordPremium: (@MainActor () async -> Bool)?
+    /// premium-sync is asked at most once per run, whatever the number of files.
+    @ObservationIgnored private var premiumRecheck: PremiumRecheck = .notTried
+
+    private enum PremiumRecheck {
+        case notTried
+        case recorded
+        case refused
+    }
 
     /// The app's instance, so StudyStore can discard files when deleting.
     static weak var app: AttachmentTransfers?
@@ -101,6 +115,7 @@ final class AttachmentTransfers {
         guard !isRunning, let user = userID() else { return }
         isRunning = true
         defer { isRunning = false }
+        premiumRecheck = .notTried
         let waiting = (try? context.fetch(FetchDescriptor<Attachment>(predicate: #Predicate { $0.needsUpload == true }))) ?? []
         for attachment in waiting { queue.enqueue(.upload(attachment.id), now: now) }
         for operation in queue.due(at: now) {
@@ -137,10 +152,30 @@ final class AttachmentTransfers {
         let contentType = attachment.kind.contentType
         let store = files
         let data = try await Task.detached { try store.read(fileName) }.value
-        try await storage.upload(data, path: AttachmentPaths.storagePath(userID: user, fileName: fileName), contentType: contentType)
+        let path = AttachmentPaths.storagePath(userID: user, fileName: fileName)
+        do {
+            try await storage.upload(data, path: path, contentType: contentType)
+        } catch AttachmentStorageError.premiumRequired {
+            // The server hasn't heard about the subscription yet: tell it once, then try again.
+            guard await premiumIsRecorded() else { throw AttachmentStorageError.premiumRequired }
+            try await storage.upload(data, path: path, contentType: contentType)
+        }
         // Local bookkeeping only: no edit time change and no sync notification.
         attachment.needsUpload = false
         try context.save()
+    }
+
+    private func premiumIsRecorded() async -> Bool {
+        switch premiumRecheck {
+        case .recorded:
+            return true
+        case .refused:
+            return false
+        case .notTried:
+            let recorded = await recordPremium?() ?? false
+            premiumRecheck = recorded ? .recorded : .refused
+            return recorded
+        }
     }
 
     private func scheduleRetry(now: Date) {

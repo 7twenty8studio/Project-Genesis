@@ -14,6 +14,13 @@ struct AuthSession: Codable, Sendable, Equatable {
 struct AuthUser: Codable, Sendable, Equatable {
     let id: UUID
     let email: String?
+    /// How the account signs in ("apple", "email"), from the user's
+    /// app_metadata and identities. Nil for sessions saved before it was kept.
+    var providers: [String]? = nil
+
+    /// True when Sign in with Apple is one of the account's sign-ins, so
+    /// deleting it also revokes Genesis's Apple tokens.
+    var usesSignInWithApple: Bool { providers?.contains("apple") ?? false }
 }
 
 enum SupabaseError: LocalizedError, Equatable {
@@ -68,8 +75,28 @@ final class SupabaseClient: Sendable {
     }
 
     private struct UserResponse: Decodable {
+        struct AppMetadata: Decodable {
+            let provider: String?
+            let providers: [String]?
+        }
+
+        struct Identity: Decodable {
+            let provider: String?
+        }
+
         let id: UUID
         let email: String?
+        let appMetadata: AppMetadata?
+        let identities: [Identity]?
+
+        var authUser: AuthUser {
+            var names = appMetadata?.providers ?? []
+            if let provider = appMetadata?.provider { names.append(provider) }
+            names += (identities ?? []).compactMap(\.provider)
+            var seen = Set<String>()
+            let providers = names.filter { seen.insert($0).inserted }
+            return AuthUser(id: id, email: email, providers: providers)
+        }
     }
 
     func signUp(email: String, password: String) async throws -> AuthSession {
@@ -103,6 +130,14 @@ final class SupabaseClient: Sendable {
         _ = try? await session.data(for: request)
     }
 
+    /// The signed-in account as the server has it now (its sign-in providers
+    /// included, which can change when an identity is linked).
+    func currentUser(accessToken: String) async throws -> AuthUser {
+        let request = makeRequest(path: "auth/v1/user", query: [], method: "GET", accessToken: accessToken)
+        let data = try await perform(request)
+        return try SupabaseCoding.decoder().decode(UserResponse.self, from: data).authUser
+    }
+
     /// Sets a new password for the signed-in account.
     func updatePassword(_ password: String, accessToken: String) async throws {
         var request = makeRequest(path: "auth/v1/user", query: [], method: "PUT", accessToken: accessToken)
@@ -129,7 +164,7 @@ final class SupabaseClient: Sendable {
             accessToken: accessToken,
             refreshToken: refreshToken,
             expiresAt: Date().addingTimeInterval(response.expiresIn ?? 3600),
-            user: AuthUser(id: user.id, email: user.email)
+            user: user.authUser
         )
     }
 

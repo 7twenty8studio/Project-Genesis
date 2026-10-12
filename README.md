@@ -125,6 +125,10 @@ on. The study assistant's announcement is ready and waits for its switch.
   trial (see PHASE3_SETUP.md for what's free and what's Premium). Every Bible,
   sync, and Explore's timeline and people are free; Premium adds the morning
   welcome, family trees and maps, Memorise, ambient sounds and more.
+  The server knows about subscriptions too (`premium-sync` from the app,
+  App Store Server Notifications to `appstore-notifications`), so Premium is
+  enforced there where it matters (attachment uploads). Apple Developer and
+  App Store Connect setup: [APPLE_SETUP.md](APPLE_SETUP.md).
 - **Wide screens**: the study panel adds Study (AI notes beside the text) and
   Context (people, places and events in the chapter).
 
@@ -142,7 +146,7 @@ Genesis/
     Cloud/          Supabase client, auth, sync engine, attachment file transfers
     Export/         The journal PDF (JournalExport, JournalPDFRenderer)
     AI/             Study assistant client
-    Premium/        StoreKit 2 entitlements and free limits
+    Premium/        StoreKit 2 entitlements, free limits, premium-sync calls
     Study/          People, places, events and routes (Study.sqlite)
     Plans/          Reading plan schedules
     Services/       Config, Sentry, reading progress/streaks, reminders, widget snapshot
@@ -154,7 +158,9 @@ Genesis/
 GenesisWidgets/     WidgetKit extension
 GenesisTests/       Swift Testing unit tests
 GenesisUITests/     XCUITest UI automation
-supabase/           Database schema (SQL migrations) and the study-ai Edge Function
+supabase/           Database schema (SQL migrations) and Edge Functions (study-ai,
+                    premium-sync, appstore-notifications, group-notify,
+                    delete-account; shared App Store code in functions/_shared)
 Tools/BibleData/    Script that builds the Bible databases
 Tools/StudyData/    Script that builds Study.sqlite
 ```

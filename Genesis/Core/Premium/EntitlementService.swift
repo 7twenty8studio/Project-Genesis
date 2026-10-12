@@ -36,6 +36,17 @@ final class EntitlementService {
     /// The signed App Store transaction for the active subscription, which the
     /// study assistant's server verifies before lifting the free limit.
     private(set) var signedTransaction: String?
+    /// The active subscription's original id and transaction id (a renewal
+    /// is a new transaction), so the server is told when it changes.
+    private(set) var transactionKey: String?
+
+    /// The signed-in account (purchases carry it; premium-sync is per account).
+    @ObservationIgnored var accountID: @MainActor () -> UUID? = { nil }
+    /// Sends the signed transaction to the premium-sync Edge Function: the
+    /// server's answer (Premium or not), or nil when it couldn't be reached.
+    /// Nil in UI tests and without sync configured.
+    @ObservationIgnored var reportToServer: (@MainActor (String) async -> Bool?)?
+    @ObservationIgnored private var isReportingToServer = false
 
     @ObservationIgnored private let defaults: UserDefaults
     @ObservationIgnored private let override: Bool?
@@ -44,6 +55,7 @@ final class EntitlementService {
     private static let cacheKey = "premium.lastKnown"
     private static let grantKey = "premium.grant"
     private static let testKey = "premium.testSwitch"
+    private static let serverSyncKey = "premium.serverSync"
 
     /// - Parameter override: forces Premium on or off (UI tests); StoreKit is then ignored.
     init(defaults: UserDefaults = .standard, override: Bool? = nil) {
@@ -199,6 +211,7 @@ final class EntitlementService {
                 }
                 await transaction.finish()
                 await refresh()
+                Task { [weak self] in await self?.syncWithServer(force: true) }
                 return .purchased
             case .pending:
                 return .pending
@@ -220,6 +233,7 @@ final class EntitlementService {
             return false
         }
         await refresh()
+        Task { [weak self] in await self?.syncWithServer(force: true) }
         return isPremium
     }
 
@@ -242,8 +256,36 @@ final class EntitlementService {
         activeProduct = best.flatMap { PremiumProduct(rawValue: $0.transaction.productID) }
         renewsOrExpiresAt = best?.transaction.expirationDate
         signedTransaction = best?.jws
+        transactionKey = best.map { "\($0.transaction.originalID):\($0.transaction.id)" }
         hasLoaded = true
         defaults.set(hasSubscription, forKey: Self.cacheKey)
+        // A new purchase, a renewal or a change on another device.
+        Task { [weak self] in await self?.syncWithServer() }
+    }
+
+    // MARK: The server
+
+    /// Tells the server (premium-sync) about the active subscription when
+    /// `PremiumSyncPolicy` says it's due, or now with `force` (a purchase, a
+    /// restore, an upload refused for want of Premium). Returns the server's
+    /// answer, or nil when nothing was sent or it failed (silently; it's
+    /// tried again next time).
+    @discardableResult
+    func syncWithServer(force: Bool = false, now: Date = .now) async -> Bool? {
+        guard override == nil, let reportToServer, !isReportingToServer else { return nil }
+        let account = accountID()
+        guard PremiumSyncPolicy.shouldSync(transactionKey: transactionKey, account: account, last: lastServerSync, now: now, force: force),
+              let account, let transactionKey, let signedTransaction else { return nil }
+        isReportingToServer = true
+        defer { isReportingToServer = false }
+        guard let premium = await reportToServer(signedTransaction) else { return nil }
+        let record = PremiumSyncRecord(fingerprint: PremiumSyncPolicy.fingerprint(account: account, transactionKey: transactionKey), date: now)
+        defaults.set(try? JSONEncoder().encode(record), forKey: Self.serverSyncKey)
+        return premium
+    }
+
+    private var lastServerSync: PremiumSyncRecord? {
+        defaults.data(forKey: Self.serverSyncKey).flatMap { try? JSONDecoder().decode(PremiumSyncRecord.self, from: $0) }
     }
 }
 

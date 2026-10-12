@@ -28,33 +28,15 @@ import {
   RequestError,
   SYSTEM_PROMPT,
   type Tier,
-  verifyTransaction,
-  VerificationError,
 } from "./lib.ts";
+import { REVERIFY_AFTER_MS, VerificationError } from "../_shared/appstore.ts";
+import { activeGrant, claimTransaction, forgetEntitlement, savedEntitlement } from "../_shared/premium.ts";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SUPABASE_ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY")!;
 const SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 const ANTHROPIC_API_KEY = Deno.env.get("ANTHROPIC_API_KEY");
-const BUNDLE_ID = Deno.env.get("GENESIS_BUNDLE_ID") ?? "com.7twenty8studio.genesis";
-// Development only: accept purchases made with Xcode's local StoreKit testing.
-const ALLOW_XCODE_STOREKIT = Deno.env.get("ALLOW_XCODE_STOREKIT") === "true";
-if (ALLOW_XCODE_STOREKIT) {
-  console.warn("ALLOW_XCODE_STOREKIT is on: Xcode test purchases unlock Premium. Remove this secret before release.");
-}
-// Individual (one person) and Family (shared through Family Sharing) plans.
-const PRODUCT_IDS = [
-  "com.7twenty8studio.genesis.premium.monthly",
-  "com.7twenty8studio.genesis.premium.yearly",
-  "com.7twenty8studio.genesis.premium.family.monthly",
-  "com.7twenty8studio.genesis.premium.family.yearly",
-];
-const APPLE_ROOT_URL = "https://www.apple.com/certificateauthority/AppleRootCA-G3.cer";
-/** A saved subscription is re-verified at least this often, so a refund ends it. */
-const REVERIFY_AFTER_MS = 7 * 24 * 60 * 60 * 1000;
-
 const admin = createClient(SUPABASE_URL, SERVICE_ROLE_KEY, { auth: { persistSession: false } });
-let appleRoot: Uint8Array | undefined;
 
 /** Reads the study_assistant switch; a missing row or a failed read means off. */
 async function assistantIsOn(): Promise<boolean> {
@@ -145,71 +127,30 @@ Deno.serve(async (req) => {
 /**
  * Premium if a subscription verified in the last week is on file, or the one
  * sent now verifies. Re-verifying weekly means a refund or cancellation ends
- * Premium here too.
+ * Premium here too. (The rules are shared with premium-sync:
+ * supabase/functions/_shared/premium.ts.)
  */
 async function tierFor(userID: string, signedTransaction?: string): Promise<Tier> {
   // Premium granted by the owner (staff, testers, partners): public.premium_grants.
-  const { data: grant } = await admin
-    .from("premium_grants")
-    .select("expires_at")
-    .eq("user_id", userID)
-    .maybeSingle();
-  if (grant && (!grant.expires_at || new Date(grant.expires_at).getTime() > Date.now())) return "premium";
+  if (await activeGrant(admin, userID)) return "premium";
 
-  const { data: saved } = await admin
-    .from("premium_entitlements")
-    .select("expires_at, updated_at")
-    .eq("user_id", userID)
-    .maybeSingle();
+  const saved = await savedEntitlement(admin, userID);
   const now = Date.now();
-  const savedIsCurrent = saved && new Date(saved.expires_at).getTime() > now &&
+  const savedIsCurrent = saved !== null && new Date(saved.expires_at).getTime() > now &&
     now - new Date(saved.updated_at).getTime() < REVERIFY_AFTER_MS;
   if (savedIsCurrent && !signedTransaction) return "premium";
   if (!signedTransaction) {
-    if (saved) await admin.from("premium_entitlements").delete().eq("user_id", userID);
+    if (saved) await forgetEntitlement(admin, userID);
     return "free";
   }
 
   try {
-    const root = await appleRootCertificate();
-    const transaction = await verifyTransaction(signedTransaction, {
-      appleRoot: root,
-      bundleId: BUNDLE_ID,
-      productIds: PRODUCT_IDS,
-      now: new Date(),
-      allowXcode: ALLOW_XCODE_STOREKIT,
-    });
-    // Family members sharing a subscription carry the purchaser's details, so
-    // the account checks below apply only to the purchaser.
-    let ownershipKey = transaction.originalTransactionId;
-    if (transaction.familyShared) {
-      ownershipKey = `${transaction.originalTransactionId}:family:${userID}`;
-    } else {
-      // A purchase made while signed in carries the account id; it must match.
-      if (transaction.appAccountToken && transaction.appAccountToken !== userID.toLowerCase()) return "free";
-      // One subscription unlocks one account: the first to present it keeps it.
-      const { data: owner } = await admin
-        .from("premium_entitlements")
-        .select("user_id")
-        .eq("original_transaction_id", ownershipKey)
-        .maybeSingle();
-      if (owner && owner.user_id !== userID) return "free";
-    }
-    const { error } = await admin.from("premium_entitlements").upsert({
-      user_id: userID,
-      original_transaction_id: ownershipKey,
-      product_id: transaction.productId,
-      environment: transaction.environment,
-      expires_at: new Date(transaction.expiresDate!).toISOString(),
-      updated_at: new Date().toISOString(),
-    });
-    // A unique clash means another account claimed it at the same moment.
-    if (error) return "free";
-    return "premium";
+    const claimed = await claimTransaction(admin, userID, signedTransaction);
+    return claimed ? "premium" : "free";
   } catch (error) {
     if (error instanceof VerificationError) {
       // Expired, refunded or not valid: whatever was saved no longer applies.
-      if (saved) await admin.from("premium_entitlements").delete().eq("user_id", userID);
+      if (saved) await forgetEntitlement(admin, userID);
       return "free";
     }
     // Couldn't check right now (e.g. Apple's certificate didn't download):
@@ -217,17 +158,6 @@ async function tierFor(userID: string, signedTransaction?: string): Promise<Tier
     console.error(error);
     return savedIsCurrent ? "premium" : "free";
   }
-}
-
-/** Apple Root CA - G3, downloaded once per instance; a failed download is retried next time. */
-async function appleRootCertificate(): Promise<Uint8Array> {
-  if (appleRoot) return appleRoot;
-  const response = await fetch(APPLE_ROOT_URL);
-  if (!response.ok) throw new Error(`Apple root certificate: HTTP ${response.status}`);
-  const bytes = new Uint8Array(await response.arrayBuffer());
-  if (bytes.length < 400 || bytes[0] !== 0x30) throw new Error("Apple root certificate: unexpected download");
-  appleRoot = bytes;
-  return bytes;
 }
 
 /** Reserves one of today's answers: the new count, or -1 at the limit. */

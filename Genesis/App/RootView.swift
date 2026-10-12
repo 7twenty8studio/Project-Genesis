@@ -93,6 +93,8 @@ struct RootView: View {
         }
         .onChange(of: auth.user?.id) {
             Task { await refreshGrant() }
+            // A new account: tell the server about the subscription.
+            Task { await entitlements.syncWithServer() }
             Task { await challengeAutoTick.refresh(force: true) }
         }
         .onChange(of: entitlements.hasLoaded) {
@@ -108,6 +110,8 @@ struct RootView: View {
                 settings.nightClock = .now
                 sync.schedule(after: .zero)
                 Task { await refreshGrant() }
+                // Only when the subscription changed, or once a day.
+                Task { await entitlements.syncWithServer() }
                 audio.liveActivity.appBecameActive()
                 Task { await flags.refresh() }
                 Task { await challengeAutoTick.refresh() }

@@ -1673,6 +1673,16 @@
         }
       }
     },
+    "Apple didn't confirm your account. Your account wasn't deleted.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apple no confirmó tu cuenta. Tu cuenta no se eliminó."
+          }
+        }
+      }
+    },
     "Apple didn't return a sign-in token. Please try again.": {
       "localizations": {
         "es": {
@@ -1831,6 +1841,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Adjuntos"
+          }
+        }
+      }
+    },
+    "Attachments sync to the cloud with Genesis Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los adjuntos se sincronizan en la nube con Genesis Premium."
           }
         }
       }
@@ -14496,6 +14516,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Esto elimina para siempre tu cuenta y tus datos en la nube. No se puede deshacer."
+          }
+        }
+      }
+    },
+    "This permanently deletes your account and your data in the cloud. It can't be undone. You'll confirm with Apple next so Genesis also stops using your Apple ID.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esto elimina para siempre tu cuenta y tus datos en la nube. No se puede deshacer. A continuación confirmarás con Apple para que Genesis deje de usar tu ID de Apple."
           }
         }
       }

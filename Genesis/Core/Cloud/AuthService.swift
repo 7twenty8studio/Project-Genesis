@@ -80,16 +80,47 @@ final class AuthService {
         }
     }
 
-    /// Deletes the account and everything stored with it on the server (the
-    /// delete-account Edge Function), then signs out. True when it worked.
-    func deleteAccount() async -> Bool {
+    /// Whether the account signs in with Apple, asked of the server (so a
+    /// linked identity counts), falling back to what was saved at sign-in.
+    /// Nil (with `errorMessage` set) when it couldn't be checked.
+    func usesSignInWithApple() async -> Bool? {
         guard let client else { return false }
         isWorking = true
         errorMessage = nil
         defer { isWorking = false }
         do {
             let token = try await accessToken()
-            let (_, status) = try await client.callFunction("delete-account", body: Data("{}".utf8), accessToken: token)
+            let current = try await client.currentUser(accessToken: token)
+            if let session, session.user != current {
+                store(AuthSession(accessToken: session.accessToken, refreshToken: session.refreshToken, expiresAt: session.expiresAt, user: current))
+            }
+            return current.usesSignInWithApple
+        } catch {
+            if let user, user.providers != nil { return user.usesSignInWithApple }
+            errorMessage = error.localizedDescription
+            return nil
+        }
+    }
+
+    private struct DeleteAccountBody: Encodable {
+        let appleAuthorizationCode: String?
+    }
+
+    /// Deletes the account and everything stored with it on the server (the
+    /// delete-account Edge Function), then signs out. True when it worked.
+    /// For a Sign in with Apple account, `appleAuthorizationCode` is a fresh
+    /// code from confirming with Apple, which the function uses to revoke
+    /// Genesis's Apple tokens (App Store guideline 5.1.1(v)).
+    func deleteAccount(appleAuthorizationCode: String? = nil) async -> Bool {
+        guard let client else { return false }
+        isWorking = true
+        errorMessage = nil
+        defer { isWorking = false }
+        do {
+            let token = try await accessToken()
+            // Plain JSONEncoder: the function reads the camelCase key, and a nil code is left out.
+            let body = try JSONEncoder().encode(DeleteAccountBody(appleAuthorizationCode: appleAuthorizationCode))
+            let (_, status) = try await client.callFunction("delete-account", body: body, accessToken: token)
             guard (200..<300).contains(status) else {
                 errorMessage = String(localized: "Your account couldn't be deleted. Please try again.")
                 return false

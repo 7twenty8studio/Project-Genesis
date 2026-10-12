@@ -12,7 +12,7 @@ GENESIS_TERMS_URL =
 GENESIS_PRIVACY_URL =
 
 // Entitlements (App Group for widgets, Sign in with Apple) need a development
-// team. They stay off until Config/Signing.xcconfig exists; see PHASE2_SETUP.md.
+// team. They stay off until Config/Signing.xcconfig exists; see APPLE_SETUP.md.
 GENESIS_APP_ENTITLEMENTS =
 GENESIS_WIDGET_ENTITLEMENTS =
 GENESIS_WATCH_ENTITLEMENTS =

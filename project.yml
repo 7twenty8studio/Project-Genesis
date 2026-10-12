@@ -35,6 +35,9 @@ targets:
     platform: iOS
     sources:
       - path: Genesis
+      # App Store privacy manifest (required-reason APIs, data collected).
+      - path: Config/Privacy/Genesis/PrivacyInfo.xcprivacy
+        buildPhase: resources
     dependencies:
       - package: Sentry
         product: Sentry
@@ -45,7 +48,7 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis
         PRODUCT_NAME: Genesis
-        # Empty until Config/Signing.xcconfig names your team (see PHASE2_SETUP.md).
+        # Empty until Config/Signing.xcconfig names your team (see APPLE_SETUP.md).
         CODE_SIGN_ENTITLEMENTS: $(GENESIS_APP_ENTITLEMENTS)
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         # The alternate icons (Night and the seasons) in Assets.xcassets.
@@ -127,6 +130,8 @@ targets:
     sources:
       - path: GenesisWidgets
       - path: Genesis/Shared
+      - path: Config/Privacy/GenesisWidgets/PrivacyInfo.xcprivacy
+        buildPhase: resources
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis.widgets
@@ -179,6 +184,8 @@ targets:
       - path: GenesisWatch
       - path: Genesis/Shared/WidgetSnapshot.swift
       - path: Genesis/Shared/WatchPayload.swift
+      - path: Config/Privacy/GenesisWatch/PrivacyInfo.xcprivacy
+        buildPhase: resources
     dependencies:
       - target: GenesisWatchWidgets
     settings:
@@ -207,6 +214,8 @@ targets:
       - path: GenesisWatchWidgets
       - path: Genesis/Shared/WidgetSnapshot.swift
       - path: Genesis/Shared/WatchPayload.swift
+      - path: Config/Privacy/GenesisWatchWidgets/PrivacyInfo.xcprivacy
+        buildPhase: resources
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis.watchkitapp.widgets

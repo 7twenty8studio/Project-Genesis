@@ -26,7 +26,14 @@ shares; README.md has the architecture.
   `@MainActor @Observable`; SQLite repositories are `Sendable`).
 - `Config/Secrets.xcconfig` is git-ignored (Supabase URL + anon key, Sentry DSN).
 - `Config/Signing.xcconfig` (git-ignored) sets the team and turns on entitlements
-  (App Group, Sign in with Apple). Without it builds have no entitlements.
+  (App Group, Sign in with Apple, push). Without it builds have no entitlements.
+  Apple Developer / App Store Connect steps: APPLE_SETUP.md.
+- Privacy manifests: Config/Privacy/<target>/PrivacyInfo.xcprivacy for the app,
+  widgets, watch app and watch widgets (resources in project.yml). Declare any
+  new required-reason API (UserDefaults CA92.1/1C8F.1 today; no file
+  timestamps, boot time or disk space) and any new data sent to the server,
+  and keep APPLE_SETUP.md's App Privacy table in step. Sentry ships its own
+  manifest. No CloudKit: sync is Supabase only.
 - UI tests: `./Scripts/build.sh --ui` / `--ui-full`; failures are extracted from
   .xcresult into build/TestResults/*-failures.txt.
 
@@ -54,7 +61,7 @@ shares; README.md has the architecture.
   refuses while it's off. UI tests turn it on with `-uiTestingAI`.
 - UI tests are free unless launched with `-uiTestingPremium`; the study
   assistant uses `StubStudyBackend` in UI tests (no network, no cost).
-- Server logic tests: `node --experimental-strip-types --test supabase/functions/study-ai/lib.test.ts`.
+- Server logic tests (all functions): `node --experimental-strip-types --test supabase/functions/*/*.test.ts`.
 - Supabase SQL: explicit statements, no drops, RLS enabled in plain
   `alter table` lines (the dashboard's checker flags anything else).
 
@@ -63,11 +70,36 @@ shares; README.md has the architecture.
   public.premium_grants (the owner adds rows; `refreshGrant` on launch,
   foreground and sign-in; study-ai honours grants too), or in DEBUG builds
   only Settings › Developer › Test as Premium. UI tests' override wins.
+- The server knows Premium through public.premium_entitlements (one row per
+  account; key = original transaction id, or "<original>:family:<user>" for
+  Family Sharing). Filled by `premium-sync` (the app sends its signed
+  transaction: `EntitlementService.syncWithServer`, after purchase/restore,
+  on sign-in, and on launch/foreground when `PremiumSyncPolicy` says the
+  transaction or account changed or a day passed; failures silent, retried
+  next time), by study-ai, and kept current by `appstore-notifications`
+  (App Store Server Notifications V2; deployed with `--no-verify-jwt`,
+  authenticated by Apple's JWS chain; idempotent, 200 for every verified
+  notification, 400 otherwise; pure mapping in its lib.ts). Verification and
+  ownership rules (products, appAccountToken, Family Sharing, first account
+  keeps it) live once in supabase/functions/_shared/appstore.ts (pure, Node
+  tests) and _shared/premium.ts (database); never copy them into a function.
+  Purchases set `appAccountToken` to the signed-in account id.
+- `public.genesis_is_premium()` (security definer, authenticated only):
+  an entitlement not expired more than 3 days ago, or an active grant. Use
+  it in policies for server-side Premium checks. Attachment uploads
+  (insert/update on the `attachments` bucket) require it; reads and deletes
+  never do, so people keep their files if Premium lapses.
 - Free trial: an introductory offer in App Store Connect (and in
   Config/Genesis.storekit); the paywall shows it when the account is eligible.
 - Settings › Send Feedback writes public.app_feedback (insert-only RLS; read
   in the dashboard). Account › Delete Account calls the `delete-account` Edge
-  Function (App Store 5.1.1(v)); every table cascades from auth.users.
+  Function (App Store 5.1.1(v)); every table cascades from auth.users. For a
+  Sign in with Apple account (`AuthUser.providers`, checked against
+  auth/v1/user) the app first confirms with Apple (`AppleReauthorization`, no
+  scopes; cancelling deletes nothing) and sends `appleAuthorizationCode`; the
+  function exchanges it and revokes Apple's token (delete-account/lib.ts,
+  secrets APPLE_SIGNIN_KEY, APPLE_SIGNIN_KEY_ID, APPLE_TEAM_ID; no tokens
+  stored). Deletion never waits on Apple: it returns `appleRevoked`.
 
 ## Morning welcome
 - Premium (`.morningWelcome`): the first open each day shows
@@ -329,8 +361,10 @@ shares; README.md has the architecture.
   deleting an attachment (or its prayer/sermon, which soft-deletes its
   attachments with tombstones through StudyStore) removes the local file and
   queues removal of the stored one. Pulled deletions remove the local file.
-  The server doesn't check Premium for uploads (App Store subscriptions are
-  only verified inside study-ai); the delete-account function empties the
+  Uploads need `genesis_is_premium()` (migration 20261015000000); a refusal
+  (`AttachmentStorageError.premiumRequired`, Storage's 403 or 400 "row-level
+  security") makes `AttachmentTransfers` call premium-sync once per run
+  (`recordPremium`) and retry. The delete-account function empties the
   person's folder before deleting the account.
 - Templates (`JournalTemplate`): prayer (ACTS, gratitude, praying for
   others, lament, morning offering; plain headings) and sermon (main points,

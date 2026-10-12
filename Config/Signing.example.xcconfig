@@ -1,4 +1,5 @@
-// Copy to Config/Signing.xcconfig once the Apple Developer account is active.
+// Copy to Config/Signing.xcconfig once the Apple Developer account is active
+// (APPLE_SETUP.md, step 1).
 // Find your Team ID at developer.apple.com -> Account -> Membership details.
 DEVELOPMENT_TEAM = YOURTEAMID
 

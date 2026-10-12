@@ -75,25 +75,16 @@ Xcode's local test signatures.
 
 ## 5. Before release (App Store Connect)
 
-1. Create the subscription group **Genesis Premium** with four auto-renewable
-   subscriptions whose product IDs match exactly:
+The App Store Connect steps (agreements, the app record, the subscription
+group and its four products with prices, levels, Family Sharing, the free
+week and Spanish names, server notifications, privacy answers) are in
+[APPLE_SETUP.md](APPLE_SETUP.md), sections 5–7. Also:
 
-   | Product ID | Price | Level | Family Sharing |
-   |---|---|---|---|
-   | `com.7twenty8studio.genesis.premium.family.monthly` | $12.99 | 1 | **On** |
-   | `com.7twenty8studio.genesis.premium.family.yearly` | $99.99 | 1 | **On** |
-   | `com.7twenty8studio.genesis.premium.monthly` | $7.99 | 2 | **Off** |
-   | `com.7twenty8studio.genesis.premium.yearly` | $59.99 | 2 | **Off** |
-
-   Family Sharing can't be turned off once it's on, so leave it off for the
-   two Individual products. Family is level 1, so moving from Individual to
-   Family is an upgrade (Apple prorates it). Add a 1-week free introductory
-   offer to each (the paywall shows the trial when the App Store offers it).
-2. Publish a privacy policy and set `GENESIS_PRIVACY_URL` in
+1. Publish a privacy policy and set `GENESIS_PRIVACY_URL` in
    `Config/Secrets.xcconfig` (e.g. `https:$(SLASH)$(SLASH)example.com/privacy`).
    App Review requires it on the Premium screen. Terms default to Apple's
    standard licence agreement; set `GENESIS_TERMS_URL` to use your own.
-3. Delete the `ALLOW_XCODE_STOREKIT` secret if you added it.
+2. Delete the `ALLOW_XCODE_STOREKIT` secret if you added it.
 
 ## 6. Journal extras: attachments storage (Supabase, 2 minutes)
 
@@ -107,9 +98,11 @@ Photos, voice recordings, PDFs and Pencil pages on prayers and sermon notes
    let each person read and write only their own folder. Safe to re-run.
 2. Redeploy account deletion so it also empties the person's folder:
    `supabase functions deploy delete-account`.
-
-The bucket doesn't check Premium itself (App Store subscriptions are verified
-only inside `study-ai`); the app offers attachments only with Premium.
+3. Make uploads require Premium on the server: deploy `premium-sync` and
+   `appstore-notifications`, then run
+   `supabase/migrations/20261016000000_premium_checks.sql`
+   ([APPLE_SETUP.md](APPLE_SETUP.md), step 4). Reading and deleting your own
+   files never needs Premium, so nothing is lost if Premium lapses.
 
 ## What's free and what's Premium
 
@@ -146,7 +139,9 @@ licence is signed.
   separate card labelled **AI-generated study notes · not Scripture**.
 - Premium is checked on the server by verifying the App Store's signed
   transaction against Apple's root certificate, and re-checked at least weekly
-  so a refund or cancellation ends it. One subscription unlocks one account,
+  so a refund or cancellation ends it. The same rules (shared code in
+  `supabase/functions/_shared/`) record subscriptions through `premium-sync`
+  and App Store Server Notifications (`appstore-notifications`). One subscription unlocks one account,
   plus family members through Family Sharing. TestFlight (sandbox) purchases
   are accepted, so testers can try Premium.
 - Only the passage reference (built on the server) and the task go into the
@@ -157,8 +152,8 @@ licence is signed.
 - Cost: roughly $0.003 per new answer. Cached answers cost nothing, and each
   device also keeps the answers it has already seen.
 
-Server logic tests (Node 22 and openssl):
+Server logic tests (Node 22 and openssl), every function at once:
 
 ```bash
-node --experimental-strip-types --test supabase/functions/study-ai/lib.test.ts
+node --experimental-strip-types --test supabase/functions/*/*.test.ts
 ```
