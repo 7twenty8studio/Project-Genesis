@@ -124,7 +124,7 @@ struct SyncServiceTests {
     // MARK: Full sync
 
     @Test func syncPullsRemoteChangesAndPushesLocalOnes() async throws {
-        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none))
         let context = container.mainContext
         let defaults = try #require(UserDefaults(suiteName: "sync-test-\(UUID())"))
         let keychain = KeychainStore(service: "genesis.tests.\(UUID())")
@@ -198,7 +198,7 @@ struct SyncServiceTests {
     }
 
     @Test func signingIntoADifferentAccountClearsTheOldAccountsData() throws {
-        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none))
         let defaults = try #require(UserDefaults(suiteName: "sync-test-\(UUID())"))
         StudyStore(context: container.mainContext).createNote(kind: .text, anchor: .none, body: "Someone else's note")
         defaults.set(UUID().uuidString, forKey: "sync.localDataOwner")
@@ -213,7 +213,7 @@ struct SyncServiceTests {
     }
 
     @Test func guestDataJoinsTheFirstAccount() throws {
-        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none))
         let defaults = try #require(UserDefaults(suiteName: "sync-test-\(UUID())"))
         StudyStore(context: container.mainContext).createNote(kind: .text, anchor: .none, body: "My guest note")
 

@@ -342,7 +342,7 @@ struct HiddenFeatureTests {
     }
 
     @Test func hiddenMemoriseLeavesItsWidgetEmpty() throws {
-        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none))
         let context = container.mainContext
         context.insert(MemoryVerse(start: VerseID(rawValue: 43_003_016), end: VerseID(rawValue: 43_003_016), translationID: "KJV"))
         try context.save()
@@ -402,7 +402,7 @@ struct SermonSyncTests {
     private let userID = UUID(uuidString: "11111111-1111-1111-1111-111111111111")!
 
     private func makeSermon() throws -> (Sermon, ModelContainer) {
-        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none))
         let store = StudyStore(context: container.mainContext)
         let sermon = store.createSermon(church: "Grace Chapel", on: Date(timeIntervalSince1970: 1_791_000_000))
         sermon.title = "Grace upon grace"

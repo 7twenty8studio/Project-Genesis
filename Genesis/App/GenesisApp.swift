@@ -245,14 +245,17 @@ struct GenesisApp: App {
 
     /// On-device store for highlights, notes and bookmarks. If the store can't
     /// be opened, fall back to memory so the Bible still opens.
+    /// `cloudKitDatabase: .none`: the iCloud entitlement (for attachment files)
+    /// would otherwise make SwiftData sync through CloudKit too; everything
+    /// here syncs through Supabase.
     private static func makeModelContainer(inMemory: Bool) -> ModelContainer {
         let schema = Schema(UserDataSchema.models)
         do {
-            return try ModelContainer(for: schema, configurations: ModelConfiguration(schema: schema, isStoredInMemoryOnly: inMemory))
+            return try ModelContainer(for: schema, configurations: ModelConfiguration(schema: schema, isStoredInMemoryOnly: inMemory, cloudKitDatabase: .none))
         } catch {
             CrashReporter.record(error, context: "ModelContainer")
             do {
-                return try ModelContainer(for: schema, configurations: ModelConfiguration(schema: schema, isStoredInMemoryOnly: true))
+                return try ModelContainer(for: schema, configurations: ModelConfiguration(schema: schema, isStoredInMemoryOnly: true, cloudKitDatabase: .none))
             } catch {
                 fatalError("Could not create even an in-memory store: \(error)")
             }

@@ -52,7 +52,7 @@ struct MemoriseTests {
     }
 
     @Test func addingTheSamePassageTwiceKeepsOne() throws {
-        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none))
         let store = StudyStore(context: container.mainContext)
         let start = VerseID(book: 20, chapter: 3, verse: 5)
         let end = VerseID(book: 20, chapter: 3, verse: 6)

@@ -45,6 +45,10 @@ shares; README.md has the architecture.
   updated_at (client edit time, last writer wins), deleted_at (soft delete) and
   server_updated_at (trigger-stamped pull cursor). Keep RLS on every table.
 - Local deletions must go through StudyStore so a Tombstone is recorded.
+- Every `ModelConfiguration` passes `cloudKitDatabase: .none` (app and tests):
+  with the iCloud entitlement SwiftData would otherwise turn on CloudKit sync
+  and refuse to open the store (non-optional attributes without defaults).
+  CloudKit is used only directly, for attachment files.
 - New synced models need: a Remote* row in SyncRows.swift, pull/apply and push
   in SyncService, a table + RLS in a new migration.
 

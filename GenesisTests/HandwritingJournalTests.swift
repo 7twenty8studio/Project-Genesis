@@ -62,7 +62,7 @@ struct HandwritingSyncTests {
     private let userID = UUID(uuidString: "11111111-1111-1111-1111-111111111111")!
 
     private func makeNote(drawing: Data?) throws -> (Note, ModelContainer) {
-        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none))
         let note = StudyStore(context: container.mainContext).createNote(kind: .journal, anchor: .none, body: "Evening")
         note.drawing = drawing
         return (note, container)

@@ -20,7 +20,7 @@ struct WidgetIntentTests {
 
     @Test func theAppAppliesTicksToThePlan() throws {
         _ = PendingPlanDays.take()
-        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none))
         let context = container.mainContext
         let plan = ReadingPlan.gospels
         let enrollment = StudyStore(context: context).start(plan)

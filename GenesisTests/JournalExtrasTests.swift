@@ -205,7 +205,7 @@ struct AttachmentSyncRowTests {
 
     /// Models live in a container, as in the app.
     private func insert(_ attachment: JournalAttachment) throws -> ModelContainer {
-        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none))
         container.mainContext.insert(attachment)
         return container
     }
@@ -284,7 +284,7 @@ struct AttachmentStoreTests {
     private let userID = UUID(uuidString: "11111111-1111-1111-1111-111111111111")!
 
     private func makeContainer() throws -> ModelContainer {
-        try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none))
     }
 
     private func defaults() throws -> UserDefaults {

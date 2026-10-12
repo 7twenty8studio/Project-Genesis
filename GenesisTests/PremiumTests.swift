@@ -34,7 +34,7 @@ struct PremiumTests {
     }
 
     @Test func emptyNotesDontCountTowardTheLimit() throws {
-        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none))
         let store = StudyStore(context: container.mainContext)
         store.createNote(kind: .text, anchor: .none)
         store.createNote(kind: .text, anchor: .none, title: "Grace")

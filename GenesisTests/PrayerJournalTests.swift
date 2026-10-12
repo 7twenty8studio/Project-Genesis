@@ -242,7 +242,7 @@ struct PrayerSyncTests {
     private let userID = UUID(uuidString: "11111111-1111-1111-1111-111111111111")!
 
     private func makePrayer() throws -> (Prayer, ModelContainer) {
-        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none))
         let store = StudyStore(context: container.mainContext)
         let passage = PrayerPassage(start: VerseID(rawValue: 50_004_006), end: VerseID(rawValue: 50_004_007))
         let prayer = store.createPrayer(category: .health, passages: [passage])
@@ -344,7 +344,7 @@ struct PrayerSyncTests {
 @MainActor
 struct PrayerNoteMoveTests {
     private func makeStore() throws -> (StudyStore, ModelContainer) {
-        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none))
         return (StudyStore(context: container.mainContext), container)
     }
 

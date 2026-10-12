@@ -174,7 +174,7 @@ struct MemoriseGameTests {
     }
 
     @Test func gamesOnlyMoveTheScheduleWhenDue() throws {
-        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        let container = try ModelContainer(for: Schema(UserDataSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none))
         let store = StudyStore(context: container.mainContext)
         let verse = store.memorise(from: VerseID(book: 43, chapter: 3, verse: 16), through: VerseID(book: 43, chapter: 3, verse: 16), translationID: "KJV")
         let movedFirst = store.recordGame(verse, .good)
