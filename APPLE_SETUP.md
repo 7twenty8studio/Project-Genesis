@@ -40,8 +40,8 @@ Never paste keys, `.p8` files or passwords in a chat or commit them to git.
    |---|---|
    | iPhone/iPad app | `com.7twenty8studio.genesis` |
    | Widgets | `com.7twenty8studio.genesis.widgets` |
-   | Watch app | `com.7twenty8studio.genesis.watchkitapp` |
-   | Watch complication | `com.7twenty8studio.genesis.watchkitapp.widgets` |
+   | Watch app | `com.7twenty8studio.genesis.watch` |
+   | Watch complication | `com.7twenty8studio.genesis.watch.widgets` |
    | App Group (all four) | `group.com.7twenty8studio.genesis` |
 
 5. **If Xcode complains** ("Provisioning profile doesn't include the …

@@ -193,7 +193,7 @@ targets:
       - target: GenesisWatchWidgets
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis.watchkitapp
+        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis.watch
         PRODUCT_NAME: GenesisWatch
         TARGETED_DEVICE_FAMILY: "4"
         CODE_SIGN_ENTITLEMENTS: $(GENESIS_WATCH_ENTITLEMENTS)
@@ -221,7 +221,7 @@ targets:
         buildPhase: resources
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis.watchkitapp.widgets
+        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis.watch.widgets
         PRODUCT_NAME: GenesisWatchWidgets
         TARGETED_DEVICE_FAMILY: "4"
         CODE_SIGN_ENTITLEMENTS: $(GENESIS_WATCH_ENTITLEMENTS)
