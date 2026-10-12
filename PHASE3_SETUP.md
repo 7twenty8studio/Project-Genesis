@@ -98,11 +98,29 @@ Photos, voice recordings, PDFs and Pencil pages on prayers and sermon notes
    let each person read and write only their own folder. Safe to re-run.
 2. Redeploy account deletion so it also empties the person's folder:
    `supabase functions deploy delete-account`.
-3. Make uploads require Premium on the server: deploy `premium-sync` and
-   `appstore-notifications`, then run
-   `supabase/migrations/20261016000000_premium_checks.sql`
-   ([APPLE_SETUP.md](APPLE_SETUP.md), step 4). Reading and deleting your own
-   files never needs Premium, so nothing is lost if Premium lapses.
+
+Attachment files now sync through each person's own iCloud (CloudKit), so
+they cost Genesis nothing to store; the bucket only holds files from earlier
+versions, which the app moves to iCloud and removes. The table above still
+syncs the attachment details.
+
+3. iCloud: Config/Signing.xcconfig needs
+   `GENESIS_ICLOUD_CONTAINER = iCloud.com.7twenty8studio.genesis` (see
+   Signing.example.xcconfig); Config/Genesis.entitlements already lists the
+   container and CloudKit. In Xcode › Genesis target › Signing & Capabilities,
+   check that iCloud shows CloudKit with that container ticked (Xcode
+   registers it on your team the first time; or add it at
+   developer.apple.com › Identifiers › iCloud Containers).
+4. Run the app once signed in to iCloud and add a photo to a prayer: the
+   record type `AttachmentFile` and its zone are created in the Development
+   environment. Then CloudKit Console (icloud.developer.apple.com) › the
+   container › Schema › Deploy Schema Changes… to Production before the
+   TestFlight/App Store build.
+
+The app offers attachments only with Premium. iCloud storage is the
+person's own, so the server doesn't check Premium for files (the bucket's
+upload policy from `20261016000000_premium_checks.sql` is legacy: nothing
+uploads there any more).
 
 ## What's free and what's Premium
 
@@ -119,7 +137,7 @@ Photos, voice recordings, PDFs and Pencil pages on prayers and sermon notes
 | Themes: Auto, Paper, Sepia, Slate, High Contrast, Night; night reading (switches to Night at bedtime) | |
 | 3 passage explanations a day (with a free account) | Reading insights and Year in Review stats |
 | Verse widget (small, medium and Lock Screen): verse of the day or a random verse | The large verse widget; verses by theme (hope, peace, faith, strength, comfort, love, gratitude, guidance) and from your reading; every other widget, in your reading theme; listening on the Lock Screen; Apple Watch |
-| | Memorise Scripture with games, levels and streaks; ambient sounds |
+| | Memorize Scripture with games, levels and streaks; ambient sounds |
 | | Illuminated first letters, three more book fonts, special app icons, chapter-complete ribbon |
 | | Morning welcome; Starlight for night reading |
 

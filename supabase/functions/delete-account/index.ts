@@ -2,8 +2,10 @@
 // 5.1.1(v) requires account deletion in the app).
 //
 // First empties the person's folder in the private `attachments` storage
-// bucket (photos, recordings, PDFs and Pencil pages on prayers and sermons):
-// files aren't rows, so nothing cascades to them. If that fails the account
+// bucket, where earlier versions kept photos, recordings, PDFs and Pencil
+// pages (attachment files now live in the person's iCloud, which the app
+// empties itself before calling this): files aren't rows, so nothing
+// cascades to them. If that fails the account
 // is left as it was and the app asks to try again, so no files are orphaned.
 // Then deletes the auth user; every table that references auth.users uses
 // "on delete cascade" (or "set null" for feedback), so their highlights,

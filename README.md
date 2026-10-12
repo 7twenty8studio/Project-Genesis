@@ -81,7 +81,7 @@ on. The study assistant's announcement is ready and waits for its switch.
   blocking, auto-hiding after three reports and a moderation queue.
 - **Android planning**: [docs/ANDROID_PLAN.md](docs/ANDROID_PLAN.md).
 - **Feature choices**: "Make Genesis yours" at setup and Settings › Features
-  (each extra has its own switch: plans, prayer, Memorise, listen, ambient
+  (each extra has its own switch: plans, prayer, Memorize, listen, ambient
   sounds, Hebrew & Greek, explore, study notes, sermon notes, insights,
   chapter ribbons, groups and community, plus the morning welcome), with
   one-time TipKit hints instead of a tutorial.
@@ -124,10 +124,10 @@ on. The study assistant's announcement is ready and waits for its switch.
   (up to six people) $12.99/month or $99.99/year, each with a 7-day free
   trial (see PHASE3_SETUP.md for what's free and what's Premium). Every Bible,
   sync, and Explore's timeline and people are free; Premium adds the morning
-  welcome, family trees and maps, Memorise, ambient sounds and more.
+  welcome, family trees and maps, Memorize, ambient sounds and more.
   The server knows about subscriptions too (`premium-sync` from the app,
-  App Store Server Notifications to `appstore-notifications`), so Premium is
-  enforced there where it matters (attachment uploads). Apple Developer and
+  App Store Server Notifications to `appstore-notifications`), so
+  server-side features (study-ai) can check it. Apple Developer and
   App Store Connect setup: [APPLE_SETUP.md](APPLE_SETUP.md).
 - **Wide screens**: the study panel adds Study (AI notes beside the text) and
   Context (people, places and events in the chapter).

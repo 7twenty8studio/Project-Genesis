@@ -16,6 +16,12 @@ import SwiftUI
 final class WordStudyRepository: Sendable {
     static let attribution = String(localized: "Hebrew and Greek words, glosses and Greek definitions from STEPBible.org, based on work at Tyndale House Cambridge (CC BY 4.0). Hebrew definitions from Strong's Hebrew Dictionary via the Open Scriptures Hebrew Bible project (CC BY 4.0). Commentary from Matthew Henry's Concise Commentary (public domain).")
 
+    /// Glosses, definitions, grammar and commentary are English only, so
+    /// screens say so when the Bible or the app is in another language.
+    static func needsEnglishNote(bibleLanguage: String) -> Bool {
+        bibleLanguage != "en" || AppLanguage.code != "en"
+    }
+
     private let database: SQLiteDatabase
 
     init(url: URL) throws {

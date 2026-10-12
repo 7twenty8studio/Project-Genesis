@@ -8,7 +8,7 @@ struct MemoriseWidget: Widget {
         StaticConfiguration(kind: WidgetKind.memorise.rawValue, provider: SnapshotProvider()) { entry in
             MemoriseWidgetView(entry: entry)
         }
-        .configurationDisplayName("Memorise")
+        .configurationDisplayName("Memorize")
         .description("Recall a verse you're learning by heart.")
         .supportedFamilies([.systemSmall, .systemMedium, .accessoryRectangular])
     }
@@ -24,7 +24,7 @@ struct MemoriseWidgetView: View {
         } else if entry.snapshot.unlocks(.memorise, in: family) {
             memoriseView(WidgetColors(entry.snapshot))
         } else {
-            PremiumLockedView(message: String(localized: "Memorise Scripture with Genesis Premium."), symbol: "brain.head.profile")
+            PremiumLockedView(message: String(localized: "Memorize Scripture with Genesis Premium."), symbol: "brain.head.profile")
         }
     }
 
@@ -32,10 +32,10 @@ struct MemoriseWidgetView: View {
     private func hiddenView(_ colors: WidgetColors) -> some View {
         Group {
             if family == .accessoryRectangular {
-                Label(String(localized: "Memorise is turned off"), systemImage: "brain.head.profile")
+                Label(String(localized: "Memorize is turned off"), systemImage: "brain.head.profile")
                     .font(.caption)
             } else {
-                message(String(localized: "Memorise Scripture is turned off in Genesis."), colors: colors)
+                message(String(localized: "Memorize Scripture is turned off in Genesis."), colors: colors)
             }
         }
         .containerBackground(for: .widget) {
@@ -50,7 +50,7 @@ struct MemoriseWidgetView: View {
             if let memorise, let reference = memorise.reference {
                 card(memorise, reference: reference, colors: colors)
             } else {
-                message(String(localized: "Add a verse to memorise in Genesis."), colors: colors)
+                message(String(localized: "Add a verse to memorize in Genesis."), colors: colors)
             }
         }
         .containerBackground(for: .widget) {
@@ -71,7 +71,7 @@ struct MemoriseWidgetView: View {
         default:
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
-                    Eyebrow(text: String(localized: "Memorise"), color: colors.accent)
+                    Eyebrow(text: String(localized: "Memorize"), color: colors.accent)
                     Spacer()
                     if due > 0 {
                         Text("\(due) due")

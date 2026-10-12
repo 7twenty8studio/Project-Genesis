@@ -2,8 +2,8 @@ import AVFoundation
 import Foundation
 import Observation
 
-/// Records a voice note for a prayer or sermon: AAC, mono, 64 kbps, at most
-/// two hours (`AttachmentLimits`). The session goes through `AudioSession`.
+/// Records a voice note for a prayer or sermon: AAC, mono, 32 kbps, stopping
+/// itself after 4 hours (`AttachmentLimits`). The session goes through `AudioSession`.
 @MainActor
 @Observable
 final class VoiceRecorder {

@@ -59,12 +59,12 @@ struct VerseImageOptions: Equatable {
 
         var title: String {
             switch self {
-            case .automatic: String(localized: "Auto", comment: "Verse image text colour: follows the background")
-            case .ink: String(localized: "Ink", comment: "Verse image text colour")
-            case .white: String(localized: "White", comment: "Verse image text colour")
-            case .cream: String(localized: "Cream", comment: "Verse image text colour")
-            case .gold: String(localized: "Gold", comment: "Verse image text colour")
-            case .navy: String(localized: "Navy", comment: "Verse image text colour")
+            case .automatic: String(localized: "Auto", comment: "Verse image text color: follows the background")
+            case .ink: String(localized: "Ink", comment: "Verse image text color")
+            case .white: String(localized: "White", comment: "Verse image text color")
+            case .cream: String(localized: "Cream", comment: "Verse image text color")
+            case .gold: String(localized: "Gold", comment: "Verse image text color")
+            case .navy: String(localized: "Navy", comment: "Verse image text color")
             }
         }
 
@@ -166,7 +166,7 @@ struct VerseImageView: View {
                                 Image(systemName: "text.alignleft").tag(false)
                                     .accessibilityLabel("Align left")
                                 Image(systemName: "text.aligncenter").tag(true)
-                                    .accessibilityLabel("Centre")
+                                    .accessibilityLabel("Center")
                             }
                             .pickerStyle(.segmented)
                             .frame(width: 100)
@@ -235,7 +235,7 @@ struct VerseImageView: View {
                         style = .photo
                     }
                 }
-                PhotosPicker(selection: $photoItem, matching: .images) {
+                PhotosPicker(selection: $photoItem, matching: .images) { [palette] in
                     PhotoChoiceLabel(palette: palette)
                 }
                 .buttonStyle(.plain)

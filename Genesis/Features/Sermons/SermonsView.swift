@@ -78,7 +78,7 @@ struct SermonsList: View {
         }
         .listRowBackground(palette.surface)
         .swipeActions(edge: .leading) {
-            Button(sermon.isFavourite ? "Remove Favourite" : "Favourite", systemImage: sermon.isFavourite ? "star.slash" : "star") {
+            Button(sermon.isFavourite ? "Remove Favorite" : "Favorite", systemImage: sermon.isFavourite ? "star.slash" : "star") {
                 StudyStore(context: modelContext).toggleFavourite(sermon)
             }
             .tint(palette.accent)
@@ -96,7 +96,7 @@ struct SermonsList: View {
         } else if favouritesOnly {
             QuietEmptyState(
                 systemImage: "star",
-                title: String(localized: "No favourite sermons yet"),
+                title: String(localized: "No favorite sermons yet"),
                 message: String(localized: "Tap the star on a sermon you want to come back to.")
             )
         } else {
@@ -127,7 +127,7 @@ private struct SermonListControls: View {
             Button {
                 favouritesOnly.toggle()
             } label: {
-                Label("Favourites", systemImage: favouritesOnly ? "star.fill" : "star")
+                Label("Favorites", systemImage: favouritesOnly ? "star.fill" : "star")
                     .font(.subheadline)
                     .padding(.horizontal, 12)
                     .padding(.vertical, 6)
@@ -177,7 +177,7 @@ struct SermonRow: View {
                 if sermon.isFavourite {
                     Image(systemName: "star.fill")
                         .foregroundStyle(palette.accent)
-                        .accessibilityLabel("Favourite")
+                        .accessibilityLabel("Favorite")
                 }
             }
             .font(.caption)

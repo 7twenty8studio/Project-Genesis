@@ -2,10 +2,8 @@ import Foundation
 
 /// Sermon notes are stored as plain Markdown text: **bold**, *italic*,
 /// "## " headings, "- " bullets, "1. " numbered lists and "> " quotes. Plain
-/// text syncs, searches and exports simply, and nothing is lost if a
-/// formatting button is never used. The editor is a plain-text editor with
-/// buttons that add or remove these marks; the notes are shown formatted
-/// with `blocks(_:)` and SwiftUI's inline Markdown.
+/// text syncs, searches and exports simply. The editor shows the notes
+/// formatted (`SermonRichText`); the PDF export reads them with `blocks(_:)`.
 ///
 /// Positions here are counted in Characters.
 enum SermonMarkdown {
@@ -35,15 +33,6 @@ enum SermonMarkdown {
             case .quote: "text.quote"
             }
         }
-
-        /// The marks wrapped around a selection (bold and italic).
-        var inlineMark: String? {
-            switch self {
-            case .bold: "**"
-            case .italic: "*"
-            default: nil
-            }
-        }
     }
 
     /// The text after an edit, and what to select.
@@ -52,78 +41,7 @@ enum SermonMarkdown {
         var selection: Range<Int>
     }
 
-    // MARK: Formatting
-
-    static func apply(_ format: Format, to text: String, selection: Range<Int>) -> Edit {
-        let count = text.count
-        let lower = min(max(0, selection.lowerBound), count)
-        let upper = min(max(lower, selection.upperBound), count)
-        if let mark = format.inlineMark {
-            return toggleInline(mark, in: text, range: lower..<upper)
-        }
-        return toggleLines(format, in: text, range: lower..<upper)
-    }
-
-    private static func toggleInline(_ mark: String, in text: String, range: Range<Int>) -> Edit {
-        let characters = Array(text)
-        let width = mark.count
-        let before = String(characters[max(0, range.lowerBound - width)..<range.lowerBound])
-        let after = String(characters[range.upperBound..<min(characters.count, range.upperBound + width)])
-        // Italic mustn't mistake bold's "**" for its own mark.
-        let beforeMore = range.lowerBound - width - 1 >= 0 ? characters[range.lowerBound - width - 1] : nil
-        let afterMore = range.upperBound + width < characters.count ? characters[range.upperBound + width] : nil
-        let isWrapped = before == mark && after == mark
-            && (width > 1 || (beforeMore != "*" && afterMore != "*"))
-        if isWrapped {
-            var result = characters
-            result.removeSubrange(range.upperBound..<(range.upperBound + width))
-            result.removeSubrange((range.lowerBound - width)..<range.lowerBound)
-            return Edit(text: String(result), selection: (range.lowerBound - width)..<(range.upperBound - width))
-        }
-        var result = characters
-        result.insert(contentsOf: Array(mark), at: range.upperBound)
-        result.insert(contentsOf: Array(mark), at: range.lowerBound)
-        return Edit(text: String(result), selection: (range.lowerBound + width)..<(range.upperBound + width))
-    }
-
-    private static func toggleLines(_ format: Format, in text: String, range: Range<Int>) -> Edit {
-        var lines = text.components(separatedBy: "\n")
-        // Which lines the selection touches.
-        var start = 0
-        var touched: [Int] = []
-        for (index, line) in lines.enumerated() {
-            let end = start + line.count
-            let touches = range.isEmpty
-                ? (range.lowerBound >= start && range.lowerBound <= end)
-                : (range.lowerBound <= end && range.upperBound > start)
-            if touches { touched.append(index) }
-            start = end + 1
-        }
-        if touched.isEmpty { touched = [max(0, lines.count - 1)] }
-
-        let removing = touched.allSatisfy { lineFormat(of: lines[$0]) == format }
-        for (position, index) in touched.enumerated() {
-            let content = stripLinePrefix(lines[index])
-            lines[index] = removing ? content : prefix(for: format, number: position + 1) + content
-        }
-
-        let firstStart = lines[..<touched[0]].reduce(0) { $0 + $1.count + 1 }
-        let lastIndex = touched[touched.count - 1]
-        let lastEnd = lines[...lastIndex].reduce(0) { $0 + $1.count + 1 } - 1
-        let newText = lines.joined(separator: "\n")
-        let selection = range.isEmpty ? lastEnd..<lastEnd : firstStart..<lastEnd
-        return Edit(text: newText, selection: selection)
-    }
-
-    private static func prefix(for format: Format, number: Int) -> String {
-        switch format {
-        case .heading: "## "
-        case .bullet: "- "
-        case .numbered: "\(number). "
-        case .quote: "> "
-        case .bold, .italic: ""
-        }
-    }
+    // MARK: Lines
 
     /// The line format a line starts with, if any.
     static func lineFormat(of line: String) -> Format? {
@@ -133,6 +51,13 @@ enum SermonMarkdown {
     /// The line without its heading, list or quote mark.
     static func stripLinePrefix(_ line: String) -> String {
         lineParts(line).content
+    }
+
+    /// A list line's mark as typed ("- ", "\u{2022} ", "3. "), or nil.
+    static func listPrefix(of line: String) -> String? {
+        let parts = lineParts(line)
+        guard parts.format == .bullet || parts.format == .numbered else { return nil }
+        return String(line.dropLast(parts.content.count))
     }
 
     private static func lineParts(_ line: String) -> (format: Format?, content: String, number: Int?) {
@@ -209,9 +134,123 @@ enum SermonMarkdown {
         text.components(separatedBy: "\n")
             .map { stripLinePrefix($0) }
             .joined(separator: "\n")
+            .replacingOccurrences(of: "\\*", with: "\u{1}")
             .replacingOccurrences(of: "**", with: "")
             .replacingOccurrences(of: "*", with: "")
             .replacingOccurrences(of: "__", with: "")
+            .replacingOccurrences(of: "\u{1}", with: "*")
+    }
+
+    // MARK: Bold and italic
+
+    /// A stretch of a line's text that is bold, italic, both or neither.
+    struct Span: Equatable, Sendable {
+        var text: String
+        var bold = false
+        var italic = false
+    }
+
+    /// One line's text split where bold and italic start and end. A mark
+    /// with no partner is kept as typed, and "\*" is a plain asterisk.
+    static func spans(_ line: String) -> [Span] {
+        let characters = Array(line)
+        var spans: [Span] = []
+        var current = ""
+        var bold = false
+        var italic = false
+        func flush() {
+            if !current.isEmpty { spans.append(Span(text: current, bold: bold, italic: italic)) }
+            current = ""
+        }
+        var index = 0
+        while index < characters.count {
+            let character = characters[index]
+            if character == "\\", index + 1 < characters.count, characters[index + 1] == "*" {
+                current.append("*")
+                index += 2
+                continue
+            }
+            guard character == "*" else {
+                current.append(character)
+                index += 1
+                continue
+            }
+            var run = 0
+            while index + run < characters.count, characters[index + run] == "*" { run += 1 }
+            let width = min(run, 3)
+            let togglesBold = width >= 2
+            let togglesItalic = width != 2
+            let closes = (!togglesBold || bold) && (!togglesItalic || italic)
+                && index > 0 && !characters[index - 1].isWhitespace
+            let opens = (!togglesBold || !bold) && (!togglesItalic || !italic)
+                && index + width < characters.count && !characters[index + width].isWhitespace
+                && hasCloser(characters, from: index + width, width: width)
+            if closes || opens {
+                flush()
+                if togglesBold { bold.toggle() }
+                if togglesItalic { italic.toggle() }
+                index += width
+            } else {
+                current.append(contentsOf: String(repeating: "*", count: run))
+                index += run
+            }
+        }
+        flush()
+        return spans
+    }
+
+    private static func hasCloser(_ characters: [Character], from start: Int, width: Int) -> Bool {
+        var index = start
+        while index < characters.count {
+            if characters[index] == "\\" {
+                index += 2
+                continue
+            }
+            guard characters[index] == "*" else {
+                index += 1
+                continue
+            }
+            var run = 0
+            while index + run < characters.count, characters[index + run] == "*" { run += 1 }
+            if run >= width, index > start, !characters[index - 1].isWhitespace { return true }
+            index += run
+        }
+        return false
+    }
+
+    /// Spans back to Markdown: marks hug the words (spaces stay outside) and
+    /// typed asterisks are escaped.
+    static func markdown(_ spans: [Span]) -> String {
+        var merged: [Span] = []
+        for span in spans where !span.text.isEmpty {
+            if let last = merged.last, last.bold == span.bold, last.italic == span.italic {
+                merged[merged.count - 1].text += span.text
+            } else {
+                merged.append(span)
+            }
+        }
+        return merged.map { span in
+            let text = span.text.replacingOccurrences(of: "*", with: "\\*")
+            let mark = span.bold && span.italic ? "***" : span.bold ? "**" : span.italic ? "*" : ""
+            let core = text.trimmingCharacters(in: .whitespaces)
+            guard !mark.isEmpty, !core.isEmpty else { return text }
+            let leading = String(text.prefix { $0.isWhitespace })
+            let trailing = String(text.reversed().prefix { $0.isWhitespace }.reversed())
+            return leading + mark + core + mark + trailing
+        }.joined()
+    }
+
+    /// The spans without their first `count` characters.
+    static func dropping(_ count: Int, from spans: [Span]) -> [Span] {
+        var remaining = count
+        return spans.compactMap { span in
+            guard remaining > 0 else { return span }
+            let dropped = min(remaining, span.text.count)
+            remaining -= dropped
+            var rest = span
+            rest.text = String(span.text.dropFirst(dropped))
+            return rest.text.isEmpty ? nil : rest
+        }
     }
 
     /// One line's inline Markdown (bold, italic) as styled text; anything that

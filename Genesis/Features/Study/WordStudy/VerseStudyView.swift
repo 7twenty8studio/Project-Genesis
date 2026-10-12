@@ -84,7 +84,12 @@ struct VerseStudyList: View {
 
                 Section {
                 } footer: {
-                    Text(WordStudyRepository.attribution)
+                    VStack(alignment: .leading, spacing: 6) {
+                        if WordStudyRepository.needsEnglishNote(bibleLanguage: library.currentTranslation.language) {
+                            Text("Definitions and commentary are in English for now. More languages are coming soon.")
+                        }
+                        Text(WordStudyRepository.attribution)
+                    }
                 }
             }
         }
@@ -161,16 +166,27 @@ struct VerseStudyList: View {
 
     // MARK: Loading
 
+    /// The KJV verses (the word data's numbering) holding this verse's text:
+    /// through `OriginalVersification` for the Bibles it lines up (the
+    /// Reina-Valera numbers some verses differently); other English Bibles
+    /// share the KJV's numbers.
+    private var kjvVerses: [VerseID] {
+        if let map = OriginalVersification.map(for: library.currentTranslation.id) {
+            return map.alignment(of: verse).kjv
+        }
+        return [verse]
+    }
+
     private func load() async {
         guard let wordStudy else {
             loaded = Loaded(words: [], commentary: [])
             return
         }
-        let verse = verse
+        let verses = kjvVerses
         loaded = await Task.detached(priority: .userInitiated) {
             Loaded(
-                words: (try? wordStudy.words(in: verse)) ?? [],
-                commentary: (try? wordStudy.commentary(for: verse)) ?? []
+                words: verses.flatMap { (try? wordStudy.words(in: $0)) ?? [] },
+                commentary: verses.first.flatMap { try? wordStudy.commentary(for: $0) } ?? []
             )
         }.value
     }

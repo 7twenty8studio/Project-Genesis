@@ -54,7 +54,7 @@ struct MemoryProgressCard: View {
     private var streakText: String {
         let streakCount = streak.current()
         switch streakCount {
-        case 0: return String(localized: "Practise today to start a streak.")
+        case 0: return String(localized: "Practice today to start a streak.")
         case 1: return String(localized: "1 day in a row")
         default: return String(localized: "\(streakCount) days in a row")
         }

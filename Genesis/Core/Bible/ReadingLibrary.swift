@@ -22,7 +22,7 @@ enum ReadingPurpose: CaseIterable, Sendable {
         switch self {
         case .study: String(localized: "For close study")
         case .everyday: String(localized: "For everyday reading")
-        case .classic: String(localized: "For reading aloud and memorising")
+        case .classic: String(localized: "For reading aloud and memorizing")
         }
     }
 

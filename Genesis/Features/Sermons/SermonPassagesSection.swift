@@ -1,3 +1,4 @@
+import SwiftData
 import SwiftUI
 
 /// Church Mode's "Look up a verse": type "John 3:16" (or "Juan 3:16") to see

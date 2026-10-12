@@ -106,7 +106,7 @@ struct ReaderPreferences: Codable, Equatable, Sendable {
     var pageTurnVolume = 0.5
     /// How firm the tap is, 0.2…1.
     var pageTurnHapticStrength = 0.9
-    /// At night, switch to Night or Starlight (off by default).
+    /// At night (with Dark Mode by default), switch to Night or Starlight (off by default).
     var nightReading = NightReadingSchedule()
 
     static let hapticStrengthRange: ClosedRange<Double> = 0.2...1
@@ -165,6 +165,11 @@ final class ReaderSettings {
     /// theme switches without redrawing every minute.
     var nightClock = Date.now
 
+    /// Whether the system is in Dark Mode, for night reading "With Dark
+    /// Mode". RootView keeps it up to date from the window scene, since the
+    /// app's own colour scheme follows the reading theme.
+    var systemIsDark = false
+
     /// UI tests: nil follows the clock, false never switches at night, true
     /// is always night (`-uiTestingNight`). Set once at launch.
     @ObservationIgnored var nightReadingOverride: Bool?
@@ -187,8 +192,9 @@ final class ReaderSettings {
     }
 
     /// The theme the person reads in right now, before Auto and Seasons are
-    /// resolved: their chosen theme, or the night theme inside the night
-    /// window. `premium` is `.premiumThemes` (Starlight falls back to Night).
+    /// resolved: their chosen theme, or the night theme while Dark Mode is on
+    /// or inside the night window. `premium` is `.premiumThemes` (Starlight
+    /// falls back to Night).
     func currentTheme(premium: Bool, calendar: Calendar = .current) -> ReaderTheme {
         let schedule = preferences.nightReading
         let day = preferences.theme
@@ -198,7 +204,7 @@ final class ReaderSettings {
         case .some(true):
             return schedule.theme.theme(premium: premium) ?? day
         case .none:
-            return NightReading.theme(for: schedule, dayTheme: day, now: nightClock, calendar: calendar, premium: premium)
+            return NightReading.theme(for: schedule, dayTheme: day, now: nightClock, calendar: calendar, systemIsDark: systemIsDark, premium: premium)
         }
     }
 

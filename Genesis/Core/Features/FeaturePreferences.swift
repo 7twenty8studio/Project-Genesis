@@ -16,6 +16,7 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
     case moments
     case together
     case sermons
+    case studyLibrary
 
     var id: String { rawValue }
 
@@ -23,7 +24,7 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
         switch self {
         case .plans: String(localized: "Reading Plans")
         case .prayer: String(localized: "Prayer Journal")
-        case .memorise: String(localized: "Memorise Scripture")
+        case .memorise: String(localized: "Memorize Scripture")
         case .listen: String(localized: "Listen", comment: "Optional feature: hear chapters read aloud")
         case .ambientSounds: String(localized: "Ambient Sounds")
         case .wordStudy: String(localized: "Hebrew & Greek", comment: "Optional feature: the original-language Bible and word study")
@@ -33,6 +34,7 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
         case .moments: String(localized: "Chapter Ribbons", comment: "Optional feature: a gold ribbon when a chapter or plan day is finished")
         case .together: String(localized: "Groups & Community")
         case .sermons: String(localized: "Sermon Notes")
+        case .studyLibrary: String(localized: "Study Library", comment: "Optional feature: downloadable study notes, commentaries and dictionaries")
         }
     }
 
@@ -46,10 +48,11 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
         case .wordStudy: String(localized: "The original-language Bible beside yours, and Word Study for any verse.")
         case .explore: String(localized: "Explore the Bible's story, places and people.")
         case .studyAssistant: String(localized: "Short explanations of a passage, clearly labelled as AI-generated.")
-        case .insights: String(localized: "Your reading time, favourite books and a look back on your year.")
+        case .insights: String(localized: "Your reading time, favorite books and a look back on your year.")
         case .moments: String(localized: "A small gold ribbon when you finish a chapter or a day of your plan.")
         case .together: String(localized: "Read and pray with your church group, and the community prayer wall.")
         case .sermons: String(localized: "Take notes during the sermon, with the verses beside them and Church Mode for a dim, quiet screen.")
+        case .studyLibrary: String(localized: "Study notes, classic commentaries and Bible dictionaries to download, beside any verse.")
         }
     }
 
@@ -67,6 +70,7 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
         case .moments: "bookmark"
         case .together: "person.3"
         case .sermons: "building.columns"
+        case .studyLibrary: "books.vertical"
         }
     }
 
@@ -78,7 +82,7 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
 
         var title: String {
             switch self {
-            case .daily: String(localized: "Daily Rhythm", comment: "Settings › Features section: plans, prayer, memorising")
+            case .daily: String(localized: "Daily Rhythm", comment: "Settings › Features section: plans, prayer, memorizing")
             case .study: String(localized: "Study", comment: "Settings › Features section")
             case .listening: String(localized: "Listening & Sounds", comment: "Settings › Features section: listening and ambient sounds")
             case .community: String(localized: "Together", comment: "Settings › Features section: groups and community")
@@ -90,7 +94,7 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
     var area: Area {
         switch self {
         case .plans, .prayer, .memorise: .daily
-        case .wordStudy, .explore, .studyAssistant, .sermons: .study
+        case .wordStudy, .explore, .studyAssistant, .sermons, .studyLibrary: .study
         case .listen, .ambientSounds: .listening
         case .together: .community
         case .insights, .moments: .touches
@@ -200,7 +204,7 @@ extension FeaturePreferences {
         switch feature {
         case .studyAssistant: flags.isOn(.studyAssistant)
         case .together: flags.isOn(.groups) || flags.isOn(.community)
-        case .plans, .prayer, .memorise, .listen, .ambientSounds, .wordStudy, .explore, .insights, .moments, .sermons: true
+        case .plans, .prayer, .memorise, .listen, .ambientSounds, .wordStudy, .explore, .insights, .moments, .sermons, .studyLibrary: true
         }
     }
 

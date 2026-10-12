@@ -227,7 +227,7 @@ struct PremiumView: View {
                 }
             }
             .accessibilityIdentifier("premium.restore")
-            Text("Payment is charged to your Apple Account. The subscription renews automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel it in Settings > Apple Account > Subscriptions.")
+            Text("Payment is charged to your Apple Account. The subscription renews automatically unless canceled at least 24 hours before the end of the current period. Manage or cancel it in Settings > Apple Account > Subscriptions.")
                 .font(.caption)
                 .foregroundStyle(palette.secondaryText)
             HStack(spacing: 16) {

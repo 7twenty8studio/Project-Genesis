@@ -189,6 +189,7 @@ private struct SignedInView: View {
 
     @Environment(AuthService.self) private var auth
     @Environment(SyncService.self) private var sync
+    @Environment(AttachmentTransfers.self) private var attachments
     @Environment(\.palette) private var palette
     @State private var confirmSignOut = false
     @State private var showsPasswordChange = false
@@ -267,17 +268,20 @@ private struct SignedInView: View {
             Button("Cancel", role: .cancel) {}
         } message: {
             if user.usesSignInWithApple {
-                Text("This permanently deletes your account and your data in the cloud. It can't be undone. You'll confirm with Apple next so Genesis also stops using your Apple ID.")
+                Text("This permanently deletes your account and your data in the cloud. It can't be undone. You'll confirm with Apple next so Genesis also stops using your Apple Account.")
             } else {
                 Text("This permanently deletes your account and your data in the cloud. It can't be undone.")
             }
         }
     }
 
-    /// Deletes the account; a Sign in with Apple account first confirms with
-    /// Apple so the server can revoke Genesis's Apple tokens. Cancelling the
-    /// Apple sheet leaves the account as it is.
+    /// Deletes the account. A Sign in with Apple account first confirms with
+    /// Apple so the server can revoke Genesis's Apple tokens; cancelling the
+    /// Apple sheet leaves everything as it is. Then the attachment files in
+    /// the person's iCloud go (the server can't reach them), then the
+    /// account and its data on the server (delete-account).
     private func deleteAccount() async {
+        let userID = user.id
         guard let appleAccount = await auth.usesSignInWithApple() else { return }
         var appleCode: String?
         if appleAccount {
@@ -289,6 +293,7 @@ private struct SignedInView: View {
                 return
             }
         }
+        await attachments.deleteCloudFiles(userID: userID)
         if await auth.deleteAccount(appleAuthorizationCode: appleCode) {
             sync.accountDidSignOut(removeLocalData: true)
         }

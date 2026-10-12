@@ -144,6 +144,9 @@ with expected (migration, kind, name) as (
     ('20261014000000_attachments.sql', 'table', 'attachments'),
     ('20261014000000_attachments.sql', 'rls', 'attachments'),
     ('20261014000000_attachments.sql', 'bucket', 'attachments'),
+    ('20261015000000_study_resources.sql', 'table', 'study_resources'),
+    ('20261015000000_study_resources.sql', 'rls', 'study_resources'),
+    ('20261015000000_study_resources.sql', 'bucket', 'study'),
     ('20261016000000_premium_checks.sql', 'function', 'genesis_is_premium')
 ),
 checked as (

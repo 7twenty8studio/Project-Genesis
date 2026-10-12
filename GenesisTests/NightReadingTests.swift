@@ -19,13 +19,50 @@ struct NightReadingTests {
     private func schedule(_ theme: NightTheme = .night, from start: Int = 20, until end: Int = 6) -> NightReadingSchedule {
         var schedule = NightReadingSchedule()
         schedule.theme = theme
+        schedule.timing = .hours
         schedule.startHour = start
         schedule.endHour = end
         return schedule
     }
 
-    private func theme(_ schedule: NightReadingSchedule, at now: Date, day: ReaderTheme = .paper, premium: Bool = false) -> ReaderTheme {
-        NightReading.theme(for: schedule, dayTheme: day, now: now, calendar: chicago, premium: premium)
+    private func theme(_ schedule: NightReadingSchedule, at now: Date, day: ReaderTheme = .paper, dark: Bool = false, premium: Bool = false) -> ReaderTheme {
+        NightReading.theme(for: schedule, dayTheme: day, now: now, calendar: chicago, systemIsDark: dark, premium: premium)
+    }
+
+    // MARK: Dark Mode
+
+    @Test func followsDarkModeByDefault() {
+        var withDarkMode = NightReadingSchedule()
+        withDarkMode.theme = .night
+        let noon = date(6, hour: 12)
+        let late = date(6, hour: 23)
+        let light = theme(withDarkMode, at: late, day: .sepia, dark: false)
+        let dark = theme(withDarkMode, at: noon, day: .sepia, dark: true)
+        let next = NightReading.nextChange(after: noon, schedule: withDarkMode, calendar: chicago)
+        #expect(NightReadingSchedule().timing == .darkMode)
+        #expect(light == .sepia, "The hour doesn't matter")
+        #expect(dark == .night)
+        #expect(next == nil, "No clock to follow")
+    }
+
+    @Test func darkModeKeepsStarlightPremium() {
+        var starlight = NightReadingSchedule()
+        starlight.theme = .starlight
+        let now = date(6, hour: 12)
+        let free = theme(starlight, at: now, dark: true, premium: false)
+        let premium = theme(starlight, at: now, dark: true, premium: true)
+        var off = NightReadingSchedule()
+        off.theme = .off
+        let offInDark = theme(off, at: now, day: .sepia, dark: true)
+        #expect(free == .night)
+        #expect(premium == .starlight)
+        #expect(offInDark == .sepia)
+    }
+
+    @Test func hoursIgnoreDarkMode() {
+        let night = schedule()
+        let noonInDark = theme(night, at: date(6, hour: 12), dark: true)
+        #expect(noonInDark == .paper)
     }
 
     // MARK: The window
@@ -171,6 +208,7 @@ struct NightReadingTests {
         #expect(preferences.nightReading.theme == .off)
         #expect(preferences.nightReading.startHour == 20)
         #expect(preferences.nightReading.endHour == 6)
+        #expect(preferences.nightReading.timing == .darkMode)
     }
 
     @Test func nightReadingDecodesLeniently() throws {
@@ -179,6 +217,11 @@ struct NightReadingTests {
         #expect(preferences.nightReading.theme == .starlight)
         #expect(preferences.nightReading.startHour == 23, "Out of range hours are clamped")
         #expect(preferences.nightReading.endHour == 6)
+        #expect(preferences.nightReading.timing == .hours, "Saved before Dark Mode: keeps the hours")
+
+        let offBefore = Data(#"{"nightReading": {"theme": "off"}}"#.utf8)
+        let off = try JSONDecoder().decode(ReaderPreferences.self, from: offBefore)
+        #expect(off.nightReading.timing == .darkMode)
 
         let unknown = Data(#"{"nightReading": {"theme": "aurora"}}"#.utf8)
         let fallback = try JSONDecoder().decode(ReaderPreferences.self, from: unknown)

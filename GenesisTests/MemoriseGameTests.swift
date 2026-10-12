@@ -16,7 +16,7 @@ private let memoriseSamples = [
     "",
 ]
 
-@Suite("Memorise games")
+@Suite("Memorize games")
 @MainActor
 struct MemoriseGameTests {
     private var samples: [String] { memoriseSamples }

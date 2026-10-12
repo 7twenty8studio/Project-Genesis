@@ -21,6 +21,16 @@
         }
       }
     },
+    "%@ has no comment on this verse.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ no tiene comentario sobre este versículo."
+          }
+        }
+      }
+    },
     "%@ highlight": {
       "localizations": {
         "es": {
@@ -463,7 +473,7 @@
         }
       }
     },
-    "%lld verses · %lld memorised": {
+    "%lld verses · %lld memorized": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -614,12 +624,32 @@
         }
       }
     },
-    "A Memorise widget": {
+    "A Memorize widget": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Un widget para memorizar"
+          }
+        }
+      }
+    },
+    "A Spanish dictionary of key Bible terms, names and ideas, linked to the verses that use them.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un diccionario en español de términos clave, nombres e ideas de la Biblia, enlazados con los versículos que los usan."
+          }
+        }
+      }
+    },
+    "A Spanish dictionary of key Bible words, names and ideas, linked to the verses that use them.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un diccionario en español de palabras clave, nombres e ideas de la Biblia, enlazados con los versículos que los usan."
           }
         }
       }
@@ -634,12 +664,42 @@
         }
       }
     },
+    "A commentary is one writer's explanation, shown apart from Scripture.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un comentario es la explicación de un autor y se muestra aparte de las Escrituras."
+          }
+        }
+      }
+    },
+    "A concise, careful commentary on the whole Bible, verse by verse.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un comentario conciso y cuidadoso de toda la Biblia, versículo por versículo."
+          }
+        }
+      }
+    },
     "A deluxe edition": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Una edición de lujo"
+          }
+        }
+      }
+    },
+    "A detailed verse-by-verse exposition drawing on Hebrew and Jewish sources.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una exposición detallada, versículo por versículo, que se apoya en fuentes hebreas y judías."
           }
         }
       }
@@ -835,6 +895,16 @@
         }
       }
     },
+    "A scholarly Methodist commentary with notes on language, history and customs.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un comentario metodista erudito, con notas sobre el idioma, la historia y las costumbres."
+          }
+        }
+      }
+    },
     "A short guide explains the differences and suggests a Bible for study, everyday reading or reading aloud.": {
       "localizations": {
         "es": {
@@ -861,6 +931,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Una suave página Noche se activa al anochecer, o lee bajo las estrellas con Noche estrellada."
+          }
+        }
+      }
+    },
+    "A thorough Old Testament commentary attentive to the Hebrew text.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un comentario completo del Antiguo Testamento, atento al texto hebreo."
           }
         }
       }
@@ -972,6 +1052,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Primero acepta las normas de la comunidad."
+          }
+        }
+      }
+    },
+    "Access": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acceso"
           }
         }
       }
@@ -1146,37 +1236,37 @@
         }
       }
     },
-    "Add photos and voice notes to a prayer or a sermon, and they sync to your other devices.": {
+    "Add photos and voice recordings to a prayer or a sermon; they sync to your other devices through your iCloud.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Añade fotos y notas de voz a una oración o a un sermón, y se sincronizan con tus otros dispositivos."
+            "value": "Añade fotos y grabaciones de voz a una oración o a un sermón; se sincronizan con tus otros dispositivos a través de tu iCloud."
           }
         }
       }
     },
-    "Add photos and voice recordings to prayers and sermon notes, bring in your church's PDFs, sketch with Apple Pencil, start from templates and export a beautifully typeset PDF.": {
+    "Add photos and voice recordings to prayers and sermon notes, sketch with Apple Pencil, start from templates and export a beautifully typeset PDF.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Añade fotos y grabaciones de voz a tus oraciones y notas de sermones, trae los PDF de tu iglesia, dibuja con el Apple Pencil, empieza con plantillas y exporta un PDF con un diseño cuidado."
+            "value": "Añade fotos y grabaciones de voz a tus oraciones y notas de sermones, dibuja con el Apple Pencil, empieza desde plantillas y exporta un PDF con una tipografía cuidada."
           }
         }
       }
     },
-    "Add photos, voice recordings, church PDFs and Pencil pages with Premium.": {
+    "Add photos, voice recordings and Pencil pages with Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Añade fotos, grabaciones de voz, PDF de la iglesia y páginas de Pencil con Premium."
+            "value": "Añade fotos, grabaciones de voz y páginas con Pencil con Premium."
           }
         }
       }
     },
-    "Add the Memorise widget to your Home Screen or Lock Screen to recall a verse at a glance.": {
+    "Add the Memorize widget to your Home Screen or Lock Screen to recall a verse at a glance.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -1226,7 +1316,7 @@
         }
       }
     },
-    "Add to Memorise": {
+    "Add to Memorize": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -1236,7 +1326,7 @@
         }
       }
     },
-    "Added to Memorise": {
+    "Added to Memorize": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -1298,7 +1388,7 @@
       }
     },
     "Again": {
-      "comment": "Memorise: I didn't remember it",
+      "comment": "Memorize: I didn't remember it",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -1498,6 +1588,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Y %lld más"
+          }
+        }
+      }
+    },
+    "Anglican": {
+      "comment": "Church tradition of a study resource",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anglicana"
           }
         }
       }
@@ -1815,6 +1916,17 @@
         }
       }
     },
+    "At Set Hours": {
+      "comment": "Night reading: switch between two chosen hours",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A ciertas horas"
+          }
+        }
+      }
+    },
     "At night, switch to": {
       "localizations": {
         "es": {
@@ -1845,12 +1957,22 @@
         }
       }
     },
-    "Attachments sync to the cloud with Genesis Premium.": {
+    "Attachments are saved on this device first, then copied to your private iCloud when you're online, so they're on your other devices too. They use your iCloud storage.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Los adjuntos se sincronizan en la nube con Genesis Premium."
+            "value": "Los adjuntos se guardan primero en este dispositivo y después se copian a tu iCloud privado cuando tienes conexión, para que también estén en tus otros dispositivos. Usan tu almacenamiento de iCloud."
+          }
+        }
+      }
+    },
+    "Attachments in your iCloud": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adjuntos en tu iCloud"
           }
         }
       }
@@ -1871,6 +1993,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ajustes de audio"
+          }
+        }
+      }
+    },
+    "Author": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Autor"
           }
         }
       }
@@ -2100,6 +2232,17 @@
         }
       }
     },
+    "Bible Dictionaries": {
+      "comment": "Study resource kind",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diccionarios bíblicos"
+          }
+        }
+      }
+    },
     "Bible Order": {
       "comment": "Search result order",
       "localizations": {
@@ -2214,7 +2357,7 @@
       }
     },
     "Blue": {
-      "comment": "Highlight colour",
+      "comment": "Highlight color",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -2285,22 +2428,22 @@
         }
       }
     },
+    "Brief, practical notes on the whole Bible from the founder of Methodism.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas breves y prácticas sobre toda la Biblia, del fundador del metodismo."
+          }
+        }
+      }
+    },
     "Brightness": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Brillo"
-          }
-        }
-      }
-    },
-    "Bring the bulletin or sermon slides into your notes, or sketch with Apple Pencil.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Trae el boletín o las diapositivas del sermón a tus notas, o dibuja con el Apple Pencil."
           }
         }
       }
@@ -2312,6 +2455,47 @@
           "stringUnit": {
             "state": "translated",
             "value": "Presenta tu queja"
+          }
+        }
+      }
+    },
+    "Brown-Driver-Briggs": {
+      "comment": "Hebrew lexicon name",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brown-Driver-Briggs"
+          }
+        }
+      }
+    },
+    "Brown-Driver-Briggs and Liddell-Scott-Jones in Word Study. With Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brown-Driver-Briggs y Liddell-Scott-Jones en Estudio de palabras. Con Premium."
+          }
+        }
+      }
+    },
+    "Brown-Driver-Briggs for Hebrew and the full Liddell-Scott-Jones for Greek, by Strong's number.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brown-Driver-Briggs para el hebreo y el Liddell-Scott-Jones completo para el griego, por número Strong."
+          }
+        }
+      }
+    },
+    "Browse": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Explorar"
           }
         }
       }
@@ -2427,7 +2611,7 @@
       }
     },
     "Cedar": {
-      "comment": "Memorise level: the highest",
+      "comment": "Memorize level: the highest",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -2437,7 +2621,7 @@
         }
       }
     },
-    "Centre": {
+    "Center": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -2689,7 +2873,7 @@
       }
     },
     "Choose each missing word from the verse.": {
-      "comment": "Memorise game: Fill the Gaps",
+      "comment": "Memorize game: Fill the Gaps",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -2709,7 +2893,7 @@
         }
       }
     },
-    "Choose the font, colour, size and alignment, or put the verse on one of your own photos.": {
+    "Choose the font, color, size and alignment, or put the verse on one of your own photos.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -2862,6 +3046,16 @@
         }
       }
     },
+    "Classic commentaries": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comentarios clásicos"
+          }
+        }
+      }
+    },
     "Clean and modern": {
       "localizations": {
         "es": {
@@ -2888,6 +3082,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Borrar página"
+          }
+        }
+      }
+    },
+    "Clear explanatory notes on the New Testament, written for teachers and families.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas claras y explicativas sobre el Nuevo Testamento, escritas para maestros y familias."
           }
         }
       }
@@ -2992,7 +3196,7 @@
         }
       }
     },
-    "Colour": {
+    "Color": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -3008,6 +3212,27 @@
           "stringUnit": {
             "state": "translated",
             "value": "Comentar"
+          }
+        }
+      }
+    },
+    "Commentaries": {
+      "comment": "Study resource kind",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comentarios"
+          }
+        }
+      }
+    },
+    "Commentaries are one writer's explanation of Scripture, shown apart from the Bible's text. Read them alongside the Bible, not in place of it.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los comentarios son la explicación de las Escrituras de un autor y se muestran aparte del texto bíblico. Léelos junto a la Biblia, no en su lugar."
           }
         }
       }
@@ -3131,6 +3356,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Conéctate a internet para ver más Biblias."
+          }
+        }
+      }
+    },
+    "Connect to the internet to see the study resources you can download.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conéctate a internet para ver los recursos de estudio que puedes descargar."
           }
         }
       }
@@ -3328,7 +3563,7 @@
       }
     },
     "Daily Rhythm": {
-      "comment": "Settings › Features section: plans, prayer, memorising",
+      "comment": "Settings › Features section: plans, prayer, memorizing",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -3474,6 +3709,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Definición"
+          }
+        }
+      }
+    },
+    "Definitions and commentary are in English for now. More languages are coming soon.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Por ahora, las definiciones y el comentario están en inglés. Pronto llegarán más idiomas."
           }
         }
       }
@@ -3819,12 +4064,62 @@
         }
       }
     },
+    "Download %@ from the Study Library to read this article.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descarga %@ desde la Biblioteca de estudio para leer este artículo."
+          }
+        }
+      }
+    },
+    "Download a commentary from the Study Library to read it beside every verse.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descarga un comentario desde la Biblioteca de estudio para leerlo junto a cada versículo."
+          }
+        }
+      }
+    },
     "Download for Offline Listening": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Descargar para escuchar sin conexión"
+          }
+        }
+      }
+    },
+    "Download free study notes, book introductions and a Bible dictionary. Select a verse and tap Study to read them.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descarga gratis notas de estudio, introducciones a los libros y un diccionario bíblico. Selecciona un versículo y toca Estudio para leerlos."
+          }
+        }
+      }
+    },
+    "Download size": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamaño de la descarga"
+          }
+        }
+      }
+    },
+    "Download study notes or a Bible dictionary from the Study Library to see notes on this verse.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descarga notas de estudio o un diccionario bíblico desde la Biblioteca de estudio para ver notas sobre este versículo."
           }
         }
       }
@@ -3845,6 +4140,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Descarga la Reina-Valera 1909 en Biblias en este dispositivo › Obtener más. Se lee en voz alta con una voz en español."
+          }
+        }
+      }
+    },
+    "Download the study helps you'd like. Each works offline once it's on your device, and you can remove it any time.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descarga las ayudas de estudio que quieras. Cada una funciona sin conexión una vez en tu dispositivo, y puedes quitarla cuando quieras."
           }
         }
       }
@@ -3901,7 +4206,7 @@
       }
     },
     "Due": {
-      "comment": "Memorise: ready to review now",
+      "comment": "Memorize: ready to review now",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -3932,7 +4237,7 @@
       }
     },
     "Easy": {
-      "comment": "Memorise: I knew it easily",
+      "comment": "Memorize: I knew it easily",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -3958,16 +4263,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Editar grupo"
-          }
-        }
-      }
-    },
-    "Edit Notes": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Editar notas"
           }
         }
       }
@@ -4049,6 +4344,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mejorada"
+          }
+        }
+      }
+    },
+    "Evangelical": {
+      "comment": "Church tradition of a study resource",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Evangélica"
           }
         }
       }
@@ -4153,7 +4459,7 @@
         }
       }
     },
-    "Every extra, from Memorise to Hebrew & Greek, now has its own switch in Settings › Features.": {
+    "Every extra, from Memorize to Hebrew & Greek, now has its own switch in Settings › Features.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -4183,7 +4489,7 @@
         }
       }
     },
-    "Every widget in every size, in your reading theme: today's reading, progress, prayer, Memorise, your group and listening on the Lock Screen.": {
+    "Every widget in every size, in your reading theme: today's reading, progress, prayer, Memorize, your group and listening on the Lock Screen.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -4336,7 +4642,7 @@
       }
     },
     "Familiar": {
-      "comment": "Memorise progress",
+      "comment": "Memorize progress",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -4387,7 +4693,7 @@
         }
       }
     },
-    "Family trees and maps, Memorise, ambient sounds and more.": {
+    "Family trees and maps, Memorize, ambient sounds and more.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -4427,7 +4733,7 @@
         }
       }
     },
-    "Favourite": {
+    "Favorite": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -4437,7 +4743,7 @@
         }
       }
     },
-    "Favourite Books": {
+    "Favorite Books": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -4447,7 +4753,7 @@
         }
       }
     },
-    "Favourite Topics": {
+    "Favorite Topics": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -4457,7 +4763,7 @@
         }
       }
     },
-    "Favourites": {
+    "Favorites": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -4498,7 +4804,7 @@
       }
     },
     "Fill the Gaps": {
-      "comment": "Memorise game",
+      "comment": "Memorize game",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -4690,6 +4996,16 @@
         }
       }
     },
+    "Follow along in parallel": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sigue la lectura en paralelo"
+          }
+        }
+      }
+    },
     "Follows the original wording and word order as closely as the language allows. Good for close study.": {
       "localizations": {
         "es": {
@@ -4771,7 +5087,7 @@
         }
       }
     },
-    "For reading aloud and memorising": {
+    "For reading aloud and memorizing": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -4832,6 +5148,16 @@
         }
       }
     },
+    "Free": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gratis"
+          }
+        }
+      }
+    },
     "Free for anyone to read and share. Every Bible in Genesis today is public domain.": {
       "localizations": {
         "es": {
@@ -4852,7 +5178,7 @@
         }
       }
     },
-    "Friends and neighbours": {
+    "Friends and neighbors": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -4909,6 +5235,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "De mi diario de oración"
+          }
+        }
+      }
+    },
+    "Fuller Hebrew and Greek lexicons": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Léxicos de hebreo y griego más completos"
           }
         }
       }
@@ -5075,7 +5411,7 @@
       }
     },
     "Gold": {
-      "comment": "Verse image text colour",
+      "comment": "Verse image text color",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -5086,7 +5422,7 @@
       }
     },
     "Good": {
-      "comment": "Memorise: I remembered it",
+      "comment": "Memorize: I remembered it",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -5217,6 +5553,16 @@
         }
       }
     },
+    "Greek Only": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solo griego"
+          }
+        }
+      }
+    },
     "Greek editions": {
       "localizations": {
         "es": {
@@ -5258,7 +5604,7 @@
       }
     },
     "Green": {
-      "comment": "Highlight colour",
+      "comment": "Highlight color",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -5298,7 +5644,7 @@
         }
       }
     },
-    "Group highlights into collections in the Library, and your favourite topics appear here.": {
+    "Group highlights into collections in the Library, and your favorite topics appear here.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -5449,7 +5795,7 @@
       }
     },
     "Hard": {
-      "comment": "Memorise: I remembered with difficulty",
+      "comment": "Memorize: I remembered with difficulty",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -5509,6 +5855,16 @@
         }
       }
     },
+    "Hear the Hebrew and Greek": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escucha el hebreo y el griego"
+          }
+        }
+      }
+    },
     "Hebrew": {
       "localizations": {
         "es": {
@@ -5530,12 +5886,32 @@
         }
       }
     },
+    "Hebrew Only": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solo hebreo"
+          }
+        }
+      }
+    },
     "Hebrew and Greek words, glosses and Greek definitions from STEPBible.org, based on work at Tyndale House Cambridge (CC BY 4.0). Hebrew definitions from Strong's Hebrew Dictionary via the Open Scriptures Hebrew Bible project (CC BY 4.0). Commentary from Matthew Henry's Concise Commentary (public domain).": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Palabras hebreas y griegas, glosas y definiciones griegas de STEPBible.org, basadas en el trabajo de Tyndale House Cambridge (CC BY 4.0). Definiciones hebreas del Diccionario hebreo de Strong, mediante el proyecto Open Scriptures Hebrew Bible (CC BY 4.0). Comentario: Matthew Henry's Concise Commentary (dominio público)."
+          }
+        }
+      }
+    },
+    "Hebrew or Greek only": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solo hebreo o griego"
           }
         }
       }
@@ -5571,6 +5947,16 @@
         }
       }
     },
+    "Henry's full devotional commentary on the whole Bible, section by section.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El comentario devocional completo de Henry sobre toda la Biblia, sección por sección."
+          }
+        }
+      }
+    },
     "Here's what has been added to Genesis.": {
       "localizations": {
         "es": {
@@ -5597,6 +5983,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Guarda la palabra de Dios en tu corazón"
+          }
+        }
+      }
+    },
+    "Hides the translation beside the original": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oculta la traducción junto al original"
           }
         }
       }
@@ -5642,7 +6038,7 @@
       }
     },
     "Hint": {
-      "comment": "Memorise: show the opening words",
+      "comment": "Memorize: show the opening words",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -5915,7 +6311,17 @@
         }
       }
     },
-    "In Your Memorise List": {
+    "In Original (Hebrew & Greek), tap Hebrew Only or Greek Only to read the original by itself. With Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En Original (hebreo y griego), toca Solo hebreo o Solo griego para leer el original por sí solo. Con Premium."
+          }
+        }
+      }
+    },
+    "In Your Memorize List": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -5945,7 +6351,7 @@
         }
       }
     },
-    "In the reader, long-press a verse and pick a colour.": {
+    "In the reader, long-press a verse and pick a color.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -6047,7 +6453,7 @@
       }
     },
     "Ink": {
-      "comment": "Verse image text colour",
+      "comment": "Verse image text color",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -6134,6 +6540,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Introducción"
+          }
+        }
+      }
+    },
+    "Introduction to %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Introducción a %@"
           }
         }
       }
@@ -6402,6 +6818,27 @@
         }
       }
     },
+    "Key term": {
+      "comment": "Kind of study article",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Término clave"
+          }
+        }
+      }
+    },
+    "Key terms in Spanish": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Términos clave en español"
+          }
+        }
+      }
+    },
     "Kind": {
       "localizations": {
         "es": {
@@ -6615,7 +7052,7 @@
       }
     },
     "Learning": {
-      "comment": "Memorise progress",
+      "comment": "Memorize progress",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -6715,6 +7152,17 @@
         }
       }
     },
+    "Lexicons": {
+      "comment": "Study resource kind: Hebrew and Greek dictionaries",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Léxicos"
+          }
+        }
+      }
+    },
     "Library": {
       "localizations": {
         "es": {
@@ -6725,13 +7173,34 @@
         }
       }
     },
+    "License": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Licencia"
+          }
+        }
+      }
+    },
     "Licensed": {
-      "comment": "A Bible translation used under a publisher's licence",
+      "comment": "A Bible translation used under a publisher's license",
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Con licencia"
+          }
+        }
+      }
+    },
+    "Liddell-Scott-Jones": {
+      "comment": "Greek lexicon name",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Liddell-Scott-Jones"
           }
         }
       }
@@ -6980,6 +7449,17 @@
         }
       }
     },
+    "Lutheran": {
+      "comment": "Church tradition of a study resource",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Luterana"
+          }
+        }
+      }
+    },
     "MY YEAR WITH GENESIS": {
       "localizations": {
         "es": {
@@ -7222,6 +7702,16 @@
         }
       }
     },
+    "Matthew Henry, Spurgeon, Calvin, Wesley and more, beside every verse. With Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matthew Henry, Spurgeon, Calvino, Wesley y más, junto a cada versículo. Con Premium."
+          }
+        }
+      }
+    },
     "Matthew through Revelation, about three chapters a day.": {
       "localizations": {
         "es": {
@@ -7303,7 +7793,7 @@
         }
       }
     },
-    "Memorise": {
+    "Memorize": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -7313,7 +7803,7 @@
         }
       }
     },
-    "Memorise Scripture": {
+    "Memorize Scripture": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -7323,7 +7813,7 @@
         }
       }
     },
-    "Memorise Together": {
+    "Memorize Together": {
       "comment": "Group challenge kind",
       "localizations": {
         "es": {
@@ -7334,7 +7824,7 @@
         }
       }
     },
-    "Memorise, now with games": {
+    "Memorize, now with games": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -7344,8 +7834,8 @@
         }
       }
     },
-    "Memorised": {
-      "comment": "Memorise progress",
+    "Memorized": {
+      "comment": "Memorize progress",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -7579,7 +8069,7 @@
       }
     },
     "More Words": {
-      "comment": "Memorise: show a few more words of the verse",
+      "comment": "Memorize: show a few more words of the verse",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -7595,6 +8085,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Más para todos"
+          }
+        }
+      }
+    },
+    "More from %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más de %@"
           }
         }
       }
@@ -7691,6 +8191,16 @@
         }
       }
     },
+    "Most study resources are in English for now.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Por ahora, la mayoría de los recursos de estudio están en inglés."
+          }
+        }
+      }
+    },
     "Mother": {
       "localizations": {
         "es": {
@@ -7783,6 +8293,7 @@
       }
     },
     "Name": {
+      "comment": "Kind of study article: a person or place name",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -7844,7 +8355,7 @@
       }
     },
     "Navy": {
-      "comment": "Verse image text colour",
+      "comment": "Verse image text color",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -7905,7 +8416,7 @@
       }
     },
     "New": {
-      "comment": "Memorise: not reviewed yet",
+      "comment": "Memorize: not reviewed yet",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -8248,7 +8759,7 @@
         }
       }
     },
-    "No favourite sermons yet": {
+    "No favorite sermons yet": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -8314,16 +8825,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aún no hay notas"
-          }
-        }
-      }
-    },
-    "No notes yet.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aún no hay notas."
           }
         }
       }
@@ -8478,7 +8979,7 @@
         }
       }
     },
-    "Not a passage Genesis recognises": {
+    "Not a passage Genesis recognizes": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -8580,6 +9081,7 @@
       }
     },
     "Notes": {
+      "comment": "Tab: study notes and articles on a verse",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -8772,7 +9274,7 @@
         }
       }
     },
-    "Older wording such as “thee” and “thou”, much loved for reading aloud and memorising.": {
+    "Older wording such as “thee” and “thou”, much loved for reading aloud and memorizing.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -8872,6 +9374,16 @@
         }
       }
     },
+    "Open Study Library": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir la Biblioteca de estudio"
+          }
+        }
+      }
+    },
     "Open in Reader": {
       "localizations": {
         "es": {
@@ -8943,7 +9455,7 @@
       }
     },
     "Orange": {
-      "comment": "Highlight colour",
+      "comment": "Highlight color",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -9042,16 +9554,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "PDF, %lld páginas"
-          }
-        }
-      }
-    },
-    "PDFs can be up to 25 MB.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Los PDF pueden ocupar hasta 25 MB."
           }
         }
       }
@@ -9372,12 +9874,22 @@
         }
       }
     },
-    "Payment is charged to your Apple Account. The subscription renews automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel it in Settings > Apple Account > Subscriptions.": {
+    "Payment is charged to your Apple Account. The subscription renews automatically unless canceled at least 24 hours before the end of the current period. Manage or cancel it in Settings > Apple Account > Subscriptions.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "El pago se carga a tu cuenta de Apple. La suscripción se renueva automáticamente salvo que la canceles al menos 24 horas antes del final del periodo actual. Gestiónala o cancélala en Ajustes > Cuenta de Apple > Suscripciones."
+          }
+        }
+      }
+    },
+    "Pencil pages": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Páginas con Pencil"
           }
         }
       }
@@ -9463,6 +9975,16 @@
         }
       }
     },
+    "Photos and voice in your journal": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fotos y voz en tu diario"
+          }
+        }
+      }
+    },
     "Photos and voice recordings": {
       "localizations": {
         "es": {
@@ -9473,18 +9995,18 @@
         }
       }
     },
-    "Photos, voice and PDFs in your journal": {
+    "Photos, recordings, PDFs and Pencil pages are saved on your device, then synced through your own private iCloud. Add as many as you like.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Fotos, voz y PDF en tu diario"
+            "value": "Las fotos, grabaciones, PDF y páginas de Pencil se guardan en tu dispositivo y después se sincronizan a través de tu propio iCloud privado. Añade todos los que quieras."
           }
         }
       }
     },
     "Pink": {
-      "comment": "Highlight colour",
+      "comment": "Highlight color",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -9727,7 +10249,17 @@
         }
       }
     },
-    "Practise": {
+    "Practical, pastoral notes on the New Testament.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas prácticas y pastorales sobre el Nuevo Testamento."
+          }
+        }
+      }
+    },
+    "Practice": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -9737,7 +10269,7 @@
         }
       }
     },
-    "Practise this passage with Memorise's flashcards and games, part of Premium.": {
+    "Practice this passage with Memorize's flashcards and games, part of Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -9747,7 +10279,7 @@
         }
       }
     },
-    "Practise today to start a streak.": {
+    "Practice today to start a streak.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -9948,6 +10480,16 @@
         }
       }
     },
+    "Prayer notes have moved into the Prayer Journal, with their passages and dates.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las notas de oración se han trasladado al Diario de oración, con sus pasajes y fechas."
+          }
+        }
+      }
+    },
     "Prayer on your Lock Screen": {
       "localizations": {
         "es": {
@@ -9994,6 +10536,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tus oraciones y respuestas aparecen aquí por mes, para que recuerdes la fidelidad de Dios."
+          }
+        }
+      }
+    },
+    "Prayers in one place": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus oraciones en un solo lugar"
           }
         }
       }
@@ -10111,6 +10663,17 @@
         }
       }
     },
+    "Presbyterian": {
+      "comment": "Church tradition of a study resource",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Presbiteriana"
+          }
+        }
+      }
+    },
     "Present": {
       "localizations": {
         "es": {
@@ -10137,16 +10700,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vista previa"
-          }
-        }
-      }
-    },
-    "Preview Notes": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vista previa de las notas"
           }
         }
       }
@@ -10191,6 +10744,17 @@
         }
       }
     },
+    "Profile": {
+      "comment": "Kind of study article: about a person",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perfil"
+          }
+        }
+      }
+    },
     "Progress": {
       "localizations": {
         "es": {
@@ -10227,6 +10791,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sufijo pronominal"
+          }
+        }
+      }
+    },
+    "Pronounce": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pronunciar"
           }
         }
       }
@@ -10283,6 +10857,16 @@
         }
       }
     },
+    "Published": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Publicado"
+          }
+        }
+      }
+    },
     "Punctuation follows the Tyndale House Greek New Testament.": {
       "localizations": {
         "es": {
@@ -10293,8 +10877,19 @@
         }
       }
     },
+    "Puritan": {
+      "comment": "Church tradition of a study resource",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puritana"
+          }
+        }
+      }
+    },
     "Purple": {
-      "comment": "Highlight colour",
+      "comment": "Highlight color",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -10500,6 +11095,16 @@
         }
       }
     },
+    "Read along, side by side": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee al ritmo, lado a lado"
+          }
+        }
+      }
+    },
     "Read aloud by a device voice": {
       "localizations": {
         "es": {
@@ -10630,6 +11235,16 @@
         }
       }
     },
+    "Read the classic commentaries beside every verse with Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Premium, lee los comentarios clásicos junto a cada versículo."
+          }
+        }
+      }
+    },
     "Read the same chapters together, each at your own pace.": {
       "localizations": {
         "es": {
@@ -10656,6 +11271,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lee toda la Biblia en un año, o un libro a la vez."
+          }
+        }
+      }
+    },
+    "Read this resource with Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Premium, lee este recurso."
           }
         }
       }
@@ -10873,7 +11498,7 @@
       }
     },
     "Recall as many verses as you can in one minute.": {
-      "comment": "Memorise game: Speed Round",
+      "comment": "Memorize game: Speed Round",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -11035,6 +11660,28 @@
         }
       }
     },
+    "Reformed": {
+      "comment": "Church tradition of a study resource",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reformada"
+          }
+        }
+      }
+    },
+    "Reformed Baptist": {
+      "comment": "Church tradition of a study resource",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bautista reformada"
+          }
+        }
+      }
+    },
     "Region": {
       "comment": "Kind of Bible place",
       "localizations": {
@@ -11168,7 +11815,7 @@
         }
       }
     },
-    "Remove Favourite": {
+    "Remove Favorite": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -11501,7 +12148,7 @@
       }
     },
     "Sapling": {
-      "comment": "Memorise level",
+      "comment": "Memorize level",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -11541,12 +12188,32 @@
         }
       }
     },
+    "Saved on this device first, then copied to your private iCloud so it's on your other devices.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se guarda primero en este dispositivo y después se copia a tu iCloud privado para que esté en tus otros dispositivos."
+          }
+        }
+      }
+    },
     "Say each verse to yourself, then show it and mark how you did.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Di cada versículo para ti, luego muéstralo y marca cómo te fue."
+          }
+        }
+      }
+    },
+    "Say it aloud": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escúchala en voz alta"
           }
         }
       }
@@ -11906,7 +12573,7 @@
         }
       }
     },
-    "See your reading time, longest streak, favourite books and topics, and more with Premium.": {
+    "See your reading time, longest streak, favorite books and topics, and more with Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -11917,7 +12584,7 @@
       }
     },
     "Seed": {
-      "comment": "Memorise level",
+      "comment": "Memorize level",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -11953,6 +12620,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Selecciona un versículo y toca Estudio de palabras para ver su hebreo o griego, las definiciones de Strong y el comentario de Matthew Henry."
+          }
+        }
+      }
+    },
+    "Select a verse in the Reina-Valera 1909 and tap Word Study to see the Hebrew or Greek behind it.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selecciona un versículo en la Reina-Valera 1909 y toca Estudio de palabras para ver el hebreo o el griego que hay detrás."
           }
         }
       }
@@ -12560,6 +13237,16 @@
         }
       }
     },
+    "Sketch your sermon notes with Apple Pencil.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dibuja tus notas de sermones con el Apple Pencil."
+          }
+        }
+      }
+    },
     "Slate": {
       "comment": "Reader theme name",
       "localizations": {
@@ -12744,7 +13431,7 @@
       }
     },
     "Speed Round": {
-      "comment": "Memorise game",
+      "comment": "Memorize game",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -12770,6 +13457,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "La ortografía sigue la 28.ª edición de Nestle-Aland."
+          }
+        }
+      }
+    },
+    "Spoken by your device's Greek voice, in modern Greek pronunciation. Many courses teach a different one for New Testament Greek.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lo dice la voz en griego de tu dispositivo, con la pronunciación del griego moderno. Muchos cursos enseñan otra para el griego del Nuevo Testamento."
+          }
+        }
+      }
+    },
+    "Spoken by your device's Hebrew voice, in modern Israeli pronunciation.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lo dice la voz en hebreo de tu dispositivo, con la pronunciación israelí moderna."
           }
         }
       }
@@ -12806,12 +13513,22 @@
       }
     },
     "Sprout": {
-      "comment": "Memorise level",
+      "comment": "Memorize level",
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Brote"
+          }
+        }
+      }
+    },
+    "Spurgeon's devotional exposition of every psalm.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La exposición devocional de Spurgeon de cada salmo."
           }
         }
       }
@@ -12888,7 +13605,7 @@
         }
       }
     },
-    "Start a challenge to read, memorise or pray together.": {
+    "Start a challenge to read, memorize or pray together.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -13121,7 +13838,19 @@
         }
       }
     },
+    "Study Library": {
+      "comment": "Optional feature: downloadable study notes, commentaries and dictionaries",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biblioteca de estudio"
+          }
+        }
+      }
+    },
     "Study Notes": {
+      "comment": "Study resource kind",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -13177,6 +13906,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Estudia a fondo, escribe libremente"
+          }
+        }
+      }
+    },
+    "Study notes and a Bible dictionary": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas de estudio y un diccionario bíblico"
+          }
+        }
+      }
+    },
+    "Study notes, classic commentaries and Bible dictionaries to download, beside any verse.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas de estudio, comentarios clásicos y diccionarios bíblicos para descargar, junto a cualquier versículo."
           }
         }
       }
@@ -13416,6 +14165,16 @@
         }
       }
     },
+    "Tap a word in Original (Hebrew & Greek) or Word Study, then the speaker, to hear how it sounds.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca una palabra en Original (hebreo y griego) o en Estudio de palabras y luego el altavoz para oír cómo suena."
+          }
+        }
+      }
+    },
     "Tap the bookmark in the reader to mark your place.": {
       "localizations": {
         "es": {
@@ -13467,7 +14226,7 @@
       }
     },
     "Tap the verse's words back into order.": {
-      "comment": "Memorise game: Word Order",
+      "comment": "Memorize game: Word Order",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -13513,6 +14272,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tiempo"
+          }
+        }
+      }
+    },
+    "Term": {
+      "comment": "Kind of study article",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Término"
           }
         }
       }
@@ -13658,6 +14428,16 @@
         }
       }
     },
+    "That can't be attached here.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eso no se puede adjuntar aquí."
+          }
+        }
+      }
+    },
     "That can't be ticked yet.": {
       "localizations": {
         "es": {
@@ -13694,6 +14474,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ese archivo no es una Biblia que Genesis pueda leer."
+          }
+        }
+      }
+    },
+    "That file isn't a study resource Genesis can read.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ese archivo no es un recurso de estudio que Genesis pueda leer."
           }
         }
       }
@@ -13888,12 +14678,12 @@
         }
       }
     },
-    "The Hebrew and Greek words behind every verse, with Strong's definitions, and Matthew Henry's commentary on the whole Bible.": {
+    "The Hebrew and Greek words behind every verse with Strong's definitions, fuller lexicons, and classic commentaries from Matthew Henry, Spurgeon, Calvin and more.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Las palabras hebreas y griegas de cada versículo, con las definiciones de Strong, y el comentario de Matthew Henry sobre toda la Biblia."
+            "value": "Las palabras hebreas y griegas de cada versículo con las definiciones de Strong, léxicos más completos y comentarios clásicos de Matthew Henry, Spurgeon, Calvino y otros."
           }
         }
       }
@@ -13904,6 +14694,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "El pasaje"
+          }
+        }
+      }
+    },
+    "The Reformer's commentaries on most books of the Bible, in English translation.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los comentarios del reformador sobre la mayoría de los libros de la Biblia, en traducción inglesa."
+          }
+        }
+      }
+    },
+    "The Study Library": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La Biblioteca de estudio"
           }
         }
       }
@@ -14108,6 +14918,16 @@
         }
       }
     },
+    "The reader switches when Dark Mode turns on and returns to your theme when it turns off.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El lector cambia cuando se activa el modo oscuro y vuelve a tu tema cuando se desactiva."
+          }
+        }
+      }
+    },
     "The recording couldn't be saved.": {
       "localizations": {
         "es": {
@@ -14188,7 +15008,7 @@
         }
       }
     },
-    "The study assistant, family trees and maps, Memorise and more.": {
+    "The study assistant, family trees and maps, Memorize and more.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -14224,6 +15044,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "El mundo"
+          }
+        }
+      }
+    },
+    "Theme": {
+      "comment": "Kind of study article",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tema"
           }
         }
       }
@@ -14274,6 +15105,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Después, %@ / %@. Cancela en Ajustes antes de que termine la prueba y no se te cobrará."
+          }
+        }
+      }
+    },
+    "There are no notes on this verse.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No hay notas sobre este versículo."
           }
         }
       }
@@ -14359,32 +15200,22 @@
         }
       }
     },
-    "This already has the most attachments of that kind it can hold.": {
+    "This article isn't in the downloaded edition.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ya tiene el máximo de adjuntos de ese tipo."
+            "value": "Este artículo no está en la edición descargada."
           }
         }
       }
     },
-    "This already has the most photos it can hold.": {
+    "This attachment hasn't reached iCloud yet. Open it on the device where you added it, signed in to the same Apple Account.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ya tiene el máximo de fotos."
-          }
-        }
-      }
-    },
-    "This attachment hasn't reached the cloud yet. Open it on the device where you added it.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Este adjunto aún no ha llegado a la nube. Ábrelo en el dispositivo donde lo añadiste."
+            "value": "Este adjunto aún no ha llegado a iCloud. Ábrelo en el dispositivo donde lo añadiste, con la misma cuenta de Apple."
           }
         }
       }
@@ -14460,6 +15291,26 @@
         }
       }
     },
+    "This device has no Greek voice. Add one in Settings › Accessibility › Spoken Content › Voices › Greek.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este dispositivo no tiene una voz en griego. Añade una en Ajustes › Accesibilidad › Contenido leído › Voces › Griego."
+          }
+        }
+      }
+    },
+    "This device has no Hebrew voice. Add one in Settings › Accessibility › Spoken Content › Voices › Hebrew.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este dispositivo no tiene una voz en hebreo. Añade una en Ajustes › Accesibilidad › Contenido leído › Voces › Hebreo."
+          }
+        }
+      }
+    },
     "This group approves new members, so ask to join instead.": {
       "localizations": {
         "es": {
@@ -14500,6 +15351,16 @@
         }
       }
     },
+    "This passage isn't in %@.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este pasaje no está en %@."
+          }
+        }
+      }
+    },
     "This passage isn't in the Bible you're reading.": {
       "localizations": {
         "es": {
@@ -14520,12 +15381,12 @@
         }
       }
     },
-    "This permanently deletes your account and your data in the cloud. It can't be undone. You'll confirm with Apple next so Genesis also stops using your Apple ID.": {
+    "This permanently deletes your account and your data in the cloud. It can't be undone. You'll confirm with Apple next so Genesis also stops using your Apple Account.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Esto elimina para siempre tu cuenta y tus datos en la nube. No se puede deshacer. A continuación confirmarás con Apple para que Genesis deje de usar tu ID de Apple."
+            "value": "Esto elimina para siempre tu cuenta y tus datos en la nube. No se puede deshacer. A continuación confirmarás con Apple para que Genesis deje de usar tu cuenta de Apple."
           }
         }
       }
@@ -14576,6 +15437,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pensamiento por pensamiento"
+          }
+        }
+      }
+    },
+    "Thousands of articles on the Bible's people, places, customs and ideas.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Miles de artículos sobre las personas, los lugares, las costumbres y las ideas de la Biblia."
           }
         }
       }
@@ -14660,7 +15531,7 @@
         }
       }
     },
-    "Time spent reading, favourite books and your reading history.": {
+    "Time spent reading, favorite books and your reading history.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -14863,6 +15734,16 @@
         }
       }
     },
+    "Tradition": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tradición"
+          }
+        }
+      }
+    },
     "Traditional book face": {
       "localizations": {
         "es": {
@@ -14905,7 +15786,7 @@
       }
     },
     "Tree": {
-      "comment": "Memorise level",
+      "comment": "Memorize level",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -14945,7 +15826,7 @@
         }
       }
     },
-    "Try a different colour or collection.": {
+    "Try a different color or collection.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -15016,12 +15897,22 @@
         }
       }
     },
-    "Turn on Do Not Disturb or a Focus in Control Centre so nothing interrupts the sermon.": {
+    "Turn on Do Not Disturb or a Focus in Control Center so nothing interrupts the sermon.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Activa No molestar o un modo de concentración en el Centro de control para que nada interrumpa el sermón."
+          }
+        }
+      }
+    },
+    "Turn on iCloud for Genesis in Settings to sync attachments.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activa iCloud para Genesis en Ajustes para sincronizar los adjuntos."
           }
         }
       }
@@ -15147,6 +16038,16 @@
         }
       }
     },
+    "Unlock %@ with Premium": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desbloquear %@ con Premium"
+          }
+        }
+      }
+    },
     "Unlock Insights": {
       "localizations": {
         "es": {
@@ -15214,36 +16115,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hasta %lld versículos de un capítulo, en la Biblia que estás leyendo."
-          }
-        }
-      }
-    },
-    "Up to 10 photos and 5 voice recordings.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hasta 10 fotos y 5 grabaciones de voz."
-          }
-        }
-      }
-    },
-    "Up to 10 photos, 5 recordings, 3 PDFs and 5 drawings. Slides can be added once saved as a PDF.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hasta 10 fotos, 5 grabaciones, 3 PDF y 5 dibujos. Las diapositivas se pueden añadir guardadas como PDF."
-          }
-        }
-      }
-    },
-    "Up to two hours. Recordings stay private to you.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hasta dos horas. Las grabaciones son solo para ti."
           }
         }
       }
@@ -15385,6 +16256,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Versículo del día"
+          }
+        }
+      }
+    },
+    "Verse-by-verse study notes, book introductions, and articles on people and themes.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas de estudio versículo por versículo, introducciones a los libros y artículos sobre personas y temas."
           }
         }
       }
@@ -15548,6 +16429,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "¡Bien hecho!"
+          }
+        }
+      }
+    },
+    "Wesleyan": {
+      "comment": "Church tradition of a study resource",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wesleyana"
           }
         }
       }
@@ -16074,8 +16966,18 @@
         }
       }
     },
+    "While you listen, the verse being read is marked and kept on screen in Read in Parallel too.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mientras escuchas, el versículo que se lee se marca y se mantiene en pantalla también en Leer en paralelo."
+          }
+        }
+      }
+    },
     "White": {
-      "comment": "Verse image text colour",
+      "comment": "Verse image text color",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -16158,6 +17060,17 @@
         }
       }
     },
+    "With Dark Mode": {
+      "comment": "Night reading: switch whenever the device is in Dark Mode",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con el modo oscuro"
+          }
+        }
+      }
+    },
     "With Premium, chapters can open with an illuminated letter, in one of three new book fonts.": {
       "localizations": {
         "es": {
@@ -16208,7 +17121,7 @@
         }
       }
     },
-    "With Premium, select verses and tap Memorise. Flashcards bring each one back just before you'd forget it. Find them on Home.": {
+    "With Premium, select verses and tap Memorize. Flashcards bring each one back just before you'd forget it. Find them on Home.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -16249,7 +17162,7 @@
       }
     },
     "Word Order": {
-      "comment": "Memorise game",
+      "comment": "Memorize game",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -16269,12 +17182,32 @@
         }
       }
     },
+    "Word Study in the Reina-Valera": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estudio de palabras en la Reina-Valera"
+          }
+        }
+      }
+    },
     "Word for word": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Palabra por palabra"
+          }
+        }
+      }
+    },
+    "Word meanings and grammar are in English for now. More languages are coming soon.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Por ahora, los significados de las palabras y la gramática están en inglés. Pronto llegarán más idiomas."
           }
         }
       }
@@ -16422,7 +17355,7 @@
       }
     },
     "Yellow": {
-      "comment": "Highlight colour",
+      "comment": "Highlight color",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -16438,6 +17371,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tú"
+          }
+        }
+      }
+    },
+    "You can download it again any time.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puedes volver a descargarlo cuando quieras."
           }
         }
       }
@@ -16552,7 +17495,7 @@
         }
       }
     },
-    "You practised %lld verses.": {
+    "You practiced %lld verses.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -16562,7 +17505,7 @@
         }
       }
     },
-    "You practised 1 verse.": {
+    "You practiced 1 verse.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -16708,6 +17651,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "No tienes conexión. Conéctate a internet para descargar Biblias."
+          }
+        }
+      }
+    },
+    "You're offline. Connect to the internet to download study resources.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No tienes conexión. Conéctate a internet para descargar recursos de estudio."
           }
         }
       }
@@ -16883,16 +17836,6 @@
         }
       }
     },
-    "Your church's PDFs and Pencil pages": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Los PDF de tu iglesia y páginas de Pencil"
-          }
-        }
-      }
-    },
     "Your data stays safe in your account either way.": {
       "localizations": {
         "es": {
@@ -16939,6 +17882,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tus resaltados y notas se conservan. Puedes volver a descargarla cuando quieras."
+          }
+        }
+      }
+    },
+    "Your iCloud storage is full, so attachments aren't syncing.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu almacenamiento de iCloud está lleno, así que los adjuntos no se están sincronizando."
           }
         }
       }
@@ -17023,6 +17976,16 @@
         }
       }
     },
+    "Your prayers are kept in the Prayer Journal.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus oraciones se guardan en el Diario de oración."
+          }
+        }
+      }
+    },
     "Your prayers as a timeline": {
       "localizations": {
         "es": {
@@ -17043,7 +18006,7 @@
         }
       }
     },
-    "Your reading time, favourite books and a look back on your year.": {
+    "Your reading time, favorite books and a look back on your year.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -17272,6 +18235,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "aún en oración"
+          }
+        }
+      }
+    },
+    "this resource": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "este recurso"
           }
         }
       }

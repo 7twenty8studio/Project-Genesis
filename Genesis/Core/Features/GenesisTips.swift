@@ -37,6 +37,6 @@ struct TopicSearchTip: Tip {
 /// Apps can't switch Do Not Disturb on, so Church Mode suggests it once.
 struct ChurchModeFocusTip: Tip {
     var title: Text { Text("Quiet your phone") }
-    var message: Text? { Text("Turn on Do Not Disturb or a Focus in Control Centre so nothing interrupts the sermon.") }
+    var message: Text? { Text("Turn on Do Not Disturb or a Focus in Control Center so nothing interrupts the sermon.") }
     var image: Image? { Image(systemName: "moon") }
 }

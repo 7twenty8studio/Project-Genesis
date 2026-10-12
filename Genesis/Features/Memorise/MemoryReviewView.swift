@@ -138,7 +138,7 @@ struct MemoryReviewView: View {
                     withAnimation { hintWords += MemoryHint.wordsPerStep }
                     if MemoryHint.isComplete(text, words: hintWords) { reveal() }
                 } label: {
-                    Label(hintWords == 0 ? String(localized: "Hint", comment: "Memorise: show the opening words") : String(localized: "More Words", comment: "Memorise: show a few more words of the verse"), systemImage: "lightbulb")
+                    Label(hintWords == 0 ? String(localized: "Hint", comment: "Memorize: show the opening words") : String(localized: "More Words", comment: "Memorize: show a few more words of the verse"), systemImage: "lightbulb")
                         .frame(maxWidth: .infinity, minHeight: 44)
                 }
                 .buttonStyle(.bordered)

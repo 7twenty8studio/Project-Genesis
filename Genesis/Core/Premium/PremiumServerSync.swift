@@ -1,8 +1,9 @@
 import Foundation
 
 /// When the app tells the server (the premium-sync Edge Function) about the
-/// App Store subscription, so Premium is known beyond the study assistant
-/// (storage uploads check `public.genesis_is_premium()`).
+/// App Store subscription, so the server knows about Premium
+/// (`public.genesis_is_premium()`, used by study-ai and future server
+/// features), not only from App Store notifications.
 ///
 /// Only with a subscription and a signed-in account. Otherwise whenever the
 /// subscription (a new purchase or renewal) or the account changes, and at

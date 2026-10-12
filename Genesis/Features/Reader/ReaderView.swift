@@ -136,7 +136,8 @@ struct ReaderView: View {
                         onExplain: explainSelection,
                         onMemorise: memoriseAction,
                         onWordStudy: wordStudyAction,
-                        onPray: prayAction
+                        onPray: prayAction,
+                        onStudy: studyResourcesAction
                     )
                     .padding(.bottom, readerSafeArea.bottom + 8)
                     .frame(maxHeight: .infinity, alignment: .bottom)
@@ -326,12 +327,12 @@ struct ReaderView: View {
     private var bottomBar: some View {
         if reader.showsControls && !reader.isSelecting {
             if audio.isActive && features.isOn(.listen) {
-                AudioMiniPlayer(onSettings: { sheet = .audio }, onAmbient: features.isOn(.ambientSounds) ? openAmbient : nil)
+                AudioMiniPlayer(onSettings: { sheet = .audio }, onAmbient: ambientAction)
                     .padding(.bottom, 8)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                     .transition(.move(edge: .bottom).combined(with: .opacity))
             } else if ambient.showsControls && features.isOn(.ambientSounds) {
-                AmbientMiniBar(onOpen: openAmbient)
+                AmbientMiniBar(onOpen: { openAmbient() })
                     .padding(.bottom, 8)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                     .transition(.move(edge: .bottom).combined(with: .opacity))
@@ -350,10 +351,12 @@ struct ReaderView: View {
         reader.readsOriginalInParallel && features.isOn(.wordStudy) && wordStudy != nil && OriginalVersification.supports(reader.translation)
     }
 
-    /// Word Study in the selection bar. The word data follows English (KJV)
-    /// verse numbering; the Spanish Bible numbers some verses differently.
+    /// Word Study in the selection bar. The word data follows the KJV's verse
+    /// numbering: English Bibles share it, and the Reina-Valera's differences
+    /// are lined up by `OriginalVersification`.
     private var wordStudyAction: (() -> Void)? {
-        guard features.isOn(.wordStudy), wordStudy != nil, reader.translation.language == "en" else { return nil }
+        guard features.isOn(.wordStudy), wordStudy != nil,
+              reader.translation.language == "en" || OriginalVersification.map(for: reader.translation.id) != nil else { return nil }
         return { studyWordsForSelection() }
     }
 
@@ -367,6 +370,23 @@ struct ReaderView: View {
     private var prayAction: (() -> Void)? {
         guard features.isOn(.prayer) else { return nil }
         return { prayWithSelection() }
+    }
+
+    /// "Study" in the selection bar: downloaded notes and commentaries on
+    /// the first selected verse, when the Study Library is switched on.
+    private var studyResourcesAction: (() -> Void)? {
+        guard features.isOn(.studyLibrary) else { return nil }
+        return {
+            guard let verse = reader.selection.min() else { return }
+            reader.clearSelection()
+            sheet = .resources(verse)
+        }
+    }
+
+    /// Ambient sounds from the listening bar, when switched on.
+    private var ambientAction: (() -> Void)? {
+        guard features.isOn(.ambientSounds) else { return nil }
+        return { openAmbient() }
     }
 
     /// A new prayer holding the selected verses (ids only), opened to write.
@@ -391,7 +411,7 @@ struct ReaderView: View {
             : VerseID(book: first.book, chapter: first.chapter, verse: first.verse + MemoriseSuggestions.maximumVerses - 1)
         StudyStore(context: modelContext).memorise(from: first, through: end, translationID: reader.translation.id)
         reader.clearSelection()
-        let message = String(localized: "Added to Memorise")
+        let message = String(localized: "Added to Memorize")
         withAnimation { confirmation = message }
         UIAccessibility.post(notification: .announcement, argument: message)
         Task {
@@ -455,6 +475,11 @@ struct ReaderView: View {
             VerseImageView(card: card)
         case let .wordStudy(verse):
             VerseStudyView(verse: verse)
+        case let .resources(verse):
+            VerseResourcesView(verse: verse) { target in
+                reader.open(target)
+                self.sheet = nil
+            }
         case .chapterPicker:
             ChapterPickerView { chapter in
                 reader.open(chapter)
@@ -513,6 +538,7 @@ enum ReaderSheet: Identifiable {
     case bibles
     case verseImage(VerseCard)
     case wordStudy(VerseID)
+    case resources(VerseID)
 
     var id: String {
         switch self {
@@ -526,6 +552,7 @@ enum ReaderSheet: Identifiable {
         case let .prayer(prayer): "prayer-\(prayer.id)"
         case let .crossReferences(verse): "xref-\(verse.rawValue)"
         case let .wordStudy(verse): "words-\(verse.rawValue)"
+        case let .resources(verse): "resources-\(verse.rawValue)"
         case let .premium(feature): "premium-\(feature.rawValue)"
         case let .study(passage, action): "study-\(passage.start.rawValue)-\(passage.end.rawValue)-\(action.rawValue)"
         }

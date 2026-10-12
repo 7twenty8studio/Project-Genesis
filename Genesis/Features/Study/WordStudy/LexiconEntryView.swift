@@ -7,9 +7,14 @@ struct LexiconEntryView: View {
 
     @Environment(\.wordStudy) private var wordStudy
     @Environment(BibleLibrary.self) private var library
+    @Environment(StudyResourceLibrary.self) private var studyResources
+    @Environment(EntitlementService.self) private var entitlements
     @Environment(\.palette) private var palette
+    @Environment(WordPronouncer.self) private var pronouncer
     @State private var loaded: Loaded?
     @State private var didLoad = false
+    /// Brown-Driver-Briggs or Liddell-Scott-Jones, from a downloaded lexicon pack.
+    @State private var fullEntries: [StudyLexiconEntry] = []
 
     private struct Loaded: Sendable {
         let entry: LexiconEntry
@@ -37,27 +42,37 @@ struct LexiconEntryView: View {
         .themedScreen()
         .navigationTitle(loaded?.entry.strongs ?? strongs)
         .navigationBarTitleDisplayMode(.inline)
-        .task(id: strongs) { await load() }
+        .studyLinks()
+        .onAppear { WordPronouncer.preloadVoices() }
+        .onDisappear { pronouncer.stop() }
+        .task(id: strongs) {
+            await load()
+            await loadFullEntries()
+        }
     }
 
     @ViewBuilder
     private func content(_ loaded: Loaded) -> some View {
         let entry = loaded.entry
         Section {
-            VStack(alignment: .leading, spacing: 6) {
-                Text(entry.lemma)
-                    .font(.system(.largeTitle, design: .serif))
-                    .foregroundStyle(palette.text)
-                Text(entry.transliteration)
-                    .font(.subheadline.italic())
-                    .foregroundStyle(palette.secondaryText)
-                Text(entry.gloss)
-                    .font(.headline)
-                    .foregroundStyle(palette.accent)
+            HStack(alignment: .top, spacing: 8) {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(entry.lemma)
+                        .font(.system(.largeTitle, design: .serif))
+                        .foregroundStyle(palette.text)
+                    Text(entry.transliteration)
+                        .font(.subheadline.italic())
+                        .foregroundStyle(palette.secondaryText)
+                    Text(entry.gloss)
+                        .font(.headline)
+                        .foregroundStyle(palette.accent)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .accessibilityElement(children: .combine)
+                .accessibilityIdentifier("lexicon.header")
+                PronounceButton(word: entry.lemma, language: entry.language)
             }
             .padding(.vertical, 4)
-            .accessibilityElement(children: .combine)
-            .accessibilityIdentifier("lexicon.header")
             if loaded.count == 1 {
                 Text("Used once in the Bible.")
                     .foregroundStyle(palette.secondaryText)
@@ -65,6 +80,8 @@ struct LexiconEntryView: View {
                 Text("Used \(loaded.count) times in the Bible.")
                     .foregroundStyle(palette.secondaryText)
             }
+        } footer: {
+            PronunciationNote(language: entry.language)
         }
         .listRowBackground(palette.surface)
 
@@ -86,6 +103,25 @@ struct LexiconEntryView: View {
                 }
             }
             .listRowBackground(palette.surface)
+        }
+        ForEach(fullEntries) { full in
+            Section {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(full.lemma)
+                        .font(.system(.title2, design: .serif))
+                        .foregroundStyle(palette.text)
+                    if !full.transliteration.isEmpty || !full.gloss.isEmpty {
+                        Text([full.transliteration, full.gloss].filter { !$0.isEmpty }.joined(separator: " · "))
+                            .font(.subheadline)
+                            .foregroundStyle(palette.secondaryText)
+                    }
+                }
+                .accessibilityElement(children: .combine)
+                StudyTextRows(text: full.definition)
+                    .accessibilityIdentifier("lexicon.full")
+            } header: {
+                Text(full.source.title)
+            }
         }
         if !loaded.verses.isEmpty {
             Section {
@@ -126,5 +162,19 @@ struct LexiconEntryView: View {
             return Loaded(entry: entry, count: (try? wordStudy.occurrences(of: strongs)) ?? 0, verses: verses)
         }.value
         didLoad = true
+    }
+
+    /// The fuller lexicons are a Premium download (`lexicons` pack).
+    private func loadFullEntries() async {
+        guard entitlements.allows(.wordStudy),
+              let pack = studyResources.installedResources(.lexicon).first,
+              let repository = studyResources.repository(pack.id) else {
+            fullEntries = []
+            return
+        }
+        let strongs = strongs
+        fullEntries = await Task.detached(priority: .userInitiated) {
+            (try? repository.lexicon(strongs: strongs)) ?? []
+        }.value
     }
 }

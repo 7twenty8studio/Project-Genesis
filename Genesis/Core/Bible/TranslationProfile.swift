@@ -47,7 +47,7 @@ enum ReadingLevel: String, CaseIterable, Codable, Sendable {
 
     var detail: String {
         switch self {
-        case .traditional: String(localized: "Older wording such as \u{201C}thee\u{201D} and \u{201C}thou\u{201D}, much loved for reading aloud and memorising.")
+        case .traditional: String(localized: "Older wording such as \u{201C}thee\u{201D} and \u{201C}thou\u{201D}, much loved for reading aloud and memorizing.")
         case .formal: String(localized: "Modern but dignified language, close to the original's tone.")
         case .everyday: String(localized: "Modern, conversational language that reads like today's speech.")
         }
@@ -62,7 +62,7 @@ enum TranslationRights: String, Codable, Sendable {
     var title: String {
         switch self {
         case .publicDomain: String(localized: "Public domain")
-        case .licensed: String(localized: "Licensed", comment: "A Bible translation used under a publisher's licence")
+        case .licensed: String(localized: "Licensed", comment: "A Bible translation used under a publisher's license")
         }
     }
 }

@@ -27,6 +27,9 @@ final class SyncService {
     @ObservationIgnored var isAllowed: @MainActor () -> Bool = { true }
     /// Moves attachment files to and from cloud storage after each sync.
     @ObservationIgnored var attachmentTransfers: AttachmentTransfers?
+    /// A chapter's last verse in the Bible being read, for prayer notes on a
+    /// whole chapter that move to the Prayer Journal.
+    @ObservationIgnored var lastVerse: @MainActor (ChapterID) -> Int? = { _ in nil }
     @ObservationIgnored private let container: ModelContainer
     @ObservationIgnored private let defaults: UserDefaults
     @ObservationIgnored private var scheduled: Task<Void, Never>?
@@ -160,6 +163,8 @@ final class SyncService {
         try await pull(SyncTable.memoryVerses, RemoteMemoryVerse.self, client, token, user, apply: apply)
         try await pull(SyncTable.sermons, RemoteSermon.self, client, token, user, apply: apply)
         try await pull(SyncTable.attachments, RemoteAttachment.self, client, token, user, apply: apply)
+        // Prayer notes from an older version elsewhere go to the Prayer Journal.
+        StudyStore(context: context).movePrayerNotesToJournal(lastVerse: lastVerse)
 
         // Push everything edited since the last successful push.
         let since = defaults.object(forKey: key("lastPushedAt", user.id)) as? Date ?? .distantPast

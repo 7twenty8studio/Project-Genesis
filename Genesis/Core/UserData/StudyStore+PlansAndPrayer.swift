@@ -100,4 +100,79 @@ extension StudyStore {
         context.delete(prayer)
         save()
     }
+
+    // MARK: Prayer notes
+
+    /// Prayers live only in the Prayer Journal. A note marked as a prayer (made
+    /// by an older version, here or on another device) becomes a journal
+    /// entry with the same title, words, date and passage, and the note goes.
+    /// A handwritten prayer page stays a note, as a journal note, because
+    /// journal entries hold no handwriting. Nothing is lost either way.
+    /// Returns how many prayers were added.
+    @discardableResult
+    func movePrayerNotesToJournal(lastVerse: (ChapterID) -> Int? = { _ in nil }) -> Int {
+        let prayerKind = NoteKind.prayer.rawValue
+        let notes = (try? context.fetch(FetchDescriptor<Note>(predicate: #Predicate { $0.kindRaw == prayerKind }))) ?? []
+        guard !notes.isEmpty else { return 0 }
+        var added = 0
+        for note in notes {
+            if note.drawing != nil {
+                note.kind = .journal
+                note.updatedAt = .now
+                continue
+            }
+            if !note.title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+                || !note.body.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                // The same id on every device, so two devices moving the
+                // same note make one prayer, not two.
+                let id = PrayerNoteMove.prayerID(forNote: note.id)
+                let existing = (try? context.fetchCount(FetchDescriptor<Prayer>(predicate: #Predicate { $0.id == id }))) ?? 0
+                if existing == 0 {
+                    let prayer = Prayer(title: PrayerNoteMove.title(for: note), body: note.body)
+                    prayer.id = id
+                    prayer.passages = PrayerNoteMove.passages(for: note.anchor, lastVerse: lastVerse)
+                    prayer.createdAt = note.createdAt
+                    context.insert(prayer)
+                    added += 1
+                }
+            }
+            recordDeletion(of: note.id, in: SyncTable.notes)
+            context.delete(note)
+        }
+        save()
+        return added
+    }
+}
+
+/// How a prayer note becomes a Prayer Journal entry.
+enum PrayerNoteMove {
+    /// A stable id derived from the note's, and never equal to it (tombstones
+    /// are keyed by id alone).
+    static func prayerID(forNote id: UUID) -> UUID {
+        var bytes = id.uuid
+        bytes.0 ^= 0xA5
+        bytes.1 ^= 0x5A
+        return UUID(uuid: bytes)
+    }
+
+    /// The note's title, or its theme when it had no title.
+    static func title(for note: Note) -> String {
+        let title = note.title.trimmingCharacters(in: .whitespacesAndNewlines)
+        if title.isEmpty, case let .theme(theme) = note.anchor { return theme }
+        return note.title
+    }
+
+    /// The verses or chapter the note was on, as a prayer passage (ids only).
+    /// A whole chapter needs its last verse; a book or theme has no passage.
+    static func passages(for anchor: NoteAnchor, lastVerse: (ChapterID) -> Int?) -> [PrayerPassage] {
+        switch anchor {
+        case let .verses(start, end):
+            return [PrayerPassage(selection: [start, end])].compactMap { $0 }
+        case let .chapter(chapter):
+            guard let last = lastVerse(chapter), last >= 1 else { return [] }
+            return [PrayerPassage(start: chapter.firstVerse, end: VerseID(book: chapter.book, chapter: chapter.chapter, verse: last))]
+        case .book, .theme, .none:
+            return []
+        }
+    }
 }

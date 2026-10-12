@@ -70,7 +70,12 @@ final class HighlightCollection {
 }
 
 enum NoteKind: String, Codable, CaseIterable, Identifiable, Sendable {
+    /// `prayer` is only read from older data: prayers live in the Prayer
+    /// Journal, and `StudyStore.movePrayerNotesToJournal` moves them there.
     case text, prayer, study, journal
+
+    /// The kinds a note can be written as.
+    static var allCases: [NoteKind] { [.text, .study, .journal] }
 
     var id: String { rawValue }
 

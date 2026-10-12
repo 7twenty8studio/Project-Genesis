@@ -1,5 +1,6 @@
 import Foundation
 import SwiftData
+import SwiftUI
 import Testing
 @testable import Genesis
 
@@ -127,43 +128,27 @@ struct SermonGroupingTests {
 
 @Suite("Sermon Markdown")
 struct SermonMarkdownTests {
-    @Test func boldWrapsAndUnwrapsTheSelection() {
-        let wrapped = SermonMarkdown.apply(.bold, to: "God is love", selection: 7..<11)
-        #expect(wrapped.text == "God is **love**")
-        #expect(wrapped.selection == 9..<13)
-        let unwrapped = SermonMarkdown.apply(.bold, to: wrapped.text, selection: wrapped.selection)
-        #expect(unwrapped.text == "God is love")
-        #expect(unwrapped.selection == 7..<11)
+    @Test func spansFollowTheMarks() {
+        let spans = SermonMarkdown.spans("God is **love** and *light*")
+        #expect(spans == [
+            .init(text: "God is "),
+            .init(text: "love", bold: true),
+            .init(text: " and "),
+            .init(text: "light", italic: true),
+        ])
+        #expect(SermonMarkdown.spans("***grace***") == [.init(text: "grace", bold: true, italic: true)])
+        #expect(SermonMarkdown.spans("5 * 3 and a\\*b") == [.init(text: "5 * 3 and a*b")], "Lone and escaped asterisks stay")
     }
 
-    @Test func emptySelectionLeavesTheCursorBetweenTheMarks() {
-        let edit = SermonMarkdown.apply(.italic, to: "Faith ", selection: 6..<6)
-        #expect(edit.text == "Faith **")
-        #expect(edit.selection == 7..<7)
-    }
-
-    @Test func italicDoesntUndoBold() {
-        let edit = SermonMarkdown.apply(.italic, to: "**grace**", selection: 2..<7)
-        #expect(edit.text == "***grace***")
-    }
-
-    @Test func headingTogglesOnTheCursorsLine() {
-        let text = "Intro\nMain point\nEnd"
-        let heading = SermonMarkdown.apply(.heading, to: text, selection: 8..<8)
-        #expect(heading.text == "Intro\n## Main point\nEnd")
-        #expect(heading.selection == 19..<19, "The cursor ends up at the end of the line")
-        let removed = SermonMarkdown.apply(.heading, to: heading.text, selection: 10..<10)
-        #expect(removed.text == text)
-    }
-
-    @Test func listsCoverEverySelectedLine() {
-        let text = "Love\nJoy\nPeace"
-        let bullets = SermonMarkdown.apply(.bullet, to: text, selection: 0..<15)
-        #expect(bullets.text == "- Love\n- Joy\n- Peace")
-        let numbered = SermonMarkdown.apply(.numbered, to: bullets.text, selection: 0..<bullets.text.count)
-        #expect(numbered.text == "1. Love\n2. Joy\n3. Peace", "Switching replaces the old mark")
-        let quote = SermonMarkdown.apply(.quote, to: "Love\nJoy", selection: 2..<2)
-        #expect(quote.text == "> Love\nJoy")
+    @Test func spansBackToMarkdown() {
+        let spans: [SermonMarkdown.Span] = [
+            .init(text: "Be "),
+            .init(text: "still ", bold: true),
+            .init(text: "and", bold: true),
+            .init(text: " 2*3"),
+        ]
+        #expect(SermonMarkdown.markdown(spans) == "Be **still and** 2\\*3", "Marks hug the words; asterisks are escaped")
+        #expect(SermonMarkdown.spans(SermonMarkdown.markdown(spans)).map(\.text).joined() == "Be still and 2*3")
     }
 
     @Test func blocksForTheFormattedView() {
@@ -188,10 +173,74 @@ struct SermonMarkdownTests {
         let empty = SermonMarkdown.inserting("John 1:1", into: "", at: nil)
         #expect(empty.text == "John 1:1")
     }
+}
 
-    @Test func outOfRangeSelectionsAreClamped() {
-        let edit = SermonMarkdown.apply(.bold, to: "Hi", selection: 5..<9)
-        #expect(edit.text == "Hi****")
+@MainActor
+@Suite("Sermon rich text")
+struct SermonRichTextTests {
+    private let style = SermonRichText.Style()
+    private let context = EnvironmentValues().fontResolutionContext
+
+    private func roundTrip(_ markdown: String) -> String {
+        SermonRichText.markdown(SermonRichText.attributed(markdown, style: style), context: context)
+    }
+
+    private func markdown(_ text: AttributedString) -> String {
+        SermonRichText.markdown(text, context: context)
+    }
+
+    @Test func notesShowWithoutMarks() {
+        let text = SermonRichText.attributed("## Point one\n- **Pray** and *wait*\n2. Read\n> Be still", style: style)
+        #expect(String(text.characters) == "Point one\n\u{2022} Pray and wait\n2. Read\nBe still")
+    }
+
+    @Test func notesRoundTrip() {
+        let notes = "## Point one\n- **Pray** and *wait*\n2. Read\n> Be **still**\n\nPlain ***both***"
+        #expect(roundTrip(notes) == notes)
+        #expect(roundTrip("") == "")
+        #expect(roundTrip("* Item") == "- Item", "Bullets are saved one way")
+    }
+
+    @Test func headingTogglesOnTheCursorsLine() {
+        let text = SermonRichText.attributed("Intro\nMain point\nEnd", style: style)
+        let heading = SermonRichText.toggling(.heading, in: text, selection: 8..<8, style: style, context: context)
+        #expect(markdown(heading.text) == "Intro\n## Main point\nEnd")
+        #expect(heading.selection == 16..<16, "The cursor ends up at the end of the line")
+        let removed = SermonRichText.toggling(.heading, in: heading.text, selection: 10..<10, style: style, context: context)
+        #expect(markdown(removed.text) == "Intro\nMain point\nEnd")
+    }
+
+    @Test func listsCoverEverySelectedLine() {
+        let text = SermonRichText.attributed("Love\nJoy\nPeace", style: style)
+        let bullets = SermonRichText.toggling(.bullet, in: text, selection: 0..<15, style: style, context: context)
+        #expect(markdown(bullets.text) == "- Love\n- Joy\n- Peace")
+        let numbered = SermonRichText.toggling(.numbered, in: bullets.text, selection: bullets.selection, style: style, context: context)
+        #expect(markdown(numbered.text) == "1. Love\n2. Joy\n3. Peace", "Switching replaces the old mark")
+        let plain = SermonRichText.toggling(.numbered, in: numbered.text, selection: numbered.selection, style: style, context: context)
+        #expect(markdown(plain.text) == "Love\nJoy\nPeace")
+        let quote = SermonRichText.toggling(.quote, in: SermonRichText.attributed("- Love\nJoy", style: style), selection: 2..<2, style: style, context: context)
+        #expect(markdown(quote.text) == "> Love\nJoy", "A quote replaces the list mark")
+    }
+
+    @Test func joinedLinesTakeTheFirstLinesStyle() {
+        let text = SermonRichText.attributed("## Title\nBody\n> Quote", style: style)
+        let joined = SermonRichText.replacing(5..<6, with: AttributedString(), in: text)
+        #expect(markdown(SermonRichText.normalized(joined, style: style, context: context)) == "## TitleBody\n> Quote")
+        let intoPlain = SermonRichText.replacing(10..<11, with: AttributedString(), in: text)
+        #expect(markdown(SermonRichText.normalized(intoPlain, style: style, context: context)) == "## Title\nBodyQuote")
+    }
+
+    @Test func returnCarriesListsOn() {
+        let ended = SermonRichText.endedLine(old: "Intro\n\u{2022} Milk", new: "Intro\n\u{2022} Milk\n", cursor: 13)
+        #expect(ended?.start == 6)
+        #expect(ended?.text == "\u{2022} Milk")
+        #expect(SermonRichText.endedLine(old: "ab", new: "abc", cursor: 3) == nil, "Only a typed line break")
+        #expect(SermonRichText.continuation(of: "\u{2022} Milk") == "\u{2022} ")
+        #expect(SermonRichText.continuation(of: "2. Read") == "3. ")
+        #expect(SermonRichText.continuation(of: "Plain") == nil)
+        #expect(SermonRichText.endsList("\u{2022} "))
+        #expect(SermonRichText.endsList("4. "))
+        #expect(!SermonRichText.endsList(""))
     }
 }
 

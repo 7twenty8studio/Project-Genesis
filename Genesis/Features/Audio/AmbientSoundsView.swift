@@ -175,6 +175,22 @@ struct AmbientSoundsSheet: View {
 struct AmbientMiniBar: View {
     let onOpen: () -> Void
 
+    var body: some View {
+        AmbientControlsRow(onOpen: onOpen)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 6)
+            .frame(maxWidth: 420)
+            .glassEffect(.regular, in: Capsule())
+            .padding(.horizontal, 12)
+            .accessibilityElement(children: .contain)
+    }
+}
+
+/// Ambient sounds' mix, pause and stop: on their own in `AmbientMiniBar`,
+/// or under the Bible being read aloud in `AudioMiniPlayer`.
+struct AmbientControlsRow: View {
+    let onOpen: () -> Void
+
     @Environment(AmbientSoundService.self) private var ambient
     @Environment(\.palette) private var palette
 
@@ -219,11 +235,5 @@ struct AmbientMiniBar: View {
             .accessibilityLabel("Stop ambient sounds")
             .accessibilityIdentifier("ambient.bar.close")
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 6)
-        .frame(maxWidth: 420)
-        .glassEffect(.regular, in: Capsule())
-        .padding(.horizontal, 12)
-        .accessibilityElement(children: .contain)
     }
 }

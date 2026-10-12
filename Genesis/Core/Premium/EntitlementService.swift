@@ -266,8 +266,8 @@ final class EntitlementService {
     // MARK: The server
 
     /// Tells the server (premium-sync) about the active subscription when
-    /// `PremiumSyncPolicy` says it's due, or now with `force` (a purchase, a
-    /// restore, an upload refused for want of Premium). Returns the server's
+    /// `PremiumSyncPolicy` says it's due, or now with `force` (a purchase or
+    /// a restore). Returns the server's
     /// answer, or nil when nothing was sent or it failed (silently; it's
     /// tried again next time).
     @discardableResult

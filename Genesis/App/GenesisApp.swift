@@ -18,10 +18,12 @@ struct GenesisApp: App {
     @State private var welcome: MorningWelcome
     @State private var audio: AudioPlayerService
     @State private var ambient: AmbientSoundService
+    @State private var pronouncer: WordPronouncer
     @State private var community: CommunityStore
     @State private var features: FeaturePreferences
     @State private var challengeAutoTick: ChallengeAutoTick
     @State private var attachments: AttachmentTransfers
+    @State private var studyResources: StudyResourceLibrary
     private let modelContainer: ModelContainer
     private let groupChallenges: any GroupChallengeBackend
     private let studyData = StudyRepository.bundled()
@@ -67,22 +69,43 @@ struct GenesisApp: App {
         _auth = State(initialValue: auth)
         // More translations to download (none in UI tests).
         library.setDownloader(TranslationDownloader(client: testing.isEnabled ? nil : auth.client))
+        // Study notes, commentaries and lexicons to download (none in UI
+        // tests, which get an empty folder of their own).
+        _studyResources = State(initialValue: StudyResourceLibrary(
+            directory: testing.isEnabled
+                ? URL.temporaryDirectory.appending(path: "StudyResources-\(UUID().uuidString)", directoryHint: .isDirectory)
+                : StudyResourceLibrary.downloadsDirectory,
+            downloader: StudyResourceDownloader(client: testing.isEnabled ? nil : auth.client)
+        ))
         _sync = State(initialValue: sync)
 
-        // Attachment files (Premium): the private storage bucket, or memory
-        // and a fresh folder in UI tests (no network).
+        // Attachment files (Premium): the person's own iCloud, moving any an
+        // earlier version left in the Supabase bucket; memory and a fresh
+        // folder in UI tests (no network). Builds without iCloud (no
+        // Config/Signing.xcconfig) keep files on the device.
         let attachmentStorage: any AttachmentStorage
+        var movesEarlierFiles = false
         if testing.isEnabled {
             attachmentStorage = InMemoryAttachmentStorage()
-        } else if let client = auth.client {
-            attachmentStorage = SupabaseAttachmentStorage(client: client, auth: auth)
         } else {
-            attachmentStorage = SignedOutAttachmentStorage()
+            let iCloud: any AttachmentStorage = ICloudAttachmentStorage.configuredContainer
+                .map { ICloudAttachmentStorage(containerIdentifier: $0) } ?? UnavailableAttachmentStorage()
+            movesEarlierFiles = ICloudAttachmentStorage.configuredContainer != nil
+            if let client = auth.client {
+                attachmentStorage = MovingAttachmentStorage(iCloud: iCloud, legacy: SupabaseAttachmentStorage(client: client, auth: auth))
+            } else {
+                attachmentStorage = iCloud
+            }
         }
-        let attachments = AttachmentTransfers(files: testing.isEnabled ? .temporary() : .standard, storage: attachmentStorage)
+        let attachments = AttachmentTransfers(
+            files: testing.isEnabled ? .temporary() : .standard,
+            storage: attachmentStorage,
+            movesEarlierFiles: movesEarlierFiles
+        )
         attachments.userID = { [weak auth] in auth?.user?.id }
         attachments.requestSync = { [weak sync] in sync?.schedule(after: .zero) }
         sync.attachmentTransfers = attachments
+        sync.lastVerse = { [weak library] chapter in (try? library?.current.chapter(chapter))?.verses.last?.id.verse }
         AttachmentTransfers.app = attachments
         _attachments = State(initialValue: attachments)
 
@@ -90,8 +113,8 @@ struct GenesisApp: App {
         let entitlements = EntitlementService(override: testing.isEnabled ? testing.isPremium : nil)
         _entitlements = State(initialValue: entitlements)
         EntitlementService.app = entitlements
-        // The server learns about the subscription (premium-sync), so storage
-        // uploads (Premium) are allowed. Never in UI tests.
+        // The server learns about the subscription (premium-sync), for the
+        // features it checks itself (study-ai). Never in UI tests.
         entitlements.accountID = { [weak auth] in auth?.user?.id }
         if !testing.isEnabled, let client = auth.client {
             let premiumSync = PremiumSyncClient(client: client)
@@ -99,9 +122,6 @@ struct GenesisApp: App {
                 guard let auth, auth.isSignedIn, let token = try? await auth.accessToken() else { return nil }
                 return await premiumSync.sync(signedTransaction: signedTransaction, accessToken: token)?.premium
             }
-        }
-        attachments.recordPremium = { [weak entitlements] in
-            await entitlements?.syncWithServer(force: true) == true
         }
 
         // UI tests get canned answers: no network and no AI cost.
@@ -138,6 +158,8 @@ struct GenesisApp: App {
         _audio = State(initialValue: audio)
         // Ambient sounds: silent in UI tests.
         _ambient = State(initialValue: AmbientSoundService(output: testing.isEnabled ? SilentAmbientOutput() : EngineAmbientOutput()))
+        // Hebrew and Greek words said aloud: silent in UI tests.
+        _pronouncer = State(initialValue: WordPronouncer(isSilent: testing.isEnabled))
 
         // Groups and the community. UI tests use an in-memory server with a
         // signed-in person (or none with -uiTestingSignedOut).
@@ -194,6 +216,7 @@ struct GenesisApp: App {
         WindowGroup {
             RootView()
                 .environment(library)
+                .environment(studyResources)
                 .environment(settings)
                 .environment(progress)
                 .environment(reader)
@@ -207,6 +230,7 @@ struct GenesisApp: App {
                 .environment(welcome)
                 .environment(audio)
                 .environment(ambient)
+                .environment(pronouncer)
                 .environment(community)
                 .environment(features)
                 .environment(challengeAutoTick)

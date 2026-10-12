@@ -14,7 +14,7 @@ enum GroupChallengeKind: String, Codable, Sendable, CaseIterable, Identifiable {
     var title: String {
         switch self {
         case .reading: String(localized: "Read Together", comment: "Group challenge kind")
-        case .memorise: String(localized: "Memorise Together", comment: "Group challenge kind")
+        case .memorise: String(localized: "Memorize Together", comment: "Group challenge kind")
         case .streak: String(localized: "Reading Streak", comment: "Group challenge kind")
         case .prayer: String(localized: "Pray Every Day", comment: "Group challenge kind")
         }

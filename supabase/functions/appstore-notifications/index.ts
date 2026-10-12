@@ -3,7 +3,8 @@
 // Apple POSTs { signedPayload } here when a subscription starts, renews,
 // fails to renew, expires, is refunded or stops being shared. This keeps
 // public.premium_entitlements current, so Premium is known on the server
-// (public.genesis_is_premium(), used by storage policies) even when the app
+// (public.genesis_is_premium(), for study-ai and future server features;
+// the legacy attachments bucket's upload policy also uses it) even when the app
 // isn't opened.
 //
 // - There's no user token: deploy with JWT verification off

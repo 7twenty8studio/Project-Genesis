@@ -112,7 +112,7 @@ struct InsightsView: View {
     private var favoriteBooks: some View {
         let books = progress.favoriteBooks()
         if !books.isEmpty {
-            DetailSection(title: String(localized: "Favourite Books")) {
+            DetailSection(title: String(localized: "Favorite Books")) {
                 VStack(spacing: 12) {
                     ForEach(books, id: \.book.id) { entry in
                         VStack(alignment: .leading, spacing: 4) {
@@ -140,9 +140,9 @@ struct InsightsView: View {
             .filter { $0.count > 0 }
             .sorted { $0.count > $1.count }
             .prefix(5)
-        DetailSection(title: String(localized: "Favourite Topics")) {
+        DetailSection(title: String(localized: "Favorite Topics")) {
             if topics.isEmpty {
-                Text("Group highlights into collections in the Library, and your favourite topics appear here.")
+                Text("Group highlights into collections in the Library, and your favorite topics appear here.")
                     .font(.subheadline)
                     .foregroundStyle(palette.secondaryText)
             } else {
@@ -163,7 +163,7 @@ struct InsightsView: View {
 
     private var locked: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("See your reading time, longest streak, favourite books and topics, and more with Premium.")
+            Text("See your reading time, longest streak, favorite books and topics, and more with Premium.")
                 .foregroundStyle(palette.secondaryText)
             Button("Unlock Insights") { premium = .readingInsights }
                 .buttonStyle(.borderedProminent)

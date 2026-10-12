@@ -213,12 +213,12 @@ enum HighlightColor: String, Codable, CaseIterable, Identifiable, Sendable {
 
     var title: String {
         switch self {
-        case .yellow: String(localized: "Yellow", comment: "Highlight colour")
-        case .blue: String(localized: "Blue", comment: "Highlight colour")
-        case .green: String(localized: "Green", comment: "Highlight colour")
-        case .purple: String(localized: "Purple", comment: "Highlight colour")
-        case .pink: String(localized: "Pink", comment: "Highlight colour")
-        case .orange: String(localized: "Orange", comment: "Highlight colour")
+        case .yellow: String(localized: "Yellow", comment: "Highlight color")
+        case .blue: String(localized: "Blue", comment: "Highlight color")
+        case .green: String(localized: "Green", comment: "Highlight color")
+        case .purple: String(localized: "Purple", comment: "Highlight color")
+        case .pink: String(localized: "Pink", comment: "Highlight color")
+        case .orange: String(localized: "Orange", comment: "Highlight color")
         }
     }
 

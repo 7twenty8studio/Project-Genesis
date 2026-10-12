@@ -6,13 +6,13 @@ Never paste keys, `.p8` files or passwords in a chat or commit them to git.
 
 | Step | Where | Time |
 |---|---|---|
-| 1. Signing: your Team ID, first build | Mac, Xcode | 10 min |
+| 1. Signing: your Team ID, first build, iCloud | Mac, Xcode | 15 min |
 | 2. Sign in with Apple in Supabase | Supabase dashboard | 2 min |
 | 3. Push notifications key | developer.apple.com, Supabase | 5 min |
-| 4. Premium on the server (functions, migration) | Terminal, Supabase | 5 min |
+| 4. Premium on the server (functions) | Terminal, Supabase | 5 min |
 | 5. App Store Connect: agreements, app, subscriptions | appstoreconnect.apple.com | 1 hour |
 | 6. Privacy, age rating, export compliance | App Store Connect | 20 min |
-| 7. TestFlight | Xcode, App Store Connect | 20 min |
+| 7. CloudKit schema to Production, then TestFlight | CloudKit Console, Xcode, App Store Connect | 25 min |
 
 ## 1. Signing: your Team ID and the first build
 
@@ -25,10 +25,11 @@ Never paste keys, `.p8` files or passwords in a chat or commit them to git.
    ```
 
    Open `Config/Signing.xcconfig` and replace `YOURTEAMID` with your Team ID.
-   The file is git-ignored. It turns on the entitlements in
+   Leave `GENESIS_ICLOUD_CONTAINER = iCloud.com.7twenty8studio.genesis` as
+   it is. The file is git-ignored. It turns on the entitlements in
    `Config/Genesis.entitlements` (App Group, Sign in with Apple, Push
-   Notifications) and `Config/GenesisWidgets.entitlements` (App Group, also
-   used by the watch app and its complication).
+   Notifications, iCloud with CloudKit) and `Config/GenesisWidgets.entitlements`
+   (App Group, also used by the watch app and its complication).
 4. `./Scripts/build.sh --open`, choose your iPhone (plugged in) or
    **Any iOS Device**, and build (⌘B).
 
@@ -49,26 +50,64 @@ Never paste keys, `.p8` files or passwords in a chat or commit them to git.
    the capability on by hand at developer.apple.com → Certificates,
    Identifiers & Profiles → **Identifiers** → click the bundle ID → tick
    **App Groups** (then **Configure** → choose `group.com.7twenty8studio.genesis`),
-   **Sign in with Apple** and **Push Notifications** (main app only) → **Save**,
-   then build again. The widgets and both watch targets need only **App Groups**.
+   **Sign in with Apple**, **Push Notifications** and **iCloud** (main app
+   only; see below) → **Save**, then build again. The widgets and both watch
+   targets need only **App Groups**.
 
 The watch app and widgets need nothing else: they share data through the App
 Group, and the watch app is embedded in the iPhone app.
 
-### Why not iCloud / CloudKit?
+### iCloud for attachment files
 
-Genesis syncs through Supabase on purpose, and we're not adding CloudKit:
+Photos, voice recordings, PDFs and Pencil pages attached to prayers and sermon
+notes (Premium) are kept in each person's **own iCloud** (CloudKit private
+database), so they count against their iCloud storage, not Genesis's
+servers. Everything else (notes, highlights, prayers, sermons, the
+attachment details and captions, plans, groups, Premium) still syncs through
+Supabase with the Genesis account. The container is
+`iCloud.com.7twenty8studio.genesis` (in `Config/Genesis.entitlements` and
+`GENESIS_ICLOUD_CONTAINER` in `Config/Signing.xcconfig`; they must match).
+Only the iPhone/iPad app uses it.
 
-- **One sync system.** Notes, prayers, sermons, attachments, groups and
-  Premium all live in one place with one set of rules. Two systems syncing
-  the same records would duplicate or overwrite each other.
-- **One account everywhere.** A Genesis account works on iPhone, iPad, the
-  Duo and later a website or Android, and with groups shared between people.
-  CloudKit only works for one person's Apple devices.
-- **Server checks.** Moderation, group roles, limits and Premium checks run on
-  the server, which CloudKit can't do.
+1. Register the container (Xcode usually does it on the first build; check
+   it): developer.apple.com → Certificates, Identifiers & Profiles →
+   **Identifiers** → filter (top right) **iCloud Containers** → it should list
+   `iCloud.com.7twenty8studio.genesis`. If not: **+** → **iCloud Containers**
+   → description "Genesis", identifier `iCloud.com.7twenty8studio.genesis` →
+   Continue → Register.
+2. Give the app access: **Identifiers** → App IDs → `com.7twenty8studio.genesis`
+   → tick **iCloud** → choose **Include CloudKit support** (not "Compatible
+   with Xcode 5") → **Edit** / **Configure** → tick
+   `iCloud.com.7twenty8studio.genesis` → Continue → **Save**.
+3. In Xcode: the **Genesis** target → **Signing & Capabilities** → the
+   **iCloud** section should show **Services: CloudKit** ticked and, under
+   Containers, `iCloud.com.7twenty8studio.genesis` ticked. Don't tick
+   "Key-value storage" or "iCloud Documents", and don't add containers (the
+   project is generated from project.yml; the entitlements file is the source
+   of truth). If the container shows in red, press the refresh button under
+   the list.
+4. Create the schema in the Development environment: run the app from Xcode
+   on a device (or simulator) signed in to iCloud, sign in to Genesis with
+   Premium (⌘R with the local test store is fine), open a prayer and add a
+   photo. The first upload creates the record type and the person's zone.
+   Check at icloud.developer.apple.com → **CloudKit Console** → the
+   container → **Development** → **Schema** → **Record Types**:
+   `AttachmentFile` with one field, `file` (type **Asset**). That's all the
+   app stores: each file is one record named after it (e.g.
+   `<attachment id>.jpg`) in a zone per Genesis account
+   (`Attachments-<account id>`), fetched and deleted by name, and deleting the
+   account deletes the zone. The app never searches records, so **no indexes
+   are needed** (no queryable `recordName`, nothing sortable or searchable).
+   Zones aren't part of the schema; each person's is made on their device.
+5. Before TestFlight or the App Store, deploy the schema to Production (step
+   7.1). Builds from Xcode use Development; TestFlight and App Store builds use
+   Production, and uploads there fail until the record type exists.
 
-So don't turn on the iCloud capability in Xcode.
+Builds without `Config/Signing.xcconfig` have no iCloud: attachment files then
+stay on the device. People who turn iCloud off for Genesis, or whose iCloud is
+full, see a note under their attachments; files wait on the device and go up
+later. Files from earlier test builds in the old Supabase `attachments` bucket
+are moved to iCloud automatically and removed from the bucket.
 
 ## 2. Sign in with Apple in Supabase
 
@@ -143,8 +182,8 @@ by itself when you upload a build.)
 ## 4. Premium on the server
 
 The App Store is the source of truth for subscriptions. The server learns
-about them in two ways, so Premium extras that touch the server (attachment
-uploads now; more later) are enforced there too:
+about them in two ways, so any Premium feature the server checks itself (the
+study assistant later, and future server features) can rely on it:
 
 - **premium-sync**: the app sends its signed App Store transaction after a
   purchase or restore, on sign-in, and when the subscription changes.
@@ -160,19 +199,23 @@ In Terminal, in the project folder (after `supabase link`, see PHASE3_SETUP.md):
 ```bash
 supabase functions deploy premium-sync
 supabase functions deploy appstore-notifications --no-verify-jwt
-supabase functions deploy study-ai
 ```
 
 `--no-verify-jwt` matters: Apple calls `appstore-notifications` without a
 Genesis sign-in, and the function checks Apple's signature instead. Always
-deploy it with that flag. (`study-ai` is redeployed because it now shares the
-App Store code.)
+deploy it with that flag.
 
-Then in Supabase → SQL Editor → New query, paste and run
-`supabase/migrations/20261016000000_premium_checks.sql`. It adds
-`genesis_is_premium()` and makes attachment uploads require Premium (reading
-and deleting your own files never does). Check everything with
-`supabase/verify_setup.sql`.
+`supabase/migrations/20261016000000_premium_checks.sql` (`genesis_is_premium()`)
+is already applied to the live database; on a fresh project, run it in SQL
+Editor after the earlier migrations. Its upload rule for the old
+`attachments` bucket no longer matters (attachment files go to iCloud now).
+Check everything with `supabase/verify_setup.sql`.
+
+**The study assistant stays off for now** (the `study_assistant` row in
+public.feature_flags) until a future update. `study-ai` needs no setup until
+then: no need to deploy it or to add `ANTHROPIC_API_KEY` yet. When that update
+comes, PHASE3_SETUP.md has its steps (it already shares the App Store code
+above).
 
 ## 5. App Store Connect
 
@@ -239,7 +282,7 @@ Add four auto-renewable subscriptions. The product IDs must match exactly
 - **Review Information** on each product: a screenshot of the Premium screen
   (the **Genesis Premium** card on Home, on an iPhone or simulator) and a note
   such as "Unlocks Premium features: themes, word study, journal attachments,
-  widgets, Memorise, ambient sounds. Purchase from the Genesis Premium card on
+  widgets, Memorize, ambient sounds. Purchase from the Genesis Premium card on
   Home."
 - The first subscriptions are reviewed together with the first app version:
   on the version page, under **In-App Purchases and Subscriptions**, add all
@@ -285,15 +328,18 @@ These answers match the privacy manifest in
 |---|---|---|---|
 | Contact Info → Email Address | Yes | App Functionality | Account sign-in; optional reply address in Send Feedback |
 | Contact Info → Name | Yes | App Functionality | Display name in groups and the community |
-| User Content → Photos or Videos | Yes | App Functionality | Photos on prayers and sermon notes |
-| User Content → Audio Data | Yes | App Functionality | Voice recordings on prayers and sermon notes |
 | User Content → Customer Support | Yes | App Functionality | Send Feedback messages |
-| User Content → Other User Content | Yes | App Functionality | Notes, highlights, prayers, sermons, PDFs, Pencil pages, plans, group posts |
+| User Content → Other User Content | Yes | App Functionality | Notes, highlights, prayers, sermons, attachment captions, plans, group posts |
 | Sensitive Info → Sensitive Info | Yes | App Functionality | Prayers and journal entries can reveal religious beliefs |
 | Identifiers → User ID | Yes | App Functionality | The account id |
 | Purchases → Purchase History | Yes | App Functionality | The subscription recorded for the account |
 | Diagnostics → Crash Data | **No** | App Functionality, Analytics | Sentry crash reports (no user id) |
 | Diagnostics → Other Diagnostic Data | Yes | App Functionality, Analytics | Error reports; app/iOS version and device sent with feedback |
+
+Photos, voice recordings, PDFs and Pencil pages attached to prayers and
+sermons are **not** collected: they're stored in the person's own iCloud,
+which you can't read, so leave Photos or Videos and Audio Data unticked.
+Study Library and Bible downloads send nothing about the person.
 
 Everything else: **not collected** (location, contacts, health, financial
 info, browsing or search history, usage data / product interaction,
@@ -323,6 +369,21 @@ on each upload.
 
 ## 7. TestFlight
 
+### 7.1 Deploy the CloudKit schema (once, and after any schema change)
+
+icloud.developer.apple.com → **CloudKit Console** → container
+`iCloud.com.7twenty8studio.genesis` → **Schema** (Development) → **Deploy
+Schema Changes…** → check the list shows the record type `AttachmentFile`
+(field `file`, Asset) → **Deploy**. Then switch the environment picker to
+**Production** → Record Types: `AttachmentFile` is there. Deploying only adds;
+a record type or field can never be removed from Production afterwards.
+
+Do this before the first TestFlight build, or attachment uploads from
+TestFlight and App Store builds fail (they stay on the device and retry).
+Nothing else in Genesis uses CloudKit.
+
+### 7.2 Upload a build
+
 1. In Xcode, scheme **Genesis**, destination **Any iOS Device (arm64)** →
    **Product → Archive**. (Bump `CURRENT_PROJECT_VERSION` in project.yml for
    each new upload, then `xcodegen generate`.)
@@ -351,8 +412,8 @@ Buying Premium while testing:
 - [ ] Paid Apps agreement active; Small Business Program applied for
 - [ ] Four subscriptions with English and Spanish names, intro offer, review screenshot
 - [ ] Server notifications URL (Production and Sandbox, Version 2)
-- [ ] `premium-sync`, `appstore-notifications` (`--no-verify-jwt`), `study-ai`, `group-notify`, `delete-account` deployed
-- [ ] Migration `20261016000000_premium_checks.sql` run
+- [ ] `premium-sync`, `appstore-notifications` (`--no-verify-jwt`), `group-notify`, `delete-account` deployed (`study-ai` waits: the study assistant stays off for now)
+- [ ] iCloud container `iCloud.com.7twenty8studio.genesis` on the App ID; CloudKit schema (`AttachmentFile`) deployed to Production
 - [ ] APNs secrets set
 - [ ] Privacy policy and support URLs; App Privacy answers as above
 - [ ] `ALLOW_XCODE_STOREKIT` secret deleted

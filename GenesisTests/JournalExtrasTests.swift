@@ -1,3 +1,4 @@
+import CloudKit
 import Foundation
 import ImageIO
 import PDFKit
@@ -16,50 +17,53 @@ private typealias JournalAttachment = Genesis.Attachment
 @Suite("Attachment limits")
 struct AttachmentLimitTests {
     @Test func prayersHoldPhotosAndRecordingsOnly() {
-        #expect(AttachmentLimits.maximum(.photo, for: .prayer) == 10)
-        #expect(AttachmentLimits.maximum(.audio, for: .prayer) == 5)
-        #expect(AttachmentLimits.maximum(.pdf, for: .prayer) == 0)
-        #expect(AttachmentLimits.maximum(.drawing, for: .prayer) == 0)
-        #expect(!AttachmentLimits.canAdd(.pdf, to: .prayer, existing: []))
+        #expect(AttachmentLimits.canAdd(.photo, to: .prayer))
+        #expect(AttachmentLimits.canAdd(.audio, to: .prayer))
+        #expect(!AttachmentLimits.canAdd(.pdf, to: .prayer))
+        #expect(!AttachmentLimits.canAdd(.drawing, to: .prayer))
     }
 
     @Test func sermonsHoldEveryKind() {
-        #expect(AttachmentLimits.maximum(.photo, for: .sermon) == 10)
-        #expect(AttachmentLimits.maximum(.audio, for: .sermon) == 5)
-        #expect(AttachmentLimits.maximum(.pdf, for: .sermon) == 3)
-        #expect(AttachmentLimits.maximum(.drawing, for: .sermon) == 5)
-    }
-
-    @Test func countsOnlyTheSameKind() {
-        let existing: [AttachmentKind] = Array(repeating: .photo, count: 9) + [.audio, .pdf, .pdf, .pdf]
-        #expect(AttachmentLimits.remaining(.photo, for: .sermon, existing: existing) == 1)
-        #expect(AttachmentLimits.remaining(.pdf, for: .sermon, existing: existing) == 0)
-        #expect(AttachmentLimits.remaining(.audio, for: .sermon, existing: existing) == 4)
-        let full = existing + [.photo, .photo]
-        #expect(AttachmentLimits.remaining(.photo, for: .sermon, existing: full) == 0, "Never negative")
+        for kind in AttachmentKind.allCases {
+            #expect(AttachmentLimits.canAdd(kind, to: .sermon))
+        }
     }
 
     @Test func fileSizes() {
-        #expect(AttachmentLimits.fits(byteCount: 25 * 1024 * 1024, kind: .pdf))
-        #expect(!AttachmentLimits.fits(byteCount: 25 * 1024 * 1024 + 1, kind: .pdf))
+        #expect(AttachmentLimits.fits(byteCount: 250 * 1024 * 1024, kind: .pdf))
+        #expect(!AttachmentLimits.fits(byteCount: 250 * 1024 * 1024 + 1, kind: .drawing))
         #expect(!AttachmentLimits.fits(byteCount: 0, kind: .photo))
-        #expect(AttachmentLimits.maxAudioDuration == 7200)
-        #expect(AttachmentLimits.audioBitRate == 64_000)
+        #expect(AttachmentLimits.maxAudioDuration == 4 * 60 * 60)
+        #expect(AttachmentLimits.audioBitRate == 32_000)
+    }
+
+    @Test func iCloudPathsName() throws {
+        let parts = try ICloudAttachmentStorage.split("11111111-1111-1111-1111-111111111111/abc.jpg")
+        #expect(parts.zone == "Attachments-11111111-1111-1111-1111-111111111111", "One zone per account")
+        #expect(parts.fileName == "abc.jpg")
+        #expect(throws: AttachmentStorageError.self) { try ICloudAttachmentStorage.split("abc.jpg") }
+    }
+
+    @Test func iCloudErrorsAreExplained() {
+        #expect(ICloudAttachmentStorage.mapped(CKError(.quotaExceeded)) as? AttachmentStorageError == .iCloudFull)
+        #expect(ICloudAttachmentStorage.mapped(CKError(.notAuthenticated)) as? AttachmentStorageError == .iCloudUnavailable)
+        #expect(ICloudAttachmentStorage.mapped(CKError(.unknownItem)) as? AttachmentStorageError == .notFound)
+        #expect(ICloudAttachmentStorage.mapped(CKError(.networkUnavailable)) as? AttachmentStorageError == nil, "Retried as it is")
     }
 
     @Test func downscalingKeepsTheShape() {
-        #expect(AttachmentLimits.scaledPixelSize(CGSize(width: 4032, height: 3024)) == CGSize(width: 2048, height: 1536))
-        #expect(AttachmentLimits.scaledPixelSize(CGSize(width: 3024, height: 4032)) == CGSize(width: 1536, height: 2048))
-        #expect(AttachmentLimits.scaledPixelSize(CGSize(width: 4096, height: 4096)) == CGSize(width: 2048, height: 2048))
+        #expect(AttachmentLimits.scaledPixelSize(CGSize(width: 4032, height: 3024)) == CGSize(width: 1600, height: 1200))
+        #expect(AttachmentLimits.scaledPixelSize(CGSize(width: 3024, height: 4032)) == CGSize(width: 1200, height: 1600))
+        #expect(AttachmentLimits.scaledPixelSize(CGSize(width: 4096, height: 4096)) == CGSize(width: 1600, height: 1600))
     }
 
     @Test func smallPhotosAreNeverEnlarged() {
         #expect(AttachmentLimits.scaledPixelSize(CGSize(width: 800, height: 600)) == CGSize(width: 800, height: 600))
-        #expect(AttachmentLimits.scaledPixelSize(CGSize(width: 2048, height: 10)) == CGSize(width: 2048, height: 10))
+        #expect(AttachmentLimits.scaledPixelSize(CGSize(width: 1600, height: 10)) == CGSize(width: 1600, height: 10))
     }
 
     @Test func thinPanoramasKeepAtLeastOnePixel() {
-        #expect(AttachmentLimits.scaledPixelSize(CGSize(width: 100_000, height: 20)) == CGSize(width: 2048, height: 1))
+        #expect(AttachmentLimits.scaledPixelSize(CGSize(width: 100_000, height: 20)) == CGSize(width: 1600, height: 1))
     }
 
     @Test func kindsMapToTheBucketsFileTypes() {
@@ -101,7 +105,7 @@ struct PhotoPreparationTests {
         #expect(hadLocation, "The test photo carries a location")
         let prepared = try #require(AttachmentMedia.preparedPhoto(from: original))
         let size = AttachmentMedia.pixelSize(of: prepared)
-        #expect(size == CGSize(width: 2048, height: 1536))
+        #expect(size == CGSize(width: 1600, height: 1200))
         let hasLocation = AttachmentMedia.hasLocation(prepared)
         #expect(!hasLocation, "No location leaves the device")
     }
@@ -287,21 +291,118 @@ struct AttachmentStoreTests {
         try #require(UserDefaults(suiteName: "attachments-\(UUID())"))
     }
 
-    @Test func addingRespectsTheLimits() throws {
+    @Test func addingHasNoCountLimit() throws {
         let container = try makeContainer()
         let store = StudyStore(context: container.mainContext)
         let prayer = store.createPrayer()
         let pdf = store.addAttachment(kind: .pdf, to: .prayer, ownerID: prayer.id, byteSize: 10)
         #expect(pdf == nil, "Prayers don't hold PDFs")
-        for _ in 0..<10 {
+        for _ in 0..<40 {
             store.addAttachment(kind: .photo, to: .prayer, ownerID: prayer.id, byteSize: 10)
         }
-        let eleventh = store.addAttachment(kind: .photo, to: .prayer, ownerID: prayer.id, byteSize: 10)
-        #expect(eleventh == nil)
         let orders = store.attachments(for: .prayer, id: prayer.id).map(\.sortOrder)
-        #expect(orders == Array(0..<10))
+        #expect(orders == Array(0..<40))
         let canAddRecording = store.canAttach(.audio, to: .prayer, id: prayer.id)
         #expect(canAddRecording)
+        #expect(store.addAttachment(kind: .pdf, to: .sermon, ownerID: UUID(), byteSize: 10) != nil, "Sermons take PDFs again")
+    }
+
+    @Test func recordingsSyncLikePhotos() async throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+        let store = StudyStore(context: context)
+        let files = AttachmentFiles.temporary()
+        let storage = InMemoryAttachmentStorage()
+        let transfers = AttachmentTransfers(files: files, storage: storage, defaults: try defaults())
+        let user = userID
+        transfers.userID = { user }
+        let owner = UUID()
+
+        let recording = try #require(store.addAttachment(kind: .audio, to: .prayer, ownerID: owner, byteSize: 5_000_000, duration: 600))
+        let photo = try #require(store.addAttachment(kind: .photo, to: .prayer, ownerID: owner, byteSize: 300_000))
+        try files.write(Data([1]), to: recording.fileName)
+        try files.write(Data([2]), to: photo.fileName)
+
+        await transfers.run(context: context)
+
+        let objects = await storage.objects
+        let expected = [recording, photo].map { AttachmentPaths.storagePath(userID: user, fileName: $0.fileName) }
+        #expect(objects.keys.sorted() == expected.sorted())
+        #expect(!recording.needsUpload)
+    }
+
+    @Test func earlierFilesMoveToICloudOnce() async throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+        let store = StudyStore(context: context)
+        let files = AttachmentFiles.temporary()
+        let iCloud = InMemoryAttachmentStorage()
+        let bucket = InMemoryAttachmentStorage()
+        let user = userID
+        let photo = try #require(store.addAttachment(kind: .photo, to: .prayer, ownerID: UUID(), byteSize: 3))
+        let path = AttachmentPaths.storagePath(userID: user, fileName: photo.fileName)
+        try files.write(Data([1, 2, 3]), to: photo.fileName)
+        // Uploaded to the bucket by an earlier version.
+        try await bucket.upload(Data([1, 2, 3]), path: path, contentType: "image/jpeg")
+        photo.needsUpload = false
+
+        let storage = MovingAttachmentStorage(iCloud: iCloud, legacy: bucket)
+        let transfers = AttachmentTransfers(files: files, storage: storage, defaults: try defaults(), movesEarlierFiles: true)
+        transfers.userID = { user }
+        await transfers.run(context: context)
+
+        let inICloud = await iCloud.objects[path]
+        let inBucket = await bucket.objects[path]
+        #expect(inICloud == Data([1, 2, 3]))
+        #expect(inBucket == nil, "The bucket's copy is removed")
+        #expect(!photo.needsUpload)
+    }
+
+    @Test func aFileOnlyInTheBucketMovesWhenDownloaded() async throws {
+        let iCloud = InMemoryAttachmentStorage()
+        let bucket = InMemoryAttachmentStorage()
+        let path = AttachmentPaths.storagePath(userID: userID, fileName: "a.jpg")
+        try await bucket.upload(Data([7]), path: path, contentType: "image/jpeg")
+        let storage = MovingAttachmentStorage(iCloud: iCloud, legacy: bucket)
+
+        let data = try await storage.download(path: path)
+
+        #expect(data == Data([7]))
+        let inICloud = await iCloud.objects[path]
+        let inBucket = await bucket.objects[path]
+        #expect(inICloud == Data([7]))
+        #expect(inBucket == nil)
+    }
+
+    @Test func withoutICloudFilesWaitAndSaySo() async throws {
+        let container = try makeContainer()
+        let context = container.mainContext
+        let store = StudyStore(context: context)
+        let files = AttachmentFiles.temporary()
+        let transfers = AttachmentTransfers(files: files, storage: UnavailableAttachmentStorage(), defaults: try defaults())
+        let user = userID
+        transfers.userID = { user }
+        let photo = try #require(store.addAttachment(kind: .photo, to: .prayer, ownerID: UUID(), byteSize: 1))
+        try files.write(Data([1]), to: photo.fileName)
+
+        await transfers.run(context: context)
+
+        #expect(photo.needsUpload, "Kept for later")
+        #expect(transfers.problem == .iCloudUnavailable)
+        #expect(transfers.pendingOperations == [.upload(photo.id)])
+    }
+
+    @Test func deletingTheAccountEmptiesOnlyItsFolder() async throws {
+        let storage = InMemoryAttachmentStorage()
+        let other = UUID()
+        try await storage.upload(Data([1]), path: AttachmentPaths.storagePath(userID: userID, fileName: "a.jpg"), contentType: "")
+        try await storage.upload(Data([2]), path: AttachmentPaths.storagePath(userID: other, fileName: "b.jpg"), contentType: "")
+        let transfers = AttachmentTransfers(files: .temporary(), storage: storage, defaults: try defaults())
+
+        await transfers.deleteCloudFiles(userID: userID)
+
+        let left = await storage.objects.keys.sorted()
+        #expect(left == [AttachmentPaths.storagePath(userID: other, fileName: "b.jpg")])
     }
 
     @Test func movingReorders() throws {
@@ -309,7 +410,7 @@ struct AttachmentStoreTests {
         let store = StudyStore(context: container.mainContext)
         let owner = UUID()
         let first = try #require(store.addAttachment(kind: .photo, to: .sermon, ownerID: owner, byteSize: 1))
-        let second = try #require(store.addAttachment(kind: .pdf, to: .sermon, ownerID: owner, byteSize: 1))
+        let second = try #require(store.addAttachment(kind: .drawing, to: .sermon, ownerID: owner, byteSize: 1))
         store.move(second, by: -1)
         let ids = store.attachments(for: .sermon, id: owner).map(\.id)
         #expect(ids == [second.id, first.id])

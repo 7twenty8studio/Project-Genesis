@@ -10,7 +10,7 @@
 // It records the subscription in public.premium_entitlements exactly as
 // study-ai does (same products, same appAccountToken and Family Sharing
 // rules: supabase/functions/_shared/premium.ts), so public.genesis_is_premium()
-// (storage upload policies) knows about it. App Store Server Notifications
+// knows about it (study-ai and future server features). App Store Server Notifications
 // (appstore-notifications) keep the row current afterwards.
 //
 // Deploy: supabase functions deploy premium-sync   (JWT verification on)

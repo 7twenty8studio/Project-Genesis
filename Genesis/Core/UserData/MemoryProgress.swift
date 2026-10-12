@@ -21,11 +21,11 @@ enum MemoryLevel: Int, CaseIterable, Comparable, Sendable {
 
     var title: String {
         switch self {
-        case .seed: String(localized: "Seed", comment: "Memorise level")
-        case .sprout: String(localized: "Sprout", comment: "Memorise level")
-        case .sapling: String(localized: "Sapling", comment: "Memorise level")
-        case .tree: String(localized: "Tree", comment: "Memorise level")
-        case .cedar: String(localized: "Cedar", comment: "Memorise level: the highest")
+        case .seed: String(localized: "Seed", comment: "Memorize level")
+        case .sprout: String(localized: "Sprout", comment: "Memorize level")
+        case .sapling: String(localized: "Sapling", comment: "Memorize level")
+        case .tree: String(localized: "Tree", comment: "Memorize level")
+        case .cedar: String(localized: "Cedar", comment: "Memorize level: the highest")
         }
     }
 

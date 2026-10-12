@@ -1,4 +1,5 @@
 import PDFKit
+import SwiftData
 import SwiftUI
 
 /// One attachment full screen: a photo or Pencil page to zoom, a recording

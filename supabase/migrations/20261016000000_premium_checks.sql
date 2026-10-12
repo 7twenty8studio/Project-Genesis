@@ -11,8 +11,9 @@
 -- - appstore-notifications: Apple tells the server about renewals, expiry,
 --   grace periods, refunds and Family Sharing changes;
 -- - study-ai, as before.
--- An upload refused because Premium isn't recorded yet makes the app call
--- premium-sync and try again.
+-- Since 20261015 attachment files go to each person's iCloud, so the app
+-- no longer uploads to this bucket; the upload policy below is legacy (kept
+-- because this file is already applied). Only the comments changed since.
 --
 -- Reading and deleting files is NOT limited to Premium: people keep their own
 -- files if Premium lapses (and account deletion still empties the folder).
