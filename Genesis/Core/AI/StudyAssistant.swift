@@ -186,7 +186,14 @@ final class StudyAssistant {
     /// The passage's verse text from the local database, as context for the
     /// model (which is told never to quote it).
     private func passageText(_ passage: StudyPassage) -> String {
-        let verses = (try? library.current.verses(from: passage.start, through: passage.end)) ?? []
+        // A licensed Bible's text is never sent to the AI service (its licence
+        // covers showing it in Versely, not passing it on): the passage is
+        // read from a public-domain Bible in the same language instead.
+        let current = library.currentTranslation
+        let source = current.isLicensed
+            ? library.translations.first(where: { !$0.isLicensed && $0.language == current.language }) ?? .kjv
+            : current
+        let verses = (try? library.repository(for: source).verses(from: passage.start, through: passage.end)) ?? []
         return verses.map { "\($0.id.verse) \($0.text)" }.joined(separator: " ")
     }
 

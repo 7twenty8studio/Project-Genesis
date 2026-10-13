@@ -4409,6 +4409,16 @@
         }
       }
     },
+    "Every Bible here is public domain or used with its publisher's permission.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todas las Biblias de esta lista son de dominio público o se usan con permiso de su editorial."
+          }
+        }
+      }
+    },
     "Every Day": {
       "localizations": {
         "es": {
@@ -16266,16 +16276,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Versely está disponible en inglés y español. Toca para elegir en la app Ajustes; Versely se reinicia en el nuevo idioma."
-          }
-        }
-      }
-    },
-    "Versely offers public-domain translations. More will come as licenses allow.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Versely ofrece traducciones de dominio público. Habrá más a medida que las licencias lo permitan."
           }
         }
       }

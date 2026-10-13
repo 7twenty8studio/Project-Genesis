@@ -282,7 +282,7 @@ final class SupabaseClient: Sendable {
 
     /// Calls an Edge Function with a JSON body; returns the raw body and status
     /// so callers can read structured errors.
-    func callFunction(_ name: String, body: Data, accessToken: String) async throws -> (data: Data, status: Int) {
+    func callFunction(_ name: String, body: Data, accessToken: String?) async throws -> (data: Data, status: Int) {
         var request = makeRequest(path: "functions/v1/\(name)", query: [], method: "POST", accessToken: accessToken)
         request.timeoutInterval = 60
         request.httpBody = body

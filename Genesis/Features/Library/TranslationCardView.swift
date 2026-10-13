@@ -26,6 +26,13 @@ struct TranslationCardView: View {
                     .fixedSize(horizontal: false, vertical: true)
             }
             facts
+            // A licensed Bible's copyright notice, as the publisher wrote it.
+            if entry.translation.isLicensed {
+                Text(entry.translation.license)
+                    .font(.caption2)
+                    .foregroundStyle(palette.secondaryText)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
         }
         .padding(.vertical, 6)
     }

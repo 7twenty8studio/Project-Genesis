@@ -144,7 +144,7 @@ struct BibleDownloadsView: View {
             } else {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("The most read are listed first.")
-                    Text("Versely offers public-domain translations. More will come as licenses allow.")
+                    Text("Every Bible here is public domain or used with its publisher's permission.")
                 }
             }
         }

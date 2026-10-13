@@ -123,8 +123,21 @@ final class BibleLibrary {
     func refreshCatalog() async {
         guard let items = try? await downloader.catalog() else { return }
         catalog = items
+        withdrawEndedLicences(catalog: items)
         for item in items where needsUpdate(item) {
             try? await install(item, allowsCellular: false)
+        }
+    }
+
+    /// A licensed Bible stays on the device only while Versely may offer
+    /// it: when its row is gone from the catalog (the licence ended, or the
+    /// owner turned it off) the download is removed. Only after a catalog
+    /// that loaded; offline, nothing changes.
+    private func withdrawEndedLicences(catalog items: [DownloadableTranslation]) {
+        guard !items.isEmpty else { return }
+        let offered = Set(items.map(\.id))
+        for item in installed.values where item.translation.isLicensed && !offered.contains(item.translation.id) {
+            remove(item.translation)
         }
     }
 
@@ -159,7 +172,11 @@ final class BibleLibrary {
 
     func remove(_ translation: Translation) {
         guard isRemovable(translation), let item = installed[translation.id] else { return }
-        if currentTranslation.id == translation.id { currentTranslation = .kjv }
+        if currentTranslation.id == translation.id {
+            // Another Bible in the same language if there is one (the
+            // Reina-Valera for a Spanish Bible), else the KJV.
+            currentTranslation = translations.first { $0.id != translation.id && $0.language == translation.language } ?? .kjv
+        }
         installed[translation.id] = nil
         saveInstalled()
         repositories[translation.id] = nil

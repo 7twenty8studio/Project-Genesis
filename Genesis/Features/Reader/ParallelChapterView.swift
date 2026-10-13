@@ -62,6 +62,13 @@ struct ParallelChapterView: View {
                         .modifier(PlayingVerseMark(isPlaying: row.number == playingRow))
                         .id(row.number)
                     }
+                    // Licensed Bibles' copyright notices, as their licences require.
+                    ForEach([primary, secondary].filter(\.isLicensed)) { translation in
+                        Text(translation.license)
+                            .font(.caption2)
+                            .foregroundStyle(palette.secondaryText)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
                     nextChapterButton
                 }
                 .scrollTargetLayout()

@@ -37,9 +37,40 @@ final class BibleRepository: Sendable {
     let translation: Translation
     private let database: SQLiteDatabase
 
+    /// True when the translation joins some verses into one ("16–17"):
+    /// a `verse_spans` table, written by Tools/BibleData/import_dbl.py.
+    private let hasSpans: Bool
+
     init(translation: Translation, url: URL) throws {
         self.translation = translation
-        database = try SQLiteDatabase(readOnly: url)
+        let database = try SQLiteDatabase(readOnly: url)
+        let spanTables = try database.query(
+            "SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name = 'verse_spans'"
+        ) { $0.int(0) }
+        self.database = database
+        hasSpans = (spanTables.first ?? 0) > 0
+    }
+
+    /// Joined verses that start between the two ids: first id → last verse number.
+    private func spans(from start: Int, through end: Int) -> [Int: Int] {
+        guard hasSpans else { return [:] }
+        let rows = (try? database.query(
+            "SELECT id, last FROM verse_spans WHERE id BETWEEN ? AND ?",
+            [.int(start), .int(end)]
+        ) { ($0.int(0), $0.int(1) % 1_000) }) ?? []
+        return Dictionary(rows, uniquingKeysWith: { first, _ in first })
+    }
+
+    private func applyingSpans(_ verses: [Verse]) -> [Verse] {
+        let ids = verses.map(\.id.rawValue)
+        guard hasSpans, let lowest = ids.min(), let highest = ids.max() else { return verses }
+        let spans = spans(from: lowest, through: highest)
+        guard !spans.isEmpty else { return verses }
+        return verses.map { verse in
+            var verse = verse
+            verse.lastVerse = spans[verse.id.rawValue]
+            return verse
+        }
     }
 
     private static let verseColumns = "id, text, paragraph, poetry"
@@ -55,44 +86,75 @@ final class BibleRepository: Sendable {
 
     func chapter(_ id: ChapterID) throws -> Chapter {
         let range = id.verseRange
-        let verses = try database.query(
+        let verses = applyingSpans(try database.query(
             "SELECT \(Self.verseColumns) FROM verses WHERE id BETWEEN ? AND ? ORDER BY id",
             [.int(range.lowerBound), .int(range.upperBound)],
             map: Self.verse(from:)
-        )
+        ))
         let headings = try database.query(
             "SELECT before_verse, text FROM headings WHERE book = ? AND chapter = ? ORDER BY before_verse",
             [.int(id.book), .int(id.chapter)]
         ) { ChapterHeading(beforeVerse: $0.int(0), text: $0.text(1)) }
-        return Chapter(id: id, verses: verses, headings: headings)
+        return Chapter(
+            id: id,
+            verses: verses,
+            headings: headings,
+            copyrightNotice: translation.isLicensed ? translation.license : nil
+        )
     }
 
+    /// A verse, or for a verse the translation joins with the ones before
+    /// it ("16–17" asked for 17) the joined verse that holds its words.
     func verse(_ id: VerseID) throws -> Verse? {
-        try database.query(
+        if let verse = applyingSpans(try database.query(
             "SELECT \(Self.verseColumns) FROM verses WHERE id = ?",
             [.int(id.rawValue)],
             map: Self.verse(from:)
-        ).first
+        )).first {
+            return verse
+        }
+        guard hasSpans, let holder = spanHolding(id) else { return nil }
+        return try verse(holder)
     }
 
-    /// Verses from `start` through `end` inclusive, in canonical order.
+    /// The first verse of a joined group that covers `id`, if any.
+    private func spanHolding(_ id: VerseID) -> VerseID? {
+        let chapterStart = id.rawValue - id.rawValue % 1_000
+        let first = try? database.query(
+            "SELECT id FROM verse_spans WHERE id BETWEEN ? AND ? AND last >= ? ORDER BY id DESC LIMIT 1",
+            [.int(chapterStart), .int(id.rawValue - 1), .int(id.rawValue)]
+        ) { $0.int(0) }.first
+        return first.map { VerseID(rawValue: $0) }
+    }
+
+    /// Verses from `start` through `end` inclusive, in canonical order. A
+    /// range starting inside joined verses ("17" of "16–17") includes them.
     func verses(from start: VerseID, through end: VerseID) throws -> [Verse] {
-        try database.query(
+        let from = hasSpans ? (spanHolding(start) ?? start) : start
+        return applyingSpans(try database.query(
             "SELECT \(Self.verseColumns) FROM verses WHERE id BETWEEN ? AND ? ORDER BY id",
-            [.int(start.rawValue), .int(end.rawValue)],
+            [.int(from.rawValue), .int(end.rawValue)],
             map: Self.verse(from:)
-        )
+        ))
     }
 
     /// Looks up many individual verses at once, keyed by id.
     func verses(withIDs ids: some Collection<VerseID>) throws -> [VerseID: Verse] {
         guard !ids.isEmpty else { return [:] }
         let list = ids.map { String($0.rawValue) }.joined(separator: ",")
-        let verses = try database.query(
+        let verses = applyingSpans(try database.query(
             "SELECT \(Self.verseColumns) FROM verses WHERE id IN (\(list))",
             map: Self.verse(from:)
-        )
-        return Dictionary(uniqueKeysWithValues: verses.map { ($0.id, $0) })
+        ))
+        var found = Dictionary(uniqueKeysWithValues: verses.map { ($0.id, $0) })
+        // A verse inside joined verses ("17" of "16–17") is found as the
+        // joined verse, under the id that was asked for.
+        if hasSpans {
+            for id in ids where found[id] == nil {
+                if let holder = spanHolding(id), let joined = try verse(holder) { found[id] = joined }
+            }
+        }
+        return found
     }
 
     /// Full-text search. `matchExpression` is an FTS5 query built by `FullTextQuery`.
@@ -133,9 +195,16 @@ final class BibleRepository: Sendable {
     /// Number of verses in a chapter, used for navigation and progress.
     func verseCount(in chapter: ChapterID) throws -> Int {
         let range = chapter.verseRange
-        return try database.query(
+        let rows = try database.query(
             "SELECT count(*) FROM verses WHERE id BETWEEN ? AND ?",
             [.int(range.lowerBound), .int(range.upperBound)]
         ) { $0.int(0) }.first ?? 0
+        guard hasSpans else { return rows }
+        // Joined verses count as all the verses they hold.
+        let joined = try database.query(
+            "SELECT coalesce(sum(last - id), 0) FROM verse_spans WHERE id BETWEEN ? AND ?",
+            [.int(range.lowerBound), .int(range.upperBound)]
+        ) { $0.int(0) }.first ?? 0
+        return rows + joined
     }
 }

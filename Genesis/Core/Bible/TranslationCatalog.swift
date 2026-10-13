@@ -111,7 +111,7 @@ struct TranslationDownloader: Sendable {
     /// Downloads, unpacks and checks a translation; returns the SQLite bytes
     /// written to `destination`.
     func download(_ item: DownloadableTranslation, to destination: URL, allowsCellular: Bool = true) async throws {
-        guard let url = URL(string: item.fileURL), url.scheme == "https" else { throw TranslationDownloadError.damaged }
+        let url = try await downloadURL(for: item)
         var request = URLRequest(url: url)
         request.allowsExpensiveNetworkAccess = allowsCellular
         request.timeoutInterval = 120
@@ -141,6 +141,31 @@ struct TranslationDownloader: Sendable {
             try? FileManager.default.removeItem(at: destination)
             throw TranslationDownloadError.notABible
         }
+    }
+
+    /// Where to fetch the file. A licensed Bible sits in a private bucket:
+    /// the bible-file function hands out a link that works for ten minutes,
+    /// and only while the publisher's licence lets Versely offer it.
+    private func downloadURL(for item: DownloadableTranslation) async throws -> URL {
+        guard item.rights == .licensed else {
+            guard let url = URL(string: item.fileURL), url.scheme == "https" else { throw TranslationDownloadError.damaged }
+            return url
+        }
+        guard let client else { throw TranslationDownloadError.notConfigured }
+        let body = try JSONEncoder().encode(["id": item.id])
+        let response: (data: Data, status: Int)
+        do {
+            response = try await client.callFunction("bible-file", body: body, accessToken: nil)
+        } catch let error as URLError where [.notConnectedToInternet, .networkConnectionLost, .timedOut].contains(error.code) {
+            throw TranslationDownloadError.offline
+        }
+        struct Link: Decodable { let url: String }
+        guard response.status == 200,
+              let link = try? JSONDecoder().decode(Link.self, from: response.data),
+              let url = URL(string: link.url), url.scheme == "https" else {
+            throw TranslationDownloadError.damaged
+        }
+        return url
     }
 
     /// Raw DEFLATE → SQLite, checked against the catalog's size and hash.

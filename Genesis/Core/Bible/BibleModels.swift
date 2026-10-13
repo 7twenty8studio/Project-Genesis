@@ -9,9 +9,18 @@ struct Verse: Identifiable, Hashable, Sendable {
     let startsParagraph: Bool
     /// True when the verse belongs to a poetic passage and is set line by line.
     let isPoetry: Bool
+    /// The last verse when the translation joins several into one ("16–17",
+    /// as some licensed Bibles do); the text is on the first.
+    var lastVerse: Int? = nil
 
     /// Text on a single line, for copying, sharing and search results.
     var plainText: String { text.replacingOccurrences(of: "\n", with: " ") }
+
+    /// The number printed before the verse: "16", or "16–17" for joined verses.
+    var numberLabel: String {
+        guard let lastVerse, lastVerse > id.verse else { return "\(id.verse)" }
+        return "\(id.verse)\u{2013}\(lastVerse)"
+    }
 }
 
 /// A heading that is part of the translation, e.g. a psalm superscription.
@@ -24,6 +33,9 @@ struct Chapter: Identifiable, Hashable, Sendable {
     let id: ChapterID
     let verses: [Verse]
     let headings: [ChapterHeading]
+    /// The publisher's copyright notice, shown under the chapter, for a
+    /// licensed Bible (nil for public-domain ones).
+    var copyrightNotice: String? = nil
 
     var book: BibleBook { id.bibleBook }
 }
@@ -41,6 +53,14 @@ struct Translation: Identifiable, Hashable, Codable, Sendable {
     let language: String
 
     var abbreviation: String { id }
+
+    /// A Bible used under a publisher's licence (from the Digital Bible
+    /// Library): its `license` is the copyright statement the licence
+    /// requires, shown under every chapter. Public-domain Bibles say so in
+    /// `license` ("Public domain", "Dominio público").
+    var isLicensed: Bool {
+        TranslationProfile.rights(fromLicense: license) != .publicDomain
+    }
 
     init(id: String, name: String, year: String, license: String, summary: String, language: String = "en") {
         self.id = id

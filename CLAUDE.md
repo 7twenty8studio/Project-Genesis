@@ -26,8 +26,10 @@ shares; README.md has the architecture.
 - Never alter Scripture text. Verse text comes verbatim from the bundled
   SQLite databases. AI features (Phase 3) must never return verse text; the
   app renders verses from the database and visibly labels AI content.
-- Phase 1 ships public-domain translations only (KJV, WEB, ASV). Licensed
-  translations wait until the owner confirms a license.
+- Bundled Bibles are public domain (KJV, WEB, ASV). Licensed Bibles come
+  from the Digital Bible Library (Versely is a distributor) one by one, only
+  after the owner confirms that publisher's approval and terms
+  (LICENSED_BIBLES.md).
 - AI content must be non-denominational and presented as distinct from Scripture.
   The study-ai Edge Function (Claude Haiku 4.5) is told never to quote and
   removes 6+ word runs from the passage; the app labels answers "AI-generated
@@ -328,6 +330,20 @@ shares; README.md has the architecture.
 - Translation downloads: public.bible_translations + the public `bibles`
   bucket; Tools/BibleData/package_translation.py builds a file and its row.
   Public-domain (or licensed) translations only.
+- Licensed Bibles (DBL): Tools/BibleData/import_dbl.py turns a DBL text
+  bundle (metadata.xml + USX) into the same format, verbatim (footnotes,
+  intros and titles left out; \nd as capitals; the translation's headings
+  and psalm titles kept; joined verses in `verse_spans`, shown "16–17" via
+  `Verse.lastVerse`/`numberLabel`, and found by any verse they hold). Files
+  go in the private `licensed-bibles` bucket (migration 20261017000000),
+  fetched through the `bible-file` Edge Function (ten-minute signed link,
+  only while the row is enabled with rights 'licensed'). `Translation.isLicensed`
+  (its `license` isn't "Public domain"/"Dominio público") puts the copyright
+  statement under every chapter (`Chapter.copyrightNotice`), on its card and
+  in the parallel view; BibleLibrary removes a licensed download whose row
+  left the catalog; the study assistant reads a public-domain Bible in the
+  same language instead, so licensed text never reaches the AI service.
+  Per-licence terms and the request list: LICENSED_BIBLES.md.
 - Global Reading Library (the Bibles screen, `BibleDownloadsView`): Bibles by
   language, most read first, as `TranslationCardView`s, plus
   `TranslationGuideView` ("Which Bible is right for me?"). Logic in

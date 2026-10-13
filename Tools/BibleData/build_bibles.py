@@ -221,11 +221,15 @@ def load_web(path):
     return verses, headings
 
 
-def create_bible_db(out_path, abbreviation, verses, headings):
+def create_bible_db(out_path, abbreviation, verses, headings, meta=None, spans=()):
+    """`meta` (name, year, license, language) defaults to TRANSLATIONS; a
+    licensed Bible imported from the Digital Bible Library passes its own.
+    `spans` lists bridged verses as (first verse id, last verse id): the
+    text sits on the first verse and the app shows "16–17"."""
     if os.path.exists(out_path):
         os.remove(out_path)
     db = sqlite3.connect(out_path)
-    meta = TRANSLATIONS[abbreviation]
+    meta = meta or TRANSLATIONS[abbreviation]
     # The Porter stemmer is English-only ("loving" finds "love"); other
     # languages are matched by whole words and prefixes, accents ignored.
     tokenizer = "porter unicode61 remove_diacritics 2" if meta["language"] == "en" else "unicode61 remove_diacritics 2"
@@ -291,6 +295,9 @@ def create_bible_db(out_path, abbreviation, verses, headings):
         ),
     )
     db.executemany("INSERT INTO headings VALUES (?,?,?,?)", headings)
+    if spans:
+        db.execute("CREATE TABLE verse_spans (id INTEGER PRIMARY KEY, last INTEGER NOT NULL)")
+        db.executemany("INSERT INTO verse_spans VALUES (?, ?)", spans)
     db.executemany(
         "INSERT INTO verses_fts(rowid, text) VALUES (?, ?)",
         ((verse_id(v.book, v.chapter, v.verse), search_form(v.text)) for v in verses),

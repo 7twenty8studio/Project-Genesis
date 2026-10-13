@@ -100,7 +100,7 @@ enum ChapterTextBuilder {
                 numberAttributes[.foregroundColor] = palette.uiAccent
                 numberAttributes[.baselineOffset] = size * 0.32
                 numberAttributes[.backgroundColor] = nil
-                result.append(NSAttributedString(string: "\(verse.id.verse)\u{2009}", attributes: numberAttributes))
+                result.append(NSAttributedString(string: "\(verse.numberLabel)\u{2009}", attributes: numberAttributes))
             }
 
             var textAttributes = attributes
@@ -154,13 +154,24 @@ enum ChapterTextBuilder {
             }
         }
 
+        // A licensed Bible's copyright notice, as its licence requires: small
+        // and apart from the text, never part of a verse.
+        if let notice = chapter.copyrightNotice, !notice.isEmpty {
+            result.append(NSAttributedString(string: "\n"))
+            result.append(NSAttributedString(string: notice, attributes: [
+                .font: UIFont.systemFont(ofSize: max(11, size * 0.6)),
+                .foregroundColor: palette.uiSecondaryText,
+                .paragraphStyle: paragraphStyle(style: style, firstLineIndent: 0, headIndent: 0, spacingBefore: size * 1.2),
+            ]))
+        }
+
         return BuiltChapter(chapter: chapter, text: result, verseOffsets: offsets)
     }
 
     /// Plain text for copying or sharing, with the reference and translation.
     static func shareText(for verses: [Verse], translation: Translation) -> String {
         guard let reference = PassageReference(verses: verses.map(\.id)) else { return "" }
-        let body = verses.map { verses.count > 1 ? "\($0.id.verse) \($0.plainText)" : $0.plainText }.joined(separator: " ")
+        let body = verses.map { verses.count > 1 ? "\($0.numberLabel) \($0.plainText)" : $0.plainText }.joined(separator: " ")
         return "\u{201C}\(body)\u{201D}\n\u{2014} \(reference.description(in: translation.language)) (\(translation.abbreviation))"
     }
 
