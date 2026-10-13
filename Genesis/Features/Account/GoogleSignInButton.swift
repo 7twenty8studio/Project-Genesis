@@ -3,6 +3,9 @@ import SwiftUI
 /// "Sign in with Google" in Google's own button style: white with a grey
 /// outline in light mode, near-black with a grey outline in dark mode, the
 /// four-colour G at 18 pt and dark/light text. Brand colours, never themed.
+/// Capsule-shaped, like the Sign in with Apple button above it (both allowed
+/// by Apple's and Google's guidelines), so the iOS 26 Form card's rounded
+/// corners never shave them.
 struct GoogleSignInButton: View {
     let action: () -> Void
 
@@ -21,20 +24,17 @@ struct GoogleSignInButton: View {
             }
             .foregroundStyle(textColor)
             .frame(maxWidth: .infinity, minHeight: 50)
-            .background(fillColor, in: .rect(cornerRadius: GoogleSignInButton.cornerRadius, style: .continuous))
+            .background(fillColor, in: .capsule)
             .overlay {
-                RoundedRectangle(cornerRadius: GoogleSignInButton.cornerRadius, style: .continuous)
+                Capsule()
                     .strokeBorder(strokeColor, lineWidth: 1)
             }
-            .contentShape(.rect(cornerRadius: GoogleSignInButton.cornerRadius, style: .continuous))
+            .contentShape(.capsule)
             .opacity(isEnabled ? 1 : 0.5)
         }
         .buttonStyle(.plain)
         .accessibilityLabel(Text("Sign in with Google"))
     }
-
-    /// Shared with the Sign in with Apple button above it, so both look alike.
-    static let cornerRadius: CGFloat = 12
 
     private var isDark: Bool { colorScheme == .dark }
     // Google's branding guidelines: light #FFFFFF / #747775 / #1F1F1F, dark #131314 / #8E918F / #E3E3E3.

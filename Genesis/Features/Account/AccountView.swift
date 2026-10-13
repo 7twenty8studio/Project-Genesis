@@ -90,7 +90,7 @@ private struct SignInView: View {
                         }
                         .signInWithAppleButtonStyle(colorScheme == .dark ? .white : .black)
                         .frame(height: 50)
-                        .clipShape(.rect(cornerRadius: GoogleSignInButton.cornerRadius, style: .continuous))
+                        .clipShape(.capsule)
                         .disabled(!auth.isAvailable || auth.isWorking)
                         .accessibilityIdentifier("account.apple")
 
@@ -102,7 +102,9 @@ private struct SignInView: View {
                         .accessibilityIdentifier("account.signInWithGoogle")
                     }
                     .listRowBackground(Color.clear)
-                    .listRowInsets(EdgeInsets())
+                    // A little room above and below keeps the buttons' rounded ends
+                    // clear of the section card's own rounded (clipping) corners.
+                    .listRowInsets(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
                 }
 
                 Section {
