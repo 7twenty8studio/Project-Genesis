@@ -6,6 +6,8 @@ import SwiftUI
 /// updated automatically when a corrected edition comes out.
 struct BibleDownloadsView: View {
     @Environment(BibleLibrary.self) private var library
+    @Environment(EntitlementService.self) private var entitlements
+    @Environment(AuthService.self) private var auth
     @Environment(ReaderViewModel.self) private var reader
     @Environment(AudioPlayerService.self) private var audio
     @Environment(\.palette) private var palette
@@ -14,6 +16,7 @@ struct BibleDownloadsView: View {
     @State private var removing: Translation?
     @State private var hasLoaded = false
     @State private var showsGuide = false
+    @State private var premium: PremiumFeature?
 
     private var languages: [String] {
         ReadingLibrary.languages(installed: library.translations, catalog: library.catalog, preferred: AppLanguage.code)
@@ -71,6 +74,7 @@ struct BibleDownloadsView: View {
                 await library.refreshCatalog()
                 hasLoaded = true
             }
+            .premiumSheet($premium)
             .sheet(isPresented: $showsGuide) {
                 TranslationGuideView(language: language)
             }
@@ -112,10 +116,26 @@ struct BibleDownloadsView: View {
                     entry: entry,
                     isCurrent: entry.translation.id == library.currentTranslation.id,
                     isDownloading: library.downloading.contains(entry.id),
-                    read: { reader.switchTranslation(to: entry.translation) },
+                    read: {
+                        if library.isLocked(entry.translation) {
+                            premium = .premiumBibles
+                        } else {
+                            reader.switchTranslation(to: entry.translation)
+                        }
+                    },
                     download: {
+                        // A Premium Bible is downloaded only with Premium.
+                        if library.isLocked(entry.translation) {
+                            premium = .premiumBibles
+                            return
+                        }
                         guard let item = entry.download else { return }
-                        Task { await library.download(item) }
+                        Task {
+                            if item.premium {
+                                library.premiumProof = PremiumProof(accessToken: try? await auth.accessToken(), signedTransaction: entitlements.signedTransaction)
+                            }
+                            await library.download(item)
+                        }
                     }
                 )
                 .swipeActions {

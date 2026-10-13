@@ -116,6 +116,9 @@ struct TranslationCardView: View {
         list.append(entry.hasRecordedAudio
             ? Fact(systemImage: "waveform", text: String(localized: "Recorded audio"))
             : Fact(systemImage: "speaker.wave.2", text: String(localized: "Read aloud by a device voice")))
+        if entry.translation.requiresPremium {
+            list.append(Fact(systemImage: "crown", text: String(localized: "With Premium", comment: "On a Bible's card: this Bible needs Premium")))
+        }
         if let rights = entry.profile.rights {
             list.append(Fact(systemImage: rights == .publicDomain ? "checkmark.seal" : "doc.text", text: rights.title))
         }

@@ -89,4 +89,45 @@ struct LicensedBibleTests {
         #expect(shared.contains("16\u{2013}17 Sixteen and seventeen."))
         #expect(shared.contains("(TST)"))
     }
+
+    // MARK: Premium Bibles (paid licences)
+
+    @Test func theCatalogMarksPaidBiblesPremium() throws {
+        let json = """
+        [{"id":"NIV","name":"New International Version","year":"2011","license":"Copyright Biblica","summary":"",
+          "file_url":"https://x.supabase.co/storage/v1/object/licensed-bibles/NIV-1.sqlite.deflate","file_bytes":1,
+          "database_bytes":1,"sha256":"00","version":1,"rights":"licensed","premium":true},
+         {"id":"NVI","name":"Nueva Versión Internacional","year":"2022","license":"Copyright Biblica","summary":"",
+          "file_url":"https://x.supabase.co/storage/v1/object/licensed-bibles/NVI-1.sqlite.deflate","file_bytes":1,
+          "database_bytes":1,"sha256":"00","version":1,"language":"es"}]
+        """
+        let items = try JSONDecoder().decode([DownloadableTranslation].self, from: Data(json.utf8))
+        let premium = items.map(\.translation.requiresPremium)
+        #expect(premium == [true, false], "A free licence stays free; only a paid one needs Premium")
+    }
+
+    @Test func savedBiblesRememberPremiumAndOlderOnesAreFree() throws {
+        let paid = Translation(id: "NIV", name: "NIV", year: "2011", license: "Copyright", summary: "", requiresPremium: true)
+        let decoded = try JSONDecoder().decode(Translation.self, from: JSONEncoder().encode(paid))
+        #expect(decoded.requiresPremium)
+        let older = #"{"id":"BSB","name":"Berean Standard Bible","year":"2023","license":"Public domain","summary":""}"#
+        let old = try JSONDecoder().decode(Translation.self, from: Data(older.utf8))
+        #expect(!old.requiresPremium)
+    }
+
+    @Test func withoutPremiumAPaidBibleIsLockedAndAnotherIsRead() throws {
+        let directory = FileManager.default.temporaryDirectory.appending(path: "bibles-\(UUID().uuidString)")
+        let defaults = try #require(UserDefaults(suiteName: "licensed-\(UUID().uuidString)"))
+        let library = BibleLibrary(defaults: defaults, directory: directory)
+        let paid = Translation(id: "NIV", name: "NIV", year: "2011", license: "Copyright", summary: "", requiresPremium: true)
+        let free = Translation(id: "NVI", name: "NVI", year: "2022", license: "Copyright", summary: "", language: "es")
+
+        #expect(!library.isLocked(paid), "Unlocked until StoreKit says otherwise")
+        library.premiumBiblesUnlocked = false
+        #expect(library.isLocked(paid))
+        #expect(!library.isLocked(free), "A free licence is never locked")
+        #expect(!library.isLocked(.kjv))
+        let instead = library.fallback(for: paid)
+        #expect(instead.language == "en" && !instead.requiresPremium)
+    }
 }

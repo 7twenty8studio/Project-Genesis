@@ -8,6 +8,7 @@ import {
   ownerAllows,
   ownershipFor,
   PRODUCT_IDS,
+  VerificationError,
   verifyTransaction,
 } from "./appstore.ts";
 
@@ -106,4 +107,31 @@ export async function claimTransaction(admin: Admin, userID: string, signedTrans
   // A unique clash means another account claimed it at the same moment.
   if (error) return null;
   return { expiresAt };
+}
+
+/**
+ * Premium for a read-only check (bible-file: downloading a Premium Bible).
+ * A current App Store subscription's signed transaction is enough on its own
+ * (Premium works without an account); otherwise a signed-in account with a
+ * grant or a saved, unexpired subscription. Records nothing.
+ */
+export async function hasPremium(admin: Admin, userID: string | null, signedTransaction?: string): Promise<boolean> {
+  if (signedTransaction) {
+    try {
+      await verifyTransaction(signedTransaction, {
+        appleRoot: await appleRootCertificate(),
+        bundleId: BUNDLE_ID,
+        productIds: PRODUCT_IDS,
+        now: new Date(),
+        allowXcode: ALLOW_XCODE_STOREKIT,
+      });
+      return true;
+    } catch (error) {
+      if (!(error instanceof VerificationError)) console.error("hasPremium", error);
+    }
+  }
+  if (!userID) return false;
+  if (await activeGrant(admin, userID)) return true;
+  const saved = await savedEntitlement(admin, userID);
+  return saved !== null && new Date(saved.expires_at).getTime() > Date.now();
 }

@@ -51,7 +51,7 @@ final class ReaderViewModel {
 
     var parallelTranslation: Translation? {
         guard let id = parallelTranslationID, id != translation.id else { return nil }
-        return library.translations.first { $0.id == id }
+        return library.translations.first { $0.id == id && !library.isLocked($0) }
     }
 
     func readInParallel(with translation: Translation?) {
@@ -157,7 +157,7 @@ final class ReaderViewModel {
     }
 
     func switchTranslation(to translation: Translation) {
-        guard translation != library.currentTranslation else { return }
+        guard translation != library.currentTranslation, !library.isLocked(translation) else { return }
         library.currentTranslation = translation
         chapterCache.removeAll()
         cacheOrder.removeAll()

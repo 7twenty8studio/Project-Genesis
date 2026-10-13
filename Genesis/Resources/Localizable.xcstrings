@@ -7967,6 +7967,16 @@
         }
       }
     },
+    "More Bible translations": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más traducciones de la Biblia"
+          }
+        }
+      }
+    },
     "More Bibles": {
       "localizations": {
         "es": {
@@ -10969,6 +10979,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Leer %@ en 1 día"
+          }
+        }
+      }
+    },
+    "Read Bibles whose publishers charge a license fee. Every other Bible stays free for everyone.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee Biblias cuyas editoriales cobran por la licencia. Todas las demás Biblias siguen siendo gratuitas para todos."
           }
         }
       }
@@ -15138,6 +15158,16 @@
         }
       }
     },
+    "This Bible comes with Premium. If you subscribe, try Restore Purchases in Settings.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta Biblia está incluida en Premium. Si tienes la suscripción, prueba Restaurar compras en Configuración."
+          }
+        }
+      }
+    },
     "This Week": {
       "comment": "Sermon list section: sermons from this week",
       "localizations": {
@@ -17097,6 +17127,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Con el modo oscuro"
+          }
+        }
+      }
+    },
+    "With Premium": {
+      "comment": "On a Bible's card: this Bible needs Premium",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Premium"
           }
         }
       }

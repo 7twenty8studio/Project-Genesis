@@ -20,6 +20,41 @@ final class BibleLibrary {
     private(set) var editionVersion = 0
     var downloadError: String?
 
+    /// Whether Premium Bibles (`Translation.requiresPremium`) can be read,
+    /// set by RootView from the entitlement. Leaving Premium moves the reader
+    /// to a free Bible in the same language; the download stays, so it
+    /// opens again with Premium.
+    var premiumBiblesUnlocked = true {
+        didSet {
+            if !premiumBiblesUnlocked, isLocked(currentTranslation) {
+                currentTranslation = fallback(for: currentTranslation)
+            }
+        }
+    }
+
+    /// Shown to the server when downloading or updating a Premium Bible;
+    /// RootView keeps the subscription in it, and the Bibles screen adds the
+    /// account's token before a download.
+    @ObservationIgnored var premiumProof: PremiumProof?
+
+    /// A Premium Bible without Premium.
+    func isLocked(_ translation: Translation) -> Bool {
+        translation.requiresPremium && !premiumBiblesUnlocked
+    }
+
+    /// Another Bible to read instead of `translation`: one in the same
+    /// language if there is one (the Reina-Valera for a Spanish Bible),
+    /// else the KJV.
+    func fallback(for translation: Translation) -> Translation {
+        translations.first { $0.id != translation.id && $0.language == translation.language && !isLocked($0) } ?? .kjv
+    }
+
+    /// True when any Bible offered or downloaded needs Premium (so the
+    /// Premium screen lists them only once there are some).
+    var hasPremiumBibles: Bool {
+        catalog.contains(where: \.premium) || translations.contains(where: \.requiresPremium)
+    }
+
     var currentTranslation: Translation {
         didSet { defaults.set(currentTranslation.id, forKey: Self.translationKey) }
     }
@@ -124,6 +159,7 @@ final class BibleLibrary {
         guard let items = try? await downloader.catalog() else { return }
         catalog = items
         withdrawEndedLicences(catalog: items)
+        refreshInstalledDetails(catalog: items)
         for item in items where needsUpdate(item) {
             try? await install(item, allowsCellular: false)
         }
@@ -139,6 +175,24 @@ final class BibleLibrary {
         for item in installed.values where item.translation.isLicensed && !offered.contains(item.translation.id) {
             remove(item.translation)
         }
+    }
+
+    /// Keeps a downloaded Bible's details (copyright wording, whether it
+    /// needs Premium) as the catalog has them, without downloading again.
+    private func refreshInstalledDetails(catalog items: [DownloadableTranslation]) {
+        var changed = false
+        for item in items {
+            guard let current = installed[item.id], current.translation != item.translation else { continue }
+            installed[item.id] = InstalledTranslation(translation: item.translation, version: current.version, fileName: current.fileName)
+            changed = true
+        }
+        guard changed else { return }
+        saveInstalled()
+        translations = Self.merge(installed: installed)
+        if let updated = translations.first(where: { $0.id == currentTranslation.id }), updated != currentTranslation {
+            currentTranslation = updated
+        }
+        if isLocked(currentTranslation) { currentTranslation = fallback(for: currentTranslation) }
     }
 
     private func needsUpdate(_ item: DownloadableTranslation) -> Bool {
@@ -161,7 +215,7 @@ final class BibleLibrary {
         defer { downloading.remove(item.id) }
         // A new file per edition: the old one may still be open for reading.
         let fileName = "\(item.id)-\(item.version).sqlite"
-        try await downloader.download(item, to: directory.appending(path: fileName), allowsCellular: allowsCellular)
+        try await downloader.download(item, to: directory.appending(path: fileName), allowsCellular: allowsCellular, proof: premiumProof)
         installed[item.id] = InstalledTranslation(translation: item.translation, version: item.version, fileName: fileName)
         saveInstalled()
         repositories[item.id] = nil
@@ -173,9 +227,7 @@ final class BibleLibrary {
     func remove(_ translation: Translation) {
         guard isRemovable(translation), let item = installed[translation.id] else { return }
         if currentTranslation.id == translation.id {
-            // Another Bible in the same language if there is one (the
-            // Reina-Valera for a Spanish Bible), else the KJV.
-            currentTranslation = translations.first { $0.id != translation.id && $0.language == translation.language } ?? .kjv
+            currentTranslation = fallback(for: translation)
         }
         installed[translation.id] = nil
         saveInstalled()

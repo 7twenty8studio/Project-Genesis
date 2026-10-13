@@ -373,6 +373,7 @@ def main():
     parser.add_argument("--approach", choices=["word_for_word", "balanced", "thought_for_thought"])
     parser.add_argument("--reading-level", choices=["traditional", "formal", "everyday"])
     parser.add_argument("--popularity", type=int, help="1 = most read in its language")
+    parser.add_argument("--premium", action="store_true", help="only with Premium: the publisher charges Versely a licence fee (free licences stay free for everyone)")
     parser.add_argument("--out", default="build/bibles")
     args = parser.parse_args()
     if not re.fullmatch(r"https://[^/]+/storage/v1/object/licensed-bibles/[A-Za-z0-9][A-Za-z0-9._-]*\.sqlite\.deflate", args.url):
@@ -408,20 +409,22 @@ def main():
         + (f" (entry {meta['dbl_id']}, revision {meta.get('revision')})" if meta.get("dbl_id") else "")
         + ". Upload the .deflate file first, then run this.\n"
         "insert into public.bible_translations (id, name, year, license, summary, language, file_url, file_bytes, database_bytes, sha256, version, enabled, sort,\n"
-        "  approach, reading_level, rights, popularity, updated_at)\n"
+        "  approach, reading_level, rights, popularity, premium, updated_at)\n"
         f"values ({sql_text(args.id)}, {sql_text(name)}, {sql_text(args.year)}, {sql_text(copyright_statement)}, {sql_text(args.summary)}, {sql_text(language)}, "
         f"{sql_text(args.url)}, {len(packed)}, {len(raw)}, {sql_text(hashlib.sha256(raw).hexdigest())}, {args.version}, true, {args.sort},\n"
-        f"  {sql_text(args.approach)}, {sql_text(args.reading_level)}, 'licensed', {args.popularity if args.popularity else 'null'}, now())\n"
+        f"  {sql_text(args.approach)}, {sql_text(args.reading_level)}, 'licensed', {args.popularity if args.popularity else 'null'}, {'true' if args.premium else 'false'}, now())\n"
         "on conflict (id) do update set name = excluded.name, year = excluded.year, license = excluded.license, summary = excluded.summary, language = excluded.language,\n"
         "  file_url = excluded.file_url, file_bytes = excluded.file_bytes, database_bytes = excluded.database_bytes, sha256 = excluded.sha256,\n"
         "  version = excluded.version, enabled = excluded.enabled, sort = excluded.sort,\n"
-        "  approach = excluded.approach, reading_level = excluded.reading_level, rights = excluded.rights, popularity = excluded.popularity, updated_at = now();\n"
+        "  approach = excluded.approach, reading_level = excluded.reading_level, rights = excluded.rights, popularity = excluded.popularity,\n"
+        "  premium = excluded.premium, updated_at = now();\n"
     )
     open(os.path.join(args.out, f"{file_name}.sql"), "w").write(statement)
 
     missing, extra = compare_with_kjv(verses, spans, report)
     print(f"{args.id} ({name}, {language}): {len(verses)} verses, {len(headings)} headings, {len(spans)} bridged verses")
     print(f"Copyright shown in the app: {copyright_statement}")
+    print("Premium only (paid licence)." if args.premium else "Free for everyone (free licence).")
     if spans:
         print(f"Bridged verses: {describe([first for first, _ in spans], 20)}")
     if missing:

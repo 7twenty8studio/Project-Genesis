@@ -51,6 +51,10 @@ struct Translation: Identifiable, Hashable, Codable, Sendable {
     /// The language of the text: "en", "es". Decides the narrating voice and
     /// the language of book names read aloud.
     let language: String
+    /// Only with Premium: a Bible whose publisher charges Versely a licence
+    /// fee (bible_translations.premium). Every Bible Versely may offer free
+    /// is free for everyone.
+    var requiresPremium: Bool = false
 
     var abbreviation: String { id }
 
@@ -62,13 +66,14 @@ struct Translation: Identifiable, Hashable, Codable, Sendable {
         TranslationProfile.rights(fromLicense: license) != .publicDomain
     }
 
-    init(id: String, name: String, year: String, license: String, summary: String, language: String = "en") {
+    init(id: String, name: String, year: String, license: String, summary: String, language: String = "en", requiresPremium: Bool = false) {
         self.id = id
         self.name = name
         self.year = year
         self.license = license
         self.summary = summary
         self.language = language
+        self.requiresPremium = requiresPremium
     }
 
     // Translations saved before languages were added have none: English.
@@ -80,6 +85,7 @@ struct Translation: Identifiable, Hashable, Codable, Sendable {
         license = try container.decode(String.self, forKey: .license)
         summary = try container.decode(String.self, forKey: .summary)
         language = try container.decodeIfPresent(String.self, forKey: .language) ?? "en"
+        requiresPremium = try container.decodeIfPresent(Bool.self, forKey: .requiresPremium) ?? false
     }
 }
 

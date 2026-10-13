@@ -73,7 +73,19 @@ shares; README.md has the architecture.
   in SyncService, a table + RLS in a new migration.
 
 ## Premium and AI
-- Every Bible is free. Notes, highlights, the prayer journal, reading plans
+- Every Bible Versely may offer free is free for everyone (public domain,
+  and every licence that costs Versely nothing). Only Bibles whose
+  publishers charge a licence fee need Premium (`PremiumFeature.premiumBibles`,
+  bible_translations.premium, `Translation.requiresPremium`):
+  `BibleLibrary.isLocked` (from `premiumBiblesUnlocked`, set by RootView once
+  StoreKit has answered) puts a lock in every Bible picker, opens the
+  paywall instead of downloading or reading, leaves them out of parallel
+  reading and onboarding, and moves a lapsed reader to a free Bible in the
+  same language (`fallback(for:)`); the download stays. bible-file gives a
+  Premium Bible's link only with Premium (`hasPremium` in
+  _shared/premium.ts: the signed transaction, or the account's grant or
+  saved subscription; `PremiumProof`). The Premium screen lists the feature
+  only once a Premium Bible exists. Notes, highlights, the prayer journal, reading plans
   and cloud sync (with a free account) are free with no limits, and so are
   Explore's timeline and people. `FreeLimits` holds only the 3 AI answers a
   day, enforced again on the server (supabase/functions/study-ai/lib.ts;

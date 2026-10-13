@@ -2,7 +2,7 @@
 //   node --experimental-strip-types --test supabase/functions/bible-file/lib.test.ts
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { licensedObjectPath, parseRequest } from "./lib.ts";
+import { bearerToken, licensedObjectPath, parseRequest } from "./lib.ts";
 
 test("reads a catalog id", () => {
   assert.deepEqual(parseRequest({ id: "NIV" }), { id: "NIV" });
@@ -11,6 +11,15 @@ test("reads a catalog id", () => {
   assert.equal(parseRequest({ id: "TOOLONGID" }), null);
   assert.equal(parseRequest({}), null);
   assert.equal(parseRequest(null), null);
+  assert.deepEqual(parseRequest({ id: "NIV", signedTransaction: "eyJ.a.b" }), { id: "NIV", signedTransaction: "eyJ.a.b" });
+  assert.deepEqual(parseRequest({ id: "NIV", signedTransaction: 5 }), { id: "NIV" });
+  assert.deepEqual(parseRequest({ id: "NIV", signedTransaction: "" }), { id: "NIV" });
+});
+
+test("reads the bearer token", () => {
+  assert.equal(bearerToken("Bearer abc.def"), "abc.def");
+  assert.equal(bearerToken("bearer  xyz"), "xyz");
+  assert.equal(bearerToken(null), "");
 });
 
 test("signs only files in the licensed bucket", () => {

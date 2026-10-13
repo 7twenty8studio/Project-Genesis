@@ -20,6 +20,8 @@ struct DownloadableTranslation: Identifiable, Hashable, Codable, Sendable {
     var readingLevel: ReadingLevel?
     var rights: TranslationRights?
     var popularity: Int?
+    /// Only with Premium (a Bible whose licence Versely pays for).
+    var premium: Bool = false
 
     /// The server's details, completed with what the app knows.
     var profile: TranslationProfile {
@@ -29,11 +31,11 @@ struct DownloadableTranslation: Identifiable, Hashable, Codable, Sendable {
     }
 
     var translation: Translation {
-        Translation(id: id, name: name, year: year, license: license, summary: summary, language: language)
+        Translation(id: id, name: name, year: year, license: license, summary: summary, language: language, requiresPremium: premium)
     }
 
     enum CodingKeys: String, CodingKey {
-        case id, name, year, license, summary, version, sha256, language, approach, rights, popularity
+        case id, name, year, license, summary, version, sha256, language, approach, rights, popularity, premium
         case readingLevel = "reading_level"
         case fileURL = "file_url"
         case fileBytes = "file_bytes"
@@ -62,6 +64,7 @@ extension DownloadableTranslation {
         readingLevel = (try? container.decodeIfPresent(String.self, forKey: .readingLevel)).flatMap(ReadingLevel.init(rawValue:))
         rights = (try? container.decodeIfPresent(String.self, forKey: .rights)).flatMap(TranslationRights.init(rawValue:))
         popularity = try? container.decodeIfPresent(Int.self, forKey: .popularity)
+        premium = (try? container.decodeIfPresent(Bool.self, forKey: .premium)) ?? false
     }
 }
 
@@ -78,6 +81,7 @@ enum TranslationDownloadError: LocalizedError, Equatable {
     case offline
     case damaged
     case notABible
+    case needsPremium
 
     var errorDescription: String? {
         switch self {
@@ -85,8 +89,17 @@ enum TranslationDownloadError: LocalizedError, Equatable {
         case .offline: String(localized: "You're offline. Connect to the internet to download Bibles.")
         case .damaged: String(localized: "The download was damaged. Please try again.")
         case .notABible: String(localized: "That file isn't a Bible Versely can read.")
+        case .needsPremium: String(localized: "This Bible comes with Premium. If you subscribe, try Restore Purchases in Settings.")
         }
     }
+}
+
+/// What shows the server this device may download a Premium Bible: the
+/// App Store subscription's signed transaction (no account needed) and, when
+/// signed in, the account's token (for Premium granted by the owner).
+struct PremiumProof: Sendable, Equatable {
+    var accessToken: String?
+    var signedTransaction: String?
 }
 
 /// Lists downloadable translations and downloads, checks and unpacks them.
@@ -110,8 +123,8 @@ struct TranslationDownloader: Sendable {
 
     /// Downloads, unpacks and checks a translation; returns the SQLite bytes
     /// written to `destination`.
-    func download(_ item: DownloadableTranslation, to destination: URL, allowsCellular: Bool = true) async throws {
-        let url = try await downloadURL(for: item)
+    func download(_ item: DownloadableTranslation, to destination: URL, allowsCellular: Bool = true, proof: PremiumProof? = nil) async throws {
+        let url = try await downloadURL(for: item, proof: proof)
         var request = URLRequest(url: url)
         request.allowsExpensiveNetworkAccess = allowsCellular
         request.timeoutInterval = 120
@@ -146,20 +159,24 @@ struct TranslationDownloader: Sendable {
     /// Where to fetch the file. A licensed Bible sits in a private bucket:
     /// the bible-file function hands out a link that works for ten minutes,
     /// and only while the publisher's licence lets Versely offer it.
-    private func downloadURL(for item: DownloadableTranslation) async throws -> URL {
+    private func downloadURL(for item: DownloadableTranslation, proof: PremiumProof?) async throws -> URL {
         guard item.rights == .licensed else {
             guard let url = URL(string: item.fileURL), url.scheme == "https" else { throw TranslationDownloadError.damaged }
             return url
         }
         guard let client else { throw TranslationDownloadError.notConfigured }
-        let body = try JSONEncoder().encode(["id": item.id])
+        // A Premium Bible also shows the subscription (or the account).
+        var fields = ["id": item.id]
+        if item.premium, let transaction = proof?.signedTransaction { fields["signedTransaction"] = transaction }
+        let body = try JSONEncoder().encode(fields)
         let response: (data: Data, status: Int)
         do {
-            response = try await client.callFunction("bible-file", body: body, accessToken: nil)
+            response = try await client.callFunction("bible-file", body: body, accessToken: item.premium ? proof?.accessToken : nil)
         } catch let error as URLError where [.notConnectedToInternet, .networkConnectionLost, .timedOut].contains(error.code) {
             throw TranslationDownloadError.offline
         }
         struct Link: Decodable { let url: String }
+        if response.status == 403 { throw TranslationDownloadError.needsPremium }
         guard response.status == 200,
               let link = try? JSONDecoder().decode(Link.self, from: response.data),
               let url = URL(string: link.url), url.scheme == "https" else {

@@ -168,7 +168,8 @@ struct ReaderView: View {
                         onStudy: studyChapter,
                         onListen: listen,
                         onMoreBibles: { sheet = .bibles },
-                        onToggleCompanion: { showsCompanion.toggle() }
+                        onToggleCompanion: { showsCompanion.toggle() },
+                        onPremium: { sheet = .premium($0) }
                     )
                     // At least a little below the live safe area, and never
                     // higher than the stable position (which on iPad clears

@@ -5,11 +5,25 @@ export const LICENSED_BUCKET = "licensed-bibles";
 /** How long a download link works, in seconds. */
 export const LINK_SECONDS = 600;
 
-/** { id } from the request body, or null. Ids are the catalog's: 2-8 capitals or digits. */
-export function parseRequest(body: unknown): { id: string } | null {
+export interface FileRequest {
+  id: string;
+  /** For a Premium Bible: the App Store subscription's signed transaction. */
+  signedTransaction?: string;
+}
+
+/** The request body, or null. Ids are the catalog's: 2-8 capitals or digits. */
+export function parseRequest(body: unknown): FileRequest | null {
   if (!body || typeof body !== "object") return null;
-  const id = (body as { id?: unknown }).id;
-  return typeof id === "string" && /^[A-Z0-9]{2,8}$/.test(id) ? { id } : null;
+  const { id, signedTransaction } = body as { id?: unknown; signedTransaction?: unknown };
+  if (typeof id !== "string" || !/^[A-Z0-9]{2,8}$/.test(id)) return null;
+  return typeof signedTransaction === "string" && signedTransaction.length > 0 && signedTransaction.length < 20_000
+    ? { id, signedTransaction }
+    : { id };
+}
+
+/** The bearer token from an Authorization header ("" when none). */
+export function bearerToken(header: string | null): string {
+  return header?.replace(/^Bearer\s+/i, "").trim() ?? "";
 }
 
 /**

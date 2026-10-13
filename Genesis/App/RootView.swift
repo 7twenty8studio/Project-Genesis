@@ -103,6 +103,14 @@ struct RootView: View {
         }
         // A hidden Memorise leaves its widget showing the off state.
         .onChange(of: features.isOn(.memorise)) { refreshWidgets() }
+        // Premium Bibles open only with Premium (once StoreKit has answered,
+        // so a subscriber isn't moved off their Bible at launch).
+        .onChange(of: premiumBiblesUnlocked, initial: true) { _, unlocked in
+            library.premiumBiblesUnlocked = unlocked
+        }
+        .onChange(of: entitlements.signedTransaction, initial: true) { _, transaction in
+            library.premiumProof = PremiumProof(accessToken: library.premiumProof?.accessToken, signedTransaction: transaction)
+        }
         .onChange(of: entitlements.isPremium) {
             keepThemeAvailable()
             keepAmbientAvailable()
@@ -165,6 +173,10 @@ struct RootView: View {
     }
 
     /// If Premium has ended, a premium theme falls back to Auto.
+    private var premiumBiblesUnlocked: Bool {
+        !entitlements.hasLoaded || entitlements.allows(.premiumBibles)
+    }
+
     private func keepThemeAvailable() {
         guard entitlements.hasLoaded, !entitlements.allows(settings.preferences.theme) else { return }
         settings.preferences.theme = .automatic

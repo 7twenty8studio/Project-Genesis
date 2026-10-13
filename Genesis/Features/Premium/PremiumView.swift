@@ -9,6 +9,7 @@ struct PremiumView: View {
     var highlighted: PremiumFeature?
 
     @Environment(EntitlementService.self) private var entitlements
+    @Environment(BibleLibrary.self) private var library
     @Environment(AuthService.self) private var auth
     @Environment(StudyAssistant.self) private var assistant
     @Environment(\.palette) private var palette
@@ -71,8 +72,11 @@ struct PremiumView: View {
     }
 
     private var orderedFeatures: [PremiumFeature] {
-        // The study assistant isn't offered while it's switched off.
-        let offered = PremiumFeature.allCases.filter { $0 != .advancedAI || assistant.isEnabled }
+        // The study assistant isn't offered while it's switched off, nor
+        // Premium Bibles until there are some.
+        let offered = PremiumFeature.allCases.filter {
+            ($0 != .advancedAI || assistant.isEnabled) && ($0 != .premiumBibles || library.hasPremiumBibles || highlighted == .premiumBibles)
+        }
         guard let highlighted, offered.contains(highlighted) else { return offered }
         return [highlighted] + offered.filter { $0 != highlighted }
     }

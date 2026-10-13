@@ -126,7 +126,7 @@ uploads there any more).
 
 | Free | Premium: Individual $7.99/month or $59.99/year; Family (up to 6) $12.99/month or $99.99/year; 7-day free trial |
 |---|---|
-| Reading, every public-domain translation, cross references | Everything in Free |
+| Reading, cross references, and every Bible Versely may offer free: public domain, and licensed Bibles whose licence costs Versely nothing | Everything in Free, plus Bibles whose publishers charge Versely a licence fee |
 | Word and reference search | Advanced search: topics, one testament or book, sorting |
 | Notes, highlights, bookmarks (no limits) | Morning welcome: greeting, today's verse and reading, sounds easing in |
 | Prayer journal (passages, timeline, streak, statistics), sermon notes with Church Mode, and reading plans (no limits) | Themes: Cream, Parchment, Midnight, Sage, Starlight and the seasons |
@@ -141,8 +141,9 @@ uploads there any more).
 | | Illuminated first letters, three more book fonts, special app icons, chapter-complete ribbon |
 | | Morning welcome; Starlight for night reading |
 
-Licensed translations (ESV, NLT and others) would be a later add-on, once a
-licence is signed.
+Licensed Bibles come from the Digital Bible Library or the publisher
+(LICENSED_BIBLES.md). A free licence makes a free Bible for everyone; a paid
+one is published with `--premium` and needs Premium.
 
 ## How the study assistant works (for reference)
 

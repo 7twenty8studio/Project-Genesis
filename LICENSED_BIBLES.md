@@ -1,5 +1,9 @@
 # Licensed Bibles (Digital Bible Library)
 
+**Free stays free.** A Bible whose licence costs Versely nothing is free for
+every reader. Only a Bible whose publisher charges Versely a fee needs
+Premium (publish it with `--premium`).
+
 Versely is a distributor in the Digital Bible Library (DBL). Membership lets
 Versely *request* Bibles. Each publisher then approves (or declines) its own
 Bible, with its own licence terms. A Bible goes live in Versely only after
@@ -51,8 +55,10 @@ terms, but each licence decides.
 2. **Copyright notice.** What exact wording is required? Versely shows it
    under every chapter, on the Bible's card in the library, and in the
    parallel view.
-3. **Free and paid tiers.** Every Bible is free in Versely, and Premium adds
-   other features. Can the Bible appear in an app that has a subscription?
+3. **Fees and Premium.** Is there a licence fee? If the licence is free, the
+   Bible is free for every reader. If there's a fee, Versely offers the
+   Bible to Premium subscribers. Ask whether the publisher allows that, and
+   whether the fee is per user, per download or flat.
 4. **Where verses appear.** Can its verses appear outside the reader? That
    includes widgets, Apple Watch, notifications, the morning welcome, shared
    verse images and text, PDF exports, the Memorize games and group
@@ -90,6 +96,8 @@ Claude and it'll add a per-Bible switch for it.
      or NTV.
    - Add `--copyright "…"` if the licence requires wording that differs from
      `metadata.xml`.
+   - Add `--premium` **only** if Versely pays a licence fee for this Bible.
+     Without it, the Bible is free for everyone.
 3. **Read the report.** It shows:
    - the copyright line that will be shown
    - joined verses, such as "16–17" (common in the GNT, CEV and TLA)
@@ -132,6 +140,13 @@ app loads the catalog.
 - **Joined verses.** Verses a translation joins ("16–17") show as one verse.
   A reference to verse 17 still finds the words.
 - **AI.** The study assistant never receives the Bible's text.
+- **Premium Bibles** (`--premium`, for paid licences only):
+  - Every Bible picker shows them with a lock.
+  - Without Premium, tapping one opens the Premium screen instead of
+    downloading or reading.
+  - The server gives the download link only to a Premium subscriber.
+  - If a subscription ends, the reader moves to a free Bible in the same
+    language. The download stays on the device for when they come back.
 - **Scripture text.** It is kept verbatim. Footnotes, cross references and
   introductions are left out. Words the publisher marks as the divine name
   are written as LORD, as plain-text editions print them.

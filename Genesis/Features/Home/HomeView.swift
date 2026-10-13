@@ -531,7 +531,11 @@ struct HomeView: View {
             VStack(spacing: 0) {
                 ForEach(library.translations) { translation in
                     Button {
-                        router.reader.switchTranslation(to: translation)
+                        if library.isLocked(translation) {
+                            premium = .premiumBibles
+                        } else {
+                            router.reader.switchTranslation(to: translation)
+                        }
                     } label: {
                         HStack(spacing: 14) {
                             Text(translation.abbreviation)
@@ -550,6 +554,10 @@ struct HomeView: View {
                                 Image(systemName: "checkmark")
                                     .foregroundStyle(palette.accent)
                                     .accessibilityLabel("Current translation")
+                            } else if library.isLocked(translation) {
+                                Image(systemName: "lock")
+                                    .foregroundStyle(palette.secondaryText)
+                                    .accessibilityLabel(PremiumFeature.premiumBibles.title)
                             }
                         }
                         .padding(.vertical, 10)

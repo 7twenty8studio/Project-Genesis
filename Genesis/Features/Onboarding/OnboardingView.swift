@@ -38,7 +38,7 @@ struct OnboardingView: View {
 
                 VStack(alignment: .leading, spacing: 12) {
                     SectionHeader(title: String(localized: "Choose a translation"))
-                    ForEach(library.translations) { translation in
+                    ForEach(library.translations.filter { !library.isLocked($0) }) { translation in
                         TranslationOption(translation: translation, isSelected: translation == selection) {
                             selection = translation
                         }

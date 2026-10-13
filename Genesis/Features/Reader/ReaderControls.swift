@@ -11,6 +11,8 @@ struct ReaderControls: View {
     let onListen: () -> Void
     let onMoreBibles: () -> Void
     let onToggleCompanion: () -> Void
+    /// Opens the Premium screen (a Premium Bible chosen without Premium).
+    var onPremium: (PremiumFeature) -> Void = { _ in }
 
     @Environment(ReaderViewModel.self) private var reader
     @Environment(BibleLibrary.self) private var library
@@ -105,10 +107,16 @@ struct ReaderControls: View {
         Menu {
             ForEach(library.translations) { translation in
                 Button {
-                    reader.switchTranslation(to: translation)
+                    if library.isLocked(translation) {
+                        onPremium(.premiumBibles)
+                    } else {
+                        reader.switchTranslation(to: translation)
+                    }
                 } label: {
                     if translation == reader.translation {
                         Label("\(translation.abbreviation) · \(translation.name)", systemImage: "checkmark")
+                    } else if library.isLocked(translation) {
+                        Label("\(translation.abbreviation) · \(translation.name)", systemImage: "lock")
                     } else {
                         Text("\(translation.abbreviation) · \(translation.name)")
                     }
@@ -118,7 +126,7 @@ struct ReaderControls: View {
             Divider()
             // Read two Bibles side by side.
             Menu("Read in Parallel", systemImage: "rectangle.split.2x1") {
-                ForEach(library.translations.filter { $0 != reader.translation }) { other in
+                ForEach(library.translations.filter { $0 != reader.translation && !library.isLocked($0) }) { other in
                     Button {
                         reader.readInParallel(with: other)
                     } label: {

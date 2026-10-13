@@ -15,6 +15,9 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
     /// Photos, voice recordings and Pencil pages on prayers and sermon
     /// notes, templates, and PDF export.
     case journalExtras
+    /// Bibles whose publishers charge Versely a licence fee. Every Bible
+    /// Versely may offer free stays free.
+    case premiumBibles
 
     var id: String { rawValue }
 
@@ -31,6 +34,7 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
         case .memorise: String(localized: "Memorize Scripture")
         case .widgets: String(localized: "Every widget")
         case .journalExtras: String(localized: "Photos and voice in your journal")
+        case .premiumBibles: String(localized: "More Bible translations")
         }
     }
 
@@ -47,6 +51,7 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
         case .memorise: String(localized: "Flashcards that bring each verse back just before you'd forget it, plus games, levels and a daily streak.")
         case .ambientSounds: String(localized: "Rain, ocean waves, wind, a crackling fire, birdsong and a soft worship pad to read and pray with, mixed your way.")
         case .journalExtras: String(localized: "Add photos and voice recordings to prayers and sermon notes, sketch with Apple Pencil, start from templates and export a beautifully typeset PDF.")
+        case .premiumBibles: String(localized: "Read Bibles whose publishers charge a license fee. Every other Bible stays free for everyone.")
         }
     }
 
@@ -63,6 +68,7 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
         case .memorise: "brain.head.profile"
         case .widgets: "apps.iphone"
         case .journalExtras: "paperclip"
+        case .premiumBibles: "books.vertical"
         }
     }
 }
