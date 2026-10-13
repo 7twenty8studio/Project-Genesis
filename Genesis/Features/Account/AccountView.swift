@@ -76,20 +76,33 @@ private struct SignInView: View {
                     }
                 }
 
+                // Sign in with Apple first, then Google, alike in size and shape
+                // (App Store guideline 4.8).
                 Section {
-                    SignInWithAppleButton(.signIn) { request in
-                        let nonce = AppleSignInNonce.random()
-                        appleNonce = nonce
-                        request.requestedScopes = [.email]
-                        request.nonce = AppleSignInNonce.sha256(nonce)
-                    } onCompletion: { result in
-                        handleApple(result)
+                    VStack(spacing: 12) {
+                        SignInWithAppleButton(.signIn) { request in
+                            let nonce = AppleSignInNonce.random()
+                            appleNonce = nonce
+                            request.requestedScopes = [.email]
+                            request.nonce = AppleSignInNonce.sha256(nonce)
+                        } onCompletion: { result in
+                            handleApple(result)
+                        }
+                        .signInWithAppleButtonStyle(colorScheme == .dark ? .white : .black)
+                        .frame(height: 50)
+                        .clipShape(.rect(cornerRadius: GoogleSignInButton.cornerRadius, style: .continuous))
+                        .disabled(!auth.isAvailable || auth.isWorking)
+                        .accessibilityIdentifier("account.apple")
+
+                        GoogleSignInButton {
+                            focused = nil
+                            Task { await auth.signInWithGoogle() }
+                        }
+                        .disabled(!auth.isAvailable || auth.isWorking)
+                        .accessibilityIdentifier("account.signInWithGoogle")
                     }
-                    .signInWithAppleButtonStyle(colorScheme == .dark ? .white : .black)
-                    .frame(height: 50)
+                    .listRowBackground(Color.clear)
                     .listRowInsets(EdgeInsets())
-                    .disabled(!auth.isAvailable || auth.isWorking)
-                    .accessibilityIdentifier("account.apple")
                 }
 
                 Section {
@@ -232,7 +245,7 @@ private struct SignedInView: View {
                 } header: {
                     Text("Security")
                 } footer: {
-                    Text("Signed in with Apple? Setting a password lets you also sign in with your email.")
+                    Text("Signed in with Apple or Google? Setting a password lets you also sign in with your email.")
                 }
 
                 Section {

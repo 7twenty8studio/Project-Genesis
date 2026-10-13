@@ -87,6 +87,8 @@ final class AppRouter {
     /// Handles genesis:// links from widgets and notifications.
     func handle(_ url: URL) {
         guard url.scheme == GenesisLink.scheme else { return }
+        // Sign in with Google's return address belongs to its web sheet.
+        if GoogleOAuth.isCallback(url) { return }
         switch url.host() {
         case "read":
             if let raw = Int(url.lastPathComponent), raw > 1_000_000 {

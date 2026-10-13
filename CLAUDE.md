@@ -91,6 +91,14 @@ shares; README.md has the architecture.
   keeps it) live once in supabase/functions/_shared/appstore.ts (pure, Node
   tests) and _shared/premium.ts (database); never copy them into a function.
   Purchases set `appAccountToken` to the signed-in account id.
+- Sign in with Google (no SDK, no package): Supabase's OAuth PKCE flow in
+  `ASWebAuthenticationSession` (`GoogleWebSignIn`, shares Safari's sign-ins):
+  /auth/v1/authorize?provider=google with an S256 challenge (`OAuthPKCE`,
+  `GoogleOAuth` in Core/Cloud/GoogleSignIn.swift), back at
+  genesis://auth-callback (`GenesisLink.authCallbackHost`; RootView and
+  AppRouter ignore it), then /token?grant_type=pkce. Button
+  (`GoogleSignInButton`, drawn `GoogleLogo`) under Sign in with Apple, which
+  stays first (4.8). Nothing to revoke on deletion. Setup: GOOGLE_SIGNIN_SETUP.md.
 - `public.genesis_is_premium()` (security definer, authenticated only):
   an entitlement not expired more than 3 days ago, or an active grant. Use
   it in policies and functions for server-side Premium checks. Its upload

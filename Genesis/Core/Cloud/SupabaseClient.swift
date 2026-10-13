@@ -14,13 +14,17 @@ struct AuthSession: Codable, Sendable, Equatable {
 struct AuthUser: Codable, Sendable, Equatable {
     let id: UUID
     let email: String?
-    /// How the account signs in ("apple", "email"), from the user's
+    /// How the account signs in ("apple", "google", "email"), from the user's
     /// app_metadata and identities. Nil for sessions saved before it was kept.
     var providers: [String]? = nil
 
     /// True when Sign in with Apple is one of the account's sign-ins, so
     /// deleting it also revokes Genesis's Apple tokens.
     var usesSignInWithApple: Bool { providers?.contains("apple") ?? false }
+
+    /// True when Sign in with Google is one of the account's sign-ins. There's
+    /// nothing to revoke on deletion: Genesis never receives Google's tokens.
+    var usesSignInWithGoogle: Bool { providers?.contains(GoogleOAuth.provider) ?? false }
 }
 
 enum SupabaseError: LocalizedError, Equatable {
@@ -113,6 +117,16 @@ final class SupabaseClient: Sendable {
             path: "auth/v1/token",
             query: [URLQueryItem(name: "grant_type", value: "id_token")],
             body: ["provider": "apple", "id_token": idToken, "nonce": nonce]
+        )
+    }
+
+    /// Exchanges the code from an OAuth (PKCE) sign-in, such as Sign in with
+    /// Google, and the verifier only this device knows, for a session.
+    func signIn(oauthCode code: String, verifier: String) async throws -> AuthSession {
+        try await tokenRequest(
+            path: "auth/v1/token",
+            query: [URLQueryItem(name: "grant_type", value: "pkce")],
+            body: GoogleOAuth.tokenBody(code: code, verifier: verifier)
         )
     }
 

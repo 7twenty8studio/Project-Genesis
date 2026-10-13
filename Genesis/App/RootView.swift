@@ -62,6 +62,9 @@ struct RootView: View {
         // Switch to and from the night theme on time.
         .task(id: settings.preferences.nightReading) { await followNightReading() }
         .onOpenURL { url in
+            // Sign in with Google's callback isn't a link to open (its web
+            // sheet takes it; this is only in case one ever arrives here).
+            if GoogleOAuth.isCallback(url) { return }
             if !onboardingComplete {
                 whatsNew.markShippedFeaturesSeen()
                 if !features.hasChosen { features.choose(OptionalFeature.defaults) }

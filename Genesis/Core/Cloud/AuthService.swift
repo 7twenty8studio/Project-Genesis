@@ -50,6 +50,39 @@ final class AuthService {
         await run { client in try await client.signInWithApple(idToken: idToken, nonce: nonce) }
     }
 
+    /// Sign in with Google: Supabase's Google page in a web sheet, then the
+    /// returned code and this sign-in's PKCE verifier swapped for a session.
+    /// Closing the sheet is silent.
+    func signInWithGoogle() async {
+        guard let client else {
+            errorMessage = SupabaseError.notConfigured.localizedDescription
+            return
+        }
+        guard !isWorking else { return }
+        let verifier = OAuthPKCE.verifier()
+        guard let url = GoogleOAuth.authorizeURL(baseURL: client.baseURL, challenge: OAuthPKCE.challenge(for: verifier)) else {
+            errorMessage = String(localized: "Sign in with Google didn't work. Please try again.")
+            return
+        }
+        isWorking = true
+        errorMessage = nil
+        infoMessage = nil
+        let outcome = await GoogleWebSignIn().code(from: url)
+        isWorking = false
+        switch outcome {
+        case let .code(code):
+            await run { client in try await client.signIn(oauthCode: code, verifier: verifier) }
+        case .cancelled:
+            return
+        case let .failed(description):
+            if let description {
+                errorMessage = String(localized: "Sign in with Google didn't work: \(description)")
+            } else {
+                errorMessage = String(localized: "Sign in with Google didn't work. Please try again.")
+            }
+        }
+    }
+
     func sendPasswordReset(email: String) async {
         guard let client else { return }
         isWorking = true

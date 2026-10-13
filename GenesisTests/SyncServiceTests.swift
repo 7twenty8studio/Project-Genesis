@@ -98,6 +98,25 @@ struct SyncServiceTests {
         #expect(body.contains("a@b.co"))
     }
 
+    @Test func googleCodeIsExchangedWithTheVerifier() async throws {
+        StubURLProtocol.reset { _ in
+            (200, #"{"access_token":"tok","refresh_token":"ref","expires_in":3600,"user":{"id":"11111111-1111-1111-1111-111111111111","email":"a@gmail.com","app_metadata":{"provider":"google","providers":["google"]},"identities":[{"provider":"google"}]}}"#)
+        }
+        let session = try await client().signIn(oauthCode: "the-code", verifier: "the-verifier")
+
+        #expect(session.accessToken == "tok")
+        #expect(session.user.providers == ["google"])
+        #expect(session.user.usesSignInWithGoogle)
+        #expect(!session.user.usesSignInWithApple)
+        let request = try #require(StubURLProtocol.requests.first)
+        #expect(request.method == "POST")
+        #expect(request.url.path == "/auth/v1/token")
+        #expect(request.url.query == "grant_type=pkce")
+        #expect(request.headers["apikey"] == "anon-key")
+        let body = try JSONDecoder().decode([String: String].self, from: request.body)
+        #expect(body == ["auth_code": "the-code", "code_verifier": "the-verifier"])
+    }
+
     @Test func signUpNeedingConfirmationIsReported() async {
         StubURLProtocol.reset { _ in (200, #"{"id":"11111111-1111-1111-1111-111111111111","email":"a@b.co"}"#) }
         await #expect(throws: SupabaseError.emailConfirmationRequired) {

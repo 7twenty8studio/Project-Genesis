@@ -162,4 +162,7 @@ enum GenesisLink {
     /// The app's Home tab (locked Premium widgets open here; the router has
     /// no Premium route).
     static let home = URL(string: "\(scheme)://home")!
+    /// Sign in with Google's return address (genesis://auth-callback): only
+    /// the sign-in sheet reads it, never the router.
+    static let authCallbackHost = "auth-callback"
 }

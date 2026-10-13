@@ -156,6 +156,14 @@ Good to know:
   these secrets, accounts are still deleted, but Apple's tokens aren't revoked
   (the function logs a warning).
 
+### Sign in with Google (optional)
+
+The Account screen also offers **Sign in with Google** under Sign in with
+Apple (Apple stays first, as guideline 4.8 expects). Switching it on happens
+in Google Cloud Console and Supabase, not here: follow
+[GOOGLE_SIGNIN_SETUP.md](GOOGLE_SIGNIN_SETUP.md) (about 15 minutes). Until
+then the button shows a Supabase error page.
+
 ## 3. Push notifications (group announcements)
 
 1. developer.apple.com → Certificates, Identifiers & Profiles → **Keys** → **+**.
@@ -326,8 +334,8 @@ These answers match the privacy manifest in
 
 | Category → Data type | Linked to the person | Purposes | What it is in Genesis |
 |---|---|---|---|
-| Contact Info → Email Address | Yes | App Functionality | Account sign-in; optional reply address in Send Feedback |
-| Contact Info → Name | Yes | App Functionality | Display name in groups and the community |
+| Contact Info → Email Address | Yes | App Functionality | Account sign-in (email, Apple or Google); optional reply address in Send Feedback |
+| Contact Info → Name | Yes | App Functionality | Display name in groups and the community; the name Google shares at sign-in |
 | User Content → Customer Support | Yes | App Functionality | Send Feedback messages |
 | User Content → Other User Content | Yes | App Functionality | Notes, highlights, prayers, sermons, attachment captions, plans, group posts |
 | Sensitive Info → Sensitive Info | Yes | App Functionality | Prayers and journal entries can reveal religious beliefs |
@@ -418,3 +426,4 @@ Buying Premium while testing:
 - [ ] Privacy policy and support URLs; App Privacy answers as above
 - [ ] `ALLOW_XCODE_STOREKIT` secret deleted
 - [ ] Sign in with Apple key secrets set (`APPLE_SIGNIN_KEY`, `APPLE_SIGNIN_KEY_ID`, `APPLE_TEAM_ID`) and `delete-account` redeployed
+- [ ] Sign in with Google: Google provider on in Supabase, `genesis://auth-callback` in Redirect URLs (GOOGLE_SIGNIN_SETUP.md)

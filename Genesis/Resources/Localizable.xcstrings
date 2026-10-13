@@ -13186,6 +13186,36 @@
         }
       }
     },
+    "Sign in with Google": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Iniciar sesión con Google"
+          }
+        }
+      }
+    },
+    "Sign in with Google didn't work. Please try again.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo iniciar sesión con Google. Inténtalo de nuevo."
+          }
+        }
+      }
+    },
+    "Sign in with Google didn't work: %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo iniciar sesión con Google: %@"
+          }
+        }
+      }
+    },
     "Sign out?": {
       "localizations": {
         "es": {
@@ -13206,12 +13236,12 @@
         }
       }
     },
-    "Signed in with Apple? Setting a password lets you also sign in with your email.": {
+    "Signed in with Apple or Google? Setting a password lets you also sign in with your email.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "¿Iniciaste sesión con Apple? Con una contraseña también podrás entrar con tu correo."
+            "value": "¿Iniciaste sesión con Apple o Google? Con una contraseña también podrás entrar con tu correo."
           }
         }
       }

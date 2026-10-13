@@ -178,6 +178,10 @@ final class Phase2UITests: GenesisUITestCase {
         account.tap()
 
         XCTAssertTrue(app.buttons["account.apple"].waitForExistence(timeout: Genesis.timeout), "Sign in with Apple is offered")
+        // Only its presence: the web sign-in never runs in UI tests.
+        let google = app.buttons["account.signInWithGoogle"]
+        XCTAssertTrue(google.exists, "Sign in with Google is offered")
+        XCTAssertEqual(google.label, "Sign in with Google")
         let email = app.textFields["account.email"]
         Genesis.scrollIntoView(email, in: app)
         XCTAssertTrue(email.exists, "Email sign-in is offered")

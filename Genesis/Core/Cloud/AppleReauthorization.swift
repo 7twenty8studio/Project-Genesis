@@ -20,7 +20,7 @@ final class AppleReauthorization: NSObject {
 
     func authorizationCode() async -> Outcome {
         guard continuation == nil else { return .cancelled }
-        guard let window = Self.currentWindow() else {
+        guard let window = PresentationWindow.current() else {
             return .failed(String(localized: "Apple didn't confirm your account. Your account wasn't deleted."))
         }
         anchor = window
@@ -41,16 +41,6 @@ final class AppleReauthorization: NSObject {
         continuation = nil
         controller = nil
         anchor = nil
-    }
-
-    /// The key window of the active scene (or any window), so the sheet has
-    /// somewhere to appear; nil only if the app has no window at all.
-    private static func currentWindow() -> UIWindow? {
-        let scenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
-        let scene = scenes.first { $0.activationState == .foregroundActive } ?? scenes.first
-        if let window = scene?.keyWindow ?? scene?.windows.first { return window }
-        if let scene { return UIWindow(windowScene: scene) }
-        return nil
     }
 }
 
@@ -77,6 +67,6 @@ extension AppleReauthorization: ASAuthorizationControllerDelegate {
 extension AppleReauthorization: @preconcurrency ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         // Set in authorizationCode() before the request is performed.
-        anchor ?? Self.currentWindow()!
+        anchor ?? PresentationWindow.current()!
     }
 }
