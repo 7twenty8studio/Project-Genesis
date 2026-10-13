@@ -67,7 +67,7 @@ struct AttachmentViewer: View {
             ContentUnavailableView(
                 "Not on this device yet",
                 systemImage: "icloud.slash",
-                description: Text("It will download when you're online. If you added it on another device, open Genesis there so it can finish uploading.")
+                description: Text("It will download when you're online. If you added it on another device, open Versely there so it can finish uploading.")
             )
         }
     }

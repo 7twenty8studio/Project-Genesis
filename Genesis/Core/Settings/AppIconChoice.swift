@@ -10,7 +10,7 @@ enum AppIconChoice: String, CaseIterable, Identifiable, Sendable {
 
     var title: String {
         switch self {
-        case .standard: String(localized: "Genesis", comment: "App icon name: the standard icon")
+        case .standard: String(localized: "Versely", comment: "App icon name: the standard icon")
         case .night: String(localized: "Night", comment: "App icon name")
         case .autumn: String(localized: "Autumn")
         case .winter: String(localized: "Winter")

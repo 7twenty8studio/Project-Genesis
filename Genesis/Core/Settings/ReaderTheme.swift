@@ -85,7 +85,7 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
         }
     }
 
-    /// Themes that come with Genesis Premium (including the seasons). Auto,
+    /// Themes that come with Versely Premium (including the seasons). Auto,
     /// Paper, Sepia, Slate, High Contrast and Night stay free, so a readable
     /// light, dark, night and high-contrast choice is always available.
     var isPremium: Bool {

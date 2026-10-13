@@ -620,7 +620,7 @@ struct JournalPDFTests {
         let text = words(document.string ?? "")
         #expect(text.contains(words(verse)), "The verse is in the PDF exactly as in the Bible")
         #expect(text.contains("John 3:16 · KJV"))
-        #expect(text.contains("Made with Genesis"))
+        #expect(text.contains("Made with Versely"))
         #expect(text.contains("Full of grace"), "Markdown marks are rendered, not printed")
         #expect(!text.contains("**"))
     }
@@ -685,7 +685,7 @@ struct JournalPDFTests {
 
     @Test func exportFileNamesAreSafe() {
         #expect(JournalExportFile.name(for: "Grace / Truth: John 1") == "Grace Truth John 1.pdf")
-        #expect(JournalExportFile.name(for: "  ") == "Genesis.pdf")
+        #expect(JournalExportFile.name(for: "  ") == "Versely.pdf")
     }
 }
 

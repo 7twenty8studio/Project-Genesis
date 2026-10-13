@@ -4,9 +4,9 @@ import Foundation
 /// Attachment files in the person's own iCloud: the private CloudKit
 /// database of the container in Info.plist's `GenesisICloudContainer`
 /// (set by Config/Signing.xcconfig; without it, `UnavailableAttachmentStorage`).
-/// Storage counts against their iCloud plan, not Genesis's servers.
+/// Storage counts against their iCloud plan, not Versely's servers.
 ///
-/// One record zone per Genesis account ("Attachments-<user id>"), so
+/// One record zone per Versely account ("Attachments-<user id>"), so
 /// deleting the account deletes its files and nothing else; one record
 /// (type `AttachmentFile`) per file, named after it ("<id>.jpg"), holding
 /// the file as an asset. Rows still sync through Supabase.

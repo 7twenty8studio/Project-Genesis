@@ -113,7 +113,7 @@ actor InMemoryCommunityBackend: CommunityBackend {
     private func check(_ text: String) throws {
         let words = text.lowercased().split { !$0.isLetter && !$0.isNumber }.map(String.init)
         if words.contains(where: Self.blockedWords.contains) {
-            throw CommunityError.message(String(localized: "Please rephrase. Some words aren't allowed in Genesis."))
+            throw CommunityError.message(String(localized: "Please rephrase. Some words aren't allowed in Versely."))
         }
     }
 

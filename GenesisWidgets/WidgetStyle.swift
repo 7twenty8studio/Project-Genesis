@@ -168,7 +168,7 @@ extension WidgetSnapshot {
 }
 
 /// What a Premium widget shows without Premium: a calm card that says so and
-/// opens Genesis. The default look, never the reader theme.
+/// opens Versely. The default look, never the reader theme.
 struct PremiumLockedView: View {
     /// One short sentence about what the widget does with Premium.
     let message: String
@@ -187,7 +187,7 @@ struct PremiumLockedView: View {
     private var content: some View {
         switch family {
         case .accessoryInline:
-            Label(String(localized: "Genesis Premium"), systemImage: "lock")
+            Label(String(localized: "Versely Premium"), systemImage: "lock")
         case .accessoryCircular:
             ZStack {
                 AccessoryWidgetBackground()
@@ -195,11 +195,11 @@ struct PremiumLockedView: View {
                     .font(.title3)
             }
             .accessibilityElement(children: .ignore)
-            .accessibilityLabel(Text("Genesis Premium"))
+            .accessibilityLabel(Text("Versely Premium"))
             .accessibilityHint(Text(message))
         case .accessoryRectangular:
             VStack(alignment: .leading, spacing: 2) {
-                Label(String(localized: "Genesis Premium"), systemImage: "lock")
+                Label(String(localized: "Versely Premium"), systemImage: "lock")
                     .font(.headline)
                 Text(message)
                     .font(.caption)

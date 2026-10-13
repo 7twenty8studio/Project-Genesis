@@ -73,7 +73,7 @@ test("signs a client secret Apple can verify", async () => {
     iat: 1_700_000_000,
     exp: 1_700_000_300,
     aud: "https://appleid.apple.com",
-    sub: "com.7twenty8studio.genesis",
+    sub: "com.7twenty8studio.versely",
   });
   for (const part of [header, claims, signature]) assert.match(part, /^[A-Za-z0-9_-]+$/);
   const raw = Buffer.from(signature, "base64url");

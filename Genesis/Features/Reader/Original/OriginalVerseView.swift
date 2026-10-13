@@ -17,7 +17,7 @@ struct OriginalVerseView: View {
 
     @Environment(\.palette) private var palette
 
-    private static let scheme = "genesis-original"
+    private static let scheme = "versely-original"
     private var rightToLeft: Bool { language.isRightToLeft }
     private var alignment: Alignment { rightToLeft ? .trailing : .leading }
 

@@ -102,7 +102,7 @@ final class BibleLibrary {
     }
 
     /// Catalog entries not yet on this device, those in the app's language
-    /// first (the Reina-Valera leads for someone using Genesis in Spanish).
+    /// first (the Reina-Valera leads for someone using Versely in Spanish).
     var available: [DownloadableTranslation] {
         let missing = catalog.filter { item in !translations.contains { $0.id == item.id } }
         return missing.filter { $0.language == AppLanguage.code } + missing.filter { $0.language != AppLanguage.code }

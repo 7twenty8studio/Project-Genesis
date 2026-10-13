@@ -17,11 +17,11 @@
       "localizations" : [
         {
           "description" : "Family trees and maps, Memorise, ambient sounds, the study assistant and more.",
-          "displayName" : "Genesis Premium",
+          "displayName" : "Versely Premium",
           "locale" : "en_US"
         }
       ],
-      "name" : "Genesis Premium",
+      "name" : "Versely Premium",
       "subscriptions" : [
         {
           "adHocOffers" : [],
@@ -38,12 +38,12 @@
           },
           "localizations" : [
             {
-              "description" : "Genesis Premium for up to six people with Family Sharing, billed monthly.",
+              "description" : "Versely Premium for up to six people with Family Sharing, billed monthly.",
               "displayName" : "Premium Family Monthly",
               "locale" : "en_US"
             }
           ],
-          "productID" : "com.7twenty8studio.genesis.premium.family.monthly",
+          "productID" : "com.7twenty8studio.versely.premium.family.monthly",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Premium Family Monthly",
           "subscriptionGroupID" : "21582471",
@@ -65,12 +65,12 @@
           },
           "localizations" : [
             {
-              "description" : "Genesis Premium for up to six people with Family Sharing, billed yearly.",
+              "description" : "Versely Premium for up to six people with Family Sharing, billed yearly.",
               "displayName" : "Premium Family Yearly",
               "locale" : "en_US"
             }
           ],
-          "productID" : "com.7twenty8studio.genesis.premium.family.yearly",
+          "productID" : "com.7twenty8studio.versely.premium.family.yearly",
           "recurringSubscriptionPeriod" : "P1Y",
           "referenceName" : "Premium Family Yearly",
           "subscriptionGroupID" : "21582471",
@@ -92,12 +92,12 @@
           },
           "localizations" : [
             {
-              "description" : "Genesis Premium, billed monthly.",
+              "description" : "Versely Premium, billed monthly.",
               "displayName" : "Premium Monthly",
               "locale" : "en_US"
             }
           ],
-          "productID" : "com.7twenty8studio.genesis.premium.monthly",
+          "productID" : "com.7twenty8studio.versely.premium.monthly",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Premium Monthly",
           "subscriptionGroupID" : "21582471",
@@ -119,12 +119,12 @@
           },
           "localizations" : [
             {
-              "description" : "Genesis Premium, billed yearly.",
+              "description" : "Versely Premium, billed yearly.",
               "displayName" : "Premium Yearly",
               "locale" : "en_US"
             }
           ],
-          "productID" : "com.7twenty8studio.genesis.premium.yearly",
+          "productID" : "com.7twenty8studio.versely.premium.yearly",
           "recurringSubscriptionPeriod" : "P1Y",
           "referenceName" : "Premium Yearly",
           "subscriptionGroupID" : "21582471",

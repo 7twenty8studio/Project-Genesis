@@ -19,11 +19,11 @@ struct AuthUser: Codable, Sendable, Equatable {
     var providers: [String]? = nil
 
     /// True when Sign in with Apple is one of the account's sign-ins, so
-    /// deleting it also revokes Genesis's Apple tokens.
+    /// deleting it also revokes Versely's Apple tokens.
     var usesSignInWithApple: Bool { providers?.contains("apple") ?? false }
 
     /// True when Sign in with Google is one of the account's sign-ins. There's
-    /// nothing to revoke on deletion: Genesis never receives Google's tokens.
+    /// nothing to revoke on deletion: Versely never receives Google's tokens.
     var usesSignInWithGoogle: Bool { providers?.contains(GoogleOAuth.provider) ?? false }
 }
 

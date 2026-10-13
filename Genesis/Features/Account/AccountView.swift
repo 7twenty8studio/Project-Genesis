@@ -281,7 +281,7 @@ private struct SignedInView: View {
             Button("Cancel", role: .cancel) {}
         } message: {
             if user.usesSignInWithApple {
-                Text("This permanently deletes your account and your data in the cloud. It can't be undone. You'll confirm with Apple next so Genesis also stops using your Apple Account.")
+                Text("This permanently deletes your account and your data in the cloud. It can't be undone. You'll confirm with Apple next so Versely also stops using your Apple Account.")
             } else {
                 Text("This permanently deletes your account and your data in the cloud. It can't be undone.")
             }
@@ -289,7 +289,7 @@ private struct SignedInView: View {
     }
 
     /// Deletes the account. A Sign in with Apple account first confirms with
-    /// Apple so the server can revoke Genesis's Apple tokens; cancelling the
+    /// Apple so the server can revoke Versely's Apple tokens; cancelling the
     /// Apple sheet leaves everything as it is. Then the attachment files in
     /// the person's iCloud go (the server can't reach them), then the
     /// account and its data on the server (delete-account).

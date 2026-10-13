@@ -2,7 +2,7 @@ import UIKit
 import UserNotifications
 
 /// Remote notifications for group announcements, and what happens when any
-/// Genesis notification is tapped.
+/// Versely notification is tapped.
 ///
 /// The system calls in through the app delegate, so this is a single shared
 /// object; GenesisApp connects it to the community backend and router.
@@ -89,7 +89,7 @@ final class PushNotifications: NSObject {
 }
 
 extension PushNotifications: UNUserNotificationCenterDelegate {
-    /// Show notifications even while Genesis is open.
+    /// Show notifications even while Versely is open.
     nonisolated func userNotificationCenter(
         _ center: UNUserNotificationCenter,
         willPresent notification: UNNotification
@@ -99,7 +99,7 @@ extension PushNotifications: UNUserNotificationCenterDelegate {
 
     nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
         let info = response.notification.request.content.userInfo
-        let groupID = (info["genesis"] as? [String: Any])?["groupID"] as? String
+        let groupID = (info["versely"] as? [String: Any])?["groupID"] as? String
         let isPrayerReminder = info["prayerID"] != nil
         await MainActor.run {
             PushNotifications.shared.handleTap(groupID: groupID, isPrayerReminder: isPrayerReminder)

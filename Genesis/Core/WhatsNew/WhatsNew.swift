@@ -470,12 +470,12 @@ enum WhatsNewCatalog {
 
     static let spanish = WhatsNewAnnouncement(
         id: "spanish",
-        title: String(localized: "Genesis in Spanish"),
+        title: String(localized: "Versely in Spanish"),
         items: [
             WhatsNewItem(
                 systemImage: "globe",
-                title: String(localized: "Genesis en español"),
-                detail: String(localized: "Use Genesis in Spanish: Settings › Language (the gear on Home). It follows your iPhone's language too.")
+                title: String(localized: "Versely en español"),
+                detail: String(localized: "Use Versely in Spanish: Settings › Language (the gear on Home). It follows your iPhone's language too.")
             ),
             WhatsNewItem(
                 systemImage: "book",
@@ -515,12 +515,12 @@ enum WhatsNewCatalog {
 
     static let yourWay = WhatsNewAnnouncement(
         id: "your-way",
-        title: String(localized: "Genesis, your way"),
+        title: String(localized: "Versely, your way"),
         items: [
             WhatsNewItem(
                 systemImage: "square.grid.2x2",
                 title: String(localized: "Choose your features"),
-                detail: String(localized: "Keep Genesis as simple as you like: turn listening, plans, explore and more on or off in Settings › Features (the gear on Home).")
+                detail: String(localized: "Keep Versely as simple as you like: turn listening, plans, explore and more on or off in Settings › Features (the gear on Home).")
             ),
             WhatsNewItem(
                 systemImage: "tag",
@@ -566,12 +566,12 @@ enum WhatsNewCatalog {
 
     static let community = WhatsNewAnnouncement(
         id: "community",
-        title: String(localized: "The Genesis community"),
+        title: String(localized: "The Versely community"),
         items: [
             WhatsNewItem(
                 systemImage: "hands.and.sparkles",
                 title: String(localized: "Prayer wall"),
-                detail: String(localized: "Share a prayer request with everyone in Genesis, anonymously if you like, and pray for others.")
+                detail: String(localized: "Share a prayer request with everyone in Versely, anonymously if you like, and pray for others.")
             ),
             WhatsNewItem(
                 systemImage: "text.quote",

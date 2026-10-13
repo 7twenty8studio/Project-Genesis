@@ -87,7 +87,7 @@ struct ContentActions: ViewModifier {
             .alert("Thank you", isPresented: $thanks) {
                 Button("OK", role: .cancel) { onHidden() }
             } message: {
-                Text("Thanks for helping keep Genesis a safe place. You can also block this person from the same menu.")
+                Text("Thanks for helping keep Versely a safe place. You can also block this person from the same menu.")
             }
     }
 

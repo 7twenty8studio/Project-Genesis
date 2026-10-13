@@ -38,7 +38,7 @@ struct GenesisApp: App {
             CrashReporter.start()
         }
 
-        // Read before anything changes it: someone who set up Genesis before
+        // Read before anything changes it: someone who set up Versely before
         // feature choices existed keeps everything they had.
         let features = FeaturePreferences(existingUser: UserDefaults.standard.bool(forKey: "onboarding.complete"))
         if testing.isSimple { features.choose([]) }

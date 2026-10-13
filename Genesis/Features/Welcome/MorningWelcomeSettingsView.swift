@@ -18,7 +18,7 @@ struct MorningWelcomeSettingsView: View {
                         .tint(palette.accent)
                         .accessibilityIdentifier("welcome.settings.isOn")
                 } footer: {
-                    Text("The first time you open Genesis each day, a quiet welcome shows today's verse and reading.")
+                    Text("The first time you open Versely each day, a quiet welcome shows today's verse and reading.")
                 }
                 .listRowBackground(palette.surface)
 

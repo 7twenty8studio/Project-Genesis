@@ -5,7 +5,7 @@ import Sentry
 /// Crash and error reporting through Sentry. Analytics stay minimal by design:
 /// no performance tracing, no session replay and no personal data.
 enum CrashReporter {
-    private static let logger = Logger(subsystem: "com.7twenty8studio.genesis", category: "errors")
+    private static let logger = Logger(subsystem: "com.7twenty8studio.versely", category: "errors")
 
     static func start(configuration: AppConfiguration = .current) {
         guard let dsn = configuration.sentryDSN else {

@@ -8,7 +8,7 @@
 // (https://appleid.apple.com/auth/revoke). Both calls authenticate with a
 // client secret: an ES256 JWT signed with the Sign in with Apple key.
 
-export const APPLE_CLIENT_ID = "com.7twenty8studio.genesis";
+export const APPLE_CLIENT_ID = "com.7twenty8studio.versely";
 export const APPLE_TOKEN_URL = "https://appleid.apple.com/auth/token";
 export const APPLE_REVOKE_URL = "https://appleid.apple.com/auth/revoke";
 /** Apple allows up to six months; the secret is only used for two calls. */

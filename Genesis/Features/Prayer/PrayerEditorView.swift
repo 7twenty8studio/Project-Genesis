@@ -98,7 +98,7 @@ struct PrayerEditorView: View {
             }
         } footer: {
             if notificationsDenied {
-                Text("Notifications are off for Genesis. Turn them on in Settings to get reminders.")
+                Text("Notifications are off for Versely. Turn them on in Settings to get reminders.")
             } else {
                 Text("Reminders show only the title above, never your prayer.")
             }

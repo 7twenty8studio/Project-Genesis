@@ -31,7 +31,7 @@ enum OAuthPKCE {
 
 /// Sign in with Google through Supabase's OAuth (PKCE) flow, with no Google
 /// SDK: Supabase's /authorize page sends the person to Google, Google back to
-/// Supabase, and Supabase to genesis://auth-callback?code=…, which the app
+/// Supabase, and Supabase to versely://auth-callback?code=…, which the app
 /// swaps (with the verifier) for a session at /token?grant_type=pkce.
 enum GoogleOAuth {
     static let provider = "google"
@@ -60,7 +60,7 @@ enum GoogleOAuth {
         return components?.url
     }
 
-    /// True for genesis://auth-callback, which only the sign-in sheet handles.
+    /// True for versely://auth-callback, which only the sign-in sheet handles.
     static func isCallback(_ url: URL) -> Bool {
         url.scheme == callbackScheme && url.host() == callbackHost
     }
@@ -103,7 +103,7 @@ enum GoogleOAuth {
 /// `prefersEphemeralWebBrowserSession` is false: the sheet shares Safari's
 /// cookies, so someone already signed in to Google in Safari just picks their
 /// account instead of typing a password (and two-factor) again. The cost is
-/// iOS's one-line "Genesis wants to use … to sign in" prompt first; an
+/// iOS's one-line "Versely wants to use … to sign in" prompt first; an
 /// ephemeral session would skip it but make everyone sign in to Google afresh.
 @MainActor
 final class GoogleWebSignIn: NSObject {

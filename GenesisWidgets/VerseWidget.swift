@@ -94,7 +94,7 @@ struct DailyVerseView: View {
     var body: some View {
         let isPremium = entry.snapshot.isPremium == true
         if !entry.snapshot.unlocks(.dailyVerse, in: family) {
-            PremiumLockedView(message: String(localized: "Larger verse widgets come with Genesis Premium."), symbol: "text.quote")
+            PremiumLockedView(message: String(localized: "Larger verse widgets come with Versely Premium."), symbol: "text.quote")
         } else if !WidgetAccess.isUnlocked(entry.source, size: WidgetSize(family), isPremium: isPremium) {
             PremiumLockedView(message: lockedMessage, symbol: entry.source == .fromYourReading ? "book.pages" : "sparkles")
         } else {
@@ -109,8 +109,8 @@ struct DailyVerseView: View {
 
     private var lockedMessage: String {
         entry.source == .fromYourReading
-            ? String(localized: "Verses from your own reading come with Genesis Premium.")
-            : String(localized: "Verses on hope, peace and more come with Genesis Premium.")
+            ? String(localized: "Verses from your own reading come with Versely Premium.")
+            : String(localized: "Verses on hope, peace and more come with Versely Premium.")
     }
 
     /// The small capitals above the verse.

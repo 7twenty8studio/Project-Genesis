@@ -25,7 +25,7 @@ struct OnboardingView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 32) {
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Genesis")
+                    Text("Versely")
                         .font(.system(size: 44, weight: .regular, design: .serif))
                         .foregroundStyle(palette.text)
                     Text("Scripture, quietly and beautifully. Everything works offline.")

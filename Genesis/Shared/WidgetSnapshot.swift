@@ -105,7 +105,7 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
     /// Premium: "From Your Reading", one passage per day ("yyyy-MM-dd").
     var readingVerses: [String: Passage]? = nil
 
-    static let appGroup = "group.com.7twenty8studio.genesis"
+    static let appGroup = "group.com.7twenty8studio.versely"
     static let fileName = "widget-snapshot.json"
 
     static var fileURL: URL? {
@@ -153,7 +153,7 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
 
 /// Deep links from widgets into the app.
 enum GenesisLink {
-    static let scheme = "genesis"
+    static let scheme = "versely"
 
     static func read(_ verse: Int) -> URL { URL(string: "\(scheme)://read/\(verse)")! }
     static let plans = URL(string: "\(scheme)://plans")!
@@ -162,7 +162,7 @@ enum GenesisLink {
     /// The app's Home tab (locked Premium widgets open here; the router has
     /// no Premium route).
     static let home = URL(string: "\(scheme)://home")!
-    /// Sign in with Google's return address (genesis://auth-callback): only
+    /// Sign in with Google's return address (versely://auth-callback): only
     /// the sign-in sheet reads it, never the router.
     static let authCallbackHost = "auth-callback"
 }

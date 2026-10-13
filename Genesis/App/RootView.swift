@@ -47,7 +47,7 @@ struct RootView: View {
             }
         }
         .whatsNewSheet(isReady: onboardingComplete && scenePhase == .active && !showsWelcome)
-        // Premium: a quiet welcome the first time Genesis opens each day.
+        // Premium: a quiet welcome the first time Versely opens each day.
         .fullScreenCover(isPresented: $showsWelcome) {
             MorningWelcomeView { showsWelcome = false }
         }
@@ -195,7 +195,7 @@ struct RootView: View {
     /// (8 pm and 6 am by default), so the theme changes on time without
     /// redrawing every minute. With Dark Mode, looks at the system's
     /// appearance now and then instead: Dark Mode can come on by itself (at
-    /// sunset) while Genesis is open, and the pinned scheme hides that.
+    /// sunset) while Versely is open, and the pinned scheme hides that.
     private func followNightReading() async {
         while !Task.isCancelled {
             let schedule = settings.preferences.nightReading

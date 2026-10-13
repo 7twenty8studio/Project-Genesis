@@ -35,7 +35,7 @@ test("builds the notification", () => {
   const payload = notificationPayload("Tuesday Study", { id: "a1", group_id: "g1", title: "Potluck Sunday", body: "Bring a dish" }) as any;
   assert.equal(payload.aps.alert.title, "Tuesday Study");
   assert.equal(payload.aps.alert.subtitle, "Potluck Sunday");
-  assert.equal(payload.genesis.groupID, "g1");
+  assert.equal(payload.versely.groupID, "g1");
   const long = notificationPayload("G", { id: "a", group_id: "g", title: "t", body: "x".repeat(500) }) as any;
   assert.ok(long.aps.alert.body.length <= 180);
 });

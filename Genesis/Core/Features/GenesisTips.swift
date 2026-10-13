@@ -24,7 +24,7 @@ struct HighlightTip: Tip {
 
 struct ListenTip: Tip {
     var title: Text { Text("Listen to this chapter") }
-    var message: Text? { Text("Genesis reads aloud and turns the pages as it goes, even with your phone locked.") }
+    var message: Text? { Text("Versely reads aloud and turns the pages as it goes, even with your phone locked.") }
     var image: Image? { Image(systemName: "headphones") }
 }
 

@@ -40,7 +40,7 @@ struct GoogleSignInTests {
         #expect(components.host == "example.supabase.co")
         #expect(components.path == "/auth/v1/authorize")
         #expect(query["provider"] == "google")
-        #expect(query["redirect_to"] == "genesis://auth-callback")
+        #expect(query["redirect_to"] == "versely://auth-callback")
         #expect(query["code_challenge"] == "abc-_123")
         #expect(query["code_challenge_method"] == "s256")
     }
@@ -48,26 +48,26 @@ struct GoogleSignInTests {
     // MARK: Callback
 
     @Test func callbackWithACode() throws {
-        let url = try #require(URL(string: "genesis://auth-callback?code=98f1c0de-1234"))
+        let url = try #require(URL(string: "versely://auth-callback?code=98f1c0de-1234"))
         #expect(GoogleOAuth.isCallback(url))
         #expect(GoogleOAuth.parse(url) == .code("98f1c0de-1234"))
     }
 
     @Test func callbackWithAnError() throws {
-        let query = try #require(URL(string: "genesis://auth-callback?error=access_denied&error_description=Unable+to+exchange+external+code"))
+        let query = try #require(URL(string: "versely://auth-callback?error=access_denied&error_description=Unable+to+exchange+external+code"))
         #expect(GoogleOAuth.parse(query) == .error("Unable to exchange external code"))
 
-        let fragment = try #require(URL(string: "genesis://auth-callback#error=server_error&error_description=Database%20error"))
+        let fragment = try #require(URL(string: "versely://auth-callback#error=server_error&error_description=Database%20error"))
         #expect(GoogleOAuth.parse(fragment) == .error("Database error"))
 
-        let bare = try #require(URL(string: "genesis://auth-callback?error=access_denied"))
+        let bare = try #require(URL(string: "versely://auth-callback?error=access_denied"))
         #expect(GoogleOAuth.parse(bare) == .error(nil))
     }
 
     @Test func callbackWithoutACodeIsInvalid() throws {
-        let empty = try #require(URL(string: "genesis://auth-callback"))
-        let blankCode = try #require(URL(string: "genesis://auth-callback?code="))
-        let otherLink = try #require(URL(string: "genesis://plans?code=abc"))
+        let empty = try #require(URL(string: "versely://auth-callback"))
+        let blankCode = try #require(URL(string: "versely://auth-callback?code="))
+        let otherLink = try #require(URL(string: "versely://plans?code=abc"))
         #expect(GoogleOAuth.parse(empty) == .invalid)
         #expect(GoogleOAuth.parse(blankCode) == .invalid)
         #expect(GoogleOAuth.parse(otherLink) == .invalid)

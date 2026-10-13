@@ -43,7 +43,7 @@ final class SyncService {
     /// Large fields (handwritten pages) per push request, so one request
     /// never carries hundreds of drawings at once.
     private let pushBatchBytes = 4_000_000
-    private static let log = Logger(subsystem: "com.7twenty8studio.genesis", category: "sync")
+    private static let log = Logger(subsystem: "com.7twenty8studio.versely", category: "sync")
     private static let ownerKey = "sync.localDataOwner"
 
     init(auth: AuthService, container: ModelContainer, defaults: UserDefaults = .standard) {

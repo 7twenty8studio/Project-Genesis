@@ -1,4 +1,4 @@
-// study-ai: the Genesis study assistant.
+// study-ai: the Versely study assistant.
 //
 // POST /functions/v1/study-ai with the user's access token and
 //   { action, start, end, text, signedTransaction? }
@@ -76,7 +76,7 @@ Deno.serve(async (req) => {
     const limit = tier === "free" ? FREE_DAILY_LIMIT : PREMIUM_DAILY_LIMIT;
     const access = decideAccess(tier, request.action, 0);
     if (!access.allowed) {
-      return json({ error: "This study tool is part of Genesis Premium.", reason: access.reason, tier, limit }, 403);
+      return json({ error: "This study tool is part of Versely Premium.", reason: access.reason, tier, limit }, 403);
     }
     const overLimit = () =>
       json({ error: `You've used today's ${limit} study assistant answers. They reset tomorrow.`, reason: "daily_limit", tier, usedToday: limit, limit }, 403);

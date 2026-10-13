@@ -3,7 +3,7 @@ import SwiftData
 import SwiftUI
 
 /// Reading statistics from the PRD: streaks, chapters and books, highlights,
-/// reading time, favourite books and topics. Genesis Premium.
+/// reading time, favourite books and topics. Versely Premium.
 struct InsightsView: View {
     @Environment(ReadingProgress.self) private var progress
     @Environment(EntitlementService.self) private var entitlements

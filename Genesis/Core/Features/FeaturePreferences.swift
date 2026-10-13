@@ -1,6 +1,6 @@
 import Foundation
 
-/// Parts of Genesis people can switch off for a simpler app. Reading, notes,
+/// Parts of Versely people can switch off for a simpler app. Reading, notes,
 /// highlights, bookmarks, search and the Bibles library are always there.
 /// Every optional feature gets its own case (see CLAUDE.md, Feature choices).
 enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
@@ -123,7 +123,7 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
     /// The switches that existed before every feature had its own.
     static let legacyKnown: Set<String> = ["listen", legacyPlansAndPrayer, "explore", "studyAssistant", "together"]
 
-    /// Switched on for someone who sets up Genesis without changing anything.
+    /// Switched on for someone who sets up Versely without changing anything.
     /// Groups and the community are opt-in.
     static let defaults: Set<OptionalFeature> = Set(allCases).subtracting([.together])
 }
@@ -146,7 +146,7 @@ final class FeaturePreferences {
     /// later starts the way that feature already was.
     private static let knownKey = "features.known"
 
-    /// `existingUser`: someone who set up Genesis before this screen existed
+    /// `existingUser`: someone who set up Versely before this screen existed
     /// keeps everything they already had.
     init(defaults: UserDefaults = .standard, existingUser: Bool = false) {
         self.defaults = defaults

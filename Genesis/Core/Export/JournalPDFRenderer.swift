@@ -4,7 +4,7 @@ import UIKit
 /// prayer or sermon with its notes (Markdown formatting kept), passages
 /// verbatim with the translation's abbreviation, photos and Pencil pages
 /// scaled to the page, recordings and PDFs listed, and a small "Made with
-/// Genesis" footer. Uses the reader's typeface and generous margins.
+/// Versely" footer. Uses the reader's typeface and generous margins.
 ///
 /// Ligatures are turned off so the PDF's text (and so the verses) can be
 /// searched and copied exactly as written.
@@ -29,7 +29,7 @@ struct JournalPDFRenderer: Sendable {
         let format = UIGraphicsPDFRendererFormat()
         format.documentInfo = [
             kCGPDFContextTitle as String: export.title,
-            kCGPDFContextCreator as String: "Genesis",
+            kCGPDFContextCreator as String: "Versely",
         ]
         let renderer = UIGraphicsPDFRenderer(bounds: CGRect(origin: .zero, size: pageSize), format: format)
         return renderer.pdfData { context in

@@ -69,14 +69,14 @@ HELLOAO = "https://bible.helloao.org"
 
 TYNDALE_NOTES_ATTRIBUTION = ("Adapted from Tyndale Open Study Notes. The original work by Tyndale House Publishers "
                              "is available for free at http://www.tyndaleopenresources.com. Copyright © 2022 Tyndale "
-                             "House Publishers, CC BY-SA 4.0. Changes: converted to Genesis's format; book introduction "
+                             "House Publishers, CC BY-SA 4.0. Changes: converted to Versely's format; book introduction "
                              "summaries, maps and pictures left out.")
 TYNDALE_DICT_ATTRIBUTION = ("Adapted from Tyndale Open Bible Dictionary. The original work by Tyndale House Publishers "
                             "is available for free at http://www.tyndaleopenresources.com. Copyright © 2023 Tyndale "
-                            "House Publishers, CC BY-SA 4.0. Changes: converted to Genesis's format; maps, pictures, "
+                            "House Publishers, CC BY-SA 4.0. Changes: converted to Versely's format; maps, pictures, "
                             "charts and text boxes left out.")
 PALABRAS_ATTRIBUTION = ("Palabras de Traducción, Copyright © 2022 Fundación Idiomas Puentes, CC BY-SA 4.0. Obra original "
-                        "disponible en unfoldingword.org/utw. Changes: converted to Genesis's format; the translation "
+                        "disponible en unfoldingword.org/utw. Changes: converted to Versely's format; the translation "
                         "suggestions for Bible translators left out; verse links from es-419_twl.")
 PD_HELLOAO = "Public domain. Text from the Free Use Bible API (bible.helloao.org)."
 PD_CROSSWIRE = "Public domain. Text from the CrossWire Bible Society's SWORD module."
@@ -87,15 +87,15 @@ PACKS = {
     "tyndale-notes": dict(kind="notes", name="Tyndale Open Study Notes", author="Tyndale House Publishers",
                           tradition="evangelical", language="en", license="CC BY-SA 4.0", premium=False, sort=1,
                           summary="Verse-by-verse study notes, book introductions, and articles on people and themes.",
-                          attribution=TYNDALE_NOTES_ATTRIBUTION, version=1),
+                          attribution=TYNDALE_NOTES_ATTRIBUTION, version=2),
     "tyndale-dictionary": dict(kind="dictionary", name="Tyndale Open Bible Dictionary", author="Tyndale House Publishers",
                                tradition="evangelical", language="en", license="CC BY-SA 4.0", premium=False, sort=2,
                                summary="Thousands of articles on the Bible's people, places, customs and ideas.",
-                               attribution=TYNDALE_DICT_ATTRIBUTION, version=1),
+                               attribution=TYNDALE_DICT_ATTRIBUTION, version=2),
     "es-palabras": dict(kind="dictionary", name="Palabras de Traducción", author="unfoldingWord · Fundación Idiomas Puentes",
                         tradition="evangelical", language="es", license="CC BY-SA 4.0", premium=False, sort=3,
                         summary="A Spanish dictionary of key Bible terms, names and ideas, linked to the verses that use them.",
-                        attribution=PALABRAS_ATTRIBUTION, version=1),
+                        attribution=PALABRAS_ATTRIBUTION, version=2),
     "jfb": dict(kind="commentary", name="Jamieson-Fausset-Brown Commentary", author="Robert Jamieson, A. R. Fausset, David Brown",
                 tradition="presbyterian", language="en", license="Public domain", premium=True, sort=10, year="1871",
                 summary="A concise, careful commentary on the whole Bible, verse by verse.",
@@ -584,7 +584,7 @@ def fetch_json(path, cache):
             return json.load(f)
     for attempt in range(4):
         try:
-            request = urllib.request.Request(HELLOAO + path, headers={"User-Agent": "GenesisStudyBuilder/1.0"})
+            request = urllib.request.Request(HELLOAO + path, headers={"User-Agent": "VerselyStudyBuilder/1.0"})
             with urllib.request.urlopen(request, timeout=60) as response:
                 data = response.read()
             os.makedirs(os.path.dirname(local), exist_ok=True)

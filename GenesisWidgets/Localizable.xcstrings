@@ -81,12 +81,12 @@
         }
       }
     },
-    "Add a verse to memorize in Genesis.": {
+    "Add a verse to memorize in Versely.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Añade un versículo para memorizar en Genesis."
+            "value": "Añade un versículo para memorizar en Versely."
           }
         }
       }
@@ -221,12 +221,12 @@
         }
       }
     },
-    "Follow your group's reading with Genesis Premium.": {
+    "Follow your group's reading with Versely Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sigue la lectura de tu grupo con Genesis Premium."
+            "value": "Sigue la lectura de tu grupo con Versely Premium."
           }
         }
       }
@@ -248,16 +248,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Génesis 1"
-          }
-        }
-      }
-    },
-    "Genesis Premium": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Genesis Premium"
           }
         }
       }
@@ -324,22 +314,22 @@
         }
       }
     },
-    "Keep your reading streak in view with Genesis Premium.": {
+    "Keep your reading streak in view with Versely Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ten tu racha de lectura a la vista con Genesis Premium."
+            "value": "Ten tu racha de lectura a la vista con Versely Premium."
           }
         }
       }
     },
-    "Larger verse widgets come with Genesis Premium.": {
+    "Larger verse widgets come with Versely Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Los widgets de versículo más grandes vienen con Genesis Premium."
+            "value": "Los widgets de versículo más grandes vienen con Versely Premium."
           }
         }
       }
@@ -384,22 +374,22 @@
         }
       }
     },
-    "Memorize Scripture is turned off in Genesis.": {
+    "Memorize Scripture is turned off in Versely.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Memorizar las Escrituras está desactivado en Genesis."
+            "value": "Memorizar las Escrituras está desactivado en Versely."
           }
         }
       }
     },
-    "Memorize Scripture with Genesis Premium.": {
+    "Memorize Scripture with Versely Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Memoriza las Escrituras con Genesis Premium."
+            "value": "Memoriza las Escrituras con Versely Premium."
           }
         }
       }
@@ -454,32 +444,32 @@
         }
       }
     },
-    "Open Genesis": {
+    "Open Versely": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Abrir Genesis"
+            "value": "Abrir Versely"
           }
         }
       }
     },
-    "Open Genesis to see today's reading from %@.": {
+    "Open Versely to see today's reading from %@.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Abre Genesis para ver la lectura de hoy de %@."
+            "value": "Abre Versely para ver la lectura de hoy de %@."
           }
         }
       }
     },
-    "Open a group with a reading plan in Genesis to see its progress here.": {
+    "Open a group with a reading plan in Versely to see its progress here.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Abre en Genesis un grupo con plan de lectura para ver aquí su progreso."
+            "value": "Abre en Versely un grupo con plan de lectura para ver aquí su progreso."
           }
         }
       }
@@ -504,12 +494,12 @@
         }
       }
     },
-    "Pick up where you left off with Genesis Premium.": {
+    "Pick up where you left off with Versely Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Retoma donde lo dejaste con Genesis Premium."
+            "value": "Retoma donde lo dejaste con Versely Premium."
           }
         }
       }
@@ -645,22 +635,22 @@
         }
       }
     },
-    "See your next prayer reminder with Genesis Premium.": {
+    "See your next prayer reminder with Versely Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ve tu próximo recordatorio de oración con Genesis Premium."
+            "value": "Ve tu próximo recordatorio de oración con Versely Premium."
           }
         }
       }
     },
-    "See your plan, streak and prayers at a glance with Genesis Premium.": {
+    "See your plan, streak and prayers at a glance with Versely Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ve tu plan, tu racha y tus oraciones de un vistazo con Genesis Premium."
+            "value": "Ve tu plan, tu racha y tus oraciones de un vistazo con Versely Premium."
           }
         }
       }
@@ -675,12 +665,12 @@
         }
       }
     },
-    "Start a reading plan in Genesis to see today's reading here.": {
+    "Start a reading plan in Versely to see today's reading here.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Empieza un plan de lectura en Genesis para ver aquí la lectura de hoy."
+            "value": "Empieza un plan de lectura en Versely para ver aquí la lectura de hoy."
           }
         }
       }
@@ -715,12 +705,12 @@
         }
       }
     },
-    "Tick off your daily reading with Genesis Premium.": {
+    "Tick off your daily reading with Versely Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Marca tu lectura diaria con Genesis Premium."
+            "value": "Marca tu lectura diaria con Versely Premium."
           }
         }
       }
@@ -796,22 +786,32 @@
         }
       }
     },
-    "Verses from your own reading come with Genesis Premium.": {
+    "Versely Premium": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Los versículos de tu propia lectura vienen con Genesis Premium."
+            "value": "Versely Premium"
           }
         }
       }
     },
-    "Verses on hope, peace and more come with Genesis Premium.": {
+    "Verses from your own reading come with Versely Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Los versículos sobre esperanza, paz y más vienen con Genesis Premium."
+            "value": "Los versículos de tu propia lectura vienen con Versely Premium."
+          }
+        }
+      }
+    },
+    "Verses on hope, peace and more come with Versely Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los versículos sobre esperanza, paz y más vienen con Versely Premium."
           }
         }
       }

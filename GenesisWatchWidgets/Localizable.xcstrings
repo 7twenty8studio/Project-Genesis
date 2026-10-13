@@ -1,32 +1,32 @@
 {
   "sourceLanguage": "en",
   "strings": {
-    "A new verse each morning, from Genesis on your iPhone.": {
+    "A new verse each morning, from Versely on your iPhone.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Un versículo nuevo cada mañana, desde Genesis en tu iPhone."
+            "value": "Un versículo nuevo cada mañana, desde Versely en tu iPhone."
           }
         }
       }
     },
-    "Open Genesis on your iPhone.": {
+    "Open Versely on your iPhone.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Abre Genesis en tu iPhone."
+            "value": "Abre Versely en tu iPhone."
           }
         }
       }
     },
-    "Part of Genesis Premium.": {
+    "Part of Versely Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Parte de Genesis Premium."
+            "value": "Parte de Versely Premium."
           }
         }
       }

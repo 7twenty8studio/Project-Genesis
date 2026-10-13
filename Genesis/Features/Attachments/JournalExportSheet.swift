@@ -158,7 +158,7 @@ enum JournalExportFile {
         let cleaned = title.components(separatedBy: unsafe).joined(separator: " ")
             .split(whereSeparator: \.isWhitespace).joined(separator: " ")
         let short = String(cleaned.prefix(80)).trimmingCharacters(in: .whitespaces)
-        return (short.isEmpty ? "Genesis" : short) + ".pdf"
+        return (short.isEmpty ? "Versely" : short) + ".pdf"
     }
 
     static func write(_ data: Data, named name: String) -> URL? {

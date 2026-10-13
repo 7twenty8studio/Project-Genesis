@@ -10,4 +10,4 @@ GENESIS_WIDGET_ENTITLEMENTS = Config/GenesisWidgets.entitlements
 GENESIS_WATCH_ENTITLEMENTS = Config/GenesisWidgets.entitlements
 // Attachment files sync through the person's iCloud (CloudKit). The same
 // container is in Config/Genesis.entitlements.
-GENESIS_ICLOUD_CONTAINER = iCloud.com.7twenty8studio.genesis
+GENESIS_ICLOUD_CONTAINER = iCloud.com.7twenty8studio.versely

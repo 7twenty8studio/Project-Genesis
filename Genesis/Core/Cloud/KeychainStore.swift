@@ -6,7 +6,7 @@ import Security
 struct KeychainStore: Sendable {
     let service: String
 
-    init(service: String = "com.7twenty8studio.genesis.auth") {
+    init(service: String = "com.7twenty8studio.versely.auth") {
         self.service = service
     }
 

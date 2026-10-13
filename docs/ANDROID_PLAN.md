@@ -1,9 +1,9 @@
-# Genesis for Android: plan
+# Versely for Android: plan
 
 This is the plan for the Android rewrite (PRD Phase 4, "Android planning").
 Android is a native rewrite, not a port: the iOS app stays SwiftUI, and the
 Android app is Kotlin with Jetpack Compose. Both share the Supabase backend,
-the Bible databases and the study data, so most of what makes Genesis work
+the Bible databases and the study data, so most of what makes Versely work
 is reused as-is.
 
 ## Goals

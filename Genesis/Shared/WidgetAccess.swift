@@ -31,7 +31,7 @@ enum WidgetSize: CaseIterable, Sendable {
 /// as the small and medium Home Screen widget and on the Lock Screen, showing
 /// the verse of the day or a random verse. Its large size, its Premium
 /// options (categories, From Your Reading) and every other widget need
-/// Genesis Premium (`PremiumFeature.widgets`). Widgets keep all their sizes
+/// Versely Premium (`PremiumFeature.widgets`). Widgets keep all their sizes
 /// and options in the gallery and show a calm locked card instead.
 enum WidgetAccess {
     static func isFree(kind: WidgetKind, size: WidgetSize) -> Bool {

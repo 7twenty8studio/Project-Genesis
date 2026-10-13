@@ -1,6 +1,6 @@
 import Foundation
 
-/// What Genesis Premium unlocks (from the PRD's Premium Features list).
+/// What Versely Premium unlocks (from the PRD's Premium Features list).
 enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
     case morningWelcome
     case wordStudy
@@ -95,15 +95,15 @@ enum PremiumPlan: String, CaseIterable, Sendable {
     }
 }
 
-/// Genesis Premium subscriptions, all in one App Store subscription group (so
+/// Versely Premium subscriptions, all in one App Store subscription group (so
 /// switching plans is an upgrade or downgrade, never two subscriptions).
 /// Prices live in App Store Connect (and in Config/Genesis.storekit for local
 /// testing); these are fallbacks for display before the App Store answers.
 enum PremiumProduct: String, CaseIterable, Sendable {
-    case monthly = "com.7twenty8studio.genesis.premium.monthly"
-    case yearly = "com.7twenty8studio.genesis.premium.yearly"
-    case familyMonthly = "com.7twenty8studio.genesis.premium.family.monthly"
-    case familyYearly = "com.7twenty8studio.genesis.premium.family.yearly"
+    case monthly = "com.7twenty8studio.versely.premium.monthly"
+    case yearly = "com.7twenty8studio.versely.premium.yearly"
+    case familyMonthly = "com.7twenty8studio.versely.premium.family.monthly"
+    case familyYearly = "com.7twenty8studio.versely.premium.family.yearly"
 
     static func product(_ plan: PremiumPlan, yearly: Bool) -> PremiumProduct {
         switch plan {

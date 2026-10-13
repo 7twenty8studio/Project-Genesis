@@ -116,7 +116,7 @@ struct YearBooksCard: View {
     }
 }
 
-/// The shared frame of a card: paper, "MY YEAR WITH GENESIS", the year and
+/// The shared frame of a card: paper, "MY YEAR WITH VERSELY", the year and
 /// the card's own content.
 private struct YearCardPage<Content: View>: View {
     let year: Int
@@ -131,7 +131,7 @@ private struct YearCardPage<Content: View>: View {
                 .resizable(resizingMode: .tile)
             VStack(alignment: .leading, spacing: 56) {
                 HStack(alignment: .firstTextBaseline) {
-                    Text("MY YEAR WITH GENESIS")
+                    Text("MY YEAR WITH VERSELY")
                         .font(.system(size: 28, weight: .semibold))
                         .kerning(3)
                         .foregroundStyle(palette.accent)

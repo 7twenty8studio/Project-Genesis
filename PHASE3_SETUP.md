@@ -25,7 +25,7 @@ front.
    `study_assistant` row. Or in the SQL Editor:
    `update public.feature_flags set enabled = true, updated_at = now() where key = 'study_assistant';`
 3. **Turn it off again:** set `enabled` back to `false`. Devices pick it up the
-   next time Genesis opens; a device that's offline keeps its last setting
+   next time Versely opens; a device that's offline keeps its last setting
    (a new install starts off).
 
 Until you turn it on you can skip steps 2 and 3; no Anthropic account is needed.
@@ -100,12 +100,12 @@ Photos, voice recordings, PDFs and Pencil pages on prayers and sermon notes
    `supabase functions deploy delete-account`.
 
 Attachment files now sync through each person's own iCloud (CloudKit), so
-they cost Genesis nothing to store; the bucket only holds files from earlier
+they cost Versely nothing to store; the bucket only holds files from earlier
 versions, which the app moves to iCloud and removes. The table above still
 syncs the attachment details.
 
 3. iCloud: Config/Signing.xcconfig needs
-   `GENESIS_ICLOUD_CONTAINER = iCloud.com.7twenty8studio.genesis` (see
+   `GENESIS_ICLOUD_CONTAINER = iCloud.com.7twenty8studio.versely` (see
    Signing.example.xcconfig); Config/Genesis.entitlements already lists the
    container and CloudKit. In Xcode › Genesis target › Signing & Capabilities,
    check that iCloud shows CloudKit with that container ticked (Xcode

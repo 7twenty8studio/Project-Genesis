@@ -1,10 +1,10 @@
 import Foundation
 
-/// The language Genesis's screens are shown in: English or Spanish.
+/// The language Versely's screens are shown in: English or Spanish.
 ///
-/// People choose it in the iPhone's Settings › Apps › Genesis › Language (iOS
+/// People choose it in the iPhone's Settings › Apps › Versely › Language (iOS
 /// offers this for every app with more than one language, and restarts the
-/// app when it changes), or it follows the iPhone's own language. Genesis
+/// app when it changes), or it follows the iPhone's own language. Versely
 /// doesn't keep its own copy of the choice.
 enum AppLanguage {
     /// Languages the screens are translated into.

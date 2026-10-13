@@ -10,14 +10,14 @@
 // ---------------------------------------------------------------------------
 // The app's subscriptions
 
-export const DEFAULT_BUNDLE_ID = "com.7twenty8studio.genesis";
+export const DEFAULT_BUNDLE_ID = "com.7twenty8studio.versely";
 
 /** Individual (one person) and Family (shared through Family Sharing) plans. */
 export const PRODUCT_IDS: readonly string[] = [
-  "com.7twenty8studio.genesis.premium.monthly",
-  "com.7twenty8studio.genesis.premium.yearly",
-  "com.7twenty8studio.genesis.premium.family.monthly",
-  "com.7twenty8studio.genesis.premium.family.yearly",
+  "com.7twenty8studio.versely.premium.monthly",
+  "com.7twenty8studio.versely.premium.yearly",
+  "com.7twenty8studio.versely.premium.family.monthly",
+  "com.7twenty8studio.versely.premium.family.yearly",
 ];
 
 export const APPLE_ROOT_URL = "https://www.apple.com/certificateauthority/AppleRootCA-G3.cer";
@@ -106,7 +106,7 @@ export async function verifySignedData(jws: string, options: SignatureOptions): 
   return payload as Record<string, unknown>;
 }
 
-/** The fields Genesis uses from a transaction payload (JWSTransactionDecodedPayload). */
+/** The fields Versely uses from a transaction payload (JWSTransactionDecodedPayload). */
 export function transactionFromPayload(payload: Record<string, unknown>): VerifiedTransaction {
   return {
     familyShared: payload.inAppOwnershipType === "FAMILY_SHARED",

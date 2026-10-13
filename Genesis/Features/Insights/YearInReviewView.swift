@@ -1,7 +1,7 @@
 import SwiftData
 import SwiftUI
 
-/// "Your year with Genesis": a few pages to swipe through (days, time,
+/// "Your year with Versely": a few pages to swipe through (days, time,
 /// chapters, highlights, notes and prayers), ending with a summary to share.
 /// Free for everyone; built from what's on this device. With Reading insights
 /// (Premium) the share holds two more cards: the days and the books.
@@ -53,7 +53,7 @@ struct YearInReviewView: View {
                     QuietEmptyState(
                         systemImage: "calendar",
                         title: String(localized: "Nothing to review yet"),
-                        message: String(localized: "Read, highlight and pray with Genesis this year, and your year in review will appear here.")
+                        message: String(localized: "Read, highlight and pray with Versely this year, and your year in review will appear here.")
                     )
                 }
             }
@@ -86,7 +86,7 @@ struct YearInReviewView: View {
         let year = self.year
         return ShareLink(
             items: shareImages.map { Image(uiImage: $0) },
-            preview: { image in SharePreview(Text("My \(String(year)) with Genesis"), image: image) }
+            preview: { image in SharePreview(Text("My \(String(year)) with Versely"), image: image) }
         ) {
             Label("Share", systemImage: "square.and.arrow.up")
         }
@@ -120,7 +120,7 @@ struct YearInReviewView: View {
     private func pages(_ review: YearInReview) -> [AnyView] {
         var pages: [AnyView] = []
         pages.append(AnyView(
-            ReviewPage(symbol: "sparkles", eyebrow: String(localized: "Your year with Genesis"), big: String(year), detail: String(localized: "Swipe to look back on what you read, highlighted and prayed."), font: font)
+            ReviewPage(symbol: "sparkles", eyebrow: String(localized: "Your year with Versely"), big: String(year), detail: String(localized: "Swipe to look back on what you read, highlighted and prayed."), font: font)
         ))
         if review.daysRead > 0 {
             pages.append(AnyView(
@@ -298,7 +298,7 @@ struct YearSummaryCard: View {
                 .resizable(resizingMode: .tile)
             VStack(alignment: .leading, spacing: 46) {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("MY YEAR WITH GENESIS")
+                    Text("MY YEAR WITH VERSELY")
                         .font(.system(size: 28, weight: .semibold))
                         .kerning(3)
                         .foregroundStyle(palette.accent)

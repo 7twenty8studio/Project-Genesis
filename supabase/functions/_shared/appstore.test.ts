@@ -78,8 +78,8 @@ function sign(payload: object, key = leafKey, x5c = chain): string {
 
 const now = new Date();
 const valid = {
-  bundleId: "com.7twenty8studio.genesis",
-  productId: "com.7twenty8studio.genesis.premium.yearly",
+  bundleId: "com.7twenty8studio.versely",
+  productId: "com.7twenty8studio.versely.premium.yearly",
   originalTransactionId: "2000000123",
   expiresDate: now.getTime() + 86_400_000,
   signedDate: now.getTime(),
@@ -88,8 +88,8 @@ const valid = {
 };
 const options = {
   appleRoot: rootDer,
-  bundleId: "com.7twenty8studio.genesis",
-  productIds: ["com.7twenty8studio.genesis.premium.monthly", "com.7twenty8studio.genesis.premium.yearly"],
+  bundleId: "com.7twenty8studio.versely",
+  productIds: ["com.7twenty8studio.versely.premium.monthly", "com.7twenty8studio.versely.premium.yearly"],
   now,
 };
 
@@ -110,7 +110,7 @@ test("rejects expired, refunded, other apps and other products", async () => {
   await assert.rejects(verifyTransaction(sign({ ...valid, expiresDate: now.getTime() - 1 }), options), VerificationError);
   await assert.rejects(verifyTransaction(sign({ ...valid, revocationDate: now.getTime() }), options), VerificationError);
   await assert.rejects(verifyTransaction(sign({ ...valid, bundleId: "com.example.other" }), options), VerificationError);
-  await assert.rejects(verifyTransaction(sign({ ...valid, productId: "com.7twenty8studio.genesis.coins" }), options), VerificationError);
+  await assert.rejects(verifyTransaction(sign({ ...valid, productId: "com.7twenty8studio.versely.coins" }), options), VerificationError);
 });
 
 test("rejects a tampered payload", async () => {
@@ -154,10 +154,10 @@ test("DER signatures convert to raw r||s", () => {
 
 test("the four Premium products", () => {
   assert.deepEqual([...PRODUCT_IDS].sort(), [
-    "com.7twenty8studio.genesis.premium.family.monthly",
-    "com.7twenty8studio.genesis.premium.family.yearly",
-    "com.7twenty8studio.genesis.premium.monthly",
-    "com.7twenty8studio.genesis.premium.yearly",
+    "com.7twenty8studio.versely.premium.family.monthly",
+    "com.7twenty8studio.versely.premium.family.yearly",
+    "com.7twenty8studio.versely.premium.monthly",
+    "com.7twenty8studio.versely.premium.yearly",
   ]);
 });
 
@@ -167,8 +167,8 @@ test("the four Premium products", () => {
 const user = "6f9619ff-8b86-d011-b42d-00c04fc964ff";
 const purchase = {
   familyShared: false,
-  bundleId: "com.7twenty8studio.genesis",
-  productId: "com.7twenty8studio.genesis.premium.yearly",
+  bundleId: "com.7twenty8studio.versely",
+  productId: "com.7twenty8studio.versely.premium.yearly",
   originalTransactionId: "2000000123",
   expiresDate: now.getTime() + 86_400_000,
   environment: "Production",
@@ -206,7 +206,7 @@ function notification(type: string, subtype?: string, transaction: object = vali
     version: "2.0",
     signedDate: now.getTime(),
     data: {
-      bundleId: "com.7twenty8studio.genesis",
+      bundleId: "com.7twenty8studio.versely",
       environment: "Sandbox",
       signedTransactionInfo: sign(transaction),
       ...(renewal ? { signedRenewalInfo: sign(renewal) } : {}),
@@ -224,7 +224,7 @@ test("decodes a notification with its transaction and renewal info", async () =>
   assert.equal(decoded.notificationType, "DID_FAIL_TO_RENEW");
   assert.equal(decoded.subtype, "GRACE_PERIOD");
   assert.equal(decoded.environment, "Sandbox");
-  assert.equal(decoded.bundleId, "com.7twenty8studio.genesis");
+  assert.equal(decoded.bundleId, "com.7twenty8studio.versely");
   assert.equal(decoded.transaction?.originalTransactionId, "2000000123");
   assert.equal(decoded.transaction?.expiresDate, now.getTime() - 1, "expired transactions still decode here");
   assert.equal(decoded.renewal?.gracePeriodExpiresDate, grace);
@@ -232,7 +232,7 @@ test("decodes a notification with its transaction and renewal info", async () =>
 
 test("a TEST notification has no transaction", async () => {
   const decoded = await decodeNotification(
-    sign({ notificationType: "TEST", notificationUUID: "u", signedDate: now.getTime(), data: { bundleId: "com.7twenty8studio.genesis", environment: "Production" } }),
+    sign({ notificationType: "TEST", notificationUUID: "u", signedDate: now.getTime(), data: { bundleId: "com.7twenty8studio.versely", environment: "Production" } }),
     { appleRoot: rootDer, now },
   );
   assert.equal(decoded.notificationType, "TEST");
@@ -249,7 +249,7 @@ test("rejects notifications that aren't signed by Apple, inside or out", async (
     notificationType: "SUBSCRIBED",
     notificationUUID: "u",
     signedDate: now.getTime(),
-    data: { bundleId: "com.7twenty8studio.genesis", environment: "Production", signedTransactionInfo: sign(valid, fakeKey, fakeChain) },
+    data: { bundleId: "com.7twenty8studio.versely", environment: "Production", signedTransactionInfo: sign(valid, fakeKey, fakeChain) },
   });
   await assert.rejects(decodeNotification(forgedInside, { appleRoot: rootDer, now }), VerificationError);
   // Xcode signatures are never accepted for notifications.

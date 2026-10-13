@@ -175,7 +175,7 @@ struct CommunityGuidelinesView: View {
     static let rules: [(String, String)] = [
         ("heart", String(localized: "Be kind. Encourage one another and disagree gently.")),
         ("hand.raised", String(localized: "No abuse, harassment, hate, sexual content or threats. There's no tolerance for objectionable content or abusive users.")),
-        ("lock", String(localized: "Keep others' private details private. Don't share anyone's prayer request outside Genesis.")),
+        ("lock", String(localized: "Keep others' private details private. Don't share anyone's prayer request outside Versely.")),
         ("megaphone", String(localized: "No advertising, spam or fundraising.")),
         ("flag", String(localized: "Report anything that breaks these rules. Reported posts are reviewed, and people who break them are removed.")),
     ]
@@ -196,7 +196,7 @@ struct CommunityGuidelinesView: View {
                                 .foregroundStyle(palette.text)
                         }
                     }
-                    Text("Posts are public to everyone signed in to Genesis. You can block anyone, and report any post or comment.")
+                    Text("Posts are public to everyone signed in to Versely. You can block anyone, and report any post or comment.")
                         .font(.footnote)
                         .foregroundStyle(palette.secondaryText)
                     if let error = community.errorMessage {

@@ -55,8 +55,8 @@ struct TranslationGuideView: View {
                     .listRowBackground(palette.surface)
 
                     Section {
-                        explanation(TranslationRights.publicDomain.title, String(localized: "Free for anyone to read and share. Every Bible in Genesis today is public domain."), systemImage: "checkmark.seal")
-                        explanation(TranslationRights.licensed.title, String(localized: "Used with the publisher's permission. Genesis will add licensed Bibles as agreements allow."), systemImage: "doc.text")
+                        explanation(TranslationRights.publicDomain.title, String(localized: "Free for anyone to read and share. Every Bible in Versely today is public domain."), systemImage: "checkmark.seal")
+                        explanation(TranslationRights.licensed.title, String(localized: "Used with the publisher's permission. Versely will add licensed Bibles as agreements allow."), systemImage: "doc.text")
                         explanation(String(localized: "Audio"), String(localized: "Every Bible can be read aloud by a device voice. Some also have a recording by a narrator."), systemImage: "waveform")
                     } header: {
                         Text("Rights and audio")

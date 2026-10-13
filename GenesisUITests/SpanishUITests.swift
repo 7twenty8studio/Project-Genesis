@@ -1,6 +1,6 @@
 import XCTest
 
-/// Genesis in Spanish: the screens follow the language chosen for the app.
+/// Versely in Spanish: the screens follow the language chosen for the app.
 /// Other tests run in English and find things by English labels; these launch
 /// in Spanish and find things by identifier.
 final class SpanishUITests: GenesisUITestCase {

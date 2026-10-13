@@ -340,7 +340,7 @@ enum CommunityError: LocalizedError, Equatable {
             return .message(error.localizedDescription)
         }
         let friendly: [String: String] = [
-            "objectionable_content": String(localized: "Please rephrase. Some words aren't allowed in Genesis."),
+            "objectionable_content": String(localized: "Please rephrase. Some words aren't allowed in Versely."),
             "rate_limited": String(localized: "You've posted a lot in the last hour. Please try again later."),
             "name_required": String(localized: "Choose a display name first."),
             "invalid_name": String(localized: "Display names are 1 to 40 characters."),

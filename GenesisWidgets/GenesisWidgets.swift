@@ -98,7 +98,7 @@ struct ContinueReadingView: View {
         if entry.snapshot.unlocks(.continueReading, in: family) {
             readingView
         } else {
-            PremiumLockedView(message: String(localized: "Pick up where you left off with Genesis Premium."), symbol: "book")
+            PremiumLockedView(message: String(localized: "Pick up where you left off with Versely Premium."), symbol: "book")
         }
     }
 
@@ -108,7 +108,7 @@ struct ContinueReadingView: View {
         return Group {
             switch family {
             case .accessoryInline:
-                Label(reading?.reference ?? String(localized: "Open Genesis"), systemImage: "book")
+                Label(reading?.reference ?? String(localized: "Open Versely"), systemImage: "book")
             case .accessoryRectangular:
                 VStack(alignment: .leading, spacing: 2) {
                     Label("Continue", systemImage: "book").font(.caption)
@@ -160,7 +160,7 @@ struct ReadingProgressView: View {
         if entry.snapshot.unlocks(.readingProgress, in: family) {
             progressView(WidgetColors(entry.snapshot))
         } else {
-            PremiumLockedView(message: String(localized: "See your plan, streak and prayers at a glance with Genesis Premium."), symbol: "chart.bar")
+            PremiumLockedView(message: String(localized: "See your plan, streak and prayers at a glance with Versely Premium."), symbol: "chart.bar")
         }
     }
 
@@ -263,7 +263,7 @@ struct StreakView: View {
         if entry.snapshot.unlocks(.streak, in: family) {
             streakView
         } else {
-            PremiumLockedView(message: String(localized: "Keep your reading streak in view with Genesis Premium."), symbol: "flame")
+            PremiumLockedView(message: String(localized: "Keep your reading streak in view with Versely Premium."), symbol: "flame")
         }
     }
 
@@ -307,7 +307,7 @@ struct PrayerReminderView: View {
         if entry.snapshot.unlocks(.prayerReminder, in: family) {
             prayerView
         } else {
-            PremiumLockedView(message: String(localized: "See your next prayer reminder with Genesis Premium."), symbol: "hands.and.sparkles")
+            PremiumLockedView(message: String(localized: "See your next prayer reminder with Versely Premium."), symbol: "hands.and.sparkles")
         }
     }
 

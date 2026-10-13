@@ -1,4 +1,4 @@
-# Building Genesis
+# Building Versely
 
 You need a Mac with **Xcode 27.1 or later** (the iPhone Duo simulator arrived in
 Xcode 27.1 beta), its **iOS simulator platform**, and **Homebrew**.
@@ -25,7 +25,7 @@ beta, point the command line at it once: `sudo xcode-select -s /Applications/Xco
    ./Scripts/build.sh --open
    ```
    This installs XcodeGen if needed, generates `Genesis.xcodeproj`, builds the
-   app, runs the unit tests, launches Genesis in the **iPhone Duo** simulator
+   app, runs the unit tests, launches Versely in the **iPhone Duo** simulator
    (creating one if needed) and opens the project in Xcode.
    - Another simulator: `SIMULATOR="iPhone 17 Pro" ./Scripts/build.sh`
    - Skip tests: `./Scripts/build.sh --no-tests`
@@ -35,7 +35,7 @@ beta, point the command line at it once: `sudo xcode-select -s /Applications/Xco
 
 ## Automated UI tests
 
-UI tests launch Genesis in the Simulator and use it like a person would:
+UI tests launch Versely in the Simulator and use it like a person would:
 onboarding, turning pages, the controls, chapter navigation, highlighting,
 notes, bookmarks, search and reading settings. Each test starts from a clean
 slate (a `-uiTesting` launch flag wipes settings and keeps notes in memory).
@@ -94,7 +94,7 @@ copy (⌘C) and paste.
 
 In Xcode select the **Genesis** target → **Signing & Capabilities**, choose your
 team (a free personal team works for testing), then pick your device and ⌘R.
-The bundle ID is `com.7twenty8studio.genesis`; change it there if Xcode reports
+The bundle ID is `com.7twenty8studio.versely`; change it there if Xcode reports
 it's taken.
 
 ## Rebuilding the Bible databases (rarely needed)

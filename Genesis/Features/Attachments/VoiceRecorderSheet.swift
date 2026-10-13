@@ -89,7 +89,7 @@ struct VoiceRecorderSheet: View {
     private var statusText: some View {
         switch recorder.state {
         case .denied:
-            Text("Genesis can't use the microphone. Turn it on in Settings › Privacy & Security › Microphone.")
+            Text("Versely can't use the microphone. Turn it on in Settings › Privacy & Security › Microphone.")
                 .font(.footnote)
                 .foregroundStyle(.orange)
         case .failed:

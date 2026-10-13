@@ -18,7 +18,7 @@ struct WhatsNewView: View {
                             .foregroundStyle(palette.text)
                             .accessibilityAddTraits(.isHeader)
                             .accessibilityIdentifier("whatsNew.title")
-                        Text("Here's what has been added to Genesis.")
+                        Text("Here's what has been added to Versely.")
                             .font(.subheadline)
                             .foregroundStyle(palette.secondaryText)
                     }

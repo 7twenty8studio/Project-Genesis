@@ -84,7 +84,7 @@ final class AppRouter {
         homePath = [route]
     }
 
-    /// Handles genesis:// links from widgets and notifications.
+    /// Handles versely:// links from widgets and notifications.
     func handle(_ url: URL) {
         guard url.scheme == GenesisLink.scheme else { return }
         // Sign in with Google's return address belongs to its web sheet.

@@ -1,7 +1,7 @@
 import StoreKit
 import SwiftUI
 
-/// The Genesis Premium screen: what it includes, Individual or Family, monthly
+/// The Versely Premium screen: what it includes, Individual or Family, monthly
 /// or yearly, restore, and
 /// the subscription terms App Review requires.
 struct PremiumView: View {
@@ -39,7 +39,7 @@ struct PremiumView: View {
                 .frame(maxWidth: .infinity)
             }
             .themedScreen()
-            .navigationTitle("Genesis Premium")
+            .navigationTitle("Versely Premium")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -59,7 +59,7 @@ struct PremiumView: View {
             Image(systemName: "sparkles")
                 .font(.title)
                 .foregroundStyle(palette.accent)
-            Text(entitlements.isPremium ? "You have Genesis Premium" : "Go deeper with Premium")
+            Text(entitlements.isPremium ? "You have Versely Premium" : "Go deeper with Premium")
                 .font(.system(.title, design: .serif, weight: .semibold))
                 .foregroundStyle(palette.text)
             if !entitlements.isPremium {

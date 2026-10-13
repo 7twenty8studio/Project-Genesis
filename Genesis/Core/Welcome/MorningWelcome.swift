@@ -1,7 +1,7 @@
 import Foundation
 import Observation
 
-/// The Premium morning welcome: the first time Genesis opens each day, a
+/// The Premium morning welcome: the first time Versely opens each day, a
 /// quiet screen greets the person by name, shows today's verse and reading,
 /// and eases in their ambient sounds. Settings › Morning Welcome turns it off,
 /// sets the name and whether sounds play.

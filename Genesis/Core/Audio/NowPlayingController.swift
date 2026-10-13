@@ -60,7 +60,7 @@ final class NowPlayingController {
         var info: [String: Any] = [
             MPMediaItemPropertyTitle: title,
             MPMediaItemPropertyArtist: subtitle,
-            MPMediaItemPropertyAlbumTitle: "Genesis",
+            MPMediaItemPropertyAlbumTitle: "Versely",
             MPNowPlayingInfoPropertyPlaybackRate: isPlaying ? speed : 0,
             MPNowPlayingInfoPropertyDefaultPlaybackRate: speed,
             MPNowPlayingInfoPropertyMediaType: MPNowPlayingInfoMediaType.audio.rawValue,

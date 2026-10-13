@@ -102,7 +102,7 @@ final class Attachment {
 }
 
 /// Size rules for attachments. There's no count limit: files live on the
-/// person's device and in their own iCloud, not in Genesis's storage.
+/// person's device and in their own iCloud, not in Versely's storage.
 enum AttachmentLimits {
     /// Photos are downscaled so the longer side is at most this many pixels
     /// (about 200–400 KB each), which keeps the person's iCloud and syncing light.

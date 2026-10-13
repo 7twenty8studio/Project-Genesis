@@ -46,7 +46,7 @@ targets:
       - target: GenesisWatch
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis
+        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.versely
         PRODUCT_NAME: Genesis
         # Empty until Config/Signing.xcconfig names your team (see APPLE_SETUP.md).
         CODE_SIGN_ENTITLEMENTS: $(GENESIS_APP_ENTITLEMENTS)
@@ -58,11 +58,13 @@ targets:
     info:
       path: Config/Genesis-Info.plist
       properties:
-        CFBundleDisplayName: Genesis
+        # The brand is Versely; targets and modules keep the code name Genesis.
+        CFBundleDisplayName: Versely
+        CFBundleName: Versely
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         # The screens are in English and Spanish (Localizable.xcstrings). Listing
-        # both makes iOS offer the choice under Settings › Apps › Genesis.
+        # both makes iOS offer the choice under Settings › Apps › Versely.
         CFBundleDevelopmentRegion: en
         CFBundleLocalizations: [en, es]
         ITSAppUsesNonExemptEncryption: false
@@ -75,8 +77,8 @@ targets:
         # through the system photo picker, which needs no permission. Spanish
         # in Genesis/Resources/InfoPlist.xcstrings, written by
         # Tools/Localization/build_catalogs.py from these lines and es.json.
-        NSCameraUsageDescription: "Genesis uses the camera only when you take a photo to add to a prayer or sermon notes."
-        NSMicrophoneUsageDescription: "Genesis uses the microphone only when you record a voice note for a prayer or sermon notes."
+        NSCameraUsageDescription: "Versely uses the camera only when you take a photo to add to a prayer or sermon notes."
+        NSMicrophoneUsageDescription: "Versely uses the microphone only when you record a voice note for a prayer or sermon notes."
         UILaunchScreen:
           UIColorName: LaunchBackground
         UIApplicationSceneManifest:
@@ -93,9 +95,9 @@ targets:
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
         CFBundleURLTypes:
-          - CFBundleURLName: com.7twenty8studio.genesis
+          - CFBundleURLName: com.7twenty8studio.versely
             CFBundleURLSchemes:
-              - genesis
+              - versely
         UIAppFonts:
           - AtkinsonHyperlegible-Regular.ttf
           - AtkinsonHyperlegible-Bold.ttf
@@ -137,14 +139,14 @@ targets:
         buildPhase: resources
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis.widgets
+        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.versely.widgets
         PRODUCT_NAME: GenesisWidgets
         CODE_SIGN_ENTITLEMENTS: $(GENESIS_WIDGET_ENTITLEMENTS)
         SKIP_INSTALL: YES
     info:
       path: Config/GenesisWidgets-Info.plist
       properties:
-        CFBundleDisplayName: Genesis
+        CFBundleDisplayName: Versely Widgets
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         CFBundleDevelopmentRegion: en
@@ -161,7 +163,7 @@ targets:
       - target: Genesis
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis.tests
+        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.versely.tests
         GENERATE_INFOPLIST_FILE: YES
 
   GenesisUITests:
@@ -173,7 +175,7 @@ targets:
       - target: Genesis
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis.uitests
+        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.versely.uitests
         GENERATE_INFOPLIST_FILE: YES
         TEST_TARGET_NAME: Genesis
 
@@ -193,7 +195,7 @@ targets:
       - target: GenesisWatchWidgets
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis.watch
+        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.versely.watch
         PRODUCT_NAME: GenesisWatch
         TARGETED_DEVICE_FAMILY: "4"
         CODE_SIGN_ENTITLEMENTS: $(GENESIS_WATCH_ENTITLEMENTS)
@@ -202,13 +204,13 @@ targets:
     info:
       path: Config/GenesisWatch-Info.plist
       properties:
-        CFBundleDisplayName: Genesis
+        CFBundleDisplayName: Versely
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         CFBundleDevelopmentRegion: en
         CFBundleLocalizations: [en, es]
         WKApplication: true
-        WKCompanionAppBundleIdentifier: com.7twenty8studio.genesis
+        WKCompanionAppBundleIdentifier: com.7twenty8studio.versely
 
   GenesisWatchWidgets:
     type: app-extension
@@ -221,7 +223,7 @@ targets:
         buildPhase: resources
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.genesis.watch.widgets
+        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.versely.watch.widgets
         PRODUCT_NAME: GenesisWatchWidgets
         TARGETED_DEVICE_FAMILY: "4"
         CODE_SIGN_ENTITLEMENTS: $(GENESIS_WATCH_ENTITLEMENTS)
@@ -229,7 +231,7 @@ targets:
     info:
       path: Config/GenesisWatchWidgets-Info.plist
       properties:
-        CFBundleDisplayName: Genesis
+        CFBundleDisplayName: Versely Widgets
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         CFBundleDevelopmentRegion: en

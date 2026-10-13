@@ -143,7 +143,7 @@ final class AuthService {
     /// delete-account Edge Function), then signs out. True when it worked.
     /// For a Sign in with Apple account, `appleAuthorizationCode` is a fresh
     /// code from confirming with Apple, which the function uses to revoke
-    /// Genesis's Apple tokens (App Store guideline 5.1.1(v)).
+    /// Versely's Apple tokens (App Store guideline 5.1.1(v)).
     func deleteAccount(appleAuthorizationCode: String? = nil) async -> Bool {
         guard let client else { return false }
         isWorking = true

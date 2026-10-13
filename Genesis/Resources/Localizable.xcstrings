@@ -885,12 +885,12 @@
         }
       }
     },
-    "A quiet greeting with today's verse the first time you open Genesis each day.": {
+    "A quiet greeting with today's verse the first time you open Versely each day.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Un saludo tranquilo con el versículo del día la primera vez que abres Genesis cada día."
+            "value": "Un saludo tranquilo con el versículo del día la primera vez que abres Versely cada día."
           }
         }
       }
@@ -4530,12 +4530,12 @@
         }
       }
     },
-    "Everyone signed in to Genesis can see and pray for these.": {
+    "Everyone signed in to Versely can see and pray for these.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Todos los que iniciaron sesión en Genesis pueden verlas y orar por ellas."
+            "value": "Todos los que iniciaron sesión en Versely pueden verlas y orar por ellas."
           }
         }
       }
@@ -4550,12 +4550,12 @@
         }
       }
     },
-    "Everything else in Genesis works on every iPhone and iPad that runs iOS 26. Groups, the community, sync and study notes need an internet connection; reading, listening with the device voice, search and your notes work offline.": {
+    "Everything else in Versely works on every iPhone and iPad that runs iOS 26. Groups, the community, sync and study notes need an internet connection; reading, listening with the device voice, search and your notes work offline.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Todo lo demás en Genesis funciona en cualquier iPhone y iPad con iOS 26. Los grupos, la comunidad, la sincronización y las notas de estudio necesitan conexión a internet; la lectura, escuchar con la voz del dispositivo, la búsqueda y tus notas funcionan sin conexión."
+            "value": "Todo lo demás en Versely funciona en cualquier iPhone y iPad con iOS 26. Los grupos, la comunidad, la sincronización y las notas de estudio necesitan conexión a internet; la lectura, escuchar con la voz del dispositivo, la búsqueda y tus notas funcionan sin conexión."
           }
         }
       }
@@ -5158,12 +5158,12 @@
         }
       }
     },
-    "Free for anyone to read and share. Every Bible in Genesis today is public domain.": {
+    "Free for anyone to read and share. Every Bible in Versely today is public domain.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cualquiera puede leerla y compartirla libremente. Hoy todas las Biblias de Genesis son de dominio público."
+            "value": "Cualquiera puede leerla y compartirla libremente. Hoy todas las Biblias de Versely son de dominio público."
           }
         }
       }
@@ -5275,97 +5275,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Género"
-          }
-        }
-      }
-    },
-    "Genesis": {
-      "comment": "App icon name: the standard icon",
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Genesis"
-          }
-        }
-      }
-    },
-    "Genesis Premium": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Genesis Premium"
-          }
-        }
-      }
-    },
-    "Genesis can't use the microphone. Turn it on in Settings › Privacy & Security › Microphone.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Genesis no puede usar el micrófono. Actívalo en Ajustes › Privacidad y seguridad › Micrófono."
-          }
-        }
-      }
-    },
-    "Genesis en español": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Genesis en español"
-          }
-        }
-      }
-    },
-    "Genesis in Spanish": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Genesis en español"
-          }
-        }
-      }
-    },
-    "Genesis is available in English and Spanish. Tap to choose in the Settings app; Genesis restarts in the new language.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Genesis está disponible en inglés y español. Toca para elegir en la app Ajustes; Genesis se reinicia en el nuevo idioma."
-          }
-        }
-      }
-    },
-    "Genesis offers public-domain translations. More will come as licenses allow.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Genesis ofrece traducciones de dominio público. Habrá más a medida que las licencias lo permitan."
-          }
-        }
-      }
-    },
-    "Genesis reads aloud and turns the pages as it goes, even with your phone locked.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Genesis lee en voz alta y pasa las páginas a medida que avanza, incluso con el teléfono bloqueado."
-          }
-        }
-      }
-    },
-    "Genesis, your way": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Genesis, a tu manera"
           }
         }
       }
@@ -5957,12 +5866,12 @@
         }
       }
     },
-    "Here's what has been added to Genesis.": {
+    "Here's what has been added to Versely.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Esto es lo nuevo en Genesis."
+            "value": "Esto es lo nuevo en Versely."
           }
         }
       }
@@ -6595,12 +6504,12 @@
         }
       }
     },
-    "It will download when you're online. If you added it on another device, open Genesis there so it can finish uploading.": {
+    "It will download when you're online. If you added it on another device, open Versely there so it can finish uploading.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Se descargará cuando tengas conexión. Si lo añadiste en otro dispositivo, abre Genesis allí para que termine de subirse."
+            "value": "Se descargará cuando tengas conexión. Si lo añadiste en otro dispositivo, abre Versely allí para que termine de subirse."
           }
         }
       }
@@ -6658,12 +6567,12 @@
         }
       }
     },
-    "Join %@ on Genesis to read and pray together. Open Together › Join with an Invite Code and enter %@.": {
+    "Join %@ on Versely to read and pray together. Open Together › Join with an Invite Code and enter %@.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Únete a %@ en Genesis para leer y orar juntos. Abre Juntos › Unirse con un código de invitación e ingresa %@."
+            "value": "Únete a %@ en Versely para leer y orar juntos. Abre Juntos › Unirse con un código de invitación e ingresa %@."
           }
         }
       }
@@ -6758,22 +6667,22 @@
         }
       }
     },
-    "Keep Genesis as simple as you like: turn listening, plans, explore and more on or off in Settings › Features (the gear on Home).": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mantén Genesis tan sencillo como quieras: activa o desactiva Escuchar, Planes, Explorar y más en Ajustes › Funciones (el engranaje en Inicio)."
-          }
-        }
-      }
-    },
     "Keep It Simple": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Mantenerlo sencillo"
+          }
+        }
+      }
+    },
+    "Keep Versely as simple as you like: turn listening, plans, explore and more on or off in Settings › Features (the gear on Home).": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantén Versely tan sencillo como quieras: activa o desactiva Escuchar, Planes, Explorar y más en Ajustes › Funciones (el engranaje en Inicio)."
           }
         }
       }
@@ -6788,12 +6697,12 @@
         }
       }
     },
-    "Keep others' private details private. Don't share anyone's prayer request outside Genesis.": {
+    "Keep others' private details private. Don't share anyone's prayer request outside Versely.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mantén en privado los datos personales de los demás. No compartas la petición de oración de nadie fuera de Genesis."
+            "value": "Mantén en privado los datos personales de los demás. No compartas la petición de oración de nadie fuera de Versely."
           }
         }
       }
@@ -7460,12 +7369,12 @@
         }
       }
     },
-    "MY YEAR WITH GENESIS": {
+    "MY YEAR WITH VERSELY": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "MI AÑO CON GENESIS"
+            "value": "MI AÑO CON VERSELY"
           }
         }
       }
@@ -7480,12 +7389,12 @@
         }
       }
     },
-    "Made with Genesis": {
+    "Made with Versely": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Hecho con Genesis"
+            "value": "Hecho con Versely"
           }
         }
       }
@@ -7522,16 +7431,6 @@
         }
       }
     },
-    "Make Genesis yours": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Haz tuyo Genesis"
-          }
-        }
-      }
-    },
     "Make Moderator": {
       "localizations": {
         "es": {
@@ -7558,6 +7457,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hacer propietario…"
+          }
+        }
+      }
+    },
+    "Make Versely yours": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Haz tuyo Versely"
           }
         }
       }
@@ -8272,12 +8181,12 @@
         }
       }
     },
-    "My %@ with Genesis": {
+    "My %@ with Versely": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mi %@ con Genesis"
+            "value": "Mi %@ con Versely"
           }
         }
       }
@@ -8638,12 +8547,12 @@
         }
       }
     },
-    "Night and the seasonal icons come with Genesis Premium.": {
+    "Night and the seasonal icons come with Versely Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Noche y los iconos de temporada vienen con Genesis Premium."
+            "value": "Noche y los iconos de temporada vienen con Versely Premium."
           }
         }
       }
@@ -8979,12 +8888,12 @@
         }
       }
     },
-    "Not a passage Genesis recognizes": {
+    "Not a passage Versely recognizes": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Genesis no reconoce este pasaje"
+            "value": "Versely no reconoce este pasaje"
           }
         }
       }
@@ -9141,12 +9050,12 @@
         }
       }
     },
-    "Notifications are off for Genesis. Turn them on in Settings to get reminders.": {
+    "Notifications are off for Versely. Turn them on in Settings to get reminders.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Las notificaciones de Genesis están desactivadas. Actívalas en Ajustes para recibir recordatorios."
+            "value": "Las notificaciones de Versely están desactivadas. Actívalas en Ajustes para recibir recordatorios."
           }
         }
       }
@@ -10168,12 +10077,12 @@
         }
       }
     },
-    "Please rephrase. Some words aren't allowed in Genesis.": {
+    "Please rephrase. Some words aren't allowed in Versely.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Escríbelo de otra forma. Algunas palabras no están permitidas en Genesis."
+            "value": "Escríbelo de otra forma. Algunas palabras no están permitidas en Versely."
           }
         }
       }
@@ -10239,12 +10148,12 @@
         }
       }
     },
-    "Posts are public to everyone signed in to Genesis. You can block anyone, and report any post or comment.": {
+    "Posts are public to everyone signed in to Versely. You can block anyone, and report any post or comment.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Las publicaciones son visibles para todos los que iniciaron sesión en Genesis. Puedes bloquear a cualquiera y reportar cualquier publicación o comentario."
+            "value": "Las publicaciones son visibles para todos los que iniciaron sesión en Versely. Puedes bloquear a cualquiera y reportar cualquier publicación o comentario."
           }
         }
       }
@@ -11335,12 +11244,12 @@
         }
       }
     },
-    "Read, highlight and pray with Genesis this year, and your year in review will appear here.": {
+    "Read, highlight and pray with Versely this year, and your year in review will appear here.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lee, resalta y ora con Genesis este año, y aquí aparecerá el repaso de tu año."
+            "value": "Lee, resalta y ora con Versely este año, y aquí aparecerá el repaso de tu año."
           }
         }
       }
@@ -11714,12 +11623,12 @@
         }
       }
     },
-    "Reinstall Genesis to restore the timeline, maps and people.": {
+    "Reinstall Versely to restore the timeline, maps and people.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reinstala Genesis para restaurar la cronología, los mapas y las personas."
+            "value": "Reinstala Versely para restaurar la cronología, los mapas y las personas."
           }
         }
       }
@@ -12826,12 +12735,12 @@
         }
       }
     },
-    "Share a prayer request with everyone in Genesis, anonymously if you like, and pray for others.": {
+    "Share a prayer request with everyone in Versely, anonymously if you like, and pray for others.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Comparte una petición de oración con todos en Genesis, de forma anónima si quieres, y ora por los demás."
+            "value": "Comparte una petición de oración con todos en Versely, de forma anónima si quieres, y ora por los demás."
           }
         }
       }
@@ -12936,12 +12845,12 @@
         }
       }
     },
-    "Short thoughts on a passage. Everyone signed in to Genesis can see these.": {
+    "Short thoughts on a passage. Everyone signed in to Versely can see these.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Breves pensamientos sobre un pasaje. Todos los que iniciaron sesión en Genesis pueden verlos."
+            "value": "Breves pensamientos sobre un pasaje. Todos los que iniciaron sesión en Versely pueden verlos."
           }
         }
       }
@@ -14427,12 +14336,12 @@
         }
       }
     },
-    "Thanks for helping keep Genesis a safe place. You can also block this person from the same menu.": {
+    "Thanks for helping keep Versely a safe place. You can also block this person from the same menu.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gracias por ayudar a que Genesis sea un lugar seguro. También puedes bloquear a esta persona desde el mismo menú."
+            "value": "Gracias por ayudar a que Versely sea un lugar seguro. También puedes bloquear a esta persona desde el mismo menú."
           }
         }
       }
@@ -14498,22 +14407,22 @@
         }
       }
     },
-    "That file isn't a Bible Genesis can read.": {
+    "That file isn't a Bible Versely can read.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ese archivo no es una Biblia que Genesis pueda leer."
+            "value": "Ese archivo no es una Biblia que Versely pueda leer."
           }
         }
       }
     },
-    "That file isn't a study resource Genesis can read.": {
+    "That file isn't a study resource Versely can read.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ese archivo no es un recurso de estudio que Genesis pueda leer."
+            "value": "Ese archivo no es un recurso de estudio que Versely pueda leer."
           }
         }
       }
@@ -14668,16 +14577,6 @@
         }
       }
     },
-    "The Genesis community": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "La comunidad de Genesis"
-          }
-        }
-      }
-    },
     "The Gospels in 30 Days": {
       "localizations": {
         "es": {
@@ -14768,6 +14667,16 @@
         }
       }
     },
+    "The Versely community": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La comunidad de Versely"
+          }
+        }
+      }
+    },
     "The classic English Bible, cherished for its majestic, poetic language.": {
       "localizations": {
         "es": {
@@ -14818,12 +14727,12 @@
         }
       }
     },
-    "The first time you open Genesis each day, a quiet welcome shows today's verse and reading.": {
+    "The first time you open Versely each day, a quiet welcome shows today's verse and reading.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "La primera vez que abres Genesis cada día, una bienvenida serena te muestra el versículo y la lectura de hoy."
+            "value": "La primera vez que abres Versely cada día, una bienvenida serena te muestra el versículo y la lectura de hoy."
           }
         }
       }
@@ -15411,12 +15320,12 @@
         }
       }
     },
-    "This permanently deletes your account and your data in the cloud. It can't be undone. You'll confirm with Apple next so Genesis also stops using your Apple Account.": {
+    "This permanently deletes your account and your data in the cloud. It can't be undone. You'll confirm with Apple next so Versely also stops using your Apple Account.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Esto elimina para siempre tu cuenta y tus datos en la nube. No se puede deshacer. A continuación confirmarás con Apple para que Genesis deje de usar tu cuenta de Apple."
+            "value": "Esto elimina para siempre tu cuenta y tus datos en la nube. No se puede deshacer. A continuación confirmarás con Apple para que Versely deje de usar tu cuenta de Apple."
           }
         }
       }
@@ -15441,12 +15350,12 @@
         }
       }
     },
-    "This study tool is part of Genesis Premium.": {
+    "This study tool is part of Versely Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Esta herramienta de estudio es parte de Genesis Premium."
+            "value": "Esta herramienta de estudio es parte de Versely Premium."
           }
         }
       }
@@ -15937,12 +15846,12 @@
         }
       }
     },
-    "Turn on iCloud for Genesis in Settings to sync attachments.": {
+    "Turn on iCloud for Versely in Settings to sync attachments.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Activa iCloud para Genesis en Ajustes para sincronizar los adjuntos."
+            "value": "Activa iCloud para Versely en Ajustes para sincronizar los adjuntos."
           }
         }
       }
@@ -16159,12 +16068,12 @@
         }
       }
     },
-    "Use Genesis in Spanish: Settings › Language (the gear on Home). It follows your iPhone's language too.": {
+    "Use Versely in Spanish: Settings › Language (the gear on Home). It follows your iPhone's language too.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Usa Genesis en español desde Ajustes › Idioma (el engranaje en Inicio). También sigue el idioma de tu iPhone."
+            "value": "Usa Versely en español desde Ajustes › Idioma (el engranaje en Inicio). También sigue el idioma de tu iPhone."
           }
         }
       }
@@ -16199,12 +16108,12 @@
         }
       }
     },
-    "Used with the publisher's permission. Genesis will add licensed Bibles as agreements allow.": {
+    "Used with the publisher's permission. Versely will add licensed Bibles as agreements allow.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Se usa con permiso de la editorial. Genesis añadirá Biblias con licencia a medida que los acuerdos lo permitan."
+            "value": "Se usa con permiso de la editorial. Versely añadirá Biblias con licencia a medida que los acuerdos lo permitan."
           }
         }
       }
@@ -16296,6 +16205,97 @@
           "stringUnit": {
             "state": "translated",
             "value": "Notas de estudio versículo por versículo, introducciones a los libros y artículos sobre personas y temas."
+          }
+        }
+      }
+    },
+    "Versely": {
+      "comment": "App icon name: the standard icon",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versely"
+          }
+        }
+      }
+    },
+    "Versely Premium": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versely Premium"
+          }
+        }
+      }
+    },
+    "Versely can't use the microphone. Turn it on in Settings › Privacy & Security › Microphone.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versely no puede usar el micrófono. Actívalo en Ajustes › Privacidad y seguridad › Micrófono."
+          }
+        }
+      }
+    },
+    "Versely en español": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versely en español"
+          }
+        }
+      }
+    },
+    "Versely in Spanish": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versely en español"
+          }
+        }
+      }
+    },
+    "Versely is available in English and Spanish. Tap to choose in the Settings app; Versely restarts in the new language.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versely está disponible en inglés y español. Toca para elegir en la app Ajustes; Versely se reinicia en el nuevo idioma."
+          }
+        }
+      }
+    },
+    "Versely offers public-domain translations. More will come as licenses allow.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versely ofrece traducciones de dominio público. Habrá más a medida que las licencias lo permitan."
+          }
+        }
+      }
+    },
+    "Versely reads aloud and turns the pages as it goes, even with your phone locked.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versely lee en voz alta y pasa las páginas a medida que avanza, incluso con el teléfono bloqueado."
+          }
+        }
+      }
+    },
+    "Versely, your way": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versely, a tu manera"
           }
         }
       }
@@ -17495,12 +17495,12 @@
         }
       }
     },
-    "You have Genesis Premium": {
+    "You have Versely Premium": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tienes Genesis Premium"
+            "value": "Tienes Versely Premium"
           }
         }
       }
@@ -18086,12 +18086,12 @@
         }
       }
     },
-    "Your year with Genesis": {
+    "Your year with Versely": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tu año con Genesis"
+            "value": "Tu año con Versely"
           }
         }
       }

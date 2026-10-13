@@ -51,8 +51,8 @@ struct CommunityFeedView: View {
                     .accessibilityIdentifier("community.compose")
                 } footer: {
                     Text(kind == .prayer
-                        ? "Everyone signed in to Genesis can see and pray for these."
-                        : "Short thoughts on a passage. Everyone signed in to Genesis can see these.")
+                        ? "Everyone signed in to Versely can see and pray for these."
+                        : "Short thoughts on a passage. Everyone signed in to Versely can see these.")
                 }
                 .listRowBackground(palette.surface)
 
@@ -182,7 +182,7 @@ struct CommunityComposeView: View {
                         TextField("Passage (optional), e.g. Psalm 23", text: $referenceText)
                             .autocorrectionDisabled()
                         if !referenceText.isEmpty {
-                            Text(reference?.description ?? String(localized: "Not a passage Genesis recognizes"))
+                            Text(reference?.description ?? String(localized: "Not a passage Versely recognizes"))
                                 .font(.footnote)
                                 .foregroundStyle(reference == nil ? .orange : .secondary)
                         }

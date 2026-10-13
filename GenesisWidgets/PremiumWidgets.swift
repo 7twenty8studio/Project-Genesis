@@ -24,7 +24,7 @@ struct TodaysReadingView: View {
         if entry.snapshot.unlocks(.todaysReading, in: family) {
             readingView(WidgetColors(entry.snapshot))
         } else {
-            PremiumLockedView(message: String(localized: "Tick off your daily reading with Genesis Premium."), symbol: "checklist")
+            PremiumLockedView(message: String(localized: "Tick off your daily reading with Versely Premium."), symbol: "checklist")
         }
     }
 
@@ -33,11 +33,11 @@ struct TodaysReadingView: View {
         return Group {
             if let plan = snapshot.plan, !Calendar.current.isDate(snapshot.generatedAt, inSameDayAs: entry.date) {
                 // Written yesterday: today's reading isn't known until the app runs.
-                prompt(String(localized: "Open Genesis to see today's reading from \(plan.title)."), link: GenesisLink.plans, colors: colors)
+                prompt(String(localized: "Open Versely to see today's reading from \(plan.title)."), link: GenesisLink.plans, colors: colors)
             } else if let plan = snapshot.plan {
                 planView(plan, colors: colors)
             } else {
-                prompt(String(localized: "Start a reading plan in Genesis to see today's reading here."), link: GenesisLink.plans, colors: colors)
+                prompt(String(localized: "Start a reading plan in Versely to see today's reading here."), link: GenesisLink.plans, colors: colors)
             }
         }
         .containerBackground(for: .widget) { WidgetBackground(colors: colors) }
@@ -261,12 +261,12 @@ struct GroupProgressView: View {
                 if let group = entry.group {
                     content(group)
                 } else {
-                    note(String(localized: "Open a group with a reading plan in Genesis to see its progress here."))
+                    note(String(localized: "Open a group with a reading plan in Versely to see its progress here."))
                 }
             }
             .containerBackground(for: .widget) { WidgetBackground(colors: colors) }
         } else {
-            PremiumLockedView(message: String(localized: "Follow your group's reading with Genesis Premium."), symbol: "person.3")
+            PremiumLockedView(message: String(localized: "Follow your group's reading with Versely Premium."), symbol: "person.3")
         }
     }
 

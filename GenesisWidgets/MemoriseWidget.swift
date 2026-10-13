@@ -24,18 +24,18 @@ struct MemoriseWidgetView: View {
         } else if entry.snapshot.unlocks(.memorise, in: family) {
             memoriseView(WidgetColors(entry.snapshot))
         } else {
-            PremiumLockedView(message: String(localized: "Memorize Scripture with Genesis Premium."), symbol: "brain.head.profile")
+            PremiumLockedView(message: String(localized: "Memorize Scripture with Versely Premium."), symbol: "brain.head.profile")
         }
     }
 
-    /// Memorise is switched off in Genesis: say so, and open the app's switch.
+    /// Memorise is switched off in Versely: say so, and open the app's switch.
     private func hiddenView(_ colors: WidgetColors) -> some View {
         Group {
             if family == .accessoryRectangular {
                 Label(String(localized: "Memorize is turned off"), systemImage: "brain.head.profile")
                     .font(.caption)
             } else {
-                message(String(localized: "Memorize Scripture is turned off in Genesis."), colors: colors)
+                message(String(localized: "Memorize Scripture is turned off in Versely."), colors: colors)
             }
         }
         .containerBackground(for: .widget) {
@@ -50,7 +50,7 @@ struct MemoriseWidgetView: View {
             if let memorise, let reference = memorise.reference {
                 card(memorise, reference: reference, colors: colors)
             } else {
-                message(String(localized: "Add a verse to memorize in Genesis."), colors: colors)
+                message(String(localized: "Add a verse to memorize in Versely."), colors: colors)
             }
         }
         .containerBackground(for: .widget) {

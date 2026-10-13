@@ -62,7 +62,7 @@ export function notificationPayload(groupName: string, announcement: Announcemen
       sound: "default",
       "thread-id": `group-${announcement.group_id}`,
     },
-    genesis: { groupID: announcement.group_id, announcementID: announcement.id },
+    versely: { groupID: announcement.group_id, announcementID: announcement.id },
   };
 }
 

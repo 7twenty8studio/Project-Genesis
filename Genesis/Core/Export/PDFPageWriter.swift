@@ -38,7 +38,7 @@ final class PDFPageWriter {
 
     private func drawFooter() {
         let footer = NSAttributedString(
-            string: String(localized: "Made with Genesis"),
+            string: String(localized: "Made with Versely"),
             attributes: style.attributes(style.body(8.5, italic: true), color: style.quiet, paragraph: style.paragraph(alignment: .center))
         )
         let baseline = pageSize.height - (pageSize.height - content.maxY) / 2

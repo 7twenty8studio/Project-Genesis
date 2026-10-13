@@ -15,7 +15,7 @@ protocol AttachmentStorage: Sendable {
 enum AttachmentStorageError: LocalizedError, Equatable {
     case signedOut
     case notFound
-    /// iCloud is off for Genesis, or no one is signed in to iCloud.
+    /// iCloud is off for Versely, or no one is signed in to iCloud.
     case iCloudUnavailable
     /// The person's iCloud storage is full.
     case iCloudFull
@@ -24,7 +24,7 @@ enum AttachmentStorageError: LocalizedError, Equatable {
         switch self {
         case .signedOut: String(localized: "Sign in to sync attachments.")
         case .notFound: String(localized: "This attachment hasn't reached iCloud yet. Open it on the device where you added it, signed in to the same Apple Account.")
-        case .iCloudUnavailable: String(localized: "Turn on iCloud for Genesis in Settings to sync attachments.")
+        case .iCloudUnavailable: String(localized: "Turn on iCloud for Versely in Settings to sync attachments.")
         case .iCloudFull: String(localized: "Your iCloud storage is full, so attachments aren't syncing.")
         }
     }
@@ -66,7 +66,7 @@ struct MovingAttachmentStorage: AttachmentStorage {
     }
 }
 
-/// No iCloud for Genesis (an unsigned build, or iCloud turned off): files
+/// No iCloud for Versely (an unsigned build, or iCloud turned off): files
 /// stay on the device and uploads wait.
 struct UnavailableAttachmentStorage: AttachmentStorage {
     func upload(_ data: Data, path: String, contentType: String) async throws {

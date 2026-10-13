@@ -17,7 +17,7 @@ const SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 const APNS_KEY = Deno.env.get("APNS_KEY");
 const APNS_KEY_ID = Deno.env.get("APNS_KEY_ID");
 const APNS_TEAM_ID = Deno.env.get("APNS_TEAM_ID");
-const BUNDLE_ID = Deno.env.get("GENESIS_BUNDLE_ID") ?? "com.7twenty8studio.genesis";
+const BUNDLE_ID = Deno.env.get("GENESIS_BUNDLE_ID") ?? "com.7twenty8studio.versely";
 
 const admin = createClient(SUPABASE_URL, SERVICE_ROLE_KEY, { auth: { persistSession: false } });
 let cachedToken: { value: string; issuedAt: number } | undefined;

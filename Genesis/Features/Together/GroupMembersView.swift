@@ -89,7 +89,7 @@ struct GroupMembersView: View {
     }
 
     private var inviteMessage: String {
-        String(localized: "Join \(group.name) on Genesis to read and pray together. Open Together › Join with an Invite Code and enter \(group.formattedInviteCode).")
+        String(localized: "Join \(group.name) on Versely to read and pray together. Open Together › Join with an Invite Code and enter \(group.formattedInviteCode).")
     }
 }
 

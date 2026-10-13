@@ -2,7 +2,7 @@ import SwiftUI
 import WatchConnectivity
 import WidgetKit
 
-/// Genesis on Apple Watch: the verse of the day, sent from the iPhone
+/// Versely on Apple Watch: the verse of the day, sent from the iPhone
 /// (Premium). Verses are verbatim from the Bible on the phone.
 @main
 struct GenesisWatchApp: App {
@@ -78,7 +78,7 @@ struct TodayVerseView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .navigationTitle("Genesis")
+            .navigationTitle("Versely")
         }
     }
 
@@ -87,7 +87,7 @@ struct TodayVerseView: View {
         if let payload = store.payload, !payload.isPremium {
             message(
                 systemImage: "lock",
-                text: String(localized: "The verse of the day on Apple Watch is part of Genesis Premium. Subscribe in Genesis on your iPhone.")
+                text: String(localized: "The verse of the day on Apple Watch is part of Versely Premium. Subscribe in Versely on your iPhone.")
             )
         } else if let payload = store.payload, let verse = payload.verse(on: .now) {
             Text("Verse of the Day")
@@ -99,7 +99,7 @@ struct TodayVerseView: View {
                 .font(.footnote.weight(.semibold))
                 .foregroundStyle(.tint)
         } else {
-            message(systemImage: "iphone", text: String(localized: "Open Genesis on your iPhone to bring the verse of the day to your watch."))
+            message(systemImage: "iphone", text: String(localized: "Open Versely on your iPhone to bring the verse of the day to your watch."))
         }
     }
 

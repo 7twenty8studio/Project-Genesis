@@ -353,7 +353,7 @@ struct HomeView: View {
                     .font(.title3)
                     .foregroundStyle(palette.accent)
                 VStack(alignment: .leading, spacing: 3) {
-                    Text("Genesis Premium")
+                    Text("Versely Premium")
                         .font(.headline)
                         .foregroundStyle(palette.text)
                     Text(assistant.isEnabled ? "The study assistant, family trees and maps, Memorize and more." : "Family trees and maps, Memorize, ambient sounds and more.")

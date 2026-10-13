@@ -153,7 +153,7 @@ class LinkParser(html.parser.HTMLParser):
 
 
 def fetch(url: str) -> str:
-    request = urllib.request.Request(url, headers={"User-Agent": "GenesisAudioManifest/1.0"})
+    request = urllib.request.Request(url, headers={"User-Agent": "VerselyAudioManifest/1.0"})
     with urllib.request.urlopen(request, timeout=60) as response:
         return response.read().decode("utf-8", errors="replace")
 

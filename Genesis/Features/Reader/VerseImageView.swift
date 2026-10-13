@@ -414,13 +414,13 @@ struct VerseImageCanvas: View {
                     }
                     Spacer()
                     if !options.centered {
-                        Text(verbatim: "Genesis")
+                        Text(verbatim: "Versely")
                             .font(.system(size: 26, weight: .semibold, design: .serif))
                             .foregroundStyle(ink.opacity(0.6))
                     }
                 }
                 if options.centered {
-                    Text(verbatim: "Genesis")
+                    Text(verbatim: "Versely")
                         .font(.system(size: 26, weight: .semibold, design: .serif))
                         .foregroundStyle(ink.opacity(0.6))
                 }

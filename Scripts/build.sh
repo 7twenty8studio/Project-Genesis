@@ -59,7 +59,7 @@ fi
 
 PREFERRED="${SIMULATOR:-iPhone Duo}"
 DERIVED=build/DerivedData
-BUNDLE_ID=com.7twenty8studio.genesis
+BUNDLE_ID=com.7twenty8studio.versely
 
 echo "Using $(xcodebuild -version | head -1) at $(xcode-select -p)"
 

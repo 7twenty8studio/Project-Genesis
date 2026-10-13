@@ -71,7 +71,7 @@ struct AppIconPickerView: View {
                 .padding(.horizontal, 24)
 
             if !entitlements.allows(.premiumThemes) {
-                Text("Night and the seasonal icons come with Genesis Premium.")
+                Text("Night and the seasonal icons come with Versely Premium.")
                     .font(.footnote)
                     .foregroundStyle(palette.secondaryText)
                     .padding(.horizontal, 24)

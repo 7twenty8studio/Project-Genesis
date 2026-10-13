@@ -12,7 +12,7 @@ free (no Premium needed).
 | Announcement notifications | After step 3 | Apple Developer account, an APNs key |
 | Topic search, feature choices, Duo panels, lock-screen prayer widget | Yes | Nothing |
 | Downloading more Bibles (Berean Standard Bible) | After step 4 | The Bibles SQL and one upload |
-| Genesis in Spanish | Yes | Nothing |
+| Versely in Spanish | Yes | Nothing |
 | The Reina-Valera 1909 (Spanish Bible) | After step 5 | One SQL paste and one upload |
 
 The new **Together** tab appears once the groups SQL has run. Groups and the
@@ -27,7 +27,7 @@ Control Center and headphones, with speed (0.75×–2×) and a sleep timer.
 
 Device voices sound best with a Premium voice (Zoe, Ava, Evan, Nathan and
 others): on the iPhone, Settings › Accessibility › Spoken Content › Voices ›
-English, download one (about 100–200 MB). Genesis's Automatic setting then
+English, download one (about 100–200 MB). Versely's Automatic setting then
 uses it; a particular voice can be chosen under Audio Settings. The older
 robotic voices (Eddy, Flo, Reed, Grandma and the like) aren't offered.
 Simulators usually have only the basic voices, so judge the sound on a phone.
@@ -52,7 +52,7 @@ without an app update.
    It lists the files, matches each to its chapter and checks none are
    missing. If it reports missing or unmatched files, send me its output.
 3. Open `build/audio-web-basil-sands.sql`, paste it into the SQL Editor and Run.
-4. In Genesis switch to the WEB, open Audio Settings and choose
+4. In Versely switch to the WEB, open Audio Settings and choose
    **Recorded · Basil Sands**.
 
 To withdraw a recording: Table Editor → `audio_recordings` → set `enabled` to
@@ -95,7 +95,7 @@ group.
 ### Keeping the community safe (App Store guideline 1.2)
 
 Apple requires apps with user posts to have a content filter, reporting,
-blocking and someone acting on reports. Genesis has all four:
+blocking and someone acting on reports. Versely has all four:
 
 - **Guidelines:** people agree to the community guidelines before their first
   post.
@@ -162,7 +162,7 @@ publish a corrected edition the app updates them automatically on Wi-Fi.
 3. **List it:** SQL Editor → paste `BSB-1.sql` → Run.
 
 The Berean Standard Bible has been public domain since April 30, 2023. Its
-translators ask only that the Berean name isn't used for altered text; Genesis
+translators ask only that the Berean name isn't used for altered text; Versely
 shows it word for word. Licensed translations (NIV, ESV, NLT, CSB, NKJV) can be
 listed the same way once you have a license that allows offline use.
 
@@ -186,20 +186,20 @@ what the app knows (KJV, WEB, ASV, BSB, RV1909: `TranslationProfile.builtIn`).
 
 ## Feature choices
 
-New people choose what they'd like at the end of setup ("Make Genesis yours"),
+New people choose what they'd like at the end of setup ("Make Versely yours"),
 or tap Keep It Simple for just the reader, notes, highlights and search. Anyone
 can change this in Home › Settings (gear) › Features. Your Supabase switches
 still decide what exists; people only choose among what's switched on.
 
-People who set Genesis up before this screen existed keep everything. Groups
+People who set Versely up before this screen existed keep everything. Groups
 and the community start hidden for new people; the What's New note for a
 feature someone has hidden offers a Turn On button.
 
 ## 5. Spanish
 
-Genesis's screens are in English and Spanish. People switch in Genesis ›
-Settings (gear on Home) › Language, which opens Genesis's page in the iPhone's
-Settings app (that's where iOS keeps each app's language), or Genesis simply
+Versely's screens are in English and Spanish. People switch in Versely ›
+Settings (gear on Home) › Language, which opens Versely's page in the iPhone's
+Settings app (that's where iOS keeps each app's language), or Versely simply
 follows the iPhone's language. Book names, dates and the study assistant's
 answers follow too, and references can be typed in Spanish ("Juan 3:16").
 
@@ -214,7 +214,7 @@ and it's read aloud in a Spanish voice.
    see the top of that file).
 3. **List it:** SQL Editor → paste `RV1909-1.sql` → Run.
 
-The translations were written for Genesis and read well, but have a native
+The translations were written for Versely and read well, but have a native
 Spanish speaker look over the app before release. Strings live in
 `Tools/Localization/es.json`; send corrections and they'll be applied.
 `./Scripts/localization_check.sh` lists any screen text without Spanish.

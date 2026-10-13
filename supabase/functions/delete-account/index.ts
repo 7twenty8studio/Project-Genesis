@@ -1,4 +1,4 @@
-// Project Genesis: delete the signed-in person's account (App Store guideline
+// Versely: delete the signed-in person's account (App Store guideline
 // 5.1.1(v) requires account deletion in the app).
 //
 // First empties the person's folder in the private `attachments` storage
@@ -62,7 +62,7 @@ Deno.serve(async (req) => {
   return json({ deleted: true, appleRevoked }, 200);
 });
 
-/** Revokes Genesis's Apple tokens; logs and returns false when it can't. */
+/** Revokes Versely's Apple tokens; logs and returns false when it can't. */
 async function revokeApple(code: string): Promise<boolean> {
   const config = appleConfig((name) => Deno.env.get(name));
   if (!config) {

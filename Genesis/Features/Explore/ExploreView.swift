@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// The Explore tab: the Bible timeline and people (free), and maps and
-/// journeys (Genesis Premium; free accounts see a preview).
+/// journeys (Versely Premium; free accounts see a preview).
 struct ExploreView: View {
     enum Section: String, CaseIterable, Identifiable {
         case timeline, map, people

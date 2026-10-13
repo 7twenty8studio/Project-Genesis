@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// The last step of setup: choose which parts of Genesis to show. Optional;
+/// The last step of setup: choose which parts of Versely to show. Optional;
 /// Continue keeps the suggested set, Keep It Simple shows just the reader.
 struct FeatureChoicesView: View {
     let onFinish: () -> Void
@@ -14,7 +14,7 @@ struct FeatureChoicesView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Make Genesis yours")
+                    Text("Make Versely yours")
                         .font(.system(size: 34, weight: .regular, design: .serif))
                         .foregroundStyle(palette.text)
                         .accessibilityAddTraits(.isHeader)
@@ -180,7 +180,7 @@ private struct MorningWelcomeSwitch: View {
         @Bindable var welcome = welcome
         FeatureSwitchCard(
             title: String(localized: "Morning Welcome"),
-            detail: String(localized: "A quiet greeting with today's verse the first time you open Genesis each day."),
+            detail: String(localized: "A quiet greeting with today's verse the first time you open Versely each day."),
             systemImage: "sun.horizon",
             isOn: $welcome.isOn,
             isPremium: !entitlements.allows(.morningWelcome)
@@ -209,7 +209,7 @@ struct DeviceSupportNote: View {
             voicesText
                 .font(.subheadline)
                 .foregroundStyle(palette.secondaryText)
-            Text("Everything else in Genesis works on every iPhone and iPad that runs iOS 26. Groups, the community, sync and study notes need an internet connection; reading, listening with the device voice, search and your notes work offline.")
+            Text("Everything else in Versely works on every iPhone and iPad that runs iOS 26. Groups, the community, sync and study notes need an internet connection; reading, listening with the device voice, search and your notes work offline.")
                 .font(.subheadline)
                 .foregroundStyle(palette.secondaryText)
         }

@@ -2,7 +2,7 @@ import Foundation
 import Observation
 import StoreKit
 
-/// Tracks whether the person has Genesis Premium, using StoreKit 2.
+/// Tracks whether the person has Versely Premium, using StoreKit 2.
 ///
 /// The App Store is the source of truth: `Transaction.currentEntitlements` is
 /// checked at launch and whenever a transaction arrives (a purchase on
@@ -193,7 +193,7 @@ final class EntitlementService {
         }
     }
 
-    /// - Parameter accountID: the signed-in Genesis account, recorded on the
+    /// - Parameter accountID: the signed-in Versely account, recorded on the
     ///   purchase so the study assistant's server can tie it to that account.
     func purchase(_ id: PremiumProduct, accountID: UUID? = nil) async -> PurchaseOutcome {
         if products.isEmpty { await loadProducts() }

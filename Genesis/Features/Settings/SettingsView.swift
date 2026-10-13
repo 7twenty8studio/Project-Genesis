@@ -140,7 +140,7 @@ struct SettingsView: View {
                         }
                         .accessibilityIdentifier("settings.language")
                     } footer: {
-                        Text("Genesis is available in English and Spanish. Tap to choose in the Settings app; Genesis restarts in the new language.")
+                        Text("Versely is available in English and Spanish. Tap to choose in the Settings app; Versely restarts in the new language.")
                     }
                     .listRowBackground(palette.surface)
                     .foregroundStyle(palette.text)

@@ -1,4 +1,4 @@
-// Shared build settings for Genesis.
+// Shared build settings for Versely (code name Genesis).
 // Secrets live in Secrets.xcconfig, which is git-ignored. Copy
 // Secrets.example.xcconfig to Secrets.xcconfig and fill it in.
 // The app builds and runs without it; sync and crash reporting stay off.

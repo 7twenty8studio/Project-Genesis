@@ -175,6 +175,6 @@ struct WidgetSnapshotTests {
     }
 
     @Test func deepLinks() {
-        #expect(GenesisLink.read(43_003_016).absoluteString == "genesis://read/43003016")
+        #expect(GenesisLink.read(43_003_016).absoluteString == "versely://read/43003016")
     }
 }

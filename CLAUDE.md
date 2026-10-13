@@ -1,8 +1,26 @@
-# Project Genesis: notes for Claude
+# Versely (code name Genesis): notes for Claude
 
 A premium, offline-first Bible reader for iPhone, iPhone Duo and iPad
 (SwiftUI, iOS 26+, Swift 6). Product requirements live in the PRD the owner
 shares; README.md has the architecture.
+
+## Brand
+- The app is **Versely** (App Store: "Versely | Bible Study App"; home
+  screen "Versely"). Everything a person sees says Versely: strings, es.json,
+  Info.plist texts, widgets, watch, notifications, server messages, docs.
+- Identifiers: bundle ids `com.7twenty8studio.versely` (+ `.widgets`,
+  `.watch`, `.watch.widgets`, `.tests`, `.uitests`), App Group
+  `group.com.7twenty8studio.versely`, iCloud container
+  `iCloud.com.7twenty8studio.versely`, products
+  `com.7twenty8studio.versely.premium.*`, URL scheme `versely://`, push
+  payload key `versely`.
+- Code names stay Genesis: targets, modules (`@testable import Genesis`),
+  folders, Swift types (`GenesisApp`, `GenesisLink`, `GenesisTips`…),
+  accessibility ids, defaults keys, What's New ids, widget kinds, SQL
+  function names (`genesis_*`), build variables (`GENESIS_*`), Info keys
+  (`Genesis*`). People never see them.
+- "Genesis" is also the first book of the Bible: never rename the book
+  (BibleBook, "Génesis", "Gen", plans, references, tests about Genesis 1).
 
 ## Rules that never bend
 - Never alter Scripture text. Verse text comes verbatim from the bundled
@@ -95,7 +113,7 @@ shares; README.md has the architecture.
   `ASWebAuthenticationSession` (`GoogleWebSignIn`, shares Safari's sign-ins):
   /auth/v1/authorize?provider=google with an S256 challenge (`OAuthPKCE`,
   `GoogleOAuth` in Core/Cloud/GoogleSignIn.swift), back at
-  genesis://auth-callback (`GenesisLink.authCallbackHost`; RootView and
+  versely://auth-callback (`GenesisLink.authCallbackHost`; RootView and
   AppRouter ignore it), then /token?grant_type=pkce. Button
   (`GoogleSignInButton`, drawn `GoogleLogo`) under Sign in with Apple, which
   stays first (4.8). Nothing to revoke on deletion. Setup: GOOGLE_SIGNIN_SETUP.md.
@@ -247,7 +265,7 @@ shares; README.md has the architecture.
   `MemorySchedule` (a gentle SM-2); never the text. Hints are the passage's
   opening words, verbatim (`MemoryHint.opening`), never altered text.
 - The Memorise widget reads `WidgetSnapshot.memorise` (written with the
-  entitlement); deep link `genesis://memorise`.
+  entitlement); deep link `versely://memorise`.
 
 ## Premium widgets
 - `.widgets` (every widget but the small/medium/Lock Screen verse, plus the verse widget's Premium options): the Today's Reading widget (tick via `TogglePlanDayIntent`,
@@ -318,7 +336,7 @@ shares; README.md has the architecture.
   `TranslationProfile.builtIn`. Free, like every Bible.
 
 ## Feature choices
-- People choose optional features at setup ("Make Genesis yours") and in
+- People choose optional features at setup ("Make Versely yours") and in
   Settings › Features (grouped by `OptionalFeature.Area`): `FeaturePreferences`
   (plans, prayer, memorise, listen, ambientSounds, wordStudy, explore,
   studyAssistant, insights, moments, together). Reading, notes, highlights,
@@ -350,7 +368,7 @@ shares; README.md has the architecture.
 - Free, no limits (no `PremiumFeature`, nothing in `FreeLimits`); its own
   switch `OptionalFeature.sermons` ("Sermon Notes", Study area). Reached from
   the Library's Sermons shelf (iPhone and iPad), `HomeRoute.sermons` (a Home
-  card on Sunday mornings only, `SermonSunday`) and genesis://sermons.
+  card on Sunday mornings only, `SermonSunday`) and versely://sermons.
 - `Sermon` (SwiftData, synced as `sermons`, migration 20261013000000):
   title, preacher, church (free text; `SermonGrouping.churchSuggestions`),
   `preachedAt`, optional series, `passages` (`PrayerPassage` verse ids only,
@@ -390,7 +408,7 @@ shares; README.md has the architecture.
   temporary folder in UI tests), so a synced attachment can exist before its
   file is downloaded and players/PDFKit get file URLs.
 - No count limits (files live on the person's device and in their own
-  iCloud, so they cost Genesis nothing): prayers hold photos and recordings;
+  iCloud, so they cost Versely nothing): prayers hold photos and recordings;
   sermons also PDFs and Pencil pages. One file ≤ 250 MB (CloudKit's asset
   limit, `AttachmentLimits.maxFileBytes`). Photos go through
   `AttachmentMedia.preparedPhoto` (≤ 1600 px, JPEG 0.7, no metadata, so no
@@ -403,9 +421,9 @@ shares; README.md has the architecture.
   reminder. Camera and microphone texts are `NS…UsageDescription` in
   project.yml; their Spanish is generated into
   Genesis/Resources/InfoPlist.xcstrings by build_catalogs.py (from es.json).
-- Files sync through the person's own iCloud, never Genesis's storage:
+- Files sync through the person's own iCloud, never Versely's storage:
   `ICloudAttachmentStorage` (CloudKit private database, container
-  iCloud.com.7twenty8studio.genesis from Info.plist `GenesisICloudContainer`,
+  iCloud.com.7twenty8studio.versely from Info.plist `GenesisICloudContainer`,
   set by Signing.xcconfig with the entitlement; one zone per account
   "Attachments-<user id lowercase>", one `AttachmentFile` record per file
   named "<attachment id>.<ext>" with the file as a CKAsset). Without the
@@ -434,7 +452,7 @@ shares; README.md has the architecture.
   recordings and PDFs listed) → `JournalExport` (Sendable) →
   `JournalPDFRenderer` (UIGraphicsPDFRenderer + TextKit, title page, reader
   font resolved for Premium, Markdown rendered, ligatures off so the text
-  extracts exactly, "Made with Genesis" footer; Letter in the US/Canada, A4
+  extracts exactly, "Made with Versely" footer; Letter in the US/Canada, A4
   elsewhere). `JournalExportSheet` previews it and shares it with ShareLink.
 
 ## Study Library
@@ -484,7 +502,7 @@ shares; README.md has the architecture.
   accessibility ids, defaults keys, What's New ids, the "Memorise" widget
   kind): renaming those would break saved settings and installed widgets.
 - People choose the language in the iPhone's Settings (Settings › Language in
-  Genesis opens it). `AppLanguage.code` is "en" or "es".
+  Versely opens it). `AppLanguage.code` is "en" or "es".
 - `BibleBook.name` follows the app's language (`englishName` is fixed);
   the reference parser accepts English and Spanish names, accents optional.
   Next to Scripture (reader title and controls, running head, book picker,

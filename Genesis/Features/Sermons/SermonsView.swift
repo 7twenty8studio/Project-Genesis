@@ -1,7 +1,7 @@
 import SwiftData
 import SwiftUI
 
-/// Sermon Notes pushed from Home (the Sunday card or a genesis://sermons link).
+/// Sermon Notes pushed from Home (the Sunday card or a versely://sermons link).
 /// In the Library the same list is a shelf beside Notes.
 struct SermonsView: View {
     var body: some View {

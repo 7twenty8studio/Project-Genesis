@@ -51,7 +51,7 @@ struct WatchVerseWidget: Widget {
             WatchVerseView(entry: entry)
         }
         .configurationDisplayName("Verse of the Day")
-        .description("A new verse each morning, from Genesis on your iPhone.")
+        .description("A new verse each morning, from Versely on your iPhone.")
         .supportedFamilies([.accessoryRectangular, .accessoryInline, .accessoryCircular])
     }
 }
@@ -78,7 +78,7 @@ struct WatchVerseView: View {
                     Text(verse?.reference ?? String(localized: "Verse of the Day"))
                         .font(.headline)
                         .widgetAccentable()
-                    Text(verse?.text ?? (unlocked || entry.payload == nil ? String(localized: "Open Genesis on your iPhone.") : String(localized: "Part of Genesis Premium.")))
+                    Text(verse?.text ?? (unlocked || entry.payload == nil ? String(localized: "Open Versely on your iPhone.") : String(localized: "Part of Versely Premium.")))
                         .font(.caption)
                         .lineLimit(3)
                 }

@@ -40,7 +40,7 @@ final class AttachmentTransfers {
 
     private static let queueKey = "attachments.transferQueue"
     private static let movedKey = "attachments.movedToICloud"
-    private static let log = Logger(subsystem: "com.7twenty8studio.genesis", category: "attachments")
+    private static let log = Logger(subsystem: "com.7twenty8studio.versely", category: "attachments")
 
     init(files: AttachmentFiles, storage: any AttachmentStorage, defaults: UserDefaults = .standard, movesEarlierFiles: Bool = false) {
         self.files = files

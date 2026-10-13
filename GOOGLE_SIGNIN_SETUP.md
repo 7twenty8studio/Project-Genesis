@@ -11,7 +11,7 @@ How it works: the app opens
 `https://ulbpwygzwchsnvdeeife.supabase.co/auth/v1/authorize?provider=google…`,
 Supabase sends the person to Google, Google sends them back to Supabase
 (`…/auth/v1/callback`), and Supabase returns them to the app at
-`genesis://auth-callback?code=…`. The app trades that one-time code, with a
+`versely://auth-callback?code=…`. The app trades that one-time code, with a
 secret only it knows, for a session. Until the steps below are done, the
 button opens a Supabase error page instead.
 
@@ -21,10 +21,10 @@ Go to [console.cloud.google.com](https://console.cloud.google.com) and sign in
 with the Google account that should own the app's sign-in.
 
 1. **Create a project**: project picker (top left) → **New Project** → name
-   "Genesis" → Create, then select it.
+   "Versely" → Create, then select it.
 2. **OAuth consent screen** (menu → **APIs & Services** → **OAuth consent
    screen**; newer consoles call it **Google Auth Platform** → Get started):
-   - **App information**: App name **Genesis**, User support email (yours).
+   - **App information**: App name **Versely**, User support email (yours).
    - **Audience**: **External**.
    - **Contact information**: your email. Agree and **Create**.
    - **Branding**: upload the app icon (120 × 120 PNG), Application home
@@ -41,7 +41,7 @@ with the Google account that should own the app's sign-in.
 3. **Credentials** (APIs & Services → **Credentials**, or Google Auth
    Platform → **Clients**) → **Create credentials** → **OAuth client ID**:
    - Application type: **Web application** (Supabase's server does the
-     exchange with Google, not the app). Name: "Genesis Supabase".
+     exchange with Google, not the app). Name: "Versely Supabase".
    - **Authorized redirect URIs** → Add URI:
      `https://ulbpwygzwchsnvdeeife.supabase.co/auth/v1/callback`
      (no JavaScript origins needed).
@@ -49,7 +49,7 @@ with the Google account that should own the app's sign-in.
      password manager.
 
 You don't need an **iOS** OAuth client: that type is only for apps that use
-Google's own SDK, and Genesis doesn't.
+Google's own SDK, and Versely doesn't.
 
 ## 2. Supabase dashboard
 
@@ -60,13 +60,13 @@ Google's own SDK, and Genesis doesn't.
    yourself. Leave "Skip nonce checks" and "Allow users without an email"
    off. **Save**.
 3. **Authentication** → **URL Configuration** → **Redirect URLs** → **Add
-   URL** → `genesis://auth-callback` → Save. Without it, Supabase sends people
+   URL** → `versely://auth-callback` → Save. Without it, Supabase sends people
    to the Site URL instead of back to the app.
 
 ## 3. Try it
 
 On your iPhone: Settings → Account → **Sign in with Google**. iOS first asks
-"Genesis Wants to Use 'supabase.co' to Sign In" (the sheet shares Safari's
+"Versely Wants to Use 'supabase.co' to Sign In" (the sheet shares Safari's
 sign-ins, so someone already signed in to Google there just picks their
 account), then Google's account picker. You land back in the app signed in.
 
@@ -81,7 +81,7 @@ Good to know:
 - **Deleting an account** needs nothing extra for Google: there are no Google
   tokens to revoke (Supabase holds only the identity, which the
   `delete-account` function removes with the account). People can also remove
-  Genesis at myaccount.google.com → Security → Third-party connections.
+  Versely at myaccount.google.com → Security → Third-party connections.
 - **Privacy**: Google shares the email, name and profile picture link, which
   Supabase keeps with the account. Email Address, Name and User ID are
   already declared (privacy manifest and the App Privacy answers in

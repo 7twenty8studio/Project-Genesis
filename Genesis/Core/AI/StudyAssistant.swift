@@ -90,7 +90,7 @@ enum StudyAssistantError: LocalizedError, Equatable {
     var errorDescription: String? {
         switch self {
         case .signInRequired: String(localized: "Sign in to use the study assistant. A free account includes \(FreeLimits.aiRequestsPerDay) explanations a day.")
-        case .premiumRequired: String(localized: "This study tool is part of Genesis Premium.")
+        case .premiumRequired: String(localized: "This study tool is part of Versely Premium.")
         case let .dailyLimit(limit): String(localized: "You've used today's \(limit) study assistant answers. They reset tomorrow.")
         case .notConfigured: String(localized: "The study assistant isn't available right now.")
         case .offline: String(localized: "The study assistant needs an internet connection.")

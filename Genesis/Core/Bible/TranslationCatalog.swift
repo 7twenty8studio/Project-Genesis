@@ -84,7 +84,7 @@ enum TranslationDownloadError: LocalizedError, Equatable {
         case .notConfigured: String(localized: "Downloads aren't set up in this build.")
         case .offline: String(localized: "You're offline. Connect to the internet to download Bibles.")
         case .damaged: String(localized: "The download was damaged. Please try again.")
-        case .notABible: String(localized: "That file isn't a Bible Genesis can read.")
+        case .notABible: String(localized: "That file isn't a Bible Versely can read.")
         }
     }
 }

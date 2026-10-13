@@ -1,8 +1,13 @@
-# Genesis
+# Versely
 
 The most elegant and immersive way to experience Scripture on Apple devices.
 A calm, Kindle-inspired Bible reader for iPhone, iPhone Duo and iPad. Fully
 offline, native SwiftUI.
+
+App Store name: **Versely | Bible Study App** (home screen: "Versely"). The
+code name stays **Genesis** (targets, modules, folders, Swift types,
+`Config/Genesis.*`); people never see it. "Genesis" is also the first book of
+the Bible: never rename the book.
 
 See [BUILDING.md](BUILDING.md) to build and run.
 
@@ -80,7 +85,7 @@ on. The study assistant's announcement is ready and waits for its switch.
   anonymous) and reflections, with guidelines, a word filter, reporting,
   blocking, auto-hiding after three reports and a moderation queue.
 - **Android planning**: [docs/ANDROID_PLAN.md](docs/ANDROID_PLAN.md).
-- **Feature choices**: "Make Genesis yours" at setup and Settings › Features
+- **Feature choices**: "Make Versely yours" at setup and Settings › Features
   (each extra has its own switch: plans, prayer, Memorize, listen, ambient
   sounds, Hebrew & Greek, explore, study notes, sermon notes, insights,
   chapter ribbons, groups and community, plus the morning welcome), with
@@ -182,7 +187,7 @@ Tools/StudyData/    Script that builds Study.sqlite
 
 ## Disk space
 
-Building and UI-testing Genesis needs about 20 GB free. `./Scripts/build.sh`
+Building and UI-testing Versely needs about 20 GB free. `./Scripts/build.sh`
 stops early with a message when there's less. `./Scripts/build.sh --clean`
 deletes this project's build folder, old test results, leftover test copies
 of simulators and simulators for iOS versions that are gone; Xcode rebuilds

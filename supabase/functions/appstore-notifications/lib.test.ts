@@ -10,16 +10,16 @@ const now = new Date("2026-10-15T12:00:00Z");
 const day = 86_400_000;
 const account = "6f9619ff-8b86-d011-b42d-00c04fc964ff";
 const options = {
-  bundleId: "com.7twenty8studio.genesis",
-  productIds: ["com.7twenty8studio.genesis.premium.monthly", "com.7twenty8studio.genesis.premium.family.yearly"],
+  bundleId: "com.7twenty8studio.versely",
+  productIds: ["com.7twenty8studio.versely.premium.monthly", "com.7twenty8studio.versely.premium.family.yearly"],
   environments: ["Production", "Sandbox"],
   now,
 };
 
 const transaction: VerifiedTransaction = {
   familyShared: false,
-  bundleId: "com.7twenty8studio.genesis",
-  productId: "com.7twenty8studio.genesis.premium.monthly",
+  bundleId: "com.7twenty8studio.versely",
+  productId: "com.7twenty8studio.versely.premium.monthly",
   originalTransactionId: "2000000123",
   expiresDate: now.getTime() + 30 * day,
   appAccountToken: account,
@@ -32,7 +32,7 @@ function note(type: string, subtype?: string, changes: Partial<VerifiedTransacti
     subtype,
     notificationUUID: "uuid",
     environment: "Production",
-    bundleId: "com.7twenty8studio.genesis",
+    bundleId: "com.7twenty8studio.versely",
     transaction: { ...transaction, ...changes },
     ...extra,
   };
@@ -44,7 +44,7 @@ test("a new subscription extends rows and can start the purchaser's", () => {
     originalTransactionId: "2000000123",
     environment: "Production",
     familyOnly: false,
-    productId: "com.7twenty8studio.genesis.premium.monthly",
+    productId: "com.7twenty8studio.versely.premium.monthly",
     expiresAt: now.getTime() + 30 * day,
     claimFor: account,
   });
@@ -104,10 +104,10 @@ test("the end of grace covers the grace period", () => {
 });
 
 test("Family Sharing ending touches only family members' rows", () => {
-  const action = notificationAction(note("REVOKE", undefined, { familyShared: true, productId: "com.7twenty8studio.genesis.premium.family.yearly" }), options);
+  const action = notificationAction(note("REVOKE", undefined, { familyShared: true, productId: "com.7twenty8studio.versely.premium.family.yearly" }), options);
   assert.equal(action.kind, "remove");
   if (action.kind === "remove") assert.equal(action.familyOnly, true);
-  const renewed = notificationAction(note("DID_RENEW", undefined, { familyShared: true, productId: "com.7twenty8studio.genesis.premium.family.yearly" }), options);
+  const renewed = notificationAction(note("DID_RENEW", undefined, { familyShared: true, productId: "com.7twenty8studio.versely.premium.family.yearly" }), options);
   assert.equal(renewed.kind, "extend");
   if (renewed.kind === "extend") {
     assert.equal(renewed.familyOnly, true);
@@ -126,15 +126,15 @@ test("an active notification for a period already over changes nothing", () => {
 });
 
 test("tests, other apps, other products and other environments are ignored", () => {
-  assert.deepEqual(notificationAction({ notificationType: "TEST", notificationUUID: "u", environment: "Sandbox", bundleId: "com.7twenty8studio.genesis" }, options), { kind: "ignore", reason: "test" });
+  assert.deepEqual(notificationAction({ notificationType: "TEST", notificationUUID: "u", environment: "Sandbox", bundleId: "com.7twenty8studio.versely" }, options), { kind: "ignore", reason: "test" });
   assert.deepEqual(notificationAction(note("SUBSCRIBED", undefined, {}, { bundleId: "com.example.other" }), options), { kind: "ignore", reason: "other_app" });
   assert.deepEqual(notificationAction(note("SUBSCRIBED", undefined, { bundleId: "com.example.other" }), options), { kind: "ignore", reason: "other_app" });
-  assert.deepEqual(notificationAction(note("SUBSCRIBED", undefined, { productId: "com.7twenty8studio.genesis.coins" }), options), { kind: "ignore", reason: "other_product" });
+  assert.deepEqual(notificationAction(note("SUBSCRIBED", undefined, { productId: "com.7twenty8studio.versely.coins" }), options), { kind: "ignore", reason: "other_product" });
   assert.deepEqual(notificationAction(note("SUBSCRIBED", undefined, {}, { environment: "Sandbox" }), { ...options, environments: ["Production"] }), { kind: "ignore", reason: "environment" });
   assert.deepEqual(notificationAction(note("SUBSCRIBED", undefined, {}, { transaction: undefined }), options), { kind: "ignore", reason: "no_transaction" });
 });
 
-test("notifications Genesis doesn't act on", () => {
+test("notifications Versely doesn't act on", () => {
   for (const type of ["CONSUMPTION_REQUEST", "REFUND_DECLINED", "RENEWAL_EXTENSION", "SOMETHING_NEW"]) {
     assert.deepEqual(notificationAction(note(type), options), { kind: "ignore", reason: "not_relevant" }, type);
   }
