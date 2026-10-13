@@ -158,6 +158,12 @@ enum DeviceScreen {
         windowScene?.keyWindow?.safeAreaInsets ?? .zero
     }
 
+    /// The window's own size, which bars showing or hiding never change
+    /// (only rotation and resizing the window do).
+    static var windowSize: CGSize {
+        windowScene?.keyWindow?.bounds.size ?? .zero
+    }
+
     static var brightness: CGFloat {
         get { windowScene?.screen.brightness ?? 0.5 }
         set { windowScene?.screen.brightness = newValue }

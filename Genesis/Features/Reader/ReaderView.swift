@@ -30,6 +30,14 @@ struct ReaderView: View {
     /// Read from the window once it exists; nil until then so text is laid
     /// out once with the right insets rather than twice.
     @State private var windowSafeArea: UIEdgeInsets?
+    /// The reading surface's size as last laid out, and the window size it
+    /// was measured in. Pages are laid out for this size, which changes only
+    /// when the window turns or is resized or the surface's width changes:
+    /// on iPad, hiding the status bar and tab bar also nudges the surface's
+    /// height, and following that re-paginated (and briefly blanked) the
+    /// page on every tap.
+    @State private var stableSurfaceSize: CGSize?
+    @State private var measuredWindowSize: CGSize = .zero
     @FocusState private var isFocused: Bool
 
     /// The reader's whole width, side panel included.
@@ -94,7 +102,7 @@ struct ReaderView: View {
     private var readingSurface: some View {
         GeometryReader { proxy in
             let layout = ReaderLayout(
-                size: proxy.size,
+                size: stableSurfaceSize ?? proxy.size,
                 safeArea: readerSafeArea,
                 style: ReaderStyle(
                     preferences: preferences,
@@ -180,9 +188,8 @@ struct ReaderView: View {
                 bottomBar
             }
         }
-        .onGeometryChange(for: CGSize.self) { $0.size } action: { _ in
-            // Rotation changes which edges have insets.
-            windowSafeArea = DeviceScreen.safeAreaInsets
+        .onGeometryChange(for: CGSize.self) { $0.size } action: { size in
+            surfaceDidResize(to: size)
         }
         .onChange(of: reader.showsControls) {
             // Some screens report a smaller top inset while the status bar is
@@ -252,6 +259,21 @@ struct ReaderView: View {
                 chapterID: reader.chapterID
             )
         }
+    }
+
+    /// Re-measures only for a real change of shape (rotation, a resized
+    /// window, the side panel opening or closing), never for bars showing or
+    /// hiding, so the page doesn't reflow when the controls toggle.
+    private func surfaceDidResize(to size: CGSize) {
+        let window = DeviceScreen.windowSize
+        let reshaped = stableSurfaceSize == nil
+            || window != measuredWindowSize
+            || abs((stableSurfaceSize?.width ?? 0) - size.width) > 0.5
+        guard reshaped else { return }
+        measuredWindowSize = window
+        stableSurfaceSize = size
+        // Rotation changes which edges have insets.
+        windowSafeArea = DeviceScreen.safeAreaInsets
     }
 
     /// On iPad the tab bar floats at the top of the screen, so the reader's
