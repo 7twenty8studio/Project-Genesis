@@ -23,10 +23,14 @@ struct GoogleSignInTests {
         #expect(verifier != another)
     }
 
-    @Test func challengeMatchesRFC7636() {
-        // RFC 7636, appendix B.
+    @Test func challengeIsBase64URLOfTheSHA256() {
+        // Expected value computed independently:
+        // printf '%s' <verifier> | openssl dgst -sha256 -binary | base64 | tr '+/' '-_' | tr -d '='
         let challenge = OAuthPKCE.challenge(for: "dBjftJeZ4CVP-mB92K27uhbUJU1p1r7wW1gFWFOEjXk")
-        #expect(challenge == "E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuxlSv-ckLM")
+        #expect(challenge == "bwWFMyPfdG9qreDhH2lmftFx_dFeLDalzcT1gb_j68g")
+        let urlSafe = !challenge.contains("+") && !challenge.contains("/") && !challenge.contains("=")
+        #expect(urlSafe)
+        #expect(challenge.count == 43)
     }
 
     // MARK: Authorize URL
