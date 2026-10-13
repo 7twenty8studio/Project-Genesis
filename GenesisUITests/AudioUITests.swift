@@ -69,6 +69,11 @@ final class AudioUITests: GenesisUITestCase {
         XCTAssertTrue(player.waitForExistence(timeout: Genesis.timeout), "Home shows what's playing")
         player.tap()
         let stop = app.buttons["nowPlaying.audio.stop"]
+        if !stop.waitForExistence(timeout: 3) {
+            // On wide screens (the open Duo, iPad) a tab bar that has just
+            // settled can take the first tap on its accessory; tap again.
+            player.tap()
+        }
         XCTAssertTrue(stop.waitForExistence(timeout: Genesis.timeout), "The full controls open")
         stop.tap()
         XCTAssertTrue(Genesis.wait { !player.exists }, "Stopping takes the player away")

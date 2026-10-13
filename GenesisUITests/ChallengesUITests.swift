@@ -83,10 +83,12 @@ final class ChallengesUITests: GenesisUITestCase {
         let byIdentifier = app.buttons.matching(identifier: "challenge.endConfirm").firstMatch
         let byLabel = app.buttons.matching(NSPredicate(format: "label == %@", "End Challenge"))
         XCTAssertTrue(Genesis.wait { sheetButton.exists || byIdentifier.exists || byLabel.count > 1 }, "Ending asks first")
-        if sheetButton.exists {
-            sheetButton.tap()
-        } else if byIdentifier.exists {
+        // The dialog's own button first: on the open Duo the sheet query can
+        // match more than one "End Challenge".
+        if byIdentifier.exists {
             byIdentifier.tap()
+        } else if sheetButton.exists {
+            app.sheets.buttons.matching(NSPredicate(format: "label == %@", "End Challenge")).firstMatch.tap()
         } else {
             byLabel.element(boundBy: byLabel.count - 1).tap()
         }
