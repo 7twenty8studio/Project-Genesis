@@ -570,7 +570,18 @@ shares; README.md has the architecture.
   `String(localized:)` in GroupMembersView). The wave button is on each
   member row (`GroupDetailModel.nudge`); the in-memory backend mirrors the rules.
 
-## What's New
+## Operations dashboard and alerts
+- Owner-only page at /admin on the 7twenty8 website (repo
+  7twenty8-studio-web, src/app/admin; public anon key only), backed by the
+  `ops-dashboard` Edge Function (checks public.ops_admins by lower-case
+  email) and `ops-alerts` (no-verify-jwt; pg_cron every 5 min and 13:00
+  UTC, authenticated by the Vault's ops_cron_secret via
+  `ops_cron_secret_matches`). Sources: app_feedback, content_reports,
+  Sentry (SENTRY_*), TestFlight feedback (ASC_*); email via Resend
+  (RESEND_API_KEY, OPS_ALERT_EMAIL). Priority rules and emails are pure in
+  supabase/functions/_shared/ops.ts (Node tests); triage state in ops_items.
+  Setup: OPS_SETUP.md. Any new kind of report should be added there too.
+
 - Every new user-facing feature gets a one-time announcement in
   `WhatsNewCatalog.all` (Genesis/Core/WhatsNew/WhatsNew.swift) with a new,
   never-reused id. Features behind a Supabase switch set `flag` so the note
