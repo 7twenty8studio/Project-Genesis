@@ -172,7 +172,7 @@ in Google Cloud Console and Supabase, not here: follow
 [GOOGLE_SIGNIN_SETUP.md](GOOGLE_SIGNIN_SETUP.md) (about 15 minutes). Until
 then the button shows a Supabase error page.
 
-## 3. Push notifications (group announcements)
+## 3. Push notifications (group announcements and nudges)
 
 1. developer.apple.com → Certificates, Identifiers & Profiles → **Keys** → **+**.
    Name it "Versely APNs", tick **Apple Push Notifications service (APNs)**
@@ -347,7 +347,7 @@ These answers match the privacy manifest in
 | Contact Info → Email Address | Yes | App Functionality | Account sign-in (email, Apple or Google); optional reply address in Send Feedback |
 | Contact Info → Name | Yes | App Functionality | Display name in groups and the community; the name Google shares at sign-in |
 | User Content → Customer Support | Yes | App Functionality | Send Feedback messages |
-| User Content → Other User Content | Yes | App Functionality | Notes, highlights, prayers, sermons, attachment captions, plans, group posts |
+| User Content → Other User Content | Yes | App Functionality | Notes, highlights, prayers, sermons, attachment captions, plans, group posts and nudges |
 | Sensitive Info → Sensitive Info | Yes | App Functionality | Prayers and journal entries can reveal religious beliefs |
 | Identifiers → User ID | Yes | App Functionality | The account id |
 | Purchases → Purchase History | Yes | App Functionality | The subscription recorded for the account |

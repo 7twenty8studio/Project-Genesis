@@ -40,7 +40,7 @@ struct FeaturePreferencesTests {
         #expect(features.shows(.studyAssistant, flags: on))
         #expect(!features.shows(.together, flags: off))
         #expect(features.shows(.together, flags: on))
-        let alwaysOffered = OptionalFeature.allCases.filter { $0 != .studyAssistant && $0 != .together }
+        let alwaysOffered = OptionalFeature.allCases.filter { $0 != .studyAssistant && $0 != .together && $0 != .nudges }
         #expect(FeaturePreferences.offered(flags: off) == alwaysOffered)
     }
 

@@ -19,6 +19,7 @@ struct HomeRouteDestination: View {
             case .prayerJournal: PrayerJournalView()
             case .insights: InsightsView()
             case .sermons: SermonsView()
+            case .goals: GoalSettingsView()
             case .memorise:
                 if entitlements.allows(.memorise) {
                     MemoriseView()
@@ -39,6 +40,7 @@ extension HomeRoute {
         case .insights: .insights
         case .memorise: .memorise
         case .sermons: .sermons
+        case .goals: .goals
         }
     }
 }

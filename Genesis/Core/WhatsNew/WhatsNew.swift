@@ -27,7 +27,7 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks]
 
     static let notifications = WhatsNewAnnouncement(
         id: "notifications-your-way",
@@ -49,6 +49,34 @@ enum WhatsNewCatalog {
                 detail: String(localized: "Choose each kind and its time, or turn them all off, in Settings › Notifications.")
             ),
         ]
+    )
+
+    static let goalsAndStreaks = WhatsNewAnnouncement(
+        id: "goals-shields-milestones",
+        title: String(localized: "Goals, shields and milestones"),
+        items: [
+            WhatsNewItem(
+                systemImage: "target",
+                title: String(localized: "A daily goal"),
+                detail: String(localized: "A chapter or a few minutes a day, with your progress on Home.")
+            ),
+            WhatsNewItem(
+                systemImage: "shield.lefthalf.filled",
+                title: String(localized: "Streak shield"),
+                detail: String(localized: "One missed day a week no longer breaks your streak.")
+            ),
+            WhatsNewItem(
+                systemImage: "hand.wave",
+                title: String(localized: "Nudge a friend"),
+                detail: String(localized: "In a group's members, tap the wave to invite someone to read with you today.")
+            ),
+            WhatsNewItem(
+                systemImage: "gift",
+                title: String(localized: "Remember answered prayers"),
+                detail: String(localized: "A year after a prayer was answered, a reminder to give thanks.")
+            ),
+        ],
+        feature: .goals
     )
 
     static let hearOriginalWords = WhatsNewAnnouncement(

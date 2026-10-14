@@ -46,7 +46,7 @@ struct NotificationSettingsView: View {
                     section(String(localized: "Every Day"), kinds: [.verseOfTheDay, .dailyReading])
                     section(String(localized: "Your Bible Life"), kinds: activityKinds)
                     if features.shows(.together, flags: flags) {
-                        section(String(localized: "Groups"), kinds: [.groups])
+                        section(String(localized: "Groups"), kinds: groupKinds)
                     }
                 }
             }
@@ -67,10 +67,14 @@ struct NotificationSettingsView: View {
         var kinds: [ReminderKind] = []
         if features.isOn(.plans) { kinds.append(.readingPlan) }
         if features.isOn(.memorise) { kinds.append(.memorise) }
-        if features.isOn(.prayer) { kinds.append(.prayer) }
+        if features.isOn(.prayer) { kinds.append(contentsOf: [.prayer, .prayerAnniversary]) }
         if features.isOn(.sermons) { kinds.append(.sermons) }
         if features.isOn(.insights) { kinds.append(.weeklyRecap) }
         return kinds
+    }
+
+    private var groupKinds: [ReminderKind] {
+        features.shows(.nudges, flags: flags) ? [.groups, .nudges] : [.groups]
     }
 
     @ViewBuilder
@@ -155,7 +159,7 @@ struct NotificationSettingsView: View {
             // Now allowed: put this week's reminders on the schedule.
             notifications.setAllowsNotifications(notifications.allowsNotifications)
         }
-        if notifications.allows(.groups) { await PushNotifications.shared.enable() }
+        if notifications.allows(.groups) || notifications.allows(.nudges) { await PushNotifications.shared.enable() }
     }
 
     private func openSystemSettings() {

@@ -363,6 +363,9 @@ enum CommunityError: LocalizedError, Equatable {
             "not_a_member": String(localized: "They're no longer in this group."),
             "invalid_duration": String(localized: "Choose how long to mute them for."),
             "invalid_reason": String(localized: "Keep the reason under 300 characters."),
+            "already_nudged": String(localized: "You've already nudged them today."),
+            "nudge_limit": String(localized: "You've sent a lot of nudges today. Try again tomorrow."),
+            "nudges_off": String(localized: "They've turned off nudges."),
         ]
         if let text = friendly[message] { return .message(text) }
         if status == 409 || message.contains("duplicate key") { return .duplicate }

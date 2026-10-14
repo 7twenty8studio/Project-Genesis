@@ -7,7 +7,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { apnsHost, apnsToken, isDeadToken, notificationPayload, NotifyError, parseNotifyRequest, pemToDer } from "./lib.ts";
+import { apnsHost, apnsToken, isDeadToken, notificationPayload, NotifyError, parseNotifyRequest, pemToDer, parseNudgeRequest, nudgePayload, NUDGE_BODY_KEY } from "./lib.ts";
 
 test("parses the announcement id", () => {
   assert.equal(parseNotifyRequest({ announcementID: "AAAAAAAA-0000-0000-0000-000000000001" }).announcementID, "aaaaaaaa-0000-0000-0000-000000000001");
@@ -46,4 +46,19 @@ test("hosts and dead tokens", () => {
   assert.ok(isDeadToken(410, undefined));
   assert.ok(isDeadToken(400, "BadDeviceToken"));
   assert.ok(!isDeadToken(429, "TooManyRequests"));
+});
+
+test("reads a nudge request, and leaves announcements alone", () => {
+  const id = "0f8fad5b-d9cb-469f-a165-70867728950e";
+  assert.deepEqual(parseNudgeRequest({ nudgeID: id.toUpperCase() }), { nudgeID: id });
+  assert.equal(parseNudgeRequest({ announcementID: id }), null);
+  assert.throws(() => parseNudgeRequest({ nudgeID: "nope" }));
+});
+
+test("a nudge reads in the receiver's language", () => {
+  const payload = nudgePayload("Tuesday Bible Study", "g1", "Ruth") as { aps: { alert: Record<string, unknown> }; versely: Record<string, unknown> };
+  assert.equal(payload.aps.alert.title, "Tuesday Bible Study");
+  assert.equal(payload.aps.alert["loc-key"], NUDGE_BODY_KEY);
+  assert.deepEqual(payload.aps.alert["loc-args"], ["Ruth"]);
+  assert.equal(payload.versely.groupID, "g1");
 });

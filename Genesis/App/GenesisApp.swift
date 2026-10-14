@@ -22,6 +22,7 @@ struct GenesisApp: App {
     @State private var community: CommunityStore
     @State private var features: FeaturePreferences
     @State private var notifications: NotificationPreferences
+    @State private var goals: GoalPreferences
     @State private var challengeAutoTick: ChallengeAutoTick
     @State private var attachments: AttachmentTransfers
     @State private var studyResources: StudyResourceLibrary
@@ -46,6 +47,7 @@ struct GenesisApp: App {
         _features = State(initialValue: features)
         // Read after the UI-test reset, so a test starts from the defaults.
         _notifications = State(initialValue: NotificationPreferences())
+        _goals = State(initialValue: GoalPreferences())
 
         let library = BibleLibrary()
         let progress = ReadingProgress()
@@ -242,6 +244,7 @@ struct GenesisApp: App {
                 .environment(community)
                 .environment(features)
                 .environment(notifications)
+                .environment(goals)
                 .environment(challengeAutoTick)
                 .environment(attachments)
                 .environment(\.groupChallenges, groupChallenges)

@@ -7,6 +7,8 @@ struct GroupMembersView: View {
     let group: GroupSummary
 
     @Environment(CommunityStore.self) private var community
+    @Environment(FeaturePreferences.self) private var features
+    @Environment(FeatureFlagService.self) private var flags
     @Environment(\.palette) private var palette
     @State private var editing = false
     @State private var confirmingLeave = false
@@ -19,9 +21,15 @@ struct GroupMembersView: View {
         List {
             ThemedRows {
                 inviteSection
-                Section("Members") {
+                Section {
                     ForEach(model.members) { member in
                         GroupMemberRow(model: model, member: member, removing: $removing, banning: $banning, newOwner: $newOwner)
+                    }
+                } header: {
+                    Text("Members")
+                } footer: {
+                    if features.shows(.nudges, flags: flags), model.members.count > 1 {
+                        Text("Tap the wave to send someone a friendly nudge: \(nudgePreview)")
                     }
                 }
                 .listRowBackground(palette.surface)
@@ -33,6 +41,13 @@ struct GroupMembersView: View {
         }
         .modifier(GroupLeaveAndCloseDialogs(group: group, confirmingLeave: $confirmingLeave, confirmingDelete: $confirmingDelete))
         .modifier(GroupMemberDialogs(model: model, removing: $removing, banning: $banning, newOwner: $newOwner))
+    }
+
+    /// What a nudge says. The push uses this same sentence (group-notify's
+    /// loc-key), so it's read in the receiver's language.
+    private var nudgePreview: String {
+        let name = model.members.first { community.isMine($0.userID) }?.displayName ?? String(localized: "A friend")
+        return String(localized: "\(name) is praying for you. Read with me today?", comment: "Group nudge; also the push notification's text (group-notify NUDGE_BODY_KEY)")
     }
 
     private var inviteFooter: String {
@@ -103,9 +118,14 @@ private struct GroupMemberRow: View {
     @Binding var newOwner: GroupMember?
 
     @Environment(CommunityStore.self) private var community
+    @Environment(FeaturePreferences.self) private var features
+    @Environment(FeatureFlagService.self) private var flags
     @Environment(\.palette) private var palette
 
     private var isMe: Bool { community.isMine(member.userID) }
+    private var canNudge: Bool {
+        !isMe && features.shows(.nudges, flags: flags) && !community.blocked.contains(member.userID)
+    }
     private var standing: GroupStanding { model.permissions.standing(of: member) }
 
     var body: some View {
@@ -116,6 +136,9 @@ private struct GroupMemberRow: View {
                 details
             }
             Spacer()
+            if canNudge {
+                nudgeButton
+            }
             if !isMe {
                 Menu {
                     GroupMemberActions(model: model, member: member, removing: $removing, banning: $banning, newOwner: $newOwner)
@@ -125,6 +148,26 @@ private struct GroupMemberRow: View {
                 .accessibilityLabel("Options for \(member.displayName)")
                 .accessibilityIdentifier("member.options")
             }
+        }
+    }
+
+    @ViewBuilder
+    private var nudgeButton: some View {
+        if model.nudged.contains(member.userID) {
+            Label("Nudged", systemImage: "checkmark")
+                .labelStyle(.iconOnly)
+                .foregroundStyle(palette.secondaryText)
+                .accessibilityLabel("Nudged \(member.displayName)")
+                .accessibilityIdentifier("member.nudged")
+        } else {
+            Button {
+                Task { await model.nudge(member) }
+            } label: {
+                Image(systemName: "hand.wave")
+            }
+            .buttonStyle(.borderless)
+            .accessibilityLabel("Nudge \(member.displayName) to read today")
+            .accessibilityIdentifier("member.nudge")
         }
     }
 

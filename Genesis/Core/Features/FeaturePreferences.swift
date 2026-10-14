@@ -17,6 +17,10 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
     case together
     case sermons
     case studyLibrary
+    /// A daily reading goal, streak shields and milestones.
+    case goals
+    /// Gentle "read with me today?" nudges between group members.
+    case nudges
 
     var id: String { rawValue }
 
@@ -35,6 +39,8 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
         case .together: String(localized: "Groups & Community")
         case .sermons: String(localized: "Sermon Notes")
         case .studyLibrary: String(localized: "Study Library", comment: "Optional feature: downloadable study notes, commentaries and dictionaries")
+        case .goals: String(localized: "Goals & Milestones")
+        case .nudges: String(localized: "Group Nudges")
         }
     }
 
@@ -53,6 +59,8 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
         case .together: String(localized: "Read and pray with your church group, and the community prayer wall.")
         case .sermons: String(localized: "Take notes during the sermon, with the verses beside them and Church Mode for a dim, quiet screen.")
         case .studyLibrary: String(localized: "Study notes, classic commentaries and Bible dictionaries to download, beside any verse.")
+        case .goals: String(localized: "A daily reading goal, a shield that keeps your streak through one missed day a week, and milestones to celebrate.")
+        case .nudges: String(localized: "Send someone in your group a gentle \u{201C}read with me today?\u{201D}, and receive theirs.")
         }
     }
 
@@ -71,6 +79,8 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
         case .together: "person.3"
         case .sermons: "building.columns"
         case .studyLibrary: "books.vertical"
+        case .goals: "target"
+        case .nudges: "hand.wave"
         }
     }
 
@@ -93,10 +103,10 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
 
     var area: Area {
         switch self {
-        case .plans, .prayer, .memorise: .daily
+        case .plans, .prayer, .memorise, .goals: .daily
         case .wordStudy, .explore, .studyAssistant, .sermons, .studyLibrary: .study
         case .listen, .ambientSounds: .listening
-        case .together: .community
+        case .together, .nudges: .community
         case .insights, .moments: .touches
         }
     }
@@ -104,7 +114,7 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
     /// Offered on the setup screen too; the rest only in Settings › Features.
     var isOfferedInSetup: Bool {
         switch self {
-        case .ambientSounds, .insights, .moments: false
+        case .ambientSounds, .insights, .moments, .nudges: false
         default: true
         }
     }
@@ -114,6 +124,8 @@ enum OptionalFeature: String, CaseIterable, Identifiable, Codable, Sendable {
     var legacyParent: String? {
         switch self {
         case .plans, .prayer, .memorise: Self.legacyPlansAndPrayer
+        // Nudges start the way Groups & Community already was.
+        case .nudges: OptionalFeature.together.rawValue
         default: nil
         }
     }
@@ -204,7 +216,8 @@ extension FeaturePreferences {
         switch feature {
         case .studyAssistant: flags.isOn(.studyAssistant)
         case .together: flags.isOn(.groups) || flags.isOn(.community)
-        case .plans, .prayer, .memorise, .listen, .ambientSounds, .wordStudy, .explore, .insights, .moments, .sermons, .studyLibrary: true
+        case .nudges: flags.isOn(.groups)
+        case .plans, .prayer, .memorise, .listen, .ambientSounds, .wordStudy, .explore, .insights, .moments, .sermons, .studyLibrary, .goals: true
         }
     }
 

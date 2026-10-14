@@ -48,6 +48,14 @@ protocol CommunityBackend: Sendable {
     func announcements(in group: UUID) async throws -> [GroupAnnouncement]
     /// Posts an announcement and asks the server to notify members.
     func addAnnouncement(title: String, body: String, to group: UUID) async throws
+    /// A friendly "read with me today?" to another member (send_group_nudge,
+    /// then group-notify pushes it).
+    func nudge(_ user: UUID, in group: UUID) async throws
+    /// Whether others may nudge the signed-in person.
+    func setAcceptsNudges(_ on: Bool) async throws
+    /// Whether group announcements reach the signed-in person (Settings ›
+    /// Notifications; kept on the server as the device may still take nudges).
+    func setAcceptsAnnouncements(_ on: Bool) async throws
 
     // Group moderation (owner and moderators)
     /// The signed-in person's requests to join groups, waiting for an answer.
@@ -426,6 +434,21 @@ final class SupabaseCommunityBackend: CommunityBackend {
         // Best effort: the announcement is posted even if notifying fails.
         let payload = try JSONEncoder().encode(["announcementID": id.uuidString.lowercased()])
         _ = try? await client.callFunction("group-notify", body: payload, accessToken: try await token())
+    }
+
+    func nudge(_ user: UUID, in group: UUID) async throws {
+        let id = try Self.uuid(try await rpc("send_group_nudge", ["p_group": .string(group.uuidString.lowercased()), "p_to": .string(user.uuidString.lowercased())]))
+        // Best effort: the nudge is recorded even if the push fails.
+        let payload = try JSONEncoder().encode(["nudgeID": id.uuidString.lowercased()])
+        _ = try? await client.callFunction("group-notify", body: payload, accessToken: try await token())
+    }
+
+    func setAcceptsNudges(_ on: Bool) async throws {
+        try await rpc("set_accepts_nudges", ["p_on": .bool(on)])
+    }
+
+    func setAcceptsAnnouncements(_ on: Bool) async throws {
+        try await rpc("set_accepts_announcements", ["p_on": .bool(on)])
     }
 
     // MARK: Group moderation

@@ -20,6 +20,7 @@ enum ReminderScheduler {
         let modelContext: ModelContext
         let features: FeaturePreferences
         let entitlements: EntitlementService
+        let goals: GoalPreferences
     }
 
     /// Asks for the system's permission (once); true when allowed.
@@ -77,6 +78,7 @@ enum ReminderScheduler {
         if !features.isOn(.memorise) || !context.entitlements.allows(.memorise) { settings.enabled.remove(.memorise) }
         if !features.isOn(.sermons) { settings.enabled.remove(.sermons) }
         if !features.isOn(.insights) { settings.enabled.remove(.weeklyRecap) }
+        if !features.isOn(.prayer) { settings.enabled.remove(.prayerAnniversary) }
 
         var input = NotificationInput(now: now, calendar: calendar, settings: settings)
         let today = calendar.startOfDay(for: now)
@@ -99,6 +101,19 @@ enum ReminderScheduler {
         if settings.enabled.contains(.dailyReading) {
             input.readingDays = context.progress.readingDays
             input.streak = context.progress.streak(on: now)
+            if features.isOn(.goals) {
+                input.goalToday = context.goals.goal.progress(
+                    chaptersToday: context.progress.chaptersRead(on: now),
+                    secondsToday: context.progress.secondsRead(on: now)
+                )
+            }
+        }
+
+        if settings.enabled.contains(.prayerAnniversary) {
+            let answered = (try? context.modelContext.fetch(FetchDescriptor<Prayer>(predicate: #Predicate<Prayer> { $0.isAnswered }))) ?? []
+            input.answeredPrayers = answered.compactMap { prayer in
+                prayer.answeredAt.map { NotificationInput.AnsweredPrayer(title: prayer.displayTitle, answeredAt: $0) }
+            }
         }
 
         if settings.enabled.contains(.readingPlan) {

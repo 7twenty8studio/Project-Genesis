@@ -18,6 +18,8 @@ struct RootView: View {
     @Environment(AmbientSoundService.self) private var ambient
     @Environment(FeaturePreferences.self) private var features
     @Environment(NotificationPreferences.self) private var notifications
+    @Environment(GoalPreferences.self) private var goals
+    @Environment(CommunityStore.self) private var community
     @Environment(MorningWelcome.self) private var welcome
     @Environment(ChallengeAutoTick.self) private var challengeAutoTick
     @Environment(\.modelContext) private var modelContext
@@ -103,12 +105,29 @@ struct RootView: View {
             PrayerReminders.follow(PrayerReminders.change(wasOn: prayerSwitch, isOn: on), context: modelContext)
             prayerSwitch = on
         }
-        // Group announcements follow Settings › Notifications.
-        .onChange(of: notifications.allows(.groups), initial: true) { _, allowed in
+        // Pushes (group announcements and nudges) follow Settings ›
+        // Notifications: the device stays registered while either is wanted.
+        .onChange(of: notifications.allows(.groups) || acceptsNudges, initial: true) { _, allowed in
             PushNotifications.shared.allowsGroupAnnouncements = allowed
         }
         // Reminders follow their settings straight away.
         .onChange(of: notifications.version) { refreshReminders() }
+        // Streak shields (Settings › Goals & Streaks) change the streak, and
+        // the daily goal changes today's reading reminder.
+        .onChange(of: goals.usesStreakShields && features.isOn(.goals), initial: true) { _, on in
+            progress.streakShieldsActive = on
+            refreshWidgets()
+        }
+        .onChange(of: goals.goal) { refreshReminders() }
+        // Whether others may nudge you, and whether announcements reach you,
+        // follow Settings › Notifications (and the Group Nudges switch); the
+        // server keeps the answers, as one device may take one and not the other.
+        .task(id: PushChoice(user: auth.user?.id, groups: flags.isOn(.groups), nudges: acceptsNudges, announcements: notifications.allows(.groups))) {
+            guard auth.isSignedIn, flags.isOn(.groups) else { return }
+            let backend = community.backend
+            try? await backend.setAcceptsNudges(acceptsNudges)
+            try? await backend.setAcceptsAnnouncements(notifications.allows(.groups))
+        }
         // A hidden Memorise leaves its widget showing the off state.
         .onChange(of: features.isOn(.memorise)) { refreshWidgets() }
         // Premium Bibles open only with Premium (once StoreKit has answered,
@@ -255,6 +274,17 @@ struct RootView: View {
         refreshReminders()
     }
 
+    private var acceptsNudges: Bool {
+        features.isOn(.nudges) && notifications.allows(.nudges)
+    }
+
+    private struct PushChoice: Equatable {
+        let user: UUID?
+        let groups: Bool
+        let nudges: Bool
+        let announcements: Bool
+    }
+
     /// Rebuilds the week of reminders (Settings › Notifications).
     private func refreshReminders() {
         let context = ReminderScheduler.Context(
@@ -263,7 +293,8 @@ struct RootView: View {
             progress: progress,
             modelContext: modelContext,
             features: features,
-            entitlements: entitlements
+            entitlements: entitlements,
+            goals: goals
         )
         Task { await ReminderScheduler.refresh(context) }
     }

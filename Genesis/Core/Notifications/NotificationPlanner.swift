@@ -24,6 +24,15 @@ struct NotificationInput: Sendable {
     var planReadings: [String: String] = [:]
     /// When each memorized passage is next due.
     var memoryDueDates: [Date] = []
+    /// Today's progress toward the daily reading goal, if one is set.
+    var goalToday: GoalProgress?
+    /// Answered prayers in the journal, for their anniversaries.
+    var answeredPrayers: [AnsweredPrayer] = []
+
+    struct AnsweredPrayer: Sendable, Equatable {
+        let title: String
+        let answeredAt: Date
+    }
 }
 
 /// One notification to schedule.
@@ -74,8 +83,18 @@ enum NotificationPlanner {
                         link: GenesisLink.read(verse.verse)
                     ))
                 case .dailyReading:
-                    // Already read that day: no nudge.
-                    guard !input.readingDays.contains(dayKey) else { continue }
+                    if input.readingDays.contains(dayKey) {
+                        // Already read that day: no nudge, unless today's goal
+                        // is partly done (then a gentle "almost there").
+                        guard offset == 0, let goal = input.goalToday, !goal.isMet, goal.done > 0 else { continue }
+                        planned.append(PlannedNotification(
+                            id: id, kind: kind, fireDate: fire,
+                            title: String(localized: "Almost there"),
+                            body: goal.nudge,
+                            link: GenesisLink.continueReading
+                        ))
+                        continue
+                    }
                     let message = readingMessage(dayOffset: offset, day: day, input: input)
                     planned.append(PlannedNotification(id: id, kind: kind, fireDate: fire, title: message.title, body: message.body, link: GenesisLink.continueReading))
                 case .readingPlan:
@@ -113,7 +132,15 @@ enum NotificationPlanner {
                         body: String(localized: "See what you read this week, and pick a goal for the next."),
                         link: GenesisLink.insights
                     ))
-                case .prayer, .groups:
+                case .prayerAnniversary:
+                    guard let anniversary = anniversaries(on: day, input: input) else { continue }
+                    planned.append(PlannedNotification(
+                        id: id, kind: kind, fireDate: fire,
+                        title: anniversary.title,
+                        body: anniversary.body,
+                        link: GenesisLink.prayer
+                    ))
+                case .prayer, .groups, .nudges:
                     continue
                 }
             }
@@ -152,6 +179,34 @@ enum NotificationPlanner {
         ]
         let index = (input.calendar.ordinality(of: .day, in: .era, for: day) ?? dayOffset) % invitations.count
         return invitations[index]
+    }
+
+    /// Prayers answered on this day of the year, a year or more ago. One
+    /// notification a day: the oldest answer, with how many more. A prayer
+    /// answered on 29 February is remembered on the 28th in other years.
+    static func anniversaries(on day: Date, input: NotificationInput) -> (title: String, body: String)? {
+        let calendar = input.calendar
+        let target = calendar.dateComponents([.year, .month, .day], from: day)
+        let isLeapYear = calendar.range(of: .day, in: .month, for: calendar.date(from: DateComponents(year: target.year, month: 2, day: 1)) ?? day)?.count == 29
+        let matches = input.answeredPrayers
+            .compactMap { prayer -> (prayer: NotificationInput.AnsweredPrayer, years: Int)? in
+                let answered = calendar.dateComponents([.year, .month, .day], from: prayer.answeredAt)
+                guard let year = answered.year, let targetYear = target.year, targetYear > year else { return nil }
+                let sameDay = answered.month == target.month && answered.day == target.day
+                let leapDay = !isLeapYear && answered.month == 2 && answered.day == 29 && target.month == 2 && target.day == 28
+                guard sameDay || leapDay else { return nil }
+                return (prayer, targetYear - year)
+            }
+            .sorted { $0.prayer.answeredAt < $1.prayer.answeredAt }
+        guard let first = matches.first else { return nil }
+        let title = first.years == 1
+            ? String(localized: "A year ago today")
+            : String(localized: "\(first.years) years ago today", comment: "Notification: an answered prayer's anniversary")
+        let name = String(first.prayer.title.prefix(80))
+        let body = matches.count == 1
+            ? String(localized: "On this day you marked \"\(name)\" as answered. Take a moment to remember and give thanks.", comment: "Notification: the prayer's title")
+            : String(localized: "On this day you marked \"\(name)\" and \(matches.count - 1) more as answered. Take a moment to remember and give thanks.", comment: "Notification: the prayer's title, then how many more")
+        return (title, body)
     }
 
     /// Whole days since the last day with reading (Int.max if none).

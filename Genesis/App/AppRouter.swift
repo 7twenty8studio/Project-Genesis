@@ -26,6 +26,8 @@ enum HomeRoute: Hashable {
     case insights
     case memorise
     case sermons
+    /// Goals & Streaks: the daily goal, streak shields and milestones.
+    case goals
 }
 
 /// App-wide navigation: which tab is showing, and opening the reader at a

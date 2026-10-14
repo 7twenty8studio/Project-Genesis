@@ -28,6 +28,9 @@ struct HomeView: View {
     @Query private var memoryVerses: [MemoryVerse]
     @State private var editingNote: Note?
     @State private var premium: PremiumFeature?
+    /// A milestone to celebrate (Goals & Milestones).
+    @State private var milestone: Milestone?
+    @Environment(GoalPreferences.self) private var goals
 
     var body: some View {
         @Bindable var router = router
@@ -35,6 +38,13 @@ struct HomeView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 28) {
                     greeting
+                    if features.isOn(.goals), let milestone {
+                        MilestoneBanner(milestone: milestone) {
+                            goals.markCelebrated([milestone.id])
+                            withAnimation { self.milestone = nil }
+                        }
+                        .transition(.opacity)
+                    }
                     if YearInReview.isSeason(), progress.hasStartedReading, features.isOn(.insights) { yearInReviewCard }
                     continueReading
                     // Sunday mornings only: a quick way into Sermon Notes.
@@ -59,6 +69,7 @@ struct HomeView: View {
                 .frame(maxWidth: .infinity)
             }
             .themedScreen()
+            .modifier(MilestoneWatcher(showing: $milestone))
             .overlay { ChapterMomentOverlay(place: .home).ignoresSafeArea(edges: .top) }
             .toolbar(.hidden, for: .navigationBar)
             .sheet(item: $editingNote) { note in
@@ -339,6 +350,7 @@ struct HomeView: View {
                     stat(value: progress.chaptersRead.count, label: String(localized: "chapters read"), symbol: "book.pages")
                     stat(value: progress.booksCompleted, label: String(localized: "books finished"), symbol: "books.vertical")
                 }
+                if features.isOn(.goals) { GoalHomeCard() }
             }
         }
     }

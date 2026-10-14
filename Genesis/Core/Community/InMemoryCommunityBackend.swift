@@ -35,6 +35,9 @@ actor InMemoryCommunityBackend: CommunityBackend {
     private var postAuthors: [UUID: UUID] = [:]
     private var reactions: Set<UUID> = []
     private var commentRows: [CommunityComment] = []
+    private var nudgeRows: [(from: UUID, to: UUID, at: Date)] = []
+    /// People who turned nudges off.
+    private var nudgesOff: Set<UUID> = []
     /// Strictly increasing times, so "longest-standing" is never a tie.
     private var clock = Date.now.addingTimeInterval(-60)
 
@@ -469,6 +472,28 @@ actor InMemoryCommunityBackend: CommunityBackend {
         announcementRows.append(GroupAnnouncement(id: UUID(), groupID: group, userID: me, displayName: name, title: title, body: body, createdAt: now()))
     }
 
+    func nudge(_ user: UUID, in group: UUID) async throws {
+        // Like send_group_nudge.
+        guard user != me, let membership = member(me, in: group), !membership.isMuted() else { throw Self.notAllowed }
+        guard member(user, in: group) != nil else { throw CommunityError.message(String(localized: "They're no longer in this group.")) }
+        guard !blocks.contains(user) else { throw Self.notAllowed }
+        guard !nudgesOff.contains(user) else { throw CommunityError.message(String(localized: "They've turned off nudges.")) }
+        let current = Date.now
+        if nudgeRows.contains(where: { $0.from == me && $0.to == user && current.timeIntervalSince($0.at) < 20 * 3_600 }) {
+            throw CommunityError.message(String(localized: "You've already nudged them today."))
+        }
+        if nudgeRows.filter({ $0.from == me && current.timeIntervalSince($0.at) < 24 * 3_600 }).count >= 10 {
+            throw CommunityError.message(String(localized: "You've sent a lot of nudges today. Try again tomorrow."))
+        }
+        nudgeRows.append((from: me, to: user, at: current))
+    }
+
+    func setAcceptsNudges(_ on: Bool) async throws {
+        if on { nudgesOff.remove(me) } else { nudgesOff.insert(me) }
+    }
+
+    func setAcceptsAnnouncements(_ on: Bool) async throws {}
+
     // MARK: Group moderation
 
     func myJoinRequests() async throws -> [GroupJoinRequest] {
@@ -702,6 +727,9 @@ struct SignedOutCommunityBackend: CommunityBackend {
     func addPost(_ body: String, day: Int?, to group: UUID) async throws { throw CommunityError.signInRequired }
     func announcements(in group: UUID) async throws -> [GroupAnnouncement] { [] }
     func addAnnouncement(title: String, body: String, to group: UUID) async throws { throw CommunityError.signInRequired }
+    func nudge(_ user: UUID, in group: UUID) async throws { throw CommunityError.signInRequired }
+    func setAcceptsNudges(_ on: Bool) async throws { throw CommunityError.signInRequired }
+    func setAcceptsAnnouncements(_ on: Bool) async throws { throw CommunityError.signInRequired }
     func myJoinRequests() async throws -> [GroupJoinRequest] { [] }
     func withdrawJoinRequest(to group: UUID) async throws { throw CommunityError.signInRequired }
     func joinRequests(in group: UUID) async throws -> [GroupJoinRequest] { [] }

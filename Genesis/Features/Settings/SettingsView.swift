@@ -32,6 +32,14 @@ struct SettingsView: View {
                             Label("Notifications", systemImage: "bell.badge")
                         }
                         .accessibilityIdentifier("settings.notifications")
+                        if features.isOn(.goals) {
+                            NavigationLink {
+                                GoalSettingsView()
+                            } label: {
+                                Label("Goals & Streaks", systemImage: "target")
+                            }
+                            .accessibilityIdentifier("settings.goals")
+                        }
                         Button {
                             showsBibles = true
                         } label: {

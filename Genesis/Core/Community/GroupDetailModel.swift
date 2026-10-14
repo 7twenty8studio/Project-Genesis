@@ -20,6 +20,8 @@ final class GroupDetailModel {
     /// The days I've marked read (for the ticks on Every Day of the Plan).
     private(set) var myReadDays: Set<Int> = []
     private(set) var isLoading = false
+    /// Members nudged from this screen (the server allows one a day each).
+    private(set) var nudged: Set<UUID> = []
     var errorMessage: String?
     /// Reports, join requests and bans, for the owner and moderators.
     let moderation: GroupModerationModel
@@ -324,6 +326,14 @@ final class GroupDetailModel {
             members.removeAll { $0.userID == member.userID }
         }
         if banned { await moderation.refresh() }
+    }
+
+    /// A friendly "read with me today?" to another member.
+    func nudge(_ member: GroupMember) async {
+        let sent = await run {
+            try await backend.nudge(member.userID, in: groupID)
+        }
+        if sent { nudged.insert(member.userID) }
     }
 
     /// Hands the group to another member; the old owner stays a moderator.

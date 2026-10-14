@@ -19,9 +19,10 @@ final class PushNotifications: NSObject {
     /// Opens a versely:// link (reminders from Settings › Notifications).
     var onOpenLink: ((URL) -> Void)?
 
-    /// Group announcements wanted (Settings › Notifications: the master
-    /// switch and the Group Announcements switch). Off, this device's token
-    /// is taken off the server so no announcements arrive.
+    /// Pushes wanted (Settings › Notifications: the master switch, and Group
+    /// Announcements or Nudges from Friends). Off, this device's token is
+    /// taken off the server so nothing arrives; which of the two arrive is
+    /// kept on the server (profiles.accepts_announcements / accepts_nudges).
     var allowsGroupAnnouncements = true {
         didSet {
             guard allowsGroupAnnouncements != oldValue else { return }

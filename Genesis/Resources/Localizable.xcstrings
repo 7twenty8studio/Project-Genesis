@@ -61,6 +61,17 @@
         }
       }
     },
+    "%@ is praying for you. Read with me today?": {
+      "comment": "Group nudge; also the push notification's text (group-notify NUDGE_BODY_KEY)",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ está orando por ti. ¿Lees conmigo hoy?"
+          }
+        }
+      }
+    },
     "%@ is turned off": {
       "localizations": {
         "es": {
@@ -213,6 +224,17 @@
         }
       }
     },
+    "%lld answered prayers": {
+      "comment": "Milestone",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld oraciones contestadas"
+          }
+        }
+      }
+    },
     "%lld books": {
       "localizations": {
         "es": {
@@ -223,12 +245,34 @@
         }
       }
     },
+    "%lld books finished": {
+      "comment": "Milestone",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld libros terminados"
+          }
+        }
+      }
+    },
     "%lld chapters": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld capítulos"
+          }
+        }
+      }
+    },
+    "%lld chapters read": {
+      "comment": "Milestone",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld capítulos leídos"
           }
         }
       }
@@ -254,6 +298,7 @@
       }
     },
     "%lld days in a row": {
+      "comment": "Milestone",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -323,6 +368,26 @@
         }
       }
     },
+    "%lld more chapters to reach today's goal.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faltan %lld capítulos para la meta de hoy."
+          }
+        }
+      }
+    },
+    "%lld more minutes to reach today's goal.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faltan %lld minutos para la meta de hoy."
+          }
+        }
+      }
+    },
     "%lld of %lld": {
       "localizations": {
         "es": {
@@ -334,6 +399,7 @@
       }
     },
     "%lld of %lld chapters": {
+      "comment": "Daily goal progress",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -359,6 +425,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld de %lld miembros leyeron hoy"
+          }
+        }
+      }
+    },
+    "%lld of %lld minutes": {
+      "comment": "Daily goal progress",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld de %lld minutos"
           }
         }
       }
@@ -429,6 +506,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld pasajes están listos para repasar."
+          }
+        }
+      }
+    },
+    "%lld passages by heart": {
+      "comment": "Milestone",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld pasajes de memoria"
           }
         }
       }
@@ -504,6 +592,17 @@
         }
       }
     },
+    "%lld years ago today": {
+      "comment": "Notification: an answered prayer's anniversary",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoy hace %lld años"
+          }
+        }
+      }
+    },
     "%lld%% complete": {
       "localizations": {
         "es": {
@@ -520,6 +619,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "1 capítulo"
+          }
+        }
+      }
+    },
+    "1 chapter a day": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 capítulo al día"
           }
         }
       }
@@ -574,6 +683,16 @@
         }
       }
     },
+    "1 more chapter to reach today's goal.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Falta 1 capítulo para la meta de hoy."
+          }
+        }
+      }
+    },
     "1 page left in chapter": {
       "localizations": {
         "es": {
@@ -624,12 +743,52 @@
         }
       }
     },
+    "10 minutes a day": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "10 minutos al día"
+          }
+        }
+      }
+    },
     "1× speed": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Velocidad 1×"
+          }
+        }
+      }
+    },
+    "20 minutes a day": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "20 minutos al día"
+          }
+        }
+      }
+    },
+    "3 chapters a day": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3 capítulos al día"
+          }
+        }
+      }
+    },
+    "5 minutes a day": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "5 minutos al día"
           }
         }
       }
@@ -684,6 +843,26 @@
         }
       }
     },
+    "A chapter or a few minutes a day, whatever fits your life.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un capítulo o unos minutos al día, lo que encaje en tu vida."
+          }
+        }
+      }
+    },
+    "A chapter or a few minutes a day, with your progress on Home.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un capítulo o unos minutos al día, con tu progreso en Inicio."
+          }
+        }
+      }
+    },
     "A commentary is one writer's explanation, shown apart from Scripture.": {
       "localizations": {
         "es": {
@@ -700,6 +879,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Un comentario conciso y cuidadoso de toda la Biblia, versículo por versículo."
+          }
+        }
+      }
+    },
+    "A daily goal": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una meta diaria"
+          }
+        }
+      }
+    },
+    "A daily reading goal, a shield that keeps your streak through one missed day a week, and milestones to celebrate.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una meta diaria de lectura, un escudo que mantiene tu racha si faltas un día a la semana, y logros para celebrar."
           }
         }
       }
@@ -740,6 +939,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Unos minutos en calma con la Palabra de Dios pueden marcar todo tu día."
+          }
+        }
+      }
+    },
+    "A friend": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un amigo"
           }
         }
       }
@@ -1011,6 +1220,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Un temporizador que se desvanece"
+          }
+        }
+      }
+    },
+    "A year after a prayer was answered, a reminder to give thanks.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un año después de que una oración fue contestada, un recordatorio para dar gracias."
+          }
+        }
+      }
+    },
+    "A year ago today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoy hace un año"
           }
         }
       }
@@ -1489,6 +1718,17 @@
         }
       }
     },
+    "All 66 books": {
+      "comment": "Milestone",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los 66 libros"
+          }
+        }
+      }
+    },
     "All Categories": {
       "localizations": {
         "es": {
@@ -1555,6 +1795,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Permitir notificaciones"
+          }
+        }
+      }
+    },
+    "Almost there": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ya casi"
           }
         }
       }
@@ -1750,6 +2000,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Oración respondida"
+          }
+        }
+      }
+    },
+    "Answered Prayer Anniversaries": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aniversarios de oraciones contestadas"
           }
         }
       }
@@ -2812,6 +3072,16 @@
         }
       }
     },
+    "Chapters count when you open them; minutes are time spent in the reader.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los capítulos cuentan al abrirlos; los minutos son el tiempo en el lector."
+          }
+        }
+      }
+    },
     "Chapters read": {
       "localizations": {
         "es": {
@@ -3652,6 +3922,16 @@
         }
       }
     },
+    "Daily Goal": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meta diaria"
+          }
+        }
+      }
+    },
     "Daily Reading Reminder": {
       "localizations": {
         "es": {
@@ -3769,6 +4049,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Día %lld: %@"
+          }
+        }
+      }
+    },
+    "Day after day in the Word. Keep going!": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Día tras día en la Palabra. ¡Sigue así!"
           }
         }
       }
@@ -4050,6 +4340,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mensaje de la conversación"
+          }
+        }
+      }
+    },
+    "Dismiss": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerrar"
           }
         }
       }
@@ -4535,6 +4835,27 @@
           "stringUnit": {
             "state": "translated",
             "value": "Todos los días del plan"
+          }
+        }
+      }
+    },
+    "Every chapter is a step further into the story.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada capítulo es un paso más en la historia."
+          }
+        }
+      }
+    },
+    "Every chapter of the Bible": {
+      "comment": "Milestone",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos los capítulos de la Biblia"
           }
         }
       }
@@ -5449,6 +5770,46 @@
         }
       }
     },
+    "Goal reached": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meta alcanzada"
+          }
+        }
+      }
+    },
+    "Goals & Milestones": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Metas y logros"
+          }
+        }
+      }
+    },
+    "Goals & Streaks": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Metas y rachas"
+          }
+        }
+      }
+    },
+    "Goals, shields and milestones": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Metas, escudos y logros"
+          }
+        }
+      }
+    },
     "Gold": {
       "comment": "Verse image text color",
       "localizations": {
@@ -5679,6 +6040,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Agrupar por"
+          }
+        }
+      }
+    },
+    "Group Nudges": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recordatorios del grupo"
           }
         }
       }
@@ -6022,6 +6393,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Esto es lo nuevo en Versely."
+          }
+        }
+      }
+    },
+    "Hidden in your heart, ready when you need it.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardado en tu corazón, listo cuando lo necesites."
           }
         }
       }
@@ -6386,6 +6767,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "En tu lista de Memorizar"
+          }
+        }
+      }
+    },
+    "In a group's members, tap the wave to invite someone to read with you today.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En los miembros de un grupo, toca el saludo para invitar a alguien a leer contigo hoy."
           }
         }
       }
@@ -7274,6 +7665,16 @@
         }
       }
     },
+    "Life happens. With the shield on, one missed day a week doesn't break your streak (it just doesn't add to it).": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La vida pasa. Con el escudo activado, faltar un día a la semana no rompe tu racha (solo no la aumenta)."
+          }
+        }
+      }
+    },
     "Likely location": {
       "localizations": {
         "es": {
@@ -7995,6 +8396,26 @@
         }
       }
     },
+    "Milestone": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logro"
+          }
+        }
+      }
+    },
+    "Milestones Reached": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logros alcanzados"
+          }
+        }
+      }
+    },
     "Missing word": {
       "localizations": {
         "es": {
@@ -8676,6 +9097,16 @@
         }
       }
     },
+    "Next Milestones": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Próximos logros"
+          }
+        }
+      }
+    },
     "Next chapter": {
       "localizations": {
         "es": {
@@ -8844,6 +9275,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "No hay referencias cruzadas para este versículo."
+          }
+        }
+      }
+    },
+    "No daily goal": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin meta diaria"
           }
         }
       }
@@ -9290,6 +9731,56 @@
         }
       }
     },
+    "Nudge %@ to read today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitar a %@ a leer hoy"
+          }
+        }
+      }
+    },
+    "Nudge a friend": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invita a un amigo"
+          }
+        }
+      }
+    },
+    "Nudged": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitado"
+          }
+        }
+      }
+    },
+    "Nudged %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ invitado"
+          }
+        }
+      }
+    },
+    "Nudges from Friends": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invitaciones de amigos"
+          }
+        }
+      }
+    },
     "Number": {
       "localizations": {
         "es": {
@@ -9403,6 +9894,38 @@
         }
       }
     },
+    "On the day a prayer was answered, a year later, a moment to remember and give thanks.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El día en que una oración fue contestada, un año después, un momento para recordar y dar gracias."
+          }
+        }
+      }
+    },
+    "On this day you marked \"%@\" and %lld more as answered. Take a moment to remember and give thanks.": {
+      "comment": "Notification: the prayer's title, then how many more",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un día como hoy marcaste «%@» y %lld más como contestadas. Tómate un momento para recordar y dar gracias."
+          }
+        }
+      }
+    },
+    "On this day you marked \"%@\" as answered. Take a moment to remember and give thanks.": {
+      "comment": "Notification: the prayer's title",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un día como hoy marcaste «%@» como contestada. Tómate un momento para recordar y dar gracias."
+          }
+        }
+      }
+    },
     "On this device": {
       "localizations": {
         "es": {
@@ -9439,6 +9962,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Un minuto"
+          }
+        }
+      }
+    },
+    "One missed day a week no longer breaks your streak.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faltar un día a la semana ya no rompe tu racha."
           }
         }
       }
@@ -11646,6 +12179,16 @@
         }
       }
     },
+    "Ready": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Listo"
+          }
+        }
+      }
+    },
     "Ready when you are": {
       "localizations": {
         "es": {
@@ -11914,12 +12457,32 @@
         }
       }
     },
+    "Remember answered prayers": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recuerda las oraciones contestadas"
+          }
+        }
+      }
+    },
     "Remember his faithfulness, even if only in a few words.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Recuerda su fidelidad, aunque sea en pocas palabras."
+          }
+        }
+      }
+    },
+    "Remember what God has done.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recuerda lo que Dios ha hecho."
           }
         }
       }
@@ -12843,6 +13406,16 @@
         }
       }
     },
+    "Send someone in your group a gentle “read with me today?”, and receive theirs.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envía a alguien de tu grupo un amable «¿lees conmigo hoy?» y recibe los suyos."
+          }
+        }
+      }
+    },
     "Sepia": {
       "comment": "Reader theme name",
       "localizations": {
@@ -12921,6 +13494,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sermones"
+          }
+        }
+      }
+    },
+    "Set a daily goal": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ponte una meta diaria"
           }
         }
       }
@@ -13884,6 +14467,16 @@
         }
       }
     },
+    "Start to finish, every chapter read.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De principio a fin, cada capítulo leído."
+          }
+        }
+      }
+    },
     "Starting Soon": {
       "localizations": {
         "es": {
@@ -14052,6 +14645,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "Historia"
+          }
+        }
+      }
+    },
+    "Streak Shield": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escudo de racha"
+          }
+        }
+      }
+    },
+    "Streak shield": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escudo de racha"
+          }
+        }
+      }
+    },
+    "Streak shield ready": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escudo de racha listo"
+          }
+        }
+      }
+    },
+    "Streak shield used this week": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escudo de racha usado esta semana"
           }
         }
       }
@@ -14511,6 +15144,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Toca las palabras del versículo para ponerlas en orden."
+          }
+        }
+      }
+    },
+    "Tap the wave to send someone a friendly nudge: %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca el saludo para enviar a alguien una invitación amable: %@"
           }
         }
       }
@@ -15468,6 +16111,16 @@
         }
       }
     },
+    "They've turned off nudges.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta persona desactivó las invitaciones."
+          }
+        }
+      }
+    },
     "Third person": {
       "localizations": {
         "es": {
@@ -15720,6 +16373,16 @@
         }
       }
     },
+    "This week": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta semana"
+          }
+        }
+      }
+    },
     "This word isn't in the dictionary.": {
       "localizations": {
         "es": {
@@ -15968,6 +16631,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Conversación de hoy"
+          }
+        }
+      }
+    },
+    "Today's goal": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meta de hoy"
+          }
+        }
+      }
+    },
+    "Today's goal reached": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meta de hoy alcanzada"
           }
         }
       }
@@ -16535,6 +17218,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Usa las voces de tu dispositivo en todas las traducciones, sin conexión, o una narración grabada donde esté disponible. Cámbialo en Ajustes de audio."
+          }
+        }
+      }
+    },
+    "Used": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usado"
           }
         }
       }
@@ -17323,6 +18016,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Cuándo te sentiste más en paz últimamente?"
+          }
+        }
+      }
+    },
+    "When someone in your group invites you to read with them today. Turn this off and no one can nudge you.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuando alguien de tu grupo te invita a leer hoy. Desactívalo y nadie podrá enviarte invitaciones."
           }
         }
       }
@@ -18207,6 +18910,16 @@
         }
       }
     },
+    "You've already nudged them today.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ya le enviaste una invitación hoy."
+          }
+        }
+      }
+    },
     "You've asked to join a lot of groups, so withdraw a request or wait for an answer first.": {
       "localizations": {
         "es": {
@@ -18283,6 +18996,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Has leído %lld de %lld capítulos"
+          }
+        }
+      }
+    },
+    "You've sent a lot of nudges today. Try again tomorrow.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Has enviado muchas invitaciones hoy. Inténtalo mañana."
           }
         }
       }
@@ -18418,12 +19141,55 @@
         }
       }
     },
+    "Your first answered prayer": {
+      "comment": "Milestone",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu primera oración contestada"
+          }
+        }
+      }
+    },
+    "Your first book of the Bible": {
+      "comment": "Milestone",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu primer libro de la Biblia"
+          }
+        }
+      }
+    },
+    "Your first milestone is three days of reading in a row.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu primer logro son tres días seguidos de lectura."
+          }
+        }
+      }
+    },
     "Your first name": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Tu nombre"
+          }
+        }
+      }
+    },
+    "Your first passage by heart": {
+      "comment": "Milestone",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu primer pasaje de memoria"
           }
         }
       }

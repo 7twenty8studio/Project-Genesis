@@ -20,13 +20,18 @@ enum ReminderKind: String, CaseIterable, Identifiable, Sendable {
     case weeklyRecap
     /// Group announcements (push from the server).
     case groups
+    /// "Read with me today?" from someone in a group (push). Off also tells
+    /// the server not to let others nudge you.
+    case nudges
+    /// The day a prayer was answered, a year (or more) later.
+    case prayerAnniversary
 
     var id: String { rawValue }
 
     /// Kinds with a time of day the person chooses.
     var hasTime: Bool {
         switch self {
-        case .prayer, .groups: false
+        case .prayer, .groups, .nudges: false
         default: true
         }
     }
@@ -35,7 +40,7 @@ enum ReminderKind: String, CaseIterable, Identifiable, Sendable {
     /// asked for elsewhere (a prayer's reminder, joining a group).
     var isOnByDefault: Bool {
         switch self {
-        case .prayer, .groups: true
+        case .prayer, .groups, .nudges, .prayerAnniversary: true
         default: false
         }
     }
@@ -49,7 +54,8 @@ enum ReminderKind: String, CaseIterable, Identifiable, Sendable {
         case .memorise: 12 * 60
         case .sermons: 8 * 60 + 30
         case .weeklyRecap: 18 * 60
-        case .prayer, .groups: 0
+        case .prayerAnniversary: 9 * 60
+        case .prayer, .groups, .nudges: 0
         }
     }
 
@@ -63,6 +69,8 @@ enum ReminderKind: String, CaseIterable, Identifiable, Sendable {
         case .sermons: String(localized: "Sermon Notes on Sunday")
         case .weeklyRecap: String(localized: "Weekly Recap")
         case .groups: String(localized: "Group Announcements")
+        case .nudges: String(localized: "Nudges from Friends")
+        case .prayerAnniversary: String(localized: "Answered Prayer Anniversaries")
         }
     }
 
@@ -76,6 +84,8 @@ enum ReminderKind: String, CaseIterable, Identifiable, Sendable {
         case .sermons: String(localized: "Sunday morning, so your sermon notes are ready for church.")
         case .weeklyRecap: String(localized: "Sunday evening, a look back at your week of reading.")
         case .groups: String(localized: "Announcements from your groups' leaders.")
+        case .nudges: String(localized: "When someone in your group invites you to read with them today. Turn this off and no one can nudge you.")
+        case .prayerAnniversary: String(localized: "On the day a prayer was answered, a year later, a moment to remember and give thanks.")
         }
     }
 
@@ -89,6 +99,8 @@ enum ReminderKind: String, CaseIterable, Identifiable, Sendable {
         case .sermons: "building.columns"
         case .weeklyRecap: "chart.bar"
         case .groups: "person.3"
+        case .nudges: "hand.wave"
+        case .prayerAnniversary: "gift"
         }
     }
 }

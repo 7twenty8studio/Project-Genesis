@@ -156,10 +156,31 @@ final class ReadingProgress {
         return Double(position.chapter - 1) / Double(max(book.chapterCount, 1))
     }
 
+    /// Streak shields (Goals & Milestones): one missed day a week doesn't
+    /// break the streak. Set by RootView from the person's choice and the
+    /// feature switch.
+    var streakShieldsActive = false
+
     /// Consecutive days of reading ending today (or yesterday, so a streak
-    /// isn't shown as broken before today's reading).
+    /// isn't shown as broken before today's reading), with shields when on.
     func streak(on date: Date = .now) -> Int {
-        ReadingStreak.length(of: readingDays, endingOn: date, calendar: calendar)
+        ReadingStreak.walk(readingDays, endingOn: date, calendar: calendar, shields: streakShieldsActive).length
+    }
+
+    /// Whether a shield is ready to cover a missed day this week.
+    func streakShieldReady(on date: Date = .now) -> Bool {
+        let walk = ReadingStreak.walk(readingDays, endingOn: date, calendar: calendar, shields: streakShieldsActive)
+        return ReadingStreak.shieldReady(lastShield: walk.lastShield, on: date, calendar: calendar)
+    }
+
+    /// Chapters opened on the day of `date`.
+    func chaptersRead(on date: Date = .now) -> Int {
+        chaptersByDay[Timestamp.dayString(from: date, calendar: calendar)]?.count ?? 0
+    }
+
+    /// Seconds in the reader on the day of `date`.
+    func secondsRead(on date: Date = .now) -> Int {
+        readingSeconds[Timestamp.dayString(from: date, calendar: calendar)] ?? 0
     }
 
     /// Books with every chapter opened.

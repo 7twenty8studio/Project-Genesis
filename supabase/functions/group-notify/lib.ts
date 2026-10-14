@@ -16,6 +16,35 @@ export function parseNotifyRequest(body: unknown): { announcementID: string } {
   return { announcementID: id.toLowerCase() };
 }
 
+/** Reads { nudgeID } from the request body, or null when it isn't a nudge. */
+export function parseNudgeRequest(body: unknown): { nudgeID: string } | null {
+  const id = (body as { nudgeID?: unknown } | null)?.nudgeID;
+  if (id === undefined) return null;
+  if (typeof id !== "string" || !/^[0-9a-f-]{36}$/i.test(id)) throw new NotifyError("nudgeID must be an id.");
+  return { nudgeID: id.toLowerCase() };
+}
+
+/** The app's own sentence for a nudge (a key in its string catalog, so the
+ *  receiver reads it in their language): "%@ is praying for you…". */
+export const NUDGE_BODY_KEY = "%@ is praying for you. Read with me today?";
+
+/** A nudge: the group's name, then the sender's friendly invitation. */
+export function nudgePayload(groupName: string, groupID: string, senderName: string): Record<string, unknown> {
+  const clip = (text: string, length: number) => (text.length > length ? text.slice(0, length - 1) + "…" : text);
+  return {
+    aps: {
+      alert: {
+        title: clip(groupName, 60),
+        "loc-key": NUDGE_BODY_KEY,
+        "loc-args": [clip(senderName, 40)],
+      },
+      sound: "default",
+      "thread-id": `group-${groupID}`,
+    },
+    versely: { groupID, nudge: true },
+  };
+}
+
 function base64url(bytes: Uint8Array | string): string {
   const data = typeof bytes === "string" ? new TextEncoder().encode(bytes) : bytes;
   let binary = "";

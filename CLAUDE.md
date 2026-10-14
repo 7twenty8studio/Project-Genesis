@@ -529,9 +529,43 @@ shares; README.md has the architecture.
   Messages are kind, never guilt (streak, gentle comeback after 3 days).
   Taps open `userInfo["link"]` (versely://) through `PushNotifications.onOpenLink`
   → `AppRouter.handle` (insights added). Prayer reminders pause when the
-  journal is hidden or `.prayer` is off; group pushes follow
-  `PushNotifications.allowsGroupAnnouncements` (off takes the token off the
-  server). Nothing is scheduled or asked in UI tests (`ReminderScheduler.isEnabled`).
+  journal is hidden or `.prayer` is off. The device stays registered for
+  push (`PushNotifications.allowsGroupAnnouncements`) while Group
+  Announcements or Nudges from Friends is wanted; which of the two arrive is
+  kept on the server (profiles.accepts_announcements / accepts_nudges, set by
+  RootView through `set_accepts_announcements` / `set_accepts_nudges`).
+  Answered-prayer anniversaries (`.prayerAnniversary`, on by default, 9:00):
+  a year or more after `Prayer.answeredAt`, one a day, the oldest first
+  (29 February → the 28th). Nothing is scheduled or asked in UI tests
+  (`ReminderScheduler.isEnabled`).
+
+## Goals, streaks and nudges
+- Free. `OptionalFeature.goals` ("Goals & Milestones", Daily area) and
+  `.nudges` ("Group Nudges", Community area, needs the `groups` switch,
+  starts the way Groups & Community was). `GoalPreferences` (environment,
+  UserDefaults `goals.*`) keeps the daily goal (`ReadingGoal`: chapters
+  opened or minutes in the reader today, `ReadingProgress.chaptersRead(on:)` /
+  `secondsRead(on:)`), streak shields (on by default) and the milestones
+  already celebrated. Settings › Goals & Streaks and `HomeRoute.goals`
+  (`GoalSettingsView`); Home shows `GoalHomeCard` under Progress.
+- Streak shields: `ReadingStreak.walk` (pure) covers a single missed day
+  between two reading days, at most one per 7 days; covered days keep the
+  streak but don't add to it. RootView sets `progress.streakShieldsActive`
+  (choice and switch), so every streak (Home, widgets, reminders) follows.
+- Milestones (`Milestones`: streak, chapters, books, answered prayers,
+  passages by heart; `Milestones.Stats.current` counts only shown features):
+  `MilestoneBanner` on Home shows one at a time, once each. The first look
+  marks everything already reached quietly (no parade for existing readers).
+- The daily reading reminder follows the goal: met → none today; started
+  but not met → "Almost there" with what's left.
+- Nudges: a fixed friendly message, no free text (nothing to moderate).
+  `send_group_nudge` (migration 20261018000000) checks both in the group,
+  groups on, sender not muted, no block either way, receiver accepts nudges,
+  one per person per 20 h, 10 a day; then the app calls group-notify
+  `{ nudgeID }`, which pushes loc-key "%@ is praying for you. Read with me
+  today?" (an app string, so it's read in the receiver's language; keep the
+  `String(localized:)` in GroupMembersView). The wave button is on each
+  member row (`GroupDetailModel.nudge`); the in-memory backend mirrors the rules.
 
 ## What's New
 - Every new user-facing feature gets a one-time announcement in
