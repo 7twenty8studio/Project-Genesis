@@ -297,7 +297,7 @@ if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
         SLUG=$(echo "$NAME" | tr ' ' '-')
         RESULT="build/TestResults/UI-$SLUG.xcresult"
         rm -rf "$RESULT"
-        echo "UI pass: $NAME..."
+        echo "UI pass: $NAME... (only failures are printed; follow progress with: tail -f build/TestResults/UI-$SLUG.log)"
         PERF=0
         [ "$UI_TESTS" = full ] && [ "$NAME" = Standard ] && PERF=1
         # Copies of a simulator start folded, so the open-Duo pass runs on the
@@ -313,6 +313,9 @@ if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
             "${DESTS[@]}" -derivedDataPath "$DERIVED" \
             "${PARALLEL[@]}" ${ONLY[@]+"${ONLY[@]}"} \
             -retry-tests-on-failure -test-iterations 2 \
+            -test-timeouts-enabled YES \
+            -default-test-execution-time-allowance 300 \
+            -maximum-test-execution-time-allowance 600 \
             -resultBundlePath "$RESULT" \
             -skipPackagePluginValidation test-without-building 2>&1 \
             | tee "build/TestResults/UI-$SLUG.log" | tee -a build.log \
