@@ -402,6 +402,20 @@ Nothing else in Versely uses CloudKit.
 
 ### 7.2 Upload a build
 
+The quick way, in Terminal from the project folder:
+
+```
+./Scripts/testflight.sh
+```
+
+It checks signing and secrets, runs the unit tests, archives (Release) and
+uploads with the Apple Account signed in to Xcode. The build number is the
+date and time, so nothing needs bumping. `--no-tests` skips the tests;
+`--no-upload` only archives and exports, to check signing. Then continue at
+step 3 below.
+
+Or by hand in Xcode:
+
 1. In Xcode, scheme **Genesis** (the code name), destination **Any iOS Device (arm64)** →
    **Product → Archive**. (Bump `CURRENT_PROJECT_VERSION` in project.yml for
    each new upload, then `xcodegen generate`.)

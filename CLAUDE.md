@@ -57,6 +57,9 @@ shares; README.md has the architecture.
   manifest. Attachment files in the person's own iCloud (CloudKit private
   database) aren't data collected by the developer; everything else syncs
   through Supabase.
+- TestFlight: `./Scripts/testflight.sh` (checks, unit tests, Release
+  archive, upload with Xcode's signed-in account; build number = date/time,
+  `MARKETING_VERSION` in project.yml is the version testers see).
 - UI tests: `./Scripts/build.sh --ui` / `--ui-full`; failures are extracted from
   .xcresult into build/TestResults/*-failures.txt.
 
