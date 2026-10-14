@@ -13,6 +13,8 @@
 #                                   theme, scroll mode, page curl and launch time
 #   --workers N                     UI test copies per simulator (default: chosen
 #                                   from your Mac's memory; 1 = one at a time)
+#   --devices duo                   UI tests only on these simulators (duo, pro, ipad;
+#                                   comma-separated, e.g. duo,ipad). Default: all three
 #   --only Phase3UITests            run only these UI tests (a class, or
 #                                   Class/testMethod); repeat for more
 #   --watch                         also build the Apple Watch app (needs the watchOS
@@ -31,6 +33,7 @@ WORKERS=""
 ONLY=()
 CLEAN=false
 WATCH=false
+DEVICE_FILTER=""
 while [ $# -gt 0 ]; do
     case "$1" in
         --open) OPEN_XCODE=true ;;
@@ -40,6 +43,7 @@ while [ $# -gt 0 ]; do
         --workers) WORKERS=${2:-}; shift ;;
         --clean) CLEAN=true ;;
         --watch) WATCH=true ;;
+        --devices) DEVICE_FILTER=",${2:-}," ; shift ;;
         --only)
             [ "$UI_TESTS" = none ] && UI_TESTS=standard
             ONLY+=("-only-testing:GenesisUITests/${2:-}"); shift ;;
@@ -269,6 +273,10 @@ if [ "$BUILD_STATUS" -eq 0 ] && [ "$UI_TESTS" != none ]; then
 
         DESTS=()
         for device in $DEVICES; do
+            # --devices: leave out simulators that weren't asked for.
+            if [ -n "$DEVICE_FILTER" ] && [[ "$DEVICE_FILTER" != *",$device,"* ]]; then
+                continue
+            fi
             case "$device" in
                 duo) [ -n "$DUO_ID" ] && DESTS+=("-destination" "id=$DUO_ID") ;;
                 pro) [ -n "$PRO_ID" ] && DESTS+=("-destination" "id=$PRO_ID") ;;
