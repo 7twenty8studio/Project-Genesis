@@ -27,7 +27,29 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications]
+
+    static let notifications = WhatsNewAnnouncement(
+        id: "notifications-your-way",
+        title: String(localized: "Notifications, your way"),
+        items: [
+            WhatsNewItem(
+                systemImage: "sun.max",
+                title: String(localized: "Verse of the Day"),
+                detail: String(localized: "Today's verse each morning, at the time you choose.")
+            ),
+            WhatsNewItem(
+                systemImage: "flame",
+                title: String(localized: "Gentle reading reminders"),
+                detail: String(localized: "A nudge only on days you haven't read yet, to keep your streak going, plus your plan, Memorize and Sunday sermon notes.")
+            ),
+            WhatsNewItem(
+                systemImage: "bell.slash",
+                title: String(localized: "You're in control"),
+                detail: String(localized: "Choose each kind and its time, or turn them all off, in Settings › Notifications.")
+            ),
+        ]
+    )
 
     static let hearOriginalWords = WhatsNewAnnouncement(
         id: "original-word-pronunciation",

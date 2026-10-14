@@ -104,6 +104,8 @@ final class AppRouter {
             open(.memorise)
         case "sermons":
             open(.sermons)
+        case "insights":
+            open(.insights)
         case "group":
             if let id = UUID(uuidString: url.lastPathComponent) { openGroup(id) } else { tab = .together }
         default:

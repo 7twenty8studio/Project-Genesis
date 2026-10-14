@@ -423,6 +423,16 @@
         }
       }
     },
+    "%lld passages are ready to review.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld pasajes están listos para repasar."
+          }
+        }
+      }
+    },
     "%lld prayers you're holding up": {
       "localizations": {
         "es": {
@@ -584,6 +594,16 @@
         }
       }
     },
+    "1 passage is ready to review.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 pasaje está listo para repasar."
+          }
+        }
+      }
+    },
     "1 prayer you're holding up": {
       "localizations": {
         "es": {
@@ -714,12 +734,32 @@
         }
       }
     },
+    "A few quiet minutes with God's Word can shape your whole day.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unos minutos en calma con la Palabra de Dios pueden marcar todo tu día."
+          }
+        }
+      }
+    },
     "A fuller prayer journal": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Un diario de oración más completo"
+          }
+        }
+      }
+    },
+    "A gentle nudge on days you haven't read yet, to keep your streak going.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un recordatorio amable los días que aún no has leído, para mantener tu racha."
           }
         }
       }
@@ -835,6 +875,16 @@
         }
       }
     },
+    "A moment with Scripture": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un momento con las Escrituras"
+          }
+        }
+      }
+    },
     "A moment you don't want to forget.": {
       "localizations": {
         "es": {
@@ -851,6 +901,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Una bienvenida cada mañana"
+          }
+        }
+      }
+    },
+    "A nudge only on days you haven't read yet, to keep your streak going, plus your plan, Memorize and Sunday sermon notes.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un recordatorio solo los días que aún no has leído, para mantener tu racha, además de tu plan, Memorizar y las notas del sermón del domingo."
           }
         }
       }
@@ -1489,6 +1549,16 @@
         }
       }
     },
+    "Allow Notifications": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permitir notificaciones"
+          }
+        }
+      }
+    },
     "Also %@": {
       "comment": "Other names for a place",
       "localizations": {
@@ -1619,6 +1689,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Notificaciones de anuncios"
+          }
+        }
+      }
+    },
+    "Announcements from your groups' leaders.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anuncios de los líderes de tus grupos."
           }
         }
       }
@@ -2872,6 +2952,16 @@
         }
       }
     },
+    "Choose each kind and its time, or turn them all off, in Settings › Notifications.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige cada tipo y su hora, o desactívalos todos, en Ajustes › Notificaciones."
+          }
+        }
+      }
+    },
     "Choose each missing word from the verse.": {
       "comment": "Memorize game: Fill the Gaps",
       "localizations": {
@@ -3558,6 +3648,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Leyendo ahora"
+          }
+        }
+      }
+    },
+    "Daily Reading Reminder": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recordatorio de lectura diaria"
           }
         }
       }
@@ -5299,12 +5399,32 @@
         }
       }
     },
+    "Gentle reading reminders": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recordatorios de lectura amables"
+          }
+        }
+      }
+    },
     "Get More": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Obtener más"
+          }
+        }
+      }
+    },
+    "Get the verse of the day each morning, and a gentle reminder in the evening if you haven't read yet. Change times or turn them off anytime in Settings › Notifications.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recibe el versículo del día cada mañana y un recordatorio amable por la tarde si aún no has leído. Cambia las horas o desactívalos cuando quieras en Ajustes › Notificaciones."
           }
         }
       }
@@ -5543,6 +5663,16 @@
         }
       }
     },
+    "Group Announcements": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anuncios de grupos"
+          }
+        }
+      }
+    },
     "Group By": {
       "localizations": {
         "es": {
@@ -5750,6 +5880,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Vas a la iglesia? Toma notas con los versículos al lado."
+          }
+        }
+      }
+    },
+    "Heading to church? Your sermon notes are ready.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Vas a la iglesia? Tus notas del sermón están listas."
           }
         }
       }
@@ -6737,6 +6877,16 @@
         }
       }
     },
+    "Keep your streak going": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantén tu racha"
+          }
+        }
+      }
+    },
     "Key term": {
       "comment": "Kind of study article",
       "localizations": {
@@ -7718,6 +7868,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Memorizar"
+          }
+        }
+      }
+    },
+    "Memorize Review": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repaso de Memorizar"
           }
         }
       }
@@ -9070,12 +9230,42 @@
         }
       }
     },
+    "Notifications": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notificaciones"
+          }
+        }
+      }
+    },
+    "Notifications are off for Versely in the Settings app.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las notificaciones de Versely están desactivadas en la app Ajustes."
+          }
+        }
+      }
+    },
     "Notifications are off for Versely. Turn them on in Settings to get reminders.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Las notificaciones de Versely están desactivadas. Actívalas en Ajustes para recibir recordatorios."
+          }
+        }
+      }
+    },
+    "Notifications, your way": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notificaciones a tu manera"
           }
         }
       }
@@ -9233,6 +9423,16 @@
         }
       }
     },
+    "One chapter today?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Un capítulo hoy?"
+          }
+        }
+      }
+    },
     "One minute": {
       "localizations": {
         "es": {
@@ -9299,6 +9499,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Abrir"
+          }
+        }
+      }
+    },
+    "Open Settings": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir Ajustes"
           }
         }
       }
@@ -10379,6 +10589,16 @@
         }
       }
     },
+    "Prayer Reminders": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recordatorios de oración"
+          }
+        }
+      }
+    },
     "Prayer Request": {
       "localizations": {
         "es": {
@@ -11422,6 +11642,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "La lectura, la búsqueda, las notas, los resaltados, el diario de oración y los planes de lectura siguen siendo gratis, siempre."
+          }
+        }
+      }
+    },
+    "Ready when you are": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Listo cuando tú lo estés"
           }
         }
       }
@@ -12512,6 +12742,16 @@
         }
       }
     },
+    "See what you read this week, and pick a goal for the next.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mira lo que leíste esta semana y elige una meta para la próxima."
+          }
+        }
+      }
+    },
     "See your reading time, longest streak, favorite books and topics, and more with Premium.": {
       "localizations": {
         "es": {
@@ -12650,6 +12890,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Notas de sermones"
+          }
+        }
+      }
+    },
+    "Sermon Notes on Sunday": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas del sermón el domingo"
           }
         }
       }
@@ -13258,6 +13508,16 @@
         }
       }
     },
+    "Small steps every day add up to the whole story.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pequeños pasos cada día forman toda la historia."
+          }
+        }
+      }
+    },
     "Smaller text": {
       "localizations": {
         "es": {
@@ -13590,6 +13850,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Crea un grupo o únete a uno con un código de invitación en la nueva pestaña Juntos. Sigan un plan de lectura en grupo y mira quién va al día."
+          }
+        }
+      }
+    },
+    "Start each day with a verse": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empieza cada día con un versículo"
           }
         }
       }
@@ -13981,6 +14251,36 @@
         }
       }
     },
+    "Sunday at": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Domingo a las"
+          }
+        }
+      }
+    },
+    "Sunday evening, a look back at your week of reading.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El domingo por la tarde, un repaso de tu semana de lectura."
+          }
+        }
+      }
+    },
+    "Sunday morning, so your sermon notes are ready for church.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El domingo por la mañana, para tener tus notas del sermón listas para la iglesia."
+          }
+        }
+      }
+    },
     "Supplication": {
       "comment": "ACTS prayer heading: asking",
       "localizations": {
@@ -14069,6 +14369,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tomar foto"
+          }
+        }
+      }
+    },
+    "Take a breath and spend a few minutes in the Word.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Respira hondo y pasa unos minutos en la Palabra."
           }
         }
       }
@@ -14907,6 +15217,16 @@
         }
       }
     },
+    "The reminders you set on prayers in your journal.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los recordatorios que pones en las oraciones de tu diario."
+          }
+        }
+      }
+    },
     "The sermon in one sentence.": {
       "localizations": {
         "es": {
@@ -15163,7 +15483,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Esta Biblia está incluida en Premium. Si tienes la suscripción, prueba Restaurar compras en Configuración."
+            "value": "Esta Biblia está incluida en Premium. Si tienes la suscripción, prueba Restaurar compras en Ajustes."
           }
         }
       }
@@ -15520,6 +15840,26 @@
         }
       }
     },
+    "Time to read": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hora de leer"
+          }
+        }
+      }
+    },
+    "Time to review": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hora de repasar"
+          }
+        }
+      }
+    },
     "Timeline": {
       "comment": "Prayer journal view: prayers and answers by month",
       "localizations": {
@@ -15628,6 +15968,47 @@
           "stringUnit": {
             "state": "translated",
             "value": "Conversación de hoy"
+          }
+        }
+      }
+    },
+    "Today's reading from your plan, until you've ticked it off.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La lectura de hoy de tu plan, hasta que la marques como hecha."
+          }
+        }
+      }
+    },
+    "Today's reading: %@": {
+      "comment": "Notification: today's reading in a plan, e.g. Genesis 1-3",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lectura de hoy: %@"
+          }
+        }
+      }
+    },
+    "Today's verse each morning, at the time you choose.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El versículo del día cada mañana, a la hora que elijas."
+          }
+        }
+      }
+    },
+    "Today's verse, every day at the time you choose.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El versículo del día, todos los días a la hora que elijas."
           }
         }
       }
@@ -15866,6 +16247,16 @@
         }
       }
     },
+    "Turn On": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activar"
+          }
+        }
+      }
+    },
     "Turn On %@": {
       "localizations": {
         "es": {
@@ -15892,6 +16283,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Activa iCloud para Versely en Ajustes para sincronizar los adjuntos."
+          }
+        }
+      }
+    },
+    "Turn this off to silence every notification from Versely. Your choices below are kept for when you turn it back on.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desactívalo para silenciar todas las notificaciones de Versely. Tus opciones de abajo se guardan para cuando lo vuelvas a activar."
           }
         }
       }
@@ -15933,6 +16334,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Al desactivarlo, entran todas las personas que están esperando."
+          }
+        }
+      }
+    },
+    "Two days in a row?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Dos días seguidos?"
           }
         }
       }
@@ -16483,6 +16894,26 @@
         }
       }
     },
+    "Weekly Recap": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resumen semanal"
+          }
+        }
+      }
+    },
+    "Welcome back anytime": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vuelve cuando quieras"
+          }
+        }
+      }
+    },
     "Well done": {
       "localizations": {
         "es": {
@@ -16902,6 +17333,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cuando está activado, quienes tienen el código de invitación piden unirse y un moderador les deja entrar."
+          }
+        }
+      }
+    },
+    "When verses are ready to review.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuando haya versículos listos para repasar."
           }
         }
       }
@@ -17616,6 +18057,16 @@
         }
       }
     },
+    "You read yesterday. A few minutes today makes it two days in a row.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leíste ayer. Unos minutos hoy y serán dos días seguidos."
+          }
+        }
+      }
+    },
     "You reviewed %lld verses.": {
       "localizations": {
         "es": {
@@ -17682,6 +18133,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verás el grupo en tu lista cuando estés dentro."
+          }
+        }
+      }
+    },
+    "You're in control": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tú decides"
           }
         }
       }
@@ -17806,6 +18267,16 @@
         }
       }
     },
+    "You've read %lld days in a row. A few minutes today keeps it going.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Has leído %lld días seguidos. Unos minutos hoy mantienen tu racha."
+          }
+        }
+      }
+    },
     "You've read %lld of %lld chapters": {
       "localizations": {
         "es": {
@@ -17832,6 +18303,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu %@ en repaso"
+          }
+        }
+      }
+    },
+    "Your Bible Life": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu vida con la Biblia"
+          }
+        }
+      }
+    },
+    "Your Bible is right where you left it.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu Biblia está justo donde la dejaste."
+          }
+        }
+      }
+    },
+    "Your Bible is right where you left it. Pick up with one chapter today.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu Biblia está justo donde la dejaste. Retómala hoy con un capítulo."
           }
         }
       }
@@ -18123,6 +18624,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu versículo, a tu manera"
+          }
+        }
+      }
+    },
+    "Your week in Scripture": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu semana en las Escrituras"
           }
         }
       }

@@ -159,6 +159,10 @@ enum GenesisLink {
     static let plans = URL(string: "\(scheme)://plans")!
     static let prayer = URL(string: "\(scheme)://prayer")!
     static let memorise = URL(string: "\(scheme)://memorise")!
+    /// Continue reading where the person left off.
+    static let continueReading = URL(string: "\(scheme)://read")!
+    static let sermons = URL(string: "\(scheme)://sermons")!
+    static let insights = URL(string: "\(scheme)://insights")!
     /// The app's Home tab (locked Premium widgets open here; the router has
     /// no Premium route).
     static let home = URL(string: "\(scheme)://home")!

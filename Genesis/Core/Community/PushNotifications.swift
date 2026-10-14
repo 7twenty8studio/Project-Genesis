@@ -16,6 +16,24 @@ final class PushNotifications: NSObject {
     var onOpenGroup: ((UUID) -> Void)?
     /// Opens the prayer journal when a prayer reminder is tapped.
     var onOpenPrayerJournal: (() -> Void)?
+    /// Opens a versely:// link (reminders from Settings › Notifications).
+    var onOpenLink: ((URL) -> Void)?
+
+    /// Group announcements wanted (Settings › Notifications: the master
+    /// switch and the Group Announcements switch). Off, this device's token
+    /// is taken off the server so no announcements arrive.
+    var allowsGroupAnnouncements = true {
+        didSet {
+            guard allowsGroupAnnouncements != oldValue else { return }
+            Task {
+                if allowsGroupAnnouncements {
+                    await refreshRegistration()
+                } else {
+                    await signingOut()
+                }
+            }
+        }
+    }
 
     /// False in UI tests, so no permission alert covers the screen.
     var isEnabled = true
@@ -34,7 +52,7 @@ final class PushNotifications: NSObject {
     /// Asks permission (once) and registers with Apple for push. Called when
     /// someone creates or joins a group, or turns notifications on.
     func enable() async {
-        guard isEnabled else { return }
+        guard isEnabled, allowsGroupAnnouncements else { return }
         let center = UNUserNotificationCenter.current()
         let settings = await center.notificationSettings()
         var allowed = [.authorized, .provisional, .ephemeral].contains(settings.authorizationStatus)
@@ -47,7 +65,7 @@ final class PushNotifications: NSObject {
     /// Re-registers on launch if permission was given before, so a changed
     /// token reaches the server.
     func refreshRegistration() async {
-        guard isEnabled else { return }
+        guard isEnabled, allowsGroupAnnouncements else { return }
         let settings = await UNUserNotificationCenter.current().notificationSettings()
         if [.authorized, .provisional, .ephemeral].contains(settings.authorizationStatus) {
             UIApplication.shared.registerForRemoteNotifications()
@@ -61,7 +79,7 @@ final class PushNotifications: NSObject {
 
     /// Sends the token to the server when signed in (again after signing in).
     func upload() async {
-        guard let token, let backend, let user = await backend.currentUserID() else { return }
+        guard allowsGroupAnnouncements, let token, let backend, let user = await backend.currentUserID() else { return }
         if let uploaded, uploaded.token == token, uploaded.user == user { return }
         do {
             try await backend.registerPushToken(token, sandbox: isSandbox)
@@ -79,8 +97,10 @@ final class PushNotifications: NSObject {
         try? await backend.unregisterPushToken(token)
     }
 
-    fileprivate func handleTap(groupID: String?, isPrayerReminder: Bool) {
-        if let groupID, let id = UUID(uuidString: groupID) {
+    fileprivate func handleTap(groupID: String?, isPrayerReminder: Bool, link: String?) {
+        if let link, let url = URL(string: link), url.scheme == GenesisLink.scheme {
+            onOpenLink?(url)
+        } else if let groupID, let id = UUID(uuidString: groupID) {
             onOpenGroup?(id)
         } else if isPrayerReminder {
             onOpenPrayerJournal?()
@@ -101,8 +121,9 @@ extension PushNotifications: UNUserNotificationCenterDelegate {
         let info = response.notification.request.content.userInfo
         let groupID = (info["versely"] as? [String: Any])?["groupID"] as? String
         let isPrayerReminder = info["prayerID"] != nil
+        let link = info["link"] as? String
         await MainActor.run {
-            PushNotifications.shared.handleTap(groupID: groupID, isPrayerReminder: isPrayerReminder)
+            PushNotifications.shared.handleTap(groupID: groupID, isPrayerReminder: isPrayerReminder, link: link)
         }
     }
 }

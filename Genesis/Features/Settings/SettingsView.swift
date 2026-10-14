@@ -26,6 +26,12 @@ struct SettingsView: View {
                             Label("Features", systemImage: "square.grid.2x2")
                         }
                         .accessibilityIdentifier("settings.features")
+                        NavigationLink {
+                            NotificationSettingsView()
+                        } label: {
+                            Label("Notifications", systemImage: "bell.badge")
+                        }
+                        .accessibilityIdentifier("settings.notifications")
                         Button {
                             showsBibles = true
                         } label: {

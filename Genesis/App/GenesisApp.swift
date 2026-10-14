@@ -21,6 +21,7 @@ struct GenesisApp: App {
     @State private var pronouncer: WordPronouncer
     @State private var community: CommunityStore
     @State private var features: FeaturePreferences
+    @State private var notifications: NotificationPreferences
     @State private var challengeAutoTick: ChallengeAutoTick
     @State private var attachments: AttachmentTransfers
     @State private var studyResources: StudyResourceLibrary
@@ -43,6 +44,8 @@ struct GenesisApp: App {
         let features = FeaturePreferences(existingUser: UserDefaults.standard.bool(forKey: "onboarding.complete"))
         if testing.isSimple { features.choose([]) }
         _features = State(initialValue: features)
+        // Read after the UI-test reset, so a test starts from the defaults.
+        _notifications = State(initialValue: NotificationPreferences())
 
         let library = BibleLibrary()
         let progress = ReadingProgress()
@@ -204,6 +207,11 @@ struct GenesisApp: App {
             welcome?.markShown()
             router?.open(.prayerJournal)
         }
+        push.onOpenLink = { [weak router, weak welcome] url in
+            welcome?.markShown()
+            router?.handle(url)
+        }
+        ReminderScheduler.isEnabled = !testing.isEnabled
 
         // Verses of the day for Apple Watch (not in UI tests).
         if !testing.isEnabled { WatchConnector.shared.start() }
@@ -233,6 +241,7 @@ struct GenesisApp: App {
                 .environment(pronouncer)
                 .environment(community)
                 .environment(features)
+                .environment(notifications)
                 .environment(challengeAutoTick)
                 .environment(attachments)
                 .environment(\.groupChallenges, groupChallenges)

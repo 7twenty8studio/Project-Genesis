@@ -17,6 +17,7 @@ struct RootView: View {
     @Environment(AudioPlayerService.self) private var audio
     @Environment(AmbientSoundService.self) private var ambient
     @Environment(FeaturePreferences.self) private var features
+    @Environment(NotificationPreferences.self) private var notifications
     @Environment(MorningWelcome.self) private var welcome
     @Environment(ChallengeAutoTick.self) private var challengeAutoTick
     @Environment(\.modelContext) private var modelContext
@@ -96,11 +97,18 @@ struct RootView: View {
             refreshWidgets()
             offerWelcome()
         }
-        // A hidden Prayer Journal pauses its reminders; turning it on puts them back.
-        .onChange(of: features.isOn(.prayer), initial: true) { _, on in
+        // A hidden Prayer Journal (or prayer reminders switched off in
+        // Settings › Notifications) pauses its reminders; on puts them back.
+        .onChange(of: features.isOn(.prayer) && notifications.allows(.prayer), initial: true) { _, on in
             PrayerReminders.follow(PrayerReminders.change(wasOn: prayerSwitch, isOn: on), context: modelContext)
             prayerSwitch = on
         }
+        // Group announcements follow Settings › Notifications.
+        .onChange(of: notifications.allows(.groups), initial: true) { _, allowed in
+            PushNotifications.shared.allowsGroupAnnouncements = allowed
+        }
+        // Reminders follow their settings straight away.
+        .onChange(of: notifications.version) { refreshReminders() }
         // A hidden Memorise leaves its widget showing the off state.
         .onChange(of: features.isOn(.memorise)) { refreshWidgets() }
         // Premium Bibles open only with Premium (once StoreKit has answered,
@@ -242,6 +250,22 @@ struct RootView: View {
     private func refreshWidgets() {
         WidgetSnapshotWriter.applyPendingPlanDays(context: modelContext)
         WidgetSnapshotWriter.refresh(library: library, progress: progress, context: modelContext, isPremium: entitlements.isPremium, theme: settings.preferences.theme, memoriseShown: features.isOn(.memorise))
+        // Whatever changed the widgets (reading, a plan day, Memorize, the
+        // Bible) can change the week's reminders too.
+        refreshReminders()
+    }
+
+    /// Rebuilds the week of reminders (Settings › Notifications).
+    private func refreshReminders() {
+        let context = ReminderScheduler.Context(
+            preferences: notifications,
+            library: library,
+            progress: progress,
+            modelContext: modelContext,
+            features: features,
+            entitlements: entitlements
+        )
+        Task { await ReminderScheduler.refresh(context) }
     }
 }
 

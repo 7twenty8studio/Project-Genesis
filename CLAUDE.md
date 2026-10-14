@@ -509,6 +509,30 @@ shares; README.md has the architecture.
   Notes and Commentary tabs), Library's toolbar (`StudyResourcesView`) and
   BDB/LSJ sections in `LexiconEntryView`.
 
+## Notifications
+- Settings › Notifications (`NotificationSettingsView`): "Allow Notifications"
+  (master; off silences everything, each choice kept) and one switch per
+  `ReminderKind` (verse of the day, daily reading, reading plan, Memorize,
+  prayer, Sunday sermon notes, weekly recap, group announcements), with a
+  time where it has one. `NotificationPreferences` (UserDefaults, environment)
+  keeps them; new kinds start off except prayer and groups (already asked
+  for). Kinds of a hidden feature aren't listed or sent; Memorize needs
+  Premium. A one-time Home card (`NotificationInviteCard`) offers the verse of
+  the day and the reading reminder; either answer hides it.
+- Local notifications only (no server): the pure `NotificationPlanner`
+  (Swift Testing) plans a week ahead (≤ 7 per kind, ids
+  "versely.reminder.<kind>.<day>", well under iOS's 64); `ReminderScheduler`
+  gathers the data and replaces the pending week whenever RootView refreshes
+  widgets (launch, foreground, background, data change) or the settings
+  change (`version`), so reading today drops today's nudge and a ticked plan
+  day drops its reminder. Verse text verbatim from the person's Bible.
+  Messages are kind, never guilt (streak, gentle comeback after 3 days).
+  Taps open `userInfo["link"]` (versely://) through `PushNotifications.onOpenLink`
+  → `AppRouter.handle` (insights added). Prayer reminders pause when the
+  journal is hidden or `.prayer` is off; group pushes follow
+  `PushNotifications.allowsGroupAnnouncements` (off takes the token off the
+  server). Nothing is scheduled or asked in UI tests (`ReminderScheduler.isEnabled`).
+
 ## What's New
 - Every new user-facing feature gets a one-time announcement in
   `WhatsNewCatalog.all` (Genesis/Core/WhatsNew/WhatsNew.swift) with a new,

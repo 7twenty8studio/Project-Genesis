@@ -10,6 +10,7 @@ struct HomeView: View {
     @Environment(ReaderSettings.self) private var settings
     @Environment(AuthService.self) private var auth
     @Environment(EntitlementService.self) private var entitlements
+    @Environment(NotificationPreferences.self) private var notifications
     @State private var showsBibles = false
     @State private var showsSettings = false
     @State private var showsYearInReview = false
@@ -40,6 +41,10 @@ struct HomeView: View {
                     if features.isOn(.sermons), SermonSunday.isSundayMorning() { sermonNotes }
                     if features.isOn(.plans) { todaysReading }
                     dailyVerse
+                    // Once: the verse of the day and a reading reminder.
+                    if !notifications.hasAnsweredInvite, ReminderScheduler.isEnabled, progress.hasStartedReading {
+                        NotificationInviteCard()
+                    }
                     if features.isOn(.prayer) { prayerJournal }
                     if features.isOn(.memorise) { memorise }
                     readingProgress
