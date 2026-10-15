@@ -153,14 +153,36 @@ private struct VerseContentView: View {
         case .accessoryInline:
             Text(passage?.reference ?? title)
         case .accessoryRectangular:
-            VStack(alignment: .leading, spacing: 2) {
-                Text(passage?.reference ?? title).font(.headline)
-                Text(passage?.text ?? "").font(.system(.caption, design: .serif)).lineLimit(3)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            lockScreen
         default:
             homeScreen
         }
+    }
+
+    /// The Lock Screen's rectangle is a fixed size set by iOS (half the
+    /// width, two rows), so the reference stays small and the verse takes
+    /// the room: the largest size that shows it whole, then smaller, and
+    /// only a very long verse is cut short.
+    private var lockScreen: some View {
+        VStack(alignment: .leading, spacing: 1) {
+            Text(passage?.reference ?? title)
+                .font(.caption2.weight(.semibold))
+                .lineLimit(1)
+                .widgetAccentable()
+            ViewThatFits(in: .vertical) {
+                lockScreenVerse(.caption, lines: nil)
+                lockScreenVerse(.caption2, lines: nil)
+                lockScreenVerse(.caption2, lines: 4)
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+    }
+
+    private func lockScreenVerse(_ style: Font.TextStyle, lines: Int?) -> some View {
+        Text(passage?.text ?? "")
+            .font(.system(style, design: .serif))
+            .lineLimit(lines)
+            .fixedSize(horizontal: false, vertical: lines == nil)
     }
 
     private var homeScreen: some View {
