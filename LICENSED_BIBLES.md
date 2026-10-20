@@ -191,6 +191,24 @@ are the terms YouVersion agreed with us in writing (email thread
   YouVersion's IP to copy or substitute for a YouVersion product or the
   Platform, or use YouVersion's technology, materials or branding beyond
   the required attribution.
-- **Still to confirm:** quotas and rate limits, and wording for the
-  "YouVersion Bible App is free" notice the Terms ask for (questions 2, 4
-  and 5 of our first email were handed to Platform Support).
+- **From the Platform Terms of Use** (the developer agreement):
+  - Because Versely charges for a subscription, it must "conspicuously and
+    explicitly advise Users that the YouVersion Bible App is provided at no
+    cost". No wording is prescribed. Plan: a line on the Premium screen
+    and in Settings › About ("The YouVersion Bible App is free to download
+    and use."), in plain text with no logo.
+  - The app key is confidential: it stays a Supabase secret
+    (`YVP_APP_KEY`), used only by an Edge Function, never in the app,
+    git or a chat.
+  - Keep any usage reporting built into YouVersion's tools switched on.
+  - No YouVersion marks or logo, and nothing that suggests endorsement or
+    partnership, beyond what a tool's own terms allow.
+  - AI: YVP content must not feed open-ended AI chat or AI training. The
+    study assistant already reads only a public-domain Bible; keep it so.
+  - Either side may end the agreement with 30 days' notice; YouVersion
+    may suspend at once. When it ends, YVP Bibles leave the catalog and
+    the devices.
+  - YouVersion shares our developer details with each publisher whose
+    Bible we request, so the publisher can check eligibility.
+- **Still to confirm:** quotas and rate limits (not in the Terms; ask
+  Platform Support or check the developer docs).
