@@ -3872,6 +3872,16 @@
         }
       }
     },
+    "Couldn't download": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo descargar"
+          }
+        }
+      }
+    },
     "Cream": {
       "comment": "Reader theme name",
       "localizations": {
@@ -7990,12 +8000,12 @@
         }
       }
     },
-    "Lots of people are downloading Bibles right now. Please try again in a few minutes.": {
+    "Lots of people are downloading Bibles right now. Please try again in a few minutes; what's already downloaded is kept.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Muchas personas están descargando Biblias en este momento. Inténtalo de nuevo en unos minutos."
+            "value": "Muchas personas están descargando Biblias en este momento. Inténtalo de nuevo en unos minutos; lo que ya se descargó se guarda."
           }
         }
       }

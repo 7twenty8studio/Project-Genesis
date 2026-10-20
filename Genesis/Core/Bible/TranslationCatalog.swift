@@ -136,7 +136,7 @@ enum TranslationDownloadError: LocalizedError, Equatable {
         case .damaged: String(localized: "The download was damaged. Please try again.")
         case .notABible: String(localized: "That file isn't a Bible Versely can read.")
         case .needsPremium: String(localized: "This Bible comes with Premium. If you subscribe, try Restore Purchases in Settings.")
-        case .busy: String(localized: "Lots of people are downloading Bibles right now. Please try again in a few minutes.")
+        case .busy: String(localized: "Lots of people are downloading Bibles right now. Please try again in a few minutes; what's already downloaded is kept.")
         }
     }
 }

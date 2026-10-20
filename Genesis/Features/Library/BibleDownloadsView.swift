@@ -85,6 +85,16 @@ struct BibleDownloadsView: View {
             } message: {
                 Text("Your highlights and notes stay. You can download it again any time.")
             }
+            // A failed download says so where it can't be missed (the
+            // footer sits below a long list).
+            .alert(
+                String(localized: "Couldn't download"),
+                isPresented: Binding(get: { library.downloadError != nil }, set: { if !$0 { library.downloadError = nil } })
+            ) {
+                Button(String(localized: "OK")) { library.downloadError = nil }
+            } message: {
+                Text(library.downloadError ?? "")
+            }
         }
     }
 
@@ -159,13 +169,9 @@ struct BibleDownloadsView: View {
         } header: {
             Text(AppLanguage.displayName(language))
         } footer: {
-            if let error = library.downloadError {
-                Text(error).foregroundStyle(.orange)
-            } else {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("The most read are listed first.")
-                    Text("Every Bible here is public domain or used with its publisher's permission.")
-                }
+            VStack(alignment: .leading, spacing: 4) {
+                Text("The most read are listed first.")
+                Text("Every Bible here is public domain or used with its publisher's permission.")
             }
         }
         .listRowBackground(palette.surface)

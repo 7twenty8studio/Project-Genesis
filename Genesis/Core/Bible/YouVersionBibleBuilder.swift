@@ -55,8 +55,19 @@ struct YouVersionBibleBuilder: Sendable {
     private static let parallelBooks = 2
 
     func build(_ item: DownloadableTranslation, to destination: URL, allowsCellular: Bool) async throws {
-        let books = try await fetchAll(id: item.id, allowsCellular: allowsCellular)
-        try FileManager.default.createDirectory(at: destination.deletingLastPathComponent(), withIntermediateDirectories: true)
+        let folder = destination.deletingLastPathComponent()
+        try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
+        // Books already fetched are kept until the Bible is built, so a
+        // download stopped by the Platform's rate limit (or the network)
+        // carries on where it left off instead of starting again.
+        let parts = folder.appending(path: "\(item.id)-\(item.version)-books", directoryHint: .isDirectory)
+        try FileManager.default.createDirectory(at: parts, withIntermediateDirectories: true)
+        var values = URLResourceValues()
+        values.isExcludedFromBackup = true
+        var partsURL = parts
+        try? partsURL.setResourceValues(values)
+
+        let books = try await fetchAll(id: item.id, parts: parts, allowsCellular: allowsCellular)
         // Written beside the destination, then moved in, so a half-built file
         // is never opened.
         let partial = destination.appendingPathExtension("partial")
@@ -71,25 +82,40 @@ struct YouVersionBibleBuilder: Sendable {
             try? FileManager.default.removeItem(at: partial)
             throw error
         }
+        try? FileManager.default.removeItem(at: parts)
+    }
+
+    /// A book saved by an earlier, unfinished download (less than a week old).
+    private static func savedBook(_ number: Int, in parts: URL) -> YouVersionBook? {
+        let file = parts.appending(path: "\(number).json")
+        guard let attributes = try? FileManager.default.attributesOfItem(atPath: file.path(percentEncoded: false)),
+              let saved = attributes[.modificationDate] as? Date,
+              Date.now.timeIntervalSince(saved) < 7 * 24 * 60 * 60,
+              let data = try? Data(contentsOf: file) else { return nil }
+        return try? JSONDecoder().decode(YouVersionBook.self, from: data)
     }
 
     /// Every book, in order (book number → its chapters).
-    private func fetchAll(id: String, allowsCellular: Bool) async throws -> [Int: YouVersionBook] {
+    private func fetchAll(id: String, parts: URL, allowsCellular: Bool) async throws -> [Int: YouVersionBook] {
         let codes = Self.bookCodes
+        var books: [Int: YouVersionBook] = [:]
+        var missing: [Int] = []
+        for number in 1...codes.count {
+            if let book = Self.savedBook(number, in: parts) { books[number] = book } else { missing.append(number) }
+        }
         return try await withThrowingTaskGroup(of: (Int, YouVersionBook).self) { group in
             var next = 0
-            var books: [Int: YouVersionBook] = [:]
-            while next < min(Self.parallelBooks, codes.count) {
-                let index = next
+            while next < min(Self.parallelBooks, missing.count) {
+                let number = missing[next]
                 next += 1
-                group.addTask { (index + 1, try await self.fetchBook(id: id, code: codes[index], allowsCellular: allowsCellular)) }
+                group.addTask { (number, try await self.fetchBook(id: id, code: codes[number - 1], number: number, parts: parts, allowsCellular: allowsCellular)) }
             }
             while let (number, book) = try await group.next() {
                 books[number] = book
-                if next < codes.count {
-                    let index = next
+                if next < missing.count {
+                    let number = missing[next]
                     next += 1
-                    group.addTask { (index + 1, try await self.fetchBook(id: id, code: codes[index], allowsCellular: allowsCellular)) }
+                    group.addTask { (number, try await self.fetchBook(id: id, code: codes[number - 1], number: number, parts: parts, allowsCellular: allowsCellular)) }
                 }
             }
             return books
@@ -97,7 +123,7 @@ struct YouVersionBibleBuilder: Sendable {
     }
 
     /// One book, tried up to three times (the Platform can be briefly busy).
-    private func fetchBook(id: String, code: String, allowsCellular: Bool) async throws -> YouVersionBook {
+    private func fetchBook(id: String, code: String, number: Int, parts: URL, allowsCellular: Bool) async throws -> YouVersionBook {
         let body = try JSONEncoder().encode(["id": id, "book": code])
         var attempt = 0
         while true {
@@ -120,6 +146,7 @@ struct YouVersionBibleBuilder: Sendable {
                 guard let book = try? JSONDecoder().decode(YouVersionBook.self, from: response.data), !book.chapters.isEmpty else {
                     throw TranslationDownloadError.damaged
                 }
+                try? response.data.write(to: parts.appending(path: "\(number).json"), options: .atomic)
                 return book
             case 429:
                 // The Platform is busy (it limits requests per app key).
