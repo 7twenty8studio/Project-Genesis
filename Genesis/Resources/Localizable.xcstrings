@@ -1134,6 +1134,16 @@
         }
       }
     },
+    "A paused download keeps what it has for a week. Continue it any time.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una descarga en pausa guarda lo que tiene durante una semana. Continúala cuando quieras."
+          }
+        }
+      }
+    },
     "A precise, literal translation valued for careful study.": {
       "localizations": {
         "es": {
@@ -3821,6 +3831,16 @@
         }
       }
     },
+    "Continue downloading %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seguir descargando %@"
+          }
+        }
+      }
+    },
     "Continue to Next Chapter": {
       "localizations": {
         "es": {
@@ -4354,6 +4374,16 @@
         }
       }
     },
+    "Discard": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descartar"
+          }
+        }
+      }
+    },
     "Discuss each day's reading, and get a notification when a leader posts an announcement.": {
       "localizations": {
         "es": {
@@ -4615,12 +4645,32 @@
         }
       }
     },
+    "Downloading · %lld of %lld books": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descargando · %lld de %lld libros"
+          }
+        }
+      }
+    },
     "Downloading…": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Descargando…"
+          }
+        }
+      }
+    },
+    "Downloads": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descargas"
           }
         }
       }
@@ -10673,6 +10723,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "En pausa"
+          }
+        }
+      }
+    },
+    "Paused · %lld of %lld books saved": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En pausa · %lld de %lld libros guardados"
           }
         }
       }

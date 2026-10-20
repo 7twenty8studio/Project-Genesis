@@ -95,6 +95,20 @@ struct YouVersionBibleTests {
         #expect(roundTrip.isYouVersion)
     }
 
+    @Test func anUnfinishedDownloadIsKeptToContinue() throws {
+        let folder = FileManager.default.temporaryDirectory.appending(path: "yvp-parts-\(UUID().uuidString)", directoryHint: .isDirectory)
+        let item = DownloadableTranslation(id: "NIV", name: "New International Version", year: "2011", license: Self.notice, summary: "",
+                                           fileURL: "", fileBytes: 0, databaseBytes: 0, sha256: "", version: 1, youVersionID: 111)
+        #expect(YouVersionBibleBuilder.savedBookCount(for: item, in: folder) == 0)
+        let parts = YouVersionBibleBuilder.partsFolder(for: item, in: folder)
+        try FileManager.default.createDirectory(at: parts, withIntermediateDirectories: true)
+        try Self.john.write(to: parts.appending(path: "43.json"))
+        try Self.john.write(to: parts.appending(path: "1.json"))
+        #expect(YouVersionBibleBuilder.savedBookCount(for: item, in: folder) == 2)
+        YouVersionBibleBuilder.discard(item, in: folder)
+        #expect(YouVersionBibleBuilder.savedBookCount(for: item, in: folder) == 0)
+    }
+
     @Test func theAnnouncementIsNew() {
         let ids = WhatsNewCatalog.all.map(\.id)
         #expect(Set(ids).count == ids.count)

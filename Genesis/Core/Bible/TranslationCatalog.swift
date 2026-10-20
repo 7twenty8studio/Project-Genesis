@@ -181,10 +181,11 @@ struct TranslationDownloader: Sendable {
 
     /// Downloads a translation's file (or, for a YouVersion Bible, builds it
     /// on the device) to `destination`, and checks it holds a whole Bible.
-    func download(_ item: DownloadableTranslation, to destination: URL, allowsCellular: Bool = true, proof: PremiumProof? = nil) async throws {
+    /// `progress` (YouVersion Bibles only) is called with the books in hand.
+    func download(_ item: DownloadableTranslation, to destination: URL, allowsCellular: Bool = true, proof: PremiumProof? = nil, progress: (@Sendable (Int) -> Void)? = nil) async throws {
         if item.youVersionID != nil {
             guard let client else { throw TranslationDownloadError.notConfigured }
-            try await YouVersionBibleBuilder(client: client).build(item, to: destination, allowsCellular: allowsCellular)
+            try await YouVersionBibleBuilder(client: client).build(item, to: destination, allowsCellular: allowsCellular, progress: progress)
         } else {
             try await downloadFile(item, to: destination, allowsCellular: allowsCellular, proof: proof)
         }

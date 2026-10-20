@@ -58,6 +58,7 @@ struct BibleDownloadsView: View {
                     }
                     .listRowBackground(palette.surface)
 
+                    downloads
                     bibles
                 }
             }
@@ -119,6 +120,36 @@ struct BibleDownloadsView: View {
         .accessibilityIdentifier("bibles.language")
     }
 
+    /// Bibles downloading now or paused partway, in every language, so a
+    /// download can be watched and continued from one place.
+    private var activeDownloads: [DownloadableTranslation] {
+        library.catalog.filter { library.downloading.contains($0.id) || library.savedBooks(for: $0) > 0 }
+    }
+
+    @ViewBuilder
+    private var downloads: some View {
+        let items = activeDownloads
+        if !items.isEmpty {
+            Section {
+                ForEach(items) { item in
+                    DownloadProgressRow(
+                        item: item,
+                        isDownloading: library.downloading.contains(item.id),
+                        progress: library.downloadProgress[item.id],
+                        savedBooks: library.savedBooks(for: item),
+                        resume: { Task { await library.download(item) } },
+                        discard: { library.discardDownload(item) }
+                    )
+                }
+            } header: {
+                Text("Downloads")
+            } footer: {
+                Text("A paused download keeps what it has for a week. Continue it any time.")
+            }
+            .listRowBackground(palette.surface)
+        }
+    }
+
     private var bibles: some View {
         Section {
             ForEach(entries) { entry in
@@ -126,6 +157,8 @@ struct BibleDownloadsView: View {
                     entry: entry,
                     isCurrent: entry.translation.id == library.currentTranslation.id,
                     isDownloading: library.downloading.contains(entry.id),
+                    progress: library.downloadProgress[entry.id],
+                    savedBooks: entry.download.map { library.savedBooks(for: $0) } ?? 0,
                     read: {
                         if library.isLocked(entry.translation) {
                             premium = .premiumBibles
@@ -146,7 +179,8 @@ struct BibleDownloadsView: View {
                             }
                             await library.download(item)
                         }
-                    }
+                    },
+                    discard: entry.download.map { item in { library.discardDownload(item) } }
                 )
                 .swipeActions {
                     if library.isRemovable(entry.translation) {
@@ -175,5 +209,62 @@ struct BibleDownloadsView: View {
             }
         }
         .listRowBackground(palette.surface)
+    }
+}
+
+/// One download in the Bibles screen's Downloads section: a bar while it
+/// runs, or what's saved and a Continue button when it's paused.
+private struct DownloadProgressRow: View {
+    let item: DownloadableTranslation
+    let isDownloading: Bool
+    let progress: Double?
+    let savedBooks: Int
+    let resume: () -> Void
+    let discard: () -> Void
+
+    @Environment(\.palette) private var palette
+
+    private static let bookCount = YouVersionBibleBuilder.bookCodes.count
+    private var savedBookCount: Int { savedBooks }
+    private var doneCount: Int { Int(((progress ?? 0) * Double(Self.bookCount)).rounded()) }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack {
+                Text(item.name)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(palette.text)
+                Spacer()
+                if isDownloading {
+                    Text(String(localized: "Downloading"))
+                        .font(.caption)
+                        .foregroundStyle(palette.secondaryText)
+                } else {
+                    Button(String(localized: "Discard"), role: .destructive, action: discard)
+                        .font(.caption)
+                        .buttonStyle(.borderless)
+                    Button(String(localized: "Continue"), action: resume)
+                        .font(.caption.weight(.semibold))
+                        .buttonStyle(.bordered)
+                        .tint(palette.accent)
+                        .accessibilityLabel(String(localized: "Continue downloading \(item.name)"))
+                }
+            }
+            if isDownloading, progress == nil {
+                ProgressView().frame(maxWidth: .infinity, alignment: .leading)
+            } else if isDownloading {
+                ProgressView(value: progress ?? 0).tint(palette.accent)
+                Text(String(localized: "Downloading · \(doneCount) of \(Self.bookCount) books"))
+                    .font(.caption)
+                    .foregroundStyle(palette.secondaryText)
+            } else {
+                ProgressView(value: Double(savedBooks), total: Double(Self.bookCount)).tint(palette.secondaryText)
+                Text(String(localized: "Paused · \(savedBookCount) of \(Self.bookCount) books saved"))
+                    .font(.caption)
+                    .foregroundStyle(palette.secondaryText)
+            }
+        }
+        .padding(.vertical, 4)
+        .accessibilityIdentifier("bibles.downloadRow.\(item.id)")
     }
 }

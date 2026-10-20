@@ -54,20 +54,46 @@ struct YouVersionBibleBuilder: Sendable {
     /// the Platform limits requests per app key, shared by every reader.
     private static let parallelBooks = 2
 
-    func build(_ item: DownloadableTranslation, to destination: URL, allowsCellular: Bool) async throws {
+    /// Where an unfinished download keeps the books it has: until the Bible
+    /// is built, so a download stopped by the Platform's rate limit (or the
+    /// network) carries on where it left off instead of starting again.
+    static func partsFolder(for item: DownloadableTranslation, in folder: URL) -> URL {
+        folder.appending(path: "\(item.id)-\(item.version)-books", directoryHint: .isDirectory)
+    }
+
+    /// How many books an unfinished download already has (0 when none).
+    /// Counts the saved files only (cheap enough for a screen to ask).
+    static func savedBookCount(for item: DownloadableTranslation, in folder: URL) -> Int {
+        let parts = partsFolder(for: item, in: folder)
+        return (1...bookCodes.count).filter { savedDate($0, in: parts) != nil }.count
+    }
+
+    /// When a book was saved, if it's recent enough to use (a week).
+    private static func savedDate(_ number: Int, in parts: URL) -> Date? {
+        let file = parts.appending(path: "\(number).json")
+        guard let attributes = try? FileManager.default.attributesOfItem(atPath: file.path(percentEncoded: false)),
+              let saved = attributes[.modificationDate] as? Date,
+              Date.now.timeIntervalSince(saved) < 7 * 24 * 60 * 60 else { return nil }
+        return saved
+    }
+
+    /// Forgets an unfinished download.
+    static func discard(_ item: DownloadableTranslation, in folder: URL) {
+        try? FileManager.default.removeItem(at: partsFolder(for: item, in: folder))
+    }
+
+    /// `progress` is called with how many of the 66 books are in hand.
+    func build(_ item: DownloadableTranslation, to destination: URL, allowsCellular: Bool, progress: (@Sendable (Int) -> Void)? = nil) async throws {
         let folder = destination.deletingLastPathComponent()
         try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
-        // Books already fetched are kept until the Bible is built, so a
-        // download stopped by the Platform's rate limit (or the network)
-        // carries on where it left off instead of starting again.
-        let parts = folder.appending(path: "\(item.id)-\(item.version)-books", directoryHint: .isDirectory)
+        let parts = Self.partsFolder(for: item, in: folder)
         try FileManager.default.createDirectory(at: parts, withIntermediateDirectories: true)
         var values = URLResourceValues()
         values.isExcludedFromBackup = true
         var partsURL = parts
         try? partsURL.setResourceValues(values)
 
-        let books = try await fetchAll(id: item.id, parts: parts, allowsCellular: allowsCellular)
+        let books = try await fetchAll(id: item.id, parts: parts, allowsCellular: allowsCellular, progress: progress)
         // Written beside the destination, then moved in, so a half-built file
         // is never opened.
         let partial = destination.appendingPathExtension("partial")
@@ -86,23 +112,21 @@ struct YouVersionBibleBuilder: Sendable {
     }
 
     /// A book saved by an earlier, unfinished download (less than a week old).
-    private static func savedBook(_ number: Int, in parts: URL) -> YouVersionBook? {
-        let file = parts.appending(path: "\(number).json")
-        guard let attributes = try? FileManager.default.attributesOfItem(atPath: file.path(percentEncoded: false)),
-              let saved = attributes[.modificationDate] as? Date,
-              Date.now.timeIntervalSince(saved) < 7 * 24 * 60 * 60,
-              let data = try? Data(contentsOf: file) else { return nil }
+    fileprivate static func savedBook(_ number: Int, in parts: URL) -> YouVersionBook? {
+        guard savedDate(number, in: parts) != nil,
+              let data = try? Data(contentsOf: parts.appending(path: "\(number).json")) else { return nil }
         return try? JSONDecoder().decode(YouVersionBook.self, from: data)
     }
 
     /// Every book, in order (book number → its chapters).
-    private func fetchAll(id: String, parts: URL, allowsCellular: Bool) async throws -> [Int: YouVersionBook] {
+    private func fetchAll(id: String, parts: URL, allowsCellular: Bool, progress: (@Sendable (Int) -> Void)?) async throws -> [Int: YouVersionBook] {
         let codes = Self.bookCodes
         var books: [Int: YouVersionBook] = [:]
         var missing: [Int] = []
         for number in 1...codes.count {
             if let book = Self.savedBook(number, in: parts) { books[number] = book } else { missing.append(number) }
         }
+        progress?(books.count)
         return try await withThrowingTaskGroup(of: (Int, YouVersionBook).self) { group in
             var next = 0
             while next < min(Self.parallelBooks, missing.count) {
@@ -112,6 +136,7 @@ struct YouVersionBibleBuilder: Sendable {
             }
             while let (number, book) = try await group.next() {
                 books[number] = book
+                progress?(books.count)
                 if next < missing.count {
                     let number = missing[next]
                     next += 1

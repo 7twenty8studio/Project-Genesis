@@ -15,6 +15,12 @@ final class BibleLibrary {
     private(set) var catalog: [DownloadableTranslation] = []
     /// Download progress, by translation id (indeterminate while running).
     private(set) var downloading: Set<String> = []
+    /// For a YouVersion Bible being built: how far along, 0...1 (books in
+    /// hand of 66). Other downloads have no measured progress.
+    private(set) var downloadProgress: [String: Double] = [:]
+    /// Bumped when an unfinished download is kept or discarded, so the
+    /// Bibles screen looks again at `savedBooks(for:)`.
+    private(set) var pausedVersion = 0
     /// Bumped when a translation's text is replaced (a corrected edition), so
     /// the reader drops anything it cached from the old one.
     private(set) var editionVersion = 0
@@ -271,7 +277,18 @@ final class BibleLibrary {
         let fileName = item.youVersionID == nil
             ? "\(item.id)-\(item.version).sqlite"
             : "\(item.id)-\(item.version)-\(Int(now.timeIntervalSince1970)).sqlite"
-        try await downloader.download(item, to: directory.appending(path: fileName), allowsCellular: allowsCellular, proof: premiumProof)
+        defer {
+            downloadProgress[item.id] = nil
+            pausedVersion += 1
+        }
+        let id = item.id
+        let total = Double(YouVersionBibleBuilder.bookCodes.count)
+        try await downloader.download(item, to: directory.appending(path: fileName), allowsCellular: allowsCellular, proof: premiumProof) { books in
+            Task { @MainActor in
+                guard self.downloading.contains(id) else { return }
+                self.downloadProgress[id] = Double(books) / total
+            }
+        }
         installed[item.id] = InstalledTranslation(translation: item.translation, version: item.version, fileName: fileName, installedAt: now)
         saveInstalled()
         repositories[item.id] = nil
@@ -289,6 +306,20 @@ final class BibleLibrary {
               let standIn = catalog.first(where: { $0.youVersionID == nil && !$0.translation.isLicensed && !$0.premium && $0.language == item.language })
         else { return }
         try? await install(standIn, allowsCellular: allowsCellular)
+    }
+
+    /// Books an unfinished YouVersion download already has (0 if none):
+    /// the Bibles screen offers to continue it.
+    func savedBooks(for item: DownloadableTranslation) -> Int {
+        _ = pausedVersion
+        guard item.youVersionID != nil, !downloading.contains(item.id) else { return 0 }
+        return YouVersionBibleBuilder.savedBookCount(for: item, in: directory)
+    }
+
+    /// Forgets an unfinished YouVersion download.
+    func discardDownload(_ item: DownloadableTranslation) {
+        YouVersionBibleBuilder.discard(item, in: directory)
+        pausedVersion += 1
     }
 
     func remove(_ translation: Translation) {

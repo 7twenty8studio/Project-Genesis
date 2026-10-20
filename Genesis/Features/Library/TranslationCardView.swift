@@ -6,8 +6,14 @@ struct TranslationCardView: View {
     let entry: LibraryEntry
     let isCurrent: Bool
     let isDownloading: Bool
+    /// How far a YouVersion Bible has come, 0...1 (nil: not measured).
+    var progress: Double? = nil
+    /// Books an unfinished YouVersion download already has (0 if none).
+    var savedBooks = 0
     let read: () -> Void
     let download: () -> Void
+    /// Forgets an unfinished download.
+    var discard: (() -> Void)? = nil
 
     @Environment(\.palette) private var palette
     @Environment(\.dynamicTypeSize) private var typeSize
@@ -26,6 +32,7 @@ struct TranslationCardView: View {
                     .foregroundStyle(palette.secondaryText)
                     .fixedSize(horizontal: false, vertical: true)
             }
+            downloadState
             facts
             // YouVersion Bibles: said before anyone chooses one (our
             // agreement with YouVersion keeps them out of paid features).
@@ -48,6 +55,43 @@ struct TranslationCardView: View {
     }
 
     // MARK: Parts
+
+    private static let bookCount = YouVersionBibleBuilder.bookCodes.count
+    private var savedBookCount: Int { savedBooks }
+
+    /// A YouVersion Bible downloading (a bar, book by book) or paused
+    /// partway (how much is kept, to continue later).
+    @ViewBuilder
+    private var downloadState: some View {
+        if isDownloading, let progress {
+            VStack(alignment: .leading, spacing: 4) {
+                ProgressView(value: progress)
+                    .tint(palette.accent)
+                Text(String(localized: "Downloading · \(Int((progress * Double(Self.bookCount)).rounded())) of \(Self.bookCount) books"))
+                    .font(.caption)
+                    .foregroundStyle(palette.secondaryText)
+            }
+            .accessibilityElement(children: .combine)
+            .accessibilityIdentifier("bibles.progress.\(entry.id)")
+        } else if !isDownloading, !entry.isInstalled, savedBooks > 0 {
+            VStack(alignment: .leading, spacing: 4) {
+                ProgressView(value: Double(savedBooks), total: Double(Self.bookCount))
+                    .tint(palette.secondaryText)
+                HStack {
+                    Text(String(localized: "Paused · \(savedBookCount) of \(Self.bookCount) books saved"))
+                        .font(.caption)
+                        .foregroundStyle(palette.secondaryText)
+                    Spacer()
+                    if let discard {
+                        Button(String(localized: "Discard"), role: .destructive, action: discard)
+                            .font(.caption)
+                            .buttonStyle(.borderless)
+                            .accessibilityIdentifier("bibles.discard.\(entry.id)")
+                    }
+                }
+            }
+        }
+    }
 
     private var header: some View {
         HStack(alignment: .firstTextBaseline, spacing: 10) {
@@ -86,6 +130,14 @@ struct TranslationCardView: View {
         if isDownloading {
             ProgressView()
                 .accessibilityLabel(entry.isInstalled ? String(localized: "Updating") : String(localized: "Downloading"))
+        } else if !entry.isInstalled, savedBooks > 0 {
+            Button(action: download) {
+                Label(String(localized: "Continue"), systemImage: "arrow.clockwise.circle")
+            }
+            .buttonStyle(.bordered)
+            .tint(palette.accent)
+            .accessibilityLabel(String(localized: "Continue downloading \(entry.translation.name)"))
+            .accessibilityIdentifier("bibles.continue.\(entry.id)")
         } else if isCurrent {
             Label(String(localized: "Reading now", comment: "On a Bible's card: this is the Bible being read"), systemImage: "checkmark")
                 .font(.caption.weight(.semibold))
