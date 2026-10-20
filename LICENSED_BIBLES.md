@@ -19,21 +19,21 @@ through the contact shown.
 
 | Bible | Publisher | Where to ask |
 |---|---|---|
-| New International Version (NIV) | Biblica | DBL (Biblica helped found it) |
+| New International Version (NIV) | Biblica | Biblica's Permission Request Form (biblica.com/permission-request-form), plus an email to rightspermissions@biblica.com. Biblica declined our DBL request (October 2026) and asked for this route. A full Bible needs proof of a registered legal entity, and Biblica generally waits for a finished, launched app |
 | New Living Translation (NLT) | Tyndale House | DBL if listed, else tyndale.com/permissions |
 | English Standard Version (ESV) | Crossway | Crossway directly: crossway.org/permissions/digital |
 | New King James Version (NKJV) | HarperCollins Christian Publishing (Thomas Nelson) | Directly (permissions at harpercollinschristian.com) |
 | Christian Standard Bible (CSB) | Holman Bible Publishers (Lifeway) | Directly (csbible.com) |
 | New American Standard Bible (NASB 2020) and Amplified (AMP) | The Lockman Foundation | Directly (lockman.org) |
 | Good News Translation (GNT) and Contemporary English Version (CEV) | American Bible Society | DBL (a United Bible Societies member) |
-| New International Reader's Version (NIrV) | Biblica | DBL |
+| New International Reader's Version (NIrV) | Biblica | As for the NIV |
 
 ### Spanish
 
 | Bible | Publisher | Where to ask |
 |---|---|---|
 | Reina-Valera 1960 (RVR1960) | Sociedades Bíblicas Unidas / American Bible Society | DBL |
-| Nueva Versión Internacional (NVI) | Biblica | DBL |
+| Nueva Versión Internacional (NVI) | Biblica | As for the NIV |
 | Nueva Traducción Viviente (NTV) | Tyndale House | DBL if listed, else Tyndale directly |
 | Dios Habla Hoy (DHH), Traducción en Lenguaje Actual (TLA), Reina Valera Contemporánea (RVC) | Sociedades Bíblicas Unidas | DBL |
 | La Biblia de las Américas (LBLA) and Nueva Biblia de las Américas (NBLA) | The Lockman Foundation | Directly (lockman.org) |
@@ -150,3 +150,47 @@ app loads the catalog.
 - **Scripture text.** It is kept verbatim. Footnotes, cross references and
   introductions are left out. Words the publisher marks as the divine name
   are written as LORD, as plain-text editions print them.
+
+## 5. YouVersion Platform (YVP)
+
+A second source of licensed Bibles, besides the DBL. Not built yet. These
+are the terms YouVersion agreed with us in writing (email thread
+"Developer questions before integrating YouVersion Platform – Versely
+(7Twenty8 Studio)", Heather McMahan, Director, Platform Partner Strategy,
+19–20 October 2026; the owner keeps the PDF).
+
+- **Always free.** The app and access to Scripture stay free. A YVP Bible
+  is never behind Premium anywhere a person reads it: no `--premium`, no
+  lock, whatever the translation costs elsewhere.
+- **No YVP text in paid features.** Premium tools must not use a YVP
+  Bible's text. Heather named the Memorize games; we apply it to every
+  `PremiumFeature` that shows verse text. With a YVP Bible chosen, these
+  use the public-domain Bible in the same language (KJV or WEB in English,
+  RV1909 in Spanish), the way the study assistant does:
+  - Memorize (games, hints, the Memorise widget)
+  - Premium widgets (verse categories, From Your Reading, the large verse
+    widget)
+  - the morning welcome's verse
+  - the Original (Hebrew & Greek) parallel's translation column
+  - the English verse in word study (`VerseStudyView`)
+  - passages in journal PDF exports
+
+  Free features (the reader, search, plans, notes, highlights, the small,
+  medium and Lock Screen verse widget, notifications, sharing, groups) use
+  the YVP Bible as usual.
+- **Tell readers before they choose.** The Bible's card says Premium tools
+  use the public-domain Bible with it, and a one-time note says so the
+  first time a Premium tool opens while reading it.
+- **Offline is allowed.** A YVP Bible may be stored on the device, whole or
+  chapter by chapter, with no YouVersion limit, unless that publisher's own
+  agreement sets a caching limit: check each Bible's licence. Refresh from
+  the server whenever the device is online, in case the publisher updates
+  the text, and remove Bibles that are no longer licensed.
+- **Not a competing product.** Versely may offer Bible reading, plans,
+  devotional content and other Scripture features. It must not use
+  YouVersion's IP to copy or substitute for a YouVersion product or the
+  Platform, or use YouVersion's technology, materials or branding beyond
+  the required attribution.
+- **Still to confirm:** quotas and rate limits, and wording for the
+  "YouVersion Bible App is free" notice the Terms ask for (questions 2, 4
+  and 5 of our first email were handed to Platform Support).

@@ -359,6 +359,12 @@ shares; README.md has the architecture.
   left the catalog; the study assistant reads a public-domain Bible in the
   same language instead, so licensed text never reaches the AI service.
   Per-licence terms and the request list: LICENSED_BIBLES.md.
+- YouVersion Platform Bibles (agreed in writing, not built yet;
+  LICENSED_BIBLES.md › 5): always free, never `requiresPremium`; no
+  Premium feature may show their text (Premium tools fall back to the
+  public-domain Bible in the same language, and readers are told on the
+  Bible's card); offline storage allowed unless the publisher limits it,
+  refreshed when online.
 - Global Reading Library (the Bibles screen, `BibleDownloadsView`): Bibles by
   language, most read first, as `TranslationCardView`s, plus
   `TranslationGuideView` ("Which Bible is right for me?"). Logic in
