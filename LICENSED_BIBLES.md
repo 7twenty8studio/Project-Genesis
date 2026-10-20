@@ -224,7 +224,7 @@ are the terms YouVersion agreed with us in writing (email thread
     NASB 2020 (2692), NASB 1995 (100), Amplified (1588), Berean Standard
     Bible (3034), Literal Standard Version (2660), plus public-domain
     texts (ASV, WEB, Geneva, CPDV and others).
-  - Spanish: NVI 2025 (128), NVI 2015 (2664), NVI Castellano (1637), La
+  - Spanish: NVI 2025 (128), NVI 2015 (2664), another NVI listed as "Spanish NVI" (1637), La
     Biblia de las Américas (89), Nueva Biblia de las Américas (103),
     Versión Biblia Libre (3291), Reina-Valera Antigua (147).
   - Not on the Platform: RVR1960, DHH, RVC, TLA, ESV, NLT, NTV, CSB. Those
