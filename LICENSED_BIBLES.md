@@ -159,6 +159,14 @@ are the terms YouVersion agreed with us in writing (email thread
 (7Twenty8 Studio)", Heather McMahan, Director, Platform Partner Strategy,
 19–20 October 2026; the owner keeps the PDF).
 
+- **Registration.** The Platform's app form offers only "Non-commercial"
+  and asks us to confirm "free of charge in all respects" and "no
+  materials behind paywalls". We asked Heather about this, since Versely
+  has an optional subscription. On 20 October 2026 she wrote: "Yes, you
+  can register. We will be making updates to our website soon and this is
+  one of the areas that will get updated. For now, please proceed with
+  the sign-up." That written consent rests on the conditions below; keep
+  every one of them.
 - **Always free.** The app and access to Scripture stay free. A YVP Bible
   is never behind Premium anywhere a person reads it: no `--premium`, no
   lock, whatever the translation costs elsewhere.
