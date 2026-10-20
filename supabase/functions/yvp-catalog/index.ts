@@ -76,6 +76,15 @@ Deno.serve(async (req) => {
     return json({ error: "Add the YVP_APP_KEY secret first.", similar }, 400);
   }
 
+  // { action: "sample", path: "/bibles/111/passages/JHN.3?format=html" }:
+  // one raw API response, for checking its shape while building.
+  const body = await req.json().catch(() => ({}));
+  if (body?.action === "sample" && typeof body.path === "string" && body.path.startsWith("/bibles")) {
+    const response = await fetch(`${API}${body.path}`, { headers: { "X-YVP-App-Key": APP_KEY, Accept: "application/json" } });
+    const text = await response.text();
+    return json({ status: response.status, headers: Object.fromEntries(response.headers), body: text.slice(0, 20000) });
+  }
+
   const result: Record<string, unknown> = { keyName: KEY_NAME };
   for (const language of ["en", "es"]) {
     const licensed = await list(language, false);

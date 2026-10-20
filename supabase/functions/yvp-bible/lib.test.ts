@@ -1,0 +1,131 @@
+// Tests for lib.ts. Run with Node 22+:
+//   node --experimental-strip-types --test supabase/functions/yvp-bible/lib.test.ts
+// The chapters below are shaped exactly like the YouVersion Platform's
+// format=html&include_headings=true responses (checked October 2026).
+import assert from "node:assert/strict";
+import { test } from "node:test";
+import { BOOKS, chapterCount, clean, parseChapter, parseRequest, verseNumbers } from "./lib.ts";
+
+test("reads a request", () => {
+  assert.deepEqual(parseRequest({ id: "NIV", book: "GEN" }), { id: "NIV", book: "GEN" });
+  assert.deepEqual(parseRequest({ id: "NASB2020", book: "1JN" }), { id: "NASB2020", book: "1JN" });
+  assert.deepEqual(parseRequest({ id: "NIrV", book: "GEN" }), { id: "NIrV", book: "GEN" });
+  assert.equal(parseRequest({ id: "N-V", book: "GEN" }), null);
+  assert.equal(parseRequest({ id: "NIV", book: "TOB" }), null);
+  assert.equal(parseRequest({ id: "NIV" }), null);
+  assert.equal(parseRequest(null), null);
+});
+
+test("knows the 66 books", () => {
+  assert.equal(BOOKS.length, 66);
+  assert.equal(chapterCount("PSA"), 150);
+  assert.equal(chapterCount("JUD"), 1);
+  assert.equal(chapterCount("REV"), 22);
+  assert.equal(BOOKS.reduce((sum, [, n]) => sum + n, 0), 1189);
+});
+
+test("reads verse numbers", () => {
+  assert.deepEqual(verseNumbers("16"), [16, 16]);
+  assert.deepEqual(verseNumbers("16-17"), [16, 17]);
+  assert.deepEqual(verseNumbers("[37]"), [37, 37]);
+  assert.equal(verseNumbers(""), null);
+});
+
+test("cleans whitespace only", () => {
+  assert.equal(clean("  In the   beginning God \n\n  created  "), "In the beginning God\ncreated");
+});
+
+const PSALM_3 =
+  '<div><div class="cl yv-h">Psalm 3</div><div class="d">A psalm of David. When he fled from his son Absalom.</div>' +
+  '<div class="q1"><span class="yv-v" v="1"></span><span class="yv-vlbl">1</span> <span class="nd">Lord</span>, how many are my foes!</div>' +
+  '<div class="q2">How many rise up against me!</div>' +
+  '<div class="q1"><span class="yv-v" v="2"></span><span class="yv-vlbl">2</span>Many are saying of me,</div>' +
+  '<div class="q2">“God will not deliver him.”</div>' +
+  '<div class="q1"><span class="yv-v" v="7"></span><span class="yv-vlbl">7</span>Arise, <span class="nd">Lord</span>!</div>' +
+  '<div class="q2">Deliver me, my God!</div><div class="q1">Strike all my enemies on the jaw;</div>' +
+  '<div class="q2">break the teeth of the wicked.</div></div>';
+
+test("poetry: lines, the divine name, the psalm title kept and the chapter label left out", () => {
+  const chapter = parseChapter(3, PSALM_3, "Psalms 3");
+  assert.deepEqual(chapter.headings, [{ beforeVerse: 1, text: "A psalm of David. When he fled from his son Absalom." }]);
+  assert.deepEqual(chapter.verses[0], {
+    verse: 1,
+    text: "LORD, how many are my foes!\nHow many rise up against me!",
+    paragraph: true,
+    poetry: true,
+  });
+  assert.equal(chapter.verses[1].text, "Many are saying of me,\n“God will not deliver him.”");
+  assert.equal(chapter.verses[2].text, "Arise, LORD!\nDeliver me, my God!\nStrike all my enemies on the jaw;\nbreak the teeth of the wicked.");
+  // Verse labels never become text.
+  assert.ok(chapter.verses.every((v) => !/^\d/.test(v.text)));
+});
+
+const ACTS_8 =
+  '<div><div class="p"><span class="yv-v" v="1"></span><span class="yv-vlbl">1</span>And Saul approved of their killing him.</div>' +
+  '<div class="s1 yv-h">The Church Persecuted and Scattered</div>' +
+  '<div class="p">On that day a great persecution broke out. <span class="yv-v" v="2"></span><span class="yv-vlbl">2</span>Godly men buried Stephen.</div>' +
+  '<div class="p"><span class="yv-v" v="36"></span><span class="yv-vlbl">36</span>“Look, here is water.” <span class="yv-v" v="37"></span><span class="yv-vlbl">[37]</span> ' +
+  '<span class="yv-v" v="38"></span><span class="yv-vlbl">38</span>And he gave orders to stop the chariot.</div></div>';
+
+test("prose: a verse runs on past a heading, the heading waits for the next verse, empty verses are left out", () => {
+  const chapter = parseChapter(8, ACTS_8, "Acts 8");
+  assert.deepEqual(
+    chapter.verses.map((v) => [v.verse, v.text, v.paragraph, v.poetry]),
+    [
+      [1, "And Saul approved of their killing him. On that day a great persecution broke out.", true, false],
+      [2, "Godly men buried Stephen.", false, false],
+      [36, "“Look, here is water.”", true, false],
+      [38, "And he gave orders to stop the chariot.", false, false],
+    ],
+  );
+  assert.deepEqual(chapter.headings, [{ beforeVerse: 2, text: "The Church Persecuted and Scattered" }]);
+});
+
+const RUTH_1 =
+  '<div><div class="s yv-h"><span class="it">Naomi Widowed</span></div>' +
+  '<div class="p"><span class="yv-v" v="2"></span><span class="yv-vlbl">2</span>The name of the man <span class="it">was</span> Elimelech.</div>' +
+  '<div class="p"><span class="yv-v" v="6"></span><span class="yv-vlbl">6</span>She had heard that the L<span class="sc">ord</span> had visited His people.</div></div>';
+
+test("supplied words keep their words; small-capital LORD is written in capitals", () => {
+  const chapter = parseChapter(1, RUTH_1, "Ruth 1");
+  assert.equal(chapter.verses[0].text, "The name of the man was Elimelech.");
+  assert.equal(chapter.verses[1].text, "She had heard that the LORD had visited His people.");
+  assert.deepEqual(chapter.headings, [{ beforeVerse: 2, text: "Naomi Widowed" }]);
+});
+
+const SALMO_23 =
+  '<div><div class="ms2 yv-h">Salmo 23</div><div class="s yv-h"><span class="it">El S<span class="sc"><span class="it">eñor</span></span> es mi pastor</span></div>' +
+  '<div class="d">Salmo de David.</div>' +
+  '<div class="q"><span class="yv-v" v="1"></span><span class="yv-vlbl">1</span>El S<span class="sc">eñor</span> es mi pastor,</div>' +
+  '<div class="q">nada me faltará.</div>' +
+  '<div class="q"><span class="yv-v" v="4"></span><span class="yv-vlbl">4</span>¶Aunque pase por el valle de sombra de muerte,</div></div>';
+
+test("Spanish: SEÑOR in capitals, headings in order, a heading that only repeats the chapter is left out", () => {
+  const chapter = parseChapter(23, SALMO_23, "Salmo 23");
+  assert.deepEqual(chapter.headings, [
+    { beforeVerse: 1, text: "El SEÑOR es mi pastor" },
+    { beforeVerse: 1, text: "Salmo de David." },
+  ]);
+  assert.equal(chapter.verses[0].text, "El SEÑOR es mi pastor,\nnada me faltará.");
+  // The text is kept exactly, even its own marks.
+  assert.equal(chapter.verses[1].text, "¶Aunque pase por el valle de sombra de muerte,");
+});
+
+test("bridged verses stay on their first verse", () => {
+  const html =
+    '<div><div class="p"><span class="yv-v" v="16-17"></span><span class="yv-vlbl">16-17</span>Both verses in one.</div>' +
+    '<div class="p"><span class="yv-v" v="18"></span><span class="yv-vlbl">18-19</span>Bridged by its label.</div></div>';
+  const chapter = parseChapter(5, html);
+  assert.deepEqual(chapter.verses.map((v) => [v.verse, v.last]), [[16, 17], [18, 19]]);
+});
+
+test("entities are decoded; notes and verse labels are never text", () => {
+  const html =
+    '<div><div class="p"><span class="yv-v" v="1"></span><span class="yv-vlbl">1</span>Faith &amp; hope&#8212;love<span class="yv-n f"><span class="ft">Or charity</span></span>.</div></div>';
+  assert.equal(parseChapter(1, html).verses[0].text, "Faith & hope—love.");
+});
+
+test("words before the first verse join it", () => {
+  const html = '<div><div class="p">Then</div><div class="p"><span class="yv-v" v="1"></span><span class="yv-vlbl">1</span>it began.</div></div>';
+  assert.equal(parseChapter(1, html).verses[0].text, "Then it began.");
+});
