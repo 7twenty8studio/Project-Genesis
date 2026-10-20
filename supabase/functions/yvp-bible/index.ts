@@ -26,7 +26,10 @@ import { chapterCount, type ParsedChapter, parseChapter, parseRequest } from "./
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const APP_KEY = Deno.env.get("YVP_APP_KEY")?.trim() ?? "";
 const API = "https://api.youversion.com/v1";
-const CONCURRENCY = 8;
+// Chapters read at once for one book. The Platform limits requests per app
+// key (a burst of about a thousand at once was refused for five minutes),
+// and the app asks for two books at a time, so a whole Bible stays gentle.
+const CONCURRENCY = 4;
 const admin = createClient(SUPABASE_URL, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!, {
   auth: { persistSession: false },
 });
@@ -58,10 +61,21 @@ Deno.serve(async (req) => {
     if (chapters.length === 0) return json({ error: "This book isn't in this Bible." }, 404);
     return json({ id: request.id, book: request.book, chapters }, 200);
   } catch (error) {
+    if (error instanceof RateLimited) {
+      console.warn("yvp-bible rate limited", request.id, request.book, error.retryAfter);
+      return json({ error: "Busy. Try again later.", retryAfter: error.retryAfter }, 429);
+    }
     console.error("yvp-bible", request.id, request.book, error instanceof Error ? error.message : error);
     return json({ error: "Try again later." }, 502);
   }
 });
+
+/** The Platform asked us to wait (HTTP 429). */
+class RateLimited extends Error {
+  constructor(readonly retryAfter: number) {
+    super(`rate limited for ${retryAfter} s`);
+  }
+}
 
 /** One chapter, parsed; null when the Bible doesn't have it. */
 async function fetchChapter(bibleID: number, book: string, chapter: number, optional: boolean): Promise<ParsedChapter | null> {
@@ -82,7 +96,17 @@ async function fetchChapter(bibleID: number, book: string, chapter: number, opti
       if (optional) return null;
       throw new Error(`${book} ${chapter} not found`);
     }
-    if ((response.status === 429 || response.status >= 500) && attempt < 3) {
+    if (response.status === 429) {
+      await response.body?.cancel();
+      const retryAfter = Number(response.headers.get("retry-after") ?? "60") || 60;
+      // A short pause is waited out; a long one goes back to the app.
+      if (retryAfter <= 5 && attempt < 3) {
+        await new Promise((resolve) => setTimeout(resolve, retryAfter * 1000));
+        continue;
+      }
+      throw new RateLimited(retryAfter);
+    }
+    if (response.status >= 500 && attempt < 3) {
       await response.body?.cancel();
       await wait(attempt);
       continue;

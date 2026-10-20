@@ -111,6 +111,12 @@ final class AudioPlayerService {
 
         switch source {
         case .deviceVoice:
+            // We told YouVersion its Bibles aren't read aloud by a device
+            // voice unless a licence allows it (LICENSED_BIBLES.md › 5).
+            guard !translation.isYouVersion else {
+                fail(String(localized: "Listening isn't available for this Bible yet. Choose another Bible to listen."))
+                return
+            }
             guard let text = try? library.current.chapter(chapter) else {
                 fail(String(localized: "This chapter couldn't be loaded."))
                 return

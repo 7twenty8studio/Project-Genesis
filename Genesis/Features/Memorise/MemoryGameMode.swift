@@ -54,8 +54,10 @@ struct MemoryPassageSource {
         return (try? context.fetch(descriptor))?.first
     }
 
+    /// The Bible the card was saved in; never a YouVersion Bible, which
+    /// paid features don't show (`premiumToolsTranslation(for:)`).
     func translation(for verse: MemoryVerse) -> Translation {
-        library.translations.first { $0.id == verse.translationID } ?? library.currentTranslation
+        library.premiumToolsTranslation(for: library.translations.first { $0.id == verse.translationID } ?? library.currentTranslation)
     }
 
     /// Each verse of the passage, as the database has it (one line each).

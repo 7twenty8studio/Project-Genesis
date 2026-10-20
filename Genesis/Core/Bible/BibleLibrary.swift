@@ -49,6 +49,45 @@ final class BibleLibrary {
         translations.first { $0.id != translation.id && $0.language == translation.language && !isLocked($0) } ?? .kjv
     }
 
+    /// The Bible Premium tools read while `translation` is the reader's.
+    /// YouVersion Platform Bibles are never shown in a paid feature (our
+    /// agreement with YouVersion, LICENSED_BIBLES.md › 5), so Memorize,
+    /// widgets, the morning welcome, word study and journal exports read a
+    /// public-domain Bible in the same language instead. Every other Bible
+    /// is used as it is.
+    func premiumToolsTranslation(for translation: Translation) -> Translation {
+        Self.premiumToolsTranslation(for: translation, among: translations)
+    }
+
+    /// The Bible Premium tools read now (see `premiumToolsTranslation(for:)`).
+    var premiumToolsTranslation: Translation { premiumToolsTranslation(for: currentTranslation) }
+
+    var premiumToolsRepository: BibleRepository { repository(for: premiumToolsTranslation) }
+
+    /// The name of the Bible Premium tools will use with `translation`, for
+    /// telling people before they choose it: the public-domain Bible in its
+    /// language, even while that one is still to be downloaded (it comes
+    /// along with a YouVersion Bible).
+    func premiumToolsBibleName(for translation: Translation) -> String {
+        let standIn = premiumToolsTranslation(for: translation)
+        if standIn.language == translation.language { return standIn.name }
+        return catalog.first { $0.youVersionID == nil && !$0.translation.isLicensed && !$0.premium && $0.language == translation.language }?.name ?? standIn.name
+    }
+
+    /// A public-domain Bible in the same language (the Reina-Valera for a
+    /// Spanish Bible), else the KJV.
+    nonisolated static func premiumToolsTranslation(for translation: Translation, among available: [Translation]) -> Translation {
+        guard translation.isYouVersion else { return translation }
+        return available.first { !$0.isLicensed && $0.language == translation.language } ?? .kjv
+    }
+
+    /// True when any Bible offered or downloaded is from the YouVersion
+    /// Platform: its Terms ask apps that charge for anything to say the
+    /// YouVersion Bible App is free (the Premium screen and Settings do).
+    var offersYouVersionBibles: Bool {
+        catalog.contains { $0.youVersionID != nil } || translations.contains(where: \.isYouVersion)
+    }
+
     /// True when any Bible offered or downloaded needs Premium (so the
     /// Premium screen lists them only once there are some).
     var hasPremiumBibles: Bool {
@@ -183,7 +222,7 @@ final class BibleLibrary {
         var changed = false
         for item in items {
             guard let current = installed[item.id], current.translation != item.translation else { continue }
-            installed[item.id] = InstalledTranslation(translation: item.translation, version: current.version, fileName: current.fileName)
+            installed[item.id] = InstalledTranslation(translation: item.translation, version: current.version, fileName: current.fileName, installedAt: current.installedAt)
             changed = true
         }
         guard changed else { return }
@@ -195,15 +234,27 @@ final class BibleLibrary {
         if isLocked(currentTranslation) { currentTranslation = fallback(for: currentTranslation) }
     }
 
-    private func needsUpdate(_ item: DownloadableTranslation) -> Bool {
-        if let current = installed[item.id] { return item.version > current.version }
+    private func needsUpdate(_ item: DownloadableTranslation, now: Date = .now) -> Bool {
+        if let current = installed[item.id] {
+            if item.version > current.version { return true }
+            // YouVersion asks that its Bibles be refreshed when online, in
+            // case a publisher corrects the text: built again once a month.
+            if item.youVersionID != nil {
+                guard let built = current.installedAt else { return true }
+                return now.timeIntervalSince(built) > Self.youVersionRefreshInterval
+            }
+            return false
+        }
         return isBundled(item.translation) && item.version > Self.bundledVersion
     }
+
+    private static let youVersionRefreshInterval: TimeInterval = 30 * 24 * 60 * 60
 
     func download(_ item: DownloadableTranslation) async {
         downloadError = nil
         do {
             try await install(item, allowsCellular: true)
+            await installPremiumToolsBible(for: item, allowsCellular: true)
         } catch {
             downloadError = error.localizedDescription
         }
@@ -214,14 +265,30 @@ final class BibleLibrary {
         downloading.insert(item.id)
         defer { downloading.remove(item.id) }
         // A new file per edition: the old one may still be open for reading.
-        let fileName = "\(item.id)-\(item.version).sqlite"
+        // A YouVersion Bible is rebuilt within an edition, so its name also
+        // carries the time it was built.
+        let now = Date.now
+        let fileName = item.youVersionID == nil
+            ? "\(item.id)-\(item.version).sqlite"
+            : "\(item.id)-\(item.version)-\(Int(now.timeIntervalSince1970)).sqlite"
         try await downloader.download(item, to: directory.appending(path: fileName), allowsCellular: allowsCellular, proof: premiumProof)
-        installed[item.id] = InstalledTranslation(translation: item.translation, version: item.version, fileName: fileName)
+        installed[item.id] = InstalledTranslation(translation: item.translation, version: item.version, fileName: fileName, installedAt: now)
         saveInstalled()
         repositories[item.id] = nil
         translations = Self.merge(installed: installed)
         if currentTranslation.id == item.id { currentTranslation = item.translation }
         editionVersion += 1
+    }
+
+    /// Premium tools read a public-domain Bible in the same language as a
+    /// YouVersion Bible; for a Spanish one that's the Reina-Valera, which is
+    /// a download, so it comes along (quietly, if it can).
+    private func installPremiumToolsBible(for item: DownloadableTranslation, allowsCellular: Bool) async {
+        guard item.youVersionID != nil,
+              !translations.contains(where: { !$0.isLicensed && $0.language == item.language }),
+              let standIn = catalog.first(where: { $0.youVersionID == nil && !$0.translation.isLicensed && !$0.premium && $0.language == item.language })
+        else { return }
+        try? await install(standIn, allowsCellular: allowsCellular)
     }
 
     func remove(_ translation: Translation) {
@@ -271,7 +338,8 @@ final class BibleLibrary {
     private static func removeLeftovers(in directory: URL, keeping installed: [String: InstalledTranslation]) {
         let keep = Set(installed.values.map(\.fileName))
         let files = (try? FileManager.default.contentsOfDirectory(atPath: directory.path(percentEncoded: false))) ?? []
-        for file in files where file.hasSuffix(".sqlite") && !keep.contains(file) {
+        // (".partial": a YouVersion Bible whose build was cut short.)
+        for file in files where (file.hasSuffix(".sqlite") && !keep.contains(file)) || file.hasSuffix(".partial") {
             try? FileManager.default.removeItem(at: directory.appending(path: file))
         }
     }

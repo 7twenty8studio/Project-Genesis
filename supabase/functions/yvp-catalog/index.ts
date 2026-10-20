@@ -10,6 +10,7 @@
 // ops_cron_secret (public.ops_cron_secret_matches), like ops-alerts.
 // The app key (YVP_APP_KEY) is a Supabase secret and never leaves here.
 import { createClient } from "jsr:@supabase/supabase-js@2";
+import { BOOKS, parseChapter } from "../yvp-bible/lib.ts";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
@@ -83,6 +84,41 @@ Deno.serve(async (req) => {
     const response = await fetch(`${API}${body.path}`, { headers: { "X-YVP-App-Key": APP_KEY, Accept: "application/json" } });
     const text = await response.text();
     return json({ status: response.status, headers: Object.fromEntries(response.headers), body: text.slice(0, 20000) });
+  }
+
+  // { action: "wholeBible", bible: 111 }: reads every chapter at the app's
+  // pace (two books at a time, four chapters each) and counts the verses,
+  // to check a whole Bible comes through without hitting the rate limit.
+  if (body?.action === "wholeBible" && Number.isInteger(body.bible)) {
+    const started = Date.now();
+    let verses = 0;
+    let requests = 0;
+    const problems: string[] = [];
+    let nextBook = 0;
+    const worker = async () => {
+      while (nextBook < BOOKS.length && problems.length < 5) {
+        const [code, count] = BOOKS[nextBook++];
+        let nextChapter = 1;
+        await Promise.all(Array.from({ length: 4 }, async () => {
+          while (nextChapter <= count && problems.length < 5) {
+            const chapter = nextChapter++;
+            requests++;
+            const response = await fetch(`${API}/bibles/${body.bible}/passages/${code}.${chapter}?format=html&include_headings=true`, {
+              headers: { "X-YVP-App-Key": APP_KEY, Accept: "application/json" },
+            });
+            if (!response.ok) {
+              problems.push(`${code} ${chapter}: ${response.status} retry-after ${response.headers.get("retry-after")}`);
+              await response.body?.cancel();
+              continue;
+            }
+            const data = await response.json();
+            verses += parseChapter(chapter, data.content, data.reference).verses.length;
+          }
+        }));
+      }
+    };
+    await Promise.all([worker(), worker()]);
+    return json({ verses, requests, seconds: (Date.now() - started) / 1000, problems });
   }
 
   const result: Record<string, unknown> = { keyName: KEY_NAME };

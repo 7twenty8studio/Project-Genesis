@@ -22,6 +22,10 @@ struct DownloadableTranslation: Identifiable, Hashable, Codable, Sendable {
     var popularity: Int?
     /// Only with Premium (a Bible whose licence Versely pays for).
     var premium: Bool = false
+    /// Set for a YouVersion Platform Bible (public.youversion_bibles): its
+    /// id on the Platform. It has no file; the device builds it book by book
+    /// (`YouVersionBibleBuilder`).
+    var youVersionID: Int?
 
     /// The server's details, completed with what the app knows.
     var profile: TranslationProfile {
@@ -31,7 +35,7 @@ struct DownloadableTranslation: Identifiable, Hashable, Codable, Sendable {
     }
 
     var translation: Translation {
-        Translation(id: id, name: name, year: year, license: license, summary: summary, language: language, requiresPremium: premium)
+        Translation(id: id, name: name, year: year, license: license, summary: summary, language: language, requiresPremium: premium, isYouVersion: youVersionID != nil)
     }
 
     enum CodingKeys: String, CodingKey {
@@ -68,12 +72,52 @@ extension DownloadableTranslation {
     }
 }
 
+/// A row of public.youversion_bibles: a YouVersion Platform Bible Versely
+/// offers. Always free (no Premium column), never a file to download.
+struct YouVersionCatalogRow: Decodable, Sendable {
+    let id: String
+    let yvpID: Int
+    let name: String
+    let year: String
+    let license: String
+    let summary: String
+    let language: String
+    let approach: String?
+    let readingLevel: String?
+    let popularity: Int?
+    let version: Int
+
+    enum CodingKeys: String, CodingKey {
+        case id, name, year, license, summary, language, approach, popularity, version
+        case yvpID = "yvp_id"
+        case readingLevel = "reading_level"
+    }
+
+    var downloadable: DownloadableTranslation {
+        DownloadableTranslation(
+            id: id, name: name, year: year, license: license, summary: summary,
+            fileURL: "", fileBytes: 0, databaseBytes: 0, sha256: "", version: version,
+            language: language,
+            approach: approach.flatMap(TranslationApproach.init(rawValue:)),
+            readingLevel: readingLevel.flatMap(ReadingLevel.init(rawValue:)),
+            rights: .licensed,
+            popularity: popularity,
+            premium: false,
+            youVersionID: yvpID
+        )
+    }
+}
+
 /// A translation saved on this device, beyond (or replacing) the bundled ones.
 struct InstalledTranslation: Codable, Hashable, Sendable {
     let translation: Translation
     let version: Int
     /// File name inside Application Support/Bibles.
     let fileName: String
+    /// When it was downloaded (or built); nil for downloads saved before
+    /// this was kept. A YouVersion Bible is built again on Wi-Fi once it's
+    /// a month old, so publisher corrections reach the device.
+    var installedAt: Date?
 }
 
 enum TranslationDownloadError: LocalizedError, Equatable {
@@ -82,6 +126,8 @@ enum TranslationDownloadError: LocalizedError, Equatable {
     case damaged
     case notABible
     case needsPremium
+    /// A YouVersion Bible's source asked us to slow down.
+    case busy
 
     var errorDescription: String? {
         switch self {
@@ -90,6 +136,7 @@ enum TranslationDownloadError: LocalizedError, Equatable {
         case .damaged: String(localized: "The download was damaged. Please try again.")
         case .notABible: String(localized: "That file isn't a Bible Versely can read.")
         case .needsPremium: String(localized: "This Bible comes with Premium. If you subscribe, try Restore Purchases in Settings.")
+        case .busy: String(localized: "Lots of people are downloading Bibles right now. Please try again in a few minutes.")
         }
     }
 }
@@ -107,23 +154,57 @@ struct PremiumProof: Sendable, Equatable {
 struct TranslationDownloader: Sendable {
     let client: SupabaseClient?
 
+    /// Bible files (public.bible_translations), then YouVersion Platform
+    /// Bibles (public.youversion_bibles). Throws unless both lists loaded, so
+    /// a half-loaded catalog never makes BibleLibrary think a Bible was
+    /// withdrawn.
     func catalog() async throws -> [DownloadableTranslation] {
         guard let client else { throw TranslationDownloadError.notConfigured }
         do {
-            return try await client.select("bible_translations", query: [
+            let files: [DownloadableTranslation] = try await client.select("bible_translations", query: [
                 // All columns, so a server without the newer `language` column still works.
                 URLQueryItem(name: "select", value: "*"),
                 URLQueryItem(name: "enabled", value: "eq.true"),
                 URLQueryItem(name: "order", value: "sort.asc,name.asc"),
             ])
+            let youVersion: [YouVersionCatalogRow] = try await client.select("youversion_bibles", query: [
+                URLQueryItem(name: "select", value: "id,yvp_id,name,year,license,summary,language,approach,reading_level,popularity,version"),
+                URLQueryItem(name: "enabled", value: "eq.true"),
+                URLQueryItem(name: "order", value: "sort.asc,name.asc"),
+            ])
+            let fileIDs = Set(files.map(\.id))
+            return files + youVersion.map(\.downloadable).filter { !fileIDs.contains($0.id) }
         } catch let error as URLError where [.notConnectedToInternet, .networkConnectionLost, .timedOut].contains(error.code) {
             throw TranslationDownloadError.offline
         }
     }
 
-    /// Downloads, unpacks and checks a translation; returns the SQLite bytes
-    /// written to `destination`.
+    /// Downloads a translation's file (or, for a YouVersion Bible, builds it
+    /// on the device) to `destination`, and checks it holds a whole Bible.
     func download(_ item: DownloadableTranslation, to destination: URL, allowsCellular: Bool = true, proof: PremiumProof? = nil) async throws {
+        if item.youVersionID != nil {
+            guard let client else { throw TranslationDownloadError.notConfigured }
+            try await YouVersionBibleBuilder(client: client).build(item, to: destination, allowsCellular: allowsCellular)
+        } else {
+            try await downloadFile(item, to: destination, allowsCellular: allowsCellular, proof: proof)
+        }
+        // Downloads can be fetched again, so they don't need iCloud backup.
+        var values = URLResourceValues()
+        values.isExcludedFromBackup = true
+        var file = destination
+        try? file.setResourceValues(values)
+        // Make sure it opens and has a whole Bible before using it.
+        do {
+            let repository = try BibleRepository(translation: item.translation, url: destination)
+            guard try repository.verseCount() > 30_000 else { throw TranslationDownloadError.notABible }
+        } catch {
+            try? FileManager.default.removeItem(at: destination)
+            throw TranslationDownloadError.notABible
+        }
+    }
+
+    /// A Bible file from storage, unpacked and checked against the catalog.
+    private func downloadFile(_ item: DownloadableTranslation, to destination: URL, allowsCellular: Bool, proof: PremiumProof?) async throws {
         let url = try await downloadURL(for: item, proof: proof)
         var request = URLRequest(url: url)
         request.allowsExpensiveNetworkAccess = allowsCellular
@@ -141,19 +222,6 @@ struct TranslationDownloader: Sendable {
         let database = try Self.unpack(data, expectedBytes: item.databaseBytes, sha256: item.sha256)
         try FileManager.default.createDirectory(at: destination.deletingLastPathComponent(), withIntermediateDirectories: true)
         try database.write(to: destination, options: .atomic)
-        // Downloads can be fetched again, so they don't need iCloud backup.
-        var values = URLResourceValues()
-        values.isExcludedFromBackup = true
-        var file = destination
-        try? file.setResourceValues(values)
-        // Make sure it opens and has a whole Bible before using it.
-        do {
-            let repository = try BibleRepository(translation: item.translation, url: destination)
-            guard try repository.verseCount() > 30_000 else { throw TranslationDownloadError.notABible }
-        } catch {
-            try? FileManager.default.removeItem(at: destination)
-            throw TranslationDownloadError.notABible
-        }
     }
 
     /// Where to fetch the file. A licensed Bible sits in a private bucket:

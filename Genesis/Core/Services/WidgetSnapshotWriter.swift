@@ -60,7 +60,11 @@ enum WidgetSnapshotWriter {
     }
 
     static func make(library: BibleLibrary, progress: ReadingProgress, context: ModelContext, isPremium: Bool = false, theme: ReaderTheme = .automatic, memoriseShown: Bool = true, now: Date = .now) -> WidgetSnapshot {
-        let repository = library.current
+        // One snapshot feeds free and Premium widgets alike, so it never
+        // holds a YouVersion Bible's text (paid features don't show it):
+        // with one, widgets read a public-domain Bible in its language.
+        let widgetTranslation = library.premiumToolsTranslation
+        let repository = library.repository(for: widgetTranslation)
         let calendar = Calendar.current
 
         // Two weeks of daily verses so widgets stay fresh if the app isn't opened.
@@ -115,7 +119,7 @@ enum WidgetSnapshotWriter {
         let memory = memoriseShown ? ((try? context.fetch(FetchDescriptor<MemoryVerse>(sortBy: [SortDescriptor(\.dueAt)]))) ?? []) : []
         var memorise = WidgetSnapshot.Memorise(isUnlocked: isPremium, dueDates: [], total: 0, reference: nil, hint: nil, translation: nil, isHidden: memoriseShown ? nil : true)
         if isPremium, memoriseShown, let next = memory.first {
-            let translation = library.translations.first { $0.id == next.translationID } ?? library.currentTranslation
+            let translation = library.premiumToolsTranslation(for: library.translations.first { $0.id == next.translationID } ?? library.currentTranslation)
             let text = ((try? library.repository(for: translation).verses(from: next.start, through: next.end)) ?? []).map(\.plainText).joined(separator: " ")
             memorise = WidgetSnapshot.Memorise(
                 isUnlocked: true,
@@ -129,7 +133,7 @@ enum WidgetSnapshotWriter {
 
         return WidgetSnapshot(
             generatedAt: now,
-            translation: library.currentTranslation.abbreviation,
+            translation: widgetTranslation.abbreviation,
             dailyVerses: dailyVerses,
             continueReading: continueReading,
             streakDays: progress.streak(on: now),

@@ -203,7 +203,7 @@ private struct MemoriseChallengePractice: View {
     /// Adds the passage in the Bible you're reading (or finds it there).
     private func addToMemorise() -> MemoryVerse? {
         guard let start = challenge.passageStart, let end = challenge.passageEnd else { return nil }
-        return StudyStore(context: modelContext).memorise(from: start, through: end, translationID: library.currentTranslation.id)
+        return StudyStore(context: modelContext).memorise(from: start, through: end, translationID: library.premiumToolsTranslation.id)
     }
 
     private func play(_ mode: MemoryGameMode) {

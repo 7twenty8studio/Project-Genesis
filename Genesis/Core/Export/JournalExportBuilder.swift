@@ -66,11 +66,14 @@ struct JournalExportBuilder {
         return church.isEmpty ? date : "\(church) · \(date)"
     }
 
-    /// Each passage verbatim from the current Bible; one missing from it is left out.
+    /// Each passage verbatim from the current Bible; one missing from it is
+    /// left out. Export is Premium, so a YouVersion Bible's text isn't used:
+    /// a public-domain Bible in its language stands in.
     private func passages(_ passages: [PrayerPassage]) -> [JournalExport.Passage] {
-        let translation = library.currentTranslation
+        let translation = library.premiumToolsTranslation
+        let repository = library.repository(for: translation)
         return passages.compactMap { passage in
-            let verses = (try? library.current.verses(from: passage.start, through: passage.end)) ?? []
+            let verses = (try? repository.verses(from: passage.start, through: passage.end)) ?? []
             guard !verses.isEmpty else { return nil }
             return JournalExport.Passage(
                 reference: passage.reference.description(in: translation.language),

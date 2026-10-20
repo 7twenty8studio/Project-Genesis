@@ -61,7 +61,9 @@ struct VerseStudyList: View {
         List {
             ThemedRows {
                 Section {
-                    Text((try? library.current.verse(verse))?.plainText ?? "")
+                    // A YouVersion Bible isn't shown in Premium features: a
+                    // public-domain Bible in its language stands in.
+                    Text((try? library.premiumToolsRepository.verse(verse))?.plainText ?? "")
                         .font(.system(.body, design: .serif))
                         .foregroundStyle(palette.text)
                         .accessibilityIdentifier("wordStudy.verse")
@@ -85,7 +87,7 @@ struct VerseStudyList: View {
                 Section {
                 } footer: {
                     VStack(alignment: .leading, spacing: 6) {
-                        if WordStudyRepository.needsEnglishNote(bibleLanguage: library.currentTranslation.language) {
+                        if WordStudyRepository.needsEnglishNote(bibleLanguage: library.premiumToolsTranslation.language) {
                             Text("Definitions and commentary are in English for now. More languages are coming soon.")
                         }
                         Text(WordStudyRepository.attribution)
@@ -94,7 +96,7 @@ struct VerseStudyList: View {
             }
         }
         .themedScreen()
-        .navigationTitle(PassageReference(verse: verse).description(in: library.currentTranslation.language))
+        .navigationTitle(PassageReference(verse: verse).description(in: library.premiumToolsTranslation.language))
         .navigationBarTitleDisplayMode(.inline)
         .task(id: verse) { await load() }
     }
@@ -171,7 +173,9 @@ struct VerseStudyList: View {
     /// Reina-Valera numbers some verses differently); other English Bibles
     /// share the KJV's numbers.
     private var kjvVerses: [VerseID] {
-        if let map = OriginalVersification.map(for: library.currentTranslation.id) {
+        // A YouVersion Bible's verse numbers aren't mapped: they're used as
+        // they are (most match the KJV's).
+        if !library.currentTranslation.isYouVersion, let map = OriginalVersification.map(for: library.currentTranslation.id) {
             return map.alignment(of: verse).kjv
         }
         return [verse]

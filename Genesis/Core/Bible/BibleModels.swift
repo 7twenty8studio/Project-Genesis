@@ -55,6 +55,12 @@ struct Translation: Identifiable, Hashable, Codable, Sendable {
     /// fee (bible_translations.premium). Every Bible Versely may offer free
     /// is free for everyone.
     var requiresPremium: Bool = false
+    /// From the YouVersion Platform (public.youversion_bibles), built on the
+    /// device by `YouVersionBibleBuilder`. Always free to read, and never
+    /// shown in a paid feature: Premium tools read
+    /// `BibleLibrary.premiumToolsTranslation(for:)` instead, and listening
+    /// isn't offered (LICENSED_BIBLES.md › 5).
+    var isYouVersion: Bool = false
 
     var abbreviation: String { id }
 
@@ -66,7 +72,7 @@ struct Translation: Identifiable, Hashable, Codable, Sendable {
         TranslationProfile.rights(fromLicense: license) != .publicDomain
     }
 
-    init(id: String, name: String, year: String, license: String, summary: String, language: String = "en", requiresPremium: Bool = false) {
+    init(id: String, name: String, year: String, license: String, summary: String, language: String = "en", requiresPremium: Bool = false, isYouVersion: Bool = false) {
         self.id = id
         self.name = name
         self.year = year
@@ -74,6 +80,7 @@ struct Translation: Identifiable, Hashable, Codable, Sendable {
         self.summary = summary
         self.language = language
         self.requiresPremium = requiresPremium
+        self.isYouVersion = isYouVersion
     }
 
     // Translations saved before languages were added have none: English.
@@ -86,6 +93,7 @@ struct Translation: Identifiable, Hashable, Codable, Sendable {
         summary = try container.decode(String.self, forKey: .summary)
         language = try container.decodeIfPresent(String.self, forKey: .language) ?? "en"
         requiresPremium = try container.decodeIfPresent(Bool.self, forKey: .requiresPremium) ?? false
+        isYouVersion = try container.decodeIfPresent(Bool.self, forKey: .isYouVersion) ?? false
     }
 }
 

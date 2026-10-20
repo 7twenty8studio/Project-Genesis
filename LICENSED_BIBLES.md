@@ -153,8 +153,22 @@ app loads the catalog.
 
 ## 5. YouVersion Platform (YVP)
 
-A second source of licensed Bibles, besides the DBL. Not built yet. These
-are the terms YouVersion agreed with us in writing (email thread
+A second source of licensed Bibles, besides the DBL. Built in October
+2026: the NIV, NASB, NIrV, NVI, NBLA and LBLA are offered (rows in
+public.youversion_bibles).
+
+**To add a YouVersion Bible:** check our key can use it (run the
+`yvp-catalog` function, see its header), check its publisher's caching
+terms, then insert a row in public.youversion_bibles: `id` (what readers
+see, 2–8 letters or digits), `yvp_id`, name, year, `license` (the
+copyright statement exactly as the Platform's /v1/bibles/{id} gives it),
+summary in the Bible's language, language, approach, reading_level,
+popularity, sort, `enabled = true`. It appears in the Bibles library the
+next time the app loads the catalog. **To withdraw one:** set `enabled =
+false`; devices remove it. **To push a publisher's correction:** raise
+`version`; devices rebuild it on Wi-Fi (they also do so monthly).
+
+These are the terms YouVersion agreed with us in writing (email thread
 "Developer questions before integrating YouVersion Platform – Versely
 (7Twenty8 Studio)", Heather McMahan, Director, Platform Partner Strategy,
 19–20 October 2026; the owner keeps the PDF).
@@ -173,22 +187,27 @@ are the terms YouVersion agreed with us in writing (email thread
 - **No YVP text in paid features.** Premium tools must not use a YVP
   Bible's text. Heather named the Memorize games; we apply it to every
   `PremiumFeature` that shows verse text. With a YVP Bible chosen, these
-  use the public-domain Bible in the same language (KJV or WEB in English,
-  RV1909 in Spanish), the way the study assistant does:
-  - Memorize (games, hints, the Memorise widget)
-  - Premium widgets (verse categories, From Your Reading, the large verse
-    widget)
+  use the public-domain Bible in the same language (the KJV in English,
+  the RV1909 in Spanish, installed along with a Spanish YVP Bible), the
+  way the study assistant does (`BibleLibrary.premiumToolsTranslation`):
+  - Memorize (games, hints, new cards, the Memorise widget)
+  - every widget, free sizes included: one snapshot feeds them all, so it
+    never holds YVP text
   - the morning welcome's verse
-  - the Original (Hebrew & Greek) parallel's translation column
-  - the English verse in word study (`VerseStudyView`)
+  - word study (`VerseStudyView`) and lexicon entries' verses
   - passages in journal PDF exports
+  - the Original (Hebrew & Greek) parallel isn't offered for YVP Bibles
+    (no versification map)
 
-  Free features (the reader, search, plans, notes, highlights, the small,
-  medium and Lock Screen verse widget, notifications, sharing, groups) use
-  the YVP Bible as usual.
-- **Tell readers before they choose.** The Bible's card says Premium tools
-  use the public-domain Bible with it, and a one-time note says so the
-  first time a Premium tool opens while reading it.
+  Free features (the reader, search, plans, notes, highlights,
+  notifications, sharing, groups) use the YVP Bible as usual.
+- **No listening.** Our first email told YouVersion its Bibles aren't read
+  aloud by a device voice unless a licence allows it, so the player says
+  listening isn't available for them.
+- **Tell readers before they choose.** The Bible's card says listening,
+  widgets and Premium tools use the public-domain Bible with it, a
+  one-time note says so the first time it's read, and What's New
+  announces it.
 - **Offline is allowed.** A YVP Bible may be stored on the device, whole or
   chapter by chapter, with no YouVersion limit, unless that publisher's own
   agreement sets a caching limit: check each Bible's licence. Refresh from

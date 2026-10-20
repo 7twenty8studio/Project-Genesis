@@ -127,7 +127,7 @@ struct LexiconEntryView: View {
             Section {
                 ForEach(loaded.verses) { verse in
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(PassageReference(verse: verse.id).description(in: library.currentTranslation.language))
+                        Text(PassageReference(verse: verse.id).description(in: library.premiumToolsTranslation.language))
                             .font(.caption.weight(.semibold))
                             .foregroundStyle(palette.accent)
                         Text(verse.plainText)
@@ -153,7 +153,9 @@ struct LexiconEntryView: View {
             return
         }
         let strongs = strongs
-        let bible = library.current
+        // Word study is Premium: a YouVersion Bible's text isn't used here
+        // (a public-domain Bible in its language stands in).
+        let bible = library.premiumToolsRepository
         let limit = Self.verseLimit
         loaded = await Task.detached(priority: .userInitiated) { () -> Loaded? in
             guard let entry = try? wordStudy.entry(strongs: strongs) else { return nil }

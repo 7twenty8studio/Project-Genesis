@@ -80,7 +80,7 @@ struct MemoriseView: View {
                     Section {
                         ForEach(suggestions.prefix(verses.isEmpty ? 8 : 3), id: \.start) { suggestion in
                             Button {
-                                StudyStore(context: modelContext).memorise(from: suggestion.start, through: suggestion.end, translationID: library.currentTranslation.id)
+                                StudyStore(context: modelContext).memorise(from: suggestion.start, through: suggestion.end, translationID: library.premiumToolsTranslation.id)
                             } label: {
                                 HStack {
                                     Text(suggestion.reference.description)
@@ -187,7 +187,7 @@ struct MemoriseView: View {
     private static let gameLength = 10
 
     private func translation(for verse: MemoryVerse) -> Translation {
-        library.translations.first { $0.id == verse.translationID } ?? library.currentTranslation
+        library.premiumToolsTranslation(for: library.translations.first { $0.id == verse.translationID } ?? library.currentTranslation)
     }
 
     private func add(_ text: String) {
@@ -201,11 +201,11 @@ struct MemoriseView: View {
             addError = String(localized: "Choose up to \(MemoriseSuggestions.maximumVerses) verses at a time.")
             return
         }
-        guard (try? library.current.verse(start)) != nil else {
+        guard (try? library.premiumToolsRepository.verse(start)) != nil else {
             addError = String(localized: "That verse isn't in this Bible.")
             return
         }
-        StudyStore(context: modelContext).memorise(from: start, through: end, translationID: library.currentTranslation.id)
+        StudyStore(context: modelContext).memorise(from: start, through: end, translationID: library.premiumToolsTranslation.id)
     }
 }
 

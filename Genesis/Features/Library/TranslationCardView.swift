@@ -11,6 +11,7 @@ struct TranslationCardView: View {
 
     @Environment(\.palette) private var palette
     @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(BibleLibrary.self) private var library
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -26,6 +27,15 @@ struct TranslationCardView: View {
                     .fixedSize(horizontal: false, vertical: true)
             }
             facts
+            // YouVersion Bibles: said before anyone chooses one (our
+            // agreement with YouVersion keeps them out of paid features).
+            if entry.translation.isYouVersion {
+                Text(String(localized: "Free to read, always. Listening isn't available, and widgets and Premium tools such as Memorize use the \(library.premiumToolsBibleName(for: entry.translation)) with this Bible."))
+                    .font(.caption)
+                    .foregroundStyle(palette.secondaryText)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityIdentifier("bibles.youVersionNote.\(entry.id)")
+            }
             // A licensed Bible's copyright notice, as the publisher wrote it.
             if entry.translation.isLicensed {
                 Text(entry.translation.license)
@@ -65,7 +75,7 @@ struct TranslationCardView: View {
         var parts = [entry.translation.year]
         if entry.isInstalled {
             parts.append(String(localized: "On this device"))
-        } else if let download = entry.download {
+        } else if let download = entry.download, download.fileBytes > 0 {
             parts.append(ByteCountFormatter.string(fromByteCount: Int64(download.fileBytes), countStyle: .file))
         }
         return parts.filter { !$0.isEmpty }.joined(separator: " · ")
@@ -113,9 +123,13 @@ struct TranslationCardView: View {
         if let level = entry.profile.readingLevel {
             list.append(Fact(systemImage: "textformat", text: level.title))
         }
-        list.append(entry.hasRecordedAudio
-            ? Fact(systemImage: "waveform", text: String(localized: "Recorded audio"))
-            : Fact(systemImage: "speaker.wave.2", text: String(localized: "Read aloud by a device voice")))
+        if entry.translation.isYouVersion {
+            list.append(Fact(systemImage: "gift", text: String(localized: "Always free", comment: "On a Bible's card: this Bible is free to read")))
+        } else {
+            list.append(entry.hasRecordedAudio
+                ? Fact(systemImage: "waveform", text: String(localized: "Recorded audio"))
+                : Fact(systemImage: "speaker.wave.2", text: String(localized: "Read aloud by a device voice")))
+        }
         if entry.translation.requiresPremium {
             list.append(Fact(systemImage: "crown", text: String(localized: "With Premium", comment: "On a Bible's card: this Bible needs Premium")))
         }

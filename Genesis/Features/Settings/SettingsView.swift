@@ -3,6 +3,7 @@ import SwiftUI
 /// App settings from Home: features, Bibles and account. Reading settings
 /// live in the reader ("Aa").
 struct SettingsView: View {
+    @Environment(BibleLibrary.self) private var library
     @Environment(\.palette) private var palette
     @Environment(\.dismiss) private var dismiss
     @Environment(\.openURL) private var openURL
@@ -161,7 +162,14 @@ struct SettingsView: View {
 
                     Section {
                     } footer: {
-                        Text("Theme, font and page turns are also in the reader under Aa.")
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Theme, font and page turns are also in the reader under Aa.")
+                            // Asked by the YouVersion Platform's Terms, since
+                            // Versely offers a subscription.
+                            if library.offersYouVersionBibles {
+                                Text("Bibles from the YouVersion Platform are always free in Versely. The YouVersion Bible App is free to download and use.")
+                            }
+                        }
                     }
                 }
             }

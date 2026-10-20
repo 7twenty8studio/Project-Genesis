@@ -286,7 +286,7 @@ struct PlaceDetailView: View {
                         }
                     }
                     if !verses.isEmpty {
-                        DetailSection(title: String(localized: "Mentioned In")) { VerseMentionList(verses: verses) }
+                        DetailSection(title: String(localized: "Mentioned In")) { VerseMentionList(verses: verses, premiumTools: true) }
                     }
                     Text(StudyRepository.attribution)
                         .font(.caption2)

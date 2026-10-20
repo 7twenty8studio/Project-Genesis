@@ -81,10 +81,12 @@ enum WidgetVerses {
 
     /// Passages with their text, from the current Bible where it has every
     /// verse, the KJV otherwise. Passages found in neither are left out.
+    /// (With a YouVersion Bible, a public-domain one in its language:
+    /// `BibleLibrary.premiumToolsTranslation`.)
     static func passages(_ items: [CategoryPassage], library: BibleLibrary) -> [WidgetSnapshot.Passage] {
-        let current = library.currentTranslation
+        let current = library.premiumToolsTranslation
         let own = items.filter { usesOwnBible($0, translationID: current.id) }
-        let ownText = (try? library.current.verses(withIDs: own.flatMap(\.verseIDs))) ?? [:]
+        let ownText = (try? library.repository(for: current).verses(withIDs: own.flatMap(\.verseIDs))) ?? [:]
         let kjvText = current.id == Translation.kjv.id ? ownText : ((try? library.repository(for: .kjv).verses(withIDs: items.flatMap(\.verseIDs))) ?? [:])
         return items.compactMap { item in
             if usesOwnBible(item, translationID: current.id), let found = makePassage(item, from: ownText, in: current) {
@@ -119,8 +121,8 @@ enum WidgetVerses {
     static func fromReading(progress: ReadingProgress, library: BibleLibrary, now: Date, days: Int = 7, calendar: Calendar = .current) -> [String: WidgetSnapshot.Passage] {
         let chapters = progress.recentChapters(days: 7, endingOn: now)
         guard !chapters.isEmpty else { return [:] }
-        let repository = library.current
-        let translation = library.currentTranslation
+        let translation = library.premiumToolsTranslation
+        let repository = library.repository(for: translation)
         var cache: [ChapterID: [Verse]] = [:]
         var result: [String: WidgetSnapshot.Passage] = [:]
         for offset in 0..<days {

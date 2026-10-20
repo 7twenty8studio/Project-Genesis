@@ -359,12 +359,29 @@ shares; README.md has the architecture.
   left the catalog; the study assistant reads a public-domain Bible in the
   same language instead, so licensed text never reaches the AI service.
   Per-licence terms and the request list: LICENSED_BIBLES.md.
-- YouVersion Platform Bibles (agreed in writing, not built yet;
-  LICENSED_BIBLES.md › 5): always free, never `requiresPremium`; no
-  Premium feature may show their text (Premium tools fall back to the
-  public-domain Bible in the same language, and readers are told on the
-  Bible's card); offline storage allowed unless the publisher limits it,
-  refreshed when online.
+- YouVersion Platform Bibles (terms agreed in writing, LICENSED_BIBLES.md
+  › 5): rows in public.youversion_bibles (migration 20261019000000; id
+  keeps the publisher's casing, "NIrV"; `yvp_id` is the Platform's id;
+  `version` bump = rebuild on devices). The `yvp-bible` Edge Function
+  (secret YVP_APP_KEY, never in the app) returns one book in the app's
+  format, parsed from the Platform's chapter HTML by yvp-bible/lib.ts
+  with the DBL importer's rules (Node tests); nothing is stored on the
+  server. The app builds the Bible on the device
+  (`YouVersionBibleBuilder` → `BibleFileWriter`, same schema as
+  build_bibles.py) as a `DownloadableTranslation` with `youVersionID`, and
+  BibleLibrary rebuilds it on Wi-Fi monthly (`installedAt`) and removes it
+  when its row leaves the catalog. `Translation.isYouVersion`: always
+  free, never `requiresPremium`; no Premium feature shows its text: use
+  `library.premiumToolsTranslation` / `premiumToolsRepository` (a
+  public-domain Bible in the same language; RV1909 is installed along with
+  a Spanish one) in Memorize, widgets (the one snapshot), the morning
+  welcome, word study, lexicon entries, the Map's verses and journal
+  export; listening is
+  refused (we told YouVersion it isn't read aloud). People are told on the
+  Bible's card, once in an alert in the reader (`youVersion.noteShown`), in
+  What's New; the Premium screen and Settings say "The YouVersion Bible
+  App is free" (the Terms ask it of apps that charge). No YouVersion logo.
+  `yvp-catalog` (owner tool, ops secret) lists the Bibles our key can use.
 - Global Reading Library (the Bibles screen, `BibleDownloadsView`): Bibles by
   language, most read first, as `TranslationCardView`s, plus
   `TranslationGuideView` ("Which Bible is right for me?"). Logic in

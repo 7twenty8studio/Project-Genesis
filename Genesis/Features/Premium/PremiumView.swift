@@ -234,6 +234,14 @@ struct PremiumView: View {
             Text("Payment is charged to your Apple Account. The subscription renews automatically unless canceled at least 24 hours before the end of the current period. Manage or cancel it in Settings > Apple Account > Subscriptions.")
                 .font(.caption)
                 .foregroundStyle(palette.secondaryText)
+            // The YouVersion Platform's Terms ask apps that charge for
+            // anything to say this plainly (no logo, no endorsement).
+            if library.offersYouVersionBibles {
+                Text("Bibles from the YouVersion Platform are always free in Versely. The YouVersion Bible App is free to download and use.")
+                    .font(.caption)
+                    .foregroundStyle(palette.secondaryText)
+                    .accessibilityIdentifier("premium.youVersionFree")
+            }
             HStack(spacing: 16) {
                 Link("Terms of Use", destination: AppConfiguration.current.termsURL)
                 if let privacy = AppConfiguration.current.privacyURL {

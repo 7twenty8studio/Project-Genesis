@@ -89,6 +89,9 @@ struct FlowLayout: Layout {
 struct VerseMentionList: View {
     let verses: [VerseID]
     var limit = 12
+    /// In a Premium screen (the Map): a YouVersion Bible's text isn't shown,
+    /// a public-domain Bible in its language stands in.
+    var premiumTools = false
 
     @Environment(BibleLibrary.self) private var library
     @Environment(AppRouter.self) private var router
@@ -97,7 +100,8 @@ struct VerseMentionList: View {
 
     var body: some View {
         let shown = showsAll ? verses : Array(verses.prefix(limit))
-        let texts = (try? library.current.verses(withIDs: shown)) ?? [:]
+        let translation = premiumTools ? library.premiumToolsTranslation : library.currentTranslation
+        let texts = (try? library.repository(for: translation).verses(withIDs: shown)) ?? [:]
         VStack(alignment: .leading, spacing: 0) {
             ForEach(shown, id: \.self) { verse in
                 Button {
@@ -126,7 +130,7 @@ struct VerseMentionList: View {
                     .font(.subheadline)
                     .padding(.top, 10)
             }
-            Text("Scripture \u{00B7} \(library.currentTranslation.abbreviation)")
+            Text("Scripture \u{00B7} \(translation.abbreviation)")
                 .font(.caption2)
                 .foregroundStyle(palette.secondaryText)
                 .padding(.top, 8)

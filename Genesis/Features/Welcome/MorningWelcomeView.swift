@@ -86,17 +86,19 @@ struct MorningWelcomeView: View {
         .accessibilityIdentifier("welcome.greeting")
     }
 
-    /// Verbatim, from the Bible being read.
+    /// Verbatim, from the Bible being read (a public-domain one in its
+    /// language for a YouVersion Bible, which Premium features don't show).
     private var verse: some View {
         let id = DailyVerse.verse()
-        let text = (try? library.current.verse(id))?.plainText ?? ""
-        let reference = PassageReference(verse: id).description(in: library.currentTranslation.language)
+        let translation = library.premiumToolsTranslation
+        let text = (try? library.repository(for: translation).verse(id))?.plainText ?? ""
+        let reference = PassageReference(verse: id).description(in: translation.language)
         return VStack(alignment: .leading, spacing: 12) {
             Text(text)
                 .font(settings.preferences.font.font(size: 22))
                 .lineSpacing(7)
                 .foregroundStyle(palette.text)
-            Text("\(reference) · \(library.currentTranslation.abbreviation)")
+            Text("\(reference) · \(translation.abbreviation)")
                 .font(.footnote.weight(.semibold))
                 .foregroundStyle(palette.accent)
         }

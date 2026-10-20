@@ -27,7 +27,7 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles]
 
     static let notifications = WhatsNewAnnouncement(
         id: "notifications-your-way",
@@ -47,6 +47,28 @@ enum WhatsNewCatalog {
                 systemImage: "bell.slash",
                 title: String(localized: "You're in control"),
                 detail: String(localized: "Choose each kind and its time, or turn them all off, in Settings › Notifications.")
+            ),
+        ]
+    )
+
+    static let moreBibles = WhatsNewAnnouncement(
+        id: "youversion-bibles",
+        title: String(localized: "More Bibles, free"),
+        items: [
+            WhatsNewItem(
+                systemImage: "books.vertical",
+                title: String(localized: "NIV, NASB and NIrV"),
+                detail: String(localized: "Three of the most read English Bibles, free to download and read offline.")
+            ),
+            WhatsNewItem(
+                systemImage: "globe.americas",
+                title: String(localized: "NVI, NBLA and LBLA"),
+                detail: String(localized: "Loved Spanish Bibles, also free, alongside the Reina-Valera.")
+            ),
+            WhatsNewItem(
+                systemImage: "info.circle",
+                title: String(localized: "Good to know"),
+                detail: String(localized: "These Bibles come from the YouVersion Platform. Listening isn't available for them yet, and widgets and Premium tools use a public-domain Bible with them.")
             ),
         ]
     )

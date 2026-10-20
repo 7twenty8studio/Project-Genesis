@@ -23,6 +23,9 @@ struct ReaderView: View {
     @Environment(\.accessibilityDifferentiateWithoutColor) private var differentiateWithoutColor
 
     @State private var sheet: ReaderSheet?
+    /// The one-time note on first reading a YouVersion Bible.
+    @State private var showsYouVersionNote = false
+    @AppStorage("youVersion.noteShown") private var youVersionNoteShown = false
     /// "Added to Memorise", shown briefly.
     @State private var confirmation: String?
     @State private var showsCompanion = true
@@ -73,6 +76,19 @@ struct ReaderView: View {
         .animation(reduceMotion ? nil : .easeInOut(duration: 0.2), value: reader.isSelecting)
         .sheet(item: $sheet) { sheet in
             sheetContent(sheet)
+        }
+        // Once, the first time a YouVersion Platform Bible is read here:
+        // what it isn't used for (our agreement keeps it out of paid
+        // features). Its card in the library says the same beforehand.
+        .task(id: reader.translation.id) {
+            // Let a closing Bible picker finish first.
+            try? await Task.sleep(for: .milliseconds(700))
+            explainYouVersionBible()
+        }
+        .alert(String(localized: "About this Bible"), isPresented: $showsYouVersionNote) {
+            Button(String(localized: "OK")) { youVersionNoteShown = true }
+        } message: {
+            Text(String(localized: "\(reader.translation.abbreviation) is free to read, always. Listening isn't available for it, and widgets and Premium tools such as Memorize use the \(reader.library.premiumToolsBibleName(for: reader.translation)) instead."))
         }
         .onAppear {
             windowSafeArea = DeviceScreen.safeAreaInsets
@@ -421,6 +437,12 @@ struct ReaderView: View {
     }
 
     /// Adds the selected verses to Memorise (Premium).
+    private func explainYouVersionBible() {
+        guard reader.translation.isYouVersion, !youVersionNoteShown, sheet == nil, !showsYouVersionNote,
+              !UITestingOptions.current.isEnabled else { return }
+        showsYouVersionNote = true
+    }
+
     private func memoriseSelection() {
         guard entitlements.allows(.memorise) else {
             sheet = .premium(.memorise)
@@ -432,7 +454,7 @@ struct ReaderView: View {
         let end = sameChapter.verse - first.verse < MemoriseSuggestions.maximumVerses
             ? sameChapter
             : VerseID(book: first.book, chapter: first.chapter, verse: first.verse + MemoriseSuggestions.maximumVerses - 1)
-        StudyStore(context: modelContext).memorise(from: first, through: end, translationID: reader.translation.id)
+        StudyStore(context: modelContext).memorise(from: first, through: end, translationID: reader.library.premiumToolsTranslation(for: reader.translation).id)
         reader.clearSelection()
         let message = String(localized: "Added to Memorize")
         withAnimation { confirmation = message }
