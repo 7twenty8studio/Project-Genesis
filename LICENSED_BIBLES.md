@@ -252,7 +252,12 @@ These are the terms YouVersion agreed with us in writing (email thread
     for apps "with no AI or machine learning features". The study
     assistant is off and never sees licensed text; ask Biblica before
     turning it on while the NIV, NIrV or NVI are offered.
-- **Rate limit (seen 20 October 2026):** the Platform limits requests per
+- **Rate limit:** 200 requests an hour (rolling) while in development;
+  about 10,000 an hour once the app was marked live in the Platform
+  portal (20 October 2026). A whole Bible is about 1,250 requests, so
+  that's roughly eight Bible downloads an hour across all readers. Before
+  launch, ask for more or for a single server copy (below).
+- **What we saw first (20 October 2026):** the Platform limits requests per
   app key, shared by every reader. A burst of about a thousand chapter
   requests at once got HTTP 429 with `Retry-After: 300` (five minutes).
   A whole Bible is about 1,250 requests, so the app builds one two books
