@@ -10,7 +10,6 @@
 // ops_cron_secret (public.ops_cron_secret_matches), like ops-alerts.
 // The app key (YVP_APP_KEY) is a Supabase secret and never leaves here.
 import { createClient } from "jsr:@supabase/supabase-js@2";
-import { BOOKS, parseChapter } from "../yvp-bible/lib.ts";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
@@ -20,6 +19,18 @@ const KEY_NAMES = ["YVP_APP_KEY", "YVP_API_KEY", "YOUVERSION_APP_KEY", "YOUVERSI
 const KEY_NAME = KEY_NAMES.find((name) => Deno.env.get(name)?.trim());
 const APP_KEY = KEY_NAME ? Deno.env.get(KEY_NAME)!.trim() : "";
 const API = "https://api.youversion.com/v1";
+// USFM code and the KJV's chapter count (as in yvp-bible/lib.ts).
+const BOOKS: [string, number][] = [
+  ["GEN", 50], ["EXO", 40], ["LEV", 27], ["NUM", 36], ["DEU", 34], ["JOS", 24], ["JDG", 21], ["RUT", 4],
+  ["1SA", 31], ["2SA", 24], ["1KI", 22], ["2KI", 25], ["1CH", 29], ["2CH", 36], ["EZR", 10], ["NEH", 13],
+  ["EST", 10], ["JOB", 42], ["PSA", 150], ["PRO", 31], ["ECC", 12], ["SNG", 8], ["ISA", 66], ["JER", 52],
+  ["LAM", 5], ["EZK", 48], ["DAN", 12], ["HOS", 14], ["JOL", 3], ["AMO", 9], ["OBA", 1], ["JON", 4],
+  ["MIC", 7], ["NAM", 3], ["HAB", 3], ["ZEP", 3], ["HAG", 2], ["ZEC", 14], ["MAL", 4],
+  ["MAT", 28], ["MRK", 16], ["LUK", 24], ["JHN", 21], ["ACT", 28], ["ROM", 16], ["1CO", 16], ["2CO", 13],
+  ["GAL", 6], ["EPH", 6], ["PHP", 4], ["COL", 4], ["1TH", 5], ["2TH", 3], ["1TI", 6], ["2TI", 4],
+  ["TIT", 3], ["PHM", 1], ["HEB", 13], ["JAS", 5], ["1PE", 5], ["2PE", 3], ["1JN", 5], ["2JN", 1],
+  ["3JN", 1], ["JUD", 1], ["REV", 22],
+];
 const admin = createClient(SUPABASE_URL, SERVICE_ROLE_KEY, { auth: { persistSession: false } });
 
 function json(body: unknown, status = 200): Response {
@@ -87,11 +98,11 @@ Deno.serve(async (req) => {
   }
 
   // { action: "wholeBible", bible: 111 }: reads every chapter at the app's
-  // pace (two books at a time, four chapters each) and counts the verses,
-  // to check a whole Bible comes through without hitting the rate limit.
+  // pace (two books at a time, four chapters each), to check a whole Bible
+  // comes through without hitting the Platform's rate limit.
   if (body?.action === "wholeBible" && Number.isInteger(body.bible)) {
     const started = Date.now();
-    let verses = 0;
+    let chapters = 0;
     let requests = 0;
     const problems: string[] = [];
     let nextBook = 0;
@@ -112,13 +123,13 @@ Deno.serve(async (req) => {
               continue;
             }
             const data = await response.json();
-            verses += parseChapter(chapter, data.content, data.reference).verses.length;
+            if (typeof data?.content === "string" && data.content.includes("yv-v")) chapters++;
           }
         }));
       }
     };
     await Promise.all([worker(), worker()]);
-    return json({ verses, requests, seconds: (Date.now() - started) / 1000, problems });
+    return json({ chapters, requests, seconds: (Date.now() - started) / 1000, problems });
   }
 
   const result: Record<string, unknown> = { keyName: KEY_NAME };
