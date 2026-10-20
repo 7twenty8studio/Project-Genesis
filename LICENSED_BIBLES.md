@@ -218,5 +218,20 @@ are the terms YouVersion agreed with us in writing (email thread
     the devices.
   - YouVersion shares our developer details with each publisher whose
     Bible we request, so the publisher can check eligibility.
+- **Bibles our app key can use** (checked 20 October 2026 with the
+  `yvp-catalog` function; run it again to refresh):
+  - English: NIV 2011 (id 111), NIrV 2014 (110), NIV Anglicized (113),
+    NASB 2020 (2692), NASB 1995 (100), Amplified (1588), Berean Standard
+    Bible (3034), Literal Standard Version (2660), plus public-domain
+    texts (ASV, WEB, Geneva, CPDV and others).
+  - Spanish: NVI 2025 (128), NVI 2015 (2664), NVI Castellano (1637), La
+    Biblia de las Américas (89), Nueva Biblia de las Américas (103),
+    Versión Biblia Libre (3291), Reina-Valera Antigua (147).
+  - Not on the Platform: RVR1960, DHH, RVC, TLA, ESV, NLT, NTV, CSB. Those
+    still go to their publishers directly (section 1).
+  - Biblica's own permissions page offers its Bibles through YouVersion
+    for apps "with no AI or machine learning features". The study
+    assistant is off and never sees licensed text; ask Biblica before
+    turning it on while the NIV, NIrV or NVI are offered.
 - **Still to confirm:** quotas and rate limits (not in the Terms; ask
   Platform Support or check the developer docs).
