@@ -27,7 +27,7 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies]
 
     static let notifications = WhatsNewAnnouncement(
         id: "notifications-your-way",
@@ -47,6 +47,28 @@ enum WhatsNewCatalog {
                 systemImage: "bell.slash",
                 title: String(localized: "You're in control"),
                 detail: String(localized: "Choose each kind and its time, or turn them all off, in Settings › Notifications.")
+            ),
+        ]
+    )
+
+    static let livelierSkies = WhatsNewAnnouncement(
+        id: "starlight-shooting-stars",
+        title: String(localized: "Skies and seasons that move"),
+        items: [
+            WhatsNewItem(
+                systemImage: "sparkles",
+                title: String(localized: "Shooting stars"),
+                detail: String(localized: "Starlight's night sky twinkles brighter now, with a shooting star every few seconds above the page.")
+            ),
+            WhatsNewItem(
+                systemImage: "leaf",
+                title: String(localized: "Each season its own way"),
+                detail: String(localized: "Spring petals ride a breeze, winter snow falls near and far, and autumn leaves drift more gently.")
+            ),
+            WhatsNewItem(
+                systemImage: "accessibility",
+                title: String(localized: "Calm with Reduce Motion"),
+                detail: String(localized: "With Reduce Motion on, stars fade gently in place and the seasons hold a still picture.")
             ),
         ]
     )

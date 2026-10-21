@@ -32,7 +32,7 @@ struct MemoryReviewView: View {
                         .accessibilityValue("\(reviewed) of \(reviewed + queue.count)")
                     cardView(verse)
                         .id(id)
-                        .transition(reduceMotion ? .opacity : .asymmetric(insertion: .move(edge: .trailing).combined(with: .opacity), removal: .move(edge: .leading).combined(with: .opacity)))
+                        .transition(reduceMotion ? .opacity : .nextCard)
                     controls(verse)
                 } else if started {
                     finished
@@ -135,7 +135,7 @@ struct MemoryReviewView: View {
             HStack(spacing: 12) {
                 Button {
                     // A few more words each time; the last step shows it all.
-                    withAnimation { hintWords += MemoryHint.wordsPerStep }
+                    withAnimation(Motion.change(reduceMotion: reduceMotion)) { hintWords += MemoryHint.wordsPerStep }
                     if MemoryHint.isComplete(text, words: hintWords) { reveal() }
                 } label: {
                     Label(hintWords == 0 ? String(localized: "Hint", comment: "Memorize: show the opening words") : String(localized: "More Words", comment: "Memorize: show a few more words of the verse"), systemImage: "lightbulb")
@@ -185,7 +185,7 @@ struct MemoryReviewView: View {
         StudyStore(context: modelContext).review(verse, grade)
         // A review is practice too: it keeps the days-in-a-row streak going.
         streak = streak.recording(on: .now)
-        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.3)) {
+        withAnimation(reduceMotion ? nil : Motion.easeOut(0.25)) {
             let id = queue.removeFirst()
             if grade == .again { queue.append(id) } else { reviewed += 1 }
             revealed = false

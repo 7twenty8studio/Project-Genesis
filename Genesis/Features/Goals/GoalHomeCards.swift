@@ -123,6 +123,7 @@ struct MilestoneWatcher: ViewModifier {
     @Environment(ReadingProgress.self) private var progress
     @Environment(FeaturePreferences.self) private var features
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     func body(content: Content) -> some View {
         content
@@ -145,6 +146,6 @@ struct MilestoneWatcher: ViewModifier {
             goals.markCelebrated(result.markQuietly)
         }
         guard showing == nil, let next = result.show else { return }
-        withAnimation { showing = next }
+        withAnimation(Motion.change(reduceMotion: reduceMotion)) { showing = next }
     }
 }

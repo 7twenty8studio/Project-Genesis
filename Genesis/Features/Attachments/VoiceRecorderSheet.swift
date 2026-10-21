@@ -159,6 +159,6 @@ private struct LevelMeter: View {
             }
         }
         .accessibilityHidden(true)
-        .animation(.easeOut(duration: 0.1), value: level)
+        .animation(.linear(duration: 0.1), value: level)
     }
 }

@@ -236,8 +236,17 @@ shares; README.md has the architecture.
   Without Premium the reader falls back to plain/New York, keeping the choice.
 - Night reading stays in the normal reader (no separate night screen): the
   Night theme (free, warm dark page) and Starlight (Premium via
-  `.premiumThemes`, night-blue paper with faint stars and, without Reduce
-  Motion, a slow twinkle in the margins, `StarlightTwinkleView`).
+  `.premiumThemes`, night-blue paper with faint stars and a clear night sky
+  over it, `StarlightSkyView`: 20 twinkling stars, a faint Milky Way and a
+  shooting star every 3–8 s, rules pure in `NightSky` (Swift Testing). It's
+  above the opaque pages, so it keeps out of the words: margins and the
+  band above the running head (`skyBand`, paged reading only), the haze
+  fading out before the text (`hazeFade`, no visible edge). 20 fps, 60 only
+  while a star shoots; Reduce Motion: gentle fades, no shooting stars).
+  Seasonal touches (`SeasonalEffectView`): autumn leaves, spring petals on
+  a breeze, winter snow at three depths with gusts and corner frost,
+  summer light; Reduce Motion shows the painted still (`paintedMoment`).
+  The morning welcome shows the theme's effect behind it at 70%.
   `ReaderPreferences.nightReading` ("At night, switch to" Off/Night/Starlight,
   and "When": `NightReadingTiming` `.darkMode` (default) or `.hours` with
   start/end hour; schedules saved before `timing` existed keep `.hours`)
@@ -654,6 +663,12 @@ shares; README.md has the architecture.
 - SwiftUI first; UIKit only for the TextKit reader text and page curl.
 - Verses are addressed by `VerseID` (book*1_000_000 + chapter*1_000 + verse).
 - Swift Testing for unit tests of business logic.
+- Motion: use `Motion` (Genesis/DesignSystem/Motion.swift) and its
+  transitions (`.rise`, `.drop`, `.nextCard`): strong ease-out, under 0.3 s
+  for everyday UI, exits faster than entrances, small offsets rather than
+  edge-to-edge moves, never `.easeIn` or a bare `withAnimation` for UI;
+  check Reduce Motion (fade instead of move). The motion skills are in
+  .claude/skills (review-animations to check a change).
 - Muted colours only; themes live in `ReaderTheme`. Every List/Form wraps its
   content in `ThemedRows { }` so rows take the theme's surface colour
   (otherwise they stay system white), plus `.themedScreen()` on the list.

@@ -75,14 +75,14 @@ struct OnboardingView: View {
         .themedScreen()
         .onAppear {
             selection = library.currentTranslation
-            withAnimation(reduceMotion ? nil : .easeOut(duration: 0.6)) { appeared = true }
+            withAnimation(reduceMotion ? nil : Motion.easeOut(0.6)) { appeared = true }
         }
     }
 
     private func begin(at chapter: ChapterID) {
         library.currentTranslation = selection
         router.read(chapter)
-        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.3)) { choosingFeatures = true }
+        withAnimation(reduceMotion ? nil : Motion.drawer(0.35)) { choosingFeatures = true }
     }
 }
 

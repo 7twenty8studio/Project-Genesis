@@ -18,6 +18,7 @@ struct HomeView: View {
     @Environment(FeaturePreferences.self) private var features
     @Environment(FeatureFlagService.self) private var flags
     @Environment(StudyAssistant.self) private var assistant
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.modelContext) private var modelContext
     @Environment(\.palette) private var palette
 
@@ -41,7 +42,7 @@ struct HomeView: View {
                     if features.isOn(.goals), let milestone {
                         MilestoneBanner(milestone: milestone) {
                             goals.markCelebrated([milestone.id])
-                            withAnimation { self.milestone = nil }
+                            withAnimation(Motion.exit) { self.milestone = nil }
                         }
                         .transition(.opacity)
                     }

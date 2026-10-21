@@ -112,6 +112,6 @@ struct YouVersionBibleTests {
     @Test func theAnnouncementIsNew() {
         let ids = WhatsNewCatalog.all.map(\.id)
         #expect(Set(ids).count == ids.count)
-        #expect(ids.last == "youversion-bibles")
+        #expect(ids.contains("youversion-bibles"))
     }
 }

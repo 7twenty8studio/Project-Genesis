@@ -50,7 +50,7 @@ struct ChapterMomentOverlay: View {
     private func present(_ moment: ChapterMoments.Moment?) async {
         guard let moment, moment.place == place, moment.isFresh() else {
             // Another screen's moment replaced ours mid-way: put ours away.
-            if isVisible { withAnimation(.easeIn(duration: 0.3)) { isVisible = false } }
+            if isVisible { withAnimation(Motion.easeOut(0.2)) { isVisible = false } }
             return
         }
         // Premium's deluxe look, and only for people who keep the ribbons on.
@@ -65,8 +65,8 @@ struct ChapterMomentOverlay: View {
         UIAccessibility.post(notification: .announcement, argument: title(for: moment.kind))
         try? await Task.sleep(for: .seconds(1.05))
         guard !Task.isCancelled else { return }
-        withAnimation(.easeIn(duration: 0.35)) { isVisible = false }
-        try? await Task.sleep(for: .seconds(0.4))
+        withAnimation(Motion.easeOut(0.2)) { isVisible = false }
+        try? await Task.sleep(for: .seconds(0.25))
         moments.dismiss(moment)
     }
 

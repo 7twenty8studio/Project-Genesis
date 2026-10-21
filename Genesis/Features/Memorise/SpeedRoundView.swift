@@ -39,7 +39,7 @@ struct SpeedRoundView: View {
                         clock
                         card(verse)
                             .id(id)
-                            .transition(reduceMotion ? .opacity : .move(edge: .trailing).combined(with: .opacity))
+                            .transition(reduceMotion ? .opacity : .nextCard)
                         controls(verse)
                     }
                 case .finished:
@@ -68,7 +68,7 @@ struct SpeedRoundView: View {
                     if Task.isCancelled { return }
                     remaining -= 1
                 }
-                withAnimation { phase = .finished }
+                withAnimation(Motion.change(reduceMotion: reduceMotion)) { phase = .finished }
             }
             .sensoryFeedback(.success, trigger: knownCount) { old, new in new > old }
         }
@@ -87,7 +87,7 @@ struct SpeedRoundView: View {
                 .foregroundStyle(palette.secondaryText)
                 .multilineTextAlignment(.center)
             Button {
-                withAnimation { phase = queue.isEmpty ? .finished : .playing }
+                withAnimation(Motion.change(reduceMotion: reduceMotion)) { phase = queue.isEmpty ? .finished : .playing }
             } label: {
                 Text("Start")
                     .font(.headline)
@@ -192,7 +192,7 @@ struct SpeedRoundView: View {
     private func mark(_ verse: MemoryVerse, knewIt: Bool) {
         StudyStore(context: modelContext).recordGame(verse, MemoryGame.speedGrade(knewIt: knewIt))
         streak = streak.recording(on: .now)
-        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.25)) {
+        withAnimation(reduceMotion ? nil : Motion.easeOut(0.25)) {
             gradedCount += 1
             if knewIt { knownCount += 1 }
             revealed = false

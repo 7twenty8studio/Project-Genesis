@@ -19,6 +19,7 @@ struct MorningWelcomeView: View {
     @Environment(CommunityStore.self) private var community
     @Environment(\.palette) private var palette
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.colorScheme) private var colorScheme
 
     @Query(sort: \PlanEnrollment.updatedAt, order: .reverse) private var enrollments: [PlanEnrollment]
 
@@ -67,10 +68,24 @@ struct MorningWelcomeView: View {
                 startRadius: 0,
                 endRadius: 520
             )
+            themeMotion
+                .opacity(0.7)
             Color.black.opacity(stage == 0 ? 0.45 : 0)
         }
         .ignoresSafeArea()
         .accessibilityHidden(true)
+    }
+
+    /// The reading theme's own motion, behind everything and a little softer:
+    /// Starlight's sky, or the season's leaves, petals or snow.
+    @ViewBuilder
+    private var themeMotion: some View {
+        let theme = settings.effectiveTheme(for: colorScheme, premium: entitlements.allows(.premiumThemes))
+        if let season = theme.season, settings.preferences.seasonalEffects {
+            SeasonalEffectView(season: season, reduceMotion: reduceMotion)
+        } else if theme.hasStars {
+            StarlightSkyView(textInsets: nil, skyBand: 160, reduceMotion: reduceMotion)
+        }
     }
 
     private var greeting: some View {
@@ -187,7 +202,7 @@ struct MorningWelcomeView: View {
             for (next, pause) in [(1, 0.35), (2, 1.0), (3, 1.0)] {
                 try? await Task.sleep(for: .seconds(pause))
                 guard !Task.isCancelled else { return }
-                withAnimation(.easeInOut(duration: next == 1 ? 1.8 : 1.1)) { stage = next }
+                withAnimation(Motion.easeOut(next == 1 ? 1.2 : 0.8)) { stage = next }
             }
         }
         easeInSounds()

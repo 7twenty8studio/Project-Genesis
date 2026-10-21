@@ -72,8 +72,8 @@ struct ReaderView: View {
         .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { surfaceWidth = $0 }
         .toolbarVisibility(reader.showsControls && !reader.isSelecting ? .visible : .hidden, for: .tabBar)
         .statusBarHidden(!reader.showsControls)
-        .animation(reduceMotion ? nil : .easeInOut(duration: 0.25), value: reader.showsControls)
-        .animation(reduceMotion ? nil : .easeInOut(duration: 0.2), value: reader.isSelecting)
+        .animation(reduceMotion ? nil : .easeOut(duration: 0.15), value: reader.showsControls)
+        .animation(reduceMotion ? nil : Motion.easeOut(0.18), value: reader.isSelecting)
         .sheet(item: $sheet) { sheet in
             sheetContent(sheet)
         }
@@ -143,13 +143,15 @@ struct ReaderView: View {
                 confirmationBanner
                 ChapterMomentOverlay(place: .reader, topInset: readerSafeArea.top)
 
-                if let season = layout.style.theme.season, preferences.seasonalEffects, !reduceMotion {
-                    SeasonalEffectView(season: season)
+                // With Reduce Motion these calm down rather than disappear:
+                // a painted still for the seasons, a gentle fade for the stars.
+                if let season = layout.style.theme.season, preferences.seasonalEffects {
+                    SeasonalEffectView(season: season, reduceMotion: reduceMotion)
                         .id(season)
                 }
 
-                if layout.style.theme.hasStars, !reduceMotion {
-                    StarlightTwinkleView(textInsets: layout.textInsets)
+                if layout.style.theme.hasStars {
+                    StarlightSkyView(textInsets: starlightTextArea(layout), skyBand: starlightSkyBand(layout), reduceMotion: reduceMotion)
                 }
 
                 if reader.isSelecting {
@@ -165,7 +167,7 @@ struct ReaderView: View {
                     )
                     .padding(.bottom, readerSafeArea.bottom + 8)
                     .frame(maxHeight: .infinity, alignment: .bottom)
-                    .transition(.move(edge: .bottom).combined(with: .opacity))
+                    .transition(.rise)
                 }
             }
         }
@@ -355,7 +357,7 @@ struct ReaderView: View {
                 .glassEffect(.regular, in: Capsule())
                 .frame(maxHeight: .infinity, alignment: .top)
                 .padding(.top, readerSafeArea.top + 70)
-                .transition(.move(edge: .top).combined(with: .opacity))
+                .transition(reduceMotion ? .opacity : .drop)
                 .accessibilityIdentifier("reader.confirmation")
                 .zIndex(2)
         }
@@ -369,14 +371,37 @@ struct ReaderView: View {
                 AudioMiniPlayer(onSettings: { sheet = .audio }, onAmbient: ambientAction)
                     .padding(.bottom, 8)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-                    .transition(.move(edge: .bottom).combined(with: .opacity))
+                    .transition(.rise)
             } else if ambient.showsControls && features.isOn(.ambientSounds) {
                 AmbientMiniBar(onOpen: { openAmbient() })
                     .padding(.bottom, 8)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-                    .transition(.move(edge: .bottom).combined(with: .opacity))
+                    .transition(.rise)
             }
         }
+    }
+
+    /// Whether text only ever sits inside the page's text area: in paged
+    /// reading (one Bible) nothing scrolls through the margins above it.
+    private var textStaysInPlace: Bool {
+        preferences.readingMode == .page && reader.parallelTranslation == nil && !showsOriginal
+    }
+
+    /// Where Starlight keeps clear of the words: the text area when pages
+    /// hold still; otherwise the whole height between the side margins.
+    private func starlightTextArea(_ layout: ReaderLayout) -> UIEdgeInsets {
+        var insets = layout.textInsets
+        if !textStaysInPlace {
+            insets.top = 0
+            insets.bottom = 0
+        }
+        return insets
+    }
+
+    /// The band above the running head where shooting stars may pass (none
+    /// when text scrolls through it).
+    private func starlightSkyBand(_ layout: ReaderLayout) -> CGFloat {
+        textStaysInPlace ? layout.safeArea.top + 6 : 0
     }
 
     /// Premium typefaces and illuminated letters (plain/New York without Premium).
@@ -457,11 +482,11 @@ struct ReaderView: View {
         StudyStore(context: modelContext).memorise(from: first, through: end, translationID: reader.library.premiumToolsTranslation(for: reader.translation).id)
         reader.clearSelection()
         let message = String(localized: "Added to Memorize")
-        withAnimation { confirmation = message }
+        withAnimation(Motion.change(reduceMotion: reduceMotion)) { confirmation = message }
         UIAccessibility.post(notification: .announcement, argument: message)
         Task {
             try? await Task.sleep(for: .seconds(2))
-            withAnimation { confirmation = nil }
+            withAnimation(Motion.exit) { confirmation = nil }
         }
     }
 

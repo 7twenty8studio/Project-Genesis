@@ -2951,6 +2951,16 @@
         }
       }
     },
+    "Calm with Reduce Motion": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tranquilo con Reducir movimiento"
+          }
+        }
+      }
+    },
     "Cancel": {
       "localizations": {
         "es": {
@@ -4723,6 +4733,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cada capítulo empieza con una letra inicial grande, y las páginas pueden pasar con un sonido y una vibración suaves (Aa en el lector)."
+          }
+        }
+      }
+    },
+    "Each season its own way": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada estación a su manera"
           }
         }
       }
@@ -13889,6 +13909,16 @@
         }
       }
     },
+    "Shooting stars": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estrellas fugaces"
+          }
+        }
+      }
+    },
     "Short explanations of a passage, clearly labelled as AI-generated.": {
       "localizations": {
         "es": {
@@ -14240,6 +14270,16 @@
         }
       }
     },
+    "Skies and seasons that move": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cielos y estaciones con movimiento"
+          }
+        }
+      }
+    },
     "Slate": {
       "comment": "Reader theme name",
       "localizations": {
@@ -14515,6 +14555,16 @@
         }
       }
     },
+    "Spring petals ride a breeze, winter snow falls near and far, and autumn leaves drift more gently.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los pétalos de primavera flotan en la brisa, la nieve del invierno cae cerca y lejos, y las hojas de otoño descienden con más calma."
+          }
+        }
+      }
+    },
     "Sprout": {
       "comment": "Memorize level",
       "localizations": {
@@ -14564,6 +14614,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Noche estrellada viene con Premium. Mientras tanto, el lector usa Noche."
+          }
+        }
+      }
+    },
+    "Starlight's night sky twinkles brighter now, with a shooting star every few seconds above the page.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El cielo de Noche estrellada ahora brilla más, con una estrella fugaz cada pocos segundos sobre la página."
           }
         }
       }
@@ -18573,6 +18633,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Con Premium, el widget Lectura de hoy muestra la lectura de tu plan y te permite marcarla como leída sin abrir la app."
+          }
+        }
+      }
+    },
+    "With Reduce Motion on, stars fade gently in place and the seasons hold a still picture.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Reducir movimiento activado, las estrellas se atenúan suavemente en su lugar y las estaciones muestran una imagen fija."
           }
         }
       }

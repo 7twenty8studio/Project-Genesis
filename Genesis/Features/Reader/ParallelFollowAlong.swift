@@ -21,7 +21,7 @@ struct ParallelFollowAlong: ViewModifier {
                 }
                 .onChange(of: FollowKey(row: playingRow, count: rowCount)) { _, key in
                     guard let row = key.row, key.count > 0, !visible.contains(row) else { return }
-                    withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.4)) {
+                    withAnimation(reduceMotion ? nil : Motion.easeInOut(0.35)) {
                         proxy.scrollTo(row, anchor: UnitPoint(x: 0.5, y: 0.15))
                     }
                 }

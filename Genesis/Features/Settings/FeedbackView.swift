@@ -35,6 +35,7 @@ struct FeedbackView: View {
     @Environment(ReaderViewModel.self) private var reader
     @Environment(\.palette) private var palette
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     @State private var category: FeedbackCategory = .bug
     @State private var message = ""
@@ -170,7 +171,7 @@ struct FeedbackView: View {
             if auth.isSignedIn { token = try? await auth.accessToken() }
             let body = try JSONEncoder().encode([row])
             _ = try await client.send("POST", path: "rest/v1/app_feedback", body: body, prefer: "return=minimal", accessToken: token)
-            withAnimation { sent = true }
+            withAnimation(Motion.change(reduceMotion: reduceMotion)) { sent = true }
         } catch {
             errorMessage = String(localized: "Your message couldn't be sent. Check your connection and try again.")
         }

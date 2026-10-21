@@ -36,7 +36,7 @@ struct MemoryGameView: View {
                         .accessibilityValue("\(completed) of \(completed + queue.count)")
                     board(verse)
                         .id(id)
-                        .transition(reduceMotion ? .opacity : .asymmetric(insertion: .move(edge: .trailing).combined(with: .opacity), removal: .move(edge: .leading).combined(with: .opacity)))
+                        .transition(reduceMotion ? .opacity : .nextCard)
                 } else if started {
                     MemoryGameFinished(count: completed) { dismiss() }
                 }
@@ -125,7 +125,7 @@ struct MemoryGameView: View {
     }
 
     private func next() {
-        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.3)) {
+        withAnimation(reduceMotion ? nil : Motion.easeOut(0.25)) {
             solvedText = nil
             if !queue.isEmpty {
                 queue.removeFirst()

@@ -74,7 +74,7 @@ struct WordOrderBoard: View {
             earlierMistakes += game.mistakes
             earlierSteps += game.words.tokens.count
             if stage + 1 < verseTexts.count {
-                withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.25)) {
+                withAnimation(reduceMotion ? nil : Motion.easeOut(0.25)) {
                     stage += 1
                     game = WordOrderGame(text: verseTexts[stage], seed: MemoryGame.randomSeed())
                 }
