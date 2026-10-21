@@ -44,7 +44,7 @@ struct SeasonalEffectView: View {
         }
         .allowsHitTesting(false)
         .accessibilityHidden(true)
-        .onReceive(NotificationCenter.default.publisher(for: .NSProcessInfoPowerStateDidChange)) { _ in
+        .onReceive(NotificationCenter.default.publisher(for: .NSProcessInfoPowerStateDidChange).receive(on: DispatchQueue.main)) { _ in
             lowPower = ProcessInfo.processInfo.isLowPowerModeEnabled
         }
     }
