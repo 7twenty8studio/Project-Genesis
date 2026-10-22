@@ -38,8 +38,10 @@ struct ReaderTapTests {
     }
 
     @Test func whileSelectingTapsChangeTheSelection() {
-        #expect(tap(20, verse: verse, selecting: true) == .toggleSelection(verse))
+        #expect(tap(120, verse: verse, selecting: true) == .toggleSelection(verse))
         #expect(tap(195, verse: nil, selecting: true) == .clearSelection)
+        // The edge still turns the page; the selection is kept.
+        #expect(tap(20, verse: verse, selecting: true) == .turnPage(forward: false))
     }
 
     @Test func scrollingHasNoTurningEdges() {

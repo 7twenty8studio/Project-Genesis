@@ -2,7 +2,8 @@ import SwiftUI
 import UIKit
 
 /// Appears when verses are selected (tap or long-press a verse). Highlight, note,
-/// bookmark, copy, share and cross references.
+/// bookmark, copy, share and cross references. Swipe it down (or tap ×) to
+/// put it away and clear the selection.
 struct SelectionActionBar: View {
     let onImage: () -> Void
     let onNote: () -> Void
@@ -22,9 +23,18 @@ struct SelectionActionBar: View {
     @Environment(StudyAssistant.self) private var assistant
     @State private var copied = false
     @State private var highlightTrigger = 0
+    @State private var dragOffset: CGFloat = 0
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
         VStack(spacing: 14) {
+            // A grabber says it can be swiped away.
+            Capsule()
+                .fill(palette.secondaryText.opacity(0.35))
+                .frame(width: 36, height: 5)
+                .padding(.top, -8)
+                .padding(.bottom, -6)
+                .accessibilityHidden(true)
             HStack {
                 Text(reader.selectedReference?.description(in: reader.translation.language) ?? "")
                     .font(.subheadline.weight(.semibold))
@@ -131,9 +141,29 @@ struct SelectionActionBar: View {
         .frame(maxWidth: 520)
         .glassEffect(.regular, in: RoundedRectangle(cornerRadius: 28, style: .continuous))
         .padding(.horizontal, 12)
+        .offset(y: dragOffset)
+        .gesture(swipeDown)
         .sensoryFeedback(.impact(weight: .light), trigger: highlightTrigger)
         .sensoryFeedback(.success, trigger: copied) { _, now in now }
         .onChange(of: reader.selection) { copied = false }
+    }
+
+    /// Follows the finger down (and resists going up); far enough, or a
+    /// quick flick, clears the selection, otherwise it springs back.
+    private var swipeDown: some Gesture {
+        DragGesture(minimumDistance: 12)
+            .onChanged { value in
+                guard !reduceMotion else { return }
+                let y = value.translation.height
+                dragOffset = y > 0 ? y : max(-12, y / 6)
+            }
+            .onEnded { value in
+                if value.translation.height > 60 || value.predictedEndTranslation.height > 160 {
+                    withAnimation(Motion.exit) { reader.clearSelection() }
+                } else {
+                    withAnimation(reduceMotion ? nil : .spring(duration: 0.3, bounce: 0.15)) { dragOffset = 0 }
+                }
+            }
     }
 
     private func wordStudyButton(_ perform: @escaping () -> Void, compact: Bool) -> some View {

@@ -70,6 +70,11 @@ enum WhatsNewCatalog {
                 title: String(localized: "Controls at the top"),
                 detail: String(localized: "Tap the top or bottom of the page, or any blank space, to show the reader controls.")
             ),
+            WhatsNewItem(
+                systemImage: "hand.draw",
+                title: String(localized: "Selections stay"),
+                detail: String(localized: "Turn the page while choosing verses and they stay selected; swipe the bar down to put it away.")
+            ),
         ]
     )
 

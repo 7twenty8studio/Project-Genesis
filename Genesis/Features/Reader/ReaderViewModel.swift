@@ -133,9 +133,10 @@ final class ReaderViewModel {
 
     /// Called by the page or scroll view when the person moves through the text.
     func didShow(chapter: ChapterID, firstVerse: VerseID?) {
+        // Turning into the next chapter keeps a selection (a tap in the new
+        // chapter starts a new one; `toggleSelection`).
         if chapter != chapterID {
             chapterID = chapter
-            selection = []
         }
         let verse = firstVerse ?? chapter.firstVerse
         focusVerse = verse

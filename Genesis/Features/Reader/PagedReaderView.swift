@@ -329,8 +329,9 @@ struct PagedReaderView: UIViewControllerRepresentable {
         // MARK: UIPageViewControllerDelegate
 
         func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+            // A selection survives the page turn, so verses can be gathered
+            // across pages and nothing chosen is lost.
             guard completed, let location = currentLocation else { return }
-            if viewModel.isSelecting { viewModel.clearSelection() }
             feedback.pageTurned(sound: pageTurnSound, volume: pageTurnVolume, haptic: pageTurnHaptic, strength: pageTurnHapticStrength)
             didSettle(on: location)
             if let previous = (previousViewControllers.first as? ReaderPageViewController)?.location {

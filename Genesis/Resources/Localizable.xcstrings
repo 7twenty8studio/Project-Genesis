@@ -13597,6 +13597,16 @@
         }
       }
     },
+    "Selections stay": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La selección se mantiene"
+          }
+        }
+      }
+    },
     "Send": {
       "localizations": {
         "es": {
@@ -17307,6 +17317,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Activa iCloud para Versely en Ajustes para sincronizar los adjuntos."
+          }
+        }
+      }
+    },
+    "Turn the page while choosing verses and they stay selected; swipe the bar down to put it away.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasa la página mientras eliges versículos y seguirán seleccionados; desliza la barra hacia abajo para ocultarla."
           }
         }
       }

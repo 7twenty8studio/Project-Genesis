@@ -658,7 +658,9 @@ shares; README.md has the architecture.
 - Reader taps (`ReaderTap`, pure, Swift Testing): a tap on a verse selects
   it (long press too); in paged reading the page's very edge (margin + 10
   pt, 32 pt to 15% of the width) turns the page; anything else (running
-  head, page number, blank space) toggles the controls. UI tests use
+  head, page number, blank space) toggles the controls. A selection
+  survives page turns (edge taps, swipes, into the next chapter); the
+  selection bar swipes down to clear it. UI tests use
   `Genesis.tapPageTop` for the controls and `Genesis.tapVerse` to select.
 - Don't put `.accessibilityIdentifier` on a container whose children have
   their own identifiers (SwiftUI passes it down and replaces theirs).
