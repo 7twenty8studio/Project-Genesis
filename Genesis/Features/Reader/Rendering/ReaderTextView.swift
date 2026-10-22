@@ -4,7 +4,7 @@ import UIKit
 enum ReaderTextEvent {
     /// A tap; `location` is in the text view's coordinates, `verse` is the verse under it.
     case tap(location: CGPoint, bounds: CGRect, verse: VerseID?)
-    /// A long press on a verse, which starts verse selection.
+    /// A long press on a verse, which selects it (as a tap on it does; `ReaderTap`).
     case longPress(verse: VerseID)
 }
 

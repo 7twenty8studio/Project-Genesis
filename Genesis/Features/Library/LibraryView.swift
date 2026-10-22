@@ -120,7 +120,7 @@ private struct HighlightsList: View {
                     QuietEmptyState(
                         systemImage: "highlighter",
                         title: highlights.isEmpty ? String(localized: "No highlights yet") : String(localized: "Nothing matches"),
-                        message: highlights.isEmpty ? String(localized: "In the reader, long-press a verse and pick a color.") : String(localized: "Try a different color or collection.")
+                        message: highlights.isEmpty ? String(localized: "In the reader, tap a verse and pick a color.") : String(localized: "Try a different color or collection.")
                     )
                     .listRowBackground(Color.clear)
                 }

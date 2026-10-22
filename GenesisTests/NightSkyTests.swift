@@ -73,6 +73,6 @@ struct NightSkyTests {
     @Test func theAnnouncementIsNew() {
         let ids = WhatsNewCatalog.all.map(\.id)
         #expect(Set(ids).count == ids.count)
-        #expect(ids.last == "starlight-shooting-stars")
+        #expect(ids.contains("starlight-shooting-stars"))
     }
 }

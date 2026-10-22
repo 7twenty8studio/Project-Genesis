@@ -172,7 +172,7 @@ struct ChapterNotesView: View {
                     QuietEmptyState(
                         systemImage: "note.text",
                         title: String(localized: "No notes in \(chapter.description)"),
-                        message: String(localized: "Long-press a verse and choose Note, or add a note for the whole chapter.")
+                        message: String(localized: "Tap a verse and choose Note, or add a note for the whole chapter.")
                     )
                     .listRowBackground(Color.clear)
                 }

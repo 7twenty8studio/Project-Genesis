@@ -150,12 +150,27 @@ enum Genesis {
     /// Makes sure the floating reader controls are showing.
     static func showControls(_ app: XCUIApplication) {
         guard !app.buttons["reader.chapterButton"].exists else { return }
-        tapCenter(of: readerText(app))
+        tapPageTop(app)
         _ = app.buttons["reader.chapterButton"].waitForExistence(timeout: timeout)
     }
 
-    static func tapCenter(of element: XCUIElement) {
-        element.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.55)).tap()
+    /// Taps the blank band above the text (where the running head is):
+    /// shows or hides the reader controls. A tap on a verse selects it.
+    static func tapPageTop(_ app: XCUIApplication) {
+        readerText(app).coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.05)).tap()
+    }
+
+    /// Taps a verse to select it. A tap can land in the gap between lines
+    /// or paragraphs, so a few spots are tried.
+    @discardableResult
+    static func tapVerse(_ app: XCUIApplication) -> Bool {
+        let reference = app.staticTexts["selection.reference"]
+        let spots: [CGVector] = [.init(dx: 0.4, dy: 0.45), .init(dx: 0.45, dy: 0.6), .init(dx: 0.4, dy: 0.35), .init(dx: 0.5, dy: 0.7)]
+        for spot in spots {
+            readerText(app).coordinate(withNormalizedOffset: spot).tap()
+            if reference.waitForExistence(timeout: 2) { return true }
+        }
+        return false
     }
 
     /// Long-presses a verse to start selection. A press can land in the gap

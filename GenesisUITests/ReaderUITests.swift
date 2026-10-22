@@ -23,14 +23,15 @@ final class ReaderUITests: GenesisUITestCase {
         func tapPage(at fraction: CGFloat) {
             origin.withOffset(CGVector(dx: page.minX + page.width * fraction, dy: page.midY)).tap()
         }
-        tapPage(at: 0.9)
+        // The page-turn edge is the margin and a little more.
+        tapPage(at: 0.96)
         var second: String?
         XCTAssertTrue(Genesis.wait {
             second = Genesis.visiblePageSignature(app)
             return second != nil && second != first
         }, "Tapping the right edge should turn to the next page")
 
-        tapPage(at: 0.1)
+        tapPage(at: 0.04)
         XCTAssertTrue(Genesis.wait { Genesis.visiblePageSignature(app) == first }, "Tapping the left edge should turn back")
     }
 
@@ -51,16 +52,27 @@ final class ReaderUITests: GenesisUITestCase {
     }
 
     @MainActor
-    func testTapCenterTogglesControls() {
+    func testTapPageTopTogglesControls() {
         let app = Genesis.launch(verse: 1_001_001)
         let chapterButton = app.buttons["reader.chapterButton"]
         XCTAssertTrue(chapterButton.waitForExistence(timeout: Genesis.timeout), "Controls start visible")
 
-        Genesis.tapCenter(of: Genesis.readerText(app))
-        XCTAssertTrue(Genesis.wait { !chapterButton.exists }, "Tapping the page hides the controls")
+        Genesis.tapPageTop(app)
+        XCTAssertTrue(Genesis.wait { !chapterButton.exists }, "Tapping the top of the page hides the controls")
 
-        Genesis.tapCenter(of: Genesis.readerText(app))
+        Genesis.tapPageTop(app)
         XCTAssertTrue(chapterButton.waitForExistence(timeout: Genesis.timeout), "Tapping again shows them")
+    }
+
+    @MainActor
+    func testTapVerseSelectsIt() {
+        let app = Genesis.launch(verse: 1_001_001)
+        XCTAssertTrue(Genesis.readerText(app).waitForExistence(timeout: Genesis.timeout))
+        let first = Genesis.visiblePageSignature(app)
+        XCTAssertTrue(Genesis.tapVerse(app), "A single tap on a verse selects it")
+        if let first, !Genesis.isScrollPass, let now = Genesis.visiblePageSignature(app) {
+            XCTAssertEqual(now, first, "Tapping a verse doesn't turn the page")
+        }
     }
 
     @MainActor

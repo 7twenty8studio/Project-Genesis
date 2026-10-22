@@ -257,18 +257,18 @@ struct PagedReaderView: UIViewControllerRepresentable {
             case let .longPress(verse):
                 viewModel.toggleSelection(verse)
             case let .tap(point, bounds, verse):
-                if viewModel.isSelecting {
-                    if let verse { viewModel.toggleSelection(verse) } else { viewModel.clearSelection() }
-                    return
-                }
-                let fraction = bounds.width > 0 ? point.x / bounds.width : 0.5
-                let edge: CGFloat = 0.22
-                if fraction < edge {
-                    turnPage(forward: leftHanded)
-                } else if fraction > 1 - edge {
-                    turnPage(forward: !leftHanded)
-                } else {
-                    viewModel.toggleControls()
+                let insets = layout?.textInsets ?? .zero
+                let action = ReaderTap.action(
+                    x: point.x, pageWidth: bounds.width,
+                    leftMargin: insets.left, rightMargin: insets.right,
+                    verse: verse, isSelecting: viewModel.isSelecting,
+                    turnsPages: true, leftHanded: leftHanded
+                )
+                switch action {
+                case let .turnPage(forward): turnPage(forward: forward)
+                case let .toggleSelection(verse): viewModel.toggleSelection(verse)
+                case .clearSelection: viewModel.clearSelection()
+                case .toggleControls: viewModel.toggleControls()
                 }
             }
         }

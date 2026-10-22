@@ -655,6 +655,11 @@ shares; README.md has the architecture.
 - The reader's side panel (notes, plans, prayer) shows only when the text
   keeps 440 pt beside it (iPad; the open Duo held sideways). Reader controls
   fall back to tighter buttons, then a "More" menu, rather than squeezing.
+- Reader taps (`ReaderTap`, pure, Swift Testing): a tap on a verse selects
+  it (long press too); in paged reading the page's very edge (margin + 10
+  pt, 32 pt to 15% of the width) turns the page; anything else (running
+  head, page number, blank space) toggles the controls. UI tests use
+  `Genesis.tapPageTop` for the controls and `Genesis.tapVerse` to select.
 - Don't put `.accessibilityIdentifier` on a container whose children have
   their own identifiers (SwiftUI passes it down and replaces theirs).
 

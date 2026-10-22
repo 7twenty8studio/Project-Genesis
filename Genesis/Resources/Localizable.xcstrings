@@ -1204,6 +1204,16 @@
         }
       }
     },
+    "A single tap selects a verse, ready to highlight, note or share.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un solo toque selecciona un versículo, listo para resaltar, anotar o compartir."
+          }
+        }
+      }
+    },
     "A small gold ribbon when you finish a chapter or a day of your plan.": {
       "localizations": {
         "es": {
@@ -3868,6 +3878,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Contraste"
+          }
+        }
+      }
+    },
+    "Controls at the top": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Controles arriba"
           }
         }
       }
@@ -6942,12 +6962,12 @@
         }
       }
     },
-    "In the reader, long-press a verse and pick a color.": {
+    "In the reader, tap a verse and pick a color.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "En el lector, mantén pulsado un versículo y elige un color."
+            "value": "En el lector, toca un versículo y elige un color."
           }
         }
       }
@@ -8016,16 +8036,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cargando"
-          }
-        }
-      }
-    },
-    "Long-press a verse and choose Note, or add a note for the whole chapter.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mantén pulsado un versículo y elige Nota, o añade una nota para todo el capítulo."
           }
         }
       }
@@ -10177,6 +10187,16 @@
         }
       }
     },
+    "One tap to highlight": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un toque para resaltar"
+          }
+        }
+      }
+    },
     "One thing to remember this week.": {
       "localizations": {
         "es": {
@@ -11573,16 +11593,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Presente"
-          }
-        }
-      }
-    },
-    "Press and hold a verse to highlight it, add a note, copy or share it.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mantén presionado un versículo para resaltarlo, añadir una nota, copiarlo o compartirlo."
           }
         }
       }
@@ -15328,6 +15338,36 @@
         }
       }
     },
+    "Tap a verse": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca un versículo"
+          }
+        }
+      }
+    },
+    "Tap a verse and choose Note, or add a note for the whole chapter.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca un versículo y elige Nota, o añade una nota para todo el capítulo."
+          }
+        }
+      }
+    },
+    "Tap a verse to highlight it, add a note, copy or share it.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca un versículo para resaltarlo, añadir una nota, copiarlo o compartirlo."
+          }
+        }
+      }
+    },
     "Tap a word in Original (Hebrew & Greek) or Word Study, then the speaker, to hear how it sounds.": {
       "localizations": {
         "es": {
@@ -15388,6 +15428,16 @@
         }
       }
     },
+    "Tap the top or bottom of the page, or any blank space, to show the reader controls.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca la parte superior o inferior de la página, o cualquier espacio en blanco, para mostrar los controles del lector."
+          }
+        }
+      }
+    },
     "Tap the verse's words back into order.": {
       "comment": "Memorize game: Word Order",
       "localizations": {
@@ -15395,6 +15445,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Toca las palabras del versículo para ponerlas en orden."
+          }
+        }
+      }
+    },
+    "Tap the very edge of the page to turn it, or swipe as before.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca el borde de la página para pasarla, o desliza como antes."
           }
         }
       }
@@ -17217,6 +17277,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Activar %@"
+          }
+        }
+      }
+    },
+    "Turn from the edge": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pasa la página desde el borde"
           }
         }
       }

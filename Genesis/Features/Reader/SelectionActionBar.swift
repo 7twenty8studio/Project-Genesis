@@ -1,7 +1,7 @@
 import SwiftUI
 import UIKit
 
-/// Appears when verses are selected (long-press a verse). Highlight, note,
+/// Appears when verses are selected (tap or long-press a verse). Highlight, note,
 /// bookmark, copy, share and cross references.
 struct SelectionActionBar: View {
     let onImage: () -> Void

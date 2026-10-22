@@ -129,11 +129,16 @@ struct ScrollReaderView: UIViewRepresentable {
             switch event {
             case let .longPress(verse):
                 viewModel.toggleSelection(verse)
-            case let .tap(_, _, verse):
-                if viewModel.isSelecting {
-                    if let verse { viewModel.toggleSelection(verse) } else { viewModel.clearSelection() }
-                } else {
-                    viewModel.toggleControls()
+            case let .tap(point, bounds, verse):
+                // No page edges here: scrolling moves through the chapter.
+                let action = ReaderTap.action(
+                    x: point.x, pageWidth: bounds.width, leftMargin: 0, rightMargin: 0,
+                    verse: verse, isSelecting: viewModel.isSelecting, turnsPages: false, leftHanded: false
+                )
+                switch action {
+                case let .toggleSelection(verse): viewModel.toggleSelection(verse)
+                case .clearSelection: viewModel.clearSelection()
+                case .toggleControls, .turnPage: viewModel.toggleControls()
                 }
             }
         }

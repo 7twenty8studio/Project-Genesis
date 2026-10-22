@@ -27,7 +27,7 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect]
 
     static let notifications = WhatsNewAnnouncement(
         id: "notifications-your-way",
@@ -47,6 +47,28 @@ enum WhatsNewCatalog {
                 systemImage: "bell.slash",
                 title: String(localized: "You're in control"),
                 detail: String(localized: "Choose each kind and its time, or turn them all off, in Settings › Notifications.")
+            ),
+        ]
+    )
+
+    static let tapToSelect = WhatsNewAnnouncement(
+        id: "tap-to-select",
+        title: String(localized: "One tap to highlight"),
+        items: [
+            WhatsNewItem(
+                systemImage: "hand.tap",
+                title: String(localized: "Tap a verse"),
+                detail: String(localized: "A single tap selects a verse, ready to highlight, note or share.")
+            ),
+            WhatsNewItem(
+                systemImage: "book.pages",
+                title: String(localized: "Turn from the edge"),
+                detail: String(localized: "Tap the very edge of the page to turn it, or swipe as before.")
+            ),
+            WhatsNewItem(
+                systemImage: "slider.horizontal.3",
+                title: String(localized: "Controls at the top"),
+                detail: String(localized: "Tap the top or bottom of the page, or any blank space, to show the reader controls.")
             ),
         ]
     )

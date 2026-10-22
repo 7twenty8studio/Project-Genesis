@@ -18,7 +18,7 @@ enum GenesisTips {
 
 struct HighlightTip: Tip {
     var title: Text { Text("Highlight, note, share") }
-    var message: Text? { Text("Press and hold a verse to highlight it, add a note, copy or share it.") }
+    var message: Text? { Text("Tap a verse to highlight it, add a note, copy or share it.") }
     var image: Image? { Image(systemName: "highlighter") }
 }
 
