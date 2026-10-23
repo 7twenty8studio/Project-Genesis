@@ -334,6 +334,13 @@ These are the terms YouVersion agreed with us in writing (email thread
     chapter refresh; if an agreement ends, turning the row off removes the
     Bible from devices, and Biblica asks for files to be destroyed within
     72 hours with a signed notice.
+- **Owner's decision (23 October 2026):** NIV, NIrV and NVI stay offered,
+  on the strength of Heather McMahan's written OK for our use (free
+  Bibles, never in Premium, never used by AI). Biblica's public
+  permissions page (biblica.com/permissions) says its express licence via
+  the Platform is for "truly non-commercial" apps without subscriptions or
+  AI features, and other uses need written permission; ask Biblica to
+  confirm in writing, and keep Heather's email with these records.
 - **Questions sent to the publishers (open):**
   - Biblica defines its rights as distribution free of subscriptions:
     confirm in writing that Versely's optional Premium (which never
