@@ -6,10 +6,16 @@
 //
 // The app builds a YouVersion Bible on the device from these, book by book
 // (BibleLibrary → YouVersionBibleBuilder), so it reads offline like every
-// other Bible. Nothing is stored here: each request goes to the Platform.
-// Our agreement with YouVersion (LICENSED_BIBLES.md › 5) allows storing the
-// Bible on the device; it is always free to read and never used in paid
-// features.
+// other Bible. Our agreement with YouVersion (LICENSED_BIBLES.md › 5) allows
+// storing the Bible on the device; it is always free to read and never used
+// in paid features.
+//
+// Chapters are shared between readers through public.yvp_chapter_cache, a
+// shared HTTP cache that follows the Platform's Cache-Control header exactly
+// (RFC 9111; YouVersion confirmed that's how caching complies): a chapter is
+// reused only while fresh ("public, max-age=3600" today), never stored when
+// the header says private, no-store or no-cache, and expired copies are
+// deleted hourly.
 //
 // Only Bibles listed in public.youversion_bibles with enabled = true are
 // served, so turning a row off stops new downloads at once, and the app
@@ -21,7 +27,7 @@
 // Deploy: supabase functions deploy yvp-bible   (JWT verification on; the
 // app calls it with the anon key or the account's token).
 import { createClient } from "jsr:@supabase/supabase-js@2";
-import { chapterCount, type ParsedChapter, parseChapter, parseRequest } from "./lib.ts";
+import { ageSeconds, cachePolicy, chapterCount, isFresh, type ParsedChapter, parseChapter, parseRequest } from "./lib.ts";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const APP_KEY = Deno.env.get("YVP_APP_KEY")?.trim() ?? "";
@@ -56,7 +62,12 @@ Deno.serve(async (req) => {
     const count = chapterCount(request.book);
     // One past the KJV's count, in case a Bible numbers a book differently.
     const numbers = Array.from({ length: count + 1 }, (_, i) => i + 1);
-    const chapters = (await mapLimited(numbers, CONCURRENCY, (n) => fetchChapter(row.yvp_id, request.book, n, n > count)))
+    const cached = await freshChapters(row.yvp_id, request.book);
+    const chapters = (await mapLimited(numbers, CONCURRENCY, (n) => {
+      const hit = cached.get(n);
+      if (hit) return Promise.resolve(parseChapter(n, hit.content, hit.reference));
+      return fetchChapter(row.yvp_id, request.book, n, n > count);
+    }))
       .filter((c): c is ParsedChapter => c !== null && c.verses.length > 0);
     if (chapters.length === 0) return json({ error: "This book isn't in this Bible." }, 404);
     return json({ id: request.id, book: request.book, chapters }, 200);
@@ -75,6 +86,41 @@ class RateLimited extends Error {
   constructor(readonly retryAfter: number) {
     super(`rate limited for ${retryAfter} s`);
   }
+}
+
+/** The book's chapters still fresh in the shared cache, by chapter number. */
+async function freshChapters(bibleID: number, book: string): Promise<Map<number, { content: string; reference: string }>> {
+  const fresh = new Map<number, { content: string; reference: string }>();
+  const { data, error } = await admin
+    .from("yvp_chapter_cache")
+    .select("passage, content, reference, fetched_at, max_age, age_at_fetch")
+    .eq("bible", bibleID)
+    .like("passage", `${book}.%`);
+  if (error) {
+    // The cache is a saving, never a requirement: read from the Platform.
+    console.warn("yvp-bible cache read", error.message);
+    return fresh;
+  }
+  const now = Date.now();
+  for (const row of data ?? []) {
+    const chapter = Number(String(row.passage).slice(book.length + 1));
+    const entry = { fetchedAt: Date.parse(row.fetched_at), maxAge: row.max_age, ageAtFetch: row.age_at_fetch };
+    if (Number.isInteger(chapter) && isFresh(entry, now)) fresh.set(chapter, { content: row.content, reference: row.reference });
+  }
+  return fresh;
+}
+
+/** Keeps a chapter response for other readers, if its Cache-Control allows. */
+async function store(bibleID: number, passage: string, response: Response, content: string, reference: string): Promise<void> {
+  const policy = cachePolicy(response.headers.get("cache-control"));
+  if (!policy.store) return;
+  const age = ageSeconds(response.headers.get("age"));
+  if (age >= policy.maxAge) return;
+  const { error } = await admin.from("yvp_chapter_cache").upsert({
+    bible: bibleID, passage, content, reference,
+    fetched_at: new Date().toISOString(), max_age: policy.maxAge, age_at_fetch: age,
+  });
+  if (error) console.warn("yvp-bible cache write", error.message);
 }
 
 /** One chapter, parsed; null when the Bible doesn't have it. */
@@ -117,7 +163,9 @@ async function fetchChapter(bibleID: number, book: string, chapter: number, opti
     }
     const body = await response.json() as { content?: unknown; reference?: unknown };
     if (typeof body.content !== "string") throw new Error(`${book} ${chapter}: no content`);
-    return parseChapter(chapter, body.content, typeof body.reference === "string" ? body.reference : "");
+    const reference = typeof body.reference === "string" ? body.reference : "";
+    await store(bibleID, `${book}.${chapter}`, response, body.content, reference);
+    return parseChapter(chapter, body.content, reference);
   }
 }
 

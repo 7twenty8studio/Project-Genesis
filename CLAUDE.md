@@ -374,8 +374,11 @@ shares; README.md has the architecture.
   `version` bump = rebuild on devices). The `yvp-bible` Edge Function
   (secret YVP_APP_KEY, never in the app) returns one book in the app's
   format, parsed from the Platform's chapter HTML by yvp-bible/lib.ts
-  with the DBL importer's rules (Node tests); nothing is stored on the
-  server. The app builds the Bible on the device
+  with the DBL importer's rules (Node tests); chapters are shared through
+  `public.yvp_chapter_cache` only as long as the Platform's Cache-Control
+  allows (`cachePolicy`/`isFresh` in lib.ts; "public, max-age=3600" today;
+  never private/no-store/no-cache; expired rows deleted hourly), which
+  YouVersion confirmed is how caching complies. The app builds the Bible on the device
   (`YouVersionBibleBuilder` → `BibleFileWriter`, same schema as
   build_bibles.py) as a `DownloadableTranslation` with `youVersionID`, and
   BibleLibrary rebuilds it on Wi-Fi monthly (`installedAt`) and removes it

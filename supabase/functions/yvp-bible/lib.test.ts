@@ -4,7 +4,7 @@
 // format=html&include_headings=true responses (checked October 2026).
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { BOOKS, chapterCount, clean, parseChapter, parseRequest, verseNumbers } from "./lib.ts";
+import { ageSeconds, BOOKS, cachePolicy, chapterCount, clean, isFresh, parseChapter, parseRequest, verseNumbers } from "./lib.ts";
 
 test("reads a request", () => {
   assert.deepEqual(parseRequest({ id: "NIV", book: "GEN" }), { id: "NIV", book: "GEN" });
@@ -128,4 +128,30 @@ test("entities are decoded; notes and verse labels are never text", () => {
 test("words before the first verse join it", () => {
   const html = '<div><div class="p">Then</div><div class="p"><span class="yv-v" v="1"></span><span class="yv-vlbl">1</span>it began.</div></div>';
   assert.equal(parseChapter(1, html).verses[0].text, "Then it began.");
+});
+
+test("follows Cache-Control the way a shared cache must", () => {
+  // What the Platform sends today (checked 23 October 2026).
+  assert.deepEqual(cachePolicy("public, max-age=3600"), { store: true, maxAge: 3600 });
+  assert.deepEqual(cachePolicy("max-age=600, s-maxage=120"), { store: true, maxAge: 120 });
+  assert.deepEqual(cachePolicy("private, max-age=3600"), { store: false, maxAge: 0 });
+  assert.deepEqual(cachePolicy("no-store"), { store: false, maxAge: 0 });
+  assert.deepEqual(cachePolicy("no-cache, max-age=60"), { store: false, maxAge: 0 });
+  assert.deepEqual(cachePolicy("public"), { store: false, maxAge: 0 });
+  assert.deepEqual(cachePolicy("max-age=0"), { store: false, maxAge: 0 });
+  assert.deepEqual(cachePolicy(null), { store: false, maxAge: 0 });
+  assert.equal(ageSeconds("12"), 12);
+  assert.equal(ageSeconds(null), 0);
+  assert.equal(ageSeconds("soon"), 0);
+});
+
+test("a stored chapter is fresh only within its lifetime, counting the Age it arrived with", () => {
+  const fetchedAt = Date.parse("2026-10-23T15:00:00Z");
+  const entry = { fetchedAt, maxAge: 3600, ageAtFetch: 0 };
+  assert.equal(isFresh(entry, fetchedAt + 59 * 60_000), true);
+  assert.equal(isFresh(entry, fetchedAt + 60 * 60_000), false);
+  // Arrived already 10 minutes old: 50 minutes left.
+  const older = { fetchedAt, maxAge: 3600, ageAtFetch: 600 };
+  assert.equal(isFresh(older, fetchedAt + 49 * 60_000), true);
+  assert.equal(isFresh(older, fetchedAt + 51 * 60_000), false);
 });

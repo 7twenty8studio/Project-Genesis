@@ -266,5 +266,25 @@ These are the terms YouVersion agreed with us in writing (email thread
   launch, and whether we may keep one copy of each Bible on our server
   for devices to download (one build per Bible instead of one per
   reader).
+- **Caching (Heather McMahan, 23 October 2026):** every API response
+  carries a `Cache-Control` header, and caching that follows it per the
+  HTTP standard (RFC 7234 › 5.2.2, now RFC 9111) complies; there's no
+  separate YVP caching rule. Today every response we've seen (chapters,
+  Bible details, book lists) says `public, max-age=3600`, with no ETag or
+  Last-Modified, and no must-revalidate. So:
+  - our server may keep a chapter for everyone for an hour
+    (`public`): `public.yvp_chapter_cache`, used by `yvp-bible`, reads
+    the header on every response and never stores one marked private,
+    no-store or no-cache; expired rows are deleted hourly (pg_cron
+    `yvp-chapter-cache-expire`);
+  - a device may show its stored copy while it can't reach the server
+    (no must-revalidate); online, a copy older than the max-age should be
+    fetched again before it's shown. The app still refreshes monthly:
+    per-chapter refresh is planned once Heather confirms our reading
+    (reply sent 23 October 2026).
+  - The hour is YouVersion's choice, not ours: only they can lengthen it.
+  - The API has no ranges: one chapter per request (whole books and
+    chapter ranges return 404). Pagination applies only to listings
+    and search, so it doesn't reduce chapter requests.
 - **Still to confirm:** quotas and rate limits (not in the Terms; ask
   Platform Support or check the developer docs).

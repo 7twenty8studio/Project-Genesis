@@ -87,7 +87,8 @@ const SKIPPED_CHARS = /^(yv-vlbl|yv-n|va|vp|ca|fig|note|f|fe|x|ft|fr|fq|fqa|xo|x
 // Character styles printed in small capitals for the divine name.
 const DIVINE_NAME = /^(nd|sc)$/;
 
-const SPACES = /[ \t   ]+/g;
+// Spaces, tabs, no-break, thin and narrow no-break spaces.
+const SPACES = /[ \t\u00A0\u2009\u202F]+/g;
 
 /** Whitespace-only normalisation. Never alters words or punctuation. */
 export function clean(text: string): string {
@@ -98,7 +99,7 @@ export function clean(text: string): string {
     .join("\n");
 }
 
-const ENTITIES: Record<string, string> = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " " };
+const ENTITIES: Record<string, string> = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: "\u00A0" };
 
 function decode(text: string): string {
   return text.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (whole, name: string) => {
@@ -362,4 +363,42 @@ function textOf(node: Node, upper: boolean): string {
     out += textOf(child, upper || child.classes.some((c) => DIVINE_NAME.test(c)));
   }
   return out;
+}
+
+/**
+ * What a response's Cache-Control header lets a shared cache do (RFC 9111,
+ * which replaced RFC 7234 with the same rules): store it, and for how long.
+ * `s-maxage` (for shared caches) wins over `max-age`; private, no-store or
+ * no-cache, or no lifetime at all, means don't store.
+ */
+export interface CachePolicy {
+  store: boolean;
+  maxAge: number;
+}
+
+export function cachePolicy(header: string | null): CachePolicy {
+  if (!header) return { store: false, maxAge: 0 };
+  const directives = new Map<string, string>();
+  for (const part of header.split(",")) {
+    const [name, ...value] = part.trim().split("=");
+    if (name) directives.set(name.trim().toLowerCase(), value.join("=").trim().replace(/^"|"$/g, ""));
+  }
+  if (directives.has("private") || directives.has("no-store") || directives.has("no-cache")) {
+    return { store: false, maxAge: 0 };
+  }
+  const lifetime = Number(directives.get("s-maxage") ?? directives.get("max-age") ?? "NaN");
+  if (!Number.isFinite(lifetime) || lifetime <= 0) return { store: false, maxAge: 0 };
+  return { store: true, maxAge: Math.floor(lifetime) };
+}
+
+/** The Age header in seconds (0 when missing or invalid). */
+export function ageSeconds(header: string | null): number {
+  const age = Number(header ?? "0");
+  return Number.isFinite(age) && age > 0 ? Math.floor(age) : 0;
+}
+
+/** Whether a stored response is still fresh: its current age is below its lifetime. */
+export function isFresh(entry: { fetchedAt: number; maxAge: number; ageAtFetch: number }, now: number): boolean {
+  const currentAge = entry.ageAtFetch + Math.max(0, (now - entry.fetchedAt) / 1000);
+  return currentAge < entry.maxAge;
 }
