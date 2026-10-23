@@ -6,6 +6,10 @@ enum ReaderTextEvent {
     case tap(location: CGPoint, bounds: CGRect, verse: VerseID?)
     /// A long press on a verse, which selects it (as a tap on it does; `ReaderTap`).
     case longPress(verse: VerseID)
+    /// A tap on a footnote marker: the note, shown apart from the text.
+    case footnote(text: String, verse: VerseID?)
+    /// A tap on the publisher's copyright notice, which links to its website.
+    case link(URL)
 }
 
 /// Displays reader text with TextKit 1 (matching `Paginator`) and reports taps
@@ -91,7 +95,32 @@ final class ReaderTextView: UITextView {
 
     @objc private func handleTap(_ recognizer: UITapGestureRecognizer) {
         let location = recognizer.location(in: self)
+        if let marked = markedItem(at: location) {
+            onEvent?(marked)
+            return
+        }
         onEvent?(.tap(location: location, bounds: bounds, verse: verse(at: location)))
+    }
+
+    /// A footnote marker or the publisher link under (or right beside) the
+    /// finger: markers are small, so the characters on either side count too.
+    private func markedItem(at point: CGPoint) -> ReaderTextEvent? {
+        guard textStorage.length > 0 else { return nil }
+        let location = CGPoint(x: point.x - textContainerInset.left, y: point.y - textContainerInset.top)
+        let glyphIndex = layoutManager.glyphIndex(for: location, in: textContainer)
+        let glyphRect = layoutManager.boundingRect(forGlyphRange: NSRange(location: glyphIndex, length: 1), in: textContainer)
+        guard glyphRect.insetBy(dx: -12, dy: -6).contains(location) else { return nil }
+        let index = layoutManager.characterIndexForGlyph(at: glyphIndex)
+        for candidate in [index, index - 1, index + 1] where candidate >= 0 && candidate < textStorage.length {
+            if let note = textStorage.attribute(.footnoteText, at: candidate, effectiveRange: nil) as? String {
+                let verse = (textStorage.attribute(.verseID, at: candidate, effectiveRange: nil) as? Int).map { VerseID(rawValue: $0) }
+                return .footnote(text: note, verse: verse)
+            }
+        }
+        if index < textStorage.length, let url = textStorage.attribute(.publisherLink, at: index, effectiveRange: nil) as? URL {
+            return .link(url)
+        }
+        return nil
     }
 
     @objc private func handleLongPress(_ recognizer: UILongPressGestureRecognizer) {

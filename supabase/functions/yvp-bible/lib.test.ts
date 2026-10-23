@@ -4,7 +4,7 @@
 // format=html&include_headings=true responses (checked October 2026).
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { ageSeconds, BOOKS, cachePolicy, chapterCount, clean, isFresh, parseChapter, parseRequest, verseNumbers } from "./lib.ts";
+import { ageSeconds, BOOKS, cachePolicy, chapterCount, clean, isFresh, parseChapter, parseRequest, placeMarks, verseNumbers } from "./lib.ts";
 
 test("reads a request", () => {
   assert.deepEqual(parseRequest({ id: "NIV", book: "GEN" }), { id: "NIV", book: "GEN" });
@@ -14,6 +14,12 @@ test("reads a request", () => {
   assert.equal(parseRequest({ id: "NIV", book: "TOB" }), null);
   assert.equal(parseRequest({ id: "NIV" }), null);
   assert.equal(parseRequest(null), null);
+  // One chapter (the app refreshing what it shows), up to one past the KJV's count.
+  assert.deepEqual(parseRequest({ id: "NIV", book: "JHN", chapter: 3 }), { id: "NIV", book: "JHN", chapter: 3 });
+  assert.deepEqual(parseRequest({ id: "NIV", book: "JHN", chapter: 22 }), { id: "NIV", book: "JHN", chapter: 22 });
+  assert.equal(parseRequest({ id: "NIV", book: "JHN", chapter: 23 }), null);
+  assert.equal(parseRequest({ id: "NIV", book: "JHN", chapter: 0 }), null);
+  assert.equal(parseRequest({ id: "NIV", book: "JHN", chapter: "3" }), null);
 });
 
 test("knows the 66 books", () => {
@@ -154,4 +160,49 @@ test("a stored chapter is fresh only within its lifetime, counting the Age it ar
   const older = { fetchedAt, maxAge: 3600, ageAtFetch: 600 };
   assert.equal(isFresh(older, fetchedAt + 49 * 60_000), true);
   assert.equal(isFresh(older, fetchedAt + 51 * 60_000), false);
+});
+
+// Footnotes, shaped like the Platform's include_notes=true markup (checked
+// 23 October 2026 with the NIV, John 1, and the NASB 2020, Matthew 1).
+const withNotes =
+  '<div><div class="s yv-h"><span class="it">The Genealogy</span><span class="yv-n f"><span class="fr">1:1 </span><span class="ft">Heading note</span></span></div>' +
+  '<div class="p"><span class="yv-v" v="1"></span><span class="yv-vlbl">1</span>The <span class="yv-n f"><span class="fr">1:1 </span><span class="ft">Lit <span class="it">book</span></span></span>record of Jesus the <span class="yv-n f"><span class="fr">1:1 </span><span class="ft">The L<span class="sc">ord</span> is salvation</span></span>Messiah. ' +
+  '<span class="yv-v" v="2"></span><span class="yv-vlbl">2</span>The darkness has not overcome<span class="yv-n f"><span class="fr">1:2 </span><span class="ft">Or </span><span class="fqa">understood</span></span> it. ' +
+  '<span class="yv-v" v="3"></span><span class="yv-vlbl">3</span>Spaces <span class="yv-n f"><span class="ft">between</span></span> both.</div></div>';
+const withoutNotes = withNotes.replace(/<span class="yv-n f">(<span[^>]*>(<span[^>]*>[^<]*<\/span>|[^<])*<\/span>)*<\/span>/g, "");
+
+test("footnotes are kept apart: the verse text is exactly the text without them", () => {
+  const noted = parseChapter(1, withNotes);
+  const plain = parseChapter(1, withoutNotes);
+  assert.deepEqual(noted.verses, plain.verses);
+  assert.deepEqual(noted.headings, plain.headings);
+  assert.deepEqual(plain.notes, []);
+  assert.equal(noted.verses[0].text, "The record of Jesus the Messiah.");
+});
+
+test("each footnote sits where its marker was, with its own words verbatim", () => {
+  const { verses, notes } = parseChapter(1, withNotes);
+  const at = (verse: number, offset: number) => verses.find((v) => v.verse === verse)!.text.slice(offset);
+  assert.deepEqual(notes.map((n) => [n.verse, n.offset, n.text]), [
+    [1, 0, "Heading note"],                        // a heading's note: at the start of the next verse
+    [1, 4, "Lit book"],                            // before the word (Lockman's style)
+    [1, 24, "The LORD is salvation"],              // small capitals as capitals, as in verses
+    [2, 29, "Or understood"],                      // after the word (Biblica's style); the "1:2 " label left out
+    [3, 7, "between"],                             // between two spaces: one space stays
+  ]);
+  assert.ok(at(1, 4).startsWith("record"));
+  assert.ok(at(1, 24).startsWith("Messiah"));
+  assert.ok(at(2, 29).startsWith(" it."));
+  assert.ok(at(3, 7).startsWith("both."));
+});
+
+test("marks take no room and never change the text", () => {
+  const mark = (n: number) => String.fromCharCode(0xe000 + n);
+  assert.deepEqual(placeMarks(`  a${mark(0)}  b `), { text: "a b", marks: [{ mark: 0, offset: 1 }] });
+  assert.deepEqual(placeMarks(`a ${mark(0)} b`), { text: "a b", marks: [{ mark: 0, offset: 2 }] });
+  assert.deepEqual(placeMarks(`line one${mark(1)}\n  ${mark(2)}line two`), {
+    text: "line one\nline two",
+    marks: [{ mark: 1, offset: 8 }, { mark: 2, offset: 9 }],
+  });
+  assert.deepEqual(placeMarks(`a\n${mark(0)}\nb`), { text: "a\nb", marks: [{ mark: 0, offset: 1 }] });
 });

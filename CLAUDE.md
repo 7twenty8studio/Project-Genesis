@@ -380,9 +380,18 @@ shares; README.md has the architecture.
   never private/no-store/no-cache; expired rows deleted hourly), which
   YouVersion confirmed is how caching complies. The app builds the Bible on the device
   (`YouVersionBibleBuilder` → `BibleFileWriter`, same schema as
-  build_bibles.py) as a `DownloadableTranslation` with `youVersionID`, and
-  BibleLibrary rebuilds it on Wi-Fi monthly (`installedAt`) and removes it
-  when its row leaves the catalog. `Translation.isYouVersion`: always
+  build_bibles.py plus a `footnotes` table) as a `DownloadableTranslation`
+  with `youVersionID`, in memory, stored sealed (`BibleProtection`:
+  AES-GCM, key in the Keychain, this device only; opened into memory with
+  `SQLiteDatabase(contents:)`); a chapter opened online after its
+  Cache-Control lifetime is fetched again and patched in
+  (`refreshIfStale`, `YouVersionFreshness`); `format` < 2 rebuilds on
+  Wi-Fi; the row leaving the catalog removes it. The publishers' agreements
+  (Biblica: confidential, keep its text out of anything public; Lockman)
+  require every footnote shown (`Footnote`, markers that open
+  `FootnoteSheet`), encryption, a link to the publisher on the notice under
+  every chapter (`publisher_url`, `.publisherLink`) and a yearly download
+  count (`record_youversion_download`); LICENSED_BIBLES.md › 5. `Translation.isYouVersion`: always
   free, never `requiresPremium`; no Premium feature shows its text: use
   `library.premiumToolsTranslation` / `premiumToolsRepository` (a
   public-domain Bible in the same language; RV1909 is installed along with

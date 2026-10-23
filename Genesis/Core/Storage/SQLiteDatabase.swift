@@ -82,6 +82,32 @@ final class SQLiteDatabase: @unchecked Sendable {
         handle = connection
     }
 
+    /// A database held in memory, read-only: one opened from a sealed file
+    /// (`BibleProtection`), so its text is never in a readable file.
+    init(contents data: Data) throws {
+        var connection: OpaquePointer?
+        let status = sqlite3_open_v2(":memory:", &connection, SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE | SQLITE_OPEN_FULLMUTEX, nil)
+        guard status == SQLITE_OK, let connection else {
+            if let connection { sqlite3_close(connection) }
+            throw Failure.open(path: "memory", message: "status \(status)")
+        }
+        let size = data.count
+        guard size > 0, let buffer = sqlite3_malloc64(sqlite3_uint64(size))?.assumingMemoryBound(to: UInt8.self) else {
+            sqlite3_close(connection)
+            throw Failure.open(path: "memory", message: "no memory")
+        }
+        data.copyBytes(to: buffer, count: size)
+        // SQLite owns the buffer from here and frees it on close.
+        let flags = UInt32(SQLITE_DESERIALIZE_FREEONCLOSE) | UInt32(SQLITE_DESERIALIZE_READONLY)
+        let loaded = sqlite3_deserialize(connection, "main", buffer, sqlite3_int64(size), sqlite3_int64(size), flags)
+        guard loaded == SQLITE_OK else {
+            let message = String(cString: sqlite3_errmsg(connection))
+            sqlite3_close(connection)
+            throw Failure.open(path: "memory", message: message)
+        }
+        handle = connection
+    }
+
     deinit {
         sqlite3_close(handle)
     }

@@ -15,6 +15,12 @@ final class ReaderViewModel {
     private(set) var navigationToken = 0
 
     var selection: Set<VerseID> = []
+    /// A translator's footnote the person tapped, shown in a small sheet.
+    var shownFootnote: ShownFootnote?
+
+    func showFootnote(_ text: String, verse: VerseID?) {
+        shownFootnote = ShownFootnote(text: text, verse: verse)
+    }
     /// The verse the study panel is about; falls back to the top of the page.
     var studyVerse: VerseID?
     var showsControls = true
@@ -141,6 +147,8 @@ final class ReaderViewModel {
         let verse = firstVerse ?? chapter.firstVerse
         focusVerse = verse
         progress.update(verse)
+        // A YouVersion chapter past its lifetime is fetched again if online.
+        library.refreshIfStale(chapter, of: translation)
     }
 
     /// The page or scroll view reached the end of a chapter by reading (a

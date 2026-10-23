@@ -129,6 +129,10 @@ struct ScrollReaderView: UIViewRepresentable {
             switch event {
             case let .longPress(verse):
                 viewModel.toggleSelection(verse)
+            case let .footnote(text, verse):
+                viewModel.showFootnote(text, verse: verse)
+            case let .link(url):
+                UIApplication.shared.open(url)
             case let .tap(point, bounds, verse):
                 // No page edges here: scrolling moves through the chapter.
                 let action = ReaderTap.action(

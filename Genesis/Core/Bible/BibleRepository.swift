@@ -40,15 +40,23 @@ final class BibleRepository: Sendable {
     /// True when the translation joins some verses into one ("16–17"):
     /// a `verse_spans` table, written by Tools/BibleData/import_dbl.py.
     private let hasSpans: Bool
+    /// True when the translation has footnotes (a `footnotes` table, which
+    /// YouVersion Platform Bibles built on the device have).
+    private let hasFootnotes: Bool
 
+    /// Opens a Bible file; a sealed one (`BibleProtection`, licensed text)
+    /// is opened into memory with this device's key.
     init(translation: Translation, url: URL) throws {
         self.translation = translation
-        let database = try SQLiteDatabase(readOnly: url)
-        let spanTables = try database.query(
-            "SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name = 'verse_spans'"
-        ) { $0.int(0) }
+        let database = BibleProtection.isSealed(fileAt: url)
+            ? try SQLiteDatabase(contents: try BibleProtection.read(url))
+            : try SQLiteDatabase(readOnly: url)
+        let tables = Set(try database.query(
+            "SELECT name FROM sqlite_master WHERE type = 'table' AND name IN ('verse_spans', 'footnotes')"
+        ) { $0.text(0) })
         self.database = database
-        hasSpans = (spanTables.first ?? 0) > 0
+        hasSpans = tables.contains("verse_spans")
+        hasFootnotes = tables.contains("footnotes")
     }
 
     /// Joined verses that start between the two ids: first id → last verse number.
@@ -99,8 +107,20 @@ final class BibleRepository: Sendable {
             id: id,
             verses: verses,
             headings: headings,
-            copyrightNotice: translation.isLicensed ? translation.license : nil
+            copyrightNotice: translation.isLicensed ? translation.license : nil,
+            publisherURL: translation.isLicensed ? translation.publisherURL : nil,
+            footnotes: try footnotes(in: id)
         )
+    }
+
+    /// A chapter's footnotes, by verse then position.
+    func footnotes(in id: ChapterID) throws -> [Footnote] {
+        guard hasFootnotes else { return [] }
+        let range = id.verseRange
+        return try database.query(
+            "SELECT verse_id, position, text FROM footnotes WHERE verse_id BETWEEN ? AND ? ORDER BY verse_id, position, rowid",
+            [.int(range.lowerBound), .int(range.upperBound)]
+        ) { Footnote(verse: VerseID(rawValue: $0.int(0)), offset: $0.int(1), text: $0.text(2)) }
     }
 
     /// A verse, or for a verse the translation joins with the ones before

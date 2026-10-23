@@ -5598,6 +5598,26 @@
         }
       }
     },
+    "Footnote": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nota"
+          }
+        }
+      }
+    },
+    "Footnotes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas al pie"
+          }
+        }
+      }
+    },
     "For 1 Day": {
       "localizations": {
         "es": {
@@ -6908,6 +6928,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Importar PDF"
+          }
+        }
+      }
+    },
+    "In Bibles that have them, tap the small letter beside a word to read the translators' note.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En las Biblias que las tienen, toca la letra pequeña junto a una palabra para leer la nota de los traductores."
           }
         }
       }
@@ -17165,6 +17195,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Las traducciones difieren en cuánto siguen el hebreo, el arameo y el griego originales, y en cómo suenan. Muchas personas leen más de una."
+          }
+        }
+      }
+    },
+    "Translators' notes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas de los traductores"
           }
         }
       }

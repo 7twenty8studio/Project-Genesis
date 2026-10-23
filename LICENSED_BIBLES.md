@@ -278,13 +278,72 @@ These are the terms YouVersion agreed with us in writing (email thread
     no-store or no-cache; expired rows are deleted hourly (pg_cron
     `yvp-chapter-cache-expire`);
   - a device may show its stored copy while it can't reach the server
-    (no must-revalidate); online, a copy older than the max-age should be
-    fetched again before it's shown. The app still refreshes monthly:
-    per-chapter refresh is planned once Heather confirms our reading
-    (reply sent 23 October 2026).
+    (no must-revalidate); online, a chapter older than its max-age is
+    fetched again when it's opened (`BibleLibrary.refreshIfStale`,
+    `YouVersionFreshness`) and the stored Bible updated if it changed.
+  - Heather (23 October 2026, afternoon): whether a Bible may be stored on
+    the device, and for how long, is set by each publisher's agreement,
+    not by YouVersion; she pointed us to the publishers' agreements.
   - The hour is YouVersion's choice, not ours: only they can lengthen it.
   - The API has no ranges: one chapter per request (whole books and
     chapter ranges return 404). Pagination applies only to listings
     and search, so it doesn't reduce chapter requests.
+- **Publishers' agreements (received 23 October 2026).** Biblica's
+  Content License Agreement (NIV, NIrV, NVI) is **confidential**: keep its
+  text out of the repository, the website and anything public; only what
+  we must do is noted here. Lockman's Free Distribution Permission
+  Agreement covers the NASB, NBLA and LBLA (also the AMP and NASB 1995,
+  which we don't offer). What they ask, and where the app does it:
+  - **Offline:** both allow the text to be downloaded in a mobile app
+    (Biblica: downloadable for mobile apps, never as files handed to the
+    user; Lockman: live or downloaded to the device). Built and kept on the
+    device as before.
+  - **Every footnote, accessible (Biblica):** yvp-bible requests
+    `include_notes=true` and keeps each note apart from the verse with its
+    position (lib.ts `placeMarks`; the verse text is exactly the same as
+    without notes, tested); the app stores them in a `footnotes` table and
+    shows a small letter marker that opens the note (`FootnoteSheet`).
+    Cross references are not footnotes and stay out.
+  - **Encryption / no easy copying (Biblica: industry-standard encryption,
+    see biblica.com/digital-ip-protection-requirements; Lockman: taking a
+    large part out of the app must be difficult or impractical):** each
+    YouVersion Bible is built in memory and stored sealed with AES-256-GCM
+    under a key made on the device and kept in its Keychain (this device
+    only), opened into memory to read, left out of backups
+    (`BibleProtection`); unfinished downloads' books are sealed too.
+    Bibles built before are sealed in place at launch and rebuilt with
+    footnotes on Wi-Fi (`YouVersionBibleBuilder.format` 2). Check the
+    Biblica page above for anything more it asks.
+  - **A link to the publisher wherever the text is shown:** the copyright
+    notice under every chapter opens `publisher_url` (biblica.com, whose
+    name is in the notice; lockman.org, Lockman's home page).
+  - **Notices:** Biblica's as the Platform's metadata gives them (with the
+    ® marks); Lockman's whole-Bible notices word for word from its
+    agreement (migration 20261023010000).
+  - **Free, no third-party advertising, no AI:** the Bibles are free to
+    everyone and never in Premium; Versely has no advertising; licensed
+    text never reaches the study assistant (which is off).
+  - **Lockman's yearly report:** by the end of each February, the number
+    of copies distributed the year before: `public.youversion_download_counts`
+    (anonymous, one per finished download, by Bible and year; rebuilds and
+    refreshes aren't counted). `select * from public.youversion_download_counts order by year, bible;`
+  - **Biblica's display limit:** no more than two chapters (or 25 verses)
+    shown to a person at once: the reader shows one chapter (two in the
+    parallel view).
+  - **Updates and termination:** publisher corrections arrive through the
+    chapter refresh; if an agreement ends, turning the row off removes the
+    Bible from devices, and Biblica asks for files to be destroyed within
+    72 hours with a signed notice.
+- **Questions sent to the publishers (open):**
+  - Biblica defines its rights as distribution free of subscriptions:
+    confirm in writing that Versely's optional Premium (which never
+    includes their Bibles) is acceptable. Lockman's "no general membership
+    fees" raises the same question.
+  - Both agreements speak of the YouVersion SDK (Biblica also allows the
+    API "where applicable"); confirm that our use of the API through our
+    server, with its one-hour shared cache, is acceptable.
+  - Biblica asks for a prospectus and approval before any "new, revised or
+    enhanced" edition: ask what counts, so ordinary updates don't each
+    need sign-off.
 - **Still to confirm:** quotas and rate limits (not in the Terms; ask
   Platform Support or check the developer docs).

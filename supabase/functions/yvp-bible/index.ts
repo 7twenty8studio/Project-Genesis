@@ -1,8 +1,14 @@
 // yvp-bible: one book of a YouVersion Platform Bible, in the app's format.
 //
-// POST /functions/v1/yvp-bible  { id: "NIV", book: "GEN" }
-//   → { id, book, chapters: [{ chapter, verses: [{ verse, last?, text, paragraph, poetry }],
-//                              headings: [{ beforeVerse, text }] }] }
+// POST /functions/v1/yvp-bible  { id: "NIV", book: "GEN" [, chapter: 3] }
+//   → { id, book, chapters: [{ chapter, maxAge, verses: [{ verse, last?, text, paragraph, poetry }],
+//                              headings: [{ beforeVerse, text }],
+//                              notes: [{ verse, offset, text }] }] }
+// Without `chapter`, the whole book; with it, that chapter only (the app
+// refreshing a chapter it shows). A chapter's `maxAge` is how long, in
+// seconds, the Platform lets it be kept before it's fetched again (its
+// Cache-Control, less the time our shared copy has already been kept),
+// which the app follows.
 //
 // The app builds a YouVersion Bible on the device from these, book by book
 // (BibleLibrary → YouVersionBibleBuilder), so it reads offline like every
@@ -61,14 +67,19 @@ Deno.serve(async (req) => {
   try {
     const count = chapterCount(request.book);
     // One past the KJV's count, in case a Bible numbers a book differently.
-    const numbers = Array.from({ length: count + 1 }, (_, i) => i + 1);
+    const numbers = request.chapter ? [request.chapter] : Array.from({ length: count + 1 }, (_, i) => i + 1);
     const cached = await freshChapters(row.yvp_id, request.book);
+    const lifetimes = new Map<number, number>();
     const chapters = (await mapLimited(numbers, CONCURRENCY, (n) => {
       const hit = cached.get(n);
-      if (hit) return Promise.resolve(parseChapter(n, hit.content, hit.reference));
-      return fetchChapter(row.yvp_id, request.book, n, n > count);
+      if (hit) {
+        lifetimes.set(n, hit.remaining);
+        return Promise.resolve(parseChapter(n, hit.content, hit.reference));
+      }
+      return fetchChapter(row.yvp_id, request.book, n, n > count, lifetimes);
     }))
-      .filter((c): c is ParsedChapter => c !== null && c.verses.length > 0);
+      .filter((c): c is ParsedChapter => c !== null && c.verses.length > 0)
+      .map((c) => ({ ...c, maxAge: Math.max(0, lifetimes.get(c.chapter) ?? 0) }));
     if (chapters.length === 0) return json({ error: "This book isn't in this Bible." }, 404);
     return json({ id: request.id, book: request.book, chapters }, 200);
   } catch (error) {
@@ -89,8 +100,8 @@ class RateLimited extends Error {
 }
 
 /** The book's chapters still fresh in the shared cache, by chapter number. */
-async function freshChapters(bibleID: number, book: string): Promise<Map<number, { content: string; reference: string }>> {
-  const fresh = new Map<number, { content: string; reference: string }>();
+async function freshChapters(bibleID: number, book: string): Promise<Map<number, { content: string; reference: string; remaining: number }>> {
+  const fresh = new Map<number, { content: string; reference: string; remaining: number }>();
   const { data, error } = await admin
     .from("yvp_chapter_cache")
     .select("passage, content, reference, fetched_at, max_age, age_at_fetch")
@@ -105,7 +116,11 @@ async function freshChapters(bibleID: number, book: string): Promise<Map<number,
   for (const row of data ?? []) {
     const chapter = Number(String(row.passage).slice(book.length + 1));
     const entry = { fetchedAt: Date.parse(row.fetched_at), maxAge: row.max_age, ageAtFetch: row.age_at_fetch };
-    if (Number.isInteger(chapter) && isFresh(entry, now)) fresh.set(chapter, { content: row.content, reference: row.reference });
+    if (Number.isInteger(chapter) && isFresh(entry, now)) {
+      // What's left of its lifetime: a reader given this copy keeps it no longer.
+      const remaining = Math.floor(entry.maxAge - entry.ageAtFetch - (now - entry.fetchedAt) / 1000);
+      fresh.set(chapter, { content: row.content, reference: row.reference, remaining });
+    }
   }
   return fresh;
 }
@@ -124,8 +139,9 @@ async function store(bibleID: number, passage: string, response: Response, conte
 }
 
 /** One chapter, parsed; null when the Bible doesn't have it. */
-async function fetchChapter(bibleID: number, book: string, chapter: number, optional: boolean): Promise<ParsedChapter | null> {
-  const url = `${API}/bibles/${bibleID}/passages/${book}.${chapter}?format=html&include_headings=true`;
+async function fetchChapter(bibleID: number, book: string, chapter: number, optional: boolean, lifetimes: Map<number, number>): Promise<ParsedChapter | null> {
+  // Notes too: Biblica's licence requires every footnote to be included.
+  const url = `${API}/bibles/${bibleID}/passages/${book}.${chapter}?format=html&include_headings=true&include_notes=true`;
   for (let attempt = 0; ; attempt++) {
     let response: Response;
     try {
@@ -164,6 +180,9 @@ async function fetchChapter(bibleID: number, book: string, chapter: number, opti
     const body = await response.json() as { content?: unknown; reference?: unknown };
     if (typeof body.content !== "string") throw new Error(`${book} ${chapter}: no content`);
     const reference = typeof body.reference === "string" ? body.reference : "";
+    const policy = cachePolicy(response.headers.get("cache-control"));
+    // No lifetime (or private/no-store): 0, so the app refreshes it next time.
+    lifetimes.set(chapter, policy.store ? policy.maxAge - ageSeconds(response.headers.get("age")) : 0);
     await store(bibleID, `${book}.${chapter}`, response, body.content, reference);
     return parseChapter(chapter, body.content, reference);
   }

@@ -77,6 +77,9 @@ struct ReaderView: View {
         .sheet(item: $sheet) { sheet in
             sheetContent(sheet)
         }
+        .sheet(item: Binding(get: { reader.shownFootnote }, set: { reader.shownFootnote = $0 })) { note in
+            FootnoteSheet(footnote: note, translation: reader.translation)
+        }
         // Once, the first time a YouVersion Platform Bible is read here:
         // what it isn't used for (our agreement keeps it out of paid
         // features). Its card in the library says the same beforehand.

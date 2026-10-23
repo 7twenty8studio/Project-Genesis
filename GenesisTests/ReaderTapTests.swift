@@ -52,6 +52,6 @@ struct ReaderTapTests {
     @Test func theAnnouncementIsNew() {
         let ids = WhatsNewCatalog.all.map(\.id)
         #expect(Set(ids).count == ids.count)
-        #expect(ids.last == "tap-to-select")
+        #expect(ids.contains("tap-to-select"))
     }
 }

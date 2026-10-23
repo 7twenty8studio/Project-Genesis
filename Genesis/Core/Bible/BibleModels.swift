@@ -29,6 +29,16 @@ struct ChapterHeading: Hashable, Sendable {
     let text: String
 }
 
+/// A translator's footnote, kept apart from the verse (never part of its
+/// text): the reader shows a small marker at `offset`, a UTF-16 position in
+/// the verse's text, and the note when it's tapped. YouVersion Platform
+/// Bibles carry them; Biblica's licence requires every one to be shown.
+struct Footnote: Hashable, Sendable {
+    let verse: VerseID
+    let offset: Int
+    let text: String
+}
+
 struct Chapter: Identifiable, Hashable, Sendable {
     let id: ChapterID
     let verses: [Verse]
@@ -36,6 +46,10 @@ struct Chapter: Identifiable, Hashable, Sendable {
     /// The publisher's copyright notice, shown under the chapter, for a
     /// licensed Bible (nil for public-domain ones).
     var copyrightNotice: String? = nil
+    /// Where the notice links: the publisher's website, as its licence asks.
+    var publisherURL: URL? = nil
+    /// The translators' footnotes, by verse then position.
+    var footnotes: [Footnote] = []
 
     var book: BibleBook { id.bibleBook }
 }
@@ -61,6 +75,9 @@ struct Translation: Identifiable, Hashable, Codable, Sendable {
     /// `BibleLibrary.premiumToolsTranslation(for:)` instead, and listening
     /// isn't offered (LICENSED_BIBLES.md › 5).
     var isYouVersion: Bool = false
+    /// The publisher's website, linked from the copyright notice under every
+    /// chapter (Biblica and Lockman ask for it); nil where none is needed.
+    var publisherURL: URL? = nil
 
     var abbreviation: String { id }
 
@@ -72,7 +89,7 @@ struct Translation: Identifiable, Hashable, Codable, Sendable {
         TranslationProfile.rights(fromLicense: license) != .publicDomain
     }
 
-    init(id: String, name: String, year: String, license: String, summary: String, language: String = "en", requiresPremium: Bool = false, isYouVersion: Bool = false) {
+    init(id: String, name: String, year: String, license: String, summary: String, language: String = "en", requiresPremium: Bool = false, isYouVersion: Bool = false, publisherURL: URL? = nil) {
         self.id = id
         self.name = name
         self.year = year
@@ -81,6 +98,7 @@ struct Translation: Identifiable, Hashable, Codable, Sendable {
         self.language = language
         self.requiresPremium = requiresPremium
         self.isYouVersion = isYouVersion
+        self.publisherURL = publisherURL
     }
 
     // Translations saved before languages were added have none: English.
@@ -94,6 +112,7 @@ struct Translation: Identifiable, Hashable, Codable, Sendable {
         language = try container.decodeIfPresent(String.self, forKey: .language) ?? "en"
         requiresPremium = try container.decodeIfPresent(Bool.self, forKey: .requiresPremium) ?? false
         isYouVersion = try container.decodeIfPresent(Bool.self, forKey: .isYouVersion) ?? false
+        publisherURL = try? container.decodeIfPresent(URL.self, forKey: .publisherURL)
     }
 }
 

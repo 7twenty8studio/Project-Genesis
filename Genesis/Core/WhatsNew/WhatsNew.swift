@@ -27,7 +27,7 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes]
 
     static let notifications = WhatsNewAnnouncement(
         id: "notifications-your-way",
@@ -47,6 +47,18 @@ enum WhatsNewCatalog {
                 systemImage: "bell.slash",
                 title: String(localized: "You're in control"),
                 detail: String(localized: "Choose each kind and its time, or turn them all off, in Settings › Notifications.")
+            ),
+        ]
+    )
+
+    static let footnotes = WhatsNewAnnouncement(
+        id: "footnotes",
+        title: String(localized: "Footnotes"),
+        items: [
+            WhatsNewItem(
+                systemImage: "textformat.superscript",
+                title: String(localized: "Translators' notes"),
+                detail: String(localized: "In Bibles that have them, tap the small letter beside a word to read the translators' note.")
             ),
         ]
     )

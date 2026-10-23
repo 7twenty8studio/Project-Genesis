@@ -1,3 +1,4 @@
+import CryptoKit
 import Foundation
 import Observation
 
@@ -136,6 +137,18 @@ final class BibleLibrary {
         crossReferences = bundle.url(forResource: "CrossReferences", withExtension: "sqlite")
             .flatMap { try? CrossReferenceRepository(url: $0) }
         Self.removeLeftovers(in: directory, keeping: installed)
+        Self.sealPlainDownloads(in: directory, installed: installed)
+    }
+
+    /// YouVersion Bibles built before they were sealed are sealed in place
+    /// at once (they're also built again with footnotes on Wi-Fi), so no
+    /// licensed text stays readable on the device.
+    private static func sealPlainDownloads(in directory: URL, installed: [String: InstalledTranslation]) {
+        for item in installed.values where item.translation.isYouVersion {
+            let url = directory.appending(path: item.fileName)
+            guard !BibleProtection.isSealed(fileAt: url), let data = try? Data(contentsOf: url) else { continue }
+            try? BibleProtection.write(data, to: url)
+        }
     }
 
     /// True once the person has picked a translation during onboarding.
@@ -154,6 +167,17 @@ final class BibleLibrary {
             let repository = try BibleRepository(translation: translation, url: url)
             repositories[translation.id] = repository
             return repository
+        } catch let error where installed[translation.id] != nil && !isBundled(translation) {
+            CrashReporter.record(error, context: "BibleLibrary.repository")
+            // A sealed Bible that will never open here (another device's
+            // key) or a damaged file: forget it, so it can be downloaded
+            // again. Locked away for now (before the phone's first unlock):
+            // read another Bible this time and keep it.
+            if error is CryptoKitError || error is SQLiteDatabase.Failure {
+                remove(translation)
+            }
+            let other = fallback(for: translation)
+            return other.id == translation.id ? repository(for: .kjv) : repository(for: other)
         } catch {
             preconditionFailure("Could not open \(translation.id): \(error)")
         }
@@ -228,7 +252,7 @@ final class BibleLibrary {
         var changed = false
         for item in items {
             guard let current = installed[item.id], current.translation != item.translation else { continue }
-            installed[item.id] = InstalledTranslation(translation: item.translation, version: current.version, fileName: current.fileName, installedAt: current.installedAt)
+            installed[item.id] = InstalledTranslation(translation: item.translation, version: current.version, fileName: current.fileName, installedAt: current.installedAt, format: current.format)
             changed = true
         }
         guard changed else { return }
@@ -243,23 +267,24 @@ final class BibleLibrary {
     private func needsUpdate(_ item: DownloadableTranslation, now: Date = .now) -> Bool {
         if let current = installed[item.id] {
             if item.version > current.version { return true }
-            // YouVersion asks that its Bibles be refreshed when online, in
-            // case a publisher corrects the text: built again once a month.
+            // A YouVersion Bible built before footnotes and sealing is
+            // built again. Otherwise each chapter is refreshed when it's
+            // opened online after its lifetime (`refreshIfStale`).
             if item.youVersionID != nil {
-                guard let built = current.installedAt else { return true }
-                return now.timeIntervalSince(built) > Self.youVersionRefreshInterval
+                return (current.format ?? 1) < YouVersionBibleBuilder.format
             }
             return false
         }
         return isBundled(item.translation) && item.version > Self.bundledVersion
     }
 
-    private static let youVersionRefreshInterval: TimeInterval = 30 * 24 * 60 * 60
-
     func download(_ item: DownloadableTranslation) async {
         downloadError = nil
         do {
             try await install(item, allowsCellular: true)
+            // Lockman asks each year how many copies were distributed: an
+            // anonymous count of finished downloads (rebuilds aren't counted).
+            if item.youVersionID != nil { await downloader.recordDownload(item) }
             await installPremiumToolsBible(for: item, allowsCellular: true)
         } catch {
             downloadError = error.localizedDescription
@@ -289,7 +314,10 @@ final class BibleLibrary {
                 self.downloadProgress[id] = Double(books) / total
             }
         }
-        installed[item.id] = InstalledTranslation(translation: item.translation, version: item.version, fileName: fileName, installedAt: now)
+        installed[item.id] = InstalledTranslation(
+            translation: item.translation, version: item.version, fileName: fileName, installedAt: now,
+            format: item.youVersionID != nil ? YouVersionBibleBuilder.format : nil
+        )
         saveInstalled()
         repositories[item.id] = nil
         translations = Self.merge(installed: installed)
@@ -332,6 +360,49 @@ final class BibleLibrary {
         repositories[translation.id] = nil
         translations = Self.merge(installed: installed)
         try? FileManager.default.removeItem(at: directory.appending(path: item.fileName))
+        YouVersionFreshness.remove(for: translation.id, in: directory)
+    }
+
+    // MARK: Refreshing YouVersion chapters
+
+    @ObservationIgnored private var refreshing: Set<String> = []
+
+    /// A YouVersion Bible's chapter, opened while online after the
+    /// Platform's Cache-Control lifetime, is fetched again (through our
+    /// shared cache) and the stored Bible updated if the publisher changed
+    /// it; YouVersion confirmed that following the header complies. The
+    /// stored chapter shows meanwhile; offline, or if the Platform is busy,
+    /// nothing changes and it's tried again next time.
+    func refreshIfStale(_ chapter: ChapterID, of translation: Translation) {
+        guard translation.isYouVersion, let item = installed[translation.id], let client = downloader.client,
+              !downloading.contains(translation.id) else { return }
+        let key = "\(translation.id) \(chapter.book).\(chapter.chapter)"
+        guard !refreshing.contains(key),
+              YouVersionFreshness.load(for: translation.id, in: directory).isStale(book: chapter.book, chapter: chapter.chapter) else { return }
+        refreshing.insert(key)
+        let folder = directory
+        let stored = self.repository(for: translation)
+        Task {
+            defer { self.refreshing.remove(key) }
+            guard let fresh = try? await YouVersionBibleBuilder(client: client).fetchChapter(id: translation.id, book: chapter.book, chapter: chapter.chapter) else { return }
+            var freshness = YouVersionFreshness.load(for: translation.id, in: folder)
+            freshness.set(book: chapter.book, chapter: chapter.chapter, fetchedAt: .now, maxAge: fresh.maxAge)
+            let url = folder.appending(path: item.fileName)
+            let changed = await Task.detached(priority: .utility) { () -> Bool in
+                guard let current = try? stored.chapter(chapter),
+                      YouVersionChapterComparison.differs(stored: current, fresh: fresh) else { return false }
+                guard let data = try? BibleProtection.read(url),
+                      let patched = try? BibleFileWriter.replacingChapter(fresh, book: chapter.book, in: data),
+                      (try? BibleProtection.write(patched, to: url)) != nil else { return false }
+                return true
+            }.value
+            freshness.save(for: translation.id, in: folder)
+            // Re-read only if this edition is still the one installed.
+            if changed, self.installed[translation.id]?.fileName == item.fileName {
+                self.repositories[translation.id] = nil
+                self.editionVersion += 1
+            }
+        }
     }
 
     // MARK: Storage

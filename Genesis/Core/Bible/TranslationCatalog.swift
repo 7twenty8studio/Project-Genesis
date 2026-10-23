@@ -26,6 +26,8 @@ struct DownloadableTranslation: Identifiable, Hashable, Codable, Sendable {
     /// id on the Platform. It has no file; the device builds it book by book
     /// (`YouVersionBibleBuilder`).
     var youVersionID: Int?
+    /// The publisher's website, linked from the copyright notice.
+    var publisherURL: URL?
 
     /// The server's details, completed with what the app knows.
     var profile: TranslationProfile {
@@ -35,7 +37,7 @@ struct DownloadableTranslation: Identifiable, Hashable, Codable, Sendable {
     }
 
     var translation: Translation {
-        Translation(id: id, name: name, year: year, license: license, summary: summary, language: language, requiresPremium: premium, isYouVersion: youVersionID != nil)
+        Translation(id: id, name: name, year: year, license: license, summary: summary, language: language, requiresPremium: premium, isYouVersion: youVersionID != nil, publisherURL: publisherURL)
     }
 
     enum CodingKeys: String, CodingKey {
@@ -86,11 +88,13 @@ struct YouVersionCatalogRow: Decodable, Sendable {
     let readingLevel: String?
     let popularity: Int?
     let version: Int
+    let publisherURL: String?
 
     enum CodingKeys: String, CodingKey {
         case id, name, year, license, summary, language, approach, popularity, version
         case yvpID = "yvp_id"
         case readingLevel = "reading_level"
+        case publisherURL = "publisher_url"
     }
 
     var downloadable: DownloadableTranslation {
@@ -103,7 +107,8 @@ struct YouVersionCatalogRow: Decodable, Sendable {
             rights: .licensed,
             popularity: popularity,
             premium: false,
-            youVersionID: yvpID
+            youVersionID: yvpID,
+            publisherURL: publisherURL.flatMap(URL.init(string:)).flatMap { $0.scheme == "https" ? $0 : nil }
         )
     }
 }
@@ -115,9 +120,12 @@ struct InstalledTranslation: Codable, Hashable, Sendable {
     /// File name inside Application Support/Bibles.
     let fileName: String
     /// When it was downloaded (or built); nil for downloads saved before
-    /// this was kept. A YouVersion Bible is built again on Wi-Fi once it's
-    /// a month old, so publisher corrections reach the device.
+    /// this was kept.
     var installedAt: Date?
+    /// For a YouVersion Bible: the `YouVersionBibleBuilder.format` it was
+    /// built with (nil: before footnotes and encryption). An older one is
+    /// built again on Wi-Fi.
+    var format: Int?
 }
 
 enum TranslationDownloadError: LocalizedError, Equatable {
@@ -168,7 +176,7 @@ struct TranslationDownloader: Sendable {
                 URLQueryItem(name: "order", value: "sort.asc,name.asc"),
             ])
             let youVersion: [YouVersionCatalogRow] = try await client.select("youversion_bibles", query: [
-                URLQueryItem(name: "select", value: "id,yvp_id,name,year,license,summary,language,approach,reading_level,popularity,version"),
+                URLQueryItem(name: "select", value: "id,yvp_id,name,year,license,summary,language,approach,reading_level,popularity,version,publisher_url"),
                 URLQueryItem(name: "enabled", value: "eq.true"),
                 URLQueryItem(name: "order", value: "sort.asc,name.asc"),
             ])
@@ -177,6 +185,15 @@ struct TranslationDownloader: Sendable {
         } catch let error as URLError where [.notConnectedToInternet, .networkConnectionLost, .timedOut].contains(error.code) {
             throw TranslationDownloadError.offline
         }
+    }
+
+    /// Counts a finished YouVersion Bible download, anonymously, for the
+    /// publishers' yearly reports (Lockman asks each February how many
+    /// copies went out). Failures are ignored: a count is never worth an error.
+    func recordDownload(_ item: DownloadableTranslation) async {
+        guard let client, item.youVersionID != nil,
+              let body = try? JSONEncoder().encode(["p_bible": item.id]) else { return }
+        _ = try? await client.send("POST", path: "rest/v1/rpc/record_youversion_download", body: body, accessToken: nil)
     }
 
     /// Downloads a translation's file (or, for a YouVersion Bible, builds it

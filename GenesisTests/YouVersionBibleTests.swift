@@ -104,7 +104,14 @@ struct YouVersionBibleTests {
         try FileManager.default.createDirectory(at: parts, withIntermediateDirectories: true)
         try Self.john.write(to: parts.appending(path: "43.json"))
         try Self.john.write(to: parts.appending(path: "1.json"))
+        // The download notes what it has in a small index (no file dates).
+        let now = Date.now.timeIntervalSince1970
+        try JSONEncoder().encode(["43": now, "1": now, "2": now]).write(to: parts.appending(path: "index.json"))
+        // Book 2 is in the index but its file is gone: not counted.
         #expect(YouVersionBibleBuilder.savedBookCount(for: item, in: folder) == 2)
+        // A week-old book is too old to use.
+        try JSONEncoder().encode(["43": now - 8 * 24 * 60 * 60, "1": now]).write(to: parts.appending(path: "index.json"))
+        #expect(YouVersionBibleBuilder.savedBookCount(for: item, in: folder) == 1)
         YouVersionBibleBuilder.discard(item, in: folder)
         #expect(YouVersionBibleBuilder.savedBookCount(for: item, in: folder) == 0)
     }

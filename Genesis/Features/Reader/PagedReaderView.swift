@@ -256,6 +256,10 @@ struct PagedReaderView: UIViewControllerRepresentable {
             switch event {
             case let .longPress(verse):
                 viewModel.toggleSelection(verse)
+            case let .footnote(text, verse):
+                viewModel.showFootnote(text, verse: verse)
+            case let .link(url):
+                UIApplication.shared.open(url)
             case let .tap(point, bounds, verse):
                 let insets = layout?.textInsets ?? .zero
                 let action = ReaderTap.action(

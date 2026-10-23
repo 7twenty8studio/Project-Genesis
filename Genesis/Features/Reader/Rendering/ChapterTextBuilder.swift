@@ -3,6 +3,10 @@ import UIKit
 extension NSAttributedString.Key {
     /// `Int` raw value of the `VerseID` a run of text belongs to.
     static let verseID = NSAttributedString.Key("genesis.verseID")
+    /// On a footnote marker: the note's text (`String`).
+    static let footnoteText = NSAttributedString.Key("genesis.footnoteText")
+    /// On a licensed Bible's copyright notice: the publisher's site (`URL`).
+    static let publisherLink = NSAttributedString.Key("genesis.publisherLink")
 }
 
 /// Per-person marks drawn over a chapter. Scripture text itself is never changed.
@@ -53,6 +57,8 @@ enum ChapterTextBuilder {
         let poetry = paragraphStyle(style: style, firstLineIndent: size * 1.2, headIndent: size * 2.4)
         let headingsByVerse = Dictionary(grouping: chapter.headings, by: \.beforeVerse)
         let noteMarker = noteMarkerAttachment(font: bodyFont, color: palette.uiAccent)
+        let footnotesByVerse = Dictionary(grouping: chapter.footnotes, by: \.verse)
+        var footnoteNumber = 0
 
         for (index, verse) in chapter.verses.enumerated() {
             let previous = index > 0 ? chapter.verses[index - 1] : nil
@@ -114,6 +120,9 @@ enum ChapterTextBuilder {
             }
             // Poetry lines stay in one paragraph so indentation is consistent.
             let text = verse.text.replacingOccurrences(of: "\n", with: "\u{2028}")
+            // Where the verse's own characters start (after an illuminated
+            // letter's picture), for placing footnote markers.
+            var textStart = result.length
             if opensWithInitial, let split = initialSplit(text), style.initialStyle == .illuminated,
                let ornament = illuminatedInitial(split.initial, style: style, bodyFont: bodyFont) {
                 // The illuminated letter is a picture placed just before the
@@ -127,6 +136,7 @@ enum ChapterTextBuilder {
                 pictureAttributes[.font] = bodyFont
                 picture.addAttributes(pictureAttributes, range: NSRange(location: 0, length: picture.length))
                 result.append(picture)
+                textStart = result.length
 
                 var hiddenAttributes = textAttributes
                 hiddenAttributes[.font] = UIFont(descriptor: bodyFont.fontDescriptor, size: 0.1)
@@ -146,6 +156,27 @@ enum ChapterTextBuilder {
                 result.append(NSAttributedString(string: text, attributes: textAttributes))
             }
 
+            // Footnote markers, small letters in the accent colour, inserted
+            // between the verse's characters but never part of its text
+            // (copying, sharing and search use the verse itself).
+            if let notes = footnotesByVerse[verse.id], !notes.isEmpty {
+                let length = (text as NSString).length
+                let numbered = notes.map { note -> (Footnote, Int) in
+                    defer { footnoteNumber += 1 }
+                    return (note, footnoteNumber)
+                }
+                for (note, number) in numbered.reversed() {
+                    var markerAttributes = attributes
+                    markerAttributes[.font] = UIFont.systemFont(ofSize: size * 0.55, weight: .semibold)
+                    markerAttributes[.foregroundColor] = palette.uiAccent
+                    markerAttributes[.baselineOffset] = size * 0.38
+                    markerAttributes[.backgroundColor] = nil
+                    markerAttributes[.footnoteText] = note.text
+                    let marker = NSAttributedString(string: Self.footnoteLabel(number), attributes: markerAttributes)
+                    result.insert(marker, at: textStart + min(max(0, note.offset), length))
+                }
+            }
+
             if decorations.notedVerses.contains(verse.id), let noteMarker {
                 let marker = NSMutableAttributedString(string: "\u{2009}")
                 marker.append(NSAttributedString(attachment: noteMarker))
@@ -158,11 +189,19 @@ enum ChapterTextBuilder {
         // and apart from the text, never part of a verse.
         if let notice = chapter.copyrightNotice, !notice.isEmpty {
             result.append(NSAttributedString(string: "\n"))
-            result.append(NSAttributedString(string: notice, attributes: [
+            var noticeAttributes: [NSAttributedString.Key: Any] = [
                 .font: UIFont.systemFont(ofSize: max(11, size * 0.6)),
                 .foregroundColor: palette.uiSecondaryText,
                 .paragraphStyle: paragraphStyle(style: style, firstLineIndent: 0, headIndent: 0, spacingBefore: size * 1.2),
-            ]))
+            ]
+            // The publisher's licence asks for a one-step link to its site
+            // wherever its text is shown: the whole notice opens it.
+            if let url = chapter.publisherURL {
+                noticeAttributes[.publisherLink] = url
+                noticeAttributes[.underlineStyle] = NSUnderlineStyle.single.rawValue
+                noticeAttributes[.underlineColor] = palette.uiSecondaryText.withAlphaComponent(0.5)
+            }
+            result.append(NSAttributedString(string: notice, attributes: noticeAttributes))
         }
 
         return BuiltChapter(chapter: chapter, text: result, verseOffsets: offsets)
@@ -176,6 +215,12 @@ enum ChapterTextBuilder {
     }
 
     // MARK: - Pieces
+
+    /// A footnote's marker: a, b, … z, then aa, bb, … as printed Bibles do.
+    nonisolated static func footnoteLabel(_ number: Int) -> String {
+        let letters = Array("abcdefghijklmnopqrstuvwxyz")
+        return String(repeating: letters[number % letters.count], count: number / letters.count + 1)
+    }
 
     /// The text up to and including its first letter (so an opening quotation
     /// mark stays with it), and the rest; nil if there's no letter. The two

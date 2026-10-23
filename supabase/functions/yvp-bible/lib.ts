@@ -16,7 +16,14 @@
 //   - the translation's own headings and psalm titles are kept; chapter
 //     labels, parallel references, verse labels and notes are left out;
 //   - poetry lines are separated by "\n"; bridged verses ("16-17") are kept
-//     on their first verse with `last`; verses with no words are left out.
+//     on their first verse with `last`; verses with no words are left out;
+//   - footnotes (requested with include_notes=true) are never part of a
+//     verse's text: each is kept apart with the verse and the character
+//     offset (UTF-16, as Swift's NSString counts) where its marker goes, so
+//     the reader can show it. The verse text is exactly what it would be
+//     without notes. A note in a heading goes at the start of the next verse.
+//     Biblica's licence requires every footnote to be included and
+//     accessible to the reader.
 
 export interface ParsedVerse {
   verse: number;
@@ -32,10 +39,18 @@ export interface ParsedHeading {
   text: string;
 }
 
+export interface ParsedNote {
+  verse: number;
+  /** Where the marker goes in the verse's text (UTF-16 offset). */
+  offset: number;
+  text: string;
+}
+
 export interface ParsedChapter {
   chapter: number;
   verses: ParsedVerse[];
   headings: ParsedHeading[];
+  notes: ParsedNote[];
 }
 
 /** The 66 books in the app's order: USFM code and the KJV's chapter count. */
@@ -56,16 +71,21 @@ export interface BookRequest {
   id: string;
   /** USFM book code, e.g. "GEN". */
   book: string;
+  /** One chapter only (the app refreshing a chapter it shows); else the whole book. */
+  chapter?: number;
 }
 
 /** The request body, or null. */
 export function parseRequest(body: unknown): BookRequest | null {
   if (!body || typeof body !== "object") return null;
-  const { id, book } = body as { id?: unknown; book?: unknown };
+  const { id, book, chapter } = body as { id?: unknown; book?: unknown; chapter?: unknown };
   // Catalog ids keep the publisher's casing ("NIrV").
   if (typeof id !== "string" || !/^[A-Za-z0-9]{2,8}$/.test(id)) return null;
   if (typeof book !== "string" || !BOOKS.some(([code]) => code === book)) return null;
-  return { id, book };
+  if (chapter === undefined || chapter === null) return { id, book };
+  // One past the KJV's count, as a whole-book request tries.
+  if (typeof chapter !== "number" || !Number.isInteger(chapter) || chapter < 1 || chapter > chapterCount(book) + 1) return null;
+  return { id, book, chapter };
 }
 
 /** How many chapters the KJV gives a book (the request tries one more). */
@@ -86,6 +106,15 @@ const PARAGRAPH_STARTS = /^(p|m|po|pi\d?|mi|pc|pr|pm|pmo|pmc|pmr|cls|li\d?|lh|q\
 const SKIPPED_CHARS = /^(yv-vlbl|yv-n|va|vp|ca|fig|note|f|fe|x|ft|fr|fq|fqa|xo|xt)$/;
 // Character styles printed in small capitals for the divine name.
 const DIVINE_NAME = /^(nd|sc)$/;
+// Footnotes (YouVersion marks them "yv-n" with the USFM style f or fe).
+// Cross references ("x") are left out, as before.
+const FOOTNOTE = /^(f|fe)$/;
+// Inside a footnote: its reference label ("1:5 ") isn't part of the note.
+const NOTE_SKIPPED = /^(fr|yv-vlbl)$/;
+// Private-use characters mark where a note sits while a verse's text is put
+// together; they're taken out before anything is returned.
+const MARK_BASE = 0xe000;
+const MARK_LIMIT = 0xf8ff;
 
 // Spaces, tabs, no-break, thin and narrow no-break spaces.
 const SPACES = /[ \t\u00A0\u2009\u202F]+/g;
@@ -178,6 +207,8 @@ interface Building {
   parts: string[];
   paragraph: boolean;
   poetry: boolean;
+  /** Notes from a heading just before this verse: at its start. */
+  leading: number[];
 }
 
 /**
@@ -189,7 +220,9 @@ export function parseChapter(chapter: number, html: string, reference = ""): Par
   const verses = new Map<number, Building>();
   const headings: ParsedHeading[] = [];
   let pendingHeadings: string[] = [];
+  let pendingHeadingNotes: number[] = [];
   let pendingText: string[] = [];
+  const noteTexts: string[] = [];
   let current: Building | null = null;
   let line: string[] = [];
   let style = "";
@@ -225,6 +258,7 @@ export function parseChapter(chapter: number, html: string, reference = ""): Par
         parts: [],
         paragraph: !blockHasText && PARAGRAPH_STARTS.test(style) && (!POETRY_PARAS.test(style) || stanzaBreak),
         poetry: false,
+        leading: [],
       };
       verses.set(first, verse);
     } else {
@@ -232,6 +266,8 @@ export function parseChapter(chapter: number, html: string, reference = ""): Par
     }
     for (const heading of pendingHeadings) headings.push({ beforeVerse: first, text: heading });
     pendingHeadings = [];
+    verse.leading.push(...pendingHeadingNotes);
+    pendingHeadingNotes = [];
     if (pendingText.length > 0) {
       verse.parts.push(...pendingText);
       pendingText = [];
@@ -277,6 +313,16 @@ export function parseChapter(chapter: number, html: string, reference = ""): Par
         block(child);
         return;
       }
+      if (isFootnote(child)) {
+        // Kept apart from the text: a mark where it sits (taken out again
+        // when the verse is finished), the note's words on their own.
+        const text = noteText(child, upper);
+        if (text && MARK_BASE + noteTexts.length <= MARK_LIMIT) {
+          line.push(String.fromCharCode(MARK_BASE + noteTexts.length));
+          noteTexts.push(text);
+        }
+        return;
+      }
       const charStyle = styleOf(child) || child.classes[0] || "";
       if (SKIPPED_CHARS.test(charStyle) || child.classes.some((c) => SKIPPED_CHARS.test(c))) return;
       inline(child, upper || child.classes.some((c) => DIVINE_NAME.test(c)));
@@ -301,6 +347,11 @@ export function parseChapter(chapter: number, html: string, reference = ""): Par
     if (SKIPPED_PARAS.test(blockStyle)) return;
     const isHeading = (HEADING_PARAS.test(blockStyle) || node.classes.includes("yv-h")) && !containsVerse(node);
     if (isHeading) {
+      for (const note of notesIn(node)) {
+        if (MARK_BASE + noteTexts.length > MARK_LIMIT) break;
+        pendingHeadingNotes.push(noteTexts.length);
+        noteTexts.push(note);
+      }
       const text = clean(textOf(node, false));
       if (text && text.toLowerCase() !== label) {
         // A verse can run on past a heading, so the verse stays open.
@@ -338,15 +389,108 @@ export function parseChapter(chapter: number, html: string, reference = ""): Par
   flushLine();
 
   const parsed: ParsedVerse[] = [];
+  const notes: ParsedNote[] = [];
+  // Notes of a verse with no words go at the start of the next one.
+  let carried: number[] = [];
   for (const verse of [...verses.values()].sort((a, b) => a.verse - b.verse)) {
-    const text = clean(verse.parts.join(verse.poetry ? "\n" : " "));
-    if (!text) continue; // a number with no words ("[37]")
+    const { text, marks } = placeMarks(verse.parts.join(verse.poetry ? "\n" : " "));
+    if (!text) {
+      // a number with no words ("[37]")
+      carried.push(...verse.leading, ...marks.map((m) => m.mark));
+      continue;
+    }
     const entry: ParsedVerse = { verse: verse.verse, text, paragraph: verse.paragraph, poetry: verse.poetry };
     if (verse.last > verse.verse) entry.last = verse.last;
     parsed.push(entry);
+    for (const mark of [...carried, ...verse.leading]) notes.push({ verse: verse.verse, offset: 0, text: noteTexts[mark] });
+    carried = [];
+    for (const { mark, offset } of marks) notes.push({ verse: verse.verse, offset, text: noteTexts[mark] });
   }
+  // Notes left after the last verse (rare) stay with it, at its end.
+  const lastVerse = parsed[parsed.length - 1];
+  if (lastVerse) for (const mark of carried) notes.push({ verse: lastVerse.verse, offset: lastVerse.text.length, text: noteTexts[mark] });
   const kept = new Set(parsed.map((v) => v.verse));
-  return { chapter, verses: parsed, headings: headings.filter((h) => kept.has(h.beforeVerse)) };
+  return { chapter, verses: parsed, headings: headings.filter((h) => kept.has(h.beforeVerse)), notes };
+}
+
+function isFootnote(node: Node): boolean {
+  return node.classes.includes("yv-n") && node.classes.some((c) => FOOTNOTE.test(c));
+}
+
+/** A footnote's words: everything but its reference label, verbatim. */
+function noteText(node: Node, upper = false): string {
+  const words = (n: Node, up: boolean): string => {
+    let out = "";
+    for (const child of n.children) {
+      if (typeof child === "string") {
+        out += up ? child.toUpperCase() : child;
+        continue;
+      }
+      if (child.classes.some((c) => NOTE_SKIPPED.test(c))) continue;
+      out += words(child, up || child.classes.some((c) => DIVINE_NAME.test(c)));
+    }
+    return out;
+  };
+  return clean(words(node, upper));
+}
+
+/** Footnotes anywhere inside a node (a heading's notes). */
+function notesIn(node: Node): string[] {
+  const found: string[] = [];
+  for (const child of node.children) {
+    if (typeof child === "string") continue;
+    if (isFootnote(child)) {
+      const text = noteText(child);
+      if (text) found.push(text);
+    } else {
+      found.push(...notesIn(child));
+    }
+  }
+  return found;
+}
+
+/**
+ * Takes the note marks out of a verse's text: the text, exactly as clean()
+ * makes it without them, and where each mark sat (UTF-16 offsets). Marks
+ * take no room: a mark between two spaces leaves one space, as the text has
+ * without it, and a mark before a word sits just before that word.
+ */
+export function placeMarks(raw: string): { text: string; marks: { mark: number; offset: number }[] } {
+  const isMark = (ch: string) => {
+    const code = ch.charCodeAt(0);
+    return code >= MARK_BASE && code <= MARK_LIMIT;
+  };
+  const expected = clean([...raw].filter((ch) => !isMark(ch)).join(""));
+  const isSpace = (ch: string) => ch === " " || ch === "\t" || ch === "\u00A0" || ch === "\u2009" || ch === "\u202F";
+  let text = "";
+  const marks: { mark: number; offset: number }[] = [];
+  for (const line of raw.split("\n")) {
+    let out = "";
+    let pendingSpace = false;
+    const lineMarks: { mark: number; at: number }[] = [];
+    for (const ch of line) {
+      if (isMark(ch)) {
+        lineMarks.push({ mark: ch.charCodeAt(0) - MARK_BASE, at: out.length + (pendingSpace && out.length > 0 ? 1 : 0) });
+      } else if (isSpace(ch)) {
+        pendingSpace = true;
+      } else {
+        if (pendingSpace && out.length > 0) out += " ";
+        pendingSpace = false;
+        out += ch;
+      }
+    }
+    // A line with no words is dropped, as clean() drops it: its marks go
+    // at the end of the text so far.
+    const base = out.length > 0 && text.length > 0 ? text.length + 1 : text.length;
+    for (const m of lineMarks) marks.push({ mark: m.mark, offset: base + Math.min(m.at, out.length) });
+    if (out.length > 0) text = text.length > 0 ? `${text}\n${out}` : out;
+  }
+  // Whitespace this doesn't model (rare): keep the text exact and put the
+  // marks at the end of the verse rather than risk a wrong place.
+  if (text !== expected) {
+    return { text: expected, marks: marks.map(({ mark }) => ({ mark, offset: expected.length })) };
+  }
+  return { text, marks };
 }
 
 /** A heading's or label's words (verse labels and notes left out). */
