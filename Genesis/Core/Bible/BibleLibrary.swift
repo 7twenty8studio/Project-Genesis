@@ -175,9 +175,12 @@ final class BibleLibrary {
             // read another Bible this time and keep it.
             if error is CryptoKitError || error is SQLiteDatabase.Failure {
                 remove(translation)
+                let other = fallback(for: translation)
+                return other.id == translation.id ? repository(for: .kjv) : repository(for: other)
             }
-            let other = fallback(for: translation)
-            return other.id == translation.id ? repository(for: .kjv) : repository(for: other)
+            // Kept: the bundled KJV this time (another locked Bible could
+            // send this round in circles).
+            return repository(for: .kjv)
         } catch {
             preconditionFailure("Could not open \(translation.id): \(error)")
         }
@@ -385,8 +388,7 @@ final class BibleLibrary {
         Task {
             defer { self.refreshing.remove(key) }
             guard let fresh = try? await YouVersionBibleBuilder(client: client).fetchChapter(id: translation.id, book: chapter.book, chapter: chapter.chapter) else { return }
-            var freshness = YouVersionFreshness.load(for: translation.id, in: folder)
-            freshness.set(book: chapter.book, chapter: chapter.chapter, fetchedAt: .now, maxAge: fresh.maxAge)
+            let fetchedAt = Date.now
             let url = folder.appending(path: item.fileName)
             let changed = await Task.detached(priority: .utility) { () -> Bool in
                 guard let current = try? stored.chapter(chapter),
@@ -396,6 +398,10 @@ final class BibleLibrary {
                       (try? BibleProtection.write(patched, to: url)) != nil else { return false }
                 return true
             }.value
+            // Loaded again just before saving, so chapters refreshed at the
+            // same time don't overwrite each other's times.
+            var freshness = YouVersionFreshness.load(for: translation.id, in: folder)
+            freshness.set(book: chapter.book, chapter: chapter.chapter, fetchedAt: fetchedAt, maxAge: fresh.maxAge)
             freshness.save(for: translation.id, in: folder)
             // Re-read only if this edition is still the one installed.
             if changed, self.installed[translation.id]?.fileName == item.fileName {
