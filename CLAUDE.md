@@ -384,7 +384,11 @@ shares; README.md has the architecture.
   for five minutes far below its hourly 10,000, and a block it gives is
   saved (`yvp_block`) so nobody asks during it. A call that can't get its
   turn within 55 s answers 429 with `retryAfter`; the app waits and carries
-  on by itself (chapters fetched so far are in the shared cache). The app builds the Bible on the device
+  on by itself (chapters fetched so far are in the shared cache). A download
+  started by the person keeps going after they leave Versely
+  (`ContinuedDownloads`, a BGContinuedProcessingTask with iOS's progress;
+  identifiers com.7twenty8studio.versely.download.* in project.yml);
+  stopped from iOS's progress, it pauses with its books kept. The app builds the Bible on the device
   (`YouVersionBibleBuilder` → `BibleFileWriter`, same schema as
   build_bibles.py plus a `footnotes` table) as a `DownloadableTranslation`
   with `youVersionID`, in memory, stored sealed (`BibleProtection`:
