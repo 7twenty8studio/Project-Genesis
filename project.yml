@@ -71,6 +71,11 @@ targets:
         # Listening carries on with the screen locked.
         UIBackgroundModes:
           - audio
+        # A YouVersion Bible keeps downloading after Versely is left, with iOS's
+        # progress (BGContinuedProcessingTask; ContinuedDownloads.swift). The
+        # suffix after "download." is the Bible's id.
+        BGTaskSchedulerPermittedIdentifiers:
+          - com.7twenty8studio.versely.download.*
         # The Lock Screen Live Activity while listening (Premium).
         NSSupportsLiveActivities: true
         # Attachments on prayers and sermon notes (Premium). Photos come

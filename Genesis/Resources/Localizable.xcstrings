@@ -4675,6 +4675,16 @@
         }
       }
     },
+    "Downloading for offline reading": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descargando para leer sin conexión"
+          }
+        }
+      }
+    },
     "Downloading · %lld of %lld books": {
       "localizations": {
         "es": {
@@ -4711,6 +4721,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Las descargas no están configuradas en esta versión."
+          }
+        }
+      }
+    },
+    "Downloads keep going": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las descargas continúan"
           }
         }
       }
@@ -7749,6 +7769,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Déjalo vacío para usar tu nombre en los grupos, o ningún nombre."
+          }
+        }
+      }
+    },
+    "Leave while a Bible downloads": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sal de la app mientras se descarga una Biblia"
           }
         }
       }
@@ -14724,6 +14754,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Empieza un desafío para leer, memorizar u orar juntos."
+          }
+        }
+      }
+    },
+    "Start a download and switch apps or lock your iPhone: it carries on, with its progress shown by iOS.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Empieza una descarga y cambia de app o bloquea tu iPhone: sigue descargándose, e iOS muestra su progreso."
           }
         }
       }

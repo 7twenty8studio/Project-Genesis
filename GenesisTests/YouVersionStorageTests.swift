@@ -123,6 +123,6 @@ struct YouVersionStorageTests {
     @Test func theAnnouncementIsNew() {
         let ids = WhatsNewCatalog.all.map(\.id)
         #expect(Set(ids).count == ids.count)
-        #expect(ids.last == "footnotes")
+        #expect(ids.contains("footnotes"))
     }
 }

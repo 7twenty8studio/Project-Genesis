@@ -26,6 +26,8 @@ final class BibleLibrary {
     /// the reader drops anything it cached from the old one.
     private(set) var editionVersion = 0
     var downloadError: String?
+    /// YouVersion downloads under way, so iOS can stop one (ContinuedDownloads).
+    @ObservationIgnored private var downloadJobs: [String: Task<Void, any Error>] = [:]
 
     /// Whether Premium Bibles (`Translation.requiresPremium`) can be read,
     /// set by RootView from the entitlement. Leaving Premium moves the reader
@@ -283,15 +285,41 @@ final class BibleLibrary {
 
     func download(_ item: DownloadableTranslation) async {
         downloadError = nil
+        guard item.youVersionID != nil else {
+            do {
+                try await install(item, allowsCellular: true)
+            } catch {
+                downloadError = error.localizedDescription
+            }
+            return
+        }
+        guard !downloading.contains(item.id) else { return }
+        // A YouVersion Bible takes minutes: it carries on after the person
+        // leaves Versely (ContinuedDownloads), and stops cleanly, keeping
+        // its books, if they stop it from iOS's progress or the time ends.
+        let id = item.id
+        let job = Task { @MainActor in try await self.install(item, allowsCellular: true) }
+        downloadJobs[id] = job
+        let continued = ContinuedDownloads.shared
+        continued.onExpire = { [weak self] expired in self?.downloadJobs[expired]?.cancel() }
+        continued.begin(id: id, title: item.translation.name, books: YouVersionBibleBuilder.savedBookCount(for: item, in: directory), of: YouVersionBibleBuilder.bookCodes.count)
+        var finished = false
         do {
-            try await install(item, allowsCellular: true)
+            try await job.value
+            finished = true
             // Lockman asks each year how many copies were distributed: an
             // anonymous count of finished downloads (rebuilds aren't counted).
-            if item.youVersionID != nil { await downloader.recordDownload(item) }
+            await downloader.recordDownload(item)
             await installPremiumToolsBible(for: item, allowsCellular: true)
+        } catch is CancellationError {
+            // Stopped from iOS's progress (or its time ran out): paused,
+            // with what it has, ready to continue.
+        } catch let error as URLError where error.code == .cancelled {
         } catch {
             downloadError = error.localizedDescription
         }
+        downloadJobs[id] = nil
+        continued.end(id: id, success: finished)
     }
 
     private func install(_ item: DownloadableTranslation, allowsCellular: Bool) async throws {
@@ -315,6 +343,7 @@ final class BibleLibrary {
             Task { @MainActor in
                 guard self.downloading.contains(id) else { return }
                 self.downloadProgress[id] = Double(books) / total
+                ContinuedDownloads.shared.update(id: id, books: books)
             }
         }
         installed[item.id] = InstalledTranslation(
