@@ -38,10 +38,15 @@ import { ageSeconds, cachePolicy, chapterCount, isFresh, type ParsedChapter, par
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const APP_KEY = Deno.env.get("YVP_APP_KEY")?.trim() ?? "";
 const API = "https://api.youversion.com/v1";
-// Chapters read at once for one book. The Platform limits requests per app
-// key (a burst of about a thousand at once was refused for five minutes),
-// and the app asks for two books at a time, so a whole Bible stays gentle.
-const CONCURRENCY = 4;
+// Chapters read at once for one book. Every request to the Platform also
+// takes a token from one pace shared by all readers (public.yvp_take_token:
+// 150 a minute): the Platform blocks bursts for five minutes even far below
+// its hourly limit (about 575 requests in 22 seconds did, 24 October 2026).
+const CONCURRENCY = 2;
+// How long one call may wait for its turn. Chapters fetched meanwhile are in
+// the shared cache, so when this runs out the app's next call (after
+// `retryAfter`) carries on from there.
+const WAIT_BUDGET_MS = 55_000;
 const admin = createClient(SUPABASE_URL, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!, {
   auth: { persistSession: false },
 });
@@ -64,6 +69,7 @@ Deno.serve(async (req) => {
   }
   if (!row) return json({ error: "This Bible isn't offered." }, 404);
 
+  const deadline = Date.now() + WAIT_BUDGET_MS;
   try {
     const count = chapterCount(request.book);
     // One past the KJV's count, in case a Bible numbers a book differently.
@@ -76,7 +82,7 @@ Deno.serve(async (req) => {
         lifetimes.set(n, hit.remaining);
         return Promise.resolve(parseChapter(n, hit.content, hit.reference));
       }
-      return fetchChapter(row.yvp_id, request.book, n, n > count, lifetimes);
+      return fetchChapter(row.yvp_id, request.book, n, n > count, lifetimes, deadline);
     }))
       .filter((c): c is ParsedChapter => c !== null && c.verses.length > 0)
       .map((c) => ({ ...c, maxAge: Math.max(0, lifetimes.get(c.chapter) ?? 0) }));
@@ -125,6 +131,27 @@ async function freshChapters(bibleID: number, book: string): Promise<Map<number,
   return fresh;
 }
 
+/**
+ * Waits for a turn to ask the Platform (one token from the shared pace).
+ * Throws RateLimited when the turn wouldn't come before `deadline`.
+ */
+async function takeTurn(deadline: number): Promise<void> {
+  for (;;) {
+    const { data, error } = await admin.rpc("yvp_take_token");
+    if (error) {
+      // Never let the pace itself stop downloads: go slowly instead.
+      console.warn("yvp-bible pace", error.message);
+      await new Promise((resolve) => setTimeout(resolve, 400));
+      return;
+    }
+    const waitSeconds = Number(data) || 0;
+    if (waitSeconds <= 0) return;
+    const waitMs = Math.ceil(waitSeconds * 1000) + Math.floor(Math.random() * 150);
+    if (Date.now() + waitMs > deadline) throw new RateLimited(Math.max(2, Math.ceil(waitSeconds)));
+    await new Promise((resolve) => setTimeout(resolve, waitMs));
+  }
+}
+
 /** Keeps a chapter response for other readers, if its Cache-Control allows. */
 async function store(bibleID: number, passage: string, response: Response, content: string, reference: string): Promise<void> {
   const policy = cachePolicy(response.headers.get("cache-control"));
@@ -139,10 +166,11 @@ async function store(bibleID: number, passage: string, response: Response, conte
 }
 
 /** One chapter, parsed; null when the Bible doesn't have it. */
-async function fetchChapter(bibleID: number, book: string, chapter: number, optional: boolean, lifetimes: Map<number, number>): Promise<ParsedChapter | null> {
+async function fetchChapter(bibleID: number, book: string, chapter: number, optional: boolean, lifetimes: Map<number, number>, deadline: number): Promise<ParsedChapter | null> {
   // Notes too: Biblica's licence requires every footnote to be included.
   const url = `${API}/bibles/${bibleID}/passages/${book}.${chapter}?format=html&include_headings=true&include_notes=true`;
   for (let attempt = 0; ; attempt++) {
+    await takeTurn(deadline);
     let response: Response;
     try {
       response = await fetch(url, { headers: { "X-YVP-App-Key": APP_KEY, Accept: "application/json" } });
@@ -161,11 +189,9 @@ async function fetchChapter(bibleID: number, book: string, chapter: number, opti
     if (response.status === 429) {
       await response.body?.cancel();
       const retryAfter = Number(response.headers.get("retry-after") ?? "60") || 60;
-      // A short pause is waited out; a long one goes back to the app.
-      if (retryAfter <= 5 && attempt < 3) {
-        await new Promise((resolve) => setTimeout(resolve, retryAfter * 1000));
-        continue;
-      }
+      // Every reader waits it out: asking during a block can prolong it.
+      const { error } = await admin.rpc("yvp_block", { p_seconds: Math.ceil(retryAfter) });
+      if (error) console.warn("yvp-bible block", error.message);
       throw new RateLimited(retryAfter);
     }
     if (response.status >= 500 && attempt < 3) {

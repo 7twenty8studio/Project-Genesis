@@ -378,7 +378,13 @@ shares; README.md has the architecture.
   `public.yvp_chapter_cache` only as long as the Platform's Cache-Control
   allows (`cachePolicy`/`isFresh` in lib.ts; "public, max-age=3600" today;
   never private/no-store/no-cache; expired rows deleted hourly), which
-  YouVersion confirmed is how caching complies. The app builds the Bible on the device
+  YouVersion confirmed is how caching complies. Every request to the Platform takes
+  a token from one pace shared by all readers (`yvp_take_token`, 150 a
+  minute, burst 20; migration 20261024000000): the Platform blocks bursts
+  for five minutes far below its hourly 10,000, and a block it gives is
+  saved (`yvp_block`) so nobody asks during it. A call that can't get its
+  turn within 55 s answers 429 with `retryAfter`; the app waits and carries
+  on by itself (chapters fetched so far are in the shared cache). The app builds the Bible on the device
   (`YouVersionBibleBuilder` → `BibleFileWriter`, same schema as
   build_bibles.py plus a `footnotes` table) as a `DownloadableTranslation`
   with `youVersionID`, in memory, stored sealed (`BibleProtection`:

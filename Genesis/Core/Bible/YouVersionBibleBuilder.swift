@@ -235,10 +235,19 @@ struct YouVersionBibleBuilder: Sendable {
         }
     }
 
-    /// One book, tried up to three times (the Platform can be briefly busy).
+    /// Seconds the server asked us to wait (its `retryAfter`), 30 if unsaid.
+    static func retryAfter(in data: Data) -> Double {
+        struct Answer: Decodable { let retryAfter: Double? }
+        let seconds = (try? JSONDecoder().decode(Answer.self, from: data))?.retryAfter ?? 30
+        return min(max(seconds, 1), 600)
+    }
+
+    /// One book, tried up to three times (the Platform can be briefly busy),
+    /// waiting its turn when the server's shared pace asks it to.
     private func fetchBook(id: String, code: String, number: Int, parts: URL, allowsCellular: Bool) async throws -> YouVersionBook {
         let body = try JSONEncoder().encode(["id": id, "book": code])
         var attempt = 0
+        var waited = 0.0
         while true {
             try Task.checkCancellation()
             attempt += 1
@@ -263,8 +272,16 @@ struct YouVersionBibleBuilder: Sendable {
                 try? BibleProtection.write(response.data, to: parts.appending(path: "\(number).json"))
                 return book
             case 429:
-                // The Platform is busy (it limits requests per app key).
-                throw TranslationDownloadError.busy
+                // Waiting for a turn: Versely's server paces every request to
+                // the Platform (shared by all readers) and says how long to
+                // wait. Chapters fetched so far are kept there, so the next
+                // call carries on. Waited out here rather than shown as an
+                // error, within limits so a download never hangs for ever.
+                let wait = Self.retryAfter(in: response.data)
+                waited += wait
+                guard wait <= 330, waited <= 20 * 60 else { throw TranslationDownloadError.busy }
+                attempt = 0
+                try await Task.sleep(for: .seconds(wait + Double.random(in: 0...2)))
             case 500...599 where attempt < 3:
                 try await Task.sleep(for: .seconds(2 * attempt))
             default:

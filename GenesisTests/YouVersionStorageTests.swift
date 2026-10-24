@@ -107,6 +107,13 @@ struct YouVersionStorageTests {
         #expect(freshness.isStale(book: 43, chapter: 2, now: fetched.addingTimeInterval(3600)))
     }
 
+    @Test func aBusyAnswerSaysHowLongToWait() {
+        #expect(YouVersionBibleBuilder.retryAfter(in: Data(#"{"error":"Busy. Try again later.","retryAfter":12}"#.utf8)) == 12)
+        #expect(YouVersionBibleBuilder.retryAfter(in: Data(#"{"error":"Busy."}"#.utf8)) == 30)
+        #expect(YouVersionBibleBuilder.retryAfter(in: Data("not json".utf8)) == 30)
+        #expect(YouVersionBibleBuilder.retryAfter(in: Data(#"{"retryAfter":0}"#.utf8)) == 1)
+    }
+
     @Test func footnoteMarkersAreLetters() {
         #expect(ChapterTextBuilder.footnoteLabel(0) == "a")
         #expect(ChapterTextBuilder.footnoteLabel(25) == "z")
