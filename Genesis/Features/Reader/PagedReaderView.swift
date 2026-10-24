@@ -31,19 +31,22 @@ struct PagedReaderView: UIViewControllerRepresentable {
         Coordinator(viewModel: viewModel)
     }
 
-    func makeUIViewController(context: Context) -> UIPageViewController {
+    func makeUIViewController(context: Context) -> ReaderPagesController {
         var options: [UIPageViewController.OptionsKey: Any] = [:]
         if pageTurn == .curl {
             options[.spineLocation] = UIPageViewController.SpineLocation.min.rawValue
         } else {
             options[.interPageSpacing] = 0
         }
-        let controller = UIPageViewController(
+        let controller = ReaderPagesController(
             transitionStyle: pageTurn == .curl ? .pageCurl : .scroll,
             navigationOrientation: .horizontal,
             options: options
         )
         controller.isDoubleSided = false
+        controller.onSizeTransition = { [weak coordinator = context.coordinator] resizing in
+            coordinator?.sizeTransition(inProgress: resizing)
+        }
         // Page curl adds its own edge-tap recognisers. Our taps already turn
         // pages (and respect left-handed mode), so keep only the drag-to-curl.
         for recognizer in controller.gestureRecognizers where recognizer is UITapGestureRecognizer {
@@ -56,7 +59,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
         return controller
     }
 
-    func updateUIViewController(_ controller: UIPageViewController, context: Context) {
+    func updateUIViewController(_ controller: ReaderPagesController, context: Context) {
         let coordinator = context.coordinator
         coordinator.leftHanded = leftHanded
         coordinator.pageTurnSound = pageTurnSound
@@ -111,10 +114,75 @@ struct PagedReaderView: UIViewControllerRepresentable {
             self.viewModel = viewModel
         }
 
+        // MARK: Waiting out size changes and page turns
+        //
+        // UIPageViewController (page curl above all) throws if its pages are
+        // replaced while it's rotating, resizing (an iPhone Duo opening or
+        // folding) or still turning a page: "No view controllers" and
+        // "insertObject:atIndex: object cannot be nil". So nothing replaces
+        // the pages then; the latest update waits and runs once it's over.
+
+        private var resizeStartedAt: Date?
+        private var turnStartedAt: Date?
+        private var pendingUpdate: (() -> Void)?
+        private var flushScheduled = false
+
+        /// A page turn under way. Not trusted for more than a second and a
+        /// half, so a missed callback can never freeze the reader.
+        private var isTurning: Bool {
+            guard let turnStartedAt else { return false }
+            return Date().timeIntervalSince(turnStartedAt) < 1.5
+        }
+
+        /// A size change under way, trusted for at most three seconds.
+        private var isResizing: Bool {
+            guard let resizeStartedAt else { return false }
+            return Date().timeIntervalSince(resizeStartedAt) < 3
+        }
+
+        private var isBusy: Bool { isResizing || isTurning }
+
+        func sizeTransition(inProgress: Bool) {
+            resizeStartedAt = inProgress ? Date() : nil
+            if !inProgress { flushPendingUpdate() }
+        }
+
+        private func turnFinished() {
+            turnStartedAt = nil
+            flushPendingUpdate()
+        }
+
+        private func flushPendingUpdate() {
+            guard pendingUpdate != nil, !flushScheduled else { return }
+            flushScheduled = true
+            // Next run loop turn, once UIKit has finished its own work.
+            Task { @MainActor [weak self] in
+                guard let self else { return }
+                self.flushScheduled = false
+                if self.isBusy {
+                    // Still busy (or a callback was missed): look again shortly.
+                    try? await Task.sleep(for: .milliseconds(300))
+                    self.flushPendingUpdate()
+                    return
+                }
+                let update = self.pendingUpdate
+                self.pendingUpdate = nil
+                update?()
+            }
+        }
+
         // MARK: Updates from SwiftUI
 
         func update(layout newLayout: ReaderLayout, navigationToken token: Int, decorationsVersion version: Int, translationID translation: String) {
             guard newLayout.pageTextSize.width > 0, newLayout.pageTextSize.height > 0 else { return }
+            if isBusy {
+                // Only the latest matters: it carries every change so far.
+                pendingUpdate = { [weak self] in
+                    self?.update(layout: newLayout, navigationToken: token, decorationsVersion: version, translationID: translation)
+                }
+                flushPendingUpdate()
+                return
+            }
 
             if newLayout != layout || translation != translationID {
                 // Size, style or translation changed: everything must re-paginate.
@@ -232,8 +300,16 @@ struct PagedReaderView: UIViewControllerRepresentable {
         }
 
         private func show(location: PageLocation, direction: UIPageViewController.NavigationDirection = .forward, animated: Bool = false) {
-            guard let page = page(at: location) ?? page(at: PageLocation(chapter: location.chapter, index: 0)) else { return }
-            pageController?.setViewControllers([page], direction: direction, animated: animated)
+            guard let pageController,
+                  let page = page(at: location) ?? page(at: PageLocation(chapter: location.chapter, index: 0)) else { return }
+            if animated {
+                turnStartedAt = Date()
+                pageController.setViewControllers([page], direction: direction, animated: true) { [weak self] _ in
+                    self?.turnFinished()
+                }
+            } else {
+                pageController.setViewControllers([page], direction: direction, animated: false)
+            }
             didSettle(on: page.location)
         }
 
@@ -279,7 +355,9 @@ struct PagedReaderView: UIViewControllerRepresentable {
 
         /// Turns one page, as a tap in the margin or a keyboard arrow does.
         func turnPage(forward: Bool) {
-            guard let current = currentLocation,
+            // One turn at a time: a second tap mid-curl is let go.
+            guard !isBusy,
+                  let current = currentLocation,
                   let target = forward ? location(after: current) : location(before: current) else { return }
             let reduceMotion = UIAccessibility.isReduceMotionEnabled
             show(location: target, direction: forward ? .forward : .reverse, animated: !reduceMotion)
@@ -332,7 +410,26 @@ struct PagedReaderView: UIViewControllerRepresentable {
 
         // MARK: UIPageViewControllerDelegate
 
+        func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+            // A page dragged by hand.
+            turnStartedAt = Date()
+        }
+
+        /// Page curl asks this as the device turns. Keep one page, spine on
+        /// the left, and give it the page already showing: left to itself,
+        /// UIPageViewController can be left with no pages and throw.
+        func pageViewController(_ pageViewController: UIPageViewController, spineLocationFor orientation: UIInterfaceOrientation) -> UIPageViewController.SpineLocation {
+            let current = pageViewController.viewControllers?.first
+                ?? page(at: currentLocation ?? PageLocation(chapter: viewModel.focusVerse.chapterID, index: 0))
+            if let current {
+                pageViewController.setViewControllers([current], direction: .forward, animated: false)
+            }
+            pageViewController.isDoubleSided = false
+            return .min
+        }
+
         func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+            defer { turnFinished() }
             // A selection survives the page turn, so verses can be gathered
             // across pages and nothing chosen is lost.
             guard completed, let location = currentLocation else { return }
@@ -343,6 +440,23 @@ struct PagedReaderView: UIViewControllerRepresentable {
             }
             hideControlsForReading()
         }
+    }
+}
+
+/// The reader's UIPageViewController, which says when its size starts and
+/// stops changing (rotating, or an iPhone Duo opening or folding), so its
+/// pages are only replaced once the change is over.
+final class ReaderPagesController: UIPageViewController {
+    var onSizeTransition: ((Bool) -> Void)?
+
+    override func viewWillTransition(to size: CGSize, with coordinator: any UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        onSizeTransition?(true)
+        let animates = coordinator.animate(alongsideTransition: nil) { [weak self] _ in
+            self?.onSizeTransition?(false)
+        }
+        // No animation: the completion may never come, so it's over now.
+        if !animates { onSizeTransition?(false) }
     }
 }
 
