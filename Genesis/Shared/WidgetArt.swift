@@ -6,6 +6,8 @@ enum WidgetArtStyle: String, CaseIterable, Codable, Sendable {
     /// Today's look: plain, or the reading theme's colours with Premium.
     case classic
     case paper, autumn, winter, spring, summer, night
+    /// A postcard: cream paper, a stamp and a postmark, drawn by the widget.
+    case vintage
     /// A photo the person chose in Versely (Settings › Widget Photo).
     case photo
 
@@ -56,7 +58,7 @@ enum WidgetArt {
 
     static func url(_ style: WidgetArtStyle, shape: WidgetArtShape) -> URL? {
         switch style {
-        case .classic: nil
+        case .classic, .vintage: nil
         case .photo: photoURL
         default: paintedURL(style, shape: shape)
         }

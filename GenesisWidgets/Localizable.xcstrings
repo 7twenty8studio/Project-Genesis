@@ -906,6 +906,16 @@
         }
       }
     },
+    "Vintage": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vintage"
+          }
+        }
+      }
+    },
     "Winter": {
       "localizations": {
         "es": {

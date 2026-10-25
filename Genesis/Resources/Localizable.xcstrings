@@ -8150,6 +8150,16 @@
         }
       }
     },
+    "Live wallpaper saved to Photos": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fondo Live guardado en Fotos"
+          }
+        }
+      }
+    },
     "Loading": {
       "localizations": {
         "es": {
@@ -8360,6 +8370,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Primero haz propietario a otra persona."
+          }
+        }
+      }
+    },
+    "Making your Live wallpaper…": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Creando tu fondo Live…"
           }
         }
       }
@@ -13332,6 +13352,16 @@
         }
       }
     },
+    "Save as Live Wallpaper": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar como fondo Live"
+          }
+        }
+      }
+    },
     "Save it to Photos to set as your wallpaper, or share it to your stories.": {
       "localizations": {
         "es": {
@@ -13647,12 +13677,12 @@
         }
       }
     },
-    "Seasons, night or your photo": {
+    "Seasons, a postcard or your photo": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Estaciones, noche o tu foto"
+            "value": "Estaciones, una postal o tu foto"
           }
         }
       }
@@ -18268,6 +18298,16 @@
         }
       }
     },
+    "Wallpapers that move": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fondos que se mueven"
+          }
+        }
+      }
+    },
     "Warm, classic serif": {
       "localizations": {
         "es": {
@@ -19064,6 +19104,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Con Premium, mezcla lluvia, olas del mar, viento, el crepitar del fuego, canto de aves y un suave fondo de adoración mientras lees y oras. Están en el lector, en Aa."
+          }
+        }
+      }
+    },
+    "With Premium, save a seasonal wallpaper as a Live Photo: leaves, petals or snow drift each time your iPhone wakes.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Premium, guarda un fondo de temporada como Live Photo: hojas, pétalos o nieve caen cada vez que se activa tu iPhone."
           }
         }
       }

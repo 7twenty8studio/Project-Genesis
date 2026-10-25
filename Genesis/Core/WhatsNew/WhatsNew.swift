@@ -57,7 +57,7 @@ enum WhatsNewCatalog {
         items: [
             WhatsNewItem(
                 systemImage: "photo.on.rectangle",
-                title: String(localized: "Seasons, night or your photo"),
+                title: String(localized: "Seasons, a postcard or your photo"),
                 detail: String(localized: "Touch and hold the verse widget, tap Edit Widget and choose a Background. Pick your photo in Settings › Widget Photo.")
             ),
         ]
@@ -71,6 +71,11 @@ enum WhatsNewCatalog {
                 systemImage: "iphone",
                 title: String(localized: "A verse on your Lock Screen"),
                 detail: String(localized: "Select a verse, tap Image and choose Lock Screen: the words sit below the clock, on paper, a season, the night sky or your own photo.")
+            ),
+            WhatsNewItem(
+                systemImage: "livephoto",
+                title: String(localized: "Wallpapers that move"),
+                detail: String(localized: "With Premium, save a seasonal wallpaper as a Live Photo: leaves, petals or snow drift each time your iPhone wakes.")
             ),
             WhatsNewItem(
                 systemImage: "square.and.arrow.down",

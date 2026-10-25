@@ -287,7 +287,14 @@ shares; README.md has the architecture.
   `WidgetArt.version` to redraw; seasonal art kept to the edges) and keeps
   the person's photo there (Settings › Widget Photo,
   `WidgetPhotoSettingsView`: ≤ 1200 px JPEG, no metadata). Pictures only:
-  the widget draws the verse over them verbatim, in `WidgetArtInk` colours.
+  the widget draws the verse over them verbatim, in `WidgetArtInk` colours. Vintage
+  (a postcard: cream stock, a stamp and postmark, ruled eyebrow, italic
+  citation) is drawn by the widget itself (`VintageBackground`).
+- Live wallpapers (`LiveWallpaperMaker`, Premium `.premiumThemes`): Lock
+  Screen + a season saves a Live Photo (2.5 s at 30 fps, 1080×2340, frames
+  of `VerseImageCanvas` with `seasonTime` moving; still and movie paired by
+  maker note 17 / content identifier + still-image-time). Not offered for
+  a YouVersion Bible's text.
 - Verse images (`VerseImageView`, free): Square, Story and Lock Screen
   (`VerseImageShape.lockScreen`, 1290×2796, the verse kept below the clock
   and above the buttons, a faint `LockScreenGuide` in the preview only,

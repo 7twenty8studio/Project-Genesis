@@ -139,6 +139,11 @@ struct VerseImageView: View {
     @State private var rendered: UIImage?
     @State private var didSetFont = false
     @State private var saveOutcome: PhotoLibrarySaver.Outcome?
+    @State private var liveProgress: Double?
+    @State private var liveSaved = false
+    @State private var premium: PremiumFeature?
+    @Environment(EntitlementService.self) private var entitlements
+    @Environment(BibleLibrary.self) private var library
     @State private var saving = false
 
     var body: some View {
@@ -233,7 +238,11 @@ struct VerseImageView: View {
                 // A wallpaper reads best centered under the clock.
                 if new == .lockScreen { options.centered = true }
             }
-            .onChange(of: rendered) { saveOutcome = nil }
+            .onChange(of: rendered) {
+                saveOutcome = nil
+                liveSaved = false
+            }
+            .premiumSheet($premium)
             .alert("Versely can't save to Photos", isPresented: Binding(
                 get: { saveOutcome == .notAllowed },
                 set: { if !$0 { saveOutcome = nil } }
@@ -284,6 +293,13 @@ struct VerseImageView: View {
         .controlSize(.large)
         .padding(.horizontal, 20)
         .overlay(alignment: .bottom) {
+            if offersLive && saveOutcome != .saved {
+                liveButton
+                    .offset(y: 40)
+            }
+        }
+        .padding(.bottom, offersLive && saveOutcome != .saved ? 36 : 0)
+        .overlay(alignment: .bottom) {
             if saveOutcome == .saved && shape == .lockScreen {
                 Text("Saved. To use it, open Settings › Wallpaper and add it from Photos.")
                     .font(.caption)
@@ -295,6 +311,56 @@ struct VerseImageView: View {
         }
         .padding(.bottom, saveOutcome == .saved && shape == .lockScreen ? 24 : 0)
         .sensoryFeedback(.success, trigger: saveOutcome) { _, now in now == .saved }
+    }
+
+    /// A Live wallpaper: the Lock Screen shape with a season to move.
+    /// Premium, and never with a YouVersion Bible's text (no Premium
+    /// feature shows it).
+    private var offersLive: Bool {
+        shape == .lockScreen && style.season != nil && !library.currentTranslation.isYouVersion
+    }
+
+    private var liveButton: some View {
+        Button {
+            guard entitlements.allows(.premiumThemes) else {
+                premium = .premiumThemes
+                return
+            }
+            Task { await saveLive() }
+        } label: {
+            HStack(spacing: 6) {
+                if let liveProgress {
+                    ProgressView(value: liveProgress)
+                        .frame(width: 60)
+                    Text("Making your Live wallpaper…")
+                } else {
+                    Image(systemName: liveSaved ? "checkmark.circle.fill" : "livephoto")
+                    Text(liveSaved ? String(localized: "Live wallpaper saved to Photos") : String(localized: "Save as Live Wallpaper"))
+                    if !entitlements.allows(.premiumThemes) { PremiumBadge() }
+                }
+            }
+            .font(.footnote.weight(.semibold))
+            .foregroundStyle(palette.accent)
+        }
+        .buttonStyle(.plain)
+        .disabled(liveProgress != nil)
+        .accessibilityIdentifier("verseImage.live")
+    }
+
+    private func saveLive() async {
+        liveSaved = false
+        liveProgress = 0
+        defer { liveProgress = nil }
+        do {
+            try await LiveWallpaperMaker.save(card: card, style: style, options: options, currentTheme: currentTheme) { value in
+                liveProgress = value
+            }
+            withAnimation(Motion.easeOut(0.2)) { liveSaved = true }
+        } catch LiveWallpaperMaker.Failure.notAllowed {
+            saveOutcome = .notAllowed
+        } catch {
+            saveOutcome = .failed
+        }
     }
 
     private var saveTitle: String {
@@ -460,6 +526,9 @@ struct VerseImageCanvas: View {
     let options: VerseImageOptions
     var photo: UIImage?
     let currentTheme: ReaderTheme
+    /// The moment of the season's motion drawn (frames of a Live wallpaper
+    /// move it on; a still image keeps the painted moment).
+    var seasonTime: TimeInterval = SeasonalEffectView.paintedMoment
 
     var body: some View {
         let theme = style.theme(reading: currentTheme)
@@ -482,7 +551,7 @@ struct VerseImageCanvas: View {
             if let season = style.season {
                 // Drawn at phone size and enlarged, so leaves and snow keep
                 // the size they have in the reader.
-                SeasonalEffectView(season: season, stillTime: 7.3)
+                SeasonalEffectView(season: season, stillTime: seasonTime)
                     .frame(width: shape.size.width / 2.5, height: shape.size.height / 2.5)
                     .scaleEffect(2.5)
                     .frame(width: shape.size.width, height: shape.size.height)
