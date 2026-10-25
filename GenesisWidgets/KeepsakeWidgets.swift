@@ -8,7 +8,8 @@ import WidgetKit
 // otherwise the reference (tapping opens the verse). Every verse is drawn
 // here, verbatim, never baked into a picture.
 //
-// Pictures come from the widget bundle (`KeepsakeImage`, generated with
+// Pictures come from the widget bundle (`KeepsakeImage`, built by
+// Tools/WidgetArt/make_keepsake.py from images generated with
 // Canva's AI, which the owner owns; never Canva library content) or the
 // person's own photo; anything missing is drawn instead, so the widget
 // always works.
@@ -278,7 +279,12 @@ struct KeepsakeWidgetView: View {
             FilmFrame(edgeMark: "12", frameMark: "12A", photo: photo ?? KeepsakeImage.beach.image)
                 .clipShape(card)
         case .typewriter:
-            picture(KeepsakeImage.sprigs.image)
+            // The machine itself in the wide large widget; baby's breath elsewhere.
+            if family == .systemLarge {
+                picture(KeepsakeImage.typewriter.image, alignment: .bottom)
+            } else {
+                picture(KeepsakeImage.sprigs.image)
+            }
         case .libraryCard:
             RubberStampMark(date: date)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -293,14 +299,14 @@ struct KeepsakeWidgetView: View {
         WidgetArtImage.load(.photo, family: family)
     }
 
-    private func picture(_ image: UIImage?) -> some View {
-        ZStack {
-            Keepsake.card
-            if let image {
-                Image(uiImage: image).resizable().scaledToFill()
+    private func picture(_ image: UIImage?, alignment: Alignment = .center) -> some View {
+        Keepsake.card
+            .overlay(alignment: alignment) {
+                if let image {
+                    Image(uiImage: image).resizable().scaledToFill()
+                }
             }
-        }
-        .clipShape(card)
+            .clipShape(card)
     }
 
     private var card: RoundedRectangle {
