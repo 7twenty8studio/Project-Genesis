@@ -269,6 +269,9 @@ struct RootView: View {
     private func refreshWidgets() {
         WidgetSnapshotWriter.applyPendingPlanDays(context: modelContext)
         WidgetSnapshotWriter.refresh(library: library, progress: progress, context: modelContext, isPremium: entitlements.isPremium, theme: settings.preferences.theme, memoriseShown: features.isOn(.memorise))
+        // The verse widget's painted backgrounds: drawn once, then only
+        // checked (WidgetArt.version redraws them after a change).
+        WidgetArtWriter.drawIfNeeded()
         // Whatever changed the widgets (reading, a plan day, Memorize, the
         // Bible) can change the week's reminders too.
         refreshReminders()

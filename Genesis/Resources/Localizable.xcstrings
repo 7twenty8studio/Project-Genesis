@@ -2476,7 +2476,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Contexto"
+            "value": "Fondo"
           }
         }
       }
@@ -3092,6 +3092,16 @@
         }
       }
     },
+    "Change Photo": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cambiar foto"
+          }
+        }
+      }
+    },
     "Change Sounds": {
       "localizations": {
         "es": {
@@ -3199,6 +3209,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hijos"
+          }
+        }
+      }
+    },
+    "Choose Photo": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elegir foto"
           }
         }
       }
@@ -3482,7 +3502,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Clásica"
+            "value": "Clásico"
           }
         }
       }
@@ -3948,6 +3968,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "No se pudo descargar"
+          }
+        }
+      }
+    },
+    "Couldn't use that photo": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo usar esa foto"
           }
         }
       }
@@ -9751,6 +9781,16 @@
         }
       }
     },
+    "No photo chosen": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No has elegido ninguna foto"
+          }
+        }
+      }
+    },
     "No prayer requests": {
       "localizations": {
         "es": {
@@ -11738,6 +11778,16 @@
         }
       }
     },
+    "Preview of the verse widget with your photo": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vista previa del widget del versículo con tu foto"
+          }
+        }
+      }
+    },
     "Preview: %@": {
       "localizations": {
         "es": {
@@ -12919,6 +12969,16 @@
         }
       }
     },
+    "Remove Photo": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar foto"
+          }
+        }
+      }
+    },
     "Remove Plan": {
       "localizations": {
         "es": {
@@ -13583,6 +13643,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Estaciones cambia el icono a lo largo del año: Otoño, Invierno, Primavera y Verano, según donde vives. El iPhone muestra un aviso breve cada vez que cambia el icono de una app."
+          }
+        }
+      }
+    },
+    "Seasons, night or your photo": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estaciones, noche o tu foto"
           }
         }
       }
@@ -17157,6 +17227,16 @@
         }
       }
     },
+    "To use it, touch and hold the verse widget on your Home Screen, tap Edit Widget and set Background to Your Photo. The photo stays on this iPhone.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para usarla, mantén pulsado el widget del versículo en tu pantalla de inicio, toca Editar widget y elige Tu foto en Fondo. La foto se queda en este iPhone."
+          }
+        }
+      }
+    },
     "Today": {
       "localizations": {
         "es": {
@@ -17335,6 +17415,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mantén pulsado el widget del versículo, toca Editar widget y elige Versículo al azar para recibir un versículo alentador nuevo cada pocas horas."
+          }
+        }
+      }
+    },
+    "Touch and hold the verse widget, tap Edit Widget and choose a Background. Pick your photo in Settings › Widget Photo.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantén pulsado el widget del versículo, toca Editar widget y elige un Fondo. Escoge tu foto en Ajustes › Foto del widget."
           }
         }
       }
@@ -18860,6 +18950,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Amplios"
+          }
+        }
+      }
+    },
+    "Widget Photo": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto del widget"
+          }
+        }
+      }
+    },
+    "Widgets with a view": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Widgets con vista"
           }
         }
       }

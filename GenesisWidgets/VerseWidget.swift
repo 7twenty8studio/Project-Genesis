@@ -30,6 +30,28 @@ enum VerseWidgetOption: String, AppEnum, CaseIterable {
     var source: VerseWidgetSource { VerseWidgetSource(rawValue: rawValue) ?? .verseOfTheDay }
 }
 
+/// The verse widget's background, as people pick it when editing the
+/// widget. Mirrors `WidgetArtStyle` (same raw values, saved in installed
+/// widgets: never change them). Everything but Classic is Premium.
+enum VerseWidgetBackground: String, AppEnum, CaseIterable {
+    case classic, paper, autumn, winter, spring, summer, night, photo
+
+    static let typeDisplayRepresentation = TypeDisplayRepresentation(name: "Background")
+
+    static let caseDisplayRepresentations: [VerseWidgetBackground: DisplayRepresentation] = [
+        .classic: DisplayRepresentation(title: "Classic"),
+        .paper: DisplayRepresentation(title: "Paper"),
+        .autumn: DisplayRepresentation(title: "Autumn"),
+        .winter: DisplayRepresentation(title: "Winter"),
+        .spring: DisplayRepresentation(title: "Spring"),
+        .summer: DisplayRepresentation(title: "Summer"),
+        .night: DisplayRepresentation(title: "Night"),
+        .photo: DisplayRepresentation(title: "Your Photo"),
+    ]
+
+    var style: WidgetArtStyle { WidgetArtStyle(rawValue: rawValue) ?? .classic }
+}
+
 /// The verse widget's settings. Widgets installed before it existed have no
 /// saved choice and get the default, the verse of the day, as before.
 struct VerseWidgetIntent: WidgetConfigurationIntent {
@@ -38,6 +60,10 @@ struct VerseWidgetIntent: WidgetConfigurationIntent {
 
     @Parameter(title: "Show", default: .verseOfTheDay)
     var option: VerseWidgetOption
+
+    /// Widgets installed before backgrounds existed keep the Classic look.
+    @Parameter(title: "Background", default: .classic)
+    var background: VerseWidgetBackground
 
     init() {}
 }
@@ -48,6 +74,7 @@ struct VerseEntry: TimelineEntry {
     let date: Date
     let snapshot: WidgetSnapshot
     let source: VerseWidgetSource
+    var background: WidgetArtStyle = .classic
 }
 
 /// The verse of the day changes at midnight; Random Verse and the categories
@@ -59,14 +86,15 @@ struct VerseProvider: AppIntentTimelineProvider {
 
     func snapshot(for configuration: VerseWidgetIntent, in context: Context) async -> VerseEntry {
         let snapshot = context.isPreview ? .placeholder : (WidgetSnapshot.load() ?? .placeholder)
-        return VerseEntry(date: .now, snapshot: snapshot, source: configuration.option.source)
+        return VerseEntry(date: .now, snapshot: snapshot, source: configuration.option.source, background: configuration.background.style)
     }
 
     func timeline(for configuration: VerseWidgetIntent, in context: Context) async -> Timeline<VerseEntry> {
         let snapshot = WidgetSnapshot.load() ?? .placeholder
         let source = configuration.option.source
         let dates = VerseWidgetSchedule.entryDates(rotates: source.rotates, from: .now)
-        return Timeline(entries: dates.map { VerseEntry(date: $0, snapshot: snapshot, source: source) }, policy: .atEnd)
+        let background = configuration.background.style
+        return Timeline(entries: dates.map { VerseEntry(date: $0, snapshot: snapshot, source: source, background: background) }, policy: .atEnd)
     }
 }
 
@@ -97,14 +125,24 @@ struct DailyVerseView: View {
             PremiumLockedView(message: String(localized: "Larger verse widgets come with Versely Premium."), symbol: "text.quote")
         } else if !WidgetAccess.isUnlocked(entry.source, size: WidgetSize(family), isPremium: isPremium) {
             PremiumLockedView(message: lockedMessage, symbol: entry.source == .fromYourReading ? "book.pages" : "sparkles")
+        } else if art.needsPremium && !isPremium {
+            PremiumLockedView(message: String(localized: "Photo and seasonal backgrounds come with Versely Premium."), symbol: "photo")
+        } else if art == .photo && WidgetArtImage.load(.photo, family: family) == nil {
+            PremiumLockedView(message: String(localized: "Choose your photo in Versely: Settings › Widget Photo."), symbol: "photo.badge.plus")
         } else {
             VerseContentView(
                 passage: entry.snapshot.passage(for: entry.source, on: entry.date),
                 title: title,
                 colors: WidgetColors(entry.snapshot),
-                family: family
+                family: family,
+                art: art
             )
         }
+    }
+
+    /// The chosen background; the Lock Screen's widgets have none.
+    private var art: WidgetArtStyle {
+        WidgetSize(family).isAccessory ? .classic : entry.background
     }
 
     private var lockedMessage: String {
@@ -138,11 +176,18 @@ private struct VerseContentView: View {
     let title: String
     let colors: WidgetColors
     let family: WidgetFamily
+    var art: WidgetArtStyle = .classic
 
     var body: some View {
         content
             .containerBackground(for: .widget) {
-                if WidgetSize(family).isAccessory { Color.clear } else { WidgetBackground(colors: colors) }
+                if WidgetSize(family).isAccessory {
+                    Color.clear
+                } else if art != .classic, let image = WidgetArtImage.load(art, family: family) {
+                    WidgetArtBackground(image: image, style: art)
+                } else {
+                    WidgetBackground(colors: colors)
+                }
             }
             .widgetURL(passage.map { GenesisLink.read($0.verse) })
     }
@@ -187,19 +232,28 @@ private struct VerseContentView: View {
 
     private var homeScreen: some View {
         VStack(alignment: .leading, spacing: family == .systemSmall ? 6 : 10) {
-            Eyebrow(text: title, color: colors.accent)
+            Eyebrow(text: title, color: ink.accent)
             Text(passage?.text ?? "")
                 .font(.system(textStyle, design: .serif))
                 .lineSpacing(family == .systemSmall ? 1 : 3)
-                .foregroundStyle(colors.text)
+                .foregroundStyle(ink.text)
                 .minimumScaleFactor(0.6)
+                .shadow(color: art.isDark ? .black.opacity(0.35) : .clear, radius: 3, y: 1)
             Spacer(minLength: 0)
             Text(citation)
                 .font(.caption2.weight(.semibold))
-                .foregroundStyle(colors.secondary)
+                .foregroundStyle(ink.secondary)
                 .lineLimit(1)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    /// The theme's colours, or ones chosen for the background's art.
+    private var ink: (text: Color, secondary: Color, accent: Color) {
+        if art == .classic || WidgetArtImage.load(art, family: family) == nil {
+            return (colors.text, colors.secondary, colors.accent)
+        }
+        return WidgetArtInk.colors(for: art)
     }
 
     private var textStyle: Font.TextStyle {
@@ -214,5 +268,63 @@ private struct VerseContentView: View {
     private var citation: String {
         guard let passage else { return "" }
         return passage.reference + " \u{00B7} " + passage.translation
+    }
+}
+
+// MARK: - Backgrounds with pictures
+
+/// The background picture for a widget size, from the App Group (drawn by
+/// the app, or the person's photo).
+enum WidgetArtImage {
+    static func shape(for family: WidgetFamily) -> WidgetArtShape {
+        switch family {
+        case .systemSmall: .small
+        case .systemMedium: .medium
+        default: .large
+        }
+    }
+
+    static func load(_ style: WidgetArtStyle, family: WidgetFamily) -> UIImage? {
+        WidgetArt.url(style, shape: shape(for: family)).flatMap { UIImage(contentsOfFile: $0.path) }
+    }
+}
+
+/// The picture filling the widget; a photo gets a soft shade, darker toward
+/// the bottom, so white words read on any photo.
+private struct WidgetArtBackground: View {
+    let image: UIImage
+    let style: WidgetArtStyle
+
+    var body: some View {
+        ZStack {
+            Image(uiImage: image)
+                .resizable()
+                .scaledToFill()
+            if style == .photo {
+                LinearGradient(colors: [.black.opacity(0.28), .black.opacity(0.42), .black.opacity(0.62)], startPoint: .top, endPoint: .bottom)
+            }
+        }
+        .accessibilityHidden(true)
+    }
+}
+
+/// Ink for each background: the season's own colours on the light art,
+/// white and soft gold on the night sky and photos.
+enum WidgetArtInk {
+    static func colors(for style: WidgetArtStyle) -> (text: Color, secondary: Color, accent: Color) {
+        switch style {
+        case .night, .photo:
+            (.white, .white.opacity(0.78), Color(light: 0xE8D3A2, dark: 0xE8D3A2))
+        case .autumn:
+            (Color(light: 0x36291F, dark: 0x36291F), Color(light: 0x80695A, dark: 0x80695A), Color(light: 0xA65F34, dark: 0xA65F34))
+        case .winter:
+            (Color(light: 0x262C33, dark: 0x262C33), Color(light: 0x6E7782, dark: 0x6E7782), Color(light: 0x5D7A8E, dark: 0x5D7A8E))
+        case .spring:
+            (Color(light: 0x2F2A2B, dark: 0x2F2A2B), Color(light: 0x7C7072, dark: 0x7C7072), Color(light: 0xA86F7E, dark: 0xA86F7E))
+        case .summer:
+            (Color(light: 0x2C2B25, dark: 0x2C2B25), Color(light: 0x76725F, dark: 0x76725F), Color(light: 0x4E8481, dark: 0x4E8481))
+        case .paper, .classic:
+            (Color(light: 0x2B2A27, dark: 0x2B2A27), Color(light: 0x7D776B, dark: 0x7D776B), Color(light: 0xA8844E, dark: 0xA8844E))
+        }
     }
 }

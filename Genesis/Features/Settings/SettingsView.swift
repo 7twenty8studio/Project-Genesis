@@ -57,6 +57,25 @@ struct SettingsView: View {
                             Label("App Icon", systemImage: "app.badge")
                         }
                         .accessibilityIdentifier("settings.appIcon")
+                        if entitlements.allows(.widgets) {
+                            NavigationLink {
+                                WidgetPhotoSettingsView()
+                            } label: {
+                                Label("Widget Photo", systemImage: "photo.on.rectangle")
+                            }
+                            .accessibilityIdentifier("settings.widgetPhoto")
+                        } else {
+                            Button {
+                                premium = .widgets
+                            } label: {
+                                HStack {
+                                    Label("Widget Photo", systemImage: "photo.on.rectangle")
+                                    Spacer()
+                                    PremiumBadge()
+                                }
+                            }
+                            .accessibilityIdentifier("settings.widgetPhoto")
+                        }
                     }
                     .listRowBackground(palette.surface)
                     .foregroundStyle(palette.text)

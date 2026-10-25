@@ -279,6 +279,15 @@ shares; README.md has the architecture.
   Tools/WidgetData/check_verse_categories.py and VerseWidgetTests. From Your
   Reading picks from `ReadingProgress.recentChapters` (last 7 days) a verse
   that's a whole sentence of 60–220 characters (`ReadingVersePicker`).
+- Verse widget backgrounds (`VerseWidgetIntent.background`, mirroring
+  `WidgetArtStyle`; Classic, the default, is today's look and free; Paper,
+  the seasons, Night and Your Photo are Premium, a locked card otherwise).
+  The app draws the painted ones once into the App Group
+  (`WidgetArtWriter.drawIfNeeded` from RootView's widget refresh; bump
+  `WidgetArt.version` to redraw; seasonal art kept to the edges) and keeps
+  the person's photo there (Settings › Widget Photo,
+  `WidgetPhotoSettingsView`: ≤ 1200 px JPEG, no metadata). Pictures only:
+  the widget draws the verse over them verbatim, in `WidgetArtInk` colours.
 - Verse images (`VerseImageView`, free): Square, Story and Lock Screen
   (`VerseImageShape.lockScreen`, 1290×2796, the verse kept below the clock
   and above the buttons, a faint `LockScreenGuide` in the preview only,

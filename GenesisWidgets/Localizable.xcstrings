@@ -101,6 +101,26 @@
         }
       }
     },
+    "Autumn": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otoño"
+          }
+        }
+      }
+    },
+    "Background": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fondo"
+          }
+        }
+      }
+    },
     "Begin Reading": {
       "localizations": {
         "es": {
@@ -127,6 +147,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Elige qué versículo muestra el widget."
+          }
+        }
+      }
+    },
+    "Choose your photo in Versely: Settings › Widget Photo.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige tu foto en Versely: Ajustes › Foto del widget."
+          }
+        }
+      }
+    },
+    "Classic": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clásico"
           }
         }
       }
@@ -434,6 +474,16 @@
         }
       }
     },
+    "Night": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noche"
+          }
+        }
+      }
+    },
     "No reminder set": {
       "localizations": {
         "es": {
@@ -474,6 +524,16 @@
         }
       }
     },
+    "Paper": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Papel"
+          }
+        }
+      }
+    },
     "Pause": {
       "localizations": {
         "es": {
@@ -490,6 +550,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Paz"
+          }
+        }
+      }
+    },
+    "Photo and seasonal backgrounds come with Versely Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los fondos de foto y de temporada vienen con Versely Premium."
           }
         }
       }
@@ -665,6 +735,16 @@
         }
       }
     },
+    "Spring": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primavera"
+          }
+        }
+      }
+    },
     "Start a reading plan in Versely to see today's reading here.": {
       "localizations": {
         "es": {
@@ -681,6 +761,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Fortaleza"
+          }
+        }
+      }
+    },
+    "Summer": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verano"
           }
         }
       }
@@ -816,12 +906,32 @@
         }
       }
     },
+    "Winter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invierno"
+          }
+        }
+      }
+    },
     "You": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Tú"
+          }
+        }
+      }
+    },
+    "Your Photo": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu foto"
           }
         }
       }
