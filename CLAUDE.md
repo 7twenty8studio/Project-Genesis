@@ -682,7 +682,12 @@ shares; README.md has the architecture.
   pt, 32 pt to 15% of the width) turns the page; anything else (running
   head, page number, blank space) toggles the controls. A selection
   survives page turns (edge taps, swipes, into the next chapter); the
-  selection bar swipes down to clear it. UI tests use
+  selection bar is one row (`SelectionActionBar`: the three
+  most recent colors, `RecentHighlightColors`, then every action as tiles
+  that slide sideways); swipe up (or "Swipe up for more") opens the full
+  panel, swipe down closes it and, from the row, clears the selection. The
+  reference and × sit at the top (`SelectionReferenceBar`). Scroll reading
+  keeps the selected verses above the bar (`bottomObstruction`). UI tests use
   `Genesis.tapPageTop` for the controls and `Genesis.tapVerse` to select.
 - Don't put `.accessibilityIdentifier` on a container whose children have
   their own identifiers (SwiftUI passes it down and replaces theirs).

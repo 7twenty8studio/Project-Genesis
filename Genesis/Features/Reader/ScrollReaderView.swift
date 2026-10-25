@@ -10,6 +10,9 @@ struct ScrollReaderView: UIViewRepresentable {
     let decorationsVersion: Int
     let translationID: String
     let chapterID: ChapterID
+    /// How much of the bottom the selection bar covers (0 when nothing is
+    /// selected): the selected verses are kept above it.
+    var bottomObstruction: CGFloat = 0
 
     func makeCoordinator() -> Coordinator {
         Coordinator(viewModel: viewModel)
@@ -35,6 +38,7 @@ struct ScrollReaderView: UIViewRepresentable {
     }
 
     func updateUIView(_ textView: ReaderTextView, context: Context) {
+        context.coordinator.setObstruction(bottomObstruction)
         context.coordinator.update(
             layout: layout,
             chapterID: chapterID,
@@ -55,6 +59,7 @@ struct ScrollReaderView: UIViewRepresentable {
         private var decorationsVersion = -1
         private var translationID = ""
         private var followedVerse: VerseID?
+        private var obstruction: CGFloat = 0
 
         init(viewModel: ReaderViewModel) {
             self.viewModel = viewModel
@@ -93,6 +98,7 @@ struct ScrollReaderView: UIViewRepresentable {
                 textView.layoutIfNeeded()
                 textView.setContentOffset(offset, animated: false)
                 keepPlayingVerseVisible()
+                keepSelectionVisible()
                 return
             }
 
@@ -100,6 +106,38 @@ struct ScrollReaderView: UIViewRepresentable {
             textView.layoutIfNeeded()
             let target = previousVerse ?? viewModel.focusVerse
             scroll(to: target, animated: false)
+        }
+
+        /// The selection bar's height: room below the text while it shows, so
+        /// the last verses can scroll above it.
+        func setObstruction(_ height: CGFloat) {
+            guard let textView, abs(height - obstruction) > 0.5 else { return }
+            let appeared = obstruction == 0 && height > 0
+            obstruction = height
+            textView.contentInset.bottom = height
+            textView.verticalScrollIndicatorInsets.bottom = height
+            if appeared || height > 0 { keepSelectionVisible() }
+        }
+
+        /// Scrolls just enough that the last selected verse ends above the
+        /// selection bar, without pushing the first one off the top.
+        private func keepSelectionVisible() {
+            guard let textView, let built, obstruction > 0 else { return }
+            let selected = viewModel.selection.filter { $0.chapterID == built.chapter.id }
+            guard let first = selected.min(), let last = selected.max(),
+                  let firstStart = built.verseOffsets[first], let lastStart = built.verseOffsets[last] else { return }
+            let nextStart = built.verseOffsets.values.filter { $0 > lastStart }.min() ?? built.text.length
+            let lastCharacter = min(max(lastStart, nextStart - 1), built.text.length - 1)
+            guard lastCharacter >= 0 else { return }
+            let lineHeight = (layout?.style.fontSize ?? 18) * 1.8
+            let bottom = textView.yOffset(ofCharacter: lastCharacter) + lineHeight
+            let visibleBottom = textView.contentOffset.y + textView.bounds.height - obstruction - 12
+            guard bottom > visibleBottom else { return }
+            let firstTop = textView.yOffset(ofCharacter: firstStart) - 12
+            let maxY = max(0, textView.contentSize.height + obstruction - textView.bounds.height)
+            let target = min(textView.contentOffset.y + bottom - visibleBottom, firstTop, maxY)
+            guard target > textView.contentOffset.y else { return }
+            textView.setContentOffset(CGPoint(x: 0, y: target), animated: !UIAccessibility.isReduceMotionEnabled)
         }
 
         /// Listening with follow-along: scroll when the verse being read is off screen.

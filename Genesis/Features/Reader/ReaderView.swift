@@ -28,6 +28,8 @@ struct ReaderView: View {
     @AppStorage("youVersion.noteShown") private var youVersionNoteShown = false
     /// "Added to Memorise", shown briefly.
     @State private var confirmation: String?
+    /// The selection bar's height above the bottom edge (scroll reading keeps the selection above it).
+    @State private var selectionBarHeight: CGFloat = 0
     @State private var showsCompanion = true
     @State private var companionMode: CompanionPanel.Mode = .notes
     /// Read from the window once it exists; nil until then so text is laid
@@ -169,6 +171,8 @@ struct ReaderView: View {
                         onStudy: studyResourcesAction
                     )
                     .padding(.bottom, readerSafeArea.bottom + 8)
+                    // Scroll reading keeps the selected verses above it.
+                    .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { selectionBarHeight = $0 }
                     .frame(maxHeight: .infinity, alignment: .bottom)
                     .transition(.rise)
                 }
@@ -198,6 +202,14 @@ struct ReaderView: View {
                     .padding(.top, max(4, readerSafeArea.top + controlsTopClearance - overlay.safeAreaInsets.top))
                     .frame(maxHeight: .infinity, alignment: .top)
                     .transition(.opacity)
+                }
+                if reader.isSelecting {
+                    // The reference and × at the top, where the controls
+                    // were, so the bar along the bottom stays one row.
+                    SelectionReferenceBar()
+                        .padding(.top, max(4, readerSafeArea.top + controlsTopClearance - overlay.safeAreaInsets.top))
+                        .frame(maxHeight: .infinity, alignment: .top)
+                        .transition(.opacity)
                 }
                 if reader.showsControls && !reader.isSelecting && !audio.isActive && !ambient.showsControls {
                     TipView(GenesisTips.highlight)
@@ -278,7 +290,8 @@ struct ReaderView: View {
                 navigationToken: reader.navigationToken,
                 decorationsVersion: reader.decorationsVersion,
                 translationID: reader.translation.id,
-                chapterID: reader.chapterID
+                chapterID: reader.chapterID,
+                bottomObstruction: reader.isSelecting ? selectionBarHeight : 0
             )
         }
     }

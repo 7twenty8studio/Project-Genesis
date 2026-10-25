@@ -8829,6 +8829,16 @@
         }
       }
     },
+    "More Colors": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más colores"
+          }
+        }
+      }
+    },
     "More Words": {
       "comment": "Memorize: show a few more words of the verse",
       "localizations": {
@@ -8856,6 +8866,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Más de %@"
+          }
+        }
+      }
+    },
+    "More page, less bar": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Más página, menos barra"
           }
         }
       }
@@ -10243,6 +10263,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Faltar un día a la semana ya no rompe tu racha."
+          }
+        }
+      }
+    },
+    "One row of actions": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una sola fila de acciones"
           }
         }
       }
@@ -15276,6 +15306,16 @@
         }
       }
     },
+    "Swipe up for more": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desliza hacia arriba para ver más"
+          }
+        }
+      }
+    },
     "Switch off anything you don't use": {
       "localizations": {
         "es": {
@@ -18487,6 +18527,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cuando haya versículos listos para repasar."
+          }
+        }
+      }
+    },
+    "When you select a verse, your favorite colors and every action sit in one row, so the verses below stay in view. Slide it sideways, or swipe up for everything.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Al seleccionar un versículo, tus colores favoritos y todas las acciones caben en una fila, así los versículos de abajo siguen a la vista. Deslízala de lado o hacia arriba para verlo todo."
           }
         }
       }

@@ -27,7 +27,7 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar]
 
     static let notifications = WhatsNewAnnouncement(
         id: "notifications-your-way",
@@ -47,6 +47,18 @@ enum WhatsNewCatalog {
                 systemImage: "bell.slash",
                 title: String(localized: "You're in control"),
                 detail: String(localized: "Choose each kind and its time, or turn them all off, in Settings › Notifications.")
+            ),
+        ]
+    )
+
+    static let slimSelectionBar = WhatsNewAnnouncement(
+        id: "slim-selection-bar",
+        title: String(localized: "More page, less bar"),
+        items: [
+            WhatsNewItem(
+                systemImage: "rectangle.bottomthird.inset.filled",
+                title: String(localized: "One row of actions"),
+                detail: String(localized: "When you select a verse, your favorite colors and every action sit in one row, so the verses below stay in view. Slide it sideways, or swipe up for everything.")
             ),
         ]
     )
