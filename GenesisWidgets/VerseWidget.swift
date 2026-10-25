@@ -35,6 +35,7 @@ enum VerseWidgetOption: String, AppEnum, CaseIterable {
 /// widgets: never change them). Everything but Classic is Premium.
 enum VerseWidgetBackground: String, AppEnum, CaseIterable {
     case classic, paper, autumn, winter, spring, summer, night, photo, vintage
+    case instantPhoto, pressedFlowers, filmStrip, typewriter, libraryCard, calendarPage
 
     static let typeDisplayRepresentation = TypeDisplayRepresentation(name: "Background")
 
@@ -48,6 +49,12 @@ enum VerseWidgetBackground: String, AppEnum, CaseIterable {
         .night: DisplayRepresentation(title: "Night"),
         .photo: DisplayRepresentation(title: "Your Photo"),
         .vintage: DisplayRepresentation(title: "Vintage"),
+        .instantPhoto: DisplayRepresentation(title: "Instant Photo"),
+        .pressedFlowers: DisplayRepresentation(title: "Pressed Flowers"),
+        .filmStrip: DisplayRepresentation(title: "Film Strip"),
+        .typewriter: DisplayRepresentation(title: "Typewriter"),
+        .libraryCard: DisplayRepresentation(title: "Library Card"),
+        .calendarPage: DisplayRepresentation(title: "Calendar Page"),
     ]
 
     var style: WidgetArtStyle { WidgetArtStyle(rawValue: rawValue) ?? .classic }
@@ -136,7 +143,9 @@ struct DailyVerseView: View {
                 title: title,
                 colors: WidgetColors(entry.snapshot),
                 family: family,
-                art: art
+                art: art,
+                date: entry.date,
+                isVerseOfTheDay: entry.source == .verseOfTheDay
             )
         }
     }
@@ -178,12 +187,16 @@ private struct VerseContentView: View {
     let colors: WidgetColors
     let family: WidgetFamily
     var art: WidgetArtStyle = .classic
+    var date: Date = .now
+    var isVerseOfTheDay = true
 
     var body: some View {
         content
             .containerBackground(for: .widget) {
                 if WidgetSize(family).isAccessory {
                     Color.clear
+                } else if art.isKeepsake {
+                    KeepsakeBackground()
                 } else if art == .vintage {
                     VintageBackground(showsStamp: family != .systemSmall)
                 } else if art != .classic, let image = WidgetArtImage.load(art, family: family) {
@@ -203,7 +216,13 @@ private struct VerseContentView: View {
         case .accessoryRectangular:
             lockScreen
         default:
-            if art == .vintage { vintage } else { homeScreen }
+            if art.isKeepsake {
+                KeepsakeWidgetView(style: art, passage: passage, title: title, family: family, date: date, isVerseOfTheDay: isVerseOfTheDay)
+            } else if art == .vintage {
+                vintage
+            } else {
+                homeScreen
+            }
         }
     }
 
@@ -293,7 +312,7 @@ private struct VerseContentView: View {
 
     /// The theme's colours, or ones chosen for the background's art.
     private var ink: (text: Color, secondary: Color, accent: Color) {
-        if art == .vintage { return WidgetArtInk.colors(for: .vintage) }
+        if art == .vintage || art.isKeepsake { return WidgetArtInk.colors(for: art) }
         if art == .classic || WidgetArtImage.load(art, family: family) == nil {
             return (colors.text, colors.secondary, colors.accent)
         }
@@ -369,6 +388,8 @@ enum WidgetArtInk {
             (Color(light: 0x2C2B25, dark: 0x2C2B25), Color(light: 0x76725F, dark: 0x76725F), Color(light: 0x4E8481, dark: 0x4E8481))
         case .vintage:
             (Color(light: 0x2E2A26, dark: 0x2E2A26), Color(light: 0x6F675C, dark: 0x6F675C), Color(light: 0x9B2C2C, dark: 0x9B2C2C))
+        case .instantPhoto, .pressedFlowers, .filmStrip, .typewriter, .libraryCard, .calendarPage:
+            (Color(light: 0x5D5B55, dark: 0x5D5B55), Color(light: 0x80825B, dark: 0x80825B), Color(light: 0x80825B, dark: 0x80825B))
         case .paper, .classic:
             (Color(light: 0x2B2A27, dark: 0x2B2A27), Color(light: 0x7D776B, dark: 0x7D776B), Color(light: 0xA8844E, dark: 0xA8844E))
         }

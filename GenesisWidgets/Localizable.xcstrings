@@ -141,6 +141,16 @@
         }
       }
     },
+    "Calendar Page": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoja de calendario"
+          }
+        }
+      }
+    },
     "Choose which verse the widget shows.": {
       "localizations": {
         "es": {
@@ -251,12 +261,32 @@
         }
       }
     },
+    "Due for Today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para hoy"
+          }
+        }
+      }
+    },
     "Faith": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Fe"
+          }
+        }
+      }
+    },
+    "Film Strip": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tira de película"
           }
         }
       }
@@ -332,6 +362,16 @@
         }
       }
     },
+    "Instant Photo": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto instantánea"
+          }
+        }
+      }
+    },
     "John 3": {
       "comment": "Bible reference: the Gospel of John, chapter 3",
       "localizations": {
@@ -370,6 +410,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Los widgets de versículo más grandes vienen con Versely Premium."
+          }
+        }
+      }
+    },
+    "Library Card": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ficha de biblioteca"
           }
         }
       }
@@ -654,6 +704,16 @@
         }
       }
     },
+    "Pressed Flowers": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flores prensadas"
+          }
+        }
+      }
+    },
     "Psalms 119:105": {
       "comment": "Bible reference",
       "localizations": {
@@ -852,6 +912,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Estudio bíblico del martes"
+          }
+        }
+      }
+    },
+    "Typewriter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Máquina de escribir"
           }
         }
       }

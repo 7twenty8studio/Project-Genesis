@@ -7549,6 +7549,16 @@
         }
       }
     },
+    "Keepsake widgets": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Widgets de recuerdo"
+          }
+        }
+      }
+    },
     "Key term": {
       "comment": "Kind of study article",
       "localizations": {
@@ -14571,6 +14581,16 @@
         }
       }
     },
+    "Six new looks for your verse": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seis nuevos estilos para tu versículo"
+          }
+        }
+      }
+    },
     "Sketch your sermon notes with Apple Pencil.": {
       "localizations": {
         "es": {
@@ -19064,6 +19084,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Con Premium, los capítulos pueden empezar con una letra iluminada, en uno de tres nuevos tipos de letra."
+          }
+        }
+      }
+    },
+    "With Premium, choose Instant Photo, Pressed Flowers, Film Strip, Typewriter, Library Card or Calendar Page as the verse widget's Background.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Premium, elige Foto instantánea, Flores prensadas, Tira de película, Máquina de escribir, Ficha de biblioteca u Hoja de calendario como fondo del widget de versículo."
           }
         }
       }

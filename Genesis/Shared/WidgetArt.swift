@@ -8,10 +8,22 @@ enum WidgetArtStyle: String, CaseIterable, Codable, Sendable {
     case paper, autumn, winter, spring, summer, night
     /// A postcard: cream paper, a stamp and a postmark, drawn by the widget.
     case vintage
+    /// The keepsake set (after the owner's Canva mockups): light linen and
+    /// cream cards, drawn by the widget with bundled pictures
+    /// (`KeepsakeWidgets.swift`; images generated in Canva's AI, which the
+    /// owner owns, never Canva library content).
+    case instantPhoto, pressedFlowers, filmStrip, typewriter, libraryCard, calendarPage
     /// A photo the person chose in Versely (Settings › Widget Photo).
     case photo
 
     var needsPremium: Bool { self != .classic }
+
+    var isKeepsake: Bool {
+        switch self {
+        case .instantPhoto, .pressedFlowers, .filmStrip, .typewriter, .libraryCard, .calendarPage: true
+        default: false
+        }
+    }
 
     /// Words go in light ink on these (dark art or a shaded photo).
     var isDark: Bool { self == .night || self == .photo }
@@ -58,7 +70,7 @@ enum WidgetArt {
 
     static func url(_ style: WidgetArtStyle, shape: WidgetArtShape) -> URL? {
         switch style {
-        case .classic, .vintage: nil
+        case .classic, .vintage, .instantPhoto, .pressedFlowers, .filmStrip, .typewriter, .libraryCard, .calendarPage: nil
         case .photo: photoURL
         default: paintedURL(style, shape: shape)
         }

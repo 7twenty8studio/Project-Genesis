@@ -290,6 +290,14 @@ shares; README.md has the architecture.
   the widget draws the verse over them verbatim, in `WidgetArtInk` colours. Vintage
   (a postcard: cream stock, a stamp and postmark, ruled eyebrow, italic
   citation) is drawn by the widget itself (`VintageBackground`).
+  Keepsakes (Premium; `WidgetArtStyle.isKeepsake`, GenesisWidgets/KeepsakeWidgets.swift):
+  Instant Photo, Pressed Flowers, Film Strip, Typewriter, Library Card and
+  Calendar Page, after the owner's light Canva mockups (linen, cream cards,
+  sage/terracotta, EB Garamond bundled in the widget via UIAppFonts, the
+  system American Typewriter). Pictures are `KeepsakeImage` JPEGs in the
+  widget bundle, generated with Canva's AI (owned by the owner; keep their
+  C2PA metadata); Instant Photo and Film Strip use Your Photo first.
+  Anything missing is drawn. Never ship Canva library content or Canva fonts.
 - Live wallpapers (`LiveWallpaperMaker`, Premium `.premiumThemes`): Lock
   Screen + a season saves a Live Photo (2.5 s at 30 fps, 1080×2340, frames
   of `VerseImageCanvas` with `seasonTime` moving; still and movie paired by

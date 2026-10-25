@@ -151,6 +151,12 @@ targets:
       - path: Genesis/Shared
       - path: Config/Privacy/GenesisWidgets/PrivacyInfo.xcprivacy
         buildPhase: resources
+      - path: Genesis/Resources/Fonts/EBGaramond-Regular.ttf
+        buildPhase: resources
+      - path: Genesis/Resources/Fonts/EBGaramond-Italic.ttf
+        buildPhase: resources
+      - path: Genesis/Resources/Fonts/EBGaramond-OFL.txt
+        buildPhase: resources
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.versely.widgets
@@ -165,6 +171,9 @@ targets:
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         CFBundleDevelopmentRegion: en
         CFBundleLocalizations: [en, es]
+        UIAppFonts:
+          - EBGaramond-Regular.ttf
+          - EBGaramond-Italic.ttf
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
 
