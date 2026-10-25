@@ -279,6 +279,13 @@ shares; README.md has the architecture.
   Tools/WidgetData/check_verse_categories.py and VerseWidgetTests. From Your
   Reading picks from `ReadingProgress.recentChapters` (last 7 days) a verse
   that's a whole sentence of 60–220 characters (`ReadingVersePicker`).
+- Verse images (`VerseImageView`, free): Square, Story and Lock Screen
+  (`VerseImageShape.lockScreen`, 1290×2796, the verse kept below the clock
+  and above the buttons, a faint `LockScreenGuide` in the preview only,
+  seasonal art kept to the sides). Save to Photos (`PhotoLibrarySaver`,
+  add-only, NSPhotoLibraryAddUsageDescription) and Instagram Stories
+  (`InstagramStories`: Meta's pasteboard + instagram-stories:// URL, shown
+  only when GENESIS_FACEBOOK_APP_ID is set and Instagram is installed).
 - Year in Review: free shares one card; with `.readingInsights`, up to three.
 
 ## Memorise Scripture

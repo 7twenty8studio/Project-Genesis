@@ -88,13 +88,14 @@ struct VerseImageOptions: Equatable {
 }
 
 enum VerseImageShape: String, CaseIterable, Identifiable {
-    case square, story
+    case square, story, lockScreen
 
     var id: String { rawValue }
     var title: String {
         switch self {
         case .square: String(localized: "Square", comment: "Verse image shape")
         case .story: String(localized: "Story", comment: "Verse image shape: tall, for stories")
+        case .lockScreen: String(localized: "Lock Screen", comment: "Verse image shape: a wallpaper for the iPhone's Lock Screen")
         }
     }
 
@@ -103,6 +104,19 @@ enum VerseImageShape: String, CaseIterable, Identifiable {
         switch self {
         case .square: CGSize(width: 1080, height: 1080)
         case .story: CGSize(width: 1080, height: 1920)
+        // An iPhone screen (19.5:9, the Pro Max's pixels), so it fills the
+        // Lock Screen of any recent iPhone without stretching.
+        case .lockScreen: CGSize(width: 1290, height: 2796)
+        }
+    }
+
+    /// Room kept clear around the words: on the Lock Screen, the date and
+    /// clock above and the flashlight and camera buttons below.
+    var textPadding: (top: CGFloat, bottom: CGFloat) {
+        switch self {
+        case .square: (100, 100)
+        case .story: (260, 260)
+        case .lockScreen: (size.height * 0.37, size.height * 0.16)
         }
     }
 }
@@ -124,6 +138,8 @@ struct VerseImageView: View {
     @State private var photo: UIImage?
     @State private var rendered: UIImage?
     @State private var didSetFont = false
+    @State private var saveOutcome: PhotoLibrarySaver.Outcome?
+    @State private var saving = false
 
     var body: some View {
         NavigationStack {
@@ -133,6 +149,11 @@ struct VerseImageView: View {
                     let scale = min(proxy.size.width / size.width, proxy.size.height / size.height)
                     canvas
                         .frame(width: size.width, height: size.height)
+                        // Where the Lock Screen's clock and buttons will be
+                        // (only in the preview, never in the image).
+                        .overlay {
+                            if shape == .lockScreen { LockScreenGuide(size: size) }
+                        }
                         .scaleEffect(scale)
                         .frame(width: size.width * scale, height: size.height * scale)
                         .clipShape(RoundedRectangle(cornerRadius: 18 * scale * 4, style: .continuous))
@@ -142,6 +163,8 @@ struct VerseImageView: View {
                         .accessibilityLabel("Preview: \(card.reference)")
                 }
                 .padding(.horizontal, 20)
+
+                saveRow
 
                 ScrollView {
                     VStack(spacing: 16) {
@@ -205,6 +228,23 @@ struct VerseImageView: View {
                 options.font = settings.preferences.font
             }
             .task(id: RenderKey(style: style, shape: shape, options: options, photo: photo.map { ObjectIdentifier($0) })) { render() }
+            .onChange(of: shape) { _, new in
+                saveOutcome = nil
+                // A wallpaper reads best centered under the clock.
+                if new == .lockScreen { options.centered = true }
+            }
+            .onChange(of: rendered) { saveOutcome = nil }
+            .alert("Versely can't save to Photos", isPresented: Binding(
+                get: { saveOutcome == .notAllowed },
+                set: { if !$0 { saveOutcome = nil } }
+            )) {
+                Button("Open Settings") {
+                    if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
+                }
+                Button("Cancel", role: .cancel) {}
+            } message: {
+                Text("To save images, allow Versely to add photos in Settings.")
+            }
             .onChange(of: photoItem) { _, item in
                 Task { await loadPhoto(item) }
             }
@@ -213,6 +253,64 @@ struct VerseImageView: View {
 
     private var canvas: some View {
         VerseImageCanvas(card: card, style: style, shape: shape, options: options, photo: photo, currentTheme: currentTheme)
+    }
+
+    // MARK: Save and share
+
+    private var saveRow: some View {
+        HStack(spacing: 10) {
+            Button {
+                Task { await saveToPhotos() }
+            } label: {
+                Label(saveTitle, systemImage: saveOutcome == .saved ? "checkmark.circle.fill" : "square.and.arrow.down")
+                    .frame(maxWidth: .infinity)
+            }
+            .buttonStyle(.borderedProminent)
+            .tint(palette.accent)
+            .disabled(rendered == nil || saving)
+            .accessibilityIdentifier("verseImage.save")
+            if InstagramStories.isAvailable {
+                Button {
+                    if let rendered { InstagramStories.share(rendered) }
+                } label: {
+                    Label("Instagram Stories", systemImage: "camera.circle")
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.bordered)
+                .disabled(rendered == nil)
+                .accessibilityIdentifier("verseImage.instagram")
+            }
+        }
+        .controlSize(.large)
+        .padding(.horizontal, 20)
+        .overlay(alignment: .bottom) {
+            if saveOutcome == .saved && shape == .lockScreen {
+                Text("Saved. To use it, open Settings › Wallpaper and add it from Photos.")
+                    .font(.caption)
+                    .foregroundStyle(palette.secondaryText)
+                    .multilineTextAlignment(.center)
+                    .offset(y: 30)
+                    .transition(.opacity)
+            }
+        }
+        .padding(.bottom, saveOutcome == .saved && shape == .lockScreen ? 24 : 0)
+        .sensoryFeedback(.success, trigger: saveOutcome) { _, now in now == .saved }
+    }
+
+    private var saveTitle: String {
+        switch saveOutcome {
+        case .saved: String(localized: "Saved to Photos")
+        case .failed: String(localized: "Couldn't Save. Try Again")
+        default: String(localized: "Save to Photos")
+        }
+    }
+
+    private func saveToPhotos() async {
+        guard let rendered else { return }
+        saving = true
+        let outcome = await PhotoLibrarySaver.save(rendered)
+        saving = false
+        withAnimation(Motion.easeOut(0.2)) { saveOutcome = outcome }
     }
 
     // MARK: Controls
@@ -389,6 +487,20 @@ struct VerseImageCanvas: View {
                     .scaleEffect(2.5)
                     .frame(width: shape.size.width, height: shape.size.height)
                     .opacity(0.9)
+                    // On a wallpaper the leaves and snow keep to the sides,
+                    // so the verse (and the clock above it) stay clear.
+                    .mask {
+                        if shape == .lockScreen {
+                            LinearGradient(stops: [
+                                .init(color: .black, location: 0),
+                                .init(color: .black.opacity(0.12), location: 0.24),
+                                .init(color: .black.opacity(0.12), location: 0.76),
+                                .init(color: .black, location: 1),
+                            ], startPoint: .leading, endPoint: .trailing)
+                        } else {
+                            Rectangle()
+                        }
+                    }
             }
             VStack(alignment: alignment, spacing: 44) {
                 Text(verbatim: "\u{201C}")
@@ -425,8 +537,9 @@ struct VerseImageCanvas: View {
                         .foregroundStyle(ink.opacity(0.6))
                 }
             }
-            .padding(.horizontal, 96)
-            .padding(.vertical, shape == .story ? 260 : 100)
+            .padding(.horizontal, shape == .lockScreen ? 120 : 96)
+            .padding(.top, shape.textPadding.top)
+            .padding(.bottom, shape.textPadding.bottom)
         }
         .frame(width: shape.size.width, height: shape.size.height)
         .clipped()
@@ -435,7 +548,11 @@ struct VerseImageCanvas: View {
     /// Larger for short verses, smaller for long passages, times the chosen size.
     private var textSize: CGFloat {
         let count = card.text.count
-        let base: CGFloat = shape == .story ? 64 : 58
+        let base: CGFloat = switch shape {
+        case .square: 58
+        case .story: 64
+        case .lockScreen: 66
+        }
         let fitted: CGFloat = switch count {
         case ..<120: base * 1.2
         case ..<260: base
@@ -443,5 +560,42 @@ struct VerseImageCanvas: View {
         default: base * 0.66
         }
         return fitted * CGFloat(options.size)
+    }
+}
+
+/// The Lock Screen's date, clock and buttons drawn faintly over the
+/// wallpaper preview, so the verse can be placed clear of them. Never part
+/// of the saved image.
+private struct LockScreenGuide: View {
+    let size: CGSize
+
+    var body: some View {
+        let now = Date.now
+        VStack(spacing: 0) {
+            Text(now.formatted(.dateTime.weekday(.wide).month(.wide).day()))
+                .font(.system(size: 56, weight: .semibold))
+                .padding(.top, size.height * 0.085)
+            Text(now.formatted(.dateTime.hour(.defaultDigits(amPM: .omitted)).minute()))
+                .font(.system(size: 300, weight: .bold, design: .rounded))
+                .padding(.top, -20)
+            Spacer()
+            HStack {
+                Image(systemName: "flashlight.off.fill")
+                    .frame(width: 150, height: 150)
+                    .background(.black.opacity(0.25), in: Circle())
+                Spacer()
+                Image(systemName: "camera.fill")
+                    .frame(width: 150, height: 150)
+                    .background(.black.opacity(0.25), in: Circle())
+            }
+            .font(.system(size: 56))
+            .padding(.horizontal, 130)
+            .padding(.bottom, size.height * 0.05)
+        }
+        .foregroundStyle(.white.opacity(0.75))
+        .shadow(color: .black.opacity(0.25), radius: 12)
+        .frame(width: size.width, height: size.height)
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
     }
 }

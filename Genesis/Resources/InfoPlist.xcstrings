@@ -34,6 +34,23 @@
           }
         }
       }
+    },
+    "NSPhotoLibraryAddUsageDescription": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versely saves the verse images and wallpapers you make to your photo library."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versely guarda en tu fototeca las imágenes de versículos y los fondos de pantalla que creas."
+          }
+        }
+      }
     }
   },
   "version": "1.0"

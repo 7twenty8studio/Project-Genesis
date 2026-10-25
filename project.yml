@@ -84,6 +84,12 @@ targets:
         # Tools/Localization/build_catalogs.py from these lines and es.json.
         NSCameraUsageDescription: "Versely uses the camera only when you take a photo to add to a prayer or sermon notes."
         NSMicrophoneUsageDescription: "Versely uses the microphone only when you record a voice note for a prayer or sermon notes."
+        # Verse images and Lock Screen wallpapers saved to Photos (add only:
+        # Versely never reads the library this way).
+        NSPhotoLibraryAddUsageDescription: "Versely saves the verse images and wallpapers you make to your photo library."
+        # "Share to Instagram Stories" checks Instagram is installed.
+        LSApplicationQueriesSchemes:
+          - instagram-stories
         UILaunchScreen:
           UIColorName: LaunchBackground
         UIApplicationSceneManifest:
@@ -133,6 +139,9 @@ targets:
         # The iCloud container for attachment files; empty (files stay on the
         # device) until Config/Signing.xcconfig turns on the entitlements.
         GenesisICloudContainer: $(GENESIS_ICLOUD_CONTAINER)
+        # Instagram Stories sharing needs a Meta (Facebook) App ID; the button
+        # stays hidden until it's set in Config/Secrets.xcconfig.
+        GenesisFacebookAppID: $(GENESIS_FACEBOOK_APP_ID)
 
   GenesisWidgets:
     type: app-extension

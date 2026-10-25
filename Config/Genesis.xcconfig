@@ -18,6 +18,9 @@ GENESIS_WIDGET_ENTITLEMENTS =
 GENESIS_WATCH_ENTITLEMENTS =
 // iCloud for attachment files; must match Config/Genesis.entitlements.
 GENESIS_ICLOUD_CONTAINER =
+// The Meta (Facebook) App ID for "Share to Instagram Stories" (not a secret;
+// developers.facebook.com › My Apps). Hidden until set.
+GENESIS_FACEBOOK_APP_ID =
 
 #include? "Secrets.xcconfig"
 #include? "Signing.xcconfig"

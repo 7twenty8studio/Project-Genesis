@@ -1254,6 +1254,16 @@
         }
       }
     },
+    "A verse on your Lock Screen": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un versículo en tu pantalla bloqueada"
+          }
+        }
+      }
+    },
     "A year after a prayer was answered, a reminder to give thanks.": {
       "localizations": {
         "es": {
@@ -3918,6 +3928,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "No se pudo añadir"
+          }
+        }
+      }
+    },
+    "Couldn't Save. Try Again": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo guardar. Inténtalo de nuevo"
           }
         }
       }
@@ -7164,6 +7184,16 @@
         }
       }
     },
+    "Instagram Stories": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Historias de Instagram"
+          }
+        }
+      }
+    },
     "Interjection": {
       "localizations": {
         "es": {
@@ -8096,6 +8126,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cargando"
+          }
+        }
+      }
+    },
+    "Lock Screen": {
+      "comment": "Verse image shape: a wallpaper for the iPhone's Lock Screen",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pantalla bloqueada"
           }
         }
       }
@@ -13231,12 +13272,62 @@
         }
       }
     },
+    "Save it to Photos to set as your wallpaper, or share it to your stories.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guárdalo en Fotos para usarlo como fondo de pantalla, o compártelo en tus historias."
+          }
+        }
+      }
+    },
+    "Save or share it": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guárdalo o compártelo"
+          }
+        }
+      }
+    },
+    "Save to Photos": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar en Fotos"
+          }
+        }
+      }
+    },
     "Saved on this device first, then copied to your private iCloud so it's on your other devices.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Se guarda primero en este dispositivo y después se copia a tu iCloud privado para que esté en tus otros dispositivos."
+          }
+        }
+      }
+    },
+    "Saved to Photos": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardado en Fotos"
+          }
+        }
+      }
+    },
+    "Saved. To use it, open Settings › Wallpaper and add it from Photos.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardado. Para usarlo, abre Ajustes › Fondo de pantalla y añádelo desde Fotos."
           }
         }
       }
@@ -13683,6 +13774,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Selecciona un versículo en la Reina-Valera 1909 y toca Estudio de palabras para ver el hebreo o el griego que hay detrás."
+          }
+        }
+      }
+    },
+    "Select a verse, tap Image and choose Lock Screen: the words sit below the clock, on paper, a season, the night sky or your own photo.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selecciona un versículo, toca Imagen y elige Pantalla bloqueada: las palabras quedan debajo del reloj, sobre papel, una estación, el cielo nocturno o tu propia foto."
           }
         }
       }
@@ -17046,6 +17147,16 @@
         }
       }
     },
+    "To save images, allow Versely to add photos in Settings.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para guardar imágenes, permite que Versely añada fotos en Ajustes."
+          }
+        }
+      }
+    },
     "Today": {
       "localizations": {
         "es": {
@@ -17824,6 +17935,16 @@
         }
       }
     },
+    "Verse wallpapers": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fondos con versículos"
+          }
+        }
+      }
+    },
     "Verse-by-verse study notes, book introductions, and articles on people and themes.": {
       "localizations": {
         "es": {
@@ -17851,6 +17972,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Versely Premium"
+          }
+        }
+      }
+    },
+    "Versely can't save to Photos": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versely no puede guardar en Fotos"
           }
         }
       }
