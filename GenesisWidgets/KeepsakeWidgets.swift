@@ -112,7 +112,7 @@ struct KeepsakeWidgetView: View {
             VStack(spacing: 8) {
                 pictureCard
                     .frame(maxWidth: .infinity)
-                    .frame(height: 140)
+                    .frame(height: 168)
                 textCard
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
@@ -121,21 +121,37 @@ struct KeepsakeWidgetView: View {
 
     // MARK: Small
 
-    /// The whole verse if it fits; otherwise the picture with the reference.
+    /// The picture styles show their picture with the reference (tapping
+    /// opens the verse); the paper styles show the whole verse when it
+    /// fits, otherwise the picture with the reference.
+    @ViewBuilder
     private var small: some View {
-        ViewThatFits(in: .vertical) {
-            textCard
-            pictureCard
-                .overlay(alignment: .bottomLeading) {
-                    Text(passage?.reference ?? title)
-                        .font(Keepsake.serif(13))
-                        .foregroundStyle(Keepsake.ink)
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 4)
-                        .background(Keepsake.card.opacity(0.92), in: Capsule())
-                        .padding(8)
-                }
+        switch style {
+        case .instantPhoto:
+            InstantPrint(photo: photo ?? KeepsakeImage.beach.image, caption: passage?.reference)
+        case .pressedFlowers, .filmStrip:
+            smallPicture
+        default:
+            ViewThatFits(in: .vertical) {
+                textCard
+                smallPicture
+            }
         }
+    }
+
+    private var smallPicture: some View {
+        pictureCard
+            .overlay(alignment: .bottomLeading) {
+                Text(passage?.reference ?? title)
+                    .font(Keepsake.serif(13))
+                    .foregroundStyle(Keepsake.ink)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(Keepsake.card.opacity(0.92), in: Capsule())
+                    .padding(8)
+            }
     }
 
     // MARK: Text cards
@@ -151,7 +167,13 @@ struct KeepsakeWidgetView: View {
         }
     }
 
-    private var verseSize: CGFloat { family == .systemSmall ? 12.5 : 14.5 }
+    private var verseSize: CGFloat {
+        switch family {
+        case .systemSmall: 12.5
+        case .systemMedium: 14.5
+        default: 16
+        }
+    }
 
     /// Instant Photo and Pressed Flowers: heading, a short rule, the verse.
     private var plainText: some View {
@@ -196,13 +218,16 @@ struct KeepsakeWidgetView: View {
     /// Typewriter: white paper, a gold paperclip, typed words.
     private var typewriterText: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text(title.uppercased())
-                .font(Keepsake.serif(14))
-                .foregroundStyle(Keepsake.sage)
-                .lineLimit(1)
-                .minimumScaleFactor(0.7)
-                .padding(.trailing, 20)
-            Rectangle().fill(Keepsake.sage.opacity(0.4)).frame(width: 34, height: 0.75)
+            // Small: just the typed verse, so it has room.
+            if family != .systemSmall {
+                Text(title.uppercased())
+                    .font(Keepsake.serif(14))
+                    .foregroundStyle(Keepsake.sage)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+                    .padding(.trailing, 20)
+                Rectangle().fill(Keepsake.sage.opacity(0.4)).frame(width: 34, height: 0.75)
+            }
             Text(passage?.text ?? "")
                 .font(Keepsake.typewriter(verseSize - 1))
                 .foregroundStyle(Keepsake.ink)
@@ -292,9 +317,10 @@ struct KeepsakeWidgetView: View {
             .minimumScaleFactor(0.8)
     }
 
-    /// "Psalm 118:24 — KJV"
+    /// "Psalm 118:24 — KJV"; the small widget keeps just the reference.
     private var citation: String {
         guard let passage else { return "" }
+        if family == .systemSmall { return passage.reference }
         return passage.reference + " \u{2014} " + passage.translation
     }
 
@@ -369,10 +395,12 @@ struct KeepsakeWidgetView: View {
 /// A white instant print, slightly turned, with a wide bottom border.
 private struct InstantPrint: View {
     let photo: UIImage?
+    /// Written on the wide bottom border (the small widget's reference).
+    var caption: String? = nil
 
     var body: some View {
         GeometryReader { proxy in
-            let side = min(proxy.size.width, proxy.size.height) * 0.92
+            let side = min(proxy.size.width, proxy.size.height / 1.17) * 0.92
             VStack(spacing: 0) {
                 ZStack {
                     LinearGradient(colors: [Color(light: 0xDCE6EC, dark: 0xDCE6EC), Color(light: 0xF2E7D3, dark: 0xF2E7D3)], startPoint: .top, endPoint: .bottom)
@@ -381,6 +409,15 @@ private struct InstantPrint: View {
                 .frame(width: side - 12, height: side - 12)
                 .clipped()
                 .padding(.top, 6)
+                if let caption {
+                    Text(caption)
+                        .font(Keepsake.serif(side * 0.09, italic: true))
+                        .foregroundStyle(Keepsake.body)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.7)
+                        .padding(.horizontal, 6)
+                        .frame(maxHeight: .infinity)
+                }
                 Spacer(minLength: 0)
             }
             .frame(width: side, height: side * 1.17)
