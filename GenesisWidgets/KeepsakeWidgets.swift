@@ -9,8 +9,8 @@ import WidgetKit
 // here, verbatim, never baked into a picture.
 //
 // Pictures come from the widget bundle (`KeepsakeImage`, built by
-// Tools/WidgetArt/make_keepsake.py from images generated with
-// Canva's AI, which the owner owns; never Canva library content) or the
+// Tools/WidgetArt/make_keepsake.py from images the owner generated with
+// Canva's AI or ChatGPT and owns; never Canva library content) or the
 // person's own photo; anything missing is drawn instead, so the widget
 // always works.
 
@@ -46,9 +46,33 @@ enum KeepsakeImage: String {
     case beach = "keepsake-beach"
     case typewriter = "keepsake-typewriter"
     case linen = "keepsake-linen"
+    case meadow = "keepsake-meadow"
+    case paper = "keepsake-paper"
+    /// A blank tear-off calendar pad, cut to the pad; the date is written on it.
+    case pad = "keepsake-pad"
+    /// An empty library card pocket, cut to the pocket; the date is stamped on it.
+    case pocket = "keepsake-pocket"
 
     var image: UIImage? {
         Bundle.main.path(forResource: rawValue, ofType: "jpg").flatMap(UIImage.init(contentsOfFile:))
+    }
+}
+
+/// Cream paper behind a text card, lightened toward white; flat colour
+/// until the picture is bundled.
+struct KeepsakePaper: View {
+    var lighten: Double = 0
+    var fallback: Color = Keepsake.card
+
+    var body: some View {
+        if let paper = KeepsakeImage.paper.image {
+            Image(uiImage: paper)
+                .resizable()
+                .scaledToFill()
+                .overlay(Color.white.opacity(lighten))
+        } else {
+            fallback
+        }
     }
 }
 
@@ -189,7 +213,10 @@ struct KeepsakeWidgetView: View {
         }
         .padding(12)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        .background(Color(light: 0xFCFBF8, dark: 0xFCFBF8), in: card)
+        .background {
+            KeepsakePaper(lighten: 0.55, fallback: Color(light: 0xFCFBF8, dark: 0xFCFBF8))
+                .clipShape(card)
+        }
         .overlay(alignment: .topTrailing) {
             Paperclip()
                 .frame(width: 14, height: 40)
@@ -222,7 +249,12 @@ struct KeepsakeWidgetView: View {
                 .padding(.bottom, 8)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        .background { RuledCard() }
+        .background {
+            ZStack {
+                KeepsakePaper(lighten: 0.4, fallback: Color(red: 0.98, green: 0.97, blue: 0.94))
+                RuledLines()
+            }
+        }
         .clipShape(card)
     }
 
@@ -249,7 +281,7 @@ struct KeepsakeWidgetView: View {
         }
         .padding(12)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        .background(Keepsake.card.opacity(0.9), in: card)
+        .background { KeepsakePaper(lighten: 0.3).clipShape(card) }
     }
 
     private func reference(_ color: Color) -> some View {
@@ -276,7 +308,7 @@ struct KeepsakeWidgetView: View {
         case .pressedFlowers:
             picture(KeepsakeImage.flowers.image)
         case .filmStrip:
-            FilmFrame(edgeMark: "12", frameMark: "12A", photo: photo ?? KeepsakeImage.beach.image)
+            FilmFrame(edgeMark: "12", frameMark: "12A", photo: photo ?? KeepsakeImage.meadow.image ?? KeepsakeImage.beach.image)
                 .clipShape(card)
         case .typewriter:
             // The machine itself in the wide large widget; baby's breath elsewhere.
@@ -286,11 +318,29 @@ struct KeepsakeWidgetView: View {
                 picture(KeepsakeImage.sprigs.image)
             }
         case .libraryCard:
-            RubberStampMark(date: date)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Keepsake.card.opacity(0.9), in: card)
+            if let pocket = KeepsakeImage.pocket.image {
+                // The stamp on the pocket's front, below the card's tab.
+                PhotoWithMark(image: pocket, markCenter: UnitPoint(x: 0.5, y: 0.6)) {
+                    RubberStampMark(date: date, size: family == .systemSmall ? 13 : 15)
+                }
+                .background { KeepsakePaper().clipShape(card) }
+                .clipShape(card)
+            } else {
+                RubberStampMark(date: date)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Keepsake.card.opacity(0.9), in: card)
+            }
         default:
-            TearOffPage(date: date)
+            if let pad = KeepsakeImage.pad.image {
+                // Today's date on the pad's blank page, below the torn edge.
+                PhotoWithMark(image: pad, markCenter: UnitPoint(x: 0.48, y: 0.55)) {
+                    CalendarDate(date: date, scale: family == .systemSmall ? 0.85 : 1)
+                }
+                .background(Keepsake.linen)
+                .clipShape(card)
+            } else {
+                TearOffPage(date: date)
+            }
         }
     }
 
@@ -399,11 +449,10 @@ private struct FilmFrame: View {
     }
 }
 
-/// Ruled index card: blue lines, a red rule under the heading, a red margin.
-private struct RuledCard: View {
+/// Ruled index card lines: blue rules, a red rule under the heading, a red margin.
+private struct RuledLines: View {
     var body: some View {
         Canvas { context, size in
-            context.fill(Path(CGRect(origin: .zero, size: size)), with: .color(Color(red: 0.98, green: 0.97, blue: 0.94)))
             var y: CGFloat = 50
             while y < size.height {
                 context.fill(Path(CGRect(x: 0, y: y, width: size.width, height: 0.75)), with: .color(Keepsake.ruleBlue))
@@ -419,16 +468,65 @@ private struct RuledCard: View {
 /// A faded red date stamp, slightly turned.
 private struct RubberStampMark: View {
     let date: Date
+    var size: CGFloat = 15
 
     var body: some View {
         Text(date.formatted(.dateTime.month(.abbreviated).day().year()))
-            .font(Keepsake.serif(15))
+            .font(Keepsake.serif(size))
+            .lineLimit(1)
+            .fixedSize()
             .foregroundStyle(Keepsake.fadedRed.opacity(0.85))
             .padding(.horizontal, 9)
             .padding(.vertical, 5)
             .overlay(RoundedRectangle(cornerRadius: 4).strokeBorder(Keepsake.fadedRed.opacity(0.75), lineWidth: 1.5))
             .rotationEffect(.degrees(-9))
             .accessibilityHidden(true)
+    }
+}
+
+/// A picture shown whole (fitted, centred) with something written on it at
+/// a point given as a fraction of the picture, so it stays on the paper
+/// whatever the widget's size.
+private struct PhotoWithMark<Mark: View>: View {
+    let image: UIImage
+    let markCenter: UnitPoint
+    @ViewBuilder var mark: Mark
+
+    var body: some View {
+        Image(uiImage: image)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .overlay {
+                GeometryReader { proxy in
+                    mark.position(x: proxy.size.width * markCenter.x, y: proxy.size.height * markCenter.y)
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .accessibilityHidden(true)
+    }
+}
+
+/// Month, day and weekday as printed on a calendar page.
+private struct CalendarDate: View {
+    let date: Date
+    var scale: CGFloat = 1
+
+    var body: some View {
+        VStack(spacing: 1 * scale) {
+            Text(date.formatted(.dateTime.month(.wide)).uppercased())
+                .font(Keepsake.serif(10 * scale, italic: true))
+                .foregroundStyle(Keepsake.sage)
+            Text(date.formatted(.dateTime.day()))
+                .font(Keepsake.serif(36 * scale))
+                .foregroundStyle(Keepsake.terracotta)
+            Rectangle().fill(Keepsake.sage.opacity(0.35)).frame(width: 40 * scale, height: 0.75)
+            Text(date.formatted(.dateTime.weekday(.wide)).uppercased())
+                .font(Keepsake.serif(9 * scale))
+                .foregroundStyle(Keepsake.sage)
+                .padding(.top, 2 * scale)
+        }
+        .lineLimit(1)
+        .fixedSize()
     }
 }
 

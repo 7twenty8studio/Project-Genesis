@@ -295,8 +295,11 @@ shares; README.md has the architecture.
   Calendar Page, after the owner's light Canva mockups (linen, cream cards,
   sage/terracotta, EB Garamond bundled in the widget via UIAppFonts, the
   system American Typewriter). Pictures are `KeepsakeImage` JPEGs in the
-  widget bundle, generated with Canva's AI (owned by the owner; keep their
-  C2PA metadata); Instant Photo and Film Strip use Your Photo first.
+  widget bundle, built by Tools/WidgetArt/make_keepsake.py from the owner's
+  Canva AI and ChatGPT originals (kept untouched with their C2PA manifests
+  in Tools/WidgetArt/Originals); paper behind the Typewriter, Library and
+  Calendar cards, the date written on the pad and stamped on the pocket
+  (`PhotoWithMark`); Instant Photo and Film Strip use Your Photo first.
   Anything missing is drawn. Never ship Canva library content or Canva fonts.
 - Live wallpapers (`LiveWallpaperMaker`, Premium `.premiumThemes`): Lock
   Screen + a season saves a Live Photo (2.5 s at 30 fps, 1080×2340, frames
