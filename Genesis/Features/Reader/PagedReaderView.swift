@@ -184,15 +184,23 @@ struct PagedReaderView: UIViewControllerRepresentable {
             return Date().timeIntervalSince(resizeStartedAt) < 3
         }
 
+        /// Once the size has settled, the page showing is set again, laid
+        /// out for the final size. A page put in place mid-change (or a
+        /// blank one) could otherwise stay empty after an iPhone Duo opens.
+        private var needsRefresh = false
+
         /// A controller built mid-change waits for the change to settle too.
         func settleAfterCreation() {
             sizeChangedAt = Date()
+            needsRefresh = true
+            flushPendingUpdate()
         }
 
         /// The controller's own view changed size (UIKit's layout pass),
         /// with or without a size transition.
         func viewSizeChanged() {
             sizeChangedAt = Date()
+            needsRefresh = true
             flushPendingUpdate()
         }
 
@@ -200,7 +208,10 @@ struct PagedReaderView: UIViewControllerRepresentable {
 
         func sizeTransition(inProgress: Bool) {
             resizeStartedAt = inProgress ? Date() : nil
-            if !inProgress { flushPendingUpdate() }
+            if !inProgress {
+                needsRefresh = true
+                flushPendingUpdate()
+            }
         }
 
         private func turnFinished() {
@@ -209,7 +220,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
         }
 
         private func flushPendingUpdate() {
-            guard pendingUpdate != nil, !flushScheduled else { return }
+            guard pendingUpdate != nil || needsRefresh, !flushScheduled else { return }
             flushScheduled = true
             // Next run loop turn, once UIKit has finished its own work.
             Task { @MainActor [weak self] in
@@ -223,8 +234,22 @@ struct PagedReaderView: UIViewControllerRepresentable {
                 }
                 self.flushScheduled = false
                 let update = self.pendingUpdate
+                let refresh = self.needsRefresh
                 self.pendingUpdate = nil
+                self.needsRefresh = false
                 update?()
+                if refresh { self.refreshPage() }
+            }
+        }
+
+        /// Puts the page showing (or, if there's none yet, the reader's
+        /// verse) in place again, without animation.
+        private func refreshPage() {
+            guard layout != nil else { return }
+            if let location = currentLocation {
+                show(location: location)
+            } else {
+                show(verse: viewModel.focusVerse)
             }
         }
 
@@ -247,7 +272,9 @@ struct PagedReaderView: UIViewControllerRepresentable {
                 return
             }
 
-            if newLayout != layout || translation != translationID {
+            // No real page yet (a blank one, or none): one must be shown.
+            let needsPage = currentLocation == nil
+            if newLayout != layout || translation != translationID || needsPage {
                 // Size, style or translation changed: everything must re-paginate.
                 // Keep the first verse on screen in view, unless the person
                 // also navigated somewhere new.
