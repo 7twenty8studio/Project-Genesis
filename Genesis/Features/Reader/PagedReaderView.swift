@@ -47,6 +47,9 @@ struct PagedReaderView: UIViewControllerRepresentable {
         controller.onSizeTransition = { [weak coordinator = context.coordinator] resizing in
             coordinator?.sizeTransition(inProgress: resizing)
         }
+        controller.onSizeChange = { [weak coordinator = context.coordinator] in
+            coordinator?.viewSizeChanged()
+        }
         // Page curl adds its own edge-tap recognisers. Our taps already turn
         // pages (and respect left-handed mode), so keep only the drag-to-curl.
         for recognizer in controller.gestureRecognizers where recognizer is UITapGestureRecognizer {
@@ -56,7 +59,37 @@ struct PagedReaderView: UIViewControllerRepresentable {
         controller.delegate = context.coordinator
         controller.view.backgroundColor = layout.style.palette.uiBackground
         context.coordinator.pageController = controller
+        // A new controller is often built in the middle of a size change
+        // (turning the phone, opening an iPhone Duo: see the `.id` in
+        // ReaderView). Give it its page now, before it's on screen, where
+        // that's always safe, and never leave it with no page at all:
+        // page curl throws "No view controllers" if UIKit asks it to lay
+        // out empty.
+        context.coordinator.update(
+            layout: layout,
+            navigationToken: navigationToken,
+            decorationsVersion: decorationsVersion,
+            translationID: translationID
+        )
+        if controller.viewControllers?.isEmpty ?? true {
+            let blank = UIViewController()
+            blank.view.backgroundColor = PaperTexture.pageColor(for: layout.style.theme)
+            controller.setViewControllers([blank], direction: .forward, animated: false)
+        }
+        context.coordinator.settleAfterCreation()
         return controller
+    }
+
+    /// Torn down (often mid-resize, when the `.id` changes): nothing may
+    /// call back into the coordinator from the old controller.
+    static func dismantleUIViewController(_ controller: ReaderPagesController, coordinator: Coordinator) {
+        controller.onSizeTransition = nil
+        controller.onSizeChange = nil
+        controller.dataSource = nil
+        controller.delegate = nil
+        if coordinator.pageController === controller {
+            coordinator.pageController = nil
+        }
     }
 
     func updateUIViewController(_ controller: ReaderPagesController, context: Context) {
@@ -123,6 +156,15 @@ struct PagedReaderView: UIViewControllerRepresentable {
         // the pages then; the latest update waits and runs once it's over.
 
         private var resizeStartedAt: Date?
+        /// The last time the page size changed (seen by SwiftUI's layout or
+        /// UIKit's), or the controller was built. Sizes often change several
+        /// times in a row (an iPhone Duo opening, then the side panel
+        /// appearing, then the tab bar changing), sometimes without UIKit's
+        /// size transition: new pages wait until it has been still a moment.
+        private var sizeChangedAt: Date?
+        private static let settleTime: TimeInterval = 0.4
+        /// The last size SwiftUI asked for (applied or still waiting).
+        private var seenSize: CGSize?
         private var turnStartedAt: Date?
         private var pendingUpdate: (() -> Void)?
         private var flushScheduled = false
@@ -134,10 +176,24 @@ struct PagedReaderView: UIViewControllerRepresentable {
             return Date().timeIntervalSince(turnStartedAt) < 1.5
         }
 
-        /// A size change under way, trusted for at most three seconds.
+        /// A size change under way (trusted for at most three seconds), or
+        /// one so recent that another may follow.
         private var isResizing: Bool {
+            if let sizeChangedAt, Date().timeIntervalSince(sizeChangedAt) < Self.settleTime { return true }
             guard let resizeStartedAt else { return false }
             return Date().timeIntervalSince(resizeStartedAt) < 3
+        }
+
+        /// A controller built mid-change waits for the change to settle too.
+        func settleAfterCreation() {
+            sizeChangedAt = Date()
+        }
+
+        /// The controller's own view changed size (UIKit's layout pass),
+        /// with or without a size transition.
+        func viewSizeChanged() {
+            sizeChangedAt = Date()
+            flushPendingUpdate()
         }
 
         private var isBusy: Bool { isResizing || isTurning }
@@ -158,13 +214,14 @@ struct PagedReaderView: UIViewControllerRepresentable {
             // Next run loop turn, once UIKit has finished its own work.
             Task { @MainActor [weak self] in
                 guard let self else { return }
-                self.flushScheduled = false
                 if self.isBusy {
                     // Still busy (or a callback was missed): look again shortly.
-                    try? await Task.sleep(for: .milliseconds(300))
+                    try? await Task.sleep(for: .milliseconds(150))
+                    self.flushScheduled = false
                     self.flushPendingUpdate()
                     return
                 }
+                self.flushScheduled = false
                 let update = self.pendingUpdate
                 self.pendingUpdate = nil
                 update?()
@@ -175,6 +232,12 @@ struct PagedReaderView: UIViewControllerRepresentable {
 
         func update(layout newLayout: ReaderLayout, navigationToken token: Int, decorationsVersion version: Int, translationID translation: String) {
             guard newLayout.pageTextSize.width > 0, newLayout.pageTextSize.height > 0 else { return }
+            // A new size: re-paginate only once the size has settled, never
+            // in the middle of the change.
+            if let seenSize, seenSize != newLayout.size {
+                sizeChangedAt = Date()
+            }
+            seenSize = newLayout.size
             if isBusy {
                 // Only the latest matters: it carries every change so far.
                 pendingUpdate = { [weak self] in
@@ -421,9 +484,8 @@ struct PagedReaderView: UIViewControllerRepresentable {
         func pageViewController(_ pageViewController: UIPageViewController, spineLocationFor orientation: UIInterfaceOrientation) -> UIPageViewController.SpineLocation {
             let current = pageViewController.viewControllers?.first
                 ?? page(at: currentLocation ?? PageLocation(chapter: viewModel.focusVerse.chapterID, index: 0))
-            if let current {
-                pageViewController.setViewControllers([current], direction: .forward, animated: false)
-            }
+                ?? UIViewController()
+            pageViewController.setViewControllers([current], direction: .forward, animated: false)
             pageViewController.isDoubleSided = false
             return .min
         }
@@ -448,6 +510,19 @@ struct PagedReaderView: UIViewControllerRepresentable {
 /// pages are only replaced once the change is over.
 final class ReaderPagesController: UIPageViewController {
     var onSizeTransition: ((Bool) -> Void)?
+    /// Every change of the view's size, transition or not (an iPhone Duo
+    /// opening can resize the window without one reaching this controller).
+    var onSizeChange: (() -> Void)?
+    private var lastSize: CGSize = .zero
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        let size = view.bounds.size
+        guard size != lastSize else { return }
+        let first = lastSize == .zero
+        lastSize = size
+        if !first { onSizeChange?() }
+    }
 
     override func viewWillTransition(to size: CGSize, with coordinator: any UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
