@@ -191,10 +191,9 @@ These are the terms YouVersion agreed with us in writing (email thread
   the RV1909 in Spanish, installed along with a Spanish YVP Bible), the
   way the study assistant does (`BibleLibrary.premiumToolsTranslation`):
   - Memorize (games, hints, new cards, the Memorise widget)
-  - every Premium widget, look, size and option (the large size, the
-    backgrounds, categories, From Your Reading, the other widgets and the
-    Apple Watch). The free verse widget (Classic look, small, medium and
-    Lock Screen, Verse of the Day and Random Verse) is a free feature and
+  - every Premium widget, look and option (the backgrounds, categories,
+    From Your Reading, the other widgets and the Apple Watch). The free
+    verse widget (Classic look, small, medium, large and Lock Screen, Verse of the Day and Random Verse) is a free feature and
     shows the Bible being read, YVP included (owner's decision, 27 October
     2026; the snapshot's `readerBible`)
   - the morning welcome's verse

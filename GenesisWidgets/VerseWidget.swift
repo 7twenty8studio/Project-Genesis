@@ -108,9 +108,9 @@ struct VerseProvider: AppIntentTimelineProvider {
 
 // MARK: - Widget
 
-/// Free as the small and medium Home Screen widget and on the Lock Screen
-/// (verse of the day or a random verse); the large size and the categories
-/// and From Your Reading are Premium. The kind is unchanged from the
+/// Free as the small, medium and large Home Screen widget and on the Lock
+/// Screen (verse of the day or a random verse); the categories, From Your
+/// Reading and the backgrounds are Premium. The kind is unchanged from the
 /// earlier static widget, so installed widgets carry on.
 struct DailyVerseWidget: Widget {
     var body: some WidgetConfiguration {

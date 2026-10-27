@@ -61,6 +61,11 @@ enum WhatsNewCatalog {
                 detail: String(localized: "With a seasonal background, leaves, snow, petals or summer light drift across the verse widget all day.")
             ),
             WhatsNewItem(
+                systemImage: "rectangle.portrait",
+                title: String(localized: "The large verse widget, free"),
+                detail: String(localized: "The Verse of the Day widget is now free in the large size too.")
+            ),
+            WhatsNewItem(
                 systemImage: "book",
                 title: String(localized: "Your Bible in the verse widget"),
                 detail: String(localized: "The free verse widget now shows the Bible you're reading, whichever it is.")

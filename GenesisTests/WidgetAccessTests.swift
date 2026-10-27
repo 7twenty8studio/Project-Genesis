@@ -5,8 +5,8 @@ import Testing
 @Suite("Widget access and theme-matched widgets")
 @MainActor
 struct WidgetAccessTests {
-    @Test func onlyTheSmallMediumAndLockScreenVerseWidgetIsFree() {
-        let free: Set<WidgetSize> = [.small, .medium, .accessoryCircular, .accessoryRectangular, .accessoryInline]
+    @Test func onlyTheVerseWidgetIsFreeUpToLarge() {
+        let free: Set<WidgetSize> = [.small, .medium, .large, .accessoryCircular, .accessoryRectangular, .accessoryInline]
         for size in WidgetSize.allCases {
             #expect(WidgetAccess.isFree(kind: .dailyVerse, size: size) == free.contains(size), Comment(rawValue: "Verse of the Day, \(size)"))
         }
@@ -24,7 +24,8 @@ struct WidgetAccessTests {
             }
         }
         #expect(WidgetAccess.isUnlocked(kind: .dailyVerse, size: .medium, isPremium: false))
-        #expect(!WidgetAccess.isUnlocked(kind: .dailyVerse, size: .large, isPremium: false))
+        #expect(WidgetAccess.isUnlocked(kind: .dailyVerse, size: .large, isPremium: false))
+        #expect(!WidgetAccess.isUnlocked(kind: .dailyVerse, size: .extraLarge, isPremium: false))
         #expect(!WidgetAccess.isUnlocked(kind: .streak, size: .accessoryCircular, isPremium: false))
         #expect(WidgetAccess.isUnlocked(kind: .dailyVerse, size: .accessoryInline, isPremium: false))
     }
@@ -40,7 +41,7 @@ struct WidgetAccessTests {
             #expect(small == free.contains(source), Comment(rawValue: source.rawValue))
             #expect(medium == free.contains(source), Comment(rawValue: source.rawValue))
             #expect(lockScreen == free.contains(source), Comment(rawValue: source.rawValue))
-            #expect(!large, "The large verse widget is Premium")
+            #expect(large == free.contains(source), Comment(rawValue: source.rawValue))
             #expect(premium)
         }
     }

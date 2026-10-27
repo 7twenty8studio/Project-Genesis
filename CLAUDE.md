@@ -257,9 +257,9 @@ shares; README.md has the architecture.
   is pinned by the theme). Starlight
   without Premium falls back to Night, keeping the choice. UI tests never
   switch unless launched with `-uiTestingNight` (then it's always night).
-- Widgets: only the verse widget is free, small, medium and on the Lock
-  Screen (`WidgetAccess` in Genesis/Shared); its large size and every other
-  widget show a locked card. Premium widgets use the reading theme (colours
+- Widgets: only the verse widget is free, small, medium, large and on the
+  Lock Screen (`WidgetAccess` in Genesis/Shared); every other widget shows a
+  locked card. Premium widgets use the reading theme (colours
   carried in `WidgetSnapshot.theme` as hex, since the extension can't use
   ThemePalette); free ones the default light/dark look.
 - Verse widget options (`VerseWidgetIntent`, an AppIntentConfiguration on
@@ -338,12 +338,12 @@ shares; README.md has the architecture.
   entitlement); deep link `versely://memorise`.
 
 ## Premium widgets
-- `.widgets` (every widget but the small/medium/Lock Screen verse, plus the verse widget's Premium options): the Today's Reading widget (tick via `TogglePlanDayIntent`,
+- `.widgets` (every widget but the small/medium/large/Lock Screen verse, plus the verse widget's Premium options): the Today's Reading widget (tick via `TogglePlanDayIntent`,
   which leaves `PendingPlanDays` in the App Group for the app to apply), and
   the listening Live Activity (`ListeningActivityController`, driven by
   `AudioPlayerService`; buttons are `LiveActivityIntent`s that call
   `ListeningControl`). Shared types live in Genesis/Shared/WidgetIntents.swift.
-  Only the small, medium and Lock Screen verse widget are free (`WidgetAccess`).
+  Only the small, medium, large and Lock Screen verse widget are free (`WidgetAccess`).
 - Apple Watch (verse of the day, Premium): GenesisWatch + GenesisWatchWidgets
   targets, fed by `WatchConnector` (WatchConnectivity application context,
   `WatchPayload`). Embedded in the iPhone app (a dependency of Genesis in
@@ -450,7 +450,7 @@ shares; README.md has the architecture.
   `library.premiumToolsTranslation` / `premiumToolsRepository` (a
   public-domain Bible in the same language; RV1909 is installed along with
   a Spanish one) in Memorize, Premium widgets (the free verse widget, Classic
-  look at a free size and option, shows the YVP Bible via
+  look at any Home or Lock Screen size, Verse of the Day or Random, shows the YVP Bible via
   `WidgetSnapshot.readerBible` / `freePassage`), the morning
   welcome, word study, lexicon entries, the Map's verses and journal
   export; listening is

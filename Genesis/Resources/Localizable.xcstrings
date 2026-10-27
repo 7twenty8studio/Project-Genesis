@@ -16392,6 +16392,16 @@
         }
       }
     },
+    "The Verse of the Day widget is now free in the large size too.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El widget Versículo del día ahora también es gratis en tamaño grande."
+          }
+        }
+      }
+    },
     "The Versely community": {
       "localizations": {
         "es": {
@@ -16488,6 +16498,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "La gracia que necesitas hoy: paciencia, valor, bondad."
+          }
+        }
+      }
+    },
+    "The large verse widget, free": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El widget de versículo grande, gratis"
           }
         }
       }
