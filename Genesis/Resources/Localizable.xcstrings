@@ -16642,16 +16642,6 @@
         }
       }
     },
-    "The seasons, moving": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Las estaciones, en movimiento"
-          }
-        }
-      }
-    },
     "The sermon in one sentence.": {
       "localizations": {
         "es": {
@@ -19164,16 +19154,6 @@
         }
       }
     },
-    "Widgets that move": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Widgets que se mueven"
-          }
-        }
-      }
-    },
     "Widgets with a view": {
       "localizations": {
         "es": {
@@ -19334,16 +19314,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Con Reducir movimiento activado, las estrellas se atenúan suavemente en su lugar y las estaciones muestran una imagen fija."
-          }
-        }
-      }
-    },
-    "With a seasonal background, leaves, snow, petals or summer light drift across the verse widget all day.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Con un fondo de temporada, hojas, nieve, pétalos o la luz del verano cruzan el widget de versículo todo el día."
           }
         }
       }

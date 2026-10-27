@@ -268,7 +268,11 @@ extension View {
     /// A rotation the system turns endlessly, a full turn every `period`
     /// seconds (the effect behind clock widgets' hands), so it keeps going
     /// between widget refreshes.
+    ///
+    /// Not available: the iOS 26 SDK no longer offers SwiftUI's
+    /// `_clockHandRotationEffect`, so this does nothing and the layer is
+    /// off (VerseWidget) until there's a way to turn it.
     func endlessRotation(period: TimeInterval, anchor: UnitPoint = .center) -> some View {
-        _clockHandRotationEffect(.custom(period), in: .current, anchor: anchor)
+        self
     }
 }

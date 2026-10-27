@@ -210,8 +210,6 @@ private struct VerseContentView: View {
                     VintageBackground(showsStamp: family != .systemSmall)
                 } else if art != .classic, let image = WidgetArtImage.load(art, family: family) {
                     WidgetArtBackground(image: image, style: art)
-                        // The seasons keep moving: leaves, snow, petals, light.
-                        .overlay { SeasonalMotionLayer(style: art) }
                 } else {
                     WidgetBackground(colors: colors)
                 }
