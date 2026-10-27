@@ -292,10 +292,15 @@ shares; README.md has the architecture.
   the widget draws the verse over them verbatim, in `WidgetArtInk` colours. Vintage
   (a postcard: cream stock, a stamp and postmark, ruled eyebrow, italic
   citation) is drawn by the widget itself (`VintageBackground`).
-  Seasonal motion (`SeasonalMotionLayer`, GenesisWidgets/SeasonalMotion.swift)
-  is written but off: it needs an endless system rotation, and the iOS 26
-  SDK no longer offers SwiftUI's `_clockHandRotationEffect`
-  (`endlessRotation` does nothing; the overlay is out of VerseWidget).
+  The seasonal backgrounds drift (`SeasonalMotionLayer`,
+  GenesisWidgets/SeasonalMotion.swift): widgets can't animate continuously
+  (the iOS 26 SDK has no `_clockHandRotationEffect`), so with a seasonal
+  background the verse widget's timeline has an entry every minute for an
+  hour (`SeasonalDrift.entryDates`, then it reloads) and each moves the
+  pieces 4 s further along huge wheels centred above-left (a drift down and
+  left, flutter and spin), gliding over 2 s; positions come from whole
+  minutes (`SeasonalDrift.time`) so they carry on across reloads. Behind
+  the words in the content, edge-masked; nothing with Reduce Motion.
   Keepsakes (Premium; `WidgetArtStyle.isKeepsake`, GenesisWidgets/KeepsakeWidgets.swift):
   Instant Photo, Pressed Flowers, Film Strip, Typewriter, Library Card and
   Calendar Page, after the owner's light Canva mockups (linen, cream cards,

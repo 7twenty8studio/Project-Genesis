@@ -53,8 +53,13 @@ enum WhatsNewCatalog {
 
     static let movingSeasonsAndYourBible = WhatsNewAnnouncement(
         id: "moving-season-widgets",
-        title: String(localized: "Your Bible in the verse widget"),
+        title: String(localized: "Widgets that move"),
         items: [
+            WhatsNewItem(
+                systemImage: "leaf",
+                title: String(localized: "The seasons, drifting"),
+                detail: String(localized: "With a seasonal background, leaves, snow, petals or summer light drift gently across the verse widget.")
+            ),
             WhatsNewItem(
                 systemImage: "rectangle.portrait",
                 title: String(localized: "The large verse widget, free"),

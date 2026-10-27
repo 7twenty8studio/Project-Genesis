@@ -1,34 +1,63 @@
 import SwiftUI
 import WidgetKit
 
-// The seasons' touches, moving in the verse widget: leaves drifting down in
-// autumn, snow in winter, petals in spring, warm motes of light in summer.
-// Endless: every movement is a rotation the system keeps turning itself (the
-// effect clock widgets use for their hands), so it runs without the widget
-// being refreshed. Leaves ride on a slow, very large wheel whose centre is
-// above and left of the widget: across the widget that is a gentle fall
-// down and to the left, and they come round again for ever. Each leaf also
-// flutters on a small circle and spins. Kept to the edges (a soft mask) so
-// the words stay clear; nothing with Reduce Motion.
+// The seasons' touches, drifting in the verse widget: leaves in autumn, snow
+// in winter, petals in spring, warm motes of light in summer. Widgets can't
+// animate continuously, so the widget's timeline has an entry every minute
+// with a seasonal background (`SeasonalDrift.entryDates`), and each entry
+// moves every piece a little further along its path; WidgetKit glides them
+// there over two seconds while the widget is on screen. It never stops, a
+// small step at a time.
+//
+// Pieces ride huge, slowly turning wheels whose centre is above and left of
+// the widget: across the widget that's a gentle fall down and to the left,
+// and they come round again for ever. Each piece also flutters and spins.
+// Kept to the edges (a soft mask) so the words stay clear; nothing with
+// Reduce Motion (the painted still stays).
 
-struct SeasonalMotionLayer: View {
-    let style: WidgetArtStyle
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+enum SeasonalDrift {
+    /// Seconds of the reader's drift that one minute of the widget moves on.
+    static let secondsPerStep: TimeInterval = 4
+    /// One step a minute, for the next hour (the timeline then reloads).
+    static let steps = 60
 
     static func moves(_ style: WidgetArtStyle) -> Bool {
         Season(style) != nil
     }
 
+    /// An entry every minute for an hour, plus the verse's own changes.
+    static func entryDates(adding verseDates: [Date], from now: Date) -> [Date] {
+        let start = (now.timeIntervalSinceReferenceDate / 60).rounded(.down) * 60
+        let minutes = (0..<steps).map { Date(timeIntervalSinceReferenceDate: start + Double($0) * 60) }
+        let end = minutes.last ?? now
+        return (minutes + verseDates.filter { $0 > now && $0 < end }).sorted()
+    }
+
+    /// The drift's clock at a date: whole minutes since a fixed day, so
+    /// positions carry on smoothly from one entry (and one reload) to the next.
+    static func time(at date: Date) -> TimeInterval {
+        (date.timeIntervalSinceReferenceDate / 60).rounded(.down) * secondsPerStep
+    }
+}
+
+struct SeasonalMotionLayer: View {
+    let style: WidgetArtStyle
+    let date: Date
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
     var body: some View {
         if !reduceMotion, let season = Season(style) {
             GeometryReader { proxy in
                 let size = proxy.size
+                let time = SeasonalDrift.time(at: date)
                 ZStack(alignment: .topLeading) {
                     ForEach(season.wheels.indices, id: \.self) { index in
-                        WheelView(wheel: season.wheels[index], season: season, size: size, seed: UInt64(index + 1) * 7919)
+                        WheelView(wheel: season.wheels[index], season: season, size: size, seed: UInt64(index + 1) * 7919, time: time)
                     }
                 }
                 .frame(width: size.width, height: size.height, alignment: .topLeading)
+                // Each minute's step glides in (widgets allow up to two seconds).
+                .animation(.easeInOut(duration: 2), value: date)
                 .clipped()
                 .mask(EdgeMask())
             }
@@ -56,7 +85,7 @@ private enum Season {
     /// One wheel per depth: far ones carry smaller, fainter, slower pieces.
     struct Wheel {
         let count: Int
-        /// Seconds for a full turn (slower is gentler).
+        /// Seconds of drift for a full turn (slower is gentler).
         let period: TimeInterval
         let sizes: ClosedRange<CGFloat>
         let opacity: Double
@@ -82,11 +111,11 @@ private enum Season {
         }
     }
 
-    /// Flutter on a small circle (radius, seconds), none for snow and light.
+    /// Flutter on a small circle (radius, seconds per loop), none for snow and light.
     var flutter: (radius: CGFloat, period: ClosedRange<Double>)? {
         switch self {
-        case .autumn: (5, 4...7)
-        case .spring: (4, 3...6)
+        case .autumn: (5, 15...25)
+        case .spring: (4, 12...20)
         case .winter, .summer: nil
         }
     }
@@ -158,6 +187,8 @@ private struct WheelView: View {
     let season: Season
     let size: CGSize
     let seed: UInt64
+    /// The drift's clock (`SeasonalDrift.time`).
+    let time: TimeInterval
 
     var body: some View {
         // The centre sits above and left of the widget; the wheel reaches
@@ -165,32 +196,32 @@ private struct WheelView: View {
         let center = CGPoint(x: -0.1 * size.width, y: -0.35 * size.height)
         let near = hypot(center.x, center.y) * 0.9
         let far = hypot(size.width - center.x, size.height - center.y) * 1.05
-        let diameter = far * 2
+        // Turning clockwise: across the widget, down and to the left.
+        let turn = (time / wheel.period).truncatingRemainder(dividingBy: 1) * 2 * .pi
         var random = SeededRandom(seed: seed)
         let pieces = (0..<wheel.count).map { _ in
             Piece(
                 angle: random.next() * 2 * .pi,
                 radius: near + (far - near) * CGFloat(random.next()),
                 size: wheel.sizes.lowerBound + (wheel.sizes.upperBound - wheel.sizes.lowerBound) * CGFloat(random.next()),
-                spin: 5 + random.next() * 9,
+                spin: 20 + random.next() * 20,
                 flutter: random.next(),
                 tint: Int(random.next() * 8)
             )
         }
-        return ZStack {
+        return ZStack(alignment: .topLeading) {
             ForEach(pieces.indices, id: \.self) { index in
                 let piece = pieces[index]
-                PieceView(piece: piece, season: season)
+                let angle = piece.angle + turn
+                PieceView(piece: piece, season: season, time: time)
                     .opacity(wheel.opacity)
                     .position(
-                        x: far + cos(piece.angle) * piece.radius,
-                        y: far + sin(piece.angle) * piece.radius
+                        x: center.x + cos(angle) * piece.radius,
+                        y: center.y + sin(angle) * piece.radius
                     )
             }
         }
-        .frame(width: diameter, height: diameter)
-        .endlessRotation(period: wheel.period)
-        .position(x: center.x, y: center.y)
+        .frame(width: size.width, height: size.height, alignment: .topLeading)
     }
 }
 
@@ -198,6 +229,7 @@ private struct Piece {
     let angle: Double
     let radius: CGFloat
     let size: CGFloat
+    /// Seconds per turn of its own.
     let spin: TimeInterval
     /// 0…1, picks the flutter's speed.
     let flutter: Double
@@ -207,29 +239,21 @@ private struct Piece {
 private struct PieceView: View {
     let piece: Piece
     let season: Season
+    let time: TimeInterval
 
     var body: some View {
-        let shape = season.piece(size: piece.size, tint: piece.tint)
-        if let flutter = season.flutter {
-            let period = flutter.period.lowerBound + (flutter.period.upperBound - flutter.period.lowerBound) * piece.flutter
-            // The piece sits on the rim of a small turning circle: a flutter.
-            ZStack(alignment: .top) {
-                spinning(shape)
-            }
-            .frame(width: flutter.radius * 2 + piece.size, height: flutter.radius * 2 + piece.size)
-            .endlessRotation(period: period)
-        } else {
-            shape
-        }
+        season.piece(size: piece.size, tint: piece.tint)
+            // Never wrapped, so each glide turns the same way.
+            .rotationEffect(.radians(season.spins ? time / piece.spin * 2 * .pi : 0))
+            .offset(flutterOffset)
     }
 
-    @ViewBuilder
-    private func spinning(_ shape: some View) -> some View {
-        if season.spins {
-            shape.endlessRotation(period: piece.spin)
-        } else {
-            shape
-        }
+    /// Where the piece is on its small flutter circle.
+    private var flutterOffset: CGSize {
+        guard let flutter = season.flutter else { return .zero }
+        let period = flutter.period.lowerBound + (flutter.period.upperBound - flutter.period.lowerBound) * piece.flutter
+        let phase = (time / period).truncatingRemainder(dividingBy: 1) * 2 * .pi
+        return CGSize(width: cos(phase) * flutter.radius, height: sin(phase) * flutter.radius)
     }
 }
 
@@ -251,7 +275,7 @@ private struct EdgeMask: View {
     }
 }
 
-/// The same pieces every time (no flicker between refreshes).
+/// The same pieces every time (no flicker between entries).
 private struct SeededRandom {
     private var state: UInt64
 
@@ -261,18 +285,5 @@ private struct SeededRandom {
     mutating func next() -> Double {
         state = state &* 6364136223846793005 &+ 1442695040888963407
         return Double(state >> 11) / Double(1 << 53)
-    }
-}
-
-extension View {
-    /// A rotation the system turns endlessly, a full turn every `period`
-    /// seconds (the effect behind clock widgets' hands), so it keeps going
-    /// between widget refreshes.
-    ///
-    /// Not available: the iOS 26 SDK no longer offers SwiftUI's
-    /// `_clockHandRotationEffect`, so this does nothing and the layer is
-    /// off (VerseWidget) until there's a way to turn it.
-    func endlessRotation(period: TimeInterval, anchor: UnitPoint = .center) -> some View {
-        self
     }
 }

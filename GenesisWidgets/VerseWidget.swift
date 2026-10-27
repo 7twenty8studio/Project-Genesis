@@ -100,8 +100,12 @@ struct VerseProvider: AppIntentTimelineProvider {
     func timeline(for configuration: VerseWidgetIntent, in context: Context) async -> Timeline<VerseEntry> {
         let snapshot = WidgetSnapshot.load() ?? .placeholder
         let source = configuration.option.source
-        let dates = VerseWidgetSchedule.entryDates(rotates: source.rotates, from: .now)
         let background = configuration.background.style
+        var dates = VerseWidgetSchedule.entryDates(rotates: source.rotates, from: .now)
+        // Seasonal backgrounds drift on: a step every minute for an hour.
+        if SeasonalDrift.moves(background) {
+            dates = SeasonalDrift.entryDates(adding: dates, from: .now)
+        }
         return Timeline(entries: dates.map { VerseEntry(date: $0, snapshot: snapshot, source: source, background: background) }, policy: .atEnd)
     }
 }
@@ -201,6 +205,14 @@ private struct VerseContentView: View {
 
     var body: some View {
         content
+            .background {
+                // Leaves, snow, petals or light drifting behind the words,
+                // out to the widget's edges.
+                if !WidgetSize(family).isAccessory, SeasonalDrift.moves(art) {
+                    SeasonalMotionLayer(style: art, date: date)
+                        .padding(-24)
+                }
+            }
             .containerBackground(for: .widget) {
                 if WidgetSize(family).isAccessory {
                     Color.clear
