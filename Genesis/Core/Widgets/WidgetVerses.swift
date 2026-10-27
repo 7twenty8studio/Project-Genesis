@@ -83,8 +83,8 @@ enum WidgetVerses {
     /// verse, the KJV otherwise. Passages found in neither are left out.
     /// (With a YouVersion Bible, a public-domain one in its language:
     /// `BibleLibrary.premiumToolsTranslation`.)
-    static func passages(_ items: [CategoryPassage], library: BibleLibrary) -> [WidgetSnapshot.Passage] {
-        let current = library.premiumToolsTranslation
+    static func passages(_ items: [CategoryPassage], library: BibleLibrary, translation: Translation? = nil) -> [WidgetSnapshot.Passage] {
+        let current = translation ?? library.premiumToolsTranslation
         let own = items.filter { usesOwnBible($0, translationID: current.id) }
         let ownText = (try? library.repository(for: current).verses(withIDs: own.flatMap(\.verseIDs))) ?? [:]
         let kjvText = current.id == Translation.kjv.id ? ownText : ((try? library.repository(for: .kjv).verses(withIDs: items.flatMap(\.verseIDs))) ?? [:])

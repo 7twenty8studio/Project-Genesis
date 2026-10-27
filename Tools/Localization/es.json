@@ -5,7 +5,6 @@
  "%@ highlight": "Resaltado %@",
  "%@ highlights": "Resaltados %@",
  "%@ icon, Premium": "Icono %@, Premium",
- "%@ is free to read, always. Listening isn't available for it, and widgets and Premium tools such as Memorize use the %@ instead.": "La %@ es gratis para leer, siempre. No se puede escuchar, y los widgets y las herramientas Premium como Memorizar usan la %@ en su lugar.",
  "%@ is praying for you. Read with me today?": "%@ está orando por ti. ¿Lees conmigo hoy?",
  "%@ is turned off": "%@ está desactivado",
  "%@ of %lld free explanations used today": "%@ de %lld explicaciones gratuitas usadas hoy",
@@ -612,7 +611,6 @@
  "Free for anyone to read and share. Every Bible in Versely today is public domain.": "Cualquiera puede leerla y compartirla libremente. Hoy todas las Biblias de Versely son de dominio público.",
  "Free includes %lld notes.": "La versión gratuita incluye %lld notas.",
  "Free includes %lld prayer requests.": "La versión gratuita incluye %lld peticiones de oración.",
- "Free to read, always. Listening isn't available, and widgets and Premium tools such as Memorize use the %@ with this Bible.": "Gratis para leer, siempre. No se puede escuchar, y los widgets y las herramientas Premium como Memorizar usan la %@ con esta Biblia.",
  "Friends": "Amigos",
  "Friends and neighbors": "Amigos y vecinos",
  "From": "Desde",
@@ -1743,7 +1741,6 @@
  "There are no notes on this verse.": "No hay notas sobre este versículo.",
  "There's no commentary on this verse.": "No hay comentario sobre este versículo.",
  "There's one Bible in %@ so far: %@.": "Por ahora hay una Biblia en %@: %@.",
- "These Bibles come from the YouVersion Platform. Listening isn't available for them yet, and widgets and Premium tools use a public-domain Bible with them.": "Estas Biblias vienen de la plataforma YouVersion. Todavía no se pueden escuchar, y los widgets y las herramientas Premium usan con ellas una Biblia de dominio público.",
  "They can rejoin only with the new invite code.": "Solo podrá volver a unirse con el nuevo código de invitación.",
  "They'll choose moderators and can close the group, and you'll stay on as a moderator.": "Elegirá a los moderadores y podrá cerrar el grupo, y tú seguirás como moderador.",
  "They're no longer in this group.": "Esa persona ya no está en este grupo.",
@@ -2156,5 +2153,13 @@
  "Your photo in the widget": "Tu foto en el widget",
  "Drag to move the photo and pinch to zoom.": "Arrastra para mover la foto y pellizca para acercarla.",
  "Place your photo": "Coloca tu foto",
- "In Settings › Widget Photo, tap Adjust Photo to drag and zoom your photo for each widget size.": "En Ajustes › Foto del widget, toca Ajustar foto para mover y acercar tu foto en cada tamaño de widget."
+ "In Settings › Widget Photo, tap Adjust Photo to drag and zoom your photo for each widget size.": "En Ajustes › Foto del widget, toca Ajustar foto para mover y acercar tu foto en cada tamaño de widget.",
+ "%@ is free to read, always. Listening isn't available for it, and Premium widgets and tools such as Memorize use the %@ instead.": "La %@ es gratis para leer, siempre. No se puede escuchar, y los widgets y las herramientas Premium como Memorizar usan la %@ en su lugar.",
+ "Free to read, always. Listening isn't available, and Premium widgets and tools such as Memorize use the %@ with this Bible.": "Gratis para leer, siempre. No se puede escuchar, y los widgets y las herramientas Premium como Memorizar usan la %@ con esta Biblia.",
+ "These Bibles come from the YouVersion Platform. Listening isn't available for them yet, and Premium widgets and tools use a public-domain Bible with them.": "Estas Biblias vienen de la plataforma YouVersion. Todavía no se pueden escuchar, y los widgets y las herramientas Premium usan con ellas una Biblia de dominio público.",
+ "Widgets that move": "Widgets que se mueven",
+ "The seasons, moving": "Las estaciones, en movimiento",
+ "With a seasonal background, leaves, snow, petals or summer light drift across the verse widget all day.": "Con un fondo de temporada, hojas, nieve, pétalos o la luz del verano cruzan el widget de versículo todo el día.",
+ "Your Bible in the verse widget": "Tu Biblia en el widget de versículo",
+ "The free verse widget now shows the Bible you're reading, whichever it is.": "El widget de versículo gratuito ahora muestra la Biblia que estás leyendo, sea cual sea."
 }

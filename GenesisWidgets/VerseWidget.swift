@@ -139,7 +139,9 @@ struct DailyVerseView: View {
             PremiumLockedView(message: String(localized: "Choose your photo in Versely: Settings › Widget Photo."), symbol: "photo.badge.plus")
         } else {
             VerseContentView(
-                passage: entry.snapshot.passage(for: entry.source, on: entry.date),
+                passage: showsReaderBible
+                    ? entry.snapshot.freePassage(for: entry.source, on: entry.date)
+                    : entry.snapshot.passage(for: entry.source, on: entry.date),
                 title: title,
                 colors: WidgetColors(entry.snapshot),
                 family: family,
@@ -148,6 +150,13 @@ struct DailyVerseView: View {
                 isVerseOfTheDay: entry.source == .verseOfTheDay
             )
         }
+    }
+
+    /// The free verse widget (Classic look, a free size and option) shows
+    /// the Bible being read, YouVersion Bibles included; Premium looks,
+    /// sizes and options use a public-domain Bible with a YouVersion one.
+    private var showsReaderBible: Bool {
+        art == .classic && WidgetAccess.isUnlocked(entry.source, size: WidgetSize(family), isPremium: false)
     }
 
     /// The chosen background; the Lock Screen's widgets have none.
@@ -201,6 +210,8 @@ private struct VerseContentView: View {
                     VintageBackground(showsStamp: family != .systemSmall)
                 } else if art != .classic, let image = WidgetArtImage.load(art, family: family) {
                     WidgetArtBackground(image: image, style: art)
+                        // The seasons keep moving: leaves, snow, petals, light.
+                        .overlay { SeasonalMotionLayer(style: art) }
                 } else {
                     WidgetBackground(colors: colors)
                 }

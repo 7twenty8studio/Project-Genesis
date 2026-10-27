@@ -61,7 +61,7 @@
         }
       }
     },
-    "%@ is free to read, always. Listening isn't available for it, and widgets and Premium tools such as Memorize use the %@ instead.": {
+    "%@ is free to read, always. Listening isn't available for it, and Premium widgets and tools such as Memorize use the %@ instead.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -5860,7 +5860,7 @@
         }
       }
     },
-    "Free to read, always. Listening isn't available, and widgets and Premium tools such as Memorize use the %@ with this Bible.": {
+    "Free to read, always. Listening isn't available, and Premium widgets and tools such as Memorize use the %@ with this Bible.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -16472,6 +16472,16 @@
         }
       }
     },
+    "The free verse widget now shows the Bible you're reading, whichever it is.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El widget de versículo gratuito ahora muestra la Biblia que estás leyendo, sea cual sea."
+          }
+        }
+      }
+    },
     "The grace you need today: patience, courage, kindness.": {
       "localizations": {
         "es": {
@@ -16608,6 +16618,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Los recordatorios que pones en las oraciones de tu diario."
+          }
+        }
+      }
+    },
+    "The seasons, moving": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las estaciones, en movimiento"
           }
         }
       }
@@ -16813,7 +16833,7 @@
         }
       }
     },
-    "These Bibles come from the YouVersion Platform. Listening isn't available for them yet, and widgets and Premium tools use a public-domain Bible with them.": {
+    "These Bibles come from the YouVersion Platform. Listening isn't available for them yet, and Premium widgets and tools use a public-domain Bible with them.": {
       "localizations": {
         "es": {
           "stringUnit": {
@@ -19124,6 +19144,16 @@
         }
       }
     },
+    "Widgets that move": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Widgets que se mueven"
+          }
+        }
+      }
+    },
     "Widgets with a view": {
       "localizations": {
         "es": {
@@ -19284,6 +19314,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Con Reducir movimiento activado, las estrellas se atenúan suavemente en su lugar y las estaciones muestran una imagen fija."
+          }
+        }
+      }
+    },
+    "With a seasonal background, leaves, snow, petals or summer light drift across the verse widget all day.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con un fondo de temporada, hojas, nieve, pétalos o la luz del verano cruzan el widget de versículo todo el día."
           }
         }
       }
@@ -19958,6 +19998,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu vida con la Biblia"
+          }
+        }
+      }
+    },
+    "Your Bible in the verse widget": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu Biblia en el widget de versículo"
           }
         }
       }

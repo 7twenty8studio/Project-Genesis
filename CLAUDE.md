@@ -292,6 +292,14 @@ shares; README.md has the architecture.
   the widget draws the verse over them verbatim, in `WidgetArtInk` colours. Vintage
   (a postcard: cream stock, a stamp and postmark, ruled eyebrow, italic
   citation) is drawn by the widget itself (`VintageBackground`).
+  The seasonal backgrounds move endlessly (`SeasonalMotionLayer`,
+  GenesisWidgets/SeasonalMotion.swift): pieces on huge slowly turning
+  wheels centred above-left of the widget (a drift down and left), each
+  fluttering and spinning, all rotations from SwiftUI's underscored
+  `_clockHandRotationEffect` (`endlessRotation`), the clock-widget effect
+  the system keeps turning without refreshes; an edge mask keeps the words
+  clear; nothing with Reduce Motion. Undocumented: if a new iOS breaks it,
+  remove the overlay in VerseWidget.
   Keepsakes (Premium; `WidgetArtStyle.isKeepsake`, GenesisWidgets/KeepsakeWidgets.swift):
   Instant Photo, Pressed Flowers, Film Strip, Typewriter, Library Card and
   Calendar Page, after the owner's light Canva mockups (linen, cream cards,
@@ -441,7 +449,9 @@ shares; README.md has the architecture.
   free, never `requiresPremium`; no Premium feature shows its text: use
   `library.premiumToolsTranslation` / `premiumToolsRepository` (a
   public-domain Bible in the same language; RV1909 is installed along with
-  a Spanish one) in Memorize, widgets (the one snapshot), the morning
+  a Spanish one) in Memorize, Premium widgets (the free verse widget, Classic
+  look at a free size and option, shows the YVP Bible via
+  `WidgetSnapshot.readerBible` / `freePassage`), the morning
   welcome, word study, lexicon entries, the Map's verses and journal
   export; listening is
   refused (we told YouVersion it isn't read aloud). People are told on the

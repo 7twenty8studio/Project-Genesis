@@ -27,7 +27,7 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar, verseWallpapers, widgetBackgrounds, keepsakeWidgets, widgetPhotoFraming]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar, verseWallpapers, widgetBackgrounds, keepsakeWidgets, widgetPhotoFraming, movingSeasonsAndYourBible]
 
     static let notifications = WhatsNewAnnouncement(
         id: "notifications-your-way",
@@ -47,6 +47,23 @@ enum WhatsNewCatalog {
                 systemImage: "bell.slash",
                 title: String(localized: "You're in control"),
                 detail: String(localized: "Choose each kind and its time, or turn them all off, in Settings › Notifications.")
+            ),
+        ]
+    )
+
+    static let movingSeasonsAndYourBible = WhatsNewAnnouncement(
+        id: "moving-season-widgets",
+        title: String(localized: "Widgets that move"),
+        items: [
+            WhatsNewItem(
+                systemImage: "leaf",
+                title: String(localized: "The seasons, moving"),
+                detail: String(localized: "With a seasonal background, leaves, snow, petals or summer light drift across the verse widget all day.")
+            ),
+            WhatsNewItem(
+                systemImage: "book",
+                title: String(localized: "Your Bible in the verse widget"),
+                detail: String(localized: "The free verse widget now shows the Bible you're reading, whichever it is.")
             ),
         ]
     )
@@ -211,7 +228,7 @@ enum WhatsNewCatalog {
             WhatsNewItem(
                 systemImage: "info.circle",
                 title: String(localized: "Good to know"),
-                detail: String(localized: "These Bibles come from the YouVersion Platform. Listening isn't available for them yet, and widgets and Premium tools use a public-domain Bible with them.")
+                detail: String(localized: "These Bibles come from the YouVersion Platform. Listening isn't available for them yet, and Premium widgets and tools use a public-domain Bible with them.")
             ),
         ]
     )

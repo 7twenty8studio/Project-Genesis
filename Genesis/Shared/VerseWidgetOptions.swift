@@ -110,6 +110,19 @@ extension WidgetSnapshot {
         return chosen ?? dailyPassage(on: date, calendar: calendar)
     }
 
+    /// The free verse widget (the Classic look, a free size and option)
+    /// always shows the Bible being read, a YouVersion one included.
+    func freePassage(for source: VerseWidgetSource, on date: Date, calendar: Calendar = .current) -> Passage? {
+        guard let reader = readerBible, source == .verseOfTheDay || source == .random else {
+            return passage(for: source, on: date, calendar: calendar)
+        }
+        var own = self
+        own.translation = reader.translation
+        own.dailyVerses = reader.dailyVerses
+        own.randomVerses = reader.randomVerses
+        return own.passage(for: source, on: date, calendar: calendar)
+    }
+
     private static func rotating(_ pool: [Passage], on date: Date, calendar: Calendar) -> Passage? {
         VerseWidgetSchedule.index(for: date, count: pool.count, calendar: calendar).map { pool[$0] }
     }

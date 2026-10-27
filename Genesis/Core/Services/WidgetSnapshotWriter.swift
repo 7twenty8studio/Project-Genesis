@@ -60,23 +60,38 @@ enum WidgetSnapshotWriter {
     }
 
     static func make(library: BibleLibrary, progress: ReadingProgress, context: ModelContext, isPremium: Bool = false, theme: ReaderTheme = .automatic, memoriseShown: Bool = true, now: Date = .now) -> WidgetSnapshot {
-        // One snapshot feeds free and Premium widgets alike, so it never
-        // holds a YouVersion Bible's text (paid features don't show it):
-        // with one, widgets read a public-domain Bible in its language.
+        // Premium widgets never show a YouVersion Bible's text (no YouVersion
+        // text in paid features): with one, they read a public-domain Bible
+        // in its language. The free verse widget shows the Bible being read
+        // whatever it is (`readerBible`).
         let widgetTranslation = library.premiumToolsTranslation
         let repository = library.repository(for: widgetTranslation)
         let calendar = Calendar.current
 
         // Two weeks of daily verses so widgets stay fresh if the app isn't opened.
         let days = (0..<14).compactMap { calendar.date(byAdding: .day, value: $0, to: now) }
-        let dailyVerses: [WidgetSnapshot.DailyVerse] = days.compactMap { day in
-            let id = DailyVerse.verse(for: day, calendar: calendar)
-            guard let verse = try? repository.verse(id) else { return nil }
-            return WidgetSnapshot.DailyVerse(
-                day: Timestamp.dayString(from: day, calendar: calendar),
-                reference: PassageReference(verse: id).description,
-                text: verse.plainText,
-                verse: id.rawValue
+        func dailyVerses(from repository: BibleRepository) -> [WidgetSnapshot.DailyVerse] {
+            days.compactMap { day in
+                let id = DailyVerse.verse(for: day, calendar: calendar)
+                guard let verse = try? repository.verse(id) else { return nil }
+                return WidgetSnapshot.DailyVerse(
+                    day: Timestamp.dayString(from: day, calendar: calendar),
+                    reference: PassageReference(verse: id).description,
+                    text: verse.plainText,
+                    verse: id.rawValue
+                )
+            }
+        }
+        let dailyVerses = dailyVerses(from: repository)
+        let randomPool = WidgetVerses.randomPool(on: now, calendar: calendar)
+
+        var readerBible: WidgetSnapshot.ReaderBible?
+        let reading = library.currentTranslation
+        if reading.id != widgetTranslation.id {
+            readerBible = WidgetSnapshot.ReaderBible(
+                translation: reading.abbreviation,
+                dailyVerses: dailyVerses(from: library.repository(for: reading)),
+                randomVerses: WidgetVerses.passages(randomPool, library: library, translation: reading)
             )
         }
 
@@ -147,9 +162,10 @@ enum WidgetSnapshotWriter {
             theme: isPremium ? widgetTheme(for: theme, now: now) : nil,
             // The verse widget's options: Random Verse is free; categories and
             // From Your Reading are Premium, so they're only written then.
-            randomVerses: WidgetVerses.passages(WidgetVerses.randomPool(on: now, calendar: calendar), library: library),
+            randomVerses: WidgetVerses.passages(randomPool, library: library),
             categoryVerses: isPremium ? WidgetVerses.categories(library: library) : nil,
-            readingVerses: isPremium ? WidgetVerses.fromReading(progress: progress, library: library, now: now, calendar: calendar) : nil
+            readingVerses: isPremium ? WidgetVerses.fromReading(progress: progress, library: library, now: now, calendar: calendar) : nil,
+            readerBible: readerBible
         )
     }
 }

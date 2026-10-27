@@ -104,6 +104,16 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
     var categoryVerses: [String: [Passage]]? = nil
     /// Premium: "From Your Reading", one passage per day ("yyyy-MM-dd").
     var readingVerses: [String: Passage]? = nil
+    /// The Bible being read, when Premium widgets can't show it (a
+    /// YouVersion Bible: no YouVersion text in paid features): its verses
+    /// for the free verse widget. Nil when every widget uses that Bible.
+    var readerBible: ReaderBible? = nil
+
+    struct ReaderBible: Codable, Equatable, Sendable {
+        let translation: String
+        let dailyVerses: [DailyVerse]
+        let randomVerses: [Passage]
+    }
 
     static let appGroup = "group.com.7twenty8studio.versely"
     static let fileName = "widget-snapshot.json"

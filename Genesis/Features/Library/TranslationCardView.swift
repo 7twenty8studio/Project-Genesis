@@ -37,7 +37,7 @@ struct TranslationCardView: View {
             // YouVersion Bibles: said before anyone chooses one (our
             // agreement with YouVersion keeps them out of paid features).
             if entry.translation.isYouVersion {
-                Text(String(localized: "Free to read, always. Listening isn't available, and widgets and Premium tools such as Memorize use the \(library.premiumToolsBibleName(for: entry.translation)) with this Bible."))
+                Text(String(localized: "Free to read, always. Listening isn't available, and Premium widgets and tools such as Memorize use the \(library.premiumToolsBibleName(for: entry.translation)) with this Bible."))
                     .font(.caption)
                     .foregroundStyle(palette.secondaryText)
                     .fixedSize(horizontal: false, vertical: true)
