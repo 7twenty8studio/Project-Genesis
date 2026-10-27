@@ -63,15 +63,28 @@ enum WidgetArt {
         folder?.appending(path: "\(style.rawValue)-\(shape.rawValue).jpg")
     }
 
-    /// The person's photo, prepared for the widget (at most 1200 pixels).
+    /// The person's photo as chosen (at most 2400 pixels, no metadata),
+    /// kept so it can be framed again.
     static var photoURL: URL? {
         folder?.appending(path: "photo.jpg")
+    }
+
+    /// The photo cut to one widget shape, as the person framed it
+    /// (Settings › Widget Photo › Adjust).
+    static func framedPhotoURL(_ shape: WidgetArtShape) -> URL? {
+        folder?.appending(path: "photo-\(shape.rawValue).jpg")
     }
 
     static func url(_ style: WidgetArtStyle, shape: WidgetArtShape) -> URL? {
         switch style {
         case .classic, .vintage, .instantPhoto, .pressedFlowers, .filmStrip, .typewriter, .libraryCard, .calendarPage: nil
-        case .photo: photoURL
+        case .photo:
+            // The framed copy; a photo saved before framing existed has none.
+            if let framed = framedPhotoURL(shape), FileManager.default.fileExists(atPath: framed.path) {
+                framed
+            } else {
+                photoURL
+            }
         default: paintedURL(style, shape: shape)
         }
     }

@@ -3,12 +3,20 @@ import SwiftUI
 
 /// Settings › Widget Photo (Premium): the photo the verse widget shows when
 /// its Background is set to Your Photo. Kept in the App Group, made smaller
-/// and without its metadata (`WidgetArtWriter.savePhoto`).
+/// and without its metadata (`WidgetArtWriter.savePhoto`), and framed for
+/// each widget size by dragging and pinching (`WidgetPhotoFramingView`).
 struct WidgetPhotoSettingsView: View {
     @Environment(\.palette) private var palette
     @State private var photo: UIImage? = WidgetArtWriter.photo
     @State private var item: PhotosPickerItem?
     @State private var failed = false
+    @State private var framing = false
+    /// The medium widget's framed photo, for the preview.
+    @State private var framed: UIImage? = Self.framedPreview()
+
+    private static func framedPreview() -> UIImage? {
+        WidgetArt.url(.photo, shape: .medium).flatMap { UIImage(contentsOfFile: $0.path) }
+    }
 
     var body: some View {
         List {
@@ -26,9 +34,19 @@ struct WidgetPhotoSettingsView: View {
                     }
                     .accessibilityIdentifier("widgetPhoto.choose")
                     if photo != nil {
+                        Button {
+                            framing = true
+                        } label: {
+                            Label("Adjust Photo", systemImage: "crop")
+                                .foregroundStyle(palette.accent)
+                        }
+                        .accessibilityIdentifier("widgetPhoto.adjust")
                         Button(role: .destructive) {
                             WidgetArtWriter.removePhoto()
-                            withAnimation(Motion.easeOut(0.2)) { photo = nil }
+                            withAnimation(Motion.easeOut(0.2)) {
+                                photo = nil
+                                framed = nil
+                            }
                         } label: {
                             Label("Remove Photo", systemImage: "trash")
                         }
@@ -50,13 +68,20 @@ struct WidgetPhotoSettingsView: View {
         .onChange(of: item) { _, new in
             Task { await load(new) }
         }
+        .sheet(isPresented: $framing) {
+            if let photo {
+                WidgetPhotoFramingView(photo: photo) {
+                    framed = Self.framedPreview()
+                }
+            }
+        }
     }
 
     /// A medium widget with a sample verse, as it will look.
     private var preview: some View {
         ZStack(alignment: .topLeading) {
-            if let photo {
-                Image(uiImage: photo)
+            if let shown = framed ?? photo {
+                Image(uiImage: shown)
                     .resizable()
                     .scaledToFill()
                 LinearGradient(colors: [.black.opacity(0.28), .black.opacity(0.42), .black.opacity(0.62)], startPoint: .top, endPoint: .bottom)
@@ -108,7 +133,12 @@ struct WidgetPhotoSettingsView: View {
         }
         do {
             try WidgetArtWriter.savePhoto(image)
-            withAnimation(Motion.easeOut(0.2)) { photo = WidgetArtWriter.photo }
+            withAnimation(Motion.easeOut(0.2)) {
+                photo = WidgetArtWriter.photo
+                framed = Self.framedPreview()
+            }
+            // Straight on to placing it.
+            framing = true
         } catch {
             failed = true
         }

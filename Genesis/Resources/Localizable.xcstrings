@@ -1685,6 +1685,16 @@
         }
       }
     },
+    "Adjust Photo": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustar foto"
+          }
+        }
+      }
+    },
     "Adoration": {
       "comment": "ACTS prayer heading",
       "localizations": {
@@ -4785,6 +4795,26 @@
         }
       }
     },
+    "Drag to move the photo and pinch to zoom.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arrastra para mover la foto y pellizca para acercarla."
+          }
+        }
+      }
+    },
+    "Drag to move the photo and pinch to zoom. Each widget size keeps its own framing.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arrastra para mover la foto y pellizca para acercarla. Cada tamaño de widget guarda su propio encuadre."
+          }
+        }
+      }
+    },
     "Drawing": {
       "comment": "Attachment kind: an Apple Pencil page",
       "localizations": {
@@ -7022,6 +7052,16 @@
         }
       }
     },
+    "In Settings › Widget Photo, tap Adjust Photo to drag and zoom your photo for each widget size.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En Ajustes › Foto del widget, toca Ajustar foto para mover y acercar tu foto en cada tamaño de widget."
+          }
+        }
+      }
+    },
     "In Your Memorize List": {
       "localizations": {
         "es": {
@@ -7668,6 +7708,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Idioma"
+          }
+        }
+      }
+    },
+    "Large": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grande"
           }
         }
       }
@@ -8550,6 +8600,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Significado"
+          }
+        }
+      }
+    },
+    "Medium": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mediano"
           }
         }
       }
@@ -11131,6 +11191,16 @@
         }
       }
     },
+    "Place your photo": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coloca tu foto"
+          }
+        }
+      }
+    },
     "Places": {
       "localizations": {
         "es": {
@@ -13199,6 +13269,16 @@
         }
       }
     },
+    "Reset": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restablecer"
+          }
+        }
+      }
+    },
     "Reset to Defaults": {
       "localizations": {
         "es": {
@@ -14649,6 +14729,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Deslizar"
+          }
+        }
+      }
+    },
+    "Small": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pequeño"
           }
         }
       }
@@ -19024,6 +19114,16 @@
         }
       }
     },
+    "Widget Size": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamaño del widget"
+          }
+        }
+      }
+    },
     "Widgets with a view": {
       "localizations": {
         "es": {
@@ -20122,6 +20222,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu contraseña se cambió."
+          }
+        }
+      }
+    },
+    "Your photo in the widget": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu foto en el widget"
           }
         }
       }

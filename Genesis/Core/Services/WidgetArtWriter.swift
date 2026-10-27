@@ -35,13 +35,15 @@ enum WidgetArtWriter {
         WidgetCenter.shared.reloadTimelines(ofKind: WidgetKind.dailyVerse.rawValue)
     }
 
-    /// Keeps a photo for the widget: at most 1200 pixels on its long side,
-    /// as a JPEG without its metadata (no location travels with it).
+    /// Keeps a photo for the widget: at most 2400 pixels on its long side
+    /// (room to zoom in), as a JPEG without its metadata (no location
+    /// travels with it), framed in the middle for every widget size until
+    /// the person moves it.
     static func savePhoto(_ image: UIImage) throws {
         guard let folder = WidgetArt.folder, let url = WidgetArt.photoURL else { return }
         try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
         let longSide = max(image.size.width, image.size.height) * image.scale
-        let factor = min(1, 1200 / max(longSide, 1))
+        let factor = min(1, 2400 / max(longSide, 1))
         let target = CGSize(width: image.size.width * image.scale * factor, height: image.size.height * image.scale * factor)
         let format = UIGraphicsImageRendererFormat()
         format.scale = 1
@@ -50,12 +52,54 @@ enum WidgetArtWriter {
         }
         guard let data = resized.jpegData(compressionQuality: 0.85) else { return }
         try data.write(to: url, options: .atomic)
+        for shape in WidgetArtShape.allCases {
+            UserDefaults.standard.removeObject(forKey: framingKey(shape))
+        }
+        saveFramings([:], photo: resized)
+    }
+
+    /// The framing kept for one widget shape (the middle, if never moved).
+    static func framing(for shape: WidgetArtShape) -> PhotoFraming {
+        guard let data = UserDefaults.standard.data(forKey: framingKey(shape)),
+              let framing = try? JSONDecoder().decode(PhotoFraming.self, from: data) else { return PhotoFraming() }
+        return framing
+    }
+
+    /// Keeps each shape's framing and writes the photo cut to each shape
+    /// at the widget's full size.
+    static func saveFramings(_ framings: [WidgetArtShape: PhotoFraming], photo: UIImage? = nil) {
+        guard let photo = photo ?? self.photo, let cgImage = photo.cgImage else { return }
+        let pixels = CGSize(width: cgImage.width, height: cgImage.height)
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1
+        for shape in WidgetArtShape.allCases {
+            let framing = framings[shape] ?? framing(for: shape)
+            if let data = try? JSONEncoder().encode(framing) {
+                UserDefaults.standard.set(data, forKey: framingKey(shape))
+            }
+            let size = shape.pixelSize
+            let crop = framing.crop(imageSize: pixels, aspect: size.width / size.height)
+            guard let url = WidgetArt.framedPhotoURL(shape), let cut = cgImage.cropping(to: crop.integral) else { continue }
+            let framed = UIGraphicsImageRenderer(size: size, format: format).image { _ in
+                UIImage(cgImage: cut).draw(in: CGRect(origin: .zero, size: size))
+            }
+            try? framed.jpegData(compressionQuality: 0.85)?.write(to: url, options: .atomic)
+        }
         WidgetCenter.shared.reloadTimelines(ofKind: WidgetKind.dailyVerse.rawValue)
     }
 
+    private static func framingKey(_ shape: WidgetArtShape) -> String {
+        "widgetPhoto.framing.\(shape.rawValue)"
+    }
+
     static func removePhoto() {
-        guard let url = WidgetArt.photoURL else { return }
-        try? FileManager.default.removeItem(at: url)
+        let urls = [WidgetArt.photoURL] + WidgetArtShape.allCases.map(WidgetArt.framedPhotoURL)
+        for url in urls.compactMap({ $0 }) {
+            try? FileManager.default.removeItem(at: url)
+        }
+        for shape in WidgetArtShape.allCases {
+            UserDefaults.standard.removeObject(forKey: framingKey(shape))
+        }
         WidgetCenter.shared.reloadTimelines(ofKind: WidgetKind.dailyVerse.rawValue)
     }
 

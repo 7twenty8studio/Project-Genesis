@@ -286,7 +286,9 @@ shares; README.md has the architecture.
   (`WidgetArtWriter.drawIfNeeded` from RootView's widget refresh; bump
   `WidgetArt.version` to redraw; seasonal art kept to the edges) and keeps
   the person's photo there (Settings › Widget Photo,
-  `WidgetPhotoSettingsView`: ≤ 1200 px JPEG, no metadata). Pictures only:
+  `WidgetPhotoSettingsView`: ≤ 2400 px JPEG, no metadata; Adjust Photo,
+  `WidgetPhotoFramingView`, drags and pinches it per widget size, the pure
+  `PhotoFraming` (Swift Testing) giving the crop, saved as photo-<shape>.jpg). Pictures only:
   the widget draws the verse over them verbatim, in `WidgetArtInk` colours. Vintage
   (a postcard: cream stock, a stamp and postmark, ruled eyebrow, italic
   citation) is drawn by the widget itself (`VintageBackground`).

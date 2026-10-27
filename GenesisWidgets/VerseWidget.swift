@@ -260,21 +260,26 @@ private struct VerseContentView: View {
         let stampRoom: CGFloat = family == .systemSmall ? 0 : 100
         return VStack(alignment: .leading, spacing: family == .systemSmall ? 6 : 10) {
             HStack(spacing: 8) {
+                // The heading keeps its full width; the rule takes what's left.
                 Text(title.uppercased())
                     .font(.system(size: 9, weight: .semibold))
-                    .kerning(2.2)
+                    .kerning(family == .systemSmall ? 1.2 : 2.2)
                     .foregroundStyle(ink.accent)
                     .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+                    .layoutPriority(1)
                 Rectangle()
                     .fill(ink.secondary.opacity(0.45))
-                    .frame(height: 0.75)
+                    .frame(minWidth: 0, maxHeight: 0.75)
             }
             .padding(.trailing, stampRoom)
+            // The verse gets the room first, and shrinks rather than cuts off.
             Text(passage?.text ?? "")
                 .font(.system(textStyle, design: .serif))
-                .lineSpacing(family == .systemSmall ? 1 : 3)
+                .lineSpacing(family == .systemSmall ? 1 : 2)
                 .foregroundStyle(ink.text)
-                .minimumScaleFactor(0.6)
+                .minimumScaleFactor(0.5)
+                .layoutPriority(1)
                 .padding(.trailing, stampRoom)
             Spacer(minLength: 0)
             Text(vintageCitation)
@@ -299,7 +304,8 @@ private struct VerseContentView: View {
                 .font(.system(textStyle, design: .serif))
                 .lineSpacing(family == .systemSmall ? 1 : 3)
                 .foregroundStyle(ink.text)
-                .minimumScaleFactor(0.6)
+                .minimumScaleFactor(0.5)
+                .layoutPriority(1)
                 .shadow(color: art.isDark ? .black.opacity(0.35) : .clear, radius: 3, y: 1)
             Spacer(minLength: 0)
             Text(citation)
