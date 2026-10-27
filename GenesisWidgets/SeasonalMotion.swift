@@ -68,9 +68,11 @@ private enum Season {
             [Wheel(count: 38, period: 210, sizes: 8...11, opacity: 0.6),
              Wheel(count: 30, period: 150, sizes: 12...17, opacity: 0.9)]
         case .winter:
-            [Wheel(count: 52, period: 170, sizes: 2...3.5, opacity: 0.7),
-             Wheel(count: 44, period: 120, sizes: 3.5...5.5, opacity: 0.85),
-             Wheel(count: 18, period: 85, sizes: 6...8, opacity: 0.95)]
+            // The reader's three depths (SeasonalEffectView's WinterSnow):
+            // sizes are diameters, speeds about its falls (9, 16, 28 pt/s).
+            [Wheel(count: 36, period: 190, sizes: 1.8...2.6, opacity: 1),
+             Wheel(count: 24, period: 107, sizes: 3.6...4.8, opacity: 1),
+             Wheel(count: 10, period: 61, sizes: 7.2...10, opacity: 1)]
         case .spring:
             [Wheel(count: 38, period: 200, sizes: 5...7, opacity: 0.65),
              Wheel(count: 30, period: 140, sizes: 8...11, opacity: 0.9)]
@@ -118,10 +120,28 @@ private enum Season {
                 .frame(width: size * 0.65, height: size)
                 .shadow(color: .black.opacity(0.1), radius: 1, y: 0.5)
         case .winter:
-            Circle()
-                .fill(.white)
-                .frame(width: size, height: size)
-                .shadow(color: Color(red: 0.3, green: 0.4, blue: 0.55).opacity(0.6), radius: 1.2)
+            // Exactly the reader's flakes: pale blue-grey (#8FA6B8) with a
+            // white centre; the near ones soft, as if out of focus.
+            let blue = Color(red: 0x8F / 255, green: 0xA6 / 255, blue: 0xB8 / 255)
+            if size >= 6 {
+                ZStack {
+                    Circle()
+                        .fill(RadialGradient(colors: [blue.opacity(0.55), blue.opacity(0)], center: .center, startRadius: 0, endRadius: size * 0.8))
+                        .frame(width: size * 1.6, height: size * 1.6)
+                    Circle()
+                        .fill(RadialGradient(colors: [.white.opacity(0.9), .white.opacity(0)], center: .center, startRadius: 0, endRadius: size / 2))
+                        .frame(width: size, height: size)
+                }
+            } else {
+                ZStack {
+                    Circle()
+                        .fill(blue.opacity(size < 3 ? 0.6 : 0.72))
+                        .frame(width: size, height: size)
+                    Circle()
+                        .fill(.white.opacity(0.85))
+                        .frame(width: size / 2, height: size / 2)
+                }
+            }
         case .summer:
             Circle()
                 .fill(Color(red: 0.98, green: 0.85, blue: 0.55))

@@ -42,6 +42,10 @@ struct ReaderView: View {
     /// height, and following that re-paginated (and briefly blanked) the
     /// page on every tap.
     @State private var stableSurfaceSize: CGSize?
+    /// The surface size once it has stopped changing for a moment: the page
+    /// controller is built afresh for each one (not for every frame while
+    /// an iPhone Duo opens).
+    @State private var settledSurfaceSize: CGSize?
     @State private var measuredWindowSize: CGSize = .zero
     @FocusState private var isFocused: Bool
 
@@ -225,6 +229,14 @@ struct ReaderView: View {
         .onGeometryChange(for: CGSize.self) { $0.size } action: { size in
             surfaceDidResize(to: size)
         }
+        .task(id: stableSurfaceSize) {
+            // Settled once it's been still for a moment (the first time at once).
+            if settledSurfaceSize != nil {
+                try? await Task.sleep(for: .milliseconds(350))
+                guard !Task.isCancelled else { return }
+            }
+            settledSurfaceSize = stableSurfaceSize
+        }
         .onChange(of: reader.showsControls) {
             // Some screens report a smaller top inset while the status bar is
             // hidden. If a larger one shows up, keep the text clear of it too
@@ -279,10 +291,11 @@ struct ReaderView: View {
                 pageTurnHapticStrength: preferences.pageTurnHapticStrength
             )
             // The transition style can only be set when the controller is
-            // created. Turning the device builds it afresh too: a page curl
-            // controller can otherwise keep a page laid out for the old shape
-            // (half a page of text after turning back upright).
-            .id(PageControllerKey(turn: turn, landscape: layout.size.width > layout.size.height))
+            // created. Any new size (turning the device, an iPhone Duo
+            // opening or folding, the side panel) builds it afresh too: a
+            // page curl controller can otherwise keep a page laid out for
+            // the old shape, or show nothing at all after the Duo opens.
+            .id(PageControllerKey(turn: turn, width: Int((settledSurfaceSize?.width ?? 0).rounded()), height: Int((settledSurfaceSize?.height ?? 0).rounded())))
         } else {
             ScrollReaderView(
                 viewModel: reader,
@@ -649,5 +662,6 @@ enum ReaderSheet: Identifiable {
 /// the orientation changes.
 private struct PageControllerKey: Hashable {
     let turn: PageTurnStyle
-    let landscape: Bool
+    let width: Int
+    let height: Int
 }
