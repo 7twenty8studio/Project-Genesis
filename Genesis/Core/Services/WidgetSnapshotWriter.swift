@@ -70,7 +70,7 @@ enum WidgetSnapshotWriter {
 
         // Two weeks of daily verses so widgets stay fresh if the app isn't opened.
         let days = (0..<14).compactMap { calendar.date(byAdding: .day, value: $0, to: now) }
-        func dailyVerses(from repository: BibleRepository) -> [WidgetSnapshot.DailyVerse] {
+        func versesOfTheDay(from repository: BibleRepository) -> [WidgetSnapshot.DailyVerse] {
             days.compactMap { day in
                 let id = DailyVerse.verse(for: day, calendar: calendar)
                 guard let verse = try? repository.verse(id) else { return nil }
@@ -82,7 +82,7 @@ enum WidgetSnapshotWriter {
                 )
             }
         }
-        let dailyVerses = dailyVerses(from: repository)
+        let dailyVerses = versesOfTheDay(from: repository)
         let randomPool = WidgetVerses.randomPool(on: now, calendar: calendar)
 
         var readerBible: WidgetSnapshot.ReaderBible?
@@ -90,7 +90,7 @@ enum WidgetSnapshotWriter {
         if reading.id != widgetTranslation.id {
             readerBible = WidgetSnapshot.ReaderBible(
                 translation: reading.abbreviation,
-                dailyVerses: dailyVerses(from: library.repository(for: reading)),
+                dailyVerses: versesOfTheDay(from: library.repository(for: reading)),
                 randomVerses: WidgetVerses.passages(randomPool, library: library, translation: reading)
             )
         }
