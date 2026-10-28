@@ -50,6 +50,9 @@ struct PagedReaderView: UIViewControllerRepresentable {
         controller.onSizeChange = { [weak coordinator = context.coordinator] in
             coordinator?.viewSizeChanged()
         }
+        controller.onLayout = { [weak coordinator = context.coordinator] in
+            coordinator?.pagesDidLayout()
+        }
         // Page curl adds its own edge-tap recognisers. Our taps already turn
         // pages (and respect left-handed mode), so keep only the drag-to-curl.
         for recognizer in controller.gestureRecognizers where recognizer is UITapGestureRecognizer {
@@ -85,6 +88,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
     static func dismantleUIViewController(_ controller: ReaderPagesController, coordinator: Coordinator) {
         controller.onSizeTransition = nil
         controller.onSizeChange = nil
+        controller.onLayout = nil
         controller.dataSource = nil
         controller.delegate = nil
         if coordinator.pageController === controller {
@@ -205,6 +209,22 @@ struct PagedReaderView: UIViewControllerRepresentable {
         }
 
         private var isBusy: Bool { isResizing || isTurning }
+
+        /// UIKit laid the pages out. If no real page is on screen (the
+        /// blank stand-in, or a page curl left without its page's view,
+        /// as after an iPhone Duo opens beside the side panel), the page
+        /// is put in place again once things are still.
+        func pagesDidLayout() {
+            guard layout != nil, !needsRefresh, !isTurning,
+                  let controller = pageController, controller.view.window != nil else { return }
+            let page = controller.viewControllers?.first as? ReaderPageViewController
+            if let page, page.isViewLoaded, page.view.window != nil, !page.view.isHidden,
+               page.view.bounds.width > 0, page.view.bounds.height > 0 {
+                return
+            }
+            needsRefresh = true
+            flushPendingUpdate()
+        }
 
         func sizeTransition(inProgress: Bool) {
             resizeStartedAt = inProgress ? Date() : nil
@@ -540,7 +560,14 @@ final class ReaderPagesController: UIPageViewController {
     /// Every change of the view's size, transition or not (an iPhone Duo
     /// opening can resize the window without one reaching this controller).
     var onSizeChange: (() -> Void)?
+    /// Every layout pass, so a page that went missing is noticed.
+    var onLayout: (() -> Void)?
     private var lastSize: CGSize = .zero
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        onLayout?()
+    }
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
