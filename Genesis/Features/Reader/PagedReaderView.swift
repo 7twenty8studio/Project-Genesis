@@ -61,6 +61,11 @@ struct PagedReaderView: UIViewControllerRepresentable {
         controller.dataSource = context.coordinator
         controller.delegate = context.coordinator
         controller.view.backgroundColor = layout.style.palette.uiBackground
+        // A new controller's view starts out the size of the screen. Page
+        // curl lays its first page out for that size and doesn't redo it,
+        // so a page beside the side panel (narrower than the screen) came
+        // up blank. Start it at the size it will be shown at.
+        controller.view.frame = CGRect(origin: .zero, size: layout.size)
         context.coordinator.pageController = controller
         // A new controller is often built in the middle of a size change
         // (turning the phone, opening an iPhone Duo: see the `.id` in

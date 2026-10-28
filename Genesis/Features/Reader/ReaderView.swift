@@ -272,7 +272,7 @@ struct ReaderView: View {
                 bottomInset: layout.safeArea.bottom + 60
             )
         } else if preferences.readingMode == .page {
-            let turn: PageTurnStyle = reduceMotion || !pageCurlFits(layout) ? .slide : preferences.pageTurn
+            let turn: PageTurnStyle = reduceMotion ? .slide : preferences.pageTurn
             PagedReaderView(
                 viewModel: reader,
                 layout: layout,
@@ -331,16 +331,6 @@ struct ReaderView: View {
         stableSurfaceSize = size
         // Rotation changes which edges have insets.
         windowSafeArea = DeviceScreen.safeAreaInsets
-    }
-
-    /// Page curl lays its page out for the screen's orientation: on a
-    /// landscape screen it shows nothing in a page taller than it is wide
-    /// (the open iPhone Duo held sideways, beside the side panel). There
-    /// the page slides instead, and curls again once the shapes agree.
-    private func pageCurlFits(_ layout: ReaderLayout) -> Bool {
-        let landscapeScreen = measuredWindowSize.width > measuredWindowSize.height
-        let tallPage = layout.size.height > layout.size.width
-        return !(landscapeScreen && tallPage)
     }
 
     /// On iPad the tab bar floats at the top of the screen, so the reader's
