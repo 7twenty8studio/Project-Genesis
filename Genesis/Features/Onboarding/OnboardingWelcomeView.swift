@@ -18,18 +18,19 @@ struct OnboardingWelcomeView: View {
 
     var body: some View {
         VStack(spacing: 0) {
+            // The row keeps its height, so nothing moves when Skip goes.
             HStack {
                 Spacer()
-                Button("Skip", action: onContinue)
-                    .font(.subheadline)
-                    .foregroundStyle(palette.secondaryText)
-                    .opacity(isLast ? 0 : 1)
-                    .disabled(isLast)
-                    .accessibilityHidden(isLast)
-                    .accessibilityIdentifier("onboarding.welcome.skip")
+                if !isLast {
+                    Button("Skip", action: onContinue)
+                        .font(.subheadline)
+                        .foregroundStyle(palette.secondaryText)
+                        .transition(.opacity)
+                        .accessibilityIdentifier("onboarding.welcome.skip")
+                }
             }
             .padding(.horizontal, 24)
-            .frame(minHeight: 44)
+            .frame(height: 44)
 
             TabView(selection: $page) {
                 ForEach(pages) { page in
