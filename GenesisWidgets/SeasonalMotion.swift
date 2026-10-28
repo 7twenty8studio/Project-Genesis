@@ -22,7 +22,7 @@ enum SeasonalDrift {
     static let steps = 60
 
     static func moves(_ style: WidgetArtStyle) -> Bool {
-        Season(style) != nil
+        DriftSeason(style) != nil
     }
 
     /// An entry every minute for an hour, plus the verse's own changes.
@@ -46,7 +46,7 @@ struct SeasonalMotionLayer: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
-        if !reduceMotion, let season = Season(style) {
+        if !reduceMotion, let season = DriftSeason(style) {
             GeometryReader { proxy in
                 let size = proxy.size
                 let time = SeasonalDrift.time(at: date)
@@ -69,7 +69,7 @@ struct SeasonalMotionLayer: View {
 
 // MARK: - Seasons
 
-private enum Season {
+private enum DriftSeason {
     case autumn, winter, spring, summer
 
     init?(_ style: WidgetArtStyle) {
@@ -183,8 +183,8 @@ private enum Season {
 // MARK: - A wheel
 
 private struct WheelView: View {
-    let wheel: Season.Wheel
-    let season: Season
+    let wheel: DriftSeason.Wheel
+    let season: DriftSeason
     let size: CGSize
     let seed: UInt64
     /// The drift's clock (`SeasonalDrift.time`).
@@ -238,7 +238,7 @@ private struct Piece {
 
 private struct PieceView: View {
     let piece: Piece
-    let season: Season
+    let season: DriftSeason
     let time: TimeInterval
 
     var body: some View {
