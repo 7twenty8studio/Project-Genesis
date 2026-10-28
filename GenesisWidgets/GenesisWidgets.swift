@@ -54,10 +54,14 @@ struct SnapshotProvider: TimelineProvider {
 
 /// Muted colours matching the app's Paper and Slate themes.
 enum WidgetPalette {
-    static let accent = Color(light: 0xA8844E, dark: 0xC9A96E)
-    static let text = Color(light: 0x2B2A27, dark: 0xDAD5C8)
-    static let secondary = Color(light: 0x7D776B, dark: 0x8D9196)
-    static let background = Color(light: 0xFBF8F1, dark: 0x1E2226)
+    // The brand's cream, copper and walnut (BrandColors), deepened where
+    // small text needs the contrast.
+    static let accent = Color(light: 0x9A6640, dark: 0xE0B48D)
+    static let text = Color(light: 0x4A2E1A, dark: 0xF3E2CC)
+    static let secondary = Color(light: 0x8A6243, dark: 0xC7A27F)
+    static let background = Color(light: 0xFBF1E4, dark: 0x2B1A0F)
+    /// Where the default background's soft gradient settles, at the bottom.
+    static let backgroundGlow = Color(light: 0xF2DCC2, dark: 0x1F120A)
 }
 
 extension Color {

@@ -51,6 +51,10 @@ struct WidgetBackground: View {
         let variant = colors.theme.map { colorScheme == .dark ? $0.dark : $0.light }
         ZStack {
             colors.background
+            // The default look: cream warming gently toward the bottom.
+            if colors.theme == nil {
+                LinearGradient(colors: [colors.background, WidgetPalette.backgroundGlow], startPoint: .top, endPoint: .bottom)
+            }
             if let variant, variant.hasPaperTexture {
                 PaperGrain(isDark: variant.isDark)
             }
@@ -130,16 +134,39 @@ private struct GrainRandom {
     }
 }
 
-/// Small capitals above a widget's content.
+/// Small capitals above a widget's content, after the Versely mark.
 struct Eyebrow: View {
     let text: String
     var color: Color = WidgetPalette.accent
 
     var body: some View {
-        Text(text.uppercased())
-            .font(.system(size: 10, weight: .semibold))
-            .kerning(1)
-            .foregroundStyle(color)
+        HStack(spacing: 5) {
+            VerselyMark()
+            Text(text.uppercased())
+                .font(.system(size: 10, weight: .semibold))
+                .kerning(1.4)
+                .foregroundStyle(color)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+        }
+    }
+}
+
+/// The open-book V from the logo kit, small: walnut on light widgets, cream
+/// on dark ones (GenesisWidgets/Brand).
+struct VerselyMark: View {
+    var height: CGFloat = 9
+    @Environment(\.colorScheme) private var colorScheme
+
+    var body: some View {
+        if let image = Bundle.main.path(forResource: colorScheme == .dark ? "versely-mark-cream" : "versely-mark-walnut", ofType: "png")
+            .flatMap(UIImage.init(contentsOfFile:)) {
+            Image(uiImage: image)
+                .resizable()
+                .scaledToFit()
+                .frame(height: height)
+                .accessibilityHidden(true)
+        }
     }
 }
 

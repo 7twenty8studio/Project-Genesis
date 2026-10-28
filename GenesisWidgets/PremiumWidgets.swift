@@ -46,7 +46,16 @@ struct TodaysReadingView: View {
     private func planView(_ plan: WidgetSnapshot.Plan, colors: WidgetColors) -> some View {
         let done = plan.isTodayComplete
         return VStack(alignment: .leading, spacing: 8) {
-            Eyebrow(text: String(localized: "Today's Reading"), color: colors.accent)
+            HStack(alignment: .firstTextBaseline) {
+                Eyebrow(text: String(localized: "Today's Reading"), color: colors.accent)
+                Spacer(minLength: 4)
+                if family != .systemSmall {
+                    Text("Day \(plan.scheduledDay ?? plan.dayNumber) of \(plan.dayCount)")
+                        .font(.caption2.weight(.medium))
+                        .foregroundStyle(colors.secondary)
+                        .lineLimit(1)
+                }
+            }
             Text(plan.todayTitle)
                 .font(.system(family == .systemSmall ? .headline : .title3, design: .serif, weight: .semibold))
                 .foregroundStyle(colors.text)
@@ -58,6 +67,7 @@ struct TodaysReadingView: View {
                 .foregroundStyle(colors.secondary)
                 .lineLimit(1)
             Spacer(minLength: 0)
+            PlanProgressBar(fraction: plan.fractionComplete, colors: colors)
             HStack(alignment: .center) {
                 if let id = plan.enrollmentID {
                     let day = plan.scheduledDay ?? plan.dayNumber
@@ -69,14 +79,6 @@ struct TodaysReadingView: View {
                     .foregroundStyle(colors.accent)
                 }
                 Spacer(minLength: 0)
-                if family != .systemSmall {
-                    Gauge(value: plan.fractionComplete) {
-                        Text("Plan")
-                    }
-                    .gaugeStyle(.accessoryLinearCapacity)
-                    .tint(colors.accent)
-                    .frame(width: 90)
-                }
             }
         }
         .widgetURL(GenesisLink.plans)
@@ -94,6 +96,27 @@ struct TodaysReadingView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .widgetURL(link)
+    }
+}
+
+/// How far through the plan: a thin track with a copper fill.
+private struct PlanProgressBar: View {
+    let fraction: Double
+    let colors: WidgetColors
+
+    var body: some View {
+        GeometryReader { proxy in
+            ZStack(alignment: .leading) {
+                Capsule().fill(colors.secondary.opacity(0.2))
+                Capsule()
+                    .fill(LinearGradient(colors: [colors.accent.opacity(0.75), colors.accent], startPoint: .leading, endPoint: .trailing))
+                    .frame(width: max(5, proxy.size.width * min(max(fraction, 0), 1)))
+            }
+        }
+        .frame(height: 5)
+        .accessibilityElement()
+        .accessibilityLabel(Text("Plan"))
+        .accessibilityValue(Text(fraction, format: .percent.precision(.fractionLength(0))))
     }
 }
 

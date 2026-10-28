@@ -1134,6 +1134,26 @@
         }
       }
     },
+    "A new icon": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un nuevo icono"
+          }
+        }
+      }
+    },
+    "A new look for Versely": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un nuevo aspecto para Versely"
+          }
+        }
+      }
+    },
     "A nudge only on days you haven't read yet, to keep your streak going, plus your plan, Memorize and Sunday sermon notes.": {
       "localizations": {
         "es": {
@@ -1990,6 +2010,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Una idea"
+          }
+        }
+      }
+    },
+    "An open Bible in the shape of a V, also in Night and the seasons in Settings › App Icon.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una Biblia abierta con forma de V, también en Noche y en las estaciones en Ajustes › Icono de la app."
           }
         }
       }
@@ -6048,6 +6078,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Recibe el versículo del día cada mañana y un recordatorio amable por la tarde si aún no has leído. Cambia las horas o desactívalos cuando quieras en Ajustes › Notificaciones."
+          }
+        }
+      }
+    },
+    "Go beyond the verse.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ve más allá del versículo."
           }
         }
       }
@@ -16835,6 +16875,16 @@
         }
       }
     },
+    "The verse and reading widgets now wear Versely's cream and copper, with a progress bar for your plan.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los widgets de versículo y de lectura ahora lucen el crema y el cobre de Versely, con una barra de progreso para tu plan."
+          }
+        }
+      }
+    },
     "The whole Bible in a year, with books in the order events happened.": {
       "localizations": {
         "es": {
@@ -18399,6 +18449,16 @@
         }
       }
     },
+    "Versely, Bible Study App": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versely, app de estudio bíblico"
+          }
+        }
+      }
+    },
     "Versely, your way": {
       "localizations": {
         "es": {
@@ -18557,6 +18617,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Serif cálida y clásica"
+          }
+        }
+      }
+    },
+    "Warmer widgets": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Widgets más cálidos"
           }
         }
       }

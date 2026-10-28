@@ -43,7 +43,7 @@ struct OnboardingWelcomeView: View {
                 WelcomePageDots(count: pages.count, current: pages.firstIndex(of: page) ?? 0)
 
                 Button(action: next) {
-                    Text(isLast ? "Get Started" : "Next")
+                    Text(isLast ? "Continue" : "Next")
                         .font(.headline)
                         .frame(maxWidth: .infinity, minHeight: 50)
                 }

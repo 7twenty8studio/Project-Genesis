@@ -92,6 +92,7 @@ targets:
           - instagram-stories
         UILaunchScreen:
           UIColorName: LaunchBackground
+          UIImageName: LaunchLogo
         UIApplicationSceneManifest:
           # One window. The shared reader state isn't built for several windows
           # yet, and restored iPad windows confused the UI tests.

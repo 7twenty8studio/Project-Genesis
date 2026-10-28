@@ -4,9 +4,17 @@ import XCTest
 /// features, and be reading quickly (PRD: within 30 seconds).
 final class OnboardingUITests: GenesisUITestCase {
     @MainActor
+    private func getStarted(_ app: XCUIApplication) {
+        let start = app.buttons["onboarding.hero.start"]
+        XCTAssertTrue(start.waitForExistence(timeout: Genesis.launchTimeout), "The welcome comes first")
+        start.tap()
+    }
+
+    @MainActor
     private func skipWelcome(_ app: XCUIApplication) {
+        getStarted(app)
         let skip = app.buttons["onboarding.welcome.skip"]
-        XCTAssertTrue(skip.waitForExistence(timeout: Genesis.launchTimeout), "The welcome comes first")
+        XCTAssertTrue(skip.waitForExistence(timeout: Genesis.timeout), "Then the welcome pages")
         skip.tap()
     }
 
@@ -66,14 +74,15 @@ final class OnboardingUITests: GenesisUITestCase {
     @MainActor
     func testWelcomePagesLeadToTranslations() {
         let app = Genesis.launch(onboarding: true)
+        getStarted(app)
         let next = app.buttons["onboarding.welcome.next"]
-        XCTAssertTrue(next.waitForExistence(timeout: Genesis.launchTimeout))
+        XCTAssertTrue(next.waitForExistence(timeout: Genesis.timeout))
         XCTAssertEqual(next.label, "Next")
-        // Read, Listen, Pray and (with groups on) Together; the last says Get Started.
+        // Read, Listen, Pray and (with groups on) Together; the last says Continue.
         for _ in 0..<4 where next.exists && next.label == "Next" {
             next.tap()
         }
-        XCTAssertEqual(next.label, "Get Started")
+        XCTAssertEqual(next.label, "Continue")
         XCTAssertFalse(app.buttons["onboarding.welcome.skip"].exists, "Nothing to skip on the last page")
         next.tap()
         XCTAssertTrue(app.buttons["onboarding.begin"].waitForExistence(timeout: Genesis.timeout), "Translations come next")
