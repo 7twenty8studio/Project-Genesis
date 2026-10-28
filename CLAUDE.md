@@ -735,8 +735,12 @@ shares; README.md has the architecture.
   Code names keep the old spelling (`.memorise`, `Memorise*` types,
   accessibility ids, defaults keys, What's New ids, the "Memorise" widget
   kind): renaming those would break saved settings and installed widgets.
-- People choose the language in the iPhone's Settings (Settings › Language in
-  Versely opens it). `AppLanguage.code` is "en" or "es".
+- People choose the language in Versely's Settings › Language
+  (`LanguageSettingsView`: Same as iPhone, English, Español), which writes
+  the app's own AppleLanguages (`AppLanguageChoice.saved`, the same value
+  the iPhone's Settings › Apps › Versely › Language writes). It applies the
+  next time Versely opens, and the screen says so; widgets keep the
+  iPhone's language. `AppLanguage.code` is "en" or "es".
 - `BibleBook.name` follows the app's language (`englishName` is fixed);
   the reference parser accepts English and Spanish names, accents optional.
   Next to Scripture (reader title and controls, running head, book picker,

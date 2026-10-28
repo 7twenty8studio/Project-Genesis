@@ -6,7 +6,6 @@ struct SettingsView: View {
     @Environment(BibleLibrary.self) private var library
     @Environment(\.palette) private var palette
     @Environment(\.dismiss) private var dismiss
-    @Environment(\.openURL) private var openURL
     @State private var showsBibles = false
     @State private var showsAccount = false
     @State private var showsReading = false
@@ -167,10 +166,8 @@ struct SettingsView: View {
                     #endif
 
                     Section {
-                        // iOS keeps each app's language in the Settings app (and
-                        // restarts the app when it changes), so this opens it there.
-                        Button {
-                            if let url = URL(string: UIApplication.openSettingsURLString) { openURL(url) }
+                        NavigationLink {
+                            LanguageSettingsView()
                         } label: {
                             LabeledContent {
                                 Text(AppLanguage.displayName(AppLanguage.code))
@@ -180,7 +177,7 @@ struct SettingsView: View {
                         }
                         .accessibilityIdentifier("settings.language")
                     } footer: {
-                        Text("Versely is available in English and Spanish. Tap to choose in the Settings app; Versely restarts in the new language.")
+                        Text("Versely is available in English and Spanish.")
                     }
                     .listRowBackground(palette.surface)
                     .foregroundStyle(palette.text)
