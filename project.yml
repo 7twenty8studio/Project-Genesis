@@ -35,6 +35,15 @@ targets:
     platform: iOS
     sources:
       - path: Genesis
+      # The verse widget's look, for the Widget Styles previews (Settings).
+      - path: GenesisWidgets/WidgetStyle.swift
+      - path: GenesisWidgets/VerseWidgetContent.swift
+      - path: GenesisWidgets/KeepsakeWidgets.swift
+      - path: GenesisWidgets/SeasonalMotion.swift
+      - path: GenesisWidgets/Keepsake
+        buildPhase: resources
+      - path: GenesisWidgets/Brand
+        buildPhase: resources
       # App Store privacy manifest (required-reason APIs, data collected).
       - path: Config/Privacy/Genesis/PrivacyInfo.xcprivacy
         buildPhase: resources

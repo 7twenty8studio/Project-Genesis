@@ -13,7 +13,7 @@ enum WidgetKind: String, CaseIterable, Sendable {
     case groupProgress = "GroupProgress"
 }
 
-/// A widget's size, without WidgetKit (so the rule below is easy to test).
+/// A widget's size, without WidgetKit.
 enum WidgetSize: CaseIterable, Sendable {
     case small, medium, large, extraLarge
     case accessoryCircular, accessoryRectangular, accessoryInline
@@ -27,23 +27,31 @@ enum WidgetSize: CaseIterable, Sendable {
     }
 }
 
-/// Which widgets are free. The verse widget is the app's daily welcome: free
-/// as the small, medium and large Home Screen widget and on the Lock Screen,
-/// showing the verse of the day or a random verse. Its Premium options
-/// (categories, From Your Reading, backgrounds) and every other widget need
-/// Versely Premium (`PremiumFeature.widgets`). Widgets keep all their sizes
-/// and options in the gallery and show a calm locked card instead.
+/// Which widgets are free. Every widget works for free in its Classic look,
+/// at every size, so nothing in the widget gallery turns into a locked card
+/// once it's added. Premium is what people choose inside a widget: the verse
+/// widget's backgrounds and keepsakes, its categories and From Your Reading,
+/// widgets in the reading theme's colours. Two widgets stay Premium because
+/// their feature is: Memorize (`PremiumFeature.memorise` in the app) and the
+/// listening Live Activity (`PremiumFeature.widgets`, checked in the app).
+/// A Premium choice without Premium shows the Classic look with a small
+/// Premium tag (`PremiumTag`).
 enum WidgetAccess {
-    static func isFree(kind: WidgetKind, size: WidgetSize) -> Bool {
-        kind == .dailyVerse && (size == .small || size == .medium || size == .large || size.isAccessory)
+    static func isFree(kind: WidgetKind) -> Bool {
+        kind != .memorise
     }
 
-    static func isUnlocked(kind: WidgetKind, size: WidgetSize, isPremium: Bool) -> Bool {
-        isPremium || isFree(kind: kind, size: size)
+    static func isUnlocked(kind: WidgetKind, isPremium: Bool) -> Bool {
+        isPremium || isFree(kind: kind)
     }
 
-    /// The verse widget at a size, showing one of its options.
-    static func isUnlocked(_ source: VerseWidgetSource, size: WidgetSize, isPremium: Bool) -> Bool {
-        isPremium || (isFree(kind: .dailyVerse, size: size) && !source.needsPremium)
+    /// The verse widget showing one of its options.
+    static func isUnlocked(_ source: VerseWidgetSource, isPremium: Bool) -> Bool {
+        isPremium || !source.needsPremium
+    }
+
+    /// The verse widget's background.
+    static func isUnlocked(_ style: WidgetArtStyle, isPremium: Bool) -> Bool {
+        isPremium || !style.needsPremium
     }
 }

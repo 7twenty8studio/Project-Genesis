@@ -61,8 +61,10 @@ See [BUILDING.md](BUILDING.md) to build and run.
 - **Home**: today's reading, prayer journal, streak and progress.
 - **Widgets**: the verse widget (verse of the day, a random verse every few
   hours, or with Premium a theme such as hope or peace, or a verse from your
-  week's reading), continue reading, reading progress (large), lock screen
-  streak, verse and continue reading. Tapping opens the app in place.
+  week's reading), continue reading, reading progress (large), today's
+  reading, group progress, lock screen streak, prayer, verse and continue
+  reading, all free in the Classic look; Premium adds backgrounds, the
+  reading theme and the Memorize widget. Tapping opens the app in place.
 
 ## What's New
 

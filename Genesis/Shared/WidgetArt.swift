@@ -89,3 +89,12 @@ enum WidgetArt {
         }
     }
 }
+
+extension WidgetSnapshot {
+    /// The verse widget style chosen in Versely, Classic until one is.
+    /// (Here rather than in WidgetSnapshot.swift, which the watch builds
+    /// without WidgetArtStyle.)
+    var chosenVerseStyle: WidgetArtStyle {
+        verseStyle.flatMap(WidgetArtStyle.init(rawValue:)) ?? .classic
+    }
+}

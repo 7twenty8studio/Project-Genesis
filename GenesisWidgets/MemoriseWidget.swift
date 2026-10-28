@@ -9,7 +9,7 @@ struct MemoriseWidget: Widget {
             MemoriseWidgetView(entry: entry)
         }
         .configurationDisplayName("Memorize")
-        .description("Recall a verse you're learning by heart.")
+        .description("Recall a verse you're learning by heart. Comes with Versely Premium.")
         .supportedFamilies([.systemSmall, .systemMedium, .accessoryRectangular])
     }
 }
@@ -21,7 +21,7 @@ struct MemoriseWidgetView: View {
     var body: some View {
         if entry.snapshot.memorise?.isHidden == true {
             hiddenView(WidgetColors(entry.snapshot))
-        } else if entry.snapshot.unlocks(.memorise, in: family) {
+        } else if entry.snapshot.unlocks(.memorise) {
             memoriseView(WidgetColors(entry.snapshot))
         } else {
             PremiumLockedView(message: String(localized: "Memorize Scripture with Versely Premium."), symbol: "brain.head.profile")

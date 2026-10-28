@@ -26,7 +26,8 @@ from extract_strings import extract  # noqa: E402
 
 LANGUAGES = ["es"]
 TARGETS = {
-    "Genesis/Resources/Localizable.xcstrings": ["Genesis"],
+    # The app also draws the verse widget's look (Widget Styles previews).
+    "Genesis/Resources/Localizable.xcstrings": ["Genesis", "GenesisWidgets/WidgetStyle.swift", "GenesisWidgets/VerseWidgetContent.swift", "GenesisWidgets/KeepsakeWidgets.swift", "GenesisWidgets/SeasonalMotion.swift"],
     "GenesisWidgets/Localizable.xcstrings": ["GenesisWidgets", "Genesis/Shared"],
     "GenesisWatch/Localizable.xcstrings": ["GenesisWatch"],
     "GenesisWatchWidgets/Localizable.xcstrings": ["GenesisWatchWidgets"],

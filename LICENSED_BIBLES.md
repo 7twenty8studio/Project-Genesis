@@ -191,11 +191,16 @@ These are the terms YouVersion agreed with us in writing (email thread
   the RV1909 in Spanish, installed along with a Spanish YVP Bible), the
   way the study assistant does (`BibleLibrary.premiumToolsTranslation`):
   - Memorize (games, hints, new cards, the Memorise widget)
-  - every Premium widget, look and option (the backgrounds, categories,
-    From Your Reading, the other widgets and the Apple Watch). The free
-    verse widget (Classic look, small, medium, large and Lock Screen, Verse of the Day and Random Verse) is a free feature and
-    shows the Bible being read, YVP included (owner's decision, 27 October
-    2026; the snapshot's `readerBible`)
+  - the Apple Watch's verse of the day (a Premium extra)
+  - Widgets are the exception (owner's decision, 28 October 2026): every
+    widget but Memorize is free, and every widget, in any look or option
+    (backgrounds, keepsakes, the reading theme, categories, From Your
+    Reading), shows the Bible being read, YVP included. We asked Heather
+    on 19 October about "the memorization practice and some of the extra
+    widgets"; she answered that the memorization game must not use YVP
+    Bibles and "otherwise, the use case is fine since reading scripture is
+    separate from what is requiring subscription". Premium widget looks
+    are like Premium themes in the reader, which show YVP text too.
   - the morning welcome's verse
   - word study (`VerseStudyView`) and lexicon entries' verses
   - passages in journal PDF exports
@@ -207,8 +212,8 @@ These are the terms YouVersion agreed with us in writing (email thread
 - **No listening.** Our first email told YouVersion its Bibles aren't read
   aloud by a device voice unless a licence allows it, so the player says
   listening isn't available for them.
-- **Tell readers before they choose.** The Bible's card says listening,
-  widgets and Premium tools use the public-domain Bible with it, a
+- **Tell readers before they choose.** The Bible's card says listening
+  isn't available and Premium tools use the public-domain Bible with it, a
   one-time note says so the first time it's read, and What's New
   announces it.
 - **Offline is allowed.** A YVP Bible may be stored on the device, whole or

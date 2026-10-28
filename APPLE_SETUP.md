@@ -300,7 +300,7 @@ Add four auto-renewable subscriptions. The product IDs must match exactly
 - **Review Information** on each product: a screenshot of the Premium screen
   (the **Versely Premium** card on Home, on an iPhone or simulator) and a note
   such as "Unlocks Premium features: themes, word study, journal attachments,
-  widgets, Memorize, ambient sounds. Purchase from the Versely Premium card on
+  widget styles, Memorize, ambient sounds. Purchase from the Versely Premium card on
   Home."
 - The first subscriptions are reviewed together with the first app version:
   on the version page, under **In-App Purchases and Subscriptions**, add all

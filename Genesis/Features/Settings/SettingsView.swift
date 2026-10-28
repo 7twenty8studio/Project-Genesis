@@ -57,6 +57,12 @@ struct SettingsView: View {
                             Label("App Icon", systemImage: "app.badge")
                         }
                         .accessibilityIdentifier("settings.appIcon")
+                        NavigationLink {
+                            WidgetStylesView()
+                        } label: {
+                            Label("Widget Styles", systemImage: "rectangle.3.group")
+                        }
+                        .accessibilityIdentifier("settings.widgetStyles")
                         if entitlements.allows(.widgets) {
                             NavigationLink {
                                 WidgetPhotoSettingsView()

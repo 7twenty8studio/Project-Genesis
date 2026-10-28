@@ -61,12 +61,12 @@
         }
       }
     },
-    "%@ is free to read, always. Listening isn't available for it, and Premium widgets and tools such as Memorize use the %@ instead.": {
+    "%@ is free to read, always. Listening isn't available for it, and Premium tools such as Memorize use the %@ instead.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "La %@ es gratis para leer, siempre. No se puede escuchar, y los widgets y las herramientas Premium como Memorizar usan la %@ en su lugar."
+            "value": "La %@ es gratis para leer, siempre. No se puede escuchar, y las herramientas Premium como Memorizar usan la %@ en su lugar."
           }
         }
       }
@@ -2542,6 +2542,16 @@
         }
       }
     },
+    "Backgrounds, keepsakes and verses on hope, peace and more come with Versely Premium; without it, the widget keeps the Classic look.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los fondos, los recuerdos y los versículos sobre esperanza, paz y más vienen con Versely Premium; sin él, el widget mantiene el aspecto Clásico."
+          }
+        }
+      }
+    },
     "Balanced": {
       "comment": "Bible translation approach between word for word and thought for thought",
       "localizations": {
@@ -3032,6 +3042,16 @@
         }
       }
     },
+    "Calendar Page": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoja de calendario"
+          }
+        }
+      }
+    },
     "Calm with Reduce Motion": {
       "localizations": {
         "es": {
@@ -3340,6 +3360,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Elegir una foto"
+          }
+        }
+      }
+    },
+    "Choose a photo to use this style.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige una foto para usar este estilo."
           }
         }
       }
@@ -3928,6 +3958,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Continuar leyendo"
+          }
+        }
+      }
+    },
+    "Continue Reading, Reading Progress, your streak, prayer reminders, Today's Reading and Group Progress now work for everyone.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar leyendo, Progreso de lectura, tu racha, los recordatorios de oración, Lectura de hoy y Progreso del grupo ahora funcionan para todos."
           }
         }
       }
@@ -4898,6 +4938,16 @@
         }
       }
     },
+    "Due for Today": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para hoy"
+          }
+        }
+      }
+    },
     "Each chapter opens with a large first letter, and pages can turn with a soft sound and tap (Aa in the reader).": {
       "localizations": {
         "es": {
@@ -5202,22 +5252,12 @@
         }
       }
     },
-    "Every widget": {
+    "Every widget, free": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Todos los widgets"
-          }
-        }
-      }
-    },
-    "Every widget in every size, in your reading theme: today's reading, progress, prayer, Memorize, your group and listening on the Lock Screen.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Todos los widgets en todos los tamaños, con tu tema de lectura: la lectura de hoy, el progreso, la oración, Memorizar, tu grupo y la escucha en la pantalla bloqueada."
+            "value": "Todos los widgets, gratis"
           }
         }
       }
@@ -5543,6 +5583,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Completa los huecos, ordena las palabras o prueba una ronda rápida de un minuto, y crece de Semilla a Cedro."
+          }
+        }
+      }
+    },
+    "Film Strip": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tira de película"
           }
         }
       }
@@ -5911,12 +5961,12 @@
         }
       }
     },
-    "Free to read, always. Listening isn't available, and Premium widgets and tools such as Memorize use the %@ with this Bible.": {
+    "Free to read, always. Listening isn't available, and Premium tools such as Memorize use the %@ with this Bible.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gratis para leer, siempre. No se puede escuchar, y los widgets y las herramientas Premium como Memorizar usan la %@ con esta Biblia."
+            "value": "Gratis para leer, siempre. No se puede escuchar, y las herramientas Premium como Memorizar usan la %@ con esta Biblia."
           }
         }
       }
@@ -7345,6 +7395,16 @@
         }
       }
     },
+    "Instant Photo": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto instantánea"
+          }
+        }
+      }
+    },
     "Interjection": {
       "localizations": {
         "es": {
@@ -8061,6 +8121,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Biblioteca"
+          }
+        }
+      }
+    },
+    "Library Card": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ficha de biblioteca"
           }
         }
       }
@@ -11899,6 +11969,16 @@
         }
       }
     },
+    "Premium styles": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estilos Premium"
+          }
+        }
+      }
+    },
     "Premium themes now have the gentle grain and fibres of real book paper.": {
       "localizations": {
         "es": {
@@ -11980,12 +12060,32 @@
         }
       }
     },
+    "Pressed Flowers": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flores prensadas"
+          }
+        }
+      }
+    },
     "Preview": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Vista previa"
+          }
+        }
+      }
+    },
+    "Preview of the %@ style": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vista previa del estilo %@"
           }
         }
       }
@@ -13869,6 +13969,16 @@
         }
       }
     },
+    "Seasonal, keepsake and photo backgrounds for the verse widget, verses on hope, peace and more or from your own reading, widgets in your reading theme, and listening on the Lock Screen.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fondos de temporada, de recuerdo y con tu foto para el widget del versículo, versículos sobre esperanza, paz y más o de tu propia lectura, widgets con tu tema de lectura y la escucha en la pantalla bloqueada."
+          }
+        }
+      }
+    },
     "Seasons": {
       "comment": "Reader theme name: follows the time of year",
       "localizations": {
@@ -13966,6 +14076,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Con Premium, mira cada palabra hebrea y griega de este versículo, con las definiciones de Strong."
+          }
+        }
+      }
+    },
+    "See every widget style with today's verse and choose one in Settings › Widget Styles.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mira cada estilo de widget con el versículo de hoy y elige uno en Ajustes › Estilos de widgets."
           }
         }
       }
@@ -16865,6 +16985,16 @@
         }
       }
     },
+    "The style you chose comes with Versely Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El estilo que elegiste viene con Versely Premium."
+          }
+        }
+      }
+    },
     "The text found in the majority of Greek manuscripts, read by the Greek-speaking church for centuries.": {
       "localizations": {
         "es": {
@@ -17550,12 +17680,12 @@
         }
       }
     },
-    "To use it, touch and hold the verse widget on your Home Screen, tap Edit Widget and set Background to Your Photo. The photo stays on this iPhone.": {
+    "To use it, choose Your Photo in Settings › Widget Styles. The photo stays on this iPhone.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Para usarla, mantén pulsado el widget del versículo en tu pantalla de inicio, toca Editar widget y elige Tu foto en Fondo. La foto se queda en este iPhone."
+            "value": "Para usarla, elige Tu foto en Ajustes › Estilos de widgets. La foto se queda en este iPhone."
           }
         }
       }
@@ -18076,6 +18206,16 @@
         }
       }
     },
+    "Typewriter": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Máquina de escribir"
+          }
+        }
+      }
+    },
     "Unban": {
       "localizations": {
         "es": {
@@ -18525,6 +18665,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vista"
+          }
+        }
+      }
+    },
+    "Vintage": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vintage"
           }
         }
       }
@@ -19323,6 +19473,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tamaño del widget"
+          }
+        }
+      }
+    },
+    "Widget Styles": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estilos de widgets"
+          }
+        }
+      }
+    },
+    "Widget size": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamaño del widget"
+          }
+        }
+      }
+    },
+    "Widget styles": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estilos de widgets"
+          }
+        }
+      }
+    },
+    "Widgets show the Bible you're reading, whichever it is, in every style.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los widgets muestran la Biblia que estás leyendo, sea cual sea, en todos los estilos."
           }
         }
       }
@@ -20185,6 +20375,16 @@
         }
       }
     },
+    "Your Bible in more widgets": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu Biblia en más widgets"
+          }
+        }
+      }
+    },
     "Your Bible in the verse widget": {
       "localizations": {
         "es": {
@@ -20556,6 +20756,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tus imágenes de versículos, a tu manera"
+          }
+        }
+      }
+    },
+    "Your verse widgets use the style you choose here. To give one widget its own look, touch and hold it, tap Edit Widget and choose a Background.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus widgets del versículo usan el estilo que elijas aquí. Para darle a un widget su propio aspecto, mantenlo pulsado, toca Editar widget y elige un fondo."
           }
         }
       }

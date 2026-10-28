@@ -32,7 +32,7 @@ struct SnapshotProvider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SnapshotEntry) -> Void) {
-        let snapshot = context.isPreview ? .placeholder : (WidgetSnapshot.load() ?? .placeholder)
+        let snapshot = context.isPreview ? WidgetSnapshot.galleryPreview : (WidgetSnapshot.load() ?? .placeholder)
         completion(SnapshotEntry(date: .now, snapshot: snapshot))
     }
 
@@ -50,38 +50,9 @@ struct SnapshotProvider: TimelineProvider {
     }
 }
 
-// MARK: - Style
-
-/// Muted colours matching the app's Paper and Slate themes.
-enum WidgetPalette {
-    // The brand's cream, copper and walnut (BrandColors), deepened where
-    // small text needs the contrast.
-    static let accent = Color(light: 0x9A6640, dark: 0xE0B48D)
-    static let text = Color(light: 0x4A2E1A, dark: 0xF3E2CC)
-    static let secondary = Color(light: 0x8A6243, dark: 0xC7A27F)
-    static let background = Color(light: 0xFBF1E4, dark: 0x2B1A0F)
-    /// Where the default background's soft gradient settles, at the bottom.
-    static let backgroundGlow = Color(light: 0xF2DCC2, dark: 0x1F120A)
-}
-
-extension Color {
-    init(light: UInt32, dark: UInt32) {
-        self.init(uiColor: UIColor { traits in
-            let hex = traits.userInterfaceStyle == .dark ? dark : light
-            return UIColor(
-                red: CGFloat((hex >> 16) & 0xFF) / 255,
-                green: CGFloat((hex >> 8) & 0xFF) / 255,
-                blue: CGFloat(hex & 0xFF) / 255,
-                alpha: 1
-            )
-        })
-    }
-}
-
-
 // The verse widget (DailyVerseWidget) lives in VerseWidget.swift.
 
-// MARK: - Continue reading (Premium)
+// MARK: - Continue reading
 
 struct ContinueReadingWidget: Widget {
     var body: some WidgetConfiguration {
@@ -99,11 +70,7 @@ struct ContinueReadingView: View {
     @Environment(\.widgetFamily) private var family
 
     var body: some View {
-        if entry.snapshot.unlocks(.continueReading, in: family) {
-            readingView
-        } else {
-            PremiumLockedView(message: String(localized: "Pick up where you left off with Versely Premium."), symbol: "book")
-        }
+        readingView
     }
 
     private var readingView: some View {
@@ -143,7 +110,7 @@ struct ContinueReadingView: View {
     }
 }
 
-// MARK: - Reading progress (large, Premium)
+// MARK: - Reading progress (large)
 
 struct ReadingProgressWidget: Widget {
     var body: some WidgetConfiguration {
@@ -161,11 +128,7 @@ struct ReadingProgressView: View {
     @Environment(\.widgetFamily) private var family
 
     var body: some View {
-        if entry.snapshot.unlocks(.readingProgress, in: family) {
-            progressView(WidgetColors(entry.snapshot))
-        } else {
-            PremiumLockedView(message: String(localized: "See your plan, streak and prayers at a glance with Versely Premium."), symbol: "chart.bar")
-        }
+        progressView(WidgetColors(entry.snapshot))
     }
 
     private func progressView(_ colors: WidgetColors) -> some View {
@@ -246,7 +209,7 @@ struct ReadingProgressView: View {
     }
 }
 
-// MARK: - Lock screen streak (Premium)
+// MARK: - Lock screen streak
 
 struct StreakWidget: Widget {
     var body: some WidgetConfiguration {
@@ -264,11 +227,7 @@ struct StreakView: View {
     @Environment(\.widgetFamily) private var family
 
     var body: some View {
-        if entry.snapshot.unlocks(.streak, in: family) {
-            streakView
-        } else {
-            PremiumLockedView(message: String(localized: "Keep your reading streak in view with Versely Premium."), symbol: "flame")
-        }
+        streakView
     }
 
     private var streakView: some View {
@@ -290,7 +249,7 @@ struct StreakView: View {
     }
 }
 
-// MARK: - Lock screen prayer reminder (Premium)
+// MARK: - Lock screen prayer reminder
 
 struct PrayerReminderWidget: Widget {
     var body: some WidgetConfiguration {
@@ -308,11 +267,7 @@ struct PrayerReminderView: View {
     @Environment(\.widgetFamily) private var family
 
     var body: some View {
-        if entry.snapshot.unlocks(.prayerReminder, in: family) {
-            prayerView
-        } else {
-            PremiumLockedView(message: String(localized: "See your next prayer reminder with Versely Premium."), symbol: "hands.and.sparkles")
-        }
+        prayerView
     }
 
     private var prayerView: some View {
