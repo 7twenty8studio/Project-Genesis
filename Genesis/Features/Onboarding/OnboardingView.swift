@@ -1,6 +1,7 @@
 import SwiftUI
 
-/// First launch: choose a translation and begin reading, well within 30 seconds.
+/// First launch: a short welcome, then choose a translation and begin
+/// reading, well within 30 seconds.
 struct OnboardingView: View {
     let onFinish: () -> Void
 
@@ -10,14 +11,20 @@ struct OnboardingView: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var selection: Translation = .kjv
     @State private var appeared = false
+    @State private var welcomed = false
     @State private var choosingFeatures = false
 
     var body: some View {
         if choosingFeatures {
             FeatureChoicesView(onFinish: onFinish)
                 .transition(.move(edge: .trailing).combined(with: .opacity))
-        } else {
+        } else if welcomed {
             translationStep
+                .transition(reduceMotion ? .opacity : .move(edge: .trailing).combined(with: .opacity))
+        } else {
+            OnboardingWelcomeView {
+                withAnimation(reduceMotion ? nil : Motion.drawer(0.35)) { welcomed = true }
+            }
         }
     }
 

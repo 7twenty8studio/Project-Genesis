@@ -843,6 +843,16 @@
         }
       }
     },
+    "A calm reader that works offline. Highlight, take notes and pick up where you left off.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un lector sereno que funciona sin conexión. Resalta, toma notas y continúa donde lo dejaste."
+          }
+        }
+      }
+    },
     "A calm, sturdy serif with an even rhythm": {
       "localizations": {
         "es": {
@@ -1140,6 +1150,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Una descarga en pausa guarda lo que tiene durante una semana. Continúala cuando quieras."
+          }
+        }
+      }
+    },
+    "A place to pray": {
+      "comment": "Welcome page: prayer journal",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un lugar para orar"
           }
         }
       }
@@ -6011,6 +6032,16 @@
         }
       }
     },
+    "Get Started": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comenzar"
+          }
+        }
+      }
+    },
     "Get the verse of the day each morning, and a gentle reminder in the evening if you haven't read yet. Change times or turn them off anytime in Settings › Notifications.": {
       "localizations": {
         "es": {
@@ -6562,6 +6593,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Escucha cualquier capítulo en voz alta mientras la página avanza contigo."
+          }
+        }
+      }
+    },
+    "Hear chapters read aloud and follow along, verse by verse.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escucha los capítulos en voz alta y síguelos versículo a versículo."
           }
         }
       }
@@ -7539,6 +7580,16 @@
         }
       }
     },
+    "Keep a prayer journal, hold on to the verses that speak to you and look back on answered prayers.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lleva un diario de oración, guarda los versículos que te hablan y recuerda las oraciones contestadas."
+          }
+        }
+      }
+    },
     "Keep a private record of what you're praying for.": {
       "localizations": {
         "es": {
@@ -8064,6 +8115,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Escuchar"
+          }
+        }
+      }
+    },
+    "Listen along": {
+      "comment": "Welcome page: listening",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escucha mientras lees"
           }
         }
       }
@@ -10722,6 +10784,16 @@
         }
       }
     },
+    "Page %lld of %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Página %lld de %lld"
+          }
+        }
+      }
+    },
     "Page Curl": {
       "localizations": {
         "es": {
@@ -12289,6 +12361,16 @@
         }
       }
     },
+    "Read a plan with friends or your church, talk it over and pray for one another.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee un plan con amigos o con tu iglesia, conversen sobre él y oren unos por otros."
+          }
+        }
+      }
+    },
     "Read along, side by side": {
       "localizations": {
         "es": {
@@ -12500,6 +12582,7 @@
       }
     },
     "Read together": {
+      "comment": "Welcome page: groups",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -14687,6 +14770,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cielos y estaciones con movimiento"
+          }
+        }
+      }
+    },
+    "Skip": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omitir"
           }
         }
       }
@@ -20342,6 +20435,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu compra está pendiente de aprobación."
+          }
+        }
+      }
+    },
+    "Your quiet place to read": {
+      "comment": "Welcome page: reading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu lugar tranquilo para leer"
           }
         }
       }

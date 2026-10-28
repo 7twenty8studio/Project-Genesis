@@ -468,6 +468,12 @@ shares; README.md has the architecture.
   `TranslationProfile.builtIn`. Free, like every Bible.
 
 ## Feature choices
+- Onboarding: a welcome first (`OnboardingWelcomeView`: Read, Listen, Pray,
+  Together; Together only while groups or community are on; Skip), then the
+  translation, then "Make Versely yours". Its pictures are the owner's
+  ChatGPT originals in Tools/Onboarding/Originals, cleaned (painted
+  checkerboards, stray specks) by Tools/Onboarding/make_onboarding.py into
+  Assets.xcassets/Onboarding*.
 - People choose optional features at setup ("Make Versely yours") and in
   Settings › Features (grouped by `OptionalFeature.Area`): `FeaturePreferences`
   (plans, prayer, memorise, listen, ambientSounds, wordStudy, explore,
