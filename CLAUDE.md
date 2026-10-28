@@ -257,9 +257,15 @@ shares; README.md has the architecture.
   is pinned by the theme). Starlight
   without Premium falls back to Night, keeping the choice. UI tests never
   switch unless launched with `-uiTestingNight` (then it's always night).
-- Widgets: only the verse widget is free, small, medium, large and on the
-  Lock Screen (`WidgetAccess` in Genesis/Shared); every other widget shows a
-  locked card. Premium widgets use the reading theme (colours
+- Widgets: every widget is free in its Classic look at every size, so
+  nothing added from the gallery turns into a locked card (`WidgetAccess`
+  in Genesis/Shared). Premium is what people choose inside a widget: the
+  verse widget's backgrounds, categories and From Your Reading, and the
+  reading theme's colours. A Premium choice without Premium shows the
+  Classic look (and the verse of the day) with a small `PremiumTag`, never a
+  locked card. Only the Memorize widget stays Premium (`PremiumLockedView`;
+  the gallery preview, `WidgetSnapshot.galleryPreview`, uses the real
+  entitlement so it says so before it's added). Premium widgets use the reading theme (colours
   carried in `WidgetSnapshot.theme` as hex, since the extension can't use
   ThemePalette); free ones the brand's look (`WidgetPalette`: cream and
   copper, walnut in dark mode). Every `Eyebrow` starts with the kit's V
@@ -268,8 +274,8 @@ shares; README.md has the architecture.
   the unchanged "DailyVerse" kind; the default `.verseOfTheDay` is what
   widgets installed before it show): Verse of the Day and Random Verse are
   free; the categories (`VerseCategory`: hope, peace, faith, strength,
-  comfort, love, gratitude, guidance) and From Your Reading are Premium (a
-  locked card otherwise). `VerseWidgetSource` (Genesis/Shared) holds the
+  comfort, love, gratitude, guidance) and From Your Reading are Premium (the
+  verse of the day with a Premium tag otherwise). `VerseWidgetSource` (Genesis/Shared) holds the
   rules and `VerseWidgetSchedule` the rotation (random and categories every
   3 hours, the others at midnight). The extension never opens a Bible:
   `WidgetSnapshotWriter` writes the text verbatim (`randomVerses`, 24 a day;
@@ -283,7 +289,7 @@ shares; README.md has the architecture.
   that's a whole sentence of 60–220 characters (`ReadingVersePicker`).
 - Verse widget backgrounds (`VerseWidgetIntent.background`, mirroring
   `WidgetArtStyle`; Classic, the default, is today's look and free; Paper,
-  the seasons, Night and Your Photo are Premium, a locked card otherwise).
+  the seasons, Night and Your Photo are Premium, Classic with a Premium tag otherwise).
   The app draws the painted ones once into the App Group
   (`WidgetArtWriter.drawIfNeeded` from RootView's widget refresh; bump
   `WidgetArt.version` to redraw; seasonal art kept to the edges) and keeps
@@ -341,12 +347,14 @@ shares; README.md has the architecture.
   entitlement); deep link `versely://memorise`.
 
 ## Premium widgets
-- `.widgets` (every widget but the small/medium/large/Lock Screen verse, plus the verse widget's Premium options): the Today's Reading widget (tick via `TogglePlanDayIntent`,
-  which leaves `PendingPlanDays` in the App Group for the app to apply), and
+- `.widgets` ("Widget styles": the verse widget's backgrounds and Premium
+  options, the reading theme's colours, and the listening Live Activity).
+  Every widget itself is free, the Memorize widget aside (`.memorise`).
+  The Today's Reading widget ticks via `TogglePlanDayIntent`,
+  which leaves `PendingPlanDays` in the App Group for the app to apply;
   the listening Live Activity (`ListeningActivityController`, driven by
   `AudioPlayerService`; buttons are `LiveActivityIntent`s that call
   `ListeningControl`). Shared types live in Genesis/Shared/WidgetIntents.swift.
-  Only the small, medium, large and Lock Screen verse widget are free (`WidgetAccess`).
 - Apple Watch (verse of the day, Premium): GenesisWatch + GenesisWatchWidgets
   targets, fed by `WatchConnector` (WatchConnectivity application context,
   `WatchPayload`). Embedded in the iPhone app (a dependency of Genesis in
@@ -452,11 +460,12 @@ shares; README.md has the architecture.
   free, never `requiresPremium`; no Premium feature shows its text: use
   `library.premiumToolsTranslation` / `premiumToolsRepository` (a
   public-domain Bible in the same language; RV1909 is installed along with
-  a Spanish one) in Memorize, Premium widgets (the free verse widget, Classic
-  look at any Home or Lock Screen size, Verse of the Day or Random, shows the YVP Bible via
-  `WidgetSnapshot.readerBible` / `freePassage`), the morning
+  a Spanish one) in Memorize (and its widget), the Apple Watch, the morning
   welcome, word study, lexicon entries, the Map's verses and journal
-  export; listening is
+  export (every other widget, in any look or option, shows the YVP Bible
+  like Premium themes in the reader: Heather's 20 October 2026 email kept
+  only paid tools such as Memorize out; owner's decision, 28 October 2026);
+  listening is
   refused (we told YouVersion it isn't read aloud). People are told on the
   Bible's card, once in an alert in the reader (`youVersion.noteShown`), in
   What's New; the Premium screen and Settings say "The YouVersion Bible

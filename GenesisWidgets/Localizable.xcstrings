@@ -291,16 +291,6 @@
         }
       }
     },
-    "Follow your group's reading with Versely Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sigue la lectura de tu grupo con Versely Premium."
-          }
-        }
-      }
-    },
     "From Your Reading": {
       "localizations": {
         "es": {
@@ -390,26 +380,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Juan 3–5"
-          }
-        }
-      }
-    },
-    "Keep your reading streak in view with Versely Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ten tu racha de lectura a la vista con Versely Premium."
-          }
-        }
-      }
-    },
-    "Larger verse widgets come with Versely Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Los widgets de versículo más grandes vienen con Versely Premium."
           }
         }
       }
@@ -604,26 +574,6 @@
         }
       }
     },
-    "Photo and seasonal backgrounds come with Versely Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Los fondos de foto y de temporada vienen con Versely Premium."
-          }
-        }
-      }
-    },
-    "Pick up where you left off with Versely Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Retoma donde lo dejaste con Versely Premium."
-          }
-        }
-      }
-    },
     "Pick up where you left off.": {
       "localizations": {
         "es": {
@@ -755,32 +705,12 @@
         }
       }
     },
-    "Recall a verse you're learning by heart.": {
+    "Recall a verse you're learning by heart. Comes with Versely Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Recuerda un versículo que estás aprendiendo de memoria."
-          }
-        }
-      }
-    },
-    "See your next prayer reminder with Versely Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ve tu próximo recordatorio de oración con Versely Premium."
-          }
-        }
-      }
-    },
-    "See your plan, streak and prayers at a glance with Versely Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ve tu plan, tu racha y tus oraciones de un vistazo con Versely Premium."
+            "value": "Recuerda un versículo que estás aprendiendo de memoria. Viene con Versely Premium."
           }
         }
       }
@@ -855,12 +785,12 @@
         }
       }
     },
-    "Tick off your daily reading with Versely Premium.": {
+    "The style you chose comes with Versely Premium.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Marca tu lectura diaria con Versely Premium."
+            "value": "El estilo que elegiste viene con Versely Premium."
           }
         }
       }
@@ -952,26 +882,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Versely Premium"
-          }
-        }
-      }
-    },
-    "Verses from your own reading come with Versely Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Los versículos de tu propia lectura vienen con Versely Premium."
-          }
-        }
-      }
-    },
-    "Verses on hope, peace and more come with Versely Premium.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Los versículos sobre esperanza, paz y más vienen con Versely Premium."
           }
         }
       }

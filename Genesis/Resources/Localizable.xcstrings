@@ -61,12 +61,12 @@
         }
       }
     },
-    "%@ is free to read, always. Listening isn't available for it, and Premium widgets and tools such as Memorize use the %@ instead.": {
+    "%@ is free to read, always. Listening isn't available for it, and Premium tools such as Memorize use the %@ instead.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "La %@ es gratis para leer, siempre. No se puede escuchar, y los widgets y las herramientas Premium como Memorizar usan la %@ en su lugar."
+            "value": "La %@ es gratis para leer, siempre. No se puede escuchar, y las herramientas Premium como Memorizar usan la %@ en su lugar."
           }
         }
       }
@@ -2542,6 +2542,16 @@
         }
       }
     },
+    "Backgrounds, keepsakes and verses on hope, peace and more come with Versely Premium; without it, the widget keeps the Classic look.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los fondos, los recuerdos y los versículos sobre esperanza, paz y más vienen con Versely Premium; sin él, el widget mantiene el aspecto Clásico."
+          }
+        }
+      }
+    },
     "Balanced": {
       "comment": "Bible translation approach between word for word and thought for thought",
       "localizations": {
@@ -3932,6 +3942,16 @@
         }
       }
     },
+    "Continue Reading, Reading Progress, your streak, prayer reminders, Today's Reading and Group Progress now work for everyone.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar leyendo, Progreso de lectura, tu racha, los recordatorios de oración, Lectura de hoy y Progreso del grupo ahora funcionan para todos."
+          }
+        }
+      }
+    },
     "Continue as Guest": {
       "localizations": {
         "es": {
@@ -5202,22 +5222,12 @@
         }
       }
     },
-    "Every widget": {
+    "Every widget, free": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Todos los widgets"
-          }
-        }
-      }
-    },
-    "Every widget in every size, in your reading theme: today's reading, progress, prayer, Memorize, your group and listening on the Lock Screen.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Todos los widgets en todos los tamaños, con tu tema de lectura: la lectura de hoy, el progreso, la oración, Memorizar, tu grupo y la escucha en la pantalla bloqueada."
+            "value": "Todos los widgets, gratis"
           }
         }
       }
@@ -5911,12 +5921,12 @@
         }
       }
     },
-    "Free to read, always. Listening isn't available, and Premium widgets and tools such as Memorize use the %@ with this Bible.": {
+    "Free to read, always. Listening isn't available, and Premium tools such as Memorize use the %@ with this Bible.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gratis para leer, siempre. No se puede escuchar, y los widgets y las herramientas Premium como Memorizar usan la %@ con esta Biblia."
+            "value": "Gratis para leer, siempre. No se puede escuchar, y las herramientas Premium como Memorizar usan la %@ con esta Biblia."
           }
         }
       }
@@ -11899,6 +11909,16 @@
         }
       }
     },
+    "Premium styles": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estilos Premium"
+          }
+        }
+      }
+    },
     "Premium themes now have the gentle grain and fibres of real book paper.": {
       "localizations": {
         "es": {
@@ -13865,6 +13885,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Temas de temporada"
+          }
+        }
+      }
+    },
+    "Seasonal, keepsake and photo backgrounds for the verse widget, verses on hope, peace and more or from your own reading, widgets in your reading theme, and listening on the Lock Screen.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fondos de temporada, de recuerdo y con tu foto para el widget del versículo, versículos sobre esperanza, paz y más o de tu propia lectura, widgets con tu tema de lectura y la escucha en la pantalla bloqueada."
           }
         }
       }
@@ -19327,6 +19357,26 @@
         }
       }
     },
+    "Widget styles": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estilos de widgets"
+          }
+        }
+      }
+    },
+    "Widgets show the Bible you're reading, whichever it is, in every style.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los widgets muestran la Biblia que estás leyendo, sea cual sea, en todos los estilos."
+          }
+        }
+      }
+    },
     "Widgets that move": {
       "localizations": {
         "es": {
@@ -20181,6 +20231,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu vida con la Biblia"
+          }
+        }
+      }
+    },
+    "Your Bible in more widgets": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu Biblia en más widgets"
           }
         }
       }

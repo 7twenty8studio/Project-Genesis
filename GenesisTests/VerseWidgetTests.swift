@@ -85,29 +85,6 @@ struct VerseWidgetOptionTests {
         #expect(tomorrow == verses[1])
     }
 
-    @Test func theFreeWidgetShowsTheBibleBeingRead() {
-        var snapshot = WidgetSnapshot.placeholder
-        snapshot.randomVerses = pool(3)
-        let own = (1...3).map { WidgetSnapshot.Passage(reference: "R\($0)", text: "Own \($0)", verse: 43_003_000 + $0, translation: "NIV") }
-        let daily = WidgetSnapshot.DailyVerse(day: "2026-10-07", reference: "John 3:16", text: "Own daily", verse: 43_003_016)
-        snapshot.readerBible = WidgetSnapshot.ReaderBible(translation: "NIV", dailyVerses: [daily], randomVerses: own)
-        let now = date(7, 9)
-        #expect(snapshot.freePassage(for: .verseOfTheDay, on: now, calendar: calendar)?.translation == "NIV")
-        #expect(snapshot.freePassage(for: .verseOfTheDay, on: now, calendar: calendar)?.text == "Own daily")
-        #expect(snapshot.freePassage(for: .random, on: now, calendar: calendar)?.translation == "NIV")
-        // Premium options keep the snapshot's own Bible.
-        snapshot.categoryVerses = ["hope": pool(1)]
-        #expect(snapshot.freePassage(for: .hope, on: now, calendar: calendar)?.translation == "KJV")
-        #expect(snapshot.passage(for: .random, on: now, calendar: calendar)?.translation == "KJV")
-    }
-
-    @Test func withoutAReaderBibleTheFreeWidgetUsesTheSnapshot() {
-        var snapshot = WidgetSnapshot.placeholder
-        snapshot.randomVerses = pool(2)
-        let now = date(7, 9)
-        #expect(snapshot.freePassage(for: .random, on: now, calendar: calendar) == snapshot.passage(for: .random, on: now, calendar: calendar))
-    }
-
     @Test func snapshotsWithoutVerseOptionsStillDecode() throws {
         // Written before the verse widget had options.
         let json = """

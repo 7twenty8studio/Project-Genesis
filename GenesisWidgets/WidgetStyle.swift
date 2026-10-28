@@ -188,14 +188,41 @@ extension WidgetSize {
 }
 
 extension WidgetSnapshot {
-    /// Whether this widget, at this size, shows its content.
-    func unlocks(_ kind: WidgetKind, in family: WidgetFamily) -> Bool {
-        WidgetAccess.isUnlocked(kind: kind, size: WidgetSize(family), isPremium: isPremium == true)
+    /// Whether this widget shows its content (only Memorize needs Premium).
+    func unlocks(_ kind: WidgetKind) -> Bool {
+        WidgetAccess.isUnlocked(kind: kind, isPremium: isPremium == true)
     }
 }
 
-/// What a Premium widget shows without Premium: a calm card that says so and
-/// opens Versely. The default look, never the reader theme.
+/// The small mark on a free widget showing the Classic look in place of a
+/// Premium background or option the person picked: a lock, with "Premium"
+/// where there's room.
+struct PremiumTag: View {
+    var isCompact = false
+    var color: Color = WidgetPalette.accent
+
+    var body: some View {
+        Group {
+            if isCompact {
+                Image(systemName: "lock.fill")
+            } else {
+                Label(String(localized: "Premium"), systemImage: "lock.fill")
+            }
+        }
+        .font(.system(size: 9, weight: .semibold))
+        .foregroundStyle(color)
+        .padding(.horizontal, 6)
+        .padding(.vertical, 3)
+        .background(color.opacity(0.12), in: Capsule())
+        .fixedSize()
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text("The style you chose comes with Versely Premium."))
+    }
+}
+
+/// A calm card in place of a widget's content, opening Versely: the
+/// Memorize widget without Premium (Premium, like Memorize itself), or Your
+/// Photo before a photo is chosen. The default look, never the reader theme.
 struct PremiumLockedView: View {
     /// One short sentence about what the widget does with Premium.
     let message: String

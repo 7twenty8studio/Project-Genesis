@@ -5,44 +5,31 @@ import Testing
 @Suite("Widget access and theme-matched widgets")
 @MainActor
 struct WidgetAccessTests {
-    @Test func onlyTheVerseWidgetIsFreeUpToLarge() {
-        let free: Set<WidgetSize> = [.small, .medium, .large, .accessoryCircular, .accessoryRectangular, .accessoryInline]
-        for size in WidgetSize.allCases {
-            #expect(WidgetAccess.isFree(kind: .dailyVerse, size: size) == free.contains(size), Comment(rawValue: "Verse of the Day, \(size)"))
-        }
-        for kind in WidgetKind.allCases where kind != .dailyVerse {
-            for size in WidgetSize.allCases {
-                #expect(!WidgetAccess.isFree(kind: kind, size: size), Comment(rawValue: "\(kind.rawValue), \(size) is Premium"))
-            }
+    @Test func everyWidgetButMemorizeIsFree() {
+        for kind in WidgetKind.allCases {
+            #expect(WidgetAccess.isFree(kind: kind) == (kind != .memorise), Comment(rawValue: kind.rawValue))
+            #expect(WidgetAccess.isUnlocked(kind: kind, isPremium: false) == (kind != .memorise), Comment(rawValue: kind.rawValue))
         }
     }
 
     @Test func premiumUnlocksEveryWidget() {
         for kind in WidgetKind.allCases {
-            for size in WidgetSize.allCases {
-                #expect(WidgetAccess.isUnlocked(kind: kind, size: size, isPremium: true))
-            }
+            #expect(WidgetAccess.isUnlocked(kind: kind, isPremium: true))
         }
-        #expect(WidgetAccess.isUnlocked(kind: .dailyVerse, size: .medium, isPremium: false))
-        #expect(WidgetAccess.isUnlocked(kind: .dailyVerse, size: .large, isPremium: false))
-        #expect(!WidgetAccess.isUnlocked(kind: .dailyVerse, size: .extraLarge, isPremium: false))
-        #expect(!WidgetAccess.isUnlocked(kind: .streak, size: .accessoryCircular, isPremium: false))
-        #expect(WidgetAccess.isUnlocked(kind: .dailyVerse, size: .accessoryInline, isPremium: false))
     }
 
     @Test func verseOfTheDayAndRandomVerseAreFree() {
         let free: Set<VerseWidgetSource> = [.verseOfTheDay, .random]
         for source in VerseWidgetSource.allCases {
-            let small = WidgetAccess.isUnlocked(source, size: .small, isPremium: false)
-            let medium = WidgetAccess.isUnlocked(source, size: .medium, isPremium: false)
-            let lockScreen = WidgetAccess.isUnlocked(source, size: .accessoryRectangular, isPremium: false)
-            let large = WidgetAccess.isUnlocked(source, size: .large, isPremium: false)
-            let premium = WidgetAccess.isUnlocked(source, size: .large, isPremium: true)
-            #expect(small == free.contains(source), Comment(rawValue: source.rawValue))
-            #expect(medium == free.contains(source), Comment(rawValue: source.rawValue))
-            #expect(lockScreen == free.contains(source), Comment(rawValue: source.rawValue))
-            #expect(large == free.contains(source), Comment(rawValue: source.rawValue))
-            #expect(premium)
+            #expect(WidgetAccess.isUnlocked(source, isPremium: false) == free.contains(source), Comment(rawValue: source.rawValue))
+            #expect(WidgetAccess.isUnlocked(source, isPremium: true))
+        }
+    }
+
+    @Test func onlyTheClassicBackgroundIsFree() {
+        for style in WidgetArtStyle.allCases {
+            #expect(WidgetAccess.isUnlocked(style, isPremium: false) == (style == .classic), Comment(rawValue: style.rawValue))
+            #expect(WidgetAccess.isUnlocked(style, isPremium: true))
         }
     }
 

@@ -93,7 +93,8 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
     var activePrayerCount: Int
     var nextPrayerReminder: Date?
     var memorise: Memorise?
-    /// Premium widgets (ticking off reading, Memorise) are unlocked.
+    /// Premium widget choices (backgrounds, categories, the reading theme)
+    /// and the Memorize widget are unlocked.
     var isPremium: Bool?
     /// Written for Premium only; missing in older snapshots (decodes as nil).
     var theme: Theme? = nil
@@ -104,16 +105,6 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
     var categoryVerses: [String: [Passage]]? = nil
     /// Premium: "From Your Reading", one passage per day ("yyyy-MM-dd").
     var readingVerses: [String: Passage]? = nil
-    /// The Bible being read, when Premium widgets can't show it (a
-    /// YouVersion Bible: no YouVersion text in paid features): its verses
-    /// for the free verse widget. Nil when every widget uses that Bible.
-    var readerBible: ReaderBible? = nil
-
-    struct ReaderBible: Codable, Equatable, Sendable {
-        let translation: String
-        let dailyVerses: [DailyVerse]
-        let randomVerses: [Passage]
-    }
 
     static let appGroup = "group.com.7twenty8studio.versely"
     static let fileName = "widget-snapshot.json"
@@ -137,6 +128,17 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
     func dailyVerse(on date: Date, calendar: Calendar = .current) -> DailyVerse? {
         let day = Self.dayKey(for: date, calendar: calendar)
         return dailyVerses.first { $0.day == day } ?? dailyVerses.first
+    }
+
+    /// The widget gallery's preview: the placeholder, with Premium only if
+    /// the person has it, so the Memorize widget says it's Premium before
+    /// it's added. Before the app has run, the full widget.
+    static var galleryPreview: WidgetSnapshot {
+        var preview = placeholder
+        if let saved = load() {
+            preview.isPremium = saved.isPremium
+        }
+        return preview
     }
 
     /// "yyyy-MM-dd" for a date in the person's calendar.

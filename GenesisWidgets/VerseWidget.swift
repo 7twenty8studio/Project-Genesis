@@ -93,7 +93,7 @@ struct VerseProvider: AppIntentTimelineProvider {
     }
 
     func snapshot(for configuration: VerseWidgetIntent, in context: Context) async -> VerseEntry {
-        let snapshot = context.isPreview ? .placeholder : (WidgetSnapshot.load() ?? .placeholder)
+        let snapshot = context.isPreview ? WidgetSnapshot.galleryPreview : (WidgetSnapshot.load() ?? .placeholder)
         return VerseEntry(date: .now, snapshot: snapshot, source: configuration.option.source, background: configuration.background.style)
     }
 
@@ -112,10 +112,11 @@ struct VerseProvider: AppIntentTimelineProvider {
 
 // MARK: - Widget
 
-/// Free as the small, medium and large Home Screen widget and on the Lock
-/// Screen (verse of the day or a random verse); the categories, From Your
-/// Reading and the backgrounds are Premium. The kind is unchanged from the
-/// earlier static widget, so installed widgets carry on.
+/// Free at every size with Verse of the Day or Random Verse in the Classic
+/// look; the categories, From Your Reading and the backgrounds are Premium.
+/// A Premium choice without Premium shows the verse of the day in the
+/// Classic look with a small Premium tag, never a locked card. The kind is
+/// unchanged from the earlier static widget, so installed widgets carry on.
 struct DailyVerseWidget: Widget {
     var body: some WidgetConfiguration {
         AppIntentConfiguration(kind: WidgetKind.dailyVerse.rawValue, intent: VerseWidgetIntent.self, provider: VerseProvider()) { entry in
@@ -132,51 +133,47 @@ struct DailyVerseView: View {
     @Environment(\.widgetFamily) private var family
 
     var body: some View {
-        let isPremium = entry.snapshot.isPremium == true
-        if !entry.snapshot.unlocks(.dailyVerse, in: family) {
-            PremiumLockedView(message: String(localized: "Larger verse widgets come with Versely Premium."), symbol: "text.quote")
-        } else if !WidgetAccess.isUnlocked(entry.source, size: WidgetSize(family), isPremium: isPremium) {
-            PremiumLockedView(message: lockedMessage, symbol: entry.source == .fromYourReading ? "book.pages" : "sparkles")
-        } else if art.needsPremium && !isPremium {
-            PremiumLockedView(message: String(localized: "Photo and seasonal backgrounds come with Versely Premium."), symbol: "photo")
-        } else if art == .photo && WidgetArtImage.load(.photo, family: family) == nil {
+        if art == .photo && WidgetArtImage.load(.photo, family: family) == nil {
             PremiumLockedView(message: String(localized: "Choose your photo in Versely: Settings › Widget Photo."), symbol: "photo.badge.plus")
         } else {
             VerseContentView(
-                passage: showsReaderBible
-                    ? entry.snapshot.freePassage(for: entry.source, on: entry.date)
-                    : entry.snapshot.passage(for: entry.source, on: entry.date),
+                passage: entry.snapshot.passage(for: source, on: entry.date),
                 title: title,
                 colors: WidgetColors(entry.snapshot),
                 family: family,
                 art: art,
                 date: entry.date,
-                isVerseOfTheDay: entry.source == .verseOfTheDay
+                isVerseOfTheDay: source == .verseOfTheDay,
+                showsPremiumTag: showsPremiumTag
             )
         }
     }
 
-    /// The free verse widget (Classic look, a free size and option) shows
-    /// the Bible being read, YouVersion Bibles included; Premium looks,
-    /// sizes and options use a public-domain Bible with a YouVersion one.
-    private var showsReaderBible: Bool {
-        art == .classic && WidgetAccess.isUnlocked(entry.source, size: WidgetSize(family), isPremium: false)
+    private var isPremium: Bool { entry.snapshot.isPremium == true }
+
+    /// The option shown: a Premium one without Premium falls back to the
+    /// verse of the day (its verses aren't written without Premium).
+    private var source: VerseWidgetSource {
+        WidgetAccess.isUnlocked(entry.source, isPremium: isPremium) ? entry.source : .verseOfTheDay
     }
 
-    /// The chosen background; the Lock Screen's widgets have none.
+    /// The background shown: the Lock Screen's widgets have none, and a
+    /// Premium one without Premium falls back to Classic.
     private var art: WidgetArtStyle {
-        WidgetSize(family).isAccessory ? .classic : entry.background
+        if WidgetSize(family).isAccessory { return .classic }
+        return WidgetAccess.isUnlocked(entry.background, isPremium: isPremium) ? entry.background : .classic
     }
 
-    private var lockedMessage: String {
-        entry.source == .fromYourReading
-            ? String(localized: "Verses from your own reading come with Versely Premium.")
-            : String(localized: "Verses on hope, peace and more come with Versely Premium.")
+    /// A Premium option or background was chosen without Premium. The
+    /// Lock Screen has no room for the tag; it just shows the free verse.
+    private var showsPremiumTag: Bool {
+        guard !WidgetSize(family).isAccessory else { return false }
+        return source != entry.source || art != entry.background
     }
 
     /// The small capitals above the verse.
     private var title: String {
-        switch entry.source {
+        switch source {
         case .verseOfTheDay: String(localized: "Verse of the Day")
         case .random: String(localized: "A Verse for You")
         case .fromYourReading: String(localized: "From Your Reading")
@@ -202,6 +199,8 @@ private struct VerseContentView: View {
     var art: WidgetArtStyle = .classic
     var date: Date = .now
     var isVerseOfTheDay = true
+    /// The Classic look standing in for a Premium choice.
+    var showsPremiumTag = false
 
     var body: some View {
         content
@@ -329,10 +328,16 @@ private struct VerseContentView: View {
                 .layoutPriority(1)
                 .shadow(color: art.isDark ? .black.opacity(0.35) : .clear, radius: 3, y: 1)
             Spacer(minLength: 0)
-            Text(citation)
-                .font(.caption2.weight(.semibold))
-                .foregroundStyle(ink.secondary)
-                .lineLimit(1)
+            HStack(spacing: 4) {
+                Text(citation)
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(ink.secondary)
+                    .lineLimit(1)
+                if showsPremiumTag {
+                    Spacer(minLength: 0)
+                    PremiumTag(isCompact: family == .systemSmall, color: ink.accent)
+                }
+            }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }

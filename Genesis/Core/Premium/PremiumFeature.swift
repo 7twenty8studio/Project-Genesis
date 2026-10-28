@@ -32,7 +32,7 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
         case .advancedSearch: String(localized: "Advanced search")
         case .ambientSounds: String(localized: "Ambient sounds")
         case .memorise: String(localized: "Memorize Scripture")
-        case .widgets: String(localized: "Every widget")
+        case .widgets: String(localized: "Widget styles")
         case .journalExtras: String(localized: "Photos and voice in your journal")
         case .premiumBibles: String(localized: "More Bible translations")
         }
@@ -47,7 +47,7 @@ enum PremiumFeature: String, CaseIterable, Identifiable, Sendable {
         case .historicalContent: String(localized: "Family trees for 3,000 people, interactive maps with Paul's journeys and the Exodus, and the people and places beside the chapter you're reading.")
         case .readingInsights: String(localized: "Time spent reading, favorite books and your reading history.")
         case .advancedSearch: String(localized: "Search by topic across the whole Bible, and narrow searches to a testament or book.")
-        case .widgets: String(localized: "Every widget in every size, in your reading theme: today's reading, progress, prayer, Memorize, your group and listening on the Lock Screen.")
+        case .widgets: String(localized: "Seasonal, keepsake and photo backgrounds for the verse widget, verses on hope, peace and more or from your own reading, widgets in your reading theme, and listening on the Lock Screen.")
         case .memorise: String(localized: "Flashcards that bring each verse back just before you'd forget it, plus games, levels and a daily streak.")
         case .ambientSounds: String(localized: "Rain, ocean waves, wind, a crackling fire, birdsong and a soft worship pad to read and pray with, mixed your way.")
         case .journalExtras: String(localized: "Add photos and voice recordings to prayers and sermon notes, sketch with Apple Pencil, start from templates and export a beautifully typeset PDF.")

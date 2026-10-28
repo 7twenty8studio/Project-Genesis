@@ -97,7 +97,7 @@ struct ReaderView: View {
         .alert(String(localized: "About this Bible"), isPresented: $showsYouVersionNote) {
             Button(String(localized: "OK")) { youVersionNoteShown = true }
         } message: {
-            Text(String(localized: "\(reader.translation.abbreviation) is free to read, always. Listening isn't available for it, and Premium widgets and tools such as Memorize use the \(reader.library.premiumToolsBibleName(for: reader.translation)) instead."))
+            Text(String(localized: "\(reader.translation.abbreviation) is free to read, always. Listening isn't available for it, and Premium tools such as Memorize use the \(reader.library.premiumToolsBibleName(for: reader.translation)) instead."))
         }
         .onAppear {
             windowSafeArea = DeviceScreen.safeAreaInsets

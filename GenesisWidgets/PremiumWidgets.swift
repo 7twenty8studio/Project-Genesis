@@ -3,7 +3,7 @@ import AppIntents
 import SwiftUI
 import WidgetKit
 
-// MARK: - Today's reading, with a tick (Premium)
+// MARK: - Today's reading, with a tick
 
 struct TodaysReadingWidget: Widget {
     var body: some WidgetConfiguration {
@@ -21,11 +21,7 @@ struct TodaysReadingView: View {
     @Environment(\.widgetFamily) private var family
 
     var body: some View {
-        if entry.snapshot.unlocks(.todaysReading, in: family) {
-            readingView(WidgetColors(entry.snapshot))
-        } else {
-            PremiumLockedView(message: String(localized: "Tick off your daily reading with Versely Premium."), symbol: "checklist")
-        }
+        readingView(WidgetColors(entry.snapshot))
     }
 
     private func readingView(_ colors: WidgetColors) -> some View {
@@ -223,7 +219,7 @@ private struct PlayPauseButton: View {
     }
 }
 
-// MARK: - Group progress (Premium)
+// MARK: - Group progress
 
 struct GroupProgressEntry: TimelineEntry {
     let date: Date
@@ -270,27 +266,19 @@ struct GroupProgressView: View {
     let entry: GroupProgressEntry
     @Environment(\.widgetFamily) private var family
 
-    private var isUnlocked: Bool {
-        WidgetAccess.isUnlocked(kind: .groupProgress, size: WidgetSize(family), isPremium: entry.isPremium)
-    }
-
     private var colors: WidgetColors {
         WidgetColors(isPremium: entry.isPremium, theme: entry.theme)
     }
 
     var body: some View {
-        if isUnlocked {
-            Group {
-                if let group = entry.group {
-                    content(group)
-                } else {
-                    note(String(localized: "Open a group with a reading plan in Versely to see its progress here."))
-                }
+        Group {
+            if let group = entry.group {
+                content(group)
+            } else {
+                note(String(localized: "Open a group with a reading plan in Versely to see its progress here."))
             }
-            .containerBackground(for: .widget) { WidgetBackground(colors: colors) }
-        } else {
-            PremiumLockedView(message: String(localized: "Follow your group's reading with Versely Premium."), symbol: "person.3")
         }
+        .containerBackground(for: .widget) { WidgetBackground(colors: colors) }
     }
 
     @ViewBuilder
