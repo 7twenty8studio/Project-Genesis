@@ -66,6 +66,11 @@ enum WhatsNewCatalog {
                 detail: String(localized: "Widgets show the Bible you're reading, whichever it is, in every style.")
             ),
             WhatsNewItem(
+                systemImage: "square.grid.2x2",
+                title: String(localized: "Widget Styles"),
+                detail: String(localized: "See every widget style with today's verse and choose one in Settings › Widget Styles.")
+            ),
+            WhatsNewItem(
                 systemImage: "paintpalette",
                 title: String(localized: "Premium styles"),
                 detail: String(localized: "Backgrounds, keepsakes and verses on hope, peace and more come with Versely Premium; without it, the widget keeps the Classic look.")

@@ -50,35 +50,6 @@ struct SnapshotProvider: TimelineProvider {
     }
 }
 
-// MARK: - Style
-
-/// Muted colours matching the app's Paper and Slate themes.
-enum WidgetPalette {
-    // The brand's cream, copper and walnut (BrandColors), deepened where
-    // small text needs the contrast.
-    static let accent = Color(light: 0x9A6640, dark: 0xE0B48D)
-    static let text = Color(light: 0x4A2E1A, dark: 0xF3E2CC)
-    static let secondary = Color(light: 0x8A6243, dark: 0xC7A27F)
-    static let background = Color(light: 0xFBF1E4, dark: 0x2B1A0F)
-    /// Where the default background's soft gradient settles, at the bottom.
-    static let backgroundGlow = Color(light: 0xF2DCC2, dark: 0x1F120A)
-}
-
-extension Color {
-    init(light: UInt32, dark: UInt32) {
-        self.init(uiColor: UIColor { traits in
-            let hex = traits.userInterfaceStyle == .dark ? dark : light
-            return UIColor(
-                red: CGFloat((hex >> 16) & 0xFF) / 255,
-                green: CGFloat((hex >> 8) & 0xFF) / 255,
-                blue: CGFloat(hex & 0xFF) / 255,
-                alpha: 1
-            )
-        })
-    }
-}
-
-
 // The verse widget (DailyVerseWidget) lives in VerseWidget.swift.
 
 // MARK: - Continue reading

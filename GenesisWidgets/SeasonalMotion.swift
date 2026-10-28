@@ -198,7 +198,7 @@ private struct WheelView: View {
         let far = hypot(size.width - center.x, size.height - center.y) * 1.05
         // Turning clockwise: across the widget, down and to the left.
         let turn = (time / wheel.period).truncatingRemainder(dividingBy: 1) * 2 * .pi
-        var random = SeededRandom(seed: seed)
+        var random = DriftRandom(seed: seed)
         let pieces = (0..<wheel.count).map { _ in
             Piece(
                 angle: random.next() * 2 * .pi,
@@ -276,7 +276,7 @@ private struct EdgeMask: View {
 }
 
 /// The same pieces every time (no flicker between entries).
-private struct SeededRandom {
+private struct DriftRandom {
     private var state: UInt64
 
     init(seed: UInt64) { state = seed &* 6364136223846793005 &+ 1442695040888963407 }

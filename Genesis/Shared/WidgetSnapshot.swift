@@ -105,6 +105,10 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
     var categoryVerses: [String: [Passage]]? = nil
     /// Premium: "From Your Reading", one passage per day ("yyyy-MM-dd").
     var readingVerses: [String: Passage]? = nil
+    /// The verse widget style chosen in Versely (Settings › Widget Styles,
+    /// a `WidgetArtStyle` raw value), for widgets whose Background is
+    /// "Chosen in Versely". Missing in older snapshots (Classic).
+    var verseStyle: String? = nil
 
     static let appGroup = "group.com.7twenty8studio.versely"
     static let fileName = "widget-snapshot.json"

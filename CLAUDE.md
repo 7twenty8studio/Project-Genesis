@@ -287,8 +287,18 @@ shares; README.md has the architecture.
   Tools/WidgetData/check_verse_categories.py and VerseWidgetTests. From Your
   Reading picks from `ReadingProgress.recentChapters` (last 7 days) a verse
   that's a whole sentence of 60–220 characters (`ReadingVersePicker`).
-- Verse widget backgrounds (`VerseWidgetIntent.background`, mirroring
-  `WidgetArtStyle`; Classic, the default, is today's look and free; Paper,
+- Widget Styles (Settings, `WidgetStylesView`, open to everyone): every
+  `WidgetArtStyle` previewed at small/medium/large with today's verse, drawn
+  by the widget's own views (`VerseWidgetContent` + `VerseWidgetBackdrop`;
+  GenesisWidgets/WidgetStyle.swift, VerseWidgetContent.swift,
+  KeepsakeWidgets.swift, SeasonalMotion.swift and the Keepsake/Brand images
+  are also built into the app, project.yml; no WidgetKit-only modifiers in
+  them). The choice (`WidgetStylePreference`, "widgets.verseStyle") travels
+  in `WidgetSnapshot.verseStyle` (`publishVerseStyle` writes it at once);
+  Premium styles show `PremiumBadge` and open the paywall.
+- Verse widget backgrounds (`VerseWidgetIntent.background`: "Chosen in
+  Versely", `.app`, the default, follows Widget Styles; the others mirror
+  `WidgetArtStyle` for one widget's own look; Classic is free; Paper,
   the seasons, Night and Your Photo are Premium, Classic with a Premium tag otherwise).
   The app draws the painted ones once into the App Group
   (`WidgetArtWriter.drawIfNeeded` from RootView's widget refresh; bump

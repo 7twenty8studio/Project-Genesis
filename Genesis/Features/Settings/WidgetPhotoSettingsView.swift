@@ -1,8 +1,8 @@
 import PhotosUI
 import SwiftUI
 
-/// Settings › Widget Photo (Premium): the photo the verse widget shows when
-/// its Background is set to Your Photo. Kept in the App Group, made smaller
+/// Settings › Widget Photo (Premium): the photo the verse widget shows with
+/// the Your Photo style (Widget Styles, or a widget's own Background). Kept in the App Group, made smaller
 /// and without its metadata (`WidgetArtWriter.savePhoto`), and framed for
 /// each widget size by dragging and pinching (`WidgetPhotoFramingView`).
 struct WidgetPhotoSettingsView: View {
@@ -53,7 +53,7 @@ struct WidgetPhotoSettingsView: View {
                         .accessibilityIdentifier("widgetPhoto.remove")
                     }
                 } footer: {
-                    Text("To use it, touch and hold the verse widget on your Home Screen, tap Edit Widget and set Background to Your Photo. The photo stays on this iPhone.")
+                    Text("To use it, choose Your Photo in Settings › Widget Styles. The photo stays on this iPhone.")
                 }
                 .listRowBackground(palette.surface)
                 .foregroundStyle(palette.text)

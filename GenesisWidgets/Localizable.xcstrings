@@ -171,6 +171,16 @@
         }
       }
     },
+    "Chosen in Versely": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elegido en Versely"
+          }
+        }
+      }
+    },
     "Classic": {
       "localizations": {
         "es": {

@@ -32,6 +32,20 @@ enum WidgetSnapshotWriter {
         }
     }
 
+    /// Saves the style chosen in Widget Styles and has the verse widgets
+    /// redraw at once (the next full refresh writes it too).
+    static func publishVerseStyle(_ style: WidgetArtStyle) {
+        WidgetStylePreference.set(style)
+        guard var snapshot = WidgetSnapshot.load(), snapshot.verseStyle != style.rawValue else { return }
+        snapshot.verseStyle = style.rawValue
+        do {
+            try snapshot.save()
+            WidgetCenter.shared.reloadTimelines(ofKind: WidgetKind.dailyVerse.rawValue)
+        } catch {
+            CrashReporter.record(error, context: "WidgetSnapshot.save")
+        }
+    }
+
     /// Days ticked off on the Today's Reading widget since the app last ran.
     static func applyPendingPlanDays(context: ModelContext) {
         let changes = PendingPlanDays.take()
@@ -161,7 +175,8 @@ enum WidgetSnapshotWriter {
             // From Your Reading are Premium, so they're only written then.
             randomVerses: WidgetVerses.passages(randomPool, library: library, translation: widgetTranslation),
             categoryVerses: isPremium ? WidgetVerses.categories(library: library) : nil,
-            readingVerses: isPremium ? WidgetVerses.fromReading(progress: progress, library: library, now: now, calendar: calendar) : nil
+            readingVerses: isPremium ? WidgetVerses.fromReading(progress: progress, library: library, now: now, calendar: calendar) : nil,
+            verseStyle: WidgetStylePreference.current().rawValue
         )
     }
 }

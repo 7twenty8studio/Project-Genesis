@@ -33,6 +33,25 @@ struct WidgetAccessTests {
         }
     }
 
+    @Test func widgetStylesListEveryStyleOnce() {
+        #expect(Set(WidgetArtStyle.galleryOrder) == Set(WidgetArtStyle.allCases))
+        #expect(WidgetArtStyle.galleryOrder.count == WidgetArtStyle.allCases.count)
+        #expect(WidgetArtStyle.galleryOrder.first == .classic, "The free style first")
+    }
+
+    @Test func theStyleChosenInVerselyReachesTheSnapshot() throws {
+        let defaults = try #require(UserDefaults(suiteName: "WidgetStyle-\(UUID().uuidString)"))
+        #expect(WidgetStylePreference.current(defaults) == .classic)
+        WidgetStylePreference.set(.pressedFlowers, defaults: defaults)
+        #expect(WidgetStylePreference.current(defaults) == .pressedFlowers)
+
+        var snapshot = WidgetSnapshot.placeholder
+        #expect(snapshot.chosenVerseStyle == .classic, "Older snapshots keep the Classic look")
+        snapshot.verseStyle = WidgetArtStyle.night.rawValue
+        let decoded = try JSONDecoder().decode(WidgetSnapshot.self, from: JSONEncoder().encode(snapshot))
+        #expect(decoded.chosenVerseStyle == .night)
+    }
+
     @Test func verseWidgetOptionsKeepTheirSavedNames() {
         // Installed widgets save these; GenesisWidgets' VerseWidgetOption mirrors them.
         #expect(VerseWidgetSource.allCases.map(\.rawValue) == [
