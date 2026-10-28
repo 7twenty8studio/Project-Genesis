@@ -843,6 +843,16 @@
         }
       }
     },
+    "A calm reader that works offline. Highlight, take notes and pick up where you left off.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un lector sereno que funciona sin conexión. Resalta, toma notas y continúa donde lo dejaste."
+          }
+        }
+      }
+    },
     "A calm, sturdy serif with an even rhythm": {
       "localizations": {
         "es": {
@@ -1124,6 +1134,26 @@
         }
       }
     },
+    "A new icon": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un nuevo icono"
+          }
+        }
+      }
+    },
+    "A new look for Versely": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un nuevo aspecto para Versely"
+          }
+        }
+      }
+    },
     "A nudge only on days you haven't read yet, to keep your streak going, plus your plan, Memorize and Sunday sermon notes.": {
       "localizations": {
         "es": {
@@ -1140,6 +1170,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Una descarga en pausa guarda lo que tiene durante una semana. Continúala cuando quieras."
+          }
+        }
+      }
+    },
+    "A place to pray": {
+      "comment": "Welcome page: prayer journal",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un lugar para orar"
           }
         }
       }
@@ -1969,6 +2010,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Una idea"
+          }
+        }
+      }
+    },
+    "An open Bible in the shape of a V, also in Night and the seasons in Settings › App Icon.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una Biblia abierta con forma de V, también en Noche y en las estaciones en Ajustes › Icono de la app."
           }
         }
       }
@@ -6011,12 +6062,32 @@
         }
       }
     },
+    "Get Started": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comenzar"
+          }
+        }
+      }
+    },
     "Get the verse of the day each morning, and a gentle reminder in the evening if you haven't read yet. Change times or turn them off anytime in Settings › Notifications.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
             "value": "Recibe el versículo del día cada mañana y un recordatorio amable por la tarde si aún no has leído. Cambia las horas o desactívalos cuando quieras en Ajustes › Notificaciones."
+          }
+        }
+      }
+    },
+    "Go beyond the verse.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ve más allá del versículo."
           }
         }
       }
@@ -6562,6 +6633,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Escucha cualquier capítulo en voz alta mientras la página avanza contigo."
+          }
+        }
+      }
+    },
+    "Hear chapters read aloud and follow along, verse by verse.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escucha los capítulos en voz alta y síguelos versículo a versículo."
           }
         }
       }
@@ -7539,6 +7620,16 @@
         }
       }
     },
+    "Keep a prayer journal, hold on to the verses that speak to you and look back on answered prayers.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lleva un diario de oración, guarda los versículos que te hablan y recuerda las oraciones contestadas."
+          }
+        }
+      }
+    },
     "Keep a private record of what you're praying for.": {
       "localizations": {
         "es": {
@@ -8064,6 +8155,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Escuchar"
+          }
+        }
+      }
+    },
+    "Listen along": {
+      "comment": "Welcome page: listening",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escucha mientras lees"
           }
         }
       }
@@ -10722,6 +10824,16 @@
         }
       }
     },
+    "Page %lld of %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Página %lld de %lld"
+          }
+        }
+      }
+    },
     "Page Curl": {
       "localizations": {
         "es": {
@@ -12289,6 +12401,16 @@
         }
       }
     },
+    "Read a plan with friends or your church, talk it over and pray for one another.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee un plan con amigos o con tu iglesia, conversen sobre él y oren unos por otros."
+          }
+        }
+      }
+    },
     "Read along, side by side": {
       "localizations": {
         "es": {
@@ -12500,6 +12622,7 @@
       }
     },
     "Read together": {
+      "comment": "Welcome page: groups",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -14691,6 +14814,16 @@
         }
       }
     },
+    "Skip": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omitir"
+          }
+        }
+      }
+    },
     "Slate": {
       "comment": "Reader theme name",
       "localizations": {
@@ -16742,6 +16875,16 @@
         }
       }
     },
+    "The verse and reading widgets now wear Versely's cream and copper, with a progress bar for your plan.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los widgets de versículo y de lectura ahora lucen el crema y el cobre de Versely, con una barra de progreso para tu plan."
+          }
+        }
+      }
+    },
     "The whole Bible in a year, with books in the order events happened.": {
       "localizations": {
         "es": {
@@ -18306,6 +18449,16 @@
         }
       }
     },
+    "Versely, Bible Study App": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versely, app de estudio bíblico"
+          }
+        }
+      }
+    },
     "Versely, your way": {
       "localizations": {
         "es": {
@@ -18464,6 +18617,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Serif cálida y clásica"
+          }
+        }
+      }
+    },
+    "Warmer widgets": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Widgets más cálidos"
           }
         }
       }
@@ -20342,6 +20505,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu compra está pendiente de aprobación."
+          }
+        }
+      }
+    },
+    "Your quiet place to read": {
+      "comment": "Welcome page: reading",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu lugar tranquilo para leer"
           }
         }
       }

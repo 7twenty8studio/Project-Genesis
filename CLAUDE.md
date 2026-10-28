@@ -261,7 +261,9 @@ shares; README.md has the architecture.
   Lock Screen (`WidgetAccess` in Genesis/Shared); every other widget shows a
   locked card. Premium widgets use the reading theme (colours
   carried in `WidgetSnapshot.theme` as hex, since the extension can't use
-  ThemePalette); free ones the default light/dark look.
+  ThemePalette); free ones the brand's look (`WidgetPalette`: cream and
+  copper, walnut in dark mode). Every `Eyebrow` starts with the kit's V
+  (`VerselyMark`, GenesisWidgets/Brand).
 - Verse widget options (`VerseWidgetIntent`, an AppIntentConfiguration on
   the unchanged "DailyVerse" kind; the default `.verseOfTheDay` is what
   widgets installed before it show): Verse of the Day and Random Verse are
@@ -468,6 +470,18 @@ shares; README.md has the architecture.
   `TranslationProfile.builtIn`. Free, like every Bible.
 
 ## Feature choices
+- Onboarding: `OnboardingHeroView` first (icon, wordmark, drawn misty
+  mountains, Get Started, "Go beyond the verse."; always the brand's own
+  colors, `BrandColors` in Genesis/Shared), then `OnboardingWelcomeView`
+  (Read, Listen, Pray, Together; Together only while groups or community
+  are on; Skip), then the translation, then "Make Versely yours". The
+  launch screen is the icon (LaunchLogo) on cream. Pictures: the owner's
+  ChatGPT originals in Tools/Onboarding/Originals, cleaned (painted
+  checkerboards, stray specks) by Tools/Onboarding/make_onboarding.py into
+  Assets.xcassets/Onboarding*; Tools/Welcome/make_welcome.py draws
+  WelcomeMountains and scales the logo kit (project files
+  branding/versely-logo-kit) into WelcomeIcon, WelcomeWordmark and
+  LaunchLogo. App icons come from the same kit.
 - People choose optional features at setup ("Make Versely yours") and in
   Settings › Features (grouped by `OptionalFeature.Area`): `FeaturePreferences`
   (plans, prayer, memorise, listen, ambientSounds, wordStudy, explore,

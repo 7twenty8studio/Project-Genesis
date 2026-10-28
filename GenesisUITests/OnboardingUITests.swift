@@ -1,8 +1,23 @@
 import XCTest
 
-/// First launch: choose a translation, optionally choose features, and be
-/// reading quickly (PRD: within 30 seconds).
+/// First launch: a short welcome, choose a translation, optionally choose
+/// features, and be reading quickly (PRD: within 30 seconds).
 final class OnboardingUITests: GenesisUITestCase {
+    @MainActor
+    private func getStarted(_ app: XCUIApplication) {
+        let start = app.buttons["onboarding.hero.start"]
+        XCTAssertTrue(start.waitForExistence(timeout: Genesis.launchTimeout), "The welcome comes first")
+        start.tap()
+    }
+
+    @MainActor
+    private func skipWelcome(_ app: XCUIApplication) {
+        getStarted(app)
+        let skip = app.buttons["onboarding.welcome.skip"]
+        XCTAssertTrue(skip.waitForExistence(timeout: Genesis.timeout), "Then the welcome pages")
+        skip.tap()
+    }
+
     @MainActor
     private func continuePastFeatures(_ app: XCUIApplication, simple: Bool = false) {
         let button = app.buttons[simple ? "features.simple" : "features.continue"]
@@ -14,6 +29,7 @@ final class OnboardingUITests: GenesisUITestCase {
     @MainActor
     func testChooseTranslationAndBeginReading() {
         let app = Genesis.launch(onboarding: true)
+        skipWelcome(app)
 
         let web = app.buttons["onboarding.translation.WEB"]
         XCTAssertTrue(web.waitForExistence(timeout: Genesis.launchTimeout), "Translation choices should appear")
@@ -33,6 +49,7 @@ final class OnboardingUITests: GenesisUITestCase {
     @MainActor
     func testStartWithJohn() {
         let app = Genesis.launch(onboarding: true)
+        skipWelcome(app)
         let john = app.buttons["onboarding.john"]
         XCTAssertTrue(john.waitForExistence(timeout: Genesis.launchTimeout))
         john.tap()
@@ -43,6 +60,7 @@ final class OnboardingUITests: GenesisUITestCase {
     @MainActor
     func testKeepItSimpleHidesOptionalFeatures() {
         let app = Genesis.launch(onboarding: true)
+        skipWelcome(app)
         let begin = app.buttons["onboarding.begin"]
         XCTAssertTrue(begin.waitForExistence(timeout: Genesis.launchTimeout))
         begin.tap()
@@ -51,5 +69,22 @@ final class OnboardingUITests: GenesisUITestCase {
         XCTAssertTrue(app.buttons["reader.settings"].exists)
         XCTAssertFalse(app.buttons["reader.listen"].exists, "Listening is hidden")
         XCTAssertFalse(app.tabBars.buttons["Explore"].exists || app.buttons["Explore"].exists, "Explore is hidden")
+    }
+
+    @MainActor
+    func testWelcomePagesLeadToTranslations() {
+        let app = Genesis.launch(onboarding: true)
+        getStarted(app)
+        let next = app.buttons["onboarding.welcome.next"]
+        XCTAssertTrue(next.waitForExistence(timeout: Genesis.timeout))
+        XCTAssertEqual(next.label, "Next")
+        // Read, Listen, Pray and (with groups on) Together; the last says Continue.
+        for _ in 0..<4 where next.exists && next.label == "Next" {
+            next.tap()
+        }
+        XCTAssertEqual(next.label, "Continue")
+        XCTAssertFalse(app.buttons["onboarding.welcome.skip"].exists, "Nothing to skip on the last page")
+        next.tap()
+        XCTAssertTrue(app.buttons["onboarding.begin"].waitForExistence(timeout: Genesis.timeout), "Translations come next")
     }
 }

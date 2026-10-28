@@ -1,6 +1,7 @@
 import SwiftUI
 
-/// First launch: choose a translation and begin reading, well within 30 seconds.
+/// First launch: the welcome (Get Started, then a few pages), then choose a
+/// translation and begin reading, well within 30 seconds.
 struct OnboardingView: View {
     let onFinish: () -> Void
 
@@ -10,15 +11,35 @@ struct OnboardingView: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var selection: Translation = .kjv
     @State private var appeared = false
-    @State private var choosingFeatures = false
+    @State private var step: Step = .hero
+
+    private enum Step {
+        case hero, pages, translation, features
+    }
 
     var body: some View {
-        if choosingFeatures {
+        switch step {
+        case .hero:
+            OnboardingHeroView { go(to: .pages) }
+                .transition(.opacity)
+        case .pages:
+            OnboardingWelcomeView { go(to: .translation) }
+                .transition(stepTransition)
+        case .translation:
+            translationStep
+                .transition(stepTransition)
+        case .features:
             FeatureChoicesView(onFinish: onFinish)
                 .transition(.move(edge: .trailing).combined(with: .opacity))
-        } else {
-            translationStep
         }
+    }
+
+    private var stepTransition: AnyTransition {
+        reduceMotion ? .opacity : .move(edge: .trailing).combined(with: .opacity)
+    }
+
+    private func go(to next: Step) {
+        withAnimation(reduceMotion ? nil : Motion.drawer(0.35)) { step = next }
     }
 
     private var translationStep: some View {
@@ -82,7 +103,7 @@ struct OnboardingView: View {
     private func begin(at chapter: ChapterID) {
         library.currentTranslation = selection
         router.read(chapter)
-        withAnimation(reduceMotion ? nil : Motion.drawer(0.35)) { choosingFeatures = true }
+        go(to: .features)
     }
 }
 
