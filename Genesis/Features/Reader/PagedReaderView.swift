@@ -453,8 +453,19 @@ struct PagedReaderView: UIViewControllerRepresentable {
                 UIApplication.shared.open(url)
             case let .tap(point, bounds, verse):
                 let insets = layout?.textInsets ?? .zero
+                // The edges are the reading area's, as seen: beside the side
+                // panel the page's own view can be wider than what shows, which
+                // put the turning edge under the panel.
+                var x = point.x
+                var width = bounds.width
+                if let container = pageController?.view,
+                   let pageView = pageController?.viewControllers?.first?.view,
+                   pageView.isDescendant(of: container) {
+                    x = pageView.convert(point, to: container).x
+                    width = container.bounds.width
+                }
                 let action = ReaderTap.action(
-                    x: point.x, pageWidth: bounds.width,
+                    x: x, pageWidth: width,
                     leftMargin: insets.left, rightMargin: insets.right,
                     verse: verse, isSelecting: viewModel.isSelecting,
                     turnsPages: true, leftHanded: leftHanded
