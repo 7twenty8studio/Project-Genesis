@@ -73,6 +73,19 @@ struct LocalizationTests {
         #expect(AppLanguage.code == "en")
     }
 
+    @Test func languageChoiceFromSavedList() {
+        #expect(AppLanguageChoice(appleLanguages: nil) == .system)
+        #expect(AppLanguageChoice(appleLanguages: []) == .system)
+        #expect(AppLanguageChoice(appleLanguages: ["es"]) == .spanish)
+        #expect(AppLanguageChoice(appleLanguages: ["es-MX", "en"]) == .spanish)
+        #expect(AppLanguageChoice(appleLanguages: ["en-GB"]) == .english)
+        // A language Versely isn't translated into follows the iPhone.
+        #expect(AppLanguageChoice(appleLanguages: ["fr"]) == .system)
+        #expect(AppLanguageChoice.system.code == nil)
+        #expect(AppLanguageChoice.spanish.title == "Español")
+        #expect(AppLanguageChoice.english.title == "English")
+    }
+
     @Test func translationsSavedBeforeLanguagesAreEnglish() throws {
         let old = #"{"id":"BSB","name":"Berean Standard Bible","year":"2023","license":"Public domain","summary":""}"#
         let translation = try JSONDecoder().decode(Translation.self, from: Data(old.utf8))

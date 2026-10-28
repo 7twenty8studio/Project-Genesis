@@ -1908,7 +1908,6 @@
  "Versely can't use the microphone. Turn it on in Settings › Privacy & Security › Microphone.": "Versely no puede usar el micrófono. Actívalo en Ajustes › Privacidad y seguridad › Micrófono.",
  "Versely en español": "Versely en español",
  "Versely in Spanish": "Versely en español",
- "Versely is available in English and Spanish. Tap to choose in the Settings app; Versely restarts in the new language.": "Versely está disponible en inglés y español. Toca para elegir en la app Ajustes; Versely se reinicia en el nuevo idioma.",
  "Versely offers public-domain translations. More will come as licenses allow.": "Versely ofrece traducciones de dominio público. Habrá más a medida que las licencias lo permitan.",
  "Versely reads aloud and turns the pages as it goes, even with your phone locked.": "Versely lee en voz alta y pasa las páginas a medida que avanza, incluso con el teléfono bloqueado.",
  "Versely saves the verse images and wallpapers you make to your photo library.": "Versely guarda en tu fototeca las imágenes de versículos y los fondos de pantalla que creas.",
@@ -2200,5 +2199,12 @@
  "A new icon": "Un nuevo icono",
  "Warmer widgets": "Widgets más cálidos",
  "The verse and reading widgets now wear Versely's cream and copper, with a progress bar for your plan.": "Los widgets de versículo y de lectura ahora lucen el crema y el cobre de Versely, con una barra de progreso para tu plan.",
- "An open Bible in the shape of a V, also in Night and the seasons in Settings › App Icon.": "Una Biblia abierta con forma de V, también en Noche y en las estaciones en Ajustes › Icono de la app."
+ "An open Bible in the shape of a V, also in Night and the seasons in Settings › App Icon.": "Una Biblia abierta con forma de V, también en Noche y en las estaciones en Ajustes › Icono de la app.",
+ "Versely is available in English and Spanish.": "Versely está disponible en inglés y español.",
+ "Versely is available in English and Spanish. Widgets follow your iPhone's language.": "Versely está disponible en inglés y español. Los widgets siguen el idioma de tu iPhone.",
+ "Same as iPhone": "Igual que el iPhone",
+ "Close Versely and open it again to see it in %@.": "Cierra Versely y vuelve a abrirlo para verlo en %@.",
+ "Choose Versely's language": "Elige el idioma de Versely",
+ "Language in Settings": "El idioma en Ajustes",
+ "Switch between English and Español in Settings › Language, without leaving Versely.": "Cambia entre English y Español en Ajustes › Idioma, sin salir de Versely."
 }
