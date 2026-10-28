@@ -25,7 +25,10 @@ struct PhotoFramingTests {
         #expect(corner.minX == 0)
         #expect(corner.maxY == 3000)
         let tooFar = PhotoFraming(zoom: 99).crop(imageSize: photo, aspect: 1)
-        #expect(tooFar.width == 3000 / PhotoFraming.maxZoom)
+        // One type on each side: the #expect macro compares its two sides
+        // separately, so a CGFloat against a Double never matched.
+        let closest = CGFloat(3000 / PhotoFraming.maxZoom)
+        #expect(abs(tooFar.width - closest) < 0.001)
     }
 
     @Test func draggingRightShowsMoreOfTheLeft() {

@@ -314,9 +314,18 @@ struct ReaderView: View {
     /// hiding, so the page doesn't reflow when the controls toggle.
     private func surfaceDidResize(to size: CGSize) {
         let window = DeviceScreen.windowSize
+        let stable = stableSurfaceSize ?? .zero
+        // Opening an iPhone Duo moves the app to the larger screen. The
+        // window can take its new size first and the surface follow in two
+        // steps (the new width, then the new height), so a height change
+        // far bigger than any bar (they nudge it by a few percent) is a new
+        // shape too. Otherwise the pages stayed laid out for the half-made
+        // surface, with no room for any text.
+        let heightChanged = abs(stable.height - size.height) > max(size.height, 1) * 0.2
         let reshaped = stableSurfaceSize == nil
             || window != measuredWindowSize
-            || abs((stableSurfaceSize?.width ?? 0) - size.width) > 0.5
+            || abs(stable.width - size.width) > 0.5
+            || heightChanged
         guard reshaped else { return }
         measuredWindowSize = window
         stableSurfaceSize = size
