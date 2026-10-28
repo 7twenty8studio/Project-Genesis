@@ -12,9 +12,11 @@ enum BrandColors {
     static let ink = Color(red: 0x4A / 255, green: 0x2E / 255, blue: 0x1A / 255)
 
     /// The copper-to-walnut gradient of the brand's buttons.
-    static let buttonGradient = LinearGradient(
-        colors: [Color(red: 0xC6 / 255, green: 0x93 / 255, blue: 0x6A / 255), walnut],
-        startPoint: .top,
-        endPoint: .bottom
-    )
+    static var buttonGradient: LinearGradient {
+        LinearGradient(
+            colors: [Color(red: 0xC6 / 255, green: 0x93 / 255, blue: 0x6A / 255), walnut],
+            startPoint: .top,
+            endPoint: .bottom
+        )
+    }
 }

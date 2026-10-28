@@ -100,6 +100,7 @@ enum WelcomePage: String, CaseIterable, Identifiable {
     }
 
     /// Together only shows while groups or community are switched on.
+    @MainActor
     func isAvailable(flags: FeatureFlagService) -> Bool {
         self != .together || FeaturePreferences.isAvailable(.together, flags: flags)
     }
