@@ -58,7 +58,7 @@ enum WhatsNewCatalog {
             WhatsNewItem(
                 systemImage: "person.text.rectangle",
                 title: String(localized: "Change your display name"),
-                detail: String(localized: "Tap the name card at the top of Together to change the name people see in your groups.")
+                detail: String(localized: "Use the name button at the top of Together to change the name people see in your groups.")
             ),
             WhatsNewItem(
                 systemImage: "checkmark.shield",

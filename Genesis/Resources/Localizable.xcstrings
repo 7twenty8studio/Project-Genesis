@@ -16272,16 +16272,6 @@
         }
       }
     },
-    "Tap the name card at the top of Together to change the name people see in your groups.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Toca la tarjeta de nombre en la parte superior de Juntos para cambiar el nombre que ven en tus grupos."
-          }
-        }
-      }
-    },
     "Tap the sparkles in the reader for summaries, historical background, discussion questions and more with Premium.": {
       "localizations": {
         "es": {
@@ -18553,6 +18543,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Usa Versely en español desde Ajustes › Idioma (el engranaje en Inicio). También sigue el idioma de tu iPhone."
+          }
+        }
+      }
+    },
+    "Use the name button at the top of Together to change the name people see in your groups.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usa el botón de nombre en la parte superior de Juntos para cambiar el nombre que ven en tus grupos."
           }
         }
       }
