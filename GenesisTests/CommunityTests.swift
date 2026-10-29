@@ -85,6 +85,28 @@ struct CommunityTests {
         #expect(detail.visibleAnnouncements.isEmpty)
     }
 
+    @Test func theDisplayNameCanBeChangedLater() async throws {
+        let store = CommunityStore(backend: InMemoryCommunityBackend())
+        await store.refresh()
+        let named = await store.setDisplayName("Sam")
+        #expect(named)
+        let joinedID = await store.joinGroup(code: "grace-12345")
+        let joined = try #require(joinedID)
+        let me = try #require(store.userID)
+
+        let renamed = await store.setDisplayName("  Samuel ")
+        #expect(renamed)
+        #expect(store.profile?.displayName == "Samuel")
+        #expect(!store.needsDisplayName, "Changing it doesn't ask again")
+        let detail = GroupDetailModel(groupID: joined, store: store)
+        await detail.refresh()
+        #expect(detail.members.first { $0.userID == me }?.displayName == "Samuel", "Every group shows the new name")
+
+        let emptied = await store.setDisplayName("   ")
+        #expect(!emptied, "An empty name is refused")
+        #expect(store.profile?.displayName == "Samuel", "and the old one is kept")
+    }
+
     @Test func prayingIsCountedOnce() async throws {
         let store = CommunityStore(backend: InMemoryCommunityBackend())
         await store.refresh()

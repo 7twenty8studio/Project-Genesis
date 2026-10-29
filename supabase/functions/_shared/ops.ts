@@ -319,13 +319,15 @@ export function sortItems(items: OpsItem[]): OpsItem[] {
 // MARK: Alerts
 
 /**
- * What to email straight away: urgent, still open, never emailed, and recent
+ * What to email straight away: urgent items and every content report (App
+ * Store 1.2 asks for reports to be reviewed promptly, and group reports come
+ * from people the owner may know), still open, never emailed, and recent
  * (so turning alerts on doesn't send a flood of old things).
  */
 export function itemsToAlert(items: OpsItem[], now: Date, maxAgeHours = 72): OpsItem[] {
   const cutoff = now.getTime() - maxAgeHours * 3_600_000;
   return items.filter((item) =>
-    item.priority === "urgent" &&
+    (item.priority === "urgent" || item.source === "report") &&
     item.status !== "resolved" &&
     !item.alertedAt &&
     Date.parse(item.lastSeenAt ?? item.createdAt) >= cutoff
@@ -391,6 +393,17 @@ ${button}
 
 export function alertEmail(items: OpsItem[], dashboardURL?: string): { subject: string; html: string } {
   const first = items[0];
+  // Content reports that aren't urgent are emailed at once too, but aren't
+  // called urgent.
+  if (!items.some((item) => item.priority === "urgent")) {
+    const subject = items.length === 1
+      ? `[Versely report] ${clip(first.title, 90)}`
+      : `[Versely report] ${items.length} new reports to review`;
+    const intro = items.length === 1
+      ? "Someone just reported something in Versely."
+      : `${items.length} things were just reported in Versely.`;
+    return { subject, html: page("Reported in Versely", intro, sortItems(items).map(itemRow).join(""), dashboardURL) };
+  }
   const subject = items.length === 1
     ? `[Versely urgent] ${clip(first.title, 90)}`
     : `[Versely urgent] ${items.length} urgent items need attention`;

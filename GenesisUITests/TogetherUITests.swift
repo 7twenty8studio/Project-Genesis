@@ -88,6 +88,25 @@ final class TogetherUITests: GenesisUITestCase {
     }
 
     @MainActor
+    func testDisplayNameCanBeChangedLater() {
+        let app = Genesis.launch()
+        openTogether(app, name: "Sam")
+        Genesis.tapToolbarButton("together.editName", in: app)
+        let field = app.textFields["together.displayName"]
+        XCTAssertTrue(field.waitForExistence(timeout: Genesis.timeout), "The name can be changed from Together")
+        XCTAssertEqual(field.value as? String, "Sam", "It starts from the current name")
+        field.tap()
+        field.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: 10))
+        field.typeText("Samuel")
+        app.buttons["together.saveName"].tap()
+        XCTAssertTrue(Genesis.wait { !field.exists }, "Saving closes the sheet")
+
+        Genesis.tapToolbarButton("together.editName", in: app)
+        XCTAssertTrue(field.waitForExistence(timeout: Genesis.timeout))
+        XCTAssertEqual(field.value as? String, "Samuel", "The new name is kept")
+    }
+
+    @MainActor
     func testJoinWithACodeAndDiscuss() {
         let app = Genesis.launch()
         openTogether(app, name: "Jo")

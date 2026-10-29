@@ -151,6 +151,21 @@ test("only recent, open, urgent items not yet emailed are alerted", () => {
   assert.deepEqual(itemsToAlert([urgent, old, emailed, resolved, high], now).map((i) => i.id), ["u"]);
 });
 
+test("every new content report is emailed straight away, not only urgent ones", () => {
+  const [report] = reportItems([
+    { id: "r1", content_type: "group_post", content_id: "p1", reason: "Unkind", created_at: "2026-10-14T19:50:00Z", resolved_at: null, group_id: "g1" },
+  ]);
+  assert.equal(report.priority, "high");
+  const [reviewed] = reportItems([
+    { id: "r2", content_type: "group_prayer", content_id: "p2", reason: null, created_at: "2026-10-14T19:50:00Z", resolved_at: "2026-10-14T19:55:00Z", group_id: "g1" },
+  ]);
+  const emailed: OpsItem = { ...report, id: "e", alertedAt: "2026-10-14T19:55:00Z" };
+  assert.deepEqual(itemsToAlert([report, reviewed, emailed], now).map((i) => i.id), [report.id]);
+  const { subject, html } = alertEmail([report]);
+  assert.ok(subject.startsWith("[Versely report]"));
+  assert.ok(html.includes("Someone just reported something"));
+});
+
 test("emails escape what people wrote and leave out their email addresses", () => {
   const item = feedbackItem(feedback({ category: "scripture", message: "<script>alert(1)</script> in John 3:16" }));
   const { subject, html } = alertEmail([item], "https://7twenty8studio.com/admin");

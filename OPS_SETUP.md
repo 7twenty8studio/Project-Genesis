@@ -62,6 +62,7 @@ When emails go out:
   - three or more reports on one post;
   - a Sentry crash, or an error hitting 5+ people or 50+ times;
   - any TestFlight crash.
+- **Every content report (community, group posts, prayers, announcements) is emailed within five minutes too**, as "[Versely report]", so reports are reviewed promptly (App Store 1.2). Three or more on one item make it urgent.
 - **Everything else goes in the daily digest at 13:00 UTC** (8:00 am Chicago in summer, 7:00 am in winter).
 - **Resolved items** aren't emailed again. If one happens again, it reopens and alerts again.
 

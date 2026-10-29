@@ -36,6 +36,14 @@ struct NotificationSettingsView: View {
                             Button("Open Settings") { openSystemSettings() }
                                 .accessibilityIdentifier("notifications.openSettings")
                         }
+                    } else if systemAllows == nil, notifications.allowsNotifications {
+                        // Never asked yet (so Versely isn't in the Settings
+                        // app's list): nothing can arrive until it is.
+                        VStack(alignment: .leading, spacing: 6) {
+                            Text("Versely hasn't asked to send you notifications yet.")
+                            Button("Turn On Notifications") { Task { await askIfNeeded() } }
+                                .accessibilityIdentifier("notifications.ask")
+                        }
                     } else {
                         Text("Turn this off to silence every notification from Versely. Your choices below are kept for when you turn it back on.")
                     }

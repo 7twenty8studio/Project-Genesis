@@ -75,6 +75,8 @@ final class GroupDetailModel {
         defer { isLoading = false }
         let backend = self.backend
         let groupID = self.groupID
+        // Your role first, so a new moderator sees their tools straight away.
+        await store.refreshGroups()
         do {
             async let members = backend.members(of: groupID)
             async let prayers = backend.prayers(in: groupID)
