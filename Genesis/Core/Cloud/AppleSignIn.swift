@@ -24,4 +24,15 @@ extension ASAuthorization {
               let data = credential.identityToken else { return nil }
         return String(data: data, encoding: .utf8)
     }
+
+    /// The name the person chose to share ("Jeovanni Santos"). Apple gives it
+    /// only the first time they sign in to Versely; nil after that.
+    var appleFullName: String? {
+        guard let name = (credential as? ASAuthorizationAppleIDCredential)?.fullName else { return nil }
+        let full = [name.givenName, name.familyName]
+            .compactMap { $0?.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { !$0.isEmpty }
+            .joined(separator: " ")
+        return full.isEmpty ? nil : full
+    }
 }

@@ -17,6 +17,10 @@ struct AuthUser: Codable, Sendable, Equatable {
     /// How the account signs in ("apple", "google", "email"), from the user's
     /// app_metadata and identities. Nil for sessions saved before it was kept.
     var providers: [String]? = nil
+    /// The name the sign-in gave (Google's name, or Apple's when shared),
+    /// from user_metadata. Nil when there's none, and for sessions saved
+    /// before it was kept.
+    var name: String? = nil
 
     /// True when Sign in with Apple is one of the account's sign-ins, so
     /// deleting it also revokes Versely's Apple tokens.
@@ -88,10 +92,18 @@ final class SupabaseClient: Sendable {
             let provider: String?
         }
 
+        /// Google fills full_name and name; Apple only full_name, and only
+        /// when the person shares it.
+        struct UserMetadata: Decodable {
+            let fullName: String?
+            let name: String?
+        }
+
         let id: UUID
         let email: String?
         let appMetadata: AppMetadata?
         let identities: [Identity]?
+        let userMetadata: UserMetadata?
 
         var authUser: AuthUser {
             var names = appMetadata?.providers ?? []
@@ -99,7 +111,10 @@ final class SupabaseClient: Sendable {
             names += (identities ?? []).compactMap(\.provider)
             var seen = Set<String>()
             let providers = names.filter { seen.insert($0).inserted }
-            return AuthUser(id: id, email: email, providers: providers)
+            let name = [userMetadata?.fullName, userMetadata?.name]
+                .compactMap { $0?.trimmingCharacters(in: .whitespacesAndNewlines) }
+                .first { !$0.isEmpty }
+            return AuthUser(id: id, email: email, providers: providers, name: name)
         }
     }
 
@@ -148,6 +163,14 @@ final class SupabaseClient: Sendable {
     /// included, which can change when an identity is linked).
     func currentUser(accessToken: String) async throws -> AuthUser {
         let request = makeRequest(path: "auth/v1/user", query: [], method: "GET", accessToken: accessToken)
+        let data = try await perform(request)
+        return try SupabaseCoding.decoder().decode(UserResponse.self, from: data).authUser
+    }
+
+    /// Keeps the name Apple shared at sign-in in the account's user_metadata.
+    func setFullName(_ name: String, accessToken: String) async throws -> AuthUser {
+        var request = makeRequest(path: "auth/v1/user", query: [], method: "PUT", accessToken: accessToken)
+        request.httpBody = try JSONEncoder().encode(["data": ["full_name": name]])
         let data = try await perform(request)
         return try SupabaseCoding.decoder().decode(UserResponse.self, from: data).authUser
     }

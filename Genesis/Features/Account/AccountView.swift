@@ -83,7 +83,7 @@ private struct SignInView: View {
                         SignInWithAppleButton(.signIn) { request in
                             let nonce = AppleSignInNonce.random()
                             appleNonce = nonce
-                            request.requestedScopes = [.email]
+                            request.requestedScopes = [.fullName, .email]
                             request.nonce = AppleSignInNonce.sha256(nonce)
                         } onCompletion: { result in
                             handleApple(result)
@@ -189,7 +189,8 @@ private struct SignInView: View {
                 return
             }
             let nonce = appleNonce
-            Task { await auth.signInWithApple(idToken: token, nonce: nonce) }
+            let fullName = authorization.appleFullName
+            Task { await auth.signInWithApple(idToken: token, nonce: nonce, fullName: fullName) }
         case let .failure(error):
             if (error as? ASAuthorizationError)?.code == .canceled { return }
             auth.errorMessage = String(localized: "Sign in with Apple isn't available yet: \(error.localizedDescription)")
