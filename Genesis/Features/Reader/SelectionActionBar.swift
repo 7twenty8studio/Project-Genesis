@@ -55,6 +55,8 @@ struct SelectionActionBar: View {
         .padding(.top, 8)
         .padding(.bottom, 10)
         .frame(maxWidth: expanded ? 560 : 900)
+        // The tiles slide inside the bar, never past its rounded edges.
+        .clipShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
         .glassEffect(.regular, in: RoundedRectangle(cornerRadius: 28, style: .continuous))
         .padding(.horizontal, 12)
         .offset(y: dragOffset)
