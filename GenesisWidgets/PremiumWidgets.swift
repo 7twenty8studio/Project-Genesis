@@ -118,52 +118,93 @@ private struct PlanProgressBar: View {
 
 // MARK: - Listening Live Activity (Premium)
 
+/// The Bible read aloud and the ambient sounds, one row each; when both
+/// play, both can be paused from here.
 struct ListeningLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: ListeningActivityAttributes.self) { context in
-            ListeningLockScreenView(context: context)
+            ListeningLockScreenView(state: context.state)
                 .activityBackgroundTint(WidgetPalette.background)
                 .activitySystemActionForegroundColor(WidgetPalette.accent)
         } dynamicIsland: { context in
-            DynamicIsland {
+            let listening = context.state.listening
+            let ambient = context.state.ambient
+            return DynamicIsland {
                 DynamicIslandExpandedRegion(.leading) {
-                    Image(systemName: "headphones")
+                    Image(systemName: listening == nil ? (ambient?.systemImage ?? "speaker.wave.2") : "headphones")
                         .foregroundStyle(WidgetPalette.accent)
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    PlayPauseButton(isPlaying: context.state.isPlaying)
+                    if let listening {
+                        PlayPauseButton(isPlaying: listening.isPlaying)
+                    } else if let ambient {
+                        AmbientPlayPauseButton(isPlaying: ambient.isPlaying)
+                    }
                 }
                 DynamicIslandExpandedRegion(.center) {
-                    Text(context.state.reference)
+                    Text(listening?.reference ?? ambient?.title ?? "")
                         .font(.headline)
                         .lineLimit(1)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    if let text = context.state.verseText {
-                        Text(text)
-                            .font(.system(.footnote, design: .serif))
-                            .lineLimit(2)
+                    VStack(alignment: .leading, spacing: 6) {
+                        if let text = listening?.verseText {
+                            Text(text)
+                                .font(.system(.footnote, design: .serif))
+                                .lineLimit(2)
+                        }
+                        if listening != nil, let ambient {
+                            AmbientRow(ambient: ambient, compact: true)
+                        } else if let timerEndsAt = ambient?.timerEndsAt {
+                            AmbientTimer(endsAt: timerEndsAt)
+                        }
                     }
                 }
             } compactLeading: {
-                Image(systemName: "headphones")
+                Image(systemName: listening == nil ? (ambient?.systemImage ?? "speaker.wave.2") : "headphones")
                     .foregroundStyle(WidgetPalette.accent)
             } compactTrailing: {
-                Text(context.state.reference)
+                Text(listening?.reference ?? ambient?.title ?? "")
                     .font(.caption2.weight(.semibold))
                     .lineLimit(1)
                     .frame(maxWidth: 64)
             } minimal: {
-                Image(systemName: context.state.isPlaying ? "headphones" : "pause.fill")
+                Image(systemName: Self.minimalSymbol(listening: listening, ambient: ambient))
                     .foregroundStyle(WidgetPalette.accent)
             }
             .widgetURL(GenesisLink.read(0))
         }
     }
+
+    private static func minimalSymbol(listening: ListeningActivityAttributes.Listening?, ambient: ListeningActivityAttributes.Ambient?) -> String {
+        if let listening { return listening.isPlaying ? "headphones" : "pause.fill" }
+        guard let ambient else { return "headphones" }
+        return ambient.isPlaying ? ambient.systemImage : "pause.fill"
+    }
 }
 
 private struct ListeningLockScreenView: View {
-    let context: ActivityViewContext<ListeningActivityAttributes>
+    let state: ListeningActivityAttributes.ContentState
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            if let listening = state.listening {
+                ListeningSection(listening: listening)
+            }
+            if state.listening != nil, state.ambient != nil {
+                Divider()
+                    .overlay(WidgetPalette.secondary.opacity(0.3))
+            }
+            if let ambient = state.ambient {
+                AmbientRow(ambient: ambient, compact: false)
+            }
+        }
+        .padding(16)
+    }
+}
+
+private struct ListeningSection: View {
+    let listening: ListeningActivityAttributes.Listening
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -171,15 +212,15 @@ private struct ListeningLockScreenView: View {
                 Image(systemName: "headphones")
                     .foregroundStyle(WidgetPalette.accent)
                 VStack(alignment: .leading, spacing: 1) {
-                    Text(context.state.reference)
+                    Text(listening.reference)
                         .font(.system(.headline, design: .serif))
                         .foregroundStyle(WidgetPalette.text)
-                    Text(context.attributes.translation)
+                    Text(listening.translation)
                         .font(.caption2.weight(.semibold))
                         .foregroundStyle(WidgetPalette.secondary)
                 }
                 Spacer()
-                PlayPauseButton(isPlaying: context.state.isPlaying)
+                PlayPauseButton(isPlaying: listening.isPlaying)
                 Button(intent: NextChapterIntent()) {
                     Image(systemName: "forward.end.fill")
                         .font(.body)
@@ -189,18 +230,63 @@ private struct ListeningLockScreenView: View {
                 .foregroundStyle(WidgetPalette.text)
                 .accessibilityLabel(Text("Next chapter"))
             }
-            if let text = context.state.verseText {
+            if let text = listening.verseText {
                 Text(text)
                     .font(.system(.subheadline, design: .serif))
                     .foregroundStyle(WidgetPalette.text)
                     .lineLimit(3)
             }
-            if let progress = context.state.progress {
+            if let progress = listening.progress {
                 ProgressView(value: min(max(progress, 0), 1))
                     .tint(WidgetPalette.accent)
             }
         }
-        .padding(16)
+    }
+}
+
+/// The ambient mix: its name, the fade-out timer and play/pause.
+private struct AmbientRow: View {
+    let ambient: ListeningActivityAttributes.Ambient
+    /// Smaller, under the listening row in the Dynamic Island.
+    let compact: Bool
+
+    var body: some View {
+        HStack(spacing: 10) {
+            Image(systemName: ambient.systemImage)
+                .foregroundStyle(WidgetPalette.accent)
+                .frame(width: 20)
+            VStack(alignment: .leading, spacing: 1) {
+                Text(ambient.title)
+                    .font(compact ? .caption.weight(.semibold) : .system(.subheadline, design: .serif, weight: .semibold))
+                    .foregroundStyle(compact ? Color.primary : WidgetPalette.text)
+                    .lineLimit(1)
+                if let timerEndsAt = ambient.timerEndsAt {
+                    AmbientTimer(endsAt: timerEndsAt)
+                } else if !compact {
+                    Text("Ambient Sounds")
+                        .font(.caption2.weight(.semibold))
+                        .foregroundStyle(WidgetPalette.secondary)
+                }
+            }
+            Spacer()
+            AmbientPlayPauseButton(isPlaying: ambient.isPlaying)
+        }
+    }
+}
+
+/// "Fades out in 12:34", counting down by itself.
+private struct AmbientTimer: View {
+    let endsAt: Date
+
+    var body: some View {
+        HStack(spacing: 4) {
+            Image(systemName: "moon.zzz")
+            Text(timerInterval: Date.now...max(endsAt, .now), countsDown: true)
+                .monospacedDigit()
+        }
+        .font(.caption2.weight(.semibold))
+        .foregroundStyle(WidgetPalette.secondary)
+        .accessibilityElement(children: .combine)
     }
 }
 
@@ -216,6 +302,21 @@ private struct PlayPauseButton: View {
         .buttonStyle(.plain)
         .foregroundStyle(WidgetPalette.accent)
         .accessibilityLabel(isPlaying ? Text("Pause") : Text("Play"))
+    }
+}
+
+private struct AmbientPlayPauseButton: View {
+    let isPlaying: Bool
+
+    var body: some View {
+        Button(intent: ToggleAmbientSoundsIntent()) {
+            Image(systemName: isPlaying ? "pause.fill" : "play.fill")
+                .font(.body)
+                .frame(width: 36, height: 36)
+        }
+        .buttonStyle(.plain)
+        .foregroundStyle(WidgetPalette.accent)
+        .accessibilityLabel(isPlaying ? Text("Pause ambient sounds") : Text("Play ambient sounds"))
     }
 }
 

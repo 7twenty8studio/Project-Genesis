@@ -79,26 +79,45 @@ struct TogglePlanDayIntent: AppIntent {
 
 // MARK: - Listening on the Lock Screen
 
-/// The Live Activity while the Bible is read aloud: the chapter, the verse
-/// being read (verbatim from the database) and play/pause.
+/// The Live Activity while the Bible is read aloud or ambient sounds play:
+/// one activity with a row for each, so both can be paused from the Lock
+/// Screen when they play together.
 struct ListeningActivityAttributes: ActivityAttributes {
     struct ContentState: Codable, Hashable, Sendable {
+        var listening: Listening?
+        var ambient: Ambient?
+
+        var isEmpty: Bool { listening == nil && ambient == nil }
+    }
+
+    /// The chapter, the verse being read (verbatim from the database) and
+    /// play/pause.
+    struct Listening: Codable, Hashable, Sendable {
         var reference: String
+        var translation: String
         var verseText: String?
         var isPlaying: Bool
         /// 0...1 through the chapter, when known.
         var progress: Double?
     }
 
-    var translation: String
+    /// The ambient mix ("Fireside", or "Rain, Wind"), play/pause and the
+    /// fade-out timer.
+    struct Ambient: Codable, Hashable, Sendable {
+        var title: String
+        var systemImage: String
+        var isPlaying: Bool
+        var timerEndsAt: Date?
+    }
 }
 
-/// Hands Live Activity buttons to the app's audio player. The intent runs in
+/// Hands Live Activity buttons to the app's audio players. The intent runs in
 /// the app's process, where the app sets these.
 @MainActor
 enum ListeningControl {
     static var toggle: (() -> Void)?
     static var next: (() -> Void)?
+    static var toggleAmbient: (() -> Void)?
 }
 
 struct ToggleListeningIntent: LiveActivityIntent {
@@ -123,6 +142,19 @@ struct NextChapterIntent: LiveActivityIntent {
     @MainActor
     func perform() async throws -> some IntentResult {
         ListeningControl.next?()
+        return .result()
+    }
+}
+
+struct ToggleAmbientSoundsIntent: LiveActivityIntent {
+    static let title: LocalizedStringResource = "Play or Pause Ambient Sounds"
+    static let isDiscoverable = false
+
+    init() {}
+
+    @MainActor
+    func perform() async throws -> some IntentResult {
+        ListeningControl.toggleAmbient?()
         return .result()
     }
 }

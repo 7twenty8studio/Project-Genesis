@@ -362,9 +362,15 @@ shares; README.md has the architecture.
   Every widget itself is free, the Memorize widget aside (`.memorise`).
   The Today's Reading widget ticks via `TogglePlanDayIntent`,
   which leaves `PendingPlanDays` in the App Group for the app to apply;
-  the listening Live Activity (`ListeningActivityController`, driven by
-  `AudioPlayerService`; buttons are `LiveActivityIntent`s that call
+  the listening Live Activity (`ListeningActivityController`: one activity
+  with a row for the Bible read aloud, set by `AudioPlayerService`, and one
+  for ambient sounds, set by `AmbientSoundService` (also needs
+  `.ambientSounds`), so both can be paused when both play; it ends when
+  neither is left; buttons are `LiveActivityIntent`s that call
   `ListeningControl`). Shared types live in Genesis/Shared/WidgetIntents.swift.
+- Home's greeting ("Good morning, Jeovanni", `HomeGreeting`) names the
+  person only while signed in: the morning welcome's name, else the first
+  word of their group display name; signed out it has no name.
 - Apple Watch (verse of the day, Premium): GenesisWatch + GenesisWatchWidgets
   targets, fed by `WatchConnector` (WatchConnectivity application context,
   `WatchPayload`). Embedded in the iPhone app (a dependency of Genesis in

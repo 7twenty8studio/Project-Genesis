@@ -156,13 +156,20 @@ struct GenesisApp: App {
             reader?.audioMoved(chapter: chapter, verse: verse, follow: audioSettings?.followsAlong ?? true)
         }
         // The Lock Screen Live Activity is a Premium widget; never in UI tests.
+        // Listening and ambient sounds share it, each with its own row.
         let testingEnabled = testing.isEnabled
-        audio.liveActivity.isAllowed = { [weak entitlements, weak features] in
+        audio.liveActivity.allowsListening = { [weak entitlements, weak features] in
             !testingEnabled && entitlements?.allows(.widgets) == true && features?.isOn(.listen) == true
+        }
+        audio.liveActivity.allowsAmbient = { [weak entitlements, weak features] in
+            !testingEnabled && entitlements?.allows(.widgets) == true && entitlements?.allows(.ambientSounds) == true
+                && features?.isOn(.ambientSounds) == true
         }
         _audio = State(initialValue: audio)
         // Ambient sounds: silent in UI tests.
-        _ambient = State(initialValue: AmbientSoundService(output: testing.isEnabled ? SilentAmbientOutput() : EngineAmbientOutput()))
+        let ambient = AmbientSoundService(output: testing.isEnabled ? SilentAmbientOutput() : EngineAmbientOutput())
+        ambient.liveActivity = audio.liveActivity
+        _ambient = State(initialValue: ambient)
         // Hebrew and Greek words said aloud: silent in UI tests.
         _pronouncer = State(initialValue: WordPronouncer(isSilent: testing.isEnabled))
 

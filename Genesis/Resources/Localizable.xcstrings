@@ -1973,6 +1973,16 @@
         }
       }
     },
+    "Ambient sounds on the Lock Screen": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonidos ambientales en la pantalla de bloqueo"
+          }
+        }
+      }
+    },
     "Ambient sounds, %@": {
       "localizations": {
         "es": {
@@ -6254,6 +6264,16 @@
         }
       }
     },
+    "Good afternoon, %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buenas tardes, %@"
+          }
+        }
+      }
+    },
     "Good afternoon, %@.": {
       "localizations": {
         "es": {
@@ -6284,6 +6304,16 @@
         }
       }
     },
+    "Good evening, %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buenas noches, %@"
+          }
+        }
+      }
+    },
     "Good evening, %@.": {
       "localizations": {
         "es": {
@@ -6310,6 +6340,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Buenos días"
+          }
+        }
+      }
+    },
+    "Good morning, %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buenos días, %@"
           }
         }
       }
@@ -8327,6 +8367,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Audio y sonidos"
+          }
+        }
+      }
+    },
+    "Listening and sounds together": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La escucha y los sonidos juntos"
           }
         }
       }
@@ -11229,6 +11279,16 @@
         }
       }
     },
+    "Pause the sounds from the Lock Screen": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausa los sonidos desde la pantalla de bloqueo"
+          }
+        }
+      }
+    },
     "Paused": {
       "comment": "Ambient sounds status",
       "localizations": {
@@ -11499,6 +11559,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Jugar"
+          }
+        }
+      }
+    },
+    "Play or Pause Ambient Sounds": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reproducir o pausar los sonidos ambientales"
           }
         }
       }
@@ -19295,6 +19365,16 @@
         }
       }
     },
+    "When the Bible is read aloud with sounds behind it, each has its own play and pause there.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuando escuchas la Biblia con sonidos de fondo, cada uno tiene allí su propio botón de reproducir y pausar."
+          }
+        }
+      }
+    },
     "When this is on, people with the invite code ask to join and a moderator lets them in.": {
       "localizations": {
         "es": {
@@ -19737,6 +19817,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Con Premium, el widget Lectura de hoy muestra la lectura de tu plan y te permite marcarla como leída sin abrir la app."
+          }
+        }
+      }
+    },
+    "With Premium, your ambient mix shows on the Lock Screen and in the Dynamic Island, with play, pause and the timer.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con Premium, tu mezcla de sonidos ambientales aparece en la pantalla de bloqueo y en la Dynamic Island, con reproducir, pausar y el temporizador."
           }
         }
       }

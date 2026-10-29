@@ -45,7 +45,8 @@ final class AudioPlayerService {
     @ObservationIgnored private let narrator: VerseNarrator
     @ObservationIgnored private let recordingPlayer = RecordingPlayer()
     @ObservationIgnored private let nowPlaying = NowPlayingController()
-    /// The Lock Screen Live Activity (Premium; the app sets `isAllowed`).
+    /// The Lock Screen Live Activity (Premium; the app sets what it may show).
+    /// Ambient sounds share it, so both can be paused together.
     @ObservationIgnored let liveActivity = ListeningActivityController()
     /// Verses per chapter, by translation (numbering differs between Bibles).
     @ObservationIgnored private var verseCounts: [String: Int] = [:]
@@ -198,7 +199,7 @@ final class AudioPlayerService {
         errorMessage = nil
         nowPlaying.clear()
         nowPlaying.deactivateSession()
-        liveActivity.end()
+        liveActivity.endListening()
         onPosition?(nil, nil)
     }
 
@@ -387,9 +388,8 @@ final class AudioPlayerService {
         } else if isRecording, duration > 0 {
             progress = elapsed / duration
         }
-        liveActivity.show(
-            .init(reference: title, verseText: text, isPlaying: state == .playing || state == .loading, progress: progress),
-            translation: translation.abbreviation
+        liveActivity.showListening(
+            .init(reference: title, translation: translation.abbreviation, verseText: text, isPlaying: state == .playing || state == .loading, progress: progress)
         )
     }
 
