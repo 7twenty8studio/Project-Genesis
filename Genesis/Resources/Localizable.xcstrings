@@ -10668,6 +10668,26 @@
         }
       }
     },
+    "On a wide screen held sideways, two pages side by side like an open book. One page while the side panel is open or the screen is upright.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En una pantalla ancha en horizontal, dos páginas una junto a la otra, como un libro abierto. Una sola página mientras el panel lateral está abierto o la pantalla está en vertical."
+          }
+        }
+      }
+    },
+    "On iPad, or an iPhone Duo opened and held sideways, turn on Two-page spread in Reading settings. Pages curl over the spine like a printed Bible, or slide across together.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En el iPad, o en un iPhone Duo abierto y en horizontal, activa Dos páginas a la vez en los ajustes de lectura. Las páginas se doblan sobre el lomo como en una Biblia impresa, o se deslizan juntas."
+          }
+        }
+      }
+    },
     "On the day a prayer was answered, a year later, a moment to remember and give thanks.": {
       "localizations": {
         "es": {
@@ -12747,6 +12767,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Leer en paralelo"
+          }
+        }
+      }
+    },
+    "Read like an open book": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee como en un libro abierto"
           }
         }
       }
@@ -18362,6 +18392,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dos nuevas letras para leer"
+          }
+        }
+      }
+    },
+    "Two pages side by side": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dos páginas, una junto a la otra"
+          }
+        }
+      }
+    },
+    "Two-page spread": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dos páginas a la vez"
           }
         }
       }

@@ -783,6 +783,15 @@ shares; README.md has the architecture.
   reference and × sit at the top (`SelectionReferenceBar`). Scroll reading
   keeps the selected verses above the bar (`bottomObstruction`). UI tests use
   `Genesis.tapPageTop` for the controls and `Genesis.tapVerse` to select.
+- Two-page spread (free, `ReaderPreferences.twoPageSpread`, off by default):
+  paged reading shows two pages like an open book when `PageSpread.shows`
+  (chosen, reading area ≥ 800 pt and clearly wider than tall, side panel
+  closed); otherwise one page. Page Curl uses the middle spine (a pair of
+  pages, double-sided); Slide (and Reduce Motion) slides a
+  `ReaderSpreadViewController` holding both. Chapters start on a left page
+  (a blank right page after an odd count). The spread is part of
+  `PageControllerKey`, so switching always builds a fresh controller; never
+  change a page controller's spine in place.
 - Don't put `.accessibilityIdentifier` on a container whose children have
   their own identifiers (SwiftUI passes it down and replaces theirs).
 

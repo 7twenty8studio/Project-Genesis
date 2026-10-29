@@ -273,10 +273,18 @@ struct ReaderView: View {
             )
         } else if preferences.readingMode == .page {
             let turn: PageTurnStyle = reduceMotion ? .slide : preferences.pageTurn
+            // Two pages like an open book, only with room for both and the
+            // side panel closed. Judged on the settled size, like the key below.
+            let spread = PageSpread.shows(
+                enabled: preferences.twoPageSpread,
+                size: settledSurfaceSize ?? layout.size,
+                sidePanelShown: isWide && showsCompanion
+            )
             PagedReaderView(
                 viewModel: reader,
                 layout: layout,
                 pageTurn: turn,
+                spread: spread,
                 leftHanded: preferences.leftHanded,
                 navigationToken: reader.navigationToken,
                 decorationsVersion: reader.decorationsVersion,
@@ -295,7 +303,8 @@ struct ReaderView: View {
             // opening or folding, the side panel) builds it afresh too: a
             // page curl controller can otherwise keep a page laid out for
             // the old shape, or show nothing at all after the Duo opens.
-            .id(PageControllerKey(turn: turn, width: Int((settledSurfaceSize?.width ?? 0).rounded()), height: Int((settledSurfaceSize?.height ?? 0).rounded())))
+            // One page or two is set when it's created too (the spine).
+            .id(PageControllerKey(turn: turn, spread: spread, width: Int((settledSurfaceSize?.width ?? 0).rounded()), height: Int((settledSurfaceSize?.height ?? 0).rounded())))
         } else {
             ScrollReaderView(
                 viewModel: reader,
@@ -671,6 +680,7 @@ enum ReaderSheet: Identifiable {
 /// the orientation changes.
 private struct PageControllerKey: Hashable {
     let turn: PageTurnStyle
+    let spread: Bool
     let width: Int
     let height: Int
 }

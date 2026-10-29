@@ -87,6 +87,9 @@ struct ReaderPreferences: Codable, Equatable, Sendable {
     /// True once the person picks a page turn, so later default changes
     /// never override their choice.
     var pageTurnChosen = false
+    /// Two pages side by side, like an open book, on a wide screen held
+    /// sideways with the side panel closed (`PageSpread`). Off by default.
+    var twoPageSpread = false
     var showsVerseNumbers = true
     var layout: TextLayout = .paragraphs
     var leftHanded = false
@@ -131,6 +134,7 @@ struct ReaderPreferences: Codable, Equatable, Sendable {
         pageTurnChosen = (try? c.decode(Bool.self, forKey: .pageTurnChosen)) ?? false
         // Early builds saved "slide" as an untouched default; only keep an explicit choice.
         pageTurn = pageTurnChosen ? ((try? c.decode(PageTurnStyle.self, forKey: .pageTurn)) ?? d.pageTurn) : d.pageTurn
+        twoPageSpread = (try? c.decode(Bool.self, forKey: .twoPageSpread)) ?? d.twoPageSpread
         showsVerseNumbers = (try? c.decode(Bool.self, forKey: .showsVerseNumbers)) ?? d.showsVerseNumbers
         layout = (try? c.decode(TextLayout.self, forKey: .layout)) ?? d.layout
         leftHanded = (try? c.decode(Bool.self, forKey: .leftHanded)) ?? d.leftHanded

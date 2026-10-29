@@ -13,6 +13,9 @@ struct PagedReaderView: UIViewControllerRepresentable {
     let viewModel: ReaderViewModel
     let layout: ReaderLayout
     let pageTurn: PageTurnStyle
+    /// Two pages side by side (`PageSpread`). Fixed for a controller's
+    /// life: ReaderView builds a new one when it changes.
+    var spread = false
     let leftHanded: Bool
     // Passed explicitly so SwiftUI calls `updateUIViewController` when they change.
     let navigationToken: Int
@@ -34,7 +37,8 @@ struct PagedReaderView: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> ReaderPagesController {
         var options: [UIPageViewController.OptionsKey: Any] = [:]
         if pageTurn == .curl {
-            options[.spineLocation] = UIPageViewController.SpineLocation.min.rawValue
+            // A spread curls a leaf over the spine in the middle, as a book does.
+            options[.spineLocation] = (spread ? UIPageViewController.SpineLocation.mid : .min).rawValue
         } else {
             options[.interPageSpacing] = 0
         }
@@ -43,7 +47,10 @@ struct PagedReaderView: UIViewControllerRepresentable {
             navigationOrientation: .horizontal,
             options: options
         )
-        controller.isDoubleSided = false
+        // The middle spine shows two pages at once and needs both sides.
+        controller.isDoubleSided = spread && pageTurn == .curl
+        context.coordinator.spread = spread
+        context.coordinator.curlsSpread = spread && pageTurn == .curl
         controller.onSizeTransition = { [weak coordinator = context.coordinator] resizing in
             coordinator?.sizeTransition(inProgress: resizing)
         }
@@ -80,9 +87,13 @@ struct PagedReaderView: UIViewControllerRepresentable {
             translationID: translationID
         )
         if controller.viewControllers?.isEmpty ?? true {
-            let blank = UIViewController()
-            blank.view.backgroundColor = PaperTexture.pageColor(for: layout.style.theme)
-            controller.setViewControllers([blank], direction: .forward, animated: false)
+            // A curling spread needs a stand-in for each side.
+            let blanks = (0..<(context.coordinator.curlsSpread ? 2 : 1)).map { _ in
+                let blank = UIViewController()
+                blank.view.backgroundColor = PaperTexture.pageColor(for: layout.style.theme)
+                return blank
+            }
+            controller.setViewControllers(blanks, direction: .forward, animated: false)
         }
         context.coordinator.settleAfterCreation()
         return controller
@@ -135,14 +146,33 @@ struct PagedReaderView: UIViewControllerRepresentable {
         var pageTurnVolume = 0.5
         var pageTurnHapticStrength = 0.9
         let feedback = PageTurnFeedback.shared
+        /// Two pages at once: a pair of pages under a curl, or one
+        /// `ReaderSpreadViewController` that slides.
+        var spread = false
+        var curlsSpread = false
         private var pageChromeHidden = false
 
         func setPageChromeHidden(_ hidden: Bool) {
             guard hidden != pageChromeHidden else { return }
             pageChromeHidden = hidden
-            for case let page as ReaderPageViewController in pageController?.viewControllers ?? [] {
-                page.setChromeHidden(hidden, animated: true)
+            for controller in pageController?.viewControllers ?? [] {
+                for page in Self.pages(in: controller) {
+                    page.setChromeHidden(hidden, animated: true)
+                }
             }
+        }
+
+        /// The reader pages a page controller's child holds: itself, or
+        /// both halves of a sliding spread.
+        static func pages(in controller: UIViewController?) -> [ReaderPageViewController] {
+            if let page = controller as? ReaderPageViewController { return [page] }
+            if let spread = controller as? ReaderSpreadViewController { return [spread.left, spread.right] }
+            return []
+        }
+
+        /// Where a page controller's child sits (a spread: its left page).
+        static func location(of controller: UIViewController?) -> PageLocation? {
+            pages(in: controller).first?.location
         }
 
         private var layout: ReaderLayout?
@@ -222,8 +252,8 @@ struct PagedReaderView: UIViewControllerRepresentable {
         func pagesDidLayout() {
             guard layout != nil, !needsRefresh, !isTurning,
                   let controller = pageController, controller.view.window != nil else { return }
-            let page = controller.viewControllers?.first as? ReaderPageViewController
-            if let page, page.isViewLoaded, page.view.window != nil, !page.view.isHidden,
+            let page = controller.viewControllers?.first
+            if let page, Self.location(of: page) != nil, page.isViewLoaded, page.view.window != nil, !page.view.isHidden,
                page.view.bounds.width > 0, page.view.bounds.height > 0 {
                 return
             }
@@ -331,11 +361,11 @@ struct PagedReaderView: UIViewControllerRepresentable {
                 guard let chapter = paginated(location.chapter) else { return }
                 var index = min(location.index, chapter.pages.count - 1)
                 // Listening with follow-along: turn to the verse being read
-                // when it moves onto another page.
+                // when it moves onto another page (or spread).
                 if let playing = viewModel.playingVerse, playing != followedVerse, playing.chapterID == location.chapter {
                     followedVerse = playing
                     let target = chapter.pageIndex(containing: playing)
-                    if target != index {
+                    if shownIndex(target) != shownIndex(index) {
                         let forward = target > index
                         index = target
                         show(location: PageLocation(chapter: location.chapter, index: index), direction: forward ? .forward : .reverse, animated: !UIAccessibility.isReduceMotionEnabled)
@@ -346,15 +376,38 @@ struct PagedReaderView: UIViewControllerRepresentable {
             }
         }
 
+        /// The page showing (in a spread, the left one).
         private var currentLocation: PageLocation? {
-            (pageController?.viewControllers?.first as? ReaderPageViewController)?.location
+            Self.location(of: pageController?.viewControllers?.first)
+        }
+
+        /// The first page of the view that shows a page: in a spread, its left page.
+        private func shownIndex(_ index: Int) -> Int {
+            spread ? PageSpread.leftIndex(of: index) : index
+        }
+
+        /// The last page a view starting at `location` shows.
+        private func lastShown(from location: PageLocation) -> PageLocation {
+            spread ? PageLocation(chapter: location.chapter, index: location.index + 1) : location
         }
 
         // MARK: Pages
 
+        /// The layout for one page: the whole reading area, or in a spread
+        /// its left (even index) or right half.
+        private func pageLayout(for index: Int) -> ReaderLayout? {
+            guard let layout else { return nil }
+            return spread ? layout.spreadPage(left: PageSpread.isLeft(index)) : layout
+        }
+
+        /// Pages a chapter takes, the blank right page of a spread included.
+        private func slotCount(_ chapter: PaginatedChapter) -> Int {
+            spread ? PageSpread.slotCount(pages: chapter.pages.count) : chapter.pages.count
+        }
+
         private func paginated(_ chapterID: ChapterID) -> PaginatedChapter? {
             if let cached = cache[chapterID] { return cached }
-            guard let layout, let chapter = viewModel.loadChapter(chapterID) else { return nil }
+            guard let layout = pageLayout(for: 0), let chapter = viewModel.loadChapter(chapterID) else { return nil }
             let built = ChapterTextBuilder.build(chapter, style: layout.style, decorations: viewModel.decorations(for: chapterID))
             let pages = Paginator.pages(for: built.text, pageSize: layout.pageTextSize)
             let result = PaginatedChapter(built: built, pages: pages)
@@ -368,19 +421,49 @@ struct PagedReaderView: UIViewControllerRepresentable {
         }
 
         private func page(at location: PageLocation) -> ReaderPageViewController? {
-            guard let layout, let chapter = paginated(location.chapter), chapter.pages.indices.contains(location.index) else { return nil }
+            guard let layout = pageLayout(for: location.index), let chapter = paginated(location.chapter) else { return nil }
+            guard chapter.pages.indices.contains(location.index) else {
+                // The blank right page after a chapter that ends on a left page.
+                return spread && location.index >= 0 && location.index < slotCount(chapter) ? blankPage(at: location) : nil
+            }
             let page = ReaderPageViewController(location: location)
+            let isLeft = PageSpread.isLeft(location.index)
             page.configure(
                 text: chapter.built.text.attributedSubstring(from: chapter.pages[location.index]),
                 layout: layout,
                 header: chapter.built.chapter.id.description(in: layout.style.bibleLanguage),
                 // The chapter's first page already shows its title in the text.
                 showsHeader: location.index > 0,
-                footer: footerText(pageIndex: location.index, pageCount: chapter.pages.count)
+                footer: footer(for: location, in: chapter),
+                // A book's page numbers sit on the outer corners, with the
+                // spine's shadow on the inner edge.
+                footerAlignment: spread ? (isLeft ? .left : .right) : .center,
+                spineEdge: spread ? (isLeft ? .right : .left) : nil
             )
-            page.onEvent = { [weak self] event in self?.handle(event) }
+            page.onEvent = { [weak self, weak page] event in self?.handle(event, on: page) }
             page.setChromeHidden(pageChromeHidden, animated: false)
             return page
+        }
+
+        /// An empty page of paper: the right half of a spread with nothing on it.
+        private func blankPage(at location: PageLocation) -> ReaderPageViewController? {
+            guard let layout = pageLayout(for: location.index) else { return nil }
+            let page = ReaderPageViewController(location: location)
+            page.configure(text: NSAttributedString(), layout: layout, header: "", showsHeader: false, footer: "",
+                           spineEdge: PageSpread.isLeft(location.index) ? .right : .left)
+            page.onEvent = { [weak self, weak page] event in self?.handle(event, on: page) }
+            page.setChromeHidden(pageChromeHidden, animated: false)
+            return page
+        }
+
+        /// One page: "3 pages left in chapter". In a spread the left page
+        /// shows its number and the right one what's left, after it.
+        private func footer(for location: PageLocation, in chapter: PaginatedChapter) -> String {
+            let count = chapter.pages.count
+            if spread, PageSpread.isLeft(location.index), location.index + 1 < count {
+                return (location.index + 1).formatted()
+            }
+            return footerText(pageIndex: location.index, pageCount: count)
         }
 
         private func footerText(pageIndex: Int, pageCount: Int) -> String {
@@ -392,9 +475,10 @@ struct PagedReaderView: UIViewControllerRepresentable {
             }
         }
 
+        /// The page after this one (page by page, also in a spread).
         private func location(after location: PageLocation) -> PageLocation? {
             guard let chapter = paginated(location.chapter) else { return nil }
-            if location.index + 1 < chapter.pages.count {
+            if location.index + 1 < slotCount(chapter) {
                 return PageLocation(chapter: location.chapter, index: location.index + 1)
             }
             guard let next = location.chapter.next else { return nil }
@@ -406,7 +490,20 @@ struct PagedReaderView: UIViewControllerRepresentable {
                 return PageLocation(chapter: location.chapter, index: location.index - 1)
             }
             guard let previous = location.chapter.previous, let chapter = paginated(previous) else { return nil }
-            return PageLocation(chapter: previous, index: max(chapter.pages.count - 1, 0))
+            return PageLocation(chapter: previous, index: max(slotCount(chapter) - 1, 0))
+        }
+
+        /// What the page controller shows for a location: one page; a
+        /// spread's two pages under a curl; or the spread as one view that
+        /// slides. A spread always starts on its left page.
+        private func viewControllers(at location: PageLocation) -> [UIViewController]? {
+            let first = PageLocation(chapter: location.chapter, index: shownIndex(location.index))
+            guard let page = page(at: first) ?? page(at: PageLocation(chapter: location.chapter, index: 0)) else { return nil }
+            guard spread else { return [page] }
+            let next = PageLocation(chapter: page.location.chapter, index: page.location.index + 1)
+            guard let right = self.page(at: next) ?? blankPage(at: next) else { return nil }
+            if curlsSpread { return [page, right] }
+            return [ReaderSpreadViewController(left: page, right: right)]
         }
 
         private func show(verse: VerseID) {
@@ -416,16 +513,17 @@ struct PagedReaderView: UIViewControllerRepresentable {
 
         private func show(location: PageLocation, direction: UIPageViewController.NavigationDirection = .forward, animated: Bool = false) {
             guard let pageController,
-                  let page = page(at: location) ?? page(at: PageLocation(chapter: location.chapter, index: 0)) else { return }
+                  let controllers = viewControllers(at: location),
+                  let shown = Self.location(of: controllers.first) else { return }
             if animated {
                 turnStartedAt = Date()
-                pageController.setViewControllers([page], direction: direction, animated: true) { [weak self] _ in
+                pageController.setViewControllers(controllers, direction: direction, animated: true) { [weak self] _ in
                     self?.turnFinished()
                 }
             } else {
-                pageController.setViewControllers([page], direction: direction, animated: false)
+                pageController.setViewControllers(controllers, direction: direction, animated: false)
             }
-            didSettle(on: page.location)
+            didSettle(on: shown)
         }
 
         private func didSettle(on location: PageLocation) {
@@ -443,7 +541,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
 
         // MARK: Taps
 
-        private func handle(_ event: ReaderTextEvent) {
+        private func handle(_ event: ReaderTextEvent, on page: ReaderPageViewController?) {
             switch event {
             case let .longPress(verse):
                 viewModel.toggleSelection(verse)
@@ -452,21 +550,25 @@ struct PagedReaderView: UIViewControllerRepresentable {
             case let .link(url):
                 UIApplication.shared.open(url)
             case let .tap(point, bounds, verse):
-                let insets = layout?.textInsets ?? .zero
+                // The outer margins: in a spread, the left page's left and
+                // the right page's right.
+                let leftInset = pageLayout(for: 0)?.textInsets.left ?? 0
+                let rightInset = pageLayout(for: 1)?.textInsets.right ?? 0
                 // The edges are the reading area's, as seen: beside the side
                 // panel the page's own view can be wider than what shows, which
-                // put the turning edge under the panel.
+                // put the turning edge under the panel. In a spread the tap may
+                // be on either page, so it's measured from the page tapped.
                 var x = point.x
                 var width = bounds.width
                 if let container = pageController?.view,
-                   let pageView = pageController?.viewControllers?.first?.view,
+                   let pageView = page?.view ?? pageController?.viewControllers?.first?.view,
                    pageView.isDescendant(of: container) {
                     x = pageView.convert(point, to: container).x
                     width = container.bounds.width
                 }
                 let action = ReaderTap.action(
                     x: x, pageWidth: width,
-                    leftMargin: insets.left, rightMargin: insets.right,
+                    leftMargin: leftInset, rightMargin: rightInset,
                     verse: verse, isSelecting: viewModel.isSelecting,
                     turnsPages: true, leftHanded: leftHanded
                 )
@@ -484,7 +586,9 @@ struct PagedReaderView: UIViewControllerRepresentable {
             // One turn at a time: a second tap mid-curl is let go.
             guard !isBusy,
                   let current = currentLocation,
-                  let target = forward ? location(after: current) : location(before: current) else { return }
+                  let next = forward ? location(after: lastShown(from: current)) : location(before: current) else { return }
+            // A spread turns to the next spread, which starts on its left page.
+            let target = PageLocation(chapter: next.chapter, index: shownIndex(next.index))
             let reduceMotion = UIAccessibility.isReduceMotionEnabled
             show(location: target, direction: forward ? .forward : .reverse, animated: !reduceMotion)
             if forward { reportChapterEnd(from: current, to: target) }
@@ -493,14 +597,17 @@ struct PagedReaderView: UIViewControllerRepresentable {
         }
 
         /// A forward page turn that reaches a chapter's last page (or turns
-        /// past a one-page chapter) finishes that chapter by reading.
+        /// past a chapter that fit on one page, or one spread) finishes that
+        /// chapter by reading.
         private func reportChapterEnd(from previous: PageLocation, to location: PageLocation) {
             let isForward = location.chapter > previous.chapter || (location.chapter == previous.chapter && location.index > previous.index)
             guard isForward, let pages = cache[location.chapter]?.pages.count else { return }
             let finished: ChapterID
-            if location.index > 0, location.index == pages - 1 {
+            let pagesShown = spread ? 2 : 1
+            if location.index > 0, lastShown(from: location).index >= pages - 1 {
                 finished = location.chapter
-            } else if location.chapter != previous.chapter, cache[previous.chapter]?.pages.count == 1 {
+            } else if location.chapter != previous.chapter, let previousPages = cache[previous.chapter]?.pages.count,
+                      previousPages <= pagesShown {
                 finished = previous.chapter
             } else {
                 return
@@ -523,14 +630,21 @@ struct PagedReaderView: UIViewControllerRepresentable {
         // MARK: UIPageViewControllerDataSource
 
         func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-            guard let current = (viewController as? ReaderPageViewController)?.location,
+            guard let current = Self.location(of: viewController),
                   let target = location(before: current) else { return nil }
+            // A sliding spread: the whole spread before, from its left page.
+            if viewController is ReaderSpreadViewController { return viewControllers(at: target)?.first }
             return page(at: target)
         }
 
         func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-            guard let current = (viewController as? ReaderPageViewController)?.location,
-                  let target = location(after: current) else { return nil }
+            guard let current = Self.location(of: viewController) else { return nil }
+            // A sliding spread: the spread after its right page.
+            if viewController is ReaderSpreadViewController {
+                guard let target = location(after: lastShown(from: current)) else { return nil }
+                return viewControllers(at: target)?.first
+            }
+            guard let target = location(after: current) else { return nil }
             return page(at: target)
         }
 
@@ -543,8 +657,20 @@ struct PagedReaderView: UIViewControllerRepresentable {
 
         /// Page curl asks this as the device turns. Keep one page, spine on
         /// the left, and give it the page already showing: left to itself,
-        /// UIPageViewController can be left with no pages and throw.
+        /// UIPageViewController can be left with no pages and throw. A
+        /// spread keeps its two pages and middle spine until ReaderView
+        /// builds the single-page controller for the new shape.
         func pageViewController(_ pageViewController: UIPageViewController, spineLocationFor orientation: UIInterfaceOrientation) -> UIPageViewController.SpineLocation {
+            if curlsSpread {
+                var pair = pageViewController.viewControllers ?? []
+                if pair.count != 2 {
+                    pair = viewControllers(at: currentLocation ?? PageLocation(chapter: viewModel.focusVerse.chapterID, index: 0)) ?? []
+                }
+                if pair.count != 2 { pair = [UIViewController(), UIViewController()] }
+                pageViewController.isDoubleSided = true
+                pageViewController.setViewControllers(pair, direction: .forward, animated: false)
+                return .mid
+            }
             let current = pageViewController.viewControllers?.first
                 ?? page(at: currentLocation ?? PageLocation(chapter: viewModel.focusVerse.chapterID, index: 0))
                 ?? UIViewController()
@@ -560,7 +686,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
             guard completed, let location = currentLocation else { return }
             feedback.pageTurned(sound: pageTurnSound, volume: pageTurnVolume, haptic: pageTurnHaptic, strength: pageTurnHapticStrength)
             didSettle(on: location)
-            if let previous = (previousViewControllers.first as? ReaderPageViewController)?.location {
+            if let previous = Self.location(of: previousViewControllers.first) {
                 reportChapterEnd(from: previous, to: location)
             }
             hideControlsForReading()
@@ -615,6 +741,9 @@ final class ReaderPageViewController: UIViewController {
     private let textView = ReaderTextView(scrollable: false)
     private let headerLabel = UILabel()
     private let footerLabel = UILabel()
+    /// In a spread, a soft shade along the edge at the spine.
+    private let spineShade = CAGradientLayer()
+    private var spineEdge: UIRectEdge?
     private var layout: ReaderLayout?
     private var chromeHidden = false
 
@@ -628,8 +757,12 @@ final class ReaderPageViewController: UIViewController {
         fatalError("init(coder:) is not supported")
     }
 
-    func configure(text: NSAttributedString, layout: ReaderLayout, header: String, showsHeader: Bool = true, footer: String) {
+    func configure(
+        text: NSAttributedString, layout: ReaderLayout, header: String, showsHeader: Bool = true, footer: String,
+        footerAlignment: NSTextAlignment = .center, spineEdge: UIRectEdge? = nil
+    ) {
         self.layout = layout
+        self.spineEdge = spineEdge
         loadViewIfNeeded()
         view.backgroundColor = PaperTexture.pageColor(for: layout.style.theme)
         textView.attributedText = text
@@ -646,7 +779,14 @@ final class ReaderPageViewController: UIViewController {
         // Still read out (and found by UI tests) on a chapter's first page.
         headerLabel.isAccessibilityElement = true
         headerLabel.accessibilityLabel = header.uppercased()
+        footerLabel.textAlignment = footerAlignment
         footerLabel.text = footer
+        // Darker toward the spine, gone a little way into the page.
+        let shade = layout.style.theme.isDark ? 0.28 : 0.09
+        spineShade.colors = [UIColor.black.withAlphaComponent(shade).cgColor, UIColor.black.withAlphaComponent(0).cgColor]
+        spineShade.startPoint = CGPoint(x: spineEdge == .left ? 0 : 1, y: 0.5)
+        spineShade.endPoint = CGPoint(x: spineEdge == .left ? 1 : 0, y: 0.5)
+        spineShade.isHidden = spineEdge == nil
         view.setNeedsLayout()
     }
 
@@ -677,6 +817,8 @@ final class ReaderPageViewController: UIViewController {
         view.addSubview(textView)
         view.addSubview(headerLabel)
         view.addSubview(footerLabel)
+        spineShade.isHidden = true
+        view.layer.addSublayer(spineShade)
         textView.accessibilityIdentifier = "reader.page"
         headerLabel.accessibilityIdentifier = "reader.header"
         footerLabel.accessibilityIdentifier = "reader.footer"
@@ -692,5 +834,48 @@ final class ReaderPageViewController: UIViewController {
         let insets = layout.textInsets
         headerLabel.frame = CGRect(x: insets.left, y: layout.safeArea.top + 10, width: view.bounds.width - insets.left - insets.right, height: 20)
         footerLabel.frame = CGRect(x: insets.left, y: view.bounds.height - layout.safeArea.bottom - 28, width: view.bounds.width - insets.left - insets.right, height: 20)
+        let shadeWidth: CGFloat = 28
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        spineShade.frame = CGRect(
+            x: spineEdge == .left ? 0 : view.bounds.width - shadeWidth, y: 0,
+            width: shadeWidth, height: view.bounds.height
+        )
+        CATransaction.commit()
+    }
+}
+
+/// A spread that slides as one (Slide page turn): two pages side by side,
+/// each its own `ReaderPageViewController`.
+final class ReaderSpreadViewController: UIViewController {
+    let left: ReaderPageViewController
+    let right: ReaderPageViewController
+
+    init(left: ReaderPageViewController, right: ReaderPageViewController) {
+        self.left = left
+        self.right = right
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) is not supported")
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = left.view.backgroundColor
+        for page in [left, right] {
+            addChild(page)
+            view.addSubview(page.view)
+            page.didMove(toParent: self)
+        }
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let half = (view.bounds.width / 2).rounded(.down)
+        left.view.frame = CGRect(x: 0, y: 0, width: half, height: view.bounds.height)
+        right.view.frame = CGRect(x: half, y: 0, width: view.bounds.width - half, height: view.bounds.height)
     }
 }

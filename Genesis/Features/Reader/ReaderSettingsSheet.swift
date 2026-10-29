@@ -107,6 +107,11 @@ struct ReaderSettingsSheet: View {
                                 ForEach(PageTurnStyle.allCases) { Text($0.title).tag($0) }
                             }
                             .pickerStyle(.segmented)
+                            Toggle(isOn: $settings.preferences.twoPageSpread) {
+                                Text("Two-page spread")
+                                Text("On a wide screen held sideways, two pages side by side like an open book. One page while the side panel is open or the screen is upright.")
+                            }
+                            .accessibilityIdentifier("settings.twoPageSpread")
                         }
                         Picker("Text", selection: $settings.preferences.layout) {
                             ForEach(TextLayout.allCases) { Text($0.title).tag($0) }
