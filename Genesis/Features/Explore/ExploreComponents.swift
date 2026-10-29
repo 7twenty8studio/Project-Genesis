@@ -52,7 +52,10 @@ struct FlowLayout: Layout {
             var x = bounds.minX
             for index in row.indices {
                 let size = subviews[index].sizeThatFits(.unspecified)
-                subviews[index].place(at: CGPoint(x: x, y: bounds.minY + row.y), proposal: ProposedViewSize(size))
+                // Rounded up: the exact measured width can land a fraction short
+                // after pixel rounding, and a Text then truncates ("o…").
+                let proposal = ProposedViewSize(width: size.width.rounded(.up), height: size.height.rounded(.up))
+                subviews[index].place(at: CGPoint(x: x, y: bounds.minY + row.y), proposal: proposal)
                 x += size.width + spacing
             }
         }
