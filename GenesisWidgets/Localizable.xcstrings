@@ -101,6 +101,16 @@
         }
       }
     },
+    "Ambient Sounds": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonidos ambientales"
+          }
+        }
+      }
+    },
     "Autumn": {
       "localizations": {
         "es": {
@@ -574,6 +584,16 @@
         }
       }
     },
+    "Pause ambient sounds": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausar los sonidos ambientales"
+          }
+        }
+      }
+    },
     "Peace": {
       "localizations": {
         "es": {
@@ -610,6 +630,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Reproducir"
+          }
+        }
+      }
+    },
+    "Play ambient sounds": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reproducir los sonidos ambientales"
+          }
+        }
+      }
+    },
+    "Play or Pause Ambient Sounds": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reproducir o pausar los sonidos ambientales"
           }
         }
       }

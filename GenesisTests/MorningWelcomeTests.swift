@@ -71,4 +71,11 @@ struct MorningWelcomeTests {
         #expect(MorningWelcome.greeting(hour: 14, name: nil) == "Good afternoon.")
         #expect(MorningWelcome.greeting(hour: 2, name: "Ana") == "Good evening, Ana.")
     }
+
+    @Test func homeGreetsByNameOnlyWhenThereIsOne() {
+        #expect(HomeGreeting.text(hour: 7, name: "Jeovanni") == "Good morning, Jeovanni")
+        #expect(HomeGreeting.text(hour: 14, name: "Ana") == "Good afternoon, Ana")
+        #expect(HomeGreeting.text(hour: 22, name: nil) == "Good evening")
+        #expect(HomeGreeting.text(hour: 3, name: "Ana") == "Good evening, Ana")
+    }
 }

@@ -27,7 +27,7 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar, verseWallpapers, widgetBackgrounds, keepsakeWidgets, widgetPhotoFraming, movingSeasonsAndYourBible, newLook, freeWidgets, languageChoice]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar, verseWallpapers, widgetBackgrounds, keepsakeWidgets, widgetPhotoFraming, movingSeasonsAndYourBible, newLook, freeWidgets, languageChoice, ambientLockScreen]
 
     static let notifications = WhatsNewAnnouncement(
         id: "notifications-your-way",
@@ -49,6 +49,24 @@ enum WhatsNewCatalog {
                 detail: String(localized: "Choose each kind and its time, or turn them all off, in Settings › Notifications.")
             ),
         ]
+    )
+
+    static let ambientLockScreen = WhatsNewAnnouncement(
+        id: "ambient-lock-screen",
+        title: String(localized: "Ambient sounds on the Lock Screen"),
+        items: [
+            WhatsNewItem(
+                systemImage: "speaker.wave.2",
+                title: String(localized: "Pause the sounds from the Lock Screen"),
+                detail: String(localized: "With Premium, your ambient mix shows on the Lock Screen and in the Dynamic Island, with play, pause and the timer.")
+            ),
+            WhatsNewItem(
+                systemImage: "headphones",
+                title: String(localized: "Listening and sounds together"),
+                detail: String(localized: "When the Bible is read aloud with sounds behind it, each has its own play and pause there.")
+            ),
+        ],
+        feature: .ambientSounds
     )
 
     static let languageChoice = WhatsNewAnnouncement(

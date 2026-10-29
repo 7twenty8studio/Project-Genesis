@@ -9,6 +9,8 @@ struct HomeView: View {
     @Environment(ReadingProgress.self) private var progress
     @Environment(ReaderSettings.self) private var settings
     @Environment(AuthService.self) private var auth
+    @Environment(CommunityStore.self) private var community
+    @Environment(MorningWelcome.self) private var welcome
     @Environment(EntitlementService.self) private var entitlements
     @Environment(NotificationPreferences.self) private var notifications
     @State private var showsBibles = false
@@ -69,6 +71,11 @@ struct HomeView: View {
                 .frame(maxWidth: .infinity)
             }
             .themedScreen()
+            // The greeting's name, before Together has been opened.
+            .task(id: auth.user?.id) {
+                guard auth.user != nil, !community.profileLoaded else { return }
+                await community.refresh()
+            }
             .modifier(MilestoneWatcher(showing: $milestone))
             .overlay { ChapterMomentOverlay(place: .home).ignoresSafeArea(edges: .top) }
             .toolbar(.hidden, for: .navigationBar)
@@ -408,11 +415,14 @@ struct HomeView: View {
     }
 
     private var greetingText: String {
-        switch Calendar.current.component(.hour, from: .now) {
-        case 4..<12: String(localized: "Good morning")
-        case 12..<17: String(localized: "Good afternoon")
-        default: String(localized: "Good evening")
-        }
+        HomeGreeting.text(hour: Calendar.current.component(.hour, from: .now), name: greetingName)
+    }
+
+    /// Signed in: the name the morning welcome uses, else the first word of
+    /// the person's name in groups. Signed out: no name.
+    private var greetingName: String? {
+        guard auth.user != nil else { return nil }
+        return MorningWelcome.firstName(welcome.name) ?? MorningWelcome.firstName(community.profile?.displayName)
     }
 
     private var continueReading: some View {

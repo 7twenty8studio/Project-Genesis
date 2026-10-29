@@ -38,6 +38,10 @@ final class AmbientSoundService {
     @ObservationIgnored private let defaults: UserDefaults
     @ObservationIgnored private var timerTask: Task<Void, Never>?
     @ObservationIgnored private var pausedByInterruption = false
+    /// The Lock Screen Live Activity, shared with listening (set by the app).
+    @ObservationIgnored var liveActivity: ListeningActivityController? {
+        didSet { updateLiveActivity() }
+    }
 
     private static let mixKey = "ambient.mix"
 
@@ -58,6 +62,11 @@ final class AmbientSoundService {
                 if shouldResume, self.pausedByInterruption { self.play() }
                 self.pausedByInterruption = false
             }
+        }
+        // The play/pause button on the Live Activity.
+        ListeningControl.toggleAmbient = { [weak self] in
+            guard let self, self.showsControls else { return }
+            self.togglePlayback()
         }
     }
 
@@ -87,6 +96,7 @@ final class AmbientSoundService {
             }
         }
         save()
+        updateLiveActivity()
     }
 
     func setVolume(_ volume: Float, for sound: AmbientSound) {
@@ -109,6 +119,7 @@ final class AmbientSoundService {
         } else {
             play()
         }
+        updateLiveActivity()
     }
 
     // MARK: Playing
@@ -119,6 +130,7 @@ final class AmbientSoundService {
         isPlaying = true
         showsControls = true
         for sound in mix.keys { start(sound) }
+        updateLiveActivity()
     }
 
     func pause() {
@@ -131,6 +143,7 @@ final class AmbientSoundService {
     func close() {
         pause()
         showsControls = false
+        updateLiveActivity()
     }
 
     func togglePlayback() {
@@ -156,6 +169,7 @@ final class AmbientSoundService {
         timerMinutes = minutes
         guard let minutes else {
             timerEndsAt = nil
+            updateLiveActivity()
             return
         }
         timerEndsAt = Date.now.addingTimeInterval(TimeInterval(minutes * 60))
@@ -166,6 +180,7 @@ final class AmbientSoundService {
             self.timerEndsAt = nil
             self.pause()
         }
+        updateLiveActivity()
     }
 
     // MARK: Helpers
@@ -184,6 +199,19 @@ final class AmbientSoundService {
         isPlaying = false
         output.stopAll()
         setTimer(minutes: nil)
+    }
+
+    /// The mix's name, play/pause and the timer on the Lock Screen while the
+    /// controls are out.
+    private func updateLiveActivity() {
+        guard let liveActivity else { return }
+        guard showsControls, !mix.isEmpty else {
+            liveActivity.endAmbient()
+            return
+        }
+        let preset = currentMix
+        let image = preset?.systemImage ?? AmbientSound.allCases.first { mix[$0] != nil }?.systemImage ?? "speaker.wave.2"
+        liveActivity.showAmbient(.init(title: preset?.title ?? summary, systemImage: image, isPlaying: isPlaying, timerEndsAt: timerEndsAt))
     }
 
     private func effective(_ volume: Float) -> Float {
