@@ -371,8 +371,9 @@ shares; README.md has the architecture.
 - Home's greeting ("Good morning, Jeovanni", `HomeGreeting`) names the
   person only while signed in: the morning welcome's name, else the
   sign-in's first name (`AuthUser.name`, from user_metadata full_name/name:
-  Google, or Apple when shared; older saved sessions read it once through
-  `refreshNameIfMissing`), else the first word of their group display
+  Google's; Apple's only on the first Sign in with Apple, which the app
+  asks for (`.fullName`) and saves as full_name via `setFullName`; older
+  saved sessions read it once through `refreshNameIfMissing`), else the first word of their group display
   name; signed out it has no name.
 - Apple Watch (verse of the day, Premium): GenesisWatch + GenesisWatchWidgets
   targets, fed by `WatchConnector` (WatchConnectivity application context,

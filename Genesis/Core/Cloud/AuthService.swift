@@ -48,8 +48,19 @@ final class AuthService {
         await run { client in try await client.signUp(email: email, password: password) }
     }
 
-    func signInWithApple(idToken: String, nonce: String) async {
+    /// `fullName` is what Apple shares the first time only: it's kept in the
+    /// account's user_metadata (full_name) so Home can greet the person on
+    /// every device. Saving it is quiet; this device keeps it either way.
+    func signInWithApple(idToken: String, nonce: String, fullName: String? = nil) async {
         await run { client in try await client.signInWithApple(idToken: idToken, nonce: nonce) }
+        guard let fullName, let client, let session, session.user.name == nil else { return }
+        var user = session.user
+        user.name = fullName
+        if let token = try? await accessToken(), let saved = try? await client.setFullName(fullName, accessToken: token) {
+            user = saved
+        }
+        guard let latest = self.session else { return }
+        store(AuthSession(accessToken: latest.accessToken, refreshToken: latest.refreshToken, expiresAt: latest.expiresAt, user: user))
     }
 
     /// Sign in with Google: Supabase's Google page in a web sheet, then the

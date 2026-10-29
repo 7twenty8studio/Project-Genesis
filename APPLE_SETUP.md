@@ -345,7 +345,7 @@ These answers match the privacy manifest in
 | Category → Data type | Linked to the person | Purposes | What it is in Versely |
 |---|---|---|---|
 | Contact Info → Email Address | Yes | App Functionality | Account sign-in (email, Apple or Google); optional reply address in Send Feedback |
-| Contact Info → Name | Yes | App Functionality | Display name in groups and the community; the name Google shares at sign-in |
+| Contact Info → Name | Yes | App Functionality | Display name in groups and the community; the name Google or Apple shares at sign-in (Home's greeting) |
 | User Content → Customer Support | Yes | App Functionality | Send Feedback messages |
 | User Content → Other User Content | Yes | App Functionality | Notes, highlights, prayers, sermons, attachment captions, plans, group posts and nudges |
 | Sensitive Info → Sensitive Info | Yes | App Functionality | Prayers and journal entries can reveal religious beliefs |

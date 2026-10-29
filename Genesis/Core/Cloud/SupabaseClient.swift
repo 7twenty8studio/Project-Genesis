@@ -167,6 +167,14 @@ final class SupabaseClient: Sendable {
         return try SupabaseCoding.decoder().decode(UserResponse.self, from: data).authUser
     }
 
+    /// Keeps the name Apple shared at sign-in in the account's user_metadata.
+    func setFullName(_ name: String, accessToken: String) async throws -> AuthUser {
+        var request = makeRequest(path: "auth/v1/user", query: [], method: "PUT", accessToken: accessToken)
+        request.httpBody = try JSONEncoder().encode(["data": ["full_name": name]])
+        let data = try await perform(request)
+        return try SupabaseCoding.decoder().decode(UserResponse.self, from: data).authUser
+    }
+
     /// Sets a new password for the signed-in account.
     func updatePassword(_ password: String, accessToken: String) async throws {
         var request = makeRequest(path: "auth/v1/user", query: [], method: "PUT", accessToken: accessToken)
