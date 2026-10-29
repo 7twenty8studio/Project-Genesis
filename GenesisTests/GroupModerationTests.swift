@@ -498,4 +498,49 @@ struct GroupModerationTests {
         await detail.refresh()
         #expect(detail.members.count == 5)
     }
+
+    // MARK: Roles changed on another device
+
+    @Test func aNewModeratorSeesTheirToolsWithoutReopeningVersely() async throws {
+        let fixture = try await makeGroup()
+        let backend = fixture.backend
+        await backend.actAs(member, name: "Meg")
+        let store = CommunityStore(backend: backend)
+        await store.refresh()
+        let detail = GroupDetailModel(groupID: fixture.group, store: store)
+        await detail.refresh()
+        #expect(!detail.permissions.isModerator)
+
+        // Olive makes Meg a moderator on her own phone.
+        await backend.actAs(owner, name: "Olive")
+        try await backend.setRole(.leader, for: member, in: fixture.group)
+        await backend.actAs(member, name: "Meg")
+
+        // Opening (or pulling to refresh) the group is enough.
+        await detail.refresh()
+        #expect(detail.permissions.isModerator)
+        #expect(detail.group?.isLeader == true)
+
+        // And back again.
+        await backend.actAs(owner, name: "Olive")
+        try await backend.setRole(.member, for: member, in: fixture.group)
+        await backend.actAs(member, name: "Meg")
+        await store.refreshGroups()
+        #expect(!detail.permissions.isModerator)
+    }
+
+    @Test func someoneRemovedElsewhereNoLongerSeesTheGroup() async throws {
+        let fixture = try await makeGroup()
+        let backend = fixture.backend
+        await backend.actAs(member, name: "Meg")
+        let store = CommunityStore(backend: backend)
+        await store.refresh()
+        #expect(store.group(fixture.group) != nil)
+
+        await backend.actAs(owner, name: "Olive")
+        try await backend.removeMember(member, from: fixture.group)
+        await backend.actAs(member, name: "Meg")
+        await store.refreshGroups()
+        #expect(store.group(fixture.group) == nil)
+    }
 }

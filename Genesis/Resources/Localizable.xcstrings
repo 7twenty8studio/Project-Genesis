@@ -3173,6 +3173,16 @@
         }
       }
     },
+    "Change Display Name": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cambiar nombre visible"
+          }
+        }
+      }
+    },
     "Change Password": {
       "localizations": {
         "es": {
@@ -3199,6 +3209,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cambiar sonidos"
+          }
+        }
+      }
+    },
+    "Change your display name": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cambia tu nombre visible"
+          }
+        }
+      }
+    },
+    "Changing it updates your name in every group you're in. Messages you've already posted keep the name they were sent with.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Al cambiarlo, se actualiza tu nombre en todos tus grupos. Los mensajes que ya publicaste conservan el nombre con el que se enviaron."
           }
         }
       }
@@ -4652,6 +4682,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Descartar pregunta"
+          }
+        }
+      }
+    },
+    "Display Name": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre visible"
           }
         }
       }
@@ -6622,6 +6662,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Los grupos no están disponibles en este momento."
+          }
+        }
+      }
+    },
+    "Groups, a little easier": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grupos, un poco más fáciles"
           }
         }
       }
@@ -9756,6 +9806,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nueva colección"
+          }
+        }
+      }
+    },
+    "New moderators are ready at once": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los nuevos moderadores están listos al instante"
           }
         }
       }
@@ -18185,6 +18245,16 @@
         }
       }
     },
+    "Turn On Notifications": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activar notificaciones"
+          }
+        }
+      }
+    },
     "Turn from the edge": {
       "localizations": {
         "es": {
@@ -18477,6 +18547,16 @@
         }
       }
     },
+    "Use the name button at the top of Together to change the name people see in your groups.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usa el botón de nombre en la parte superior de Juntos para cambiar el nombre que ven en tus grupos."
+          }
+        }
+      }
+    },
     "Use your device's voices in every translation, offline, or a recorded narration where one is available. Change it under Audio Settings.": {
       "localizations": {
         "es": {
@@ -18675,6 +18755,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Versely en español"
+          }
+        }
+      }
+    },
+    "Versely hasn't asked to send you notifications yet.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versely aún no te ha pedido permiso para enviarte notificaciones."
           }
         }
       }
@@ -19401,6 +19491,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Al seleccionar un versículo, tus colores favoritos y todas las acciones caben en una fila, así los versículos de abajo siguen a la vista. Deslízala de lado o hacia arriba para verlo todo."
+          }
+        }
+      }
+    },
+    "When you're made a moderator, your tools appear the next time the group refreshes, with no need to close Versely.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuando te nombran moderador, tus herramientas aparecen la próxima vez que el grupo se actualiza, sin tener que cerrar Versely."
           }
         }
       }

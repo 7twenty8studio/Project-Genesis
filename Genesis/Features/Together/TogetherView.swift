@@ -20,8 +20,10 @@ struct TogetherView: View {
     @Environment(FeatureFlagService.self) private var flags
     @Environment(AuthService.self) private var auth
     @Environment(\.palette) private var palette
+    @Environment(\.scenePhase) private var scenePhase
     @State private var section: Area = .groups
     @State private var showsAccount = false
+    @State private var editsName = false
 
     private var sections: [Area] {
         Area.allCases.filter { section in
@@ -36,6 +38,14 @@ struct TogetherView: View {
                 .themedScreen()
                 .navigationTitle("Together")
                 .toolbarTitleDisplayMode(.inlineLarge)
+                .toolbar {
+                    if community.isSignedIn, community.profile != nil {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button("Change Display Name", systemImage: "person.text.rectangle") { editsName = true }
+                                .accessibilityIdentifier("together.editName")
+                        }
+                    }
+                }
                 .navigationDestination(for: TogetherRoute.self) { route in
                     switch route {
                     case let .group(id): GroupDetailView(groupID: id)
@@ -43,8 +53,29 @@ struct TogetherView: View {
                     }
                 }
         }
-        .task(id: auth.user?.id) { await community.refresh() }
+        .task(id: auth.user?.id) {
+            await community.refresh()
+            // Already in a group (joined before Versely asked, or on another
+            // device): ask for notifications once, so announcements arrive.
+            if !community.groups.isEmpty { await PushNotifications.shared.enable() }
+        }
+        .onChange(of: scenePhase) { _, phase in
+            if phase == .active, community.isSignedIn { Task { await community.refreshGroups() } }
+        }
         .sheet(isPresented: $showsAccount) { AccountView() }
+        .sheet(isPresented: $editsName) {
+            NavigationStack {
+                DisplayNameView(onDone: { editsName = false })
+                    .themedScreen()
+                    .navigationTitle("Display Name")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Cancel", systemImage: "xmark") { editsName = false }
+                        }
+                    }
+            }
+        }
         .onChange(of: sections) {
             if !sections.contains(section), let first = sections.first { section = first }
         }
@@ -122,6 +153,11 @@ struct DisplayNameView: View {
                         Text("Your name is shown with your prayer requests and messages. Your first name, or how your church knows you, works well.")
                             .font(.subheadline)
                             .foregroundStyle(palette.secondaryText)
+                        if onDone != nil {
+                            Text("Changing it updates your name in every group you're in. Messages you've already posted keep the name they were sent with.")
+                                .font(.footnote)
+                                .foregroundStyle(palette.secondaryText)
+                        }
                     }
                     .listRowBackground(Color.clear)
                 }
@@ -139,7 +175,7 @@ struct DisplayNameView: View {
                 }
                 Section {
                     Button(action: save) {
-                        if isSaving { ProgressView() } else { Text("Continue") }
+                        if isSaving { ProgressView() } else if onDone != nil { Text("Save") } else { Text("Continue") }
                     }
                     .disabled(name.trimmingCharacters(in: .whitespaces).isEmpty || isSaving)
                     .accessibilityIdentifier("together.saveName")

@@ -20,6 +20,7 @@ struct GroupDetailView: View {
 
     @Environment(CommunityStore.self) private var community
     @Environment(\.palette) private var palette
+    @Environment(\.scenePhase) private var scenePhase
     @State private var model: GroupDetailModel?
     @State private var tab: Tab = .today
 
@@ -43,6 +44,16 @@ struct GroupDetailView: View {
             let model = model ?? GroupDetailModel(groupID: groupID, store: community)
             self.model = model
             await model.refresh()
+            // Roles change on other devices (the owner makes you a moderator):
+            // check now and then while the group is open.
+            while !Task.isCancelled {
+                try? await Task.sleep(for: .seconds(60))
+                if Task.isCancelled { break }
+                await community.refreshGroups()
+            }
+        }
+        .onChange(of: scenePhase) { _, phase in
+            if phase == .active, let model { Task { await model.refresh() } }
         }
     }
 

@@ -121,6 +121,13 @@ final class CommunityStore {
 
     // MARK: Groups
 
+    /// Reloads only your groups: your role in each (made a moderator, or
+    /// removed) can change on someone else's device at any time.
+    func refreshGroups() async {
+        guard isSignedIn, let latest = try? await backend.myGroups() else { return }
+        groups = latest
+    }
+
     func group(_ id: UUID) -> GroupSummary? {
         groups.first { $0.id == id }
     }

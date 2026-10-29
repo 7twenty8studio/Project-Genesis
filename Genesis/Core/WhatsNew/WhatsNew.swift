@@ -27,7 +27,7 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar, verseWallpapers, widgetBackgrounds, keepsakeWidgets, widgetPhotoFraming, movingSeasonsAndYourBible, newLook, freeWidgets, languageChoice, ambientLockScreen]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar, verseWallpapers, widgetBackgrounds, keepsakeWidgets, widgetPhotoFraming, movingSeasonsAndYourBible, newLook, freeWidgets, languageChoice, ambientLockScreen, groupNamesAndRoles]
 
     static let notifications = WhatsNewAnnouncement(
         id: "notifications-your-way",
@@ -49,6 +49,25 @@ enum WhatsNewCatalog {
                 detail: String(localized: "Choose each kind and its time, or turn them all off, in Settings › Notifications.")
             ),
         ]
+    )
+
+    static let groupNamesAndRoles = WhatsNewAnnouncement(
+        id: "group-names-and-roles",
+        title: String(localized: "Groups, a little easier"),
+        items: [
+            WhatsNewItem(
+                systemImage: "person.text.rectangle",
+                title: String(localized: "Change your display name"),
+                detail: String(localized: "Use the name button at the top of Together to change the name people see in your groups.")
+            ),
+            WhatsNewItem(
+                systemImage: "checkmark.shield",
+                title: String(localized: "New moderators are ready at once"),
+                detail: String(localized: "When you're made a moderator, your tools appear the next time the group refreshes, with no need to close Versely.")
+            ),
+        ],
+        flag: .groups,
+        feature: .together
     )
 
     static let ambientLockScreen = WhatsNewAnnouncement(
