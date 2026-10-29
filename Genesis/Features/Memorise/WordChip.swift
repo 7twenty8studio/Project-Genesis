@@ -12,6 +12,9 @@ struct WordChip: View {
         Text(text)
             .font(settings.preferences.font.font(size: 19))
             .foregroundStyle(palette.text)
+            // Always the whole word: never truncated to "thi…" when a layout
+            // proposes a hair less than the word's measured width.
+            .fixedSize()
             .padding(.horizontal, 12)
             .padding(.vertical, 8)
             .frame(minHeight: 44)
