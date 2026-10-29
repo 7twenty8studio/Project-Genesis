@@ -88,8 +88,9 @@ struct ReaderPreferences: Codable, Equatable, Sendable {
     /// never override their choice.
     var pageTurnChosen = false
     /// Two pages side by side, like an open book, on a wide screen held
-    /// sideways with the side panel closed (`PageSpread`). Off by default.
-    var twoPageSpread = false
+    /// sideways with the side panel closed (`PageSpread`). On by default,
+    /// as in Apple Books; the side panel then starts closed.
+    var twoPageSpread = true
     var showsVerseNumbers = true
     var layout: TextLayout = .paragraphs
     var leftHanded = false

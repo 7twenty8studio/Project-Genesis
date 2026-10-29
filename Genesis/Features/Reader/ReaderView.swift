@@ -30,7 +30,11 @@ struct ReaderView: View {
     @State private var confirmation: String?
     /// The selection bar's height above the bottom edge (scroll reading keeps the selection above it).
     @State private var selectionBarHeight: CGFloat = 0
-    @State private var showsCompanion = true
+    /// The side panel, once the person opens or closes it. Until then it
+    /// starts closed while the two-page spread is on (so a wide screen
+    /// shows the open book) and open otherwise.
+    @State private var companionChoice: Bool?
+    private var showsCompanion: Bool { companionChoice ?? !preferences.twoPageSpread }
     @State private var companionMode: CompanionPanel.Mode = .notes
     /// Read from the window once it exists; nil until then so text is laid
     /// out once with the right insets rather than twice.
@@ -197,7 +201,7 @@ struct ReaderView: View {
                         onStudy: studyChapter,
                         onListen: listen,
                         onMoreBibles: { sheet = .bibles },
-                        onToggleCompanion: { showsCompanion.toggle() },
+                        onToggleCompanion: { companionChoice = !showsCompanion },
                         onPremium: { sheet = .premium($0) }
                     )
                     // At least a little below the live safe area, and never
@@ -578,7 +582,7 @@ struct ReaderView: View {
         if isWide {
             reader.studyVerse = verse
             companionMode = .crossReferences
-            showsCompanion = true
+            companionChoice = true
             reader.clearSelection()
         } else {
             sheet = .crossReferences(verse)

@@ -58,7 +58,7 @@ enum WhatsNewCatalog {
             WhatsNewItem(
                 systemImage: "book.pages",
                 title: String(localized: "Two pages side by side"),
-                detail: String(localized: "On iPad, or an iPhone Duo opened and held sideways, turn on Two-page spread in Reading settings. Pages curl over the spine like a printed Bible, or slide across together.")
+                detail: String(localized: "On iPad, or an iPhone Duo opened and held sideways, the Bible now shows two pages like a printed book. Open the side panel to take notes, or turn it off in Reading settings.")
             ),
         ]
     )

@@ -783,7 +783,9 @@ shares; README.md has the architecture.
   reference and × sit at the top (`SelectionReferenceBar`). Scroll reading
   keeps the selected verses above the bar (`bottomObstruction`). UI tests use
   `Genesis.tapPageTop` for the controls and `Genesis.tapVerse` to select.
-- Two-page spread (free, `ReaderPreferences.twoPageSpread`, off by default):
+- Two-page spread (free, `ReaderPreferences.twoPageSpread`, on by default;
+  while it's on the side panel starts closed, `companionChoice`, until the
+  person opens it):
   paged reading shows two pages like an open book when `PageSpread.shows`
   (chosen, reading area ≥ 800 pt and clearly wider than tall, side panel
   closed); otherwise one page. Page Curl uses the middle spine (a pair of
