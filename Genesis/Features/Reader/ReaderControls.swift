@@ -25,24 +25,31 @@ struct ReaderControls: View {
     var body: some View {
         // Narrow reading areas (a phone, iPad Split View) get tighter buttons,
         // then a "More" menu, instead of squeezing the chapter name away.
+        // On the narrowest phones (a long book name, or a Bible read in
+        // parallel) the translation shows only its abbreviation, and last of
+        // all the chapter name may shrink a little, so nothing overlaps or
+        // runs off the screen.
         ViewThatFits(in: .horizontal) {
             row(iconWidth: 36, overflow: false)
             row(iconWidth: 30, overflow: false)
             row(iconWidth: 30, overflow: true)
+            row(iconWidth: 28, overflow: true, compact: true)
+            row(iconWidth: 28, overflow: true, compact: true, shrinksTitle: true)
         }
         .foregroundStyle(palette.text)
         .padding(.horizontal, 16)
     }
 
-    private func row(iconWidth: CGFloat, overflow: Bool) -> some View {
+    private func row(iconWidth: CGFloat, overflow: Bool, compact: Bool = false, shrinksTitle: Bool = false) -> some View {
         HStack(spacing: iconWidth < 36 ? 6 : 10) {
-            navigation(iconWidth: iconWidth)
+            navigation(iconWidth: iconWidth, shrinksTitle: shrinksTitle)
             Spacer(minLength: 0)
-            tools(iconWidth: iconWidth, overflow: overflow)
+            tools(iconWidth: iconWidth, overflow: overflow, compact: compact)
+                .layoutPriority(1)
         }
     }
 
-    private func navigation(iconWidth: CGFloat) -> some View {
+    private func navigation(iconWidth: CGFloat, shrinksTitle: Bool = false) -> some View {
         HStack(spacing: 2) {
             iconButton("chevron.left", label: String(localized: "Previous chapter"), width: iconWidth, enabled: reader.chapterID.previous != nil) {
                 reader.goToPreviousChapter()
@@ -52,8 +59,9 @@ struct ReaderControls: View {
                 Text(reader.chapterID.description(in: reader.translation.language))
                     .font(.headline)
                     .lineLimit(1)
-                    .fixedSize()
-                    .padding(.horizontal, 6)
+                    .minimumScaleFactor(shrinksTitle ? 0.75 : 1)
+                    .fixedSize(horizontal: !shrinksTitle, vertical: false)
+                    .padding(.horizontal, shrinksTitle ? 2 : 6)
             }
             .accessibilityHint("Choose a book and chapter")
             .accessibilityIdentifier("reader.chapterButton")
@@ -67,9 +75,9 @@ struct ReaderControls: View {
         .glassEffect(.regular, in: Capsule())
     }
 
-    private func tools(iconWidth: CGFloat, overflow: Bool) -> some View {
+    private func tools(iconWidth: CGFloat, overflow: Bool, compact: Bool = false) -> some View {
         HStack(spacing: 2) {
-            translationMenu
+            translationMenu(compact: compact)
 
             if !overflow {
                 bookmarkButton(width: iconWidth)
@@ -103,7 +111,9 @@ struct ReaderControls: View {
         .glassEffect(.regular, in: Capsule())
     }
 
-    private var translationMenu: some View {
+    /// `compact` shows only the Bible's abbreviation, even while reading in
+    /// parallel (the page's own header names both).
+    private func translationMenu(compact: Bool) -> some View {
         Menu {
             ForEach(library.translations) { translation in
                 Button {
@@ -163,7 +173,7 @@ struct ReaderControls: View {
             Button("More Bibles\u{2026}", systemImage: "arrow.down.circle", action: onMoreBibles)
                 .accessibilityIdentifier("reader.moreBibles")
         } label: {
-            Text(parallelName.map { "\(reader.translation.abbreviation) | \($0)" } ?? reader.translation.abbreviation)
+            Text(compact ? reader.translation.abbreviation : (parallelName.map { "\(reader.translation.abbreviation) | \($0)" } ?? reader.translation.abbreviation))
                 .font(.subheadline.weight(.semibold))
                 .lineLimit(1)
                 .fixedSize()

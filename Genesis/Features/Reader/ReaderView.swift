@@ -30,7 +30,11 @@ struct ReaderView: View {
     @State private var confirmation: String?
     /// The selection bar's height above the bottom edge (scroll reading keeps the selection above it).
     @State private var selectionBarHeight: CGFloat = 0
-    @State private var showsCompanion = true
+    /// The side panel, once the person opens or closes it. Until then it
+    /// starts closed while the two-page spread is on (so a wide screen
+    /// shows the open book) and open otherwise.
+    @State private var companionChoice: Bool?
+    private var showsCompanion: Bool { companionChoice ?? !preferences.twoPageSpread }
     @State private var companionMode: CompanionPanel.Mode = .notes
     /// Read from the window once it exists; nil until then so text is laid
     /// out once with the right insets rather than twice.
@@ -197,7 +201,7 @@ struct ReaderView: View {
                         onStudy: studyChapter,
                         onListen: listen,
                         onMoreBibles: { sheet = .bibles },
-                        onToggleCompanion: { showsCompanion.toggle() },
+                        onToggleCompanion: { companionChoice = !showsCompanion },
                         onPremium: { sheet = .premium($0) }
                     )
                     // At least a little below the live safe area, and never
@@ -273,10 +277,18 @@ struct ReaderView: View {
             )
         } else if preferences.readingMode == .page {
             let turn: PageTurnStyle = reduceMotion ? .slide : preferences.pageTurn
+            // Two pages like an open book, only with room for both and the
+            // side panel closed. Judged on the settled size, like the key below.
+            let spread = PageSpread.shows(
+                enabled: preferences.twoPageSpread,
+                size: settledSurfaceSize ?? layout.size,
+                sidePanelShown: isWide && showsCompanion
+            )
             PagedReaderView(
                 viewModel: reader,
                 layout: layout,
                 pageTurn: turn,
+                spread: spread,
                 leftHanded: preferences.leftHanded,
                 navigationToken: reader.navigationToken,
                 decorationsVersion: reader.decorationsVersion,
@@ -295,7 +307,8 @@ struct ReaderView: View {
             // opening or folding, the side panel) builds it afresh too: a
             // page curl controller can otherwise keep a page laid out for
             // the old shape, or show nothing at all after the Duo opens.
-            .id(PageControllerKey(turn: turn, width: Int((settledSurfaceSize?.width ?? 0).rounded()), height: Int((settledSurfaceSize?.height ?? 0).rounded())))
+            // One page or two is set when it's created too (the spine).
+            .id(PageControllerKey(turn: turn, spread: spread, width: Int((settledSurfaceSize?.width ?? 0).rounded()), height: Int((settledSurfaceSize?.height ?? 0).rounded())))
         } else {
             ScrollReaderView(
                 viewModel: reader,
@@ -569,7 +582,7 @@ struct ReaderView: View {
         if isWide {
             reader.studyVerse = verse
             companionMode = .crossReferences
-            showsCompanion = true
+            companionChoice = true
             reader.clearSelection()
         } else {
             sheet = .crossReferences(verse)
@@ -671,6 +684,7 @@ enum ReaderSheet: Identifiable {
 /// the orientation changes.
 private struct PageControllerKey: Hashable {
     let turn: PageTurnStyle
+    let spread: Bool
     let width: Int
     let height: Int
 }

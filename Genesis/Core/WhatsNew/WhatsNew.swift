@@ -27,7 +27,7 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar, verseWallpapers, widgetBackgrounds, keepsakeWidgets, widgetPhotoFraming, movingSeasonsAndYourBible, newLook, freeWidgets, languageChoice, ambientLockScreen, groupNamesAndRoles]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar, verseWallpapers, widgetBackgrounds, keepsakeWidgets, widgetPhotoFraming, movingSeasonsAndYourBible, newLook, freeWidgets, languageChoice, ambientLockScreen, groupNamesAndRoles, twoPageSpread]
 
     static let notifications = WhatsNewAnnouncement(
         id: "notifications-your-way",
@@ -47,6 +47,18 @@ enum WhatsNewCatalog {
                 systemImage: "bell.slash",
                 title: String(localized: "You're in control"),
                 detail: String(localized: "Choose each kind and its time, or turn them all off, in Settings › Notifications.")
+            ),
+        ]
+    )
+
+    static let twoPageSpread = WhatsNewAnnouncement(
+        id: "two-page-spread",
+        title: String(localized: "Read like an open book"),
+        items: [
+            WhatsNewItem(
+                systemImage: "book.pages",
+                title: String(localized: "Two pages side by side"),
+                detail: String(localized: "On iPad, or an iPhone Duo opened and held sideways, the Bible now shows two pages like a printed book. Open the side panel to take notes, or turn it off in Reading settings.")
             ),
         ]
     )
