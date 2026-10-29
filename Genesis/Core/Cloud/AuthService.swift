@@ -19,6 +19,8 @@ final class AuthService {
     @ObservationIgnored private let keychain: KeychainStore
     @ObservationIgnored private var session: AuthSession?
     @ObservationIgnored private var refreshTask: Task<AuthSession, Error>?
+    /// `refreshNameIfMissing` asks once per launch.
+    @ObservationIgnored private var checkedName = false
     @ObservationIgnored var onSignIn: (@MainActor (AuthUser) -> Void)?
     /// Runs while still signed in, e.g. to stop this device's notifications.
     @ObservationIgnored var beforeSignOut: (@MainActor () async -> Void)?
@@ -111,6 +113,18 @@ final class AuthService {
             errorMessage = error.localizedDescription
             return false
         }
+    }
+
+    /// Reads the account from the server once when the saved session has no
+    /// name yet (signed in before the name was kept), for Home's greeting.
+    /// Quiet: a failure leaves things as they are.
+    func refreshNameIfMissing() async {
+        guard let client, let session, session.user.name == nil, !checkedName else { return }
+        checkedName = true
+        guard let token = try? await accessToken(),
+              let current = try? await client.currentUser(accessToken: token),
+              let latest = self.session, latest.user != current else { return }
+        store(AuthSession(accessToken: latest.accessToken, refreshToken: latest.refreshToken, expiresAt: latest.expiresAt, user: current))
     }
 
     /// Whether the account signs in with Apple, asked of the server (so a

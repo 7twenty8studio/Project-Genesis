@@ -369,8 +369,11 @@ shares; README.md has the architecture.
   neither is left; buttons are `LiveActivityIntent`s that call
   `ListeningControl`). Shared types live in Genesis/Shared/WidgetIntents.swift.
 - Home's greeting ("Good morning, Jeovanni", `HomeGreeting`) names the
-  person only while signed in: the morning welcome's name, else the first
-  word of their group display name; signed out it has no name.
+  person only while signed in: the morning welcome's name, else the
+  sign-in's first name (`AuthUser.name`, from user_metadata full_name/name:
+  Google, or Apple when shared; older saved sessions read it once through
+  `refreshNameIfMissing`), else the first word of their group display
+  name; signed out it has no name.
 - Apple Watch (verse of the day, Premium): GenesisWatch + GenesisWatchWidgets
   targets, fed by `WatchConnector` (WatchConnectivity application context,
   `WatchPayload`). Embedded in the iPhone app (a dependency of Genesis in

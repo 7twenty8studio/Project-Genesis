@@ -71,10 +71,12 @@ struct HomeView: View {
                 .frame(maxWidth: .infinity)
             }
             .themedScreen()
-            // The greeting's name, before Together has been opened.
+            // The greeting's name: the account's (for sessions saved before
+            // it was kept), and the group name before Together is opened.
             .task(id: auth.user?.id) {
-                guard auth.user != nil, !community.profileLoaded else { return }
-                await community.refresh()
+                guard auth.user != nil else { return }
+                await auth.refreshNameIfMissing()
+                if !community.profileLoaded { await community.refresh() }
             }
             .modifier(MilestoneWatcher(showing: $milestone))
             .overlay { ChapterMomentOverlay(place: .home).ignoresSafeArea(edges: .top) }
@@ -418,11 +420,14 @@ struct HomeView: View {
         HomeGreeting.text(hour: Calendar.current.component(.hour, from: .now), name: greetingName)
     }
 
-    /// Signed in: the name the morning welcome uses, else the first word of
-    /// the person's name in groups. Signed out: no name.
+    /// Signed in: the name the morning welcome uses, else the first name
+    /// from the sign-in (Google, or Apple when shared), else the first word
+    /// of the person's name in groups. Signed out: no name.
     private var greetingName: String? {
-        guard auth.user != nil else { return nil }
-        return MorningWelcome.firstName(welcome.name) ?? MorningWelcome.firstName(community.profile?.displayName)
+        guard let user = auth.user else { return nil }
+        return MorningWelcome.firstName(welcome.name)
+            ?? MorningWelcome.firstName(user.name)
+            ?? MorningWelcome.firstName(community.profile?.displayName)
     }
 
     private var continueReading: some View {
