@@ -56,7 +56,7 @@ for key in SUPABASE_URL SUPABASE_ANON_KEY; do
     [ -n "$value" ] || fail "$key is empty in Config/Secrets.xcconfig." "Testers couldn't sign in or sync."
 done
 # App Review needs these; TestFlight doesn't, so only warn.
-for key in GENESIS_PRIVACY_URL GENESIS_SUPPORT_URL SENTRY_DSN; do
+for key in GENESIS_SUPPORT_URL SENTRY_DSN; do
     value=$(awk -F'= *' -v k="$key" '$1 ~ "^"k"[ \t]*$" { print $2 }' Config/Secrets.xcconfig | tr -d ' \t')
     [ -n "$value" ] || echo "   ⚠️  $key is empty in Config/Secrets.xcconfig: fine for TestFlight, but set it before submitting to App Review."
 done
