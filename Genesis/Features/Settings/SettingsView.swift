@@ -50,6 +50,14 @@ struct SettingsView: View {
                         } label: {
                             Label("Account", systemImage: "person.crop.circle")
                         }
+                        // Always reachable: subscribers find their plan and
+                        // Manage Subscription here (Home's card hides for them).
+                        Button {
+                            premium = .historicalContent
+                        } label: {
+                            Label("Versely Premium", systemImage: "sparkles")
+                        }
+                        .accessibilityIdentifier("settings.premium")
                         NavigationLink {
                             AppIconPickerView()
                         } label: {
