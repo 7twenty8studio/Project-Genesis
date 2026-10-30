@@ -55,6 +55,11 @@ for key in SUPABASE_URL SUPABASE_ANON_KEY; do
     value=$(awk -F'= *' -v k="$key" '$1 ~ "^"k"[ \t]*$" { print $2 }' Config/Secrets.xcconfig | tr -d ' \t')
     [ -n "$value" ] || fail "$key is empty in Config/Secrets.xcconfig." "Testers couldn't sign in or sync."
 done
+# Crash reports for launch; a TestFlight build works without, so only warn.
+for key in SENTRY_DSN; do
+    value=$(awk -F'= *' -v k="$key" '$1 ~ "^"k"[ \t]*$" { print $2 }' Config/Secrets.xcconfig | tr -d ' \t')
+    [ -n "$value" ] || echo "   ⚠️  $key is empty in Config/Secrets.xcconfig: fine for TestFlight, but set it before the App Store release."
+done
 command -v xcodegen >/dev/null || fail "XcodeGen isn't installed." "brew install xcodegen"
 if ! xcodebuild -showsdks 2>/dev/null | grep -q watchos; then
     fail "The watchOS platform isn't installed." "The Apple Watch app is part of every build: Xcode › Settings › Components › watchOS."

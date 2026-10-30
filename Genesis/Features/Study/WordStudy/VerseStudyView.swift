@@ -88,7 +88,7 @@ struct VerseStudyList: View {
                 } footer: {
                     VStack(alignment: .leading, spacing: 6) {
                         if WordStudyRepository.needsEnglishNote(bibleLanguage: library.premiumToolsTranslation.language) {
-                            Text("Definitions and commentary are in English for now. More languages are coming soon.")
+                            Text("Definitions and commentary are in English.")
                         }
                         Text(WordStudyRepository.attribution)
                     }

@@ -2,8 +2,8 @@ import SwiftUI
 import WatchConnectivity
 import WidgetKit
 
-/// Versely on Apple Watch: the verse of the day, sent from the iPhone
-/// (Premium). Verses are verbatim from the Bible on the phone.
+/// Versely on Apple Watch: the verse of the day, sent from the iPhone (free
+/// for everyone). Verses are verbatim from the Bible on the phone.
 @main
 struct GenesisWatchApp: App {
     @State private var store = WatchVerseStore()
@@ -84,12 +84,7 @@ struct TodayVerseView: View {
 
     @ViewBuilder
     private var content: some View {
-        if let payload = store.payload, !payload.isPremium {
-            message(
-                systemImage: "lock",
-                text: String(localized: "The verse of the day on Apple Watch is part of Versely Premium. Subscribe in Versely on your iPhone.")
-            )
-        } else if let payload = store.payload, let verse = payload.verse(on: .now) {
+        if let payload = store.payload, let verse = payload.verse(on: .now) {
             Text("Verse of the Day")
                 .font(.caption2.weight(.semibold))
                 .foregroundStyle(.secondary)

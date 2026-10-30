@@ -28,6 +28,7 @@ final class ChallengesUITests: GenesisUITestCase {
         let app = Genesis.launch()
         openTogether(app, name: "Jo")
         app.buttons["groups.join"].tap()
+        Genesis.agreeToGuidelines(in: app)
         let code = app.textFields["joinGroup.code"]
         XCTAssertTrue(code.waitForExistence(timeout: Genesis.timeout))
         code.typeText("grace-12345")
@@ -53,6 +54,7 @@ final class ChallengesUITests: GenesisUITestCase {
         let app = Genesis.launch()
         openTogether(app)
         app.buttons["groups.create"].tap()
+        Genesis.agreeToGuidelines(in: app)
         let name = app.textFields["groupForm.name"]
         XCTAssertTrue(name.waitForExistence(timeout: Genesis.timeout))
         name.tap()

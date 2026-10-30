@@ -6,10 +6,13 @@
 SUPABASE_URL =
 SUPABASE_ANON_KEY =
 SENTRY_DSN =
-// Links on the Premium screen (see PHASE3_SETUP.md). Terms default to Apple's
-// standard licence agreement; the privacy link is hidden until set.
+// Links on the Premium screen and in Settings (see PHASE3_SETUP.md). Terms
+// default to Apple's standard licence agreement. xcconfig treats "//" as a
+// comment, hence $(SLASH).
+SLASH = /
 GENESIS_TERMS_URL =
-GENESIS_PRIVACY_URL =
+GENESIS_PRIVACY_URL = https:$(SLASH)$(SLASH)www.7twenty8studio.com/versely/privacy
+GENESIS_SUPPORT_URL = https:$(SLASH)$(SLASH)www.7twenty8studio.com/versely/support
 
 // Entitlements (App Group for widgets, Sign in with Apple, push, iCloud) need a development
 // team. They stay off until Config/Signing.xcconfig exists; see APPLE_SETUP.md.

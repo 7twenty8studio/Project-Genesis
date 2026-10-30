@@ -100,6 +100,14 @@ enum Genesis {
         button.tap()
     }
 
+    /// Starting or joining a group asks once for the community guidelines
+    /// (App Store guideline 1.2); agree to them.
+    static func agreeToGuidelines(in app: XCUIApplication, file: StaticString = #filePath, line: UInt = #line) {
+        let agree = app.buttons["community.acceptGuidelines"]
+        XCTAssertTrue(agree.waitForExistence(timeout: timeout), "The guidelines come first", file: file, line: line)
+        agree.tap()
+    }
+
     /// iPadOS restores the last selected tab when an app relaunches, which can
     /// override where the test asked to start. Make sure the reader is showing.
     static func ensureReaderTab(_ app: XCUIApplication) {

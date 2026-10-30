@@ -45,7 +45,7 @@ struct OriginalParallelHeader: View {
                     .fixedSize(horizontal: false, vertical: true)
             }
             if WordStudyRepository.needsEnglishNote(bibleLanguage: translation.language) {
-                Text("Word meanings and grammar are in English for now. More languages are coming soon.")
+                Text("Word meanings and grammar are in English.")
                     .font(.caption)
                     .foregroundStyle(palette.secondaryText)
                     .fixedSize(horizontal: false, vertical: true)

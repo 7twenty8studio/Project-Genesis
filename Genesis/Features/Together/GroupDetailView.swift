@@ -23,6 +23,8 @@ struct GroupDetailView: View {
     @Environment(\.scenePhase) private var scenePhase
     @State private var model: GroupDetailModel?
     @State private var tab: Tab = .today
+    @State private var showsGuidelines = false
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         Group {
@@ -54,6 +56,17 @@ struct GroupDetailView: View {
         }
         .onChange(of: scenePhase) { _, phase in
             if phase == .active, let model { Task { await model.refresh() } }
+        }
+        // Someone already in a group who never agreed to the guidelines (they
+        // joined before groups asked) agrees before taking part; declining
+        // goes back to their groups.
+        .onChange(of: community.profile?.hasAcceptedTerms, initial: true) { _, accepted in
+            if accepted == false { showsGuidelines = true }
+        }
+        .sheet(isPresented: $showsGuidelines, onDismiss: {
+            if community.profile?.hasAcceptedTerms != true { dismiss() }
+        }) {
+            CommunityGuidelinesView(audience: .groups) {}
         }
     }
 

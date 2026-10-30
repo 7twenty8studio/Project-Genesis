@@ -17,7 +17,7 @@ configFiles:
 settings:
   base:
     SWIFT_VERSION: "6.0"
-    MARKETING_VERSION: "0.1.1"
+    MARKETING_VERSION: "1.0"
     CURRENT_PROJECT_VERSION: "1"
     TARGETED_DEVICE_FAMILY: "1,2"
     CODE_SIGN_STYLE: Automatic
@@ -146,6 +146,7 @@ targets:
         GenesisSentryDSN: $(SENTRY_DSN)
         GenesisTermsURL: $(GENESIS_TERMS_URL)
         GenesisPrivacyURL: $(GENESIS_PRIVACY_URL)
+        GenesisSupportURL: $(GENESIS_SUPPORT_URL)
         # The iCloud container for attachment files; empty (files stay on the
         # device) until Config/Signing.xcconfig turns on the entitlements.
         GenesisICloudContainer: $(GENESIS_ICLOUD_CONTAINER)

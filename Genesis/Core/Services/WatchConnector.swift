@@ -1,7 +1,7 @@
 import Foundation
 import WatchConnectivity
 
-/// Sends the verses of the day to the Versely app on Apple Watch (Premium).
+/// Sends the verses of the day to the Versely app on Apple Watch (free).
 /// The watch keeps the latest copy, so it works when the phone is away.
 @MainActor
 final class WatchConnector: NSObject {

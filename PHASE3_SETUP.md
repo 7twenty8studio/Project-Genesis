@@ -136,7 +136,7 @@ uploads there any more).
 | Handwritten notes and journal prompts | Journal extras: photos, voice recordings, church PDFs and Pencil pages on prayers and sermon notes; templates; PDF export |
 | Themes: Auto, Paper, Sepia, Slate, High Contrast, Night; night reading (switches to Night at bedtime) | |
 | 3 passage explanations a day (with a free account) | Reading insights and Year in Review stats |
-| Every widget but Memorize, at every size, in the Classic look; the verse widget with the verse of the day or a random verse | Widget styles: the verse widget's backgrounds and keepsakes; verses by theme (hope, peace, faith, strength, comfort, love, gratitude, guidance) and from your reading; widgets in your reading theme; the Memorize widget; listening on the Lock Screen; Apple Watch |
+| Every widget but Memorize, at every size, in the Classic look; the verse widget with the verse of the day or a random verse; the verse of the day on Apple Watch | Widget styles: the verse widget's backgrounds and keepsakes; verses by theme (hope, peace, faith, strength, comfort, love, gratitude, guidance) and from your reading; widgets in your reading theme; the Memorize widget; listening on the Lock Screen |
 | | Memorize Scripture with games, levels and streaks; ambient sounds |
 | | Illuminated first letters, three more book fonts, special app icons, chapter-complete ribbon |
 | | Morning welcome; Starlight for night reading |
