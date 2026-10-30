@@ -7,7 +7,8 @@ import Foundation
 struct WatchPayload: Codable, Equatable, Sendable {
     var generatedAt: Date
     var translation: String
-    /// Verse of the day on Apple Watch is part of Premium.
+    /// Whether the person has Premium. The verse of the day on Apple Watch is
+    /// free; kept so payloads already saved on a watch still decode.
     var isPremium: Bool
     var verses: [WidgetSnapshot.DailyVerse]
 

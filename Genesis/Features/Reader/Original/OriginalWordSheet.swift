@@ -50,7 +50,7 @@ struct OriginalWordSheet: View {
                     } footer: {
                         VStack(alignment: .leading, spacing: 6) {
                             if WordStudyRepository.needsEnglishNote(bibleLanguage: library.currentTranslation.language) {
-                                Text("Word meanings and grammar are in English for now. More languages are coming soon.")
+                                Text("Word meanings and grammar are in English.")
                             }
                             Text(WordStudyRepository.attribution)
                         }

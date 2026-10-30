@@ -61,8 +61,7 @@ struct WatchVerseView: View {
     @Environment(\.widgetFamily) private var family
 
     var body: some View {
-        let unlocked = entry.payload?.isPremium == true
-        let verse = unlocked ? entry.payload?.verse(on: entry.date) : nil
+        let verse = entry.payload?.verse(on: entry.date)
         Group {
             switch family {
             case .accessoryInline:
@@ -78,7 +77,7 @@ struct WatchVerseView: View {
                     Text(verse?.reference ?? String(localized: "Verse of the Day"))
                         .font(.headline)
                         .widgetAccentable()
-                    Text(verse?.text ?? (unlocked || entry.payload == nil ? String(localized: "Open Versely on your iPhone.") : String(localized: "Part of Versely Premium.")))
+                    Text(verse?.text ?? String(localized: "Open Versely on your iPhone."))
                         .font(.caption)
                         .lineLimit(3)
                 }

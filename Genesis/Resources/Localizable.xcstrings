@@ -1376,6 +1376,16 @@
         }
       }
     },
+    "About Versely": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acerca de Versely"
+          }
+        }
+      }
+    },
     "About the Greek": {
       "localizations": {
         "es": {
@@ -2659,6 +2669,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Antes de publicar, acepta mantener la comunidad como un lugar seguro y alentador para todos."
+          }
+        }
+      }
+    },
+    "Before you start or join a group, please agree to keep it a safe, encouraging place for everyone.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antes de crear un grupo o unirte a uno, acepta mantenerlo como un lugar seguro y alentador para todos."
           }
         }
       }
@@ -4415,12 +4435,12 @@
         }
       }
     },
-    "Definitions and commentary are in English for now. More languages are coming soon.": {
+    "Definitions and commentary are in English.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Por ahora, las definiciones y el comentario están en inglés. Pronto llegarán más idiomas."
+            "value": "Las definiciones y el comentario están en inglés."
           }
         }
       }
@@ -6616,6 +6636,16 @@
         }
       }
     },
+    "Group posts are seen by the group's members. You can block anyone and report any post, and the group's moderators review reports.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las publicaciones del grupo las ven sus miembros. Puedes bloquear a cualquiera y reportar cualquier publicación, y los moderadores del grupo revisan los reportes."
+          }
+        }
+      }
+    },
     "Group progress": {
       "localizations": {
         "es": {
@@ -6884,6 +6914,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hebreo: Códice de Leningrado"
+          }
+        }
+      }
+    },
+    "Help & Support": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayuda y soporte"
           }
         }
       }
@@ -18929,6 +18969,16 @@
         }
       }
     },
+    "Version %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versión %@"
+          }
+        }
+      }
+    },
     "View": {
       "localizations": {
         "es": {
@@ -20052,12 +20102,12 @@
         }
       }
     },
-    "Word meanings and grammar are in English for now. More languages are coming soon.": {
+    "Word meanings and grammar are in English.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Por ahora, los significados de las palabras y la gramática están en inglés. Pronto llegarán más idiomas."
+            "value": "Los significados de las palabras y la gramática están en inglés."
           }
         }
       }

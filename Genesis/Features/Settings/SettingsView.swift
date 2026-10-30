@@ -151,6 +151,31 @@ struct SettingsView: View {
                     .listRowBackground(palette.surface)
                     .foregroundStyle(palette.text)
 
+                    Section {
+                        if let support = AppConfiguration.current.supportURL {
+                            Link(destination: support) {
+                                Label("Help & Support", systemImage: "questionmark.circle")
+                            }
+                            .accessibilityIdentifier("settings.support")
+                        }
+                        if let privacy = AppConfiguration.current.privacyURL {
+                            Link(destination: privacy) {
+                                Label("Privacy Policy", systemImage: "hand.raised")
+                            }
+                            .accessibilityIdentifier("settings.privacy")
+                        }
+                        Link(destination: AppConfiguration.current.termsURL) {
+                            Label("Terms of Use", systemImage: "doc.text")
+                        }
+                        .accessibilityIdentifier("settings.terms")
+                    } header: {
+                        Text("About Versely")
+                    } footer: {
+                        Text("Version \(Self.version)")
+                    }
+                    .listRowBackground(palette.surface)
+                    .foregroundStyle(palette.text)
+
                     #if DEBUG
                     Section {
                         Toggle("Test as Premium", isOn: Binding(get: { entitlements.isTestingPremium }, set: { entitlements.isTestingPremium = $0 }))
@@ -211,5 +236,13 @@ struct SettingsView: View {
             .sheet(isPresented: $showsAmbient) { AmbientSoundsSheet() }
             .premiumSheet($premium)
         }
+    }
+
+    /// "1.0 (202611131200)": the version people see, then the build number.
+    private static var version: String {
+        let info = Bundle.main.infoDictionary
+        let short = info?["CFBundleShortVersionString"] as? String ?? ""
+        let build = info?["CFBundleVersion"] as? String ?? ""
+        return "\(short) (\(build))"
     }
 }

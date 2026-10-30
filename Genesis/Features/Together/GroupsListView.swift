@@ -7,6 +7,9 @@ struct GroupsListView: View {
     @Environment(ChallengeAutoTick.self) private var challengeAutoTick
     @Environment(\.palette) private var palette
     @State private var sheet: Sheet?
+    /// Start or Join waiting for the community guidelines, asked once first.
+    @State private var afterGuidelines: Sheet?
+    @State private var showsGuidelines = false
 
     enum Sheet: String, Identifiable {
         case create, join
@@ -16,19 +19,30 @@ struct GroupsListView: View {
     private var actions: some View {
         Section {
             Button {
-                sheet = .join
+                open(.join)
             } label: {
                 Label("Join with an Invite Code", systemImage: "ticket")
             }
             .accessibilityIdentifier("groups.join")
             Button {
-                sheet = .create
+                open(.create)
             } label: {
                 Label("Start a Group", systemImage: "plus.circle")
             }
             .accessibilityIdentifier("groups.create")
         }
         .listRowBackground(palette.surface)
+    }
+
+    /// Group posts follow the same guidelines as the community (App Store
+    /// guideline 1.2): they're agreed to once, before starting or joining.
+    private func open(_ next: Sheet) {
+        if community.profile?.hasAcceptedTerms == true {
+            sheet = next
+        } else {
+            afterGuidelines = next
+            showsGuidelines = true
+        }
     }
 
     var body: some View {
@@ -70,6 +84,12 @@ struct GroupsListView: View {
         // Joined or left a group: the reader's challenge ticks follow.
         .onChange(of: community.groups.map(\.id)) {
             Task { await challengeAutoTick.refresh(force: true) }
+        }
+        .sheet(isPresented: $showsGuidelines, onDismiss: {
+            sheet = community.profile?.hasAcceptedTerms == true ? afterGuidelines : nil
+            afterGuidelines = nil
+        }) {
+            CommunityGuidelinesView(audience: .groups) {}
         }
         .sheet(item: $sheet) { sheet in
             switch sheet {

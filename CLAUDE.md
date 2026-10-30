@@ -375,7 +375,8 @@ shares; README.md has the architecture.
   asks for (`.fullName`) and saves as full_name via `setFullName`; older
   saved sessions read it once through `refreshNameIfMissing`), else the first word of their group display
   name; signed out it has no name.
-- Apple Watch (verse of the day, Premium): GenesisWatch + GenesisWatchWidgets
+- Apple Watch (verse of the day, free since 1.0 so the watch app is never a
+  locked screen for App Review): GenesisWatch + GenesisWatchWidgets
   targets, fed by `WatchConnector` (WatchConnectivity application context,
   `WatchPayload`). Embedded in the iPhone app (a dependency of Genesis in
   project.yml), so every build needs the watchOS platform installed in Xcode;

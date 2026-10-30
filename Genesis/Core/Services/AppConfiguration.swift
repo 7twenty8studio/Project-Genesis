@@ -6,11 +6,14 @@ struct AppConfiguration: Sendable {
     let supabaseURL: URL?
     let supabaseAnonKey: String?
     let sentryDSN: String?
-    /// Shown on the Premium screen. Defaults to Apple's standard licence agreement.
+    /// Shown on the Premium screen and in Settings. Defaults to Apple's
+    /// standard licence agreement.
     let termsURL: URL
-    /// Your privacy policy (required by App Review before release); the link is
-    /// hidden until it's set.
+    /// Your privacy policy (required by App Review before release), on the
+    /// Premium screen and in Settings; the link is hidden until it's set.
     let privacyURL: URL?
+    /// A page with a way to contact you (Settings); hidden until it's set.
+    let supportURL: URL?
 
     static let appleStandardEULA = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!
 
@@ -28,5 +31,6 @@ struct AppConfiguration: Sendable {
         sentryDSN = value("GenesisSentryDSN")
         termsURL = value("GenesisTermsURL").flatMap(URL.init(string:)) ?? Self.appleStandardEULA
         privacyURL = value("GenesisPrivacyURL").flatMap(URL.init(string:))
+        supportURL = value("GenesisSupportURL").flatMap(URL.init(string:))
     }
 }

@@ -198,9 +198,13 @@ struct DisplayNameView: View {
     }
 }
 
-/// The community guidelines, accepted once before posting publicly (App Store
-/// guideline 1.2 asks for terms that rule out objectionable content).
+/// The community guidelines, accepted once before posting publicly or taking
+/// part in a group (App Store guideline 1.2 asks for terms that rule out
+/// objectionable content). One acceptance covers both.
 struct CommunityGuidelinesView: View {
+    enum Audience { case community, groups }
+
+    var audience: Audience = .community
     let onAccepted: () -> Void
 
     @Environment(CommunityStore.self) private var community
@@ -220,7 +224,9 @@ struct CommunityGuidelinesView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
-                    Text("Before you post, please agree to keep the community a safe, encouraging place for everyone.")
+                    Text(audience == .groups
+                        ? String(localized: "Before you start or join a group, please agree to keep it a safe, encouraging place for everyone.")
+                        : String(localized: "Before you post, please agree to keep the community a safe, encouraging place for everyone."))
                         .font(.subheadline)
                         .foregroundStyle(palette.secondaryText)
                     ForEach(Self.rules, id: \.1) { rule in
@@ -232,7 +238,9 @@ struct CommunityGuidelinesView: View {
                                 .foregroundStyle(palette.text)
                         }
                     }
-                    Text("Posts are public to everyone signed in to Versely. You can block anyone, and report any post or comment.")
+                    Text(audience == .groups
+                        ? String(localized: "Group posts are seen by the group's members. You can block anyone and report any post, and the group's moderators review reports.")
+                        : String(localized: "Posts are public to everyone signed in to Versely. You can block anyone, and report any post or comment."))
                         .font(.footnote)
                         .foregroundStyle(palette.secondaryText)
                     if let error = community.errorMessage {
