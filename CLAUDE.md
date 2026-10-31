@@ -185,8 +185,14 @@ shares; README.md has the architecture.
   its order (slot). `OriginalSource.greek(for:)` (GreekEdition.swift) is the
   one place that gives each Bible its edition: KJV → TR, RV1909 → TR
   (closest), WEB → Byzantine, ASV → Westcott-Hort (closest; the 1881
-  revisers' text). A Bible needs a line there *and* a versification map to
-  offer Original; a licensed Bible is one line each. The header names it
+  revisers' text), NIV → Nestle-Aland (closest; its map splits KJV
+  3 John 14 into 14–15). Every Bible offers Original, YouVersion ones
+  included (owner's decision, 31 October 2026; the Premium lock stays):
+  one without a line is shown beside Nestle-Aland, the header naming it
+  without claiming it as the source (`OriginalSource.parallelGreek`,
+  `isKnownSource`), and read with the KJV's numbering
+  (`OriginalVersification.parallelMap`); a licensed Bible that numbers
+  verses differently gets a map, and any Bible a line. The header names it
   ("Greek: Textus Receptus (the KJV's source)", "Hebrew: Leningrad Codex")
   with an About sheet (`OriginalSourceSheet`). Verses line up through
   `OriginalVersification` (KJV ids; the WEB's Romans doxology; the

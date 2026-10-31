@@ -56,32 +56,45 @@ struct VersificationMap: Sendable {
 /// verse by verse are listed: KJV and ASV share the KJV's numbering; the WEB
 /// prints Romans 16:25–27 at 14:24–26; the Reina-Valera 1909 (Spanish
 /// numbering) differs in 44 places, listed in VersificationTables.swift
-/// (Tools/BibleData/align_versification.py). Other Bibles show no original
-/// text rather than risk showing the wrong verse.
+/// (Tools/BibleData/align_versification.py); the NIV (a YouVersion Bible,
+/// read beside the Original like any parallel Bible, owner's decision of
+/// 31 October 2026) keeps English numbering but splits 3 John 14 in two.
+/// Every other Bible offers the Original too (owner's decision of
+/// 31 October 2026) and is read as numbering its verses like the KJV
+/// (`parallelMap`), which English Bibles almost always do.
 enum OriginalVersification {
     static func map(for translationID: String) -> VersificationMap? {
         switch translationID {
         case "KJV", "ASV": VersificationMap.kjv
         case "WEB": web
         case "RV1909": reinaValera1909
+        case "NIV": niv
         default: nil
         }
     }
 
-    /// A Bible offers the original when its verses are lined up here and
-    /// its Greek edition is known (`OriginalSource`).
-    static func supports(_ translation: Translation) -> Bool {
-        map(for: translation.id) != nil && OriginalSource.greek(for: translation.id) != nil
+    /// The verse map for the Original parallel: the checked one where there
+    /// is one, otherwise the KJV's numbering. Every Bible offers the Original.
+    static func parallelMap(for translation: Translation) -> VersificationMap {
+        map(for: translation.id) ?? .kjv
     }
 
     private static let web = VersificationMap(exceptions: webExceptions)
     private static let reinaValera1909 = VersificationMap(exceptions: reinaValera1909Exceptions)
+    private static let niv = VersificationMap(exceptions: nivExceptions)
 
     /// The WEB keeps the doxology (KJV Romans 16:25–27) at 14:24–26 and
     /// leaves 16:25 empty.
     static let webExceptions: [VerseAlignment] =
         shift(book: 45, chapter: 14, verses: 24...26, kjvChapter: 16, by: 1)
         + [VerseAlignment(verses: [VerseID(book: 45, chapter: 16, verse: 25)], kjv: [])]
+
+    /// The NIV numbers verses as the KJV does, apart from 3 John, whose last
+    /// verse it divides into 14 and 15 (as the Greek does). Verses it leaves
+    /// out (Matthew 17:21 and others) aren't in its chapters, so they get
+    /// no row.
+    static let nivExceptions: [VerseAlignment] =
+        group(book: 64, [(1, 14), (1, 15)], kjv: [(1, 14)])
 
     // MARK: Building tables
 

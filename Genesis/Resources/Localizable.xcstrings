@@ -6505,6 +6505,16 @@
         }
       }
     },
+    "Greek: %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Griego: %@"
+          }
+        }
+      }
+    },
     "Greek: %@ (closest to the %@'s source)": {
       "localizations": {
         "es": {
@@ -11037,6 +11047,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Palabras originales"
+          }
+        }
+      }
+    },
+    "Original with every Bible": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Original con todas las Biblias"
           }
         }
       }
@@ -16835,6 +16855,16 @@
         }
       }
     },
+    "The Hebrew and Greek beside any Bible": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El hebreo y el griego junto a cualquier Biblia"
+          }
+        }
+      }
+    },
     "The Hebrew and Greek words behind every verse with Strong's definitions, fuller lexicons, and classic commentaries from Matthew Henry, Spurgeon, Calvin and more.": {
       "localizations": {
         "es": {
@@ -18839,6 +18869,16 @@
         }
       }
     },
+    "Versely doesn't know which Greek text the %@ was translated from, so it shows this one.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versely no sabe de qué texto griego se tradujo la %@, así que muestra este."
+          }
+        }
+      }
+    },
     "Versely en español": {
       "localizations": {
         "es": {
@@ -19711,6 +19751,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Qué palabras de tu lectura te gustaría llevar contigo mañana?"
+          }
+        }
+      }
+    },
+    "Whichever Bible you read, including the NIV, choose Original (Hebrew & Greek) in Read in Parallel to see the Hebrew or Greek next to it, verse by verse.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leas la Biblia que leas, incluida la NIV, elige Original (hebreo y griego) en Leer en paralelo para ver el hebreo o el griego a su lado, versículo por versículo."
           }
         }
       }
