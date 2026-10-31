@@ -11041,6 +11041,16 @@
         }
       }
     },
+    "Original with the NIV": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Original con la NIV"
+          }
+        }
+      }
+    },
     "Owner": {
       "comment": "Group role: the one person who owns a group",
       "localizations": {
@@ -13090,6 +13100,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ajustes de lectura"
+          }
+        }
+      }
+    },
+    "Reading the NIV, choose Original (Hebrew & Greek) in Read in Parallel to see the Hebrew or the Nestle-Aland Greek next to it, verse by verse.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Al leer la NIV, elige Original (hebreo y griego) en Leer en paralelo para ver el hebreo o el griego de Nestle-Aland a su lado, versículo por versículo."
           }
         }
       }
@@ -16831,6 +16851,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Peticiones de oración del grupo"
+          }
+        }
+      }
+    },
+    "The Hebrew and Greek beside the NIV": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El hebreo y el griego junto a la NIV"
           }
         }
       }

@@ -148,6 +148,8 @@ enum OriginalSource {
         case "WEB": Greek(edition: .byzantine, isExact: true)
         // The ASV followed the English revisers' Greek of 1881, closest to Westcott-Hort.
         case "ASV": Greek(edition: .westcottHort, isExact: false)
+        // The NIV's translators worked from an eclectic text, closest to Nestle-Aland.
+        case "NIV": Greek(edition: .nestleAland, isExact: false)
         default: nil
         }
     }

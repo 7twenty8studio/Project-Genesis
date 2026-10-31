@@ -38,9 +38,23 @@ struct OriginalParallelTests {
         let web = OriginalVersification.supports(.web)
         let asv = OriginalVersification.supports(.asv)
         let reinaValera = OriginalVersification.map(for: "RV1909") != nil
+        let niv = OriginalVersification.map(for: "NIV") != nil && OriginalSource.greek(for: "NIV") != nil
         let unchecked = OriginalVersification.map(for: "BSB") == nil
-        #expect(kjv && web && asv && reinaValera)
+        #expect(kjv && web && asv && reinaValera && niv)
         #expect(unchecked, "A Bible whose numbering hasn't been checked shows no original text")
+    }
+
+    /// The NIV (a YouVersion Bible) reads beside the Original like any
+    /// parallel Bible; it splits KJV 3 John 14 into 14 and 15.
+    @Test func nivLinesUpWithTheKJV() throws {
+        let map = try #require(OriginalVersification.map(for: "NIV"))
+        let john = map.alignment(of: verse(43, 3, 16))
+        let fourteen = map.alignment(of: verse(64, 1, 14))
+        let fifteen = map.alignment(of: verse(64, 1, 15))
+        #expect(john == VerseAlignment(verses: [verse(43, 3, 16)], kjv: [verse(43, 3, 16)]))
+        #expect(fourteen == fifteen)
+        #expect(fourteen.kjv == [verse(64, 1, 14)])
+        #expect(map.alignments(for: [verse(64, 1, 13), verse(64, 1, 14), verse(64, 1, 15)]).count == 2)
     }
 
     // MARK: Alignment
@@ -211,12 +225,14 @@ struct OriginalParallelTests {
         let web = Translation.web.greekSource
         let asv = Translation.asv.greekSource
         let reinaValera = OriginalSource.greek(for: "RV1909")
+        let niv = OriginalSource.greek(for: "NIV")
         let unknown = OriginalSource.greek(for: "BSB")
         let unknownOffered = OriginalVersification.supports(Translation(id: "BSB", name: "", year: "", license: "", summary: ""))
         #expect(kjv == OriginalSource.Greek(edition: .textusReceptus, isExact: true))
         #expect(web == OriginalSource.Greek(edition: .byzantine, isExact: true))
         #expect(asv == OriginalSource.Greek(edition: .westcottHort, isExact: false))
         #expect(reinaValera == OriginalSource.Greek(edition: .textusReceptus, isExact: false))
+        #expect(niv == OriginalSource.Greek(edition: .nestleAland, isExact: false))
         #expect(unknown == nil)
         #expect(!unknownOffered)
     }

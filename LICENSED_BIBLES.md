@@ -204,8 +204,11 @@ These are the terms YouVersion agreed with us in writing (email thread
   - the morning welcome's verse
   - word study (`VerseStudyView`) and lexicon entries' verses
   - passages in journal PDF exports
-  - the Original (Hebrew & Greek) parallel isn't offered for YVP Bibles
-    (no versification map)
+  - the Original (Hebrew & Greek) parallel is the exception (owner's
+    decision, 31 October 2026): the NIV reads beside the Hebrew and
+    Nestle-Aland Greek like any parallel Bible, its text untouched and
+    only read (as with widgets). Other YVP Bibles have no
+    versification map yet, so they don't offer it.
 
   Free features (the reader, search, plans, notes, highlights,
   notifications, sharing, groups) use the YVP Bible as usual.

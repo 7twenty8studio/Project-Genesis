@@ -27,7 +27,7 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar, verseWallpapers, widgetBackgrounds, keepsakeWidgets, widgetPhotoFraming, movingSeasonsAndYourBible, newLook, freeWidgets, languageChoice, ambientLockScreen, groupNamesAndRoles, twoPageSpread]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar, verseWallpapers, widgetBackgrounds, keepsakeWidgets, widgetPhotoFraming, movingSeasonsAndYourBible, newLook, freeWidgets, languageChoice, ambientLockScreen, groupNamesAndRoles, twoPageSpread, originalBesideNIV]
 
     static let notifications = WhatsNewAnnouncement(
         id: "notifications-your-way",
@@ -49,6 +49,19 @@ enum WhatsNewCatalog {
                 detail: String(localized: "Choose each kind and its time, or turn them all off, in Settings › Notifications.")
             ),
         ]
+    )
+
+    static let originalBesideNIV = WhatsNewAnnouncement(
+        id: "original-beside-niv",
+        title: String(localized: "The Hebrew and Greek beside the NIV"),
+        items: [
+            WhatsNewItem(
+                systemImage: "character.book.closed",
+                title: String(localized: "Original with the NIV"),
+                detail: String(localized: "Reading the NIV, choose Original (Hebrew & Greek) in Read in Parallel to see the Hebrew or the Nestle-Aland Greek next to it, verse by verse.")
+            ),
+        ],
+        feature: .wordStudy
     )
 
     static let twoPageSpread = WhatsNewAnnouncement(
