@@ -92,7 +92,7 @@ enum ReminderScheduler {
                 guard let verse = try? repository.verse(id) else { continue }
                 input.dailyVerses[Timestamp.dayString(from: day, calendar: calendar)] = NotificationInput.VerseText(
                     reference: "\(PassageReference(verse: id).description(in: translation.language)) (\(translation.abbreviation))",
-                    text: verse.plainText,
+                    text: verse.displayText,
                     verse: id.rawValue
                 )
             }

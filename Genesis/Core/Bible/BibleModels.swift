@@ -16,6 +16,11 @@ struct Verse: Identifiable, Hashable, Sendable {
     /// Text on a single line, for copying, sharing and search results.
     var plainText: String { text.replacingOccurrences(of: "\n", with: " ") }
 
+    /// `plainText` for showing on screen: kept left to right when a Latin
+    /// verse opens with a Hebrew letter (Psalm 119 in the KJV and ASV).
+    /// Never for copying, sharing, games or the assistant.
+    var displayText: String { ScriptureDirection.display(plainText) }
+
     /// The number printed before the verse: "16", or "16–17" for joined verses.
     var numberLabel: String {
         guard let lastVerse, lastVerse > id.verse else { return "\(id.verse)" }

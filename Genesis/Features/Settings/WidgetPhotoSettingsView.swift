@@ -102,7 +102,7 @@ struct WidgetPhotoSettingsView: View {
                     // Today's verse as the widget has it (verbatim), if the
                     // app has written it yet.
                     if let passage = WidgetSnapshot.load()?.dailyPassage(on: .now) {
-                        Text(passage.text)
+                        Text(ScriptureDirection.display(passage.text))
                             .font(.system(.body, design: .serif))
                             .foregroundStyle(.white)
                             .lineLimit(3)

@@ -70,7 +70,7 @@ struct VerseWidgetContent: View {
     }
 
     private func lockScreenVerse(_ style: Font.TextStyle, lines: Int?) -> some View {
-        Text(passage?.text ?? "")
+        Text(ScriptureDirection.display(passage?.text ?? ""))
             .font(.system(style, design: .serif))
             .lineLimit(lines)
             .fixedSize(horizontal: false, vertical: lines == nil)
@@ -98,7 +98,7 @@ struct VerseWidgetContent: View {
             }
             .padding(.trailing, stampRoom)
             // The verse gets the room first, and shrinks rather than cuts off.
-            Text(passage?.text ?? "")
+            Text(ScriptureDirection.display(passage?.text ?? ""))
                 .font(.system(textStyle, design: .serif))
                 .lineSpacing(family == .systemSmall ? 1 : 2)
                 .foregroundStyle(ink.text)
@@ -124,7 +124,7 @@ struct VerseWidgetContent: View {
     private var homeScreen: some View {
         VStack(alignment: .leading, spacing: family == .systemSmall ? 6 : 10) {
             Eyebrow(text: title, color: ink.accent)
-            Text(passage?.text ?? "")
+            Text(ScriptureDirection.display(passage?.text ?? ""))
                 .font(.system(textStyle, design: .serif))
                 .lineSpacing(family == .systemSmall ? 1 : 3)
                 .foregroundStyle(ink.text)

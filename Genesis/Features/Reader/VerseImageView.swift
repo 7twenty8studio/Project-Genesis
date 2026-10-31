@@ -576,7 +576,7 @@ struct VerseImageCanvas: View {
                     .font(options.font.font(size: 160))
                     .foregroundStyle(ink.opacity(0.45))
                     .frame(height: 70, alignment: .top)
-                Text(card.text)
+                Text(ScriptureDirection.display(card.text))
                     .font(options.font.font(size: textSize))
                     .foregroundStyle(ink)
                     .multilineTextAlignment(options.centered ? .center : .leading)
