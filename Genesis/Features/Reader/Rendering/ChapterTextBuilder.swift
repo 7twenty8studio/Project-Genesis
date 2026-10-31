@@ -388,6 +388,11 @@ enum ChapterTextBuilder {
         paragraph.headIndent = headIndent
         paragraph.hyphenationFactor = 0.15
         paragraph.lineBreakStrategy = .standard
+        // The Bible's own direction, not the first letter's: the KJV opens
+        // Psalm 119's stanzas with a Hebrew letter, which would otherwise
+        // set the whole paragraph right to left (ScriptureDirection).
+        paragraph.baseWritingDirection = Locale.Language(identifier: style.bibleLanguage).characterDirection == .rightToLeft
+            ? .rightToLeft : .leftToRight
         return paragraph
     }
 

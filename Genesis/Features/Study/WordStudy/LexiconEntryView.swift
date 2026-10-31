@@ -130,7 +130,7 @@ struct LexiconEntryView: View {
                         Text(PassageReference(verse: verse.id).description(in: library.premiumToolsTranslation.language))
                             .font(.caption.weight(.semibold))
                             .foregroundStyle(palette.accent)
-                        Text(verse.plainText)
+                        Text(verse.displayText)
                             .font(.system(.subheadline, design: .serif))
                             .foregroundStyle(palette.text)
                     }

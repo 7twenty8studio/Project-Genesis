@@ -802,6 +802,10 @@ shares; README.md has the architecture.
 - MVVM, composition, one responsibility per type, small view files.
 - SwiftUI first; UIKit only for the TextKit reader text and page curl.
 - Verses are addressed by `VerseID` (book*1_000_000 + chapter*1_000 + verse).
+- Show verse text with `Verse.displayText` / `ScriptureDirection.display` (an
+  invisible left-to-right mark when a Latin verse opens with a Hebrew letter,
+  as Psalm 119 does in the KJV and ASV; the reader sets the paragraph
+  direction instead). Copies, shares, games and the AI keep `plainText`.
 - Swift Testing for unit tests of business logic.
 - Motion: use `Motion` (Genesis/DesignSystem/Motion.swift) and its
   transitions (`.rise`, `.drop`, `.nextCard`): strong ease-out, under 0.3 s

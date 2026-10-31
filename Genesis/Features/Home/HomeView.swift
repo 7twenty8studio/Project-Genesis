@@ -451,7 +451,7 @@ struct HomeView: View {
                     .font(.system(.title2, design: .serif, weight: .semibold))
                     .foregroundStyle(palette.text)
                 if let verse {
-                    Text(verse.plainText)
+                    Text(verse.displayText)
                         .font(settings.preferences.font.font(size: 16))
                         .foregroundStyle(palette.secondaryText)
                         .lineLimit(2)
@@ -475,7 +475,7 @@ struct HomeView: View {
                 router.read(id)
             } label: {
                 VStack(alignment: .leading, spacing: 14) {
-                    Text(verse?.plainText ?? "")
+                    Text(verse?.displayText ?? "")
                         .font(settings.preferences.font.font(size: 21))
                         .lineSpacing(6)
                         .foregroundStyle(palette.text)
@@ -573,7 +573,10 @@ struct HomeView: View {
                             Text(translation.abbreviation)
                                 .font(.system(.subheadline, design: .serif, weight: .bold))
                                 .foregroundStyle(palette.accent)
-                                .frame(width: 44, alignment: .leading)
+                                // One line: "RV1909" wrapped to "RV19 / 09".
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.75)
+                                .frame(width: 56, alignment: .leading)
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(translation.name)
                                     .foregroundStyle(palette.text)
