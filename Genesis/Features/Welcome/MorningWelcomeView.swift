@@ -106,7 +106,7 @@ struct MorningWelcomeView: View {
     private var verse: some View {
         let id = DailyVerse.verse()
         let translation = library.premiumToolsTranslation
-        let text = (try? library.repository(for: translation).verse(id))?.plainText ?? ""
+        let text = (try? library.repository(for: translation).verse(id))?.displayText ?? ""
         let reference = PassageReference(verse: id).description(in: translation.language)
         return VStack(alignment: .leading, spacing: 12) {
             Text(text)

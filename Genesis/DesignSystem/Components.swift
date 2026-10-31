@@ -103,13 +103,17 @@ struct VerseSnippet: View {
 
     private var attributedText: AttributedString {
         var attributed = AttributedString(text)
-        guard !terms.isEmpty else { return attributed }
         for range in SearchHighlighter.matchRanges(in: text, terms: terms) {
             let lower = AttributedString.Index(range.lowerBound, within: attributed)
             let upper = AttributedString.Index(range.upperBound, within: attributed)
             guard let lower, let upper else { continue }
             attributed[lower..<upper].backgroundColor = palette.accent.opacity(0.22)
             attributed[lower..<upper].font = settings.preferences.font.font(size: 17, weight: .semibold)
+        }
+        // Kept left to right when the verse opens with a Hebrew letter
+        // (Psalm 119 in the KJV); added after the search ranges are placed.
+        if ScriptureDirection.needsMark(text) {
+            attributed.insert(AttributedString("\u{200E}"), at: attributed.startIndex)
         }
         return attributed
     }
