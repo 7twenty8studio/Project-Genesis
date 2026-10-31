@@ -110,8 +110,9 @@ Claude and it'll add a per-Bible switch for it.
 5. In the SQL Editor, run `build/bibles/<ID>-1.sql`. The Bible then appears
    under Library › Bibles.
 6. Ask Claude for any follow-ups:
-   - **Original Hebrew and Greek parallel view:** a versification map and an
-     `OriginalSource.greek(for:)` line.
+   - **Original Hebrew and Greek parallel view:** offered for every Bible;
+     add an `OriginalSource.greek(for:)` line naming its Greek, and a
+     versification map if it numbers verses differently from the KJV.
    - **What's New:** an announcement.
    - **Other:** anything the licence requires.
 
@@ -205,10 +206,10 @@ These are the terms YouVersion agreed with us in writing (email thread
   - word study (`VerseStudyView`) and lexicon entries' verses
   - passages in journal PDF exports
   - the Original (Hebrew & Greek) parallel is the exception (owner's
-    decision, 31 October 2026): the NIV reads beside the Hebrew and
-    Nestle-Aland Greek like any parallel Bible, its text untouched and
-    only read (as with widgets). Other YVP Bibles have no
-    versification map yet, so they don't offer it.
+    decision, 31 October 2026): every Bible, YVP included, reads beside
+    the Hebrew and Greek like any parallel Bible, its text untouched and
+    only read (as with widgets). The Original stays Premium; listening
+    stays off for YVP Bibles.
 
   Free features (the reader, search, plans, notes, highlights,
   notifications, sharing, groups) use the YVP Bible as usual.

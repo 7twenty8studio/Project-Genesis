@@ -125,17 +125,28 @@ struct GreekEditions: OptionSet, Hashable, Sendable {
     }
 }
 
-/// The Greek each Bible was translated from: one line per Bible. A Bible
-/// listed here (and with its verse numbers lined up in
-/// `OriginalVersification`) offers "Original (Hebrew & Greek)"; one that
-/// isn't doesn't. Adding a licensed Bible means a line here and its
-/// versification map.
+/// The Greek each Bible was translated from: one line per Bible. Every
+/// Bible offers "Original (Hebrew & Greek)"; one listed here is shown
+/// beside its own (or closest) edition, any other beside Nestle-Aland
+/// (`parallelGreek`). A licensed Bible gets a line here and, where it
+/// numbers verses differently, a versification map.
 enum OriginalSource {
     struct Greek: Hashable, Sendable {
         let edition: GreekEdition
         /// True when the Bible was translated from this very edition; false
         /// when it's the closest edition the app has.
         let isExact: Bool
+        /// False when the app doesn't know which Greek the Bible was
+        /// translated from, so the header names the edition without
+        /// claiming it's the Bible's source.
+        var isKnownSource = true
+    }
+
+    /// The Greek shown beside a Bible in the Original parallel: its own
+    /// source where it's listed, otherwise Nestle-Aland, the text most
+    /// modern Bibles are translated from (not claimed as this Bible's).
+    static func parallelGreek(for translation: Translation) -> Greek {
+        greek(for: translation.id) ?? Greek(edition: .nestleAland, isExact: false, isKnownSource: false)
     }
 
     static func greek(for translationID: String) -> Greek? {

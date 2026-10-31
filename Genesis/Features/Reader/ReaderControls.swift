@@ -184,10 +184,10 @@ struct ReaderControls: View {
         .accessibilityIdentifier("reader.translation")
     }
 
-    /// The Hebrew and Greek can sit beside Bibles whose verse numbers are
-    /// lined up with the word data (`OriginalVersification`).
+    /// The Hebrew and Greek can sit beside every Bible (lined up by
+    /// `OriginalVersification.parallelMap`); Premium is checked inside.
     private var offersOriginal: Bool {
-        features.isOn(.wordStudy) && wordStudy != nil && OriginalVersification.supports(reader.translation)
+        features.isOn(.wordStudy) && wordStudy != nil
     }
 
     private var showsOriginal: Bool {

@@ -33,15 +33,14 @@ struct OriginalParallelTests {
 
     // MARK: Which Bibles
 
-    @Test func onlyCheckedBiblesOfferTheOriginal() {
-        let kjv = OriginalVersification.supports(.kjv)
-        let web = OriginalVersification.supports(.web)
-        let asv = OriginalVersification.supports(.asv)
-        let reinaValera = OriginalVersification.map(for: "RV1909") != nil
-        let niv = OriginalVersification.map(for: "NIV") != nil && OriginalSource.greek(for: "NIV") != nil
-        let unchecked = OriginalVersification.map(for: "BSB") == nil
-        #expect(kjv && web && asv && reinaValera && niv)
-        #expect(unchecked, "A Bible whose numbering hasn't been checked shows no original text")
+    @Test func everyBibleOffersTheOriginal() {
+        let checked = ["KJV", "ASV", "WEB", "RV1909", "NIV"].allSatisfy { OriginalVersification.map(for: $0) != nil }
+        let other = Translation(id: "BSB", name: "", year: "", license: "", summary: "")
+        let otherMap = OriginalVersification.parallelMap(for: other)
+        let john = VerseID(book: 43, chapter: 3, verse: 16)
+        #expect(checked)
+        #expect(OriginalVersification.map(for: "BSB") == nil, "Word study keeps to Bibles whose numbering was checked")
+        #expect(otherMap.alignment(of: john) == VerseAlignment(verses: [john], kjv: [john]), "Any other Bible reads with the KJV's numbering")
     }
 
     /// The NIV (a YouVersion Bible) reads beside the Original like any
@@ -227,14 +226,16 @@ struct OriginalParallelTests {
         let reinaValera = OriginalSource.greek(for: "RV1909")
         let niv = OriginalSource.greek(for: "NIV")
         let unknown = OriginalSource.greek(for: "BSB")
-        let unknownOffered = OriginalVersification.supports(Translation(id: "BSB", name: "", year: "", license: "", summary: ""))
+        let unknownShown = OriginalSource.parallelGreek(for: Translation(id: "BSB", name: "", year: "", license: "", summary: ""))
+        let kjvShown = OriginalSource.parallelGreek(for: .kjv)
         #expect(kjv == OriginalSource.Greek(edition: .textusReceptus, isExact: true))
         #expect(web == OriginalSource.Greek(edition: .byzantine, isExact: true))
         #expect(asv == OriginalSource.Greek(edition: .westcottHort, isExact: false))
         #expect(reinaValera == OriginalSource.Greek(edition: .textusReceptus, isExact: false))
         #expect(niv == OriginalSource.Greek(edition: .nestleAland, isExact: false))
         #expect(unknown == nil)
-        #expect(!unknownOffered)
+        #expect(unknownShown == OriginalSource.Greek(edition: .nestleAland, isExact: false, isKnownSource: false))
+        #expect(kjvShown == kjv)
     }
 
     @Test func comparisonsCrossTheTwoFamilies() {

@@ -2240,7 +2240,9 @@
  "Use the name button at the top of Together to change the name people see in your groups.": "Usa el botón de nombre en la parte superior de Juntos para cambiar el nombre que ven en tus grupos.",
  "New moderators are ready at once": "Los nuevos moderadores están listos al instante",
  "When you're made a moderator, your tools appear the next time the group refreshes, with no need to close Versely.": "Cuando te nombran moderador, tus herramientas aparecen la próxima vez que el grupo se actualiza, sin tener que cerrar Versely.",
- "The Hebrew and Greek beside the NIV": "El hebreo y el griego junto a la NIV",
- "Original with the NIV": "Original con la NIV",
- "Reading the NIV, choose Original (Hebrew & Greek) in Read in Parallel to see the Hebrew or the Nestle-Aland Greek next to it, verse by verse.": "Al leer la NIV, elige Original (hebreo y griego) en Leer en paralelo para ver el hebreo o el griego de Nestle-Aland a su lado, versículo por versículo."
+ "The Hebrew and Greek beside any Bible": "El hebreo y el griego junto a cualquier Biblia",
+ "Original with every Bible": "Original con todas las Biblias",
+ "Whichever Bible you read, including the NIV, choose Original (Hebrew & Greek) in Read in Parallel to see the Hebrew or Greek next to it, verse by verse.": "Leas la Biblia que leas, incluida la NIV, elige Original (hebreo y griego) en Leer en paralelo para ver el hebreo o el griego a su lado, versículo por versículo.",
+ "Greek: %@": "Griego: %@",
+ "Versely doesn't know which Greek text the %@ was translated from, so it shows this one.": "Versely no sabe de qué texto griego se tradujo la %@, así que muestra este."
 }

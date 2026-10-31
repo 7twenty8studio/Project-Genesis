@@ -264,13 +264,12 @@ struct ReaderView: View {
                 topInset: layout.safeArea.top + 64,
                 bottomInset: layout.safeArea.bottom + 60
             )
-        } else if showsOriginal, let wordStudy, let map = OriginalVersification.map(for: reader.translation.id),
-                  let greek = reader.translation.greekSource {
+        } else if showsOriginal, let wordStudy {
             OriginalParallelView(
                 chapterID: reader.chapterID,
                 translation: reader.translation,
-                map: map,
-                greek: greek,
+                map: OriginalVersification.parallelMap(for: reader.translation),
+                greek: OriginalSource.parallelGreek(for: reader.translation),
                 wordStudy: wordStudy,
                 topInset: layout.safeArea.top + 64,
                 bottomInset: layout.safeArea.bottom + 60
@@ -463,7 +462,7 @@ struct ReaderView: View {
     /// The Hebrew and Greek beside the Bible being read, when chosen as the
     /// parallel Bible and the word data lines up with it.
     private var showsOriginal: Bool {
-        reader.readsOriginalInParallel && features.isOn(.wordStudy) && wordStudy != nil && OriginalVersification.supports(reader.translation)
+        reader.readsOriginalInParallel && features.isOn(.wordStudy) && wordStudy != nil
     }
 
     /// Word Study in the selection bar. The word data follows the KJV's verse
