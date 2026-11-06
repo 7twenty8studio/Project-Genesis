@@ -307,8 +307,9 @@ shares; README.md has the architecture.
   `WidgetArtStyle` for one widget's own look; Classic is free; Paper,
   the seasons, Night and Your Photo are Premium, Classic with a Premium tag otherwise).
   The app draws the painted ones once into the App Group
-  (`WidgetArtWriter.drawIfNeeded` from RootView's widget refresh; bump
-  `WidgetArt.version` to redraw; seasonal art kept to the edges) and keeps
+  (`WidgetArtWriter.drawIfNeeded` from RootView's widget refresh, a
+  moment after launch and one picture at a time so it never freezes the
+  app; bump `WidgetArt.version` to redraw; seasonal art kept to the edges) and keeps
   the person's photo there (Settings › Widget Photo,
   `WidgetPhotoSettingsView`: ≤ 2400 px JPEG, no metadata; Adjust Photo,
   `WidgetPhotoFramingView`, drags and pinches it per widget size, the pure
