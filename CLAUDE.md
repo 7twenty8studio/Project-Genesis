@@ -772,6 +772,10 @@ shares; README.md has the architecture.
 - The reader's side panel (notes, plans, prayer) shows only when the text
   keeps 440 pt beside it (iPad; the open Duo held sideways). Reader controls
   fall back to tighter buttons, then a "More" menu, rather than squeezing.
+- Highlights (and the verse read aloud) are drawn by `HighlightLayoutManager`
+  (ReaderTextView's TextKit 1 stack) from `.backgroundColor`: one rounded band
+  per line, as long as that line's words and as tall as the body text, so the
+  page shows between lines. Don't go back to TextKit's whole-line fill.
 - Reader taps (`ReaderTap`, pure, Swift Testing): a tap on a verse selects
   it (long press too); in paged reading the page's very edge (margin + 10
   pt, 32 pt to 15% of the width) turns the page; anything else (running
