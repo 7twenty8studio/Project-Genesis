@@ -88,7 +88,7 @@ struct MemoriseChallengeSections: View {
     private var passageText: String? {
         guard let start = challenge.passageStart, let end = challenge.passageEnd else { return nil }
         let verses = (try? library.current.verses(from: start, through: end)) ?? []
-        return verses.isEmpty ? nil : verses.map(\.plainText).joined(separator: " ")
+        return verses.isEmpty ? nil : verses.map(\.displayText).joined(separator: " ")
     }
 
     var body: some View {

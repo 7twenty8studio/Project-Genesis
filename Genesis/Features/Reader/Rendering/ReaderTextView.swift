@@ -23,7 +23,7 @@ final class ReaderTextView: UITextView {
     init(scrollable: Bool) {
         // Build an explicit TextKit 1 stack so layout matches `Paginator` exactly.
         let storage = NSTextStorage()
-        let layout = NSLayoutManager()
+        let layout = HighlightLayoutManager()
         storage.addLayoutManager(layout)
         let container = NSTextContainer(size: CGSize(width: 0, height: CGFloat.greatestFiniteMagnitude))
         container.widthTracksTextView = true

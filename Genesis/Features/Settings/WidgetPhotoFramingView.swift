@@ -141,7 +141,7 @@ struct WidgetPhotoFramingView: View {
                 .kerning(1)
                 .foregroundStyle(Color(uiColor: UIColor(hex: 0xE8D3A2)))
             if let passage = WidgetSnapshot.load()?.dailyPassage(on: .now) {
-                Text(passage.text)
+                Text(ScriptureDirection.display(passage.text))
                     .font(.system(shape == .small ? .footnote : .body, design: .serif))
                     .foregroundStyle(.white)
                     .lineLimit(shape == .large ? 8 : 3)

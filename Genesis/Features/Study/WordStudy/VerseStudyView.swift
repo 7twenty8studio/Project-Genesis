@@ -63,7 +63,7 @@ struct VerseStudyList: View {
                 Section {
                     // A YouVersion Bible isn't shown in Premium features: a
                     // public-domain Bible in its language stands in.
-                    Text((try? library.premiumToolsRepository.verse(verse))?.plainText ?? "")
+                    Text((try? library.premiumToolsRepository.verse(verse))?.displayText ?? "")
                         .font(.system(.body, design: .serif))
                         .foregroundStyle(palette.text)
                         .accessibilityIdentifier("wordStudy.verse")

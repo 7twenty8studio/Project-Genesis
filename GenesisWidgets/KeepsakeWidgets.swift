@@ -184,7 +184,7 @@ struct KeepsakeWidgetView: View {
                 .lineLimit(1)
                 .minimumScaleFactor(0.7)
             Rectangle().fill(Keepsake.sage.opacity(0.4)).frame(width: 34, height: 0.75)
-            Text(passage?.text ?? "")
+            Text(ScriptureDirection.display(passage?.text ?? ""))
                 .font(Keepsake.serif(verseSize, italic: style == .instantPhoto))
                 .foregroundStyle(Keepsake.body)
                 .lineSpacing(1.5)
@@ -201,7 +201,7 @@ struct KeepsakeWidgetView: View {
     /// Film Strip: the text in a pale frame with sprocket holes.
     private var filmText: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text(passage?.text ?? "")
+            Text(ScriptureDirection.display(passage?.text ?? ""))
                 .font(Keepsake.serif(verseSize + 1))
                 .foregroundStyle(Keepsake.sage)
                 .lineSpacing(2)
@@ -230,7 +230,7 @@ struct KeepsakeWidgetView: View {
                     .padding(.trailing, 20)
                 Rectangle().fill(Keepsake.sage.opacity(0.4)).frame(width: 34, height: 0.75)
             }
-            Text(passage?.text ?? "")
+            Text(ScriptureDirection.display(passage?.text ?? ""))
                 .font(Keepsake.typewriter(verseSize - 1))
                 .foregroundStyle(Keepsake.ink)
                 .lineSpacing(2)
@@ -263,7 +263,7 @@ struct KeepsakeWidgetView: View {
                 .minimumScaleFactor(0.7)
                 .frame(height: 26, alignment: .bottomLeading)
                 .padding(.leading, 12)
-            Text(passage?.text ?? "")
+            Text(ScriptureDirection.display(passage?.text ?? ""))
                 .font(Keepsake.serif(verseSize - 0.5))
                 .foregroundStyle(Keepsake.body)
                 .lineSpacing(18 - (verseSize - 0.5) * 1.2)
@@ -301,7 +301,7 @@ struct KeepsakeWidgetView: View {
                 .font(Keepsake.serif(12))
                 .foregroundStyle(Keepsake.sage)
                 .padding(.bottom, 3)
-            Text(passage?.text ?? "")
+            Text(ScriptureDirection.display(passage?.text ?? ""))
                 .font(Keepsake.serif(verseSize - 1.5))
                 .foregroundStyle(Keepsake.body)
                 .minimumScaleFactor(0.5)

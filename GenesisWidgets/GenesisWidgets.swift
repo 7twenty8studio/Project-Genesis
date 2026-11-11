@@ -190,7 +190,7 @@ struct ReadingProgressView: View {
             Spacer(minLength: 0)
 
             if let verse = snapshot.dailyVerse(on: entry.date) {
-                Text("\u{201C}\(verse.text)\u{201D} \u{2014} \(verse.reference)")
+                Text("\u{201C}\(ScriptureDirection.display(verse.text))\u{201D} \u{2014} \(verse.reference)")
                     .font(.system(.footnote, design: .serif))
                     .foregroundStyle(colors.secondary)
                     .lineLimit(3)

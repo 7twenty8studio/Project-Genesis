@@ -250,7 +250,7 @@ struct PrayerPassageRow: View {
                     .font(.subheadline)
                     .foregroundStyle(palette.secondaryText)
             } else {
-                Text(verses.map(\.plainText).joined(separator: " "))
+                Text(verses.map(\.displayText).joined(separator: " "))
                     .font(settings.preferences.font.font(size: 16))
                     .foregroundStyle(palette.text)
                     .textSelection(.enabled)

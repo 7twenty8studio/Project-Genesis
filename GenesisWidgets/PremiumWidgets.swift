@@ -149,7 +149,7 @@ struct ListeningLiveActivity: Widget {
                 DynamicIslandExpandedRegion(.bottom) {
                     VStack(alignment: .leading, spacing: 6) {
                         if let text = listening?.verseText {
-                            Text(text)
+                            Text(ScriptureDirection.display(text))
                                 .font(.system(.footnote, design: .serif))
                                 .lineLimit(2)
                         }
@@ -231,7 +231,7 @@ private struct ListeningSection: View {
                 .accessibilityLabel(Text("Next chapter"))
             }
             if let text = listening.verseText {
-                Text(text)
+                Text(ScriptureDirection.display(text))
                     .font(.system(.subheadline, design: .serif))
                     .foregroundStyle(WidgetPalette.text)
                     .lineLimit(3)

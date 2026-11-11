@@ -55,11 +55,11 @@ struct CrossReferencesView: View {
 
     private func load() {
         let repository = library.current
-        sourceText = (try? repository.verse(verse))?.plainText ?? ""
+        sourceText = (try? repository.verse(verse))?.displayText ?? ""
         let references = (try? library.crossReferences?.references(from: verse)) ?? []
         items = references.map { reference in
             let passage = (try? repository.verses(from: reference.target, through: reference.targetEnd)) ?? []
-            let text = passage.prefix(3).map(\.plainText).joined(separator: " ") + (passage.count > 3 ? " \u{2026}" : "")
+            let text = passage.prefix(3).map(\.displayText).joined(separator: " ") + (passage.count > 3 ? " \u{2026}" : "")
             return Item(reference: reference, text: text)
         }
     }

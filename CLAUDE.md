@@ -779,6 +779,10 @@ shares; README.md has the architecture.
 - The reader's side panel (notes, plans, prayer) shows only when the text
   keeps 440 pt beside it (iPad; the open Duo held sideways). Reader controls
   fall back to tighter buttons, then a "More" menu, rather than squeezing.
+- Highlights (and the verse read aloud) are drawn by `HighlightLayoutManager`
+  (ReaderTextView's TextKit 1 stack) from `.backgroundColor`: one rounded band
+  per line, as long as that line's words and as tall as the body text, so the
+  page shows between lines. Don't go back to TextKit's whole-line fill.
 - Reader taps (`ReaderTap`, pure, Swift Testing): a tap on a verse selects
   it (long press too); in paged reading the page's very edge (margin + 10
   pt, 32 pt to 15% of the width) turns the page; anything else (running
@@ -809,6 +813,10 @@ shares; README.md has the architecture.
 - MVVM, composition, one responsibility per type, small view files.
 - SwiftUI first; UIKit only for the TextKit reader text and page curl.
 - Verses are addressed by `VerseID` (book*1_000_000 + chapter*1_000 + verse).
+- Show verse text with `Verse.displayText` / `ScriptureDirection.display` (an
+  invisible left-to-right mark when a Latin verse opens with a Hebrew letter,
+  as Psalm 119 does in the KJV and ASV; the reader sets the paragraph
+  direction instead). Copies, shares, games and the AI keep `plainText`.
 - Swift Testing for unit tests of business logic.
 - Motion: use `Motion` (Genesis/DesignSystem/Motion.swift) and its
   transitions (`.rise`, `.drop`, `.nextCard`): strong ease-out, under 0.3 s

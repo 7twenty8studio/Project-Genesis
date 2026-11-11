@@ -31,6 +31,17 @@ struct GroupDetailView: View {
             if let model, let group = model.group {
                 content(model, group: group)
                     .navigationTitle(group.name)
+                    .toolbar {
+                        // A long name was cut off mid-word beside the
+                        // toolbar buttons; end it with an ellipsis instead.
+                        ToolbarItem(placement: .principal) {
+                            Text(group.name)
+                                .font(.headline)
+                                .foregroundStyle(palette.text)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                        }
+                    }
                     .modifier(GroupModerationToolbar(model: model))
             } else if community.hasLoaded, community.group(groupID) == nil {
                 QuietEmptyState(systemImage: "person.3", title: String(localized: "Not available"), message: String(localized: "You're no longer in this group, or it was closed."))

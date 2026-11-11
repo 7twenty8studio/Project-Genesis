@@ -154,7 +154,7 @@ struct ChallengePassagePicker: View {
                     .font(.footnote)
                     .foregroundStyle(.orange)
             } else {
-                Text(verses.map(\.plainText).joined(separator: " "))
+                Text(verses.map(\.displayText).joined(separator: " "))
                     .font(.system(.callout, design: .serif))
                     .foregroundStyle(palette.text)
             }

@@ -223,6 +223,7 @@ targets:
       - path: GenesisWatch
       - path: Genesis/Shared/WidgetSnapshot.swift
       - path: Genesis/Shared/WatchPayload.swift
+      - path: Genesis/Shared/ScriptureDirection.swift
       - path: Config/Privacy/GenesisWatch/PrivacyInfo.xcprivacy
         buildPhase: resources
     dependencies:
@@ -253,6 +254,7 @@ targets:
       - path: GenesisWatchWidgets
       - path: Genesis/Shared/WidgetSnapshot.swift
       - path: Genesis/Shared/WatchPayload.swift
+      - path: Genesis/Shared/ScriptureDirection.swift
       - path: Config/Privacy/GenesisWatchWidgets/PrivacyInfo.xcprivacy
         buildPhase: resources
     settings:

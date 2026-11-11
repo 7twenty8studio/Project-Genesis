@@ -77,7 +77,7 @@ struct WatchVerseView: View {
                     Text(verse?.reference ?? String(localized: "Verse of the Day"))
                         .font(.headline)
                         .widgetAccentable()
-                    Text(verse?.text ?? String(localized: "Open Versely on your iPhone."))
+                    Text(verse.map { ScriptureDirection.display($0.text) } ?? String(localized: "Open Versely on your iPhone."))
                         .font(.caption)
                         .lineLimit(3)
                 }

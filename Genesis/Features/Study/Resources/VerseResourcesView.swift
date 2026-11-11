@@ -88,7 +88,7 @@ private struct VerseResourcesList: View {
         List {
             ThemedRows {
                 Section {
-                    Text((try? library.current.verse(verse))?.plainText ?? "")
+                    Text((try? library.current.verse(verse))?.displayText ?? "")
                         .font(.system(.body, design: .serif))
                         .foregroundStyle(palette.text)
                         .accessibilityIdentifier("verseResources.verse")

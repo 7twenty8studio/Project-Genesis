@@ -88,7 +88,7 @@ struct TodayVerseView: View {
             Text("Verse of the Day")
                 .font(.caption2.weight(.semibold))
                 .foregroundStyle(.secondary)
-            Text(verse.text)
+            Text(ScriptureDirection.display(verse.text))
                 .font(.system(.body, design: .serif))
             Text("\(verse.reference) · \(payload.translation)")
                 .font(.footnote.weight(.semibold))
