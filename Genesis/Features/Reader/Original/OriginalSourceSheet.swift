@@ -57,9 +57,13 @@ struct OriginalSourceSheet: View {
         let edition = greek.edition
         let bible = translation.abbreviation
         var lines = [edition.about]
-        lines.append(greek.isExact
-            ? String(localized: "The \(bible) was translated from this text.")
-            : String(localized: "The \(bible) was translated from a Greek text very close to this one; this is the closest edition available here."))
+        if !greek.isKnownSource {
+            lines.append(String(localized: "Versely doesn't know which Greek text the \(bible) was translated from, so it shows this one."))
+        } else {
+            lines.append(greek.isExact
+                ? String(localized: "The \(bible) was translated from this text.")
+                : String(localized: "The \(bible) was translated from a Greek text very close to this one; this is the closest edition available here."))
+        }
         lines.append(edition.spelling)
         if edition != .nestleAland {
             lines.append(String(localized: "Word order follows STEPBible's notes on this edition; where a whole phrase is rearranged, it may differ slightly from the printed edition."))

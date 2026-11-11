@@ -10,29 +10,71 @@ import WidgetKit
 enum WidgetArtWriter {
     private static let versionKey = "widgetArt.version"
 
+    /// The pictures drawn so far for the current `WidgetArt.version`
+    /// ("autumn-large", …), so drawing that was cut short (the app closed
+    /// midway) carries on where it stopped instead of starting over.
+    private static let progressKey = "widgetArt.drawnFiles"
+    private static var isDrawing = false
+
     /// Draws the painted backgrounds once (and again when `WidgetArt.version`
     /// changes or a file is missing). Cheap when there's nothing to do.
+    ///
+    /// Eighteen full-size paintings take several seconds, which froze the
+    /// app on launch (Sentry APPLE-IOS-2, "App hanging for at least 2000
+    /// ms"). So they're drawn a moment after launch, one at a time, with
+    /// the screen free to update in between; each one is kept as soon as
+    /// it's drawn.
     static func drawIfNeeded() {
-        guard let folder = WidgetArt.folder else { return }
-        let drawn = UserDefaults.standard.integer(forKey: versionKey) == WidgetArt.version
-        let complete = WidgetArtStyle.painted.allSatisfy { style in
-            WidgetArtShape.allCases.allSatisfy { shape in
-                WidgetArt.paintedURL(style, shape: shape).map { FileManager.default.fileExists(atPath: $0.path) } ?? false
-            }
+        guard !isDrawing, let folder = WidgetArt.folder else { return }
+        let defaults = UserDefaults.standard
+        let current = defaults.integer(forKey: versionKey) == WidgetArt.version
+        let done = current ? Set<String>() : Set(defaults.stringArray(forKey: progressKey) ?? [])
+        let missing = WidgetArtStyle.painted.flatMap { style in
+            WidgetArtShape.allCases.map { (style, $0) }
+        }.filter { style, shape in
+            guard let url = WidgetArt.paintedURL(style, shape: shape) else { return false }
+            let exists = FileManager.default.fileExists(atPath: url.path)
+            // An older version's picture is drawn again unless this
+            // version's run already did it.
+            return !exists || (!current && !done.contains(name(style, shape)))
         }
-        guard !drawn || !complete else { return }
-        try? FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
-        for style in WidgetArtStyle.painted {
-            for shape in WidgetArtShape.allCases {
+        guard !missing.isEmpty else {
+            if !current { finish() }
+            return
+        }
+        isDrawing = true
+        Task { @MainActor in
+            defer { isDrawing = false }
+            // Let launch (or the screen just opened) finish first.
+            try? await Task.sleep(for: .seconds(2))
+            try? FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
+            var drawnNames = done
+            for (style, shape) in missing {
                 guard let url = WidgetArt.paintedURL(style, shape: shape) else { continue }
                 let renderer = ImageRenderer(content: WidgetArtCanvas(style: style, size: shape.pixelSize))
                 renderer.scale = 1
-                guard let data = renderer.uiImage?.jpegData(compressionQuality: 0.82) else { continue }
-                try? data.write(to: url, options: .atomic)
+                if let data = renderer.uiImage?.jpegData(compressionQuality: 0.82), (try? data.write(to: url, options: .atomic)) != nil {
+                    drawnNames.insert(name(style, shape))
+                    defaults.set(Array(drawnNames), forKey: progressKey)
+                }
+                // Give the screen its turn before the next picture.
+                try? await Task.sleep(for: .milliseconds(150))
             }
+            let complete = missing.allSatisfy { style, shape in
+                WidgetArt.paintedURL(style, shape: shape).map { FileManager.default.fileExists(atPath: $0.path) } ?? false
+            }
+            if complete { finish() }
+            WidgetCenter.shared.reloadTimelines(ofKind: WidgetKind.dailyVerse.rawValue)
         }
+    }
+
+    private static func name(_ style: WidgetArtStyle, _ shape: WidgetArtShape) -> String {
+        "\(style.rawValue)-\(shape.rawValue)"
+    }
+
+    private static func finish() {
         UserDefaults.standard.set(WidgetArt.version, forKey: versionKey)
-        WidgetCenter.shared.reloadTimelines(ofKind: WidgetKind.dailyVerse.rawValue)
+        UserDefaults.standard.removeObject(forKey: progressKey)
     }
 
     /// Keeps a photo for the widget: at most 2400 pixels on its long side

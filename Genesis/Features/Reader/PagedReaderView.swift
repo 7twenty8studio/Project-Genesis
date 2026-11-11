@@ -243,14 +243,32 @@ struct PagedReaderView: UIViewControllerRepresentable {
             flushPendingUpdate()
         }
 
-        private var isBusy: Bool { isResizing || isTurning }
+        /// A page being turned by hand right now: page curl's drag still
+        /// held (even when it stops moving, and for longer than `isTurning`
+        /// trusts), or the sliding pages still tracking a finger or settling.
+        /// Read live from UIKit, so it can never go stale. Replacing the pages
+        /// under a held curl throws "insertObject:atIndex: object cannot be
+        /// nil" (Sentry APPLE-IOS-9), as when listening's follow-along or a
+        /// new highlight redrew the page mid-drag.
+        private var isTurningByHand: Bool {
+            guard let pageController else { return false }
+            if pageController.gestureRecognizers.contains(where: { $0.isEnabled && ($0.state == .began || $0.state == .changed) }) {
+                return true
+            }
+            if let scroll = pageController.view.subviews.lazy.compactMap({ $0 as? UIScrollView }).first {
+                return scroll.isTracking || scroll.isDragging || scroll.isDecelerating
+            }
+            return false
+        }
+
+        private var isBusy: Bool { isResizing || isTurning || isTurningByHand }
 
         /// UIKit laid the pages out. If no real page is on screen (the
         /// blank stand-in, or a page curl left without its page's view,
         /// as after an iPhone Duo opens beside the side panel), the page
         /// is put in place again once things are still.
         func pagesDidLayout() {
-            guard layout != nil, !needsRefresh, !isTurning,
+            guard layout != nil, !needsRefresh, !isTurning, !isTurningByHand,
                   let controller = pageController, controller.view.window != nil else { return }
             let page = controller.viewControllers?.first
             if let page, Self.location(of: page) != nil, page.isViewLoaded, page.view.window != nil, !page.view.isHidden,
@@ -517,8 +535,28 @@ struct PagedReaderView: UIViewControllerRepresentable {
                   let shown = Self.location(of: controllers.first) else { return }
             if animated {
                 turnStartedAt = Date()
-                pageController.setViewControllers(controllers, direction: direction, animated: true) { [weak self] _ in
-                    self?.turnFinished()
+                // No hand may start a turn while this one animates: a drag
+                // begun under an animated turn leaves UIPageViewController
+                // asking for a page it no longer has, and it throws.
+                pageController.view.isUserInteractionEnabled = false
+                let resync = pageController.transitionStyle == .scroll
+                pageController.setViewControllers(controllers, direction: direction, animated: true) { [weak self, weak pageController] finished in
+                    // Next run loop turn, once UIKit has finished its own work.
+                    Task { @MainActor [weak self, weak pageController] in
+                        // Sliding pages keep stale neighbours after an animated
+                        // set and can later insert a missing one; setting the
+                        // same pages again without animation resets them.
+                        if resync, finished, let pageController, let shown = pageController.viewControllers, !shown.isEmpty {
+                            pageController.setViewControllers(shown, direction: direction, animated: false)
+                        }
+                        pageController?.view.isUserInteractionEnabled = true
+                        self?.turnFinished()
+                    }
+                }
+                // Never leave the reader untouchable if UIKit drops the completion.
+                Task { @MainActor [weak pageController] in
+                    try? await Task.sleep(for: .seconds(1.5))
+                    pageController?.view.isUserInteractionEnabled = true
                 }
             } else {
                 pageController.setViewControllers(controllers, direction: direction, animated: false)

@@ -161,6 +161,7 @@ enum OriginalSourceText {
         guard language == .greek else { return String(localized: "Hebrew: Leningrad Codex") }
         let name = greek.edition.name
         let bible = translation.abbreviation
+        guard greek.isKnownSource else { return String(localized: "Greek: \(name)") }
         return greek.isExact
             ? String(localized: "Greek: \(name) (the \(bible)'s source)")
             : String(localized: "Greek: \(name) (closest to the \(bible)'s source)")
