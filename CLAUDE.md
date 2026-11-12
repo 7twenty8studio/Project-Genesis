@@ -787,7 +787,7 @@ shares; README.md has the architecture.
   for its width) and drawn large by the layout manager from its
   `LargeInitialMark` (`.largeInitial`; the illuminated one over an empty
   placeholder attachment), so it never changes the first line's height;
-  highlights skip it (the band starts at the words). Verse paragraphs have a
+  a highlight's band runs through it at the line's height, under the letter. Verse paragraphs have a
   fixed line height (min = max = body line height × spacing); the raised
   letter's room goes before the first paragraph
   (`ChapterTextBuilder.openingParagraph`, `LargeInitialMetrics`).

@@ -13,8 +13,9 @@ import UIKit
 ///
 /// A chapter's large first letter (`.largeInitial`) is laid out at the body
 /// size and drawn here, large, standing on the first line's baseline, so it
-/// never changes the line's height. A highlight leaves it out: the band starts
-/// at the words after it, so the letter stays clean.
+/// never changes the line's height. A highlight runs through it at the line's
+/// own height (the letter's hidden body-size characters and its room are part
+/// of the band), with the letter drawn over the band.
 final class HighlightLayoutManager: NSLayoutManager {
     /// Where the text container is drawn; TextKit hands it to
     /// `drawBackground` but not to `fillBackgroundRectArray`.
@@ -67,8 +68,7 @@ final class HighlightLayoutManager: NSLayoutManager {
             // This line's part of the run, without spaces or line breaks at
             // either end, so the band stops where the words stop.
             var segment = NSIntersectionRange(lineGlyphs, runGlyphs)
-            while segment.length > 0,
-                  self.isBlank(glyphAt: segment.location, in: text) || self.isLargeInitial(glyphAt: segment.location, in: storage) {
+            while segment.length > 0, self.isBlank(glyphAt: segment.location, in: text) {
                 segment = NSRange(location: segment.location + 1, length: segment.length - 1)
             }
             while segment.length > 0, self.isBlank(glyphAt: NSMaxRange(segment) - 1, in: text) {
@@ -96,12 +96,6 @@ final class HighlightLayoutManager: NSLayoutManager {
         }
         color.setFill()
         marks.fill()
-    }
-
-    private func isLargeInitial(glyphAt glyph: Int, in storage: NSTextStorage) -> Bool {
-        let index = characterIndexForGlyph(at: glyph)
-        guard index < storage.length else { return false }
-        return storage.attribute(.largeInitial, at: index, effectiveRange: nil) != nil
     }
 
     private func isBlank(glyphAt glyph: Int, in text: NSString) -> Bool {
