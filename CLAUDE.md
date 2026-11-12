@@ -783,6 +783,13 @@ shares; README.md has the architecture.
   (ReaderTextView's TextKit 1 stack) from `.backgroundColor`: one rounded band
   per line, as long as that line's words and as tall as the body text, so the
   page shows between lines. Don't go back to TextKit's whole-line fill.
+  The large first letter (`.largeInitial`) gets its own block, as tall as
+  the letter and joined to its line's band (one path, one fill, so the
+  translucent colour never doubles). Verse paragraphs have a fixed line
+  height (min = max = body line height × spacing), so highlights, the
+  initial, verse numbers and footnote markers never change line spacing;
+  the raised initial's room goes before the first paragraph
+  (`ChapterTextBuilder.openingParagraph`, `LargeInitialMetrics`).
 - Reader taps (`ReaderTap`, pure, Swift Testing): a tap on a verse selects
   it (long press too); in paged reading the page's very edge (margin + 10
   pt, 32 pt to 15% of the width) turns the page; anything else (running
