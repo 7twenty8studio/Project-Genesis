@@ -67,14 +67,16 @@ struct ReaderRenderingTests {
         #expect(heights.count == 1, "Every verse uses the same line height")
 
         // The large first letter's room comes before the paragraph, not between its lines.
-        let opening = try #require(built.text.attribute(.paragraphStyle, at: try #require(built.verseOffsets[first.id]), effectiveRange: nil) as? NSParagraphStyle)
+        let start = try #require(built.verseOffsets[first.id])
+        let opening = try #require(built.text.attribute(.paragraphStyle, at: start, effectiveRange: nil) as? NSParagraphStyle)
         var plain = ReaderPreferences()
         plain.largeInitial = false
         let without = ChapterTextBuilder.build(genesis, style: ReaderStyle(preferences: plain, theme: .paper, contentSizeCategory: .large), decorations: decorations)
-        let plainOpening = try #require(without.text.attribute(.paragraphStyle, at: try #require(without.verseOffsets[first.id]), effectiveRange: nil) as? NSParagraphStyle)
+        let plainStart = try #require(without.verseOffsets[first.id])
+        let plainOpening = try #require(without.text.attribute(.paragraphStyle, at: plainStart, effectiveRange: nil) as? NSParagraphStyle)
         #expect(opening.paragraphSpacingBefore > plainOpening.paragraphSpacingBefore)
         #expect(opening.minimumLineHeight == plainOpening.minimumLineHeight)
-        #expect(built.text.attribute(.largeInitial, at: try #require(built.verseOffsets[first.id]), effectiveRange: nil) != nil)
+        #expect(built.text.attribute(.largeInitial, at: start, effectiveRange: nil) != nil)
     }
 
     @Test func largeInitialMetrics() {
