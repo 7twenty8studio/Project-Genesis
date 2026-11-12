@@ -7,8 +7,9 @@ extension NSAttributedString.Key {
     static let footnoteText = NSAttributedString.Key("genesis.footnoteText")
     /// On a licensed Bible's copyright notice: the publisher's site (`URL`).
     static let publisherLink = NSAttributedString.Key("genesis.publisherLink")
-    /// On a chapter's large first letter (or its illuminated picture):
-    /// `true`. Highlights give it a block of its own (HighlightLayoutManager).
+    /// On a chapter's large first letter (and its illuminated picture): the
+    /// `LargeInitialMark` that HighlightLayoutManager draws. The characters
+    /// themselves are laid out at the body size, so the line keeps its height.
     static let largeInitial = NSAttributedString.Key("genesis.largeInitial")
 }
 
@@ -147,10 +148,18 @@ enum ChapterTextBuilder {
                 // isn't shown twice, but it's still there for VoiceOver,
                 // search and the verse offsets. The picture is U+FFFC, an
                 // extra character before the verse, never inside it.
-                let picture = NSMutableAttributedString(attributedString: NSAttributedString(attachment: ornament))
+                // The picture in the text is an empty placeholder as wide as
+                // the ornament but no taller than the body text, so the line
+                // keeps its height; HighlightLayoutManager draws the ornament
+                // over it, rising above the line.
+                let ornamentImage = ornament.image
+                let mark = ornamentImage.map { LargeInitialMark(image: $0, descender: bodyFont.descender) }
+                let placeholder = NSTextAttachment(image: Self.clearPixel)
+                placeholder.bounds = CGRect(x: 0, y: 0, width: ornament.bounds.width > 0 ? ornament.bounds.width : (ornamentImage?.size.width ?? 0), height: 1)
+                let picture = NSMutableAttributedString(attributedString: NSAttributedString(attachment: placeholder))
                 var pictureAttributes = attributes
                 pictureAttributes[.font] = bodyFont
-                pictureAttributes[.largeInitial] = true
+                pictureAttributes[.largeInitial] = mark
                 picture.addAttributes(pictureAttributes, range: NSRange(location: 0, length: picture.length))
                 result.append(picture)
                 textStart = result.length
@@ -161,15 +170,24 @@ enum ChapterTextBuilder {
                 // The highlight stays on (it draws nothing for this letter), so
                 // the picture and the words are one highlighted run.
                 hiddenAttributes[.underlineStyle] = nil
+                hiddenAttributes[.largeInitial] = mark
                 result.append(NSAttributedString(string: split.initial, attributes: hiddenAttributes))
                 result.append(NSAttributedString(string: split.rest, attributes: textAttributes))
             } else if opensWithInitial, let split = initialSplit(text) {
                 // Only the styling changes: the letters are the verse's own.
-                var initialAttributes = textAttributes
-                initialAttributes[.font] = style.font.uiFont(size: size * 2.6)
-                initialAttributes[.foregroundColor] = palette.uiAccent
-                initialAttributes[.largeInitial] = true
-                result.append(NSAttributedString(string: split.initial, attributes: initialAttributes))
+                // They're laid out at the body size (hidden, with room after
+                // them for the large letter) so the first line is exactly as
+                // tall as the others; HighlightLayoutManager draws the large
+                // letter in their place, standing on the baseline.
+                let largeFont = style.font.uiFont(size: size * 2.6)
+                let initial = NSMutableAttributedString(string: split.initial, attributes: textAttributes)
+                let bodyWidth = initial.size().width
+                let largeWidth = NSAttributedString(string: split.initial, attributes: [.font: largeFont]).size().width
+                let mark = LargeInitialMark(text: split.initial, font: largeFont, color: palette.uiAccent)
+                let whole = NSRange(location: 0, length: initial.length)
+                initial.addAttributes([.foregroundColor: UIColor.clear, .largeInitial: mark], range: whole)
+                initial.addAttribute(.kern, value: max(0, largeWidth - bodyWidth), range: NSRange(location: initial.length - 1, length: 1))
+                result.append(initial)
                 result.append(NSAttributedString(string: split.rest, attributes: textAttributes))
             } else {
                 result.append(NSAttributedString(string: text, attributes: textAttributes))
@@ -365,6 +383,14 @@ enum ChapterTextBuilder {
         attachment.bounds = CGRect(x: 0, y: bodyFont.descender, width: canvas.width, height: canvas.height)
         return attachment
     }
+
+    /// A transparent 1×1 picture for the illuminated letter's placeholder (an
+    /// attachment without a picture would show a document icon).
+    private static let clearPixel: UIImage = {
+        let format = UIGraphicsImageRendererFormat.preferred()
+        format.opaque = false
+        return UIGraphicsImageRenderer(size: CGSize(width: 1, height: 1), format: format).image { _ in }
+    }()
 
     /// The illuminated initial's height: a fixed share of the line height,
     /// since fonts' descenders vary too much (New York's is deep) for "two

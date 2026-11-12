@@ -1,3 +1,4 @@
+import CoreText
 import UIKit
 
 /// Draws the reader's highlights (and the verse being read aloud) like a
@@ -10,11 +11,10 @@ import UIKit
 /// This draws the same colour from the same attribute, so nothing else in the
 /// text changes.
 ///
-/// A chapter's large first letter (`.largeInitial`) gets a block of its own,
-/// as tall as the letter, joined to its line's band: the whole letter reads as
-/// highlighted rather than cut across at the body text's height. Everything is
-/// filled as one path, so where the shapes meet the (translucent) colour
-/// isn't laid on twice.
+/// A chapter's large first letter (`.largeInitial`) is laid out at the body
+/// size and drawn here, large, standing on the first line's baseline, so it
+/// never changes the line's height. A highlight leaves it out: the band starts
+/// at the words after it, so the letter stays clean.
 final class HighlightLayoutManager: NSLayoutManager {
     /// Where the text container is drawn; TextKit hands it to
     /// `drawBackground` but not to `fillBackgroundRectArray`.
@@ -23,6 +23,25 @@ final class HighlightLayoutManager: NSLayoutManager {
     override func drawBackground(forGlyphRange glyphsToShow: NSRange, at origin: CGPoint) {
         drawingOrigin = origin
         super.drawBackground(forGlyphRange: glyphsToShow, at: origin)
+    }
+
+    override func drawGlyphs(forGlyphRange glyphsToShow: NSRange, at origin: CGPoint) {
+        super.drawGlyphs(forGlyphRange: glyphsToShow, at: origin)
+        guard let storage = textStorage, let context = UIGraphicsGetCurrentContext() else { return }
+        let characters = characterRange(forGlyphRange: glyphsToShow, actualGlyphRange: nil)
+        guard characters.length > 0 else { return }
+        storage.enumerateAttribute(.largeInitial, in: characters) { value, range, _ in
+            guard let mark = value as? LargeInitialMark else { return }
+            let glyphs = self.glyphRange(forCharacterRange: range, actualCharacterRange: nil)
+            guard glyphs.length > 0 else { return }
+            let line = self.lineFragmentRect(forGlyphAt: glyphs.location, effectiveRange: nil)
+            let point = self.location(forGlyphAt: glyphs.location)
+            mark.draw(
+                atX: origin.x + line.minX + point.x,
+                baseline: origin.y + line.minY + point.y,
+                in: context
+            )
+        }
     }
 
     override func fillBackgroundRectArray(
@@ -48,7 +67,8 @@ final class HighlightLayoutManager: NSLayoutManager {
             // This line's part of the run, without spaces or line breaks at
             // either end, so the band stops where the words stop.
             var segment = NSIntersectionRange(lineGlyphs, runGlyphs)
-            while segment.length > 0, self.isBlank(glyphAt: segment.location, in: text) {
+            while segment.length > 0,
+                  self.isBlank(glyphAt: segment.location, in: text) || self.isLargeInitial(glyphAt: segment.location, in: storage) {
                 segment = NSRange(location: segment.location + 1, length: segment.length - 1)
             }
             while segment.length > 0, self.isBlank(glyphAt: NSMaxRange(segment) - 1, in: text) {
@@ -72,55 +92,16 @@ final class HighlightLayoutManager: NSLayoutManager {
                 width: words.width + padX * 2,
                 height: font.ascender - font.descender + padY * 2
             ).offsetBy(dx: origin.x, dy: origin.y)
-            let radius = font.pointSize * 0.18
-            marks.append(UIBezierPath(roundedRect: band, cornerRadius: radius))
-
-            if let block = self.initialBlock(
-                in: segment, of: storage, container: container, baseline: baseline,
-                bottom: band.maxY - origin.y, padding: padX
-            ) {
-                marks.append(UIBezierPath(roundedRect: block.offsetBy(dx: origin.x, dy: origin.y), cornerRadius: radius))
-            }
+            marks.append(UIBezierPath(roundedRect: band, cornerRadius: font.pointSize * 0.18))
         }
         color.setFill()
         marks.fill()
     }
 
-    /// The block behind a large first letter in these glyphs, if there is one:
-    /// from just above the letter's top down to the band's foot.
-    private func initialBlock(
-        in segment: NSRange,
-        of storage: NSTextStorage,
-        container: NSTextContainer,
-        baseline: CGFloat,
-        bottom: CGFloat,
-        padding: CGFloat
-    ) -> CGRect? {
-        let characters = characterRange(forGlyphRange: segment, actualGlyphRange: nil)
-        var initial: NSRange?
-        storage.enumerateAttribute(.largeInitial, in: characters) { value, range, stop in
-            if value != nil {
-                initial = range
-                stop.pointee = true
-            }
-        }
-        guard let initial else { return nil }
-        let glyphs = glyphRange(forCharacterRange: initial, actualCharacterRange: nil)
-        guard glyphs.length > 0 else { return nil }
-        let letters = boundingRect(forGlyphRange: glyphs, in: container)
-
-        let rise: CGFloat
-        if let picture = storage.attribute(.attachment, at: initial.location, effectiveRange: nil) as? NSTextAttachment {
-            rise = picture.bounds.height > 0 ? picture.bounds.maxY : (picture.image?.size.height ?? 0)
-        } else if let font = storage.attribute(.font, at: initial.location, effectiveRange: nil) as? UIFont {
-            let text = (storage.string as NSString).substring(with: initial)
-            rise = LargeInitialMetrics.rise(of: text, capHeight: font.capHeight, ascender: font.ascender)
-        } else {
-            return nil
-        }
-        let top = baseline - rise - padding
-        guard bottom > top else { return nil }
-        return CGRect(x: letters.minX - padding, y: top, width: letters.width + padding * 2, height: bottom - top)
+    private func isLargeInitial(glyphAt glyph: Int, in storage: NSTextStorage) -> Bool {
+        let index = characterIndexForGlyph(at: glyph)
+        guard index < storage.length else { return false }
+        return storage.attribute(.largeInitial, at: index, effectiveRange: nil) != nil
     }
 
     private func isBlank(glyphAt glyph: Int, in text: NSString) -> Bool {
@@ -130,8 +111,53 @@ final class HighlightLayoutManager: NSLayoutManager {
     }
 }
 
-/// How far a chapter's large first letter reaches, shared by the text (to
-/// keep room for it) and the highlight (to cover it).
+/// What HighlightLayoutManager draws for a chapter's large first letter:
+/// the letters themselves (the verse's own, in a large size) or an
+/// illuminated picture. Purely visual: the text keeps the real letters.
+final class LargeInitialMark: NSObject {
+    private let text: NSAttributedString?
+    private let color: UIColor
+    private let image: UIImage?
+    private let descender: CGFloat
+
+    init(text: String, font: UIFont, color: UIColor) {
+        self.text = NSAttributedString(string: text, attributes: [
+            .font: font,
+            NSAttributedString.Key(kCTForegroundColorFromContextAttributeName as String): true,
+        ])
+        self.color = color
+        image = nil
+        descender = 0
+    }
+
+    /// An illuminated picture whose foot sits on the body text's descender.
+    init(image: UIImage, descender: CGFloat) {
+        text = nil
+        color = .clear
+        self.image = image
+        self.descender = descender
+    }
+
+    func draw(atX x: CGFloat, baseline: CGFloat, in context: CGContext) {
+        if let image {
+            let size = image.size
+            image.draw(in: CGRect(x: x, y: baseline - descender - size.height, width: size.width, height: size.height))
+        } else if let text {
+            let line = CTLineCreateWithAttributedString(text as CFAttributedString)
+            context.saveGState()
+            context.setFillColor(color.cgColor)
+            context.textMatrix = .identity
+            context.translateBy(x: x, y: baseline)
+            context.scaleBy(x: 1, y: -1)
+            context.textPosition = .zero
+            CTLineDraw(line, context)
+            context.restoreGState()
+        }
+    }
+}
+
+/// How far a chapter's large first letter reaches above the baseline, so the
+/// text keeps room for it above the first paragraph.
 enum LargeInitialMetrics {
     /// The height above the baseline the letter reaches: a plain capital
     /// stops at the cap height; anything else (an accent, a lower-case
