@@ -38,9 +38,13 @@ struct ReaderRenderingTests {
         let start = try #require(built.verseOffsets[first.id])
         // No "1" before the first verse: the large initial opens the chapter.
         #expect((built.text.string as NSString).substring(with: NSRange(location: start, length: 1)) == "I")
+        // Laid out at the body size (so the line keeps its height) and drawn large.
         let initialFont = try #require(built.text.attribute(.font, at: start, effectiveRange: nil) as? UIFont)
         let bodyFont = try #require(built.text.attribute(.font, at: start + 1, effectiveRange: nil) as? UIFont)
-        #expect(initialFont.pointSize > bodyFont.pointSize * 2)
+        #expect(initialFont.pointSize == bodyFont.pointSize)
+        #expect(built.text.attribute(.largeInitial, at: start, effectiveRange: nil) is LargeInitialMark)
+        let room = try #require(built.text.attribute(.kern, at: start, effectiveRange: nil) as? CGFloat)
+        #expect(room > 0, "Room after the letter for its large size")
 
         var plain = ReaderPreferences()
         plain.largeInitial = false
