@@ -49,6 +49,43 @@ struct ReaderRenderingTests {
         #expect((without.text.string as NSString).substring(with: NSRange(location: plainStart, length: 1)) == "1", "Turned off, verse 1 is numbered as before")
     }
 
+    @Test func everyLineOfScriptureIsTheSameHeight() throws {
+        // A highlight, the large first letter, verse numbers and footnote
+        // markers never change a line's height: verse paragraphs fix it.
+        let genesis = try chapter(ChapterID(book: 1, chapter: 1))
+        let first = try #require(genesis.verses.first)
+        var decorations = ChapterDecorations()
+        decorations.highlights[first.id] = .yellow
+        let built = ChapterTextBuilder.build(genesis, style: style, decorations: decorations)
+        var heights: Set<CGFloat> = []
+        for verse in genesis.verses {
+            let offset = try #require(built.verseOffsets[verse.id])
+            let paragraph = try #require(built.text.attribute(.paragraphStyle, at: offset, effectiveRange: nil) as? NSParagraphStyle)
+            #expect(paragraph.minimumLineHeight > 0 && paragraph.minimumLineHeight == paragraph.maximumLineHeight)
+            heights.insert(paragraph.minimumLineHeight)
+        }
+        #expect(heights.count == 1, "Every verse uses the same line height")
+
+        // The large first letter's room comes before the paragraph, not between its lines.
+        let opening = try #require(built.text.attribute(.paragraphStyle, at: try #require(built.verseOffsets[first.id]), effectiveRange: nil) as? NSParagraphStyle)
+        var plain = ReaderPreferences()
+        plain.largeInitial = false
+        let without = ChapterTextBuilder.build(genesis, style: ReaderStyle(preferences: plain, theme: .paper, contentSizeCategory: .large), decorations: decorations)
+        let plainOpening = try #require(without.text.attribute(.paragraphStyle, at: try #require(without.verseOffsets[first.id]), effectiveRange: nil) as? NSParagraphStyle)
+        #expect(opening.paragraphSpacingBefore > plainOpening.paragraphSpacingBefore)
+        #expect(opening.minimumLineHeight == plainOpening.minimumLineHeight)
+        #expect(built.text.attribute(.largeInitial, at: try #require(built.verseOffsets[first.id]), effectiveRange: nil) != nil)
+    }
+
+    @Test func largeInitialMetrics() {
+        #expect(LargeInitialMetrics.rise(of: "T", capHeight: 30, ascender: 40) == 30)
+        #expect(LargeInitialMetrics.rise(of: "\u{201C}C", capHeight: 30, ascender: 40) == 30)
+        #expect(LargeInitialMetrics.rise(of: "É", capHeight: 30, ascender: 40) == 40, "An accent reaches above the cap height")
+        // A line 24 pt tall with a 5 pt descender holds 19 pt above its baseline.
+        #expect(LargeInitialMetrics.roomAbove(rise: 10, lineHeight: 24, bodyDescender: -5, fontSize: 19) == 0)
+        #expect(LargeInitialMetrics.roomAbove(rise: 40, lineHeight: 24, bodyDescender: -5, fontSize: 19) == (40 + 3.8 - 19).rounded(.up))
+    }
+
     @Test func pageTurnVolumePicksOneOfFiveLevels() {
         #expect(PageTurnFeedback.level(forVolume: 0) == 1)
         #expect(PageTurnFeedback.level(forVolume: 0.25) == 2)

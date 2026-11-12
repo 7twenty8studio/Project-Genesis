@@ -7,6 +7,9 @@ extension NSAttributedString.Key {
     static let footnoteText = NSAttributedString.Key("genesis.footnoteText")
     /// On a licensed Bible's copyright notice: the publisher's site (`URL`).
     static let publisherLink = NSAttributedString.Key("genesis.publisherLink")
+    /// On a chapter's large first letter (or its illuminated picture):
+    /// `true`. Highlights give it a block of its own (HighlightLayoutManager).
+    static let largeInitial = NSAttributedString.Key("genesis.largeInitial")
 }
 
 /// Per-person marks drawn over a chapter. Scripture text itself is never changed.
@@ -53,8 +56,13 @@ enum ChapterTextBuilder {
 
         appendTitle(for: chapter, style: style, into: result)
 
-        let prose = paragraphStyle(style: style, firstLineIndent: 0, headIndent: 0)
-        let poetry = paragraphStyle(style: style, firstLineIndent: size * 1.2, headIndent: size * 2.4)
+        // Every line of Scripture is exactly as tall as a line of body text,
+        // so a large first letter, a highlight, a verse number or a footnote
+        // marker never pushes its line apart from the others.
+        let lineHeight = (bodyFont.lineHeight * style.lineHeightMultiple).rounded()
+        let prose = paragraphStyle(style: style, firstLineIndent: 0, headIndent: 0, lineHeight: lineHeight)
+        let poetry = paragraphStyle(style: style, firstLineIndent: size * 1.2, headIndent: size * 2.4, lineHeight: lineHeight)
+        var currentParagraph = prose
         let headingsByVerse = Dictionary(grouping: chapter.headings, by: \.beforeVerse)
         let noteMarker = noteMarkerAttachment(font: bodyFont, color: palette.uiAccent)
         let footnotesByVerse = Dictionary(grouping: chapter.footnotes, by: \.verse)
@@ -62,7 +70,7 @@ enum ChapterTextBuilder {
 
         for (index, verse) in chapter.verses.enumerated() {
             let previous = index > 0 ? chapter.verses[index - 1] : nil
-            let paragraph = verse.isPoetry ? poetry : prose
+            let opensWithInitial = index == 0 && verse.id.verse == 1 && style.largeInitial
 
             for heading in headingsByVerse[verse.id.verse] ?? [] {
                 if result.length > 0 { result.append(NSAttributedString(string: "\n")) }
@@ -79,6 +87,15 @@ enum ChapterTextBuilder {
                 || verse.isPoetry
                 || verse.startsParagraph
                 || (previous?.isPoetry ?? false)
+            if startsNewParagraph {
+                currentParagraph = verse.isPoetry ? poetry : prose
+                if opensWithInitial {
+                    currentParagraph = openingParagraph(
+                        currentParagraph, verse: verse, style: style, bodyFont: bodyFont, lineHeight: lineHeight
+                    )
+                }
+            }
+            let paragraph = currentParagraph
             if result.length > 0 {
                 result.append(NSAttributedString(string: startsNewParagraph ? "\n" : " ", attributes: [.font: bodyFont, .paragraphStyle: paragraph]))
             }
@@ -99,7 +116,6 @@ enum ChapterTextBuilder {
 
             // The chapter opens with a large first letter instead of "1",
             // as printed Bibles do (the chapter number is above it).
-            let opensWithInitial = index == 0 && verse.id.verse == 1 && style.largeInitial
             if style.showsVerseNumbers && !opensWithInitial {
                 var numberAttributes = attributes
                 numberAttributes[.font] = style.font.uiFont(size: size * 0.58, weight: .semibold)
@@ -134,6 +150,7 @@ enum ChapterTextBuilder {
                 let picture = NSMutableAttributedString(attributedString: NSAttributedString(attachment: ornament))
                 var pictureAttributes = attributes
                 pictureAttributes[.font] = bodyFont
+                pictureAttributes[.largeInitial] = true
                 picture.addAttributes(pictureAttributes, range: NSRange(location: 0, length: picture.length))
                 result.append(picture)
                 textStart = result.length
@@ -141,7 +158,8 @@ enum ChapterTextBuilder {
                 var hiddenAttributes = textAttributes
                 hiddenAttributes[.font] = UIFont(descriptor: bodyFont.fontDescriptor, size: 0.1)
                 hiddenAttributes[.foregroundColor] = UIColor.clear
-                hiddenAttributes[.backgroundColor] = nil
+                // The highlight stays on (it draws nothing for this letter), so
+                // the picture and the words are one highlighted run.
                 hiddenAttributes[.underlineStyle] = nil
                 result.append(NSAttributedString(string: split.initial, attributes: hiddenAttributes))
                 result.append(NSAttributedString(string: split.rest, attributes: textAttributes))
@@ -150,6 +168,7 @@ enum ChapterTextBuilder {
                 var initialAttributes = textAttributes
                 initialAttributes[.font] = style.font.uiFont(size: size * 2.6)
                 initialAttributes[.foregroundColor] = palette.uiAccent
+                initialAttributes[.largeInitial] = true
                 result.append(NSAttributedString(string: split.initial, attributes: initialAttributes))
                 result.append(NSAttributedString(string: split.rest, attributes: textAttributes))
             } else {
@@ -236,14 +255,14 @@ enum ChapterTextBuilder {
     /// small corner flourishes and a soft fill in the theme's tones, about two
     /// lines tall. TextKit 1 can't wrap lines around an inline picture (and
     /// pages would need matching exclusion paths), so it sits in the first
-    /// line, its foot on the text's descender, and that line grows to fit.
+    /// line, its foot on the text's descender, and rises above it into room
+    /// kept before the paragraph (`openingParagraph`), so every line of the
+    /// chapter keeps the same height.
     static func illuminatedInitial(_ initial: String, style: ReaderStyle, bodyFont: UIFont) -> NSTextAttachment? {
         guard let letter = initial.last else { return nil }
         let palette = style.palette
         let accent = palette.uiAccent
-        // A fixed share of the line height: fonts' descenders vary too much
-        // (New York's is deep) for "two lines minus the descender" to hold.
-        let side = (bodyFont.lineHeight * 1.8).rounded(.up)
+        let side = illuminatedSide(bodyFont: bodyFont)
         guard side > 8 else { return nil }
         let gap = (style.fontSize * 0.22).rounded()
         let canvas = CGSize(width: side + gap, height: side)
@@ -347,6 +366,13 @@ enum ChapterTextBuilder {
         return attachment
     }
 
+    /// The illuminated initial's height: a fixed share of the line height,
+    /// since fonts' descenders vary too much (New York's is deep) for "two
+    /// lines minus the descender" to hold.
+    static func illuminatedSide(bodyFont: UIFont) -> CGFloat {
+        (bodyFont.lineHeight * 1.8).rounded(.up)
+    }
+
     private static func appendTitle(for chapter: Chapter, style: ReaderStyle, into result: NSMutableAttributedString) {
         let palette = style.palette
         let size = style.fontSize
@@ -374,14 +400,49 @@ enum ChapterTextBuilder {
         ]))
     }
 
+    /// The chapter's first paragraph: the same lines, with room kept above
+    /// it for the large first letter, which stands on the first line's
+    /// baseline and rises above it (a raised initial, as many printed Bibles
+    /// set it). The room goes before the paragraph, never between its lines.
+    static func openingParagraph(
+        _ base: NSParagraphStyle,
+        verse: Verse,
+        style: ReaderStyle,
+        bodyFont: UIFont,
+        lineHeight: CGFloat
+    ) -> NSParagraphStyle {
+        let text = verse.text.replacingOccurrences(of: "\n", with: "\u{2028}")
+        guard let split = initialSplit(text) else { return base }
+        let rise: CGFloat
+        if style.initialStyle == .illuminated, illuminatedSide(bodyFont: bodyFont) > 8 {
+            // The picture's foot is on the descender (see illuminatedInitial).
+            rise = illuminatedSide(bodyFont: bodyFont) + bodyFont.descender
+        } else {
+            let font = style.font.uiFont(size: style.fontSize * 2.6)
+            rise = LargeInitialMetrics.rise(of: split.initial, capHeight: font.capHeight, ascender: font.ascender)
+        }
+        let extra = LargeInitialMetrics.roomAbove(
+            rise: rise, lineHeight: lineHeight, bodyDescender: bodyFont.descender, fontSize: style.fontSize
+        )
+        guard extra > 0, let opening = base.mutableCopy() as? NSMutableParagraphStyle else { return base }
+        opening.paragraphSpacingBefore += extra
+        return opening
+    }
+
     private static func paragraphStyle(
         style: ReaderStyle,
         firstLineIndent: CGFloat,
         headIndent: CGFloat,
-        spacingBefore: CGFloat = 0
+        spacingBefore: CGFloat = 0,
+        lineHeight: CGFloat? = nil
     ) -> NSParagraphStyle {
         let paragraph = NSMutableParagraphStyle()
-        paragraph.lineHeightMultiple = style.lineHeightMultiple
+        if let lineHeight {
+            paragraph.minimumLineHeight = lineHeight
+            paragraph.maximumLineHeight = lineHeight
+        } else {
+            paragraph.lineHeightMultiple = style.lineHeightMultiple
+        }
         paragraph.paragraphSpacing = style.paragraphSpacing
         paragraph.paragraphSpacingBefore = spacingBefore
         paragraph.firstLineHeadIndent = firstLineIndent
