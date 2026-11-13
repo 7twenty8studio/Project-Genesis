@@ -161,18 +161,31 @@ select dvtest.check('Versely user sees no daily-verse/ objects',
 drop table _seen;
 select dvtest.denied('Versely user cannot upload under daily-verse/', 'authenticated',
   $$insert into storage.objects (bucket_id, name) values ('attachments', 'daily-verse/reports/00000000-0000-0000-0000-000000000002/1.jpg')$$, :versely);
+-- Real Supabase Storage blocks every direct DELETE on storage.objects with a
+-- statement trigger (storage.protect_delete) unless storage.allow_delete_query
+-- is 'true'. The flag is set transaction-locally here, for this test only, so
+-- that RLS alone is what stops the Versely user. It never appears in a migration.
 do $$
-declare changed integer;
+declare changed integer; deleted integer;
 begin
   perform set_config('request.jwt.claim.sub', '11111111-1111-1111-1111-111111111111', true);
+  perform set_config('storage.allow_delete_query', 'true', true);
   set local role authenticated;
   update storage.objects set name = name where bucket_id = 'attachments' and name like 'daily-verse/%';
   get diagnostics changed = row_count;
   delete from storage.objects where bucket_id = 'attachments' and name like 'daily-verse/%';
+  get diagnostics deleted = row_count;
   reset role;
-  perform dvtest.check('Versely user cannot update or delete daily-verse/ objects', changed = 0
+  perform set_config('storage.allow_delete_query', 'false', true);
+  perform dvtest.check('Versely user cannot update or delete daily-verse/ objects (RLS: 0 updated, 0 deleted)',
+    changed = 0 and deleted = 0
     and (select count(*) = 1 from storage.objects where name like 'daily-verse/%'));
 end $$;
+select dvtest.raises('direct DELETE on storage.objects without the flag is blocked (protect_delete, 42501)', 'postgres',
+  $$delete from storage.objects where bucket_id = 'attachments' and name like 'daily-verse/%'$$,
+  'Direct deletion from storage tables is not allowed');
+select dvtest.check('daily-verse/ object still present after both delete attempts',
+  (select count(*) = 1 from storage.objects where name like 'daily-verse/%'));
 do $$
 declare seen integer;
 begin

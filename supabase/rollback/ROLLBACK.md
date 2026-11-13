@@ -54,4 +54,4 @@ Run the migration again; it is self-contained. Then re-run the reviewed admin se
 
 ## Tested locally
 
-`supabase/tests/daily_verse/run.sh` runs migrate → 84 tests → rollback → compares Versely's schema → migrate again → 84 tests on a throwaway Postgres 17 with Supabase stand-ins. This hasn't been run against a real Supabase project; no staging project or branch exists. The rollback must also pass on real Supabase as part of the required gate in `supabase/tests/daily_verse/PRODUCTION_GATE.md` before any production apply.
+`supabase/tests/daily_verse/run.sh` runs migrate → 86 tests → rollback → compares Versely's schema → migrate again → 86 tests, on a throwaway Postgres 17 with Supabase stand-ins or (`--target local-supabase`) on a real local Supabase stack, where it passed on 13 Nov 2026 (`supabase/tests/daily_verse/LOCAL_SUPABASE_RESULTS.md`). No hosted staging project or branch exists. The rollback is part of the required gate in `supabase/tests/daily_verse/PRODUCTION_GATE.md` before any production apply.

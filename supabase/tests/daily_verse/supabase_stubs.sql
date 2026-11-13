@@ -66,6 +66,18 @@ grant usage on schema storage to anon, authenticated, service_role, postgres;
 grant all on storage.objects, storage.buckets to anon, authenticated, service_role, postgres;
 alter table storage.objects owner to postgres;
 alter table storage.buckets owner to postgres;
+-- Mirrors real Supabase Storage: direct DELETEs are refused unless the
+-- transaction sets storage.allow_delete_query = 'true' (the Storage API does).
+create function storage.protect_delete() returns trigger language plpgsql as $$
+begin
+  if coalesce(current_setting('storage.allow_delete_query', true), 'false') != 'true' then
+    raise exception 'Direct deletion from storage tables is not allowed. Use the Storage API instead.'
+      using hint = 'This prevents accidental data loss from orphaned objects.', errcode = '42501';
+  end if;
+  return null;
+end $$;
+create trigger protect_objects_delete before delete on storage.objects
+  for each statement execute function storage.protect_delete();
 
 -- pg_cron / pg_net / vault ------------------------------------------------------
 create schema cron;
