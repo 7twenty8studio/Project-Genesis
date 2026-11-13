@@ -8,9 +8,9 @@
 #     brew install postgresql@17      # once
 #     supabase/tests/daily_verse/run.sh
 #
-#   Real local Supabase (Docker; see LOCAL_SUPABASE_VALIDATION.md). The stack must
-#   have been reset to the last Versely migration first:
-#     supabase db reset --local --no-seed --version 20261024000000
+#   Real local Supabase (Docker; see LOCAL_SUPABASE_VALIDATION.md). Versely's
+#   migrations must already be applied, without the Daily Verse one (the doc
+#   applies them by hand so no cron job can call production):
 #     supabase/tests/daily_verse/run.sh --target local-supabase
 #   Only 127.0.0.1 / localhost databases are accepted in this mode.
 set -euo pipefail
@@ -73,9 +73,9 @@ else
     echo "No local Supabase reachable at ${PG_URL##*@}: run 'supabase start' first." >&2; exit 2
   fi
   if [ "$(psql -At -c "select count(*) from pg_namespace where nspname = 'daily_verse'")" != 0 ]; then
-    echo "daily_verse already exists: run 'supabase db reset --local --no-seed --version 20261024000000' first." >&2; exit 2
+    echo "daily_verse already exists: start from a stack with only Versely's migrations (LOCAL_SUPABASE_VALIDATION.md)." >&2; exit 2
   fi
-  echo "   Versely migrations applied by supabase db reset: $(psql -At -c "select count(*) from supabase_migrations.schema_migrations")"
+  echo "   Versely tables present in public: $(psql -At -c "select count(*) from information_schema.tables where table_schema = 'public'")"
 fi
 
 snapshot() {  # $1 = label

@@ -1,5 +1,10 @@
 # Validating PR A on a real local Supabase (Docker)
 
+> **First run, 13 Nov 2026:** see [LOCAL_SUPABASE_RESULTS.md](LOCAL_SUPABASE_RESULTS.md). It stopped at a server crash in the migration (`grant … to current_user`). It also found three corrections to the steps below:
+> 1. `supabase start` applies **all** migrations on first boot (default config). Set `[db.migrations] enabled = false` and `[db.seed] enabled = false` in `config.toml` before starting, then apply Versely's migrations by hand with `psql`. Apply `20261018030000_ops_alerts_schedule.sql` with `psql -1` plus `select cron.alter_job(jobid, active := false) from cron.job where command ilike '%ops_call_alerts%' or command ilike '%http%';` in the same transaction, so the ops-alerts jobs are never active.
+> 2. `postgres` can't `UPDATE cron.job` on real Supabase; use `cron.alter_job`.
+> 3. Colima may need `--dns 1.1.1.1 --dns 8.8.8.8` to pull images. The images total ~8 GB.
+
 This carries out the gate in [PRODUCTION_GATE.md](PRODUCTION_GATE.md) on **this Mac**, with a disposable Supabase stack in Docker.
 - There is no non-production Supabase environment for Versely.
 - No Supabase project or branch is to be created.
