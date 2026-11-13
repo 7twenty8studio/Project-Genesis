@@ -26,8 +26,12 @@ begin
   end if;
 end;
 $$;
--- The migration runner must be able to create objects owned by it.
-grant daily_verse_owner to current_user;
+-- The migration runner (postgres, as on the hosted project) must be able to
+-- create objects owned by it. The role is named explicitly: on Supabase
+-- Postgres 17.6.1.075 `grant ... to current_user` crashed the backend
+-- (signal 11) in a role-grant hook during local validation, while naming
+-- `postgres` works (LOCAL_SUPABASE_RESULTS.md).
+grant daily_verse_owner to postgres;
 
 create schema if not exists daily_verse authorization daily_verse_owner;
 

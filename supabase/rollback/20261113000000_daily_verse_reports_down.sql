@@ -21,7 +21,9 @@ drop schema if exists daily_verse cascade;
 do $$
 begin
   if exists (select 1 from pg_roles where rolname = 'daily_verse_owner') then
-    execute 'revoke daily_verse_owner from ' || quote_ident(current_user);
+    -- Named explicitly, like the grant in the migration: `current_user` in role
+    -- grants crashed Supabase Postgres 17.6.1.075 during local validation.
+    revoke daily_verse_owner from postgres;
     drop role daily_verse_owner;
   end if;
 end;
