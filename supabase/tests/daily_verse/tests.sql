@@ -382,6 +382,60 @@ begin
     not exists (select 1 from daily_verse.rate_limits where key = 'install:old')
     and exists (select 1 from daily_verse.rate_limits where key = 'global'), result::text);
 end $$;
+-- 11b. Screenshot cleanup keeps paths and sizes paired ----------------------------
+do $$
+declare id_ uuid; r daily_verse.reports; before_ timestamptz;
+begin
+  id_ := dvtest.submit('install-pairs', 'es-pairs');
+  set local role service_role;
+  perform daily_verse.attach_screenshot(id_, 1, 111111);
+  perform daily_verse.attach_screenshot(id_, 2, 222222);
+  reset role;
+  select updated_at into before_ from daily_verse.reports where id = id_;
+
+  set local role service_role;
+  perform daily_verse.mark_screenshots_deleted(id_, array['daily-verse/reports/' || id_ || '/9.jpg', 'somewhere/else.jpg']);
+  reset role;
+  select * into r from daily_verse.reports where id = id_;
+  perform dvtest.check('unknown paths change nothing (paths, sizes, updated_at)',
+    cardinality(r.screenshot_paths) = 2 and r.screenshot_bytes = array[111111, 222222] and r.updated_at = before_);
+
+  set local role service_role;
+  perform daily_verse.mark_screenshots_deleted(id_, array['daily-verse/reports/' || id_ || '/1.jpg']);
+  reset role;
+  select * into r from daily_verse.reports where id = id_;
+  perform dvtest.check('deleting one of two screenshots keeps the other with its own size',
+    r.screenshot_paths = array['daily-verse/reports/' || id_ || '/2.jpg'] and r.screenshot_bytes = array[222222],
+    r.screenshot_paths::text || ' ' || r.screenshot_bytes::text);
+
+  set local role service_role;
+  perform daily_verse.attach_screenshot(id_, 1, 333333);
+  perform daily_verse.mark_screenshots_deleted(id_, array['daily-verse/reports/' || id_ || '/1.jpg', 'daily-verse/reports/' || id_ || '/2.jpg']);
+  reset role;
+  select * into r from daily_verse.reports where id = id_;
+  perform dvtest.check('deleting both clears both paths and sizes',
+    r.screenshot_paths = '{}' and r.screenshot_bytes = '{}');
+end $$;
+select dvtest.raises('paths and sizes can never get out of step', 'postgres',
+  $$update daily_verse.reports set screenshot_bytes = '{}' where cardinality(screenshot_paths) > 0$$, '23514');
+
+-- 11c. Network keys are kept only as HMAC rate-limit keys, and purged when idle --
+do $$
+declare result jsonb; net_key text := 'net:' || encode(digest('net-idle', 'sha256'), 'hex');
+begin
+  perform dvtest.submit('install-idle', 'es-idle', net => 'net-idle');
+  perform dvtest.check('the network HMAC is kept as a rate-limit key (not the raw value)',
+    exists (select 1 from daily_verse.rate_limits where key = net_key)
+    and not exists (select 1 from daily_verse.rate_limits where key like '%net-idle%'));
+  perform dvtest.check('reports do not store the network key',
+    not exists (select 1 from information_schema.columns where table_schema = 'daily_verse' and table_name = 'reports' and column_name ilike '%net%'));
+  update daily_verse.rate_limits set refilled_at = now() - interval '2 days 1 minute' where key = net_key;
+  set local role service_role;
+  result := daily_verse.purge_expired();
+  reset role;
+  perform dvtest.check('an idle net: row is purged by purge_expired', not exists (select 1 from daily_verse.rate_limits where key = net_key), result::text);
+end $$;
+
 select dvtest.check('retention is scheduled daily with pg_cron',
   (select count(*) = 1 from cron.job where jobname = 'daily-verse-retention' and command like '%daily_verse.purge_expired()%'));
 

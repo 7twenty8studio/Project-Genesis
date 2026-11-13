@@ -77,12 +77,14 @@ create table daily_verse.reports (
   description text not null check (char_length(description) between 1 and 2000),
   install_hash text not null check (install_hash ~ '^[0-9a-f]{64}$'),
   screenshot_paths text[] not null default '{}' check (cardinality(screenshot_paths) <= 2),
+  -- screenshot_bytes[i] is the size of screenshot_paths[i]; they always change together.
   screenshot_bytes integer[] not null default '{}' check (cardinality(screenshot_bytes) <= 2),
   status text not null default 'new' check (status in ('new', 'in_review', 'resolved', 'dismissed')),
   admin_note text check (admin_note is null or char_length(admin_note) <= 2000),
   handled_by text,
   closed_at timestamptz,
-  constraint reports_closed check ((status in ('resolved', 'dismissed')) = (closed_at is not null))
+  constraint reports_closed check ((status in ('resolved', 'dismissed')) = (closed_at is not null)),
+  constraint reports_screenshot_pairs check (cardinality(screenshot_paths) = cardinality(screenshot_bytes))
 );
 create index reports_status_idx on daily_verse.reports (status, created_at desc);
 create index reports_language_idx on daily_verse.reports (content_language, created_at desc);
@@ -104,6 +106,9 @@ create table daily_verse.report_events (
 create index report_events_report_idx on daily_verse.report_events (report_id, at);
 
 -- Rate limits (token buckets, same pattern as public.yvp_rate_limit) --------------
+-- Keys: 'install:<HMAC of the install id>', 'net:<HMAC of the network prefix>'
+-- and 'global'. These keys ARE stored here (never the raw install id or IP)
+-- and are deleted by purge_expired once idle for 2 days.
 create table daily_verse.rate_limits (
   key text primary key check (char_length(key) <= 100),
   tokens double precision not null,
@@ -160,8 +165,10 @@ $$;
 -- it has validated the request). Returns the report id; raises
 --   'rate_limited' (P0001, hint = seconds to wait), 'channel_closed', or a
 --   check violation for bad fields.
--- `p_net_hash` is an HMAC of the caller's network prefix, used only as a
--- rate-limit key and never stored with the report.
+-- `p_net_hash` is an HMAC of the caller's network prefix, computed by the Edge
+-- Function; the raw IP never reaches the database. The HMAC is not stored with
+-- the report, but it is kept as the rate-limit key 'net:<hmac>' in
+-- daily_verse.rate_limits until purge_expired removes it (idle for 2 days).
 create function daily_verse.submit_report(
   p_channel text, p_app_version text, p_build text, p_os_version text, p_device_family text,
   p_content_language text, p_puzzle_type text, p_content_id text, p_challenge_date date,
@@ -352,17 +359,23 @@ as $$
   limit least(greatest(coalesce(p_limit, 100), 1), 1000);
 $$;
 
+-- Call only after the Storage deletion of those paths has succeeded. Each path
+-- is removed together with its size; paths not on the report change nothing.
 create function daily_verse.mark_screenshots_deleted(p_report_id uuid, p_paths text[])
 returns void
 language sql
 security definer
 set search_path = ''
 as $$
-  update daily_verse.reports
-  set screenshot_paths = array(select x from unnest(screenshot_paths) as x where not (x = any (p_paths))),
-      screenshot_bytes = '{}',
+  update daily_verse.reports r
+  set screenshot_paths = array(
+        select t.path from unnest(r.screenshot_paths, r.screenshot_bytes) with ordinality as t(path, bytes, i)
+        where not (t.path = any (p_paths)) order by t.i),
+      screenshot_bytes = array(
+        select t.bytes from unnest(r.screenshot_paths, r.screenshot_bytes) with ordinality as t(path, bytes, i)
+        where not (t.path = any (p_paths)) order by t.i),
       updated_at = now()
-  where id = p_report_id;
+  where r.id = p_report_id and r.screenshot_paths && coalesce(p_paths, '{}');
 $$;
 
 -- Deletes reports (and their audit rows) a year after they were sent, once
