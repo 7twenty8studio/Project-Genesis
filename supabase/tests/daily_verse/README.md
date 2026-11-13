@@ -2,7 +2,9 @@
 
 ```sh
 brew install postgresql@17          # once
-supabase/tests/daily_verse/run.sh
+supabase/tests/daily_verse/run.sh   # stand-ins, no Docker
+# real local Supabase (Docker), see LOCAL_SUPABASE_VALIDATION.md:
+supabase/tests/daily_verse/run.sh --target local-supabase
 ```
 
 There's no Docker and no network involved, and nothing touches a Supabase project. The script:

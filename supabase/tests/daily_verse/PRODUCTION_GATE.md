@@ -1,5 +1,7 @@
 # Required gate before any production apply
 
+> Step-by-step for this Mac (Docker or Colima plus `supabase start`): [LOCAL_SUPABASE_VALIDATION.md](LOCAL_SUPABASE_VALIDATION.md). There is no non-production Supabase environment, and none is to be created.
+
 The local suite (`run.sh`) runs on plain Postgres with Supabase stand-ins. It proves the logic and the isolation rules, **but not hosted Supabase permissions**. Before the migration is applied to the production project, all of the following must pass on a **disposable real Supabase**:
 
 - `supabase start` (Docker) on a developer machine, **or**

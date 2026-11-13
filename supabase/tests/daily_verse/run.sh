@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
-# Local, throwaway checks for the Daily Verse reports migration. No Docker and no
-# network: starts a temporary Postgres, loads Supabase stand-ins, applies every
-# Versely migration, snapshots Versely's schema, applies the Daily Verse
-# migration, runs the security tests, rolls back, checks Versely is byte-for-byte
-# as before, re-applies and tests again. Never touches a real Supabase project.
+# Checks for the Daily Verse reports migration: migrate -> security tests ->
+# rollback -> migrate -> tests, comparing Versely's schema, policies, grants,
+# roles and cron jobs before and after.
 #
-#   brew install postgresql@17      # once
-#   supabase/tests/daily_verse/run.sh
+#   Default (no Docker, no network): a throwaway Postgres 17 with Supabase
+#   stand-ins, all Versely migrations applied first.
+#     brew install postgresql@17      # once
+#     supabase/tests/daily_verse/run.sh
+#
+#   Real local Supabase (Docker; see LOCAL_SUPABASE_VALIDATION.md). The stack must
+#   have been reset to the last Versely migration first:
+#     supabase db reset --local --no-seed --version 20261024000000
+#     supabase/tests/daily_verse/run.sh --target local-supabase
+#   Only 127.0.0.1 / localhost databases are accepted in this mode.
 set -euo pipefail
 export LC_ALL=C LANG=C   # Postgres refuses to start under some macOS locales
 
@@ -16,34 +22,64 @@ MIG="$ROOT/supabase/migrations"
 NEW="20261113000000_daily_verse_reports.sql"
 DOWN="$ROOT/supabase/rollback/20261113000000_daily_verse_reports_down.sql"
 PGBIN="${PGBIN:-/opt/homebrew/opt/postgresql@17/bin}"
-PORT="${PORT:-54329}"
-# Short path: Postgres socket paths are limited to ~100 characters.
-WORK="$(mktemp -d /tmp/dvpg.XXXXXX)"
-OUT="${OUT:-$WORK/out}"; mkdir -p "$OUT"
-export PGHOST="$WORK" PGPORT="$PORT" PGDATABASE=dvtest
+TARGET="stubs"
+if [ "${1:-}" = "--target" ]; then TARGET="${2:-}"; fi
 
-cleanup() { "$PGBIN/pg_ctl" -D "$WORK/data" -m immediate stop >/dev/null 2>&1 || true; }
-trap cleanup EXIT
+case "$TARGET" in
+stubs)
+  PORT="${PORT:-54329}"
+  # Short path: Postgres socket paths are limited to ~100 characters.
+  WORK="$(mktemp -d /tmp/dvpg.XXXXXX)"
+  OUT="${OUT:-$WORK/out}"; mkdir -p "$OUT"
+  cleanup() { "$PGBIN/pg_ctl" -D "$WORK/data" -m immediate stop >/dev/null 2>&1 || true; }
+  trap cleanup EXIT
+  "$PGBIN/initdb" -D "$WORK/data" -A trust -U "$(whoami)" >/dev/null
+  "$PGBIN/pg_ctl" -D "$WORK/data" -o "-k $WORK -p $PORT -c listen_addresses=''" -l "$WORK/pg.log" start >/dev/null
+  "$PGBIN/createdb" -h "$WORK" -p "$PORT" dvtest
+  SUPER_URL="postgresql:///dvtest?host=$WORK&port=$PORT"
+  PG_URL="postgresql://postgres@/dvtest?host=$WORK&port=$PORT"
+  ;;
+local-supabase)
+  # Defaults of `supabase start`. supabase_admin is the local superuser (for the
+  # tests' role switching); migrations run as postgres, like the hosted project.
+  PG_URL="${PG_URL:-postgresql://postgres:postgres@127.0.0.1:54322/postgres}"
+  SUPER_URL="${SUPER_URL:-postgresql://supabase_admin:postgres@127.0.0.1:54322/postgres}"
+  for url in "$PG_URL" "$SUPER_URL"; do
+    case "$url" in
+      *@127.0.0.1:*|*@localhost:*) ;;
+      *) echo "Refusing: $url is not a local database. This script never runs against a hosted project." >&2; exit 2 ;;
+    esac
+  done
+  OUT="${OUT:-$(mktemp -d /tmp/dvsb.XXXXXX)}"; mkdir -p "$OUT"
+  ;;
+*) echo "usage: run.sh [--target stubs|local-supabase]" >&2; exit 2 ;;
+esac
 
-"$PGBIN/initdb" -D "$WORK/data" -A trust -U "$(whoami)" >/dev/null
-"$PGBIN/pg_ctl" -D "$WORK/data" -o "-k $WORK -p $PORT -c listen_addresses=''" -l "$WORK/pg.log" start >/dev/null
-"$PGBIN/createdb" -h "$WORK" -p "$PORT" dvtest
+psql() { "$PGBIN/psql" -X -q -v ON_ERROR_STOP=1 -d "$SUPER_URL" "$@"; }
+as_postgres() { "$PGBIN/psql" -X -q -v ON_ERROR_STOP=1 -d "$PG_URL" "$@"; }
 
-psql() { "$PGBIN/psql" -X -q -v ON_ERROR_STOP=1 "$@"; }
-as_postgres() { psql -U postgres "$@"; }
-
-psql -f "$HERE/supabase_stubs.sql" >/dev/null
-
-echo "== Versely migrations (as postgres)"
-for f in "$MIG"/*.sql; do
-  [ "$(basename "$f")" = "$NEW" ] && continue
-  # pg_cron / pg_net are stand-ins here (supabase_stubs.sql); their CREATE EXTENSION lines are skipped.
-  sed -E '/create extension if not exists (pg_cron|pg_net)/d' "$f" | as_postgres -f - >/dev/null
-done
-echo "   applied $(ls "$MIG"/*.sql | grep -vc "$NEW") files"
+if [ "$TARGET" = stubs ]; then
+  psql -f "$HERE/supabase_stubs.sql" >/dev/null
+  echo "== Versely migrations (as postgres)"
+  for f in "$MIG"/*.sql; do
+    [ "$(basename "$f")" = "$NEW" ] && continue
+    # pg_cron / pg_net are stand-ins here (supabase_stubs.sql); their CREATE EXTENSION lines are skipped.
+    sed -E '/create extension if not exists (pg_cron|pg_net)/d' "$f" | as_postgres -f - >/dev/null
+  done
+  echo "   applied $(ls "$MIG"/*.sql | grep -vc "$NEW") files"
+else
+  echo "== Real local Supabase at ${PG_URL##*@}"
+  if ! psql -At -c "select 1" >/dev/null 2>&1; then
+    echo "No local Supabase reachable at ${PG_URL##*@}: run 'supabase start' first." >&2; exit 2
+  fi
+  if [ "$(psql -At -c "select count(*) from pg_namespace where nspname = 'daily_verse'")" != 0 ]; then
+    echo "daily_verse already exists: run 'supabase db reset --local --no-seed --version 20261024000000' first." >&2; exit 2
+  fi
+  echo "   Versely migrations applied by supabase db reset: $(psql -At -c "select count(*) from supabase_migrations.schema_migrations")"
+fi
 
 snapshot() {  # $1 = label
-  "$PGBIN/pg_dump" -h "$WORK" -p "$PORT" -s -n public -n storage -n auth dvtest \
+  "$PGBIN/pg_dump" -d "$SUPER_URL" -s -n public -n storage -n auth \
     | grep -vE '^(--|SET |SELECT pg_catalog|\\(un)?restrict )' > "$OUT/schema-$1.sql"
   psql -At -c "select schemaname, tablename, policyname, cmd, roles::text, coalesce(qual,''), coalesce(with_check,'')
                from pg_policies where schemaname in ('public','storage') order by 1,2,3" > "$OUT/policies-$1.txt"
