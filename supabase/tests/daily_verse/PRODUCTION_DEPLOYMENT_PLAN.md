@@ -5,7 +5,8 @@
 ## Final checklist: Saturday 14 Nov 2026, 10:00 Central (16:00 UTC)
 
 **Migration to apply:** `supabase/migrations/20261113000000_daily_verse_reports.sql`
-- **sha256 `670f2112f5180a2391ad87e107d6613de55f7343c5282178c74c77912e0bbd0d`**, the same file reviewed at 4a263d5 and still unchanged at 82b4d15 and later.
+- **sha256 `670f2112f5180a2391ad87e107d6613de55f7343c5282178c74c77912e0bbd0d`**. It's the same file as the earlier reviewed version, 4a263d5.
+- **Current PR head: `8ab004f`.** The final review of this checklist was at that commit. Any later commit on the branch must be docs-only: `git diff --stat 8ab004f HEAD -- supabase/migrations supabase/rollback supabase/seed` must print nothing.
 - Rollback `452ded13f34e3a9c22699ace312fcd0a3db3e97d3c9d9f3ec0e6da6612a0f580`. Seed (not part of this window) `dd5ebb3cccee35f17eb85cdd6e9b96468e17cf40622fcda9edb2034b7764f0c4`.
 
 **Already done:**
@@ -20,14 +21,15 @@
 | 1 | **Re-verify the backup.** Dashboard → Database → Backups. | Gamaliel | A physical backup dated **14 Nov 2026, about 07:57 UTC** (the daily one, about 8 h before the window), status completed, with Restore available. **If the newest is still 13 Nov 07:57 UTC (about 32 h old), stop and decide.** | §1 |
 | 2 | Record that backup's timestamp in the PR, and re-read the recovery procedure (§8), including its Storage limits. | Gamaliel / Claude | Recorded | §1, §8 |
 | 3 | A schema-only `pg_dump` and a Storage inventory, saved outside the repo | Gamaliel connects; Claude runs them (A1) | Files written | §1 |
-| 4 | Confirm the file fingerprints on the PR branch head (`claude/daily-verse-reports-db`) | Claude | `670f2112…bd0d` / `452ded13…0f580`; head SHA recorded | §3.1 |
+| 4 | Confirm the file fingerprints on the PR branch head (`claude/daily-verse-reports-db`) | Claude | Head `8ab004f` (or a docs-only descendant; the diff above is empty); `670f2112…bd0d` / `452ded13…0f580`; head SHA recorded | §3.1 |
 | 5 | Migration history checks | Claude (A1) | 23 rows (or explained), no `20261113000000`, columns recorded | §3.2 |
 | 6 | Compatibility checks, image still 17.6.1.166, `daily_verse` not exposed | Claude (A1) | As listed | §3.3 |
 | 7 | Versely fingerprint, BEFORE | Claude (A1) | Saved; `daily_verse.*` = `n/a\|0\|0\|0` | §3.4 |
+| 7b | **Versely scheduled jobs, BEFORE.** Job list, plus their last 24 h of runs and the ops-alerts HTTP results | Claude (A1) | All three jobs active, with the expected schedules; recent runs `succeeded`; ops-alerts responses 200. A job already failing → stop and report: it isn't caused by PR A, but must not be mixed up with it. | §3.5 |
 | 8 | **Go / no-go**, reported to Gamaliel | Claude → Gamaliel | Every row above as expected | — |
-| 9 | **Explicit authorization to apply (A3)**, then the one-transaction apply | Gamaliel | `psql` exits 0 | §4 |
-| 10 | Post-checks: history, fingerprint diff, lockdown, API 406, Versely smoke test | Claude + Gamaliel (phone) | 0 Versely rows differ; `daily_verse.*` = `0\|1\|1\|1` | §5 |
-| 11 | Record the results in the PR. Watch for 24 h; confirm the 03:17 UTC run on 15 Nov | Claude / Gamaliel | `succeeded` | §5.6–5.7 |
+| 9 | **Explicit authorization to apply (A3)**, then the one-transaction apply, started just after an `ops-alerts-check` run finishes (e.g. 10:01–10:03 CT) | Gamaliel | `psql` exits 0 | §4 |
+| 10 | Post-checks: history, fingerprint diff, lockdown, API 406, **Versely scheduled jobs** (the next two `ops-alerts-check` runs and the next `yvp-chapter-cache-expire` run at :23), Versely smoke test | Claude + Gamaliel (phone) | 0 Versely rows differ; `daily_verse.*` = `0\|1\|1\|1`; post-apply job runs `succeeded`, ops-alerts responses 200 | §5 |
+| 11 | Record the results in the PR. Watch for 24 h. Confirm `daily-verse-retention` at 03:17 UTC on 15 Nov and `ops-alerts-digest` at 13:00 UTC on 15 Nov (its first run after the window) | Claude / Gamaliel | `succeeded`; the digest email arrives as usual | §5.6–5.7 |
 | 12 | **Merge PR #20 (separate approval, A2)**, only after the post-checks pass. Merging deploys nothing. | Gamaliel / coordinator | `main` holds the same migration file (`670f2112…bd0d`) | §5.8 |
 
 **Separate approvals:**
@@ -41,7 +43,7 @@
 | | |
 |---|---|
 | Project | Existing Project Genesis Supabase project `ulbpwygzwchsnvdeeife` (Postgres 17.6.1.166). No new project, branch or bucket. |
-| Migration | `supabase/migrations/20261113000000_daily_verse_reports.sql`, sha256 `670f2112f5180a2391ad87e107d6613de55f7343c5282178c74c77912e0bbd0d`. Unchanged since review at 4a263d5. |
+| Migration | `supabase/migrations/20261113000000_daily_verse_reports.sql`, sha256 `670f2112f5180a2391ad87e107d6613de55f7343c5282178c74c77912e0bbd0d`. Unchanged since the earlier reviewed version, 4a263d5. Current PR head: `8ab004f`. |
 | Rollback | `supabase/rollback/20261113000000_daily_verse_reports_down.sql`, sha256 `452ded13f34e3a9c22699ace312fcd0a3db3e97d3c9d9f3ec0e6da6612a0f580` |
 | Admin seed (separate) | `supabase/seed/daily_verse_admins.sql`, sha256 `dd5ebb3cccee35f17eb85cdd6e9b96468e17cf40622fcda9edb2034b7764f0c4` |
 | Read-only Versely fingerprint | `supabase/tests/daily_verse/prod_fingerprint.sql` |
@@ -113,7 +115,14 @@ PSQL=/opt/homebrew/opt/postgresql@17/bin/psql
   - the new retention job (03:17 UTC)
   - the daily backup (~07:57 UTC)
 
-  `ops-alerts-check` runs every 5 minutes; it doesn't conflict, and its next run is part of the smoke test.
+  - Versely's existing jobs, from the repo's migrations, are confirmed in §3.5:
+    - `ops-alerts-check`: every 5 minutes, calling the ops-alerts Edge Function through pg_net
+    - `ops-alerts-digest`: 13:00 UTC
+    - `yvp-chapter-cache-expire`: hourly at :23
+  - None of them uses `daily_verse`.
+  - The migration only inserts one row into `cron.job`, and pg_cron picks it up on commit, so there's no conflict with a job that's running.
+  - Start the apply **just after** an `ops-alerts-check` run finishes (at :01–:03 past a 5-minute mark). That keeps the logs easy to read and lets the next run serve as the first post-check.
+  - Today's 13:00 UTC digest is before the window. Its next run, 15 Nov 13:00 UTC, is checked during the 24 h watch.
 - **No freeze is needed.** Versely stays online. Don't ship a Versely release or any other database change in the same window.
 
 ### 3. History and compatibility checks (immediately before applying) 🔒 read-only
@@ -152,7 +161,27 @@ PSQL=/opt/homebrew/opt/postgresql@17/bin/psql
    ```
    The `daily_verse.*` rows must read `n/a | 0 | 0 | 0`.
 
-**Go / no-go:** the backup from step 1 is in place and 3.1–3.4 are as expected. Otherwise **stop and report**: nothing has been changed yet.
+5. **Versely scheduled jobs, BEFORE** (read-only). Save the output as `jobs-before.txt` next to the fingerprint:
+   ```sql
+   select jobid, jobname, schedule, active, left(regexp_replace(command, '\s+', ' ', 'g'), 60) as command
+     from cron.job order by jobname;
+   --  expected: ops-alerts-check | */5 * * * * | t,  ops-alerts-digest | 0 13 * * * | t,
+   --            yvp-chapter-cache-expire | 23 * * * * | t;  nothing named daily-verse%
+   select j.jobname, d.status, count(*) as runs, max(d.start_time) as last_run
+     from cron.job_run_details d join cron.job j using (jobid)
+    where d.start_time > now() - interval '24 hours'
+    group by 1, 2 order by 1, 2;
+   --  expected: ops-alerts-check about 288 runs, all `succeeded`, last_run within the past 5 min;
+   --            yvp-chapter-cache-expire about 24, `succeeded`; ops-alerts-digest 1 (13:00 UTC), `succeeded`
+   select status_code, count(*) from net._http_response
+    where created > now() - interval '1 hour' group by 1 order by 1;
+   --  expected: 200 only (the ops-alerts calls)
+   ```
+   - The expected schedules come from the repo's migrations. If production shows different schedules or extra jobs, record them as they are; they're simply what the post-check compares against.
+   - **Stop and report** if any job is inactive when it should be active, or if its recent runs failed, or if the ops-alerts calls aren't returning 200. That's a pre-existing Versely problem and must be resolved or understood before the window.
+   - `prod_fingerprint.sql` also hashes the Versely job list (`versely.cron_jobs`), including schedule, command and `active`.
+
+**Go / no-go:** the backup from step 1 is in place and 3.1–3.5 are as expected. Otherwise **stop and report**: nothing has been changed yet.
 
 ### 4. Apply 🔒 (separate authorization, in the window)
 1. **Apply from the reviewed PR branch head**, checked out in 3.1. Re-check that the head SHA and both file hashes are unchanged since 3.1. PR #20 is **not** merged before the apply: merging is a separate approval after the post-checks (§5.8). PR B is not merged.
@@ -205,17 +234,36 @@ PSQL=/opt/homebrew/opt/postgresql@17/bin/psql
    ```
    - That 406 comes from `daily_verse` not being an **exposed PostgREST schema**: the API, even with the service-role key, can't reach it. Privileged **SQL** connections (`postgres`, `service_role`) are not denied, which is accepted (Gamaliel, 14 Nov).
    - **Don't run `tests.sql` or `run.sh` in production.** They insert test users and storage rows.
+4b. **Versely scheduled jobs, AFTER** (read-only):
+   ```sql
+   select jobid, jobname, schedule, active, left(regexp_replace(command, '\s+', ' ', 'g'), 60) as command
+     from cron.job order by jobname;
+   --  identical to jobs-before.txt (same jobid, schedule, active, command), plus one new row:
+   --  daily-verse-retention | 17 3 * * * | t
+   select j.jobname, d.status, d.start_time, left(d.return_message, 60)
+     from cron.job_run_details d join cron.job j using (jobid)
+    where d.start_time > '<apply time>'::timestamptz order by d.start_time;
+   --  the next two ops-alerts-check runs (≤10 min) and the next yvp-chapter-cache-expire run (:23): `succeeded`
+   select status_code, count(*) from net._http_response
+    where created > '<apply time>'::timestamptz group by 1;
+   --  200 only
+   ```
+   - Also check: the `versely.cron_jobs` fingerprint row is unchanged (5.2), and the ops dashboard shows a fresh check time.
+   - **A Versely job that fails after the apply, having succeeded before it, is a rollback trigger (§6)**, unless it's clearly unrelated, for example an external outage visible in the same run's error message.
 5. **Versely smoke test** on a real device, with Gamaliel's own account:
    - sign in
    - open notes and a Bible chapter
    - view an existing attachment
    - the 7twenty8 `/admin` ops dashboard loads
-   - after the next `*/5` run, `select j.jobname, d.status from cron.job_run_details d join cron.job j using (jobid) order by d.start_time desc limit 3;` shows `succeeded` for `ops-alerts-check`
-6. **Watch** for 24 hours: the ops dashboard and email alerts, plus Dashboard → Logs (Postgres, API) for new errors. After the next 03:17 UTC, confirm that `daily-verse-retention` reports `succeeded`.
+   - the scheduled-job results from 4b are already in
+6. **Watch** for 24 hours: the ops dashboard and email alerts, plus Dashboard → Logs (Postgres, API) for new errors. Then confirm:
+   - `daily-verse-retention` at 03:17 UTC on 15 Nov: `succeeded`
+   - `ops-alerts-digest` at 13:00 UTC on 15 Nov: `succeeded`, and the digest email arrived
+   - `ops-alerts-check`: still `succeeded` every 5 minutes (the 24 h query from §3.5 shows no failures)
 7. **Record in the PR:**
    - the time applied
    - the `dv-apply.sql` hash
-   - the outputs of 5.1–5.5
+   - the outputs of 5.1–5.5, including the jobs before and after (4b)
    - the fingerprint rows: counts and hashes only, with no user data
 8. **Merge PR #20 (A2, a separate approval)**, only after 5.1–5.7 pass.
    - Merging deploys nothing; it brings `main` in line with what production already has.
@@ -223,7 +271,7 @@ PSQL=/opt/homebrew/opt/postgresql@17/bin/psql
 
 ### 6. Rollback or forward fix
 **When to act:**
-- **Roll back** if the post-checks show any change in a `versely.*` fingerprint row, a Versely smoke test fails, or new Versely errors appear that relate to the window.
+- **Roll back** if the post-checks show any change in a `versely.*` fingerprint row, a Versely scheduled job that succeeded before the apply now fails (§5.4b), a Versely smoke test fails, or new Versely errors appear that relate to the window.
 - **Fix forward** for defects inside the Daily Verse objects.
 - **If the apply itself fails**, the single transaction has already undone everything, so no rollback is needed. Just verify with 6A.4.
 
@@ -286,7 +334,7 @@ PSQL=/opt/homebrew/opt/postgresql@17/bin/psql
    - `prod_fingerprint.sql`: the `versely.*` rows should match `fingerprint-before.txt`. The two `_count` rows may differ, since the backup predates the window.
    - `daily_verse.*` rows read `n/a|0|0|0`, because the backup predates the migration.
    - `select count(*) from supabase_migrations.schema_migrations where version = '20261113000000';` returns 0.
-   - `select jobname, active from cron.job order by 1;` shows Versely's jobs as before, with ops alerts active.
+   - `select jobname, schedule, active from cron.job order by 1;` matches `jobs-before.txt` (ops alerts active). The next `ops-alerts-check` run succeeds.
 6. **Reconcile Storage.** Compare `storage-inventory-pre-restore.csv` with the restored `storage.objects`:
    - Objects present before the restore but missing now are orphans; they need re-registering or re-uploading by the owning user.
    - Restored rows whose files were deleted after the backup should be removed through the Storage API.
