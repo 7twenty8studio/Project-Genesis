@@ -108,7 +108,8 @@ The run leaves the Daily Verse migration applied, ready for steps 6–8.
 ```sh
 eval "$(supabase status -o env)"   # exports API_URL, ANON_KEY, SERVICE_ROLE_KEY, ...
 
-# The schema isn't exposed: every call fails, even with the service key.
+# daily_verse isn't an exposed PostgREST schema, so every API call is refused (406), even with the
+# service-role key. That's only the API: privileged SQL connections (postgres, service_role) are not denied.
 curl -s -o /dev/null -w "%{http_code}\n" "$API_URL/rest/v1/reports" \
   -H "apikey: $ANON_KEY" -H "Authorization: Bearer $ANON_KEY" -H "Accept-Profile: daily_verse"            # expect 406
 curl -s -o /dev/null -w "%{http_code}\n" "$API_URL/rest/v1/reports" \

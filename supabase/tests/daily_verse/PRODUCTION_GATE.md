@@ -17,4 +17,9 @@ The local suite (`run.sh`) runs on plain Postgres with Supabase stand-ins. It pr
 | 6 | Rollback | Run `supabase/rollback/…_down.sql`, then check the schema, role and job are gone. Re-apply and re-run checks 3–5. |
 | 7 | Versely unaffected | Compare a schema-only dump of `public`, `storage` and `auth` (`supabase db dump --schema public,storage,auth`), `pg_policies`, table grants, role memberships and Versely's cron jobs, before the migration vs. after it vs. after rollback. They must be identical apart from `postgres → daily_verse_owner`. Smoke-test the Versely app (sign-in, attachments, feedback) and the ops dashboard. |
 
-Record the results (date, environment, outputs) in the PR, then ask Gamaliel for a **separate, explicit authorization** to apply to production. Production apply is a reviewed, manual step: `supabase db push` on the linked project, followed by the reviewed admin seed. Nothing in CI applies it.
+Record the results (date, environment, outputs) in the PR, then ask Gamaliel for a **separate, explicit authorization** to apply to production. Nothing in CI applies it.
+
+**Production applies ONLY `20261113000000_daily_verse_reports.sql`.** It goes in as one recorded migration, in one transaction, after checking its SHA-256 (`670f2112f5180a2391ad87e107d6613de55f7343c5282178c74c77912e0bbd0d`).
+- **Never use `supabase db push` or `supabase migration repair`.** The hosted migration history doesn't match the repo: it has dashboard-style versions, and several repo files aren't recorded. So `db push` would try to re-run Versely's migrations.
+- See [PRODUCTION_DEPLOYMENT_PLAN.md](PRODUCTION_DEPLOYMENT_PLAN.md).
+- The admin seed is a separate, later approval.

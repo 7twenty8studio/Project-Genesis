@@ -36,10 +36,11 @@ Nothing in `public`, `storage` or `auth` is created or changed, so Versely is un
 
 4. **Run the down script** as `postgres` (SQL editor, or `psql "$DB_URL" -f supabase/rollback/20261113000000_daily_verse_reports_down.sql`). It unschedules the cron job, drops the `daily_verse` schema with CASCADE, and drops the `daily_verse_owner` role.
 
-5. **Mark the migration as reverted** so `supabase db push` doesn't consider it applied:
-   ```sh
-   supabase migration repair --status reverted 20261113000000
+5. **Remove its history row.** Production records this migration with a single row (see `supabase/tests/daily_verse/PRODUCTION_DEPLOYMENT_PLAN.md`), so delete that row, preferably in the same transaction as step 4:
+   ```sql
+   delete from supabase_migrations.schema_migrations where version = '20261113000000';
    ```
+   **Never use `supabase migration repair` or `supabase db push` on production.** The hosted history doesn't match the repo's migration files.
 
 6. **Verify:**
    ```sql

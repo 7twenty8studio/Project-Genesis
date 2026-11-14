@@ -82,7 +82,8 @@ create trigger protect_objects_delete before delete on storage.objects
 -- pg_cron / pg_net / vault ------------------------------------------------------
 create schema cron;
 create table cron.job (
-  jobid bigserial primary key, jobname text unique, schedule text not null, command text not null
+  jobid bigserial primary key, jobname text unique, schedule text not null, command text not null,
+  active boolean not null default true
 );
 create function cron.schedule(p_name text, p_schedule text, p_command text) returns bigint
 language plpgsql as $$
