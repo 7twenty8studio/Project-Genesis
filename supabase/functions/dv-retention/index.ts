@@ -36,7 +36,7 @@ Deno.serve(async (req) => {
   try {
     return json(await runCleanup());
   } catch (error) {
-    console.error("dv-retention failed", (error as Error)?.message);
+    console.error("dv-retention failed", (error as DbError)?.code ?? (error as Error)?.name ?? "unknown");
     return json({ error: "internal" }, 500);
   }
 });

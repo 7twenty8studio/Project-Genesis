@@ -8,7 +8,7 @@
 |---|---|
 | `supabase/functions/_shared/dailyVerse.ts` | Pure rules: validation, channel, HMAC, paths, error mapping, admin shapes, CORS, retention planning, alert email. Node-tested in `dailyVerse.test.ts`. |
 | `supabase/functions/_shared/dailyVerseIO.ts` | Postgres via `SUPABASE_DB_URL`, with `set local role service_role` per transaction. Also Storage (service role), the verified email via `auth.getUser`, and Resend. |
-| `supabase/functions/dv-report/` | The app's report intake (anon key). |
+| `supabase/functions/dv-report/` | The app's report intake (publishable key in `apikey`, checked in code). |
 | `supabase/functions/dv-admin/` | The admin site's API (user JWT; the `daily_verse.admins` allow-list). `contract.test.ts` and `dv-admin.fixtures.json` are copied from studio-web 96478ac. |
 | `supabase/functions/dv-retention/` | The screenshot cleanup (Vault secret). `cleanup.ts` is shared with dv-admin's `runCleanup`. |
 | `supabase/migrations/20261114000000_daily_verse_retention_schedule.sql` | The nightly schedule. **Not applied anywhere but local.** |
@@ -25,7 +25,7 @@ No existing Versely function, shared module, migration, policy or bucket is chan
 |---|---|---|
 | 1. The server decides the channel | `channelFor(build, DV_INTERNAL_BUILDS)`; the body's `channel` is never read | unit: "channel comes from server config"; integration: client `channel` ignored, unlisted build → 503 |
 | 2. Internal-only is a policy gate | documented in `dv-report` and here; App Attest / DeviceCheck before public release | — |
-| 3. The service key never reaches the app | the service key is used only in `dailyVerseIO.ts` (function secret); the app uses the anon key (PR #36) | integration: no response body or header (all calls in the run) contains the service key or the JWT secret; the app repo has no service key (checked by grep, see the PR) |
+| 3. The service key never reaches the app | the service key is used only in `dailyVerseIO.ts` (function secret); the app uses the publishable key only (PR #36) | integration: no response body or header (all calls in the run) contains the service key or the JWT secret; the app repo has no service key (checked by grep, see the PR) |
 | 4. Admin comes only from a verified session | `verifiedEmail()` → `auth.getUser`; `daily_verse.is_admin` | integration: 401 for none / anon / forged / expired / deleted user; 403 for an ops-only user even with the email in the body or a header |
 | 5. Storage first, database after | dv-report uploads then calls `attach_screenshot` (removing the upload if that fails); `confirmedDeleted()` | integration: attach failure → upload removed; Storage down → 201 with nothing attached; cleanup with Storage down → path stays listed, next run deletes it |
 | 6. HMACs only | `hmacHex(DV_HMAC_SECRET, …)`; the last `x-forwarded-for` hop | integration: no raw install ID or IP in the DB; keys are `install:<hmac>`, `net:<hmac>`; a spoofed header doesn't dodge the network limit |
@@ -53,7 +53,7 @@ No existing Versely function, shared module, migration, policy or bucket is chan
 
 | Function | `verify_jwt` | Why |
 |---|---|---|
-| dv-report | **on** (default) | The app sends the public anon key. The gateway refuses requests without it. |
+| dv-report | **off** (`--no-verify-jwt`) | The app sends the project's **publishable key** (`sb_publishable_…`) in the `apikey` header only, no `Authorization`. The platform's `verify_jwt` check only understands JWTs, and publishable keys aren't JWTs (Supabase, "Migrating to publishable and secret API keys": *Edge Functions don't verify the apikey header for the new keys; use verify_jwt = false and authorize in code*). So dv-report checks the key itself, first: `acceptedReportKeys` reads `SUPABASE_PUBLISHABLE_KEYS` (set by the platform) and accepts only `sb_publishable_` values, constant-time; no key configured means every call gets 401. Legacy anon JWTs, secret keys and service-role keys are refused. (The legacy anon key stops working at the end of 2026, so the app never uses it.) |
 | dv-admin | **on** (default) | The caller must be signed in. The function also verifies the user with `auth.getUser` and checks `daily_verse.admins`. |
 | dv-retention | **off** (`--no-verify-jwt`) | pg_cron has no user session. The caller is proven by the Vault secret, checked by `daily_verse.retention_secret_matches` (the same pattern as Versely's ops-alerts, but its own secret). |
 
@@ -63,7 +63,7 @@ No existing Versely function, shared module, migration, policy or bucket is chan
 2. Set the secrets above (`supabase secrets set …`) without touching existing ones. `RESEND_API_KEY` stays as is.
 3. Deploy:
    ```sh
-   supabase functions deploy dv-report
+   supabase functions deploy dv-report --no-verify-jwt
    supabase functions deploy dv-admin
    supabase functions deploy dv-retention --no-verify-jwt
    ```
@@ -87,4 +87,23 @@ No existing Versely function, shared module, migration, policy or bucket is chan
 - **The admin site viewing screenshots.** Locally, signed URLs use the internal `http://kong:8000` host, which studio-web correctly rejects. Hosted, they're `https://<ref>.supabase.co/storage/v1/object/sign/…`, which matches its check.
 - **The real client IP header on the hosted gateway.** We use the last `x-forwarded-for` entry. Confirm it's the client's address after deploy (the network bucket only, not a security boundary).
 - **A real Resend send** (the tests use a mock), and App Attest / DeviceCheck (required before public release).
+- **Alert emails are best effort.** `notify()` runs after the response, at most 12 an hour; a Resend failure is only logged (`dv background task failed`). The admin tab is the record: a report is never lost because its email wasn't sent.
 - **The app end to end.** A Debug build needs an https `REPORTS_URL`. The integration tests instead send requests with the same JSON keys and value formats that the app's `ReportSubmission` encodes (PR #36).
+
+## Screenshot results the app sees
+
+`201 {id, screenshots, submitted}`: the text is always saved first; `screenshots` is how many pictures were saved and `submitted` how many were sent. If Storage fails, or the second picture fails, the report stays with what was saved (never re-sent automatically, so there are no duplicates or half-uploads). The app (#36) compares the two and shows "Your report was sent, but N screenshot(s) couldn't be uploaded" with the report reference. A duplicate within 10 minutes answers `200 {id, duplicate: true, screenshots}` with what the first one saved.
+
+## Hosted validation (approved Nov 14 2026, before the release checklist)
+
+Run on Project Genesis with the three functions deployed and only `7twenty8studio@gmail.com` seeded; the schedule migration stays unapplied (dv-retention answers 403 until then, which is part of the check). Results go in `HOSTED_RESULTS.md`.
+
+1. **Keys:** 201 with the publishable key in `apikey`; 401 with none, a wrong one, the legacy anon JWT, the key only as Bearer; nothing saved for refused calls.
+2. **IP header:** which `x-forwarded-for` / `x-real-ip` values the hosted gateway passes, and whether a client-sent `x-forwarded-for` changes the last entry. If the gateway's address can't be told from a client's, the network bucket stays a coarse brake and the docs say so.
+3. **Screenshots:** two pictures → `{screenshots: 2, submitted: 2}`; dv-admin's signed URLs are `https://ulbpwygzwchsnvdeeife.supabase.co/storage/v1/object/sign/attachments/daily-verse/reports/<id>/<n>.jpg`, expire after 300 s, serve the JPEG, and the plain object URL without a token is refused (private bucket).
+4. **Admin access:** the seeded admin gets 200; anon and a signed-in non-admin get 401/403; Versely's ops-dashboard keeps answering as before; CORS only for `DV_ALLOWED_ORIGINS`.
+5. **Email:** one real alert to `DV_ALERT_EMAIL` through Resend from `DV_EMAIL_FROM`.
+6. **App → server → admin:** the app's own `SupabaseReportClient` sends a report with screenshots to the hosted dv-report; it shows in the admin tab with its pictures.
+7. **Versely unchanged:** the existing functions, cron jobs and fingerprint (`prod_fingerprint.sql`) are the same before and after.
+
+**Cleaning up after the tests:** test reports and their screenshots are removed (dv-admin's delete path, or the Storage API then SQL by id); any temporary non-admin test user is deleted.

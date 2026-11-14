@@ -29,6 +29,7 @@ Use the same safety setup as `../LOCAL_SUPABASE_VALIDATION.md`:
 4. Write a test env file, outside the repo:
    ```sh
    DV_HMAC_SECRET=<openssl rand -hex 32>
+   DV_REPORT_KEYS=<PUBLISHABLE_KEY from `supabase status -o env`>   # the hosted platform sets SUPABASE_PUBLISHABLE_KEYS instead
    DV_INTERNAL_BUILDS=202611141200,202611150900
    RESEND_API_KEY=re_local_test_not_real
    DV_ALERT_EMAIL=dv-alerts@example.test
@@ -42,7 +43,7 @@ Use the same safety setup as `../LOCAL_SUPABASE_VALIDATION.md`:
    ```
 6. Run the tests:
    ```sh
-   eval "$(supabase status -o env)"; export API_URL ANON_KEY SERVICE_ROLE_KEY JWT_SECRET
+   eval "$(supabase status -o env)"; export API_URL ANON_KEY PUBLISHABLE_KEY SECRET_KEY SERVICE_ROLE_KEY JWT_SECRET
    node --experimental-strip-types --test --test-concurrency=1 supabase/tests/daily_verse/functions/integration.test.ts
    ```
 
@@ -50,7 +51,6 @@ Use the same safety setup as `../LOCAL_SUPABASE_VALIDATION.md`:
 
 - **`--no-verify-jwt`:** with CLI 2.75 the local auth server signs user tokens with ES256, but the local functions gateway only verifies HS256, so it rejects every user token as "Invalid JWT".
   - The functions don't depend on the gateway: dv-admin verifies each caller with `auth.getUser`, and dv-retention checks its Vault secret.
-  - On the hosted project, dv-report and dv-admin keep JWT verification on.
-  - Set `GATEWAY_VERIFIES_JWT=1` to also check that dv-report refuses requests without the anon key.
+  - On the hosted project dv-admin keeps JWT verification on. dv-report is deployed with `--no-verify-jwt` there too and checks the publishable key itself, so the local run tests the same check.
 - **CORS:** the local Kong adds `Access-Control-Allow-Origin: *` to every function response. The CORS test asks the edge runtime directly, inside the Docker network.
 - **Signed URLs:** locally they use the internal `http://kong:8000` host. The test rewrites the host before fetching. On the hosted project they're `https://<ref>.supabase.co/storage/v1/object/sign/…`.

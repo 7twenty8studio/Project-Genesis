@@ -70,5 +70,7 @@ revoke all on function daily_verse.call_retention() from public, anon, authentic
 grant execute on function daily_verse.call_retention() to service_role;
 
 -- 03:47 UTC daily, after PR A's daily-verse-retention purge (03:17) and away
--- from Versely's ops jobs.
+-- from Versely's ops jobs. There's no one-day lag for reports whose screenshots
+-- are cleared here: dv-retention calls purge_expired itself right after the
+-- deletions, so a year-old report goes the same night its files do.
 select cron.schedule('daily-verse-screenshot-cleanup', '47 3 * * *', $$ select daily_verse.call_retention(); $$);

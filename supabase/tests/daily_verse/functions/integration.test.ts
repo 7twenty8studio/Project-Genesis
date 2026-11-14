@@ -1,8 +1,8 @@
 // End-to-end tests for dv-report, dv-admin and dv-retention against a LOCAL
 // Supabase stack (never a hosted project). See README.md next to this file.
 //
-//   eval "$(supabase status -o env)"           # API_URL, ANON_KEY, SERVICE_ROLE_KEY, JWT_SECRET, DB_URL
-//   supabase functions serve --env-file <test env>   # DV_* test values, mock Resend
+//   eval "$(supabase status -o env)"           # API_URL, ANON_KEY, PUBLISHABLE_KEY, SECRET_KEY, SERVICE_ROLE_KEY, JWT_SECRET
+//   supabase functions serve --no-verify-jwt --env-file <test env>   # DV_* test values (DV_REPORT_KEYS=$PUBLISHABLE_KEY), mock Resend
 //   DV_EMAIL_LOG=/tmp/dvb/emails.jsonl node --experimental-strip-types --test \
 //     supabase/tests/daily_verse/functions/integration.test.ts
 //
@@ -17,6 +17,9 @@ import { before, describe, test } from "node:test";
 
 const API = process.env.API_URL ?? "";
 const ANON = process.env.ANON_KEY ?? "";
+// dv-report takes the publishable key in `apikey` only, as the app sends it (#36).
+const PUBLISHABLE = process.env.PUBLISHABLE_KEY ?? "";
+const SECRET_KEY = process.env.SECRET_KEY ?? "";
 const SERVICE = process.env.SERVICE_ROLE_KEY ?? "";
 const JWT_SECRET = process.env.JWT_SECRET ?? "";
 const SUPER = "postgresql://supabase_admin:postgres@127.0.0.1:54322/postgres";
@@ -66,7 +69,7 @@ async function call(fn: string, body: unknown, headers: Record<string, string> =
   return { status: res.status, json, text, headers: res.headers };
 }
 
-const anon = { apikey: ANON, Authorization: `Bearer ${ANON}` };
+const anon = { apikey: PUBLISHABLE };
 const report = (body: unknown, headers: Record<string, string> = anon) => call("dv-report", body, headers);
 const admin = (token: string, body: unknown, extra: Record<string, string> = {}) =>
   call("dv-admin", body, { apikey: ANON, Authorization: `Bearer ${token}`, ...extra });
@@ -141,6 +144,7 @@ const OPS_ONLY_EMAIL = "ops-only@example.test";
 
 before(async () => {
   assert.ok(ANON && SERVICE && JWT_SECRET, "run eval \"$(supabase status -o env)\" first");
+  assert.match(PUBLISHABLE, /^sb_publishable_/, "PUBLISHABLE_KEY from `supabase status -o env` (and DV_REPORT_KEYS in the functions' env file)");
   dvAdmin = await signUp(DV_ADMIN_EMAIL);
   opsOnly = await signUp(OPS_ONLY_EMAIL);
   plain = await signUp("plain-user@example.test");
@@ -162,7 +166,7 @@ describe("dv-report", () => {
     const res = await report(body, { ...anon, "x-forwarded-for": "198.51.100.23" });
     assert.equal(res.status, 201, res.text);
     assert.match(res.json.id, /^[0-9a-f-]{36}$/);
-    assert.equal(res.json.screenshots, 2);
+    assert.deepEqual([res.json.screenshots, res.json.submitted], [2, 2]);
     assert.equal(res.headers.get("cache-control"), "no-store");
 
     const row = sql(`select channel || '|' || install_hash || '|' || array_to_string(screenshot_paths, ',') || '|' || array_to_string(screenshot_bytes, ',') from daily_verse.reports where id = '${res.json.id}'`);
@@ -195,7 +199,7 @@ describe("dv-report", () => {
     assert.equal(first.status, 201);
     const again = await report({ ...body, description: "Same thing again" });
     assert.equal(again.status, 200);
-    assert.deepEqual(again.json, { id: first.json.id, duplicate: true });
+    assert.deepEqual(again.json, { id: first.json.id, duplicate: true, screenshots: 0 });
     assert.equal(sql(`select count(*) from daily_verse.reports where content_id = '${body.contentId}'`), "1");
   });
 
@@ -269,7 +273,7 @@ describe("dv-report", () => {
     try {
       const res = await report(reportBody({ screenshots: [b64(JPEG())] }));
       assert.equal(res.status, 201, res.text);
-      assert.equal(res.json.screenshots, 0);
+      assert.deepEqual([res.json.screenshots, res.json.submitted], [0, 1], "the app is told the picture wasn't saved");
       assert.equal(sql(`select cardinality(screenshot_paths) from daily_verse.reports where id = '${res.json.id}'`), "0");
     } finally {
       await setStorage(true);
@@ -282,21 +286,53 @@ describe("dv-report", () => {
     try {
       const res = await report(reportBody({ screenshots: [b64(JPEG())] }));
       assert.equal(res.status, 201);
-      assert.equal(res.json.screenshots, 0);
+      assert.deepEqual([res.json.screenshots, res.json.submitted], [0, 1]);
       assert.deepEqual(await storageObjects(`daily-verse/reports/${res.json.id}/`), [], "orphan upload removed");
     } finally {
       sql("grant execute on function daily_verse.attach_screenshot(uuid, integer, integer) to service_role");
     }
   });
 
-  test("method and gateway checks", async () => {
-    assert.equal((await call("dv-report", null, anon, "GET")).status, 405);
-    // Local `functions serve` runs with --no-verify-jwt (see README: the CLI's local
-    // gateway can't verify the local auth server's ES256 tokens). Set
-    // GATEWAY_VERIFIES_JWT=1 where the gateway does verify, to check the anon-key requirement.
-    if (process.env.GATEWAY_VERIFIES_JWT === "1") {
-      assert.equal((await report(reportBody(), {})).status, 401, "no anon key: the gateway refuses");
+  test("one of two screenshots saved: 201 {screenshots: 1, submitted: 2}, the duplicate says the same", async () => {
+    resetLimits();
+    // Local stack only: make the second attach fail, as a mid-report Storage/database hiccup would.
+    sql(`create or replace function daily_verse.dvtest_second_attach_fails() returns trigger language plpgsql as $f$
+      begin if cardinality(new.screenshot_paths) = 2 and cardinality(old.screenshot_paths) = 1 then
+        raise exception 'simulated failure' using errcode = 'P0001'; end if; return new; end $f$`);
+    sql("create trigger dvtest_second_attach_fails before update on daily_verse.reports for each row execute function daily_verse.dvtest_second_attach_fails()");
+    try {
+      const body = reportBody({ screenshots: [b64(JPEG(10)), b64(JPEG(20))] });
+      const res = await report(body);
+      assert.equal(res.status, 201, res.text);
+      assert.deepEqual([res.json.screenshots, res.json.submitted], [1, 2]);
+      assert.deepEqual(await storageObjects(`daily-verse/reports/${res.json.id}/`), ["1.jpg"], "the failed second upload was removed");
+      const again = await report(body);
+      assert.deepEqual([again.status, again.json], [200, { id: res.json.id, duplicate: true, screenshots: 1 }]);
+    } finally {
+      sql("drop trigger if exists dvtest_second_attach_fails on daily_verse.reports");
+      sql("drop function if exists daily_verse.dvtest_second_attach_fails()");
     }
+  });
+
+  test("auth: only the publishable key in apikey; 401 without it, before anything is read", async () => {
+    assert.equal((await call("dv-report", null, anon, "GET")).status, 405);
+    const before = sql("select count(*) from daily_verse.reports");
+    const refused: [string, Record<string, string>][] = [
+      ["no headers", {}],
+      ["a wrong publishable key", { apikey: "sb_publishable_" + "x".repeat(24) }],
+      ["the key with one character changed", { apikey: PUBLISHABLE.slice(0, -1) + (PUBLISHABLE.endsWith("a") ? "b" : "a") }],
+      ["the legacy anon JWT", { apikey: ANON, Authorization: `Bearer ${ANON}` }],
+      ["the service role JWT", { apikey: SERVICE, Authorization: `Bearer ${SERVICE}` }],
+      ["the key only as Bearer", { Authorization: `Bearer ${PUBLISHABLE}` }],
+      ...(SECRET_KEY ? [["the secret key", { apikey: SECRET_KEY }] as [string, Record<string, string>]] : []),
+    ];
+    for (const [label, headers] of refused) {
+      const res = await report(reportBody(), headers);
+      assert.deepEqual([res.status, res.json], [401, { error: "unauthorized" }], label);
+    }
+    assert.equal(sql("select count(*) from daily_verse.reports"), before, "nothing saved for a refused call");
+    resetLimits();
+    assert.equal((await report(reportBody(), { apikey: PUBLISHABLE })).status, 201, "the app's headers: apikey only");
   });
 });
 

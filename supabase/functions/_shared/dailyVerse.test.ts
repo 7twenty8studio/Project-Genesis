@@ -3,8 +3,8 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import {
-  adminErrorToHttp, alertEmail, channelFor, clientIP, confirmedDeleted, corsHeaders, decodeBase64, escapeHTML,
-  groupDue, hmacHex, isDailyVersePath, isJpeg, isUrgent, MAX_SCREENSHOT_BYTES, networkPrefix, nextBefore,
+  acceptedReportKeys, adminErrorToHttp, alertEmail, channelFor, clientIP, confirmedDeleted, corsHeaders, decodeBase64, escapeHTML,
+  groupDue, hmacHex, isAcceptedReportKey, isDailyVersePath, isJpeg, isUrgent, MAX_SCREENSHOT_BYTES, networkPrefix, nextBefore,
   parseAdminAction, parseReport, reportErrorToHttp, screenshotPath,
 } from "./dailyVerse.ts";
 
@@ -105,6 +105,49 @@ test("client IP: the gateway's last x-forwarded-for entry, never a client-prepen
   assert.equal(networkPrefix("203.0.113.9"), "203.0.113.0/24");
   assert.equal(networkPrefix("2001:db8:abcd:12::1"), "2001:db8:abcd::/48");
   assert.equal(networkPrefix(null), "unknown");
+});
+
+test("network prefix: canonical IPv4 /24 and IPv6 /48, anything odd shares 'unknown'", () => {
+  // IPv4: ranges, leading zeros, ports
+  assert.equal(networkPrefix("8.8.8.8:443"), "8.8.8.0/24");
+  assert.equal(networkPrefix(" 10.0.0.255 "), "10.0.0.0/24");
+  for (const bad of ["256.1.1.1", "1.2.3", "1.2.3.4.5", "01.2.3.4", "1.2.3.-4", "a.b.c.d", "", "not an ip"]) {
+    assert.equal(networkPrefix(bad), "unknown", bad);
+  }
+  // IPv6: compressed and expanded forms of one /48 agree
+  const same = ["2001:db8:abcd:12::1", "2001:0db8:abcd:0012:0:0:0:2", "2001:DB8:ABCD::", "[2001:db8:abcd::9]:443", "2001:db8:abcd::1%en0"];
+  for (const ip of same) assert.equal(networkPrefix(ip), "2001:db8:abcd::/48", ip);
+  assert.equal(networkPrefix("2001:db8::1"), "2001:db8:0::/48", "a short head is padded, not glued to the tail");
+  assert.equal(networkPrefix("2001::1"), networkPrefix("2001:0:0:5::"), "the same /48 however it's written");
+  assert.notEqual(networkPrefix("2001:db8:1::1"), networkPrefix("2001:db8:2::1"));
+  assert.equal(networkPrefix("::1"), "0:0:0::/48");
+  // IPv4-mapped IPv6 is the IPv4 address
+  assert.equal(networkPrefix("::ffff:203.0.113.9"), "203.0.113.0/24");
+  assert.equal(networkPrefix("::ffff:cb00:7109"), "203.0.113.0/24");
+  for (const bad of ["1::2::3", "2001:db8:::1", "12345::1", "2001:db8:g::1", "1:2:3:4:5:6:7:8:9", "1:2:3:4:5:6:7", ":::", "::ffff:999.0.0.1"]) {
+    assert.equal(networkPrefix(bad), "unknown", bad);
+  }
+});
+
+test("report keys: only the project's sb_publishable_ keys; fails closed", () => {
+  const pub = "sb_publishable_rzsx7luLexampleKEY_-1";
+  const other = "sb_publishable_secondKEYexample_22";
+  const accepted = acceptedReportKeys(JSON.stringify({ default: pub, ios: other }), undefined);
+  assert.deepEqual(accepted.sort(), [other, pub].sort());
+  assert.ok(isAcceptedReportKey(pub, accepted));
+  assert.ok(isAcceptedReportKey(other, accepted));
+  for (const wrong of [null, "", pub + "x", pub.slice(0, -1), "Bearer " + pub, "sb_publishable_somethingElse123"]) {
+    assert.equal(isAcceptedReportKey(wrong, accepted), false, String(wrong));
+  }
+  // Secret keys and JWTs are never accepted, even if configured by mistake.
+  const jwtLike = "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYW5vbiJ9.sig";
+  assert.deepEqual(acceptedReportKeys(JSON.stringify({ a: "sb_secret_abcdefghijklmnop", b: jwtLike }), `sb_secret_qrstuvwxyz123456,${jwtLike}`), []);
+  // Local tests add theirs through DV_REPORT_KEYS.
+  assert.deepEqual(acceptedReportKeys(undefined, ` ${pub} , `), [pub]);
+  // Nothing configured, or a malformed variable: nothing accepted.
+  assert.deepEqual(acceptedReportKeys(undefined, undefined), []);
+  assert.deepEqual(acceptedReportKeys("{not json", ""), []);
+  assert.equal(isAcceptedReportKey(pub, []), false);
 });
 
 test("HMACs: 64 hex, keyed, and refuse a short pepper (rule 6)", async () => {

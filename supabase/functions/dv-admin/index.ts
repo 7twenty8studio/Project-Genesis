@@ -95,7 +95,8 @@ Deno.serve(async (req) => {
     }
   } catch (error) {
     const mapped = adminErrorToHttp(error as DbError, email ?? "");
-    if (mapped.status === 500) console.error("dv-admin failed", (error as DbError)?.code, (error as DbError)?.message);
+    // The code only: a database message can quote values (an admin note, a description).
+    if (mapped.status === 500) console.error("dv-admin failed", (error as DbError)?.code ?? "unknown");
     return json(mapped.body, mapped.status);
   }
 });

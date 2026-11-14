@@ -143,21 +143,104 @@ export function channelFor(build: string, internalBuilds: string | undefined): C
  * connecting address in x-forwarded-for; a client can prepend its own values, so
  * the LAST entry (added by the gateway) is used, then x-real-ip. Never stored:
  * only an HMAC of the network prefix reaches the database (rule 6).
+ * Which header the HOSTED gateway really sets is a release gate
+ * (PR_B_DEPLOYMENT.md, "Hosted validation"); until it's shown, the network
+ * bucket is a coarse spam brake, not a guarantee.
  */
 export function clientIP(headers: Headers): string | null {
   const parts = headers.get("x-forwarded-for")?.split(",").map((s) => s.trim()).filter(Boolean) ?? [];
   return parts.at(-1) || headers.get("x-real-ip")?.trim() || null;
 }
 
-/** IPv4 → /24, IPv6 → /48, so one household or carrier block shares a bucket. */
+/** "1.2.3.4" or null. Accepts "1.2.3.4:443"; every octet 0–255 with no leading zeros. */
+function parseIPv4(value: string): number[] | null {
+  const m = /^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})(?::\d{1,5})?$/.exec(value);
+  if (!m) return null;
+  const octets = m.slice(1).map((part) => (part.length > 1 && part.startsWith("0") ? NaN : Number(part)));
+  return octets.every((n) => Number.isInteger(n) && n >= 0 && n <= 255) ? octets : null;
+}
+
+/** Eight 16-bit groups, or null. Accepts "[…]:port", a zone ("%en0"), "::" and an embedded IPv4 tail. */
+function parseIPv6(value: string): number[] | null {
+  let text = value;
+  const bracketed = /^\[([^\]]+)\](?::\d{1,5})?$/.exec(text);
+  if (bracketed) text = bracketed[1];
+  text = text.split("%")[0].toLowerCase();
+  if (!text.includes(":") || (text.match(/::/g)?.length ?? 0) > 1) return null;
+  const groups = (part: string): number[] | null => {
+    if (part === "") return [];
+    const out: number[] = [];
+    const pieces = part.split(":");
+    for (const [i, piece] of pieces.entries()) {
+      if (i === pieces.length - 1 && piece.includes(".")) {
+        const v4 = parseIPv4(piece);
+        if (!v4) return null;
+        out.push((v4[0] << 8) | v4[1], (v4[2] << 8) | v4[3]);
+      } else if (/^[0-9a-f]{1,4}$/.test(piece)) {
+        out.push(parseInt(piece, 16));
+      } else {
+        return null;
+      }
+    }
+    return out;
+  };
+  const [headText, tailText] = text.split("::");
+  const head = groups(headText);
+  const tail = tailText === undefined ? [] : groups(tailText);
+  if (!head || !tail) return null;
+  if (tailText === undefined) return head.length === 8 ? head : null;
+  const missing = 8 - head.length - tail.length;
+  return missing >= 1 ? [...head, ...Array(missing).fill(0), ...tail] : null;
+}
+
+/**
+ * IPv4 → /24, IPv6 → /48, so one household or carrier block shares a bucket.
+ * The prefix is canonical (so "2001:db8::1" and "2001:0db8:0:0::2" share one),
+ * IPv4-mapped IPv6 counts as IPv4, and anything unparseable is "unknown"
+ * (one shared bucket: never an error).
+ */
 export function networkPrefix(ip: string | null): string {
   if (!ip) return "unknown";
-  if (/^\d{1,3}(\.\d{1,3}){3}$/.test(ip)) return ip.split(".").slice(0, 3).join(".") + ".0/24";
-  if (ip.includes(":")) {
-    const head = ip.toLowerCase().split("::")[0].split(":").filter(Boolean);
-    return head.slice(0, 3).join(":") + "::/48";
+  const value = ip.trim();
+  const v4 = parseIPv4(value);
+  if (v4) return `${v4[0]}.${v4[1]}.${v4[2]}.0/24`;
+  const v6 = parseIPv6(value);
+  if (!v6) return "unknown";
+  if (v6.slice(0, 5).every((g) => g === 0) && v6[5] === 0xffff) {
+    return `${v6[6] >> 8}.${v6[6] & 0xff}.${v6[7] >> 8}.0/24`;
   }
-  return "unknown";
+  return v6.slice(0, 3).map((g) => g.toString(16)).join(":") + "::/48";
+}
+
+/**
+ * The public keys dv-report accepts in its `apikey` header: the project's
+ * publishable keys (SUPABASE_PUBLISHABLE_KEYS, a JSON object the platform sets
+ * for every function) plus DV_REPORT_KEYS (comma-separated; local tests only,
+ * since the local CLI doesn't set the former). Only sb_publishable_ keys count:
+ * never a secret key or a JWT. No keys configured means nothing is accepted.
+ */
+export function acceptedReportKeys(publishableJSON: string | undefined, extra: string | undefined): string[] {
+  const keys: string[] = [];
+  try {
+    const parsed = JSON.parse(publishableJSON ?? "null");
+    if (parsed && typeof parsed === "object") for (const v of Object.values(parsed)) if (typeof v === "string") keys.push(v);
+  } catch { /* not set or not JSON: none from there */ }
+  for (const k of (extra ?? "").split(",")) keys.push(k.trim());
+  return [...new Set(keys.filter((k) => /^sb_publishable_[A-Za-z0-9_-]{10,}$/.test(k)))];
+}
+
+/** Constant-time comparison of the request's apikey with each accepted key. */
+export function isAcceptedReportKey(apikey: string | null, accepted: string[]): boolean {
+  if (!apikey || accepted.length === 0) return false;
+  const given = new TextEncoder().encode(apikey);
+  let ok = false;
+  for (const key of accepted) {
+    const want = new TextEncoder().encode(key);
+    let diff = given.length ^ want.length;
+    for (let i = 0; i < want.length; i++) diff |= want[i] ^ (given[i] ?? 0);
+    if (diff === 0) ok = true;
+  }
+  return ok;
 }
 
 /** Hex HMAC-SHA256 keyed with the DV_HMAC_SECRET pepper. Raw values never leave the function. */
