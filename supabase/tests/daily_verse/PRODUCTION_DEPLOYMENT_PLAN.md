@@ -20,7 +20,7 @@
 | 1 | **Re-verify the backup.** Dashboard → Database → Backups. | Gamaliel | A physical backup dated **14 Nov 2026, about 07:57 UTC** (the daily one, about 8 h before the window), status completed, with Restore available. **If the newest is still 13 Nov 07:57 UTC (about 32 h old), stop and decide.** | §1 |
 | 2 | Record that backup's timestamp in the PR, and re-read the recovery procedure (§8), including its Storage limits. | Gamaliel / Claude | Recorded | §1, §8 |
 | 3 | A schema-only `pg_dump` and a Storage inventory, saved outside the repo | Gamaliel connects; Claude runs them (A1) | Files written | §1 |
-| 4 | Migration and rollback hashes on `main` after the merge | Claude | `670f2112…bd0d` / `452ded13…0f580` | §3.1 |
+| 4 | Confirm the file fingerprints on the PR branch head (`claude/daily-verse-reports-db`) | Claude | `670f2112…bd0d` / `452ded13…0f580`; head SHA recorded | §3.1 |
 | 5 | Migration history checks | Claude (A1) | 23 rows (or explained), no `20261113000000`, columns recorded | §3.2 |
 | 6 | Compatibility checks, image still 17.6.1.166, `daily_verse` not exposed | Claude (A1) | As listed | §3.3 |
 | 7 | Versely fingerprint, BEFORE | Claude (A1) | Saved; `daily_verse.*` = `n/a\|0\|0\|0` | §3.4 |
@@ -28,8 +28,13 @@
 | 9 | **Explicit authorization to apply (A3)**, then the one-transaction apply | Gamaliel | `psql` exits 0 | §4 |
 | 10 | Post-checks: history, fingerprint diff, lockdown, API 406, Versely smoke test | Claude + Gamaliel (phone) | 0 Versely rows differ; `daily_verse.*` = `0\|1\|1\|1` | §5 |
 | 11 | Record the results in the PR. Watch for 24 h; confirm the 03:17 UTC run on 15 Nov | Claude / Gamaliel | `succeeded` | §5.6–5.7 |
+| 12 | **Merge PR #20 (separate approval, A2)**, only after the post-checks pass. Merging deploys nothing. | Gamaliel / coordinator | `main` holds the same migration file (`670f2112…bd0d`) | §5.8 |
 
-**Separate approvals that are not part of this window:** A2 (merge PR #20, needed before step 4), A4 (rollback, only on a trigger), A5 (admin seed) and PR B.
+**Separate approvals:**
+- A2: merge PR #20, step 12, after the post-checks. The migration is applied from the reviewed PR branch commit, not from `main`.
+- A4: rollback, only on a trigger.
+- A5: admin seed.
+- PR B.
 
 ---
 
@@ -114,7 +119,8 @@ PSQL=/opt/homebrew/opt/postgresql@17/bin/psql
 ### 3. History and compatibility checks (immediately before applying) 🔒 read-only
 1. **The file being applied is the reviewed one:**
    ```sh
-   cd ~/Desktop/7Twenty8/Project-Genesis && git fetch origin && git checkout main && git pull --ff-only   # after A2 (merge)
+   cd ~/Desktop/7Twenty8/Project-Genesis && git fetch origin && git checkout claude/daily-verse-reports-db && git pull --ff-only
+   git rev-parse HEAD                          # record the PR branch head SHA in the PR
    shasum -a 256 supabase/migrations/20261113000000_daily_verse_reports.sql supabase/rollback/20261113000000_daily_verse_reports_down.sql
    # must print 670f2112…bd0d and 452ded13…0f580
    ```
@@ -149,7 +155,7 @@ PSQL=/opt/homebrew/opt/postgresql@17/bin/psql
 **Go / no-go:** the backup from step 1 is in place and 3.1–3.4 are as expected. Otherwise **stop and report**: nothing has been changed yet.
 
 ### 4. Apply 🔒 (separate authorization, in the window)
-1. **Merge PR #20 to `main` (A2).** What's applied is then exactly what's on `main`; re-check the hashes (3.1). PR B is not merged.
+1. **Apply from the reviewed PR branch head**, checked out in 3.1. Re-check that the head SHA and both file hashes are unchanged since 3.1. PR #20 is **not** merged before the apply: merging is a separate approval after the post-checks (§5.8). PR B is not merged.
 2. **Apply in one transaction**, with the history row recorded in that same transaction:
    ```sh
    cd ~/Desktop/7Twenty8/Project-Genesis
@@ -211,6 +217,9 @@ PSQL=/opt/homebrew/opt/postgresql@17/bin/psql
    - the `dv-apply.sql` hash
    - the outputs of 5.1–5.5
    - the fingerprint rows: counts and hashes only, with no user data
+8. **Merge PR #20 (A2, a separate approval)**, only after 5.1–5.7 pass.
+   - Merging deploys nothing; it brings `main` in line with what production already has.
+   - After the merge, confirm that `main` holds the same migration file: `git show origin/main:supabase/migrations/20261113000000_daily_verse_reports.sql | shasum -a 256` prints `670f2112…bd0d`.
 
 ### 6. Rollback or forward fix
 **When to act:**
@@ -292,7 +301,7 @@ PSQL=/opt/homebrew/opt/postgresql@17/bin/psql
 | # | Action | Changes production? |
 |---|---|---|
 | A1 | Steps 1 and 3: Gamaliel connects; read-only backup, history, compatibility and fingerprint checks | No (reads only) |
-| A2 | Step 4.1: merge PR #20 to `main` | No (repository only) |
+| A2 | Step 5.8: merge PR #20 to `main`, only after the post-checks pass | No (repository only; merging deploys nothing) |
 | A3 | Steps 4.2 and 5: the one-transaction apply of `20261113000000_daily_verse_reports.sql` plus its history row, in the chosen window, then the read-only post-checks | **Yes**: adds the `daily_verse` schema, the role, the cron job and 1 history row |
 | A4 | Step 6A: the rollback transaction, only if a rollback trigger occurs | Yes |
 | A5 | Step 7: the admin seed (`7twenty8studio@gmail.com` only) | Yes: one row |
