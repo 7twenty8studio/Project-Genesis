@@ -4,6 +4,9 @@
 -- Run it in the SQL editor (or psql) BEFORE the migration and AFTER it, save
 -- both outputs, and compare: every row except `daily_verse.*` must be
 -- identical. It only reads catalogs; it creates, changes and deletes nothing.
+-- Take both snapshots as the SAME role (e.g. postgres): column defaults and
+-- policy expressions are printed relative to the role's search_path, so a
+-- snapshot taken as another role hashes differently without any real change.
 -- Daily Verse's own objects (schema daily_verse, role daily_verse_owner, job
 -- daily-verse-retention) are excluded from the Versely rows and reported
 -- separately at the end.

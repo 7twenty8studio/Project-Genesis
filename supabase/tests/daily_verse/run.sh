@@ -62,11 +62,13 @@ if [ "$TARGET" = stubs ]; then
   psql -f "$HERE/supabase_stubs.sql" >/dev/null
   echo "== Versely migrations (as postgres)"
   for f in "$MIG"/*.sql; do
-    [ "$(basename "$f")" = "$NEW" ] && continue
+    # Versely's migrations only: stop at the Daily Verse one (later Daily Verse
+    # migrations, e.g. PR B's schedule, depend on it and are tested separately).
+    [[ "$(basename "$f")" < "$NEW" ]] || continue
     # pg_cron / pg_net are stand-ins here (supabase_stubs.sql); their CREATE EXTENSION lines are skipped.
     sed -E '/create extension if not exists (pg_cron|pg_net)/d' "$f" | as_postgres -f - >/dev/null
   done
-  echo "   applied $(ls "$MIG"/*.sql | grep -vc "$NEW") files"
+  echo "   applied $(ls "$MIG" | awk -v n="$NEW" '$0 < n' | grep -c '\.sql$') files"
 else
   echo "== Real local Supabase at ${PG_URL##*@}"
   if ! psql -At -c "select 1" >/dev/null 2>&1; then

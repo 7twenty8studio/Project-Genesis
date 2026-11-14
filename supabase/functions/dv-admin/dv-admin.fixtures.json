@@ -1,0 +1,95 @@
+{
+  "_about": "Example dv-admin answers, per the agreed contract. The dashboard's tests parse every one; PR B's function tests should produce these exact shapes.",
+  "me": { "email": "7twenty8studio@gmail.com", "admin": true },
+  "list": {
+    "reports": [
+      {
+        "id": "8d0c1a52-4c1e-4f0e-9a43-3c2b9a1f7e10",
+        "createdAt": "2026-11-14T18:02:11.512Z",
+        "updatedAt": "2026-11-14T18:02:11.512Z",
+        "channel": "internal",
+        "appVersion": "0.1.0",
+        "build": "202611141200",
+        "osVersion": "26.1",
+        "deviceFamily": "phone",
+        "contentLanguage": "es",
+        "puzzleType": "crossword",
+        "contentId": "es-2026-11-14-gozo.crossword",
+        "challengeDate": "2026-11-14",
+        "reviewState": "draft",
+        "category": "unclear_clue",
+        "description": "La pista 3 horizontal no coincide con el versículo.",
+        "screenshotCount": 1,
+        "status": "new",
+        "adminNote": null,
+        "handledBy": null,
+        "closedAt": null,
+        "installTag": "a1b2c3d4"
+      },
+      {
+        "id": "1f9a8b7c-6d5e-4f3a-8b2c-1d0e9f8a7b6c",
+        "createdAt": "2026-11-13T09:15:00.000Z",
+        "updatedAt": "2026-11-14T10:00:00.000Z",
+        "channel": "internal",
+        "appVersion": "0.1.0",
+        "build": "202611121000",
+        "osVersion": null,
+        "deviceFamily": null,
+        "contentLanguage": "en",
+        "puzzleType": "trivia",
+        "contentId": "t042",
+        "challengeDate": null,
+        "reviewState": null,
+        "category": "biblical_inaccuracy",
+        "description": "Answer should be Joshua, not Caleb.",
+        "screenshotCount": 0,
+        "status": "resolved",
+        "adminNote": "Fixed in trivia.json",
+        "handledBy": "7twenty8studio@gmail.com",
+        "closedAt": "2026-11-14T10:00:00.000Z",
+        "installTag": "0f0e0d0c"
+      }
+    ],
+    "nextBefore": "2026-11-13T09:15:00.000Z"
+  },
+  "listLastPage": { "reports": [], "nextBefore": null },
+  "update": {
+    "report": {
+      "id": "8d0c1a52-4c1e-4f0e-9a43-3c2b9a1f7e10",
+      "createdAt": "2026-11-14T18:02:11.512Z",
+      "updatedAt": "2026-11-14T19:00:00.000Z",
+      "channel": "internal",
+      "appVersion": "0.1.0",
+      "build": "202611141200",
+      "osVersion": "26.1",
+      "deviceFamily": "phone",
+      "contentLanguage": "es",
+      "puzzleType": "crossword",
+      "contentId": "es-2026-11-14-gozo.crossword",
+      "challengeDate": "2026-11-14",
+      "reviewState": "draft",
+      "category": "unclear_clue",
+      "description": "La pista 3 horizontal no coincide con el versículo.",
+      "screenshotCount": 1,
+      "status": "in_review",
+      "adminNote": "Checking with the Spanish editor",
+      "handledBy": "7twenty8studio@gmail.com",
+      "closedAt": null,
+      "installTag": "a1b2c3d4"
+    }
+  },
+  "screenshots": {
+    "screenshots": [
+      { "index": 0, "url": "https://ulbpwygzwchsnvdeeife.supabase.co/storage/v1/object/sign/attachments/daily-verse/reports/8d0c1a52-4c1e-4f0e-9a43-3c2b9a1f7e10/0.jpg?token=example", "expiresAt": "2026-11-14T19:05:00.000Z" }
+    ]
+  },
+  "runCleanup": { "deleted": 3, "failed": 1, "reportsPurged": 2, "rateLimitsPurged": 5 },
+  "errors": {
+    "401": { "error": "unauthorized" },
+    "403": { "error": "forbidden", "email": "ops@example.com" },
+    "400": { "error": "invalid", "field": "status" },
+    "404": { "error": "not_found" },
+    "429": { "error": "rate_limited" },
+    "500": { "error": "internal" }
+  }
+}
