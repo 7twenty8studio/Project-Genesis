@@ -49,6 +49,9 @@ No existing Versely function, shared module, migration, policy or bucket is chan
 | Vault `dv_retention_url` | cron | `https://ulbpwygzwchsnvdeeife.supabase.co/functions/v1/dv-retention`. Set **after** dv-retention is deployed; until then the job does nothing. |
 | `DV_RESEND_URL` | tests only | **Leave unset in production.** |
 
+### Where the settings live
+Each `DV_*` setting is read from the Edge Function secret of that name if set; otherwise from the **Vault** entry of the same name in lower case (`dv_hmac_secret`, `dv_internal_builds`, `dv_alert_email`, `dv_email_from`, `dv_admin_url`, `dv_allowed_origins`). Vault entries can be created from SQL (`select vault.create_secret(...)`), so the HMAC pepper can be generated inside the database (`encode(extensions.gen_random_bytes(32), 'hex')`) and never shown to anyone. Values are cached for 60 s. If `DV_EMAIL_FROM` is unset, alerts use Versely's verified sender address (`OPS_EMAIL_FROM`, read only) under the name "Daily Verse Games".
+
 ## JWT verification choices
 
 | Function | `verify_jwt` | Why |

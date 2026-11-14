@@ -18,7 +18,8 @@
 //   503 {error: "unavailable"}     the build's channel isn't accepted (settings)
 //   500 {error: "server"}
 //
-// The channel comes from DV_INTERNAL_BUILDS (server config), never the body. The
+// The channel comes from DV_INTERNAL_BUILDS (server config: a function secret or
+// the Vault entry dv_internal_builds), never the body. The
 // install ID and network prefix reach the database only as HMACs (DV_HMAC_SECRET).
 // Screenshots go to the existing private `attachments` bucket under
 // daily-verse/reports/<id>/<n>.jpg: uploaded first, then recorded with
@@ -33,7 +34,7 @@ import {
   acceptedReportKeys, alertEmail, channelFor, clientIP, hmacHex, isAcceptedReportKey, MAX_BODY_BYTES, networkPrefix, parseReport,
   reportErrorToHttp, screenshotPath, type DbError, type ReportInput,
 } from "../_shared/dailyVerse.ts";
-import { asService, inBackground, sendDailyVerseEmail, storage } from "../_shared/dailyVerseIO.ts";
+import { asService, inBackground, sendDailyVerseEmail, setting, storage } from "../_shared/dailyVerseIO.ts";
 
 function json(body: unknown, status: number, extra: Record<string, string> = {}): Response {
   return new Response(JSON.stringify(body), {
@@ -80,7 +81,7 @@ async function readLimited(req: Request, limit: number): Promise<Uint8Array | nu
 }
 
 async function notify(id: string, report: ReportInput, screenshots: number): Promise<void> {
-  if (!Deno.env.get("RESEND_API_KEY") || !Deno.env.get("DV_ALERT_EMAIL")) return;
+  if (!Deno.env.get("RESEND_API_KEY") || !(await setting("DV_ALERT_EMAIL"))) return;
   // At most 12 alert emails an hour, whatever the report volume.
   const wait = await asService(async (tx) => (await tx`select daily_verse.take_token('alert:email', 12, 12) as wait`)[0].wait);
   if (Number(wait) > 0) return;
@@ -88,7 +89,7 @@ async function notify(id: string, report: ReportInput, screenshots: number): Pro
     id, category: report.category, puzzleType: report.puzzleType, contentLanguage: report.contentLanguage,
     contentId: report.contentId, challengeDate: report.challengeDate, reviewState: report.reviewState,
     appVersion: report.appVersion, build: report.build, description: report.description, screenshots,
-  }, Deno.env.get("DV_ADMIN_URL"));
+  }, await setting("DV_ADMIN_URL"));
   await sendDailyVerseEmail(subject, html);
 }
 
@@ -111,7 +112,7 @@ Deno.serve(async (req) => {
   if (!parsed.ok) return parsed.tooLarge ? json({ error: "too_large" }, 413) : json({ error: "invalid", field: parsed.field }, 400);
   const report = parsed.value;
 
-  const pepper = Deno.env.get("DV_HMAC_SECRET") ?? "";
+  const pepper = (await setting("DV_HMAC_SECRET").catch(() => undefined)) ?? "";
   if (pepper.length < 32) {
     console.error("dv-report: DV_HMAC_SECRET is not set");
     return json({ error: "server" }, 500);
@@ -121,7 +122,7 @@ Deno.serve(async (req) => {
   let fresh: boolean;
   let saved: number;
   try {
-    const channel = channelFor(report.build, Deno.env.get("DV_INTERNAL_BUILDS"));
+    const channel = channelFor(report.build, await setting("DV_INTERNAL_BUILDS"));
     const installHash = await hmacHex(pepper, "install:" + report.installID);
     const netHash = await hmacHex(pepper, "net:" + networkPrefix(clientIP(req.headers)));
     ({ id, fresh, saved } = await asService(async (tx) => {

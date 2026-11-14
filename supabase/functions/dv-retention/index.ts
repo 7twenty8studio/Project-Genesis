@@ -14,6 +14,7 @@
 //   --no-verify-jwt because pg_cron has no user session; the caller is proven by
 //   the Vault secret instead, the same pattern as Versely's ops-alerts with its
 //   own, separate secret.
+import type { DbError } from "../_shared/dailyVerse.ts";
 import { asService } from "../_shared/dailyVerseIO.ts";
 import { runCleanup } from "./cleanup.ts";
 

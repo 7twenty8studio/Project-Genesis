@@ -19,6 +19,35 @@ const sql = postgres(DB_URL, { prepare: false, max: 3, idle_timeout: 20, connect
 
 export type Tx = postgres.TransactionSql;
 
+/**
+ * A Daily Verse setting: the Edge Function secret if set (local tests, CLI deploys),
+ * otherwise the Vault entry of the same name in lower case (e.g. DV_HMAC_SECRET →
+ * vault "dv_hmac_secret"), read as the connection's own role (postgres), never as
+ * service_role. Cached for 60 s, so a change (e.g. a new Internal build) applies
+ * within a minute. Only names starting with DV_ are read from the Vault.
+ */
+const settingCache = new Map<string, { value: string | undefined; at: number }>();
+export async function setting(name: string): Promise<string | undefined> {
+  const fromEnv = Deno.env.get(name);
+  if (fromEnv) return fromEnv;
+  if (!/^DV_[A-Z_]+$/.test(name)) return undefined;
+  const cached = settingCache.get(name);
+  if (cached && Date.now() - cached.at < 60_000) return cached.value;
+  const rows = await sql`select decrypted_secret from vault.decrypted_secrets where name = ${name.toLowerCase()} limit 1`;
+  const value = (rows[0]?.decrypted_secret as string | undefined)?.trim() || undefined;
+  settingCache.set(name, { value, at: Date.now() });
+  return value;
+}
+
+/** The sender for Daily Verse alerts: DV_EMAIL_FROM, else Versely's verified sender address under the Daily Verse name. */
+async function emailFrom(): Promise<string> {
+  const own = await setting("DV_EMAIL_FROM");
+  if (own) return own;
+  const shared = Deno.env.get("OPS_EMAIL_FROM"); // read-only; Versely's setting is not changed
+  const address = shared?.match(/<([^>]+)>/)?.[1] ?? (shared?.includes("@") ? shared.trim() : undefined);
+  return `Daily Verse Games <${address ?? "onboarding@resend.dev"}>`;
+}
+
 /** Runs `fn` in one transaction as service_role (set local: it ends with the transaction). */
 export function asService<T>(fn: (tx: Tx) => Promise<T>): Promise<T> {
   return sql.begin(async (tx) => {
@@ -43,10 +72,10 @@ export async function verifiedEmail(authorization: string | null): Promise<strin
 /** Sends the Daily Verse alert with the existing Resend key, to its own recipients. False when not set up. */
 export async function sendDailyVerseEmail(subject: string, html: string): Promise<boolean> {
   const key = Deno.env.get("RESEND_API_KEY");
-  const to = (Deno.env.get("DV_ALERT_EMAIL") ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+  const to = ((await setting("DV_ALERT_EMAIL")) ?? "").split(",").map((s) => s.trim()).filter(Boolean);
   if (!key || to.length === 0) return false;
-  const from = Deno.env.get("DV_EMAIL_FROM") ?? "Daily Verse Games <onboarding@resend.dev>";
-  // DV_RESEND_URL exists only so local tests can point at a mock; production leaves it unset.
+  const from = await emailFrom();
+  // DV_RESEND_URL exists only so local tests can point at a mock (env only; production leaves it unset).
   const url = Deno.env.get("DV_RESEND_URL") || "https://api.resend.com/emails";
   const response = await fetch(url, {
     method: "POST",

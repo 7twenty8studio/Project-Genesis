@@ -15,7 +15,7 @@
 //         · 404 not_found · 429 rate_limited (Retry-After) · 500 internal. Every
 //         response is Cache-Control: no-store. Shapes: tests/dv-admin.fixtures.json.
 //
-// CORS: only the origins in DV_ALLOWED_ORIGINS (or, if unset, Versely's
+// CORS: only the origins in DV_ALLOWED_ORIGINS (function secret or Vault dv_allowed_origins; if unset, Versely's
 // OPS_ALLOWED_ORIGINS, read-only); never "*".
 //
 // Deploy (only with approval): supabase functions deploy dv-admin
@@ -24,13 +24,12 @@ import {
   adminErrorToHttp, corsHeaders, isDailyVersePath, nextBefore, parseAdminAction, SIGNED_URL_SECONDS,
   toAdminReport, type DbError, type ReportRow,
 } from "../_shared/dailyVerse.ts";
-import { asService, storage, verifiedEmail } from "../_shared/dailyVerseIO.ts";
+import { asService, setting, storage, verifiedEmail } from "../_shared/dailyVerseIO.ts";
 import { runCleanup } from "../dv-retention/cleanup.ts";
 
-const ORIGINS = Deno.env.get("DV_ALLOWED_ORIGINS") ?? Deno.env.get("OPS_ALLOWED_ORIGINS");
-
 Deno.serve(async (req) => {
-  const cors = corsHeaders(req.headers.get("Origin"), ORIGINS);
+  const origins = (await setting("DV_ALLOWED_ORIGINS").catch(() => undefined)) ?? Deno.env.get("OPS_ALLOWED_ORIGINS");
+  const cors = corsHeaders(req.headers.get("Origin"), origins);
   const json = (body: unknown, status = 200, extra: Record<string, string> = {}) =>
     new Response(JSON.stringify(body), { status, headers: { ...cors, "content-type": "application/json", "cache-control": "no-store", ...extra } });
   if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: { ...cors, "cache-control": "no-store" } });
