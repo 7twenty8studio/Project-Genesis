@@ -51,7 +51,10 @@ as $$
 declare
   url text := (select decrypted_secret from vault.decrypted_secrets where name = 'dv_retention_url' limit 1);
 begin
-  if url is null or url !~ '^https?://[^ ]+/functions/v1/dv-retention$' then
+  -- Only Project Genesis's own function (or the local stack's internal gateway,
+  -- which isn't reachable from outside), so a mistyped URL can never send the
+  -- retention secret to another host.
+  if url is null or url !~ '^(https://ulbpwygzwchsnvdeeife\.supabase\.co|http://kong:8000)/functions/v1/dv-retention$' then
     return null;
   end if;
   return net.http_post(
