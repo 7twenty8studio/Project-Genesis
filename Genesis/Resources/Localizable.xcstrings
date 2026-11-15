@@ -6041,6 +6041,26 @@
         }
       }
     },
+    "Free download": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descarga gratuita"
+          }
+        }
+      }
+    },
+    "Free download, about %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descarga gratuita, unos %@"
+          }
+        }
+      }
+    },
     "Free for anyone to read and share. Every Bible in Versely today is public domain.": {
       "localizations": {
         "es": {

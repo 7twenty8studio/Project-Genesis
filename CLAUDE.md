@@ -511,7 +511,11 @@ shares; README.md has the architecture.
   mountains, Get Started, "Go beyond the verse."; always the brand's own
   colors, `BrandColors` in Genesis/Shared), then `OnboardingWelcomeView`
   (Read, Listen, Pray, Together; Together only while groups or community
-  are on; Skip), then the translation, then "Make Versely yours". The
+  are on; Skip), then the translation (`OnboardingBibles`: free catalog
+  Bibles in the app's language are offered first and chosen, so a Spanish
+  iPhone starts in the Reina-Valera, downloaded by
+  `BibleLibrary.downloadAndRead` while setup carries on; a bundled Bible
+  meanwhile or offline), then "Make Versely yours". The
   launch screen is the icon (LaunchLogo) on cream. Pictures: the owner's
   ChatGPT originals in Tools/Onboarding/Originals, cleaned (painted
   checkerboards, stray specks) by Tools/Onboarding/make_onboarding.py into
