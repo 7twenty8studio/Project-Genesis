@@ -322,6 +322,21 @@ final class BibleLibrary {
         continued.end(id: id, success: finished)
     }
 
+    /// First launch: a Bible chosen in onboarding that isn't on the device
+    /// yet (the Reina-Valera for someone using Versely in Spanish). The
+    /// reader keeps its Bible while it downloads and moves to it once it's
+    /// here, unless the person chose another meanwhile. If it fails, it's
+    /// still offered on the Bibles screen.
+    func downloadAndRead(_ item: DownloadableTranslation) async {
+        let before = currentTranslation.id
+        await download(item)
+        guard currentTranslation.id == before,
+              let ready = translations.first(where: { $0.id == item.id }),
+              !isLocked(ready)
+        else { return }
+        currentTranslation = ready
+    }
+
     private func install(_ item: DownloadableTranslation, allowsCellular: Bool) async throws {
         guard !downloading.contains(item.id) else { return }
         downloading.insert(item.id)

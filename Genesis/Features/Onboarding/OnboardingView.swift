@@ -10,6 +10,9 @@ struct OnboardingView: View {
     @Environment(\.palette) private var palette
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var selection: Translation = .kjv
+    /// True once the person picks a Bible, so a catalog arriving late
+    /// doesn't change their choice.
+    @State private var pickedByHand = false
     @State private var appeared = false
     @State private var step: Step = .hero
 
@@ -59,9 +62,10 @@ struct OnboardingView: View {
 
                 VStack(alignment: .leading, spacing: 12) {
                     SectionHeader(title: String(localized: "Choose a translation"))
-                    ForEach(library.translations.filter { !library.isLocked($0) }) { translation in
-                        TranslationOption(translation: translation, isSelected: translation == selection) {
-                            selection = translation
+                    ForEach(bibles) { option in
+                        TranslationOption(translation: option.translation, download: option.download, isSelected: option.translation.id == selection.id) {
+                            selection = option.translation
+                            pickedByHand = true
                         }
                     }
                     Text("You can switch any time from the reader.")
@@ -94,14 +98,42 @@ struct OnboardingView: View {
             .frame(maxWidth: .infinity)
         }
         .themedScreen()
+        // The catalog may arrive while this step is showing (a Spanish
+        // Bible for someone whose iPhone is in Spanish).
+        .onChange(of: library.catalog) { suggestBible() }
         .onAppear {
-            selection = library.currentTranslation
+            suggestBible()
             withAnimation(reduceMotion ? nil : Motion.easeOut(0.6)) { appeared = true }
         }
     }
 
+    /// The Bibles on the device and free downloads in the app's language,
+    /// those in the app's language first.
+    private var bibles: [OnboardingBibles.Option] {
+        OnboardingBibles.options(
+            installed: library.translations.filter { !library.isLocked($0) },
+            catalog: library.catalog,
+            language: AppLanguage.code
+        )
+    }
+
+    /// Chooses a Bible in the app's language until the person picks one.
+    private func suggestBible() {
+        guard !pickedByHand else { return }
+        selection = OnboardingBibles.suggested(current: library.currentTranslation, options: bibles, language: AppLanguage.code)
+    }
+
     private func begin(at chapter: ChapterID) {
-        library.currentTranslation = selection
+        if let download = bibles.first(where: { $0.id == selection.id })?.download {
+            // Not on the device yet: setup carries on while it downloads,
+            // and the reader moves to it once it's here (a bundled Bible
+            // until then, or if the download fails). Saving the Bible it
+            // reads meanwhile marks the choice as made.
+            library.currentTranslation = library.currentTranslation
+            Task { await library.downloadAndRead(download) }
+        } else {
+            library.currentTranslation = selection
+        }
         router.read(chapter)
         go(to: .features)
     }
@@ -109,6 +141,8 @@ struct OnboardingView: View {
 
 private struct TranslationOption: View {
     let translation: Translation
+    /// Set when choosing it downloads it.
+    let download: DownloadableTranslation?
     let isSelected: Bool
     let action: () -> Void
 
@@ -133,6 +167,11 @@ private struct TranslationOption: View {
                         .font(.subheadline)
                         .foregroundStyle(palette.secondaryText)
                         .multilineTextAlignment(.leading)
+                    if let download {
+                        Label(downloadNote(download), systemImage: "arrow.down.circle")
+                            .font(.footnote)
+                            .foregroundStyle(palette.secondaryText)
+                    }
                 }
                 Spacer(minLength: 0)
             }
@@ -146,5 +185,11 @@ private struct TranslationOption: View {
         .buttonStyle(.plain)
         .accessibilityAddTraits(isSelected ? .isSelected : [])
         .accessibilityIdentifier("onboarding.translation.\(translation.id)")
+    }
+
+    private func downloadNote(_ item: DownloadableTranslation) -> String {
+        guard item.fileBytes > 0 else { return String(localized: "Free download") }
+        let size = Int64(item.fileBytes).formatted(.byteCount(style: .file))
+        return String(localized: "Free download, about \(size)")
     }
 }
