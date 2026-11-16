@@ -12,11 +12,20 @@
 //   200 {id, duplicate: true, screenshots}     the same report within 10 minutes (kept
 //                                              once); screenshots = what the first one saved
 //   401 {error: "unauthorized"}    no apikey, or not one of the project's publishable keys
+//   401 {error: "attestation_required"} no App Attest headers, or an unknown key (the app
+//                                  registers its key with dv-attest, then retries)
+//   401 {error: "challenge_expired"} the challenge is missing, forged or over 5 minutes old
+//   403 {error: "attestation_invalid"} the assertion doesn't verify or was replayed
 //   400 {error: "invalid", field?} bad input; field "description" also for spam text
 //   413 {error: "too_large"}       body over 4 MB or a screenshot over 1.5 MB
 //   429 {error: "rate_limited"}    with Retry-After
 //   503 {error: "unavailable"}     the build's channel isn't accepted (settings)
 //   500 {error: "server"}
+//
+// App Attest (PR_B_CONTRACT.md rule 2, required for every channel once public reports
+// open): headers x-dv-attest-key (the App Attest key ID), x-dv-attest-challenge (from
+// dv-attest) and x-dv-assertion (base64), an assertion over
+// SHA-256(challenge + "\n" + the exact body bytes). Checked before anything is stored.
 //
 // The channel comes from DV_INTERNAL_BUILDS (server config: a function secret or
 // the Vault entry dv_internal_builds), never the body. The
@@ -35,6 +44,32 @@ import {
   reportErrorToHttp, screenshotPath, type DbError, type ReportInput,
 } from "../_shared/dailyVerse.ts";
 import { asService, inBackground, sendDailyVerseEmail, setting, storage } from "../_shared/dailyVerseIO.ts";
+import { checkChallenge, fromBase64, reportClientDataHash, verifyAssertion } from "../_shared/appAttest.ts";
+
+type AttestCheck = { ok: true } | { ok: false; status: number; error: string };
+
+/** Checks the report's App Attest assertion against the stored key and moves its counter on. */
+async function checkAttestation(headers: Headers, body: Uint8Array, pepper: string): Promise<AttestCheck> {
+  const keyId = headers.get("x-dv-attest-key") ?? "";
+  const challenge = headers.get("x-dv-attest-challenge") ?? "";
+  const assertion = fromBase64(headers.get("x-dv-assertion"), 4096);
+  if (!/^[A-Za-z0-9+/]{43}=$/.test(keyId) || !challenge || !assertion) {
+    return { ok: false, status: 401, error: "attestation_required" };
+  }
+  if (!(await checkChallenge(pepper, challenge))) return { ok: false, status: 401, error: "challenge_expired" };
+  const keyHash = await hmacHex(pepper, "attest:" + keyId);
+  const rows = await asService((tx) =>
+    tx`select public_key, sign_count from daily_verse.attest_keys where key_hash = ${keyHash}`);
+  if (rows.length === 0) return { ok: false, status: 401, error: "attestation_required" };
+  const publicKey = new Uint8Array(rows[0].public_key as Uint8Array);
+  const result = await verifyAssertion(assertion, await reportClientDataHash(challenge, body), publicKey, Number(rows[0].sign_count));
+  if (!result.ok) {
+    console.warn("dv-report: assertion refused", result.reason);
+    return { ok: false, status: 403, error: "attestation_invalid" };
+  }
+  const [{ used }] = await asService((tx) => tx`select daily_verse.use_attest_key(${keyHash}, ${result.counter}) as used`);
+  return used ? { ok: true } : { ok: false, status: 403, error: "attestation_invalid" };
+}
 
 function json(body: unknown, status: number, extra: Record<string, string> = {}): Response {
   return new Response(JSON.stringify(body), {
@@ -115,6 +150,14 @@ Deno.serve(async (req) => {
   const pepper = (await setting("DV_HMAC_SECRET").catch(() => undefined)) ?? "";
   if (pepper.length < 32) {
     console.error("dv-report: DV_HMAC_SECRET is not set");
+    return json({ error: "server" }, 500);
+  }
+
+  try {
+    const attest = await checkAttestation(req.headers, raw, pepper);
+    if (!attest.ok) return json({ error: attest.error }, attest.status);
+  } catch (error) {
+    console.error("dv-report: attestation check failed", (error as DbError)?.code ?? "unknown");
     return json({ error: "server" }, 500);
   }
 
