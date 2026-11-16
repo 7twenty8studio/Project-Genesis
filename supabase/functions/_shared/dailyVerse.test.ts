@@ -5,7 +5,7 @@ import { test } from "node:test";
 import {
   acceptedReportKeys, adminErrorToHttp, alertEmail, channelFor, clientIP, confirmedDeleted, corsHeaders, decodeBase64, escapeHTML,
   groupDue, hmacHex, isAcceptedReportKey, isDailyVersePath, isJpeg, isUrgent, MAX_SCREENSHOT_BYTES, networkPrefix, nextBefore,
-  parseAdminAction, parseReport, reportErrorToHttp, screenshotPath,
+  parseAdminAction, parseReport, reportErrorToHttp, reportGate, screenshotPath,
 } from "./dailyVerse.ts";
 
 const INSTALL = "3f2a6d9e-1b4c-4e8f-9a7d-2c5b8e1f0a3d";
@@ -277,4 +277,45 @@ test("urgent only for biblical inaccuracy outside drafts", () => {
     challengeDate: null, reviewState: "approved", appVersion: "1", build: "1", description: "d", screenshots: 0 }, undefined);
   assert.match(subject, /^\[Daily Verse\] URGENT /);
   assert.equal(escapeHTML(`a<b>&"'`), "a&lt;b&gt;&amp;&quot;&#39;");
+});
+
+// --- Access gate (PR_B_CONTRACT rule 2): no unattested way in via a build number ---------------
+const INTERNAL_KEY = "k".repeat(40);
+
+test("reportGate: requests without the internal key header must pass App Attest", () => {
+  assert.deepEqual(reportGate(null, undefined), { allow: "attest" });
+  assert.deepEqual(reportGate(null, INTERNAL_KEY), { allow: "attest" });
+});
+
+test("reportGate: only the server-held internal key (>= 32 chars) skips App Attest", () => {
+  assert.deepEqual(reportGate(INTERNAL_KEY, INTERNAL_KEY), { allow: "internal" });
+  assert.deepEqual(reportGate("wrong", INTERNAL_KEY), { refuse: 401, error: "unauthorized" });
+  assert.deepEqual(reportGate(INTERNAL_KEY + "x", INTERNAL_KEY), { refuse: 401, error: "unauthorized" });
+  assert.deepEqual(reportGate("", INTERNAL_KEY), { refuse: 401, error: "unauthorized" });
+  // Not configured, or too short: no exception at all, and a guessed header is refused.
+  assert.deepEqual(reportGate(INTERNAL_KEY, undefined), { refuse: 401, error: "unauthorized" });
+  assert.deepEqual(reportGate("short", "short"), { refuse: 401, error: "unauthorized" });
+});
+
+test("regression: an unattested request naming an Internal build number is not Internal", () => {
+  // Before App Attest, channelFor(build) alone made any request with a listed build Internal.
+  const body = { build: "202611142300" };
+  const gate = reportGate(null, INTERNAL_KEY);
+  assert.deepEqual(gate, { allow: "attest" }, "must still pass App Attest");
+  assert.equal(channelFor(body.build, "202611142300"), "internal", "the label applies only after attestation");
+});
+
+test("regression: dv-report checks access and attestation before it stores anything", async () => {
+  const { readFile } = await import("node:fs/promises");
+  const src = await readFile(new URL("../dv-report/index.ts", import.meta.url), "utf8");
+  const gateAt = src.indexOf("reportGate(req.headers.get(\"x-dv-internal-key\")");
+  const refuseAt = src.indexOf("if (\"refuse\" in gate) return");
+  const attestAt = src.indexOf("if (gate.allow === \"attest\")");
+  const checkAt = src.indexOf("await checkAttestation(req.headers, raw, pepper)");
+  const submitAt = src.indexOf("daily_verse.submit_report(");
+  for (const [name, at] of Object.entries({ gateAt, refuseAt, attestAt, checkAt, submitAt })) assert.ok(at > 0, name);
+  assert.ok(gateAt < refuseAt && refuseAt < attestAt && attestAt < checkAt && checkAt < submitAt);
+  // The internal label comes from the gate, or from the build list only on the attested path.
+  assert.match(src, /gate\.allow === "internal" \? "internal" : channelFor\(report\.build/);
+  assert.equal(src.match(/channelFor\(/g)?.length, 1);
 });

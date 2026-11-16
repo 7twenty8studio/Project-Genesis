@@ -22,8 +22,8 @@
 //   503 {error: "unavailable"}     the build's channel isn't accepted (settings)
 //   500 {error: "server"}
 //
-// App Attest (PR_B_CONTRACT.md rule 2, required for every channel once public reports
-// open): headers x-dv-attest-key (the App Attest key ID), x-dv-attest-challenge (from
+// App Attest (PR_B_CONTRACT.md rule 2, required for every request; the only exception is
+// the server-held DV_INTERNAL_REPORT_KEY in x-dv-internal-key, see reportGate): headers x-dv-attest-key (the App Attest key ID), x-dv-attest-challenge (from
 // dv-attest) and x-dv-assertion (base64), an assertion over
 // SHA-256(challenge + "\n" + the exact body bytes). Checked before anything is stored.
 //
@@ -40,7 +40,7 @@
 //   this function checks the apikey itself, first, against SUPABASE_PUBLISHABLE_KEYS
 //   (acceptedReportKeys). Fails closed: with no keys configured nothing is accepted.
 import {
-  acceptedReportKeys, alertEmail, channelFor, clientIP, hmacHex, isAcceptedReportKey, MAX_BODY_BYTES, networkPrefix, parseReport,
+  acceptedReportKeys, alertEmail, channelFor, reportGate, clientIP, hmacHex, isAcceptedReportKey, MAX_BODY_BYTES, networkPrefix, parseReport,
   reportErrorToHttp, screenshotPath, type DbError, type ReportInput,
 } from "../_shared/dailyVerse.ts";
 import { asService, inBackground, sendDailyVerseEmail, setting, storage } from "../_shared/dailyVerseIO.ts";
@@ -153,19 +153,26 @@ Deno.serve(async (req) => {
     return json({ error: "server" }, 500);
   }
 
-  try {
-    const attest = await checkAttestation(req.headers, raw, pepper);
-    if (!attest.ok) return json({ error: attest.error }, attest.status);
-  } catch (error) {
-    console.error("dv-report: attestation check failed", (error as DbError)?.code ?? "unknown");
-    return json({ error: "server" }, 500);
+  // Access (reportGate): App Attest for every request, or the server-held internal key.
+  // A client-supplied build number never lets an unattested request in.
+  const gate = reportGate(req.headers.get("x-dv-internal-key"),
+    await setting("DV_INTERNAL_REPORT_KEY").catch(() => undefined));
+  if ("refuse" in gate) return json({ error: gate.error }, gate.refuse);
+  if (gate.allow === "attest") {
+    try {
+      const attest = await checkAttestation(req.headers, raw, pepper);
+      if (!attest.ok) return json({ error: attest.error }, attest.status);
+    } catch (error) {
+      console.error("dv-report: attestation check failed", (error as DbError)?.code ?? "unknown");
+      return json({ error: "server" }, 500);
+    }
   }
 
   let id: string;
   let fresh: boolean;
   let saved: number;
   try {
-    const channel = channelFor(report.build, await setting("DV_INTERNAL_BUILDS"));
+    const channel = gate.allow === "internal" ? "internal" : channelFor(report.build, await setting("DV_INTERNAL_BUILDS"));
     const installHash = await hmacHex(pepper, "install:" + report.installID);
     const netHash = await hmacHex(pepper, "net:" + networkPrefix(clientIP(req.headers)));
     ({ id, fresh, saved } = await asService(async (tx) => {

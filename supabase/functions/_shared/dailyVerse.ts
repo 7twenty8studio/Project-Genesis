@@ -126,8 +126,9 @@ export function parseReport(body: unknown): Parsed<ReportInput> {
 }
 
 /**
- * The channel is decided here from server configuration, never from the request
- * (contract rule 1): a build number listed in DV_INTERNAL_BUILDS (comma-separated
+ * The channel of an ATTESTED report (see reportGate; unattested requests never get here)
+ * is decided from server configuration, never from a channel field (contract rule 1): a
+ * build number listed in DV_INTERNAL_BUILDS (comma-separated
  * Edge Function secret, updated when an Internal TestFlight build is uploaded) is
  * Internal; anything else is Public, which the database refuses while
  * settings.accepted_channels = {internal}. A policy gate, not device attestation
@@ -136,6 +137,28 @@ export function parseReport(body: unknown): Parsed<ReportInput> {
 export function channelFor(build: string, internalBuilds: string | undefined): Channel {
   const list = (internalBuilds ?? "").split(",").map((s) => s.trim()).filter(Boolean);
   return list.includes(build) ? "internal" : "public";
+}
+
+/**
+ * Who may submit a report (PR_B_CONTRACT.md rule 2), decided before anything is stored.
+ *
+ * - Every request must pass App Attest ("attest"), whatever build number it names. A build
+ *   number from the body can only label an ATTESTED report as Internal (channelFor); it never
+ *   lets an unattested request in.
+ * - The only exception is server-authenticated: an `x-dv-internal-key` header equal to the
+ *   server-held DV_INTERNAL_REPORT_KEY (Vault `dv_internal_report_key`, at least 32 characters,
+ *   never in any app build). Such a request is Internal. Off while the key isn't configured.
+ * - A wrong or unusable internal key is refused outright (401), never treated as public.
+ */
+export type ReportGate = { allow: "attest" } | { allow: "internal" } | { refuse: 401; error: "unauthorized" };
+
+export function reportGate(internalKeyHeader: string | null, configuredInternalKey: string | undefined): ReportGate {
+  if (internalKeyHeader === null) return { allow: "attest" };
+  const configured = configuredInternalKey ?? "";
+  if (configured.length < 32 || !isAcceptedReportKey(internalKeyHeader, [configured])) {
+    return { refuse: 401, error: "unauthorized" };
+  }
+  return { allow: "internal" };
 }
 
 /**
