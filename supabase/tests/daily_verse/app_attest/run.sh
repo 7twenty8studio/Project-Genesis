@@ -11,7 +11,7 @@ HERE="$(cd "$(dirname "$0")" && pwd)"
 ROOT="$(cd "$HERE/../../../.." && pwd)"
 PGBIN="${PGBIN:-/opt/homebrew/opt/postgresql@17/bin}"
 DENO="${DENO:-deno}"
-PORT="${PORT:-54331}"; FN_PORT="${FN_PORT:-54332}"
+PORT="${PORT:-54331}"; FN_PORT="${FN_PORT:-8000}"   # Deno.serve listens on 8000
 WORK="$(mktemp -d /tmp/dvat.XXXXXX)"
 # initdb refuses root: as root, the database server runs as PG_OS_USER (default dvrunner).
 PGUSER_OS="$(whoami)"; pgrun() { "$@"; }

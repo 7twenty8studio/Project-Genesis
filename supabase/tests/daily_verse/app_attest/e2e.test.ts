@@ -4,7 +4,7 @@
 // pins through testRoot.ts. Covers: challenge → attest → report, retries
 // without duplicates, replays, tampering, unknown keys, development keys,
 // public builds without attestation, a closed channel then a retry, both
-// languages, the per-key rate limit, and older Internal builds.
+// languages, the per-key rate limit, and Internal build numbers never excusing attestation.
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
 import { randomUUID } from "node:crypto";
@@ -200,10 +200,32 @@ describe("dv-report with App Attest (local)", () => {
     resetLimits();
   });
 
-  test("older Internal builds (no attestation, no reportID) still work", async () => {
-    const body = report({ build: INTERNAL_BUILD, contentId: "en-internal-legacy" });
-    delete body.reportID;
-    const r = await post(body);
+  // Regression: the build number is client-supplied, so claiming an Internal build
+  // must not let an unattested request in (it used to qualify as Internal).
+  test("an unattested request claiming an Internal build number is refused", async () => {
+    for (const body of [report({ build: INTERNAL_BUILD, contentId: "en-internal-claim" }),
+                        (() => { const b = report({ build: INTERNAL_BUILD, contentId: "en-internal-legacy" }); delete b.reportID; return b; })()]) {
+      const r = await post(body);
+      assert.equal(r.status, 401, JSON.stringify(r.body));
+      assert.equal(r.body.reason, "required");
+    }
+    assert.equal(sql("select count(*) from daily_verse.reports where content_id like 'en-internal-%'"), "0");
+  });
+
+  test("the same unattested Internal claim is refused even while only Internal is open", async () => {
+    closePublic();
+    try {
+      const r = await post(report({ build: INTERNAL_BUILD, contentId: "en-internal-closed" }));
+      assert.equal(r.status, 401);
+      assert.equal(r.body.reason, "required");
+    } finally {
+      openPublic();
+    }
+  });
+
+  test("an attested Internal build is filed as internal", async () => {
+    const device = await attested();
+    const r = await send(device, report({ build: INTERNAL_BUILD, contentId: "en-internal-attested" }));
     assert.equal(r.status, 201, JSON.stringify(r.body));
     assert.equal(sql(`select channel from daily_verse.reports where id = '${r.body.id}'`), "internal");
   });

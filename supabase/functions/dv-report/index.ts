@@ -22,13 +22,16 @@
 //   {action: "challenge", purpose: "attest"|"report"}  → 200 {challenge, expiresIn}
 //   {action: "attest", keyId, attestation, challenge}  → 200 {ok: true}   (key stored)
 //   a report with headers x-dv-attest-key, x-dv-assertion, x-dv-challenge: the
-//   assertion signs "<challenge>\n<exact body bytes>". Public builds must send
-//   them; Internal builds may (older Internal builds don't). With `reportID`
-//   in the body, a retry of the same report is kept once (200 duplicate).
+//   assertion signs "<challenge>\n<exact body bytes>". EVERY report must send
+//   them, Internal builds included: the build number is client-supplied, so it
+//   can only label an attested report, never excuse a missing attestation
+//   (no unattested Internal exception exists). With `reportID` in the body, a
+//   retry of the same report is kept once (200 duplicate).
 //   401 {error: "attestation", reason: challenge|key|required|invalid}
 //
 // The channel comes from DV_INTERNAL_BUILDS (server config: a function secret or
-// the Vault entry dv_internal_builds), never the body. The
+// the Vault entry dv_internal_builds) matched against the build of an ATTESTED
+// report, so the body alone never decides it. The
 // install ID and network prefix reach the database only as HMACs (DV_HMAC_SECRET).
 // Screenshots go to the existing private `attachments` bucket under
 // daily-verse/reports/<id>/<n>.jpg: uploaded first, then recorded with
@@ -178,9 +181,10 @@ async function registerKey(body: unknown, pepper: string, netHash: string): Prom
  * a Response to send instead. Uses up the challenge and moves the key's
  * counter, so the same signed request can't be accepted twice.
  */
-async function checkAssertion(req: Request, raw: Uint8Array, pepper: string, channel: string): Promise<string | null | Response> {
+async function checkAssertion(req: Request, raw: Uint8Array, pepper: string, channel: string): Promise<string | Response> {
   const headers = assertionHeaders(req.headers);
-  if (headers === null) return channel === "public" ? fail(attestFailure("required")) : null;
+  // No unattested path, whatever build the body claims (regression test: e2e "Internal build number").
+  if (headers === null) return fail(attestFailure("required"));
   if (headers === "invalid") return fail(attestFailure("invalid"));
   const keyBytes = keyIdBytes(headers.keyId);
   const assertion = fromBase64(headers.assertion, 1024);
@@ -248,7 +252,7 @@ Deno.serve(async (req) => {
     const channel = channelFor(report.build, await setting("DV_INTERNAL_BUILDS"));
     const checked = await checkAssertion(req, raw, pepper, channel);
     if (checked instanceof Response) return checked;
-    if (checked && !report.reportID) return json({ error: "invalid", field: "reportID" }, 400);
+    if (!report.reportID) return json({ error: "invalid", field: "reportID" }, 400);
     const keyHash = checked;
     const installHash = await hmacHex(pepper, "install:" + report.installID);
     ({ id, fresh, saved } = await asService(async (tx) => {

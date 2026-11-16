@@ -24,8 +24,14 @@ Files: `supabase/functions/_shared/appAttest.ts` (verification, pure),
   `SHA256(authenticatorData ‖ SHA256(challenge + "\n" + exact body bytes))`, our App
   ID, and a counter above the stored one (stored atomically, so a replay loses).
 - **Challenges**: 32 random bytes, single use, 5 minutes, stored only as a SHA-256.
-- **Channel** is still decided by the server from the build number
-  (`DV_INTERNAL_BUILDS`); everything else is `public`. Public stays closed
+- **Every report needs a verified assertion**, Internal builds included. The
+  build number is client-supplied, so it never excuses a missing attestation:
+  an unattested report is `401 required` whatever build it claims (there is no
+  Internal exception; builds from before App Attest can only share or email).
+  Regression test: e2e "an unattested request claiming an Internal build number
+  is refused".
+- **Channel**: an attested report whose build is in `DV_INTERNAL_BUILDS` is
+  filed `internal`; everything else is `public`. Public stays closed
   (`settings.accepted_channels = {internal}`) until opened on purpose.
 
 ## Rate limits (all server-side)

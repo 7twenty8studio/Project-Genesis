@@ -135,8 +135,9 @@ export function parseReport(body: unknown): Parsed<ReportInput> {
  * (contract rule 1): a build number listed in DV_INTERNAL_BUILDS (comma-separated
  * Edge Function secret, updated when an Internal TestFlight build is uploaded) is
  * Internal; anything else is Public, which the database refuses while
- * settings.accepted_channels = {internal}. A policy gate, not device attestation
- * (rule 2): App Attest / DeviceCheck is required before public availability.
+ * settings.accepted_channels = {internal}. The build is client-supplied, so this
+ * only labels a report whose App Attest assertion already checked out (dv-report
+ * refuses every unattested report); it never grants access by itself.
  */
 export function channelFor(build: string, internalBuilds: string | undefined): Channel {
   const list = (internalBuilds ?? "").split(",").map((s) => s.trim()).filter(Boolean);
