@@ -27,6 +27,15 @@ enum AppLanguage {
     static func displayName(_ code: String) -> String {
         Locale(identifier: code).localizedString(forLanguageCode: code)?.capitalized(with: Locale(identifier: code)) ?? code
     }
+
+    /// A regional Bible's language with its region, in that language:
+    /// "Português (Portugal)" for "pt-PT". Nil without a region.
+    static func regionalName(_ code: String) -> String? {
+        guard code.contains("-") || code.contains("_") else { return nil }
+        let locale = Locale(identifier: code)
+        guard let name = locale.localizedString(forIdentifier: code) else { return nil }
+        return name.prefix(1).uppercased() + name.dropFirst()
+    }
 }
 
 /// Settings › Language: follow the iPhone, or always English, Spanish or

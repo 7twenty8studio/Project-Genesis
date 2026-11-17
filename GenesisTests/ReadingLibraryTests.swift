@@ -45,6 +45,36 @@ struct ReadingLibraryTests {
         #expect(ReadingLibrary.languages(installed: Translation.bundled, catalog: [], preferred: "es") == ["en", "pt"])
     }
 
+    @Test func portugalIsGroupedUnderPortuguese() throws {
+        let livro = try offer("OL", name: "O Livro", language: "pt-PT")
+        #expect(ReadingLibrary.languages(installed: Translation.bundled, catalog: [livro], preferred: "pt") == ["pt", "en"])
+        let portuguese = ReadingLibrary.entries(in: "pt", installed: Translation.bundled, catalog: [livro], recordedTranslationIDs: [])
+        #expect(Set(portuguese.map(\.id)) == ["BLIVRE", "OL"])
+        #expect(AppLanguage.regionalName("pt-PT") == "Português (Portugal)")
+        #expect(AppLanguage.regionalName("pt") == nil)
+    }
+
+    @Test func eachLanguageShowsOnlyItsBibles() throws {
+        let rv = try offer("RV1909", name: "Reina-Valera 1909", language: "es")
+        let bsb = try offer("BSB", name: "Berean Standard Bible")
+        let english = ReadingLibrary.sections(for: "en", installed: Translation.bundled, catalog: [rv, bsb], recordedTranslationIDs: [], preferred: "en")
+        #expect(english.map(\.language) == ["en"])
+        #expect(!english[0].entries.contains { $0.id == "BLIVRE" }, "The bundled Bíblia Livre stays under Português")
+        #expect(!english[0].entries.contains { $0.id == "RV1909" })
+
+        let all = ReadingLibrary.sections(for: ReadingLibrary.allLanguages, installed: Translation.bundled, catalog: [rv, bsb], recordedTranslationIDs: [], preferred: "es")
+        #expect(all.map(\.language) == ["es", "en", "pt"])
+        #expect(all.flatMap(\.entries).contains { $0.id == "BLIVRE" })
+    }
+
+    @Test func opensOnTheBibleBeingRead() {
+        let available = ["en", "es", "pt"]
+        #expect(ReadingLibrary.defaultLanguage(current: .kjv, appLanguage: "pt", available: available) == "en", "The Bible's language, not the app's")
+        #expect(ReadingLibrary.defaultLanguage(current: .bibliaLivre, appLanguage: "en", available: available) == "pt")
+        #expect(ReadingLibrary.defaultLanguage(current: nil, appLanguage: "es", available: available) == "es", "At setup: the app's language")
+        #expect(ReadingLibrary.defaultLanguage(current: nil, appLanguage: "de", available: available) == ReadingLibrary.allLanguages)
+    }
+
     @Test func entriesAreMostReadFirstAndMergeDownloads() throws {
         let bsb = try offer("BSB", name: "Berean Standard Bible")
         let rv = try offer("RV1909", name: "Reina-Valera 1909", language: "es")

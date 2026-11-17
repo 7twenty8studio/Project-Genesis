@@ -22,19 +22,29 @@ struct BibleDownloadsView: View {
         ReadingLibrary.languages(installed: library.translations, catalog: library.catalog, preferred: AppLanguage.code)
     }
 
-    /// The language picked here; otherwise the app's language when it has a
-    /// Bible, else the language of the Bible being read.
+    /// The Bibles' language picked here (or All Languages); otherwise the
+    /// language of the Bible being read. Kept apart from the app's own
+    /// language: choosing Português here doesn't change the screens.
     private var language: String {
-        if let chosenLanguage, languages.contains(chosenLanguage) { return chosenLanguage }
-        return languages.contains(AppLanguage.code) ? AppLanguage.code : library.currentTranslation.language
+        if let chosenLanguage, chosenLanguage == ReadingLibrary.allLanguages || languages.contains(chosenLanguage) {
+            return chosenLanguage
+        }
+        return ReadingLibrary.defaultLanguage(current: library.currentTranslation, appLanguage: AppLanguage.code, available: languages)
     }
 
-    private var entries: [LibraryEntry] {
-        ReadingLibrary.entries(
-            in: language,
+    /// The guide suggests Bibles in one language: the chosen one, or the
+    /// current Bible's while every language is shown.
+    private var guideLanguage: String {
+        language == ReadingLibrary.allLanguages ? library.currentTranslation.baseLanguage : language
+    }
+
+    private var sections: [LibrarySection] {
+        ReadingLibrary.sections(
+            for: language,
             installed: library.translations,
             catalog: library.catalog,
-            recordedTranslationIDs: Set(audio.catalog.recordings.map(\.translation))
+            recordedTranslationIDs: Set(audio.catalog.recordings.map(\.translation)),
+            preferred: library.currentTranslation.baseLanguage
         )
     }
 
@@ -77,7 +87,7 @@ struct BibleDownloadsView: View {
             }
             .premiumSheet($premium)
             .sheet(isPresented: $showsGuide) {
-                TranslationGuideView(language: language)
+                TranslationGuideView(language: guideLanguage)
             }
             .confirmationDialog("Remove \(removing?.name ?? "")?", isPresented: Binding(get: { removing != nil }, set: { if !$0 { removing = nil } }), titleVisibility: .visible) {
                 Button("Remove", role: .destructive) {
@@ -103,20 +113,13 @@ struct BibleDownloadsView: View {
 
     private var languagePicker: some View {
         let selection = Binding(get: { language }, set: { chosenLanguage = $0 })
-        return Group {
-            if languages.count <= 3 {
-                Picker("Language", selection: selection) {
-                    ForEach(languages, id: \.self) { Text(AppLanguage.displayName($0)).tag($0) }
-                }
-                .pickerStyle(.segmented)
-            } else {
-                Picker("Language", selection: selection) {
-                    ForEach(languages, id: \.self) { Text(AppLanguage.displayName($0)).tag($0) }
-                }
-                .pickerStyle(.menu)
-                .tint(palette.accent)
-            }
+        return Picker("Language", selection: selection) {
+            ForEach(languages, id: \.self) { Text(AppLanguage.displayName($0)).tag($0) }
+            Divider()
+            Text("All Languages").tag(ReadingLibrary.allLanguages)
         }
+        .pickerStyle(.menu)
+        .tint(palette.accent)
         .accessibilityIdentifier("bibles.language")
     }
 
@@ -150,7 +153,15 @@ struct BibleDownloadsView: View {
         }
     }
 
+    @ViewBuilder
     private var bibles: some View {
+        let shown = self.sections
+        ForEach(shown) { section in
+            bibleSection(section.language, entries: section.entries, isLast: section.id == shown.last?.id)
+        }
+    }
+
+    private func bibleSection(_ language: String, entries: [LibraryEntry], isLast: Bool) -> some View {
         Section {
             ForEach(entries) { entry in
                 TranslationCardView(
@@ -193,9 +204,10 @@ struct BibleDownloadsView: View {
                     }
                 }
             }
-            if !hasLoaded {
+            // Below the last language: still loading, or offline.
+            if isLast, !hasLoaded {
                 ProgressView().frame(maxWidth: .infinity)
-            } else if library.catalog.isEmpty {
+            } else if isLast, library.catalog.isEmpty {
                 Text("Connect to the internet to see more Bibles.")
                     .font(.footnote)
                     .foregroundStyle(palette.secondaryText)
@@ -203,9 +215,11 @@ struct BibleDownloadsView: View {
         } header: {
             Text(AppLanguage.displayName(language))
         } footer: {
-            VStack(alignment: .leading, spacing: 4) {
-                Text("The most read are listed first.")
-                Text("Every Bible here is public domain or used with its publisher's permission.")
+            if isLast {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("The most read are listed first.")
+                    Text("Every Bible here is public domain or used with its publisher's permission.")
+                }
             }
         }
         .listRowBackground(palette.surface)

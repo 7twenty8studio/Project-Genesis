@@ -502,7 +502,13 @@ shares; README.md has the architecture.
   App is free" (the Terms ask it of apps that charge). No YouVersion logo.
   `yvp-catalog` (owner tool, ops secret) lists the Bibles our key can use.
 - Global Reading Library (the Bibles screen, `BibleDownloadsView`): Bibles by
-  language, most read first, as `TranslationCardView`s, plus
+  language, most read first, as `TranslationCardView`s. A language menu
+  (each language with a Bible, then All Languages) filters both installed
+  Bibles and downloads; it opens on the current Bible's language
+  (`ReadingLibrary.defaultLanguage`; the app's at setup), never changes the
+  app's own language, and groups regions under their language (O Livro,
+  pt-PT, under Português, its row saying "Português (Portugal)",
+  `AppLanguage.regionalName`). Also plus
   `TranslationGuideView` ("Which Bible is right for me?"). Logic in
   `ReadingLibrary`; details (`TranslationProfile`: approach, reading level,
   rights, popularity) come from bible_translations columns, falling back to

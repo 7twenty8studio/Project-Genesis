@@ -114,9 +114,13 @@ struct TranslationCardView: View {
         .accessibilityIdentifier(entry.isInstalled ? "bibles.installed.\(entry.id)" : "bibles.available.\(entry.id)")
     }
 
-    /// "1769 · On this device" or "2023 · 4.2 MB".
+    /// "1769 · On this device" or "2023 · 4.2 MB"; a regional Bible also
+    /// names its region ("2000 · Português (Portugal) · 6.1 MB").
     private var subtitle: String {
         var parts = [entry.translation.year]
+        if let regional = AppLanguage.regionalName(entry.translation.language) {
+            parts.append(regional)
+        }
         if entry.isInstalled {
             parts.append(String(localized: "On this device"))
         } else if let download = entry.download, download.fileBytes > 0 {

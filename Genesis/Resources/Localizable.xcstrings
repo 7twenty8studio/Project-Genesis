@@ -2964,6 +2964,22 @@
         }
       }
     },
+    "All Languages": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos los idiomas"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos os idiomas"
+          }
+        }
+      }
+    },
     "All Places": {
       "localizations": {
         "es": {
