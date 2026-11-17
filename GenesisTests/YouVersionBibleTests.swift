@@ -90,6 +90,25 @@ struct YouVersionBibleTests {
         #expect(BibleLibrary.premiumToolsTranslation(for: oLivro, among: [.kjv, oLivro, livre]) == livre)
     }
 
+    @Test func onlyVerifiedOpenLicencesStandIn() {
+        // A Creative Commons mention isn't enough: only checked licences count.
+        let other = Translation(id: "OTHER", name: "Other", year: "", license: "Creative Commons Attribution-NonCommercial", summary: "", language: "pt")
+        #expect(!other.isOpenlyLicensed)
+        #expect(!other.isFreeToReuse)
+        let livre = Translation(id: "BLIVRE", name: "Bíblia Livre", year: "2018", license: "Bíblia Livre (BLIVRE)", summary: "", language: "pt")
+        #expect(livre.openLicence?.allowsCommercialUse == true)
+        #expect(livre.openLicence?.allowsNarration == true)
+    }
+
+    @Test func aPortugueseAppDownloadsItsFreeBible() throws {
+        let row = #"{"id":"BLIVRE","name":"Bíblia Livre","year":"2018","license":"Bíblia Livre (BLIVRE)","summary":"","language":"pt","file_url":"https://example.com/BLIVRE-1.sqlite.deflate","file_bytes":1,"database_bytes":2,"sha256":"00","version":1,"enabled":true,"sort":40}"#
+        let livre = try JSONDecoder().decode(DownloadableTranslation.self, from: Data(row.utf8))
+        #expect(BibleLibrary.languageBible(for: "pt", installed: Translation.bundled, catalog: [livre])?.id == "BLIVRE")
+        #expect(BibleLibrary.languageBible(for: "pt", installed: Translation.bundled + [livre.translation], catalog: [livre]) == nil)
+        #expect(BibleLibrary.languageBible(for: "en", installed: Translation.bundled, catalog: [livre]) == nil)
+        #expect(BibleLibrary.languageBible(for: "es", installed: Translation.bundled, catalog: [livre]) == nil)
+    }
+
     @Test func portugueseBiblesKeepTheirAccent() {
         #expect(VoiceAccent.preferred(for: "pt") == "pt-BR")
         #expect(VoiceAccent.preferred(for: "pt-PT") == "pt-PT")

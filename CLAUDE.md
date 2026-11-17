@@ -787,9 +787,15 @@ shares; README.md has the architecture.
   YouVersion NVI (NVIPT), NVI 2011, Nova Bíblia Viva (NBVP), Bíblia Livre
   Para Todos (BLT) and O Livro (OL, pt-PT). Rows in
   supabase/catalog/portuguese_bibles.sql, run at release.
-  `Translation.isOpenlyLicensed` (Creative Commons) keeps the credit under
-  every chapter, and `isFreeToReuse` (public domain or openly licensed, never
-  YouVersion) lets the Bíblia Livre stand in for Premium tools.
+  `Translation.openLicence` comes only from `OpenLicence.verified` (by id,
+  after reading the licence; a "Creative Commons" mention isn't enough);
+  `isFreeToReuse` (public domain or a verified licence allowing commercial
+  use and narration, never YouVersion) lets the Bíblia Livre stand in for
+  Premium tools. Its `license` (authors, source, February 2018 edition,
+  licence, footnotes left out) shows under every chapter and after exported
+  passages. A non-English app downloads its language's free Bible in the
+  background when missing (`BibleLibrary.languageBible`, from
+  refreshCatalog), as setup does.
 
 ## Navigation
 - iPhone (compact width) shows at most five tabs: Home, Read, Library,

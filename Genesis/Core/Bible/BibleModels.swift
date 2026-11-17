@@ -94,12 +94,14 @@ struct Translation: Identifiable, Hashable, Codable, Sendable {
         TranslationProfile.rights(fromLicense: license) != .publicDomain
     }
 
-    /// Licensed under Creative Commons (the Bíblia Livre, CC BY 4.0): anyone
-    /// may use it with credit, so `license` is still shown under every
-    /// chapter as that credit.
-    var isOpenlyLicensed: Bool {
-        isLicensed && license.folding(options: [.caseInsensitive], locale: nil).contains("creative commons")
-    }
+    /// The open licence Versely has checked for this Bible, if any (the
+    /// Bíblia Livre's CC BY 4.0 Brasil). Only Bibles listed in
+    /// `OpenLicence.verified` count: a Creative Commons mention in `license`
+    /// isn't enough, since the licences' conditions differ. `license` is
+    /// still the credit shown under every chapter and in exports.
+    var openLicence: OpenLicence? { isYouVersion ? nil : OpenLicence.verified[id] }
+
+    var isOpenlyLicensed: Bool { openLicence != nil }
 
     /// The language without its region: "pt" for O Livro's "pt-PT".
     var baseLanguage: String { Translation.baseLanguage(of: language) }
@@ -112,7 +114,12 @@ struct Translation: Identifiable, Hashable, Codable, Sendable {
     /// its licence, a YouVersion Bible's text stays out of Premium tools):
     /// what Premium tools read in place of a YouVersion Bible in the same
     /// language.
-    var isFreeToReuse: Bool { !isYouVersion && (!isLicensed || isOpenlyLicensed) }
+    var isFreeToReuse: Bool {
+        guard !isYouVersion else { return false }
+        guard isLicensed else { return true }
+        guard let licence = openLicence else { return false }
+        return licence.allowsCommercialUse && licence.allowsNarration
+    }
 
     init(id: String, name: String, year: String, license: String, summary: String, language: String = "en", requiresPremium: Bool = false, isYouVersion: Bool = false, publisherURL: URL? = nil) {
         self.id = id
@@ -215,4 +222,32 @@ struct PassageReference: Hashable, Sendable, CustomStringConvertible {
         }
         return "\(prefix)\(verseStart)"
     }
+}
+
+/// A Bible licence Versely has read and verified for what it does with
+/// Bibles beyond showing them: Premium tools (commercial use), reading
+/// aloud and exports, with credit. Add a Bible here only after checking its
+/// licence text, and keep its credit (authors, source, edition date) in
+/// its `license`.
+struct OpenLicence: Sendable, Hashable {
+    let name: String
+    let url: URL
+    let allowsCommercialUse: Bool
+    let allowsNarration: Bool
+    /// Changes must be indicated (CC BY): Versely shows the text verbatim,
+    /// leaving out footnotes, which the source notes say.
+    let requiresAttribution: Bool
+
+    /// Checked 17 November 2026 against ebible.org's copyright page for
+    /// porbr2018 (CC BY 4.0: share and adapt, commercial use included, with
+    /// credit, the licence link and changes indicated).
+    static let verified: [String: OpenLicence] = [
+        "BLIVRE": OpenLicence(
+            name: "Creative Commons Atribuição 4.0 Brasil (CC BY 4.0)",
+            url: URL(string: "https://creativecommons.org/licenses/by/4.0/br/")!,
+            allowsCommercialUse: true,
+            allowsNarration: true,
+            requiresAttribution: true
+        ),
+    ]
 }

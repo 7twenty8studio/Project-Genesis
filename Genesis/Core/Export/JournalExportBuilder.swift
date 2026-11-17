@@ -78,7 +78,8 @@ struct JournalExportBuilder {
             return JournalExport.Passage(
                 reference: passage.reference.description(in: translation.language),
                 translation: translation.abbreviation,
-                text: verses.map(\.plainText).joined(separator: " ")
+                text: verses.map(\.plainText).joined(separator: " "),
+                credit: translation.isLicensed ? translation.license : nil
             )
         }
     }

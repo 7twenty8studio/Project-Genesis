@@ -49,11 +49,13 @@ on conflict (id) do nothing;
 --    footnotes left out, psalm titles kept). Upload BLIVRE-1.sqlite.deflate to
 --    the public "bibles" bucket first. Its licence (the credit the translators
 --    ask for) is shown under every chapter. Being free and not from YouVersion,
---    it's the Bible a Portuguese iPhone starts in, and what Premium tools read
---    in place of a Portuguese YouVersion Bible.
+--    it's the Bible a Portuguese iPhone starts in (and downloads in the
+--    background if it's missing), and what Premium tools read in place of a
+--    Portuguese YouVersion Bible (its licence is verified in the app,
+--    OpenLicence.verified).
 insert into public.bible_translations (id, name, year, license, summary, language, file_url, file_bytes, database_bytes, sha256, version, enabled, sort,
   approach, reading_level, rights, popularity, updated_at)
-values ('BLIVRE', 'Bíblia Livre', '2018', 'Bíblia Livre (BLIVRE), Copyright © Diego Santos, Mario Sérgio, e Marco Teles, http://sites.google.com/site/biblialivre/ - fevereiro de 2018. Licença Creative Commons Atribuição 4.0 Brasil (http://creativecommons.org/licenses/by/4.0/br/).', 'A tradução de Almeida de 1819 atualizada para o português do Brasil, livre para ler e compartilhar.', 'pt', 'https://ulbpwygzwchsnvdeeife.supabase.co/storage/v1/object/public/bibles/BLIVRE-1.sqlite.deflate', 6480933, 12189696, '3dd8b214153f917fdb3015a197dde12bfb12e0f6f38683b8167350d6af025dff', 1, true, 40,
+values ('BLIVRE', 'Bíblia Livre', '2018', 'Bíblia Livre (BLIVRE), Copyright © Diego Santos, Mario Sérgio, e Marco Teles, http://sites.google.com/site/biblialivre/ - fevereiro de 2018. Licença Creative Commons Atribuição 4.0 Brasil (http://creativecommons.org/licenses/by/4.0/br/). Texto sem as notas de rodapé.', 'A tradução de Almeida de 1819 atualizada para o português do Brasil, livre para ler e compartilhar.', 'pt', 'https://ulbpwygzwchsnvdeeife.supabase.co/storage/v1/object/public/bibles/BLIVRE-1.sqlite.deflate', 6480995, 12189696, '6b38fb73c1f07fc9d27e0022a8300fc628f5f518a7b8b9c90a9845f0ec596aa0', 1, true, 40,
   'word_for_word', 'traditional', 'licensed', 3, now())
 on conflict (id) do update set name = excluded.name, year = excluded.year, license = excluded.license, summary = excluded.summary, language = excluded.language,
   file_url = excluded.file_url, file_bytes = excluded.file_bytes, database_bytes = excluded.database_bytes, sha256 = excluded.sha256,

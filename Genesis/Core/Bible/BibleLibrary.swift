@@ -239,6 +239,22 @@ final class BibleLibrary {
         for item in items where needsUpdate(item) {
             try? await install(item, allowsCellular: false)
         }
+        if let item = Self.languageBible(for: AppLanguage.code, installed: translations, catalog: items) {
+            try? await install(item, allowsCellular: true)
+        }
+    }
+
+    /// The free Bible a non-English app keeps on the device, downloaded in
+    /// the background when it's missing (a Portuguese iPhone gets the Bíblia
+    /// Livre, a Spanish one the Reina-Valera), so Premium tools beside a
+    /// YouVersion Bible read it rather than the KJV, and it's there to read.
+    /// Nil when one is already installed or the catalog has none.
+    nonisolated static func languageBible(for language: String, installed: [Translation], catalog: [DownloadableTranslation]) -> DownloadableTranslation? {
+        let base = Translation.baseLanguage(of: language)
+        guard base != "en", !installed.contains(where: { $0.isFreeToReuse && $0.baseLanguage == base }) else { return nil }
+        return catalog
+            .filter { $0.youVersionID == nil && $0.translation.isFreeToReuse && !$0.premium && $0.translation.baseLanguage == base }
+            .min { ($0.profile.popularity ?? .max) < ($1.profile.popularity ?? .max) }
     }
 
     /// A licensed Bible stays on the device only while Versely may offer

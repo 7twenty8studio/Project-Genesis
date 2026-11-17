@@ -60,8 +60,10 @@ TRANSLATIONS = {
         "name": "Bíblia Livre",
         "year": "2018",
         # The credit the Creative Commons licence asks for, as the translators
-        # suggest it, shown under every chapter (in the Bible's language).
-        "license": "Bíblia Livre (BLIVRE), Copyright © Diego Santos, Mario Sérgio, e Marco Teles, http://sites.google.com/site/biblialivre/ - fevereiro de 2018. Licença Creative Commons Atribuição 4.0 Brasil (http://creativecommons.org/licenses/by/4.0/br/).",
+        # suggest it (authors, source, edition date, licence), plus the
+        # change CC BY asks us to indicate (footnotes left out); shown under
+        # every chapter and in exports (in the Bible's language).
+        "license": "Bíblia Livre (BLIVRE), Copyright © Diego Santos, Mario Sérgio, e Marco Teles, http://sites.google.com/site/biblialivre/ - fevereiro de 2018. Licença Creative Commons Atribuição 4.0 Brasil (http://creativecommons.org/licenses/by/4.0/br/). Texto sem as notas de rodapé.",
         "language": "pt",
         # From ebible.org/Scriptures/porbr2018_usfx.zip (the Almeida of 1819
         # updated, Textus Receptus; Brazilian Portuguese).
