@@ -40,9 +40,9 @@ struct ReadingLibraryTests {
 
     @Test func languagesPutTheAppsFirst() throws {
         let rv = try offer("RV1909", name: "Reina-Valera 1909", language: "es")
-        #expect(ReadingLibrary.languages(installed: Translation.bundled, catalog: [rv], preferred: "es") == ["es", "en"])
-        #expect(ReadingLibrary.languages(installed: Translation.bundled, catalog: [rv], preferred: "en") == ["en", "es"])
-        #expect(ReadingLibrary.languages(installed: Translation.bundled, catalog: [], preferred: "es") == ["en"])
+        #expect(ReadingLibrary.languages(installed: Translation.bundled, catalog: [rv], preferred: "es") == ["es", "en", "pt"])
+        #expect(ReadingLibrary.languages(installed: Translation.bundled, catalog: [rv], preferred: "en") == ["en", "es", "pt"])
+        #expect(ReadingLibrary.languages(installed: Translation.bundled, catalog: [], preferred: "es") == ["en", "pt"])
     }
 
     @Test func entriesAreMostReadFirstAndMergeDownloads() throws {

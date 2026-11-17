@@ -846,8 +846,8 @@ enum WhatsNewCatalog {
     )
 
     /// Brazilian Portuguese screens, Portuguese Bibles and book names. The
-    /// Bibles come from the catalog (supabase/catalog/portuguese_bibles.sql),
-    /// applied when this version is released.
+    /// Bíblia Livre is bundled; the YouVersion Bibles come from the catalog
+    /// (supabase/catalog/portuguese_bibles.sql), applied at release.
     static let portuguese = WhatsNewAnnouncement(
         id: "portuguese-brazil",
         title: String(localized: "Versely in Portuguese"),
@@ -860,7 +860,7 @@ enum WhatsNewCatalog {
             WhatsNewItem(
                 systemImage: "book",
                 title: String(localized: "Portuguese Bibles"),
-                detail: String(localized: "Read the Bíblia Livre, the NVI, the Nova Bíblia Viva and more from Bibles on This Device › Get More.")
+                detail: String(localized: "The Bíblia Livre now comes with Versely, and the NVI, the Nova Bíblia Viva and more are in Bibles on This Device › Get More.")
             ),
             WhatsNewItem(
                 systemImage: "text.magnifyingglass",

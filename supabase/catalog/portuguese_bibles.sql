@@ -49,10 +49,11 @@ on conflict (id) do nothing;
 --    footnotes left out, psalm titles kept). Upload BLIVRE-1.sqlite.deflate to
 --    the public "bibles" bucket first. Its licence (the credit the translators
 --    ask for) is shown under every chapter. Being free and not from YouVersion,
---    it's the Bible a Portuguese iPhone starts in (and downloads in the
---    background if it's missing), and what Premium tools read in place of a
---    Portuguese YouVersion Bible (its licence is verified in the app,
---    OpenLicence.verified).
+--    it's what Premium tools read in place of a Portuguese YouVersion Bible
+--    (its licence is verified in the app, OpenLicence.verified). Versions
+--    with Portuguese screens bundle it (Genesis/Resources/Bibles/BLIVRE.sqlite,
+--    the same build), so for them this row is only a future edition's
+--    channel (raise its version); older builds can download it from here.
 insert into public.bible_translations (id, name, year, license, summary, language, file_url, file_bytes, database_bytes, sha256, version, enabled, sort,
   approach, reading_level, rights, popularity, updated_at)
 values ('BLIVRE', 'Bíblia Livre', '2018', 'Bíblia Livre (BLIVRE), Copyright © Diego Santos, Mario Sérgio, e Marco Teles, http://sites.google.com/site/biblialivre/ - fevereiro de 2018. Licença Creative Commons Atribuição 4.0 Brasil (http://creativecommons.org/licenses/by/4.0/br/). Texto sem as notas de rodapé.', 'A tradução de Almeida de 1819 atualizada para o português do Brasil, livre para ler e compartilhar.', 'pt', 'https://ulbpwygzwchsnvdeeife.supabase.co/storage/v1/object/public/bibles/BLIVRE-1.sqlite.deflate', 6480995, 12189696, '6b38fb73c1f07fc9d27e0022a8300fc628f5f518a7b8b9c90a9845f0ec596aa0', 1, true, 40,

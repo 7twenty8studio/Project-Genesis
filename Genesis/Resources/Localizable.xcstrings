@@ -20577,22 +20577,6 @@
         }
       }
     },
-    "Read the Bíblia Livre, the NVI, the Nova Bíblia Viva and more from Bibles on This Device › Get More.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lee la Bíblia Livre, la NVI, la Nova Bíblia Viva y más desde Biblias en este dispositivo › Obtener más."
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Leia a Bíblia Livre, a NVI, a Nova Bíblia Viva e outras em Bíblias neste aparelho › Obter mais."
-          }
-        }
-      }
-    },
     "Read the Hebrew and Greek beside every verse, word by word, with Premium.": {
       "localizations": {
         "es": {
@@ -26829,6 +26813,22 @@
         }
       }
     },
+    "The 1819 Almeida translation, updated into Brazilian Portuguese and free to read and share.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La traducción de Almeida de 1819, actualizada al portugués de Brasil y libre para leer y compartir."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A tradução de Almeida de 1819, atualizada para o português do Brasil e livre para ler e compartilhar."
+          }
+        }
+      }
+    },
     "The App Store isn't available right now. Please try again later.": {
       "localizations": {
         "es": {
@@ -26905,6 +26905,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aqui o texto bizantino tem %@."
+          }
+        }
+      }
+    },
+    "The Bíblia Livre now comes with Versely, and the NVI, the Nova Bíblia Viva and more are in Bibles on This Device › Get More.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La Bíblia Livre ahora viene con Versely, y la NVI, la Nova Bíblia Viva y más están en Biblias en este dispositivo › Obtener más."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A Bíblia Livre agora vem com o Versely, e a NVI, a Nova Bíblia Viva e outras estão em Bíblias neste aparelho › Obter mais."
           }
         }
       }

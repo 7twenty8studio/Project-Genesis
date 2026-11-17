@@ -171,8 +171,21 @@ extension Translation {
         summary: String(localized: "A precise, literal translation valued for careful study.")
     )
 
+    /// The Bíblia Livre (CC BY 4.0 Brasil), bundled so a Portuguese iPhone
+    /// reads it from the first launch, offline, and Premium tools always
+    /// have it beside a Portuguese YouVersion Bible (owner's decision, 17
+    /// November 2026). `license` is its credit, exactly as in the database.
+    static let bibliaLivre = Translation(
+        id: "BLIVRE",
+        name: "Bíblia Livre",
+        year: "2018",
+        license: "Bíblia Livre (BLIVRE), Copyright © Diego Santos, Mario Sérgio, e Marco Teles, http://sites.google.com/site/biblialivre/ - fevereiro de 2018. Licença Creative Commons Atribuição 4.0 Brasil (http://creativecommons.org/licenses/by/4.0/br/). Texto sem as notas de rodapé.",
+        summary: String(localized: "The 1819 Almeida translation, updated into Brazilian Portuguese and free to read and share."),
+        language: "pt"
+    )
+
     /// Translations shipped inside the app bundle, in display order.
-    static let bundled: [Translation] = [.kjv, .web, .asv]
+    static let bundled: [Translation] = [.kjv, .web, .asv, .bibliaLivre]
 }
 
 /// A reference to a passage: a whole book, a chapter, or a verse range.

@@ -26,7 +26,9 @@ shares; README.md has the architecture.
 - Never alter Scripture text. Verse text comes verbatim from the bundled
   SQLite databases. AI features (Phase 3) must never return verse text; the
   app renders verses from the database and visibly labels AI content.
-- Bundled Bibles are public domain (KJV, WEB, ASV). Licensed Bibles come
+- Bundled Bibles are public domain (KJV, WEB, ASV), plus one owner-approved
+  exception: the Bíblia Livre (CC BY 4.0 Brasil, credit kept; owner, 17
+  November 2026). Licensed Bibles come
   from the Digital Bible Library (Versely is a distributor) one by one, only
   after the owner confirms that publisher's approval and terms
   (LICENSED_BIBLES.md).
@@ -782,8 +784,11 @@ shares; README.md has the architecture.
   translated or edited; data from Study.sqlite and Topics.sqlite stays English.
 - Portuguese Bibles (VRS-3, owner's choice 17 November 2026): the Bíblia
   Livre (BLIVRE, CC BY 4.0 Brasil, eBible.org's USFX through build_bibles.py
-  with `usfx_notes`: footnotes and <rq> left out, psalm titles kept) as a
-  catalog download, so a Portuguese iPhone starts in it at setup; and the
+  with `usfx_notes`: footnotes and <rq> left out, psalm titles kept),
+  bundled as Genesis/Resources/Bibles/BLIVRE.sqlite (`Translation.bibliaLivre`,
+  the package_translation.py build's .sqlite; its catalog row stays for
+  older builds), so a Portuguese iPhone starts in it at setup, offline, and
+  Premium tools beside every Portuguese YouVersion Bible use it; and the
   YouVersion NVI (NVIPT), NVI 2011, Nova Bíblia Viva (NBVP), Bíblia Livre
   Para Todos (BLT) and O Livro (OL, pt-PT). Rows in
   supabase/catalog/portuguese_bibles.sql, run at release.
