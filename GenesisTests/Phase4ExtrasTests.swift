@@ -219,7 +219,7 @@ struct BibleDownloadTests {
 
         let defaults = UserDefaults(suiteName: "Downloads-\(UUID())")!
         let library = BibleLibrary(defaults: defaults, directory: directory)
-        #expect(library.translations.map(\.id) == ["KJV", "WEB", "ASV", "TST"])
+        #expect(library.translations.map(\.id) == ["KJV", "WEB", "ASV", "BLIVRE", "TST"])
         #expect(library.isRemovable(test))
         #expect(!library.isRemovable(.kjv))
         #expect(!FileManager.default.fileExists(atPath: directory.appending(path: "OLD-1.sqlite").path(percentEncoded: false)), "Files nobody uses are cleared")
@@ -229,7 +229,7 @@ struct BibleDownloadTests {
         #expect(verse != nil)
 
         library.remove(test)
-        #expect(library.translations.map(\.id) == ["KJV", "WEB", "ASV"])
+        #expect(library.translations.map(\.id) == ["KJV", "WEB", "ASV", "BLIVRE"])
         #expect(library.currentTranslation == .kjv, "Removing the current Bible switches back to the KJV")
     }
 }
