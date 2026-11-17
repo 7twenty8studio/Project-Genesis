@@ -6,35 +6,49 @@ import Foundation
 /// Data: Theographic Bible Metadata (CC BY-SA 4.0), with coordinates from
 /// OpenBible.info (CC BY 4.0) and descriptions from Easton's Bible Dictionary
 /// (public domain). It holds verse ids only, never Scripture text.
+///
+/// In Spanish and Portuguese, names, titles and summaries come from the
+/// `translations` table (Tools/StudyData/add_study_translations.py), each
+/// falling back to the English where it has none. Search finds both.
 final class StudyRepository: Sendable {
     static let attribution = String(localized: "People, places and events from Theographic Bible Metadata (CC BY-SA 4.0). Map locations and how certain they are from OpenBible.info (CC BY 4.0). Descriptions from Easton's Bible Dictionary (1897).")
     static let chronologyNote = String(localized: "Dates are approximate and follow a traditional chronology. Events before Abraham are shown in order without dates.")
 
     private let database: SQLiteDatabase
+    /// "es" or "pt" when the database has names in that language; nil for English.
+    let language: String?
 
-    init(url: URL) throws {
-        database = try SQLiteDatabase(readOnly: url)
+    /// - Parameter language: the app's language code ("en", "es", "pt");
+    ///   nil or one without translations shows the English.
+    init(url: URL, language: String? = nil) throws {
+        let database = try SQLiteDatabase(readOnly: url)
+        let hasTranslations = try !database.query("SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'translations'", map: { _ in true }).isEmpty
+        self.database = database
+        self.language = language.flatMap { Self.translatedLanguages.contains($0) && hasTranslations ? $0 : nil }
     }
 
-    /// The bundled database, or nil if it's missing from the build.
-    static func bundled(in bundle: Bundle = .main) -> StudyRepository? {
-        bundle.url(forResource: "Study", withExtension: "sqlite").flatMap { try? StudyRepository(url: $0) }
+    /// The bundled database in the app's language, or nil if it's missing from the build.
+    static func bundled(in bundle: Bundle = .main, language: String? = AppLanguage.code) -> StudyRepository? {
+        bundle.url(forResource: "Study", withExtension: "sqlite").flatMap { try? StudyRepository(url: $0, language: language) }
     }
+
+    /// Languages Study.sqlite has names for. Only these reach the SQL below.
+    static let translatedLanguages: Set<String> = ["es", "pt"]
 
     // MARK: Timeline
 
     func eras() throws -> [Era] {
-        try database.query("SELECT id, title, summary, dated, first_verse FROM eras ORDER BY sort") {
+        try database.query("SELECT e.id, \(pick("t", "name", "e.title")), \(pick("t", "other", "e.summary")), e.dated, e.first_verse FROM eras e\(join("era", as: "t", id: "e.id")) ORDER BY e.sort") {
             Era(id: $0.text(0), title: $0.text(1), summary: $0.text(2), isDated: $0.bool(3), firstVerse: VerseID(rawValue: $0.int(4)))
         }
     }
 
     func events(inEra era: String) throws -> [TimelineEvent] {
-        try database.query("\(Self.eventColumns) WHERE era = ? ORDER BY sort_key, id", [.text(era)], map: Self.event)
+        try database.query("\(eventColumns) WHERE ev.era = ? ORDER BY ev.sort_key, ev.id", [.text(era)], map: Self.event)
     }
 
     func event(id: Int) throws -> TimelineEvent? {
-        try database.query("\(Self.eventColumns) WHERE id = ?", [.int(id)], map: Self.event).first
+        try database.query("\(eventColumns) WHERE ev.id = ?", [.int(id)], map: Self.event).first
     }
 
     /// Chapters the event is told in, in canonical order.
@@ -47,28 +61,28 @@ final class StudyRepository: Sendable {
 
     func people(inEvent id: Int) throws -> [PersonSummary] {
         try database.query(
-            "\(Self.personColumns) JOIN event_people e ON e.person_id = p.id WHERE e.event_id = ? ORDER BY p.verse_count DESC",
+            "\(personColumns) JOIN event_people e ON e.person_id = p.id WHERE e.event_id = ? ORDER BY p.verse_count DESC",
             [.int(id)], map: Self.personSummary
         )
     }
 
     func places(inEvent id: Int) throws -> [PlaceSummary] {
         try database.query(
-            "\(Self.placeColumns) JOIN event_places e ON e.place_id = p.id WHERE e.event_id = ? ORDER BY p.verse_count DESC",
+            "\(placeColumns) JOIN event_places e ON e.place_id = p.id WHERE e.event_id = ? ORDER BY p.verse_count DESC",
             [.int(id)], map: { Self.placeSummary($0) }
         )
     }
 
     func events(forPerson id: Int) throws -> [TimelineEvent] {
         try database.query(
-            "SELECT ev.id, ev.title, ev.era, ev.year, ev.first_verse, ev.last_verse FROM events ev JOIN event_people e ON e.event_id = ev.id WHERE e.person_id = ? ORDER BY ev.sort_key",
+            "\(eventColumns) JOIN event_people e ON e.event_id = ev.id WHERE e.person_id = ? ORDER BY ev.sort_key",
             [.int(id)], map: Self.event
         )
     }
 
     func events(atPlace id: Int) throws -> [TimelineEvent] {
         try database.query(
-            "SELECT ev.id, ev.title, ev.era, ev.year, ev.first_verse, ev.last_verse FROM events ev JOIN event_places e ON e.event_id = ev.id WHERE e.place_id = ? ORDER BY ev.sort_key",
+            "\(eventColumns) JOIN event_places e ON e.event_id = ev.id WHERE e.place_id = ? ORDER BY ev.sort_key",
             [.int(id)], map: Self.event
         )
     }
@@ -77,7 +91,7 @@ final class StudyRepository: Sendable {
     func events(inChapter chapter: ChapterID) throws -> [TimelineEvent] {
         let range = chapter.verseRange
         return try database.query(
-            "SELECT DISTINCT ev.id, ev.title, ev.era, ev.year, ev.first_verse, ev.last_verse, ev.sort_key FROM events ev JOIN event_verses v ON v.event_id = ev.id WHERE v.verse BETWEEN ? AND ? ORDER BY ev.sort_key",
+            "\(eventColumns.replacingOccurrences(of: "SELECT ", with: "SELECT DISTINCT ", options: .anchored)) JOIN event_verses v ON v.event_id = ev.id WHERE v.verse BETWEEN ? AND ? ORDER BY ev.sort_key",
             [.int(range.lowerBound), .int(range.upperBound)], map: Self.event
         )
     }
@@ -90,19 +104,19 @@ final class StudyRepository: Sendable {
         guard !trimmed.isEmpty else { return try notablePeople(limit: limit) }
         let pattern = Self.likePrefix(trimmed)
         return try database.query(
-            "\(Self.personColumns) WHERE p.name LIKE ? ESCAPE '\\' OR p.also_called LIKE ? ESCAPE '\\' OR p.also_called LIKE ? ESCAPE '\\' ORDER BY p.verse_count DESC LIMIT ?",
-            [.text(pattern), .text(pattern), .text("%, " + pattern), .int(limit)], map: Self.personSummary
+            "\(personColumns) WHERE p.name LIKE ? ESCAPE '\\' OR p.also_called LIKE ? ESCAPE '\\' OR p.also_called LIKE ? ESCAPE '\\'\(translatedMatch("tp")) ORDER BY p.verse_count DESC LIMIT ?",
+            [SQLiteDatabase.Value.text(pattern), .text(pattern), .text("%, " + pattern)] + translatedArgument(trimmed) + [.int(limit)], map: Self.personSummary
         )
     }
 
     /// The most-mentioned people, for the explorer's opening list.
     func notablePeople(limit: Int = 50) throws -> [PersonSummary] {
-        try database.query("\(Self.personColumns) ORDER BY p.verse_count DESC LIMIT ?", [.int(limit)], map: Self.personSummary)
+        try database.query("\(personColumns) ORDER BY p.verse_count DESC LIMIT ?", [.int(limit)], map: Self.personSummary)
     }
 
     func person(id: Int) throws -> Person? {
         try database.query(
-            "SELECT p.id, p.name, p.also_called, p.verse_count, p.gender, p.bio, p.birth_year, p.death_year, p.tribe, p.first_verse FROM people p WHERE p.id = ?",
+            "SELECT p.id, \(pick("tp", "name", "p.name")), \(pick("tp", "other", "p.also_called")), p.verse_count, p.gender, \(pick("tp", "detail", "p.bio")), p.birth_year, p.death_year, p.tribe, p.first_verse FROM people p\(join("person", as: "tp", id: "p.id")) WHERE p.id = ?",
             [.int(id)]
         ) {
             Person(
@@ -119,7 +133,7 @@ final class StudyRepository: Sendable {
 
     func family(ofPerson id: Int) throws -> Family {
         let rows = try database.query(
-            "SELECT r.kind, p.id, p.name, p.also_called, p.verse_count FROM relations r JOIN people p ON p.id = r.other_id WHERE r.person_id = ? ORDER BY p.verse_count DESC",
+            "SELECT r.kind, p.id, \(pick("tp", "name", "p.name")), \(pick("tp", "other", "p.also_called")), p.verse_count FROM relations r JOIN people p ON p.id = r.other_id\(join("person", as: "tp", id: "p.id")) WHERE r.person_id = ? ORDER BY p.verse_count DESC",
             [.int(id)]
         ) { row -> (RelationKind?, PersonSummary) in
             (RelationKind(rawValue: row.text(0)),
@@ -160,7 +174,7 @@ final class StudyRepository: Sendable {
     func people(inChapter chapter: ChapterID, limit: Int = 30) throws -> [PersonSummary] {
         let range = chapter.verseRange
         return try database.query(
-            "\(Self.personColumns) WHERE p.id IN (SELECT person_id FROM person_verses WHERE verse BETWEEN ? AND ?) ORDER BY p.verse_count DESC LIMIT ?",
+            "\(personColumns) WHERE p.id IN (SELECT person_id FROM person_verses WHERE verse BETWEEN ? AND ?) ORDER BY p.verse_count DESC LIMIT ?",
             [.int(range.lowerBound), .int(range.upperBound), .int(limit)], map: Self.personSummary
         )
     }
@@ -168,7 +182,7 @@ final class StudyRepository: Sendable {
     /// Mapped places where the person's events happen.
     func places(forPerson id: Int, limit: Int = 30) throws -> [PlaceSummary] {
         try database.query(
-            "\(Self.placeColumns) WHERE p.latitude IS NOT NULL AND p.id IN (SELECT ep.place_id FROM event_places ep JOIN event_people e ON e.event_id = ep.event_id WHERE e.person_id = ?) ORDER BY p.verse_count DESC LIMIT ?",
+            "\(placeColumns) WHERE p.latitude IS NOT NULL AND p.id IN (SELECT ep.place_id FROM event_places ep JOIN event_people e ON e.event_id = ep.event_id WHERE e.person_id = ?) ORDER BY p.verse_count DESC LIMIT ?",
             [.int(id), .int(limit)], map: { Self.placeSummary($0) }
         )
     }
@@ -177,7 +191,7 @@ final class StudyRepository: Sendable {
 
     func place(id: Int) throws -> Place? {
         try database.query(
-            "SELECT p.id, p.name, p.kind, p.latitude, p.longitude, p.verse_count, p.aliases, p.bio, p.precise, p.first_verse, p.confidence FROM places p WHERE p.id = ?",
+            "SELECT p.id, \(pick("tq", "name", "p.name")), p.kind, p.latitude, p.longitude, p.verse_count, \(pick("tq", "other", "p.aliases")), \(pick("tq", "detail", "p.bio")), p.precise, p.first_verse, p.confidence FROM places p\(join("place", as: "tq", id: "p.id")) WHERE p.id = ?",
             [.int(id)]
         ) {
             Place(
@@ -193,7 +207,7 @@ final class StudyRepository: Sendable {
     /// Places with coordinates, the most-mentioned first.
     func mappedPlaces(minimumMentions: Int = 1, limit: Int = 2000) throws -> [PlaceSummary] {
         try database.query(
-            "\(Self.placeColumns) WHERE p.latitude IS NOT NULL AND p.verse_count >= ? ORDER BY p.verse_count DESC LIMIT ?",
+            "\(placeColumns) WHERE p.latitude IS NOT NULL AND p.verse_count >= ? ORDER BY p.verse_count DESC LIMIT ?",
             [.int(minimumMentions), .int(limit)], map: { Self.placeSummary($0) }
         )
     }
@@ -203,8 +217,8 @@ final class StudyRepository: Sendable {
         guard !trimmed.isEmpty else { return try mappedPlaces(minimumMentions: 10, limit: limit) }
         let pattern = Self.likePrefix(trimmed)
         return try database.query(
-            "\(Self.placeColumns) WHERE p.name LIKE ? ESCAPE '\\' OR p.aliases LIKE ? ESCAPE '\\' ORDER BY p.verse_count DESC LIMIT ?",
-            [.text(pattern), .text("%" + pattern), .int(limit)], map: { Self.placeSummary($0) }
+            "\(placeColumns) WHERE p.name LIKE ? ESCAPE '\\' OR p.aliases LIKE ? ESCAPE '\\'\(translatedMatch("tq")) ORDER BY p.verse_count DESC LIMIT ?",
+            [SQLiteDatabase.Value.text(pattern), .text("%" + pattern)] + translatedArgument(trimmed) + [.int(limit)], map: { Self.placeSummary($0) }
         )
     }
 
@@ -212,7 +226,7 @@ final class StudyRepository: Sendable {
     func places(inChapter chapter: ChapterID, limit: Int = 30) throws -> [PlaceSummary] {
         let range = chapter.verseRange
         return try database.query(
-            "\(Self.placeColumns) WHERE p.latitude IS NOT NULL AND p.id IN (SELECT place_id FROM place_verses WHERE verse BETWEEN ? AND ?) ORDER BY p.verse_count DESC LIMIT ?",
+            "\(placeColumns) WHERE p.latitude IS NOT NULL AND p.id IN (SELECT place_id FROM place_verses WHERE verse BETWEEN ? AND ?) ORDER BY p.verse_count DESC LIMIT ?",
             [.int(range.lowerBound), .int(range.upperBound), .int(limit)], map: { Self.placeSummary($0) }
         )
     }
@@ -227,12 +241,12 @@ final class StudyRepository: Sendable {
     // MARK: Routes
 
     func routes() throws -> [Route] {
-        let headers = try database.query("SELECT id, title, passage, first_verse FROM routes ORDER BY sort") {
+        let headers = try database.query("SELECT r.id, \(pick("t", "name", "r.title")), \(pick("t", "other", "r.passage")), r.first_verse FROM routes r\(join("route", as: "t", id: "r.id")) ORDER BY r.sort") {
             ($0.text(0), $0.text(1), $0.text(2), VerseID(rawValue: $0.int(3)))
         }
         return try headers.map { id, title, passage, first in
             let stops = try database.query(
-                "SELECT p.id, p.name, p.kind, p.latitude, p.longitude, p.verse_count, p.confidence FROM route_stops s JOIN places p ON p.id = s.place_id WHERE s.route_id = ? ORDER BY s.position",
+                "SELECT p.id, \(pick("tq", "name", "p.name")), p.kind, p.latitude, p.longitude, p.verse_count, p.confidence FROM route_stops s JOIN places p ON p.id = s.place_id\(join("place", as: "tq", id: "p.id")) WHERE s.route_id = ? ORDER BY s.position",
                 [.text(id)], map: { Self.placeSummary($0) }
             )
             return Route(id: id, title: title, passage: passage, firstVerse: first, stops: stops)
@@ -241,9 +255,46 @@ final class StudyRepository: Sendable {
 
     // MARK: Rows
 
-    private static let eventColumns = "SELECT id, title, era, year, first_verse, last_verse FROM events"
-    private static let personColumns = "SELECT p.id, p.name, p.also_called, p.verse_count FROM people p"
-    private static let placeColumns = "SELECT p.id, p.name, p.kind, p.latitude, p.longitude, p.verse_count, p.confidence FROM places p"
+    private var eventColumns: String {
+        "SELECT ev.id, \(pick("te", "name", "ev.title")), ev.era, ev.year, ev.first_verse, ev.last_verse FROM events ev\(join("event", as: "te", id: "ev.id"))"
+    }
+    private var personColumns: String {
+        "SELECT p.id, \(pick("tp", "name", "p.name")), \(pick("tp", "other", "p.also_called")), p.verse_count FROM people p\(join("person", as: "tp", id: "p.id"))"
+    }
+    private var placeColumns: String {
+        "SELECT p.id, \(pick("tq", "name", "p.name")), p.kind, p.latitude, p.longitude, p.verse_count, p.confidence FROM places p\(join("place", as: "tq", id: "p.id"))"
+    }
+
+    // MARK: Translations
+
+    /// " LEFT JOIN translations …" for a row of that kind, or "" in English.
+    /// The language is one of `translatedLanguages`, never free text.
+    private func join(_ kind: String, as alias: String, id: String) -> String {
+        guard let language else { return "" }
+        return " LEFT JOIN translations \(alias) ON \(alias).lang = '\(language)' AND \(alias).kind = '\(kind)' AND \(alias).key = CAST(\(id) AS TEXT)"
+    }
+
+    /// The translated column where there is one, else the English.
+    private func pick(_ alias: String, _ column: String, _ english: String) -> String {
+        guard language != nil else { return english }
+        return "COALESCE(NULLIF(\(alias).\(column), ''), \(english))"
+    }
+
+    /// Also matches the start of a translated name or other name, accents
+    /// and case aside ("moi" finds Moisés).
+    private func translatedMatch(_ alias: String) -> String {
+        language == nil ? "" : " OR \(alias).folded LIKE ? ESCAPE '\\'"
+    }
+
+    private func translatedArgument(_ text: String) -> [SQLiteDatabase.Value] {
+        guard language != nil else { return [] }
+        return [.text("%, " + Self.likePrefix(Self.folded(text)))]
+    }
+
+    /// Lower case without accents, as add_study_translations.py's `fold`.
+    static func folded(_ text: String) -> String {
+        text.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: nil).lowercased()
+    }
 
     private static func event(_ row: SQLiteDatabase.Row) -> TimelineEvent {
         TimelineEvent(

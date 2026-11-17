@@ -38,6 +38,14 @@ shares; README.md has the architecture.
   study notes · not Scripture" in a separate card. Keep both safeguards.
 - Study.sqlite (people/places/events) is CC BY-SA 4.0: keep the attribution
   and LICENSE.txt with it. It holds verse ids only, never verse text.
+  Its `translations` table (lang, kind, key, name, other, detail, folded)
+  gives Spanish and Portuguese names, event/era/route titles, era summaries,
+  aliases and (later) Easton descriptions; `StudyRepository(language:)`
+  (bundled: `AppLanguage.code`) falls back to English per field and search
+  matches both (accents aside). Built from Tools/StudyData/translations
+  (manual.json by hand; es/pt.json by translate_study.py, names as spelled in
+  the RV1909, modernized, and the Bíblia Livre) by add_study_translations.py,
+  which build_study.py also runs. Group labels are `PersonGroup` strings.
 
 ## Building
 - The Xcode project is generated: `xcodegen generate` from `project.yml`.

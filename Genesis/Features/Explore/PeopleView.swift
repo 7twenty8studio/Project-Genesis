@@ -183,7 +183,7 @@ struct PersonDetailView: View {
                 .accessibilityIdentifier("person.name")
             let details = [
                 person.summary.alsoCalled.isEmpty ? nil : String(localized: "Also called \(person.summary.alsoCalled)"),
-                person.group.isEmpty ? nil : person.group,
+                person.groupTitle,
                 person.lifespan,
             ].compactMap { $0 }
             ForEach(details, id: \.self) { line in

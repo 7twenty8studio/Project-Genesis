@@ -1,0 +1,12871 @@
+{
+ "era": {
+  "abraham": {
+   "name": "Abraão",
+   "other": "O chamado e a promessa de Deus a Abraão, e as vidas de Isaque, Jacó e José."
+  },
+  "acts": {
+   "name": "Atos",
+   "other": "A igreja primitiva se espalha de Jerusalém até Roma."
+  },
+  "creation": {
+   "name": "Criação",
+   "other": "Deus cria os céus e a terra, e as primeiras gerações da humanidade."
+  },
+  "jesus": {
+   "name": "Jesus",
+   "other": "O nascimento, o ministério, a morte e a ressurreição de Jesus."
+  },
+  "joshua": {
+   "name": "Josué",
+   "other": "Israel entra na terra prometida e se estabelece nela."
+  },
+  "judges": {
+   "name": "Juízes",
+   "other": "Ciclos de afastamento e libertação antes de Israel ter um rei."
+  },
+  "kings": {
+   "name": "Reis",
+   "other": "Saul, Davi e Salomão, o reino dividido e a queda de Israel e Judá."
+  },
+  "letters": {
+   "name": "Cartas",
+   "other": "Cartas de Paulo e de outros apóstolos a igrejas e crentes."
+  },
+  "moses": {
+   "name": "Moisés",
+   "other": "A libertação de Israel do Egito, a lei no Sinai e os anos no deserto."
+  },
+  "noah": {
+   "name": "Noé",
+   "other": "O dilúvio, a aliança de Deus com Noé e a torre de Babel."
+  },
+  "prophets": {
+   "name": "Profetas",
+   "other": "Os profetas falam a Israel e às nações; o exílio e a volta a Jerusalém."
+  },
+  "revelation": {
+   "name": "Apocalipse",
+   "other": "A visão de João sobre Cristo, o juízo e a nova criação."
+  }
+ },
+ "event": {
+  "1": {
+   "name": "A criação de todas as coisas"
+  },
+  "10": {
+   "name": "Vida de Enos"
+  },
+  "100": {
+   "name": "Nascimento de Zebulon"
+  },
+  "101": {
+   "name": "Nascimento de Diná"
+  },
+  "102": {
+   "name": "Nascimento de José"
+  },
+  "103": {
+   "name": "Vida de José"
+  },
+  "104": {
+   "name": "Raquel morre ao dar à luz Benjamim"
+  },
+  "105": {
+   "name": "José é vendido para o Egito"
+  },
+  "106": {
+   "name": "Nascimento de Perez"
+  },
+  "107": {
+   "name": "Nascimento de Jó"
+  },
+  "108": {
+   "name": "Vida de Jó"
+  },
+  "109": {
+   "name": "José na prisão"
+  },
+  "11": {
+   "name": "Nascimento de Cainã"
+  },
+  "110": {
+   "name": "Morte de Isaque"
+  },
+  "111": {
+   "name": "José é exaltado no Egito"
+  },
+  "112": {
+   "name": "Sete anos de fartura"
+  },
+  "113": {
+   "name": "Sete anos de fome"
+  },
+  "114": {
+   "name": "Os irmãos de José vão ao Egito"
+  },
+  "115": {
+   "name": "Os irmãos de José voltam ao Egito"
+  },
+  "116": {
+   "name": "Morte de Jacó"
+  },
+  "117": {
+   "name": "A provação de Jó"
+  },
+  "118": {
+   "name": "Morte de José"
+  },
+  "119": {
+   "name": "Morte de Jó"
+  },
+  "12": {
+   "name": "Vida de Cainã"
+  },
+  "120": {
+   "name": "Nascimento de Moisés"
+  },
+  "121": {
+   "name": "Vida de Moisés"
+  },
+  "122": {
+   "name": "Moisés foge de Faraó"
+  },
+  "123": {
+   "name": "Nascimento de Calebe"
+  },
+  "124": {
+   "name": "Vida de Josué"
+  },
+  "125": {
+   "name": "A saída do Egito"
+  },
+  "126": {
+   "name": "Os anos no deserto"
+  },
+  "127": {
+   "name": "A entrega dos Dez Mandamentos"
+  },
+  "128": {
+   "name": "A construção do tabernáculo"
+  },
+  "129": {
+   "name": "Morte de Moisés"
+  },
+  "13": {
+   "name": "Nascimento de Mahlaleel"
+  },
+  "130": {
+   "name": "A travessia do Jordão rumo a Canaã"
+  },
+  "131": {
+   "name": "A guerra contra os cananeus"
+  },
+  "132": {
+   "name": "A divisão da terra"
+  },
+  "133": {
+   "name": "Morte de Josué"
+  },
+  "134": {
+   "name": "Opressão por Cushan-rishathaim"
+  },
+  "135": {
+   "name": "Libertação por Otniel"
+  },
+  "136": {
+   "name": "Opressão por Eglom"
+  },
+  "137": {
+   "name": "Libertação por Eúde"
+  },
+  "138": {
+   "name": "Opressão por Jabim"
+  },
+  "139": {
+   "name": "Libertação por Baraque e Débora"
+  },
+  "14": {
+   "name": "Vida de Mahlaleel"
+  },
+  "140": {
+   "name": "Opressão por Midiã"
+  },
+  "141": {
+   "name": "Libertação por Gideão"
+  },
+  "142": {
+   "name": "Abimeleque usurpa o poder"
+  },
+  "143": {
+   "name": "Período de Tola como juiz"
+  },
+  "144": {
+   "name": "Opressão por amonitas e filisteus"
+  },
+  "145": {
+   "name": "Período de Eli como juiz"
+  },
+  "146": {
+   "name": "Libertação por Jefté"
+  },
+  "147": {
+   "name": "Período de Ibsã como juiz"
+  },
+  "148": {
+   "name": "Domínio filisteu"
+  },
+  "149": {
+   "name": "Período de Elom como juiz"
+  },
+  "15": {
+   "name": "Nascimento de Jarede"
+  },
+  "150": {
+   "name": "Nascimento de Saul"
+  },
+  "151": {
+   "name": "Período de Abdom como juiz"
+  },
+  "152": {
+   "name": "Morte de Eli e captura da arca"
+  },
+  "153": {
+   "name": "Período de Sansão como juiz"
+  },
+  "154": {
+   "name": "Sansão derruba o templo de Dagom"
+  },
+  "155": {
+   "name": "Reinado de Saul"
+  },
+  "156": {
+   "name": "O reino unido"
+  },
+  "157": {
+   "name": "Davi mata Golias"
+  },
+  "158": {
+   "name": "Morte de Saul"
+  },
+  "159": {
+   "name": "Reinado de Davi"
+  },
+  "16": {
+   "name": "Vida de Jarede"
+  },
+  "160": {
+   "name": "Morte de Davi"
+  },
+  "161": {
+   "name": "Reinado de Salomão"
+  },
+  "162": {
+   "name": "A construção do templo de Salomão"
+  },
+  "163": {
+   "name": "O reino do sul (Judá)"
+  },
+  "164": {
+   "name": "Morte de Salomão"
+  },
+  "165": {
+   "name": "Reinado de Roboão"
+  },
+  "166": {
+   "name": "O reino do norte (Israel)"
+  },
+  "167": {
+   "name": "Reinado de Jeroboam I"
+  },
+  "168": {
+   "name": "Reinado de Abijam"
+  },
+  "169": {
+   "name": "Morte de Abijam"
+  },
+  "17": {
+   "name": "Nascimento de Enoque"
+  },
+  "170": {
+   "name": "Reinado de Asa"
+  },
+  "171": {
+   "name": "Reinado de Nadabe"
+  },
+  "172": {
+   "name": "Reinado de Baasa"
+  },
+  "173": {
+   "name": "Reinado de Elá"
+  },
+  "174": {
+   "name": "Reinado de Zinri"
+  },
+  "175": {
+   "name": "Reinado de Tibni"
+  },
+  "176": {
+   "name": "Reinado de Onri"
+  },
+  "177": {
+   "name": "Morte de Tibni"
+  },
+  "178": {
+   "name": "Reinado de Acabe"
+  },
+  "179": {
+   "name": "Morte de Onri"
+  },
+  "18": {
+   "name": "Vida de Enoque"
+  },
+  "180": {
+   "name": "Morte de Asa"
+  },
+  "181": {
+   "name": "Reinado de Josafá"
+  },
+  "182": {
+   "name": "Profecias de Elias"
+  },
+  "183": {
+   "name": "Morte de Josafá"
+  },
+  "184": {
+   "name": "Reinado de Acazias"
+  },
+  "185": {
+   "name": "Elias é levado ao céu"
+  },
+  "186": {
+   "name": "Profecias de Eliseu"
+  },
+  "187": {
+   "name": "Reinado de Jorão"
+  },
+  "188": {
+   "name": "Reinado de Jeorão"
+  },
+  "189": {
+   "name": "Reinado de Acazias (Jeoacaz)"
+  },
+  "19": {
+   "name": "Nascimento de Matusalém"
+  },
+  "190": {
+   "name": "Reinado de Jeú"
+  },
+  "191": {
+   "name": "Reinado de Atalia"
+  },
+  "192": {
+   "name": "Morte de Jeorão"
+  },
+  "193": {
+   "name": "Reinado de Joás"
+  },
+  "194": {
+   "name": "Morte de Jeú"
+  },
+  "195": {
+   "name": "Reinado de Jeoacaz"
+  },
+  "196": {
+   "name": "Morte de Jeoacaz"
+  },
+  "197": {
+   "name": "Reinado de Jehoash"
+  },
+  "198": {
+   "name": "Reinado de Amazias"
+  },
+  "199": {
+   "name": "Reinado de Jeroboam II"
+  },
+  "2": {
+   "name": "A criação de Adão e Eva"
+  },
+  "20": {
+   "name": "Vida de Matusalém"
+  },
+  "200": {
+   "name": "Profecias de Jonas"
+  },
+  "201": {
+   "name": "Morte de Jehoahash"
+  },
+  "202": {
+   "name": "Profecias de Joel"
+  },
+  "203": {
+   "name": "Morte de Amazias"
+  },
+  "204": {
+   "name": "Reinado de Uzias"
+  },
+  "205": {
+   "name": "Profecias de Amós"
+  },
+  "206": {
+   "name": "Profecias de Oseias"
+  },
+  "207": {
+   "name": "Morte de Jeroboão II"
+  },
+  "208": {
+   "name": "Reinado de Zacarias"
+  },
+  "209": {
+   "name": "Reinado de Salum"
+  },
+  "21": {
+   "name": "Nascimento de Lameque"
+  },
+  "210": {
+   "name": "Morte de Zacarias"
+  },
+  "211": {
+   "name": "Morte de Salum"
+  },
+  "212": {
+   "name": "Reinado de Menaém"
+  },
+  "213": {
+   "name": "Morte de Menaém"
+  },
+  "214": {
+   "name": "Reinado de Pecaías"
+  },
+  "215": {
+   "name": "Morte de Pecaías"
+  },
+  "216": {
+   "name": "Reinado de Peca"
+  },
+  "217": {
+   "name": "Profecias de Isaías"
+  },
+  "218": {
+   "name": "Morte de Uzias"
+  },
+  "219": {
+   "name": "Reinado de Jotão"
+  },
+  "22": {
+   "name": "Vida de Lameque"
+  },
+  "220": {
+   "name": "Profecias de Mica"
+  },
+  "221": {
+   "name": "Reinado de Acaz"
+  },
+  "222": {
+   "name": "Morte de Jotão"
+  },
+  "223": {
+   "name": "Morte de Peca"
+  },
+  "224": {
+   "name": "Reinado de Oseias"
+  },
+  "225": {
+   "name": "Morte de Acaz"
+  },
+  "226": {
+   "name": "Reinado de Ezequias"
+  },
+  "227": {
+   "name": "Morte de Ezequias"
+  },
+  "228": {
+   "name": "Reinado de Manassés"
+  },
+  "229": {
+   "name": "Profecias de Naum"
+  },
+  "23": {
+   "name": "Morte de Adão"
+  },
+  "230": {
+   "name": "Morte de Manassés"
+  },
+  "231": {
+   "name": "Reinado de Amom"
+  },
+  "232": {
+   "name": "Morte de Amom"
+  },
+  "233": {
+   "name": "Reinado de Josias"
+  },
+  "234": {
+   "name": "Profecias de Jeremias"
+  },
+  "235": {
+   "name": "Profecias de Sofonias"
+  },
+  "236": {
+   "name": "Morte de Josias"
+  },
+  "237": {
+   "name": "Reinado de Jeoacaz (Salum)"
+  },
+  "238": {
+   "name": "Reinado de Jeoaquim"
+  },
+  "239": {
+   "name": "Profecias de Habacuque"
+  },
+  "24": {
+   "name": "Enoque é levado por Deus"
+  },
+  "240": {
+   "name": "Profecias de Daniel"
+  },
+  "241": {
+   "name": "Reinado de Jeconiah"
+  },
+  "242": {
+   "name": "Reinado de Zedequias"
+  },
+  "243": {
+   "name": "Profecias de Ezequiel"
+  },
+  "244": {
+   "name": "Profecias de Obadias"
+  },
+  "245": {
+   "name": "Profecias de Ageu"
+  },
+  "246": {
+   "name": "Profecias de Zacarias"
+  },
+  "247": {
+   "name": "Profecias de Malaquias"
+  },
+  "248": {
+   "name": "O nascimento de João é anunciado"
+  },
+  "249": {
+   "name": "O noivado de Maria"
+  },
+  "25": {
+   "name": "Morte de Sete"
+  },
+  "250": {
+   "name": "A Anunciação"
+  },
+  "251": {
+   "name": "Maria visita Isabel"
+  },
+  "252": {
+   "name": "Nascimento de João Batista"
+  },
+  "253": {
+   "name": "Um anjo fala a José em sonho"
+  },
+  "254": {
+   "name": "Nascimento de Jesus"
+  },
+  "255": {
+   "name": "Os magos visitam Herodes"
+  },
+  "256": {
+   "name": "Os magos visitam Jesus"
+  },
+  "257": {
+   "name": "José e Maria fogem para o Egito"
+  },
+  "258": {
+   "name": "Herodes mata os meninos"
+  },
+  "259": {
+   "name": "A circuncisão de Jesus"
+  },
+  "26": {
+   "name": "Nascimento de Noé"
+  },
+  "260": {
+   "name": "José e Maria voltam do Egito"
+  },
+  "261": {
+   "name": "Jesus é apresentado no templo"
+  },
+  "262": {
+   "name": "José e Maria voltam a Nazaré"
+  },
+  "263": {
+   "name": "A infância de Jesus"
+  },
+  "264": {
+   "name": "Jesus menino no templo"
+  },
+  "265": {
+   "name": "Jesus cresce"
+  },
+  "266": {
+   "name": "João Batista começa seu ministério"
+  },
+  "267": {
+   "name": "João batiza Jesus"
+  },
+  "268": {
+   "name": "As tentações de Jesus"
+  },
+  "269": {
+   "name": "O testemunho de João"
+  },
+  "27": {
+   "name": "Vida de Noé"
+  },
+  "270": {
+   "name": "Os primeiros discípulos"
+  },
+  "271": {
+   "name": "A água transformada em vinho"
+  },
+  "272": {
+   "name": "Visita a Cafarnaum"
+  },
+  "273": {
+   "name": "A primeira Páscoa e a purificação do templo"
+  },
+  "274": {
+   "name": "Jesus e Nicodemos"
+  },
+  "275": {
+   "name": "João Batista dá testemunho"
+  },
+  "276": {
+   "name": "João Batista é preso"
+  },
+  "277": {
+   "name": "Jesus deixa a Judeia rumo à Galileia"
+  },
+  "278": {
+   "name": "A mulher samaritana"
+  },
+  "279": {
+   "name": "Jesus visita a Galileia"
+  },
+  "28": {
+   "name": "Morte de Enos"
+  },
+  "280": {
+   "name": "Jesus é rejeitado em Nazaré"
+  },
+  "281": {
+   "name": "Jesus em Cafarnaum"
+  },
+  "282": {
+   "name": "Pescadores de homens"
+  },
+  "283": {
+   "name": "O endemoninhado"
+  },
+  "284": {
+   "name": "A sogra de Pedro e outros são curados"
+  },
+  "285": {
+   "name": "A primeira viagem de Jesus pela Galileia"
+  },
+  "286": {
+   "name": "A cura do leproso"
+  },
+  "287": {
+   "name": "A cura do paralítico"
+  },
+  "288": {
+   "name": "Jesus chama Mateus"
+  },
+  "289": {
+   "name": "A pergunta sobre o jejum"
+  },
+  "29": {
+   "name": "Morte de Cainã"
+  },
+  "290": {
+   "name": "A parábola dos odres"
+  },
+  "291": {
+   "name": "A cura no tanque de Betesda"
+  },
+  "292": {
+   "name": "As espigas no sábado"
+  },
+  "293": {
+   "name": "A cura da mão atrofiada"
+  },
+  "294": {
+   "name": "Jesus cura multidões"
+  },
+  "295": {
+   "name": "A escolha dos apóstolos"
+  },
+  "296": {
+   "name": "O Sermão do Monte"
+  },
+  "297": {
+   "name": "A cura do servo do centurião"
+  },
+  "298": {
+   "name": "O filho da viúva volta à vida"
+  },
+  "299": {
+   "name": "Jesus fala sobre João Batista"
+  },
+  "3": {
+   "name": "A queda"
+  },
+  "30": {
+   "name": "Morte de Mahlaleel"
+  },
+  "300": {
+   "name": "Ai de Corazim e Betsaida!"
+  },
+  "301": {
+   "name": "Uma mulher pecadora unge Jesus"
+  },
+  "302": {
+   "name": "A segunda viagem de Jesus pela Galileia"
+  },
+  "303": {
+   "name": "O endemoninhado cego e mudo e o ensino que se segue"
+  },
+  "304": {
+   "name": "A promessa do Espírito Santo"
+  },
+  "305": {
+   "name": "Jesus sobe ao céu"
+  },
+  "306": {
+   "name": "Matias toma o lugar de Judas"
+  },
+  "307": {
+   "name": "Vem o Espírito Santo"
+  },
+  "308": {
+   "name": "Pedro prega no Pentecostes"
+  },
+  "309": {
+   "name": "A igreja cresce"
+  },
+  "31": {
+   "name": "Morte de Jarede"
+  },
+  "310": {
+   "name": "A cura do coxo"
+  },
+  "311": {
+   "name": "Pedro prega no pórtico de Salomão"
+  },
+  "312": {
+   "name": "Pedro e João diante do conselho"
+  },
+  "313": {
+   "name": "Os crentes pedem ousadia"
+  },
+  "314": {
+   "name": "Os crentes repartem tudo"
+  },
+  "315": {
+   "name": "Ananias e Safira mentem a Deus"
+  },
+  "316": {
+   "name": "Os apóstolos fazem sinais e prodígios no pórtico de Salomão"
+  },
+  "317": {
+   "name": "Os apóstolos são presos e julgados"
+  },
+  "318": {
+   "name": "Gamaliel aconselha o conselho e os apóstolos são soltos"
+  },
+  "319": {
+   "name": "Sete são escolhidos para servir"
+  },
+  "32": {
+   "name": "Deus decide destruir todo ser vivente"
+  },
+  "320": {
+   "name": "Estêvão é preso"
+  },
+  "321": {
+   "name": "Estêvão fala diante do conselho"
+  },
+  "322": {
+   "name": "Estêvão é apedrejado"
+  },
+  "323": {
+   "name": "Saulo persegue a igreja"
+  },
+  "324": {
+   "name": "Filipe prega em Samaria"
+  },
+  "325": {
+   "name": "A conversão do eunuco etíope"
+  },
+  "326": {
+   "name": "A conversão de Saulo"
+  },
+  "327": {
+   "name": "Saulo anuncia Jesus"
+  },
+  "328": {
+   "name": "Pedro cura Eneias e Dorcas"
+  },
+  "329": {
+   "name": "Pedro encontra Cornélio"
+  },
+  "33": {
+   "name": "Nascimento de Sem"
+  },
+  "330": {
+   "name": "Pedro prega aos gentios em Cesareia"
+  },
+  "331": {
+   "name": "Pedro defende a salvação dos gentios"
+  },
+  "332": {
+   "name": "Os discípulos são chamados cristãos pela primeira vez"
+  },
+  "333": {
+   "name": "Herodes mata Tiago"
+  },
+  "334": {
+   "name": "Herodes prende Pedro"
+  },
+  "335": {
+   "name": "Um anjo liberta Pedro da prisão"
+  },
+  "336": {
+   "name": "Herodes morre"
+  },
+  "337": {
+   "name": "Começa a primeira viagem missionária"
+  },
+  "338": {
+   "name": "A primeira viagem missionária"
+  },
+  "339": {
+   "name": "Barnabé e Saulo vão a Chipre"
+  },
+  "34": {
+   "name": "Vida de Sem"
+  },
+  "340": {
+   "name": "Missão em Antioquia da Pisídia"
+  },
+  "341": {
+   "name": "Missão em Icônio"
+  },
+  "342": {
+   "name": "Missão em Listra e Derbe"
+  },
+  "343": {
+   "name": "Volta a Antioquia da Síria"
+  },
+  "344": {
+   "name": "O concílio de Jerusalém"
+  },
+  "345": {
+   "name": "A segunda viagem missionária"
+  },
+  "346": {
+   "name": "Paulo e Barnabé se separam"
+  },
+  "347": {
+   "name": "Paulo escreve Gálatas"
+  },
+  "348": {
+   "name": "Começa a segunda viagem missionária"
+  },
+  "349": {
+   "name": "Timóteo se junta a Paulo e Silas"
+  },
+  "35": {
+   "name": "Deus manda Noé construir a arca"
+  },
+  "350": {
+   "name": "Missão na Frígia, na Galácia e na Ásia"
+  },
+  "351": {
+   "name": "O chamado à Macedônia"
+  },
+  "352": {
+   "name": "A conversão de Lídia"
+  },
+  "353": {
+   "name": "Paulo expulsa um demônio de uma adivinha"
+  },
+  "354": {
+   "name": "Paulo e Silas na prisão"
+  },
+  "355": {
+   "name": "A conversão do carcereiro de Filipos"
+  },
+  "356": {
+   "name": "Paulo e Silas são soltos"
+  },
+  "357": {
+   "name": "Tumulto em Tessalônica"
+  },
+  "358": {
+   "name": "Missão em Bereia"
+  },
+  "359": {
+   "name": "Paulo prega em Atenas"
+  },
+  "36": {
+   "name": "Morte de Lameque"
+  },
+  "360": {
+   "name": "Missão em Corinto; são escritas 1 e 2 Tessalonicenses"
+  },
+  "361": {
+   "name": "Volta da segunda viagem missionária"
+  },
+  "362": {
+   "name": "Começa a terceira viagem missionária"
+  },
+  "363": {
+   "name": "A terceira viagem missionária"
+  },
+  "364": {
+   "name": "Missão em Éfeso; é escrita 1 Coríntios"
+  },
+  "365": {
+   "name": "O tumulto em Éfeso"
+  },
+  "366": {
+   "name": "Missão na Macedônia e na Grécia"
+  },
+  "367": {
+   "name": "Êutico volta à vida"
+  },
+  "368": {
+   "name": "Viagem a Mileto"
+  },
+  "369": {
+   "name": "Paulo fala aos presbíteros de Éfeso"
+  },
+  "37": {
+   "name": "Morte de Matusalém"
+  },
+  "370": {
+   "name": "Viagem de Mileto a Jerusalém"
+  },
+  "371": {
+   "name": "Paulo visita os presbíteros em Jerusalém"
+  },
+  "372": {
+   "name": "Paulo é preso no templo"
+  },
+  "373": {
+   "name": "Paulo dá seu testemunho"
+  },
+  "374": {
+   "name": "Paulo diante do conselho"
+  },
+  "375": {
+   "name": "A conspiração para matar Paulo"
+  },
+  "376": {
+   "name": "Paulo é enviado a Félix"
+  },
+  "377": {
+   "name": "Paulo apela para César"
+  },
+  "378": {
+   "name": "Agripa e Berenice visitam Festo"
+  },
+  "379": {
+   "name": "Paulo diante de Agripa"
+  },
+  "38": {
+   "name": "Começa o grande dilúvio"
+  },
+  "380": {
+   "name": "Começa a viagem a Roma"
+  },
+  "381": {
+   "name": "A viagem de Paulo a Roma"
+  },
+  "382": {
+   "name": "Paulo naufraga numa tempestade"
+  },
+  "383": {
+   "name": "Paulo em Malta"
+  },
+  "384": {
+   "name": "Paulo chega a Roma"
+  },
+  "385": {
+   "name": "A primeira prisão de Paulo em Roma"
+  },
+  "386": {
+   "name": "Parábolas e milagre à beira-mar"
+  },
+  "387": {
+   "name": "Os endemoninhados gadarenos"
+  },
+  "388": {
+   "name": "Milagres em Cafarnaum"
+  },
+  "389": {
+   "name": "A segunda rejeição em Nazaré"
+  },
+  "39": {
+   "name": "O grande dilúvio"
+  },
+  "390": {
+   "name": "A terceira viagem pela Galileia"
+  },
+  "391": {
+   "name": "João é decapitado"
+  },
+  "393": {
+   "name": "A alimentação dos cinco mil"
+  },
+  "394": {
+   "name": "Jesus anda sobre as águas"
+  },
+  "396": {
+   "name": "Curas em Genesaré"
+  },
+  "397": {
+   "name": "O discurso do pão da vida"
+  },
+  "398": {
+   "name": "Ensino sobre os mandamentos e a tradição"
+  },
+  "399": {
+   "name": "A cura da filha da mulher cananeia"
+  },
+  "4": {
+   "name": "Vida de Adão"
+  },
+  "40": {
+   "name": "As águas cobrem a terra"
+  },
+  "400": {
+   "name": "Jesus cura uma multidão junto ao mar da Galileia"
+  },
+  "401": {
+   "name": "A alimentação dos quatro mil"
+  },
+  "402": {
+   "name": "Discussão com fariseus e saduceus"
+  },
+  "403": {
+   "name": "A cura de um cego em Betsaida"
+  },
+  "404": {
+   "name": "A confissão de Pedro: “sobre esta pedra”"
+  },
+  "405": {
+   "name": "Jesus anuncia sua morte e ressurreição"
+  },
+  "406": {
+   "name": "A transfiguração"
+  },
+  "407": {
+   "name": "A cura de um menino endemoninhado"
+  },
+  "408": {
+   "name": "O segundo anúncio de sua morte e ressurreição"
+  },
+  "409": {
+   "name": "A moeda na boca do peixe"
+  },
+  "41": {
+   "name": "As águas baixam"
+  },
+  "410": {
+   "name": "Ensinos sobre humildade, tentação e reconciliação"
+  },
+  "412": {
+   "name": "A festa dos tabernáculos"
+  },
+  "419": {
+   "name": "A mulher apanhada em adultério"
+  },
+  "42": {
+   "name": "A saída da arca"
+  },
+  "420": {
+   "name": "“Eu sou a luz do mundo”"
+  },
+  "421": {
+   "name": "Os samaritanos rejeitam Jesus"
+  },
+  "422": {
+   "name": "O envio dos setenta"
+  },
+  "423": {
+   "name": "A parábola do bom samaritano"
+  },
+  "424": {
+   "name": "Jesus visita Marta e Maria"
+  },
+  "425": {
+   "name": "Jesus ensina o Pai-Nosso"
+  },
+  "426": {
+   "name": "A cura do cego"
+  },
+  "427": {
+   "name": "O ensino do bom pastor"
+  },
+  "428": {
+   "name": "Ais e parábolas diante dos fariseus"
+  },
+  "429": {
+   "name": "A cura de uma mulher doente havia 18 anos"
+  },
+  "43": {
+   "name": "Deus faz uma aliança com Noé"
+  },
+  "430": {
+   "name": "O grão de mostarda e o fermento"
+  },
+  "431": {
+   "name": "A festa da dedicação"
+  },
+  "432": {
+   "name": "Ensinos e curas da Pereia a Jerusalém"
+  },
+  "433": {
+   "name": "A ressurreição de Lázaro"
+  },
+  "434": {
+   "name": "Os principais sacerdotes conspiram contra Jesus"
+  },
+  "435": {
+   "name": "Jesus se retira para Efraim"
+  },
+  "436": {
+   "name": "A cura dos leprosos"
+  },
+  "437": {
+   "name": "Ensino sobre o reino e outras parábolas"
+  },
+  "438": {
+   "name": "Jesus ensina na Pereia"
+  },
+  "439": {
+   "name": "A cura do cego Bartimeu"
+  },
+  "44": {
+   "name": "Noé se embriaga e Canaã é amaldiçoado"
+  },
+  "440": {
+   "name": "A conversão de Zaqueu e a parábola das minas"
+  },
+  "441": {
+   "name": "Maria unge Jesus"
+  },
+  "443": {
+   "name": "A Semana Santa"
+  },
+  "444": {
+   "name": "A entrada triunfal"
+  },
+  "445": {
+   "name": "A purificação do templo"
+  },
+  "446": {
+   "name": "A figueira amaldiçoada"
+  },
+  "447": {
+   "name": "A lição da figueira"
+  },
+  "448": {
+   "name": "Debates no templo"
+  },
+  "449": {
+   "name": "O sermão do monte das Oliveiras"
+  },
+  "45": {
+   "name": "Nascimento de Arfaxade"
+  },
+  "450": {
+   "name": "A conspiração do Sinédrio"
+  },
+  "451": {
+   "name": "Judas planeja a traição"
+  },
+  "452": {
+   "name": "A última ceia"
+  },
+  "453": {
+   "name": "O discurso no cenáculo"
+  },
+  "454": {
+   "name": "Oração e traição no Getsêmani"
+  },
+  "455": {
+   "name": "Os julgamentos judaicos"
+  },
+  "456": {
+   "name": "Os julgamentos romanos"
+  },
+  "457": {
+   "name": "A morte de Judas"
+  },
+  "458": {
+   "name": "Jesus leva a cruz ao Gólgota"
+  },
+  "459": {
+   "name": "A crucificação e o sepultamento"
+  },
+  "46": {
+   "name": "Vida de Arfaxade"
+  },
+  "460": {
+   "name": "A ressurreição e a ascensão"
+  },
+  "47": {
+   "name": "Nascimento de Salá"
+  },
+  "48": {
+   "name": "Vida de Salá"
+  },
+  "49": {
+   "name": "Nascimento de Héber"
+  },
+  "5": {
+   "name": "Caim mata Abel"
+  },
+  "50": {
+   "name": "Vida de Héber"
+  },
+  "51": {
+   "name": "Nascimento de Pelegue"
+  },
+  "52": {
+   "name": "Vida de Pelegue"
+  },
+  "53": {
+   "name": "A torre de Babel"
+  },
+  "54": {
+   "name": "Nascimento de Reú"
+  },
+  "55": {
+   "name": "Vida de Reú"
+  },
+  "56": {
+   "name": "Nascimento de Serugue"
+  },
+  "57": {
+   "name": "Vida de Serugue"
+  },
+  "58": {
+   "name": "Nascimento de Naor"
+  },
+  "59": {
+   "name": "Vida de Naor"
+  },
+  "6": {
+   "name": "Deus amaldiçoa Caim"
+  },
+  "60": {
+   "name": "Nascimento de Terá"
+  },
+  "61": {
+   "name": "Vida de Terá"
+  },
+  "62": {
+   "name": "Morte de Pelegue"
+  },
+  "63": {
+   "name": "Morte de Naor"
+  },
+  "64": {
+   "name": "Morte de Noé"
+  },
+  "65": {
+   "name": "Nascimento de Abraão"
+  },
+  "66": {
+   "name": "Vida de Abraão"
+  },
+  "67": {
+   "name": "Período de Jair como juiz"
+  },
+  "68": {
+   "name": "Morte de Reú"
+  },
+  "69": {
+   "name": "Morte de Serugue"
+  },
+  "7": {
+   "name": "Nascimento de Sete"
+  },
+  "70": {
+   "name": "Morte de Terá"
+  },
+  "71": {
+   "name": "Abraão entra em Canaã"
+  },
+  "72": {
+   "name": "A aliança com Abraão"
+  },
+  "73": {
+   "name": "Abraão vai ao Egito"
+  },
+  "74": {
+   "name": "Peregrinação em Canaã e no Egito"
+  },
+  "75": {
+   "name": "Abraão e Ló se separam"
+  },
+  "76": {
+   "name": "Nascimento de Ismael"
+  },
+  "77": {
+   "name": "Vida de Ismael"
+  },
+  "78": {
+   "name": "Morte de Arfaxade"
+  },
+  "79": {
+   "name": "A destruição de Sodoma"
+  },
+  "8": {
+   "name": "Vida de Sete"
+  },
+  "80": {
+   "name": "Nascimento de Isaque"
+  },
+  "81": {
+   "name": "Vida de Isaque"
+  },
+  "82": {
+   "name": "Morte de Salá"
+  },
+  "83": {
+   "name": "Isaque se casa com Rebeca"
+  },
+  "84": {
+   "name": "Morte de Sem"
+  },
+  "85": {
+   "name": "Nascimento de Jacob and Esau"
+  },
+  "86": {
+   "name": "Vida de Jacó"
+  },
+  "87": {
+   "name": "Começa o reino de Ninrode"
+  },
+  "88": {
+   "name": "Morte de Abraão"
+  },
+  "89": {
+   "name": "Morte de Héber"
+  },
+  "9": {
+   "name": "Nascimento de Enos"
+  },
+  "90": {
+   "name": "Morte de Ismael"
+  },
+  "91": {
+   "name": "Nascimento de Rúben"
+  },
+  "92": {
+   "name": "Nascimento de Simeão"
+  },
+  "93": {
+   "name": "Nascimento de Levi"
+  },
+  "94": {
+   "name": "Nascimento de Judá"
+  },
+  "95": {
+   "name": "Nascimento de Dã"
+  },
+  "96": {
+   "name": "Nascimento de Naftali"
+  },
+  "97": {
+   "name": "Nascimento de Gade"
+  },
+  "98": {
+   "name": "Nascimento de Aser"
+  },
+  "99": {
+   "name": "Nascimento de Issacar"
+  }
+ },
+ "person": {
+  "1": {
+   "name": "Arão"
+  },
+  "10": {
+   "name": "Abdom"
+  },
+  "100": {
+   "name": "Adonicão"
+  },
+  "1001": {
+   "name": "Delaías"
+  },
+  "1002": {
+   "name": "Delaías"
+  },
+  "1003": {
+   "name": "Delaías"
+  },
+  "1004": {
+   "name": "Delaías"
+  },
+  "1005": {
+   "name": "Dalila"
+  },
+  "1007": {
+   "name": "Demétrio"
+  },
+  "101": {
+   "name": "Adoni-Zedeque"
+  },
+  "1010": {
+   "name": "Dribi"
+  },
+  "1011": {
+   "name": "Dicla"
+  },
+  "1012": {
+   "name": "Diná"
+  },
+  "1013": {
+   "name": "Dionísio"
+  },
+  "1014": {
+   "name": "Diótrefes"
+  },
+  "1015": {
+   "name": "Disã"
+  },
+  "1016": {
+   "name": "Disom"
+  },
+  "1017": {
+   "name": "Disom"
+  },
+  "1019": {
+   "name": "Dodava"
+  },
+  "102": {
+   "name": "Adorão",
+   "other": "Adoram, Hadoram"
+  },
+  "1020": {
+   "name": "Dodô"
+  },
+  "1021": {
+   "name": "Dodô",
+   "other": "Dodai"
+  },
+  "1022": {
+   "name": "Dodô"
+  },
+  "1023": {
+   "name": "Doegue"
+  },
+  "1024": {
+   "name": "Drusila"
+  },
+  "1025": {
+   "name": "Dumá"
+  },
+  "1026": {
+   "name": "Ebal (filho de Sobal)"
+  },
+  "1027": {
+   "name": "Ebede"
+  },
+  "1028": {
+   "name": "Ebede"
+  },
+  "1029": {
+   "name": "Ebede-Meleque"
+  },
+  "103": {
+   "name": "Adrameleque"
+  },
+  "1030": {
+   "name": "Héber (Héber)",
+   "other": "Héber"
+  },
+  "1031": {
+   "name": "Héber (benjamita)"
+  },
+  "1032": {
+   "name": "Éber (chefe da família de Amoque)"
+  },
+  "1033": {
+   "name": "Éden"
+  },
+  "1034": {
+   "name": "Éden"
+  },
+  "1035": {
+   "name": "Éder"
+  },
+  "1036": {
+   "name": "Eglá"
+  },
+  "1037": {
+   "name": "Eglom"
+  },
+  "1038": {
+   "name": "Eí",
+   "other": "Aharah"
+  },
+  "1039": {
+   "name": "Eúde"
+  },
+  "104": {
+   "name": "Adrameleque"
+  },
+  "1040": {
+   "name": "Eúde"
+  },
+  "1041": {
+   "name": "Equer"
+  },
+  "1042": {
+   "name": "Eleada"
+  },
+  "1043": {
+   "name": "Elá"
+  },
+  "1044": {
+   "name": "Elá"
+  },
+  "1045": {
+   "name": "Elá"
+  },
+  "1046": {
+   "name": "Elá"
+  },
+  "1047": {
+   "name": "Elá"
+  },
+  "1048": {
+   "name": "Elá"
+  },
+  "1049": {
+   "name": "Elão (filho de Sem)"
+  },
+  "1050": {
+   "name": "Elão"
+  },
+  "1051": {
+   "name": "Elão"
+  },
+  "1052": {
+   "name": "Elão"
+  },
+  "1053": {
+   "name": "Elão"
+  },
+  "1054": {
+   "name": "Elão"
+  },
+  "1055": {
+   "name": "Elasá"
+  },
+  "1056": {
+   "name": "Elasá"
+  },
+  "1057": {
+   "name": "Elda"
+  },
+  "1058": {
+   "name": "Eldade"
+  },
+  "1059": {
+   "name": "Eleade"
+  },
+  "106": {
+   "name": "Enéas"
+  },
+  "1060": {
+   "name": "Eleasá"
+  },
+  "1061": {
+   "name": "Eleasá",
+   "other": "Eshek"
+  },
+  "107": {
+   "name": "Ágabo"
+  },
+  "1070": {
+   "name": "Elanã"
+  },
+  "1071": {
+   "name": "Elanã"
+  },
+  "1073": {
+   "name": "Eliabe"
+  },
+  "1074": {
+   "name": "Eliabe"
+  },
+  "1075": {
+   "name": "Eliabe"
+  },
+  "1076": {
+   "name": "Eliabe"
+  },
+  "1077": {
+   "name": "Eliabe"
+  },
+  "1078": {
+   "name": "Eliada",
+   "other": "Beeliada"
+  },
+  "108": {
+   "name": "Agague"
+  },
+  "1080": {
+   "name": "Eliada"
+  },
+  "1081": {
+   "name": "Elias"
+  },
+  "1082": {
+   "name": "Elias"
+  },
+  "1083": {
+   "name": "Eliaba"
+  },
+  "1084": {
+   "name": "Eliaquim"
+  },
+  "1085": {
+   "name": "Jeoaquim",
+   "other": "Eliaquim"
+  },
+  "1086": {
+   "name": "Eliaquim"
+  },
+  "1087": {
+   "name": "Eliaquim"
+  },
+  "1088": {
+   "name": "Eliaquim"
+  },
+  "1089": {
+   "name": "Eliã",
+   "other": "Amiel"
+  },
+  "109": {
+   "name": "Agague"
+  },
+  "1090": {
+   "name": "Eliã"
+  },
+  "1091": {
+   "name": "Eliasafe"
+  },
+  "1092": {
+   "name": "Eliasafe"
+  },
+  "1093": {
+   "name": "Eliasibe"
+  },
+  "1094": {
+   "name": "Eliasibe"
+  },
+  "1095": {
+   "name": "Eliasibe"
+  },
+  "1096": {
+   "name": "Eliasibe"
+  },
+  "1097": {
+   "name": "Eliasibe"
+  },
+  "1098": {
+   "name": "Eliasibe"
+  },
+  "1099": {
+   "name": "Eliasibe"
+  },
+  "11": {
+   "name": "Abdom"
+  },
+  "110": {
+   "name": "Agé"
+  },
+  "1100": {
+   "name": "Eliasibe"
+  },
+  "1101": {
+   "name": "Eliasibe"
+  },
+  "1102": {
+   "name": "Eliata"
+  },
+  "1103": {
+   "name": "Elidade"
+  },
+  "111": {
+   "name": "Agripa"
+  },
+  "1112": {
+   "name": "Elioenai"
+  },
+  "1113": {
+   "name": "Eliézer (servo de Abraão)"
+  },
+  "1114": {
+   "name": "Eliézer"
+  },
+  "1115": {
+   "name": "Eliézer"
+  },
+  "1116": {
+   "name": "Eliézer"
+  },
+  "1117": {
+   "name": "Eliézer"
+  },
+  "1118": {
+   "name": "Eliézer"
+  },
+  "1120": {
+   "name": "Eliézer"
+  },
+  "1121": {
+   "name": "Eliézer"
+  },
+  "1122": {
+   "name": "Eliézer (filho de Harim)"
+  },
+  "1123": {
+   "name": "Eliézer"
+  },
+  "1124": {
+   "name": "Elioenai"
+  },
+  "1125": {
+   "name": "Eliorefe"
+  },
+  "1126": {
+   "name": "Eliú",
+   "other": "Eliel, Eliabe"
+  },
+  "1127": {
+   "name": "Eliú"
+  },
+  "1128": {
+   "name": "Eliú"
+  },
+  "1129": {
+   "name": "Eliú"
+  },
+  "113": {
+   "name": "Acabe"
+  },
+  "1130": {
+   "name": "Eliú"
+  },
+  "1131": {
+   "name": "Elias",
+   "other": "Elias"
+  },
+  "1132": {
+   "name": "Elias"
+  },
+  "1133": {
+   "name": "Elica"
+  },
+  "1134": {
+   "name": "Elimeleque"
+  },
+  "114": {
+   "name": "Acabe"
+  },
+  "1142": {
+   "name": "Elifal"
+  },
+  "1143": {
+   "name": "Elifelete",
+   "other": "Elifelete"
+  },
+  "1144": {
+   "name": "Elifaz"
+  },
+  "1145": {
+   "name": "Elifaz"
+  },
+  "1146": {
+   "name": "Elifeleu"
+  },
+  "1147": {
+   "name": "Elifelete"
+  },
+  "1148": {
+   "name": "Elpelete",
+   "other": "Elifelete"
+  },
+  "1149": {
+   "name": "Elifelete"
+  },
+  "115": {
+   "name": "Aarel"
+  },
+  "1150": {
+   "name": "Elifelete"
+  },
+  "1151": {
+   "name": "Elifelete"
+  },
+  "1152": {
+   "name": "Isabel"
+  },
+  "1153": {
+   "name": "Eliseu",
+   "other": "Eliseus"
+  },
+  "1154": {
+   "name": "Elisá"
+  },
+  "1155": {
+   "name": "Elisama"
+  },
+  "1156": {
+   "name": "Elisama"
+  },
+  "1157": {
+   "name": "Elisama"
+  },
+  "1158": {
+   "name": "Elisama"
+  },
+  "1159": {
+   "name": "Elisama"
+  },
+  "116": {
+   "name": "Aasbai"
+  },
+  "1160": {
+   "name": "Elisama"
+  },
+  "1161": {
+   "name": "Elisafate"
+  },
+  "1162": {
+   "name": "Eliseba"
+  },
+  "1163": {
+   "name": "Elisua",
+   "other": "Elisama"
+  },
+  "1164": {
+   "name": "Eliúde"
+  },
+  "1165": {
+   "name": "Elizafã"
+  },
+  "1167": {
+   "name": "Elcana"
+  },
+  "1168": {
+   "name": "Elcana"
+  },
+  "1169": {
+   "name": "Elcana"
+  },
+  "117": {
+   "name": "Assuero"
+  },
+  "1170": {
+   "name": "Elcana"
+  },
+  "1171": {
+   "name": "Elcana"
+  },
+  "1172": {
+   "name": "Elcana"
+  },
+  "1173": {
+   "name": "Elcana"
+  },
+  "1174": {
+   "name": "Elcana"
+  },
+  "1175": {
+   "name": "Elmodã"
+  },
+  "1176": {
+   "name": "Elnaão"
+  },
+  "1177": {
+   "name": "Elnatã"
+  },
+  "1178": {
+   "name": "Elnatã"
+  },
+  "1179": {
+   "name": "Elnatã"
+  },
+  "118": {
+   "name": "Acaz",
+   "other": "Achaz"
+  },
+  "1180": {
+   "name": "Elnatã"
+  },
+  "1181": {
+   "name": "Elnatã"
+  },
+  "1182": {
+   "name": "Elom"
+  },
+  "1183": {
+   "name": "Elom"
+  },
+  "1184": {
+   "name": "Elom"
+  },
+  "1187": {
+   "name": "Elzabade"
+  },
+  "1188": {
+   "name": "Elzabade"
+  },
+  "1189": {
+   "name": "Elisafã",
+   "other": "Elzaphan"
+  },
+  "119": {
+   "name": "Acaz"
+  },
+  "1190": {
+   "name": "Enã"
+  },
+  "1191": {
+   "name": "Enoque (filho de Caim)"
+  },
+  "1192": {
+   "name": "Enoque (pai de Matusalém)",
+   "other": "Henoch"
+  },
+  "1193": {
+   "name": "Enos",
+   "other": "Enosh"
+  },
+  "1194": {
+   "name": "Epêneto"
+  },
+  "1195": {
+   "name": "Epafras"
+  },
+  "1196": {
+   "name": "Epafrodito"
+  },
+  "12": {
+   "name": "Abdom"
+  },
+  "120": {
+   "name": "Acazias"
+  },
+  "1200": {
+   "name": "Efai"
+  },
+  "1201": {
+   "name": "Efer"
+  },
+  "1202": {
+   "name": "Efer"
+  },
+  "1203": {
+   "name": "Efer"
+  },
+  "1204": {
+   "name": "Eflal"
+  },
+  "1205": {
+   "name": "Éfode"
+  },
+  "1206": {
+   "name": "Efraim"
+  },
+  "1207": {
+   "name": "Efrata",
+   "other": "Efrata"
+  },
+  "1208": {
+   "name": "Efrom"
+  },
+  "121": {
+   "name": "Acazias",
+   "other": "Jeoacaz, Azarias"
+  },
+  "1212": {
+   "name": "Erã"
+  },
+  "1213": {
+   "name": "Erasto"
+  },
+  "1215": {
+   "name": "Esar-Hadom"
+  },
+  "1216": {
+   "name": "Esaú (Edom)",
+   "other": "Edom, Edomite"
+  },
+  "1217": {
+   "name": "Esbã"
+  },
+  "1218": {
+   "name": "Escol"
+  },
+  "1219": {
+   "name": "Estemoa"
+  },
+  "122": {
+   "name": "Abã"
+  },
+  "1220": {
+   "name": "Estom"
+  },
+  "1222": {
+   "name": "Etã"
+  },
+  "1223": {
+   "name": "Etã"
+  },
+  "1224": {
+   "name": "Jedutum (Etã)",
+   "other": "Etã"
+  },
+  "1225": {
+   "name": "Etbaal"
+  },
+  "1226": {
+   "name": "Etnã"
+  },
+  "1227": {
+   "name": "Êubulo"
+  },
+  "1229": {
+   "name": "Evódia"
+  },
+  "123": {
+   "name": "Aer"
+  },
+  "1230": {
+   "name": "Êutico"
+  },
+  "1231": {
+   "name": "Eva"
+  },
+  "1233": {
+   "name": "Evil-Merodaque"
+  },
+  "1235": {
+   "name": "Ozni",
+   "other": "Esbom"
+  },
+  "1236": {
+   "name": "Esbom"
+  },
+  "1237": {
+   "name": "Ezequiel"
+  },
+  "1238": {
+   "name": "Eser"
+  },
+  "1239": {
+   "name": "Ézer"
+  },
+  "124": {
+   "name": "Aí"
+  },
+  "1240": {
+   "name": "Ézer"
+  },
+  "1241": {
+   "name": "Ézer"
+  },
+  "1245": {
+   "name": "Esdras"
+  },
+  "1246": {
+   "name": "Esdras"
+  },
+  "125": {
+   "name": "Aí"
+  },
+  "1257": {
+   "name": "Félix"
+  },
+  "1258": {
+   "name": "Fortunato"
+  },
+  "126": {
+   "name": "Aimeleque",
+   "other": "Aías"
+  },
+  "1260": {
+   "name": "Gabai"
+  },
+  "1262": {
+   "name": "Gade"
+  },
+  "1263": {
+   "name": "Gade"
+  },
+  "1264": {
+   "name": "Gadi"
+  },
+  "1265": {
+   "name": "Gadiel"
+  },
+  "1267": {
+   "name": "Gaã"
+  },
+  "1268": {
+   "name": "Gaar"
+  },
+  "1269": {
+   "name": "Gaio (da Macedônia)"
+  },
+  "127": {
+   "name": "Aías"
+  },
+  "1270": {
+   "name": "Gaio (de Derbe)"
+  },
+  "1271": {
+   "name": "Gaio"
+  },
+  "1272": {
+   "name": "Gaio"
+  },
+  "1275": {
+   "name": "Gálio"
+  },
+  "1279": {
+   "name": "Garebe"
+  },
+  "128": {
+   "name": "Aías"
+  },
+  "1281": {
+   "name": "Gatã"
+  },
+  "1284": {
+   "name": "Gazão"
+  },
+  "1285": {
+   "name": "Ben-Geber"
+  },
+  "1287": {
+   "name": "Gedalias"
+  },
+  "1288": {
+   "name": "Gedalias"
+  },
+  "1289": {
+   "name": "Gedalias"
+  },
+  "129": {
+   "name": "Aião"
+  },
+  "1290": {
+   "name": "Gedalias"
+  },
+  "1291": {
+   "name": "Gedalias"
+  },
+  "1293": {
+   "name": "Geazi"
+  },
+  "1294": {
+   "name": "Gemali"
+  },
+  "1295": {
+   "name": "Gemarias"
+  },
+  "1296": {
+   "name": "Gemarias"
+  },
+  "1297": {
+   "name": "Genubate"
+  },
+  "130": {
+   "name": "Aiã"
+  },
+  "1302": {
+   "name": "Gérson"
+  },
+  "1303": {
+   "name": "Gérson"
+  },
+  "1304": {
+   "name": "Gérson"
+  },
+  "1305": {
+   "name": "Gérson",
+   "other": "Gérson"
+  },
+  "1306": {
+   "name": "Gesã"
+  },
+  "1307": {
+   "name": "Gesém",
+   "other": "Gashmu"
+  },
+  "1308": {
+   "name": "Géter"
+  },
+  "1309": {
+   "name": "Guel"
+  },
+  "131": {
+   "name": "Aiezer"
+  },
+  "1310": {
+   "name": "Gibeom",
+   "other": "Gibbar"
+  },
+  "1311": {
+   "name": "Gidalti"
+  },
+  "1312": {
+   "name": "Gidel"
+  },
+  "1313": {
+   "name": "Gidel"
+  },
+  "1314": {
+   "name": "Gideão",
+   "other": "Jerubbaal, Gedeon"
+  },
+  "1317": {
+   "name": "Gileade"
+  },
+  "1318": {
+   "name": "Gileade",
+   "other": "Gileadite"
+  },
+  "1319": {
+   "name": "Gileade"
+  },
+  "132": {
+   "name": "Aiezer"
+  },
+  "1320": {
+   "name": "Ginate"
+  },
+  "1321": {
+   "name": "Ginetom"
+  },
+  "1322": {
+   "name": "Girgasite",
+   "other": "Girgashite"
+  },
+  "1325": {
+   "name": "Gogue"
+  },
+  "1326": {
+   "name": "Gogue"
+  },
+  "1327": {
+   "name": "Golias"
+  },
+  "1328": {
+   "name": "Gômer (filho de Jafé)"
+  },
+  "1329": {
+   "name": "Gômer (esposa de Oseias)"
+  },
+  "133": {
+   "name": "Aiúde"
+  },
+  "1332": {
+   "name": "Haastari"
+  },
+  "1333": {
+   "name": "Habaías"
+  },
+  "1334": {
+   "name": "Habacuque"
+  },
+  "1335": {
+   "name": "Habazinias"
+  },
+  "1336": {
+   "name": "Hacalias"
+  },
+  "1337": {
+   "name": "Hacmoni"
+  },
+  "1338": {
+   "name": "Hadade"
+  },
+  "1339": {
+   "name": "Hadade"
+  },
+  "134": {
+   "name": "Aiúde"
+  },
+  "1340": {
+   "name": "Hadadezer",
+   "other": "Hadadezer"
+  },
+  "1341": {
+   "name": "Hadade",
+   "other": "Hadade"
+  },
+  "1342": {
+   "name": "Hadade",
+   "other": "Hadade"
+  },
+  "1343": {
+   "name": "Ester",
+   "other": "Hadassah"
+  },
+  "1346": {
+   "name": "Hagabe"
+  },
+  "1347": {
+   "name": "Hagaba"
+  },
+  "1348": {
+   "name": "Agar",
+   "other": "Agar"
+  },
+  "1349": {
+   "name": "Ageu"
+  },
+  "135": {
+   "name": "Aías"
+  },
+  "1350": {
+   "name": "Hagri"
+  },
+  "1351": {
+   "name": "Hagi"
+  },
+  "1352": {
+   "name": "Hagias"
+  },
+  "1353": {
+   "name": "Hagite"
+  },
+  "1356": {
+   "name": "Hacufa"
+  },
+  "1357": {
+   "name": "Haoés"
+  },
+  "1358": {
+   "name": "Haloés"
+  },
+  "1359": {
+   "name": "Cam"
+  },
+  "136": {
+   "name": "Aías"
+  },
+  "1360": {
+   "name": "Hamã"
+  },
+  "1362": {
+   "name": "Hamedata"
+  },
+  "1364": {
+   "name": "Hamolequete"
+  },
+  "1365": {
+   "name": "Hamor",
+   "other": "Emmor"
+  },
+  "137": {
+   "name": "Aías"
+  },
+  "1370": {
+   "name": "Hanã"
+  },
+  "1371": {
+   "name": "Hanã"
+  },
+  "1372": {
+   "name": "Hanã"
+  },
+  "1373": {
+   "name": "Hanã"
+  },
+  "1374": {
+   "name": "Hanã"
+  },
+  "1375": {
+   "name": "Hanã"
+  },
+  "1376": {
+   "name": "Hanã"
+  },
+  "1377": {
+   "name": "Hanã"
+  },
+  "1378": {
+   "name": "Hanã"
+  },
+  "138": {
+   "name": "Aías"
+  },
+  "1384": {
+   "name": "Hananias"
+  },
+  "1385": {
+   "name": "Hananias"
+  },
+  "1386": {
+   "name": "Hananias"
+  },
+  "1387": {
+   "name": "Hananias"
+  },
+  "1388": {
+   "name": "Hananias"
+  },
+  "1389": {
+   "name": "Hananias"
+  },
+  "139": {
+   "name": "Aías"
+  },
+  "1390": {
+   "name": "Hananias"
+  },
+  "1391": {
+   "name": "Hanani"
+  },
+  "1392": {
+   "name": "Hananias"
+  },
+  "1393": {
+   "name": "Hananias"
+  },
+  "1394": {
+   "name": "Hananias"
+  },
+  "1395": {
+   "name": "Hananias"
+  },
+  "1396": {
+   "name": "Ananias"
+  },
+  "1397": {
+   "name": "Hananias"
+  },
+  "1398": {
+   "name": "Sadraque",
+   "other": "Hananias"
+  },
+  "14": {
+   "name": "Abias"
+  },
+  "140": {
+   "name": "Aías"
+  },
+  "1400": {
+   "name": "Ana"
+  },
+  "1401": {
+   "name": "Haniel"
+  },
+  "1402": {
+   "name": "Henoch",
+   "other": "Enoque"
+  },
+  "1403": {
+   "name": "Enoque"
+  },
+  "1404": {
+   "name": "Hanum"
+  },
+  "1405": {
+   "name": "Hanum"
+  },
+  "1406": {
+   "name": "Hanum"
+  },
+  "1407": {
+   "name": "Harã (irmão de Abraão)"
+  },
+  "1408": {
+   "name": "Harã (filho de Calebe)"
+  },
+  "1409": {
+   "name": "Harã (filho de Simei)"
+  },
+  "141": {
+   "name": "Aicã"
+  },
+  "1411": {
+   "name": "Harbona"
+  },
+  "1412": {
+   "name": "Harefe"
+  },
+  "1413": {
+   "name": "Haraías"
+  },
+  "1414": {
+   "name": "Harás",
+   "other": "Harhas"
+  },
+  "1415": {
+   "name": "Harur"
+  },
+  "1419": {
+   "name": "Harife"
+  },
+  "142": {
+   "name": "Ailude"
+  },
+  "1420": {
+   "name": "Harnefer"
+  },
+  "1421": {
+   "name": "Reaías",
+   "other": "Haroeh"
+  },
+  "1422": {
+   "name": "Harsa"
+  },
+  "1424": {
+   "name": "Harumafe"
+  },
+  "1426": {
+   "name": "Hasadias"
+  },
+  "1427": {
+   "name": "Hassenua"
+  },
+  "1428": {
+   "name": "Hasabias"
+  },
+  "1429": {
+   "name": "Hasabias"
+  },
+  "143": {
+   "name": "Aimaás"
+  },
+  "1430": {
+   "name": "Hasabias"
+  },
+  "1431": {
+   "name": "Hasabias"
+  },
+  "1432": {
+   "name": "Hasabias"
+  },
+  "1433": {
+   "name": "Hasabias"
+  },
+  "1434": {
+   "name": "Hasabias"
+  },
+  "1435": {
+   "name": "Hasabias"
+  },
+  "1436": {
+   "name": "Hasabias"
+  },
+  "1437": {
+   "name": "Hasabias"
+  },
+  "1438": {
+   "name": "Hasabna"
+  },
+  "1439": {
+   "name": "Hasbaneias"
+  },
+  "144": {
+   "name": "Aimaás"
+  },
+  "1440": {
+   "name": "Hasbaneias"
+  },
+  "1441": {
+   "name": "Hasbadana"
+  },
+  "1442": {
+   "name": "Hassube"
+  },
+  "1443": {
+   "name": "Hassube"
+  },
+  "1444": {
+   "name": "Hassube"
+  },
+  "1445": {
+   "name": "Hasubá"
+  },
+  "1446": {
+   "name": "Hasum"
+  },
+  "1447": {
+   "name": "Hasum"
+  },
+  "1448": {
+   "name": "Hasum"
+  },
+  "1449": {
+   "name": "Hassenaá"
+  },
+  "145": {
+   "name": "Aimaás"
+  },
+  "1450": {
+   "name": "Hassube",
+   "other": "Hassube"
+  },
+  "1451": {
+   "name": "Hasufa",
+   "other": "Hashupha"
+  },
+  "1452": {
+   "name": "Hatá"
+  },
+  "1453": {
+   "name": "Hatate"
+  },
+  "1454": {
+   "name": "Hatifa"
+  },
+  "1456": {
+   "name": "Hatil"
+  },
+  "1457": {
+   "name": "Hatus"
+  },
+  "1458": {
+   "name": "Hatus"
+  },
+  "1459": {
+   "name": "Hatus"
+  },
+  "146": {
+   "name": "Aimã"
+  },
+  "1460": {
+   "name": "Hatus"
+  },
+  "1461": {
+   "name": "Havilá (filho de Cuxe)"
+  },
+  "1462": {
+   "name": "Havilá (filho de Joctã)"
+  },
+  "1464": {
+   "name": "Hazaías"
+  },
+  "1465": {
+   "name": "Hazarmavé"
+  },
+  "1469": {
+   "name": "Héber"
+  },
+  "147": {
+   "name": "Aimã"
+  },
+  "1470": {
+   "name": "Héber"
+  },
+  "1471": {
+   "name": "Héber"
+  },
+  "1472": {
+   "name": "Héber"
+  },
+  "1473": {
+   "name": "Héber"
+  },
+  "1474": {
+   "name": "Héber"
+  },
+  "1475": {
+   "name": "Hebrom"
+  },
+  "1476": {
+   "name": "Hebrom"
+  },
+  "1477": {
+   "name": "Hegai",
+   "other": "Hege"
+  },
+  "1478": {
+   "name": "Helá"
+  },
+  "1479": {
+   "name": "Helem",
+   "other": "Heldai"
+  },
+  "148": {
+   "name": "Aimeleque"
+  },
+  "1480": {
+   "name": "Helebe",
+   "other": "Heldai, Heled"
+  },
+  "1481": {
+   "name": "Helebe"
+  },
+  "1484": {
+   "name": "Eli"
+  },
+  "1485": {
+   "name": "Helcai"
+  },
+  "1486": {
+   "name": "Helom"
+  },
+  "1487": {
+   "name": "Homã",
+   "other": "Hemam"
+  },
+  "1488": {
+   "name": "Hemã"
+  },
+  "1489": {
+   "name": "Hemã"
+  },
+  "149": {
+   "name": "Aimeleque",
+   "other": "Abimeleque"
+  },
+  "1490": {
+   "name": "Hemã"
+  },
+  "1491": {
+   "name": "Hamate"
+  },
+  "1492": {
+   "name": "Hemdan",
+   "other": "Anrão"
+  },
+  "1493": {
+   "name": "Henadade"
+  },
+  "1494": {
+   "name": "Henadade"
+  },
+  "1495": {
+   "name": "Henadade"
+  },
+  "1496": {
+   "name": "Héfer"
+  },
+  "1497": {
+   "name": "Héfer"
+  },
+  "1498": {
+   "name": "Héfer"
+  },
+  "1499": {
+   "name": "Hefzibá"
+  },
+  "15": {
+   "name": "Abias"
+  },
+  "150": {
+   "name": "Maate",
+   "other": "Ahimoth"
+  },
+  "1500": {
+   "name": "Heres"
+  },
+  "1503": {
+   "name": "Hermógenes"
+  },
+  "1504": {
+   "name": "Herodes"
+  },
+  "1505": {
+   "name": "Herodes Antipas"
+  },
+  "1506": {
+   "name": "Herodes Agripa I"
+  },
+  "1508": {
+   "name": "Herodião"
+  },
+  "1509": {
+   "name": "Ben-Hesede"
+  },
+  "151": {
+   "name": "Ainadabe"
+  },
+  "1510": {
+   "name": "Hete"
+  },
+  "1512": {
+   "name": "Ezequias",
+   "other": "Ezekias"
+  },
+  "1513": {
+   "name": "Ezequias"
+  },
+  "1514": {
+   "name": "Ezequias"
+  },
+  "1515": {
+   "name": "Heziom"
+  },
+  "1518": {
+   "name": "Hezrai",
+   "other": "Hezro"
+  },
+  "1519": {
+   "name": "Hezrom"
+  },
+  "152": {
+   "name": "Ainoã"
+  },
+  "1520": {
+   "name": "Hezrom",
+   "other": "Esrom"
+  },
+  "1521": {
+   "name": "Hurai",
+   "other": "Hiddai"
+  },
+  "1523": {
+   "name": "Hilquias"
+  },
+  "1524": {
+   "name": "Hilquias"
+  },
+  "1525": {
+   "name": "Hilquias"
+  },
+  "1526": {
+   "name": "Hilquias"
+  },
+  "1527": {
+   "name": "Hilquias"
+  },
+  "1528": {
+   "name": "Hilquias"
+  },
+  "1529": {
+   "name": "Hilquias"
+  },
+  "153": {
+   "name": "Ainoã"
+  },
+  "1530": {
+   "name": "Hilel"
+  },
+  "1531": {
+   "name": "Hira"
+  },
+  "1532": {
+   "name": "Hirão",
+   "other": "Hurão"
+  },
+  "1533": {
+   "name": "Hirão",
+   "other": "Hurão"
+  },
+  "1537": {
+   "name": "Hobabe"
+  },
+  "1538": {
+   "name": "Hode"
+  },
+  "1539": {
+   "name": "Hodavias"
+  },
+  "154": {
+   "name": "Aiô"
+  },
+  "1540": {
+   "name": "Hodavias"
+  },
+  "1541": {
+   "name": "Hodavias"
+  },
+  "1542": {
+   "name": "Hodeva",
+   "other": "Judá, Hodavias"
+  },
+  "1543": {
+   "name": "Hodes"
+  },
+  "1544": {
+   "name": "Hodias"
+  },
+  "1545": {
+   "name": "Hodias"
+  },
+  "1546": {
+   "name": "Hodias"
+  },
+  "1547": {
+   "name": "Hodias"
+  },
+  "1548": {
+   "name": "Hogla"
+  },
+  "1549": {
+   "name": "Hoão"
+  },
+  "155": {
+   "name": "Aiô"
+  },
+  "1550": {
+   "name": "Hofni"
+  },
+  "1551": {
+   "name": "Horão"
+  },
+  "1554": {
+   "name": "Hosa"
+  },
+  "1555": {
+   "name": "Oseias",
+   "other": "Osee"
+  },
+  "1556": {
+   "name": "Hosaías"
+  },
+  "1557": {
+   "name": "Hosaías"
+  },
+  "1558": {
+   "name": "Hosama"
+  },
+  "1559": {
+   "name": "Oseias"
+  },
+  "156": {
+   "name": "Aiô"
+  },
+  "1560": {
+   "name": "Oseias"
+  },
+  "1561": {
+   "name": "Oseias"
+  },
+  "1562": {
+   "name": "Hotão",
+   "other": "Helem"
+  },
+  "1563": {
+   "name": "Hotão"
+  },
+  "1564": {
+   "name": "Hotir"
+  },
+  "1567": {
+   "name": "Hulda"
+  },
+  "1568": {
+   "name": "Hupá"
+  },
+  "1569": {
+   "name": "Hurão",
+   "other": "Hupham, Hupim"
+  },
+  "157": {
+   "name": "Aira"
+  },
+  "1570": {
+   "name": "Hupim"
+  },
+  "1573": {
+   "name": "Ben-Hur"
+  },
+  "1575": {
+   "name": "Hirão"
+  },
+  "1577": {
+   "name": "Husai"
+  },
+  "1578": {
+   "name": "Husão"
+  },
+  "1579": {
+   "name": "Husim",
+   "other": "Shuham"
+  },
+  "158": {
+   "name": "Airã"
+  },
+  "1580": {
+   "name": "Husim"
+  },
+  "1581": {
+   "name": "Husim"
+  },
+  "1582": {
+   "name": "Uz"
+  },
+  "1583": {
+   "name": "Himeneu"
+  },
+  "1584": {
+   "name": "Ibar"
+  },
+  "1585": {
+   "name": "Ibneias"
+  },
+  "1586": {
+   "name": "Ibneias"
+  },
+  "1588": {
+   "name": "Ibsã"
+  },
+  "1589": {
+   "name": "Icabode"
+  },
+  "159": {
+   "name": "Aisamaque"
+  },
+  "1590": {
+   "name": "Idbás"
+  },
+  "1591": {
+   "name": "Ido"
+  },
+  "1592": {
+   "name": "Adaías",
+   "other": "Ido"
+  },
+  "1593": {
+   "name": "Ido"
+  },
+  "1594": {
+   "name": "Ido"
+  },
+  "1595": {
+   "name": "Ido"
+  },
+  "1596": {
+   "name": "Ido"
+  },
+  "1597": {
+   "name": "Ido"
+  },
+  "1598": {
+   "name": "Jigeal"
+  },
+  "16": {
+   "name": "Abia"
+  },
+  "160": {
+   "name": "Aisaar"
+  },
+  "1600": {
+   "name": "Jigdalias"
+  },
+  "1601": {
+   "name": "Jeús"
+  },
+  "1602": {
+   "name": "Jeus"
+  },
+  "1603": {
+   "name": "Jeus"
+  },
+  "1604": {
+   "name": "Jeús"
+  },
+  "1605": {
+   "name": "Jezabel"
+  },
+  "1607": {
+   "name": "Jezias"
+  },
+  "1609": {
+   "name": "Izlias"
+  },
+  "161": {
+   "name": "Aisar"
+  },
+  "1610": {
+   "name": "Zoar"
+  },
+  "1611": {
+   "name": "Jezraías"
+  },
+  "1614": {
+   "name": "Ibsão"
+  },
+  "1615": {
+   "name": "Jidlafe"
+  },
+  "1616": {
+   "name": "Imna",
+   "other": "Jimna, Jimnah"
+  },
+  "1617": {
+   "name": "Joabe"
+  },
+  "1618": {
+   "name": "Joabe"
+  },
+  "1619": {
+   "name": "Joabe"
+  },
+  "162": {
+   "name": "Aitofel"
+  },
+  "1620": {
+   "name": "Joabe"
+  },
+  "1621": {
+   "name": "Joá"
+  },
+  "1622": {
+   "name": "Etã",
+   "other": "Joá"
+  },
+  "1623": {
+   "name": "Joabe"
+  },
+  "1624": {
+   "name": "Joá"
+  },
+  "1625": {
+   "name": "Joá"
+  },
+  "1626": {
+   "name": "Joá"
+  },
+  "1627": {
+   "name": "Jeoacaz"
+  },
+  "1628": {
+   "name": "Joaná"
+  },
+  "1629": {
+   "name": "Joana"
+  },
+  "163": {
+   "name": "Aitube"
+  },
+  "1630": {
+   "name": "Joás"
+  },
+  "1631": {
+   "name": "Joás"
+  },
+  "1632": {
+   "name": "Joás",
+   "other": "Jehoash"
+  },
+  "1633": {
+   "name": "Joás",
+   "other": "Jehoash"
+  },
+  "1634": {
+   "name": "Joás"
+  },
+  "1635": {
+   "name": "Joás"
+  },
+  "1636": {
+   "name": "Joás"
+  },
+  "1637": {
+   "name": "Joás"
+  },
+  "1638": {
+   "name": "Jasube",
+   "other": "Jó"
+  },
+  "1639": {
+   "name": "Jó"
+  },
+  "164": {
+   "name": "Aitube"
+  },
+  "1640": {
+   "name": "Jobabe (filho de Joctã)"
+  },
+  "1641": {
+   "name": "Jobabe"
+  },
+  "1642": {
+   "name": "Jobabe"
+  },
+  "1643": {
+   "name": "Jobabe"
+  },
+  "1644": {
+   "name": "Jobabe"
+  },
+  "1645": {
+   "name": "Joquebede"
+  },
+  "1646": {
+   "name": "Joede"
+  },
+  "1647": {
+   "name": "Joel",
+   "other": "Vashni"
+  },
+  "165": {
+   "name": "Aitube"
+  },
+  "166": {
+   "name": "Alai"
+  },
+  "1661": {
+   "name": "Joela"
+  },
+  "1664": {
+   "name": "Joá"
+  },
+  "1665": {
+   "name": "Joá"
+  },
+  "1666": {
+   "name": "Joanã"
+  },
+  "1667": {
+   "name": "Joanã"
+  },
+  "1668": {
+   "name": "Joanã"
+  },
+  "1669": {
+   "name": "Joanã"
+  },
+  "167": {
+   "name": "Alai"
+  },
+  "1670": {
+   "name": "Joanã"
+  },
+  "1671": {
+   "name": "Joanã"
+  },
+  "1672": {
+   "name": "Joanã"
+  },
+  "1673": {
+   "name": "Joanã"
+  },
+  "1674": {
+   "name": "Joanã"
+  },
+  "1675": {
+   "name": "Joanã"
+  },
+  "1676": {
+   "name": "João Batista"
+  },
+  "1677": {
+   "name": "João, o apóstolo",
+   "other": "Boanerges"
+  },
+  "1678": {
+   "name": "João (parente do sumo sacerdote)"
+  },
+  "1679": {
+   "name": "João Marcos",
+   "other": "Marcus"
+  },
+  "168": {
+   "name": "Aoá"
+  },
+  "1681": {
+   "name": "Joiaquim"
+  },
+  "1682": {
+   "name": "Joiaribe"
+  },
+  "1683": {
+   "name": "Joiaribe"
+  },
+  "1684": {
+   "name": "Joquim"
+  },
+  "1685": {
+   "name": "Jocsã"
+  },
+  "1686": {
+   "name": "Joctã"
+  },
+  "1688": {
+   "name": "Jonadabe",
+   "other": "Jônatas"
+  },
+  "1689": {
+   "name": "Jonas",
+   "other": "Jonas"
+  },
+  "169": {
+   "name": "Oolá"
+  },
+  "1690": {
+   "name": "Jonã"
+  },
+  "1691": {
+   "name": "Jônatas"
+  },
+  "1692": {
+   "name": "Jônatas"
+  },
+  "1693": {
+   "name": "Jônatas"
+  },
+  "1694": {
+   "name": "Jônatas"
+  },
+  "1695": {
+   "name": "Jônatas"
+  },
+  "1696": {
+   "name": "Jônatas"
+  },
+  "1697": {
+   "name": "Jônatas"
+  },
+  "1698": {
+   "name": "Joanã",
+   "other": "Jônatas"
+  },
+  "1699": {
+   "name": "Jônatas"
+  },
+  "17": {
+   "name": "Abias"
+  },
+  "170": {
+   "name": "Aoliabe"
+  },
+  "1700": {
+   "name": "Jônatas"
+  },
+  "1701": {
+   "name": "Jônatas"
+  },
+  "1702": {
+   "name": "Jônatas"
+  },
+  "1703": {
+   "name": "Harife",
+   "other": "Jorah"
+  },
+  "1705": {
+   "name": "Jorão",
+   "other": "Hadoram"
+  },
+  "1706": {
+   "name": "Jorão"
+  },
+  "1708": {
+   "name": "Jozabade"
+  },
+  "1709": {
+   "name": "José"
+  },
+  "171": {
+   "name": "Oolibá"
+  },
+  "1710": {
+   "name": "José (filho de Jacó)",
+   "other": "Zaphnath-paaneah"
+  },
+  "1711": {
+   "name": "José"
+  },
+  "1712": {
+   "name": "José (filho de Asafe)"
+  },
+  "1713": {
+   "name": "José"
+  },
+  "1714": {
+   "name": "José"
+  },
+  "1715": {
+   "name": "José (marido de Maria)"
+  },
+  "1716": {
+   "name": "José (de Arimateia)"
+  },
+  "1717": {
+   "name": "José"
+  },
+  "1718": {
+   "name": "José (filho de Judá)"
+  },
+  "1719": {
+   "name": "José"
+  },
+  "172": {
+   "name": "Oolibama"
+  },
+  "1720": {
+   "name": "José Barsabás (Justo)",
+   "other": "José"
+  },
+  "1721": {
+   "name": "José"
+  },
+  "1722": {
+   "name": "Barnabé",
+   "other": "Jupiter, José"
+  },
+  "1723": {
+   "name": "Josias"
+  },
+  "1724": {
+   "name": "Josafá"
+  },
+  "1725": {
+   "name": "Josavias"
+  },
+  "1726": {
+   "name": "Josbecasa"
+  },
+  "1727": {
+   "name": "Josué",
+   "other": "Jehoshua, Oshea, Jesus, Jesua, Oseias"
+  },
+  "1728": {
+   "name": "Josué"
+  },
+  "1729": {
+   "name": "Josué"
+  },
+  "173": {
+   "name": "Oolibama"
+  },
+  "1730": {
+   "name": "Josias",
+   "other": "Josias"
+  },
+  "1731": {
+   "name": "Josias",
+   "other": "Hen"
+  },
+  "1732": {
+   "name": "Josibias"
+  },
+  "1733": {
+   "name": "Josifias"
+  },
+  "1734": {
+   "name": "Jotão"
+  },
+  "1735": {
+   "name": "Jotão",
+   "other": "Joatham"
+  },
+  "1736": {
+   "name": "Jotão"
+  },
+  "1737": {
+   "name": "Jozabade"
+  },
+  "1738": {
+   "name": "Jozabade"
+  },
+  "1739": {
+   "name": "Jozabade"
+  },
+  "174": {
+   "name": "Aumai"
+  },
+  "1740": {
+   "name": "Jozabade"
+  },
+  "1741": {
+   "name": "Jozabade"
+  },
+  "1742": {
+   "name": "Jozabade"
+  },
+  "1743": {
+   "name": "Jozabade"
+  },
+  "1744": {
+   "name": "Jozabade"
+  },
+  "1745": {
+   "name": "Jozabade"
+  },
+  "1746": {
+   "name": "Jozabade",
+   "other": "Jozachar"
+  },
+  "1747": {
+   "name": "Jozadaque"
+  },
+  "1749": {
+   "name": "Judá"
+  },
+  "175": {
+   "name": "Auzão"
+  },
+  "1750": {
+   "name": "Judá"
+  },
+  "1751": {
+   "name": "Judá (patriarca)"
+  },
+  "1752": {
+   "name": "Judá"
+  },
+  "1753": {
+   "name": "Judá"
+  },
+  "1754": {
+   "name": "Judá"
+  },
+  "1755": {
+   "name": "Judá"
+  },
+  "1756": {
+   "name": "Judas",
+   "other": "Judá, Judas"
+  },
+  "1757": {
+   "name": "Judas (da Galileia)"
+  },
+  "1758": {
+   "name": "Judas (judeu de Damasco)"
+  },
+  "1759": {
+   "name": "Judas Barsabás"
+  },
+  "176": {
+   "name": "Auzate"
+  },
+  "1760": {
+   "name": "Judas Iscariotes"
+  },
+  "1761": {
+   "name": "Oolibama",
+   "other": "Judith"
+  },
+  "1762": {
+   "name": "Júlia"
+  },
+  "1763": {
+   "name": "Júlio"
+  },
+  "1764": {
+   "name": "Júnia"
+  },
+  "1765": {
+   "name": "Jusabe-Hesede"
+  },
+  "1766": {
+   "name": "Justo"
+  },
+  "1767": {
+   "name": "Cadmiel"
+  },
+  "1768": {
+   "name": "Calai"
+  },
+  "1769": {
+   "name": "Quedar"
+  },
+  "177": {
+   "name": "Aiá"
+  },
+  "1770": {
+   "name": "Quedemá"
+  },
+  "1771": {
+   "name": "Quelaías",
+   "other": "Quelita"
+  },
+  "1772": {
+   "name": "Quelita"
+  },
+  "1773": {
+   "name": "Quemuel"
+  },
+  "1774": {
+   "name": "Quemuel"
+  },
+  "1775": {
+   "name": "Quemuel"
+  },
+  "1776": {
+   "name": "Quenaz"
+  },
+  "1777": {
+   "name": "Quenaz"
+  },
+  "1778": {
+   "name": "Quenaz"
+  },
+  "1779": {
+   "name": "Quenaz"
+  },
+  "178": {
+   "name": "Aiá",
+   "other": "Aiá"
+  },
+  "1780": {
+   "name": "Quéren-Hapuque"
+  },
+  "1781": {
+   "name": "Queros"
+  },
+  "1782": {
+   "name": "Quetura"
+  },
+  "1783": {
+   "name": "Quézia"
+  },
+  "1784": {
+   "name": "Quis",
+   "other": "Cis"
+  },
+  "1785": {
+   "name": "Quis"
+  },
+  "1786": {
+   "name": "Quis"
+  },
+  "1787": {
+   "name": "Quis"
+  },
+  "1788": {
+   "name": "Kishi",
+   "other": "Kushaiah"
+  },
+  "1789": {
+   "name": "Quitim"
+  },
+  "179": {
+   "name": "Akan",
+   "other": "Jakan"
+  },
+  "1790": {
+   "name": "Coate"
+  },
+  "1791": {
+   "name": "Colaías"
+  },
+  "1792": {
+   "name": "Colaías"
+  },
+  "1793": {
+   "name": "Corá"
+  },
+  "1794": {
+   "name": "Corá"
+  },
+  "1795": {
+   "name": "Corá (levita)",
+   "other": "Core"
+  },
+  "1796": {
+   "name": "Corá"
+  },
+  "1797": {
+   "name": "Coré"
+  },
+  "1798": {
+   "name": "Coré"
+  },
+  "1799": {
+   "name": "Coz"
+  },
+  "18": {
+   "name": "Abiel (arbatita)"
+  },
+  "180": {
+   "name": "Acube"
+  },
+  "1800": {
+   "name": "Coz"
+  },
+  "1801": {
+   "name": "Lada"
+  },
+  "1802": {
+   "name": "Laadã"
+  },
+  "1803": {
+   "name": "Labão"
+  },
+  "1805": {
+   "name": "Laade"
+  },
+  "1806": {
+   "name": "Lami"
+  },
+  "1807": {
+   "name": "Laís"
+  },
+  "1808": {
+   "name": "Lameque (descendente de Caim)"
+  },
+  "1809": {
+   "name": "Lameque (pai de Noé)"
+  },
+  "181": {
+   "name": "Acube"
+  },
+  "1810": {
+   "name": "Lapidote"
+  },
+  "1811": {
+   "name": "Lázaro"
+  },
+  "1812": {
+   "name": "Lázaro"
+  },
+  "1813": {
+   "name": "Lia"
+  },
+  "1814": {
+   "name": "Lebana"
+  },
+  "1815": {
+   "name": "Lebeu Tadeu",
+   "other": "Judas, Thaddaeus"
+  },
+  "1816": {
+   "name": "Leabim"
+  },
+  "1818": {
+   "name": "Letusim"
+  },
+  "182": {
+   "name": "Acube"
+  },
+  "1820": {
+   "name": "Levi (patriarca)"
+  },
+  "1823": {
+   "name": "Ladã",
+   "other": "Libni, Jaate"
+  },
+  "1825": {
+   "name": "Liqui"
+  },
+  "1826": {
+   "name": "Lino"
+  },
+  "1828": {
+   "name": "Loide"
+  },
+  "183": {
+   "name": "Acube"
+  },
+  "1830": {
+   "name": "Ló"
+  },
+  "1831": {
+   "name": "Lotã"
+  },
+  "1833": {
+   "name": "Lúcio"
+  },
+  "1834": {
+   "name": "Lude"
+  },
+  "1836": {
+   "name": "Luke",
+   "other": "Lucas"
+  },
+  "1837": {
+   "name": "Lídia"
+  },
+  "1838": {
+   "name": "Lisânias"
+  },
+  "1839": {
+   "name": "Maaca",
+   "other": "Maaca"
+  },
+  "184": {
+   "name": "Alemete"
+  },
+  "1840": {
+   "name": "Maaca (filha de Naor)"
+  },
+  "1841": {
+   "name": "Maaca",
+   "other": "Micaías"
+  },
+  "1842": {
+   "name": "Maaca"
+  },
+  "1843": {
+   "name": "Maaca (esposa de Maquir)"
+  },
+  "1844": {
+   "name": "Maaca"
+  },
+  "1845": {
+   "name": "Maaca"
+  },
+  "1846": {
+   "name": "Maaca"
+  },
+  "1849": {
+   "name": "Maaseias"
+  },
+  "185": {
+   "name": "Alemete"
+  },
+  "1850": {
+   "name": "Maaseias"
+  },
+  "1851": {
+   "name": "Maaseias"
+  },
+  "1852": {
+   "name": "Maaseias"
+  },
+  "1853": {
+   "name": "Maaseias"
+  },
+  "1854": {
+   "name": "Maaseias"
+  },
+  "1855": {
+   "name": "Maaseias"
+  },
+  "1856": {
+   "name": "Maaseias"
+  },
+  "1857": {
+   "name": "Maaseias"
+  },
+  "1858": {
+   "name": "Maaseias"
+  },
+  "1859": {
+   "name": "Maaseias"
+  },
+  "186": {
+   "name": "Alexandre"
+  },
+  "1860": {
+   "name": "Maaseias"
+  },
+  "1861": {
+   "name": "Maaseias"
+  },
+  "1862": {
+   "name": "Maaseias"
+  },
+  "1863": {
+   "name": "Maaseias"
+  },
+  "1864": {
+   "name": "Maaseias"
+  },
+  "1865": {
+   "name": "Maaseias"
+  },
+  "1866": {
+   "name": "Maaseias"
+  },
+  "1867": {
+   "name": "Maaseias"
+  },
+  "1868": {
+   "name": "Maasias"
+  },
+  "1869": {
+   "name": "Maaseias"
+  },
+  "187": {
+   "name": "Alexandre (filho de Simão)"
+  },
+  "1870": {
+   "name": "Masai",
+   "other": "Amashai"
+  },
+  "1871": {
+   "name": "Maate"
+  },
+  "1873": {
+   "name": "Maazias"
+  },
+  "1874": {
+   "name": "Moadias",
+   "other": "Maadiah, Maazias"
+  },
+  "1875": {
+   "name": "Macbanai"
+  },
+  "1876": {
+   "name": "Maqui"
+  },
+  "1877": {
+   "name": "Maquir",
+   "other": "Machirites"
+  },
+  "1878": {
+   "name": "Maquir"
+  },
+  "1879": {
+   "name": "Macnadbai"
+  },
+  "188": {
+   "name": "Alexandre (judeu de Éfeso)"
+  },
+  "1882": {
+   "name": "Magogue"
+  },
+  "1883": {
+   "name": "Magpias"
+  },
+  "1884": {
+   "name": "Maalá"
+  },
+  "1885": {
+   "name": "Maalalel (linhagem de Sete)",
+   "other": "Maleleel"
+  },
+  "1886": {
+   "name": "Maalaleel"
+  },
+  "1887": {
+   "name": "Basemate",
+   "other": "Maalate"
+  },
+  "1888": {
+   "name": "Maalate"
+  },
+  "1889": {
+   "name": "Mali",
+   "other": "Mahali"
+  },
+  "189": {
+   "name": "Alexandre"
+  },
+  "1890": {
+   "name": "Maarai"
+  },
+  "1891": {
+   "name": "Maate"
+  },
+  "1892": {
+   "name": "Maate"
+  },
+  "1893": {
+   "name": "Maaziote"
+  },
+  "1894": {
+   "name": "Maer-Salal-Has-Baz"
+  },
+  "1895": {
+   "name": "Maalá"
+  },
+  "1896": {
+   "name": "Mali"
+  },
+  "1897": {
+   "name": "Malom"
+  },
+  "1898": {
+   "name": "Maol"
+  },
+  "1899": {
+   "name": "Malaquias"
+  },
+  "19": {
+   "name": "Ebiasafe",
+   "other": "Asafe, Abiasaph"
+  },
+  "190": {
+   "name": "Alom"
+  },
+  "1900": {
+   "name": "Malcã"
+  },
+  "1901": {
+   "name": "Malquias"
+  },
+  "1902": {
+   "name": "Malquias"
+  },
+  "1903": {
+   "name": "Malquias"
+  },
+  "1904": {
+   "name": "Malquias"
+  },
+  "1905": {
+   "name": "Malquias"
+  },
+  "1906": {
+   "name": "Malquias"
+  },
+  "1907": {
+   "name": "Malquias"
+  },
+  "1908": {
+   "name": "Malquiel"
+  },
+  "1909": {
+   "name": "Malquias",
+   "other": "Malquias"
+  },
+  "191": {
+   "name": "Almodá"
+  },
+  "1910": {
+   "name": "Malquias"
+  },
+  "1911": {
+   "name": "Malquias"
+  },
+  "1912": {
+   "name": "Malquias"
+  },
+  "1913": {
+   "name": "Malquias"
+  },
+  "1914": {
+   "name": "Malquias"
+  },
+  "1915": {
+   "name": "Malquirão"
+  },
+  "1916": {
+   "name": "Malco"
+  },
+  "1917": {
+   "name": "Maloti"
+  },
+  "1918": {
+   "name": "Maluque"
+  },
+  "1919": {
+   "name": "Maluque"
+  },
+  "192": {
+   "name": "Alfeu"
+  },
+  "1920": {
+   "name": "Maluque"
+  },
+  "1921": {
+   "name": "Maluque",
+   "other": "Melicu"
+  },
+  "1922": {
+   "name": "Maluque"
+  },
+  "1923": {
+   "name": "Manre"
+  },
+  "1924": {
+   "name": "Homem de grande estatura"
+  },
+  "1925": {
+   "name": "Homem entendido"
+  },
+  "1926": {
+   "name": "Manaem"
+  },
+  "1927": {
+   "name": "Manaate"
+  },
+  "1928": {
+   "name": "Manassés (filho de José)",
+   "other": "Manasses"
+  },
+  "1929": {
+   "name": "Manassés"
+  },
+  "193": {
+   "name": "Alfeu"
+  },
+  "1930": {
+   "name": "Manassés (filho de Ezequias)",
+   "other": "Manasses"
+  },
+  "1931": {
+   "name": "Manassés"
+  },
+  "1932": {
+   "name": "Manassés"
+  },
+  "1933": {
+   "name": "Manoá"
+  },
+  "1934": {
+   "name": "Maaca",
+   "other": "Maoch"
+  },
+  "1935": {
+   "name": "Maom"
+  },
+  "1937": {
+   "name": "Marta"
+  },
+  "1938": {
+   "name": "Maria (mãe de Jesus)"
+  },
+  "1939": {
+   "name": "Maria (irmã de Lázaro)"
+  },
+  "194": {
+   "name": "Alva",
+   "other": "Aliah"
+  },
+  "1940": {
+   "name": "Maria (esposa de Clopas)"
+  },
+  "1941": {
+   "name": "Maria (mãe de João Marcos)"
+  },
+  "1942": {
+   "name": "Maria (de Roma)"
+  },
+  "1943": {
+   "name": "Maria Madalena",
+   "other": "Magdalene"
+  },
+  "1944": {
+   "name": "Mas",
+   "other": "Meseque"
+  },
+  "1945": {
+   "name": "Massá"
+  },
+  "1946": {
+   "name": "Matrede"
+  },
+  "1948": {
+   "name": "Matã"
+  },
+  "1949": {
+   "name": "Matã"
+  },
+  "195": {
+   "name": "Alvã",
+   "other": "Alian"
+  },
+  "1950": {
+   "name": "Zedequias",
+   "other": "Matanias"
+  },
+  "1951": {
+   "name": "Matanias"
+  },
+  "1952": {
+   "name": "Matanias"
+  },
+  "1953": {
+   "name": "Matanias"
+  },
+  "1954": {
+   "name": "Matanias"
+  },
+  "1955": {
+   "name": "Matanias"
+  },
+  "1956": {
+   "name": "Matanias"
+  },
+  "1957": {
+   "name": "Matanias"
+  },
+  "1958": {
+   "name": "Matanias"
+  },
+  "1959": {
+   "name": "Matanias"
+  },
+  "1960": {
+   "name": "Matanias"
+  },
+  "1961": {
+   "name": "Matatá"
+  },
+  "1962": {
+   "name": "Matatá"
+  },
+  "1963": {
+   "name": "Matatias"
+  },
+  "1964": {
+   "name": "Matatias"
+  },
+  "1965": {
+   "name": "Matenai"
+  },
+  "1966": {
+   "name": "Matenai"
+  },
+  "1967": {
+   "name": "Matenai"
+  },
+  "1968": {
+   "name": "Matã"
+  },
+  "1969": {
+   "name": "Matate"
+  },
+  "197": {
+   "name": "Amaleque"
+  },
+  "1970": {
+   "name": "Matate"
+  },
+  "1971": {
+   "name": "Mateus",
+   "other": "Levi"
+  },
+  "1972": {
+   "name": "Matias"
+  },
+  "1973": {
+   "name": "Matitias"
+  },
+  "1974": {
+   "name": "Matitias"
+  },
+  "1975": {
+   "name": "Matitias"
+  },
+  "1976": {
+   "name": "Matitias"
+  },
+  "1977": {
+   "name": "Medade"
+  },
+  "1978": {
+   "name": "Medã"
+  },
+  "1979": {
+   "name": "Meetabel"
+  },
+  "198": {
+   "name": "Amarias"
+  },
+  "1980": {
+   "name": "Meetabel"
+  },
+  "1981": {
+   "name": "Meída"
+  },
+  "1983": {
+   "name": "Meujael"
+  },
+  "1984": {
+   "name": "Meumã"
+  },
+  "1985": {
+   "name": "Meunim",
+   "other": "Meunim"
+  },
+  "1986": {
+   "name": "Melatias"
+  },
+  "1987": {
+   "name": "Melqui"
+  },
+  "1988": {
+   "name": "Melqui"
+  },
+  "1989": {
+   "name": "Melquias",
+   "other": "Malquias"
+  },
+  "199": {
+   "name": "Amarias"
+  },
+  "1990": {
+   "name": "Malquisua"
+  },
+  "1991": {
+   "name": "Melquisedeque",
+   "other": "Melchizedek"
+  },
+  "1992": {
+   "name": "Meleá"
+  },
+  "1993": {
+   "name": "Meleque"
+  },
+  "1994": {
+   "name": "Melsar"
+  },
+  "1995": {
+   "name": "Memucã"
+  },
+  "1996": {
+   "name": "Menaém"
+  },
+  "1997": {
+   "name": "Mainã"
+  },
+  "1998": {
+   "name": "Meonotai"
+  },
+  "1999": {
+   "name": "Mefibosete",
+   "other": "Merib-baal"
+  },
+  "2": {
+   "name": "Apoliom",
+   "other": "Abaddon"
+  },
+  "20": {
+   "name": "Abiatar"
+  },
+  "200": {
+   "name": "Amarias"
+  },
+  "2000": {
+   "name": "Mefibosete"
+  },
+  "2001": {
+   "name": "Merabe",
+   "other": "Mical"
+  },
+  "2002": {
+   "name": "Meraías"
+  },
+  "2003": {
+   "name": "Meraiote"
+  },
+  "2005": {
+   "name": "Merede"
+  },
+  "2006": {
+   "name": "Meremote",
+   "other": "Meraiote"
+  },
+  "2007": {
+   "name": "Meremote"
+  },
+  "2009": {
+   "name": "Messa"
+  },
+  "201": {
+   "name": "Amarias"
+  },
+  "2010": {
+   "name": "Messa"
+  },
+  "2011": {
+   "name": "Messa"
+  },
+  "2012": {
+   "name": "Meseque",
+   "other": "Mesech"
+  },
+  "2013": {
+   "name": "Meselemias",
+   "other": "Selemias"
+  },
+  "2014": {
+   "name": "Mesezabel"
+  },
+  "2015": {
+   "name": "Mesezabel"
+  },
+  "2016": {
+   "name": "Mesezabel"
+  },
+  "2017": {
+   "name": "Mesilemite",
+   "other": "Mesilemote"
+  },
+  "2018": {
+   "name": "Mesilemote"
+  },
+  "2019": {
+   "name": "Mesobabe"
+  },
+  "202": {
+   "name": "Amarias"
+  },
+  "2020": {
+   "name": "Mesulão"
+  },
+  "2021": {
+   "name": "Mesulão"
+  },
+  "2022": {
+   "name": "Mesulão"
+  },
+  "2023": {
+   "name": "Mesulão"
+  },
+  "2024": {
+   "name": "Mesulão"
+  },
+  "2025": {
+   "name": "Mesulão"
+  },
+  "2026": {
+   "name": "Mesulão",
+   "other": "Ahasai"
+  },
+  "2027": {
+   "name": "Mesulão"
+  },
+  "2028": {
+   "name": "Mesulão"
+  },
+  "2029": {
+   "name": "Mesulão"
+  },
+  "203": {
+   "name": "Amarias"
+  },
+  "2030": {
+   "name": "Mesulão"
+  },
+  "2031": {
+   "name": "Mesulão"
+  },
+  "2032": {
+   "name": "Mesulão"
+  },
+  "2033": {
+   "name": "Mesulão"
+  },
+  "2034": {
+   "name": "Mesulão"
+  },
+  "2035": {
+   "name": "Mesulão"
+  },
+  "2036": {
+   "name": "Mesulão"
+  },
+  "2037": {
+   "name": "Mesulão"
+  },
+  "2038": {
+   "name": "Mesulão"
+  },
+  "2039": {
+   "name": "Mesulão"
+  },
+  "204": {
+   "name": "Amarias"
+  },
+  "2040": {
+   "name": "Mesulemete"
+  },
+  "2041": {
+   "name": "Metusael"
+  },
+  "2042": {
+   "name": "Matusalém",
+   "other": "Mathusala"
+  },
+  "2043": {
+   "name": "Mezaabe"
+  },
+  "2044": {
+   "name": "Miamim"
+  },
+  "2045": {
+   "name": "Mibar"
+  },
+  "2046": {
+   "name": "Mibsão"
+  },
+  "2047": {
+   "name": "Mibsão"
+  },
+  "2049": {
+   "name": "Mica"
+  },
+  "205": {
+   "name": "Amarias"
+  },
+  "2050": {
+   "name": "Mica"
+  },
+  "2051": {
+   "name": "Mica",
+   "other": "Mica"
+  },
+  "2052": {
+   "name": "Mica"
+  },
+  "2053": {
+   "name": "Mica"
+  },
+  "2054": {
+   "name": "Micaías"
+  },
+  "2055": {
+   "name": "Mica",
+   "other": "Mica"
+  },
+  "2056": {
+   "name": "Mica"
+  },
+  "2057": {
+   "name": "Micaías"
+  },
+  "2058": {
+   "name": "Micael"
+  },
+  "2059": {
+   "name": "Micael"
+  },
+  "206": {
+   "name": "Amarias"
+  },
+  "2060": {
+   "name": "Micael"
+  },
+  "2061": {
+   "name": "Micael"
+  },
+  "2062": {
+   "name": "Micael"
+  },
+  "2063": {
+   "name": "Micael"
+  },
+  "2064": {
+   "name": "Micael"
+  },
+  "2065": {
+   "name": "Micael"
+  },
+  "2066": {
+   "name": "Micael"
+  },
+  "2067": {
+   "name": "Micael"
+  },
+  "2068": {
+   "name": "Miguel"
+  },
+  "2069": {
+   "name": "Micaías",
+   "other": "Mica"
+  },
+  "2070": {
+   "name": "Micaías"
+  },
+  "2071": {
+   "name": "Micaías"
+  },
+  "2072": {
+   "name": "Micaías"
+  },
+  "2073": {
+   "name": "Mical"
+  },
+  "2074": {
+   "name": "Micri"
+  },
+  "2075": {
+   "name": "Midiã",
+   "other": "Midianites, Midianitish"
+  },
+  "2076": {
+   "name": "Miamim"
+  },
+  "2077": {
+   "name": "Miamim",
+   "other": "Miamim, Miamim"
+  },
+  "2078": {
+   "name": "Miclote"
+  },
+  "2079": {
+   "name": "Miclote"
+  },
+  "2080": {
+   "name": "Micneias"
+  },
+  "2082": {
+   "name": "Milca (esposa de Naor)"
+  },
+  "2083": {
+   "name": "Milca (filha de Zelofeade)"
+  },
+  "2085": {
+   "name": "Miamim"
+  },
+  "2086": {
+   "name": "Miniamim"
+  },
+  "2087": {
+   "name": "Miriã"
+  },
+  "2088": {
+   "name": "Miriã"
+  },
+  "2090": {
+   "name": "Misael"
+  },
+  "2091": {
+   "name": "Misael"
+  },
+  "2092": {
+   "name": "Mesaque",
+   "other": "Misael"
+  },
+  "2093": {
+   "name": "Misã"
+  },
+  "2094": {
+   "name": "Misma"
+  },
+  "2095": {
+   "name": "Misma"
+  },
+  "2096": {
+   "name": "Mismana"
+  },
+  "2097": {
+   "name": "Mitridate"
+  },
+  "2098": {
+   "name": "Mitridate"
+  },
+  "2099": {
+   "name": "Misperete",
+   "other": "Mispar"
+  },
+  "2101": {
+   "name": "Mizá"
+  },
+  "2102": {
+   "name": "Mnáson"
+  },
+  "2103": {
+   "name": "Moabe",
+   "other": "Moabitess, Moabitish, Moabites"
+  },
+  "2104": {
+   "name": "Moloque"
+  },
+  "2105": {
+   "name": "Molide"
+  },
+  "2106": {
+   "name": "Mardoqueu"
+  },
+  "2107": {
+   "name": "Mardoqueu"
+  },
+  "2108": {
+   "name": "Moisés"
+  },
+  "2109": {
+   "name": "Mãe de Oolá e Oolibá"
+  },
+  "2110": {
+   "name": "Mãe de Lemuel"
+  },
+  "2111": {
+   "name": "Sogra de Simão"
+  },
+  "2112": {
+   "name": "Mãe dos filhos de Zebedeu"
+  },
+  "2115": {
+   "name": "Hupim",
+   "other": "Shephuphan, Muppim"
+  },
+  "2116": {
+   "name": "Musi"
+  },
+  "2117": {
+   "name": "Naã"
+  },
+  "2118": {
+   "name": "Naamá (linhagem de Caim)"
+  },
+  "2119": {
+   "name": "Naamá"
+  },
+  "2120": {
+   "name": "Noá",
+   "other": "Naamã"
+  },
+  "2121": {
+   "name": "Naamã"
+  },
+  "2122": {
+   "name": "Naamã"
+  },
+  "2123": {
+   "name": "Naamã"
+  },
+  "2124": {
+   "name": "Naará"
+  },
+  "2127": {
+   "name": "Nabote"
+  },
+  "2128": {
+   "name": "Nadabe"
+  },
+  "2129": {
+   "name": "Nadabe"
+  },
+  "213": {
+   "name": "Amasias"
+  },
+  "2130": {
+   "name": "Nadabe"
+  },
+  "2131": {
+   "name": "Nadabe"
+  },
+  "2132": {
+   "name": "Nagai"
+  },
+  "2133": {
+   "name": "Naã"
+  },
+  "2134": {
+   "name": "Naamani"
+  },
+  "2135": {
+   "name": "Naarai"
+  },
+  "2136": {
+   "name": "Naás"
+  },
+  "2137": {
+   "name": "Naás"
+  },
+  "2138": {
+   "name": "Naás"
+  },
+  "2139": {
+   "name": "Naás"
+  },
+  "214": {
+   "name": "Amazias"
+  },
+  "2140": {
+   "name": "Naate"
+  },
+  "2141": {
+   "name": "Nabi"
+  },
+  "2142": {
+   "name": "Naor (pai de Terá)",
+   "other": "Nachor"
+  },
+  "2143": {
+   "name": "Naor (irmão de Abraão)"
+  },
+  "2144": {
+   "name": "Naassom",
+   "other": "Naasson, Naashon"
+  },
+  "2145": {
+   "name": "Naum"
+  },
+  "2146": {
+   "name": "Naate"
+  },
+  "2147": {
+   "name": "Noemi",
+   "other": "Mara"
+  },
+  "2148": {
+   "name": "Nafis"
+  },
+  "2149": {
+   "name": "Naftali",
+   "other": "Nephthalim"
+  },
+  "215": {
+   "name": "Amazias"
+  },
+  "2150": {
+   "name": "Naftuim"
+  },
+  "2151": {
+   "name": "Narciso"
+  },
+  "2152": {
+   "name": "Natã"
+  },
+  "2153": {
+   "name": "Natã"
+  },
+  "2154": {
+   "name": "Natã"
+  },
+  "2155": {
+   "name": "Natã"
+  },
+  "2156": {
+   "name": "Natã"
+  },
+  "2157": {
+   "name": "Natã"
+  },
+  "2158": {
+   "name": "Natanael"
+  },
+  "2159": {
+   "name": "Natã-Meleque"
+  },
+  "216": {
+   "name": "Amazias"
+  },
+  "2161": {
+   "name": "Nearias"
+  },
+  "2162": {
+   "name": "Nearias"
+  },
+  "2164": {
+   "name": "Nebaiote",
+   "other": "Nebaiote"
+  },
+  "2165": {
+   "name": "Nebate"
+  },
+  "2167": {
+   "name": "Nabucodonosor",
+   "other": "Nebuchadrezzar"
+  },
+  "2168": {
+   "name": "Nabusasbã"
+  },
+  "2169": {
+   "name": "Nebuzaradã"
+  },
+  "217": {
+   "name": "Amazias"
+  },
+  "2170": {
+   "name": "Nedabias"
+  },
+  "2171": {
+   "name": "Neemias"
+  },
+  "2172": {
+   "name": "Neemias"
+  },
+  "2173": {
+   "name": "Neemias"
+  },
+  "2174": {
+   "name": "Neusta"
+  },
+  "2175": {
+   "name": "Necoda"
+  },
+  "2176": {
+   "name": "Necoda"
+  },
+  "2178": {
+   "name": "Nefegue"
+  },
+  "2179": {
+   "name": "Nefegue"
+  },
+  "218": {
+   "name": "Amom",
+   "other": "Ami"
+  },
+  "2180": {
+   "name": "Nefusim",
+   "other": "Nephishesim"
+  },
+  "2182": {
+   "name": "Nereu"
+  },
+  "2183": {
+   "name": "Nergal-Sarezer"
+  },
+  "2186": {
+   "name": "Nerias"
+  },
+  "2188": {
+   "name": "Natanael"
+  },
+  "2189": {
+   "name": "Natanael"
+  },
+  "219": {
+   "name": "Amitai"
+  },
+  "2190": {
+   "name": "Natanael"
+  },
+  "2191": {
+   "name": "Natanael"
+  },
+  "2192": {
+   "name": "Natanael"
+  },
+  "2193": {
+   "name": "Natanael"
+  },
+  "2194": {
+   "name": "Natanael"
+  },
+  "2195": {
+   "name": "Natanael"
+  },
+  "2196": {
+   "name": "Natanael"
+  },
+  "2197": {
+   "name": "Natanael"
+  },
+  "2198": {
+   "name": "Netanias"
+  },
+  "2199": {
+   "name": "Netanias"
+  },
+  "22": {
+   "name": "Abidã"
+  },
+  "220": {
+   "name": "Amiel"
+  },
+  "2200": {
+   "name": "Netanias"
+  },
+  "2201": {
+   "name": "Netanias"
+  },
+  "2202": {
+   "name": "Nesias"
+  },
+  "2204": {
+   "name": "Nicodemos"
+  },
+  "2205": {
+   "name": "Nicolão"
+  },
+  "2206": {
+   "name": "Ninrode"
+  },
+  "2207": {
+   "name": "Ninsi"
+  },
+  "2208": {
+   "name": "Noadias"
+  },
+  "2209": {
+   "name": "Noadia"
+  },
+  "221": {
+   "name": "Amiel"
+  },
+  "2210": {
+   "name": "Noé",
+   "other": "Noe"
+  },
+  "2211": {
+   "name": "Noa (filha de Zelofeade)"
+  },
+  "2212": {
+   "name": "Noba"
+  },
+  "2213": {
+   "name": "Nogá"
+  },
+  "2214": {
+   "name": "Num",
+   "other": "Non"
+  },
+  "2215": {
+   "name": "Obadias"
+  },
+  "2216": {
+   "name": "Obadias"
+  },
+  "2217": {
+   "name": "Obadias"
+  },
+  "2218": {
+   "name": "Obadias"
+  },
+  "2219": {
+   "name": "Obadias",
+   "other": "Abda"
+  },
+  "222": {
+   "name": "Amiel"
+  },
+  "2220": {
+   "name": "Obadias"
+  },
+  "2221": {
+   "name": "Obadias"
+  },
+  "2222": {
+   "name": "Obadias"
+  },
+  "2223": {
+   "name": "Obadias"
+  },
+  "2224": {
+   "name": "Obadias"
+  },
+  "2225": {
+   "name": "Obadias"
+  },
+  "2226": {
+   "name": "Obadias"
+  },
+  "2227": {
+   "name": "Ebal (filho de Joctã)",
+   "other": "Obal"
+  },
+  "2228": {
+   "name": "Obede"
+  },
+  "2229": {
+   "name": "Obede"
+  },
+  "223": {
+   "name": "Amiúde"
+  },
+  "2230": {
+   "name": "Obede"
+  },
+  "2231": {
+   "name": "Obede"
+  },
+  "2232": {
+   "name": "Obede"
+  },
+  "2233": {
+   "name": "Simei"
+  },
+  "2235": {
+   "name": "Ocrã"
+  },
+  "2236": {
+   "name": "Obede"
+  },
+  "2237": {
+   "name": "Obede"
+  },
+  "2238": {
+   "name": "Ogue"
+  },
+  "2239": {
+   "name": "Oade"
+  },
+  "224": {
+   "name": "Amiúde"
+  },
+  "2240": {
+   "name": "Oel"
+  },
+  "2241": {
+   "name": "Olimpas"
+  },
+  "2243": {
+   "name": "Onri"
+  },
+  "2244": {
+   "name": "Onri"
+  },
+  "2245": {
+   "name": "Onri"
+  },
+  "2246": {
+   "name": "Onri"
+  },
+  "2247": {
+   "name": "Om"
+  },
+  "2248": {
+   "name": "Onã"
+  },
+  "2249": {
+   "name": "Onã"
+  },
+  "225": {
+   "name": "Amiúde"
+  },
+  "2250": {
+   "name": "Onã"
+  },
+  "2251": {
+   "name": "Onésimo"
+  },
+  "2252": {
+   "name": "Onesíforo"
+  },
+  "2253": {
+   "name": "Ofir"
+  },
+  "2254": {
+   "name": "Ofra"
+  },
+  "2255": {
+   "name": "Orebe"
+  },
+  "2256": {
+   "name": "Orém"
+  },
+  "2257": {
+   "name": "Orfa"
+  },
+  "2258": {
+   "name": "Otni"
+  },
+  "2259": {
+   "name": "Otniel"
+  },
+  "226": {
+   "name": "Amiur"
+  },
+  "2260": {
+   "name": "Ozém"
+  },
+  "2261": {
+   "name": "Ozém"
+  },
+  "2263": {
+   "name": "Padom"
+  },
+  "2265": {
+   "name": "Paate-Moabe"
+  },
+  "2266": {
+   "name": "Paate-Moabe"
+  },
+  "2267": {
+   "name": "Paate-Moabe"
+  },
+  "227": {
+   "name": "Amiúde"
+  },
+  "2271": {
+   "name": "Farmasta"
+  },
+  "2273": {
+   "name": "Parnaque"
+  },
+  "2274": {
+   "name": "Parós"
+  },
+  "2275": {
+   "name": "Parós"
+  },
+  "2276": {
+   "name": "Parós"
+  },
+  "2277": {
+   "name": "Parsandata"
+  },
+  "2278": {
+   "name": "Parua"
+  },
+  "2279": {
+   "name": "Pasaque"
+  },
+  "228": {
+   "name": "Aminadabe",
+   "other": "Aminadab"
+  },
+  "2280": {
+   "name": "Paseia"
+  },
+  "2281": {
+   "name": "Paseia",
+   "other": "Paseia"
+  },
+  "2282": {
+   "name": "Paseia"
+  },
+  "2283": {
+   "name": "Pasur"
+  },
+  "2284": {
+   "name": "Pasur"
+  },
+  "2285": {
+   "name": "Pasur"
+  },
+  "2286": {
+   "name": "Pasur"
+  },
+  "2287": {
+   "name": "Pasur"
+  },
+  "2288": {
+   "name": "Patrusim"
+  },
+  "2289": {
+   "name": "Pátrobas"
+  },
+  "229": {
+   "name": "Aminadabe"
+  },
+  "2290": {
+   "name": "Pedael"
+  },
+  "2291": {
+   "name": "Pedazur"
+  },
+  "2292": {
+   "name": "Pedaías"
+  },
+  "2293": {
+   "name": "Pedaías"
+  },
+  "2294": {
+   "name": "Pedaías"
+  },
+  "2295": {
+   "name": "Pedaías"
+  },
+  "2296": {
+   "name": "Pedaías"
+  },
+  "2297": {
+   "name": "Pedaías"
+  },
+  "2298": {
+   "name": "Pedaías"
+  },
+  "2299": {
+   "name": "Peca"
+  },
+  "23": {
+   "name": "Abiel",
+   "other": "Ner, Jeieli"
+  },
+  "230": {
+   "name": "Amisadai"
+  },
+  "2300": {
+   "name": "Pecaías"
+  },
+  "2301": {
+   "name": "Pelaías"
+  },
+  "2302": {
+   "name": "Pelaías"
+  },
+  "2303": {
+   "name": "Pelalias"
+  },
+  "2304": {
+   "name": "Pelatias"
+  },
+  "2305": {
+   "name": "Pelatias"
+  },
+  "2306": {
+   "name": "Pelatias"
+  },
+  "2307": {
+   "name": "Pelatias"
+  },
+  "2308": {
+   "name": "Pelegue",
+   "other": "Phalec"
+  },
+  "2309": {
+   "name": "Pelete"
+  },
+  "231": {
+   "name": "Amizabade"
+  },
+  "2310": {
+   "name": "Pelete"
+  },
+  "2311": {
+   "name": "Pelete"
+  },
+  "2312": {
+   "name": "Pelete"
+  },
+  "2313": {
+   "name": "Penina"
+  },
+  "2316": {
+   "name": "Seres"
+  },
+  "2317": {
+   "name": "Pérside"
+  },
+  "2318": {
+   "name": "Perida",
+   "other": "Peruda"
+  },
+  "2319": {
+   "name": "Petaías"
+  },
+  "232": {
+   "name": "Amnom"
+  },
+  "2320": {
+   "name": "Petaías"
+  },
+  "2321": {
+   "name": "Petaías"
+  },
+  "2322": {
+   "name": "Petaías"
+  },
+  "2323": {
+   "name": "Petuel"
+  },
+  "2324": {
+   "name": "Peuletai"
+  },
+  "2325": {
+   "name": "Palu",
+   "other": "Phallu"
+  },
+  "2326": {
+   "name": "Paltiel"
+  },
+  "2327": {
+   "name": "Fanuel"
+  },
+  "2328": {
+   "name": "Faraó (na viagem de Abraão)"
+  },
+  "2329": {
+   "name": "Faraó (de José)"
+  },
+  "233": {
+   "name": "Amnom"
+  },
+  "2330": {
+   "name": "Faraó"
+  },
+  "2331": {
+   "name": "Faraó (do Êxodo)"
+  },
+  "2332": {
+   "name": "Faraó"
+  },
+  "2333": {
+   "name": "Faraó"
+  },
+  "2334": {
+   "name": "Faraó"
+  },
+  "2335": {
+   "name": "Faraó"
+  },
+  "2336": {
+   "name": "Faraó",
+   "other": "Pharaoh-hophra"
+  },
+  "2337": {
+   "name": "Neco",
+   "other": "Necho"
+  },
+  "2338": {
+   "name": "Perez",
+   "other": "Phares, Perez"
+  },
+  "2339": {
+   "name": "Parós"
+  },
+  "234": {
+   "name": "Amoque"
+  },
+  "2340": {
+   "name": "Febe"
+  },
+  "2341": {
+   "name": "Ficol"
+  },
+  "2342": {
+   "name": "Filemom"
+  },
+  "2343": {
+   "name": "Fileto"
+  },
+  "2344": {
+   "name": "Filipe, o apóstolo",
+   "other": "Filipe"
+  },
+  "2345": {
+   "name": "Filipe"
+  },
+  "2346": {
+   "name": "Filipe"
+  },
+  "2347": {
+   "name": "Filipe, o evangelista",
+   "other": "Filipe"
+  },
+  "2348": {
+   "name": "Filólogo"
+  },
+  "2349": {
+   "name": "Fineias (levita)"
+  },
+  "235": {
+   "name": "Amom"
+  },
+  "2350": {
+   "name": "Fineias"
+  },
+  "2351": {
+   "name": "Fineias"
+  },
+  "2352": {
+   "name": "Flegonte"
+  },
+  "2353": {
+   "name": "Pura"
+  },
+  "2354": {
+   "name": "Pute",
+   "other": "Pute"
+  },
+  "2355": {
+   "name": "Pua",
+   "other": "Phuvah"
+  },
+  "2357": {
+   "name": "Pildas"
+  },
+  "2358": {
+   "name": "Pílea"
+  },
+  "236": {
+   "name": "Amom"
+  },
+  "2360": {
+   "name": "Pinom"
+  },
+  "2361": {
+   "name": "Pirã"
+  },
+  "2362": {
+   "name": "Pispa"
+  },
+  "2363": {
+   "name": "Pitom"
+  },
+  "2365": {
+   "name": "Pôncio Pilatos"
+  },
+  "2366": {
+   "name": "Porata"
+  },
+  "2367": {
+   "name": "Pórcio Festo",
+   "other": "Porcius"
+  },
+  "2368": {
+   "name": "Potifar"
+  },
+  "2369": {
+   "name": "Potífera"
+  },
+  "2370": {
+   "name": "Priscila",
+   "other": "Prisca"
+  },
+  "2371": {
+   "name": "Prócoro"
+  },
+  "2372": {
+   "name": "Puá"
+  },
+  "2373": {
+   "name": "Puá"
+  },
+  "2374": {
+   "name": "Públio"
+  },
+  "2375": {
+   "name": "Pudente"
+  },
+  "2376": {
+   "name": "Tiglate-Pilneser",
+   "other": "Pul, Jareb"
+  },
+  "2378": {
+   "name": "Quarto"
+  },
+  "2379": {
+   "name": "Rainha de Sabá"
+  },
+  "238": {
+   "name": "Amós"
+  },
+  "2380": {
+   "name": "Raamá"
+  },
+  "2381": {
+   "name": "Rabmague"
+  },
+  "2382": {
+   "name": "Rabe-Saris"
+  },
+  "2383": {
+   "name": "Rabsáris"
+  },
+  "2384": {
+   "name": "Rabsaqué"
+  },
+  "2385": {
+   "name": "Raabe"
+  },
+  "2386": {
+   "name": "Raquel",
+   "other": "Rahel"
+  },
+  "2387": {
+   "name": "Radai"
+  },
+  "2388": {
+   "name": "Raabe"
+  },
+  "2389": {
+   "name": "Raão"
+  },
+  "239": {
+   "name": "Amós"
+  },
+  "2391": {
+   "name": "Rão",
+   "other": "Arã"
+  },
+  "2392": {
+   "name": "Rão"
+  },
+  "2393": {
+   "name": "Rão"
+  },
+  "2394": {
+   "name": "Ramias"
+  },
+  "2395": {
+   "name": "Jeremote"
+  },
+  "2396": {
+   "name": "Refaías",
+   "other": "Rafa"
+  },
+  "2397": {
+   "name": "Rafu"
+  },
+  "2398": {
+   "name": "Reaías"
+  },
+  "2399": {
+   "name": "Reaías"
+  },
+  "2401": {
+   "name": "Rebeca"
+  },
+  "2402": {
+   "name": "Recabe"
+  },
+  "2403": {
+   "name": "Recabe"
+  },
+  "2404": {
+   "name": "Recabe"
+  },
+  "2405": {
+   "name": "Reca"
+  },
+  "2406": {
+   "name": "Reelaiah",
+   "other": "Raamiah"
+  },
+  "2407": {
+   "name": "Regém"
+  },
+  "2408": {
+   "name": "Regém-Meleque"
+  },
+  "2409": {
+   "name": "Reabias"
+  },
+  "2410": {
+   "name": "Reobe"
+  },
+  "2411": {
+   "name": "Reobe"
+  },
+  "2412": {
+   "name": "Roboão",
+   "other": "Roboam"
+  },
+  "2413": {
+   "name": "Reum",
+   "other": "Harim, Nehum"
+  },
+  "2414": {
+   "name": "Reum"
+  },
+  "2415": {
+   "name": "Reum"
+  },
+  "2416": {
+   "name": "Reum"
+  },
+  "2417": {
+   "name": "Reí"
+  },
+  "2418": {
+   "name": "Requém"
+  },
+  "2419": {
+   "name": "Requém"
+  },
+  "242": {
+   "name": "Anrão"
+  },
+  "2420": {
+   "name": "Remalias"
+  },
+  "2421": {
+   "name": "Rafael"
+  },
+  "2422": {
+   "name": "Refa"
+  },
+  "2423": {
+   "name": "Refaías"
+  },
+  "2424": {
+   "name": "Refaías"
+  },
+  "2425": {
+   "name": "Refaías"
+  },
+  "2426": {
+   "name": "Refaías"
+  },
+  "2427": {
+   "name": "Resefe"
+  },
+  "2428": {
+   "name": "Reú",
+   "other": "Ragau"
+  },
+  "2429": {
+   "name": "Rúben"
+  },
+  "243": {
+   "name": "Anrão"
+  },
+  "2431": {
+   "name": "Jetro",
+   "other": "Deuel, Reuel, Raguel"
+  },
+  "2433": {
+   "name": "Reumá"
+  },
+  "2434": {
+   "name": "Rizia"
+  },
+  "2435": {
+   "name": "Resim"
+  },
+  "2436": {
+   "name": "Rezim"
+  },
+  "2437": {
+   "name": "Rezom"
+  },
+  "2438": {
+   "name": "Resa"
+  },
+  "2439": {
+   "name": "Rode"
+  },
+  "244": {
+   "name": "Anrafel"
+  },
+  "2441": {
+   "name": "Rimom"
+  },
+  "2442": {
+   "name": "Rina"
+  },
+  "2443": {
+   "name": "Rifate"
+  },
+  "2444": {
+   "name": "Rispa"
+  },
+  "2445": {
+   "name": "Roga"
+  },
+  "2446": {
+   "name": "Romanti-Ezer"
+  },
+  "2447": {
+   "name": "Rafa",
+   "other": "Rosh"
+  },
+  "2448": {
+   "name": "Rufo"
+  },
+  "2449": {
+   "name": "Rufo"
+  },
+  "245": {
+   "name": "Anzi"
+  },
+  "2450": {
+   "name": "Rute"
+  },
+  "2451": {
+   "name": "Sabtá"
+  },
+  "2452": {
+   "name": "Sabtecá"
+  },
+  "2454": {
+   "name": "Sadoque"
+  },
+  "2455": {
+   "name": "Salá",
+   "other": "Selá"
+  },
+  "2456": {
+   "name": "Sealtiel",
+   "other": "Salatiel"
+  },
+  "2457": {
+   "name": "Salatiel"
+  },
+  "2458": {
+   "name": "Salai"
+  },
+  "2459": {
+   "name": "Salu"
+  },
+  "246": {
+   "name": "Anzi"
+  },
+  "2460": {
+   "name": "Salu"
+  },
+  "2461": {
+   "name": "Salu",
+   "other": "Salai"
+  },
+  "2463": {
+   "name": "Salmom",
+   "other": "Salma"
+  },
+  "2464": {
+   "name": "Salomé"
+  },
+  "2466": {
+   "name": "Sangar-Nebo"
+  },
+  "2467": {
+   "name": "Samlá"
+  },
+  "2468": {
+   "name": "Sansão"
+  },
+  "2469": {
+   "name": "Samuel",
+   "other": "Samuel"
+  },
+  "247": {
+   "name": "Aná"
+  },
+  "2470": {
+   "name": "Sambalate"
+  },
+  "2471": {
+   "name": "Sipai",
+   "other": "Saph"
+  },
+  "2472": {
+   "name": "Safira"
+  },
+  "2473": {
+   "name": "Sara",
+   "other": "Sarai"
+  },
+  "2474": {
+   "name": "Sarafe"
+  },
+  "2475": {
+   "name": "Sarsequim"
+  },
+  "2476": {
+   "name": "Satanás",
+   "other": "Beelzebub"
+  },
+  "2477": {
+   "name": "Saul",
+   "other": "Saul"
+  },
+  "2479": {
+   "name": "Paulo",
+   "other": "Saulo, Mercúrio"
+  },
+  "248": {
+   "name": "Aná"
+  },
+  "2480": {
+   "name": "Ceva"
+  },
+  "2481": {
+   "name": "Sebá"
+  },
+  "2482": {
+   "name": "Segundo"
+  },
+  "2483": {
+   "name": "Segube"
+  },
+  "2484": {
+   "name": "Segube"
+  },
+  "2486": {
+   "name": "Selede"
+  },
+  "2487": {
+   "name": "Semaquias"
+  },
+  "2489": {
+   "name": "Senaqueribe",
+   "other": "Sargon"
+  },
+  "249": {
+   "name": "Aná"
+  },
+  "2490": {
+   "name": "Senua"
+  },
+  "2492": {
+   "name": "Sera",
+   "other": "Sara"
+  },
+  "2493": {
+   "name": "Zadoque",
+   "other": "Shisha, Seva, Seraías"
+  },
+  "2494": {
+   "name": "Seraías"
+  },
+  "2495": {
+   "name": "Seraías"
+  },
+  "2496": {
+   "name": "Seraías"
+  },
+  "2497": {
+   "name": "Seraías"
+  },
+  "2498": {
+   "name": "Seraías"
+  },
+  "2499": {
+   "name": "Seraías"
+  },
+  "250": {
+   "name": "Anaías"
+  },
+  "2500": {
+   "name": "Seraías"
+  },
+  "2501": {
+   "name": "Serede"
+  },
+  "2502": {
+   "name": "Sérgio Paulo"
+  },
+  "2503": {
+   "name": "Serugue",
+   "other": "Saruch"
+  },
+  "2504": {
+   "name": "Sete",
+   "other": "Sheth"
+  },
+  "2505": {
+   "name": "Setur"
+  },
+  "2508": {
+   "name": "Saasgaz"
+  },
+  "2509": {
+   "name": "Sabetai"
+  },
+  "251": {
+   "name": "Anaías"
+  },
+  "2510": {
+   "name": "Sabetai"
+  },
+  "2511": {
+   "name": "Sabetai"
+  },
+  "2512": {
+   "name": "Saquias"
+  },
+  "2513": {
+   "name": "Saaraim"
+  },
+  "2514": {
+   "name": "Salum"
+  },
+  "2515": {
+   "name": "Salum"
+  },
+  "2516": {
+   "name": "Jeoacaz",
+   "other": "Salum"
+  },
+  "2517": {
+   "name": "Salum"
+  },
+  "2518": {
+   "name": "Salum"
+  },
+  "2519": {
+   "name": "Salum",
+   "other": "Mesulão"
+  },
+  "252": {
+   "name": "Anaque",
+   "other": "Anakims"
+  },
+  "2520": {
+   "name": "Salum"
+  },
+  "2521": {
+   "name": "Salum"
+  },
+  "2522": {
+   "name": "Salum"
+  },
+  "2523": {
+   "name": "Salum"
+  },
+  "2524": {
+   "name": "Salum"
+  },
+  "2525": {
+   "name": "Salum"
+  },
+  "2526": {
+   "name": "Salum"
+  },
+  "2527": {
+   "name": "Salum"
+  },
+  "2528": {
+   "name": "Salmai"
+  },
+  "2529": {
+   "name": "Salmaneser"
+  },
+  "2530": {
+   "name": "Sama"
+  },
+  "2531": {
+   "name": "Samaria"
+  },
+  "2532": {
+   "name": "Semede"
+  },
+  "2533": {
+   "name": "Semer"
+  },
+  "2534": {
+   "name": "Sangar"
+  },
+  "2535": {
+   "name": "Samute"
+  },
+  "2536": {
+   "name": "Samir"
+  },
+  "2537": {
+   "name": "Samá"
+  },
+  "2538": {
+   "name": "Samá"
+  },
+  "2539": {
+   "name": "Samá"
+  },
+  "254": {
+   "name": "Anameleque"
+  },
+  "2540": {
+   "name": "Samá",
+   "other": "Shammoth"
+  },
+  "2541": {
+   "name": "Sage",
+   "other": "Samá"
+  },
+  "2542": {
+   "name": "Samai"
+  },
+  "2543": {
+   "name": "Samai"
+  },
+  "2544": {
+   "name": "Samai"
+  },
+  "2545": {
+   "name": "Samua"
+  },
+  "2546": {
+   "name": "Samua"
+  },
+  "2547": {
+   "name": "Salomão",
+   "other": "Simeia"
+  },
+  "2548": {
+   "name": "Sanserai"
+  },
+  "255": {
+   "name": "Anã"
+  },
+  "2550": {
+   "name": "Safã"
+  },
+  "2551": {
+   "name": "Safã"
+  },
+  "2552": {
+   "name": "Safate"
+  },
+  "2553": {
+   "name": "Safate"
+  },
+  "2554": {
+   "name": "Safate"
+  },
+  "2555": {
+   "name": "Safate"
+  },
+  "2556": {
+   "name": "Safate"
+  },
+  "2557": {
+   "name": "Sarai"
+  },
+  "2558": {
+   "name": "Sharar",
+   "other": "Sacar"
+  },
+  "2559": {
+   "name": "Sarezer"
+  },
+  "2560": {
+   "name": "Sasai"
+  },
+  "2561": {
+   "name": "Sasaque"
+  },
+  "2562": {
+   "name": "Saul"
+  },
+  "2563": {
+   "name": "Saul",
+   "other": "Joel"
+  },
+  "2564": {
+   "name": "Seal"
+  },
+  "2565": {
+   "name": "Searias"
+  },
+  "2566": {
+   "name": "Sear-Jasube"
+  },
+  "2567": {
+   "name": "Sebá (filho de Raamá)"
+  },
+  "2568": {
+   "name": "Sebá (filho de Joctã)"
+  },
+  "2569": {
+   "name": "Sabá"
+  },
+  "257": {
+   "name": "Ananias"
+  },
+  "2570": {
+   "name": "Seba"
+  },
+  "2571": {
+   "name": "Sebá"
+  },
+  "2572": {
+   "name": "Sebanias"
+  },
+  "2573": {
+   "name": "Sebanias"
+  },
+  "2574": {
+   "name": "Sebanias",
+   "other": "Secanias"
+  },
+  "2575": {
+   "name": "Sebanias"
+  },
+  "2576": {
+   "name": "Seber"
+  },
+  "2577": {
+   "name": "Sebna"
+  },
+  "2578": {
+   "name": "Sebna"
+  },
+  "2579": {
+   "name": "Sebuel",
+   "other": "Shebuel"
+  },
+  "258": {
+   "name": "Ananias (marido de Safira)"
+  },
+  "2580": {
+   "name": "Subael",
+   "other": "Shebuel"
+  },
+  "2581": {
+   "name": "Secanias"
+  },
+  "2582": {
+   "name": "Secanias"
+  },
+  "2583": {
+   "name": "Secanias"
+  },
+  "2584": {
+   "name": "Secanias"
+  },
+  "2585": {
+   "name": "Secanias"
+  },
+  "2586": {
+   "name": "Secanias"
+  },
+  "2587": {
+   "name": "Secanias"
+  },
+  "2588": {
+   "name": "Siquém",
+   "other": "Sychem"
+  },
+  "2589": {
+   "name": "Siquém"
+  },
+  "259": {
+   "name": "Ananias (discípulo em Damasco)"
+  },
+  "2590": {
+   "name": "Siquém"
+  },
+  "2591": {
+   "name": "Sedeur"
+  },
+  "2592": {
+   "name": "Searias"
+  },
+  "2593": {
+   "name": "Selá"
+  },
+  "2594": {
+   "name": "Selemias"
+  },
+  "2595": {
+   "name": "Selemias"
+  },
+  "2596": {
+   "name": "Selemias"
+  },
+  "2597": {
+   "name": "Selemias"
+  },
+  "2598": {
+   "name": "Selemias"
+  },
+  "2599": {
+   "name": "Selemias"
+  },
+  "260": {
+   "name": "Ananias (sumo sacerdote)"
+  },
+  "2600": {
+   "name": "Selemias"
+  },
+  "2601": {
+   "name": "Selemias"
+  },
+  "2603": {
+   "name": "Seles"
+  },
+  "2604": {
+   "name": "Selomi"
+  },
+  "2605": {
+   "name": "Selomite"
+  },
+  "2606": {
+   "name": "Selomite"
+  },
+  "2607": {
+   "name": "Selomote"
+  },
+  "2608": {
+   "name": "Selomote",
+   "other": "Selomote"
+  },
+  "2609": {
+   "name": "Selomote"
+  },
+  "261": {
+   "name": "Anate"
+  },
+  "2610": {
+   "name": "Selomite"
+  },
+  "2611": {
+   "name": "Selomite"
+  },
+  "2612": {
+   "name": "Selumiel"
+  },
+  "2613": {
+   "name": "Sem",
+   "other": "Sem"
+  },
+  "2614": {
+   "name": "Sema"
+  },
+  "2615": {
+   "name": "Sema"
+  },
+  "2616": {
+   "name": "Sema"
+  },
+  "2617": {
+   "name": "Sema"
+  },
+  "2618": {
+   "name": "Semaá"
+  },
+  "2619": {
+   "name": "Semaías"
+  },
+  "262": {
+   "name": "Anatote"
+  },
+  "2620": {
+   "name": "Samaías"
+  },
+  "2621": {
+   "name": "Semaías"
+  },
+  "2622": {
+   "name": "Semaías"
+  },
+  "2623": {
+   "name": "Semaías"
+  },
+  "2624": {
+   "name": "Semaías",
+   "other": "Salomão"
+  },
+  "2625": {
+   "name": "Semaías"
+  },
+  "2626": {
+   "name": "Semaías"
+  },
+  "2627": {
+   "name": "Semaías"
+  },
+  "2628": {
+   "name": "Semaías"
+  },
+  "2629": {
+   "name": "Semaías"
+  },
+  "263": {
+   "name": "Anatote"
+  },
+  "2630": {
+   "name": "Semaías"
+  },
+  "2631": {
+   "name": "Semaías"
+  },
+  "2632": {
+   "name": "Semaías"
+  },
+  "2633": {
+   "name": "Semaías"
+  },
+  "2634": {
+   "name": "Semaías"
+  },
+  "2635": {
+   "name": "Semaías"
+  },
+  "2636": {
+   "name": "Semaías"
+  },
+  "2637": {
+   "name": "Semaías"
+  },
+  "2638": {
+   "name": "Semaías"
+  },
+  "2639": {
+   "name": "Semaías"
+  },
+  "264": {
+   "name": "André"
+  },
+  "2640": {
+   "name": "Semaías"
+  },
+  "2641": {
+   "name": "Semaías"
+  },
+  "2642": {
+   "name": "Semaías"
+  },
+  "2643": {
+   "name": "Semaías"
+  },
+  "2644": {
+   "name": "Semeías"
+  },
+  "2645": {
+   "name": "Semarias"
+  },
+  "2646": {
+   "name": "Semarias"
+  },
+  "2647": {
+   "name": "Semarias"
+  },
+  "2648": {
+   "name": "Semeber"
+  },
+  "2649": {
+   "name": "Semer"
+  },
+  "265": {
+   "name": "Andrônico"
+  },
+  "2650": {
+   "name": "Semida",
+   "other": "Shemidah"
+  },
+  "2651": {
+   "name": "Semiramote"
+  },
+  "2652": {
+   "name": "Semiramote"
+  },
+  "2653": {
+   "name": "Samuel"
+  },
+  "2654": {
+   "name": "Samuel"
+  },
+  "2655": {
+   "name": "Senazar"
+  },
+  "2656": {
+   "name": "Sefatias"
+  },
+  "2657": {
+   "name": "Sefatias"
+  },
+  "2658": {
+   "name": "Sefatias"
+  },
+  "2659": {
+   "name": "Sefatias"
+  },
+  "2660": {
+   "name": "Sefatias"
+  },
+  "2661": {
+   "name": "Sefatias"
+  },
+  "2662": {
+   "name": "Sefatias"
+  },
+  "2663": {
+   "name": "Sefatias"
+  },
+  "2664": {
+   "name": "Sefatias"
+  },
+  "2665": {
+   "name": "Sefô",
+   "other": "Shephi"
+  },
+  "2666": {
+   "name": "Seerá"
+  },
+  "2667": {
+   "name": "Serebias"
+  },
+  "2668": {
+   "name": "Serebias"
+  },
+  "2669": {
+   "name": "Seres"
+  },
+  "267": {
+   "name": "Anião"
+  },
+  "2670": {
+   "name": "Sarezer"
+  },
+  "2671": {
+   "name": "Sesai"
+  },
+  "2672": {
+   "name": "Sesã"
+  },
+  "2673": {
+   "name": "Setar"
+  },
+  "2674": {
+   "name": "Setar-Bozenai"
+  },
+  "2675": {
+   "name": "Seva"
+  },
+  "2676": {
+   "name": "Sili"
+  },
+  "2677": {
+   "name": "Silém",
+   "other": "Salum"
+  },
+  "2678": {
+   "name": "Siloni"
+  },
+  "2679": {
+   "name": "Silsa"
+  },
+  "268": {
+   "name": "Ana"
+  },
+  "2680": {
+   "name": "Simeia"
+  },
+  "2681": {
+   "name": "Simeia"
+  },
+  "2682": {
+   "name": "Simeia"
+  },
+  "2683": {
+   "name": "Simeate"
+  },
+  "2684": {
+   "name": "Simei"
+  },
+  "2685": {
+   "name": "Simei"
+  },
+  "2686": {
+   "name": "Simei"
+  },
+  "2687": {
+   "name": "Simei"
+  },
+  "2688": {
+   "name": "Simei"
+  },
+  "2689": {
+   "name": "Simei"
+  },
+  "269": {
+   "name": "Anás"
+  },
+  "2690": {
+   "name": "Simei"
+  },
+  "2691": {
+   "name": "Simei"
+  },
+  "2692": {
+   "name": "Simei"
+  },
+  "2693": {
+   "name": "Simei"
+  },
+  "2694": {
+   "name": "Simei"
+  },
+  "2695": {
+   "name": "Simei"
+  },
+  "2696": {
+   "name": "Simei"
+  },
+  "2697": {
+   "name": "Simeão"
+  },
+  "2698": {
+   "name": "Simei"
+  },
+  "2699": {
+   "name": "Simei",
+   "other": "Shimi"
+  },
+  "2700": {
+   "name": "Samá",
+   "other": "Simeia, Shimma"
+  },
+  "2701": {
+   "name": "Simeão"
+  },
+  "2702": {
+   "name": "Sinrate"
+  },
+  "2703": {
+   "name": "Sinri"
+  },
+  "2704": {
+   "name": "Sinri"
+  },
+  "2705": {
+   "name": "Sinri"
+  },
+  "2706": {
+   "name": "Sinrom"
+  },
+  "2707": {
+   "name": "Sinsai"
+  },
+  "2708": {
+   "name": "Sinabe"
+  },
+  "2709": {
+   "name": "Sifi"
+  },
+  "271": {
+   "name": "Antotias"
+  },
+  "2710": {
+   "name": "Sifrá"
+  },
+  "2711": {
+   "name": "Siftã"
+  },
+  "2712": {
+   "name": "Sisaque"
+  },
+  "2713": {
+   "name": "Sitrai"
+  },
+  "2714": {
+   "name": "Siza"
+  },
+  "2715": {
+   "name": "Sobabe"
+  },
+  "2716": {
+   "name": "Sobabe"
+  },
+  "2717": {
+   "name": "Sobaque",
+   "other": "Shophach"
+  },
+  "2718": {
+   "name": "Sobai"
+  },
+  "2719": {
+   "name": "Sobal"
+  },
+  "272": {
+   "name": "Anube"
+  },
+  "2720": {
+   "name": "Sobal"
+  },
+  "2721": {
+   "name": "Sobeque"
+  },
+  "2722": {
+   "name": "Sobi"
+  },
+  "2723": {
+   "name": "Soão"
+  },
+  "2724": {
+   "name": "Shimrith",
+   "other": "Shomer"
+  },
+  "2725": {
+   "name": "Semer",
+   "other": "Shomer"
+  },
+  "2726": {
+   "name": "Suá"
+  },
+  "2727": {
+   "name": "Suá"
+  },
+  "2728": {
+   "name": "Sua"
+  },
+  "2729": {
+   "name": "Suá"
+  },
+  "273": {
+   "name": "Apeles"
+  },
+  "2730": {
+   "name": "Ula",
+   "other": "Sual"
+  },
+  "2731": {
+   "name": "Suni"
+  },
+  "2732": {
+   "name": "Hupim"
+  },
+  "2733": {
+   "name": "Supim"
+  },
+  "2734": {
+   "name": "Sutela"
+  },
+  "2735": {
+   "name": "Sutela"
+  },
+  "2736": {
+   "name": "Sia",
+   "other": "Siaha"
+  },
+  "2737": {
+   "name": "Sibecai",
+   "other": "Sibbecai, Mebunnai"
+  },
+  "2738": {
+   "name": "Sidom",
+   "other": "Sidom"
+  },
+  "2739": {
+   "name": "Seom"
+  },
+  "274": {
+   "name": "Afia"
+  },
+  "2740": {
+   "name": "Silas",
+   "other": "Silvanus"
+  },
+  "2741": {
+   "name": "Simeão"
+  },
+  "2742": {
+   "name": "Simeão"
+  },
+  "2743": {
+   "name": "Simeão"
+  },
+  "2744": {
+   "name": "Simeão",
+   "other": "Niger"
+  },
+  "2745": {
+   "name": "Simão Pedro",
+   "other": "Cephas, Simeão"
+  },
+  "2746": {
+   "name": "Simão, o Zelote"
+  },
+  "2747": {
+   "name": "Simão"
+  },
+  "2748": {
+   "name": "Simão"
+  },
+  "2749": {
+   "name": "Simão"
+  },
+  "275": {
+   "name": "Hapises"
+  },
+  "2750": {
+   "name": "Simão"
+  },
+  "2752": {
+   "name": "Simão, o mágico"
+  },
+  "2753": {
+   "name": "Simão, o curtidor"
+  },
+  "2754": {
+   "name": "Sinri"
+  },
+  "2756": {
+   "name": "Sismai"
+  },
+  "2757": {
+   "name": "Sísera (capitão do exército)"
+  },
+  "2758": {
+   "name": "Sísera"
+  },
+  "2759": {
+   "name": "Irmã de Tafnes"
+  },
+  "276": {
+   "name": "Apolo"
+  },
+  "2760": {
+   "name": "Sô"
+  },
+  "2762": {
+   "name": "Salomão",
+   "other": "Jedidiah"
+  },
+  "2763": {
+   "name": "Filho de Abinadabe"
+  },
+  "2764": {
+   "name": "Filho de Dequer"
+  },
+  "2765": {
+   "name": "Filho de Geber"
+  },
+  "2766": {
+   "name": "Filho de Hesede"
+  },
+  "2767": {
+   "name": "Filho de Hur"
+  },
+  "2768": {
+   "name": "Filho de Joiada"
+  },
+  "2769": {
+   "name": "Filhos de Jásen",
+   "other": "Hashem"
+  },
+  "277": {
+   "name": "Apaim"
+  },
+  "2770": {
+   "name": "Sopater",
+   "other": "Sosipater"
+  },
+  "2771": {
+   "name": "Soferete"
+  },
+  "2772": {
+   "name": "Sóstenes"
+  },
+  "278": {
+   "name": "Ápia"
+  },
+  "279": {
+   "name": "Áquila"
+  },
+  "28": {
+   "name": "Abiail"
+  },
+  "2801": {
+   "name": "Estéfanas"
+  },
+  "2802": {
+   "name": "Estêvão"
+  },
+  "2803": {
+   "name": "Suá"
+  },
+  "2804": {
+   "name": "Susana"
+  },
+  "2807": {
+   "name": "Tabaote"
+  },
+  "281": {
+   "name": "Arade"
+  },
+  "2810": {
+   "name": "Dorcas",
+   "other": "Tabitha"
+  },
+  "2811": {
+   "name": "Tabrimom"
+  },
+  "2812": {
+   "name": "Taã"
+  },
+  "2813": {
+   "name": "Taã"
+  },
+  "2814": {
+   "name": "Taate"
+  },
+  "2815": {
+   "name": "Taate"
+  },
+  "2816": {
+   "name": "Taate"
+  },
+  "2817": {
+   "name": "Tafnes"
+  },
+  "282": {
+   "name": "Ara"
+  },
+  "2820": {
+   "name": "Talmom"
+  },
+  "2821": {
+   "name": "Tamar",
+   "other": "Thamar"
+  },
+  "2824": {
+   "name": "Tanumete"
+  },
+  "2825": {
+   "name": "Tafate"
+  },
+  "2826": {
+   "name": "Tapua"
+  },
+  "2827": {
+   "name": "Tareia",
+   "other": "Tarea"
+  },
+  "2828": {
+   "name": "Társis (filho de Javã)"
+  },
+  "2829": {
+   "name": "Társis (príncipe da Pérsia)"
+  },
+  "283": {
+   "name": "Ara"
+  },
+  "2830": {
+   "name": "Tartã"
+  },
+  "2831": {
+   "name": "Tatenai"
+  },
+  "2832": {
+   "name": "Tebá"
+  },
+  "2833": {
+   "name": "Tebalias"
+  },
+  "2834": {
+   "name": "Teína"
+  },
+  "2835": {
+   "name": "Telá"
+  },
+  "2836": {
+   "name": "Telém"
+  },
+  "2838": {
+   "name": "Temã"
+  },
+  "2839": {
+   "name": "Temã"
+  },
+  "284": {
+   "name": "Ara"
+  },
+  "2841": {
+   "name": "Terá",
+   "other": "Thara"
+  },
+  "2842": {
+   "name": "Teres"
+  },
+  "2843": {
+   "name": "Tércio"
+  },
+  "2844": {
+   "name": "Tértulo"
+  },
+  "2845": {
+   "name": "Taás"
+  },
+  "2846": {
+   "name": "Tamá",
+   "other": "Thamah"
+  },
+  "2847": {
+   "name": "Társis"
+  },
+  "2848": {
+   "name": "O gigante de Gate"
+  },
+  "2849": {
+   "name": "Teófilo"
+  },
+  "285": {
+   "name": "Arã (filho de Sem)"
+  },
+  "2850": {
+   "name": "Teudas"
+  },
+  "2851": {
+   "name": "Tomé",
+   "other": "Didymus"
+  },
+  "2852": {
+   "name": "Tibério"
+  },
+  "2855": {
+   "name": "Ticvá",
+   "other": "Tikvath"
+  },
+  "2856": {
+   "name": "Ticvá"
+  },
+  "2857": {
+   "name": "Tilom"
+  },
+  "2858": {
+   "name": "Timeu"
+  },
+  "286": {
+   "name": "Arã (filho de Quemuel)"
+  },
+  "2861": {
+   "name": "Timna"
+  },
+  "2862": {
+   "name": "Timom"
+  },
+  "2863": {
+   "name": "Timóteo",
+   "other": "Timothy"
+  },
+  "2865": {
+   "name": "Tiraca"
+  },
+  "2866": {
+   "name": "Tiraná"
+  },
+  "2867": {
+   "name": "Tíria"
+  },
+  "2868": {
+   "name": "Tirza"
+  },
+  "2869": {
+   "name": "Tito"
+  },
+  "287": {
+   "name": "Arã (tribo de Aer)"
+  },
+  "2870": {
+   "name": "Tobadonias"
+  },
+  "2871": {
+   "name": "Tobias"
+  },
+  "2872": {
+   "name": "Tobias"
+  },
+  "2873": {
+   "name": "Tobias"
+  },
+  "2874": {
+   "name": "Tobias"
+  },
+  "2875": {
+   "name": "Togarma"
+  },
+  "2876": {
+   "name": "Naate",
+   "other": "Toah, Tohu"
+  },
+  "2877": {
+   "name": "Toí",
+   "other": "Tou"
+  },
+  "2879": {
+   "name": "Tolá"
+  },
+  "288": {
+   "name": "Arã"
+  },
+  "2880": {
+   "name": "Trófimo"
+  },
+  "2881": {
+   "name": "Trifena"
+  },
+  "2882": {
+   "name": "Trifosa"
+  },
+  "2884": {
+   "name": "Tubalcaim"
+  },
+  "2885": {
+   "name": "Tíquico"
+  },
+  "2886": {
+   "name": "Tirano"
+  },
+  "2889": {
+   "name": "Ulão"
+  },
+  "289": {
+   "name": "Ornã",
+   "other": "Araunah"
+  },
+  "2890": {
+   "name": "Ulão"
+  },
+  "2891": {
+   "name": "Uni"
+  },
+  "2892": {
+   "name": "Uni"
+  },
+  "2894": {
+   "name": "Urbano"
+  },
+  "2898": {
+   "name": "Urias",
+   "other": "Urias"
+  },
+  "2899": {
+   "name": "Urias",
+   "other": "Urias"
+  },
+  "29": {
+   "name": "Abiail"
+  },
+  "2900": {
+   "name": "Uriel",
+   "other": "Sofonias"
+  },
+  "2903": {
+   "name": "Urias",
+   "other": "Urias"
+  },
+  "2904": {
+   "name": "Urias"
+  },
+  "2905": {
+   "name": "Urias"
+  },
+  "2906": {
+   "name": "Utai"
+  },
+  "2907": {
+   "name": "Utai"
+  },
+  "2908": {
+   "name": "Uz (filho de Arã)"
+  },
+  "2909": {
+   "name": "Uz (filho de Disã)"
+  },
+  "291": {
+   "name": "Arquelau"
+  },
+  "2912": {
+   "name": "Uzá"
+  },
+  "2913": {
+   "name": "Uzá"
+  },
+  "2914": {
+   "name": "Uzá"
+  },
+  "2915": {
+   "name": "Uzá"
+  },
+  "2916": {
+   "name": "Uzá"
+  },
+  "2917": {
+   "name": "Uzi"
+  },
+  "2918": {
+   "name": "Uzi"
+  },
+  "2919": {
+   "name": "Uzi"
+  },
+  "2920": {
+   "name": "Uzi"
+  },
+  "2921": {
+   "name": "Uzi"
+  },
+  "2922": {
+   "name": "Uzi"
+  },
+  "2923": {
+   "name": "Uzi"
+  },
+  "2924": {
+   "name": "Uzia"
+  },
+  "2925": {
+   "name": "Azarias",
+   "other": "Uzias"
+  },
+  "2926": {
+   "name": "Uzia"
+  },
+  "2927": {
+   "name": "Uzias"
+  },
+  "2928": {
+   "name": "Uzias"
+  },
+  "2929": {
+   "name": "Uziel"
+  },
+  "293": {
+   "name": "Arde"
+  },
+  "2930": {
+   "name": "Uziel"
+  },
+  "2931": {
+   "name": "Uziel"
+  },
+  "2932": {
+   "name": "Uziel",
+   "other": "Azareel"
+  },
+  "2933": {
+   "name": "Uziel"
+  },
+  "2934": {
+   "name": "Uziel"
+  },
+  "2935": {
+   "name": "Vaisata"
+  },
+  "2936": {
+   "name": "Vanias"
+  },
+  "2937": {
+   "name": "Vasti"
+  },
+  "2938": {
+   "name": "Vofsi"
+  },
+  "294": {
+   "name": "Arde"
+  },
+  "2940": {
+   "name": "Esposa de Ezequiel"
+  },
+  "2943": {
+   "name": "Esposa de Simão"
+  },
+  "2944": {
+   "name": "Zaavã",
+   "other": "Zaavan"
+  },
+  "2945": {
+   "name": "Zabade"
+  },
+  "2946": {
+   "name": "Zabade"
+  },
+  "2947": {
+   "name": "Zabade"
+  },
+  "2948": {
+   "name": "Zabade"
+  },
+  "2949": {
+   "name": "Zabade"
+  },
+  "295": {
+   "name": "Ardom"
+  },
+  "2950": {
+   "name": "Zabade"
+  },
+  "2951": {
+   "name": "Zabai"
+  },
+  "2952": {
+   "name": "Zabai"
+  },
+  "2953": {
+   "name": "Zabude"
+  },
+  "2954": {
+   "name": "Zabdi",
+   "other": "Zinri"
+  },
+  "2956": {
+   "name": "Zabdias"
+  },
+  "2959": {
+   "name": "Zabude"
+  },
+  "2960": {
+   "name": "Zacai"
+  },
+  "2962": {
+   "name": "Zacur"
+  },
+  "2963": {
+   "name": "Zacur"
+  },
+  "2964": {
+   "name": "Zacur"
+  },
+  "2965": {
+   "name": "Zacur"
+  },
+  "2966": {
+   "name": "Zacur"
+  },
+  "2967": {
+   "name": "Zacur"
+  },
+  "2968": {
+   "name": "Zacur"
+  },
+  "2969": {
+   "name": "Zacarias"
+  },
+  "2970": {
+   "name": "Zacarias",
+   "other": "Zacarias"
+  },
+  "2971": {
+   "name": "Zacarias"
+  },
+  "2972": {
+   "name": "Zacher",
+   "other": "Zacarias"
+  },
+  "2973": {
+   "name": "Zadoque"
+  },
+  "2974": {
+   "name": "Zadoque"
+  },
+  "2975": {
+   "name": "Zadoque"
+  },
+  "2976": {
+   "name": "Zadoque"
+  },
+  "2977": {
+   "name": "Zadoque"
+  },
+  "2978": {
+   "name": "Zadoque"
+  },
+  "2979": {
+   "name": "Zadoque"
+  },
+  "298": {
+   "name": "Argobe"
+  },
+  "2980": {
+   "name": "Zaaão"
+  },
+  "2981": {
+   "name": "Zalafe"
+  },
+  "2982": {
+   "name": "Ilai",
+   "other": "Salmom"
+  },
+  "2983": {
+   "name": "Zalmuna"
+  },
+  "2984": {
+   "name": "Zerá",
+   "other": "Zara, Zarah"
+  },
+  "2985": {
+   "name": "Zatu"
+  },
+  "2986": {
+   "name": "Zatu"
+  },
+  "2988": {
+   "name": "Zebadias"
+  },
+  "2989": {
+   "name": "Zebadias"
+  },
+  "2990": {
+   "name": "Zebadias"
+  },
+  "2991": {
+   "name": "Zebadias"
+  },
+  "2992": {
+   "name": "Zebadias"
+  },
+  "2993": {
+   "name": "Zebadias"
+  },
+  "2994": {
+   "name": "Zebadias"
+  },
+  "2995": {
+   "name": "Zebadias"
+  },
+  "2996": {
+   "name": "Zebadias"
+  },
+  "2997": {
+   "name": "Zeba"
+  },
+  "2998": {
+   "name": "Zebedeu"
+  },
+  "3": {
+   "name": "Abagta"
+  },
+  "30": {
+   "name": "Abiail"
+  },
+  "300": {
+   "name": "Aridata"
+  },
+  "3000": {
+   "name": "Zebida"
+  },
+  "3002": {
+   "name": "Zebulom",
+   "other": "Zabulon"
+  },
+  "3003": {
+   "name": "Zacarias"
+  },
+  "3004": {
+   "name": "Zacarias"
+  },
+  "3005": {
+   "name": "Zacarias"
+  },
+  "3006": {
+   "name": "Zacarias"
+  },
+  "3007": {
+   "name": "Zacarias"
+  },
+  "3008": {
+   "name": "Zacarias"
+  },
+  "3009": {
+   "name": "Zacarias"
+  },
+  "301": {
+   "name": "Arié"
+  },
+  "3010": {
+   "name": "Zacarias"
+  },
+  "3011": {
+   "name": "Zacarias",
+   "other": "Zacarias"
+  },
+  "3012": {
+   "name": "Zacarias"
+  },
+  "3013": {
+   "name": "Zacarias"
+  },
+  "3014": {
+   "name": "Zacarias"
+  },
+  "3015": {
+   "name": "Zacarias"
+  },
+  "3016": {
+   "name": "Zacarias"
+  },
+  "3017": {
+   "name": "Zacarias"
+  },
+  "3018": {
+   "name": "Zacarias"
+  },
+  "3019": {
+   "name": "Zacarias"
+  },
+  "3020": {
+   "name": "Zacarias"
+  },
+  "3021": {
+   "name": "Zacarias"
+  },
+  "3022": {
+   "name": "Zacarias"
+  },
+  "3023": {
+   "name": "Zacarias"
+  },
+  "3024": {
+   "name": "Zacarias"
+  },
+  "3025": {
+   "name": "Zacarias"
+  },
+  "3026": {
+   "name": "Zacarias"
+  },
+  "3027": {
+   "name": "Zacarias"
+  },
+  "3028": {
+   "name": "Zacarias"
+  },
+  "3029": {
+   "name": "Zedequias"
+  },
+  "303": {
+   "name": "Arioque (rei de Elasar)"
+  },
+  "3030": {
+   "name": "Zedequias"
+  },
+  "3031": {
+   "name": "Zedequias"
+  },
+  "3032": {
+   "name": "Zedequias"
+  },
+  "3033": {
+   "name": "Zeebe"
+  },
+  "3034": {
+   "name": "Zeleque"
+  },
+  "3035": {
+   "name": "Zelofeade"
+  },
+  "3039": {
+   "name": "Sofonias"
+  },
+  "304": {
+   "name": "Arioque"
+  },
+  "3040": {
+   "name": "Sofonias"
+  },
+  "3041": {
+   "name": "Sofonias"
+  },
+  "3042": {
+   "name": "Zefô",
+   "other": "Zephi"
+  },
+  "3043": {
+   "name": "Zerá"
+  },
+  "3044": {
+   "name": "Zerá"
+  },
+  "3045": {
+   "name": "Zerá"
+  },
+  "3046": {
+   "name": "Zerá"
+  },
+  "3047": {
+   "name": "Zeraías",
+   "other": "Aitube"
+  },
+  "3048": {
+   "name": "Zeraías"
+  },
+  "3049": {
+   "name": "Zeres"
+  },
+  "3050": {
+   "name": "Zerete"
+  },
+  "3051": {
+   "name": "Izri",
+   "other": "Zeri"
+  },
+  "3053": {
+   "name": "Zerua"
+  },
+  "3054": {
+   "name": "Zorobabel",
+   "other": "Sheshbazzar, Zorobabel"
+  },
+  "3055": {
+   "name": "Zeruia"
+  },
+  "3056": {
+   "name": "Zetã"
+  },
+  "3057": {
+   "name": "Zetã"
+  },
+  "3058": {
+   "name": "Zetar"
+  },
+  "306": {
+   "name": "Aristarco"
+  },
+  "3061": {
+   "name": "Zibeão"
+  },
+  "3062": {
+   "name": "Zibeão"
+  },
+  "3063": {
+   "name": "Zíbia"
+  },
+  "3064": {
+   "name": "Zíbia"
+  },
+  "3065": {
+   "name": "Zicri"
+  },
+  "3066": {
+   "name": "Zicri"
+  },
+  "3067": {
+   "name": "Zicri"
+  },
+  "3068": {
+   "name": "Zicri"
+  },
+  "3069": {
+   "name": "Zicri",
+   "other": "Zabdi"
+  },
+  "307": {
+   "name": "Aristóbulo"
+  },
+  "3070": {
+   "name": "Zicri"
+  },
+  "3071": {
+   "name": "Zicri"
+  },
+  "3072": {
+   "name": "Zicri"
+  },
+  "3073": {
+   "name": "Zicri"
+  },
+  "3074": {
+   "name": "Zicri"
+  },
+  "3075": {
+   "name": "Zicri"
+  },
+  "3076": {
+   "name": "Zicri"
+  },
+  "3078": {
+   "name": "Zia"
+  },
+  "3079": {
+   "name": "Zia"
+  },
+  "3080": {
+   "name": "Zilá"
+  },
+  "3081": {
+   "name": "Zilpa"
+  },
+  "3082": {
+   "name": "Ziletai"
+  },
+  "3083": {
+   "name": "Ziletai"
+  },
+  "3084": {
+   "name": "Zima"
+  },
+  "3085": {
+   "name": "Zima"
+  },
+  "3086": {
+   "name": "Zinrã"
+  },
+  "3087": {
+   "name": "Zinri"
+  },
+  "3088": {
+   "name": "Zinri"
+  },
+  "3089": {
+   "name": "Zinri"
+  },
+  "3090": {
+   "name": "Zina",
+   "other": "Zina"
+  },
+  "3091": {
+   "name": "Zife"
+  },
+  "3092": {
+   "name": "Zifa"
+  },
+  "3093": {
+   "name": "Zephon",
+   "other": "Ziphion"
+  },
+  "3094": {
+   "name": "Zipor"
+  },
+  "3095": {
+   "name": "Zípora"
+  },
+  "3096": {
+   "name": "Sitri"
+  },
+  "31": {
+   "name": "Abiail"
+  },
+  "310": {
+   "name": "Arnã"
+  },
+  "3100": {
+   "name": "Zobeba"
+  },
+  "3101": {
+   "name": "Zoar"
+  },
+  "3102": {
+   "name": "Zerá",
+   "other": "Zoar"
+  },
+  "3103": {
+   "name": "Zoete"
+  },
+  "3104": {
+   "name": "Zofa"
+  },
+  "3105": {
+   "name": "Zofar"
+  },
+  "3108": {
+   "name": "Zuph",
+   "other": "Zophai"
+  },
+  "311": {
+   "name": "Arodi",
+   "other": "Arodi"
+  },
+  "3113": {
+   "name": "Zurisadai"
+  },
+  "312": {
+   "name": "Arfaxade"
+  },
+  "317": {
+   "name": "Arsa"
+  },
+  "32": {
+   "name": "Abiail"
+  },
+  "320": {
+   "name": "Asael"
+  },
+  "321": {
+   "name": "Asael"
+  },
+  "322": {
+   "name": "Asael"
+  },
+  "323": {
+   "name": "Asael"
+  },
+  "324": {
+   "name": "Asaías",
+   "other": "Asaías"
+  },
+  "325": {
+   "name": "Asaias"
+  },
+  "326": {
+   "name": "Asaías"
+  },
+  "327": {
+   "name": "Asaías"
+  },
+  "328": {
+   "name": "Asaías"
+  },
+  "329": {
+   "name": "Asafe"
+  },
+  "33": {
+   "name": "Abiú"
+  },
+  "330": {
+   "name": "Asafe (levita)"
+  },
+  "331": {
+   "name": "Asafe"
+  },
+  "332": {
+   "name": "Asafe"
+  },
+  "334": {
+   "name": "Jesarela",
+   "other": "Asarelah"
+  },
+  "335": {
+   "name": "Azenate"
+  },
+  "336": {
+   "name": "Asbel"
+  },
+  "337": {
+   "name": "Aser",
+   "other": "Aser"
+  },
+  "338": {
+   "name": "Asquenaz",
+   "other": "Ashchenaz"
+  },
+  "339": {
+   "name": "Aspenaz"
+  },
+  "34": {
+   "name": "Abiúde"
+  },
+  "340": {
+   "name": "Asriel"
+  },
+  "341": {
+   "name": "Astarote"
+  },
+  "342": {
+   "name": "Asur"
+  },
+  "343": {
+   "name": "Asvate"
+  },
+  "345": {
+   "name": "Asná"
+  },
+  "346": {
+   "name": "Asnapar"
+  },
+  "347": {
+   "name": "Aspata"
+  },
+  "349": {
+   "name": "Assur"
+  },
+  "35": {
+   "name": "Abias"
+  },
+  "350": {
+   "name": "Assurim"
+  },
+  "353": {
+   "name": "Asíncrito"
+  },
+  "354": {
+   "name": "Atara"
+  },
+  "358": {
+   "name": "Ataías"
+  },
+  "359": {
+   "name": "Atalia"
+  },
+  "36": {
+   "name": "Abias",
+   "other": "Abia"
+  },
+  "360": {
+   "name": "Atalias"
+  },
+  "361": {
+   "name": "Atalias"
+  },
+  "362": {
+   "name": "Atlai"
+  },
+  "363": {
+   "name": "Atai"
+  },
+  "364": {
+   "name": "Atai"
+  },
+  "365": {
+   "name": "Atai"
+  },
+  "366": {
+   "name": "Augusto"
+  },
+  "367": {
+   "name": "Azalias"
+  },
+  "368": {
+   "name": "Azanias"
+  },
+  "369": {
+   "name": "Azareel"
+  },
+  "37": {
+   "name": "Abias"
+  },
+  "371": {
+   "name": "Azarel"
+  },
+  "373": {
+   "name": "Azarias"
+  },
+  "374": {
+   "name": "Azarias"
+  },
+  "375": {
+   "name": "Uzias",
+   "other": "Azarias, Ozias"
+  },
+  "376": {
+   "name": "Azarias"
+  },
+  "377": {
+   "name": "Azarias"
+  },
+  "378": {
+   "name": "Azarias"
+  },
+  "379": {
+   "name": "Azarias"
+  },
+  "38": {
+   "name": "Abias",
+   "other": "Abijam, Abia"
+  },
+  "380": {
+   "name": "Azarias"
+  },
+  "381": {
+   "name": "Azarias"
+  },
+  "382": {
+   "name": "Azarias"
+  },
+  "383": {
+   "name": "Azarias"
+  },
+  "384": {
+   "name": "Azarias"
+  },
+  "385": {
+   "name": "Azarias"
+  },
+  "386": {
+   "name": "Azarias"
+  },
+  "387": {
+   "name": "Balaque",
+   "other": "Balac"
+  },
+  "391": {
+   "name": "Bani",
+   "other": "Binui"
+  },
+  "399": {
+   "name": "Barrabás"
+  },
+  "40": {
+   "name": "Abimeleque (rei de Gerar)"
+  },
+  "400": {
+   "name": "Baraquel"
+  },
+  "401": {
+   "name": "Baraque"
+  },
+  "402": {
+   "name": "Bariá"
+  },
+  "403": {
+   "name": "Elimas"
+  },
+  "404": {
+   "name": "Barcos"
+  },
+  "405": {
+   "name": "Bartolomeu"
+  },
+  "406": {
+   "name": "Bartimeu"
+  },
+  "407": {
+   "name": "Baruque"
+  },
+  "408": {
+   "name": "Baruque"
+  },
+  "409": {
+   "name": "Baruque"
+  },
+  "41": {
+   "name": "Abimeleque"
+  },
+  "410": {
+   "name": "Baruque"
+  },
+  "411": {
+   "name": "Barzilai"
+  },
+  "412": {
+   "name": "Barzilai"
+  },
+  "413": {
+   "name": "Barzilai"
+  },
+  "414": {
+   "name": "Ada",
+   "other": "Basemate"
+  },
+  "415": {
+   "name": "Basemate"
+  },
+  "416": {
+   "name": "Bate-Seba",
+   "other": "Bath-sheba, Bath-shua"
+  },
+  "418": {
+   "name": "Baslute",
+   "other": "Bazlith"
+  },
+  "419": {
+   "name": "Bealias"
+  },
+  "42": {
+   "name": "Abimeleque"
+  },
+  "423": {
+   "name": "Bequer"
+  },
+  "424": {
+   "name": "Bequer"
+  },
+  "425": {
+   "name": "Becorate"
+  },
+  "426": {
+   "name": "Bedade"
+  },
+  "427": {
+   "name": "Bedã"
+  },
+  "428": {
+   "name": "Bedã"
+  },
+  "429": {
+   "name": "Bedias"
+  },
+  "43": {
+   "name": "Abinadabe"
+  },
+  "431": {
+   "name": "Beera"
+  },
+  "434": {
+   "name": "Belá"
+  },
+  "435": {
+   "name": "Belá"
+  },
+  "436": {
+   "name": "Belá",
+   "other": "Belah"
+  },
+  "437": {
+   "name": "Belsazar"
+  },
+  "438": {
+   "name": "Bene"
+  },
+  "439": {
+   "name": "Benaia"
+  },
+  "44": {
+   "name": "Abinadabe"
+  },
+  "440": {
+   "name": "Benaia"
+  },
+  "441": {
+   "name": "Benaia"
+  },
+  "442": {
+   "name": "Benaia"
+  },
+  "443": {
+   "name": "Benaia"
+  },
+  "444": {
+   "name": "Benaia"
+  },
+  "445": {
+   "name": "Benaia"
+  },
+  "446": {
+   "name": "Benaías"
+  },
+  "447": {
+   "name": "Benaías"
+  },
+  "448": {
+   "name": "Benaías"
+  },
+  "449": {
+   "name": "Benaías"
+  },
+  "45": {
+   "name": "Ben-Abinadabe"
+  },
+  "450": {
+   "name": "Benaías"
+  },
+  "451": {
+   "name": "Ben-Ami"
+  },
+  "452": {
+   "name": "Ben-Hadade"
+  },
+  "453": {
+   "name": "Ben-Hadade"
+  },
+  "454": {
+   "name": "Ben-Hadade"
+  },
+  "455": {
+   "name": "Bene-Hail"
+  },
+  "456": {
+   "name": "Ben-Hanã"
+  },
+  "458": {
+   "name": "Benjamim"
+  },
+  "459": {
+   "name": "Benjamim"
+  },
+  "46": {
+   "name": "Abinoão"
+  },
+  "460": {
+   "name": "Benjamim"
+  },
+  "461": {
+   "name": "Benjamim"
+  },
+  "463": {
+   "name": "Benjamim (patriarca)",
+   "other": "Ben-oni"
+  },
+  "464": {
+   "name": "Ben-Zoete"
+  },
+  "466": {
+   "name": "Beor",
+   "other": "Bosor"
+  },
+  "468": {
+   "name": "Beraca"
+  },
+  "469": {
+   "name": "Berequias",
+   "other": "Berachiah"
+  },
+  "47": {
+   "name": "Abirão (filho de Eliabe)"
+  },
+  "470": {
+   "name": "Beraías"
+  },
+  "471": {
+   "name": "Berequias"
+  },
+  "472": {
+   "name": "Berequias"
+  },
+  "473": {
+   "name": "Berequias"
+  },
+  "474": {
+   "name": "Berequias"
+  },
+  "475": {
+   "name": "Berequias"
+  },
+  "476": {
+   "name": "Berede"
+  },
+  "478": {
+   "name": "Berias"
+  },
+  "479": {
+   "name": "Berias"
+  },
+  "48": {
+   "name": "Abirão"
+  },
+  "480": {
+   "name": "Berias"
+  },
+  "481": {
+   "name": "Berias"
+  },
+  "482": {
+   "name": "Berenice"
+  },
+  "483": {
+   "name": "Merodaque-Baladã"
+  },
+  "485": {
+   "name": "Besodias"
+  },
+  "486": {
+   "name": "Bete-Rafa"
+  },
+  "487": {
+   "name": "Betuel"
+  },
+  "489": {
+   "name": "Besai"
+  },
+  "49": {
+   "name": "Abisague"
+  },
+  "490": {
+   "name": "Bezalel"
+  },
+  "491": {
+   "name": "Bezalel"
+  },
+  "493": {
+   "name": "Bicri"
+  },
+  "494": {
+   "name": "Bigtá"
+  },
+  "495": {
+   "name": "Bigtã"
+  },
+  "499": {
+   "name": "Bildade"
+  },
+  "50": {
+   "name": "Abisai"
+  },
+  "500": {
+   "name": "Bilga"
+  },
+  "501": {
+   "name": "Bilga",
+   "other": "Bilgai"
+  },
+  "502": {
+   "name": "Bila"
+  },
+  "503": {
+   "name": "Bilã"
+  },
+  "504": {
+   "name": "Bilã"
+  },
+  "505": {
+   "name": "Bilsã"
+  },
+  "506": {
+   "name": "Bimal"
+  },
+  "507": {
+   "name": "Bineá"
+  },
+  "508": {
+   "name": "Binui"
+  },
+  "509": {
+   "name": "Binui"
+  },
+  "51": {
+   "name": "Abisua"
+  },
+  "510": {
+   "name": "Binui"
+  },
+  "511": {
+   "name": "Binui"
+  },
+  "512": {
+   "name": "Binui"
+  },
+  "513": {
+   "name": "Birsa"
+  },
+  "514": {
+   "name": "Bizarvite"
+  },
+  "515": {
+   "name": "Bislão"
+  },
+  "516": {
+   "name": "Bitias"
+  },
+  "517": {
+   "name": "Bizta"
+  },
+  "518": {
+   "name": "Blasto"
+  },
+  "519": {
+   "name": "Boaz",
+   "other": "Booz"
+  },
+  "52": {
+   "name": "Abisua"
+  },
+  "520": {
+   "name": "Bocru"
+  },
+  "521": {
+   "name": "Boã"
+  },
+  "522": {
+   "name": "Buqui"
+  },
+  "523": {
+   "name": "Buqui"
+  },
+  "524": {
+   "name": "Buquias"
+  },
+  "525": {
+   "name": "Buna"
+  },
+  "526": {
+   "name": "Buni"
+  },
+  "527": {
+   "name": "Bani"
+  },
+  "528": {
+   "name": "Buni"
+  },
+  "53": {
+   "name": "Abisur"
+  },
+  "532": {
+   "name": "Caifás"
+  },
+  "533": {
+   "name": "Caim"
+  },
+  "534": {
+   "name": "Cainã (patriarca antediluviano)",
+   "other": "Kenan"
+  },
+  "535": {
+   "name": "Cainã (filho de Arfaxade)"
+  },
+  "537": {
+   "name": "Calebe"
+  },
+  "538": {
+   "name": "Calebe",
+   "other": "Chelubai, Carmi"
+  },
+  "539": {
+   "name": "Azarias"
+  },
+  "540": {
+   "name": "Azarias"
+  },
+  "541": {
+   "name": "Azarias"
+  },
+  "542": {
+   "name": "Azarias"
+  },
+  "543": {
+   "name": "Azarias"
+  },
+  "544": {
+   "name": "Azarias"
+  },
+  "545": {
+   "name": "Azarias"
+  },
+  "547": {
+   "name": "Azazias"
+  },
+  "548": {
+   "name": "Azazias"
+  },
+  "549": {
+   "name": "Azazias"
+  },
+  "55": {
+   "name": "Abitube"
+  },
+  "550": {
+   "name": "Azbuque"
+  },
+  "552": {
+   "name": "Azgade"
+  },
+  "553": {
+   "name": "Azgade"
+  },
+  "555": {
+   "name": "Azmavete"
+  },
+  "556": {
+   "name": "Azmavete"
+  },
+  "557": {
+   "name": "Azmavete"
+  },
+  "558": {
+   "name": "Azmavete"
+  },
+  "56": {
+   "name": "Abiúde"
+  },
+  "563": {
+   "name": "Azricão"
+  },
+  "564": {
+   "name": "Azricão"
+  },
+  "565": {
+   "name": "Azricão"
+  },
+  "566": {
+   "name": "Azricão"
+  },
+  "567": {
+   "name": "Azuba"
+  },
+  "568": {
+   "name": "Azuba"
+  },
+  "571": {
+   "name": "Azã"
+  },
+  "572": {
+   "name": "Azur"
+  },
+  "573": {
+   "name": "Baal",
+   "other": "Baal-Peor"
+  },
+  "576": {
+   "name": "Baal-Hanã"
+  },
+  "577": {
+   "name": "Baal-Hanã"
+  },
+  "579": {
+   "name": "Baal-Zebube"
+  },
+  "58": {
+   "name": "Abraão",
+   "other": "Abram"
+  },
+  "581": {
+   "name": "Baaná"
+  },
+  "582": {
+   "name": "Baaná"
+  },
+  "583": {
+   "name": "Baaná"
+  },
+  "584": {
+   "name": "Baaná"
+  },
+  "585": {
+   "name": "Baaná"
+  },
+  "586": {
+   "name": "Baaná"
+  },
+  "588": {
+   "name": "Baaseias"
+  },
+  "589": {
+   "name": "Baasa"
+  },
+  "59": {
+   "name": "Absalão",
+   "other": "Abishalom"
+  },
+  "590": {
+   "name": "Baquebacar"
+  },
+  "592": {
+   "name": "Bacbuquias"
+  },
+  "593": {
+   "name": "Balaão"
+  },
+  "594": {
+   "name": "Baladã"
+  },
+  "595": {
+   "name": "Igal"
+  },
+  "597": {
+   "name": "Inlá",
+   "other": "Imlah"
+  },
+  "598": {
+   "name": "Imer"
+  },
+  "599": {
+   "name": "Imer"
+  },
+  "60": {
+   "name": "Acaico"
+  },
+  "600": {
+   "name": "Imer"
+  },
+  "601": {
+   "name": "Imná"
+  },
+  "602": {
+   "name": "Imná"
+  },
+  "603": {
+   "name": "Inra"
+  },
+  "604": {
+   "name": "Inri"
+  },
+  "605": {
+   "name": "Inri"
+  },
+  "606": {
+   "name": "Ifdeias"
+  },
+  "61": {
+   "name": "Acã",
+   "other": "Achar"
+  },
+  "611": {
+   "name": "Irade"
+  },
+  "612": {
+   "name": "Irã"
+  },
+  "616": {
+   "name": "Isaque"
+  },
+  "617": {
+   "name": "Isaías",
+   "other": "Esaias"
+  },
+  "618": {
+   "name": "Iscá"
+  },
+  "619": {
+   "name": "Isbá"
+  },
+  "62": {
+   "name": "Acbor"
+  },
+  "621": {
+   "name": "Isbi-Benobe"
+  },
+  "622": {
+   "name": "Is-Bosete"
+  },
+  "623": {
+   "name": "Isi"
+  },
+  "624": {
+   "name": "Isi"
+  },
+  "625": {
+   "name": "Isi"
+  },
+  "626": {
+   "name": "Isi"
+  },
+  "627": {
+   "name": "Issias"
+  },
+  "628": {
+   "name": "Issias"
+  },
+  "629": {
+   "name": "Isma"
+  },
+  "63": {
+   "name": "Acbor",
+   "other": "Abdom"
+  },
+  "630": {
+   "name": "Ismael (filho de Agar)"
+  },
+  "631": {
+   "name": "Ismael"
+  },
+  "632": {
+   "name": "Ismael"
+  },
+  "633": {
+   "name": "Ismael"
+  },
+  "634": {
+   "name": "Ismael"
+  },
+  "635": {
+   "name": "Ismael"
+  },
+  "636": {
+   "name": "Ismaías"
+  },
+  "637": {
+   "name": "Ismerai"
+  },
+  "638": {
+   "name": "Isode"
+  },
+  "639": {
+   "name": "Ispã"
+  },
+  "64": {
+   "name": "Acbor"
+  },
+  "640": {
+   "name": "Isuah",
+   "other": "Ishuah"
+  },
+  "641": {
+   "name": "Abinadabe",
+   "other": "Ishui"
+  },
+  "642": {
+   "name": "Ismaquias"
+  },
+  "643": {
+   "name": "Ismaías"
+  },
+  "644": {
+   "name": "Ispa"
+  },
+  "645": {
+   "name": "Issacar"
+  },
+  "646": {
+   "name": "Issacar"
+  },
+  "647": {
+   "name": "Jesaías",
+   "other": "Issias"
+  },
+  "648": {
+   "name": "Isvi",
+   "other": "Ishuai, Jesui"
+  },
+  "649": {
+   "name": "Itamar"
+  },
+  "65": {
+   "name": "Aquim"
+  },
+  "650": {
+   "name": "Itiel"
+  },
+  "651": {
+   "name": "Itiel"
+  },
+  "652": {
+   "name": "Itma"
+  },
+  "653": {
+   "name": "Itrã"
+  },
+  "654": {
+   "name": "Jéter",
+   "other": "Itrã"
+  },
+  "655": {
+   "name": "Itreão"
+  },
+  "656": {
+   "name": "Itai"
+  },
+  "657": {
+   "name": "Itai",
+   "other": "Ithai"
+  },
+  "658": {
+   "name": "Izar",
+   "other": "Aminadabe, Izehar"
+  },
+  "659": {
+   "name": "Izraías"
+  },
+  "66": {
+   "name": "Aquis",
+   "other": "Abimeleque"
+  },
+  "660": {
+   "name": "Jaacobá"
+  },
+  "661": {
+   "name": "Jaala",
+   "other": "Jaalah"
+  },
+  "662": {
+   "name": "Jalão"
+  },
+  "663": {
+   "name": "Janai"
+  },
+  "664": {
+   "name": "Jair",
+   "other": "Jaare-oregim"
+  },
+  "665": {
+   "name": "Jaasai"
+  },
+  "667": {
+   "name": "Jezanias",
+   "other": "Azarias, Jazanias"
+  },
+  "668": {
+   "name": "Jazanias"
+  },
+  "669": {
+   "name": "Jazanias"
+  },
+  "67": {
+   "name": "Acsa"
+  },
+  "670": {
+   "name": "Jazanias"
+  },
+  "671": {
+   "name": "Jaazias"
+  },
+  "672": {
+   "name": "Jaaziel",
+   "other": "Aziel"
+  },
+  "674": {
+   "name": "Jabes"
+  },
+  "676": {
+   "name": "Jabim"
+  },
+  "677": {
+   "name": "Jabim (rei de Hazor)"
+  },
+  "678": {
+   "name": "Jacã"
+  },
+  "679": {
+   "name": "Jaquim",
+   "other": "Jaribe"
+  },
+  "68": {
+   "name": "Acsa"
+  },
+  "680": {
+   "name": "Jaquim"
+  },
+  "681": {
+   "name": "Jaquim"
+  },
+  "682": {
+   "name": "Jacó (Israel)",
+   "other": "Israel"
+  },
+  "683": {
+   "name": "Jacó"
+  },
+  "685": {
+   "name": "Jadai"
+  },
+  "686": {
+   "name": "Jadua"
+  },
+  "687": {
+   "name": "Jadua"
+  },
+  "688": {
+   "name": "Jadom"
+  },
+  "69": {
+   "name": "Ada (esposa de Lameque)"
+  },
+  "690": {
+   "name": "Jaate"
+  },
+  "691": {
+   "name": "Simei"
+  },
+  "692": {
+   "name": "Jaate"
+  },
+  "693": {
+   "name": "Jaate"
+  },
+  "694": {
+   "name": "Jaate"
+  },
+  "695": {
+   "name": "Jazeias"
+  },
+  "696": {
+   "name": "Jaaziel"
+  },
+  "697": {
+   "name": "Jaaziel"
+  },
+  "698": {
+   "name": "Jaaziel"
+  },
+  "699": {
+   "name": "Jaaziel"
+  },
+  "70": {
+   "name": "Adaías"
+  },
+  "700": {
+   "name": "Jaaziel"
+  },
+  "701": {
+   "name": "Jadai"
+  },
+  "702": {
+   "name": "Jadiel"
+  },
+  "703": {
+   "name": "Jado"
+  },
+  "704": {
+   "name": "Jaleel"
+  },
+  "705": {
+   "name": "Jamai"
+  },
+  "706": {
+   "name": "Jazeel",
+   "other": "Jahziel"
+  },
+  "707": {
+   "name": "Jazera"
+  },
+  "71": {
+   "name": "Adaías"
+  },
+  "711": {
+   "name": "Jairo"
+  },
+  "712": {
+   "name": "Jaque"
+  },
+  "713": {
+   "name": "Jaquim"
+  },
+  "714": {
+   "name": "Jaquim"
+  },
+  "715": {
+   "name": "Jalom"
+  },
+  "717": {
+   "name": "Tiago (filho de Zebedeu)"
+  },
+  "718": {
+   "name": "Tiago (filho de Alfeu)"
+  },
+  "719": {
+   "name": "Tiago (irmão de Jesus)"
+  },
+  "72": {
+   "name": "Adaías"
+  },
+  "720": {
+   "name": "Jamim"
+  },
+  "721": {
+   "name": "Jamim"
+  },
+  "722": {
+   "name": "Jamim"
+  },
+  "724": {
+   "name": "Janai"
+  },
+  "725": {
+   "name": "Janes"
+  },
+  "726": {
+   "name": "Jafé"
+  },
+  "727": {
+   "name": "Jafia"
+  },
+  "728": {
+   "name": "Jafia"
+  },
+  "729": {
+   "name": "Jaflete"
+  },
+  "73": {
+   "name": "Adaías"
+  },
+  "730": {
+   "name": "Jarede",
+   "other": "Jerede"
+  },
+  "731": {
+   "name": "Jaaresias"
+  },
+  "732": {
+   "name": "Jará"
+  },
+  "733": {
+   "name": "Jaribe"
+  },
+  "734": {
+   "name": "Jaribe"
+  },
+  "735": {
+   "name": "Jaroa"
+  },
+  "736": {
+   "name": "Jásen"
+  },
+  "737": {
+   "name": "Jasar"
+  },
+  "738": {
+   "name": "Jasobeão"
+  },
+  "739": {
+   "name": "Jasobeão"
+  },
+  "74": {
+   "name": "Adaías"
+  },
+  "740": {
+   "name": "Jasube"
+  },
+  "741": {
+   "name": "Jaasiel"
+  },
+  "742": {
+   "name": "Jasão"
+  },
+  "743": {
+   "name": "Jatniel"
+  },
+  "744": {
+   "name": "Javã"
+  },
+  "746": {
+   "name": "Jeaterai",
+   "other": "Ethni"
+  },
+  "747": {
+   "name": "Jeberequias"
+  },
+  "749": {
+   "name": "Jecamias"
+  },
+  "75": {
+   "name": "Adaías"
+  },
+  "750": {
+   "name": "Jecolias",
+   "other": "Jecholiah"
+  },
+  "751": {
+   "name": "Jedaías"
+  },
+  "752": {
+   "name": "Jedaías"
+  },
+  "753": {
+   "name": "Jedaías"
+  },
+  "754": {
+   "name": "Jedaías"
+  },
+  "755": {
+   "name": "Jedaías"
+  },
+  "756": {
+   "name": "Jedaías"
+  },
+  "758": {
+   "name": "Jedaiel"
+  },
+  "759": {
+   "name": "Jediaiel"
+  },
+  "76": {
+   "name": "Adaías"
+  },
+  "761": {
+   "name": "Jedida"
+  },
+  "762": {
+   "name": "Jedutum"
+  },
+  "763": {
+   "name": "Abiezer",
+   "other": "Jeezer"
+  },
+  "764": {
+   "name": "Jealelel"
+  },
+  "765": {
+   "name": "Jealelel"
+  },
+  "766": {
+   "name": "Jedias"
+  },
+  "767": {
+   "name": "Jedias"
+  },
+  "768": {
+   "name": "Jeezquel"
+  },
+  "769": {
+   "name": "Jeiel"
+  },
+  "770": {
+   "name": "Jeiel"
+  },
+  "771": {
+   "name": "Jeieli",
+   "other": "Jehieli"
+  },
+  "772": {
+   "name": "Jeiel"
+  },
+  "773": {
+   "name": "Jeiel"
+  },
+  "774": {
+   "name": "Jeiel"
+  },
+  "775": {
+   "name": "Jeiel"
+  },
+  "776": {
+   "name": "Jeiel"
+  },
+  "777": {
+   "name": "Jeiel"
+  },
+  "778": {
+   "name": "Jeiel"
+  },
+  "779": {
+   "name": "Jeiel"
+  },
+  "78": {
+   "name": "Adão"
+  },
+  "780": {
+   "name": "Jeiel"
+  },
+  "781": {
+   "name": "Jeizquias"
+  },
+  "782": {
+   "name": "Jarah",
+   "other": "Jehoadah"
+  },
+  "783": {
+   "name": "Jeoadã"
+  },
+  "784": {
+   "name": "Jeoacaz"
+  },
+  "785": {
+   "name": "Joanã"
+  },
+  "786": {
+   "name": "Joanã"
+  },
+  "787": {
+   "name": "Joanã"
+  },
+  "788": {
+   "name": "Jeoanã"
+  },
+  "789": {
+   "name": "Joanã"
+  },
+  "790": {
+   "name": "Joanã"
+  },
+  "791": {
+   "name": "Jeconias",
+   "other": "Jeconiah, Coniah, Jechonias"
+  },
+  "792": {
+   "name": "Joiada"
+  },
+  "793": {
+   "name": "Joiada",
+   "other": "Barachias"
+  },
+  "794": {
+   "name": "Joiada"
+  },
+  "795": {
+   "name": "Joiada"
+  },
+  "796": {
+   "name": "Joiada"
+  },
+  "797": {
+   "name": "Joiaribe",
+   "other": "Jeoiaribe"
+  },
+  "798": {
+   "name": "Jeoiaribe"
+  },
+  "799": {
+   "name": "Jonadabe",
+   "other": "Jehonadab"
+  },
+  "80": {
+   "name": "Adar"
+  },
+  "800": {
+   "name": "Jônatas"
+  },
+  "801": {
+   "name": "Jônatas"
+  },
+  "802": {
+   "name": "Jônatas"
+  },
+  "803": {
+   "name": "Jeorão",
+   "other": "Jorão"
+  },
+  "804": {
+   "name": "Jorão",
+   "other": "Jeorão"
+  },
+  "805": {
+   "name": "Jorão"
+  },
+  "806": {
+   "name": "Josafá"
+  },
+  "807": {
+   "name": "Josafá"
+  },
+  "808": {
+   "name": "Josafá",
+   "other": "Josaphat"
+  },
+  "809": {
+   "name": "Josafá"
+  },
+  "81": {
+   "name": "Adi"
+  },
+  "810": {
+   "name": "Josafá"
+  },
+  "811": {
+   "name": "Jehoshabeath",
+   "other": "Jehosheba"
+  },
+  "812": {
+   "name": "Jozabade"
+  },
+  "813": {
+   "name": "Jozabade"
+  },
+  "814": {
+   "name": "Jozabade"
+  },
+  "815": {
+   "name": "Josedech",
+   "other": "Jozadaque, Jehozadak"
+  },
+  "816": {
+   "name": "Jeú"
+  },
+  "817": {
+   "name": "Jeú"
+  },
+  "818": {
+   "name": "Jeú"
+  },
+  "819": {
+   "name": "Jeú"
+  },
+  "82": {
+   "name": "Eder"
+  },
+  "820": {
+   "name": "Jeú"
+  },
+  "821": {
+   "name": "Jeubá"
+  },
+  "822": {
+   "name": "Jucal",
+   "other": "Jehucal"
+  },
+  "823": {
+   "name": "Jeudi"
+  },
+  "824": {
+   "name": "Judia"
+  },
+  "825": {
+   "name": "Jeús"
+  },
+  "827": {
+   "name": "Jeiel",
+   "other": "Jehiah"
+  },
+  "830": {
+   "name": "Jeuel"
+  },
+  "834": {
+   "name": "Jecameão"
+  },
+  "835": {
+   "name": "Jecamias"
+  },
+  "836": {
+   "name": "Jecutiel"
+  },
+  "838": {
+   "name": "Jemuel",
+   "other": "Nemuel"
+  },
+  "839": {
+   "name": "Jefté",
+   "other": "Jephthae"
+  },
+  "84": {
+   "name": "Azareel",
+   "other": "Adiel"
+  },
+  "840": {
+   "name": "Jefoné"
+  },
+  "841": {
+   "name": "Jefoné"
+  },
+  "842": {
+   "name": "Jerá"
+  },
+  "843": {
+   "name": "Jerameel"
+  },
+  "844": {
+   "name": "Jerameel"
+  },
+  "845": {
+   "name": "Jerameel"
+  },
+  "846": {
+   "name": "Jerede"
+  },
+  "848": {
+   "name": "Jeremias"
+  },
+  "849": {
+   "name": "Jeremias"
+  },
+  "850": {
+   "name": "Jeremias"
+  },
+  "851": {
+   "name": "Jeremias"
+  },
+  "852": {
+   "name": "Jeremias"
+  },
+  "853": {
+   "name": "Jeremias",
+   "other": "Jeremy, Jeremias"
+  },
+  "854": {
+   "name": "Jeremias"
+  },
+  "855": {
+   "name": "Jeremias"
+  },
+  "856": {
+   "name": "Jeremote"
+  },
+  "857": {
+   "name": "Jeremote",
+   "other": "Jeremote"
+  },
+  "858": {
+   "name": "Jeremote"
+  },
+  "859": {
+   "name": "Jeremote"
+  },
+  "86": {
+   "name": "Adim"
+  },
+  "863": {
+   "name": "Jerias"
+  },
+  "864": {
+   "name": "Jerimote"
+  },
+  "865": {
+   "name": "Jerimote"
+  },
+  "866": {
+   "name": "Jeremote"
+  },
+  "867": {
+   "name": "Jeremote",
+   "other": "Jeremote"
+  },
+  "868": {
+   "name": "Jeremote"
+  },
+  "869": {
+   "name": "Jeremote"
+  },
+  "87": {
+   "name": "Adim"
+  },
+  "870": {
+   "name": "Jeremote"
+  },
+  "871": {
+   "name": "Jeriote"
+  },
+  "872": {
+   "name": "Jeroboão"
+  },
+  "873": {
+   "name": "Jeroboão"
+  },
+  "874": {
+   "name": "Jeroão"
+  },
+  "875": {
+   "name": "Jeroão"
+  },
+  "876": {
+   "name": "Jeroão"
+  },
+  "877": {
+   "name": "Jeroão"
+  },
+  "878": {
+   "name": "Jeroão"
+  },
+  "879": {
+   "name": "Jeroão"
+  },
+  "880": {
+   "name": "Jeroão"
+  },
+  "881": {
+   "name": "Jerubusete"
+  },
+  "882": {
+   "name": "Jerusa"
+  },
+  "883": {
+   "name": "Jesaías"
+  },
+  "884": {
+   "name": "Jesaías"
+  },
+  "885": {
+   "name": "Jesaías"
+  },
+  "886": {
+   "name": "Jesaías"
+  },
+  "887": {
+   "name": "Jesaías"
+  },
+  "888": {
+   "name": "Jesebeabe"
+  },
+  "889": {
+   "name": "Jeser"
+  },
+  "890": {
+   "name": "Jesisai"
+  },
+  "891": {
+   "name": "Jesoaías"
+  },
+  "892": {
+   "name": "Jesua"
+  },
+  "893": {
+   "name": "Jesua",
+   "other": "Jesua"
+  },
+  "894": {
+   "name": "Jesua"
+  },
+  "895": {
+   "name": "Jesua"
+  },
+  "896": {
+   "name": "Jesua"
+  },
+  "897": {
+   "name": "Jesua"
+  },
+  "898": {
+   "name": "Jesua"
+  },
+  "899": {
+   "name": "Jesua"
+  },
+  "901": {
+   "name": "Issias",
+   "other": "Jesiah"
+  },
+  "903": {
+   "name": "Jessé"
+  },
+  "905": {
+   "name": "Jesus Cristo",
+   "other": "Senhor, Filho, Cordeiro, Salvador, Deus, Santo, Verbo, Luz, Príncipe, Mestre, Renovo, Emanuel, Juiz, Rei, Messias, Maravilhoso, Conselheiro, Profeta, Cetro, Estrela, Siló"
+  },
+  "906": {
+   "name": "Jéter"
+  },
+  "907": {
+   "name": "Jéter",
+   "other": "Ithra"
+  },
+  "908": {
+   "name": "Jéter"
+  },
+  "909": {
+   "name": "Jéter"
+  },
+  "91": {
+   "name": "Adamata"
+  },
+  "910": {
+   "name": "Jetete"
+  },
+  "913": {
+   "name": "Jeús"
+  },
+  "914": {
+   "name": "Canaã",
+   "other": "Canaanites, Canaanite"
+  },
+  "915": {
+   "name": "Mulher cananeia"
+  },
+  "917": {
+   "name": "Caftorim",
+   "other": "Caphtorim"
+  },
+  "919": {
+   "name": "Careá",
+   "other": "Careah"
+  },
+  "922": {
+   "name": "Carsena"
+  },
+  "923": {
+   "name": "Casluim"
+  },
+  "924": {
+   "name": "Calcol"
+  },
+  "925": {
+   "name": "Carquêmis"
+  },
+  "926": {
+   "name": "Quedorlaomer"
+  },
+  "927": {
+   "name": "Quelal"
+  },
+  "929": {
+   "name": "Quelube"
+  },
+  "930": {
+   "name": "Quelube"
+  },
+  "931": {
+   "name": "Camos"
+  },
+  "932": {
+   "name": "Quenaaná"
+  },
+  "933": {
+   "name": "Quenaaná"
+  },
+  "934": {
+   "name": "Quenai"
+  },
+  "935": {
+   "name": "Quenanias"
+  },
+  "936": {
+   "name": "Quenanias"
+  },
+  "938": {
+   "name": "Quésede"
+  },
+  "939": {
+   "name": "Daniel",
+   "other": "Chileab"
+  },
+  "94": {
+   "name": "Adna"
+  },
+  "940": {
+   "name": "Quiliom"
+  },
+  "941": {
+   "name": "Quimã"
+  },
+  "942": {
+   "name": "Quislom"
+  },
+  "943": {
+   "name": "Cloé"
+  },
+  "944": {
+   "name": "Cusã-Risataim"
+  },
+  "945": {
+   "name": "Cuza"
+  },
+  "946": {
+   "name": "Cláudia"
+  },
+  "947": {
+   "name": "Cláudio (quarto imperador romano)"
+  },
+  "948": {
+   "name": "Cláudio Lísias"
+  },
+  "949": {
+   "name": "Clemente"
+  },
+  "95": {
+   "name": "Adna"
+  },
+  "950": {
+   "name": "Cleofas",
+   "other": "Cleopas"
+  },
+  "951": {
+   "name": "Col-Hozé"
+  },
+  "952": {
+   "name": "Col-Hozé"
+  },
+  "953": {
+   "name": "Conanias"
+  },
+  "954": {
+   "name": "A concubina síria"
+  },
+  "955": {
+   "name": "Conanias"
+  },
+  "956": {
+   "name": "Cornélio"
+  },
+  "957": {
+   "name": "Cosã"
+  },
+  "959": {
+   "name": "Cosbi"
+  },
+  "96": {
+   "name": "Adoni-Bezeque"
+  },
+  "960": {
+   "name": "Crescente"
+  },
+  "961": {
+   "name": "Crispo"
+  },
+  "962": {
+   "name": "Cuxe (filho de Cam)"
+  },
+  "963": {
+   "name": "Cuxe (benjamita)"
+  },
+  "964": {
+   "name": "Cusi"
+  },
+  "965": {
+   "name": "Cusi"
+  },
+  "966": {
+   "name": "Cuxi"
+  },
+  "968": {
+   "name": "Ciro"
+  },
+  "969": {
+   "name": "Dagom"
+  },
+  "97": {
+   "name": "Adonias"
+  },
+  "970": {
+   "name": "Delaías"
+  },
+  "971": {
+   "name": "Dalfom"
+  },
+  "972": {
+   "name": "Dâmaris"
+  },
+  "973": {
+   "name": "Dã"
+  },
+  "975": {
+   "name": "Daniel",
+   "other": "Belteshazzar"
+  },
+  "976": {
+   "name": "Darda"
+  },
+  "978": {
+   "name": "Dario"
+  },
+  "979": {
+   "name": "Dario"
+  },
+  "98": {
+   "name": "Adonias"
+  },
+  "980": {
+   "name": "Dario"
+  },
+  "981": {
+   "name": "Darcom"
+  },
+  "982": {
+   "name": "Datã"
+  },
+  "983": {
+   "name": "Filha de Herodias"
+  },
+  "984": {
+   "name": "Filha mais nova de Ló"
+  },
+  "985": {
+   "name": "Filha mais velha de Ló"
+  },
+  "986": {
+   "name": "Filha de Maquir"
+  },
+  "987": {
+   "name": "Filha de Mesulão"
+  },
+  "988": {
+   "name": "Filha de Faraó"
+  },
+  "989": {
+   "name": "Filha de Faraó"
+  },
+  "99": {
+   "name": "Adonias"
+  },
+  "990": {
+   "name": "Filha de Putiel"
+  },
+  "993": {
+   "name": "Filha de Suá"
+  },
+  "994": {
+   "name": "Davi"
+  },
+  "996": {
+   "name": "Débora"
+  },
+  "997": {
+   "name": "Débora"
+  },
+  "998": {
+   "name": "Dedã (filho de Raamá)"
+  },
+  "999": {
+   "name": "Dedã (filho de Jocsã)"
+  }
+ },
+ "place": {
+  "10": {
+   "name": "Abel-Sitim"
+  },
+  "100": {
+   "name": "Asã"
+  },
+  "1000": {
+   "name": "Rodes"
+  },
+  "1001": {
+   "name": "Ribla"
+  },
+  "1002": {
+   "name": "Ribla"
+  },
+  "1003": {
+   "name": "Rimom"
+  },
+  "1004": {
+   "name": "Rimom"
+  },
+  "1005": {
+   "name": "Rimom"
+  },
+  "1006": {
+   "name": "Rimono"
+  },
+  "1007": {
+   "name": "Rimom-Perez"
+  },
+  "1008": {
+   "name": "Rissa"
+  },
+  "1009": {
+   "name": "Ritmá"
+  },
+  "101": {
+   "name": "Asdode"
+  },
+  "1010": {
+   "name": "Rio"
+  },
+  "1011": {
+   "name": "Maom"
+  },
+  "1013": {
+   "name": "Roma"
+  },
+  "1014": {
+   "name": "Ruma"
+  },
+  "1016": {
+   "name": "Salamina"
+  },
+  "1017": {
+   "name": "Salcá"
+  },
+  "1018": {
+   "name": "Salém"
+  },
+  "1021": {
+   "name": "Mar Salgado"
+  },
+  "1025": {
+   "name": "Samotrácia"
+  },
+  "1026": {
+   "name": "Sansana"
+  },
+  "1027": {
+   "name": "Sardes"
+  },
+  "1028": {
+   "name": "Saride"
+  },
+  "1029": {
+   "name": "Mar de Quinerete"
+  },
+  "103": {
+   "name": "Asquelom"
+  },
+  "1030": {
+   "name": "Mar de Chinneroth"
+  },
+  "1031": {
+   "name": "Mar do Egito"
+  },
+  "1032": {
+   "name": "Mar da Galileia"
+  },
+  "1033": {
+   "name": "Mar de Jazer"
+  },
+  "1034": {
+   "name": "Mar de Tiberíades"
+  },
+  "1035": {
+   "name": "Mar da Arabá"
+  },
+  "1036": {
+   "name": "Mar dos filisteus"
+  },
+  "1038": {
+   "name": "Sebã"
+  },
+  "1039": {
+   "name": "Secacá"
+  },
+  "104": {
+   "name": "Asquenaz"
+  },
+  "1040": {
+   "name": "Segundo bairro"
+  },
+  "1043": {
+   "name": "Seirá"
+  },
+  "1045": {
+   "name": "Selêucia"
+  },
+  "1046": {
+   "name": "Sené"
+  },
+  "1048": {
+   "name": "Sefar"
+  },
+  "1049": {
+   "name": "Sefarade"
+  },
+  "105": {
+   "name": "Asná"
+  },
+  "1050": {
+   "name": "Sefarvaim"
+  },
+  "1051": {
+   "name": "Pedra de Zoelete"
+  },
+  "1052": {
+   "name": "Saalabim"
+  },
+  "1053": {
+   "name": "Saalbim"
+  },
+  "1054": {
+   "name": "Saalim"
+  },
+  "1055": {
+   "name": "Saaraim"
+  },
+  "1056": {
+   "name": "Saaraim"
+  },
+  "1057": {
+   "name": "Saazima"
+  },
+  "1058": {
+   "name": "Salisa"
+  },
+  "1059": {
+   "name": "Salequete"
+  },
+  "106": {
+   "name": "Astarote"
+  },
+  "1060": {
+   "name": "Samir"
+  },
+  "1061": {
+   "name": "Samir"
+  },
+  "1062": {
+   "name": "Safir"
+  },
+  "1063": {
+   "name": "Sarom"
+  },
+  "1064": {
+   "name": "Sarom"
+  },
+  "1065": {
+   "name": "Saruém"
+  },
+  "1066": {
+   "name": "Savé-Quiriataim"
+  },
+  "1067": {
+   "name": "Sabá"
+  },
+  "1068": {
+   "name": "Sebarim"
+  },
+  "1069": {
+   "name": "Siquém",
+   "other": "Moré"
+  },
+  "107": {
+   "name": "Asterote-Carnaim"
+  },
+  "1070": {
+   "name": "Porta das Ovelhas"
+  },
+  "1071": {
+   "name": "Sema"
+  },
+  "1072": {
+   "name": "Sem"
+  },
+  "1075": {
+   "name": "Seba"
+  },
+  "1076": {
+   "name": "Sior"
+  },
+  "1077": {
+   "name": "Sior-Libnate"
+  },
+  "1079": {
+   "name": "Silim"
+  },
+  "108": {
+   "name": "Ásia"
+  },
+  "1080": {
+   "name": "Siloé"
+  },
+  "1081": {
+   "name": "Siló"
+  },
+  "1082": {
+   "name": "Sinrom"
+  },
+  "1083": {
+   "name": "Sinrom-Merom"
+  },
+  "1084": {
+   "name": "Sinear"
+  },
+  "1085": {
+   "name": "Siom"
+  },
+  "1086": {
+   "name": "Sitim"
+  },
+  "1087": {
+   "name": "Soa"
+  },
+  "1088": {
+   "name": "Sual"
+  },
+  "1089": {
+   "name": "Suném"
+  },
+  "109": {
+   "name": "Assur"
+  },
+  "1090": {
+   "name": "Sur"
+  },
+  "1091": {
+   "name": "Sibma"
+  },
+  "1093": {
+   "name": "Sidom"
+  },
+  "1094": {
+   "name": "Sidom"
+  },
+  "1095": {
+   "name": "Sila"
+  },
+  "1096": {
+   "name": "Siloé"
+  },
+  "1097": {
+   "name": "Sim"
+  },
+  "1099": {
+   "name": "Sifmote"
+  },
+  "110": {
+   "name": "Assôs"
+  },
+  "1100": {
+   "name": "Sirá"
+  },
+  "1101": {
+   "name": "Sírion"
+  },
+  "1102": {
+   "name": "Sitna"
+  },
+  "1103": {
+   "name": "Esmirna"
+  },
+  "1104": {
+   "name": "Socó"
+  },
+  "1105": {
+   "name": "Socó"
+  },
+  "1106": {
+   "name": "Socó"
+  },
+  "1107": {
+   "name": "Sodoma"
+  },
+  "1109": {
+   "name": "Pórtico de Salomão",
+   "other": "Pórtico de Salomão"
+  },
+  "111": {
+   "name": "Assíria"
+  },
+  "1111": {
+   "name": "Espanha"
+  },
+  "1112": {
+   "name": "Porta estreita"
+  },
+  "1113": {
+   "name": "Sucote"
+  },
+  "1114": {
+   "name": "Sucote"
+  },
+  "1116": {
+   "name": "Sufa"
+  },
+  "1118": {
+   "name": "Susã"
+  },
+  "1119": {
+   "name": "Sicar"
+  },
+  "112": {
+   "name": "Atade"
+  },
+  "1120": {
+   "name": "Sevene"
+  },
+  "1121": {
+   "name": "Siracusa"
+  },
+  "1122": {
+   "name": "Síria"
+  },
+  "1124": {
+   "name": "Taanaque"
+  },
+  "1125": {
+   "name": "Taanate-Siló"
+  },
+  "1126": {
+   "name": "Tabate"
+  },
+  "1127": {
+   "name": "Taberá"
+  },
+  "1128": {
+   "name": "Tabor (monte)"
+  },
+  "1129": {
+   "name": "Tabor (cidade)"
+  },
+  "113": {
+   "name": "Atarote"
+  },
+  "1130": {
+   "name": "Tabor (planície)"
+  },
+  "1132": {
+   "name": "Taate"
+  },
+  "1133": {
+   "name": "Tafnes"
+  },
+  "1134": {
+   "name": "Tadmor"
+  },
+  "1136": {
+   "name": "Tapua"
+  },
+  "1137": {
+   "name": "Tapua"
+  },
+  "1138": {
+   "name": "Tarala"
+  },
+  "1139": {
+   "name": "Társis"
+  },
+  "114": {
+   "name": "Atarote"
+  },
+  "1140": {
+   "name": "Tarso"
+  },
+  "1141": {
+   "name": "Tafnes"
+  },
+  "1142": {
+   "name": "Tecoa"
+  },
+  "1143": {
+   "name": "Tel-Abibe"
+  },
+  "1146": {
+   "name": "Telém"
+  },
+  "1147": {
+   "name": "Tel-Harsa"
+  },
+  "1148": {
+   "name": "Tel-Melá"
+  },
+  "115": {
+   "name": "Atarote-Adar"
+  },
+  "1150": {
+   "name": "Temã"
+  },
+  "1151": {
+   "name": "Tera"
+  },
+  "1156": {
+   "name": "Nô-Amom"
+  },
+  "1157": {
+   "name": "Tebes"
+  },
+  "1158": {
+   "name": "Tessalônica"
+  },
+  "1159": {
+   "name": "Três Vendas"
+  },
+  "116": {
+   "name": "Atace"
+  },
+  "1160": {
+   "name": "Tiatira"
+  },
+  "1161": {
+   "name": "Tibérias"
+  },
+  "1162": {
+   "name": "Tibate"
+  },
+  "1163": {
+   "name": "Hiddekel",
+   "other": "Tigre"
+  },
+  "1164": {
+   "name": "Timna"
+  },
+  "1165": {
+   "name": "Timna"
+  },
+  "1166": {
+   "name": "Timnate-Heres"
+  },
+  "1167": {
+   "name": "Timnate-Sera"
+  },
+  "1168": {
+   "name": "Tifsa"
+  },
+  "1169": {
+   "name": "Tifsa"
+  },
+  "117": {
+   "name": "Atarim"
+  },
+  "1170": {
+   "name": "Tirsa"
+  },
+  "1171": {
+   "name": "Tisbita"
+  },
+  "1172": {
+   "name": "Tobe"
+  },
+  "1174": {
+   "name": "Tolade"
+  },
+  "1175": {
+   "name": "Tofel"
+  },
+  "1176": {
+   "name": "Tofete"
+  },
+  "1177": {
+   "name": "Torre"
+  },
+  "1178": {
+   "name": "Siquém (torre)"
+  },
+  "1179": {
+   "name": "Torre"
+  },
+  "118": {
+   "name": "Atenas"
+  },
+  "1180": {
+   "name": "Torre"
+  },
+  "1181": {
+   "name": "Traconites"
+  },
+  "1182": {
+   "name": "Trôade"
+  },
+  "1184": {
+   "name": "Tiro"
+  },
+  "1186": {
+   "name": "Umá"
+  },
+  "1187": {
+   "name": "Ufaz"
+  },
+  "1188": {
+   "name": "Bete-Horom de cima"
+  },
+  "1189": {
+   "name": "Ur dos caldeus"
+  },
+  "119": {
+   "name": "Atarote-Sofã"
+  },
+  "1192": {
+   "name": "Uzá"
+  },
+  "1193": {
+   "name": "Uzém-Seerá"
+  },
+  "1195": {
+   "name": "Porta do Vale"
+  },
+  "1196": {
+   "name": "Vale de Achor"
+  },
+  "1197": {
+   "name": "Vale de Aijalom"
+  },
+  "1198": {
+   "name": "Planície de Áven"
+  },
+  "1199": {
+   "name": "Vale de Baca"
+  },
+  "120": {
+   "name": "Atália"
+  },
+  "1200": {
+   "name": "Vale de Beracah"
+  },
+  "1201": {
+   "name": "Vale de Elá"
+  },
+  "1202": {
+   "name": "Ribeiro Escol",
+   "other": "vale de Escol"
+  },
+  "1203": {
+   "name": "Vale de Gerar"
+  },
+  "1204": {
+   "name": "Vale de Gibeão"
+  },
+  "1205": {
+   "name": "Vale de Hamongog"
+  },
+  "1206": {
+   "name": "Vale de Hebrom"
+  },
+  "1207": {
+   "name": "Vale de Hinnom"
+  },
+  "1208": {
+   "name": "Vale de Jiphthahel"
+  },
+  "1209": {
+   "name": "Vale de Josafá"
+  },
+  "121": {
+   "name": "Áven"
+  },
+  "1210": {
+   "name": "Vale de Jericó"
+  },
+  "1211": {
+   "name": "Vale de Jezreel"
+  },
+  "1212": {
+   "name": "Vale de Líbano"
+  },
+  "1213": {
+   "name": "Vale de Mizpeh"
+  },
+  "1214": {
+   "name": "Vale de Rephaim",
+   "other": "vale de Hinom"
+  },
+  "1215": {
+   "name": "Vale do Sal"
+  },
+  "1216": {
+   "name": "Vale de Shaveh"
+  },
+  "1217": {
+   "name": "Vale de Sitim"
+  },
+  "1218": {
+   "name": "Vale de Siddim"
+  },
+  "1219": {
+   "name": "Vale da Matança"
+  },
+  "122": {
+   "name": "Avite"
+  },
+  "1220": {
+   "name": "Vale de Sorek"
+  },
+  "1221": {
+   "name": "Vale de Sucote"
+  },
+  "1222": {
+   "name": "Vale de Zeboim"
+  },
+  "1223": {
+   "name": "Vale de Zephathah"
+  },
+  "1224": {
+   "name": "Vale de Zerede"
+  },
+  "1225": {
+   "name": "Rio Arnom"
+  },
+  "1226": {
+   "name": "Vale do filho de Hinom"
+  },
+  "1227": {
+   "name": "Vale dos Viajantes"
+  },
+  "1228": {
+   "name": "Vaebe"
+  },
+  "1229": {
+   "name": "Campo"
+  },
+  "123": {
+   "name": "Hava"
+  },
+  "1230": {
+   "name": "Porta das Águas"
+  },
+  "1231": {
+   "name": "Caminho de Santidade"
+  },
+  "1233": {
+   "name": "Irom"
+  },
+  "1234": {
+   "name": "Zaanã"
+  },
+  "1235": {
+   "name": "Zaanim"
+  },
+  "1237": {
+   "name": "Salmom"
+  },
+  "1238": {
+   "name": "Zalmona"
+  },
+  "1239": {
+   "name": "Zanoa"
+  },
+  "124": {
+   "name": "Avim"
+  },
+  "1240": {
+   "name": "Zanoa"
+  },
+  "1242": {
+   "name": "Sarepta"
+  },
+  "1243": {
+   "name": "Zaretã"
+  },
+  "1244": {
+   "name": "Zeboim"
+  },
+  "1246": {
+   "name": "Zedade"
+  },
+  "1248": {
+   "name": "Zelza"
+  },
+  "1250": {
+   "name": "Zenã"
+  },
+  "1251": {
+   "name": "Zefate"
+  },
+  "1253": {
+   "name": "Zerede"
+  },
+  "1254": {
+   "name": "Zeredá"
+  },
+  "1255": {
+   "name": "Zeredá"
+  },
+  "1256": {
+   "name": "Zererá"
+  },
+  "1257": {
+   "name": "Zerete-Saar"
+  },
+  "1258": {
+   "name": "Zidim"
+  },
+  "1259": {
+   "name": "Ziclague"
+  },
+  "1260": {
+   "name": "Zinri"
+  },
+  "1261": {
+   "name": "Zim"
+  },
+  "1262": {
+   "name": "Zim"
+  },
+  "1263": {
+   "name": "Sião"
+  },
+  "1266": {
+   "name": "Zife"
+  },
+  "1267": {
+   "name": "Zife"
+  },
+  "1268": {
+   "name": "Zifrom"
+  },
+  "1270": {
+   "name": "Zoã"
+  },
+  "1272": {
+   "name": "Zobá"
+  },
+  "1273": {
+   "name": "Hamate"
+  },
+  "1274": {
+   "name": "Zofim"
+  },
+  "1275": {
+   "name": "Zorá"
+  },
+  "1278": {
+   "name": "Trogílio"
+  },
+  "128": {
+   "name": "Azeca"
+  },
+  "129": {
+   "name": "Azmavete"
+  },
+  "13": {
+   "name": "Abrona"
+  },
+  "130": {
+   "name": "Azmom"
+  },
+  "131": {
+   "name": "Aznote-Tabor"
+  },
+  "132": {
+   "name": "Azoto"
+  },
+  "134": {
+   "name": "Baalá"
+  },
+  "135": {
+   "name": "Baalá"
+  },
+  "136": {
+   "name": "Baalate"
+  },
+  "137": {
+   "name": "Baalate"
+  },
+  "138": {
+   "name": "Baalate-Beer"
+  },
+  "14": {
+   "name": "Acade"
+  },
+  "140": {
+   "name": "Baal-Gade"
+  },
+  "141": {
+   "name": "Baal-Hamom"
+  },
+  "142": {
+   "name": "Baal-Hazor"
+  },
+  "143": {
+   "name": "Baal-Hermom"
+  },
+  "144": {
+   "name": "Baal-Meom"
+  },
+  "145": {
+   "name": "Baal-Peor"
+  },
+  "146": {
+   "name": "Baal-Perazim"
+  },
+  "147": {
+   "name": "Baal-Salisa"
+  },
+  "148": {
+   "name": "Baal-Tamar"
+  },
+  "149": {
+   "name": "Baal-Zefom"
+  },
+  "15": {
+   "name": "Aco"
+  },
+  "151": {
+   "name": "Babilônia"
+  },
+  "152": {
+   "name": "Babilônia"
+  },
+  "154": {
+   "name": "Baurim"
+  },
+  "155": {
+   "name": "Balá"
+  },
+  "156": {
+   "name": "Bamá"
+  },
+  "157": {
+   "name": "Bamote"
+  },
+  "158": {
+   "name": "Bamote-Baal"
+  },
+  "159": {
+   "name": "Basã"
+  },
+  "16": {
+   "name": "Acaia"
+  },
+  "160": {
+   "name": "Bate-Rabim"
+  },
+  "161": {
+   "name": "Bealote"
+  },
+  "162": {
+   "name": "Alote"
+  },
+  "163": {
+   "name": "Porta Formosa"
+  },
+  "166": {
+   "name": "Beer-Elim"
+  },
+  "167": {
+   "name": "Beer-Laai-Roi"
+  },
+  "168": {
+   "name": "Beerote"
+  },
+  "169": {
+   "name": "Beerote-Benê-Jaacã"
+  },
+  "17": {
+   "name": "Acsafe"
+  },
+  "170": {
+   "name": "Berseba"
+  },
+  "171": {
+   "name": "Beesterá"
+  },
+  "172": {
+   "name": "Belá"
+  },
+  "173": {
+   "name": "Bene-Beraque"
+  },
+  "174": {
+   "name": "Bene-Jaacã"
+  },
+  "175": {
+   "name": "Porta de Benjamim"
+  },
+  "176": {
+   "name": "Beom"
+  },
+  "177": {
+   "name": "Bereia"
+  },
+  "178": {
+   "name": "Berede"
+  },
+  "179": {
+   "name": "Berota"
+  },
+  "18": {
+   "name": "Aczibe"
+  },
+  "180": {
+   "name": "Beerote"
+  },
+  "182": {
+   "name": "Betá"
+  },
+  "183": {
+   "name": "Béten"
+  },
+  "184": {
+   "name": "Bete-Anate"
+  },
+  "185": {
+   "name": "Bete-Anote"
+  },
+  "186": {
+   "name": "Betânia"
+  },
+  "187": {
+   "name": "Betânia"
+  },
+  "188": {
+   "name": "Bete-Arabá"
+  },
+  "189": {
+   "name": "Bete-Arbel"
+  },
+  "19": {
+   "name": "Aczibe"
+  },
+  "190": {
+   "name": "Bete-Asbeia"
+  },
+  "191": {
+   "name": "Bete-Áven"
+  },
+  "192": {
+   "name": "Bete-Azmavete"
+  },
+  "193": {
+   "name": "Bete-Baal-Meom"
+  },
+  "194": {
+   "name": "Bete-Bara"
+  },
+  "195": {
+   "name": "Bete-Birai"
+  },
+  "196": {
+   "name": "Bete-Car"
+  },
+  "197": {
+   "name": "Bete-Dagom"
+  },
+  "198": {
+   "name": "Bete-Dagom"
+  },
+  "199": {
+   "name": "Bete-Diblataim"
+  },
+  "20": {
+   "name": "Adada"
+  },
+  "200": {
+   "name": "Bete-Éden"
+  },
+  "202": {
+   "name": "Betel (da Palestina)"
+  },
+  "203": {
+   "name": "Betel (de Judá)"
+  },
+  "204": {
+   "name": "Bete-Emeque"
+  },
+  "205": {
+   "name": "Betesda"
+  },
+  "206": {
+   "name": "Bete-Ezel"
+  },
+  "207": {
+   "name": "Bete-Gamul"
+  },
+  "208": {
+   "name": "Gilgal"
+  },
+  "209": {
+   "name": "Bete-Haquerém"
+  },
+  "21": {
+   "name": "Adã"
+  },
+  "211": {
+   "name": "Bete-Arã"
+  },
+  "212": {
+   "name": "Bete-Harã"
+  },
+  "213": {
+   "name": "Bete-Hogla"
+  },
+  "214": {
+   "name": "Bete-Horom"
+  },
+  "215": {
+   "name": "Bete-Jesimote"
+  },
+  "216": {
+   "name": "Bete-Le-Afra"
+  },
+  "217": {
+   "name": "Bete-Lebaote"
+  },
+  "218": {
+   "name": "Belém"
+  },
+  "219": {
+   "name": "Belém"
+  },
+  "22": {
+   "name": "Adama"
+  },
+  "220": {
+   "name": "Belém Efrata"
+  },
+  "221": {
+   "name": "Bete-Maaca"
+  },
+  "222": {
+   "name": "Bete-Marcabote"
+  },
+  "223": {
+   "name": "Bete-Meom"
+  },
+  "224": {
+   "name": "Milo"
+  },
+  "225": {
+   "name": "Bete-Ninra"
+  },
+  "226": {
+   "name": "Bete-Pazez"
+  },
+  "227": {
+   "name": "Bete-Pelete"
+  },
+  "228": {
+   "name": "Bete-Peor"
+  },
+  "229": {
+   "name": "Betfagé"
+  },
+  "23": {
+   "name": "Adami-Neguebe"
+  },
+  "230": {
+   "name": "Bete-Reobe"
+  },
+  "231": {
+   "name": "Betsaida"
+  },
+  "232": {
+   "name": "Bete-Seã"
+  },
+  "233": {
+   "name": "Bete-Seã"
+  },
+  "234": {
+   "name": "Bete-Semes"
+  },
+  "235": {
+   "name": "Bete-Semes"
+  },
+  "236": {
+   "name": "Bete-Semes"
+  },
+  "237": {
+   "name": "Bete-Sita"
+  },
+  "238": {
+   "name": "Bete-Tapua"
+  },
+  "24": {
+   "name": "Adar"
+  },
+  "240": {
+   "name": "Betuel"
+  },
+  "241": {
+   "name": "Betul"
+  },
+  "242": {
+   "name": "Bete-Zur"
+  },
+  "244": {
+   "name": "Rio"
+  },
+  "245": {
+   "name": "Bezeque"
+  },
+  "246": {
+   "name": "Bezeque"
+  },
+  "248": {
+   "name": "Bileã"
+  },
+  "249": {
+   "name": "Bila"
+  },
+  "25": {
+   "name": "Adom"
+  },
+  "250": {
+   "name": "Bitínia"
+  },
+  "251": {
+   "name": "Biziotiá"
+  },
+  "252": {
+   "name": "Boquim"
+  },
+  "253": {
+   "name": "Corasã"
+  },
+  "255": {
+   "name": "Bozcate"
+  },
+  "256": {
+   "name": "Bozra"
+  },
+  "257": {
+   "name": "Bosra"
+  },
+  "258": {
+   "name": "Muro Largo"
+  },
+  "259": {
+   "name": "Ribeiro do Egito"
+  },
+  "26": {
+   "name": "Aditaim"
+  },
+  "260": {
+   "name": "Arabá"
+  },
+  "263": {
+   "name": "Cabom"
+  },
+  "266": {
+   "name": "Cesareia"
+  },
+  "267": {
+   "name": "Cesareia de Filipe"
+  },
+  "268": {
+   "name": "Calá"
+  },
+  "269": {
+   "name": "Calné"
+  },
+  "27": {
+   "name": "Admá"
+  },
+  "271": {
+   "name": "Caná"
+  },
+  "272": {
+   "name": "Canaã",
+   "other": "Terra Prometida"
+  },
+  "273": {
+   "name": "Cané"
+  },
+  "274": {
+   "name": "Cafarnaum"
+  },
+  "275": {
+   "name": "Caftor"
+  },
+  "276": {
+   "name": "Capadócia"
+  },
+  "277": {
+   "name": "Carquemis"
+  },
+  "278": {
+   "name": "Carmelo"
+  },
+  "279": {
+   "name": "Casifia"
+  },
+  "281": {
+   "name": "Cencreia"
+  },
+  "282": {
+   "name": "Caldeia"
+  },
+  "283": {
+   "name": "Quebar"
+  },
+  "284": {
+   "name": "Quefar-Amonai"
+  },
+  "285": {
+   "name": "Quefira"
+  },
+  "286": {
+   "name": "Querite"
+  },
+  "287": {
+   "name": "Querube"
+  },
+  "288": {
+   "name": "Quesalom"
+  },
+  "289": {
+   "name": "Quesil"
+  },
+  "290": {
+   "name": "Quesulote"
+  },
+  "291": {
+   "name": "Quezibe"
+  },
+  "292": {
+   "name": "Quilmade"
+  },
+  "293": {
+   "name": "Quinerete"
+  },
+  "294": {
+   "name": "Quinerete"
+  },
+  "296": {
+   "name": "Quios"
+  },
+  "297": {
+   "name": "Quislote-Tabor"
+  },
+  "298": {
+   "name": "Quitilis"
+  },
+  "299": {
+   "name": "Corazim"
+  },
+  "3": {
+   "name": "Abdom"
+  },
+  "30": {
+   "name": "Adriático"
+  },
+  "300": {
+   "name": "Cilícia"
+  },
+  "301": {
+   "name": "Destruição"
+  },
+  "303": {
+   "name": "Cidade do Senhor"
+  },
+  "304": {
+   "name": "Cnido"
+  },
+  "305": {
+   "name": "Colossos"
+  },
+  "306": {
+   "name": "Corinto"
+  },
+  "307": {
+   "name": "Porta da Esquina"
+  },
+  "308": {
+   "name": "Cós"
+  },
+  "31": {
+   "name": "Adulão"
+  },
+  "310": {
+   "name": "Creta"
+  },
+  "311": {
+   "name": "Cum"
+  },
+  "312": {
+   "name": "Cuxe"
+  },
+  "313": {
+   "name": "Cusã"
+  },
+  "314": {
+   "name": "Cuta"
+  },
+  "315": {
+   "name": "Cuta"
+  },
+  "316": {
+   "name": "Chipre"
+  },
+  "317": {
+   "name": "Cirene"
+  },
+  "318": {
+   "name": "Dabesete"
+  },
+  "319": {
+   "name": "Daberate"
+  },
+  "32": {
+   "name": "Adumim"
+  },
+  "320": {
+   "name": "Dalmanuta"
+  },
+  "321": {
+   "name": "Dalmácia"
+  },
+  "322": {
+   "name": "Damasco"
+  },
+  "323": {
+   "name": "Dã"
+  },
+  "324": {
+   "name": "Dana"
+  },
+  "328": {
+   "name": "Decápolis"
+  },
+  "329": {
+   "name": "Dedã"
+  },
+  "33": {
+   "name": "Enom"
+  },
+  "331": {
+   "name": "Dibom"
+  },
+  "332": {
+   "name": "Dibom"
+  },
+  "333": {
+   "name": "Dibom-Gade"
+  },
+  "334": {
+   "name": "Dileã"
+  },
+  "335": {
+   "name": "Dimna"
+  },
+  "336": {
+   "name": "Dimona"
+  },
+  "337": {
+   "name": "Dinabá"
+  },
+  "338": {
+   "name": "Carvalho dos Adivinhos"
+  },
+  "339": {
+   "name": "Di-Zaabe"
+  },
+  "34": {
+   "name": "Aava"
+  },
+  "342": {
+   "name": "Dotã"
+  },
+  "343": {
+   "name": "Fonte do Dragão"
+  },
+  "344": {
+   "name": "Dumá"
+  },
+  "345": {
+   "name": "Dumá"
+  },
+  "346": {
+   "name": "Porta do Monturo",
+   "other": "Porta do Monturo"
+  },
+  "349": {
+   "name": "Porta Oriental"
+  },
+  "35": {
+   "name": "Alabe"
+  },
+  "350": {
+   "name": "Ebenézer"
+  },
+  "351": {
+   "name": "Ebes"
+  },
+  "352": {
+   "name": "Hebrom"
+  },
+  "354": {
+   "name": "Éden"
+  },
+  "355": {
+   "name": "Éder"
+  },
+  "356": {
+   "name": "Éder"
+  },
+  "360": {
+   "name": "Eglate-Selisia"
+  },
+  "361": {
+   "name": "Eglom"
+  },
+  "362": {
+   "name": "Egito"
+  },
+  "364": {
+   "name": "Ecrom"
+  },
+  "365": {
+   "name": "Elão"
+  },
+  "366": {
+   "name": "Elate"
+  },
+  "367": {
+   "name": "El-Betel"
+  },
+  "368": {
+   "name": "Eleale"
+  },
+  "370": {
+   "name": "Elisá"
+  },
+  "372": {
+   "name": "Elasar"
+  },
+  "373": {
+   "name": "Elom"
+  },
+  "374": {
+   "name": "Elom-Bete-Hanã"
+  },
+  "375": {
+   "name": "Elote"
+  },
+  "376": {
+   "name": "El-Parã"
+  },
+  "377": {
+   "name": "Elteque"
+  },
+  "378": {
+   "name": "Elteque"
+  },
+  "379": {
+   "name": "Eltecom"
+  },
+  "38": {
+   "name": "Aiate"
+  },
+  "380": {
+   "name": "Eltolade"
+  },
+  "381": {
+   "name": "Emeque-Queziz"
+  },
+  "382": {
+   "name": "Emaús"
+  },
+  "383": {
+   "name": "Então"
+  },
+  "384": {
+   "name": "Enã"
+  },
+  "385": {
+   "name": "En-Dor"
+  },
+  "386": {
+   "name": "En-Eglaim"
+  },
+  "387": {
+   "name": "En-Ganim"
+  },
+  "388": {
+   "name": "En-Ganim"
+  },
+  "389": {
+   "name": "En-Gedi"
+  },
+  "39": {
+   "name": "Aia"
+  },
+  "390": {
+   "name": "En-Hadá"
+  },
+  "391": {
+   "name": "En-Hacoré"
+  },
+  "392": {
+   "name": "En-Hazor"
+  },
+  "393": {
+   "name": "En-Mispate"
+  },
+  "394": {
+   "name": "En-Rimom"
+  },
+  "395": {
+   "name": "Rogel"
+  },
+  "396": {
+   "name": "En-Semes"
+  },
+  "397": {
+   "name": "Tapua"
+  },
+  "399": {
+   "name": "Efes-Damim"
+  },
+  "40": {
+   "name": "Aijalom"
+  },
+  "400": {
+   "name": "Éfeso"
+  },
+  "401": {
+   "name": "Efraim"
+  },
+  "402": {
+   "name": "Porta de Efraim"
+  },
+  "403": {
+   "name": "Efrata"
+  },
+  "404": {
+   "name": "Efrata"
+  },
+  "405": {
+   "name": "Efrom"
+  },
+  "406": {
+   "name": "Efrom"
+  },
+  "408": {
+   "name": "Esaú"
+  },
+  "409": {
+   "name": "Eseque"
+  },
+  "41": {
+   "name": "Aim"
+  },
+  "410": {
+   "name": "Esã"
+  },
+  "411": {
+   "name": "Estaol"
+  },
+  "412": {
+   "name": "Estemoa"
+  },
+  "413": {
+   "name": "Estemo"
+  },
+  "414": {
+   "name": "Etã"
+  },
+  "415": {
+   "name": "Etã"
+  },
+  "416": {
+   "name": "Etã"
+  },
+  "417": {
+   "name": "Etã"
+  },
+  "418": {
+   "name": "Eter"
+  },
+  "419": {
+   "name": "Cuxe"
+  },
+  "42": {
+   "name": "Aim"
+  },
+  "420": {
+   "name": "Ete-Cazim"
+  },
+  "421": {
+   "name": "Eufrates"
+  },
+  "422": {
+   "name": "Ezém"
+  },
+  "423": {
+   "name": "Eziom-Geber"
+  },
+  "424": {
+   "name": "Bons Portos"
+  },
+  "426": {
+   "name": "Porta do Peixe"
+  },
+  "427": {
+   "name": "Fórum de Ápio"
+  },
+  "428": {
+   "name": "Porta da Fonte"
+  },
+  "429": {
+   "name": "Gaás"
+  },
+  "43": {
+   "name": "Aceldama",
+   "other": "Campo de Sangue"
+  },
+  "430": {
+   "name": "Gabatá"
+  },
+  "431": {
+   "name": "Galácia"
+  },
+  "432": {
+   "name": "Galeede"
+  },
+  "433": {
+   "name": "Galileia"
+  },
+  "434": {
+   "name": "Galim"
+  },
+  "436": {
+   "name": "Garebe"
+  },
+  "437": {
+   "name": "Porta de Benjamin's"
+  },
+  "438": {
+   "name": "Porta de Efraim"
+  },
+  "439": {
+   "name": "Porta Velha"
+  },
+  "44": {
+   "name": "Acrabim"
+  },
+  "440": {
+   "name": "Porta do Fundamento"
+  },
+  "441": {
+   "name": "Porta da Prisão"
+  },
+  "442": {
+   "name": "Gate"
+  },
+  "443": {
+   "name": "Gate-Hefer"
+  },
+  "444": {
+   "name": "Gate-Rimom"
+  },
+  "445": {
+   "name": "Gate-Rimom"
+  },
+  "448": {
+   "name": "Gibeá"
+  },
+  "45": {
+   "name": "Alemete"
+  },
+  "452": {
+   "name": "Gederá"
+  },
+  "453": {
+   "name": "Gederote"
+  },
+  "454": {
+   "name": "Gederotaim"
+  },
+  "457": {
+   "name": "Gelilote"
+  },
+  "458": {
+   "name": "Genesaré"
+  },
+  "460": {
+   "name": "Gerute-Quimã"
+  },
+  "461": {
+   "name": "Gesur"
+  },
+  "462": {
+   "name": "Getsêmani"
+  },
+  "464": {
+   "name": "Gia"
+  },
+  "465": {
+   "name": "Gibetom"
+  },
+  "466": {
+   "name": "Gibeá"
+  },
+  "467": {
+   "name": "Gibeá"
+  },
+  "47": {
+   "name": "Alameleque"
+  },
+  "470": {
+   "name": "Gibeão"
+  },
+  "472": {
+   "name": "Giom"
+  },
+  "473": {
+   "name": "Giom"
+  },
+  "475": {
+   "name": "Gileade"
+  },
+  "479": {
+   "name": "Gilo"
+  },
+  "48": {
+   "name": "Alom-Bacute"
+  },
+  "480": {
+   "name": "Ginzo"
+  },
+  "481": {
+   "name": "Gitaim"
+  },
+  "482": {
+   "name": "Goa"
+  },
+  "483": {
+   "name": "Gobe"
+  },
+  "484": {
+   "name": "Gogue"
+  },
+  "486": {
+   "name": "Golã"
+  },
+  "487": {
+   "name": "Gólgota"
+  },
+  "488": {
+   "name": "Gômer"
+  },
+  "489": {
+   "name": "Gomorra"
+  },
+  "49": {
+   "name": "Almom"
+  },
+  "490": {
+   "name": "Gósen"
+  },
+  "491": {
+   "name": "Gósen"
+  },
+  "492": {
+   "name": "Gozã"
+  },
+  "493": {
+   "name": "Mar Grande"
+  },
+  "494": {
+   "name": "Sidom"
+  },
+  "495": {
+   "name": "Grécia"
+  },
+  "496": {
+   "name": "Gudgodá"
+  },
+  "498": {
+   "name": "Gur-Baal"
+  },
+  "5": {
+   "name": "Abel-Bete-Maaca"
+  },
+  "50": {
+   "name": "Almom-Diblataim"
+  },
+  "500": {
+   "name": "Haquilá"
+  },
+  "501": {
+   "name": "Hadade-Rimom"
+  },
+  "502": {
+   "name": "Hadasa"
+  },
+  "503": {
+   "name": "Hadide"
+  },
+  "504": {
+   "name": "Hadraque"
+  },
+  "506": {
+   "name": "Pi-Hairote"
+  },
+  "508": {
+   "name": "Hala"
+  },
+  "509": {
+   "name": "Halul"
+  },
+  "51": {
+   "name": "Alus"
+  },
+  "514": {
+   "name": "Hã"
+  },
+  "515": {
+   "name": "Cam"
+  },
+  "516": {
+   "name": "Hamate"
+  },
+  "517": {
+   "name": "Hamate"
+  },
+  "518": {
+   "name": "Hamate"
+  },
+  "519": {
+   "name": "Hamom"
+  },
+  "52": {
+   "name": "Amade"
+  },
+  "520": {
+   "name": "Hamote-Dor"
+  },
+  "521": {
+   "name": "Hamoná"
+  },
+  "523": {
+   "name": "Hanatom"
+  },
+  "524": {
+   "name": "Hafaraim"
+  },
+  "526": {
+   "name": "Harada"
+  },
+  "527": {
+   "name": "Harã"
+  },
+  "528": {
+   "name": "Harmom"
+  },
+  "529": {
+   "name": "Harode"
+  },
+  "53": {
+   "name": "Amaleque"
+  },
+  "530": {
+   "name": "Harosete"
+  },
+  "531": {
+   "name": "Hasmona"
+  },
+  "532": {
+   "name": "Haurã"
+  },
+  "533": {
+   "name": "Havilá (do Éden)"
+  },
+  "534": {
+   "name": "Havilá (da Arábia)"
+  },
+  "535": {
+   "name": "Havote-Jair"
+  },
+  "536": {
+   "name": "Hazar-Adar"
+  },
+  "537": {
+   "name": "Hazar-Enã"
+  },
+  "538": {
+   "name": "Hazar-Gada"
+  },
+  "539": {
+   "name": "Hazar-Sual"
+  },
+  "54": {
+   "name": "Amã"
+  },
+  "540": {
+   "name": "Hazar-Susa"
+  },
+  "541": {
+   "name": "Hazar-Susim"
+  },
+  "542": {
+   "name": "Hazazom-Tamar"
+  },
+  "543": {
+   "name": "Hazer-Haticom"
+  },
+  "544": {
+   "name": "Hazerote"
+  },
+  "55": {
+   "name": "Amaná"
+  },
+  "550": {
+   "name": "Hazor-Hadata"
+  },
+  "551": {
+   "name": "Hebrom"
+  },
+  "552": {
+   "name": "Helã"
+  },
+  "553": {
+   "name": "Helba"
+  },
+  "554": {
+   "name": "Helbom"
+  },
+  "556": {
+   "name": "Helefe"
+  },
+  "558": {
+   "name": "Helcate"
+  },
+  "559": {
+   "name": "Helcate-Hazurim"
+  },
+  "561": {
+   "name": "Hefer"
+  },
+  "563": {
+   "name": "Herete"
+  },
+  "564": {
+   "name": "Hermom"
+  },
+  "565": {
+   "name": "Hesbom"
+  },
+  "566": {
+   "name": "Hesmom"
+  },
+  "567": {
+   "name": "Hetlom"
+  },
+  "568": {
+   "name": "Hebrom"
+  },
+  "569": {
+   "name": "Hierápolis"
+  },
+  "57": {
+   "name": "Amá"
+  },
+  "570": {
+   "name": "Hilém"
+  },
+  "571": {
+   "name": "Hobá"
+  },
+  "572": {
+   "name": "Holom"
+  },
+  "573": {
+   "name": "Holom"
+  },
+  "574": {
+   "name": "Lugar Santo"
+  },
+  "575": {
+   "name": "Lugar Santo"
+  },
+  "576": {
+   "name": "Horebe"
+  },
+  "577": {
+   "name": "Horém"
+  },
+  "579": {
+   "name": "Hor-Gidgade"
+  },
+  "58": {
+   "name": "Amom"
+  },
+  "580": {
+   "name": "Hormá"
+  },
+  "582": {
+   "name": "Porta dos Cavalos"
+  },
+  "583": {
+   "name": "Hosa"
+  },
+  "585": {
+   "name": "Líbano"
+  },
+  "588": {
+   "name": "Hunta"
+  },
+  "589": {
+   "name": "Ibleão"
+  },
+  "59": {
+   "name": "Anfípolis"
+  },
+  "590": {
+   "name": "Icônio"
+  },
+  "591": {
+   "name": "Idala"
+  },
+  "592": {
+   "name": "Idumeia"
+  },
+  "594": {
+   "name": "Ijom"
+  },
+  "595": {
+   "name": "Ilírico"
+  },
+  "596": {
+   "name": "Imer"
+  },
+  "597": {
+   "name": "Índia"
+  },
+  "598": {
+   "name": "Iftá"
+  },
+  "6": {
+   "name": "Abel-Queramim"
+  },
+  "60": {
+   "name": "Anabe"
+  },
+  "600": {
+   "name": "Ir-Semes"
+  },
+  "601": {
+   "name": "Itália"
+  },
+  "602": {
+   "name": "Itla"
+  },
+  "603": {
+   "name": "Itnã"
+  },
+  "604": {
+   "name": "Itureia"
+  },
+  "605": {
+   "name": "Iva"
+  },
+  "606": {
+   "name": "Ijé-Abarim"
+  },
+  "609": {
+   "name": "Jaboque"
+  },
+  "61": {
+   "name": "Anaarate"
+  },
+  "610": {
+   "name": "Jabes"
+  },
+  "611": {
+   "name": "Jabes-Gileade"
+  },
+  "615": {
+   "name": "Jabné"
+  },
+  "617": {
+   "name": "Jaza"
+  },
+  "618": {
+   "name": "Jazá"
+  },
+  "62": {
+   "name": "Ananias"
+  },
+  "621": {
+   "name": "Janoa"
+  },
+  "622": {
+   "name": "Janoa"
+  },
+  "623": {
+   "name": "Jafia"
+  },
+  "624": {
+   "name": "Jarmute"
+  },
+  "625": {
+   "name": "Jarmute"
+  },
+  "626": {
+   "name": "Jatir"
+  },
+  "627": {
+   "name": "Javã"
+  },
+  "63": {
+   "name": "Anatote"
+  },
+  "631": {
+   "name": "Jegar-Saaduta"
+  },
+  "632": {
+   "name": "Jeúde"
+  },
+  "633": {
+   "name": "Jecabzeel"
+  },
+  "634": {
+   "name": "Jericó"
+  },
+  "636": {
+   "name": "Jerusalém",
+   "other": "Sião, Jebus, Salém, Cidade de Deus"
+  },
+  "638": {
+   "name": "Jesana"
+  },
+  "639": {
+   "name": "Jesimom"
+  },
+  "64": {
+   "name": "Aném"
+  },
+  "640": {
+   "name": "Jesua"
+  },
+  "645": {
+   "name": "Jogbeá"
+  },
+  "646": {
+   "name": "Jocdeão"
+  },
+  "647": {
+   "name": "Jocmeão"
+  },
+  "648": {
+   "name": "Jocmeão"
+  },
+  "649": {
+   "name": "Jocneão"
+  },
+  "650": {
+   "name": "Jocteel"
+  },
+  "651": {
+   "name": "Jocteel"
+  },
+  "652": {
+   "name": "Jope"
+  },
+  "653": {
+   "name": "Jordão"
+  },
+  "654": {
+   "name": "Planície do Jordão"
+  },
+  "655": {
+   "name": "Jotbá"
+  },
+  "656": {
+   "name": "Jotbatá"
+  },
+  "657": {
+   "name": "Judeia"
+  },
+  "658": {
+   "name": "Judeia"
+  },
+  "659": {
+   "name": "Jutá"
+  },
+  "660": {
+   "name": "Cabzeel"
+  },
+  "661": {
+   "name": "Cades",
+   "other": "Cades-Barneia"
+  },
+  "662": {
+   "name": "Hodsi"
+  },
+  "663": {
+   "name": "Cades-Barneia"
+  },
+  "665": {
+   "name": "Camom"
+  },
+  "666": {
+   "name": "Caná"
+  },
+  "667": {
+   "name": "Caná"
+  },
+  "668": {
+   "name": "Carca"
+  },
+  "669": {
+   "name": "Carcor"
+  },
+  "671": {
+   "name": "Cartá"
+  },
+  "672": {
+   "name": "Cartã"
+  },
+  "673": {
+   "name": "Catate"
+  },
+  "674": {
+   "name": "Quedar"
+  },
+  "675": {
+   "name": "Quedemote"
+  },
+  "676": {
+   "name": "Quedes"
+  },
+  "677": {
+   "name": "Quedes"
+  },
+  "678": {
+   "name": "Quedes"
+  },
+  "68": {
+   "name": "Antioquia (Síria)"
+  },
+  "680": {
+   "name": "Queelata"
+  },
+  "681": {
+   "name": "Queila"
+  },
+  "682": {
+   "name": "Quenate"
+  },
+  "683": {
+   "name": "Queriote"
+  },
+  "684": {
+   "name": "Queriote-Hezrom"
+  },
+  "685": {
+   "name": "Quibrote-Hataavá"
+  },
+  "686": {
+   "name": "Quibzaim"
+  },
+  "687": {
+   "name": "Cedrom"
+  },
+  "688": {
+   "name": "Ribeiro Cedrom",
+   "other": "ribeiro de Cedrom"
+  },
+  "689": {
+   "name": "Quiná"
+  },
+  "69": {
+   "name": "Antioquia (Pisídia)"
+  },
+  "691": {
+   "name": "Tanque"
+  },
+  "692": {
+   "name": "Vale de Shaveh",
+   "other": "vale do Rei"
+  },
+  "693": {
+   "name": "Quir"
+  },
+  "694": {
+   "name": "Quir-Haresete"
+  },
+  "695": {
+   "name": "Quiriataim"
+  },
+  "696": {
+   "name": "Quiriataim"
+  },
+  "697": {
+   "name": "Quiriate-Arba"
+  },
+  "698": {
+   "name": "Quiriate-Jearim"
+  },
+  "699": {
+   "name": "Quriate-Baal"
+  },
+  "7": {
+   "name": "Abel-Maim"
+  },
+  "70": {
+   "name": "Antipátride"
+  },
+  "700": {
+   "name": "Quiriate-Huzote"
+  },
+  "701": {
+   "name": "Quriate-Jearim"
+  },
+  "702": {
+   "name": "Quiriate-Saná"
+  },
+  "703": {
+   "name": "Quiriate-Sefer"
+  },
+  "704": {
+   "name": "Quisiom"
+  },
+  "705": {
+   "name": "Quisom",
+   "other": "Quisom"
+  },
+  "706": {
+   "name": "Quitrom"
+  },
+  "707": {
+   "name": "Quitim"
+  },
+  "708": {
+   "name": "Coa"
+  },
+  "710": {
+   "name": "Labã"
+  },
+  "711": {
+   "name": "Laquis"
+  },
+  "712": {
+   "name": "Laamás"
+  },
+  "713": {
+   "name": "Laís"
+  },
+  "714": {
+   "name": "Laís"
+  },
+  "715": {
+   "name": "Lacum"
+  },
+  "716": {
+   "name": "Laodiceia"
+  },
+  "717": {
+   "name": "Laseia"
+  },
+  "718": {
+   "name": "Lasa"
+  },
+  "719": {
+   "name": "Lasarom"
+  },
+  "720": {
+   "name": "Líbano"
+  },
+  "721": {
+   "name": "Lebaote"
+  },
+  "722": {
+   "name": "Lebe-Camai"
+  },
+  "723": {
+   "name": "Hamate"
+  },
+  "724": {
+   "name": "Lebona"
+  },
+  "726": {
+   "name": "Leí"
+  },
+  "727": {
+   "name": "Lesém"
+  },
+  "728": {
+   "name": "Libna"
+  },
+  "729": {
+   "name": "Libna"
+  },
+  "730": {
+   "name": "Líbia"
+  },
+  "731": {
+   "name": "Lode"
+  },
+  "732": {
+   "name": "Lo-Debar"
+  },
+  "733": {
+   "name": "Bete-Horom"
+  },
+  "734": {
+   "name": "Bete-Horom"
+  },
+  "735": {
+   "name": "Lude"
+  },
+  "736": {
+   "name": "Luíte"
+  },
+  "739": {
+   "name": "Licaônia"
+  },
+  "740": {
+   "name": "Lícia"
+  },
+  "741": {
+   "name": "Lida"
+  },
+  "742": {
+   "name": "Listra"
+  },
+  "743": {
+   "name": "Maaca"
+  },
+  "744": {
+   "name": "Maacate"
+  },
+  "745": {
+   "name": "Maarate"
+  },
+  "747": {
+   "name": "Macedônia"
+  },
+  "748": {
+   "name": "Macpela"
+  },
+  "749": {
+   "name": "Madmana"
+  },
+  "750": {
+   "name": "Madmém"
+  },
+  "751": {
+   "name": "Madmena"
+  },
+  "752": {
+   "name": "Madom"
+  },
+  "753": {
+   "name": "Magdala"
+  },
+  "754": {
+   "name": "Magogue"
+  },
+  "756": {
+   "name": "Maanaim"
+  },
+  "758": {
+   "name": "Macaz"
+  },
+  "759": {
+   "name": "Maquelote"
+  },
+  "76": {
+   "name": "Apolônia"
+  },
+  "760": {
+   "name": "Maquedá"
+  },
+  "761": {
+   "name": "Malta"
+  },
+  "762": {
+   "name": "Manre"
+  },
+  "763": {
+   "name": "Manaate"
+  },
+  "764": {
+   "name": "Maom"
+  },
+  "765": {
+   "name": "Mara"
+  },
+  "766": {
+   "name": "Maralá"
+  },
+  "767": {
+   "name": "Maressa"
+  },
+  "768": {
+   "name": "Marote"
+  },
+  "769": {
+   "name": "Masal"
+  },
+  "770": {
+   "name": "Masreca"
+  },
+  "771": {
+   "name": "Massá"
+  },
+  "772": {
+   "name": "Matana"
+  },
+  "773": {
+   "name": "Meara"
+  },
+  "774": {
+   "name": "Meconá"
+  },
+  "776": {
+   "name": "Média"
+  },
+  "777": {
+   "name": "Megido"
+  },
+  "778": {
+   "name": "Me-Jarcom"
+  },
+  "779": {
+   "name": "Egito"
+  },
+  "78": {
+   "name": "Arabe"
+  },
+  "780": {
+   "name": "Mefaate"
+  },
+  "781": {
+   "name": "Merataim"
+  },
+  "782": {
+   "name": "Meribá (de Cades)"
+  },
+  "783": {
+   "name": "Meribá (de Horebe)"
+  },
+  "784": {
+   "name": "Meribá-Cades"
+  },
+  "787": {
+   "name": "Messa"
+  },
+  "788": {
+   "name": "Meseque"
+  },
+  "79": {
+   "name": "Arabá"
+  },
+  "790": {
+   "name": "Mesopotâmia"
+  },
+  "791": {
+   "name": "Metegue-Ama"
+  },
+  "792": {
+   "name": "Micmás"
+  },
+  "793": {
+   "name": "Micmás"
+  },
+  "794": {
+   "name": "Micmetá"
+  },
+  "795": {
+   "name": "Midim"
+  },
+  "796": {
+   "name": "Midiã"
+  },
+  "797": {
+   "name": "Migdal-Ele"
+  },
+  "798": {
+   "name": "Migdal-Gade"
+  },
+  "8": {
+   "name": "Abel-Meolá"
+  },
+  "80": {
+   "name": "Arábia"
+  },
+  "800": {
+   "name": "Migrom"
+  },
+  "801": {
+   "name": "Mileto"
+  },
+  "802": {
+   "name": "Milo"
+  },
+  "803": {
+   "name": "Mini"
+  },
+  "804": {
+   "name": "Minite"
+  },
+  "805": {
+   "name": "Misal"
+  },
+  "807": {
+   "name": "Mitca"
+  },
+  "808": {
+   "name": "Mitilene"
+  },
+  "809": {
+   "name": "Mispá"
+  },
+  "81": {
+   "name": "Arade"
+  },
+  "810": {
+   "name": "Mispá"
+  },
+  "811": {
+   "name": "Mispá"
+  },
+  "815": {
+   "name": "Moabe"
+  },
+  "816": {
+   "name": "Moladá"
+  },
+  "817": {
+   "name": "Moré (Siquém)",
+   "other": "Siquém"
+  },
+  "818": {
+   "name": "Moré (pequeno Hermom)"
+  },
+  "82": {
+   "name": "Arã"
+  },
+  "820": {
+   "name": "Moresete-Gate"
+  },
+  "821": {
+   "name": "Moriá"
+  },
+  "823": {
+   "name": "Moserá"
+  },
+  "824": {
+   "name": "Moserote"
+  },
+  "825": {
+   "name": "Santíssimo"
+  },
+  "826": {
+   "name": "Lugar Santíssimo"
+  },
+  "827": {
+   "name": "Lugar Santíssimo"
+  },
+  "828": {
+   "name": "Monte das Oliveiras"
+  },
+  "829": {
+   "name": "Monte Baalhermon"
+  },
+  "83": {
+   "name": "Maaca"
+  },
+  "830": {
+   "name": "Monte Baalá"
+  },
+  "831": {
+   "name": "Monte Carmelo"
+  },
+  "832": {
+   "name": "Monte Ebal"
+  },
+  "833": {
+   "name": "Monte Efraim"
+  },
+  "834": {
+   "name": "Monte Efrom"
+  },
+  "835": {
+   "name": "Monte de Esaú"
+  },
+  "836": {
+   "name": "Monte Gerizim"
+  },
+  "837": {
+   "name": "Monte Gilboa"
+  },
+  "838": {
+   "name": "Monte Gileade"
+  },
+  "839": {
+   "name": "Monte Halak"
+  },
+  "840": {
+   "name": "Monte Heres"
+  },
+  "841": {
+   "name": "Monte Hermom"
+  },
+  "842": {
+   "name": "Monte Hor"
+  },
+  "843": {
+   "name": "Monte Hor"
+  },
+  "844": {
+   "name": "Monte Horebe"
+  },
+  "845": {
+   "name": "Monte Jearim"
+  },
+  "846": {
+   "name": "Monte Líbano"
+  },
+  "847": {
+   "name": "Monte Mizar"
+  },
+  "848": {
+   "name": "Monte Moriá"
+  },
+  "849": {
+   "name": "Monte Nebo"
+  },
+  "850": {
+   "name": "Monte Parã"
+  },
+  "851": {
+   "name": "Monte Perazim"
+  },
+  "852": {
+   "name": "Monte Seir"
+  },
+  "853": {
+   "name": "Monte Seir"
+  },
+  "854": {
+   "name": "Monte Shapher"
+  },
+  "855": {
+   "name": "Monte Sinai",
+   "other": "Horebe, monte Horebe"
+  },
+  "856": {
+   "name": "Monte Sion"
+  },
+  "857": {
+   "name": "Monte Tabor"
+  },
+  "858": {
+   "name": "Monte Salmom"
+  },
+  "859": {
+   "name": "Monte Zemaraim"
+  },
+  "86": {
+   "name": "Ararate"
+  },
+  "860": {
+   "name": "Monte Sião"
+  },
+  "861": {
+   "name": "Monte das Oliveiras",
+   "other": "monte das Oliveiras"
+  },
+  "862": {
+   "name": "Moza"
+  },
+  "863": {
+   "name": "Porta de Miphkad"
+  },
+  "864": {
+   "name": "Mira"
+  },
+  "865": {
+   "name": "Mísia"
+  },
+  "866": {
+   "name": "Naamá"
+  },
+  "867": {
+   "name": "Naarate"
+  },
+  "868": {
+   "name": "Naarã"
+  },
+  "869": {
+   "name": "Naalal"
+  },
+  "87": {
+   "name": "Areopagus",
+   "other": "Areópago"
+  },
+  "870": {
+   "name": "Naaliel"
+  },
+  "871": {
+   "name": "Naalol"
+  },
+  "872": {
+   "name": "Naim"
+  },
+  "873": {
+   "name": "Naiote"
+  },
+  "876": {
+   "name": "Nafis"
+  },
+  "878": {
+   "name": "Nazaré"
+  },
+  "879": {
+   "name": "Neá"
+  },
+  "88": {
+   "name": "Argobe"
+  },
+  "880": {
+   "name": "Neápolis"
+  },
+  "881": {
+   "name": "Nebaiote"
+  },
+  "882": {
+   "name": "Nebalate"
+  },
+  "885": {
+   "name": "Negueve"
+  },
+  "888": {
+   "name": "Neftoa"
+  },
+  "890": {
+   "name": "Netofá"
+  },
+  "891": {
+   "name": "Porta Nova"
+  },
+  "892": {
+   "name": "Nezibe"
+  },
+  "893": {
+   "name": "Nibsã"
+  },
+  "894": {
+   "name": "Nicópolis"
+  },
+  "895": {
+   "name": "Nilo"
+  },
+  "896": {
+   "name": "Ninra"
+  },
+  "897": {
+   "name": "Ninrim"
+  },
+  "898": {
+   "name": "Ninrode"
+  },
+  "899": {
+   "name": "Nínive"
+  },
+  "9": {
+   "name": "Abel-Mizraim"
+  },
+  "90": {
+   "name": "Arimateia"
+  },
+  "900": {
+   "name": "Nobe"
+  },
+  "901": {
+   "name": "Noba"
+  },
+  "902": {
+   "name": "Node"
+  },
+  "903": {
+   "name": "Nodabe"
+  },
+  "904": {
+   "name": "Noá"
+  },
+  "905": {
+   "name": "Nofá"
+  },
+  "906": {
+   "name": "Obote"
+  },
+  "907": {
+   "name": "Oliveiras"
+  },
+  "908": {
+   "name": "Om"
+  },
+  "91": {
+   "name": "Armagedom"
+  },
+  "910": {
+   "name": "Ofel"
+  },
+  "911": {
+   "name": "Ofir"
+  },
+  "912": {
+   "name": "Ofni"
+  },
+  "913": {
+   "name": "Ofra"
+  },
+  "914": {
+   "name": "Ofra"
+  },
+  "915": {
+   "name": "Padã-Arã"
+  },
+  "916": {
+   "name": "Padã-Arã"
+  },
+  "917": {
+   "name": "Paí"
+  },
+  "918": {
+   "name": "Panfília"
+  },
+  "919": {
+   "name": "Pafo"
+  },
+  "92": {
+   "name": "Arnom"
+  },
+  "920": {
+   "name": "Pará"
+  },
+  "921": {
+   "name": "Parã"
+  },
+  "923": {
+   "name": "Pas-Damim"
+  },
+  "924": {
+   "name": "Pátara"
+  },
+  "925": {
+   "name": "Patros"
+  },
+  "927": {
+   "name": "Paú"
+  },
+  "928": {
+   "name": "Pecode"
+  },
+  "929": {
+   "name": "Pelúsio"
+  },
+  "931": {
+   "name": "Peniel"
+  },
+  "932": {
+   "name": "Porta dos filhos do povo"
+  },
+  "934": {
+   "name": "Perez-Uzá"
+  },
+  "935": {
+   "name": "Perez-Uzá"
+  },
+  "936": {
+   "name": "Perges"
+  },
+  "937": {
+   "name": "Pérgamo"
+  },
+  "938": {
+   "name": "Pérsia"
+  },
+  "939": {
+   "name": "Petor"
+  },
+  "940": {
+   "name": "Farpar"
+  },
+  "941": {
+   "name": "Filadélfia"
+  },
+  "942": {
+   "name": "Filipos"
+  },
+  "943": {
+   "name": "Filístia"
+  },
+  "944": {
+   "name": "Fenícia"
+  },
+  "946": {
+   "name": "Frígia"
+  },
+  "947": {
+   "name": "Pibesete"
+  },
+  "948": {
+   "name": "Pi-Hairote"
+  },
+  "949": {
+   "name": "Piratom"
+  },
+  "950": {
+   "name": "Pisga"
+  },
+  "951": {
+   "name": "Pisom"
+  },
+  "952": {
+   "name": "Pisídia"
+  },
+  "953": {
+   "name": "Pitom"
+  },
+  "955": {
+   "name": "Planície"
+  },
+  "956": {
+   "name": "Ponto"
+  },
+  "957": {
+   "name": "Tanque"
+  },
+  "958": {
+   "name": "Porta Oriental"
+  },
+  "959": {
+   "name": "Ptolemaida"
+  },
+  "96": {
+   "name": "Arpade"
+  },
+  "961": {
+   "name": "Punom"
+  },
+  "962": {
+   "name": "Pute"
+  },
+  "963": {
+   "name": "Putéoli"
+  },
+  "964": {
+   "name": "Raamá"
+  },
+  "965": {
+   "name": "Ramessés"
+  },
+  "966": {
+   "name": "Rabá"
+  },
+  "967": {
+   "name": "Rabite"
+  },
+  "969": {
+   "name": "Raabe"
+  },
+  "97": {
+   "name": "Arubote"
+  },
+  "970": {
+   "name": "Racate"
+  },
+  "972": {
+   "name": "Ramá"
+  },
+  "973": {
+   "name": "Hormá"
+  },
+  "974": {
+   "name": "Ramá"
+  },
+  "975": {
+   "name": "Ramá"
+  },
+  "976": {
+   "name": "Ramá"
+  },
+  "977": {
+   "name": "Ramataim"
+  },
+  "978": {
+   "name": "Ramate-Leí"
+  },
+  "979": {
+   "name": "Ramate-Mispa"
+  },
+  "98": {
+   "name": "Aruma"
+  },
+  "980": {
+   "name": "Ramessés"
+  },
+  "981": {
+   "name": "Ramote"
+  },
+  "982": {
+   "name": "Ramote"
+  },
+  "983": {
+   "name": "Ramote"
+  },
+  "984": {
+   "name": "Ramote"
+  },
+  "985": {
+   "name": "Reca"
+  },
+  "986": {
+   "name": "Mar Vermelho"
+  },
+  "987": {
+   "name": "Reobe"
+  },
+  "988": {
+   "name": "Reobe"
+  },
+  "989": {
+   "name": "Reobe"
+  },
+  "99": {
+   "name": "Arvade"
+  },
+  "990": {
+   "name": "Reobote"
+  },
+  "991": {
+   "name": "Reobote"
+  },
+  "992": {
+   "name": "Reobote-Ir"
+  },
+  "993": {
+   "name": "Requém"
+  },
+  "994": {
+   "name": "Remete"
+  },
+  "996": {
+   "name": "Refidim"
+  },
+  "997": {
+   "name": "Resém"
+  },
+  "998": {
+   "name": "Rezefe"
+  },
+  "999": {
+   "name": "Régio"
+  }
+ },
+ "route": {
+  "exodus": {
+   "name": "O Êxodo (uma rota tradicional)",
+   "other": "Êxodo 12 – Números 33"
+  },
+  "paul-1": {
+   "name": "Primeira viagem de Paulo",
+   "other": "Atos 13–14"
+  },
+  "paul-2": {
+   "name": "Segunda viagem de Paulo",
+   "other": "Atos 15:36–18:22"
+  },
+  "paul-3": {
+   "name": "Terceira viagem de Paulo",
+   "other": "Atos 18:23–21:17"
+  },
+  "paul-rome": {
+   "name": "Viagem de Paulo a Roma",
+   "other": "Atos 27–28"
+  }
+ }
+}

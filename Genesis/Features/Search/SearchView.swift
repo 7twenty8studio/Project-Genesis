@@ -281,13 +281,24 @@ struct SearchContent: View {
         .listRowInsets(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
     }
 
-    private var suggestions: some View {
+    /// Searches to try, in the app's language: references the parser reads
+    /// and words found in that language's Bibles (RV1909, Bíblia Livre).
+    static let examples = [
+        String(localized: "John 3:16", comment: "Search example: a verse reference"),
+        String(localized: "Psalm 23", comment: "Search example: a chapter reference"),
+        String(localized: "forgiveness", comment: "Search example: a word found in the Bible"),
+        String(localized: "love one another", comment: "Search example: words found in the Bible"),
+        String(localized: "\u{201C}the Lord is my shepherd\u{201D}", comment: "Search example: an exact phrase from Psalm 23:1, in quotes, as worded in this language's Bible"),
+        String(localized: "Romans 8", comment: "Search example: a chapter reference"),
+    ]
+
+        private var suggestions: some View {
         Section("Try") {
             TipView(GenesisTips.topics)
                 .tipBackground(palette.surface)
                 .listRowBackground(Color.clear)
                 .listRowInsets(EdgeInsets())
-            ForEach(["John 3:16", "Psalm 23", "forgiveness", "love one another", "\u{201C}the Lord is my shepherd\u{201D}", "Romans 8"], id: \.self) { example in
+            ForEach(Self.examples, id: \.self) { example in
                 Button(example) {
                     if usesOwnField { ownText = example } else { text = example }
                 }

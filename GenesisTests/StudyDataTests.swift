@@ -136,3 +136,65 @@ struct StudyDataTests {
         #expect(hasWiseMen)
     }
 }
+
+/// Spanish and Portuguese names from the translations table, falling back to English.
+@Suite("Study data in Spanish and Portuguese")
+struct StudyTranslationTests {
+    private func repository(_ language: String?) throws -> StudyRepository {
+        let url = try #require(Bundle.main.url(forResource: "Study", withExtension: "sqlite"))
+        return try StudyRepository(url: url, language: language)
+    }
+
+    @Test func englishAndUnknownLanguagesKeepTheEnglish() throws {
+        #expect(try repository(nil).language == nil)
+        #expect(try repository("en").language == nil)
+        #expect(try repository("fr").language == nil)
+        let moses = try #require(try repository("en").searchPeople("Moses").first)
+        #expect(moses.name == "Moses")
+    }
+
+    @Test(arguments: [("es", "Moisés", "Jerusalén", "Primer viaje de Pablo"), ("pt", "Moisés", "Jerusalém", "Primeira viagem de Paulo")])
+    func namesTitlesAndJourneys(language: String, moses: String, jerusalem: String, journey: String) throws {
+        let study = try repository(language)
+        #expect(study.language == language)
+        // Found by the translated name without its accent, and by the English one.
+        let found = try #require(try study.searchPeople("moise").first)
+        #expect(found.name == moses)
+        #expect(try study.searchPeople("Moses").first?.id == found.id)
+        let place = try #require(try study.searchPlaces(jerusalem).first)
+        #expect(place.name == jerusalem)
+        #expect(try study.place(id: place.id)?.name == jerusalem)
+        #expect(try study.routes().first?.title == journey)
+        // Descriptions stay English until they're translated.
+        let person = try #require(try study.person(id: found.id))
+        let english = try #require(try repository(nil).person(id: found.id))
+        #expect(person.biography == english.biography)
+    }
+
+    @Test(arguments: ["es", "pt"])
+    func everyEventAndEraHasATitle(language: String) throws {
+        let study = try repository(language)
+        let english = try repository(nil)
+        let eras = try study.eras()
+        #expect(eras.count == 12)
+        for era in eras {
+            let original = try #require(try english.eras().first { $0.id == era.id })
+            #expect(era.title != original.title || era.id == "abraham" || era.id == "jesus")
+            #expect(era.summary != original.summary)
+            for event in try study.events(inEra: era.id) {
+                let title = try #require(try english.event(id: event.id)).title
+                #expect(event.title != title, "\(language) event \(event.id) \(title)")
+            }
+        }
+    }
+
+    @Test func groupLabelsAreShownOneByOne() {
+        let person = Person(
+            summary: PersonSummary(id: 1, name: "Judas", alsoCalled: "", verseCount: 1),
+            gender: "", biography: "", birthYear: nil, deathYear: nil,
+            group: "Tribe of Judah,Apostles", firstVerse: nil
+        )
+        #expect(person.groupTitle == "\(PersonGroup.title("Tribe of Judah")) \u{00B7} \(PersonGroup.title("Apostles"))")
+        #expect(PersonGroup.title("Something new") == "Something new")
+    }
+}
