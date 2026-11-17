@@ -115,38 +115,47 @@ struct ReaderControls: View {
     /// parallel (the page's own header names both).
     private func translationMenu(compact: Bool) -> some View {
         Menu {
-            ForEach(library.translations) { translation in
-                Button {
-                    if library.isLocked(translation) {
-                        onPremium(.premiumBibles)
-                    } else {
-                        reader.switchTranslation(to: translation)
-                    }
-                } label: {
-                    if translation == reader.translation {
-                        Label("\(translation.abbreviation) · \(translation.name)", systemImage: "checkmark")
-                    } else if library.isLocked(translation) {
-                        Label("\(translation.abbreviation) · \(translation.name)", systemImage: "lock")
-                    } else {
-                        Text("\(translation.abbreviation) · \(translation.name)")
+            // Every installed Bible, by language, the one being read's first.
+            ForEach(ReadingLibrary.groups(library.translations, current: reader.translation)) { group in
+                Section(AppLanguage.displayName(group.language)) {
+                    ForEach(group.translations) { translation in
+                        Button {
+                            if library.isLocked(translation) {
+                                onPremium(.premiumBibles)
+                            } else {
+                                reader.switchTranslation(to: translation)
+                            }
+                        } label: {
+                            if translation == reader.translation {
+                                Label("\(translation.abbreviation) · \(translation.name)", systemImage: "checkmark")
+                            } else if library.isLocked(translation) {
+                                Label("\(translation.abbreviation) · \(translation.name)", systemImage: "lock")
+                            } else {
+                                Text("\(translation.abbreviation) · \(translation.name)")
+                            }
+                        }
+                        .accessibilityIdentifier("reader.translation.\(translation.id)")
                     }
                 }
-                .accessibilityIdentifier("reader.translation.\(translation.id)")
             }
             Divider()
             // Read two Bibles side by side.
             Menu("Read in Parallel", systemImage: "rectangle.split.2x1") {
-                ForEach(library.translations.filter { $0 != reader.translation && !library.isLocked($0) }) { other in
-                    Button {
-                        reader.readInParallel(with: other)
-                    } label: {
-                        if other.id == reader.parallelTranslation?.id {
-                            Label("\(other.abbreviation) · \(other.name)", systemImage: "checkmark")
-                        } else {
-                            Text("\(other.abbreviation) · \(other.name)")
+                ForEach(ReadingLibrary.groups(library.translations.filter { $0 != reader.translation && !library.isLocked($0) }, current: reader.translation)) { group in
+                    Section(AppLanguage.displayName(group.language)) {
+                        ForEach(group.translations) { other in
+                            Button {
+                                reader.readInParallel(with: other)
+                            } label: {
+                                if other.id == reader.parallelTranslation?.id {
+                                    Label("\(other.abbreviation) · \(other.name)", systemImage: "checkmark")
+                                } else {
+                                    Text("\(other.abbreviation) · \(other.name)")
+                                }
+                            }
+                            .accessibilityIdentifier("reader.parallel.\(other.id)")
                         }
                     }
-                    .accessibilityIdentifier("reader.parallel.\(other.id)")
                 }
                 if offersOriginal {
                     Divider()

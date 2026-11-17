@@ -67,6 +67,21 @@ struct ReadingLibraryTests {
         #expect(all.flatMap(\.entries).contains { $0.id == "BLIVRE" })
     }
 
+    @Test func quickMenusGroupEveryInstalledBible() throws {
+        let rv = try offer("RV1909", name: "Reina-Valera 1909", language: "es").translation
+        let livro = try offer("OL", name: "O Livro", language: "pt-PT").translation
+        let installed = Translation.bundled + [rv, livro]
+
+        let fromPortuguese = ReadingLibrary.groups(installed, current: .bibliaLivre)
+        #expect(fromPortuguese.map(\.language) == ["pt", "en", "es"], "The current Bible's language first")
+        #expect(fromPortuguese[0].translations.map(\.id) == ["BLIVRE", "OL"])
+        #expect(fromPortuguese.flatMap(\.translations).count == installed.count, "Nothing left out")
+
+        let fromEnglish = ReadingLibrary.groups(installed, current: .kjv)
+        #expect(fromEnglish.map(\.language) == ["en", "es", "pt"])
+        #expect(fromEnglish[0].translations.map(\.id) == ["KJV", "WEB", "ASV"], "The library's order within a language")
+    }
+
     @Test func opensOnTheBibleBeingRead() {
         let available = ["en", "es", "pt"]
         #expect(ReadingLibrary.defaultLanguage(current: .kjv, appLanguage: "pt", available: available) == "en", "The Bible's language, not the app's")

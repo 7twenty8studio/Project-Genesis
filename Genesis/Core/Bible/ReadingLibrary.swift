@@ -23,6 +23,15 @@ struct LibrarySection: Identifiable, Hashable, Sendable {
     var id: String { language }
 }
 
+/// Installed Bibles of one language, for the quick Bible menus.
+struct TranslationGroup: Identifiable, Hashable, Sendable {
+    /// A base language: "pt" holds O Livro's "pt-PT" too.
+    let language: String
+    let translations: [Translation]
+
+    var id: String { language }
+}
+
 /// What the guide suggests a Bible for.
 enum ReadingPurpose: CaseIterable, Sendable {
     case study, everyday, classic
@@ -69,6 +78,23 @@ enum ReadingLibrary {
         if let current, available.contains(current.baseLanguage) { return current.baseLanguage }
         let app = Translation.baseLanguage(of: appLanguage)
         return available.contains(app) ? app : allLanguages
+    }
+
+    /// Every installed Bible grouped by language for the reader's Bible menu
+    /// and Home's Bibles on This Device: the current Bible's language first,
+    /// then by name; each group keeps the library's order. Nothing is left
+    /// out (the Bibles screen's menu is for browsing).
+    static func groups(_ translations: [Translation], current: Translation) -> [TranslationGroup] {
+        let languages = translations.map(\.baseLanguage).reduce(into: [String]()) { list, language in
+            if !list.contains(language) { list.append(language) }
+        }
+        let first = current.baseLanguage
+        return languages.sorted { lhs, rhs in
+            if (lhs == first) != (rhs == first) { return lhs == first }
+            return AppLanguage.displayName(lhs) < AppLanguage.displayName(rhs)
+        }.map { language in
+            TranslationGroup(language: language, translations: translations.filter { $0.baseLanguage == language })
+        }
     }
 
     /// The Bibles for a choice, one section per language: the chosen

@@ -560,45 +560,57 @@ struct HomeView: View {
     private var bibles: some View {
         VStack(alignment: .leading, spacing: 12) {
             SectionHeader(title: String(localized: "Bibles on This Device"), action: (String(localized: "Get More"), { showsBibles = true }))
-            VStack(spacing: 0) {
-                ForEach(library.translations) { translation in
-                    Button {
-                        if library.isLocked(translation) {
-                            premium = .premiumBibles
-                        } else {
-                            router.reader.switchTranslation(to: translation)
-                        }
-                    } label: {
-                        HStack(spacing: 14) {
-                            Text(translation.abbreviation)
-                                .font(.system(.subheadline, design: .serif, weight: .bold))
-                                .foregroundStyle(palette.accent)
-                                // One line: "RV1909" wrapped to "RV19 / 09".
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.75)
-                                .frame(width: 56, alignment: .leading)
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text(translation.name)
-                                    .foregroundStyle(palette.text)
-                                Text(library.isAvailableOffline(translation) ? "Available offline" : "Not downloaded")
-                                    .font(.caption)
-                                    .foregroundStyle(palette.secondaryText)
-                            }
-                            Spacer()
-                            if translation == library.currentTranslation {
-                                Image(systemName: "checkmark")
-                                    .foregroundStyle(palette.accent)
-                                    .accessibilityLabel("Current translation")
-                            } else if library.isLocked(translation) {
-                                Image(systemName: "lock")
-                                    .foregroundStyle(palette.secondaryText)
-                                    .accessibilityLabel(PremiumFeature.premiumBibles.title)
-                            }
-                        }
-                        .padding(.vertical, 10)
-                        .contentShape(Rectangle())
+            // Every installed Bible, by language, the one being read's first.
+            let groups = ReadingLibrary.groups(library.translations, current: library.currentTranslation)
+            VStack(alignment: .leading, spacing: 0) {
+                ForEach(groups) { group in
+                    if groups.count > 1 {
+                        Text(AppLanguage.displayName(group.language))
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(palette.secondaryText)
+                            .textCase(.uppercase)
+                            .padding(.top, group.id == groups.first?.id ? 4 : 14)
+                            .accessibilityAddTraits(.isHeader)
                     }
-                    .buttonStyle(.plain)
+                    ForEach(group.translations) { translation in
+                        Button {
+                            if library.isLocked(translation) {
+                                premium = .premiumBibles
+                            } else {
+                                router.reader.switchTranslation(to: translation)
+                            }
+                        } label: {
+                            HStack(spacing: 14) {
+                                Text(translation.abbreviation)
+                                    .font(.system(.subheadline, design: .serif, weight: .bold))
+                                    .foregroundStyle(palette.accent)
+                                    // One line: "RV1909" wrapped to "RV19 / 09".
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.75)
+                                    .frame(width: 56, alignment: .leading)
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text(translation.name)
+                                        .foregroundStyle(palette.text)
+                                    Text(library.isAvailableOffline(translation) ? "Available offline" : "Not downloaded")
+                                        .font(.caption)
+                                        .foregroundStyle(palette.secondaryText)
+                                }
+                                Spacer()
+                                if translation == library.currentTranslation {
+                                    Image(systemName: "checkmark")
+                                        .foregroundStyle(palette.accent)
+                                        .accessibilityLabel("Current translation")
+                                } else if library.isLocked(translation) {
+                                    Image(systemName: "lock")
+                                        .foregroundStyle(palette.secondaryText)
+                                        .accessibilityLabel(PremiumFeature.premiumBibles.title)
+                                }
+                            }
+                            .padding(.vertical, 10)
+                            .contentShape(Rectangle())
+                        }
+                        .buttonStyle(.plain)
+                    }
                 }
             }
             .card()
