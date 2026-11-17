@@ -84,6 +84,19 @@ struct YouVersionBibleTests {
         // A YouVersion Bible under Creative Commons still never stands in.
         let blt = Translation(id: "BLT", name: "Bíblia Livre Para Todos", year: "2018", license: "Creative Commons", summary: "", language: "pt", isYouVersion: true)
         #expect(BibleLibrary.premiumToolsTranslation(for: nviPortuguese, among: [.kjv, blt]) == .kjv)
+        // O Livro is European Portuguese ("pt-PT"): the region doesn't matter.
+        let oLivro = Translation(id: "OL", name: "O Livro", year: "2017", license: "© Biblica, Inc.", summary: "", language: "pt-PT", isYouVersion: true)
+        #expect(oLivro.baseLanguage == "pt")
+        #expect(BibleLibrary.premiumToolsTranslation(for: oLivro, among: [.kjv, oLivro, livre]) == livre)
+    }
+
+    @Test func portugueseBiblesKeepTheirAccent() {
+        #expect(VoiceAccent.preferred(for: "pt") == "pt-BR")
+        #expect(VoiceAccent.preferred(for: "pt-PT") == "pt-PT")
+        #expect(VoiceAccent.preferred(for: "en") == nil)
+        #expect(VoiceAccent.matches("pt-BR", "pt-BR"))
+        #expect(VoiceAccent.matches("pt_BR", "pt-BR"))
+        #expect(!VoiceAccent.matches("pt-PT", "pt-BR"))
     }
 
     @Test func catalogRowsAreFreeYouVersionBibles() throws {

@@ -101,6 +101,13 @@ struct Translation: Identifiable, Hashable, Codable, Sendable {
         isLicensed && license.folding(options: [.caseInsensitive], locale: nil).contains("creative commons")
     }
 
+    /// The language without its region: "pt" for O Livro's "pt-PT".
+    var baseLanguage: String { Translation.baseLanguage(of: language) }
+
+    static func baseLanguage(of language: String) -> String {
+        String(language.prefix { $0 != "-" && $0 != "_" })
+    }
+
     /// Public domain or openly licensed, and not from YouVersion (whatever
     /// its licence, a YouVersion Bible's text stays out of Premium tools):
     /// what Premium tools read in place of a YouVersion Bible in the same

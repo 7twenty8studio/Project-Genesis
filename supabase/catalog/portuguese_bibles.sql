@@ -3,6 +3,14 @@
 -- people on older versions don't see Portuguese Bibles before the app is
 -- ready for them. Safe to run twice.
 --
+-- Older builds read the same rows (they select enabled rows and send no
+-- version), so once this runs they list these Bibles too. Checked on
+-- 17 November 2026 that they cope: the language column is free text and
+-- "pt-PT" passes its check, rights 'licensed' is a value they know, and with
+-- English screens their setup never picks a Portuguese Bible. They show
+-- English book names around the Portuguese text, and their Premium tools
+-- use the KJV beside a Portuguese YouVersion Bible.
+--
 -- Owner's choice (17 November 2026): every Portuguese Bible our YouVersion
 -- Platform key may use, plus the Bíblia Livre as a catalog download.
 --

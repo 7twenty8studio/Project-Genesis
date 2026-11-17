@@ -101,6 +101,7 @@ struct NarrationVoice: Identifiable, Hashable, Sendable {
         let standard = switch language {
         case "es": "es-MX"
         case "pt": "pt-BR"
+        case _ where language.contains("-"): language  // "pt-PT"
         default: "en-US"
         }
         return AVSpeechSynthesisVoice(language: standard)
@@ -153,6 +154,7 @@ enum VoiceList {
     /// call off the main thread.
     static func identifiers(language: String) -> [String] {
         if let cached = cachedIdentifiers(language: language) { return cached }
+        let accent = VoiceAccent.preferred(for: language)
         let region = Locale.current.region?.identifier
         let sorted = AVSpeechSynthesisVoice.speechVoices()
             .filter { voice in
@@ -161,6 +163,14 @@ enum VoiceList {
                     && !voice.identifier.contains(".eloquence.")
             }
             .sorted { lhs, rhs in
+                // A Bible's own accent first, whatever the voice's quality
+                // or the device's region: a Brazilian Bible is read by a
+                // Brazilian voice, also on an iPhone set to Portugal.
+                if let accent {
+                    let lhsAccent = VoiceAccent.matches(lhs.language, accent)
+                    let rhsAccent = VoiceAccent.matches(rhs.language, accent)
+                    if lhsAccent != rhsAccent { return lhsAccent }
+                }
                 if lhs.quality != rhs.quality { return lhs.quality.rawValue > rhs.quality.rawValue }
                 // Then the person's own accent (en-GB in the UK, say).
                 let lhsLocal = region.map { lhs.language.hasSuffix($0) } ?? false
@@ -176,5 +186,20 @@ enum VoiceList {
     /// Voices were downloaded or removed in Settings.
     static func reset() {
         cache.withLock { $0.removeAll() }
+    }
+}
+
+/// The accent a Bible's language asks for, where it isn't the device's
+/// choice: Versely's Portuguese ("pt") is Brazilian; a Bible tagged with a
+/// region ("pt-PT", O Livro) keeps that region. Others follow the device.
+enum VoiceAccent {
+    static func preferred(for language: String) -> String? {
+        if language == "pt" { return "pt-BR" }
+        return language.contains("-") ? language : nil
+    }
+
+    /// "pt-BR" and "pt_BR" are the same accent.
+    static func matches(_ voiceLanguage: String, _ accent: String) -> Bool {
+        voiceLanguage.replacingOccurrences(of: "_", with: "-").caseInsensitiveCompare(accent) == .orderedSame
     }
 }

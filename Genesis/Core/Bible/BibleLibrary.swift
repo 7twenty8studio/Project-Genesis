@@ -79,16 +79,17 @@ final class BibleLibrary {
     /// along with a YouVersion Bible).
     func premiumToolsBibleName(for translation: Translation) -> String {
         let standIn = premiumToolsTranslation(for: translation)
-        if standIn.language == translation.language { return standIn.name }
-        return catalog.first { $0.youVersionID == nil && $0.translation.isFreeToReuse && !$0.premium && $0.language == translation.language }?.name ?? standIn.name
+        if standIn.baseLanguage == translation.baseLanguage { return standIn.name }
+        return catalog.first { $0.youVersionID == nil && $0.translation.isFreeToReuse && !$0.premium && $0.translation.baseLanguage == translation.baseLanguage }?.name ?? standIn.name
     }
 
     /// A public-domain (or openly licensed) Bible in the same language (the
     /// Reina-Valera for a Spanish Bible, the Bíblia Livre for a Portuguese
-    /// one), else the KJV.
+    /// one, O Livro's "pt-PT" included: the region doesn't matter), else the
+    /// KJV.
     nonisolated static func premiumToolsTranslation(for translation: Translation, among available: [Translation]) -> Translation {
         guard translation.isYouVersion else { return translation }
-        return available.first { $0.isFreeToReuse && $0.language == translation.language } ?? .kjv
+        return available.first { $0.isFreeToReuse && $0.baseLanguage == translation.baseLanguage } ?? .kjv
     }
 
     /// True when any Bible offered or downloaded is from the YouVersion
@@ -379,8 +380,8 @@ final class BibleLibrary {
     /// along (quietly, if it can).
     private func installPremiumToolsBible(for item: DownloadableTranslation, allowsCellular: Bool) async {
         guard item.youVersionID != nil,
-              !translations.contains(where: { $0.isFreeToReuse && $0.language == item.language }),
-              let standIn = catalog.first(where: { $0.youVersionID == nil && $0.translation.isFreeToReuse && !$0.premium && $0.language == item.language })
+              !translations.contains(where: { $0.isFreeToReuse && $0.baseLanguage == item.translation.baseLanguage }),
+              let standIn = catalog.first(where: { $0.youVersionID == nil && $0.translation.isFreeToReuse && !$0.premium && $0.translation.baseLanguage == item.translation.baseLanguage })
         else { return }
         try? await install(standIn, allowsCellular: allowsCellular)
     }
