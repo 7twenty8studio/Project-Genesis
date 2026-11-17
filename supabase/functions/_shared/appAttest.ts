@@ -321,12 +321,116 @@ async function importEcKey(spki: Uint8Array, curveOid: string): Promise<{ key: C
   return { key, size: curve.size };
 }
 
+/** The curve/hash pair WebCrypto verifies everywhere, including Supabase's Edge Runtime. */
+const NATIVE_HASH: Record<string, string> = { "P-256": "SHA-256", "P-384": "SHA-384" };
+
 async function verifiedBy(child: Certificate, parent: Certificate): Promise<boolean> {
   if (!equalBytes(child.issuer, parent.subject)) return false;
   const hash = SIG_HASH[child.signatureAlg];
   if (!hash) return false;
-  const { key, size } = await importEcKey(parent.spki, parent.curve);
-  return crypto.subtle.verify({ name: "ECDSA", hash }, key, buf(derSignatureToRaw(child.signature, size)), buf(child.tbs));
+  const curve = CURVES[parent.curve] ?? fail("unsupported curve");
+  const signature = derSignatureToRaw(child.signature, curve.size);
+  if (NATIVE_HASH[curve.name] === hash) {
+    const { key } = await importEcKey(parent.spki, parent.curve);
+    return crypto.subtle.verify({ name: "ECDSA", hash }, key, buf(signature), buf(child.tbs));
+  }
+  // Supabase's Edge Runtime only verifies P-256/SHA-256 and P-384/SHA-384 ("NotSupportedError:
+  // Not implemented" otherwise), but Apple's App Attestation CA (P-384) signs device certificates
+  // with SHA-256. So mixed pairs are checked here: digest with WebCrypto, ECDSA in BigInt.
+  const digest = new Uint8Array(await crypto.subtle.digest(hash, buf(child.tbs)));
+  return ecdsaVerifyDigest(curve.name, parent.publicPoint, signature, digest);
+}
+
+// ---------------------------------------------------------------- ECDSA over a digest (BigInt)
+// Verification only (public data, so constant time doesn't matter). NIST P-256 and P-384, a = -3.
+interface CurveParams { p: bigint; n: bigint; b: bigint; gx: bigint; gy: bigint; bytes: number }
+export const EC_CURVES: Record<string, CurveParams> = {
+  "P-256": {
+    p: 0xffffffff00000001000000000000000000000000ffffffffffffffffffffffffn,
+    n: 0xffffffff00000000ffffffffffffffffbce6faada7179e84f3b9cac2fc632551n,
+    b: 0x5ac635d8aa3a93e7b3ebbd55769886bc651d06b0cc53b0f63bce3c3e27d2604bn,
+    gx: 0x6b17d1f2e12c4247f8bce6e563a440f277037d812deb33a0f4a13945d898c296n,
+    gy: 0x4fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce33576b315ececbb6406837bf51f5n,
+    bytes: 32,
+  },
+  "P-384": {
+    p: 0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeffffffff0000000000000000ffffffffn,
+    n: 0xffffffffffffffffffffffffffffffffffffffffffffffffc7634d81f4372ddf581a0db248b0a77aecec196accc52973n,
+    b: 0xb3312fa7e23ee7e4988e056be3f82d19181d9c6efe8141120314088f5013875ac656398d8a2ed19d2a85c8edd3ec2aefn,
+    gx: 0xaa87ca22be8b05378eb1c71ef320ad746e1d3b628ba79b9859f741e082542a385502f25dbf55296c3a545e3872760ab7n,
+    gy: 0x3617de4a96262c6f5d9e98bf9292dc29f8f41dbd289a147ce9da3113b5f0b8c00a60b1ce1d7e819d7a431d7c90ea0e5fn,
+    bytes: 48,
+  },
+};
+
+function bigFrom(bytes: Uint8Array): bigint {
+  let v = 0n;
+  for (const b of bytes) v = (v << 8n) | BigInt(b);
+  return v;
+}
+
+function mod(a: bigint, m: bigint): bigint {
+  const r = a % m;
+  return r < 0n ? r + m : r;
+}
+
+function inverse(a: bigint, m: bigint): bigint {
+  let [oldR, r] = [mod(a, m), m];
+  let [oldS, s] = [1n, 0n];
+  while (r !== 0n) {
+    const q = oldR / r;
+    [oldR, r] = [r, oldR - q * r];
+    [oldS, s] = [s, oldS - q * s];
+  }
+  if (oldR !== 1n) fail("not invertible");
+  return mod(oldS, m);
+}
+
+type Point = { x: bigint; y: bigint } | null; // null = point at infinity
+
+function addPoints(c: CurveParams, P: Point, Q: Point): Point {
+  if (!P) return Q;
+  if (!Q) return P;
+  let lambda: bigint;
+  if (P.x === Q.x) {
+    if (mod(P.y + Q.y, c.p) === 0n) return null;
+    lambda = mod((3n * P.x * P.x - 3n) * inverse(2n * P.y, c.p), c.p);
+  } else {
+    lambda = mod((Q.y - P.y) * inverse(Q.x - P.x, c.p), c.p);
+  }
+  const x = mod(lambda * lambda - P.x - Q.x, c.p);
+  return { x, y: mod(lambda * (P.x - x) - P.y, c.p) };
+}
+
+function multiply(c: CurveParams, k: bigint, P: Point): Point {
+  let result: Point = null;
+  let addend = P;
+  while (k > 0n) {
+    if (k & 1n) result = addPoints(c, result, addend);
+    addend = addPoints(c, addend, addend);
+    k >>= 1n;
+  }
+  return result;
+}
+
+/**
+ * ECDSA verification of `rawSignature` (r‖s) over an already computed `digest` with an
+ * uncompressed public point (04‖x‖y). The digest is truncated to the order's bit length (FIPS 186-4).
+ */
+export function ecdsaVerifyDigest(curveName: string, publicPoint: Uint8Array, rawSignature: Uint8Array, digest: Uint8Array): boolean {
+  const c = EC_CURVES[curveName];
+  if (!c || publicPoint.length !== 1 + 2 * c.bytes || publicPoint[0] !== 0x04 || rawSignature.length !== 2 * c.bytes) return false;
+  const Q = { x: bigFrom(publicPoint.subarray(1, 1 + c.bytes)), y: bigFrom(publicPoint.subarray(1 + c.bytes)) };
+  if (Q.x >= c.p || Q.y >= c.p || mod(Q.y * Q.y - (Q.x * Q.x * Q.x - 3n * Q.x + c.b), c.p) !== 0n) return false;
+  const r = bigFrom(rawSignature.subarray(0, c.bytes));
+  const s = bigFrom(rawSignature.subarray(c.bytes));
+  if (r <= 0n || r >= c.n || s <= 0n || s >= c.n) return false;
+  let z = bigFrom(digest);
+  const excess = digest.length * 8 - c.n.toString(2).length;
+  if (excess > 0) z >>= BigInt(excess);
+  const w = inverse(s, c.n);
+  const point = addPoints(c, multiply(c, mod(z * w, c.n), { x: c.gx, y: c.gy }), multiply(c, mod(r * w, c.n), Q));
+  return point !== null && mod(point.x, c.n) === r;
 }
 
 // ---------------------------------------------------------------- authenticator data

@@ -10,7 +10,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { test } from "node:test";
 import {
-  APPLE_APP_ATTEST_ROOT_PEM, AttestError, concatBytes, decodeCbor, fromBase64, reportClientData, sha256, toBase64,
+  APPLE_APP_ATTEST_ROOT_PEM, AttestError, concatBytes, decodeCbor, ecdsaVerifyDigest, fromBase64, reportClientData, sha256, toBase64,
   verifyAssertion, verifyAttestation,
 } from "./appAttest.ts";
 
@@ -160,3 +160,59 @@ function indexOf(haystack: Uint8Array, needle: Uint8Array): number {
   }
   return -1;
 }
+
+// --- Supabase Edge Runtime: WebCrypto verifies only P-256/SHA-256 and P-384/SHA-384 -----------
+// (edge-runtime v1.70.0: "NotSupportedError: Not implemented" for P-384/SHA-256, which Apple's
+// App Attestation CA uses to sign device certificates). Found on the first iPhone attestation.
+
+test("ecdsaVerifyDigest agrees with WebCrypto for every curve/hash pair", async () => {
+  for (const [curve, hash] of [["P-256", "SHA-256"], ["P-384", "SHA-384"], ["P-384", "SHA-256"], ["P-256", "SHA-384"]]) {
+    const keys = await crypto.subtle.generateKey({ name: "ECDSA", namedCurve: curve }, true, ["sign", "verify"]);
+    const point = new Uint8Array(await crypto.subtle.exportKey("raw", keys.publicKey));
+    const other = new Uint8Array(await crypto.subtle.exportKey("raw",
+      (await crypto.subtle.generateKey({ name: "ECDSA", namedCurve: curve }, true, ["sign", "verify"])).publicKey));
+    for (let i = 0; i < 3; i++) {
+      const message = crypto.getRandomValues(new Uint8Array(64 + i));
+      const signature = new Uint8Array(await crypto.subtle.sign({ name: "ECDSA", hash }, keys.privateKey, message));
+      const digest = new Uint8Array(await crypto.subtle.digest(hash, message));
+      assert.equal(ecdsaVerifyDigest(curve, point, signature, digest), true, `${curve}/${hash}`);
+      const tampered = digest.slice();
+      tampered[0] ^= 1;
+      assert.equal(ecdsaVerifyDigest(curve, point, signature, tampered), false, `${curve}/${hash} tampered`);
+      assert.equal(ecdsaVerifyDigest(curve, other, signature, digest), false, `${curve}/${hash} other key`);
+      const flipped = signature.slice();
+      flipped[flipped.length - 1] ^= 1;
+      assert.equal(ecdsaVerifyDigest(curve, point, flipped, digest), false, `${curve}/${hash} bad signature`);
+    }
+    assert.equal(ecdsaVerifyDigest(curve, point.subarray(1), new Uint8Array(point.length - 1), new Uint8Array(32)), false);
+  }
+  // A point that isn't on the curve is refused.
+  const bogus = new Uint8Array(65);
+  bogus[0] = 4;
+  bogus[64] = 1;
+  assert.equal(ecdsaVerifyDigest("P-256", bogus, new Uint8Array(64).fill(1), new Uint8Array(32)), false);
+});
+
+test("regression: a real Apple attestation verifies where WebCrypto only knows matched curve/hash pairs", async () => {
+  const original = crypto.subtle.verify.bind(crypto.subtle);
+  const native: Record<string, string> = { "P-256": "SHA-256", "P-384": "SHA-384" };
+  const keyCurve = (key: CryptoKey) => (key.algorithm as EcKeyAlgorithm).namedCurve;
+  let refused = 0;
+  // Behave like Supabase's Edge Runtime.
+  (crypto.subtle as { verify: typeof crypto.subtle.verify }).verify = (async (algorithm, key, signature, data) => {
+    const hash = (algorithm as EcdsaParams).hash;
+    const hashName = typeof hash === "string" ? hash : hash.name;
+    if ((algorithm as Algorithm).name === "ECDSA" && native[keyCurve(key)] !== hashName) {
+      refused++;
+      throw new DOMException("Not implemented", "NotSupportedError");
+    }
+    return original(algorithm, key, signature, data);
+  }) as typeof crypto.subtle.verify;
+  try {
+    const result = await verifyAttestation(inputs("production"));
+    assert.equal(result.environment, "production");
+    assert.equal(refused, 0, "mixed pairs never reach WebCrypto verify");
+  } finally {
+    (crypto.subtle as { verify: typeof crypto.subtle.verify }).verify = original;
+  }
+});
