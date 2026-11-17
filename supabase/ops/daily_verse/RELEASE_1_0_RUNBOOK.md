@@ -50,3 +50,21 @@ Then: one English and one Spanish report from the iPhone; each appears exactly o
 Studio OS → Inbox → Daily Verse (channel Public); an offline send, then Try again, is
 still one row (`client_report_id` unique). If any check fails: run the reversal,
 send an attested report and confirm 503 `unavailable`.
+
+## Fix 1 (17 Nov 2026): key registration failed in production
+
+dv-report v4 (7742ab1) answered 500 to every `{action:"attest"}` from TestFlight
+202611162356: Supabase's Edge Runtime (Deno 2.1.4) throws NotSupportedError (code 9)
+for ECDSA P-384 with SHA-256, the pair Apple's intermediate uses to sign the credential
+certificate. Reproduced with Deno 2.1.4 on a real Apple attestation. Fixed in
+`8f39d323800607dda2da3e26c3fb4be0ed33d837` (pure P-384/SHA-256 fallback, tests). Nothing
+was stored and public reporting was never opened.
+
+Deploy dv-report from `8f39d32` (needs Gamaliel's OK). Only appAttest.ts changes:
+
+| File | SHA-256 |
+|---|---|
+| functions/dv-report/index.ts | ec4617a4479d1b000ef5c1daade77c1cb2b0f87a2dd899361542b9e4d4d4c53d |
+| functions/_shared/dailyVerse.ts | e1637aefe1e4a461ae838af5da3f962dc93c6f93138845e4dbcf700ddb12036d |
+| functions/_shared/appAttest.ts | 5a5a45f5bd3d1b69ddfe528f9dc5958c4d395ee9079188fd754c3f37d16a045f |
+| functions/_shared/dailyVerseIO.ts | f78abd4d897a0d6080c73aff44f7ec1483076be995d4cd24f0e750be92bf1685 |
