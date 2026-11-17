@@ -41,7 +41,7 @@ const NONCE_OID = "1.2.840.113635.100.8.2";
 
 // ---------------------------------------------------------------- small helpers
 /** WebCrypto wants ArrayBuffer-backed views; every array here is one (never shared memory). */
-const buf = (b: Uint8Array) => b as Uint8Array<ArrayBuffer>;
+const buf = (b: Uint8Array): BufferSource => b as unknown as BufferSource;
 function fail(reason: string): never {
   throw new AttestError(reason);
 }
@@ -321,12 +321,89 @@ async function importEcKey(spki: Uint8Array, curveOid: string): Promise<{ key: C
   return { key, size: curve.size };
 }
 
-async function verifiedBy(child: Certificate, parent: Certificate): Promise<boolean> {
+async function verifiedBy(child: Certificate, parent: Certificate, options: { forcePure?: boolean } = {}): Promise<boolean> {
   if (!equalBytes(child.issuer, parent.subject)) return false;
   const hash = SIG_HASH[child.signatureAlg];
   if (!hash) return false;
+  const mixed = parent.curve === P384_OID && hash === "SHA-256";
+  if (mixed && options.forcePure) return verifyP384Sha256(parent.publicPoint, child.signature, child.tbs);
   const { key, size } = await importEcKey(parent.spki, parent.curve);
-  return crypto.subtle.verify({ name: "ECDSA", hash }, key, buf(derSignatureToRaw(child.signature, size)), buf(child.tbs));
+  try {
+    return await crypto.subtle.verify({ name: "ECDSA", hash }, key, buf(derSignatureToRaw(child.signature, size)), buf(child.tbs));
+  } catch (error) {
+    // Apple's intermediate is a P-384 key that signs the credential certificate with
+    // ecdsa-with-SHA256. Supabase's Edge Runtime (Deno 2.1) only pairs P-384 with SHA-384
+    // and throws NotSupportedError, so that one combination is checked in pure code.
+    if (mixed && (error as { name?: string })?.name === "NotSupportedError") {
+      return verifyP384Sha256(parent.publicPoint, child.signature, child.tbs);
+    }
+    throw error;
+  }
+}
+
+/** For tests: checks a certificate's signature by its issuer, optionally without WebCrypto. */
+export function certificateSignedBy(child: Certificate, parent: Certificate, forcePure = false): Promise<boolean> {
+  return verifiedBy(child, parent, { forcePure });
+}
+
+// ---------------------------------------------------------------- ECDSA P-384 / SHA-256 (pure)
+// Signature checking only (public data, so no constant-time concerns). Curve: NIST P-384 (SEC 2).
+const P384_OID = "1.3.132.0.34";
+const P = 2n ** 384n - 2n ** 128n - 2n ** 96n + 2n ** 32n - 1n;
+const N = 0xffffffffffffffffffffffffffffffffffffffffffffffffc7634d81f4372ddf581a0db248b0a77aecec196accc52973n;
+const B = 0xb3312fa7e23ee7e4988e056be3f82d19181d9c6efe8141120314088f5013875ac656398d8a2ed19d2a85c8edd3ec2aefn;
+const G: Point = {
+  x: 0xaa87ca22be8b05378eb1c71ef320ad746e1d3b628ba79b9859f741e082542a385502f25dbf55296c3a545e3872760ab7n,
+  y: 0x3617de4a96262c6f5d9e98bf9292dc29f8f41dbd289a147ce9da3113b5f0b8c00a60b1ce1d7e819d7a431d7c90ea0e5fn,
+};
+type Point = { x: bigint; y: bigint } | null; // null = point at infinity
+
+const mod = (a: bigint, m: bigint) => ((a % m) + m) % m;
+function inv(a: bigint, m: bigint): bigint {
+  let [r0, r1, t0, t1] = [mod(a, m), m, 1n, 0n];
+  while (r1 !== 0n) {
+    const q = r0 / r1;
+    [r0, r1] = [r1, r0 - q * r1];
+    [t0, t1] = [t1, t0 - q * t1];
+  }
+  if (r0 !== 1n) fail("not invertible");
+  return mod(t0, m);
+}
+function add(p1: Point, p2: Point): Point {
+  if (!p1) return p2;
+  if (!p2) return p1;
+  if (p1.x === p2.x && mod(p1.y + p2.y, P) === 0n) return null;
+  const l = p1.x === p2.x
+    ? mod((3n * p1.x * p1.x - 3n) * inv(2n * p1.y, P), P) // a = -3
+    : mod((p2.y - p1.y) * inv(p2.x - p1.x, P), P);
+  const x = mod(l * l - p1.x - p2.x, P);
+  return { x, y: mod(l * (p1.x - x) - p1.y, P) };
+}
+function mul(k: bigint, pt: Point): Point {
+  let out: Point = null;
+  for (let addend = pt; k > 0n; k >>= 1n, addend = add(addend, addend)) if (k & 1n) out = add(out, addend);
+  return out;
+}
+const toInt = (bytes: Uint8Array) => bytes.reduce((acc, b) => (acc << 8n) | BigInt(b), 0n);
+
+/** ECDSA over P-384 with a SHA-256 digest; `point` is the uncompressed key (04 ‖ x ‖ y). */
+export async function verifyP384Sha256(point: Uint8Array, derSignature: Uint8Array, message: Uint8Array): Promise<boolean> {
+  if (point.length !== 97 || point[0] !== 4) return false;
+  const q = { x: toInt(point.slice(1, 49)), y: toInt(point.slice(49)) };
+  if (q.x >= P || q.y >= P || mod(q.y * q.y - (q.x * q.x * q.x - 3n * q.x + B), P) !== 0n) return false;
+  let raw: Uint8Array;
+  try {
+    raw = derSignatureToRaw(derSignature, 48);
+  } catch {
+    return false;
+  }
+  const r = toInt(raw.slice(0, 48));
+  const s = toInt(raw.slice(48));
+  if (r <= 0n || r >= N || s <= 0n || s >= N) return false;
+  const e = toInt(await sha256(message)); // 256 bits < 384: no truncation
+  const w = inv(s, N);
+  const x = add(mul(mod(e * w, N), G), mul(mod(r * w, N), q));
+  return x !== null && mod(x.x, N) === r;
 }
 
 // ---------------------------------------------------------------- authenticator data

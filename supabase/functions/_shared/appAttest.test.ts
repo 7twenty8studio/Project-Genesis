@@ -10,8 +10,8 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { test } from "node:test";
 import {
-  APPLE_APP_ATTEST_ROOT_PEM, AttestError, concatBytes, decodeCbor, fromBase64, reportClientData, sha256, toBase64,
-  verifyAssertion, verifyAttestation,
+  APPLE_APP_ATTEST_ROOT_PEM, AttestError, certificateSignedBy, concatBytes, decodeCbor, fromBase64, parseCertificate,
+  reportClientData, sha256, toBase64, verifyAssertion, verifyAttestation, verifyP384Sha256,
 } from "./appAttest.ts";
 
 const EXAMPLE_APP = "V8H6LQ9448.io.uebelacker.AppAttestExample";
@@ -160,3 +160,55 @@ function indexOf(haystack: Uint8Array, needle: Uint8Array): number {
   }
   return -1;
 }
+
+// Regression (production, 17 Nov 2026): Supabase's Edge Runtime (Deno 2.1) throws
+// NotSupportedError for ECDSA P-384 with SHA-256, which is how Apple's intermediate signs
+// the credential certificate. That pair is checked in pure code there; it must agree with WebCrypto.
+function chain() {
+  const att = decodeCbor(fromBase64(fixture("production").attestation, 20_000)!) as Map<string, unknown>;
+  const x5c = (att.get("attStmt") as Map<string, unknown>).get("x5c") as Uint8Array[];
+  return { leaf: parseCertificate(x5c[0]), intermediate: parseCertificate(x5c[1]) };
+}
+
+test("Apple's intermediate (P-384) signs the credential certificate with SHA-256", () => {
+  const { leaf, intermediate } = chain();
+  assert.equal(intermediate.curve, "1.3.132.0.34");
+  assert.equal(leaf.signatureAlg, "1.2.840.10045.4.3.2");
+});
+
+test("the pure P-384/SHA-256 check accepts Apple's real credential certificate", async () => {
+  const { leaf, intermediate } = chain();
+  assert.equal(await certificateSignedBy(leaf, intermediate, true), true);
+  assert.equal(await certificateSignedBy(leaf, intermediate, false), true, "same answer as WebCrypto");
+});
+
+test("the pure P-384/SHA-256 check refuses a changed certificate, signature or key", async () => {
+  const { leaf, intermediate } = chain();
+  const tbs = leaf.tbs.slice(); tbs[tbs.length - 1] ^= 1;
+  assert.equal(await verifyP384Sha256(intermediate.publicPoint, leaf.signature, tbs), false);
+  const sig = leaf.signature.slice(); sig[sig.length - 1] ^= 1;
+  assert.equal(await verifyP384Sha256(intermediate.publicPoint, sig, leaf.tbs), false);
+  const key = intermediate.publicPoint.slice(); key[96] ^= 1; // off the curve
+  assert.equal(await verifyP384Sha256(key, leaf.signature, leaf.tbs), false);
+  assert.equal(await verifyP384Sha256(intermediate.publicPoint, new Uint8Array([0x30, 0x00]), leaf.tbs), false);
+});
+
+test("a real attestation verifies on a runtime without P-384/SHA-256 (as Supabase's Edge Runtime)", async () => {
+  const subtle = crypto.subtle as SubtleCrypto & { verify: SubtleCrypto["verify"] };
+  const original = subtle.verify.bind(subtle);
+  let refused = 0;
+  subtle.verify = (async (algorithm: EcdsaParams, key: CryptoKey, signature: BufferSource, data: BufferSource) => {
+    if ((key.algorithm as EcKeyAlgorithm).namedCurve === "P-384" && algorithm.hash === "SHA-256") {
+      refused++;
+      throw new DOMException("Not implemented", "NotSupportedError");
+    }
+    return original(algorithm, key, signature, data);
+  }) as SubtleCrypto["verify"];
+  try {
+    const result = await verifyAttestation(inputs("production"));
+    assert.equal(result.environment, "production");
+    assert.equal(refused, 1, "the WebCrypto path was refused once and the pure check took over");
+  } finally {
+    subtle.verify = original;
+  }
+});
