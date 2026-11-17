@@ -210,7 +210,7 @@ struct SettingsView: View {
                         }
                         .accessibilityIdentifier("settings.language")
                     } footer: {
-                        Text("Versely is available in English and Spanish.")
+                        Text("Versely is available in English, Spanish and Portuguese.")
                     }
                     .listRowBackground(palette.surface)
                     .foregroundStyle(palette.text)

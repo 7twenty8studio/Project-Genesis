@@ -14,6 +14,24 @@ struct LibraryEntry: Identifiable, Hashable, Sendable {
     var id: String { translation.id }
 }
 
+/// One language's Bibles on the Bibles screen.
+struct LibrarySection: Identifiable, Hashable, Sendable {
+    /// A base language: "pt" holds O Livro's "pt-PT" too.
+    let language: String
+    let entries: [LibraryEntry]
+
+    var id: String { language }
+}
+
+/// Installed Bibles of one language, for the quick Bible menus.
+struct TranslationGroup: Identifiable, Hashable, Sendable {
+    /// A base language: "pt" holds O Livro's "pt-PT" too.
+    let language: String
+    let translations: [Translation]
+
+    var id: String { language }
+}
+
 /// What the guide suggests a Bible for.
 enum ReadingPurpose: CaseIterable, Sendable {
     case study, everyday, classic
@@ -38,25 +56,76 @@ enum ReadingPurpose: CaseIterable, Sendable {
 /// The Global Reading Library: Bibles grouped by language, the most read
 /// first, with what helps people choose. Pure logic, so it's easy to test.
 enum ReadingLibrary {
-    /// Languages with at least one Bible, the preferred one (the app's) first,
-    /// then by name.
+    /// The Bibles screen's "All Languages" choice.
+    static let allLanguages = "all"
+
+    /// Languages with at least one Bible, the preferred one first, then by
+    /// name. Regions are grouped under their language: O Livro ("pt-PT")
+    /// is listed under Português.
     static func languages(installed: [Translation], catalog: [DownloadableTranslation], preferred: String) -> [String] {
-        let all = Set(installed.map(\.language) + catalog.map(\.language))
+        let preferred = Translation.baseLanguage(of: preferred)
+        let all = Set((installed.map(\.language) + catalog.map(\.language)).map(Translation.baseLanguage(of:)))
         return all.sorted { lhs, rhs in
             if (lhs == preferred) != (rhs == preferred) { return lhs == preferred }
             return AppLanguage.displayName(lhs) < AppLanguage.displayName(rhs)
         }
     }
 
-    /// Every Bible in a language: on this device or available, most read
-    /// first (unknown popularity last, then by name).
+    /// The language the Bibles screen opens on: the Bible being read's, else
+    /// the app's (as at setup), else every language. It's the Bibles'
+    /// language, never the app's screens'.
+    static func defaultLanguage(current: Translation?, appLanguage: String, available: [String]) -> String {
+        if let current, available.contains(current.baseLanguage) { return current.baseLanguage }
+        let app = Translation.baseLanguage(of: appLanguage)
+        return available.contains(app) ? app : allLanguages
+    }
+
+    /// Every installed Bible grouped by language for the reader's Bible menu
+    /// and Home's Bibles on This Device: the current Bible's language first,
+    /// then by name; each group keeps the library's order. Nothing is left
+    /// out (the Bibles screen's menu is for browsing).
+    static func groups(_ translations: [Translation], current: Translation) -> [TranslationGroup] {
+        let languages = translations.map(\.baseLanguage).reduce(into: [String]()) { list, language in
+            if !list.contains(language) { list.append(language) }
+        }
+        let first = current.baseLanguage
+        return languages.sorted { lhs, rhs in
+            if (lhs == first) != (rhs == first) { return lhs == first }
+            return AppLanguage.displayName(lhs) < AppLanguage.displayName(rhs)
+        }.map { language in
+            TranslationGroup(language: language, translations: translations.filter { $0.baseLanguage == language })
+        }
+    }
+
+    /// The Bibles for a choice, one section per language: the chosen
+    /// language alone, or every language (`allLanguages`) in `languages`' order.
+    static func sections(
+        for selection: String,
+        installed: [Translation],
+        catalog: [DownloadableTranslation],
+        recordedTranslationIDs: Set<String>,
+        preferred: String
+    ) -> [LibrarySection] {
+        let shown = selection == allLanguages
+            ? languages(installed: installed, catalog: catalog, preferred: preferred)
+            : [Translation.baseLanguage(of: selection)]
+        return shown.compactMap { language in
+            let list = entries(in: language, installed: installed, catalog: catalog, recordedTranslationIDs: recordedTranslationIDs)
+            return list.isEmpty && selection == allLanguages ? nil : LibrarySection(language: language, entries: list)
+        }
+    }
+
+    /// Every Bible in a language (and its regions: "pt" holds "pt-PT"): on
+    /// this device or available, most read first (unknown popularity last,
+    /// then by name).
     static func entries(
         in language: String,
         installed: [Translation],
         catalog: [DownloadableTranslation],
         recordedTranslationIDs: Set<String>
     ) -> [LibraryEntry] {
-        var entries: [LibraryEntry] = installed.filter { $0.language == language }.map { translation in
+        let language = Translation.baseLanguage(of: language)
+        var entries: [LibraryEntry] = installed.filter { $0.baseLanguage == language }.map { translation in
             let offer = catalog.first { $0.id == translation.id }
             return LibraryEntry(
                 translation: translation,
@@ -66,7 +135,7 @@ enum ReadingLibrary {
                 hasRecordedAudio: recordedTranslationIDs.contains(translation.id)
             )
         }
-        for item in catalog where item.language == language && !entries.contains(where: { $0.id == item.id }) {
+        for item in catalog where Translation.baseLanguage(of: item.language) == language && !entries.contains(where: { $0.id == item.id }) {
             entries.append(LibraryEntry(
                 translation: item.translation,
                 download: item,

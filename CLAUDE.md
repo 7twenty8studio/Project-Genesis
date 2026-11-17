@@ -26,7 +26,9 @@ shares; README.md has the architecture.
 - Never alter Scripture text. Verse text comes verbatim from the bundled
   SQLite databases. AI features (Phase 3) must never return verse text; the
   app renders verses from the database and visibly labels AI content.
-- Bundled Bibles are public domain (KJV, WEB, ASV). Licensed Bibles come
+- Bundled Bibles are public domain (KJV, WEB, ASV), plus one owner-approved
+  exception: the Bíblia Livre (CC BY 4.0 Brasil, credit kept; owner, 17
+  November 2026). Licensed Bibles come
   from the Digital Bible Library (Versely is a distributor) one by one, only
   after the owner confirms that publisher's approval and terms
   (LICENSED_BIBLES.md).
@@ -500,7 +502,17 @@ shares; README.md has the architecture.
   App is free" (the Terms ask it of apps that charge). No YouVersion logo.
   `yvp-catalog` (owner tool, ops secret) lists the Bibles our key can use.
 - Global Reading Library (the Bibles screen, `BibleDownloadsView`): Bibles by
-  language, most read first, as `TranslationCardView`s, plus
+  language, most read first, as `TranslationCardView`s. A language menu
+  (each language with a Bible, then All Languages) filters both installed
+  Bibles and downloads; it opens on the current Bible's language
+  (`ReadingLibrary.defaultLanguage`; the app's at setup), never changes the
+  app's own language, and groups regions under their language (O Livro,
+  pt-PT, under Português, its row saying "Português (Portugal)",
+  `AppLanguage.regionalName`). The reader's quick Bible menu (and its Read
+  in Parallel list) and Home's Bibles on This Device list every installed
+  Bible grouped by language, the current Bible's first
+  (`ReadingLibrary.groups`); they're for switching, so nothing is
+  filtered out there. Also
   `TranslationGuideView` ("Which Bible is right for me?"). Logic in
   `ReadingLibrary`; details (`TranslationProfile`: approach, reading level,
   rights, popularity) come from bible_translations columns, falling back to
@@ -744,13 +756,14 @@ shares; README.md has the architecture.
   appears when the switch turns on. UI tests only see it with `-uiTestingWhatsNew`.
 
 ## Languages
-- Screens are in English and Spanish (String Catalogs:
+- Screens are in English, Spanish and Brazilian Portuguese (String Catalogs:
   Genesis/Resources/Localizable.xcstrings and GenesisWidgets/Localizable.xcstrings).
   Don't edit the catalogs by hand: write new text in English in code (a Text/
   Button literal, or `String(localized:)` for any String that's displayed), add
-  its Spanish to Tools/Localization/es.json, then run
-  `python3 Tools/Localization/build_catalogs.py` (it fails on missing Spanish
-  or mismatched %@/%lld). One sentence per string; no English fragments glued
+  its Spanish to Tools/Localization/es.json and its Brazilian Portuguese
+  (você, "Ajustes", "Anotações", "Destaque") to Tools/Localization/pt.json
+  (catalog code pt-BR), then run `python3 Tools/Localization/build_catalogs.py`
+  (it fails on a missing translation or mismatched %@/%lld). One sentence per string; no English fragments glued
   together. On the Mac, `./Scripts/localization_check.sh` lists anything Xcode
   sees without Spanish.
 - English text uses American spelling (Memorize, color, favorite, center).
@@ -758,13 +771,18 @@ shares; README.md has the architecture.
   accessibility ids, defaults keys, What's New ids, the "Memorise" widget
   kind): renaming those would break saved settings and installed widgets.
 - People choose the language in Versely's Settings › Language
-  (`LanguageSettingsView`: Same as iPhone, English, Español), which writes
+  (`LanguageSettingsView`: Same as iPhone, English, Español, Português
+  (pt-BR)), which writes
   the app's own AppleLanguages (`AppLanguageChoice.saved`, the same value
   the iPhone's Settings › Apps › Versely › Language writes). It applies the
   next time Versely opens, and the screen says so; widgets keep the
-  iPhone's language. `AppLanguage.code` is "en" or "es".
+  iPhone's language. `AppLanguage.code` is "en", "es" or "pt" (any
+  Portuguese iPhone gets the pt-BR screens).
 - `BibleBook.name` follows the app's language (`englishName` is fixed);
-  the reference parser accepts English and Spanish names, accents optional.
+  the reference parser accepts English, Spanish and Portuguese names
+  (`BibleBook.portuguese`, Almeida/NVI), accents optional except "Jó" (Job;
+  "Jo" is John). In a Portuguese app Brazilian abbreviations win where they
+  clash with English ("Mc" Mark, "Jn" Jonah, "Hb" Hebrews).
   Next to Scripture (reader title and controls, running head, book picker,
   selection, audio, verse images, shares) names follow the Bible's language:
   `ChapterID/PassageReference.description(in: translation.language)`.
@@ -774,6 +792,25 @@ shares; README.md has the architecture.
 - Spanish Bible: Reina-Valera 1909 (public domain), downloadable, built from
   open-bibles' USFX with Spanish verse numbering. Scripture is never
   translated or edited; data from Study.sqlite and Topics.sqlite stays English.
+- Portuguese Bibles (VRS-3, owner's choice 17 November 2026): the Bíblia
+  Livre (BLIVRE, CC BY 4.0 Brasil, eBible.org's USFX through build_bibles.py
+  with `usfx_notes`: footnotes and <rq> left out, psalm titles kept),
+  bundled as Genesis/Resources/Bibles/BLIVRE.sqlite (`Translation.bibliaLivre`,
+  the package_translation.py build's .sqlite; its catalog row stays for
+  older builds), so a Portuguese iPhone starts in it at setup, offline, and
+  Premium tools beside every Portuguese YouVersion Bible use it; and the
+  YouVersion NVI (NVIPT), NVI 2011, Nova Bíblia Viva (NBVP), Bíblia Livre
+  Para Todos (BLT) and O Livro (OL, pt-PT). Rows in
+  supabase/catalog/portuguese_bibles.sql, run at release.
+  `Translation.openLicence` comes only from `OpenLicence.verified` (by id,
+  after reading the licence; a "Creative Commons" mention isn't enough);
+  `isFreeToReuse` (public domain or a verified licence allowing commercial
+  use and narration, never YouVersion) lets the Bíblia Livre stand in for
+  Premium tools. Its `license` (authors, source, February 2018 edition,
+  licence, footnotes left out) shows under every chapter and after exported
+  passages. A non-English app downloads its language's free Bible in the
+  background when missing (`BibleLibrary.languageBible`, from
+  refreshCatalog), as setup does.
 
 ## Navigation
 - iPhone (compact width) shows at most five tabs: Home, Read, Library,

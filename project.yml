@@ -72,10 +72,11 @@ targets:
         CFBundleName: Versely
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
-        # The screens are in English and Spanish (Localizable.xcstrings). Listing
-        # both makes iOS offer the choice under Settings › Apps › Versely.
+        # The screens are in English, Spanish and Brazilian Portuguese
+        # (Localizable.xcstrings). Listing them makes iOS offer the choice
+        # under Settings › Apps › Versely.
         CFBundleDevelopmentRegion: en
-        CFBundleLocalizations: [en, es]
+        CFBundleLocalizations: [en, es, pt-BR]
         ITSAppUsesNonExemptEncryption: false
         # Listening carries on with the screen locked.
         UIBackgroundModes:
@@ -181,7 +182,7 @@ targets:
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         CFBundleDevelopmentRegion: en
-        CFBundleLocalizations: [en, es]
+        CFBundleLocalizations: [en, es, pt-BR]
         UIAppFonts:
           - EBGaramond-Regular.ttf
           - EBGaramond-Italic.ttf
@@ -243,7 +244,7 @@ targets:
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         CFBundleDevelopmentRegion: en
-        CFBundleLocalizations: [en, es]
+        CFBundleLocalizations: [en, es, pt-BR]
         WKApplication: true
         WKCompanionAppBundleIdentifier: com.7twenty8studio.versely
 
@@ -271,7 +272,7 @@ targets:
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         CFBundleDevelopmentRegion: en
-        CFBundleLocalizations: [en, es]
+        CFBundleLocalizations: [en, es, pt-BR]
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
 

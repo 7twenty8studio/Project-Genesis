@@ -8,6 +8,12 @@
             "state": "translated",
             "value": "Abre Versely en tu iPhone para traer el versículo del día a tu reloj."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abra o Versely no iPhone para trazer o versículo do dia ao seu relógio."
+          }
         }
       }
     },
@@ -18,12 +24,24 @@
             "state": "translated",
             "value": "Versículo del día"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versículo do dia"
+          }
         }
       }
     },
     "Versely": {
       "localizations": {
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versely"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Versely"

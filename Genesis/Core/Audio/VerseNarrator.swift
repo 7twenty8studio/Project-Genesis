@@ -64,7 +64,9 @@ final class SpeechNarrator: NSObject, VerseNarrator {
         if start == chapter.verses.first?.id {
             // Announced in the translation's language, whatever the app's.
             let book = chapter.id.bibleBook.name(in: language)
-            let title = language.hasPrefix("es") ? "\(book), capítulo \(chapter.id.chapter)." : "\(book), chapter \(chapter.id.chapter)."
+            // "capítulo" in both Spanish and Portuguese.
+            let usesCapitulo = language.hasPrefix("es") || language.hasPrefix("pt")
+            let title = usesCapitulo ? "\(book), capítulo \(chapter.id.chapter)." : "\(book), chapter \(chapter.id.chapter)."
             enqueue(title, verse: nil, pauseAfter: 0.6)
         }
         for item in chapter.verses where start.map({ item.id >= $0 }) ?? true {

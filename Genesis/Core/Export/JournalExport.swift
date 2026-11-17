@@ -11,6 +11,10 @@ struct JournalExport: Sendable {
         let translation: String
         /// Verbatim from the Bible database; never edited.
         let text: String
+        /// The credit a licensed Bible asks for wherever its text goes (the
+        /// Bíblia Livre's authors, source, edition and licence); nil for a
+        /// public-domain Bible.
+        var credit: String? = nil
     }
 
     struct Picture: Sendable {

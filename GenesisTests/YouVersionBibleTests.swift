@@ -72,6 +72,69 @@ struct YouVersionBibleTests {
         #expect(BibleLibrary.premiumToolsTranslation(for: licensed, among: available) == licensed)
     }
 
+    @Test func premiumToolsUseTheBibliaLivreForAPortugueseBible() {
+        let livre = Translation(id: "BLIVRE", name: "Bíblia Livre", year: "2018", license: "Bíblia Livre (BLIVRE). Licença Creative Commons Atribuição 4.0 Brasil.", summary: "", language: "pt")
+        let nviPortuguese = Translation(id: "NVI-PT", name: "Nova Versão Internacional", year: "2000", license: "© Biblica, Inc.", summary: "", language: "pt", isYouVersion: true)
+        // An open licence: shown with its credit, and fine for Premium tools.
+        #expect(livre.isLicensed)
+        #expect(livre.isOpenlyLicensed)
+        #expect(livre.isFreeToReuse)
+        #expect(!nviPortuguese.isFreeToReuse)
+        #expect(BibleLibrary.premiumToolsTranslation(for: nviPortuguese, among: [.kjv, nviPortuguese, livre]) == livre)
+        // A YouVersion Bible under Creative Commons still never stands in.
+        let blt = Translation(id: "BLT", name: "Bíblia Livre Para Todos", year: "2018", license: "Creative Commons", summary: "", language: "pt", isYouVersion: true)
+        #expect(BibleLibrary.premiumToolsTranslation(for: nviPortuguese, among: [.kjv, blt]) == .kjv)
+        // O Livro is European Portuguese ("pt-PT"): the region doesn't matter.
+        let oLivro = Translation(id: "OL", name: "O Livro", year: "2017", license: "© Biblica, Inc.", summary: "", language: "pt-PT", isYouVersion: true)
+        #expect(oLivro.baseLanguage == "pt")
+        #expect(BibleLibrary.premiumToolsTranslation(for: oLivro, among: [.kjv, oLivro, livre]) == livre)
+    }
+
+    @Test func everyPortugueseYouVersionBibleUsesTheBundledBibliaLivre() {
+        let editions = [("NVIPT", "pt"), ("NVI2011", "pt"), ("NBVP", "pt"), ("BLT", "pt"), ("OL", "pt-PT")].map { id, language in
+            Translation(id: id, name: id, year: "", license: "© Biblica, Inc.", summary: "", language: language, isYouVersion: true)
+        }
+        for edition in editions {
+            #expect(BibleLibrary.premiumToolsTranslation(for: edition, among: Translation.bundled + editions) == .bibliaLivre)
+            #expect(!edition.isFreeToReuse)
+        }
+        #expect(Translation.bibliaLivre.isFreeToReuse)
+        #expect(Translation.bibliaLivre.isLicensed, "Its credit shows under every chapter")
+        #expect(Translation.bibliaLivre.license.contains("fevereiro de 2018"))
+        #expect(Translation.bibliaLivre.license.contains("Texto sem as notas de rodapé"))
+    }
+
+    @Test func onlyVerifiedOpenLicencesStandIn() {
+        // A Creative Commons mention isn't enough: only checked licences count.
+        let other = Translation(id: "OTHER", name: "Other", year: "", license: "Creative Commons Attribution-NonCommercial", summary: "", language: "pt")
+        #expect(!other.isOpenlyLicensed)
+        #expect(!other.isFreeToReuse)
+        let livre = Translation(id: "BLIVRE", name: "Bíblia Livre", year: "2018", license: "Bíblia Livre (BLIVRE)", summary: "", language: "pt")
+        #expect(livre.openLicence?.allowsCommercialUse == true)
+        #expect(livre.openLicence?.allowsNarration == true)
+    }
+
+    @Test func aPortugueseAppDownloadsItsFreeBible() throws {
+        let row = #"{"id":"BLIVRE","name":"Bíblia Livre","year":"2018","license":"Bíblia Livre (BLIVRE)","summary":"","language":"pt","file_url":"https://example.com/BLIVRE-1.sqlite.deflate","file_bytes":1,"database_bytes":2,"sha256":"00","version":1,"enabled":true,"sort":40}"#
+        let livre = try JSONDecoder().decode(DownloadableTranslation.self, from: Data(row.utf8))
+        let english: [Translation] = [.kjv, .web, .asv]
+        #expect(BibleLibrary.languageBible(for: "pt", installed: english, catalog: [livre])?.id == "BLIVRE")
+        #expect(BibleLibrary.languageBible(for: "pt", installed: english + [livre.translation], catalog: [livre]) == nil)
+        // Bundled now, so nothing to download.
+        #expect(BibleLibrary.languageBible(for: "pt", installed: Translation.bundled, catalog: [livre]) == nil)
+        #expect(BibleLibrary.languageBible(for: "en", installed: Translation.bundled, catalog: [livre]) == nil)
+        #expect(BibleLibrary.languageBible(for: "es", installed: Translation.bundled, catalog: [livre]) == nil)
+    }
+
+    @Test func portugueseBiblesKeepTheirAccent() {
+        #expect(VoiceAccent.preferred(for: "pt") == "pt-BR")
+        #expect(VoiceAccent.preferred(for: "pt-PT") == "pt-PT")
+        #expect(VoiceAccent.preferred(for: "en") == nil)
+        #expect(VoiceAccent.matches("pt-BR", "pt-BR"))
+        #expect(VoiceAccent.matches("pt_BR", "pt-BR"))
+        #expect(!VoiceAccent.matches("pt-PT", "pt-BR"))
+    }
+
     @Test func catalogRowsAreFreeYouVersionBibles() throws {
         let json = Data("""
         [{"id":"NIrV","yvp_id":110,"name":"New International Reader’s Version","year":"2014","license":"© Biblica","summary":"Simple.","language":"en","approach":"thought_for_thought","reading_level":"everyday","popularity":5,"version":1}]

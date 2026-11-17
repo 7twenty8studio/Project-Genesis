@@ -1,6 +1,7 @@
 import Foundation
 
-/// The language Versely's screens are shown in: English or Spanish.
+/// The language Versely's screens are shown in: English, Spanish or
+/// Brazilian Portuguese.
 ///
 /// People choose it in Versely's Settings › Language (`AppLanguageChoice`) or
 /// in the iPhone's Settings › Apps › Versely › Language; both write the same
@@ -8,9 +9,10 @@ import Foundation
 /// follows the iPhone's own language.
 enum AppLanguage {
     /// Languages the screens are translated into.
-    static let supported = ["en", "es"]
+    static let supported = ["en", "es", "pt"]
 
-    /// "en" or "es". Fixed for the life of the process: a choice made in
+    /// "en", "es" or "pt" (the screens are Brazilian Portuguese, "pt-BR",
+    /// and a Portuguese iPhone of any region gets them). Fixed for the life of the process: a choice made in
     /// Versely applies the next time it opens (iOS restarts the app when it's
     /// changed in the Settings app).
     static let code: String = {
@@ -19,14 +21,25 @@ enum AppLanguage {
     }()
 
     static var isSpanish: Bool { code == "es" }
+    static var isPortuguese: Bool { code == "pt" }
 
     /// The language's name in that language, e.g. "Español".
     static func displayName(_ code: String) -> String {
         Locale(identifier: code).localizedString(forLanguageCode: code)?.capitalized(with: Locale(identifier: code)) ?? code
     }
+
+    /// A regional Bible's language with its region, in that language:
+    /// "Português (Portugal)" for "pt-PT". Nil without a region.
+    static func regionalName(_ code: String) -> String? {
+        guard code.contains("-") || code.contains("_") else { return nil }
+        let locale = Locale(identifier: code)
+        guard let name = locale.localizedString(forIdentifier: code) else { return nil }
+        return name.prefix(1).uppercased() + name.dropFirst()
+    }
 }
 
-/// Settings › Language: follow the iPhone, or always English or Spanish.
+/// Settings › Language: follow the iPhone, or always English, Spanish or
+/// Portuguese.
 ///
 /// The choice is the app's own AppleLanguages value, the same one the
 /// Settings app writes, so either place shows the other's choice. Bundles
@@ -36,13 +49,15 @@ enum AppLanguageChoice: String, CaseIterable, Identifiable, Sendable {
     case system
     case english = "en"
     case spanish = "es"
+    case portuguese = "pt-BR"
 
     var id: String { rawValue }
 
     /// The language code it fixes, nil when following the iPhone.
     var code: String? { self == .system ? nil : rawValue }
 
-    /// "English" and "Español" in their own language, so anyone can find theirs.
+    /// "English", "Español" and "Português" in their own language, so anyone
+    /// can find theirs.
     var title: String {
         guard let code else { return String(localized: "Same as iPhone") }
         return AppLanguage.displayName(code)
@@ -54,7 +69,8 @@ enum AppLanguageChoice: String, CaseIterable, Identifiable, Sendable {
         let first = appleLanguages?.first ?? ""
         self = AppLanguageChoice.allCases.first { choice in
             guard let code = choice.code else { return false }
-            return first.hasPrefix(code)
+            // "pt-BR" and "pt-PT" both mean the Portuguese screens.
+            return first.hasPrefix(String(code.prefix(2)))
         } ?? .system
     }
 

@@ -27,7 +27,7 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar, verseWallpapers, widgetBackgrounds, keepsakeWidgets, widgetPhotoFraming, movingSeasonsAndYourBible, newLook, freeWidgets, languageChoice, ambientLockScreen, groupNamesAndRoles, twoPageSpread, originalWithEveryBible]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar, verseWallpapers, widgetBackgrounds, keepsakeWidgets, widgetPhotoFraming, movingSeasonsAndYourBible, newLook, freeWidgets, languageChoice, ambientLockScreen, groupNamesAndRoles, twoPageSpread, originalWithEveryBible, portuguese]
 
     static let notifications = WhatsNewAnnouncement(
         id: "notifications-your-way",
@@ -841,6 +841,31 @@ enum WhatsNewCatalog {
                 systemImage: "text.magnifyingglass",
                 title: String(localized: "Spanish references"),
                 detail: String(localized: "Search and go to passages by their Spanish names too, like Juan 3:16 or Salmos 23.")
+            ),
+        ]
+    )
+
+    /// Brazilian Portuguese screens, Portuguese Bibles and book names. The
+    /// Bíblia Livre is bundled; the YouVersion Bibles come from the catalog
+    /// (supabase/catalog/portuguese_bibles.sql), applied at release.
+    static let portuguese = WhatsNewAnnouncement(
+        id: "portuguese-brazil",
+        title: String(localized: "Versely in Portuguese"),
+        items: [
+            WhatsNewItem(
+                systemImage: "globe",
+                title: String(localized: "Versely em português"),
+                detail: String(localized: "Use Versely in Brazilian Portuguese: Settings › Language (the gear on Home). It follows your iPhone's language too.")
+            ),
+            WhatsNewItem(
+                systemImage: "book",
+                title: String(localized: "Portuguese Bibles"),
+                detail: String(localized: "The Bíblia Livre now comes with Versely, and the NVI, the Nova Bíblia Viva and more are in Bibles on This Device › Get More.")
+            ),
+            WhatsNewItem(
+                systemImage: "text.magnifyingglass",
+                title: String(localized: "Portuguese references"),
+                detail: String(localized: "Search and go to passages by their Portuguese names too, like João 3:16 or Salmos 23.")
             ),
         ]
     )

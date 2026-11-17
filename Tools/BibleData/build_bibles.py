@@ -56,6 +56,20 @@ TRANSLATIONS = {
         # English numbering differ.
         "usfx": "spa-rv1909.usfx.xml",
     },
+    "BLIVRE": {
+        "name": "Bíblia Livre",
+        "year": "2018",
+        # The credit the Creative Commons licence asks for, as the translators
+        # suggest it (authors, source, edition date, licence), plus the
+        # change CC BY asks us to indicate (footnotes left out); shown under
+        # every chapter and in exports (in the Bible's language).
+        "license": "Bíblia Livre (BLIVRE), Copyright © Diego Santos, Mario Sérgio, e Marco Teles, http://sites.google.com/site/biblialivre/ - fevereiro de 2018. Licença Creative Commons Atribuição 4.0 Brasil (http://creativecommons.org/licenses/by/4.0/br/). Texto sem as notas de rodapé.",
+        "language": "pt",
+        # From ebible.org/Scriptures/porbr2018_usfx.zip (the Almeida of 1819
+        # updated, Textus Receptus; Brazilian Portuguese).
+        "usfx": "porbr2018_usfx.xml",
+        "usfx_notes": True,
+    },
     "WEB": {
         "name": "World English Bible",
         "year": "2020",
@@ -128,23 +142,39 @@ USFX_BOOKS = [
 ]
 
 
-def load_usfx(path):
-    """Verses from a USFX file (open-bibles). Word tags (<w>, Strong's
-    numbers) and supplied-word tags (<add>) are removed, keeping their words;
-    the text itself is not changed. Verses with no words (a number the
-    translation doesn't use) are left out."""
+def load_usfx(path, notes=False):
+    """Verses from a USFX file (open-bibles, eBible.org). Word tags (<w>,
+    Strong's numbers) and supplied-word tags (<add>) are removed, keeping
+    their words; the text itself is not changed. Verses with no words (a
+    number the translation doesn't use) are left out.
+
+    With `notes` (eBible.org files such as the Bíblia Livre's), footnotes
+    (<f>) and the reference after a quotation (<rq>, "Isaías 7:14") are left
+    out, as import_dbl.py leaves them out, and psalm titles (<d>) are kept
+    as headings before verse 1. Without it a file holding any of them is
+    refused, so nothing is dropped unnoticed."""
     import re as _re
     source = open(path, encoding="utf-8-sig").read()
-    verses = []
+    verses, headings = [], []
     for number, code in enumerate(USFX_BOOKS, start=1):
         start = source.find(f'<book id="{code}">')
         assert start >= 0, f"{code} missing"
         end = source.find("</book>", start)
         book = source[start:end]
-        assert "<f " not in book and "<f>" not in book and "<x" not in book, f"{code}: footnotes need handling"
+        if notes:
+            book = _re.sub(r"<f\b[^>]*>.*?</f>", "", book, flags=_re.S)
+            book = _re.sub(r"<rq\b[^>]*>.*?</rq>", "", book, flags=_re.S)
+            for chapter_id, title in _re.findall(r'<c id="(\d+)"[^>]*/>\s*<d\b[^>]*>(.*?)</d>', book, flags=_re.S):
+                title = _re.sub(r"</?(w|add)\b[^>]*>", "", title)
+                assert "<" not in title, f"unexpected markup in {code} {chapter_id} title: {title[:80]}"
+                headings.append((number, int(chapter_id), 1, clean(title)))
+            book = _re.sub(r"<d\b[^>]*>.*?</d>", "", book, flags=_re.S)
+        else:
+            assert "<d " not in book and "<d>" not in book, f"{code}: psalm titles need handling"
+        assert "<f " not in book and "<f>" not in book and "<x" not in book and "<rq" not in book, f"{code}: footnotes need handling"
         chapter = 0
         # Split into tokens: chapter markers, verse markers, verse ends, text.
-        for token in _re.split(r'(<c id="\d+"\s*/>|<v id="\d+"\s*/>|<ve\s*/>)', book):
+        for token in _re.split(r'(<c id="\d+"[^>]*/>|<v id="\d+"[^>]*/>|<ve\s*/>)', book):
             c = _re.match(r'<c id="(\d+)"', token)
             v = _re.match(r'<v id="(\d+)"', token)
             if c:
@@ -160,6 +190,10 @@ def load_usfx(path):
                     continue  # after <ve/>: text between verses (headings) isn't verse text
                 text = _re.sub(r"</?(w|add)\b[^>]*>", "", token)
                 text = _re.sub(r"</?p\b[^>]*>", " ", text)
+                if notes:
+                    # eBible.org breaks lines before tags (a footnote, an <add>):
+                    # whitespace, not the translation's line breaks.
+                    text = text.replace("\n", " ")
                 assert "<" not in text, f"unexpected markup in {code} {chapter}:{current.verse}: {text[:80]}"
                 current.parts.append(text)
             if token.startswith("<ve"):
@@ -167,13 +201,13 @@ def load_usfx(path):
                     verses[-1].parts.append(None)
         for verse in verses:
             verse.parts = [part for part in verse.parts if part is not None]
-    return [v for v in verses if v.text.strip()], []
+    return [v for v in verses if v.text.strip()], headings
 
 
 def load_scrollmapper(path, abbreviation):
     usfx = TRANSLATIONS.get(abbreviation, {}).get("usfx")
     if usfx:
-        return load_usfx(os.path.join(path, usfx))
+        return load_usfx(os.path.join(path, usfx), notes=TRANSLATIONS[abbreviation].get("usfx_notes", False))
     data = json.load(open(os.path.join(path, "formats", "json", f"{abbreviation}.json")))
     assert len(data["books"]) == 66, "expected the 66-book canon"
     verses = []

@@ -12,7 +12,8 @@ from Tools/Localization/es.json (English key → Spanish) and writes:
 
 Fails, listing them, if a string has no Spanish or a translation's
 placeholders (%@, %lld, %%) don't match the English. To add a language later,
-add its JSON next to es.json and its code to LANGUAGES.
+add its JSON next to es.json and its code and file to LANGUAGES
+(pt.json holds Brazilian Portuguese, "pt-BR").
 """
 import json
 import os
@@ -24,7 +25,8 @@ ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, HERE)
 from extract_strings import extract  # noqa: E402
 
-LANGUAGES = ["es"]
+# Catalog language code → its JSON (English key → translation) next to this file.
+LANGUAGES = {"es": "es.json", "pt-BR": "pt.json"}
 TARGETS = {
     # The app also draws the verse widget's look (Widget Styles previews).
     "Genesis/Resources/Localizable.xcstrings": ["Genesis", "GenesisWidgets/WidgetStyle.swift", "GenesisWidgets/VerseWidgetContent.swift", "GenesisWidgets/KeepsakeWidgets.swift", "GenesisWidgets/SeasonalMotion.swift"],
@@ -45,7 +47,7 @@ def placeholders(text):
 
 def main():
     os.chdir(ROOT)
-    translations = {lang: json.load(open(os.path.join(HERE, f"{lang}.json"), encoding="utf-8")) for lang in LANGUAGES}
+    translations = {lang: json.load(open(os.path.join(HERE, name), encoding="utf-8")) for lang, name in LANGUAGES.items()}
     problems = []
     for path, sources in TARGETS.items():
         found = extract(sources)

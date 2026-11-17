@@ -20,14 +20,14 @@ struct OnboardingBiblesTests {
 
     @Test func spanishPutsAFreeSpanishDownloadFirstAndChoosesIt() {
         let options = OnboardingBibles.options(installed: Translation.bundled, catalog: Self.catalog, language: "es")
-        #expect(options.map(\.id) == ["RV1909", "KJV", "WEB", "ASV"])
+        #expect(options.map(\.id) == ["RV1909", "KJV", "WEB", "ASV", "BLIVRE"])
         #expect(options.first?.download?.id == "RV1909")
         #expect(OnboardingBibles.suggested(current: .kjv, options: options, language: "es").id == "RV1909")
     }
 
     @Test func englishKeepsTheBundledBiblesAndTheCurrentOne() {
         let options = OnboardingBibles.options(installed: Translation.bundled, catalog: Self.catalog, language: "en")
-        #expect(options.map(\.id) == ["KJV", "WEB", "ASV", "BSB"])
+        #expect(options.map(\.id) == ["KJV", "WEB", "ASV", "BSB", "BLIVRE"])
         #expect(OnboardingBibles.suggested(current: .kjv, options: options, language: "en").id == "KJV")
     }
 
@@ -35,6 +35,15 @@ struct OnboardingBiblesTests {
         let options = OnboardingBibles.options(installed: Translation.bundled, catalog: [], language: "es")
         #expect(options.allSatisfy { $0.download == nil })
         #expect(OnboardingBibles.suggested(current: .kjv, options: options, language: "es").id == "KJV")
+    }
+
+    @Test func portugueseStartsInTheBundledBibliaLivreOffline() {
+        for catalog in [Self.catalog, []] {
+            let options = OnboardingBibles.options(installed: Translation.bundled, catalog: catalog, language: "pt")
+            #expect(options.first?.id == "BLIVRE")
+            #expect(options.first?.download == nil)
+            #expect(OnboardingBibles.suggested(current: .kjv, options: options, language: "pt").id == "BLIVRE")
+        }
     }
 
     @Test func aSpanishBibleAlreadyOnTheDeviceIsNotDownloadedAgain() {

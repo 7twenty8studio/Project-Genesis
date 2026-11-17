@@ -33,6 +33,13 @@ test("answers in the app's language: English unless Spanish is asked for", () =>
   assert.equal(cacheKey(spanish), "v1:explain:43003016-43003018:es");
   assert.match(buildUserMessage(spanish), /in Spanish/);
   assert.doesNotMatch(buildUserMessage(parseRequest(john3)), /Spanish/);
+  const portuguese = parseRequest({ ...john3, language: "pt" });
+  assert.equal(portuguese.language, "pt");
+  assert.equal(cacheKey(portuguese), "v1:explain:43003016-43003018:pt");
+  assert.match(buildUserMessage(portuguese), /in Brazilian Portuguese/);
+  assert.match(buildUserMessage(portuguese), /\[\[João 3:16\]\]/);
+  // "pt-BR" isn't a value the app sends: English, as for any other.
+  assert.equal(parseRequest({ ...john3, language: "pt-BR" }).language, "en");
 });
 
 test("rejects bad requests", () => {

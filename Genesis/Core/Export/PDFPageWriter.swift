@@ -109,6 +109,12 @@ final class PDFPageWriter {
             let verse = NSAttributedString(string: passage.text, attributes: style.attributes(style.body(12), paragraph: style.paragraph(spacing: 10, indent: 14)))
             drawText(verse)
         }
+        // Each licensed Bible's credit once, after its passages.
+        var credited: Set<String> = []
+        for credit in passages.compactMap(\.credit) where credited.insert(credit).inserted {
+            ensureSpace(40)
+            drawText(NSAttributedString(string: credit, attributes: style.attributes(style.body(9), color: style.quiet, paragraph: style.paragraph(spacing: 8, indent: 14))))
+        }
     }
 
     private func drawFileList(_ entry: JournalExport.Entry) {

@@ -40,9 +40,54 @@ struct ReadingLibraryTests {
 
     @Test func languagesPutTheAppsFirst() throws {
         let rv = try offer("RV1909", name: "Reina-Valera 1909", language: "es")
-        #expect(ReadingLibrary.languages(installed: Translation.bundled, catalog: [rv], preferred: "es") == ["es", "en"])
-        #expect(ReadingLibrary.languages(installed: Translation.bundled, catalog: [rv], preferred: "en") == ["en", "es"])
-        #expect(ReadingLibrary.languages(installed: Translation.bundled, catalog: [], preferred: "es") == ["en"])
+        #expect(ReadingLibrary.languages(installed: Translation.bundled, catalog: [rv], preferred: "es") == ["es", "en", "pt"])
+        #expect(ReadingLibrary.languages(installed: Translation.bundled, catalog: [rv], preferred: "en") == ["en", "es", "pt"])
+        #expect(ReadingLibrary.languages(installed: Translation.bundled, catalog: [], preferred: "es") == ["en", "pt"])
+    }
+
+    @Test func portugalIsGroupedUnderPortuguese() throws {
+        let livro = try offer("OL", name: "O Livro", language: "pt-PT")
+        #expect(ReadingLibrary.languages(installed: Translation.bundled, catalog: [livro], preferred: "pt") == ["pt", "en"])
+        let portuguese = ReadingLibrary.entries(in: "pt", installed: Translation.bundled, catalog: [livro], recordedTranslationIDs: [])
+        #expect(Set(portuguese.map(\.id)) == ["BLIVRE", "OL"])
+        #expect(AppLanguage.regionalName("pt-PT") == "Português (Portugal)")
+        #expect(AppLanguage.regionalName("pt") == nil)
+    }
+
+    @Test func eachLanguageShowsOnlyItsBibles() throws {
+        let rv = try offer("RV1909", name: "Reina-Valera 1909", language: "es")
+        let bsb = try offer("BSB", name: "Berean Standard Bible")
+        let english = ReadingLibrary.sections(for: "en", installed: Translation.bundled, catalog: [rv, bsb], recordedTranslationIDs: [], preferred: "en")
+        #expect(english.map(\.language) == ["en"])
+        #expect(!english[0].entries.contains { $0.id == "BLIVRE" }, "The bundled Bíblia Livre stays under Português")
+        #expect(!english[0].entries.contains { $0.id == "RV1909" })
+
+        let all = ReadingLibrary.sections(for: ReadingLibrary.allLanguages, installed: Translation.bundled, catalog: [rv, bsb], recordedTranslationIDs: [], preferred: "es")
+        #expect(all.map(\.language) == ["es", "en", "pt"])
+        #expect(all.flatMap(\.entries).contains { $0.id == "BLIVRE" })
+    }
+
+    @Test func quickMenusGroupEveryInstalledBible() throws {
+        let rv = try offer("RV1909", name: "Reina-Valera 1909", language: "es").translation
+        let livro = try offer("OL", name: "O Livro", language: "pt-PT").translation
+        let installed = Translation.bundled + [rv, livro]
+
+        let fromPortuguese = ReadingLibrary.groups(installed, current: .bibliaLivre)
+        #expect(fromPortuguese.map(\.language) == ["pt", "en", "es"], "The current Bible's language first")
+        #expect(fromPortuguese[0].translations.map(\.id) == ["BLIVRE", "OL"])
+        #expect(fromPortuguese.flatMap(\.translations).count == installed.count, "Nothing left out")
+
+        let fromEnglish = ReadingLibrary.groups(installed, current: .kjv)
+        #expect(fromEnglish.map(\.language) == ["en", "es", "pt"])
+        #expect(fromEnglish[0].translations.map(\.id) == ["KJV", "WEB", "ASV"], "The library's order within a language")
+    }
+
+    @Test func opensOnTheBibleBeingRead() {
+        let available = ["en", "es", "pt"]
+        #expect(ReadingLibrary.defaultLanguage(current: .kjv, appLanguage: "pt", available: available) == "en", "The Bible's language, not the app's")
+        #expect(ReadingLibrary.defaultLanguage(current: .bibliaLivre, appLanguage: "en", available: available) == "pt")
+        #expect(ReadingLibrary.defaultLanguage(current: nil, appLanguage: "es", available: available) == "es", "At setup: the app's language")
+        #expect(ReadingLibrary.defaultLanguage(current: nil, appLanguage: "de", available: available) == ReadingLibrary.allLanguages)
     }
 
     @Test func entriesAreMostReadFirstAndMergeDownloads() throws {
