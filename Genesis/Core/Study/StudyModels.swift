@@ -60,6 +60,12 @@ struct Person: Identifiable, Hashable, Sendable {
     var id: Int { summary.id }
     var name: String { summary.name }
 
+    /// The groups in the app's language, "Tribe of Judah · Apostles"; nil when none.
+    var groupTitle: String? {
+        let titles = group.split(separator: ",").map { PersonGroup.title(String($0).trimmingCharacters(in: .whitespaces)) }
+        return titles.isEmpty ? nil : titles.joined(separator: " \u{00B7} ")
+    }
+
     /// "c. 1085 BC – c. 1015 BC", or nil when neither date is known.
     var lifespan: String? {
         switch (birthYear, deathYear) {
@@ -67,6 +73,32 @@ struct Person: Identifiable, Hashable, Sendable {
         case let (born?, nil): String(localized: "Born \(TimelineEvent.label(forYear: born))")
         case let (nil, died?): String(localized: "Died \(TimelineEvent.label(forYear: died))")
         case (nil, nil): nil
+        }
+    }
+}
+
+/// Theographic's group labels (people.tribe), in the app's language.
+enum PersonGroup {
+    static func title(_ group: String) -> String {
+        switch group {
+        case "Apostles": String(localized: "Apostles", comment: "Group of Bible people")
+        case "Apostles (Post-Ascension)": String(localized: "Apostles (after the Ascension)", comment: "Group of Bible people")
+        case "Apostles (The Eleven)": String(localized: "Apostles (the Eleven)", comment: "Group of Bible people")
+        case "Genealogy of Jesus": String(localized: "Genealogy of Jesus", comment: "Group of Bible people")
+        case "Line of Cain": String(localized: "Line of Cain", comment: "Group of Bible people")
+        case "Tribe of Asher": String(localized: "Tribe of Asher")
+        case "Tribe of Benjamin": String(localized: "Tribe of Benjamin")
+        case "Tribe of Dan": String(localized: "Tribe of Dan")
+        case "Tribe of Gad": String(localized: "Tribe of Gad")
+        case "Tribe of Issachar": String(localized: "Tribe of Issachar")
+        case "Tribe of Joseph": String(localized: "Tribe of Joseph")
+        case "Tribe of Judah": String(localized: "Tribe of Judah")
+        case "Tribe of Levi": String(localized: "Tribe of Levi")
+        case "Tribe of Naphtali": String(localized: "Tribe of Naphtali")
+        case "Tribe of Reuben": String(localized: "Tribe of Reuben")
+        case "Tribe of Simeon": String(localized: "Tribe of Simeon")
+        case "Tribe of Zebulun": String(localized: "Tribe of Zebulun")
+        default: group
         }
     }
 }

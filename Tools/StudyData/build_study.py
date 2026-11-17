@@ -140,11 +140,12 @@ EXCLUDED_PEOPLE = {"god_1324", "holy_spirit_7400"}
 
 
 def other_names(field: str, name: str) -> str:
-    """'Saul,Mercurius' -> 'Saul, Mercurius'; drops duplicates and lowercase words."""
+    """'Saul,Mercurius' -> 'Saul, Mercurius'; drops duplicates, lowercase words
+    and editors' notes ('4b is just "mount" or "mountain"', Mount of Olives)."""
     seen, names = {name.lower()}, []
     for other in (field or "").split(","):
         other = other.strip()
-        if other and other[0].isupper() and other.lower() not in seen:
+        if other and other[0].isupper() and not other[0].isdigit() and '"' not in other and other.lower() not in seen:
             seen.add(other.lower())
             names.append(other)
     return ", ".join(names)
@@ -384,5 +385,9 @@ if __name__ == "__main__":
     if len(sys.argv) != 3:
         sys.exit(__doc__)
     build(sys.argv[1], sys.argv[2])
+    # Spanish and Portuguese names (Tools/StudyData/translations).
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from add_study_translations import add
+    add(OUTPUT)
     size = os.path.getsize(OUTPUT) / 1_000_000
     print(f"Wrote {OUTPUT} ({size:.1f} MB)")
