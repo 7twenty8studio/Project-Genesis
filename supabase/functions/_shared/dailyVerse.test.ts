@@ -278,3 +278,48 @@ test("urgent only for biblical inaccuracy outside drafts", () => {
   assert.match(subject, /^\[Daily Verse\] URGENT /);
   assert.equal(escapeHTML(`a<b>&"'`), "a&lt;b&gt;&amp;&quot;&#39;");
 });
+
+// ---- Daily Verse 1.0: retry ids and App Attest request shapes
+import { actionOf, assertionHeaders, ATTEST_HEADERS, attestFailure, parseAttestRequest } from "./dailyVerse.ts";
+
+test("reportID: optional for older builds, a UUID when sent, lower-cased", () => {
+  const without = parseReport(body());
+  assert.ok(without.ok && without.value.reportID === null);
+  const withId = parseReport(body({ reportID: "AAAAAAAA-0000-4000-8000-000000000001" }));
+  assert.ok(withId.ok && withId.value.reportID === "aaaaaaaa-0000-4000-8000-000000000001");
+  assert.deepEqual(parseReport(body({ reportID: "not-a-uuid" })), { ok: false, field: "reportID" });
+});
+
+test("actionOf: challenge, attest, or a report when there's no action", () => {
+  assert.equal(actionOf({ action: "challenge" }), "challenge");
+  assert.equal(actionOf({ action: "attest" }), "attest");
+  assert.equal(actionOf(body()), "report");
+  assert.equal(actionOf({ action: "delete" }), null);
+  assert.equal(actionOf([]), null);
+});
+
+const CHALLENGE_TEXT = "A".repeat(43);
+const KEY_ID = Buffer.alloc(32, 7).toString("base64");
+
+test("parseAttestRequest checks each field", () => {
+  assert.ok(parseAttestRequest({ keyId: KEY_ID, attestation: "o2NmbXQ=", challenge: CHALLENGE_TEXT }).ok);
+  assert.deepEqual(parseAttestRequest({ keyId: "short", attestation: "x", challenge: CHALLENGE_TEXT }), { ok: false, field: "keyId" });
+  assert.deepEqual(parseAttestRequest({ keyId: KEY_ID, attestation: "x", challenge: "nope" }), { ok: false, field: "challenge" });
+  assert.deepEqual(parseAttestRequest({ keyId: KEY_ID, challenge: CHALLENGE_TEXT }), { ok: false, field: "attestation" });
+});
+
+test("assertionHeaders: none, all three, or invalid", () => {
+  assert.equal(assertionHeaders(new Headers()), null);
+  const all = new Headers({ [ATTEST_HEADERS.keyId]: KEY_ID, [ATTEST_HEADERS.assertion]: "omlzaWc=", [ATTEST_HEADERS.challenge]: CHALLENGE_TEXT });
+  assert.deepEqual(assertionHeaders(all), { keyId: KEY_ID, assertion: "omlzaWc=", challenge: CHALLENGE_TEXT });
+  assert.equal(assertionHeaders(new Headers({ [ATTEST_HEADERS.keyId]: KEY_ID })), "invalid");
+  assert.equal(assertionHeaders(new Headers({ ...Object.fromEntries(all), [ATTEST_HEADERS.challenge]: "short" })), "invalid");
+});
+
+test("attestation failures are 401 with a reason the app acts on", () => {
+  assert.deepEqual(attestFailure("challenge"), { status: 401, body: { error: "attestation", reason: "challenge" } });
+});
+
+test("a reused report id from another install maps to 400 reportID", () => {
+  assert.deepEqual(reportErrorToHttp({ message: "invalid report id", code: "22023" }), { status: 400, body: { error: "invalid", field: "reportID" } });
+});

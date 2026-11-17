@@ -133,4 +133,29 @@ echo "== Re-apply and test again"
 as_postgres -f "$MIG/$NEW" >/dev/null
 psql -f "$HERE/tests.sql" | tee "$OUT/tests-2.txt" | tail -3
 
+echo "== App Attest migration (20261117000000, as postgres) on a fresh daily_verse schema"
+AT="20261117000000_daily_verse_app_attest.sql"
+AT_DOWN="$ROOT/supabase/rollback/20261117000000_daily_verse_app_attest_down.sql"
+fresh_daily_verse() { as_postgres -f "$DOWN" >/dev/null; as_postgres -f "$MIG/$NEW" >/dev/null; }
+fresh_daily_verse
+snapshot before_at
+as_postgres -f "$MIG/$AT" >/dev/null
+snapshot after_at
+echo "== Versely unchanged after the App Attest migration?"
+same before_at after_at
+echo "== Tests: the original checks still pass with App Attest applied"
+psql -f "$HERE/tests.sql" | tee "$OUT/tests-at-base.txt" | tail -3
+echo "== Tests: App Attest"
+psql -f "$HERE/tests_app_attest.sql" | tee "$OUT/tests-at-1.txt" | tail -3
+echo "== App Attest rollback"
+as_postgres -f "$AT_DOWN" >/dev/null
+psql -At -c "select count(*) from information_schema.tables where table_schema = 'daily_verse' and table_name like 'attest%'" | grep -qx 0 && echo "   attest tables gone"
+psql -At -c "select count(*) from information_schema.columns where table_schema = 'daily_verse' and column_name = 'client_report_id'" | grep -qx 0 && echo "   client_report_id gone"
+snapshot rolledback_at
+same before_at rolledback_at
+echo "== Re-apply App Attest on a fresh schema and test again"
+fresh_daily_verse
+as_postgres -f "$MIG/$AT" >/dev/null
+psql -f "$HERE/tests_app_attest.sql" | tee "$OUT/tests-at-2.txt" | tail -3
+
 echo "Snapshots and logs: $OUT"

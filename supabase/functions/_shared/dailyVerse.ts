@@ -34,6 +34,8 @@ export interface ReportInput {
   category: (typeof CATEGORIES)[number];
   description: string;
   screenshots: Uint8Array[];
+  /** The app's own id for this report (a UUID it keeps across retries), or null from builds before 1.0. */
+  reportID: string | null;
 }
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -103,6 +105,8 @@ export function parseReport(body: unknown): Parsed<ReportInput> {
   if (b.reviewState != null && !reviewState) return { ok: false, field: "reviewState" };
   const description = str(b.description);
   if (!description || description.length > 2000) return { ok: false, field: "description" };
+  const reportID = b.reportID == null ? null : str(b.reportID);
+  if (reportID !== null && !UUID.test(reportID)) return { ok: false, field: "reportID" };
 
   const raw = b.screenshots ?? [];
   if (!Array.isArray(raw) || raw.length > MAX_SCREENSHOTS) return { ok: false, field: "screenshots" };
@@ -121,6 +125,7 @@ export function parseReport(body: unknown): Parsed<ReportInput> {
     value: {
       installID: installID.toLowerCase(), appVersion, build, osVersion: osVersion || null, deviceFamily,
       contentLanguage, puzzleType, contentId, challengeDate, reviewState, category, description, screenshots,
+      reportID: reportID ? reportID.toLowerCase() : null,
     },
   };
 }
@@ -130,8 +135,9 @@ export function parseReport(body: unknown): Parsed<ReportInput> {
  * (contract rule 1): a build number listed in DV_INTERNAL_BUILDS (comma-separated
  * Edge Function secret, updated when an Internal TestFlight build is uploaded) is
  * Internal; anything else is Public, which the database refuses while
- * settings.accepted_channels = {internal}. A policy gate, not device attestation
- * (rule 2): App Attest / DeviceCheck is required before public availability.
+ * settings.accepted_channels = {internal}. The build is client-supplied, so this
+ * only labels a report whose App Attest assertion already checked out (dv-report
+ * refuses every unattested report); it never grants access by itself.
  */
 export function channelFor(build: string, internalBuilds: string | undefined): Channel {
   const list = (internalBuilds ?? "").split(",").map((s) => s.trim()).filter(Boolean);
@@ -278,6 +284,7 @@ export function reportErrorToHttp(error: DbError): HttpError {
     return { status: 429, body: { error: "rate_limited" }, retryAfter: seconds };
   }
   if (message.includes("channel_closed")) return { status: 503, body: { error: "unavailable" } };
+  if (message.includes("invalid report id")) return { status: 400, body: { error: "invalid", field: "reportID" } };
   if (message.includes("rejected_content")) return { status: 400, body: { error: "invalid", field: "description" } };
   if (error.code === "23514" || error.code === "22023" || error.code === "22P02" || error.code === "22001") {
     return { status: 400, body: { error: "invalid" } };
@@ -467,4 +474,63 @@ export function alertEmail(report: AlertReport, dashboardURL: string | undefined
 <p style="white-space:pre-wrap">${escapeHTML(description)}</p>${link}
 <p style="color:#888">Daily Verse Games reports. Versely's ops alerts are separate.</p></div>`;
   return { subject, html };
+}
+
+// ---------------------------------------------------------------- App Attest (dv-report)
+
+/** Request headers that carry a report's App Attest assertion. */
+export const ATTEST_HEADERS = { keyId: "x-dv-attest-key", assertion: "x-dv-assertion", challenge: "x-dv-challenge" } as const;
+
+/** A challenge as the app receives it: 32 random bytes, base64url without padding (43 characters). */
+export const CHALLENGE = /^[A-Za-z0-9_-]{43}$/;
+
+/**
+ * The body's `action`: "challenge" (get a single-use challenge), "attest"
+ * (register a new App Attest key) or, with no action, a report.
+ */
+export function actionOf(body: unknown): "challenge" | "attest" | "report" | null {
+  if (!body || typeof body !== "object" || Array.isArray(body)) return null;
+  const action = (body as Record<string, unknown>).action;
+  if (action === undefined) return "report";
+  return action === "challenge" || action === "attest" ? action : null;
+}
+
+export interface AttestRequest { keyId: string; attestation: string; challenge: string }
+
+/** {action: "attest", keyId, attestation, challenge}: the fields are checked here; the cryptography in appAttest.ts. */
+export function parseAttestRequest(body: unknown): Parsed<AttestRequest> {
+  const b = body as Record<string, unknown>;
+  const keyId = str(b.keyId);
+  if (!keyId || !/^[A-Za-z0-9+/=_-]{40,48}$/.test(keyId)) return { ok: false, field: "keyId" };
+  const attestation = str(b.attestation);
+  if (!attestation || attestation.length > 16_384) return { ok: false, field: "attestation" };
+  const challenge = str(b.challenge);
+  if (!challenge || !CHALLENGE.test(challenge)) return { ok: false, field: "challenge" };
+  return { ok: true, value: { keyId, attestation, challenge } };
+}
+
+export interface AssertionHeaders { keyId: string; assertion: string; challenge: string }
+
+/** The three attestation headers, all or nothing: null when none is sent, "invalid" when some are missing or malformed. */
+export function assertionHeaders(headers: Headers): AssertionHeaders | null | "invalid" {
+  const keyId = headers.get(ATTEST_HEADERS.keyId)?.trim();
+  const assertion = headers.get(ATTEST_HEADERS.assertion)?.trim();
+  const challenge = headers.get(ATTEST_HEADERS.challenge)?.trim();
+  if (!keyId && !assertion && !challenge) return null;
+  if (!keyId || !/^[A-Za-z0-9+/=_-]{40,48}$/.test(keyId)) return "invalid";
+  if (!assertion || assertion.length > 2048) return "invalid";
+  if (!challenge || !CHALLENGE.test(challenge)) return "invalid";
+  return { keyId, assertion, challenge };
+}
+
+/**
+ * Why an attested request was refused, for the app (401 {error: "attestation", reason}):
+ *   "challenge"   expired, used or unknown: get a new challenge and try again;
+ *   "key"         the server doesn't know this key (or no longer): make and attest a new key;
+ *   "required"    a public build sent no attestation;
+ *   "invalid"     the attestation or assertion didn't verify.
+ */
+export type AttestFailure = "challenge" | "key" | "required" | "invalid";
+export function attestFailure(reason: AttestFailure): HttpError {
+  return { status: 401, body: { error: "attestation", reason } };
 }
