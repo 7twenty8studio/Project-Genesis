@@ -72,6 +72,20 @@ struct YouVersionBibleTests {
         #expect(BibleLibrary.premiumToolsTranslation(for: licensed, among: available) == licensed)
     }
 
+    @Test func premiumToolsUseTheBibliaLivreForAPortugueseBible() {
+        let livre = Translation(id: "BLIVRE", name: "Bíblia Livre", year: "2018", license: "Bíblia Livre (BLIVRE). Licença Creative Commons Atribuição 4.0 Brasil.", summary: "", language: "pt")
+        let nviPortuguese = Translation(id: "NVI-PT", name: "Nova Versão Internacional", year: "2000", license: "© Biblica, Inc.", summary: "", language: "pt", isYouVersion: true)
+        // An open licence: shown with its credit, and fine for Premium tools.
+        #expect(livre.isLicensed)
+        #expect(livre.isOpenlyLicensed)
+        #expect(livre.isFreeToReuse)
+        #expect(!nviPortuguese.isFreeToReuse)
+        #expect(BibleLibrary.premiumToolsTranslation(for: nviPortuguese, among: [.kjv, nviPortuguese, livre]) == livre)
+        // A YouVersion Bible under Creative Commons still never stands in.
+        let blt = Translation(id: "BLT", name: "Bíblia Livre Para Todos", year: "2018", license: "Creative Commons", summary: "", language: "pt", isYouVersion: true)
+        #expect(BibleLibrary.premiumToolsTranslation(for: nviPortuguese, among: [.kjv, blt]) == .kjv)
+    }
+
     @Test func catalogRowsAreFreeYouVersionBibles() throws {
         let json = Data("""
         [{"id":"NIrV","yvp_id":110,"name":"New International Reader’s Version","year":"2014","license":"© Biblica","summary":"Simple.","language":"en","approach":"thought_for_thought","reading_level":"everyday","popularity":5,"version":1}]

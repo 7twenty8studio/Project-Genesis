@@ -73,12 +73,50 @@ struct LocalizationTests {
         #expect(AppLanguage.code == "en")
     }
 
+    @Test func portugueseBookNames() {
+        #expect(BibleBook.portuguese.count == 66)
+        #expect(BibleBook.withNumber(43).name(in: "pt") == "João")
+        #expect(BibleBook.withNumber(1).name(in: "pt-BR") == "Gênesis")
+        #expect(BibleBook.withNumber(19).abbreviation(in: "pt") == "Sl")
+        #expect(BibleBook.withNumber(66).name(in: "pt") == "Apocalipse")
+    }
+
+    @Test func portugueseReferences() {
+        #expect(ReferenceParser.parse("João 3:16")?.book.id == 43)
+        #expect(ReferenceParser.parse("joao 3:16")?.book.id == 43)
+        #expect(ReferenceParser.parse("1 Coríntios 13")?.book.id == 46)
+        #expect(ReferenceParser.parse("Deuteronômio 6:4")?.book.id == 5)
+        #expect(ReferenceParser.parse("Apocalipse 21")?.book.id == 66)
+        #expect(ReferenceParser.parse("Atos 2:38")?.book.id == 44)
+        #expect(ReferenceParser.parse("Sl 23")?.book.id == 19)
+        #expect(ReferenceParser.parse("primeira Pedro 1:3")?.book.id == 60)
+        #expect(ReferenceParser.parse("1ª João 1:9")?.book.id == 62)
+        // "Jó" is Job; "Jo" is João.
+        #expect(ReferenceParser.parse("Jó 1:1")?.book.id == 18)
+        #expect(ReferenceParser.parse("Jo 3:16")?.book.id == 43)
+        // Tests run in English: shared abbreviations keep their English book.
+        #expect(ReferenceParser.parse("Mc 4")?.book.id == 33)
+    }
+
+    @Test func portugueseAbbreviationsWinInPortuguese() {
+        let portuguese = ReferenceParser.makeIndex(portugueseFirst: true)
+        #expect(portuguese["mc"]?.id == 41)
+        #expect(portuguese["jn"]?.id == 32)
+        #expect(portuguese["hb"]?.id == 58)
+        #expect(portuguese["jo"]?.id == 43)
+        let english = ReferenceParser.makeIndex(portugueseFirst: false)
+        #expect(english["mc"]?.id == 33)
+    }
+
     @Test func languageChoiceFromSavedList() {
         #expect(AppLanguageChoice(appleLanguages: nil) == .system)
         #expect(AppLanguageChoice(appleLanguages: []) == .system)
         #expect(AppLanguageChoice(appleLanguages: ["es"]) == .spanish)
         #expect(AppLanguageChoice(appleLanguages: ["es-MX", "en"]) == .spanish)
         #expect(AppLanguageChoice(appleLanguages: ["en-GB"]) == .english)
+        #expect(AppLanguageChoice(appleLanguages: ["pt-BR"]) == .portuguese)
+        #expect(AppLanguageChoice(appleLanguages: ["pt-PT", "en"]) == .portuguese)
+        #expect(AppLanguageChoice.portuguese.code == "pt-BR")
         // A language Versely isn't translated into follows the iPhone.
         #expect(AppLanguageChoice(appleLanguages: ["fr"]) == .system)
         #expect(AppLanguageChoice.system.code == nil)

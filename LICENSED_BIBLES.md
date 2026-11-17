@@ -38,6 +38,19 @@ through the contact shown.
 | Dios Habla Hoy (DHH), Traducción en Lenguaje Actual (TLA), Reina Valera Contemporánea (RVC) | Sociedades Bíblicas Unidas | DBL |
 | La Biblia de las Américas (LBLA) and Nueva Biblia de las Américas (NBLA) | The Lockman Foundation | Directly (lockman.org) |
 
+### Portuguese (Brazil)
+
+Already offered without a request (VRS-3): the Bíblia Livre (CC BY 4.0
+Brasil, free download) and, through the YouVersion Platform, the NVI, NVI
+2011, Nova Bíblia Viva, Bíblia Livre Para Todos and O Livro (pt-PT). Rows:
+supabase/catalog/portuguese_bibles.sql. Neither source has these, so they
+need a request:
+
+| Bible | Publisher | Where to ask |
+|---|---|---|
+| Almeida Revista e Atualizada (ARA), Almeida Revista e Corrigida (ARC), Nova Almeida Atualizada (NAA), Nova Tradução na Linguagem de Hoje (NTLH) | Sociedade Bíblica do Brasil | DBL, else SBB directly |
+| Nova Versão Transformadora (NVT) | Editora Mundo Cristão / Tyndale | Tyndale directly |
+
 A good first round is the NIV, the NLT, the RVR1960, the NVI and the NTV:
 together they cover most readers in both languages.
 

@@ -8,12 +8,24 @@
             "state": "translated",
             "value": "%lld pendientes"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld pendentes"
+          }
         }
       }
     },
     "%lld of %lld": {
       "localizations": {
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld de %lld"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "%lld de %lld"
@@ -28,6 +40,12 @@
             "state": "translated",
             "value": "%lld de %lld leyeron hoy"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld de %lld leram hoje"
+          }
         }
       }
     },
@@ -37,6 +55,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld oraciones"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld orações"
           }
         }
       }
@@ -48,6 +72,12 @@
             "state": "translated",
             "value": "Racha de %lld días"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sequência de %lld dias"
+          }
         }
       }
     },
@@ -57,6 +87,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "1 oración"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 oração"
           }
         }
       }
@@ -68,6 +104,12 @@
             "state": "translated",
             "value": "Un versículo para ti"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Um versículo para você"
+          }
         }
       }
     },
@@ -77,6 +119,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Un versículo nuevo cada mañana, uno al azar o versículos sobre esperanza, paz y más."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Um versículo novo a cada manhã, um versículo aleatório ou versículos sobre esperança, paz e mais."
           }
         }
       }
@@ -88,6 +136,12 @@
             "state": "translated",
             "value": "Añade un versículo para memorizar en Versely."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adicione um versículo para memorizar no Versely."
+          }
         }
       }
     },
@@ -97,6 +151,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Todo al día"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tudo em dia"
           }
         }
       }
@@ -108,6 +168,12 @@
             "state": "translated",
             "value": "Sonidos ambientales"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sons ambientes"
+          }
         }
       }
     },
@@ -117,6 +183,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Otoño"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Outono"
           }
         }
       }
@@ -128,6 +200,12 @@
             "state": "translated",
             "value": "Fondo"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fundo"
+          }
         }
       }
     },
@@ -137,6 +215,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Comenzar a leer"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Começar a ler"
           }
         }
       }
@@ -148,6 +232,12 @@
             "state": "translated",
             "value": "Comienza a leer"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comece a ler"
+          }
         }
       }
     },
@@ -157,6 +247,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hoja de calendario"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Folha de calendário"
           }
         }
       }
@@ -168,6 +264,12 @@
             "state": "translated",
             "value": "Elige qué versículo muestra el widget."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escolha qual versículo o widget mostra."
+          }
         }
       }
     },
@@ -177,6 +279,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Elige tu foto en Versely: Ajustes › Foto del widget."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escolha sua foto no Versely: Ajustes › Foto do widget."
           }
         }
       }
@@ -188,6 +296,12 @@
             "state": "translated",
             "value": "Elegido en Versely"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escolhido no Versely"
+          }
         }
       }
     },
@@ -197,6 +311,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Clásico"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clássico"
           }
         }
       }
@@ -208,6 +328,12 @@
             "state": "translated",
             "value": "Consuelo"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Consolo"
+          }
         }
       }
     },
@@ -218,12 +344,24 @@
             "state": "translated",
             "value": "Completado"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Concluído"
+          }
         }
       }
     },
     "Continue": {
       "localizations": {
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Continuar"
@@ -238,6 +376,12 @@
             "state": "translated",
             "value": "Continuar leyendo"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar lendo"
+          }
         }
       }
     },
@@ -247,6 +391,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Día"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dia"
           }
         }
       }
@@ -258,6 +408,12 @@
             "state": "translated",
             "value": "Día %lld de %lld"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dia %lld de %lld"
+          }
         }
       }
     },
@@ -268,12 +424,24 @@
             "state": "translated",
             "value": "Días seguidos que has leído."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dias seguidos em que você leu."
+          }
         }
       }
     },
     "Done": {
       "localizations": {
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "OK"
@@ -288,6 +456,12 @@
             "state": "translated",
             "value": "Para hoy"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para hoje"
+          }
         }
       }
     },
@@ -297,6 +471,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Fe"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fé"
           }
         }
       }
@@ -308,6 +488,12 @@
             "state": "translated",
             "value": "Tira de película"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rolo de filme"
+          }
         }
       }
     },
@@ -317,6 +503,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "De tu lectura"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Da sua leitura"
           }
         }
       }
@@ -329,6 +521,12 @@
             "state": "translated",
             "value": "Génesis 1"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gênesis 1"
+          }
         }
       }
     },
@@ -338,6 +536,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gratitud"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gratidão"
           }
         }
       }
@@ -349,6 +553,12 @@
             "state": "translated",
             "value": "Progreso del grupo"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Progresso do grupo"
+          }
         }
       }
     },
@@ -358,6 +568,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Guía"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Direção"
           }
         }
       }
@@ -369,6 +585,12 @@
             "state": "translated",
             "value": "Esperanza"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esperança"
+          }
         }
       }
     },
@@ -378,6 +600,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Foto instantánea"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Foto instantânea"
           }
         }
       }
@@ -390,6 +618,12 @@
             "state": "translated",
             "value": "Juan 3"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "João 3"
+          }
         }
       }
     },
@@ -401,12 +635,24 @@
             "state": "translated",
             "value": "Juan 3–5"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "João 3–5"
+          }
         }
       }
     },
     "Library Card": {
       "localizations": {
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ficha de biblioteca"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Ficha de biblioteca"
@@ -421,6 +667,12 @@
             "state": "translated",
             "value": "Amor"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amor"
+          }
         }
       }
     },
@@ -430,6 +682,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Marcar leída"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marcar como lida"
           }
         }
       }
@@ -441,12 +699,24 @@
             "state": "translated",
             "value": "Marcar la lectura de hoy"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marcar a leitura de hoje"
+          }
         }
       }
     },
     "Memorize": {
       "localizations": {
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memorizar"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Memorizar"
@@ -461,6 +731,12 @@
             "state": "translated",
             "value": "Memorizar las Escrituras está desactivado en Versely."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memorizar as Escrituras está desativado no Versely."
+          }
         }
       }
     },
@@ -470,6 +746,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Memoriza las Escrituras con Versely Premium."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memorize as Escrituras com o Versely Premium."
           }
         }
       }
@@ -481,6 +763,12 @@
             "state": "translated",
             "value": "Memorizar está desactivado"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memorizar está desativado"
+          }
         }
       }
     },
@@ -490,6 +778,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Siguiente capítulo"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Próximo capítulo"
           }
         }
       }
@@ -501,6 +795,12 @@
             "state": "translated",
             "value": "Capítulo siguiente"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Próximo capítulo"
+          }
         }
       }
     },
@@ -510,6 +810,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Próximo recordatorio: %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Próximo lembrete: %@"
           }
         }
       }
@@ -521,6 +827,12 @@
             "state": "translated",
             "value": "Noche"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Noite"
+          }
         }
       }
     },
@@ -530,6 +842,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sin recordatorio"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhum lembrete"
           }
         }
       }
@@ -541,6 +859,12 @@
             "state": "translated",
             "value": "Abrir Versely"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir o Versely"
+          }
         }
       }
     },
@@ -550,6 +874,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Abre Versely para ver la lectura de hoy de %@."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abra o Versely para ver a leitura de hoje de %@."
           }
         }
       }
@@ -561,12 +891,24 @@
             "state": "translated",
             "value": "Abre en Versely un grupo con plan de lectura para ver aquí su progreso."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abra no Versely um grupo com plano de leitura para ver o progresso dele aqui."
+          }
         }
       }
     },
     "Paper": {
       "localizations": {
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Papel"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Papel"
@@ -581,6 +923,12 @@
             "state": "translated",
             "value": "Pausar"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausar"
+          }
         }
       }
     },
@@ -591,12 +939,24 @@
             "state": "translated",
             "value": "Pausar los sonidos ambientales"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausar os sons ambientes"
+          }
         }
       }
     },
     "Peace": {
       "localizations": {
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paz"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Paz"
@@ -611,6 +971,12 @@
             "state": "translated",
             "value": "Retoma donde te quedaste."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue de onde parou."
+          }
         }
       }
     },
@@ -620,6 +986,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Plan"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plano"
           }
         }
       }
@@ -631,6 +1003,12 @@
             "state": "translated",
             "value": "Reproducir"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tocar"
+          }
         }
       }
     },
@@ -640,6 +1018,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Reproducir los sonidos ambientales"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tocar os sons ambientes"
           }
         }
       }
@@ -651,6 +1035,12 @@
             "state": "translated",
             "value": "Reproducir o pausar los sonidos ambientales"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tocar ou pausar os sons ambientes"
+          }
         }
       }
     },
@@ -661,12 +1051,24 @@
             "state": "translated",
             "value": "Reproducir o pausar la escucha"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tocar ou pausar a leitura em voz alta"
+          }
         }
       }
     },
     "Pray at %@": {
       "localizations": {
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orar: %@"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Orar: %@"
@@ -681,6 +1083,12 @@
             "state": "translated",
             "value": "Oración"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oração"
+          }
         }
       }
     },
@@ -690,6 +1098,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Recordatorio de oración"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lembrete de oração"
           }
         }
       }
@@ -701,12 +1115,24 @@
             "state": "translated",
             "value": "Premium"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium"
+          }
         }
       }
     },
     "Pressed Flowers": {
       "localizations": {
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flores prensadas"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Flores prensadas"
@@ -722,6 +1148,12 @@
             "state": "translated",
             "value": "Salmos 119:105"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salmos 119:105"
+          }
         }
       }
     },
@@ -731,6 +1163,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Versículo al azar"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versículo aleatório"
           }
         }
       }
@@ -742,6 +1180,12 @@
             "state": "translated",
             "value": "Progreso de lectura"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Progresso de leitura"
+          }
         }
       }
     },
@@ -751,6 +1195,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Racha de lectura"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sequência de leitura"
           }
         }
       }
@@ -762,12 +1212,24 @@
             "state": "translated",
             "value": "Recuerda un versículo que estás aprendiendo de memoria. Viene con Versely Premium."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Relembre um versículo que você está decorando. Vem com o Versely Premium."
+          }
         }
       }
     },
     "Show": {
       "localizations": {
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Mostrar"
@@ -782,6 +1244,12 @@
             "state": "translated",
             "value": "Primavera"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Primavera"
+          }
         }
       }
     },
@@ -791,6 +1259,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Empieza un plan de lectura en Versely para ver aquí la lectura de hoy."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comece um plano de leitura no Versely para ver a leitura de hoje aqui."
           }
         }
       }
@@ -802,6 +1276,12 @@
             "state": "translated",
             "value": "Fortaleza"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Força"
+          }
         }
       }
     },
@@ -811,6 +1291,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verano"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verão"
           }
         }
       }
@@ -822,6 +1308,12 @@
             "state": "translated",
             "value": "Toca para repasar"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toque para revisar"
+          }
         }
       }
     },
@@ -831,6 +1323,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Los Evangelios en 30 días"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Os Evangelhos em 30 dias"
           }
         }
       }
@@ -842,6 +1340,12 @@
             "state": "translated",
             "value": "El estilo que elegiste viene con Versely Premium."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O estilo que você escolheu vem com o Versely Premium."
+          }
         }
       }
     },
@@ -851,6 +1355,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hoy"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hoje"
           }
         }
       }
@@ -862,6 +1372,12 @@
             "state": "translated",
             "value": "Lectura de hoy"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leitura de hoje"
+          }
         }
       }
     },
@@ -872,6 +1388,12 @@
             "state": "translated",
             "value": "La lectura de hoy de tu plan, tu racha y tus recordatorios de oración."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A leitura de hoje do seu plano, sua sequência e seus lembretes de oração."
+          }
         }
       }
     },
@@ -881,6 +1403,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "La lectura de hoy de tu plan. Márcala cuando termines."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A leitura de hoje do seu plano. Marque quando terminar."
           }
         }
       }
@@ -893,6 +1421,12 @@
             "state": "translated",
             "value": "Estudio bíblico del martes"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estudo bíblico de terça"
+          }
         }
       }
     },
@@ -903,12 +1437,24 @@
             "state": "translated",
             "value": "Máquina de escribir"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Máquina de escrever"
+          }
         }
       }
     },
     "Verse": {
       "localizations": {
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versículo"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Versículo"
@@ -923,12 +1469,24 @@
             "state": "translated",
             "value": "Versículo del día"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versículo do dia"
+          }
         }
       }
     },
     "Versely Premium": {
       "localizations": {
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versely Premium"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Versely Premium"
@@ -943,6 +1501,12 @@
             "state": "translated",
             "value": "Vintage"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vintage"
+          }
         }
       }
     },
@@ -952,6 +1516,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Invierno"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inverno"
           }
         }
       }
@@ -963,6 +1533,12 @@
             "state": "translated",
             "value": "Tú"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você"
+          }
         }
       }
     },
@@ -972,6 +1548,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu foto"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sua foto"
           }
         }
       }
@@ -983,6 +1565,12 @@
             "state": "translated",
             "value": "El plan de lectura de tu grupo: quién leyó hoy y cuánto ha avanzado cada uno."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O plano de leitura do seu grupo: quem leu hoje e até onde cada um chegou."
+          }
         }
       }
     },
@@ -992,6 +1580,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tu próximo recordatorio de oración y cuántas peticiones tienes en oración."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seu próximo lembrete de oração e por quantos pedidos você está orando."
           }
         }
       }
@@ -1003,6 +1597,12 @@
             "state": "translated",
             "value": "capítulos leídos"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "capítulos lidos"
+          }
         }
       }
     },
@@ -1013,6 +1613,12 @@
             "state": "translated",
             "value": "días de racha"
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dias de sequência"
+          }
         }
       }
     },
@@ -1022,6 +1628,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "leyeron hoy"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "leram hoje"
           }
         }
       }

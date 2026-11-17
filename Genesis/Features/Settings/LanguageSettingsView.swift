@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Settings › Language: the iPhone's language, English or Español. The
+/// Settings › Language: the iPhone's language, English, Español or Português. The
 /// screens change the next time Versely opens, so a new choice says so.
 struct LanguageSettingsView: View {
     @Environment(\.palette) private var palette
@@ -32,7 +32,7 @@ struct LanguageSettingsView: View {
                         .accessibilityIdentifier("language.\(item.rawValue)")
                     }
                 } footer: {
-                    Text("Versely is available in English and Spanish. Widgets follow your iPhone's language.")
+                    Text("Versely is available in English, Spanish and Portuguese. Widgets follow your iPhone's language.")
                 }
                 .listRowBackground(palette.surface)
 

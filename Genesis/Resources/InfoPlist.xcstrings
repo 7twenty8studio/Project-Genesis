@@ -15,6 +15,12 @@
             "state": "translated",
             "value": "Versely usa la cámara solo cuando tomas una foto para añadirla a una oración o a tus notas de un sermón."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Versely usa a câmera só quando você tira uma foto para adicionar a uma oração ou às anotações de um sermão."
+          }
         }
       }
     },
@@ -32,6 +38,12 @@
             "state": "translated",
             "value": "Versely usa el micrófono solo cuando grabas una nota de voz para una oración o tus notas de un sermón."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Versely usa o microfone só quando você grava uma nota de voz para uma oração ou para as anotações de um sermão."
+          }
         }
       }
     },
@@ -48,6 +60,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Versely guarda en tu fototeca las imágenes de versículos y los fondos de pantalla que creas."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Versely salva na sua fototeca as imagens de versículos e os papéis de parede que você cria."
           }
         }
       }

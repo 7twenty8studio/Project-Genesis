@@ -45,7 +45,7 @@ export interface StudyRequest {
   language: Language;
 }
 
-export const LANGUAGES = ["en", "es"] as const;
+export const LANGUAGES = ["en", "es", "pt"] as const;
 export type Language = (typeof LANGUAGES)[number];
 
 const BOOKS = [
@@ -153,6 +153,7 @@ const TASKS: Record<Action, string> = {
 const LANGUAGE_NOTES: Record<Language, string> = {
   en: "",
   es: "\n\nWrite the whole answer in Spanish, in neutral Latin American Spanish, addressing the reader as \"tú\". Write references with Spanish book names as in the Reina-Valera, for example [[Juan 3:16]] or [[Romanos 8:28-30]]. Headings such as **Answers** are in Spanish too (**Respuestas**).",
+  pt: "\n\nWrite the whole answer in Brazilian Portuguese, addressing the reader as \"você\". Write references with Portuguese book names as in the Almeida and the NVI, for example [[João 3:16]] or [[Romanos 8:28-30]]. Headings such as **Answers** are in Portuguese too (**Respostas**).",
 };
 
 /** Only server-built values go into the prompt. */

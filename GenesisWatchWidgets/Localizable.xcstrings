@@ -8,6 +8,12 @@
             "state": "translated",
             "value": "Un versículo nuevo cada mañana, desde Versely en tu iPhone."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Um versículo novo a cada manhã, do Versely no seu iPhone."
+          }
         }
       }
     },
@@ -18,6 +24,12 @@
             "state": "translated",
             "value": "Abre Versely en tu iPhone."
           }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abra o Versely no iPhone."
+          }
         }
       }
     },
@@ -25,6 +37,12 @@
       "comment": "Bible reference",
       "localizations": {
         "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salmos 119:105"
+          }
+        },
+        "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Salmos 119:105"
@@ -38,6 +56,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Versículo del día"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versículo do dia"
           }
         }
       }

@@ -26,25 +26,36 @@ struct BibleBook: Identifiable, Hashable, Sendable {
     /// Extra lowercase spellings accepted by the reference parser.
     let aliases: [String]
 
-    /// The book's name in the app's language: "John" or "Juan".
+    /// The book's name in the app's language: "John", "Juan" or "João".
     var name: String { name(in: AppLanguage.code) }
     var abbreviation: String { abbreviation(in: AppLanguage.code) }
 
-    /// The name in a given language ("en" or "es"); English for others.
+    /// The name in a given language ("en", "es" or "pt", with or without a
+    /// region); English for others.
     func name(in language: String) -> String {
-        language.hasPrefix("es") ? Self.spanish[id - 1].name : englishName
+        localName(in: language)?.name ?? englishName
     }
 
     func abbreviation(in language: String) -> String {
-        language.hasPrefix("es") ? Self.spanish[id - 1].abbreviation : englishAbbreviation
+        localName(in: language)?.abbreviation ?? englishAbbreviation
+    }
+
+    /// The Spanish or Portuguese name, nil for English and other languages.
+    private func localName(in language: String) -> LocalName? {
+        if language.hasPrefix("es") { return Self.spanish[id - 1] }
+        if language.hasPrefix("pt") { return Self.portuguese[id - 1] }
+        return nil
     }
 
     /// Every name and abbreviation in every language, for the reference parser.
     var allNames: [String] {
-        [englishName, englishAbbreviation, Self.spanish[id - 1].name, Self.spanish[id - 1].abbreviation]
+        [englishName, englishAbbreviation,
+         Self.spanish[id - 1].name, Self.spanish[id - 1].abbreviation,
+         Self.portuguese[id - 1].name, Self.portuguese[id - 1].abbreviation]
     }
 
     var spanishAliases: [String] { Self.spanish[id - 1].aliases }
+    var portugueseAliases: [String] { Self.portuguese[id - 1].aliases }
 
     static func withNumber(_ number: Int) -> BibleBook {
         all[min(max(number, 1), all.count) - 1]
@@ -122,14 +133,16 @@ struct BibleBook: Identifiable, Hashable, Sendable {
         .init(id: 66, osis: "Rev", englishName: "Revelation", englishAbbreviation: "Rev", testament: .new, chapterCount: 22, aliases: ["re", "rv", "revelations", "revelation of john", "apocalypse"]),
     ]
 
-    /// Spanish names and abbreviations, as in the Reina-Valera, in book order.
-    struct SpanishName: Sendable {
+    /// A book's name, abbreviation and other accepted spellings in one
+    /// language.
+    struct LocalName: Sendable {
         let name: String
         let abbreviation: String
         let aliases: [String]
     }
 
-    static let spanish: [SpanishName] = [
+    /// Spanish names and abbreviations, as in the Reina-Valera, in book order.
+    static let spanish: [LocalName] = [
         .init(name: "Génesis", abbreviation: "Gn", aliases: ["gen", "gén"]),
         .init(name: "Éxodo", abbreviation: "Éx", aliases: ["exo", "éxo"]),
         .init(name: "Levítico", abbreviation: "Lv", aliases: ["lev"]),
@@ -196,5 +209,76 @@ struct BibleBook: Identifiable, Hashable, Sendable {
         .init(name: "3 Juan", abbreviation: "3 Jn", aliases: []),
         .init(name: "Judas", abbreviation: "Jud", aliases: []),
         .init(name: "Apocalipsis", abbreviation: "Ap", aliases: ["apoc"]),
+    ]
+
+    /// Brazilian Portuguese names and abbreviations, as in the Almeida and
+    /// the NVI, in book order.
+    static let portuguese: [LocalName] = [
+        .init(name: "Gênesis", abbreviation: "Gn", aliases: []),
+        .init(name: "Êxodo", abbreviation: "Êx", aliases: ["ex"]),
+        .init(name: "Levítico", abbreviation: "Lv", aliases: []),
+        .init(name: "Números", abbreviation: "Nm", aliases: []),
+        .init(name: "Deuteronômio", abbreviation: "Dt", aliases: []),
+        .init(name: "Josué", abbreviation: "Js", aliases: []),
+        .init(name: "Juízes", abbreviation: "Jz", aliases: ["jui"]),
+        .init(name: "Rute", abbreviation: "Rt", aliases: []),
+        .init(name: "1 Samuel", abbreviation: "1 Sm", aliases: []),
+        .init(name: "2 Samuel", abbreviation: "2 Sm", aliases: []),
+        .init(name: "1 Reis", abbreviation: "1 Rs", aliases: []),
+        .init(name: "2 Reis", abbreviation: "2 Rs", aliases: []),
+        .init(name: "1 Crônicas", abbreviation: "1 Cr", aliases: []),
+        .init(name: "2 Crônicas", abbreviation: "2 Cr", aliases: []),
+        .init(name: "Esdras", abbreviation: "Ed", aliases: []),
+        .init(name: "Neemias", abbreviation: "Ne", aliases: []),
+        .init(name: "Ester", abbreviation: "Et", aliases: []),
+        .init(name: "Jó", abbreviation: "Jó", aliases: []),
+        .init(name: "Salmos", abbreviation: "Sl", aliases: ["salmo"]),
+        .init(name: "Provérbios", abbreviation: "Pv", aliases: []),
+        .init(name: "Eclesiastes", abbreviation: "Ec", aliases: []),
+        .init(name: "Cânticos", abbreviation: "Ct", aliases: ["cântico dos cânticos", "cantares de salomão", "cantares"]),
+        .init(name: "Isaías", abbreviation: "Is", aliases: []),
+        .init(name: "Jeremias", abbreviation: "Jr", aliases: []),
+        .init(name: "Lamentações", abbreviation: "Lm", aliases: ["lamentações de jeremias"]),
+        .init(name: "Ezequiel", abbreviation: "Ez", aliases: []),
+        .init(name: "Daniel", abbreviation: "Dn", aliases: []),
+        .init(name: "Oseias", abbreviation: "Os", aliases: ["oséias"]),
+        .init(name: "Joel", abbreviation: "Jl", aliases: []),
+        .init(name: "Amós", abbreviation: "Am", aliases: []),
+        .init(name: "Obadias", abbreviation: "Ob", aliases: []),
+        .init(name: "Jonas", abbreviation: "Jn", aliases: []),
+        .init(name: "Miqueias", abbreviation: "Mq", aliases: ["miquéias"]),
+        .init(name: "Naum", abbreviation: "Na", aliases: []),
+        .init(name: "Habacuque", abbreviation: "Hc", aliases: []),
+        .init(name: "Sofonias", abbreviation: "Sf", aliases: []),
+        .init(name: "Ageu", abbreviation: "Ag", aliases: []),
+        .init(name: "Zacarias", abbreviation: "Zc", aliases: []),
+        .init(name: "Malaquias", abbreviation: "Ml", aliases: []),
+        .init(name: "Mateus", abbreviation: "Mt", aliases: []),
+        .init(name: "Marcos", abbreviation: "Mc", aliases: []),
+        .init(name: "Lucas", abbreviation: "Lc", aliases: []),
+        .init(name: "João", abbreviation: "Jo", aliases: []),
+        .init(name: "Atos", abbreviation: "At", aliases: ["atos dos apóstolos"]),
+        .init(name: "Romanos", abbreviation: "Rm", aliases: []),
+        .init(name: "1 Coríntios", abbreviation: "1 Co", aliases: []),
+        .init(name: "2 Coríntios", abbreviation: "2 Co", aliases: []),
+        .init(name: "Gálatas", abbreviation: "Gl", aliases: []),
+        .init(name: "Efésios", abbreviation: "Ef", aliases: []),
+        .init(name: "Filipenses", abbreviation: "Fp", aliases: []),
+        .init(name: "Colossenses", abbreviation: "Cl", aliases: []),
+        .init(name: "1 Tessalonicenses", abbreviation: "1 Ts", aliases: []),
+        .init(name: "2 Tessalonicenses", abbreviation: "2 Ts", aliases: []),
+        .init(name: "1 Timóteo", abbreviation: "1 Tm", aliases: []),
+        .init(name: "2 Timóteo", abbreviation: "2 Tm", aliases: []),
+        .init(name: "Tito", abbreviation: "Tt", aliases: []),
+        .init(name: "Filemom", abbreviation: "Fm", aliases: ["filemon"]),
+        .init(name: "Hebreus", abbreviation: "Hb", aliases: []),
+        .init(name: "Tiago", abbreviation: "Tg", aliases: []),
+        .init(name: "1 Pedro", abbreviation: "1 Pe", aliases: []),
+        .init(name: "2 Pedro", abbreviation: "2 Pe", aliases: []),
+        .init(name: "1 João", abbreviation: "1 Jo", aliases: []),
+        .init(name: "2 João", abbreviation: "2 Jo", aliases: []),
+        .init(name: "3 João", abbreviation: "3 Jo", aliases: []),
+        .init(name: "Judas", abbreviation: "Jd", aliases: []),
+        .init(name: "Apocalipse", abbreviation: "Ap", aliases: []),
     ]
 }

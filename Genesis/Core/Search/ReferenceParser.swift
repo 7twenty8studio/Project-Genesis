@@ -2,8 +2,9 @@ import Foundation
 
 /// Parses typed Bible references such as "John 3:16", "jn 3", "1 Cor 13:4-7",
 /// "I John 1:9", "Ps 23" or "Song of Songs 2", and the Spanish names
-/// ("Juan 3:16", "1 Corintios 13", "Sal 23", "Génesis" or "genesis") whatever
-/// the app's language.
+/// ("Juan 3:16", "1 Corintios 13", "Sal 23", "Génesis" or "genesis") and the
+/// Portuguese ones ("João 3:16", "1 Coríntios 13", "Sl 23") whatever the app's
+/// language.
 enum ReferenceParser {
     /// Parses a complete reference. Returns nil if the text isn't a reference.
     static func parse(_ input: String) -> PassageReference? {
@@ -36,20 +37,24 @@ enum ReferenceParser {
     static func books(matching input: String) -> [BibleBook] {
         let (bookText, numberText) = split(normalize(input))
         guard !bookText.isEmpty, numberText.isEmpty else { return [] }
+        if let accented = accentedBook(bookText) { return [accented] }
         let key = compact(bookText)
         if let exact = index[key] { return [exact] }
-        return BibleBook.all.filter { book in (keys(for: book) + spanishKeys(for: book)).contains { $0.hasPrefix(key) } }
+        return BibleBook.all.filter { book in
+            (keys(for: book) + spanishKeys(for: book) + portugueseKeys(for: book)).contains { $0.hasPrefix(key) }
+        }
     }
 
     /// Resolves a book from any accepted spelling.
     static func book(named text: String) -> BibleBook? {
+        if let accented = accentedBook(text) { return accented }
         let key = compact(text)
         guard !key.isEmpty else { return nil }
         if let book = index[key] { return book }
         // Fall back to an unambiguous prefix of a book name ("gene", "phile").
         guard key.count >= 3 else { return nil }
         let matches = BibleBook.all.filter { book in
-            [book.englishName, book.name(in: "es")].contains { compact($0).hasPrefix(key) }
+            [book.englishName, book.name(in: "es"), book.name(in: "pt")].contains { compact($0).hasPrefix(key) }
         }
         return matches.count == 1 ? matches[0] : nil
     }
@@ -62,6 +67,8 @@ enum ReferenceParser {
         ("primera de ", "1"), ("segunda de ", "2"), ("tercera de ", "3"),
         ("primera ", "1"), ("primero ", "1"), ("segunda ", "2"), ("segundo ", "2"), ("tercera ", "3"), ("tercero ", "3"),
         ("1ra ", "1"), ("1ro ", "1"), ("2da ", "2"), ("2do ", "2"), ("3ra ", "3"), ("3ro ", "3"),
+        ("primeira ", "1"), ("primeiro ", "1"), ("terceira ", "3"), ("terceiro ", "3"),
+        ("1ª ", "1"), ("1º ", "1"), ("2ª ", "2"), ("2º ", "2"), ("3ª ", "3"), ("3º ", "3"),
         ("iii ", "3"), ("ii ", "2"), ("i ", "1"),
     ]
 
@@ -157,8 +164,8 @@ enum ReferenceParser {
             .filter { !$0.isWhitespace && $0 != "." }
     }
 
-    /// English spellings first, so an English abbreviation wins where the two
-    /// languages share one ("Mc" is Micah, as in English).
+    /// English spellings: they win where English and Spanish share one ("Mc"
+    /// is Micah, as in English), unless the app is in Portuguese (`layers`).
     private static func keys(for book: BibleBook) -> [String] {
         ([book.englishName, book.englishAbbreviation, book.osis] + book.aliases).map(compact)
     }
@@ -167,18 +174,41 @@ enum ReferenceParser {
         ([book.name(in: "es"), book.abbreviation(in: "es")] + book.spanishAliases).map(compact)
     }
 
-    private static let index: [String: BibleBook] = {
+    private static func portugueseKeys(for book: BibleBook) -> [String] {
+        ([book.name(in: "pt"), book.abbreviation(in: "pt")] + book.portugueseAliases).map(compact)
+            .filter { !(book.id == job && $0 == "jo") }
+    }
+
+    /// Job is "Jó" and John "Jo" in Portuguese, which fold to the same key:
+    /// "jo" is John, and only the accented spelling means Job.
+    private static let job = 18
+
+    private static func accentedBook(_ text: String) -> BibleBook? {
+        let spelled = text.lowercased().filter { !$0.isWhitespace && $0 != "." }
+        return spelled == "jó" ? BibleBook.withNumber(job) : nil
+    }
+
+    /// The spellings in order of precedence where languages share one.
+    /// Brazilian abbreviations clash with English ones ("Mc" is Mark, "Jn"
+    /// Jonah, "Jo" John), so in Portuguese they come first; otherwise
+    /// English, then Spanish, then Portuguese.
+    private static func layers(portugueseFirst: Bool) -> [(BibleBook) -> [String]] {
+        portugueseFirst
+            ? [portugueseKeys(for:), keys(for:), spanishKeys(for:)]
+            : [keys(for:), spanishKeys(for:), portugueseKeys(for:)]
+    }
+
+    private static let index: [String: BibleBook] = makeIndex(portugueseFirst: AppLanguage.isPortuguese)
+
+    static func makeIndex(portugueseFirst: Bool) -> [String: BibleBook] {
         var index: [String: BibleBook] = [:]
-        for book in BibleBook.all {
-            for key in keys(for: book) where index[key] == nil {
-                index[key] = book
-            }
-        }
-        for book in BibleBook.all {
-            for key in spanishKeys(for: book) where index[key] == nil {
-                index[key] = book
+        for keysOf in layers(portugueseFirst: portugueseFirst) {
+            for book in BibleBook.all {
+                for key in keysOf(book) where index[key] == nil {
+                    index[key] = book
+                }
             }
         }
         return index
-    }()
+    }
 }

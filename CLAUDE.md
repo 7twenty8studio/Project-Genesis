@@ -744,13 +744,14 @@ shares; README.md has the architecture.
   appears when the switch turns on. UI tests only see it with `-uiTestingWhatsNew`.
 
 ## Languages
-- Screens are in English and Spanish (String Catalogs:
+- Screens are in English, Spanish and Brazilian Portuguese (String Catalogs:
   Genesis/Resources/Localizable.xcstrings and GenesisWidgets/Localizable.xcstrings).
   Don't edit the catalogs by hand: write new text in English in code (a Text/
   Button literal, or `String(localized:)` for any String that's displayed), add
-  its Spanish to Tools/Localization/es.json, then run
-  `python3 Tools/Localization/build_catalogs.py` (it fails on missing Spanish
-  or mismatched %@/%lld). One sentence per string; no English fragments glued
+  its Spanish to Tools/Localization/es.json and its Brazilian Portuguese
+  (você, "Ajustes", "Anotações", "Destaque") to Tools/Localization/pt.json
+  (catalog code pt-BR), then run `python3 Tools/Localization/build_catalogs.py`
+  (it fails on a missing translation or mismatched %@/%lld). One sentence per string; no English fragments glued
   together. On the Mac, `./Scripts/localization_check.sh` lists anything Xcode
   sees without Spanish.
 - English text uses American spelling (Memorize, color, favorite, center).
@@ -758,13 +759,18 @@ shares; README.md has the architecture.
   accessibility ids, defaults keys, What's New ids, the "Memorise" widget
   kind): renaming those would break saved settings and installed widgets.
 - People choose the language in Versely's Settings › Language
-  (`LanguageSettingsView`: Same as iPhone, English, Español), which writes
+  (`LanguageSettingsView`: Same as iPhone, English, Español, Português
+  (pt-BR)), which writes
   the app's own AppleLanguages (`AppLanguageChoice.saved`, the same value
   the iPhone's Settings › Apps › Versely › Language writes). It applies the
   next time Versely opens, and the screen says so; widgets keep the
-  iPhone's language. `AppLanguage.code` is "en" or "es".
+  iPhone's language. `AppLanguage.code` is "en", "es" or "pt" (any
+  Portuguese iPhone gets the pt-BR screens).
 - `BibleBook.name` follows the app's language (`englishName` is fixed);
-  the reference parser accepts English and Spanish names, accents optional.
+  the reference parser accepts English, Spanish and Portuguese names
+  (`BibleBook.portuguese`, Almeida/NVI), accents optional except "Jó" (Job;
+  "Jo" is John). In a Portuguese app Brazilian abbreviations win where they
+  clash with English ("Mc" Mark, "Jn" Jonah, "Hb" Hebrews).
   Next to Scripture (reader title and controls, running head, book picker,
   selection, audio, verse images, shares) names follow the Bible's language:
   `ChapterID/PassageReference.description(in: translation.language)`.
@@ -774,6 +780,16 @@ shares; README.md has the architecture.
 - Spanish Bible: Reina-Valera 1909 (public domain), downloadable, built from
   open-bibles' USFX with Spanish verse numbering. Scripture is never
   translated or edited; data from Study.sqlite and Topics.sqlite stays English.
+- Portuguese Bibles (VRS-3, owner's choice 17 November 2026): the Bíblia
+  Livre (BLIVRE, CC BY 4.0 Brasil, eBible.org's USFX through build_bibles.py
+  with `usfx_notes`: footnotes and <rq> left out, psalm titles kept) as a
+  catalog download, so a Portuguese iPhone starts in it at setup; and the
+  YouVersion NVI (NVIPT), NVI 2011, Nova Bíblia Viva (NBVP), Bíblia Livre
+  Para Todos (BLT) and O Livro (OL, pt-PT). Rows in
+  supabase/catalog/portuguese_bibles.sql, run at release.
+  `Translation.isOpenlyLicensed` (Creative Commons) keeps the credit under
+  every chapter, and `isFreeToReuse` (public domain or openly licensed, never
+  YouVersion) lets the Bíblia Livre stand in for Premium tools.
 
 ## Navigation
 - iPhone (compact width) shows at most five tabs: Home, Read, Library,

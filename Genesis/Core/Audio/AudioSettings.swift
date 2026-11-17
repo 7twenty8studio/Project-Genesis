@@ -98,7 +98,12 @@ struct NarrationVoice: Identifiable, Hashable, Sendable {
             return best
         }
         VoiceList.preload(language)
-        return AVSpeechSynthesisVoice(language: language == "es" ? "es-MX" : "en-US")
+        let standard = switch language {
+        case "es": "es-MX"
+        case "pt": "pt-BR"
+        default: "en-US"
+        }
+        return AVSpeechSynthesisVoice(language: standard)
     }
 
     /// Voices in a language on this device, best first (loaded off the main thread).

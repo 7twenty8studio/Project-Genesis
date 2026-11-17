@@ -94,6 +94,19 @@ struct Translation: Identifiable, Hashable, Codable, Sendable {
         TranslationProfile.rights(fromLicense: license) != .publicDomain
     }
 
+    /// Licensed under Creative Commons (the Bíblia Livre, CC BY 4.0): anyone
+    /// may use it with credit, so `license` is still shown under every
+    /// chapter as that credit.
+    var isOpenlyLicensed: Bool {
+        isLicensed && license.folding(options: [.caseInsensitive], locale: nil).contains("creative commons")
+    }
+
+    /// Public domain or openly licensed, and not from YouVersion (whatever
+    /// its licence, a YouVersion Bible's text stays out of Premium tools):
+    /// what Premium tools read in place of a YouVersion Bible in the same
+    /// language.
+    var isFreeToReuse: Bool { !isYouVersion && (!isLicensed || isOpenlyLicensed) }
+
     init(id: String, name: String, year: String, license: String, summary: String, language: String = "en", requiresPremium: Bool = false, isYouVersion: Bool = false, publisherURL: URL? = nil) {
         self.id = id
         self.name = name

@@ -108,7 +108,9 @@ struct AudioSettingsView: View {
         } header: {
             Text("Voice")
         } footer: {
-            if translation.language == "es" {
+            if translation.language == "pt" {
+                Text("The \(translation.name) is read by a Portuguese voice. For a much more natural sound, download an Enhanced or Premium Portuguese (Brazil) voice in Settings › Accessibility › Spoken Content › Voices › Portuguese, then come back here.")
+            } else if translation.language == "es" {
                 Text("The \(translation.name) is read by a Spanish voice. For a much more natural sound, download an Enhanced or Premium Spanish voice in Settings › Accessibility › Spoken Content › Voices › Spanish, then come back here.")
             } else {
                 Text("Automatic uses the most natural voice on this device. For a much more natural sound, download a Premium voice (Zoe, Ava, Evan or Nathan, for example) in Settings › Accessibility › Spoken Content › Voices › English, then come back here.")
