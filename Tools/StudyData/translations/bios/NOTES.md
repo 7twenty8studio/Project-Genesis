@@ -95,3 +95,8 @@ What the translators reported per batch, beyond the review files.
 - Same wrong verses as pt 014–015 (Joseph q3, q6; Korah q1; Luke q0), plus Zedekiah 1950 q0 (1 Kgs 15:26 given, 2 Kgs 24:19 meant; same wording).
 - Lucius: "Cireneo" (adjective, Acts 13:1) vs the place "Cirene". Judas 1760 q4: RV1909 has no "headlong", only “reventó por medio…” quoted. Aholibamah 1761 "Judía".
 - "$2, 10s." in Joseph kept (Easton probably meant £2 10s).
+
+## es 016–017
+- Cyprus had no Spanish name: "Chipre" added to manual.json. Miriam "María" (RV1909). Reuel (Moses' father-in-law) / Rehuel (Esau's son).
+- wrong_verse: Mordecai q0 (as pt). Nabal, Moses (Deut 34:1) and the q.v./[the Ammonites] moves as in pt 016–017.
+- Michael 016: Easton's "warning against" the serpent read as "warring" ("combatiendo contra"). Nebuzar-adan "captain of the guard" translated (Gen 40:3 given).
