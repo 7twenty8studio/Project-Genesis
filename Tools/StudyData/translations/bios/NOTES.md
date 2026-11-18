@@ -133,3 +133,8 @@ What the translators reported per batch, beyond the review files.
 - Abel (025) loose q2: Easton quotes Gen 4:4–5 but the matcher only found v4, so the BLIVRE's v5 ("mas não olhou com bons olhos a Caim…") is missing from the quote. Fix: let the matcher take v5, re-export, redo that entry (both languages).
 - Abronah: A.V. "Ebronah" rendered "Ebrona" to keep the A.V./R.V. contrast. Zavan "chamado também Zaavã" reads oddly.
 - Stephen "He fell asleep" (unsure, wrong Gospel verse) translated "Adormeceu". Tobiah/Urijah lead-ins adjusted so first-person verse runs read well.
+
+## es 022–023
+- Glossary: Alexandria was "Alejandrina" and Cyrene "Cireneo" (adjectives): now "Alejandría" and "Cirene" in manual.json. Saul the apostle "Saulo". Thebes kept "No-amón" (pt used "Tebas"; reviewer's choice).
+- wrong_verse: Sherezer, Seraiah, Shem as in pt 022–023.
+- Simon Zelotes: R.V. "Cananaean" → "Cananista", apart from RV1909 "Cananita". Shuah "Cr 1:32" as Easton (probably 1 Chr).
