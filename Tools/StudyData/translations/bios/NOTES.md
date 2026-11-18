@@ -76,3 +76,17 @@ What the translators reported per batch, beyond the review files.
 - Glossary: Philistia "Filistea" (es.json had the RV1909's "Palestina", which reads as Palestine), Pamphylia "Panfilia" (was "Pamfylia"), Olivet "monte de los Olivos" in the text. Fixed in manual.json (Olivet's place name "Monte del Olivar", as Acts 1:12 and the existing alias, so it doesn't duplicate Mount of Olives). Oded kept "Obed" (RV1909).
 - Hannah (1400) q3 ends at v27; Easton's v28 part left out (pt kept it as indirect speech). Hezekiah "(185,000 hombres)" after the quote.
 - Huram (1569) "Generally ‘Huram’" probably Easton's slip for Hupham. Other Easton slips as in pt 012–013.
+
+## pt 014–015
+- wrong_verse: Joseph (1710) q3 (R.V. margin of Gen 37:3, Matt 9:15 given) and q6 (not Scripture); Korah (1795) q1 (Num 16:3 meant); Luke (1836) q0 (Luke 1:2 meant).
+- The Bíblia Livre's Gen 19:26 reads "estátua de sai" (for "sal") in the bundled text; Lot (1830) q3 quotes it verbatim. A typo in the source edition: left as is (Scripture is never edited); owner to decide whether to report it upstream.
+- Easton data: Josiah 1731 is about a hen, Aholibamah 1761 starts with Judith's "Jewess", Manasseh 1930 repeats the son of Joseph entry. Translated as they stand; worth fixing in the English source.
+- "The brother of James" (Jude 1756, Lebbaeus 1815) quoted as "Judas de Tiago" (no "irmão" in the verse). Hebrew brackets moved just after their quotations. Manasseh: R.V., nascidos “sobre os joelhos de José”.
+- Glossary: Jerimoth "Jerimote" (2 Chr 11:18); names outside the glossary follow Almeida.
+
+## pt 016–017
+- Glossary: Memphis was "Egito" (no name of its own): now "Mênfis" / es "Menfis" in manual.json. Ethiopia "Etiópia" in Moses (Josephus's Egypt–Ethiopia war), not "Cuxe". Jehoram "Jorão" (Israel) / "Jeorão" (Judah).
+- wrong_verse: Mordecai q0 (Ezra 2:1 given, Esth 2:6 meant).
+- Nabal q0 and Moses q23: parts outside the given verse put outside the quotation marks. Moses "(q.v.)" and Nahash "[os amonitas]" moved after their quotations.
+- Molech: BLIVRE renders "your Moloch" as "vosso rei", the same as the R.V. reading Easton contrasts, so it's “vosso Moloque”.
+- Nathan 29/30 identical English entries.
