@@ -65,3 +65,9 @@ What the translators reported per batch, beyond the review files.
 - Wrong verses translated: Hivite "prince of the land" (Gen 34:2 meant; Easton cites Gen 24:2-28), Hilkiah and Huldah (2 Kgs 23:2 / 22:8 meant), Joab "captain of the host".
 - Huldah: BLIVRE's "segunda parte da cidade" equals the R.V. reading, so the A.V./R.V. contrast is given as “o colégio” / “o segundo bairro”. Hoshea's simile reads oddly with the BLIVRE wording. Hobab "genros" plural from the verse.
 - Easton slips kept: Hanun "king of Moab", 2 Kings 18:20, Isa 7:16 (Hoshea), Jonadab for Jonathan (2 Sam 21:21). Heman 1488/1489 duplicates.
+
+## es 010–011
+- Glossary overrides: Shobach "Sobac" (glossary gave "Siros"); Hadar kept against Hadad; Eliakim "Eliacim" (1084–85) / "Eliaquim" (1087–88) and Gemariah "Jemarías" (1295) / "Gemarías" (1296) follow the app's names for each person.
+- wrong_verse: Elijah (1131) q4, Eve (1231) q3; Elhanan (1070) q0–1 and Gad (1262) q0: A.V. words the RV1909 doesn't have (it already reads as Easton prefers), translated.
+- Eleazar: "con Gabaa en lugar de collado" added so Easton's point survives. Esau "rojo" (verse has "rubio"). Enos: RV1909 already gives Easton's reading (1). Hadarezer “á extender su término” differs in sense.
+- Eutychus was "Euticó" in es.json: fixed to "Eutico" in manual.json (RV1909 "Eutichô"); regenerate es.json before loading.
