@@ -245,3 +245,10 @@ What the translators reported per batch, beyond the review files.
 - wrong_verse: Shiloh q3 (LXX), Ur q3 (inscription), Tishbe q2 (LXX reading; 1 Kgs 17:1 is right but lacks the words).
 - Timnath-serah 1167 "Timnat-heres" for the other name; Hamath-zobah reduced to "Amat" (RV1909 "Hamath de Soba"): check.
 - Verse spellings kept inside quotes (Shinar, Tharsis, Achôr, Nahal-escol); duplicates 1168/1169, 1221 = 1113.
+
+## es 040–041
+- Jegar-sahadutha "Jegar Sahaduta"; Sheba/Seba "Sabá y Seba" in Ps 72:10; Rameses II "Ramsés II". Sea of Galilee "Calla, enmudece" (Mark 4:39; Easton cites 7:31–35).
+- River 1010 q0: the A.V. "flood" given as “diluvio” (the verse's "río" would repeat the R.V.), as in pt.
+
+## es final pass (18 Nov)
+- Outside quotations: Efeso → Éfeso (26), Asor → Hasor (9), Lyda → Lida, Frygia → Frigia, Rhodas → Rodas, Bitynia → Bitinia, Hauran → Haurán, Shinar → Sinar, matching the corrected app names. RV1909 quotes keep its own spellings. Spanish numbers keep "1,000" commas (Latin American style) throughout.
