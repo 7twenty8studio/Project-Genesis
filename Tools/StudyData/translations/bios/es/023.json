@@ -1,0 +1,767 @@
+{
+ "batch": "023",
+ "lang": "es",
+ "entries": [
+  {
+   "kind": "person",
+   "id": 2550,
+   "sha256": "392dd248ec2bfa2bc3514f63a863361ab29c55d3df7172a3de286af925fc58b6",
+   "text": "Un conejo; escriba o secretario del rey Josías (2 R 22:3-7). Consultó a Hulda acerca de la copia de la ley recién descubierta que le había entregado el sacerdote Hilcías (8-14). Su nieto Gedalías fue gobernador de Judea (25:22)."
+  },
+  {
+   "kind": "person",
+   "id": 2552,
+   "sha256": "3b365f8c327e43a7489cbdb3a6b75f7bbafe24e2c64ccee2f00f1c268762a9c3",
+   "text": "Uno de los espías. Representaba a la tribu de Simeón (Nm 13:5)."
+  },
+  {
+   "kind": "person",
+   "id": 2553,
+   "sha256": "e02cb43b6ed1d7aa64617fcd45b727dc1fcabc1bf43c8b6439f95d5f5f6559ce",
+   "text": "El padre de Eliseo (1 R 19:16-19)."
+  },
+  {
+   "kind": "person",
+   "id": 2556,
+   "sha256": "ff741d8938924f6e4e57d26cf00e34992c0417d4c837c28cbce48964d007f6a3",
+   "text": "Uno de los principales pastores de David (1 Cr 27:29)."
+  },
+  {
+   "kind": "person",
+   "id": 2558,
+   "sha256": "4a05d72032ff099daf4af96f23b69d5d6d2ab49e3b5b6c8e6bc26c6df9aa0e1f",
+   "text": "Uno de los héroes de David (1 Cr 11:35); llamado también Sarar (2 S 23:33)."
+  },
+  {
+   "kind": "person",
+   "id": 2559,
+   "sha256": "579c8511f12d9810b354c11f768156857a07c14648f174cdacd9024452b10cf4",
+   "text": "¡(Dios) proteja al rey!; hijo de Senaquérib, rey de Asiria. Él y su hermano Adra-melech asesinaron a su padre, y luego huyeron a la tierra de Armenia (2 R 19:37)."
+  },
+  {
+   "kind": "person",
+   "id": 2567,
+   "sha256": "5472ac65aeb7e5f9a6e6ce106e74d8b3194cb78e7982c614705bac8934245b5a",
+   "text": "Heb. shebha, el hijo de Raama (Gn 10:7), cuyos descendientes se establecieron con los de Dedán en el golfo Pérsico."
+  },
+  {
+   "kind": "person",
+   "id": 2568,
+   "sha256": "4fcfa87e914a62148bd059a89d48ab7b1bead11893028d24e65b5e8852e022e7",
+   "text": "Heb. íd. Un hijo de Joctán (Gn 10:28), probablemente el fundador de los sabeos."
+  },
+  {
+   "kind": "person",
+   "id": 2569,
+   "sha256": "67cd0627146abd47bf1e33ef0bd0d4626513dad1b56b9672685b496ac5a25c92",
+   "text": "Heb. íd. Un hijo de Joksan, que era hijo de Abraham y Cetura (Gn 25:3)."
+  },
+  {
+   "kind": "person",
+   "id": 2570,
+   "sha256": "74d330d43613ec45a093f39caa6c1ba4bc451a0f0660a582552142a32c8ef2e1",
+   "text": "Heb. íd. Un “hijo de Bicri,” de la familia de Bequer, hijo de Benjamín, y por tanto del tronco del que descendía Saúl (2 S 20:1-22). Cuando David volvía a Jerusalén después de la derrota de Absalón, surgió una contienda entre las diez tribus y la tribu de Judá, porque esta última tomó la delantera en hacer volver al rey. Seba se aprovechó de este estado de cosas y alzó el estandarte de la rebelión, proclamando: “No tenemos nosotros parte en David.” Con sus seguidores se dirigió hacia el norte. David, viendo necesario detener esta rebelión, ordenó a Abisai que tomara a los gibborim, “valientes,” y la guardia personal y las tropas que pudiera reunir, y que persiguiera a Seba. Joab se unió a la expedición y, habiendo dado muerte traicioneramente a Amasa, asumió el mando del ejército. Seba se refugió en Abel-bet-maaca, ciudad fortificada algunas millas al norte del lago de Merom. Mientras Joab estaba ocupado en sitiar esta ciudad, la cabeza de Seba, a instancias de una “mujer sabia” que había parlamentado con él desde los muros de la ciudad, fue arrojada por encima del muro a los sitiadores, y así terminó la rebelión."
+  },
+  {
+   "kind": "person",
+   "id": 2572,
+   "sha256": "96f6f33730175e699a081eebec42ff094de8bca2998ae530a923fb3e7eb093d5",
+   "text": "Un levita designado para tocar la trompeta delante del arca de Dios (1 Cr 15:24)."
+  },
+  {
+   "kind": "person",
+   "id": 2573,
+   "sha256": "27b43b7a2711c4d69c4031178a319b787350134c9b891849c25e01545f24b19d",
+   "text": "Otro levita (Neh 9:4, 5)."
+  },
+  {
+   "kind": "person",
+   "id": 2574,
+   "sha256": "16481474c288be0bb240b9ae02baf47f7975b1e2f8a8fffb1bea5f58d18ea66d",
+   "text": "Un sacerdote que volvió del cautiverio con Zorobabel (Neh 12:3; marg., o Sebanías)."
+  },
+  {
+   "kind": "person",
+   "id": 2575,
+   "sha256": "6a6f9057d2dcde8190fd5e7cabd5fd18d92de68458080e330cf4880bab53c7ef",
+   "text": "Un sacerdote (Neh 10:12)."
+  },
+  {
+   "kind": "person",
+   "id": 2577,
+   "sha256": "47ee15ce2d5c309101399160f6676aa7593da127741ae9b1535c63a7146cf825",
+   "text": "Juventud tierna; “tesorero” sobre la casa en el reinado de Ezequías, es decir, intendente o gobernador del palacio. A causa de su orgullo fue expulsado de su cargo, y Eliacim fue promovido a él (Is 22:15-25). Parece haber sido el jefe del partido que favorecía una alianza con Egipto contra Asiria. Se conjetura que “Sebna escriba,” que fue uno de los que el rey envió a parlamentar con el embajador asirio (2 R 18:18, 26, 37; 19:2; Is 36:3, 11, 22; 37:2), era una persona distinta."
+  },
+  {
+   "kind": "person",
+   "id": 2579,
+   "sha256": "c2ffe840180afa570f2d22227a30ea37ae310ac7517b42e83f2eb7ef8699fe2d",
+   "text": "Uno de los descendientes de Gersón, que tuvo a su cargo los tesoros del templo en el tiempo de David (1 Cr 23:16; 26:24)."
+  },
+  {
+   "kind": "person",
+   "id": 2580,
+   "sha256": "0027b1603e8a3a1e3558bcb6143d5af5fec9edbb800142ff1261d973c87a6eae",
+   "text": "Uno de los hijos de Hemán; uno de aquellos cuyo deber era “ensalzar el poder suyo” en el servicio del templo (1 Cr 25:4, 5); llamado también Subael (vers. 20)."
+  },
+  {
+   "kind": "person",
+   "id": 2581,
+   "sha256": "16fb90fcdfc65b013136873595f7a4688e541da8bd2a2ea9616813f5744100b9",
+   "text": "Un sacerdote a quien le cayó la décima suerte cuando David dividió a los sacerdotes (1 Cr 24:11)."
+  },
+  {
+   "kind": "person",
+   "id": 2582,
+   "sha256": "db761641f568f7595b68a75de8497a069a39a8664e432486fcd7be799717894f",
+   "text": "Uno de los sacerdotes encargados de “dar con fidelidad á sus hermanos sus partes conforme á sus órdenes” la porción diaria (2 Cr 31:15).\n\n Secanías, íd."
+  },
+  {
+   "kind": "person",
+   "id": 2583,
+   "sha256": "bedb6e15d3c1fa0b9ae2f8addf2ad904a76b1e1466029b43c9d74c16300eeead",
+   "text": "Un sacerdote cuyos hijos se mencionan en 1 Cr 3:21, 22."
+  },
+  {
+   "kind": "person",
+   "id": 2585,
+   "sha256": "624ff52d2ac41daba24da1bb9f6e2c6203d3b5de9d9c6d9db437d250208476c3",
+   "text": "Esd 8:5."
+  },
+  {
+   "kind": "person",
+   "id": 2586,
+   "sha256": "c55b098009e21ddf20a0bef1d2153c1fe3c73ee3477c39e837f90e6453cd2dd0",
+   "text": "El padre de Semeías, que reparó el muro de Jerusalén (Neh 3:29)."
+  },
+  {
+   "kind": "person",
+   "id": 2587,
+   "sha256": "d6c8f6e6799a4f372e7d3f934c98c81fc1a947fe135d6bf6900b7f9e7eaebc98",
+   "text": "El suegro de Tobías (Neh 6:18)."
+  },
+  {
+   "kind": "person",
+   "id": 2588,
+   "sha256": "c372f253ab061272672baccec106356ccf53b91770d60e3ad3bd2e9316c6eede",
+   "text": "El hijo de Hamor el heveo (Gn 33:19; 34)."
+  },
+  {
+   "kind": "person",
+   "id": 2589,
+   "sha256": "fbcb9dd51e371027aba66d0da33a4320d130ad302ff76a4928f11c210cc7db3f",
+   "text": "Un descendiente de Manasés (Nm 26:31; Jos 17:2)."
+  },
+  {
+   "kind": "person",
+   "id": 2593,
+   "sha256": "9815d0f0b9ba9a253ad2a95a5c88084b3a4a82ccedf86b38e8069eb72fefc361",
+   "text": "El tercer hijo de Judá (Gn 38:2, 5, 11, 14)."
+  },
+  {
+   "kind": "person",
+   "id": 2594,
+   "sha256": "f95cc86b3e76a425d8972e04309dd5d2b584000a79073c9c5729232ff121a968",
+   "text": "Esd 10:39."
+  },
+  {
+   "kind": "person",
+   "id": 2596,
+   "sha256": "113f97b0a51203b0c247a6726861db16f86fd1b2d597146de39993336dfa4bd5",
+   "text": "El padre de Hananías (Neh 3:30)."
+  },
+  {
+   "kind": "person",
+   "id": 2598,
+   "sha256": "951ef349e5eaeb2002de15b3de5c550e5850ed809e85b898c92e05694b82e851",
+   "text": "Jer 36:14."
+  },
+  {
+   "kind": "person",
+   "id": 2600,
+   "sha256": "c25551f80b81966ef80fcb5ae6ee2024eddd10ef5ce530db7bae0a6176319746",
+   "text": "Padre de uno de los que acusaron a Jeremías ante Sedequías (Jer 37:3; 38:1)."
+  },
+  {
+   "kind": "person",
+   "id": 2601,
+   "sha256": "76bc6912ee2aec69f543ceeae72f23905270e6ad58c9f604425c021b242fe387",
+   "text": "Padre de un capitán de la guardia (Jer 37:13)."
+  },
+  {
+   "kind": "person",
+   "id": 2613,
+   "sha256": "40a7a4db0ef6fe48e937b5d66fe52570f7ce56113e45d41dbfe712f9dd830d72",
+   "text": "Un nombre; renombre; el primero que se menciona de los hijos de Noé (Gn 5:32; 6:10). Probablemente era el mayor de los hijos de Noé. Las palabras “hermano de Jafet el mayor” en Gn 10:21 se traducen más correctamente “el hermano mayor de Jafet,” como en la Versión Revisada. El nombre de Sem se menciona por lo general en primer lugar en la lista de los hijos de Noé. Él y su mujer se salvaron en el arca (7:13). Noé predijo su preeminencia sobre Canaán (9:23-27). Murió a la edad de seiscientos años, habiendo sido durante muchos años contemporáneo de Abraham, según la cronología usual. La nación israelita procedió de él (Gn 11:10-26; 1 Cr 1:24-27).",
+   "quote_fixes": [
+    {
+     "n": 0,
+     "reference": "Gen 10:21",
+     "mode": "translated",
+     "reason": "the Authorized Version's reading, which Easton corrects; both Bibles have the corrected one"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2615,
+   "sha256": "7e73a7192aace2bf9617fd02686831941e5c587f034ee57b66d4bf40770ee625",
+   "text": "Un rubenita (1 Cr 5:8)."
+  },
+  {
+   "kind": "person",
+   "id": 2616,
+   "sha256": "a4e58b4ae727bdd67e16ea25847916cf3da6b6baf142d673c8cf5c66ff47f4fa",
+   "text": "Un benjamita (1 Cr 8:13)."
+  },
+  {
+   "kind": "person",
+   "id": 2617,
+   "sha256": "9b748041be0bf8006eab10a4ce996fd6f86a78954205d524255722c0f3af832f",
+   "text": "Uno que estuvo junto a Esdras cuando leyó la ley (Neh 8:4)."
+  },
+  {
+   "kind": "person",
+   "id": 2618,
+   "sha256": "3d18e4565fd850ef730c9198cf33516eb232c3c3f57c60f6d8be649fc494fe12",
+   "text": "Rumor; un benjamita cuyos hijos “vinieron á David á Siclag” (1 Cr 12:3)."
+  },
+  {
+   "kind": "person",
+   "id": 2619,
+   "sha256": "545c36f0c56139fc91d0978b7b8d0ee57f95b24f1fd07e8d0a3d2cbd2ddae759",
+   "text": "Un profeta en el reinado de Roboam (1 R 12:22-24)."
+  },
+  {
+   "kind": "person",
+   "id": 2621,
+   "sha256": "1dbf72e1017dc10f50bc2800e2429641718b49b8626be43b8744ecd4bf14410e",
+   "text": "Un simeonita (1 Cr 4:37)."
+  },
+  {
+   "kind": "person",
+   "id": 2623,
+   "sha256": "029134393d94ff61bd150905b977e84446ca59635e88f8f36722f4df6407d5a6",
+   "text": "1 Cr 9:14; Neh 11:15."
+  },
+  {
+   "kind": "person",
+   "id": 2624,
+   "sha256": "1d74ceef749aadb1ac2fae4eda8a136ee60fcfcb97adbd82e65d5e9f1f576572",
+   "text": "Un levita (1 Cr 9:16)."
+  },
+  {
+   "kind": "person",
+   "id": 2625,
+   "sha256": "60cd9f208005621db63b778e8694eb531f45406cd73c8f12ce124d8008228934",
+   "text": "Un levita en el tiempo de David, que con 200 de sus hermanos tomó parte en el traslado del arca desde la casa de Obed-edom a Hebrón (1 Cr 15:8)."
+  },
+  {
+   "kind": "person",
+   "id": 2626,
+   "sha256": "8ec8c331ab9a17bef230b3c928c686e270782de8e91ed01faf0194f2b2460f1d",
+   "text": "Un levita (1 Cr 24:6)."
+  },
+  {
+   "kind": "person",
+   "id": 2627,
+   "sha256": "a452a3750f4f8c0b0ff647eae3d8684e55b5dd7206cc4319d1349482f4b91ad5",
+   "text": "El hijo mayor de Obed-edom (1 Cr 26:4-8)."
+  },
+  {
+   "kind": "person",
+   "id": 2628,
+   "sha256": "bcde30cf943a307c15207d059a30d4cbd806da0bf0863b73b4febdec08f5e45b",
+   "text": "Uno de los levitas que Josafat designó para enseñar la ley (2 Cr 17:8)."
+  },
+  {
+   "kind": "person",
+   "id": 2629,
+   "sha256": "f8969377b3554ca0859f7065870d695dcfd69a1f2523a33f33779d41215e31bb",
+   "text": "Un levita (2 Cr 29:14)."
+  },
+  {
+   "kind": "person",
+   "id": 2630,
+   "sha256": "c7384c738ee6304f35c3549b29d6f827f7b865d04f14911f51f9922debad4e2c",
+   "text": "Un levita designado para encargarse “de las ofrendas de Jehová” (2 Cr 31:15)."
+  },
+  {
+   "kind": "person",
+   "id": 2631,
+   "sha256": "870d8ed5797146036d9b94a5b319ad848d3a60b43b5350a6d659c45b3ed3b8bb",
+   "text": "Un levita (2 Cr 35:9)."
+  },
+  {
+   "kind": "person",
+   "id": 2636,
+   "sha256": "bc71a4c76b13473adbb9fe8234f559533ed9bafd7764d087e32beb8e14da0dc3",
+   "text": "Neh 3:29."
+  },
+  {
+   "kind": "person",
+   "id": 2637,
+   "sha256": "6a4f925ebfbbd5879d1b93668e12431e025978004d757069a24b43141d7d8336",
+   "text": "Un falso profeta que estorbó la reedificación de Jerusalén (Neh 6:10)."
+  },
+  {
+   "kind": "person",
+   "id": 2641,
+   "sha256": "4593bd4cadc0e9de9a651cb478237e74f08489f9003c9914a6e4d7a139d1bce9",
+   "text": "Un sacerdote (Neh 12:42)."
+  },
+  {
+   "kind": "person",
+   "id": 2642,
+   "sha256": "b0a6c7da2828274bc0af75ac3f0c997d40fdeaaad7d14052b32a50aff2ff3b04",
+   "text": "El padre del profeta Urías (Jer 26:20)."
+  },
+  {
+   "kind": "person",
+   "id": 2643,
+   "sha256": "44f15ea1b6023fb037d3d87568f8fa8ad65c0a16ebcab5b387a2732597912ffe",
+   "text": "Un falso profeta que se opuso a Jeremías (Jer 29:24-32)."
+  },
+  {
+   "kind": "person",
+   "id": 2644,
+   "sha256": "b11b94a659b45ee8247ad27d21662afe594000b0a0d046eb93544b7fd49f34f7",
+   "text": "El padre de un príncipe en el reinado de Joacim (Jer 36:12)."
+  },
+  {
+   "kind": "person",
+   "id": 2645,
+   "sha256": "8fbdb08ab97be2dc33861078e83c2fc2c59a600e507c8b891500b7f9445c6b97",
+   "text": "Uno que se unió a David en Siclag (1 Cr 12:5)."
+  },
+  {
+   "kind": "person",
+   "id": 2648,
+   "sha256": "c8c8f21eed91d40748acdfbad12771c8e379fdd0afb769fccdf5a5d8381a660e",
+   "text": "Que se eleva a lo alto; el rey de Zeboim, que se unió a los otros reyes para sacudir el yugo de Quédorlaomer. Después de haber sido sometido de nuevo por él, fue rescatado por Abraham (Gn 14:2)."
+  },
+  {
+   "kind": "person",
+   "id": 2651,
+   "sha256": "1caca688a45bb16f9ce6e7af0d18dae037bdad2f89fe78ca95f16d11fa7cb5a8",
+   "text": "Un levita en el tiempo de David (1 Cr 15:18, 20)."
+  },
+  {
+   "kind": "person",
+   "id": 2652,
+   "sha256": "1adb3ab8b3ce29021d8afc98ae6351c65a90ce43a624563eedad9e6f30e43fd5",
+   "text": "Un levita en el reinado de Josafat (2 Cr 17:8)."
+  },
+  {
+   "kind": "person",
+   "id": 2653,
+   "sha256": "dafd571856e5844523b77511f18d5a8defe1240a67c693dbd05ef343c2900aa4",
+   "text": "El hijo de Amiud. Representó a Simeón en la repartición de la tierra (Nm 34:20)."
+  },
+  {
+   "kind": "person",
+   "id": 2654,
+   "sha256": "610bf6e7bfdfa6b9788aa7753f67bcb321d8c52ad052c8e35710ca3fadd268ff",
+   "text": "Un príncipe de la tribu de Isacar (1 Cr 7:2)."
+  },
+  {
+   "kind": "person",
+   "id": 2658,
+   "sha256": "dd28f5e0b0d0a1ada620bbfa76b39a6d0b69119bbb0be490a4680c0d049caaad",
+   "text": "Un benjamita que se unió a David en Siclag (1 Cr 12:5)."
+  },
+  {
+   "kind": "person",
+   "id": 2659,
+   "sha256": "25a196035ec3bfa1431531a2511eebf9342e7d2df9b62c6ceee0cfa4541d56fb",
+   "text": "Un príncipe simeonita en el tiempo de David (1 Cr 27:16)."
+  },
+  {
+   "kind": "person",
+   "id": 2660,
+   "sha256": "de5b4af7461f67470010a3dfd42b42e97e04231f66043aa43fcfa14e59c9957f",
+   "text": "Uno de los hijos de Josafat (2 Cr 21:2)."
+  },
+  {
+   "kind": "person",
+   "id": 2661,
+   "sha256": "843624c45368874ec6f19f929592bcbfe2ac71c854efa9c1b624892564f4b09e",
+   "text": "Esd 2:4."
+  },
+  {
+   "kind": "person",
+   "id": 2662,
+   "sha256": "2282e38cd706546c2a683598d664f125a19d568a4f3b453037dbb925d8b9da78",
+   "text": "Esd 2:57; Neh 7:59."
+  },
+  {
+   "kind": "person",
+   "id": 2664,
+   "sha256": "6b4f189dfef11066de505e12104e00c9945b1d53f1b22c618be5e0c25417073d",
+   "text": "Uno de los príncipes que instaron a que se diera muerte a Jeremías (Jer 38:1-4)."
+  },
+  {
+   "kind": "person",
+   "id": 2669,
+   "sha256": "4b48a5c503ea4fc1ca06c1573015271ff0ce8e96d3c3c8de04443000717a07c5",
+   "text": "Raíz; un descendiente de Manasés (1 Cr 7:16)."
+  },
+  {
+   "kind": "person",
+   "id": 2670,
+   "sha256": "3a4400a2aa218790a705ddc96b4197b5c2acd38f1216aabab5e8d29c954e2129",
+   "text": "Uno de los mensajeros que los hijos del cautiverio enviaron a Jerusalén “á implorar el favor de Jehová” (Zac 7:2).",
+   "quote_fixes": [
+    {
+     "n": 0,
+     "reference": "Zech 7:2",
+     "mode": "verbatim",
+     "reason": "the messengers of Zech 7:2, not Gen 33:13-14",
+     "bible": "Cuando fué enviado á la casa de Dios, Saraser, con Regem-melech y sus hombres, á implorar el favor de Jehová,"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2673,
+   "sha256": "eba706e4f6e4dfcd4be51118a7bf53ebf4f5418c7422dd81469c971befe23fab",
+   "text": "Una estrella; un príncipe en la corte de Asuero (Est 1:14)."
+  },
+  {
+   "kind": "person",
+   "id": 2674,
+   "sha256": "b105efc5372b8fad72ab668308626609b14061522b998cf63c203e7298f444ab",
+   "text": "Estrella de esplendor; un oficial persa que en vano intentó estorbar la reedificación del templo (Esd 5:3, 6; 6:6, 13)."
+  },
+  {
+   "kind": "person",
+   "id": 2675,
+   "sha256": "aac0aafbd91f729e44f5cb326db3361769e6f427cfd4d613c0061b75f6b0d392",
+   "text": "El hijo de Caleb (1 Cr 2:49)."
+  },
+  {
+   "kind": "person",
+   "id": 2677,
+   "sha256": "5704a215e2367f63a4901ecf2cf6ffe803f14513d01f18e2578c82ddeb2331fe",
+   "text": "1 Cr 7:13."
+  },
+  {
+   "kind": "person",
+   "id": 2680,
+   "sha256": "c74f3ee456de6d5055665b7a60a8e40f3fb69d84c80430f1c589ae7c349ad653",
+   "text": "Un levita de la familia de Merari (1 Cr 6:30)."
+  },
+  {
+   "kind": "person",
+   "id": 2681,
+   "sha256": "cfea952538e35621a702c574548acbeaffbce11f6f080be6d2ff5b8df06cc4e6",
+   "text": "Otro levita de la familia de Gersón (1 Cr 6:39)."
+  },
+  {
+   "kind": "person",
+   "id": 2682,
+   "sha256": "8c1302d851c52eb7ac4aa6a72a3145e496bab9b8c0a5e9d097a40b7e0935dc95",
+   "text": "Un benjamita, descendiente de Gabaón (1 Cr 8:32); llamado también Simeam (9:38)."
+  },
+  {
+   "kind": "person",
+   "id": 2684,
+   "sha256": "ae78079e0ca5465bc41251f066ef15d8aba8f09f3bb1db48427fe1db47a042e9",
+   "text": "Un benjamita de la casa de Saúl, que apedreó y maldijo a David cuando este llegó a Bahurim en su huida de Jerusalén con ocasión de la rebelión de Absalón (2 S 16:5-13). Después de la derrota de Absalón, “vino arrastrándose ante el rey, suplicando humildemente perdón, trayendo consigo mil de los hombres de su tribu de Benjamín, y declarando que estaba sinceramente arrepentido de su crimen, y que se había apresurado a ser el primero de toda la casa de Israel en rendir homenaje al rey” (19:16-23). David lo perdonó; pero en su lecho de muerte dio a Salomón instrucciones especiales acerca de Simi, de cuya fidelidad parece haber dudado (1 R 2:8, 9). Fue ejecutado por orden de Salomón, porque había violado su palabra al salir de Jerusalén e ir a Gat para recobrar a dos de sus siervos que se habían escapado (36-46)."
+  },
+  {
+   "kind": "person",
+   "id": 2685,
+   "sha256": "8e38da90c7d76aec585220edf5e4d20c25e2824f88e315a4de94aaaf2a78ccc9",
+   "text": "Uno de los valientes de David que se negó a reconocer a Adonías como sucesor de David (1 R 1:8). Probablemente es la misma persona que en otro lugar (4:18) es llamada “hijo de Ela.”"
+  },
+  {
+   "kind": "person",
+   "id": 2686,
+   "sha256": "70ce68a1321d04ee900a0b6798bd196e0c67daf60c17c4e81271711c194b2c4f",
+   "text": "Un hijo de Pedaías, hermano de Zorobabel (1 Cr 3:19)."
+  },
+  {
+   "kind": "person",
+   "id": 2687,
+   "sha256": "8650a5b28cfe0ce98f1864db0cdd28a17fbb7965525f02f1096a6f18d7cff131",
+   "text": "Un simeonita (1 Cr 4:26, 27)."
+  },
+  {
+   "kind": "person",
+   "id": 2688,
+   "sha256": "8f1e62922e4d7d6a476a7c6c2957fa51ef30e991fc0f6d7f107af09cdd758680",
+   "text": "Un rubenita (1 Cr 5:4)."
+  },
+  {
+   "kind": "person",
+   "id": 2690,
+   "sha256": "d68367f0018330f069a320aa0bf9e196e1b7dbc58851eebc2b1bac46d8edbf10",
+   "text": "Un ramatita que estaba a cargo “de las viñas” de David (1 Cr 27:27)."
+  },
+  {
+   "kind": "person",
+   "id": 2691,
+   "sha256": "93548c0a94618b96038614f30d74e9481dfe6df67d87309ba28a143c8bcbc40b",
+   "text": "Uno de los hijos de Hemán, que ayudó en la purificación del templo (2 Cr 29:14)."
+  },
+  {
+   "kind": "person",
+   "id": 2692,
+   "sha256": "8b853830d88c4e40307e0be0726108b3be1da4ea7aaddbd696a71e9e7ba50a0c",
+   "text": "Un levita (2 Cr 31:12, 13)."
+  },
+  {
+   "kind": "person",
+   "id": 2697,
+   "sha256": "61dfccc41f8e69d1989f328a39efab61e85cd31195df6f8fc22363c029350bc1",
+   "text": "Que escucha. Esd 10:31."
+  },
+  {
+   "kind": "person",
+   "id": 2698,
+   "sha256": "58718c91eadb92a611ce2c86cb20e90bedcf237d10b7dc37373bb4f5f9fc63d9",
+   "text": "Famoso; un benjamita (1 Cr 8:21)."
+  },
+  {
+   "kind": "person",
+   "id": 2700,
+   "sha256": "623ea44953390b682caa1e5112c5a1108a73858f72ad502ec9bc9fe9b74127d8",
+   "text": "Uno de los hijos de Isaí (1 S 16:9). Es llamado también Simea (2 S 13:3) y Simma (1 Cr 2:13)."
+  },
+  {
+   "kind": "person",
+   "id": 2703,
+   "sha256": "1dbf72e1017dc10f50bc2800e2429641718b49b8626be43b8744ecd4bf14410e",
+   "text": "Un simeonita (1 Cr 4:37)."
+  },
+  {
+   "kind": "person",
+   "id": 2704,
+   "sha256": "d36f9d5d944b1219fb339cc8e5f6c635dd1658d71602fcf3c0a4481a69cfdc73",
+   "text": "El padre de uno de los “valientes” de los ejércitos de David (1 Cr 11:45)."
+  },
+  {
+   "kind": "person",
+   "id": 2705,
+   "sha256": "557349afed722d39c256e79fdb659d161603f13acb6090fa7b61eacf4e44257b",
+   "text": "Ayudó en la purificación del templo en el tiempo de Ezequías (2 Cr 29:13)."
+  },
+  {
+   "kind": "person",
+   "id": 2706,
+   "sha256": "c284d5b709e8f5f22a4f3967f5748c5c05327f36b57fdc059d9d7d33ccc0df87",
+   "text": "Atalaya; el cuarto hijo de Isacar (Gn 46:13; 1 Cr 7:1; R.V., correctamente, “Simrón”)."
+  },
+  {
+   "kind": "person",
+   "id": 2707,
+   "sha256": "2b3b9fa31d9a40a6184a58dfe005ccd07e9f2fb53876596091906f1011b28541",
+   "text": "El resplandeciente, o soleado; el secretario de Rehum el canciller, que tomó parte en la oposición a la reedificación del templo después del cautiverio (Esd 4:8, 9, 17-23)."
+  },
+  {
+   "kind": "person",
+   "id": 2708,
+   "sha256": "9158c6855bab7722ff97a3346be814ef9aa3ed93003ad2ac743b4690cabdf81f",
+   "text": "Refrescante; el rey de Adama, en el valle de Sidim, que con sus confederados fue vencido por Quédorlaomer (Gn 14:2)."
+  },
+  {
+   "kind": "person",
+   "id": 2710,
+   "sha256": "56353c4427bd39df70e684a840adafe2e56576ca396872425b9813c8c8c0dcbe",
+   "text": "Belleza; una de las parteras egipcias (Éx 1:15)."
+  },
+  {
+   "kind": "person",
+   "id": 2711,
+   "sha256": "512d6e6aae52089aa2673e72fa4ea24b42249b2fd56a7cde3382eda2eadf62cd",
+   "text": "Judicial; un príncipe efrateo en el tiempo de la repartición de Canaán (Nm 34:24)."
+  },
+  {
+   "kind": "person",
+   "id": 2712,
+   "sha256": "7cead4bf70d81e39d0a8466eedc9f1712ce5b1d3dcdb6c8d8464ddfcaaef2cae",
+   "text": "Sheshonk I, rey de Egipto. Su reinado fue de gran éxito nacional, y un registro de sus guerras y conquistas adorna el pórtico de los llamados “reyes bubastitas” en Karnak, la antigua No-amón. Entre estas conquistas hay un registro de la de Judea. En el quinto año del reinado de Roboam, Sisac subió contra el reino de Judá con un poderoso ejército. Tomó las ciudades fortificadas y llegó a Jerusalén. Saqueó los tesoros del templo y del palacio real, y se llevó los escudos de oro que Salomón había hecho (1 R 11:40; 14:25; 2 Cr 12:2). Esta expedición del rey egipcio se emprendió a instancias de Jeroboam con el fin de humillar a Judá. Las hostilidades entre los dos reinos continuaron; pero durante el reinado de Roboam no hubo de nuevo intervención de una tercera parte."
+  },
+  {
+   "kind": "person",
+   "id": 2715,
+   "sha256": "591875e0a7509023348880a559e84ab47c6973f548b5e27dc339dbd3bf58914d",
+   "text": "Uno de los hijos de David con Bat-sheba (2 S 5:14)."
+  },
+  {
+   "kind": "person",
+   "id": 2716,
+   "sha256": "e3d9b331ad092f028fc7cbef3f9a004959ccfaf110f09b71a70379acc474edcf",
+   "text": "Uno de los hijos de Caleb (1 Cr 2:18), el hijo de Hezrón."
+  },
+  {
+   "kind": "person",
+   "id": 2717,
+   "sha256": "08d0f5d4a3d769f68fd57cf7e3ba1089270cb9b6af5c7c652d7b6dfdf4a5cfcd",
+   "text": "Derramado; el “general del ejército de Hadad-ezer” cuando este reunió a sus vasallos y tributarios del otro lado del “río Eufrates” (2 S 10:15-18); llamado también Sofac (1 Cr 19:16)."
+  },
+  {
+   "kind": "person",
+   "id": 2718,
+   "sha256": "71ba1031407e0e4726da24d7332bf6a9f71fa758dfa5934ce274f56ef1afd0d6",
+   "text": "Cautivadores (Esd 2:42)."
+  },
+  {
+   "kind": "person",
+   "id": 2719,
+   "sha256": "1898a5d4e68bacf65e8452f398b4b8d58238dd0e842df14d3414c81986eb3990",
+   "text": "El segundo hijo de Seir el horeo; uno de los “duques” horeos (Gn 36:20)."
+  },
+  {
+   "kind": "person",
+   "id": 2720,
+   "sha256": "9c2138e006f1bee7b2aefc39d0efe4cae0cf3484cefe70d35593c47a287260f9",
+   "text": "Uno de los hijos de Caleb, y descendiente de Hur (1 Cr 2:50, 52; 4:1, 2)."
+  },
+  {
+   "kind": "person",
+   "id": 2722,
+   "sha256": "cc58516755b17db450cc26267bbb71fc5eae3bf4ea4f2ee5be9a7697209270f0",
+   "text": "Cautivador; hijo de Naas de Raba, el amonita. Mostró bondad a David cuando este huyó de Jerusalén a Mahanaim (2 S 17:27)."
+  },
+  {
+   "kind": "person",
+   "id": 2724,
+   "sha256": "2f3ebdd370e4e4c3418ef96434ef6e6b802a56ceafdbd925420d14e174287100",
+   "text": "La madre de Jozabad, que asesinó a Joas (2 R 12:21); llamada también Simrit, moabita (2 Cr 24:26)."
+  },
+  {
+   "kind": "person",
+   "id": 2725,
+   "sha256": "8b361563dcacd146eacfbb231071140ccfe296db0874000ec1a33ec82a4917bb",
+   "text": "Un hombre de Aser (1 Cr 7:32); llamado también Semer (34)."
+  },
+  {
+   "kind": "person",
+   "id": 2726,
+   "sha256": "4ce8b24f8bfe958040dd0957a6ae2a0e502ce138d0cf550735d2878f3d84ad14",
+   "text": "Una hija de Heber el aserita (1 Cr 7:32)."
+  },
+  {
+   "kind": "person",
+   "id": 2727,
+   "sha256": "d82aedcce10fb202fde66dd9789dc7af9a37c0fe4a0c835ec744b9f94a090c9c",
+   "text": "Uno de los hijos de Abraham con Cetura (Gn 25:2; Cr 1:32)."
+  },
+  {
+   "kind": "person",
+   "id": 2728,
+   "sha256": "8de65c4c09279c934361411fcf330c40c490734ace6c518f7885446682315bb1",
+   "text": "Un cananeo cuya hija se casó con Judá (1 Cr 2:3)."
+  },
+  {
+   "kind": "person",
+   "id": 2729,
+   "sha256": "9a69b1757cfaba5bde2184407166418b7e5b2b84f0140785a50c24381e265fae",
+   "text": "1 Cr 4:11."
+  },
+  {
+   "kind": "person",
+   "id": 2737,
+   "sha256": "f0d511a8fb89d3f4fd5b772f2dab02117cb9323ccd2efe5cc2ca4f5fd4df3e7c",
+   "text": "El Señor sostiene; uno de los héroes de David (1 Cr 11:29), general de la octava división del ejército (27:11). Mató al gigante Saf en la batalla de Gob (2 S 21:18; R.V., “Sibechâi”). Llamado también Mebunnai (23:27)."
+  },
+  {
+   "kind": "person",
+   "id": 2738,
+   "sha256": "aad50892b64d44b398376282da58230fdef6d421965aca8a79b678bfdbe9926b",
+   "text": "Una pesquería; ciudad de la costa del Mediterráneo, unas 25 millas al norte de Tiro. Recibió su nombre del “primogénito” de Canaán, nieto de Noé (Gn 10:15, 19). Fue el primer hogar de los fenicios en la costa de Palestina, y por sus extensas relaciones comerciales llegó a ser una ciudad “grande” (Jos 11:8; 19:28). Fue la ciudad madre de Tiro. Estaba dentro de la suerte de la tribu de Aser, pero nunca fue sometida (Jue 1:31). Los sidonios oprimieron largo tiempo a Israel (Jue 10:12). Desde el tiempo de David su gloria comenzó a declinar, y Tiro, su “virgen hija” (Is 23:12), se elevó a su lugar de preeminencia. Salomón entró en una alianza matrimonial con los sidonios, y así su forma de culto idolátrico halló cabida en la tierra de Israel (1 R 11:1, 33). Esta ciudad era famosa por sus manufacturas y artes, así como por su comercio (1 R 5:6; 1 Cr 22:4; Ez 27:8). Los profetas se refieren a ella con frecuencia (Is 23:2, 4, 12; Jer 25:22; 27:3; 47:4; Ez 27:8; 28:21, 22; 32:30; Jl 3:4). Nuestro Señor visitó las “partes” de Tiro y de Sidón (véase), Mt 15:21; Mr 7:24; Lc 4:26; y de esta región muchos salieron a oírle predicar (Mr 3:8; Lc 6:17). Desde Sidón, donde la nave hizo escala después de salir de Cesarea, Pablo navegó finalmente hacia Roma (Hch 27:3, 4).\n\n Esta ciudad es hoy una población de 10.000 habitantes, con restos de murallas construidas en el siglo XII d.C. En 1855 se descubrió el sarcófago de Eshmanezer. Por una inscripción fenicia en su tapa, se ve que fue “rey de los sidonios,” probablemente en el siglo III a.C., y que su madre fue sacerdotisa de Astarot, “la diosa de los sidonios.” En esta inscripción se menciona a Baal como el dios principal de los sidonios."
+  },
+  {
+   "kind": "person",
+   "id": 2739,
+   "sha256": "589fce1544e7ed3ca7cc9bd7d6a638318b73b3116b32688541a21cebd3db2fd2",
+   "text": "Que derriba. Toda la región al oriente del Jordán, desde el Arnón hasta el Jaboc, estaba en posesión de los amorreos, cuyo rey, Sehón, se negó a permitir que los israelitas pasaran por su territorio, y dispuso su ejército en orden de batalla contra ellos. Los israelitas salieron a pelear contra él, y obtuvieron una victoria completa. Los amorreos fueron derrotados; Sehón, sus hijos y todo su pueblo fueron heridos a espada, sus ciudades amuralladas fueron tomadas, y los israelitas tomaron posesión de todo el país de los amorreos (Nm 21:21-30; Dt 2:24-37).\n\n La región desde el Jaboc hasta el Hermón era gobernada en este tiempo por Og, el último de los refaítas. También él trató de impedir el avance de los israelitas, pero fue completamente derrotado, y todas sus ciudades y su territorio cayeron en manos de los israelitas (comp. Nm 21:33-35; Dt 3:1-14; Sal 135: 10-12; 136:17-22).\n\n Estas dos victorias dieron a los israelitas la posesión de la región al oriente del Jordán, desde el Arnón hasta el pie del Hermón. El reino de Sehón abarcaba unas 1.500 millas cuadradas, mientras que el de Og tenía más de 3.000 millas cuadradas."
+  },
+  {
+   "kind": "person",
+   "id": 2740,
+   "sha256": "665b7700e61e0deac71878239cc5697a420872c1fa3e4b0af464fc3b95c98b89",
+   "text": "Bosque; miembro destacado de la iglesia de Jerusalén; llamado también Silvano. Él y Judas, por sobrenombre Barsabás, fueron escogidos por la iglesia de allí para acompañar a Pablo y a Bernabé en su regreso a Antioquía desde el concilio de los apóstoles y ancianos (Hch 15:22), como portadores del decreto adoptado por el concilio. Ayudó allí a Pablo en sus trabajos de evangelización, y fue también escogido por él para ser su compañero en su segundo viaje misionero (Hch 16:19-24). Se hace referencia a él en las epístolas con el nombre de Silvano (2 Co 1:19; 1 Ts 1:1; 2 Ts 1:1; 1 P 5:12). No hay registro del tiempo ni del lugar de su muerte."
+  },
+  {
+   "kind": "person",
+   "id": 2741,
+   "sha256": "c510fc3de58b15c37584a7aa29790d01cb631c644a1beb3fa0e2222276b167ce",
+   "text": "El segundo hijo de Jacob y Lea (Gn 29:33). Estuvo asociado con Leví en el terrible acto de venganza contra Hamor y los siquemitas (34:25, 26). José lo retuvo en Egipto como rehén (42:24). Su padre, al morir, pronunció una maldición contra él (49:5-7). Las palabras de la Versión Autorizada (49:6), “arrancaron muro,” deberían ser, como se traduce correctamente en la Versión Revisada, “desjarretaron un buey.”"
+  },
+  {
+   "kind": "person",
+   "id": 2743,
+   "sha256": "5cb23a2ed042159c2ebe1fbd80f1ff933d3963f8ca30516c7f55d87ffa539ab6",
+   "text": "Uno de los antepasados de José (Lc 3:30)."
+  },
+  {
+   "kind": "person",
+   "id": 2744,
+   "sha256": "ab62ac839650e9db1d0da3d9c1a40123fa5849f66596aff5f73eefb1af817cc1",
+   "text": "Llamado Niger, es decir, “negro,” quizá por su tez oscura; maestro de cierta distinción en la iglesia de Antioquía (Hch 13:1-3). Se ha supuesto que este era el Simón de Cirene que llevó la cruz de Cristo. Nótese el número de nacionalidades representadas en la iglesia de Antioquía."
+  },
+  {
+   "kind": "person",
+   "id": 2745,
+   "sha256": "a727014f1bb3bab5761304d0024f74fa185e9bb0cf621c7f269739d73b5f9cca",
+   "text": "Llamado originalmente Simón (=Simeón, es decir, “que oye”), nombre judío muy común en el Nuevo Testamento. Era hijo de Jonás (Mt 16:17). Su madre no se nombra en ninguna parte de la Escritura. Tenía un hermano menor llamado Andrés, que fue el primero en llevarlo a Jesús (Jn 1:40-42). Su ciudad natal era Betsaida, en la costa occidental del Mar de Galilea, a la que pertenecía también Felipe. Aquí se crió a orillas del Mar de Galilea, y fue adiestrado en el oficio de pescador. Su padre probablemente había muerto cuando él era aún joven, y él y su hermano fueron criados bajo el cuidado de Zebedeo y su mujer Salomé (Mt 27:56; Mr 15:40; 16:1). Allí los cuatro jóvenes, Simón, Andrés, Jacobo y Juan, pasaron su niñez y su primera juventud en constante compañerismo. Simón y su hermano gozaron sin duda de todas las ventajas de una educación religiosa, y fueron instruidos desde temprano en el conocimiento de las Escrituras y de las grandes profecías acerca de la venida del Mesías. Sin embargo, probablemente no gozaron de ninguna instrucción especial en el estudio de la ley bajo alguno de los rabinos. Cuando Pedro compareció ante el Sanedrín, parecía un “hombre sin letras” (Hch 4:13).\n\n “Simón era galileo, y lo era de pies a cabeza... Los galileos tenían un carácter propio y marcado. Tenían fama de una independencia y energía que a menudo degeneraban en turbulencia. Eran al mismo tiempo de disposición más franca y transparente que sus hermanos del sur. En todos estos aspectos, en rudeza, impetuosidad, terquedad y sencillez, Simón era un auténtico galileo. Hablaban un dialecto peculiar. Tenían dificultad con los sonidos guturales y con algunos otros, y su pronunciación se tenía por áspera en Judea. El acento galileo acompañó a Simón durante toda su carrera. Lo delató como seguidor de Cristo cuando estuvo dentro del pretorio (Mr 14:70). Delató su propia nacionalidad y la de los que estaban unidos con él el día de Pentecostés (Hch 2:7).” Parecería que Simón estaba casado antes de llegar a ser apóstol. Se hace referencia a la madre de su mujer (Mt 8:14; Mr 1:30; Lc 4:38). Con toda probabilidad lo acompañaba su mujer en sus viajes misioneros (1 Co 9:5; comp. 1 P 5:13).\n\n Parece que estaba establecido en Capernaum cuando Cristo comenzó su ministerio público, y quizá había pasado de los treinta años. Su casa era lo bastante grande para dar albergue a su hermano Andrés, a la madre de su mujer y también a Cristo, que parece haber vivido con él (Mr 1:29, 36; 2:1), así como a su propia familia. Al parecer tenía dos pisos (2:4).\n\n En Betábara (R.V., Jn 1:28, “Betania”), al otro lado del Jordán, Juan el Bautista había dado testimonio de Jesús como el “Cordero de Dios” (Jn 1:29-36). Andrés y Juan, al oírlo, siguieron a Jesús, y se quedaron con él donde estaba. Quedaron convencidos, por sus palabras de gracia y por la autoridad con que hablaba, de que él era el Mesías (Lc 4:22; Mt 7:29); y Andrés salió y halló a Simón y lo trajo a Jesús (Jn 1:41).\n\n Jesús reconoció en seguida a Simón, y declaró que en adelante sería llamado Cefas, nombre arameo que corresponde al griego Petros, que significa “una masa de roca desprendida de la roca viva.” El nombre arameo no vuelve a aparecer, pero el nombre Pedro va desplazando gradualmente el antiguo nombre Simón, aunque nuestro Señor mismo usa siempre el nombre Simón cuando se dirige a él (Mt 17:25; Mr 14:37; Lc 22:31, comp. 21:15-17). No se nos dice qué impresión produjo en la mente de Simón la primera entrevista con Jesús. La siguiente vez que lo encontramos es junto al Mar de Galilea (Mt 4:18-22). Allí los cuatro (Simón y Andrés, Jacobo y Juan) habían tenido una noche de pesca infructuosa. Jesús apareció de repente y, entrando en la barca de Simón, le mandó bogar mar adentro y echar las redes. Así lo hizo, y encerró una gran multitud de peces. Este fue claramente un milagro obrado ante los ojos de Simón. El discípulo, sobrecogido de temor, se echó a los pies de Jesús, clamando: “Apártate de mí, Señor, porque soy hombre pecador” (Lc 5:8). Jesús se dirigió a él con las tranquilizadoras palabras “No temas,” y le anunció la obra de su vida. Simón respondió en seguida al llamamiento a ser discípulo, y desde entonces lo encontramos en constante compañía de nuestro Señor.\n\n Después es llamado al rango del apostolado, y llega a ser “pescador de hombres” (Mt 4:19) en los mares tempestuosos del mundo de la vida humana (Mt 10:2-4; Mr 3:13-19; Lc 6:13-16), y toma una parte cada vez más destacada en todos los acontecimientos principales de la vida de nuestro Señor. Es él quien pronuncia aquella notable profesión de fe en Capernaum (Jn 6:66-69), y de nuevo en Cesarea de Filipo (Mt 16:13-20; Mr 8:27-30; Lc 9:18-20). Esta profesión en Cesarea fue de suprema importancia, y nuestro Señor en respuesta usó estas memorables palabras: “tú eres Pedro, y sobre esta piedra edificaré mi iglesia;”\n\n “Desde aquel tiempo” comenzó Jesús a hablar de sus padecimientos. Por esto Pedro lo reprendió. Pero nuestro Señor a su vez reprendió a Pedro, hablándole con palabras más severas que las que jamás usó con ningún otro de sus discípulos (Mt 16:21-23; Mr 8:31-33). Al final de su breve estancia en Cesarea, nuestro Señor tomó consigo a Pedro, a Jacobo y a Juan, y los llevó “aparte á un monte alto,” y se transfiguró delante de ellos. Pedro, en aquella ocasión, bajo la impresión que la escena produjo en su mente, exclamó: “Señor, bien es que nos quedemos aquí…hagamos aquí tres pabellones” (Mt 17:1-9).\n\n Al volver a Capernaum, los cobradores del tributo del templo (un didracma, medio siclo sagrado), que todo israelita de veinte años arriba tenía que pagar (Éx 30:15), vinieron a Pedro y le recordaron que Jesús no lo había pagado (Mt 17:24-27). Nuestro Señor indicó a Pedro que fuera a pescar un pez en el lago y tomara de su boca la cantidad exacta necesaria para el tributo, a saber, un estatero, o dos medios siclos. “Tómalo,” dijo nuestro Señor, “y dáselo por mí y por ti.”\n\n Cuando se acercaba el fin, nuestro Señor envió a Pedro y a Juan (Lc 22:7-13) a la ciudad a preparar un lugar donde celebrar la fiesta con sus discípulos. Allí fue advertido de antemano del terrible pecado en que después cayó (22:31-34). Acompañó a nuestro Señor desde el aposento hasta el huerto de Getsemaní (Lc 22:39-46), en el que a él y a los otros dos que habían sido testigos de la transfiguración se les permitió entrar con nuestro Señor, mientras los demás quedaban fuera. Aquí pasó por una extraña experiencia. Llevado por un impulso repentino, cortó la oreja de Malco (47-51), uno de la tropa que había salido a prender a Jesús. Siguen luego las escenas del pretorio (54-61) y su amargo dolor (62).\n\n Se le encuentra en compañía de Juan temprano en la mañana de la resurrección. Entró con denuedo en el sepulcro vacío (Jn 20:1-10), y vio “solos los lienzos echados” (Lc 24:9-12). A él, el primero de los apóstoles, se le manifestó nuestro Señor resucitado, confiriéndole así un honor señalado, y mostrando cuán plenamente había sido restaurado a su favor (Lc 24:34; 1 Co 15:5). Leemos después de la singular entrevista de nuestro Señor con Pedro a orillas del Mar de Galilea, donde le preguntó tres veces: “Simón, hijo de Jonás, ¿me amas?” (Jn 21:1-19).\n\n Después de esta escena junto al lago no oímos nada de Pedro hasta que aparece de nuevo con los demás en la ascensión (Hch 1:15-26). Fue él quien propuso que se llenara la vacante causada por la apostasía de Judas. Ocupa un lugar destacado el día de Pentecostés (2:14-40). Los acontecimientos de aquel día “completaron en Pedro mismo el cambio que la dolorosa disciplina de su caída y todo el largo proceso de su preparación anterior habían ido obrando lentamente. Ya no es el hombre inconstante, voluble y confiado en sí mismo, que oscilaba siempre entre el valor temerario y la débil timidez, sino el guía firme y digno de confianza y el director de la comunión de los creyentes, el intrépido predicador de Cristo en Jerusalén y fuera de ella. Y ahora que ha llegado a ser verdaderamente Cefas, casi no oímos nada del nombre Simón (solo en Hch 10:5, 32; 15:14), y lo conocemos finalmente como Pedro.”\n\n Después del milagro en la puerta del templo (Hch 3) se levantó una persecución contra los cristianos, y Pedro fue echado en la cárcel. Se defendió con denuedo a sí mismo y a sus compañeros ante el tribunal del concilio (4:19, 20). Un nuevo estallido de violencia contra los cristianos (5:17-21) hizo que todo el cuerpo de los apóstoles fuera echado en la cárcel; pero durante la noche fueron librados maravillosamente, y por la mañana se les halló enseñando en el templo. Por segunda vez Pedro los defendió ante el concilio (Hch 5:29-32), el cual, “llamando á los apóstoles, después de azotados…soltáronlos.”\n\n Había llegado el tiempo de que Pedro dejara Jerusalén. Después de trabajar algún tiempo en Samaria, volvió a Jerusalén e informó a la iglesia de allí de los resultados de su obra (Hch 8:14-25). Aquí permaneció un período, durante el cual se encontró con Pablo por primera vez desde la conversión de este (9:26-30; Gá 1:18). Dejando de nuevo Jerusalén, salió en un viaje misionero a Lida y Jope (Hch 9:32-43). Después es llamado a abrir la puerta de la iglesia cristiana a los gentiles mediante la admisión de Cornelio de Cesarea (cap. 10).\n\n Después de permanecer algún tiempo en Cesarea, volvió a Jerusalén (Hch 11:1-18), donde defendió su conducta con respecto a los gentiles. Luego sabemos que fue echado en la cárcel por Herodes Agripa (12:1-19); pero en la noche un ángel del Señor abrió las puertas de la cárcel, y él salió y halló refugio en la casa de María.\n\n Tomó parte en las deliberaciones del concilio de Jerusalén (Hch 15:1-31; Gá 2:1-10) acerca de la relación de los gentiles con la iglesia. Este asunto había despertado nuevo interés en Antioquía, y para su solución fue remitido al concilio de los apóstoles y ancianos en Jerusalén. Aquí se encontraron de nuevo Pablo y Pedro.\n\n No tenemos más mención de Pedro en los Hechos de los Apóstoles. Parece que bajó a Antioquía después del concilio de Jerusalén, y que allí fue culpable de disimulo, por lo cual fue severamente reprendido por Pablo (Gá 2:11-16), que “lo reprendió cara a cara.”\n\n Después de esto parece haber llevado el evangelio al oriente, y haber trabajado por un tiempo en Babilonia, junto al Eufrates (1 P 5:13). No hay prueba satisfactoria de que haya estado alguna vez en Roma. Dónde o cuándo murió no se sabe con certeza. Probablemente murió entre los años 64 y 67 d.C."
+  },
+  {
+   "kind": "person",
+   "id": 2746,
+   "sha256": "1d0bf3884d43600d8bb22cd1b3af20ee18f0cbda29fee8c352184412c158b293",
+   "text": "Uno de los doce apóstoles, llamado el Cananita (Mt 10:4; Mr 3:18). Esta palabra “Cananita” no significa natural de Canaán, sino que se deriva de la palabra siríaca Kanean o Kaneniah, que era el nombre de una secta judía. La Versión Revisada tiene “Cananista;” marg., “o Zelote”. Es llamado también “Celador” (Lc 6:15; Hch 1:13; R.V., “el Zelote”), porque antes de su llamamiento al apostolado había sido miembro de la secta fanática de los zelotes. No hay registro acerca de él."
+  },
+  {
+   "kind": "person",
+   "id": 2747,
+   "sha256": "03f0d81e05a96077c62b39fc4f4e0c8165fc1e1d3250dee8c06fa223bbd9d9be",
+   "text": "Uno de los hermanos de nuestro Señor (Mt 13:55; Mr 6:3)."
+  },
+  {
+   "kind": "person",
+   "id": 2748,
+   "sha256": "233510aa5ec6ce38b4df6273071e45a226452b89a461a4b147551525cf4164d7",
+   "text": "Un leproso de Betania, en cuya casa María ungió con ungüento la cabeza de nuestro Señor “estando sentado á la mesa” (Mt 26:6-13; Mr 14:3-9)."
+  },
+  {
+   "kind": "person",
+   "id": 2749,
+   "sha256": "e48f5805ea4e85afa441b5e2651438019926c84f088b0d65c544cfa2487d404e",
+   "text": "Un judío de Cirene, en el norte de África, entonces provincia de Libia. Cien mil judíos de Palestina habían sido establecidos en esta provincia por Ptolomeo Sóter (323-285 a.C.), donde para este tiempo habían aumentado mucho en número. Tenían una sinagoga en Jerusalén para aquellos de los suyos que iban allí a las fiestas anuales. Simón fue tomado por los soldados cuando, al pasar él, la procesión se dirigía al lugar de la crucifixión, y la pesada cruz que Cristo, por falta de fuerzas, ya no podía llevar fue puesta sobre sus hombros. Quizá lo tomaron porque mostró simpatía por Jesús. Era el “padre de Alejandro y de Rufo” (Mt 27:32). Posiblemente este Simón fue uno de los “hombres de Cirene” que predicaron la palabra a los griegos (Hch 11:20)."
+  },
+  {
+   "kind": "person",
+   "id": 2750,
+   "sha256": "7cdfdf175ec5792d8c04b17ff5bdc3e181b80e9266ca308199e8d23a11941d58",
+   "text": "El padre de Judas Iscariote (Jn 6:71; 13:2, 26)."
+  },
+  {
+   "kind": "person",
+   "id": 2752,
+   "sha256": "90cedb4a0d6e37b7135bae0d065dca75a1a2772f8bdab691dc6c4ab4f9dc921b",
+   "text": "Un hechicero de gran fama por sus artes mágicas entre los samaritanos (Hch 8:9-11). Después se hizo convertido profeso a la fe bajo la predicación de Felipe el diácono y evangelista (12, 13). Sin embargo, pronto se vio que su profesión era hueca. Su conducta provocó una severa reprensión de Pedro (8:18-23). Desde este momento desaparece de la historia de la Iglesia. El término “Simonía,” que denota la compra con dinero de cargos espirituales, se deriva de él."
+  },
+  {
+   "kind": "person",
+   "id": 2753,
+   "sha256": "f15f3187017114cb4f2817e1c7380f9b02adc68939004c23fe765b92f0ed51ef",
+   "text": "Un cristiano de Jope, curtidor de oficio, en cuya casa se hospedó Pedro en una ocasión (Hch 9:43)."
+  },
+  {
+   "kind": "person",
+   "id": 2754,
+   "sha256": "b74c4b20fca4b1a11ac96d1319c878b2c2c5a0425488262f1b5a6a2914107f67",
+   "text": "Atalaya; un levita de la familia de Merari (1 Cr 26:10)."
+  },
+  {
+   "kind": "person",
+   "id": 2755,
+   "sha256": "47b860b9c75f13cb58a994f80b2a104bc7bbcc23f325ed4aca4cfe10710df67c",
+   "text": "Un habitante de Sin, cerca de Arca (Gn 10:17; 1 Cr 1:15)."
+  }
+ ]
+}

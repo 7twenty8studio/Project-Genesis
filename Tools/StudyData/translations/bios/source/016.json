@@ -1,0 +1,1512 @@
+{
+ "batch": "016",
+ "entries": [
+  {
+   "kind": "person",
+   "id": 1971,
+   "name": "Matthew",
+   "sha256": "e2783b1eacd5b9004fc44e5403ed17c70dd8f0d84ec64c1e15045c6ae2a45330",
+   "text": "Gift of God, a common Jewish name after the Exile. He was the son of Alphaeus, and was a publican or tax-gatherer at Capernaum. On one occasion Jesus, coming up from the side of the lake, passed the custom-house where Matthew was seated, and said to him, “Follow me.” Matthew arose and followed him, and became his disciple (Matt. 9:9). Formerly the name by which he was known was Levi (Mark 2:14; Luke 5:27); he now changed it, possibly in grateful memory of his call, to Matthew. The same day on which Jesus called him he made a “great feast” (Luke 5:29), a farewell feast, to which he invited Jesus and his disciples, and probably also many of old associates. He was afterwards selected as one of the twelve (6:15). His name does not occur again in the Gospel history except in the lists of the apostles. The last notice of him is in Acts 1:13. The time and manner of his death are unknown.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Follow me.",
+     "kind": "wording",
+     "verses": [
+      40009009
+     ],
+     "es": "Y pasando Jesús de allí, vió á un hombre que estaba sentado al banco de los públicos tributos, el cual se llamaba Mateo; y dícele: Sígueme. Y se levantó, y le siguió.",
+     "pt": "E Jesus, ao passar dali, viu um homem sentado na coletoria de impostos, chamado Mateus; e disse-lhe: Segue-me. Então este se levantou e o seguiu."
+    },
+    {
+     "n": 1,
+     "english": "great feast",
+     "kind": "wording",
+     "verses": [
+      42005029
+     ],
+     "es": "E hizo Leví gran banquete en su casa; y había mucha compañía de publicanos y de otros, los cuales estaban á la mesa con ellos.",
+     "pt": "E Levi lhe fez um grande banquete em sua casa; e havia ali uma grande multidão de publicanos e de outros que estavam sentados com eles à mesa ."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1972,
+   "name": "Matthias",
+   "sha256": "9c8a27000fce845d18bfb5a13eba9079e356bce05ee3583d9834b1978c35974e",
+   "text": "Gift of God. Acts 1:23.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1973,
+   "name": "Mattithiah",
+   "sha256": "f79093dd2204c6d15415875186da7fd219809afa18ba4c605b47778f22a11951",
+   "text": "The eldest son of Shallum, of the family of Korah (1 Chr. 9:31).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1974,
+   "name": "Mattithiah",
+   "sha256": "1a5757335d744f43aa48a1c8ce8f0e6a595b89c67db6307d63a3081d44eb2d4d",
+   "text": "One of the sons of Jeduthun (1 Chr. 25:3, 21).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1976,
+   "name": "Mattithiah",
+   "sha256": "24c4761e97459ca24226b03e9da0c9ae36ae0ebaf97e3138d4d0ea0412554ac0",
+   "text": "One who stood by Ezra while reading the law (Neh. 8:4).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1978,
+   "name": "Medan",
+   "sha256": "f8d293f345d2db5fdfa156c3cc989613ab44f2b21e48af59757635af309e2ded",
+   "text": "A son of Jokshan, Abraham’s son by Keturah (1 Chr. 1:32). His descendants settled on the Syrian borders about the territory of Edom. They probably led a pastoral life.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1979,
+   "name": "Mehetabeel",
+   "sha256": "de9ca1fbffc74e5345d5718bd6e9f9271f9b4c07c1074c8a1643c5a2ebcd26d4",
+   "text": "Whose benefactor is God, the father of Delaiah, and grandfather of Shemaiah, who joined Sanballat against Nehemiah (Neh. 6:10).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1980,
+   "name": "Mehetabel",
+   "sha256": "b3bc9d4a3e7285c4437eee4744c6a5ae4c84eb76fa3e5621c7311dc735d53801",
+   "text": "Wife of Hadad, one of the kings of Edom (Gen. 36:39).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1983,
+   "name": "Mehujael",
+   "sha256": "fc7bfe05389aa1b1059b265274be79608eeb4fb0a9cc6e4fd6a2df9aa54ed090",
+   "text": "Smitten by God, the son of Irad, and father of Methusael (Gen. 4:18).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1984,
+   "name": "Mehuman",
+   "sha256": "e9c95d7e6f4e7fd3aad4598d38aaf1ba7138ca2d065b83ee71ab8b7621548bc0",
+   "text": "Faithful, one of the eunchs whom Ahasuerus (Xerxes) commanded to bring in Vashti (Esther 1:10).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1985,
+   "name": "Mehunim",
+   "sha256": "d20e1a0c2b1ef8483f4f3c15a8b2a41866e9ef11ee767ae4da806fbc3281b23b",
+   "text": "Habitations, (2 Chr. 26:7; R.V. “Meunim,” Vulg. Ammonitae), a people against whom Uzziah waged a successful war. This word is in Hebrew the plural of Ma’on, and thus denotes the Maonites who inhabited the country on the eastern side of the Wady el-Arabah. They are again mentioned in 1 Chr. 4:41 (R.V.), in the reign of King Hezekiah, as a Hamite people, settled in the eastern end of the valley of Gedor, in the wilderness south of Palestine. In this passage the Authorized Version has “habitation,” erroneously following the translation of Luther.\n\n They are mentioned in the list of those from whom the Nethinim were made up (Ezra 2:50; Neh. 7:52).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Meunim,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "habitation,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1987,
+   "name": "Melchi",
+   "sha256": "15750da07414441ae229b52079994d72e334f52fc822d734954a94dbd427ef13",
+   "text": "Luke 3:24.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1988,
+   "name": "Melchi",
+   "sha256": "5e97d0cb84bc3b0069a4ccbf00de32d2287ee49bb9237e7604712a9236c0c632",
+   "text": "The son of Addi, and father of Neri (Luke 3:28).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1990,
+   "name": "Malchi-shua",
+   "sha256": "ceb9883f6da0a3c89ac56a3c139aa2c521afc509f70df7bcac5015026d7f7867",
+   "text": "King of help, one of the four sons of Saul (1 Chr. 8:33). He perished along with his father in the battle of Gilboa (1 Sam. 31:2).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1991,
+   "name": "Melchisedec",
+   "sha256": "a6f19daeb3ed5ed62038a55563801db7d5cca2b095a8f1bce1cfff1a6998df05",
+   "text": "King of righteousness, the king of Salem (q.v.). All we know of him is recorded in Gen. 14:18-20. He is subsequently mentioned only once in the Old Testament, in Ps. 110:4. The typical significance of his history is set forth in detail in the Epistle to the Hebrews, ch. 7. The apostle there points out the superiority of his priesthood to that of Aaron in these several respects, (1) Even Abraham paid him tithes; (2) he blessed Abraham; (3) he is the type of a Priest who lives for ever; (4) Levi, yet unborn, paid him tithes in the person of Abraham; (5) the permanence of his priesthood in Christ implied the abrogation of the Levitical system; (6) he was made priest not without an oath; and (7) his priesthood can neither be transmitted nor interrupted by death: “this man, because he continueth ever, hath an unchangeable priesthood.”\n\n The question as to who this mysterious personage was has given rise to a great deal of modern speculation. It is an old tradition among the Jews that he was Shem, the son of Noah, who may have survived to this time. Melchizedek was a Canaanitish prince, a worshipper of the true God, and in his peculiar history and character an instructive type of our Lord, the great High Priest (Heb. 5:6, 7; 6:20). One of the Amarna tablets is from Ebed-Tob, king of Jerusalem, the successor of Melchizedek, in which he claims the very attributes and dignity given to Melchizedek in the Epistle to the Hebrews.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "this man, because he continueth ever, hath an unchangeable priesthood.",
+     "kind": "partial",
+     "verses": [
+      58007024
+     ],
+     "es": "Mas éste, por cuanto permanece para siempre, tiene un sacerdocio inmutable:",
+     "pt": "mas ele, porque permanece para sempre, tem um sacerdócio definitivo."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1992,
+   "name": "Melea",
+   "sha256": "641340e24f360c955ca3a761642b0f7fbc64f0cfd002f087928ab78e8540fd0a",
+   "text": "Fulness, the son of Menan and father of Eliakim, in the genealogy of our Lord (Luke 3:31).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1993,
+   "name": "Melech",
+   "sha256": "6bd351b17d0fee951c3799e3f15bb21a5b14bd08a3a1fe28200b4ec7e6a1e090",
+   "text": "King, the second of Micah’s four sons (1 Chr. 8:35), and thus grandson of Mephibosheth.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1994,
+   "name": "Melzar",
+   "sha256": "21eaddf04df7aa2fc5280985470321449ac956c0c57185a9caa0f51267f12b1c",
+   "text": "Probably a Persian word meaning master of wine, i.e., chief butler; the title of an officer at the Babylonian court (Dan. 1:11, 16) who had charge of the diet of the Hebrew youths.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1995,
+   "name": "Memucan",
+   "sha256": "f8bb35743edc057074f4bac2ce8a989c85358b2943e8a5b7e9a2782b197fc39b",
+   "text": "Dignified, one of the royal counsellors at the court of Ahasuerus, by whose suggestion Vashti was divorced (Esther 1:14, 16, 21).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1996,
+   "name": "Menahem",
+   "sha256": "a2390a4c275205c2fc3a69b4d09fd2aa571a8e9e76d354463e224f3dbc36b43c",
+   "text": "Conforting, the son of Gadi, and successor of Shallum, king of Israel, whom he slew. After a reign of about ten years (B.C. 771-760) he died, leaving the throne to his son Pekahiah. His reign was one of cruelty and oppression (2 Kings 15:14-22). During his reign, Pul (q.v.), king of Assyria, came with a powerful force against Israel, but was induced to retire by a gift from Menahem of 1,000 talents of silver.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1999,
+   "name": "Mephibosheth",
+   "sha256": "75d421de3abe0d5d6c32c3e3bab420fc5b6ea925f081c894e044edaeb504c0d1",
+   "text": "The son of Jonathan, and grandson of Saul (2 Sam. 4:4). He was but five years old when his father and grandfather fell on Mount Gilboa. The child’s nurse hearing of this calamity, fled with him from Gibeah, the royal residence, and stumbling in her haste, the child was thrown to the ground and maimed in both his feet, and ever after was unable to walk (19:26). He was carried to the land of Gilead, where he found a refuge in the house of Machir, the son of Ammiel, at Lo-debar, by whom he was brought up.\n\n Some years after this, when David had subdued all the adversaries of Israel, he began to think of the family of Jonathan, and discovered that Mephibosheth was residing in the house of Machir. Thither he sent royal messengers, and brought him and his infant son to Jerusalem, where he ever afterwards resided (2 Sam. 9).\n\n When David was a fugitive, according to the story of Ziba (2 Sam. 16:1-4) Mephibosheth proved unfaithful to him, and was consequently deprived of half of his estates; but according to his own story, however (19:24-30), he had remained loyal to his friend. After this incident he is only mentioned as having been protected by David against the vengeance the Gibeonites were permitted to execute on the house of Saul (21:7). He is also called Merib-baal (1 Chr. 8:34; 9:40).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2000,
+   "name": "Mephibosheth",
+   "sha256": "6e39644d2fc6fba4cdfc477a5ebbdbce1194e5a22167cf4373cbfa1588ca942c",
+   "text": "The name of Saul’s son by the concubine Rizpah (q.v.), the daughter of Aiah. He and his brother Armoni were with five others “hanged on a hill before the Lord” by the Gibeonites, and their bodies exposed in the sun for five months (2 Sam. 21:8-10).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "hanged on a hill before the Lord",
+     "kind": "loose",
+     "verses": [
+      10021008,
+      10021009
+     ],
+     "es": "Mas tomó el rey dos hijos de Rispa hija de Aja, los cuales ella había parido á Saúl, á saber, á Armoni y á Mephi-boseth; y cinco hijos de Michâl hija de Saúl, los cuales ella había parido á Adriel, hijo de Barzillai Molathita; Y entrególos en manos de los Gabaonitas, y ellos los ahorcaron en el monte delante de Jehová: y murieron juntos aquellos siete, los cuales fueron muertos en el tiempo de la siega, en los primeros días, en el principio de la siega de las cebadas.",
+     "pt": "Mas tomou o rei dois filhos de Rispa filha de Aiá, os quais ela havia dado à luz de Saul, a saber, a Armoni e a Mefibosete; e cinco filhos de Mical filha de Saul, os quais ela havia dado à luz de Adriel, filho de Barzilai meolatita; E entregou-os em mãos dos gibeonitas, e eles os enforcaram no monte diante do SENHOR: e morreram juntos aqueles sete, os quais foram mortos no tempo da colheita, nos primeiros dias, no princípio da colheita das cevadas."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2001,
+   "name": "Merab",
+   "sha256": "9f90825b982e52b3f223451546ea430bfc7caeb75e63a70b8e436a03e7ca0c96",
+   "text": "Increase, the eldest of Saul’s two daughters (1 Sam. 14:49). She was betrothed to David after his victory over Goliath, but does not seem to have entered heartily into this arrangement (18:2, 17, 19). She was at length, however, married to Adriel of Abel-Meholah, a town in the Jordan valley, about 10 miles south of Bethshean, with whom the house of Saul maintained alliance. She had five sons, who were all put to death by the Gibeonites on the hill of Gibeah (2 Sam. 21:8).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2002,
+   "name": "Meraiah",
+   "sha256": "18fdfeb5c3640aea42260881ce0a14ab1f3f9eeaa7289dde08151ff55eb47299",
+   "text": "Resistance, a chief priest, a contemporary of the high priest Joiakim (Neh. 12:12).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2003,
+   "name": "Meraioth",
+   "sha256": "cd99a2601cdb8f31fd1a6f7f65c0bfc31928ec3d79c5d3caf217264a51dd610e",
+   "text": "Father of Amariah, a high priest of the line of Eleazar (1 Chr. 6:6, 7, 52).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2004,
+   "name": "Merari",
+   "sha256": "4429d07aaf0dcdbdec8e35be570acd70236367b6571c33445a40e240bb3b481b",
+   "text": "Sad; bitter, the youngest son of Levi, born before the descent of Jacob into Egypt, and one of the seventy who accompanied him thither (Gen. 46:11; Ex. 6:16). He became the head of one of the great divisions of the Levites (Ex. 6:19).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2005,
+   "name": "Mered",
+   "sha256": "2f5b9d2a15cad96ef56a03a3fcd687c284d7cca5eef0201c09e8c7278fe0230f",
+   "text": "Rebellion, one of the sons of Ezra, of the tribe of Judah (1 Chr. 4:17).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2006,
+   "name": "Meremoth",
+   "sha256": "9bfd02cd66e8f3d4652ecb59a438e2b65484eaa00427bc50bbfdf48ae474c00b",
+   "text": "Exaltations, heights, a priest who returned from Babylon with Zerubbabel (Neh. 12:3), to whom were sent the sacred vessels (Ezra 8:33) belonging to the temple. He took part in rebuilding the walls of Jerusalem (Neh. 3:4).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2009,
+   "name": "Mesha",
+   "sha256": "be9161ca62dad365e6b319691440ab96aa1cb48ba19a3e284369be062c83cdbb",
+   "text": "Heb. id, a king of Moab, the son of Chemosh-Gad, a man of great wealth in flocks and herds (2 Kings 3:4). After the death of Ahab at Ramoth-Gilead, Mesha shook off the yoke of Israel; but on the ascension of Jehoram to the throne of Israel, that king sought the help of Jehoshaphat in an attempt to reduce the Moabites again to their former condition. The united armies of the two kings came unexpectedly on the army of the Moabites, and gained over them an easy victory. The whole land was devastated by the conquering armies, and Mesha sought refuge in his last stronghold, Kir-harasheth (q.v.). Reduced to despair, he ascended the wall of the city, and there, in the sight of the allied armies, offered his first-born son a sacrifice to Chemosh, the fire-god of the Moabites. This fearful spectacle filled the beholders with horror, and they retired from before the besieged city, and recrossed the Jordan laden with spoil (2 Kings 3:25-27).\n\n The exploits of Mesha are recorded in the Phoenician inscription on a block of black basalt found at Dibon, in Moab, usually called the “Moabite stone” (q.v.).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Moabite stone",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2010,
+   "name": "Mesha",
+   "sha256": "c71dc83dad7e4715d74cf125dddc049cc791945a53d1852a79fb531d895091da",
+   "text": "Heb. meysh’a, “deliverance,” the eldest son of Caleb (1 Chr. 2:42), and brother of Jerahmeel.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "deliverance,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2012,
+   "name": "Meshech",
+   "sha256": "646a2cc3c022da995c2913cc4eb2b168bab4076b26918892e175a302f3e24ede",
+   "text": "Drawing out, the sixth son of Japheth (Gen. 10:2), the founder of a tribe (1 Chr. 1:5; Ezek. 27:13; 38:2, 3). They were in all probability the Moschi, a people inhabiting the Moschian Mountains, between the Black and the Caspian Seas. In Ps. 120:5 the name occurs as simply a synonym for foreigners or barbarians. “During the ascendency of the Babylonians and Persians in Western Asia, the Moschi were subdued; but it seems probable that a large number of them crossed the Caucasus range and spread over the northern steppes, mingling with the Scythians. There they became known as Muscovs, and gave that name to the Russian nation and its ancient capital by which they are still generally known throughout the East”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "During the ascendency of the Babylonians and Persians in Western Asia, the Moschi were subdued; but it seems probable that a large number of them crossed the Caucasus range and spread over the northern steppes, mingling with the Scythians. There they became known as Muscovs, and gave that name to the Russian nation and its ancient capital by which they are still generally known throughout the East",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2013,
+   "name": "Meshelemiah",
+   "sha256": "1c5f4dad19a132f26b006faeb35350b32427b94973287f41ebd6868f5d1fac98",
+   "text": "Friendship of Jehovah, a Levite of the family of the Korhites, called also Shelemiah (1 Chr. 9:21; 26:1, 2, 9, 14). He was a temple gate-keeper in the time of David.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2017,
+   "name": "Meshillemith",
+   "sha256": "f9c77763d8a0f4face573dc01b83462a0bb13e5133807508b6199149034a21bd",
+   "text": "A priest, the son of Immer (Neh. 11:13).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2018,
+   "name": "Meshillemoth",
+   "sha256": "6bfca1c60217be98996cd51ce4589e7b14608d92c8231c7ec92b101d7bf220e9",
+   "text": "The father of Berechiah (2 Chr. 28:12).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2020,
+   "name": "Meshullam",
+   "sha256": "839625d0c7651fb44eaa457631ac9a711c00a8b74f5596fe7d436608f7ba52f2",
+   "text": "Grandfather of Shaphan, “the scribe,” in the reign of Josiah (2 Kings 22:3).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the scribe,",
+     "kind": "wording",
+     "verses": [
+      12022003
+     ],
+     "es": "Y á los dieciocho años del rey Josías, fué que envió el rey á Saphán hijo de Azalía, hijo de Mesullam, escriba, á la casa de Jehová, diciendo:",
+     "pt": "E aos dezoito anos do rei Josias, foi que enviou o rei a Safã filho de Azalias, filho de Mesulão, escriba, à casa do SENHOR, dizendo:"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2021,
+   "name": "Meshullam",
+   "sha256": "3e83798e2f6facf3b2e1b4fa1e07194c1a3819d754576300c563fcff9f8722e8",
+   "text": "1 Chr. 3:19.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2022,
+   "name": "Meshullam",
+   "sha256": "98a4b75f500b53f04fd79066cea044698411aeee117ef2b0e8edd8cc5df77cf1",
+   "text": "One of the chief Gadites in Bashan in the time of Jotham (1 Chr. 5:13).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2023,
+   "name": "Meshullam",
+   "sha256": "7559067b1b6ea3b18dbdc191382c6c1f3e1e0a0d199be595a41c5061e99d257a",
+   "text": "1 Chr. 8:17.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2026,
+   "name": "Meshullam",
+   "sha256": "e7c73b561cda0323083994e33e354f0ee997d09f05307dd82126a9d449678729",
+   "text": "A priest (1 Chr. 9:12).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2033,
+   "name": "Meshullam",
+   "sha256": "f7a579c10ee916c4ee2cd524279b0911b60a895b337ad7f998ce1bbdb3b512cf",
+   "text": "One of the principal Israelites who supported Ezra when expounding the law to the people (Neh. 8:4).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2037,
+   "name": "Meshullam",
+   "sha256": "d6b663c862a068d55a7debf43ff4174db3bb6be5a1ed44c8582b6a674b397eb9",
+   "text": "Neh. 12:13.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2038,
+   "name": "Meshullam",
+   "sha256": "7729a04bfbcb7a41266a688ece953255c3f9fe61e592b26046b18ebf33c783cb",
+   "text": "A chief priest (Neh. 12:16).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2040,
+   "name": "Meshullemeth",
+   "sha256": "6eaf53d31b51fbb807097749905b9b566dacfe6cf8322dd5507e4acd180ce0f9",
+   "text": "Friend, the wife of Manasseh, and the mother of Amon (2 Kings 21:19), Kings of Judah.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2041,
+   "name": "Methusael",
+   "sha256": "1f6c20ed6af7e5d544282199ddf2a63e1a55e0db2642258531bc4a007bbab0ad",
+   "text": "Champion of El; man of God, a descendant of Cain (Gen. 4:18), so called, perhaps, to denote that even among the descendants of Cain God had not left himself without a witness.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2042,
+   "name": "Methuselah",
+   "sha256": "62f136c254f23afcd535a0585f8d55413631b752aa8653d9d032245064e2542b",
+   "text": "Man of the dart, the son of Enoch, and grandfather of Noah. He was the oldest man of whom we have any record, dying at the age of nine hundred and sixty-nine years, in the year of the Flood (Gen. 5:21-27; 1 Chr. 1:3).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2043,
+   "name": "Mezahab",
+   "sha256": "8a1f5204f616b7564ddc88d66378de26d51970ef938b1045a52e0934f8de618f",
+   "text": "Water of gold, the father of Matred (Gen. 36:39; 1 Chr. 1:50), and grandfather of Mehetabel, wife of Hadar, the last king of Edom.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2045,
+   "name": "Mibhar",
+   "sha256": "12e9992af784003eb940d9e059ef8b7fe03d6a92ad6745169b4726231a28d42e",
+   "text": "Choice, a Hagarene, one of David’s warriors (1 Chr. 11:38); called also Bani the Gadite (2 Sam. 23:36).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2046,
+   "name": "Mibsam",
+   "sha256": "d7fb67aa1e932067c4cefa2bc4b0559445dbe94b0aed3bbe421bafa1399a3ad1",
+   "text": "One of Ishmael’s twelve sons, and head of an Arab tribe (Gen. 25:13).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2047,
+   "name": "Mibsam",
+   "sha256": "fa50187dc86cc6cc3d71261b6c7c947461e659cbf35fcd946ff553325fb11e29",
+   "text": "A son of Simeon (1 Chr. 4:25).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2048,
+   "name": "Mibzar",
+   "sha256": "6fca134a9a1c71991a49564d2229f26fdd0ed8e0d8f6baef36f12ee12e1db735",
+   "text": "Fortress, one of the Edomitish “dukes” descended from Esau (Gen. 36:42; 1 Chr. 1:53).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "dukes",
+     "kind": "wording",
+     "verses": [
+      1036040
+     ],
+     "es": "Estos, pues, son los nombres de los duques de Esaú por sus linajes, por sus lugares, y sus nombres: el duque Timna, el duque Alva, el duque Jetheth,",
+     "pt": "Estes, pois, são os nomes dos duques de Esaú por suas linhagens, por seus lugares, e seus nomes: o duque Timna, o duque Alva, o duque Jetete,"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2049,
+   "name": "Micah",
+   "sha256": "d6077c301c6aa6e678e96bc508ff5fc6bd3af59a0b8fe5adfeb8a7fd6a04e450",
+   "text": "A man of Mount Ephraim, whose history so far is introduced in Judg. 17, apparently for the purpose of leading to an account of the settlement of the tribe of Dan in Northern Palestine, and for the purpose also of illustrating the lawlessness of the times in which he lived (Judg. 18; 19:1-29; 21:25).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2050,
+   "name": "Micah",
+   "sha256": "5a16ac89dedab292cde859c1d28c06408f8e4340724835ed065caa8077bfd4af",
+   "text": "A descendant of Joel the Reubenite (1 Chr. 5:5).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2051,
+   "name": "Micha",
+   "sha256": "c53217136564922bd2c4fc906fa1ac437562fdb79276330f2b9aef153e28e6fe",
+   "text": "The son of Zabdi, a Levite of the family of Asaph (Neh. 11:17, 22).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2052,
+   "name": "Michah",
+   "sha256": "626d27779d78af129780894e53d4d684d3392d27454598d23be72bbafcdb3b35",
+   "text": "The first in rank of the priests of the family of Kohathites (1 Chr. 23:20).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2053,
+   "name": "Micah",
+   "sha256": "8596264372d2ec5fb3b7a4824a05e273fffeddb32c4f56cb7e445f21a4142f0d",
+   "text": "“The Morasthite,” so called to distinguish him from Micaiah, the son of Imlah (1 Kings 22:8). He was a prophet of Judah, a contemporary of Isaiah (Micah 1:1), a native of Moresheth of Gath (1:14, 15). Very little is known of the circumstances of his life (comp. Jer. 26:18, 19).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "The Morasthite,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2054,
+   "name": "Micaiah",
+   "sha256": "c3f35d6a4f5dfb35f0ff4652ec7f5924f8dbd980b8f9f03c4e0aae0ad25ed2dd",
+   "text": "Who is like Jehovah?, the son of Imlah, a faithful prophet of Samaria (1 Kings 22:8-28). Three years after the great battle with Ben-hadad (20:29-34), Ahab proposed to Jehoshaphat, king of Judah, that they should go up against Ramoth-Gilead to do battle again with Ben-hadad. Jehoshaphat agreed, but suggested that inquiry should be first made “at the word of Jehovah.” Ahab’s prophets approved of the expedition; but Jehoshaphat, still dissatisfied, asked if there was no other prophet besides the four hundred that had appeared, and was informed of this Micaiah. He was sent for from prison, where he had been confined, probably on account of some prediction disagreeable to Ahab; and he condemned the expedition, and prophesied that it would end, as it did, in disaster. We hear nothing further of this prophet. Some have supposed that he was the unnamed prophet referred to in 1 Kings 20:35-42.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "at the word of Jehovah.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2055,
+   "name": "Micah",
+   "sha256": "a434c8c7b95fd603816f7c9c370bfae0accd07728cb8997487918ebf0448a0d2",
+   "text": "The son of Merib-baal (Mephibosheth), 1 Chr. 8:34, 35.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2057,
+   "name": "Michaiah",
+   "sha256": "db556f1fb1db875735d2503ec00e254275f17c1648035b62ceccf7106c591858",
+   "text": "A Levite (Neh. 12:35).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2058,
+   "name": "Michael",
+   "sha256": "94ee47066c071815f1a3121401bb19a15fa589ea40e1312745f422f330769473",
+   "text": "The father of Sethur, the spy selected to represent Asher (Num. 13:13).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2059,
+   "name": "Michael",
+   "sha256": "23190386a33ee263f14d11992574edcf517270f4e72a6be3aba82a08f4ab2420",
+   "text": "A chief Gadite in Bashan (1 Chr. 5:13).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2061,
+   "name": "Michael",
+   "sha256": "25f7aef39a9e08c1e1aafd951afc7d2ffa9c10d277cffb60497d70e42aa6e308",
+   "text": "A Gershonite Levite (1 Chr. 6:40).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2062,
+   "name": "Michael",
+   "sha256": "dd2cfad43353a014455ee6f009079290fbccc46eca6df3b5781862f31065dd1f",
+   "text": "1 Chr. 7:3, a chief of the tribe of Issachar.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2063,
+   "name": "Michael",
+   "sha256": "a6af5d6bf9d7e413aeda5f7cf570d08bb7872e26ffca1d1da2761d7948824cec",
+   "text": "1 Chr. 8:16, a Benjamite.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2064,
+   "name": "Michael",
+   "sha256": "ed70428f4af52c6ef2eb13179cff6a04e7baf0328948bdb9cfb670d48c5502dc",
+   "text": "A Manassite, “a captain of thousands” who joined David at Ziklag (1 Chr. 12:20).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "a captain of thousands",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2065,
+   "name": "Michael",
+   "sha256": "554126d3df318c6388b4d04b72c870369c2cbd9022741b47b1d9bac3b1e99012",
+   "text": "The father of Omri (1 Chr. 27:18).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2066,
+   "name": "Michael",
+   "sha256": "5ad2cc35426a7f45ed5c9e1cb4073a0a967a2c51441bb64a4bf6fe4bca61a12a",
+   "text": "One of the sons of king Jehoshaphat (2 Chr. 21:2, 4). He was murdered by his brother Jehoram.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2068,
+   "name": "Michael",
+   "sha256": "0b5cad0280dc6e7ff80d0dbcbf4dda736e0e8bd8370ca007019a8500ef444701",
+   "text": "The title given to one of the chief angels (Dan. 10:13, 21; 12:1). He had special charge of Israel as a nation. He disputed with Satan (Jude 1:9) about the body of Moses. He is also represented as warning against “that old serpent, called the Devil, and Satan, which deceiveth the whole world” (Rev. 12:7-9).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "that old serpent, called the Devil, and Satan, which deceiveth the whole world",
+     "kind": "partial",
+     "verses": [
+      66012009
+     ],
+     "es": "Y fué lanzado fuera aquel gran dragón, la serpiente antigua, que se llama Diablo y Satanás, el cual engaña á todo el mundo; fué arrojado en tierra, y sus ángeles fueron arrojados con él.",
+     "pt": "E foi lançado o grande dragão, a serpente antiga, chamada o diabo e Satanás, que engana a todo o mundo; ele foi lançado na terra, e seus anjos foram lançados com ele."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2069,
+   "name": "Michaiah",
+   "sha256": "4d7c57d2480bdd66f4995df168369d27eb3518435b8681e5554ceeccb3553c00",
+   "text": "2 Kings 22:12.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2070,
+   "name": "Michaiah",
+   "sha256": "880baa8872318ac4ae0d7999098cd297bcc2ba12b03e4ad4dd3448312fbd4330",
+   "text": "One of those sent out by Jehoshaphat to instruct the people in the law (2 Chr. 17:7).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2071,
+   "name": "Michaiah",
+   "sha256": "6aae0601fca4f6faef87c1fb1eb47fd499434976d825c9fe214592c29f167bbc",
+   "text": "A priest (Neh. 12:41).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2072,
+   "name": "Michaiah",
+   "sha256": "0eb7b8438afe95ba1fe47184de9686a863a57423b625107f886f3cc32fc7fd9c",
+   "text": "The son of Gemariah. He reported to the king’s officers Jeremiah’s prediction, which he had heard Baruch read (Jer. 36:11, 13) from his father Gemariah’s chamber in the temple.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2073,
+   "name": "Michal",
+   "sha256": "4e3e2de5138c1797b72b50fe1c655786e64557583498cf30da57b23dccd5d1f0",
+   "text": "Rivulet, or who as God?, the younger of Saul’s two daughters by his wife Ahinoam (1 Sam. 14:49, 50). “Attracted by the graces of his person and the gallantry of his conduct, she fell in love with David and became his wife” (18:20-28). She showed her affection for him by promoting his escape to Naioth when Saul sought his life (1 Sam. 19:12-17. Comp. Ps. 59. See TERAPHIM). After this she did not see David for many years. Meanwhile she was given in marriage to another man, Phalti or Phaltiel of Gallim (1 Sam. 25:44), but David afterwards formally reclaimed her as his lawful wife (2 Sam. 3:13-16). The relation between her and David soon after this was altered. They became alienated from each other. This happened on that memorable day when the ark was brought up in great triumph from its temporary resting-place to the Holy City. In David’s conduct on that occasion she saw nothing but a needless humiliation of the royal dignity (1 Chr. 15:29). She remained childless, and thus the races of David and Saul were not mixed. In 2 Sam. 21:8 her name again occurs, but the name Merab should probably be here substituted for Michal (comp. 1 Sam. 18:19).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Attracted by the graces of his person and the gallantry of his conduct, she fell in love with David and became his wife",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2074,
+   "name": "Michri",
+   "sha256": "95dbf07269348286621f9b5f5c2a996cfa6cd4075901c6c47deb0b6ce7fd0f74",
+   "text": "Prize of Jehovah, a Benjamite, the father of Uzzi (1 Chr. 9:8).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2075,
+   "name": "Midian",
+   "sha256": "c261e25f808dc72af25c0d3e2cee4025f306905e35fc7727ce683a0e53509efc",
+   "text": "Strife, the fourth son of Abraham by Keturah, the father of the Midianites (Gen. 25:2; 1 Chr. 1:32).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2077,
+   "name": "Miniamin",
+   "sha256": "f563e68acf5ddddca0202f3316633111873409fb0acaad3e28584a64dc55fa32",
+   "text": "A chief priest who returned from Babylon with Zerubbabel (Neh. 12:5), called Mijamin (10:7) and Miniamin (12:17).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2078,
+   "name": "Mikloth",
+   "sha256": "1641486601ac11147ae08bb1b727136e7b7994948a54dcbf3dfd5c6e7be475ae",
+   "text": "A Benjamite (1 Chr. 8:32; 9:37, 38).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2079,
+   "name": "Mikloth",
+   "sha256": "3ccc458dd19ae604e589f75b4d7d2df07afe64947652de153caae85edcbe8989",
+   "text": "An officer under Dodai, in the time of David and Solomon (1 Chr. 27:4).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2081,
+   "name": "Milalai",
+   "sha256": "d3b0fc18bbb39045c9e5e61fb22cf47a343f8360eceef6058608b6a4c7776672",
+   "text": "Eloquent, a Levitical musician (Neh. 12:36) who took part in the dedication of the wall of Jerusalem.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2087,
+   "name": "Miriam",
+   "sha256": "fe9f63f0623b153978a90d46f2c7d61ab8c8b00e6862afee66e8e3662539616b",
+   "text": "The sister of Moses and Aaron (Ex. 2:4-10; 1 Chr. 6:3). Her name is prominent in the history of the Exodus. She is called “the prophetess” (Ex. 15:20). She took the lead in the song of triumph after the passage of the Red Sea. She died at Kadesh during the second encampment at that place, toward the close of the wanderings in the wilderness, and was buried there (Num. 20:1).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the prophetess",
+     "kind": "wording",
+     "verses": [
+      2015020
+     ],
+     "es": "Y María la profetisa, hermana de Aarón, tomó un pandero en su mano, y todas las mujeres salieron en pos de ella con panderos y danzas;",
+     "pt": "E Miriã a profetisa, irmã de Arão, tomou um pandeiro em sua mão, e todas as mulheres saíram atrás dela com pandeiros e danças."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2088,
+   "name": "Miriam",
+   "sha256": "e6c7b6f75d11bfb0ffc17e993b4edc86b545b0f5dafe1ab468a455670099d8b4",
+   "text": "1 Chr. 4:17, one of the descendants of Judah.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2090,
+   "name": "Mishael",
+   "sha256": "6015b3620dd9d6c18bd279e30c6fd0d7d8764d569e4c0ff98b107969aa42844b",
+   "text": "A Levite; the eldest of the three sons of Uzziel (Ex. 6:22).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2092,
+   "name": "Meshach",
+   "sha256": "62223242d782211f1d6d1228b8e9c598783452e08adf72a4a9604c78939f909c",
+   "text": "One of the three Hebrew youths who were trained with Daniel in Babylon (Dan. 1:11, 19), and promoted to the rank of Magi. He and his companions were afterwards cast into the burning fiery furnace for refusing to worship the idol the king had set up, from which they were miraculously delivered (3:13-30). His Chaldean name was Meshach (q.v.).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2093,
+   "name": "Misham",
+   "sha256": "c37d1dc909023812c178b08c95cbcba12d22c998b4c82aa81c27cc056014274c",
+   "text": "Their cleansing or their beholding, a Benjamite, one of the sons of Elpaal (1 Chr. 8:12).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2094,
+   "name": "Mishma",
+   "sha256": "53376e3bb9443de58f5678f0ddd9523d3fe63640169328e3c8bb0ecb4dc65546",
+   "text": "One of the sons of Ishmael (Gen. 25:14), and founder of an Arab tribe.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2095,
+   "name": "Mishma",
+   "sha256": "43beb6d40b0b50aeff9b2f73a43d7b4f489ecd00eaac84cc95cb9f6954bb75c9",
+   "text": "A Simeonite (1 Chr. 4:25, 26).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2096,
+   "name": "Mishmannah",
+   "sha256": "01c06cd7991d78e95e5190d557c94ff4c725beb9e31bdb06e7714039e10681e1",
+   "text": "Fatness, one of the Gadite heroes who gathered to David at Ziklag (1 Chr. 12:10).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2097,
+   "name": "Mithredath",
+   "sha256": "c62157751f2b63a81690eac66140f7196bbaadeb09bdbad472a05a1eba16c027",
+   "text": "The “treasurer” of King Cyrus (Ezra 1:8).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "treasurer",
+     "kind": "wording",
+     "verses": [
+      15001008
+     ],
+     "es": "Sacólos pues Ciro rey de Persia, por mano de Mitrídates tesorero, el cual los dió por cuenta á Sesbassar príncipe de Judá.",
+     "pt": "E Ciro, rei da Pérsia, tirou-os por meio do tesoureiro Mitridate, o qual os deu contados a Sesbazar, príncipe de Judá."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2099,
+   "name": "Mispereth",
+   "sha256": "89f3b9a661fbae4002deb9ddea2ec47ba546f95e53ce2e8de0370c062b00e3cb",
+   "text": "Number, one of the Jews who accompanied Zerubbabel from Babylon (Ezra 2:2); called also Mispereth (Neh. 7:7).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2100,
+   "name": "Mizraim",
+   "sha256": "8f5832cf5d66e88fd760eb3d3f15a5fb0353582283f840f51cc7d8e1f8249fed",
+   "text": "The dual form of matzor, meaning a “mound” or “fortress,” the name of a people descended from Ham (Gen. 10:6, 13; 1 Chr. 1:8, 11). It was the name generally given by the Hebrews to the land of Egypt (q.v.), and may denote the two Egypts, the Upper and the Lower. The modern Arabic name for Egypt is Muzr.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "mound",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "fortress,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2102,
+   "name": "Mnason",
+   "sha256": "63d3aab18703615171a8e8f4014bee78788b9656f8a6c96e1b452173f8e7c26d",
+   "text": "Reminding, or remembrancer, a Christian of Jerusalem with whom Paul lodged (Acts 21:16). He was apparently a native of Cyprus, like Barnabas (11:19, 20), and was well known to the Christians of Caesarea (4:36). He was an “old disciple” (R.V., “early disciple”), i.e., he had become a Christian in the beginning of the formation of the Church in Jerusalem.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "old disciple",
+     "kind": "wording",
+     "verses": [
+      44021016
+     ],
+     "es": "Y vinieron también con nosotros de Cesarea algunos de los discípulos, trayendo consigo á un Mnasón, Cyprio, discípulo antiguo, con el cual posásemos.",
+     "pt": "E foram também conosco alguns dos discípulos de Cesareia, trazendo consigo a um certo Mnáson, cipriota, discípulo antigo, com o qual íamos nos hospedar."
+    },
+    {
+     "n": 1,
+     "english": "early disciple",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2103,
+   "name": "Moab",
+   "sha256": "4c76395ec78f048b2afc29db31ae1254a8b334ac30e6a055f1d37754d25b12ce",
+   "text": "Used to denote the people of Moab (Num. 22:3-14; Judg. 3:30; 2 Sam. 8:2; Jer. 48:11, 13).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2104,
+   "name": "Molech",
+   "sha256": "5a21035192b4536ea2ce6a45dbd26a6f0a0258b18ee24a1f8e503f573b962fc2",
+   "text": "King, the name of the national god of the Ammonites, to whom children were sacrificed by fire. He was the consuming and destroying and also at the same time the purifying fire. In Amos 5:26, “your Moloch” of the Authorized Version is “your king” in the Revised Version (comp. Acts 7:43). Solomon (1 Kings 11:7) erected a high place for this idol on the Mount of Olives, and from that time till the days of Josiah his worship continued (2 Kings 23:10, 13). In the days of Jehoahaz it was partially restored, but after the Captivity wholly disappeared. He is also called Molech (Lev. 18:21; 20:2-5, etc.), Milcom (1 Kings 11:5, 33, etc.), and Malcham (Zeph. 1:5). This god became Chemosh among the Moabites.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "your Moloch",
+     "kind": "wording",
+     "verses": [
+      30005026
+     ],
+     "es": "Mas llevabais el tabernáculo de vuestro Moloch y Chiún, ídolos vuestros, la estrella de vuestros dioses que os hicisteis.",
+     "pt": "Em vez disso, levastes as imagens de vosso rei Sicute, e de Quium, a estrela de vossos deus, que fizestes para vós mesmos."
+    },
+    {
+     "n": 1,
+     "english": "your king",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2107,
+   "name": "Mordecai",
+   "sha256": "70016879f2769a115f4973853b1cf3425654a0f2c969da417cd837ce2ad98578",
+   "text": "The son of Jair, of the tribe of Benjamin. It has been alleged that he was carried into captivity with Jeconiah, and hence that he must have been at least one hundred and twenty-nine years old in the twelfth year of Ahasuerus (Xerxes). But the words of Esther do not necessarily lead to this conclusion. It was probably Kish of whom it is said (ver. 6) that he “had been carried away with the captivity.”\n\n He resided at Susa, the metropolis of Persia. He adopted his cousin Hadassah (Esther), an orphan child, whom he tenderly brought up as his own daughter. When she was brought into the king’s harem and made queen in the room of the deposed queen Vashti, he was promoted to some office in the court of Ahasuerus, and was one of those who “sat in the king’s gate” (Esther 2:21). While holding this office, he discovered a plot of the eunuchs to put the king to death, which, by his vigilance, was defeated. His services to the king in this matter were duly recorded in the royal chronicles.\n\n Haman (q.v.) the Agagite had been raised to the highest position at court. Mordecai refused to bow down before him; and Haman, being stung to the quick by the conduct of Mordecai, resolved to accomplish his death in a wholesale destruction of the Jewish exiles throughout the Persian empire (Esther 3:8-15). Tidings of this cruel scheme soon reached the ears of Mordecai, who communicated with Queen Esther regarding it, and by her wise and bold intervention the scheme was frustrated. The Jews were delivered from destruction, Mordecai was raised to a high rank, and Haman was executed on the gallows he had by anticipation erected for Mordecai (6:2-7:10). In memory of the signal deliverance thus wrought for them, the Jews to this day celebrate the feast (9:26-32) of Purim (q.v.).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "had been carried away with the captivity.",
+     "kind": "loose",
+     "verses": [
+      15002001,
+      15002002
+     ],
+     "es": "Y ESTOS son los hijos de la provincia que subieron de la cautividad, de la transmigración que Nabucodonosor rey de Babilonia hizo traspasar á Babilonia, y que volvieron á Jerusalem y á Judá, cada uno á su ciudad: Los cuales vinieron con Zorobabel, Jesuá, Nehemías, Seraías, Reelaías, Mardochêo, Bilsán, Mispar, Bigvai, Rehum y Baana. La cuenta de los varones del pueblo de Israel:",
+     "pt": "Estes são os filhos da província que subiram do cativeiro, dos transportados que Nabucodonosor, rei de Babilônia, tinha transportado para a Babilônia, e que voltaram a Jerusalém e a Judá, cada um para sua cidade; Os quais vieram com Zorobabel, Jesua, Neemias, Seraías, Reelaías, Mardoqueu, Bilsã, Mispar, Bigvai, Reum e Baaná. O registro dos homens do povo de Israel:"
+    },
+    {
+     "n": 1,
+     "english": "sat in the king’s gate",
+     "kind": "partial",
+     "verses": [
+      17002019
+     ],
+     "es": "Y cuando se juntaban las vírgenes la segunda vez, Mardochêo estaba puesto á la puerta del rey.",
+     "pt": "E quando as virgens se ajuntaram pela segunda vez, Mardoqueu estava sentado à porta do rei."
+    }
+   ]
+  }
+ ],
+ "glossary": {
+  "Aaron": {
+   "es": "Aarón",
+   "pt": "Arão"
+  },
+  "Abraham": {
+   "pt": "Abraão"
+  },
+  "Addi": {
+   "es": "Abdi",
+   "pt": "Adi"
+  },
+  "Ahab": {
+   "es": "Acab",
+   "pt": "Acabe"
+  },
+  "Ahasuerus": {
+   "es": "Asuero",
+   "pt": "Assuero"
+  },
+  "Ahinoam": {
+   "pt": "Ainoã"
+  },
+  "Aiah": {
+   "es": "Aja",
+   "pt": "Aiá"
+  },
+  "Alphaeus": {
+   "es": "Alfeo",
+   "pt": "Alfeu"
+  },
+  "Amariah": {
+   "es": "Amarías",
+   "pt": "Amarias"
+  },
+  "Ammiel": {
+   "es": "Amiel (person); Anmiel (person)",
+   "pt": "Amiel"
+  },
+  "Amon": {
+   "es": "Amón",
+   "pt": "Amom"
+  },
+  "Amos": {
+   "es": "Amós",
+   "pt": "Amós"
+  },
+  "Arab": {
+   "pt": "Arabe"
+  },
+  "Asaph": {
+   "es": "Asaf",
+   "pt": "Asafe"
+  },
+  "Asher": {
+   "es": "Aser",
+   "pt": "Aser"
+  },
+  "Asia": {
+   "pt": "Ásia"
+  },
+  "Assyria": {
+   "es": "Asiria",
+   "pt": "Assíria"
+  },
+  "Babylon": {
+   "es": "Babilonia",
+   "pt": "Babilônia"
+  },
+  "Barnabas": {
+   "es": "Bernabé",
+   "pt": "Barnabé"
+  },
+  "Baruch": {
+   "pt": "Baruque"
+  },
+  "Bashan": {
+   "es": "Basán",
+   "pt": "Basã"
+  },
+  "Ben-hadad": {
+   "es": "Ben-adad",
+   "pt": "Ben-Hadade"
+  },
+  "Benjamin": {
+   "es": "Benjamín",
+   "pt": "Benjamim"
+  },
+  "Berechiah": {
+   "es": "Berequías (person); Beraquías (person)",
+   "pt": "Berequias"
+  },
+  "Caesarea": {
+   "es": "Cesarea",
+   "pt": "Cesareia"
+  },
+  "Cain": {
+   "es": "Caín",
+   "pt": "Caim"
+  },
+  "Caleb": {
+   "pt": "Calebe"
+  },
+  "Capernaum": {
+   "pt": "Cafarnaum"
+  },
+  "Chemosh": {
+   "es": "Quemos",
+   "pt": "Camos"
+  },
+  "Cyprus": {
+   "es": "Chipre",
+   "pt": "Chipre"
+  },
+  "Cyrus": {
+   "es": "Ciro",
+   "pt": "Ciro"
+  },
+  "Dan": {
+   "pt": "Dã"
+  },
+  "David": {
+   "pt": "Davi"
+  },
+  "Delaiah": {
+   "es": "Delaía (person); Delaías (person)",
+   "pt": "Delaías"
+  },
+  "Dibon": {
+   "es": "Dibón",
+   "pt": "Dibom"
+  },
+  "Egypt": {
+   "es": "Egipto",
+   "pt": "Egito"
+  },
+  "Eliakim": {
+   "es": "Eliacim (person); Eliaquim (person)",
+   "pt": "Eliaquim"
+  },
+  "Elpaal": {
+   "es": "Elfaal"
+  },
+  "Enoch": {
+   "es": "Henoch",
+   "pt": "Enoque"
+  },
+  "Ephraim": {
+   "es": "Efraim",
+   "pt": "Efraim"
+  },
+  "Esau": {
+   "es": "Esaú",
+   "pt": "Esaú"
+  },
+  "Esther": {
+   "es": "Ester",
+   "pt": "Ester"
+  },
+  "Ezra": {
+   "es": "Esdras (person); Ezra (person)",
+   "pt": "Esdras (person); Ezra (person)"
+  },
+  "Gallim": {
+   "pt": "Galim"
+  },
+  "Gath": {
+   "es": "Gat",
+   "pt": "Gate"
+  },
+  "Gedor": {
+   "es": "Gador (place); Gedor (person)"
+  },
+  "Gemariah": {
+   "es": "Jemarías (person); Gemarías (person)",
+   "pt": "Gemarias"
+  },
+  "Gibeah": {
+   "es": "Gabaa (place); Gibea (place)",
+   "pt": "Gibeá"
+  },
+  "Gilead": {
+   "es": "Galaad",
+   "pt": "Gileade"
+  },
+  "Goliath": {
+   "es": "Goliat",
+   "pt": "Golias"
+  },
+  "Hadad": {
+   "es": "Adad",
+   "pt": "Hadade"
+  },
+  "Hadar": {
+   "es": "Hadad",
+   "pt": "Hadade"
+  },
+  "Ham": {
+   "es": "Cam (person); Ham (place)",
+   "pt": "Cam (person); Hã (place)"
+  },
+  "Haman": {
+   "es": "Amán",
+   "pt": "Hamã"
+  },
+  "Hezekiah": {
+   "es": "Ezequías",
+   "pt": "Ezequias"
+  },
+  "Immer": {
+   "es": "Imer",
+   "pt": "Imer"
+  },
+  "Irad": {
+   "pt": "Irade"
+  },
+  "Isaiah": {
+   "es": "Isaías",
+   "pt": "Isaías"
+  },
+  "Ishmael": {
+   "es": "Ismael",
+   "pt": "Ismael"
+  },
+  "Issachar": {
+   "es": "Isacar",
+   "pt": "Issacar"
+  },
+  "Jacob": {
+   "pt": "Jacó"
+  },
+  "Japheth": {
+   "es": "Jafet",
+   "pt": "Jafé"
+  },
+  "Jeduthun": {
+   "es": "Jedutún",
+   "pt": "Jedutum"
+  },
+  "Jehoahaz": {
+   "es": "Joacaz",
+   "pt": "Jeoacaz"
+  },
+  "Jehoram": {
+   "es": "Joram",
+   "pt": "Jeorão (person); Jorão (person)"
+  },
+  "Jehoshaphat": {
+   "es": "Josafat",
+   "pt": "Josafá"
+  },
+  "Jerahmeel": {
+   "es": "Jerameel",
+   "pt": "Jerameel"
+  },
+  "Jeremiah": {
+   "es": "Jeremías",
+   "pt": "Jeremias"
+  },
+  "Jerusalem": {
+   "es": "Jerusalén",
+   "pt": "Jerusalém"
+  },
+  "Jesus": {
+   "es": "Jesús"
+  },
+  "Joiakim": {
+   "es": "Joiacim",
+   "pt": "Joiaquim"
+  },
+  "Jokshan": {
+   "es": "Joksan",
+   "pt": "Jocsã"
+  },
+  "Jonathan": {
+   "es": "Jonatán",
+   "pt": "Jônatas"
+  },
+  "Jordan": {
+   "es": "Jordán",
+   "pt": "Jordão"
+  },
+  "Josiah": {
+   "es": "Josías",
+   "pt": "Josias"
+  },
+  "Jotham": {
+   "es": "Jotam",
+   "pt": "Jotão"
+  },
+  "Judah": {
+   "es": "Judá (person); Jehudas (person)",
+   "pt": "Judá"
+  },
+  "Jude": {
+   "pt": "Judas"
+  },
+  "Kadesh": {
+   "es": "Cades",
+   "pt": "Cades"
+  },
+  "Keturah": {
+   "es": "Cetura",
+   "pt": "Quetura"
+  },
+  "Kish": {
+   "es": "Cis",
+   "pt": "Quis"
+  },
+  "Korah": {
+   "es": "Coré",
+   "pt": "Corá"
+  },
+  "Levi": {
+   "es": "Leví"
+  },
+  "Lo-debar": {
+   "es": "Lodebar",
+   "pt": "Lo-Debar"
+  },
+  "Machir": {
+   "es": "Maquir",
+   "pt": "Maquir"
+  },
+  "Malcham": {
+   "es": "Malcam",
+   "pt": "Malcã"
+  },
+  "Manasseh": {
+   "es": "Manasés",
+   "pt": "Manassés"
+  },
+  "Matred": {
+   "pt": "Matrede"
+  },
+  "Matthew": {
+   "es": "Mateo",
+   "pt": "Mateus"
+  },
+  "Mehetabel": {
+   "es": "Meetabel",
+   "pt": "Meetabel"
+  },
+  "Menahem": {
+   "es": "Manahem",
+   "pt": "Menaém"
+  },
+  "Menan": {
+   "es": "Mainán",
+   "pt": "Mainã"
+  },
+  "Mephibosheth": {
+   "es": "Mefi-boset",
+   "pt": "Mefibosete"
+  },
+  "Merab": {
+   "pt": "Merabe"
+  },
+  "Mesha": {
+   "es": "Mesa",
+   "pt": "Messa"
+  },
+  "Meshach": {
+   "es": "Mesach",
+   "pt": "Mesaque"
+  },
+  "Methusael": {
+   "es": "Metusael",
+   "pt": "Metusael"
+  },
+  "Micah": {
+   "es": "Micás (person); Micá (person)",
+   "pt": "Mica"
+  },
+  "Micaiah": {
+   "es": "Miqueas",
+   "pt": "Micaías"
+  },
+  "Michal": {
+   "es": "Mical",
+   "pt": "Mical"
+  },
+  "Mijamin": {
+   "es": "Miamim",
+   "pt": "Miamim"
+  },
+  "Miniamin": {
+   "es": "Miniamín (person); Benjamín (person); Miniamin (person)",
+   "pt": "Miamim (person); Miniamim (person)"
+  },
+  "Mispereth": {
+   "es": "Misperet",
+   "pt": "Misperete"
+  },
+  "Moab": {
+   "pt": "Moabe"
+  },
+  "Molech": {
+   "es": "Moloch",
+   "pt": "Moloque"
+  },
+  "Mordecai": {
+   "es": "Mardoqueo",
+   "pt": "Mardoqueu"
+  },
+  "Moresheth": {
+   "es": "Morasti"
+  },
+  "Moses": {
+   "es": "Moisés",
+   "pt": "Moisés"
+  },
+  "Mount Ephraim": {
+   "es": "Monte Efraim",
+   "pt": "Monte Efraim"
+  },
+  "Mount Gilboa": {
+   "es": "Monte Gilboa",
+   "pt": "Monte Gilboa"
+  },
+  "Mount of Olives": {
+   "es": "Monte de los Olivos",
+   "pt": "Monte das Oliveiras"
+  },
+  "Naioth": {
+   "es": "Najot",
+   "pt": "Naiote"
+  },
+  "Nehemiah": {
+   "es": "Nehemías",
+   "pt": "Neemias"
+  },
+  "Noah": {
+   "es": "Noé (person); Noa (person)",
+   "pt": "Noé (person); Noa (person)"
+  },
+  "Omri": {
+   "pt": "Onri"
+  },
+  "On": {
+   "es": "Hon (person); On (place)",
+   "pt": "Om"
+  },
+  "Paul": {
+   "es": "Pablo",
+   "pt": "Paulo"
+  },
+  "Pekahiah": {
+   "es": "Pekaía",
+   "pt": "Pecaías"
+  },
+  "Persia": {
+   "pt": "Pérsia"
+  },
+  "Phaltiel": {
+   "es": "Paltiel",
+   "pt": "Paltiel"
+  },
+  "Red Sea": {
+   "es": "Mar Rojo",
+   "pt": "Mar Vermelho"
+  },
+  "Rizpah": {
+   "es": "Rispa",
+   "pt": "Rispa"
+  },
+  "Salem": {
+   "pt": "Salém"
+  },
+  "Sanballat": {
+   "pt": "Sambalate"
+  },
+  "Satan": {
+   "es": "Satanás",
+   "pt": "Satanás"
+  },
+  "Saul": {
+   "es": "Saúl"
+  },
+  "Sethur": {
+   "pt": "Setur"
+  },
+  "Shallum": {
+   "es": "Sallum (person); Sellum (person)",
+   "pt": "Salum"
+  },
+  "Shaphan": {
+   "es": "Safán",
+   "pt": "Safã"
+  },
+  "Shelemiah": {
+   "es": "Selemías (person); Selamías (person)",
+   "pt": "Selemias"
+  },
+  "Shem": {
+   "es": "Sem",
+   "pt": "Sem"
+  },
+  "Shemaiah": {
+   "es": "Semeías",
+   "pt": "Semaías (person); Samaías (person); Semeías (person)"
+  },
+  "Simeon": {
+   "es": "Simeón (person); Simón (person)",
+   "pt": "Simeão"
+  },
+  "Solomon": {
+   "es": "Salomón",
+   "pt": "Salomão"
+  },
+  "Susa": {
+   "es": "Susán",
+   "pt": "Susã"
+  },
+  "Uzzi": {
+   "es": "Uzi",
+   "pt": "Uzi"
+  },
+  "Uzziah": {
+   "es": "Uzías",
+   "pt": "Uzias (person); Uzia (person)"
+  },
+  "Uzziel": {
+   "es": "Uziel",
+   "pt": "Uziel"
+  },
+  "Vashti": {
+   "es": "Vasti",
+   "pt": "Vasti"
+  },
+  "Zabdi": {
+   "es": "Zabdi (person); Zabdías (person)",
+   "pt": "Zabdi (person); Zabdias (person)"
+  },
+  "Zerubbabel": {
+   "es": "Zorobabel",
+   "pt": "Zorobabel"
+  },
+  "Ziba": {
+   "es": "Siba"
+  },
+  "Ziklag": {
+   "es": "Siclag",
+   "pt": "Ziclague"
+  }
+ }
+}

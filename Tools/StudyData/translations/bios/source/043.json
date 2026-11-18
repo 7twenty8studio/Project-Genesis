@@ -1,0 +1,1428 @@
+{
+ "batch": "043",
+ "entries": [
+  {
+   "kind": "place",
+   "id": 1157,
+   "name": "Thebez",
+   "sha256": "6787a92f88d2bbb73f1394535a4d8d3beb9d0e75074ff0dc72710c8cf6dec953",
+   "text": "Brightness, a place some 11 miles north-east of Shechem, on the road to Scythopolis, the modern Tabas. Abimelech led his army against this place, because of its participation in the conspiracy of the men of Shechem; but as he drew near to the strong tower to which its inhabitants had fled for safety, and was about to set fire to it, a woman cast a fragment of millstone at him, and “all to brake his skull” i.e., “altogether brake,” etc. His armourbearer thereupon “thrust him through, and he died” (Judg. 9:50-55).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "all to brake his skull",
+     "kind": "unsure",
+     "verses": [
+      7009053
+     ],
+     "es": "Mas una mujer dejó caer un pedazo de una rueda de molino sobre la cabeza de Abimelech, y quebróle los cascos.",
+     "pt": "Mas uma mulher deixou cair um pedaço de uma roda de moinho sobre a cabeça de Abimeleque, e quebrou-lhe o crânio."
+    },
+    {
+     "n": 1,
+     "english": "altogether brake,",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "thrust him through, and he died",
+     "kind": "partial",
+     "verses": [
+      7009054
+     ],
+     "es": "Y luego llamó él á su escudero, y díjole: Saca tu espada y mátame, porque no se diga de mí: Una mujer lo mató. Y su escudero le atravesó, y murió.",
+     "pt": "E logo ele chamou a seu escudeiro, e disse-lhe: Tira tua espada e mata-me, porque não se diga de mim: Uma mulher o matou. E seu escudeiro o atravessou, e morreu."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1158,
+   "name": "Thessalonica",
+   "sha256": "c7ba8a028e72df194e65e27edb15d6003891de6fa5bd34ea16c86c183bf166d1",
+   "text": "A large and populous city on the Thermaic bay. It was the capital of one of the four Roman districts of Macedonia, and was ruled by a praetor. It was named after Thessalonica, the wife of Cassander, who built the city. She was so called by her father, Philip, because he first heard of her birth on the day of his gaining a victory over the Thessalians. On his second missionary journey, Paul preached in the synagogue here, the chief synagogue of the Jews in that part of Macedonia, and laid the foundations of a church (Acts 17:1-4; 1 Thes. 1:9). The violence of the Jews drove him from the city, when he fled to Berea (Acts 17:5-10). The “rulers of the city” before whom the Jews “drew Jason,” with whom Paul and Silas lodged, are in the original called politarchai, an unusual word, which was found, however, inscribed on an arch in Thessalonica. This discovery confirms the accuracy of the historian. Paul visited the church here on a subsequent occasion (20:1-3). This city long retained its importance. It is the most important town of European Turkey, under the name of Saloniki, with a mixed population of about 85,000.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "rulers of the city",
+     "kind": "partial",
+     "verses": [
+      44017006
+     ],
+     "es": "Mas no hallándolos, trajeron á Jasón y á algunos hermanos á los gobernadores de la ciudad, dando voces: Estos que alborotan el mundo, también han venido acá;",
+     "pt": "E não os achando, puxaram a Jasão, e a alguns irmãos às maiores autoridades da cidade, clamando: Estes que tem perturbado ao mundo também vieram até aqui."
+    },
+    {
+     "n": 1,
+     "english": "drew Jason,",
+     "kind": "wording",
+     "verses": [
+      44017006
+     ],
+     "es": "Mas no hallándolos, trajeron á Jasón y á algunos hermanos á los gobernadores de la ciudad, dando voces: Estos que alborotan el mundo, también han venido acá;",
+     "pt": "E não os achando, puxaram a Jasão, e a alguns irmãos às maiores autoridades da cidade, clamando: Estes que tem perturbado ao mundo também vieram até aqui."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1159,
+   "name": "Three Taverns",
+   "sha256": "b3aca5d4a05ec90c1dad6a76ea87572cdf11f3611a2b6e40e3d82bb28af0a4b2",
+   "text": "A place on the great “Appian Way,” about 11 miles from Rome, designed for the reception of travellers, as the name indicates. Here Paul, on his way to Rome, was met by a band of Roman Christians (Acts 28:15). The “Tres Tabernae was the first mansio or mutatio, that is, halting-place for relays, from Rome, or the last on the way to the city. At this point three roads run into the Via Appia, that from Tusculum, that from Alba Longa, and that from Antium; so necessarily here would be a halting-place, which took its name from the three shops there, the general store, the blacksmith’s, and the refreshment-house...Tres Tabernae is translated as Three Taverns, but it more correctly means three shops” (Forbes’s Footsteps of St. Paul, p. 20).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Appian Way,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "Tres Tabernae was the first mansio or mutatio, that is, halting-place for relays, from Rome, or the last on the way to the city. At this point three roads run into the Via Appia, that from Tusculum, that from Alba Longa, and that from Antium; so necessarily here would be a halting-place, which took its name from the three shops there, the general store, the blacksmith’s, and the refreshment-house...Tres Tabernae is translated as Three Taverns, but it more correctly means three shops",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1160,
+   "name": "Thyatira",
+   "sha256": "f4723d53454b0e579bc299696d8f39064da13d4318150a80faf4f9d1e08a06fb",
+   "text": "A city of Asia Minor, on the borders of Lydia and Mysia. Its modern name is Ak-hissar, i.e., “white castle.” Here was one of the seven churches (Rev. 1:11; 2:18-28). Lydia, the seller of purple, or rather of cloth dyed with this colour, was from this city (Acts 16:14). It was and still is famous for its dyeing. Among the ruins, inscriptions have been found relating to the guild of dyers in that city in ancient times.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "white castle.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1161,
+   "name": "Tiberias",
+   "sha256": "d4d18c4a676363550700fd199432bc00a44d083ebb83ce0e0935a193d6274c07",
+   "text": "A city, the modern Tubarich, on the western shore of the Sea of Tiberias. It is said to have been founded by Herod Antipas (A.D. 16), on the site of the ruins of an older city called Rakkath, and to have been thus named by him after the Emperor Tiberius. It is mentioned only three times in the history of our Lord (John 6:1, 23; 21:1).\n\n In 1837 about one-half of the inhabitants perished by an earthquake. The population of the city is now about six thousand, nearly the one-half being Jews. “We do not read that our Lord ever entered this city. The reason of this is probably to be found in the fact that it was practically a heathen city, though standing upon Jewish soil. Herod, its founder, had brought together the arts of Greece, the idolatry of Rome, and the gross lewdness of Asia. There were in it a theatre for the performance of comedies, a forum, a stadium, a palace roofed with gold in imitation of those in Italy, statues of the Roman gods, and busts of the deified emperors. He who was not sent but to the lost sheep of the house of Israel might well hold himself aloof from such scenes as these” (Manning’s Those Holy Fields).\n\n After the fall of Jerusalem (A.D. 70), Tiberias became one of the chief residences of the Jews in Palestine. It was for more than three hundred years their metropolis. From about A.D. 150 the Sanhedrin settled here, and established rabbinical schools, which rose to great celebrity. Here the Jerusalem (or Palestinian) Talmud was compiled about the beginning of the fifth century. To this same rabbinical school also we are indebted for the Masora, a “body of traditions which transmitted the readings of the Hebrew text of the Old Testament, and preserved, by means of the vowel-system, the pronunciation of the Hebrew.” In its original form, and in all manuscripts, the Hebrew is written without vowels; hence, when it ceased to be a spoken language, the importance of knowing what vowels to insert between the consonants. This is supplied by the Masora, and hence these vowels are called the “Masoretic vowel-points.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "We do not read that our Lord ever entered this city. The reason of this is probably to be found in the fact that it was practically a heathen city, though standing upon Jewish soil. Herod, its founder, had brought together the arts of Greece, the idolatry of Rome, and the gross lewdness of Asia. There were in it a theatre for the performance of comedies, a forum, a stadium, a palace roofed with gold in imitation of those in Italy, statues of the Roman gods, and busts of the deified emperors. He who was not sent but to the lost sheep of the house of Israel might well hold himself aloof from such scenes as these",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "body of traditions which transmitted the readings of the Hebrew text of the Old Testament, and preserved, by means of the vowel-system, the pronunciation of the Hebrew.",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "Masoretic vowel-points.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1163,
+   "name": "Hiddekel",
+   "sha256": "826cabe042d86e58b6e395d9bbb82930ff2803d5a183de012d40e28e174f05a7",
+   "text": "Called by the Accadians id Idikla; i.e., “the river of Idikla”, the third of the four rivers of Paradise (Gen. 2:14). Gesenius interprets the word as meaning “the rapid Tigris.” The Tigris rises in the mountains of Armenia, 15 miles south of the source of the Euphrates, which, after pursuing a south-east course, it joins at Kurnah, about 50 miles above Bassorah. Its whole length is about 1,150 miles.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the river of Idikla",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "the rapid Tigris.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1164,
+   "name": "Timnah",
+   "sha256": "788e8838252e3fa35dd144479616319b4955315f09849c9aaac2c1ca6a7f79e0",
+   "text": "A town of Judah (Josh. 15:10). The Philistines took possession of it in the days of Ahaz (2 Chr. 28:18). It was about 20 miles west of Jerusalem. It has been identified with Timnatha of Dan (Josh. 19:43), and also with Timnath (Judg. 14:1, 5).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1165,
+   "name": "Timnah",
+   "sha256": "9fe5ac64a8b033cbcee42fb76991a71f2a9114dd8ae9b57c6572f47f01a63a6d",
+   "text": "A city in the mountains of Judah (Josh. 15:57)= Tibna near Jeba’.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1166,
+   "name": "Timnath-heres",
+   "sha256": "ada5791fa2558bd53f3865384557882e13f3757509be75b747229c97d8b067bc",
+   "text": "Portion of the sun, where Joshua was buried (Judg. 2:9). It was “in the mount of Ephraim, in the north side of the hill Gaash,” 10 miles south-west of Shechem. The same as the following.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "in the mount of Ephraim, in the north side of the hill Gaash,",
+     "kind": "loose",
+     "verses": [
+      7002008,
+      7002009
+     ],
+     "es": "Y murió Josué hijo de Nun, siervo de Jehová, siendo de ciento y diez años. Y enterráronlo en el término de su heredad en Timnath-sera, en el monte de Ephraim, al norte del monte de Gaas.",
+     "pt": "E morreu Josué filho de Num, servo do SENHOR, sendo de cento e dez anos. E enterraram-no no termo de sua herança em Timnate-Heres, no monte de Efraim, o norte do monte de Gaás."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1167,
+   "name": "Timnath-serah",
+   "sha256": "b16e03953b6f8cd5b5bbc9ed7a689918ffae5d99d9935d112ca6bac8fb64969e",
+   "text": "Remaining portion, the city of Joshua in the hill country of Ephraim, the same as Timnath-heres (Josh. 19:50; 24:30). “Of all sites I have seen,” says Lieut. Col. Conder, “none is so striking as that of Joshua’s home, surrounded as it is with deep valleys and wild, rugged hills.” Opposite the town is a hill, on the northern side of which there are many excavated sepulchres. Among these is the supposed tomb of Joshua, which is said to be “the most striking monument in the country.” It is a “square chamber with five excavations in three of its sides, the central one forming a passage leading into a second chamber beyond. A great number of lamp-niches cover the walls of the porch, upwards of two hundred, arranged in vertical rows. A single cavity with a niche for a lamp has been thought to be the resting-place of the warrior-chief of Israel.” The modern Kefr Haris, 10 miles south-west of Shechem.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Of all sites I have seen,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "none is so striking as that of Joshua’s home, surrounded as it is with deep valleys and wild, rugged hills.",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "the most striking monument in the country.",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "square chamber with five excavations in three of its sides, the central one forming a passage leading into a second chamber beyond. A great number of lamp-niches cover the walls of the porch, upwards of two hundred, arranged in vertical rows. A single cavity with a niche for a lamp has been thought to be the resting-place of the warrior-chief of Israel.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1168,
+   "name": "Tiphsah",
+   "sha256": "47a2e3d94ed9126f974753474daa1d48f41e0832f6f12be2a6f28e669248833d",
+   "text": "Passing over; ford, one of the boundaries of Solomon’s dominions (1 Kings 4:24), probably “Thapsacus, a great and wealthy town on the western bank of the Euphrates,” about 100 miles north-east of Tadmor. All the land traffic between the east and the west passed through it. Menahem undertook an expedition against this city, and “smote Tiphsah and all that were therein” (2 Kings 15:16). This expedition implied a march of some 300 miles from Tirzah if by way of Tadmor, and about 400 if by way of Aleppo; and its success showed the strength of the Israelite kingdom, for it was practically a defiance to Assyria. Conder, however, identifies this place with Khurbet Tafsah, some 6 miles west of Shechem.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Thapsacus, a great and wealthy town on the western bank of the Euphrates,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "smote Tiphsah and all that were therein",
+     "kind": "partial",
+     "verses": [
+      12015016
+     ],
+     "es": "Entonces hirió Manahem á Tiphsa, y á todos los que estaban en ella, y también sus términos desde Thirsa; é hirióla porque no le habían abierto; y abrió á todas sus preñadas.",
+     "pt": "Então feriu Menaém a Tifsa, e a todos os que estavam nela, e também seus termos desde Tirsa; e feriu-a porque não lhe haviam aberto; e fendeu o ventre de todas as suas grávidas."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1169,
+   "name": "Tiphsah",
+   "sha256": "47a2e3d94ed9126f974753474daa1d48f41e0832f6f12be2a6f28e669248833d",
+   "text": "Passing over; ford, one of the boundaries of Solomon’s dominions (1 Kings 4:24), probably “Thapsacus, a great and wealthy town on the western bank of the Euphrates,” about 100 miles north-east of Tadmor. All the land traffic between the east and the west passed through it. Menahem undertook an expedition against this city, and “smote Tiphsah and all that were therein” (2 Kings 15:16). This expedition implied a march of some 300 miles from Tirzah if by way of Tadmor, and about 400 if by way of Aleppo; and its success showed the strength of the Israelite kingdom, for it was practically a defiance to Assyria. Conder, however, identifies this place with Khurbet Tafsah, some 6 miles west of Shechem.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Thapsacus, a great and wealthy town on the western bank of the Euphrates,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "smote Tiphsah and all that were therein",
+     "kind": "partial",
+     "verses": [
+      12015016
+     ],
+     "es": "Entonces hirió Manahem á Tiphsa, y á todos los que estaban en ella, y también sus términos desde Thirsa; é hirióla porque no le habían abierto; y abrió á todas sus preñadas.",
+     "pt": "Então feriu Menaém a Tifsa, e a todos os que estavam nela, e também seus termos desde Tirsa; e feriu-a porque não lhe haviam aberto; e fendeu o ventre de todas as suas grávidas."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1170,
+   "name": "Tirzah",
+   "sha256": "ed733c22704b24ddee99e213c3ab683c44b6ce6c7e3f4663ad422eb7e27e7169",
+   "text": "An old royal city of the Canaanites, which was destroyed by Joshua (Josh. 12:24). Jeroboam chose it for his residence, and he removed to it from Shechem, which at first he made the capital of his kingdom. It remained the chief residence of the kings of Israel till Omri took Samaria (1 Kings 14:17; 15:21; 16:6, 8, etc.). Here Zimri perished amid the flames of the palace to which in his despair he had set fire (1 Kings 16:18), and here Menahem smote Shallum (2 Kings 15:14, 16). Solomon refers to its beauty (Cant. 6:4). It has been identified with the modern mud hamlet Teiasir, 11 miles north of Shechem. Others, however, would identify it with Telluza, a village about 6 miles east of Samaria.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1171,
+   "name": "Tishbe",
+   "sha256": "5d58c58110de3459a4a58dc51d828c8bf314a6a89785b1eae04bebf94fee70b2",
+   "text": "Elijah the prophet was thus named (1 Kings 17:1; 21:17, 28, etc.). In 1 Kings 17:1 the word rendered “inhabitants” is in the original the same as that rendered “Tishbite,” hence that verse may be read as in the LXX., “Elijah the Tishbite of Tishbi in Gilead.” Some interpret this word as meaning “stranger,” and read the verse, “Elijah the stranger from among the strangers in Gilead.” This designation is probably given to the prophet as denoting that his birthplace was Tishbi, a place in Upper Galilee (mentioned in the apocryphal book of Tobit), from which for some reason he migrated into Gilead. Josephus, the Jewish historian (Ant. 8:13, 2), however, supposes that Tishbi was some place in the land of Gilead. It has been identified by some with el-Ishtib, a some place 22 miles due south of the Sea of Galilee, among the mountains of Gilead.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "inhabitants",
+     "kind": "wording",
+     "verses": [
+      11017001
+     ],
+     "es": "ENTONCES Elías Thisbita, que era de los moradores de Galaad, dijo á Achâb: Vive Jehová Dios de Israel, delante del cual estoy, que no habrá lluvia ni rocío en estos años, sino por mi palabra.",
+     "pt": "Então Elias Tisbita, que era dos moradores de Gileade, disse a Acabe: Vive o SENHOR Deus de Israel, diante do qual estou, que não haverá chuva nem orvalho nestes anos, a não ser por minha palavra."
+    },
+    {
+     "n": 1,
+     "english": "Tishbite,",
+     "kind": "wording",
+     "verses": [
+      11017001
+     ],
+     "es": "ENTONCES Elías Thisbita, que era de los moradores de Galaad, dijo á Achâb: Vive Jehová Dios de Israel, delante del cual estoy, que no habrá lluvia ni rocío en estos años, sino por mi palabra.",
+     "pt": "Então Elias Tisbita, que era dos moradores de Gileade, disse a Acabe: Vive o SENHOR Deus de Israel, diante do qual estou, que não haverá chuva nem orvalho nestes anos, a não ser por minha palavra."
+    },
+    {
+     "n": 2,
+     "english": "Elijah the Tishbite of Tishbi in Gilead.",
+     "kind": "loose",
+     "verses": [
+      11017001
+     ],
+     "es": "ENTONCES Elías Thisbita, que era de los moradores de Galaad, dijo á Achâb: Vive Jehová Dios de Israel, delante del cual estoy, que no habrá lluvia ni rocío en estos años, sino por mi palabra.",
+     "pt": "Então Elias Tisbita, que era dos moradores de Gileade, disse a Acabe: Vive o SENHOR Deus de Israel, diante do qual estou, que não haverá chuva nem orvalho nestes anos, a não ser por minha palavra."
+    },
+    {
+     "n": 3,
+     "english": "stranger,",
+     "kind": "other"
+    },
+    {
+     "n": 4,
+     "english": "Elijah the stranger from among the strangers in Gilead.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1172,
+   "name": "Tob",
+   "sha256": "f85a878f3d019f0828402ed3b9acdbf046acb2126922616e25941c6e75732e9d",
+   "text": "A district on the east of Jodan, about 13 miles south-east of the Sea of Galilee, to which Jephthah fled from his brethren (Judg. 11:3, 5). It was on the northern boundary of Perea, between Syria and the land of Ammon (2 Sam. 10:6, 8). Its modern name is Taiyibeh.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1173,
+   "name": "Tochen",
+   "sha256": "e84f9b989842039c9b49ca841673533a4ca2864d7d3a0f14eb83501be0fafea7",
+   "text": "Measured, a town of Simeon (1 Chr. 4:32).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1174,
+   "name": "Tolad",
+   "sha256": "3f633dbe61640722eba91e4fb81e5b7a77472aaed8224782f2dae1646fd1e25e",
+   "text": "Productive, a town of Simeon, in the south of Judah (1 Chr. 4:29).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1175,
+   "name": "Tophel",
+   "sha256": "e36a4877c6991578bde50e3a32dc29e8f662143cad14202ca1aab2a6fa46af2f",
+   "text": "Lime, a place in the wilderness of Sinai (Deut. 1:1), now identified with Tafyleh or Tufileh, on the west side of the Edomitish mountains.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1177,
+   "name": "Tower",
+   "sha256": "4e02a3dac132eb52588f01cea338cc37eb00e28736e2280c486589f2d3bb15f5",
+   "text": "God has graciously given, a tower in the wall of Jerusalem (Neh. 3:1; 12:39). It is mentioned also in Jer. 31:38; Zech. 14:10.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1180,
+   "name": "Tower",
+   "sha256": "6748fd06358a3b750c8f67689e78d555b43e6ce29b3764c5f7b581e92eabf10c",
+   "text": "(Neh. 3:11; 12:38), a tower at the north-western angle of the second wall of Jerusalem. It was probably so named from its contiguity to the “bakers’ street” (Jer. 37:21).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "bakers’ street",
+     "kind": "wording",
+     "verses": [
+      24037021
+     ],
+     "es": "Entonces dió orden el rey Sedechîas, y depositaron á Jeremías en el patio de la cárcel, haciéndole dar una torta de pan al día, de la plaza de los Panaderos, hasta que todo el pan de la ciudad se gastase. Y quedó Jeremías en el patio de la cárcel.",
+     "pt": "Então o rei Zedequias mandou que pusessem a Jeremias no pátio da guarda, e que lhe dessem uma porção de pão por dia, da rua dos padeiros, até todo o pão da cidade ter se acabado. Assim Jeremias ficou no pátio da guarda."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1181,
+   "name": "Trachonitis",
+   "sha256": "877abea46af2c1d5b3f05d683144d7ba3e9d85cdfa5c61163081ba923ba9ce5c",
+   "text": "A rugged region, corresponds to the Heb. Argob (q.v.), the Greek name of a region on the east of Jordan (Luke 3:1); one of the five Roman provinces into which that district was divided. It was in the tetrarchy of Philip, and is now called the Lejah.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1182,
+   "name": "Troas",
+   "sha256": "6049320f144bc9cdd2e03b7840dd062a94a0506ded4350d552980410c6387925",
+   "text": "A city on the coast of Mysia, in the north-west of Asia Minor, named after ancient Troy, which was at some little distance from it (about 4 miles) to the north. Here Paul, on his second missionary journey, saw the vision of a “man of Macedonia,” who appeared to him, saying, “Come over, and help us” (Acts 16:8-11). He visited this place also on other occasions, and on one of these visits he left his cloak and some books there (2 Cor. 2:12; 2 Tim. 4:13). The ruins of Troas extend over many miles, the site being now mostly covered with a forest of oak trees. The modern name of the ruins is Eski Stamboul i.e., Old Constantinople.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "man of Macedonia,",
+     "kind": "partial",
+     "verses": [
+      44016009
+     ],
+     "es": "Y fué mostrada á Pablo de noche una visión: Un varón Macedonio se puso delante, rogándole, y diciendo: Pasa á Macedonia, y ayúdanos.",
+     "pt": "E uma visão foi vista por Paulo durante a noite: um homem Macedônio se pôs diante dele ,rogando-lhe, e dizendo: Passa à Macedônia, e ajuda-nos!"
+    },
+    {
+     "n": 1,
+     "english": "Come over, and help us",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1184,
+   "name": "Tyre",
+   "sha256": "50f1cb7b573cc920b851ed53fe1cccbf25a85dca8946f629a44e5059c22927a1",
+   "text": "A rock, now es-Sur; an ancient Phoenician city, about 23 miles, in a direct line, north of Acre, and 20 south of Sidon. Sidon was the oldest Phoenician city, but Tyre had a longer and more illustrious history. The commerce of the whole world was gathered into the warehouses of Tyre. “Tyrian merchants were the first who ventured to navigate the Mediterranean waters; and they founded their colonies on the coasts and neighbouring islands of the AEgean Sea, in Greece, on the northern coast of Africa, at Carthage and other places, in Sicily and Corsica, in Spain at Tartessus, and even beyond the pillars of Hercules at Gadeira (Cadiz)” (Driver’s Isaiah). In the time of David a friendly alliance was entered into between the Hebrews and the Tyrians, who were long ruled over by their native kings (2 Sam. 5:11; 1 Kings 5:1; 2 Chr. 2:3).\n\n Tyre consisted of two distinct parts, a rocky fortress on the mainland, called “Old Tyre,” and the city, built on a small, rocky island about half-a-mile distant from the shore. It was a place of great strength. It was besieged by Shalmaneser, who was assisted by the Phoenicians of the mainland, for five years, and by Nebuchadnezzar (B.C. 586-573) for thirteen years, apparently without success. It afterwards fell under the power of Alexander the Great, after a siege of seven months, but continued to maintain much of its commercial importance till the Christian era. It is referred to in Matt. 11:21 and Acts 12:20. In A.D. 1291 it was taken by the Saracens, and has remained a desolate ruin ever since.\n\n “The purple dye of Tyre had a worldwide celebrity on account of the durability of its beautiful tints, and its manufacture proved a source of abundant wealth to the inhabitants of that city.”\n\n Both Tyre and Sidon “were crowded with glass-shops, dyeing and weaving establishments; and among their cunning workmen not the least important class were those who were celebrated for the engraving of precious stones.” (2 Chr. 2:7, 14).\n\n The wickedness and idolatry of this city are frequently denounced by the prophets, and its final destruction predicted (Isa. 23:1; Jer. 25:22; Ezek. 26; 28:1-19; Amos 1:9, 10; Zech. 9:2-4).\n\n Here a church was founded soon after the death of Stephen, and Paul, on his return from his third missionary journey spent a week in intercourse with the disciples there (Acts 21:4). Here the scene at Miletus was repeated on his leaving them. They all, with their wives and children, accompanied him to the sea-shore. The sea-voyage of the apostle terminated at Ptolemais, about 38 miles from Tyre. Thence he proceeded to Caesarea (Acts 21:5-8).\n\n “It is noticed on monuments as early as B.C. 1500, and claiming, according to Herodotus, to have been founded about B.C. 2700. It had two ports still existing, and was of commercial importance in all ages, with colonies at Carthage (about B.C. 850) and all over the Mediterranean. It was often attacked by Egypt and Assyria, and taken by Alexander the Great after a terrible siege in B.C. 332. It is now a town of 3,000 inhabitants, with ancient tombs and a ruined cathedral. A short Phoenician text of the fourth century B.C. is the only monument yet recovered.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Tyrian merchants were the first who ventured to navigate the Mediterranean waters; and they founded their colonies on the coasts and neighbouring islands of the AEgean Sea, in Greece, on the northern coast of Africa, at Carthage and other places, in Sicily and Corsica, in Spain at Tartessus, and even beyond the pillars of Hercules at Gadeira (Cadiz)",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "Old Tyre,",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "The purple dye of Tyre had a worldwide celebrity on account of the durability of its beautiful tints, and its manufacture proved a source of abundant wealth to the inhabitants of that city.",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "were crowded with glass-shops, dyeing and weaving establishments; and among their cunning workmen not the least important class were those who were celebrated for the engraving of precious stones.",
+     "kind": "other"
+    },
+    {
+     "n": 4,
+     "english": "It is noticed on monuments as early as B.C. 1500, and claiming, according to Herodotus, to have been founded about B.C. 2700. It had two ports still existing, and was of commercial importance in all ages, with colonies at Carthage (about B.C. 850) and all over the Mediterranean. It was often attacked by Egypt and Assyria, and taken by Alexander the Great after a terrible siege in B.C. 332. It is now a town of 3,000 inhabitants, with ancient tombs and a ruined cathedral. A short Phoenician text of the fourth century B.C. is the only monument yet recovered.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1185,
+   "name": "Ulai",
+   "sha256": "021915abbc2f7892e549142079f4701c2e982ac37bdd65746cfdcc2ed1d75a25",
+   "text": "The Eulaus of the Greeks; a river of Susiana. It was probably the eastern branch of the Choasper (Kerkhan), which divided into two branches some 20 miles above the city of Susa. Hence Daniel (8:2, 16) speaks of standing “between the banks of Ulai”, i.e., between the two streams of the divided river.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "between the banks of Ulai",
+     "kind": "unsure",
+     "verses": [
+      27008016
+     ],
+     "es": "Y oí una voz de hombre entre las riberas de Ulai, que gritó y dijo: Gabriel, enseña la visión á éste.",
+     "pt": "E ouvi uma voz de homem entre as margens de Ulai, que gritou e disse: Gabriel, explica a visão a este."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1186,
+   "name": "Ummah",
+   "sha256": "261b2c95706bc891b47c32b1f1ae4252dbf9ab1869ae978ddeed992a356b9f49",
+   "text": "Vicinity, a town of Asher (Josh. 19:30).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1187,
+   "name": "Uphaz",
+   "sha256": "59748149693d54e84286f9450959656f065d5f2dfd6e5bb86489c230f6c05fd6",
+   "text": "Probably another name for Ophir (Jer. 10:9). Some, however, regard it as the name of an Indian colony in Yemen, southern Arabia; others as a place on or near the river Hyphasis (now the Ghana), the south-eastern limit of the Punjaub.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1189,
+   "name": "Ur of the Chaldees",
+   "sha256": "0d69a38820fb8d662445d508fb0a0f39195a254ca7591f7a9162b87519f1a037",
+   "text": "Light, or the moon city, a city “of the Chaldees,” the birthplace of Haran (Gen. 11:28, 31), the largest city of Shinar or northern Chaldea, and the principal commercial centre of the country as well as the centre of political power. It stood near the mouth of the Euphrates, on its western bank, and is represented by the mounds (of bricks cemented by bitumen) of el-Mugheir, i.e., “the bitumined,” or “the town of bitumen,” now 150 miles from the sea and some 6 miles from the Euphrates, a little above the point where it receives the Shat el-Hie, an affluent from the Tigris. It was formerly a maritime city, as the waters of the Persian Gulf reached thus far inland. Ur was the port of Babylonia, whence trade was carried on with the dwellers on the gulf, and with the distant countries of India, Ethiopia, and Egypt. It was abandoned about B.C. 500, but long continued, like Erech, to be a great sacred cemetery city, as is evident from the number of tombs found there.\n\n The oldest king of Ur known to us is Ur-Ba’u (servant of the goddess Ba’u), as Hommel reads the name, or Ur-Gur, as others read it. He lived some twenty-eight hundred years B.C., and took part in building the famous temple of the moon-god Sin in Ur itself. The illustration here given represents his cuneiform inscription, written in the Sumerian language, and stamped upon every brick of the temple in Ur. It reads: “Ur-Ba’u, king of Ur, who built the temple of the moon-god.”\n\n “Ur was consecrated to the worship of Sin, the Babylonian moon-god. It shared this honour, however, with another city, and this city was Haran, or Harran. Harran was in Mesopotamia, and took its name from the highroad which led through it from the east to the west. The name is Babylonian, and bears witness to its having been founded by a Babylonian king. The same witness is still more decisively borne by the worship paid in it to the Babylonian moon-god and by its ancient temple of Sin. Indeed, the temple of the moon-god at Harran was perhaps even more famous in the Assyrian and Babylonian world than the temple of the moon-god at Ur.\n\n “Between Ur and Harran there must, consequently, have been a close connection in early times, the record of which has not yet been recovered. It may be that Harran owed its foundation to a king of Ur; at any rate the two cities were bound together by the worship of the same deity, the closest and most enduring bond of union that existed in the ancient world. That Terah should have migrated from Ur to Harran, therefore, ceases to be extraordinary. If he left Ur at all, it was the most natural place to which to go. It was like passing from one court of a temple into another.\n\n “Such a remarkable coincidence between the Biblical narrative and the evidence of archaeological research cannot be the result of chance. The narrative must be historical; no writer of late date, even if he were a Babylonian, could have invented a story so exactly in accordance with what we now know to have been the truth. For a story of the kind to have been the invention of Palestinian tradition is equally impossible. To the unprejudiced mind there is no escape from the conclusion that the history of the migration of Terah from Ur to Harran is founded on fact” (Sayce).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "of the Chaldees,",
+     "kind": "partial",
+     "verses": [
+      1011028
+     ],
+     "es": "Y murió Harán antes que su padre Thare en la tierra de su naturaleza, en Ur de los Caldeos.",
+     "pt": "E morreu Harã antes que seu pai Terá na terra de seu nascimento, em Ur dos caldeus."
+    },
+    {
+     "n": 1,
+     "english": "the bitumined,",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "the town of bitumen,",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "Ur-Ba’u, king of Ur, who built the temple of the moon-god.",
+     "kind": "loose",
+     "verses": [
+      11006002,
+      11006003
+     ],
+     "es": "La casa que el rey Salomón edificó á Jehová, tuvo sesenta codos de largo y veinte de ancho, y treinta codos de alto. Y el pórtico delante del templo de la casa, de veinte codos de largo, según la anchura de la casa, y su ancho era de diez codos delante de la casa.",
+     "pt": "A casa que o rei Salomão edificou ao SENHOR, teve sessenta côvados de comprimento e vinte de largura, e trinta côvados de altura. E o pórtico diante do templo da casa, de vinte côvados de comprimento, segundo a largura da casa, e sua largura era de dez côvados diante da casa."
+    },
+    {
+     "n": 4,
+     "english": "Ur was consecrated to the worship of Sin, the Babylonian moon-god. It shared this honour, however, with another city, and this city was Haran, or Harran. Harran was in Mesopotamia, and took its name from the highroad which led through it from the east to the west. The name is Babylonian, and bears witness to its having been founded by a Babylonian king. The same witness is still more decisively borne by the worship paid in it to the Babylonian moon-god and by its ancient temple of Sin. Indeed, the temple of the moon-god at Harran was perhaps even more famous in the Assyrian and Babylonian world than the temple of the moon-god at Ur.\n\n “Between Ur and Harran there must, consequently, have been a close connection in early times, the record of which has not yet been recovered. It may be that Harran owed its foundation to a king of Ur; at any rate the two cities were bound together by the worship of the same deity, the closest and most enduring bond of union that existed in the ancient world. That Terah should have migrated from Ur to Harran, therefore, ceases to be extraordinary. If he left Ur at all, it was the most natural place to which to go. It was like passing from one court of a temple into another.\n\n “Such a remarkable coincidence between the Biblical narrative and the evidence of archaeological research cannot be the result of chance. The narrative must be historical; no writer of late date, even if he were a Babylonian, could have invented a story so exactly in accordance with what we now know to have been the truth. For a story of the kind to have been the invention of Palestinian tradition is equally impossible. To the unprejudiced mind there is no escape from the conclusion that the history of the migration of Terah from Ur to Harran is founded on fact",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1190,
+   "name": "Uz",
+   "sha256": "d4bdfffff05720a0d2f6d69e5638fe89cd7994726e773cd2a76db571e1b9e185",
+   "text": "Where Job lived (1:1; Jer. 25:20; Lam. 4:21), probably somewhere to the east or south-east of Palestine and north of Edom. It is mentioned in Scripture only in these three passages.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1191,
+   "name": "Uzal",
+   "sha256": "801ff8cb76f24d845d36859f6c8b16a26dc9e1c482ef029024643c3c1b48d983",
+   "text": "A wanderer, a descendant of Joktan (Gen. 10:27; 1 Chr. 1:21), the founder apparently of one of the Arab tribes; the name also probably of the province they occupied and of their chief city.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1192,
+   "name": "Uzza",
+   "sha256": "931dad14ad14edc0c65829c648a6fcc7b42b725cf5c6ac147793c73ca5a367ba",
+   "text": "Strengh, a garden in which Manasseh and Amon were buried (2 Kings 21:18, 26). It was probably near the king’s palace in Jerusalem, or may have formed part of the palace grounds. Manasseh may probably have acquired it from some one of this name.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1193,
+   "name": "Uzzen-sheerah",
+   "sha256": "73888e8e31937af9e3203e1ba2b5d9602877fa89f71602591bad4d82cfd65e87",
+   "text": "A town probably near Beth-horon. It derived its name from the daughter of Ephraim (1 Chr. 7:24).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1196,
+   "name": "Valley of Achor",
+   "sha256": "6a292a5e3c311325a9a805e1d69aabc96439c7b8acdb429a8479fe49422f6774",
+   "text": "Trouble, a valley near Jericho, so called in consequence of the trouble which the sin of Achan caused Israel (Josh. 7:24, 26). The expression “valley of Achor” probably became proverbial for that which caused trouble, and when Isaiah (Isa. 65:10) refers to it he uses it in this sense: “The valley of Achor, a place for herds to lie down in;” i.e., that which had been a source of calamity would become a source of blessing. Hosea also (Hos. 2:15) uses the expression in the same sense: “The valley of Achor for a door of hope;” i.e., trouble would be turned into joy, despair into hope. This valley has been identified with the Wady Kelt.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "valley of Achor",
+     "kind": "partial",
+     "verses": [
+      6007024
+     ],
+     "es": "Entonces Josué, y todo Israel con él, tomó á Achân hijo de Zera, y el dinero, y el manto, y el changote de oro, y sus hijos, y sus hijas, y sus bueyes, y sus asnos, y sus ovejas, y su tienda, y todo cuanto tenía, y lleváronlo todo al valle de Achôr;",
+     "pt": "Então Josué, e todo Israel com ele, tomou a Acã filho de zerá, e o dinheiro, e o manto, e a barra de ouro, e seus filhos, e suas filhas, e seus bois, e seus asnos, e suas ovelhas, e sua tenda, e tudo quanto tinha, e levaram-no tudo ao vale de Acor;"
+    },
+    {
+     "n": 1,
+     "english": "The valley of Achor, a place for herds to lie down in;",
+     "kind": "loose",
+     "verses": [
+      23065009,
+      23065010
+     ],
+     "es": "Mas sacaré simiente de Jacob, y de Judá heredero de mis montes; y mis escogidos poseerán por heredad la tierra, y mis siervos habitarán allí. Y será Sarón para habitación de ovejas, y el valle de Achôr para majada de vacas, á mi pueblo que me buscó.",
+     "pt": "Mas produzirei descendência de Jacó, e de Judá um herdeiro, que seja dono de meus montes; e meus escolhidos tomarão posse da terra ,e meus servos ali habitarão. E Sarom servirá de pasto de ovelhas, e o vale de Acor como lugar de repouso de gado, para o meu povo, que me buscou."
+    },
+    {
+     "n": 2,
+     "english": "The valley of Achor for a door of hope;",
+     "kind": "partial",
+     "verses": [
+      28002015
+     ],
+     "es": "Y daréle sus viñas desde allí, y el valle de Achôr por puerta de esperanza; y allí cantará como en los tiempos de su juventud, y como en el día de su subida de la tierra de Egipto.",
+     "pt": "E dali lhe darei suas vinhas, e o vale de Acor por porta de esperança; e ali ela cantará como nos tempos de sua juventude, como no dia em que subiu da terra do Egito."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1197,
+   "name": "Valley of Aijalon",
+   "sha256": "f7b0ca8f9fc70cc532518c6b15457517f2de33ee6b0c27293545d8e90c1c1d3b",
+   "text": "A town and valley originally assigned to the tribe of Dan, from which, however, they could not drive the Amorites (Judg. 1:35). It was one of the Levitical cities given to the Kohathites (1 Chr. 6:69). It was not far from Beth-shemesh (2 Chr. 28:18). It was the boundary between the kingdoms of Judah and Israel, and is frequently mentioned in Jewish history (2 Chr. 11:10; 1 Sam. 14:31; 1 Chr. 8:13). With reference to the valley named after the town, Joshua uttered the celebrated command, “Sun, stand thou still on Gibeon; and thou, Moon, in the valley of Ajalon” (Josh. 10:12). It has been identified as the modern Yalo, at the foot of the Beth-horon pass (q.v.). In the Tell Amarna letters Adoni-zedek (q.v.) speaks of the destruction of the “city of Ajalon” by the invaders, and describes himself as “afflicted, greatly afflicted” by the calamities that had come on the land, urging the king of Egypt to hasten to his help.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Sun, stand thou still on Gibeon; and thou, Moon, in the valley of Ajalon",
+     "kind": "loose",
+     "verses": [
+      6010011,
+      6010012
+     ],
+     "es": "Y como iban huyendo de los Israelitas, á la bajada de Beth-oron, Jehová echó sobre ellos del cielo grandes piedras hasta Azeca, y murieron: muchos más murieron de las piedras del granizo, que los que los hijos de Israel habían muerto á cuchillo. Entonces Josué habló á Jehová el día que Jehová entregó al Amorrheo delante de los hijos de Israel, y dijo en presencia de los Israelitas: Sol, detente en Gabaón; y tú, Luna, en el valle de Ajalón.",
+     "pt": "E quando iam fugindo dos israelitas, à descida de Bete-Horom, o SENHOR lançou sobre eles do céu grandes pedras até Azeca, e morreram: muitos mais morreram das pedras do granizo, que os que os filhos de Israel haviam matado à espada. Então Josué falou ao SENHOR o dia que o SENHOR entregou aos amorreus diante dos filhos de Israel, e disse em presença dos israelitas: Sol, detém-te em Gibeão; E tu, Lua, no vale de Aijalom."
+    },
+    {
+     "n": 1,
+     "english": "city of Ajalon",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "afflicted, greatly afflicted",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1198,
+   "name": "Plain of Aven",
+   "sha256": "34f4c791eb41a66a9672d5f4e5fdd5c2963ffb56cc0851a33343719e9c781e71",
+   "text": "In Amos 1:5 it denotes the Syrian Heliopolis, the modern Baalbec.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1199,
+   "name": "Valley of Baca",
+   "sha256": "186eda147d811add203db623426346dd64fe6d5c7f838cca22fe25ac658920f9",
+   "text": "(Ps. 84:6; R.V., “valley of weeping,” marg., “or balsam trees”), probably a valley in some part of Palestine, or generally some one of the valleys through which pilgrims had to pass on their way to the sanctuary of Jehovah on Zion; or it may be figuratively “a valley of weeping.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "valley of weeping,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "or balsam trees",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "a valley of weeping.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1200,
+   "name": "Valley of Beracah",
+   "sha256": "26f94707b945fb27b184ca44b8223873b5ca2dd488affd56429360b45b8aaa12",
+   "text": "A valley not far from Engedi, where Jehoshaphat overthrew the Moabites and Ammonites (2 Chr. 20:26). It has been identified with the valley of Bereikut. (R.V., “Beracah.”)",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Beracah.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1201,
+   "name": "Valley of Elah",
+   "sha256": "1f257dffc010be3c4fc45cb5daf6917c265fdc20150e6be56703953ae929d220",
+   "text": "Valley of, where the Israelites were encamped when David killed Goliath (1 Sam. 17:2, 19). It was near Shochoh of Judah and Azekah (17:1). It is the modern Wady es-Sunt, i.e., “valley of the acacia.” “The terebinths from which the valley of Elah takes its name still cling to their ancient soil. On the west side of the valley, near Shochoh, there is a very large and ancient tree of this kind known as the ’terebinth of Wady Sur,’ 55 feet in height, its trunk 17 feet in circumference, and the breadth of its shade no less than 75 feet. It marks the upper end of the Elah valley, and forms a noted object, being one of the largest terebinths in Palestine.” Geikie’s, The Holy Land, etc.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "valley of the acacia.",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "The terebinths from which the valley of Elah takes its name still cling to their ancient soil. On the west side of the valley, near Shochoh, there is a very large and ancient tree of this kind known as the ’terebinth of Wady Sur,’ 55 feet in height, its trunk 17 feet in circumference, and the breadth of its shade no less than 75 feet. It marks the upper end of the Elah valley, and forms a noted object, being one of the largest terebinths in Palestine.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1202,
+   "name": "Brook Eshcol",
+   "sha256": "0ab940773e0ce4d26b7e63cb5e278109ce72161ff82763d49804d3917c8f5eed",
+   "text": "A valley in which the spies obtained a fine cluster of grapes (Num. 13:23, 24; “the brook Eshcol,” A.V.; “the valley of Eshcol,” R.V.), which they took back with them to the camp of Israel as a specimen of the fruits of the Promised Land. On their way back they explored the route which led into the south (the Negeb) by the western edge of the mountains at Telilat el-‘Anab, i.e., “grape-mounds”, near Beersheba. “In one of these extensive valleys, perhaps in Wady Hanein, where miles of grape-mounds even now meet the eye, they cut the gigantic clusters of grapes, and gathered the pomegranates and figs, to show how goodly was the land which the Lord had promised for their inheritance.”, Palmer’s Desert of the Exodus.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the brook Eshcol,",
+     "kind": "partial",
+     "verses": [
+      4013024
+     ],
+     "es": "Y llamóse aquel lugar Nahal-escol, por el racimo que cortaron de allí los hijos de Israel.",
+     "pt": "E chamou-se aquele lugar vale de Escol pelo cacho que cortaram dali os filhos de Israel."
+    },
+    {
+     "n": 1,
+     "english": "the valley of Eshcol,",
+     "kind": "unsure",
+     "verses": [
+      4032009
+     ],
+     "es": "Que subieron hasta la arroyada de Escol, y después que vieron la tierra, preocuparon el ánimo de los hijos de Israel, para que no viniesen á la tierra que Jehová les había dado.",
+     "pt": "Que subiram até o vale de Escol, e depois que viram a terra, preocuparam o ânimo dos filhos de Israel, para que não viessem à terra que o SENHOR lhes havia dado."
+    },
+    {
+     "n": 2,
+     "english": "grape-mounds",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "In one of these extensive valleys, perhaps in Wady Hanein, where miles of grape-mounds even now meet the eye, they cut the gigantic clusters of grapes, and gathered the pomegranates and figs, to show how goodly was the land which the Lord had promised for their inheritance.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1207,
+   "name": "Valley of Hinnom",
+   "sha256": "b1b21cc03414522b0dd77cca609bf789581af939767d673508ee3292e8fcee76",
+   "text": "A deep, narrow ravine separating Mount Zion from the so-called “Hill of Evil Counsel.” It took its name from “some ancient hero, the son of Hinnom.” It is first mentioned in Josh. 15:8. It had been the place where the idolatrous Jews burned their children alive to Moloch and Baal. A particular part of the valley was called Tophet, or the “fire-stove,” where the children were burned. After the Exile, in order to show their abhorrence of the locality, the Jews made this valley the receptacle of the offal of the city, for the destruction of which a fire was, as is supposed, kept constantly burning there.\n\n The Jews associated with this valley these two ideas, (1) that of the sufferings of the victims that had there been sacrificed; and (2) that of filth and corruption. It became thus to the popular mind a symbol of the abode of the wicked hereafter. It came to signify hell as the place of the wicked. “It might be shown by infinite examples that the Jews expressed hell, or the place of the damned, by this word. The word Gehenna [the Greek contraction of Hinnom] was never used in the time of Christ in any other sense than to denote the place of future punishment.” About this fact there can be no question. In this sense the word is used eleven times in our Lord’s discourses (Matt. 23:33; Luke 12:5; Matt. 5:22, etc.).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Hill of Evil Counsel.",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "some ancient hero, the son of Hinnom.",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "fire-stove,",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "It might be shown by infinite examples that the Jews expressed hell, or the place of the damned, by this word. The word Gehenna [the Greek contraction of Hinnom] was never used in the time of Christ in any other sense than to denote the place of future punishment.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1211,
+   "name": "Valley of Jezreel",
+   "sha256": "8ef2dd134e6d5584473c003c8057eb9ffd9d5f80012a87af7ac8629d78fbf501",
+   "text": "Lying on the northern side of the city, between the ridges of Gilboa and Moreh, an offshoot of Esdraelon, running east to the Jordan (Josh. 17:16; Judg. 6:33; Hos. 1:5). It was the scene of the signal victory gained by the Israelites under Gideon over the Midianites, the Amalekites, and the “children of the east” (Judg. 6:3). Two centuries after this the Israelites were here defeated by the Philistines, and Saul and Jonathan, with the flower of the army of Israel, fell (1 Sam. 31:1-6).\n\n This name was in after ages extended to the whole of the plain of Esdraelon (q.v.). It was only this plain of Jezreel and that north of Lake Huleh that were then accessible to the chariots of the Canaanites (comp. 2 Kings 9:21; 10:15).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "children of the east",
+     "kind": "partial",
+     "verses": [
+      7006003
+     ],
+     "es": "Pues como los de Israel habían sembrado, subían los Madianitas, y Amalecitas, y los orientales: subían contra ellos;",
+     "pt": "Pois quando os de Israel haviam semeado, subiam os midianitas, e amalequitas, e os orientais: subiam contra eles;"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1214,
+   "name": "Valley of Rephaim",
+   "sha256": "124794922e60f547048d824fbc0e10303910d4eaa2271490b17bc7bbacafb0a2",
+   "text": "(Josh. 15:8; 18:16, R.V.). When David became king over all Israel, the Philistines, judging that he would now become their uncompromising enemy, made a sudden attack upon Hebron, compelling David to retire from it. He sought refuge in “the hold” at Adullam (2 Sam. 5:17-22), and the Philistines took up their position in the valley of Rephaim, on the west and south-west of Jerusalem. Thus all communication between Bethlehem and Jerusalem was intercepted. While David and his army were encamped here, there occurred that incident narrated in 2 Sam. 23:15-17. Having obtained divine direction, David led his army against the Philistines, and gained a complete victory over them. The scene of this victory was afterwards called Baalperazim (q.v.).\n\n A second time, however, the Philistines rallied their forces in this valley (2 Sam. 5:22). Again warned by a divine oracle, David led his army to Gibeon, and attacked the Philistines from the south, inflicting on them another severe defeat, and chasing them with great slaughter to Gezer (q.v.). There David kept in check these enemies of Israel. This valley is now called el-Bukei’a.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the hold",
+     "kind": "wording",
+     "verses": [
+      10005017
+     ],
+     "es": "Y oyendo los Filisteos que habían ungido á David por rey sobre Israel, todos los Filisteos subieron á buscar á David: lo cual como David oyó, vino á la fortaleza.",
+     "pt": "E ouvindo os filisteus que haviam ungido a Davi por rei sobre Israel, todos os filisteus subiram a buscar a Davi: o qual quando Davi ouviu, veio à fortaleza."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1215,
+   "name": "Valley of Salt",
+   "sha256": "66279b91f05ff56fa18a48c6914b55e09786df85d8a6496a275442ee2c588af4",
+   "text": "A place where it is said David smote the Syrians (2 Sam. 8:13). This valley (the’ Arabah) is between Judah and Edom on the south of the Dead Sea. Hence some interpreters would insert the words, “and he smote Edom,” after the words, “Syrians” in the above text. It is conjectured that while David was leading his army against the Ammonites and Syrians, the Edomites invaded the south of Judah, and that David sent Joab or Abishai against them, who drove them back and finally subdued Edom. (Comp. title to Ps. 60.)\n\n Here also Amaziah “slew of Edom ten thousand men” (2 Kings 14:7; comp. 8: 20-22 and 2 Chr. 25:5-11).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "and he smote Edom,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "Syrians",
+     "kind": "wording",
+     "verses": [
+      10008013
+     ],
+     "es": "Y ganó David fama cuando, volviendo de la rota de los Siros, hirió diez y ocho mil hombres en el valle de la sal.",
+     "pt": "E ganhou Davi fama quando, voltando da derrota dos sírios, feriu dezoito mil homens no vale do sal."
+    },
+    {
+     "n": 2,
+     "english": "slew of Edom ten thousand men",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1218,
+   "name": "Vale of Siddim",
+   "sha256": "ea47dc3910b9336c8eed44e41033bb7e8d12ab35a4a2b9fb5744f8760a4e34f7",
+   "text": "Valley of the broad plains, “which is the salt sea” (Gen. 14:3, 8, 10), between Engedi and the cities of the plain, at the south end of the Dead Sea. It was “full of slime-pits” (R.V., “bitumen pits”). Here Chedorlaomer and the confederate kings overthrew the kings of Sodom and the cities of the plain. God afterwards, on account of their wickedness, “overthrew those cities, and all the plain, and all the inhabitants of the cities;” and the smoke of their destruction “went up as the smoke of a furnace” (19:24-28), and was visible from Mamre, where Abraham dwelt.\n\n Some, however, contend that the “cities of the plain” were somewhere at the north of the Dead Sea.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "which is the salt sea",
+     "kind": "partial",
+     "verses": [
+      1014003
+     ],
+     "es": "Todos estos se juntaron en el valle de Siddim, que es el mar salado.",
+     "pt": "Todos estes se juntaram no vale de Sidim, que é o mar salgado."
+    },
+    {
+     "n": 1,
+     "english": "full of slime-pits",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "bitumen pits",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "overthrew those cities, and all the plain, and all the inhabitants of the cities;",
+     "kind": "partial",
+     "verses": [
+      1019025
+     ],
+     "es": "Y destruyó las ciudades, y toda aquella llanura, con todos los moradores de aquellas ciudades, y el fruto de la tierra.",
+     "pt": "E destruiu as cidades, e toda aquela planície, com todos os moradores daquelas cidades, e o fruto da terra."
+    },
+    {
+     "n": 4,
+     "english": "went up as the smoke of a furnace",
+     "kind": "partial",
+     "verses": [
+      1019028
+     ],
+     "es": "Y miró hacia Sodoma y Gomorra, y hacia toda la tierra de aquella llanura miró; y he aquí que el humo subía de la tierra como el humo de un horno.",
+     "pt": "E olhou até Sodoma e Gomorra, e até toda a terra daquela planície olhou; e eis que a fumaça subia da terra como a fumaça de um forno."
+    },
+    {
+     "n": 5,
+     "english": "cities of the plain",
+     "kind": "unsure",
+     "verses": [
+      1013012
+     ],
+     "es": "Abram asentó en la tierra de Canaán, y Lot asentó en las ciudades de la llanura, y fué poniendo sus tiendas hasta Sodoma.",
+     "pt": "Abrão assentou na terra de Canaã, e Ló assentou nas cidades da planície, e foi pondo suas tendas até Sodoma."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1220,
+   "name": "Valley of Sorek",
+   "sha256": "ac8562b4748b5f035dc0bf186da22eecf83745b144fe798c90b55080c409d726",
+   "text": "Choice vine, the name of a valley, i.e., a torrent-bed, now the Wady Surar, “valley of the fertile spot,” which drains the western Judean hills, and flowing by Makkedah and Jabneel, falls into the sea some eight miles south of Joppa. This was the home of Deliah, whom Samson loved (Judg. 16:4).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "valley of the fertile spot,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1221,
+   "name": "Valley of Succoth",
+   "sha256": "ff10a4b7936b392289f868e69b24fb68fbb8b12dcd8da0911fad32e9e8d329dc",
+   "text": "A city on the east of Jordan, identified with Tell Dar’ala, a high mound, a mass of debris, in the plain north of Jabbok and about one mile from it (Josh. 13:27). Here Jacob (Gen. 32:17, 30; 33:17), on his return from Padan-aram after his interview with Esau, built a house for himself and made booths for his cattle. The princes of this city churlishly refused to afford help to Gideon and his 300 men when “faint yet pursuing” they followed one of the bands of the fugitive Midianites after the great victory at Gilboa. After overtaking and routing this band at Karkor, Gideon on his return visited the rulers of the city with severe punishment. “He took the elders of the city, and thorns of the wilderness and briers, and with them he taught the men of Succoth” (Judg. 8:13-16). At this place were erected the foundries for casting the metal-work for the temple (1 Kings 7:46).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "faint yet pursuing",
+     "kind": "unsure",
+     "verses": [
+      7008004
+     ],
+     "es": "Y vino Gedeón al Jordán para pasar, él y los trescientos hombres que traía consigo, cansados del alcance.",
+     "pt": "E veio Gideão ao Jordão para passar, ele e os trezentos homens que trazia consigo, cansados, mas ainda perseguindo."
+    },
+    {
+     "n": 1,
+     "english": "He took the elders of the city, and thorns of the wilderness and briers, and with them he taught the men of Succoth",
+     "kind": "partial",
+     "verses": [
+      7008016
+     ],
+     "es": "Y tomó á los ancianos de la ciudad, y espinas y abrojos del desierto, y castigó con ellos á los de Succoth.",
+     "pt": "E tomou aos anciãos da cidade, e espinhos e cardos do deserto, e castigou com eles aos de Sucote."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1222,
+   "name": "Valley of Zeboim",
+   "sha256": "d88a8a811ff271c82ef7dd5db2b5f3993bf9a8648ef7112a433f1a4930161676",
+   "text": "A valley or rugged glen somewhere near Gibeah in Benjamin (1 Sam. 13:18). It was probably the ravine now bearing the name Wady Shakh-ed-Dub’a, or “ravine of the hyena,” north of Jericho.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "ravine of the hyena,",
+     "kind": "other"
+    }
+   ]
+  }
+ ],
+ "glossary": {
+  "Abimelech": {
+   "pt": "Abimeleque"
+  },
+  "Abishai": {
+   "es": "Abisai",
+   "pt": "Abisai"
+  },
+  "Abraham": {
+   "pt": "Abraão"
+  },
+  "Achan": {
+   "es": "Acán",
+   "pt": "Acã"
+  },
+  "Adoni-zedek": {
+   "es": "Adonisedec",
+   "pt": "Adoni-Zedeque"
+  },
+  "Adullam": {
+   "es": "Adulam",
+   "pt": "Adulão"
+  },
+  "Ahaz": {
+   "es": "Acaz (person); Ahaz (person)",
+   "pt": "Acaz"
+  },
+  "Alexander": {
+   "es": "Alejandro",
+   "pt": "Alexandre"
+  },
+  "Amaziah": {
+   "es": "Amasías",
+   "pt": "Amazias"
+  },
+  "Ammon": {
+   "es": "Amón",
+   "pt": "Amom"
+  },
+  "Amon": {
+   "es": "Amón",
+   "pt": "Amom"
+  },
+  "Amos": {
+   "es": "Amós",
+   "pt": "Amós"
+  },
+  "Anab": {
+   "pt": "Anabe"
+  },
+  "Arab": {
+   "pt": "Arabe"
+  },
+  "Arabah": {
+   "es": "Arabá",
+   "pt": "Arabá"
+  },
+  "Arabia": {
+   "pt": "Arábia"
+  },
+  "Argob": {
+   "pt": "Argobe"
+  },
+  "Asher": {
+   "es": "Aser",
+   "pt": "Aser"
+  },
+  "Asia": {
+   "pt": "Ásia"
+  },
+  "Assyria": {
+   "es": "Asiria",
+   "pt": "Assíria"
+  },
+  "Azekah": {
+   "es": "Azeca",
+   "pt": "Azeca"
+  },
+  "Babylonia": {
+   "es": "Babilonia",
+   "pt": "Babilônia"
+  },
+  "Beersheba": {
+   "es": "Beer-seba",
+   "pt": "Berseba"
+  },
+  "Benjamin": {
+   "es": "Benjamín",
+   "pt": "Benjamim"
+  },
+  "Berea": {
+   "pt": "Bereia"
+  },
+  "Beth-horon": {
+   "es": "Bet-oron",
+   "pt": "Bete-Horom"
+  },
+  "Beth-shemesh": {
+   "es": "Bet-semes",
+   "pt": "Bete-Semes"
+  },
+  "Bethlehem": {
+   "es": "Bet-lehem",
+   "pt": "Belém"
+  },
+  "Caesarea": {
+   "es": "Cesarea",
+   "pt": "Cesareia"
+  },
+  "Chaldea": {
+   "es": "Caldea",
+   "pt": "Caldeia"
+  },
+  "Chedorlaomer": {
+   "es": "Quédorlaomer",
+   "pt": "Quedorlaomer"
+  },
+  "Dan": {
+   "pt": "Dã"
+  },
+  "David": {
+   "pt": "Davi"
+  },
+  "Egypt": {
+   "es": "Egipto",
+   "pt": "Egito"
+  },
+  "Elah": {
+   "es": "Ela",
+   "pt": "Elá"
+  },
+  "Elijah": {
+   "es": "Elías",
+   "pt": "Elias"
+  },
+  "Engedi": {
+   "es": "Engadi",
+   "pt": "En-Gedi"
+  },
+  "Ephraim": {
+   "es": "Efraim",
+   "pt": "Efraim"
+  },
+  "Erech": {
+   "es": "Erec"
+  },
+  "Esau": {
+   "es": "Esaú",
+   "pt": "Esaú"
+  },
+  "Eshcol": {
+   "es": "Escol",
+   "pt": "Escol"
+  },
+  "Ethiopia": {
+   "es": "Etiopía",
+   "pt": "Etiópia"
+  },
+  "Euphrates": {
+   "es": "Eufrates",
+   "pt": "Eufrates"
+  },
+  "Gaash": {
+   "es": "Gaas",
+   "pt": "Gaás"
+  },
+  "Galilee": {
+   "es": "Galilea",
+   "pt": "Galileia"
+  },
+  "Gibeah": {
+   "es": "Gabaa (place); Gibea (place)",
+   "pt": "Gibeá"
+  },
+  "Gibeon": {
+   "es": "Gabaón",
+   "pt": "Gibeom (person); Gibeão (place)"
+  },
+  "Gideon": {
+   "es": "Gedeón",
+   "pt": "Gideão"
+  },
+  "Gilead": {
+   "es": "Galaad",
+   "pt": "Gileade"
+  },
+  "Goliath": {
+   "es": "Goliat",
+   "pt": "Golias"
+  },
+  "Greece": {
+   "es": "Grecia",
+   "pt": "Grécia"
+  },
+  "Haran": {
+   "es": "Harán (person); Arán (person)",
+   "pt": "Harã"
+  },
+  "Hebron": {
+   "es": "Hebrón",
+   "pt": "Hebrom"
+  },
+  "Herod": {
+   "es": "Herodes",
+   "pt": "Herodes"
+  },
+  "Herod Antipas": {
+   "es": "Herodes Antipas",
+   "pt": "Herodes Antipas"
+  },
+  "Hosea": {
+   "es": "Oseas",
+   "pt": "Oseias"
+  },
+  "India": {
+   "pt": "Índia"
+  },
+  "Isaiah": {
+   "es": "Isaías",
+   "pt": "Isaías"
+  },
+  "Italy": {
+   "es": "Italia",
+   "pt": "Itália"
+  },
+  "Jabbok": {
+   "es": "Jaboc",
+   "pt": "Jaboque"
+  },
+  "Jacob": {
+   "pt": "Jacó"
+  },
+  "Jason": {
+   "es": "Jasón",
+   "pt": "Jasão"
+  },
+  "Jehoshaphat": {
+   "es": "Josafat",
+   "pt": "Josafá"
+  },
+  "Jephthah": {
+   "es": "Jefté",
+   "pt": "Jefté"
+  },
+  "Jericho": {
+   "es": "Jericó",
+   "pt": "Jericó"
+  },
+  "Jeroboam": {
+   "pt": "Jeroboão"
+  },
+  "Jerusalem": {
+   "es": "Jerusalén",
+   "pt": "Jerusalém"
+  },
+  "Joab": {
+   "pt": "Joabe"
+  },
+  "Job": {
+   "pt": "Jó"
+  },
+  "John": {
+   "es": "Juan",
+   "pt": "João"
+  },
+  "Joktan": {
+   "es": "Joctán",
+   "pt": "Joctã"
+  },
+  "Jonathan": {
+   "es": "Jonatán",
+   "pt": "Jônatas"
+  },
+  "Joppa": {
+   "es": "Jope",
+   "pt": "Jope"
+  },
+  "Jordan": {
+   "es": "Jordán",
+   "pt": "Jordão"
+  },
+  "Joshua": {
+   "es": "Josué (person); Jesuá (person)",
+   "pt": "Josué (person); Jesua (person)"
+  },
+  "Judah": {
+   "es": "Judá (person); Jehudas (person)",
+   "pt": "Judá"
+  },
+  "Karkor": {
+   "es": "Carcor",
+   "pt": "Carcor"
+  },
+  "Lydia": {
+   "es": "Lidia",
+   "pt": "Lídia"
+  },
+  "Macedonia": {
+   "pt": "Macedônia"
+  },
+  "Makkedah": {
+   "es": "Maceda",
+   "pt": "Maquedá"
+  },
+  "Mamre": {
+   "pt": "Manre"
+  },
+  "Manasseh": {
+   "es": "Manasés",
+   "pt": "Manassés"
+  },
+  "Menahem": {
+   "es": "Manahem",
+   "pt": "Menaém"
+  },
+  "Mesopotamia": {
+   "pt": "Mesopotâmia"
+  },
+  "Miletus": {
+   "es": "Mileto",
+   "pt": "Mileto"
+  },
+  "Moreh": {
+   "es": "Moreh (place); More (place)",
+   "pt": "Moré"
+  },
+  "Mount Zion": {
+   "es": "Monte Sión",
+   "pt": "Monte Sião"
+  },
+  "Mysia": {
+   "es": "Misia",
+   "pt": "Mísia"
+  },
+  "Nebuchadnezzar": {
+   "es": "Nabucodonosor",
+   "pt": "Nabucodonosor"
+  },
+  "Negeb": {
+   "pt": "Negueve"
+  },
+  "Omri": {
+   "pt": "Onri"
+  },
+  "On": {
+   "es": "Hon (person); On (place)",
+   "pt": "Om"
+  },
+  "Ophir": {
+   "es": "Ofir",
+   "pt": "Ofir"
+  },
+  "Paul": {
+   "es": "Pablo",
+   "pt": "Paulo"
+  },
+  "Philip": {
+   "es": "Felipe",
+   "pt": "Filipe"
+  },
+  "Ptolemais": {
+   "es": "Tolemaida",
+   "pt": "Ptolemaida"
+  },
+  "Rakkath": {
+   "es": "Raccat",
+   "pt": "Racate"
+  },
+  "Rome": {
+   "es": "Roma",
+   "pt": "Roma"
+  },
+  "Samson": {
+   "es": "Samsón",
+   "pt": "Sansão"
+  },
+  "Saul": {
+   "es": "Saúl"
+  },
+  "Sea of Galilee": {
+   "es": "Mar de Galilea",
+   "pt": "Mar da Galileia"
+  },
+  "Sea of Tiberias": {
+   "es": "Mar de Tiberias",
+   "pt": "Mar de Tiberíades"
+  },
+  "Shallum": {
+   "es": "Sallum (person); Sellum (person)",
+   "pt": "Salum"
+  },
+  "Shalmaneser": {
+   "es": "Salmanasar",
+   "pt": "Salmaneser"
+  },
+  "Shechem": {
+   "es": "Sequem (person); Siquem (place)",
+   "pt": "Siquém"
+  },
+  "Shinar": {
+   "es": "Sinar",
+   "pt": "Sinear"
+  },
+  "Sidon": {
+   "es": "Sidón",
+   "pt": "Sidom"
+  },
+  "Simeon": {
+   "es": "Simeón (person); Simón (person)",
+   "pt": "Simeão"
+  },
+  "Sin": {
+   "pt": "Sim"
+  },
+  "Sinai": {
+   "es": "Sinaí"
+  },
+  "Sodom": {
+   "es": "Sodoma",
+   "pt": "Sodoma"
+  },
+  "Solomon": {
+   "es": "Salomón",
+   "pt": "Salomão"
+  },
+  "Spain": {
+   "es": "España",
+   "pt": "Espanha"
+  },
+  "Stephen": {
+   "es": "Esteban",
+   "pt": "Estêvão"
+  },
+  "Succoth": {
+   "es": "Succot",
+   "pt": "Sucote"
+  },
+  "Susa": {
+   "es": "Susán",
+   "pt": "Susã"
+  },
+  "Syria": {
+   "es": "Siria",
+   "pt": "Síria"
+  },
+  "Terah": {
+   "es": "Taré",
+   "pt": "Terá (person); Tera (place)"
+  },
+  "Thessalonica": {
+   "es": "Tesalónica",
+   "pt": "Tessalônica"
+  },
+  "Three Taverns": {
+   "es": "Tres Tabernas",
+   "pt": "Três Vendas"
+  },
+  "Tiberias": {
+   "pt": "Tibérias"
+  },
+  "Tiberius": {
+   "es": "Tiberio",
+   "pt": "Tibério"
+  },
+  "Timnath-heres": {
+   "es": "Timnat-sera",
+   "pt": "Timnate-Heres"
+  },
+  "Tiphsah": {
+   "es": "Tifsa",
+   "pt": "Tifsa"
+  },
+  "Tirzah": {
+   "es": "Tirsa",
+   "pt": "Tirza (person); Tirsa (place)"
+  },
+  "Troas": {
+   "pt": "Trôade"
+  },
+  "Tyre": {
+   "es": "Tiro",
+   "pt": "Tiro"
+  },
+  "Zimri": {
+   "pt": "Zinri"
+  },
+  "Zion": {
+   "es": "Sión",
+   "pt": "Sião"
+  }
+ }
+}

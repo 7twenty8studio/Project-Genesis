@@ -1,0 +1,1727 @@
+{
+ "batch": "015",
+ "entries": [
+  {
+   "kind": "person",
+   "id": 1812,
+   "name": "Lazarus",
+   "sha256": "e116de834802851c7a42ad9ee045b8fddc7a5ce9619fbb828d09b101a03e3e80",
+   "text": "The brother of Mary and Martha of Bethany. He was raised from the dead after he had lain four days in the tomb (John 11:1-44). This miracle so excited the wrath of the Jews that they sought to put both Jesus and Lazarus to death.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1813,
+   "name": "Leah",
+   "sha256": "8ad3f9ec765882ea8f899be28068e0f76f5dba3f683474e263064bab10327abc",
+   "text": "Weary, the eldest daughter of Laban, and sister of Rachel (Gen. 29:16). Jacob took her to wife through a deceit of her father (Gen. 29:23). She was “tender-eyed” (17). She bore to Jacob six sons (32-35), also one daughter, Dinah (30:21). She accompanied Jacob into Canaan, and died there before the time of the going down into Egypt (Gen. 31), and was buried in the cave of Machpelah (49:31).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "tender-eyed",
+     "kind": "wording",
+     "verses": [
+      1029017
+     ],
+     "es": "Y los ojos de Lea eran tiernos, pero Rachêl era de lindo semblante y de hermoso parecer.",
+     "pt": "E os olhos de Lia eram tenros, mas Raquel era de lindo semblante e de bela aparência."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1815,
+   "name": "Lebbaeus Thaddaeus",
+   "sha256": "0360b9d7916b70115f213c594df355d2ef81d00b45dbe39f778479af00c209d7",
+   "text": "Breast, the name of one of the apostles (Mark 3:18), called “Lebbaeus” in Matt. 10:3, and in Luke 6:16, “Judas the brother of James;” while John (14:22), probably referring to the same person, speaks of “Judas, not Iscariot.” These different names all designate the same person, viz., Jude or Judas, the author of the epistle.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Lebbaeus",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "Judas the brother of James;",
+     "kind": "partial",
+     "verses": [
+      42006016
+     ],
+     "es": "Judas hermano de Jacobo, y Judas Iscariote, que también fué el traidor.",
+     "pt": "Judas de Tiago, e Judas Iscariotes, o mesmo que foi o traidor."
+    },
+    {
+     "n": 2,
+     "english": "Judas, not Iscariot.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1817,
+   "name": "Lemuel",
+   "sha256": "c3bda682cb9be9062e7e32d193e7f827074af8506bc31b6b304bd9c68250968d",
+   "text": "Dedicated to God, a king whom his mother instructed (Prov. 31:1-9). Nothing is certainly known concerning him. The rabbis identified him with Solomon.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1819,
+   "name": "Leummim",
+   "sha256": "280eb75f6dcd2f5b751bbbf67e106e407aa1bae69c4a328bf14663e09f329b75",
+   "text": "Peoples; nations, the last mentioned of the three sons of Dedan, and head of an Arabian tribe (Gen. 25:3).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1820,
+   "name": "Levi (patriarch)",
+   "sha256": "207a406c9b0b7fdeb9d3554e83ee1a7f5e8b394e2302d38dbf0f77eed0a5d10c",
+   "text": "The third son of Jacob by Leah. The origin of the name is found in Leah’s words (Gen. 29:34), “This time will my husband be joined [Heb. yillaveh] unto me.” He is mentioned as taking a prominent part in avenging his sister Dinah (Gen. 34:25-31). He and his three sons went down with Jacob (46:11) into Egypt, where he died at the age of one hundred and thirty-seven years (Ex. 6:16).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "This time will my husband be joined [Heb. yillaveh] unto me.",
+     "kind": "loose",
+     "verses": [
+      1029034
+     ],
+     "es": "Y concibió otra vez, y parió un hijo, y dijo: Ahora esta vez se unirá mi marido conmigo, porque le he parido tres hijos: por tanto, llamó su nombre Leví.",
+     "pt": "E concebeu outra vez, e deu à luz um filho, e disse: Agora esta vez meu marido se apegará a mim, porque lhe dei três filhos; portanto, chamou seu nome Levi."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1821,
+   "name": "Levi",
+   "sha256": "15750da07414441ae229b52079994d72e334f52fc822d734954a94dbd427ef13",
+   "text": "Luke 3:24.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1822,
+   "name": "Levi",
+   "sha256": "b2a38493a6c29f9156340800bbe2333e7a9afe05d7b4ad71841001eb166797ae",
+   "text": "The father of Matthat, and son of Simeon, of the ancestors of Christ (Luke 3:29).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1823,
+   "name": "Laadan",
+   "sha256": "0a88ca605ab76e06c6f6b4a687ef2e2b9ac58553630656f53a65e4c1345d4fb3",
+   "text": "White, one of the two sons of Gershon, the son of Levi (Ex. 6:17; Num. 3:18, 21).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1827,
+   "name": "Lo-ammi",
+   "sha256": "6914ddb90a5661280730ba5e2038c05bdac249e25ded7137a107859096585d77",
+   "text": "Not my people, a symbolical name given by God’s command to Hosea’s second son in token of Jehovah’s rejection of his people (Hos. 1:9, 10), his treatment of them as a foreign people. This Hebrew word is rendered by “not my people” in ver. 10; 2:23.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "not my people",
+     "kind": "partial",
+     "verses": [
+      28001009
+     ],
+     "es": "Y dijo Dios: Ponle por nombre Lo-ammi: porque vosotros no sois mi pueblo, ni yo seré vuestro Dios.",
+     "pt": "E o SENHOR disse: Chama o nome dele de Não-Meu-Povo; porque vós não sois meu povo, por isso eu não serei vosso Deus ."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1828,
+   "name": "Lois",
+   "sha256": "bf2989854ae735ab5913dacf3679fdb089505f188fec38c0847412ee607e52e0",
+   "text": "The maternal grandmother of Timothy. She is commended by Paul for her faith (2 Tim. 1:5).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1829,
+   "name": "Lo-ruhamah",
+   "sha256": "161005510ed1b0ea6b79e84edafaffc422caa713096ddb88d36f743a6372913d",
+   "text": "Not pitied, the name of the prophet Hosea’s first daughter, a type of Jehovah’s temporary rejection of his people (Hos. 1:6; 2:23).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1830,
+   "name": "Lot",
+   "sha256": "5ad5ab4d33c3c3cf97444d50c34f6fb0490683769b387ba43b1551c560e339b6",
+   "text": "(Heb. goral, a “pebble”), a small stone used in casting lots (Num. 33:54; Jonah 1:7). The lot was always resorted to by the Hebrews with strictest reference to the interposition of God, and as a method of ascertaining the divine will (Prov. 16:33), and in serious cases of doubt (Esther 3:7). Thus the lot was used at the division of the land of Canaan among the serveral tribes (Num. 26:55; 34:13), at the detection of Achan (Josh. 7:14, 18), the election of Saul to be king (1 Sam. 10:20, 21), the distribution of the priestly offices of the temple service (1 Chr. 24:3, 5, 19; Luke 1:9), and over the two goats at the feast of Atonement (Lev. 16:8). Matthias, who was “numbered with the eleven” (Acts 1:24-26), was chosen by lot.\n\n This word also denotes a portion or an inheritance (Josh. 15:1; Ps. 125:3; Isa. 17:4), and a destiny, as assigned by God (Ps. 16:5; Dan. 12:13).\n\n Lot, (Heb. lot), a covering; veil, the son of Haran, and nephew of Abraham (Gen. 11:27). On the death of his father, he was left in charge of his grandfather Terah (31), after whose death he accompanied his uncle Abraham into Canaan (12:5), thence into Egypt (10), and back again to Canaan (13:1). After this he separated from him and settled in Sodom (13:5-13). There his righteous soul was “vexed” from day to day (2 Pet. 2:7), and he had great cause to regret this act. Not many years after the separation he was taken captive by Chedorlaomer, and was rescued by Abraham (Gen. 14). At length, when the judgment of God descended on the guilty cities of the plain (Gen. 19:1-20), Lot was miraculously delivered. When fleeing from the doomed city his wife “looked back from behind him, and became a pillar of salt.” There is to this day a peculiar crag at the south end of the Dead Sea, near Kumran, which the Arabs call Bint Sheik Lot, i.e., Lot’s wife. It is “a tall, isolated needle of rock, which really does bear a curious resemblance to an Arab woman with a child upon her shoulder.” From the words of warning in Luke 17:32, “Remember Lot’s wife,” it would seem as if she had gone back, or tarried so long behind in the desire to save some of her goods, that she became involved in the destruction which fell on the city, and became a stiffened corpse, fixed for a time in the saline incrustations. She became “a pillar of salt”, i.e., as some think, of asphalt.\n\n Lot and his daughters sought refuge first in Zoar, and then, fearing to remain there longer, retired to a cave in the neighbouring mountains (Gen. 19:30). Lot has recently been connected with the people called on the Egyptian monuments Rotanu or Lotanu, who is supposed to have been the hero of the Edomite tribe Lotan.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "pebble",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "numbered with the eleven",
+     "kind": "partial",
+     "verses": [
+      44001026
+     ],
+     "es": "Y les echaron suertes, y cayó la suerte sobre Matías; y fué contado con los once apóstoles.",
+     "pt": "E lançaram-lhes as sortes; e caiu a sorte sobre Matias. E ele passou a ser contado junto com os onze apóstolos."
+    },
+    {
+     "n": 2,
+     "english": "vexed",
+     "kind": "wording",
+     "verses": [
+      61002007
+     ],
+     "es": "Y libró al justo Lot, acosado por la nefanda conducta de los malvados;",
+     "pt": "E livrou ao justo Ló, que estava cansado do corrupto modo de viver dos maus."
+    },
+    {
+     "n": 3,
+     "english": "looked back from behind him, and became a pillar of salt.",
+     "kind": "loose",
+     "verses": [
+      1019025,
+      1019026
+     ],
+     "es": "Y destruyó las ciudades, y toda aquella llanura, con todos los moradores de aquellas ciudades, y el fruto de la tierra. Entonces la mujer de Lot miró atrás, á espaldas de él, y se volvió estatua de sal.",
+     "pt": "E destruiu as cidades, e toda aquela planície, com todos os moradores daquelas cidades, e o fruto da terra. Então a mulher de Ló olhou atrás, às costas dele, e se tornou estátua de sai."
+    },
+    {
+     "n": 4,
+     "english": "a tall, isolated needle of rock, which really does bear a curious resemblance to an Arab woman with a child upon her shoulder.",
+     "kind": "other"
+    },
+    {
+     "n": 5,
+     "english": "Remember Lot’s wife,",
+     "kind": "whole",
+     "verses": [
+      42017032
+     ],
+     "es": "Acordaos de la mujer de Lot.",
+     "pt": "Lembrai-vos da mulher de Ló."
+    },
+    {
+     "n": 6,
+     "english": "a pillar of salt",
+     "kind": "unsure",
+     "verses": [
+      1019026
+     ],
+     "es": "Entonces la mujer de Lot miró atrás, á espaldas de él, y se volvió estatua de sal.",
+     "pt": "Então a mulher de Ló olhou atrás, às costas dele, e se tornou estátua de sai."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1831,
+   "name": "Lotan",
+   "sha256": "440258fa08162e9d5b6bad26cd082858f8d75b041ed6ca3a93fb6d6e496c883a",
+   "text": "Coverer, one of the sons of Seir, the Horite (Gen. 36:20, 29).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1832,
+   "name": "Lucifer",
+   "sha256": "96e63bc2aca1115d1f87e77be559f8f518936342a709d5cd142a0e61ace0aea0",
+   "text": "Brilliant star, a title given to the king of Babylon (Isa. 14:12) to denote his glory.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1833,
+   "name": "Lucius",
+   "sha256": "65c6656315112f5696d8f7bf738c2926c88a91373205d5c519da4237a4f3f47e",
+   "text": "Of Cyrene, a Christian teacher at Antioch (Acts 13:1), and Paul’s kinsman (Rom. 16:21). His name is Latin, but his birthplace seems to indicate that he was one of the Jews of Cyrene, in North Africa.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1834,
+   "name": "Lud",
+   "sha256": "e2be97fa6294a8cb0b5fe065c8fb5cfe678480d64370e3e51f158e7029e8e26c",
+   "text": "The fourth son of Shem (Gen. 10:22; 1 Chr. 1:17), ancestor of the Lydians probably.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1835,
+   "name": "Ludim",
+   "sha256": "40a21b793358078365c29aa3368ee4ba1d94411f7987887858391c31a8cef407",
+   "text": "Probably the same as Lud (2) (comp. Gen. 10:13; 1 Chr. 1:11). They are associated (Jer. 46:9) with African nations as mercenaries of the king of Egypt.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1836,
+   "name": "Luke",
+   "sha256": "2cbf5dcdfa5d4e726ac5c5131cf25ee723ca5cd20cfc074ca7a1b5e1184d5ad0",
+   "text": "The evangelist, was a Gentile. The date and circumstances of his conversion are unknown. According to his own statement (Luke 1:2), he was not an “eye-witness and minister of the word from the beginning.” It is probable that he was a physician in Troas, and was there converted by Paul, to whom he attached himself. He accompanied him to Philippi, but did not there share his imprisonment, nor did he accompany him further after his release in his missionary journey at this time (Acts 17:1). On Paul’s third visit to Philippi (20:5, 6) we again meet with Luke, who probably had spent all the intervening time in that city, a period of seven or eight years. From this time Luke was Paul’s constant companion during his journey to Jerusalem (20:6-21:18). He again disappears from view during Paul’s imprisonment at Jerusalem and Caesarea, and only reappears when Paul sets out for Rome (27:1), whither he accompanies him (28:2, 12-16), and where he remains with him till the close of his first imprisonment (Philemon 1:24; Col. 4:14). The last notice of the “beloved physician” is in 2 Tim. 4:11.\n\n There are many passages in Paul’s epistles, as well as in the writings of Luke, which show the extent and accuracy of his medical knowledge.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "eye-witness and minister of the word from the beginning.",
+     "kind": "loose",
+     "verses": [
+      62001001,
+      62001002
+     ],
+     "es": "LO que era desde el principio, lo que hemos oído, lo que hemos visto con nuestros ojos, lo que hemos mirado, y palparon nuestras manos tocante al Verbo de vida; (Porque la vida fué manifestada, y vimos, y testificamos, y os anunciamos aquella vida eterna, la cual estaba con el Padre, y nos ha aparecido;)",
+     "pt": "O que era desde o princípio, o que ouvimos, o que vimos com os nossos olhos, o que temos contemplado, e nossas mãos tocaram, quanto à Palavra da vida, (pois a vida já foi manifesta, e nós a vimos, demos testemunho, e vos anunciamos a vida eterna, que estava com o Pai, e a nós foi manifesta)"
+    },
+    {
+     "n": 1,
+     "english": "beloved physician",
+     "kind": "wording",
+     "verses": [
+      51004014
+     ],
+     "es": "Os saluda Lucas, el médico amado, y Demas.",
+     "pt": "Lucas, o médico amado, vos saúda; e também Demas."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1837,
+   "name": "Lydia",
+   "sha256": "23342bf643b63c5e8127a9d1598b8d9e0eee3f9b11d085328cf9891c345d32d3",
+   "text": "A woman of Thyatira, a “seller of purple,” who dwelt in Philippi (Acts 16:14, 15). She was not a Jewess but a proselyte. The Lord opened her heart as she heard the gospel from the lips of Paul (16:13). She thus became the first in Europe who embraced Christianity. She was a person apparently of considerable wealth, for she could afford to give a home to Paul and his companions.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "seller of purple,",
+     "kind": "partial",
+     "verses": [
+      44016014
+     ],
+     "es": "Entonces una mujer llamada Lidia, que vendía púrpura en la ciudad de Tiatira, temerosa de Dios, estaba oyendo; el corazón de la cual abrió el Señor para que estuviese atenta á lo que Pablo decía.",
+     "pt": "E uma certa mulher, por nome Lídia, vendedora de púrpura, da cidade de Tiatira, que servia a Deus; ela nos ouviu; o coração da qual o Senhor abriu, para que prestasse atenção ao que Paulo dizia."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1838,
+   "name": "Lysanias",
+   "sha256": "b51aaf0e104857216e7f8402121f144a0d26072e80de18128626847565c1020c",
+   "text": "Tetrarch of Abilene (Luke 3:1), on the eastern slope of Anti-Lebanon, near the city of Damascus.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1839,
+   "name": "Maacah",
+   "sha256": "53681b9548bd4b63e8de1fe7a670550e9f4da248080807d7f387b3a70c481f45",
+   "text": "A daughter of Talmai, king of the old native population of Geshur. She became one of David’s wives, and was the mother of Absalom (2 Sam. 3:3).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1841,
+   "name": "Maachah",
+   "sha256": "30191459cd0d2635609ce59131c0e552112ef5d620bb8886ad58c97a324209ea",
+   "text": "The daughter of Abishalom (called Absalom, 2 Chr. 11:20-22), the third wife of Rehoboam, and mother of Abijam (1 Kings 15:2). She is called “Michaiah the daughter of Uriel,” who was the husband of Absalom’s daughter Tamar (2 Chr. 13:2). Her son Abijah or Abijam was heir to the throne.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Michaiah the daughter of Uriel,",
+     "kind": "partial",
+     "verses": [
+      14013002
+     ],
+     "es": "Y reinó tres años en Jerusalem. El nombre de su madre fué Michâía hija de Uriel de Gabaa. Y hubo guerra entre Abías y Jeroboam.",
+     "pt": "E reinou três anos em Jerusalém. O nome de sua mãe foi Micaia filha de Uriel de Gibeá. E havia guerra entre Abias e Jeroboão."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1845,
+   "name": "Maachah",
+   "sha256": "a2089e412aee51c47dec0ea2feeaa233d6a468300c79151207e8b707ad0c729b",
+   "text": "The father of Hanan, who was one of David’s body-guard (1 Chr. 11:43).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1849,
+   "name": "Maaseiah",
+   "sha256": "0961874be18f08d493c6ba3638c077e95bea45442a9080a4ff282c943aca92d4",
+   "text": "One of the Levites whom David appointed as porter for the ark (1 Chr. 15:18, 20).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1850,
+   "name": "Maaseiah",
+   "sha256": "a79d5f6cd1fc96a7bfdcab9f8d91b97b6c8aabb47ce959accd97704cd3a6a382",
+   "text": "One of the “captains of hundreds” associated with Jehoiada in restoring king Jehoash to the throne (2 Chr. 23:1).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "captains of hundreds",
+     "kind": "unsure",
+     "verses": [
+      4031048
+     ],
+     "es": "Y llegaron á Moisés los jefes de los millares de aquel ejército, los tribunos y centuriones;",
+     "pt": "E chegaram a Moisés os chefes dos milhares daquele exército, os comandantes de mil e comandantes de cem;"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1853,
+   "name": "Maaseiah",
+   "sha256": "9bff8c94761b404de73c4e6781dee8ca96e9f1f540bd4ca38e7dc68ef7ba5197",
+   "text": "One who was sent by king Josiah to repair the temple (2 Chr. 34:8). He was governor (Heb. sar, rendered elsewhere in the Authorized Version “prince,” “chief captain,” chief ruler”) of Jerusalem.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "prince,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "chief captain,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1866,
+   "name": "Maaseiah",
+   "sha256": "7c725a80857f105b7288c8f95f003b847d93013bcad5b31df470d8eef83bc290",
+   "text": "The father of the priest Zephaniah (Jer. 21:1; 37:3).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1870,
+   "name": "Maasiai",
+   "sha256": "e7141b4f543a66af8bece9c43fe6b2e1e4f6bc4c3f0034b0b0a5a7319b7ca360",
+   "text": "Work of Jehovah, one of the priests resident at Jerusalem at the Captivity (1 Chr. 9:12).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1871,
+   "name": "Maath",
+   "sha256": "b34f4b89df9148118a24352980ad6f1d10ec462f63482c24a114e424ad1f1ac4",
+   "text": "Small, a person named in our Lord’s ancestry (Luke 3:26).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1873,
+   "name": "Maaziah",
+   "sha256": "63a5d52b284db41551b0743510eb67f1f8290243483eda75c1e4322b8291a0c1",
+   "text": "The head of the twenty-fourth priestly course (1 Chr. 24:18) in David’s reign.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1874,
+   "name": "Moadiah",
+   "sha256": "5bcfd8cfd251eb1519581d7a550c672b8ccbeb9494774aeb61f0181e0335cccf",
+   "text": "A priest (Neh. 10:8).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1877,
+   "name": "Machir",
+   "sha256": "7c6bf53964f25c6fd7987766eeb8a5e5527cc4f9503d96f14f776a4d189264c1",
+   "text": "Manasseh’s oldest son (Josh. 17:1), or probably his only son (see 1 Chr. 7:14, 15; comp. Num. 26:29-33; Josh. 13:31). His descendants are referred to under the name of Machirites, being the offspring of Gilead (Num. 26:29). They settled in land taken from the Amorites (Num. 32:39, 40; Deut. 3:15) by a special enactment (Num. 36:1-3; Josh. 17:3, 4). He is once mentioned as the representative of the tribe of Manasseh east of Jordan (Judg. 5:14).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1878,
+   "name": "Machir",
+   "sha256": "ec3347df9d6072a335f03ebfc6a4e39a93ee0e7d91b4ec4b0c1cb77e1e367e47",
+   "text": "A descendant of the preceding, residing at Lo-debar, where he maintained Jonathan’s son Mephibosheth till he was taken under the care of David (2 Sam. 9:4), and where he afterwards gave shelter to David himself when he was a fugitive (17:27).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1880,
+   "name": "Madai",
+   "sha256": "c578e483b60d28287eda3de35d896340e6dfd81a5b7fe5b0284fdd7d16fbeb2d",
+   "text": "Middle land, the third “son” of Japheth (Gen. 10:2), the name by which the Medes are known on the Assyrian monuments.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "son",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1882,
+   "name": "Magog",
+   "sha256": "adb6068da0b65b9594d3e29543977596661d0ba9836d6162fe9b2ac3c3286eec",
+   "text": "Region of Gog, the second of the “sons” of Japheth (Gen. 10:2; 1 Chr. 1:5). In Ezekiel (38:2; 39:6) it is the name of a nation, probably some Scythian or Tartar tribe descended from Japheth. They are described as skilled horsemen, and expert in the use of the bow. The Latin father Jerome says that this word denotes “Scythian nations, fierce and innumerable, who live beyond the Caucasus and the Lake Maeotis, and near the Caspian Sea, and spread out even onward to India.” Perhaps the name “represents the Assyrian Mat Gugi, or ‘country of Gugu,’ the Gyges of the Greeks” (Sayce’s Races, etc.).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "sons",
+     "kind": "wording",
+     "verses": [
+      1010001
+     ],
+     "es": "ESTAS son las generaciones de los hijos de Noé: Sem, Châm y Japhet, á los cuales nacieron hijos después del diluvio.",
+     "pt": "Estas são as gerações dos filhos de Noé: Sem, Cam e Jafé, aos quais nasceram filhos depois do dilúvio."
+    },
+    {
+     "n": 1,
+     "english": "Scythian nations, fierce and innumerable, who live beyond the Caucasus and the Lake Maeotis, and near the Caspian Sea, and spread out even onward to India.",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "represents the Assyrian Mat Gugi, or ‘country of Gugu,’ the Gyges of the Greeks",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1885,
+   "name": "Mahalaleel (line of Seth)",
+   "sha256": "e732085279b709b7de61819c8b1092b2050aad0b5e791dcb6e55a01daae1f185",
+   "text": "The son of Cainan, of the line of Seth (Gen. 5:12-17); called Maleleel (Luke 3:37).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1886,
+   "name": "Mahalaleel",
+   "sha256": "ebbfca282e661618477f04c38f54f158e7a26650bc2c7186afa0fbfdb3f96219",
+   "text": "Neh. 11:4, a descendant of Perez.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1887,
+   "name": "Bashemath",
+   "sha256": "2ad79044db63abece22547f871deea5ca65b1e525eaf0301596d09cb07731db1",
+   "text": "The daughter of Ishmael, the last of Esau’s three wives (Gen. 36:3, 4, 13), from whose son Reuel four tribes of the Edomites sprung. She is also called Mahalath (Gen. 28:9). It is noticeable that Esau’s three wives receive different names in the genealogical table of the Edomites (Gen. 36) from those given to them in the history (Gen. 26:34; 28:9).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1888,
+   "name": "Mahalath",
+   "sha256": "6924d29567be61684077793512dc52bb3060b99155950b35aa0f474dc25b2224",
+   "text": "The daughter of Jerimoth, who was one of David’s sons. She was one of Rehoboam’s wives (2 Chr. 11:18).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1891,
+   "name": "Mahath",
+   "sha256": "e9b7cd44e9209ce75c0fd92ea34ccdca93e2cd8e4ed00adf322c95c994b67645",
+   "text": "Another Kohathite Levite, of the time of Hezekiah (2 Chr. 29:12).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1893,
+   "name": "Mahazioth",
+   "sha256": "17d77b02a7cd69d4fc59335a7dcb9515f87065fa65bcc0f6e1661f8554538be4",
+   "text": "Visions, a Kohathite Levite, chief of the twenty-third course of musicians (1 Chr. 25:4, 30).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1894,
+   "name": "Maher-shalal-hash-baz",
+   "sha256": "cb67c005088b3e0f3573169e1c0a999a9d21de46aad1463536b250a2484775ca",
+   "text": "Plunder speedeth; spoil hasteth, (Isa. 8:1-3; comp. Zeph. 1:14), a name Isaiah was commanded first to write in large characters on a tablet, and afterwards to give as a symbolical name to a son that was to be born to him (Isa. 8:1, 3), as denoting the sudden attack on Damascus and Syria by the Assyrian army.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1895,
+   "name": "Mahlah",
+   "sha256": "3bbf77d75137f1def333230d543c3e972d5bf78f6322e3c0cdea551d797dc65d",
+   "text": "Disease, one of the five daughters of Zelophehad (Num. 27:1-11) who had their father’s inheritance, the law of inheritance having been altered in their favour.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1897,
+   "name": "Mahlon",
+   "sha256": "cd79475b8cbefad392d4d62ec1f5241c704fb00d840625485a322ef453140a22",
+   "text": "Sickly, the elder of Elimelech the Bethlehemite’s two sons by Naomi. He married Ruth and died childless (Ruth 1:2, 5; 4:9, 10), in the land of Moab.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1898,
+   "name": "Mahol",
+   "sha256": "709a3e34d858b532267da717d031a73e13d8805806e361cfe010d439562db84b",
+   "text": "Dance, the father of four sons (1 Kings 4:31) who were inferior in wisdom only to Solomon.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1899,
+   "name": "Malachi",
+   "sha256": "d8c4330a870850e6c476fa4ed0bb6cbafefcdabc95340e9f86639cce235d1042",
+   "text": "Messenger or angel, the last of the minor prophets, and the writer of the last book of the Old Testament canon (Mal. 4:4, 5, 6). Nothing is known of him beyond what is contained in his book of prophecies. Some have supposed that the name is simply a title descriptive of his character as a messenger of Jehovah, and not a proper name. There is reason, however, to conclude that Malachi was the ordinary name of the prophet.\n\n He was contemporary with Nehemiah (comp. Mal. 2:8 with Neh. 13:15; Mal. 2:10-16 with Neh. 13:23). No allusion is made to him by Ezra, and he does not mention the restoration of the temple, and hence it is inferred that he prophesied after Haggai and Zechariah, and when the temple services were still in existence (Mal. 1:10; 3:1, 10). It is probable that he delivered his prophecies about B.C. 420, after the second return of Nehemiah from Persia (Neh. 13:6), or possibly before his return.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1900,
+   "name": "Malcham",
+   "sha256": "d93b4d19006457d3d7eb679da323d971c41bc6a8a105f505c53a50c41f920ef0",
+   "text": "(2 Sam. 12:30, Heb., R.V., “their king;” Jer. 49:1, 3, R.V.; Zeph. 1:5), the national idol of the Ammonites. When Rabbah was taken by David, the crown of this idol was among the spoils. The weight is said to have been “a talent of gold” (above 100 lbs.). The expression probably denotes its value rather than its weight. It was adorned with precious stones.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "their king;",
+     "kind": "wording",
+     "verses": [
+      24049001
+     ],
+     "es": "DE los hijos de Ammón. Así ha dicho Jehová: ¿No tiene hijos Israel? ¿No tiene heredero? ¿Por qué tomó como por heredad el rey de ellos á Gad, y su pueblo habitó en sus ciudades?",
+     "pt": "Sobre os filhos de Amom.Assim diz o SENHOR: Por acaso Israel não tem filhos, nem tem herdeiro? Por que, pois, Malcã tomou posse de Gade, e seu povo habitou em suas cidades?"
+    },
+    {
+     "n": 1,
+     "english": "a talent of gold",
+     "kind": "partial",
+     "verses": [
+      10012030
+     ],
+     "es": "Y tomó la corona de su rey de su cabeza, la cual pesaba un talento de oro, y tenía piedras preciosas; y fué puesta sobre la cabeza de David. Y trajo muy grande despojo de la ciudad.",
+     "pt": "E tomou a coroa de seu rei de sua cabeça, a qual pesava um talento de ouro, e tinha pedras preciosas; e foi posta sobre a cabeça de Davi. E trouxe muito grande despojo da cidade."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1904,
+   "name": "Malchiah",
+   "sha256": "e66b6e9085e7ff27a765754fe89bede4e940826580cd58ddafff29fdfce0ffde",
+   "text": "Neh. 3:14.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1905,
+   "name": "Malchiah",
+   "sha256": "743d0b542d632c123b89477727d824d24ac7c38198b72baa36a3666d886d2aa8",
+   "text": "Neh. 3:31.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1906,
+   "name": "Malchiah",
+   "sha256": "6b30eaf8833d6b8acea2775092485923c4b544fb100ba330e2b621def655fe33",
+   "text": "A priest who stood by Ezra when he “read in the book of the law of God” (Neh. 8:4).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "read in the book of the law of God",
+     "kind": "partial",
+     "verses": [
+      16008018
+     ],
+     "es": "Y leyó Esdras en el libro de la ley de Dios cada día, desde el primer día hasta el postrero; é hicieron la solemnidad por siete días, y al octavo día congregación, según el rito.",
+     "pt": "E a cada dia Esdras leu no livro da lei de Deus, desde o primeiro dia até o último; e celebraram a solenidade durante sete dias, e ao oitavo dia houve uma assembleia solene, conforme a ordenança."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1910,
+   "name": "Malchijah",
+   "sha256": "e8c9b39682b3e0a73a6ebd273d4f71dc5ea324578fcd5ec6146b1e39f191ed02",
+   "text": "The head of the fifth division of the priests in the time of David (1 Chr. 24:9).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1912,
+   "name": "Malchijah",
+   "sha256": "0a94bc971ad1276d08e9df3d7fbe26fab71adf9ec52b42a243dad934cb4a91f7",
+   "text": "Neh. 3:11.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1914,
+   "name": "Malchijah",
+   "sha256": "e8df932e0b30e4325b17cbad918dd72704d60c525d91d88ac471d9a108ef28df",
+   "text": "One of the priests appointed as musicians to celebrate the completion of the walls of Jerusalem (Neh. 12:42).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1916,
+   "name": "Malchus",
+   "sha256": "77e37e83b725faa07f159ba471f76d9789eade06ec1f2e2a2035d01b15e5f6d4",
+   "text": "Reigning, the personal servant or slave of the high priest Caiaphas. He is mentioned only by John. Peter cut off his right ear in the garden of Gethsemane (John 18:10). But our Lord cured it with a touch (Matt. 26:51; Mark 14:47; Luke 22:51). This was the last miracle of bodily cure wrought by our Lord. It is not mentioned by John.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1917,
+   "name": "Mallothi",
+   "sha256": "c2e785b7ce61b20eb15eaa63511cde07fa7e5057f37dacedeb861aa2b07bec8f",
+   "text": "My fulness, a Kohathite Levite, one of the sons of Heman the Levite (1 Chr. 25:4), and chief of the nineteenth division of the temple musicians (26).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1918,
+   "name": "Malluch",
+   "sha256": "03e776d3a8e3d7eec67f5295965acbb2e8d4f9c207f66de1bb84a2e1310bbd8d",
+   "text": "A Levite of the family of Merari (1 Chr. 6:44).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1919,
+   "name": "Malluch",
+   "sha256": "2ce41fd5c418644fd8900fd6dac8cfecb1e7365937ba53a443915016d05b2f20",
+   "text": "Ezra 10:29.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1920,
+   "name": "Malluch",
+   "sha256": "c849f79884c4ff85f956a7a5072584d27b3ea7eaab5985b4a99e272e32d868c4",
+   "text": "Ezra 10:32",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1921,
+   "name": "Malluch",
+   "sha256": "85c750f2704ba6d7e034970487da95decb944e0a42034f3a5cd3db8aeb1d651d",
+   "text": "A priest who returned from Babylon (Neh. 12:2).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1923,
+   "name": "Mamre",
+   "sha256": "e06575aec05264ae068df0ca7496b83e6fb06567f32862ef4c861c7f0b5a3d11",
+   "text": "An Amoritish chief in alliance with Abraham (Gen. 14:13, 24).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1926,
+   "name": "Manaen",
+   "sha256": "088374ce7fc5e488c614a60e287646347369cf0d7c6db6124b6f94ad556abca1",
+   "text": "Consoler, a Christian teacher at Antioch. Nothing else is known of him beyond what is stated in Acts 13:1, where he is spoken of as having been brought up with (Gr. syntrophos; rendered in R.V. “foster brother” of) Herod, i.e., Herod Antipas, the tetrach, who, with his brother Archelaus, was educated at Rome.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "foster brother",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1928,
+   "name": "Manasseh (son of Joseph)",
+   "sha256": "b3522e04e0597521d6dc0d9db256c1b5bc0657dcd0e738e2325bf244fcbbf06f",
+   "text": "The elder of the two sons of Joseph. He and his brother Ephraim were afterwards adopted by Jacob as his own sons (48:1). There is an account of his marriage to a Syrian (1 Chr. 7:14); and the only thing afterwards recorded of him is, that his grandchildren were “brought up upon Joseph’s knees” (Gen. 50:23; R.V., “born upon Joseph’s knees”) i.e., were from their birth adopted by Joseph as his own children.\n\n The tribe of Manasseh was associated with that of Ephraim and Benjamin during the wanderings in the wilderness. They encamped on the west side of the tabernacle. According to the census taken at Sinai, this tribe then numbered 32,200 (Num. 1:10, 35; 2:20, 21). Forty years afterwards its numbers had increased to 52,700 (26:34, 37), and it was at this time the most distinguished of all the tribes.\n\n The half of this tribe, along with Reuben and Gad, had their territory assigned them by Moses on the east of the Jordan (Josh. 13:7-14); but it was left for Joshua to define the limits of each tribe. This territory on the east of Jordan was more valuable and of larger extent than all that was allotted to the nine and a half tribes in the land of Palestine. It is sometimes called “the land of Gilead,” and is also spoken of as “on the other side of Jordan.” The portion given to the half tribe of Manasseh was the largest on the east of Jordan. It embraced the whole of Bashan. It was bounded on the south by Mahanaim, and extended north to the foot of Lebanon. Argob, with its sixty cities, that “ocean of basaltic rocks and boulders tossed about in the wildest confusion,” lay in the midst of this territory.\n\n The whole “land of Gilead” having been conquered, the two and a half tribes left their wives and families in the fortified cities there, and accompanied the other tribes across the Jordan, and took part with them in the wars of conquest. The allotment of the land having been completed, Joshua dismissed the two and a half tribes, commending them for their heroic service (Josh. 22:1-34). Thus dismissed, they returned over Jordan to their own inheritance.\n\n On the west of Jordan the other half of the tribe of Manasseh was associated with Ephraim, and they had their portion in the very centre of Palestine, an area of about 1,300 square miles, the most valuable part of the whole country, abounding in springs of water. Manasseh’s portion was immediately to the north of that of Ephraim (Josh. 16). Thus the western Manasseh defended the passes of Esdraelon as the eastern kept the passes of the Hauran.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "brought up upon Joseph’s knees",
+     "kind": "partial",
+     "verses": [
+      1050023
+     ],
+     "es": "Y vió José los hijos de Ephraim hasta la tercera generación: también los hijos de Machîr, hijo de Manasés, fueron criados sobre las rodillas de José.",
+     "pt": "E viu José os filhos de Efraim até a terceira geração: também os filhos de Maquir, filho de Manassés, foram criados sobre os joelhos de José."
+    },
+    {
+     "n": 1,
+     "english": "born upon Joseph’s knees",
+     "kind": "loose",
+     "verses": [
+      1050022,
+      1050023
+     ],
+     "es": "Y estuvo José en Egipto, él y la casa de su padre: y vivió José ciento diez años. Y vió José los hijos de Ephraim hasta la tercera generación: también los hijos de Machîr, hijo de Manasés, fueron criados sobre las rodillas de José.",
+     "pt": "E esteve José no Egito, ele e a casa de seu pai; e viveu José cento dez anos. E viu José os filhos de Efraim até a terceira geração: também os filhos de Maquir, filho de Manassés, foram criados sobre os joelhos de José."
+    },
+    {
+     "n": 2,
+     "english": "the land of Gilead,",
+     "kind": "unsure",
+     "verses": [
+      4032001
+     ],
+     "es": "Y LOS hijos de Rubén y los hijos de Gad tenían una muy grande muchedumbre de ganado; los cuales viendo la tierra de Jazer y de Galaad, parecióles el país lugar de ganado.",
+     "pt": "E os filhos de Rúben e os filhos de Gade tinham uma muito grande abundância de gado; os quais vendo a terra de Jazer e de Gileade, pareceu-lhes a terra lugar de gado."
+    },
+    {
+     "n": 3,
+     "english": "on the other side of Jordan.",
+     "kind": "partial",
+     "verses": [
+      13012037
+     ],
+     "es": "Y de la otra parte del Jordán, de los Rubenitas y de los de Gad y de la media tribu de Manasés, ciento y veinte mil con toda suerte de armas de guerra.",
+     "pt": "E dalém do Jordão, dos rubenitas, dos gaditas, e da meia tribo de Manassés, como toda variedade de armas de guerra para batalhar, cento e vinte mil."
+    },
+    {
+     "n": 4,
+     "english": "ocean of basaltic rocks and boulders tossed about in the wildest confusion,",
+     "kind": "other"
+    },
+    {
+     "n": 5,
+     "english": "land of Gilead",
+     "kind": "unsure",
+     "verses": [
+      4032001
+     ],
+     "es": "Y LOS hijos de Rubén y los hijos de Gad tenían una muy grande muchedumbre de ganado; los cuales viendo la tierra de Jazer y de Galaad, parecióles el país lugar de ganado.",
+     "pt": "E os filhos de Rúben e os filhos de Gade tinham uma muito grande abundância de gado; os quais vendo a terra de Jazer e de Gileade, pareceu-lhes a terra lugar de gado."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1930,
+   "name": "Manasseh (son of Hezekiah)",
+   "sha256": "b3522e04e0597521d6dc0d9db256c1b5bc0657dcd0e738e2325bf244fcbbf06f",
+   "text": "The elder of the two sons of Joseph. He and his brother Ephraim were afterwards adopted by Jacob as his own sons (48:1). There is an account of his marriage to a Syrian (1 Chr. 7:14); and the only thing afterwards recorded of him is, that his grandchildren were “brought up upon Joseph’s knees” (Gen. 50:23; R.V., “born upon Joseph’s knees”) i.e., were from their birth adopted by Joseph as his own children.\n\n The tribe of Manasseh was associated with that of Ephraim and Benjamin during the wanderings in the wilderness. They encamped on the west side of the tabernacle. According to the census taken at Sinai, this tribe then numbered 32,200 (Num. 1:10, 35; 2:20, 21). Forty years afterwards its numbers had increased to 52,700 (26:34, 37), and it was at this time the most distinguished of all the tribes.\n\n The half of this tribe, along with Reuben and Gad, had their territory assigned them by Moses on the east of the Jordan (Josh. 13:7-14); but it was left for Joshua to define the limits of each tribe. This territory on the east of Jordan was more valuable and of larger extent than all that was allotted to the nine and a half tribes in the land of Palestine. It is sometimes called “the land of Gilead,” and is also spoken of as “on the other side of Jordan.” The portion given to the half tribe of Manasseh was the largest on the east of Jordan. It embraced the whole of Bashan. It was bounded on the south by Mahanaim, and extended north to the foot of Lebanon. Argob, with its sixty cities, that “ocean of basaltic rocks and boulders tossed about in the wildest confusion,” lay in the midst of this territory.\n\n The whole “land of Gilead” having been conquered, the two and a half tribes left their wives and families in the fortified cities there, and accompanied the other tribes across the Jordan, and took part with them in the wars of conquest. The allotment of the land having been completed, Joshua dismissed the two and a half tribes, commending them for their heroic service (Josh. 22:1-34). Thus dismissed, they returned over Jordan to their own inheritance.\n\n On the west of Jordan the other half of the tribe of Manasseh was associated with Ephraim, and they had their portion in the very centre of Palestine, an area of about 1,300 square miles, the most valuable part of the whole country, abounding in springs of water. Manasseh’s portion was immediately to the north of that of Ephraim (Josh. 16). Thus the western Manasseh defended the passes of Esdraelon as the eastern kept the passes of the Hauran.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "brought up upon Joseph’s knees",
+     "kind": "partial",
+     "verses": [
+      1050023
+     ],
+     "es": "Y vió José los hijos de Ephraim hasta la tercera generación: también los hijos de Machîr, hijo de Manasés, fueron criados sobre las rodillas de José.",
+     "pt": "E viu José os filhos de Efraim até a terceira geração: também os filhos de Maquir, filho de Manassés, foram criados sobre os joelhos de José."
+    },
+    {
+     "n": 1,
+     "english": "born upon Joseph’s knees",
+     "kind": "loose",
+     "verses": [
+      1050022,
+      1050023
+     ],
+     "es": "Y estuvo José en Egipto, él y la casa de su padre: y vivió José ciento diez años. Y vió José los hijos de Ephraim hasta la tercera generación: también los hijos de Machîr, hijo de Manasés, fueron criados sobre las rodillas de José.",
+     "pt": "E esteve José no Egito, ele e a casa de seu pai; e viveu José cento dez anos. E viu José os filhos de Efraim até a terceira geração: também os filhos de Maquir, filho de Manassés, foram criados sobre os joelhos de José."
+    },
+    {
+     "n": 2,
+     "english": "the land of Gilead,",
+     "kind": "unsure",
+     "verses": [
+      4032001
+     ],
+     "es": "Y LOS hijos de Rubén y los hijos de Gad tenían una muy grande muchedumbre de ganado; los cuales viendo la tierra de Jazer y de Galaad, parecióles el país lugar de ganado.",
+     "pt": "E os filhos de Rúben e os filhos de Gade tinham uma muito grande abundância de gado; os quais vendo a terra de Jazer e de Gileade, pareceu-lhes a terra lugar de gado."
+    },
+    {
+     "n": 3,
+     "english": "on the other side of Jordan.",
+     "kind": "partial",
+     "verses": [
+      13012037
+     ],
+     "es": "Y de la otra parte del Jordán, de los Rubenitas y de los de Gad y de la media tribu de Manasés, ciento y veinte mil con toda suerte de armas de guerra.",
+     "pt": "E dalém do Jordão, dos rubenitas, dos gaditas, e da meia tribo de Manassés, como toda variedade de armas de guerra para batalhar, cento e vinte mil."
+    },
+    {
+     "n": 4,
+     "english": "ocean of basaltic rocks and boulders tossed about in the wildest confusion,",
+     "kind": "other"
+    },
+    {
+     "n": 5,
+     "english": "land of Gilead",
+     "kind": "unsure",
+     "verses": [
+      4032001
+     ],
+     "es": "Y LOS hijos de Rubén y los hijos de Gad tenían una muy grande muchedumbre de ganado; los cuales viendo la tierra de Jazer y de Galaad, parecióles el país lugar de ganado.",
+     "pt": "E os filhos de Rúben e os filhos de Gade tinham uma muito grande abundância de gado; os quais vendo a terra de Jazer e de Gileade, pareceu-lhes a terra lugar de gado."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1933,
+   "name": "Manoah",
+   "sha256": "a4eebec119e6b1eda3a31dda825fd67abfd7f427993007a2a2ba35e0c0c50514",
+   "text": "Rest, a Danite, the father of Samson (Judg. 13:1-22, and 14:2-4).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1934,
+   "name": "Maachah",
+   "sha256": "1bd65d2241bc57b5deeb6f60b93b5fb678f48f57a157bfb8e2c26d7c74a0045d",
+   "text": "The father of Achish, the king of Gath (1 Kings 2:39), called also Maoch (1 Sam. 27:2).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1937,
+   "name": "Martha",
+   "sha256": "55f0b2a8775cb53660f055d130c2eef71c9914c88961ed4b7393f0f9c103e7c1",
+   "text": "Bitterness, the sister of Lazarus and Mary, and probably the eldest of the family, who all resided at Bethany (Luke 10:38, 40, 41; John 11:1-39). From the residence being called “her house,” some have supposed that she was a widow, and that her brother and sister lodged with her. She seems to have been of an anxious, bustling spirit, anxious to be helpful in providing the best things for the Master’s use, in contrast to the quiet earnestness of Mary, who was more concerned to avail herself of the opportunity of sitting at his feet and learning of him. Afterwards at a supper given to Christ and his disciples in her house “Martha served.” Nothing further is known of her.\n\n “Mary and Martha are representatives of two orders of human character. One was absorbed, preoccupied, abstracted; the other was concentrated and single-hearted. Her own world was the all of Martha; Christ was the first thought with Mary. To Martha life was ‘a succession of particular businesses;’ to Mary life ’was rather the flow of one spirit.’ Martha was Petrine, Mary was Johannine. The one was a well-meaning, bustling busybody; the other was a reverent disciple, a wistful listener.” Paul had such a picture as that of Martha in his mind when he spoke of serving the Lord “without distraction” (1 Cor. 7:35).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "her house,",
+     "kind": "wording",
+     "verses": [
+      42010038
+     ],
+     "es": "Y aconteció que yendo, entró él en una aldea: y una mujer llamada Marta, le recibió en su casa.",
+     "pt": "E aconteceu que eles, enquanto eles caminhavam, ele entrou em uma aldeia; e uma certa mulher, de nome Marta, o recebeu em sua casa."
+    },
+    {
+     "n": 1,
+     "english": "Martha served.",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "Mary and Martha are representatives of two orders of human character. One was absorbed, preoccupied, abstracted; the other was concentrated and single-hearted. Her own world was the all of Martha; Christ was the first thought with Mary. To Martha life was ‘a succession of particular businesses;’ to Mary life ’was rather the flow of one spirit.’ Martha was Petrine, Mary was Johannine. The one was a well-meaning, bustling busybody; the other was a reverent disciple, a wistful listener.",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "without distraction",
+     "kind": "wording",
+     "verses": [
+      46007035
+     ],
+     "es": "Esto empero digo para vuestro provecho; no para echaros lazo, sino para lo honesto y decente, y para que sin impedimento os lleguéis al Señor.",
+     "pt": "Porém digo isto para vosso próprio proveito; não para vos enlaçar, mas para vos guiar ao que é decente, e servirem ao Senhor sem distração."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1938,
+   "name": "Mary (Mother of Jesus)",
+   "sha256": "998899ee3e2d24298048549655993f58bdcfa9cf71700590cf2f0b4df19a6afe",
+   "text": "The wife of Joseph, the mother of Jesus, called the “Virgin Mary,” though never so designated in Scripture (Matt. 2:11; Acts 1:14). Little is known of her personal history. Her genealogy is given in Luke 3. She was of the tribe of Judah and the lineage of David (Ps. 132:11; Luke 1:32). She was connected by marriage with Elisabeth, who was of the lineage of Aaron (Luke 1:36).\n\n While she resided at Nazareth with her parents, before she became the wife of Joseph, the angel Gabriel announced to her that she was to be the mother of the promised Messiah (Luke 1:35). After this she went to visit her cousin Elisabeth, who was living with her husband Zacharias (probably at Juttah, Josh. 15:55; 21:16, in the neighbourhood of Maon), at a considerable distance, about 100 miles, from Nazareth. Immediately on entering the house she was saluted by Elisabeth as the mother of her Lord, and then forthwith gave utterance to her hymn of thanksgiving (Luke 1:46-56; comp. 1 Sam. 2:1-10). After three months Mary returned to Nazareth to her own home. Joseph was supernaturally made aware (Matt. 1:18-25) of her condition, and took her to his own home. Soon after this the decree of Augustus (Luke 2:1) required that they should proceed to Bethlehem (Micah 5:2), some 80 or 90 miles from Nazareth; and while they were there they found shelter in the inn or khan provided for strangers (Luke 2:6, 7). But as the inn was crowded, Mary had to retire to a place among the cattle, and there she brought forth her son, who was called Jesus (Matt. 1:21), because he was to save his people from their sins. This was followed by the presentation in the temple, the flight into Egypt, and their return in the following year and residence at Nazareth (Matt. 2). There for thirty years Mary, the wife of Joseph the carpenter, resides, filling her own humble sphere, and pondering over the strange things that had happened to her. During these years only one event in the history of Jesus is recorded, viz., his going up to Jerusalem when twelve years of age, and his being found among the doctors in the temple (Luke 2:41-52). Probably also during this period Joseph died, for he is not again mentioned.\n\n After the commencement of our Lord’s public ministry little notice is taken of Mary. She was present at the marriage in Cana. A year and a half after this we find her at Capernaum (Matt. 12:46, 48, 49), where Christ uttered the memorable words, “Who is my mother? and who are my brethren? And he stretched forth his hand toward his disciples, and said, Behold my mother and my brethren!” The next time we find her is at the cross along with her sister Mary, and Mary Magdalene, and Salome, and other women (John 19:26). From that hour John took her to his own abode. She was with the little company in the upper room after the Ascension (Acts 1:14). From this time she wholly disappears from public notice. The time and manner of her death are unknown.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Virgin Mary,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "Who is my mother? and who are my brethren? And he stretched forth his hand toward his disciples, and said, Behold my mother and my brethren!",
+     "kind": "partial",
+     "verses": [
+      40012048,
+      40012049
+     ],
+     "es": "Y respondiendo él al que le decía esto, dijo: ¿Quién es mi madre y quiénes son mis hermanos? Y extendiendo su mano hacia sus discípulos, dijo: He aquí mi madre y mis hermanos.",
+     "pt": "Porém ele disse em resposta ao que o avisou: Quem é minha mãe? E quem são meus irmãos? Então estendeu sua mão para os seus discípulos, e disse: Eis aqui minha mãe e meus irmãos;"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1939,
+   "name": "Mary (sister of Lazarus)",
+   "sha256": "61f89272cab5890f852e64e004353dc1b54a2a811ddc97e398552b941b87661d",
+   "text": "Mary the sister of Lazarus is brought to our notice in connection with the visits of our Lord to Bethany. She is contrasted with her sister Martha, who was “cumbered about many things” while Jesus was their guest, while Mary had chosen “the good part.” Her character also appears in connection with the death of her brother (John 11:20, 31, 33). On the occasion of our Lord’s last visit to Bethany, Mary brought “a pound of ointment of spikenard, very costly, and anointed the feet of Jesus” as he reclined at table in the house of one Simon, who had been a leper (Matt. 26:6; Mark 14:3; John 12:2, 3). This was an evidence of her overflowing love to the Lord. Nothing is known of her subsequent history. It would appear from this act of Mary’s, and from the circumstance that they possessed a family vault (11:38), and that a large number of Jews from Jerusalem came to condole with them on the death of Lazarus (11:19), that this family at Bethany belonged to the wealthier class of the people.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "cumbered about many things",
+     "kind": "loose",
+     "verses": [
+      42010040,
+      42010041
+     ],
+     "es": "Empero Marta se distraía en muchos servicios; y sobreviniendo, dice: Señor, ¿no tienes cuidado que mi hermana me deja servir sola? Dile pues, que me ayude. Pero respondiendo Jesús, le dijo: Marta, Marta, cuidadosa estás, y con las muchas cosas estás turbada:",
+     "pt": "Marta, porém, ficava muito ocupada com muitos serviços; e ela, vindo, disse: Senhor, não te importas que minha irmã me deixe sozinha para servir? Dize a ela, pois, que me ajude. E respondendo Jesus, disse-lhe: Marta, Marta, tu és preocupada com muitas coisas, e perturbada por elas;"
+    },
+    {
+     "n": 1,
+     "english": "the good part.",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "a pound of ointment of spikenard, very costly, and anointed the feet of Jesus",
+     "kind": "partial",
+     "verses": [
+      43012003
+     ],
+     "es": "Entonces María tomó una libra de ungüento de nardo líquido de mucho precio, y ungió los pies de Jesús, y limpió sus pies con sus cabellos: y la casa se llenó del olor del ungüento.",
+     "pt": "Tomando então Maria um arrátel de óleo perfumado de nardo puro, de muito preço, ungiu os pés de Jesus, e limpou os pés dele com seus cabelos; e encheu-se a casa do cheiro do óleo perfumado."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1941,
+   "name": "Mary (Mother of John Mark)",
+   "sha256": "dd1412fe7a13046c4efc33eaf2f683ff0473f32e5ba5baf255393c0e9498154c",
+   "text": "Mary the mother of John Mark was one of the earliest of our Lord’s disciples. She was the sister of Barnabas (Col. 4:10), and joined with him in disposing of their land and giving the proceeds of the sale into the treasury of the Church (Acts 4:37; 12:12). Her house in Jerusalem was the common meeting-place for the disciples there.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1942,
+   "name": "Mary (of Rome)",
+   "sha256": "d0ede54446fcc64ab027c3032441439ee8384dd39d7fcee32e7d7e4e2bd86dcf",
+   "text": "A Christian at Rome who treated Paul with special kindness (Rom. 16:6).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1943,
+   "name": "Mary Magdalene",
+   "sha256": "eb735a30115923d6d0644f5347889d8df6d57203a74e0f3fe98ced8c43e07078",
+   "text": "A surname derived from Magdala, the place of her nativity, given to one of the Marys of the Gospels to distinguish her from the other Marys (Matt. 27:56, 61; 28:1, etc.). A mistaken notion has prevailed that this Mary was a woman of bad character, that she was the woman who is emphatically called “a sinner” (Luke 7:36-50).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "a sinner",
+     "kind": "wording",
+     "verses": [
+      42007037
+     ],
+     "es": "Y he aquí una mujer que había sido pecadora en la ciudad, como entendió que estaba á la mesa en casa de aquel Fariseo, trajo un alabastro de ungüento,",
+     "pt": "E eis que uma mulher da cidade, que era pecadora, quando soube que ele estava na casa do fariseu, trouxe um vaso de alabastro de óleo perfumado."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1944,
+   "name": "Mash",
+   "sha256": "699f2febc4608b80444701f7d45061fc575e7d789308982d902af38159590094",
+   "text": "(= Meshech 1 Chr. 1:17), one of the four sons of Aram, and the name of a tribe descended from him (Gen. 10:23) inhabiting some part probably of Mesopotamia. Some have supposed that they were the inhabitants of Mount Masius, the present Karja Baghlar, which forms part of the chain of Taurus.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1945,
+   "name": "Massa",
+   "sha256": "231db3eed3c404b3a70307807b64be8306328ba5610b0533e4f64b6587dcd0f5",
+   "text": "A lifting up, gift, one of the sons of Ishmael, the founder of an Arabian tribe (Gen. 25:14); a nomad tribe inhabiting the Arabian desert toward Babylonia.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1948,
+   "name": "Mattan",
+   "sha256": "0ff73878f75ed704695cfc16f0ee1612711be68835697483d290c504cfa9b6ed",
+   "text": "A priest of Baal, slain before his altar during the reformation under Jehoiada (2 Kings 11:18).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1949,
+   "name": "Mattan",
+   "sha256": "d317d8b8d18bd0b482bbef7dfa0605f5a439ea11b7c799be71e902f724eb6776",
+   "text": "The father of Shephatiah (Jer. 38:1).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1950,
+   "name": "Zedekiah",
+   "sha256": "589103740b4dc79b8dba767c643812c389893e6e5a2f183d96a23c04d8fbdfe0",
+   "text": "The last king of Judah. He was the third son of Josiah, and his mother’s name was Hamutal, the daughter of Jeremiah of Libnah, and hence he was the brother of Jehoahaz (2 Kings 23:31; 24:17, 18). His original name was Mattaniah; but when Nebuchadnezzar placed him on the throne as the successor to Jehoiachin he changed his name to Zedekiah. The prophet Jeremiah was his counsellor, yet “he did evil in the sight of the Lord” (2 Kings 24:19, 20; Jer. 52:2, 3). He ascended the throne at the age of twenty-one years. The kingdom was at that time tributary to Nebuchadnezzar; but, despite the strong remonstrances of Jeremiah and others, as well as the example of Jehoiachin, he threw off the yoke of Babylon, and entered into an alliance with Hophra, king of Egypt. This brought up Nebuchadnezzar, “with all his host” (2 King 25:1), against Jerusalem. During this siege, which lasted about eighteen months, “every worst woe befell the devoted city, which drank the cup of God’s fury to the dregs” (2 Kings 25:3; Lam. 4:4, 5, 10). The city was plundered and laid in ruins. Zedekiah and his followers, attempting to escape, were made captive and taken to Riblah. There, after seeing his own children put to death, his own eyes were put out, and, being loaded with chains, he was carried captive (B.C. 588) to Babylon (2 Kings 25:1-7; 2 Chr. 36:12; Jer. 32:4, 5; 34:2, 3; 39:1-7; 52:4-11; Ezek. 12:12), where he remained a prisoner, how long is unknown, to the day of his death.\n\n After the fall of Jerusalem, Nebuzaraddan was sent to carry out its complete destruction. The city was razed to the ground. Only a small number of vinedressers and husbandmen were permitted to remain in the land (Jer. 52:16). Gedaliah, with a Chaldean guard stationed at Mizpah, ruled over Judah (2 Kings 25:22, 24; jer. 40:1, 2, 5, 6).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "he did evil in the sight of the Lord",
+     "kind": "partial",
+     "verses": [
+      11015026
+     ],
+     "es": "E hizo lo malo ante los ojos de Jehová, andando en el camino de su padre, y en sus pecados con que hizo pecar á Israel.",
+     "pt": "E fez o que era mau diante dos olhos do SENHOR, andando no caminho de seu pai, e em seus pecados com que fez pecar a Israel."
+    },
+    {
+     "n": 1,
+     "english": "with all his host",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "every worst woe befell the devoted city, which drank the cup of God’s fury to the dregs",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1952,
+   "name": "Mattaniah",
+   "sha256": "32542acf8f5a244270ab301cae7cad1ed1bb82f62b2cbee9c78ec2e641e75012",
+   "text": "A Levite, son of Heman, the chief of the ninth class of temple singers (1 Chr. 25:4, 16).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1954,
+   "name": "Mattaniah",
+   "sha256": "764101f0c6a2016879e48147b6da284124e1e1d5624ac78b737070413477b7fe",
+   "text": "A Levite who assisted in purifying the temple at the reformation under Hezekiah (2 Chr. 29:13).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1963,
+   "name": "Mattathias",
+   "sha256": "142bc9fd6de7266f5510936e54dae9c11715d82ff4c73d09dfc569095f1833ee",
+   "text": "The son of Amos, in the genealogy of our Lord (Luke 3:25).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1964,
+   "name": "Mattathias",
+   "sha256": "ef4357ae118076258ac48e0217f7f9cf72da5b50b68b33b7f98ba95d9b8c55e9",
+   "text": "The son of Semei, in the same genealogy (Luke 3:26).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1968,
+   "name": "Matthan",
+   "sha256": "40dcb4624e39800d482723646ee159efeb4a8e86d3fc7652a26b0be5f8a8d96d",
+   "text": "The son of Eleazar, and father of Jacob, who was the father of Joseph, the husband of the Virgin Mary (Matt. 1:15).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1969,
+   "name": "Matthat",
+   "sha256": "aa9440d8644eea532252a1466de387a96c06b6843adcee998e2317179dd84b56",
+   "text": "The son of Levi, and father of Heli (Luke 3:24).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1970,
+   "name": "Matthat",
+   "sha256": "4c35ba55f582d521edf16823aae44a693d715923a8ca9dab0541c9aff34de29c",
+   "text": "Son of another Levi (Luke 3:29).",
+   "quotes": []
+  }
+ ],
+ "glossary": {
+  "Aaron": {
+   "es": "Aarón",
+   "pt": "Arão"
+  },
+  "Abijah": {
+   "es": "Abías",
+   "pt": "Abias"
+  },
+  "Abilene": {
+   "es": "Abilinia"
+  },
+  "Abraham": {
+   "pt": "Abraão"
+  },
+  "Absalom": {
+   "pt": "Absalão"
+  },
+  "Achan": {
+   "es": "Acán",
+   "pt": "Acã"
+  },
+  "Achish": {
+   "es": "Aquís",
+   "pt": "Aquis"
+  },
+  "Amos": {
+   "es": "Amós",
+   "pt": "Amós"
+  },
+  "Antioch": {
+   "es": "Antioquía",
+   "pt": "Antioquia"
+  },
+  "Arab": {
+   "pt": "Arabe"
+  },
+  "Aram": {
+   "pt": "Arã"
+  },
+  "Archelaus": {
+   "es": "Arquelao",
+   "pt": "Arquelau"
+  },
+  "Argob": {
+   "pt": "Argobe"
+  },
+  "Augustus": {
+   "es": "Augusto",
+   "pt": "Augusto"
+  },
+  "Babylon": {
+   "es": "Babilonia",
+   "pt": "Babilônia"
+  },
+  "Babylonia": {
+   "es": "Babilonia",
+   "pt": "Babilônia"
+  },
+  "Barnabas": {
+   "es": "Bernabé",
+   "pt": "Barnabé"
+  },
+  "Bashan": {
+   "es": "Basán",
+   "pt": "Basã"
+  },
+  "Benjamin": {
+   "es": "Benjamín",
+   "pt": "Benjamim"
+  },
+  "Bethany": {
+   "es": "Betania",
+   "pt": "Betânia"
+  },
+  "Bethlehem": {
+   "es": "Bet-lehem",
+   "pt": "Belém"
+  },
+  "Caesarea": {
+   "es": "Cesarea",
+   "pt": "Cesareia"
+  },
+  "Caiaphas": {
+   "es": "Caifás",
+   "pt": "Caifás"
+  },
+  "Cainan": {
+   "es": "Cainán",
+   "pt": "Cainã"
+  },
+  "Cana": {
+   "es": "Caná",
+   "pt": "Caná"
+  },
+  "Canaan": {
+   "es": "Canaán",
+   "pt": "Canaã"
+  },
+  "Capernaum": {
+   "pt": "Cafarnaum"
+  },
+  "Chedorlaomer": {
+   "es": "Quédorlaomer",
+   "pt": "Quedorlaomer"
+  },
+  "Cyrene": {
+   "es": "Cirene",
+   "pt": "Cirene"
+  },
+  "Damascus": {
+   "es": "Damasco",
+   "pt": "Damasco"
+  },
+  "Dan": {
+   "pt": "Dã"
+  },
+  "David": {
+   "pt": "Davi"
+  },
+  "Dedan": {
+   "es": "Dedán",
+   "pt": "Dedã"
+  },
+  "Dinah": {
+   "es": "Dina",
+   "pt": "Diná"
+  },
+  "Egypt": {
+   "es": "Egipto",
+   "pt": "Egito"
+  },
+  "Elimelech": {
+   "pt": "Elimeleque"
+  },
+  "Elisabeth": {
+   "es": "Elisabet",
+   "pt": "Isabel"
+  },
+  "Ephraim": {
+   "es": "Efraim",
+   "pt": "Efraim"
+  },
+  "Esau": {
+   "es": "Esaú",
+   "pt": "Esaú"
+  },
+  "Esther": {
+   "es": "Ester",
+   "pt": "Ester"
+  },
+  "Ezekiel": {
+   "es": "Ezequiel",
+   "pt": "Ezequiel"
+  },
+  "Ezra": {
+   "es": "Esdras (person); Ezra (person)",
+   "pt": "Esdras (person); Ezra (person)"
+  },
+  "Gad": {
+   "pt": "Gade"
+  },
+  "Gath": {
+   "es": "Gat",
+   "pt": "Gate"
+  },
+  "Gedaliah": {
+   "es": "Gedalías",
+   "pt": "Gedalias"
+  },
+  "Gershon": {
+   "es": "Gersón",
+   "pt": "Gérson"
+  },
+  "Geshur": {
+   "es": "Gesur",
+   "pt": "Gesur"
+  },
+  "Gethsemane": {
+   "es": "Getsemaní",
+   "pt": "Getsêmani"
+  },
+  "Gilead": {
+   "es": "Galaad",
+   "pt": "Gileade"
+  },
+  "Gog": {
+   "pt": "Gogue"
+  },
+  "Haggai": {
+   "es": "Hageo",
+   "pt": "Ageu"
+  },
+  "Hamutal": {
+   "es": "Amutal"
+  },
+  "Hanan": {
+   "es": "Hanán",
+   "pt": "Hanã"
+  },
+  "Haran": {
+   "es": "Harán (person); Arán (person)",
+   "pt": "Harã"
+  },
+  "Hauran": {
+   "es": "Haurán",
+   "pt": "Haurã"
+  },
+  "Heli": {
+   "es": "Elí",
+   "pt": "Eli"
+  },
+  "Heman": {
+   "es": "Hemán (person); Emán (person)",
+   "pt": "Hemã"
+  },
+  "Herod": {
+   "es": "Herodes",
+   "pt": "Herodes"
+  },
+  "Herod Antipas": {
+   "es": "Herodes Antipas",
+   "pt": "Herodes Antipas"
+  },
+  "Hezekiah": {
+   "es": "Ezequías",
+   "pt": "Ezequias"
+  },
+  "Hosea": {
+   "es": "Oseas",
+   "pt": "Oseias"
+  },
+  "India": {
+   "pt": "Índia"
+  },
+  "Isaiah": {
+   "es": "Isaías",
+   "pt": "Isaías"
+  },
+  "Ishmael": {
+   "es": "Ismael",
+   "pt": "Ismael"
+  },
+  "Jacob": {
+   "pt": "Jacó"
+  },
+  "James": {
+   "es": "Jacobo",
+   "pt": "Tiago"
+  },
+  "Japheth": {
+   "es": "Jafet",
+   "pt": "Jafé"
+  },
+  "Jehoahaz": {
+   "es": "Joacaz",
+   "pt": "Jeoacaz"
+  },
+  "Jehoiachin": {
+   "es": "Joaquín",
+   "pt": "Jeconias"
+  },
+  "Jehoiada": {
+   "es": "Joiada",
+   "pt": "Joiada"
+  },
+  "Jeremiah": {
+   "es": "Jeremías",
+   "pt": "Jeremias"
+  },
+  "Jerimoth": {
+   "es": "Jerimot (person); Jeremot (person)",
+   "pt": "Jeremote (person); Jerimote (person)"
+  },
+  "Jerusalem": {
+   "es": "Jerusalén",
+   "pt": "Jerusalém"
+  },
+  "Jesus": {
+   "es": "Jesús"
+  },
+  "John": {
+   "es": "Juan",
+   "pt": "João"
+  },
+  "John Mark": {
+   "es": "Juan Marcos",
+   "pt": "João Marcos"
+  },
+  "Jonah": {
+   "es": "Jonás",
+   "pt": "Jonas"
+  },
+  "Jonathan": {
+   "es": "Jonatán",
+   "pt": "Jônatas"
+  },
+  "Jordan": {
+   "es": "Jordán",
+   "pt": "Jordão"
+  },
+  "Joseph": {
+   "es": "José (person); Josef (person); Jefone (person)",
+   "pt": "José"
+  },
+  "Joshua": {
+   "es": "Josué (person); Jesuá (person)",
+   "pt": "Josué (person); Jesua (person)"
+  },
+  "Josiah": {
+   "es": "Josías",
+   "pt": "Josias"
+  },
+  "Judah": {
+   "es": "Judá (person); Jehudas (person)",
+   "pt": "Judá"
+  },
+  "Jude": {
+   "pt": "Judas"
+  },
+  "Juttah": {
+   "es": "Juta",
+   "pt": "Jutá"
+  },
+  "Laban": {
+   "es": "Labán",
+   "pt": "Labão (person); Labã (place)"
+  },
+  "Lazarus": {
+   "es": "Lázaro",
+   "pt": "Lázaro"
+  },
+  "Leah": {
+   "es": "Lea",
+   "pt": "Lia"
+  },
+  "Lebanon": {
+   "es": "Líbano",
+   "pt": "Líbano"
+  },
+  "Levi": {
+   "es": "Leví"
+  },
+  "Libnah": {
+   "es": "Libna",
+   "pt": "Libna"
+  },
+  "Lo-debar": {
+   "es": "Lodebar",
+   "pt": "Lo-Debar"
+  },
+  "Lot": {
+   "pt": "Ló"
+  },
+  "Lotan": {
+   "es": "Lotán",
+   "pt": "Lotã"
+  },
+  "Lud": {
+   "pt": "Lude"
+  },
+  "Machpelah": {
+   "es": "Macpela",
+   "pt": "Macpela"
+  },
+  "Mahalath": {
+   "es": "Mahalat",
+   "pt": "Maalate"
+  },
+  "Mahanaim": {
+   "pt": "Maanaim"
+  },
+  "Malachi": {
+   "es": "Malaquías",
+   "pt": "Malaquias"
+  },
+  "Manasseh": {
+   "es": "Manasés",
+   "pt": "Manassés"
+  },
+  "Maon": {
+   "es": "Maón",
+   "pt": "Maom"
+  },
+  "Martha": {
+   "es": "Marta",
+   "pt": "Marta"
+  },
+  "Mary": {
+   "es": "María",
+   "pt": "Maria"
+  },
+  "Mary Magdalene": {
+   "es": "María Magdalena",
+   "pt": "Maria Madalena"
+  },
+  "Mattaniah": {
+   "es": "Matanías (person); Matanía (person)",
+   "pt": "Matanias"
+  },
+  "Matthat": {
+   "es": "Matat",
+   "pt": "Matate"
+  },
+  "Matthias": {
+   "es": "Matías",
+   "pt": "Matias"
+  },
+  "Mephibosheth": {
+   "es": "Mefi-boset",
+   "pt": "Mefibosete"
+  },
+  "Meshech": {
+   "es": "Mesech",
+   "pt": "Meseque"
+  },
+  "Mesopotamia": {
+   "pt": "Mesopotâmia"
+  },
+  "Micah": {
+   "es": "Micás (person); Micá (person)",
+   "pt": "Mica"
+  },
+  "Michaiah": {
+   "es": "Micaías (person); Miqueas (person)",
+   "pt": "Micaías"
+  },
+  "Mizpah": {
+   "es": "Mizpa",
+   "pt": "Mispá"
+  },
+  "Moab": {
+   "pt": "Moabe"
+  },
+  "Moses": {
+   "es": "Moisés",
+   "pt": "Moisés"
+  },
+  "Naomi": {
+   "es": "Noemi",
+   "pt": "Noemi"
+  },
+  "Nazareth": {
+   "es": "Nazaret",
+   "pt": "Nazaré"
+  },
+  "Nebuchadnezzar": {
+   "es": "Nabucodonosor",
+   "pt": "Nabucodonosor"
+  },
+  "Nehemiah": {
+   "es": "Nehemías",
+   "pt": "Neemias"
+  },
+  "On": {
+   "es": "Hon (person); On (place)",
+   "pt": "Om"
+  },
+  "Paul": {
+   "es": "Pablo",
+   "pt": "Paulo"
+  },
+  "Persia": {
+   "pt": "Pérsia"
+  },
+  "Philemon": {
+   "es": "Filemón",
+   "pt": "Filemom"
+  },
+  "Philippi": {
+   "es": "Filipos",
+   "pt": "Filipos"
+  },
+  "Rabbah": {
+   "es": "Raba",
+   "pt": "Rabá"
+  },
+  "Rachel": {
+   "es": "Raquel",
+   "pt": "Raquel"
+  },
+  "Rehoboam": {
+   "es": "Roboam",
+   "pt": "Roboão"
+  },
+  "Reuben": {
+   "es": "Rubén",
+   "pt": "Rúben"
+  },
+  "Reuel": {
+   "es": "Rehuel (person); Reuel (person)"
+  },
+  "Riblah": {
+   "es": "Ribla",
+   "pt": "Ribla"
+  },
+  "Rome": {
+   "es": "Roma",
+   "pt": "Roma"
+  },
+  "Ruth": {
+   "es": "Rut",
+   "pt": "Rute"
+  },
+  "Salome": {
+   "es": "Salomé",
+   "pt": "Salomé"
+  },
+  "Samson": {
+   "es": "Samsón",
+   "pt": "Sansão"
+  },
+  "Saul": {
+   "es": "Saúl"
+  },
+  "Seth": {
+   "es": "Set",
+   "pt": "Sete"
+  },
+  "Shem": {
+   "es": "Sem",
+   "pt": "Sem"
+  },
+  "Shephatiah": {
+   "es": "Sefatías",
+   "pt": "Sefatias"
+  },
+  "Simeon": {
+   "es": "Simeón (person); Simón (person)",
+   "pt": "Simeão"
+  },
+  "Simon": {
+   "es": "Simón",
+   "pt": "Simão"
+  },
+  "Sinai": {
+   "es": "Sinaí"
+  },
+  "Sodom": {
+   "es": "Sodoma",
+   "pt": "Sodoma"
+  },
+  "Solomon": {
+   "es": "Salomón",
+   "pt": "Salomão"
+  },
+  "Syria": {
+   "es": "Siria",
+   "pt": "Síria"
+  },
+  "Terah": {
+   "es": "Taré",
+   "pt": "Terá (person); Tera (place)"
+  },
+  "Thyatira": {
+   "es": "Tiatira",
+   "pt": "Tiatira"
+  },
+  "Troas": {
+   "pt": "Trôade"
+  },
+  "Zacharias": {
+   "es": "Zacarías",
+   "pt": "Zacarias"
+  },
+  "Zechariah": {
+   "es": "Zacarías",
+   "pt": "Zacarias"
+  },
+  "Zedekiah": {
+   "es": "Sedequías (person); Sedecías (person)",
+   "pt": "Zedequias"
+  },
+  "Zelophehad": {
+   "es": "Salfaad",
+   "pt": "Zelofeade"
+  },
+  "Zephaniah": {
+   "es": "Sofonías (person); Ezequías (person); Sefanías (person)",
+   "pt": "Sofonias"
+  }
+ }
+}

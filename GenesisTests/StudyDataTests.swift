@@ -165,10 +165,19 @@ struct StudyTranslationTests {
         #expect(place.name == jerusalem)
         #expect(try study.place(id: place.id)?.name == jerusalem)
         #expect(try study.routes().first?.title == journey)
-        // Descriptions stay English until they're translated.
+        // Easton's biographies and place descriptions are translated (each
+        // passed bios.py's check) and say so; English keeps the original.
         let person = try #require(try study.person(id: found.id))
         let english = try #require(try repository(nil).person(id: found.id))
-        #expect(person.biography == english.biography)
+        #expect(!english.biographyIsTranslated)
+        #expect(person.biographyIsTranslated)
+        #expect(person.biography != english.biography)
+        #expect(!person.biography.isEmpty)
+        let city = try #require(try study.place(id: place.id))
+        let englishCity = try #require(try repository(nil).place(id: place.id))
+        #expect(city.descriptionIsTranslated)
+        #expect(!englishCity.descriptionIsTranslated)
+        #expect(city.description != englishCity.description)
     }
 
     @Test(arguments: ["es", "pt"])

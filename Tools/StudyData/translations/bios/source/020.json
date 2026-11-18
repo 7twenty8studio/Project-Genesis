@@ -1,0 +1,1203 @@
+{
+ "batch": "020",
+ "entries": [
+  {
+   "kind": "person",
+   "id": 2412,
+   "name": "Rehoboam",
+   "sha256": "3681b09f484abc2e3dae17b64d1f462f0280986bf11bc18b38bc13e7702fa04a",
+   "text": "He enlarges the people, the successor of Solomon on the throne, and apparently his only son. He was the son of Naamah “the Ammonitess,” some well-known Ammonitish princess (1 Kings 14:21; 2 Chr. 12:13). He was forty-one years old when he ascended the throne, and he reigned seventeen years (B.C. 975-958). Although he was acknowledged at once as the rightful heir to the throne, yet there was a strongly-felt desire to modify the character of the government. The burden of taxation to which they had been subjected during Solomon’s reign was very oppressive, and therefore the people assembled at Shechem and demanded from the king an alleviation of their burdens. He went to meet them at Shechem, and heard their demands for relief (1 Kings 12:4). After three days, having consulted with a younger generation of courtiers that had grown up around him, instead of following the advice of elders, he answered the people haughtily (6-15). “The king hearkened not unto the people; for the cause was from the Lord” (comp. 11:31). This brought matters speedily to a crisis. The terrible cry was heard (comp. 2 Sam. 20:1):\n\n “What portion have we in David? Neither have we inheritance in the son of Jesse: To your tents, O Israel: Now see to thine own house, David” (1 Kings 12:16).\n\n And now at once the kingdom was rent in twain. Rehoboam was appalled, and tried concessions, but it was too late (18). The tribe of Judah, Rehoboam’s own tribe, alone remained faithful to him. Benjamin was reckoned along with Judah, and these two tribes formed the southern kingdom, with Jerusalem as its capital; while the northern ten tribes formed themselves into a separate kingdom, choosing Jeroboam as their king. Rehoboam tried to win back the revolted ten tribes by making war against them, but he was prevented by the prophet Shemaiah (21-24; 2 Chr. 11:1-4) from fulfilling his purpose.\n\n In the fifth year of Rehoboam’s reign, Shishak (q.v.), one of the kings of Egypt of the Assyrian dynasty, stirred up, no doubt, by Jeroboam his son-in-law, made war against him. Jerusalem submitted to the invader, who plundered the temple and virtually reduced the kingdom to the position of a vassal of Egypt (1 Kings 14:25, 26; 2 Chr. 12:5-9). A remarkable memorial of this invasion has been discovered at Karnac, in Upper Egypt, in certain sculptures on the walls of a small temple there. These sculptures represent the king, Shishak, holding in his hand a train of prisoners and other figures, with the names of the captured towns of Judah, the towns which Rehoboam had fortified (2 Chr. 11:5-12).\n\n The kingdom of Judah, under Rehoboam, sank more and more in moral and spiritual decay. “There was war between Rehoboam and Jeroboam all their days.” At length, in the fifty-eighth year of his age, Rehoboam “slept with his fathers, and was buried with his fathers in the city of David” (1 Kings 14:31). He was succeeded by his son Abijah.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the Ammonitess,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "The king hearkened not unto the people; for the cause was from the Lord",
+     "kind": "partial",
+     "verses": [
+      11012015
+     ],
+     "es": "Y no oyó el rey al pueblo; porque era ordenación de Jehová, para confirmar su palabra, que Jehová había hablado por medio de Ahías Silonita á Jeroboam hijo de Nabat.",
+     "pt": "E não ouviu o rei ao povo; porque era ordenação do SENHOR, para confirmar sua palavra, que o SENHOR havia falado por meio de Aías silonita a Jeroboão filho de Nebate."
+    },
+    {
+     "n": 2,
+     "english": "What portion have we in David? Neither have we inheritance in the son of Jesse: To your tents, O Israel: Now see to thine own house, David",
+     "kind": "partial",
+     "verses": [
+      11012016
+     ],
+     "es": "Y cuando todo el pueblo vió que el rey no les había oído, respondióle estas palabras, diciendo: ¿Qué parte tenemos nosotros con David? No tenemos heredad en el hijo de Isaí. ¡Israel, á tus estancias! ¡Provee ahora en tu casa, David! Entonces Israel se fué á sus estancias.",
+     "pt": "E quando todo o povo viu que o rei não lhes havia ouvido, respondeu-lhe estas palavras, dizendo: Que parte temos nós com Davi? Não temos propriedade no filho de Jessé. Israel, a tuas moradas! Provê agora em tua casa, Davi! Então Israel se foi a suas moradas."
+    },
+    {
+     "n": 3,
+     "english": "There was war between Rehoboam and Jeroboam all their days.",
+     "kind": "partial",
+     "verses": [
+      11014030
+     ],
+     "es": "Y hubo guerra entre Roboam y Jeroboam todos los días.",
+     "pt": "E havia guerra entre Roboão e Jeroboão todos os dias."
+    },
+    {
+     "n": 4,
+     "english": "slept with his fathers, and was buried with his fathers in the city of David",
+     "kind": "partial",
+     "verses": [
+      11014031
+     ],
+     "es": "Y durmió Roboam con sus padres, y fué sepultado con sus padres en la ciudad de David. El nombre de su madre fué Naama, Ammonita. Y reinó en su lugar Abiam su hijo.",
+     "pt": "E descansou Roboão com seus pais, e foi sepultado com seus pais na cidade de Davi. O nome de sua mãe foi Naamá, amonita. E reinou em seu lugar Abião seu filho."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2413,
+   "name": "Rehum",
+   "sha256": "f5774fbd93e00f6409e742c67a8f3f7413f8695ecc88896d25bebd321776e173",
+   "text": "One of “the children of the province” who returned from the Captivity (Ezra 2:2); the same as “Nehum” (Neh. 7:7).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the children of the province",
+     "kind": "partial",
+     "verses": [
+      15002001
+     ],
+     "es": "Y ESTOS son los hijos de la provincia que subieron de la cautividad, de la transmigración que Nabucodonosor rey de Babilonia hizo traspasar á Babilonia, y que volvieron á Jerusalem y á Judá, cada uno á su ciudad:",
+     "pt": "Estes são os filhos da província que subiram do cativeiro, dos transportados que Nabucodonosor, rei de Babilônia, tinha transportado para a Babilônia, e que voltaram a Jerusalém e a Judá, cada um para sua cidade;"
+    },
+    {
+     "n": 1,
+     "english": "Nehum",
+     "kind": "wording",
+     "verses": [
+      16007007
+     ],
+     "es": "Los cuales vinieron con Zorobabel, Jesuá, Nehemías, Azarías, Raamías, Nahamani, Mardochêo, Bilsán, Misperet, Bigvai, Nehum, Baana. La cuenta de los varones del pueblo de Israel:",
+     "pt": "Os quais vieram com Zorobabel, Jesua, Neemias, Azarias, Raamias, Naamani, Mardoqueu, Bilsã, Misperete, Bigvai, Neum, Baaná. Este é o número dos homens do povo de Israel:"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2414,
+   "name": "Rehum",
+   "sha256": "0c638689a43fc10981a41bb21d8c042e30c6b8f4cfc7d0a46a5cb123568c7dfc",
+   "text": "The “chancellor” of Artaxerxes, who sought to stir him up against the Jews (Ezra 4:8-24) and prevent the rebuilding of the walls and the temple of Jerusalem.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "chancellor",
+     "kind": "wording",
+     "verses": [
+      15004008
+     ],
+     "es": "Rehum canciller, y Simsai secretario, escribieron una carta contra Jerusalem al rey Artajerjes, como se sigue.",
+     "pt": "Reum o comandante, e Sinsai o escrivão, escreveram uma carta contra Jerusalém ao rei Artaxerxes, conforme o seguinte:"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2415,
+   "name": "Rehum",
+   "sha256": "e445cdc685f0191f67e41531addce8afc77ab6bf324c92c84ad44f6b70fbb74c",
+   "text": "A Levite (Neh. 3:17).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2416,
+   "name": "Rehum",
+   "sha256": "8921d557c2b8e030c321c668cb72f834e71991ec01e5fc9bef9ef06bac600d6b",
+   "text": "Neh. 10:25.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2417,
+   "name": "Rei",
+   "sha256": "5fc794da774b83e5c625426721f983fa20915411b731762c26f5825715b0782a",
+   "text": "Friendly, one who maintained true allegiance to king David (1 Kings 1:8) when Adonijah rebelled.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2418,
+   "name": "Rekem",
+   "sha256": "a028713ae39e60a89edd2246204bbd73f39fcc40b6f25d8756b619a78769c52b",
+   "text": "One of the five Midianite kings whom the Israelites destroyed (Num. 31:8).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2419,
+   "name": "Rekem",
+   "sha256": "c81e95337f50b3a81af8e242b6800208b6ae6726bf224e75417508e005a3a123",
+   "text": "One of the sons of Hebron (1 Chr. 2:43, 44).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2420,
+   "name": "Remaliah",
+   "sha256": "81481402613ee3179a8af5f2f3d2eb10f1857a07e9b45b70b88ab20959456e4f",
+   "text": "Adorned by the Lord, the father of Pekah, who conspired successfully against Pekahiah (2 Kings 15:25, 27, 30, 32, 37; Isa. 7:1, 4, 5, 9; 8:6).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2421,
+   "name": "Rephael",
+   "sha256": "8c4755777a48b41d2be96b0de85a85b4cad082ee76c1b1157cafd745d4a38402",
+   "text": "Healed of God, one of Shemaiah’s sons. He and his brethren, on account of their “strength for service,” formed one of the divisions of the temple porters (1 Chr. 26:7, 8).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "strength for service,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2429,
+   "name": "Reuben",
+   "sha256": "a94963bfed2447830fc44d09201866611630f9c44f178c23d7efa5ac28585c41",
+   "text": "Behold a son!, the eldest son of Jacob and Leah (Gen. 29:32). His sinful conduct, referred to in Gen. 35:22, brought down upon him his dying father’s malediction (48:4). He showed kindness to Joseph, and was the means of saving his life when his other brothers would have put him to death (37:21, 22). It was he also who pledged his life and the life of his sons when Jacob was unwilling to let Benjamin go down into Egypt. After Jacob and his family went down into Egypt (46:8) no further mention is made of Reuben beyond what is recorded in ch. 49:3, 4.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2430,
+   "name": "Reuel",
+   "sha256": "5d143cdbadbc7af6b117ee83608c6ca3cfa9cbf31281b8bd97fbc8e0b2672f0f",
+   "text": "A son of Esau and Bashemath (Gen. 36:4, 10; 1 Chr. 1:35).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2431,
+   "name": "Jethro",
+   "sha256": "d22e66e6f404f4a216fcdafbb923895fafdf272d01e17fa6537585ebd85fd986",
+   "text": "“The priest of Midian,” Moses’ father-in-law (Ex. 2:18)=Raguel (Num. 10:29). If he be identified with Jethro (q.v.), then this may be regarded as his proper name, and Jether or Jethro (i.e., “excellency”) as his official title.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "The priest of Midian,",
+     "kind": "partial",
+     "verses": [
+      2002016
+     ],
+     "es": "Tenía el sacerdote de Madián siete hijas, las cuales vinieron á sacar agua, para llenar las pilas y dar de beber á las ovejas de su padre.",
+     "pt": "Tinha o sacerdote de Midiã sete filhas, as quais vieram a tirar água, para encher os bebedouros e dar de beber as ovelhas de seu pai."
+    },
+    {
+     "n": 1,
+     "english": "excellency",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2435,
+   "name": "Rezin",
+   "sha256": "9f6e01aeb28004237678e10a9bef4df24cc50fdd58a80803e252429240d95035",
+   "text": "Firm; a prince, a king of Syria, who joined Pekah (q.v.) in an invasion of the kingdom of Judah (2 Kings 15:37; 16:5-9; Isa. 7:1-8). Ahaz induced Tiglath-pileser III. to attack Damascus, and this caused Rezin to withdraw for the purpose of defending his own kingdom. Damascus was taken, and Rezin was slain in battle by the Assyrian king, and his people carried into captivity, B.C. 732 (2 Kings 16:9).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2437,
+   "name": "Rezon",
+   "sha256": "e3839e8e7f230690171ab77e727cf33af2ee198cb42cad1b64feeba6fe6a2011",
+   "text": "Prince, son of Eliadah. Abandoning the service of Hadadezer, the king of Zobah, on the occasion of his being defeated by David, he became the “captain over a band” of marauders, and took Damascus, and became king of Syria (1 Kings 11:23-25; 2 Sam. 8:3-8). For centuries after this the Syrians were the foes of Israel. He “became an adversary to Israel all the days of Solomon.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "captain over a band",
+     "kind": "partial",
+     "verses": [
+      11011024
+     ],
+     "es": "Y había juntado gente contra él, y habíase hecho capitán de una compañía, cuando David deshizo á los de Soba. Después se fueron á Damasco, y habitaron allí, é hiciéronle rey en Damasco.",
+     "pt": "E havia juntado gente contra ele, e havia-se feito capitão de uma companhia, quando Davi derrotou aos de Zobá. Depois se foram a Damasco, e habitaram ali e fizeram-lhe rei em Damasco."
+    },
+    {
+     "n": 1,
+     "english": "became an adversary to Israel all the days of Solomon.",
+     "kind": "loose",
+     "verses": [
+      11011024,
+      11011025
+     ],
+     "es": "Y había juntado gente contra él, y habíase hecho capitán de una compañía, cuando David deshizo á los de Soba. Después se fueron á Damasco, y habitaron allí, é hiciéronle rey en Damasco. Y fué adversario á Israel todos los días de Salomón; y fué otro mal con el de Adad, porque aborreció á Israel, y reinó sobre la Siria.",
+     "pt": "E havia juntado gente contra ele, e havia-se feito capitão de uma companhia, quando Davi derrotou aos de Zobá. Depois se foram a Damasco, e habitaram ali e fizeram-lhe rei em Damasco. E foi adversário a Israel todos os dias de Salomão; e foi outro mal com o de Hadade, porque aborreceu a Israel, e reinou sobre a Síria."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2438,
+   "name": "Rhesa",
+   "sha256": "1836b52e713d94d3709ef6456226c30a5f69544370fb3f317a4ead6b6f20d079",
+   "text": "Affection, son of Zorobabel, mentioned in the genealogy of our Lord (Luke 3:27).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2439,
+   "name": "Rhoda",
+   "sha256": "bd882d74774258d0deff5bbfbdaa559361de9d470143215b1addee7626d10a31",
+   "text": "A rose, the damsel in the house of Mary, the mother of John Mark. She came to hearken when Peter knocked at the door of the gate (Acts 12:12-15).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2441,
+   "name": "Rimmon",
+   "sha256": "21468b541cf9ac55b962363ae237980e204e83db57f1097e85c9d8b2c1595f22",
+   "text": "A man of Beeroth (2 Sam. 4:2), one of the four Gibeonite cities. (See Josh. 9:17.)",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2443,
+   "name": "Riphath",
+   "sha256": "0024f1018eb63f164135d5cbe7b7b7a06ca1fa08be36623fe88d1d53db8a0e9e",
+   "text": "A crusher, Gomer’s second son (Gen. 10:3), supposed to have been the ancestor of the Paphlagonians.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2444,
+   "name": "Rizpah",
+   "sha256": "6518d5522846795612686a9798e26b8346bca4d55c01cfede7de0415cc70b159",
+   "text": "Coal; hot stone, the daughter of Aiah, and one of Saul’s concubines. She was the mother of Armoni and Mephibosheth (2 Sam. 3:7; 21:8, 10, 11).\n\n It happened that a grievous famine, which lasted for three years, fell upon the land during the earlier half of David’s reign at Jerusalem. This calamity was sent “for Saul and for his bloody house, because he slew the Gibeonites.” David inquired of the Gibeonites what satisfaction they demanded, and was answered that nothing would compensate for the wrong Saul had done to them but the death of seven of Saul’s sons. David accordingly delivered up to them the two sons of Rizpah and five of the sons of Merab (q.v.), Saul’s eldest daughter, whom she bore to Adriel. These the Gibeonites put to death, and hung up their bodies before the Lord at the sanctuary at Gibeah. Rizpah thereupon took her place on the rock of Gibeah (q.v.), and for five months watched the suspended bodies of her children, to prevent them from being devoured by the beasts and birds of prey, till they were at length taken down and buried by David.\n\n Her marriage to Abner was the occasion of a quarrel between him and Ishbosheth, which led to Abner’s going over to the side of David (2 Sam. 3:17-21).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "for Saul and for his bloody house, because he slew the Gibeonites.",
+     "kind": "partial",
+     "verses": [
+      10021001
+     ],
+     "es": "Y EN los días de David hubo hambre por tres años consecutivos. Y David consultó á Jehová, y Jehová le dijo: Es por Saúl, y por aquella casa de sangre; porque mató á los Gabaonitas.",
+     "pt": "E nos dias de Davi houve fome por três anos consecutivos. E Davi consultou ao SENHOR, e o SENHOR lhe disse: É por Saul, e por aquela casa de sangue; porque matou aos gibeonitas."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2446,
+   "name": "Romamti-ezer",
+   "sha256": "2739994b95fccc63c1bc7d8111f8676738f19eba4d48222c1e7cabb47c1b87ff",
+   "text": "Elevation of help, one of the sons of Heman, “the king’s seer in the words of God, to lift up the horn.” He was head of the “four-and-twentieth” course of singers (1 Chr. 25:4, 31).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the king’s seer in the words of God, to lift up the horn.",
+     "kind": "partial",
+     "verses": [
+      13025005
+     ],
+     "es": "Todos estos fueron hijos de Hemán, vidente del rey en palabras de Dios, para ensalzar el poder suyo: y dió Dios á Hemán catorce hijos y tres hijas.",
+     "pt": "Todos estes foram filhos de Hemã, vidente do rei em palavras de Deus, para exaltar o poder seu: e deu Deus a Hemã catorze filhos e três filhas."
+    },
+    {
+     "n": 1,
+     "english": "four-and-twentieth",
+     "kind": "unsure",
+     "verses": [
+      13024018
+     ],
+     "es": "La vigésimatercia por Delaía, la vigésimacuarta por Maazía.",
+     "pt": "A vigésima terceira por Delaías, a vigésima quarta por Maazias."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2447,
+   "name": "Rapha",
+   "sha256": "85aca8aeca953d4e4025b5ca6f145fe00d39af5fdc7ab1579e442bb323136643",
+   "text": "A Benjamite, the son of Binea (1 Chr. 8:2, 37), a descendant of Saul.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2450,
+   "name": "Ruth",
+   "sha256": "e7d5fbcc9a07ea9d68a2da5a80fcd7cf8728c2d87db8b680efa00b986e9f4058",
+   "text": "A friend, a Moabitess, the wife of Mahlon, whose father, Elimelech, had settled in the land of Moab. On the death of Elimelech and Mahlon, Naomi came with Ruth, her daughter-in-law, who refused to leave her, to Bethlehem, the old home from which Elimelech had migrated. There she had a rich relative, Boaz, to whom Ruth was eventually married. She became the mother of Obed, the grandfather of David. Thus Ruth, a Gentile, is among the maternal progenitors of our Lord (Matt. 1:5). The story of “the gleaner Ruth illustrates the friendly relations between the good Boaz and his reapers, the Jewish land system, the method of transferring property from one person to another, the working of the Mosaic law for the relief of distressed and ruined families; but, above all, handing down the unselfishness, the brave love, the unshaken trustfulness of her who, though not of the chosen race, was, like the Canaanitess Tamar (Gen. 38:29; Matt. 1:3) and the Canaanitess Rahab (Matt. 1:5), privileged to become the ancestress of David, and so of ‘great David’s greater Son’” (Ruth 4:18-22).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the gleaner Ruth illustrates the friendly relations between the good Boaz and his reapers, the Jewish land system, the method of transferring property from one person to another, the working of the Mosaic law for the relief of distressed and ruined families; but, above all, handing down the unselfishness, the brave love, the unshaken trustfulness of her who, though not of the chosen race, was, like the Canaanitess Tamar (Gen. 38:29; Matt. 1:3) and the Canaanitess Rahab (Matt. 1:5), privileged to become the ancestress of David, and so of ‘great David’s greater Son’",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2451,
+   "name": "Sabtah",
+   "sha256": "1e510b44370c9dab9f37830b3e54c1bca3ccea81a52ca3cb54983ed4fa94a063",
+   "text": "Rest, the third son of Cush (Gen. 10:7; 1 Chr. 1:9).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2452,
+   "name": "Sabtecha",
+   "sha256": "528f25aaf213b0f68f1b4bdedabfe8ef585a75becd982caffd3ffe7117b034d0",
+   "text": "The fifth son of Cush.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2453,
+   "name": "Sacar",
+   "sha256": "6f5489548ab64db13703a532aa67e7a4357dcedf1c180a426749e8464b119aef",
+   "text": "A son of Obed-edom the Gittite, and a temple porter (1 Chr. 26:4).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2454,
+   "name": "Sadoc",
+   "sha256": "52681178832529649caa0db9c23185e30ca74256aa9b2bf29431a6b87bae19f8",
+   "text": "Just, mentioned in the genealogy of our Lord (Matt. 1:14).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2455,
+   "name": "Salah",
+   "sha256": "26f6636139e3774c48c9b674d65ab51045fd468a76275b700a3cd8313cb0ea62",
+   "text": "A shoot, a descendant of Arphaxed (Luke 3:35, 36); called also Shelah (1 Chr. 1:18, 24).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2456,
+   "name": "Shealtiel",
+   "sha256": "5fea4d6ceff936b6bb2be7559ff77bc01085a2f0fa7b1e22615a7e2075010ce2",
+   "text": "Asked for of God, father of Zerubbabel (Ezra 3:2, 8; Neh. 12:1).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2457,
+   "name": "Salathiel",
+   "sha256": "0a3667719db74ff47d2503da403bb980501593e404f1f74778fa2ced284ea3f0",
+   "text": "Whom I asked of God, the son of Jeconiah (Matt. 1:12; 1 Chr. 3:17); also called the son of Neri (Luke 3:27). The probable explanation of the apparent discrepancy is that he was the son of Neri, the descendant of Nathan, and thus heir to the throne of David on the death of Jeconiah (comp. Jer. 22:30).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2458,
+   "name": "Sallai",
+   "sha256": "41e0548b253b66966279cf0fa2ee671ab2e14b06a59c7c6e340827cc6fda3596",
+   "text": "A Benjamite (Neh. 11:8).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2461,
+   "name": "Sallu",
+   "sha256": "32a5c086e1084538382568a92c59f8374b621eb1ac5314ab7b1d2086a9fadb2c",
+   "text": "A priest (Neh. 12:7).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2463,
+   "name": "Salmon",
+   "sha256": "fe17d0f4b9845854ce93942f7c1828a3bf99c3b26cf9882209c3878a4d6bcbb9",
+   "text": "Shady; or Zalmon (q.v.), a hill covered with dark forests, south of Shechem, from which Abimelech and his men gathered wood to burn that city (Judg. 9:48). In Ps. 68:14 the change from war to peace is likened to snow on the dark mountain, as some interpret the expression. Others suppose the words here mean that the bones of the slain left unburied covered the land, so that it seemed to be white as if covered with snow. The reference, however, of the psalm is probably to Josh. 11 and 12. The scattering of the kings and their followers is fitly likened unto the snow-flakes rapidly falling on the dark Salmon. It is the modern Jebel Suleiman.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2464,
+   "name": "Salome",
+   "sha256": "2120c8bcd3ddb523ea94c7a89ceb4b06c636194a57a7b2716f55ebea96ab2815",
+   "text": "The wife of Zebedee and mother of James and John (Mat. 27:56), and probably the sister of Mary, the mother of our Lord (John 19:25). She sought for her sons places of honour in Christ’s kingdom (Matt. 20:20, 21; comp. 19:28). She witnessed the crucifixion (Mark 15:40), and was present with the other women at the sepulchre (Matt. 27:56).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2466,
+   "name": "Samgar-nebo",
+   "sha256": "97bac8d52bc91542dc345565bcf181e9877575b586a371ddf65cc25f3e70b4b6",
+   "text": "Be gracious, O Nebo! or a cup-bearer of Nebo, probably the title of Nergal-sharezer, one of the princes of Babylon (Jer. 39:3).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2468,
+   "name": "Samson",
+   "sha256": "52775c8f2db3fc24a8dc57af450d92ff25c4a29d06dfdf47ad32b9f866bbec82",
+   "text": "Of the sun, the son of Manoah, born at Zorah. The narrative of his life is given in Judg. 13-16. He was a “Nazarite unto God” from his birth, the first Nazarite mentioned in Scripture (Judg. 13:3-5; comp. Num. 6:1-21). The first recorded event of his life was his marriage with a Philistine woman of Timnath (Judg. 14:1-5). Such a marriage was not forbidden by the law of Moses, as the Philistines did not form one of the seven doomed Canaanite nations (Ex. 34:11-16; Deut. 7:1-4). It was, however, an ill-assorted and unblessed marriage. His wife was soon taken from him and given “to his companion” (Judg. 14:20). For this Samson took revenge by burning the “standing corn of the Philistines” (15:1-8), who, in their turn, in revenge “burnt her and her father with fire.” Her death he terribly avenged (15:7-19). During the twenty years following this he judged Israel; but we have no record of his life. Probably these twenty years may have been simultaneous with the last twenty years of Eli’s life. After this we have an account of his exploits at Gaza (16:1-3), and of his infatuation for Delilah, and her treachery (16:4-20), and then of his melancholy death (16:21-31). He perished in the last terrible destruction he brought upon his enemies. “So the dead which he slew at his death were more [in social and political importance=the elite of the people] than they which he slew in his life.”\n\n “Straining all his nerves, he bowed: As with the force of winds and waters pent, When mountains tremble, those two massy pillars With horrible convulsion to and fro He tugged, he shook, till down they came, and drew The whole roof after them, with burst of thunder Upon the heads of all who sat beneath, Lords, ladies, captains, counsellors, or priests, Their choice nobility and flower.” Milton’s Samson Agonistes.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Nazarite unto God",
+     "kind": "partial",
+     "verses": [
+      7013005
+     ],
+     "es": "Porque tú te harás embarazada, y parirás un hijo: y no subirá navaja sobre su cabeza, porque aquel niño será Nazareo á Dios desde el vientre, y él comenzará á salvar á Israel de mano de los Filisteos.",
+     "pt": "Porque tu te farás grávida, e darás à luz um filho: e não subirá navalha sobre sua cabeça, porque aquele menino será nazireu a Deus desde o ventre, e ele começará a salvar a Israel da mão dos filisteus."
+    },
+    {
+     "n": 1,
+     "english": "to his companion",
+     "kind": "partial",
+     "verses": [
+      7014020
+     ],
+     "es": "Y el espíritu de Jehová cayó sobre él, y descendió á Ascalón, é hirió treinta hombres de ellos; y tomando sus despojos, dió las mudas de vestidos á los que habían explicado el enigma: y encendido en enojo fuése á casa de su padre. Y la mujer de Samsón fué dada á su compañero, con el cual él antes se acompañaba.",
+     "pt": "E a mulher de Sansão foi dada a seu companheiro, com o qual ele antes se acompanhava."
+    },
+    {
+     "n": 2,
+     "english": "standing corn of the Philistines",
+     "kind": "unsure",
+     "verses": [
+      7015005
+     ],
+     "es": "Después, encendiendo las teas, echó las zorras en los sembrados de los Filisteos, y quemó hacinas y mieses, y viñas y olivares.",
+     "pt": "Depois, acendendo as tochas, lançou as raposas nas plantações dos filisteus, e queimou pilhas de cereais e cereais nos pés, e vinhas e olivais."
+    },
+    {
+     "n": 3,
+     "english": "burnt her and her father with fire.",
+     "kind": "partial",
+     "verses": [
+      7015006
+     ],
+     "es": "Y dijeron los Filisteos: ¿Quién hizo esto? Y fuéles dicho: Samsón, el yerno del Timnateo, porque le quitó su mujer y la dió á su compañero. Y vinieron los Filisteos, y quemaron á fuego á ella y á su padre.",
+     "pt": "E disseram os filisteus: Quem fez isto? E foi-lhes dito: Sansão, o genro do timnateu, porque lhe tirou sua mulher e a deu a seu companheiro. E vieram os filisteus, e queimaram a fogo a ela e a seu pai."
+    },
+    {
+     "n": 4,
+     "english": "So the dead which he slew at his death were more [in social and political importance=the elite of the people] than they which he slew in his life.",
+     "kind": "loose",
+     "verses": [
+      7016030
+     ],
+     "es": "Y dijo Samsón: Muera yo con los Filisteos. Y estribando con esfuerzo, cayó la casa sobre los príncipes, y sobre todo el pueblo que estaba en ella. Y fueron muchos más los que de ellos mató muriendo, que los que había muerto en su vida.",
+     "pt": "E disse Sansão: Morra eu com os filisteus. E apoiando com força, caiu a casa sobre os príncipes, e sobre todo aquele povo que estava nela. E foram muitos mais os que deles matou morrendo, que os que havia matado em sua vida."
+    },
+    {
+     "n": 5,
+     "english": "Straining all his nerves, he bowed: As with the force of winds and waters pent, When mountains tremble, those two massy pillars With horrible convulsion to and fro He tugged, he shook, till down they came, and drew The whole roof after them, with burst of thunder Upon the heads of all who sat beneath, Lords, ladies, captains, counsellors, or priests, Their choice nobility and flower.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2469,
+   "name": "Samuel",
+   "sha256": "1253a38b60c5ad29b4da89db400247ee116e9c2b7e3e7fcb427a690d7a8db651",
+   "text": "Heard of God. The peculiar circumstances connected with his birth are recorded in 1 Sam. 1:20. Hannah, one of the two wives of Elkanah, who came up to Shiloh to worship before the Lord, earnestly prayed to God that she might become the mother of a son. Her prayer was graciously granted; and after the child was weaned she brought him to Shiloh nd consecrated him to the Lord as a perpetual Nazarite (1:23-2:11). Here his bodily wants and training were attended to by the women who served in the tabernacle, while Eli cared for his religious culture. Thus, probably, twelve years of his life passed away. “The child Samuel grew on, and was in favour both with the Lord, and also with men” (2:26; comp. Luke 2:52). It was a time of great and growing degeneracy in Israel (Judg. 21:19-21; 1 Sam. 2:12-17, 22). The Philistines, who of late had greatly increased in number and in power, were practically masters of the country, and kept the people in subjection (1 Sam. 10:5; 13:3).\n\n At this time new communications from God began to be made to the pious child. A mysterious voice came to him in the night season, calling him by name, and, instructed by Eli, he answered, “Speak, Lord; for thy servant heareth.” The message that came from the Lord was one of woe and ruin to Eli and his profligate sons. Samuel told it all to Eli, whose only answer to the terrible denunciations (1 Sam. 3:11-18) was, “It is the Lord; let him do what seemeth him good”, the passive submission of a weak character, not, in his case, the expression of the highest trust and faith. The Lord revealed himself now in divers manners to Samuel, and his fame and his influence increased throughout the land as of one divinely called to the prophetical office. A new period in the history of the kingdom of God now commenced.\n\n The Philistine yoke was heavy, and the people, groaning under the wide-spread oppression, suddenly rose in revolt, and “went out against the Philistines to battle.” A fierce and disastrous battle was fought at Aphek, near to Ebenezer (1 Sam. 4:1, 2). The Israelites were defeated, leaving 4,000 dead “in the field.” The chiefs of the people thought to repair this great disaster by carrying with them the ark of the covenant as the symbol of Jehovah’s presence. They accordingly, without consulting Samuel, fetched it out of Shiloh to the camp near Aphek. At the sight of the ark among them the people “shouted with a great shout, so that the earth rang again.” A second battle was fought, and again the Philistines defeated the Israelites, stormed their camp, slew 30,000 men, and took the sacred ark. The tidings of this fatal battle was speedily conveyed to Shiloh; and so soon as the aged Eli heard that the ark of God was taken, he fell backward from his seat at the entrance of the sanctuary, and his neck brake, and he died. The tabernacle with its furniture was probably, by the advice of Samuel, now about twenty years of age, removed from Shiloh to some place of safety, and finally to Nob, where it remained many years (21:1).\n\n The Philistines followed up their advantage, and marched upon Shiloh, which they plundered and destroyed (comp. Jer. 7:12; Ps. 78:59). This was a great epoch in the history of Israel. For twenty years after this fatal battle at Aphek the whole land lay under the oppression of the Philistines. During all these dreary years Samuel was a spiritual power in the land. From Ramah, his native place, where he resided, his influence went forth on every side among the people. With unwearied zeal he went up and down from place to place, reproving, rebuking, and exhorting the people, endeavouring to awaken in them a sense of their sinfulness, and to lead them to repentance. His labours were so far successful that “all the house of Israel lamented after the Lord.” Samuel summoned the people to Mizpeh, one of the loftiest hills in Central Palestine, where they fasted and prayed, and prepared themselves there, under his direction, for a great war against the Philistines, who now marched their whole force toward Mizpeh, in order to crush the Israelites once for all. At the intercession of Samuel God interposed in behalf of Israel. Samuel himself was their leader, the only occasion in which he acted as a leader in war. The Philistines were utterly routed. They fled in terror before the army of Israel, and a great slaughter ensued. This battle, fought probably about B.C. 1095, put an end to the forty years of Philistine oppression. In memory of this great deliverance, and in token of gratitude for the help vouchsafed, Samuel set up a great stone in the battlefield, and called it “Ebenezer,” saying, “Hitherto hath the Lord helped us” (1 Sam. 7:1-12). This was the spot where, twenty years before, the Israelites had suffered a great defeat, when the ark of God was taken.\n\n This victory over the Philistines was followed by a long period of peace for Israel (1 Sam. 7:13, 14), during which Samuel exercised the functions of judge, going “from year to year in circuit” from his home in Ramah to Bethel, thence to Gilgal (not that in the Jordan valley, but that which lay to the west of Ebal and Gerizim), and returning by Mizpeh to Ramah. He established regular services at Shiloh, where he built an altar; and at Ramah he gathered a company of young men around him and established a school of the prophets. The schools of the prophets, thus originated, and afterwards established also at Gibeah, Bethel, Gilgal, and Jericho, exercised an important influence on the national character and history of the people in maintaining pure religion in the midst of growing corruption. They continued to the end of the Jewish commonwealth.\n\n Many years now passed, during which Samuel exercised the functions of his judicial office, being the friend and counsellor of the people in all matters of private and public interest. He was a great statesman as well as a reformer, and all regarded him with veneration as the “seer,” the prophet of the Lord. At the close of this period, when he was now an old man, the elders of Israel came to him at Ramah (1 Sam. 8:4, 5, 19-22); and feeling how great was the danger to which the nation was exposed from the misconduct of Samuel’s sons, whom he had invested with judicial functions as his assistants, and had placed at Beersheba on the Philistine border, and also from a threatened invasion of the Ammonites, they demanded that a king should be set over them. This request was very displeasing to Samuel. He remonstrated with them, and warned them of the consequences of such a step. At length, however, referring the matter to God, he acceded to their desires, and anointed Saul (q.v.) to be their king (11:15). Before retiring from public life he convened an assembly of the people at Gilgal (ch. 12), and there solemnly addressed them with reference to his own relation to them as judge and prophet.\n\n The remainder of his life he spent in retirement at Ramah, only occasionally and in special circumstances appearing again in public (1 Sam. 13, 15) with communications from God to king Saul. While mourning over the many evils which now fell upon the nation, he is suddenly summoned (ch. 16) to go to Bethlehem and anoint David, the son of Jesse, as king over Israel instead of Saul. After this little is known of him till the time of his death, which took place at Ramah when he was probably about eighty years of age. “And all Israel gathered themselves together, and lamented him, and buried him in his house at Ramah” (25:1), not in the house itself, but in the court or garden of his house. (Comp. 2 Kings 21:18; 2 Chr. 33:20; 1 Kings 2:34; John 19:41.)\n\n Samuel’s devotion to God, and the special favour with which God regarded him, are referred to in Jer. 15:1 and Ps. 99:6.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "The child Samuel grew on, and was in favour both with the Lord, and also with men",
+     "kind": "partial",
+     "verses": [
+      9002026
+     ],
+     "es": "Y el joven Samuel iba creciendo, y adelantando delante de Dios y delante de los hombres.",
+     "pt": "E o jovem Samuel ia crescendo e sendo bem estimando diante de Deus e diante das pessoas."
+    },
+    {
+     "n": 1,
+     "english": "Speak, Lord; for thy servant heareth.",
+     "kind": "partial",
+     "verses": [
+      9003009
+     ],
+     "es": "Y dijo Eli á Samuel: Ve, y acuéstate: y si te llamare, dirás: Habla, Jehová, que tu siervo oye. Así se fué Samuel, y acostóse en su lugar.",
+     "pt": "E disse Eli a Samuel: Vai, e deita-te: e se te chamar, dirás: Fala, SENHOR, que teu servo ouve. Assim se foi Samuel, e deitou-se em seu lugar."
+    },
+    {
+     "n": 2,
+     "english": "It is the Lord; let him do what seemeth him good",
+     "kind": "partial",
+     "verses": [
+      9003018
+     ],
+     "es": "Y Samuel se lo manifestó todo, sin encubrirle nada. Entonces él dijo: Jehová es; haga lo que bien le pareciere.",
+     "pt": "E Samuel se o manifestou tudo, sem encobrir-lhe nada. Então ele disse: o SENHOR é; faça o que bem lhe parecer."
+    },
+    {
+     "n": 3,
+     "english": "went out against the Philistines to battle.",
+     "kind": "partial",
+     "verses": [
+      9004001
+     ],
+     "es": "Y SAMUEL habló á todo Israel. Por aquel tiempo salió Israel á encontrar en batalla á los Filisteos, y asentó campo junto á Eben-ezer, y los Filisteos asentaron el suyo en Aphec.",
+     "pt": "E Samuel falou a todo Israel. Por aquele tempo saiu Israel a encontrar em batalha aos filisteus, e assentou campo junto a Ebenézer, e os filisteus assentaram o seu em Afeque."
+    },
+    {
+     "n": 4,
+     "english": "in the field.",
+     "kind": "partial",
+     "verses": [
+      9004002
+     ],
+     "es": "Y los Filisteos presentaron la batalla á Israel; y trabándose el combate, Israel fué vencido delante de los Filisteos, los cuales hirieron en la batalla por el campo como cuatro mil hombres.",
+     "pt": "E os filisteus apresentaram a batalha a Israel; e travando-se o combate, Israel foi vencido diante dos filisteus, os quais feriram na batalha pelo campo como quatro mil homens."
+    },
+    {
+     "n": 5,
+     "english": "shouted with a great shout, so that the earth rang again.",
+     "kind": "partial",
+     "verses": [
+      9004005
+     ],
+     "es": "Y aconteció que, como el arca del pacto de Jehová vino al campo, todo Israel dió grita con tan gran júbilo, que la tierra tembló.",
+     "pt": "E aconteceu que, quando a arca do pacto do SENHOR veio ao campo, todo Israel deu grito com tão grande júbilo, que a terra tremeu."
+    },
+    {
+     "n": 6,
+     "english": "all the house of Israel lamented after the Lord.",
+     "kind": "partial",
+     "verses": [
+      9007002
+     ],
+     "es": "Y aconteció que desde el día que llegó el arca á Chîriath-jearim pasaron muchos días, veinte años; y toda la casa de Israel lamentaba en pos de Jehová.",
+     "pt": "E aconteceu que desde o dia que chegou a arca a Quriate-Jearim passaram muito dias, vinte anos; e toda a casa de Israel se lamentou, voltando a seguir o SENHOR."
+    },
+    {
+     "n": 7,
+     "english": "Ebenezer,",
+     "kind": "other"
+    },
+    {
+     "n": 8,
+     "english": "Hitherto hath the Lord helped us",
+     "kind": "partial",
+     "verses": [
+      9007012
+     ],
+     "es": "Tomó luego Samuel una piedra, y púsola entre Mizpa y Sen, y púsole por nombre Eben-ezer, diciendo: Hasta aquí nos ayudó Jehová.",
+     "pt": "Tomou logo Samuel uma pedra, e a pôs entre Mispá e Sem, e pôs-lhe por nome Ebenézer, dizendo: Até aqui nos ajudou o SENHOR."
+    },
+    {
+     "n": 9,
+     "english": "from year to year in circuit",
+     "kind": "partial",
+     "verses": [
+      9007016
+     ],
+     "es": "Y todos los años iba y daba vuelta á Beth-el, y á Gilgal, y á Mizpa, y juzgaba á Israel en todos estos lugares.",
+     "pt": "E todos os anos ia e dava volta a Betel, e a Gilgal, e a Mispá, e julgava a Israel em todos estes lugares."
+    },
+    {
+     "n": 10,
+     "english": "seer,",
+     "kind": "other"
+    },
+    {
+     "n": 11,
+     "english": "And all Israel gathered themselves together, and lamented him, and buried him in his house at Ramah",
+     "kind": "loose",
+     "verses": [
+      9028003,
+      9028004
+     ],
+     "es": "Ya Samuel era muerto, y todo Israel lo había lamentado, y habíanle sepultado en Rama, en su ciudad. Y Saúl había echado de la tierra los encantadores y adivinos. Pues como los Filisteos se juntaron, vinieron y asentaron campo en Sunam: y Saúl juntó á todo Israel, y asentaron campo en Gilboa.",
+     "pt": "Já Samuel era morto, e todo Israel o havia lamentado, e haviam-lhe sepultado em Ramá, em sua cidade. E Saul havia lançado da terra os encantadores e adivinhos. Pois como os filisteus se juntaram, vieram e assentaram acampamento em Suném: e Saul juntou a todo Israel, e assentaram acampamento em Gilboa."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2470,
+   "name": "Sanballat",
+   "sha256": "0da9c819df50739f3c1a9d68d970eb92dac2d4324da0192344f579add9b7b9a6",
+   "text": "Held some place of authority in Samaria when Nehemiah went up to Jerusalem to rebuild its ruined walls. He vainly attempted to hinder this work (Neh. 2:10, 19; 4:1-12; 6). His daughter became the wife of one of the sons of Joiada, a son of the high priest, much to the grief of Nehemiah (13:28).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2471,
+   "name": "Sippai",
+   "sha256": "4b4e607f285500645ae3bb3f1c6cf40b6ed6ab0f8d6bfad2cb736a57212433b8",
+   "text": "Extension, the son of the giant whom Sibbechai slew (2 Sam. 21:18); called also Sippai (1 Chr. 20:4).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2472,
+   "name": "Sapphira",
+   "sha256": "7d4fadda4bf32489bb4a6d85303d8280a707d89db66f40f909b33c5053baf6a3",
+   "text": "Beautiful, the wife of Ananias (q.v.). She was a partner in his guilt and also in his punishment (Acts 5:1-11).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2473,
+   "name": "Sarah",
+   "sha256": "447c9f6b0321b3bd75114719a7494d21f36cc25e76eb2d93b83e6f6103563bed",
+   "text": "Princess, the wife and at the same time the half-sister of Abraham (Gen. 11:29; 20:12). This name was given to her at the time that it was announced to Abraham that she should be the mother of the promised child. Her story is from her marriage identified with that of the patriarch till the time of her death. Her death, at the age of one hundred and twenty-seven years (the only instance in Scripture where the age of a woman is recorded), was the occasion of Abraham’s purchasing the cave of Machpelah as a family burying-place.\n\n In the allegory of Gal. 4:22-31 she is the type of the “Jerusalem which is above.” She is also mentioned as Sara in Heb. 11:11 among the Old Testament worthies, who “all died in faith.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Jerusalem which is above.",
+     "kind": "partial",
+     "verses": [
+      48004026
+     ],
+     "es": "Mas la Jerusalem de arriba libre es; la cual es la madre de todos nosotros.",
+     "pt": "Mas a Jerusalém de cima é livre; esta é a mãe de todos nós."
+    },
+    {
+     "n": 1,
+     "english": "all died in faith.",
+     "kind": "partial",
+     "verses": [
+      58011013
+     ],
+     "es": "Conforme á la fe murieron todos éstos sin haber recibido las promesas, sino mirándolas de lejos, y creyéndolas, y saludándolas, y confesando que eran peregrinos y advenedizos sobre la tierra.",
+     "pt": "Permanecendo na fé, todos esses morreram sem receberem as promessas. Mas as viram de longe, creram, e felicitaram-se nelas, declarando que eram estrangeiros e peregrinos na terra."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2476,
+   "name": "Satan",
+   "sha256": "a1512ca3f7337597ea62241f2ba9e648b3c0bbf201ce493ee3204fe5533651e2",
+   "text": "Adversary; accuser. When used as a proper name, the Hebrew word so rendered has the article “the adversary” (Job 1:6-12; 2:1-7). In the New Testament it is used as interchangeable with Diabolos, or the devil, and is so used more than thirty times.\n\n He is also called “the dragon,” “the old serpent” (Rev. 12:9; 20:2); “the prince of this world” (John 12:31; 14:30); “the prince of the power of the air” (Eph. 2:2); “the god of this world” (2 Cor. 4:4); “the spirit that now worketh in the children of disobedience” (Eph. 2:2). The distinct personality of Satan and his activity among men are thus obviously recognized. He tempted our Lord in the wilderness (Matt. 4:1-11). He is “Beelzebub, the prince of the devils” (12:24). He is “the constant enemy of God, of Christ, of the divine kingdom, of the followers of Christ, and of all truth; full of falsehood and all malice, and exciting and seducing to evil in every possible way.” His power is very great in the world. He is a “roaring lion, seeking whom he may devour” (1 Pet. 5:8). Men are said to be “taken captive by him” (2 Tim. 2:26). Christians are warned against his “devices” (2 Cor. 2:11), and called on to “resist” him (James 4:7). Christ redeems his people from “him that had the power of death, that is, the devil” (Heb. 2:14). Satan has the “power of death,” not as lord, but simply as executioner.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the adversary",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "the dragon,",
+     "kind": "wording",
+     "verses": [
+      66012007
+     ],
+     "es": "Y fué hecha una grande batalla en el cielo: Miguel y sus ángeles lidiaban contra el dragón; y lidiaba el dragón y sus ángeles,",
+     "pt": "E houve batalha no céu: Miguel e seus anjos batalhavam contra o dragão; e batalhava também contra eles o dragão e seus anjos."
+    },
+    {
+     "n": 2,
+     "english": "the old serpent",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "the prince of this world",
+     "kind": "partial",
+     "verses": [
+      43012031
+     ],
+     "es": "Ahora es el juicio de este mundo: ahora el príncipe de este mundo será echado fuera.",
+     "pt": "Agora é o juízo deste mundo; agora será lançado fora o príncipe deste mundo."
+    },
+    {
+     "n": 4,
+     "english": "the prince of the power of the air",
+     "kind": "partial",
+     "verses": [
+      49002002
+     ],
+     "es": "En que en otro tiempo anduvisteis conforme á la condición de este mundo, conforme al príncipe de la potestad del aire, el espíritu que ahora obra en los hijos de desobediencia:",
+     "pt": "nos quais antes andastes conforme o proceder deste mundo, conforme o príncipe do poder do ar, do espírito que agora opera nos filhos da desobediência."
+    },
+    {
+     "n": 5,
+     "english": "the god of this world",
+     "kind": "partial",
+     "verses": [
+      47004004
+     ],
+     "es": "En los cuales el dios de este siglo cegó los entendimientos de los incrédulos, para que no les resplandezca la lumbre del evangelio de la gloria de Cristo, el cual es la imagen de Dios.",
+     "pt": "Nos quais o deus destes tempos cegou os entendimentos, isto é ,os incrédulos, para que não lhes brilhe a luz do Evangelho da glória de Cristo, que é a imagem de Deus."
+    },
+    {
+     "n": 6,
+     "english": "the spirit that now worketh in the children of disobedience",
+     "kind": "partial",
+     "verses": [
+      49002002
+     ],
+     "es": "En que en otro tiempo anduvisteis conforme á la condición de este mundo, conforme al príncipe de la potestad del aire, el espíritu que ahora obra en los hijos de desobediencia:",
+     "pt": "nos quais antes andastes conforme o proceder deste mundo, conforme o príncipe do poder do ar, do espírito que agora opera nos filhos da desobediência."
+    },
+    {
+     "n": 7,
+     "english": "Beelzebub, the prince of the devils",
+     "kind": "partial",
+     "verses": [
+      40012024
+     ],
+     "es": "Mas los Fariseos, oyéndolo, decían: Este no echa fuera los demonios, sino por Beelzebub, príncipe de los demonios.",
+     "pt": "Mas quando os fariseus ouviam isso, diziam: Ele não expulsa os demônios, a não ser por Belzebu, o chefe dos demônios."
+    },
+    {
+     "n": 8,
+     "english": "the constant enemy of God, of Christ, of the divine kingdom, of the followers of Christ, and of all truth; full of falsehood and all malice, and exciting and seducing to evil in every possible way.",
+     "kind": "other"
+    },
+    {
+     "n": 9,
+     "english": "roaring lion, seeking whom he may devour",
+     "kind": "loose",
+     "verses": [
+      60005007,
+      60005008
+     ],
+     "es": "Echando toda vuestra solicitud en él, porque él tiene cuidado de vosotros. Sed templados, y velad; porque vuestro adversario el diablo, cual león rugiente, anda alrededor buscando á quien devore:",
+     "pt": "lançando sobre ele toda a vossa ansiedade; porque ele tem cuidado de vós. Sede sóbrios! Vigiai! Pois o vosso adversário, o diabo, anda ao redor, rugindo como um leão, buscando a quem possa devorar."
+    },
+    {
+     "n": 10,
+     "english": "taken captive by him",
+     "kind": "partial",
+     "verses": [
+      55002026
+     ],
+     "es": "Y se zafen del lazo del diablo, en que están cautivos á voluntad de él.",
+     "pt": "e se libertem da armadilha do diabo, em que foram presos à vontade dele."
+    },
+    {
+     "n": 11,
+     "english": "devices",
+     "kind": "wording",
+     "verses": [
+      47002011
+     ],
+     "es": "Porque no seamos engañados de Satanás: pues no ignoramos sus maquinaciones.",
+     "pt": "Porque não ignoramos seus pensamentos."
+    },
+    {
+     "n": 12,
+     "english": "resist",
+     "kind": "wording",
+     "verses": [
+      59004007
+     ],
+     "es": "Someteos pues á Dios; resistid al diablo, y de vosotros huirá.",
+     "pt": "Sujeitai-vos, pois, a Deus; resisti ao diabo, e ele fugirá de vós."
+    },
+    {
+     "n": 13,
+     "english": "him that had the power of death, that is, the devil",
+     "kind": "partial",
+     "verses": [
+      58002014
+     ],
+     "es": "Así que, por cuanto los hijos participaron de carne y sangre, él también participó de lo mismo, para destruir por la muerte al que tenía el imperio de la muerte, es á saber, al diablo,",
+     "pt": "Portanto, uma vez que os filhos compartilham da carne e do sangue, também ele, semelhantemente, participou das mesmas coisas, a fim de pela morte aniquilar ao que tinha o poder da morte, isto é, o diabo;"
+    },
+    {
+     "n": 14,
+     "english": "power of death,",
+     "kind": "partial",
+     "verses": [
+      58002014
+     ],
+     "es": "Así que, por cuanto los hijos participaron de carne y sangre, él también participó de lo mismo, para destruir por la muerte al que tenía el imperio de la muerte, es á saber, al diablo,",
+     "pt": "Portanto, uma vez que os filhos compartilham da carne e do sangue, também ele, semelhantemente, participou das mesmas coisas, a fim de pela morte aniquilar ao que tinha o poder da morte, isto é, o diabo;"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2477,
+   "name": "Shaul",
+   "sha256": "1b1a1dcb6c8189310e5850d17a3e400942dcb0ff0e41d2a5fc35191b5e2f1782",
+   "text": "A king of Edom (Gen. 36:37, 38); called Shaul in 1 Chr. 1:48.",
+   "quotes": []
+  }
+ ],
+ "glossary": {
+  "Abijah": {
+   "es": "Abías",
+   "pt": "Abias"
+  },
+  "Abimelech": {
+   "pt": "Abimeleque"
+  },
+  "Abraham": {
+   "pt": "Abraão"
+  },
+  "Adonijah": {
+   "es": "Adonías (person); Adonía (person)",
+   "pt": "Adonias"
+  },
+  "Ahaz": {
+   "es": "Acaz (person); Ahaz (person)",
+   "pt": "Acaz"
+  },
+  "Aiah": {
+   "es": "Aja",
+   "pt": "Aiá"
+  },
+  "Ananias": {
+   "es": "Ananías"
+  },
+  "Aphek": {
+   "es": "Afec"
+  },
+  "Artaxerxes": {
+   "es": "Artajerjes"
+  },
+  "Babylon": {
+   "es": "Babilonia",
+   "pt": "Babilônia"
+  },
+  "Bashemath": {
+   "es": "Basemat",
+   "pt": "Basemate"
+  },
+  "Beeroth": {
+   "es": "Beerot",
+   "pt": "Beerote"
+  },
+  "Beersheba": {
+   "es": "Beer-seba",
+   "pt": "Berseba"
+  },
+  "Benjamin": {
+   "es": "Benjamín",
+   "pt": "Benjamim"
+  },
+  "Bethel": {
+   "es": "Bet-el",
+   "pt": "Betel"
+  },
+  "Bethlehem": {
+   "es": "Bet-lehem",
+   "pt": "Belém"
+  },
+  "Binea": {
+   "es": "Bina",
+   "pt": "Bineá"
+  },
+  "Boaz": {
+   "es": "Booz"
+  },
+  "Cush": {
+   "es": "Cush (person); Etiopía (person)",
+   "pt": "Cuxe"
+  },
+  "Damascus": {
+   "es": "Damasco",
+   "pt": "Damasco"
+  },
+  "David": {
+   "pt": "Davi"
+  },
+  "Delilah": {
+   "es": "Dalila",
+   "pt": "Dalila"
+  },
+  "Ebal": {
+   "es": "Ebal (person); Seba (person)"
+  },
+  "Ebenezer": {
+   "es": "Eben-ezer",
+   "pt": "Ebenézer"
+  },
+  "Egypt": {
+   "es": "Egipto",
+   "pt": "Egito"
+  },
+  "Eliadah": {
+   "es": "Eliada",
+   "pt": "Eliada"
+  },
+  "Elimelech": {
+   "pt": "Elimeleque"
+  },
+  "Elkanah": {
+   "es": "Elcana",
+   "pt": "Elcana"
+  },
+  "Esau": {
+   "es": "Esaú",
+   "pt": "Esaú"
+  },
+  "Ezra": {
+   "es": "Esdras (person); Ezra (person)",
+   "pt": "Esdras (person); Ezra (person)"
+  },
+  "Gibeah": {
+   "es": "Gabaa (place); Gibea (place)",
+   "pt": "Gibeá"
+  },
+  "Gomer": {
+   "pt": "Gômer"
+  },
+  "Hannah": {
+   "es": "Ana",
+   "pt": "Ana"
+  },
+  "Hebron": {
+   "es": "Hebrón",
+   "pt": "Hebrom"
+  },
+  "Heman": {
+   "es": "Hemán (person); Emán (person)",
+   "pt": "Hemã"
+  },
+  "Jacob": {
+   "pt": "Jacó"
+  },
+  "James": {
+   "es": "Jacobo",
+   "pt": "Tiago"
+  },
+  "Jericho": {
+   "es": "Jericó",
+   "pt": "Jericó"
+  },
+  "Jeroboam": {
+   "pt": "Jeroboão"
+  },
+  "Jerusalem": {
+   "es": "Jerusalén",
+   "pt": "Jerusalém"
+  },
+  "Jesse": {
+   "es": "Isaí",
+   "pt": "Jessé"
+  },
+  "Jether": {
+   "es": "Jeter",
+   "pt": "Jéter"
+  },
+  "Jethro": {
+   "es": "Jetro",
+   "pt": "Jetro"
+  },
+  "Job": {
+   "pt": "Jó"
+  },
+  "John": {
+   "es": "Juan",
+   "pt": "João"
+  },
+  "John Mark": {
+   "es": "Juan Marcos",
+   "pt": "João Marcos"
+  },
+  "Jordan": {
+   "es": "Jordán",
+   "pt": "Jordão"
+  },
+  "Joseph": {
+   "es": "José (person); Josef (person); Jefone (person)",
+   "pt": "José"
+  },
+  "Judah": {
+   "es": "Judá (person); Jehudas (person)",
+   "pt": "Judá"
+  },
+  "Leah": {
+   "es": "Lea",
+   "pt": "Lia"
+  },
+  "Machpelah": {
+   "es": "Macpela",
+   "pt": "Macpela"
+  },
+  "Mahlon": {
+   "es": "Mahalón",
+   "pt": "Malom"
+  },
+  "Manoah": {
+   "es": "Manoa",
+   "pt": "Manoá"
+  },
+  "Mary": {
+   "es": "María",
+   "pt": "Maria"
+  },
+  "Mephibosheth": {
+   "es": "Mefi-boset",
+   "pt": "Mefibosete"
+  },
+  "Merab": {
+   "pt": "Merabe"
+  },
+  "Midian": {
+   "es": "Madián",
+   "pt": "Midiã"
+  },
+  "Mizpeh": {
+   "es": "Mizpa"
+  },
+  "Moab": {
+   "pt": "Moabe"
+  },
+  "Moses": {
+   "es": "Moisés",
+   "pt": "Moisés"
+  },
+  "Naamah": {
+   "es": "Naama",
+   "pt": "Naamá"
+  },
+  "Naomi": {
+   "es": "Noemi",
+   "pt": "Noemi"
+  },
+  "Nathan": {
+   "es": "Natán",
+   "pt": "Natã"
+  },
+  "Nehemiah": {
+   "es": "Nehemías",
+   "pt": "Neemias"
+  },
+  "Nergal-sharezer": {
+   "es": "Nergal-sarezer",
+   "pt": "Nergal-Sarezer"
+  },
+  "Nob": {
+   "pt": "Nobe"
+  },
+  "Obed": {
+   "pt": "Obede"
+  },
+  "On": {
+   "es": "Hon (person); On (place)",
+   "pt": "Om"
+  },
+  "Pekah": {
+   "es": "Peka",
+   "pt": "Peca"
+  },
+  "Pekahiah": {
+   "es": "Pekaía",
+   "pt": "Pecaías"
+  },
+  "Rahab": {
+   "pt": "Raabe"
+  },
+  "Ramah": {
+   "es": "Rama (place); Horma (place)",
+   "pt": "Ramá (place); Hormá (place)"
+  },
+  "Rehoboam": {
+   "es": "Roboam",
+   "pt": "Roboão"
+  },
+  "Reuben": {
+   "es": "Rubén",
+   "pt": "Rúben"
+  },
+  "Rezin": {
+   "es": "Rezín (person); Resin (person)",
+   "pt": "Resim (person); Rezim (person)"
+  },
+  "Rizpah": {
+   "es": "Rispa",
+   "pt": "Rispa"
+  },
+  "Ruth": {
+   "es": "Rut",
+   "pt": "Rute"
+  },
+  "Salmon": {
+   "es": "Salmón",
+   "pt": "Salmom"
+  },
+  "Samson": {
+   "es": "Samsón",
+   "pt": "Sansão"
+  },
+  "Satan": {
+   "es": "Satanás",
+   "pt": "Satanás"
+  },
+  "Saul": {
+   "es": "Saúl"
+  },
+  "Shaul": {
+   "es": "Saúl",
+   "pt": "Saul"
+  },
+  "Shechem": {
+   "es": "Sequem (person); Siquem (place)",
+   "pt": "Siquém"
+  },
+  "Shelah": {
+   "es": "Sela",
+   "pt": "Selá"
+  },
+  "Shemaiah": {
+   "es": "Semeías",
+   "pt": "Semaías (person); Samaías (person); Semeías (person)"
+  },
+  "Shiloh": {
+   "es": "Silo",
+   "pt": "Siló"
+  },
+  "Shishak": {
+   "es": "Sisac",
+   "pt": "Sisaque"
+  },
+  "Sibbechai": {
+   "es": "Sibecai",
+   "pt": "Sibecai"
+  },
+  "Sippai": {
+   "pt": "Sipai"
+  },
+  "So": {
+   "pt": "Sô"
+  },
+  "Solomon": {
+   "es": "Salomón",
+   "pt": "Salomão"
+  },
+  "Syria": {
+   "es": "Siria",
+   "pt": "Síria"
+  },
+  "Zalmon": {
+   "es": "Salmón",
+   "pt": "Salmom"
+  },
+  "Zebedee": {
+   "es": "Zebedeo",
+   "pt": "Zebedeu"
+  },
+  "Zerubbabel": {
+   "es": "Zorobabel",
+   "pt": "Zorobabel"
+  },
+  "Zobah": {
+   "es": "Soba",
+   "pt": "Zobá"
+  },
+  "Zorah": {
+   "es": "Sora",
+   "pt": "Zorá"
+  }
+ }
+}

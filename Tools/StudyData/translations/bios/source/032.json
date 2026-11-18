@@ -1,0 +1,1549 @@
+{
+ "batch": "032",
+ "entries": [
+  {
+   "kind": "place",
+   "id": 417,
+   "name": "Etham",
+   "sha256": "7ebfe114476c364e3eda8502939b0442b1a5f2bf54278713aed63ebdc72ddff2",
+   "text": "Perhaps another name for Khetam, or “fortress,” on the Shur or great wall of Egypt, which extended from the Mediterranean to the Gulf of Suez. Here the Israelites made their third encampment (Ex. 13:20; Num. 33:6). The camp was probably a little to the west of the modern town of Ismailia. Here the Israelites were commanded to change their route (Ex. 14:2), and “turn” towards the south, and encamp before Pi-hahiroth.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "fortress,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "turn",
+     "kind": "wording",
+     "verses": [
+      2014002
+     ],
+     "es": "Habla á los hijos de Israel que den la vuelta, y asienten su campo delante de Pihahiroth, entre Migdol y la mar hacia Baalzephón: delante de él asentaréis el campo, junto á la mar.",
+     "pt": "Fala aos filhos de Israel que deem a volta, e assentem seu acampamento diante de Pi-Hairote, entre Migdol e o mar até Baal-Zefom: diante dele assentareis o campo, junto ao mar."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 419,
+   "name": "Ethiopia",
+   "sha256": "5ca94156bc1bab8597595c05d96c90cb05ccbfcbf1fb060c66401ba4651ce268",
+   "text": "Country of burnt faces; the Greek word by which the Hebrew Cush is rendered (Gen. 2:13; 2 Kings 19:9; Esther 1:1; Job 28:19; Ps. 68:31; 87:4), a country which lay to the south of Egypt, beginning at Syene on the First Cataract (Ezek. 29:10; 30:6), and extending to beyond the confluence of the White and Blue Nile. It corresponds generally with what is now known as the Soudan (i.e., the land of the blacks). This country was known to the Hebrews, and is described in Isa. 18:1; Zeph. 3:10. They carried on some commercial intercourse with it (Isa. 45:14).\n\n Its inhabitants were descendants of Ham (Gen. 10:6; Jer. 13:23; Isa. 18:2, “scattered and peeled,” A.V.; but in R.V., “tall and smooth”). Herodotus, the Greek historian, describes them as “the tallest and handsomest of men.” They are frequently represented on Egyptian monuments, and they are all of the type of the true negro. As might be expected, the history of this country is interwoven with that of Egypt.\n\n Ethiopia is spoken of in prophecy (Ps. 68:31; 87:4; Isa. 45:14; Ezek. 30:4-9; Dan. 11:43; Nah. 3:8-10; Hab. 3:7; Zeph. 2:12).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "scattered and peeled,",
+     "kind": "partial",
+     "verses": [
+      23018002
+     ],
+     "es": "Que envía mensajeros por la mar, y en navíos de junco sobre las aguas! Andad, ligeros mensajeros, á la gente tirada y repelada, al pueblo asombroso desde su principio y después; gente harta de esperar y hollada, cuya tierra destruyeron los ríos.",
+     "pt": "Que envia embaixadores pelo mar, e em navios de junco sobre as águas, com a ordem : Ide, mensageiros velozes, a uma nação de gente alta e de pele lisa, a um povo temido desde seus territórios afora, uma nação dominadora e esmagadora, cuja terra os rios dividem."
+    },
+    {
+     "n": 1,
+     "english": "tall and smooth",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "the tallest and handsomest of men.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 421,
+   "name": "Euphrates",
+   "sha256": "818f1ad4900f129c8b50056cdcf4348f05ed4b12f83575810276e21100b06ff6",
+   "text": "Hebrew, Perath; Assyrian, Purat; Persian cuneiform, Ufratush, whence Greek Euphrates, meaning “sweet water.” The Assyrian name means “the stream,” or “the great stream.” It is generally called in the Bible simply “the river” (Ex. 23:31), or “the great river” (Deut. 1:7).\n\n The Euphrates is first mentioned in Gen. 2:14 as one of the rivers of Paradise. It is next mentioned in connection with the covenant which God entered into with Abraham (15:18), when he promised to his descendants the land from the river of Egypt to the river Euphrates (comp. Deut. 11:24; Josh. 1:4), a covenant promise afterwards fulfilled in the extended conquests of David (2 Sam. 8:2-14; 1 Chr. 18:3; 1 Kings 4:24). It was then the boundary of the kingdom to the north-east. In the ancient history of Assyria, and Babylon, and Egypt many events are recorded in which mention is made of the “great river.” Just as the Nile represented in prophecy the power of Egypt, so the Euphrates represented the Assyrian power (Isa. 8:7; Jer. 2:18).\n\n It is by far the largest and most important of all the rivers of Western Asia. From its source in the Armenian mountains to the Persian Gulf, into which it empties itself, it has a course of about 1,700 miles. It has two sources, (1) the Frat or Kara-su (i.e., “the black river”), which rises 25 miles north-east of Erzeroum; and (2) the Muradchai (i.e., “the river of desire”), which rises near Ararat, on the northern slope of Ala-tagh. At Kebban Maden, 400 miles from the source of the former, and 270 from that of the latter, they meet and form the majestic stream, which is at length joined by the Tigris at Koornah, after which it is called Shat-el-Arab, which runs in a deep and broad stream for above 140 miles to the sea. It is estimated that the alluvium brought down by these rivers encroaches on the sea at the rate of about one mile in thirty years.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "sweet water.",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "the stream,",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "the great stream.",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "the river",
+     "kind": "wording",
+     "verses": [
+      2023031
+     ],
+     "es": "Y yo pondré tu término desde el mar Bermejo hasta la mar de Palestina, y desde el desierto hasta el río: porque pondré en vuestras manos los moradores de la tierra, y tú los echarás de delante de ti.",
+     "pt": "E eu porei teu termo desde o mar Vermelho até o mar de filístia, e desde o deserto até o rio: porque porei em vossas mãos os moradores da terra, e tu os expulsarás de diante de ti."
+    },
+    {
+     "n": 4,
+     "english": "the great river",
+     "kind": "partial",
+     "verses": [
+      5001007
+     ],
+     "es": "Volveos, partíos é id al monte del Amorrheo, y á todas sus comarcas, en el llano, en el monte, y en los valles, y al mediodía, y á la costa de la mar, á la tierra del Cananeo, y el Líbano, hasta el gran río, el río Eufrates.",
+     "pt": "Voltai-vos, parti-vos e ide ao monte dos amorreus, e a todos seus vizinhos, na planície, no monte, e nos vales, e ao sul, e à costa do mar, à terra dos cananeus, e o Líbano, até o grande rio, o rio Eufrates."
+    },
+    {
+     "n": 5,
+     "english": "great river.",
+     "kind": "other"
+    },
+    {
+     "n": 6,
+     "english": "the black river",
+     "kind": "other"
+    },
+    {
+     "n": 7,
+     "english": "the river of desire",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 423,
+   "name": "Ezion-geber",
+   "sha256": "1550d23fa2df5a96350db287afad141e9c97882d042c79e5dc04b7d17e76fc8c",
+   "text": "The giant’s backbone (so called from the head of a mountain which runs out into the sea), an ancient city and harbour at the north-east end of the Elanitic branch of the Red Sea, the Gulf of Akabah, near Elath or Eloth (Num. 33:35; Deut. 2:8). Here Solomon built ships, “Tarshish ships,” like those trading from Tyre to Tarshish and the west, which traded with Ophir (1 Kings 9:26; 2 Chr. 8:17); and here also Jehoshaphat’s fleet was shipwrecked (1 Kings 22:48; 2 Chr. 20:36). It became a populous town, many of the Jews settling in it (2 Kings 16:6, “Elath”). It is supposed that anciently the north end of the gulf flowed further into the country than now, as far as ‘Ain el-Ghudyan, which is 10 miles up the dry bed of the Arabah, and that Ezion-geber may have been there.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Tarshish ships,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "Elath",
+     "kind": "wording",
+     "verses": [
+      12016006
+     ],
+     "es": "En aquel tiempo Resín rey de Siria restituyó Elath á Siria, y echó á los Judíos de Elath; y los Siros vinieron á Elath, y habitaron allí hasta hoy.",
+     "pt": "Naquele tempo Resim rei da Síria restituiu Elate à Síria, e expulsou aos judeus de Elate; e os sírios vieram a Elate, e habitaram ali até hoje."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 424,
+   "name": "Fair Havens",
+   "sha256": "d5f144bcfe555a567d739205e0488e0b0b1ad71a07c67ed913b1eedfdf4c66f6",
+   "text": "A harbour in the south of Crete, some 5 miles to the east of which was the town of Lasea (Acts 27:8). Here the ship of Alexandria in which Paul and his companions sailed was detained a considerable time waiting for a favourable wind. Contrary to Paul’s advice, the master of the ship determined to prosecute the voyage, as the harbour was deemed incommodious for wintering in (9-12). The result was that, after a stormy voyage, the vessel was finally wrecked on the coast of Malta (27:40-44).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 426,
+   "name": "Fish Gate",
+   "sha256": "c88ed27b78f57a90f00ac9bc488465021cc8ae565d94e81cdf6160cea9a23945",
+   "text": "Of cities, as of Jerusalem (Jer. 37:13; Neh. 1:3; 2:3; 3:3), of Sodom (Gen. 19:1), of Gaza (Judg. 16:3).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 427,
+   "name": "Appii Forum",
+   "sha256": "beb126cecff603e874a0b03bd98e638a570b8dc87e2812efcee9ca1eb1e48dc6",
+   "text": "I.e., “the market of Appius” (Acts 28:15, R.V.), a town on the road, the “Appian Way,” from Rome to Brundusium. It was 43 miles from Rome. Here Paul was met by some Roman Christians on his way to the capital. It was natural that they should halt here and wait for him, because from this place there were two ways by which travellers might journey to Rome.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the market of Appius",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "Appian Way,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 429,
+   "name": "Gaash",
+   "sha256": "6e2004b4a3b70c2e11f5f6f153d855a3a23885d0817ee03316d97dd4cf1c38fb",
+   "text": "A shaking, a hill, on the north side of which Joshua was buried (Josh. 24:30; Judg. 2:9), in the territory of Ephraim.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 430,
+   "name": "Gabbatha",
+   "sha256": "83a6fca98469b3c26374cdc5f9cc8f770ad3cc149a069f54765bfe795a37502f",
+   "text": "Gab Baitha, i.e., “the ridge of the house” = “the temple-mound,” on a part of which the fortress of Antonia was built. This “temple-mound” was covered with a tesselated “pavement” (Gr. lithostroton, i.e., “stone-paved”). A judgement-seat (bema) was placed on this “pavement” outside the hall of the “praetorium” (q.v.), the judgment-hall (John 18:28; 19:13).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the ridge of the house",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "the temple-mound,",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "temple-mound",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "pavement",
+     "kind": "other"
+    },
+    {
+     "n": 4,
+     "english": "stone-paved",
+     "kind": "other"
+    },
+    {
+     "n": 5,
+     "english": "pavement",
+     "kind": "other"
+    },
+    {
+     "n": 6,
+     "english": "praetorium",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 431,
+   "name": "Galatia",
+   "sha256": "add9d0af9a352c6d009f7d4080c2d470d6a17b7a10827d32af24c4844be4131a",
+   "text": "Has been called the “Gallia” of the East, Roman writers calling its inhabitants Galli. They were an intermixture of Gauls and Greeks, and hence were called Gallo-Graeci, and the country Gallo-Graecia. The Galatians were in their origin a part of that great Celtic migration which invaded Macedonia about B.C. 280. They were invited by the king of Bithynia to cross over into Asia Minor to assist him in his wars. There they ultimately settled, and being strengthened by fresh accessions of the same clan from Europe, they overran Bithynia, and supported themselves by plundering neighbouring countries. They were great warriors, and hired themselves out as mercenary soldiers, sometimes fighting on both sides in the great battles of the times. They were at length brought under the power of Rome in B.C. 189, and Galatia became a Roman province B.C. 25.\n\n This province of Galatia, within the limits of which these Celtic tribes were confined, was the central region of Asia Minor.\n\n During his second missionary journey Paul, accompanied by Silas and Timothy (Acts 16:6), visited the “region of Galatia,” where he was detained by sickness (Gal. 4:13), and had thus the longer opportunity of preaching to them the gospel. On his third journey he went over “all the country of Galatia and Phrygia in order” (Acts 18:23). Crescens was sent thither by Paul toward the close of his life (2 Tim. 4:10).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Gallia",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "region of Galatia,",
+     "kind": "partial",
+     "verses": [
+      44016006
+     ],
+     "es": "Y pasando á Phrygia y la provincia de Galacia, les fué prohibido por el Espíritu Santo hablar la palabra en Asia.",
+     "pt": "E passando pela Frígia, e pela região da Galácia, foi-lhes impedido pelo Espírito Santo de falarem a palavra na Ásia."
+    },
+    {
+     "n": 2,
+     "english": "all the country of Galatia and Phrygia in order",
+     "kind": "partial",
+     "verses": [
+      44018023
+     ],
+     "es": "Y habiendo estado allí algún tiempo, partió, andando por orden la provincia de Galacia, y la Phrygia, confirmando á todos los discípulos.",
+     "pt": "E passando ali algum tempo, ele partiu, passando em sequência pela região da Galácia e Frígia, firmando a todos os discípulos."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 432,
+   "name": "Galeed",
+   "sha256": "856f4c1ef898bebec26c6e6511ce6a1efc21a541e792c8576b54cb6f5716626e",
+   "text": "Heap of witness, the name of the pile of stones erected by Jacob and Laban to mark the league of friendship into which they entered with each other (Gen. 31:47, 48). This was the name given to the “heap” by Jacob. It is Hebrew, while the name Jegar-sahadutha, given to it by Laban, is Aramaic (Chaldee or Syriac). Probably Nahor’s family originally spoke Aramaic, and Abraham and his descendants learned Hebrew, a kindred dialect, in the land of Canaan.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "heap",
+     "kind": "wording",
+     "verses": [
+      1031046
+     ],
+     "es": "Y dijo Jacob á sus hermanos: Coged piedras. Y tomaron piedras é hicieron un majano; y comieron allí sobre aquel majano.",
+     "pt": "E disse Jacó a seus irmãos: Recolhei pedras. E tomaram pedras e fizeram um amontoado; e comeram ali sobre aquele amontoado."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 433,
+   "name": "Galilee",
+   "sha256": "486b9b747deb068ece9d406ded51ca9c7adeaeed42cc37f27d2cb4938a7db469",
+   "text": "Circuit. Solomon rewarded Hiram for certain services rendered him by the gift of an upland plain among the mountains of Naphtali. Hiram was dissatisfied with the gift, and called it “the land of Cabul” (q.v.). The Jews called it Galil. It continued long to be occupied by the original inhabitants, and hence came to be called “Galilee of the Gentiles” (Matt. 4:15), and also “Upper Galilee,” to distinguish it from the extensive addition afterwards made to it toward the south, which was usually called “Lower Galilee.” In the time of our Lord, Galilee embraced more than one-third of Western Palestine, extending “from Dan on the north, at the base of Mount Hermon, to the ridges of Carmel and Gilboa on the south, and from the Jordan valley on the east away across the splendid plains of Jezreel and Acre to the shores of the Mediterranean on the west.” Palestine was divided into three provinces, Judea, Samaria, and Galilee, which comprehended the whole northern section of the country (Acts 9:31), and was the largest of the three.\n\n It was the scene of some of the most memorable events of Jewish history. Galilee also was the home of our Lord during at least thirty years of his life. The first three Gospels are chiefly taken up with our Lord’s public ministry in this province. “The entire province is encircled with a halo of holy associations connected with the life, works, and teachings of Jesus of Nazareth.” “It is noteworthy that of his thirty-two beautiful parables, no less than ninteen were spoken in Galilee. And it is no less remarkable that of his entire thirty-three great miracles, twenty-five were wrought in this province. His first miracle was wrought at the wedding in Cana of Galilee, and his last, after his resurrection, on the shore of Galilee’s sea. In Galilee our Lord delivered the Sermon on The Mount, and the discourses on ‘The Bread of Life,’ on ‘Purity,’ on ’Forgiveness,’ and on ‘Humility.’ In Galilee he called his first disciples; and there occurred the sublime scene of the Transfiguration” (Porter’s Through Samaria).\n\n When the Sanhedrin were about to proceed with some plan for the condemnation of our Lord (John 7:45-52), Nicodemus interposed in his behalf. (Comp. Deut. 1:16, 17; 17:8.) They replied, “Art thou also of Galilee?... Out of Galilee ariseth no prophet.” This saying of theirs was “not historically true, for two prophets at least had arisen from Galilee, Jonah of Gath-hepher, and the greatest of all the prophets, Elijah of Thisbe, and perhaps also Nahum and Hosea. Their contempt for Galilee made them lose sight of historical accuracy” (Alford, Com.).\n\n The Galilean accent differed from that of Jerusalem in being broader and more guttural (Mark 14:70).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the land of Cabul",
+     "kind": "unsure",
+     "verses": [
+      11009013
+     ],
+     "es": "Y dijo: ¿Qué ciudades son estas que me has dado, hermano? Y púsoles por nombre, la tierra de Cabul, hasta hoy.",
+     "pt": "E disse: Que cidades são estas que me deste, irmão? E pôs-lhes por nome, a terra de Cabul, até hoje."
+    },
+    {
+     "n": 1,
+     "english": "Galilee of the Gentiles",
+     "kind": "partial",
+     "verses": [
+      40004015
+     ],
+     "es": "La tierra de Zabulón, y la tierra de Nephtalim, camino de la mar, de la otra parte del Jordán, Galilea de los Gentiles;",
+     "pt": "A terra de Zebulom e a terra de Naftali, caminho do mar, além do Jordão, a Galileia dos gentios;"
+    },
+    {
+     "n": 2,
+     "english": "Upper Galilee,",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "Lower Galilee.",
+     "kind": "other"
+    },
+    {
+     "n": 4,
+     "english": "from Dan on the north, at the base of Mount Hermon, to the ridges of Carmel and Gilboa on the south, and from the Jordan valley on the east away across the splendid plains of Jezreel and Acre to the shores of the Mediterranean on the west.",
+     "kind": "other"
+    },
+    {
+     "n": 5,
+     "english": "The entire province is encircled with a halo of holy associations connected with the life, works, and teachings of Jesus of Nazareth.",
+     "kind": "other"
+    },
+    {
+     "n": 6,
+     "english": "It is noteworthy that of his thirty-two beautiful parables, no less than ninteen were spoken in Galilee. And it is no less remarkable that of his entire thirty-three great miracles, twenty-five were wrought in this province. His first miracle was wrought at the wedding in Cana of Galilee, and his last, after his resurrection, on the shore of Galilee’s sea. In Galilee our Lord delivered the Sermon on The Mount, and the discourses on ‘The Bread of Life,’ on ‘Purity,’ on ’Forgiveness,’ and on ‘Humility.’ In Galilee he called his first disciples; and there occurred the sublime scene of the Transfiguration",
+     "kind": "other"
+    },
+    {
+     "n": 7,
+     "english": "Art thou also of Galilee?... Out of Galilee ariseth no prophet.",
+     "kind": "loose",
+     "verses": [
+      43007052
+     ],
+     "es": "Respondieron y dijéronle: ¿Eres tú también Galileo? Escudriña y ve que de Galilea nunca se levantó profeta.",
+     "pt": "Responderam eles, e disseram: És tu também da Galileia? Pesquisa, e vê que nenhum profeta se levantou da Galileia."
+    },
+    {
+     "n": 8,
+     "english": "not historically true, for two prophets at least had arisen from Galilee, Jonah of Gath-hepher, and the greatest of all the prophets, Elijah of Thisbe, and perhaps also Nahum and Hosea. Their contempt for Galilee made them lose sight of historical accuracy",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 434,
+   "name": "Gallim",
+   "sha256": "430e020585db715296762c6942b1f1fd5ddf0016d8d445e724d8fd049ae1d39d",
+   "text": "Heaps, (1 Sam. 25:44; Isa. 10:30). The native place of Phalti, to whom Michal was given by Saul. It was probably in Benjamin, to the north of Jerusalem.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 435,
+   "name": "Gamad",
+   "sha256": "a0651ad7213d2e16a52e246c1ac1f3085e5cfeac7df8efef4f171cdae335ad9f",
+   "text": "(Ezek. 27:11) brave warriors; R.V. marg., “valorous men;” others interpret this word as meaning “short-swordsmen,” or “daring ones”, the name of a class of men who were defenders of the towers of Tyre.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "valorous men;",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "short-swordsmen,",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "daring ones",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 436,
+   "name": "Gareb",
+   "sha256": "c6007b7ac76d4b662213f9d655c46f6e8c9462d26cf607e31928bc5cdb7b8135",
+   "text": "A hill near Jerusalem (Jer. 31:39), probably the hill of lepers, and consequently a place outside the boundary of the city.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 439,
+   "name": "Old Gate",
+   "sha256": "5f5ff8d1fd61f1f297037953a694c600a9cd491d542a73e5acd489ab626294bc",
+   "text": "One of the gates in the north wall of Jerusalem, so called because built by the Jebusites (Neh. 3:6; 12:39).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 442,
+   "name": "Gath",
+   "sha256": "fd38058bc689654d23bc2195bd96397c0a10ba1f69aa8fb6bb577cf624c95ed7",
+   "text": "A wine-vat, one of the five royal cities of the Philistines (Josh. 13:3) on which the ark brought calamity (1 Sam. 5:8, 9; 6:17). It was famous also as being the birthplace or residence of Goliath (1 Sam. 17:4). David fled from Saul to Achish, king of Gath (1 Sam. 21:10; 27:2-4; Ps. 56), and his connection with it will account for the words in 2 Sam. 1:20. It was afterwards conquered by David (2 Sam. 8:1). It occupied a strong position on the borders of Judah and Philistia (1 Sam. 21:10; 1 Chr. 18:1). Its site has been identified with the hill called Tell esSafieh, the Alba Specula of the Middle Ages, which rises 695 feet above the plain on its east edge. It is noticed on monuments about B.C. 1500.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 443,
+   "name": "Gath-hepher",
+   "sha256": "9c0f847bebbcb37fb5dbd831c52d2b16bb74c7261e0c46293b6348f01d19a160",
+   "text": "Wine-press of the well, a town of Lower Galilee, about 5 miles from Nazareth; the birthplace of Jonah (2 Kings 14:25); the same as Gittah-hepher (Josh. 19:13). It has been identified with the modern el-Meshed, a village on the top of a rocky hill. Here the supposed tomb of Jonah, Neby Yunas, is still pointed out.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 444,
+   "name": "Gath-rimmon",
+   "sha256": "d691d4309876c0434638163229376593aa105680a940fb57e308f1709befbb91",
+   "text": "A Levitical city in the tribe of Dan (Josh. 19:45; 21:24; 1 Chr. 6:69).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 445,
+   "name": "Gath-rimmon",
+   "sha256": "e8fdc4f9c2fb509be0b37f1f6057c5bf93fab113b8dae5158b1be4b4e74300ad",
+   "text": "Another city of the same name in Manasseh, west of the Jordan (Josh. 21:25), called also Bileam (1 Chr. 6:70).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 446,
+   "name": "Gaza",
+   "sha256": "df51ca57175a283016cb8f2ce48ce9c33055f80c9b11801dd5b769689075cd2d",
+   "text": "Called also Azzah, which is its Hebrew name (Deut. 2:23; 1 Kings 4:24; Jer. 25:20), strong, a city on the Mediterranean shore, remarkable for its early importance as the chief centre of a great commercial traffic with Egypt. It is one of the oldest cities of the world (Gen. 10:19; Josh. 15:47). Its earliest inhabitants were the Avims, who were conquered and displaced by the Caphtorims (Deut. 2:23; Josh. 13:2, 3), a Philistine tribe. In the division of the land it fell to the lot of Judah (Josh. 15:47; Judg. 1:18). It was the southernmost of the five great Philistine cities which gave each a golden emerod as a trespass-offering unto the Lord (1 Sam. 6:17). Its gates were carried away by Samson (Judg. 16:1-3). Here he was afterwards a prisoner, and “did grind in the prison house.” Here he also pulled down the temple of Dagon, and slew “all the lords of the Philistines,” himself also perishing in the ruin (Judg. 16:21-30). The prophets denounce the judgments of God against it (Jer. 25:20; 47:5; Amos 1:6, 7; Zeph. 2:4). It is referred to in Acts 8:26. Philip is here told to take the road from Jerusalem to Gaza (about 6 miles south-west of Jerusalem), “which is desert”, i.e., the “desert road,” probably by Hebron, through the desert hills of Southern Judea.\n\n It is noticed on monuments as early as B.C. 1600. Its small port is now called el-Mineh.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "did grind in the prison house.",
+     "kind": "partial",
+     "verses": [
+      7016021
+     ],
+     "es": "Mas los Filisteos echaron mano de él, y sacáronle los ojos, y le llevaron á Gaza; y le ataron con cadenas, para que moliese en la cárcel.",
+     "pt": "Mas os filisteus lançaram mão dele, e tiraram-lhe os olhos, e o levaram a Gaza; e o ataram com correntes, para que moesse no cárcere."
+    },
+    {
+     "n": 1,
+     "english": "all the lords of the Philistines,",
+     "kind": "partial",
+     "verses": [
+      7016027
+     ],
+     "es": "Y la casa estaba llena de hombres y mujeres: y todos los príncipes de los Filisteos estaban allí; y en el alto piso había como tres mil hombres y mujeres, que estaban mirando el escarnio de Samsón.",
+     "pt": "E a casa estava cheia de homens e mulheres: e todos os príncipes dos filisteus estavam ali; e no alto piso havia como três mil homens e mulheres, que estavam olhando o escárnio de Sansão."
+    },
+    {
+     "n": 2,
+     "english": "which is desert",
+     "kind": "partial",
+     "verses": [
+      44008026
+     ],
+     "es": "Empero el ángel del Señor habló á Felipe, diciendo: Levántate y ve hacia el mediodía, al camino que desciende de Jerusalem á Gaza, el cual es desierto.",
+     "pt": "E um anjo do Senhor falou a Filipe, dizendo: Levanta-te, e vai para o sul, ao caminho que desce de Jerusalém para Gaza, que é deserto."
+    },
+    {
+     "n": 3,
+     "english": "desert road,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 447,
+   "name": "Geba",
+   "sha256": "6f7f503388b84495c7717895dd7aea227dc987c25f6fe756c022b13038888dc0",
+   "text": "The hill, (2 Sam. 5:25 [1 Chr. 14:16, “Gibeon”]; 2 Kings 23:8; Neh. 11:31), a Levitical city of Benjamin (1 Kings 15:22; 1 Sam. 13:16; 14:5, wrongly “Gibeah” in the A.V.), on the north border of Judah near Gibeah (Isa. 10:29; Josh. 18:24, 28). “From Geba to Beersheba” expressed the whole extent of the kingdom of Judah, just as “from Dan to Beersheba” described the whole length of Palestine (2 Kings 23:8). It has been identified with Gaba (Josh. 18:24; Ezra 2:26; Neh. 7:30), now Jeb’a, about 5 1/2 miles north of Jerusalem.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Gibeon",
+     "kind": "wording",
+     "verses": [
+      13014016
+     ],
+     "es": "Hizo pues David como Dios le mandó, é hirieron el campo de los Filisteos desde Gabaón hasta Gezer.",
+     "pt": "E Davi fez como Deus lhe mandara, e feriram o acampamento dos filisteus desde Gibeão até Gezer."
+    },
+    {
+     "n": 1,
+     "english": "Gibeah",
+     "kind": "wording",
+     "verses": [
+      23010029
+     ],
+     "es": "Pasaron el vado; alojaron en Geba: Ramá tembló; Gabaa de Saúl huyó.",
+     "pt": "Passaram o vau, se abrigaram em Geba. Ramá está tremendo, Gibeá de Saul está fugindo."
+    },
+    {
+     "n": 2,
+     "english": "From Geba to Beersheba",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "from Dan to Beersheba",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 449,
+   "name": "Gebal",
+   "sha256": "52b5a25b9893a86d44a45b87c3289fab8c89102656044368c111863ae79b3ede",
+   "text": "A Phoenician city, not far from the sea coast, to the north of Beyrout (Ezek. 27:9); called by the Greeks Byblos. Now Jibeil. Mentioned in the Amarna tablets.\n\n An important Phoenician text, referring to the temple of Baalath, on a monument of Yehu-melek, its king (probably B.C. 600), has been discovered.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 450,
+   "name": "Gebim",
+   "sha256": "ecc7f346179c2ee6ff4d31d78e18363b789fe224553e5bcb5a4d87eca6efeff0",
+   "text": "Cisterns, (rendered “pits,” Jer. 14:3; “locusts,” Isa. 33:4), a small place north of Jerusalem, whose inhabitants fled at the approach of the Assyrian army (Isa. 10:31). It is probably the modern el-Isawiyeh.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "pits,",
+     "kind": "wording",
+     "verses": [
+      24014003
+     ],
+     "es": "Y los principales de ellos enviaron sus criados al agua: vinieron á las lagunas, y no hallaron agua: volviéronse con sus vasos vacíos; se avergonzaron, confundiéronse, y cubrieron sus cabezas.",
+     "pt": "E os mais ilustres deles enviaram seus inferiores à água; eles vêm aos tanques, e não acham água; voltam com seus vasos vazios; eles se envergonham, se sentem humilhados, e cobrem suas cabeças."
+    },
+    {
+     "n": 1,
+     "english": "locusts,",
+     "kind": "wording",
+     "verses": [
+      23033004
+     ],
+     "es": "Mas vuestra presa será cogida como cuando cogen las orugas: correrá sobre ellos como de una á otra parte corren las langostas.",
+     "pt": "Então, nações ,vossos despojos serão colhidos tal como os insetos colhem; tal como os gafanhotos saltam, assim saltarão."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 451,
+   "name": "Geder",
+   "sha256": "2f1828f6708008cba936bb077e9e2288c28d3bd55034ac6503f40e38c6d3e94e",
+   "text": "A walled place, (Josh. 12:13), perhaps the same as Gederah or Gedor (15:58).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 452,
+   "name": "Gederah",
+   "sha256": "e3881e350ba30cdd164a4805377496d192c7b34796067b5d8b46613f060aa208",
+   "text": "The fortress; a fortified place, a town in the plain (shephelah) of Judah (Josh. 15:36). This is a very common Canaanite and Phoenician name. It is the feminine form of Geder (12:13); the plural form is Gederoth (15:41). This place has by some been identified with Jedireh, a ruin 9 miles from Lydda, toward Eleutheropolis, and 4 miles north of Sur’ah (Zorah), in the valley of Elah.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 455,
+   "name": "Gedor",
+   "sha256": "617a788815d846bc6093aa448826d881498a93a7eeeed371c75211c25482651f",
+   "text": "A town apparently in Benjamin (1 Chr. 12:7), the same probably as Geder (Josh. 12:13).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 456,
+   "name": "Gedor",
+   "sha256": "ba43c0da654b7025cd68b2684da74fa7c0683642c7d4943f2172091af48010ed",
+   "text": "1 Chr. 4:39, the Gederah of Josh. 15:36, or the well-known Gerar, as the LXX. read, where the patriarchs of old had sojourned and fed their flocks (Gen. 20:1, 14, 15; 26:1, 6, 14).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 457,
+   "name": "Geliloth",
+   "sha256": "d9d6590d12099a6b401fc94e7ee528cec80c9041f4a78f821b6430826312a33e",
+   "text": "Circles; regions, a place in the border of Benjamin (Josh. 18:17); called Gilgal in 15:7.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 458,
+   "name": "Gennesaret",
+   "sha256": "88dbeaea0e94a7117c544177260f70ac3f43f8b302145502f4c4f10cc48b7aee",
+   "text": "A town of Naphtali, called Chinnereth (Josh. 19:35), sometimes in the plural form Chinneroth (11:2). In later times the name was gradually changed to Genezar and Gennesaret (Luke 5:1). This city stood on the western shore of the lake to which it gave its name. No trace of it remains. The plain of Gennesaret has been called, from its fertility and beauty, “the Paradise of Galilee.” It is now called el-Ghuweir.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the Paradise of Galilee.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 459,
+   "name": "Gerar",
+   "sha256": "1a5906a9cf00b80f9f3e70f1ec13d381246649a1dbe023579982caa52428bee6",
+   "text": "A region; lodging-place, a very ancient town and district in the south border of Palestine, which was ruled over by a king named Abimelech (Gen. 10:19; 20:1, 2). Abraham sojourned here, and perhaps Isaac was born in this place. Both of these patriarchs were guilty of the sin of here denying their wives, and both of them entered into a treaty with the king before they departed to Beersheba (21:23-34; 26). It seems to have been a rich pastoral country (2 Chr. 14:12-18). Isaac here reaped an hundred-fold, and was blessed of God (Gen. 26:12). The “valley of Gerar” (Gen. 26:17) was probably the modern Wady el-Jerdr.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "valley of Gerar",
+     "kind": "partial",
+     "verses": [
+      1026017
+     ],
+     "es": "E Isaac se fué de allí; y asentó sus tiendas en el valle de Gerar, y habitó allí.",
+     "pt": "E Isaque se foi dali; e assentou suas tendas no vale de Gerar, e habitou ali."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 460,
+   "name": "Geruth Chimham",
+   "sha256": "a33b3da0f35eed5e9d0f6f1b9bca9b7bd11a518b322beaf2b58cc8f3e82576be",
+   "text": "Pining, probably the youngest son of Barzillai the Gileadite (2 Sam. 19:37-40). The “habitation of Chimham” (Jer. 41:17) was probably an inn or khan, which is the proper meaning of the Hebrew geruth, rendered “habitation”, established in later times in his possession at Bethlehem, which David gave to him as a reward for his loyalty in accompanying him to Jerusalem after the defeat of Absalom (1 Kings 2:7). It has been supposed that, considering the stationary character of Eastern institutions, it was in the stable of this inn or caravanserai that our Saviour was born (Luke 2:7).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "habitation of Chimham",
+     "kind": "partial",
+     "verses": [
+      24041017
+     ],
+     "es": "Y fueron y habitaron en Geruth-chimham, que es cerca de Bethlehem, á fin de partir y meterse en Egipto,",
+     "pt": "E foram, e habitaram em Gerute-Quimã, que é perto de Belém, a fim de saírem dali para entrarem no Egito,"
+    },
+    {
+     "n": 1,
+     "english": "habitation",
+     "kind": "wording",
+     "verses": [
+      24041017
+     ],
+     "es": "Y fueron y habitaron en Geruth-chimham, que es cerca de Bethlehem, á fin de partir y meterse en Egipto,",
+     "pt": "E foram, e habitaram em Gerute-Quimã, que é perto de Belém, a fim de saírem dali para entrarem no Egito,"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 461,
+   "name": "Geshur",
+   "sha256": "1a9ab8f29e9c6a28523f899bf950ab9382037a567457560a97d115c5872985a0",
+   "text": "Bridge, the name of a district or principality of Syria near Gilead, between Mount Hermon and the Lake of Tiberias (2 Sam. 15:8; 1 Chr. 2:23). The Geshurites probably inhabited the rocky fastness of Argob, the modern Lejah, in the north-east corner of Bashan. In the time of David it was ruled by Talmai, whose daughter he married, and who was the mother of Absalom, who fled to Geshur after the murder of Amnon (2 Sam. 13:37).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 462,
+   "name": "Gethsemane",
+   "sha256": "ec62e403a1bf3db8885144c2a6d1bb586d5ee8b7bcff9b37e52eeaaab4aaf1d6",
+   "text": "Oil-press, the name of an olive-yard at the foot of the Mount of Olives, to which Jesus was wont to retire (Luke 22:39) with his disciples, and which is specially memorable as being the scene of his agony (Mark 14:32; John 18:1; Luke 22:44). The plot of ground pointed out as Gethsemane is now surrounded by a wall, and is laid out as a modern European flower-garden. It contains eight venerable olive-trees, the age of which cannot, however, be determined. The exact site of Gethsemane is still in question. Dr. Thomson (The Land and the Book) says: “When I first came to Jerusalem, and for many years afterward, this plot of ground was open to all whenever they chose to come and meditate beneath its very old olivetrees. The Latins, however, have within the last few years succeeded in gaining sole possession, and have built a high wall around it...The Greeks have invented another site a little to the north of it...My own impression is that both are wrong. The position is too near the city, and so close to what must have always been the great thoroughfare eastward, that our Lord would scarcely have selected it for retirement on that dangerous and dismal night...I am inclined to place the garden in the secluded vale several hundred yards to the north-east of the present Gethsemane.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "When I first came to Jerusalem, and for many years afterward, this plot of ground was open to all whenever they chose to come and meditate beneath its very old olivetrees. The Latins, however, have within the last few years succeeded in gaining sole possession, and have built a high wall around it...The Greeks have invented another site a little to the north of it...My own impression is that both are wrong. The position is too near the city, and so close to what must have always been the great thoroughfare eastward, that our Lord would scarcely have selected it for retirement on that dangerous and dismal night...I am inclined to place the garden in the secluded vale several hundred yards to the north-east of the present Gethsemane.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 463,
+   "name": "Gezer",
+   "sha256": "46f3ce1ebdc2a7cc221c62251fc3e120c8659f706f924307b2066f1d10a98981",
+   "text": "A precipice, an ancient royal Canaanitish city (Josh. 10:33; 12:12). It was allotted with its suburbs to the Kohathite Levites (21:21; 1 Chr. 6:67). It stood between the lower Beth-horon and the sea (Josh. 16:3; 1 Kings 9:17). It was the last point to which David pursued the Philistines (2 Sam. 5:25; 1 Chr. 14:16) after the battle of Baal-perazim. The Canaanites retained possession of it till the time of Solomon, when the king of Egypt took it and gave it to Solomon as a part of the dowry of the Egyptian princess whom he married (1 Kings 9:15-17). It is identified with Tell el-Jezer, about 10 miles south-west of Beth-horon. It is mentioned in the Amarna tablets.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 465,
+   "name": "Gibbethon",
+   "sha256": "6d070411bd3e962d72f952b2f6386ec04ffd52dc261492ef09053473a0a2195f",
+   "text": "A height, a city of the Philistines in the territory of Dan, given to the Kohathites (Josh. 19:44; 21:23). Nadab the king of Israel, while besieging it, was slain under its walls by Baasha, one of his own officers (1 Kings 15:27). It was in the possession of the Philistines after the secession of the ten tribes (2 Chr. 11:13, 14).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 466,
+   "name": "Gibeah",
+   "sha256": "be6584c11a8fe08d704687fe246697d96f504d3f9a90864525b3673774beeb8e",
+   "text": "A hill or hill-town, “of Benjamin” (1 Sam. 13:15), better known as “Gibeah of Saul” (11:4; Isa. 10:29). It was here that the terrible outrage was committed on the Levite’s concubine which led to the almost utter extirpation of the tribe of Benjamin (Judg. 19; 20), only six hundred men surviving after a succession of disastrous battles. This was the birthplace of Saul, and continued to be his residence after he became king (1 Sam. 10:26; 11:4; 15:34). It was reckoned among the ancient sanctuaries of Palestine (10:26; 15:34; 23:19; 26:1; 2 Sam. 21:6-10), and hence it is called “Gibeah of God” (1 Sam. 10:5, R.V. marg.). It has been identified with the modern Tell el-Ful (i.e., “hill of the bean”), about 3 miles north of Jerusalem.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "of Benjamin",
+     "kind": "wording",
+     "verses": [
+      9013015
+     ],
+     "es": "Y levantándose Samuel, subió de Gilgal á Gabaa de Benjamín. Y Saúl contó la gente que se hallaba con él, como seiscientos hombres.",
+     "pt": "E levantando-se Samuel, subiu de Gilgal a Gibeá de Benjamim. E Saul contou a gente que se achava com ele, como seiscentos homens."
+    },
+    {
+     "n": 1,
+     "english": "Gibeah of Saul",
+     "kind": "partial",
+     "verses": [
+      23010029
+     ],
+     "es": "Pasaron el vado; alojaron en Geba: Ramá tembló; Gabaa de Saúl huyó.",
+     "pt": "Passaram o vau, se abrigaram em Geba. Ramá está tremendo, Gibeá de Saul está fugindo."
+    },
+    {
+     "n": 2,
+     "english": "Gibeah of God",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "hill of the bean",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 467,
+   "name": "Gibeah",
+   "sha256": "678d65ced452204e5aa479057e6bdf67ec0654e93c9afc54b866e13a94291453",
+   "text": "(Josh. 15:57, R.V. marg.), a city on Mount Ephraim which had been given to Phinehas (24:33 “hill,” A.V.; R.V. marg. and Heb., “Gibeah.”). Here Eleazar the son of Aaron was buried. It has been identified with the modern Khurbet Jibia, 5 miles north of Guphna towards Shechem.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "hill,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "Gibeah.",
+     "kind": "wording",
+     "verses": [
+      6015057
+     ],
+     "es": "Caín, Gibea, y Timna; diez ciudades con sus aldeas.",
+     "pt": "Caim, Gibeá, e Timna; dez cidades com suas aldeias."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 470,
+   "name": "Gibeon",
+   "sha256": "9bb41ed5545e953780b6199a5ffb8002339d4d3f1c9ebda23c42d239e5bce2e5",
+   "text": "Hill-city, “one of the royal cities, greater than Ai, and all the men thereof were mighty” (Josh. 10:2). Its inhabitants were Hivites (11:19). It lay within the territory of Benjamin, and became a priest-city (18:25; 21:17). Here the tabernacle was set up after the destruction of Nob, and here it remained many years till the temple was built by Solomon. It is represented by the modern el-Jib, to the south-west of Ai, and about 5 1/2 miles north-north-west of Jerusalem.\n\n A deputation of the Gibeonites, with their allies from three other cities (Josh. 9;17), visited the camp at Gilgal, and by false representations induced Joshua to enter into a league with them, although the Israelites had been specially warned against any league with the inhabitants of Canaan (Ex. 23:32; 34:12; Num. 33:55; Deut. 7:2). The deception practised on Joshua was detected three days later; but the oath rashly sworn “by Jehovah God of Israel” was kept, and the lives of the Gibeonites were spared. They were, however, made “bondmen” to the sanctuary (Josh. 9:23).\n\n The most remarkable incident connected with this city was the victory Joshua gained over the kings of Palestine (Josh. 10:16-27). The battle here fought has been regarded as “one of the most important in the history of the world.” The kings of southern Canaan entered into a confederacy against Gibeon (because it had entered into a league with Joshua) under the leadership of Adoni-zedec, king of Jerusalem, and marched upon Gibeon with the view of taking possession of it. The Gibeonites entreated Joshua to come to their aid with the utmost speed. His army came suddenly upon that of the Amorite kings as it lay encamped before the city. It was completely routed, and only broken remnants of their great host found refuge in the fenced cities. The five confederate kings who led the army were taken prisoners, and put to death at Makkedah (q.v.). This eventful battle of Beth-horon sealed the fate of all the cities of Southern Palestine. Among the Amarna tablets is a letter from Adoni-zedec (q.v.) to the king of Egypt, written probably at Makkedah after the defeat, showing that the kings contemplated flight into Egypt.\n\n This place is again brought into notice as the scene of a battle between the army of Ish-bosheth under Abner and that of David led by Joab. At the suggestion of Abner, to spare the effusion of blood twelve men on either side were chosen to decide the battle. The issue was unexpected; for each of the men slew his fellow, and thus they all perished. The two armies then engaged in battle, in which Abner and his host were routed and put to flight (2 Sam. 2:12-17). This battle led to a virtual truce between Judah and Israel, Judah, under David, increasing in power; and Israel, under Ish-bosheth, continually losing ground.\n\n Soon after the death of Absalom and David’s restoration to his throne his kingdom was visited by a grievous famine, which was found to be a punishment for Saul’s violation (2 Sam. 21:2, 5) of the covenant with the Gibeonites (Josh. 9:3-27). The Gibeonites demanded blood for the wrong that had been done to them, and accordingly David gave up to them the two sons of Rizpah (q.v.) and the five sons of Michal, and these the Gibeonites took and hanged or crucified “in the hill before the Lord” (2 Sam. 21:9); and there the bodies hung for six months (21:10), and all the while Rizpah watched over the blackening corpses and “suffered neither the birds of the air to rest on them by day, nor the beasts of the field by night.” David afterwards removed the bones of Saul and Jonathan at Jabeshgilead (21:12, 13).\n\n Here, “at the great stone,” Amasa was put to death by Joab (2 Sam. 20:5-10). To the altar of burnt-offering which was at Gibeon, Joab (1 Kings 2:28-34), who had taken the side of Adonijah, fled for sanctuary in the beginning of Solomon’s reign, and was there also slain by the hand of Benaiah.\n\n Soon after he came to the throne, Solomon paid a visit of state to Gibeon, there to offer sacrifices (1 Kings 3:4; 2 Chr. 1:3). On this occasion the Lord appeared to him in a memorable dream, recorded in 1 Kings 3:5-15; 2 Chr. 1:7-12. When the temple was built “all the men of Israel assembled themselves” to king Solomon, and brought up from Gibeon the tabernacle and “all the holy vessels that were in the tabernacle” to Jerusalem, where they remained till they were carried away by Nebuchadnezzar (2 Kings 24:13).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "one of the royal cities, greater than Ai, and all the men thereof were mighty",
+     "kind": "loose",
+     "verses": [
+      6010001,
+      6010002
+     ],
+     "es": "Y COMO Adonisedec rey de Jerusalem oyó que Josué había tomado á Hai, y que la había asolado, (como había hecho á Jericó y á su rey, así hizo á Hai y á su rey;) y que los moradores de Gabaón habían hecho paz con los Israelitas, y que estaban entre ellos; Tuvieron muy gran temor; porque Gabaón era una gran ciudad, como una de las ciudades reales, y mayor que Hai, y todos sus hombres fuertes.",
+     "pt": "E quando Adoni-Zedeque rei de Jerusalém ouviu que Josué havia tomado a Ai, e que a haviam assolado, (como havia feito a Jericó e a seu rei, assim fez a Ai e a seu rei;) e que os moradores de Gibeão fizeram paz com os israelitas, e que estavam entre eles; Tiveram muito grande temor; porque Gibeão era uma grande cidade, como uma das cidades reais, e maior que Ai, e todos os seus homens fortes."
+    },
+    {
+     "n": 1,
+     "english": "by Jehovah God of Israel",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "bondmen",
+     "kind": "wording",
+     "verses": [
+      6009023
+     ],
+     "es": "Vosotros pues ahora sois malditos, y no faltará de vosotros siervo, y quien corte la leña y saque el agua para la casa de mi Dios.",
+     "pt": "Vós pois agora sois malditos, e não faltará de vós servo, e quem corte a lenha e tire a água para a casa de meu Deus."
+    },
+    {
+     "n": 3,
+     "english": "one of the most important in the history of the world.",
+     "kind": "other"
+    },
+    {
+     "n": 4,
+     "english": "in the hill before the Lord",
+     "kind": "partial",
+     "verses": [
+      10021009
+     ],
+     "es": "Y entrególos en manos de los Gabaonitas, y ellos los ahorcaron en el monte delante de Jehová: y murieron juntos aquellos siete, los cuales fueron muertos en el tiempo de la siega, en los primeros días, en el principio de la siega de las cebadas.",
+     "pt": "E entregou-os em mãos dos gibeonitas, e eles os enforcaram no monte diante do SENHOR: e morreram juntos aqueles sete, os quais foram mortos no tempo da colheita, nos primeiros dias, no princípio da colheita das cevadas."
+    },
+    {
+     "n": 5,
+     "english": "suffered neither the birds of the air to rest on them by day, nor the beasts of the field by night.",
+     "kind": "partial",
+     "verses": [
+      10021010
+     ],
+     "es": "Tomando luego Rispa hija de Aja un saco, tendióselo sobre un peñasco, desde el principio de la siega hasta que llovió sobre ellos agua del cielo; y no dejó á ninguna ave del cielo asentarse sobre ellos de día, ni bestias del campo de noche.",
+     "pt": "Tomando logo Rispa filha de Aiá um saco, estendeu-o sobre um penhasco, desde o princípio da colheita até que choveu sobre eles água do céu; e não deixou a nenhuma ave do céu assentar-se sobre eles de dia, nem animais do campo de noite."
+    },
+    {
+     "n": 6,
+     "english": "at the great stone,",
+     "kind": "partial",
+     "verses": [
+      10020008
+     ],
+     "es": "Y estando ellos cerca de la grande peña que está en Gabaón, salióles Amasa al encuentro. Ahora bien, la vestidura que Joab tenía sobrepuesta estábale ceñida, y sobre ella el cinto de una daga pegada á sus lomos en su vaina, de la que así como él avanzó, cayóse aquélla.",
+     "pt": "E estando eles próximo da grande penha que está em Gibeão, saiu-lhes Amasa ao encontro. Agora bem, a vestimenta que Joabe tinha sobreposta estava-lhe cingida, e sobre ela o cinto de um punhal apegado a seus lombos em sua bainha, da que assim quando ele avançou, o punhal caiu."
+    },
+    {
+     "n": 7,
+     "english": "all the men of Israel assembled themselves",
+     "kind": "partial",
+     "verses": [
+      11008002
+     ],
+     "es": "Y se juntaron al rey Salomón todos los varones de Israel en el mes de Ethanim, que es el mes séptimo, en el día solemne.",
+     "pt": "E se juntaram ao rei Salomão todos os homens de Israel no mês de Etanim, que é o mês sétimo, no dia solene."
+    },
+    {
+     "n": 8,
+     "english": "all the holy vessels that were in the tabernacle",
+     "kind": "partial",
+     "verses": [
+      11008004
+     ],
+     "es": "Y llevaron el arca de Jehová, y el tabernáculo del testimonio, y todos los vasos sagrados que estaban en el tabernáculo; los cuales llevaban los sacerdotes y Levitas.",
+     "pt": "E levaram a arca do SENHOR, e o tabernáculo do testemunho, e todos os vasos sagrados que estavam no tabernáculo; os quais levavam os sacerdotes e levitas."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 472,
+   "name": "Gihon",
+   "sha256": "1d151c6bc8bd261b1045136613db7e653dd26c8df03ab0af8843fe181a3823e2",
+   "text": "One of the four rivers of Eden (Gen. 2:13). It has been identified with the Nile. Others regard it as the Oxus, or the Araxes, or the Ganges. But as, according to the sacred narrative, all these rivers of Eden took their origin from the head-waters of the Euphrates and the Trigris, it is probable that the Gihon is the ancient Araxes, which, under the modern name of the Arras, discharges itself into the Caspian Sea. It was the Asiatic and not the African “Cush” which the Gihon compassed (Gen. 10:7-10).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Cush",
+     "kind": "wording",
+     "verses": [
+      1010006
+     ],
+     "es": "Los hijos de Châm: Cush, y Mizraim, y Phut, y Canaán.",
+     "pt": "Os filhos de Cam: Cuxe, e Mizraim, e Pute, e Canaã."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 473,
+   "name": "Gihon",
+   "sha256": "e22751a7b5eeff356da2bf5cd7c28c33fcceee8b4684a224a564d91c274cf89f",
+   "text": "The only natural spring of water in or near Jerusalem is the “Fountain of the Virgin” (q.v.), which rises outside the city walls on the west bank of the Kidron valley. On the occasion of the approach of the Assyrian army under Sennacherib, Hezekiah, in order to prevent the besiegers from finding water, “stopped the upper water course of Gihon, and brought it straight down to the west side of the city of David” (2 Chr. 32:30; 33:14). This “fountain” or spring is therefore to be regarded as the “upper water course of Gihon.” From this “fountain” a tunnel cut through the ridge which forms the south part of the temple hill conveys the water to the Pool of Siloam, which lies on the opposite side of this ridge at the head of the Tyropoeon (“cheesemakers’”) valley, or valley of the son of Hinnom, now filled up by rubbish. The length of this tunnel is about 1,750 feet. In 1880 an inscription was accidentally discovered on the wall of the tunnel about nineteen feet from where it opens into the Pool of Siloam. This inscription was executed in all probability by Hezekiah’s workmen. It briefly narrates the history of the excavation. It may, however, be possible that this tunnel was executed in the time of Solomon. If the “waters of Shiloah that go softly” (Isa. 8:6) refers to the gentle stream that still flows through the tunnel into the Pool of Siloam, then this excavation must have existed before the time of Hezekiah.\n\n In the upper part of the Tyropoeoan valley there are two pools still existing, the first, called Birket el-Mamilla, to the west of the Jaffa gate; the second, to the south of the first, called Birket es-Sultan. It is the opinion of some that the former was the “upper” and the latter the “lower” Pool of Gihon (2 Kings 18:17; Isa. 7:3; 36:2; 22:9).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Fountain of the Virgin",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "stopped the upper water course of Gihon, and brought it straight down to the west side of the city of David",
+     "kind": "loose",
+     "verses": [
+      14032029,
+      14032030
+     ],
+     "es": "Hízose también ciudades, y hatos de ovejas y de vacas en gran copia; porque Dios le había dado mucha hacienda. Este Ezechîas tapó los manaderos de las aguas de Gihón la de arriba, y encaminólas abajo al occidente de la ciudad de David. Y fué prosperado Ezechîas en todo lo que hizo.",
+     "pt": "Fez para si também cidades, e rebanhos de ovelhas e de vacas em grande quantidade; porque Deus lhe havia dado muita riqueza. Este Ezequias tapou os mananciais das águas de Giom da parte de cima, e as fez correr abaixo ao ocidente da cidade de Davi. E foi próspero Ezequias em tudo o que fez."
+    },
+    {
+     "n": 2,
+     "english": "fountain",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "upper water course of Gihon.",
+     "kind": "other"
+    },
+    {
+     "n": 4,
+     "english": "fountain",
+     "kind": "other"
+    },
+    {
+     "n": 5,
+     "english": "cheesemakers’",
+     "kind": "other"
+    },
+    {
+     "n": 6,
+     "english": "waters of Shiloah that go softly",
+     "kind": "partial",
+     "verses": [
+      23008006
+     ],
+     "es": "Por cuanto desechó este pueblo las aguas de Siloé, que corren mansamente, y holgóse con Rezín y con el hijo de Remalías;",
+     "pt": "Dado que este povo rejeitou as águas de Siloé, que correm calmamente, e se alegrou com Resim e com o filho de Remalias,"
+    },
+    {
+     "n": 7,
+     "english": "upper",
+     "kind": "wording",
+     "verses": [
+      12018017
+     ],
+     "es": "Después el rey de Asiria envió al rey Ezechîas, desde Lachîs contra Jerusalem, á Thartán y á Rabsaris y á Rabsaces, con un grande ejército: y subieron, y vinieron á Jerusalem. Y habiendo subido, vinieron y pararon junto al conducto del estanque de arriba, que es en el camino de la heredad del batanero.",
+     "pt": "Depois o rei da Assíria enviou ao rei Ezequias, desde Laquis contra Jerusalém, a Tartã e a Rabe-Saris e a Rabsaqué, com um grande exército: e subiram, e vieram a Jerusalém. E havendo subido, vieram e pararam junto ao aqueduto do tanque de acima,"
+    },
+    {
+     "n": 8,
+     "english": "lower",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 474,
+   "name": "Gilboa",
+   "sha256": "e355845ae024d998a9fae02eda6bcff6ed1608e02cdc6584196da401e5f09613",
+   "text": "Boiling spring, a mountain range, now Jebel Fukua’, memorable as the scene of Saul’s disastrous defeat by the Philistines. Here also his three sons were slain, and he himself died by his own hand (1 Sam. 28:4; 31:1-8; 2 Sam. 1:6-21; 21:12; 1 Chr. 10:1, 8). It was a low barren range of mountains bounding the valley of Esdraelon (Jezreel) on the east, between it and the Jordan valley. When the tidings of this defeat were conveyed to David, he gave utterance to those pathetic words in the “Song of the Bow” (2 Sam. 1:19-27).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Song of the Bow",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 475,
+   "name": "Gilead",
+   "sha256": "d55b1300f56297c4dde19c94a2928341c93c095b3329f78dcffbf5896d7bc5c6",
+   "text": "Hill of testimony, (Gen. 31:21), a mountainous region east of Jordan. From its mountainous character it is called “the mount of Gilead” (Gen. 31:25). It is called also “the land of Gilead” (Num. 32:1), and sometimes simply “Gilead” (Ps. 60:7; Gen. 37:25). It comprised the possessions of the tribes of Gad and Reuben and the south part of Manasseh (Deut. 3:13; Num. 32:40). It was bounded on the north by Bashan, and on the south by Moab and Ammon (Gen. 31:21; Deut. 3:12-17). “Half Gilead” was possessed by Sihon, and the other half, separated from it by the river Jabbok, by Og, king of Bashan. The deep ravine of the river Hieromax (the modern Sheriat el-Mandhur) separated Bashan from Gilead, which was about 60 miles in length and 20 in breadth, extending from near the south end of the Lake of Gennesaret to the north end of the Dead Sea. Abarim, Pisgah, Nebo, and Peor are its mountains mentioned in Scripture.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the mount of Gilead",
+     "kind": "partial",
+     "verses": [
+      1031025
+     ],
+     "es": "Alcanzó pues Labán á Jacob, y éste había fijado su tienda en el monte: y Labán plantóla con sus hermanos en el monte de Galaad.",
+     "pt": "Alcançou, pois, Labão a Jacó, e este havia fixado sua tenda no monte: e Labão pôs a sua com seus irmãos no monte de Gileade."
+    },
+    {
+     "n": 1,
+     "english": "the land of Gilead",
+     "kind": "partial",
+     "verses": [
+      4032001
+     ],
+     "es": "Y LOS hijos de Rubén y los hijos de Gad tenían una muy grande muchedumbre de ganado; los cuales viendo la tierra de Jazer y de Galaad, parecióles el país lugar de ganado.",
+     "pt": "E os filhos de Rúben e os filhos de Gade tinham uma muito grande abundância de gado; os quais vendo a terra de Jazer e de Gileade, pareceu-lhes a terra lugar de gado."
+    },
+    {
+     "n": 2,
+     "english": "Gilead",
+     "kind": "wording",
+     "verses": [
+      19060007
+     ],
+     "es": "Mío es Galaad, y mío es Manasés; y Ephraim es la fortaleza de mi cabeza; Judá, mi legislador;",
+     "pt": "Meu é Gileade, e meu é Manassés; e Efraim é a força de minha cabeça; Judá é meu legislador."
+    },
+    {
+     "n": 3,
+     "english": "Half Gilead",
+     "kind": "other"
+    }
+   ]
+  }
+ ],
+ "glossary": {
+  "Aaron": {
+   "es": "Aarón",
+   "pt": "Arão"
+  },
+  "Abimelech": {
+   "pt": "Abimeleque"
+  },
+  "Abraham": {
+   "pt": "Abraão"
+  },
+  "Absalom": {
+   "pt": "Absalão"
+  },
+  "Achish": {
+   "es": "Aquís",
+   "pt": "Aquis"
+  },
+  "Adonijah": {
+   "es": "Adonías (person); Adonía (person)",
+   "pt": "Adonias"
+  },
+  "Ai": {
+   "es": "Hai"
+  },
+  "Ain": {
+   "es": "Aín (place); Ain (place)",
+   "pt": "Aim"
+  },
+  "Alexandria": {
+   "es": "Alejandría"
+  },
+  "Ammon": {
+   "es": "Amón",
+   "pt": "Amom"
+  },
+  "Amnon": {
+   "es": "Amnón",
+   "pt": "Amnom"
+  },
+  "Amorite": {
+   "es": "Amorrheo"
+  },
+  "Amos": {
+   "es": "Amós",
+   "pt": "Amós"
+  },
+  "Arabah": {
+   "es": "Arabá",
+   "pt": "Arabá"
+  },
+  "Ararat": {
+   "pt": "Ararate"
+  },
+  "Argob": {
+   "pt": "Argobe"
+  },
+  "Asia": {
+   "pt": "Ásia"
+  },
+  "Assyria": {
+   "es": "Asiria",
+   "pt": "Assíria"
+  },
+  "Baal-perazim": {
+   "es": "Baal-perasim",
+   "pt": "Baal-Perazim"
+  },
+  "Baalath": {
+   "es": "Baalat",
+   "pt": "Baalate"
+  },
+  "Baasha": {
+   "es": "Baasa",
+   "pt": "Baasa"
+  },
+  "Babylon": {
+   "es": "Babilonia",
+   "pt": "Babilônia"
+  },
+  "Barzillai": {
+   "pt": "Barzilai"
+  },
+  "Bashan": {
+   "es": "Basán",
+   "pt": "Basã"
+  },
+  "Beersheba": {
+   "es": "Beer-seba",
+   "pt": "Berseba"
+  },
+  "Benaiah": {
+   "es": "Benaías (person); Benaía (person)",
+   "pt": "Benaia (person); Benaías (person)"
+  },
+  "Benjamin": {
+   "es": "Benjamín",
+   "pt": "Benjamim"
+  },
+  "Beth-horon": {
+   "es": "Bet-oron",
+   "pt": "Bete-Horom"
+  },
+  "Bethlehem": {
+   "es": "Bet-lehem",
+   "pt": "Belém"
+  },
+  "Bileam": {
+   "es": "Bilam",
+   "pt": "Bileã"
+  },
+  "Bithynia": {
+   "es": "Bitinia",
+   "pt": "Bitínia"
+  },
+  "Cana": {
+   "es": "Caná",
+   "pt": "Caná"
+  },
+  "Canaan": {
+   "es": "Canaán",
+   "pt": "Canaã"
+  },
+  "Carmel": {
+   "es": "Carmelo",
+   "pt": "Carmelo"
+  },
+  "Chimham": {
+   "es": "Quimham",
+   "pt": "Quimã"
+  },
+  "Chinnereth": {
+   "es": "Cineret (place); Cinerot (place)",
+   "pt": "Quinerete"
+  },
+  "Chinneroth": {
+   "es": "Cinerot"
+  },
+  "Crescens": {
+   "es": "Crescente",
+   "pt": "Crescente"
+  },
+  "Crete": {
+   "es": "Creta",
+   "pt": "Creta"
+  },
+  "Cush": {
+   "es": "Cush (person); Etiopía (person)",
+   "pt": "Cuxe"
+  },
+  "Dagon": {
+   "es": "Dagón",
+   "pt": "Dagom"
+  },
+  "Dan": {
+   "pt": "Dã"
+  },
+  "David": {
+   "pt": "Davi"
+  },
+  "Eden": {
+   "es": "Edén",
+   "pt": "Éden"
+  },
+  "Egypt": {
+   "es": "Egipto",
+   "pt": "Egito"
+  },
+  "Elah": {
+   "es": "Ela",
+   "pt": "Elá"
+  },
+  "Elath": {
+   "es": "Elat",
+   "pt": "Elate"
+  },
+  "Elijah": {
+   "es": "Elías",
+   "pt": "Elias"
+  },
+  "Eloth": {
+   "es": "Elot",
+   "pt": "Elote"
+  },
+  "Ephraim": {
+   "es": "Efraim",
+   "pt": "Efraim"
+  },
+  "Esther": {
+   "es": "Ester",
+   "pt": "Ester"
+  },
+  "Ethiopia": {
+   "es": "Etiopía",
+   "pt": "Etiópia"
+  },
+  "Euphrates": {
+   "es": "Eufrates",
+   "pt": "Eufrates"
+  },
+  "Ezion-geber": {
+   "es": "Esion-geber",
+   "pt": "Eziom-Geber"
+  },
+  "Ezra": {
+   "es": "Esdras (person); Ezra (person)",
+   "pt": "Esdras (person); Ezra (person)"
+  },
+  "Gad": {
+   "pt": "Gade"
+  },
+  "Galatia": {
+   "es": "Galacia",
+   "pt": "Galácia"
+  },
+  "Galilee": {
+   "es": "Galilea",
+   "pt": "Galileia"
+  },
+  "Gath": {
+   "es": "Gat",
+   "pt": "Gate"
+  },
+  "Gath-hepher": {
+   "es": "Gat-hefer",
+   "pt": "Gate-Hefer"
+  },
+  "Geba": {
+   "es": "Gabaa (place); Geba (place)",
+   "pt": "Gibeá (place); Geba (place)"
+  },
+  "Gederah": {
+   "es": "Gedera",
+   "pt": "Gederá"
+  },
+  "Gederoth": {
+   "es": "Gederot",
+   "pt": "Gederote"
+  },
+  "Gedor": {
+   "es": "Gador (place); Gedor (person)"
+  },
+  "Gennesaret": {
+   "es": "Genezaret",
+   "pt": "Genesaré"
+  },
+  "Geshur": {
+   "es": "Gesur",
+   "pt": "Gesur"
+  },
+  "Gethsemane": {
+   "es": "Getsemaní",
+   "pt": "Getsêmani"
+  },
+  "Gibeah": {
+   "es": "Gabaa (place); Gibea (place)",
+   "pt": "Gibeá"
+  },
+  "Gibeon": {
+   "es": "Gabaón",
+   "pt": "Gibeom (person); Gibeão (place)"
+  },
+  "Gihon": {
+   "es": "Gihón",
+   "pt": "Giom"
+  },
+  "Gilead": {
+   "es": "Galaad",
+   "pt": "Gileade"
+  },
+  "Goliath": {
+   "es": "Goliat",
+   "pt": "Golias"
+  },
+  "Ham": {
+   "es": "Cam (person); Ham (place)",
+   "pt": "Cam (person); Hã (place)"
+  },
+  "Hebron": {
+   "es": "Hebrón",
+   "pt": "Hebrom"
+  },
+  "Hermon": {
+   "es": "Hermón",
+   "pt": "Hermom"
+  },
+  "Hezekiah": {
+   "es": "Ezequías",
+   "pt": "Ezequias"
+  },
+  "Hiram": {
+   "pt": "Hirão"
+  },
+  "Hosea": {
+   "es": "Oseas",
+   "pt": "Oseias"
+  },
+  "Isaac": {
+   "pt": "Isaque"
+  },
+  "Ish-bosheth": {
+   "es": "Is-boset",
+   "pt": "Is-Bosete"
+  },
+  "Jabbok": {
+   "es": "Jaboc",
+   "pt": "Jaboque"
+  },
+  "Jacob": {
+   "pt": "Jacó"
+  },
+  "Jegar-sahadutha": {
+   "es": "Sahaduta",
+   "pt": "Jegar-Saaduta"
+  },
+  "Jehoshaphat": {
+   "es": "Josafat",
+   "pt": "Josafá"
+  },
+  "Jerusalem": {
+   "es": "Jerusalén",
+   "pt": "Jerusalém"
+  },
+  "Jesus": {
+   "es": "Jesús"
+  },
+  "Joab": {
+   "pt": "Joabe"
+  },
+  "Job": {
+   "pt": "Jó"
+  },
+  "John": {
+   "es": "Juan",
+   "pt": "João"
+  },
+  "Jonah": {
+   "es": "Jonás",
+   "pt": "Jonas"
+  },
+  "Jonathan": {
+   "es": "Jonatán",
+   "pt": "Jônatas"
+  },
+  "Jordan": {
+   "es": "Jordán",
+   "pt": "Jordão"
+  },
+  "Joshua": {
+   "es": "Josué (person); Jesuá (person)",
+   "pt": "Josué (person); Jesua (person)"
+  },
+  "Judah": {
+   "es": "Judá (person); Jehudas (person)",
+   "pt": "Judá"
+  },
+  "Judea": {
+   "pt": "Judeia"
+  },
+  "Kidron": {
+   "es": "Cedrón",
+   "pt": "Cedrom"
+  },
+  "Laban": {
+   "es": "Labán",
+   "pt": "Labão (person); Labã (place)"
+  },
+  "Lasea": {
+   "pt": "Laseia"
+  },
+  "Lydda": {
+   "es": "Lida",
+   "pt": "Lida"
+  },
+  "Macedonia": {
+   "pt": "Macedônia"
+  },
+  "Makkedah": {
+   "es": "Maceda",
+   "pt": "Maquedá"
+  },
+  "Manasseh": {
+   "es": "Manasés",
+   "pt": "Manassés"
+  },
+  "Michal": {
+   "es": "Mical",
+   "pt": "Mical"
+  },
+  "Moab": {
+   "pt": "Moabe"
+  },
+  "Mount Ephraim": {
+   "es": "Monte Efraim",
+   "pt": "Monte Efraim"
+  },
+  "Mount Hermon": {
+   "es": "Monte Hermón",
+   "pt": "Monte Hermom"
+  },
+  "Mount of Olives": {
+   "es": "Monte de los Olivos",
+   "pt": "Monte das Oliveiras"
+  },
+  "Nadab": {
+   "pt": "Nadabe"
+  },
+  "Nahor": {
+   "es": "Nacor",
+   "pt": "Naor"
+  },
+  "Nahum": {
+   "es": "Nahúm",
+   "pt": "Naum"
+  },
+  "Naphtali": {
+   "es": "Neftalí",
+   "pt": "Naftali"
+  },
+  "Nazareth": {
+   "es": "Nazaret",
+   "pt": "Nazaré"
+  },
+  "Nebuchadnezzar": {
+   "es": "Nabucodonosor",
+   "pt": "Nabucodonosor"
+  },
+  "Nicodemus": {
+   "es": "Nicodemo",
+   "pt": "Nicodemos"
+  },
+  "Nile": {
+   "es": "Nilo",
+   "pt": "Nilo"
+  },
+  "Nob": {
+   "pt": "Nobe"
+  },
+  "Og": {
+   "pt": "Ogue"
+  },
+  "On": {
+   "es": "Hon (person); On (place)",
+   "pt": "Om"
+  },
+  "Ophir": {
+   "es": "Ofir",
+   "pt": "Ofir"
+  },
+  "Paul": {
+   "es": "Pablo",
+   "pt": "Paulo"
+  },
+  "Philip": {
+   "es": "Felipe",
+   "pt": "Filipe"
+  },
+  "Philistia": {
+   "es": "Filistea",
+   "pt": "Filístia"
+  },
+  "Phinehas": {
+   "es": "Finees",
+   "pt": "Fineias"
+  },
+  "Phrygia": {
+   "es": "Frigia",
+   "pt": "Frígia"
+  },
+  "Pi-hahiroth": {
+   "es": "Pihahirot",
+   "pt": "Pi-Hairote"
+  },
+  "Pisgah": {
+   "es": "Pisga",
+   "pt": "Pisga"
+  },
+  "Pool": {
+   "es": "Estanque",
+   "pt": "Tanque"
+  },
+  "Red Sea": {
+   "es": "Mar Rojo",
+   "pt": "Mar Vermelho"
+  },
+  "Reuben": {
+   "es": "Rubén",
+   "pt": "Rúben"
+  },
+  "Rizpah": {
+   "es": "Rispa",
+   "pt": "Rispa"
+  },
+  "Rome": {
+   "es": "Roma",
+   "pt": "Roma"
+  },
+  "Samson": {
+   "es": "Samsón",
+   "pt": "Sansão"
+  },
+  "Saul": {
+   "es": "Saúl"
+  },
+  "Sennacherib": {
+   "es": "Senaquérib",
+   "pt": "Senaqueribe"
+  },
+  "Shechem": {
+   "es": "Sequem (person); Siquem (place)",
+   "pt": "Siquém"
+  },
+  "Shiloah": {
+   "es": "Siloé",
+   "pt": "Siloé"
+  },
+  "Shur": {
+   "pt": "Sur"
+  },
+  "Sihon": {
+   "es": "Sehón",
+   "pt": "Seom"
+  },
+  "Siloam": {
+   "es": "Siloé",
+   "pt": "Siloé"
+  },
+  "Sodom": {
+   "es": "Sodoma",
+   "pt": "Sodoma"
+  },
+  "Solomon": {
+   "es": "Salomón",
+   "pt": "Salomão"
+  },
+  "Syene": {
+   "es": "Seveneh",
+   "pt": "Sevene"
+  },
+  "Syria": {
+   "es": "Siria",
+   "pt": "Síria"
+  },
+  "Tarshish": {
+   "es": "Tarsis",
+   "pt": "Társis"
+  },
+  "Tiberias": {
+   "pt": "Tibérias"
+  },
+  "Tyre": {
+   "es": "Tiro",
+   "pt": "Tiro"
+  },
+  "Zorah": {
+   "es": "Sora",
+   "pt": "Zorá"
+  }
+ }
+}

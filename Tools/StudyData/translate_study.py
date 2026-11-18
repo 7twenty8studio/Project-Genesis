@@ -175,7 +175,9 @@ def find_name(name, verses, bible, others):
             continue
         rarity = math.log(bible.count / bible.frequency[word]) / math.log(bible.count)
         score = share * 1.5 + rarity * 0.4 + sim
-        if score > best_score:
+        # Ties go to the closer spelling, then the word itself, so every
+        # run gives the same answer whatever the order of `counts`.
+        if (score, sim, word) > (best_score, best[2] if best else -1.0, best[0] if best else ""):
             best, best_score = (word, share, sim), score
     if not best:
         return None

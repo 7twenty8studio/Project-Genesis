@@ -116,7 +116,7 @@ final class StudyRepository: Sendable {
 
     func person(id: Int) throws -> Person? {
         try database.query(
-            "SELECT p.id, \(pick("tp", "name", "p.name")), \(pick("tp", "other", "p.also_called")), p.verse_count, p.gender, \(pick("tp", "detail", "p.bio")), p.birth_year, p.death_year, p.tribe, p.first_verse FROM people p\(join("person", as: "tp", id: "p.id")) WHERE p.id = ?",
+            "SELECT p.id, \(pick("tp", "name", "p.name")), \(pick("tp", "other", "p.also_called")), p.verse_count, p.gender, \(pick("tp", "detail", "p.bio")), p.birth_year, p.death_year, p.tribe, p.first_verse, \(translated("tp")) FROM people p\(join("person", as: "tp", id: "p.id")) WHERE p.id = ?",
             [.int(id)]
         ) {
             Person(
@@ -126,7 +126,8 @@ final class StudyRepository: Sendable {
                 birthYear: $0.optionalInt(6),
                 deathYear: $0.optionalInt(7),
                 group: $0.text(8),
-                firstVerse: $0.optionalInt(9).map(VerseID.init(rawValue:))
+                firstVerse: $0.optionalInt(9).map(VerseID.init(rawValue:)),
+                biographyIsTranslated: $0.bool(10)
             )
         }.first
     }
@@ -191,7 +192,7 @@ final class StudyRepository: Sendable {
 
     func place(id: Int) throws -> Place? {
         try database.query(
-            "SELECT p.id, \(pick("tq", "name", "p.name")), p.kind, p.latitude, p.longitude, p.verse_count, \(pick("tq", "other", "p.aliases")), \(pick("tq", "detail", "p.bio")), p.precise, p.first_verse, p.confidence FROM places p\(join("place", as: "tq", id: "p.id")) WHERE p.id = ?",
+            "SELECT p.id, \(pick("tq", "name", "p.name")), p.kind, p.latitude, p.longitude, p.verse_count, \(pick("tq", "other", "p.aliases")), \(pick("tq", "detail", "p.bio")), p.precise, p.first_verse, p.confidence, \(translated("tq")) FROM places p\(join("place", as: "tq", id: "p.id")) WHERE p.id = ?",
             [.int(id)]
         ) {
             Place(
@@ -199,7 +200,8 @@ final class StudyRepository: Sendable {
                 aliases: $0.text(6),
                 description: $0.text(7),
                 isPrecise: $0.bool(8),
-                firstVerse: $0.optionalInt(9).map(VerseID.init(rawValue:))
+                firstVerse: $0.optionalInt(9).map(VerseID.init(rawValue:)),
+                descriptionIsTranslated: $0.bool(11)
             )
         }.first
     }
@@ -278,6 +280,11 @@ final class StudyRepository: Sendable {
     private func pick(_ alias: String, _ column: String, _ english: String) -> String {
         guard language != nil else { return english }
         return "COALESCE(NULLIF(\(alias).\(column), ''), \(english))"
+    }
+
+    /// 1 when the row's Easton description is a translation, else 0.
+    private func translated(_ alias: String) -> String {
+        language == nil ? "0" : "COALESCE(\(alias).detail, '') <> ''"
     }
 
     /// Also matches the start of a translated name or other name, accents

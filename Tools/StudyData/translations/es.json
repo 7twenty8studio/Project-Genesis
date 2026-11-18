@@ -483,7 +483,7 @@
    "name": "Reinado de Manasés"
   },
   "229": {
-   "name": "Profecías de Nahum"
+   "name": "Profecías de Nahúm"
   },
   "23": {
    "name": "Muerte de Adam"
@@ -1544,9 +1544,6 @@
   "1049": {
    "name": "Elam (hijo de Sem)"
   },
-  "1050": {
-   "name": "Belam"
-  },
   "1055": {
    "name": "Elasa"
   },
@@ -1571,6 +1568,9 @@
   },
   "107": {
    "name": "Agabo"
+  },
+  "1070": {
+   "name": "Elhanán"
   },
   "1071": {
    "name": "Elhaanan"
@@ -1962,7 +1962,7 @@
    "name": "Eubulo"
   },
   "1230": {
-   "name": "Euticó"
+   "name": "Eutico"
   },
   "1231": {
    "name": "Eva"
@@ -2003,7 +2003,7 @@
    "name": "Gabai"
   },
   "1264": {
-   "name": "Gadiel"
+   "name": "Gadi"
   },
   "1269": {
    "name": "Gaio (de Macedonia)"
@@ -3139,7 +3139,7 @@
    "other": "Jupiter, José"
   },
   "1723": {
-   "name": "Josías"
+   "name": "Josa"
   },
   "1724": {
    "name": "Josafat"
@@ -3607,7 +3607,7 @@
    "name": "Macnadbai"
   },
   "188": {
-   "name": "Alejandro (judío de Efeso)"
+   "name": "Alejandro (judío de Éfeso)"
   },
   "1883": {
    "name": "Magpías"
@@ -4379,6 +4379,9 @@
   "2144": {
    "name": "Naasón",
    "other": "Naasson, Naashon"
+  },
+  "2145": {
+   "name": "Nahúm"
   },
   "2146": {
    "name": "Nahat"
@@ -5247,14 +5250,14 @@
    "name": "Sabta"
   },
   "2452": {
-   "name": "Sabteca"
+   "name": "Sabtecá"
   },
   "2455": {
    "name": "Sala",
    "other": "Sela"
   },
   "2456": {
-   "name": "Zorobabel",
+   "name": "Salatiel",
    "other": "Salatiel"
   },
   "2457": {
@@ -6062,7 +6065,7 @@
    "name": "Sobad"
   },
   "2717": {
-   "name": "Siros",
+   "name": "Sobac",
    "other": "Shophach"
   },
   "2718": {
@@ -6200,6 +6203,9 @@
   "2757": {
    "name": "Sísara (capitán del ejército)"
   },
+  "2758": {
+   "name": "Sísara"
+  },
   "2759": {
    "name": "Hermana de Tahpenes"
   },
@@ -6264,7 +6270,7 @@
    "name": "Susana"
   },
   "2806": {
-   "name": "Syntyqué"
+   "name": "Síntique"
   },
   "2807": {
    "name": "Tabaot"
@@ -6472,10 +6478,10 @@
    "name": "Tubal-Caín"
   },
   "2885": {
-   "name": "Tiquico"
+   "name": "Tíquico"
   },
   "2886": {
-   "name": "Tyrano"
+   "name": "Tirano"
   },
   "289": {
    "name": "Ornán",
@@ -6866,6 +6872,9 @@
   },
   "3039": {
    "name": "Sofonías"
+  },
+  "304": {
+   "name": "Arioc"
   },
   "3040": {
    "name": "Ezequías"
@@ -8000,7 +8009,7 @@
    "name": "Jabín"
   },
   "677": {
-   "name": "Jabín (rey de Asor)"
+   "name": "Jabín (rey de Hasor)"
   },
   "678": {
    "name": "Jacán"
@@ -8869,7 +8878,7 @@
    "name": "Asán"
   },
   "1000": {
-   "name": "Rhodas"
+   "name": "Rodas"
   },
   "1001": {
    "name": "Ribla"
@@ -9091,6 +9100,9 @@
   "1083": {
    "name": "Simrom-meron"
   },
+  "1084": {
+   "name": "Sinar"
+  },
   "1085": {
    "name": "Sión"
   },
@@ -9209,9 +9221,6 @@
   "1133": {
    "name": "Tafnes"
   },
-  "1134": {
-   "name": "Tadmor"
-  },
   "1136": {
    "name": "Tapua"
   },
@@ -9258,7 +9267,7 @@
    "name": "Taré"
   },
   "1156": {
-   "name": "No-amón"
+   "name": "Tebas"
   },
   "1157": {
    "name": "Tebes"
@@ -9401,7 +9410,7 @@
    "name": "Valle de Hinnom"
   },
   "1208": {
-   "name": "Valle de Jiphthahel"
+   "name": "Valle de Jefte-el"
   },
   "1209": {
    "name": "Valle de Josafat"
@@ -9422,7 +9431,7 @@
    "name": "Valle de Mizpa"
   },
   "1214": {
-   "name": "Valle de Rephaim",
+   "name": "Valle de Refaim",
    "other": "valle de Hinom"
   },
   "1215": {
@@ -9453,7 +9462,7 @@
    "name": "Valle de Seboim"
   },
   "1223": {
-   "name": "Valle de Zephathah"
+   "name": "Valle de Sefata"
   },
   "1224": {
    "name": "Valle de Zered"
@@ -9933,7 +9942,7 @@
    "name": "Adón"
   },
   "250": {
-   "name": "Bitynia"
+   "name": "Bitinia"
   },
   "251": {
    "name": "Bizotia"
@@ -9964,6 +9973,9 @@
   },
   "26": {
    "name": "Aditaim"
+  },
+  "260": {
+   "name": "Arabá"
   },
   "263": {
    "name": "Cabón"
@@ -10006,7 +10018,7 @@
    "name": "Cencreas"
   },
   "282": {
-   "name": "Caldeos"
+   "name": "Caldea"
   },
   "283": {
    "name": "Quebar"
@@ -10080,6 +10092,9 @@
   "309": {
    "name": "Cózeba"
   },
+  "31": {
+   "name": "Adulam"
+  },
   "310": {
    "name": "Creta"
   },
@@ -10098,8 +10113,11 @@
   "315": {
    "name": "Cuta"
   },
+  "316": {
+   "name": "Chipre"
+  },
   "317": {
-   "name": "Cireneo"
+   "name": "Cirene"
   },
   "318": {
    "name": "Dabe-set"
@@ -10255,6 +10273,9 @@
   "388": {
    "name": "En-ganim"
   },
+  "389": {
+   "name": "Engadi"
+  },
   "39": {
    "name": "Aía"
   },
@@ -10292,7 +10313,7 @@
    "name": "Ajalón"
   },
   "400": {
-   "name": "Efeso"
+   "name": "Éfeso"
   },
   "401": {
    "name": "Efraim"
@@ -10311,6 +10332,9 @@
   },
   "406": {
    "name": "Efraim"
+  },
+  "407": {
+   "name": "Erec"
   },
   "408": {
    "name": "Esaú"
@@ -10443,7 +10467,7 @@
    "name": "Genezaret"
   },
   "46": {
-   "name": "Alejandrina"
+   "name": "Alejandría"
   },
   "460": {
    "name": "Gerut-quimam"
@@ -10607,6 +10631,9 @@
   "531": {
    "name": "Hasmona"
   },
+  "532": {
+   "name": "Haurán"
+  },
   "533": {
    "name": "Havilah (del Edén)"
   },
@@ -10644,13 +10671,13 @@
    "name": "Haserot"
   },
   "545": {
-   "name": "Asor"
+   "name": "Hasor"
   },
   "546": {
-   "name": "Asor"
+   "name": "Hasor"
   },
   "547": {
-   "name": "Asor"
+   "name": "Hasor"
   },
   "548": {
    "name": "Hasor"
@@ -10850,9 +10877,6 @@
   },
   "640": {
    "name": "Jesuá"
-  },
-  "642": {
-   "name": "Jezreelita"
   },
   "645": {
    "name": "Jogbea"
@@ -11114,7 +11138,7 @@
    "name": "Licia"
   },
   "741": {
-   "name": "Lyda"
+   "name": "Lida"
   },
   "742": {
    "name": "Listra"
@@ -11201,7 +11225,7 @@
    "name": "Mejarcón"
   },
   "779": {
-   "name": "Memfis"
+   "name": "Menfis"
   },
   "780": {
    "name": "Mefaat"
@@ -11220,6 +11244,9 @@
   },
   "788": {
    "name": "Mesech"
+  },
+  "79": {
+   "name": "Arabá"
   },
   "791": {
    "name": "Metegama"
@@ -11400,7 +11427,7 @@
    "name": "Monte Seir"
   },
   "854": {
-   "name": "Monte Shapher"
+   "name": "Monte Sefer"
   },
   "855": {
    "name": "Monte Sinaí",
@@ -11429,7 +11456,7 @@
    "name": "Moza"
   },
   "863": {
-   "name": "Puerta de Miphkad"
+   "name": "Puerta del Juicio"
   },
   "864": {
    "name": "Mira"
@@ -11526,7 +11553,7 @@
    "name": "Obot"
   },
   "907": {
-   "name": "Olivas"
+   "name": "Monte del Olivar"
   },
   "91": {
    "name": "Armagedón"
@@ -11553,7 +11580,7 @@
    "name": "Padan-aram"
   },
   "918": {
-   "name": "Pamfylia"
+   "name": "Panfilia"
   },
   "919": {
    "name": "Pafo"
@@ -11604,7 +11631,7 @@
    "name": "Filipos"
   },
   "943": {
-   "name": "Palestina"
+   "name": "Filistea"
   },
   "944": {
    "name": "Fenicia"
@@ -11613,7 +11640,7 @@
    "name": "Fenice"
   },
   "946": {
-   "name": "Frygia"
+   "name": "Frigia"
   },
   "947": {
    "name": "Pibeset"
@@ -11712,7 +11739,7 @@
    "name": "Ramot"
   },
   "984": {
-   "name": "Ramot"
+   "name": "Ramot de Galaad"
   },
   "985": {
    "name": "Recá"

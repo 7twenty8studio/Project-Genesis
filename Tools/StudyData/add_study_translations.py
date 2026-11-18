@@ -12,7 +12,8 @@ from manual.json and the Bibles' own spellings) and replaces the
 kind is person, place, event, era or route; key is the row's id as text.
 name replaces the English name or title; other replaces also_called
 (people), aliases (places), the summary (eras) or the passage (routes);
-detail is kept for translated descriptions (Easton) and is empty for now.
+detail is the translated Easton description (translations/bios, see
+bios.py), empty where there's none yet.
 folded is the name and other names in lower case without accents, for
 search. An empty value means "keep the English". Running it again is safe.
 build_study.py calls it after building the database.
@@ -22,6 +23,9 @@ import os
 import sqlite3
 import sys
 import unicodedata
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import bios  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 STUDY = os.path.join(ROOT, "Genesis", "Resources", "Study", "Study.sqlite")
@@ -59,14 +63,8 @@ def add(path: str = STUDY) -> int:
     for lang in LANGUAGES:
         with open(os.path.join(HERE, f"{lang}.json"), encoding="utf-8") as f:
             data = json.load(f)
-        details = {}
-        bios = os.path.join(HERE, "bios", lang)
-        if os.path.isdir(bios):
-            for name in sorted(os.listdir(bios)):
-                if name.endswith(".json"):
-                    with open(os.path.join(bios, name), encoding="utf-8") as f:
-                        for entry in json.load(f)["entries"]:
-                            details[(entry["kind"], str(entry["id"]))] = entry["text"]
+        # Easton descriptions: only translated entries that pass bios.py's check.
+        details = {(kind, str(pid)): text for (kind, pid), text in bios.check(lang).items()}
         for kind, table in KINDS.items():
             ids = {str(row[0]) for row in db.execute(f"SELECT id FROM {table}")}
             entries = data.get(kind, {})

@@ -1,0 +1,1568 @@
+{
+ "batch": "005",
+ "entries": [
+  {
+   "kind": "person",
+   "id": 533,
+   "name": "Cain",
+   "sha256": "619f59d9a725a35f791f702a541c935b6e47fe6d5bd4bebc28c45fb7b09fb42d",
+   "text": "The first-born son of Adam and Eve (Gen. 4). He became a tiller of the ground, as his brother Abel followed the pursuits of pastoral life. He was “a sullen, self-willed, haughty, vindictive man; wanting the religious element in his character, and defiant even in his attitude towards God.” It came to pass “in process of time” (marg. “at the end of days”), i.e., probably on the Sabbath, that the two brothers presented their offerings to the Lord. Abel’s offering was of the “firstlings of his flock and of the fat,” while Cain’s was “of the fruit of the ground.” Abel’s sacrifice was “more excellent” (Heb. 11:4) than Cain’s, and was accepted by God. On this account Cain was “very wroth,” and cherished feelings of murderous hatred against his brother, and was at length guilty of the desperate outrage of putting him to death (1 John 3:12). For this crime he was expelled from Eden, and henceforth led the life of an exile, bearing upon him some mark which God had set upon him in answer to his own cry for mercy, so that thereby he might be protected from the wrath of his fellow-men; or it may be that God only gave him some sign to assure him that he would not be slain (Gen. 4:15). Doomed to be a wanderer and a fugitive in the earth, he went forth into the “land of Nod”, i.e., the land of “exile”, which is said to have been in the “east of Eden,” and there he built a city, the first we read of, and called it after his son’s name, Enoch. His descendants are enumerated to the sixth generation. They gradually degenerated in their moral and spiritual condition till they became wholly corrupt before God. This corruption prevailed, and at length the Deluge was sent by God to prevent the final triumph of evil.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "a sullen, self-willed, haughty, vindictive man; wanting the religious element in his character, and defiant even in his attitude towards God.",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "in process of time",
+     "kind": "unsure",
+     "verses": [
+      1004003
+     ],
+     "es": "Y aconteció andando el tiempo, que Caín trajo del fruto de la tierra una ofrenda á Jehová.",
+     "pt": "E aconteceu, decorrendo o tempo, que Caim trouxe do fruto da terra uma oferta ao SENHOR."
+    },
+    {
+     "n": 2,
+     "english": "at the end of days",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "firstlings of his flock and of the fat,",
+     "kind": "partial",
+     "verses": [
+      1004004
+     ],
+     "es": "Y Abel trajo también de los primogénitos de sus ovejas, y de su grosura. Y miró Jehová con agrado á Abel y á su ofrenda;",
+     "pt": "E Abel trouxe também dos primogênitos de suas ovelhas, e de sua gordura. E olhou o SENHOR com agrado a Abel e à sua oferta;"
+    },
+    {
+     "n": 4,
+     "english": "of the fruit of the ground.",
+     "kind": "partial",
+     "verses": [
+      1004003
+     ],
+     "es": "Y aconteció andando el tiempo, que Caín trajo del fruto de la tierra una ofrenda á Jehová.",
+     "pt": "E aconteceu, decorrendo o tempo, que Caim trouxe do fruto da terra uma oferta ao SENHOR."
+    },
+    {
+     "n": 5,
+     "english": "more excellent",
+     "kind": "wording",
+     "verses": [
+      58011004
+     ],
+     "es": "Por la fe Abel ofreció á Dios mayor sacrificio que Caín, por la cual alcanzó testimonio de que era justo, dando Dios testimonio á sus presentes; y difunto, aun habla por ella.",
+     "pt": "Pela fé, Abel ofereceu a Deus melhor sacrifício do que Caim; por isso obteve testemunho de que era justo, pois Deus testemunhou de suas ofertas; e mesmo estando morto, ainda fala por meio dela."
+    },
+    {
+     "n": 6,
+     "english": "very wroth,",
+     "kind": "other"
+    },
+    {
+     "n": 7,
+     "english": "land of Nod",
+     "kind": "partial",
+     "verses": [
+      1004016
+     ],
+     "es": "Y salió Caín de delante de Jehová, y habitó en tierra de Nod, al oriente de Edén.",
+     "pt": "E saiu Caim de diante do SENHOR, e habitou na terra de Node, ao oriente de Éden."
+    },
+    {
+     "n": 8,
+     "english": "exile",
+     "kind": "other"
+    },
+    {
+     "n": 9,
+     "english": "east of Eden,",
+     "kind": "partial",
+     "verses": [
+      1004016
+     ],
+     "es": "Y salió Caín de delante de Jehová, y habitó en tierra de Nod, al oriente de Edén.",
+     "pt": "E saiu Caim de diante do SENHOR, e habitou na terra de Node, ao oriente de Éden."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 534,
+   "name": "Cainan (antediluvian patriarch)",
+   "sha256": "1807eba7d177c6d7940d01e49f336de045fa747ba6f69efae19cd90d84775607",
+   "text": "The fourth antediluvian patriarch, the eldest son of Enos. He was 70 years old at the birth of his eldest son Mahalaleel, after which he lived 840 years (Gen. 5:9-14), and was 910 years old when he died. He is also called Kenan (1 Chr. 1:2).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 535,
+   "name": "Cainan (son of Arphaxad)",
+   "sha256": "a43189915525b4218f65a986157c447709a05b4451e45065e1fe8d936ed31a02",
+   "text": "The son of Arphaxad (Luke 3:36). He is nowhere named in the Old Testament. He is usually called the “second Cainan.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "second Cainan.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 536,
+   "name": "Calcol",
+   "sha256": "9a2d96346299c75d1985cfeb2549842baa3c80771ca04dd3122f21048149021b",
+   "text": "(1 Chr. 2:6), sustenance, the same probably as Chalcol (1 Kings 4:31), one of the four sages whom Solomon excelled in wisdom; for “he was wiser than all men.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "he was wiser than all men.",
+     "kind": "partial",
+     "verses": [
+      11004031
+     ],
+     "es": "Y aun fué más sabio que todos los hombres; más que Ethán Ezrahita, y que Emán y Calchôl y Darda, hijos de Mahol: y fué nombrado entre todas las naciones de alrededor.",
+     "pt": "E ainda foi mais sábio que todos os homens; mais que Etã ezraíta, e que Hemã e Calcol e Darda, filhos de Maol: e foi nomeado entre todas as nações de ao redor."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 537,
+   "name": "Caleb",
+   "sha256": "631f49c687938cca2acd7ef71d341209c145238bde4d9f24f2217e3b2864de5f",
+   "text": "The son of Jephunneh (Num. 13:6; 32:12; Josh. 14:6, 14). He was one of those whom Moses sent to search the land in the second year after the Exodus. He was one of the family chiefs of the tribe of Judah. He and Joshua the son of Nun were the only two of the whole number who encouraged the people to go up and possess the land, and they alone were spared when a plague broke out in which the other ten spies perished (Num. 13; 14). All the people that had been numbered, from twenty years old and upward, perished in the wilderness except these two. The last notice we have of Caleb is when (being then eighty-five years of age) he came to Joshua at the camp at Gilgal, after the people had gained possession of the land, and reminded him of the promise Moses had made to him, by virtue of which he claimed a certain portion of the land of Kirjath-arba as his inheritance (Josh. 14:6-15; 15:13-15; 21:10-12; 1 Sam. 25:2, 3; 30:14). He is called a “Kenezite” in Josh. 14:6, 14. This may simply mean “son of Kenez” (Num. 32:12). Some, however, read “Jephunneh, the son of Kenez,” who was a descendant of Hezron, the son of Pharez, a grandson of Judah (1 Chr. 2:5). This Caleb may possibly be identical with (2).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Kenezite",
+     "kind": "wording",
+     "verses": [
+      6014006
+     ],
+     "es": "Y los hijos de Judá vinieron á Josué en Gilgal; y Caleb, hijo de Jephone Cenezeo, le dijo: Tú sabes lo que Jehová dijo á Moisés, varón de Dios, en Cades-barnea, tocante á mí y á ti.",
+     "pt": "E os filhos de Judá vieram a Josué em Gilgal; e Calebe, filho de Jefoné quenezeu, lhe disse: Tu sabes o que o SENHOR disse a Moisés, homem de Deus, em Cades-Barneia, tocante a mim e a ti."
+    },
+    {
+     "n": 1,
+     "english": "son of Kenez",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "Jephunneh, the son of Kenez,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 538,
+   "name": "Caleb",
+   "sha256": "00123a4340305fe1b77e7098269d428cefff1e0c1b647567a4f0e48df06e7fef",
+   "text": "One of the three sons of Hezron of the tribe of Judah. He is also called Chelubai (1 Chr. 2:9). His descendants are enumerated (18-20, 42-49).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 545,
+   "name": "Azariah",
+   "sha256": "15471d52fcae54e3f2276ac743c8d212395696fae67dc13d6c2bef57be3e2b2c",
+   "text": "The original name of Abed-nego (Dan. 1:6, 7, 11, 16). He was of the royal family of Judah, and with his other two companions remarkable for his personal beauty and his intelligence as well as piety.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 547,
+   "name": "Azaziah",
+   "sha256": "aa1f274a6f75ccca3080759380d6b3859aa939751bfcc4db130335253a01dbf0",
+   "text": "One of the Levitical harpers in the temple (1 Chr. 15:21).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 548,
+   "name": "Azaziah",
+   "sha256": "22c56d241fedc89d8a035251f3315a9be07d1ad2841a86230221fe49a56c6586",
+   "text": "The father of Hoshea, who was made ruler over the Ephraimites (1 Chr. 27:20).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 549,
+   "name": "Azaziah",
+   "sha256": "db829a444432a634c583ea2a483572de16a27130716cfe43534cd7bfab7b4390",
+   "text": "One who had charge of the temple offerings (2 Chr. 31:13).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 551,
+   "name": "Azel",
+   "sha256": "509322072f889ca956a18c6c6fd7a569f1e1f065618a2ec460ffed4baae894ab",
+   "text": "Noble, a descendant of king Saul (1 Chr. 8:37; 9:43, 44).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 555,
+   "name": "Azmaveth",
+   "sha256": "ced87c625b97a66338d287d351bbe787199e668dc80e1414b18c9b4afee6368a",
+   "text": "One of David’s thirty warriors (2 Sam. 23:31).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 556,
+   "name": "Azmaveth",
+   "sha256": "23736924bc21ebc4544e1e284f7adb5d2a975a3de5d54591692ba027ab34cfc9",
+   "text": "1 Chr. 8:36",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 558,
+   "name": "Azmaveth",
+   "sha256": "33171897e14846785e66a6b99b005d38eb083f03baeda5a64dc3cafc29e5c84f",
+   "text": "An overseer over the royal treasury in the time of David and Solomon (1 Chr. 27:25).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 567,
+   "name": "Azubah",
+   "sha256": "d44e78094e6b25367f982dc94df8957587a2147020f83ccfd132ef4d612471fd",
+   "text": "The daughter of Shilhi, and mother of king Jehoshaphat (1 Kings 22:42).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 568,
+   "name": "Azubah",
+   "sha256": "03d033e30985161d5b27433535ead3d7c4738765906bf5f5e70f1c57b6107675",
+   "text": "The wife of Caleb (1 Chr. 2:18, 19).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 569,
+   "name": "Azur",
+   "sha256": "2e5d6cd62a51feeaef106916950e3f7440771dad9cf179e6c266aa2dad8db88b",
+   "text": "The father of Hananiah, a false prophet (Jer. 28:1).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 570,
+   "name": "Azur",
+   "sha256": "83e9bd4841c3e273f2644190341c0d5600c43df78f164e7d22c102d0f7239081",
+   "text": "The father of Jaazaniah (Ezek. 11:1).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 572,
+   "name": "Azzur",
+   "sha256": "6d1062c4ec06858b6d9481425e9b6acfafa066b93963e652a0300add9e144191",
+   "text": "One of those who sealed the covenant with Jehovah on the return from Babylon (Neh. 10:17).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 573,
+   "name": "Baal",
+   "sha256": "df6b5bcb1340086c1e287aa12905c608c265fd7fcaa9efc6b334f5c2d26949d3",
+   "text": "The name appropriated to the principal male god of the Phoenicians. It is found in several places in the plural BAALIM (Judg. 2:11; 10:10; 1 Kings 18:18; Jer. 2:23; Hos. 2:17). Baal is identified with Molech (Jer. 19:5). It was known to the Israelites as Baal-peor (Num. 25:3; Deut. 4:3), was worshipped till the time of Samuel (1 Sam 7:4), and was afterwards the religion of the ten tribes in the time of Ahab (1 Kings 16:31-33; 18:19, 22). It prevailed also for a time in the kingdom of Judah (2 Kings 8:27; comp. 11:18; 16:3; 2 Chr. 28:2), till finally put an end to by the severe discipline of the Captivity (Zeph. 1:4-6). The priests of Baal were in great numbers (1 Kings 18:19), and of various classes (2 Kings 10:19). Their mode of offering sacrifices is described in 1 Kings 18:25-29. The sun-god, under the general title of Baal, or “lord,” was the chief object of worship of the Canaanites. Each locality had its special Baal, and the various local Baals were summed up under the name of Baalim, or “lords.” Each Baal had a wife, who was a colourless reflection of himself.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "lord,",
+     "kind": "wording",
+     "verses": [
+      11018018
+     ],
+     "es": "Y él respondió: Yo no he alborotado á Israel, sino tú y la casa de tu padre, dejando los mandamientos de Jehová, y siguiendo á los Baales.",
+     "pt": "E ele respondeu: Eu não perturbei a Israel, mas sim tu e a casa de teu pai, deixando os mandamentos do SENHOR, e seguindo aos baalins."
+    },
+    {
+     "n": 1,
+     "english": "lords.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 575,
+   "name": "Baal",
+   "sha256": "2f728f9e820c043960183b5f0ec32e592a038c06773b06ce1fa88fe93bb7cc08",
+   "text": "A Benjamite, son of Jehiel, the progenitor of the Gibeonites (1 Chr. 8:30; 9:36).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 576,
+   "name": "Baalhanan",
+   "sha256": "027ec03a973379eb5d9045ee73d4db8000d5f41a8482732ecb7fab1c17a75cd0",
+   "text": "A king of Edom, son of Achbor (Gen. 36:38, 39; 1 Chr. 1:49, 50).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 577,
+   "name": "Baalhanan",
+   "sha256": "5bd3f39b0fba16c8850a5771cbffe3f53a180ff3b65109f0bf84544d1f082f11",
+   "text": "An overseer of “the olive trees and sycomore trees in the low plains” (the Shephelah) under David (1 Chr. 27:28).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the olive trees and sycomore trees in the low plains",
+     "kind": "loose",
+     "verses": [
+      13027027,
+      13027028
+     ],
+     "es": "Y de las viñas Simi Ramathita; y del fruto de las viñas para las bodegas, Zabdías Siphmita; Y de los olivares é higuerales que había en las campiñas, Baal-hanan Gederita; y de los almacenes del aceite, Joas;",
+     "pt": "E das vinhas Simei ramatita; e do fruto das vinhas para as adegas, Zabdias sifmita; E dos olivais e figueirais que havia nas campinas, Baal-Hanã gederita; e dos armazéns do azeite, Joás;"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 578,
+   "name": "Baalis",
+   "sha256": "47b3f238f8cd45cc8e471931f4a6010803a7ecf2d5f4df8e933e80c3445b6916",
+   "text": "King of the Ammonites at the time of the Babylonian captivity (Jer. 40:14). He hired Ishmael to slay Gedaliah who had been appointed governor over the cities of Judah.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 579,
+   "name": "Baal-zebub",
+   "sha256": "dd9281e13a36679e036b114bfa39955c0115a611124c95248360992c0f9c52aa",
+   "text": "Fly-lord, the god of the Philistines at Ekron (2 Kings 1:2, 3, 16). This name was given to the god because he was supposed to be able to avert the plague of flies which in that region was to be feared. He was consulted by Ahaziah as to his recovery.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 580,
+   "name": "Baana",
+   "sha256": "863617ad5e57405d14581ab99ac5bc834ca5831849c0b67855caa96af80efbed",
+   "text": "One of Solomon’s purveyors (1 Kings 4:12).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 581,
+   "name": "Baana",
+   "sha256": "0b97c13c2d280742ba140961491099906c2d6edc99e9c5b39efb62a10fb1e475",
+   "text": "Father of Zadok (Neh. 3:4).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 582,
+   "name": "Baanah",
+   "sha256": "2e36dcbb3e9ffdcd3bd22c8d15bcd7082d0b4f73881103a89a3cd55db3922014",
+   "text": "One of the two sons of Rimmon the Beerothite, a captain in Saul’s army. He and his brother Rechab assassinated Ishbosheth (2 Sam. 4:2), and were on this account slain by David, and their mutilated bodies suspended over the pool at Hebron (5, 6, 12).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 583,
+   "name": "Baanah",
+   "sha256": "70ef601ee35bd72437ed4debc73e08d4e3905e5405abf07676f5bb68f443dd10",
+   "text": "The father of Heled, who was one of David’s thirty heroes (2 Sam. 23:29; 1 Chr. 11:30).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 584,
+   "name": "Baanah",
+   "sha256": "5d83d3ef4f2c0b4a11c0c8cc2fdc9406c02b8c484507323d017b57f1df8527e8",
+   "text": "Son of Hushai, another of Solomon’s purveyors (1 Kings 4:16).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 589,
+   "name": "Baasha",
+   "sha256": "25b6ea233f7959e12bf0e66b876710d65a4dbfe36ef99de861056d8afc7e694d",
+   "text": "Bravery, the third king of the separate kingdom of Israel, and founder of its second dynasty (1 Kings 15; 16; 2 Chr. 16:1-6). He was the son of Ahijah of the tribe of Issachar. The city of Tirzah he made the capital of his kingdom, and there he was buried, after an eventful reign of twenty-four years (1 Kings 15:33). On account of his idolatries his family was exterminated, according to the word of the prophet Jehu (1 Kings 16:3, 4, 10-13).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 593,
+   "name": "Balaam",
+   "sha256": "8cceca0180d7f8d5ba740792eec6bbe639098e828de3675db869954af3e7b2e7",
+   "text": "Lord of the people; foreigner or glutton, as interpreted by others, the son of Beor, was a man of some rank among the Midianites (Num. 31:8; comp. 16). He resided at Pethor (Deut. 23:4), in Mesopotamia (Num. 23:7). It is evident that though dwelling among idolaters he had some knowledge of the true God; and was held in such reputation that it was supposed that he whom he blessed was blessed, and he whom he cursed was cursed. When the Israelites were encamped on the plains of Moab, on the east of Jordan, by Jericho, Balak sent for Balaam “from Aram, out of the mountains of the east,” to curse them; but by the remarkable interposition of God he was utterly unable to fulfil Balak’s wish, however desirous he was to do so. The apostle Peter refers (2 Pet. 2:15, 16) to this as an historical event. In Micah 6:5 reference also is made to the relations between Balaam and Balak. Though Balaam could not curse Israel, yet he suggested a mode by which the divine displeasure might be caused to descend upon them (Num. 25). In a battle between Israel and the Midianites (q.v.) Balaam was slain while fighting on the side of Balak (Num. 31:8).\n\n The “doctrine of Balaam” is spoken of in Rev. 2:14, in allusion to the fact that it was through the teaching of Balaam that Balak learned the way by which the Israelites might be led into sin. Balaam was constrained to utter prophecies regarding the future of Israel of wonderful magnificence and beauty of expression (Num. 24:5-9, 17).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "from Aram, out of the mountains of the east,",
+     "kind": "partial",
+     "verses": [
+      4023007
+     ],
+     "es": "Y él tomó su parábola, y dijo: De Aram me trajo Balac, rey de Moab, de los montes del oriente: ven, maldíceme á Jacob; y ven, execra á Israel.",
+     "pt": "E ele tomou sua parábola, e disse: De Arã me trouxe Balaque, rei de Moabe, dos montes do oriente: Vem, amaldiçoa para mim a Jacó; E vem, condena a Israel."
+    },
+    {
+     "n": 1,
+     "english": "doctrine of Balaam",
+     "kind": "partial",
+     "verses": [
+      66002014
+     ],
+     "es": "Pero tengo unas pocas cosas contra ti: porque tú tienes ahí los que tienen la doctrina de Balaam, el cual enseñaba á Balac á poner escándalo delante de los hijos de Israel, á comer de cosas sacrificadas á los ídolos, y á cometer fornicación.",
+     "pt": "Mas eu tenho algumas poucas coisas contra ti: que tu tens lá aos que retêm a doutrina de Balaão, o qual ensinava a Balaque a colocarmeios de tropeço diante dos filhos de Israel, para que comessem dos sacrifícios aos ídolos, e cometessem pecados sexuais."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 594,
+   "name": "Baladan",
+   "sha256": "df9773a8cc1b993413f65c359694a03141df4bc5c320bd04c164b977ba9699ab",
+   "text": "He has given a son, the father of the Babylonian king (2 Kings 20:12; Isa. 39:1) Merodach-baladan (q.v.).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 595,
+   "name": "Igeal",
+   "sha256": "758555249195650088ad888984a6d54cee0e512e8ea2efebbaf4d37530462ad0",
+   "text": "1 Chr. 3:22.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 597,
+   "name": "Imla",
+   "sha256": "fb11642fafd3e514a43f4a70d348e4aafeb2b6f52a2c7d9cf0bb5beabbbfea5d",
+   "text": "Replenisher, the father of Micaiah the prophet (2 Chr. 18:7, 8).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 599,
+   "name": "Immer",
+   "sha256": "ddf8f1b154654d59d59c0bf1e921a9925b0b6c71cf283e0b1cf4fbad0acb3457",
+   "text": "The head of the sixteenth priestly order (1 Chr. 24:14).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 600,
+   "name": "Immer",
+   "sha256": "73eefde2bc6599db99ddd4fe1aaa59c9013aef15e0c2b80e7d176f500e416513",
+   "text": "The father of Zadok (Neh. 3:29).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 606,
+   "name": "Iphedeiah",
+   "sha256": "9addaa87db4be35d63bea76d6401d2863f4f6eb846d236739fbe07386893bc58",
+   "text": "Set free by Jehovah, a chief of the tribe of Benjamin (1 Chr. 8:25).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 608,
+   "name": "Ira",
+   "sha256": "62d82116f0a7704ea75e7453d553b53569ee6caf81d710eea535494802190e6a",
+   "text": "A Jairite and priest, a royal chaplain (2 Sam. 20:26) or confidential adviser (comp. 2 Sam. 8:18; 1 Chr. 18:17).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 609,
+   "name": "Ira",
+   "sha256": "d35171b6632ba0106327f23dddf99c2db4617fbcb39739b7232f4dadca71ab6d",
+   "text": "A Tekoite, one of David’s thirty warriors (2 Sam. 23:26).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 610,
+   "name": "Ira",
+   "sha256": "d31f696288e32e856177d9d3c52d1fbb0b99ffd5732c78b1a645237af824b48a",
+   "text": "An Ithrite, also one of David’s heroes (2 Sam. 23:38).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 611,
+   "name": "Irad",
+   "sha256": "e2ab76b7ab11566967d79906d4173740afcc2d09baf2d4a1bd2af8585bb8ba5f",
+   "text": "Runner; wild ass, one of the antediluvian patriarchs, the father of Mehujael (Gen. 4:18), and grandson of Cain.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 612,
+   "name": "Iram",
+   "sha256": "75d3ec0f66517af68130010004423865857ec42aa6a93eac68474f2d10311b0c",
+   "text": "Citizen, chief of an Edomite tribe in Mount Seir (Gen. 36:43).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 616,
+   "name": "Isaac",
+   "sha256": "f6477694af7f1678c05a6531ddad3ac43b0c09807f1305ba29d6041c938b9d08",
+   "text": "The only son of Abraham by Sarah. He was the longest lived of the three patriarchs (Gen. 21:1-3). He was circumcised when eight days old (4-7); and when he was probably two years old a great feast was held in connection with his being weaned.\n\n The next memorable event in his life is that connected with the command of God given to Abraham to offer him up as a sacrifice on a mountain in the land of Moriah (Gen. 22). When he was forty years of age Rebekah was chosen for his wife (Gen. 24). After the death and burial of his father he took up his residence at Beer-lahai-roi (25:7-11), where his two sons, Esau and Jacob, were born (21-26), the former of whom seems to have been his favourite son (27, 28).\n\n In consequence of a famine (Gen. 26:1) Isaac went to Gerar, where he practised deception as to his relation to Rebekah, imitating the conduct of his father in Egypt (12:12-20) and in Gerar (20:2). The Philistine king rebuked him for his prevarication.\n\n After sojourning for some time in the land of the Philistines, he returned to Beersheba, where God gave him fresh assurance of covenant blessing, and where Abimelech entered into a covenant of peace with him.\n\n The next chief event in his life was the blessing of his sons (Gen. 27:1). He died at Mamre, “being old and full of days” (35:27-29), one hundred and eighty years old, and was buried in the cave of Machpelah.\n\n In the New Testament reference is made to his having been “offered up” by his father (Heb. 11:17; James 2:21), and to his blessing his sons (Heb. 11:20). As the child of promise, he is contrasted with Ishmael (Rom. 9:7, 10; Gal. 4:28; Heb. 11:18).\n\n Isaac is “at once a counterpart of his father in simple devoutness and purity of life, and a contrast in his passive weakness of character, which in part, at least, may have sprung from his relations to his mother and wife. After the expulsion of Ishmael and Hagar, Isaac had no competitor, and grew up in the shade of Sarah’s tent, moulded into feminine softness by habitual submission to her strong, loving will.” His life was so quiet and uneventful that it was spent “within the circle of a few miles; so guileless that he let Jacob overreach him rather than disbelieve his assurance; so tender that his mother’s death was the poignant sorrow of years; so patient and gentle that peace with his neighbours was dearer than even such a coveted possession as a well of living water dug by his own men; so grandly obedient that he put his life at his father’s disposal; so firm in his reliance on God that his greatest concern through life was to honour the divine promise given to his race.”, Geikie’s Hours, etc.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "being old and full of days",
+     "kind": "partial",
+     "verses": [
+      1035029
+     ],
+     "es": "Y exhaló Isaac el espíritu, y murió, y fué recogido á sus pueblos, viejo y harto de días; y sepultáronlo Esaú y Jacob sus hijos.",
+     "pt": "E expirou Isaque, e morreu, e foi recolhido a seus povos, velho e farto de dias; e sepultaram-no Esaú e Jacó seus filhos."
+    },
+    {
+     "n": 1,
+     "english": "offered up",
+     "kind": "wording",
+     "verses": [
+      58011017
+     ],
+     "es": "Por fe ofreció Abraham á Isaac cuando fué probado, y ofrecía al unigénito el que había recibido las promesas,",
+     "pt": "Pela fé, Abraão, quando foi provado, ofereceu Isaque; aquele que havia recebido as promessas ofereceu o seu único filho,"
+    },
+    {
+     "n": 2,
+     "english": "at once a counterpart of his father in simple devoutness and purity of life, and a contrast in his passive weakness of character, which in part, at least, may have sprung from his relations to his mother and wife. After the expulsion of Ishmael and Hagar, Isaac had no competitor, and grew up in the shade of Sarah’s tent, moulded into feminine softness by habitual submission to her strong, loving will.",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "within the circle of a few miles; so guileless that he let Jacob overreach him rather than disbelieve his assurance; so tender that his mother’s death was the poignant sorrow of years; so patient and gentle that peace with his neighbours was dearer than even such a coveted possession as a well of living water dug by his own men; so grandly obedient that he put his life at his father’s disposal; so firm in his reliance on God that his greatest concern through life was to honour the divine promise given to his race.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 617,
+   "name": "Isaiah",
+   "sha256": "f608edb4d3acc80054fade2dde604bca5a98cbf9e8e2729058aa83d89c67fe52",
+   "text": "The son of Amoz (Isa. 1:1; 2:1), who was apparently a man of humble rank. His wife was called “the prophetess” (8:3), either because she was endowed with the prophetic gift, like Deborah (Judg. 4:4) and Huldah (2 Kings 22:14-20), or simply because she was the wife of “the prophet” (Isa. 38:1). He had two sons, who bore symbolical names.\n\n He exercised the functions of his office during the reigns of Uzziah (or Azariah), Jotham, Ahaz, and Hezekiah (1:1). Uzziah reigned fifty-two years (B.C. 810-759), and Isaiah must have begun his career a few years before Uzziah’s death, probably B.C. 762. He lived till the fourteenth year of Hezekiah, and in all likelihood outlived that monarch (who died B.C. 698), and may have been contemporary for some years with Manasseh. Thus Isaiah may have prophesied for the long period of at least sixty-four years.\n\n His first call to the prophetical office is not recorded. A second call came to him “in the year that King Uzziah died” (Isa. 6:1). He exercised his ministry in a spirit of uncompromising firmness and boldness in regard to all that bore on the interests of religion. He conceals nothing and keeps nothing back from fear of man. He was also noted for his spirituality and for his deep-toned reverence toward “the holy One of Israel.”\n\n In early youth Isaiah must have been moved by the invasion of Israel by the Assyrian monarch Pul (q.v.), 2 Kings 15:19; and again, twenty years later, when he had already entered on his office, by the invasion of Tiglath-pileser and his career of conquest. Ahaz, king of Judah, at this crisis refused to co-operate with the kings of Israel and Syria in opposition to the Assyrians, and was on that account attacked and defeated by Rezin of Damascus and Pekah of Samaria (2 Kings 16:5; 2 Chr. 28:5, 6). Ahaz, thus humbled, sided with Assyria, and sought the aid of Tiglath-pileser against Israel and Syria. The consequence was that Rezin and Pekah were conquered and many of the people carried captive to Assyria (2 Kings 15:29; 16:9; 1 Chr. 5:26). Soon after this Shalmaneser determined wholly to subdue the kingdom of Israel. Samaria was taken and destroyed (B.C. 722). So long as Ahaz reigned, the kingdom of Judah was unmolested by the Assyrian power; but on his accession to the throne, Hezekiah (B.C. 726), who “rebelled against the king of Assyria” (2 Kings 18:7), in which he was encouraged by Isaiah, who exhorted the people to place all their dependence on Jehovah (Isa. 10:24; 37:6), entered into an alliance with the king of Egypt (Isa. 30:2-4). This led the king of Assyria to threaten the king of Judah, and at length to invade the land. Sennacherib (B.C. 701) led a powerful army into Palestine. Hezekiah was reduced to despair, and submitted to the Assyrians (2 Kings 18:14-16). But after a brief interval war broke out again, and again Sennacherib (q.v.) led an army into Palestine, one detachment of which threatened Jerusalem (Isa. 36:2-22; 37:8). Isaiah on that occasion encouraged Hezekiah to resist the Assyrians (37:1-7), whereupon Sennacherib sent a threatening letter to Hezekiah, which he “spread before the Lord” (37:14). The judgement of God now fell on the Assyrian host. “Like Xerxes in Greece, Sennacherib never recovered from the shock of the disaster in Judah. He made no more expeditions against either Southern Palestine or Egypt.” The remaining years of Hezekiah’s reign were peaceful (2 Chr. 32:23, 27-29). Isaiah probably lived to its close, and possibly into the reign of Manasseh, but the time and manner of his death are unknown. There is a tradition that he suffered martyrdom in the heathen reaction in the time of Manasseh (q.v.).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the prophetess",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "the prophet",
+     "kind": "wording",
+     "verses": [
+      23038001
+     ],
+     "es": "EN aquellos días cayó Ezechîas enfermo para morir. Y vino á él Isaías profeta, hijo de Amoz, y díjole: Jehová dice así: Ordena tu casa, porque tú morirás, y no vivirás.",
+     "pt": "Naqueles dias Ezequias ficou doente, perto de morrer. E veio até ele Isaías, filho de Amoz, e lhe disse: Assim diz o SENHOR: Põe em ordem a tua casa, porque morrerás, e não viverás."
+    },
+    {
+     "n": 2,
+     "english": "in the year that King Uzziah died",
+     "kind": "partial",
+     "verses": [
+      23006001
+     ],
+     "es": "EN el año que murió el rey Uzzías vi yo al Señor sentado sobre un trono alto y sublime, y sus faldas henchían el templo.",
+     "pt": "No ano em que o rei Uzias morreu, eu vi o Senhor sentado sobre um alto e elevado trono; e as bordas de seu manto enchiam o templo."
+    },
+    {
+     "n": 3,
+     "english": "the holy One of Israel.",
+     "kind": "unsure",
+     "verses": [
+      12019022
+     ],
+     "es": "¿A quién has injuriado y á quién has blasfemado? ¿y contra quién has hablado alto, y has alzado en alto tus ojos? Contra el Santo de Israel.",
+     "pt": "A quem afrontaste e a quem blasfemaste? E contra quem falaste alto, e levantaste em alto teus olhos? Contra o Santo de Israel."
+    },
+    {
+     "n": 4,
+     "english": "rebelled against the king of Assyria",
+     "kind": "partial",
+     "verses": [
+      12018007
+     ],
+     "es": "Y Jehová fué con él; y en todas las cosas á que salía prosperaba. El se rebeló contra el rey de Asiria, y no le sirvió.",
+     "pt": "E o SENHOR foi com ele; e em todas as coisas a que saía prosperava. Ele se rebelou contra o rei da Assíria, e não lhe serviu."
+    },
+    {
+     "n": 5,
+     "english": "spread before the Lord",
+     "kind": "other"
+    },
+    {
+     "n": 6,
+     "english": "Like Xerxes in Greece, Sennacherib never recovered from the shock of the disaster in Judah. He made no more expeditions against either Southern Palestine or Egypt.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 618,
+   "name": "Iscah",
+   "sha256": "48ff88bc4b5dfaa9aafc5f65a9d3a126f9713db85ab12669fc433e3635724103",
+   "text": "Spy, the daughter of Haran and sister of Milcah and Lot (Gen. 11:29, 31).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 620,
+   "name": "Ishbak",
+   "sha256": "63dca70802fad8266ca2bbb56cbe00c3af514ce2c98e2fb92468b92d70f20197",
+   "text": "Leaving, one of Abraham’s sons by Keturah (Gen. 25:2).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 621,
+   "name": "Ishbi-benob",
+   "sha256": "6c18bd36813c4844d88f8f73175edede5943707cbf0dd41fcedb46476d7ed1bc",
+   "text": "My seat at Nob, one of the Rephaim, whose spear was three hundred shekels in weight. He was slain by Abishai (2 Sam. 21:16, 17).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 622,
+   "name": "Ish-bosheth",
+   "sha256": "ed0572befbc7061aafa9f7de432de3d9d0d3461d395a50b47e9ea4ec4703dbce",
+   "text": "Man of shame or humiliation, the youngest of Saul’s four sons, and the only one who survived him (2 Sam. 2-4). His name was originally Eshbaal (1 Chr. 8:33; 9:39). He was about forty years of age when his father and three brothers fell at the battle of Gilboa. Through the influence of Abner, Saul’s cousin, he was acknowledged as successor to the throne of Saul, and ruled over all Israel, except the tribe of Judah (over whom David was king), for two years, having Mahanaim, on the east of Jordan, as his capital (2 Sam. 2:9). After a troubled and uncertain reign he was murdered by his guard, who stabbed him while he was asleep on his couch at mid-day (2 Sam. 4:5-7); and having cut off his head, presented it to David, who sternly rebuked them for this cold-blooded murder, and ordered them to be immediately executed (9-12).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 630,
+   "name": "Ishmael (Son of Hagar)",
+   "sha256": "cf4c8e43c2e54ae906f86defdbfba1b71b2b1f3e8b45ce7c72a48cccb74ae648",
+   "text": "Abraham’s eldest son, by Hagar the concubine (Gen. 16:15; 17:23). He was born at Mamre, when Abraham was eighty-six years of age, eleven years after his arrival in Canaan (16:3; 21:5). At the age of thirteen he was circumcised (17:25). He grew up a true child of the desert, wild and wayward. On the occasion of the weaning of Isaac his rude and wayward spirit broke out in expressions of insult and mockery (21:9, 10); and Sarah, discovering this, said to Abraham, “Expel this slave and her son.” Influenced by a divine admonition, Abraham dismissed Hagar and her son with no more than a skin of water and some bread. The narrative describing this act is one of the most beautiful and touching incidents of patriarchal life (Gen. 21:14-16).\n\n Ishmael settled in the land of Paran, a region lying between Canaan and the mountains of Sinai; and “God was with him, and he became a great archer” (Gen. 21:9-21). He became a great desert chief, but of his history little is recorded. He was about ninety years of age when his father Abraham died, in connection with whose burial he once more for a moment reappears. On this occasion the two brothers met after being long separated. “Isaac with his hundreds of household slaves, Ishmael with his troops of wild retainers and half-savage allies, in all the state of a Bedouin prince, gathered before the cave of Machpelah, in the midst of the men of Heth, to pay the last duties to the ‘father of the faithful,’ would make a notable subject for an artist” (Gen. 25:9). Of the after events of his life but little is known. He died at the age of one hundred and thirty-seven years, but where and when are unknown (25:17). He had twelve sons, who became the founders of so many Arab tribes or colonies, the Ishmaelites, who spread over the wide desert spaces of Northern Arabia from the Red Sea to the Euphrates (Gen. 37:25, 27, 28; 39:1), “their hand against every man, and every man’s hand against them.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Expel this slave and her son.",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "God was with him, and he became a great archer",
+     "kind": "loose",
+     "verses": [
+      1021019,
+      1021020
+     ],
+     "es": "Entonces abrió Dios sus ojos, y vió una fuente de agua; y fué, y llenó el odre de agua, y dió de beber al muchacho. Y fué Dios con el muchacho; y creció, y habitó en el desierto, y fué tirador de arco.",
+     "pt": "Então abriu Deus os olhos dela, e ela viu uma fonte de água; e foi, e encheu o odre de água, e deu de beber ao jovem. E foi Deus com o jovem; e cresceu, e habitou no deserto, e foi atirador de arco."
+    },
+    {
+     "n": 2,
+     "english": "Isaac with his hundreds of household slaves, Ishmael with his troops of wild retainers and half-savage allies, in all the state of a Bedouin prince, gathered before the cave of Machpelah, in the midst of the men of Heth, to pay the last duties to the ‘father of the faithful,’ would make a notable subject for an artist",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "their hand against every man, and every man’s hand against them.",
+     "kind": "loose",
+     "verses": [
+      26020027,
+      26020028
+     ],
+     "es": "Por tanto, hijo del hombre, habla á la casa de Israel, y diles: Así ha dicho el Señor Jehová: Aun en esto me afrentaron vuestros padres cuando cometieron contra mí rebelión. Porque yo los metí en la tierra sobre la cual había alzado mi mano que les había de dar, y miraron á todo collado alto, y á todo árbol espeso, y allí sacrificaron sus víctimas, y allí presentaron la irritación de sus ofrendas, allí pusieron también el olor de su suavidad, y allí derramaron sus libaciones.",
+     "pt": "Portanto, filho do homem, fala à casa de Israel, e dize-lhes: Assim diz o Senhor DEUS: Até nisto vossos pais me afrontaram quando transgrediram contra mim. Porque quando eu os trouxe para a terra da qual eu tinha jurado que lhes daria, então olharam para todo morro alto e para toda árvore espessa, e ali sacrificaram suas sacrifícios, e ali deram suas ofertas irritantes, e ali derramaram suas ofertas de bebidas."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 631,
+   "name": "Ishmael",
+   "sha256": "666ed5ac1e9b3a35c304e76a26576baf8048b1c2b6f1c0f3219360adefbdef9a",
+   "text": "The son of Nethaniah, “of the seed royal” (Jer. 40:8, 15). He plotted against Gedaliah, and treacherously put him and others to death. He carried off many captives, “and departed to go over to the Ammonites.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "of the seed royal",
+     "kind": "unsure",
+     "verses": [
+      12025025
+     ],
+     "es": "Mas en el mes séptimo vino Ismael hijo de Nathanías, hijo de Elisama, de la estirpe real, y con él diez varones, é hirieron á Gedalías, y murió: y también á los Judíos y Caldeos que estaban con él en Mizpa.",
+     "pt": "Mas no mês sétimo veio Ismael filho de Netanias, filho de Elisama, da família real, e com ele dez homens, e feriram a Gedalias, e morreu, assim como os judeus e os caldeus que estavam com ele em Mispá."
+    },
+    {
+     "n": 1,
+     "english": "and departed to go over to the Ammonites.",
+     "kind": "partial",
+     "verses": [
+      24041010
+     ],
+     "es": "Después llevó Ismael cautivo á todo el resto del pueblo que estaba en Mizpa; á las hijas del rey, y á todo el pueblo que en Mizpa había quedado, el cual había Nabuzaradán capitán de la guardia encargado á Gedalías hijo de Ahicam. Llevólos pues cautivos Ismael hijo de Nethanías, y se fué para pasarse á los hijos de Ammón.",
+     "pt": "Depois Ismael levou cativo a todo o resto do povo que estava em Mispá; às filhas do rei, e a todo o povo que em Mispá tinha restado, o qual tinha Nabuzaradã capitão da guarda havia encarregado a Gedalias filho de Aicã. Então Ismael os levou cativos, e foi embora, para passar aos filhos de Amom."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 636,
+   "name": "Ishmaiah",
+   "sha256": "fde858e1c07d3567578043e93fc0daf03c32f71135832ba27d7525dd8e1a1fb4",
+   "text": "Son of Obadiah, and viceroy of Zebulun under David and Solomon (1 Chr. 27:19).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 641,
+   "name": "Abinadab",
+   "sha256": "b28bec2c231fc2c94e8efcfc91088e85eed940fdde0f5bb94ecffcef2a3d92fb",
+   "text": "One of Saul’s sons, who peristed with his father in the battle of Gilboa (1 Sam. 31:2; 1 Chr. 10:2).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 643,
+   "name": "Ismaiah",
+   "sha256": "b44891dedfc8eed8cc3f9e6aa035752db64bda3e952ca5043c9af09078ccf7e5",
+   "text": "A Gibeonite who joined David at Ziklag, “a hero among the thirty and over the thirty” (1 Chr. 12:4).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "a hero among the thirty and over the thirty",
+     "kind": "loose",
+     "verses": [
+      13012003,
+      13012004
+     ],
+     "es": "El principal Ahiezer, después Joas, hijos de Semaa Gabaathita; y Jeziel, y Pheleth, hijos de Azmaveth, y Beracah, y Jehú Anathothita; E Ismaías Gabaonita, valiente entre los treinta, y más que los treinta; y Jeremías, Jahaziel, Joanán, Jozabad Gederathita,",
+     "pt": "Aiezer, o cabeça; e Joás, filhos de Semaá o gibeatita; e Jeziel, e Pelete, filhos de Azmavete; e Beraca, e Jeú o anatotita; E Ismaías, o gibeonita, valente entre os trinta, e capitão dos trinta; e Jeremias, Jaaziel, Joanã, Jozabade o gederatita;"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 645,
+   "name": "Issachar",
+   "sha256": "0ad849161b67b95860504b227c170c4b57f65f0ece7b93aa3a485f5b90e0b97a",
+   "text": "Hired (Gen. 30:18). “God hath given me,” said Leah, “my hire (Heb. sekhari)...and she called his name Issachar.” He was Jacob’s ninth son, and was born in Padan-aram (comp. 28:2). He had four sons at the going down into Egypt (46:13; Num. 26:23, 25).\n\n Issachar, Tribe of, during the journey through the wilderness, along with Judah and Zebulun (Num. 2:5), marched on the east of the tabernacle. This tribe contained 54,400 fighting men when the census was taken at Sinai. After the entrance into the Promised Land, this tribe was one of the six which stood on Gerizim during the ceremony of the blessing and cursing (Deut. 27:12). The allotment of Issachar is described in Josh. 19:17-23. It included the plain of Esdraelon (=Jezreel), which was and still is the richest portion of Palestine (Deut. 33:18, 19; 1 Chr. 12:40).\n\n The prophetic blessing pronounced by Jacob on Issachar corresponds with that of Moses (Gen. 49:14, 15; comp. Deut. 33:18, 19).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "God hath given me,",
+     "kind": "partial",
+     "verses": [
+      1030018
+     ],
+     "es": "Y dijo Lea: Dios me ha dado mi recompensa, por cuanto dí mi sierva á mi marido: por eso llamó su nombre Issachâr.",
+     "pt": "E disse Lia: Deus me deu minha recompensa, porque dei minha serva a meu marido; por isso chamou seu nome Issacar."
+    },
+    {
+     "n": 1,
+     "english": "my hire (Heb. sekhari)...and she called his name Issachar.",
+     "kind": "loose",
+     "verses": [
+      1030018
+     ],
+     "es": "Y dijo Lea: Dios me ha dado mi recompensa, por cuanto dí mi sierva á mi marido: por eso llamó su nombre Issachâr.",
+     "pt": "E disse Lia: Deus me deu minha recompensa, porque dei minha serva a meu marido; por isso chamou seu nome Issacar."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 647,
+   "name": "Jeshaiah",
+   "sha256": "69029a6b4808d1165a62e8ed81b2d948068a4eb6f585a97e04904e5015fd4a19",
+   "text": "A Kohathite Levite, the father of Joram, of the family of Eliezer (1 Chr. 26:25); called also Isshiah (24:21).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 649,
+   "name": "Ithamar",
+   "sha256": "6ea115baf68c0fddee252b304727be0949b6907977636c649606a756f93d5952",
+   "text": "Palm isle, the fourth and youngest son of Aaron (1 Chr. 6:3). He was consecrated to the priesthood along with his brothers (Ex. 6:23); and after the death of Nadab and Abihu, he and Eleazar alone discharged the functions of that office (Lev. 10:6, 12; Num. 3:4). He and his family occupied the position of common priest till the high priesthood passed into his family in the person of Eli (1 Kings 2:27), the reasons for which are not recorded.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 654,
+   "name": "Jether",
+   "sha256": "e55c6ad1e1a95640e34dd4c5d72c613233187ad587ddbfd7070a7be96c86d7de",
+   "text": "1 Chr. 7:38.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 656,
+   "name": "Ittai",
+   "sha256": "bf9b43819a88b083dc4558198ede6ad927b4ee36509ceb1fc872389d6a660995",
+   "text": "A native of Gath, a Philistine, who had apparently the command of the six hundred heroes who formed David’s band during his wanderings (2 Sam. 15:19-22; comp. 1 Sam. 23:13; 27:2; 30:9, 10). He is afterwards with David at Mahanaim, holding in the army equal rank with Joab and Abishai (2 Sam. 18:2, 5, 12). He then passes from view.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 657,
+   "name": "Ittai",
+   "sha256": "7ec3c7780d44ec93efa23cedc244ade014a2dda992d631d649b1e88a6cf80f27",
+   "text": "A Benjamite, one of David’s thirty heroes (2 Sam. 23:29).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 658,
+   "name": "Izhar",
+   "sha256": "5c2992f5068b3eed67da945831a173812289e24472089b22ca7a178d64b4415d",
+   "text": "Oil, one of the sons of Kohath, and grandson of Levi (Ex. 6:18, 21; Num. 16:1).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 660,
+   "name": "Jaakobah",
+   "sha256": "0b60c2de1fb83ee2964b1a2923755d320c021557b2b7ce0e3f760784234ffa89",
+   "text": "Heel-catcher, a form of the name Jacob, one of the descendants of Simeon (1 Chr. 4:36).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 661,
+   "name": "Jaala",
+   "sha256": "d47869ddbf475dee0cb36b5ba0f325c5ad0dc55c73ea2fb9e49fb220f2794764",
+   "text": "A wild she-goat, one of the Nethinim, whose descendants returned from the Captivity (Neh. 7:58).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 662,
+   "name": "Jaalam",
+   "sha256": "45ded0df881d43b4d01bb67f0e444285b75f102eefd1ca28556f7a20f75da855",
+   "text": "Concealer, the second of Esau’s three sons by Aholibamah (Gen. 36:5, 14).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 663,
+   "name": "Jaanai",
+   "sha256": "eefa149c883880985a7325115e4a989f18cb3092358806d09774133ba7d3dccb",
+   "text": "Mourner, one of the chief Gadites (1 Chr. 5:12).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 664,
+   "name": "Jair",
+   "sha256": "f7c407576c1c7063a6f96850e38ac85f0bcf12eb83bffed862e2965be48d7feb",
+   "text": "The father of Elhanan, who slew Lahmi, the brother of Goliath (1 Chr. 20:5).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 666,
+   "name": "Jaasiel",
+   "sha256": "9e6a9d732848a687d69ce071f5a8647b85c93cae2ae21b20484eb8925d1b1816",
+   "text": "Made by God, one of David’s body-guard, the son of Abner (1 Chr. 27:21), called Jasiel in 1 Chr. 11:47.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 667,
+   "name": "Jezaniah",
+   "sha256": "1165dc5956e005ab10b8bffe71ff9673ca0e3c6f6b5cb5e413c11ebb7f45f055",
+   "text": "A Maachathite (2 Kings 25:23; Jer. 40:8; 42:1). He is also called Azariah (Jer. 43:2).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 668,
+   "name": "Jaazaniah",
+   "sha256": "e0b04bba50d839f15da9680d03c41472a0d1a890f1fafd439a7525d345611ffb",
+   "text": "The son of Jeremiah, and one of the chief Rechabites (Jer. 35:3).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 669,
+   "name": "Jaazaniah",
+   "sha256": "721daae12ae4cfd9e542bcae66a8031ce2c02a5ad1be92c170b33db325fe53aa",
+   "text": "The son of Shaphan (Ezek. 8:11).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 671,
+   "name": "Jaaziah",
+   "sha256": "5bf2a9b4733f777df7c416445f50021c21a4e430b753e07415575a0d1adff8ed",
+   "text": "Comforted by Jehovah, a descendant of Merari the Levite (1 Chr. 24:26, 27).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 672,
+   "name": "Jaaziel",
+   "sha256": "45d8cbf78199d3f7ed5f1ed562e2caa592fb845f8195409b876610010d5b6ae7",
+   "text": "Comforted by God, a Levitical musician (1 Chr. 15:18).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 673,
+   "name": "Jabal",
+   "sha256": "04a13a69708c8390991e9a90ae71bda05f6e4a56fc0e3ea1e243c13613c07af9",
+   "text": "A stream, a descendant of Cain, and brother of Jubal; “the father of such as dwell in tents and have cattle” (Gen. 4:20). This description indicates that he led a wandering life.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the father of such as dwell in tents and have cattle",
+     "kind": "loose",
+     "verses": [
+      1004019,
+      1004020
+     ],
+     "es": "Y tomó para sí Lamech dos mujeres; el nombre de la una fué Ada, y el nombre de la otra Zilla. Y Ada parió á Jabal, el cual fué padre de los que habitan en tiendas, y crían ganados.",
+     "pt": "E tomou para si Lameque duas mulheres; o nome de uma foi Ada, e o nome da outra Zilá. E Ada deu à luz a Jabal, o qual foi pai dos que habitam em tendas, e criam gados."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 674,
+   "name": "Jabesh",
+   "sha256": "9be7a6ddd7cdd663f59436df6068aa06a228aa617bdcd61575fdfe8bab5a6e6d",
+   "text": "The father of Shallum (2 Kings 15:10, 13, 14), who usurped the throne of Israel on the death of Zachariah.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 675,
+   "name": "Jabez",
+   "sha256": "a96a984929206a2902fc5b85bcf7e7b99b1ce8b2ecf8d1bd4dd5dbf07ea1e1d0",
+   "text": "A descendant of Judah, of whom it is recorded that “God granted him that which he requested” (1 Chr. 4:9, 10).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "God granted him that which he requested",
+     "kind": "partial",
+     "verses": [
+      13004010
+     ],
+     "es": "E invocó Jabes al Dios de Israel, diciendo: ¡Oh si me dieras bendición, y ensancharas mi término, y si tu mano fuera conmigo, y me libraras de mal, que no me dañe! E hizo Dios que le viniese lo que pidió.",
+     "pt": "Mas Jabez invocou ao Deus de Israel, dizendo: Ah, se tu me abençoares muito, e ampliares os meus limites, e se tua mão for comigo, e me protegeres do mal, para que eu não sofra! E Deus fez suceder o que ele havia pedido."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 676,
+   "name": "Jabin",
+   "sha256": "71eacc15cd16271b7940580122122354b65f3b47cf6d6010ec829296168b0ccf",
+   "text": "A king of Hazor, at the time of the entrance of Israel into Canaan (Josh. 11:1-14), whose overthrow and that of the northern chief with whom he had entered into a confederacy against Joshua was the crowning act in the conquest of the land (11:21-23; comp. 14:6-15). This great battle, fought at Lake Merom, was the last of Joshua’s battles of which we have any record. Here for the first time the Israelites encountered the iron chariots and horses of the Canaanites.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 677,
+   "name": "Jabin (king of Hazor)",
+   "sha256": "d0bce3ac5acc755bc50b987d7eede520412117b9b3d6fedd9672a8c15f21d735",
+   "text": "Another king of Hazor, called “the king of Canaan,” who overpowered the Israelites of the north one hundred and sixty years after Joshua’s death, and for twenty years held them in painful subjection. The whole population were paralyzed with fear, and gave way to hopeless despondency (Judg. 5:6-11), till Deborah and Barak aroused the national spirit, and gathering together ten thousand men, gained a great and decisive victory over Jabin in the plain of Esdraelon (Judg. 4:10-16; comp. Ps. 83:9). This was the first great victory Israel had gained since the days of Joshua. They never needed to fight another battle with the Canaanites (Judg. 5:31).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the king of Canaan,",
+     "kind": "unsure",
+     "verses": [
+      7004023
+     ],
+     "es": "Así abatió Dios aquel día á Jabín, rey de Canaán, delante de los hijos de Israel.",
+     "pt": "Assim abateu Deus aquele dia a Jabim, rei de Canaã, diante dos filhos de Israel."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 678,
+   "name": "Jachan",
+   "sha256": "5830ca0d32d9d794b2a63500749ccb17dd23768faba91719380d0b6d96d288eb",
+   "text": "Mourner, one of the chief Gadite “brothers” in Bashan (1 Chr. 5:13).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "brothers",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 679,
+   "name": "Jachin",
+   "sha256": "352fcd3fa94d5060527bc5f61dc51199e69f8a91c79d6798f71d492d21c53fbb",
+   "text": "The fourth son of Simeon (Gen. 46:10), called also Jarib (1 Chr. 4:24).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 680,
+   "name": "Jachin",
+   "sha256": "203bbc3af6d4a252598760de1f3aa6129a6fc1cf0e396a0b2ac763df2bb89886",
+   "text": "One of the priests who returned from the Exile (1 Chr. 9:10).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 681,
+   "name": "Jachin",
+   "sha256": "52d8cec8f5a74c6072d76665b50051654843774057a77b92e15bb595fad5d60a",
+   "text": "The head of one of the courses (the twenty-first) of priests (1 Chr. 24:17).",
+   "quotes": []
+  }
+ ],
+ "glossary": {
+  "Aaron": {
+   "es": "Aarón",
+   "pt": "Arão"
+  },
+  "Abihu": {
+   "es": "Abiú",
+   "pt": "Abiú"
+  },
+  "Abimelech": {
+   "pt": "Abimeleque"
+  },
+  "Abishai": {
+   "es": "Abisai",
+   "pt": "Abisai"
+  },
+  "Abraham": {
+   "pt": "Abraão"
+  },
+  "Achbor": {
+   "es": "Acbor",
+   "pt": "Acbor"
+  },
+  "Adam": {
+   "pt": "Adão (person); Adã (place)"
+  },
+  "Ahab": {
+   "es": "Acab",
+   "pt": "Acabe"
+  },
+  "Ahaz": {
+   "es": "Acaz (person); Ahaz (person)",
+   "pt": "Acaz"
+  },
+  "Ahaziah": {
+   "es": "Ocozías",
+   "pt": "Acazias"
+  },
+  "Ahijah": {
+   "es": "Ahía (person); Ahías (person); Aquía (person); Aquías (person); Ahijas (person)",
+   "pt": "Aías"
+  },
+  "Aholibamah": {
+   "es": "Aholibama",
+   "pt": "Oolibama"
+  },
+  "Arab": {
+   "pt": "Arabe"
+  },
+  "Arabia": {
+   "pt": "Arábia"
+  },
+  "Aram": {
+   "pt": "Arã"
+  },
+  "Arphaxad": {
+   "es": "Arfaxad",
+   "pt": "Arfaxade"
+  },
+  "Assyria": {
+   "es": "Asiria",
+   "pt": "Assíria"
+  },
+  "Azariah": {
+   "es": "Azarías (person); Azaría (person)",
+   "pt": "Azarias"
+  },
+  "Baal-peor": {
+   "pt": "Baal-Peor"
+  },
+  "Babylon": {
+   "es": "Babilonia",
+   "pt": "Babilônia"
+  },
+  "Balaam": {
+   "pt": "Balaão"
+  },
+  "Balak": {
+   "es": "Balac",
+   "pt": "Balaque"
+  },
+  "Barak": {
+   "es": "Barac",
+   "pt": "Baraque"
+  },
+  "Bashan": {
+   "es": "Basán",
+   "pt": "Basã"
+  },
+  "Beer-lahai-roi": {
+   "pt": "Beer-Laai-Roi"
+  },
+  "Beersheba": {
+   "es": "Beer-seba",
+   "pt": "Berseba"
+  },
+  "Benjamin": {
+   "es": "Benjamín",
+   "pt": "Benjamim"
+  },
+  "Cain": {
+   "es": "Caín",
+   "pt": "Caim"
+  },
+  "Cainan": {
+   "es": "Cainán",
+   "pt": "Cainã"
+  },
+  "Caleb": {
+   "pt": "Calebe"
+  },
+  "Canaan": {
+   "es": "Canaán",
+   "pt": "Canaã"
+  },
+  "Chalcol": {
+   "es": "Calcol",
+   "pt": "Calcol"
+  },
+  "Damascus": {
+   "es": "Damasco",
+   "pt": "Damasco"
+  },
+  "Dan": {
+   "pt": "Dã"
+  },
+  "David": {
+   "pt": "Davi"
+  },
+  "Deborah": {
+   "es": "Débora",
+   "pt": "Débora"
+  },
+  "Eden": {
+   "es": "Edén",
+   "pt": "Éden"
+  },
+  "Egypt": {
+   "es": "Egipto",
+   "pt": "Egito"
+  },
+  "Ekron": {
+   "es": "Ecrón",
+   "pt": "Ecrom"
+  },
+  "Elhanan": {
+   "es": "Elhanán (person); Elhaanan (person)",
+   "pt": "Elanã"
+  },
+  "Eliezer": {
+   "pt": "Eliézer (person); Eliezer (person)"
+  },
+  "Enoch": {
+   "es": "Henoch",
+   "pt": "Enoque"
+  },
+  "Enos": {
+   "es": "Enós"
+  },
+  "Esau": {
+   "es": "Esaú",
+   "pt": "Esaú"
+  },
+  "Euphrates": {
+   "es": "Eufrates",
+   "pt": "Eufrates"
+  },
+  "Eve": {
+   "es": "Eva",
+   "pt": "Eva"
+  },
+  "Gath": {
+   "es": "Gat",
+   "pt": "Gate"
+  },
+  "Gedaliah": {
+   "es": "Gedalías",
+   "pt": "Gedalias"
+  },
+  "Goliath": {
+   "es": "Goliat",
+   "pt": "Golias"
+  },
+  "Greece": {
+   "es": "Grecia",
+   "pt": "Grécia"
+  },
+  "Hagar": {
+   "es": "Agar",
+   "pt": "Agar"
+  },
+  "Hananiah": {
+   "es": "Hananías (person); Hananía (person); Hanani (person); Ananías (person)",
+   "pt": "Hananias (person); Hanani (person); Ananias (person)"
+  },
+  "Haran": {
+   "es": "Harán (person); Arán (person)",
+   "pt": "Harã"
+  },
+  "Hazor": {
+   "es": "Hasor"
+  },
+  "Hebron": {
+   "es": "Hebrón",
+   "pt": "Hebrom"
+  },
+  "Heth": {
+   "es": "Het",
+   "pt": "Hete"
+  },
+  "Hezekiah": {
+   "es": "Ezequías",
+   "pt": "Ezequias"
+  },
+  "Hezron": {
+   "es": "Hezrón (person); Hesrón (person); Hebrón (place)",
+   "pt": "Hezrom (person); Hebrom (place)"
+  },
+  "Hoshea": {
+   "es": "Oseas (person); Hoseas (person)",
+   "pt": "Oseias"
+  },
+  "Huldah": {
+   "es": "Hulda",
+   "pt": "Hulda"
+  },
+  "Hushai": {
+   "es": "Husai",
+   "pt": "Husai"
+  },
+  "Isaac": {
+   "pt": "Isaque"
+  },
+  "Isaiah": {
+   "es": "Isaías",
+   "pt": "Isaías"
+  },
+  "Ishmael": {
+   "es": "Ismael",
+   "pt": "Ismael"
+  },
+  "Issachar": {
+   "es": "Isacar",
+   "pt": "Issacar"
+  },
+  "Isshiah": {
+   "es": "Isía",
+   "pt": "Issias"
+  },
+  "Jaazaniah": {
+   "es": "Jaazanías",
+   "pt": "Jazanias"
+  },
+  "Jabin": {
+   "es": "Jabín",
+   "pt": "Jabim"
+  },
+  "Jacob": {
+   "pt": "Jacó"
+  },
+  "James": {
+   "es": "Jacobo",
+   "pt": "Tiago"
+  },
+  "Jarib": {
+   "pt": "Jaribe"
+  },
+  "Jasiel": {
+   "es": "Jaasiel",
+   "pt": "Jaasiel"
+  },
+  "Jehiel": {
+   "es": "Jehiel (person); Jehieli (person)",
+   "pt": "Jeiel (person); Jeieli (person)"
+  },
+  "Jehoshaphat": {
+   "es": "Josafat",
+   "pt": "Josafá"
+  },
+  "Jehu": {
+   "es": "Jehú",
+   "pt": "Jeú"
+  },
+  "Jephunneh": {
+   "es": "Jefone",
+   "pt": "Jefoné"
+  },
+  "Jeremiah": {
+   "es": "Jeremías",
+   "pt": "Jeremias"
+  },
+  "Jericho": {
+   "es": "Jericó",
+   "pt": "Jericó"
+  },
+  "Jerusalem": {
+   "es": "Jerusalén",
+   "pt": "Jerusalém"
+  },
+  "Joab": {
+   "pt": "Joabe"
+  },
+  "John": {
+   "es": "Juan",
+   "pt": "João"
+  },
+  "Joram": {
+   "pt": "Jorão"
+  },
+  "Jordan": {
+   "es": "Jordán",
+   "pt": "Jordão"
+  },
+  "Joshua": {
+   "es": "Josué (person); Jesuá (person)",
+   "pt": "Josué (person); Jesua (person)"
+  },
+  "Jotham": {
+   "es": "Jotam",
+   "pt": "Jotão"
+  },
+  "Judah": {
+   "es": "Judá (person); Jehudas (person)",
+   "pt": "Judá"
+  },
+  "Keturah": {
+   "es": "Cetura",
+   "pt": "Quetura"
+  },
+  "Kohath": {
+   "es": "Coat",
+   "pt": "Coate"
+  },
+  "Lahmi": {
+   "pt": "Lami"
+  },
+  "Leah": {
+   "es": "Lea",
+   "pt": "Lia"
+  },
+  "Levi": {
+   "es": "Leví"
+  },
+  "Lot": {
+   "pt": "Ló"
+  },
+  "Machpelah": {
+   "es": "Macpela",
+   "pt": "Macpela"
+  },
+  "Mahalaleel": {
+   "pt": "Maalalel (person); Maalaleel (person)"
+  },
+  "Mahanaim": {
+   "pt": "Maanaim"
+  },
+  "Mamre": {
+   "pt": "Manre"
+  },
+  "Manasseh": {
+   "es": "Manasés",
+   "pt": "Manassés"
+  },
+  "Mehujael": {
+   "pt": "Meujael"
+  },
+  "Merodach-baladan": {
+   "es": "Merodach-baladán",
+   "pt": "Merodaque-Baladã"
+  },
+  "Mesopotamia": {
+   "pt": "Mesopotâmia"
+  },
+  "Micah": {
+   "es": "Micás (person); Micá (person)",
+   "pt": "Mica"
+  },
+  "Micaiah": {
+   "es": "Miqueas",
+   "pt": "Micaías"
+  },
+  "Milcah": {
+   "es": "Milca (person); Maala (person)",
+   "pt": "Milca"
+  },
+  "Moab": {
+   "pt": "Moabe"
+  },
+  "Molech": {
+   "es": "Moloch",
+   "pt": "Moloque"
+  },
+  "Moriah": {
+   "pt": "Moriá"
+  },
+  "Moses": {
+   "es": "Moisés",
+   "pt": "Moisés"
+  },
+  "Mount Seir": {
+   "es": "Monte Seir",
+   "pt": "Monte Seir"
+  },
+  "Nadab": {
+   "pt": "Nadabe"
+  },
+  "Nethaniah": {
+   "es": "Netanías",
+   "pt": "Netanias"
+  },
+  "Nob": {
+   "pt": "Nobe"
+  },
+  "Nod": {
+   "pt": "Node"
+  },
+  "Nun": {
+   "pt": "Num"
+  },
+  "Obadiah": {
+   "es": "Obadías (person); Abdías (person); Obdías (person)",
+   "pt": "Obadias"
+  },
+  "On": {
+   "es": "Hon (person); On (place)",
+   "pt": "Om"
+  },
+  "Paran": {
+   "es": "Parán",
+   "pt": "Parã"
+  },
+  "Pekah": {
+   "es": "Peka",
+   "pt": "Peca"
+  },
+  "Pethor": {
+   "es": "Petor",
+   "pt": "Petor"
+  },
+  "Pharez": {
+   "es": "Fares",
+   "pt": "Perez"
+  },
+  "Rebekah": {
+   "es": "Rebeca",
+   "pt": "Rebeca"
+  },
+  "Rechab": {
+   "es": "Recab",
+   "pt": "Recabe"
+  },
+  "Red Sea": {
+   "es": "Mar Rojo",
+   "pt": "Mar Vermelho"
+  },
+  "Rezin": {
+   "es": "Rezín (person); Resin (person)",
+   "pt": "Resim (person); Rezim (person)"
+  },
+  "Rimmon": {
+   "es": "Rimón",
+   "pt": "Rimom"
+  },
+  "Sarah": {
+   "es": "Sara",
+   "pt": "Sara"
+  },
+  "Saul": {
+   "es": "Saúl"
+  },
+  "Sennacherib": {
+   "es": "Senaquérib",
+   "pt": "Senaqueribe"
+  },
+  "Shallum": {
+   "es": "Sallum (person); Sellum (person)",
+   "pt": "Salum"
+  },
+  "Shalmaneser": {
+   "es": "Salmanasar",
+   "pt": "Salmaneser"
+  },
+  "Shaphan": {
+   "es": "Safán",
+   "pt": "Safã"
+  },
+  "Shilhi": {
+   "es": "Silhi",
+   "pt": "Sili"
+  },
+  "Simeon": {
+   "es": "Simeón (person); Simón (person)",
+   "pt": "Simeão"
+  },
+  "Sinai": {
+   "es": "Sinaí"
+  },
+  "So": {
+   "pt": "Sô"
+  },
+  "Solomon": {
+   "es": "Salomón",
+   "pt": "Salomão"
+  },
+  "Syria": {
+   "es": "Siria",
+   "pt": "Síria"
+  },
+  "Tirzah": {
+   "es": "Tirsa",
+   "pt": "Tirza (person); Tirsa (place)"
+  },
+  "Uzziah": {
+   "es": "Uzías",
+   "pt": "Uzias (person); Uzia (person)"
+  },
+  "Zachariah": {
+   "es": "Zacarías",
+   "pt": "Zacarias"
+  },
+  "Zadok": {
+   "es": "Sadoc",
+   "pt": "Zadoque"
+  },
+  "Zebulun": {
+   "es": "Zabulón",
+   "pt": "Zebulom"
+  },
+  "Ziklag": {
+   "es": "Siclag",
+   "pt": "Ziclague"
+  }
+ }
+}

@@ -1,0 +1,2071 @@
+{
+ "batch": "023",
+ "entries": [
+  {
+   "kind": "person",
+   "id": 2550,
+   "name": "Shaphan",
+   "sha256": "392dd248ec2bfa2bc3514f63a863361ab29c55d3df7172a3de286af925fc58b6",
+   "text": "A coney, a scribe or secretary of king Josiah (2 Kings 22:3-7). He consulted Huldah concerning the newly-discovered copy of the law which was delivered to him by Hilkiah the priest (8-14). His grandson Gedaliah was governor of Judea (25:22).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2552,
+   "name": "Shaphat",
+   "sha256": "3b365f8c327e43a7489cbdb3a6b75f7bbafe24e2c64ccee2f00f1c268762a9c3",
+   "text": "One of the spies. He represented the tribe of Simeon (Num. 13:5).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2553,
+   "name": "Shaphat",
+   "sha256": "e02cb43b6ed1d7aa64617fcd45b727dc1fcabc1bf43c8b6439f95d5f5f6559ce",
+   "text": "The father of Elisha (1 Kings 19:16-19).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2556,
+   "name": "Shaphat",
+   "sha256": "ff741d8938924f6e4e57d26cf00e34992c0417d4c837c28cbce48964d007f6a3",
+   "text": "One of David’s chief herdsmen (1 Chr. 27:29).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2558,
+   "name": "Sharar",
+   "sha256": "4a05d72032ff099daf4af96f23b69d5d6d2ab49e3b5b6c8e6bc26c6df9aa0e1f",
+   "text": "One of David’s heroes (1 Chr. 11:35); called also Sharar (2 Sam. 23:33).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2559,
+   "name": "Sharezer",
+   "sha256": "579c8511f12d9810b354c11f768156857a07c14648f174cdacd9024452b10cf4",
+   "text": "(god) protect the king!, a son of Sennacherib, king of Assyria. He and his brother Adrammelech murdered their father, and then fled into the land of Armenia (2 Kings 19:37).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2567,
+   "name": "Sheba (son of Raamah)",
+   "sha256": "5472ac65aeb7e5f9a6e6ce106e74d8b3194cb78e7982c614705bac8934245b5a",
+   "text": "Heb. shebha, the son of Raamah (Gen. 10:7), whose descendants settled with those of Dedan on the Persian Gulf.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2568,
+   "name": "Sheba (son of Joktan)",
+   "sha256": "4fcfa87e914a62148bd059a89d48ab7b1bead11893028d24e65b5e8852e022e7",
+   "text": "Heb. id. A son of Joktan (Gen. 10:28), probably the founder of the Sabeans.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2569,
+   "name": "Sheba",
+   "sha256": "67cd0627146abd47bf1e33ef0bd0d4626513dad1b56b9672685b496ac5a25c92",
+   "text": "Heb. id. A son of Jokshan, who was a son of Abraham by Keturah (Gen. 25:3).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2570,
+   "name": "Sheba",
+   "sha256": "74d330d43613ec45a093f39caa6c1ba4bc451a0f0660a582552142a32c8ef2e1",
+   "text": "Heb. id. A “son of Bichri,” of the family of Becher, the son of Benjamin, and thus of the stem from which Saul was descended (2 Sam. 20:1-22). When David was returning to Jerusalem after the defeat of Absalom, a strife arose between the ten tribes and the tribe of Judah, because the latter took the lead in bringing back the king. Sheba took advantage of this state of things, and raised the standard of revolt, proclaiming, “We have no part in David.” With his followers he proceeded northward. David seeing it necessary to check this revolt, ordered Abishai to take the gibborim, “mighty men,” and the body-guard and such troops as he could gather, and pursue Sheba. Joab joined the expedition, and having treacherously put Amasa to death, assumed the command of the army. Sheba took refuge in Abel-Bethmaachah, a fortified town some miles north of Lake Merom. While Joab was engaged in laying siege to this city, Sheba’s head was, at the instigation of a “wise woman” who had held a parley with him from the city walls, thrown over the wall to the besiegers, and thus the revolt came to an end.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "son of Bichri,",
+     "kind": "unsure",
+     "verses": [
+      10020001
+     ],
+     "es": "Y ACAECIÓ estar allí un hombre perverso que se llamaba Seba, hijo de Bichri, hombre de Benjamín, el cual tocó la corneta, y dijo: No tenemos nosotros parte en David, ni heredad en el hijo de Isaí: Israel, ¡cada uno á sus estancias!",
+     "pt": "E aconteceu estar ali um homem perverso que se chamava Seba, filho de Bicri, homem de Benjamim, o qual tocou a trombeta, e disse: Não temos nós parte em Davi, nem herança no filho de Jessé: Israel, cada um a suas moradas!"
+    },
+    {
+     "n": 1,
+     "english": "We have no part in David.",
+     "kind": "partial",
+     "verses": [
+      10020001
+     ],
+     "es": "Y ACAECIÓ estar allí un hombre perverso que se llamaba Seba, hijo de Bichri, hombre de Benjamín, el cual tocó la corneta, y dijo: No tenemos nosotros parte en David, ni heredad en el hijo de Isaí: Israel, ¡cada uno á sus estancias!",
+     "pt": "E aconteceu estar ali um homem perverso que se chamava Seba, filho de Bicri, homem de Benjamim, o qual tocou a trombeta, e disse: Não temos nós parte em Davi, nem herança no filho de Jessé: Israel, cada um a suas moradas!"
+    },
+    {
+     "n": 2,
+     "english": "mighty men,",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "wise woman",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2572,
+   "name": "Shebaniah",
+   "sha256": "96f6f33730175e699a081eebec42ff094de8bca2998ae530a923fb3e7eb093d5",
+   "text": "A Levite appointed to blow the trumpet before the ark of God (1 Chr. 15:24).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2573,
+   "name": "Shebaniah",
+   "sha256": "27b43b7a2711c4d69c4031178a319b787350134c9b891849c25e01545f24b19d",
+   "text": "Another Levite (Neh. 9:4, 5).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2574,
+   "name": "Shebaniah",
+   "sha256": "16481474c288be0bb240b9ae02baf47f7975b1e2f8a8fffb1bea5f58d18ea66d",
+   "text": "A priest who returned from the Captivity with Zerubbabel (Neh. 12:3; marg., or Shebaniah).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2575,
+   "name": "Shebaniah",
+   "sha256": "6a6f9057d2dcde8190fd5e7cabd5fd18d92de68458080e330cf4880bab53c7ef",
+   "text": "A priest (Neh. 10:12).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2577,
+   "name": "Shebna",
+   "sha256": "47ee15ce2d5c309101399160f6676aa7593da127741ae9b1535c63a7146cf825",
+   "text": "Tender youth, “treasurer” over the house in the reign of Hezekiah, i.e., comptroller or governor of the palace. On account of his pride he was ejected from his office, and Eliakim was promoted to it (Isa. 22:15-25). He appears to have been the leader of the party who favoured an alliance with Egypt against Assyria. It is conjectured that “Shebna the scribe,” who was one of those whom the king sent to confer with the Assyrian ambassador (2 Kings 18:18, 26, 37; 19:2; Isa. 36:3, 11, 22; 37:2), was a different person.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "treasurer",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "Shebna the scribe,",
+     "kind": "unsure",
+     "verses": [
+      12018018
+     ],
+     "es": "Llamaron luego al rey, y salió á ellos Eliacim hijo de Hilcías, que era mayordomo, y Sebna escriba, y Joah hijo de Asaph, canciller.",
+     "pt": "Chamaram logo ao rei, e saiu a eles Eliaquim filho de Hilquias, que era mordomo, e Sebna escriba, e Joá filho de Asafe, chanceler."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2579,
+   "name": "Shubael",
+   "sha256": "c2ffe840180afa570f2d22227a30ea37ae310ac7517b42e83f2eb7ef8699fe2d",
+   "text": "One of the descendants of Gershom, who had charge of the temple treasures in the time of David (1 Chr. 23:16; 26:24).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2580,
+   "name": "Shubael",
+   "sha256": "0027b1603e8a3a1e3558bcb6143d5af5fec9edbb800142ff1261d973c87a6eae",
+   "text": "One of the sons of Heman; one of those whose duty it was to “lift up the horn” in the temple service (1 Chr. 25:4, 5); called also Shubael (ver. 20).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "lift up the horn",
+     "kind": "partial",
+     "verses": [
+      13025005
+     ],
+     "es": "Todos estos fueron hijos de Hemán, vidente del rey en palabras de Dios, para ensalzar el poder suyo: y dió Dios á Hemán catorce hijos y tres hijas.",
+     "pt": "Todos estes foram filhos de Hemã, vidente do rei em palavras de Deus, para exaltar o poder seu: e deu Deus a Hemã catorze filhos e três filhas."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2581,
+   "name": "Shecaniah",
+   "sha256": "16fb90fcdfc65b013136873595f7a4688e541da8bd2a2ea9616813f5744100b9",
+   "text": "A priest to whom the tenth lot came forth when David divided the priests (1 Chr. 24:11).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2582,
+   "name": "Shecaniah",
+   "sha256": "db761641f568f7595b68a75de8497a069a39a8664e432486fcd7be799717894f",
+   "text": "One of the priests who were set “to give to their brethren by courses” of the daily portion (2 Chr. 31:15).\n\n Shechani’ah, id.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "to give to their brethren by courses",
+     "kind": "partial",
+     "verses": [
+      14031015
+     ],
+     "es": "Y á su mano estaba Edén, Benjamín, Jeshua, Semaías, Amarías, y Sechânías, en las ciudades de los sacerdotes, para dar con fidelidad á sus hermanos sus partes conforme á sus órdenes, así al mayor como al menor:",
+     "pt": "E a sua mão estava Éden, Benjamim, Jesua, Semaías, Amarias, e Secanias, nas cidades dos sacerdotes, para dar com fidelidade a seus irmãos suas partes conforme a suas ordens, assim ao maior como ao menor:"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2583,
+   "name": "Shechaniah",
+   "sha256": "bedb6e15d3c1fa0b9ae2f8addf2ad904a76b1e1466029b43c9d74c16300eeead",
+   "text": "A priest whose sons are mentioned in 1 Chr. 3:21, 22.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2585,
+   "name": "Shechaniah",
+   "sha256": "624ff52d2ac41daba24da1bb9f6e2c6203d3b5de9d9c6d9db437d250208476c3",
+   "text": "Ezra 8:5.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2586,
+   "name": "Shechaniah",
+   "sha256": "c55b098009e21ddf20a0bef1d2153c1fe3c73ee3477c39e837f90e6453cd2dd0",
+   "text": "The father of Shemaiah, who repaired the wall of Jerusalem (Neh. 3:29).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2587,
+   "name": "Shechaniah",
+   "sha256": "d6c8f6e6799a4f372e7d3f934c98c81fc1a947fe135d6bf6900b7f9e7eaebc98",
+   "text": "The father-in-law of Tobiah (Neh. 6:18).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2588,
+   "name": "Shechem",
+   "sha256": "c372f253ab061272672baccec106356ccf53b91770d60e3ad3bd2e9316c6eede",
+   "text": "The son of Hamor the Hivite (Gen. 33:19; 34).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2589,
+   "name": "Shechem",
+   "sha256": "fbcb9dd51e371027aba66d0da33a4320d130ad302ff76a4928f11c210cc7db3f",
+   "text": "A descendant of Manasseh (Num. 26:31; Josh. 17:2).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2593,
+   "name": "Shelah",
+   "sha256": "9815d0f0b9ba9a253ad2a95a5c88084b3a4a82ccedf86b38e8069eb72fefc361",
+   "text": "Judah’s third son (Gen. 38:2, 5, 11, 14).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2594,
+   "name": "Shelemiah",
+   "sha256": "f95cc86b3e76a425d8972e04309dd5d2b584000a79073c9c5729232ff121a968",
+   "text": "Ezra 10:39.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2596,
+   "name": "Shelemiah",
+   "sha256": "113f97b0a51203b0c247a6726861db16f86fd1b2d597146de39993336dfa4bd5",
+   "text": "The father of Hananiah (Neh. 3:30).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2598,
+   "name": "Shelemiah",
+   "sha256": "951ef349e5eaeb2002de15b3de5c550e5850ed809e85b898c92e05694b82e851",
+   "text": "Jer. 36:14.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2600,
+   "name": "Shelemiah",
+   "sha256": "c25551f80b81966ef80fcb5ae6ee2024eddd10ef5ce530db7bae0a6176319746",
+   "text": "Father of one of those who accused Jeremiah to Zedekiah (Jer. 37:3; 38:1).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2601,
+   "name": "Shelemiah",
+   "sha256": "76bc6912ee2aec69f543ceeae72f23905270e6ad58c9f604425c021b242fe387",
+   "text": "Father of a captain of the ward (Jer. 37:13).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2613,
+   "name": "Shem",
+   "sha256": "40a7a4db0ef6fe48e937b5d66fe52570f7ce56113e45d41dbfe712f9dd830d72",
+   "text": "A name; renown, the first mentioned of the sons of Noah (Gen. 5:32; 6:10). He was probably the eldest of Noah’s sons. The words “brother of Japheth the elder” in Gen. 10:21 are more correctly rendered “the elder brother of Japheth,” as in the Revised Version. Shem’s name is generally mentioned first in the list of Noah’s sons. He and his wife were saved in the ark (7:13). Noah foretold his preeminence over Canaan (9:23-27). He died at the age of six hundred years, having been for many years contemporary with Abraham, according to the usual chronology. The Israelitish nation sprang from him (Gen. 11:10-26; 1 Chr. 1:24-27).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "brother of Japheth the elder",
+     "kind": "partial",
+     "verses": [
+      1010021
+     ],
+     "es": "También le nacieron hijos á Sem, padre de todos los hijos de Heber, y hermano mayor de Japhet.",
+     "pt": "Também lhe nasceram filhos a Sem, pai de todos os filhos de Héber, e irmão mais velho de Jafé."
+    },
+    {
+     "n": 1,
+     "english": "the elder brother of Japheth,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2615,
+   "name": "Shema",
+   "sha256": "7e73a7192aace2bf9617fd02686831941e5c587f034ee57b66d4bf40770ee625",
+   "text": "A Reubenite (1 Chr. 5:8).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2616,
+   "name": "Shema",
+   "sha256": "a4e58b4ae727bdd67e16ea25847916cf3da6b6baf142d673c8cf5c66ff47f4fa",
+   "text": "A Benjamite (1 Chr. 8:13).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2617,
+   "name": "Shema",
+   "sha256": "9b748041be0bf8006eab10a4ce996fd6f86a78954205d524255722c0f3af832f",
+   "text": "One who stood by Ezra when he read the law (Neh. 8:4).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2618,
+   "name": "Shemaah",
+   "sha256": "3d18e4565fd850ef730c9198cf33516eb232c3c3f57c60f6d8be649fc494fe12",
+   "text": "Rumour, a Benjamite whose sons “came to David to Ziklag” (1 Chr. 12:3).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "came to David to Ziklag",
+     "kind": "partial",
+     "verses": [
+      13012001
+     ],
+     "es": "ESTOS son los que vinieron á David á Siclag, estando él aún encerrado por causa de Saúl hijo de Cis, y eran de los valientes ayudadores de la guerra.",
+     "pt": "Estes, pois, foram os que vieram a Davi a Ziclague, enquanto ele ainda estava escondido por causa de Saul filho de Quis; e eles estiveram entre os guerreiros que o ajudaram na guerra."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2619,
+   "name": "Shemaiah",
+   "sha256": "545c36f0c56139fc91d0978b7b8d0ee57f95b24f1fd07e8d0a3d2cbd2ddae759",
+   "text": "A prophet in the reign of Rehoboam (1 Kings 12:22-24).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2621,
+   "name": "Shemaiah",
+   "sha256": "1dbf72e1017dc10f50bc2800e2429641718b49b8626be43b8744ecd4bf14410e",
+   "text": "A Simeonite (1 Chr. 4:37).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2623,
+   "name": "Shemaiah",
+   "sha256": "029134393d94ff61bd150905b977e84446ca59635e88f8f36722f4df6407d5a6",
+   "text": "1 Chr. 9:14; Neh. 11:15.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2624,
+   "name": "Shemaiah",
+   "sha256": "1d74ceef749aadb1ac2fae4eda8a136ee60fcfcb97adbd82e65d5e9f1f576572",
+   "text": "A Levite (1 Chr. 9:16).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2625,
+   "name": "Shemaiah",
+   "sha256": "60cd9f208005621db63b778e8694eb531f45406cd73c8f12ce124d8008228934",
+   "text": "A Levite in the time of David, who with 200 of his brethren took part in the bringing up of the ark from Obed-edom to Hebron (1 Chr. 15:8).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2626,
+   "name": "Shemaiah",
+   "sha256": "8ec8c331ab9a17bef230b3c928c686e270782de8e91ed01faf0194f2b2460f1d",
+   "text": "A Levite (1 Chr. 24:6).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2627,
+   "name": "Shemaiah",
+   "sha256": "a452a3750f4f8c0b0ff647eae3d8684e55b5dd7206cc4319d1349482f4b91ad5",
+   "text": "The eldest son of Obed-edom (1 Chr. 26:4-8).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2628,
+   "name": "Shemaiah",
+   "sha256": "bcde30cf943a307c15207d059a30d4cbd806da0bf0863b73b4febdec08f5e45b",
+   "text": "One of the Levites whom Jehoshaphat appointed to teach the law (2 Chr. 17:8).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2629,
+   "name": "Shemaiah",
+   "sha256": "f8969377b3554ca0859f7065870d695dcfd69a1f2523a33f33779d41215e31bb",
+   "text": "A Levite (2 Chr. 29:14).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2630,
+   "name": "Shemaiah",
+   "sha256": "c7384c738ee6304f35c3549b29d6f827f7b865d04f14911f51f9922debad4e2c",
+   "text": "A Levite appointed to “distribute the oblations of the Lord” (2 Chr. 31:15).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "distribute the oblations of the Lord",
+     "kind": "partial",
+     "verses": [
+      14031014
+     ],
+     "es": "Y Coré hijo de Imna Levita, portero al oriente, tenía cargo de las limosnas de Dios, y de las ofrendas de Jehová que se daban, y de todo lo que se santificaba.",
+     "pt": "E Coré filho de Imná levita, porteiro ao oriente, tinha cargo dos donativos de Deus, e das ofertas do SENHOR que se davam, e de tudo o que se santificava."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2631,
+   "name": "Shemaiah",
+   "sha256": "870d8ed5797146036d9b94a5b319ad848d3a60b43b5350a6d659c45b3ed3b8bb",
+   "text": "A Levite (2 Chr. 35:9).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2636,
+   "name": "Shemaiah",
+   "sha256": "bc71a4c76b13473adbb9fe8234f559533ed9bafd7764d087e32beb8e14da0dc3",
+   "text": "Neh. 3:29.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2637,
+   "name": "Shemaiah",
+   "sha256": "6a4f925ebfbbd5879d1b93668e12431e025978004d757069a24b43141d7d8336",
+   "text": "A false prophet who hindered the rebuilding of Jerusalem (Neh. 6:10).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2641,
+   "name": "Shemaiah",
+   "sha256": "4593bd4cadc0e9de9a651cb478237e74f08489f9003c9914a6e4d7a139d1bce9",
+   "text": "A priest (Neh. 12:42).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2642,
+   "name": "Shemaiah",
+   "sha256": "b0a6c7da2828274bc0af75ac3f0c997d40fdeaaad7d14052b32a50aff2ff3b04",
+   "text": "The father of Urijah the prophet (Jer. 26:20).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2643,
+   "name": "Shemaiah",
+   "sha256": "44f15ea1b6023fb037d3d87568f8fa8ad65c0a16ebcab5b387a2732597912ffe",
+   "text": "A false prophet who opposed Jeremiah (Jer. 29:24-32).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2644,
+   "name": "Shemaiah",
+   "sha256": "b11b94a659b45ee8247ad27d21662afe594000b0a0d046eb93544b7fd49f34f7",
+   "text": "The father of a prince in the reign of Jehoiakim (Jer. 36:12).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2645,
+   "name": "Shemariah",
+   "sha256": "8fbdb08ab97be2dc33861078e83c2fc2c59a600e507c8b891500b7f9445c6b97",
+   "text": "One who joined David at Ziklag (1 Chr. 12:5).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2648,
+   "name": "Shemeber",
+   "sha256": "c8c8f21eed91d40748acdfbad12771c8e379fdd0afb769fccdf5a5d8381a660e",
+   "text": "Soaring on high, the king of Zeboiim, who joined with the other kings in casting off the yoke of Chedorlaomer. After having been reconquered by him, he was rescued by Abraham (Gen. 14:2).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2651,
+   "name": "Shemiramoth",
+   "sha256": "1caca688a45bb16f9ce6e7af0d18dae037bdad2f89fe78ca95f16d11fa7cb5a8",
+   "text": "A Levite in David’s time (1 Chr. 15:18, 20).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2652,
+   "name": "Shemiramoth",
+   "sha256": "1adb3ab8b3ce29021d8afc98ae6351c65a90ce43a624563eedad9e6f30e43fd5",
+   "text": "A Levite in the reign of Jehoshaphat (2 Chr. 17:8).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2653,
+   "name": "Shemuel",
+   "sha256": "dafd571856e5844523b77511f18d5a8defe1240a67c693dbd05ef343c2900aa4",
+   "text": "The son of Ammihud. He represented Simeon in the division of the land (Num. 34:20).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2654,
+   "name": "Shemuel",
+   "sha256": "610bf6e7bfdfa6b9788aa7753f67bcb321d8c52ad052c8e35710ca3fadd268ff",
+   "text": "A prince of the tribe of Issachar (1 Chr. 7:2).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2658,
+   "name": "Shephatiah",
+   "sha256": "dd28f5e0b0d0a1ada620bbfa76b39a6d0b69119bbb0be490a4680c0d049caaad",
+   "text": "A Benjamite who joined David at Ziklag (1 Chr. 12:5).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2659,
+   "name": "Shephatiah",
+   "sha256": "25a196035ec3bfa1431531a2511eebf9342e7d2df9b62c6ceee0cfa4541d56fb",
+   "text": "A Simeonite prince in David’s time (1 Chr. 27:16).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2660,
+   "name": "Shephatiah",
+   "sha256": "de5b4af7461f67470010a3dfd42b42e97e04231f66043aa43fcfa14e59c9957f",
+   "text": "One of Jehoshaphat’s sons (2 Chr. 21:2).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2661,
+   "name": "Shephatiah",
+   "sha256": "843624c45368874ec6f19f929592bcbfe2ac71c854efa9c1b624892564f4b09e",
+   "text": "Ezra 2:4.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2662,
+   "name": "Shephatiah",
+   "sha256": "2282e38cd706546c2a683598d664f125a19d568a4f3b453037dbb925d8b9da78",
+   "text": "Ezra 2:57; Neh. 7:59.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2664,
+   "name": "Shephatiah",
+   "sha256": "6b4f189dfef11066de505e12104e00c9945b1d53f1b22c618be5e0c25417073d",
+   "text": "One of the princes who urged the putting of Jeremiah to death (Jer. 38:1-4).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2669,
+   "name": "Sheresh",
+   "sha256": "4b48a5c503ea4fc1ca06c1573015271ff0ce8e96d3c3c8de04443000717a07c5",
+   "text": "Root, a descendant of Manasseh (1 Chr. 7:16).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2670,
+   "name": "Sherezer",
+   "sha256": "3a4400a2aa218790a705ddc96b4197b5c2acd38f1216aabab5e8d29c954e2129",
+   "text": "One of the messengers whom the children of the Captivity sent to Jerusalem “to pray for them before the Lord” (Zech. 7:2).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "to pray for them before the Lord",
+     "kind": "loose",
+     "verses": [
+      1033013,
+      1033014
+     ],
+     "es": "Y él le dijo: Mi señor sabe que los niños son tiernos, y que tengo ovejas y vacas paridas; y si las fatigan, en un día morirán todas las ovejas. Pase ahora mi señor delante de su siervo, y yo me iré poco á poco al paso de la hacienda que va delante de mí, y al paso de los niños, hasta que llegue á mi señor á Seir.",
+     "pt": "E ele lhe disse: Meu senhor sabe que os meninos são tenros, e que tenho ovelhas e vacas de cria; e se as cansam, em um dia morrerão todas as ovelhas. Passe agora meu senhor diante de seu servo, e eu me irei pouco a pouco ao passo do gado que vai adiante de mim, e à passagem dos meninos, até que chegue a meu senhor a Seir."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2673,
+   "name": "Shethar",
+   "sha256": "eba706e4f6e4dfcd4be51118a7bf53ebf4f5418c7422dd81469c971befe23fab",
+   "text": "A star, a prince at the court of Ahasuerus (Esther 1:14).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2674,
+   "name": "Shethar-boznai",
+   "sha256": "b105efc5372b8fad72ab668308626609b14061522b998cf63c203e7298f444ab",
+   "text": "Star of splendour, a Persian officer who vainly attempted to hinder the rebuilding of the temple (Ezra 5:3, 6; 6:6, 13).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2675,
+   "name": "Sheva",
+   "sha256": "aac0aafbd91f729e44f5cb326db3361769e6f427cfd4d613c0061b75f6b0d392",
+   "text": "The son of Caleb (1 Chr. 2:49).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2677,
+   "name": "Shillem",
+   "sha256": "5704a215e2367f63a4901ecf2cf6ffe803f14513d01f18e2578c82ddeb2331fe",
+   "text": "1 Chr. 7:13.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2680,
+   "name": "Shimea",
+   "sha256": "c74f3ee456de6d5055665b7a60a8e40f3fb69d84c80430f1c589ae7c349ad653",
+   "text": "A Levite of the family of Merari (1 Chr. 6:30).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2681,
+   "name": "Shimea",
+   "sha256": "cfea952538e35621a702c574548acbeaffbce11f6f080be6d2ff5b8df06cc4e6",
+   "text": "Another Levite of the family of Gershon (1 Chr. 6:39).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2682,
+   "name": "Shimeah",
+   "sha256": "8c1302d851c52eb7ac4aa6a72a3145e496bab9b8c0a5e9d097a40b7e0935dc95",
+   "text": "A Benjamite, a descendant of Gibeon (1 Chr. 8:32); called also Shimeam (9:38).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2684,
+   "name": "Shimei",
+   "sha256": "ae78079e0ca5465bc41251f066ef15d8aba8f09f3bb1db48427fe1db47a042e9",
+   "text": "A Benjamite of the house of Saul, who stoned and cursed David when he reached Bahurim in his flight from Jerusalem on the occasion of the rebellion of Absalom (2 Sam. 16:5-13). After the defeat of Absalom he “came cringing to the king, humbly suing for pardon, bringing with him a thousand of his Benjamite tribesmen, and representing that he was heartily sorry for his crime, and had hurried the first of all the house of Israel to offer homage to the king” (19:16-23). David forgave him; but on his death-bed he gave Solomon special instructions regarding Shimei, of whose fidelity he seems to have been in doubt (1 Kings 2:8, 9). He was put to death at the command of Solomon, because he had violated his word by leaving Jerusalem and going to Gath to recover two of his servants who had escaped (36-46).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "came cringing to the king, humbly suing for pardon, bringing with him a thousand of his Benjamite tribesmen, and representing that he was heartily sorry for his crime, and had hurried the first of all the house of Israel to offer homage to the king",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2685,
+   "name": "Shimei",
+   "sha256": "8e38da90c7d76aec585220edf5e4d20c25e2824f88e315a4de94aaaf2a78ccc9",
+   "text": "One of David’s mighty men who refused to acknowledge Adonijah as David’s successor (1 Kings 1:8). He is probably the same person who is called elsewhere (4:18) “the son of Elah.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the son of Elah.",
+     "kind": "unsure",
+     "verses": [
+      11004018
+     ],
+     "es": "Semei hijo de Ela, en Benjamín;",
+     "pt": "Simei filho de Elá, em Benjamim;"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2686,
+   "name": "Shimei",
+   "sha256": "70ce68a1321d04ee900a0b6798bd196e0c67daf60c17c4e81271711c194b2c4f",
+   "text": "A son of Pedaiah, the brother of Zerubbabel (1 Chr. 3:19).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2687,
+   "name": "Shimei",
+   "sha256": "8650a5b28cfe0ce98f1864db0cdd28a17fbb7965525f02f1096a6f18d7cff131",
+   "text": "A Simeonite (1 Chr. 4:26, 27).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2688,
+   "name": "Shimei",
+   "sha256": "8f1e62922e4d7d6a476a7c6c2957fa51ef30e991fc0f6d7f107af09cdd758680",
+   "text": "A Reubenite (1 Chr. 5:4).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2690,
+   "name": "Shimei",
+   "sha256": "d68367f0018330f069a320aa0bf9e196e1b7dbc58851eebc2b1bac46d8edbf10",
+   "text": "A Ramathite who was “over the vineyards” of David (1 Chr. 27:27).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "over the vineyards",
+     "kind": "partial",
+     "verses": [
+      13027027
+     ],
+     "es": "Y de las viñas Simi Ramathita; y del fruto de las viñas para las bodegas, Zabdías Siphmita;",
+     "pt": "E das vinhas Simei ramatita; e do fruto das vinhas para as adegas, Zabdias sifmita;"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2691,
+   "name": "Shimei",
+   "sha256": "93548c0a94618b96038614f30d74e9481dfe6df67d87309ba28a143c8bcbc40b",
+   "text": "One of the sons of Heman, who assisted in the purification of the temple (2 Chr. 29:14).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2692,
+   "name": "Shimei",
+   "sha256": "8b853830d88c4e40307e0be0726108b3be1da4ea7aaddbd696a71e9e7ba50a0c",
+   "text": "A Levite (2 Chr. 31:12, 13).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2697,
+   "name": "Shimeon",
+   "sha256": "61dfccc41f8e69d1989f328a39efab61e85cd31195df6f8fc22363c029350bc1",
+   "text": "Hearkening. Ezra 10:31.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2698,
+   "name": "Shimhi",
+   "sha256": "58718c91eadb92a611ce2c86cb20e90bedcf237d10b7dc37373bb4f5f9fc63d9",
+   "text": "Famous, a Benjamite (1 Chr. 8:21).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2700,
+   "name": "Shammah",
+   "sha256": "623ea44953390b682caa1e5112c5a1108a73858f72ad502ec9bc9fe9b74127d8",
+   "text": "One of the sons of Jesse (1 Sam. 16:9). He is also called Shimeah (2 Sam. 13:3) and Shimma (1 Chr. 2:13).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2703,
+   "name": "Shimri",
+   "sha256": "1dbf72e1017dc10f50bc2800e2429641718b49b8626be43b8744ecd4bf14410e",
+   "text": "A Simeonite (1 Chr. 4:37).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2704,
+   "name": "Shimri",
+   "sha256": "d36f9d5d944b1219fb339cc8e5f6c635dd1658d71602fcf3c0a4481a69cfdc73",
+   "text": "The father of one of the “valiant men” of David’s armies (1 Chr. 11:45).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "valiant men",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2705,
+   "name": "Shimri",
+   "sha256": "557349afed722d39c256e79fdb659d161603f13acb6090fa7b61eacf4e44257b",
+   "text": "Assisted at the purification of the temple in the time of Hezekiah (2 Chr. 29:13).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2706,
+   "name": "Shimron",
+   "sha256": "c284d5b709e8f5f22a4f3967f5748c5c05327f36b57fdc059d9d7d33ccc0df87",
+   "text": "Watchman, the fourth son of Issachar (Gen. 46:13; 1 Chr. 7:1; R.V., correctly, “Shimron”).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Shimron",
+     "kind": "wording",
+     "verses": [
+      1046013
+     ],
+     "es": "Y los hijos de Issachâr: Thola, y Phua, y Job, y Simrón.",
+     "pt": "E os filhos de Issacar: Tola, e Puva, e Jó, e Sinrom."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2707,
+   "name": "Shimshai",
+   "sha256": "2b3b9fa31d9a40a6184a58dfe005ccd07e9f2fb53876596091906f1011b28541",
+   "text": "The shining one, or sunny, the secretary of Rehum the chancellor, who took part in opposing the rebuilding of the temple after the Captivity (Ezra 4:8, 9, 17-23).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2708,
+   "name": "Shinab",
+   "sha256": "9158c6855bab7722ff97a3346be814ef9aa3ed93003ad2ac743b4690cabdf81f",
+   "text": "Cooling, the king of Adamah, in the valley of Siddim, who with his confederates was conquered by Chedorlaomer (Gen. 14:2).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2710,
+   "name": "Shiphrah",
+   "sha256": "56353c4427bd39df70e684a840adafe2e56576ca396872425b9813c8c8c0dcbe",
+   "text": "Beauty, one of the Egyptian midwives (Ex. 1:15).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2711,
+   "name": "Shiphtan",
+   "sha256": "512d6e6aae52089aa2673e72fa4ea24b42249b2fd56a7cde3382eda2eadf62cd",
+   "text": "Judicial, an Ephraimite prince at the time of the division of Canaan (Num. 34:24).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2712,
+   "name": "Shishak",
+   "sha256": "7cead4bf70d81e39d0a8466eedc9f1712ce5b1d3dcdb6c8d8464ddfcaaef2cae",
+   "text": "Sheshonk I., king of Egypt. His reign was one of great national success, and a record of his wars and conquests adorns the portico of what are called the “Bubastite kings” at Karnak, the ancient Thebes. Among these conquests is a record of that of Judea. In the fifth year of Rehoboam’s reign Shishak came up against the kingdom of Judah with a powerful army. He took the fenced cities and came to Jerusalem. He pillaged the treasures of the temple and of the royal palace, and carried away the shields of gold which Solomon had made (1 Kings 11:40; 14:25; 2 Chr. 12:2). This expedition of the Egyptian king was undertaken at the instigation of Jeroboam for the purpose of humbling Judah. Hostilities between the two kingdoms still continued; but during Rehoboam’s reign there was not again the intervention of a third party.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Bubastite kings",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2715,
+   "name": "Shobab",
+   "sha256": "591875e0a7509023348880a559e84ab47c6973f548b5e27dc339dbd3bf58914d",
+   "text": "One of David’s sons by Bathseheba (2 Sam. 5:14).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2716,
+   "name": "Shobab",
+   "sha256": "e3d9b331ad092f028fc7cbef3f9a004959ccfaf110f09b71a70379acc474edcf",
+   "text": "One of the sons of Caleb (1 Chr. 2:18), the son of Hezron.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2717,
+   "name": "Shobach",
+   "sha256": "08d0f5d4a3d769f68fd57cf7e3ba1089270cb9b6af5c7c652d7b6dfdf4a5cfcd",
+   "text": "Poured out, the “captain of the host of Hadarezer” when he mustered his vassals and tributaries from beyond “the river Euphrates” (2 Sam. 10:15-18); called also Shophach (1 Chr. 19:16).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "captain of the host of Hadarezer",
+     "kind": "partial",
+     "verses": [
+      10010016
+     ],
+     "es": "Y envió Hadad-ezer, y sacó los Siros que estaban de la otra parte del río, los cuales vinieron á Helam, llevando por jefe á Sobach general del ejército de Hadad-ezer.",
+     "pt": "E enviou Hadadezer, e tirou os sírios que estavam da outra parte do rio, os quais vieram a Helã, levando por chefe a Sobaque general do exército de Hadadezer."
+    },
+    {
+     "n": 1,
+     "english": "the river Euphrates",
+     "kind": "unsure",
+     "verses": [
+      1015018
+     ],
+     "es": "En aquel día hizo Jehová un pacto con Abram diciendo: A tu simiente daré esta tierra desde el río de Egipto hasta el río grande, el río Eufrates;",
+     "pt": "Naquele dia fez o SENHOR um pacto com Abrão dizendo: À tua descendência darei esta terra desde o rio do Egito até o rio grande, o rio Eufrates;"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2718,
+   "name": "Shobai",
+   "sha256": "71ba1031407e0e4726da24d7332bf6a9f71fa758dfa5934ce274f56ef1afd0d6",
+   "text": "Captors (Ezra 2:42).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2719,
+   "name": "Shobal",
+   "sha256": "1898a5d4e68bacf65e8452f398b4b8d58238dd0e842df14d3414c81986eb3990",
+   "text": "The second son of Seir the Horite; one of the Horite “dukes” (Gen. 36:20).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "dukes",
+     "kind": "wording",
+     "verses": [
+      1036018
+     ],
+     "es": "Y estos son los hijos de Aholibama, mujer de Esaú: el duque Jeús, el duque Jaalam, y el duque Cora: estos fueron los duques que salieron de Aholibama, mujer de Esaú, hija de Ana.",
+     "pt": "E estes são os filhos de Oolibama, mulher de Esaú: o duque Jeús, o duque Jalão, e o duque Corá: estes foram os duques que saíram de Oolibama, mulher de Esaú, filha de Aná."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2720,
+   "name": "Shobal",
+   "sha256": "9c2138e006f1bee7b2aefc39d0efe4cae0cf3484cefe70d35593c47a287260f9",
+   "text": "One of the sons of Caleb, and a descendant of Hur (1 Chr. 2:50, 52; 4:1, 2).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2722,
+   "name": "Shobi",
+   "sha256": "cc58516755b17db450cc26267bbb71fc5eae3bf4ea4f2ee5be9a7697209270f0",
+   "text": "Captor, son of Nahash of Rabbah, the Ammonite. He showed kindness to David when he fled from Jerusalem to Mahanaim (2 Sam. 17:27).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2724,
+   "name": "Shimrith",
+   "sha256": "2f3ebdd370e4e4c3418ef96434ef6e6b802a56ceafdbd925420d14e174287100",
+   "text": "The mother of Jehozabad, who murdered Joash (2 Kings 12:21); called also Shimrith, a Moabitess (2 Chr. 24:26).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2725,
+   "name": "Shamer",
+   "sha256": "8b361563dcacd146eacfbb231071140ccfe296db0874000ec1a33ec82a4917bb",
+   "text": "A man of Asher (1 Chr. 7:32); called also Shamer (34).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2726,
+   "name": "Shua",
+   "sha256": "4ce8b24f8bfe958040dd0957a6ae2a0e502ce138d0cf550735d2878f3d84ad14",
+   "text": "A daughter of Heber the Asherite (1 Chr. 7:32).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2727,
+   "name": "Shuah",
+   "sha256": "d82aedcce10fb202fde66dd9789dc7af9a37c0fe4a0c835ec744b9f94a090c9c",
+   "text": "One of Abraham’s sons by Keturah (Gen. 25:2; Chr. 1:32).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2728,
+   "name": "Shuah",
+   "sha256": "8de65c4c09279c934361411fcf330c40c490734ace6c518f7885446682315bb1",
+   "text": "A Canaanite whose daughter was married to Judah (1 Chr. 2:3).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2729,
+   "name": "Shuah",
+   "sha256": "9a69b1757cfaba5bde2184407166418b7e5b2b84f0140785a50c24381e265fae",
+   "text": "1 Chr. 4:11.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2737,
+   "name": "Sibbechai",
+   "sha256": "f0d511a8fb89d3f4fd5b772f2dab02117cb9323ccd2efe5cc2ca4f5fd4df3e7c",
+   "text": "The Lord sustains, one of David’s heroes (1 Chr. 11:29), general of the eighth division of the army (27:11). He slew the giant Saph in the battle of Gob (2 Sam. 21:18; R.V., “Sibbechai”). Called also Mebunnai (23:27).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Sibbechai",
+     "kind": "wording",
+     "verses": [
+      10021018
+     ],
+     "es": "Otra segunda guerra hubo después en Gob contra los Filisteos: entonces Sibechâi Husathita hirió á Saph, que era de los hijos del gigante.",
+     "pt": "Outra segunda guerra houve depois em Gobe contra os filisteus; então Sibecai, husatita, feriu a Safe, que era dos filhos do gigante."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2738,
+   "name": "Zidon",
+   "sha256": "aad50892b64d44b398376282da58230fdef6d421965aca8a79b678bfdbe9926b",
+   "text": "A fishery, a town on the Mediterranean coast, about 25 miles north of Tyre. It received its name from the “first-born” of Canaan, the grandson of Noah (Gen. 10:15, 19). It was the first home of the Phoenicians on the coast of Palestine, and from its extensive commercial relations became a “great” city (Josh. 11:8; 19:28). It was the mother city of Tyre. It lay within the lot of the tribe of Asher, but was never subdued (Judg. 1:31). The Zidonians long oppressed Israel (Judg. 10:12). From the time of David its glory began to wane, and Tyre, its “virgin daughter” (Isa. 23:12), rose to its place of pre-eminence. Solomon entered into a matrimonial alliance with the Zidonians, and thus their form of idolatrous worship found a place in the land of Israel (1 Kings 11:1, 33). This city was famous for its manufactures and arts, as well as for its commerce (1 Kings 5:6; 1 Chr. 22:4; Ezek. 27:8). It is frequently referred to by the prophets (Isa. 23:2, 4, 12; Jer. 25:22; 27:3; 47:4; Ezek. 27:8; 28:21, 22; 32:30; Joel 3:4). Our Lord visited the “coasts” of Tyre and Zidon = Sidon (q.v.), Matt. 15:21; Mark 7:24; Luke 4:26; and from this region many came forth to hear him preaching (Mark 3:8; Luke 6:17). From Sidon, at which the ship put in after leaving Caesarea, Paul finally sailed for Rome (Acts 27:3, 4).\n\n This city is now a town of 10,000 inhabitants, with remains of walls built in the twelfth century A.D. In 1855, the sarcophagus of Eshmanezer was discovered. From a Phoenician inscription on its lid, it appears that he was a “king of the Sidonians,” probably in the third century B.C., and that his mother was a priestess of Ashtoreth, “the goddess of the Sidonians.” In this inscription Baal is mentioned as the chief god of the Sidonians.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "first-born",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "great",
+     "kind": "wording",
+     "verses": [
+      6011008
+     ],
+     "es": "Y entrególos Jehová en manos de Israel, los cuales los hirieron y siguieron hasta Sidón la grande, y hasta las aguas calientes, y hasta el llano de Mizpa al oriente, hiriéndolos hasta que no les dejaron ninguno.",
+     "pt": "E entregou-os o SENHOR em mãos de Israel, os quais os feriram e seguiram até a grande Sidom, e até as águas quentes, e até a planície de Mispá ao oriente, ferindo-os até que não lhes deixaram ninguém."
+    },
+    {
+     "n": 2,
+     "english": "virgin daughter",
+     "kind": "wording",
+     "verses": [
+      23023012
+     ],
+     "es": "Y dijo: No te alegrarás más, oh tú, oprimida virgen hija de Sidón. Levántate para pasar á Chîttim; y aun allí no tendrás reposo.",
+     "pt": "E disse: Nunca mais te encherás de alegria, ó oprimida virgem, filha de Sidom; levanta-te, passa ao Chipre; e alinda ali não terás descanso."
+    },
+    {
+     "n": 3,
+     "english": "coasts",
+     "kind": "wording",
+     "verses": [
+      40015021
+     ],
+     "es": "Y saliendo Jesús de allí, se fué á las partes de Tiro y de Sidón.",
+     "pt": "E, tendo Jesus partido dali, foi para as partes de Tiro e de Sidom."
+    },
+    {
+     "n": 4,
+     "english": "king of the Sidonians,",
+     "kind": "other"
+    },
+    {
+     "n": 5,
+     "english": "the goddess of the Sidonians.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2739,
+   "name": "Sihon",
+   "sha256": "589fce1544e7ed3ca7cc9bd7d6a638318b73b3116b32688541a21cebd3db2fd2",
+   "text": "Striking down. The whole country on the east of Jordan, from the Arnon to the Jabbok, was possessed by the Amorites, whose king, Sihon, refused to permit the Israelites to pass through his territory, and put his army in array against them. The Israelites went forth against him to battle, and gained a complete victory. The Amorites were defeated; Sihon, his sons, and all his people were smitten with the sword, his walled towns were captured, and the entire country of the Amorites was taken possession of by the Israelites (Num. 21:21-30; Deut. 2:24-37).\n\n The country from the Jabbok to Hermon was at this time ruled by Og, the last of the Rephaim. He also tried to prevent the progress of the Israelites, but was utterly routed, and all his cities and territory fell into the hands of the Israelites (comp. Num. 21:33-35; Deut. 3:1-14; Ps. 135: 10-12; 136:17-22).\n\n These two victories gave the Israelites possession of the country on the east of Jordan, from the Arnon to the foot of Hermon. The kingdom of Sihon embraced about 1,500 square miles, while that of Og was more than 3,000 square miles.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2740,
+   "name": "Silas",
+   "sha256": "665b7700e61e0deac71878239cc5697a420872c1fa3e4b0af464fc3b95c98b89",
+   "text": "Wood, a prominent member of the church at Jerusalem; also called Silvanus. He and Judas, surnamed Barsabas, were chosen by the church there to accompany Paul and Barnabas on their return to Antioch from the council of the apostles and elders (Acts 15:22), as bearers of the decree adopted by the council. He assisted Paul there in his evangelistic labours, and was also chosen by him to be his companion on his second missionary tour (Acts 16:19-24). He is referred to in the epistles under the name of Silvanus (2 Cor. 1:19; 1 Thess. 1:1; 2 Thess. 1:1; 1 Pet. 5:12). There is no record of the time or place of his death.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2741,
+   "name": "Simeon",
+   "sha256": "c510fc3de58b15c37584a7aa29790d01cb631c644a1beb3fa0e2222276b167ce",
+   "text": "The second son of Jacob by Leah (Gen. 29:33). He was associated with Levi in the terrible act of vengeance against Hamor and the Shechemites (34:25, 26). He was detained by Joseph in Egypt as a hostage (42:24). His father, when dying, pronounced a malediction against him (49:5-7). The words in the Authorized Version (49:6), “they digged down a wall,” ought to be, as correctly rendered in the Revised Version, “they houghed an ox.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "they digged down a wall,",
+     "kind": "unsure",
+     "verses": [
+      1049006
+     ],
+     "es": "En su secreto no entre mi alma, ni mi honra se junte en su compañía; que en su furor mataron varón, y en su voluntad arrancaron muro.",
+     "pt": "Em seu secreto não entre minha alma, nem minha honra se junte em sua companhia; Que em seu furor mataram homem, E em sua vontade aleijaram bois."
+    },
+    {
+     "n": 1,
+     "english": "they houghed an ox.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2743,
+   "name": "Simeon",
+   "sha256": "5cb23a2ed042159c2ebe1fbd80f1ff933d3963f8ca30516c7f55d87ffa539ab6",
+   "text": "One of the ancestors of Joseph (Luke 3:30).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2744,
+   "name": "Simeon",
+   "sha256": "ab62ac839650e9db1d0da3d9c1a40123fa5849f66596aff5f73eefb1af817cc1",
+   "text": "Surnamed Niger, i.e., “black,” perhaps from his dark complexion, a teacher of some distinction in the church of Antioch (Acts 13:1-3). It has been supposed that this was the Simon of Cyrene who bore Christ’s cross. Note the number of nationalities represented in the church at Antioch.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "black,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2745,
+   "name": "Simon Peter",
+   "sha256": "a727014f1bb3bab5761304d0024f74fa185e9bb0cf621c7f269739d73b5f9cca",
+   "text": "Originally called Simon (=Simeon, i.e., “hearing”), a very common Jewish name in the New Testament. He was the son of Jona (Matt. 16:17). His mother is nowhere named in Scripture. He had a younger brother called Andrew, who first brought him to Jesus (John 1:40-42). His native town was Bethsaida, on the western coast of the Sea of Galilee, to which also Philip belonged. Here he was brought up by the shores of the Sea of Galilee, and was trained to the occupation of a fisher. His father had probably died while he was still young, and he and his brother were brought up under the care of Zebedee and his wife Salome (Matt. 27:56; Mark 15:40; 16:1). There the four youths, Simon, Andrew, James, and John, spent their boyhood and early manhood in constant fellowship. Simon and his brother doubtless enjoyed all the advantages of a religious training, and were early instructed in an acquaintance with the Scriptures and with the great prophecies regarding the coming of the Messiah. They did not probably enjoy, however, any special training in the study of the law under any of the rabbis. When Peter appeared before the Sanhedrin, he looked like an “unlearned man” (Acts 4:13).\n\n “Simon was a Galilean, and he was that out and out...The Galileans had a marked character of their own. They had a reputation for an independence and energy which often ran out into turbulence. They were at the same time of a franker and more transparent disposition than their brethren in the south. In all these respects, in bluntness, impetuosity, headiness, and simplicity, Simon was a genuine Galilean. They spoke a peculiar dialect. They had a difficulty with the guttural sounds and some others, and their pronunciation was reckoned harsh in Judea. The Galilean accent stuck to Simon all through his career. It betrayed him as a follower of Christ when he stood within the judgment-hall (Mark 14:70). It betrayed his own nationality and that of those conjoined with him on the day of Pentecost (Acts 2:7).” It would seem that Simon was married before he became an apostle. His wife’s mother is referred to (Matt. 8:14; Mark 1:30; Luke 4:38). He was in all probability accompanied by his wife on his missionary journeys (1 Cor. 9:5; comp. 1 Pet. 5:13).\n\n He appears to have been settled at Capernaum when Christ entered on his public ministry, and may have reached beyond the age of thirty. His house was large enough to give a home to his brother Andrew, his wife’s mother, and also to Christ, who seems to have lived with him (Mark 1:29, 36; 2:1), as well as to his own family. It was apparently two stories high (2:4).\n\n At Bethabara (R.V., John 1:28, “Bethany”), beyond Jordan, John the Baptist had borne testimony concerning Jesus as the “Lamb of God” (John 1:29-36). Andrew and John hearing it, followed Jesus, and abode with him where he was. They were convinced, by his gracious words and by the authority with which he spoke, that he was the Messiah (Luke 4:22; Matt. 7:29); and Andrew went forth and found Simon and brought him to Jesus (John 1:41).\n\n Jesus at once recognized Simon, and declared that hereafter he would be called Cephas, an Aramaic name corresponding to the Greek Petros, which means “a mass of rock detached from the living rock.” The Aramaic name does not occur again, but the name Peter gradually displaces the old name Simon, though our Lord himself always uses the name Simon when addressing him (Matt. 17:25; Mark 14:37; Luke 22:31, comp. 21:15-17). We are not told what impression the first interview with Jesus produced on the mind of Simon. When we next meet him it is by the Sea of Galilee (Matt. 4:18-22). There the four (Simon and Andrew, James and John) had had an unsuccessful night’s fishing. Jesus appeared suddenly, and entering into Simon’s boat, bade him launch forth and let down the nets. He did so, and enclosed a great multitude of fishes. This was plainly a miracle wrought before Simon’s eyes. The awe-stricken disciple cast himself at the feet of Jesus, crying, “Depart from me; for I am a sinful man, O Lord” (Luke 5:8). Jesus addressed him with the assuring words, “Fear not,” and announced to him his life’s work. Simon responded at once to the call to become a disciple, and after this we find him in constant attendance on our Lord.\n\n He is next called into the rank of the apostleship, and becomes a “fisher of men” (Matt. 4:19) in the stormy seas of the world of human life (Matt. 10:2-4; Mark 3:13-19; Luke 6:13-16), and takes a more and more prominent part in all the leading events of our Lord’s life. It is he who utters that notable profession of faith at Capernaum (John 6:66-69), and again at Caesarea Philippi (Matt. 16:13-20; Mark 8:27-30; Luke 9:18-20). This profession at Caesarea was one of supreme importance, and our Lord in response used these memorable words: “Thou art Peter, and upon this rock I will build my church.”\n\n “From that time forth” Jesus began to speak of his sufferings. For this Peter rebuked him. But our Lord in return rebuked Peter, speaking to him in sterner words than he ever used to any other of his disciples (Matt. 16:21-23; Mark 8:31-33). At the close of his brief sojourn at Caesarea our Lord took Peter and James and John with him into “an high mountain apart,” and was transfigured before them. Peter on that occasion, under the impression the scene produced on his mind, exclaimed, “Lord, it is good for us to be here: let us make three tabernacles” (Matt. 17:1-9).\n\n On his return to Capernaum the collectors of the temple tax (a didrachma, half a sacred shekel), which every Israelite of twenty years old and upwards had to pay (Ex. 30:15), came to Peter and reminded him that Jesus had not paid it (Matt. 17:24-27). Our Lord instructed Peter to go and catch a fish in the lake and take from its mouth the exact amount needed for the tax, viz., a stater, or two half-shekels. “That take,” said our Lord, “and give unto them for me and thee.”\n\n As the end was drawing nigh, our Lord sent Peter and John (Luke 22:7-13) into the city to prepare a place where he should keep the feast with his disciples. There he was forewarned of the fearful sin into which he afterwards fell (22:31-34). He accompanied our Lord from the guest-chamber to the garden of Gethsemane (Luke 22:39-46), which he and the other two who had been witnesses of the transfiguration were permitted to enter with our Lord, while the rest were left without. Here he passed through a strange experience. Under a sudden impulse he cut off the ear of Malchus (47-51), one of the band that had come forth to take Jesus. Then follow the scenes of the judgment-hall (54-61) and his bitter grief (62).\n\n He is found in John’s company early on the morning of the resurrection. He boldly entered into the empty grave (John 20:1-10), and saw the “linen clothes laid by themselves” (Luke 24:9-12). To him, the first of the apostles, our risen Lord revealed himself, thus conferring on him a signal honour, and showing how fully he was restored to his favour (Luke 24:34; 1 Cor. 15:5). We next read of our Lord’s singular interview with Peter on the shores of the Sea of Galilee, where he thrice asked him, “Simon, son of Jonas, lovest thou me?” (John 21:1-19).\n\n After this scene at the lake we hear nothing of Peter till he again appears with the others at the ascension (Acts 1:15-26). It was he who proposed that the vacancy caused by the apostasy of Judas should be filled up. He is prominent on the day of Pentecost (2:14-40). The events of that day “completed the change in Peter himself which the painful discipline of his fall and all the lengthened process of previous training had been slowly making. He is now no more the unreliable, changeful, self-confident man, ever swaying between rash courage and weak timidity, but the stead-fast, trusted guide and director of the fellowship of believers, the intrepid preacher of Christ in Jerusalem and abroad. And now that he is become Cephas indeed, we hear almost nothing of the name Simon (only in Acts 10:5, 32; 15:14), and he is known to us finally as Peter.”\n\n After the miracle at the temple gate (Acts 3) persecution arose against the Christians, and Peter was cast into prison. He boldly defended himself and his companions at the bar of the council (4:19, 20). A fresh outburst of violence against the Christians (5:17-21) led to the whole body of the apostles being cast into prison; but during the night they were wonderfully delivered, and were found in the morning teaching in the temple. A second time Peter defended them before the council (Acts 5:29-32), who, “when they had called the apostles and beaten them, let them go.”\n\n The time had come for Peter to leave Jerusalem. After labouring for some time in Samaria, he returned to Jerusalem, and reported to the church there the results of his work (Acts 8:14-25). Here he remained for a period, during which he met Paul for the first time since his conversion (9:26-30; Gal. 1:18). Leaving Jerusalem again, he went forth on a missionary journey to Lydda and Joppa (Acts 9:32-43). He is next called on to open the door of the Christian church to the Gentiles by the admission of Cornelius of Caesarea (ch. 10).\n\n After remaining for some time at Caesarea, he returned to Jerusalem (Acts 11:1-18), where he defended his conduct with reference to the Gentiles. Next we hear of his being cast into prison by Herod Agrippa (12:1-19); but in the night an angel of the Lord opened the prison gates, and he went forth and found refuge in the house of Mary.\n\n He took part in the deliberations of the council in Jerusalem (Acts 15:1-31; Gal. 2:1-10) regarding the relation of the Gentiles to the church. This subject had awakened new interest at Antioch, and for its settlement was referred to the council of the apostles and elders at Jerusalem. Here Paul and Peter met again.\n\n We have no further mention of Peter in the Acts of the Apostles. He seems to have gone down to Antioch after the council at Jerusalem, and there to have been guilty of dissembling, for which he was severely reprimanded by Paul (Gal. 2:11-16), who “rebuked him to his face.”\n\n After this he appears to have carried the gospel to the east, and to have laboured for a while at Babylon, on the Euphrates (1 Pet. 5:13). There is no satisfactory evidence that he was ever at Rome. Where or when he died is not certainly known. Probably he died between A.D. 64 and 67.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "hearing",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "unlearned man",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "Simon was a Galilean, and he was that out and out...The Galileans had a marked character of their own. They had a reputation for an independence and energy which often ran out into turbulence. They were at the same time of a franker and more transparent disposition than their brethren in the south. In all these respects, in bluntness, impetuosity, headiness, and simplicity, Simon was a genuine Galilean. They spoke a peculiar dialect. They had a difficulty with the guttural sounds and some others, and their pronunciation was reckoned harsh in Judea. The Galilean accent stuck to Simon all through his career. It betrayed him as a follower of Christ when he stood within the judgment-hall (Mark 14:70). It betrayed his own nationality and that of those conjoined with him on the day of Pentecost (Acts 2:7).",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "Bethany",
+     "kind": "other"
+    },
+    {
+     "n": 4,
+     "english": "Lamb of God",
+     "kind": "partial",
+     "verses": [
+      43001029
+     ],
+     "es": "El siguiente día ve Juan á Jesús que venía á él, y dice: He aquí el Cordero de Dios, que quita el pecado del mundo.",
+     "pt": "O dia seguinte viu João a Jesus vir a ele, e disse: Eis o Cordeiro de Deus, que tira o pecado do mundo."
+    },
+    {
+     "n": 5,
+     "english": "a mass of rock detached from the living rock.",
+     "kind": "other"
+    },
+    {
+     "n": 6,
+     "english": "Depart from me; for I am a sinful man, O Lord",
+     "kind": "partial",
+     "verses": [
+      42005008
+     ],
+     "es": "Lo cual viendo Simón Pedro, se derribó de rodillas á Jesús, diciendo: Apártate de mí, Señor, porque soy hombre pecador.",
+     "pt": "Quando Simão Pedro viuisso , prostrou-se aos pés de Jesus, dizendo: Afasta-te de mim, Senhor, porque sou um homem pecador."
+    },
+    {
+     "n": 7,
+     "english": "Fear not,",
+     "kind": "wording",
+     "verses": [
+      42005010
+     ],
+     "es": "Y asimismo á Jacobo y á Juan, hijos de Zebedeo, que eran compañeros de Simón. Y Jesús dijo á Simón: No temas: desde ahora pescarás hombres.",
+     "pt": "E semelhantemente, também, Tiago e João, filhos de Zebedeu, que eram colegas de Simão. E Jesus disse a Simão: Não temas, de agora em diante pescarás gente."
+    },
+    {
+     "n": 8,
+     "english": "fisher of men",
+     "kind": "other"
+    },
+    {
+     "n": 9,
+     "english": "Thou art Peter, and upon this rock I will build my church.",
+     "kind": "partial",
+     "verses": [
+      40016018
+     ],
+     "es": "Mas yo también te digo, que tú eres Pedro, y sobre esta piedra edificaré mi iglesia; y las puertas del infierno no prevalecerán contra ella.",
+     "pt": "E eu também te digo que tu és Pedro, e sobre esta pedra edificarei a minha igreja; e as portas do Xeol não prevalecerão contra ela."
+    },
+    {
+     "n": 10,
+     "english": "From that time forth",
+     "kind": "unsure",
+     "verses": [
+      16004016
+     ],
+     "es": "Mas fué que desde aquel día la mitad de los mancebos trabajaba en la obra, y la otra mitad de ellos tenía lanzas y escudos, y arcos, y corazas; y los príncipes estaban tras toda la casa de Judá.",
+     "pt": "Sucedeu, porém, que desde aquele dia a metade dos meus servos trabalhava na obra, e outra metade deles tinha lanças, escudos, arcos, e couraças; e os líderes estavam por detrás de toda a casa de Judá."
+    },
+    {
+     "n": 11,
+     "english": "an high mountain apart,",
+     "kind": "unsure",
+     "verses": [
+      40017001
+     ],
+     "es": "Y DESPUÉS de seis días, Jesús toma á Pedro, y á Jacobo, y á Juan su hermano, y los lleva aparte á un monte alto:",
+     "pt": "Seis dias depois, Jesus tomou consigo Pedro, Tiago, e seu irmão João, e os levou a sós a um monte alto."
+    },
+    {
+     "n": 12,
+     "english": "Lord, it is good for us to be here: let us make three tabernacles",
+     "kind": "loose",
+     "verses": [
+      40017003,
+      40017004
+     ],
+     "es": "Y he aquí les aparecieron Moisés y Elías, hablando con él. Y respondiendo Pedro, dijo á Jesús: Señor, bien es que nos quedemos aquí: si quieres, hagamos aquí tres pabellones: para ti uno, y para Moisés otro, y otro para Elías.",
+     "pt": "E eis que lhes apareceram Moisés e Elias, falando com ele. Pedro, então, disse a Jesus: Senhor, bom é para nós estarmos aqui. Se queres, façamos aqui três tendas: uma para ti, uma para Moisés, e uma para Elias."
+    },
+    {
+     "n": 13,
+     "english": "That take,",
+     "kind": "wording",
+     "verses": [
+      40017027
+     ],
+     "es": "Mas porque no los escandalicemos, ve á la mar, y echa el anzuelo, y el primer pez que viniere, tómalo, y abierta su boca, hallarás un estatero: tómalo, y dáselo por mí y por ti.",
+     "pt": "Mas para não os ofendermos, vai ao mar, e lança o anzol. Toma o primeiro peixe que subir, e quando lhe abrir a boca, acharás uma moeda de quatro dracmas. Toma-a, e dá a eles por mim e por ti."
+    },
+    {
+     "n": 14,
+     "english": "and give unto them for me and thee.",
+     "kind": "partial",
+     "verses": [
+      40017027
+     ],
+     "es": "Mas porque no los escandalicemos, ve á la mar, y echa el anzuelo, y el primer pez que viniere, tómalo, y abierta su boca, hallarás un estatero: tómalo, y dáselo por mí y por ti.",
+     "pt": "Mas para não os ofendermos, vai ao mar, e lança o anzol. Toma o primeiro peixe que subir, e quando lhe abrir a boca, acharás uma moeda de quatro dracmas. Toma-a, e dá a eles por mim e por ti."
+    },
+    {
+     "n": 15,
+     "english": "linen clothes laid by themselves",
+     "kind": "partial",
+     "verses": [
+      42024012
+     ],
+     "es": "Pero levantándose Pedro, corrió al sepulcro: y como miró dentro, vió solos los lienzos echados; y se fué maravillándose de lo que había sucedido.",
+     "pt": "Porém Pedro, levantando-se, correu ao sepulcro; e abaixando-se, viu os tecidos postos separadamente; e saiu maravilhado com o que tinha acontecido."
+    },
+    {
+     "n": 16,
+     "english": "Simon, son of Jonas, lovest thou me?",
+     "kind": "partial",
+     "verses": [
+      43021015
+     ],
+     "es": "Y cuando hubieron comido, Jesús dijo á Simón Pedro: Simón, hijo de Jonás, ¿me amas más que éstos? Dícele: Sí, Señor: tú sabes que te amo. Dícele: Apacienta mis corderos.",
+     "pt": "Havendo eles pois já jantado, disse Jesus a Simão Pedro: Simão filho de Jonas, tu me amas mais do que estes outros ? Disse-lhes ele: Sim, Senhor, tu sabes que te amo. Disse-lhe: Alimenta meus cordeiros."
+    },
+    {
+     "n": 17,
+     "english": "completed the change in Peter himself which the painful discipline of his fall and all the lengthened process of previous training had been slowly making. He is now no more the unreliable, changeful, self-confident man, ever swaying between rash courage and weak timidity, but the stead-fast, trusted guide and director of the fellowship of believers, the intrepid preacher of Christ in Jerusalem and abroad. And now that he is become Cephas indeed, we hear almost nothing of the name Simon (only in Acts 10:5, 32; 15:14), and he is known to us finally as Peter.",
+     "kind": "other"
+    },
+    {
+     "n": 18,
+     "english": "when they had called the apostles and beaten them, let them go.",
+     "kind": "loose",
+     "verses": [
+      44005039,
+      44005040
+     ],
+     "es": "Mas si es de Dios, no la podréis deshacer; no seáis tal vez hallados resistiendo á Dios. Y convinieron con él: y llamando á los apóstoles, después de azotados, les intimaron que no hablasen en el nombre de Jesús, y soltáronlos.",
+     "pt": "Mas se é de Deus, vós não a podereis desfazer; para que não venhais a ser achados de também lutardes contra Deus. E concordaram com ele. E chamando aos apóstolos, tendo os açoitado, mandaram -lhes que não mais falassem no nome de Jesus; e os deixaram ir."
+    },
+    {
+     "n": 19,
+     "english": "rebuked him to his face.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2746,
+   "name": "Simon Zelotes",
+   "sha256": "1d0bf3884d43600d8bb22cd1b3af20ee18f0cbda29fee8c352184412c158b293",
+   "text": "One of the twelve apostles, called the Canaanite (Matt. 10:4; Mark 3:18). This word “Canaanite” does not mean a native of Canaan, but is derived from the Syriac word Kanean or Kaneniah, which was the name of a Jewish sect. The Revised Version has “Cananaean;” marg., “or Zealot” He is also called “Zelotes” (Luke 6:15; Acts 1:13; R.V., “the Zealot”), because previous to his call to the apostleship he had been a member of the fanatical sect of the Zealots. There is no record regarding him.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Canaanite",
+     "kind": "wording",
+     "verses": [
+      40010004
+     ],
+     "es": "Simón el Cananita y Judas Iscariote, que también le entregó.",
+     "pt": "Simão o zeloso, e Judas Iscariotes, o mesmo que o traiu."
+    },
+    {
+     "n": 1,
+     "english": "Cananaean;",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "or Zealot",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "Zelotes",
+     "kind": "wording",
+     "verses": [
+      42006015
+     ],
+     "es": "Mateo y Tomás, Jacobo hijo de Alfeo, y Simón el que se llama Celador,",
+     "pt": "Mateus, Tomé; Tiago filho de Alfeu, e Simão chamado “o Zelote”."
+    },
+    {
+     "n": 4,
+     "english": "the Zealot",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2747,
+   "name": "Simon",
+   "sha256": "03f0d81e05a96077c62b39fc4f4e0c8165fc1e1d3250dee8c06fa223bbd9d9be",
+   "text": "One of the brothers of our Lord (Matt. 13:55; Mark 6:3).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2748,
+   "name": "Simon",
+   "sha256": "233510aa5ec6ce38b4df6273071e45a226452b89a461a4b147551525cf4164d7",
+   "text": "A leper of Bethany, in whose house Mary anointed our Lord’s head with ointment “as he sat at meat” (Matt. 26:6-13; Mark 14:3-9).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "as he sat at meat",
+     "kind": "partial",
+     "verses": [
+      40026007
+     ],
+     "es": "Vino á él una mujer, teniendo un vaso de alabastro de ungüento de gran precio, y lo derramó sobre la cabeza de él, estando sentado á la mesa.",
+     "pt": "veio a ele uma mulher com um vaso de alabastro, de óleo perfumado de grande valor, e derramou sobre a cabeça dele, enquanto estava sentado à mesa."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2749,
+   "name": "Simon",
+   "sha256": "e48f5805ea4e85afa441b5e2651438019926c84f088b0d65c544cfa2487d404e",
+   "text": "A Jew of Cyrene, in North Africa, then a province of Libya. A hundred thousand Jews from Palestine had been settled in this province by Ptolemy Soter (B.C. 323-285), where by this time they had greatly increased in number. They had a synagogue in Jerusalem for such of their number as went thither to the annual feasts. Simon was seized by the soldiers as the procession wended its way to the place of crucifixion as he was passing by, and the heavy cross which Christ from failing strength could no longer bear was laid on his shoulders. Perhaps they seized him because he showed sympathy with Jesus. He was the “father of Alexander and Rufus” (Matt. 27:32). Possibly this Simon may have been one of the “men of Cyrene” who preached the word to the Greeks (Acts 11:20).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "father of Alexander and Rufus",
+     "kind": "unsure",
+     "verses": [
+      41015021
+     ],
+     "es": "Y cargaron á uno que pasaba, Simón Cireneo, padre de Alejandro y de Rufo, que venía del campo, para que llevase su cruz.",
+     "pt": "E forçaram um Simão cireneu, que estava passando, vindo do campo, o pai de Alexandre e de Rufo, para que levasse sua cruz."
+    },
+    {
+     "n": 1,
+     "english": "men of Cyrene",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2750,
+   "name": "Simon",
+   "sha256": "7cdfdf175ec5792d8c04b17ff5bdc3e181b80e9266ca308199e8d23a11941d58",
+   "text": "The father of Judas Iscariot (John 6:71; 13:2, 26).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2752,
+   "name": "Simon the Sorcerer",
+   "sha256": "90cedb4a0d6e37b7135bae0d065dca75a1a2772f8bdab691dc6c4ab4f9dc921b",
+   "text": "A sorcerer of great repute for his magical arts among the Samaritans (Acts 8:9-11). He afterwards became a professed convert to the faith under the preaching of Philip the deacon and evangelist (12, 13). His profession was, however, soon found to be hollow. His conduct called forth from Peter a stern rebuke (8:18-23). From this moment he disappears from the Church’s history. The term “Simony,” as denoting the purchase for money of spiritual offices, is derived from him.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Simony,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2753,
+   "name": "Simon the Tanner",
+   "sha256": "f15f3187017114cb4f2817e1c7380f9b02adc68939004c23fe765b92f0ed51ef",
+   "text": "A Christian at Joppa, a tanner by trade, with whom Peter on one occasion lodged (Acts 9:43).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2754,
+   "name": "Simri",
+   "sha256": "b74c4b20fca4b1a11ac96d1319c878b2c2c5a0425488262f1b5a6a2914107f67",
+   "text": "Watchman, a Levite of the family of Merari (1 Chr. 26:10).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2755,
+   "name": "Sinite",
+   "sha256": "47b860b9c75f13cb58a994f80b2a104bc7bbcc23f325ed4aca4cfe10710df67c",
+   "text": "An inhabitant of Sin, near Arka (Gen. 10:17; 1 Chr. 1:15).",
+   "quotes": []
+  }
+ ],
+ "glossary": {
+  "Abishai": {
+   "es": "Abisai",
+   "pt": "Abisai"
+  },
+  "Abraham": {
+   "pt": "Abraão"
+  },
+  "Absalom": {
+   "pt": "Absalão"
+  },
+  "Adamah": {
+   "es": "Adama",
+   "pt": "Adama"
+  },
+  "Adonijah": {
+   "es": "Adonías (person); Adonía (person)",
+   "pt": "Adonias"
+  },
+  "Adrammelech": {
+   "es": "Adra-melech",
+   "pt": "Adrameleque"
+  },
+  "Agrippa": {
+   "es": "Agripa",
+   "pt": "Agripa"
+  },
+  "Ahasuerus": {
+   "es": "Asuero",
+   "pt": "Assuero"
+  },
+  "Alexander": {
+   "es": "Alejandro",
+   "pt": "Alexandre"
+  },
+  "Ammihud": {
+   "es": "Amiud",
+   "pt": "Amiúde (person); Amiur (person)"
+  },
+  "Andrew": {
+   "es": "Andrés",
+   "pt": "André"
+  },
+  "Antioch": {
+   "es": "Antioquía",
+   "pt": "Antioquia"
+  },
+  "Arnon": {
+   "es": "Arnón",
+   "pt": "Arnom"
+  },
+  "Asher": {
+   "es": "Aser",
+   "pt": "Aser"
+  },
+  "Ashtoreth": {
+   "pt": "Astarote"
+  },
+  "Assyria": {
+   "es": "Asiria",
+   "pt": "Assíria"
+  },
+  "Babylon": {
+   "es": "Babilonia",
+   "pt": "Babilônia"
+  },
+  "Bahurim": {
+   "pt": "Baurim"
+  },
+  "Barnabas": {
+   "es": "Bernabé",
+   "pt": "Barnabé"
+  },
+  "Becher": {
+   "es": "Bequer",
+   "pt": "Bequer"
+  },
+  "Benjamin": {
+   "es": "Benjamín",
+   "pt": "Benjamim"
+  },
+  "Bethany": {
+   "es": "Betania",
+   "pt": "Betânia"
+  },
+  "Bethsaida": {
+   "es": "Betsaida",
+   "pt": "Betsaida"
+  },
+  "Bichri": {
+   "es": "Bicri",
+   "pt": "Bicri"
+  },
+  "Caesarea": {
+   "es": "Cesarea",
+   "pt": "Cesareia"
+  },
+  "Caesarea Philippi": {
+   "es": "Cesarea de Filipo",
+   "pt": "Cesareia de Filipe"
+  },
+  "Caleb": {
+   "pt": "Calebe"
+  },
+  "Canaan": {
+   "es": "Canaán",
+   "pt": "Canaã"
+  },
+  "Capernaum": {
+   "pt": "Cafarnaum"
+  },
+  "Chedorlaomer": {
+   "es": "Quédorlaomer",
+   "pt": "Quedorlaomer"
+  },
+  "Cornelius": {
+   "es": "Cornelio",
+   "pt": "Cornélio"
+  },
+  "Cyrene": {
+   "es": "Cirene",
+   "pt": "Cirene"
+  },
+  "David": {
+   "pt": "Davi"
+  },
+  "Dedan": {
+   "es": "Dedán",
+   "pt": "Dedã"
+  },
+  "Egypt": {
+   "es": "Egipto",
+   "pt": "Egito"
+  },
+  "Elah": {
+   "es": "Ela",
+   "pt": "Elá"
+  },
+  "Eliakim": {
+   "es": "Eliacim (person); Eliaquim (person)",
+   "pt": "Eliaquim"
+  },
+  "Elisha": {
+   "es": "Eliseo",
+   "pt": "Eliseu"
+  },
+  "Esther": {
+   "es": "Ester",
+   "pt": "Ester"
+  },
+  "Euphrates": {
+   "es": "Eufrates",
+   "pt": "Eufrates"
+  },
+  "Ezra": {
+   "es": "Esdras (person); Ezra (person)",
+   "pt": "Esdras (person); Ezra (person)"
+  },
+  "Galilee": {
+   "es": "Galilea",
+   "pt": "Galileia"
+  },
+  "Gath": {
+   "es": "Gat",
+   "pt": "Gate"
+  },
+  "Gedaliah": {
+   "es": "Gedalías",
+   "pt": "Gedalias"
+  },
+  "Gershom": {
+   "es": "Gersón",
+   "pt": "Gérson"
+  },
+  "Gershon": {
+   "es": "Gersón",
+   "pt": "Gérson"
+  },
+  "Gethsemane": {
+   "es": "Getsemaní",
+   "pt": "Getsêmani"
+  },
+  "Gibeon": {
+   "es": "Gabaón",
+   "pt": "Gibeom (person); Gibeão (place)"
+  },
+  "Gob": {
+   "pt": "Gobe"
+  },
+  "Hadarezer": {
+   "es": "Adarezer",
+   "pt": "Hadadezer"
+  },
+  "Hananiah": {
+   "es": "Hananías (person); Hananía (person); Hanani (person); Ananías (person)",
+   "pt": "Hananias (person); Hanani (person); Ananias (person)"
+  },
+  "Heber": {
+   "pt": "Héber"
+  },
+  "Hebron": {
+   "es": "Hebrón",
+   "pt": "Hebrom"
+  },
+  "Heman": {
+   "es": "Hemán (person); Emán (person)",
+   "pt": "Hemã"
+  },
+  "Hermon": {
+   "es": "Hermón",
+   "pt": "Hermom"
+  },
+  "Herod": {
+   "es": "Herodes",
+   "pt": "Herodes"
+  },
+  "Hezekiah": {
+   "es": "Ezequías",
+   "pt": "Ezequias"
+  },
+  "Hezron": {
+   "es": "Hezrón (person); Hesrón (person); Hebrón (place)",
+   "pt": "Hezrom (person); Hebrom (place)"
+  },
+  "Hilkiah": {
+   "es": "Hilcías",
+   "pt": "Hilquias"
+  },
+  "Hivite": {
+   "es": "Heveo"
+  },
+  "Huldah": {
+   "es": "Hulda",
+   "pt": "Hulda"
+  },
+  "Hur": {
+   "pt": "Hur (person); Ben-Hur (person)"
+  },
+  "Issachar": {
+   "es": "Isacar",
+   "pt": "Issacar"
+  },
+  "Jabbok": {
+   "es": "Jaboc",
+   "pt": "Jaboque"
+  },
+  "Jacob": {
+   "pt": "Jacó"
+  },
+  "James": {
+   "es": "Jacobo",
+   "pt": "Tiago"
+  },
+  "Japheth": {
+   "es": "Jafet",
+   "pt": "Jafé"
+  },
+  "Jehoiakim": {
+   "es": "Joacim",
+   "pt": "Jeoaquim"
+  },
+  "Jehoshaphat": {
+   "es": "Josafat",
+   "pt": "Josafá"
+  },
+  "Jehozabad": {
+   "es": "Jozabad",
+   "pt": "Jozabade"
+  },
+  "Jeremiah": {
+   "es": "Jeremías",
+   "pt": "Jeremias"
+  },
+  "Jeroboam": {
+   "pt": "Jeroboão"
+  },
+  "Jerusalem": {
+   "es": "Jerusalén",
+   "pt": "Jerusalém"
+  },
+  "Jesse": {
+   "es": "Isaí",
+   "pt": "Jessé"
+  },
+  "Jesus": {
+   "es": "Jesús"
+  },
+  "Joab": {
+   "pt": "Joabe"
+  },
+  "Joash": {
+   "es": "Joas",
+   "pt": "Joás"
+  },
+  "John": {
+   "es": "Juan",
+   "pt": "João"
+  },
+  "John the Baptist": {
+   "es": "Juan el Bautista",
+   "pt": "João Batista"
+  },
+  "Jokshan": {
+   "es": "Joksan",
+   "pt": "Jocsã"
+  },
+  "Joktan": {
+   "es": "Joctán",
+   "pt": "Joctã"
+  },
+  "Jonas": {
+   "es": "Jonás"
+  },
+  "Joppa": {
+   "es": "Jope",
+   "pt": "Jope"
+  },
+  "Jordan": {
+   "es": "Jordán",
+   "pt": "Jordão"
+  },
+  "Joseph": {
+   "es": "José (person); Josef (person); Jefone (person)",
+   "pt": "José"
+  },
+  "Josiah": {
+   "es": "Josías",
+   "pt": "Josias"
+  },
+  "Judah": {
+   "es": "Judá (person); Jehudas (person)",
+   "pt": "Judá"
+  },
+  "Judas Iscariot": {
+   "es": "Judas Iscariote",
+   "pt": "Judas Iscariotes"
+  },
+  "Judea": {
+   "pt": "Judeia"
+  },
+  "Keturah": {
+   "es": "Cetura",
+   "pt": "Quetura"
+  },
+  "Leah": {
+   "es": "Lea",
+   "pt": "Lia"
+  },
+  "Levi": {
+   "es": "Leví"
+  },
+  "Libya": {
+   "es": "Libia",
+   "pt": "Líbia"
+  },
+  "Lydda": {
+   "es": "Lida",
+   "pt": "Lida"
+  },
+  "Mahanaim": {
+   "pt": "Maanaim"
+  },
+  "Malchus": {
+   "es": "Malco",
+   "pt": "Malco"
+  },
+  "Manasseh": {
+   "es": "Manasés",
+   "pt": "Manassés"
+  },
+  "Mary": {
+   "es": "María",
+   "pt": "Maria"
+  },
+  "Nahash": {
+   "es": "Naas",
+   "pt": "Naás"
+  },
+  "Noah": {
+   "es": "Noé (person); Noa (person)",
+   "pt": "Noé (person); Noa (person)"
+  },
+  "Og": {
+   "pt": "Ogue"
+  },
+  "On": {
+   "es": "Hon (person); On (place)",
+   "pt": "Om"
+  },
+  "Paul": {
+   "es": "Pablo",
+   "pt": "Paulo"
+  },
+  "Pedaiah": {
+   "es": "Pedaía (person); Pedaías (person); Pedaia (person)",
+   "pt": "Pedaías"
+  },
+  "Philip": {
+   "es": "Felipe",
+   "pt": "Filipe"
+  },
+  "Philippi": {
+   "es": "Filipos",
+   "pt": "Filipos"
+  },
+  "Raamah": {
+   "es": "Raama",
+   "pt": "Raamá"
+  },
+  "Rabbah": {
+   "es": "Raba",
+   "pt": "Rabá"
+  },
+  "Rehoboam": {
+   "es": "Roboam",
+   "pt": "Roboão"
+  },
+  "Rehum": {
+   "pt": "Reum"
+  },
+  "Rome": {
+   "es": "Roma",
+   "pt": "Roma"
+  },
+  "Rufus": {
+   "es": "Rufo",
+   "pt": "Rufo"
+  },
+  "Salome": {
+   "es": "Salomé",
+   "pt": "Salomé"
+  },
+  "Saul": {
+   "es": "Saúl"
+  },
+  "Sea of Galilee": {
+   "es": "Mar de Galilea",
+   "pt": "Mar da Galileia"
+  },
+  "Sennacherib": {
+   "es": "Senaquérib",
+   "pt": "Senaqueribe"
+  },
+  "Shamer": {
+   "es": "Semer",
+   "pt": "Semer"
+  },
+  "Sharar": {
+   "es": "Sarar"
+  },
+  "Sheba": {
+   "es": "Seba",
+   "pt": "Sebá (person); Sabá (person); Seba (person)"
+  },
+  "Shebaniah": {
+   "es": "Sebanías",
+   "pt": "Sebanias"
+  },
+  "Shebna": {
+   "es": "Sebna",
+   "pt": "Sebna"
+  },
+  "Shem": {
+   "es": "Sem",
+   "pt": "Sem"
+  },
+  "Shemaiah": {
+   "es": "Semeías",
+   "pt": "Semaías (person); Samaías (person); Semeías (person)"
+  },
+  "Shimeah": {
+   "es": "Simea",
+   "pt": "Simeia"
+  },
+  "Shimei": {
+   "es": "Simi (person); Semei (person)",
+   "pt": "Simei"
+  },
+  "Shimrith": {
+   "es": "Simrit"
+  },
+  "Shimron": {
+   "es": "Simrón",
+   "pt": "Sinrom"
+  },
+  "Shishak": {
+   "es": "Sisac",
+   "pt": "Sisaque"
+  },
+  "Shubael": {
+   "es": "Sebuel (person); Subael (person)",
+   "pt": "Sebuel (person); Subael (person)"
+  },
+  "Sibbechai": {
+   "es": "Sibecai",
+   "pt": "Sibecai"
+  },
+  "Sidon": {
+   "es": "Sidón",
+   "pt": "Sidom"
+  },
+  "Sihon": {
+   "es": "Sehón",
+   "pt": "Seom"
+  },
+  "Simeon": {
+   "es": "Simeón (person); Simón (person)",
+   "pt": "Simeão"
+  },
+  "Simon": {
+   "es": "Simón",
+   "pt": "Simão"
+  },
+  "Sin": {
+   "pt": "Sim"
+  },
+  "Solomon": {
+   "es": "Salomón",
+   "pt": "Salomão"
+  },
+  "Thebes": {
+   "es": "Tebas",
+   "pt": "Tebas"
+  },
+  "Tobiah": {
+   "es": "Tobías",
+   "pt": "Tobias"
+  },
+  "Tyre": {
+   "es": "Tiro",
+   "pt": "Tiro"
+  },
+  "Urijah": {
+   "es": "Urías",
+   "pt": "Urias"
+  },
+  "Zebedee": {
+   "es": "Zebedeo",
+   "pt": "Zebedeu"
+  },
+  "Zeboiim": {
+   "es": "Zeboim",
+   "pt": "Zeboim"
+  },
+  "Zedekiah": {
+   "es": "Sedequías (person); Sedecías (person)",
+   "pt": "Zedequias"
+  },
+  "Zerubbabel": {
+   "es": "Zorobabel",
+   "pt": "Zorobabel"
+  },
+  "Zidon": {
+   "es": "Sidón",
+   "pt": "Sidom"
+  },
+  "Ziklag": {
+   "es": "Siclag",
+   "pt": "Ziclague"
+  }
+ }
+}

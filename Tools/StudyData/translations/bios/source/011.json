@@ -1,0 +1,1549 @@
+{
+ "batch": "011",
+ "entries": [
+  {
+   "kind": "person",
+   "id": 1208,
+   "name": "Ephron",
+   "sha256": "e5c11a6498c5323f4dac11c0d820b17aeed0affb2e525ad2f908706560e5e339",
+   "text": "The son of Zohar a Hittite, the owner of the field and cave of Machpelah (q.v.), which Abraham bought for 400 shekels of silver (Gen. 23:8-17; 25:9; 49:29, 30).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1213,
+   "name": "Erastus",
+   "sha256": "e905b8dd6c60483028aeb7da065cd64ac0d6e4871665e001a169b63fc0d1459e",
+   "text": "A companion of Paul at Ephesus, who was sent by him along with Timothy into Macedonia (Acts 19:22). Corinth was his usual place of abode (2 Tim. 4:20); but probably he may have been the same as the preceding.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1216,
+   "name": "Esau (Edom)",
+   "sha256": "0ab75dd1a8ef1d6bc4c66ab9533ab92cca88e6593cff1cb057340a75525a0221",
+   "text": "Hairy, Rebekah’s first-born twin son (Gen. 25:25). The name of Edom, “red”, was also given to him from his conduct in connection with the red lentil “pottage” for which he sold his birthright (30, 31). The circumstances connected with his birth foreshadowed the enmity which afterwards subsisted between the twin brothers and the nations they founded (25:22, 23, 26). In process of time Jacob, following his natural bent, became a shepherd; while Esau, a “son of the desert,” devoted himself to the perilous and toilsome life of a huntsman. On a certain occasion, on returning from the chase, urged by the cravings of hunger, Esau sold his birthright to his brother, Jacob, who thereby obtained the covenant blessing (Gen. 27:28, 29, 36; Heb. 12:16, 17). He afterwards tried to regain what he had so recklessly parted with, but was defeated in his attempts through the stealth of his brother (Gen. 27:4, 34, 38).\n\n At the age of forty years, to the great grief of his parents, he married (Gen. 26:34, 35) two Canaanitish maidens, Judith, the daughter of Beeri, and Bashemath, the daughter of Elon. When Jacob was sent away to Padan-aram, Esau tried to conciliate his parents (Gen. 28:8, 9) by marrying his cousin Mahalath, the daughter of Ishmael. This led him to cast in his lot with the Ishmaelite tribes; and driving the Horites out of Mount Seir, he settled in that region. After some thirty years’ sojourn in Padan-aram Jacob returned to Canaan, and was reconciled to Esau, who went forth to meet him (33:4). Twenty years after this, Isaac their father died, when the two brothers met, probably for the last time, beside his grave (35:29). Esau now permanently left Canaan, and established himself as a powerful and wealthy chief in the land of Edom (q.v.).\n\n Long after this, when the descendants of Jacob came out of Egypt, the Edomites remembered the old quarrel between the brothers, and with fierce hatred they warred against Israel.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "red",
+     "kind": "wording",
+     "verses": [
+      1025025
+     ],
+     "es": "Y salió el primero rubio, y todo él velludo como una pelliza; y llamaron su nombre Esaú.",
+     "pt": "E saiu o primeiro ruivo, e todo ele peludo como uma veste; e chamaram seu nome Esaú."
+    },
+    {
+     "n": 1,
+     "english": "pottage",
+     "kind": "wording",
+     "verses": [
+      1025029
+     ],
+     "es": "Y guisó Jacob un potaje; y volviendo Esaú del campo cansado,",
+     "pt": "E cozinhou Jacó um guisado; e voltando Esaú do campo cansado,"
+    },
+    {
+     "n": 2,
+     "english": "son of the desert,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1218,
+   "name": "Eshcol",
+   "sha256": "a56b04d16c1558e1c6b522ec42f94fa73176b09f2c5cbc79c51d97b1d14e948c",
+   "text": "A young Amoritish chief who joined Abraham in the recovery of Lot from the hands of Chedorlaomer (Gen. 14:13, 24).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1222,
+   "name": "Ethan",
+   "sha256": "ec90dbdf1d358495b74b314c53224da2ca408dcb0a0c16efe166636354b27bec",
+   "text": "“The Ezrahite,” distinguished for his wisdom (1 Kings 4:31). He is named as the author of the 89th Psalm. He was of the tribe of Levi.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "The Ezrahite,",
+     "kind": "wording",
+     "verses": [
+      11004031
+     ],
+     "es": "Y aun fué más sabio que todos los hombres; más que Ethán Ezrahita, y que Emán y Calchôl y Darda, hijos de Mahol: y fué nombrado entre todas las naciones de alrededor.",
+     "pt": "E ainda foi mais sábio que todos os homens; mais que Etã ezraíta, e que Hemã e Calcol e Darda, filhos de Maol: e foi nomeado entre todas as nações de ao redor."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1224,
+   "name": "Jeduthun (Ethan)",
+   "sha256": "7e77314d54000633fc0f3ad34f8b596821cf4ced4826f4a5eb65bce7884a98c2",
+   "text": "A Levite of the family of Merari, one of the leaders of the temple music (1 Chr. 6:44; 15:17, 19). He was probably the same as Jeduthun. He is supposed by some to be the same also as (1).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1225,
+   "name": "Ethbaal",
+   "sha256": "52e22ad8afcbe88b554d34cc0acad67dda99f48ae3a944ed1a2b4d85eef70a42",
+   "text": "With Baal, a king of Sidon (B.C. 940-908), father of Jezebel, who was the wife of Ahab (1 Kings 16:31). He is said to have been also a priest of Astarte, whose worship was closely allied to that of Baal, and this may account for his daughter’s zeal in promoting idolatry in Israel. This marriage of Ahab was most fatal to both Israel and Judah. Dido, the founder of Carthage, was his granddaughter.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1229,
+   "name": "Euodias",
+   "sha256": "cc9124ec7ae638dc9fcfe51c9530c2178a7fc8d02265dd6622a8d246cc76996b",
+   "text": "A good journey, a female member of the church at Philippi. She was one who laboured much with Paul in the gospel. He exhorts her to be of one mind with Syntyche (Phil. 4:2). From this it seems they had been at variance with each other.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1230,
+   "name": "Eutychus",
+   "sha256": "e656b9554b12a3b96184e07009a0ee5389de4b81db5f3a75381a3837c409649b",
+   "text": "Fortunate, (Acts 20:9-12), a young man of Troas who fell through drowsiness from the open window of the third floor of the house where Paul was preaching, and was “taken up dead.” The lattice-work of the window being open to admit the air, the lad fell out and down to the court below. Paul restored him to life again. (Comp. 1 Kings 17:21; 2 Kings 4:34.)",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "taken up dead.",
+     "kind": "partial",
+     "verses": [
+      44020009
+     ],
+     "es": "Y un mancebo llamado Eutichô que estaba sentado en la ventana, tomado de un sueño profundo, como Pablo disputaba largamente, postrado del sueño cayó del tercer piso abajo, y fué alzado muerto.",
+     "pt": "E estando um certo rapaz, de nome Êutico, sentado em uma janela, tendo sido tomado por um sono profundo, e ,estando Paulo ainda falando por muito tempo ,Êutico ,derrubado pelo sono, caiu desde o terceiro andar abaixo; e foi levantado morto."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1231,
+   "name": "Eve",
+   "sha256": "4032258735f515efaa88e8456669ffaa506a34f40014a7004d4b111c473e960a",
+   "text": "Life; living, the name given by Adam to his wife (Gen. 3:20; 4:1). The account of her creation is given in Gen. 2:21, 22. The Creator, by declaring that it was not good for man to be alone, and by creating for him a suitable companion, gave sanction to monogamy. The commentator Matthew Henry says: “This companion was taken from his side to signify that she was to be dear unto him as his own flesh. Not from his head, lest she should rule over him; nor from his feet, lest he should tyrannize over her; but from his side, to denote that species of equality which is to subsist in the marriage state.” And again, “That wife that is of God’s making by special grace, and of God’s bringing by special providence, is likely to prove a helpmeet to her husband.” Through the subtle temptation of the serpent she violated the commandment of God by taking of the forbidden fruit, which she gave also unto her husband (1 Tim. 2:13-15; 2 Cor. 11:3). When she gave birth to her first son, she said, “I have gotten a man from the Lord” (R.V., “I have gotten a man with the help of the Lord,” Gen. 4:1). Thus she welcomed Cain, as some think, as if he had been the Promised One the “Seed of the woman.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "This companion was taken from his side to signify that she was to be dear unto him as his own flesh. Not from his head, lest she should rule over him; nor from his feet, lest he should tyrannize over her; but from his side, to denote that species of equality which is to subsist in the marriage state.",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "That wife that is of God’s making by special grace, and of God’s bringing by special providence, is likely to prove a helpmeet to her husband.",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "I have gotten a man from the Lord",
+     "kind": "partial",
+     "verses": [
+      1004001
+     ],
+     "es": "Y CONOCIÓ Adam á su mujer Eva, la cual concibió y parió á Caín, y dijo: Adquirido he varón por Jehová.",
+     "pt": "E Adão conheceu a sua mulher Eva, a qual concebeu e deu à luz a Caim, e disse: Obtive um homem pelo SENHOR."
+    },
+    {
+     "n": 3,
+     "english": "I have gotten a man with the help of the Lord,",
+     "kind": "loose",
+     "verses": [
+      14014010,
+      14014011
+     ],
+     "es": "Entonces salió Asa contra él, y ordenaron la batalla en el valle de Sephata junto á Maresa. Y clamó Asa á Jehová su Dios, y dijo: Jehová, no tienes tú más con el grande que con el que ninguna fuerza tiene, para dar ayuda. Ayúdanos, oh Jehová Dios nuestro, porque en ti nos apoyamos, y en tu nombre venimos contra este ejército. Oh Jehová, tú eres nuestro Dios: no prevalezca contra ti el hombre.",
+     "pt": "Então saiu Asa contra ele, e ordenaram a batalha no vale de Zefatá junto a Maressa. E clamou Asa ao SENHOR seu Deus, e disse: SENHOR, ninguém há mais que a ti para dar ajuda entre o grande e o que nenhuma força tem. Ajuda-nos, ó SENHOR Deus nosso, porque em ti nos apoiamos, e em teu nome viemos contra este exército. Ó SENHOR, tu és nosso Deus; não prevaleça contra ti o homem."
+    },
+    {
+     "n": 4,
+     "english": "Seed of the woman.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1233,
+   "name": "Evil-merodach",
+   "sha256": "30b7041057d5570752df3eee3223377aa4d554be3e6a3bbbefa7dcfd5e625ad6",
+   "text": "Merodach’s man, the son and successor of Nebuchadnezzar, king of Babylon (2 Kings 25:27; Jer. 52:31, 34). He seems to have reigned but two years (B.C. 562-560). Influenced probably by Daniel, he showed kindness to Jehoiachin, who had been a prisoner in Babylon for thirty-seven years. He released him, and “spoke kindly to him.” He was murdered by Nergal-sharezer=Neriglissar, his brother-in-law, who succeeded him (Jer. 39:3, 13).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "spoke kindly to him.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1235,
+   "name": "Ozni",
+   "sha256": "4f013d3a790652fa3131a5973229e0816620181402d3177f0a5e8257345bcf6e",
+   "text": "Hearing, one of the sons of Gad; also called Ezbon (Gen. 46:16; Num. 26:16).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1237,
+   "name": "Ezekiel",
+   "sha256": "38813cdbb0122e74fb0bb65caaae95ca986c6ffd76df5e77ecd049f6f118802c",
+   "text": "One of the great prophets, the son of Buzi the priest (Ezek. 1:3). He was one of the Jewish exiles who settled at Tel-Abib, on the banks of the Chebar, “in the land of the Chaldeans.” He was probably carried away captive with Jehoiachin (1:2; 2 Kings 24:14-16) about B.C. 597. His prophetic call came to him “in the fifth year of Jehoiachin’s captivity” (B.C. 594). He had a house in the place of his exile, where he lost his wife, in the ninth year of his exile, by some sudden and unforeseen stroke (Ezek. 8:1; 24:18). He held a prominent place among the exiles, and was frequently consulted by the elders (8:1; 11:25; 14:1; 20:1). His ministry extended over twenty-three years (29:17), B.C. 595-573, during part of which he was contemporary with Daniel (14:14; 28:3) and Jeremiah, and probably also with Obadiah. The time and manner of his death are unknown. His reputed tomb is pointed out in the neighbourhood of Bagdad, at a place called Keffil.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "in the land of the Chaldeans.",
+     "kind": "partial",
+     "verses": [
+      26001003
+     ],
+     "es": "Fué palabra de Jehová á Ezequiel sacerdote, hijo de Buzi, en la tierra de los Caldeos, junto al río de Chebar; fué allí sobre él la mano de Jehová.",
+     "pt": "verdadeiramente veio a palavra do SENHOR ao sacerdote Ezequiel, filho de Buzi, na terra dos caldeus, junto ao rio Quebar; e ali a mão do SENHOR esteve sobre ele."
+    },
+    {
+     "n": 1,
+     "english": "in the fifth year of Jehoiachin’s captivity",
+     "kind": "loose",
+     "verses": [
+      26001001,
+      26001002
+     ],
+     "es": "Y FUÉ que á los treinta años, en el mes cuarto, á cinco del mes, estando yo en medio de los trasportados junto al río de Chebar, los cielos se abrieron, y vi visiones de Dios. A los cinco del mes, que fué en el quinto año de la transmigración del rey Joachîn,",
+     "pt": "E sucedeu que, aos trinta anos, no quarto mês , aos cinco do mês, estando eu em meio dos exilados, junto ao rio Quebar, os céus se abriram, e vi visões de Deus. Aos cinco do mês, que foi no quinto ano do cativeiro do rei Joaquim,"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1238,
+   "name": "Ezer",
+   "sha256": "b2f84ea31f8bdc2ebf325e4beaa6b8de80fb6ba3e3bd63820ee21af5b982a744",
+   "text": "One of the sons of Seir, the native princes, “dukes,” of Mount Hor (Gen. 36:21, 27).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "dukes,",
+     "kind": "wording",
+     "verses": [
+      1036019
+     ],
+     "es": "Estos, pues, son los hijos de Esaú, y sus duques: él es Edom.",
+     "pt": "Estes, pois, são os filhos de Esaú, e seus duques: ele é Edom."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1240,
+   "name": "Ezer",
+   "sha256": "cd210e335db0ab88394bf6110e539e37bfcca710ca81380884246ef9e5205b51",
+   "text": "1 Chr. 7:21; (3.) 4:4.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1242,
+   "name": "Ezer",
+   "sha256": "ad2d74673e130ffdd9a9a5922a30bbd554346ff49dd877a3d373e897aa8d80c2",
+   "text": "A Levite (Neh. 3:19).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1245,
+   "name": "Ezra",
+   "sha256": "d967034f1a1261f6df90c15c446db252fb073760dc6b0b226603d7098ad5c6f5",
+   "text": "The “scribe” who led the second body of exiles that returned from Babylon to Jerusalem B.C. 459, and author of the book of Scripture which bears his name. He was the son, or perhaps grandson, of Seraiah (2 Kings 25:18-21), and a lineal descendant of Phinehas, the son of Aaron (Ezra 7:1-5). All we know of his personal history is contained in the last four chapters of his book, and in Neh. 8 and 12:26.\n\n In the seventh year of the reign of Artaxerxes Longimanus (see DARIUS), he obtained leave to go up to Jerusalem and to take with him a company of Israelites (Ezra 8). Artaxerxes manifested great interest in Ezra’s undertaking, granting him “all his request,” and loading him with gifts for the house of God. Ezra assembled the band of exiles, probably about 5,000 in all, who were prepared to go up with him to Jerusalem, on the banks of the Ahava, where they rested for three days, and were put into order for their march across the desert, which was completed in four months. His proceedings at Jerusalem on his arrival there are recorded in his book.\n\n He was “a ready scribe in the law of Moses,” who “had prepared his heart to seek the law of the Lord and to do it, and to teach in Israel statutes and judgments.” “He is,” says Professor Binnie, “the first well-defined example of an order of men who have never since ceased in the church; men of sacred erudition, who devote their lives to the study of the Holy Scriptures, in order that they may be in a condition to interpret them for the instruction and edification of the church. It is significant that the earliest mention of the pulpit occurs in the history of Ezra’s ministry (Neh. 8:4). He was much more of a teacher than a priest. We learn from the account of his labours in the book of Nehemiah that he was careful to have the whole people instructed in the law of Moses; and there is no reason to reject the constant tradition of the Jews which connects his name with the collecting and editing of the Old Testament canon. The final completion of the canon may have been, and probably was, the work of a later generation; but Ezra seems to have put it much into the shape in which it is still found in the Hebrew Bible. When it is added that the complete organization of the synagogue dates from this period, it will be seen that the age was emphatically one of Biblical study” (The Psalms: their History, etc.).\n\n For about fourteen years, i.e., till B.C. 445, we have no record of what went on in Jerusalem after Ezra had set in order the ecclesiastical and civil affairs of the nation. In that year another distinguished personage, Nehemiah, appears on the scene. After the ruined wall of the city had been built by Nehemiah, there was a great gathering of the people at Jerusalem preparatory to the dedication of the wall. On the appointed day the whole population assembled, and the law was read aloud to them by Ezra and his assistants (Neh. 8:3). The remarkable scene is described in detail. There was a great religious awakening. For successive days they held solemn assemblies, confessing their sins and offering up solemn sacrifices. They kept also the feast of Tabernacles with great solemnity and joyous enthusiasm, and then renewed their national covenant to be the Lord’s. Abuses were rectified, and arrangements for the temple service completed, and now nothing remained but the dedication of the walls of the city (Neh. 12).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "scribe",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "all his request,",
+     "kind": "unsure",
+     "verses": [
+      15007006
+     ],
+     "es": "Este Esdras subió de Babilonia, el cual era escriba diligente en la ley de Moisés, que Jehová Dios de Israel había dado; y concedióle el rey, según la mano de Jehová su Dios sobre él, todo lo que pidió.",
+     "pt": "este Esdras subiu da Babilônia; e ele era escriba habilidoso na lei de Moisés, dada pelo SENHOR Deus de Israel; e segundo a mão do SENHOR, seu Deus, sobre ele, o rei lhe deu tudo quanto lhe pedira."
+    },
+    {
+     "n": 2,
+     "english": "a ready scribe in the law of Moses,",
+     "kind": "partial",
+     "verses": [
+      15007006
+     ],
+     "es": "Este Esdras subió de Babilonia, el cual era escriba diligente en la ley de Moisés, que Jehová Dios de Israel había dado; y concedióle el rey, según la mano de Jehová su Dios sobre él, todo lo que pidió.",
+     "pt": "este Esdras subiu da Babilônia; e ele era escriba habilidoso na lei de Moisés, dada pelo SENHOR Deus de Israel; e segundo a mão do SENHOR, seu Deus, sobre ele, o rei lhe deu tudo quanto lhe pedira."
+    },
+    {
+     "n": 3,
+     "english": "had prepared his heart to seek the law of the Lord and to do it, and to teach in Israel statutes and judgments.",
+     "kind": "partial",
+     "verses": [
+      15007010
+     ],
+     "es": "Porque Esdras había preparado su corazón para inquirir la ley de Jehová, y para hacer y enseñar á Israel mandamientos y juicios.",
+     "pt": "Porque Esdras tinha decidido em seu coração buscar a lei do SENHOR, e a praticar; e ensinar a Israel seus estatutos e juízos."
+    },
+    {
+     "n": 4,
+     "english": "He is,",
+     "kind": "other"
+    },
+    {
+     "n": 5,
+     "english": "the first well-defined example of an order of men who have never since ceased in the church; men of sacred erudition, who devote their lives to the study of the Holy Scriptures, in order that they may be in a condition to interpret them for the instruction and edification of the church. It is significant that the earliest mention of the pulpit occurs in the history of Ezra’s ministry (Neh. 8:4). He was much more of a teacher than a priest. We learn from the account of his labours in the book of Nehemiah that he was careful to have the whole people instructed in the law of Moses; and there is no reason to reject the constant tradition of the Jews which connects his name with the collecting and editing of the Old Testament canon. The final completion of the canon may have been, and probably was, the work of a later generation; but Ezra seems to have put it much into the shape in which it is still found in the Hebrew Bible. When it is added that the complete organization of the synagogue dates from this period, it will be seen that the age was emphatically one of Biblical study",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1246,
+   "name": "Ezra",
+   "sha256": "c4a6eced6117db261369611e668475bf6adc5f5d73cb0808a91f4c36dabb3f26",
+   "text": "A priest among those that returned to Jerusalem under Zerubabel (Neh. 12:1).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1247,
+   "name": "Ezri",
+   "sha256": "ae3dd8e225dc6c7889a0774e6ac434dfbc86cff8003f820a9390248c85f9dd30",
+   "text": "Help of Jehovah, the son of Chelub. He superintended, under David, those who “did the work of the field for tillage” (1 Chr. 27:26).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "did the work of the field for tillage",
+     "kind": "partial",
+     "verses": [
+      13027026
+     ],
+     "es": "Y de los que trabajaban en la labranza de las tierras, Ezri hijo de Chêlud;",
+     "pt": "E dos que trabalhavam na lavoura das terras, Ezri filho de Quelube;"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1257,
+   "name": "Felix",
+   "sha256": "b4b8bad3fa086cbb29cecf8d5bc16ea8cfff2abe5345fa08c35fc974ba1161be",
+   "text": "Happy, the Roman procurator of Judea before whom Paul “reasoned” (Acts 24:25). He appears to have expected a bribe from Paul, and therefore had several interviews with him. The “worthy deeds” referred to in 24:2 was his clearing the country of banditti and impostors.\n\n At the end of a two years’ term, Porcius Festus was appointed in the room of Felix (A.D. 60), who proceeded to Rome, and was there accused of cruelty and malversation of office by the Jews of Caesarea. The accusation was rendered nugatory by the influence of his brother Pallas with Nero. (See Josephus, Ant. xx. 8, 9.)\n\n Drusilla, the daughter of Herod Agrippa, having been induced by Felix to desert her husband, the king of Emesa, became his adulterous companion. She was seated beside him when Paul “reasoned” before the judge. When Felix gave place to Festus, being “willing to do the Jews a pleasure,” he left Paul bound.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "reasoned",
+     "kind": "wording",
+     "verses": [
+      44024025
+     ],
+     "es": "Y disertando él de la justicia, y de la continencia, y del juicio venidero, espantado Félix, respondió: Ahora vete; mas en teniendo oportunidad te llamaré:",
+     "pt": "E ele, tendo discursado sobre a justiça, o domínio próprio, e o julgamento que está por vir, Félix temeu, e respondeu: Por agora vai; e tendo outra oportunidade, eu te chamarei."
+    },
+    {
+     "n": 1,
+     "english": "worthy deeds",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "reasoned",
+     "kind": "wording",
+     "verses": [
+      44024025
+     ],
+     "es": "Y disertando él de la justicia, y de la continencia, y del juicio venidero, espantado Félix, respondió: Ahora vete; mas en teniendo oportunidad te llamaré:",
+     "pt": "E ele, tendo discursado sobre a justiça, o domínio próprio, e o julgamento que está por vir, Félix temeu, e respondeu: Por agora vai; e tendo outra oportunidade, eu te chamarei."
+    },
+    {
+     "n": 3,
+     "english": "willing to do the Jews a pleasure,",
+     "kind": "partial",
+     "verses": [
+      44025009
+     ],
+     "es": "Mas Festo, queriendo congraciarse con los Judíos, respondiendo á Pablo, dijo: ¿Quieres subir á Jerusalem, y allá ser juzgado de estas cosas delante de mí?",
+     "pt": "Mas Festo, querendo agradar aos judeus, respondendo a Paulo, disse: Tu queres subir a Jerusalém e ser julgado sobre estas coisas diante de mim?"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1258,
+   "name": "Fortunatus",
+   "sha256": "362ddf3aa918e092b37f80a6bf033427d77ea27c6659db043dfc45da0f6dea08",
+   "text": "Fortunate, a disciple of Corinth who visited Paul at Ephesus, and returned with Stephanas and Achaicus, the bearers of the apostle’s first letter to the Corinthians (1 Cor. 16:17).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1259,
+   "name": "Gaal",
+   "sha256": "e18ecb57e2e98ee4e4f4834a689463ba2094012ac353d0b3765a4e83d1529882",
+   "text": "Loathing, the son of Ebed, in whom the Shechemites “placed their confidence” when they became discontented with Abimelech. He headed the revolution, and led out the men of Shechem against Abimelech; but was defeated, and fled to his own home (Judg. 9:26-46). We hear no more of him after this battle.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "placed their confidence",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1261,
+   "name": "Gabriel",
+   "sha256": "b9b0b7a550fe3fc8eaabc13d3d046707e0994e1de1960bfca13d5aafd51fd6cc",
+   "text": "Champion of God, used as a proper name to designate the angel who was sent to Daniel (8:16) to explain the vision of the ram and the he-goat, and to communicate the prediction of the seventy weeks (Dan. 9:21-27).\n\n He announced also the birth of John the Baptist (Luke 1:11), and of the Messiah (26). He describes himself in the words, “I am Gabriel, who stand in the presence of God” (1:19).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "I am Gabriel, who stand in the presence of God",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1262,
+   "name": "Gad",
+   "sha256": "ba176b7ed789433eb21f7c30e57f804539f9f846d59891a401f1b4f4c2ecd5ce",
+   "text": "Jacob’s seventh son, by Zilpah, Leah’s handmaid, and the brother of Asher (Gen. 30:11-13; 46:16, 18). In the Authorized Version of 30:11 the words, “A troop cometh: and she called,” etc., should rather be rendered, “In fortune [R.V., ‘Fortunate’]: and she called,” etc., or “Fortune cometh,” etc.\n\n The tribe of Gad during the march through the wilderness had their place with Simeon and Reuben on the south side of the tabernacle (Num. 2:14). The tribes of Reuben and Gad continued all through their history to follow the pastoral pursuits of the patriarchs (Num. 32:1-5).\n\n The portion allotted to the tribe of Gad was on the east of Jordan, and comprehended the half of Gilead, a region of great beauty and fertility (Deut. 3:12), bounded on the east by the Arabian desert, on the west by the Jordan (Josh. 13:27), and on the north by the river Jabbok. It thus included the whole of the Jordan valley as far north as to the Sea of Galilee, where it narrowed almost to a point.\n\n This tribe was fierce and warlike; they were “strong men of might, men of war for the battle, that could handle shield and buckler, their faces the faces of lions, and like roes upon the mountains for swiftness” (1 Chr. 12:8; 5:19-22). Barzillai (2 Sam. 17:27) and Elijah (1 Kings 17:1) were of this tribe. It was carried into captivity at the same time as the other tribes of the northern kingdom by Tiglath-pileser (1 Chr. 5:26), and in the time of Jeremiah (49:1) their cities were inhabited by the Ammonites.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "A troop cometh: and she called,",
+     "kind": "partial",
+     "verses": [
+      1030011
+     ],
+     "es": "Y dijo Lea: Vino la ventura. Y llamó su nombre Gad.",
+     "pt": "E disse Lia: Veio a boa sorte. E chamou seu nome Gade."
+    },
+    {
+     "n": 1,
+     "english": "In fortune [R.V., ‘Fortunate’]: and she called,",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "Fortune cometh,",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "strong men of might, men of war for the battle, that could handle shield and buckler, their faces the faces of lions, and like roes upon the mountains for swiftness",
+     "kind": "loose",
+     "verses": [
+      13012007,
+      13012008
+     ],
+     "es": "Y Joela, y Zebadías, hijos de Jeroham de Gedor. También de los de Gad se huyeron á David, estando en la fortaleza en el desierto, muy valientes hombres de guerra para pelear, dispuestos á hacerlo con escudo y pavés: sus rostros como rostros de leones, y ligeros como las cabras monteses.",
+     "pt": "E Joela e Zebadias, filhos de Jeroão de Gedor. E alguns dos gaditas passaram a Davi, à fortaleza no deserto, guerreiros valentes, homens de guerra para lutar, armados com escudo e lança; seus rostos eram como rostos de leões, e velozes como as corças sobre os montes."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1263,
+   "name": "Gad",
+   "sha256": "c5137177d95b1554812ca05a47b92724690664173751f7f28594b24bceb9cc63",
+   "text": "A prophet who joined David in the “hold,” and at whose advice he quitted it for the forest of Hareth (1 Chr. 29:29; 2 Chr. 29:25; 1 Sam. 22:5). Many years after we find mention made of him in connection with the punishment inflicted for numbering the people (2 Sam. 24:11-19; 1 Chr. 21:9-19). He wrote a book called the “Acts of David” (1 Chr. 29:29), and assisted in the arrangements for the musical services of the “house of God” (2 Chr. 29:25). He bore the title of “the king’s seer” (2 Sam. 24:11, 13; 1 Chr. 21:9).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "hold,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "Acts of David",
+     "kind": "partial",
+     "verses": [
+      13029029
+     ],
+     "es": "Y los hechos del rey David, primeros y postreros, están escritos en el libro de las crónicas de Samuel vidente, y en las crónicas del profeta Nathán, y en las crónicas de Gad vidente,",
+     "pt": "E os feitos do rei Davi, primeiros e últimos, estão escritos no livro das crônicas de Samuel vidente, e nas crônicas do profeta Natã, e nas crônicas de Gade vidente,"
+    },
+    {
+     "n": 2,
+     "english": "house of God",
+     "kind": "unsure",
+     "verses": [
+      1028017
+     ],
+     "es": "Y tuvo miedo, y dijo: ¡Cuán terrible es este lugar! No es otra cosa que casa de Dios, y puerta del cielo.",
+     "pt": "E teve medo, e disse: “Quão temível é este lugar! Não é outra coisa, senão casa de Deus e porta do céu.”"
+    },
+    {
+     "n": 3,
+     "english": "the king’s seer",
+     "kind": "partial",
+     "verses": [
+      14029025
+     ],
+     "es": "Puso también Levitas en la casa de Jehová con címbalos, y salterios, y arpas, conforme al mandamiento de David, y de Gad vidente del rey, y de Nathán profeta: porque aquel mandamiento fué por mano de Jehová, por mano de sus profetas.",
+     "pt": "Pôs também levitas na casa do SENHOR com címbalos, e saltérios, e harpas, conforme ao mandamento de Davi, e de Gade vidente do rei, e de Natã profeta: porque aquele mandamento foi por mão do SENHOR, por meio de seus profetas."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1264,
+   "name": "Gaddi",
+   "sha256": "222c61946b42fdad72b0bf5306061c3fa5c938add67c9ca176358c2c85fd084d",
+   "text": "Fortunate, the representative of the tribe of Manasseh among the twelve “spies” sent by Moses to spy the land (Num. 13:11).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "spies",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1265,
+   "name": "Gaddiel",
+   "sha256": "6e6bf551cb5237cac4c34c9ee77530501eb8d599428c0adf375f932b6f995a96",
+   "text": "Fortune (i.e., sent) of God, the representative of the tribe of Zebulum among the twelve spies (Num. 13:10).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1268,
+   "name": "Gahar",
+   "sha256": "5a45a4c9cc9512ecd3b89365618ec277eb8dbb0af4a3e367b651de8c08402b35",
+   "text": "Lurking-place, one of the chief of the Nethinim, whose descendants returned to Jerusalem under Zerubbabel (Ezra 2:47).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1269,
+   "name": "Gaius (of Macedonia)",
+   "sha256": "759d2f0088b0ee12b15a8e3a77f1c65f8e91ccf6b28cbb45389d38426bce6e4e",
+   "text": "A Macedonian, Paul’s fellow-traveller, and his host at Corinth when he wrote his Epistle to the Romans (16:23). He with his household were baptized by Paul (1 Cor. 1:14). During a heathen outbreak against Paul at Ephesus the mob seized Gaius and Aristarchus because they could not find Paul, and rushed with them into the theatre. Some have identified this Gaius with No. (2).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1270,
+   "name": "Gaius (of Derbe)",
+   "sha256": "4cc182ff6817fa0d6375afe9c439a8ccea740dfea716eb73b9109f1fa467dd41",
+   "text": "A man of Derbe who accompanied Paul into Asia on his last journey to Jerusalem",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1271,
+   "name": "Gaius",
+   "sha256": "759d2f0088b0ee12b15a8e3a77f1c65f8e91ccf6b28cbb45389d38426bce6e4e",
+   "text": "A Macedonian, Paul’s fellow-traveller, and his host at Corinth when he wrote his Epistle to the Romans (16:23). He with his household were baptized by Paul (1 Cor. 1:14). During a heathen outbreak against Paul at Ephesus the mob seized Gaius and Aristarchus because they could not find Paul, and rushed with them into the theatre. Some have identified this Gaius with No. (2).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1272,
+   "name": "Gaius",
+   "sha256": "67f3648c192044f0c8e951b801355515971654c7a5fd0f9acccd2350192cdad3",
+   "text": "A Christain of Asia Minor to whom John addressed his third epistle (3 John 1:1).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1275,
+   "name": "Gallio",
+   "sha256": "3ab2dbd234fa335c2681709a44b31f3949ffb5d06284d7b7968f7a38ec238879",
+   "text": "The elder brother of Seneca the philosopher, who was tutor and for some time minister of the emperor Nero. He was “deputy”, i.e., proconsul, as in Revised Version, of Achaia, under the emperor Claudius, when Paul visited Corinth (Acts 18:12). The word used here by Luke in describing the rank of Gallio shows his accuracy. Achaia was a senatorial province under Claudius, and the governor of such a province was called a “proconsul.” He is spoken of by his contemporaries as “sweet Gallio,” and is described as a most popular and affectionate man. When the Jews brought Paul before his tribunal on the charge of persuading “men to worship God contrary to the law” (18:13), he refused to listen to them, and “drave them from the judgment seat” (18:16).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "deputy",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "proconsul.",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "sweet Gallio,",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "men to worship God contrary to the law",
+     "kind": "partial",
+     "verses": [
+      44018013
+     ],
+     "es": "Diciendo: Que éste persuade á los hombres á honrar á Dios contra la ley.",
+     "pt": "Dizendo: Este persuade as pessoas a servirem a Deus contra a Lei."
+    },
+    {
+     "n": 4,
+     "english": "drave them from the judgment seat",
+     "kind": "partial",
+     "verses": [
+      44018016
+     ],
+     "es": "Y los echó del tribunal.",
+     "pt": "E ele os tirou do tribunal."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1276,
+   "name": "Gamaliel",
+   "sha256": "a258c7d78cad92266b19f8d9e665f45fb8cff64e452d3eee48373a56d8f4f60e",
+   "text": "A chief of the tribe of Manasseh at the census at Sinai (Num. 1:10; 2:20; 7:54, 59).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1277,
+   "name": "Gamaliel",
+   "sha256": "e904f3f96e7a4e4795245b98fda9b54bf5ba49d9c659f28a7a663aa53fc5e10d",
+   "text": "The son of rabbi Simeon, and grandson of the famous rabbi Hillel. He was a Pharisse, and therefore the opponent of the party of the Sadducees. He was noted for his learning, and was president of the Sanhedrim during the regins of Tiberius, Caligula, and Claudius, and died, it is said, about eighteen years before the destruction of Jerusalem.\n\n When the apostles were brought before the council, charged with preaching the resurrection of Jesus, as a zealous Pharisee Gamaliel councelled moderation and calmness. By a reference to well-known events, he advised them to “refrain from these men.” If their work or counsel was of man, it would come to nothing; but if it was of God, they could not destroy it, and therefore ought to be on their guard lest they should be “found fighting against God” (Acts 5:34-40). Paul was one of his disciples (22:3).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "refrain from these men.",
+     "kind": "unsure",
+     "verses": [
+      44005038
+     ],
+     "es": "Y ahora os digo: Dejaos de estos hombres, y dejadlos; porque si este consejo ó esta obra es de los hombres, se desvanecerá:",
+     "pt": "E agora, eu vos digo, afastai-vos destes homens, e deixai-os; porque se este conselho ou esta obra for humana, ela se desfará."
+    },
+    {
+     "n": 1,
+     "english": "found fighting against God",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1278,
+   "name": "Gamul",
+   "sha256": "c2f44c52bd330cea4628d6a6cd62a1b4617adaed4e477782ec92e257ab39218b",
+   "text": "Weaned the leader of one of the priestly courses (1 Chr. 24:17).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1279,
+   "name": "Gareb",
+   "sha256": "46d3a4f1610b4e783bcee3cc481a393cdb0f1f6d9755f5cd784aa0f78f66bec2",
+   "text": "One of David’s warriors (2 Sam. 23:38), an Ithrite.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1286,
+   "name": "Geber",
+   "sha256": "81e2c9bc283ee8e766199d7964c495d4ad083b12520a9693773e4fbbafbc34d2",
+   "text": "A valiant man, (1 Kings 4:19), one of Solomon’s purveyors, having jurisdiction over a part of Gilead, comprising all the kingdom of Sihon and part of the kingdom of Og (Deut. 2; 31).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1287,
+   "name": "Gedaliah",
+   "sha256": "333774622bf9daee10d9978c282c95bf73bbbf86072f6c3a15d2c598e4a9bd60",
+   "text": "The son of Ahikam, and grandson of Shaphan, secretary of king Josiah (Jer. 26:24). After the destruction of Jerusalem (see ZEDEKIAH), Nebuchadnezzar left him to govern the country as tributary to him (2 Kings 25:22; Jer. 40:5; 52:16). Ishmael, however, at the head of a party of the royal family, “Jewish irreconcilables”, rose against him, and slew him and “all the Jews that were with him” (Jer. 41:2, 3) at Mizpah about three months after the destruction of Jerusalem. He and his band also plundered the town of Mizpah, and carried off many captives. He was, however, overtaken by Johanan and routed. He fled with such of his followers as escaped to the Ammonites (41:15). The little remnant of the Jews now fled to Egypt.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Jewish irreconcilables",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "all the Jews that were with him",
+     "kind": "partial",
+     "verses": [
+      24041003
+     ],
+     "es": "Asimismo hirió Ismael á todos los Judíos que estaban con él, con Gedalías en Mizpa, y á los soldados Caldeos que allí se hallaron.",
+     "pt": "Assim também Ismael feriu a todos os judeus que estavam com ele, com Gedalias em Mispá, e aos soldados caldeus que ali se acharam."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1288,
+   "name": "Gedaliah",
+   "sha256": "d81486a49652701949e2d2808ff85304d41e98a5a6a1b9c86cc8ef33314fef6d",
+   "text": "the son of Jeduthum (1 Chr. 25:3, 9).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1290,
+   "name": "Gedaliah",
+   "sha256": "7ec710ebb9e466db86df77eb8b79c5babe1454ef697de34bbdb0ba0ad000a2fb",
+   "text": "One of the Jewish nobles who conspired against Jeremiah (Jer. 38:1).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1293,
+   "name": "Gehazi",
+   "sha256": "9bdb765ea5f001ceb3bb35560ebea2fdd86622182aedce97a4f11cb4dfbda164",
+   "text": "Valley of vision, Elisha’s trusted servant (2 Kings 4:31; 5:25; 8:4, 5). He appears in connection with the history of the Shunammite (2 Kings 4:14, 31) and of Naaman the Syrian. On this latter occasion he was guilty of duplicity and dishonesty of conduct, causing Elisha to denounce his crime with righteous sternness, and pass on him the terrible doom that the leprosy of Naaman would cleave to him and his for ever (5:20-27).\n\n He afterwards appeared before king Joram, to whom he recounted the great deeds of his master (2 Kings 8:1-6).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1295,
+   "name": "Gemariah",
+   "sha256": "2aa5c25f93303ec1077c97102387f7a18e4eadb078f50c58717b1d5668f2daad",
+   "text": "The son of Hilkiah, who accompanied Shaphan with the tribute-money from Zedekiah to Nebuchadnezzar, and was the bearer at the same time of a letter from Jeremiah to the Jewish captives at Babylon (Jer. 29:3, 4).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1296,
+   "name": "Gemariah",
+   "sha256": "bde0c4970dd06acc896f63d70ae399a6e896d3baa45bba20933858056a64e221",
+   "text": "The son of Shaphan, and one of the Levites of the temple in the time of Jehoiakim (Jer. 36:10; 2 Kings 22:12). Baruch read aloud to the people from Gemariah’s chamber, and again in the hearing of Gemariah and other scribes, the prophecies of Jeremiah (Jer. 36:11-20), which filled him with terror. He joined with others in entreating the king not to destroy the roll of the prophecies which Baruch had read (21-25).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1297,
+   "name": "Genubath",
+   "sha256": "485300487e274cf14b7afd7c9da09e5b89e120791298fa99d98dc341ee0b8093",
+   "text": "Theft, the son of Hadad, of the Edomitish royal family. He was brought up in Pharaoh’s household. His mother was a sister of Tahpenes, the king of Egypt’s wife, mentioned in 1 Kings 11:20.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1298,
+   "name": "Gera",
+   "sha256": "c9a2fe3606786ed38814cdcf012a580ed5f36cbbeceb8c1e7f794352941d79e5",
+   "text": "The father of Ehud the judge (Judg. 3:15).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1299,
+   "name": "Gera",
+   "sha256": "ebcb15da4782811820dcbb7374d403b498ea02ac707098155d34d756b46a19e9",
+   "text": "The father of Shimei, who so grossly abused David (2 Sam. 16:5; 19:16, 18).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1302,
+   "name": "Gershom",
+   "sha256": "8090434e34464f6150ddb3ad5df9a814952e506af92071b00551c542334956ec",
+   "text": "The elder of the two sons of Moses born to him in Midian (Ex. 2:22; 18:3). On his way to Egypt with his family, in obedience to the command of the Lord, Moses was attacked by a sudden and dangerous illness (4:24-26), which Zipporah his wife believed to have been sent because he had neglected to circumcise his son. She accordingly took a “sharp stone” and circumcised her son Gershom, saying, “Surely a bloody husband art thou to me”, i.e., by the blood of her child she had, as it were, purchased her husband, had won him back again.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "sharp stone",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "Surely a bloody husband art thou to me",
+     "kind": "partial",
+     "verses": [
+      2004025
+     ],
+     "es": "Entonces Séphora cogió un afilado pedernal, y cortó el prepucio de su hijo, y echólo á sus pies, diciendo: A la verdad tú me eres un esposo de sangre.",
+     "pt": "Então Zípora agarrou uma pedra afiada, e cortou o prepúcio de seu filho, e lançou-o a seus pés, dizendo: Em verdade tu me és um esposo de sangue."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1303,
+   "name": "Gershom",
+   "sha256": "cf842f2f7709bd4d04873cebbf868def9262e298f6067fe4a643819b0f7ba8d1",
+   "text": "The son of Manasseh (Judg. 18:30), in R.V. “of Moses.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "of Moses.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1304,
+   "name": "Gershom",
+   "sha256": "20be579c1321079eebc9282b5d67cad3b5a0eee9f2d2c51eef6b6231f868a030",
+   "text": "A descendant of Phinehas who returned with Ezra from Babylon (Ezra 8:2).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1305,
+   "name": "Gershon",
+   "sha256": "05df45e009bc0a3d259c28f49fa8df59b3331940a6bd7dd6dd48ba102c67befb",
+   "text": "Ger’shom expulsion, the eldest of Levi’s three sons (Gen. 46:11; Ex. 6:16).\n\n In the wilderness the sons of Gershon had charge of the fabrics of the tabernacle when it was moved from place to place, the curtains, veils, tent-hangings (Num. 3: 21-26). Thirteen Levitical cities fell to the lot of the Gershonites (Josh. 21:27-33).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1307,
+   "name": "Geshem",
+   "sha256": "58e3dde4d06ab7aa0d8f13fa105c98e960abe70630cc9d7ac7913530d05a2a38",
+   "text": "Or Gashmu, firmness, probably chief of the Arabs south of Palestine, one of the enemies of the Jews after the return from Babylon (Neh. 2:19; 6:1, 2). He united with Sanballat and Tobiah in opposing the rebuilding of the wall of Jerusalem.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1314,
+   "name": "Gideon",
+   "sha256": "fc49ac83c21fef7b72269898c364ef0a67049df0162c0d374e3de2807684f7a9",
+   "text": "Called also Jerubbaal (Judg. 6:29, 32), was the first of the judges whose history is circumstantially narrated (Judg. 6-8). His calling is the commencement of the second period in the history of the judges. After the victory gained by Deborah and Barak over Jabin, Israel once more sank into idolatry, and the Midianites (q.v.) and Amalekites, with other “children of the east,” crossed the Jordan each year for seven successive years for the purpose of plundering and desolating the land. Gideon received a direct call from God to undertake the task of delivering the land from these warlike invaders. He was of the family of Abiezer (Josh. 17:2; 1 Chr. 7:18), and of the little township of Ophrah (Judg. 6:11). First, with ten of his servants, he overthrew the altars of Baal and cut down the asherah which was upon it, and then blew the trumpet of alarm, and the people flocked to his standard on the crest of Mount Gilboa to the number of twenty-two thousand men. These were, however, reduced to only three hundred. These, strangely armed with torches and pitchers and trumpets, rushed in from three different points on the camp of Midian at midnight, in the valley to the north of Moreh, with the terrible war-cry, “For the Lord and for Gideon” (Judg. 7:18, R.V.). Terror-stricken, the Midianites were put into dire confusion, and in the darkness slew one another, so that only fifteen thousand out of the great army of one hundred and twenty thousand escaped alive. The memory of this great deliverance impressed itself deeply on the mind of the nation (1 Sam. 12:11; Ps. 83:11; Isa. 9:4; 10:26; Heb. 11:32). The land had now rest for forty years. Gideon died in a good old age, and was buried in the sepulchre of his fathers. Soon after his death a change came over the people. They again forgot Jehovah, and turned to the worship of Baalim, “neither shewed they kindness to the house of Jerubbaal” (Judg. 8:35). Gideon left behind him seventy sons, a feeble, sadly degenerated race, with one exception, that of Abimelech, who seems to have had much of the courage and energy of his father, yet of restless and unscrupulous ambition. He gathered around him a band who slaughtered all Gideon’s sons, except Jotham, upon one stone.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "children of the east,",
+     "kind": "partial",
+     "verses": [
+      7006033
+     ],
+     "es": "Y todos los Madianitas, y Amalecitas, y orientales, se juntaron á una, y pasando asentaron campo en el valle de Jezreel.",
+     "pt": "E todos os midianitas, e amalequitas, e orientais, se juntaram de uma vez, e passando assentaram acampamento no vale de Jezreel."
+    },
+    {
+     "n": 1,
+     "english": "For the Lord and for Gideon",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "neither shewed they kindness to the house of Jerubbaal",
+     "kind": "partial",
+     "verses": [
+      7008035
+     ],
+     "es": "Ni hicieron misericordia con la casa de Jerobaal Gedeón, conforme á todo el bien que él había hecho á Israel.",
+     "pt": "Nem fizeram misericórdia com a casa de Jerubaal Gideão conforme todo aquele bem que ele havia feito a Israel."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1322,
+   "name": "Girgasite",
+   "sha256": "cc881e0866fb96e8540e0e2a0f2917880f193b69ef0eb83acb99399aba76c81d",
+   "text": "Dwelling in clayey soil, the descendants of the fifth son of Canaan (Gen. 10:16), one of the original tribes inhabiting the land of Canaan before the time of the Israelites (Gen. 15:21; Deut. 7:1). They were a branch of the great family of the Hivites. Of their geographical position nothing is certainly known. Probably they lived somewhere in the central part of Western Palestine.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1325,
+   "name": "Gog",
+   "sha256": "04c2921e8ccc3705bec47ea7db2788db771e9624fdc383a9b9b22a0f94774508",
+   "text": "A Reubenite (1 Chr. 5:4), the father of Shimei.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1327,
+   "name": "Goliath",
+   "sha256": "3780224e4e0c29f2849d9abe5f2b00453802fc43552ff44b5d62a660e3fab1f9",
+   "text": "A famous giant of Gath, who for forty days openly defied the armies of Israel, but was at length slain by David with a stone from a sling (1 Sam. 17:4). He was probably descended from the Rephaim who found refuge among the Philistines after they were dispersed by the Ammonites (Deut. 2:20, 21). His height was “six cubits and a span,” which, taking the cubit at 21 inches, is equal to 10 1/2 feet. David cut off his head (1 Sam. 17:51) and brought it to Jerusalem, while he hung the armour which he took from him in his tent. His sword was preserved at Nob as a religious trophy (21:9). David’s victory over Goliath was the turning point in his life. He came into public notice now as the deliverer of Israel and the chief among Saul’s men of war (18:5), and the devoted friend of Jonathan.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "six cubits and a span,",
+     "kind": "partial",
+     "verses": [
+      9017004
+     ],
+     "es": "Salió entonces un varón del campo de los Filisteos que se puso entre los dos campos, el cual se llamaba Goliath, de Gath, y tenía de altura seis codos y un palmo.",
+     "pt": "Saiu então um homem do acampamento dos filisteus que se pôs entre os dois campos, o qual se chamava Golias, de Gate, e tinha de altura seis côvados e um palmo."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1328,
+   "name": "Gomer (son of Japheth)",
+   "sha256": "0b54107cb0cefb9eb1bde019d46cc080cba75cd4a27510f0973369b90db5684a",
+   "text": "The eldest son of Japheth, and father of Ashkenaz, Riphath, and Togarmah (Gen. 10:2, 3), whose descendants formed the principal branch of the population of South-eastern Europe. He is generally regarded as the ancestor of the Celtae and the Cimmerii, who in early times settled to the north of the Black Sea, and gave their name to the Crimea, the ancient Chersonesus Taurica. Traces of their presence are found in the names Cimmerian Bosphorus, Cimmerian Isthmus, etc. In the seventh century B.C. they were driven out of their original seat by the Scythians, and overran western Asia Minor, whence they were afterwards expelled. They subsequently reappear in the times of the Romans as the Cimbri of the north and west of Europe, whence they crossed to the British Isles, where their descendants are still found in the Gaels and Cymry. Thus the whole Celtic race may be regarded as descended from Gomer.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1338,
+   "name": "Hadad",
+   "sha256": "b7e93e15ebf151114ad1c72bda99e978e7baf5e63b4944477fa958411ce7a271",
+   "text": "An Edomite king who defeated the Midianites (Gen. 36:35; 1 Chr. 1:46).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1339,
+   "name": "Hadad",
+   "sha256": "456aa7f75aa3f04a5cc4e64797f48b9d2cfb3693aa58b16134e52a53c92aedfe",
+   "text": "One of “the king’s seed in Edom.” He fled into Egypt, where he married the sister of Pharaoh’s wife (1 Kings 11:14-22). He became one of Solomon’s adversaries.\n\n Hadad, sharp, (a different name in Hebrew from the preceding), one of the sons of Ishmael (1 Chr. 1:30). Called also Hadar (Gen. 25:15).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the king’s seed in Edom.",
+     "kind": "partial",
+     "verses": [
+      11011014
+     ],
+     "es": "Y Jehová suscitó un adversario á Salomón, á Adad, Idumeo, de la sangre real, el cual estaba en Edom.",
+     "pt": "E o SENHOR suscitou um adversário a Salomão, a Hadade, edomita, do sangue real, o qual estava em Edom."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1340,
+   "name": "Hadarezer",
+   "sha256": "373ed14e8f1eca31e6e0dac954f07499ec4edc45add742cf892f493620deb302",
+   "text": "Hadad is help; called also Hadarezer, Adod is his help, the king of Zobah. Hanun, the king of the Ammonites, hired among others the army of Hadadezer to assist him in his war against David. Joab, who was sent against this confederate host, found them in double battle array, the Ammonities toward their capital of Rabbah, and the Syrian mercenaries near Medeba. In the battle which was fought the Syrians were scattered, and the Ammonites in alarm fled into their capital. After this Hadadezer went north “to recover his border” (2 Sam. 8:3, A.V.); but rather, as the Revised Version renders, “to recover his dominion”, i.e., to recruit his forces. Then followed another battle with the Syrian army thus recruited, which resulted in its being totally routed at Helam (2 Sam. 10:17). Shobach, the leader of the Syrian army, died on the field of battle. The Syrians of Damascus, who had come to help Hadadezer, were also routed, and Damascus was made tributary to David. All the spoils taken in this war, “shields of gold” and “very much brass,” from which afterwards the “brasen sea, and the pillars, and the vessels of brass” for the temple were made (1 Chr. 18:8), were brought to Jerusalem and dedicated to Jehovah. Thus the power of the Ammonites and the Syrians was finally broken, and David’s empire extended to the Euphrates (2 Sam. 10:15-19; 1 Chr. 19:15-19).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "to recover his border",
+     "kind": "partial",
+     "verses": [
+      10008003
+     ],
+     "es": "Asimismo hirió David á Hadad-ezer hijo de Rehob, rey de Soba, yendo él á extender su término hasta el río de Eufrates.",
+     "pt": "Também feriu Davi a Hadadezer filho de Reobe, rei de Zobá, indo ele a estender seu termo até o rio de Eufrates."
+    },
+    {
+     "n": 1,
+     "english": "to recover his dominion",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "shields of gold",
+     "kind": "partial",
+     "verses": [
+      10008007
+     ],
+     "es": "Y tomó David los escudos de oro que traían los siervos de Hadad-ezer, y llevólos á Jerusalem.",
+     "pt": "E tomou Davi os escudos de ouro que traziam os servos de Hadadezer, e levou-os a Jerusalém."
+    },
+    {
+     "n": 3,
+     "english": "very much brass,",
+     "kind": "unsure",
+     "verses": [
+      13018008
+     ],
+     "es": "Asimismo de Thibath y de Chûn ciudades de Adarezer, tomó David muy mucho metal, de que Salomón hizo el mar de bronce, las columnas, y vasos de bronce.",
+     "pt": "Assim de Tibate e de Cum, cidades de Hadadezer, Davi tomou muito bronze, de que Salomão fez o mar de bronze, as colunas, e vasos de bronze."
+    },
+    {
+     "n": 4,
+     "english": "brasen sea, and the pillars, and the vessels of brass",
+     "kind": "partial",
+     "verses": [
+      13018008
+     ],
+     "es": "Asimismo de Thibath y de Chûn ciudades de Adarezer, tomó David muy mucho metal, de que Salomón hizo el mar de bronce, las columnas, y vasos de bronce.",
+     "pt": "Assim de Tibate e de Cum, cidades de Hadadezer, Davi tomou muito bronze, de que Salomão fez o mar de bronze, as colunas, e vasos de bronze."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 1341,
+   "name": "Hadar",
+   "sha256": "f8df56bcf2d0a69d8f84bb77a113282ecd80e4f0d3489ab97495f0c6b76536da",
+   "text": "A son of Ishmael (Gen. 25:15); in 1 Chr. 1:30 written Hadad.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 1342,
+   "name": "Hadad",
+   "sha256": "5a309957716a295afb7a4a84cdc6600cdba5b595d3a60f93683786dd8ca12c90",
+   "text": "One of the Edomitish kings (Gen. 36:39) about the time of Saul. Called also Hadad (1 Chr. 1:50, 51).\n\n It is probable that in these cases Hadar may be an error simply of transcription for Hadad.",
+   "quotes": []
+  }
+ ],
+ "glossary": {
+  "Aaron": {
+   "es": "Aarón",
+   "pt": "Arão"
+  },
+  "Abimelech": {
+   "pt": "Abimeleque"
+  },
+  "Abraham": {
+   "pt": "Abraão"
+  },
+  "Achaia": {
+   "es": "Acaya",
+   "pt": "Acaia"
+  },
+  "Achaicus": {
+   "es": "Acaico",
+   "pt": "Acaico"
+  },
+  "Adam": {
+   "pt": "Adão (person); Adã (place)"
+  },
+  "Agrippa": {
+   "es": "Agripa",
+   "pt": "Agripa"
+  },
+  "Ahab": {
+   "es": "Acab",
+   "pt": "Acabe"
+  },
+  "Ahava": {
+   "pt": "Aava"
+  },
+  "Ahikam": {
+   "es": "Ahicam",
+   "pt": "Aicã"
+  },
+  "Aristarchus": {
+   "es": "Aristarco",
+   "pt": "Aristarco"
+  },
+  "Artaxerxes": {
+   "es": "Artajerjes"
+  },
+  "Asher": {
+   "es": "Aser",
+   "pt": "Aser"
+  },
+  "Ashkenaz": {
+   "es": "Ashkenaz (person); Asquénaz (place)",
+   "pt": "Asquenaz"
+  },
+  "Asia": {
+   "pt": "Ásia"
+  },
+  "Babylon": {
+   "es": "Babilonia",
+   "pt": "Babilônia"
+  },
+  "Barak": {
+   "es": "Barac",
+   "pt": "Baraque"
+  },
+  "Baruch": {
+   "pt": "Baruque"
+  },
+  "Barzillai": {
+   "pt": "Barzilai"
+  },
+  "Bashemath": {
+   "es": "Basemat",
+   "pt": "Basemate"
+  },
+  "Caesarea": {
+   "es": "Cesarea",
+   "pt": "Cesareia"
+  },
+  "Cain": {
+   "es": "Caín",
+   "pt": "Caim"
+  },
+  "Canaan": {
+   "es": "Canaán",
+   "pt": "Canaã"
+  },
+  "Chebar": {
+   "es": "Quebar",
+   "pt": "Quebar"
+  },
+  "Chedorlaomer": {
+   "es": "Quédorlaomer",
+   "pt": "Quedorlaomer"
+  },
+  "Chelub": {
+   "es": "Quélud",
+   "pt": "Quelube"
+  },
+  "Claudius": {
+   "es": "Claudio",
+   "pt": "Cláudio"
+  },
+  "Corinth": {
+   "es": "Corinto",
+   "pt": "Corinto"
+  },
+  "Damascus": {
+   "es": "Damasco",
+   "pt": "Damasco"
+  },
+  "Dan": {
+   "pt": "Dã"
+  },
+  "David": {
+   "pt": "Davi"
+  },
+  "Deborah": {
+   "es": "Débora",
+   "pt": "Débora"
+  },
+  "Drusilla": {
+   "es": "Drusila",
+   "pt": "Drusila"
+  },
+  "Ebed": {
+   "pt": "Ebede"
+  },
+  "Egypt": {
+   "es": "Egipto",
+   "pt": "Egito"
+  },
+  "Ehud": {
+   "es": "Aod",
+   "pt": "Eúde"
+  },
+  "Elijah": {
+   "es": "Elías",
+   "pt": "Elias"
+  },
+  "Elisha": {
+   "es": "Eliseo",
+   "pt": "Eliseu"
+  },
+  "Elon": {
+   "es": "Elón",
+   "pt": "Elom"
+  },
+  "Ephesus": {
+   "es": "Éfeso",
+   "pt": "Éfeso"
+  },
+  "Esau": {
+   "es": "Esaú",
+   "pt": "Esaú"
+  },
+  "Euphrates": {
+   "es": "Eufrates",
+   "pt": "Eufrates"
+  },
+  "Ezbon": {
+   "es": "Esbon",
+   "pt": "Esbom"
+  },
+  "Ezra": {
+   "es": "Esdras (person); Ezra (person)",
+   "pt": "Esdras (person); Ezra (person)"
+  },
+  "Felix": {
+   "es": "Félix",
+   "pt": "Félix"
+  },
+  "Gad": {
+   "pt": "Gade"
+  },
+  "Gaius": {
+   "es": "Gaio",
+   "pt": "Gaio"
+  },
+  "Galilee": {
+   "es": "Galilea",
+   "pt": "Galileia"
+  },
+  "Gallio": {
+   "es": "Galión",
+   "pt": "Gálio"
+  },
+  "Gath": {
+   "es": "Gat",
+   "pt": "Gate"
+  },
+  "Gemariah": {
+   "es": "Jemarías (person); Gemarías (person)",
+   "pt": "Gemarias"
+  },
+  "Gershom": {
+   "es": "Gersón",
+   "pt": "Gérson"
+  },
+  "Gershon": {
+   "es": "Gersón",
+   "pt": "Gérson"
+  },
+  "Gideon": {
+   "es": "Gedeón",
+   "pt": "Gideão"
+  },
+  "Gilead": {
+   "es": "Galaad",
+   "pt": "Gileade"
+  },
+  "Goliath": {
+   "es": "Goliat",
+   "pt": "Golias"
+  },
+  "Gomer": {
+   "pt": "Gômer"
+  },
+  "Hadad": {
+   "es": "Adad",
+   "pt": "Hadade"
+  },
+  "Hadar": {
+   "es": "Hadad",
+   "pt": "Hadade"
+  },
+  "Hadarezer": {
+   "es": "Adarezer",
+   "pt": "Hadadezer"
+  },
+  "Hanun": {
+   "es": "Hanún (person); Anún (person)",
+   "pt": "Hanum"
+  },
+  "Helam": {
+   "pt": "Helã"
+  },
+  "Herod": {
+   "es": "Herodes",
+   "pt": "Herodes"
+  },
+  "Hilkiah": {
+   "es": "Hilcías",
+   "pt": "Hilquias"
+  },
+  "Hillel": {
+   "pt": "Hilel"
+  },
+  "Isaac": {
+   "pt": "Isaque"
+  },
+  "Ishmael": {
+   "es": "Ismael",
+   "pt": "Ismael"
+  },
+  "Jabbok": {
+   "es": "Jaboc",
+   "pt": "Jaboque"
+  },
+  "Jabin": {
+   "es": "Jabín",
+   "pt": "Jabim"
+  },
+  "Jacob": {
+   "pt": "Jacó"
+  },
+  "Japheth": {
+   "es": "Jafet",
+   "pt": "Jafé"
+  },
+  "Jeduthun": {
+   "es": "Jedutún",
+   "pt": "Jedutum"
+  },
+  "Jehoiachin": {
+   "es": "Joaquín",
+   "pt": "Jeconias"
+  },
+  "Jehoiakim": {
+   "es": "Joacim",
+   "pt": "Jeoaquim"
+  },
+  "Jeremiah": {
+   "es": "Jeremías",
+   "pt": "Jeremias"
+  },
+  "Jerusalem": {
+   "es": "Jerusalén",
+   "pt": "Jerusalém"
+  },
+  "Jesus": {
+   "es": "Jesús"
+  },
+  "Jezebel": {
+   "es": "Jezabel",
+   "pt": "Jezabel"
+  },
+  "Joab": {
+   "pt": "Joabe"
+  },
+  "Johanan": {
+   "es": "Johanán (person); Joanán (person); Johanan (person)",
+   "pt": "Joanã"
+  },
+  "John": {
+   "es": "Juan",
+   "pt": "João"
+  },
+  "John the Baptist": {
+   "es": "Juan el Bautista",
+   "pt": "João Batista"
+  },
+  "Jonathan": {
+   "es": "Jonatán",
+   "pt": "Jônatas"
+  },
+  "Joram": {
+   "pt": "Jorão"
+  },
+  "Jordan": {
+   "es": "Jordán",
+   "pt": "Jordão"
+  },
+  "Josiah": {
+   "es": "Josías",
+   "pt": "Josias"
+  },
+  "Jotham": {
+   "es": "Jotam",
+   "pt": "Jotão"
+  },
+  "Judah": {
+   "es": "Judá (person); Jehudas (person)",
+   "pt": "Judá"
+  },
+  "Judea": {
+   "pt": "Judeia"
+  },
+  "Leah": {
+   "es": "Lea",
+   "pt": "Lia"
+  },
+  "Levi": {
+   "es": "Leví"
+  },
+  "Lot": {
+   "pt": "Ló"
+  },
+  "Macedonia": {
+   "pt": "Macedônia"
+  },
+  "Machpelah": {
+   "es": "Macpela",
+   "pt": "Macpela"
+  },
+  "Mahalath": {
+   "es": "Mahalat",
+   "pt": "Maalate"
+  },
+  "Manasseh": {
+   "es": "Manasés",
+   "pt": "Manassés"
+  },
+  "Matthew": {
+   "es": "Mateo",
+   "pt": "Mateus"
+  },
+  "Midian": {
+   "es": "Madián",
+   "pt": "Midiã"
+  },
+  "Mizpah": {
+   "es": "Mizpa",
+   "pt": "Mispá"
+  },
+  "Moreh": {
+   "es": "Moreh (place); More (place)",
+   "pt": "Moré"
+  },
+  "Moses": {
+   "es": "Moisés",
+   "pt": "Moisés"
+  },
+  "Mount Gilboa": {
+   "es": "Monte Gilboa",
+   "pt": "Monte Gilboa"
+  },
+  "Mount Hor": {
+   "es": "Monte Hor",
+   "pt": "Monte Hor"
+  },
+  "Mount Seir": {
+   "es": "Monte Seir",
+   "pt": "Monte Seir"
+  },
+  "Naaman": {
+   "es": "Naamán",
+   "pt": "Naamã"
+  },
+  "Nebuchadnezzar": {
+   "es": "Nabucodonosor",
+   "pt": "Nabucodonosor"
+  },
+  "Nehemiah": {
+   "es": "Nehemías",
+   "pt": "Neemias"
+  },
+  "Nergal-sharezer": {
+   "es": "Nergal-sarezer",
+   "pt": "Nergal-Sarezer"
+  },
+  "Nob": {
+   "pt": "Nobe"
+  },
+  "Obadiah": {
+   "es": "Obadías (person); Abdías (person); Obdías (person)",
+   "pt": "Obadias"
+  },
+  "Og": {
+   "pt": "Ogue"
+  },
+  "On": {
+   "es": "Hon (person); On (place)",
+   "pt": "Om"
+  },
+  "Ophrah": {
+   "es": "Ofra",
+   "pt": "Ofra"
+  },
+  "Paul": {
+   "es": "Pablo",
+   "pt": "Paulo"
+  },
+  "Pharaoh": {
+   "es": "Faraón",
+   "pt": "Faraó"
+  },
+  "Philippi": {
+   "es": "Filipos",
+   "pt": "Filipos"
+  },
+  "Phinehas": {
+   "es": "Finees",
+   "pt": "Fineias"
+  },
+  "Rabbah": {
+   "es": "Raba",
+   "pt": "Rabá"
+  },
+  "Rebekah": {
+   "es": "Rebeca",
+   "pt": "Rebeca"
+  },
+  "Reuben": {
+   "es": "Rubén",
+   "pt": "Rúben"
+  },
+  "Riphath": {
+   "es": "Rifat",
+   "pt": "Rifate"
+  },
+  "Rome": {
+   "es": "Roma",
+   "pt": "Roma"
+  },
+  "Sanballat": {
+   "pt": "Sambalate"
+  },
+  "Saul": {
+   "es": "Saúl"
+  },
+  "Sea of Galilee": {
+   "es": "Mar de Galilea",
+   "pt": "Mar da Galileia"
+  },
+  "Seraiah": {
+   "es": "Seraías (person); Seraíah (person); Seraiah (person)",
+   "pt": "Seraías"
+  },
+  "Shaphan": {
+   "es": "Safán",
+   "pt": "Safã"
+  },
+  "Shechem": {
+   "es": "Sequem (person); Siquem (place)",
+   "pt": "Siquém"
+  },
+  "Shimei": {
+   "es": "Simi (person); Semei (person)",
+   "pt": "Simei"
+  },
+  "Shobach": {
+   "es": "Sobac",
+   "pt": "Sobaque"
+  },
+  "Sidon": {
+   "es": "Sidón",
+   "pt": "Sidom"
+  },
+  "Sihon": {
+   "es": "Sehón",
+   "pt": "Seom"
+  },
+  "Simeon": {
+   "es": "Simeón (person); Simón (person)",
+   "pt": "Simeão"
+  },
+  "Sinai": {
+   "es": "Sinaí"
+  },
+  "Solomon": {
+   "es": "Salomón",
+   "pt": "Salomão"
+  },
+  "Stephanas": {
+   "es": "Estéfanas",
+   "pt": "Estéfanas"
+  },
+  "Syntyche": {
+   "es": "Síntique"
+  },
+  "Tahpenes": {
+   "es": "Tafnes",
+   "pt": "Tafnes"
+  },
+  "Tiberius": {
+   "es": "Tiberio",
+   "pt": "Tibério"
+  },
+  "Tobiah": {
+   "es": "Tobías",
+   "pt": "Tobias"
+  },
+  "Togarmah": {
+   "es": "Togarma",
+   "pt": "Togarma"
+  },
+  "Troas": {
+   "pt": "Trôade"
+  },
+  "Zedekiah": {
+   "es": "Sedequías (person); Sedecías (person)",
+   "pt": "Zedequias"
+  },
+  "Zerubbabel": {
+   "es": "Zorobabel",
+   "pt": "Zorobabel"
+  },
+  "Zilpah": {
+   "es": "Zilpa",
+   "pt": "Zilpa"
+  },
+  "Zipporah": {
+   "pt": "Zípora"
+  },
+  "Zobah": {
+   "es": "Soba",
+   "pt": "Zobá"
+  },
+  "Zohar": {
+   "pt": "Zoar"
+  }
+ }
+}

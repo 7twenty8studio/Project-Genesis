@@ -40,12 +40,21 @@ shares; README.md has the architecture.
   and LICENSE.txt with it. It holds verse ids only, never verse text.
   Its `translations` table (lang, kind, key, name, other, detail, folded)
   gives Spanish and Portuguese names, event/era/route titles, era summaries,
-  aliases and (later) Easton descriptions; `StudyRepository(language:)`
+  aliases and Easton's biographies and place descriptions (`detail`); `StudyRepository(language:)`
   (bundled: `AppLanguage.code`) falls back to English per field and search
   matches both (accents aside). Built from Tools/StudyData/translations
   (manual.json by hand; es/pt.json by translate_study.py, names as spelled in
   the RV1909, modernized, and the Bíblia Livre) by add_study_translations.py,
   which build_study.py also runs. Group labels are `PersonGroup` strings.
+  Easton's text: translations/bios/<lang>/NNN.json in 44 batches with each
+  entry's source sha (`bios.py export/check/status`), quotations quoted
+  verbatim from the RV1909 / Bíblia Livre where Easton quotes a verse
+  (`scripture_quotes.py`), the rest translated; only entries that pass
+  `bios.py check` reach `detail` (references compared whole by refs.py;
+  a misread verse is a `quote_fixes` entry with the corrected reference and
+  a reason, never dropped words; tests: Tools/StudyData/test_bios.py). The app labels them
+  (`DictionaryText`, "Translated from Easton's Bible Dictionary (1897).
+  Not Scripture."). Review notes: bios/NOTES.md and bios/<lang>/review.
 
 ## Building
 - The Xcode project is generated: `xcodegen generate` from `project.yml`.
