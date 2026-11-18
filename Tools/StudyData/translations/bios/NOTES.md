@@ -165,3 +165,8 @@ What the translators reported per batch, beyond the review files.
 - Unsure, translated: En-dor "da geração", Edom "The field of Edom", Egypt "land of the south", "land of Goshen".
 - Egypt 362 and Ephrathah 404 reuse 028's Brook of Egypt 259 / Bethlehem Ephrathah 220 translations (identical English). TODO: pt/028.json still says "Nô-Amom" for Thebes outside quotes; change to "Tebas" in the final pass.
 - Thousands kept with the English comma here ("1,000"), unlike other pt batches: normalise in the final pass.
+
+## es 026–027
+- 026 rebuilt after the re-export (Éfeso, Lida, Engedi). Bilhah (place) "Bilha" vs Balah "Bala"; Shimei "Semei". Hazor appears as "Asor" (026, 62) and "Hasor" (027, 142): make them match in the final pass.
+- wrong_verse: Azal q1 (as pt). Wording quotes Aram/Ararat/Akrabbim as in pt; Asshur "Asur".
+- Amalek: Num 13:29 words missing from the loose quote (only 1 Sam 15:7 given). Allon-bacuth quote a little awkward. Athens nested quote kept unbalanced as Easton.
