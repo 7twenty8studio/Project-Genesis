@@ -100,3 +100,9 @@ What the translators reported per batch, beyond the review files.
 - Cyprus had no Spanish name: "Chipre" added to manual.json. Miriam "María" (RV1909). Reuel (Moses' father-in-law) / Rehuel (Esau's son).
 - wrong_verse: Mordecai q0 (as pt). Nabal, Moses (Deut 34:1) and the q.v./[the Ammonites] moves as in pt 016–017.
 - Michael 016: Easton's "warning against" the serpent read as "warring" ("combatiendo contra"). Nebuzar-adan "captain of the guard" translated (Gen 40:3 given).
+
+## pt 018–019
+- Glossary: Thebes "Tebas" (modern Egyptology passages), Ethiopia "Etiópia" (Thothmes III, the eunuch).
+- wrong_verse: Pilate q20 (Ex 33:11 given, John 19:12 meant). Unsure ones with wrong verses translated: Pilate "Son of God", "Whence art thou?", Noah "walked with God", Othni "mighty man of valour".
+- BLIVRE oddities quoted verbatim: "Crucifica -o !" spacing; "para lhe ajudasse" (Tiglath-pileser); Obadiah "Eis que Elias" without "está aqui"; Ram's "Arão" for Aram.
+- Easton: Noah 26/27 duplicates with stray "(28:29).."; Pedaiah starts ". "; Rehob "Tobah" probably Zobah.
