@@ -1,0 +1,1177 @@
+{
+ "batch": "052",
+ "strongs": [
+  "G2898",
+  "G2899",
+  "G2900",
+  "G2901",
+  "G2902",
+  "G2903",
+  "G2904",
+  "G2905",
+  "G2906",
+  "G2907",
+  "G2908",
+  "G2909",
+  "G2910",
+  "G2911",
+  "G2912",
+  "G2913",
+  "G2914",
+  "G2915",
+  "G2916",
+  "G2917",
+  "G2918",
+  "G2919",
+  "G2920",
+  "G2921",
+  "G2922",
+  "G2923",
+  "G2924",
+  "G2925",
+  "G2926",
+  "G2927",
+  "G2928",
+  "G2929",
+  "G2930",
+  "G2931",
+  "G2932",
+  "G2933",
+  "G2934",
+  "G2935",
+  "G2936",
+  "G2937",
+  "G2938",
+  "G2939",
+  "G2940",
+  "G2941",
+  "G2942",
+  "G2943",
+  "G2944",
+  "G2945",
+  "G2946",
+  "G2947",
+  "G2948",
+  "G2949",
+  "G2950",
+  "G2951",
+  "G2952",
+  "G2953",
+  "G2954",
+  "G2955",
+  "G2956",
+  "G2957",
+  "G2958",
+  "G2959",
+  "G2960",
+  "G2961",
+  "G2962G",
+  "G2962H",
+  "G2963",
+  "G2964",
+  "G2965",
+  "G2966",
+  "G2967",
+  "G2968",
+  "G2969",
+  "G2970",
+  "G2971",
+  "G2972",
+  "G2973",
+  "G2974",
+  "G2975",
+  "G2976G",
+  "G2976H",
+  "G2976I",
+  "G2977",
+  "G2978",
+  "G2979",
+  "G2980",
+  "G2981",
+  "G2982",
+  "G2983",
+  "G2984",
+  "G2985",
+  "G2986",
+  "G2987",
+  "G2988",
+  "G2989",
+  "G2990",
+  "G2991",
+  "G2992",
+  "G2993",
+  "G2994",
+  "G2995",
+  "G2996",
+  "G2997",
+  "G2998",
+  "G2999",
+  "G3000",
+  "G3001",
+  "G3002",
+  "G3003",
+  "G3004G",
+  "G3004H",
+  "G3005",
+  "G3006",
+  "G3007",
+  "G3008",
+  "G3009",
+  "G3010",
+  "G3011",
+  "G3012",
+  "G3013",
+  "G3014",
+  "G3015",
+  "G3016",
+  "G3017G",
+  "G3017H",
+  "G3017I",
+  "G3017J",
+  "G3018",
+  "G3019",
+  "G3020"
+ ],
+ "entries": [
+  {
+   "strongs": "G2898",
+   "language": "greek",
+   "lemma": "κρανίον",
+   "gloss": "Skull",
+   "definition": "κρανίον, -ου, τό\n(κάρα, the head), [in LXX: Jdg.9:53, 4Ki.9:35 (גֻּלְגֹּלֶת)* ;]\na skull: Mat.27:33, Mrk.15:22, Luk.23:33, Jhn.19:17.†",
+   "sha256": "ee46da3e485c9a43955ad07120893ad96ee530845d8e0ef7d9127a68daf4b478"
+  },
+  {
+   "strongs": "G2899",
+   "language": "greek",
+   "lemma": "κράσπεδον",
+   "gloss": "edge",
+   "definition": "κράσπεδον, -ου, τό\n[in LXX: Num.15:38-39 (צִיצִת) Deu.22:12, Zec.8:23 (כָּנָף)* ;]\n1. in cl., an edge, border.\n2. In LXX (see supr.) and NT, a tassel or corner: Mat.9:20 14:36 23:5, Mrk.6:56, Luk.8:44.†",
+   "sha256": "d34846d6ab25e1c369677e5e2eb5669a3f7956574b2199d9750e243a21080f93"
+  },
+  {
+   "strongs": "G2900",
+   "language": "greek",
+   "lemma": "κραταιός",
+   "gloss": "mighty",
+   "definition": "κραταιός, -ά, -όν\n(κράτος), (in cl. poët, form of κρατερός), [in LXX chiefly for חָזַק and cognates ;]\nstrong, mighty: 1Pe.5:6.†",
+   "sha256": "172ca956115df4a55a60449147914d0a2b763f1536e2b06557772367070f002c"
+  },
+  {
+   "strongs": "G2901",
+   "language": "greek",
+   "lemma": "κραταιόω",
+   "gloss": "to strengthen",
+   "definition": "κραταιόω, -ῶ\n(late form of κρατύνω; κράτος) [in LXX chiefly for חָזַק ;]\nto strengthen; pass., to wax strong: Luk.2:40, 1Co.16:13; πνεύματι, Luk.1:80; δυνάμει κ. διὰ τ. πνεύματος, Eph.3:16.†",
+   "sha256": "4c4cad3c34569cc7212c48d60050f9bbabbf88e56e3925d9f7a9fa03efb4414d"
+  },
+  {
+   "strongs": "G2902",
+   "language": "greek",
+   "lemma": "κρατέω",
+   "gloss": "to grasp/seize",
+   "definition": "κρατέω, -ῶ\n(κράτος), [in LXX chiefly for חָזַק hi., also for אָחַז, etc. ;]\n1. to be strong, mighty, hence, to rule, be master, prevail (so chiefly in cl.; in LXX: Est.1:1, I Est.4:38, Wis.14:19, al.).\n2. to get possession of, obtain, take hold of (Hdt., Thuc., al.): with genitive of thing(s) (M, Pr., 65), Act.27:13; τ. χειρός, Mat.9:25, Mrk.1:31 5:41 9:27, Luk.8:54; with accusative of thing(s), Mat.12:11; with accusative of person(s), Mat.14:3 18:28 21:46 22:6 26:4, 48 ff., Mrk.3:21 6:17 12:12 14:1, 44 ff, Act.3:11 24:6, Rev.20:2 (cf. 2Ki.6:6).\n3. to hold, hold fast (Æsch., Polyb., al.): with accusative of thing(s), ἐν τ. δεξιᾷ, Rev.2:1. Metaphorical: with accusative of person(s), pass., Act.2:24; with accusative of thing(s), Rev.2:13, 25 3:11; τ. κεφαλήν (i.e. Christ), Col.2:19; τ. παράδοσιν (-εις), λόγον, διδαχήν, Mrk.7:3-4, 8 9:10, 2Th.2:15, Rev.2:14-15; with genitive of thing(s), Heb.4:14 6:18; of sins, to retain, Jhn.20:23; of re­straint, before ἵνα μή, Rev.7:1; pass., before τοῦ μή, Luk.24:16.†",
+   "sha256": "b92b095215c92f39a7d8da099dafe83812e7f9bbed1c822adfc4358397792265"
+  },
+  {
+   "strongs": "G2903",
+   "language": "greek",
+   "lemma": "κράτιστος",
+   "gloss": "excellent",
+   "definition": "κράτιστος, -η, -ον\nsuperl, of κρατύς (Hom.),\n1. strongest, mightiest (Hom.).\n2. noblest, best (cf. κρείσσων), most excellent (find., Soph., al.): voc., κρατίστε, as title of honour and respect (DCG, ii, 727a), Luk.1:3, Act.23:26 24:3 26:25.†",
+   "sha256": "3e12e5c6b981bf969ea1fba967c777498806bffd3ea2f8f3584705b212f31bcc"
+  },
+  {
+   "strongs": "G2904",
+   "language": "greek",
+   "lemma": "κράτος",
+   "gloss": "power",
+   "definition": "κράτος, -εος (-ους), τό\n[in LXX chiefly for עֹז, Job.12:16, Psa.90:11 al. ;]\n1. strength, esp. as in Hom., of bodily strength.\n2. power, might: Heb.2:14; τὸ κ. τῆς ἰσχύος αὐτοῦ, Eph.1:19 6:10 (Isa.40:26, Da TH Dan.4:27); τ. δόςης αὐτοῦ, Col.1:11; κατὰ κράτος, mightily, Act.19:20; a mighty deed, an act of power, Luk.1:51; in doxologies, 1Ti.6:16, 1Pe.4:11 5:11, Ju 25, Rev.1:6 5:13.†",
+   "sha256": "68a6b0b76826945a76f1644047be3b451e7180136ada310a8d78461574ee44ca"
+  },
+  {
+   "strongs": "G2905",
+   "language": "greek",
+   "lemma": "κραυγάζω",
+   "gloss": "to shout",
+   "definition": "κραυγάζω (κραυγή)\n[in LXX: Est.3:13 (רוּעַ hi.)* ;] = κράζω\n1. of animals, to bay, to croak, etc.\n2. Of men, to cry out, shout: Mat.12:19, Jhn.12:13 19:15 Act.22:23; before λέγων, Jhn.18:40 19:6, 12; καὶ λέγων, Luk.4:41 (WH, κράζ -); φωνῇ μεγάλῃ, Jhn.11:43 (cf. Abbott, JV, 269 f.).†",
+   "sha256": "b8ad607224f38525c6c33e580a171afbdec346328625583650051baecf9cfc05"
+  },
+  {
+   "strongs": "G2906",
+   "language": "greek",
+   "lemma": "κραυγή",
+   "gloss": "shouting",
+   "definition": "κραυγή, -ῆς, ἡ\n[in LXX for צְוָחָה, תְּרוּעָה, שַׁוְעָה, etc. ;]\ncrying, outcry, clamour: Mat.25:6, Luk.1:42, Act.23:9, Eph.4:31, Heb.5:7, Rev.21:4.†",
+   "sha256": "e85970bc4b03f0072101ed65e69d07582a060a7714c2482a7494f41051e85e0e"
+  },
+  {
+   "strongs": "G2907",
+   "language": "greek",
+   "lemma": "κρέας",
+   "gloss": "meat",
+   "definition": "κρέας, -έως, pl., κρέα\n[in LXX for בָּשָׂר (freq.) ;]\nflesh, meat: Rom.14:21, 1Co.8:13.†",
+   "sha256": "724b742a7c268097ee1a0b10d058ea8cee600eb21f18aa39bf9718b2c4d49414"
+  },
+  {
+   "strongs": "G2908",
+   "language": "greek",
+   "lemma": "κρείσσων",
+   "gloss": "greater",
+   "definition": "κρείσσων\n(Epic and old Att..) and κρείττων (later Att..), prop. comparat. of κρατύς, strong, but in sense often (as in cl., see LS, see word) as comparat. of ἀγαθός, [in LXX chiefly for טוֹב ;]\nbetter;\n(a) as to ad­vantage or usefulness: 1Co.11:17, Heb.11:40 12:24; πολλῷ μᾶλλον κ., Php.1:23; κρεῖσσον ποιεῖν, 1Co.7:38; ἐστιν, before inf., 1Co.7:9, 2Pe.2:21;\n(b) as to excellence: Heb.1:4 6:9 7:7, 19 7:22 8:6 9:23 10:34 11:16, 35; κ. ἐστι, before inf., 1Pe.3:17.†",
+   "sha256": "6ad780ad1ccd5cb3f5b8226b10435c6f6d51e541883a50a85e878a91e18feaaf"
+  },
+  {
+   "strongs": "G2909",
+   "language": "greek",
+   "lemma": "κρείττων",
+   "gloss": "stronger",
+   "definition": "κρείσσων\n(Epic and old Att..) and κρείττων (later Att..), prop. comparat. of κρατύς, strong, but in sense often (as in cl., see LS, see word) as comparat. of ἀγαθός, [in LXX chiefly for טוֹב ;]\nbetter;\n(a) as to ad­vantage or usefulness: 1Co.11:17, Heb.11:40 12:24; πολλῷ μᾶλλον κ., Php.1:23; κρεῖσσον ποιεῖν, 1Co.7:38; ἐστιν, before inf., 1Co.7:9, 2Pe.2:21;\n(b) as to excellence: Heb.1:4 6:9 7:7, 19 7:22 8:6 9:23 10:34 11:16, 35; κ. ἐστι, before inf., 1Pe.3:17.†",
+   "sha256": "28f66c921a86ffb872f83ab22ff8c39bf152ae8d38c4910a66408a5f845d0176"
+  },
+  {
+   "strongs": "G2910",
+   "language": "greek",
+   "lemma": "κρεμάω",
+   "gloss": "to hang",
+   "definition": "κρεμάννυμι\n(also κρεμαννύω, κρεμάω; the Pres. is not found in NT), [in LXX (where also κρεμάζω, Job.26:7) chiefly for תָּלָה ;]\ntrans., to hang, suspend: with accusative of person(s), before ἐπὶ ξύλου, Act.5:30 10:39; pass., Luk.23:39; before περί, Mat.18:6. Mid., κρέμαμαι, intrans., to hang: before ἐκ, Act.28:4; ἐπὶ ξύλου, Gal.3:13 (LXX); metaphorically, before ἐν, Mat.22:40.†",
+   "sha256": "e05be0941d4568e09fb01e71dbf086f704d63eab68d2b432a810b694555f9e1c"
+  },
+  {
+   "strongs": "G2911",
+   "language": "greek",
+   "lemma": "κρημνός",
+   "gloss": "cliff",
+   "definition": "κρημνός, -οῦ, ὁ\n(κρεμάννυμι), [in LXX: 2Ch.25:12 (סֶלַע)* ;]\na steep bank: Mat.8:32, Mrk.5:13, Luk.8:33.†",
+   "sha256": "b3a3e6e72722870985696bf5f9d17785e48cdb3ac4f5188dfb581d318bba596c"
+  },
+  {
+   "strongs": "G2912",
+   "language": "greek",
+   "lemma": "Κρής",
+   "gloss": "Cretan",
+   "definition": "Κρής, ὁ, pl., Κρῆτες\na Cretan: Act.2:11, Tit.1:12.†",
+   "sha256": "bdef9071a526f7cf1d2976c43792d4db3c88edece10b7174ac6e2496d22cf134"
+  },
+  {
+   "strongs": "G2913",
+   "language": "greek",
+   "lemma": "Κρήσκης",
+   "gloss": "Crescens",
+   "definition": "Κρήσκης, -εντος (BI., § 10, 4), ὁ\nCrescens: 2Ti.4:10.†",
+   "sha256": "54932a0859305d19f6ef49fb1a48e69941b5566ed242423ebf8fdcdd63deef2d"
+  },
+  {
+   "strongs": "G2914",
+   "language": "greek",
+   "lemma": "Κρήτη",
+   "gloss": "Crete",
+   "definition": "Κρήτη, -ης, ἡ (Lat.),\nCrete: Act.27:7, 12-13 27:31, Tit.1:5.†",
+   "sha256": "e85f524d64ad65555918df5c46e3020c7de0a0817f7d7b78bb3addf345bf2be7"
+  },
+  {
+   "strongs": "G2915",
+   "language": "greek",
+   "lemma": "κριθή",
+   "gloss": "barley",
+   "definition": "κριθή, -ῆς, ἡ\n[in LXX for שְׂעֹרָה ;]\nbarley: pl. (as usually in cl.), Rev.6:6.†",
+   "sha256": "28bd3847a01bdc064fc3de853ed5d2f8ac920b66894d30c056decdc76a892da5"
+  },
+  {
+   "strongs": "G2916",
+   "language": "greek",
+   "lemma": "κρίθινος",
+   "gloss": "barley",
+   "definition": "κρίθινος, -η, -ον\n(κριθή), [in LXX for שְׂעֹרָה ;]\nof barley: Jhn.6:9, 13",
+   "sha256": "c1e446a9f81b0b995d059aaf7f64f7c6bbc9e5d8993ddb672ebe8158ac8390e2"
+  },
+  {
+   "strongs": "G2917",
+   "language": "greek",
+   "lemma": "κρίμα",
+   "gloss": "judgment",
+   "definition": "κρίμα (B1., § 27, 2), -τος, τό\n(κρίνω), [in LXX chiefly for מִשְׁפָּט ;]\nthe issue of a judicial process, hence,\n1. judgment, the decision passed on the faults of others: Mat.7:2; in forensic sense, with genitive pun., Luk.24:20; esp. of the judgment of God, Rom.2:2 5:16 11:33 (ICC, in l), 2Pe.2:3, Ju 4; κ. λαμβάνεσθαι, Mat.23:13 (Rec., R, mg.), Mrk.12:40, Luk.20:47, Rom.13:2, Jas.3:1; ἔχειν, 1Ti.5:12; βαστάζειν, Gal.5:10; ἐσθίειν ἑαυτῷ, 1Co.11:29; εἰς κ. συνέρχεσθαι, 1Co.11:34; εἶναι ἐν τ αὐτῷ κ., Luk.23:40; with genitive obj., Rom.3:8, 1Ti.3:6, Rev.17:1; of God's judgment through Christ, Jhn.9:39; τὸ κ. ἄρχεται, 1Pe.4:17; τ. κ. τ. μέλλον, Act.24:25; κ. αἰώνιον, Heb.6:2; ἔκρινεν ὁ Θεὸς τ. κ. ὐμῶν, Rev.18:20; of the right of judgment, Rev.20:4.\n2. a matter for judgment, a law-suit, a case: 1Co.6:7.†",
+   "sha256": "b9944dd86d9b145ae5c80356e327c521f5761594daab6972981b0527936c6d23"
+  },
+  {
+   "strongs": "G2918",
+   "language": "greek",
+   "lemma": "κρίνον",
+   "gloss": "lily",
+   "definition": "κρίνον, -ου, τό\n[in LXX chiefly for שׁוּשַׁן ;]\na lily: Mat.6:28, Luk.12:27.†",
+   "sha256": "64754cefb07e2a3c30fdc16a099ffaa46545aae8e0a1fb974b9f11cf3f21ea86"
+  },
+  {
+   "strongs": "G2919",
+   "language": "greek",
+   "lemma": "κρίνω",
+   "gloss": "to judge",
+   "definition": "κρίνω,\n[in LXX chiefly for שׁפט, also for ריב ,דּין, etc. ;]\n1. to separate, select, choose (cl.; in LXX: 2Ma.13:15).\n2. to approve, esteem: Rom.14:5.\n3. to be of opinion, judge, think: Luk.7:43, 1Co.11:13; before τοῦτο ὅτι, 2Co.5:14; with accusative and inf., Act.16:15; with accusative and pred., Act.13:46 26:8.\n4. to decide, determine, decree: with accusative, Act.16:4, Rom.14:13, 1Co.7:37, 2Co.2:1; with inf. (Field, Notes, 167), Act.20:16 25:25, 1Co.2:2 5:3, Tit.3:12 (cf. 1Ma.11:33, Wis.8:9, al.); with accusative and inf., Act.21:25 27:1.\n5. to judge, adjudge, pronounce judgment: absol., Jhn.8:16, 26; before κατά, with accusative, Jhn.7:24 8:15; κρίσιν κ., Jhn.7:24; τ. δίκαιον, Luk.12:57 (Deiss., LAE, 118); in forensic sense, Jhn.18:31, Act.23:3, al.; pass., Rom.3:4 (LXX); of God's judgment, Jhn.5:30 8:50, Rom.2:16 3:6, 2Ti.4:1, 1Pe.4:5, al.\n6. = κατακρίνω, to condemn (cl.): Act.13:27; of God's judgment, Jhn.3:18 5:22 12:47, 48, Act.7:7, Rom.2:12, 1Co.11:32, Heb.10:30\" (LXX), Jas.5:9, Rev.19:2, al.\n7. As in LXX (for שׁפט), to rule, govern ( 4Ki.15:5, Psa.2:10, al.): Mat.19:28, Luk.22:30, 1Co.6:3.\n8. to bring to trial (cl.); mid., to go to law: with dative of person(s), Mat.5:40; before μετά, with genitive of person(s) (of the opponent), ἐπί, with genitive (of the judge), 1Co.6:1, 6 (cf. ἀνα-, ἀπο-, ἀντ-απο- (-μαι), δια-, ἐν-, ἐπι-, κατα-, συν-, ὑπο- (-μαι), συν-υπο- (-μαι)).\nSYN.: see: δικάστης.",
+   "sha256": "a57ecd7ae9a3b7b6178e6fa34888039c7ec049664728483a4cbc926f34a345c9"
+  },
+  {
+   "strongs": "G2920",
+   "language": "greek",
+   "lemma": "κρίσις",
+   "gloss": "judgment",
+   "definition": "κρίσις, -εως, ἡ\n(κρίνω), [in LXX chiefly for מִשְׁפָּט, also for רִיב, etc. ;]\n1. a seperating, selection (Arist., al.)\n2. a decision, judgment (cl.): Jhn.8:16, 1Ti.5:24, 2Pe.2:11, Ju 9; κ. κρίνειν, Jhn.7:24; in forensic sense, Act.8:33 (LXX) (see Page, in l); esp. of the Divine judgment, Jhn.3:19 5:24, 27 5:29-30 12:31 16:8, 11, 2Th.1:5, Heb.10:27, Jas.2:13 5:12, 2Pe.2:4, Rev.18:10; pl., Rev.16:7 19:2; of the last judgment, Mat.10:15 11:22, 24 12:36, 41-42 Luk.10:14 11:31-32, Heb.9:27, 2Pe.2:9 3:7, 1Jn.4:17, Ju 6 15; τῆς γεέννης, Mat.23:33.\n3. By meton. (as in LXX for מִשְׁפָּט, Isa.5:7, al.; דִּישׁוֹן, Dan.7:10), of the standard of judgment, right, justice: Mat.12:18, 20 (LXX, Isa 42:43) Isa 23:23, Luk.11:42; of the tribunal (a local court), Mat.5:21-22†",
+   "sha256": "0842404efc720b08d7cfaf7d38496e1a881346e26caf729ba109753f2c0ac10e"
+  },
+  {
+   "strongs": "G2921",
+   "language": "greek",
+   "lemma": "Κρίσπος",
+   "gloss": "Crispus",
+   "definition": "Κρίσπος, -ου, ὁ\nCrispus: Act.18:8, 1Co.1:14.†",
+   "sha256": "ba6f710463fa96878d199b270300cd8a3bda092d24bb66183128cd4b40781574"
+  },
+  {
+   "strongs": "G2922",
+   "language": "greek",
+   "lemma": "κριτήριον",
+   "gloss": "court/lawsuit",
+   "definition": "κριτήριον, -ου, τό\n(κριτής), [in LXX: 3Ki.7:7 (מִשְׁפָּט), Dan LXX TH Dan.7:10, 26, (דִּין), Su 1:49, Exo.21:6, Jdg.5:10 * ;]\n1. a means of judging, test, criterion.\n2. a tribunal: 1Co.6:2 6:4, Jas.2:6.†",
+   "sha256": "ce16364f40a737bebd43bf85b312a94d008441ceed0a8f556185dd14f06aece7"
+  },
+  {
+   "strongs": "G2923",
+   "language": "greek",
+   "lemma": "κριτής",
+   "gloss": "judge",
+   "definition": "κριτής, -οῦ, ὁ\n(κρίνω), [in LXX chiefly for שָׁפַט ;]\na judge: Mat.5:25, Luk.12:14, 58 18:2; τ. ἀδικίας, Luk.18:6; with gem of thing(s) (obj.), Act.18:15, Jas.4:11; (qual.), διαλογισμῶν πονηρῶν, Jas.2:4; of a Roman procurator, Act.24:10; of God, Heb.12:23, Jas.4:12; Christ, Act.10:42, 2Ti.4:8, Jas.5:9; of those whose conduct is made a standard for judging, Mat.12:27, Luk.11:19; in the OT sense (Jdg.2:16, Rut.1:1, al), of a ruler in Israel, Act.13:20.†\nSYN.: δικάστης, q.v",
+   "sha256": "a464f0fc10fef0888a400abb32f7ba39d924f4f1f9e754c43daacc4f2e53b398"
+  },
+  {
+   "strongs": "G2924",
+   "language": "greek",
+   "lemma": "κριτικός",
+   "gloss": "discerning",
+   "definition": "κριτικός, -ή, -όν\n(κρίνω),\ncritical, able to discern or judge: with genitive obj., Heb.4:12.†",
+   "sha256": "368fe957a13f8df2c0e1826f29531a57db8bded87a52c27846f26b9aa488ec24"
+  },
+  {
+   "strongs": "G2925",
+   "language": "greek",
+   "lemma": "κρούω",
+   "gloss": "to knock",
+   "definition": "Κρούω\n[in LXX: before ἐπί Jdg.19:22, Sng.5:2 (דָּפַק) ;]\nwith, accusative, τ. αὐλαίαν, Jdth.14:14 * ;]\nto strike, knock: at a door (Κόπτειν, in Att..), Mat.7:7-8, Luk.11:9-10 12:36, Act.12:16, Rev.3:20; with accusative, τ. θύραν, Luk.13:25, Act.12:13.†",
+   "sha256": "9e188c13c250077356d942cdc9eabf3c70f38a4261b5f8c0f15e397db941dde5"
+  },
+  {
+   "strongs": "G2926",
+   "language": "greek",
+   "lemma": "κρύπτη",
+   "gloss": "cellar",
+   "definition": "κρύπτη (WH, R; κρυπτή, LT, Tr.; -όν, Rec.), -ης, ἡ,\na crypt, cellar: Luk.11:33.†",
+   "sha256": "90c211de346563cc66dde34d150d1b05425cfb4b02b0101ecfee487db4585859"
+  },
+  {
+   "strongs": "G2927",
+   "language": "greek",
+   "lemma": "κρυπτός",
+   "gloss": "hidden",
+   "definition": "κρυπτός, -ή, -όν\n(κρύπτω) [in LXX for אָטַם, מִסְתָּר, etc. ;]\nhidden, secret: Mat.10:26, Mrk.4:22, Luk.8:17 12:2; ὁ κ. τῆς καρδίας ἄνθρωπος, 1Pe.3:4; neut., ἐν τῷ κ., Mat.6:4, 6; ἐν κ., Jhn.7:4, 10 18:20; ὁ ἐν κ. Ἰουδαῖος, Rom.2:29; pl., τὰ κ. τ. σκότους, 1Co.4:5; τ. ἀνθρώπων, Rom.2:16; τ. καρδίας, 1Co.14:25; τ. αἰσχύνης, 2Co.4:2.†\nκρυφαῖος, -αία, -αῖον\n(κρύφα = κρυφῆ) [in LXX for מִסְתָּר, Jer.23:24, al. ;]\nhidden, secret: ἐν τῷ κ., Mat.6:18.†",
+   "sha256": "38d625c5eb0f2d16b319acbee3084f60a02ec5d535fe24c7ecdf1be9a7a85387"
+  },
+  {
+   "strongs": "G2928",
+   "language": "greek",
+   "lemma": "κρύπτω",
+   "gloss": "to hide",
+   "definition": "Κρύπτω\n[in LXX for חָבָא, טָמַן, סָתַר, צָפַן, etc. ;]\nto hide, conceal: with accusative, Mat.13:44 25:18; before ἐν, Mat.25:25 (pass., Mat.13:44, Col.3:3); pass., Mat.5:14, Heb.11:23, 1Ti.5:25, Rev.2:17; ἐκρύβη (on the tense and its formation, see M, Pr., 161; Bl., § 19, 3) κ. ἐξῆλθεν Jhn.8:59; before εἰς, Luk.13:21, Rev.6:15; ἀπό (in cl. more frequently dupl. accusative), Rev.6:16; pass., Jhn.12:36, (Bl., § 34, 4). Metaphorical: Mat.11:25 13:35, Luk.11:52, WH, mg., Luk.18:34 19:42, Jhn.19:38 (cf.ἀτο-, ἐν-, περι-κρύπτω).†",
+   "sha256": "c2664afbf1d08ba02dbffa19ce6b01741810d6c77bb72dace81f230328213d4e"
+  },
+  {
+   "strongs": "G2929",
+   "language": "greek",
+   "lemma": "κρυσταλλίζω",
+   "gloss": "be clear",
+   "definition": "κρυσταλλίζω\n(κρύσταλλος),\nto shine like crystal, be crystal-clear: Rev.21:11 (ἅπ, λεγ.).†",
+   "sha256": "bfddcd1a0d6db4589e53add4435fb1a63be5064453f882a2a752a6d1b7af670b"
+  },
+  {
+   "strongs": "G2930",
+   "language": "greek",
+   "lemma": "κρύσταλλος",
+   "gloss": "crystal",
+   "definition": "κρύσταλλος, -ου, ὁ\n(κρύος, frost), [in LXX: Job.38:29, Psa.147:17, Eze.1:22 (קֶרַח), etc. ;]\ncrystal: Rev.4:6 22:1.†",
+   "sha256": "0c758a4c9d465d9ccb68d0a73317a944a6911f0786288a2dfbac0575df8a11bb"
+  },
+  {
+   "strongs": "G2931",
+   "language": "greek",
+   "lemma": "κρυφῇ",
+   "gloss": "in secret",
+   "definition": "κρυΦῇ\n(prop. -ῆ, Rec.; later spelling is due to assimilation to dative; cf. εἰκῆ),\nadv., [in LXX chiefly for סָתַר ;]\nsecretly, in secret: Eph.5:12.†",
+   "sha256": "42802c8be144ecc6a5d52742d87045c860fab9e8ff63073984e19715b527dfb6"
+  },
+  {
+   "strongs": "G2932",
+   "language": "greek",
+   "lemma": "κτάομαι",
+   "gloss": "to posses",
+   "definition": "κτάομαι, -ῶμαι\n[in LXX chiefly for קָנָה ;]\nin pres., impf., fut. and aor., to procure for oneself, get, gain, acquire (the pf. and plpf., to have acquired, hence to possess, do not occur in NT): with accusative of thing(s), Mat.10:9, Luk.18:12, Act.8:20; with genitive pret., Act.22:28; ἐκ with genitive pret., Act.1:18; τ,ψυχὰς ὑμῶν (MM, xvi), Luk.21:19; τ. ἑαυτοῦ σκεῦος κτᾶσθαι, 1Th.4:4 (where if σ. = body, κ. must = pf., κέκτημαι; see MM, xvi; M, Th., in l; Field, Notes, 72 f. But σ. is most frequently taken as = wife; see Thayer, see word; Lft., Notes, 53 ff.; ICC, in l).†",
+   "sha256": "9298e05a94dfa80d6d2a946b55de714b661e4a9c644b12234ca6ac82ca233045"
+  },
+  {
+   "strongs": "G2933",
+   "language": "greek",
+   "lemma": "κτῆμα",
+   "gloss": "possession",
+   "definition": "κτῆμα, -τος, τό\n(κτάομαι), [in LXX for כֶּרֶם, etc. ;]\na possession, property: Mat.19:22, Mrk.10:22, Act.2:45 5:1.†",
+   "sha256": "320b51c834c0a7451db9e5ade7cf76491f03aad6b67f60774ca5344cf9d83145"
+  },
+  {
+   "strongs": "G2934",
+   "language": "greek",
+   "lemma": "κτῆνος",
+   "gloss": "animal",
+   "definition": "κτῆνος, -ους, τό\n(κτάομαι, hence primarily a possession), [in LXX chiefly for בְּהֵמָה Gen.1:25, al., also for מִקְנֶה, צֹנֵא, etc. ;]\na beast, (in late Gk. esp.) a beast of burden: Luk.10:34 pl. (as chiefly in cl.), Act.23:24, Rev.18:13; of quadrupeds, as Opp. to fishes and birds (cf. Ge, l.with), 1Co.15:39.†",
+   "sha256": "adde003677b0602941abf2b14b34cf3da16088e7bb56040bc8b2f7c7f37e3ec1"
+  },
+  {
+   "strongs": "G2935",
+   "language": "greek",
+   "lemma": "κτήτωρ",
+   "gloss": "owner",
+   "definition": "κτήτωρ, -ορος, ὁ\n(κτάομαι) [in Sm.: Jol.1:11 * ;]\na possessor: Act.4:34.†",
+   "sha256": "70deb47d30c45340230a5bf0e6061ed63156b3685ab8473d9bbf548e5bb7df5f"
+  },
+  {
+   "strongs": "G2936",
+   "language": "greek",
+   "lemma": "κτίζω",
+   "gloss": "to create",
+   "definition": "κτίζω\n[in LXX chiefly for בָּרָא, Psa.51:10, al.; also for קָנָה, Gen.14:19, Pro.8:22; יָצַר, Isa.22:11 46:11; Wis.2:23, Sir.1:4, 9 (and freq.), I Est.4:53, a1. ;]\n1. in cl., to people or found a region or city (1Es, l.with).\n2. In LXX and NT, of God, to create: Mrk.13:19, 1Co.11:9, Col.1:16 3:10 Eph.3:9, 1Ti.4:3, Rev.4:11 10:6; ὁ κτίσας, Mat.19:4 (WH, R, mg.), Rom.1:25; of the divine operation on the soul, Eph.2:10, 15 4:24 (cf. Ps., l.with).†",
+   "sha256": "30ccf52ed8f278f6486fe65433b8a41df50d59f0258230654b3d87ebdafc36c3"
+  },
+  {
+   "strongs": "G2937",
+   "language": "greek",
+   "lemma": "κτίσις",
+   "gloss": "creation",
+   "definition": "κτίσις, -εως, ἡ\n(κτίζω), [in LXX: Psa.104:24 (קִנְיָן), Pro.1:13 A (הוֹן), Tob.8:5, Wis.2:6, Sir.16:17, 3Ma.2:2, al. ;]\n1. a founding, settling, foundation (cl.).\n2. In LXX and NT,\n(a) the act of creating, creation: Mrk.10:6 (Swete, in l), Mrk.13:19, Rom.1:20, 2Pe.3:4;\n(b) that which has been created, creation: Rom.1:25 8:39, Heb.4:13; καινὴ κ., 2Co.5:17, Gal.6:15; πάσῃ ἀνθρωπίνῃ κ. (Hort., in l), 1Pe.2:13; collectively, of the sum of created things (Wis.19:6, Jdth.16:14), Mrk.16:15, Col.1:15, 23 Heb.9:11, Rev.3:14; of the irrational creation, Rom.8:19-22.†",
+   "sha256": "fd11771a68fe91d0c047d778a01c0a2b1cb08b5ddad55d6c0bfeee0c7fc2ae29"
+  },
+  {
+   "strongs": "G2938",
+   "language": "greek",
+   "lemma": "κτίσμα",
+   "gloss": "creature",
+   "definition": "κτίσμα, -τος, τό\n(κτίζω), [in LXX: Wis.9:2 13:5 14:11, Sir.36:20 (17), Sir.38:34, 3Ma.5:11 * ;]\n1. (cl.) a colony.\n2. a created thing, creature: 1Ti.4:4, Jas.1:18, Rev.5:13 8:9.†",
+   "sha256": "be1e743e560cdb6d8fb75423d11ec09079b8bafae819b9720f0ec098fc6e1639"
+  },
+  {
+   "strongs": "G2939",
+   "language": "greek",
+   "lemma": "κτίστης",
+   "gloss": "creator",
+   "definition": "κτίστης, -oυ, ὁ\n(κτίζω), [in LXX: 2Ki.22:32 (Heb., al.), Jdth.9:12, Sir.24:8, 2 24:1-34; 4Ma.5:1-38 * ;]\n1. (cl.) a founder.\n2. a creator: of God, 1Pe.4:19.†",
+   "sha256": "106266f45c04651214c6e31fdee7e855c486c8436eac453c0f9ce46da4db78f1"
+  },
+  {
+   "strongs": "G2940",
+   "language": "greek",
+   "lemma": "κυβεία",
+   "gloss": "cunning",
+   "definition": "κυβία (Mt. -εία, and so Rec.), -ας, ἡ\n(κύβος, a cube, a die),\ndice-playing; metaphorically, trickery, sleight: Eph.4:14.†",
+   "sha256": "59f9a74c77e232388b6694a958dd0966a73371ec2e5ea5b1743aa4f86071b45e"
+  },
+  {
+   "strongs": "G2941",
+   "language": "greek",
+   "lemma": "κυβέρνησις",
+   "gloss": "administration",
+   "definition": "κυβέρνησις, -εως, ἡ\n(κυβερνάω, Lat. gubernare, to guide), [in LXX: Pro.1:5 11:14 24:6 (תַּחְבֻּלָה) * ;]\n1. steering, pilotage (Plat.).\n2. Metaphorical, government: pl., 1Co.12:28.†",
+   "sha256": "9c1875f645cf8230ae394cc541f1f05b209e507f060804518ace5d0940158147"
+  },
+  {
+   "strongs": "G2942",
+   "language": "greek",
+   "lemma": "κυβερνήτης",
+   "gloss": "captain",
+   "definition": "κυβερνήτης, -ου, ὁ\n(see: κυβέρνησις), [in LXX for חֹבֵל, Eze.27:8, 27-28, Pro.23:24, 4Ma.7:1 * ;]\n1. a steersman, pilot: Act.27:11, Rev.18:17.\n2. Metaphorical, a guide, governor (Eur., Plat.).†",
+   "sha256": "3147c45d849d49c73fdf28f8e78101f5348e4c73dc65c4182dfc123f6cf5178c"
+  },
+  {
+   "strongs": "G2943",
+   "language": "greek",
+   "lemma": "κυκλόθεν",
+   "gloss": "around",
+   "definition": "κυκλόθεν\nadv., (κύκλος), [in LXX chiefly for סָבִיב ;]\nfrom all sides, round about: Rev.4:3-4, 8,†",
+   "sha256": "14fdbe46295554ea0b6b277f3a3ab77f0cb30b3ca8adc5a360d6033297c20592"
+  },
+  {
+   "strongs": "G2944",
+   "language": "greek",
+   "lemma": "κυκλόω",
+   "gloss": "to surround",
+   "definition": "κυκλόω, -ῶ\n(κύκλος), [in LXX chiefly for סָבַב ;]\n1. to move in a circle, revolve.\n2. to surround, encircle: with accusative of person(s), Jhn.10:24 (WH, txt., cf. -εύω), Act.14:20; pass., Luk.21:20, Heb.11:30 (cf. περι-κυκλόω).†",
+   "sha256": "2dc7d6def8f811029c1559dc0a6d9bb5d80e1cb50dd76c2835a5496c203f1034"
+  },
+  {
+   "strongs": "G2945",
+   "language": "greek",
+   "lemma": "κύκλῳ",
+   "gloss": "surrounding",
+   "definition": "κύκλος, -ου, ὁ\n[in LXX chiefly for סָבִיב ;]\na ring, circle. Dat., κύκλῳ, as adverb., round about, around: Mrk.3:34 6:6, 36, Luk.9:12, Rom.15:19; with genitive, Rev.4:6 5:11 7:11†",
+   "sha256": "dcaf5b881a2537143a18fdd4ea77f6ae9835feb1a0459712075b44db2243cf8b"
+  },
+  {
+   "strongs": "G2946",
+   "language": "greek",
+   "lemma": "κύλισμα",
+   "gloss": "wallowing",
+   "definition": "κύλισμα, -τος, τό\n(κυλίω), [in Sm.: Eze.10:13 * ;]\n1. a roll.\n2. = κυλισμός (which see), a rolling, wallowing (or, as κυλίστρα, Xen., Eq., see 3, a rolling place): 2Pe.2:22 (Rec.).†",
+   "sha256": "bb9ed27f95e7005c412f8b34c5c4ed1a60e7e7d8d2a0ec69acdb96ecafe9a2c5"
+  },
+  {
+   "strongs": "G2947",
+   "language": "greek",
+   "lemma": "κυλίω",
+   "gloss": "to wallow",
+   "definition": "κυλίω late form of κυλίνδω,\n[in LXX: Jos.10:18, 1Ki.14:33, al. (גָּלַל), 4Ki.9:33 (שָׁמַט), al. ;]\nto roll, roll along. Pass., to be rolled; of persons (in Hom, as sign of grief), to roll or wallow: Mrk.9:20.†",
+   "sha256": "7ba619928c95d412ce9a42557debebfeb483d4ca94f67f5b858bbf30ca1c82ba"
+  },
+  {
+   "strongs": "G2948",
+   "language": "greek",
+   "lemma": "κυλλός",
+   "gloss": "crippled",
+   "definition": "κυλλός, -ή, -όν\n1. crooked, crippled: Mat.15:30-31 (WH, txt. om.);\n2. maimed: Mat.18:8, Mrk.9:43.†",
+   "sha256": "63ff04201bdeca8bb7eabeb0494b704919c128f8bbe238c4579b542ece14b510"
+  },
+  {
+   "strongs": "G2949",
+   "language": "greek",
+   "lemma": "κῦμα",
+   "gloss": "a wave",
+   "definition": "κῦμα, -τος, τό\n(κύω, to be pregnant, to swell) [in LXX chiefly for גַּל ;]\na wave: pl., Mat.8:24 14:24, Mrk.4:37; κ. θαλάσσης, figuratively, Ju 13.†\nSYN.: κλύδων, q.v",
+   "sha256": "ee5c8588fd31d9b023d05148462be6f35db0bbe283d746abf9518d5c0f9d3c03"
+  },
+  {
+   "strongs": "G2950",
+   "language": "greek",
+   "lemma": "κύμβαλον",
+   "gloss": "cymbal",
+   "definition": "κύμβαλον, -ου, τό\n(κύμβη, a cup), [in LXX chiefly for מְצִלָּה ;]\na cymbal: 1Co.13:1.†",
+   "sha256": "56f15f5950b9ca37b5351d6332b8c0eb7b2e17aa657ae24e569f1feb5230814b"
+  },
+  {
+   "strongs": "G2951",
+   "language": "greek",
+   "lemma": "κύμινον",
+   "gloss": "cumin",
+   "definition": "κύμινον, -ου, τό\n[in LXX: Isa.28:25, 27 (כַּמֹּן)* ;]\ncumin: Mat.23:23.†",
+   "sha256": "30de5644f32ae30c30a0327c6369a815cfd955568082afa0a8d05888dc69286d"
+  },
+  {
+   "strongs": "G2952",
+   "language": "greek",
+   "lemma": "κυνάριον",
+   "gloss": "little dog",
+   "definition": "κυνάριον, -ου, τό\n(in Att.. also κυνίδιον, diminutive of κύων)\na little dog: Mat.15:26-27 Mrk.7:27-28 †",
+   "sha256": "5283ea35f8e494183f8594d42f677c8a40051df34e0e485233e3dab78524bac4"
+  },
+  {
+   "strongs": "G2953",
+   "language": "greek",
+   "lemma": "Κύπριος",
+   "gloss": "Cyprus",
+   "definition": "Κύπριος, -α, -ον\nof Cyprus, Cyprian: Act.4:36 11:20 21:16.†",
+   "sha256": "d9edb6badc75ed3fe054ca0faff70973dcf1340e71ac72c01d44ae502955ba94"
+  },
+  {
+   "strongs": "G2954",
+   "language": "greek",
+   "lemma": "Κύπρος",
+   "gloss": "Cyprus",
+   "definition": "Κύπρος, -ου, ἡ\nCyprus: Act.11:19 13:4 15:39 21:3 27:4.†",
+   "sha256": "572a4b5f672c70989177dd5c26a9e30d0b7a6118fa77e38ca9b59cdee0b4b53f"
+  },
+  {
+   "strongs": "G2955",
+   "language": "greek",
+   "lemma": "κύπτω",
+   "gloss": "to stoop/bend down",
+   "definition": "κύπτω\n[in LXX chiefly for קָדַד ;]\nto bow the head, stoop down: Mrk.1:7; before κάτω, Jhn.8:6, 8 (cf. ἀνα-, παρα-, συν-κύπτω).†\nκατα-κύπτω,\n[in LXX: 4Ki.9:32 (שָׁקַף hi.)* ;]\nto bend down, stoop: Jhn.8:8 (κάτω κύψας, Rec., WH, mg.).†",
+   "sha256": "c1f8dedcf31895477c570c54dce5cf5321849a43912ffe62ab44affd0d8ea00e"
+  },
+  {
+   "strongs": "G2956",
+   "language": "greek",
+   "lemma": "Κυρηναῖος",
+   "gloss": "Cyrene",
+   "definition": "Κυρηναῖος, -α, -ον\n(Κυρήνη),\nof Cyrene, a Cyrenæan: Mat.27:32, Mrk.15:21, Luk.23:2, Act.6:9 11:20 13:1.†",
+   "sha256": "f5bd8819a0046c09109a6100d1c758d01e134c4e2dff723ba40c288c9fdb342a"
+  },
+  {
+   "strongs": "G2957",
+   "language": "greek",
+   "lemma": "Κυρήνη",
+   "gloss": "Cyrene",
+   "definition": "Κυρήνη, -ης, ἡ\nCyrene, a city in Libya: Act.2:10.†",
+   "sha256": "b056c5fbfc62b03d901870fba47719bd1fd3e3dc31c90c461461769f291ff11d"
+  },
+  {
+   "strongs": "G2958",
+   "language": "greek",
+   "lemma": "Κυρήνιος",
+   "gloss": "Quirinius",
+   "definition": "Κυρήνιος\n(prop. -ίνιος, see Bl., 13; -ῖνος L, -εῖνος, Tr., WH, mg.), -ου, ὁ,\nQuirinus, prop. Quirinius: Luk.2:2.†",
+   "sha256": "27ff0ef65e7cc6590b5a27d661d5f7d416a90c2cf8c4ffa471d2464946b0273e"
+  },
+  {
+   "strongs": "G2959",
+   "language": "greek",
+   "lemma": "Κυρία",
+   "gloss": "lady",
+   "definition": "κυρία\n(Κυρία, T, WH, mg.), -ας, ἡ, [in LXX chiefly for גְּבֶרֶת ;]\na lady: 2Jn.1 Jn 5 (on the interpretation, see ICC, 167 ff.).†",
+   "sha256": "ebf62e9aea171a2bcbf508f5a0049a4396f5340034892ffc2ebfa5b43ee4966e"
+  },
+  {
+   "strongs": "G2960",
+   "language": "greek",
+   "lemma": "κυριακός",
+   "gloss": "the Lord’s",
+   "definition": "κυριακός, -ή, -όν\n(κύριος), [in LXX: κ. φωνη (Συριακή φ., R), 2Ma.15:36 A * ;]\n1. as frequently in Inscr. (LS, see word; Deiss., BS, 217 f.), of the lord or master, imperial.\n2. of the Lord (i.e. Christ): δεῖπνον, 1Co.11:20; ἡμέρα, Rev.1:10. (cf. λόγια κ., Papias, Eus., HE, iii, 39, 1; γραφαὶ κ., Clem. Alex., etc; for eccl. usage, cf. Soph., Lex., see word)†",
+   "sha256": "efd0c4210ebacced6578a9230064ec709534d4f927aaa97fcf2d59001b00683b"
+  },
+  {
+   "strongs": "G2961",
+   "language": "greek",
+   "lemma": "κυριεύω",
+   "gloss": "to lord over",
+   "definition": "κυριεύω\n(κύριος), [in LXX chiefly for מָשַׁל ;]\nto be lord or master of, to rule (over): C. genitive obj., Luk.22:25, Rom.14:9, 2Co.1:24; absol., 1Ti.6:15; metaphorically, ὁ θάνατος, Rom.6:9; ἡ ἁμαρτία, Rom.6:14; ὁ νόμος, Rom.7:1 (cf. κατα-κυριεύω).†",
+   "sha256": "0b6384f0f668d20a80dec7af8cfc34d4ce6dadea8ab9d2ab0006cf6229092dd7"
+  },
+  {
+   "strongs": "G2962G",
+   "language": "greek",
+   "lemma": "κύριος",
+   "gloss": "lord: God",
+   "definition": "κύριος, -α, -ον (also -ος, -ον),\n[in LXX (subst.) chiefly for יהוה, also for בַּעַל ,אָדוֹן, etc. ;]\nhaving power (κῦρος) or authority; as subst., ὁ κ., lord, master;\n1. in general: with genitive of thing(s), Mat.9:38 20:8, Mrk.12:9 13:35, Luk.19:33; τ. σαββάτου, Mat.12:8, Mrk.2:28, Luk.6:5; with genitive of person(s), δούλου, etc., Mat.10:24, Luk.14:21, Act.16:16, al.; absol, opposite to οἱ δοῦλοι, Eph.6:5, 9 al.; of the Emperor (Deiss., LAE, 161), Act.25:26; θεοὶ πολλοὶ καὶ κ. πολλοί, 1Co.8:5; of a husband, 1Pe.3:6; in voc, as a title of respect to masters, teachers, magistrates, etc., Mat.13:27 16:22 27:63, Mrk.7:28, Luk.5:12, Jhn.4:11, Act.9:5, al.\n2. As a divine title (frequently in π.; Deiss., LAE, 353 ff.); in NT,\n(a) of God: ὁ κ., Mat.5:33, Mrk.5:19, Luk.1:6, Act.7:33, Heb.8:2, Jas.4:15, al.; anarth. (Bl., §46, 6), Mat.21:9, Mrk.13:20, Luk.1:17, Heb.7:21, 1Pe.1:25, al.; κ. τ. οὐρανοῦ καὶ τ. γῆς, Mat.11:25; τ. κυριευόντων, 1Ti.6:15; κ. ὁ θεός, Mat.4:7, 10 al.; id. before παντοκράτωρ, Rev.4:8; κ. σαβαώθ, Rom.9:29; (ὁ) ἄγγελος κυρίου, Mat.1:20 2:13, Luk.1:11, al.; πνεῦμα κυρίου, Luk.4:18, Act.8:39;\n(b) of the Christ: Mat.21:3, Mrk.11:3, Luk.1:43 20:44, al.; of Jesus after his resurrection (Dalman, Words, 330), Act.10:36, Rom.14:8, 1Co.7:22, Eph.4:5, al.; ὁ κ. μου, Jhn.20:28; ὁ κ. Ἰησοῦς, Act.1:21, 1Co.11:23, al.; id. before Χριστός, Eph.1:2, al.; ὁ κ. ἡμῶν, 1Ti.1:14, Heb.7:14, al.; id. before Ἰησοῦς, 1Th.3:11, Heb.13:20, al.; Χριστός, Rom.16:18; Ἰ Χ., 1Co.1:2, 1Th.1:3, al.; Ἰ. Χ. (Χ. Ἰ) ὁ κ. (ἡμῶν), Rom.1:4, Col.2:6, Eph.3:11, al.; ὁ κ. καὶ ὁ σωτὴρ, 2Pe.3:2; id. before Ἰ. Χ., ib. 18; anarth., 1Co.7:22, 25 Jas.5:4, al.; κ. κυρίων, Rev.19:16; with prep., ἀπὸ (κατὰ, πρὸς, σὺν, etc.) κ., Col.3:24, al.\nSYN: see: δεσπότης.",
+   "sha256": "838f790f92f80861ae20e03fd2b355f902c3c12b4b39e50175bd87de71ea42e6"
+  },
+  {
+   "strongs": "G2962H",
+   "language": "greek",
+   "lemma": "κύριος",
+   "gloss": "lord: master",
+   "definition": "κύριος, -α, -ον (also -ος, -ον),\n[in LXX (subst.) chiefly for יהוה, also for בַּעַל ,אָדוֹן, etc. ;]\nhaving power (κῦρος) or authority; as subst., ὁ κ., lord, master;\n1. in general: with genitive of thing(s), Mat.9:38 20:8, Mrk.12:9 13:35, Luk.19:33; τ. σαββάτου, Mat.12:8, Mrk.2:28, Luk.6:5; with genitive of person(s), δούλου, etc., Mat.10:24, Luk.14:21, Act.16:16, al.; absol, opposite to οἱ δοῦλοι, Eph.6:5, 9 al.; of the Emperor (Deiss., LAE, 161), Act.25:26; θεοὶ πολλοὶ καὶ κ. πολλοί, 1Co.8:5; of a husband, 1Pe.3:6; in voc, as a title of respect to masters, teachers, magistrates, etc., Mat.13:27 16:22 27:63, Mrk.7:28, Luk.5:12, Jhn.4:11, Act.9:5, al.\n2. As a divine title (frequently in π.; Deiss., LAE, 353 ff.); in NT,\n(a) of God: ὁ κ., Mat.5:33, Mrk.5:19, Luk.1:6, Act.7:33, Heb.8:2, Jas.4:15, al.; anarth. (Bl., §46, 6), Mat.21:9, Mrk.13:20, Luk.1:17, Heb.7:21, 1Pe.1:25, al.; κ. τ. οὐρανοῦ καὶ τ. γῆς, Mat.11:25; τ. κυριευόντων, 1Ti.6:15; κ. ὁ θεός, Mat.4:7, 10 al.; id. before παντοκράτωρ, Rev.4:8; κ. σαβαώθ, Rom.9:29; (ὁ) ἄγγελος κυρίου, Mat.1:20 2:13, Luk.1:11, al.; πνεῦμα κυρίου, Luk.4:18, Act.8:39;\n(b) of the Christ: Mat.21:3, Mrk.11:3, Luk.1:43 20:44, al.; of Jesus after his resurrection (Dalman, Words, 330), Act.10:36, Rom.14:8, 1Co.7:22, Eph.4:5, al.; ὁ κ. μου, Jhn.20:28; ὁ κ. Ἰησοῦς, Act.1:21, 1Co.11:23, al.; id. before Χριστός, Eph.1:2, al.; ὁ κ. ἡμῶν, 1Ti.1:14, Heb.7:14, al.; id. before Ἰησοῦς, 1Th.3:11, Heb.13:20, al.; Χριστός, Rom.16:18; Ἰ Χ., 1Co.1:2, 1Th.1:3, al.; Ἰ. Χ. (Χ. Ἰ) ὁ κ. (ἡμῶν), Rom.1:4, Col.2:6, Eph.3:11, al.; ὁ κ. καὶ ὁ σωτὴρ, 2Pe.3:2; id. before Ἰ. Χ., ib. 18; anarth., 1Co.7:22, 25 Jas.5:4, al.; κ. κυρίων, Rev.19:16; with prep., ἀπὸ (κατὰ, πρὸς, σὺν, etc.) κ., Col.3:24, al.\nSYN: see: δεσπότης.",
+   "sha256": "e79b8ea9675dd7664b5a255644fc26860214b1d53d629736748858ae7ad93870"
+  },
+  {
+   "strongs": "G2963",
+   "language": "greek",
+   "lemma": "κυριότης",
+   "gloss": "lordship",
+   "definition": "κυριότης, -ητος, ἡ\n(κύριος),\nlordship, dominion: Eph.1:21, 2Pe.2:10, Ju 8; pl., Col.1:16 (cf. Lft., Col; Mayor, Ju., in ll.; DB, i, 616 f.).†",
+   "sha256": "e52dcc5f8d5a6590f848808111636afcd7d3b1bae7acbda0f72e3b409af9bb2c"
+  },
+  {
+   "strongs": "G2964",
+   "language": "greek",
+   "lemma": "κυρόω",
+   "gloss": "to affirm",
+   "definition": "κυρόω, -ῶ\n(κῦρος, 1. authority. 2. validity), [in LXX for קוּם ;]\nto confirm, ratify, make valid: 2Co.2:8; pass., Gal.3:15 (cf. προ-κυρόω).†",
+   "sha256": "e94a58101aef7d5c3c7f8d36cf3c69fbf80e5295536df681e4f6bc3ef8cf6c70"
+  },
+  {
+   "strongs": "G2965",
+   "language": "greek",
+   "lemma": "κύων",
+   "gloss": "dog",
+   "definition": "κύων, κυνός, ὁ, ἡ\n(in NT masc. only), [in LXX forכֶּלֶב ;]\na dog: Luk.16:21, 2Pe.2:22; metaphorically, as a word of reproach, Mat.7:6, Php.3:2, Rev.22:15.†",
+   "sha256": "553272909ee1e87b4471b8265d79bce3f05f7dc0683e71d80e07b823e6e668e8"
+  },
+  {
+   "strongs": "G2966",
+   "language": "greek",
+   "lemma": "κῶλον",
+   "gloss": "corpse",
+   "definition": "κῶλον, -ου, τό\na limb, member of a body,\n[but in LXX (Lev.26:30, Num.14:29, 32-33, 1Ki.17:46, Isa.66:24*) for פֶּגֶר ;]\nhence, carcase: Heb.3:17 (LXX).†",
+   "sha256": "84a6e656f90f4eca01e73728e6de60675bda8eafde0a568b15a73d6259b758f3"
+  },
+  {
+   "strongs": "G2967",
+   "language": "greek",
+   "lemma": "κωλύω",
+   "gloss": "to prevent",
+   "definition": "κωλύω\n(κόλος), [in LXX for כָּלָא, מָנַע, etc. ;]\nto hinder, re­strain, forbid, withhold: with accusative and inf., Mat.19:14, Luk.23:2, Act.8:36 16:6 24:23, 1Th.2:16, Heb.7:23; inf. om., Mrk.9:38-39 10:14, Luk.9:49-50 11:52 18:16, Act.11:17, Rom.1:13, 3Jn.10; accusative om., 1Ti.4:3; with accusative of person(s) and genitive of thing(s), Act.27:43; with accusative of thing(s), 1Co.14:39, 2Pe.2:16; id. before τοῦ μή, Act.10:47; id. before ἀπό (like Heb. מִן כָּלָא, Gen.23:6, al.), Luk.6:29 (cf. δια-κωλύω).†",
+   "sha256": "af9434cc570735aaeb1debca6b02d8f01ee7543e460bf8582e606f65a8dfe7e8"
+  },
+  {
+   "strongs": "G2968",
+   "language": "greek",
+   "lemma": "κώμη",
+   "gloss": "village",
+   "definition": "κώμη, -ης, ἡ\n[in LXX for בַּת, חָצֵר, עִיר, etc. ;]\na village or country town, prop, as opposite to a walled city: Mat.14:15, Mrk.6:6, al.; πόλεις καὶ κ., Mat.9:35, al.; with the name added, Βηθλεέμ, Jhn.7:42; Βηθανΐα, Jhn.11:1; with the name of the district, τὰς κ. Καισαρίας, Mrk.8:27; Σαμαρειτῶν, Luk.9:52, Act.8:25",
+   "sha256": "60919dfc7cc94a415adcae86cb093b4ce1cb8f77afadf67ee27222605e4a4559"
+  },
+  {
+   "strongs": "G2969",
+   "language": "greek",
+   "lemma": "κωμόπολις",
+   "gloss": "village",
+   "definition": "κωμόπολις, -εως, ἡ\na country town: Mrk.1:38 (see Swete, in l).†",
+   "sha256": "6c6e9f4396662823715ab21b1806379535d933d3e0c160827d01084559174621"
+  },
+  {
+   "strongs": "G2970",
+   "language": "greek",
+   "lemma": "κῶμος",
+   "gloss": "orgy",
+   "definition": "κῶμος, -ου, ὁ\n[in LXX: Wis.14:23, 2Ma.6:4 * ;]\na revel, carousal: Rom.13:13, Gal.5:21, 1Pe.4:3.†\nSYN.: see: κραιπάλη",
+   "sha256": "9ec1e9078d5aae9a42f86dd65ec9c6a13e26f2d1f7004d198d5d7b1d2567687e"
+  },
+  {
+   "strongs": "G2971",
+   "language": "greek",
+   "lemma": "κώνωψ",
+   "gloss": "gnat",
+   "definition": "a gnat, mosquito , Lat. culex, (Herdotus Historicus), etc. (ML)",
+   "sha256": "6bd8d34a92e2e0e421e0fe3196c874cc721dac60eff6430e46fc4275f0360cd0"
+  },
+  {
+   "strongs": "G2972",
+   "language": "greek",
+   "lemma": "Κώς",
+   "gloss": "Cos",
+   "definition": "Κῶς genitive Κῶ, ἡ,\nCos, an island in the Ægean Sea: accusative Κῶ, Act.21:1 (Κῶν, Rec.).†",
+   "sha256": "18487866c077f245cf90501800aa02a809658abb06e48e12d91f5fc37cecbfea"
+  },
+  {
+   "strongs": "G2973",
+   "language": "greek",
+   "lemma": "Κωσάμ",
+   "gloss": "Cosam",
+   "definition": "Κωσάμ, ὁ\nCosam: Luk.3:28.†",
+   "sha256": "d97e1396b1dab67103f920b8815dfe1fc372874d898e4dd1ba9d1a25ce45ec10"
+  },
+  {
+   "strongs": "G2974",
+   "language": "greek",
+   "lemma": "κωφός",
+   "gloss": "deaf/mute",
+   "definition": "κωφός, -ή, -όν\n(κόπτω), [in LXX chiefly (Exo.4:11, al.) for אִלֵּם; for חָרָשׁ, Hab.2:18 ;]\nblunt, dull. Metaphorical, of the senses, esp.\n(a) of speech, dumb: Mat.9:32-33 12:22 15:30-31, Luk.1:22 11:14;\n(b) of hearing, deaf: Mat.11:5, Mrk.7:32, 37 9:25, Luk.7:22.†",
+   "sha256": "df6567cd02203ae1ced14df548da83fa3e1896b7f0ae16c07b14806a92f5dca4"
+  },
+  {
+   "strongs": "G2975",
+   "language": "greek",
+   "lemma": "λαγχάνω",
+   "gloss": "to choose by lot",
+   "definition": "λαγχάνω\n[in LXX: 1Ki.14:47 (לָכַד, see Th., Gr., 38), Wis.8:19, 3Mac 61 * ;]\n1. to obtain by lot, to obtain (in cl., with genitive): with inf. art. (B1., § 36, 3; 71, 3), Luk.1:9; with accusative of thing(s), Act.1:17, 2Pe.1:1.\n2. to draw lots: before περί, Jhn.19:24",
+   "sha256": "4334f05dcc174f66a95ed93d2c7b8c0b58ce13f82b0a9ada9678e0d0fe27d552"
+  },
+  {
+   "strongs": "G2976G",
+   "language": "greek",
+   "lemma": "Λάζαρος",
+   "gloss": "Lazarus",
+   "definition": "Λάζαρος, -ου, ὁ\ncolloquial abbreviation of Ἐλεαζάρ (άζαρος), which see),\nLazarus;\n1. of Bethany: Jhn.11:1 ff. Jhn.12:1-2, 9-10 12:17.\n2. The beggar in the parable: Luk.16:20, 23-25.†",
+   "sha256": "13a23024cb2a2aff50d70bd0d2f74ac3e15fe3543b7e582f4b1bb862d1b8fe89"
+  },
+  {
+   "strongs": "G2976H",
+   "language": "greek",
+   "lemma": "Λάζαρος",
+   "gloss": "Lazarus",
+   "definition": "Λάζαρος, -ου, ὁ\ncolloquial abbreviation of Ἐλεαζάρ (άζαρος), which see),\nLazarus;\n1. of Bethany: Jhn.11:1 ff. Jhn.12:1-2, 9-10 12:17.\n2. The beggar in the parable: Luk.16:20, 23-25.†",
+   "sha256": "13a23024cb2a2aff50d70bd0d2f74ac3e15fe3543b7e582f4b1bb862d1b8fe89"
+  },
+  {
+   "strongs": "G2976I",
+   "language": "greek",
+   "lemma": "[unnamed]",
+   "gloss": "[father of Lazarus]",
+   "definition": "Λάζαρος, -ου, ὁ\ncolloquial abbreviation of Ἐλεαζάρ (άζαρος), which see),\nLazarus;\n1. of Bethany: Jhn.11:1 ff. Jhn.12:1-2, 9-10 12:17.\n2. The beggar in the parable: Luk.16:20, 23-25.†",
+   "sha256": "e32df051f329963a2fbcef79133795062443634efb13c97e6bc54db88256716d"
+  },
+  {
+   "strongs": "G2977",
+   "language": "greek",
+   "lemma": "λάθρα",
+   "gloss": "quietly",
+   "definition": "λάθρᾳ (Att..; in Hom., -ρῃ, Rec. -ρα),\nadv., [in LXX chiefly for ‎סֵתֶר ;]\nsecretly: Mat.1:19 2:7, Mrk.5:33 (WH, mg.), Jhn.11:28, Act.16:37.†",
+   "sha256": "757a1f33c34b0029ca452ba1104fce275aa17d99e90af36a872e4fac5196a26b"
+  },
+  {
+   "strongs": "G2978",
+   "language": "greek",
+   "lemma": "λαῖλαψ",
+   "gloss": "storm",
+   "definition": "λαῖλαψ, -απος, ἡ\n[in LXX: Job.21:18 27:20 א (סוּפָה) Job.38:1, Jer.25:32 (סַעַר), Wis.5:14, 23, Sir.48:9, 12 * ;]\na hurricane, whirlwind: Mrk.4:37, Luk.8:23, 2Pe.2:17.†\nSYN.: θύελλα, which see, and cf. ἄνεμος",
+   "sha256": "833348c638a5185b05bedb87b338121c0557b0a8555ec4b01626d7da45a354f5"
+  },
+  {
+   "strongs": "G2979",
+   "language": "greek",
+   "lemma": "λακτίζω",
+   "gloss": "to kick",
+   "definition": "λακτίζω\n(λάξ, with the foot),\nto kick: Act.26:14.†",
+   "sha256": "de6a48bd7e8d4534295bdae07beece78e140855c6952a4136aa34eb2dc7ec997"
+  },
+  {
+   "strongs": "G2980",
+   "language": "greek",
+   "lemma": "λαλέω",
+   "gloss": "to speak",
+   "definition": "λαλέω, -ῶ,\n[in LXX chiefly for דּבר pi., also for אמר, etc. ;]\n1. to utter: of inanimate things, Rev.4:1 10:4; metaphorically, Heb.11:4 12:24.\n2. to talk, speak, say: absol., Mat.9:33 12:46, Mrk.5:35, Luk.8:49; before ὡς, 1Co.13:11, Rev.13:11; εἰς, 1Co.14:9; ἐκ, Mat.12:34; with accusative of thing(s), Mat.10:19, Mrk.11:32, Jhn.8:30, al.; with dative of person(s), Mat.12:46, Luk.24:6, Rom.7:1, al.; with accusative of thing(s) and dative of person(s), Mat.9:18, Jhn.10:6, al.; with prep., πρός, μετά, περί, Mrk.6:50, Luk.1:19 2:33, al.; ἐν, ἐξ, ἀπό, Mat.13:3, Jhn.12:49 14:10, al.; λ. τ. λόγον, Mrk.8:32, al.; before orat. dir. (not cl.), Mrk.14:31, Heb.5:5 11:18; Hebraistically (Dalman, Words, 25f.), ἐλάλησε λέγων, Mat.14:27, Jhn.8:12, Act.8:26, al.\nSYN.: see: λέγω.",
+   "sha256": "7994a07ff93b0c0fd54a95236278e9ae07715030b35209a0e9fc0ed76df170e2"
+  },
+  {
+   "strongs": "G2981",
+   "language": "greek",
+   "lemma": "λαλιά",
+   "gloss": "speech",
+   "definition": "λαλία, -ᾶς, ἡ\n[in LXX chiefly for דָּבָר, דִּבְרָה ;]\n1. loquacity = Very talkative.\n2. talk, speech, conversation: Mat.26:73 (cf. Ca 43), Jhn.4:42 8:43.†",
+   "sha256": "ce87d826d5841dbd4bae2df8464666c2a224db62c7396c55e904b240e38b8878"
+  },
+  {
+   "strongs": "G2982",
+   "language": "greek",
+   "lemma": "λαμά",
+   "gloss": "why?",
+   "definition": "λαμά (Heb. מָה, seel. λεμά = Aram. לְמָא)\nwhy: Mat.27:46 (WH, mg., λεμά TTr., WH, txt., λεμά L), Mrk.15:34 (λεμά LT, λαμμᾶ, Rec.).†",
+   "sha256": "ef283df7580adce3ee44e134d2c6c11430fb554d879948eb6bcb730612faf6cc"
+  },
+  {
+   "strongs": "G2983",
+   "language": "greek",
+   "lemma": "λαμβάνω",
+   "gloss": "to take",
+   "definition": "λαμβάνω,\n[in LXX chiefly for לקח, also for אחז ,לכד ,נשׂא, etc. ;]\n1. to take, lay hold of: absol., Mat.26:26, Mrk.14:22; with accusative of thing(s), Mat.5:40 26:52, al. mult.; with accusative of person(s), Mat.21:35, Mrk.12:3, al.; pleonastic λαβών (M, Pr., 230; Bl., §74, 2), Mat.13:31 14:19, al.; so also indic., Mrk.7:27, Jhn.19:1, 40 Rev.8:5, al.; metaphorically, with accusative of thing(s), ἀφορμήν, Rom.7:8, 11; ὑδόδειγμα, Jas.5:10; id. with accusative of person(s), φόβος, Luk.7:16; πνεῦμα, Luk.9:39; πειρασμός, 1Co.10:13; aoristic pf. (M, Pr., 145, 238; BL, §59, 4), Rev.5:7 8:5, al.\n2. to receive: absol., opposite to αἰτεῖν, Mat.7:8, al.; διδόναι, Mat.10:8, Act.20:35; with accusative of thing(s), Mat.27:6, Mrk.10:3o, al. mult.; with accusative of person(s), Jhn.6:21 13:20 19:27, 2Jo.10; ῥαπίσμασιν (a vulgarism; Bl., §38, 3), Mrk.14:65; metaphorically, τ. λόγον, Mat.13:20, Mrk.4:16; τ. μαρτυρίαν, Jhn.3:11; τ. ῥήματα, Jhn.12:48; πρόσωπον (Heb. נָשָׂא פָּנִים, Dalman, Words, 30), Luk.20:21, Gal.2:6; ζωὴν αἰώνιον (Dalman, op. cit., 124f.), Mrk.10:30 (cf. ἀνα-, ἀντι-, συν-αντι- (-μαι), ἀπο-, ἐπι-, κατα-, μετα-, παρα-, συν-παρα-, προ-, προσ-, συν-, συν-περι-, ὑπο-λαμβάνω).",
+   "sha256": "da7b0147159617ef1b547831fa1043866e04c3a5df9ec075ecbcaf94041062bd"
+  },
+  {
+   "strongs": "G2984",
+   "language": "greek",
+   "lemma": "Λάμεχ",
+   "gloss": "Lamech",
+   "definition": "Λάμεχ, ὁ indecl. (Heb. לֶמֶךְ),\nLamech (Gen.5:25): Luk.3:36.†",
+   "sha256": "91bf03b2b7d1203ccab10f50584e23e1edb06f7df48056f73643f7a73b46c414"
+  },
+  {
+   "strongs": "G2985",
+   "language": "greek",
+   "lemma": "λαμπάς",
+   "gloss": "window",
+   "definition": "λαμπάς, -άδος, ἡ\n(λάμπω), [in LXX for לַפִּיד ;]\na torch (frequently fed, like a lamp, with oil): Mat.25:1 ff., Jhn.18:3, Act.20:8, Rev.4:5 8:10.†",
+   "sha256": "4d7a9547a2ef88ef9e8e7a76d958c857f3ec12c4a6736b25bbba953d37f4a44b"
+  },
+  {
+   "strongs": "G2986",
+   "language": "greek",
+   "lemma": "λαμπρός",
+   "gloss": "shining",
+   "definition": "λαμπρός, -ά, -όν\n(λάμπω), [in LXX: Tob.13:11, Wis.6:12 17:20, Sir.29:22 33:13 (Sir.30:25) Sir.31:23, Ep. Je 60 * ;]\nbright, brilliant: ποταμός, Rev.22:1 (ΕΥ, clear); ἀστήρ, Rev.22:16; of clothing, brilliant, splendid: Luk.23:11, Act.10:30, Jas.2:2-3, Rev.15:6 18:14 19:8.†",
+   "sha256": "97d4502c5e5dfe74e0331792716419e33431f036e5fa0f8bccb865e30f77ec25"
+  },
+  {
+   "strongs": "G2987",
+   "language": "greek",
+   "lemma": "λαμπρότης",
+   "gloss": "brightness",
+   "definition": "λαμπρότης, -ητος, ἡ\n[in LXX: Psa.110:3 (הָדָר), al. ;]\nbrightness, brilliancy: τ. ἡλίου, Act.26:13.†",
+   "sha256": "af26967389158fbd82b63090477959dad10c69c975ec548a47e7bb55b1f0c52f"
+  },
+  {
+   "strongs": "G2988",
+   "language": "greek",
+   "lemma": "λαμπρῶς",
+   "gloss": "magnificently",
+   "definition": "λαμπρῶς\nadv.,\nsplendidly: of sumptuous fare (as freq.; cf. ἐδέσματα λαμπρά, Sir.29:22), Luk.16:19.†",
+   "sha256": "713008b6c240d5c651b40970bc3880ae5585ba4fad1fe6031643fe6f21ae81ec"
+  },
+  {
+   "strongs": "G2989",
+   "language": "greek",
+   "lemma": "λάμπω",
+   "gloss": "to shine",
+   "definition": "λάμπω\n[in LXX for נָגַהּ, etc. ;]\nto shine: Mat.5:15-16 17:2, Luk.17:24, Act.12:7, 2Co.4:6 (cf. ἐκ-, περι-λάμπω).†",
+   "sha256": "2972e077681a6bff52d5fe61d6cfaacb28ab0c35cb7529e5eb2b70f42f8b4944"
+  },
+  {
+   "strongs": "G2990",
+   "language": "greek",
+   "lemma": "λανθάνω",
+   "gloss": "be hidden",
+   "definition": "λανθάνω\n[in LXX for עָלַם ni., etc. ;]\nto escape notice, be hidden (from): Mrk.7:24, Luk.8:47; with accusative of person(s), Act.26:26, 2Pe.3:5 3:8; as in common cl. idiom, before ptcp., ἔλαθον ξενίσαντες, entertained unawares, Heb.13:2 (cf. ἐκ-, ἐπι-λανθάνω).†",
+   "sha256": "6c572a1d451a7e7e2f1cb247280e85c740ad02f3f7d7a35faf4725f59ae833c4"
+  },
+  {
+   "strongs": "G2991",
+   "language": "greek",
+   "lemma": "λαξευτός",
+   "gloss": "engraved",
+   "definition": "λαξευτός, -ή, όν\n(λαξεύω; λᾶς, a stone, ξέω, to scrape), [in LXX: Deu.4:49 (פִּסְגָּה); in Aq.: Num.21:20; Th.: Jdg.7:11 * ;]\nhewn (in stone); Luk.23:53 (elsewhere κοινή writers use λατομητός, 4Ki.12:12, al.; cf. λατομέω).†",
+   "sha256": "4d816e903980af3cc03550e545c2d3b1646f56c2356843d06fe780f780b2e646"
+  },
+  {
+   "strongs": "G2992",
+   "language": "greek",
+   "lemma": "λαός",
+   "gloss": "a people",
+   "definition": "λαός, -οῦ, ὁ,\n[in LXX very frequently for עַם, Gen.14:16, al.; occasionally for לְאֹם ( Gen.25:23, al.), etc. ;]\na word rarely found in Att. prose;\n1. the people at large (Hom., al.), esp. of people assembled: Mat.27:25, Luk.1:21 3:15 al.; pl. (Hom., al., π.; see MM, xvi), Act.4:27.\n2. a people, those of the same race and language (Pind., Æsch., al.: in LXX, Gen.26:11, Exo.9:16, al.): joined with γλῶσσα, φυλή, ἔθνος, Rev.5:9 7:9 11:9, al.; pl., Luk.2:31, Rom.15:11; esp. as almost always in LXX, of Israel, Mat.4:23, Mrk.7:6, Luk.2:10, Jhn.11:50, Heb.2:17, al.; opposite to τ. ἔθνη, Act.26:17, 23 Rom.15:10; πρεσβύτεροι (πρῶτοι, etc.) τοῦ λ., Mat.21:23, Luk.19:17, Act.4:8, al.; ὁ λ. μου (αὐτοῦ, τ. θεοῦ), Mat.2:6, Luk.1:68, Heb.11:25, al.; of the people disting. from the rulers and priests ( I Est.1:10, Jdth.8:9, al.), Mat.26:5, Luk.20:19, Heb.5:3, al.; of Christians, as the people of God, Act.15:14, Rom.9:25, 26 Heb.4:9; περιούσιος, Tit.2:14; εἰς περιποίησιν, 1Pe.2:9 (LXX).\nSYN.: see: δῆμος.",
+   "sha256": "4117f08c4d9f66fcc0a73c55151d183555f6e9ff4002fea1064d3718adff811f"
+  },
+  {
+   "strongs": "G2993",
+   "language": "greek",
+   "lemma": "Λαοδίκεια",
+   "gloss": "Laodicea",
+   "definition": "Λαοδικία (Rec. -εία), -ας, ἡ\nLaodicea, a city on the Lycus in Phrygia: Col.2:1 4:13, 15-16, Rev.1:11 3:14.†",
+   "sha256": "37b95c89ad85a744c969ac877001f2595f278392b90fab208bb1feda66bcf17e"
+  },
+  {
+   "strongs": "G2994",
+   "language": "greek",
+   "lemma": "Λαοδικεύς",
+   "gloss": "Laodicean",
+   "definition": "Λαοδικεύς, -έως, ὁ\na Laodicean: Col.4:16.†",
+   "sha256": "c4c77096df46259181976f686120bd0d7ffe7f918765d0b1d47886b861c94d40"
+  },
+  {
+   "strongs": "G2995",
+   "language": "greek",
+   "lemma": "λάρυγξ",
+   "gloss": "throat",
+   "definition": "λάρυγξ, -γγος, ὁ\n[in LXX chiefly for חֵךְ, Job.6:30, al; Psa.5:9 (גָּרוֹן) ;]\nthe larynx, throat: metaphorically, of speech (cf. Sir.6:5), Rom.3:13\" (LXX) .†",
+   "sha256": "c442aab67f606c1fb3397bf9156edeb862da7fb808ad4cadc95e5bca276b7dea"
+  },
+  {
+   "strongs": "G2996",
+   "language": "greek",
+   "lemma": "Λασαία",
+   "gloss": "Lasea",
+   "definition": "Λασέα (Rec. -αία), -ας, ἡ\nLasea, a city of Crete, otherwise un­known: Act.27:8.†",
+   "sha256": "ae2257c97a08cfcbfd413a01d3ee76b66017efcbcaaf71beb80313e47bfc40e0"
+  },
+  {
+   "strongs": "G2997",
+   "language": "greek",
+   "lemma": "λάσχω",
+   "gloss": "to burst",
+   "definition": "λάσκω\n1. (in cl., poët.) to clang, crash, crack; in late prose, to crack or burst noisily: Act.1:18 (ἐλάκησεν, perh., however, from λακέω, which see; Bl., in l).\n2. (in cl., prose) to scream, shout.†\nλακέω, Dor. for ληκέω = λάσκω, q.v",
+   "sha256": "727cfabaf0860fa59f08a8b42ff9d2a4a66d602563c1c86b934519bb144d52f9"
+  },
+  {
+   "strongs": "G2998",
+   "language": "greek",
+   "lemma": "λατομέω",
+   "gloss": "to hew",
+   "definition": "λατομέω, -ῶ\n(λατόμος, a stonecutter, 4Ki.12:12, al.; λᾶς, τέμνω; cf. λαξευτός) [in LXX: 1Ch.22:2, al. (חָצַב); Exo.21:33, Num_21:18 (כָּרָה) ;]\nto hew, hew out stones: Mat.27:60, Mrk.15:46.†",
+   "sha256": "19db1534959ff70b5ca2972c1538c13b4b760609c9bda6a042c8b844a315c9f3"
+  },
+  {
+   "strongs": "G2999",
+   "language": "greek",
+   "lemma": "λατρεία",
+   "gloss": "ministry",
+   "definition": "λατρεία, -ας, ἡ\n(λατρεύω, which see), [in LXX (always of divine service): Exo.12:25-26 13:5, Jos.22:27, 1Ch.28:13 (עֲבֹדָה), 1Ma.1:43 1Mac 2:19 1Mac 2:22, 3Ma.4:14 * ;]\n1. hired service, service.\n2. (in cl. also) divine service, worship: Jhn.16:2, Rom.9:4 12:1, Heb.9:1, 6.†",
+   "sha256": "71eec623fafab6d9821cec55ccc224e2af110869b2bef4c48f12a07afb73a534"
+  },
+  {
+   "strongs": "G3000",
+   "language": "greek",
+   "lemma": "λατρεύω",
+   "gloss": "to minister",
+   "definition": "λατρεύω\n(λάτρις, a hired servant), [in LXX (always, as λατρεία, of the service of God or of heathen divinities) chiefly for עָבַד, Exo.3:12, al.; in Dan LXX TH (Dan.3:12, al.) for פְּלַח ;]\n1. to work for hire.\n2. to serve; in cl., also of divine service, to serve, worship, and so always in NT: with dative of person(s), τ. θεῷ, Mat.4:10, Luk.4:8\" (LXX), Act.7:7 24:14 27:23, Heb.9:14, Rev.7:15 22:3; of idol worship (cf. Exo.20:5, Eze.20:32), Act.7:42, Rom.1:25; τ. θεῷ. ἐν τ. πνεύματί μου, Rom.1:9; id. ἐν καθαρᾷ συνειδήσει, 2Ti.1:3; μετ᾽ εὐλαβείας κ. δέους, Heb.12:28; ἐν ὁσιότητι κ. δικαιοσύνῃ, Luk.1:74; (without θεῷ) νηστείαις κ. δεήσεσι, Luk.2:37; πνεύματι θεοῦ, Php.3:3; absol., Act.26:7; ὁ λατρεύων, the worshipper, Heb.9:9 10:2; of ministerial service, with dative of thing(s), Heb.8:5 13:10.†\nSYN.: λειτουργέω, q.v",
+   "sha256": "01d32323500588ae8915ce8bd78cd01fc6150f2f52ce49472fdf4b98dd6c846a"
+  },
+  {
+   "strongs": "G3001",
+   "language": "greek",
+   "lemma": "λάχανον",
+   "gloss": "plant",
+   "definition": "λάχανον, -ου, τό\n(λαχαίνω, to dig), [in LXX: Gen.9:3; 3Ki.21:2, Psa.37:2, Pro.15:17 (יֶרֶק, יָרָק) * ;]\na garden herb, vegetable: Luk.11:42; usually in pl., Mat.13:32, Mrk.4:32, Rom.14:2.†\nSYN.: βοτάνη, q.v",
+   "sha256": "94eef34f2b6d8c375ebde893a5c55a0ec965554919fc49c2bf52ce2ce894b02e"
+  },
+  {
+   "strongs": "G3002",
+   "language": "greek",
+   "lemma": "Λεββαῖος",
+   "gloss": "Lebbaeus",
+   "definition": "λεββαῖος, -ου, ὁ\n(on the derivation, see Dalman, Words, 50; Swete, Mk., l.with),\nLebbæus: Mat.10:3, Mrk.3:18 (WH, mg.; Θαδδαῖος, which see, Rec., WH, txt., RV, cf. WH, App., 11, 24. In Luk.6:15, Act.1:13, he is called Σίμων ὁ Ζηλωτής.)†",
+   "sha256": "12ad8f4865afc40041180835e90d0aff2877f675032b4fd530bcf56ce174588d"
+  },
+  {
+   "strongs": "G3003",
+   "language": "greek",
+   "lemma": "λεγεών",
+   "gloss": "Legion",
+   "definition": "λεγιών (Rec. -εών), -ῶνος, ἡ, (Lat. legio),\na legion: Mat.26:53, Mrk.5:9, 15, Luk.8:30.†",
+   "sha256": "15cba299e7a24868a3e00ac395300c5572093700ee4dcb65bc8fe9aff0d07024"
+  },
+  {
+   "strongs": "G3004G",
+   "language": "greek",
+   "lemma": "λέγω",
+   "gloss": "to say",
+   "definition": "λέγω,\n[in LXX very freq., chiefly for אמר; λέγει for נְאֻם, Gen.22:16, al. ;]\n1. in Hom., to pick out, gather, reckon, recount.\n2. In Hdt. and Att., to say, speak, affirm, declare: absol., Act.13:15, 24:10; before orat. dir., Mat.9:34, Mrk.3:11, Jhn.1:29, al.; before ὅτι recit., Mrk.3:21, Luk.1:24, Jhn.6:14, al.; accusative and inf., Luk.11:18, Jhn.12:29, al.; after another verb of speaking, προσφωνεῖν κ. λέγειν, Mat.11:17, al.; ἀπεκρίθη (ἐλάλησεν) λέγων (καὶ λέγει; Dalman, Words, 24 ff.), Mat.25:9, Mrk.3:33, 7:28, Luk.24:6, 7, al.; of unspoken thought, λ. ἐν ἑαυτῷ, Mat.3:9, Luk.3:8, al.; of writing, 2Co.8:8, Php.4:11, al.; λέγει ἡ γραφή, Rom.4:3, Jas.2:23, al.; with accusative of thing(s), Luk.8:8, 9:33, Jhn.5:34, al.; σὺ λέγεις (a non-committal phrase; Swete, Mk., 359, 369f.), Mat.27:11, Mrk.15:2, Luk.23:3, Jhn.18:37; with dative of person(s), before orat. dir., Mat.8:20, Mrk.2:17, al. mult.; id. before ὅτι, Mat.3:9, al.; with prep., πρός, μετά, περί, etc., Mrk.4:41, Jhn.11:56, Heb.9:5, al.; to mean (cl.), Mrk.14:71, Jhn.6:71, 1Co.10:29, al.; to call, name, Mrk.10:18; pass., Mat.9:9, Mrk.15:7, al (cf. ἀντι-, δια- (-μαι), προ-, συλ-λέγω).\nSYN.: λαλέω, which refers to the utterance, as λέγω to the meaning of what is said, its correspondence with thought (Tr., Syn., Ixxvi; Thayer, see word λαλέω).",
+   "sha256": "9768270ec8529354f7da23882c31f537617126c996a5f57a413db096b322faa7"
+  },
+  {
+   "strongs": "G3004H",
+   "language": "greek",
+   "lemma": "λέγω",
+   "gloss": "to say: call",
+   "definition": "λέγω,\n[in LXX very freq., chiefly for אמר; λέγει for נְאֻם, Gen.22:16, al. ;]\n1. in Hom., to pick out, gather, reckon, recount.\n2. In Hdt. and Att., to say, speak, affirm, declare: absol., Act.13:15, 24:10; before orat. dir., Mat.9:34, Mrk.3:11, Jhn.1:29, al.; before ὅτι recit., Mrk.3:21, Luk.1:24, Jhn.6:14, al.; accusative and inf., Luk.11:18, Jhn.12:29, al.; after another verb of speaking, προσφωνεῖν κ. λέγειν, Mat.11:17, al.; ἀπεκρίθη (ἐλάλησεν) λέγων (καὶ λέγει; Dalman, Words, 24 ff.), Mat.25:9, Mrk.3:33, 7:28, Luk.24:6, 7, al.; of unspoken thought, λ. ἐν ἑαυτῷ, Mat.3:9, Luk.3:8, al.; of writing, 2Co.8:8, Php.4:11, al.; λέγει ἡ γραφή, Rom.4:3, Jas.2:23, al.; with accusative of thing(s), Luk.8:8, 9:33, Jhn.5:34, al.; σὺ λέγεις (a non-committal phrase; Swete, Mk., 359, 369f.), Mat.27:11, Mrk.15:2, Luk.23:3, Jhn.18:37; with dative of person(s), before orat. dir., Mat.8:20, Mrk.2:17, al. mult.; id. before ὅτι, Mat.3:9, al.; with prep., πρός, μετά, περί, etc., Mrk.4:41, Jhn.11:56, Heb.9:5, al.; to mean (cl.), Mrk.14:71, Jhn.6:71, 1Co.10:29, al.; to call, name, Mrk.10:18; pass., Mat.9:9, Mrk.15:7, al (cf. ἀντι-, δια- (-μαι), προ-, συλ-λέγω).\nSYN.: λαλέω, which refers to the utterance, as λέγω to the meaning of what is said, its correspondence with thought (Tr., Syn., Ixxvi; Thayer, see word λαλέω).",
+   "sha256": "d433ed936b87db2237b6d1518e06c8c35bb08b1395ee82f6bd8c32c1b76c36d8"
+  },
+  {
+   "strongs": "G3005",
+   "language": "greek",
+   "lemma": "λεῖμμα",
+   "gloss": "remnant",
+   "definition": "λεῖμμα (WH, λίμμα, see their App., 154), -τος, τό\n(λείπω), [in LXX: 4Ki.19:4 A (שְׁאֵרִית)* ;]\na remnant: Rom.11:5.†",
+   "sha256": "f1eec8eb87f7fd5d95c048687b27a7bd1a5b572d830daebbd59b0fb04adb1afb"
+  },
+  {
+   "strongs": "G3006",
+   "language": "greek",
+   "lemma": "λεῖος",
+   "gloss": "smooth",
+   "definition": "λεῖος, -εία, -εῖον\n[in LXX: Gen.27:11, 1Ki.17:40 R (חָלַק, חַלֻּק); ὁδὸς λ., Isa.40:4 Α (בִּקְעָה); Pro.2:20 12:13 26:23 * ;]\nsmooth: opposite to τραχύς, Luk.3:5 (LXX).†",
+   "sha256": "6a07cea934c3304dc49bb7482c72e2f2e2492610e8928c8c6ebf6e69f6c783fd"
+  },
+  {
+   "strongs": "G3007",
+   "language": "greek",
+   "lemma": "λείπω",
+   "gloss": "to lack",
+   "definition": "λείπω\n[in LXX: Job.4:11, Pro.19:4 (פָּרַד), al. ;]\n1. trans., to leave, leave behind; pass., to be left behind, to lack before prep. (as more usual in cl.), ἐν, Jas.1:4; with genitive of thing(s), Jas.1:5 2:15.\n2. Intrans., to be gone, to be wanting: with dative of person(s), Luk.18:22, Tit.3:13; τὰ λείποντα, Tit.1:5\n(cf. ἀπο-, δια-, ἐκ-, ἐπι-, κατα-, ἐν-κατα-, περι-, ὑπο-λείπω).†",
+   "sha256": "a3a44e398a679f304e3dfb25c6c5bce05ed4dbbc4aad2629535d5dff1aba3b5f"
+  },
+  {
+   "strongs": "G3008",
+   "language": "greek",
+   "lemma": "λειτουργέω",
+   "gloss": "to minister",
+   "definition": "λειτουργέω, -ῶ\n(λειτουργός), [in LXX chiefly for שָׁרַת pi., also for עָבַד, צָבָא, etc. ;]\n1. in cl., at Athens, to supply public offices at one's own cost, render public service to the State, hence, generally,\n2. to serve the State, do a service, serve (of service to the Gods, Diod., i, 21): of the official service of priests and Levites (Exo.29:30, Num.16:9, Sir.4:14, 1Ma.10:42, al.; cf. Deiss., BS, 140 f.), Heb.10:11; of Christians: with dative of person(s) before ἐν, Rom.15:27 (cf. Sir.10:25); τ. κυρίῳ, Act.13:2.†\nSYN.: λατρεύω (which see), prop., to serve for hire, LXX (as some­times in cl.), always of service to the deity on the part of both priests and people (Exo.4:3, Deu.10:12, and similarly in NT). λειτουργέω \"is the fulfilment of an office: it has a definite representative character, and corresponds with a function to be discharged\". It is therefore used of serving in an office or ministry: in LXX always of priests and Levites, in NT, with its cognates (Rom.13:6 15:27, are not really exceptions), of services rendered either to God or man by apostles, prophets, teachers, and other officers of the church (cf. Tr., Syn., § xxxv; ICC on Rom.1:9; Westc., He., 232 ff.)",
+   "sha256": "f1a1875dbf7111cf3f10ac6d55669f03a4993387b31fec3ba04be1c50de6b13b"
+  },
+  {
+   "strongs": "G3009",
+   "language": "greek",
+   "lemma": "λειτουργία",
+   "gloss": "ministry",
+   "definition": "λειτουργία, -ας, ἡ\n(λειτουργέω), [in LXX chiefly for עֲבֹדָה, Num.4:24, 1Ch.9:13, al. ;]\n1. in cl. (chiefly of Athens), the discharge of a public office at one's own expense (see LS, see word), hence,\n2. a service, ministry; in π. (Deiss., BS, 140 f.) and in LXX (though here also of secular service, 3Ki.1:4, al.), of religious service or ministration; and so in NT: of priestly ministrations, Luk.1:23, Heb.8:6 9:21; figuratively, θυσία καὶ λ. τῆς πίστεως ὑμῶν, Php.2:17; of Christian beneficence, 2Co.9:12, Php.2:30.†",
+   "sha256": "0bdf5955400923cd7eeaeab2c86a91cd78cfd47975dc8f1ea76d56e14443a668"
+  },
+  {
+   "strongs": "G3010",
+   "language": "greek",
+   "lemma": "λειτουργικός",
+   "gloss": "ministering",
+   "definition": "λειτουργικός, -ή, -όν\n[in LXX for עֲבֹדָה, שָׁרַת; ἔργα, Num_7:5; στολαί Exo.31:10 39:32; σκευή, Num.4:12, 26, 2Ch.24:14 * ;]\nof or for service, ministering: πνεύματα, Heb.1:14.†",
+   "sha256": "6358c9c2aaa8f9c0459d987226c6bbfaeebe792341a156a9a68dc9920e74adc8"
+  },
+  {
+   "strongs": "G3011",
+   "language": "greek",
+   "lemma": "λειτουργός",
+   "gloss": "minister",
+   "definition": "λειτουργός, -οῦ, ὁ\n(λιός, ἔργον), [in LXX chiefly for שָׁרַת, Jos.1:1 A, 3Ki.10:5, Psa.103:21, Sir.7:30, al. ;]\n1. in cl., one who discharges a public office at his own expense, then, generally,\n2. a public servant, a minister, servant: τ. ἁγίων λ., Heb.8:2 (cf. Neh.10:39, Sir, l.with); Ἰησοῦ Χριστοῦ, Rom.15:16; pl., τ. θεοῦ, Rom.13:6, Heb.1:7\" (LXX) ; λ. ὑμῶν τ. χρείας μου, Php.2:25.†\nSYN.: see: διάκονος, λειτουργέω",
+   "sha256": "3a31e37f8ddf5f35ed51c6b85116ee8afc5cc14e0030d3d35a80891340e3dff8"
+  },
+  {
+   "strongs": "G3012",
+   "language": "greek",
+   "lemma": "λέντιον",
+   "gloss": "towel",
+   "definition": "λέντιον, -ου, τό (Lat. linteum),\na linen cloth, towel: Jhn.13:4-5.†",
+   "sha256": "56c08de77634c2bade92dfe9fc54d22ae2c585aec5688371443e9e2d119c38a8"
+  },
+  {
+   "strongs": "G3013",
+   "language": "greek",
+   "lemma": "λεπίς",
+   "gloss": "scale",
+   "definition": "λεπίς, -ίδος, ἡ\n(λέπω, to peel) [in LXX chiefly for קַשְׂקֶשֶׂת ;]\na scale: Act.9:18†",
+   "sha256": "c3d537eb8bb0fcb5e290d88da1f98ea52be9f5cb9ad5dd731aa3bef6ab95980c"
+  },
+  {
+   "strongs": "G3014",
+   "language": "greek",
+   "lemma": "λέπρα",
+   "gloss": "leprosy",
+   "definition": "λέπρα, -ας, ἡ\n(λεπρός), [in LXX for צָרַעַת ;]\nleprosy: Mat.8:3, Mrk.1:42, Luk.5:12-13†",
+   "sha256": "48bcba31b60aa9c7c7f46d9cff589b6dedbc699939eeff2cd89ffaac3222deb5"
+  },
+  {
+   "strongs": "G3015",
+   "language": "greek",
+   "lemma": "λεπρός",
+   "gloss": "leprous",
+   "definition": "λεπρός, -ά, -όν\n(λεπίς), [in LXX for צָרַע ;]\n1. (in cl.) scaly, rough.\n2. leprous; chiefly as subst., ὁ λ., a leper: Mat.8:2 10:8 11:5, Mrk.1:40, Luk.4:27 7:22 17:12; of Simon, formerly a leper, Mat.26:6, Mrk.14:3.†",
+   "sha256": "05af382ca42b2ea3cf09e14dbd8a58729129fca782a11e576a0ada043c1df30e"
+  },
+  {
+   "strongs": "G3016",
+   "language": "greek",
+   "lemma": "λεπτός",
+   "gloss": "coin",
+   "definition": "λεπτός, -ή, -όν\n(λέπω, to peel),\n1. peeled.\n2. fine, thin, small, light; hence, in late Gk., as subst. τὸ λ., a small coin (one-eighth of an as, AV, mite): Mrk.12:42, Luk.12:59 21:2.†",
+   "sha256": "095c9b31aef73d26e4a33a65bae8f1df82ef5dfe233f204977266d63b7a14f72"
+  },
+  {
+   "strongs": "G3017G",
+   "language": "greek",
+   "lemma": "Λευΐ",
+   "gloss": "Levi",
+   "definition": "Λευεί (indecl.) and Λευείς (Rec. -υΐ, -υΐς), genitive Λευεί, accusative -είν, ὁ (Heb. H3878)\nLevi;\n1. the son of Jacob: Heb.7:5, 9, Rev.7:7.\n2. Son of Melchi: Luk.3:24.\n3. Son of Simeon: Luk.3:29.\n4. Son of Alphæus (cf. Μαθθαῖος): Mrk.2:14 (WH, mg., Ἰάκωβον), Luk.5:27, 29.†",
+   "sha256": "76495a27b7d98acb7381a0d65ba565655606b1b25172e9d4744555ba0d8fd2f1"
+  },
+  {
+   "strongs": "G3017H",
+   "language": "greek",
+   "lemma": "Λευΐ",
+   "gloss": "Levi",
+   "definition": "Λευεί (indecl.) and Λευείς (Rec. -υΐ, -υΐς), genitive Λευεί, accusative -είν, ὁ (Heb. H3878)\nLevi;\n1. the son of Jacob: Heb.7:5, 9, Rev.7:7.\n2. Son of Melchi: Luk.3:24.\n3. Son of Simeon: Luk.3:29.\n4. Son of Alphæus (cf. Μαθθαῖος): Mrk.2:14 (WH, mg., Ἰάκωβον), Luk.5:27, 29.†",
+   "sha256": "76495a27b7d98acb7381a0d65ba565655606b1b25172e9d4744555ba0d8fd2f1"
+  },
+  {
+   "strongs": "G3017I",
+   "language": "greek",
+   "lemma": "Λευΐ",
+   "gloss": "Levi",
+   "definition": "Λευεί (indecl.) and Λευείς (Rec. -υΐ, -υΐς), genitive Λευεί, accusative -είν, ὁ (Heb. H3878)\nLevi;\n1. the son of Jacob: Heb.7:5, 9, Rev.7:7.\n2. Son of Melchi: Luk.3:24.\n3. Son of Simeon: Luk.3:29.\n4. Son of Alphæus (cf. Μαθθαῖος): Mrk.2:14 (WH, mg., Ἰάκωβον), Luk.5:27, 29.†",
+   "sha256": "76495a27b7d98acb7381a0d65ba565655606b1b25172e9d4744555ba0d8fd2f1"
+  },
+  {
+   "strongs": "G3017J",
+   "language": "greek",
+   "lemma": "Λευΐ",
+   "gloss": "Levi",
+   "definition": "Λευεί (indecl.) and Λευείς (Rec. -υΐ, -υΐς), genitive Λευεί, accusative -είν, ὁ (Heb. H3878)\nLevi;\n1. the son of Jacob: Heb.7:5, 9, Rev.7:7.\n2. Son of Melchi: Luk.3:24.\n3. Son of Simeon: Luk.3:29.\n4. Son of Alphæus (cf. Μαθθαῖος): Mrk.2:14 (WH, mg., Ἰάκωβον), Luk.5:27, 29.†",
+   "sha256": "76495a27b7d98acb7381a0d65ba565655606b1b25172e9d4744555ba0d8fd2f1"
+  },
+  {
+   "strongs": "G3018",
+   "language": "greek",
+   "lemma": "Λευΐς",
+   "gloss": "Levi",
+   "definition": "Λευεί (indecl.) and Λευείς (Rec. -υΐ, -υΐς), genitive Λευεί, accusative -είν, ὁ (Heb. H3878)\nLevi;\n1. the son of Jacob: Heb.7:5, 9, Rev.7:7.\n2. Son of Melchi: Luk.3:24.\n3. Son of Simeon: Luk.3:29.\n4. Son of Alphæus (cf. Μαθθαῖος): Mrk.2:14 (WH, mg., Ἰάκωβον), Luk.5:27, 29.†",
+   "sha256": "76495a27b7d98acb7381a0d65ba565655606b1b25172e9d4744555ba0d8fd2f1"
+  },
+  {
+   "strongs": "G3019",
+   "language": "greek",
+   "lemma": "Λευΐτης",
+   "gloss": "Levite",
+   "definition": "Λευείτης\n(Rec. Λευΐτης), -ου, ὁ [in LXX for לֵוִיִּי ;]\na Levite: Luk.10:32, Jhn.1:19, Act.4:36.†",
+   "sha256": "543a7ae5a02c3cb0f5ad065d9393dfa1db70f4b3f436f28e3aaf2878c8ce1aa3"
+  },
+  {
+   "strongs": "G3020",
+   "language": "greek",
+   "lemma": "Λευϊτικός",
+   "gloss": "Levitical",
+   "definition": "Λευειτικός\n(Rec. Λευϊτ-), -ή, -όν [in LXX: Le, tit.* ;]\nLevitical: Heb.7:11.†",
+   "sha256": "f2cfddd224ae2f630ebbb5b091d70d0f039b0f4505e0717244ad1589cb75e35c"
+  }
+ ]
+}

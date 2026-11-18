@@ -1,0 +1,4250 @@
+{
+ "batch": "001",
+ "strongs": [
+  "H0001G",
+  "H0001H",
+  "H0001I",
+  "H0002",
+  "H0003",
+  "H0004",
+  "H0005",
+  "H0006",
+  "H0007",
+  "H0008",
+  "H0009",
+  "H0010",
+  "H0011",
+  "H0012",
+  "H0013",
+  "H0014",
+  "H0015",
+  "H0016",
+  "H0017",
+  "H0018",
+  "H0019",
+  "H0020",
+  "H0021",
+  "H0022G",
+  "H0022H",
+  "H0023",
+  "H0024",
+  "H0025",
+  "H0026G",
+  "H0026H",
+  "H0027",
+  "H0028",
+  "H0029G",
+  "H0029H",
+  "H0029I",
+  "H0029J",
+  "H0029K",
+  "H0029L",
+  "H0029M",
+  "H0029N",
+  "H0030",
+  "H0031",
+  "H0032G",
+  "H0032H",
+  "H0032I",
+  "H0032J",
+  "H0032K",
+  "H0033",
+  "H0034",
+  "H0035",
+  "H0036",
+  "H0037",
+  "H0038",
+  "H0039",
+  "H0040G",
+  "H0040H",
+  "H0040I",
+  "H0040J",
+  "H0041G",
+  "H0041H",
+  "H0041I",
+  "H0041J",
+  "H0042",
+  "H0043",
+  "H0044G",
+  "H0044H",
+  "H0044I",
+  "H0045",
+  "H0046",
+  "H0047G",
+  "H0047H",
+  "H0047I",
+  "H0047J",
+  "H0048G",
+  "H0048H",
+  "H0049",
+  "H0050G",
+  "H0050H",
+  "H0051",
+  "H0052",
+  "H0053",
+  "H0054",
+  "H0055",
+  "H0056",
+  "H0057",
+  "H0058",
+  "H0059G",
+  "H0059H",
+  "H0060",
+  "H0061",
+  "H0062",
+  "H0063",
+  "H0064",
+  "H0065",
+  "H0066",
+  "H0067",
+  "H0068G",
+  "H0068H",
+  "H0068I",
+  "H0069",
+  "H0070",
+  "H0071",
+  "H0072",
+  "H0073",
+  "H0074",
+  "H0075",
+  "H0076",
+  "H0077",
+  "H0078",
+  "H0079",
+  "H0080",
+  "H0081",
+  "H0082",
+  "H0083",
+  "H0084",
+  "H0085",
+  "H0086",
+  "H0087",
+  "H0088",
+  "H0089",
+  "H0090G",
+  "H0090H",
+  "H0091",
+  "H0092",
+  "H0093",
+  "H0094",
+  "H0095",
+  "H0096",
+  "H0097",
+  "H0098",
+  "H0099",
+  "H0100",
+  "H0101",
+  "H0102",
+  "H0103",
+  "H0104",
+  "H0105",
+  "H0106",
+  "H0107",
+  "H0108",
+  "H0109",
+  "H0110",
+  "H0111",
+  "H0112",
+  "H0113",
+  "H0114",
+  "H0115",
+  "H0116",
+  "H0117",
+  "H0118",
+  "H0119",
+  "H0120G",
+  "H0120H",
+  "H0121G",
+  "H0121H",
+  "H0122A",
+  "H0122B",
+  "H0123G",
+  "H0123H",
+  "H0124",
+  "H0125",
+  "H0126",
+  "H0127G",
+  "H0127H",
+  "H0127I",
+  "H0128",
+  "H0129",
+  "H0130",
+  "H0131",
+  "H0132",
+  "H0133",
+  "H0134",
+  "H0135",
+  "H0136",
+  "H0137",
+  "H0138G",
+  "H0138H",
+  "H0138I",
+  "H0139",
+  "H0140",
+  "H0141",
+  "H0142",
+  "H0143",
+  "H0144",
+  "H0145",
+  "H0146G",
+  "H0146H",
+  "H0147",
+  "H0148",
+  "H0149",
+  "H0150",
+  "H0151",
+  "H0152G",
+  "H0152H",
+  "H0153",
+  "H0154",
+  "H0155",
+  "H0156",
+  "H0157G",
+  "H0157H",
+  "H0158",
+  "H0159",
+  "H0160",
+  "H0161",
+  "H0162",
+  "H0163",
+  "H0164G",
+  "H0164H",
+  "H0165",
+  "H0166",
+  "H0167",
+  "H0168G",
+  "H0168H",
+  "H0169",
+  "H0170",
+  "H0171",
+  "H0172",
+  "H0173G",
+  "H0173H",
+  "H0173I",
+  "H0174",
+  "H0175",
+  "H0176A",
+  "H0176B",
+  "H0177",
+  "H0178",
+  "H0179",
+  "H0180",
+  "H0181",
+  "H0182",
+  "H0183",
+  "H0184",
+  "H0185",
+  "H0186",
+  "H0187G",
+  "H0187H",
+  "H0188",
+  "H0189",
+  "H0190",
+  "H0191",
+  "H0192",
+  "H0193A",
+  "H0193B",
+  "H0194",
+  "H0195",
+  "H0196",
+  "H0197G",
+  "H0197H",
+  "H0197I",
+  "H0197J",
+  "H0198G",
+  "H0198H",
+  "H0199",
+  "H0200",
+  "H0201",
+  "H0202",
+  "H0203",
+  "H0204",
+  "H0205G",
+  "H0205H",
+  "H0206G",
+  "H0206H",
+  "H0207",
+  "H0208G",
+  "H0208H",
+  "H0209",
+  "H0210",
+  "H0211G",
+  "H0211H",
+  "H0212",
+  "H0213",
+  "H0214",
+  "H0215",
+  "H0216",
+  "H0217A",
+  "H0217B",
+  "H0218A",
+  "H0218B",
+  "H0219A",
+  "H0219B",
+  "H0220",
+  "H0221G",
+  "H0221H",
+  "H0221I",
+  "H0222G",
+  "H0222H",
+  "H0222I",
+  "H0223A",
+  "H0223B",
+  "H0223G",
+  "H0223H",
+  "H0223I",
+  "H0224",
+  "H0225",
+  "H0226G",
+  "H0226H",
+  "H0227A",
+  "H0227B",
+  "H0228",
+  "H0229",
+  "H0230",
+  "H0231",
+  "H0232",
+  "H0233",
+  "H0234",
+  "H0235",
+  "H0236",
+  "H0237",
+  "H0238",
+  "H0239",
+  "H0240",
+  "H0241G",
+  "H0241H",
+  "H0241I",
+  "H0242",
+  "H0243",
+  "H0244A",
+  "H0244B",
+  "H0245",
+  "H0246",
+  "H0247",
+  "H0248",
+  "H0249",
+  "H0250",
+  "H0251G",
+  "H0251H",
+  "H0251I",
+  "H0252",
+  "H0253",
+  "H0254",
+  "H0255",
+  "H0256G",
+  "H0256H",
+  "H0257",
+  "H0258",
+  "H0259",
+  "H0260",
+  "H0261",
+  "H0262",
+  "H0263",
+  "H0264",
+  "H0265",
+  "H0266",
+  "H0267",
+  "H0268",
+  "H0269",
+  "H0270",
+  "H0271G",
+  "H0271H",
+  "H0272",
+  "H0273",
+  "H0274G",
+  "H0274H",
+  "H0275",
+  "H0276",
+  "H0277G",
+  "H0277H",
+  "H0278",
+  "H0279",
+  "H0280",
+  "H0281G",
+  "H0281H",
+  "H0281I",
+  "H0281J",
+  "H0281K",
+  "H0281L",
+  "H0281M",
+  "H0281N",
+  "H0281O",
+  "H0282",
+  "H0283G",
+  "H0283H",
+  "H0283I",
+  "H0284",
+  "H0285G",
+  "H0285H",
+  "H0285I",
+  "H0285J",
+  "H0286",
+  "H0287",
+  "H0288G",
+  "H0288H",
+  "H0288I",
+  "H0289G",
+  "H0289H",
+  "H0290G",
+  "H0290H",
+  "H0290I",
+  "H0291",
+  "H0292",
+  "H0293G",
+  "H0293H",
+  "H0294",
+  "H0295G",
+  "H0295H",
+  "H0296",
+  "H0297",
+  "H0298",
+  "H0299",
+  "H0300",
+  "H0301",
+  "H0302",
+  "H0303",
+  "H0304G",
+  "H0304H",
+  "H0305",
+  "H0306",
+  "H0307",
+  "H0308",
+  "H0309",
+  "H0310A",
+  "H0310B",
+  "H0311",
+  "H0312",
+  "H0313",
+  "H0314",
+  "H0315",
+  "H0316",
+  "H0317",
+  "H0318",
+  "H0319",
+  "H0320",
+  "H0321",
+  "H0322",
+  "H0323",
+  "H0324"
+ ],
+ "entries": [
+  {
+   "strongs": "H0001G",
+   "language": "hebrew",
+   "lemma": "אָב",
+   "gloss": "father",
+   "definition": "father, in a literal and immediate, or figurative and remote application",
+   "derivation": "a primitive word;",
+   "sha256": "635da5004235be19c15360a620d47d2c7c63055f032782f5774ed6b539d38e0f"
+  },
+  {
+   "strongs": "H0001H",
+   "language": "hebrew",
+   "lemma": "אָב",
+   "gloss": "(Huram)-abi",
+   "definition": "father, in a literal and immediate, or figurative and remote application",
+   "derivation": "a primitive word;",
+   "sha256": "25cb6d28a2ecd20e4f2f5de543c29717ca47f9a8f84b4ee5045de459496735be"
+  },
+  {
+   "strongs": "H0001I",
+   "language": "hebrew",
+   "lemma": "אָב",
+   "gloss": "father of",
+   "definition": "father, in a literal and immediate, or figurative and remote application",
+   "derivation": "a primitive word;",
+   "sha256": "75e66133a23e98d5c8cef103da76ee6eee31edfe5ad13551b4d995fa2e12b203"
+  },
+  {
+   "strongs": "H0002",
+   "language": "hebrew",
+   "lemma": "אַב",
+   "gloss": "father",
+   "derivation": "(Aramaic) corresponding to 1",
+   "sha256": "4959fcdf98f7122f6ed930826f56ba78ff6b10b5a30b44a3d08923d2bcad4b33"
+  },
+  {
+   "strongs": "H0003",
+   "language": "hebrew",
+   "lemma": "אֵב",
+   "gloss": "greenery",
+   "definition": "a green plant",
+   "derivation": "from the same as 24;",
+   "sha256": "76b6376db2798412b231039db1cca7d7c9ac6d5b7a539762288f6eae2861b666"
+  },
+  {
+   "strongs": "H0004",
+   "language": "hebrew",
+   "lemma": "אֵב",
+   "gloss": "fruit",
+   "derivation": "(Aramaic) corresponding to 3",
+   "sha256": "70b0545366ec92bb9d5b63508499c6fae4e41e7ef796b445cc519453f84ce74b"
+  },
+  {
+   "strongs": "H0005",
+   "language": "hebrew",
+   "lemma": "אֲבַגְתָא",
+   "gloss": "Abagtha",
+   "definition": "Abagtha, a eunuch of Xerxes",
+   "derivation": "of foreign origin;",
+   "sha256": "4b71c3f91830e07a3b2f0cddb684d0ea9d55785ab13d78389fdc74d1fea5bd06"
+  },
+  {
+   "strongs": "H0006",
+   "language": "hebrew",
+   "lemma": "אָבַד",
+   "gloss": "to perish",
+   "definition": "properly, to wander away, i.e. lose oneself; by implication to perish (causative, destroy)",
+   "derivation": "a primitive root;",
+   "sha256": "befe90e068c9f23696f236d8ec4847b63a5e441831491e93ef5b7dea5d8f53ee"
+  },
+  {
+   "strongs": "H0007",
+   "language": "hebrew",
+   "lemma": "אֲבַד",
+   "gloss": "to destroy",
+   "derivation": "(Aramaic) corresponding to 6",
+   "sha256": "58827f60c051c53c7eeda9bdb2e9086ee3f42bf93da7e8c7db638bb4a22d094d"
+  },
+  {
+   "strongs": "H0008",
+   "language": "hebrew",
+   "lemma": "אֹבֵד",
+   "gloss": "destruction",
+   "definition": "(concrete) wretched or (abstract) destruction",
+   "derivation": "active of participle of 6;",
+   "sha256": "019d67e8f0184ab6a52bc02d2a08d5d280bbf128b2d77126657b7c0120195f1e"
+  },
+  {
+   "strongs": "H0009",
+   "language": "hebrew",
+   "lemma": "אֲבֵדָה",
+   "gloss": "something lost",
+   "definition": "concrete, something lost; abstract, destruction, i.e. Hades",
+   "derivation": "from 6; Compare 10.",
+   "sha256": "32e09f0651efff023da820944bda86c3cb9ef53a5d11011d0d5ff5ab69eee906"
+  },
+  {
+   "strongs": "H0010",
+   "language": "hebrew",
+   "lemma": "אֲבַדּוֹן",
+   "gloss": "destruction",
+   "definition": "a perishing",
+   "derivation": "the same as 9, miswritten for 11;",
+   "sha256": "132e2b6f08ea36ec75659e19a6187673f73c64aa6a0df8355419c0f244541bf6"
+  },
+  {
+   "strongs": "H0011",
+   "language": "hebrew",
+   "lemma": "אֲבַדּוֹן",
+   "gloss": "Abaddon",
+   "definition": "abstract, a perishing; concrete, Hades",
+   "derivation": "intensive from 6;",
+   "sha256": "978980f469e398b6d026fda3580cf86d1080d881001ccc0ad1ffe3144ad22e81"
+  },
+  {
+   "strongs": "H0012",
+   "language": "hebrew",
+   "lemma": "אַבְדָ֑ן",
+   "gloss": "destruction",
+   "definition": "a perishing",
+   "derivation": "from 6;",
+   "sha256": "66f0b850eab63cfb59af2a42c5d32918a56fd9b3353ad34749e1ea8bcb787169"
+  },
+  {
+   "strongs": "H0013",
+   "language": "hebrew",
+   "lemma": "אׇבְדַן",
+   "gloss": "destruction",
+   "definition": "a perishing",
+   "derivation": "from 6;",
+   "sha256": "66f0b850eab63cfb59af2a42c5d32918a56fd9b3353ad34749e1ea8bcb787169"
+  },
+  {
+   "strongs": "H0014",
+   "language": "hebrew",
+   "lemma": "אָבָה",
+   "gloss": "be willing",
+   "definition": "to breathe after, i.e. (figuratively) to be acquiescent",
+   "derivation": "a primitive root;",
+   "sha256": "7b315d0071b6b58c76fc14ff8a1dc28e3c20a93e2a6f4ed18ffa7f5c48922768"
+  },
+  {
+   "strongs": "H0015",
+   "language": "hebrew",
+   "lemma": "אָבִי",
+   "gloss": "oh that!",
+   "definition": "longing",
+   "derivation": "from 14;",
+   "sha256": "0d911a93a6aec9f5578c13b192f78521b26f14c231b96eedd0a880db23d95045"
+  },
+  {
+   "strongs": "H0016",
+   "language": "hebrew",
+   "lemma": "אֵ֫בֶה",
+   "gloss": "papyrus",
+   "definition": "the papyrus",
+   "derivation": "from 14 (in the sense of bending toward);",
+   "sha256": "91add18b423c1432ef9cd1854b42b2920c4b405878c375b0bb3999988a58b193"
+  },
+  {
+   "strongs": "H0017",
+   "language": "hebrew",
+   "lemma": "אֲבוֹי",
+   "gloss": "pain!",
+   "definition": "want",
+   "derivation": "from 14 (in the sense of desiring);",
+   "sha256": "e058fe02e02ebbca72f4312d47f7cad1d869d0d97a6c4ca02f6c659c14c5514a"
+  },
+  {
+   "strongs": "H0018",
+   "language": "hebrew",
+   "lemma": "אֵבוּס",
+   "gloss": "crib",
+   "definition": "a manger or stall",
+   "derivation": "from 75;",
+   "sha256": "4b0b72b5016540e36c3a461e3b0dcf532c72659f7d1fc79ed8900c895b640e01"
+  },
+  {
+   "strongs": "H0019",
+   "language": "hebrew",
+   "lemma": "אִבְחָה",
+   "gloss": "slaughter",
+   "definition": "brandishing of a sword",
+   "derivation": "from an unused root (apparently meaning to turn);",
+   "sha256": "82ffd9213f07834851e7509328b635a34d924274b567835c77f9d50c6c79f029"
+  },
+  {
+   "strongs": "H0020",
+   "language": "hebrew",
+   "lemma": "אֲבַטִּחִים",
+   "gloss": "melon",
+   "definition": "a melon (only plural)",
+   "derivation": "of uncertain derivation;",
+   "sha256": "e7cecb5d028ff6feb63f7e5f4f13513432f2753048f9ad1b68a29ac683ecc07d"
+  },
+  {
+   "strongs": "H0021",
+   "language": "hebrew",
+   "lemma": "אֲבִי",
+   "gloss": "Abi",
+   "definition": "Abi, Hezekiah's mother",
+   "derivation": "from 1; fatherly;",
+   "sha256": "b5ed77627dff27d34afab21d16740c6fbab8ad764d3dea8ce360d9a38963e454"
+  },
+  {
+   "strongs": "H0022G",
+   "language": "hebrew",
+   "lemma": "אֲבִיאֵל",
+   "gloss": "Abiel",
+   "definition": "Abiel, the name of two Israelites",
+   "derivation": "from 1 and 410; father (i.e. possessor) of God;",
+   "sha256": "d6fb7265fd583498781e536ce5c65f27b2ee6573f2e9314dc9a105369375ed4b"
+  },
+  {
+   "strongs": "H0022H",
+   "language": "hebrew",
+   "lemma": "אֲבִיאֵל",
+   "gloss": "Abiel",
+   "definition": "Abiel, the name of two Israelites",
+   "derivation": "from 1 and 410; father (i.e. possessor) of God;",
+   "sha256": "d6fb7265fd583498781e536ce5c65f27b2ee6573f2e9314dc9a105369375ed4b"
+  },
+  {
+   "strongs": "H0023",
+   "language": "hebrew",
+   "lemma": "אֲבִיאָסָף",
+   "gloss": "Abiasaph",
+   "definition": "Abiasaph, an Israelite",
+   "derivation": "from 1 and 622; father of gathering (i.e. gatherer);",
+   "sha256": "a8c052e5fc08f8aa34494f37fd58a38af0a256f7bd9b2985b6a6d5cd2ffb3bd1"
+  },
+  {
+   "strongs": "H0024",
+   "language": "hebrew",
+   "lemma": "אָבִיב",
+   "gloss": "Abib",
+   "definition": "green, i.e. a young ear of grain; hence, the name of the month Abib or Nisan",
+   "derivation": "from an unused root (meaning to be tender);",
+   "sha256": "cc51e31b69f45d234e636942b1128f68d47a1c15f16795adf7ed5a0ad3aec162"
+  },
+  {
+   "strongs": "H0025",
+   "language": "hebrew",
+   "lemma": "אֲבִי גִבְעוֹן",
+   "gloss": "Abi-gibeon",
+   "definition": "Abi-Gibon, perhaps an Israelite",
+   "derivation": "from 1 and 1391; father (i.e. founder) of Gibon;",
+   "sha256": "50eb49f2ab8060e3b9ad1b1a4de16c90e7af2996617199237ff0e4ad8e41c9cd"
+  },
+  {
+   "strongs": "H0026G",
+   "language": "hebrew",
+   "lemma": "אֲבִיגַ֫יִל, אֲבִיגַ֫ל",
+   "gloss": "Abigail",
+   "definition": "Abigail or Abigal, the name of two Israelitesses",
+   "derivation": "or shorter אֲבִיגַל; from 1 and 1524; father (i.e. source) of joy;",
+   "sha256": "547ddebeab4b88c9a7fd2a1e38d2e1c4bba692be9e9630c5d448c5bf3c29417c"
+  },
+  {
+   "strongs": "H0026H",
+   "language": "hebrew",
+   "lemma": "אֲבִיגַ֫יִל, אֲבִיגַ֫ל",
+   "gloss": "Abigail",
+   "definition": "Abigail or Abigal, the name of two Israelitesses",
+   "derivation": "or shorter אֲבִיגַל; from 1 and 1524; father (i.e. source) of joy;",
+   "sha256": "547ddebeab4b88c9a7fd2a1e38d2e1c4bba692be9e9630c5d448c5bf3c29417c"
+  },
+  {
+   "strongs": "H0027",
+   "language": "hebrew",
+   "lemma": "אֲבִידָן",
+   "gloss": "Abidan",
+   "definition": "Abidan, an Israelite",
+   "derivation": "from 1 and 1777; father of judgment (i.e. judge);",
+   "sha256": "2ea2857373782b95d790d86fb9e5f8f185559e15a350d49fc0422196db541adb"
+  },
+  {
+   "strongs": "H0028",
+   "language": "hebrew",
+   "lemma": "אֲבִידָע",
+   "gloss": "Abida",
+   "definition": "Abida, a son of Abraham by Keturah",
+   "derivation": "from 1 and 3045; father of knowledge (i.e. knowing);",
+   "sha256": "e8403b720e6ae418ae86514cf9f4d3f52fe16320c11f8690287d05dccaa2e093"
+  },
+  {
+   "strongs": "H0029G",
+   "language": "hebrew",
+   "lemma": "אֲבִיָּה",
+   "gloss": "Abijah",
+   "definition": "Abijah, the name of several Israelite men and two Israelitesses",
+   "derivation": "or prolonged אֲבִיָּהוּ ; from 1 and 3050; father (i.e. worshipper) of Jah;",
+   "sha256": "f4887dffa25d3b3fd56ed4f5a52b921bf940349c392eea30358e2e05972ae2a7"
+  },
+  {
+   "strongs": "H0029H",
+   "language": "hebrew",
+   "lemma": "אֲבִיָּה",
+   "gloss": "Abijah",
+   "definition": "Abijah, the name of several Israelite men and two Israelitesses",
+   "derivation": "or prolonged אֲבִיָּהוּ ; from 1 and 3050; father (i.e. worshipper) of Jah;",
+   "sha256": "f4887dffa25d3b3fd56ed4f5a52b921bf940349c392eea30358e2e05972ae2a7"
+  },
+  {
+   "strongs": "H0029I",
+   "language": "hebrew",
+   "lemma": "אֲבִיָּ֫הוּ, אֲבִיָּה",
+   "gloss": "Abijah",
+   "definition": "Abijah, the name of several Israelite men and two Israelitesses",
+   "derivation": "or prolonged אֲבִיָּהוּ ; from 1 and 3050; father (i.e. worshipper) of Jah;",
+   "sha256": "f4887dffa25d3b3fd56ed4f5a52b921bf940349c392eea30358e2e05972ae2a7"
+  },
+  {
+   "strongs": "H0029J",
+   "language": "hebrew",
+   "lemma": "אֲבִיָּה",
+   "gloss": "`his father`",
+   "definition": "Abijah, the name of several Israelite men and two Israelitesses",
+   "derivation": "or prolonged אֲבִיָּהוּ ; from 1 and 3050; father (i.e. worshipper) of Jah;",
+   "sha256": "4c580e44aed8b5b757fdfed7ecb909f2f82b3ad2301cc7a103bfdc64f2a48b7c"
+  },
+  {
+   "strongs": "H0029K",
+   "language": "hebrew",
+   "lemma": "אֲבִיָּה",
+   "gloss": "Abijah",
+   "definition": "Abijah, the name of several Israelite men and two Israelitesses",
+   "derivation": "or prolonged אֲבִיָּהוּ ; from 1 and 3050; father (i.e. worshipper) of Jah;",
+   "sha256": "f4887dffa25d3b3fd56ed4f5a52b921bf940349c392eea30358e2e05972ae2a7"
+  },
+  {
+   "strongs": "H0029L",
+   "language": "hebrew",
+   "lemma": "אֲבִיָּה",
+   "gloss": "Abijah",
+   "definition": "Abijah, the name of several Israelite men and two Israelitesses",
+   "derivation": "or prolonged אֲבִיָּהוּ ; from 1 and 3050; father (i.e. worshipper) of Jah;",
+   "sha256": "f4887dffa25d3b3fd56ed4f5a52b921bf940349c392eea30358e2e05972ae2a7"
+  },
+  {
+   "strongs": "H0029M",
+   "language": "hebrew",
+   "lemma": "אֲבִיָּה",
+   "gloss": "Abijah",
+   "definition": "Abijah, the name of several Israelite men and two Israelitesses",
+   "derivation": "or prolonged אֲבִיָּהוּ ; from 1 and 3050; father (i.e. worshipper) of Jah;",
+   "sha256": "f4887dffa25d3b3fd56ed4f5a52b921bf940349c392eea30358e2e05972ae2a7"
+  },
+  {
+   "strongs": "H0029N",
+   "language": "hebrew",
+   "lemma": "אֲבִיָּה",
+   "gloss": "Abijah",
+   "definition": "Abijah, the name of several Israelite men and two Israelitesses",
+   "derivation": "or prolonged אֲבִיָּהוּ ; from 1 and 3050; father (i.e. worshipper) of Jah;",
+   "sha256": "f4887dffa25d3b3fd56ed4f5a52b921bf940349c392eea30358e2e05972ae2a7"
+  },
+  {
+   "strongs": "H0030",
+   "language": "hebrew",
+   "lemma": "אֲבִיהוּא",
+   "gloss": "Abihu",
+   "definition": "Abihu, a son of Aaron",
+   "derivation": "from 1 and 1931; father (i.e. worshipper) of Him (i.e. God);",
+   "sha256": "e8881872e88bb2b5f3364b0adcf2340a343bcb6b2298d2db30b14d7a960c7aec"
+  },
+  {
+   "strongs": "H0031",
+   "language": "hebrew",
+   "lemma": "אֲבִיהוּד",
+   "gloss": "Abihud",
+   "definition": "Abihud, the name of two Israelites",
+   "derivation": "from 1 and 1935; father (i.e. possessor) of renown;",
+   "sha256": "80189a2202cc55abf23efafe2b68dfa4583f4a547c38f9f4df565bda66fb42eb"
+  },
+  {
+   "strongs": "H0032G",
+   "language": "hebrew",
+   "lemma": "אֲבִיחַ֫יִל",
+   "gloss": "Abihail",
+   "definition": "Abihail or Abichail, the name of three Israelites and two Israelitesses",
+   "derivation": "or (more correctly) אֲבִיחַיִל ; from 1 and 2428; father (i.e. possessor) of might;",
+   "sha256": "d3a747ee415a54607e426396afd0481887ebf3b9868215ec0b604aa2d3484e84"
+  },
+  {
+   "strongs": "H0032H",
+   "language": "hebrew",
+   "lemma": "אֲבִיחַ֫יִל",
+   "gloss": "Abihail",
+   "definition": "Abihail or Abichail, the name of three Israelites and two Israelitesses",
+   "derivation": "or (more correctly) אֲבִיחַיִל ; from 1 and 2428; father (i.e. possessor) of might;",
+   "sha256": "d3a747ee415a54607e426396afd0481887ebf3b9868215ec0b604aa2d3484e84"
+  },
+  {
+   "strongs": "H0032I",
+   "language": "hebrew",
+   "lemma": "אֲבִיחַ֫יִל",
+   "gloss": "Abihail",
+   "definition": "Abihail or Abichail, the name of three Israelites and two Israelitesses",
+   "derivation": "or (more correctly) אֲבִיחַיִל ; from 1 and 2428; father (i.e. possessor) of might;",
+   "sha256": "d3a747ee415a54607e426396afd0481887ebf3b9868215ec0b604aa2d3484e84"
+  },
+  {
+   "strongs": "H0032J",
+   "language": "hebrew",
+   "lemma": "אֲבִיחַ֫יִל",
+   "gloss": "Abihail",
+   "definition": "Abihail or Abichail, the name of three Israelites and two Israelitesses",
+   "derivation": "or (more correctly) אֲבִיחַיִל ; from 1 and 2428; father (i.e. possessor) of might;",
+   "sha256": "d3a747ee415a54607e426396afd0481887ebf3b9868215ec0b604aa2d3484e84"
+  },
+  {
+   "strongs": "H0032K",
+   "language": "hebrew",
+   "lemma": "אֲבִיחַ֫יִל",
+   "gloss": "Abihail",
+   "definition": "Abihail or Abichail, the name of three Israelites and two Israelitesses",
+   "derivation": "or (more correctly) אֲבִיחַיִל ; from 1 and 2428; father (i.e. possessor) of might;",
+   "sha256": "d3a747ee415a54607e426396afd0481887ebf3b9868215ec0b604aa2d3484e84"
+  },
+  {
+   "strongs": "H0033",
+   "language": "hebrew",
+   "lemma": "אֲבִי הָעֶזְרִי",
+   "gloss": "Abiezrite",
+   "definition": "an Abiezrite or descendant of Abiezer",
+   "derivation": "from 44 with the article inserted; father of the Ezrite;",
+   "sha256": "fd5b2279b24b18d7b5974d25f5648f248c645910a340869c5b87dae0cccf14ec"
+  },
+  {
+   "strongs": "H0034",
+   "language": "hebrew",
+   "lemma": "אֶבְיוֹן",
+   "gloss": "needy",
+   "definition": "destitute",
+   "derivation": "from 14, in the sense of want (especially in feeling);",
+   "sha256": "4dd4f8e2ec266416cf157c332cec2cda4e5acf9f2ff6413466ac9859697ad8c5"
+  },
+  {
+   "strongs": "H0035",
+   "language": "hebrew",
+   "lemma": "אֲבִיּוֹנָה",
+   "gloss": "desire",
+   "definition": "provocative of desire; the caper berry (from its stimulative taste)",
+   "derivation": "from 14;",
+   "sha256": "68efd85857d91cfce5d63a80cf8636a8ec473c1570bdfe39cf5f7f416df9069f"
+  },
+  {
+   "strongs": "H0036",
+   "language": "hebrew",
+   "lemma": "אֲבִיטוּב",
+   "gloss": "Abitub",
+   "definition": "Abitub, an Israelite",
+   "derivation": "from 1 and 2898; father of goodness (i.e. good);",
+   "sha256": "f5ca537979023184d26d84c814f3214aad823f96cf7d87685113cdad386cf88e"
+  },
+  {
+   "strongs": "H0037",
+   "language": "hebrew",
+   "lemma": "אֲבִיטָ֑ל",
+   "gloss": "Abital",
+   "definition": "Abital, a wife of King David",
+   "derivation": "from 1 and 2919; father of dew (i.e. fresh);",
+   "sha256": "540d13fb5bb63b19abcaadcb1596619330f8c38642690ea50e55189a0f021f19"
+  },
+  {
+   "strongs": "H0038",
+   "language": "hebrew",
+   "lemma": "אֲבִיָּם",
+   "gloss": "Abijam",
+   "definition": "Abijam (or Abijah), a king of Judah",
+   "derivation": "from 1 and 3220; father of (the) sea (i.e. seaman);",
+   "sha256": "0da6c44a371ae1ea1b9aff898a71da1f5fb803223cacc8fc6d2542830b9b0eb0"
+  },
+  {
+   "strongs": "H0039",
+   "language": "hebrew",
+   "lemma": "אֲבִימָאֵל",
+   "gloss": "Abimael",
+   "definition": "Abimael, a son of Joktan",
+   "derivation": "from 1 and an elsewhere unused (probably foreign) word; father of Mael (apparently some Arab tribe);",
+   "sha256": "71e25093b4c3919a75ac929ac2650d730a2dbb89b5f88552dc2c2362ac4e9356"
+  },
+  {
+   "strongs": "H0040G",
+   "language": "hebrew",
+   "lemma": "אֲבִימֶ֫לֶךְ",
+   "gloss": "Abimelech",
+   "definition": "Abimelek, the name of two Philistine kings and of two Israelites",
+   "derivation": "from 1 and 4428; father of (the) king;",
+   "sha256": "750326ff272f7ba207e6216ec35eb87806c7d9a2b223df37a11f8693b82a6ae4"
+  },
+  {
+   "strongs": "H0040H",
+   "language": "hebrew",
+   "lemma": "אֲבִימֶ֫לֶךְ",
+   "gloss": "Abimelech",
+   "definition": "Abimelek, the name of two Philistine kings and of two Israelites",
+   "derivation": "from 1 and 4428; father of (the) king;",
+   "sha256": "750326ff272f7ba207e6216ec35eb87806c7d9a2b223df37a11f8693b82a6ae4"
+  },
+  {
+   "strongs": "H0040I",
+   "language": "hebrew",
+   "lemma": "אֲבִימֶ֫לֶךְ",
+   "gloss": "Abimelech",
+   "definition": "Abimelek, the name of two Philistine kings and of two Israelites",
+   "derivation": "from 1 and 4428; father of (the) king;",
+   "sha256": "750326ff272f7ba207e6216ec35eb87806c7d9a2b223df37a11f8693b82a6ae4"
+  },
+  {
+   "strongs": "H0040J",
+   "language": "hebrew",
+   "lemma": "אֲבִימֶ֫לֶךְ",
+   "gloss": "Ahimelech",
+   "definition": "Abimelek, the name of two Philistine kings and of two Israelites",
+   "derivation": "from 1 and 4428; father of (the) king;",
+   "sha256": "fb0bf418cc034dae8767a237b0637105085f54402fe2426be97954f5e29ecb33"
+  },
+  {
+   "strongs": "H0041G",
+   "language": "hebrew",
+   "lemma": "אֲבִינָדָב",
+   "gloss": "Abinadab",
+   "definition": "Abinadab, the name of four Israelites",
+   "derivation": "from 1 and 5068; father of generosity (i.e. liberal);",
+   "sha256": "cac4c6948d11ce1a045fe5615287ffac6c9e7d54514bdcc08ab504df0c8d0c3e"
+  },
+  {
+   "strongs": "H0041H",
+   "language": "hebrew",
+   "lemma": "אֲבִינָדָב",
+   "gloss": "Abinadab",
+   "definition": "Abinadab, the name of four Israelites",
+   "derivation": "from 1 and 5068; father of generosity (i.e. liberal);",
+   "sha256": "cac4c6948d11ce1a045fe5615287ffac6c9e7d54514bdcc08ab504df0c8d0c3e"
+  },
+  {
+   "strongs": "H0041I",
+   "language": "hebrew",
+   "lemma": "אֲבִינָדָב",
+   "gloss": "Abinadab",
+   "definition": "Abinadab, the name of four Israelites",
+   "derivation": "from 1 and 5068; father of generosity (i.e. liberal);",
+   "sha256": "cac4c6948d11ce1a045fe5615287ffac6c9e7d54514bdcc08ab504df0c8d0c3e"
+  },
+  {
+   "strongs": "H0041J",
+   "language": "hebrew",
+   "lemma": "אֲבִינָדָב",
+   "gloss": "Abinadab",
+   "definition": "Abinadab, the name of four Israelites",
+   "derivation": "from 1 and 5068; father of generosity (i.e. liberal);",
+   "sha256": "cac4c6948d11ce1a045fe5615287ffac6c9e7d54514bdcc08ab504df0c8d0c3e"
+  },
+  {
+   "strongs": "H0042",
+   "language": "hebrew",
+   "lemma": "אֲבִינֹ֫עַם",
+   "gloss": "Abinoam",
+   "definition": "Abinoam, an Israelite",
+   "derivation": "from 1 and 5278; father of pleasantness (i.e. gracious);",
+   "sha256": "8d001864c38463deddb5e8aea2bc9c458f149382977b9248e5d93b9d0c48a9ad"
+  },
+  {
+   "strongs": "H0043",
+   "language": "hebrew",
+   "lemma": "אֶבְיָסָף, אֲבִיאָסָף",
+   "gloss": "Ebiasaph",
+   "definition": "Ebjasaph, an Israelite",
+   "derivation": "contracted from 23;",
+   "sha256": "ac34cee1f09de6ff93cd88d8211e69ad9ca65a9248e50c435f99156f0e8e5842"
+  },
+  {
+   "strongs": "H0044G",
+   "language": "hebrew",
+   "lemma": "אֲבִיעֶ֫זֶר",
+   "gloss": "Abiezer",
+   "definition": "Abiezer, the name of two Israelites",
+   "derivation": "from 1 and 5829; father of help (i.e. helpful);",
+   "sha256": "7cdb316b9c17ccb5816022410ad948f00656c9e0a1de7b3fa26915ecc28eb04e"
+  },
+  {
+   "strongs": "H0044H",
+   "language": "hebrew",
+   "lemma": "אֲבִיעֶ֫זֶר",
+   "gloss": "Abiezer",
+   "definition": "Abiezer, the name of two Israelites",
+   "derivation": "from 1 and 5829; father of help (i.e. helpful);",
+   "sha256": "7cdb316b9c17ccb5816022410ad948f00656c9e0a1de7b3fa26915ecc28eb04e"
+  },
+  {
+   "strongs": "H0044I",
+   "language": "hebrew",
+   "lemma": "אֲבִיעֶ֫זֶר",
+   "gloss": "Abiezer",
+   "definition": "Abiezer, the name of two Israelites",
+   "derivation": "from 1 and 5829; father of help (i.e. helpful);",
+   "sha256": "7cdb316b9c17ccb5816022410ad948f00656c9e0a1de7b3fa26915ecc28eb04e"
+  },
+  {
+   "strongs": "H0045",
+   "language": "hebrew",
+   "lemma": "אֲבִי־עַלְבוֹן",
+   "gloss": "Abi-albon",
+   "definition": "Abialbon, an Israelite",
+   "derivation": "from 1 and an unused root of uncertain derivation; probably, father of strength (i.e. valiant);",
+   "sha256": "d2b58615e0c57cbb5acc1077bdf6102e91f72a7476cd9c888b4700caaeed0d1f"
+  },
+  {
+   "strongs": "H0046",
+   "language": "hebrew",
+   "lemma": "אָבִיר",
+   "gloss": "mighty",
+   "definition": "mighty (spoken of God)",
+   "derivation": "from 82;",
+   "sha256": "548dfa40f2dfd4e2871c9031302e2f24694c3b707d1dea01af3db7c823344c6f"
+  },
+  {
+   "strongs": "H0047G",
+   "language": "hebrew",
+   "lemma": "אַבִּיר",
+   "gloss": "mighty: ox",
+   "derivation": "for 46",
+   "sha256": "ca9b52e7c287e8e4fd0208e3631d9068d6e279d13a0e14ddbf1fdacff91e7a07"
+  },
+  {
+   "strongs": "H0047H",
+   "language": "hebrew",
+   "lemma": "אַבִּיר",
+   "gloss": "mighty: stallion",
+   "derivation": "for 46",
+   "sha256": "c37bc01628c5d928cb40043d54b6f1b201006e4701c0a7228fbfcaadaf8fec2a"
+  },
+  {
+   "strongs": "H0047I",
+   "language": "hebrew",
+   "lemma": "אַבִּיר",
+   "gloss": "mighty: strong",
+   "derivation": "for 46",
+   "sha256": "30a3439da1d3c410d7d8e8683138af112d62610685e6b5bd9c35f97cef7c6be9"
+  },
+  {
+   "strongs": "H0047J",
+   "language": "hebrew",
+   "lemma": "אַבִּיר",
+   "gloss": "mighty: angel",
+   "derivation": "for 46",
+   "sha256": "744641808b918a9173485c36be14d75b2103962e6996bdf3d7a763eeb4eec683"
+  },
+  {
+   "strongs": "H0048G",
+   "language": "hebrew",
+   "lemma": "אֲבִירָם",
+   "gloss": "Abiram",
+   "definition": "Abiram, the name of two Israelites",
+   "derivation": "from 1 and 7311; father of height (i.e. lofty);",
+   "sha256": "ff69d9ede5a3d7d50e3fdb6d526d8a6a7d2fb4a735e06d14f7c34bcfd8ba9975"
+  },
+  {
+   "strongs": "H0048H",
+   "language": "hebrew",
+   "lemma": "אֲבִירָם",
+   "gloss": "Abiram",
+   "definition": "Abiram, the name of two Israelites",
+   "derivation": "from 1 and 7311; father of height (i.e. lofty);",
+   "sha256": "ff69d9ede5a3d7d50e3fdb6d526d8a6a7d2fb4a735e06d14f7c34bcfd8ba9975"
+  },
+  {
+   "strongs": "H0049",
+   "language": "hebrew",
+   "lemma": "אֲבִישַׁג",
+   "gloss": "Abishag",
+   "definition": "Abishag, a concubine of David",
+   "derivation": "from 1 and 7686; father of error (i.e. blundering);",
+   "sha256": "08628805e2424390777983d305a0accb26ac6c6aaa22ec8f84182090cd0af738"
+  },
+  {
+   "strongs": "H0050G",
+   "language": "hebrew",
+   "lemma": "אֲבִישׁוּעַ",
+   "gloss": "Abishua",
+   "definition": "Abishua, the name of two Israelites",
+   "derivation": "from 1 and 7771; father of plenty (i.e. prosperous);",
+   "sha256": "2c2db2144cd419e4ca44721aad7e42beb8e3262ab6c46253032e50b0549b72df"
+  },
+  {
+   "strongs": "H0050H",
+   "language": "hebrew",
+   "lemma": "אֲבִישׁוּעַ",
+   "gloss": "Abishua",
+   "definition": "Abishua, the name of two Israelites",
+   "derivation": "from 1 and 7771; father of plenty (i.e. prosperous);",
+   "sha256": "2c2db2144cd419e4ca44721aad7e42beb8e3262ab6c46253032e50b0549b72df"
+  },
+  {
+   "strongs": "H0051",
+   "language": "hebrew",
+   "lemma": "אֲבִישׁוּר",
+   "gloss": "Abishur",
+   "definition": "Abishur, an Israelite",
+   "derivation": "from 1 and 7791; father of (the) wall (i.e. perhaps mason);",
+   "sha256": "7f373f68b3d6a4f10e5946dee7245c7a8d283cb17093f02da7355be4a741996d"
+  },
+  {
+   "strongs": "H0052",
+   "language": "hebrew",
+   "lemma": "אֲבִישַׁי",
+   "gloss": "Abishai",
+   "definition": "Abishai, an Israelite",
+   "derivation": "or (shorter) אַבְשַׁי ; from 1 and 7862; father of a gift (i.e. probably generous);",
+   "sha256": "b0ddb0ec86f58e6e7de2f91ea0a33dfc6501d8088afec6371e060ba18589f60c"
+  },
+  {
+   "strongs": "H0053",
+   "language": "hebrew",
+   "lemma": "אֲבִישָׁלוֹם",
+   "gloss": "Absalom",
+   "definition": "Abshalom, a son of David; also (the fuller form) a later Israelite",
+   "derivation": "or (shortened) אַבְשָׁלוֹם ; from 1 and 7965; father of peace (i.e. friendly);",
+   "sha256": "d4a9569c733da08e73de0141c683f177d0dc86617ee2b1d04f3e0f24e5e40b62"
+  },
+  {
+   "strongs": "H0054",
+   "language": "hebrew",
+   "lemma": "אֶבְיָתָר",
+   "gloss": "Abiathar",
+   "definition": "Ebjathar, an Israelite",
+   "derivation": "contracted from 1 and 3498; father of abundance (i.e. liberal);",
+   "sha256": "0a9c2f7e857a0d01d8b45d60728a2aa652750d295f933689448d6bcca0d2e36c"
+  },
+  {
+   "strongs": "H0055",
+   "language": "hebrew",
+   "lemma": "אָבַךְ",
+   "gloss": "to roll up",
+   "definition": "probably to coil upward",
+   "derivation": "a primitive root;",
+   "sha256": "3a0ed61194d731ba0c0ef28c26175ee40ec216042a234d3bc815f676efa75531"
+  },
+  {
+   "strongs": "H0056",
+   "language": "hebrew",
+   "lemma": "אָבַל",
+   "gloss": "to mourn",
+   "definition": "to bewail",
+   "derivation": "a primitive root;",
+   "sha256": "e17ec78159f8fe1cc227416460305e3d7d41d9a1dd6ec2cf7b1c73c0adfdd1d8"
+  },
+  {
+   "strongs": "H0057",
+   "language": "hebrew",
+   "lemma": "אָבֵל",
+   "gloss": "mourning",
+   "definition": "lamenting",
+   "derivation": "from 56;",
+   "sha256": "34535e29d00f717ed4170504c1772feeda4e90ffaf214ab6a5b458ceb31ff3e3"
+  },
+  {
+   "strongs": "H0058",
+   "language": "hebrew",
+   "lemma": "אָבֵל",
+   "gloss": "meadow",
+   "definition": "a meadow",
+   "derivation": "from an unused root (meaning to be grassy);",
+   "sha256": "c091eacfcf9482c73f150acc2a0d79576341904d56816b386c8cadf3c6edd9b7"
+  },
+  {
+   "strongs": "H0059G",
+   "language": "hebrew",
+   "lemma": "אָבֵל",
+   "gloss": "Abel",
+   "definition": "Abel, the name of two places in Palestine.",
+   "derivation": "from 58; a meadow;",
+   "sha256": "feea31b060bf8e8e0cc42c86d132d6b90264c5aeba4b25654f94e936770ee02a"
+  },
+  {
+   "strongs": "H0059H",
+   "language": "hebrew",
+   "lemma": "אָבֵל",
+   "gloss": "Abel",
+   "definition": "Abel, the name of two places in Palestine.",
+   "derivation": "from 58; a meadow;",
+   "sha256": "feea31b060bf8e8e0cc42c86d132d6b90264c5aeba4b25654f94e936770ee02a"
+  },
+  {
+   "strongs": "H0060",
+   "language": "hebrew",
+   "lemma": "אֵ֫בֶל",
+   "gloss": "mourning",
+   "definition": "lamentation",
+   "derivation": "from 56;",
+   "sha256": "c05c5ac597107a7635cc51f3fc6d34b5fe32f6d38202286cf72df84e7b754b05"
+  },
+  {
+   "strongs": "H0061",
+   "language": "hebrew",
+   "lemma": "אֲבָל",
+   "gloss": "truly",
+   "definition": "nay, i.e. truly or yet",
+   "derivation": "apparently from 56 through the idea of negation;",
+   "sha256": "b773f7337273fde5659bd5d95d977cf7d1c0ac3dc6a5656bfb1eb80694d56c1a"
+  },
+  {
+   "strongs": "H0062",
+   "language": "hebrew",
+   "lemma": "אָבֵל בֵּית־מֲעַכָה",
+   "gloss": "Abel-beth-maachah",
+   "definition": "Abel of Beth-maakah, a place in Palestine",
+   "derivation": "from 58 and 1004 and 4601; meadow of Beth-Maakah;",
+   "sha256": "1cfff780f11f77c7a00ce204b83a2358c96859c4a2d4bb64b27f23a69c112d1e"
+  },
+  {
+   "strongs": "H0063",
+   "language": "hebrew",
+   "lemma": "אָבֵל הַשִּׁטִּים",
+   "gloss": "Abel-shittim",
+   "definition": "Abel hash-Shittim, a place in Palestine",
+   "derivation": "from 58 and the plural of 7848, with the article inserted; meadow of the acacias;",
+   "sha256": "d5ce7a524d44f7396e66929c38055820c252236fc5ae99a1b54c6c167a7b423c"
+  },
+  {
+   "strongs": "H0064",
+   "language": "hebrew",
+   "lemma": "אָבֵל כְּרָמִים",
+   "gloss": "Abel-keramim",
+   "definition": "Abel-Keramim, a place in Palestine",
+   "derivation": "from 58 and the plural of 3754; meadow of vineyards;",
+   "sha256": "c6a4207beec7b55213d7fdb3bc1b3a4c8fe2953494d49d8621d7363218404aec"
+  },
+  {
+   "strongs": "H0065",
+   "language": "hebrew",
+   "lemma": "אָבֵל מְחוֹלָה",
+   "gloss": "Abel-meholah",
+   "definition": "Abel-Mecholah, a place in Palestine",
+   "derivation": "from 58 and 4246; meadow of dancing;",
+   "sha256": "bbc3b9621e20e1b4bd49ad52c935edb279ce5acb1fdf10b2ac7f1a2a578e7b82"
+  },
+  {
+   "strongs": "H0066",
+   "language": "hebrew",
+   "lemma": "אַבֵל מַיִם",
+   "gloss": "Abel-maim",
+   "definition": "Abel-Majim, a place in Palestine",
+   "derivation": "from 58 and 4325; meadow of water;",
+   "sha256": "d1388de876742768192432c475e54817bb01fa113acb96196f7dcd597b7b31cd"
+  },
+  {
+   "strongs": "H0067",
+   "language": "hebrew",
+   "lemma": "אָבֵל מִצְרַיִם",
+   "gloss": "Abel-mizraim",
+   "definition": "Abel-Mitsrajim, a place in Palestine",
+   "derivation": "from 58 and 4714; meadow of Egypt;",
+   "sha256": "1d03d9198e06d7d1ae645eaa3d662d7a35cd73e929b3561ab8cd344c4129efaf"
+  },
+  {
+   "strongs": "H0068G",
+   "language": "hebrew",
+   "lemma": "אֶ֫בֶן",
+   "gloss": "stone",
+   "definition": "a stone",
+   "derivation": "from the root of 1129 through the meaning to build;",
+   "sha256": "2f07d42b24ed90cea85dba6f4d57e9832aba5dbed96afe4b59066ac6028a51ee"
+  },
+  {
+   "strongs": "H0068H",
+   "language": "hebrew",
+   "lemma": "אֶ֫בֶן",
+   "gloss": "stone: weight",
+   "definition": "a stone",
+   "derivation": "from the root of 1129 through the meaning to build;",
+   "sha256": "1d6f907a9bb40dea66f79d9dad9983636ebd39cc114ec20dccd197f52a958501"
+  },
+  {
+   "strongs": "H0068I",
+   "language": "hebrew",
+   "lemma": "אֶ֫בֶן",
+   "gloss": "(Zoheleth) Stone",
+   "definition": "a stone",
+   "derivation": "from the root of 1129 through the meaning to build;",
+   "sha256": "8d770731960a5aba05cfaa6acd3c2f56bc38b37629785eca1107b6b35de3eefa"
+  },
+  {
+   "strongs": "H0069",
+   "language": "hebrew",
+   "lemma": "אֶ֫בֶן",
+   "gloss": "stone",
+   "derivation": "(Aramaic) corresponding to 68",
+   "sha256": "9d9a5d1253d7e24049902aab9819d6be903746792efcb80f65d6d9fd97d1c3be"
+  },
+  {
+   "strongs": "H0070",
+   "language": "hebrew",
+   "lemma": "אֹבֶן",
+   "gloss": "wheel",
+   "definition": "a pair of stones (only dual); a potter's wheel or a midwife's stool (consisting alike of two horizontal disks with a support between)",
+   "derivation": "from the same as 68;",
+   "sha256": "8b3bf9f45f37c5ad13d0829b8421c795d2c1fbfaea43e7878d6c2f3e69e1e9e7"
+  },
+  {
+   "strongs": "H0071",
+   "language": "hebrew",
+   "lemma": "אֲבָנָה",
+   "gloss": "Abana",
+   "definition": "Abanah, a river near Damascus",
+   "derivation": "perhaps feminine of 68; stony; Compare 549.",
+   "sha256": "0ea5014f78f5717efed3e03fab6e4a19014cf8c69467d170658fa0bc067b90da"
+  },
+  {
+   "strongs": "H0072",
+   "language": "hebrew",
+   "lemma": "אֶבֶן הָעֵזֶר",
+   "gloss": "Ebenezer",
+   "definition": "Eben-ha-Ezer, a place in Palestine",
+   "derivation": "from 68 and 5828 with the article inserted; stone of the help;",
+   "sha256": "b0a06aa2c49d0c121ec09123047d8c9662dd6fa69666d6486219c9b6fe528d88"
+  },
+  {
+   "strongs": "H0073",
+   "language": "hebrew",
+   "lemma": "אַבְנֵט",
+   "gloss": "girdle",
+   "definition": "a belt",
+   "derivation": "of uncertain derivation;",
+   "sha256": "27ca5e73d2733e487a49de066daaff6d959b19b5402ac4b47e8acd97ea03f58e"
+  },
+  {
+   "strongs": "H0074",
+   "language": "hebrew",
+   "lemma": "אֲבִינֵר",
+   "gloss": "Abner",
+   "definition": "Abner, an Israelite",
+   "derivation": "or (fully) אֲבִינֵר ; from 1 and 5216; father of light (i.e. enlightening);",
+   "sha256": "a15c487dad55bec7082d88b83c2102c85cd758f343c0604f9a9724819da19ffd"
+  },
+  {
+   "strongs": "H0075",
+   "language": "hebrew",
+   "lemma": "אָבַס",
+   "gloss": "to fatten",
+   "definition": "to fodder",
+   "derivation": "a primitive root;",
+   "sha256": "e0c368afd90ff5e20fcb66ebe0cbe8f1e8c55551713ec0e7eac4de2278657450"
+  },
+  {
+   "strongs": "H0076",
+   "language": "hebrew",
+   "lemma": "אֲבַעְבֻּעֹת",
+   "gloss": "boil",
+   "definition": "an inflammatory pustule (as eruption)",
+   "derivation": "(by reduplication) from an unused root (meaning to belch forth);",
+   "sha256": "6b1577d30dafc093bb2de1fe9f6e8d732a49f7a092fb398b7f1ef174bd16a5fa"
+  },
+  {
+   "strongs": "H0077",
+   "language": "hebrew",
+   "lemma": "אֶ֫בֶץ",
+   "gloss": "Ebez",
+   "definition": "Ebets, a place in Palestine",
+   "derivation": "from an unused root probably meaning to gleam; conspicuous;",
+   "sha256": "a2b78b6e4fbbb1b20b75a442a6327a47e651f5b9f8f90c5cd70ac9d8e51dc904"
+  },
+  {
+   "strongs": "H0078",
+   "language": "hebrew",
+   "lemma": "אִבְצָן",
+   "gloss": "Ibzan",
+   "definition": "Ibtsan, an Israelite",
+   "derivation": "from the same as 76; splendid;",
+   "sha256": "e8473a40205df709e865c4dce3e1d02fb7a622e363c67e92efb93b14434252e5"
+  },
+  {
+   "strongs": "H0079",
+   "language": "hebrew",
+   "lemma": "אָבַק",
+   "gloss": "to wrestle",
+   "definition": "to bedust, i.e. grapple",
+   "derivation": "a primitive root, probably to float away (as vapor), but used only as denominative from 80;",
+   "sha256": "121514823159ab6ee469c8d734ca3232389cd0c602ae8505abeb6da7e0c76e66"
+  },
+  {
+   "strongs": "H0080",
+   "language": "hebrew",
+   "lemma": "אָבָק",
+   "gloss": "dust",
+   "definition": "light particles (as volatile)",
+   "derivation": "from root of 79;",
+   "sha256": "7191d4003be329bd9ec0ae52be8dfb72bcf80488cca460683da90fc40407becf"
+  },
+  {
+   "strongs": "H0081",
+   "language": "hebrew",
+   "lemma": "אֲבָקָה",
+   "gloss": "aromatic powder",
+   "derivation": "feminine of 80",
+   "sha256": "82eb9869ab0f728bbe6d9e9aedf394552be6c8560e952e8955fb7b60b785595f"
+  },
+  {
+   "strongs": "H0082",
+   "language": "hebrew",
+   "lemma": "אָבַר",
+   "gloss": "to fly",
+   "definition": "to soar",
+   "derivation": "a primitive root;",
+   "sha256": "7b6b49715b0a881c66742e703c696dc4b32ed926ea4d35d58e027d7fb3287a2a"
+  },
+  {
+   "strongs": "H0083",
+   "language": "hebrew",
+   "lemma": "אֵ֫בֶר",
+   "gloss": "wing",
+   "definition": "a pinion",
+   "derivation": "from 82;",
+   "sha256": "70caa6f1529fd30da9b37e8875bba49cf180a560a0f968aeef6275d2fed6499f"
+  },
+  {
+   "strongs": "H0084",
+   "language": "hebrew",
+   "lemma": "אֶבְרָה",
+   "gloss": "pinion",
+   "derivation": "feminine of 83",
+   "sha256": "8b7497df7d522e308ec820b472db1f733cc9ee20cf161a720a2a8527967f5f76"
+  },
+  {
+   "strongs": "H0085",
+   "language": "hebrew",
+   "lemma": "אַבְרָהָם",
+   "gloss": "Abraham",
+   "definition": "Abraham, the later name of Abram",
+   "derivation": "contracted from 1 and an unused root (probably meaning to be populous); father of a multitude;",
+   "sha256": "63befb8e078c792016b5715d870d4b5ae40c183f1a455717529b78448ccfd6a0"
+  },
+  {
+   "strongs": "H0086",
+   "language": "hebrew",
+   "lemma": "אַבְרֵךְ",
+   "gloss": "to bow",
+   "definition": "kneel",
+   "derivation": "probably an Egyptian word meaning",
+   "sha256": "a4976ae88b36665d5dc6a0660d4e526febefffa905c8b681e5bce90747f04522"
+  },
+  {
+   "strongs": "H0087",
+   "language": "hebrew",
+   "lemma": "אַבְרָם",
+   "gloss": "Abram",
+   "definition": "Abram, the original name of Abraham",
+   "derivation": "contracted from 48; high father;",
+   "sha256": "ea1a81239202043876e93bd52ebefa87be5baa4e51bc6e0b690c472f363d49bf"
+  },
+  {
+   "strongs": "H0088",
+   "language": "hebrew",
+   "lemma": "אֹבֹת",
+   "gloss": "Oboth",
+   "definition": "Oboth, a place in the Desert",
+   "derivation": "plural of 178; water-skins;",
+   "sha256": "b15dfcf2bbb68a5e7f7a97ba633a183b3192233a8540a82004e4a62f014a3885"
+  },
+  {
+   "strongs": "H0089",
+   "language": "hebrew",
+   "lemma": "אָגֵא",
+   "gloss": "Agee",
+   "definition": "Age, an Israelite",
+   "derivation": "of uncertain derivation (compare 90);",
+   "sha256": "cb2e8277ade20a3bb49656b4898969be59b403d115d58b4ca1dd686ba0749bec"
+  },
+  {
+   "strongs": "H0090G",
+   "language": "hebrew",
+   "lemma": "אֲגָג",
+   "gloss": "Agag",
+   "definition": "Agag, a title of Amalekitish kings",
+   "derivation": "or אֲגָג; of uncertain derivation (compare 89); flame;",
+   "sha256": "7f0f56c01d6489f2712733ddc2efba4e9048aa36400db42c6d547ba62edcf98b"
+  },
+  {
+   "strongs": "H0090H",
+   "language": "hebrew",
+   "lemma": "אֲגָג",
+   "gloss": "Agag",
+   "definition": "Agag, a title of Amalekitish kings",
+   "derivation": "or אֲגָג; of uncertain derivation (compare 89); flame;",
+   "sha256": "7f0f56c01d6489f2712733ddc2efba4e9048aa36400db42c6d547ba62edcf98b"
+  },
+  {
+   "strongs": "H0091",
+   "language": "hebrew",
+   "lemma": "אֲגָגִי",
+   "gloss": "Agagite",
+   "definition": "an Agagite or descendent (subject) of Agag",
+   "derivation": "patrial or patronymic from 90;",
+   "sha256": "335e245ad5b84a6539f3503912cc47c530e8f01e0cfd8fb1de1c6d88e0721a53"
+  },
+  {
+   "strongs": "H0092",
+   "language": "hebrew",
+   "lemma": "אֲגֻדָּה",
+   "gloss": "band",
+   "definition": "a band, bundle, knot, or arch",
+   "derivation": "feminine passive participle of an unused root (meaning to bind);",
+   "sha256": "72d7bab0822f5ea05f4bb1aeb5f8cceda67296c77ffd60dfb8ddbbb3aa5d1f22"
+  },
+  {
+   "strongs": "H0093",
+   "language": "hebrew",
+   "lemma": "אֱגוֹז",
+   "gloss": "nut",
+   "definition": "a nut",
+   "derivation": "prob of Persian origin;",
+   "sha256": "c7a446d5ac2ce6e8016ccc3325134f339aea9032878d3e2ee747461a3ec86c86"
+  },
+  {
+   "strongs": "H0094",
+   "language": "hebrew",
+   "lemma": "אָגוּר",
+   "gloss": "Agur",
+   "definition": "Agur, a fanciful name for Solomon",
+   "derivation": "passive participle of 103; gathered (i.e. received among the sages);",
+   "sha256": "3b63e5d9eab6eb0647c95d27d3398861a2819366b6d65331d988b21d23f6bacc"
+  },
+  {
+   "strongs": "H0095",
+   "language": "hebrew",
+   "lemma": "אֲגוֹרָה",
+   "gloss": "piece",
+   "definition": "properly, something gathered, i.e. perhaps a grain or berry; used only of a small (silver) coin",
+   "derivation": "from the same as 94;",
+   "sha256": "9673ac04e570e57c16ed016479d18e398ae4730a93a54bd4330bbb0a69f23f7a"
+  },
+  {
+   "strongs": "H0096",
+   "language": "hebrew",
+   "lemma": "אֵ֫גֶל",
+   "gloss": "drop",
+   "definition": "a reservoir",
+   "derivation": "from an unused root (meaning to flow down or together as drops);",
+   "sha256": "2405d70c47ffd5707f01e8250d27a5ffd29c0678be237e96e4e70112cd53dad9"
+  },
+  {
+   "strongs": "H0097",
+   "language": "hebrew",
+   "lemma": "אֶגְלַ֫יִם",
+   "gloss": "Eglaim",
+   "definition": "Eglajim, a place in Moab",
+   "derivation": "dual of 96.; a double pond;",
+   "sha256": "065af70014c4ad7a42eb3da6cb7ecca1eedfd215fcbb10e320c573e97a0fdbe2"
+  },
+  {
+   "strongs": "H0098",
+   "language": "hebrew",
+   "lemma": "אֲגַם",
+   "gloss": "pool",
+   "definition": "a marsh; hence a rush (as growing in swamps); hence a stockade of reeds",
+   "derivation": "from an unused root (meaning to collect as water);",
+   "sha256": "3b08f5e740f12ffe2a08a070b067891d8e9c63c9793cda3b5de0259ed7ec5a64"
+  },
+  {
+   "strongs": "H0099",
+   "language": "hebrew",
+   "lemma": "אָגֵם",
+   "gloss": "grieved",
+   "definition": "figuratively, sad",
+   "derivation": "probably from the same as 98 (in the sense of stagnant water);",
+   "sha256": "92f33107b87ece7b63a9a0bd4f7755ad82514a4a6e38b284e7d48e6ab3474271"
+  },
+  {
+   "strongs": "H0100",
+   "language": "hebrew",
+   "lemma": "אַגְמֹן",
+   "gloss": "bulrush",
+   "definition": "a rush (as growing there); collectively a rope of rushes",
+   "derivation": "from the same as 98; a marshy pool (others from a different root, a kettle); by implication",
+   "sha256": "aaf6d1b1102c47dd15f2758041e58bede26edeac7e9ece5c3992d024be717dd9"
+  },
+  {
+   "strongs": "H0101",
+   "language": "hebrew",
+   "lemma": "אַגָּן",
+   "gloss": "vessel",
+   "definition": "a bowl (as pounded out hollow)",
+   "derivation": "probably from 5059;",
+   "sha256": "a6801540105356771f75a3823797299f2d8dbafdee44554fed0f5a5a64bf9f64"
+  },
+  {
+   "strongs": "H0102",
+   "language": "hebrew",
+   "lemma": "אֲגַף",
+   "gloss": "band",
+   "definition": "(only plural) wings of an army, or crowds of troops",
+   "derivation": "probably from 5062 (through the idea of impending); a cover or heap; i.e.",
+   "sha256": "accfe34b670b0ca0ebbdd9bd72bb32521fbc7772151d8ff58f4f6d8600cc1a4d"
+  },
+  {
+   "strongs": "H0103",
+   "language": "hebrew",
+   "lemma": "אָגַר",
+   "gloss": "to gather",
+   "definition": "to harvest",
+   "derivation": "a primitive root;",
+   "sha256": "013ae9c0c0eafb8ab642b6244a2dd469830d2ee4d386af8a1c14c8ee6af791ae"
+  },
+  {
+   "strongs": "H0104",
+   "language": "hebrew",
+   "lemma": "אִגְּרָא",
+   "gloss": "letter",
+   "definition": "an epistle (as carried by a state courier or postman)",
+   "derivation": "(Aramaic) of Persian origin;",
+   "sha256": "6c94a573d18a939b77d5d1d6c9ae983880be2125d01d1b3de694c1763fd64a30"
+  },
+  {
+   "strongs": "H0105",
+   "language": "hebrew",
+   "lemma": "אֲגַרְטָל",
+   "gloss": "basin",
+   "definition": "a basin",
+   "derivation": "of uncertain derivation;",
+   "sha256": "af255c925bdc4c05010291c19d17065dd9ac6ef0ed12062a52245c1b10b26dd7"
+  },
+  {
+   "strongs": "H0106",
+   "language": "hebrew",
+   "lemma": "אֶגְרֹף",
+   "gloss": "fist",
+   "definition": "the clenched hand",
+   "derivation": "from 1640 (in the sense of grasping);",
+   "sha256": "fd4a1bde05650e1c6e568b126fa9ad15be4449b4f383f528b9be9c5996237b1e"
+  },
+  {
+   "strongs": "H0107",
+   "language": "hebrew",
+   "lemma": "אִגֶּ֫רֶת",
+   "gloss": "letter",
+   "definition": "an epistle",
+   "derivation": "feminine of 104;",
+   "sha256": "16a93553b2f913a2e9587bae4da0943a0b56ccb1b752566936c100307a851559"
+  },
+  {
+   "strongs": "H0108",
+   "language": "hebrew",
+   "lemma": "אֵד",
+   "gloss": "mist",
+   "definition": "a fog",
+   "derivation": "from the same as 181 (in the sense of enveloping);",
+   "sha256": "3e1f40134ddf9b7191c2f48e812b1fd4e4125508549a23eed2d646d5a2b0e482"
+  },
+  {
+   "strongs": "H0109",
+   "language": "hebrew",
+   "lemma": "אָדַב",
+   "gloss": "to grieve",
+   "definition": "to languish",
+   "derivation": "a primitive root;",
+   "sha256": "8299ab824a8c39010dbb0c1c71602e7f8eadf5b640b9bed55136b85c3d0ddf86"
+  },
+  {
+   "strongs": "H0110",
+   "language": "hebrew",
+   "lemma": "אַדְבְּאֵל",
+   "gloss": "Adbeel",
+   "definition": "Adbeel, a son of Ishmael",
+   "derivation": "probably from 109 (in the sense of chastisement) and 410; disciplined of God;",
+   "sha256": "48f2b82d1831c361d0fa5f2aa9d68d2f4fe57564924df5113fabaeb2b3975087"
+  },
+  {
+   "strongs": "H0111",
+   "language": "hebrew",
+   "lemma": "אֲדַד",
+   "gloss": "Hadad",
+   "definition": "Adad (or Hadad), an Edomite",
+   "derivation": "probably an orthographical variation for 2301;",
+   "sha256": "d1dd5fb186302cd8aa29c0897a607095cb8b16352beed03d231892bf83cc2c13"
+  },
+  {
+   "strongs": "H0112",
+   "language": "hebrew",
+   "lemma": "אִדּוֹ",
+   "gloss": "Iddo",
+   "definition": "Iddo, an Israelite",
+   "derivation": "of uncertain derivation;",
+   "sha256": "70216b162bce11de9c78cbd47e0ac7272fd89533f8d37de8590fd2ec7c28c2ea"
+  },
+  {
+   "strongs": "H0113",
+   "language": "hebrew",
+   "lemma": "אָדוֹן",
+   "gloss": "lord",
+   "definition": "sovereign, i.e. controller (human or divine)",
+   "derivation": "or (shortened) אָדֹן; from an unused root (meaning to rule);",
+   "sha256": "f0e04df7c450106207a77f315db057347ea71682f90e778c99cefcee676174da"
+  },
+  {
+   "strongs": "H0114",
+   "language": "hebrew",
+   "lemma": "אַדּוֹן",
+   "gloss": "Addon",
+   "definition": "Addon, apparently an Israelite",
+   "derivation": "probably intensive for 113; powerful;",
+   "sha256": "52fc150aa8bdcf4bacc9c3c346d86cfcd845d6cdbd174048440de7b168ad408a"
+  },
+  {
+   "strongs": "H0115",
+   "language": "hebrew",
+   "lemma": "אֲדוֹרַ֫יִם",
+   "gloss": "Adoraim",
+   "definition": "Adorajim, a place in Palestine",
+   "derivation": "dual from 142 (in the sense of eminence); double mound;",
+   "sha256": "4ab51e9bc6176aa1d52fb7bf5d7dfec2fe6929302c1ddba5ddd102d99a4102a5"
+  },
+  {
+   "strongs": "H0116",
+   "language": "hebrew",
+   "lemma": "אֱדַ֫יִן",
+   "gloss": "then",
+   "definition": "then (of time)",
+   "derivation": "(Aramaic) of uncertain derivation;",
+   "sha256": "04369304e143c464ac0d7c3e18e2786e1cb87a9f38e5286220655ff5a28362e3"
+  },
+  {
+   "strongs": "H0117",
+   "language": "hebrew",
+   "lemma": "אַדִּיר",
+   "gloss": "great",
+   "definition": "wide or (generally) large; figuratively, powerful",
+   "derivation": "from 142;",
+   "sha256": "5ef19b5b6de819f0a581a1c1bdbe1809abc9d1c15c312b55d567f6cc2425f6af"
+  },
+  {
+   "strongs": "H0118",
+   "language": "hebrew",
+   "lemma": "אֲדַלְיָא",
+   "gloss": "Adalia",
+   "definition": "Adalja, a son of Haman",
+   "derivation": "of Persian derivation;",
+   "sha256": "3541b85a31eb009360020216a720ccdbfdb09e35f37f951204976f29c540d13e"
+  },
+  {
+   "strongs": "H0119",
+   "language": "hebrew",
+   "lemma": "אָדֹם",
+   "gloss": "to redden",
+   "definition": "to show blood (in the face), i.e. flush or turn rosy",
+   "sha256": "2632c62d5a40074cd4aab5855c4c5c264ba05e5beae06465fa7d44e67435a1c0"
+  },
+  {
+   "strongs": "H0120G",
+   "language": "hebrew",
+   "lemma": "אָדָם",
+   "gloss": "man",
+   "definition": "ruddy i.e. a human being (an individual or the species, mankind, etc.)",
+   "derivation": "from 119;",
+   "sha256": "9528d0fbb9f401e9aca023c92b8a6a8d0c1c6e45d052b51d1ff855dcfa3ee5fc"
+  },
+  {
+   "strongs": "H0120H",
+   "language": "hebrew",
+   "lemma": "אָדָם",
+   "gloss": "the man (Adam)",
+   "definition": "ruddy i.e. a human being (an individual or the species, mankind, etc.)",
+   "derivation": "from 119;",
+   "sha256": "b05fa5eb5082e98e12358d291810d9541158edbd474bbcd7fc9e7bee5af7359b"
+  },
+  {
+   "strongs": "H0121G",
+   "language": "hebrew",
+   "lemma": "אָדָם",
+   "gloss": "Adam",
+   "definition": "Adam the name of the first man, also of a place in Palestine",
+   "derivation": "the same as 120;",
+   "sha256": "8cd461c9cb5569ba238ee56cc6592bbcc2cc5c25a127fb98c3092b66a01e7a93"
+  },
+  {
+   "strongs": "H0121H",
+   "language": "hebrew",
+   "lemma": "אָדָם",
+   "gloss": "Adam",
+   "definition": "Adam the name of the first man, also of a place in Palestine",
+   "derivation": "the same as 120;",
+   "sha256": "8cd461c9cb5569ba238ee56cc6592bbcc2cc5c25a127fb98c3092b66a01e7a93"
+  },
+  {
+   "strongs": "H0122A",
+   "language": "hebrew",
+   "lemma": "אָדֹם",
+   "gloss": "red",
+   "definition": "rosy",
+   "derivation": "from 119;",
+   "sha256": "7e7d372963bbda0fd165986a08243a6a89c85c4864e53eb8d7bb181b8bfb684d"
+  },
+  {
+   "strongs": "H0122B",
+   "language": "hebrew",
+   "lemma": "אֱדֹם",
+   "gloss": "red stuff",
+   "definition": "rosy",
+   "derivation": "from 119;",
+   "sha256": "2ba7bd29ee3f94a3828d331a969cd0d00b90c07f5c173e0e9b6773a2e19d305c"
+  },
+  {
+   "strongs": "H0123G",
+   "language": "hebrew",
+   "lemma": "אֱדוֹם",
+   "gloss": "Edom",
+   "definition": "Edom, the elder twin-brother of Jacob; hence the region (Idumaea) occupied by him",
+   "derivation": "or (fully) אֱדוֹם ; from 122; red (see Genesis 25:25);",
+   "sha256": "210581cd24a17040124b1ff71314bf89a307453ec1894c2af9cd7b4a61d6a327"
+  },
+  {
+   "strongs": "H0123H",
+   "language": "hebrew",
+   "lemma": "אֱדוֹם",
+   "gloss": "Edom",
+   "definition": "Edom, the elder twin-brother of Jacob; hence the region (Idumaea) occupied by him",
+   "derivation": "or (fully) אֱדוֹם ; from 122; red (see Genesis 25:25);",
+   "sha256": "210581cd24a17040124b1ff71314bf89a307453ec1894c2af9cd7b4a61d6a327"
+  },
+  {
+   "strongs": "H0124",
+   "language": "hebrew",
+   "lemma": "אֹ֫דֶם",
+   "gloss": "sardius",
+   "definition": "redness, i.e. the ruby, garnet, or some other red gem",
+   "derivation": "from 119;",
+   "sha256": "0e84cb7a336ab3e00aaed7a68ff8d2e6f85ddd6e975cdae4c8143075321c9b1a"
+  },
+  {
+   "strongs": "H0125",
+   "language": "hebrew",
+   "lemma": "אֲדַמְדָּם",
+   "gloss": "reddish",
+   "definition": "reddish",
+   "derivation": "reduplicated from 119;",
+   "sha256": "bb89b24ab654b242ac6a50747742a65f71c24842b3d6205ff6ea9826cea8a423"
+  },
+  {
+   "strongs": "H0126",
+   "language": "hebrew",
+   "lemma": "אַדְמָה",
+   "gloss": "Admah",
+   "definition": "Admah, a place near the Dead Sea",
+   "derivation": "contracted for 127; earthy;",
+   "sha256": "2415a534633568ae0253d635a2f83ffa0e2e60ffdac7366f19f49c523ded8a47"
+  },
+  {
+   "strongs": "H0127G",
+   "language": "hebrew",
+   "lemma": "אֲדָמָה",
+   "gloss": "land: soil",
+   "definition": "soil (from its general redness)",
+   "derivation": "from 119;",
+   "sha256": "fc6f293a116bb52572fe8c12542fe2a644bd684fb879567d5929efbb5c0d5607"
+  },
+  {
+   "strongs": "H0127H",
+   "language": "hebrew",
+   "lemma": "אֲדָמָה",
+   "gloss": "land: country",
+   "definition": "soil (from its general redness)",
+   "derivation": "from 119;",
+   "sha256": "52b8433c92792946001198141dd854f769d4ab5b955c67919ce5fd06c798b1b8"
+  },
+  {
+   "strongs": "H0127I",
+   "language": "hebrew",
+   "lemma": "אֲדָמָה",
+   "gloss": "land: planet",
+   "definition": "soil (from its general redness)",
+   "derivation": "from 119;",
+   "sha256": "3a6c9decfab8a5e32f80ff9db5f28810015602fc39ce161bd3a86370540f6606"
+  },
+  {
+   "strongs": "H0128",
+   "language": "hebrew",
+   "lemma": "אֲדָמָה",
+   "gloss": "Adamah",
+   "definition": "Adamah, a place in Palestine",
+   "derivation": "the same as 127;",
+   "sha256": "4ecba002c33abecc01556ae703a139c609b3c3b7b29a51c5f54b71ad2e78cdb0"
+  },
+  {
+   "strongs": "H0129",
+   "language": "hebrew",
+   "lemma": "אֲדָמִי",
+   "gloss": "Adami",
+   "definition": "Adami, a place in Palestine",
+   "derivation": "from 127; earthy;",
+   "sha256": "00c261c93f12805716cd3bdf9c4b648107c7871a6090010945567e3a2867374c"
+  },
+  {
+   "strongs": "H0130",
+   "language": "hebrew",
+   "lemma": "אֲדֹמִי",
+   "gloss": "Edomite",
+   "definition": "an Edomite, or descendants from (or inhabitants of) Edom",
+   "derivation": "or (fully) אֱדוֹמִי ; patronymic from 123; See 726.",
+   "sha256": "2943b0eac4c9313e595836ed767e839152fe5faa15036141c69609af85958c37"
+  },
+  {
+   "strongs": "H0131",
+   "language": "hebrew",
+   "lemma": "אֲדֻמִּים",
+   "gloss": "Adummim",
+   "definition": "Adummim, a pass in Palestine",
+   "derivation": "plural of 121; red spots;",
+   "sha256": "b2beab47c8da79ce33af1f733ae34ab9a9c20791f2cd56fa064d730d96f2660c"
+  },
+  {
+   "strongs": "H0132",
+   "language": "hebrew",
+   "lemma": "אַדְמוֹנִי",
+   "gloss": "red",
+   "definition": "reddish (of the hair or the complexion)",
+   "derivation": "or (fully) אַדְמוֹנִי ; from 119;",
+   "sha256": "06eac7b4c716018c2526062ed21163b20755b49a235f1df525436f022c0d346c"
+  },
+  {
+   "strongs": "H0133",
+   "language": "hebrew",
+   "lemma": "אַדְמָתָא",
+   "gloss": "Admatha",
+   "definition": "Admatha, a Persian nobleman",
+   "derivation": "probably of Persian derivation;",
+   "sha256": "6e03b63399a1ed398dac0889e91f6115a86a1efd1023a8a8b53112d145017550"
+  },
+  {
+   "strongs": "H0134",
+   "language": "hebrew",
+   "lemma": "אֶ֫דֶן",
+   "gloss": "socket",
+   "definition": "a basis (of a building, a column, etc.)",
+   "derivation": "from the same as 113 (in the sense of strength);",
+   "sha256": "11e8f34f662aa36845bfdac8c4033617277dbd88dd7156f3ff425b3236b53ad9"
+  },
+  {
+   "strongs": "H0135",
+   "language": "hebrew",
+   "lemma": "אַדָּן",
+   "gloss": "Addan",
+   "definition": "Addan, an Israelite",
+   "derivation": "intensive from the same as 134; firm;",
+   "sha256": "5cf8326f3ab3d3f0f73f5dd49e82d9053102945e21fa47b1dd63b741ae2a66d7"
+  },
+  {
+   "strongs": "H0136",
+   "language": "hebrew",
+   "lemma": "אֲדֹנָי",
+   "gloss": "Lord",
+   "definition": "the Lord (used as a proper name of God only)",
+   "derivation": "an emphatic form of 113;",
+   "sha256": "9667633a2af397e300bd963b92bac6b50ab01ad455e21b02056705ab18722251"
+  },
+  {
+   "strongs": "H0137",
+   "language": "hebrew",
+   "lemma": "אֲדֹנִי־בֶ֫זֶק",
+   "gloss": "Adoni-bezek",
+   "definition": "Adoni-Bezek; a Canaanitish king",
+   "derivation": "from 113 and 966; lord of Bezek;",
+   "sha256": "7a7fde9610eaf96c27ca20f02cbc37585e2badf4d5c391941c32e0bbdfe72edd"
+  },
+  {
+   "strongs": "H0138G",
+   "language": "hebrew",
+   "lemma": "אֲדֹנִיָּ֫הוּ",
+   "gloss": "Adonijah",
+   "definition": "Adonijah, the name of three Israelites",
+   "derivation": "original (prolonged) אֲדֹנִיָּהוּ ; from 113 and 3050; lord (i.e. worshipper) of Jah;",
+   "sha256": "af31cada56b88270763c303a89dddac52f29fed23935d6a1edfedef44cd1e645"
+  },
+  {
+   "strongs": "H0138H",
+   "language": "hebrew",
+   "lemma": "אֲדֹנִיָּ֫הוּ",
+   "gloss": "Adonijah",
+   "definition": "Adonijah, the name of three Israelites",
+   "derivation": "original (prolonged) אֲדֹנִיָּהוּ ; from 113 and 3050; lord (i.e. worshipper) of Jah;",
+   "sha256": "af31cada56b88270763c303a89dddac52f29fed23935d6a1edfedef44cd1e645"
+  },
+  {
+   "strongs": "H0138I",
+   "language": "hebrew",
+   "lemma": "אֲדֹנִיָּ֫הוּ",
+   "gloss": "Adonijah",
+   "definition": "Adonijah, the name of three Israelites",
+   "derivation": "original (prolonged) אֲדֹנִיָּהוּ ; from 113 and 3050; lord (i.e. worshipper) of Jah;",
+   "sha256": "af31cada56b88270763c303a89dddac52f29fed23935d6a1edfedef44cd1e645"
+  },
+  {
+   "strongs": "H0139",
+   "language": "hebrew",
+   "lemma": "אֲדֹנִי־צֶ֫דֶק",
+   "gloss": "Adoni-zedek",
+   "definition": "Adoni-Tsedek, a Canaanitish king",
+   "derivation": "from 113 and 6664; lord of justice;",
+   "sha256": "f69c97dd24a17665af50d214dc688cb7620003a2bc41361f11d8deb0aaba24c5"
+  },
+  {
+   "strongs": "H0140",
+   "language": "hebrew",
+   "lemma": "אֲדֹנִיקָם",
+   "gloss": "Adonikam",
+   "definition": "Adonikam, the name of one or two Israelites",
+   "derivation": "from 113 and 6965; lord of rising (i.e. high);",
+   "sha256": "bb0c0834572e33a0dd62a75aae2f3435ba730863331d7abdbc564c1d6b743430"
+  },
+  {
+   "strongs": "H0141",
+   "language": "hebrew",
+   "lemma": "אֲדֹנִירָם",
+   "gloss": "Adoniram",
+   "definition": "Adoniram, an Israelite",
+   "derivation": "from 113 and 7311; lord of height;",
+   "sha256": "868bccba5396859d69d5d130a211365c50dd5e0beb480f35d88ec19a359b74c9"
+  },
+  {
+   "strongs": "H0142",
+   "language": "hebrew",
+   "lemma": "אָדַר",
+   "gloss": "be glorious",
+   "definition": "to expand, i.e. be great or (figuratively) magnificent",
+   "derivation": "a primitive root;",
+   "sha256": "4b87fe6d841570a522a5117698c1e9eb35b49968ddd119501d7aea467b8e60dd"
+  },
+  {
+   "strongs": "H0143",
+   "language": "hebrew",
+   "lemma": "אֲדָר",
+   "gloss": "Adar",
+   "definition": "Adar, the 12th Hebrew month",
+   "derivation": "probably of foreign derivation; perhaps meaning fire;",
+   "sha256": "4aec3e0fa0eb53a1d009ed0a6446ca96cafdef6c65b53a0bb877a6e31d7827bd"
+  },
+  {
+   "strongs": "H0144",
+   "language": "hebrew",
+   "lemma": "אֲדָר",
+   "gloss": "Adar",
+   "derivation": "(Aramaic) corresponding to 143",
+   "sha256": "c060f283bcfe73de00741d32b59847145fffad0f2064b7f404c92c7bac8c8bf0"
+  },
+  {
+   "strongs": "H0145",
+   "language": "hebrew",
+   "lemma": "אֶ֫דֶר",
+   "gloss": "robe",
+   "definition": "amplitude, i.e. (concrete) a mantle; also (figuratively) splendor",
+   "derivation": "from 142;",
+   "sha256": "8697ee038784d4b91c7d2f567b395eecbbe6aabe6f7d47a839f9fa0e266a6741"
+  },
+  {
+   "strongs": "H0146G",
+   "language": "hebrew",
+   "lemma": "אַדָּר",
+   "gloss": "Addar",
+   "definition": "Addar, a place in Palestine; also an Israelite",
+   "derivation": "intensive from 142; ample;",
+   "sha256": "08d48b4e2e9bd57cb0cf5c26eb3e3f22b385bc97c57be25669136af344781e52"
+  },
+  {
+   "strongs": "H0146H",
+   "language": "hebrew",
+   "lemma": "אַדָּר",
+   "gloss": "Addar",
+   "definition": "Addar, a place in Palestine; also an Israelite",
+   "derivation": "intensive from 142; ample;",
+   "sha256": "08d48b4e2e9bd57cb0cf5c26eb3e3f22b385bc97c57be25669136af344781e52"
+  },
+  {
+   "strongs": "H0147",
+   "language": "hebrew",
+   "lemma": "אִדַּר",
+   "gloss": "threshing floor",
+   "definition": "ample, i.e. a threshing-floor",
+   "derivation": "(Aramaic) intensive, from a root corresponding to 142;",
+   "sha256": "4d27d8e2204fdac9b6db3ef15eedf4cc43e7fb0765654495686c39f7e84703e0"
+  },
+  {
+   "strongs": "H0148",
+   "language": "hebrew",
+   "lemma": "אֲדַרְגָּזֵר",
+   "gloss": "judge",
+   "definition": "a chief diviner, or astrologer",
+   "derivation": "(Aramaic) from the same as 147, and 1505;",
+   "sha256": "5f61c6bd306caeecec6882c887bc2c3d0f5c0117dc2023d15a20f7de50da9404"
+  },
+  {
+   "strongs": "H0149",
+   "language": "hebrew",
+   "lemma": "אַדְרַזְדָּא",
+   "gloss": "diligently",
+   "definition": "quickly or carefully",
+   "derivation": "(Aramaic) probably of Persian origin;",
+   "sha256": "20554d1f9a0c93f80590c090f07aaab579ffbb20fd332cdeab764c3c39835f05"
+  },
+  {
+   "strongs": "H0150",
+   "language": "hebrew",
+   "lemma": "אֲדַרְכֹּן",
+   "gloss": "dram",
+   "definition": "a daric or Persian coin",
+   "derivation": "of Persian origin;",
+   "sha256": "6a5258a4a9f6c337b1e26441c32c0c94b2e4746a4ac20a1d02596961f6ac5a8a"
+  },
+  {
+   "strongs": "H0151",
+   "language": "hebrew",
+   "lemma": "אֲדֹרָם",
+   "gloss": "Adoram",
+   "definition": "Adoram (or Adoniram), an Israelite",
+   "derivation": "contracted for 141;",
+   "sha256": "d809ee182f1f7117cf6b608eda416dd529ed5f1d28090bfb0c059823fe05cea2"
+  },
+  {
+   "strongs": "H0152G",
+   "language": "hebrew",
+   "lemma": "אַדְרַמֶּ֫לֶךְ",
+   "gloss": "Adrammelech",
+   "definition": "Adrammelek, the name of an Assyrian idol, also of a son of Sennacherib",
+   "derivation": "from 142 and 4428; splendor of (the) king;",
+   "sha256": "d41e7c713ee3bdff2ef7bdbd2dc6654904d48d76830b5f00fb13785eb2cfecb9"
+  },
+  {
+   "strongs": "H0152H",
+   "language": "hebrew",
+   "lemma": "אַדְרַמֶּ֫לֶךְ",
+   "gloss": "Adrammelech",
+   "definition": "Adrammelek, the name of an Assyrian idol, also of a son of Sennacherib",
+   "derivation": "from 142 and 4428; splendor of (the) king;",
+   "sha256": "d41e7c713ee3bdff2ef7bdbd2dc6654904d48d76830b5f00fb13785eb2cfecb9"
+  },
+  {
+   "strongs": "H0153",
+   "language": "hebrew",
+   "lemma": "אֶדְרַע",
+   "gloss": "force",
+   "definition": "an arm, i.e. (figuratively) power",
+   "derivation": "(Aramaic) an orthographical variation for 1872;",
+   "sha256": "cb8ddb6d94f43fc017098d5a89f27cef17dc431096dac6ae8961b01684be9d56"
+  },
+  {
+   "strongs": "H0154",
+   "language": "hebrew",
+   "lemma": "אֶדְרֶ֫עִי",
+   "gloss": "Edrei",
+   "definition": "Edrei, the name of two places in Palestine",
+   "derivation": "from the equivalent of 153; mighty;",
+   "sha256": "3e34b0889e1dfd862fe3d8f37d92ffaf76fdddcb12fd2d3d0c280ebe228665a5"
+  },
+  {
+   "strongs": "H0155",
+   "language": "hebrew",
+   "lemma": "אַדֶּ֫רֶת",
+   "gloss": "clothing",
+   "definition": "something ample (as a large vine, a wide dress)",
+   "derivation": "feminine of 117; ; also the same as 145",
+   "sha256": "60f914fdb725768e9cc7ee7515f08b0cffb9fef745aadf9d9998da67389c2cef"
+  },
+  {
+   "strongs": "H0156",
+   "language": "hebrew",
+   "lemma": "אָדַשׁ",
+   "gloss": "to thresh",
+   "definition": "to tread out (grain)",
+   "derivation": "a primitive root;",
+   "sha256": "fc6120e669574b14611eeb78c0665914451576dd571b71df96a8bc8af68106e8"
+  },
+  {
+   "strongs": "H0157G",
+   "language": "hebrew",
+   "lemma": "אָהֵב",
+   "gloss": "to love: lover",
+   "definition": "to have affection for (sexually or otherwise)",
+   "derivation": "or אָהֵב ; a primitive root;",
+   "sha256": "d41439397b9684ffb9bbcb012cd9ef88c72cf0166af8d26f9eec03458a7b1fd0"
+  },
+  {
+   "strongs": "H0157H",
+   "language": "hebrew",
+   "lemma": "אָהֵב",
+   "gloss": "to love: friend",
+   "definition": "to have affection for (sexually or otherwise)",
+   "derivation": "or אָהֵב ; a primitive root;",
+   "sha256": "3cd0b75ba2708c2d3dbe9329d690496c2691fac8cf1f1ea61ff8a738ea054db4"
+  },
+  {
+   "strongs": "H0158",
+   "language": "hebrew",
+   "lemma": "אַ֫הַב",
+   "gloss": "lover",
+   "definition": "affection (in a good or a bad sense)",
+   "derivation": "from 157;",
+   "sha256": "d42a68262f92d77b4f8e43b463a9913b87f5f5a795b4626add637616f4734999"
+  },
+  {
+   "strongs": "H0159",
+   "language": "hebrew",
+   "lemma": "אֹ֫הַב",
+   "gloss": "beloved",
+   "derivation": "from 156; meaning the same as 158",
+   "sha256": "a326a647e613553f3d540be810170cafd966e3ce2ab41933fa9d67f297997272"
+  },
+  {
+   "strongs": "H0160",
+   "language": "hebrew",
+   "lemma": "אַהֲבָה",
+   "gloss": "love",
+   "derivation": "feminine of 158 and meaning the same",
+   "sha256": "d7e200d4a948ab82896d0dd07fa6a194c7226cb70b89ee21bf680d0d0c0e560a"
+  },
+  {
+   "strongs": "H0161",
+   "language": "hebrew",
+   "lemma": "אֹ֫הַד",
+   "gloss": "Ohad",
+   "definition": "Ohad, an Israelite",
+   "derivation": "from an unused root meaning to be united; unity;",
+   "sha256": "81884959ea6dc9185bb7c8236d797cd01513fe9f5fb98f7f63d6ef52be3b3730"
+  },
+  {
+   "strongs": "H0162",
+   "language": "hebrew",
+   "lemma": "אֲהָהּ",
+   "gloss": "alas!",
+   "definition": "Oh!",
+   "derivation": "apparently a primitive word expressing pain exclamatorily;",
+   "sha256": "7ef254e6841dfd50c986bbec5a9e5921939bd36ff8937c18d58a90608a36ec4e"
+  },
+  {
+   "strongs": "H0163",
+   "language": "hebrew",
+   "lemma": "אַהֲוָא",
+   "gloss": "Ahava",
+   "definition": "Ahava, a river of Babylonia",
+   "derivation": "probably of foreign origin;",
+   "sha256": "ccd041d85e2424897f33b76446ae0d7d0f4821ffc1b0eb1d84afa385c89200b3"
+  },
+  {
+   "strongs": "H0164G",
+   "language": "hebrew",
+   "lemma": "אֵהוּד",
+   "gloss": "Ehud",
+   "definition": "Ehud, the name of two or three Israelites",
+   "derivation": "from the same as 161; united;",
+   "sha256": "dd8485b463d7ecf12c80355f462ccab6bfbc05322757554a064c2542790b5f4d"
+  },
+  {
+   "strongs": "H0164H",
+   "language": "hebrew",
+   "lemma": "אֵהוּד",
+   "gloss": "Ehud",
+   "definition": "Ehud, the name of two or three Israelites",
+   "derivation": "from the same as 161; united;",
+   "sha256": "dd8485b463d7ecf12c80355f462ccab6bfbc05322757554a064c2542790b5f4d"
+  },
+  {
+   "strongs": "H0165",
+   "language": "hebrew",
+   "lemma": "אֱהִי",
+   "gloss": "where?",
+   "definition": "where",
+   "derivation": "apparently an orthographical variation for 346;",
+   "sha256": "d1c244e576c390f0a3843c0783f0e8ce811aa88deec78f4e53fe38e47fb3a9cb"
+  },
+  {
+   "strongs": "H0166",
+   "language": "hebrew",
+   "lemma": "אָהַל",
+   "gloss": "to shine",
+   "definition": "to be clear",
+   "derivation": "a primitive root;",
+   "sha256": "4e61bdd4b0df125045df74af3a038f0d46ed1f308e05bc0b8e1340d4959f3135"
+  },
+  {
+   "strongs": "H0167",
+   "language": "hebrew",
+   "lemma": "אָהַל",
+   "gloss": "to pitch",
+   "definition": "to tent",
+   "derivation": "a denominative from 168;",
+   "sha256": "5fde792111a22aa504b2575243339331565a1cef999e8045eaac012c793a396c"
+  },
+  {
+   "strongs": "H0168G",
+   "language": "hebrew",
+   "lemma": "אֹ֫הֶל",
+   "gloss": "tent",
+   "definition": "a tent (as clearly conspicuous from a distance)",
+   "derivation": "from 166;",
+   "sha256": "f7083ba3c8183bf485e803093ca6d0404baec9bbf54683f2eb65147a4dcb8acc"
+  },
+  {
+   "strongs": "H0168H",
+   "language": "hebrew",
+   "lemma": "אֹ֫הֶל",
+   "gloss": "tent: home",
+   "definition": "a tent (as clearly conspicuous from a distance)",
+   "derivation": "from 166;",
+   "sha256": "ada92dc2f2aa4722cb8829281a1c4f6fba8188fd2fb16d93ffd5185f93a35c27"
+  },
+  {
+   "strongs": "H0169",
+   "language": "hebrew",
+   "lemma": "אֹ֫הֶל",
+   "gloss": "Ohel",
+   "definition": "Ohel, an Israelite",
+   "derivation": "the same as 168;",
+   "sha256": "0ab020f921a7d04097f8a8354127d718868bc2396478d37694953ea59c285802"
+  },
+  {
+   "strongs": "H0170",
+   "language": "hebrew",
+   "lemma": "אׇהֳלָה",
+   "gloss": "Oholah",
+   "definition": "Oholah, a symbolic name for Samaria",
+   "derivation": "in form a feminine of 168, but in fact for אׇהֳלָהּ; from 168; her tent (i.e. idolatrous sanctuary);",
+   "sha256": "4e0847fb274397e89a45265f24d37befc91de8a2f42e181e6883acc7dbf8893c"
+  },
+  {
+   "strongs": "H0171",
+   "language": "hebrew",
+   "lemma": "אׇהֳלִיאָב",
+   "gloss": "Oholiab",
+   "definition": "Oholiab, an Israelite",
+   "derivation": "from 168 and 1; tent of (his) father;",
+   "sha256": "b6ba3c3d8c7efc6c1e310ba99c6ee1252f70b7d865865b87835deb9ff5098f9d"
+  },
+  {
+   "strongs": "H0172",
+   "language": "hebrew",
+   "lemma": "אׇהֳלִיבָה",
+   "gloss": "Oholibah",
+   "definition": "Oholibah, a symbolic name for Judah",
+   "derivation": "(similarly with 170) for אׇהֳלִיבָהּ ; from 168; my tent (is) in her;",
+   "sha256": "faf074600bba0b24fefd0970b629fac39141822b28f8b5a1856fb058e537295b"
+  },
+  {
+   "strongs": "H0173G",
+   "language": "hebrew",
+   "lemma": "אׇהֳלִיבָמָה",
+   "gloss": "Oholibamah",
+   "definition": "Oholibamah, a wife of Esau",
+   "derivation": "from 168 and 1116; tent of (the) height;",
+   "sha256": "2aa300688d937bb920d3916aea6b7962c40cec84a218bea94c2684a7f9a3fd1a"
+  },
+  {
+   "strongs": "H0173H",
+   "language": "hebrew",
+   "lemma": "אׇהֳלִיבָמָה",
+   "gloss": "Oholibamah",
+   "definition": "Oholibamah, a wife of Esau",
+   "derivation": "from 168 and 1116; tent of (the) height;",
+   "sha256": "2aa300688d937bb920d3916aea6b7962c40cec84a218bea94c2684a7f9a3fd1a"
+  },
+  {
+   "strongs": "H0173I",
+   "language": "hebrew",
+   "lemma": "אׇהֳלִיבָמָה",
+   "gloss": "Oholibamah",
+   "definition": "Oholibamah, a wife of Esau",
+   "derivation": "from 168 and 1116; tent of (the) height;",
+   "sha256": "2aa300688d937bb920d3916aea6b7962c40cec84a218bea94c2684a7f9a3fd1a"
+  },
+  {
+   "strongs": "H0174",
+   "language": "hebrew",
+   "lemma": "אָהָל",
+   "gloss": "aloe",
+   "definition": "aloe wood (i.e. sticks)",
+   "derivation": "or (feminine) אֲהָלוֹת (only used thus in the plural); of foreign origin;",
+   "sha256": "3785a1f30c7c7b5c7db8bb98fcc567c0df3b593b0c22eed7bd290e705e2411e3"
+  },
+  {
+   "strongs": "H0175",
+   "language": "hebrew",
+   "lemma": "אַהֲרֹן",
+   "gloss": "Aaron",
+   "definition": "Aharon, the brother of Moses",
+   "derivation": "of uncertain derivation;",
+   "sha256": "df4e31a8d548c6ea5d892a0412fef595cc24260838695bdee00a2fc6fe806027"
+  },
+  {
+   "strongs": "H0176A",
+   "language": "hebrew",
+   "lemma": "אוֹ",
+   "gloss": "or",
+   "definition": "desire (and so probably in Proverbs 31:4); hence (by way of alternative) or, also if",
+   "derivation": "presumed to be the 'constructive' or genitival form of אַו ; short for 185;",
+   "sha256": "b74f4c3c61ef3e771cb15195a7304cd1d5b1cfd20e3ac4e668da4b3195bcf781"
+  },
+  {
+   "strongs": "H0176B",
+   "language": "hebrew",
+   "lemma": "אוֹ",
+   "gloss": "desire",
+   "definition": "desire (and so probably in Proverbs 31:4); hence (by way of alternative) or, also if",
+   "derivation": "presumed to be the 'constructive' or genitival form of אַו ; short for 185;",
+   "sha256": "811e48320c74005ea6ec83d709c1ce7791a8c89f33ab82f05bf4869d6f9df9cd"
+  },
+  {
+   "strongs": "H0177",
+   "language": "hebrew",
+   "lemma": "אוּאֵל",
+   "gloss": "Uel",
+   "definition": "Uel, and Israelite",
+   "derivation": "from 176 and 410; wish of God;",
+   "sha256": "df95f435aa24deae1730a37f3ed047a8e79d40157bdeb822181e0734daf3d0bd"
+  },
+  {
+   "strongs": "H0178",
+   "language": "hebrew",
+   "lemma": "אוֹב",
+   "gloss": "medium",
+   "definition": "properly, a mumble, i.e. a water-skin (from its hollow sound); hence a necromancer (ventriloquist, as from a jar)",
+   "derivation": "from the same as 1 (apparently through the idea of prattling a father's name);",
+   "sha256": "6dfbb982366787fba594e51e2de64b506f8591a1a646ec0f462de6ce2158157f"
+  },
+  {
+   "strongs": "H0179",
+   "language": "hebrew",
+   "lemma": "אוֹבִיל",
+   "gloss": "Obil",
+   "definition": "Obil, an Ishmaelite",
+   "derivation": "probably from 56; mournful;",
+   "sha256": "0bef62da11b3688871d6100bb23f8dd97236a7926e9d19c805aec46addbabc92"
+  },
+  {
+   "strongs": "H0180",
+   "language": "hebrew",
+   "lemma": "אוּבַל",
+   "gloss": "river",
+   "definition": "a stream",
+   "derivation": "or (shortened) אֻבָל ; from 2986 (in the sense of 2988);",
+   "sha256": "4f9edd101573e3f2efa620d2cf525868ab95fb246f8755f44cf0dab1db666e0f"
+  },
+  {
+   "strongs": "H0181",
+   "language": "hebrew",
+   "lemma": "אוּד",
+   "gloss": "firebrand",
+   "definition": "a poker (for turning or gathering embers)",
+   "derivation": "from an unused root meaning to rake together;",
+   "sha256": "c5f8c9a9f590f48adb01e5abb8302210445e77a82fd4c83254e0d97275288246"
+  },
+  {
+   "strongs": "H0182",
+   "language": "hebrew",
+   "lemma": "אוֹדָה",
+   "gloss": "because",
+   "definition": "turnings (i.e. occasions); (adverb) on account of",
+   "derivation": "or (shortened) אֹדוֹת (only thus in the plural); from the same as 181;",
+   "sha256": "645791c4d0c7c170a0d391e67aab398de3a1d44545eab30726fec101a33d847f"
+  },
+  {
+   "strongs": "H0183",
+   "language": "hebrew",
+   "lemma": "אָוָה",
+   "gloss": "to desire",
+   "definition": "to wish for",
+   "derivation": "a primitive root;",
+   "sha256": "3ebf64491ce72437454aada6a3b2bb12cff35b1e20998b302da89bf48409a1fb"
+  },
+  {
+   "strongs": "H0184",
+   "language": "hebrew",
+   "lemma": "אָוָה",
+   "gloss": "to mark",
+   "definition": "to extend or mark out",
+   "derivation": "a primitive root;",
+   "sha256": "3d9f481f6912a306b1ce1336edf5ce1ffe2dea976d6ab27bf7ea3519bd055874"
+  },
+  {
+   "strongs": "H0185",
+   "language": "hebrew",
+   "lemma": "אַוָּה",
+   "gloss": "desire",
+   "definition": "longing",
+   "derivation": "from 183;",
+   "sha256": "289ba9da0b1c4f70e9511a2eaca4001c428ed8127667874cebfb48564fd86625"
+  },
+  {
+   "strongs": "H0186",
+   "language": "hebrew",
+   "lemma": "אוּזַי",
+   "gloss": "Uzai",
+   "definition": "Uzai, an Israelite",
+   "derivation": "perhaps by permutation for 5813, strong;",
+   "sha256": "455d9bb51d7081962dbf94e7757d50526abfaa864269edf86fb6f83f48556d50"
+  },
+  {
+   "strongs": "H0187G",
+   "language": "hebrew",
+   "lemma": "אוּזָל",
+   "gloss": "Uzal",
+   "definition": "Uzal, a son of Joktan",
+   "derivation": "of uncertain derivation;",
+   "sha256": "758d9c624dd0c9e318ae05d21b0e7a0c055dedc2946346eee630fa8810c0fef2"
+  },
+  {
+   "strongs": "H0187H",
+   "language": "hebrew",
+   "lemma": "אוּזָל",
+   "gloss": "Uzal",
+   "definition": "Uzal, a son of Joktan",
+   "derivation": "of uncertain derivation;",
+   "sha256": "758d9c624dd0c9e318ae05d21b0e7a0c055dedc2946346eee630fa8810c0fef2"
+  },
+  {
+   "strongs": "H0188",
+   "language": "hebrew",
+   "lemma": "אוֹי",
+   "gloss": "woe!",
+   "definition": "lamentation; also interjectionally Oh!",
+   "derivation": "probably from 183 (in the sense of crying out after);",
+   "sha256": "d445992e8dd90698a6a1ddf2bb85df33f1dffc5f53dfed6b6671e770074f8bcd"
+  },
+  {
+   "strongs": "H0189",
+   "language": "hebrew",
+   "lemma": "אֱוִי",
+   "gloss": "Evi",
+   "definition": "Evi, a Midianitish chief",
+   "derivation": "probably from 183; desirous;",
+   "sha256": "6db203a3fd95ed9964059156a9bf9c42c45f13670b625bc2a6cfe89ec7e23035"
+  },
+  {
+   "strongs": "H0190",
+   "language": "hebrew",
+   "lemma": "אוֹיָה",
+   "gloss": "woe!",
+   "derivation": "feminine of 188",
+   "sha256": "a0a7fcaee2690c9b3f89a2ca7bac6a4c13c69ce905c8c550ec3379f9e7519cca"
+  },
+  {
+   "strongs": "H0191",
+   "language": "hebrew",
+   "lemma": "אֱוִיל",
+   "gloss": "fool(ish)",
+   "definition": "(figuratively) silly",
+   "derivation": "from an unused root (meaning to be perverse);",
+   "sha256": "0e78d92a7c7c3c0488f6847dd283dae0a8b35eb7baaf123fe1791a38188f2563"
+  },
+  {
+   "strongs": "H0192",
+   "language": "hebrew",
+   "lemma": "אֱוִיל מְרֹדַךְ",
+   "gloss": "Evil-merodach",
+   "definition": "Evil-Merodak, a Babylonian king",
+   "derivation": "of Aramaic derivation and probably meaning soldier of Merodak;",
+   "sha256": "854eafc33da5fdfba55586d8e7d14f9ce32e6644729ac24d85b5c594b9c8ae9d"
+  },
+  {
+   "strongs": "H0193A",
+   "language": "hebrew",
+   "lemma": "אוּל",
+   "gloss": "strength",
+   "definition": "the body (as being rolled together); also powerful",
+   "derivation": "from an unused root meaning to twist, i.e. (by implication) be strong;",
+   "sha256": "d33601e21e5f7cfbea45637df776d5ef4db828d6d6eb5f488a701035d377802f"
+  },
+  {
+   "strongs": "H0193B",
+   "language": "hebrew",
+   "lemma": "אוּל",
+   "gloss": "mighty",
+   "definition": "the body (as being rolled together); also powerful",
+   "derivation": "from an unused root meaning to twist, i.e. (by implication) be strong;",
+   "sha256": "8b80fd242e55676d6ad1c0c66ccc6d0258b6808f2eeac04873c108ccf81cc42b"
+  },
+  {
+   "strongs": "H0194",
+   "language": "hebrew",
+   "lemma": "אוּלַי",
+   "gloss": "perhaps",
+   "definition": "if not; hence perhaps",
+   "derivation": "or (shortened) אֻלַי; from 176;",
+   "sha256": "d65bcc4ee19b79ffb1ac3614d2ab27d3684fe4dafcff9796d1b5c88b6bd5df64"
+  },
+  {
+   "strongs": "H0195",
+   "language": "hebrew",
+   "lemma": "אוּלַי",
+   "gloss": "Ulai",
+   "definition": "the Ulai (or Eulaeus), a river of Persia",
+   "derivation": "of Persian derivation;",
+   "sha256": "1797b6f2b7380cb5233bd643edcddfe5e115dcfe02443178241d53c09e79ffd1"
+  },
+  {
+   "strongs": "H0196",
+   "language": "hebrew",
+   "lemma": "אֱוִלִי",
+   "gloss": "foolish",
+   "definition": "silly, foolish; hence (morally) impious",
+   "derivation": "from 191;",
+   "sha256": "7bbbb62f599d675ab0adaf9f80393e11fb7180b5563658b13c55c0244a5db73b"
+  },
+  {
+   "strongs": "H0197G",
+   "language": "hebrew",
+   "lemma": "אוּלָם",
+   "gloss": "Hall (of pillars)",
+   "definition": "a vestibule (as bound to the building)",
+   "derivation": "or (shortened), אֻלָם ; from 481 (in the sense of tying);",
+   "sha256": "a480c0820ff726f2703f3404d819e8702e9a0f17b499536edb66b2208c0d2c07"
+  },
+  {
+   "strongs": "H0197H",
+   "language": "hebrew",
+   "lemma": "אוּלָם",
+   "gloss": "Hall (of Justice)",
+   "definition": "a vestibule (as bound to the building)",
+   "derivation": "or (shortened), אֻלָם ; from 481 (in the sense of tying);",
+   "sha256": "665692c5abdc0eb7d2e8f95c39860d1033df3cfc974d9df6d7f2db7e0e93650e"
+  },
+  {
+   "strongs": "H0197I",
+   "language": "hebrew",
+   "lemma": "אוּלָם",
+   "gloss": "Hall (of the Throne)",
+   "definition": "a vestibule (as bound to the building)",
+   "derivation": "or (shortened), אֻלָם ; from 481 (in the sense of tying);",
+   "sha256": "9180cf9529df0a0186e816f11de26641f54b82911ada75c79901aad9cd2459a1"
+  },
+  {
+   "strongs": "H0197J",
+   "language": "hebrew",
+   "lemma": "אוּלָם",
+   "gloss": "Portico",
+   "definition": "a vestibule (as bound to the building)",
+   "derivation": "or (shortened), אֻלָם ; from 481 (in the sense of tying);",
+   "sha256": "ec5ff72773cc41e10ac9586d2964581b945a4fe3d11695c60e6cba1e276aafa5"
+  },
+  {
+   "strongs": "H0198G",
+   "language": "hebrew",
+   "lemma": "אוּלָם",
+   "gloss": "Ulam",
+   "definition": "Ulam, the name of two Israelites",
+   "derivation": "appar, from 481 (in the sense of dumbness); solitary;",
+   "sha256": "d98f90d3701ed29675004d715d93b884e7024e81ba5735c19f15a9f94d8e553a"
+  },
+  {
+   "strongs": "H0198H",
+   "language": "hebrew",
+   "lemma": "אוּלָם",
+   "gloss": "Ulam",
+   "definition": "Ulam, the name of two Israelites",
+   "derivation": "appar, from 481 (in the sense of dumbness); solitary;",
+   "sha256": "d98f90d3701ed29675004d715d93b884e7024e81ba5735c19f15a9f94d8e553a"
+  },
+  {
+   "strongs": "H0199",
+   "language": "hebrew",
+   "lemma": "אוּלָם",
+   "gloss": "but",
+   "definition": "however or on the contrary",
+   "derivation": "apparently a variation of 194;",
+   "sha256": "e7148e9bf91f4c0050a0070bb04117db508a045de4a91988395ced2e13fe50a9"
+  },
+  {
+   "strongs": "H0200",
+   "language": "hebrew",
+   "lemma": "אִוֶּ֫לֶת",
+   "gloss": "folly",
+   "definition": "silliness",
+   "derivation": "from the same as 191;",
+   "sha256": "12ce7ba738b3ccdfe824831333266516aee7a6afc6ca1eb78811ba0afed0c640"
+  },
+  {
+   "strongs": "H0201",
+   "language": "hebrew",
+   "lemma": "אוֹמָר",
+   "gloss": "Omar",
+   "definition": "Omar, a grandson of Esau",
+   "derivation": "from 559; talkative;",
+   "sha256": "eed0ab792057768bf56ad8196f7857d56cdff2139cea870bc41590282be836b0"
+  },
+  {
+   "strongs": "H0202",
+   "language": "hebrew",
+   "lemma": "אוֹן",
+   "gloss": "strength",
+   "definition": "ability, power, (figuratively) wealth",
+   "derivation": "probably from the same as 205 (in the sense of effort, but successful);",
+   "sha256": "fbb169339806f30453efda833019a58405bd1dc763d1ed578ec6dd1da2ee215f"
+  },
+  {
+   "strongs": "H0203",
+   "language": "hebrew",
+   "lemma": "אוֹן",
+   "gloss": "On",
+   "definition": "On, an Israelite",
+   "derivation": "the same as 202;",
+   "sha256": "ae738f286e5d4307b5e5159d934bd09601deb5830807b4546f078e889992a5bd"
+  },
+  {
+   "strongs": "H0204",
+   "language": "hebrew",
+   "lemma": "אֹן",
+   "gloss": "On",
+   "definition": "On, a city of Egypt",
+   "derivation": "or (shortened); אֹן; of Egyptian derivation;",
+   "sha256": "72d934b3888c45ba3d3ff597bafc031b8eed06c6158d5007710329ec60ddd982"
+  },
+  {
+   "strongs": "H0205G",
+   "language": "hebrew",
+   "lemma": "אָ֫וֶן",
+   "gloss": "evil: wickedness",
+   "definition": "strictly nothingness; also trouble, vanity, wickedness; specifically an idol",
+   "derivation": "from an unused root perhaps meaning properly, to pant (hence, to exert oneself, usually in vain; to come to naught);",
+   "sha256": "e179ee735766d278be8119a0bb40e0c4816c0962579351058bec0fa22e262724"
+  },
+  {
+   "strongs": "H0205H",
+   "language": "hebrew",
+   "lemma": "אָ֫וֶן",
+   "gloss": "evil: trouble",
+   "definition": "strictly nothingness; also trouble, vanity, wickedness; specifically an idol",
+   "derivation": "from an unused root perhaps meaning properly, to pant (hence, to exert oneself, usually in vain; to come to naught);",
+   "sha256": "79018aecde3c68df34f20097b37277b4420b2a113de1ab46359d32a4b1bfa8ee"
+  },
+  {
+   "strongs": "H0206G",
+   "language": "hebrew",
+   "lemma": "אָ֫וֶן",
+   "gloss": "(Valley of) Aven",
+   "definition": "Aven, the contemptuous synonym of three places, one in Coele-Syria, one in Egypt (On), and one in Palestine (Bethel)",
+   "derivation": "the same as 205; idolatry;",
+   "sha256": "2769f1787e352342ddd78abfd4920cb3b065b43b354aad3cd13cb523c5fafa59"
+  },
+  {
+   "strongs": "H0206H",
+   "language": "hebrew",
+   "lemma": "אָ֫וֶן",
+   "gloss": "Aven",
+   "definition": "Aven, the contemptuous synonym of three places, one in Coele-Syria, one in Egypt (On), and one in Palestine (Bethel)",
+   "derivation": "the same as 205; idolatry;",
+   "sha256": "94f33771b0b45b5bf2e04d5fec7fb078ee6243e90f8d0604dd0ffdcf04e73af6"
+  },
+  {
+   "strongs": "H0207",
+   "language": "hebrew",
+   "lemma": "אוֹנוֹ",
+   "gloss": "Ono",
+   "definition": "Ono, a place in Palestine",
+   "derivation": "or (shortened) אֹנוֹ; prolonged from 202; strong;",
+   "sha256": "78186e9d2b1a43edcb7cf628bb50f18227e60ba0bfb65b67c5f1e0b6db5bd5e9"
+  },
+  {
+   "strongs": "H0208G",
+   "language": "hebrew",
+   "lemma": "אוֹנָם",
+   "gloss": "Onam",
+   "definition": "Onam, the name of an Edomite and of an Israelite",
+   "derivation": "a variation of 209; strong;",
+   "sha256": "5d74fe89b1b6cc7b2f32ab6eaaf46a58ac9678329a228eb8fe71891160c6d406"
+  },
+  {
+   "strongs": "H0208H",
+   "language": "hebrew",
+   "lemma": "אוֹנָם",
+   "gloss": "Onam",
+   "definition": "Onam, the name of an Edomite and of an Israelite",
+   "derivation": "a variation of 209; strong;",
+   "sha256": "5d74fe89b1b6cc7b2f32ab6eaaf46a58ac9678329a228eb8fe71891160c6d406"
+  },
+  {
+   "strongs": "H0209",
+   "language": "hebrew",
+   "lemma": "אוֹנָן",
+   "gloss": "Onan",
+   "definition": "Onan, a son of Judah",
+   "derivation": "a variation of 207; strong;",
+   "sha256": "fc5bdf94dcd055cc2c40d8d5bab167abd0a0852c3669692999aa5f23132d6949"
+  },
+  {
+   "strongs": "H0210",
+   "language": "hebrew",
+   "lemma": "אוּפָז",
+   "gloss": "Uphaz",
+   "definition": "Uphaz, a famous gold region",
+   "derivation": "perhaps a corruption of 211;",
+   "sha256": "bff21aeb9a048cd6818468c953a7dad53534b970c8e9532a10db83981c1b962e"
+  },
+  {
+   "strongs": "H0211G",
+   "language": "hebrew",
+   "lemma": "אוֹפִיר",
+   "gloss": "Ophir",
+   "definition": "Ophir, the name of a son of Joktan, and of a gold region in the East",
+   "derivation": "or (shortened) אֹפִיר; and אוֹפִר; of uncertain derivation;",
+   "sha256": "fa15bd216aaf7573616f93446ce7780696631bc8307f3d43539aa4ef89b8b291"
+  },
+  {
+   "strongs": "H0211H",
+   "language": "hebrew",
+   "lemma": "אוֹפִיר",
+   "gloss": "Ophir",
+   "definition": "Ophir, the name of a son of Joktan, and of a gold region in the East",
+   "derivation": "or (shortened) אֹפִיר; and אוֹפִר; of uncertain derivation;",
+   "sha256": "fa15bd216aaf7573616f93446ce7780696631bc8307f3d43539aa4ef89b8b291"
+  },
+  {
+   "strongs": "H0212",
+   "language": "hebrew",
+   "lemma": "אוֹפָן",
+   "gloss": "wheel",
+   "definition": "a wheel",
+   "derivation": "or (shortened) אֹפָן; from an unused root meaning to revolve;",
+   "sha256": "c4deb2fecbc38949f717200cd226491736391a90225660df3ded822a5d95f6d4"
+  },
+  {
+   "strongs": "H0213",
+   "language": "hebrew",
+   "lemma": "אוּץ",
+   "gloss": "to hasten",
+   "definition": "to press; (by implication) to be close, hurry, withdraw",
+   "derivation": "a primitive root;",
+   "sha256": "7735f8ee6aceb2e2e5c6fff43175bd2f5412b2463b88efd98456e2f79ddbb2f7"
+  },
+  {
+   "strongs": "H0214",
+   "language": "hebrew",
+   "lemma": "אוֹצָר",
+   "gloss": "treasure",
+   "definition": "a depository",
+   "derivation": "from 686;",
+   "sha256": "3479a772f84fbe53e3a2c27651934dd64904e487603ee99e9a04ae881a020161"
+  },
+  {
+   "strongs": "H0215",
+   "language": "hebrew",
+   "lemma": "אוֹר",
+   "gloss": "to light",
+   "definition": "to be (causative, make) luminous (literally and metaphorically)",
+   "derivation": "a primitive root;",
+   "sha256": "5cb75b295243dbbc0b7624c46ebfc2bcc18cee2e0cb1f6e8fd7759df4986a3dd"
+  },
+  {
+   "strongs": "H0216",
+   "language": "hebrew",
+   "lemma": "אוֹר",
+   "gloss": "light",
+   "definition": "illumination or (concrete) luminary (in every sense, including lightning, happiness, etc.)",
+   "derivation": "from 215;",
+   "sha256": "c43dee555f5462c92909821e8bba3a27edb3a49cef9f15f38649631305246b2b"
+  },
+  {
+   "strongs": "H0217A",
+   "language": "hebrew",
+   "lemma": "אוּר",
+   "gloss": "flame",
+   "definition": "flame; hence (in the plural) the East (as being the region of light)",
+   "derivation": "from 215;",
+   "sha256": "e5b2801c083a042d9de82c9283522be886c7380534af76d43c9385029c4ed6d8"
+  },
+  {
+   "strongs": "H0217B",
+   "language": "hebrew",
+   "lemma": "אֻרִים",
+   "gloss": "flame",
+   "definition": "flame; hence (in the plural) the East (as being the region of light)",
+   "derivation": "from 215;",
+   "sha256": "e5b2801c083a042d9de82c9283522be886c7380534af76d43c9385029c4ed6d8"
+  },
+  {
+   "strongs": "H0218A",
+   "language": "hebrew",
+   "lemma": "אוּר",
+   "gloss": "Ur",
+   "definition": "Ur, a place in Chaldaea; also an Israelite",
+   "derivation": "the same as 217;",
+   "sha256": "21af99d384fe1473615883e10702b1eb4af09a21e1a3e2687c9127c94b34bda6"
+  },
+  {
+   "strongs": "H0218B",
+   "language": "hebrew",
+   "lemma": "אוּר",
+   "gloss": "Ur",
+   "definition": "Ur, a place in Chaldaea; also an Israelite",
+   "derivation": "the same as 217;",
+   "sha256": "21af99d384fe1473615883e10702b1eb4af09a21e1a3e2687c9127c94b34bda6"
+  },
+  {
+   "strongs": "H0219A",
+   "language": "hebrew",
+   "lemma": "אוֹרָה",
+   "gloss": "light",
+   "definition": "luminousness, i.e. (figuratively) prosperity; also a plant (as being bright)",
+   "derivation": "feminine of 216;",
+   "sha256": "96d7481085537621904eac08bf3c79dd571e599b7724029a16fce38899affdcd"
+  },
+  {
+   "strongs": "H0219B",
+   "language": "hebrew",
+   "lemma": "אוֹרָה",
+   "gloss": "herb",
+   "definition": "luminousness, i.e. (figuratively) prosperity; also a plant (as being bright)",
+   "derivation": "feminine of 216;",
+   "sha256": "112dea8737ebbff2706608cc3727812aadbc492a397546ae0419c0af19134341"
+  },
+  {
+   "strongs": "H0220",
+   "language": "hebrew",
+   "lemma": "אֲוֵרָה",
+   "gloss": "stall",
+   "definition": "a stall",
+   "derivation": "by transposition for 723;",
+   "sha256": "a7410dab0880843436586393f6e7f875399b59e2de32614d8905cb3e2c453ea9"
+  },
+  {
+   "strongs": "H0221G",
+   "language": "hebrew",
+   "lemma": "אוּרִי",
+   "gloss": "Uri",
+   "definition": "Uri, the name of three Israelites",
+   "derivation": "from 217; fiery;",
+   "sha256": "d639e823da1988a1761c7475046dc6fa6e3fcb92623403231b839a060f3bed02"
+  },
+  {
+   "strongs": "H0221H",
+   "language": "hebrew",
+   "lemma": "אוּרִי",
+   "gloss": "Uri",
+   "definition": "Uri, the name of three Israelites",
+   "derivation": "from 217; fiery;",
+   "sha256": "d639e823da1988a1761c7475046dc6fa6e3fcb92623403231b839a060f3bed02"
+  },
+  {
+   "strongs": "H0221I",
+   "language": "hebrew",
+   "lemma": "אוּרִי",
+   "gloss": "Uri",
+   "definition": "Uri, the name of three Israelites",
+   "derivation": "from 217; fiery;",
+   "sha256": "d639e823da1988a1761c7475046dc6fa6e3fcb92623403231b839a060f3bed02"
+  },
+  {
+   "strongs": "H0222G",
+   "language": "hebrew",
+   "lemma": "אוּרִיאֵל",
+   "gloss": "Uriel",
+   "definition": "Uriel, the name of two Israelites",
+   "derivation": "from 217 and 410; flame of God;",
+   "sha256": "cd0d941b07a49d7403ead73a45dac11185b90bae7385d5ffaefaf4ebb087422d"
+  },
+  {
+   "strongs": "H0222H",
+   "language": "hebrew",
+   "lemma": "אוּרִיאֵל",
+   "gloss": "Uriel",
+   "definition": "Uriel, the name of two Israelites",
+   "derivation": "from 217 and 410; flame of God;",
+   "sha256": "cd0d941b07a49d7403ead73a45dac11185b90bae7385d5ffaefaf4ebb087422d"
+  },
+  {
+   "strongs": "H0222I",
+   "language": "hebrew",
+   "lemma": "אוּרִיאֵל",
+   "gloss": "Uriel",
+   "definition": "Uriel, the name of two Israelites",
+   "derivation": "from 217 and 410; flame of God;",
+   "sha256": "cd0d941b07a49d7403ead73a45dac11185b90bae7385d5ffaefaf4ebb087422d"
+  },
+  {
+   "strongs": "H0223A",
+   "language": "hebrew",
+   "lemma": "אוּרִיָּה",
+   "gloss": "Uriah",
+   "definition": "Urijah, the name of one Hittite and five Israelites",
+   "derivation": "or (prolonged) אוּרִיָּהוּ ; from 217 and 3050; flame of Jah;",
+   "sha256": "82c45aab81ddb15eed05b73013c5a42af333635db1fc4258759aae592c081911"
+  },
+  {
+   "strongs": "H0223B",
+   "language": "hebrew",
+   "lemma": "אוּרִיָּ֫הוּ",
+   "gloss": "Uriah",
+   "definition": "Urijah, the name of one Hittite and five Israelites",
+   "derivation": "or (prolonged) אוּרִיָּהוּ ; from 217 and 3050; flame of Jah;",
+   "sha256": "82c45aab81ddb15eed05b73013c5a42af333635db1fc4258759aae592c081911"
+  },
+  {
+   "strongs": "H0223G",
+   "language": "hebrew",
+   "lemma": "אוּרִיָּה",
+   "gloss": "Uriah",
+   "definition": "Urijah, the name of one Hittite and five Israelites",
+   "derivation": "or (prolonged) אוּרִיָּהוּ ; from 217 and 3050; flame of Jah;",
+   "sha256": "82c45aab81ddb15eed05b73013c5a42af333635db1fc4258759aae592c081911"
+  },
+  {
+   "strongs": "H0223H",
+   "language": "hebrew",
+   "lemma": "אוּרִיָּה",
+   "gloss": "Uriah",
+   "definition": "Urijah, the name of one Hittite and five Israelites",
+   "derivation": "or (prolonged) אוּרִיָּהוּ ; from 217 and 3050; flame of Jah;",
+   "sha256": "82c45aab81ddb15eed05b73013c5a42af333635db1fc4258759aae592c081911"
+  },
+  {
+   "strongs": "H0223I",
+   "language": "hebrew",
+   "lemma": "אוּרִיָּה",
+   "gloss": "Uriah",
+   "definition": "Urijah, the name of one Hittite and five Israelites",
+   "derivation": "or (prolonged) אוּרִיָּהוּ ; from 217 and 3050; flame of Jah;",
+   "sha256": "82c45aab81ddb15eed05b73013c5a42af333635db1fc4258759aae592c081911"
+  },
+  {
+   "strongs": "H0224",
+   "language": "hebrew",
+   "lemma": "אוּרִים",
+   "gloss": "Urim",
+   "definition": "Urim, the oracular brilliancy of the figures in the high-priest's breastplate",
+   "derivation": "plural of 217; lights;",
+   "sha256": "1ca9813f407e39e41faecc34221d0f04cf183d612c84cbb21bcabfcdfd9bb892"
+  },
+  {
+   "strongs": "H0225",
+   "language": "hebrew",
+   "lemma": "אוּת",
+   "gloss": "to consent",
+   "definition": "properly, to come, i.e. (implied) to assent",
+   "derivation": "a primitive root;",
+   "sha256": "14dcd9698d5292c0860eee6fedd5d2f5c776d978c0c3030036e246805da6bf08"
+  },
+  {
+   "strongs": "H0226G",
+   "language": "hebrew",
+   "lemma": "אוֹת",
+   "gloss": "sign: miraculous",
+   "definition": "a signal (literally or figuratively), as a flag, beacon, monument, omen, prodigy, evidence, etc.",
+   "derivation": "probably from 225 (in the sense of appearing);",
+   "sha256": "651338a7660b4134cb6cd0844ae641238ca2d9f384d8fb800b26a53bdd5a1beb"
+  },
+  {
+   "strongs": "H0226H",
+   "language": "hebrew",
+   "lemma": "אוֹת",
+   "gloss": "sign:  indicator",
+   "definition": "a signal (literally or figuratively), as a flag, beacon, monument, omen, prodigy, evidence, etc.",
+   "derivation": "probably from 225 (in the sense of appearing);",
+   "sha256": "9bbea948654b987e64a34c79f841ad93206acc4d914c2cd6d3da464ec9bb0bab"
+  },
+  {
+   "strongs": "H0227A",
+   "language": "hebrew",
+   "lemma": "אָז",
+   "gloss": "then",
+   "definition": "at that time or place; also as a conjunction, therefore",
+   "derivation": "a demonstrative adverb;",
+   "sha256": "e0ace763cdd503c7c1239ccc7964dace87e44737f670bde6145f3f8bc199ff5e"
+  },
+  {
+   "strongs": "H0227B",
+   "language": "hebrew",
+   "lemma": "מֵאָז",
+   "gloss": "the past",
+   "definition": "at that time or place; also as a conjunction, therefore",
+   "derivation": "a demonstrative adverb;",
+   "sha256": "19c43571ef38722de5d53849bb4dbe54ba51cb03357232eae0bb9115269ee828"
+  },
+  {
+   "strongs": "H0228",
+   "language": "hebrew",
+   "lemma": "אֲזָא",
+   "gloss": "to heat",
+   "definition": "to kindle; (by implication) to heat",
+   "derivation": "(Aramaic) or אֲזָה (Aramaic);",
+   "sha256": "ede17772a9a4a6984215da8be38bfd0f7a8f7d46f9c9c8889f12c00272b88239"
+  },
+  {
+   "strongs": "H0229",
+   "language": "hebrew",
+   "lemma": "אֶזְבָּ֑י",
+   "gloss": "Ezbai",
+   "definition": "Ezbai, an Israelite",
+   "derivation": "probably from 231; hyssop-like;",
+   "sha256": "76f51e03b362db1d69aa3b731e4d9a2c4e863d9615981022981b1901f7e7af5e"
+  },
+  {
+   "strongs": "H0230",
+   "language": "hebrew",
+   "lemma": "אַזְדָּא",
+   "gloss": "gone",
+   "definition": "firm",
+   "derivation": "(Aramaic) of uncertain derivation;",
+   "sha256": "37a655f0fd9beb91debb19470f2e61edfcf4ea663dda342fb115d9a75577d062"
+  },
+  {
+   "strongs": "H0231",
+   "language": "hebrew",
+   "lemma": "אֵזוֹב",
+   "gloss": "hyssop",
+   "definition": "hyssop",
+   "derivation": "probably of foreign derivation;",
+   "sha256": "6f8d91b9fecc19c95c252ea41e61a85d1a7151efc4253a75c03c7e935e5a1930"
+  },
+  {
+   "strongs": "H0232",
+   "language": "hebrew",
+   "lemma": "אֵזוֹר",
+   "gloss": "girdle",
+   "definition": "something girt; a belt, also a band",
+   "derivation": "from 246;",
+   "sha256": "2f0f0beb9fcb9e4b389b2996ce1d2734f5b8737faee8d177ccdbe2c3956ea991"
+  },
+  {
+   "strongs": "H0233",
+   "language": "hebrew",
+   "lemma": "אֲזַי",
+   "gloss": "in that case",
+   "definition": "at that time",
+   "derivation": "probably from 227;",
+   "sha256": "27f54d3a12d1051e6e500383ae8a3ecebfde8d28ca0594a6c5836f1699e44450"
+  },
+  {
+   "strongs": "H0234",
+   "language": "hebrew",
+   "lemma": "אַזְכָּרָה",
+   "gloss": "memorial",
+   "definition": "a reminder; specifically remembrance-offering",
+   "derivation": "from 2142;",
+   "sha256": "b9583144b7554ca9352f7c4768c91d91d489c25e98d955ade0430ccdf3825077"
+  },
+  {
+   "strongs": "H0235",
+   "language": "hebrew",
+   "lemma": "אָזַל",
+   "gloss": "be gone",
+   "definition": "to go away, hence, to disappear",
+   "derivation": "a primitive root;",
+   "sha256": "01b48a808d38f8289559086a34fd71c5fc70eed7422060f4ce6d047d5307ee88"
+  },
+  {
+   "strongs": "H0236",
+   "language": "hebrew",
+   "lemma": "אֲזַל",
+   "gloss": "to go",
+   "definition": "to depart",
+   "derivation": "(Aramaic) the same as 235;",
+   "sha256": "67ce6d53b450b111de442241be59a8442bf2db0fdd690ddc42fd10040589a8c9"
+  },
+  {
+   "strongs": "H0237",
+   "language": "hebrew",
+   "lemma": "אֶזֶל",
+   "gloss": "Ezel",
+   "definition": "Ezel, a memorial stone in Palestine",
+   "derivation": "from 235; departure;",
+   "sha256": "cf9298dcbc6c52ca8146608c4146861a5b1c02d0f6b7fe350c68ed22043d66d5"
+  },
+  {
+   "strongs": "H0238",
+   "language": "hebrew",
+   "lemma": "אָזַן",
+   "gloss": "to listen",
+   "definition": "to broaden out the ear (with the hand), i.e. (by implication) to listen",
+   "derivation": "a primitive root; probably to expand; but used only as a denominative from 241;",
+   "sha256": "d4efc917a250a3367f33e2bcc0928cd2316257ca67bd5fa943755f306c7bfcdf"
+  },
+  {
+   "strongs": "H0239",
+   "language": "hebrew",
+   "lemma": "אָזַן",
+   "gloss": "to ponder",
+   "definition": "to weigh, i.e. (figuratively) ponder",
+   "derivation": "a primitive root (rather identical with 238 through the idea of scales as if two ears);",
+   "sha256": "b5c03fe0c7f3775d2b61e0395a8890fe785941616bbc6a4aa6ff85e0b97f84e7"
+  },
+  {
+   "strongs": "H0240",
+   "language": "hebrew",
+   "lemma": "אָזֵן",
+   "gloss": "weapon",
+   "definition": "a spade or paddle (as having a broad end)",
+   "derivation": "from 238;",
+   "sha256": "5d1ca883f1c10f8a739efeb3a93f943a00096c57912382f9cd76420df6c6208c"
+  },
+  {
+   "strongs": "H0241G",
+   "language": "hebrew",
+   "lemma": "אֹ֫זֶן",
+   "gloss": "ear",
+   "definition": "broadness. i.e. (concrete) the ear (from its form in man)",
+   "derivation": "from 238;",
+   "sha256": "ec73e2f84f923547251f796b9e9e1c18d991436ede884b65a65792ce2e19957d"
+  },
+  {
+   "strongs": "H0241H",
+   "language": "hebrew",
+   "lemma": "אֹ֫זֶן",
+   "gloss": "ear: hearing",
+   "definition": "broadness. i.e. (concrete) the ear (from its form in man)",
+   "derivation": "from 238;",
+   "sha256": "015cff8392c2bbd691e8700c6f07758099ddf6b97122cfa1adc31467806434ca"
+  },
+  {
+   "strongs": "H0241I",
+   "language": "hebrew",
+   "lemma": "אֹ֫זֶן",
+   "gloss": "ear: to ears",
+   "definition": "broadness. i.e. (concrete) the ear (from its form in man)",
+   "derivation": "from 238;",
+   "sha256": "88be771104634b3717f0e8b1154b4c608a68fa0baa1bf6b76ccc95062183cdc5"
+  },
+  {
+   "strongs": "H0242",
+   "language": "hebrew",
+   "lemma": "אֻזֵּן שֶׁאֱרָה",
+   "gloss": "Uzzen-sheerah",
+   "definition": "Uzzen-Sheerah, a place in Palestine",
+   "derivation": "from 238 and 7609; plot of Sheerah (i.e. settled by him);",
+   "sha256": "61818630b1c6abbe8478d0054aaaf6f58396d4a3222ce937a04f1d657a964e06"
+  },
+  {
+   "strongs": "H0243",
+   "language": "hebrew",
+   "lemma": "אַזְנוֹת תָּבוֹר",
+   "gloss": "Aznoth-tabor",
+   "definition": "Aznoth-Tabor, a place in Palestine",
+   "derivation": "from 238 and 8396; flats (i.e. tops) of Tabor (i.e. situated on it);",
+   "sha256": "23a6c1dcfa8d23c8885fe6570852c978bda6854950646ad715e96647ef8faf52"
+  },
+  {
+   "strongs": "H0244A",
+   "language": "hebrew",
+   "lemma": "אׇזְנִי",
+   "gloss": "Ozni",
+   "definition": "Ozni, an Israelite; also an Oznite (collectively), his descendant",
+   "derivation": "from 241; having (quick) ears;",
+   "sha256": "ab7636179e6fdd883dfd330aeb96a921c89663b201189161df12356adaa789ce"
+  },
+  {
+   "strongs": "H0244B",
+   "language": "hebrew",
+   "lemma": "אׇזְנִי",
+   "gloss": "Oznite",
+   "definition": "Ozni, an Israelite; also an Oznite (collectively), his descendant",
+   "derivation": "from 241; having (quick) ears;",
+   "sha256": "48c28fb1b7abc1cba01a59868adb98305d50231d16003f14e23f380e4f16d459"
+  },
+  {
+   "strongs": "H0245",
+   "language": "hebrew",
+   "lemma": "אֲזַנְיָ֫הוּ",
+   "gloss": "Azaniah",
+   "definition": "Azanjah, an Israelite",
+   "derivation": "from 238 and 3050; heard by Jah;",
+   "sha256": "0b4a58196d1a3f28e0ff5c980d1d88532d93aac938052c9838d98328d50deb75"
+  },
+  {
+   "strongs": "H0246",
+   "language": "hebrew",
+   "lemma": "אֲזֵק",
+   "gloss": "chains",
+   "definition": "manacles",
+   "derivation": "a variation for 2131;",
+   "sha256": "dcaf7e87cc13156359ce9004b2e7279999620c31d233a4943d2090e7680274dc"
+  },
+  {
+   "strongs": "H0247",
+   "language": "hebrew",
+   "lemma": "אָזַר",
+   "gloss": "to gird",
+   "definition": "to belt",
+   "derivation": "a primitive root;",
+   "sha256": "4f5b8cc070b0ca938c38fa0b42f7cd17a5187ea7e2e6d4079629bbffccbe9dc4"
+  },
+  {
+   "strongs": "H0248",
+   "language": "hebrew",
+   "lemma": "אֶזְרוֹעַ",
+   "gloss": "arm",
+   "definition": "the arm",
+   "derivation": "a variation for 2220;",
+   "sha256": "5e13899b5f38c74f563237b67cc41f9908adea49b27767ecd5c83113395ba4dc"
+  },
+  {
+   "strongs": "H0249",
+   "language": "hebrew",
+   "lemma": "אֶזְרָח",
+   "gloss": "born",
+   "definition": "a spontaneous growth, i.e. native (tree or persons)",
+   "derivation": "from 2224 (in the sense of springing up);",
+   "sha256": "bcf0613e58bbc8f1b3487f758cf31d2e028a621d4788d80cdf936b8e7ce06dcc"
+  },
+  {
+   "strongs": "H0250",
+   "language": "hebrew",
+   "lemma": "אֶזְרָחִי",
+   "gloss": "Ezrahite",
+   "definition": "an Ezrachite or descendant of Zerach",
+   "derivation": "patronymic from 2226;",
+   "sha256": "66527d816e924156cb9c75ad09db281fc6fd0d2f2b76bbdc0dd510a91e0fa0fd"
+  },
+  {
+   "strongs": "H0251G",
+   "language": "hebrew",
+   "lemma": "אָח",
+   "gloss": "brother: male-sibling",
+   "definition": "a brother (used in the widest sense of literal relationship and metaphorical affinity or resemblance [like 1])",
+   "derivation": "a primitive word;",
+   "sha256": "b19b88d92bf8e3bd9c785cbc47b5fbe0193ba2895713631ed390a431f27affe2"
+  },
+  {
+   "strongs": "H0251H",
+   "language": "hebrew",
+   "lemma": "אָח",
+   "gloss": "brother: male-relative",
+   "definition": "a brother (used in the widest sense of literal relationship and metaphorical affinity or resemblance [like 1])",
+   "derivation": "a primitive word;",
+   "sha256": "ad3d8bb14a0d83f126bb961e9f76d0af8d958a36d0b0c15c6205083e600ac634"
+  },
+  {
+   "strongs": "H0251I",
+   "language": "hebrew",
+   "lemma": "אָח",
+   "gloss": "brother: compatriot",
+   "definition": "a brother (used in the widest sense of literal relationship and metaphorical affinity or resemblance [like 1])",
+   "derivation": "a primitive word;",
+   "sha256": "34fe6db11342ac4ef3878f187dbd6526778f82f7ecf030ebbb49c0743644e3d8"
+  },
+  {
+   "strongs": "H0252",
+   "language": "hebrew",
+   "lemma": "אַח",
+   "gloss": "brother",
+   "derivation": "(Aramaic) corresponding to 251",
+   "sha256": "e31ddf6f967e50777054c3d41c02d318ae43b35b2c67f2455c570a1572c94984"
+  },
+  {
+   "strongs": "H0253",
+   "language": "hebrew",
+   "lemma": "אָח",
+   "gloss": "ah!",
+   "definition": "Oh! (expressive of grief or surprise)",
+   "derivation": "a variation for 162;",
+   "sha256": "740aaa39c6eeca6fe1d1c30e927e209a7f6fd6c75ab67e13abc95c7881d44783"
+  },
+  {
+   "strongs": "H0254",
+   "language": "hebrew",
+   "lemma": "אָח",
+   "gloss": "hearth",
+   "definition": "a fire-pot or chafing dish",
+   "derivation": "of uncertain derivation;",
+   "sha256": "79e10c52e5a04d2104a9a92215520db61b5913ecf721bfdd682132cd09d1f75b"
+  },
+  {
+   "strongs": "H0255",
+   "language": "hebrew",
+   "lemma": "אֹחַ",
+   "gloss": "howling animal",
+   "definition": "a howler or lonesome wild animal",
+   "derivation": "probably from 253;",
+   "sha256": "21e3ccad3b7f3be4925f8fa06e3150aeb9916b6761251acbc4cee0ad4e2b937e"
+  },
+  {
+   "strongs": "H0256G",
+   "language": "hebrew",
+   "lemma": "אַחְאָב",
+   "gloss": "Ahab",
+   "definition": "Achab, the name of a king of Israel and of a prophet at Babylon",
+   "derivation": "once (by contraction) אֶחָב (Jeremiah 29:22); from 251 and 1; brother (i.e. friend) of (his) father;",
+   "sha256": "c2e20533c874e9ae1df2f3ee451c0571ee320a03f2addad748a6bb957b50c614"
+  },
+  {
+   "strongs": "H0256H",
+   "language": "hebrew",
+   "lemma": "אַחְאָב",
+   "gloss": "Ahab",
+   "definition": "Achab, the name of a king of Israel and of a prophet at Babylon",
+   "derivation": "once (by contraction) אֶחָב (Jeremiah 29:22); from 251 and 1; brother (i.e. friend) of (his) father;",
+   "sha256": "c2e20533c874e9ae1df2f3ee451c0571ee320a03f2addad748a6bb957b50c614"
+  },
+  {
+   "strongs": "H0257",
+   "language": "hebrew",
+   "lemma": "אַחְבָן",
+   "gloss": "Ahban",
+   "definition": "Achban, an Israelite",
+   "derivation": "from 251 and 995; brother (i.e. possessor) of understanding;",
+   "sha256": "171d2b99ebd9bb7bd8808fab529f59a4158ba0706effb1a706b3939a59ba7dfd"
+  },
+  {
+   "strongs": "H0258",
+   "language": "hebrew",
+   "lemma": "אָחַד",
+   "gloss": "to go either way",
+   "definition": "to unify, i.e. (figuratively) collect (one's thoughts)",
+   "derivation": "perhaps a primitive root;",
+   "sha256": "082bdaafb3ac26dcade64c9ab6f011501646a313e4d379e51f85acd81c0ee99c"
+  },
+  {
+   "strongs": "H0259",
+   "language": "hebrew",
+   "lemma": "אֶחָד",
+   "gloss": "one",
+   "definition": "properly, united, i.e. one; or (as an ordinal) first",
+   "derivation": "a numeral from 258;",
+   "sha256": "b70cff2c1a773bb4bb2fa01f8451235cf4c1d25d8ae1222f77e18d954db979b6"
+  },
+  {
+   "strongs": "H0260",
+   "language": "hebrew",
+   "lemma": "אָחוּ",
+   "gloss": "meadow",
+   "definition": "a bulrush or any marshy grass (particularly that along the Nile)",
+   "derivation": "of uncertain (perhaps Egyptian) derivation;",
+   "sha256": "4ae51f23777d3108d386fa51fdc622033c335a2c6dc18b45ebfcb901e0e1aca2"
+  },
+  {
+   "strongs": "H0261",
+   "language": "hebrew",
+   "lemma": "אֵחוּד",
+   "gloss": "Ehud",
+   "definition": "Echud, the name of three Israelites",
+   "derivation": "from 258; united;",
+   "sha256": "950a60de77c7da3f68512a14c3ea74da1ac7e6ae4cb53f95883f92cf60aac93a"
+  },
+  {
+   "strongs": "H0262",
+   "language": "hebrew",
+   "lemma": "אַחְוָה",
+   "gloss": "declaration",
+   "definition": "an utterance",
+   "derivation": "from 2331 (in the sense of 2324);",
+   "sha256": "0ace9037ce7c89be6b88d59a0b23932920414df14cc32d83e9b475d5d468515b"
+  },
+  {
+   "strongs": "H0263",
+   "language": "hebrew",
+   "lemma": "אַחֲוָיָה",
+   "gloss": "explanation",
+   "definition": "solution (of riddles)",
+   "derivation": "(Aramaic) corresponding to 262;",
+   "sha256": "44bf7beb805c5867978108da769cecccef2b0955c749d89afc35ee60727abcad"
+  },
+  {
+   "strongs": "H0264",
+   "language": "hebrew",
+   "lemma": "אַחֲוָה",
+   "gloss": "brotherhood",
+   "definition": "fraternity",
+   "derivation": "from 251;",
+   "sha256": "c2c2dc3ef8058a78df6cba62e4e0e68fab9210036de2b8c858c2243fb6a053be"
+  },
+  {
+   "strongs": "H0265",
+   "language": "hebrew",
+   "lemma": "אֲחוֹחַ",
+   "gloss": "Ahoah",
+   "definition": "Achoach, an Israelite",
+   "derivation": "by reduplication from 251; brotherly;",
+   "sha256": "4aad89707f9f82bb7e62e2058c427a23a15f7179ec6d0a04077168bc937911a5"
+  },
+  {
+   "strongs": "H0266",
+   "language": "hebrew",
+   "lemma": "אֲחוֹחִי",
+   "gloss": "Ahohite",
+   "definition": "an Achochite or descendant of Achoach",
+   "derivation": "patronymic from 264;",
+   "sha256": "be5aa12a002b2f6b388874aa8e9631c613d4d9d41936fbdfc8a7ab52516ad79c"
+  },
+  {
+   "strongs": "H0267",
+   "language": "hebrew",
+   "lemma": "אֲחוּמַי",
+   "gloss": "Ahumai",
+   "definition": "Achumai, an Israelite",
+   "derivation": "perhaps from 251 and 4325; brother (i.e. neighbour) of water;",
+   "sha256": "a108eefedef93705eee016acd0387bb3872c9534b8bddacbb4c3df9d8108b7aa"
+  },
+  {
+   "strongs": "H0268",
+   "language": "hebrew",
+   "lemma": "אָחוֹר",
+   "gloss": "back",
+   "definition": "the hinder part; hence (adverb) behind, backward; also (as facing north) the West",
+   "derivation": "or (shortened) אָחֹר ; from 299;",
+   "sha256": "91b5a0e84e15b1eef3207c8f14f6092b3ce9c53a50d6023d73d18616286a0e08"
+  },
+  {
+   "strongs": "H0269",
+   "language": "hebrew",
+   "lemma": "אָחוֹת",
+   "gloss": "sister",
+   "definition": "a sister (used very widely [like 251number 250, corrected to 251], literally and figuratively)",
+   "derivation": "irregular feminine of 251;",
+   "sha256": "c99db2bf9539c6be08d6d0dd2f1b11959a9e29c11fe736da6b063616ac6e1611"
+  },
+  {
+   "strongs": "H0270",
+   "language": "hebrew",
+   "lemma": "אָחַז",
+   "gloss": "to grasp",
+   "definition": "to seize (often with the accessory idea of holding in possession)",
+   "derivation": "a primitive root;",
+   "sha256": "b555a254c31c19f0452fcf6679c081ebc7c5e5c890468e9e975b7da87ed360ce"
+  },
+  {
+   "strongs": "H0271G",
+   "language": "hebrew",
+   "lemma": "אָחָז",
+   "gloss": "Ahaz",
+   "definition": "Achaz, the name of a Jewish king and of an Israelite",
+   "derivation": "from 270; possessor;",
+   "sha256": "8246b55f0cc74577d0c8d08f58d3fe0b6136baad217bc9fa72fbb4fbae8636f4"
+  },
+  {
+   "strongs": "H0271H",
+   "language": "hebrew",
+   "lemma": "אָחָז",
+   "gloss": "Ahaz",
+   "definition": "Achaz, the name of a Jewish king and of an Israelite",
+   "derivation": "from 270; possessor;",
+   "sha256": "8246b55f0cc74577d0c8d08f58d3fe0b6136baad217bc9fa72fbb4fbae8636f4"
+  },
+  {
+   "strongs": "H0272",
+   "language": "hebrew",
+   "lemma": "אֲחֻזָּה",
+   "gloss": "possession",
+   "definition": "something seized, i.e. a possession (especially of land)",
+   "derivation": "feminine passive participle from 270;",
+   "sha256": "fa6924ee00d49ec04f0f703816b8558d4e971030d1028bbb002c917af8536ef8"
+  },
+  {
+   "strongs": "H0273",
+   "language": "hebrew",
+   "lemma": "אַחְזַי",
+   "gloss": "Ahzai",
+   "definition": "Achzai, an Israelite",
+   "derivation": "from 270; seizer;",
+   "sha256": "e4eebbd3462417b275d7b9ba92067160e4ab85bddfc44eabf97215d1a94cc4c6"
+  },
+  {
+   "strongs": "H0274G",
+   "language": "hebrew",
+   "lemma": "אֲחַזְיָ֫הוּ",
+   "gloss": "Ahaziah",
+   "definition": "Achazjah, the name of a Jewish and an Israelite king",
+   "derivation": "or (prolonged) אֲחַזְיָהוּ ; from 270 and 3050; Jah has seized;",
+   "sha256": "5e90d6a96ae0c793166dd9dee33f61e26262834c0a27634f9c8add372f57d8ad"
+  },
+  {
+   "strongs": "H0274H",
+   "language": "hebrew",
+   "lemma": "אֲחַזְיָ֫הוּ",
+   "gloss": "Ahaziah",
+   "definition": "Achazjah, the name of a Jewish and an Israelite king",
+   "derivation": "or (prolonged) אֲחַזְיָהוּ ; from 270 and 3050; Jah has seized;",
+   "sha256": "5e90d6a96ae0c793166dd9dee33f61e26262834c0a27634f9c8add372f57d8ad"
+  },
+  {
+   "strongs": "H0275",
+   "language": "hebrew",
+   "lemma": "אֲחֻזָּם",
+   "gloss": "Ahuzzam",
+   "definition": "Achuzzam, an Israelite",
+   "derivation": "from 270; seizure;",
+   "sha256": "5180c84067595ee80c8b91af5a6728564ff50945fabab5d35cf23ffa0221b944"
+  },
+  {
+   "strongs": "H0276",
+   "language": "hebrew",
+   "lemma": "אֲחֻזַּת",
+   "gloss": "Ahuzzath",
+   "definition": "Achuzzath, a Philistine",
+   "derivation": "a variation of 272; possession;",
+   "sha256": "e7f0d768e119c5b44f8aeb6226c1c872db1f487ae393e6cba39e6fc4a164512b"
+  },
+  {
+   "strongs": "H0277G",
+   "language": "hebrew",
+   "lemma": "אֲחִי",
+   "gloss": "Ahi",
+   "definition": "Achi, the name of two Israelites",
+   "derivation": "from 251; brotherly;",
+   "sha256": "c90abe91f45c2210e20f6f2b033eec680362e34fb3e0d183234735fb39ae4eac"
+  },
+  {
+   "strongs": "H0277H",
+   "language": "hebrew",
+   "lemma": "אֲחִי",
+   "gloss": "`brother`",
+   "definition": "Achi, the name of two Israelites",
+   "derivation": "from 251; brotherly;",
+   "sha256": "6f63b6c1c2d4e8d1157335000d8a6e687a8f39af9f8b453dd8102f21aa7d9593"
+  },
+  {
+   "strongs": "H0278",
+   "language": "hebrew",
+   "lemma": "אֵחִי",
+   "gloss": "Ehi",
+   "definition": "Echi, an Israelite",
+   "derivation": "probably the same as 277;",
+   "sha256": "ed41bfce96d3f21885f8c6cf90238d4b692ef378e651a8c368c87925005ea7de"
+  },
+  {
+   "strongs": "H0279",
+   "language": "hebrew",
+   "lemma": "אֲחִיאָם",
+   "gloss": "Ahiam",
+   "definition": "Achiam, an Israelite",
+   "derivation": "from 251 and 517; brother of the mother (i.e. uncle);",
+   "sha256": "4c9a7f5cd40e22f9b84ff434e9ea29167c0aa449ab06982c0674a55ee0da014e"
+  },
+  {
+   "strongs": "H0280",
+   "language": "hebrew",
+   "lemma": "אֲחִידָה",
+   "gloss": "riddle",
+   "definition": "an enigma",
+   "derivation": "(Aramaic) corresponding to 2420,",
+   "sha256": "1bb621926c4a457e64b573b5b248ad5f189719eaae5b59d9a562dc5e8ae6b864"
+  },
+  {
+   "strongs": "H0281G",
+   "language": "hebrew",
+   "lemma": "אֲחִיָּ֫הוּ",
+   "gloss": "Ahijah",
+   "definition": "Achijah, the name of nine Israelites",
+   "derivation": "or (prolonged) אֲחִיָּהוּ ; from 251 and 3050; brother (i.e. worshipper) of Jah;",
+   "sha256": "80c3adcb67e5358d768b513dda367f9807e71f995344914762e5c46cd794fddb"
+  },
+  {
+   "strongs": "H0281H",
+   "language": "hebrew",
+   "lemma": "אֲחִיָּ֫הוּ",
+   "gloss": "Ahijah",
+   "definition": "Achijah, the name of nine Israelites",
+   "derivation": "or (prolonged) אֲחִיָּהוּ ; from 251 and 3050; brother (i.e. worshipper) of Jah;",
+   "sha256": "80c3adcb67e5358d768b513dda367f9807e71f995344914762e5c46cd794fddb"
+  },
+  {
+   "strongs": "H0281I",
+   "language": "hebrew",
+   "lemma": "אֲחִיָּ֫הוּ",
+   "gloss": "Ahijah",
+   "definition": "Achijah, the name of nine Israelites",
+   "derivation": "or (prolonged) אֲחִיָּהוּ ; from 251 and 3050; brother (i.e. worshipper) of Jah;",
+   "sha256": "80c3adcb67e5358d768b513dda367f9807e71f995344914762e5c46cd794fddb"
+  },
+  {
+   "strongs": "H0281J",
+   "language": "hebrew",
+   "lemma": "אֲחִיָּ֫הוּ",
+   "gloss": "Ahijah",
+   "definition": "Achijah, the name of nine Israelites",
+   "derivation": "or (prolonged) אֲחִיָּהוּ ; from 251 and 3050; brother (i.e. worshipper) of Jah;",
+   "sha256": "80c3adcb67e5358d768b513dda367f9807e71f995344914762e5c46cd794fddb"
+  },
+  {
+   "strongs": "H0281K",
+   "language": "hebrew",
+   "lemma": "אֲחִיָּ֫הוּ",
+   "gloss": "Ahijah",
+   "definition": "Achijah, the name of nine Israelites",
+   "derivation": "or (prolonged) אֲחִיָּהוּ ; from 251 and 3050; brother (i.e. worshipper) of Jah;",
+   "sha256": "80c3adcb67e5358d768b513dda367f9807e71f995344914762e5c46cd794fddb"
+  },
+  {
+   "strongs": "H0281L",
+   "language": "hebrew",
+   "lemma": "אֲחִיָּ֫הוּ",
+   "gloss": "Ahijah",
+   "definition": "Achijah, the name of nine Israelites",
+   "derivation": "or (prolonged) אֲחִיָּהוּ ; from 251 and 3050; brother (i.e. worshipper) of Jah;",
+   "sha256": "80c3adcb67e5358d768b513dda367f9807e71f995344914762e5c46cd794fddb"
+  },
+  {
+   "strongs": "H0281M",
+   "language": "hebrew",
+   "lemma": "אֲחִיָּ֫הוּ",
+   "gloss": "Ahijah",
+   "definition": "Achijah, the name of nine Israelites",
+   "derivation": "or (prolonged) אֲחִיָּהוּ ; from 251 and 3050; brother (i.e. worshipper) of Jah;",
+   "sha256": "80c3adcb67e5358d768b513dda367f9807e71f995344914762e5c46cd794fddb"
+  },
+  {
+   "strongs": "H0281N",
+   "language": "hebrew",
+   "lemma": "אֲחִיָּ֫הוּ",
+   "gloss": "Ahiah",
+   "definition": "Achijah, the name of nine Israelites",
+   "derivation": "or (prolonged) אֲחִיָּהוּ ; from 251 and 3050; brother (i.e. worshipper) of Jah;",
+   "sha256": "6a606573edecabd4e02d5a0901c8f429b65deb3aea7b29a6512ec10eb0ec9c82"
+  },
+  {
+   "strongs": "H0281O",
+   "language": "hebrew",
+   "lemma": "אֲחִיָּ֫הוּ",
+   "gloss": "Ahijah",
+   "definition": "Achijah, the name of nine Israelites",
+   "derivation": "or (prolonged) אֲחִיָּהוּ ; from 251 and 3050; brother (i.e. worshipper) of Jah;",
+   "sha256": "80c3adcb67e5358d768b513dda367f9807e71f995344914762e5c46cd794fddb"
+  },
+  {
+   "strongs": "H0282",
+   "language": "hebrew",
+   "lemma": "אֲחִיהוּד",
+   "gloss": "Ahihud",
+   "definition": "Achihud, an Israelite",
+   "derivation": "from 251 and 1935; brother (i.e. possessor) of renown;",
+   "sha256": "d9cb248e1620635ccc188689b7fc52eae25a4ce7ec7a9ebdd139162f41b472ec"
+  },
+  {
+   "strongs": "H0283G",
+   "language": "hebrew",
+   "lemma": "אַחְיוֹ",
+   "gloss": "Ahio",
+   "definition": "Achio, the name of three Israelites",
+   "derivation": "prolonged from 251; brotherly;",
+   "sha256": "4dec98ac4331f791a2bc7648b6847f68102fa143c64c4671a7143843fd84a865"
+  },
+  {
+   "strongs": "H0283H",
+   "language": "hebrew",
+   "lemma": "אַחְיוֹ",
+   "gloss": "Ahio",
+   "definition": "Achio, the name of three Israelites",
+   "derivation": "prolonged from 251; brotherly;",
+   "sha256": "4dec98ac4331f791a2bc7648b6847f68102fa143c64c4671a7143843fd84a865"
+  },
+  {
+   "strongs": "H0283I",
+   "language": "hebrew",
+   "lemma": "אַחְיוֹ",
+   "gloss": "Ahio",
+   "definition": "Achio, the name of three Israelites",
+   "derivation": "prolonged from 251; brotherly;",
+   "sha256": "4dec98ac4331f791a2bc7648b6847f68102fa143c64c4671a7143843fd84a865"
+  },
+  {
+   "strongs": "H0284",
+   "language": "hebrew",
+   "lemma": "אֲחִיחֻד",
+   "gloss": "Ahihud",
+   "definition": "Achichud, an Israelite",
+   "derivation": "from 251 and 2330; brother of a riddle (i.e. mysterious);",
+   "sha256": "90edb1fd12e38e02939b7c61c8fc4505ba261955d23d4a2a9118743b6540cafe"
+  },
+  {
+   "strongs": "H0285G",
+   "language": "hebrew",
+   "lemma": "אֲחִיטוּב",
+   "gloss": "Ahitub",
+   "definition": "Achitub, the name of several priests",
+   "derivation": "from 251 and 2898; brother of goodness;",
+   "sha256": "e38284bc063744819aee0f32183dd812c8951db55f08580f12b9118546bfd69c"
+  },
+  {
+   "strongs": "H0285H",
+   "language": "hebrew",
+   "lemma": "אֲחִיטוּב",
+   "gloss": "Ahitub",
+   "definition": "Achitub, the name of several priests",
+   "derivation": "from 251 and 2898; brother of goodness;",
+   "sha256": "e38284bc063744819aee0f32183dd812c8951db55f08580f12b9118546bfd69c"
+  },
+  {
+   "strongs": "H0285I",
+   "language": "hebrew",
+   "lemma": "אֲחִיטוּב",
+   "gloss": "Ahitub",
+   "definition": "Achitub, the name of several priests",
+   "derivation": "from 251 and 2898; brother of goodness;",
+   "sha256": "e38284bc063744819aee0f32183dd812c8951db55f08580f12b9118546bfd69c"
+  },
+  {
+   "strongs": "H0285J",
+   "language": "hebrew",
+   "lemma": "אֲחִיטוּב",
+   "gloss": "Ahitub",
+   "definition": "Achitub, the name of several priests",
+   "derivation": "from 251 and 2898; brother of goodness;",
+   "sha256": "e38284bc063744819aee0f32183dd812c8951db55f08580f12b9118546bfd69c"
+  },
+  {
+   "strongs": "H0286",
+   "language": "hebrew",
+   "lemma": "אֲחִילוּד",
+   "gloss": "Ahilud",
+   "definition": "Achilud, an Israelite",
+   "derivation": "from 251 and 3205; brother of one born;",
+   "sha256": "b9a7ce31460b72d7d2f08d23a56e6ff31c1f8e4a504ef655785d583777f54c3e"
+  },
+  {
+   "strongs": "H0287",
+   "language": "hebrew",
+   "lemma": "אֲחִימוֹת",
+   "gloss": "Ahimoth",
+   "definition": "Achimoth, an Israelite",
+   "derivation": "from 251 and 4191; brother of death;",
+   "sha256": "04a74a2962c11225be08429ab881d0f550be261581694b2bb068f464f97f18a0"
+  },
+  {
+   "strongs": "H0288G",
+   "language": "hebrew",
+   "lemma": "אֲחִימֶ֫לֶךְ",
+   "gloss": "Ahimelech",
+   "definition": "Achimelek, the name of an Israelite and of a Hittite",
+   "derivation": "from 251 and 4428; brother of (the) king;",
+   "sha256": "a3116c0feb83dd06474511fca7909a382a2b7c7dc0e26c540fc04bba47c77d5e"
+  },
+  {
+   "strongs": "H0288H",
+   "language": "hebrew",
+   "lemma": "אֲחִימֶ֫לֶךְ",
+   "gloss": "Ahimelech",
+   "definition": "Achimelek, the name of an Israelite and of a Hittite",
+   "derivation": "from 251 and 4428; brother of (the) king;",
+   "sha256": "a3116c0feb83dd06474511fca7909a382a2b7c7dc0e26c540fc04bba47c77d5e"
+  },
+  {
+   "strongs": "H0288I",
+   "language": "hebrew",
+   "lemma": "אֲחִימֶ֫לֶךְ",
+   "gloss": "Ahimelech",
+   "definition": "Achimelek, the name of an Israelite and of a Hittite",
+   "derivation": "from 251 and 4428; brother of (the) king;",
+   "sha256": "a3116c0feb83dd06474511fca7909a382a2b7c7dc0e26c540fc04bba47c77d5e"
+  },
+  {
+   "strongs": "H0289G",
+   "language": "hebrew",
+   "lemma": "אֲחִימַן",
+   "gloss": "Ahiman",
+   "definition": "Achiman, the name of an Anakite and of an Israelite",
+   "derivation": "or אֲחִימָן ; from 251 and 4480; brother of a portion (i.e. gift);",
+   "sha256": "1b84b50cbad3c85a94e98bc1d7c1c20d27a02c29385b711f9d3f5312bec3ab43"
+  },
+  {
+   "strongs": "H0289H",
+   "language": "hebrew",
+   "lemma": "אֲחִימַן",
+   "gloss": "Ahiman",
+   "definition": "Achiman, the name of an Anakite and of an Israelite",
+   "derivation": "or אֲחִימָן ; from 251 and 4480; brother of a portion (i.e. gift);",
+   "sha256": "1b84b50cbad3c85a94e98bc1d7c1c20d27a02c29385b711f9d3f5312bec3ab43"
+  },
+  {
+   "strongs": "H0290G",
+   "language": "hebrew",
+   "lemma": "אֲחִימַ֫עַץ",
+   "gloss": "Ahimaaz",
+   "definition": "Achimaats, the name of three Israelites",
+   "derivation": "from 251 and the equivalent of 4619; brother of anger;",
+   "sha256": "ad7f63ca0c5ef9b9ce1090ae2b356964c731975c1ebbc8af15cda724d82be324"
+  },
+  {
+   "strongs": "H0290H",
+   "language": "hebrew",
+   "lemma": "אֲחִימַ֫עַץ",
+   "gloss": "Ahimaaz",
+   "definition": "Achimaats, the name of three Israelites",
+   "derivation": "from 251 and the equivalent of 4619; brother of anger;",
+   "sha256": "ad7f63ca0c5ef9b9ce1090ae2b356964c731975c1ebbc8af15cda724d82be324"
+  },
+  {
+   "strongs": "H0290I",
+   "language": "hebrew",
+   "lemma": "אֲחִימַ֫עַץ",
+   "gloss": "Ahimaaz",
+   "definition": "Achimaats, the name of three Israelites",
+   "derivation": "from 251 and the equivalent of 4619; brother of anger;",
+   "sha256": "ad7f63ca0c5ef9b9ce1090ae2b356964c731975c1ebbc8af15cda724d82be324"
+  },
+  {
+   "strongs": "H0291",
+   "language": "hebrew",
+   "lemma": "אַחְיָן",
+   "gloss": "Ahian",
+   "definition": "Achjan, an Israelite",
+   "derivation": "from 251; brotherly;",
+   "sha256": "cb9123ed1d6ed3d0ce7bf95f3579fee712ca0d16be6f87fe2056c38ef41a9dbb"
+  },
+  {
+   "strongs": "H0292",
+   "language": "hebrew",
+   "lemma": "אֲחִינָדָב",
+   "gloss": "Ahinadab",
+   "definition": "Achinadab, an Israelite",
+   "derivation": "from 251 and 5068; brother of liberality;",
+   "sha256": "934bb4ffde8d786f85c73990ccf731b637ffd124014df03ab52eff94b3e475e1"
+  },
+  {
+   "strongs": "H0293G",
+   "language": "hebrew",
+   "lemma": "אֲחִינֹ֫עַם",
+   "gloss": "Ahinoam",
+   "definition": "Achinoam, the name of two Israelitesses",
+   "derivation": "from 251 and 5278; brother of pleasantness;",
+   "sha256": "26fe4f3b4b01d386a9cf1edd53f430660750d3b523064ff8418e1670ee4f74dd"
+  },
+  {
+   "strongs": "H0293H",
+   "language": "hebrew",
+   "lemma": "אֲחִינֹ֫עַם",
+   "gloss": "Ahinoam",
+   "definition": "Achinoam, the name of two Israelitesses",
+   "derivation": "from 251 and 5278; brother of pleasantness;",
+   "sha256": "26fe4f3b4b01d386a9cf1edd53f430660750d3b523064ff8418e1670ee4f74dd"
+  },
+  {
+   "strongs": "H0294",
+   "language": "hebrew",
+   "lemma": "אֲחִיסָמָךְ",
+   "gloss": "Ahisamach",
+   "definition": "Achisamak, an Israelite",
+   "derivation": "from 251 and 5564; brother of support;",
+   "sha256": "4e5c74f55e86f6914e86a14cc7c62cadcc230a7d3e6623768374fedc1571cec4"
+  },
+  {
+   "strongs": "H0295G",
+   "language": "hebrew",
+   "lemma": "אֲחִיעֶ֫זֶר",
+   "gloss": "Ahiezer",
+   "definition": "Achiezer, the name of two Israelites",
+   "derivation": "from 251 and 5828; brother of help;",
+   "sha256": "17442e7b381b26cc43aa886e5c703af8f1e72abc4524c11a757033d3c6921f91"
+  },
+  {
+   "strongs": "H0295H",
+   "language": "hebrew",
+   "lemma": "אֲחִיעֶ֫זֶר",
+   "gloss": "Ahiezer",
+   "definition": "Achiezer, the name of two Israelites",
+   "derivation": "from 251 and 5828; brother of help;",
+   "sha256": "17442e7b381b26cc43aa886e5c703af8f1e72abc4524c11a757033d3c6921f91"
+  },
+  {
+   "strongs": "H0296",
+   "language": "hebrew",
+   "lemma": "אֲחִיקָם",
+   "gloss": "Ahikam",
+   "definition": "Achikam, an Israelite",
+   "derivation": "from 251 and 6965; brother of rising (i.e. high);",
+   "sha256": "82b34b57ccafa0818b5b5bdef6d3f7006acffee7280de9c20b35f9e696a63570"
+  },
+  {
+   "strongs": "H0297",
+   "language": "hebrew",
+   "lemma": "אֲחִירָם",
+   "gloss": "Ahiram",
+   "definition": "Achiram, an Israelite",
+   "derivation": "from 251 and 7311; brother of height (i.e. high);",
+   "sha256": "9823f88fa45d275b996d03d1c7e672432841ff814082cd381a734410650581cc"
+  },
+  {
+   "strongs": "H0298",
+   "language": "hebrew",
+   "lemma": "אֲחִירָמִי",
+   "gloss": "Ahiramite",
+   "definition": "an Achiramite or descendant (collectively) of Achiram",
+   "derivation": "patronymic from 297;",
+   "sha256": "413f7af316eedae723ec480f695bc26882bf00fc0ac83d7d99b722dd8158371e"
+  },
+  {
+   "strongs": "H0299",
+   "language": "hebrew",
+   "lemma": "אֲחִירַע",
+   "gloss": "Ahira",
+   "definition": "Achira, an Israelite",
+   "derivation": "from 251 and 7451; brother of wrong;",
+   "sha256": "d3390260cf32a55b1291ff43554d65507f4e9818ea027b585845c0549f895d7c"
+  },
+  {
+   "strongs": "H0300",
+   "language": "hebrew",
+   "lemma": "אֲחִישָׁ֑חַר",
+   "gloss": "Ahishahar",
+   "definition": "Achishachar, an Israelite",
+   "derivation": "from 251 and 7837; brother of (the) dawn;",
+   "sha256": "e23fc9c48e0d6601f4879100c9a31e6c231f4c3ccce5dcaa85ef5a8812afbc43"
+  },
+  {
+   "strongs": "H0301",
+   "language": "hebrew",
+   "lemma": "אֲחִישָׁר",
+   "gloss": "Ahishar",
+   "definition": "Achishar, an Israelite",
+   "derivation": "from 251 and 7891; brother of (the) singer;",
+   "sha256": "81841a24c09e7fe5125521ad520be9ba36b1ae09948c42ece9fad217f60f2c42"
+  },
+  {
+   "strongs": "H0302",
+   "language": "hebrew",
+   "lemma": "אֲחִיתֹ֫פֶל",
+   "gloss": "Ahithophel",
+   "definition": "Achithophel, an Israelite",
+   "derivation": "from 251 and 8602; brother of folly;",
+   "sha256": "0f798239b9e18815116926243d0f2b7052b4668698e70fe1eb2359453116b487"
+  },
+  {
+   "strongs": "H0303",
+   "language": "hebrew",
+   "lemma": "אַחְלָב",
+   "gloss": "Ahlab",
+   "definition": "Achlab, a place in Palestine",
+   "derivation": "from the same root as 2459; fatness (i.e. fertile);",
+   "sha256": "2f2d94e89b902ceea631647fbc2c8abe683c5ef534da87d486adab4554b75eb3"
+  },
+  {
+   "strongs": "H0304G",
+   "language": "hebrew",
+   "lemma": "אַחְלָ֑י",
+   "gloss": "Ahlai",
+   "definition": "Achlai, the name of an Israelitess and of an Israelite",
+   "derivation": "the same as 305; wishful;",
+   "sha256": "978a975f4468c5a1368006394127ca1b7d9fe1e791975aaa2fd2ec3a0ae771ae"
+  },
+  {
+   "strongs": "H0304H",
+   "language": "hebrew",
+   "lemma": "אַחְלָ֑י",
+   "gloss": "Ahlai",
+   "definition": "Achlai, the name of an Israelitess and of an Israelite",
+   "derivation": "the same as 305; wishful;",
+   "sha256": "978a975f4468c5a1368006394127ca1b7d9fe1e791975aaa2fd2ec3a0ae771ae"
+  },
+  {
+   "strongs": "H0305",
+   "language": "hebrew",
+   "lemma": "אַחֲלַי",
+   "gloss": "O that!",
+   "definition": "would that!",
+   "derivation": "or אַחֲלֵי; prob from 253 and a variation of 3863;",
+   "sha256": "cae5819315c3ebff34f5393dfe5b998b1d413774d84b88d72ee687028f805440"
+  },
+  {
+   "strongs": "H0306",
+   "language": "hebrew",
+   "lemma": "אַחְלָ֑מָה",
+   "gloss": "amethyst",
+   "definition": "a gem, probably the amethyst",
+   "derivation": "perhaps from 2492 (and thus dream-stone);",
+   "sha256": "303b2e2c06a6e409c4aa53fd5184fa5740e84e6e9d2fea501fbfca5835ced919"
+  },
+  {
+   "strongs": "H0307",
+   "language": "hebrew",
+   "lemma": "אַחְמְתָא",
+   "gloss": "Ecbatana",
+   "definition": "Achmetha (i.e. Ecbatana), the summer capital of Persia",
+   "derivation": "of Persian derivation;",
+   "sha256": "c3abb44d9d390d7f4e3166a2e5c36f4e3aef65b60aa716528043a0ddd474b81c"
+  },
+  {
+   "strongs": "H0308",
+   "language": "hebrew",
+   "lemma": "אֲחַסְבַּי",
+   "gloss": "Ahasbai",
+   "definition": "Achasbai, an Israelite",
+   "derivation": "of uncertain derivation;",
+   "sha256": "d1fc3482084a53f49f1bf1462a156f87fa6b25a5ecaf89240e2e09bb2282003f"
+  },
+  {
+   "strongs": "H0309",
+   "language": "hebrew",
+   "lemma": "אָחַר",
+   "gloss": "to delay",
+   "definition": "to loiter (i.e. be behind); by implication to procrastinate",
+   "derivation": "a primitive root;",
+   "sha256": "a623fdaada6f010798a7a5727dcad7ff66af777c9987d76f5e40e69f0e07072b"
+  },
+  {
+   "strongs": "H0310A",
+   "language": "hebrew",
+   "lemma": "אַחַר",
+   "gloss": "after",
+   "definition": "properly, the hind part; generally used as an adverb or conjunction, after (in various senses)",
+   "derivation": "from 309;",
+   "sha256": "16f9609cd2f23b8c0928e94beda69396772a71e2d9eab8440df3c61a7608796a"
+  },
+  {
+   "strongs": "H0310B",
+   "language": "hebrew",
+   "lemma": "אַחֲרַי",
+   "gloss": "backwards",
+   "definition": "properly, the hind part; generally used as an adverb or conjunction, after (in various senses)",
+   "derivation": "from 309;",
+   "sha256": "ea08e76b799213f333ff1387a38aa9e77955a46561fb1570b5dd7bcf79bc6b22"
+  },
+  {
+   "strongs": "H0311",
+   "language": "hebrew",
+   "lemma": "אַחַר",
+   "gloss": "after",
+   "definition": "after",
+   "derivation": "(Aramaic) corresponding to 310;",
+   "sha256": "b6920cb694e54805126d9c7d63e4aed9b17605a7578ec7df62c0eb07bd130505"
+  },
+  {
+   "strongs": "H0312",
+   "language": "hebrew",
+   "lemma": "אַחֵר",
+   "gloss": "another",
+   "definition": "properly, hinder; generally, next, other, etc.",
+   "derivation": "from 309;",
+   "sha256": "37c48e2ac702b38f4f12262101b3c6a294062243da0936f8c74665e5f966faf9"
+  },
+  {
+   "strongs": "H0313",
+   "language": "hebrew",
+   "lemma": "אַחֵר",
+   "gloss": "Aher",
+   "definition": "Acher, an Israelite",
+   "derivation": "the same as 312;",
+   "sha256": "c5f92ae1826d4fc89641b4dfd56fea3f29130ec4e9d417484b23afca763d11df"
+  },
+  {
+   "strongs": "H0314",
+   "language": "hebrew",
+   "lemma": "אַחֲרוֹן",
+   "gloss": "last",
+   "definition": "hinder; generally, late or last; specifically (as facing the east) western",
+   "derivation": "or (shortened) אַחֲרֹן; from 309;",
+   "sha256": "345df09020d11ea275aa4ef7f4edb49a7881bf6c2ccce5845219a7b2c8782791"
+  },
+  {
+   "strongs": "H0315",
+   "language": "hebrew",
+   "lemma": "אַחְרַח",
+   "gloss": "Aharah",
+   "definition": "Achrach, an Israelite",
+   "derivation": "from 310 and 251; after (his) brother;",
+   "sha256": "c7dd93b65f46046cfde13eaeb229cb4cd53f6143e91a2be50ec6d8602ccc9328"
+  },
+  {
+   "strongs": "H0316",
+   "language": "hebrew",
+   "lemma": "אֲחַרְחֵל",
+   "gloss": "Aharhel",
+   "definition": "Acharchel, an Israelite",
+   "derivation": "from 310 and 2426; behind (the) intrenchment (i.e. safe);",
+   "sha256": "b844a5cdcd7c168d964afb6c64f3619f109ac8214ad422ff7cf2016a77422218"
+  },
+  {
+   "strongs": "H0317",
+   "language": "hebrew",
+   "lemma": "אׇחֳרִי",
+   "gloss": "another",
+   "definition": "other",
+   "derivation": "(Aramaic) from 311;",
+   "sha256": "4b42ebc949e64caecba89807daa8f428606255ae3adef34b51a2758c655f5ffc"
+  },
+  {
+   "strongs": "H0318",
+   "language": "hebrew",
+   "lemma": "אׇחֳרֵין",
+   "gloss": "finally",
+   "definition": "last",
+   "derivation": "(Aramaic) or (shortened) אׇחֳרֵן; (Aramaic) from 317;",
+   "sha256": "6c53f365ae84ec7384b328babddfe67a686d8809136b366efe4c2aeb6a6a8eda"
+  },
+  {
+   "strongs": "H0319",
+   "language": "hebrew",
+   "lemma": "אַחֲרִית",
+   "gloss": "end",
+   "definition": "the last or end, hence, the future; also posterity",
+   "derivation": "from 310;",
+   "sha256": "32a43a81faaf4f96a856d553cde0bd85bc3e05c968a234b3801c7a9d30f02034"
+  },
+  {
+   "strongs": "H0320",
+   "language": "hebrew",
+   "lemma": "אַחֲרִית",
+   "gloss": "latter",
+   "definition": "later",
+   "derivation": "(Aramaic) from 311; the same as 319;",
+   "sha256": "4207f592c77d94ea4124ace33f4271b81f09d0b9c88003cf88122e6e601edaab"
+  },
+  {
+   "strongs": "H0321",
+   "language": "hebrew",
+   "lemma": "אׇחֳרָן",
+   "gloss": "another",
+   "definition": "other",
+   "derivation": "(Aramaic) from 311; the same as 317;",
+   "sha256": "9013221802bb9e0de0037da839c0cae413878ebe6f5dab008579ab066ca87c0c"
+  },
+  {
+   "strongs": "H0322",
+   "language": "hebrew",
+   "lemma": "אֲחֹרַנִּית",
+   "gloss": "backwards",
+   "definition": "backwards",
+   "derivation": "prolonged from 268;",
+   "sha256": "ca7ac805e37ab4261316289009d6ad2dc45c668c65c094d1b6605074fc77d2c1"
+  },
+  {
+   "strongs": "H0323",
+   "language": "hebrew",
+   "lemma": "אֲחַשְׁדַּרְפַּן",
+   "gloss": "satrap",
+   "definition": "a satrap or governor of a main province (of Persia)",
+   "derivation": "of Persian derivation;",
+   "sha256": "b2dbc775465fc481e31384e8f6d2949f7f37d23ef8d3764254fa66c05eef707f"
+  },
+  {
+   "strongs": "H0324",
+   "language": "hebrew",
+   "lemma": "אֲחַשְׁדַּרְפְּנִין",
+   "gloss": "satrap",
+   "derivation": "(Aramaic) corresponding to 323",
+   "sha256": "9c3494f445c47f3b15d4351184f0d503d019aa053529c8c1bbb66827a8d23dc4"
+  }
+ ]
+}

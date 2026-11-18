@@ -1,0 +1,512 @@
+{
+ "note": "Abbott-Smith's and Strong's abbreviations: write the es/pt form every time. Sigla (works, editions, versions) stay exactly as written. NT stays NT; OT becomes AT.",
+ "abbreviations": {
+  "al.": {
+   "meaning": "and elsewhere (alibi)",
+   "es": "al.",
+   "pt": "al."
+  },
+  "cf.": {
+   "meaning": "compare",
+   "es": "cf.",
+   "pt": "cf."
+  },
+  "etc.": {
+   "meaning": "and so on",
+   "es": "etc.",
+   "pt": "etc."
+  },
+  "cl.": {
+   "meaning": "classical Greek",
+   "es": "cl.",
+   "pt": "cl."
+  },
+  "pass.": {
+   "meaning": "passive",
+   "es": "pas.",
+   "pt": "pass."
+  },
+  "pl.": {
+   "meaning": "plural",
+   "es": "pl.",
+   "pt": "pl."
+  },
+  "mg.": {
+   "meaning": "margin",
+   "es": "mg.",
+   "pt": "mg."
+  },
+  "f.": {
+   "meaning": "and the following verse / feminine",
+   "es": "s.",
+   "pt": "s."
+  },
+  "ff.": {
+   "meaning": "and the following",
+   "es": "ss.",
+   "pt": "ss."
+  },
+  "adv.": {
+   "meaning": "adverb",
+   "es": "adv.",
+   "pt": "adv."
+  },
+  "absol.": {
+   "meaning": "absolutely",
+   "es": "absol.",
+   "pt": "absol."
+  },
+  "inf.": {
+   "meaning": "infinitive",
+   "es": "inf.",
+   "pt": "inf."
+  },
+  "txt.": {
+   "meaning": "text",
+   "es": "txt.",
+   "pt": "txt."
+  },
+  "aor.": {
+   "meaning": "aorist",
+   "es": "aor.",
+   "pt": "aor."
+  },
+  "indecl.": {
+   "meaning": "indeclinable",
+   "es": "indecl.",
+   "pt": "indecl."
+  },
+  "ptcp.": {
+   "meaning": "participle",
+   "es": "part.",
+   "pt": "part."
+  },
+  "id.": {
+   "meaning": "the same",
+   "es": "íd.",
+   "pt": "id."
+  },
+  "prop.": {
+   "meaning": "properly",
+   "es": "prop.",
+   "pt": "prop."
+  },
+  "subst.": {
+   "meaning": "substantive",
+   "es": "sust.",
+   "pt": "subst."
+  },
+  "esp.": {
+   "meaning": "especially",
+   "es": "esp.",
+   "pt": "esp."
+  },
+  "mid.": {
+   "meaning": "middle voice",
+   "es": "med.",
+   "pt": "méd."
+  },
+  "supr.": {
+   "meaning": "above",
+   "es": "supr.",
+   "pt": "supr."
+  },
+  "sc.": {
+   "meaning": "namely",
+   "es": "sc.",
+   "pt": "sc."
+  },
+  "l.": {
+   "meaning": "line / read",
+   "es": "l.",
+   "pt": "l."
+  },
+  "pf.": {
+   "meaning": "perfect",
+   "es": "pf.",
+   "pt": "pf."
+  },
+  "ll.": {
+   "meaning": "lines / passages",
+   "es": "ll.",
+   "pt": "ll."
+  },
+  "indic.": {
+   "meaning": "indicative",
+   "es": "indic.",
+   "pt": "indic."
+  },
+  "prep.": {
+   "meaning": "preposition",
+   "es": "prep.",
+   "pt": "prep."
+  },
+  "neut.": {
+   "meaning": "neuter",
+   "es": "neut.",
+   "pt": "neut."
+  },
+  "fut.": {
+   "meaning": "future",
+   "es": "fut.",
+   "pt": "fut."
+  },
+  "ib.": {
+   "meaning": "in the same place",
+   "es": "ib.",
+   "pt": "ib."
+  },
+  "pres.": {
+   "meaning": "present",
+   "es": "pres.",
+   "pt": "pres."
+  },
+  "infr.": {
+   "meaning": "below",
+   "es": "infr.",
+   "pt": "infr."
+  },
+  "meton.": {
+   "meaning": "by metonymy",
+   "es": "meton.",
+   "pt": "meton."
+  },
+  "art.": {
+   "meaning": "article",
+   "es": "art.",
+   "pt": "art."
+  },
+  "subjc.": {
+   "meaning": "subjunctive",
+   "es": "subj.",
+   "pt": "subj."
+  },
+  "impf.": {
+   "meaning": "imperfect",
+   "es": "impf.",
+   "pt": "impf."
+  },
+  "exx.": {
+   "meaning": "examples",
+   "es": "ejs.",
+   "pt": "exs."
+  },
+  "neg.": {
+   "meaning": "negative",
+   "es": "neg.",
+   "pt": "neg."
+  },
+  "om.": {
+   "meaning": "omit(s)",
+   "es": "om.",
+   "pt": "om."
+  },
+  "cogn.": {
+   "meaning": "cognate",
+   "es": "cogn.",
+   "pt": "cogn."
+  },
+  "trans.": {
+   "meaning": "transitive",
+   "es": "trans.",
+   "pt": "trans."
+  },
+  "pron.": {
+   "meaning": "pronoun",
+   "es": "pron.",
+   "pt": "pron."
+  },
+  "compar.": {
+   "meaning": "comparative",
+   "es": "compar.",
+   "pt": "compar."
+  },
+  "adj.": {
+   "meaning": "adjective",
+   "es": "adj.",
+   "pt": "adj."
+  },
+  "mult.": {
+   "meaning": "many",
+   "es": "mult.",
+   "pt": "mult."
+  },
+  "freq.": {
+   "meaning": "frequently",
+   "es": "frec.",
+   "pt": "freq."
+  },
+  "obj.": {
+   "meaning": "object",
+   "es": "obj.",
+   "pt": "obj."
+  },
+  "exc.": {
+   "meaning": "except",
+   "es": "exc.",
+   "pt": "exc."
+  },
+  "intrans.": {
+   "meaning": "intransitive",
+   "es": "intr.",
+   "pt": "intr."
+  },
+  "prob.": {
+   "meaning": "probably",
+   "es": "prob.",
+   "pt": "prob."
+  },
+  "act.": {
+   "meaning": "active",
+   "es": "act.",
+   "pt": "at."
+  },
+  "imperat.": {
+   "meaning": "imperative",
+   "es": "imperat.",
+   "pt": "imperat."
+  },
+  "depon.": {
+   "meaning": "deponent",
+   "es": "depon.",
+   "pt": "depoen."
+  },
+  "perh.": {
+   "meaning": "perhaps",
+   "es": "quizá",
+   "pt": "talvez"
+  },
+  "ref.": {
+   "meaning": "reference",
+   "es": "ref.",
+   "pt": "ref."
+  },
+  "anarth.": {
+   "meaning": "without the article",
+   "es": "anart.",
+   "pt": "anart."
+  },
+  "dimin.": {
+   "meaning": "diminutive",
+   "es": "dim.",
+   "pt": "dim."
+  },
+  "nom.": {
+   "meaning": "nominative",
+   "es": "nom.",
+   "pt": "nom."
+  },
+  "dupl.": {
+   "meaning": "reduplicated",
+   "es": "redupl.",
+   "pt": "redupl."
+  },
+  "poss.": {
+   "meaning": "possessive",
+   "es": "pos.",
+   "pt": "poss."
+  },
+  "plpf.": {
+   "meaning": "pluperfect",
+   "es": "plpf.",
+   "pt": "m.-q.-perf."
+  },
+  "contr.": {
+   "meaning": "contracted",
+   "es": "contr.",
+   "pt": "contr."
+  },
+  "indir.": {
+   "meaning": "indirect",
+   "es": "indir.",
+   "pt": "indir."
+  },
+  "sing.": {
+   "meaning": "singular",
+   "es": "sing.",
+   "pt": "sing."
+  },
+  "loc.": {
+   "meaning": "locative",
+   "es": "loc.",
+   "pt": "loc."
+  },
+  "fem.": {
+   "meaning": "feminine",
+   "es": "fem.",
+   "pt": "fem."
+  },
+  "vernac.": {
+   "meaning": "vernacular",
+   "es": "vernác.",
+   "pt": "vernác."
+  },
+  "reff.": {
+   "meaning": "references",
+   "es": "reff.",
+   "pt": "reff."
+  },
+  "verb.": {
+   "meaning": "verbal",
+   "es": "verb.",
+   "pt": "verb."
+  },
+  "eccl.": {
+   "meaning": "ecclesiastical",
+   "es": "ecl.",
+   "pt": "ecl."
+  },
+  "impers.": {
+   "meaning": "impersonal",
+   "es": "impers.",
+   "pt": "impess."
+  },
+  "lit.": {
+   "meaning": "literally",
+   "es": "lit.",
+   "pt": "lit."
+  },
+  "pred.": {
+   "meaning": "predicate",
+   "es": "pred.",
+   "pt": "pred."
+  },
+  "constr.": {
+   "meaning": "construction",
+   "es": "constr.",
+   "pt": "constr."
+  },
+  "voc.": {
+   "meaning": "vocative",
+   "es": "voc.",
+   "pt": "voc."
+  },
+  "masc.": {
+   "meaning": "masculine",
+   "es": "masc.",
+   "pt": "masc."
+  },
+  "imper.": {
+   "meaning": "imperative",
+   "es": "imper.",
+   "pt": "imper."
+  },
+  "gen.": {
+   "meaning": "genitive",
+   "es": "gen.",
+   "pt": "gen."
+  },
+  "dat.": {
+   "meaning": "dative",
+   "es": "dat.",
+   "pt": "dat."
+  },
+  "acc.": {
+   "meaning": "accusative",
+   "es": "ac.",
+   "pt": "ac."
+  },
+  "c.": {
+   "meaning": "with (a case)",
+   "es": "c.",
+   "pt": "c."
+  },
+  "hi.": {
+   "meaning": "Hiphil",
+   "es": "hi.",
+   "pt": "hi."
+  },
+  "pi.": {
+   "meaning": "Piel",
+   "es": "pi.",
+   "pt": "pi."
+  },
+  "ni.": {
+   "meaning": "Niphal",
+   "es": "ni.",
+   "pt": "ni."
+  },
+  "hith.": {
+   "meaning": "Hithpael",
+   "es": "hit.",
+   "pt": "hit."
+  },
+  "hithp.": {
+   "meaning": "Hithpael",
+   "es": "hitp.",
+   "pt": "hitp."
+  },
+  "reflex.": {
+   "meaning": "reflexive",
+   "es": "reflex.",
+   "pt": "reflex."
+  },
+  "orig.": {
+   "meaning": "originally",
+   "es": "orig.",
+   "pt": "orig."
+  },
+  "caus.": {
+   "meaning": "causative",
+   "es": "caus.",
+   "pt": "caus."
+  },
+  "intens.": {
+   "meaning": "intensive",
+   "es": "intens.",
+   "pt": "intens."
+  },
+  "fig.": {
+   "meaning": "figuratively",
+   "es": "fig.",
+   "pt": "fig."
+  },
+  "metaph.": {
+   "meaning": "metaphorically",
+   "es": "metáf.",
+   "pt": "metáf."
+  },
+  "Heb.": {
+   "meaning": "Hebrew (when not Hebrews)",
+   "es": "heb.",
+   "pt": "heb."
+  }
+ },
+ "sigla": [
+  "LXX",
+  "MM",
+  "WH",
+  "VGT",
+  "ICC",
+  "DB",
+  "BS",
+  "RV",
+  "WM",
+  "DCG",
+  "LAE",
+  "TH",
+  "LS",
+  "ML",
+  "EV",
+  "BL",
+  "AV",
+  "MGr",
+  "NTD",
+  "AR",
+  "CGT",
+  "NPhr",
+  "LTr",
+  "LT",
+  "JG",
+  "MSS",
+  "HGG",
+  "BJ",
+  "EGT",
+  "AB",
+  "BC",
+  "JV",
+  "TTr",
+  "BDB",
+  "SYN"
+ ]
+}

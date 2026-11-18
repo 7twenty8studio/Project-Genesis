@@ -1,0 +1,1330 @@
+{
+ "batch": "056",
+ "strongs": [
+  "G3457",
+  "G3458",
+  "G3459",
+  "G3460",
+  "G3461",
+  "G3462",
+  "G3463",
+  "G3464",
+  "G3465",
+  "G3466",
+  "G3467",
+  "G3468",
+  "G3469",
+  "G3470",
+  "G3471",
+  "G3472",
+  "G3473",
+  "G3474",
+  "G3475",
+  "G3476",
+  "G3477",
+  "G3478",
+  "G3479",
+  "G3480",
+  "G3481",
+  "G3482",
+  "G3483",
+  "G3484",
+  "G3485",
+  "G3486",
+  "G3487",
+  "G3488",
+  "G3489",
+  "G3490",
+  "G3491",
+  "G3492",
+  "G3493",
+  "G3494",
+  "G3495",
+  "G3496",
+  "G3497",
+  "G3498",
+  "G3499",
+  "G3500",
+  "G3501",
+  "G3502",
+  "G3503",
+  "G3504",
+  "G3505",
+  "G3506",
+  "G3507",
+  "G3508",
+  "G3509",
+  "G3510",
+  "G3511",
+  "G3512",
+  "G3513",
+  "G3514",
+  "G3515",
+  "G3516",
+  "G3517",
+  "G3518",
+  "G3519",
+  "G3520",
+  "G3521",
+  "G3522",
+  "G3523",
+  "G3524",
+  "G3525",
+  "G3526",
+  "G3527",
+  "G3528",
+  "G3529",
+  "G3530",
+  "G3531",
+  "G3532",
+  "G3533",
+  "G3534",
+  "G3535",
+  "G3536",
+  "G3537",
+  "G3538",
+  "G3539",
+  "G3540",
+  "G3541",
+  "G3542",
+  "G3543",
+  "G3544",
+  "G3545",
+  "G3546",
+  "G3547",
+  "G3548",
+  "G3549",
+  "G3550",
+  "G3551",
+  "G3552",
+  "G3553",
+  "G3554",
+  "G3555",
+  "G3556",
+  "G3557",
+  "G3558G",
+  "G3558H",
+  "G3559",
+  "G3560",
+  "G3561",
+  "G3562",
+  "G3563",
+  "G3564",
+  "G3565",
+  "G3566",
+  "G3567",
+  "G3568",
+  "G3569",
+  "G3570",
+  "G3571",
+  "G3572",
+  "G3573",
+  "G3574",
+  "G3575",
+  "G3576",
+  "G3577",
+  "G3578",
+  "G3579",
+  "G3580",
+  "G3581",
+  "G3582",
+  "G3583",
+  "G3584",
+  "G3585",
+  "G3586",
+  "G3587",
+  "G3588",
+  "G3589",
+  "G3590",
+  "G3591",
+  "G3592",
+  "G3593",
+  "G3594",
+  "G3595",
+  "G3596",
+  "G3597",
+  "G3598",
+  "G3599",
+  "G3600",
+  "G3601",
+  "G3602"
+ ],
+ "entries": [
+  {
+   "strongs": "G3457",
+   "language": "greek",
+   "lemma": "μυλικός",
+   "gloss": "millstone",
+   "definition": "μυλικός, -ή, -όν\n(μύλη, a mill),\nof a mill: λίθος μ., Luk.17:2.†",
+   "sha256": "f65926dbf428ee508c8e240cc18d326279edaae6a0bd50d5d1f5bf5f784eb2c3"
+  },
+  {
+   "strongs": "G3458",
+   "language": "greek",
+   "lemma": "μύλος",
+   "gloss": "millstone",
+   "definition": "μύλος, -ου, ὁ\n[in LXX for רֵחֶה, Num.11:8, Deu.24:6, al. ;]\n1. = μύλη, a mill (Strab., Plut., LXX) : Mat.24:41, Rev.18:22.\n2. a mill-stone (Anth.) : Rev.18:21 (T); μ. ὀνικός, Mat.18:6, Mrk.9:42 (see Swete, in l).†",
+   "sha256": "592a93322e25931aab52fe6e75d5c0f3a5c03215383e851fdb7912ba9231dba3"
+  },
+  {
+   "strongs": "G3459",
+   "language": "greek",
+   "lemma": "μυλών",
+   "gloss": "millhouse",
+   "definition": "μυλών, -ῶος, ὁ\n[in LXX: Jer.52:11 * ;]\na mill-house: Mat.24:41 (Rec.; μύλος, WH, R).†",
+   "sha256": "3551e66d29d58f9cb38a5ce9a58b0fad6a9ca80df033a367f2dbe84b2f253caa"
+  },
+  {
+   "strongs": "G3460",
+   "language": "greek",
+   "lemma": "Μύρα",
+   "gloss": "Myra",
+   "definition": "Μύρα, Μύρρα (LT, Tr., WH), -ων, τά,\nMyra, a city of Lycia : Act.27:5.†",
+   "sha256": "08ee4638dfb872a3441cd9711d1933513af6d7d6367b4f4b71bf3a5e65077ef9"
+  },
+  {
+   "strongs": "G3461",
+   "language": "greek",
+   "lemma": "μυριάς",
+   "gloss": "myriad",
+   "definition": "μυριάς, -άδος, ἡ\n(μυρίος), [in LXX chiefly for רְבָבָה ;]\nten thousand, a myriad: pl., Act.19:19, Rev.5:11 9:16; hyperb., of vast numbers, Luk.12:1, Act.21:20, Heb.12:12, Ju 14.†",
+   "sha256": "f641f2bbf75fa1a68051d40adf73ffda36be2250143979cdb230600bb8c7fc83"
+  },
+  {
+   "strongs": "G3462",
+   "language": "greek",
+   "lemma": "μυρίζω",
+   "gloss": "to anoint",
+   "definition": "μυρίζω\n(μύρον),\nIonic and poët. (comic),\nto anoint: Mrk.14:8.†\nSYN.: see: ἀλείφω, and cf. μύρον",
+   "sha256": "902001f730b9b24c1714ec2b276900f3a11bb928945c73c2f2ad6a3789c8c399"
+  },
+  {
+   "strongs": "G3463",
+   "language": "greek",
+   "lemma": "μύριοι",
+   "gloss": "myriad",
+   "definition": "μυρίος, -α, -ον\n1. numberless, countless, infinite: 1Co.4:15 14:19.\n2. As a definite numeral, in pl., μύριοι, -αι, -α, ten thousand: Mat.18:24.†",
+   "sha256": "dc982eb861fd58aa5d962e75d817ebfa62bca03841db4d099e25669953076519"
+  },
+  {
+   "strongs": "G3464",
+   "language": "greek",
+   "lemma": "μύρον",
+   "gloss": "ointment",
+   "definition": "μύρον, -ου, τό\n[in LXX chiefly for שֶׁמֶן, Pro.27:9, Psa.133:2, al. ;]\nointment: Mat.26:7, 12, Mrk.14:3-5, Luk.7:37-38, 46 23:56, Jhn.11:2 12:3, 5, Rev.18:13.†\nSYN.: ἔλαιον, q.v",
+   "sha256": "efff28b0bcea7355cb300dbe94ec15700bd71df6dfd22bc50544586458793325"
+  },
+  {
+   "strongs": "G3465",
+   "language": "greek",
+   "lemma": "Μυσία",
+   "gloss": "Mysia",
+   "definition": "Μυσία, -ας, ἡ\nMysia, a province of Asia Minor: Act.16:7-8.†",
+   "sha256": "56269307eff2b522967c0b8c309d209bb0e7cdecfd9a5a7e3dcde140dbf08388"
+  },
+  {
+   "strongs": "G3466",
+   "language": "greek",
+   "lemma": "μυστήριον",
+   "gloss": "mystery",
+   "definition": "μυστήρισν, -ου, τό\n(μυέω), [in LXX: Dan LXX TH Dan.2:18 ff. (רָז), Tob.12:7, 11, Jdth.2:2, Wis.2:22 6:22 14:15, 23, Sir.3:18 22:22 27:16-17, 21, 2Ma.13:21 * ;]\n1. that which is known to the μύστης (initiated), a mystery or secret doctrine, mostly in pl., τὰ μ. (Æsch., Hdt., al.).\n2. In later writers (Menand., Incert., 168), that which may not be revealed (not, however, as in the modern sense, intrinsically difficult to understand), a secret or mystery of any kind (To, Jth, 2Mac, ll, with).\n3. In NT, of the counsels of God (cf. Th.: Job.15:8, Psa.25:14 for סוֹד), once hidden but now revealed in the Gospel or some fact thereof;\n(a) of the Christian revelation generally : Rom.16:25, 1Co.2:7, Col.1:26-27, Eph.3:3, 9; τ. βασιλείας τ. θεοῦ, Mrk.4:11; τ. θεοῦ, 1Co.2:1, Rev.10:7; τ. θ., Χριστοῦ, Col.2:2; τ. Χριστοῦ., Col.4:3, Eph.3:4; τ. θελήματος αὐτοῦ, Eph.1:9; τ. εὐαγγελίον, Eph.6:19; τ. πίστεως, 1Ti.3:9; τ. εὐσεβείας, 1Ti.3:16;\n(b) of particular truths, or details, of the Christian revelation : Rom.11:25, 1Co.15:51, Eph.5:32, 2Th.2:7, Rev.1:20 17:5, 7; pl., τὰ μ., 1Co.13:2 14:2; θεοῦ, 1Co.4:1; τ. βασιλείας τ. οὐρανῶν (θεοῦ), Mat.13:11, Luk.8:10 (cf. Westc., Eph., 180 ff.; AR, Eph., 234 ff.; Lft., Col., 165 f.; Hatch, Essays, 57 f.; DB, iii, 465 ff.; DCG, ii, 213 ff.).†",
+   "sha256": "8aa46e9dab53fc8f5d53e68b1569988f0cea000637bda610adaed62c064f56d5"
+  },
+  {
+   "strongs": "G3467",
+   "language": "greek",
+   "lemma": "μυωπάζω",
+   "gloss": "be nearsighted",
+   "definition": "μυ-ωπάζω\n(μύωψ, closing the eyes, short-sighted; μύω, ὤψ)\nto be short-sighted: 2Pe.1:9 (R, mg., closing his eyes; see ICC, in l).†",
+   "sha256": "95e995e17bae638ea8bd1daccca2c05a7b91f8f5b93c2eababfdcbc5a43b348c"
+  },
+  {
+   "strongs": "G3468",
+   "language": "greek",
+   "lemma": "μώλωψ",
+   "gloss": "wound",
+   "definition": "μώλωψ, -ωπος, ὁ\n[in LXX for חַבּוּרָה, Exo.21:25, al. ;]\na bruise, wound from a stripe: 1Pe.2:24 (LXX) (Arist., Plut., al.).†",
+   "sha256": "1c7ff905528aa12cc46e355117c7ffe1c694f8fd1f3a4f0ae072c25c02e9757e"
+  },
+  {
+   "strongs": "G3469",
+   "language": "greek",
+   "lemma": "μωμάομαι",
+   "gloss": "to criticize",
+   "definition": "μωμάομαι, -ῶμαι\n(μῶμος),\npoët. and late prose,\n[in LXX: Pro.9:7 (מאוּם), Wis.10:14, Sir.31:18 * ;]\nto find fault with, blame: 2Co.8:20; pass., 2Co.6:3.†",
+   "sha256": "70113ea09a18f6b4d3229e40f6470336a1de9b2c7dbe1c3c60240abdaef64e45"
+  },
+  {
+   "strongs": "G3470",
+   "language": "greek",
+   "lemma": "μῶμος",
+   "gloss": "blemish",
+   "definition": "μῶμος, -ου, ὁ\n[in LXX, of physical blemishes : Lev.21:17 ff., Deu.15:21, Sng.4:7, al. (מאוּם); of mental defect, Sir.20:24, al. ;]\n1. in cl. poets and late prose, blame, disgrace.\n2. In LXX, perb. because of resemblance to a physical blemish (cf. ἄμωμος, 1Pe.1:19, and see Hort., in l); metaphorically, of licentious persons, 2Pe.2:13.†",
+   "sha256": "dc8a32ecbde699c31a9ec3cba80dac208822f4677a477d5d4d639fa19233d0c8"
+  },
+  {
+   "strongs": "G3471",
+   "language": "greek",
+   "lemma": "μωραίνω",
+   "gloss": "be foolish",
+   "definition": "μωραίνω\n(μωρός), [in LXX: Isa.19:11, Jer.10:14 51:17 (בָּעַר ni.), 2Ki.24:10, Isa.44:25 R (שָׂכַל ni., pi.)* ;]\n1. cl., to be foolish, play the fool.\n2. LXX and NT, causal, to make foolish: 1Co.1:20; pass., to become foolish: Rom.1:22; of salt that has lost its flavour, become tasteless: Mat.5:13, Luk.14:34.†",
+   "sha256": "318446d39a9fb849d5aa869c2e61a3abdd6e69a558508d341cc244f3bf829749"
+  },
+  {
+   "strongs": "G3472",
+   "language": "greek",
+   "lemma": "μωρία",
+   "gloss": "foolishness",
+   "definition": "μωρία, -ας, ἡ\n(μωρός), [in LXX: Sir.20:31 * ;]\nfoolishness: 1Co.1:18 1:21 1:23 2:14 3:19.†",
+   "sha256": "924f588d448d926dd07559b657225b76444b64303e0e854fa03ea9f15bd34b2f"
+  },
+  {
+   "strongs": "G3473",
+   "language": "greek",
+   "lemma": "μωρολογία",
+   "gloss": "foolish talk",
+   "definition": "silly talking , (New Testament)\nfrom μωρολόγος (ML)",
+   "sha256": "b5efcfa2d1e2b93ddb569399bc1c338e884f88a98e247e7170862d4fe8ce7be6"
+  },
+  {
+   "strongs": "G3474",
+   "language": "greek",
+   "lemma": "μωρός",
+   "gloss": "foolish",
+   "definition": "μωρός, -ά, -όν\n[in LXX for נָבָל, etc.; frequently in Sir. ;]\n1. prop., of the nerves, dull, sluggish (Hipp., Arist.).\n2. Of the mind, dull, stupid, foolish: Mat.5:22 (see Field, Notes, 3 ff.) Mat.7:26 23:17, 19 (T, WH, txt., R, om.) Mat.25:2-3, 8, 1Co.3:18 4:10; of things, παράδοσις, Mrk.7:13 (T, WH, txt., R, om.) : ζητήσεις, 2Ti.2:23, Tit.3:9; τὸ μ. τ. θεοῦ, 1Co.1:25; τὰ μ. τ. κόσμου, 1Co.1:27.†",
+   "sha256": "721a051032c7c45077e94e2257978211e9f752aa6510e4aa3c0bb3df9d72e3ed"
+  },
+  {
+   "strongs": "G3475",
+   "language": "greek",
+   "lemma": "Μωϋσῆς, Μωσῆς",
+   "gloss": "Moses",
+   "definition": "Μωυσῆς (Μωϋσῆς, T; Μωσῆς, Rec.), -έως, dative - (as LXX: Exo.5:20, al.), and -εῖ, accusative -ῆν (ac LXX) and -έα (Luk.16:29 only) (Heb. מֹשֶׁה),\nMoses: Mat.8:4 17:3-4, al.; νόμος Μωυσέως, Luk.2:22 24:44, Jhn.7:23, Act.13:39 15:5 28:23, 1Co.9:9, Heb.10:28; by meton., of the books of Moses, Luk.16:29 24:27, Act.15:21, 2Co.3:15",
+   "sha256": "a53a63f0cf1887ae4521b8039ffcca9d845f978dd6b06799c9dea78a3f2a9f99"
+  },
+  {
+   "strongs": "G3476",
+   "language": "greek",
+   "lemma": "Ναασσών",
+   "gloss": "Nahshon",
+   "definition": "Ναασσών, ὁ indecl. (Heb. נַחְשׁוֹן),\nNaasson: Mat.1:4, Luk.3:32.†",
+   "sha256": "3fb017e460dc55b6be94afdfa8730ec4ade1c424ac4742c40236f1d66001b935"
+  },
+  {
+   "strongs": "G3477",
+   "language": "greek",
+   "lemma": "Ναγγαί",
+   "gloss": "Naggai",
+   "definition": "Ναγγαί, ὁ\nindecl.,\nNaggai: Luk.3:25.†",
+   "sha256": "da1be7644440a4e0bea8629ae0ff88a38ee8d1c0f0c0ae78d7cf16bbd73e72eb"
+  },
+  {
+   "strongs": "G3478",
+   "language": "greek",
+   "lemma": "Ναζαρέθ, Ναζαρά",
+   "gloss": "Nazareth",
+   "definition": "Ναζαρά\n(Mat.4:13­ L, -άθ­Luk.4:16)\nΝαζαρέθ (Mat.21:11, Act.10:38),\nΝαζαρέτ (so always Rec.; WH, in foll, instances, where -έθ, T), ἡ,\nindecl. (Semitic form uncertain),\nNazareth: Mat.2:23, Mrk.1:9, Luk.1:26 2:4, 39 2:51, Jhn.1:45-46.†",
+   "sha256": "36f4a6f67c25963c7caea7558c70d0c15f0c23eadc2a5b038497c46b187a7a77"
+  },
+  {
+   "strongs": "G3479",
+   "language": "greek",
+   "lemma": "Ναζαρηνός",
+   "gloss": "Nazareth",
+   "definition": "Ναζαρηνός, -οῦ, ὁ\n(on the Semitic form, see Dalman, Gr., 141 n.)\na Nazarene: Mrk.1:24 10:47 14:67 16:6, Luk.4:34 24:19.†",
+   "sha256": "2f97151219b38406bb1f815e57140ebdeb27ba4e0a3f1025a5343354a394a5ab"
+  },
+  {
+   "strongs": "G3480",
+   "language": "greek",
+   "lemma": "Ναζωραῖος",
+   "gloss": "Nazareth",
+   "definition": "Ναζωραῖος, -ου, ὁ\n(= -ρηνός, which see),\na Nazarene: Mat.2:23 (LXX) Mat.26:71, Luk.18:37, Jhn.18:5, 7 19:19, Act.2:22 3:6 4:10 6:14 22:8 24:5 26:9.†",
+   "sha256": "5c5c12b2d8d8de9375ca8aa2e1b3520ae6b7e24bd40cda0beac811c902fafd05"
+  },
+  {
+   "strongs": "G3481",
+   "language": "greek",
+   "lemma": "Ναθάν",
+   "gloss": "Nathan",
+   "definition": "Ναθάμ (Rec. Ναθάν), ὁ, indecl. (Heb. נָתַן),\nNathan: Luk.3:31.†",
+   "sha256": "533cdca9c768ad6e70e755d3e02374be929f189a0058cce5435513d9260b1888"
+  },
+  {
+   "strongs": "G3482",
+   "language": "greek",
+   "lemma": "Ναθαναήλ",
+   "gloss": "Nathanael",
+   "definition": "Ναθαναήλ, ὁ indecl. (Heb. נְתַנְאֵל),\nNathaniel, prob. to be identified with Bartholomew (which see): Jhn.1:45-49 21:2.†",
+   "sha256": "904b71530d239bb5d40b8f843d5ba24d70703dc328e33a942c089464a8eba946"
+  },
+  {
+   "strongs": "G3483",
+   "language": "greek",
+   "lemma": "ναί",
+   "gloss": "yes",
+   "definition": "ναί\nparticle of affirmation,\nyea, verily, even so; in answer to a question: Mat.9:28 13:51 17:25 21:16, Jhn.11:27 21:15-16, Act.5:8 22:27, Rom.3:29; before λέγω ὑμῖν, Mat.11:9, Luk.7:26; repeated for emphasis, ναὶ ναί (opposite to oὒ oὔ): Mat.5:37; ἤτω ὑμῶν τὸ ναὶ ναί, Jas.5:12; ν. καὶ οὔ, 2Co.1:18-19; ἵνα ᾖ . . . τὸ ναὶ ναί, 2Co.1:17; τὸ ν., 2Co.1:20; in assent to an assertion: Mat.15:27, Mrk.7:28, Rev.14:13 16:7; in confirmation of a previous assertion: Mat.11:26, Luk.10:21 11:51 12:5, Php.4:3, Phm 20; in solemn asseveration Rev.1:7 22:20.†",
+   "sha256": "e642792a22405171302747cb34ce53b50da756270843e70a34599f7f0ab7f98f"
+  },
+  {
+   "strongs": "G3484",
+   "language": "greek",
+   "lemma": "Ναΐν",
+   "gloss": "Nain",
+   "definition": "Ναίν (Rec. Ναΐν), ἡ, indecl. (Heb. נָאָה),\nNain, a village of Galilee: Luk.7:11.†",
+   "sha256": "572d2986cde15d0d07ae7b33068b08172cba85816224ba41335911cbfbd74d86"
+  },
+  {
+   "strongs": "G3485",
+   "language": "greek",
+   "lemma": "ναός",
+   "gloss": "temple",
+   "definition": "ναός, -οῦ, ὁ\n(Att.. νεώς; ναίω, to inhabit), [in LXX (νεώς, 2Ma.6:2, al.) chiefly for הֵיכָל ;]\n1. a temple (Hom., Find., al.).\n2. The inmost part of a temple, the shrine (Hat., Xen., al.); in NT,\n(a) generally: pl., Act.17:24; of silver models of a heathen shrine, Act.19:24;\n(b) of the temple building proper, or sanctuary, at Jerusalem, as distinct from τ. ἱερόν (which see), the whole temple enclosure: Mat.23:16-17, 35 27:5, 40, Mrk.14:58 15:29 Jhn.2:19-20, Rev.11:2; (τοῦ) θεοῦ, Mat.26:61 27:51, Mrk.15:38, Luk.1:9, 21-22 23:45, 1Co.3:17, 2Co.6:16, 2Th.2:4, Rev.11:1; of the temple in the Apocal. visions, Rev.3:12 7:15 11:19 14:15, 17 15:5-6, 8 16:1, 17 21:22 a. Metaphorical, of Christians, 1Co.3:16 6:19, 2Co.6:16, Eph.2:21; of Christ's body, Jhn.2:21 (cf. Jhn.2:19); ὁ θεὸς ν. αὐτῆς ἐστιν, Rev.21:22 b.†\nSYN.: ἱερόν",
+   "sha256": "c83a769ea273115b24a9172ab5eef1d3263867e79cf8dcfe8b450314526b7b7f"
+  },
+  {
+   "strongs": "G3486",
+   "language": "greek",
+   "lemma": "Ναούμ",
+   "gloss": "Nahum",
+   "definition": "Ναούμ, ὁ indecl. (Heb. נַחוּם;),\nNahum: Luk.3:25.†",
+   "sha256": "ef743b2bbc4bda61f1f43c7aed4c40fac0f9a1c77aec8c84cb327bd682ed0075"
+  },
+  {
+   "strongs": "G3487",
+   "language": "greek",
+   "lemma": "νάρδος",
+   "gloss": "nard",
+   "definition": "νάρδος, -ου, ἡ\n(Heb. נֵרְדְּ, both from Sanscrit narda, see Boisacq, see word), [in LXX: Sng.1:12 4:13-14 (נֵרְדְּ)* ;]\nnard;\n(a) an Indian plant, the Nardostachys nardus jatamansi, used for the preparation of a fragrant ointment;\n(b) ointment of nard: Mrk.14:3, Jhn.12:3.†",
+   "sha256": "1c5e1830361fd2161cd5acabc2e4c0f6a5c129ed3f1ac49a5b9d1aa5653766c6"
+  },
+  {
+   "strongs": "G3488",
+   "language": "greek",
+   "lemma": "Νάρκισσος",
+   "gloss": "Narcissus",
+   "definition": "the narcissus , (Homeric Hymns), etc.\nFrom ναρκάω, because of its narcotic properties. (ML)",
+   "sha256": "50e6fd436d256497243b2c91d6760875544c12d0f966d64f967bb20762807153"
+  },
+  {
+   "strongs": "G3489",
+   "language": "greek",
+   "lemma": "ναυαγέω",
+   "gloss": "be shipwrecked",
+   "definition": "ναυαγέω, -ῶ\n(ναῦς, + ἄγνυμι, to break)\nto suffer shipwreck: 2Co.11:25; metaphorically, before περὶ τ. πίστιν, 1Ti.1:19.†",
+   "sha256": "efd2437f9244e2e4efbc16844fe1fff2d30e8b590e1f7ce80ad9a66387cc751b"
+  },
+  {
+   "strongs": "G3490",
+   "language": "greek",
+   "lemma": "ναύκληρος",
+   "gloss": "captain",
+   "definition": "ναύ-κληρος, -ου, ὁ\n(ναῦς, κλῆρος),\na shipowner, shipmaster: Act.27:11.†",
+   "sha256": "d0551270c8ebf2eb23a2d03a1dd11897ecb73ca465aa55599af552b258f463af"
+  },
+  {
+   "strongs": "G3491",
+   "language": "greek",
+   "lemma": "ναῦς",
+   "gloss": "ship",
+   "definition": "ναῦς, νεώς accusative ναῦν, ἡ,\n[in LXX for עָנִי, אֲנִיָּה ;]\na ship: Act.27:41 (elsewhere in NT always τ. πλοῖον; see M, Pro.25:1-28 f.; Bl., Gosp., 186 f.).†",
+   "sha256": "22f93b6d7186a236fc62d6127a8ce744439defdf142f08c1198699420051fac5"
+  },
+  {
+   "strongs": "G3492",
+   "language": "greek",
+   "lemma": "ναύτης",
+   "gloss": "sailor",
+   "definition": "ναύτης, -ου, ὁ\n(ναῦς), [in Aq.: Eze.27:9; Sm.: Eze.27:29 * ;]\na seaman, sailor: Act.27:27, 30, Rev.18:17.†",
+   "sha256": "3067c0c19738582ebdf611dfe1665397b08b22045cd96ab581d12a53cf258ee2"
+  },
+  {
+   "strongs": "G3493",
+   "language": "greek",
+   "lemma": "Ναχώρ",
+   "gloss": "Nahor",
+   "definition": "Ναχώρ, ὁ indecl. (Heb. נָחוֹר),\nNahor: Luk.3:34.†",
+   "sha256": "2fffc62adbbb762e80e05a8afe63a870518b7a16b3453740c72d14c352a2fc41"
+  },
+  {
+   "strongs": "G3494",
+   "language": "greek",
+   "lemma": "νεανίας",
+   "gloss": "young man",
+   "definition": "νεανίας, -ου, ὁ\n(νεάν = νέος) [in LXX for נַעַר, בָּחוּר ;]\na young man: Act.7:58 20:9 23:17-18.†",
+   "sha256": "8c27b8025d408b18e6f683bccc9c2d14f9c0bc24157a8e30d1a77cd5f19e2d90"
+  },
+  {
+   "strongs": "G3495",
+   "language": "greek",
+   "lemma": "νεανίσκος",
+   "gloss": "young man",
+   "definition": "νεανίσκος, -ου, ὁ\n(dimin. of νεανίας) [in LXX chiefly for נַעַר, also for בָּחוּר, etc. ;]\na young man, youth: Mat.19:20, 22, Mrk.14:51 16:5, Luk.7:14, Act.2:17\" (LXX) Act.23:18, 22, 1Jn.2:13-14; of an attendant (cf. Gen.14:24, al.) : Act.5:10.†",
+   "sha256": "bd78a76e42c345b5de2dc92bd61554622dc8d04528450ec6e228780fe0f3e3ab"
+  },
+  {
+   "strongs": "G3496",
+   "language": "greek",
+   "lemma": "Νεάπολις",
+   "gloss": "Neapolis",
+   "definition": "Νεάπολις, -εως, ἡ\nRec. for Νέα Πόλις (WH), the more frequently form (LS, see word),\nNeapolis, a maritime city of Macedonia: Act.16:11.†",
+   "sha256": "2826367c6617432813344efb3ea33ede715b5dfb06363e0179795f78d20f76f2"
+  },
+  {
+   "strongs": "G3497",
+   "language": "greek",
+   "lemma": "Νεεμάν, Ναιμάν",
+   "gloss": "Naaman",
+   "definition": "Ναιμάν (Rec. Νεεμάν), ὁ, indecl. (Heb. נַעֲמָן),\nNaaman: Luk.4:27.†",
+   "sha256": "cbc032e06936ddf70638442935c878149687330ef80c1cf8d18a8523fc038332"
+  },
+  {
+   "strongs": "G3498",
+   "language": "greek",
+   "lemma": "νεκρός",
+   "gloss": "dead",
+   "definition": "νεκρός, -α, -ον,\n[in LXX chiefly for מֵת ;]\ndead,\nI. as adj.,\n1. prop.: Act.5:10 20:9, Jas.2:26, Rev.1:18, al.; ὡσεὶ ν., Mat.28:4, Mrk.9:26, Rev.1:17; of that which is subject to death, Rom.8:10.\n2. Metaphorical,\n(a) of persons: Luk.15:24, 32; of those immersed in worldly cares, Mat.8:22, Luk.9:60; of spiritual death, Jhn.5:25, Rom.6:13, Eph.5:14, Rev.3:1; τ. παραπτώμασιν, Eph.2:1, 5 Col.2:13; of the opposite condition, ν. τῇ ἁμαρτίᾳ, Rom.6:11;\n(b) of things regarded as inoperative, devoid of power: ἁμαρτία, Rom.7:8; πίστις, Jas.2:17, 26; ἔργα, Heb.6:1 9:14.\nII. As subst., νεκρός, ὁ (Hom., al.), chiefly in pl. (οἱ) ν., the dead: Mat.11:5, Mrk.12:26, Luk.20:37, 1Co.15:15, al.; ἀνάστασις (τ.) νεκρῶν, Mat.22:31, Act.17:32, al.; ν. . . . ζῶντες, Mat.22:32, Mrk.12:27, Act.10:42, al.; ἀπὸ νεκρῶν, Luk.16:30; ἐκ ν., Mrk.6:14, Luk.24:46, Jhn.12:1, Act.13:34, Rom.10:7, al.; πρωτότοκος ἐκ τῶν ν., Col.1:18; ζωὴ ἐκ ν., Rom.11:15; constr. praegn., ἐκ ν. ζῶντες, Rom.6:13.",
+   "sha256": "0b2000fc4105bcf683266fa4de24521e8b2a77b981df8bf0963d0b4ccf4cb174"
+  },
+  {
+   "strongs": "G3499",
+   "language": "greek",
+   "lemma": "νεκρόω",
+   "gloss": "to put to death",
+   "definition": "νεκρόω, ῶ\n(νεκρός),\nto make dead, put to death; pass., to be dead: hyperbolically, of impotent age, Heb.11:12; σῶμα, Rom.4:19. Trop., of carnal impulses, τὰ μέλη, Col.3:5.†",
+   "sha256": "aa42bc4f4d8e211cda54bd463a919cc5bc0e3b7ad8f9ae0d4e4996eb2c9a30a2"
+  },
+  {
+   "strongs": "G3500",
+   "language": "greek",
+   "lemma": "νέκρωσις",
+   "gloss": "death",
+   "definition": "νέκρωσις, -εως, ἡ\n(νεκρόω),\n1. a putting to death.\n2. a state of death, death: Rom.4:19, 2Co.4:10 (see Deiss., LAE, 94).†",
+   "sha256": "2f88772d9cff54e6ffe1401bd861683a4616c7260e4b360f4fb87775c1b991a9"
+  },
+  {
+   "strongs": "G3501",
+   "language": "greek",
+   "lemma": "νέος",
+   "gloss": "new",
+   "definition": "νέος, -α, -ον\n[in LXX for נַעַר (Gen.37:2, Exo_33:11, al.), חָדָשׁ (Lev.23:16, Num.28:26, al.), etc.; compar. -ώτερος for קָטָן, צָעִיר, etc. ;]\n1. young, youthful: Tit.2:4.\n2. new (prop., in respect of time; see: καινός): οἶνος (cf. οἶ. καινός, Mat.26:20), Mat.9:17, Mrk.2:22, Luk.5:37-39; φύραμα (figuratively), 1Co.5:7; διαθήκη (cf. καινὴ δ., Heb.9:15), Heb.12:24; metaphorically, ἄνθρωπος (cf. καινὸς ἀ, Eph.2:15), Col.3:10.\n3. Compar., -ώτερος, -α, -ον, younger: Luk.15:12-13 22:26, Jhn.21:18; pl., οἱ ν., Act.5:6 (Rackham, in l), 1Ti.5:11, Tit.2:6; opposite to πρεσβύτεροι, 1Ti.5:1, 1Pe.5:5; αἱ ν., 1Ti.5:2 5:14.\n4. Νέα Πόλις, Neapolis: Act.16:11 (Rec., Νεάπολις, which see)\nνεώτερος, see: νέος\nSYN.: καινός, which see",
+   "sha256": "d68644713feba940828257e907ad418f0ea6ae884a6ee539aa69b97a3b731919"
+  },
+  {
+   "strongs": "G3502",
+   "language": "greek",
+   "lemma": "νεοσσός",
+   "gloss": "nestling",
+   "definition": "νοσσός (νεοσσός, Rec., as in cl. Att.. -ττός; Phryn. rejects the dissyl. form), -οῦ, ὁ\n(νόος), [in LXX chiefly for בֵּן ;]\na young bird: Luk.2:24 (LXX).†",
+   "sha256": "e13386f1a2632ab8019106fae16db6ac087d5522641cc1ee5a2b5291688d4a76"
+  },
+  {
+   "strongs": "G3503",
+   "language": "greek",
+   "lemma": "νεότης",
+   "gloss": "youth",
+   "definition": "νεότης, -ητος, ἡ\n(νέος), [in LXX chiefly for נָעוּר ;]\nyouth: Mrk.10:20, Luk.18:21, Act.26:4, 1Ti.4:12.†",
+   "sha256": "8860ae553d54bec9df01c096d713f168e9cf9bf9b185d428623690565ad61dfd"
+  },
+  {
+   "strongs": "G3504",
+   "language": "greek",
+   "lemma": "νεόφυτος",
+   "gloss": "new convert",
+   "definition": "νεό-φυτος, -ον\n(νέος, φύω) [in LXX: Job.14:9, Psa.144:12, Isa.5:7 (נֶטַע), Psa.128:3 (שְׁתִל)* ;]\nnewly planted (LXX). Metaphorical, as subst., ὁ ν., a new convert, neophyte, novice: 1Ti.3:6†",
+   "sha256": "5da295ec94358823963bf19841d34c7cba6df0254c626c2b6a6056ca71352e00"
+  },
+  {
+   "strongs": "G3505",
+   "language": "greek",
+   "lemma": "Νέρων",
+   "gloss": "Nero",
+   "definition": "Νέρων, -ωνος, ὁ\nNero: 2Ti subscr. (Rec.).†",
+   "sha256": "40535994ba783967ac9c3c2e3ee1e95579b26185cd1cf841c4dd3e748525054a"
+  },
+  {
+   "strongs": "G3506",
+   "language": "greek",
+   "lemma": "νεύω",
+   "gloss": "to motion",
+   "definition": "νεύω\n[in LXX: Pro.4:5 21:1 * ;]\nto nod or beckon, as a sign : with dative of person(s) and inf., Jhn.13:24, Act.24:10 (cf. δια-, ἐκ-, ἐν-, ἐπι-, κατα-νεύω).†",
+   "sha256": "78497daab996ad0f50dd2f9370208febca048d6c525529beb40df95f98251ecd"
+  },
+  {
+   "strongs": "G3507",
+   "language": "greek",
+   "lemma": "νεφέλη",
+   "gloss": "cloud",
+   "definition": "νεφέλη, -ης, ἡ\n(νέφος), [in LXX chiefly for עָנָן, also for עָב, etc. ;]\na cloud (single and specific as opposite to νεφος, a great indefinite mass of vapour): Mat.17:5 24:30 26:64, Mrk.9:7 13:26 14:62, Luk.9:34-35 12:54 21:37, Act.1:9, 1Th.4:17, Ju 12, Rev.1:7 10:1 11:12 14:14-16; of the pillar of cloud in the wilderness (Exo.14:19-20, Psa.105:39, al.): 1Co.10:1-2.†",
+   "sha256": "371fee692e8e5959ff67b29d97d66b6f18d571fbec5bfa55745b975eeeb1d0b9"
+  },
+  {
+   "strongs": "G3508",
+   "language": "greek",
+   "lemma": "Νεφθαλείμ",
+   "gloss": "Naphtali",
+   "definition": "Νεφθαλείμ\n(-λίμ, WH in Re, l.with), ὁ\nindecl. (Heb. נַפְתָּלִי)\nNaphtali: Mat.4:13, 15\" (LXX) Rev.7:6.†",
+   "sha256": "cf95223d9fc95292b36622d9b62284e666418fcb2e5f0d80207e013a44dad02f"
+  },
+  {
+   "strongs": "G3509",
+   "language": "greek",
+   "lemma": "νέφος",
+   "gloss": "cloud",
+   "definition": "νέφος, -ους, τό\n[in LXX for עָב, שַׁחַק, עָנַן ;]\na mass of clouds, a cloud (cf. νεφέλη); metaphorically as in Hom., Hdt., al.), of a dense throng: Heb.12:1.†",
+   "sha256": "d92e3d86d54b12e076ba5cc84e3083564bb67c1b2f80f1f7bda868e18818ba27"
+  },
+  {
+   "strongs": "G3510",
+   "language": "greek",
+   "lemma": "νεφρός",
+   "gloss": "mind",
+   "definition": "νεφρός, -οῦ, ὁ\n[in LXX for כִּלְיָה, Exo.29:13, al.; metaphorically, Psa.7:9 16:7 26:2, Wis.1:6, al. ;]\na kidney; pl., the kidneys, reins; metaphorically, of the will and affections: ν. καί καρδίαι (thoughts), Rev.2:23.†",
+   "sha256": "80e6e7ee2a044a76721c37b6ce21befe9cd4f227d67082e14ae16c0447a9445c"
+  },
+  {
+   "strongs": "G3511",
+   "language": "greek",
+   "lemma": "νεωκόρος",
+   "gloss": "temple guard",
+   "definition": "νεω-κόρος, -ου\na temple-keeper; as honorary title given to a city (see DB, i, 722 b) : Act.19:35.†",
+   "sha256": "3a4a26ce0dafdadd741beaf6d602accbb0bc89a9cc6ca31160a90b3f00676fe3"
+  },
+  {
+   "strongs": "G3512",
+   "language": "greek",
+   "lemma": "νεωτερικός",
+   "gloss": "youthful",
+   "definition": "νεωτερικός, -ή, -όν\n(νεώτερος), [in LXX: 3Ma.4:8 * ;]\n= νεανικός,\nyouthful, esp. of qualities: ἐπιθυμίαι, 2Ti.2:22 (Polyb.).†",
+   "sha256": "df67dd19ba1a0adeea560d92a37a920fbadb4a1794f66dfa7ff071b78f38b3a0"
+  },
+  {
+   "strongs": "G3513",
+   "language": "greek",
+   "lemma": "νή",
+   "gloss": "as surely as",
+   "definition": "νή\nparticle of affirmation employed in oaths, [in LXX: see τ. ὑγίειαν, Gen.42:15-16 (חַי) * ;]\nby: with accusative, 1Co.15:31.†",
+   "sha256": "cce9eb6a70e3c02e9cf042f203548fbb907ed697e8121aa8810fcdfa106ff3b8"
+  },
+  {
+   "strongs": "G3514",
+   "language": "greek",
+   "lemma": "νήθω",
+   "gloss": "to spin",
+   "definition": "νήθω\n[in LXX for טָוָה, שָׁזַר hoph., Exo.26:31 35:25, al. ;]\nto spin: Mat.6:28, Luk.12:27.†",
+   "sha256": "1819e278a873024c200afa9fd87f2593e2201349c4bc8ce242d6d4a95efb55e2"
+  },
+  {
+   "strongs": "G3515",
+   "language": "greek",
+   "lemma": "νηπιάζω",
+   "gloss": "be childlike",
+   "definition": "νηπιάζω\n(νήπιος), (Hippocr., = νηπιαχεύω, Hom.)\nto be a babe: 1Co.14:20.†",
+   "sha256": "dac55c6db33d947bc2c2214122c524365ca81a2084e3e2b62a5228a0f4d9062e"
+  },
+  {
+   "strongs": "G3516",
+   "language": "greek",
+   "lemma": "νήπιος",
+   "gloss": "child",
+   "definition": "νήπιος, -α, -ον\n[in LXX chiefly for עוֹלֵל, also for פְּתִי, etc. ;]\ninfant; of children and minors: Mat.21:16 (LXX), 1Co.13:11, Gal.4:1 (see Lft., in l). Metaphorical, childish, unskilled, simple (Psa.19:8, Pro.1:32 al.): Mat.11:25, Luk.10:21, Rom.2:20, Gal.4:3, Eph.4:14, 1Th.2:7 (WH, fox ἤπιοι); opposite to τέλειος, Heb.5:13; ν. ἐν Χριστῷ, 1Co.3:1.†",
+   "sha256": "c5a9c54dc914c4136e1cf4e41d35ffcdc6efadc9999fe3a78adb3199a5489d22"
+  },
+  {
+   "strongs": "G3517",
+   "language": "greek",
+   "lemma": "Νηρεύς",
+   "gloss": "Nereus",
+   "definition": "Nereus , a sea-god, son of Πόντος (the sea) , father of the Nereids, (Hesiod) (ML)",
+   "sha256": "198fc45ed116127fa157fd54d9284b2c6efd5face44e42407b57c46ee38525a9"
+  },
+  {
+   "strongs": "G3518",
+   "language": "greek",
+   "lemma": "Νηρί",
+   "gloss": "Neri",
+   "definition": "Νηρεί (Rec. -ρί), ὁ, indecl. (Heb. נֵרִיָּה),\nNeri: Luk.3:27.†",
+   "sha256": "b7cfd86bf0b890aab9d9c1d140bd92cee864c3e8e5a34bf11575d9c2b7ad0793"
+  },
+  {
+   "strongs": "G3519",
+   "language": "greek",
+   "lemma": "νησίον",
+   "gloss": "small island",
+   "definition": "νησίον, -ου, τό\n(dimin. of νῆσος), = νησίς (Hdt., Thuc., al.)\na small island: Act.27:16.†",
+   "sha256": "fd22f3fbec9c4962a97e80f93b87fb6f0c3e57914405086bf76c61efda08a5ce"
+  },
+  {
+   "strongs": "G3520",
+   "language": "greek",
+   "lemma": "νῆσος",
+   "gloss": "island",
+   "definition": "νῆσος, -ου, ὁ\n[in LXX for אִי ;]\nan island: Act.13:6 27:26 28:1, 7 28:9, 11 Rev.1:9 6:14 16:20.†",
+   "sha256": "317a6844a4721b12c36dfb52aea694c74d5d1c56c5d60ff6e0c909c5a9f2b3d4"
+  },
+  {
+   "strongs": "G3521",
+   "language": "greek",
+   "lemma": "νηστεία",
+   "gloss": "fasting",
+   "definition": "νηστεία, -ας, ἡ\n(νηστεύω), [in LXX for צוֹם ;]\nfasting, a fast;\n(a) of voluntary abstinence from food: Mat.17:21 (WH, R, txt., om.), Mrk.9:29 (WH, txt., R, txt., om.), Luk.2:37, Act.14:23; of the Day of Atonement, Act.27:9;\n(b) of involuntary abstinence: 2Co.6:5 11:27.†\nSYN.: ἀσιτία, q.v",
+   "sha256": "526c05087374f1d031c3bf59feebdd6cf73d79999500dd354136284d3df520a6"
+  },
+  {
+   "strongs": "G3522",
+   "language": "greek",
+   "lemma": "νηστεύω",
+   "gloss": "to fast",
+   "definition": "νηστεύω\n(νῆστις), [in LXX for צוּם ;]\nto fast (Arist., Aristoph., al.): Mat.4:2 6:16-18 9:14-15 Mrk.2:18-20, Luk.5:33-35 18:12, Act.13:2-3.†",
+   "sha256": "5b9adfab8ecd69dafdfa2a818779c337535dc120d81beeb9a072393f39224be5"
+  },
+  {
+   "strongs": "G3523",
+   "language": "greek",
+   "lemma": "νῆστις",
+   "gloss": "fasting",
+   "definition": "νῆστις, -ιος, ὁ, ἡ\n(νη-, neg. prefix, + ἐσθίω),\nin cl., chiefly poët.,\n[in LXX: Dan LXX 6:18 (19) (טְוָת)* ;]\nnot eating, fasting: Mat.15:32, Mrk.8:3.†",
+   "sha256": "88ebc5f00520cd11c7e94c290ba54acd56cd714defe289d628aa69978091f519"
+  },
+  {
+   "strongs": "G3524",
+   "language": "greek",
+   "lemma": "νηφαλέος",
+   "gloss": "sober",
+   "definition": "νηφάλιος (-λεος, Rec., in 1Ti, ll. with), -ον (in cl., -α, -ον),\n(νήφω),\n1. in cl., of drink, not mixed with wine.\n2. In later writers (Plut., al.), of persons, sober, temperate: 1Ti.3:2 3:11, Tit.2:2.†",
+   "sha256": "689fdba32a5d5a64ffb18ae9f748f8c6616fe19537245e21056cb1c91522c5ab"
+  },
+  {
+   "strongs": "G3525",
+   "language": "greek",
+   "lemma": "νήφω",
+   "gloss": "be sober",
+   "definition": "νήφω\nto be sober, abstain from wine; metaphorically, of moral alertness, to be sober, calm, circumspect: 1Th.5:6 5:8, 2Ti.4:5 (see Ellic., in l), 1Pe.1:13 4:7 5:8 (cf. ἐκ-, ἐκ-νήφω, and see MM, xvii).†\nSYN.: ἀγρυπνέω, γρηγορέω",
+   "sha256": "e3cf9396dd8e28a0a998d822e12d2b483599e479923ba4ba698812d7651f4f7d"
+  },
+  {
+   "strongs": "G3526",
+   "language": "greek",
+   "lemma": "Νίγερ",
+   "gloss": "Niger",
+   "definition": "Νίγερ, ὁ (Lat. niger)\nNiger: Act.13:1.†",
+   "sha256": "811c83f8fcddfff9eca5287d7a00c758724be6e20484e67d0ff926f63cf33af3"
+  },
+  {
+   "strongs": "G3527",
+   "language": "greek",
+   "lemma": "Νικάνωρ",
+   "gloss": "Nicanor",
+   "definition": "Νικάνωρ, -ορος, ὁ\nNicanor: Act.6:5.†",
+   "sha256": "423cc1f6e4b25c71b4b5fadd48203184eb764855f780ddc66e6a61ec9cf17dda"
+  },
+  {
+   "strongs": "G3528",
+   "language": "greek",
+   "lemma": "νικάω",
+   "gloss": "to conquer",
+   "definition": "νικἀω, -ῶ\n(νίκη), [in LXX: Psa.51:4 (זָכָה), Pro.6:25 frequently (חָמַד); in 4Mac ;]\nto conquer, prevail: absol., of Christ, Rev.3:21 6:2; C. inf., Rev.5:5; of Christians, Rev.2:7, 11 2:17, 26 3:5, 12 3:21 21:7; before ἐκ (RV, come victorious from), Rev.15:2; as law-term (cl.), Rom.3:4 (LXX); with accusative of person(s), Luk.11:22, Rev.11:7 13:7 ([WH], R, mg., om.); of Christ, Jhn.16:33 (τ. κόσμον), Rev.17:14; of Christians, 1Jn.4:4; τ. πονηρόν, 1Jn.2:13-14; αὐτόν (ref. to ὁ κατήγωρ, 1Jn.2:10), Rev.12:11; with accusative of thing(s), τὸν κόσμον, Jhn.16:33, 1Jn.5:4-5; τὸ κακόν, Rom.12:21; pass., μὴ νικῶ ὑπὸ τ. κακοῦ, ib. (cf. ὑπερ-νικάω).†",
+   "sha256": "8a2d1cb8a4389d88b63799ed93897f6f0d3e7d3f6103378d229aa0845ee054b3"
+  },
+  {
+   "strongs": "G3529",
+   "language": "greek",
+   "lemma": "νίκη",
+   "gloss": "victory",
+   "definition": "νίκη, -ης, ἡ\n[in LXX: 1Ch.29:11 (נֶצַח), frequently in 1-4 Mac ;]\nvictory: 1Jn.5:4.†",
+   "sha256": "0a7f59adbf4f016d98bfda208d4205fc5150108f4e389fd6794ceedb89654cd0"
+  },
+  {
+   "strongs": "G3530",
+   "language": "greek",
+   "lemma": "Νικόδημος",
+   "gloss": "Nicodemus",
+   "definition": "Νικόδημος, -ου, ὁ\nNicodemus: Jhn.3:1, 4 3:9 7:50 19:39.†",
+   "sha256": "d36b28f69ace514798655f70942019233f53a22d5e22e04af1ba6ca7144fcd6b"
+  },
+  {
+   "strongs": "G3531",
+   "language": "greek",
+   "lemma": "Νικολαΐτης",
+   "gloss": "Nicolaitan",
+   "definition": "Νικολαΐτης, -αυ, ὁ\na Nicolaitan: pl., Rev.2:6, 15.†",
+   "sha256": "9269ae6885e6abe92519822f2bd7b79c2b6f536b8c0b6ab960756049a4bba747"
+  },
+  {
+   "strongs": "G3532",
+   "language": "greek",
+   "lemma": "Νικόλαος",
+   "gloss": "Nicolaus",
+   "definition": "Νικόλαος, -αυ, ὁ\nNicolaus: Act.6:5.†",
+   "sha256": "92641ab801cede027e1a720e3e626f5cc01bdfb8824902c0555c5c9eb2a14318"
+  },
+  {
+   "strongs": "G3533",
+   "language": "greek",
+   "lemma": "Νικόπολις",
+   "gloss": "Nicopolis",
+   "definition": "Νικόπολις, -εως, ἡ\nNicopolis, prob. the city of that name in Epirus (CGT, in l): Tit.3:12†",
+   "sha256": "0d3b3375a7190bce3deba999bea0adfc8ae6f0cc42f9a7bf13433bc005042b1f"
+  },
+  {
+   "strongs": "G3534",
+   "language": "greek",
+   "lemma": "νῖκος",
+   "gloss": "victory",
+   "definition": "νῖκος, -ους, τό late form of νίκη,\n[in LXX: La 3:18 (נֶצַח), I Est.3:9, 2Ma.10:38, 4Ma.17:12; εἰς ν. (instead of εἰς τέλος, Job.14:20), 2Ki.2:26, Job.36:7, Amo.1:11 8:7, Jer.3:5, La 5:20 (נֶצַח, as נ֝ in Syr., = victory)* ;]\nvictory: Mat.12:20 (Isa.42:3, LXX ἀλήθεια), 1Co.15:54 (Isa.25:8, Aq., Th.), 1Co.15:55 (Hos.13:14, LXX δίκη), 1Co.15:57.†",
+   "sha256": "5f3c60234c67e6dd8cfa4ef3eb1b2c2bfcf5c61cf96bfecb20b3f25cbd3814a0"
+  },
+  {
+   "strongs": "G3535",
+   "language": "greek",
+   "lemma": "Νινευΐ",
+   "gloss": "Nineveh",
+   "definition": "Νινευΐ, η (Heb. נִינְוֵה),\nNineveh: Luk.11:32, Rec.†",
+   "sha256": "37124778634ea6ed85d78e3aba84c626fbf255d9567c0e77aae0e214cf71abb1"
+  },
+  {
+   "strongs": "G3536",
+   "language": "greek",
+   "lemma": "Νινευΐτης",
+   "gloss": "Ninevite",
+   "definition": "Νινευείτης (Rec. -ενίτης, L, -ΐτης), -ου, ὁ\na Ninevite: Mat.12:41, Luk.11:30, 32.†",
+   "sha256": "0f6c3ebebfb2b3c080e8dc584e07411e4dde688220777d4077ef4f1860994675"
+  },
+  {
+   "strongs": "G3537",
+   "language": "greek",
+   "lemma": "νιπτήρ",
+   "gloss": "wash basin",
+   "definition": "νιπτήρ, -ῆρος, ὁ\n(νίπτω)\na basin: Jhn.13:5.†",
+   "sha256": "ebde8d5e5f6397592203d59938b18b7a8a59fcb372fa17b2121e3dae91ad0bfa"
+  },
+  {
+   "strongs": "G3538",
+   "language": "greek",
+   "lemma": "νίπτω",
+   "gloss": "to wash",
+   "definition": "νίπτω late form of νίζω,\n[in LXX chiefly for רָחַץ ;]\nto wash, usually of a part of the body: with accusative of person(s), Jhn.13:8; τ. πόδας, Jhn.13:5-6, 8 13:12, 14, 1Ti.5:10; mid., reflexive,\nto wash oneself: Jhn.9:7, 11 9:15; τ. χεῖρας, Mat.15:2, Mrk.7:3; τ. πόδας, Jhn.13:10; τ. πρόσωπον, Mat.6:17 (in cl. Att.. prose, used only in compounds; cf. ἀπο-νίπτω).†\nνίζω, see: νίπτω\nSYN.: λούω (which see), πλύνω",
+   "sha256": "1eb8c96955e1a5908970e1342eae2723df610ddc35b3e87136a43ef5e2d19d36"
+  },
+  {
+   "strongs": "G3539",
+   "language": "greek",
+   "lemma": "νοέω",
+   "gloss": "to understand",
+   "definition": "νοιεω νοέω, -ῶ\n(νοῦς), [in LXX chiefly for בִּין, also for שָׂכַל hi., etc ;]\n1. to perceive with the mind, understand (for the phrase νοῶν κ. φρονῶν, in wills, see MM, xvii): absol., Mat.16:9, Mrk.8:17; with accusative, Eph.3:4, 1Ti.1:7; with dative instr., τ. καρδίᾳ, Jhn.12:40; pass., Rom.1:20; before ὅτι, Mat.15:17 16:11, Mrk.7:18; with accusative and inf., Heb.11:8.\n2. to think, consider: absol., Mat.24:15, Mrk.13:14, Eph.3:20; with accusative of thing(s), 2Ti.2:7\n(cf. -εὐ, κατα-, μετα-, προ-, ὑπο-νοέω).†",
+   "sha256": "2174873b6b59e9f18d90b73d696477d02df39375808a15cc936ab07afcadc659"
+  },
+  {
+   "strongs": "G3540",
+   "language": "greek",
+   "lemma": "νόημα",
+   "gloss": "mind/thought",
+   "definition": "νόημα, -τος, τό\n(νοέω) [in LXX: Sir.21:11, Bar.2:8, 3Ma.5:30 * ;]\na thought, purpose, design: 2Co.2:11 10:5 11:3, Php.4:7. Meton., of the mind, 2Co.3:14 4:4.†",
+   "sha256": "0e6c000ce039a5d36f9dc60aa4db1ecf964d503da22974b5af1d49843f789327"
+  },
+  {
+   "strongs": "G3541",
+   "language": "greek",
+   "lemma": "νόθος",
+   "gloss": "illegitimate",
+   "definition": "νόθος, -η, -ον\n[in LXX: Wis.4:3 * ;]\na bastard, base born, i.e. born of a slave or concubine: Heb.12:8.†",
+   "sha256": "8791141240cfc9e945d9d2697fbbe1fd3c7aeae25f3423d61ef9efaf61cbf0bc"
+  },
+  {
+   "strongs": "G3542",
+   "language": "greek",
+   "lemma": "νομή",
+   "gloss": "pasture",
+   "definition": "νομή, -ῆς, ἡ\n(νέμω, to pasture), [in LXX chiefly for מִרְעֶה, also for נָוֶה, etc. ;]\n1. a pasture, pasturage: figuratively, Jhn.10:9\n2. a grazing, feeding; metaphorically, of a spreading sore, 2Ti.2:17 (Polyb.).†",
+   "sha256": "0cec67c0c9aaf487667bdbbb1f6f3901b3deb166f9f42d0abaa69ca2972cbc1a"
+  },
+  {
+   "strongs": "G3543",
+   "language": "greek",
+   "lemma": "νομίζω",
+   "gloss": "to think",
+   "definition": "νομίζω\n(νόμος), [in LXX: Wis.13:2 17:3, Sir.29:4, 1-28; 2Ma.4:1-50, 4Ma.8:1-29 * ;]\n1. to practise, hold by custom: Act.16:13 (Rec., but see infr.).\n2. to deem, consider, suppose: Mat.5:17 10:34 20:10, Luk.2:44 3:23, Act.7:25 8:20 14:19 16:13, 27 17:29 21:29, 1Co.7:26 7:36, 1Ti.6:5.†\nSYN.: ἡγέομαι, q.v",
+   "sha256": "94893e5bdb102d70fbac42452b8eed78950f8a989263d7441bacc230df423b0d"
+  },
+  {
+   "strongs": "G3544",
+   "language": "greek",
+   "lemma": "νομικός",
+   "gloss": "lawyer",
+   "definition": "νομικός, -ή, -όν\n(νόμος), [in LXX: 4Ma.5:4 * ;]\n1. relating to law: μάχαι, Tit.3:9.\n2. learned in the law; as subst., ὁ ν. (EV, lawyer): Mat.22:35, Luk.10:25, Tit.3:13; pl., Luk.7:30 11:45-46, 52 14:3 (cf. MM, xvii).†\nSYN.: γραμματεύς, q.v",
+   "sha256": "01ccb96a4cf62c57e85a2af8e93eb4c126fa2f13322647caa29a42e3b725c327"
+  },
+  {
+   "strongs": "G3545",
+   "language": "greek",
+   "lemma": "νομίμως",
+   "gloss": "lawfully",
+   "definition": "νομίμως\nadv. (νόμιμος, conformable to law), [in LXX: 4Ma.6:18 * ;]\nrightly, lawfully: 1Ti.1:8, 2Ti.2:5.†",
+   "sha256": "d12e54468cea3babb54ebc45474e671fff9cb2872e8ddf660e1095f75845b22a"
+  },
+  {
+   "strongs": "G3546",
+   "language": "greek",
+   "lemma": "νόμισμα",
+   "gloss": "coin",
+   "definition": "νόμισμα, -τος, τό\n(νομίζω), [in LXX: Est.8:36 (דָּת), Neh.7:71 R (דַּרְכְּמוֹן), 1Ma.15:6 * ;]\n1. that which is established by usage, a custom.\n2. The current coin of a state: Mat.22:19.†",
+   "sha256": "5d79fe5ee2b859fb1289fa8d1df45569a34c8687ebed75c63e0df9ac357d0191"
+  },
+  {
+   "strongs": "G3547",
+   "language": "greek",
+   "lemma": "νομοδιδάσκαλος",
+   "gloss": "teacher of the law",
+   "definition": "νομο-διδάσκαλος, -ου, ὁ\na teacher of the law: Luk.5:17, Act.5:34, 1Ti.1:7 (NT and eccl. only; cf. νομοδείκτης, -διδάκτης, Plut.).†\nSYN.: γραμματεύς, q.v",
+   "sha256": "d2ca999d3de20950db3c7888768d899669c766ffebab94c78a37d8dfd02db1de"
+  },
+  {
+   "strongs": "G3548",
+   "language": "greek",
+   "lemma": "νομοθεσία",
+   "gloss": "law",
+   "definition": "νομοθεσία, -ας, ἡ\n(νόμος, τίθημι), [in LXX: 2Ma.6:23, 4Ma.5:35 4Mac 17:16 * ;]\nlegislation, lawgiving: Rom.9:4.†",
+   "sha256": "cb3f09a29a582052689c95f4b40f696511be0ca25a07d3961b9009420a65c377"
+  },
+  {
+   "strongs": "G3549",
+   "language": "greek",
+   "lemma": "νομοθετέω",
+   "gloss": "to give laws",
+   "definition": "νομοθετέω, -ῶ\n[in LXX for יָרָה hi. ;]\n1. intrans., to make laws; pass., to be furnished with laws: Heb.7:11.\n2. Trans., to ordain by law, enact: pass., Heb.8:6.†",
+   "sha256": "d3def328c34bc779ce8ca4b54f1eed89509729ae2cc06b73b97f6ebfffe000ab"
+  },
+  {
+   "strongs": "G3550",
+   "language": "greek",
+   "lemma": "νομοθέτης",
+   "gloss": "lawgiver",
+   "definition": "νομο-θέτης, -ου, ὁ\n(νόμος, τίθημι), [in LXX: Psa.9:20 * ;]\na law­giver: Jas.4:12.†",
+   "sha256": "3e97349f92e6f8b6c8127fdc95ce5dde044ce70e69b47da030533b60c9310eff"
+  },
+  {
+   "strongs": "G3551",
+   "language": "greek",
+   "lemma": "νόμος",
+   "gloss": "law",
+   "definition": "νόμος, -ου, ὁ\n(νέμω, to deal out, distribute), [in LXX chiefly for תּוֹרָה, also for חֻקָּה, etc. ;]\nthat which is assigned, hence, usage, custom, then law; in NT (only in Mt, Jo, Ja, and the Lucan and Pauline bks.);\n1. of law in general: Rom.3:27 5:13b; pl., of divine laws, Heb.8:10 10:16; ὁ ν. τ. Χριστοῦ, Gal.6:2; (τ.) ἐλευθερίας, Jas.1:25 2:12; βασιλικιός (Hort., in l.; Deiss., LAE, 267:3), Jas.2:8.\n2. Of a force or influence impelling to action: Rom.7:21, 23a, 25 8:2.\n3. Of the Mosaic law: Mat.5:18, Luk.2:27, Jhn.1:17, Act.6:13, Rom.2:15, 1Co.9:8, 1Ti.1:8, Heb.7:19; al.; Μωυσέως, Luk.2:22, Jhn.7:23, Act.15:5, al.; κυρίου, Luk.2:39; κατὰ τὸν ν., Act.22:12, Heb.7:5 9:22.\n4. As printed, Abbott-Smith mistakenly numbers this as 3.Anarthrous (Bl, §46, 8; ICC on Rom.2:12, 13), νόμος,\n(a) of law in general: Rom.2:12, 14b 3:20, 21 4:15, al.;\n(b) of the Mosaic law in its quality as law: Rom.2:14a 5:20 10:4, Gal.2:19, al.; οἱ ἐκ ν., Rom.4:14; ὑπὸ νόμον, 1Co.9:20, Gal.4:5; ν. πράσσειν (πληροῦν), Rom.2:25 13:8.\n5. Of Christian teaching: ν. πίστεως, Rom.3:27; τ. Χριστοῦ, Gal.6:2.\n6. By meton., of the books which contain the law;\n(a) of the Pentateuch: Mat.12:5, Jhn.1:45, al.; ὁ ν. καὶ οἱ προφῆται, Mat.5:17, Luk.16:16, al.; ὁ ν. καὶ προφῆται κ. ψαλμοί, Luk.24:44.\n(b) of the OT Scriptures in general (as Heb. תּוֹרָה): Jhn.10:34 12:34 15:25, 1Co.14:21, al.",
+   "sha256": "e1d4ab0b3f6ad0f5ab6e2ecf5149c7da1b853e580964bd1e28e28a287a89d5bc"
+  },
+  {
+   "strongs": "G3552",
+   "language": "greek",
+   "lemma": "νοσέω",
+   "gloss": "be sick",
+   "definition": "νοσέω, -ῶ\n(νόσος), [in LXX (metaphorically): Wis.17:8 * ;]\nto be sick: metaphorically, of mental ailment, before περί, 1Ti.6:4 (cf. Plat., Mor., 546 d).†",
+   "sha256": "55be8d896325fbb044f9126363b703a468520c892b1632d07ae1b435bfc0d14a"
+  },
+  {
+   "strongs": "G3553",
+   "language": "greek",
+   "lemma": "νόσημα",
+   "gloss": "disease",
+   "definition": "νόσημα, -τος, τό\n(νοσέω),\nsickness: Jhn.5:4.†",
+   "sha256": "86775783fefa4dc2c701a3b15b5502884c64b2738c49bedee52ab7c8498c3608"
+  },
+  {
+   "strongs": "G3554",
+   "language": "greek",
+   "lemma": "νόσος",
+   "gloss": "illness",
+   "definition": "νόσος, -ου, ὁ\n[in LXX for חֲלִי, etc. ;]\ndisease, sickness: Mat.4:23-24 8:17 (Aq.) Mat.9:35 10:1, Mrk.1:34, Luk.4:40 6:17 7:21 9:1, Act.19:12.†\nSYN.: see: ἀσθένεια",
+   "sha256": "263165caeb08c04009ed8235696f2b1ac90b69b80c3a95541e31554bff68e38b"
+  },
+  {
+   "strongs": "G3555",
+   "language": "greek",
+   "lemma": "νοσσιά",
+   "gloss": "chick",
+   "definition": "νοσσιά, -ᾶς, ἡ\n(νοσσός),\nlate form of cl., νεοσσιά,\n[in LXX chiefly for קֵן ;]\n1. a nest of birds.\n2. a brood of young birds: Luk.13:34.†",
+   "sha256": "ef14a50a00e235452712a950a70d205eb8cef1da8e7fd1d885af48cca616c932"
+  },
+  {
+   "strongs": "G3556",
+   "language": "greek",
+   "lemma": "νοσσίον",
+   "gloss": "chick",
+   "definition": "νοσσίον, -ου, τό dimin. of νοσσός, which see,\n[in LXX: Psa.84:3 (אֶפְרֹחַ) * ;]\na young bird: Mat.23:37.†",
+   "sha256": "663a7556d75f0757bd18c4b810c6dbe7ec3b5cec78ce07d0fd2ce2b63b639e79"
+  },
+  {
+   "strongs": "G3557",
+   "language": "greek",
+   "lemma": "νοσφίζω",
+   "gloss": "to embezzle",
+   "definition": "νοσφίζω\n(νόσφι, apart, aside), [in LXX: Jos.7:1 (לָקַח), 2Ma.4:32 * ;]\n1. in Hom., as depon., to turn away (from), abandon.\n2. After Hom., in act., to set apart, remove. Mid., to set apart for oneself, peculate, purloin: absol., Tit.2:10 (for ex. in π., see MM, xvii); before ἀπό, Act.5:2-3.†",
+   "sha256": "d2a0813efdef6db5efd009e15bd2c55812a635dd253afd50c1294751795cb076"
+  },
+  {
+   "strongs": "G3558G",
+   "language": "greek",
+   "lemma": "νότος",
+   "gloss": "south",
+   "definition": "νότος, -ου, ὁ\n[in LXX chiefly for נֶגֶב, also for דָּרוֹם, תֵּימָן and קָדִים ;]\n1. prop., the south wind: Luk.12:55, Act.27:13 28:13\n2. South: Luk.13:29, Rev.21:13\n3. the South, as a region (cf. נֶגֶב): Mat.12:42, Luk.11:31.†",
+   "sha256": "cba346ea2145c3b21f2a99c09778177ef45770e7074b6fa823ec486a6e8fa04f"
+  },
+  {
+   "strongs": "G3558H",
+   "language": "greek",
+   "lemma": "νότος",
+   "gloss": "(Queen of) the South",
+   "definition": "νότος, -ου, ὁ\n[in LXX chiefly for נֶגֶב, also for דָּרוֹם, תֵּימָן and קָדִים ;]\n1. prop., the south wind: Luk.12:55, Act.27:13 28:13\n2. South: Luk.13:29, Rev.21:13\n3. the South, as a region (cf. נֶגֶב): Mat.12:42, Luk.11:31.†",
+   "sha256": "540bb4f48ea2dfa6d2464bdec4678a016452b97acc8cfe888e4c70733dbfc908"
+  },
+  {
+   "strongs": "G3559",
+   "language": "greek",
+   "lemma": "νουθεσία",
+   "gloss": "admonition",
+   "definition": "νουθεσία, -ας ἡ\n(νουθετέω),\n= cl. νουθέτησις\n[in LXX: Wis.6:6 * ;]\nadmonition: 1Co.10:11, Eph.6:4, Tit.3:10 (Aristoph., Diod., al.).†",
+   "sha256": "28ea0f299f4ec88d33e7a16be638b6739541af3f3dab4e0cf40d9bfb9b0275d6"
+  },
+  {
+   "strongs": "G3560",
+   "language": "greek",
+   "lemma": "νουθετέω",
+   "gloss": "to admonish",
+   "definition": "νουθετέω, -ῶ\n(νοῦς, τίθημι, hence, put in mind), [in LXX: 1Ki.3:13 (כָּהָה pi.), Job.8:1-22 (יָסַר pi., בִּין), Wis.11:10 12:2, 26 * ;]\nto admonish, exhort: with accusative of person(s), Act.20:31, Rom.15:14, 1Co.4:14, Col.1:28 3:16, 1Th.5:12 5:14, 2Th.3:15.†",
+   "sha256": "2fab0f99336358ced2c5c0523dc5b02ba5fedccfbced117f782dfa42899cbf54"
+  },
+  {
+   "strongs": "G3561",
+   "language": "greek",
+   "lemma": "νουμηνία",
+   "gloss": "New Moon",
+   "definition": "νεομηνία (Att.. contr., νουμ-, Rec.), -ας, ἡ\n(νέος, μήν), [in LXX chiefly for חֹדֶשׁ ;]\nnew moon: of the Jewish festival, Col.2:16.†",
+   "sha256": "df75f90a33940d915815178f7182ac7a224dfa0b24e1fcf21c65cb339628e9fe"
+  },
+  {
+   "strongs": "G3562",
+   "language": "greek",
+   "lemma": "νουνεχῶς",
+   "gloss": "wisely",
+   "definition": "νουνεχῶς\nadv. (νοῦς, ἔχω)\nsensibly, discreetly: Mrk.12:34.†",
+   "sha256": "5afc12df8d03fcc31baea60d93229f94a459f94ed45e53333bf5f8a91d25a7bf"
+  },
+  {
+   "strongs": "G3563",
+   "language": "greek",
+   "lemma": "νοῦς",
+   "gloss": "mind",
+   "definition": "νοῦς\n(contr. from νόος), ὁ, genitive, dative, νοός, νοΐ (late forms, = cl., νοῦ, νῷ; Bl., § 9, 3), accusative, νοῦν, [in LXX chiefly for לֵב, לֵבָב ;]\n1. prop., of the ruling faculty, mind, understanding, reason (see Lft., Notes, 88 f.; Vaughan on Rom.7:23): Luk.24:45, Rom.1:28 7:23 12:2 14:5, Eph.4:17, 23 Php.4:7, 2Th.2:2, 1Ti.6:5, 2Ti.3:8, Tit.1:15, Rev.13:18 17:9; ν. τ. σαρκός (ICC, in l), Col.2:18; opposite to σάρξ, Rom.7:25; to πνεῦμα, 1Co.14:14-15; to γλῶσσα, 1Co.14:19\n2. By meton., of an act of mind, a mind, thought, purpose: Rom.11:34 = 1Co.2:16\" (LXX), 1Co.1:10.†\nνόος, see: νοῦς\nSYN.: see: πνεῦμα",
+   "sha256": "3c13edf1fb844925561f5e9cf2f037c5bd7251a3284b863327cfed58b92282e2"
+  },
+  {
+   "strongs": "G3564",
+   "language": "greek",
+   "lemma": "Νυμφᾶς",
+   "gloss": "Nympha",
+   "definition": "Νυμφᾶς, -ᾶ, ὁ (WH, R, mg., Νύμφα, which see),\nNymphas: Col.4:15, R, txt. (cf. ICC, Lft., in l).†\nΝύμφα (Rec., R, txt., Νυμφᾶς, which see), -ης, ἡ, Nympha (see M, Pr., 48): Col.4:15, WH, R, mg.†",
+   "sha256": "9366d3ccc217ce94ca1d7671e06ac9cf78250ef72455b74cc77eb5a9d323011e"
+  },
+  {
+   "strongs": "G3565",
+   "language": "greek",
+   "lemma": "νύμφη",
+   "gloss": "bride",
+   "definition": "νύμφη, -ης, ἡ\n[in LXX chiefly for כַּלָּה ;]\n1. cl., a bride, young wife, young woman: Mat.25:1, WH, mg., Jhn.3:29, Rev.18:23 21:2, 9 22:17.\n2. As frequently in LXX (Gen.38:11, al., for כַּלָּה;\n(a) bride;\n(b) daughter-in-law) and in MGr. (νύφφη, νύφη), a daughter-in-law: Mat.10:35, Luk.12:53.†",
+   "sha256": "2b8d6c123e8cece408cc658d0cc5f47df75421ff86973bd56a8fe83a2ae5041d"
+  },
+  {
+   "strongs": "G3566",
+   "language": "greek",
+   "lemma": "νυμφίος",
+   "gloss": "bridegroom",
+   "definition": "νυμφίος, -ου, ὁ\n(νύμφη), [in LXX for חָתָן ;]\na bridegroom: Mat.9:15 25:1, 5-6 25:10, Mrk.2:19-20, Luk.5:34-35, Jhn.2:9 3:29, Rev.18:23.†",
+   "sha256": "372e048f8e47e3e17199d036a39456d679349b815a6009dc9d4a75e392813038"
+  },
+  {
+   "strongs": "G3567",
+   "language": "greek",
+   "lemma": "νυμφών",
+   "gloss": "bridegroom",
+   "definition": "νυμφών, -ῶνος, ὁ\n(νύμφη), [in LXX: Tob.6:13,16* ;]\nthe bride-chamber (Heb. חֻפָּה, LXX, παστός, Psa.19:5, Jol.2:16): Mat.22:10 (WE; γάμος, RV); οἱ υἱοὶ τοῦ ν. (cf. cl. νυμφαγωγός, νυμφευτής), the bridegroom's friends who have charge of the nuptial arrangements: Mat.9:15, Mrk.2:19, Luk.5:34.†",
+   "sha256": "489fa4eaad612ded1cff2c0b832130630c0053ae2d321a7cd138072252ed8e52"
+  },
+  {
+   "strongs": "G3568",
+   "language": "greek",
+   "lemma": "νῦν",
+   "gloss": "now",
+   "definition": "νῦν, adv.,\n[in LXX chiefly for עַתָּה ;]\n1. prop., of time, now, i.e. at the present time: as opposite to past, Jhn.4:18, Act.7:52, Rom.13:11, 2Co.7:9, Col.1:24, al.; opposite to fut., Jhn.12:27, Rom.11:31, al.; with art., ὁ (ἡ, τὸ) and subst., the present: Rom.3:26, Gal.4:25, 1Ti.6:17, Tit.2:12, al.; απὸ τοῦ ν. (LXX for מֵעַתָּה), Luk.1:48, Act.18:6, al.; ἄχρι τοῦ ν., Rom.8:22, Php.1:5; ἕως τοῦ ν. (LXX for עַד עַתָּה), Mat.24:21, Mrk.13:19; τὰ ν., as regards the present, Act.5:38; with pret., just now, but now, Mat.26:65, Jhn.11:8 21:10; with fut., now, presently, Jhn.12:31, Act.20:22; so with praes., presently, forthwith, Jhn.12:31 17:13; καὶ ν., Jhn.11:22 17:5, al.; ἀλλὰ ν., Luk.22:36; ἔτι ν., 1Co.3:2; τότε (πότε) . . . ν. (δέ), Rom.6:21 11:30; ν. ἤδη, 1Jn.4:3; ν. οὖν, Act.10:33, al.\n2. Of logical sequence (often difficult to disting. from the temporal sense; cf. Lft., Notes, 113f.), now, therefore, now, however, as it is: Luk.11:39; καὶ ν., Act.3:17, 2Th.2:6, 1Jn.2:28; id. before δεῦρο, Act.7:34; ν. δέ, Jhn.8:40 9:41 15:22, 24, 18:36, 1Co.5:11 7:14 12:20, al. (cf. WM, 579.11).",
+   "sha256": "b9ebc89330a39f571317eb64810a609806804fd0a396cdbf753e71dffaad9fd6"
+  },
+  {
+   "strongs": "G3569",
+   "language": "greek",
+   "lemma": "τανῦν",
+   "gloss": "now",
+   "definition": "concerning the present, now",
+   "sha256": "d66ccdb6e1f1687f0c92b0a9d1b5a931bfc5046f1201095760755f1a1cdc492f"
+  },
+  {
+   "strongs": "G3570",
+   "language": "greek",
+   "lemma": "νυνί",
+   "gloss": "now",
+   "definition": "νῦνί an Attic strengthened form of νῦν\n(in cl. always of time, and most often strictly of the pres.), [in LXX : Job.5:1-27, Psa.2:1-12, 1-12, 4Ma.4:1-26, Ep. Je* ;]\nnow;\n1. of time: with praes., Act.24:13, Rom.15:23, 25, 1Co.13:13, 2Co.8:11 8:22, Phm 9 11; with pf., Rom.3:21; with pret., Rom.6:22 11:30 (WH, mg.) Rom.7:6, Eph.2:13, Col.1:21 3:8; ἡ ν. ἀπολογία, Act.22:1.\n2. Of logical sequence (not so in cl.): Rom.7:17, 1Co.5:11 (νῦν, WH) 1Co.12:18 (νῦν, WH, txt.) 1Co.15:20, Heb.8:6 (νῦν, WH, txt.), Heb.9:26 (cf. WM, 24, 579n).†",
+   "sha256": "0af5984b590e9216099412a583d3c2bb8b78f52b84f9ad912e01229906a789f9"
+  },
+  {
+   "strongs": "G3571",
+   "language": "greek",
+   "lemma": "νύξ",
+   "gloss": "night",
+   "definition": "νύξ genitive νυκτός, ἡ,\n[in LXX chiefly for לַיִל ;]\nnight: Mat.12:40, Mrk.6:48, Jhn.13:30, al.; genitive temp. (of the time within which something happens; M, Pr., 73; B1., § 36, 13), νυκτός, by night, Mat.2:14, Jhn.3:2, 1Th.5:7, al.; ν. κ. ἡμέρας, Mrk.5:5, 1Th.2:9, al.; ἡμέρας κ. ν., Luk.18:7, Rev.4:8, al.; μέσης ν., Mat.25:6; dative, νυκτί, in ans. to the question, \"when?\" (rare in cl.; Hdt., Soph.), ταύτῃ τ. ν., Luk.12:20, al.; ἐκείνῃ Act.12:6; ἐπιούσῃ, Act.23:11; accusative durat. (Bl., § 34, 8; Kühner3, III, 314b), ν. κ. ἠμέραν, Luk.2:37 Act.20:31; τ. νύκτας, Luk.21:37; διὰ νυκτός (= cl. νυκτός; Bl., § 42, 1; 46, 7), Act.5:19 16:9 17:10 23:31; δι᾽ ὅλης ν., Luk.5:5; κατὰ μέσον τῆς ν. (Bl., § 47, 6), Act.27:27. Metaphorical: Jhn.9:4, Rom.13:12, 1Th.5:5",
+   "sha256": "d15465b1cac4567dc18103edc96e7a1c0b70c6ee6c007b352888ade71baf2763"
+  },
+  {
+   "strongs": "G3572",
+   "language": "greek",
+   "lemma": "νύσσω",
+   "gloss": "to pierce",
+   "definition": "νύσσω\n(Att.. -ττω), [in LXX: Sir.22:19, 3Ma.5:14 * ;]\nto pierce: τ. πλευρὰν λόγχῃ, Jhn.19:34, [Mat.27:49], WH.†",
+   "sha256": "941bc3d4de042d2be889cc525d185482028d2e33ed79125d1bb6bbed874f9a74"
+  },
+  {
+   "strongs": "G3573",
+   "language": "greek",
+   "lemma": "νυστάζω",
+   "gloss": "to doze",
+   "definition": "νυστάζω\n(cf. νεύω), [in LXX for נוּם, etc ;]\nto nod in sleep, fall asleep: Mat.25:5. Metaphorical, of negligence or delay, ἡ ἀπώλεια αὐτῶν οὐ νυστάζει (cf. Psa.121:4, Isa.5:27) : 2Pe.2:3.†",
+   "sha256": "c2e015f92b376e737a4b19a21d6a653d6fef9215f2b531c9a7487e8eaf8a91e6"
+  },
+  {
+   "strongs": "G3574",
+   "language": "greek",
+   "lemma": "νυχθήμερον",
+   "gloss": "a night and a day",
+   "definition": "νυχθήμερος, -α, -ον\n(νύξ, ἡμέρα, see B1., § 28, 4),\nlasting a night and a day; as subst., (τὸ) ν., a night and a day: 2Co.11:25 (pl., Or. Sib., 8, 203).†",
+   "sha256": "de2a5a97eb7c06c54a1bbd802bd802d0ba040bb3c89a77283d89479b020e2993"
+  },
+  {
+   "strongs": "G3575",
+   "language": "greek",
+   "lemma": "Νῶε",
+   "gloss": "Noah",
+   "definition": "Νῶε\n(as LXX, FlJ, who also gives Νώεος, Νῶχος), ὁ, indecl. (Heb. נֹחַ)\nNoah: Mat.24:37-38, Luk.3:36 17:26-27 Heb.11:7, 1Pe.3:20, 2Pe.2:5.†",
+   "sha256": "782f30bbb955438b28c7dad867ca58d95a10c3a6790407ae18a6036672d9887d"
+  },
+  {
+   "strongs": "G3576",
+   "language": "greek",
+   "lemma": "νωθρός",
+   "gloss": "dull",
+   "definition": "νωθρός, -ά, -όν\n[in LXX: Pro.22:29 (חָשֹׁךְ), Sir.4:29 11:12 * ;]\nsluggish, slothful: Heb.5:11 6:12 (for similar usage in π., see MM, xvii).\nSYN.: ἀργός (which see), βραδύς",
+   "sha256": "20bbcfafc1942e50ae04c3c2a66beee5612a2d019b6a63d7dc5ec2400f9b202c"
+  },
+  {
+   "strongs": "G3577",
+   "language": "greek",
+   "lemma": "νῶτον",
+   "gloss": "back",
+   "definition": "νῶτος, -ου, ὁ\nin Att.. most frequently τὸ νῶτον, and in pl. always τὰ νῶτα, [in LXX, ὁ ν., pl., οἱ νῶτοι and τὰ νῶτα, chiefly for כָּתֵף, also for עֹרֶף, מֹתֶן ;]\n/the back: Rom.11:10 (LXX).†",
+   "sha256": "09218e44806031b36a02b840ce89e0f4d5fd8974a34ee1804e4094c8e74d2863"
+  },
+  {
+   "strongs": "G3578",
+   "language": "greek",
+   "lemma": "ξενία",
+   "gloss": "lodging",
+   "definition": "ξενία, -ας, ἡ\n(ξένος), [in LXX: Sir.29:27 Bl* ;]\nhospitality, enter­tainment: Phm 22 (cf. ICC, in l, but see infr.). By meton., a place of entertainment, a lodging-place: Act.28:23, and so perh. Phm 22 (Lft., in l, Phi., p. 9; but see supr., and cf. MM, xvii).†",
+   "sha256": "08bb7f4415c961ddb95153bcf7cef8be78e5fbfd45e16072d7c3302f88f505fa"
+  },
+  {
+   "strongs": "G3579",
+   "language": "greek",
+   "lemma": "ξενίζω",
+   "gloss": "to host",
+   "definition": "ξενίζω\n(ξένος), [in LXX: Est.3:13, Sir.29:25, 2Ma.9:6, 3Ma.7:3 * ;]\n1. to receive as a guest, entertain: with accusative of person(s), Act.10:23 28:7, Heb.13:2; pass., Act.10:6, 18 10:32 21:16.\n2. In late writers (Polyb., al.; 2Mac, l.with), to surprise, astonish by strangeness: Act.17:20; pass., 1Pe.4:4 4:12.†",
+   "sha256": "2d430ec9d45ba4ee93e750bdae6886bcde6be6fb304cb79216fb741d471bc8f7"
+  },
+  {
+   "strongs": "G3580",
+   "language": "greek",
+   "lemma": "ξενοδοχέω",
+   "gloss": "to show hospitality",
+   "definition": "ξενοδοχέω late Gk. for -κέω\n(ξένος, δέχομαι),\nto entertain strangers: 1Ti.5:10.†",
+   "sha256": "4b9f4eba83a380f5e68dd397954bccf2384f700e44dec0c05dc240201d4198bc"
+  },
+  {
+   "strongs": "G3581",
+   "language": "greek",
+   "lemma": "ξένος",
+   "gloss": "foreign",
+   "definition": "ξένος, -η, -ον\n[in LXX chiefly for נׇכְרִי ;]\n(a) foreign, alien: δαιμόνια, Act.17:18; διδαχαί Heb.13:9;\n(b) with genitive of thing(s), strange to, estranged from, ignorant of: Eph.2:12;\n(with) strange, unusual: 1Pe.4:12.\nAs subst., ὁ ξ.,\n(a) a foreigner, stranger: Mat.25:35, 38 25:43-44 27:7, Act.17:21, 3Jn.5; ξέίνοι κ. τάροικοι (opposite to συμπολῖται, οίκεῖοι), Eph.2:19; ξ. καὶ παρεπίδημοι, Heb.11:13;\n(b) one of the parties bound by ties of hospitality;\nα the guest;\nβ the host (= ξενοδόκος, Hom., Ii, xv, 532) : Rom.16:23.†",
+   "sha256": "e66e0583e157e541ec62520818139a752b10ce6b93d652a9d64041b86ed882e2"
+  },
+  {
+   "strongs": "G3582",
+   "language": "greek",
+   "lemma": "ξέστης",
+   "gloss": "pitcher",
+   "definition": "ξέστης, -ου, ὁ\n(a Sicilian corruption of Lat. sextarius), [in Al. : Lev.14:10 (לֹג, LXX κοτύλη)* ;]\n1. a sextarius (about a pint).\n2. In NT, a pitcher of wood or stone : Mrk.7:4.†",
+   "sha256": "4db9e13df06facc1760f7a5e66e55d290d0d057e7a77bc582417a971e25d4f73"
+  },
+  {
+   "strongs": "G3583",
+   "language": "greek",
+   "lemma": "ξηραίνω",
+   "gloss": "to dry",
+   "definition": "ξηραίνω\n(ξηρός), [in LXX chiefly for יָבֵשׁ ;]\nto dry up, parch, wither. with accusative, τ. χόρτον, Jas.1:11; pass., to become or be dry or withered. of plants, Mat.13:6 21:19-20, Mrk.4:6 11:20-21, Luk.8:6, Jhn.15:6, 1Pe.1:24; of ripened crops, Rev.14:15; of liquids, Mrk.5:20, Rev.16:12; of members of the body, to waste away, Mrk.3:1 (cf. 3Ki.13:4) Mrk.9:18.†",
+   "sha256": "2dd80370cbe25f9c0b4cca1e5160f576bf86d305226e8f9102a5c9303aed120b"
+  },
+  {
+   "strongs": "G3584",
+   "language": "greek",
+   "lemma": "ξηρός",
+   "gloss": "dried up/withered",
+   "definition": "ξηρός, -ά, -όν\n[in LXX chiefly for יָבֵשׁ, its parts and deriva­tives, also for חָרָבָה, etc. ;]\ndry: metaphorically (of a sinner), ξύλον ξ., Luk.23:31; of members of the body shrunken by disease, withered: Jhn.5:3; of the hand, Mat.12:10 Mrk.3:3, Luk.6:6, 8; of the dry land, ἡ ξηρά (sc. γῆ, cf. Gen.1:9-10; Jon.1:19, al.): Mat.23:15; γῆ, Heb.11:29.†",
+   "sha256": "937130d495d07d3153989daa6bea8acbefcdb5af4539be603e5fc40ec50096fd"
+  },
+  {
+   "strongs": "G3585",
+   "language": "greek",
+   "lemma": "ξύλινος",
+   "gloss": "wooden",
+   "definition": "ξύλινος, -η, -ον\n(ξύλον) [in LXX chiefly for עֵץ ;]\nwooden: 2Ti.2:20, Heb.9:20 (cf. Ep. Jer.4:1-31 ff).†",
+   "sha256": "76767ad75b69ef092edd89e44e318eef8d983f94612a740dd91ef5972c2af370"
+  },
+  {
+   "strongs": "G3586",
+   "language": "greek",
+   "lemma": "ξύλον",
+   "gloss": "wood",
+   "definition": "ξύλον, -ου, τό\n[in LXX chiefly for עֵץ ;]\n1. wood: 1Co.3:12, Rev.18:12.\n2. a piece of wood, hence, anything made of wood, as,\n(a) a cudgel, staff: pl., Mat.26:47, 55, Mrk.14:43, 48, Luk.22:52;\n(b) stocks, for confining the feet (Job.33:11, סַד) : Act.16:24;\n(with) a beam to which malefactors were bound (late Gk.), in LXX, of a gibbet (Deu.21:22-23), in NT, of the Cross: Act.5:30 10:39 13:29, Gal.3:13, 1Pe.2:24.\n3. In late writers (see MM, xvii), a tree (Gen.1:29, Isa.14:8, al.) : Luk.23:31; ξ. τῆς ζωῆς, Rev.2:7 22:2, 14 22:19.†",
+   "sha256": "0741388b4d6694514dbfa9ff59050ebcb5d2e4f2de44ae34ed58cbbc88b74623"
+  },
+  {
+   "strongs": "G3587",
+   "language": "greek",
+   "lemma": "ξυράω",
+   "gloss": "to shave",
+   "definition": "ξυράω, -ῶ\nlate form of ξυρέω (which see) : 1Co.11:6 (ξυρᾶσθαι, Rec. and Edd., but see: ξύρω).†\nξύρω, rare form of ξυρέω (Veitch, see word), aor. mid., ξύρασθαιι (Bl., § 24, see word; Zorell, see word, etc.) for -ᾶσθαι (Rec., Edd.) : 1Co.11:6.†",
+   "sha256": "a114aea7a265ea84951c3a08dcba9c937e4f3866b608d181c799d3ae58e383f1"
+  },
+  {
+   "strongs": "G3588",
+   "language": "greek",
+   "lemma": "ὁ",
+   "gloss": "the/this/who",
+   "definition": "ὁ, ἡ, τό,\nthe prepositive article (ἄρθρον προτακτικόν), originally a demonstr. pron. (so usually in Hom.), in general corresponding to the Eng. definite article.\nI. As demonstr. pron.\n1. As frequently in Hom., absol., he (she, it), his (etc.): Act.17:28 (quoted from the poet Aratus).\n2. Distributive, ὁ μὲν . . . ὁ δέ, the one . . . the other: 1Co.7:7, Gal.4:22; pl., Act.14:4, 17:32, Php.1:16, al.; οἱ μὲν . . . ἄλλοι δέ, Mat.16:14, Jhn.7:12; οἱ μεν̀ . . . ὁδέ, Heb.7:21, 23.\n3. In narration (without ὁ μὲν preceding), ὁ δέ, but he: Mat.2:14, Mrk.1:45, Luk.8:21, Jhn.9:38, al. mult.\nII. As prepositive article, the, prefixed,\n1. to nouns unmodified: ὁ θεός, τὸ φῶς, etc.; to abstract nouns, ἡ σοφία, etc., to pl. nouns which indicate a class, οἱ ἀλώπεκες, foxes, Mat.8:20, al.; to an individual as representing a class, ὁ ἐργάτης, Luk.10:7; with nom. = voc. in addresses, Mat.11:26, Jhn.19:3, Jas.5:1, al.; to things which pertain to one, ἡ χεῖρ, his hand, Mrk.3:1; to names of persons well known or already mentioned; usually to names of countries (originally adjectives), ἡ Ἰουδαία, etc.\n2. To modified nouns: with of person(s) pron. genitive, μοῦ, σοῦ, etc.; with poss. pron., ἐμός, σός, etc.; with adj. between the art. and the noun, ὁ ἀγαθὸς ἄνθρωπος, Mat.12:35; the noun foll, by adj., both with art., ὁ ποιμὴν ὁ καλός, Jhn.10:11 (on ὁ ὄχλος πολύς, Jhn.12:9, see M, Pr., 84); before adjectival phrases, ἡ κατ᾽ ἐκλογὴν πρόθεσις, Rom.9:11.\n3. To Other parts of speech used as substantives;\n(a) neuter adjectives: τ. ἀγαθόν, etc.;\n(b) cardinal numerals: ὁ εἶς, οἷ δύο, etc.;\n(with) participles: ὁ βαπτίζων (= ὁ Βαπτιστής, Mat.14:2), Mrk.6:14; πᾶς ὁ, with ptcp., every one who, etc.;\n(d) adverbs: τὸ πέραν, τὰ νῦν, ὁ ἔσω ἄνθρωπος;\n(e) infinitives: nom., τὸ θέλειν, Rom.7:18, al.; genitive, τοῦ, after adjectives, ἄξιον τοῦ πορεύεσθαι, 1Co.16:4; verbs, ἐλαχεν τοῦ θυμιᾶσαι, Luk.1:9; and frequently in a final sense, ἐξῆλθεν ὁ σπείρειν, Mat.13:3 (on the artic. inf., see Bl., §71).\n4. In the neut. to sentences, phrases or single words treated as a quotation: τὸ Ἐι δύνῃ, Mrk.9:23; τὸ ἔτι ἅπαξ, Heb.12:27; τὸ ἀνέβη, Eph.4:9, al.\n5. To prepositional phrases: οἱ ἀπὸ Ἰταλίας, Heb.13:24; οἱ ἐκ νόμου, Rom.4:14; neut. accusative absol., in adverbial phrases, τὸ καθ᾽ ἡμέραν, daily, Luk.11:3; τὸ κατὰ σάρκα, as regards the flesh, Rom.9:5.\n6. To nouns in the genitive, denoting kinship, association, etc.: ὁ τοῦ, the son of (unless context indicates a different relationship), Mat.10:2, al.; τὰ τοῦ θεοῦ, the things that pertain to God, Mat.16:23; τὰ τῆς εἰρήνης, Rom.14:19 (cf. M, Pr., 81ff.; Bl, §§46, 47).",
+   "sha256": "e42fdb88583ee5a42e44ab98c9a66cbec834163984c606345ef515d9d3f4a965"
+  },
+  {
+   "strongs": "G3589",
+   "language": "greek",
+   "lemma": "ὀγδοήκοντα",
+   "gloss": "eighty",
+   "definition": "eighty , Lat. octoginta, (Thucydides), etc.:—;ionic and doric ὀγδώκοντα, (Iliad by Homer) (ML)",
+   "sha256": "9a8aded22ccaf55b6fcc50a0e5a231abd4284de25c92c521ff5045dbd3252732"
+  },
+  {
+   "strongs": "G3590",
+   "language": "greek",
+   "lemma": "ὄγδοος",
+   "gloss": "eighth",
+   "definition": "ὄγδοος, -η, -ον\nthe eighth. Luk.1:59, Act.7:3\" (LXX), Rev.17:11 21:20; one of eight, with seven others (usually, in this sense, with αὐτός added, but cf. Plat., Legg., iii, 695 with; Plut., Pelop., 13; 2Ma.5:27): 2Pe.2:5.†",
+   "sha256": "2827872356b9e3807abeac02385eac118c79b5854248d71581cf51a6ac56a91b"
+  },
+  {
+   "strongs": "G3591",
+   "language": "greek",
+   "lemma": "ὄγκος",
+   "gloss": "impediment",
+   "definition": "ὄγκος, -ου, ὁ\nbulk, mass; metaphorically, an encumbrance: Heb.12:1.†\nSYN.: βάρος, a weight; φορτίον, a burden, that which is borne",
+   "sha256": "900bb856fd458ddde5873b68be77584060b9ddeb2ff583286086585229ea86d8"
+  },
+  {
+   "strongs": "G3592",
+   "language": "greek",
+   "lemma": "ὅδε",
+   "gloss": "this",
+   "definition": "ὅδε, ἥδε, τόδε\n(the old demonstr. pron., ὁ + the enclitic δε), = Lat. hicce, this (here),\nreferring prop, to what is present, can be seen or pointed out: of a person just named, τῇδε (= ταύτῃ), Luk.10:39; neut. pl., τάδε (λέγει), referring to words which follow (so in Att.., and see MM, xvii) : Act.21:11, Rev.2:1, 8 2:12, 18 3:1, 7 3:14; εἰς τήνδε τ. πόλιν (= Att.. τῇ καὶ τῇ, Plat., Legg., iv, 721 B), such and such a city, Jas.4:13.†",
+   "sha256": "4265e47c417da1c9f3726ae1b42197c71c4e21718308f5001cf14fc47164c2e5"
+  },
+  {
+   "strongs": "G3593",
+   "language": "greek",
+   "lemma": "ὁδεύω",
+   "gloss": "to journey",
+   "definition": "ὁδεύω\n(ὁδός), [in LXX : 3Ki.6:12 A (metaphorically, הָלַךְ), Tob.6:5, Wis.5:7 (figuratively)* ;]\nto travel, journey: Luk.10:33 (cf.δι-, συν-οδεύω).†",
+   "sha256": "70d164716492899cda3a7e10c02b169901b0efb59212f6b172da58be3336aef6"
+  },
+  {
+   "strongs": "G3594",
+   "language": "greek",
+   "lemma": "ὁδηγέω",
+   "gloss": "to guide",
+   "definition": "ὁδηγέω, -ῶ,\n(ὁδηγός) [in LXX chiefly for נוּחַ, also for דֶּרֶךְ hi., הָלַךְ hi., etc. ;]\nto lead on one's way, to guide: with accusative of person(s), Mat.15:14, Luk.6:39; id. before ἐπί, Rev.7:17. Metaphorical, to guide, instruct, teach: Act.8:31; before εἰς τ. ἀλήθειαν (ἐν τ. ἀ., WH, mg.), Jhn.16:13 (cf. Psa.25:5).†",
+   "sha256": "03a77622cca9d2ad4237370ff4ef7cdd711c3ff876550b7675e18057fea15013"
+  },
+  {
+   "strongs": "G3595",
+   "language": "greek",
+   "lemma": "ὁδηγός",
+   "gloss": "guide/leader",
+   "definition": "ὁδηγός, -οῦ, ὁ\n(ὁδός, ἡγέομαι) [in LXX : Est.8:1, Wis.7:15 18:3, 1Ma.4:2, 2Ma.5:15 * ;]\na leader on the way, a guide: Act.1:16. Fig., ὁ. τυφλῶν, Rom.2:19; pl., Mat.15:14 23:16, 24.†",
+   "sha256": "7679f2ba314677c6d24424d26a8cac298c2939a94afc884fc51dfd57deb60855"
+  },
+  {
+   "strongs": "G3596",
+   "language": "greek",
+   "lemma": "ὁδοιπορέω",
+   "gloss": "to journey",
+   "definition": "ὁδοιπορέω, -ῶ\n(ὁδοιπόρος, a traveller, Gen.37:25, al.),\nto travel, journey: Act.10:9.†",
+   "sha256": "5aa7f8f248f6498493080aec8aab6d81ca3ee558c3a72b42a9f82d48f300dd65"
+  },
+  {
+   "strongs": "G3597",
+   "language": "greek",
+   "lemma": "ὁδοιπορία",
+   "gloss": "journey",
+   "definition": "ὁδοιπορία, -ας, ἡ\n(see supr.), [in LXX : Wis.13:18 18:3 19:5, 1Ma.6:41 * ;]\na journey. Jhn.4:6, 2Co.11:26.†",
+   "sha256": "e45ae430d3e0c0f1630332f38b96577a523fd72c0f212d1ff11aa04603eddde7"
+  },
+  {
+   "strongs": "G3598",
+   "language": "greek",
+   "lemma": "ὁδός",
+   "gloss": "road",
+   "definition": "ὁδός, -οῦ, ἡ,\n[in LXX chiefly (very freq.) for דֶּרֶךְ ;]\n1. a way, path, road: Mat.2:12, Mrk.10:46, Luk.3:5 al.; κατὰ τὴν ὁ., Luk.10:4, al.; παρὰ τὴν ὁ., Mat.13:4, al.; with genitive of person(s), (subj.), τὴν ὁ. ἑτοιμάζειν (fig.), Mat.3:3, Mrk.1:3, al.; with genitive term. (obj.), ἐθνῶν, Mat.10:5; τ. ἁγίων (figuratively), Heb.9:8; accusative, ὁδόν, with force of prep. (like Heb. דֶּרֶךְ; Bl., §34, 8; 35, 5), ὁ. θαλάσσης, Mat.4:15 (LXX).\n2. A traveller's way, journey: ἐν τ. ὁ., Mat.5:25, Mrk.8:27, al.; ἐξ ὁ., Luk.11:6; εἰς ὁ., Mat.10:10; τ. ὁδὸν πορεύεσθαι, Act.8:39; ὁ. ἡμέρας, Luk.2:44; ὁδὸν ποιεῖν (= cl., ὁ. ποιεῖσθαι; V. Field, Notes, 25), to make one's way, i.e. proceed on one's journey, Mrk.2:23.\n3. Metaphorical (cl.; but esp. frequently in Heb.; see Cremer, 442ff.), of a course of conduct, a way of thinking or acting: Act.14:16, 1Co.4:17 12:31, Jas.1:8 5:20; τοῦ Κάϊν, Ju 11; τ. Βαλαάμ, 2Pe.2:15; εἰρήνης, Rom.3:17; ζωῆς, Act.2:28; ἡ ὁ. ἡ ἀπάγουσα εἰς τ. ζωήν (Dalman, Words, 160), Mat.7:14; τ. δικαιοσύνης, Mat.21:32; σωτηρίας, Act.16:17; αἱ ὁ. τ. θεοῦ (κυρίου), Act.13:10, Rom.11:33, Rev.15:3 (cf. Hos.14:9 Psa.94 (95):10, Sir.39:24, al.); ἡ ὁ. τ. θεοῦ (the way approved by God), Mat.22:16, Mrk.12:14, Luk.20:21; id., of the Christian religion, Act.18:26; so, absol., ἡ ὁ., Act.9:2 19:9, 23 24:22; of Christ as the means of approach to God, Jhn.14:6.\n4. Ellipsis of ὁ.: ποίας (sc. ὁδοῦ), Luk.5:19; ἐκείνης, ib. 19:4 (see Bl., §36, 13; 44, 1).",
+   "sha256": "ec131369db9a26102afcc936d82ef20bec8545730c6dd8f693d6025e77a068c1"
+  },
+  {
+   "strongs": "G3599",
+   "language": "greek",
+   "lemma": "ὀδούς",
+   "gloss": "tooth",
+   "definition": "ὀδούς, -όντος, ὁ\n[in LXX for שֵׁן ;]\na tooth: Mat.5:38, Mrk.9:18, Act.7:54; pl., Rev.9:8, ὁ βρυγμὸς (which see) τ. ὀδόντων, Mat.8:12 13:42, 50 22:13 24:51 25:30, Luk.13:28.†",
+   "sha256": "b44235a55783b0b784f5a6f7e020b94637f7521dacc94f8faf965293fac21154"
+  },
+  {
+   "strongs": "G3600",
+   "language": "greek",
+   "lemma": "ὀδυνάω",
+   "gloss": "be anguished",
+   "definition": "ὀδυνάω, -ῶ\n(ὀδύνη), [in LXX: Zec.9:5 (חוּל), Zec.12:10 (מָרַר hi.), La 1:13 (דָּוֶה), Wis.14:24, al. ;]\nto cause pain or suffering; pass. and mid., to suffer pain, be tormented or greatly distressed: Luk.2:48 16:24-25 (ὀδυνᾶσαι, see M, Pr., 53 f.); before ἐπί, Act.20:38.†",
+   "sha256": "b66a073db9479336c577038498f608a1f297d2f8a19952cadf2f7305fa1114a4"
+  },
+  {
+   "strongs": "G3601",
+   "language": "greek",
+   "lemma": "ὀδύνη",
+   "gloss": "anguish",
+   "definition": "ὀδύνη, -ης, ἡ\n[in LXX for יָגוֹן, מַר, etc. (26 words in all) ;]\npain, distress, of body or mind : Rom.9:2, 1Ti.6:10.†",
+   "sha256": "c8ba29835151a35f3953d1151f9677c1563fb7eaa76abb24cc5e293a9401b642"
+  },
+  {
+   "strongs": "G3602",
+   "language": "greek",
+   "lemma": "ὀδυρμός",
+   "gloss": "mourning",
+   "definition": "ὀδυρμός, -οῦ, ὁ\n(ὀδύρομαι, to lament), [in LXX : Jer.31:15 (תַּמְרוּר), 2Ma.11:6 * ;]\nlamentation, mourning: Mat.2:18 (LXX), 2Co.7:7.†",
+   "sha256": "d1ffe83b196ec45fb223ad82df07d33819730d7d0a798ceec2447e9808807e89"
+  }
+ ]
+}
