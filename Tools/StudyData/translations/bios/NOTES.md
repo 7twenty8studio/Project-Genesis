@@ -170,3 +170,8 @@ What the translators reported per batch, beyond the review files.
 - 026 rebuilt after the re-export (Éfeso, Lida, Engedi). Bilhah (place) "Bilha" vs Balah "Bala"; Shimei "Semei". Hazor appears as "Asor" (026, 62) and "Hasor" (027, 142): make them match in the final pass.
 - wrong_verse: Azal q1 (as pt). Wording quotes Aram/Ararat/Akrabbim as in pt; Asshur "Asur".
 - Amalek: Num 13:29 words missing from the loose quote (only 1 Sam 15:7 given). Allon-bacuth quote a little awkward. Athens nested quote kept unbalanced as Easton.
+
+## es 028–029
+- Reused identical-text translations: Beth-maacah 221 (025/5), Bilhah 249 (004/502), Arabah 260 (026/79), Cush 312 (008/962); Chinnereth 293–295 one translation. Brook of Egypt 259 holds Easton's whole Egypt article (source quirk).
+- Beth-le-aphrah 216: the KJV "in the house of Aphrah" has no RV1909 words, so the contrast is lost. Bethlehem 218's loose quote is longer than Easton's. Beth-millo "torre de Sichêm" (verse spelling).
+- Unsure translated: Bethlehem "by the wayside", Cabul "good for nothing".
