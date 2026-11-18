@@ -164,7 +164,9 @@ struct TopicTests {
         let faith = try repository.search("Faith")
         #expect(faith.first?.name == "Faith", "An exact match comes first")
         let short = try repository.search("lo")
-        #expect(short.isEmpty, "Two letters are too few")
+        #expect(short.isEmpty, "Two letters find only a topic of that name")
+        #expect(try repository.search("ur").first?.name == "Ur")
+        #expect(try repository.search("f").isEmpty, "One letter is too few")
     }
 
     @Test func topicsHaveHeadingsAndPassages() throws {
@@ -197,6 +199,10 @@ struct TopicTests {
         let portuguese = try TopicRepository(url: url, language: "pt")
         #expect(try portuguese.search("pai nosso").first?.name == "Pai-Nosso")
         #expect(try portuguese.search("perdao").first?.name == "Perdão")
+        #expect(try portuguese.search("fé").first?.name == "Fé", "Two letters find a topic of that name")
+        #expect(try portuguese.search("fe").first?.name == "Fé")
+        #expect(try spanish.search("fe").first?.name == "Fe")
+        #expect(try spanish.search("fe").count == 1, "Not every name starting with fe")
 
         let english = try TopicRepository(url: url, language: "en")
         #expect(try english.search("perdon").isEmpty, "English shows Nave's names only")

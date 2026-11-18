@@ -76,9 +76,14 @@ final class TopicRepository: Sendable {
     func search(_ query: String, limit: Int = 12) throws -> [TopicSummary] {
         // "Lord's" and "Lords" both match "lord's" in the index (apostrophes ignored).
         let words = Self.searchWords(query.lowercased())
-        guard let first = words.first, first.count >= 3 || words.count > 1 else { return [] }
+        guard let first = words.first, first.count >= 2 || words.count > 1 else { return [] }
         let phrase = words.joined(separator: " ")
         let escaped = Self.escapeLike(phrase)
+        // Two letters find only a topic of that name ("Fe", "Fé", "Ur", "Og"),
+        // not every name that starts with them.
+        let short = words.count == 1 && first.count < 3
+        let starts = short ? "" : "%"
+        let within = short ? "" : "% "
         guard language != nil else {
             return try database.query(
                 """
@@ -87,7 +92,7 @@ final class TopicRepository: Sendable {
                 ORDER BY (search_key = ?3) DESC, (search_key LIKE ?1 ESCAPE '\\') DESC, reference_count DESC
                 LIMIT ?4
                 """,
-                [.text(escaped + "%"), .text("% " + escaped + "%"), .text(phrase), .int(limit)],
+                [.text(escaped + starts), .text(within + escaped + starts), .text(phrase), .int(limit)],
                 map: Self.summary
             )
         }
@@ -102,8 +107,8 @@ final class TopicRepository: Sendable {
                 (t.search_key LIKE ?1 ESCAPE '\\' OR tr.folded LIKE ?5 ESCAPE '\\') DESC, t.reference_count DESC
             LIMIT ?4
             """,
-            [.text(escaped + "%"), .text("% " + escaped + "%"), .text(phrase), .int(limit),
-             .text(foldedEscaped + "%"), .text("% " + foldedEscaped + "%"), .text(folded)],
+            [.text(escaped + starts), .text(within + escaped + starts), .text(phrase), .int(limit),
+             .text(foldedEscaped + starts), .text(within + foldedEscaped + starts), .text(folded)],
             map: Self.summary
         )
     }
