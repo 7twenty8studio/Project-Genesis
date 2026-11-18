@@ -954,6 +954,7 @@
    "pt": "Adoni-Zedeque"
   },
   "Adullam": {
+   "es": "Adulam",
    "pt": "Adulão"
   },
   "Ahaz": {
@@ -987,6 +988,7 @@
    "pt": "Arabe"
   },
   "Arabah": {
+   "es": "Arabá",
    "pt": "Arabá"
   },
   "Arabia": {
@@ -1068,11 +1070,15 @@
    "pt": "Elias"
   },
   "Engedi": {
+   "es": "Engadi",
    "pt": "En-Gedi"
   },
   "Ephraim": {
    "es": "Efraim",
    "pt": "Efraim"
+  },
+  "Erech": {
+   "es": "Erec"
   },
   "Esau": {
    "es": "Esaú",
@@ -1328,6 +1334,7 @@
    "pt": "Siquém"
   },
   "Shinar": {
+   "es": "Sinar",
    "pt": "Sinear"
   },
   "Sidon": {

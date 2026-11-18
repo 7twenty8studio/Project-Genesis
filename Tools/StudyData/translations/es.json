@@ -483,7 +483,7 @@
    "name": "Reinado de Manasés"
   },
   "229": {
-   "name": "Profecías de Nahum"
+   "name": "Profecías de Nahúm"
   },
   "23": {
    "name": "Muerte de Adam"
@@ -4380,6 +4380,9 @@
    "name": "Naasón",
    "other": "Naasson, Naashon"
   },
+  "2145": {
+   "name": "Nahúm"
+  },
   "2146": {
    "name": "Nahat"
   },
@@ -6475,7 +6478,7 @@
    "name": "Tubal-Caín"
   },
   "2885": {
-   "name": "Tiquico"
+   "name": "Tíquico"
   },
   "2886": {
    "name": "Tirano"
@@ -6869,6 +6872,9 @@
   },
   "3039": {
    "name": "Sofonías"
+  },
+  "304": {
+   "name": "Arioc"
   },
   "3040": {
    "name": "Ezequías"
@@ -9094,6 +9100,9 @@
   "1083": {
    "name": "Simrom-meron"
   },
+  "1084": {
+   "name": "Sinar"
+  },
   "1085": {
    "name": "Sión"
   },
@@ -9965,6 +9974,9 @@
   "26": {
    "name": "Aditaim"
   },
+  "260": {
+   "name": "Arabá"
+  },
   "263": {
    "name": "Cabón"
   },
@@ -10079,6 +10091,9 @@
   },
   "309": {
    "name": "Cózeba"
+  },
+  "31": {
+   "name": "Adulam"
   },
   "310": {
    "name": "Creta"
@@ -10258,6 +10273,9 @@
   "388": {
    "name": "En-ganim"
   },
+  "389": {
+   "name": "Engadi"
+  },
   "39": {
    "name": "Aía"
   },
@@ -10314,6 +10332,9 @@
   },
   "406": {
    "name": "Efraim"
+  },
+  "407": {
+   "name": "Erec"
   },
   "408": {
    "name": "Esaú"
@@ -10609,6 +10630,9 @@
   },
   "531": {
    "name": "Hasmona"
+  },
+  "532": {
+   "name": "Haurán"
   },
   "533": {
    "name": "Havilah (del Edén)"
@@ -11220,6 +11244,9 @@
   },
   "788": {
    "name": "Mesech"
+  },
+  "79": {
+   "name": "Arabá"
   },
   "791": {
    "name": "Metegama"

@@ -186,3 +186,8 @@ What the translators reported per batch, beyond the review files.
 - BLIVRE typo Ezra 2:34 "Os filhos de de Jericó" quoted verbatim in Jericho q6: shorten the quote to avoid showing it.
 - Jokmeam "Jocneão" and Joppa "Jafo" keep Easton's A.V. remarks. Joppa q1 joins two reordered runs with "…".
 - Source fragments kept: Italy starts "Acts 18:2…)", Jordan "But besides these two…", Jericho bracket. Duplicates: Holy Place, Hukkok, Jerusalem, Jokmeam, Judea.
+
+## es 030–031
+- Reused identical texts: Egypt 362 (028/259), Ephrathah 404 (028/220), Elam 365 (010/1049), Elishah 370 (010/1154), Esau 408 (011/1216).
+- Names the app left in English for Spanish now set in manual.json: Adulam, Arabá, Arioc, Engadi, Erec, Haurán, Nahúm, Sinar, Tíquico. Batches before this wrote some of them in English (e.g. 030–031 "Hauran", "Adullam", "Shinar"): align in the final pass.
+- En-tappuah "En-tapua". Achmetha modernized "Acmeta". Dimnah "Rimmono" (verse). Translations to look at: "el santo teólogo", "pedo de lobo", "vacas de Basán".
