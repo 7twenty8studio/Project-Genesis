@@ -217,8 +217,13 @@
    "id": 978,
    "sha256": "368e5ae45cb4e8f28e7e52602b33d1de7718ebd2cf6a47caf0de4db29f9e706c",
    "text": "Elevação de Leí, ou a altura da queixada; isto é, a Ramá de Leí (Jz 15:15-17). A expressão “na queixada,” ver. 19, Versão Autorizada, está na margem, e também na Versão Revisada, “em Leí.” Aqui Sansão matou mil filisteus com uma queixada.",
-   "wrong_verse": [
-    0
+   "quote_fixes": [
+    {
+     "n": 0,
+     "reference": "Judg 15:19",
+     "mode": "translated",
+     "reason": "the Authorized Version's “in the jaw”; the Bíblia Livre reads “em Leí”"
+    }
    ]
   },
   {

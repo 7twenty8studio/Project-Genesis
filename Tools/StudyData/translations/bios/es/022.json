@@ -103,8 +103,13 @@
    "id": 2500,
    "sha256": "d08efb02070a5d5cb87960a557103596590dd82980becc4f5f908f6757a14a46",
    "text": "El hijo de Nerías. Cuando Sedequías hizo un viaje a Babilonia para rendir homenaje a Nabucodonosor, Seraías tuvo a su cargo los regalos reales que habían de presentarse en esa ocasión. Jeremías aprovechó la ocasión y envió con Seraías una palabra de aliento a los desterrados en Babilonia, y un anuncio de la ruina que aguardaba a aquella ciudad culpable. El rollo que contenía este mensaje (Jer 50:1-8) debía Seraías leerlo a los desterrados y luego, después de atarle una piedra, arrojarlo al Eufrates, pronunciando, mientras se hundía, la oración registrada en Jer 51:59-64. Babilonia estaba en este tiempo en el apogeo de su gloria, la monarquía más grande y poderosa del mundo. Apenas habían pasado setenta años cuando las palabras del profeta se cumplieron todas. Jer 51:59 se traduce en la Versión Revisada “Y Seraías era camarero mayor”, en lugar de “era un príncipe pacífico”, como en la Versión Autorizada.",
-   "wrong_verse": [
-    1
+   "quote_fixes": [
+    {
+     "n": 1,
+     "reference": "Jer 51:59",
+     "mode": "translated",
+     "reason": "the Authorized Version's reading, which Easton corrects; both Bibles have the corrected one"
+    }
    ]
   },
   {

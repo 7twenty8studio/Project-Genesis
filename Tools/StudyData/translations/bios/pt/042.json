@@ -7,8 +7,13 @@
    "id": 1081,
    "sha256": "0342ed491b41e07ef77a2cad0bebbfd1768488ce8fc13640f1ea5b7eee98708e",
    "text": "Geralmente entendido como designando o Messias, “o pacífico,” como a palavra significa (Gn 49:10). A Vulgata traduz a palavra por “aquele que há de ser enviado,” em alusão ao Messias; a margem da Versão Revista, “até que ele venha a Siló;” e a LXX, “até que venha a Siló aquilo que é seu.” O mais simples e natural é traduzir a expressão, como na Versão Autorizada, “até que venha Siló,” interpretando-a como nome próprio (cf. Is 9:6).\n\n Siló, lugar de descanso, uma cidade de Efraim, “ao lado norte de Betel,” da qual dista 10 milhas (Jz 21:19); a moderna Seilun (o árabe para Siló), uma “massa de ruínas informes.” Aqui foi armado o tabernáculo depois da Conquista (Js 18:1-10), onde permaneceu durante todo o período dos juízes, até que a arca caiu nas mãos dos filisteus. “Nenhum lugar da Palestina Central poderia ser mais retirado do que este antigo santuário, nada mais sem feições do que a paisagem ao redor; tão sem feições, de fato, a paisagem e tão retirado o lugar, que desde o tempo de São Jerônimo até a sua redescoberta pelo Dr. Robinson em 1838 o próprio local ficou esquecido e desconhecido.” É mencionada por Jeremias (7:12, 14; 26:4-9) quinhentos anos depois da sua destruição.",
-   "wrong_verse": [
-    3
+   "quote_fixes": [
+    {
+     "n": 3,
+     "reference": "Gen 49:10",
+     "mode": "translated",
+     "reason": "the Septuagint's reading of Gen 49:10, not the Bible's text"
+    }
    ]
   },
   {

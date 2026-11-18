@@ -61,8 +61,13 @@
    "id": 1231,
    "sha256": "4032258735f515efaa88e8456669ffaa506a34f40014a7004d4b111c473e960a",
    "text": "Vida; vivente, o nome dado por Adão à sua mulher (Gn 3:20; 4:1). O relato de sua criação é dado em Gn 2:21, 22. O Criador, ao declarar que não era bom que o homem estivesse só e ao criar para ele uma companheira adequada, deu sanção à monogamia. O comentarista Matthew Henry diz: “Esta companheira foi tirada do seu lado para significar que ela lhe havia de ser querida como sua própria carne. Não da sua cabeça, para que não dominasse sobre ele; nem dos seus pés, para que ele não a tiranizasse; mas do seu lado, para denotar aquela espécie de igualdade que deve subsistir no estado matrimonial.” E ainda: “A esposa que é feita por Deus mediante graça especial, e trazida por Deus mediante providência especial, provavelmente se mostrará uma auxiliadora idônea para o seu marido.” Pela sutil tentação da serpente, ela violou o mandamento de Deus tomando do fruto proibido, o qual deu também a seu marido (1 Tm 2:13-15; 2 Co 11:3). Quando deu à luz seu primeiro filho, disse: “Obtive um homem pelo SENHOR” (R.V., “Obtive um homem com a ajuda do SENHOR,” Gn 4:1). Assim ela acolheu Caim, segundo pensam alguns, como se ele fosse o Prometido, a “Semente da mulher.”",
-   "wrong_verse": [
-    3
+   "quote_fixes": [
+    {
+     "n": 3,
+     "reference": "Gen 4:1",
+     "mode": "translated",
+     "reason": "the Revised Version's rendering of Gen 4:1, which Easton sets beside the KJV's"
+    }
    ]
   },
   {

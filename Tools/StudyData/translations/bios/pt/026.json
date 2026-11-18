@@ -174,7 +174,16 @@
    "kind": "place",
    "id": 53,
    "sha256": "893545349161230c4f005e4763ddf7ba3c24d3ed8cffc705df3a7a4ebfc48633",
-   "text": "Uma tribo que habitava na Arábia Pétrea, entre o mar Morto e o Mar Vermelho. Não eram descendentes de Amaleque, filho de Elifaz, pois já existiam nos dias de Abraão (Gn 14:7). Eram provavelmente uma tribo que migrou das margens do golfo Pérsico e se estabeleceu na Arábia. Habitavam na terra do sul “…desde Havilá até chegar a Sur” (Nm 13:29; 1 Sm 15:7). Eram um povo pastoril e, por isso, nômade. Os seus reis tinham o nome hereditário de Agague (Nm 24:7; 1 Sm 15:8). Tentaram deter os israelitas quando estes marchavam pelo seu território (Dt 25:18), atacando-os em Refidim (Êx 17:8-13; cf. Dt 25:17; 1 Sm 15:2). Depois atacaram os israelitas em Hormá (Nm 14:45). Lemos posteriormente a seu respeito como aliados dos moabitas (Jz 3:13) e dos midianitas (Jz 6:3). Saul, por fim, assolou o seu território e destruiu o seu poder (1 Sm 14:48; 15:3), e Davi recuperou deles despojos (1 Sm 30:18-20). Nas inscrições babilônicas são chamados Sute, nas do Egito Sittiu, e as tábuas de Amarna os incluem sob o nome geral de Khabbati, ou “saqueadores.”"
+   "text": "Uma tribo que habitava na Arábia Pétrea, entre o mar Morto e o Mar Vermelho. Não eram descendentes de Amaleque, filho de Elifaz, pois já existiam nos dias de Abraão (Gn 14:7). Eram provavelmente uma tribo que migrou das margens do golfo Pérsico e se estabeleceu na Arábia. “Amaleque habita a terra do sul…desde Havilá até chegar a Sur” (Nm 13:29; 1 Sm 15:7). Eram um povo pastoril e, por isso, nômade. Os seus reis tinham o nome hereditário de Agague (Nm 24:7; 1 Sm 15:8). Tentaram deter os israelitas quando estes marchavam pelo seu território (Dt 25:18), atacando-os em Refidim (Êx 17:8-13; cf. Dt 25:17; 1 Sm 15:2). Depois atacaram os israelitas em Hormá (Nm 14:45). Lemos posteriormente a seu respeito como aliados dos moabitas (Jz 3:13) e dos midianitas (Jz 6:3). Saul, por fim, assolou o seu território e destruiu o seu poder (1 Sm 14:48; 15:3), e Davi recuperou deles despojos (1 Sm 30:18-20). Nas inscrições babilônicas são chamados Sute, nas do Egito Sittiu, e as tábuas de Amarna os incluem sob o nome geral de Khabbati, ou “saqueadores.”",
+   "quote_fixes": [
+    {
+     "n": 0,
+     "reference": "Num 13:29; 1Sam 15:7",
+     "mode": "verbatim",
+     "reason": "the quotation joins Num 13:29 and 1 Sam 15:7; the finder had only 15:7",
+     "bible": "Amaleque habita a terra do sul; e os heteus, e os jebuseus, e os amorreus, habitam no monte; e os cananeus habitam junto ao mar, e à beira do Jordão. E Saul feriu a Amaleque, desde Havilá até chegar a Sur, que está à fronteira do Egito."
+    }
+   ]
   },
   {
    "kind": "place",

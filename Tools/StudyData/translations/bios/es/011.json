@@ -61,8 +61,13 @@
    "id": 1231,
    "sha256": "4032258735f515efaa88e8456669ffaa506a34f40014a7004d4b111c473e960a",
    "text": "Vida; viviente, el nombre que Adán dio a su esposa (Gn 3:20; 4:1). El relato de su creación se da en Gn 2:21, 22. El Creador, al declarar que no era bueno que el hombre estuviera solo, y al crear para él una compañera adecuada, dio sanción a la monogamia. El comentarista Matthew Henry dice: “Esta compañera fue tomada de su costado para significar que había de serle tan querida como su propia carne. No de su cabeza, para que no se enseñoreara de él; ni de sus pies, para que él no la tiranizara; sino de su costado, para denotar aquella especie de igualdad que ha de subsistir en el estado matrimonial.” Y además: “La esposa que es hechura de Dios por gracia especial, y traída por Dios por especial providencia, probablemente resultará una ayuda idónea para su marido.” Por la sutil tentación de la serpiente violó el mandamiento de Dios al tomar del fruto prohibido, que dio también a su marido (1 Ti 2:13-15; 2 Co 11:3). Cuando dio a luz a su primer hijo, dijo: “Adquirido he varón por Jehová” (R.V., “He adquirido un varón con la ayuda de Jehová,” Gn 4:1). Así recibió a Caín, según piensan algunos, como si hubiera sido el Prometido, la “Simiente de la mujer.”",
-   "wrong_verse": [
-    3
+   "quote_fixes": [
+    {
+     "n": 3,
+     "reference": "Gen 4:1",
+     "mode": "translated",
+     "reason": "the Revised Version's rendering of Gen 4:1, which Easton sets beside the KJV's"
+    }
    ]
   },
   {
@@ -148,8 +153,13 @@
    "id": 1262,
    "sha256": "ba176b7ed789433eb21f7c30e57f804539f9f846d59891a401f1b4f4c2ecd5ce",
    "text": "El séptimo hijo de Jacob, por Zilpa, la sierva de Lea, y hermano de Aser (Gn 30:11-13; 46:16, 18). En la Versión Autorizada de 30:11 las palabras “Viene una tropa: y llamó,” etc., deberían más bien traducirse “En buena fortuna [R.V., ‘Afortunada’]: y llamó,” etc., o “Viene la fortuna,” etc.\n\n La tribu de Gad, durante la marcha por el desierto, tuvo su lugar con Simeón y Rubén en el lado sur del tabernáculo (Nm 2:14). Las tribus de Rubén y Gad continuaron a lo largo de toda su historia dedicadas a las ocupaciones pastoriles de los patriarcas (Nm 32:1-5).\n\n La porción asignada a la tribu de Gad estaba al oriente del Jordán, y comprendía la mitad de Galaad, una región de gran belleza y fertilidad (Dt 3:12), limitada al oriente por el desierto de Arabia, al occidente por el Jordán (Jos 13:27), y al norte por el río Jaboc. Incluía así todo el valle del Jordán hacia el norte hasta el mar de Galilea, donde se estrechaba casi hasta formar una punta.\n\n Esta tribu era fiera y belicosa; eran “muy valientes hombres de guerra para pelear, dispuestos á hacerlo con escudo y pavés: sus rostros como rostros de leones, y ligeros como las cabras monteses” (1 Cr 12:8; 5:19-22). Barzilai (2 S 17:27) y Elías (1 R 17:1) eran de esta tribu. Fue llevada en cautiverio al mismo tiempo que las demás tribus del reino del norte por Tiglat-pileser (1 Cr 5:26), y en el tiempo de Jeremías (49:1) sus ciudades estaban habitadas por los amonitas.",
-   "wrong_verse": [
-    0
+   "quote_fixes": [
+    {
+     "n": 0,
+     "reference": "Gen 30:11",
+     "mode": "translated",
+     "reason": "the Authorized Version's wording, which Easton corrects; the RV1909 reads “Vino la ventura”"
+    }
    ]
   },
   {

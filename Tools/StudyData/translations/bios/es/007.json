@@ -463,8 +463,12 @@
    "id": 931,
    "sha256": "29735d20c44323c1072724779e323b30bc8926ba77d736ab3dd9b94855151145",
    "text": "El destructor, el subyugador, o el dios pez; el dios de los moabitas (Nm 21:29; Jer 48:7, 13, 46). El culto de este dios, “abominación de Moab,” fue introducido en Jerusalén por Salomón (1 R 11:7), pero fue abolido por Josías (2 R 23:13). En la “Piedra Moabita” (véase), Mesa (2 R 3:5) atribuye a este dios sus victorias sobre el rey de Israel: “Y Quemos lo arrojó delante de mi vista.”",
-   "wrong_verse": [
-    2
+   "quote_fixes": [
+    {
+     "n": 2,
+     "mode": "translated",
+     "reason": "not Scripture: the Moabite Stone, Mesha's inscription"
+    }
    ]
   },
   {

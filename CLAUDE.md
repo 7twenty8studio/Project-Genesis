@@ -50,7 +50,9 @@ shares; README.md has the architecture.
   entry's source sha (`bios.py export/check/status`), quotations quoted
   verbatim from the RV1909 / Bíblia Livre where Easton quotes a verse
   (`scripture_quotes.py`), the rest translated; only entries that pass
-  `bios.py check` reach `detail`. The app labels them
+  `bios.py check` reach `detail` (references compared whole by refs.py;
+  a misread verse is a `quote_fixes` entry with the corrected reference and
+  a reason, never dropped words; tests: Tools/StudyData/test_bios.py). The app labels them
   (`DictionaryText`, "Translated from Easton's Bible Dictionary (1897).
   Not Scripture."). Review notes: bios/NOTES.md and bios/<lang>/review.
 

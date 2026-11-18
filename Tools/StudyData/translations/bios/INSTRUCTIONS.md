@@ -50,13 +50,29 @@ and fix everything it reports until it says 0 fail and 0 to do.
     meaning (use the verse's words only if it plainly is that verse).
   - `other`: not Scripture (Easton's term, a name's meaning, another
     author). Translate it.
-  If the verse given plainly isn't the one Easton quotes (no words in
-  common, another subject), add the quotation's `n` to the entry's
-  `"wrong_verse": [n, …]` list and translate that quotation, keeping its
-  quotation marks; the check then lists it for review instead of
-  enforcing the verse. Use it only when the verse is plainly wrong.
-  The check enforces whole, partial and loose; those three, wording and
-  unsure are listed in review/NNN.md for the owner to look over.
+  If the verses given aren't the ones Easton quotes (no words in common,
+  another subject, or they stop short of his quotation), add a
+  correction to the entry's `"quote_fixes"`, always with a reason:
+  `{"n": 3, "reference": "1Sam 1:26-28", "mode": "verbatim", "reason": "…"}`
+  when you can tell the right verses (book codes as in
+  scripture_quotes.BOOKS, several joined by "; "): quote their words of
+  the RV1909 / Bíblia Livre exactly, as for `loose`, and run
+  `bios.py fix es --rv1909 RV1909.sqlite` (or `fix pt`) to save those
+  words with the fix; or `"mode": "translated"` when it isn't Scripture
+  (an inscription, another author) or is a reading that Bible doesn't
+  have (an A.V., R.V. or LXX wording Easton discusses), with the
+  reference if there is one. Never drop part of Easton's quotation: if
+  the verses don't cover it all, correct the reference. When the review
+  file says only part of his words are in the verses found, check this.
+  The check enforces whole, partial, loose and verbatim fixes; those,
+  wording, unsure and every fix are listed in review/NNN.md for the
+  owner to look over.
+- Bible references are checked whole: the same books, chapters and
+  verses in the same order (refs.py reads the abbreviations in the table
+  below and each book's full name). If Easton slipped ("John. 15:44" in
+  Mareshah, meaning Josh. 15:44), write the right one and add
+  `"reference_fixes": [{"was": "John. 15:44", "now": "Josh. 15:44",
+  "reason": "…"}]` ("was" exactly as in the English, once).
 - Names of people and places: use the batch's `glossary` (English ->
   Spanish/Portuguese, as the app shows them). For a name not in it, use
   the usual spelling of the Reina-Valera (Spanish) or Almeida/Bíblia Livre

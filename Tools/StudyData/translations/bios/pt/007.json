@@ -367,8 +367,13 @@
    "id": 905,
    "sha256": "85289d54f57c1e6333ecdf1130ed47973a10a187312c22c4573a1d81ddf54794",
    "text": "Ungido, a tradução grega da palavra hebraica traduzida por “Messias” (q.v.), o título oficial de nosso Senhor, que ocorre quinhentas e catorze vezes no Novo Testamento. Indica que ele foi ungido ou consagrado para sua grande obra redentora como Profeta, Sacerdote e Rei de seu povo. Ele é Jesus, o Cristo (At 17:3; 18:5; Mt 22:42), o Ungido. Assim se refere a ele Isaías (61:1), e também Daniel (9:24-26), que o chama “o Messias, o Príncipe.”\n\n O Messias é a mesma pessoa que “a semente da mulher” (Gn 3:15), “a semente de Abraão” (Gn 22:18), o “Profeta como Moisés” (Dt 18:15), “Sacerdote eterno, segundo a ordem de Melquisedeque” (Sl 110:4), “a vara do tronco de Jessé” (Is 11:1, 10), o “Emanuel,” o filho da virgem (Is 7:14), “o renovo de Jeová” (Is 4:2) e “o mensageiro do pacto” (Ml 3:1). Este é aquele “de quem Moisés escreveu na Lei, e os Profetas.” As Escrituras do Antigo Testamento estão cheias de declarações proféticas a respeito do Grande Libertador e da obra que ele havia de realizar. Jesus, o Cristo, é Jesus, o Grande Libertador, o Ungido, o Salvador dos homens. Este nome indica que Jesus foi divinamente designado, comissionado e acreditado como o Salvador dos homens (Hb 5:4; Is 11:2-4; 49:6; Jo 5:37; At 2:22).\n\n Crer que “Jesus é o Cristo” é crer que ele é o Ungido, o Messias dos profetas, o Salvador enviado por Deus; que ele era, numa palavra, aquilo que afirmava ser. Isto é crer no evangelho, por cuja fé somente os homens podem ser levados a Deus. Que Jesus é o Cristo é o testemunho de Deus, e a fé nisso constitui o cristão (1 Co 12:3; 1 Jo 5:1).",
-   "wrong_verse": [
-    4
+   "quote_fixes": [
+    {
+     "n": 4,
+     "reference": "Deut 18:15",
+     "mode": "translated",
+     "reason": "Easton's title for Christ from Deut 18:15; the Bíblia Livre's verse has “Profeta… como eu”"
+    }
    ]
   },
   {
@@ -466,8 +471,12 @@
    "id": 931,
    "sha256": "29735d20c44323c1072724779e323b30bc8926ba77d736ab3dd9b94855151145",
    "text": "O destruidor, subjugador, ou deus-peixe, o deus dos moabitas (Nm 21:29; Jr 48:7, 13, 46). O culto desse deus, “abominação de Moabe,” foi introduzido em Jerusalém por Salomão (1 Rs 11:7), mas foi abolido por Josias (2 Rs 23:13). Na “Pedra Moabita” (q.v.), Messa (2 Rs 3:5) atribui a esse deus suas vitórias sobre o rei de Israel: “E Camos o expulsou diante de meus olhos.”",
-   "wrong_verse": [
-    2
+   "quote_fixes": [
+    {
+     "n": 2,
+     "mode": "translated",
+     "reason": "not Scripture: the Moabite Stone, Mesha's inscription"
+    }
    ]
   },
   {

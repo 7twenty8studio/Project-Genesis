@@ -235,8 +235,12 @@
    "id": 711,
    "sha256": "df1c8bfccbaffebf7e975b440e9cd376118fcf61a7e6a15d183f0ccb1eae555f",
    "text": "Inexpugnável, uma cidade real cananeia na Sefelá, ou planície marítima da Palestina (Js 10:3, 5; 12:11). Foi tomada e destruída pelos israelitas (Js 10:31-33). Tornou-se depois, sob Roboão, uma das mais fortes fortalezas de Judá (2 Cr 10:9). Foi assaltada e provavelmente tomada por Senaqueribe (2 Rs 18:14, 17; 19:8; Is 36:2). Um relato deste cerco encontra-se em algumas lajes achadas nas câmaras do palácio de Koyunjik, e que estão agora no Museu Britânico. A inscrição foi decifrada da seguinte maneira:, “Senaqueribe, o rei poderoso, rei do país da Assíria, sentado no trono de julgamento diante da cidade de Laquis: dei permissão para a sua matança.”\n\n Laquis tem sido identificada com Tell-el-Hesy, onde se encontrou uma tabuinha cuneiforme contendo uma carta que se supõe ser de Amenófis, em Amarna, em resposta a uma das tabuinhas de Amarna enviadas por Zimrida de Laquis. Esta carta é do chefe de Atim (=Etã, 1 Cr 4:32) ao chefe de Laquis, e nela o escritor exprime grande alarme diante da aproximação de saqueadores vindos das colinas de Hebrom. “Entraram na terra,” diz ele, “para a devastar...forte é aquele que desceu. Ele devasta.” Esta carta mostra que “a comunicação por meio de tabuinhas em escrita cuneiforme era usual não só na correspondência com o Egito, mas também na correspondência interna do país. A carta, embora não seja em certos aspectos tão importante como a pedra moabita e a inscrição de Siloé, é uma das descobertas mais valiosas jamais feitas na Palestina” (Tell Amarna Tablets, de Conder, p. 134).\n\n As escavações em Laquis continuam ainda, e entre outras descobertas está a de um alto-forno de ferro, com escória e cinzas, que se supõe ter existido em 1500 a.C. Se as teorias dos peritos estão corretas, o uso do sopro de ar quente em vez de ar frio (um aperfeiçoamento na fabricação do ferro patenteado por Neilson em 1828) era conhecido mil e quinhentos anos antes de Cristo.",
-   "wrong_verse": [
-    1
+   "quote_fixes": [
+    {
+     "n": 1,
+     "mode": "translated",
+     "reason": "not Scripture: an Amarna letter"
+    }
    ]
   },
   {

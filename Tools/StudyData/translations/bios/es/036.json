@@ -235,8 +235,12 @@
    "id": 711,
    "sha256": "df1c8bfccbaffebf7e975b440e9cd376118fcf61a7e6a15d183f0ccb1eae555f",
    "text": "Inexpugnable, una ciudad real cananea en la Sefela, o llanura marítima de Palestina (Jos 10:3, 5; 12:11). Fue tomada y destruida por los israelitas (Jos 10:31-33). Después llegó a ser, bajo Roboam, una de las fortalezas más fuertes de Judá (2 Cr 10:9). Fue asaltada y probablemente tomada por Senaquérib (2 R 18:14, 17; 19:8; Is 36:2). Un relato de este sitio aparece en unas losas halladas en las cámaras del palacio de Koyunjik, y que hoy están en el Museo Británico. La inscripción se ha descifrado así:, “Senaquérib, el rey poderoso, rey del país de Asiria, sentado en el trono de juicio ante la ciudad de Laquís: di permiso para su matanza.”\n\n Laquís se ha identificado con Tell-el-Hesy, donde se ha hallado una tablilla cuneiforme que contiene una carta que se supone es de Amenofis, en Amarna, en respuesta a una de las tablillas de Amarna enviada por Zimrida desde Laquís. Esta carta es del jefe de Atim (=Etam, 1 Cr 4:32) al jefe de Laquís, y en ella el escritor expresa gran alarma ante la llegada de merodeadores de los montes de Hebrón. “Han entrado en la tierra,” dice, “para asolar... fuerte es el que ha descendido. Él asuela.” Esta carta muestra que “la comunicación por medio de tablillas en escritura cuneiforme no solo era usual al escribir a Egipto, sino también en la correspondencia interna del país. La carta, aunque en algunos aspectos no es tan importante como la piedra moabita y la inscripción de Siloé, es uno de los descubrimientos más valiosos que se han hecho jamás en Palestina” (Conder, Tell Amarna Tablets, p. 134).\n\n Las excavaciones en Laquís continúan todavía, y entre otros descubrimientos está el de un alto horno de hierro, con escoria y cenizas, que se supone existió en el 1500 a.C. Si las teorías de los expertos son correctas, el uso del soplo de aire caliente en lugar de aire frío (una mejora en la fabricación del hierro patentada por Neilson en 1828) se conocía mil quinientos años antes de Cristo.",
-   "wrong_verse": [
-    1
+   "quote_fixes": [
+    {
+     "n": 1,
+     "mode": "translated",
+     "reason": "not Scripture: an Amarna letter"
+    }
    ]
   },
   {

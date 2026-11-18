@@ -174,7 +174,16 @@
    "kind": "place",
    "id": 53,
    "sha256": "893545349161230c4f005e4763ddf7ba3c24d3ed8cffc705df3a7a4ebfc48633",
-   "text": "Una tribu que habitaba en la Arabia Pétrea, entre el mar Muerto y el mar Rojo. No eran descendientes de Amalec, el hijo de Elifaz, pues ya existían en los días de Abraham (Gn 14:7). Probablemente eran una tribu que emigró de las costas del golfo Pérsico y se estableció en Arabia. “…desde Havila hasta llegar á Shur” (Nm 13:29; 1 S 15:7). Eran una raza de pastores, y por tanto nómada. Sus reyes llevaban el nombre hereditario de Agag (Nm 24:7; 1 S 15:8). Intentaron detener a los israelitas cuando marchaban por su territorio (Dt 25:18), atacándolos en Refidim (Éx 17:8-13; cf. Dt 25:17; 1 S 15:2). Después atacaron a los israelitas en Horma (Nm 14:45). Más tarde leemos de ellos como aliados de los moabitas (Jue 3:13) y de los madianitas (Jue 6:3). Saúl finalmente asoló su territorio y destruyó su poder (1 S 14:48; 15:3), y David recobró de ellos un botín (1 S 30:18-20). En las inscripciones babilónicas se les llama Sute, en las de Egipto Sittiu, y las tablillas de Amarna los incluyen bajo el nombre general de Khabbati, o “saqueadores.”"
+   "text": "Una tribu que habitaba en la Arabia Pétrea, entre el mar Muerto y el mar Rojo. No eran descendientes de Amalec, el hijo de Elifaz, pues ya existían en los días de Abraham (Gn 14:7). Probablemente eran una tribu que emigró de las costas del golfo Pérsico y se estableció en Arabia. “Amalec habita la tierra del mediodía…desde Havila hasta llegar á Shur” (Nm 13:29; 1 S 15:7). Eran una raza de pastores, y por tanto nómada. Sus reyes llevaban el nombre hereditario de Agag (Nm 24:7; 1 S 15:8). Intentaron detener a los israelitas cuando marchaban por su territorio (Dt 25:18), atacándolos en Refidim (Éx 17:8-13; cf. Dt 25:17; 1 S 15:2). Después atacaron a los israelitas en Horma (Nm 14:45). Más tarde leemos de ellos como aliados de los moabitas (Jue 3:13) y de los madianitas (Jue 6:3). Saúl finalmente asoló su territorio y destruyó su poder (1 S 14:48; 15:3), y David recobró de ellos un botín (1 S 30:18-20). En las inscripciones babilónicas se les llama Sute, en las de Egipto Sittiu, y las tablillas de Amarna los incluyen bajo el nombre general de Khabbati, o “saqueadores.”",
+   "quote_fixes": [
+    {
+     "n": 0,
+     "reference": "Num 13:29; 1Sam 15:7",
+     "mode": "verbatim",
+     "reason": "the quotation joins Num 13:29 and 1 Sam 15:7; the finder had only 15:7",
+     "bible": "Amalec habita la tierra del mediodía; y el Hetheo, y el Jebuseo, y el Amorrheo, habitan en el monte; y el Cananeo habita junto á la mar, y á la ribera del Jordán. Y Saúl hirió á Amalec, desde Havila hasta llegar á Shur, que está á la frontera de Egipto."
+    }
+   ]
   },
   {
    "kind": "place",

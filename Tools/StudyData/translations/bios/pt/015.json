@@ -115,8 +115,13 @@
    "id": 1836,
    "sha256": "2cbf5dcdfa5d4e726ac5c5131cf25ee723ca5cd20cfc074ca7a1b5e1184d5ad0",
    "text": "O evangelista, era gentio. A data e as circunstâncias de sua conversão são desconhecidas. Segundo a sua própria declaração (Lc 1:2), não foi “testemunha ocular e ministro da palavra desde o princípio.” É provável que fosse médico em Trôade, e ali tenha sido convertido por Paulo, a quem se ligou. Acompanhou-o a Filipos, mas ali não partilhou a sua prisão, nem o acompanhou mais adiante, depois de sua libertação, na viagem missionária daquela ocasião (At 17:1). Na terceira visita de Paulo a Filipos (20:5, 6) encontramos de novo Lucas, que provavelmente passara todo o tempo intermediário naquela cidade, um período de sete ou oito anos. Desde então Lucas foi o companheiro constante de Paulo durante a sua viagem a Jerusalém (20:6-21:18). De novo desaparece de vista durante a prisão de Paulo em Jerusalém e Cesareia, e só reaparece quando Paulo parte para Roma (27:1), para onde o acompanha (28:2, 12-16), e onde permanece com ele até o fim de sua primeira prisão (Fm 1:24; Cl 4:14). A última menção do “médico amado” está em 2 Tm 4:11.\n\n Há muitas passagens nas epístolas de Paulo, assim como nos escritos de Lucas, que mostram a extensão e a exatidão de seus conhecimentos médicos.",
-   "wrong_verse": [
-    0
+   "quote_fixes": [
+    {
+     "n": 0,
+     "reference": "Luke 1:2",
+     "mode": "translated",
+     "reason": "Easton turns Luke 1:2 into words about Luke himself, so the verse's own words don't fit"
+    }
    ]
   },
   {

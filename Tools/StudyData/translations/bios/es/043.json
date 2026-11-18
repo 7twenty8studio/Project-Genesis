@@ -85,8 +85,13 @@
    "id": 1171,
    "sha256": "5d58c58110de3459a4a58dc51d828c8bf314a6a89785b1eae04bebf94fee70b2",
    "text": "El profeta Elías era llamado así (1 R 17:1; 21:17, 28, etc.). En 1 R 17:1 la palabra traducida “moradores” es en el original la misma que la traducida “Thisbita,” de modo que ese versículo puede leerse como en la LXX: “Elías tisbita, de Tisbe de Galaad.” Algunos interpretan que esta palabra significa “extranjero,” y leen el versículo: “Elías el extranjero, de entre los extranjeros de Galaad.” Esta designación se da probablemente al profeta para indicar que su lugar de nacimiento era Tisbe, un lugar de la Alta Galilea (mencionado en el libro apócrifo de Tobías), desde donde por alguna razón emigró a Galaad. Josefo, el historiador judío (Ant. 8:13, 2), supone, sin embargo, que Tisbe era algún lugar de la tierra de Galaad. Algunos lo han identificado con el-Ishtib, un lugar 22 millas al sur exacto del Mar de Galilea, entre los montes de Galaad.",
-   "wrong_verse": [
-    2
+   "quote_fixes": [
+    {
+     "n": 2,
+     "reference": "1Kings 17:1",
+     "mode": "translated",
+     "reason": "the Septuagint's reading of 1 Kings 17:1, not the Bible's text"
+    }
    ]
   },
   {
@@ -166,8 +171,12 @@
    "id": 1189,
    "sha256": "0d69a38820fb8d662445d508fb0a0f39195a254ca7591f7a9162b87519f1a037",
    "text": "Luz, o la ciudad de la luna, una ciudad “de los Caldeos,” lugar natal de Harán (Gn 11:28, 31), la ciudad más grande de Sinar o Caldea septentrional, y el principal centro comercial del país, así como el centro del poder político. Estaba cerca de la desembocadura del Éufrates, en su orilla occidental, y está representada por los montículos (de ladrillos unidos con betún) de el-Mugheir, es decir, “la embetunada,” o “la ciudad del betún,” hoy a 150 millas del mar y a unas 6 millas del Éufrates, un poco más arriba del punto donde recibe el Shat el-Hie, un afluente del Tigris. Era antes una ciudad marítima, pues las aguas del golfo Pérsico llegaban hasta allí tierra adentro. Ur era el puerto de Babilonia, desde donde se comerciaba con los habitantes del golfo y con los lejanos países de la India, Etiopía y Egipto. Fue abandonada hacia 500 a.C., pero siguió siendo por largo tiempo, como Erec, una gran ciudad cementerio sagrada, como se ve por el número de tumbas halladas allí.\n\n El rey más antiguo de Ur que conocemos es Ur-Ba’u (siervo de la diosa Ba’u), según lee Hommel el nombre, o Ur-Gur, según lo leen otros. Vivió unos dos mil ochocientos años a.C., y tomó parte en la construcción del famoso templo del dios luna Sin en la misma Ur. La ilustración que aquí se da representa su inscripción cuneiforme, escrita en lengua sumeria y estampada en cada ladrillo del templo de Ur. Dice: “Ur-Ba’u, rey de Ur, que edificó el templo del dios luna.”\n\n “Ur estaba consagrada al culto de Sin, el dios luna babilónico. Compartía este honor, sin embargo, con otra ciudad, y esta ciudad era Harán, o Harrán. Harrán estaba en Mesopotamia, y tomó su nombre del camino real que la atravesaba de oriente a occidente. El nombre es babilónico, y atestigua que fue fundada por un rey babilónico. El mismo testimonio lo dan de modo aún más decisivo el culto que se rendía en ella al dios luna babilónico y su antiguo templo de Sin. En efecto, el templo del dios luna en Harrán era quizá aun más famoso en el mundo asirio y babilónico que el templo del dios luna en Ur.\n\n “Entre Ur y Harrán debió de haber, por consiguiente, una estrecha relación en tiempos antiguos, cuyo registro no se ha recuperado todavía. Puede ser que Harrán debiera su fundación a un rey de Ur; en todo caso las dos ciudades estaban unidas por el culto de la misma deidad, el vínculo de unión más estrecho y duradero que existía en el mundo antiguo. Que Taré emigrara de Ur a Harrán deja, pues, de ser extraordinario. Si salió de Ur, era el lugar más natural al que podía ir. Era como pasar de un atrio de un templo a otro.\n\n “Una coincidencia tan notable entre el relato bíblico y los datos de la investigación arqueológica no puede ser resultado del azar. El relato tiene que ser histórico; ningún escritor de fecha tardía, aunque fuera babilonio, podría haber inventado una historia tan exactamente de acuerdo con lo que hoy sabemos que fue la verdad. Que una historia de esta clase haya sido invención de la tradición palestina es igualmente imposible. Para la mente sin prejuicios no hay modo de escapar a la conclusión de que la historia de la migración de Taré de Ur a Harrán se funda en hechos” (Sayce).",
-   "wrong_verse": [
-    3
+   "quote_fixes": [
+    {
+     "n": 3,
+     "mode": "translated",
+     "reason": "not Scripture: a brick inscription from Ur"
+    }
    ]
   },
   {

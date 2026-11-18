@@ -91,8 +91,13 @@
    "id": 126,
    "sha256": "af4c95f79aff115584896106f112c5c506f05015e7d273bb9b7d5fe0c834f0b3",
    "text": "(Zc 14:5) deveria talvez ser traduzido “muito perto” = “o caminho de fuga se tornará fácil.” Se for nome próprio, pode designar algum lugar perto da extremidade ocidental do vale aqui mencionado, perto de Jerusalém.",
-   "wrong_verse": [
-    1
+   "quote_fixes": [
+    {
+     "n": 1,
+     "reference": "Zech 14:5",
+     "mode": "translated",
+     "reason": "an alternative rendering of Zech 14:5 that Easton proposes, not the Bible's text"
+    }
    ]
   },
   {

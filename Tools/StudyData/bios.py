@@ -5,6 +5,8 @@
     python3 Tools/StudyData/bios.py status          # what's done, stale or missing
     python3 Tools/StudyData/bios.py check es 007    # check one translated batch
     python3 Tools/StudyData/bios.py check pt        # check every batch in a language
+    python3 Tools/StudyData/bios.py check es --rv1909 RV1909.sqlite  # also re-read fixed quotes' verses
+    python3 Tools/StudyData/bios.py fix es --rv1909 RV1909.sqlite    # save fixed quotes' Bible words
 
 Source batches (translations/bios/source/NNN.json) hold each entry's kind
 (person or place), id, the SHA-256 of its English text and the text, plus
@@ -19,13 +21,35 @@ Translations live in translations/bios/<lang>/NNN.json:
     {"batch": "007", "lang": "es", "entries": [
         {"kind": "person", "id": 12, "sha256": "<source sha>", "text": "…"}]}
 
+An entry may also carry corrections, each with a reason, all listed for
+review:
+  quote_fixes      [{"n", "reference", "mode", "reason", "bible"}]: the
+                   finder matched quotation n to the wrong verses.
+                   "verbatim": the quotation must be the words of the
+                   corrected reference ("1Sam 1:26-28", book codes from
+                   scripture_quotes.BOOKS; several joined by "; "), whose
+                   RV1909 / Bíblia Livre text `fix` saves in "bible" and
+                   the check compares with the Bible when it has it (the
+                   Bíblia Livre always; the RV1909 with --rv1909 or
+                   GENESIS_RV1909). "translated": not Scripture, or words
+                   that Bible lacks (an A.V., R.V. or LXX reading Easton
+                   discusses); the reference is optional.
+  reference_fixes  [{"was", "now", "reason"}]: Easton's slip in a
+                   reference ("John. 15:44" for Josh. 15:44), applied to
+                   the English before references are compared.
+
 The check, run after each batch: every entry present, its sha256 the
-source's, the same paragraphs, every number the source has (references,
-years, ages), the same quotations in the same order, Scripture quoted
+source's, the same paragraphs, every number the source has (years, ages),
+the same Bible references, book, chapter and verse, in the same order
+(refs.py), the same quotations in the same order, Scripture quoted
 verbatim from the RV1909 / Bíblia Livre, Hebrew and Greek letters kept, no
 English left, a sensible length. add_study_translations.py uses only
-entries that pass. Partial, loose and KJV-wording quotations also go to
-translations/bios/<lang>/review/NNN.md for a person to look over.
+entries that pass. Partial, loose, KJV-wording and fixed quotations go to
+translations/bios/<lang>/review/NNN.md for a person to look over, with a
+note where the verses found hold under 85% of Easton's words (the
+translation may leave part of the quotation out). Passing the check
+doesn't prove a translation complete; the review files and NOTES.md are
+for that. Tests: python3 -m unittest Tools/StudyData/test_bios.py
 """
 import hashlib
 import json
@@ -36,6 +60,7 @@ import sys
 from collections import Counter
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import refs  # noqa: E402
 import scripture_quotes  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -202,31 +227,117 @@ def verbatim(piece: str, bible: str) -> bool:
     return (piece[0].swapcase() + piece[1:]) in bible
 
 
-def check_quotes(lang, quotes, text, wrong_verse=()):
+_KJV = {}
+
+
+def kjv_coverage(english, verses):
+    """The share of the quotation's longer words found in the KJV verses
+    it was matched to: low means the finder may have missed a verse and
+    the translation could leave part of Easton's quotation out (Hannah)."""
+    if not _KJV:
+        db = sqlite3.connect(os.path.join(scripture_quotes.BIBLES, "KJV.sqlite"))
+        _KJV.update(db.execute("SELECT id, text FROM verses"))
+        db.close()
+    words = {w for w in scripture_quotes.norm(re.sub(r"\[[^\]]*\]", " ", english)).split() if len(w) > 3}
+    have = set(scripture_quotes.norm(" ".join(_KJV.get(v, "") for v in verses)).split())
+    return len(words & have) / len(words) if words else 1.0
+
+
+def fix_problems(fix):
+    """What's wrong with one quote_fixes entry itself."""
+    problems = []
+    if not fix.get("reason", "").strip():
+        problems.append(f"quote fix {fix.get('n')} needs a reason")
+    mode = fix.get("mode")
+    if mode not in ("verbatim", "translated"):
+        problems.append(f"quote fix {fix.get('n')}: mode must be verbatim or translated")
+    if mode == "verbatim":
+        try:
+            refs.parse(fix.get("reference", ""))
+        except ValueError as error:
+            problems.append(f"quote fix {fix.get('n')}: {error}")
+        if not fix.get("bible"):
+            problems.append(f"quote fix {fix.get('n')}: no Bible text yet (run bios.py fix)")
+    elif fix.get("reference"):
+        try:
+            refs.parse(fix["reference"])
+        except ValueError as error:
+            problems.append(f"quote fix {fix.get('n')}: {error}")
+    return problems
+
+
+def check_quotes(lang, quotes, text, fixes=()):
     """Problems with the quotations, and the review lines for this entry.
-    `wrong_verse` lists quotations (n) whose verse the translator found
-    wasn't the one Easton meant: translated, and flagged for review."""
+    `fixes` are the entry's quote_fixes: a quotation whose verse the
+    finder got wrong, with the corrected reference and either `verbatim`
+    (checked against that reference's RV1909 / Bíblia Livre words, kept in
+    `bible` by `bios.py fix` and compared with the Bible itself whenever
+    it's at hand) or `translated` (not Scripture, or words that Bible
+    lacks; a reason is required). Every fix is listed for review."""
     problems, review = [], []
     found = QUOTED.findall(text)
     if len(found) != len(quotes):
         return [f"{len(quotes)} quotations in the English, {len(found)} in the translation"], []
+    by_n = {}
+    for fix in fixes:
+        if fix.get("n") not in range(len(quotes)):
+            problems.append(f"quote fix for quotation {fix.get('n')}, which doesn't exist")
+            continue
+        by_n[fix["n"]] = fix
+        problems += fix_problems(fix)
     for q, t in zip(quotes, found):
         bible = q.get(lang, "")
         kind = q["kind"]
-        if q["n"] in wrong_verse and kind in ("whole", "partial", "loose", "wording", "unsure"):
-            review.append(f"- verse looked wrong, translated ({kind}, {', '.join(str(v) for v in q.get('verses', []))}): “{q['english']}” → “{t}”")
-            continue
         ref = ", ".join(f"{scripture_quotes.BOOKS[v // 1_000_000 - 1]} {v // 1000 % 1000}:{v % 1000}" for v in q.get("verses", []))
+        fix = by_n.get(q["n"])
+        if fix:
+            was = f"{kind}, {ref}" if ref else kind
+            if fix.get("mode") == "verbatim":
+                if not all(verbatim(p, fix.get("bible", "")) for p in re.split(r"\s*(?:…|\.\.\.)\s*", t) if p.strip()):
+                    problems.append(f"quotation {q['n'] + 1} isn't the words of {fix.get('reference')} verbatim")
+                review.append(f"- corrected to {fix.get('reference')}, quoted verbatim (found: {was}; {fix.get('reason', '')}): “{q['english']}” → “{t}”")
+            else:
+                at = f"{fix['reference']}, " if fix.get("reference") else ""
+                review.append(f"- translated, not quoted ({at}found: {was}; {fix.get('reason', '')}): “{q['english']}” → “{t}”")
+            continue
         if kind == "whole" and not (verbatim(t, bible) and len(t.strip(" ,.;:")) >= 0.8 * len(bible.strip(" ,.;:"))):
             problems.append(f"quotation {q['n'] + 1} isn't the whole verse verbatim")
         elif kind in ("partial", "loose") and not all(verbatim(p, bible) for p in re.split(r"\s*(?:…|\.\.\.)\s*", t) if p.strip()):
             problems.append(f"quotation {q['n'] + 1} isn't the Bible's words verbatim")
         if kind in ("partial", "loose", "wording", "unsure"):
             review.append(f"- {kind} ({ref}): “{q['english']}” → “{t}”")
+        if kind in ("whole", "partial", "loose") and (share := kjv_coverage(q["english"], q.get("verses", []))) < 0.85:
+            review.append(f"  - only {share:.0%} of Easton's words are in {ref}: check the translation leaves none of the quotation out")
     return problems, review
 
 
-def check_entry(source: str, text: str, quotes=(), lang="es", wrong_verse=()):
+def check_references(source, text, lang, fixes=()):
+    """Problems if the translation's Bible references aren't the source's,
+    book, chapter and verse, in the same order. `fixes` are the entry's
+    reference_fixes: {"was", "now", "reason"}, a correction of Easton's
+    English (a slip such as "John. 15:44" for Josh. 15:44) made before
+    comparing; "was" must appear in the English exactly once."""
+    problems = []
+    for fix in fixes:
+        was, now = fix.get("was", ""), fix.get("now", "")
+        if not fix.get("reason", "").strip():
+            problems.append(f"reference fix “{was}” needs a reason")
+        if not was or source.count(was) != 1:
+            problems.append(f"reference fix “{was}” isn't in the English exactly once")
+            continue
+        source = source.replace(was, now)
+    want, have = refs.references(source, "en"), refs.references(text, lang)
+    if want != have:
+        missing = list((Counter(want) - Counter(have)).elements())
+        extra = list((Counter(have) - Counter(want)).elements())
+        if missing or extra:
+            problems.append(f"references differ (missing {[refs.label(r) for r in missing[:6]]}, extra {[refs.label(r) for r in extra[:6]]})")
+        else:
+            problems.append("references in another order")
+    return problems
+
+
+def check_entry(source: str, text: str, quotes=(), lang="es", quote_fixes=(), reference_fixes=()):
     """(problems, review lines) for one translation; no problems when it's fine."""
     problems = []
     if not text.strip():
@@ -247,12 +358,89 @@ def check_entry(source: str, text: str, quotes=(), lang="es", wrong_verse=()):
     ratio = len(text) / max(1, len(source))
     if len(source) > 200 and not 0.8 <= ratio <= 1.7:
         problems.append(f"length {ratio:.2f}x the English")
-    quote_problems, review = check_quotes(lang, list(quotes), text, wrong_verse)
+    problems += check_references(source, text, lang, reference_fixes)
+    quote_problems, review = check_quotes(lang, list(quotes), text, quote_fixes)
+    for fix in reference_fixes:
+        review.append(f"- reference corrected: “{fix.get('was')}” → “{fix.get('now')}” ({fix.get('reason', '')})")
     return problems + quote_problems, review
 
 
-def check(lang, only=None):
-    """Prints problems; returns {(kind, id): text} of entries that pass."""
+class FixBibles:
+    """The RV1909 / Bíblia Livre words of a corrected reference, for quote
+    fixes. The Bíblia Livre is bundled; the RV1909 is the catalog's file,
+    decompressed (--rv1909 PATH or GENESIS_RV1909)."""
+
+    def __init__(self, rv1909=None):
+        rv1909 = rv1909 or os.environ.get("GENESIS_RV1909")
+        self.paths = {"pt": os.path.join(scripture_quotes.BIBLES, "BLIVRE.sqlite"), "es": rv1909}
+        self.verses = {}
+        self.rv_map = None
+
+    def has(self, lang):
+        return bool(self.paths.get(lang)) and os.path.exists(self.paths[lang])
+
+    def text(self, lang, reference):
+        if lang not in self.verses:
+            db = sqlite3.connect(self.paths[lang])
+            self.verses[lang] = dict(db.execute("SELECT id, text FROM verses"))
+            db.close()
+        ids = refs.parse(reference)
+        if lang == "es":
+            if self.rv_map is None:
+                self.rv_map = scripture_quotes.rv1909_map()
+            ids = [r for i in ids for r in self.rv_map.get(i, [i])]
+            ids = list(dict.fromkeys(ids))
+        missing = [i for i in ids if i not in self.verses[lang]]
+        if missing:
+            raise ValueError(f"{reference}: no verse {missing[0]} in the {lang} Bible")
+        return " ".join(self.verses[lang][i] for i in ids)
+
+
+def bible_text_problems(lang, fixes, bibles):
+    """A verbatim fix's saved `bible` text must be the Bible's own."""
+    problems = []
+    if not bibles.has(lang):
+        return problems
+    for fix in fixes:
+        if fix.get("mode") != "verbatim" or not fix.get("reference"):
+            continue
+        try:
+            if bibles.text(lang, fix["reference"]) != fix.get("bible"):
+                problems.append(f"quote fix {fix.get('n')}: its bible text isn't {fix['reference']} (run bios.py fix)")
+        except ValueError as error:
+            problems.append(f"quote fix {fix.get('n')}: {error}")
+    return problems
+
+
+def fill_fixes(lang, rv1909=None):
+    """Writes each verbatim quote fix's Bible text (`bible`) from its reference."""
+    bibles = FixBibles(rv1909)
+    if not bibles.has(lang):
+        sys.exit(f"{lang}: the Bible isn't at hand (pass --rv1909 PATH)")
+    changed = 0
+    for b in batches():
+        path = os.path.join(BIOS, lang, f"{b}.json")
+        if not os.path.exists(path):
+            continue
+        data = load(path)
+        touched = False
+        for e in data["entries"]:
+            for fix in e.get("quote_fixes", []):
+                if fix.get("mode") == "verbatim" and fix.get("reference"):
+                    text = bibles.text(lang, fix["reference"])
+                    if fix.get("bible") != text:
+                        fix["bible"] = text
+                        touched = True
+                        changed += 1
+        if touched:
+            save(path, data)
+    print(f"{lang}: {changed} quote fixes given their Bible text")
+
+
+def check(lang, only=None, bibles=None):
+    """Prints problems; returns {(kind, id): text} of entries that pass.
+    With `bibles` (scripture_quotes.Bibles) each verbatim quote fix's
+    `bible` text is also compared with the Bible itself."""
     passed, failed, missing = {}, 0, 0
     for b in batches():
         if only and b != only:
@@ -277,7 +465,14 @@ def check(lang, only=None):
                 print(f"{lang} {b} {e['kind']} {e['id']} {e['name']}: stale (English changed)")
                 failed += 1
                 continue
-            problems, review = check_entry(e["text"], t["text"], e.get("quotes", []), lang, t.get("wrong_verse", []))
+            if "wrong_verse" in t:
+                print(f"{lang} {b} {e['kind']} {e['id']} {e['name']}: wrong_verse is replaced by quote_fixes")
+                failed += 1
+                continue
+            problems, review = check_entry(e["text"], t["text"], e.get("quotes", []), lang,
+                                           t.get("quote_fixes", []), t.get("reference_fixes", []))
+            if bibles:
+                problems += bible_text_problems(lang, t.get("quote_fixes", []), bibles)
             if problems:
                 print(f"{lang} {b} {e['kind']} {e['id']} {e['name']}: " + "; ".join(problems))
                 failed += 1
@@ -321,7 +516,17 @@ if __name__ == "__main__":
         export(args[1])
     elif args[:1] == ["status"]:
         status()
-    elif args[:1] == ["check"] and len(args) in (2, 3) and args[1] in LANGUAGES:
-        ok = check(args[1], args[2] if len(args) == 3 else None)
+    elif args[:1] in (["check"], ["fix"]):
+        rv1909 = None
+        if "--rv1909" in args:
+            at = args.index("--rv1909")
+            rv1909 = args[at + 1] if at + 1 < len(args) else sys.exit(__doc__)
+            args = args[:at] + args[at + 2:]
+        if len(args) not in (2, 3) or args[1] not in LANGUAGES:
+            sys.exit(__doc__)
+        if args[0] == "fix":
+            fill_fixes(args[1], rv1909)
+        else:
+            check(args[1], args[2] if len(args) == 3 else None, FixBibles(rv1909))
     else:
         sys.exit(__doc__)

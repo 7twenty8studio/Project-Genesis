@@ -187,8 +187,13 @@
    "id": 910,
    "sha256": "7b229cdccf8b4e0ca1ed1720c57bbf7e33c30ef2cba863c2c33a211f072b4ed4",
    "text": "Colina; montículo, el promontorio largo, estrecho y redondeado en la ladera sur de la colina del templo, entre el Tiropeón y el valle del Cedrón (2 Cr 27:3; 33:14; Neh 3:26, 27). Estaba rodeado por un muro aparte, y fue ocupado por los netineos después del Cautiverio. Este muro ha sido descubierto por los ingenieros del Palestine Exploration Fund en el ángulo sudoriental del área del templo. Está a 4 pies bajo la superficie actual. En 2 R 5:24 esta palabra se traduce “torre” (R.V., “colina”), y designa probablemente alguna eminencia cerca de la casa de Eliseo.",
-   "wrong_verse": [
-    0
+   "quote_fixes": [
+    {
+     "n": 0,
+     "reference": "2Kings 5:24",
+     "mode": "translated",
+     "reason": "the KJV's word “tower”, which Easton comments on; the Bibles read “lugar secreto”"
+    }
    ]
   },
   {

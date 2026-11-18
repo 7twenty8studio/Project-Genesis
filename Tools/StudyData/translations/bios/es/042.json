@@ -7,8 +7,13 @@
    "id": 1081,
    "sha256": "0342ed491b41e07ef77a2cad0bebbfd1768488ce8fc13640f1ea5b7eee98708e",
    "text": "Se entiende generalmente que designa al Mesías, “el pacífico,” como significa la palabra (Gn 49:10). La Vulgata traduce la palabra “el que ha de ser enviado,” en alusión al Mesías; la Versión Revisada, al margen, “hasta que venga a Silo;” y la LXX, “hasta que venga a Silo lo que es suyo.” Lo más sencillo y natural es traducir la expresión, como en la Versión Autorizada, “hasta que venga Silo,” interpretándola como nombre propio (comp. Is 9:6).\n\n Silo, lugar de reposo, una ciudad de Efraín, “al norte de Bet-el,” de la cual dista 10 millas (Jue 21:19); la moderna Seilun (el nombre árabe de Silo), una “masa de ruinas informes.” Aquí se levantó el tabernáculo después de la Conquista (Jos 18:1-10), donde permaneció durante todo el período de los jueces hasta que el arca cayó en manos de los filisteos. “Ningún lugar de Palestina central podría estar más apartado que este antiguo santuario, nada más desprovisto de rasgos que el paisaje que lo rodea; tan desprovisto de rasgos, en efecto, el paisaje y tan apartado el lugar, que desde el tiempo de San Jerónimo hasta su redescubrimiento por el Dr. Robinson en 1838 el sitio mismo estuvo olvidado y desconocido.” Jeremías se refiere a ella (7:12, 14; 26:4-9) quinientos años después de su destrucción.",
-   "wrong_verse": [
-    3
+   "quote_fixes": [
+    {
+     "n": 3,
+     "reference": "Gen 49:10",
+     "mode": "translated",
+     "reason": "the Septuagint's reading of Gen 49:10, not the Bible's text"
+    }
    ]
   },
   {

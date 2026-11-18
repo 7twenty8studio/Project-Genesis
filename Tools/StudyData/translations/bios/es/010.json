@@ -67,9 +67,19 @@
    "id": 1070,
    "sha256": "a33e33ab7f340c26368d2755023e4f227a1a7a1e03889c654d20450eae8aed4c",
    "text": "Un guerrero del tiempo de David, famoso por sus hazañas. En la Versión Autorizada (2 S 21:19) se registra que “Elhanan, hijo de Jaare-oregim, de Bet-lehem, mató al hermano de Goliat.” La Versión Revisada omite aquí con razón las palabras “el hermano de.” Estas fueron introducidas en la Versión Autorizada para poner este pasaje de acuerdo con 1 Cr 20:5, donde se dice que “hirió Elhanán hijo de Jair á Lahmi, hermano de Goliath.” Goliat el geteo fue muerto por David (1 S 17). La hazaña de Elhanan tuvo lugar a fines del reinado de David.",
-   "wrong_verse": [
-    0,
-    1
+   "quote_fixes": [
+    {
+     "n": 0,
+     "reference": "2Sam 21:19",
+     "mode": "translated",
+     "reason": "the Authorized Version's words, which Easton discusses; the RV1909 has no “the brother of”"
+    },
+    {
+     "n": 1,
+     "reference": "2Sam 21:19",
+     "mode": "translated",
+     "reason": "the Authorized Version's words “the brother of”, which neither Bible has"
+    }
    ]
   },
   {
@@ -263,8 +273,14 @@
    "id": 1131,
    "sha256": "002742d13e7a05da17f5b432a368b9dcd90a0e475e1befc9e380e80a4a0ab6bb",
    "text": "“El tisbita”, el “Elías” del Nuevo Testamento, se presenta de repente a nuestra atención en 1 R 17:1 entregando a Acab un mensaje del Señor. Se menciona una ciudad llamada Tisbe, al sur de Cades, pero es imposible decir si era este el lugar al que se refiere el nombre dado al profeta.\n\n Habiendo entregado su mensaje a Acab, se retiró por mandato de Dios a un escondite junto al arroyo de Querit, al otro lado del Jordán, donde fue alimentado por cuervos. Cuando el arroyo se secó, Dios lo envió a la viuda de Sarepta, ciudad de Sidón, de cuya escasa provisión fue sustentado por espacio de dos años. Durante este período murió el hijo de la viuda, y Elías lo devolvió a la vida (1 R 17:2-24).\n\n Durante todos estos dos años prevaleció el hambre en la tierra. Al final de este período de retiro y de preparación para su obra (comp. Gá 1:17, 18), Elías se encontró con Abdías, uno de los oficiales de Acab, a quien este había enviado a buscar pastos para el ganado, y le ordenó ir a decir a su amo que Elías estaba allí. El rey vino al encuentro de Elías y le reprochó ser el que turbaba a Israel. Se propuso entonces que se ofrecieran sacrificios públicamente, con el fin de determinar si Baal o Jehová era el Dios verdadero. Esto se hizo en el Carmelo, con el resultado de que el pueblo cayó sobre su rostro, clamando: “¡Jehová es el Dios!” Así se cumplió la gran obra del ministerio de Elías. Los profetas de Baal fueron entonces muertos por orden de Elías. Ninguno de ellos escapó. Inmediatamente después vino la lluvia, conforme a la palabra de Elías y en respuesta a su oración (Stg 5:18).\n\n Jezabel, enfurecida por la suerte que habían corrido sus sacerdotes de Baal, amenazó con dar muerte a Elías (1 R 19:1-13). Por eso huyó alarmado a Beer-seba, y de allí se fue solo un día de camino por el desierto, y se sentó desalentado bajo un enebro. Mientras dormía, un ángel lo tocó y le dijo: “Levántate, come: porque gran camino te resta.” Se levantó y halló una torta y una vasija de agua. Habiendo participado de la provisión así milagrosamente suministrada, prosiguió su camino solitario durante cuarenta días y cuarenta noches hasta Horeb, el monte de Dios, donde hizo su morada en una cueva. Allí el Señor se le apareció y le dijo: “¿Qué haces aquí, Elías?” En respuesta a sus palabras desalentadas, Dios le manifiesta su gloria, y luego le ordena volver a Damasco y ungir a Hazael por rey sobre Siria, y a Jehú por rey sobre Israel, y a Eliseo para que fuera profeta en su lugar (1 R 19:13-21; comp. 2 R 8:7-15; 9:1-10).\n\n Unos seis años después advirtió a Acab y a Jezabel de las muertes violentas que habrían de morir (1 R 21:19-24; 22:38). También, cuatro años más tarde, advirtió a Ocozías (véase), que había sucedido a su padre Acab, de su muerte cercana (2 R 1:1-16). Durante estos intervalos probablemente se retiró a algún lugar tranquilo, sin que nadie supiera dónde. Su encuentro con los mensajeros de Ocozías en el camino a Ecrón, y el relato de la destrucción de sus capitanes con sus cincuentas, sugieren la idea de que tal vez estuviera retirado en ese tiempo en el monte Carmelo.\n\n Se acercaba ya el tiempo en que había de ser llevado al cielo (2 R 2:1-12). Tenía un presentimiento de lo que le esperaba. Descendió a Gilgal, donde había una escuela de los profetas, y donde residía su sucesor Eliseo, a quien había ungido algunos años antes. Eliseo se llenó de solemnidad al pensar que su maestro lo dejaría, y se negó a separarse de él. “Fueron pues ambos á dos,” y llegaron a Bet-el y a Jericó, y cruzaron el Jordán, cuyas aguas “se apartaron á uno y á otro lado” al ser golpeadas con el manto de Elías. Llegados a los confines de Galaad, que Elías había dejado muchos años antes, “aconteció que, yendo ellos hablando” fueron de repente separados por un carro y caballos de fuego; y “Elías subió al cielo en un torbellino, “Eliseo recibió su manto, que cayó de él mientras ascendía.\n\n Ninguno de los antiguos profetas es mencionado con tanta frecuencia en el Nuevo Testamento. Los sacerdotes y levitas dijeron al Bautista (Jn 1:25): “¿Por qué, pues, bautizas, si tú no eres el Cristo, ni Elías?” Pablo (Ro 11:2) se refiere a un incidente de su historia para ilustrar su argumento de que Dios no había desechado a su pueblo. Santiago (5:17) halla en él una ilustración del poder de la oración. (Véase también Lc 4:25; 9:54.) Fue un tipo de Juan el Bautista en la severidad y el poder de sus reprensiones (Lc 9:8). Él era el Elías que “había de venir primero” (Mt 11:11, 14), el precursor de nuestro Señor anunciado por Malaquías. Aun en lo exterior el Bautista se correspondía tan estrechamente con el profeta antiguo que podría llamársele un segundo Elías. En él vemos “la misma relación con una región agreste y desierta; el mismo largo retiro en el desierto; la misma entrada repentina y sorprendente en su obra (1 R 17:1; Lc 3:2); incluso el mismo vestido, una prenda de pelo y un cinto de cuero alrededor de los lomos (2 R 1:8; Mt 3:4).”\n\n Cuán profunda fue la impresión que Elías causó “en la mente de la nación puede juzgarse por la firme creencia, basada en las palabras de Malaquías (4:5, 6), que prevaleció muchos siglos después, de que volvería a aparecer para el alivio y la restauración del país. Cada persona notable que entra en escena, sean cuales fueren sus hábitos y características, tanto el severo Juan como su manso Sucesor, es proclamada como Elías (Mt 11:13, 14; 16:14; 17:10; Mr 9:11; 15:35; Lc 9:7, 8; Jn 1:21). Su aparición en gloria en el monte de la transfiguración no parece haber sorprendido a los discípulos. Tuvieron ‘gran temor,’ pero al parecer no se sorprendieron.”",
-   "wrong_verse": [
-    4
+   "quote_fixes": [
+    {
+     "n": 4,
+     "reference": "1Kings 19:9",
+     "mode": "verbatim",
+     "reason": "the Lord's question at Horeb is 1 Kings 19:9, not 18:8-9",
+     "bible": "Y allí se metió en una cueva, donde tuvo la noche. Y fué á él palabra de Jehová, el cual le dijo: ¿Qué haces aquí, Elías?"
+    }
    ]
   },
   {

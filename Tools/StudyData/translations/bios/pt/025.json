@@ -811,8 +811,14 @@
    "id": 4,
    "sha256": "39beb6a6eba411536d25bace2fc7441839d8a02ee3a17de41d49d70ece45ce10",
    "text": "(heb. Hebhel), um sopro, ou vaidade, o segundo filho de Adão e Eva. Foi morto por seu irmão Caim (Gn 4:1-16). Guiados pela instrução de seu pai, os dois irmãos foram educados no dever de adorar a Deus. “Decorrendo o tempo” (marg. “ao fim dos dias”, isto é, no sábado), cada um deles ofereceu a Deus das primícias de seus trabalhos. Caim, como lavrador, ofereceu os frutos do campo; Abel, como pastor, dos primogênitos de seu rebanho. “E olhou o SENHOR com agrado a Abel e à sua oferta; mas não olhou com bons olhos a Caim e à sua oferta” (Gn 4:3-5). Por isso Caim irou-se contra seu irmão e formou o desígnio de matá-lo; desígnio que por fim encontrou oportunidade de levar a efeito (Gn 4:8, 9. Cf. 1 Jo 3:12). Há várias referências a Abel no Novo Testamento. Nosso Salvador fala dele como “justo” (Mt 23:35). Diz-se que “Sangue da aspersão” fala “melhores coisas que o de Abel” (Hb 12:24); isto é, o sangue de Jesus é a realidade da qual o sangue da oferta feita por Abel era apenas o tipo. A comparação aqui é entre o sacrifício oferecido por Cristo e o oferecido por Abel, e não entre o sangue de Cristo clamando por misericórdia e o sangue do assassinado Abel clamando por vingança, como às vezes se tem suposto. Diz-se também (Hb 11:4) que “Abel ofereceu a Deus melhor sacrifício do que Caim.” Esse sacrifício foi feito “pela fé;” essa fé repousava em Deus, não somente como o Criador e o Deus da providência, mas especialmente em Deus como o grande Redentor, cujo sacrifício era tipificado pelos sacrifícios que, sem dúvida por instituição divina, eram oferecidos desde os dias de Adão em diante. Por causa daquela “fé” que olhava adiante para o grande sacrifício expiatório, a oferta de Abel foi aceita por Deus. A oferta de Caim não tinha tal referência, e por isso foi rejeitada. Abel foi o primeiro mártir, como foi o primeiro de nossa raça a morrer.\n\n Abel (heb. ‘abhel), lamentação (1 Sm 6:18), o nome dado à grande pedra no campo de Josué sobre a qual a arca foi “puseram.” A Versão Revista, porém, seguindo o Targum e a LXX, lê no texto hebraico ’ebhen (= uma pedra), e por conseguinte traduz “até a grande pedra sobre a qual puseram a arca.” Essa leitura é preferível.\n\n Abel (heb. ‘abhel), um lugar relvoso, um prado. Esta palavra entra na composição das seguintes palavras:",
-   "wrong_verse": [
-    2
+   "quote_fixes": [
+    {
+     "n": 2,
+     "reference": "Gen 4:4-5",
+     "mode": "verbatim",
+     "reason": "Gen 4:4-5, which Easton cites; the finder looked at 4:3-4",
+     "bible": "E Abel trouxe também dos primogênitos de suas ovelhas, e de sua gordura. E olhou o SENHOR com agrado a Abel e à sua oferta; mas não olhou com bons olhos a Caim e à sua oferta. Caim irritou-se muito, e descaiu-lhe o semblante."
+    }
    ]
   },
   {

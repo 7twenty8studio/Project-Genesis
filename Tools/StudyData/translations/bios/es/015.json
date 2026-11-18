@@ -115,8 +115,13 @@
    "id": 1836,
    "sha256": "2cbf5dcdfa5d4e726ac5c5131cf25ee723ca5cd20cfc074ca7a1b5e1184d5ad0",
    "text": "El evangelista, era gentil. La fecha y las circunstancias de su conversión son desconocidas. Según su propia declaración (Lc 1:2), no fue “testigo ocular y ministro de la palabra desde el principio.” Es probable que fuera médico en Troas, y que allí fuera convertido por Pablo, a quien se unió. Lo acompañó a Filipos, pero no compartió allí su encarcelamiento, ni lo acompañó más allá, después de su liberación, en su viaje misionero de aquel tiempo (Hch 17:1). En la tercera visita de Pablo a Filipos (20:5, 6) volvemos a encontrar a Lucas, quien probablemente había pasado todo el tiempo intermedio en aquella ciudad, un período de siete u ocho años. Desde entonces Lucas fue compañero constante de Pablo durante su viaje a Jerusalén (20:6-21:18). Vuelve a desaparecer de la vista durante el encarcelamiento de Pablo en Jerusalén y Cesarea, y solo reaparece cuando Pablo parte para Roma (27:1), adonde lo acompaña (28:2, 12-16), y donde permanece con él hasta el fin de su primer encarcelamiento (Flm 1:24; Col 4:14). La última mención del “médico amado” está en 2 Ti 4:11.\n\n Hay muchos pasajes en las epístolas de Pablo, así como en los escritos de Lucas, que muestran la amplitud y exactitud de sus conocimientos médicos.",
-   "wrong_verse": [
-    0
+   "quote_fixes": [
+    {
+     "n": 0,
+     "reference": "Luke 1:2",
+     "mode": "translated",
+     "reason": "Easton turns Luke 1:2 into words about Luke himself, so the verse's own words don't fit"
+    }
    ]
   },
   {
@@ -465,9 +470,15 @@
    "kind": "person",
    "id": 1950,
    "sha256": "589103740b4dc79b8dba767c643812c389893e6e5a2f183d96a23c04d8fbdfe0",
-   "text": "El último rey de Judá. Era el tercer hijo de Josías, y su madre se llamaba Amutal, hija de Jeremías de Libna, y por lo tanto era hermano de Joacaz (2 R 23:31; 24:17, 18). Su nombre original era Matanías; pero cuando Nabucodonosor lo puso en el trono como sucesor de Joaquín, le cambió el nombre por Sedequías. El profeta Jeremías era su consejero, y sin embargo “hizo lo malo ante los ojos de Jehová” (2 R 24:19, 20; Jer 52:2, 3). Subió al trono a la edad de veintiún años. El reino era entonces tributario de Nabucodonosor; pero, a pesar de las enérgicas protestas de Jeremías y de otros, así como del ejemplo de Joaquín, sacudió el yugo de Babilonia, y entró en alianza con Hofra, rey de Egipto. Esto hizo subir a Nabucodonosor, “con todo su ejército” (2 R 25:1), contra Jerusalén. Durante este sitio, que duró unos dieciocho meses, “todo el peor de los males cayó sobre la ciudad condenada, que bebió hasta las heces la copa del furor de Dios” (2 R 25:3; Lm 4:4, 5, 10). La ciudad fue saqueada y reducida a ruinas. Sedequías y sus seguidores, al intentar escapar, fueron hechos cautivos y llevados a Ribla. Allí, después de ver morir a sus propios hijos, le sacaron los ojos, y, cargado de cadenas, fue llevado cautivo (a.C. 588) a Babilonia (2 R 25:1-7; 2 Cr 36:12; Jer 32:4, 5; 34:2, 3; 39:1-7; 52:4-11; Ez 12:12), donde permaneció preso, no se sabe cuánto tiempo, hasta el día de su muerte.\n\n Después de la caída de Jerusalén, Nabuzaradán fue enviado a llevar a cabo su destrucción completa. La ciudad fue arrasada hasta el suelo. Solo a un pequeño número de viñadores y labradores se les permitió quedarse en la tierra (Jer 52:16). Gedalías, con una guardia caldea apostada en Mizpa, gobernó sobre Judá (2 R 25:22, 24; Jer 40:1, 2, 5, 6).",
-   "wrong_verse": [
-    0
+   "text": "El último rey de Judá. Era el tercer hijo de Josías, y su madre se llamaba Amutal, hija de Jeremías de Libna, y por lo tanto era hermano de Joacaz (2 R 23:31; 24:17, 18). Su nombre original era Matanías; pero cuando Nabucodonosor lo puso en el trono como sucesor de Joaquín, le cambió el nombre por Sedequías. El profeta Jeremías era su consejero, y sin embargo “hizo lo malo en ojos de Jehová” (2 R 24:19, 20; Jer 52:2, 3). Subió al trono a la edad de veintiún años. El reino era entonces tributario de Nabucodonosor; pero, a pesar de las enérgicas protestas de Jeremías y de otros, así como del ejemplo de Joaquín, sacudió el yugo de Babilonia, y entró en alianza con Hofra, rey de Egipto. Esto hizo subir a Nabucodonosor, “con todo su ejército” (2 R 25:1), contra Jerusalén. Durante este sitio, que duró unos dieciocho meses, “todo el peor de los males cayó sobre la ciudad condenada, que bebió hasta las heces la copa del furor de Dios” (2 R 25:3; Lm 4:4, 5, 10). La ciudad fue saqueada y reducida a ruinas. Sedequías y sus seguidores, al intentar escapar, fueron hechos cautivos y llevados a Ribla. Allí, después de ver morir a sus propios hijos, le sacaron los ojos, y, cargado de cadenas, fue llevado cautivo (a.C. 588) a Babilonia (2 R 25:1-7; 2 Cr 36:12; Jer 32:4, 5; 34:2, 3; 39:1-7; 52:4-11; Ez 12:12), donde permaneció preso, no se sabe cuánto tiempo, hasta el día de su muerte.\n\n Después de la caída de Jerusalén, Nabuzaradán fue enviado a llevar a cabo su destrucción completa. La ciudad fue arrasada hasta el suelo. Solo a un pequeño número de viñadores y labradores se les permitió quedarse en la tierra (Jer 52:16). Gedalías, con una guardia caldea apostada en Mizpa, gobernó sobre Judá (2 R 25:22, 24; Jer 40:1, 2, 5, 6).",
+   "quote_fixes": [
+    {
+     "n": 0,
+     "reference": "2Kings 24:19",
+     "mode": "verbatim",
+     "reason": "Zedekiah's verse is 2 Kings 24:19, not 15:26",
+     "bible": "E hizo lo malo en ojos de Jehová, conforme á todo lo que había hecho Joacim."
+    }
    ]
   },
   {

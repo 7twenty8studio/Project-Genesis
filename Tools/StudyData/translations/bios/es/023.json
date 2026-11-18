@@ -193,8 +193,13 @@
    "id": 2613,
    "sha256": "40a7a4db0ef6fe48e937b5d66fe52570f7ce56113e45d41dbfe712f9dd830d72",
    "text": "Un nombre; renombre; el primero que se menciona de los hijos de Noé (Gn 5:32; 6:10). Probablemente era el mayor de los hijos de Noé. Las palabras “hermano de Jafet el mayor” en Gn 10:21 se traducen más correctamente “el hermano mayor de Jafet,” como en la Versión Revisada. El nombre de Sem se menciona por lo general en primer lugar en la lista de los hijos de Noé. Él y su mujer se salvaron en el arca (7:13). Noé predijo su preeminencia sobre Canaán (9:23-27). Murió a la edad de seiscientos años, habiendo sido durante muchos años contemporáneo de Abraham, según la cronología usual. La nación israelita procedió de él (Gn 11:10-26; 1 Cr 1:24-27).",
-   "wrong_verse": [
-    0
+   "quote_fixes": [
+    {
+     "n": 0,
+     "reference": "Gen 10:21",
+     "mode": "translated",
+     "reason": "the Authorized Version's reading, which Easton corrects; both Bibles have the corrected one"
+    }
    ]
   },
   {
@@ -405,9 +410,15 @@
    "kind": "person",
    "id": 2670,
    "sha256": "3a4400a2aa218790a705ddc96b4197b5c2acd38f1216aabab5e8d29c954e2129",
-   "text": "Uno de los mensajeros que los hijos del cautiverio enviaron a Jerusalén “a orar por ellos delante del Señor” (Zac 7:2).",
-   "wrong_verse": [
-    0
+   "text": "Uno de los mensajeros que los hijos del cautiverio enviaron a Jerusalén “á implorar el favor de Jehová” (Zac 7:2).",
+   "quote_fixes": [
+    {
+     "n": 0,
+     "reference": "Zech 7:2",
+     "mode": "verbatim",
+     "reason": "the messengers of Zech 7:2, not Gen 33:13-14",
+     "bible": "Cuando fué enviado á la casa de Dios, Saraser, con Regem-melech y sus hombres, á implorar el favor de Jehová,"
+    }
    ]
   },
   {

@@ -37,8 +37,13 @@
    "id": 1062,
    "sha256": "65c3fbb2f13a0f1ff8b2ddc2d799c3ffa0aa823d2ec6e6b3ed0693885467acaf",
    "text": "O terceiro filho de Arão (Êx 6:23). Sua mulher, uma filha de Putiel, deu-lhe Fineias (Êx 6:25). Depois da morte de Nadabe e Abiú (Lv 10:12; Nm 3:4) foi nomeado para o cuidado do santuário (Nm 3:32). No Monte Hor foi revestido das vestes sagradas, que Moisés tirou de seu irmão Arão e pôs sobre ele como sucessor de seu pai no ofício de sumo sacerdote, que exerceu por mais de vinte anos (Nm 20:25-29). Tomou parte com Moisés no recenseamento do povo (26:3, 4) e assistiu à investidura de Josué. Ajudou na distribuição da terra depois da conquista (Js 14:1). O sumo sacerdócio permaneceu em sua família até o tempo de Eli, para cuja família passou, até que foi restituído à família de Eleazar na pessoa de Zadoque (1 Sm 2:35; cf. 1 Rs 2:27). “Também morreu Eleazar, filho de Arão; ao qual enterraram no morro de Fineias seu filho” (Js 24:33). A palavra aqui traduzida por “morro” é Gibeá, o nome de várias cidades da Palestina que geralmente ficavam sobre uma colina ou perto dela. As palavras podem ser traduzidas mais apropriadamente: “Enterraram-no em Gibeá de Fineias”, isto é, na cidade de Fineias, que foi identificada, de acordo com as tradições judaicas e samaritanas, com Kefr Ghuweirah=‘Awertah, cerca de 7 milhas ao norte de Siló, e algumas milhas a sudeste de Nablus. “Seu túmulo ainda é mostrado ali, à sombra de veneráveis terebintos.” Outros, porém, identificaram-na com a aldeia de Gaba ou Gebena de Eusébio, a moderna Khurbet Jibia, 5 milhas ao norte de Gufna, em direção a Nablus.",
-   "wrong_verse": [
-    2
+   "quote_fixes": [
+    {
+     "n": 2,
+     "reference": "Josh 24:33",
+     "mode": "translated",
+     "reason": "the rendering Easton proposes for Josh 24:33, not the Bible's text"
+    }
    ]
   },
   {
@@ -70,8 +75,13 @@
    "id": 1070,
    "sha256": "a33e33ab7f340c26368d2755023e4f227a1a7a1e03889c654d20450eae8aed4c",
    "text": "Um guerreiro do tempo de Davi, famoso por suas façanhas. Na Versão Autorizada (2 Sm 21:19) está registrado que “Elanã, filho de Jaaré-Oregim de Belém, feriu a Golias.” A Versão Revisada omite aqui, com razão, as palavras “o irmão de.” Elas foram introduzidas na Versão Autorizada para pôr esta passagem de acordo com 1 Cr 20:5, onde se diz que “feriu Elanã filho de Jair a Lami, irmão de Golias.” Golias, o geteu, foi morto por Davi (1 Sm 17). A façanha de Elanã ocorreu no final do reinado de Davi.",
-   "wrong_verse": [
-    1
+   "quote_fixes": [
+    {
+     "n": 1,
+     "reference": "2Sam 21:19",
+     "mode": "translated",
+     "reason": "the Authorized Version's words “the brother of”, which neither Bible has"
+    }
    ]
   },
   {
@@ -265,8 +275,14 @@
    "id": 1131,
    "sha256": "002742d13e7a05da17f5b432a368b9dcd90a0e475e1befc9e380e80a4a0ab6bb",
    "text": "“O tisbita,” o “Elias” do Novo Testamento, é apresentado de repente à nossa atenção em 1 Rs 17:1, entregando a Acabe uma mensagem do Senhor. Faz-se menção de uma cidade chamada Tisbe, ao sul de Cades, mas é impossível dizer se era esse o lugar a que se refere o nome dado ao profeta.\n\n Tendo entregado sua mensagem a Acabe, retirou-se por ordem de Deus para um esconderijo junto ao ribeiro de Querite, além do Jordão, onde foi alimentado por corvos. Quando o ribeiro secou, Deus o enviou à viúva de Sarepta, cidade de Sidom, de cuja escassa provisão foi sustentado pelo espaço de dois anos. Durante esse período o filho da viúva morreu e foi restituído à vida por Elias (1 Rs 17: 2-24).\n\n Durante todos esses dois anos houve fome na terra. Ao fim desse período de retiro e de preparação para a sua obra (cf. Gl 1:17, 18), Elias encontrou Obadias, um dos oficiais de Acabe, a quem este havia mandado procurar pastagem para o gado, e ordenou-lhe que fosse dizer a seu senhor que Elias estava ali. O rei veio ao encontro de Elias e o censurou como o perturbador de Israel. Propôs-se então que se oferecessem publicamente sacrifícios, a fim de determinar se Baal ou Jeová era o verdadeiro Deus. Isto se fez no Carmelo, com o resultado de que o povo caiu sobre o rosto, clamando: “o SENHOR é o Deus!” Assim se realizou a grande obra do ministério de Elias. Os profetas de Baal foram então mortos por ordem de Elias. Nenhum deles escapou. Logo em seguida veio a chuva, segundo a palavra de Elias e em resposta à sua oração (Tg 5:18).\n\n Jezabel, enfurecida com a sorte que tivera seus sacerdotes de Baal, ameaçou matar Elias (1 Rs 19:1-13). Ele então fugiu, alarmado, para Berseba, e dali foi sozinho um dia de caminho pelo deserto, e sentou-se desanimado debaixo de um zimbro. Enquanto dormia, um anjo o tocou e lhe disse: “Levanta-te, come: porque grande caminho te resta.” Levantou-se e achou um bolo e uma botija de água. Tendo comido da provisão assim milagrosamente fornecida, prosseguiu em seu caminho solitário por quarenta dias e quarenta noites até Horebe, o monte de Deus, onde se abrigou numa caverna. Ali o Senhor lhe apareceu e disse: “Que fazes aqui, Elias?” Em resposta às suas palavras desanimadas, Deus lhe manifesta a sua glória e depois lhe ordena que volte a Damasco e unja Hazael rei sobre a Síria, e Jeú rei sobre Israel, e Eliseu para ser profeta em seu lugar (1 Rs 19:13-21; cf. 2 Rs 8:7-15; 9:1-10).\n\n Cerca de seis anos depois disso, advertiu Acabe e Jezabel das mortes violentas que haveriam de ter (1 Rs 21:19-24; 22:38). Também, quatro anos depois, advertiu Acazias (q.v.), que sucedera a seu pai Acabe, de sua morte próxima (2 Rs 1:1-16). Durante esses intervalos provavelmente se retirou para algum lugar tranquilo, ninguém sabia onde. Seu encontro com os mensageiros de Acazias no caminho de Ecrom, e o relato da destruição dos capitães com os seus cinquenta, sugerem a ideia de que nessa época talvez estivesse retirado no Monte Carmelo.\n\n Aproximava-se agora o tempo em que haveria de ser levado ao céu (2 Rs 2:1-12). Tinha um pressentimento do que o aguardava. Desceu a Gilgal, onde havia uma escola de profetas, e onde residia seu sucessor Eliseu, a quem ungira alguns anos antes. Eliseu estava solene com o pensamento de que seu mestre o deixaria, e recusou separar-se dele. “Foram, pois, ambos,” e chegaram a Betel e a Jericó, e atravessaram o Jordão, cujas águas “se apartaram a um e a outro lado” quando feridas com o manto de Elias. Chegados aos limites de Gileade, que Elias deixara muitos anos antes, “aconteceu que, indo eles falando”, foram de repente separados por um carro e cavalos de fogo; e “Elias subiu ao céu num redemoinho, “Eliseu recebendo o seu manto, que dele caiu ao subir.\n\n Nenhum dos antigos profetas é tão frequentemente mencionado no Novo Testamento. Os sacerdotes e levitas disseram ao Batista (Jo 1:25): “Por que batizas, se não és o Cristo, nem Elias?” Paulo (Rm 11:2) refere-se a um incidente de sua história para ilustrar seu argumento de que Deus não rejeitara o seu povo. Tiago (5:17) encontra nele uma ilustração do poder da oração. (Ver também Lc 4:25; 9:54.) Ele foi um tipo de João Batista na severidade e no poder de suas repreensões (Lc 9:8). Ele foi o Elias que “havia de vir primeiro” (Mt 11:11, 14), o precursor de nosso Senhor anunciado por Malaquias. Até exteriormente o Batista correspondia tão de perto ao profeta mais antigo que poderia ser chamado um segundo Elias. Nele vemos “a mesma ligação com uma região selvagem e deserta; o mesmo longo retiro no deserto; a mesma entrada súbita e surpreendente em sua obra (1 Rs 17:1; Lc 3:2); até a mesma veste, uma roupa de pelos e um cinto de couro em volta dos lombos (2 Rs 1:8; Mt 3:4).”\n\n Quão profunda foi a impressão que Elias causou “no espírito da nação pode-se julgar pela crença firme, apoiada nas palavras de Malaquias (4:5, 6), que prevaleceu muitos séculos depois, de que ele apareceria de novo para o alívio e a restauração do país. Cada pessoa notável, ao surgir em cena, sejam quais forem seus hábitos e características, tanto o severo João como o seu manso Sucessor, é proclamada como sendo Elias (Mt 11:13, 14; 16:14; 17:10; Mc 9:11; 15:35; Lc 9:7, 8; Jo 1:21). Sua aparição em glória no monte da transfiguração não parece ter sobressaltado os discípulos. Ficaram ‘muito atemorizados,’ mas, ao que parece, não surpresos.”",
-   "wrong_verse": [
-    4
+   "quote_fixes": [
+    {
+     "n": 4,
+     "reference": "1Kings 19:9",
+     "mode": "verbatim",
+     "reason": "the Lord's question at Horeb is 1 Kings 19:9, not 18:8-9",
+     "bible": "E ali se meteu em uma cova, de onde teve a noite. E foi a ele palavra do SENHOR, o qual lhe disse: Que fazes aqui, Elias?"
+    }
    ]
   },
   {

@@ -103,8 +103,13 @@
    "id": 2500,
    "sha256": "d08efb02070a5d5cb87960a557103596590dd82980becc4f5f908f6757a14a46",
    "text": "O filho de Nerias. Quando Zedequias fez uma viagem a Babilônia para prestar homenagem a Nabucodonosor, Seraías tinha a seu cargo os presentes reais que deviam ser oferecidos naquela ocasião. Jeremias aproveitou a ocasião e enviou por Seraías uma palavra de ânimo aos exilados em Babilônia e um anúncio da ruína reservada àquela cidade culpada. O rolo que continha essa mensagem (Jr 50:1-8) Seraías devia lê-lo aos exilados e então, depois de lhe atar uma pedra, lançá-lo no Eufrates, pronunciando, enquanto afundava, a oração registrada em Jr 51:59-64. Babilônia estava nesse tempo no auge de sua glória, a maior e mais poderosa monarquia do mundo. Mal se passaram setenta anos e as palavras do profeta se cumpriram todas. Jr 51:59 é traduzido na Versão Revisada “Ora, Seraías era camareiro-mor,” em vez de “era um príncipe pacífico,” como na Versão Autorizada.",
-   "wrong_verse": [
-    1
+   "quote_fixes": [
+    {
+     "n": 1,
+     "reference": "Jer 51:59",
+     "mode": "translated",
+     "reason": "the Authorized Version's reading, which Easton corrects; both Bibles have the corrected one"
+    }
    ]
   },
   {
