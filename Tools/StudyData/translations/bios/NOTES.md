@@ -233,3 +233,6 @@ What the translators reported per batch, beyond the review files.
 ## pt final pass (18 Nov)
 - Thousands with English commas outside quotations → Brazilian dots (031–035); "Nô-Amom" → "Tebas" (028); Mareshah "Js 15:44" (037).
 - Abel 025 q2: BLIVRE Gen 4:5 added verbatim to the quote (wrong_verse, the matcher gave 4:3–4). Jericho 034: the quote now reads Os filhos “de Jericó”, so the BLIVRE's doubled "de de" isn't shown.
+
+## es 044
+- Water Gate 1230 is the dates entry (source). Duplicates Zered 1224/1253, Zin 1261/1262, Zion 1263/1264. Some Jordan-valley names follow Easton's spelling (Saretán, Zartana, Sereda…); Zaanannim's R.V. readings translated.
