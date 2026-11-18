@@ -207,3 +207,7 @@ What the translators reported per batch, beyond the review files.
 - wrong_verse: Ophel q0 "tower" (Neh 3:25 given, 2 Kgs 5:24 meant). Unsure translated: Penuel "com um homem", Perga "pregaram a palavra".
 - Mount of Olives 27/48 identical; "Galileia" for the peak; "Monte da Corrupção" (verse has "monte da destruição").
 - Negeb: Easton's "1 Sam. 33:24" (no such chapter; probably 30:14) kept. Nineveh "acabará com Nínive" future tense in a past sentence. Pelusium quote marks as Easton.
+
+## es 034–035
+- Same as pt 034–035: Jordan q3 (Porter, inner Lev 26:31–34 RV1909 verbatim), Jokmeam "Jocneam", Joppa "Jafo", source fragments kept.
+- Amorite as adjective "amorreo/amorrea". Galeed "Galaad" (RV1909 Gen 31:47) reads the same as Gilead.
