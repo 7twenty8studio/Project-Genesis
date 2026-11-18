@@ -29131,6 +29131,22 @@
         }
       }
     },
+    "Topic names and headings translated from Nave's Topical Bible (1896). Not Scripture.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombres de temas y encabezados traducidos de la Biblia Temática de Nave (1896). No es Escritura."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nomes de temas e títulos traduzidos da Bíblia Temática de Nave (1896). Não é Escritura."
+          }
+        }
+      }
+    },
     "Topics": {
       "localizations": {
         "es": {
