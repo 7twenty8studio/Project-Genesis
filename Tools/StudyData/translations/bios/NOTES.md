@@ -150,3 +150,11 @@ What the translators reported per batch, beyond the review files.
 - TODO before loading: earlier es batches wrote "Frygia", "Lyda", "Efeso" in Easton's own text; replace outside the quotation marks (RV1909 quotes keep its spelling).
 - wrong_verse: Abel q2: quoted Gen 4:5 RV1909 verbatim by hand (the matcher gave only 4:3–4).
 - Unsure translated: Stephen "Durmió" (Acts 7:60), Zerah "exceeding much spoil", Zacharias "nacido fuera de tiempo". Sisera: Roberts's verse rendering translated from his English.
+
+## pt 028–029
+- Glossary: the place Ethiopia was "Cuxe" in pt (now "Etiópia"; Cush stays "Cuxe"); Thebes now "Tebas" in both languages (was No-amón / Nô-Amom), as the workers kept choosing. Pharaohs "Ramsés I/II/III". Bozrah "Bozra" (Edom) / "Bosra" (Moab, Hauran).
+- Bethlehem 218: “saídas são desde o princípio…” joined into Easton's phrasing. Beth-maacah reuses the Abel-beth-maachah translation; Chinnereth 293–295 identical.
+- Kept in Easton's spelling: Souterrains, Palestinae, Scio, Stanchio, Gozzo, Bethjesimoth; "(The Recovery of Jerusalem.)" title in English.
+
+## Name tooling (18 Nov)
+- translate_study.py picked between equally scored words by dict order, so Shupham/Hupham and Shuppim/Huppim swapped between runs. Ties now go to the closer spelling, then the word; manual.json pins Shupham "Sufam", Shuppim "Supim", Nebajoth "Nabajot", Sisera "Sísara", Tel-melah "Tel-mela". Two runs give identical files.
