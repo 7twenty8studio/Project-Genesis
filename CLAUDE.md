@@ -453,6 +453,16 @@ shares; README.md has the architecture.
 - Switches: `groups` (on) and `community` (off until the owner moderates).
 - Topic search: Resources/Study/Topics.sqlite (Nave's, CC BY 4.0 via BibleData),
   built by Tools/TopicData/build_topics.py; ids only, never verse text.
+  Its `translations` table (lang, kind topic|entry, key, text, folded) gives
+  Spanish and Portuguese topic names and headings; `TopicRepository(language:)`
+  (bundled: `AppLanguage.code`) falls back to English per row, search matches
+  both (accents aside) and a translated topic shows `translatedNote` ("…Not
+  Scripture."). Batches in Tools/TopicData/translations (`naves.py
+  export/check/status/fix`, Easton's checks: whole references, quotations
+  verbatim from the RV1909 / Bíblia Livre, fixed phrases, the app's names);
+  only passing items reach the table (add_topic_translations.py, which
+  build_topics.py also runs). Review notes: translations/NOTES.md and
+  <lang>/review.
 - Translation downloads: public.bible_translations + the public `bibles`
   bucket; Tools/BibleData/package_translation.py builds a file and its row.
   Public-domain (or licensed) translations only.

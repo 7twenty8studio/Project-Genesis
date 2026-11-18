@@ -657,7 +657,11 @@
    "person:2227": "Obal (hijo de Joctán)",
    "person:1598": "Igal",
    "place:631": "Jegar-sahaduta",
-   "place:949": "Piratón"
+   "place:949": "Piratón",
+   "person:102": "Adoniram",
+   "place:1011": "Roca",
+   "person:1414": "Hasra",
+   "place:517": "Hamat de Soba"
   }
  },
  "pt": {
@@ -1266,7 +1270,16 @@
   },
   "ids": {
    "person:2493": "Sausa",
-   "person:2227": "Obal (filho de Joctã)"
+   "person:2227": "Obal (filho de Joctã)",
+   "person:102": "Adonirão",
+   "place:1011": "Rocha",
+   "person:2115": "Sufã",
+   "person:1481": "Heleque",
+   "person:1509": "Hesede",
+   "place:517": "Hamate-Zobá",
+   "person:2053": "Miqueias",
+   "person:791": "Joaquim",
+   "person:614": "Jerias"
   }
  }
 }

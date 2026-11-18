@@ -16,6 +16,7 @@ translated items: the app shows the English for anything without one.
 Running it again is safe; run it after build_topics.py.
 """
 import os
+import re
 import sqlite3
 import sys
 import unicodedata

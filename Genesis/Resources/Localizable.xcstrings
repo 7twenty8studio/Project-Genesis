@@ -11831,6 +11831,22 @@
         }
       }
     },
+    "In Spanish or Portuguese, Explore's people, places, events and dictionary articles are now in your language, with names as your Bible spells them.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En español o portugués, las personas, los lugares, los acontecimientos y los artículos del diccionario de Explorar ahora están en tu idioma, con los nombres como los escribe tu Biblia."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Em espanhol ou português, as pessoas, os lugares, os acontecimentos e os artigos do dicionário do Explorar agora estão no seu idioma, com os nomes como a sua Bíblia os escreve."
+          }
+        }
+      }
+    },
     "In Your Memorize List": {
       "localizations": {
         "es": {
@@ -18433,6 +18449,22 @@
         }
       }
     },
+    "People and places": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Personas y lugares"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pessoas e lugares"
+          }
+        }
+      }
+    },
     "People, places and events from Theographic Bible Metadata (CC BY-SA 4.0). Map locations and how certain they are from OpenBible.info (CC BY 4.0). Descriptions from Easton's Bible Dictionary (1897).": {
       "localizations": {
         "es": {
@@ -22697,6 +22729,22 @@
         }
       }
     },
+    "Search Nave's topics by their Spanish or Portuguese names, and read every heading in your language. The verses still come from your Bible.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Busca los temas de Nave por sus nombres en español o portugués y lee cada encabezado en tu idioma. Los versículos siguen viniendo de tu Biblia."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pesquise os temas de Nave pelos nomes em espanhol ou português e leia cada título no seu idioma. Os versículos continuam vindo da sua Bíblia."
+          }
+        }
+      }
+    },
     "Search and go to passages by their Portuguese names too, like João 3:16 or Salmos 23.": {
       "localizations": {
         "es": {
@@ -25656,6 +25704,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Estude a fundo, escreva livremente"
+          }
+        }
+      }
+    },
+    "Study in Spanish and Portuguese": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estudia en español y portugués"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estude em espanhol e português"
           }
         }
       }
@@ -29175,6 +29239,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Temas da Nave's Topical Bible (domínio público), via BibleData de Brady Stephenson, CC BY 4.0."
+          }
+        }
+      }
+    },
+    "Topics in your language": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temas en tu idioma"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temas no seu idioma"
           }
         }
       }

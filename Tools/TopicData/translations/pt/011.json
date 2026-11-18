@@ -1,0 +1,5485 @@
+{
+ "batch": "011",
+ "lang": "pt",
+ "items": [
+  {
+   "kind": "topic",
+   "id": 2592,
+   "sha256": "fbc7e121fac36cbf0bbc84279b347de9933a008beee8d50d5fa22aed0f60bc3e",
+   "text": "Itra"
+  },
+  {
+   "kind": "entry",
+   "id": 10998,
+   "sha256": "f34404c9cbea46bbbdf9c6529b647a5bbdb55ed21bff09636237ada36a9f154a",
+   "text": "Também chamado JÉTER"
+  },
+  {
+   "kind": "entry",
+   "id": 10999,
+   "sha256": "0765ff9d88e2f225d854c1bd59edf6a79a3f19b8c54585a4b4568183433aced1",
+   "text": "Pai de Amasa"
+  },
+  {
+   "kind": "topic",
+   "id": 2593,
+   "sha256": "0cccaf657890a4b54adde0aaea6122a6ab3318b2d29338f69a3bb31efcef1fd4",
+   "text": "Itrã"
+  },
+  {
+   "kind": "entry",
+   "id": 11000,
+   "sha256": "1d8ab63ecdbb9cd77913a3712cf28fceb1f1035d9d4231dc05771857220969be",
+   "text": "1. Filho de Disom"
+  },
+  {
+   "kind": "entry",
+   "id": 11001,
+   "sha256": "26085c2c02490c77749166e2807c9acd3e36583839565c541b1d40a28bc8a553",
+   "text": "2. Filho de Zofa"
+  },
+  {
+   "kind": "topic",
+   "id": 2594,
+   "sha256": "b830c6156b71de6f50842059f13c558a2a5dbc37288c4b0a2cd4a1f8546a5465",
+   "text": "Itreão"
+  },
+  {
+   "kind": "entry",
+   "id": 11002,
+   "sha256": "bceda0348141288c096f721f14a61b99fcae70f0522f3f9df0da2152e919ab39",
+   "text": "Filho de Davi"
+  },
+  {
+   "kind": "topic",
+   "id": 2595,
+   "sha256": "c569e00664e0f96b68ceeceeef2d0945af5f2cba4fe2f11ec14287d268c7e215",
+   "text": "Itritas"
+  },
+  {
+   "kind": "entry",
+   "id": 11003,
+   "sha256": "e821d3be7b0e8494c790b9e1c4c31f797d1d402e18c65e7316d2368b76475039",
+   "text": "Patronímico da família de Jéter"
+  },
+  {
+   "kind": "topic",
+   "id": 2596,
+   "sha256": "d65fe279dcbbc81186b58314982d111e1f1a4c22df269a37a16fd36281c78895",
+   "text": "Itinerário"
+  },
+  {
+   "kind": "entry",
+   "id": 11004,
+   "sha256": "ef09d23fe26690ef0100db40f7558603a302fc5c97e7b3a9add7492b37dc0cfa",
+   "text": "Dos israelitas"
+  },
+  {
+   "kind": "topic",
+   "id": 2597,
+   "sha256": "0bc469326504f49e69698ee2259e49ce507fc845792441cc8bc05f4c800ab585",
+   "text": "Ete-Cazim"
+  },
+  {
+   "kind": "entry",
+   "id": 11005,
+   "sha256": "07b1480d801db9a91e635c26b26db88b40724ae8269a22e3344de06c38ffb6c5",
+   "text": "Um marco na linha de fronteira da tribo de Zebulom"
+  },
+  {
+   "kind": "topic",
+   "id": 2598,
+   "sha256": "3c1fefebcc9d39ca20283ab73e261af74bf8248e7c0ed2206087587cb49b9a1c",
+   "text": "Itai"
+  },
+  {
+   "kind": "entry",
+   "id": 11006,
+   "sha256": "0b740e3a09a87870cf7048b6c75901eed7a50f660bbcd00aee034c6538c5b3c1",
+   "text": "Um chefe de Davi"
+  },
+  {
+   "kind": "entry",
+   "id": 11007,
+   "sha256": "d6e6e85622f89bccfc6137a184674804f5ccc33d727eb7361b1cd789e677fbeb",
+   "text": "Apoia Davi contra Absalão"
+  },
+  {
+   "kind": "topic",
+   "id": 2599,
+   "sha256": "b271be8787ff63b08f8ceeedad101e47142f8eb7b42cf81d5ad1fabae99ccac3",
+   "text": "Itureia"
+  },
+  {
+   "kind": "entry",
+   "id": 11008,
+   "sha256": "d352647a4838f99e2d1d8fb482d6b9aee91d57a15ddebd2c0039566e097724a7",
+   "text": "Pequena província no noroeste da Palestina"
+  },
+  {
+   "kind": "topic",
+   "id": 2600,
+   "sha256": "b95f5a425223b99e0fbaddd40695c8cb80a00eb2942c485c0daf1f93140c6f3b",
+   "text": "Iva"
+  },
+  {
+   "kind": "entry",
+   "id": 11009,
+   "sha256": "d4b9742d665bcfd9a4b566c5819c09a1db056bd36cd8aa8913b0c19f70121f43",
+   "text": "Um distrito na Babilônia conquistado pelos assírios"
+  },
+  {
+   "kind": "topic",
+   "id": 2601,
+   "sha256": "f3adb67e9237d2bd528617122764dd89a6f0f06cb1adf246108512c8189cd426",
+   "text": "Marfim"
+  },
+  {
+   "kind": "entry",
+   "id": 11010,
+   "sha256": "df912f9a209787d88b60531fe9b61aa3b8af3b441bce92113f198d1ca3d0dcb6",
+   "text": "Passagens gerais sobre Ct 5:14; 7:4"
+  },
+  {
+   "kind": "entry",
+   "id": 11011,
+   "sha256": "a030cd6ba5443e817c09a712e3f33011dffb5b0362f60e138c67bb496300a829",
+   "text": "Exportado de Társis"
+  },
+  {
+   "kind": "entry",
+   "id": 11012,
+   "sha256": "0069faf5b1718e115c2d9fea2f9bfe4400cf08a4dbaf2ea0420529093de296c8",
+   "text": "Quitim"
+  },
+  {
+   "kind": "entry",
+   "id": 11013,
+   "sha256": "7e02cff10777e402fe0b18e83a2765c74acb0d04a7e03e8adefed94239f94a3f",
+   "text": "Palácio de Acabe feito de"
+  },
+  {
+   "kind": "entry",
+   "id": 11014,
+   "sha256": "8bd78b9b8e7c0179de7b7ae556ff38c2939fd75dd7252b61e1adfc77fd35824c",
+   "text": "Outras casas feitas de"
+  },
+  {
+   "kind": "entry",
+   "id": 11015,
+   "sha256": "03b0ee70080ff586d7e309b38b2111366d4fbc58798f2a59cc9f68f3848fe538",
+   "text": "Outros objetos feitos de"
+  },
+  {
+   "kind": "entry",
+   "id": 11016,
+   "sha256": "cd8af2eabae8c1e6695290544a4d5e6cc113f2c4e8c68e64065352f051ae2a68",
+   "text": "Instrumentos de cordas"
+  },
+  {
+   "kind": "entry",
+   "id": 11017,
+   "sha256": "efcc145b42099fd45eb7fd9bc4a264fbf1769b1bc9d0d6974aa684c7920e73de",
+   "text": "Tronos"
+  },
+  {
+   "kind": "entry",
+   "id": 11018,
+   "sha256": "84a43df586ecc8a76e7266984acbc9c828d0bf017536707b52d2db84d227b0e0",
+   "text": "Bancos"
+  },
+  {
+   "kind": "entry",
+   "id": 11019,
+   "sha256": "2e2a3cd1a00809d32d9b300a475dea8d875a18b330d5075c5d7b69529867c2d9",
+   "text": "Camas"
+  },
+  {
+   "kind": "entry",
+   "id": 11020,
+   "sha256": "653ad8478a323db57b6b4ea147c0a5b6e836ee9ddd9db77070ffc8e565d46760",
+   "text": "Vasos"
+  },
+  {
+   "kind": "topic",
+   "id": 2602,
+   "sha256": "19d54a4ed056ab633864b7d5cd92402d1e69ef65780026190b00ed04f2bcf92d",
+   "text": "Izar"
+  },
+  {
+   "kind": "entry",
+   "id": 11021,
+   "sha256": "7e89c7a096f5eeb01e659169844cf620be669c6a235382210c5701d77d485f52",
+   "text": "Filho de Coate"
+  },
+  {
+   "kind": "topic",
+   "id": 2603,
+   "sha256": "4518e99370161ae03350b164542677c98a6eef4a135de0c5fb6925f9b322f959",
+   "text": "Izraías"
+  },
+  {
+   "kind": "entry",
+   "id": 11022,
+   "sha256": "765ce6344b291f18b7311b89eacf12648ff2603d45b2b5423ea9c3efe8428f94",
+   "text": "Neto de Tolá"
+  },
+  {
+   "kind": "topic",
+   "id": 2604,
+   "sha256": "14612ed4b9a0fbd4f4ced793d216d957bb3ff0f6d746445bb80bd1a5d5c204d9",
+   "text": "Izri"
+  },
+  {
+   "kind": "entry",
+   "id": 11023,
+   "sha256": "b8d9371515ecef783bdb77f9c8c9732772394663e2478709ac3f8238bd78d775",
+   "text": "Talvez o mesmo que ZERI"
+  },
+  {
+   "kind": "entry",
+   "id": 11024,
+   "sha256": "8207cff9b5ee2330612025aeee510cdf5adeeb9ed51cbbc933cbacaea9ff1061",
+   "text": "Líder da quarta divisão dos cantores levitas"
+  },
+  {
+   "kind": "topic",
+   "id": 2605,
+   "sha256": "0e0e7b680ddc60691c90289e9af79bf5d60cef2d29bf2f628f21ff08a8b54057",
+   "text": "Jaacã"
+  },
+  {
+   "kind": "entry",
+   "id": 11025,
+   "sha256": "13be31288eccfebc7884952556da630a1c0fb514edf7d30faf3c3466c4db4b32",
+   "text": "Também chamado ACÃ e JACÃ"
+  },
+  {
+   "kind": "entry",
+   "id": 11026,
+   "sha256": "acc01f38f8ff5259fd16742361ac77f2db5d159e0c96de9b6f6ec32e95df44ed",
+   "text": "Filho de Ézer"
+  },
+  {
+   "kind": "topic",
+   "id": 2606,
+   "sha256": "c8f9232d3b61cc1cc7d472e49b2299a79ea8b06fb1b25c2d75e850ff629338a0",
+   "text": "Jaacobá"
+  },
+  {
+   "kind": "entry",
+   "id": 11027,
+   "sha256": "b68dee7e98304eb88cf0c6c31279a7162ac7d8dc5f45415418851476af850109",
+   "text": "Descendente de Simeão"
+  },
+  {
+   "kind": "topic",
+   "id": 2607,
+   "sha256": "9ecf7a6bfa48021d8607505daf5af461d756ec7c50cdcc4941ccb96c2dc6ebaa",
+   "text": "Jaala"
+  },
+  {
+   "kind": "entry",
+   "id": 11028,
+   "sha256": "10f81269a69e16f2440a841ef0fda92941e50080a5a23178f7d528854c9ad9e1",
+   "text": "Também chamado JAALÁ"
+  },
+  {
+   "kind": "entry",
+   "id": 11029,
+   "sha256": "064b73ff42d22ef266b4e2aa2770627ee0a2f21b277d0c74b2c294a7f7b6677f",
+   "text": "Um dos servos de Salomão que voltaram do exílio"
+  },
+  {
+   "kind": "topic",
+   "id": 2608,
+   "sha256": "2f532d48d28fada3b4f0fa6eb7dbfdc262052a2e9a9c3dfecbce352c70656288",
+   "text": "Jalão"
+  },
+  {
+   "kind": "entry",
+   "id": 11030,
+   "sha256": "156d17df30ac9b75391b878eec043428d17279ec7ed169b34733c1193dc42e42",
+   "text": "Filho de Esaú"
+  },
+  {
+   "kind": "topic",
+   "id": 2609,
+   "sha256": "a7a5e8770d505997d6ebe11329f1c1a4b5707926d189586ff95940393cea1432",
+   "text": "Janai"
+  },
+  {
+   "kind": "entry",
+   "id": 11031,
+   "sha256": "82c07fe19fbac6083312d93904e7c80d67074f73d9bc8edc696154b292bce74d",
+   "text": "Um chefe gadita"
+  },
+  {
+   "kind": "topic",
+   "id": 2610,
+   "sha256": "4b71020d5094fbca829eca20e0ddf22ec420429245e1e2fb625963e6a3c02091",
+   "text": "Jaaré-Oregim"
+  },
+  {
+   "kind": "entry",
+   "id": 11032,
+   "sha256": "42a73ab05f5ce65dfc95221f4697b9e9a7115c8ae9e47f719f7a3f0be79be7cd",
+   "text": "Pai de Elanã"
+  },
+  {
+   "kind": "topic",
+   "id": 2611,
+   "sha256": "a57a77306f635f3cc34b8d645d1ed88f646d38c7296b1c6fab5d589713e7266a",
+   "text": "Jaasai"
+  },
+  {
+   "kind": "entry",
+   "id": 11033,
+   "sha256": "ee3d54c163ec5cbb47c916ac6e24196a9d0b699c66b7ae9e6a9bf94c6698df7e",
+   "text": "Da família de Bani"
+  },
+  {
+   "kind": "topic",
+   "id": 2612,
+   "sha256": "422ec57aba884326ae0d63ee7dae4b1fcb212e168335b7de5ce56aac5e0b69a4",
+   "text": "Jaasiel"
+  },
+  {
+   "kind": "entry",
+   "id": 11034,
+   "sha256": "52a0e174f713d495b3a83a7dd4d9d5c8b213cac30c05d526f7dbf5a899a6346a",
+   "text": "Filho de Abner"
+  },
+  {
+   "kind": "topic",
+   "id": 2613,
+   "sha256": "16f2ab0d0792899b1f84135c6c2d006ed58cadc40df11d1075e600c16334ace3",
+   "text": "Jazanias"
+  },
+  {
+   "kind": "entry",
+   "id": 11035,
+   "sha256": "c62918a13c9301515c46e9293b45612f7c393aa8f0f25d648fcd670a82a83a11",
+   "text": "1. Também chamado Jezanias"
+  },
+  {
+   "kind": "entry",
+   "id": 11036,
+   "sha256": "d054868a5ef5c8543f1906cbd77381b3c52929a616aa9c7262c0c2ca063d6cd4",
+   "text": "Um capitão que se uniu a Gedalias em Mispá"
+  },
+  {
+   "kind": "entry",
+   "id": 11037,
+   "sha256": "0f54c7a86dabcd7b2816b8c1845947597d330e0f7089c05224beecdb0b7a6305",
+   "text": "2. Um recabita"
+  },
+  {
+   "kind": "entry",
+   "id": 11038,
+   "sha256": "0d13ff8d87107289b5968e6db212f375471303a5ce7f8539564863e62373af13",
+   "text": "3. Um fanático idólatra"
+  },
+  {
+   "kind": "entry",
+   "id": 11039,
+   "sha256": "51556cd47234a788eea4d14718b850f9abd2e6bbd2de05773267aa199c9a1e4a",
+   "text": "4. Um príncipe perverso de Judá"
+  },
+  {
+   "kind": "topic",
+   "id": 2614,
+   "sha256": "bcba67a3f720159e759dc1070ceee4123949027a2660a254483b14ffbcb549bf",
+   "text": "Jaazer"
+  },
+  {
+   "kind": "entry",
+   "id": 11040,
+   "sha256": "b85736d5a1fd57421ffe5589ca76a221887166cfec97a8b7af383c23460b9889",
+   "text": "Também chamada JAZER"
+  },
+  {
+   "kind": "entry",
+   "id": 11041,
+   "sha256": "cb20bbf588315ad42279f73a879ff3b466a4934fd6ad47ad9a608bec4f53d2de",
+   "text": "Uma cidade levítica de refúgio em Gileade, dada a Gade e entregue aos levitas"
+  },
+  {
+   "kind": "topic",
+   "id": 2615,
+   "sha256": "1bc29b39a4d1a1bec90c9830fca6dcbeb0fbbb4a5e46f1629d8b0d0ccf961aa5",
+   "text": "Jaazias"
+  },
+  {
+   "kind": "entry",
+   "id": 11042,
+   "sha256": "852c35f5ccb308ceb8f8019cdc5dbb5c9dbf5c09ee3af07e181a300f47a10b8f",
+   "text": "Um descendente de Merari"
+  },
+  {
+   "kind": "topic",
+   "id": 2616,
+   "sha256": "c120f7c6ad15d41dcd8787e6cb38b205fbeca73c0931945112205385dff39432",
+   "text": "Jaaziel"
+  },
+  {
+   "kind": "entry",
+   "id": 11043,
+   "sha256": "c2e9055746b16dc250355c6f5268b1f35272f7a6da95a2705ce79318fa0dde77",
+   "text": "Um músico levita"
+  },
+  {
+   "kind": "topic",
+   "id": 2617,
+   "sha256": "b7c695ab07459554ea194bc9b24d64b0127f355324dfc36f3d50b0fcb8d13a55",
+   "text": "Jabal"
+  },
+  {
+   "kind": "entry",
+   "id": 11044,
+   "sha256": "fd2be108086d68ef8e79bb8692d1b33266370e64a1df44ce60b2d275d0f6456e",
+   "text": "Filho de Lameque"
+  },
+  {
+   "kind": "entry",
+   "id": 11045,
+   "sha256": "87ddb0706c701b699c15cc5b427bc3b982c650e261aec8f95b8503850d874f4a",
+   "text": "Um pastor"
+  },
+  {
+   "kind": "topic",
+   "id": 2618,
+   "sha256": "a2648ffe412ca749625f8ce224bbd097e0e81903c32a34b18e812c1025158910",
+   "text": "Jaboque"
+  },
+  {
+   "kind": "entry",
+   "id": 11046,
+   "sha256": "d486146af918c2fb157f4ac60ff88521facb9933fab0fc220e08513adba384f2",
+   "text": "Um ribeiro a leste do rio Jordão, a fronteira norte das possessões dos amonitas"
+  },
+  {
+   "kind": "entry",
+   "id": 11047,
+   "sha256": "6a6b023ff507be83984525ce71553e5d1d89a2e767bf144eebb45f57f2525bca",
+   "text": "Dos rubenitas e dos gaditas"
+  },
+  {
+   "kind": "entry",
+   "id": 11048,
+   "sha256": "b37de8ac1a0f2ddfd2d677f75fbedcd000b367ac4c52cdaaf034aa86a8de659c",
+   "text": "A fronteira norte dos amorreus"
+  },
+  {
+   "kind": "topic",
+   "id": 2619,
+   "sha256": "673106d1a568d7df2ec73a71d21a953d3e14f3e23c7d98722f2c9cc0ac0832d0",
+   "text": "Jabes-Gileade"
+  },
+  {
+   "kind": "entry",
+   "id": 11049,
+   "sha256": "71b5139c30c23d93a237fd2c2a36250cc3715bc83e197c1bfab0fc4c119b5302",
+   "text": "Uma cidade a leste do rio Jordão"
+  },
+  {
+   "kind": "entry",
+   "id": 11050,
+   "sha256": "60cf16a8523b3037c36c7219ccdced01a66b8cadc2fe092b5cda7e6efdc4157d",
+   "text": "Sitiada pelos amonitas"
+  },
+  {
+   "kind": "entry",
+   "id": 11051,
+   "sha256": "9e9ce42d5ac11a939cf635c9558b2a74d8783dce3edeb2128bba316382f0620f",
+   "text": "Saul e seus filhos sepultados em"
+  },
+  {
+   "kind": "entry",
+   "id": 11052,
+   "sha256": "89c2f3fc5c0ef6c60c8971fd8eb520fc739085670a7b567bd89a96f97db325b7",
+   "text": "Os ossos de Saul e de seus filhos retirados de, por Davi, e sepultados em Zela"
+  },
+  {
+   "kind": "topic",
+   "id": 2620,
+   "sha256": "10204a171b5fbe91c01e27f25d9a280c29a74464ab7f7f6c653e48fd770213f0",
+   "text": "Jabez"
+  },
+  {
+   "kind": "entry",
+   "id": 11053,
+   "sha256": "32523ba04803262f3606edc092c75efd2d5f32185ab810f4abfae03d62c704d6",
+   "text": "1. Uma cidade da tribo de Judá"
+  },
+  {
+   "kind": "entry",
+   "id": 11054,
+   "sha256": "7c12f84f01a7fdfe9c193523f017455ce6d2ebf0f2c01d79b2b5796890bd42d9",
+   "text": "2. O chefe de uma família"
+  },
+  {
+   "kind": "topic",
+   "id": 2621,
+   "sha256": "68e513e50b92d31e47b18c123281b2782655500aaaee6dd3cceaa30843950dc0",
+   "text": "Jabim"
+  },
+  {
+   "kind": "entry",
+   "id": 11055,
+   "sha256": "d193a1db9aeaac1c610039797162477a747b4c678b972daa0c559ea52bb651fb",
+   "text": "Nome de dois reis de Hazor"
+  },
+  {
+   "kind": "topic",
+   "id": 2622,
+   "sha256": "ebd9ae6800eff84bcde6383c2c5090ef9ecdb7d7c53953c2fe67850cb3015926",
+   "text": "Jabneel"
+  },
+  {
+   "kind": "entry",
+   "id": 11056,
+   "sha256": "e507217f410cceec7d9365e92ae91a166b3ec3ed9058540fb472929b4ca8a98f",
+   "text": "1. Uma cidade no território da tribo de Judá"
+  },
+  {
+   "kind": "entry",
+   "id": 11057,
+   "sha256": "5ded451aace03be017bc32e7bdac96032d95f7410e153b7694248f5711525c31",
+   "text": "2. Uma cidade da tribo de Naftali"
+  },
+  {
+   "kind": "topic",
+   "id": 2623,
+   "sha256": "87fa1cf10326d46b27f1eb02530826e619e5107121d3a6af048d97b25de24b0a",
+   "text": "Jabné"
+  },
+  {
+   "kind": "entry",
+   "id": 11058,
+   "sha256": "998f7bb002149374e91fa13fc6daec88e9e823ad18b432245b4f5a452f9bf8b1",
+   "text": "Uma cidade filisteia"
+  },
+  {
+   "kind": "topic",
+   "id": 2624,
+   "sha256": "6554f632a163339256e828d6a5a83d28eb21205c5d62b662ad5757338d98275d",
+   "text": "Jacã"
+  },
+  {
+   "kind": "entry",
+   "id": 11059,
+   "sha256": "08765b33822c398dedcf9d78f5e2e6ff4c093fce2112fcbb4bfdefc6def68619",
+   "text": "Um gadita"
+  },
+  {
+   "kind": "topic",
+   "id": 2625,
+   "sha256": "f8eaa75ab7f8347626cd5e01c5eae2ba83b1b9ab6c925cb47854703798c7a5a4",
+   "text": "Jaquim"
+  },
+  {
+   "kind": "entry",
+   "id": 11060,
+   "sha256": "78648e4193b353cf777e24c00a1db308dfa0b45788d5bdb83631547666faf5f6",
+   "text": "1. Filho de Simeão"
+  },
+  {
+   "kind": "entry",
+   "id": 11061,
+   "sha256": "0a557c8ef5407e73e598b5a4595b00c40c70c5bb4e1d6d471246e01cd7d5a933",
+   "text": "Chamado JARIBE"
+  },
+  {
+   "kind": "entry",
+   "id": 11062,
+   "sha256": "0c84413406a79d0dd0dc91992cf86d28c8c9b54d41574eb7f167fd23d3238414",
+   "text": "2. Nome de uma coluna"
+  },
+  {
+   "kind": "entry",
+   "id": 11063,
+   "sha256": "5f37eec904c0e6cf444afd701c7d382d4366fd9a82b9be68f6860560151895ab",
+   "text": "3. Um sacerdote que voltou do exílio para Jerusalém"
+  },
+  {
+   "kind": "entry",
+   "id": 11064,
+   "sha256": "d60b7d01e8255609243b239a231783ef1d8afa9012a58efa66f68afecd3e8b11",
+   "text": "4. Um sacerdote, chefe de um dos turnos de sacerdotes"
+  },
+  {
+   "kind": "topic",
+   "id": 2626,
+   "sha256": "0ae2acd07e2e28671111113eb5dab12a7e0bf12ff7f9eb20291a8faa62048ec9",
+   "text": "Jacinto"
+  },
+  {
+   "kind": "entry",
+   "id": 11065,
+   "sha256": "df9eb52b6eff09262df7582b8fbc9312bfb2a5a3b2ef8ce1100cbefab3a10b26",
+   "text": "Uma pedra preciosa"
+  },
+  {
+   "kind": "topic",
+   "id": 2627,
+   "sha256": "67dfbcbc215eebb71cb15b9f555e70095ca4a06890e3c12479c878d3fcb463e9",
+   "text": "Chacal"
+  },
+  {
+   "kind": "entry",
+   "id": 11066,
+   "sha256": "863db11ef2a101ae12f324300bb198add10868ae4745ba7349d4edb35c0aca4d",
+   "text": "Um animal carnívoro"
+  },
+  {
+   "kind": "topic",
+   "id": 2628,
+   "sha256": "8141d2b17b7344d1c058e0cfaa031768e23bab8eb32613d3345655b37876436c",
+   "text": "Jacó"
+  },
+  {
+   "kind": "entry",
+   "id": 11067,
+   "sha256": "1902a81930283f7e55c9be5fabac12f222fe2efbca8977b68f1959f102438c79",
+   "text": "Filho de Isaque, e irmão gêmeo de Esaú"
+  },
+  {
+   "kind": "entry",
+   "id": 11068,
+   "sha256": "5658b2a0e60681b52f4cdf251bd2a5101e312815cd025c1f10e8612b2de8da11",
+   "text": "Antepassado de Jesus"
+  },
+  {
+   "kind": "entry",
+   "id": 11069,
+   "sha256": "21572e903186c4590371d5870c3c73a015ac3c9319b05377fbb8456a6f4b4e65",
+   "text": "Dado em resposta à oração"
+  },
+  {
+   "kind": "entry",
+   "id": 11070,
+   "sha256": "db5a13fc1c336eb1dd1f290d8f81b77f5443fc97d4a636bce694ac583613ec1a",
+   "text": "Obtém o direito de primogenitura de Esaú por apenas um prato de guisado"
+  },
+  {
+   "kind": "entry",
+   "id": 11071,
+   "sha256": "2efba60b98ad4ee56bddfba616a153314c798cf3a84d4147b94f61fe30fe5909",
+   "text": "Obtém com fraude a bênção de seu pai"
+  },
+  {
+   "kind": "entry",
+   "id": 11072,
+   "sha256": "9064af7438464afb0c89f5589909e9a0acf0a7048d63b9ecdbb9b1d1ea12ffc0",
+   "text": "Esaú procura matá-lo; foge para Padã-Arã"
+  },
+  {
+   "kind": "entry",
+   "id": 11073,
+   "sha256": "e1a584c6c25d4a77cdfc14fd1e7bfbafd14de53382dc6db94b44a58655638a36",
+   "text": "Sua visão da escada"
+  },
+  {
+   "kind": "entry",
+   "id": 11074,
+   "sha256": "ee8f7f760fe45f8b9cda999a1f290d9853b98e9422d184fdeec2b7e3f83ca18f",
+   "text": "Deus lhe confirma a aliança de Abraão"
+  },
+  {
+   "kind": "entry",
+   "id": 11075,
+   "sha256": "e83ebeb0ca0c5346c41a468162718edc7f86ec55fa0514f515ac04fb1a83d0ad",
+   "text": "Peregrina em Harã com seu tio, Labão"
+  },
+  {
+   "kind": "entry",
+   "id": 11076,
+   "sha256": "77620f060889e7d54d9f24f9c6dd9efa70caf2797a6fe53edb9139f885dbf83e",
+   "text": "Serve catorze anos por Lia e Raquel"
+  },
+  {
+   "kind": "entry",
+   "id": 11077,
+   "sha256": "6441477ed820c0d08944a361426ff4e89689fff6ff5176bb42bc7f040d551c2c",
+   "text": "Astúcia de, com os rebanhos e manadas de Labão"
+  },
+  {
+   "kind": "entry",
+   "id": 11078,
+   "sha256": "43bae801edecdd9d483467ecf6e34024ab6de27223da38407e47af540097e994",
+   "text": "Insatisfeito com o tratamento de Labão, volta para a terra de Canaã"
+  },
+  {
+   "kind": "entry",
+   "id": 11079,
+   "sha256": "9c986ce86dec034c482b80aac00b3b2e3566f49813e26450af139b401c47d531",
+   "text": "Encontra anjos de Deus no caminho, e chama o lugar de \"Maanaim,\""
+  },
+  {
+   "kind": "entry",
+   "id": 11080,
+   "sha256": "98fbe6aa023112d610ad975f2ee0fa322d0ca42acbd1da6d21b06310f0d0d7df",
+   "text": "Teme encontrar-se com Esaú; envia-lhe presentes; luta com um anjo"
+  },
+  {
+   "kind": "entry",
+   "id": 11081,
+   "sha256": "e3a07ead4ccb1b48aa74e214fd74229fa8dc64b5ba40b67a85e0b2842c6e1ccb",
+   "text": "Nome de, mudado para \"Israel,\""
+  },
+  {
+   "kind": "entry",
+   "id": 11082,
+   "sha256": "74a49bce6362385483592f12f002f979f98532bc743594945bc0f515d86b9cd7",
+   "text": "Reconciliação de, com Esaú"
+  },
+  {
+   "kind": "entry",
+   "id": 11083,
+   "sha256": "7b9405fb3233d71cb80b1f9c7863f0ef13ac1e70b56871cf03c016586b7df0b3",
+   "text": "Viaja para Sucote"
+  },
+  {
+   "kind": "entry",
+   "id": 11084,
+   "sha256": "03859d111119b0aa5794e51f01a1af46bbbaba85872981d3615b72f75e4f66e9",
+   "text": "Viaja para Salém, onde compra um pedaço de terra de Hamor e ergue um altar"
+  },
+  {
+   "kind": "entry",
+   "id": 11085,
+   "sha256": "eb4683071b024d571b6a59ccf967145cece89383f68977f6b227b635d6c31f9d",
+   "text": "Sua filha, Diná, é violentada"
+  },
+  {
+   "kind": "entry",
+   "id": 11086,
+   "sha256": "2177ab79840fbbba9b15d7af3dedff189b82432b76197da5b8bacb20f2c2ba66",
+   "text": "Volta a Betel, onde constrói um altar, e ergue e consagra uma coluna"
+  },
+  {
+   "kind": "entry",
+   "id": 11087,
+   "sha256": "d51b0076b271b91497630f6d4a7a8dcf8087d4a613f4ced235ecb763b9b75055",
+   "text": "Débora, a ama de Rebeca, morre, e é sepultada em Betel"
+  },
+  {
+   "kind": "entry",
+   "id": 11088,
+   "sha256": "64ecd9f5d1a1c6933ef11e63d591adb01131c976d42bfa151b5ef8979aadd5db",
+   "text": "Viaja para Efrata; Benjamim lhe nasce; Raquel morre; e foi \"sepultada no caminho de Efrata, a qual é Belém\","
+  },
+  {
+   "kind": "entry",
+   "id": 11089,
+   "sha256": "8fc0dc34fb42035dc45e9ade60b338a0db4c2037c855e58256deaf0d4198fd49",
+   "text": "Ergue um monumento sobre a sepultura de Raquel"
+  },
+  {
+   "kind": "entry",
+   "id": 11090,
+   "sha256": "d88b9871dcd3281eaec0f99c1c5863f317e346151adcde99723595d51ba0b46b",
+   "text": "O incesto de seu filho, Rúben, com sua concubina, Bila"
+  },
+  {
+   "kind": "entry",
+   "id": 11091,
+   "sha256": "b7c92f8c29840226a935c06b0117cda386fa11658dd919f64006a81842930324",
+   "text": "Lista dos nomes de seus doze filhos"
+  },
+  {
+   "kind": "entry",
+   "id": 11092,
+   "sha256": "b864fe862398821d68d9441fca38bf49908380977d5f1f70b450ef4aa3bf98b2",
+   "text": "Volta a Arba, a cidade de seu pai"
+  },
+  {
+   "kind": "entry",
+   "id": 11093,
+   "sha256": "59892ab33ff4cfab1ca79b777d2a479d7dfd1ea0c640125c16e57e18e5e87033",
+   "text": "Mora na terra de Canaã"
+  },
+  {
+   "kind": "entry",
+   "id": 11094,
+   "sha256": "d67ce3d2fe8e2ce8518fb3b1d0e2da712a6040b2aaf22050dbd9f890c53cf180",
+   "text": "Sua preferência por seu filho José, e o consequente ciúme de seus outros filhos"
+  },
+  {
+   "kind": "entry",
+   "id": 11095,
+   "sha256": "b71f7b8a9031f72acd5099a6cb549ba74e9a2e9c97d82b5e2daa30a5f7ba4d94",
+   "text": "O sonho profético de José a respeito de"
+  },
+  {
+   "kind": "entry",
+   "id": 11096,
+   "sha256": "c7db0b88ec197981e6144fe49cc1e0bc7e03eaae812ce12cabcfadfed0c7a7ba",
+   "text": "Sua dor pela perda de José"
+  },
+  {
+   "kind": "entry",
+   "id": 11097,
+   "sha256": "13f0b6e252c3f985ceee1aed424cf43d023826dd4302533a981bb436f0cb9ada",
+   "text": "Manda ao Egito comprar trigo (cereal)"
+  },
+  {
+   "kind": "entry",
+   "id": 11098,
+   "sha256": "1885256693f4a9cb34c57365282a532308ff59a565fb7f4b0154088b0ef95c23",
+   "text": "Sua dor pela detenção de Simeão e pela exigência de que Benjamim fosse levado ao Egito"
+  },
+  {
+   "kind": "entry",
+   "id": 11099,
+   "sha256": "a703fd3ba1b6cffa8926f707132254644302787527f95b55adb225406b1ceae6",
+   "text": "Seu amor por Benjamim"
+  },
+  {
+   "kind": "entry",
+   "id": 11100,
+   "sha256": "7218798883b575fc84d82d1264ebbb3c537edd4bfcfcfe14b9b55c3769221380",
+   "text": "Sabe que José ainda vive"
+  },
+  {
+   "kind": "entry",
+   "id": 11101,
+   "sha256": "f2f298b4b06a2f654133769d64cbfd6c02e0464be35a03c1c90ba0d62d27c7de",
+   "text": "Muda-se para o Egito"
+  },
+  {
+   "kind": "entry",
+   "id": 11102,
+   "sha256": "ccc8c9d335f013b3af238851d074d9e8e3a2e31114754ae6bbbc1bcfdaed5155",
+   "text": "A lista de seus filhos e netos que desceram ao Egito"
+  },
+  {
+   "kind": "entry",
+   "id": 11103,
+   "sha256": "dfcab117c1ce111d359995dcebcaa5a00d30ace8cedb5bb5fafcdbeef3465160",
+   "text": "Encontra-se com José"
+  },
+  {
+   "kind": "entry",
+   "id": 11104,
+   "sha256": "a18df6e73070f0f64b2978687c1a9ce390b75731c372e32a5115d72bca08e881",
+   "text": "Faraó o recebe, e é abençoado por Jacó"
+  },
+  {
+   "kind": "entry",
+   "id": 11105,
+   "sha256": "1de093c1f701ef4a556c5af075d9326d2c3e679c5fa352bd362ed1e1bfc21402",
+   "text": "A terra de Gósen dada a"
+  },
+  {
+   "kind": "entry",
+   "id": 11106,
+   "sha256": "2ace2594c51221a2aaa04fcab35c19dfd5bd2f7b05e9f2abeb232f853368b564",
+   "text": "Mora no Egito por dezessete anos"
+  },
+  {
+   "kind": "entry",
+   "id": 11107,
+   "sha256": "8962d7fc86cd14ba9497ee8c5ad608b959c95086507ca9bdc5fed4e2fb19d208",
+   "text": "Obtém de José a promessa de sepultá-lo com seus antepassados"
+  },
+  {
+   "kind": "entry",
+   "id": 11108,
+   "sha256": "79727faf826fc050ddb64d473b479ae01cb5808672c59ac1c7f9e5f557ee1de9",
+   "text": "Sua bênção sobre José e seus dois filhos"
+  },
+  {
+   "kind": "entry",
+   "id": 11109,
+   "sha256": "67377d8c7bbad6002d57e6e71d1e437965474202aa2e3adbe5d3bbd0c463e989",
+   "text": "Dá a terra dos amorreus a José"
+  },
+  {
+   "kind": "entry",
+   "id": 11110,
+   "sha256": "7d720da50ee1f1742cf786b31ca2f389e123658e8eff5381b3b87ced50a7d3d1",
+   "text": "Suas últimas bênçãos proféticas sobre seus filhos"
+  },
+  {
+   "kind": "entry",
+   "id": 11111,
+   "sha256": "d8f7c109314ae4631c13bce6087752f4a8f7efe956b004956e20179beebdd461",
+   "text": "Sobre Rúben"
+  },
+  {
+   "kind": "entry",
+   "id": 11112,
+   "sha256": "2f16883def1870c16333bbe3c04d30e7ec8067d33374bb848ba46b8d2d917932",
+   "text": "Simeão e Levi"
+  },
+  {
+   "kind": "entry",
+   "id": 11113,
+   "sha256": "d842c85e2ee313c066aa92c834a36fbe3928af222ae81bcce1aa17f462491a1f",
+   "text": "Judá"
+  },
+  {
+   "kind": "entry",
+   "id": 11114,
+   "sha256": "1c125d1b47c7ffe98c63aa7a6147e9525b8a3a59353b485060cfee75ec89de65",
+   "text": "Zebulom"
+  },
+  {
+   "kind": "entry",
+   "id": 11115,
+   "sha256": "9e25d416835b3e8fad4db20378cd950b32693311995008c1807ae5b4d183c829",
+   "text": "Issacar"
+  },
+  {
+   "kind": "entry",
+   "id": 11116,
+   "sha256": "b1259567b8a27cd0ee0ce4c79d0670c75bada9e86dcdeff374ffd922d41cbe7e",
+   "text": "Dã"
+  },
+  {
+   "kind": "entry",
+   "id": 11117,
+   "sha256": "ea14b622fb77cdf23da889c04aa894315532e36d9c27f47187c41214432ec644",
+   "text": "Gade"
+  },
+  {
+   "kind": "entry",
+   "id": 11118,
+   "sha256": "c45d43dd44fcaa30d89cb4340b3465ce058650c4bf1d6f1ebe97fa5637adbf3c",
+   "text": "Aser"
+  },
+  {
+   "kind": "entry",
+   "id": 11119,
+   "sha256": "6004663db331a546ecf6f336b681b9c6ee2f1afbefc26a60b908ac588acfcfb7",
+   "text": "Naftali"
+  },
+  {
+   "kind": "entry",
+   "id": 11120,
+   "sha256": "78a1a1dae4e56fb0aba67dadc5ab5ab808f505137efedecfb7c2f12a4195c58b",
+   "text": "José"
+  },
+  {
+   "kind": "entry",
+   "id": 11121,
+   "sha256": "f3c7769dd45d51cbd33a2105124274b75dfb43ecc028d899c2313a4f2f0f95ce",
+   "text": "Benjamim"
+  },
+  {
+   "kind": "entry",
+   "id": 11122,
+   "sha256": "df4490ea895a842eb9d8d7908d2f4f798c99c2e6aff8750c3e0505ffc5dd9c1d",
+   "text": "Encarrega seus filhos de sepultá-lo no campo de Macpela"
+  },
+  {
+   "kind": "entry",
+   "id": 11123,
+   "sha256": "ea6fc1370cfe38c8492cea47eaf07acad21171f1fa1774ca9403be12655eaa32",
+   "text": "Morte de"
+  },
+  {
+   "kind": "entry",
+   "id": 11124,
+   "sha256": "26c6c53fe8c3651e8dee8a3135084de3cc77afa718656ac23fb4d9a7c7e53aa1",
+   "text": "Corpo de, embalsamado"
+  },
+  {
+   "kind": "entry",
+   "id": 11125,
+   "sha256": "9388dac45581315e0c6e178fe3ca5e87d8e5ba7c721a5bf00e9ec5294c97ab69",
+   "text": "40 dias de luto por"
+  },
+  {
+   "kind": "entry",
+   "id": 11126,
+   "sha256": "bba018d2735842361ea10c1eb0e7ec4a8a735540dccefdef97a2967b1fcecd9c",
+   "text": "Sepultamento de"
+  },
+  {
+   "kind": "entry",
+   "id": 11127,
+   "sha256": "40243e705ae47cd17eca71fa867cd9b5bd2b0567ab096257d6877dbb73e8425f",
+   "text": "Descendentes de"
+  },
+  {
+   "kind": "entry",
+   "id": 11128,
+   "sha256": "609d3944599ed3898d5965b5fa86a40080fd6dd0ee2532a554aff42f4c06a585",
+   "text": "Profecias sobre ele e seus descendentes"
+  },
+  {
+   "kind": "entry",
+   "id": 11129,
+   "sha256": "7534a80c9e479dae59066f50a3594bf4e758e7abbd71725d7f48fa3a362a25b1",
+   "text": "Sua riqueza"
+  },
+  {
+   "kind": "entry",
+   "id": 11130,
+   "sha256": "0b29f8079ad28519355f8de6ae3a5662f118716916c1a772138b9f4d3293158c",
+   "text": "O poço de"
+  },
+  {
+   "kind": "topic",
+   "id": 2629,
+   "sha256": "845992df844cef41bd0cc38df8d46c7445cac70ed20e26ca9a0e0765007c059f",
+   "text": "Jael"
+  },
+  {
+   "kind": "entry",
+   "id": 11131,
+   "sha256": "3a6aa412db7ee8bbcbe8d7aeb4abd5ba4cb5572e55cec465af521341db0bc3da",
+   "text": "Mulher de Héber, e a que matou Sísera"
+  },
+  {
+   "kind": "topic",
+   "id": 2630,
+   "sha256": "205ac5ce1b8d73af8c656c3cebe469fadb2efea9dbf52bb578b80ea5db8f9f9d",
+   "text": "Jagur"
+  },
+  {
+   "kind": "entry",
+   "id": 11132,
+   "sha256": "e0c1bd07e8928365fb97278513d89a0f65149b7cbf806ba25ae866cab521341b",
+   "text": "Uma cidade de Judá"
+  },
+  {
+   "kind": "topic",
+   "id": 2631,
+   "sha256": "b068030da8c6703cdcb96a976875d60bb94f9f8c2d1e6cbddba256ec3a13b89f",
+   "text": "Jaate"
+  },
+  {
+   "kind": "entry",
+   "id": 11133,
+   "sha256": "16f87b64552a7f63804510dc2f3ec607163236e7dc24648db1bb74cecef61f28",
+   "text": "Nome de quatro levitas"
+  },
+  {
+   "kind": "topic",
+   "id": 2632,
+   "sha256": "c0dd582729c01db79af5ace3c2d784ab3a50eafa0029b0f4345e9e9d4b05eaeb",
+   "text": "Jaza"
+  },
+  {
+   "kind": "entry",
+   "id": 11134,
+   "sha256": "2987dbcab82f995f0dc4fd730de0b0e3768a88a1b72ea6017b4ba64f163a8efd",
+   "text": "Também chamada JAAZA, JAZÁ e JAZA"
+  },
+  {
+   "kind": "entry",
+   "id": 11135,
+   "sha256": "8b78b3bde41fca8ffff7afe72eeb896a5f7b1350295231f896825062fb55d4ef",
+   "text": "Uma cidade levítica em Rúben, tomada dos moabitas"
+  },
+  {
+   "kind": "entry",
+   "id": 11136,
+   "sha256": "43e27ec28ebc251486935ba3be0888918e23bfbc6dec2e3d9d2f6eb6d5a40c86",
+   "text": "Seom derrotado em"
+  },
+  {
+   "kind": "topic",
+   "id": 2633,
+   "sha256": "c67c4fa04b08ac4358faf14e7c078296744273694189b58f0212f7b5cd99d42b",
+   "text": "Jazeias"
+  },
+  {
+   "kind": "entry",
+   "id": 11137,
+   "sha256": "506eb67508e0b77581dd5212b0f40321c7d4a14cac60e666d654c41fcd0dd8dd",
+   "text": "Um exilado que voltou"
+  },
+  {
+   "kind": "topic",
+   "id": 2634,
+   "sha256": "6f88cfac1efd03c82ac7503cb7fda612071486147cb7d3b6416d7ea1a6d5a062",
+   "text": "Jaaziel"
+  },
+  {
+   "kind": "entry",
+   "id": 11138,
+   "sha256": "4c060344881af21ad2135dc5807ef78e694c02926c7cd5c15ef634420c90022e",
+   "text": "1. Um israelita descontente que se uniu a Davi em Ziclague"
+  },
+  {
+   "kind": "entry",
+   "id": 11139,
+   "sha256": "4e9e06a37be2e70cc851545740bd04f82985ecd51dfc3b80d1467137cd0b6ef7",
+   "text": "2. Um sacerdote"
+  },
+  {
+   "kind": "entry",
+   "id": 11140,
+   "sha256": "8673f3aaa67624687cd94ff9d599d9f9c1f9e5e652637f68dae2fe702b335865",
+   "text": "3. Filho de Hebrom"
+  },
+  {
+   "kind": "entry",
+   "id": 11141,
+   "sha256": "b399e52efcab1471bcb1a4e47b46ee43ce5c330a8ef2609e9dccf9fc7db69f26",
+   "text": "4. Um levita e profeta"
+  },
+  {
+   "kind": "entry",
+   "id": 11142,
+   "sha256": "9fc4c49dd1a0acf9229474e75bf347f9cea5d4c9f3eb3658284c4715f90789c5",
+   "text": "5. Um chefe, ou o pai de um chefe, entre os exilados que voltaram da Babilônia"
+  },
+  {
+   "kind": "topic",
+   "id": 2635,
+   "sha256": "66325c450898e64c25fd96c356573fac1d3b5fc289b8048eb7ec47c2ae319434",
+   "text": "Jadai"
+  },
+  {
+   "kind": "entry",
+   "id": 11143,
+   "sha256": "310f07db5b9fa7217bb15c7c5b38d4e92e5c3b21bfb90635fcc5c22a3045e5a3",
+   "text": "Um descendente de Calebe"
+  },
+  {
+   "kind": "topic",
+   "id": 2636,
+   "sha256": "47a7ff1985c673ef0d16ebfad0c63a9b40d9dd21f01f4ff476489f0201b9e5c7",
+   "text": "Jadiel"
+  },
+  {
+   "kind": "entry",
+   "id": 11144,
+   "sha256": "8940ff5bcac52d2795df2c2c81b7d3b6947263b757536084bd101f8a327da94e",
+   "text": "Chefe de uma família da tribo de Manassés"
+  },
+  {
+   "kind": "topic",
+   "id": 2637,
+   "sha256": "0be66482247cf00269a219826c519a0a7deddc31f60a4001597a6c8c7b1c06b9",
+   "text": "Jado"
+  },
+  {
+   "kind": "entry",
+   "id": 11145,
+   "sha256": "c9efbf2bbe42c974d0ae9d8180120e4cea5b630d45633ddf7f8ae707e6e8c89f",
+   "text": "Filho de Buz"
+  },
+  {
+   "kind": "topic",
+   "id": 2638,
+   "sha256": "df265ec5dadd34c63cd93e7c26ac860f027e6be8990a22e1642d58caee63e95c",
+   "text": "Jaleel"
+  },
+  {
+   "kind": "entry",
+   "id": 11146,
+   "sha256": "69c4fcea46c362bcb636bda6e8992348d7f3562ef2175060d694d950c67197d4",
+   "text": "Filho de Zebulom"
+  },
+  {
+   "kind": "topic",
+   "id": 2639,
+   "sha256": "ac7a30382ef9688d23afca8dc35cbdbfc2479f4ae55986309b9f861873ea3ba8",
+   "text": "Jamai"
+  },
+  {
+   "kind": "entry",
+   "id": 11147,
+   "sha256": "bd6a0462fa77b795d544263c6427fe6143fd7a95b25c1c3cbf3f9b0eb0041927",
+   "text": "Filho de Tolá"
+  },
+  {
+   "kind": "topic",
+   "id": 2640,
+   "sha256": "377dfa929d92a6a109eb646689b0976e2a0e6317df9bdb4eaaa7a814c84eb591",
+   "text": "Jazá"
+  },
+  {
+   "kind": "entry",
+   "id": 11148,
+   "sha256": "de077d16a531d0fb71e4beaea3a04933a4f1438e9e0ea5e7322fb1f2ab0f87b2",
+   "text": "Uma cidade da tribo de Rúben"
+  },
+  {
+   "kind": "topic",
+   "id": 2641,
+   "sha256": "01b546deeee09458aa6b80e65145656c983ceab08f94f70579d42c05450ad2d0",
+   "text": "Jazeel"
+  },
+  {
+   "kind": "entry",
+   "id": 11149,
+   "sha256": "f3434166406abb8ce3e6d559d9215985e9aeba2591a0e2c13bf0462aac7d73fb",
+   "text": "Também chamado JAZIEL"
+  },
+  {
+   "kind": "entry",
+   "id": 11150,
+   "sha256": "450e914432cfb5828a09150e7bde5d3e98d550660dc2dc32f7f3c359a170d56e",
+   "text": "Um filho de Naftali"
+  },
+  {
+   "kind": "topic",
+   "id": 2642,
+   "sha256": "f2a9ba386816f697fecdd493e6c788ce2109ae3e9e3e6492c769982b29fddba6",
+   "text": "Jazera"
+  },
+  {
+   "kind": "entry",
+   "id": 11151,
+   "sha256": "016dd69765e0955b4293e5b922be007792ba4c2dfec6e8dd01941b7d67efc06c",
+   "text": "Um sacerdote"
+  },
+  {
+   "kind": "topic",
+   "id": 2643,
+   "sha256": "a9a6a8391ed4be75e30b1242032279d6d7c2d6b7259cae5e349697ca0cff93aa",
+   "text": "Jaziel"
+  },
+  {
+   "kind": "entry",
+   "id": 11152,
+   "sha256": "4df70ed109416e52ee80c34a55946c4f03ca21bba1c012579212e7f3ad0d137d",
+   "text": "Passagens gerais sobre"
+  },
+  {
+   "kind": "topic",
+   "id": 2644,
+   "sha256": "d5697ddedd470466799b7ac4edc6955588008c25e21a6e0aaf8834864da68465",
+   "text": "Carcereiro"
+  },
+  {
+   "kind": "entry",
+   "id": 11153,
+   "sha256": "2e7b8e0433242a368718efbf8d486ee5029e975f299d96fa45bc733362026c02",
+   "text": "De Filipos, convertido"
+  },
+  {
+   "kind": "topic",
+   "id": 2645,
+   "sha256": "4a36666a9c77384970b38f39525071cd1ea435218192a732e5f66a07fcd1412c",
+   "text": "Jair"
+  },
+  {
+   "kind": "entry",
+   "id": 11154,
+   "sha256": "b22f7040cb39337985319c09c987d6747fdd119910345f8346255103db2ee862",
+   "text": "1. Filho de Manassés. Fundador de vinte e três cidades em Gileade"
+  },
+  {
+   "kind": "entry",
+   "id": 11155,
+   "sha256": "bebf9bc26cd4d023a127cc5099fafa50c5d9ff91f32b0bb8606ab585ab1bf139",
+   "text": "2. Um juiz de Israel"
+  },
+  {
+   "kind": "entry",
+   "id": 11156,
+   "sha256": "ebb130904bb5faac69cb3fcee3c741ad733732fec0b53f97670631ed07bfb916",
+   "text": "3. Um benjamita"
+  },
+  {
+   "kind": "entry",
+   "id": 11157,
+   "sha256": "0e25e3c70ab5d4063158d2c01910417b5e4c280a6356b6fec6e0597033aee269",
+   "text": "4. Pai de Elanã"
+  },
+  {
+   "kind": "topic",
+   "id": 2646,
+   "sha256": "a6770d471c26afc4d1a452c55fbe6b36629da8424f9e85826282bc87041c0526",
+   "text": "Jairo"
+  },
+  {
+   "kind": "entry",
+   "id": 11158,
+   "sha256": "7f53b0f5357d83f5b67a1f34d6e5b01af983772f149f61a57b8e6a883527ae8c",
+   "text": "Um chefe da sinagoga em Cafarnaum"
+  },
+  {
+   "kind": "entry",
+   "id": 11159,
+   "sha256": "fe9ef8f37db1277c0de2298a732749cb22740550e0e904bae3ba50ae4249b060",
+   "text": "Filha de, ressuscitada"
+  },
+  {
+   "kind": "topic",
+   "id": 2647,
+   "sha256": "02a349e0535ddbf779d001650f8b0fb5003e46410ecd4f299c95241609f039a2",
+   "text": "Jacã"
+  },
+  {
+   "kind": "topic",
+   "id": 2648,
+   "sha256": "91cbdf1a3939c08f953f613f360467a3c0d830ea048edf5039bded36e61d325a",
+   "text": "Jaque"
+  },
+  {
+   "kind": "entry",
+   "id": 11160,
+   "sha256": "e7f5e8aaf1f4c80593b023606d646e5ab98c818d0551037fa88d5aa3b90346c1",
+   "text": "Pai de Agur"
+  },
+  {
+   "kind": "topic",
+   "id": 2649,
+   "sha256": "50a220ed27e8d564820e958a4f0f9391343a629154893d874f0425e89f6b9859",
+   "text": "Jaquim"
+  },
+  {
+   "kind": "entry",
+   "id": 11161,
+   "sha256": "c7bfb978c9b6f069b8ad2b245640793d4255837f95011d7408dcd9d45cc9068d",
+   "text": "1. Um benjamita"
+  },
+  {
+   "kind": "entry",
+   "id": 11162,
+   "sha256": "ddbd15e1cee23ecba62b09cc340b50b50df0ca7a15bc402673bfd4884c8918e3",
+   "text": "2. Chefe de uma divisão sacerdotal no serviço do tabernáculo"
+  },
+  {
+   "kind": "topic",
+   "id": 2650,
+   "sha256": "32b895a882e6eb6cd885447d4843406bb8f29479dacbe0ce05f8319a37ef1e28",
+   "text": "Jalom"
+  },
+  {
+   "kind": "entry",
+   "id": 11163,
+   "sha256": "d777fa8089a11c1e65855b9b6bc67e6f3227d2800c2f5995c793ef5a2255c42b",
+   "text": "Filho de Esdras"
+  },
+  {
+   "kind": "topic",
+   "id": 2651,
+   "sha256": "d481d28073fc96c3020bc0237fc144d5491aa3a4d523a959779928627fb1634c",
+   "text": "Jambres"
+  },
+  {
+   "kind": "entry",
+   "id": 11164,
+   "sha256": "32d544b724f0b7eab55435afad0cb6a1190d4b21c68c3bddd05bb1da38f3ef82",
+   "text": "Um mago egípcio"
+  },
+  {
+   "kind": "topic",
+   "id": 2652,
+   "sha256": "9345a35a6fdf174dff7219282a3ae4879790dbb785c70f6fff91e32fafd66eab",
+   "text": "Tiago"
+  },
+  {
+   "kind": "entry",
+   "id": 11165,
+   "sha256": "e6aef9dc06eaa2e1f6d2e3562dda1dcdc79500de18c9b95666b32bb824ebd8d8",
+   "text": "1. Um apóstolo. Filho de Zebedeu e Salomé"
+  },
+  {
+   "kind": "entry",
+   "id": 11166,
+   "sha256": "0d2e5bd83eb0b3dbc68c5ae10071e30207287581a6a95c5815814e37d4de7ecc",
+   "text": "Irmão de João e pescador"
+  },
+  {
+   "kind": "entry",
+   "id": 11167,
+   "sha256": "ac903b9cc4d2035ead828ad886ec942742f7ec2958af2a2dbc6d133efa3ef153",
+   "text": "Chamado para ser apóstolo"
+  },
+  {
+   "kind": "entry",
+   "id": 11168,
+   "sha256": "863beafb881631182e74898611753be646224bd816bd637ac2275b622017c5df",
+   "text": "Apelidado de Boanerges por Jesus"
+  },
+  {
+   "kind": "entry",
+   "id": 11169,
+   "sha256": "77b225bb729b44ccbf10339a1b79c054ebcf4ba53ab555dc8ebb2ba19151500e",
+   "text": "(Um companheiro íntimo de Jesus, e presente com ele)"
+  },
+  {
+   "kind": "entry",
+   "id": 11170,
+   "sha256": "7626c34492e150ad33ca7ba048b2a15b7c303e117cd978c9424a4cc1ef5372ec",
+   "text": "Na grande pesca"
+  },
+  {
+   "kind": "entry",
+   "id": 11171,
+   "sha256": "c327f48e552cecc7c36689e28a72dfd291286e5333f19e7b751ae905114168e1",
+   "text": "Na cura da sogra de Pedro"
+  },
+  {
+   "kind": "entry",
+   "id": 11172,
+   "sha256": "45400fba1e30549af6769894baec5aab9392857f6cd3d530359a130697ca645b",
+   "text": "Na ressurreição da filha de Jairo"
+  },
+  {
+   "kind": "entry",
+   "id": 11173,
+   "sha256": "59ff4da340c337b077906cacefd0473c6bf2bf23661d19ef49c6454138df98e1",
+   "text": "Na transfiguração de Jesus"
+  },
+  {
+   "kind": "entry",
+   "id": 11174,
+   "sha256": "9ffa7cd5d69bca7dd1fc30ab5294e40d18489bbea7967ef31a3076785dcc2ca1",
+   "text": "No Getsêmani"
+  },
+  {
+   "kind": "entry",
+   "id": 11175,
+   "sha256": "ac4d9355926e542cef7b96118b496cfb70030b4730d7bcf96975338102072360",
+   "text": "Pergunta a Jesus sobre sua segunda vinda"
+  },
+  {
+   "kind": "entry",
+   "id": 11176,
+   "sha256": "aa51e8642666225d08cd57cfff2e850c5df86b7a2cefa75635c9bafcbee07d5e",
+   "text": "Intolerância de"
+  },
+  {
+   "kind": "entry",
+   "id": 11177,
+   "sha256": "404c245700e8acdf7cc301efb97af48661d52c2b46f12c086d04244c0e6bc312",
+   "text": "Ambições políticas de"
+  },
+  {
+   "kind": "entry",
+   "id": 11178,
+   "sha256": "6a6f8005a0a43b517287497de9cf2a4053fd5d05de8edec08600841438df1126",
+   "text": "Presente no lago de Tiberíades quando Jesus se revelou aos discípulos depois de sua ressurreição"
+  },
+  {
+   "kind": "entry",
+   "id": 11179,
+   "sha256": "5383a87a05087a73ae89db6858c31fbb53adc853e37d740c83c7d8d8d268ae44",
+   "text": "Martirizado"
+  },
+  {
+   "kind": "entry",
+   "id": 11180,
+   "sha256": "49e3ddc6aa4cf85fd3b0382fd3228681d60dacc5cbfe2b1d2f6d6844945120a8",
+   "text": "2. Um apóstolo"
+  },
+  {
+   "kind": "entry",
+   "id": 11181,
+   "sha256": "ae64c320a551a6ee19f3c2888b13cb57a67f9706b9c0bc17a28403ec15afc8dd",
+   "text": "Filho de Alfeu"
+  },
+  {
+   "kind": "entry",
+   "id": 11182,
+   "sha256": "5be96981774b572e5a450286908d7f91bc8d27414429e05138075bbd40bffe75",
+   "text": "Irmão de Jesus"
+  },
+  {
+   "kind": "entry",
+   "id": 11183,
+   "sha256": "51a0e924ac08ae602fc89fec69cc31f98951314a5c11a6cc429ffd04278333ba",
+   "text": "O irmão de Judas"
+  },
+  {
+   "kind": "entry",
+   "id": 11184,
+   "sha256": "107fd424620bc36c2a2212af5979dfd270f251be5bb67667e0c4f11f6f804af5",
+   "text": "O irmão de José"
+  },
+  {
+   "kind": "entry",
+   "id": 11185,
+   "sha256": "deefa67faf430abbbfdba50cf0756b6b0a4a70704f371560df9589c65eb6615b",
+   "text": "Testemunha da ressurreição de Cristo"
+  },
+  {
+   "kind": "entry",
+   "id": 11186,
+   "sha256": "09296715869d6bf331d108f974080bfd00285be710b17b351f52892092bcabe1",
+   "text": "Discursa à assembleia em Jerusalém em favor da liberdade dos convertidos gentios"
+  },
+  {
+   "kind": "entry",
+   "id": 11187,
+   "sha256": "3f3d6393e2fc35341ef6ad1ce62ecdf34246249cc5b393ce256e8d9553be5f5b",
+   "text": "Discípulos enviados por ele a Antioquia"
+  },
+  {
+   "kind": "entry",
+   "id": 11188,
+   "sha256": "e02cb15ee35acb000f31d9dfe732522c33e80032643e55a1c02e935f1aa54baf",
+   "text": "Sabe do êxito que acompanhava o ministério de Paulo"
+  },
+  {
+   "kind": "entry",
+   "id": 11189,
+   "sha256": "f6fde7b0cbaf1cd835e2009a10511566ac09619904b71f0a1a2323d2467cc679",
+   "text": "Epístola de"
+  },
+  {
+   "kind": "entry",
+   "id": 11190,
+   "sha256": "0cecea3b2f89f42542a4f76fb0205fcddec5a23f78ab7a9b822543195bdefe7b",
+   "text": "3. Irmão de Jesus"
+  },
+  {
+   "kind": "topic",
+   "id": 2653,
+   "sha256": "bb4aaa952e866bbad9232f870ddc27e9188b522cf54feda27269775c54e81563",
+   "text": "Jamim"
+  },
+  {
+   "kind": "entry",
+   "id": 11191,
+   "sha256": "78648e4193b353cf777e24c00a1db308dfa0b45788d5bdb83631547666faf5f6",
+   "text": "1. Filho de Simeão"
+  },
+  {
+   "kind": "entry",
+   "id": 11192,
+   "sha256": "e95905e63d163bbebfc79cc8e7f1d04a5a58df65ba1d28e1dd8ad6ce92e0bc7d",
+   "text": "2. Descendente de Hezrom"
+  },
+  {
+   "kind": "entry",
+   "id": 11193,
+   "sha256": "1b99bdb0800436e62f218f051e0b29c41ecd94f486a7090c1b510abf9ba3e222",
+   "text": "3. Um sacerdote que explicou a lei aos exilados que voltaram a Jerusalém"
+  },
+  {
+   "kind": "topic",
+   "id": 2654,
+   "sha256": "1987fd714ea915a10f57d5be24bba1e03b376f8359505e9a9ebb8f8cdf90aeb4",
+   "text": "Janleque"
+  },
+  {
+   "kind": "entry",
+   "id": 11194,
+   "sha256": "b68dee7e98304eb88cf0c6c31279a7162ac7d8dc5f45415418851476af850109",
+   "text": "Descendente de Simeão"
+  },
+  {
+   "kind": "topic",
+   "id": 2655,
+   "sha256": "6d93073dfa928a1a7c36abc26e29644ebb4d32364bd7a70da0b39e0caad55821",
+   "text": "Janai"
+  },
+  {
+   "kind": "entry",
+   "id": 11195,
+   "sha256": "8541e88d7b2844174086cb3c89cb830c5271557223aefc1c96374a4be008f2a5",
+   "text": "Antepassado de José"
+  },
+  {
+   "kind": "topic",
+   "id": 2656,
+   "sha256": "ce891bd28d6234c6de95ef80eb85c68cfc287732e472e9120038c4ad9a67fd21",
+   "text": "Janes"
+  },
+  {
+   "kind": "entry",
+   "id": 11196,
+   "sha256": "32d544b724f0b7eab55435afad0cb6a1190d4b21c68c3bddd05bb1da38f3ef82",
+   "text": "Um mago egípcio"
+  },
+  {
+   "kind": "topic",
+   "id": 2657,
+   "sha256": "1f8294e4d532fde90046b9f50a75c435b54b8fac50123d04439bebc03611d991",
+   "text": "Janoa"
+  },
+  {
+   "kind": "entry",
+   "id": 11197,
+   "sha256": "37c6449468728291b79c7c7c26f9b4c3632f8dd66a6f42fffe7c529af14694d5",
+   "text": "Uma cidade da tribo de Naftali"
+  },
+  {
+   "kind": "topic",
+   "id": 2658,
+   "sha256": "bd400453986b0aa88ba439c14ba887031d8eed066eda98161e8e44458345c1ca",
+   "text": "Janoa"
+  },
+  {
+   "kind": "entry",
+   "id": 11198,
+   "sha256": "4ea13d36ae5384a249c7038d5f00136302f60d7d57cce52c0b383805de48e4e5",
+   "text": "Uma cidade na fronteira da tribo de Efraim"
+  },
+  {
+   "kind": "topic",
+   "id": 2659,
+   "sha256": "3f953e9817a004897f8e119bdd9471a74c1d88f48b3b64da6557f67404f91aea",
+   "text": "Janim"
+  },
+  {
+   "kind": "entry",
+   "id": 11199,
+   "sha256": "3f88cd9583c794b8937ac491189333bdaaa57682b719a0ba900e5f37c1596a77",
+   "text": "Uma cidade da tribo de Judá"
+  },
+  {
+   "kind": "topic",
+   "id": 2660,
+   "sha256": "7b457c1610065b7cde5f37fc2db2155293589287d8f07e7c358714b0b1c5bf4e",
+   "text": "Jafé"
+  },
+  {
+   "kind": "entry",
+   "id": 11200,
+   "sha256": "b1342918b45c432938d5ff5628df0037eaefd3e711d7aa72609560f39c6f721b",
+   "text": "Filho de Noé"
+  },
+  {
+   "kind": "entry",
+   "id": 11201,
+   "sha256": "85a9b97a305ef7f30e762c1c67445b69929bc847daa29dde01d051ad29b6c6bb",
+   "text": "Sua vida preservada no tempo do grande dilúvio"
+  },
+  {
+   "kind": "entry",
+   "id": 11202,
+   "sha256": "ea78f896da257c6f364529e9ddd9efaf23c5656529e881e51b463fe9c4448010",
+   "text": "Prudência de, por ocasião da embriaguez de Noé"
+  },
+  {
+   "kind": "entry",
+   "id": 11203,
+   "sha256": "40243e705ae47cd17eca71fa867cd9b5bd2b0567ab096257d6877dbb73e8425f",
+   "text": "Descendentes de"
+  },
+  {
+   "kind": "topic",
+   "id": 2661,
+   "sha256": "f9f0c8722af9e23f930127f5faee0448b3a3253ea3430e48fad276d30007ee81",
+   "text": "Jafia"
+  },
+  {
+   "kind": "entry",
+   "id": 11204,
+   "sha256": "6f9850e7eae25f9ff997abded5264c186e697bb2dfdfb9b2ac33ba1718efcf6a",
+   "text": "1. Rei de Laquis"
+  },
+  {
+   "kind": "entry",
+   "id": 11205,
+   "sha256": "06dd7fcc0f5e98ed75887c4d925808ea84df284a760503ddf6bc7b84c1c884ed",
+   "text": "2. Uma cidade de Zebulom"
+  },
+  {
+   "kind": "entry",
+   "id": 11206,
+   "sha256": "085e0805bc3c1914353d85e60158ad05640f7f3c50d0f3ea84d6742f1979240a",
+   "text": "3. Um filho de Davi"
+  },
+  {
+   "kind": "topic",
+   "id": 2662,
+   "sha256": "3feb7eb2326955f7863ccb0fc52d73095d5a460a68e03bd9f3ab01fbae7fc796",
+   "text": "Jaflete"
+  },
+  {
+   "kind": "entry",
+   "id": 11207,
+   "sha256": "279d3ff19bd3a13e79ced589e63ff235357428037a98043ede4b001ec8de8b8b",
+   "text": "Neto de Berias"
+  },
+  {
+   "kind": "topic",
+   "id": 2663,
+   "sha256": "c500498aa48d9901b0b9ed94c1ab127fb87cb485698b9a72f2b04b7c15db8803",
+   "text": "Jafletitas"
+  },
+  {
+   "kind": "entry",
+   "id": 11208,
+   "sha256": "c509478d03ae78a1e834acd75435c91e160507b23cbefd615ac57c4f68eb9040",
+   "text": "Um lugar de localização desconhecida"
+  },
+  {
+   "kind": "topic",
+   "id": 2664,
+   "sha256": "cebe53116b68874fac3d8f7d49a3a22b872fb39821823fd9eff03d7d8f428e3e",
+   "text": "Jafo"
+  },
+  {
+   "kind": "entry",
+   "id": 11209,
+   "sha256": "92ef67501fd54c645ec328534cb9850e183ab10743abc002c50483a454fb5fb9",
+   "text": "Uma cidade da tribo de Dã"
+  },
+  {
+   "kind": "topic",
+   "id": 2665,
+   "sha256": "2df6ba58005659813c3842fa239afb31d1f6e772319b6a0b929bbeea04a9f2b8",
+   "text": "Jará"
+  },
+  {
+   "kind": "entry",
+   "id": 11210,
+   "sha256": "bf363b356f025784e223a0aad009d50463554dcc85c9acfade8322c51ea3da69",
+   "text": "Filho de Acaz"
+  },
+  {
+   "kind": "topic",
+   "id": 2666,
+   "sha256": "297d7b5338c44537a5a7717449ffaf20877930d680b2e79d8adaaa699b6fbe60",
+   "text": "Jarebe"
+  },
+  {
+   "kind": "entry",
+   "id": 11211,
+   "sha256": "e621b6dbcf57853443ec389a24bae8bab91160ca24660c16cc63f48b8da722e0",
+   "text": "Rei da Assíria"
+  },
+  {
+   "kind": "topic",
+   "id": 2667,
+   "sha256": "eb338a96b0e78f261140ff6863f5d1f700f438f5e50c21a33809883f68b89ad3",
+   "text": "Jarede"
+  },
+  {
+   "kind": "entry",
+   "id": 11212,
+   "sha256": "305fdbe0af249896fb18dc31338874bb6516aa849ce2566335a9b3b7e6979d0d",
+   "text": "1. Também chamado JEREDE"
+  },
+  {
+   "kind": "entry",
+   "id": 11213,
+   "sha256": "9420f20ea251a391f8988244935182a78093a142c73ce76d4cdde5eff8d37d15",
+   "text": "Um descendente de Sete"
+  },
+  {
+   "kind": "entry",
+   "id": 11214,
+   "sha256": "e05a3124badc3dbd35fe47d32dd796d7c8754e6109ca550d53d7dcd3588b67c6",
+   "text": "2. Um antepassado de Jesus"
+  },
+  {
+   "kind": "topic",
+   "id": 2668,
+   "sha256": "96695953226e3a93aa063e6576fab7f6979ae5162b20183eaa332a83740f6199",
+   "text": "Jaaresias"
+  },
+  {
+   "kind": "entry",
+   "id": 11215,
+   "sha256": "d61211f4d1077dccf2ec9ce0fe0a8e45da043f7a628c611fe8b49bb416ce77bd",
+   "text": "Filho de Jeroão"
+  },
+  {
+   "kind": "topic",
+   "id": 2669,
+   "sha256": "01aacfc9b4be59d1be8fd620bb6c9cf6c7372b0bc634cf13e3e6ed0b860df2c9",
+   "text": "Jará"
+  },
+  {
+   "kind": "entry",
+   "id": 11216,
+   "sha256": "2281488f860a90069cb81acfdda24e05cbeec80483e0fd2d8f9c594d0ff0f802",
+   "text": "Um egípcio"
+  },
+  {
+   "kind": "topic",
+   "id": 2670,
+   "sha256": "53af5da7f0c9568e75634268cc06e00cf890cb669bea00af066317a59ebc487b",
+   "text": "Jaribe"
+  },
+  {
+   "kind": "entry",
+   "id": 11217,
+   "sha256": "78648e4193b353cf777e24c00a1db308dfa0b45788d5bdb83631547666faf5f6",
+   "text": "1. Filho de Simeão"
+  },
+  {
+   "kind": "entry",
+   "id": 11218,
+   "sha256": "c299858c9bcc7127bfea11470535029b27b4b84c274a25e4299a62dfbc29e002",
+   "text": "2. Um chefe entre os do cativeiro"
+  },
+  {
+   "kind": "entry",
+   "id": 11219,
+   "sha256": "9125d35c2430edc395c67ac7a28bfbdc55364e4df4755f041f2b18743da9eb57",
+   "text": "3. Um sacerdote que se casou com uma mulher idólatra"
+  },
+  {
+   "kind": "topic",
+   "id": 2671,
+   "sha256": "e27b40b155670ab7e8182e118e97c3b53be86166f9d531457a25ec0d2a1bef5b",
+   "text": "Jarmute"
+  },
+  {
+   "kind": "entry",
+   "id": 11220,
+   "sha256": "e507217f410cceec7d9365e92ae91a166b3ec3ed9058540fb472929b4ca8a98f",
+   "text": "1. Uma cidade no território da tribo de Judá"
+  },
+  {
+   "kind": "entry",
+   "id": 11221,
+   "sha256": "f84498db5c21a193da03ac69f2c6e65efef686f24dc33207038949dc80226947",
+   "text": "2. Uma cidade levítica em Issacar"
+  },
+  {
+   "kind": "topic",
+   "id": 2672,
+   "sha256": "53dee6d8af2850bd96509ebd6f828ac0e02a5522dcfeebe05beb8c0d471704bc",
+   "text": "Jaroa"
+  },
+  {
+   "kind": "entry",
+   "id": 11222,
+   "sha256": "ffb786fb58e15c47186dd64d4c5b25b0c1380fe1e484c5c5ece08a14acfd0c22",
+   "text": "Um descendente de Gade"
+  },
+  {
+   "kind": "topic",
+   "id": 2673,
+   "sha256": "5009d77c15a601fc6e75a1b2c1a28a1759d7233c01a7c7bade810ba11034ca24",
+   "text": "Jásen"
+  },
+  {
+   "kind": "entry",
+   "id": 11223,
+   "sha256": "31aec30d9a205452a9d20bac4db1ddf95ab5f3f05c864d61180c8382c3bfd598",
+   "text": "Pai de um dos valentes de Davi"
+  },
+  {
+   "kind": "topic",
+   "id": 2674,
+   "sha256": "80b4ea0efb4fa77c30e02947dc1969fc2b5bc0d0048fdfcc15bcdc398c032b8d",
+   "text": "Jasobeão"
+  },
+  {
+   "kind": "entry",
+   "id": 11224,
+   "sha256": "e36c4eefca78d21be238bcc29db9fe4eb7db6b8275e3227fc6ceca8804a4e099",
+   "text": "1. Um dos guerreiros de Davi"
+  },
+  {
+   "kind": "entry",
+   "id": 11225,
+   "sha256": "dbe12bc87cef54adc257fe9acfe9f5c2ed7f8ceb6979567484743911201bd89a",
+   "text": "2. Um levita coraíta"
+  },
+  {
+   "kind": "topic",
+   "id": 2675,
+   "sha256": "ccba3d4735f9a8338fe69c4209c5a7cde49afa4347ceefa184012d158c74820d",
+   "text": "Jasube"
+  },
+  {
+   "kind": "entry",
+   "id": 11226,
+   "sha256": "7a12b25be6391639b84cb4dd508ac3d3601af82d0062f0f20038bb5bb74cd8b6",
+   "text": "1. Filho de Issacar"
+  },
+  {
+   "kind": "entry",
+   "id": 11227,
+   "sha256": "c4c10c1e8995acd25415d2ccb52b2e01e9f372bdf50fca0b98caa5246f638dac",
+   "text": "Chamado JÓ em"
+  },
+  {
+   "kind": "entry",
+   "id": 11228,
+   "sha256": "b5c6a0467c842bf1e05158c1dd56c2ec595964567b0dfaf0a4d3f89f8f3882b2",
+   "text": "2. Da família de Bani"
+  },
+  {
+   "kind": "topic",
+   "id": 2676,
+   "sha256": "b6f2c0f0ea8808be9831703c7cb8d824595d6d40ab2ffe39a6e2701ef5502b28",
+   "text": "Jasubi-Leém"
+  },
+  {
+   "kind": "entry",
+   "id": 11229,
+   "sha256": "d92342f1eaaacf8e0f5fd010f1f1347223873f67baa07ba53ea5a177466aec5a",
+   "text": "Um descendente de Selá"
+  },
+  {
+   "kind": "topic",
+   "id": 2677,
+   "sha256": "ebf40db3ca5f06dd398c2c290489e01c6895bb14fdcc6cf74638940f47c2c53d",
+   "text": "Jaasiel"
+  },
+  {
+   "kind": "entry",
+   "id": 11230,
+   "sha256": "5cac29d7c186dbb36502c16d9a8fa056de71b48c2a83f1e4c030cd855da171e8",
+   "text": "Um dos guerreiros de Davi"
+  },
+  {
+   "kind": "topic",
+   "id": 2678,
+   "sha256": "7fa8a6e9fde2f4e1dfe6fb029af47c9633d4b7a616a42c3b2889c5226a20238d",
+   "text": "Jasão"
+  },
+  {
+   "kind": "entry",
+   "id": 11231,
+   "sha256": "52d7bcd08a07cd979641a13f1ffc950bee6dd97f73a3a55926ec9655ae133ffb",
+   "text": "Um cristão em Tessalônica"
+  },
+  {
+   "kind": "entry",
+   "id": 11232,
+   "sha256": "cb84c005841356bdba24283ac07f9183a65a162ebd8bdb3b34b176b6456b9730",
+   "text": "Provavelmente parente de Paulo, mencionado em"
+  },
+  {
+   "kind": "topic",
+   "id": 2679,
+   "sha256": "503bde4931ca4d8d95b9353a7d6c57c2fe9a980bc49c5100bc6ccc856298d175",
+   "text": "Jaspe"
+  },
+  {
+   "kind": "entry",
+   "id": 11233,
+   "sha256": "b3012e62ca744a7d1da607fb8c69b7cf82d7afbad098c96f43a57449c44733fd",
+   "text": "Uma pedra preciosa, engastada no peitoral do sumo sacerdote"
+  },
+  {
+   "kind": "topic",
+   "id": 2680,
+   "sha256": "d60e8097ff0be36c9b90d2d5ea07ca66177b7292acf6ba3690ab57d7306a95e3",
+   "text": "Jatniel"
+  },
+  {
+   "kind": "entry",
+   "id": 11234,
+   "sha256": "e28859305c627b5994aaf3027deb802866b8cb8c1e59dd946825a620daa882a6",
+   "text": "Filho de Meselemias"
+  },
+  {
+   "kind": "topic",
+   "id": 2681,
+   "sha256": "58bf14a418bd2748305dbc164a81ee53b9d45d3ae9e8703afed6852b8dd79f79",
+   "text": "Jatir"
+  },
+  {
+   "kind": "entry",
+   "id": 11235,
+   "sha256": "c44805e4e5f7e4a392c24c407392eb6be5b470b1fba871c578e35929da4f2ed7",
+   "text": "Uma cidade levítica"
+  },
+  {
+   "kind": "topic",
+   "id": 2682,
+   "sha256": "f4fe20af9c51cf3763b0c94c0bf1b303b88a1e594405ed4584c8f679ce9bbcad",
+   "text": "Javã"
+  },
+  {
+   "kind": "entry",
+   "id": 11236,
+   "sha256": "b489e59ea73c882cdc6cbc69d4438c8f2b3f3cd0d669e911f15cc97684a879bc",
+   "text": "1. Filho de Jafé"
+  },
+  {
+   "kind": "entry",
+   "id": 11237,
+   "sha256": "c1e7fcd0a7ab0e4261db577aa7cff0a4828bce3e477b11e4e49e1c354dbdcea8",
+   "text": "2. Uma cidade na Arábia com a qual os fenícios comerciavam"
+  },
+  {
+   "kind": "topic",
+   "id": 2683,
+   "sha256": "3331d5456d2d5b84ac4bc46eb8807cd4b4d2b5f0cd17aa54ad0ccc0362ea8c72",
+   "text": "Dardo"
+  },
+  {
+   "kind": "entry",
+   "id": 11238,
+   "sha256": "7ee4d9abab180877049e3628ad8914e42c1b2a6f88f02a3e60d44ffec808acef",
+   "text": "Uma lança pesada"
+  },
+  {
+   "kind": "entry",
+   "id": 11239,
+   "sha256": "b08b149863a32d8c230e01f21e7d977860ed2806c80661a024dd24bd3a281f58",
+   "text": "Usado por Golias (R. V.)"
+  },
+  {
+   "kind": "entry",
+   "id": 11240,
+   "sha256": "fda8e0f2d93428160cd565d269d54d6049496fb682d1c763b548e9a5fa3cc0f4",
+   "text": "Usado por Saul"
+  },
+  {
+   "kind": "topic",
+   "id": 2684,
+   "sha256": "908d0af95c4a7c6e17091f5f5a235b29d2a4b76e2950ff2e94d19a6efcc6c974",
+   "text": "Jazer"
+  },
+  {
+   "kind": "entry",
+   "id": 11241,
+   "sha256": "c5b44e1430a3f286bd9e700b68b065cae7dd0cee6d601bbd7ebcab8ece307435",
+   "text": "1. Uma cidade de refúgio a leste do rio Jordão"
+  },
+  {
+   "kind": "entry",
+   "id": 11242,
+   "sha256": "defebcd512ad72bfcc2d153da1dcaf5b6829774b823d4867963a4d3ca8fbbbae",
+   "text": "Tomada dos amorreus"
+  },
+  {
+   "kind": "entry",
+   "id": 11243,
+   "sha256": "28084622f06c70aacea61094d8e214baca058ac7af2553abf41af80e718f1467",
+   "text": "2. Mar de"
+  },
+  {
+   "kind": "topic",
+   "id": 2685,
+   "sha256": "847e7a060e5a3bf71381616829e0f6cc8c74d405665558bc66088b577c6dc495",
+   "text": "Jaziz"
+  },
+  {
+   "kind": "entry",
+   "id": 11244,
+   "sha256": "87ddb0706c701b699c15cc5b427bc3b982c650e261aec8f95b8503850d874f4a",
+   "text": "Um pastor"
+  },
+  {
+   "kind": "topic",
+   "id": 2686,
+   "sha256": "bcdbce12e54203dfa28b8f417fde98b3df973429ec517f8a89bb8b8c569f4c9d",
+   "text": "Ciúme"
+  },
+  {
+   "kind": "entry",
+   "id": 11245,
+   "sha256": "4df70ed109416e52ee80c34a55946c4f03ca21bba1c012579212e7f3ad0d137d",
+   "text": "Passagens gerais sobre"
+  },
+  {
+   "kind": "entry",
+   "id": 11246,
+   "sha256": "0a7b419f1585c1030208ec1e4f0d9449f1c6a0b37d1cf13a220d9c68c79aa3e7",
+   "text": "Lei sobre, quando o marido tem ciúme de sua mulher"
+  },
+  {
+   "kind": "entry",
+   "id": 11247,
+   "sha256": "2279f6bd08579d8703dbe35e582feb7d2780a94cc5f105e318c53a99d7177c62",
+   "text": "Imagem de"
+  },
+  {
+   "kind": "entry",
+   "id": 11248,
+   "sha256": "85c98ba7e1940d015c2719056afbfafdf2f7271b69de6df2b6104791250c932c",
+   "text": "Atribuído a Deus"
+  },
+  {
+   "kind": "entry",
+   "id": 11249,
+   "sha256": "f5bf97c6ac452574c3e5baa3e1183a6160b3ae0ead41292fb7fe2eb512e9238b",
+   "text": "Um espírito invejoso"
+  },
+  {
+   "kind": "entry",
+   "id": 11250,
+   "sha256": "da54bbbf7ef901d343d7a104be2ea0befd9d53a3b56d1ab9fbec8e86dca50c5d",
+   "text": "Em sentido figurado"
+  },
+  {
+   "kind": "entry",
+   "id": 11251,
+   "sha256": "7c1c8557a8387d3fe11230c2c38f832cd8d86fbdad0a54a1e50cc1535e959f43",
+   "text": "Casos de"
+  },
+  {
+   "kind": "entry",
+   "id": 11252,
+   "sha256": "de68d37e10d25bbc7616b1da427c94cfa0647643170e729efe88222aef5895ce",
+   "text": "Caim, de Abel"
+  },
+  {
+   "kind": "entry",
+   "id": 11253,
+   "sha256": "45329da20503ea2b789f89a0b7a5ae89e9b52cb9f0a8f4f21ea93a01b595f50e",
+   "text": "Sara, de Agar"
+  },
+  {
+   "kind": "entry",
+   "id": 11254,
+   "sha256": "e746fb1dcf33ac81dcab72645a5dde4be050dc5ab419e3196d27aca6b67f7a5d",
+   "text": "Os irmãos de José, de José"
+  },
+  {
+   "kind": "entry",
+   "id": 11255,
+   "sha256": "2323ad7953f5fc9cc22486ea787c5324c78aa934a45c1e6c1b1ad35494b6f115",
+   "text": "Saul, de Davi"
+  },
+  {
+   "kind": "entry",
+   "id": 11256,
+   "sha256": "84a7f239df48607756f401df172302554f85b8496c1e3555cadb572e83022dd7",
+   "text": "Joabe, de Abner"
+  },
+  {
+   "kind": "entry",
+   "id": 11257,
+   "sha256": "704912f607c4c6abfde98c50a220e04731bebb9af02292294880b324dba5173e",
+   "text": "Natã, de Adonias"
+  },
+  {
+   "kind": "entry",
+   "id": 11258,
+   "sha256": "471b282ec3e610b4fd9f5948f36d83dfca32ff0195441bd2e3d68de2246120b5",
+   "text": "Os efraimitas, de Gideão"
+  },
+  {
+   "kind": "entry",
+   "id": 11259,
+   "sha256": "02cdabbcab8c2a0ede032344dc3d2f60731791dfce71c1f02d764e760a23fbaa",
+   "text": "De Jefté"
+  },
+  {
+   "kind": "entry",
+   "id": 11260,
+   "sha256": "5ed872570fa48671ba8a107430a10714192f4b14d9621c52e4504c09f064ec51",
+   "text": "O irmão do filho pródigo"
+  },
+  {
+   "kind": "entry",
+   "id": 11261,
+   "sha256": "f1770d1ea06b0cfd05cf6074f0f5994d501e18629b87fc5f38713c8c8680e8f8",
+   "text": "Regional, entre Israel e a tribo de Judá"
+  },
+  {
+   "kind": "topic",
+   "id": 2687,
+   "sha256": "c2049d5e9de3731db3e4ee4d140444dd2125b20ba3bb7559cfeae8098c72d86c",
+   "text": "Jeaterai"
+  },
+  {
+   "kind": "entry",
+   "id": 11262,
+   "sha256": "8c7124d6634b14846af4848dd50c950faf25d7cc4bbe9e308dda32516db74ad7",
+   "text": "Descendente de Gérson"
+  },
+  {
+   "kind": "topic",
+   "id": 2688,
+   "sha256": "9099d3dae390a8b4abc883488efadcde21bf21110299477c99157d96ee741333",
+   "text": "Jeberequias"
+  },
+  {
+   "kind": "entry",
+   "id": 11263,
+   "sha256": "7c5a35d0629b62b5cfd1f561f79b25e49fa6941ec4b2463f0887a6ea040d0bd8",
+   "text": "Pai de Zacarias"
+  },
+  {
+   "kind": "topic",
+   "id": 2689,
+   "sha256": "9ac7b6d64c754c9462163df9ab9ddc7460b133cbbb801e8f27f8de7982e3b94f",
+   "text": "Jebus"
+  },
+  {
+   "kind": "entry",
+   "id": 11264,
+   "sha256": "f584cd41a39a3652c765ffff37701017744e102c52a05ca7f9ae81396ccef116",
+   "text": "Também chamada JEBUSI"
+  },
+  {
+   "kind": "topic",
+   "id": 2690,
+   "sha256": "273a9950cd1b542eb8aa7e053b07ef0c963887d2d24199f461da2128ed8e0647",
+   "text": "Jebuseus"
+  },
+  {
+   "kind": "entry",
+   "id": 11265,
+   "sha256": "e4da02f57c7250911e309e97e07e79b0e2d4703fe365d574872d7a02b68087cb",
+   "text": "Uma das tribos de Canaã"
+  },
+  {
+   "kind": "entry",
+   "id": 11266,
+   "sha256": "df2e83cf7b227b71c271a72bdd184e30890efbb3833fd4c1c35e9d9df8685524",
+   "text": "Terra dos, dada a Abraão e a seus descendentes"
+  },
+  {
+   "kind": "entry",
+   "id": 11267,
+   "sha256": "34f3040a27dc532e4bbec4f8cfd14433cbcf1dffea260d83ea177e3562862769",
+   "text": "Conquistados por Josué",
+   "phrase_note": "the Jebusites, a people: masculine plural"
+  },
+  {
+   "kind": "entry",
+   "id": 11268,
+   "sha256": "0f67514b901da8b9c613167848294cb0010b3c0e696732aa1a0c9737e5be69b1",
+   "text": "E"
+  },
+  {
+   "kind": "entry",
+   "id": 11269,
+   "sha256": "d497580e227f0432745fdd4d2949b3fdc1374cd8f7e7b49e9dc4334bcf5672be",
+   "text": "Conquistados por Davi"
+  },
+  {
+   "kind": "entry",
+   "id": 11270,
+   "sha256": "b40c1b11ee7a93461fb5967c3bd1fe92a1cfc24e181fb56b6239d591f217cdb1",
+   "text": "Jerusalém dentro do território dos"
+  },
+  {
+   "kind": "entry",
+   "id": 11271,
+   "sha256": "d9453f83f9b95c0ab257ec0745b8d3f237dbfa1cca0f9a7dd3d2320724aafe75",
+   "text": "Não exterminados, mas se casam com os israelitas"
+  },
+  {
+   "kind": "entry",
+   "id": 11272,
+   "sha256": "b7d44538b9c1df0692d73a31b608e3e9d4fa796b0e24a634964b8870c9e827d6",
+   "text": "Pagam tributo a Salomão"
+  },
+  {
+   "kind": "topic",
+   "id": 2691,
+   "sha256": "dafbb91b5fe6034ce99f71ea3ae87cc5ce117f66a97df61d299938bb27567854",
+   "text": "Jecamias"
+  },
+  {
+   "kind": "entry",
+   "id": 11273,
+   "sha256": "8788772101a2e1a9ad5b288c323961befdc4f39b941db74159650b24dbc797a4",
+   "text": "Filho de Jeconias"
+  },
+  {
+   "kind": "topic",
+   "id": 2692,
+   "sha256": "8309c65da0b9aa8af3a8a41c385b6f44eacbf46f3972752d9237e3321b054fca",
+   "text": "Jecolias"
+  },
+  {
+   "kind": "entry",
+   "id": 11274,
+   "sha256": "9b29dec1f3eb2f1147101fb689b4de3080c3b9b0fafaafad048df86941f523c1",
+   "text": "Também chamada JECOLIA"
+  },
+  {
+   "kind": "entry",
+   "id": 11275,
+   "sha256": "593536e1ea29f9118dccecbd1becdaa66a6da1d82c1e93ba92a3c921d470ad2b",
+   "text": "Mãe de Azarias"
+  },
+  {
+   "kind": "topic",
+   "id": 2693,
+   "sha256": "ac6d1e40d88166c5cad1ce0891fe402616a41520d86436e15cf1cf4788ad3224",
+   "text": "Jeconias"
+  },
+  {
+   "kind": "topic",
+   "id": 2694,
+   "sha256": "adf85ce08fdf5250efb52174080203616eec6a00d60d22f5cd59af4019db084d",
+   "text": "Jedaías"
+  },
+  {
+   "kind": "entry",
+   "id": 11276,
+   "sha256": "75b39eb1b2e08d8ff69a0a9cb2d42b8d534a5b4be9179904b47557f01892bd59",
+   "text": "1. Descendente de Simeão"
+  },
+  {
+   "kind": "entry",
+   "id": 11277,
+   "sha256": "3331441d6c56bd3ce1547b0d2733891ec617e367158f6b2ee0a91530f935320f",
+   "text": "2. Um exilado que voltou"
+  },
+  {
+   "kind": "entry",
+   "id": 11278,
+   "sha256": "cc5f977646aa3094c71e8342041e654a97aadb22cba19333eee8c0fdba5b3318",
+   "text": "3. Um sacerdote do cativeiro"
+  },
+  {
+   "kind": "entry",
+   "id": 11279,
+   "sha256": "06e5a450bb0be6665e48fa72d71ced840cd77fda677518b346c750a1d5f7a1f1",
+   "text": "4. Um sacerdote que morou em Jerusalém depois da volta do cativeiro"
+  },
+  {
+   "kind": "entry",
+   "id": 11280,
+   "sha256": "df5d093d0d4c4b466a0603426d75dbf3f84f7b8acbf2d980aed5e78a6df098f2",
+   "text": "5. Outro sacerdote, que voltou da Babilônia com Neemias"
+  },
+  {
+   "kind": "topic",
+   "id": 2695,
+   "sha256": "5ca81feabbf3be8f2ecb7ad167c3aee442fed97f9f723a472fee0c4651d3534c",
+   "text": "Jediael"
+  },
+  {
+   "kind": "entry",
+   "id": 11281,
+   "sha256": "11e03b2a0e4d042525fd35f69bc3e926a85d24d439e5f0ed05f03a811ac1c7d5",
+   "text": "1. Filho de Benjamim"
+  },
+  {
+   "kind": "entry",
+   "id": 11282,
+   "sha256": "7e26e3f215b4a80d33f9c65a635eda3640da9b2b39b70588cc5842ff3b4fe2e9",
+   "text": "2. Filho de Sinri"
+  },
+  {
+   "kind": "entry",
+   "id": 11283,
+   "sha256": "713379a0660645afe71e7f95e6fbd4c1ba3fddbae0937a641cf80268bb093586",
+   "text": "3. Um chefe da tribo de Manassés, que se uniu a Davi em Ziclague"
+  },
+  {
+   "kind": "entry",
+   "id": 11284,
+   "sha256": "9985f81f255b49e66861900658a2abc4a689188855b29d2d1974d35fc1618449",
+   "text": "4. Filho de Meselemias"
+  },
+  {
+   "kind": "topic",
+   "id": 2696,
+   "sha256": "24cf6fa547ccc83d032afaddb2b1f96f20721bb3d8c972b25394729b15462c1a",
+   "text": "Jedida"
+  },
+  {
+   "kind": "entry",
+   "id": 11285,
+   "sha256": "dcb7df761e50258a7562d303e986c9ec339a347671bee3ffd02cd9193106e827",
+   "text": "Mulher de Amom"
+  },
+  {
+   "kind": "topic",
+   "id": 2697,
+   "sha256": "c4b242e3d7d627f29aba876e180451d02a94bfad3e7c043d3d04b98b409eebaa",
+   "text": "Jedidias"
+  },
+  {
+   "kind": "entry",
+   "id": 11286,
+   "sha256": "4cac4a831cdb19e28137b0a3103debb77970843e0adef64732928e5c4f08d897",
+   "text": "Um nome dado a Salomão"
+  },
+  {
+   "kind": "topic",
+   "id": 2698,
+   "sha256": "b0727239d5c8b4faca7556497d8381e83d4ef23d30a0b5e6cd0e5071ce32350b",
+   "text": "Jedutum"
+  },
+  {
+   "kind": "entry",
+   "id": 11287,
+   "sha256": "77f311300fd70e1b7264861d082ac7079c3d0f3ef7f6b20242bb2b212f3989ef",
+   "text": "Um músico do templo"
+  },
+  {
+   "kind": "entry",
+   "id": 11288,
+   "sha256": "3eaa50a5a445db77634248487265b5c53bd86861399e0fee25d7c3bb2ef5ea67",
+   "text": "Chamado ETÃ"
+  },
+  {
+   "kind": "topic",
+   "id": 2699,
+   "sha256": "410c7ede0c33db30f90ebdec7f3361e9d135dd162b51911bcf44d71d4752dea0",
+   "text": "Jegar-Saaduta"
+  },
+  {
+   "kind": "entry",
+   "id": 11289,
+   "sha256": "37d5d73fb8b64a53853d256d64f8b283f3d935c96aba47b3586db26da0e8d727",
+   "text": "Também chamado GALEEDE"
+  },
+  {
+   "kind": "entry",
+   "id": 11290,
+   "sha256": "671e4dbed11ce7968523b31c0e9bc60dbba25adfd4a41e78ed46ffeae9df9c6c",
+   "text": "Um montão de pedras (um marco) no Monte Gileade"
+  },
+  {
+   "kind": "topic",
+   "id": 2700,
+   "sha256": "5cda4ff7acd68dccc43e3ac12e56f87daa4519ce04906a61f6b5524e2a45171e",
+   "text": "Jealelel"
+  },
+  {
+   "kind": "entry",
+   "id": 11291,
+   "sha256": "1dae87cfe80c3c1acb16cc75633ae83864c0894f58eb16649747231ee272e039",
+   "text": "Descendente de Judá"
+  },
+  {
+   "kind": "topic",
+   "id": 2701,
+   "sha256": "699c2e7cc85ca6542427bc305991c14651c6a5b273a6b229fb24680ccb6fa7c5",
+   "text": "Jealelel"
+  },
+  {
+   "kind": "entry",
+   "id": 11292,
+   "sha256": "852c35f5ccb308ceb8f8019cdc5dbb5c9dbf5c09ee3af07e181a300f47a10b8f",
+   "text": "Um descendente de Merari"
+  },
+  {
+   "kind": "topic",
+   "id": 2702,
+   "sha256": "6a11de7d09a369d62dd3f90206e2050a14d5783d9e87e5ee17d55334fcd35921",
+   "text": "Jedias"
+  },
+  {
+   "kind": "entry",
+   "id": 11293,
+   "sha256": "f0c212b73987563cd6bda5ae8183b9a86e49bdf83993878edc24eb8535add3ae",
+   "text": "1. Filho de Sebuel"
+  },
+  {
+   "kind": "entry",
+   "id": 11294,
+   "sha256": "c8192e48cd012da7582e25abadfbea24ab8705740aa7150a29b3a0fb0bd3fc4c",
+   "text": "2. Um dos superintendentes de Davi"
+  },
+  {
+   "kind": "topic",
+   "id": 2703,
+   "sha256": "e9af56332652df5e1260a6b1ce44d21ea60112843299b2e7212a7054f28e322d",
+   "text": "Jeezquel"
+  },
+  {
+   "kind": "entry",
+   "id": 11295,
+   "sha256": "ed0533758edf5080df0b81ee049a9abb0cbe39fd8391546f845138d0d43870a9",
+   "text": "Um sacerdote e chefe da vigésima divisão (turno) nos serviços do tabernáculo"
+  },
+  {
+   "kind": "topic",
+   "id": 2704,
+   "sha256": "d2a3fabcf89d61641f9ca926ad05233f3ea313ccd101ff7f9be884ac6ad81db3",
+   "text": "Jeías"
+  },
+  {
+   "kind": "entry",
+   "id": 11296,
+   "sha256": "25f8179ea6f328c831d59cc7c66fd5b523b2c999f318d023ea37fcfecb596291",
+   "text": "Um levita e porteiro da arca da aliança"
+  },
+  {
+   "kind": "topic",
+   "id": 2705,
+   "sha256": "4a666de39f544f386ea508c47a38d774c211417e862c1d07e2d9c948892ab62c",
+   "text": "Jeiel"
+  },
+  {
+   "kind": "entry",
+   "id": 11297,
+   "sha256": "69bf4cbc1b8d5b854aa9c1a631d889aa075fc224c3a6fe6775dec26eee3a7058",
+   "text": "1. Um porteiro levita, provavelmente o mesmo que JEÍAS acima"
+  },
+  {
+   "kind": "entry",
+   "id": 11298,
+   "sha256": "317a782ccc4636edc3fd676021bc8bb37d31562f276a65c8faf2b4ea7bc718df",
+   "text": "2. Um levita gersonita"
+  },
+  {
+   "kind": "entry",
+   "id": 11299,
+   "sha256": "947c5f52c5aa5af10d9196ee8e4ce9ead62d71a481682ca5a068a001c862f048",
+   "text": "3. Um companheiro dos filhos de Davi"
+  },
+  {
+   "kind": "entry",
+   "id": 11300,
+   "sha256": "3119ff3fa4260c4948c86d023429b1f95af550b53600541719e1d6ec2ad2dd0f",
+   "text": "4. Filho de Josafá"
+  },
+  {
+   "kind": "entry",
+   "id": 11301,
+   "sha256": "a22b4e317f28d84e5d727dc268858e763a41f6f44e8e0c12b3c5766074cdf5f2",
+   "text": "5. Filho de Hemã"
+  },
+  {
+   "kind": "entry",
+   "id": 11302,
+   "sha256": "728e650b589c3a53a978b5d15ac2bccaa9fc1621b655676c0f917ef7dd368138",
+   "text": "6. Um superintendente levita no templo"
+  },
+  {
+   "kind": "entry",
+   "id": 11303,
+   "sha256": "f1ae5e3d2364d1632ff39d7d8c29fcba8cc5af101ee5a2156f266cad9b14c229",
+   "text": "7. Um sacerdote que deu ofertas extraordinárias para a Páscoa"
+  },
+  {
+   "kind": "entry",
+   "id": 11304,
+   "sha256": "337ae901ad22b4e283ed2b8456dc829339d9e9922347f849f493afa747b50be9",
+   "text": "8. Pai de Obadias"
+  },
+  {
+   "kind": "entry",
+   "id": 11305,
+   "sha256": "a3eb0b8a6ac1627c8fe163b2091e64630137a7d2b60c5e375b92c55a4fcc1dca",
+   "text": "9. Pai de Secanias"
+  },
+  {
+   "kind": "entry",
+   "id": 11306,
+   "sha256": "a8417f77463f73112b36c5abd063e125b9d85f3a9e488c8d9be13b98e30ff2dc",
+   "text": "10. Nome de dois sacerdotes que se casaram com mulheres idólatras"
+  },
+  {
+   "kind": "topic",
+   "id": 2706,
+   "sha256": "03f7c40eb6087d7f2c819c67c44fddc684fe2bbb1f268784cb8ed7efd3376fb1",
+   "text": "Jeieli"
+  },
+  {
+   "kind": "entry",
+   "id": 11307,
+   "sha256": "db2e98c5e59bf94ea9e1eb758f89e33dbfe5d18dfea8524fe988b92e1c594f59",
+   "text": "Filho de Laadã"
+  },
+  {
+   "kind": "topic",
+   "id": 2707,
+   "sha256": "d2a74c7b50f60aeeb9b9c691ed56dd12d3d0a9d6ce7e7131736cca635b536e69",
+   "text": "Jeizquias"
+  },
+  {
+   "kind": "entry",
+   "id": 11308,
+   "sha256": "9ffdd109c380f8dbf2829658efaf1ceceeef382f4236ce119a6f79adf8a079bb",
+   "text": "Filho de Salum"
+  },
+  {
+   "kind": "topic",
+   "id": 2708,
+   "sha256": "b187f835cb0067703befd28f742522762497d18fd63f273a233450b8ae7443c3",
+   "text": "Jeoada"
+  },
+  {
+   "kind": "entry",
+   "id": 11309,
+   "sha256": "bf363b356f025784e223a0aad009d50463554dcc85c9acfade8322c51ea3da69",
+   "text": "Filho de Acaz"
+  },
+  {
+   "kind": "topic",
+   "id": 2709,
+   "sha256": "d6edf7d8c49c8fdc0ab864d468adde4f9c95dd125167e61992c8cce46947da77",
+   "text": "Jeoadã"
+  },
+  {
+   "kind": "entry",
+   "id": 11310,
+   "sha256": "540db3f2265c8600ef6a50acbb30664e340936a36485f9938880143cf241fd1f",
+   "text": "Mãe de Amazias"
+  },
+  {
+   "kind": "topic",
+   "id": 2710,
+   "sha256": "b8c660c17a7842fc100cfcfe43d7a1bac45d2bd9a4bfe392d5fbb1e95fe78b45",
+   "text": "Jeoacaz"
+  },
+  {
+   "kind": "entry",
+   "id": 11311,
+   "sha256": "8d5537be8771bac4b87e3be52fb27330b7bce1cb43af49a4b959572ff8fa4690",
+   "text": "1. Filho de Jeú e rei de Israel"
+  },
+  {
+   "kind": "entry",
+   "id": 11312,
+   "sha256": "a86d0b2972e3dd5a5fd0027250149ef8b4b8c40f1628157a42cde6faa41e5195",
+   "text": "2. Filho de Jeorão, rei de Judá"
+  },
+  {
+   "kind": "entry",
+   "id": 11313,
+   "sha256": "575ee8796b4221cc0777156fc5fbd1104d9f4c9693f6994736190df402135be2",
+   "text": "3. Também chamado SALUM"
+  },
+  {
+   "kind": "entry",
+   "id": 11314,
+   "sha256": "5891eeaf13e16472a5b228b89853da913ed253e6bd6b1f0281c74545a4e3a263",
+   "text": "Rei de Judá e sucessor de Josias"
+  },
+  {
+   "kind": "entry",
+   "id": 11315,
+   "sha256": "7a8de10660dcb4960607b4ded3b9178bfe343c67274e7ea4e5dadcba15abbcec",
+   "text": "Reinado perverso de"
+  },
+  {
+   "kind": "entry",
+   "id": 11316,
+   "sha256": "3d144b845d96587002c00bda6ea6e8b202d6139ab15588b6c9fc89c81ba4dd8a",
+   "text": "Faraó-Neco, rei do Egito, invade o reino de, derrota-o, e o leva cativo para o Egito"
+  },
+  {
+   "kind": "entry",
+   "id": 11317,
+   "sha256": "2514cb3c77bd1feb51f487f75fbcd22d3a9743b6b076dcf153835b761bd4ef05",
+   "text": "Profecias sobre"
+  },
+  {
+   "kind": "topic",
+   "id": 2711,
+   "sha256": "b4ceee5bdcb88f0719231ebf8baff3bbd8f3e2e40471bd4b0c7a087890904382",
+   "text": "Jeoás"
+  },
+  {
+   "kind": "entry",
+   "id": 11318,
+   "sha256": "94c1f9941962d13729cece23654069efa4fdc80da026a9ff6c5e8ad2b4c62da8",
+   "text": "1. Também chamado JOÁS"
+  },
+  {
+   "kind": "entry",
+   "id": 11319,
+   "sha256": "85353f9dffa05dafeaf3b5569a34cb4a7c279ff9c13fed6c89e8b23a525669ea",
+   "text": "Sucessor de Jeoacaz"
+  },
+  {
+   "kind": "entry",
+   "id": 11320,
+   "sha256": "fa72f900b5cad5fb57f70371406e8ae8e00e31400f7b9ccac5d3cf64ba824e28",
+   "text": "Derrota Amazias"
+  },
+  {
+   "kind": "entry",
+   "id": 11321,
+   "sha256": "ea6fc1370cfe38c8492cea47eaf07acad21171f1fa1774ca9403be12655eaa32",
+   "text": "Morte de"
+  },
+  {
+   "kind": "entry",
+   "id": 11322,
+   "sha256": "fbc5b38eee32646fd0813db3789dd2a1d45177d882e5d0f17835c07c36ebc638",
+   "text": "2. Rei de Judá"
+  },
+  {
+   "kind": "topic",
+   "id": 2712,
+   "sha256": "3e9839d4191a38ec459aebfc0ef38baa91b656fbbdd8b39c57904ee0a6eaac54",
+   "text": "Joanã"
+  },
+  {
+   "kind": "entry",
+   "id": 11323,
+   "sha256": "20ed9bbc74f66f6b8c37d99f3a1abfd5980c542d7a566583dc6927db3958559e",
+   "text": "1. Um porteiro do tabernáculo"
+  },
+  {
+   "kind": "entry",
+   "id": 11324,
+   "sha256": "00beee3019d4763b572e2560d17a03d1a0d3bd39ee8734d06b1f46befc8bc766",
+   "text": "2. Um chefe militar sob Josafá, cuja tropa era de duzentos e oitenta mil homens"
+  },
+  {
+   "kind": "entry",
+   "id": 11325,
+   "sha256": "1ba9881309c5d278e46e4bd535b24cd678b373f9bb1ba2afdc7526c27b86516d",
+   "text": "Provavelmente o mesmo que um capitão de cem, em"
+  },
+  {
+   "kind": "entry",
+   "id": 11326,
+   "sha256": "8fc0c6b47d798b0fb87a29570213c87a373930c9db99d0d3c3911107ca95b967",
+   "text": "3. Filho de Bebai"
+  },
+  {
+   "kind": "entry",
+   "id": 11327,
+   "sha256": "f0803467b1253915f85c6c71fadae3d3f51ce1c668d1834d5a199fa9a9396a52",
+   "text": "4. Um sacerdote entre os exilados que voltaram da Babilônia"
+  },
+  {
+   "kind": "entry",
+   "id": 11328,
+   "sha256": "0922dbd880af5fc41ae43f78a4679a61c436753242eab340583bf1bda82f94fc",
+   "text": "5. Um cantor do templo"
+  },
+  {
+   "kind": "topic",
+   "id": 2713,
+   "sha256": "60b5b944978f5e02f4d5c3f61c41b1956c0de259511daa92c00af32b49623949",
+   "text": "Joaquim"
+  },
+  {
+   "kind": "entry",
+   "id": 11329,
+   "sha256": "d9b5816d77cd6d7421e55dd7e83825340eaf04d04640b2cbfb45b871bb9a6b11",
+   "text": "Rei de Judá e sucessor de Jeoaquim"
+  },
+  {
+   "kind": "entry",
+   "id": 11330,
+   "sha256": "2f530e4b515ad7904463584b8d45f24496e5c57836a4c4a7cf013f7128024665",
+   "text": "Chamado JECONIAS"
+  },
+  {
+   "kind": "entry",
+   "id": 11331,
+   "sha256": "539d172a2b83785142a7d8608f12d98a24eae04e44fdeab7bb7c3ebf28c6e36e",
+   "text": "Chamado CONIAS"
+  },
+  {
+   "kind": "entry",
+   "id": 11332,
+   "sha256": "7a8de10660dcb4960607b4ded3b9178bfe343c67274e7ea4e5dadcba15abbcec",
+   "text": "Reinado perverso de"
+  },
+  {
+   "kind": "entry",
+   "id": 11333,
+   "sha256": "f8ed54d103aeac49abb1f071912f61a2c1770bd04c849d028ace62a68390b8e3",
+   "text": "Nabucodonosor invade seu reino, e o leva cativo para a Babilônia"
+  },
+  {
+   "kind": "entry",
+   "id": 11334,
+   "sha256": "7d908874900525205fa779fefcc794aeedbe76099be79280478a8782e38e665e",
+   "text": "Mantido na prisão por trinta e sete anos"
+  },
+  {
+   "kind": "entry",
+   "id": 11335,
+   "sha256": "8c9dc7dd4abae00f2571d5f672e06fd73575eb9788ca50d3c3f95424cb863217",
+   "text": "Libertado da prisão por Evil-Merodaque, elevado acima de outros reis, e honrado até a morte"
+  },
+  {
+   "kind": "entry",
+   "id": 11336,
+   "sha256": "2514cb3c77bd1feb51f487f75fbcd22d3a9743b6b076dcf153835b761bd4ef05",
+   "text": "Profecias sobre"
+  },
+  {
+   "kind": "entry",
+   "id": 11337,
+   "sha256": "eb01794028342ac19f1e5438800c1c5f266f44820cbda0ef2eed2551c9046fb4",
+   "text": "Filhos de"
+  },
+  {
+   "kind": "entry",
+   "id": 11338,
+   "sha256": "5658b2a0e60681b52f4cdf251bd2a5101e312815cd025c1f10e8612b2de8da11",
+   "text": "Antepassado de Jesus"
+  },
+  {
+   "kind": "topic",
+   "id": 2714,
+   "sha256": "4daa4ed8f7213e0a66c5bb05e19f44f5a0fa7efe3e03783446c1d27ad4194719",
+   "text": "Joiada"
+  },
+  {
+   "kind": "entry",
+   "id": 11339,
+   "sha256": "55f43353ed24e622415b4a86fc7b2e23cfbbbdbf361da2c77b4eb234952f17e8",
+   "text": "1. Pai de Benaia, um dos oficiais de Davi"
+  },
+  {
+   "kind": "entry",
+   "id": 11340,
+   "sha256": "119067ed4cb1dbd3a9e1777d695aad3cd5321f0be9b5a436123cf1c8e25b9d4b",
+   "text": "2. Um sumo sacerdote"
+  },
+  {
+   "kind": "entry",
+   "id": 11341,
+   "sha256": "71ab7eb78a2a99a566651fade9a64d4241d9489af8a9ae675b6ed65a7ad56407",
+   "text": "Derruba Atalia, a rainha usurpadora de Judá, e põe Jeoás no trono"
+  },
+  {
+   "kind": "entry",
+   "id": 11342,
+   "sha256": "8924d0fc4200cea7e046b374b651dbfea71d29d97cd251c2798af0e578490190",
+   "text": "Influência benéfica de, sobre Jeoás"
+  },
+  {
+   "kind": "entry",
+   "id": 11343,
+   "sha256": "9d709c7988e2c7109e2983822142197368be2f6cf382b5b99a0f16bd1c7cd7f5",
+   "text": "Dirige os reparos do templo"
+  },
+  {
+   "kind": "entry",
+   "id": 11344,
+   "sha256": "ea6fc1370cfe38c8492cea47eaf07acad21171f1fa1774ca9403be12655eaa32",
+   "text": "Morte de"
+  },
+  {
+   "kind": "entry",
+   "id": 11345,
+   "sha256": "c5d3b9c17466bb639dfd98e0a22d63b475e4b24e453f9d14dfad9b661bc5a0f8",
+   "text": "3. Um sacerdote que liderou três mil e setecentos sacerdotes armados para a guerra"
+  },
+  {
+   "kind": "entry",
+   "id": 11346,
+   "sha256": "6f7837817097bb660977c5e701d76582d7e9690629b8729196ebbeb8e64b807f",
+   "text": "4. Filho de Benaia"
+  },
+  {
+   "kind": "entry",
+   "id": 11347,
+   "sha256": "792068fe6c8225475f27e59096fd8a11d425e94fb68c49fe31aa15cd09dd9b4a",
+   "text": "5. Um exilado que voltou"
+  },
+  {
+   "kind": "entry",
+   "id": 11348,
+   "sha256": "f6da9e9d19f42d985a8ab12c79160c76cffd6376fe0103571506c31474284739",
+   "text": "6. Um sacerdote mencionado na carta de Jeremias aos judeus cativos"
+  },
+  {
+   "kind": "topic",
+   "id": 2715,
+   "sha256": "0948b779f31d2c83bbd29e8b7a87e101d248ee7c6249c744f0a879929505346a",
+   "text": "Jeoaquim"
+  },
+  {
+   "kind": "entry",
+   "id": 11349,
+   "sha256": "8a9cdec486beb33240e09ea74ca29e82c919aee7c829834459bb429e0abac124",
+   "text": "Também chamado ELIAQUIM"
+  },
+  {
+   "kind": "entry",
+   "id": 11350,
+   "sha256": "67ef1d75b2d1d0b1acfc1e024c23643d83d58c526d920b3bf896636161b3c0db",
+   "text": "Rei de Judá"
+  },
+  {
+   "kind": "entry",
+   "id": 11351,
+   "sha256": "5658b2a0e60681b52f4cdf251bd2a5101e312815cd025c1f10e8612b2de8da11",
+   "text": "Antepassado de Jesus"
+  },
+  {
+   "kind": "entry",
+   "id": 11352,
+   "sha256": "c3600837b6c674d316ea601f8d8e4cfd8683f242070110c4d21d53d7beed7ecf",
+   "text": "Reinado perverso e queda final de"
+  },
+  {
+   "kind": "entry",
+   "id": 11353,
+   "sha256": "e7187cf0ecf3f2a1c9dafafb462ea503ce15f1d41d624633465f4face5525dee",
+   "text": "Morre, e é sucedido por seu filho, Joaquim"
+  },
+  {
+   "kind": "topic",
+   "id": 2716,
+   "sha256": "e8ce6130ea0bcae08f6271fe446884a65c5b3dab4b9d59812109a210a28dcc3b",
+   "text": "Jeoiaribe"
+  },
+  {
+   "kind": "entry",
+   "id": 11354,
+   "sha256": "082e5b5773f2ef979a0f8087c9d7408d33192a33a070b68285e094ec090b291e",
+   "text": "Dois sacerdotes com o mesmo nome"
+  },
+  {
+   "kind": "topic",
+   "id": 2717,
+   "sha256": "485d4103a22b534f30d873eb578685437bb158d2cdd5a5396803dc791829a32f",
+   "text": "Jonadabe"
+  },
+  {
+   "kind": "topic",
+   "id": 2718,
+   "sha256": "1a0df286ad1d23b4d60090ece78c4cc2a7542fe43e108f241f5d41e4910dd382",
+   "text": "Jônatas"
+  },
+  {
+   "kind": "entry",
+   "id": 11355,
+   "sha256": "fdaeba61a5870f224b003452054fcf26e4648cebdcaf420a163b63a719d7eca9",
+   "text": "1. Um superintendente dos armazéns de Davi"
+  },
+  {
+   "kind": "entry",
+   "id": 11356,
+   "sha256": "cd55b72ee6debaf8c49e314e04ddbdd6b847f3dbf2b8eab677dab2213db2fbda",
+   "text": "2. Um levita enviado para instruir o povo na lei"
+  },
+  {
+   "kind": "entry",
+   "id": 11357,
+   "sha256": "0ef47c0dc49a1b0c63d92b630971987db30f433f4ba652c9dc671e166cd71674",
+   "text": "3. Um sacerdote pouco conhecido"
+  },
+  {
+   "kind": "topic",
+   "id": 2719,
+   "sha256": "47b3db8c6432d135aa9f92ede74e651e9f0dacf05b7d5b56bee6d5b56f6e7146",
+   "text": "Jeorão"
+  },
+  {
+   "kind": "entry",
+   "id": 11358,
+   "sha256": "dc0c9476483c77b262fe3d41cfa2ed63284f0496eaa0eae0ff95e14497d4cadb",
+   "text": "1. Rei de Judá"
+  },
+  {
+   "kind": "entry",
+   "id": 11359,
+   "sha256": "6ac303352d24077de4f34b8699920224a1e29d58fd386227024f6ad2c89da72f",
+   "text": "Casa-se com Atalia, cujos conselhos perversos influenciam seu reinado para o mal"
+  },
+  {
+   "kind": "entry",
+   "id": 11360,
+   "sha256": "3e5677096d35f757d52466726570f1358174f1abfe67f74c6e0d94a694a9ddfa",
+   "text": "Mata seus irmãos para se fortalecer em seu domínio"
+  },
+  {
+   "kind": "entry",
+   "id": 11361,
+   "sha256": "f574bf5fad35d6264439a56e4fcfd1b383816cf78ada8d2000571e38adb2a43f",
+   "text": "Edom se revolta contra"
+  },
+  {
+   "kind": "entry",
+   "id": 11362,
+   "sha256": "37335cbdb1a9ecf20ec0534b2292faeec37fec39520e21f9cb8ff2fb971b893e",
+   "text": "Os filisteus e os árabes invadem seu território"
+  },
+  {
+   "kind": "entry",
+   "id": 11363,
+   "sha256": "ea6fc1370cfe38c8492cea47eaf07acad21171f1fa1774ca9403be12655eaa32",
+   "text": "Morte de"
+  },
+  {
+   "kind": "entry",
+   "id": 11364,
+   "sha256": "972b061364e89696fb54e387bf8e5ebdf03435b31b0dda6b35b49f141829f8ed",
+   "text": "Profecia sobre"
+  },
+  {
+   "kind": "entry",
+   "id": 11365,
+   "sha256": "5658b2a0e60681b52f4cdf251bd2a5101e312815cd025c1f10e8612b2de8da11",
+   "text": "Antepassado de Jesus"
+  },
+  {
+   "kind": "entry",
+   "id": 11366,
+   "sha256": "661c0f9fa3e16660bcb15bf8630b8ec4b67f02c32bbc30edbde3ce849f16ffb2",
+   "text": "2. Um filho de Acabe"
+  },
+  {
+   "kind": "entry",
+   "id": 11367,
+   "sha256": "b3c9b129efdd3e3af901c5c13f7c2c2d1e4d67aaac672171dfed5623a2ecc014",
+   "text": "3. Um sacerdote encarregado de percorrer Israel e instruir o povo na lei"
+  },
+  {
+   "kind": "topic",
+   "id": 2720,
+   "sha256": "cbf87810e88b8a46ea47e30cae1e12b3de3af0d43768959b3533e557da610d07",
+   "text": "Jeosabeate"
+  },
+  {
+   "kind": "topic",
+   "id": 2721,
+   "sha256": "6d0d968aedeb1267eae02c8d0337736683517d215ed5aaa73454a12ca1a04393",
+   "text": "Josafá"
+  },
+  {
+   "kind": "entry",
+   "id": 11368,
+   "sha256": "ee8ca1b79c831afaf987b78460db4b1cfceb55fb683b0deb5b2dfc19dcb28dc8",
+   "text": "1. O cronista de Davi"
+  },
+  {
+   "kind": "entry",
+   "id": 11369,
+   "sha256": "8d8b7f8d6b19a97412cd71d86561fb1a266c872056288a7b103c30348f5135f3",
+   "text": "2. Um dos oficiais de provisões de Salomão"
+  },
+  {
+   "kind": "entry",
+   "id": 11370,
+   "sha256": "de3a070dc6303c9d1ecebad4e4cc74017a10db69a502cc5dce47d73a2d7f44cc",
+   "text": "3. Rei de Judá"
+  },
+  {
+   "kind": "entry",
+   "id": 11371,
+   "sha256": "dc931e11f57e2dcf0dd4fd74eca04e21bbba675b4a43e1d8db0e93921d3e24f5",
+   "text": "Sucede a Asa"
+  },
+  {
+   "kind": "entry",
+   "id": 11372,
+   "sha256": "c0744485181715ba23790888c9934a31635f47ad8978268256db4288a6b4565e",
+   "text": "Fortalece-se contra Israel"
+  },
+  {
+   "kind": "entry",
+   "id": 11373,
+   "sha256": "47e64621889411e8ea90d164e960aaa673b2ab14449d1f266a19640e731de251",
+   "text": "Inaugura um sistema de instrução pública na lei"
+  },
+  {
+   "kind": "entry",
+   "id": 11374,
+   "sha256": "493d04028cde5ca02779f5198e41b06d6afc2ab9ecd3e03419154a9effef5f14",
+   "text": "Seu reinado sábio"
+  },
+  {
+   "kind": "entry",
+   "id": 11375,
+   "sha256": "b4d5cda447a559f5f904da3eacd2779b304a436c77467f1da3bb8154d84baa2d",
+   "text": "Seu sistema de tributos"
+  },
+  {
+   "kind": "entry",
+   "id": 11376,
+   "sha256": "7d2bdf0f99f9173638db306316fb58d8606950b4b315a35f2f5513116dcf3ea6",
+   "text": "Suas forças militares e armamentos"
+  },
+  {
+   "kind": "entry",
+   "id": 11377,
+   "sha256": "f38513bb83061d162a5fcc5b227e22deed4d3a4c5ad5ddbd441744ce8da04ef7",
+   "text": "Une-se a Acabe numa invasão de Ramote-Gileade"
+  },
+  {
+   "kind": "entry",
+   "id": 11378,
+   "sha256": "acde847d26426e5c020f4e0729e8884ecdfd41f003b1d0269a335b91d380fda9",
+   "text": "Repreendido pelo profeta Jeú"
+  },
+  {
+   "kind": "entry",
+   "id": 11379,
+   "sha256": "ef8e51fb53619250b1c18fe3467e348338f7be9a77f716139aa23bbe93d7ed64",
+   "text": "As forças aliadas dos amorreus, moabitas e outras tribos invadem seu território, e são derrotadas por"
+  },
+  {
+   "kind": "entry",
+   "id": 11380,
+   "sha256": "d30890da31e3120014e8134d78e200fb87d26bbaf7eaecb11c27df9bf2fb514a",
+   "text": "Constrói navios para o comércio com Társis; os navios são destruídos"
+  },
+  {
+   "kind": "entry",
+   "id": 11381,
+   "sha256": "29db80f8970de5df02b02e7989a350b2b6ba515642f2e999cf0212f22db3729f",
+   "text": "Une-se a Jorão, rei de Israel, numa invasão da terra de Moabe; derrota os moabitas"
+  },
+  {
+   "kind": "entry",
+   "id": 11382,
+   "sha256": "c662981ba27060e1a23f85ca0d1697c236766079fea137d05e3e02e05844e45e",
+   "text": "Dá valiosas ofertas ao templo"
+  },
+  {
+   "kind": "entry",
+   "id": 11383,
+   "sha256": "ea6fc1370cfe38c8492cea47eaf07acad21171f1fa1774ca9403be12655eaa32",
+   "text": "Morte de"
+  },
+  {
+   "kind": "entry",
+   "id": 11384,
+   "sha256": "d4aab5b2a0aa85c5688def897dc5c4d4c34e6c4e1a600983d6eac70cfea04f4b",
+   "text": "Zelo religioso de"
+  },
+  {
+   "kind": "entry",
+   "id": 11385,
+   "sha256": "7fd611246f9877d3f50564893a6ab8b893b99220a8d915bd15e66204af8e0854",
+   "text": "Prosperidade de"
+  },
+  {
+   "kind": "entry",
+   "id": 11386,
+   "sha256": "681e65701e969a2b6eca223a341b7ed6a7acc468632909af2f3f4c72429d5346",
+   "text": "Legados de, a seus filhos"
+  },
+  {
+   "kind": "entry",
+   "id": 11387,
+   "sha256": "5c14b8c5bd9f2649cf6c0fa75f525fb654a2747cb07d349ac39bae4a8cb10ebd",
+   "text": "4. Pai de Jeú"
+  },
+  {
+   "kind": "entry",
+   "id": 11388,
+   "sha256": "9af3cc824dab585a69c8562eb8aa1ae29526811f4cdad8191459f9e5c7f06566",
+   "text": "5. Um sacerdote que ajudou a trazer a arca da aliança da casa de Obede-Edom"
+  },
+  {
+   "kind": "entry",
+   "id": 11389,
+   "sha256": "f7bc124d859e8eae2b7a049975d29d82a27e7205cb52187b6ee8b29867955448",
+   "text": "6. Um vale"
+  },
+  {
+   "kind": "entry",
+   "id": 11390,
+   "sha256": "068a0fb11b72ae0e0f66a59115de3ceee08fd46da83e2cf802a11da6352b10bc",
+   "text": "Chamado O VALE DA DECISÃO"
+  },
+  {
+   "kind": "topic",
+   "id": 2722,
+   "sha256": "0478b2d0264ab7ebca96b1c70426091a3e7e6c47110c41d622127a20bcfb58c8",
+   "text": "Jeoseba"
+  },
+  {
+   "kind": "entry",
+   "id": 11391,
+   "sha256": "0b67215fed88a1a57aac315b1b019a1fedd4051902e73e666c3636bd332e0e84",
+   "text": "Também chamada JEOSABEATE"
+  },
+  {
+   "kind": "entry",
+   "id": 11392,
+   "sha256": "3ef051a37b34fa5c78679c4b204fb90fead640b3ec250a6d167f0e67ffc236c9",
+   "text": "Filha de Jorão"
+  },
+  {
+   "kind": "topic",
+   "id": 2723,
+   "sha256": "215109e0c106ba2e6803bfcc29e31dac5833f4f70a0cab46f8d004f11852f6ed",
+   "text": "Jeosua"
+  },
+  {
+   "kind": "entry",
+   "id": 11393,
+   "sha256": "d11d0bd0535bb2b6e8e6d704af7d781c390231847ebf9498a49b0640b074f43e",
+   "text": "Um nome dado às vezes a um dos JOSUÉS"
+  },
+  {
+   "kind": "topic",
+   "id": 2724,
+   "sha256": "950b676cad4a65c623d94e8b346dc8d968c768ac0852b10312519e1a4bcbab35",
+   "text": "Jeosua"
+  },
+  {
+   "kind": "entry",
+   "id": 11394,
+   "sha256": "1096c8a0ef6f6ab2a96635b3612faba0600825a3257243d6af489017187f3d15",
+   "text": "Um nome de um dos JOSUÉS"
+  },
+  {
+   "kind": "topic",
+   "id": 2725,
+   "sha256": "fbf96080924c5e238d3105ca568c81a2b3d27fc1005956662a69caf6d6fa953b",
+   "text": "Jeová-Jiré"
+  },
+  {
+   "kind": "entry",
+   "id": 11395,
+   "sha256": "7bad3dc0b1acec500754bfd3b12b31b8ead7597fa8ea151ee51977c876a3f880",
+   "text": "O Monte Moriá, em Jerusalém, onde Abraão ofereceu Isaque"
+  },
+  {
+   "kind": "topic",
+   "id": 2726,
+   "sha256": "e59529c180d579ee9287918f0075b5770c252d9b33774a4f61177f40d7c42885",
+   "text": "Jeová-Nissi"
+  },
+  {
+   "kind": "entry",
+   "id": 11396,
+   "sha256": "5daa550a0e657334902092ebfba1bcfaf9b4a71356f116b3fb533be30db9d701",
+   "text": "Um altar"
+  },
+  {
+   "kind": "topic",
+   "id": 2727,
+   "sha256": "038bd9248bae0e686f341485f2bbb83e424827c90da7bd097d11cf7ec694f457",
+   "text": "Jeová-Shalom"
+  },
+  {
+   "kind": "entry",
+   "id": 11397,
+   "sha256": "d413968dfdde127cc10ada4e607de7c8f59039e2eca4f380bece6ade5c765d55",
+   "text": "Um altar construído por Gideão"
+  },
+  {
+   "kind": "topic",
+   "id": 2728,
+   "sha256": "bf75560c7a9271927bb1f160aec519bd404248eefc1c3c36747e30f87ba1849c",
+   "text": "Jozabade"
+  },
+  {
+   "kind": "entry",
+   "id": 11398,
+   "sha256": "2f5848b6f3a3cd2bc51294541407a790b750838d2eadec5be3f639a1b66fa03d",
+   "text": "1. Filho de Somer, e um dos assassinos do rei Jeoás"
+  },
+  {
+   "kind": "entry",
+   "id": 11399,
+   "sha256": "0312faa809f7a9f7779005ac8e320c36a9764071e37e9395390c9b207c8c2d3a",
+   "text": "2. Filho de Obede-Edom"
+  },
+  {
+   "kind": "entry",
+   "id": 11400,
+   "sha256": "aecd20ffdd48a0f2a269fb0ba706684a01f554b4ba94926e6eca0e6cec9d8a58",
+   "text": "3. Um chefe benjamita que comandava cento e oitenta mil homens"
+  },
+  {
+   "kind": "topic",
+   "id": 2729,
+   "sha256": "b860b8b7495cf584b5380c10f49da2e4590a193c25d784febe4f997f70bb0e78",
+   "text": "Jeozadaque"
+  },
+  {
+   "kind": "entry",
+   "id": 11401,
+   "sha256": "8a1f84ca81cf42ddfd49d56094398faf0989df341ffa050a8e4a0cd654531d67",
+   "text": "Também chamado JOSEDEQUE e JOZADAQUE"
+  },
+  {
+   "kind": "entry",
+   "id": 11402,
+   "sha256": "0841a3098480af79e35e30d843b96ad2e1397069a6c1c8b9455e5223cbf40fe0",
+   "text": "Um sacerdote do exílio"
+  },
+  {
+   "kind": "topic",
+   "id": 2730,
+   "sha256": "77fa1867388a4046a878a2048e50a62a2b651d07bd3216ee8468c298a2cfd78e",
+   "text": "Jeú"
+  },
+  {
+   "kind": "entry",
+   "id": 11403,
+   "sha256": "8e882af08c46c02d32160c5630e1a2f184274bf394ba8d4efd02e7c0cceeb6a4",
+   "text": "1. O profeta que anunciou a ira de Jeová contra Baasa, rei de Israel"
+  },
+  {
+   "kind": "entry",
+   "id": 11404,
+   "sha256": "19a7454e93ac63a0fb79edd1f80f83270ee268ad69b15031be4aca0b7b7f81ee",
+   "text": "2. Filho de Ninsi, rei de Israel"
+  },
+  {
+   "kind": "entry",
+   "id": 11405,
+   "sha256": "3c928626769ae2e8b5d2e59d43196f07c3ac5ac9c96afed97a80029d15ddf3da",
+   "text": "Zelo religioso de, ao matar os idólatras"
+  },
+  {
+   "kind": "entry",
+   "id": 11406,
+   "sha256": "47069068304a8f02a25bb43ece12cda545d6a905f30c279058c876548a65b527",
+   "text": "Seu território invadido por Hazael, rei da Síria"
+  },
+  {
+   "kind": "entry",
+   "id": 11407,
+   "sha256": "2514cb3c77bd1feb51f487f75fbcd22d3a9743b6b076dcf153835b761bd4ef05",
+   "text": "Profecias sobre"
+  },
+  {
+   "kind": "entry",
+   "id": 11408,
+   "sha256": "ea6fc1370cfe38c8492cea47eaf07acad21171f1fa1774ca9403be12655eaa32",
+   "text": "Morte de"
+  },
+  {
+   "kind": "entry",
+   "id": 11409,
+   "sha256": "26f768dbc9047ba10f252c4ad832412b39ceb97ac3f7a3b1956337c5cf882370",
+   "text": "3. Filho de Obede"
+  },
+  {
+   "kind": "entry",
+   "id": 11410,
+   "sha256": "24de2312b43fc2172fe4643074bb801084ee81341de42846ff7a4da0c6fedec1",
+   "text": "4. Filho de Josibias"
+  },
+  {
+   "kind": "entry",
+   "id": 11411,
+   "sha256": "f3b7cd8ebf6858ff887ac3a91bd0467fa8cc5ff6c519f5e0d2b694bc864d4bc4",
+   "text": "5. Um benjamita"
+  },
+  {
+   "kind": "topic",
+   "id": 2731,
+   "sha256": "c12a166a04b3c04220ae27d6f57c1c84546d5084813dae80d97902f214f0fdb9",
+   "text": "Jeubá"
+  },
+  {
+   "kind": "entry",
+   "id": 11412,
+   "sha256": "b094a9051915974b178dc3bcbd846c26196080d1d3d371107119f8cd8021f6c4",
+   "text": "Um aserita"
+  },
+  {
+   "kind": "topic",
+   "id": 2732,
+   "sha256": "c5837f4b3f86768524c80b7294c9b773efebc61ea9d859e7259c6547479d0ac6",
+   "text": "Jeucal"
+  },
+  {
+   "kind": "entry",
+   "id": 11413,
+   "sha256": "559aab85861afdb1a44708064ab809cda8662338f37afc99e3223e9e86cf2aac",
+   "text": "Também chamado JUCAL"
+  },
+  {
+   "kind": "entry",
+   "id": 11414,
+   "sha256": "a7bcaa24fb8daa68dbd2f17cf74be9d5a658396c396f0598087b376c65088bcc",
+   "text": "Filho de Selemias"
+  },
+  {
+   "kind": "topic",
+   "id": 2733,
+   "sha256": "7418bba97988887b9d251065a2dbf12f740995d9110955ac2e1a9fa22816ba2a",
+   "text": "Jeúde"
+  },
+  {
+   "kind": "entry",
+   "id": 11415,
+   "sha256": "92ef67501fd54c645ec328534cb9850e183ab10743abc002c50483a454fb5fb9",
+   "text": "Uma cidade da tribo de Dã"
+  },
+  {
+   "kind": "topic",
+   "id": 2734,
+   "sha256": "5fd1a2ed2173b5337abf0a8c5108013a895d90e57f6f56b9a8a3949500c42e01",
+   "text": "Jeudi"
+  },
+  {
+   "kind": "entry",
+   "id": 11416,
+   "sha256": "62a0eb37fbeb3622a4c5173256ff6260c02dfaed023c9826129919e571b723d9",
+   "text": "Um judeu, oficial da corte de Jeoaquim, que leu o rolo de Jeremias para o rei"
+  },
+  {
+   "kind": "topic",
+   "id": 2735,
+   "sha256": "d7ce076d7c0565884c4a45b4dac20c320e483998d73e4f81610db14c2b987f7f",
+   "text": "Judia"
+  },
+  {
+   "kind": "entry",
+   "id": 11417,
+   "sha256": "7c3f057cd7e26cc9509380ea76a149326945c4bae5bbd98575c7b467d6796d6a",
+   "text": "Mulher de Esdras"
+  },
+  {
+   "kind": "topic",
+   "id": 2736,
+   "sha256": "fbd012b907bd9aa8c2a476b2e3d787f112a90c8c209295b9e19cb02a0522fa6e",
+   "text": "Jeús"
+  },
+  {
+   "kind": "entry",
+   "id": 11418,
+   "sha256": "d5d22d356f148467dfe385b434b33a228b4ed6e171675addb11d3805f430024c",
+   "text": "Um benjamita"
+  },
+  {
+   "kind": "topic",
+   "id": 2737,
+   "sha256": "14784f269452ee5d208f7c9aad5e86705eb2d13de1ecf98561eb3c13b6a4f154",
+   "text": "Jeiel"
+  },
+  {
+   "kind": "entry",
+   "id": 11419,
+   "sha256": "4aff667abd4bc0ed0606e4d3c87ee8f1c234a307e1f75c0a5c3f08a3e9dd98fe",
+   "text": "1. Também chamado JEIEL"
+  },
+  {
+   "kind": "entry",
+   "id": 11420,
+   "sha256": "951c7e1c02d2db1153a187655eadc662630c8e40b589e17b25bda4fc829b27fc",
+   "text": "Um rubenita"
+  },
+  {
+   "kind": "entry",
+   "id": 11421,
+   "sha256": "4d77ef88514e85ee4c2e3ae88838841f92d3051a7417c985e2b395be08509754",
+   "text": "2. Um benjamita"
+  },
+  {
+   "kind": "entry",
+   "id": 11422,
+   "sha256": "d6d5e4729564f3e94bf4bbeb74161b4352928ce0fccf6029582950a2e7687491",
+   "text": "3. Um dos valentes de Davi"
+  },
+  {
+   "kind": "entry",
+   "id": 11423,
+   "sha256": "df8dc626565093cb38e8168e77c636949921cf063c5d5069768d1246784a459d",
+   "text": "4. Um levita e cantor nos serviços do tabernáculo"
+  },
+  {
+   "kind": "entry",
+   "id": 11424,
+   "sha256": "670c17bb70cdb5006132efa7b7841fed98ad431cfbb2d9d2a7e099f9559ed5e2",
+   "text": "5. Um levita, antepassado de Jaaziel, que encorajou Judá contra seus inimigos"
+  },
+  {
+   "kind": "entry",
+   "id": 11425,
+   "sha256": "34fd9ad1e6a69be0dd704b5a7dc8659fc1c59213abd7c3b50ff6f6a6108a0aed",
+   "text": "6. Um escriba durante o reinado de Uzias"
+  },
+  {
+   "kind": "entry",
+   "id": 11426,
+   "sha256": "1dfc3a9dee97b368bfd41e8c35788a5aef4134623e7ecc39068a7761df518267",
+   "text": "7. Um levita que purificou o templo"
+  },
+  {
+   "kind": "entry",
+   "id": 11427,
+   "sha256": "272a275d8d1be9ce490c77313a7f1a55e11ef32942a7a1daad93b399d97b06cc",
+   "text": "8. Um chefe dos levitas que deu, com outros chefes, cinco mil e quinhentas cabeças de \"gado miúdo\" para sacrifício"
+  },
+  {
+   "kind": "entry",
+   "id": 11428,
+   "sha256": "40916829ec14faa1d99e741cf2019002bcf05c58223353ff9f1fbebe1ba16c75",
+   "text": "9. Um filho de Adonicão, um exilado que voltou a Jerusalém com Esdras"
+  },
+  {
+   "kind": "entry",
+   "id": 11429,
+   "sha256": "8b8f47415820508c56012582170338800e1b1bec3c56409f547d998233286eaa",
+   "text": "10. Um sacerdote que se contaminou casando-se com uma mulher idólatra"
+  },
+  {
+   "kind": "topic",
+   "id": 2738,
+   "sha256": "b3742bb268be7da0fe0845da70d73854a1069d5ae19c3a7736c101d6c6bd5508",
+   "text": "Jecabzeel"
+  },
+  {
+   "kind": "entry",
+   "id": 11430,
+   "sha256": "c31a2df7f87db7f81edc2073af6110b11b3a0f1e85c1bde934aa870a7d154d1d",
+   "text": "Uma cidade no sul da tribo de Judá"
+  },
+  {
+   "kind": "topic",
+   "id": 2739,
+   "sha256": "34e1cf78540e85899e1c24c31ce4ea3074e9d8479f631608a3f60b331d081625",
+   "text": "Jecameão"
+  },
+  {
+   "kind": "entry",
+   "id": 11431,
+   "sha256": "ad3c641f397716b8294173212940212ee3bbd315c68bb6d5b3ae7ac23796b08f",
+   "text": "Filho de Hebrom"
+  },
+  {
+   "kind": "topic",
+   "id": 2740,
+   "sha256": "614bad7d3f1386b2d46f913ffc2cf3813132e6d3b5a9d8a5b3e2bbdc2ed72c6e",
+   "text": "Jecamias"
+  },
+  {
+   "kind": "entry",
+   "id": 11432,
+   "sha256": "c494c2a3d4d256687c36ac6c816f1dd0f5785f29708a4aa5b1b37fcff1f3a22d",
+   "text": "Um descendente de Jerameel"
+  },
+  {
+   "kind": "topic",
+   "id": 2741,
+   "sha256": "771550304b39f45ab4b817418ad626e5b2baa972268d3cda200c8c90f9eb1a94",
+   "text": "Jecutiel"
+  },
+  {
+   "kind": "entry",
+   "id": 11433,
+   "sha256": "d777fa8089a11c1e65855b9b6bc67e6f3227d2800c2f5995c793ef5a2255c42b",
+   "text": "Filho de Esdras"
+  },
+  {
+   "kind": "topic",
+   "id": 2742,
+   "sha256": "9e818c36663ed2ff3ef74a3a8e96c1127a5bad36f4ccaaf1bae0823e51326eb5",
+   "text": "Jemima"
+  },
+  {
+   "kind": "entry",
+   "id": 11434,
+   "sha256": "c713b4c9fa2a96f9b9577484e35093399dd063a09360f5095a371e2517f7ec95",
+   "text": "Filha de Jó"
+  },
+  {
+   "kind": "topic",
+   "id": 2743,
+   "sha256": "1c23b905b26cf06ffd9243a9da487ef3fe407b6a650c94b2f97f62a94b4d5e48",
+   "text": "Jemuel"
+  },
+  {
+   "kind": "entry",
+   "id": 11435,
+   "sha256": "2b809228a1eb374fbf221291cca7605dd8deb2d0b9a5e77d6e8bfcb90e764312",
+   "text": "Filho de Simeão"
+  },
+  {
+   "kind": "topic",
+   "id": 2744,
+   "sha256": "c6bd2e7938e9e8e4e910ceb65473058257558c52d25f12d8aaea88503dc6362e",
+   "text": "Jefté"
+  },
+  {
+   "kind": "entry",
+   "id": 11436,
+   "sha256": "5ecdbba278ed42dbe62ad9dbac1787ba56fa114495a9e4e832675dbb63d3639e",
+   "text": "(Um juiz (líder, herói) de Israel)"
+  },
+  {
+   "kind": "entry",
+   "id": 11437,
+   "sha256": "005c3873be376c99628c1fdad8e5927af9b19ade7e9187d5ac3609ae71abc2f9",
+   "text": "Ilegítimo, e por isso sem direito de herdar os bens de seu pai"
+  },
+  {
+   "kind": "entry",
+   "id": 11438,
+   "sha256": "f05dbe1baf7a943ec59841fb78821d3055a4173ad26090139d8c5892a480c386",
+   "text": "Escapa da violência de seus meios-irmãos; mora na terra de Tobe"
+  },
+  {
+   "kind": "entry",
+   "id": 11439,
+   "sha256": "1f8aeca128607d76e9c021bd135093d9107da5054a5c6deefe267c1b18b3f6c5",
+   "text": "Chamado de volta da terra de Tobe pelos anciãos de Gileade"
+  },
+  {
+   "kind": "entry",
+   "id": 11440,
+   "sha256": "ece459ee63969d397d87fb901c09a39f45de4985bdc78787dba1393e71c964f8",
+   "text": "Feito capitão do exército"
+  },
+  {
+   "kind": "entry",
+   "id": 11441,
+   "sha256": "ee15a1606c1ef3ffbb0daba79857c9d820b9fd103a035a26113bee03b6e20250",
+   "text": "Feito chefe da terra de Gileade"
+  },
+  {
+   "kind": "entry",
+   "id": 11442,
+   "sha256": "957f4368d6f5ebed3aa203141e939a674b37a7f0c595bbf95db48f1f3ae8c234",
+   "text": "Sua mensagem ao rei dos amonitas"
+  },
+  {
+   "kind": "entry",
+   "id": 11443,
+   "sha256": "71ac4126ac9707c2d20f2217ecfeb6a6236b5a1c127204131389cc6a6e29fc7e",
+   "text": "Lidera o exército de Israel contra os amonitas"
+  },
+  {
+   "kind": "entry",
+   "id": 11444,
+   "sha256": "dab7273c9ea6ffd849abc97b9348192c74fb97935757c4fc54703b72a3406605",
+   "text": "Seu voto precipitado a respeito de sua filha"
+  },
+  {
+   "kind": "entry",
+   "id": 11445,
+   "sha256": "5e006cf0dca717c34916845d18b3f2a8003baf94c2d5f21fdf1597595cfe041e",
+   "text": "Falsamente acusado pelos efraimitas"
+  },
+  {
+   "kind": "entry",
+   "id": 11446,
+   "sha256": "94645ee836fb32d646cb7289c14c75b539ad1c79dea51920e7d8b1e6290b967d",
+   "text": "Lidera o exército dos gileaditas contra os efraimitas"
+  },
+  {
+   "kind": "entry",
+   "id": 11447,
+   "sha256": "1a8f88e680e19f422d5d6f9a855defc33e4078fe7433f8c0545df43d154b2b61",
+   "text": "Lidera Israel por seis anos, morre e é sepultado em Gileade"
+  },
+  {
+   "kind": "entry",
+   "id": 11448,
+   "sha256": "7456b66b206dc297077e4956203b4928e17c2e52d90f95f5096b6adf40e5f127",
+   "text": "Fé de"
+  },
+  {
+   "kind": "topic",
+   "id": 2745,
+   "sha256": "6b1a748436d56c4cd7d9019ce0abdf19fc71094013407958ad367f42a51a3b53",
+   "text": "Jefoné"
+  },
+  {
+   "kind": "entry",
+   "id": 11449,
+   "sha256": "94746aa7c161ed3bf720d6163567b67eb25666d9f899e8160121532a2f38c1cc",
+   "text": "1. Pai de Calebe"
+  },
+  {
+   "kind": "entry",
+   "id": 11450,
+   "sha256": "ace02b5a83c95cb9d39f5fa6aaeef305df2afe4b77a69cef9d41d2c9c87f69fa",
+   "text": "2. Um aserita"
+  },
+  {
+   "kind": "topic",
+   "id": 2746,
+   "sha256": "016c929fa6809a44966596a8a97da358592a08fa69ed9dc7f1ffe7d27eb7fefa",
+   "text": "Jerá"
+  },
+  {
+   "kind": "entry",
+   "id": 11451,
+   "sha256": "688665f31e9823551759c83c758c9a0f831db1ae94313fae36cd6b234178449e",
+   "text": "Filho de Joctã"
+  },
+  {
+   "kind": "topic",
+   "id": 2747,
+   "sha256": "62dd0cdaf7adf20190d93cd6226bacf26dac22f29585f38091c2968c9dd1f134",
+   "text": "Jerameel"
+  },
+  {
+   "kind": "entry",
+   "id": 11452,
+   "sha256": "19ac18c8a39683829c7ba4c8d738d4f50d07435d0a449497b9fe8eed92448374",
+   "text": "1. Filho de Hezrom"
+  },
+  {
+   "kind": "entry",
+   "id": 11453,
+   "sha256": "b48a3e7fbc5929ba51269e161286676cd2205ed5c9113e27800becb28936348c",
+   "text": "2. Filho de Quis"
+  },
+  {
+   "kind": "entry",
+   "id": 11454,
+   "sha256": "9625bb637a22425ce2b0dd1910bb11855fbbbd9a6fffed050795f0d3821c15a1",
+   "text": "3. Um oficial de Jeoaquim, rei de Judá"
+  },
+  {
+   "kind": "topic",
+   "id": 2748,
+   "sha256": "2d76263998074e0cc20e05bd85af8c880f9cac70838c97dcf2b1a6b57cea969f",
+   "text": "Jerede"
+  },
+  {
+   "kind": "entry",
+   "id": 11455,
+   "sha256": "d777fa8089a11c1e65855b9b6bc67e6f3227d2800c2f5995c793ef5a2255c42b",
+   "text": "Filho de Esdras"
+  },
+  {
+   "kind": "topic",
+   "id": 2749,
+   "sha256": "e6cfd613dd6aae5f16f378cb477e6257e87649859d83030dd07733c1f6ff746f",
+   "text": "Jeremai"
+  },
+  {
+   "kind": "entry",
+   "id": 11456,
+   "sha256": "7317186fbec339c7f54e2fd528f289c10884a50e5be86f40f2dac179bfb2c169",
+   "text": "Da família de Hasum"
+  },
+  {
+   "kind": "topic",
+   "id": 2750,
+   "sha256": "4d8225e6b96e4dcddee14134b3900923b80e2f90741d373fce4e5e3e0bdd6316",
+   "text": "Jeremias"
+  },
+  {
+   "kind": "entry",
+   "id": 11457,
+   "sha256": "99a9d27ec454781da5625b562376630789da08a3460b1b561ed2dfff11b0d189",
+   "text": "1. De Libna, avô de Jeoacaz"
+  },
+  {
+   "kind": "entry",
+   "id": 11458,
+   "sha256": "902c9d5d1aece580e86ddf322afcdbaf6d6d09795aecfa6398f491ca6dc20438",
+   "text": "2. Um chefe de Manassés"
+  },
+  {
+   "kind": "entry",
+   "id": 11459,
+   "sha256": "6a4422d0b3ab57c4636607c2e813c33fdd7f4d4b3be87ee4044edef1d94e5af3",
+   "text": "3. Um israelita que se uniu a Davi em Ziclague"
+  },
+  {
+   "kind": "entry",
+   "id": 11460,
+   "sha256": "56f8b4071e562133c59c71c97d01090f89e3e80dea9dd0e40b7b84f6206cfdfe",
+   "text": "4. Dois gaditas que se uniram a Davi em Ziclague"
+  },
+  {
+   "kind": "entry",
+   "id": 11461,
+   "sha256": "87297fd5f0dceb322437266e4dce29ec3224fe8a58b41ee310386af9bf3c5238",
+   "text": "5. O profeta"
+  },
+  {
+   "kind": "entry",
+   "id": 11462,
+   "sha256": "abf59c2464c800e9891f94af39b5f3fb913bcfaa1b621f54b80fa1e6ed8e50b2",
+   "text": "Um recabita"
+  },
+  {
+   "kind": "entry",
+   "id": 11463,
+   "sha256": "016dd69765e0955b4293e5b922be007792ba4c2dfec6e8dd01941b7d67efc06c",
+   "text": "Um sacerdote"
+  },
+  {
+   "kind": "entry",
+   "id": 11464,
+   "sha256": "43db4ece1d508b741807b4ffc0cdd18302c0482d6a45d50285a9db08ba2e76e3",
+   "text": "Vocação de"
+  },
+  {
+   "kind": "entry",
+   "id": 11465,
+   "sha256": "7d8e505a81319fe4aa9651baf981f799a447499b9b6e2cb65ca45e5a9c665fec",
+   "text": "Época de suas profecias"
+  },
+  {
+   "kind": "entry",
+   "id": 11466,
+   "sha256": "9d462a80782f8e56221288ea350ed5582cf3d8f6f4589d4daabb8db80e8f17a5",
+   "text": "Carta aos cativos na Babilônia"
+  },
+  {
+   "kind": "entry",
+   "id": 11467,
+   "sha256": "5b82bd6604c6eb59cf5896e7cb44cbc1926519d94f1e030be7212e67d5e3b109",
+   "text": "Tristeza de, sob perseguição"
+  },
+  {
+   "kind": "entry",
+   "id": 11468,
+   "sha256": "954c6600360e39d865812f6c737452ea1378108d37af20e5161a1cb68faabd0d",
+   "text": "Conspiração contra"
+  },
+  {
+   "kind": "entry",
+   "id": 11469,
+   "sha256": "d85863af90d39dae692c8281aec6b27280c757e575e26e52e9f0f57c2e53fd56",
+   "text": "Prediz a desolação de Jerusalém"
+  },
+  {
+   "kind": "entry",
+   "id": 11470,
+   "sha256": "91c410a2e1fb89e136b9f94941069405d47ee3308502bb1819991c21dff4094d",
+   "text": "Pasur, o governador do templo, o açoita e o lança na prisão"
+  },
+  {
+   "kind": "entry",
+   "id": 11471,
+   "sha256": "26742413a3a3dbf42bd09b40bb0509763ca1e1fac5db094b2d4e3331fec7c29d",
+   "text": "Denuncia Pasur"
+  },
+  {
+   "kind": "entry",
+   "id": 11472,
+   "sha256": "2eb8bd9a41c9b1f7152ebf52f18194ed2f7e7194b0418067cff990b5b00c39d8",
+   "text": "Sua melancolia e queixas contra Deus, em consequência da perseguição"
+  },
+  {
+   "kind": "entry",
+   "id": 11473,
+   "sha256": "7de790349a8bb3f87430a0e85cf70853fd73e4bc88cb271d4832dc3b32480cde",
+   "text": "Preso por Zedequias"
+  },
+  {
+   "kind": "entry",
+   "id": 11474,
+   "sha256": "77eab741f4eebb3335bbc8f1d1959a76aef9737c8fafeb09949a192009eab123",
+   "text": "Nabucodonosor ordena a libertação de"
+  },
+  {
+   "kind": "entry",
+   "id": 11475,
+   "sha256": "96eb60bd8ff97efccb50011367572d2ec3a0b0e8812a17b7b4a9a3d075cb714a",
+   "text": "Tem um amigo em Aicã"
+  },
+  {
+   "kind": "entry",
+   "id": 11476,
+   "sha256": "d1936b370e71ab19155adb9a8a116b5cb6db5f9baadc1890a9d7a698547fe934",
+   "text": "Ebede-Meleque, o egípcio, intercede junto ao rei por ele, e consegue sua libertação"
+  },
+  {
+   "kind": "entry",
+   "id": 11477,
+   "sha256": "6adada74050e7e1d6a06ee6fb9b2d86ecadbc148897b3527e6bbba7768f47c9a",
+   "text": "Profecias de, escritas por Baruque"
+  },
+  {
+   "kind": "entry",
+   "id": 11478,
+   "sha256": "f3abe92fd55d1f5b4bc6a9a72569e33657c5eeb0876b61fafa680f00071fb7f1",
+   "text": "Profecias de, destruídas por Jeoaquim"
+  },
+  {
+   "kind": "entry",
+   "id": 11479,
+   "sha256": "e61500b794182584f5478ef32ee1c382ca4eef06d89e11df109c915ea9515b61",
+   "text": "Livro das profecias de, entregue a Seraías, com uma incumbência de Jeremias"
+  },
+  {
+   "kind": "entry",
+   "id": 11480,
+   "sha256": "9752f0b1dcba373765020ece60f08ba7aab3f01fc0f5daff7cee8b0c1ab16398",
+   "text": "Zedequias busca conselho de Deus por meio de"
+  },
+  {
+   "kind": "entry",
+   "id": 11481,
+   "sha256": "bf7ea881749df5b4b023cfbed81a7b6d9e063484c439827e4762e225d9a65984",
+   "text": "Sua intercessão pedida"
+  },
+  {
+   "kind": "entry",
+   "id": 11482,
+   "sha256": "c6f2cdd1142ac05308fbef6b26aa8315158dfb3962fb92b807af724086be6ae9",
+   "text": "Por Joanã e todo o povo"
+  },
+  {
+   "kind": "entry",
+   "id": 11483,
+   "sha256": "4674cbb566c6df4704921ee555a17366d9a596780817b959ed87e6e7d11cc9f1",
+   "text": "Por Zedequias"
+  },
+  {
+   "kind": "entry",
+   "id": 11484,
+   "sha256": "49e864f96cb0e1bab7e1d65e1521f4161934f468e529a93aeeb736ec8bdc5539",
+   "text": "Joanã leva Jeremias para o Egito"
+  },
+  {
+   "kind": "entry",
+   "id": 11485,
+   "sha256": "e8b87099ceee97cb7683818554e38b626fcb725c6e6650277ec0d57be42c57e4",
+   "text": "Prediz a conquista do Egito pela Babilônia"
+  },
+  {
+   "kind": "entry",
+   "id": 11486,
+   "sha256": "370586066e58a1a26b1ac513a4398e4a2d61812ee0ee6a8261fbadcf18782883",
+   "text": "Profecias de, estudadas por Daniel"
+  },
+  {
+   "kind": "entry",
+   "id": 11487,
+   "sha256": "bdbd5a9e09ab207882a69b8030fed184c4261dbfe0ca0a524beddf388cd74524",
+   "text": "Celibato de"
+  },
+  {
+   "kind": "entry",
+   "id": 11488,
+   "sha256": "4984ab889d2a5513f7f3c08a8f6daabbbcf8049d5b3c6ad93009f63dfabcfdb8",
+   "text": "Compra um campo"
+  },
+  {
+   "kind": "entry",
+   "id": 11489,
+   "sha256": "5c05cc92cc28ae4af0e69f9ff393e2223a06e1633f12cbe9a096001e8c96931d",
+   "text": "Lamentações de"
+  },
+  {
+   "kind": "entry",
+   "id": 11490,
+   "sha256": "f9164f17a1ae53ed4108cca55afb8308be309ea28e18c4445d786a66368d39f9",
+   "text": "Por Josias"
+  },
+  {
+   "kind": "entry",
+   "id": 11491,
+   "sha256": "c921e7a9f7796dbd8d543e479cce3034f56a8a99e267c2da7d4f368c1689371b",
+   "text": "Pela prosperidade dos ímpios"
+  },
+  {
+   "kind": "entry",
+   "id": 11492,
+   "sha256": "0158bdde72c4d800f999851b0d215df1b4b7331a87ac808037f02fe55da011ac",
+   "text": "Pela desolação da herança de Deus"
+  },
+  {
+   "kind": "entry",
+   "id": 11493,
+   "sha256": "325ef6255d2930072f9b4dceb83df8e4acb432e3e5cbaa87f7f8dccfb9f9ccb1",
+   "text": "Por Jerusalém"
+  },
+  {
+   "kind": "entry",
+   "id": 11494,
+   "sha256": "78d8bc1590d5afcba4f4376a08b74115b5d8c8f5c16c5d9f527aef41b91d0365",
+   "text": "Mora em Mispá"
+  },
+  {
+   "kind": "entry",
+   "id": 11495,
+   "sha256": "d615aad68b3a41a72505347e9d3828af886bfdc1be969ca9d74c464963079b11",
+   "text": "Orações de"
+  },
+  {
+   "kind": "entry",
+   "id": 11496,
+   "sha256": "6e454d7020fb942f99bdee113d23a9520104965e41e6153e06ec12cfe5a97fd0",
+   "text": "Zelo de"
+  },
+  {
+   "kind": "topic",
+   "id": 2751,
+   "sha256": "a416f3dadd01399f52fc851ff9e6dcfe4e80d5aefafb5672d0e0d775a51ffb7b",
+   "text": "Jeremote"
+  },
+  {
+   "kind": "entry",
+   "id": 11497,
+   "sha256": "c7bfb978c9b6f069b8ad2b245640793d4255837f95011d7408dcd9d45cc9068d",
+   "text": "1. Um benjamita"
+  },
+  {
+   "kind": "entry",
+   "id": 11498,
+   "sha256": "b597e2e7c860e3de05a0596ceb846ad9f72f94d831d92bc2cd62e9ff77efeef5",
+   "text": "2. Um dos filhos de Elão"
+  },
+  {
+   "kind": "entry",
+   "id": 11499,
+   "sha256": "3db7545ba29612f653870408741382b2a0a19913b9e84ff1ed8a75abd14a8061",
+   "text": "3. Um da família de Zatu"
+  },
+  {
+   "kind": "topic",
+   "id": 2752,
+   "sha256": "534126988c8b668104aeb325dec2a9508efd8ae32c79f1904052369c149b3ce9",
+   "text": "Jerias"
+  },
+  {
+   "kind": "entry",
+   "id": 11500,
+   "sha256": "4e1c3001c3ff456a3535173b9dab32cc1f3984d49bbf79e18d25363c17bff897",
+   "text": "Também chamado JERIJA"
+  },
+  {
+   "kind": "entry",
+   "id": 11501,
+   "sha256": "553336a909956e5d4aed4d34743025c3967c0c62cbf0bc365712c244c024cb39",
+   "text": "Um descendente de Hebrom"
+  },
+  {
+   "kind": "topic",
+   "id": 2753,
+   "sha256": "5966117c767852b8263749b9e5aee483d83bebbfae5ae6633542eaeb7cc71a7c",
+   "text": "Jeribai"
+  },
+  {
+   "kind": "entry",
+   "id": 11502,
+   "sha256": "4141cd2c4dbabc0945fab164041879ede9df822b71fc706317ee42086740d1fc",
+   "text": "Um valente da guarda de Davi"
+  },
+  {
+   "kind": "topic",
+   "id": 2754,
+   "sha256": "c7a522155613a8d980e205c6563b00ad85a9979b3d1410ea113165a611ecef7c",
+   "text": "Jericó"
+  },
+  {
+   "kind": "entry",
+   "id": 11503,
+   "sha256": "a14b563e589d987a22e8afd35a8afd61283de5e3b34d0ebe60bebc1e941d34fe",
+   "text": "1. Uma cidade a leste de Jerusalém e perto do rio Jordão"
+  },
+  {
+   "kind": "entry",
+   "id": 11504,
+   "sha256": "d2395b83c7745d60954bf520065fa3a279f7de0531fa933431211b7d2160426c",
+   "text": "Chamada A CIDADE DAS PALMEIRAS"
+  },
+  {
+   "kind": "entry",
+   "id": 11505,
+   "sha256": "acdaa224fd7bd5c1a0bf443410ca2b7d46332c7e497f88fd55ee8b5d36c79f78",
+   "text": "Localização de, agradável"
+  },
+  {
+   "kind": "entry",
+   "id": 11506,
+   "sha256": "6c56e2ee6866b00750c862bd0b1b9140f85ee2bef2c1de225979d03f897821e5",
+   "text": "Raabe, a prostituta, morava em"
+  },
+  {
+   "kind": "entry",
+   "id": 11507,
+   "sha256": "170a15f8577a19ae49388a1ae7c50f3e0a2e049a7e3d7331c96f36742ce13218",
+   "text": "Josué vê o \"Príncipe do exército\" do Senhor perto de"
+  },
+  {
+   "kind": "entry",
+   "id": 11508,
+   "sha256": "8c5c6b446e327c33e0b85d300cb501b741c39dcb0f52af7b9bb429a12933d125",
+   "text": "Sitiada por Josué durante sete dias; queda e destruição de"
+  },
+  {
+   "kind": "entry",
+   "id": 11509,
+   "sha256": "3dcba3af8dbbeb61e2347aa69938c801e0ef51e3e888b4531fa4fc6a76c7aeb6",
+   "text": "Situada no território dado a Benjamim"
+  },
+  {
+   "kind": "entry",
+   "id": 11510,
+   "sha256": "ed92c6a043e4434b3ed40d5f2da1e45ae14a8ee7bceb0c8def9235ac530e3c24",
+   "text": "Os queneus moravam em"
+  },
+  {
+   "kind": "entry",
+   "id": 11511,
+   "sha256": "cbd83a8ec317e0d79c03867b34dfd89e0eef04e139e574ca9839f29bff57b773",
+   "text": "O rei de Moabe a conquista, e estabelece nela sua capital"
+  },
+  {
+   "kind": "entry",
+   "id": 11512,
+   "sha256": "a879395df665e2b883849c5e0add1c0480268424c13cb0f381a9e70708a8ab40",
+   "text": "Reconstruída por Hiel"
+  },
+  {
+   "kind": "entry",
+   "id": 11513,
+   "sha256": "56401033e8f9d534fa5b870b8f535202a65da2e5df4d343200f72cd021483888",
+   "text": "Um grupo de \"os filhos dos profetas\" morava em"
+  },
+  {
+   "kind": "entry",
+   "id": 11514,
+   "sha256": "5e158cd82ee94571a244bbcaad193d5a96b6aa80bd5c60205bbe78fb811686f8",
+   "text": "Cativos de Judá, tomados pelo rei de Israel, libertados em, por causa da denúncia do profeta Obede"
+  },
+  {
+   "kind": "entry",
+   "id": 11515,
+   "sha256": "b5ab1ca6bdc1f5a8f13d49cd33eb050005cbe3bf81ba44083e61458136142e30",
+   "text": "Habitantes de, levados cativos para a Babilônia, voltam para lá com Esdras e Neemias"
+  },
+  {
+   "kind": "entry",
+   "id": 11516,
+   "sha256": "1f9d0f5a10816fd9188bc2f6856a9513b0397c9eefcc43c4a0dcdad66bae0b0b",
+   "text": "Ajudam a reparar os muros de Jerusalém"
+  },
+  {
+   "kind": "entry",
+   "id": 11517,
+   "sha256": "d0a9f1018685444bc21db52965445bb808be6767c5ff7f055ea9451939887ffa",
+   "text": "Cegos curados em, por Jesus"
+  },
+  {
+   "kind": "entry",
+   "id": 11518,
+   "sha256": "c8953cf8c46aeef3af58084d38530782cb94aa0296468d7e2671040c22dc2362",
+   "text": "Zaqueu morava em"
+  },
+  {
+   "kind": "entry",
+   "id": 11519,
+   "sha256": "f92006c3c1c6e1755ce97f97daf9ab73743559266bbba71c795b77b035ffde63",
+   "text": "2. Planície de"
+  },
+  {
+   "kind": "entry",
+   "id": 11520,
+   "sha256": "680be9331e971c3463db7498f324f57211763c2b6fe5750c0a327143fe1a4a79",
+   "text": "3. Águas de"
+  },
+  {
+   "kind": "entry",
+   "id": 11521,
+   "sha256": "0115a61df9e575db795107d8fd09fab23e681b6ada2faa40e280a5c08da8478a",
+   "text": "Purificadas por Eliseu"
+  },
+  {
+   "kind": "topic",
+   "id": 2755,
+   "sha256": "3ff754a570cc13b9551ab2ffacc428f0ff175e21ad41f695dfc98e16454f84bc",
+   "text": "Jeriel"
+  },
+  {
+   "kind": "entry",
+   "id": 11522,
+   "sha256": "bd6a0462fa77b795d544263c6427fe6143fd7a95b25c1c3cbf3f9b0eb0041927",
+   "text": "Filho de Tolá"
+  },
+  {
+   "kind": "topic",
+   "id": 2756,
+   "sha256": "32f1e766d2554b851c5fcb6cb050f7c0d771a47351c99313dbda720a5ce67302",
+   "text": "Jerimote"
+  },
+  {
+   "kind": "entry",
+   "id": 11523,
+   "sha256": "68f5ee96ca0e51504bc1802dafb09c63de87d9272049ae8471f4381f89e9958a",
+   "text": "1. Também chamado JEREMOTE"
+  },
+  {
+   "kind": "entry",
+   "id": 11524,
+   "sha256": "7a430c7ff62c54a40d6888233184c63fb72d4512c7285fe196db3d5981d93c55",
+   "text": "Filho de Belá"
+  },
+  {
+   "kind": "entry",
+   "id": 11525,
+   "sha256": "757e1005fd77f615da9ca6bd7aea4e4cd991d26061af25d2a2929bd7eb427be0",
+   "text": "2. Filho de Bequer"
+  },
+  {
+   "kind": "entry",
+   "id": 11526,
+   "sha256": "bb996fc6cf6132681e323ad7b24df4c3fc81be981c358eda53704114a56871df",
+   "text": "3. O israelita descontente que denunciou Saul e se uniu a Davi em Ziclague"
+  },
+  {
+   "kind": "entry",
+   "id": 11527,
+   "sha256": "188c4fd5548fbdca188ed1d1d0621799bb9ec39983c2e5a7f5b678d214f2035c",
+   "text": "4. Filho de Musi"
+  },
+  {
+   "kind": "entry",
+   "id": 11528,
+   "sha256": "a22b4e317f28d84e5d727dc268858e763a41f6f44e8e0c12b3c5766074cdf5f2",
+   "text": "5. Filho de Hemã"
+  },
+  {
+   "kind": "entry",
+   "id": 11529,
+   "sha256": "59f8fc6d19b2e42a228071fcf91f33ccf1227a44e7491893f104915f1450503a",
+   "text": "6. Um governante da tribo de Naftali"
+  },
+  {
+   "kind": "entry",
+   "id": 11530,
+   "sha256": "48fe5f83c009c539433f49a11905491aaf633da8c269bb7b280f08d68d584fcc",
+   "text": "7. Um filho de Davi"
+  },
+  {
+   "kind": "topic",
+   "id": 2757,
+   "sha256": "379fc31f96c360a3381e3c59f27bd6c89abf5a5545b0404a7f1dadae098c3a2d",
+   "text": "Jeriote"
+  },
+  {
+   "kind": "entry",
+   "id": 11531,
+   "sha256": "b12d9079745f7123fe5626df1036b8f1928725b98976538eca851a2850cc1bab",
+   "text": "Mulher de Calebe"
+  },
+  {
+   "kind": "entry",
+   "id": 11532,
+   "sha256": "cd7cb371b6a04eab762221af5bbf30300b76e54214b1654e5848a013afa6a820",
+   "text": "Provavelmente a mesma que AZUBA"
+  },
+  {
+   "kind": "topic",
+   "id": 2758,
+   "sha256": "1d0a531230dc35efac2d00cc005a5d049ec89888ef506b1e7284ce375123a4d2",
+   "text": "Jeroboão"
+  },
+  {
+   "kind": "entry",
+   "id": 11533,
+   "sha256": "960fef2447f04515bb0ddbc2dc9a0c9318b952870294f268ecbdc4eae1309718",
+   "text": "1. Primeiro rei de Israel depois da revolta"
+  },
+  {
+   "kind": "entry",
+   "id": 11534,
+   "sha256": "413ffa3dc8a66e373f7e10dcd5ca1ee97a1f2b447a5ca7c90320ae41e69a5624",
+   "text": "Promovido por Salomão"
+  },
+  {
+   "kind": "entry",
+   "id": 11535,
+   "sha256": "ea17d2dab523732d4879bfadf7ef050c0e181017af35c90624b595f4cfbcdbc3",
+   "text": "A profecia de Aías sobre"
+  },
+  {
+   "kind": "entry",
+   "id": 11536,
+   "sha256": "0ebcc6ec6a8c8f501eacca639af29881a412127884a0f4dcfcc76276d48b0044",
+   "text": "Foge para o Egito para escapar de Salomão"
+  },
+  {
+   "kind": "entry",
+   "id": 11537,
+   "sha256": "9b2e48ad77dc3715cb3b975e0a172fec582367f41aa30d7062727cb26e50578b",
+   "text": "Chamado de volta do Egito pelas dez tribos por causa do descontentamento com Roboão, e feito rei"
+  },
+  {
+   "kind": "entry",
+   "id": 11538,
+   "sha256": "b7b6c78aeb54bf4d3569ce4fae4ee9ec79d71ae2f851f78df2d9b0916b037888",
+   "text": "Subverte a religião de Moisés"
+  },
+  {
+   "kind": "entry",
+   "id": 11539,
+   "sha256": "74ef286781f26160815dbc086b85a7b345b6dcbc8bedaa69a3ce744134565a12",
+   "text": "Mão de, paralisada"
+  },
+  {
+   "kind": "entry",
+   "id": 11540,
+   "sha256": "ed8093e0aa9489df98768d7be79b1856e6a7dbe31ec7828b0913b0ac7b6f5d21",
+   "text": "Sua mulher enviada para consultar o profeta Aías a respeito do filho deles"
+  },
+  {
+   "kind": "entry",
+   "id": 11541,
+   "sha256": "da20a842410a87d7901694cadf10e528179a03adf02d12857985b9a2b4701e2b",
+   "text": "Suas guerras com Roboão"
+  },
+  {
+   "kind": "entry",
+   "id": 11542,
+   "sha256": "f466d91577fc45f3153c651092bd9d92747c6b4ea75f4d0419eb4302f106d4ed",
+   "text": "Sua guerra com Abias"
+  },
+  {
+   "kind": "entry",
+   "id": 11543,
+   "sha256": "ea6fc1370cfe38c8492cea47eaf07acad21171f1fa1774ca9403be12655eaa32",
+   "text": "Morte de"
+  },
+  {
+   "kind": "entry",
+   "id": 11544,
+   "sha256": "ccb4b0368c9c72135efe9c28154a77772437f7958d4f4df7b71df164605fd1b4",
+   "text": "2. Rei de Israel"
+  },
+  {
+   "kind": "entry",
+   "id": 11545,
+   "sha256": "32ddbb2960519432eaa049ef47f15b3cd6cc3b6cbd651363f36a315a04fb90d8",
+   "text": "Sucessor de Jeoás"
+  },
+  {
+   "kind": "entry",
+   "id": 11546,
+   "sha256": "c5c8a28104acf0150bd29a0c4c54a842dacdb6389cb4f0a800a138edf76af0af",
+   "text": "Conquista Hamate e Damasco"
+  },
+  {
+   "kind": "entry",
+   "id": 11547,
+   "sha256": "7a8de10660dcb4960607b4ded3b9178bfe343c67274e7ea4e5dadcba15abbcec",
+   "text": "Reinado perverso de"
+  },
+  {
+   "kind": "entry",
+   "id": 11548,
+   "sha256": "2514cb3c77bd1feb51f487f75fbcd22d3a9743b6b076dcf153835b761bd4ef05",
+   "text": "Profecias sobre"
+  },
+  {
+   "kind": "entry",
+   "id": 11549,
+   "sha256": "ea6fc1370cfe38c8492cea47eaf07acad21171f1fa1774ca9403be12655eaa32",
+   "text": "Morte de"
+  },
+  {
+   "kind": "entry",
+   "id": 11550,
+   "sha256": "78b5af026689e16fde84841d8aa6c1c563abe9e452761490c65c9e2cee4d4a21",
+   "text": "Genealogias escritas durante seu reinado"
+  },
+  {
+   "kind": "topic",
+   "id": 2759,
+   "sha256": "f15a4b2aa21562f8d872aeb18aad6780e1a2be7e9db5e7774724aab265d4cd9c",
+   "text": "Jeroão"
+  },
+  {
+   "kind": "entry",
+   "id": 11551,
+   "sha256": "8d55dcee3a14c5aeab0c95728eea3a858c294cac2491d00cfae97767daa81d3e",
+   "text": "1. Um levita e avô de Samuel"
+  },
+  {
+   "kind": "entry",
+   "id": 11552,
+   "sha256": "52d02ec478d777dccf9b26129872eb34983bec9ca70fb03a8549e9661c403191",
+   "text": "2. Um chefe da tribo de Benjamim"
+  },
+  {
+   "kind": "entry",
+   "id": 11553,
+   "sha256": "ef7dc6fd5d0c06878c14704494736009d8865a2ca59cfb52fdc464bc2871ca9f",
+   "text": "3. Um descendente de Benjamim"
+  },
+  {
+   "kind": "entry",
+   "id": 11554,
+   "sha256": "51d6dc6ebe2086fb2ba891eeedf28d5d8a1e135b1d0b7affc1a5a1e94366cc48",
+   "text": "4. Um sacerdote, e pai de Adaías, que morou em Jerusalém depois do exílio"
+  },
+  {
+   "kind": "entry",
+   "id": 11555,
+   "sha256": "22d8e357c0a7e141e5f641733d750a155b512e3f2d9a2703d4997eb6d2e6d441",
+   "text": "5. Pai de dois israelitas que se uniram a Davi em Ziclague"
+  },
+  {
+   "kind": "entry",
+   "id": 11556,
+   "sha256": "bbca0545c73ed382fc05a62aa85d684094848c7800d05398df06a0e6b2b530c0",
+   "text": "6. O pai de Azareel"
+  },
+  {
+   "kind": "entry",
+   "id": 11557,
+   "sha256": "7a84d3d9807e55a8e21125669895126804152f5ca7361bde09e0853330f62fda",
+   "text": "7. Pai de Azarias"
+  },
+  {
+   "kind": "topic",
+   "id": 2760,
+   "sha256": "b51fecb14fe19ae527e6b2c58afa08e5502ce46102dbdd0b054fcc7d2123912b",
+   "text": "Jerubaal"
+  },
+  {
+   "kind": "topic",
+   "id": 2761,
+   "sha256": "91b0ecb18fab081a6178b0a1226044eb247bba6fb131d77312275229512c3f38",
+   "text": "Jeruel"
+  },
+  {
+   "kind": "entry",
+   "id": 11558,
+   "sha256": "5f772c7d8714a974f60612a069e9a32e8007923263e82fff8d9d67684f6b4147",
+   "text": "Um deserto no sul de Judá"
+  },
+  {
+   "kind": "topic",
+   "id": 2762,
+   "sha256": "451ebbe3f76682c7de1a795b406384e8b53801a89311bf86fa529e9b9259043b",
+   "text": "Jerusalém"
+  },
+  {
+   "kind": "entry",
+   "id": 11559,
+   "sha256": "3bb8faf30715b01cb7e0fb7cdd033bcbf5912a57f46289bb2090d470b6f3c610",
+   "text": "Chamada"
+  },
+  {
+   "kind": "entry",
+   "id": 11560,
+   "sha256": "9ac7b6d64c754c9462163df9ab9ddc7460b133cbbb801e8f27f8de7982e3b94f",
+   "text": "Jebus"
+  },
+  {
+   "kind": "entry",
+   "id": 11561,
+   "sha256": "4e28c5777c52ec0e987eb3d55604ff5f14b5226976d4b5e2b87440fb09985a1c",
+   "text": "Sião"
+  },
+  {
+   "kind": "entry",
+   "id": 11562,
+   "sha256": "6e1610d0baa049af0081f882c6f822649614d394889c9bfc26f95ef71f69aa40",
+   "text": "Cidade de Davi"
+  },
+  {
+   "kind": "entry",
+   "id": 11563,
+   "sha256": "63217d185022066f949b5fbcd6f5e9c353edd5e075e3b033c638b0a8d5845fad",
+   "text": "Salém"
+  },
+  {
+   "kind": "entry",
+   "id": 11564,
+   "sha256": "48fbe7b6bce0cf488fb40f8430053b4ee7e1067488e15c1b6532cc655c02e2e5",
+   "text": "Ariel"
+  },
+  {
+   "kind": "entry",
+   "id": 11565,
+   "sha256": "83b2421ede0030b8e9fd06ac5d9e9a67cfb362b2960de9c601da756069c12d9a",
+   "text": "Cidade de Deus"
+  },
+  {
+   "kind": "entry",
+   "id": 11566,
+   "sha256": "ef16ba21f095005979e3592f21269c578a5c1c50a2306895e02b1adb79d2d477",
+   "text": "Cidade do grande Rei"
+  },
+  {
+   "kind": "entry",
+   "id": 11567,
+   "sha256": "306ee67b0ae4f20069fb80c74aae8c277a807781a87f03ab96912fce1a58bf96",
+   "text": "Cidade de Judá"
+  },
+  {
+   "kind": "entry",
+   "id": 11568,
+   "sha256": "38b5c419206e45c1f37552952378d27802e763905ec4dbad7581ade50cd7c946",
+   "text": "A perfeição da formosura, a alegria de toda a terra"
+  },
+  {
+   "kind": "entry",
+   "id": 11569,
+   "sha256": "6b85cd28240f3fe0698f959ce9eeed5af7c0d91781a74c93316d901c11070e07",
+   "text": "O trono do Senhor"
+  },
+  {
+   "kind": "entry",
+   "id": 11570,
+   "sha256": "904a5c29301feeae7d331037207d8773f22d06b8e6edc4bbcf6ca4e90d180a77",
+   "text": "Monte santo"
+  },
+  {
+   "kind": "entry",
+   "id": 11571,
+   "sha256": "8277870f4643f3bb4b80c052850bde48b764a31b6f9b546dc55792ec9326e324",
+   "text": "Cidade santa"
+  },
+  {
+   "kind": "entry",
+   "id": 11572,
+   "sha256": "b0c6e2adc3c57d250a6f8ab0971152ee1c1f3642d92b34a06afbe9cf9a562303",
+   "text": "Cidade das solenidades"
+  },
+  {
+   "kind": "entry",
+   "id": 11573,
+   "sha256": "7bd0c84832b65a4d29b73147d69991e7d43a6a8dce4a4638e653c7c7f3721240",
+   "text": "Cidade da verdade"
+  },
+  {
+   "kind": "entry",
+   "id": 11574,
+   "sha256": "a959b35e89915173122f1b59b000cc41bc8b3c9a46942969f43fccf4ef181fa6",
+   "text": "Será chamada"
+  },
+  {
+   "kind": "entry",
+   "id": 11575,
+   "sha256": "dfab98757d11c5721396a74c0172a75e0867142c3a9b21a41b08662c03cc4b01",
+   "text": "O Senhor, Justiça Nossa"
+  },
+  {
+   "kind": "entry",
+   "id": 11576,
+   "sha256": "a0b8839c8dbf746aa6eb4ab31ce8527d313fdd1cfdf4d08ce4d0aaf1d0802f61",
+   "text": "JEOVÁ-SAMÁ (margem)"
+  },
+  {
+   "kind": "entry",
+   "id": 11577,
+   "sha256": "bd341e1fc46399eaf1f0ab3addf9f66b5770df30e5a23b2a1d4947a5ffe63eb9",
+   "text": "Nova Jerusalém"
+  },
+  {
+   "kind": "entry",
+   "id": 11578,
+   "sha256": "0786e71f5115fb0921e0c4b8730db44036e06bb54778e3a19bd5f57746f43640",
+   "text": "Localização e aspecto de"
+  },
+  {
+   "kind": "entry",
+   "id": 11579,
+   "sha256": "7ec0ee6c5dddb138006a1720f617d5cd190701ef09438a6899556d6eb2b60e8c",
+   "text": "Muros de"
+  },
+  {
+   "kind": "entry",
+   "id": 11580,
+   "sha256": "91388b00f7e115df128a5f23cb83796a32aeef5f80391b45c60d4afd4f852616",
+   "text": "Portas de"
+  },
+  {
+   "kind": "entry",
+   "id": 11581,
+   "sha256": "987574a3be9eb8dc1e533328cd097b31daca4cdc0cd5769ec647bff6dcb11370",
+   "text": "Porta Velha, Porta do Peixe, Porta das Ovelhas, Porta da Prisão"
+  },
+  {
+   "kind": "entry",
+   "id": 11582,
+   "sha256": "fd30e5069b1fc50f2f9de68b0c0add3bbba6f76e9248c8cea5cd8903227830a8",
+   "text": "Porta de Efraim"
+  },
+  {
+   "kind": "entry",
+   "id": 11583,
+   "sha256": "8f760d26154fa20f54472d97118e70546c31627153dc242bc2de8bf8867c182a",
+   "text": "Porta de Benjamim"
+  },
+  {
+   "kind": "entry",
+   "id": 11584,
+   "sha256": "beb845680a92f24668d265678f5d62dc5f9fad17b47a1d1be192ae134836c19a",
+   "text": "Porta de Josué"
+  },
+  {
+   "kind": "entry",
+   "id": 11585,
+   "sha256": "1d8489c5f8f23cff228273ad827e341c6f1665f432e2d4811d5e8a6aafdcbc12",
+   "text": "Porta Velha"
+  },
+  {
+   "kind": "entry",
+   "id": 11586,
+   "sha256": "7d9449f7ca5af74b8e38f766142a82896687ee25627a48b9e83ddb316525b0c4",
+   "text": "Porta da Esquina"
+  },
+  {
+   "kind": "entry",
+   "id": 11587,
+   "sha256": "3c8d715fcba19d38b27e28d0b64cea8d38080bfad15d4239b765cd296ee55285",
+   "text": "Porta do Vale"
+  },
+  {
+   "kind": "entry",
+   "id": 11588,
+   "sha256": "b9e2a94d67232af4af36e2b0929890cebc054555ef96046df363a4427b63937e",
+   "text": "Porta do Monturo"
+  },
+  {
+   "kind": "entry",
+   "id": 11589,
+   "sha256": "c0a25cf20f6ae08c297af5b78b688483fdbbd3d713faa0fcff4b5c34f3e91bae",
+   "text": "Porta da Fonte"
+  },
+  {
+   "kind": "entry",
+   "id": 11590,
+   "sha256": "11525daa5931651073929538e400296a825e750b2b9314c9430c60e84e0f297d",
+   "text": "Porta das Águas"
+  },
+  {
+   "kind": "entry",
+   "id": 11591,
+   "sha256": "2bdeec54a929abaa6a0b16f1af10cd522c02335a2a4e7200eb48895d4c469353",
+   "text": "Porta dos Cavalos"
+  },
+  {
+   "kind": "entry",
+   "id": 11592,
+   "sha256": "44985cad82561774185cd5e41abcb11d042751fbad6aa26b6d0bd77a20d618c4",
+   "text": "Porta do Rei"
+  },
+  {
+   "kind": "entry",
+   "id": 11593,
+   "sha256": "e9fd696436975d2e080ada7b17dc5f991b5ab34bb8b892261c77a1b4ec8b0b81",
+   "text": "Salequete"
+  },
+  {
+   "kind": "entry",
+   "id": 11594,
+   "sha256": "ef1899eb85ae77ba1db418a984ad469463041eb2d4c07044ca73ba719bee56fc",
+   "text": "Porta Superior"
+  },
+  {
+   "kind": "entry",
+   "id": 11595,
+   "sha256": "3fba8df86ecd4c1fcc978cc8c8730c262885932c1ab1faf23a59f9728f6d57d3",
+   "text": "Porta Oriental"
+  },
+  {
+   "kind": "entry",
+   "id": 11596,
+   "sha256": "d77bd3ffaccc8741f069339e0b3afe4ff5d70e73aa18f781642f2db89547944a",
+   "text": "Mifcade"
+  },
+  {
+   "kind": "entry",
+   "id": 11597,
+   "sha256": "520f0552f3e10ffac806f821d79f625541eae4cb521eb59ef10d614657d3a9c2",
+   "text": "Porta do Meio"
+  },
+  {
+   "kind": "entry",
+   "id": 11598,
+   "sha256": "49d795fef11df3e6bf0f344aab1065895b2ed289563b03a967de9a933c81e3d1",
+   "text": "Primeira Porta"
+  },
+  {
+   "kind": "entry",
+   "id": 11599,
+   "sha256": "4e0445c4bd44edf241d348abfcecf65d117c5626c5007206526281c77ff109b0",
+   "text": "Edifícios"
+  },
+  {
+   "kind": "entry",
+   "id": 11600,
+   "sha256": "4bb1a3d49ea46893c495ea015dc2a2ed01b324a37e685d16dad9c488c687c381",
+   "text": "Palácio do sumo sacerdote"
+  },
+  {
+   "kind": "entry",
+   "id": 11601,
+   "sha256": "419fb3b818e6e1061468f96a4e30a1831b2a1bf3bfaf4cb080e207e70db53d38",
+   "text": "Fortaleza"
+  },
+  {
+   "kind": "entry",
+   "id": 11602,
+   "sha256": "aa8f3790a6a1e56b1d287994edcaf7e1420e0e8bb66b8b5c07bf0533f132857e",
+   "text": "Escadas"
+  },
+  {
+   "kind": "entry",
+   "id": 11603,
+   "sha256": "74f2a523c751aaccb9e98e3434955b70143c841ffbcce2ead4b41bdbd54bc23d",
+   "text": "Ruas"
+  },
+  {
+   "kind": "entry",
+   "id": 11604,
+   "sha256": "32f8a648c70b9745625e47fe0c123aaf882d5535065fb827a0dd063f447d225d",
+   "text": "Rua do Oriente"
+  },
+  {
+   "kind": "entry",
+   "id": 11605,
+   "sha256": "c47b51108fdb8c728a0bdb270f70ab786d7b4b9e6beb47bdf44cbb08e908d55a",
+   "text": "Rua da Casa de Deus"
+  },
+  {
+   "kind": "entry",
+   "id": 11606,
+   "sha256": "ab710b49bdc54ab2c73658c0e4af6509864966593b1f681dcabed1732eb3ba62",
+   "text": "Rua da Porta das Águas, Porta de Efraim"
+  },
+  {
+   "kind": "entry",
+   "id": 11607,
+   "sha256": "31e5bb1956e5b074739bc9338eaf687b1cc2ef4dffb45d3294adf69b81f0af5b",
+   "text": "Rua dos Padeiros"
+  },
+  {
+   "kind": "entry",
+   "id": 11608,
+   "sha256": "0bcfbfc3966d022aaf2d98b2367c8022817fc7dec9abccd0b0219ad72480e4c1",
+   "text": "Torres de"
+  },
+  {
+   "kind": "entry",
+   "id": 11609,
+   "sha256": "4feeb048eecf24fe3f6390f4f4a20c6e5507e49d9f747cd3fe72a31bbc4e4e25",
+   "text": "Lugares em e ao redor de"
+  },
+  {
+   "kind": "entry",
+   "id": 11610,
+   "sha256": "cd125cf2fb38afa24a800030037e303c5a82e28ed613c56c8808b9e734122e28",
+   "text": "Moriá"
+  },
+  {
+   "kind": "entry",
+   "id": 11611,
+   "sha256": "f094ce6e9ccdcf86316b9f1881b5aa28e3230e3d241f2fbf9c120a9d5c8f556d",
+   "text": "O sepulcro de Jesus"
+  },
+  {
+   "kind": "entry",
+   "id": 11612,
+   "sha256": "8a2a0b09f3d0026cbc1381f84c5ef1076eba7aeb052b43711ad6d07ee28800fc",
+   "text": "Medida de, na visão de Ezequiel"
+  },
+  {
+   "kind": "entry",
+   "id": 11613,
+   "sha256": "4e7080eefee4cb58413f3dfe27f839ee366524ced8ebeb895f7151f472eedfa4",
+   "text": "Nomes das portas de, na visão de Ezequiel"
+  },
+  {
+   "kind": "entry",
+   "id": 11614,
+   "sha256": "4aa5ea4171ba47e58ea9aaa136bd2a7a8992a37a05304128fc40c47387434a2b",
+   "text": "A capital do reino de Davi por designação divina"
+  },
+  {
+   "kind": "entry",
+   "id": 11615,
+   "sha256": "08512851b3fba3bd7a8d5822ce0ea22072abb55918e7bf42412f173fba0b3c91",
+   "text": "Será chamada trono de Deus"
+  },
+  {
+   "kind": "entry",
+   "id": 11616,
+   "sha256": "dc886e2142f3abc2c1f95b497b3ae1cbaa0a4f031d3c0a2e57dd81c2b8a4bc0c",
+   "text": "Os principais levitas moravam em"
+  },
+  {
+   "kind": "entry",
+   "id": 11617,
+   "sha256": "3f118e32fe3b48414781f1f5abc4c7d94fd8ad17c3ff7146b3b1125d5ae72909",
+   "text": "O sumo sacerdote morava em"
+  },
+  {
+   "kind": "entry",
+   "id": 11618,
+   "sha256": "0c9a7cd8864699a34168514d56c69840c7e6974a69fe4aa51daa20e3180ec982",
+   "text": "Festas anuais celebradas em"
+  },
+  {
+   "kind": "entry",
+   "id": 11619,
+   "sha256": "0f67514b901da8b9c613167848294cb0010b3c0e696732aa1a0c9737e5be69b1",
+   "text": "E"
+  },
+  {
+   "kind": "entry",
+   "id": 11620,
+   "sha256": "2b166f8614f18abb3640416a575503abd5aa40fb4a7282378c15c264a75c7006",
+   "text": "As orações dos israelitas eram feitas em direção a"
+  },
+  {
+   "kind": "entry",
+   "id": 11621,
+   "sha256": "3111f6a12f1828c3a8bd79fd4cccc2eafc501e80f6ed1e0c40697dcf4208bd73",
+   "text": "Amada"
+  },
+  {
+   "kind": "entry",
+   "id": 11622,
+   "sha256": "46c528cff826cc0347e3ddc6cff14fdf4a6a1b6d2333d545cd608e2b2fa39047",
+   "text": "Juramentos feitos em nome de"
+  },
+  {
+   "kind": "entry",
+   "id": 11623,
+   "sha256": "981b8c8ac35a412957a98e3c4f38261a30bd83b3b118480f51ac88623118c788",
+   "text": "Melquisedeque foi o antigo rei e sacerdote de"
+  },
+  {
+   "kind": "entry",
+   "id": 11624,
+   "sha256": "929695c7ac9335303d518bbe031ab2bc02c21523fc9e48b219892f06fcbaf885",
+   "text": "Rei de, aliado aos outros quatro reis dos amorreus contra Josué e os exércitos de Israel"
+  },
+  {
+   "kind": "entry",
+   "id": 11625,
+   "sha256": "2256d32873fcf5c44926550c154933521a59d107d2eaca5610db1a5dd49df7a3",
+   "text": "Os reis confederados derrotados, e o rei de Jerusalém morto por Josué"
+  },
+  {
+   "kind": "entry",
+   "id": 11626,
+   "sha256": "28a5d4c00e9a885d92af1ca896c322ea575007b40f4e1325f98de0928d11d913",
+   "text": "Cabe a Benjamim na repartição da terra de Canaã"
+  },
+  {
+   "kind": "entry",
+   "id": 11627,
+   "sha256": "2586acb3fb1aa695a7c8edc4b7fa63e3ad4d06dc0fceab25dbd4e982c87f2780",
+   "text": "Conquista de, feita por Davi"
+  },
+  {
+   "kind": "entry",
+   "id": 11628,
+   "sha256": "b50877544d47b6575889ec935c53e06d7d03bfb0d513770cd610765ee832a28a",
+   "text": "Os habitantes de, não expulsos"
+  },
+  {
+   "kind": "entry",
+   "id": 11629,
+   "sha256": "b9e7a1a13876f3b250e7d0f4844d40671d01a4649f68d48da99e68c4ff4bfac5",
+   "text": "Conquista do Monte Sião, em, feita por Davi"
+  },
+  {
+   "kind": "entry",
+   "id": 11630,
+   "sha256": "19fa3433509adaedf43e77f084af9fe66cf31dd874b4dd79c6137b5dbd8785ec",
+   "text": "A fortaleza do Monte Sião, ocupada por Davi, e chamada CIDADE DE DAVI"
+  },
+  {
+   "kind": "entry",
+   "id": 11631,
+   "sha256": "d7ea6d0d5662e2cccafd4fb1341171fd5f4f59d1b2c39432ea3887b49e1d46a7",
+   "text": "A arca da aliança trazida para, por Davi"
+  },
+  {
+   "kind": "entry",
+   "id": 11632,
+   "sha256": "7980f6b4aa496fae8a37c78dad70ab3ff2510d3d4e2291593b58a5fa94763842",
+   "text": "A eira de Araúna dentro da fortaleza de"
+  },
+  {
+   "kind": "entry",
+   "id": 11633,
+   "sha256": "4613909ff67fe891f16b3e4b7a08131b21cde80916332253e908e8f7179ed158",
+   "text": "Davi compra a eira de Araúna e nela ergue um altar"
+  },
+  {
+   "kind": "entry",
+   "id": 11634,
+   "sha256": "7e36d4f6ca3af50028c02682651e75cdb27254dad304e2ad3ce199cbdc0a66b5",
+   "text": "A cidade construída ao redor da fortaleza"
+  },
+  {
+   "kind": "entry",
+   "id": 11635,
+   "sha256": "4109028742eda3b1c53f425abd8542b5c7af288742edabd9c6dacd96ee372aff",
+   "text": "Fortificada por Salomão"
+  },
+  {
+   "kind": "entry",
+   "id": 11636,
+   "sha256": "4a47267cb7e0f2269288270957e911adf9329a120bff6bd07c94ec9f660453ee",
+   "text": "O templo construído dentro da fortaleza"
+  },
+  {
+   "kind": "entry",
+   "id": 11637,
+   "sha256": "1095ad51796a12283a87f181eff3fd05f4647b5b40257233dec01de0f2888095",
+   "text": "Tomada e saqueada por"
+  },
+  {
+   "kind": "entry",
+   "id": 11638,
+   "sha256": "06e669df31fdf208766995c2b5d3a9c70da136a5a9311cf022702631a0fdbf4c",
+   "text": "Sisaque, rei do Egito"
+  },
+  {
+   "kind": "entry",
+   "id": 11639,
+   "sha256": "8f9f1c06c7e3757cfeba6c59efd62e421fa932f436b8a544389858fa4d22122b",
+   "text": "Jeoás, rei de Israel"
+  },
+  {
+   "kind": "entry",
+   "id": 11640,
+   "sha256": "7a071c62eb06534658bb166a4f1011c03e3f890609ee4727aecc752a3c565643",
+   "text": "Nabucodonosor, rei da Babilônia"
+  },
+  {
+   "kind": "entry",
+   "id": 11641,
+   "sha256": "99c33869447b4c8f21388232d19f428390f94f4beaec49c60d440b02181bcba0",
+   "text": "Muros de, restaurados e fortificados por"
+  },
+  {
+   "kind": "entry",
+   "id": 11642,
+   "sha256": "2672debd94cfbafde47ea91d97dfb0731c10a7336c439116dfe596e3225c9043",
+   "text": "Uzias"
+  },
+  {
+   "kind": "entry",
+   "id": 11643,
+   "sha256": "2505beb5f16afb85319fb772009f2e7c7e9050e87b15376cf2bffe631e2e5708",
+   "text": "Jotão"
+  },
+  {
+   "kind": "entry",
+   "id": 11644,
+   "sha256": "7b0f70c5de160e75f20268f06466a7d79b93bcf87c2864c6f2047b39bd7cabcc",
+   "text": "Manassés"
+  },
+  {
+   "kind": "entry",
+   "id": 11645,
+   "sha256": "87c8ee7691fc9a55f3ec4cac2c7d4b63eabbc5d2572f312a09b8774d9de0d63e",
+   "text": "Abastecimento de água trazido do ribeiro de Giom por Ezequias"
+  },
+  {
+   "kind": "entry",
+   "id": 11646,
+   "sha256": "aa3379a94e6c1f7913fe3c552c6e2e826bf76588621e3159f8c8eca835ca24e9",
+   "text": "Sitiada por"
+  },
+  {
+   "kind": "entry",
+   "id": 11647,
+   "sha256": "0bf978fe5335f1dd79521d85ed99fe09d563ce5b3978a4e3a0dd4e8e8b25cfc0",
+   "text": "Peca"
+  },
+  {
+   "kind": "entry",
+   "id": 11648,
+   "sha256": "5c2141d54db8606d539476c016415ee1c5336767616af6ce3d1079828b364b9f",
+   "text": "Os filisteus"
+  },
+  {
+   "kind": "entry",
+   "id": 11649,
+   "sha256": "242db4644ccf8de7eece5c61c6ab98e5ca68ad88c6696c1894a818ed933a0ce9",
+   "text": "Senaqueribe"
+  },
+  {
+   "kind": "entry",
+   "id": 11650,
+   "sha256": "7626defd133bf93d35fa3c227a1d56a5ce6a15740c8f32622546bead89a1c075",
+   "text": "Reconstrução de, ordenada por proclamação de Ciro"
+  },
+  {
+   "kind": "entry",
+   "id": 11651,
+   "sha256": "65f77927e2697542dad15f565b1385d64cfe651546c30fecd8a6665b98d0227c",
+   "text": "Reconstruída por Neemias sob a direção de Artaxerxes"
+  },
+  {
+   "kind": "entry",
+   "id": 11652,
+   "sha256": "11447b49b773db082e5c96055bd9d888915167edf1fc445deb3b5fa8a1156fa1",
+   "text": "Muro de, dedicado"
+  },
+  {
+   "kind": "entry",
+   "id": 11653,
+   "sha256": "a535278c5ca4cba3b0d4210cb299652d4029c20ae141df16dd6ffb8d63c76095",
+   "text": "O templo restaurado"
+  },
+  {
+   "kind": "entry",
+   "id": 11654,
+   "sha256": "5bcf0dba1aa5fec5a74e475334a0bfce7cc58a34b76ae3e282b6772b6e4953ca",
+   "text": "Governantes romanos que residiram em"
+  },
+  {
+   "kind": "entry",
+   "id": 11655,
+   "sha256": "ef93ed0417993ac1f4626dbbb897908f293c336707023ae1d1f222c5815c0ba1",
+   "text": "Herodes (Herodes, o Grande)"
+  },
+  {
+   "kind": "entry",
+   "id": 11656,
+   "sha256": "e8bfbd7c9091617bb12f4a5646e2feaeca294c2507068c4ccd2991a25de0768c",
+   "text": "Pôncio Pilatos"
+  },
+  {
+   "kind": "entry",
+   "id": 11657,
+   "sha256": "b45b204c2a66867343d5eef857e65ad2c5d385a162829df1a53db02b704bf20f",
+   "text": "Herodes (Herodes Agripa I)"
+  },
+  {
+   "kind": "entry",
+   "id": 11658,
+   "sha256": "9c67cf63291989b2fa95a3e522be4886190b6a97c72a666c04e7827c8036c6ee",
+   "text": "Vida e milagres de Jesus ligados a"
+  },
+  {
+   "kind": "entry",
+   "id": 11659,
+   "sha256": "423024ba8a4724b2fcfdb88476a5e175c79bf1b34b4728ce3d7a4e31c4d52afd",
+   "text": "O evangelho pregado primeiro em"
+  },
+  {
+   "kind": "entry",
+   "id": 11660,
+   "sha256": "6ad14ca6fc13a6f7ec0b9bb1e72f24ca7a52f75b695b3579f670eef7bd3023ba",
+   "text": "Um avivamento ocorre no dia de Pentecostes em"
+  },
+  {
+   "kind": "entry",
+   "id": 11661,
+   "sha256": "5d12e04a4054f75a3895ed7759d063c625f4ef6dff0ac0ed1c57a7b58830bbc4",
+   "text": "Estêvão martirizado em"
+  },
+  {
+   "kind": "entry",
+   "id": 11662,
+   "sha256": "d3e79fe8463b804420a94d15c85535b9dd2066678e2eef0815020281e23c2680",
+   "text": "Discípulos perseguidos e dispersos de"
+  },
+  {
+   "kind": "entry",
+   "id": 11663,
+   "sha256": "f3becd4bd1c37f2f284579fa0c2dc0a8392c0fc3cfe24e91d4f68e52cb736c5e",
+   "text": "(Para os fatos pessoais ocorridos nela, veja as biografias das pessoas)"
+  },
+  {
+   "kind": "entry",
+   "id": 11664,
+   "sha256": "30a43b8999aeea7821dfd22f132c48090009febe78245bf1edc41e2f9af7b7fe",
+   "text": "Maldade de"
+  },
+  {
+   "kind": "entry",
+   "id": 11665,
+   "sha256": "be2b46e446a9c0f11c2c6de0138f1fa9d0438260ffbe861efbfec85a92cfa3f3",
+   "text": "Lista das abominações em"
+  },
+  {
+   "kind": "entry",
+   "id": 11666,
+   "sha256": "fac9f40f5c5be926fb7ba0f7e6ae8f51aff1566d677c7e9436220939e239265b",
+   "text": "Levou Judá a pecar"
+  },
+  {
+   "kind": "entry",
+   "id": 11667,
+   "sha256": "776732789fe1f4f2a9be9cecee348aca4b56dd4b91cc7c47e8bda0e4b8f13aa5",
+   "text": "Profecias contra"
+  },
+  {
+   "kind": "entry",
+   "id": 11668,
+   "sha256": "94d5e3cacfb7290a640817f64e38cfcf105f5cbe0054b5db14645f6a868a773e",
+   "text": "De peste, fome e guerra em"
+  },
+  {
+   "kind": "entry",
+   "id": 11669,
+   "sha256": "3b531f5456970cbaa2a20b15c4d428c7660dce8c4c1939d66fdb1462af69d402",
+   "text": "Da destruição de"
+  },
+  {
+   "kind": "entry",
+   "id": 11670,
+   "sha256": "444ece603e7a4e2dd99b632661e4f1f39f88168763ff4f8b92a1c1223a7afe42",
+   "text": "Destruição de, predita por Jesus"
+  },
+  {
+   "kind": "entry",
+   "id": 11671,
+   "sha256": "cf8c3008f2e591000772f83f76519bf238583c480987c2f0bcc8be9391fb128a",
+   "text": "Profecias da reconstrução de"
+  },
+  {
+   "kind": "entry",
+   "id": 11672,
+   "sha256": "fa36befd4b68499df9206c6193797601a69abe9807089797fd34ff7728721297",
+   "text": "Da restauração final de"
+  },
+  {
+   "kind": "entry",
+   "id": 11673,
+   "sha256": "7f607ea3cec57d762c63c5e8d8751e6b947891223e84b61aea82c284abe0720e",
+   "text": "Notícias históricas de"
+  },
+  {
+   "kind": "entry",
+   "id": 11674,
+   "sha256": "cac5fadc2ce811272d60d051e6b78d13cd3cb8c1949d0c03051f0c83b0e45155",
+   "text": "Melquisedeque foi o antigo rei de"
+  },
+  {
+   "kind": "topic",
+   "id": 2763,
+   "sha256": "b68561e8e86bc770539858f9f12d4b5b96e91211d8dc9e5afd3ee2ed04835b6a",
+   "text": "Jerusa"
+  },
+  {
+   "kind": "entry",
+   "id": 11675,
+   "sha256": "047661a761e7af0714e8f868deb161a41516aa4f01f51f31576dbc2d8bc9ab9e",
+   "text": "Filha de Zadoque"
+  },
+  {
+   "kind": "topic",
+   "id": 2764,
+   "sha256": "4f6f1ee79bb31bca65921dee5f0ed55400f91fdf6bb70e1bbfc056e6a3f3c416",
+   "text": "Jesaías"
+  },
+  {
+   "kind": "entry",
+   "id": 11676,
+   "sha256": "7d4d5cce7ca884167cf1e1e1680f054f158b8dbe43ba5a8639baa5d94a463851",
+   "text": "1. Também chamado JESAÍAS"
+  },
+  {
+   "kind": "entry",
+   "id": 11677,
+   "sha256": "f9c49b53c6eeaf11275bd54ad80162eed315e7785d780594c28fd39d43422bad",
+   "text": "Neto de Zorobabel"
+  },
+  {
+   "kind": "entry",
+   "id": 11678,
+   "sha256": "4672279739e95085d7191d5c9ee1ca5499765ddaec0438959c72e8458307c7f2",
+   "text": "2. Filho de Jedutum"
+  },
+  {
+   "kind": "entry",
+   "id": 11679,
+   "sha256": "deacad1b768de8341e13d10a81a47ea45d710acf38d35b1d61da51248eac8e56",
+   "text": "3. Neto de Eliézer"
+  },
+  {
+   "kind": "entry",
+   "id": 11680,
+   "sha256": "e4123a3b5ce15c652bdb0fb22e5d9698f8286e9f72b378128734ff76312b2c6e",
+   "text": "4. Um judeu da família de Elão, que voltou do exílio"
+  },
+  {
+   "kind": "entry",
+   "id": 11681,
+   "sha256": "6471e5a727e9414bccb5b7f587d5fa54d5257f27e1e3b0b2b2c73e6a1cb1c60f",
+   "text": "5. Um levita que se uniu a Esdras para voltar a Jerusalém"
+  },
+  {
+   "kind": "entry",
+   "id": 11682,
+   "sha256": "ee077001b61fd78b265c3c35d9b481d60f295b24416ba6aaecc079147a913f8d",
+   "text": "6. Um benjamita, escolhido por sorteio para morar em Jerusalém depois do exílio"
+  },
+  {
+   "kind": "topic",
+   "id": 2765,
+   "sha256": "d7f9661a1ec0addc147e9e74553011c6af37a46f4feb4a7b3b02dfcc4b03ae98",
+   "text": "Jesana"
+  },
+  {
+   "kind": "entry",
+   "id": 11683,
+   "sha256": "4b63328aaa82570e2f2fdbe9ba65a85234391619f07054cd062e60f5856a00f1",
+   "text": "Uma cidade no lado norte de Benjamim"
+  },
+  {
+   "kind": "topic",
+   "id": 2766,
+   "sha256": "3371ef0b080db9091dacbe24d8215c3fe37922168ab9aee5ef9b537dce1b7187",
+   "text": "Jesarela"
+  },
+  {
+   "kind": "entry",
+   "id": 11684,
+   "sha256": "490039eebaae08547deab53721b5ad858a1a7ae963b4a3115a7ca2d84a8b5671",
+   "text": "Um levita, líder de coro"
+  },
+  {
+   "kind": "topic",
+   "id": 2767,
+   "sha256": "5327c8dfc531baaa7342f1dcc63415d8a2a7c7810d297394cf95a35f7a26cdb5",
+   "text": "Jesebeabe"
+  },
+  {
+   "kind": "entry",
+   "id": 11685,
+   "sha256": "e9d96f8901dddbfd2fee0c4032aa22799853a416eea8ee5d17b719a5214b1da2",
+   "text": "Um sacerdote, e chefe do décimo quarto turno"
+  },
+  {
+   "kind": "topic",
+   "id": 2768,
+   "sha256": "b57a578ec5cca5dfdf047c7f4cda2cfc82534bd66c7d08c2a06d6dc5fb79444f",
+   "text": "Jeser"
+  },
+  {
+   "kind": "entry",
+   "id": 11686,
+   "sha256": "13fb5ac45dff31952735b493fe4d7bad2c3edf556c4830e0fa0a7e87543878d2",
+   "text": "Filho de Calebe"
+  },
+  {
+   "kind": "topic",
+   "id": 2769,
+   "sha256": "7830b77fb3a1ba55a464b4a473a0a9b18241083780e04ea34b7a09c8248b5049",
+   "text": "Jesimom"
+  },
+  {
+   "kind": "entry",
+   "id": 11687,
+   "sha256": "228287193b742f065186ef0508875261082df2198439cb1f7982d86f83538b79",
+   "text": "1. Um lugar na península do Sinai, a leste do rio Jordão"
+  },
+  {
+   "kind": "entry",
+   "id": 11688,
+   "sha256": "c223b59fe39ca4fbaf63c699f6e6aab5611bc537465c6b1e5be3820856fcfd63",
+   "text": "2. Um lugar no deserto de Judá"
+  },
+  {
+   "kind": "topic",
+   "id": 2770,
+   "sha256": "011391820d39ac5a8d1c229332ecff220409248837844a7223ff5024058ce459",
+   "text": "Jesisai"
+  },
+  {
+   "kind": "entry",
+   "id": 11689,
+   "sha256": "08765b33822c398dedcf9d78f5e2e6ff4c093fce2112fcbb4bfdefc6def68619",
+   "text": "Um gadita"
+  },
+  {
+   "kind": "topic",
+   "id": 2771,
+   "sha256": "cefa51cb8fa26902c20f0877e98e571d4df150cd1672549d9b31681c9003f5ec",
+   "text": "Jesoaías"
+  },
+  {
+   "kind": "entry",
+   "id": 11690,
+   "sha256": "c1bb30bdc11279b4d0e1d4526130d4bafd1560674710bef14983faf0fd4d7f13",
+   "text": "Um descendente de Simeão"
+  },
+  {
+   "kind": "topic",
+   "id": 2772,
+   "sha256": "7ddf69289c32ba4e90256bec2ac37e33fe2686006bb8df03a174d7a2b7838b50",
+   "text": "Jesua"
+  },
+  {
+   "kind": "entry",
+   "id": 11691,
+   "sha256": "5547584cbc270698bf9cdb0c9c6a61cf154797567d7d0e3a858b53ed9342719f",
+   "text": "1. Também chamado JESUA"
+  },
+  {
+   "kind": "entry",
+   "id": 11692,
+   "sha256": "75778c3061944e9dcd8ff32d9f8d50bfb3fcbb65319e5bb16f6311de4ec2c402",
+   "text": "Um sacerdote, chefe do nono turno"
+  },
+  {
+   "kind": "entry",
+   "id": 11693,
+   "sha256": "ca972c095905973c69bedc08a3d7ce979f5c3bafdc48ebd6533e12ca7247537d",
+   "text": "973 de seus descendentes voltaram da Babilônia"
+  },
+  {
+   "kind": "entry",
+   "id": 11694,
+   "sha256": "59e69f57dade37ff4165548a9fe30304d009562a09328b03d0693ac5b69aed14",
+   "text": "2. Um levita que cuidava dos dízimos"
+  },
+  {
+   "kind": "entry",
+   "id": 11695,
+   "sha256": "804e518238412153985b437cb529c61837b776373605fcbeb90a45b2932a9de9",
+   "text": "Seus descendentes voltaram com Esdras da Babilônia"
+  },
+  {
+   "kind": "entry",
+   "id": 11696,
+   "sha256": "94f38f1092252fdfa804b9bfb34af7a344f8d9f4c1f7396c4a6267aa1c5b4a35",
+   "text": "3. Também chamado JOSUÉ"
+  },
+  {
+   "kind": "entry",
+   "id": 11697,
+   "sha256": "d39511579d52a3da07e4617d381373e5d6dc28ad4865e8061d3e5477eb3255ad",
+   "text": "Um sacerdote que acompanhou Zorobabel da Babilônia"
+  },
+  {
+   "kind": "entry",
+   "id": 11698,
+   "sha256": "40243e705ae47cd17eca71fa867cd9b5bd2b0567ab096257d6877dbb73e8425f",
+   "text": "Descendentes de"
+  },
+  {
+   "kind": "entry",
+   "id": 11699,
+   "sha256": "1ee3d23b7d38ab3473804a87ee74b8e55daded09d83dd8300f020bdcdb277c8c",
+   "text": "Reconstruiu o altar"
+  },
+  {
+   "kind": "entry",
+   "id": 11700,
+   "sha256": "21307283fb286139ca3b90a8c9dc32ad7d7806cd5807d6bb2bc6a68c95651519",
+   "text": "Reconstruiu o templo"
+  },
+  {
+   "kind": "entry",
+   "id": 11701,
+   "sha256": "e46f69ccd56feaadf4f0764608b32c3922fb644500b1ac6deaf7f90c41ec2a7b",
+   "text": "Luta contra os que procuravam impedir a reconstrução do templo"
+  },
+  {
+   "kind": "entry",
+   "id": 11702,
+   "sha256": "6e375d77eb0d1c44000f4c2b82bf5dfa403360704810ac61bba930e71a2bc471",
+   "text": "4. Pai de Jozabade"
+  },
+  {
+   "kind": "entry",
+   "id": 11703,
+   "sha256": "733ef61027d371f47fd82c82db14ee348103b9673ec4101043ba09a94e90ef79",
+   "text": "5. Filho de Paate-Moabe"
+  },
+  {
+   "kind": "entry",
+   "id": 11704,
+   "sha256": "6c3da2c7b5357376fe1db144450d521ecd28ab9d71b98118380200238ba51af6",
+   "text": "6. Pai de Ézer"
+  },
+  {
+   "kind": "entry",
+   "id": 11705,
+   "sha256": "3e61a91846008e8e8e1f8d29883e76dceff088bb2a5cb1b02d0a9cd7f6b43008",
+   "text": "7. Um levita que explicou a lei ao povo quando Esdras a leu em voz alta"
+  },
+  {
+   "kind": "entry",
+   "id": 11706,
+   "sha256": "d045d5c1f5c95ce73bd105a61f1be13f6cd2f58ca86c53085520b206acd35b63",
+   "text": "8. Um levita que selou a aliança de Neemias"
+  },
+  {
+   "kind": "entry",
+   "id": 11707,
+   "sha256": "c99a0579e531ea67cda71633ddd008f4b3b28ef4f7dffda980a7859fa34bc3f0",
+   "text": "9. Uma cidade da tribo de Judá"
+  },
+  {
+   "kind": "entry",
+   "id": 11708,
+   "sha256": "38c045208419d63364e57e670e0ebbeb0cf1af96047a349d9cf2d595e24eddd0",
+   "text": "10. Josué chamado"
+  },
+  {
+   "kind": "entry",
+   "id": 11709,
+   "sha256": "17be2c91cd44bc21b827e7cc553cd57c51acf87526e42e4cc945eea851bd1e2e",
+   "text": "Em sentido simbólico"
+  },
+  {
+   "kind": "entry",
+   "id": 11710,
+   "sha256": "2514cb3c77bd1feb51f487f75fbcd22d3a9743b6b076dcf153835b761bd4ef05",
+   "text": "Profecias sobre"
+  },
+  {
+   "kind": "topic",
+   "id": 2773,
+   "sha256": "2b86e26d4fbe8eb6a52b02e507e0c9b4490f79c3b63f8159bb3c03db5c910eeb",
+   "text": "Jesurum"
+  },
+  {
+   "kind": "entry",
+   "id": 11711,
+   "sha256": "b3efc65d23433123d3380339ad6f516298ea1203f6bd3f4b02a7f07318722109",
+   "text": "Um nome usado poeticamente para Israel"
+  },
+  {
+   "kind": "topic",
+   "id": 2774,
+   "sha256": "523f9f02af69f0889c0a6dc0ad4cafcbc02e10d5b33598c6ca96951ea93d9618",
+   "text": "Issias"
+  },
+  {
+   "kind": "entry",
+   "id": 11712,
+   "sha256": "4c060344881af21ad2135dc5807ef78e694c02926c7cd5c15ef634420c90022e",
+   "text": "1. Um israelita descontente que se uniu a Davi em Ziclague"
+  },
+  {
+   "kind": "entry",
+   "id": 11713,
+   "sha256": "45fcead57bfc302fa2a0ca5c186ffa64b47f7db55b73128ffd363c480aa8d252",
+   "text": "2. Um levita coatita"
+  },
+  {
+   "kind": "topic",
+   "id": 2775,
+   "sha256": "6539d86e35162a856677afb1fded51c34f3b062f856b4843ca204fc324063b00",
+   "text": "Jesimiel"
+  },
+  {
+   "kind": "entry",
+   "id": 11714,
+   "sha256": "c1bb30bdc11279b4d0e1d4526130d4bafd1560674710bef14983faf0fd4d7f13",
+   "text": "Um descendente de Simeão"
+  },
+  {
+   "kind": "topic",
+   "id": 2776,
+   "sha256": "1ecb9e6bdf6cc8088693c11e366415fe5c73662ecdf08f3df337924d8ea26adc",
+   "text": "Jessé"
+  },
+  {
+   "kind": "entry",
+   "id": 11715,
+   "sha256": "d407134d57b72b5fcc5aba5afe617a563de9550e4ed430834c31a93d8e147ed5",
+   "text": "Pai de Davi"
+  },
+  {
+   "kind": "entry",
+   "id": 11716,
+   "sha256": "5658b2a0e60681b52f4cdf251bd2a5101e312815cd025c1f10e8612b2de8da11",
+   "text": "Antepassado de Jesus"
+  },
+  {
+   "kind": "entry",
+   "id": 11717,
+   "sha256": "63e54c3afa5e62680f7eb52a748494c13ab0ac02f58651c153e61f87c6547cc3",
+   "text": "Samuel o visita, por ordem divina, para escolher entre seus filhos um sucessor de Saul"
+  },
+  {
+   "kind": "entry",
+   "id": 11718,
+   "sha256": "2d8275ba0a0db78da67c66acaec429b800b8bea1b275719e4c50260ddc475527",
+   "text": "Saul lhe pede que envie Davi para fazer parte de sua corte"
+  },
+  {
+   "kind": "entry",
+   "id": 11719,
+   "sha256": "85e61e12be07defe53635c0e17d8813dbebef888ebd28b7173191f15ca42a6fa",
+   "text": "Filhos no exército de Saul"
+  },
+  {
+   "kind": "entry",
+   "id": 11720,
+   "sha256": "20ec886a6978e9bd005f525f4b4256097bdc33a0f92cda3511a428e71cac8150",
+   "text": "Mora com Davi em Moabe"
+  },
+  {
+   "kind": "entry",
+   "id": 11721,
+   "sha256": "40243e705ae47cd17eca71fa867cd9b5bd2b0567ab096257d6877dbb73e8425f",
+   "text": "Descendentes de"
+  },
+  {
+   "kind": "topic",
+   "id": 2777,
+   "sha256": "fe52b1a14ca112404ed22ef19ced3702c43df096ead1ab54017c1d9334b50ab0",
+   "text": "Gracejos"
+  },
+  {
+   "kind": "entry",
+   "id": 11722,
+   "sha256": "1723c415ef0bfd46b134b70d6cd070c4ba0158323804723ffdf565b099a89509",
+   "text": "Tolos, proibidos"
+  },
+  {
+   "kind": "topic",
+   "id": 2778,
+   "sha256": "c2cec020c6b19697499bcfad0dcb334efe4af1317fdc5212bd929858831f268c",
+   "text": "Jesui"
+  },
+  {
+   "kind": "entry",
+   "id": 11723,
+   "sha256": "f6f5b4d49f895ca20560a7b453c1d3d3c87e55fe0ff45337071a8c70ed60bf90",
+   "text": "Um descendente de Aser"
+  }
+ ]
+}
