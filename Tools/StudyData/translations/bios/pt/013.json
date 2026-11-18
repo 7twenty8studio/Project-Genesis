@@ -1,0 +1,432 @@
+{
+ "batch": "013",
+ "lang": "pt",
+ "entries": [
+  {
+   "kind": "person",
+   "id": 1567,
+   "sha256": "7b7670f9db291a1db22fb0267a714e2ad94cf47e84834cc15008532637cc4458",
+   "text": "Doninha, profetisa; mulher de Salum. Foi consultada a respeito do “livro da lei” descoberto pelo sumo sacerdote Hilquias (2 Rs 22:14-20; 2 Cr 34:22-28). Residia na parte de Jerusalém chamada Mishneh (A.V., “o colégio;” R.V., “o segundo bairro”), que alguns supõem ser o subúrbio entre o muro interior e o exterior, a segunda cidade, ou cidade baixa, Acra. Miriã (Êx 15:20) e Débora (Jz 4:4) são as únicas outras que têm o título de “profetisa,” pois a palavra em Is 8:3 significa apenas a mulher do profeta."
+  },
+  {
+   "kind": "person",
+   "id": 1569,
+   "sha256": "931b878cd268bf48a81c01b2ba7a1c7be731467ffc0afaa88f86f0f6196676f1",
+   "text": "Geralmente “Hurão,” um dos filhos de Belá (1 Cr 8:5)."
+  },
+  {
+   "kind": "person",
+   "id": 1571,
+   "sha256": "8df4487553d33bdb2bbe9a39603b29dfe1472a73acf93140131ecf5bd536e352",
+   "text": "O marido de Miriã, irmã de Moisés (Êx 17:10-12). Esteve associado a Arão no encargo do povo quando Moisés esteve ausente no Sinai (Êx 24:14). Era provavelmente da tribo de Judá, e avô de Bezalel (Êx 31:2; 35:30; 1 Cr 2:19)."
+  },
+  {
+   "kind": "person",
+   "id": 1572,
+   "sha256": "0c621ddc2c0b4f10b40b0f9ff40001555335bdf2ff38aff18fef76746232c18d",
+   "text": "Um dos cinco príncipes de Midiã que foram derrotados e mortos pelos israelitas sob o comando de Fineias (Nm 31:8)."
+  },
+  {
+   "kind": "person",
+   "id": 1577,
+   "sha256": "b4a79c03fb070e1662f0a0b58f482a1ff1a7a9cac1b69645bfc0f15c55e54875",
+   "text": "Rápido, “o arquita,” “o amigo do rei” (1 Cr 27:33). Quando Davi fugiu de Jerusalém por causa da rebelião de Absalão e chegou ao cume do monte das Oliveiras, encontrou ali Husai, a quem mandou de volta a Jerusalém com o propósito de contrabalançar a influência de Aitofel, que se juntara às fileiras de Absalão (2 Sm 15:32, 37; 16:16-18). Foi por seu conselho que Absalão se absteve de perseguir Davi imediatamente. Com essa demora a causa de Absalão ficou arruinada, pois deu a Davi tempo para reunir as suas forças."
+  },
+  {
+   "kind": "person",
+   "id": 1584,
+   "sha256": "3fbb94d8dafbcf54053971f3549f481713cbdfc4bcfc1037dad9394dd8a48ed1",
+   "text": "Escolhido, um dos filhos de Davi (1 Cr 3:6; 2 Sm 5:15)."
+  },
+  {
+   "kind": "person",
+   "id": 1588,
+   "sha256": "e0e3cd8975ccdb4bd150868dc5860ae1e9e27bf5826b8380f6c680622afd96fd",
+   "text": "Ilustre, o décimo juiz de Israel (Jz 12:8-10). Governou sete anos."
+  },
+  {
+   "kind": "person",
+   "id": 1591,
+   "sha256": "176c45d29ba122145716ac4ec2bb80fbc4d0de2f59809aebc37efc62ba56cb7e",
+   "text": "Oportuno. O pai de Ainadabe, que foi um dos provedores de Salomão (1 Rs 4:14)."
+  },
+  {
+   "kind": "person",
+   "id": 1592,
+   "sha256": "1694c242683d5b91de3c0f12a06e73c52d74cc009f367e799fa447ec2670a6d1",
+   "text": "Oportuno (1 Cr 6:21). Um levita gersonita."
+  },
+  {
+   "kind": "person",
+   "id": 1593,
+   "sha256": "d658839acff7f309217abec6650f70fec43647f518cdd3f7f089ee1720cf137a",
+   "text": "Amável. O filho de Zacarias (1 Cr 27:21), o governante de Manassés no tempo de Davi."
+  },
+  {
+   "kind": "person",
+   "id": 1594,
+   "sha256": "4c5189a03f402dff745c18d315b0c763d76cc711ff8be7cbf560c1ea8046ae30",
+   "text": "Amável. Profeta de Judá que escreveu a história de Roboão e de Abias (2 Cr 12:15). Tem sido identificado com Obede (2 Cr 15:1)."
+  },
+  {
+   "kind": "person",
+   "id": 1598,
+   "sha256": "558dd835dfd87a894dbcfec28a271a392c36b335617c54c255e5cca82f690e54",
+   "text": "Nm 13:7, um dos espias da tribo de Issacar."
+  },
+  {
+   "kind": "person",
+   "id": 1599,
+   "sha256": "3dac1aee7356b3a5b1b6da9049a7bd90afa04e660d60318a6483fa3154077398",
+   "text": "Filho de Natã, de Zobá, e um dos guerreiros de Davi (2 Sm 23:36)."
+  },
+  {
+   "kind": "person",
+   "id": 1601,
+   "sha256": "60f510ccd064986cbdb350232525cb5ca116d82430bf741a8b4a1fd0923f9c00",
+   "text": "Um filho de Bilã, neto de Benjamim (1 Cr 7:10)."
+  },
+  {
+   "kind": "person",
+   "id": 1602,
+   "sha256": "89d6d5dc91193b27c3501237dab7f71ba270f1dea6fb14a9ed5be7504114818d",
+   "text": "Um levita, um dos filhos de Simei (1 Cr 23:10, 11)."
+  },
+  {
+   "kind": "person",
+   "id": 1603,
+   "sha256": "56b4be8b34db8d74ade03c126de8f818161088c5f9d87fe7627994a6a25daa43",
+   "text": "Um dos três filhos de Roboão (2 Cr 11:19)."
+  },
+  {
+   "kind": "person",
+   "id": 1605,
+   "sha256": "6dd4825452b11a85a72568d7e5b14de02a755a98e3c87e35caf404abd388f7d1",
+   "text": "Casta, filha de Etbaal, rei dos sidônios, e mulher de Acabe, rei de Israel (1 Rs 16:31). Foi essa a “primeira vez que um rei de Israel se aliou por casamento a uma princesa pagã; e a aliança foi, neste caso, de um tipo particularmente desastroso. Jezabel gravou o seu nome na história como a representante de tudo o que é intrigante, astuto, malicioso, vingativo e cruel. É a primeira grande instigadora de perseguição contra os santos de Deus. Não guiada por princípio algum, não refreada por nenhum temor de Deus ou dos homens, apaixonada em seu apego ao culto pagão, não poupou esforços para manter a idolatria à sua volta em todo o seu esplendor. Quatrocentos e cinquenta profetas ministravam a Baal sob os seus cuidados, além de quatrocentos profetas dos bosques [R.V., ‘profetas de Aserá’], que comiam à sua mesa (1 Rs 18:19). A idolatria, além disso, era do tipo mais degradado e sensual.” Sua conduta foi, em muitos aspectos, muito desastrosa para o reino, tanto de Israel como de Judá (21:1-29). Por fim teve um fim prematuro. Quando Jeú entrava a cavalo pelas portas de Jezreel, ela olhou pela janela do palácio e disse: “Sucedeu bem a Zinri, que matou a seu senhor?” Ele olhou para cima e chamou os camareiros dela, que imediatamente a lançaram pela janela, de modo que ela se despedaçou na rua, e os cavalos dele a pisaram com os pés. Foi logo devorada pelos cães da rua (2 Rs 9:7-37), segundo a palavra de Elias, o tisbita (1 Rs 21:19).\n\n Seu nome veio a ser usado depois como sinônimo de mulher perversa (Ap 2: 20).\n\n Pode-se notar que se diz ter sido ela tia-avó de Dido, a fundadora de Cartago."
+  },
+  {
+   "kind": "person",
+   "id": 1608,
+   "sha256": "5326a40c111dbd2f261671db9e15fc98c3acb6852b35f803a69219d01cb9798e",
+   "text": "Reunido por Deus, filho de Azmavete. Foi um dos arqueiros benjamitas que se juntaram a Davi em Ziclague (1 Cr 12:3)."
+  },
+  {
+   "kind": "person",
+   "id": 1617,
+   "sha256": "b471b3c38ba8352571e4a21e2db6ca02c5b683f23bda6dd22cc5d2bcd394566d",
+   "text": "Um dos três filhos de Zeruia, irmã de Davi, e “comandante do exército” durante todo o reinado de Davi (2 Sm 2:13; 10:7; 11:1; 1 Rs 11:15). O nome de seu pai não é mencionado em parte alguma, embora seu sepulcro em Belém seja mencionado (2 Sm 2:32). Seus dois irmãos eram Abisai e Asael, o ligeiro de pés, que foi morto por Abner (2 Sm 2:13-32), a quem Joabe depois assassinou traiçoeiramente (3:22-27). Mais tarde comandou o assalto na tomada da fortaleza do Monte Sião, e por esse serviço foi elevado à posição de “príncipe do exército do rei” (2 Sm 5:6-10; 1 Cr 27:34). Seus principais feitos militares foram: (1) contra as forças aliadas da Síria e de Amom; (2) contra Edom (1 Rs 11:15, 16); e (3) contra os amonitas (2 Sm 10:7-19; 11:1, 11). Seu caráter está profundamente manchado pela parte que tomou de bom grado no assassinato de Urias (11:14-25). Agiu, ao que parece, por senso de dever ao matar Absalão (18:1-14). Davi esqueceu-se dos muitos serviços que Joabe lhe prestara e depois deu o comando do exército a Amasa, primo de Joabe (2 Sm 20:1-13; 19:13). Quando Davi estava morrendo, Joabe abraçou a causa de Adonias, em preferência à de Salomão. Foi depois morto por Benaia, por ordem de Salomão, de acordo com a recomendação de seu pai (2 Sm 3:29; 20:5-13), junto ao altar onde se refugiara. Assim morreu esse velho conspirador, sem ninguém que levantasse a voz em seu favor. Foi sepultado em sua própria propriedade, no “deserto,” provavelmente a nordeste de Jerusalém (1 Rs 2:5, 28-34). Benaia sucedeu-lhe como comandante-chefe do exército."
+  },
+  {
+   "kind": "person",
+   "id": 1618,
+   "sha256": "604b9cd293eb0f97666c83c17188fa189b86c7c09ca7f7e656ed949dcc3f1115",
+   "text": "1 Cr 4:14."
+  },
+  {
+   "kind": "person",
+   "id": 1619,
+   "sha256": "c0297b2428f5bf4e697662139176d6564138a7fde468b0dbba8c04198e6a3a63",
+   "text": "Ed 2:6."
+  },
+  {
+   "kind": "person",
+   "id": 1621,
+   "sha256": "35f75f04f1d180a731ff71ef4e97ac902b4a99386003169302a152a7c1313ffd",
+   "text": "O filho de Asafe, e “chanceler” (q.v.) ou cronista do rei Ezequias (2 Rs 18:18, 26, 37)."
+  },
+  {
+   "kind": "person",
+   "id": 1622,
+   "sha256": "8dbeb706f8e450df8779291f057020297e28bb5eb3a7ecbbbe9fb0d03b73a077",
+   "text": "Um levita da família de Gérson (1 Cr 6:21), provavelmente o mesmo que Etã (42)."
+  },
+  {
+   "kind": "person",
+   "id": 1623,
+   "sha256": "f8ca2cc634b23a62d58062c5ed12c486603bf16c5c33465140a1f4f41d1d2d8b",
+   "text": "Um dos filhos de Obede-Edom (1 Cr 26:4), porteiro coreíta."
+  },
+  {
+   "kind": "person",
+   "id": 1626,
+   "sha256": "d49e375ec4a316b7741fbd65dd615e216cf8214a79793fd42b119ba600df2764",
+   "text": "Filho de Joacaz, e “chanceler” (q.v.) ou guarda dos arquivos do Estado sob o rei Josias (2 Cr 34:8)."
+  },
+  {
+   "kind": "person",
+   "id": 1627,
+   "sha256": "e6c50f8aecd861e0458ff3969c63d64927e10201692982e9cc403be344307457",
+   "text": "(2 Cr 34:8), forma contraída de Jeoacaz (q.v.)."
+  },
+  {
+   "kind": "person",
+   "id": 1628,
+   "sha256": "5f52605f1094602c2ac2a60f10e8b6bd9c6034dc6e76b8e1c1a81f8aa2bc49f1",
+   "text": "O neto de Zorobabel, na linhagem de Cristo (Lc 3:27); o mesmo que Hananias (1 Cr 3:19)."
+  },
+  {
+   "kind": "person",
+   "id": 1629,
+   "sha256": "69d46d26e5d43620969c5d157458fcb08b95a5341bb7f401b1b2dfd28cde2c16",
+   "text": "A mulher de Cuza, mordomo de Herodes Antipas, tetrarca da Galileia (Lc 8:3). Foi uma das mulheres que serviam a nosso Senhor, e a quem ele apareceu depois de sua ressurreição (Lc 8:3; 24:10)."
+  },
+  {
+   "kind": "person",
+   "id": 1630,
+   "sha256": "9f1a3e53cd7d28fcd95ca164fbc9c8594aba883340c72e49d068352bdcb7c61e",
+   "text": "Forma contraída de Jeoás, o pai de Gideão (Jz 6:11, 29; 8:13, 29, 32)."
+  },
+  {
+   "kind": "person",
+   "id": 1631,
+   "sha256": "d51402ab844d21afd50295fac041c74ad4d2c6faaf06f9a87e93ebbdc37c9fe6",
+   "text": "Um dos filhos do rei Acabe (1 Rs 22:26)."
+  },
+  {
+   "kind": "person",
+   "id": 1632,
+   "sha256": "30c406337f9aef674dc0bdad7d70782bc02fd54d8450b623b5874dfda73335c4",
+   "text": "O filho do rei Acazias. Ainda criança de peito, foi salvo do massacre geral da família por sua tia Jeoseba, e era, ao que parece, o único descendente sobrevivente de Salomão (2 Cr 21:4, 17). Seu tio, o sumo sacerdote Joiada, apresentou-o publicamente quando tinha oito anos de idade, e coroou-o e ungiu-o rei de Judá com as cerimônias habituais. Atalia foi apanhada de surpresa quando ouviu o grito do povo: “Viva o rei;” e, quando apareceu no templo, Joiada ordenou que fosse levada para fora e morta (2 Rs 11:13-20). Enquanto viveu o sumo sacerdote, Jeoás favoreceu o culto de Deus e observou a lei; mas, depois da morte dele, desviou-se para maus caminhos, e a terra foi contaminada com a idolatria. Zacarias, filho e sucessor do sumo sacerdote, foi morto. Essas más ações atraíram sobre a terra o juízo de Deus, e ela foi oprimida pelos invasores sírios. É um dos três reis omitidos por Mateus (1:8) na genealogia de Cristo, sendo os outros dois Acazias e Amazias. Foi sepultado na cidade de Davi (2 Rs 12:21)."
+  },
+  {
+   "kind": "person",
+   "id": 1633,
+   "sha256": "4deb7cec3046f1c15ba354929a3311720e51b189bd7e6479ed9200fd716db7a3",
+   "text": "O filho e sucessor de Jeoacaz, rei de Israel (2 Rs 14:1; cf. 12:1; 13:10). Quando subiu ao trono, o reino sofria com a invasão dos sírios. Hazael “ia cortando Israel.” Tolerou o culto dos bezerros de ouro, mas parece ter manifestado um caráter de sincera devoção ao Deus de seus pais. Tinha em honra o profeta Eliseu, e chorou junto ao seu leito quando ele estava morrendo, dirigindo-lhe as palavras que o próprio Eliseu usara quando Elias foi levado ao céu: “Meu pai, meu pai, carro de Israel e seus cavaleiros!” Mais tarde envolveu-se em guerra com Amazias, rei de Judá (2 Cr 25:23-24), a quem derrotou completamente em Bete-Semes, nas fronteiras de Dã e da Filístia; e, avançando sobre Jerusalém, derrubou uma parte do muro e levou os tesouros do templo e do palácio. Morreu pouco depois (825 a.C.) e foi sepultado em Samaria (2 Rs 14:1-17, 19, 20). Foi sucedido por seu filho."
+  },
+  {
+   "kind": "person",
+   "id": 1635,
+   "sha256": "2b8463e4edd4a45c21e3705f7727c79aab0ee33c772ee338ec93611b109cc93a",
+   "text": "1 Cr 7:8."
+  },
+  {
+   "kind": "person",
+   "id": 1636,
+   "sha256": "f929c7297e4da4a7c25e83ce0bb60806d5ed94322ace5e4b5e9202ef834c52e3",
+   "text": "Um dos arqueiros benjamitas que se juntaram a Davi em Ziclague (1 Cr 12:3)."
+  },
+  {
+   "kind": "person",
+   "id": 1637,
+   "sha256": "9a10fe125dbb2e054b6eb1b7d0a6b93c799f5c21b0cc7acc0ba9898a12796851",
+   "text": "Alguém que tinha a seu cargo os depósitos reais de azeite sob Davi e Salomão (1 Cr 27:28)."
+  },
+  {
+   "kind": "person",
+   "id": 1638,
+   "sha256": "dffa70633248fb1ada468e00cf4e37b04458b785c9f915a7e0a5a087b15d8234",
+   "text": "O terceiro dos quatro filhos de Issacar (1 Cr 7:1); chamado também Jó (Gn 46:13)."
+  },
+  {
+   "kind": "person",
+   "id": 1639,
+   "sha256": "f4be74a1bcdda3959d948784b5d8a9ec276f635fb4da8c20b59bcc345d7a4398",
+   "text": "Perseguido, patriarca árabe que residia na terra de Uz (q.v.). Vivendo no meio de grande prosperidade, foi subitamente esmagado por uma série de duras provações que caíram sobre ele. Em meio a todos os seus sofrimentos manteve a sua integridade. Deus visitou-o mais uma vez com ricos sinais de sua bondade e com prosperidade ainda maior do que a que antes desfrutara. Sobreviveu ao período de provação cento e quarenta anos e morreu em boa velhice, exemplo para as gerações seguintes de integridade (Ez 14:14, 20) e de paciência submissa sob as mais duras calamidades (Tg 5:11). Sua história, tanto quanto é conhecida, está registrada em seu livro."
+  },
+  {
+   "kind": "person",
+   "id": 1640,
+   "sha256": "5bd1735c473e443d7899e1bfe6dd63e1c7e4d91d45b144a21b2a3a8eec7ee248",
+   "text": "Um dos filhos de Joctã, e fundador de uma tribo árabe (Gn 10:29)."
+  },
+  {
+   "kind": "person",
+   "id": 1641,
+   "sha256": "9b03904aa5e1d2f314c6a176464ff5159d813343baf5693cd1605697b0f59d15",
+   "text": "Rei de Edom, sucedeu a Belá (Gn 36:33, 34)."
+  },
+  {
+   "kind": "person",
+   "id": 1642,
+   "sha256": "18914596aab193e03db877a13fb69bde0f52d11233477f2263094237c2f11a8d",
+   "text": "Um rei cananeu (Js 11:1) que se juntou à confederação contra Josué."
+  },
+  {
+   "kind": "person",
+   "id": 1645,
+   "sha256": "63002b7faa6aaa633574398719a88000799e0bab4a7ad9f37f53663a17e80790",
+   "text": "Jeová é a sua glória, a mulher de Anrão, e mãe de Miriã, Arão e Moisés (Nm 26:59). É mencionada como irmã de Coate, pai de Anrão (Êx 6:20; cf. 16, 18; 2:1-10)."
+  },
+  {
+   "kind": "person",
+   "id": 1647,
+   "sha256": "2d5d7615396c31b11b4190aeaa1a253c488de1026d1999e346a35800ae5b31a1",
+   "text": "O mais velho dos dois filhos de Samuel, por ele designados juízes em Berseba (1 Sm 8:2)."
+  },
+  {
+   "kind": "person",
+   "id": 1652,
+   "sha256": "ec2c4c7378f8abbdcf84ecc06fd2548f3830476acf62178cb910d749ecd7b6a5",
+   "text": "1 Cr 7:3."
+  },
+  {
+   "kind": "person",
+   "id": 1653,
+   "sha256": "39237d20062b2f0bb83cd6bf6eb1948c3cc4c88c6c38e763b6b44951ca9f7bcc",
+   "text": "Um dos famosos guerreiros de Davi (1 Cr 11:38)."
+  },
+  {
+   "kind": "person",
+   "id": 1654,
+   "sha256": "bba1d8327c59ee10cb8e777c6bf940827c2bf44d9fef43e45e6ff6c86db9eeac",
+   "text": "Um levita da família de Gérson (1 Cr 15:7, 11)."
+  },
+  {
+   "kind": "person",
+   "id": 1656,
+   "sha256": "167d9644c68071a38ae7f77971ea22c209161cc98817e637ca37092260874002",
+   "text": "1 Cr 27:20."
+  },
+  {
+   "kind": "person",
+   "id": 1660,
+   "sha256": "104f254a3ab375bf0398b1b42cb72f2130794847e69cb48e708d45e6174a8f0d",
+   "text": "O segundo dos doze profetas menores. Era filho de Petuel. Sua história pessoal só é conhecida por meio do seu livro."
+  },
+  {
+   "kind": "person",
+   "id": 1661,
+   "sha256": "9b1af8d8057896b2c25b1cec1fe79b812622efac0eb0512fec0985bcf6c1e2c9",
+   "text": "Um benjamita que se juntou a Davi em Ziclague (1 Cr 12:7)."
+  },
+  {
+   "kind": "person",
+   "id": 1662,
+   "sha256": "1ab4601897d774b8a4f6fe50979aa2de38adf55cd70510bbea5b4008f6291e2d",
+   "text": "Jeová é o seu auxílio, um dos coreítas que passaram a fazer parte da guarda pessoal de Davi (1 Cr 12:6)."
+  },
+  {
+   "kind": "person",
+   "id": 1666,
+   "sha256": "1bf34693c14026c6357430bd488c696b04c695920d0a2488b3a057b8a71cc264",
+   "text": "Filho de Careá, um dos chefes judeus que se reuniram em torno de Gedalias, a quem Nabucodonosor fizera governador em Jerusalém (2 Rs 25:23; Jr 40:8). Avisou Gedalias dos planos de Ismael contra ele, aviso que não foi atendido (Jr 40:13, 16). Depois perseguiu o assassino do governador e libertou os cativos (41:8, 13, 15, 16). Ele e seus companheiros fugiram mais tarde para Tafnes, no Egito (43:2, 4, 5), levando consigo Jeremias. “A fuga da comunidade de Gedalias para o Egito extinguiu a última centelha de vida que restava no Estado judeu. A obra dos dez séculos desde que Josué atravessara o Jordão fora desfeita.”"
+  },
+  {
+   "kind": "person",
+   "id": 1667,
+   "sha256": "984491932d6a1c10b8aebdc8285c83ded61608f827aa56a426e4df985513f9ff",
+   "text": "O mais velho dos filhos do rei Josias (1 Cr 3:15)."
+  },
+  {
+   "kind": "person",
+   "id": 1671,
+   "sha256": "39ed80675e68b2319949b0c93a571d4ebc98064f0aea282e506055e5883d76b1",
+   "text": "Um dos valentes gaditas que se juntaram a Davi no deserto de Judá (1 Cr 12:12)."
+  },
+  {
+   "kind": "person",
+   "id": 1676,
+   "sha256": "0015f23c08c9c7f1d55e051dedd3c9cf22c7b0e36fdcd6f04cb1fa84d169b8c5",
+   "text": "O “precursor de nosso Senhor.” Temos dele apenas relatos fragmentários e imperfeitos nos Evangelhos. Era de linhagem sacerdotal. Seu pai, Zacarias, era sacerdote da turma de Abias (1 Cr 24:10), e sua mãe, Isabel, era das filhas de Arão (Lc 1:5). A missão de João foi objeto de profecia (Mt 3:3; Is 40:3; Ml 3:1). Seu nascimento, que ocorreu seis meses antes do de Jesus, foi predito por um anjo. Zacarias, privado da fala como sinal da verdade de Deus e como repreensão de sua própria incredulidade quanto ao nascimento de seu filho, teve a fala restituída por ocasião da circuncisão deste (Lc 1:64). Depois disso nada mais se registra dele, durante trinta anos, além do que se menciona em Lc 1:80. João foi nazireu desde o nascimento (Lc 1:15; Nm 6:1-12). Passou os primeiros anos na região montanhosa de Judá, situada entre Jerusalém e o mar Morto (Mt 3:1-12).\n\n Por fim apareceu na vida pública, e grandes multidões de “todas as partes” foram atraídas a ele. A súmula de sua pregação era a necessidade do arrependimento. Denunciou os saduceus e os fariseus como “ninhada de víboras,” e advertiu-os da loucura de confiar em privilégios exteriores (Lc 3:8). “Como pregador, João era eminentemente prático e criterioso. O amor-próprio e a cobiça eram os pecados predominantes do povo em geral. A eles, portanto, recomendava a caridade e a consideração pelos outros. Aos publicanos advertia contra a extorsão, aos soldados contra o crime e a pilhagem.” Sua doutrina e seu modo de vida agitaram todo o sul da Palestina, e o povo de todas as partes acorria ao lugar onde ele estava, às margens do Jordão. Ali batizou milhares para arrependimento.\n\n A fama de João chegou aos ouvidos de Jesus em Nazaré (Mt 3:5), e ele veio da Galileia ao Jordão para ser batizado por João, com o fundamento especial de que lhe convinha “cumprir toda a justiça” (3:15). O ofício especial de João cessou com o batismo de Jesus, que agora devia “crescer” como o Rei que vinha ao seu reino. Continuou, porém, por algum tempo a dar testemunho da messianidade de Jesus. Apontou-o a seus discípulos, dizendo: “Eis o Cordeiro de Deus.” Seu ministério público foi subitamente encerrado (provavelmente depois de cerca de seis meses) ao ser lançado na prisão por Herodes, a quem repreendera pelo pecado de ter tomado para si a mulher de seu irmão Filipe (Lc 3:19). Foi encerrado no castelo de Maqueronte (q.v.), fortaleza na extremidade sul da Pereia, 9 milhas a leste do mar Morto, e ali foi decapitado. Seus discípulos, depois de darem sepultura ao corpo decapitado, foram contar a Jesus tudo o que acontecera (Mt 14:3-12). A morte de João ocorreu, ao que parece, pouco antes da terceira Páscoa do ministério de nosso Senhor. O próprio Senhor deu testemunho dele, dizendo que era “uma lâmpada ardente e brilhante” (Jo 5:35)."
+  },
+  {
+   "kind": "person",
+   "id": 1677,
+   "sha256": "b4b155e79f4e37d1f27047dab1cbbd8abf5455eee31027e9aecfdb8c9d3686e4",
+   "text": "O APÓSTOLO, irmão de Tiago, o “Maior” (Mt 4:21; 10:2; Mc 1:19; 3:17; 10:35). Era um dos filhos, provavelmente o mais novo, de Zebedeu (Mt 4:21) e de Salomé (Mt 27:56; cf. Mc 15:40), e nasceu em Betsaida. Seu pai era, ao que parece, homem de alguma riqueza (cf. Mc 1:20; Lc 5:3; Jo 19:27). Sem dúvida foi instruído em tudo o que constituía a educação comum da juventude judaica. Quando cresceu, seguiu o ofício de pescador no lago da Galileia. Quando João Batista começou o seu ministério no deserto da Judeia, João, com muitos outros, reuniu-se em torno dele e foi profundamente influenciado por seu ensino. Ali ouviu o anúncio “Eis o Cordeiro de Deus,” e logo, a convite de Jesus, tornou-se discípulo e contou-se entre os seus seguidores (Jo 1:36, 37) por algum tempo. Ele e seu irmão voltaram então à sua antiga ocupação, não se sabe por quanto tempo. Jesus chamou-os de novo (Mt 4: 21; Lc 5:1-11), e então deixaram tudo e uniram-se permanentemente ao grupo de seus discípulos. Tornou-se um do círculo mais íntimo (Mc 5:37; Mt 17:1; 26:37; Mc 13:3). Era o discípulo a quem Jesus amava. Em zelo e intensidade de caráter era um “Boanerges” (Mc 3:17). Esse espírito manifestou-se uma e outra vez (Mt 20:20-24; Mc 10:35-41; Lc 9:49, 54). Na traição, ele e Pedro seguem a Cristo de longe, enquanto os outros se entregam a uma fuga apressada (Jo 18:15). No julgamento, segue a Cristo até a sala do conselho, e dali ao pretório (18:16, 19, 28) e ao lugar da crucificação (19:26, 27). A ele e a Pedro, Maria leva primeiro a notícia da ressurreição (20:2), e são eles os primeiros a ir ver o que significam as estranhas palavras dela. Depois da ressurreição, ele e Pedro voltam outra vez ao mar da Galileia, onde o Senhor se revela a eles (21:1, 7). Depois disso encontramos Pedro e João frequentemente juntos (At 3:1; 4:13). João permaneceu, ao que parece, em Jerusalém como dirigente da igreja dali (At 15:6; Gl 2:9). Sua história posterior não está registrada. Não estava ali, porém, por ocasião da última visita de Paulo (At 21:15-40). Parece ter-se retirado para Éfeso, mas não se sabe quando. As sete igrejas da Ásia eram objeto de seu cuidado especial (Ap 1:11). Sofreu perseguição e foi desterrado para Patmos (1:9); dali voltou outra vez a Éfeso, onde morreu, provavelmente por volta de 98 d.C., tendo sobrevivido a todos, ou quase todos, os amigos e companheiros até mesmo de seus anos de maturidade. Há muitas tradições interessantes a respeito de João durante sua residência em Éfeso, mas estas não podem pretender o caráter de verdade histórica."
+  },
+  {
+   "kind": "person",
+   "id": 1678,
+   "sha256": "a1dc2ff843f38699b6dc8e6880640247fac8af6b76a20836bf746c0267f9faff",
+   "text": "Alguém que, com Anás e Caifás, se assentou para julgar os apóstolos Pedro e João (At 4:6). Era da família do sumo sacerdote; de resto, é desconhecido."
+  },
+  {
+   "kind": "person",
+   "id": 1679,
+   "sha256": "d2ce9d3377baa66b2c243fa53b76923f7d2e99f2ed7efee6076a950e88f09db7",
+   "text": "O evangelista; “João, que tinha por sobrenome Marcos” (At 12:12, 25). Marcos (Marcus, Cl 4:10, etc.) era o seu nome romano, que pouco a pouco veio a substituir o seu nome judeu, João. É chamado João em At 13:5, 13, e Marcos em 15:39, 2 Tm 4:11, etc.\n\n Era filho de Maria, mulher ao que parece de alguns recursos e influência, e provavelmente nasceu em Jerusalém, onde sua mãe residia (At 12:12). De seu pai nada sabemos. Era primo de Barnabé (Cl 4:10). Foi na casa de sua mãe que Pedro encontrou “muitos estavam juntos, e oravam” quando foi libertado da prisão; e é provável que tenha sido ali que ele foi convertido por Pedro, que o chama seu “filho” (1 Pe 5:13). É provável que o “rapaz” mencionado em Mc 14:51, 52 fosse o próprio Marcos. É mencionado pela primeira vez em At 12:25. Acompanhou Paulo e Barnabé em sua primeira viagem (por volta de 47 d.C.) como seu “auxiliar,” mas por alguma razão voltou atrás quando chegaram a Perges, na Panfília (At 12:25; 13:13). Três anos depois surgiu uma “forte desavença” entre Paulo e Barnabé (15:36-40), porque Paulo não quis levar Marcos consigo. Ele, porém, evidentemente acabou por reconciliar-se com o apóstolo, pois esteve com ele em sua primeira prisão em Roma (Cl 4:10; Fm 1:24). Num período posterior esteve com Pedro na Babilônia (1 Pe 5:13), então, e por alguns séculos depois, uma das principais sedes do saber judaico; e esteve com Timóteo em Éfeso quando Paulo lhe escreveu durante sua segunda prisão (2 Tm 4:11). Depois desaparece de vista."
+  },
+  {
+   "kind": "person",
+   "id": 1681,
+   "sha256": "a33d6a5e41d719b5c8be6646a0981fd4eaf801870f7c5c5c747c30b893a262e5",
+   "text": "(A quem Jeová estabeleceu) = Jeoaquim, sumo sacerdote, filho e sucessor de Jesua (Ne 12:10, 12, 26)."
+  },
+  {
+   "kind": "person",
+   "id": 1682,
+   "sha256": "391ee7a2973f964fd36dc4e3c38c1ac8d3760afc09c373214df7d57be4d4d97a",
+   "text": "Ed 8:16, “um homem entendido” que Esdras enviou para “trazer ministros para a casa de Deus.”"
+  },
+  {
+   "kind": "person",
+   "id": 1683,
+   "sha256": "f7b0f47bce45ee190aa46eb6cb0540ff86a1e420191ebfcd6a7d276157faf13f",
+   "text": "Ne 11:5; um descendente de Judá."
+  },
+  {
+   "kind": "person",
+   "id": 1684,
+   "sha256": "3b8ed1cd1937482912bdd8fa178a7aa1d24413faae707c541a4625ec470ac95b",
+   "text": "A quem Jeová estabeleceu, um dos descendentes de Selá (1 Cr 4:22)."
+  },
+  {
+   "kind": "person",
+   "id": 1685,
+   "sha256": "33dd50bc4f0919b5b2212fc67b69cba08c076b1adc9210eebcdb0865b53b627f",
+   "text": "Caçador com laço, o segundo filho de Abraão e Quetura (Gn 25:2, 3; 1 Cr 1:32)."
+  },
+  {
+   "kind": "person",
+   "id": 1686,
+   "sha256": "e997d5674550a5eed768024724e07ac5ecec9d03f087ec3674a49ccadb484772",
+   "text": "Pequeno, o segundo dos dois filhos de Héber (Gn 10:25; 1 Cr 1:19). Há uma tradição árabe de que Joctã (em árabe, Kahtan) foi o progenitor de todas as tribos mais puras da Arábia Central e Meridional."
+  },
+  {
+   "kind": "person",
+   "id": 1687,
+   "sha256": "eeed652ed3d2affcf2b7c8a47fb2e77226e23664dbb7ddbf688b5e84b83d33df",
+   "text": "O pai dos apóstolos Pedro (Jo 21:15-17) e André; mas a leitura deveria ser (também em 1:42), como na Versão Revisada, “João,” em vez de Jonas."
+  },
+  {
+   "kind": "person",
+   "id": 1688,
+   "sha256": "c72777964b2c09678ee2d455bc93aecbe46de123e16f06c3ba3514b3b7d780ba",
+   "text": "Filho de Samá, sobrinho de Davi, e também um de seus principais guerreiros (2 Sm 21:21). Matou um gigante em Gate."
+  },
+  {
+   "kind": "person",
+   "id": 1689,
+   "sha256": "fff5fd592b79f3a26cb8cde0163b0aa432f9b5e816504590cf58357acc1985d2",
+   "text": "Pomba, filho de Amitai, de Gate-Hefer. Foi um profeta de Israel e predisse a restauração dos antigos limites (2 Rs 14:25-27) do reino. Exerceu o seu ministério bem no início do reinado de Jeroboão II, e assim foi contemporâneo de Oseias e de Amós; ou possivelmente os precedeu, e por conseguinte pode ter sido o mais antigo de todos os profetas cujos escritos possuímos. Sua história pessoal deve ser colhida principalmente do livro que leva o seu nome. É interessante sobretudo pelo duplo caráter em que aparece: (1) como missionário à pagã Nínive, e (2) como tipo do “Filho do homem.”"
+  },
+  {
+   "kind": "person",
+   "id": 1691,
+   "sha256": "0a03d960965ffe269e9bb81a9cb39eaee1f85d18b9ea802e3c4a810b39a6ab96",
+   "text": "Um levita descendente de Gérson (Jz 18:30). Sua história está registrada em 17:7-13 e 18:30. Os rabinos mudaram este nome para Manassés “para livrar a memória do grande legislador da mancha de ter um apóstata tão indigno entre os seus descendentes próximos.” Tornou-se sacerdote da imagem do ídolo em Dã, e esse ofício continuou em sua família até o Cativeiro."
+  },
+  {
+   "kind": "person",
+   "id": 1692,
+   "sha256": "a97336635960f792547e0df00f0757720a2df9630535069d97af24bfe2c54a94",
+   "text": "O filho mais velho do rei Saul, e amigo íntimo de Davi. É mencionado pela primeira vez quando tinha cerca de trinta anos de idade, algum tempo depois da subida de seu pai ao trono (1 Sm 13:2). Como seu pai, era homem de grande força e agilidade (2 Sm 1:23), e destacava-se no uso do arco e da funda (1 Cr 12:2;2 Sm 1:22). A afeição que evidentemente existia entre ele e seu pai foi interrompida pelo crescimento da loucura de Saul. Por fim, “com exaltada ira,” deixou a presença de seu pai e uniu a sua sorte à causa de Davi (1 Sm 20:34). Depois de uma carreira cheia de acontecimentos, entrelaçada em grande parte com a de Davi, caiu, juntamente com seu pai e seus dois irmãos, no fatal campo de Gilboa (1 Sm 31:2, 8). Foi primeiro sepultado em Jabes-Gileade, mas seus restos foram depois trasladados com os de seu pai para Zela, em Benjamim (2 Sm 21:12-14). Sua morte foi a ocasião da famosa elegia de Davi, “o Cântico do Arco” (2 Sm 1:17-27). Deixou um filho de cinco anos, Meribe-Baal, ou Mefibosete (2 Sm 4:4; cf. 1 Cr 8:34)."
+  },
+  {
+   "kind": "person",
+   "id": 1693,
+   "sha256": "f9606ad321be84f486afda59a58d13bfc8234b97b5c1675f36c679c180a83d24",
+   "text": "Filho do sumo sacerdote Abiatar, e um dos que permaneceram fiéis a Davi no tempo da rebelião de Absalão (2 Sm 15:27, 36). É o último descendente de Eli de quem há algum registro."
+  },
+  {
+   "kind": "person",
+   "id": 1703,
+   "sha256": "363c0230767e58854dce12a4baa57679b9644d3ca5201bc41d15dc926916db3b",
+   "text": "Ne 7:24."
+  },
+  {
+   "kind": "person",
+   "id": 1705,
+   "sha256": "a4aff46726ed136ee5aed2c958de3a5d5417a14d50cdba5dd563ae0eb55b3d37",
+   "text": "O filho de Toú, rei de Hamate, enviado por seu pai para felicitar Davi por sua vitória sobre Hadadezer, rei da Síria (1 Cr 18:10; chamado Jorão em 2 Sm 8:10)."
+  },
+  {
+   "kind": "person",
+   "id": 1708,
+   "sha256": "e95e5404f4c2f9e7a6d34c550f3f6c3f737b9da9f7fa06a51065f64fc76cd184",
+   "text": "Um dos arqueiros benjamitas que se juntaram a Davi em Ziclague (1 Cr 12:4)."
+  }
+ ]
+}

@@ -34,3 +34,34 @@ What the translators reported per batch, beyond the review files.
 - Bigthana: verse given 1 Kgs 14:27, translated freely. Benjamin "gate of Benjamin" used Jer 20:2.
 - Glossary overrides: Jezreel (not "Jezreelita"), Jehiel, Chalcol and Jasiel kept where Easton contrasts forms.
 - Entry 324 "Asahiah" holds Easton's Isaiah text (Study.sqlite data slip).
+
+## pt 006–007
+- wrong_verse: Jesus Christ (905) "Prophet like unto Moses" (Dt 34:9–10 given, Dt 18:15 meant); Chemosh (931) Moabite Stone quote.
+- Jephthah (839) "the spirit of the Lord came upon him": Judg 3:10 given, 11:29 meant (same words, quoted).
+- Jesus (904): Easton's last quotation never closes; kept. Jucal (822) "also called Jucal" as written (probably Jehucal).
+
+## pt 008–009
+- Cush (962): "Etiópia" kept where Easton contrasts Ethiopia with Cush (glossary says "Cuxe"); its “Ethiopia” points at Ps 68:31, Easton means Ezek 29:10.
+- David: "Book of Jasher" is “livro do direito” in the Bíblia Livre; "(ver Jasar)" added. Eglon: verse wording "os filhos de Israel" used for Easton's "the people".
+
+## es 008–009
+- Cyrus "Go up, O Elam": RV1909 reads "Sube, Persa". David "book of Jasher": RV1909 "libro del derecho".
+- Glossary fixes made after this (also in the app's names): Jezreel, Elam, Caldea, Ramot de Galaad / Ramote-Gileade, Tamar (place), Josa, Ebal.
+
+## es 006–007
+- wrong_verse: Jacob (682) "for" (Dt 21:17 given, Gen 32:30 meant); Chemosh (931) Moabite Stone.
+- Jesus Christ (905) “profeta… como Moisés” from Dt 34:10 (Dt 18:15 meant): check. Jehiel (776) repeats “príncipe”.
+- Jesus (904) unclosed quotation as in the source; Jephthah bracket moved after the quote; Javan “Grecia” kept as Easton's remark.
+
+## pt 010–011
+- Glossary overrides: Hadar kept (entries set Hadar against Hadad); "called also Hadarezer" kept, Hadadezer elsewhere; "Susã ou Susa" for "Shushan or Susa".
+- wrong_verse: Elijah (1131) q4 (1 Kgs 18:8 given, 19:9/13 meant); Eve (1231) q3 (2 Chr 14:11 given, Gen 4:1 meant); Eleazar (1062) q2 and Elhanan (1070) q1: the BLIVRE lacks the words Easton discusses ("Gibeah of Phinehas", "the brother of"), translated.
+- Gad (011) q0: BLIVRE already reads "Veio a boa sorte", so Easton's A.V. contrast is weaker. Elias = Elias in Portuguese, the contrast with Elijah disappears.
+- Stray/unclosed quotation marks kept as in Easton (Elijah, Elam's Sayce quote). Gaius 1269/1271 duplicate entries.
+
+## pt 012–013
+- Glossary: Joahaz "Joacaz" (short form) vs Jehoahaz "Jeoacaz" (1626, 1627); Ham keeps "Cuxe" for Ethiopia; Jashub "Jó" as the BLIVRE spells Gen 46:13.
+- Hannah: the loose quote of 1 Sam 1:26–28 stops at v27 (verbatim); v28 follows as indirect speech. Hezekiah: "185.000 homens" sits outside the quote (the verse spells the number).
+- Wrong verses translated: Hivite "prince of the land" (Gen 34:2 meant; Easton cites Gen 24:2-28), Hilkiah and Huldah (2 Kgs 23:2 / 22:8 meant), Joab "captain of the host".
+- Huldah: BLIVRE's "segunda parte da cidade" equals the R.V. reading, so the A.V./R.V. contrast is given as “o colégio” / “o segundo bairro”. Hoshea's simile reads oddly with the BLIVRE wording. Hobab "genros" plural from the verse.
+- Easton slips kept: Hanun "king of Moab", 2 Kings 18:20, Isa 7:16 (Hoshea), Jonadab for Jonathan (2 Sam 21:21). Heman 1488/1489 duplicates.
