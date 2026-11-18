@@ -240,3 +240,8 @@ What the translators reported per batch, beyond the review files.
 ## es 038–039
 - wrong_verse: Ophel q0 (as pt). Moab 815 q1: "Subió" outside the quote (the verse starts in capitals). Perez-uzzah "tuvo" (verse "túvola").
 - Mount of Olives 828/861 identical. Negeb "1 S 33:24" kept as Easton. Pelusium quote marks as Easton.
+
+## es 042–043
+- wrong_verse: Shiloh q3 (LXX), Ur q3 (inscription), Tishbe q2 (LXX reading; 1 Kgs 17:1 is right but lacks the words).
+- Timnath-serah 1167 "Timnat-heres" for the other name; Hamath-zobah reduced to "Amat" (RV1909 "Hamath de Soba"): check.
+- Verse spellings kept inside quotes (Shinar, Tharsis, Achôr, Nahal-escol); duplicates 1168/1169, 1221 = 1113.
