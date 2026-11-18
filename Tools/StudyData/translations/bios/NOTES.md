@@ -211,3 +211,8 @@ What the translators reported per batch, beyond the review files.
 ## es 034–035
 - Same as pt 034–035: Jordan q3 (Porter, inner Lev 26:31–34 RV1909 verbatim), Jokmeam "Jocneam", Joppa "Jafo", source fragments kept.
 - Amorite as adjective "amorreo/amorrea". Galeed "Galaad" (RV1909 Gen 31:47) reads the same as Gilead.
+
+## es 036–037
+- wrong_verse: Lachish q1, Metheg-ammah q1 (as pt).
+- Glossary: Rhodes was "Rhodas", Hazor varied between "Asor" and "Hasor": manual.json now pins "Rodas" and "Hasor" (align earlier "Asor" in the final pass).
+- Lehi: R.V. "hollow place" has no RV1909 words; loose quote joined from two runs; the A.V. phrase translated apart. Mahaneh-dan transliterated. Mareshah "Jos 15:44" corrected here (pt still "Jo").
