@@ -117,3 +117,8 @@ What the translators reported per batch, beyond the review files.
 - Samson 2468 q4: Easton's bracket moved after the quotation, "mais" added.
 - BLIVRE flaws quoted verbatim: 1 Sam 2:26 "sendo bem estimando"; 1 Sam 13:5 "povo quando a areia".
 - Glossary: Salmon and Zalmon both "Salmom", so "Sombrio; ou Salmom (q.v.)" repeats itself; Mizpeh has no pt value (Mispá used). Check later.
+
+## es 020–021
+- wrong_verse: Samuel 2469 q11 (quoted from 1 Sam 25:1 RV1909 verbatim, entered as translated).
+- Saul/Shaul both "Saúl" (RV1909 too), Salmon/Zalmon both "Salmón" (the Bibles spell them alike).
+- Saul 021 q23 includes the rest of the RV1909 verse ("hasta que haya tomado venganza…") so the run stays unbroken. Samson's bracket moved after the quote.
