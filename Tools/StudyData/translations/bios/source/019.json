@@ -1,0 +1,1360 @@
+{
+ "batch": "019",
+ "entries": [
+  {
+   "kind": "person",
+   "id": 2330,
+   "name": "Pharaoh",
+   "sha256": "78194734893a9cac7c8c4d2aea96b28144e2b0151f5807a5d6543762869f9548",
+   "text": "The “new king who knew not Joseph” (Ex. 1:8-22) has been generally supposed to have been Aahmes I., or Amosis, as he is called by Josephus. Recent discoveries, however, have led to the conclusion that Seti was the “new king.”\n\n For about seventy years the Hebrews in Egypt were under the powerful protection of Joseph. After his death their condition was probably very slowly and gradually changed. The invaders, the Hyksos, who for some five centuries had been masters of Egypt, were driven out, and the old dynasty restored. The Israelites now began to be looked down upon. They began to be afflicted and tyrannized over. In process of time a change appears to have taken place in the government of Egypt. A new dynasty, the Nineteenth, as it is called, came into power under Seti I., who was its founder. He associated with him in his government his son, Rameses II., when he was yet young, probably ten or twelve years of age.\n\n Note, Professor Maspero, keeper of the museum of Bulak, near Cairo, had his attention in 1870 directed to the fact that scarabs, i.e., stone and metal imitations of the beetle (symbols of immortality), originally worn as amulets by royal personages, which were evidently genuine relics of the time of the ancient Pharaohs, were being sold at Thebes and different places along the Nile. This led him to suspect that some hitherto undiscovered burial-place of the Pharaohs had been opened, and that these and other relics, now secretly sold, were a part of the treasure found there. For a long time he failed, with all his ingenuity, to find the source of these rare treasures. At length one of those in the secret volunteered to give information regarding this burial-place. The result was that a party was conducted in 1881 to Dier el-Bahari, near Thebes, when the wonderful discovery was made of thirty-six mummies of kings, queens, princes, and high priests hidden away in a cavern prepared for them, where they had lain undisturbed for thirty centuries. “The temple of Deir el-Bahari stands in the middle of a natural amphitheatre of cliffs, which is only one of a number of smaller amphitheatres into which the limestone mountains of the tombs are broken up. In the wall of rock separating this basin from the one next to it some ancient Egyptian engineers had constructed the hiding-place, whose secret had been kept for nearly three thousand years.” The exploring party being guided to the place, found behind a great rock a shaft 6 feet square and about 40 feet deep, sunk into the limestone. At the bottom of this a passage led westward for 25 feet, and then turned sharply northward into the very heart of the mountain, where in a chamber 23 feet by 13, and 6 feet in height, they came upon the wonderful treasures of antiquity. The mummies were all carefully secured and brought down to Bulak, where they were deposited in the royal museum, which has now been removed to Ghizeh.\n\n Among the most notable of the ancient kings of Egypt thus discovered were Thothmes III., Seti I., and Rameses II. Thothmes III. was the most distinguished monarch of the brilliant Eighteenth Dynasty. When this mummy was unwound “once more, after an interval of thirty-six centuries, human eyes gazed on the features of the man who had conquered Syria and Cyprus and Ethiopia, and had raised Egypt to the highest pinnacle of her power. The spectacle, however, was of brief duration. The remains proved to be in so fragile a state that there was only time to take a hasty photograph, and then the features crumbled to pieces and vanished like an apparition, and so passed away from human view for ever.” “It seems strange that though the body of this man,” who overran Palestine with his armies two hundred years before the birth of Moses, “mouldered to dust, the flowers with which it had been wreathed were so wonderfully preserved that even their colour could be distinguished” (Manning’s Land of the Pharaohs).\n\n Seti I. (his throne name Merenptah), the father of Rameses II., was a great and successful warrior, also a great builder. The mummy of this Pharaoh, when unrolled, brought to view “the most beautiful mummy head ever seen within the walls of the museum. The sculptors of Thebes and Abydos did not flatter this Pharaoh when they gave him that delicate, sweet, and smiling profile which is the admiration of travellers. After a lapse of thirty-two centuries, the mummy retains the same expression which characterized the features of the living man. Most remarkable of all, when compared with the mummy of Rameses II., is the striking resemblance between the father and the son. Seti I. is, as it were, the idealized type of Rameses II. He must have died at an advanced age. The head is shaven, the eyebrows are white, the condition of the body points to considerably more than threescore years of life, thus confirming the opinions of the learned, who have attributed a long reign to this king.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "new king who knew not Joseph",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "new king.",
+     "kind": "wording",
+     "verses": [
+      2001008
+     ],
+     "es": "Levantóse entretanto un nuevo rey sobre Egipto, que no conocía á José; el cual dijo á su pueblo:",
+     "pt": "Levantou-se, entretanto, um novo rei sobre o Egito, que não conhecia José."
+    },
+    {
+     "n": 2,
+     "english": "The temple of Deir el-Bahari stands in the middle of a natural amphitheatre of cliffs, which is only one of a number of smaller amphitheatres into which the limestone mountains of the tombs are broken up. In the wall of rock separating this basin from the one next to it some ancient Egyptian engineers had constructed the hiding-place, whose secret had been kept for nearly three thousand years.",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "once more, after an interval of thirty-six centuries, human eyes gazed on the features of the man who had conquered Syria and Cyprus and Ethiopia, and had raised Egypt to the highest pinnacle of her power. The spectacle, however, was of brief duration. The remains proved to be in so fragile a state that there was only time to take a hasty photograph, and then the features crumbled to pieces and vanished like an apparition, and so passed away from human view for ever.",
+     "kind": "other"
+    },
+    {
+     "n": 4,
+     "english": "It seems strange that though the body of this man,",
+     "kind": "other"
+    },
+    {
+     "n": 5,
+     "english": "mouldered to dust, the flowers with which it had been wreathed were so wonderfully preserved that even their colour could be distinguished",
+     "kind": "other"
+    },
+    {
+     "n": 6,
+     "english": "the most beautiful mummy head ever seen within the walls of the museum. The sculptors of Thebes and Abydos did not flatter this Pharaoh when they gave him that delicate, sweet, and smiling profile which is the admiration of travellers. After a lapse of thirty-two centuries, the mummy retains the same expression which characterized the features of the living man. Most remarkable of all, when compared with the mummy of Rameses II., is the striking resemblance between the father and the son. Seti I. is, as it were, the idealized type of Rameses II. He must have died at an advanced age. The head is shaven, the eyebrows are white, the condition of the body points to considerably more than threescore years of life, thus confirming the opinions of the learned, who have attributed a long reign to this king.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2331,
+   "name": "Pharaoh (of the Exodus)",
+   "sha256": "a981acff4fc29624a5e5dea9103ab00eb44a3e3ec3ded2e02c61a7fc6cf49889",
+   "text": "The Pharaoh of the Exodus was probably Menephtah I., the fourteenth and eldest surviving son of Rameses II. He resided at Zoan, where he had the various interviews with Moses and Aaron recorded in the book of Exodus. His mummy was not among those found at Deir el-Bahari. It is still a question, however, whether Seti II. or his father Menephtah was the Pharaoh of the Exodus. Some think the balance of evidence to be in favour of the former, whose reign it is known began peacefully, but came to a sudden and disastrous end. The “Harris papyrus,” found at Medinet-Abou in Upper Egypt in 1856, a state document written by Rameses III., the second king of the Twentieth Dynasty, gives at length an account of a great exodus from Egypt, followed by wide-spread confusion and anarchy. This, there is great reason to believe, was the Hebrew exodus, with which the Nineteenth Dynasty of the Pharaohs came to an end. This period of anarchy was brought to a close by Setnekht, the founder of the Twentieth Dynasty.\n\n “In the spring of 1896, Professor Flinders Petrie discovered, among the ruins of the temple of Menephtah at Thebes, a large granite stela, on which is engraved a hymn of victory commemorating the defeat of Libyan invaders who had overrun the Delta. At the end other victories of Menephtah are glanced at, and it is said that ‘the Israelites (I-s-y-r-a-e-l-u) are minished (?) so that they have no seed.’ Menephtah was son and successor of Rameses II., the builder of Pithom, and Egyptian scholars have long seen in him the Pharaoh of the Exodus. The Exodus is also placed in his reign by the Egyptian legend of the event preserved by the historian Manetho. In the inscription the name of the Israelites has no determinative of ‘country’ or ’district’ attached to it, as is the case with all the other names (Canaan, Ashkelon, Gezer, Khar or Southern Palestine, etc.) mentioned along with it, and it would therefore appear that at the time the hymn was composed, the Israelites had already been lost to the sight of the Egyptians in the desert. At all events they must have had as yet no fixed home or district of their own. We may therefore see in the reference to them the Pharaoh’s version of the Exodus, the disasters which befell the Egyptians being naturally passed over in silence, and only the destruction of the ‘men children’ of the Israelites being recorded. The statement of the Egyptian poet is a remarkable parallel to Ex. 1:10-22.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Harris papyrus,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "In the spring of 1896, Professor Flinders Petrie discovered, among the ruins of the temple of Menephtah at Thebes, a large granite stela, on which is engraved a hymn of victory commemorating the defeat of Libyan invaders who had overrun the Delta. At the end other victories of Menephtah are glanced at, and it is said that ‘the Israelites (I-s-y-r-a-e-l-u) are minished (?) so that they have no seed.’ Menephtah was son and successor of Rameses II., the builder of Pithom, and Egyptian scholars have long seen in him the Pharaoh of the Exodus. The Exodus is also placed in his reign by the Egyptian legend of the event preserved by the historian Manetho. In the inscription the name of the Israelites has no determinative of ‘country’ or ’district’ attached to it, as is the case with all the other names (Canaan, Ashkelon, Gezer, Khar or Southern Palestine, etc.) mentioned along with it, and it would therefore appear that at the time the hymn was composed, the Israelites had already been lost to the sight of the Egyptians in the desert. At all events they must have had as yet no fixed home or district of their own. We may therefore see in the reference to them the Pharaoh’s version of the Exodus, the disasters which befell the Egyptians being naturally passed over in silence, and only the destruction of the ‘men children’ of the Israelites being recorded. The statement of the Egyptian poet is a remarkable parallel to Ex. 1:10-22.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2332,
+   "name": "Pharaoh",
+   "sha256": "27e9edae867040bfe7a5920e553c8733a0f430fe0bc2fddbb8f541ffaf7e136d",
+   "text": "The Pharaoh of 1 Kings 11:18-22.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2333,
+   "name": "Pharaoh",
+   "sha256": "b78eb6faa6489c3bf3cb52508842de5fe0590c67392740886b895295f3825125",
+   "text": "Pharaoh, in whom Hezekiah put his trust in his war against Sennacherib (2 Kings 18:21).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2334,
+   "name": "Pharaoh",
+   "sha256": "2a04cba3b61031f153242b38bbdaba52e1c62279d775edcdf8119f2cb44a0ab3",
+   "text": "The Pharaoh of 1 Chr. 4:18.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2338,
+   "name": "Pharez",
+   "sha256": "e83dad8d2bcaae169b9420642ba597333386a8981a795407bdfa27611868e8f8",
+   "text": "Pharez, (q.v.), breach, the son of Judah (Neh. 11:4). “The chief of all the captains of the host for the first month” in the reign of David was taken from his family (1 Chr. 27:3). Four hundred and sixty-eight of his “sons” came back from captivity with Zerubbabel, who himself was one of them (1 Chr. 9:4; Neh. 11:6).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "The chief of all the captains of the host for the first month",
+     "kind": "partial",
+     "verses": [
+      13027003
+     ],
+     "es": "De los hijos de Phares fué él jefe de todos los capitanes de las compañías del primer mes.",
+     "pt": "Dos filhos de Perez foi ele chefe de todos os capitães das companhias do primeiro mês."
+    },
+    {
+     "n": 1,
+     "english": "sons",
+     "kind": "wording",
+     "verses": [
+      16011006
+     ],
+     "es": "Todos los hijos de Phares que moraron en Jerusalem, fueron cuatrocientos setenta y ocho hombres fuertes.",
+     "pt": "Todos os filhos de Perez que habitaram em Jerusalém foram quatrocentos setenta e oito homens valentes."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2340,
+   "name": "Phebe",
+   "sha256": "b638ba2cac4f46b60217ccf7c090d9082d7a85cc5442185a4768519df6d30dd7",
+   "text": "A “deaconess of the church at Cenchrea,” the port of Corinth. She was probably the bearer of Paul’s epistle to the Romans. Paul commended her to the Christians at Rome; “for she hath been,” says he, “a succourer of many, and of myself also” (Rom. 16:1, 2).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "deaconess of the church at Cenchrea,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "for she hath been,",
+     "kind": "partial",
+     "verses": [
+      45016002
+     ],
+     "es": "Que la recibáis en el Señor, como es digno á los santos, y que la ayudéis en cualquiera cosa en que os hubiere menester: porque ella ha ayudado á muchos, y á mí mismo.",
+     "pt": "para que a recebais no Senhor, como convém aos santos; e para que a ajudeis em qualquer coisa que necessitar de vós; pois ela tem ajudado a muitos, inclusive a mim mesmo."
+    },
+    {
+     "n": 2,
+     "english": "a succourer of many, and of myself also",
+     "kind": "partial",
+     "verses": [
+      45016002
+     ],
+     "es": "Que la recibáis en el Señor, como es digno á los santos, y que la ayudéis en cualquiera cosa en que os hubiere menester: porque ella ha ayudado á muchos, y á mí mismo.",
+     "pt": "para que a recebais no Senhor, como convém aos santos; e para que a ajudeis em qualquer coisa que necessitar de vós; pois ela tem ajudado a muitos, inclusive a mim mesmo."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2341,
+   "name": "Phichol",
+   "sha256": "9902dd97ddd26591f6a5cd02d64eaef2f5a319fd98d7606ae7507f0d60cc48d8",
+   "text": "Great, the chief captain of the army of Abimelech, the Philistine king of Gerar. He entered into an alliance with Abraham with reference to a certain well which, from this circumstance, was called Beersheba (q.v.), “the well of the oath” (Gen. 21:22, 32; 26:26).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the well of the oath",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2342,
+   "name": "Philemon",
+   "sha256": "fafb9796ddf6d752761d6707b45e4c107ca8ee87571d09b8cf825e0da4f3813b",
+   "text": "An inhabitant of Colosse, and apparently a person of some note among the citizens (Col. 4:9; Philemon 1:2). He was brought to a knowledge of the gospel through the instrumentality of Paul (19), and held a prominent place in the Christian community for his piety and beneficence (4-7). He is called in the epistle a “fellow-labourer,” and therefore probably held some office in the church at Colosse; at all events, the title denotes that he took part in the work of spreading a knowledge of the gospel.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "fellow-labourer,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2343,
+   "name": "Philetus",
+   "sha256": "caec9a1617ea0b5135fe2e2b34e6687fddecf9f1fe99d44e7ea8ea86e268b0d1",
+   "text": "Amiable, with Hymenaeus, at Ephesus, said that the “resurrection was past already” (2 Tim. 2:17, 18). This was a Gnostic heresy held by the Nicolaitanes.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "resurrection was past already",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2344,
+   "name": "Phillip the Apostle",
+   "sha256": "a86f6a0b86206cfb5ef921d64b127746d76929f4948ca251d64c959ad2720a84",
+   "text": "One of the twelve apostles; a native of Bethsaida, “the city of Andrew and Peter” (John 1:44). He readily responded to the call of Jesus when first addressed to him (43), and forthwith brought Nathanael also to Jesus (45, 46). He seems to have held a prominent place among the apostles (Matt. 10:3; Mark 3:18; John 6:5-7; 12:21, 22; 14:8, 9; Acts 1:13). Of his later life nothing is certainly known. He is said to have preached in Phrygia, and to have met his death at Hierapolis.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the city of Andrew and Peter",
+     "kind": "partial",
+     "verses": [
+      43001044
+     ],
+     "es": "Y era Felipe de Bethsaida, la ciudad de Andrés y de Pedro.",
+     "pt": "E Filipe era de Betsaida, da cidade de André e de Pedro."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2345,
+   "name": "Philip",
+   "sha256": "7e1dc2d05981e749f1057e5aafd0fc6afddfd6a16147cf3db6130831af780727",
+   "text": "Mentioned only in connection with the imprisonment of John the Baptist (Matt. 14:3; Mark 6:17; Luke 3:19). He was the son of Herod the Great, and the first husband of Herodias, and the father of Salome. (See HEROD PHILIP I.)",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2347,
+   "name": "Phillip the Evangelist",
+   "sha256": "02311110076b9535bd2e415806e89dc816560843644e4f6c582f756b12d058f0",
+   "text": "One of the “seven” (Acts 6:5), called also “the evangelist” (21:8, 9). He was one of those who were “scattered abroad” by the persecution that arose on the death of Stephen. He went first to Samaria, where he laboured as an evangelist with much success (8:5-13). While he was there he received a divine command to proceed toward the south, along the road leading from Jerusalem to Gaza. These towns were connected by two roads. The one Philip was directed to take was that which led through Hebron, and thence through a district little inhabited, and hence called “desert.” As he travelled along this road he was overtaken by a chariot in which sat a man of Ethiopia, the eunuch or chief officer of Queen Candace, who was at that moment reading, probably from the Septuagint version, a portion of the prophecies of Isaiah (53:6, 7). Philip entered into conversation with him, and expounded these verses, preaching to him the glad tidings of the Saviour. The eunuch received the message and believed, and was forthwith baptized, and then “went on his way rejoicing.” Philip was instantly caught away by the Spirit after the baptism, and the eunuch saw him no more. He was next found at Azotus, whence he went forth in his evangelistic work till he came to Caesarea. He is not mentioned again for about twenty years, when he is still found at Caesarea (Acts 21:8) when Paul and his companions were on the way to Jerusalem. He then finally disappears from the page of history.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "seven",
+     "kind": "wording",
+     "verses": [
+      44006003
+     ],
+     "es": "Buscad pues, hermanos, siete varones de vosotros de buen testimonio, llenos de Espíritu Santo y de sabiduría, los cuales pongamos en esta obra.",
+     "pt": "Portanto, irmãos, buscai sete homens dentre vós, de quem haja bom testemunho, cheios do Espírito Santo e de sabedoria, aos quais constituamos sobre esta importante tarefa."
+    },
+    {
+     "n": 1,
+     "english": "the evangelist",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "scattered abroad",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "desert.",
+     "kind": "other"
+    },
+    {
+     "n": 4,
+     "english": "went on his way rejoicing.",
+     "kind": "unsure",
+     "verses": [
+      44008039
+     ],
+     "es": "Y como subieron del agua, el Espíritu del Señor arrebató á Felipe; y no le vió más el eunuco, y se fué por su camino gozoso.",
+     "pt": "E quando eles subiram da água, o Espírito do Senhor arrebatou a Filipe, e o eunuco não mais o viu, porque ele foi em seu caminho com alegria."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2349,
+   "name": "Phinehas (Levite)",
+   "sha256": "d5cdf88fdc8e39ead60e178de246b214159320ad091f428441b6f32c3dafd069",
+   "text": "Son of Eleazar, the high priest (Ex. 6:25). While yet a youth he distinguished himself at Shittim by his zeal against the immorality into which the Moabites had tempted the people (Num. 25:1-9), and thus “stayed the plague” that had broken out among the people, and by which twenty-four thousand of them perished. For his faithfulness on that occasion he received the divine approbation (10-13). He afterwards commanded the army that went out against the Midianites (31:6-8). When representatives of the people were sent to expostulate with the two and a half tribes who, just after crossing Jordan, built an altar and departed without giving any explanation, Phinehas was their leader, and addressed them in the words recorded in Josh. 22:16-20. Their explanation follows. This great altar was intended to be all ages only a witness that they still formed a part of Israel. Phinehas was afterwards the chief adviser in the war with the Benjamites. He is commemorated in Ps. 106:30, 31.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "stayed the plague",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2350,
+   "name": "Phinehas",
+   "sha256": "2eae47175661c730b666616799d48e733c6121eaeb8acb5c2ab1da098cf1c0ca",
+   "text": "One of the sons of Eli, the high priest (1 Sam. 1:3; 2:12). He and his brother Hophni were guilty of great crimes, for which destruction came on the house of Eli (31). He died in battle with the Philistines (1 Sam. 4:4, 11); and his wife, on hearing of his death, gave birth to a son, whom she called “Ichabod,” and then she died (19-22).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Ichabod,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2352,
+   "name": "Phlegon",
+   "sha256": "706c53b574517413e2469366b30a0143b8630ac166321929f510abfed3145e05",
+   "text": "Burning, a Roman Christian to whom Paul sent salutations (Rom. 16:14).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2354,
+   "name": "Phut",
+   "sha256": "d151354da48e18fa13992082e22574c0cc63b8d1f0a3c77cd08b662ffd342855",
+   "text": "One of the sons of Ham (Gen. 10:6).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2356,
+   "name": "Phygellus",
+   "sha256": "e3bd8ad42aa0f530a10c51ec0e8e64fb27abba808be90878e8781f616e8340c8",
+   "text": "Fugitive, a Christian of Asia, who “turned away” from Paul during his second imprisonment at Rome (2 Tim. 1:15). Nothing more is known of him.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "turned away",
+     "kind": "wording",
+     "verses": [
+      55001015
+     ],
+     "es": "Ya sabes esto, que me han sido contrarios todos los que son en Asia, de los cuales son Figello y Hermógenes.",
+     "pt": "Sabes isto, que todos os que estão na Ásia Romana me abandonaram, entre os quais estavam Fígelo e Hermógenes."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2365,
+   "name": "Pontius Pilate",
+   "sha256": "f951db3d64af2c72c9fa6194457d3138565cc165e95b876f8fea0fae07dcce7c",
+   "text": "Probably connected with the Roman family of the Pontii, and called “Pilate” from the Latin pileatus, i.e., “wearing the pileus”, which was the “cap or badge of a manumitted slave,” as indicating that he was a “freedman,” or the descendant of one. He was the sixth in the order of the Roman procurators of Judea (A.D. 26-36). His headquarters were at Caesarea, but he frequently went up to Jerusalem. His reign extended over the period of the ministry of John the Baptist and of Jesus Christ, in connection with whose trial his name comes into prominent notice. Pilate was a “typical Roman, not of the antique, simple stamp, but of the imperial period, a man not without some remains of the ancient Roman justice in his soul, yet pleasure-loving, imperious, and corrupt. He hated the Jews whom he ruled, and in times of irritation freely shed their blood. They returned his hatred with cordiality, and accused him of every crime, maladministration, cruelty, and robbery. He visited Jerusalem as seldom as possible; for, indeed, to one accustomed to the pleasures of Rome, with its theatres, baths, games, and gay society, Jerusalem, with its religiousness and ever-smouldering revolt, was a dreary residence. When he did visit it he stayed in the palace of Herod the Great, it being common for the officers sent by Rome into conquered countries to occupy the palaces of the displaced sovereigns.”\n\n After his trial before the Sanhedrin, Jesus was brought to the Roman procurator, Pilate, who had come up to Jerusalem as usual to preserve order during the Passover, and was now residing, perhaps, in the castle of Antonia, or it may be in Herod’s palace. Pilate came forth from his palace and met the deputation from the Sanhedrin, who, in answer to his inquiry as to the nature of the accusation they had to prefer against Jesus, accused him of being a “malefactor.” Pilate was not satisfied with this, and they further accused him (1) of sedition, (2) preventing the payment of the tribute to Caesar, and (3) of assuming the title of king (Luke 23:2). Pilate now withdrew with Jesus into the palace (John 18:33) and examined him in private (37, 38); and then going out to the deputation still standing before the gate, he declared that he could find no fault in Jesus (Luke 23:4). This only aroused them to more furious clamour, and they cried that he excited the populace “throughout all Jewry, beginning from Galilee.” When Pilate heard of Galilee, he sent the accused to Herod Antipas, who had jurisdiction over that province, thus hoping to escape the difficulty in which he found himself. But Herod, with his men of war, set Jesus at nought, and sent him back again to Pilate, clad in a purple robe of mockery (23:11, 12).\n\n Pilate now proposed that as he and Herod had found no fault in him, they should release Jesus; and anticipating that they would consent to this proposal, he ascended the judgment-seat as if ready to ratify the decision (Matt. 27:19). But at this moment his wife (Claudia Procula) sent a message to him imploring him to have nothing to do with the “just person.” Pilate’s feelings of perplexity and awe were deepened by this incident, while the crowd vehemently cried out, “Not this man, but Barabbas.” Pilate answered, “What then shall I do with Jesus?” The fierce cry immediately followed. “Let him be crucified.” Pilate, apparently vexed, and not knowning what to do, said, “Why, what evil hath he done?” but with yet fiercer fanaticism the crowd yelled out, “Away with him! crucify him, crucify him!” Pilate yielded, and sent Jesus away to be scourged. This scourging was usually inflicted by lictors; but as Pilate was only a procurator he had no lictor, and hence his soldiers inflicted this terrible punishment. This done, the soldiers began to deride the sufferer, and they threw around him a purple robe, probably some old cast-off robe of state (Matt. 27:28; John 19:2), and putting a reed in his right hand, and a crowd of thorns on his head, bowed the knee before him in mockery, and saluted him, saying, “Hail, King of the Jews!” They took also the reed and smote him with it on the head and face, and spat in his face, heaping upon him every indignity.\n\n Pilate then led forth Jesus from within the Praetorium (Matt. 27:27) before the people, wearing the crown of thorns and the purple robe, saying, “Behold the man!” But the sight of Jesus, now scourged and crowned and bleeding, only stirred their hatred the more, and again they cried out, “Crucify him, crucify him!” and brought forth this additional charge against him, that he professed to be “the Son of God.” Pilate heard this accusation with a superstitious awe, and taking him once more within the Praetorium, asked him, “Whence art thou?” Jesus gave him no answer. Pilate was irritated by his continued silence, and said, “Knowest thou not that I have power to crucify thee?” Jesus, with calm dignity, answered the Roman, “Thou couldest have no power at all against me, except it were given thee from above.”\n\n After this Pilate seemed more resolved than ever to let Jesus go. The crowd perceiving this cried out, “If thou let this man go, thou art not Caesar’s friend.” This settled the matter. He was afraid of being accused to the emperor. Calling for water, he washed his hands in the sight of the people, saying, “I am innocent of the blood of this just person.” The mob, again scorning his scruples, cried, “His blood be on us, and on our children.” Pilate was stung to the heart by their insults, and putting forth Jesus before them, said, “Shall I crucify your King?” The fatal moment had now come. They madly exclaimed, “We have no king but Caesar;” and now Jesus is given up to them, and led away to be crucified.\n\n By the direction of Pilate an inscription was placed, according to the Roman custom, over the cross, stating the crime for which he was crucified. Having ascertained from the centurion that he was dead, he gave up the body to Joseph of Arimathea to be buried. Pilate’s name now disappears from the Gospel history. References to him, however, are found in the Acts of the Apostles (3:13; 4:27; 13:28), and in 1 Tim. 6:13. In A.D. 36 the governor of Syria brought serious accusations against Pilate, and he was banished to Vienne in Gaul, where, according to tradition, he committed suicide.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Pilate",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "wearing the pileus",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "cap or badge of a manumitted slave,",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "freedman,",
+     "kind": "other"
+    },
+    {
+     "n": 4,
+     "english": "typical Roman, not of the antique, simple stamp, but of the imperial period, a man not without some remains of the ancient Roman justice in his soul, yet pleasure-loving, imperious, and corrupt. He hated the Jews whom he ruled, and in times of irritation freely shed their blood. They returned his hatred with cordiality, and accused him of every crime, maladministration, cruelty, and robbery. He visited Jerusalem as seldom as possible; for, indeed, to one accustomed to the pleasures of Rome, with its theatres, baths, games, and gay society, Jerusalem, with its religiousness and ever-smouldering revolt, was a dreary residence. When he did visit it he stayed in the palace of Herod the Great, it being common for the officers sent by Rome into conquered countries to occupy the palaces of the displaced sovereigns.",
+     "kind": "other"
+    },
+    {
+     "n": 5,
+     "english": "malefactor.",
+     "kind": "other"
+    },
+    {
+     "n": 6,
+     "english": "throughout all Jewry, beginning from Galilee.",
+     "kind": "partial",
+     "verses": [
+      42023005
+     ],
+     "es": "Mas ellos porfiaban, diciendo: Alborota al pueblo, enseñando por toda Judea, comenzando desde Galilea hasta aquí.",
+     "pt": "Mas eles insistiam, dizendo: Ele incita ao povo, ensinando por toda a Judeia, começando desde a Galileia até aqui."
+    },
+    {
+     "n": 7,
+     "english": "just person.",
+     "kind": "other"
+    },
+    {
+     "n": 8,
+     "english": "Not this man, but Barabbas.",
+     "kind": "unsure",
+     "verses": [
+      43018040
+     ],
+     "es": "Entonces todos dieron voces otra vez, diciendo: No á éste, sino á Barrabás. Y Barrabás era ladrón.",
+     "pt": "Voltaram pois todos a clamar, dizendo: Não a este, mas a Barrabás!E Barrabás era um ladrão."
+    },
+    {
+     "n": 9,
+     "english": "What then shall I do with Jesus?",
+     "kind": "loose",
+     "verses": [
+      40027021,
+      40027022
+     ],
+     "es": "Y respondiendo el presidente les dijo: ¿Cuál de los dos queréis que os suelte? Y ellos dijeron: A Barrabás. Pilato les dijo: ¿Qué pues haré de Jesús que se dice el Cristo? Dícenle todos: Sea crucificado.",
+     "pt": "O governador lhes perguntou: Qual destes dois quereis que vos solte? E responderam: Barrabás! Pilatos lhes disse: Que, pois, farei de Jesus, que é chamado Cristo? Todos lhe disseram: Seja crucificado!"
+    },
+    {
+     "n": 10,
+     "english": "Let him be crucified.",
+     "kind": "partial",
+     "verses": [
+      40027022
+     ],
+     "es": "Pilato les dijo: ¿Qué pues haré de Jesús que se dice el Cristo? Dícenle todos: Sea crucificado.",
+     "pt": "Pilatos lhes disse: Que, pois, farei de Jesus, que é chamado Cristo? Todos lhe disseram: Seja crucificado!"
+    },
+    {
+     "n": 11,
+     "english": "Why, what evil hath he done?",
+     "kind": "partial",
+     "verses": [
+      40027023
+     ],
+     "es": "Y el presidente les dijo: Pues ¿qué mal ha hecho? Mas ellos gritaban más, diciendo: Sea crucificado.",
+     "pt": "E o governador perguntou: Ora, que mal ele fez? Porém gritavam mais: Seja crucificado!"
+    },
+    {
+     "n": 12,
+     "english": "Away with him! crucify him, crucify him!",
+     "kind": "loose",
+     "verses": [
+      43019014,
+      43019015
+     ],
+     "es": "Y era la víspera de la Pascua, y como la hora de sexta. Entonces dijo á los Judíos: He aquí vuestro Rey. Mas ellos dieron voces: Quita, quita, crucifícale. Díceles Pilato: ¿A vuestro Rey he de crucificar? Respondieron los pontífices: No tenemos rey sino á César.",
+     "pt": "E era a preparação da páscoa, e quase à hora sexta, e disse aos Judeus: Eis aqui vosso Rei! Mas eles bradaram: Tira, tira, crucifica-o! Disse-lhes Pilatos: Crucificarei a vosso Rei?Responderam os chefes dos sacerdotes: Não temos outro rei, a não ser César."
+    },
+    {
+     "n": 13,
+     "english": "Hail, King of the Jews!",
+     "kind": "partial",
+     "verses": [
+      40027029
+     ],
+     "es": "Y pusieron sobre su cabeza una corona tejida de espinas, y una caña en su mano derecha; é hincando la rodilla delante de él, le burlaban, diciendo: ¡Salve, Rey de los Judíos!",
+     "pt": "E, depois de tecerem uma coroa de espinhos, puseram-na sobre a sua cabeça, e uma cana em sua mão direita. Em seguida, puseram-se de joelhos diante dele, zombando-o, e diziam: Felicitações, Rei dos Judeus!"
+    },
+    {
+     "n": 14,
+     "english": "Behold the man!",
+     "kind": "partial",
+     "verses": [
+      43019005
+     ],
+     "es": "Y salió Jesús fuera, llevando la corona de espinas y la ropa de grana. Y díceles Pilato: He aquí el hombre.",
+     "pt": "Jesus foi pois trazido para fora, levando a coroa de espinhos, e a roupa vermelha-roxa. E Pilatos disse-lhes: Eis aqui o homem."
+    },
+    {
+     "n": 15,
+     "english": "Crucify him, crucify him!",
+     "kind": "partial",
+     "verses": [
+      43019006
+     ],
+     "es": "Y como le vieron los príncipes de los sacerdotes, y los servidores, dieron voces diciendo: Crucifícale, crucifícale. Díceles Pilato: Tomadle vosotros, y crucificadle; porque yo no hallo en él crimen.",
+     "pt": "Quando então os chefes dos sacerdotes e os trabalhadores o viram, eles clamaram, dizendo: Crucifica -o ! Crucifica -o ! Disse-lhes Pilatos: Tomai-o vós, e crucificai -o ; porque eu nenhum crime acho nele."
+    },
+    {
+     "n": 16,
+     "english": "the Son of God.",
+     "kind": "unsure",
+     "verses": [
+      27003025
+     ],
+     "es": "Respondió él y dijo: He aquí que yo veo cuatro varones sueltos, que se pasean en medio del fuego, y ningún daño hay en ellos: y el parecer del cuarto es semejante á hijo de los dioses.",
+     "pt": "Ele disse mais: Eis que vejo quatro homens soltos andando no meio do fogo, e não há neles dano algum; e a aparência do quarto é semelhante a um filho de deuses."
+    },
+    {
+     "n": 17,
+     "english": "Whence art thou?",
+     "kind": "unsure",
+     "verses": [
+      9030013
+     ],
+     "es": "Y díjole David: ¿De quién eres tú? ¿y de dónde eres? Y respondió el mozo Egipcio: Yo soy siervo de un Amalecita, y dejóme mi amo hoy ha tres días, porque estaba enfermo;",
+     "pt": "E disse-lhe Davi: De quem és tu? E de onde és? E respondeu o jovem egípcio: Eu sou servo de um amalequita, e deixou-me meu amo hoje há três dias, porque estava enfermo;"
+    },
+    {
+     "n": 18,
+     "english": "Knowest thou not that I have power to crucify thee?",
+     "kind": "partial",
+     "verses": [
+      43019010
+     ],
+     "es": "Entonces dícele Pilato: ¿A mí no me hablas? ¿no sabes que tengo potestad para crucificarte, y que tengo potestad para soltarte?",
+     "pt": "Disse-lhe pois Pilatos: Não falas comigo? Não sabes que tenho poder para te crucificar, e tenho poder para te soltar?"
+    },
+    {
+     "n": 19,
+     "english": "Thou couldest have no power at all against me, except it were given thee from above.",
+     "kind": "partial",
+     "verses": [
+      43019011
+     ],
+     "es": "Respondió Jesús: Ninguna potestad tendrías contra mí, si no te fuese dado de arriba: por tanto, el que á ti me ha entregado, mayor pecado tiene.",
+     "pt": "Respondeu Jesus: Nenhum poder terias contra mim, se não te fosse dado de cima; portanto o que me entregou a ti tem maior pecado."
+    },
+    {
+     "n": 20,
+     "english": "If thou let this man go, thou art not Caesar’s friend.",
+     "kind": "loose",
+     "verses": [
+      2033011,
+      2033012
+     ],
+     "es": "Y hablaba Jehová á Moisés cara á cara, como habla cualquiera á su compañero. Y volvíase al campo; mas el joven Josué, su criado, hijo de Nun, nunca se apartaba de en medio del tabernáculo. Y dijo Moisés á Jehová: Mira, tú me dices á mí: Saca este pueblo: y tú no me has declarado á quién has de enviar conmigo: sin embargo tú dices: Yo te he conocido por tu nombre, y has hallado también gracia en mis ojos.",
+     "pt": "E falava o SENHOR a Moisés face a face, como fala qualquer um a seu companheiro. E voltava-se ao campo; mas o jovem Josué, seu criado, filho de Num, nunca se afastava do meio do tabernáculo. E disse Moisés ao SENHOR: Olha, tu me dizes a mim: Tira este povo: e tu não me declaraste a quem hás de enviar comigo: porém, tu dizes: Eu te conheci por teu nome, e achaste também graça em meus olhos."
+    },
+    {
+     "n": 21,
+     "english": "I am innocent of the blood of this just person.",
+     "kind": "partial",
+     "verses": [
+      40027024
+     ],
+     "es": "Y viendo Pilato que nada adelantaba, antes se hacía más alboroto, tomando agua se lavó las manos delante del pueblo, diciendo: Inocente soy yo de la sangre de este justo: veréislo vosotros.",
+     "pt": "Quando, pois, Pilatos viu que nada adiantava, em vez disso se fazia mais tumulto, ele pegou água, lavou as mãos diante da multidão, e disse: Estou inocente do sangue deste justo. A responsabilidade é vossa."
+    },
+    {
+     "n": 22,
+     "english": "His blood be on us, and on our children.",
+     "kind": "partial",
+     "verses": [
+      40027025
+     ],
+     "es": "Y respondiendo todo el pueblo, dijo: Su sangre sea sobre nosotros, y sobre nuestros hijos.",
+     "pt": "E todo o povo respondeu: O sangue dele venha sobre nós, e sobre os nossos filhos."
+    },
+    {
+     "n": 23,
+     "english": "Shall I crucify your King?",
+     "kind": "unsure",
+     "verses": [
+      43019015
+     ],
+     "es": "Mas ellos dieron voces: Quita, quita, crucifícale. Díceles Pilato: ¿A vuestro Rey he de crucificar? Respondieron los pontífices: No tenemos rey sino á César.",
+     "pt": "Mas eles bradaram: Tira, tira, crucifica-o! Disse-lhes Pilatos: Crucificarei a vosso Rei?Responderam os chefes dos sacerdotes: Não temos outro rei, a não ser César."
+    },
+    {
+     "n": 24,
+     "english": "We have no king but Caesar;",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2367,
+   "name": "Portius Festus",
+   "sha256": "0de2bc822ba15881b5ab65ac587337a5acba469f670b878bf2177cc00123ac7e",
+   "text": "The successor of Felix (A.D. 60) as procurator of Judea (Acts 24:27). A few weeks after he had entered on his office the case of Paul, then a prisoner at Caesarea, was reported to him. The “next day,” after he had gone down to Caesarea, he heard Paul defend himself in the presence of Herod Agrippa II. and his sister Bernice, and not finding in him anything worthy of death or of bonds, would have set him free had he not appealed unto Caesar (Acts 25:11, 12). In consequence of this appeal Paul was sent to Rome. Festus, after being in office less than two years, died in Judea.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "next day,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2368,
+   "name": "Potiphar",
+   "sha256": "d5e9d167ecff30d5ded8377ca19365c099ef8f6da140a5393c03e9a430a7df2f",
+   "text": "Dedicated to Ra; i.e., to the sun-god, the Egyptian to whom the Ishmaelites sold Joseph (Gen. 39:1). He was “captain of the guard”, i.e., chief, probably, of the state police, who, while they formed part of the Egyptian army, were also largely employed in civil duties (37:36; marg., “chief of the executioners”). Joseph, though a foreigner, gradually gained his confidence, and became overseer over all his possessions. Believing the false accusation which his profligate wife brought against Joseph, Potiphar cast him into prison, where he remained for some years.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "captain of the guard",
+     "kind": "partial",
+     "verses": [
+      1039001
+     ],
+     "es": "Y LLEVADO José á Egipto, comprólo Potiphar, eunuco de Faraón, capitán de los de la guardia, varón Egipcio, de mano de los Ismaelitas que lo habían llevado allá.",
+     "pt": "E levado José ao Egito, comprou-o Potifar, oficial de Faraó, capitão dos da guarda, homem egípcio, da mão dos ismaelitas que o haviam levado ali."
+    },
+    {
+     "n": 1,
+     "english": "chief of the executioners",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2370,
+   "name": "Priscilla",
+   "sha256": "d05e390e1c5c7b63ebbe37f2eaf98a524feb0128a6827ef25b36127424e46f16",
+   "text": "The wife of Aquila (Acts 18:2), who is never mentioned without her. Her name sometimes takes the precedence of his (Rom. 16:3; 2 Tim. 4:19). She took part with Aquila (q.v.) in insturcting Apollos (Acts 18:26).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2372,
+   "name": "Puah",
+   "sha256": "110963877fdd035ed036313cdafde779992c61ddb30739a8b53ab961b52d5527",
+   "text": "One of the two midwives who feared God, and refused to kill the Hebrew male children at their birth (Ex. 1:15-21).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2373,
+   "name": "Puah",
+   "sha256": "c735ee9d4210a16684bec51910dd4c06ea618c16e657f40862fc7362bb015846",
+   "text": "A descendant of Issachar (Judg. 10:1).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2374,
+   "name": "Publius",
+   "sha256": "a2e4ef4ed794227cdcf10a33a3084ed87ded351eb215488ec7d72ef3247c1063",
+   "text": "“the chief man of the island” of Malta (Acts 28:7), who courteously entertained Paul and his shipwrecked companions for three days, till they found a more permanent place of residence; for they remained on the island for three months, till the stormy season had passed. The word here rendered “chief man” (protos) is supposed by some to be properly a Maltese term, the official title of the governor.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the chief man of the island",
+     "kind": "partial",
+     "verses": [
+      44028007
+     ],
+     "es": "En aquellos lugares había heredades del principal de la isla, llamado Publio, el cual nos recibió y hospedó tres días humanamente.",
+     "pt": "E perto daquele mesmo lugar o homem mais importante da ilha, por nome Públio, tinha algumas propriedades; o qual nos recebeu e nos hospedou por três dias gentilmente."
+    },
+    {
+     "n": 1,
+     "english": "chief man",
+     "kind": "wording",
+     "verses": [
+      44028007
+     ],
+     "es": "En aquellos lugares había heredades del principal de la isla, llamado Publio, el cual nos recibió y hospedó tres días humanamente.",
+     "pt": "E perto daquele mesmo lugar o homem mais importante da ilha, por nome Públio, tinha algumas propriedades; o qual nos recebeu e nos hospedou por três dias gentilmente."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2375,
+   "name": "Pudens",
+   "sha256": "377613b325f4815fb715d11199c376f5d660bc07b7d8614db2e67a65902051d4",
+   "text": "Bashful, a Christian at Rome, who sent his greetings to Timothy (2 Tim. 4:21).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2376,
+   "name": "Tilgath-pilneser",
+   "sha256": "b394ac142916d04e4383679cd75f28a225e058bfd8c09b8d77b9927d2114167c",
+   "text": "An Assyrian king. It has been a question whether he was identical with Tiglath-pileser III. (q.v.), or was his predecessor. The weight of evidence is certainly in favour of their identity. Pul was the throne-name he bore in Babylonia as king of Babylon, and Tiglath-pileser the throne-name he bore as king of Assyria. He was the founder of what is called the second Assyrian empire. He consolidated and organized his conquests on a large scale. He subdued Northern Syria and Hamath, and the kings of Syria rendered him homage and paid him tribute. His ambition was to found in Western Asia a kingdom which should embrace the whole civilized world, having Nineveh as its centre. Menahem, king of Israel, gave him the enormous tribute of a thousand talents of silver, “that his hand might be with him” (2 Kings 15:19; 1 Chr. 5:26). The fact that this tribute could be paid showed the wealthy condition of the little kingdom of Israel even in this age of disorder and misgovernment. Having reduced Syria, he turned his arms against Babylon, which he subdued. The Babylonian king was slain, and Babylon and other Chaldean cities were taken, and Pul assumed the title of “King of Sumer [i.e., Shinar] and Accad.” He was succeeded by Shalmanezer IV.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "that his hand might be with him",
+     "kind": "partial",
+     "verses": [
+      12015019
+     ],
+     "es": "Y vino Phul rey de Asiria á la tierra; y dió Manahem á Phul mil talentos de plata porque le ayudara á confirmarse en el reino.",
+     "pt": "E veio Pul, rei da Assíria, à terra; e Menaém deu a Pul mil talentos de prata para lhe ajudasse a se firmar no reino."
+    },
+    {
+     "n": 1,
+     "english": "King of Sumer [i.e., Shinar] and Accad.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2378,
+   "name": "Quartus",
+   "sha256": "1255ad9ee58cf3cbce8958b8aae2e007a5397a0e308012c5a47bd0da62ac0442",
+   "text": "Fourth, a Corinthian Christian who sent by Paul his salutations to friends at Rome (Rom. 16:23).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2380,
+   "name": "Raamah",
+   "sha256": "e145928b2ce58ec6e7cf9d1f12f2e7baa4168093850b90e593e9a7247bb90ee2",
+   "text": "One of the sons of Cush (Gen. 10:7).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2382,
+   "name": "Rabsaris",
+   "sha256": "b85c7ebebf982141954a9f88d4da3166026505b548b787361a9507c2370d969f",
+   "text": "Chief of the Heads, one of the three officers whom Sennacherib sent from Lachish with a threatening message to Jerusalem (2 Kings 18:17; Jer. 39:3, 13).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2384,
+   "name": "Rabshakeh",
+   "sha256": "2840045830b2b3de1b582538c9fdb2d38cf862f0f406fc71dbc914a710d77854",
+   "text": "Chief of the princes, the name given to the chief cup-bearer or the vizier of the Assyrian court; one of Sennacherib’s messengers to Hezekiah. See the speech he delivered, in the Hebrew language, in the hearing of all the people, as he stood near the wall on the north side of the city (2 Kings 18:17-37). He and the other envoys returned to their master and reported that Hezekiah and his people were obdurate, and would not submit.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2385,
+   "name": "Rachab",
+   "sha256": "0c9eaed1c624421431d3dfbb848c130bdac55d46c8c9bc2642edf96c4c3dbee8",
+   "text": "Rahab, a name found in the genealogy of our Lord (Matt. 1:5).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2386,
+   "name": "Rachel",
+   "sha256": "daf33979106482126f019e272878bb6ba102e9950c8d00d4f2b26b53aead9faf",
+   "text": "Ewe, “the daughter”, “the somewhat petulant, peevish, and self-willed though beautiful younger daughter” of Laban, and one of Jacob’s wives (Gen. 29:6, 28). He served Laban fourteen years for her, so deep was Jacob’s affection for her. She was the mother of Joseph (Gen. 30:22-24). Afterwards, on Jacob’s departure from Mesopotamia, she took with her her father’s teraphim (31:34, 35). As they journeyed on from Bethel, Rachel died in giving birth to Benjamin (35:18, 19), and was buried “in the way to Ephrath, which is Bethlehem. And Jacob set a pillar upon her grave”. Her sepulchre is still regarded with great veneration by the Jews. Its traditional site is about half a mile from Jerusalem.\n\n This name is used poetically by Jeremiah (31:15-17) to denote God’s people mourning under their calamities. This passage is also quoted by Matthew as fulfilled in the lamentation at Bethlehem on account of the slaughter of the infants there at the command of Herod (Matt. 2:17, 18).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the daughter",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "the somewhat petulant, peevish, and self-willed though beautiful younger daughter",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "in the way to Ephrath, which is Bethlehem. And Jacob set a pillar upon her grave",
+     "kind": "loose",
+     "verses": [
+      1035019,
+      1035020
+     ],
+     "es": "Así murió Rachêl, y fué sepultada en el camino de Ephrata, la cual es Beth-lehem. Y puso Jacob un título sobre su sepultura: este es el título de la sepultura de Rachêl hasta hoy.",
+     "pt": "Assim morreu Raquel, e foi sepultada no caminho de Efrata, a qual é Belém. E pôs Jacó uma coluna sobre sua sepultura: esta é a coluna da sepultura de Raquel até hoje."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2388,
+   "name": "Rahab",
+   "sha256": "5219538bb66bd8fa863917ce52f298b9f47bed177a3edece29b21ebf2839e6a0",
+   "text": "Insolence; pride, a poetical name applied to Egypt in Ps. 87:4; 89:10; Isa. 51:9, as “the proud one.”\n\n Rahab, (Heb. Rahab; i.e., “broad,” “large”). When the Hebrews were encamped at Shittim, in the “Arabah” or Jordan valley opposite Jericho, ready to cross the river, Joshua, as a final preparation, sent out two spies to “spy the land.” After five days they returned, having swum across the river, which at this season, the month Abib, overflowed its banks from the melting of the snow on Lebanon. The spies reported how it had fared with them (Josh. 2:1-7). They had been exposed to danger in Jericho, and had been saved by the fidelity of Rahab the harlot, to whose house they had gone for protection. When the city of Jericho fell (6:17-25), Rahab and her whole family were preserved according to the promise of the spies, and were incorporated among the Jewish people. She afterwards became the wife of Salmon, a prince of the tribe of Judah (Ruth 4:21; 1 Chr. 2:11; Matt. 1:5). “Rahab’s being asked to bring out the spies to the soldiers (Josh. 2:3) sent for them, is in strict keeping with Eastern manners, which would not permit any man to enter a woman’s house without her permission. The fact of her covering the spies with bundles of flax which lay on her house-roof (2:6) is an ‘undesigned coincidence’ which strictly corroborates the narrative. It was the time of the barley harvest, and flax and barley are ripe at the same time in the Jordan valley, so that the bundles of flax stalks might have been expected to be drying just then” (Geikie’s Hours, etc., ii., 390).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the proud one.",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "broad,",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "large",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "Arabah",
+     "kind": "other"
+    },
+    {
+     "n": 4,
+     "english": "spy the land.",
+     "kind": "other"
+    },
+    {
+     "n": 5,
+     "english": "Rahab’s being asked to bring out the spies to the soldiers (Josh. 2:3) sent for them, is in strict keeping with Eastern manners, which would not permit any man to enter a woman’s house without her permission. The fact of her covering the spies with bundles of flax which lay on her house-roof (2:6) is an ‘undesigned coincidence’ which strictly corroborates the narrative. It was the time of the barley harvest, and flax and barley are ripe at the same time in the Jordan valley, so that the bundles of flax stalks might have been expected to be drying just then",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2389,
+   "name": "Raham",
+   "sha256": "f25b42effcf8a7f08d9f053249015f676ad9da5328796058565a798852d6a865",
+   "text": "Merciful, one of the descendants of Caleb, the son of Hezron (1 Chr. 2:44).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2391,
+   "name": "Ram",
+   "sha256": "8f0b639b2a87639fea1100439743e1c77c19eb4cb00eafb301cc6aa196d09467",
+   "text": "The son of Hezron, and one of the ancestors of the royal line (Ruth 4:19). The margin of 1 Chr. 2:9, also Matt. 1:3, 4 and Luke 3:33, have “Aram.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Aram.",
+     "kind": "wording",
+     "verses": [
+      40001003
+     ],
+     "es": "Y Judas engendró de Thamar á Phares y á Zara: y Phares engendró á Esrom: y Esrom engendró á Aram:",
+     "pt": "E Judá gerou de Tamar a Perez e a Zerá; e Perez gerou a Esrom, e Esrom gerou a Arão."
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2392,
+   "name": "Ram",
+   "sha256": "4163124216e8750ddaa0554c62066cd6eae3ba78a4163428847a987fe085c48f",
+   "text": "One of the sons of Jerahmeel (1 Chr. 2:25, 27).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2393,
+   "name": "Ram",
+   "sha256": "c05d19cdc052dfd368ef67da66e1074ba3d3ebe4a5ee85eff696a388de7da35e",
+   "text": "A person mentioned in Job 32:2 as founder of a clan to which Elihu belonged. The same as Aram of Gen. 22:21.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2397,
+   "name": "Raphu",
+   "sha256": "72ecb1a998a58afaec4bcfbe515cc7bc47af919f11dd1cf0a6b3bb5fa9cf4317",
+   "text": "Healed, a Benjamite, whose son Palti was one of the twelve spies (Num. 13:9).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2400,
+   "name": "Reba",
+   "sha256": "a5fea06371238e4c31f4ebcfde4e4bbbfe6e265773b08a880bd74ae2a85e0d98",
+   "text": "Fourth, one of the Midianite chiefs slain by the Israelites in the wilderness (Num. 31:8; Josh. 13:21).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2401,
+   "name": "Rebekah",
+   "sha256": "8102ec9908fe81fbb2bcc30e300945db0d7b6bc5979afde9b1426237d35c612e",
+   "text": "A noose, the daughter of Bethuel, and the wife of Isaac (Gen. 22:23; 24:67). The circumstances under which Abraham’s “steward” found her at the “city of Nahor,” in Padan-aram, are narrated in Gen. 24-27. “She can hardly be regarded as an amiable woman. When we first see her she is ready to leave her father’s house for ever at an hour’s notice; and her future life showed not only a full share of her brother Laban’s duplicity, but the grave fault of partiality in her relations to her children, and a strong will, which soon controlled the gentler nature of her husband.” The time and circumstances of her death are not recorded, but it is said that she was buried in the cave of Machpelah (Gen. 49:31).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "steward",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "city of Nahor,",
+     "kind": "unsure",
+     "verses": [
+      1024010
+     ],
+     "es": "Y el criado tomó diez camellos de los camellos de su señor, y fuése, pues tenía á su disposición todos los bienes de su señor: y puesto en camino, llegó á Mesopotamia, á la ciudad de Nachôr.",
+     "pt": "E o criado tomou dez camelos dos camelos de seu senhor, e foi-se, pois tinha à sua disposição todos os bens de seu senhor: e posto em caminho, chegou à Mesopotâmia, à cidade de Naor."
+    },
+    {
+     "n": 2,
+     "english": "She can hardly be regarded as an amiable woman. When we first see her she is ready to leave her father’s house for ever at an hour’s notice; and her future life showed not only a full share of her brother Laban’s duplicity, but the grave fault of partiality in her relations to her children, and a strong will, which soon controlled the gentler nature of her husband.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2402,
+   "name": "Rechab",
+   "sha256": "a6328c1b5a2f51ac9d57f3a518891b5b87d6267a35d68622540a515929bc2580",
+   "text": "One of Ishbosheth’s “captains of bands” or leaders of predatory troops (2 Sam. 4:2).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "captains of bands",
+     "kind": "partial",
+     "verses": [
+      10004002
+     ],
+     "es": "Y tenía el hijo de Saúl dos varones, los cuales eran capitanes de compañía, el nombre de uno era Baana, y el del otro Rechâb, hijos de Rimmón Beerothita, de los hijos de Benjamín: (porque Beeroth era contada con Benjamín;",
+     "pt": "E o filho de Saul tinha dois homens, os quais eram capitães de tropa, o nome de um era Baaná, e o do outro Recabe, filhos de Rimom beerotita, dos filhos de Benjamim (porque Beerote era contada com Benjamim;"
+    }
+   ]
+  },
+  {
+   "kind": "person",
+   "id": 2403,
+   "name": "Rechab",
+   "sha256": "b793467cb6ce2724c2c1effe8fd4e4e9b8fc574d12822f86c1c0bb42d2ee9689",
+   "text": "The father of Jehonadab, who was the father of the Rechabites (2 Kings 10:15, 23; Jer. 35:6-19).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2406,
+   "name": "Reelaiah",
+   "sha256": "9c83e3d3fa5fdf02dfa77fa4b399d5fcc758c5bb14df4a9b3931c9bc59313fb6",
+   "text": "Thunder of the Lord, one of the princes who returned from the Exile (Neh. 7:7); called also Reelaiah (Ezra 2:2).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2408,
+   "name": "Regem-melech",
+   "sha256": "3d28c4eba5f20948728f4143882422b2835cffefa9afecfe8e5314a639ffe12a",
+   "text": "Friend of the king, one of the two messengers sent by the exiled Jews to Jerusalem in the time of Darius (Zech. 7:2) to make inquiries at the temple.",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2409,
+   "name": "Rehabiah",
+   "sha256": "6ae53e73c3558140490e972409837656b7cdea9d9ed4f9b18877b2806173e4de",
+   "text": "Enlargement of the Lord, the son of Eliezer, and grandson of Moses (1 Chr. 23:17; 24:21).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2410,
+   "name": "Rehob",
+   "sha256": "d9d4b6bb6c08cff961ccd538b35808add10bd8417f123d9bef34f91d7d653d03",
+   "text": "The father of Hadadezer, king of Tobah (2 Sam. 8:3, 12).",
+   "quotes": []
+  },
+  {
+   "kind": "person",
+   "id": 2411,
+   "name": "Rehob",
+   "sha256": "32e960c4df2827aead9ef0812958ebcd0da46e86e04efadbf557b877272bd8fd",
+   "text": "Neh. 10:11.",
+   "quotes": []
+  }
+ ],
+ "glossary": {
+  "Aaron": {
+   "es": "Aarón",
+   "pt": "Arão"
+  },
+  "Abimelech": {
+   "pt": "Abimeleque"
+  },
+  "Abraham": {
+   "pt": "Abraão"
+  },
+  "Accad": {
+   "pt": "Acade"
+  },
+  "Agrippa": {
+   "es": "Agripa",
+   "pt": "Agripa"
+  },
+  "Andrew": {
+   "es": "Andrés",
+   "pt": "André"
+  },
+  "Apollos": {
+   "es": "Apolos",
+   "pt": "Apolo"
+  },
+  "Aquila": {
+   "pt": "Áquila"
+  },
+  "Arabah": {
+   "pt": "Arabá"
+  },
+  "Aram": {
+   "pt": "Arã"
+  },
+  "Arimathea": {
+   "es": "Arimatea",
+   "pt": "Arimateia"
+  },
+  "Ashkelon": {
+   "es": "Ascalón",
+   "pt": "Asquelom"
+  },
+  "Asia": {
+   "pt": "Ásia"
+  },
+  "Assyria": {
+   "es": "Asiria",
+   "pt": "Assíria"
+  },
+  "Azotus": {
+   "es": "Azoto",
+   "pt": "Azoto"
+  },
+  "Babylon": {
+   "es": "Babilonia",
+   "pt": "Babilônia"
+  },
+  "Babylonia": {
+   "es": "Babilonia",
+   "pt": "Babilônia"
+  },
+  "Barabbas": {
+   "es": "Barrabás",
+   "pt": "Barrabás"
+  },
+  "Beersheba": {
+   "es": "Beer-seba",
+   "pt": "Berseba"
+  },
+  "Benjamin": {
+   "es": "Benjamín",
+   "pt": "Benjamim"
+  },
+  "Bernice": {
+   "pt": "Berenice"
+  },
+  "Bethel": {
+   "es": "Bet-el",
+   "pt": "Betel"
+  },
+  "Bethlehem": {
+   "es": "Bet-lehem",
+   "pt": "Belém"
+  },
+  "Bethsaida": {
+   "es": "Betsaida",
+   "pt": "Betsaida"
+  },
+  "Bethuel": {
+   "es": "Betuel",
+   "pt": "Betuel"
+  },
+  "Caesarea": {
+   "es": "Cesarea",
+   "pt": "Cesareia"
+  },
+  "Caleb": {
+   "pt": "Calebe"
+  },
+  "Canaan": {
+   "es": "Canaán",
+   "pt": "Canaã"
+  },
+  "Claudia": {
+   "pt": "Cláudia"
+  },
+  "Corinth": {
+   "es": "Corinto",
+   "pt": "Corinto"
+  },
+  "Cush": {
+   "es": "Etiopía",
+   "pt": "Cuxe"
+  },
+  "Cyprus": {
+   "pt": "Chipre"
+  },
+  "Darius": {
+   "es": "Darío",
+   "pt": "Dario"
+  },
+  "David": {
+   "pt": "Davi"
+  },
+  "Egypt": {
+   "es": "Egipto",
+   "pt": "Egito"
+  },
+  "Eliezer": {
+   "pt": "Eliézer"
+  },
+  "Elihu": {
+   "es": "Eliú",
+   "pt": "Eliú"
+  },
+  "Ephesus": {
+   "es": "Efeso",
+   "pt": "Éfeso"
+  },
+  "Ephrath": {
+   "es": "Efrata",
+   "pt": "Efrata"
+  },
+  "Ethiopia": {
+   "es": "Etiopía",
+   "pt": "Cuxe"
+  },
+  "Ezra": {
+   "es": "Esdras",
+   "pt": "Esdras"
+  },
+  "Felix": {
+   "es": "Félix",
+   "pt": "Félix"
+  },
+  "Galilee": {
+   "es": "Galilea",
+   "pt": "Galileia"
+  },
+  "Ham": {
+   "es": "Cam",
+   "pt": "Cam (person); Hã (place)"
+  },
+  "Hamath": {
+   "es": "Hamat",
+   "pt": "Hamate"
+  },
+  "Hebron": {
+   "es": "Hebrón",
+   "pt": "Hebrom"
+  },
+  "Herod": {
+   "es": "Herodes",
+   "pt": "Herodes"
+  },
+  "Herod Antipas": {
+   "es": "Herodes Antipas",
+   "pt": "Herodes Antipas"
+  },
+  "Herodias": {
+   "es": "Herodías"
+  },
+  "Hezekiah": {
+   "es": "Ezequías",
+   "pt": "Ezequias"
+  },
+  "Hezron": {
+   "es": "Hezrón (person); Hesrón (person); Hebrón (place)",
+   "pt": "Hezrom (person); Hebrom (place)"
+  },
+  "Hierapolis": {
+   "es": "Hierápolis",
+   "pt": "Hierápolis"
+  },
+  "Hophni": {
+   "es": "Ofni",
+   "pt": "Hofni"
+  },
+  "Hymenaeus": {
+   "es": "Himeneo",
+   "pt": "Himeneu"
+  },
+  "Ichabod": {
+   "es": "Icábod",
+   "pt": "Icabode"
+  },
+  "Isaac": {
+   "pt": "Isaque"
+  },
+  "Isaiah": {
+   "es": "Isaías",
+   "pt": "Isaías"
+  },
+  "Issachar": {
+   "es": "Isacar",
+   "pt": "Issacar"
+  },
+  "Jacob": {
+   "pt": "Jacó"
+  },
+  "Jerahmeel": {
+   "es": "Jerameel",
+   "pt": "Jerameel"
+  },
+  "Jeremiah": {
+   "es": "Jeremías",
+   "pt": "Jeremias"
+  },
+  "Jericho": {
+   "es": "Jericó",
+   "pt": "Jericó"
+  },
+  "Jerusalem": {
+   "es": "Jerusalén",
+   "pt": "Jerusalém"
+  },
+  "Jesus": {
+   "es": "Jesús"
+  },
+  "Jesus Christ": {
+   "es": "Jesucristo",
+   "pt": "Jesus Cristo"
+  },
+  "Job": {
+   "pt": "Jó"
+  },
+  "John": {
+   "es": "Juan",
+   "pt": "João"
+  },
+  "John the Baptist": {
+   "es": "Juan el Bautista",
+   "pt": "João Batista"
+  },
+  "Jordan": {
+   "es": "Jordán",
+   "pt": "Jordão"
+  },
+  "Joseph": {
+   "es": "José (person); Josef (person); Jefone (person)",
+   "pt": "José"
+  },
+  "Joshua": {
+   "es": "Josué (person); Jesuá (person)",
+   "pt": "Josué (person); Jesua (person)"
+  },
+  "Judah": {
+   "es": "Judá (person); Jehudas (person)",
+   "pt": "Judá"
+  },
+  "Judea": {
+   "pt": "Judeia"
+  },
+  "Laban": {
+   "es": "Labán",
+   "pt": "Labão (person); Labã (place)"
+  },
+  "Lachish": {
+   "es": "Laquís",
+   "pt": "Laquis"
+  },
+  "Lebanon": {
+   "es": "Líbano",
+   "pt": "Líbano"
+  },
+  "Machpelah": {
+   "es": "Macpela",
+   "pt": "Macpela"
+  },
+  "Matthew": {
+   "es": "Mateo",
+   "pt": "Mateus"
+  },
+  "Menahem": {
+   "es": "Manahem",
+   "pt": "Menaém"
+  },
+  "Mesopotamia": {
+   "pt": "Mesopotâmia"
+  },
+  "Moses": {
+   "es": "Moisés",
+   "pt": "Moisés"
+  },
+  "Nahor": {
+   "es": "Nacor",
+   "pt": "Naor"
+  },
+  "Nathanael": {
+   "es": "Natanael",
+   "pt": "Natanael"
+  },
+  "Nile": {
+   "es": "Nilo",
+   "pt": "Nilo"
+  },
+  "Nineveh": {
+   "es": "Nínive",
+   "pt": "Nínive"
+  },
+  "Paul": {
+   "es": "Pablo",
+   "pt": "Paulo"
+  },
+  "Pharaoh": {
+   "es": "Faraón",
+   "pt": "Faraó"
+  },
+  "Pharez": {
+   "es": "Fares",
+   "pt": "Perez"
+  },
+  "Philemon": {
+   "es": "Filemón",
+   "pt": "Filemom"
+  },
+  "Philip": {
+   "es": "Felipe",
+   "pt": "Filipe"
+  },
+  "Phinehas": {
+   "es": "Finees",
+   "pt": "Fineias"
+  },
+  "Phrygia": {
+   "es": "Frygia",
+   "pt": "Frígia"
+  },
+  "Pithom": {
+   "es": "Fitom",
+   "pt": "Pitom"
+  },
+  "Potiphar": {
+   "es": "Potifar",
+   "pt": "Potifar"
+  },
+  "Rachel": {
+   "es": "Raquel",
+   "pt": "Raquel"
+  },
+  "Rahab": {
+   "pt": "Raabe"
+  },
+  "Rameses": {
+   "pt": "Ramessés"
+  },
+  "Rome": {
+   "es": "Roma",
+   "pt": "Roma"
+  },
+  "Ruth": {
+   "es": "Rut",
+   "pt": "Rute"
+  },
+  "Salmon": {
+   "es": "Salmón",
+   "pt": "Salmom"
+  },
+  "Salome": {
+   "es": "Salomé",
+   "pt": "Salomé"
+  },
+  "Sennacherib": {
+   "es": "Senaquérib",
+   "pt": "Senaqueribe"
+  },
+  "Shinar": {
+   "pt": "Sinear"
+  },
+  "Shittim": {
+   "es": "Sitim",
+   "pt": "Sitim"
+  },
+  "Stephen": {
+   "es": "Esteban",
+   "pt": "Estêvão"
+  },
+  "Syria": {
+   "es": "Siria",
+   "pt": "Síria"
+  },
+  "Thebes": {
+   "es": "No-amón",
+   "pt": "Nô-Amom"
+  },
+  "Zerubbabel": {
+   "es": "Zorobabel",
+   "pt": "Zorobabel"
+  },
+  "Zoan": {
+   "es": "Zoán",
+   "pt": "Zoã"
+  }
+ }
+}

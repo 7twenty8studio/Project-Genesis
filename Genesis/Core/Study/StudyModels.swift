@@ -56,6 +56,8 @@ struct Person: Identifiable, Hashable, Sendable {
     /// e.g. "Tribe of Levi"; may be empty.
     let group: String
     let firstVerse: VerseID?
+    /// True when `biography` is a translation of Easton's English.
+    var biographyIsTranslated = false
 
     var id: Int { summary.id }
     var name: String { summary.name }
@@ -194,6 +196,8 @@ struct Place: Identifiable, Hashable, Sendable {
     /// False where the location is uncertain.
     let isPrecise: Bool
     let firstVerse: VerseID?
+    /// True when `description` is a translation of Easton's English.
+    var descriptionIsTranslated = false
 
     var id: Int { summary.id }
     var name: String { summary.name }

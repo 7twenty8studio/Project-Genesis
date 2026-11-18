@@ -163,6 +163,8 @@ struct DetailSection<Content: View>: View {
 /// Dictionary text, labelled so it's never mistaken for Scripture.
 struct DictionaryText: View {
     let text: String
+    /// A translation of Easton's English, said so under the text.
+    var isTranslated = false
 
     @Environment(\.palette) private var palette
     @State private var expanded = false
@@ -177,7 +179,7 @@ struct DictionaryText: View {
                 Button(expanded ? "Show less" : "Read more") { expanded.toggle() }
                     .font(.subheadline)
             }
-            Text("From Easton's Bible Dictionary (1897)")
+            Text(isTranslated ? String(localized: "Translated from Easton's Bible Dictionary (1897). Not Scripture.") : String(localized: "From Easton's Bible Dictionary (1897)"))
                 .font(.caption2)
                 .foregroundStyle(palette.secondaryText)
         }

@@ -1,0 +1,1482 @@
+{
+ "batch": "042",
+ "entries": [
+  {
+   "kind": "place",
+   "id": 1081,
+   "name": "Shiloh",
+   "sha256": "0342ed491b41e07ef77a2cad0bebbfd1768488ce8fc13640f1ea5b7eee98708e",
+   "text": "Generally understood as denoting the Messiah, “the peaceful one,” as the word signifies (Gen. 49:10). The Vulgate Version translates the word, “he who is to be sent,” in allusion to the Messiah; the Revised Version, margin, “till he come to Shiloh;” and the LXX., “until that which is his shall come to Shiloh.” It is most simple and natural to render the expression, as in the Authorized Version, “till Shiloh come,” interpreting it as a proper name (comp. Isa. 9:6).\n\n Shiloh, a place of rest, a city of Ephraim, “on the north side of Bethel,” from which it is distant 10 miles (Judg. 21:19); the modern Seilun (the Arabic for Shiloh), a “mass of shapeless ruins.” Here the tabernacle was set up after the Conquest (Josh. 18:1-10), where it remained during all the period of the judges till the ark fell into the hands of the Philistines. “No spot in Central Palestine could be more secluded than this early sanctuary, nothing more featureless than the landscape around; so featureless, indeed, the landscape and so secluded the spot that from the time of St. Jerome till its re-discovery by Dr. Robinson in 1838 the very site was forgotten and unknown.” It is referred to by Jeremiah (7:12, 14; 26:4-9) five hundred years after its destruction.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the peaceful one,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "he who is to be sent,",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "till he come to Shiloh;",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "until that which is his shall come to Shiloh.",
+     "kind": "loose",
+     "verses": [
+      2009018,
+      2009019
+     ],
+     "es": "He aquí que mañana á estas horas yo haré llover granizo muy grave, cual nunca fué en Egipto, desde el día que se fundó hasta ahora. Envía, pues, á recoger tu ganado, y todo lo que tienes en el campo; porque todo hombre ó animal que se hallare en el campo, y no fuere recogido á casa, el granizo descenderá sobre él, y morirá.",
+     "pt": "Eis que amanhã a estas horas eu farei chover granizo muito grave, qual nunca foi em Egito, desde o dia que se fundou até agora. Envia, pois, a recolher teu gado, e tudo o que tens no campo; porque todo homem ou animal que se achar no campo, e não for recolhido a casa, o granizo descerá sobre ele, e morrerá."
+    },
+    {
+     "n": 4,
+     "english": "till Shiloh come,",
+     "kind": "other"
+    },
+    {
+     "n": 5,
+     "english": "on the north side of Bethel,",
+     "kind": "other"
+    },
+    {
+     "n": 6,
+     "english": "mass of shapeless ruins.",
+     "kind": "other"
+    },
+    {
+     "n": 7,
+     "english": "No spot in Central Palestine could be more secluded than this early sanctuary, nothing more featureless than the landscape around; so featureless, indeed, the landscape and so secluded the spot that from the time of St. Jerome till its re-discovery by Dr. Robinson in 1838 the very site was forgotten and unknown.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1082,
+   "name": "Shimron",
+   "sha256": "42676c3a1d0ccfa9f2e6a00f15b346e673c5cf6b522f8366c43de4c15d02621c",
+   "text": "Watch-post, an ancient city of the Canaanites; with its villages, allotted to Zebulun (Josh. 19:15); now probably Semunieh, on the northern edge of the plain of Esdraelon, 5 miles west of Nazareth.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1083,
+   "name": "Shimron-meron",
+   "sha256": "07e02ebb606d11e9f1935dbea05150ea90e915f78cdb8d44556082df5d69bd56",
+   "text": "The same, probably, as Shimron (Josh. 12:20).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1084,
+   "name": "Shinar",
+   "sha256": "3bbb6bfcf30a3c63380c2013df6d59b647275aed35bf1a7b6153698b68100385",
+   "text": "LXX. and Vulgate “Senaar;” in the inscriptions, “Shumir;” probably identical with Babylonia or Southern Mesopotamia, extending almost to the Persian Gulf. Here the tower of Babel was built (Gen. 11:1-6), and the city of Babylon. The name occurs later in Jewish history (Isa. 11:11; Zech. 5:11). Shinar was apparently first peopled by Turanian tribes, who tilled the land and made bricks and built cities. Then tribes of Semites invaded the land and settled in it, and became its rulers. This was followed in course of time by an Elamite invasion; from which the land was finally delivered by Khammurabi, the son of Amarpel (“Amraphel, king of Shinar,” Gen. 14:1), who became the founder of the new empire of Chaldea.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Senaar;",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "Shumir;",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "Amraphel, king of Shinar,",
+     "kind": "partial",
+     "verses": [
+      1014001
+     ],
+     "es": "Y ACONTECIÓ en los días de Amraphel, rey de Shinar, Arioch, rey de Elazar, Chêdorlaomer, rey de Elá, y Tidal, rey de naciones,",
+     "pt": "E aconteceu nos dias de Anrafel, rei de Sinear, Arioque, rei de Elasar, Quedorlaomer, rei de Elão, e Tidal, rei de nações,"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1085,
+   "name": "Shion",
+   "sha256": "da364f09f04d210a0bee7047f41c36c4a7e35ff7b597b31c059d36fe84ebfb46",
+   "text": "Overturning, a town of Issachar (Josh. 19:19).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1086,
+   "name": "Shittim",
+   "sha256": "f9eec83249a18307dae55e801614eca5d682fa5c28eee366bcf2f8dae2187b38",
+   "text": "Acacias, also called “Abel-shittim” (Num. 33:49), a plain or valley in the land of Moab where the Israelites were encamped after their two victories over Sihon and Og, at the close of their desert wanderings, and from which Joshua sent forth two spies (q.v.) “secretly” to “view” the land and Jericho (Josh. 2:1).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Abel-shittim",
+     "kind": "wording",
+     "verses": [
+      4033049
+     ],
+     "es": "Finalmente asentaron junto al Jordán, desde Beth-jesimoth hasta Abel-sitim, en los campos de Moab.",
+     "pt": "Finalmente assentaram junto ao Jordão, desde Bete-Jesimote até Abel-Sitim, nos campos de Moabe."
+    },
+    {
+     "n": 1,
+     "english": "secretly",
+     "kind": "wording",
+     "verses": [
+      6002001
+     ],
+     "es": "Y JOSUÉ, hijo de Nun, envió desde Sittim dos espías secretamente, diciéndoles: Andad, reconoced la tierra, y á Jericó. Los cuales fueron, y entráronse en casa de una mujer ramera que se llamaba Rahab, y posaron allí.",
+     "pt": "E Josué, filho de Num, enviou desde Sitim dois espias secretamente, dizendo-lhes: Andai, reconhecei a terra, e a Jericó. Os quais foram, e entraram em casa de uma mulher prostituta que se chamava Raabe, e passaram a noite ali."
+    },
+    {
+     "n": 2,
+     "english": "view",
+     "kind": "wording",
+     "verses": [
+      6002001
+     ],
+     "es": "Y JOSUÉ, hijo de Nun, envió desde Sittim dos espías secretamente, diciéndoles: Andad, reconoced la tierra, y á Jericó. Los cuales fueron, y entráronse en casa de una mujer ramera que se llamaba Rahab, y posaron allí.",
+     "pt": "E Josué, filho de Num, enviou desde Sitim dois espias secretamente, dizendo-lhes: Andai, reconhecei a terra, e a Jericó. Os quais foram, e entraram em casa de uma mulher prostituta que se chamava Raabe, e passaram a noite ali."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1087,
+   "name": "Shoa",
+   "sha256": "ef57ffac8f57384772a9e80ca5efb3034e076ff17aec408df1c21dd3cfb1e773",
+   "text": "Opulent, the mountain district lying to the north-east of Babylonia, anciently the land of the Guti, or Kuti, the modern Kurdistan. The plain lying between these mountains and the Tigris was called su-Edina, i.e., “the border of the plain.” This name was sometimes shortened into Suti and Su, and has been regarded as = Shoa (Ezek. 23:23). Some think it denotes a place in Babylon.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the border of the plain.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1088,
+   "name": "Shual",
+   "sha256": "7d89f82d12216efba1d80aba098e2106224465a18d810607615c9d2cee56c6df",
+   "text": "Land of the fox, a district in the tribe of Benjamin (1 Sam. 13:17); possibly the same as Shalim (9:4), in the neighbourhood of Shaalabbin (Josh. 19:42).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1089,
+   "name": "Shunem",
+   "sha256": "2c8da1b12decb3f2f2ed9929ccb031e4622a628b3774a8ba04e35301cbeb56f5",
+   "text": "Two resting-places, a little village in the tribe of Issachar, to the north of Jezreel and south of Mount Gilboa (Josh. 19:18), where the Philistines encamped when they came against Saul (1 Sam. 28:4), and where Elisha was hospitably entertained by a rich woman of the place. On the sudden death of this woman’s son she hastened to Carmel, 20 miles distant across the plain, to tell Elisha, and to bring him with her to Shunem. There, in the “prophet’s chamber,” the dead child lay; and Elisha entering it, shut the door and prayed earnestly: and the boy was restored to life (2 Kings 4:8-37). This woman afterwards retired during the famine to the low land of the Philistines; and on returning a few years afterwards, found her house and fields in the possession of a stranger. She appealed to the king at Samaria, and had them in a somewhat remarkable manner restored to her (comp. 2 Kings 8:1-6).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "prophet’s chamber,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1090,
+   "name": "Shur",
+   "sha256": "06ec85e5185853d15e6320ba821adf2ea3a5877a8fc94ee4ffb56c9fe198c3b7",
+   "text": "An enclosure; a wall, a part, probably, of the Arabian desert, on the north-eastern border of Egypt, giving its name to a wilderness extending from Egypt toward Philistia (Gen. 16:7; 20:1; 25:18; Ex. 15:22). The name was probably given to it from the wall (or shur) which the Egyptians built to defend their frontier on the north-east from the desert tribes. This wall or line of fortifications extended from Pelusium to Heliopolis.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1091,
+   "name": "Sibmah",
+   "sha256": "59eadf04792f2a3541b28cf6f3db214da7fddd614d3d4634c48e88533891d4a3",
+   "text": "Coolness; fragrance, a town in Reuben, in the territory of Moab, on the east of Jordan (Josh. 13:19); called also Shebam and Shibmah (Num. 32:3, 38). It was famous for its vines (Isa. 16:9; Jer. 48:32). It has been identified with the ruin of Sumieh, where there are rock-cut wine-presses. This fact explains the words of the prophets referred to above. It was about 5 miles east of Heshbon.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1093,
+   "name": "Sidon",
+   "sha256": "aad50892b64d44b398376282da58230fdef6d421965aca8a79b678bfdbe9926b",
+   "text": "A fishery, a town on the Mediterranean coast, about 25 miles north of Tyre. It received its name from the “first-born” of Canaan, the grandson of Noah (Gen. 10:15, 19). It was the first home of the Phoenicians on the coast of Palestine, and from its extensive commercial relations became a “great” city (Josh. 11:8; 19:28). It was the mother city of Tyre. It lay within the lot of the tribe of Asher, but was never subdued (Judg. 1:31). The Zidonians long oppressed Israel (Judg. 10:12). From the time of David its glory began to wane, and Tyre, its “virgin daughter” (Isa. 23:12), rose to its place of pre-eminence. Solomon entered into a matrimonial alliance with the Zidonians, and thus their form of idolatrous worship found a place in the land of Israel (1 Kings 11:1, 33). This city was famous for its manufactures and arts, as well as for its commerce (1 Kings 5:6; 1 Chr. 22:4; Ezek. 27:8). It is frequently referred to by the prophets (Isa. 23:2, 4, 12; Jer. 25:22; 27:3; 47:4; Ezek. 27:8; 28:21, 22; 32:30; Joel 3:4). Our Lord visited the “coasts” of Tyre and Zidon = Sidon (q.v.), Matt. 15:21; Mark 7:24; Luke 4:26; and from this region many came forth to hear him preaching (Mark 3:8; Luke 6:17). From Sidon, at which the ship put in after leaving Caesarea, Paul finally sailed for Rome (Acts 27:3, 4).\n\n This city is now a town of 10,000 inhabitants, with remains of walls built in the twelfth century A.D. In 1855, the sarcophagus of Eshmanezer was discovered. From a Phoenician inscription on its lid, it appears that he was a “king of the Sidonians,” probably in the third century B.C., and that his mother was a priestess of Ashtoreth, “the goddess of the Sidonians.” In this inscription Baal is mentioned as the chief god of the Sidonians.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "first-born",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "great",
+     "kind": "wording",
+     "verses": [
+      6011008
+     ],
+     "es": "Y entrególos Jehová en manos de Israel, los cuales los hirieron y siguieron hasta Sidón la grande, y hasta las aguas calientes, y hasta el llano de Mizpa al oriente, hiriéndolos hasta que no les dejaron ninguno.",
+     "pt": "E entregou-os o SENHOR em mãos de Israel, os quais os feriram e seguiram até a grande Sidom, e até as águas quentes, e até a planície de Mispá ao oriente, ferindo-os até que não lhes deixaram ninguém."
+    },
+    {
+     "n": 2,
+     "english": "virgin daughter",
+     "kind": "wording",
+     "verses": [
+      23023012
+     ],
+     "es": "Y dijo: No te alegrarás más, oh tú, oprimida virgen hija de Sidón. Levántate para pasar á Chîttim; y aun allí no tendrás reposo.",
+     "pt": "E disse: Nunca mais te encherás de alegria, ó oprimida virgem, filha de Sidom; levanta-te, passa ao Chipre; e alinda ali não terás descanso."
+    },
+    {
+     "n": 3,
+     "english": "coasts",
+     "kind": "wording",
+     "verses": [
+      40015021
+     ],
+     "es": "Y saliendo Jesús de allí, se fué á las partes de Tiro y de Sidón.",
+     "pt": "E, tendo Jesus partido dali, foi para as partes de Tiro e de Sidom."
+    },
+    {
+     "n": 4,
+     "english": "king of the Sidonians,",
+     "kind": "other"
+    },
+    {
+     "n": 5,
+     "english": "the goddess of the Sidonians.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1095,
+   "name": "Silla",
+   "sha256": "144f9683e91f734fe364b9181d608f52603e5c088dba6cbac8a16553bcc932da",
+   "text": "A highway; a twig, only in 2 Kings 12:20. If taken as a proper name (as in the LXX. and other versions), the locality is unknown.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1096,
+   "name": "Siloam",
+   "sha256": "25c05a35483a5db72af5c84bdeae4cbd52be6242f56e09b7ad4d8a08d2f4e681",
+   "text": "Sent or sending. Here a notable miracle was wrought by our Lord in giving sight to the blind (John 9:7-11). It has been identified with the Birket Silwan in the lower Tyropoeon valley, to the south-east of the hill of Zion.\n\n The water which flows into this pool intermittingly by a subterranean channel springs from the “Fountain of the Virgin” (q.v.). The length of this channel, which has several windings, is 1,750 feet, though the direct distance is only 1,100 feet. The pool is 53 feet in length from north to south, 18 feet wide, and 19 deep. The water passes from it by a channel cut in the rock into the gardens below.\n\n Many years ago (1880) a youth, while wading up the conduit by which the water enters the pool, accidentally discovered an inscription cut in the rock, on the eastern side, about 19 feet from the pool. This is the oldest extant Hebrew record of the kind. It has with great care been deciphered by scholars, and has been found to be an account of the manner in which the tunnel was constructed. Its whole length is said to be “twelve hundred cubits;” and the inscription further notes that the workmen, like the excavators of the Mont Cenis Tunnel, excavated from both ends, meeting in the middle.\n\n Some have argued that the inscription was cut in the time of Solomon; others, with more probability, refer it to the reign of Hezekiah. A more ancient tunnel was discovered in 1889 some 20 feet below the ground. It is of smaller dimensions, but more direct in its course. It is to this tunnel that Isaiah (8:6) probably refers.\n\n The Siloam inscription above referred to was surreptitiously cut from the wall of the tunnel in 1891 and broken into fragments. These were, however, recovered by the efforts of the British Consul at Jerusalem, and have been restored to their original place.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Fountain of the Virgin",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "twelve hundred cubits;",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1097,
+   "name": "Sin",
+   "sha256": "1ad12f8e02afb69ab7b5753b5fae436e0245a1f2878884aba8c3c85cc68f3500",
+   "text": "Lying between Elim and sinai (Ex. 16:1; comp. Num. 33:11, 12). This was probably the narrow plain of el-Markha, which stretches along the eastern shore of the Red Sea for several miles toward the promontory of Ras Mohammed, the southern extremity of the Sinitic Peninsula. While the Israelites rested here for some days they began to murmur on account of the want of nourishment, as they had by this time consumed all the corn they had brought with them out of Egypt. God heard their murmurings, and gave them “manna” and then quails in abundance.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "manna",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1098,
+   "name": "Sinai",
+   "sha256": "77ebdc54f203a972d2f6ec10a89d156250820de6b61a23d9317aa3edb06c739c",
+   "text": "Of Sin (the moon god), called also Horeb, the name of the mountain district which was reached by the Hebrews in the third month after the Exodus. Here they remained encamped for about a whole year. Their journey from the Red Sea to this encampment, including all the windings of the route, was about 150 miles. The last twenty-two chapters of Exodus, together with the whole of Leviticus and Num. ch. 1-11, contain a record of all the transactions which occurred while they were here. From Rephidim (Ex. 17:8-13) the Israelites journeyed forward through the Wady Solaf and Wady esh-Sheikh into the plain of er-Rahah, “the desert of Sinai,” about 2 miles long and half a mile broad, and encamped there “before the mountain.” The part of the mountain range, a protruding lower bluff, known as the Ras Sasafeh (Sufsafeh), rises almost perpendicularly from this plain, and is in all probability the Sinai of history. Dean Stanley thus describes the scene:, “The plain itself is not broken and uneven and narrowly shut in, like almost all others in the range, but presents a long retiring sweep, within which the people could remove and stand afar off. The cliff, rising like a huge altar in front of the whole congregation, and visible against the sky in lonely grandeur from end to end of the whole plain, is the very image of the ‘mount that might be touched,’ and from which the voice of God might be heard far and wide over the plain below.” This was the scene of the giving of the law. From the Ras Sufsafeh the law was proclaimed to the people encamped below in the plain of er-Rahah. During the lengthened period of their encampment here the Israelites passed through a very memorable experience. An immense change passed over them. They are now an organized nation, bound by covenant engagement to serve the Lord their God, their ever-present divine Leader and Protector. At length, in the second month of the second year of the Exodus, they move their camp and march forward according to a prescribed order. After three days they reach the “wilderness of Paran,” the “et-Tih”, i.e., “the desert”, and here they make their first encampment. At this time a spirit of discontent broke out amongst them, and the Lord manifested his displeasure by a fire which fell on the encampment and inflicted injury on them. Moses called the place Taberah (q.v.), Num. 11:1-3. The journey between Sinai and the southern boundary of the Promised Land (about 150 miles) at Kadesh was accomplished in about a year.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the desert of Sinai,",
+     "kind": "unsure",
+     "verses": [
+      2019002
+     ],
+     "es": "Porque partieron de Rephidim, y llegaron al desierto de Sinaí, y asentaron en el desierto; y acampó allí Israel delante del monte.",
+     "pt": "Porque partiram de Refidim, e chegaram ao deserto de Sinai, e assentaram no deserto; e acampou ali Israel diante do monte."
+    },
+    {
+     "n": 1,
+     "english": "before the mountain.",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "The plain itself is not broken and uneven and narrowly shut in, like almost all others in the range, but presents a long retiring sweep, within which the people could remove and stand afar off. The cliff, rising like a huge altar in front of the whole congregation, and visible against the sky in lonely grandeur from end to end of the whole plain, is the very image of the ‘mount that might be touched,’ and from which the voice of God might be heard far and wide over the plain below.",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "wilderness of Paran,",
+     "kind": "unsure",
+     "verses": [
+      1021021
+     ],
+     "es": "Y habitó en el desierto de Parán; y su madre le tomó mujer de la tierra de Egipto.",
+     "pt": "E habitou no deserto de Parã; e sua mãe lhe tomou mulher da terra do Egito."
+    },
+    {
+     "n": 4,
+     "english": "et-Tih",
+     "kind": "other"
+    },
+    {
+     "n": 5,
+     "english": "the desert",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1099,
+   "name": "Siphmoth",
+   "sha256": "8d7912718cbed74753c7a759460a0551f16ca01e4bed8fc0b0d2dc6112927dc6",
+   "text": "Fruitful places, some unknown place in the south, where David found friends when he fled from Saul (1 Sam. 30:28).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1100,
+   "name": "Sirah",
+   "sha256": "8a66d25d552f0aaac1cb538e1b1c79ef98c2fe0aae58a25d987d4acfd1740d7b",
+   "text": "Retiring, a well from which Joab’s messenger brought back Abner (2 Sam. 3:26). It is now called ‘Ain Sarah, and is situated about a mile from Hebron, on the road to the north.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1101,
+   "name": "Sirion",
+   "sha256": "1660cea3525e77053baff596592656c27148a98f28f5d24bef1280374b4e949c",
+   "text": "A breastplate, the Sidonian name of Hermon (q.v.), Deut. 3:9; Ps. 29:6.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1102,
+   "name": "Sitnah",
+   "sha256": "858b063f8eacb801b0ebaeebf9fa5a639ed6bd14f18a562a142d65f279f77218",
+   "text": "Strife, the second of the two wells dug by Isaac, whose servants here contended with the Philistines (Gen. 26:21). It has been identified with the modern Shutneh, in the valley of Gerar, to the west of Rehoboth, about 20 miles south of Beersheba.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1103,
+   "name": "Smyrna",
+   "sha256": "afaa37827da01aa0618df3536275e8105c001cbbe1e87cf4d6e04a6030e71b84",
+   "text": "Myrrh, an ancient city of Ionia, on the western coast of Asia Minor, about 40 miles to the north of Ephesus. It is now the chief city of Anatolia, having a mixed population of about 200,000, of whom about one-third are professed Christians. The church founded here was one of the seven addressed by our Lord (Rev. 2:8-11). The celebrated Polycarp, a pupil of the apostle John, was in the second century a prominent leader in the church of Smyrna. Here he suffered martyrdom, A.D. 155.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1107,
+   "name": "Sodom",
+   "sha256": "d88f95ff3dec216c0c44f55844641aa06979f185bed46797d3080b591fc99869",
+   "text": "Burning; the walled, a city in the vale of Siddim (Gen. 13:10; 14:1-16). The wickedness of its inhabitants brought down upon it fire from heaven, by which it was destroyed (18:16-33; 19:1-29; Deut. 23:17). This city and its awful destruction are frequently alluded to in Scripture (Deut. 29:23; 32:32; Isa. 1:9, 10; 3:9; 13:19; Jer. 23:14; Ezek. 16:46-56; Zeph. 2:9; Matt. 10:15; Rom. 9:29; 2 Pet. 2:6, etc.). No trace of it or of the other cities of the plain has been discovered, so complete was their destruction. Just opposite the site of Zoar, on the south-west coast of the Dead Sea, is a range of low hills, forming a mass of mineral salt called Jebel Usdum, “the hill of Sodom.” It has been concluded, from this and from other considerations, that the cities of the plain stood at the southern end of the Dead Sea. Others, however, with much greater probability, contend that they stood at the northern end of the sea. [in 1897].",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the hill of Sodom.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1109,
+   "name": "Solomon's Portico",
+   "sha256": "256dfc2e707ea78b7edbb706fad83c3c27e02c6d696587e8639426827e346777",
+   "text": "(John 10:23; Acts 3:11; 5:12), a colonnade, or cloister probably, on the eastern side of the temple. It is not mentioned in connection with the first temple, but Josephus mentions a porch, so called, in Herod’s temple (q.v.).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1111,
+   "name": "Spain",
+   "sha256": "274d0026a8a1e9d8a8ec5f7ef9656bfba9ea962c015e9997d8f0e679ab0c4354",
+   "text": "Paul expresses his intention (Rom. 15:24, 28) to visit Spain. There is, however, no evidence that he ever carried it into effect, although some think that he probably did so between his first and second imprisonment.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1112,
+   "name": "Straight Gate",
+   "sha256": "fe17fb6fb71d45d1e5b4afe004fb10b255225493fa0396a9a1efb5d524a8ee47",
+   "text": "The street called “Straight” at Damascus (Acts 9:11) is “a long broad street, running from east to west, about a mile in length, and forming the principal thoroughfare in the city.” In Oriental towns streets are usually narrow and irregular and filthy (Ps. 18:42; Isa. 10:6). “It is remarkable,” says Porter, “that all the important cities of Palestine and Syria Samaria, Caesarea, Gerasa, Bozrah, Damascus, Palmyra, had their ‘straight streets’ running through the centre of the city, and lined with stately rows of columns. The most perfect now remaining are those of Palmyra and Gerasa, where long ranges of the columns still stand.”, Through Samaria, etc.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Straight",
+     "kind": "wording",
+     "verses": [
+      44009011
+     ],
+     "es": "Y el Señor le dijo: Levántate, y ve á la calle que se llama la Derecha, y busca en casa de Judas á uno llamado Saulo, de Tarso: porque he aquí, él ora;",
+     "pt": "E o Senhor lhe disse : Levanta-te, e vai a rua chamada Direita, e pergunta na casa de Judas por um chamado Saulo, de Tarso; porque que ele ora."
+    },
+    {
+     "n": 1,
+     "english": "a long broad street, running from east to west, about a mile in length, and forming the principal thoroughfare in the city.",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "It is remarkable,",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "that all the important cities of Palestine and Syria Samaria, Caesarea, Gerasa, Bozrah, Damascus, Palmyra, had their ‘straight streets’ running through the centre of the city, and lined with stately rows of columns. The most perfect now remaining are those of Palmyra and Gerasa, where long ranges of the columns still stand.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1113,
+   "name": "Succoth",
+   "sha256": "ff10a4b7936b392289f868e69b24fb68fbb8b12dcd8da0911fad32e9e8d329dc",
+   "text": "A city on the east of Jordan, identified with Tell Dar’ala, a high mound, a mass of debris, in the plain north of Jabbok and about one mile from it (Josh. 13:27). Here Jacob (Gen. 32:17, 30; 33:17), on his return from Padan-aram after his interview with Esau, built a house for himself and made booths for his cattle. The princes of this city churlishly refused to afford help to Gideon and his 300 men when “faint yet pursuing” they followed one of the bands of the fugitive Midianites after the great victory at Gilboa. After overtaking and routing this band at Karkor, Gideon on his return visited the rulers of the city with severe punishment. “He took the elders of the city, and thorns of the wilderness and briers, and with them he taught the men of Succoth” (Judg. 8:13-16). At this place were erected the foundries for casting the metal-work for the temple (1 Kings 7:46).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "faint yet pursuing",
+     "kind": "unsure",
+     "verses": [
+      7008004
+     ],
+     "es": "Y vino Gedeón al Jordán para pasar, él y los trescientos hombres que traía consigo, cansados del alcance.",
+     "pt": "E veio Gideão ao Jordão para passar, ele e os trezentos homens que trazia consigo, cansados, mas ainda perseguindo."
+    },
+    {
+     "n": 1,
+     "english": "He took the elders of the city, and thorns of the wilderness and briers, and with them he taught the men of Succoth",
+     "kind": "partial",
+     "verses": [
+      7008016
+     ],
+     "es": "Y tomó á los ancianos de la ciudad, y espinas y abrojos del desierto, y castigó con ellos á los de Succoth.",
+     "pt": "E tomou aos anciãos da cidade, e espinhos e cardos do deserto, e castigou com eles aos de Sucote."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1114,
+   "name": "Succoth",
+   "sha256": "e8218be0c0e676242c1f6b904c5ddb1cbd86888b5aa49a06f6c6b43cc94e4304",
+   "text": "The first encampment of the Israelites after leaving Ramesses (Ex. 12:37); the civil name of Pithom (q.v.).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1115,
+   "name": "Suph",
+   "sha256": "4237ad073be64b523bb84bd6edd4673fe440f2e0890e0ad71adf0a647be64864",
+   "text": "(Deut. 1:1, R.V.; marg., “some ancient versions have the Red Sea,” as in the A.V.). Some identify it with Suphah (Num. 21:14, marg., A.V.) as probably the name of a place. Others identify it with es-Sufah = Maaleh-acrabbim (Josh. 15:3), and others again with Zuph (1 Sam. 9:5). It is most probable, however, that, in accordance with the ancient versions, this word is to be regarded as simply an abbreviation of Yam-suph, i.e., the “Red Sea.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "some ancient versions have the Red Sea,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "Red Sea.",
+     "kind": "wording",
+     "verses": [
+      4021014
+     ],
+     "es": "Por tanto se dice en el libro de las batallas de Jehová: Lo que hizo en el mar Bermejo, y en los arroyos de Arnón:",
+     "pt": "Por isso se diz no livro das batalhas do SENHOR: Vaebe em Sufa, e nos ribeiros de Arnom:"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1116,
+   "name": "Suphah",
+   "sha256": "c83450898e30798bee31364aff98a395e09140ef3a150efb66ea8d44f2585636",
+   "text": "(Num. 21:14, marg.; also R.V.), a place at the south-eastern corner of the Dead Sea, the Ghor es-Safieh. This name is found in an ode quoted from the “Book of the Wars of the Lord,” probably a collection of odes commemorating the triumphs of God’s people (comp. 21:14, 17, 18, 27-30).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Book of the Wars of the Lord,",
+     "kind": "partial",
+     "verses": [
+      4021014
+     ],
+     "es": "Por tanto se dice en el libro de las batallas de Jehová: Lo que hizo en el mar Bermejo, y en los arroyos de Arnón:",
+     "pt": "Por isso se diz no livro das batalhas do SENHOR: Vaebe em Sufa, e nos ribeiros de Arnom:"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1118,
+   "name": "Susa",
+   "sha256": "f19730d88b52fe4e4d2b27d275858206d104e0ce2b80bc416a877dd017a874de",
+   "text": "A lily, the Susa of Greek and Roman writers, once the capital of Elam. It lay in the uplands of Susiana, on the east of the Tigris, about 150 miles to the north of the head of the Persian Gulf. It is the modern Shush, on the northwest of Shuster. Once a magnificent city, it is now an immense mass of ruins. Here Daniel saw one of his visions (Dan. 8); and here also Nehemiah (Neh. 1) began his public life. Most of the events recorded in the Book of Esther took place here. Modern explorers have brought to light numerous relics, and the ground-plan of the splendid palace of Shushan, one of the residences of the great king, together with numerous specimens of ancient art, which illustrate the statements of Scripture regarding it (Dan. 8:2). The great hall of this palace (Esther 1) “consisted of several magnificent groups of columns, together with a frontage of 343 feet 9 inches, and a depth of 244 feet. These groups were arranged into a central phalanx of thirty-six columns (six rows of six each), flanked on the west, north, and east by an equal number, disposed in double rows of six each, and distant from them 64 feet 2 inches.” The inscriptions on the ruins represent that the palace was founded by Darius and completed by Artaxerxes.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "consisted of several magnificent groups of columns, together with a frontage of 343 feet 9 inches, and a depth of 244 feet. These groups were arranged into a central phalanx of thirty-six columns (six rows of six each), flanked on the west, north, and east by an equal number, disposed in double rows of six each, and distant from them 64 feet 2 inches.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1119,
+   "name": "Sychar",
+   "sha256": "50c0f753894dde9e0344b8357706387e017aa214df91c1033f3972e8198831d8",
+   "text": "Liar or drunkard (see Isa. 28:1, 7), has been from the time of the Crusaders usually identified with Sychem or Shechem (John 4:5). It has now, however, as the result of recent explorations, been identified with ‘Askar, a small Samaritan town on the southern base of Ebal, about a mile to the north of Jacob’s well.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1120,
+   "name": "Syene",
+   "sha256": "6b5c80a17aeef3b90784aa01e537664e855598f6a6b07db249c7bb195c5703ad",
+   "text": "Opening (Ezek. 29:10; 30:6), a town of Egypt, on the borders of Ethiopia, now called Assouan, on the right bank of the Nile, notable for its quarries of beautiful red granite called “syenite.” It was the frontier town of Egypt in the south, as Migdol was in the north-east.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "syenite.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1121,
+   "name": "Syracuse",
+   "sha256": "5911c47fb42b12003636b859fb5c56734cd56dbce927c69b243cd23c9c3d2333",
+   "text": "A city on the south-east coast of Sicily, where Paul landed and remained three days when on his way to Rome (Acts 28:12). It was distinguished for its magnitude and splendour. It is now a small town of some 13,000 inhabitants.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1122,
+   "name": "Syria",
+   "sha256": "4246374637d8a12105402295022c5c35c1810674415a49bd85d7e584ab8fd87a",
+   "text": "(Heb. Aram), the name in the Old Testament given to the whole country which lay to the north-east of Phoenicia, extending to beyond the Euphrates and the Tigris. Mesopotamia is called (Gen. 24:10; Deut. 23:4) Aram-naharain (=Syria of the two rivers), also Padan-aram (Gen. 25:20). Other portions of Syria were also known by separate names, as Aram-maahah (1 Chr. 19:6), Aram-beth-rehob (2 Sam. 10:6), Aram-zobah (2 Sam. 10:6, 8). All these separate little kingdoms afterwards became subject to Damascus. In the time of the Romans, Syria included also a part of Palestine and Asia Minor.\n\n “From the historic annals now accessible to us, the history of Syria may be divided into three periods: The first, the period when the power of the Pharaohs was dominant over the fertile fields or plains of Syria and the merchant cities of Tyre and Sidon, and when such mighty conquerors as Thothmes III. and Rameses II. could claim dominion and levy tribute from the nations from the banks of the Euphrates to the borders of the Libyan desert. Second, this was followed by a short period of independence, when the Jewish nation in the south was growing in power, until it reached its early zenith in the golden days of Solomon; and when Tyre and Sidon were rich cities, sending their traders far and wide, over land and sea, as missionaries of civilization, while in the north the confederate tribes of the Hittites held back the armies of the kings of Assyria. The third, and to us most interesting, period is that during which the kings of Assyria were dominant over the plains of Syria; when Tyre, Sidon, Ashdod, and Jerusalem bowed beneath the conquering armies of Shalmaneser, Sargon, and Sennacherib; and when at last Memphis and Thebes yielded to the power of the rulers of Nineveh and Babylon, and the kings of Assyria completed with terrible fulness the bruising of the reed of Egypt so clearly foretold by the Hebrew prophets.”, Boscawen.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "From the historic annals now accessible to us, the history of Syria may be divided into three periods: The first, the period when the power of the Pharaohs was dominant over the fertile fields or plains of Syria and the merchant cities of Tyre and Sidon, and when such mighty conquerors as Thothmes III. and Rameses II. could claim dominion and levy tribute from the nations from the banks of the Euphrates to the borders of the Libyan desert. Second, this was followed by a short period of independence, when the Jewish nation in the south was growing in power, until it reached its early zenith in the golden days of Solomon; and when Tyre and Sidon were rich cities, sending their traders far and wide, over land and sea, as missionaries of civilization, while in the north the confederate tribes of the Hittites held back the armies of the kings of Assyria. The third, and to us most interesting, period is that during which the kings of Assyria were dominant over the plains of Syria; when Tyre, Sidon, Ashdod, and Jerusalem bowed beneath the conquering armies of Shalmaneser, Sargon, and Sennacherib; and when at last Memphis and Thebes yielded to the power of the rulers of Nineveh and Babylon, and the kings of Assyria completed with terrible fulness the bruising of the reed of Egypt so clearly foretold by the Hebrew prophets.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1123,
+   "name": "Syrtis",
+   "sha256": "3b9fcb7fda0e60dffa9db420342eac6cd72f5d81255793be6ef132229b35c404",
+   "text": "Found only in Acts 27:17, the rendering of the Greek Syrtis. On the north coast of Africa were two localities dangerous to sailors, called the Greater and Lesser Syrtis. The former of these is probably here meant. It lies between Tripoli and Barca, and near Cyrene. The Lesser Syrtis lay farther to the west.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1124,
+   "name": "Taanach",
+   "sha256": "0adf6e58e2f07add537c2ad751408c422a783e8c9b90f36b33ab949fa7cf3258",
+   "text": "A sandy place, an ancient royal city of the Canaanites, on the south-western border of the plain of Esdraelon, 4 miles south of Megiddo. Its king was conquered by Joshua (12:21). It was assigned to the Levites of the family of Kohath (17:11-18; 21:25). It is mentioned in the song of Deborah (Judg. 5:19). It is identified with the small modern village of Ta’annuk.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1125,
+   "name": "Taanath-shiloh",
+   "sha256": "42120bcd5303225374872a87e4e69d354210b9e3864b5e2b66bf7b4ecf3c2b67",
+   "text": "Approach to Shiloh, a place on the border of Ephraim (Josh. 16:6), probably the modern T’ana, a ruin 7 miles south-east of Shechem, on the ridge east of the Mukhnah plain.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1126,
+   "name": "Tabbath",
+   "sha256": "7da62d754c6a99abfd574bdfdf209f1bf34cdeb9c8704eddaffbdf73c12412c9",
+   "text": "Famous, a town in the tribe of Ephraim (Judg. 7:22), to the south of Bethshean, near the Jordan.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1127,
+   "name": "Taberah",
+   "sha256": "4efc54c0f5d21beffa8790206535f907264ff780f039d079651ba387de5e45e6",
+   "text": "Burning, a place in the wilderness of Paran, where the “fire of the Lord” consumed the murmuring Israelites (Num. 11:3; Deut. 9:22). It was also called Kibroth-hattaavah (q.v.).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "fire of the Lord",
+     "kind": "partial",
+     "verses": [
+      4011001
+     ],
+     "es": "Y ACONTECIÓ que el pueblo se quejó á oídos de Jehová: y oyólo Jehová, y enardecióse su furor, y encendióse en ellos fuego de Jehová y consumió el un cabo del campo.",
+     "pt": "E aconteceu que o povo se queixou aos ouvidos do SENHOR: e ouviu-o o SENHOR, e ardeu seu furor, e acendeu-se neles fogo do SENHOR e consumiu a extremidade do acampamento."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1128,
+   "name": "Tabor (Mountain)",
+   "sha256": "6b1674a3d409c1a74c0b760c1bf14526d8ffb34a00b7c2358a3215266b134bf2",
+   "text": "Now Jebel et-Tur, a cone-like prominent mountain, 11 miles west of the Sea of Galilee. It is about 1,843 feet high. The view from the summit of it is said to be singularly extensive and grand. This is alluded to in Ps. 89:12; Jer. 46:18. It was here that Barak encamped before the battle with Sisera (q.v.) Judg. 4:6-14. There is an old tradition, which, however, is unfounded, that it was the scene of the transfiguration of our Lord. “The prominence and isolation of Tabor, standing, as it does, on the border-land between the northern and southern tribes, between the mountains and the central plain, made it a place of note in all ages, and evidently led the psalmist to associate it with Hermon, the one emblematic of the south, the other of the north.” There are some who still hold that this was the scene of the transfiguration (q.v.).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "The prominence and isolation of Tabor, standing, as it does, on the border-land between the northern and southern tribes, between the mountains and the central plain, made it a place of note in all ages, and evidently led the psalmist to associate it with Hermon, the one emblematic of the south, the other of the north.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1129,
+   "name": "Tabor (town)",
+   "sha256": "6432b7262c8a6831ecb4c3546bd4df128934a16e3cf07c55f4b873ac42184abb",
+   "text": "A town of Zebulum (1 Chr. 6:77).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1130,
+   "name": "Tabor (Plain)",
+   "sha256": "b755ff1d098cd91c230674e52cc1eb9105b6087c57cbf27eb04a61629d0f5bdd",
+   "text": "The “plain of Tabor” (1 Sam. 10:3) should be, as in the Revised Version, “the oak of Tabor.” This was probably the Allon-bachuth of Gen. 35:8.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "plain of Tabor",
+     "kind": "partial",
+     "verses": [
+      9010003
+     ],
+     "es": "Y como de allí te fueres más adelante, y llegares á la campiña de Tabor, te saldrán al encuentro tres hombres que suben á Dios en Beth-el, llevando el uno tres cabritos, y el otro tres tortas de pan, y el tercero una vasija de vino:",
+     "pt": "E quando dali te fores mais adiante, e chegares à campina de Tabor, te sairão ao encontro três homens que sobem a Deus em Betel, levando o um três cabritos, e o outro três tortas de pão, e o terceiro uma vasilha de vinho:"
+    },
+    {
+     "n": 1,
+     "english": "the oak of Tabor.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1131,
+   "name": "Tadmor",
+   "sha256": "f51d9122590d006deb98224bbeaa7efc77a6f95defaa858c8b8950c6954eb64f",
+   "text": "Palm, a city built by Solomon “in the wilderness” (2 Chr. 8:4). In 1 Kings 9:18, where the word occurs in the Authorized Version, the Hebrew text and the Revised Version read “Tamar,” which is properly a city on the southern border of Palestine and toward the wilderness (comp. Ezek. 47:19; 48:28). In 2 Chr. 8:14 Tadmor is mentioned in connection with Hamath-zobah. It is called Palmyra by the Greeks and Romans. It stood in the great Syrian wilderness, 176 miles from Damascus and 130 from the Mediterranean and was the centre of a vast commercial traffic with Western Asia. It was also an important military station. “Remains of ancient temples and palaces, surrounded by splendid colonnades of white marble, many of which are yet standing, and thousands of prostrate pillars, scattered over a large extent of space, attest the ancient magnificence of this city of palms, surpassing that of the renowned cities of Greece and Rome.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "in the wilderness",
+     "kind": "partial",
+     "verses": [
+      14008004
+     ],
+     "es": "Y edificó á Tadmor en el desierto, y todas las ciudades de municiones que edificó en Hamath.",
+     "pt": "E edificou a Tadmor no deserto, e todas as cidades de armazéns que edificou em Hamate."
+    },
+    {
+     "n": 1,
+     "english": "Tamar,",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "Remains of ancient temples and palaces, surrounded by splendid colonnades of white marble, many of which are yet standing, and thousands of prostrate pillars, scattered over a large extent of space, attest the ancient magnificence of this city of palms, surpassing that of the renowned cities of Greece and Rome.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1136,
+   "name": "Tappuah",
+   "sha256": "c51fc012dc43571878ce8fe584885bfa3cb3c50e5a75b2b879922dafd44f4025",
+   "text": "A town on the border of Ephraim (Josh. 16:8). The “land” of Tappuah fell to Manasseh, but the “city” to Ephraim (17:8).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "land",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "city",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1137,
+   "name": "Tappuah",
+   "sha256": "f935a63487000a1722b044386637d058a770bb46c868567dbf551cab2a031938",
+   "text": "A town in the valley or lowland of Judah; formerly a royal city of the Canaanites (Josh. 12:17; 15:34). It is now called Tuffuh, about 12 miles west of Jerusalem.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1139,
+   "name": "Tarshish",
+   "sha256": "db7d800f52a6d25c38425fa44932d07c46e25a844e4cb8a8f279002a73bc0a04",
+   "text": "The name of a place which first comes into notice in the days of Solomon. The question as to the locality of Tarshish has given rise to not a little discussion. Some think there was a Tarshish in the East, on the Indian coast, seeing that “ships of Tarshish” sailed from Eziongeber, on the Red Sea (1 Kings 9:26; 22:48; 2 Chr. 9:21). Some, again, argue that Carthage was the place so named. There can be little doubt, however, that this is the name of a Phoenician port in Spain, between the two mouths of the Guadalquivir (the name given to the river by the Arabs, and meaning “the great wady” or water-course). It was founded by a Carthaginian colony, and was the farthest western harbour of Tyrian sailors. It was to this port Jonah’s ship was about to sail from Joppa. It has well been styled “the Peru of Tyrian adventure;” it abounded in gold and silver mines.\n\n It appears that this name also is used without reference to any locality. “Ships of Tarshish” is an expression sometimes denoting simply ships intended for a long voyage (Isa. 23:1, 14), ships of a large size (sea-going ships), whatever might be the port to which they sailed. Solomon’s ships were so styled (1 Kings 10:22; 22:49).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "ships of Tarshish",
+     "kind": "unsure",
+     "verses": [
+      14009021
+     ],
+     "es": "Porque la flota del rey iba á Tharsis con los siervos de Hiram, y cada tres años solían venir las naves de Tharsis, y traían oro, plata, marfil, simios, y pavos.",
+     "pt": "Porque a frota do rei ia a Társis com os servos de Hirão, e cada três anos faziam vir os navios de Társis, e traziam ouro, prata, marfim, macacos, e pavões."
+    },
+    {
+     "n": 1,
+     "english": "the great wady",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "the Peru of Tyrian adventure;",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "Ships of Tarshish",
+     "kind": "partial",
+     "verses": [
+      14009021
+     ],
+     "es": "Porque la flota del rey iba á Tharsis con los siervos de Hiram, y cada tres años solían venir las naves de Tharsis, y traían oro, plata, marfil, simios, y pavos.",
+     "pt": "Porque a frota do rei ia a Társis com os servos de Hirão, e cada três anos faziam vir os navios de Társis, e traziam ouro, prata, marfim, macacos, e pavões."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1140,
+   "name": "Tarsus",
+   "sha256": "b6b7bdecb6eb2896e105e93aa08a0111ea4dfdd4509b34874b9e3ed1ab3e5f34",
+   "text": "The chief city of Cilicia. It was distinguished for its wealth and for its schools of learning, in which it rivalled, nay, excelled even Athens and Alexandria, and hence was spoken of as “no mean city.” It was the native place of the Apostle Paul (Acts 21:39). It stood on the banks of the river Cydnus, about 12 miles north of the Mediterranean. It is said to have been founded by Sardanapalus, king of Assyria. It is now a filthy, ruinous Turkish town, called Tersous.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "no mean city.",
+     "kind": "partial",
+     "verses": [
+      44021039
+     ],
+     "es": "Entonces dijo Pablo: Yo de cierto soy hombre Judío, ciudadano de Tarso, ciudad no obscura de Cilicia: empero ruégote que me permitas que hable al pueblo.",
+     "pt": "Mas Paulo lhe disse: Na verdade eu sou um homem judeu de Tarso, cidade não pouca importância da Cilícia; mas eu te rogo para que tu me permitas falar ao povo."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1142,
+   "name": "Tekoa",
+   "sha256": "714c4ac4acf0ce8d965f86fcc62f018768ae88e1e8b318850465715280c3ead5",
+   "text": "Pitching of tents; fastening down, a town of Judah, about 12 miles south of Jerusalem, and visible from the city. From this place Joab procured a “wise woman,” who pretended to be in great affliction, and skilfully made her case known to David. Her address to the king was in the form of an apologue, similar to that of Nathan (2 Sam. 12:1-6). The object of Joab was, by the intervention of this woman, to induce David to bring back Absalom to Jerusalem (2 Sam. 14:2, 4, 9).\n\n This was also the birth-place of the prophet Amos (1:1).\n\n It is now the village of Teku’a, on the top of a hill among ruins, 5 miles south of Bethlehem, and close to Beth-haccerem (“Herod’s mountain”).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "wise woman,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "Herod’s mountain",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1143,
+   "name": "Tel-abib",
+   "sha256": "0f6288d391c7b616fac3126715114b456c62aa6cbe756f79237073a5adb61920",
+   "text": "Hill of corn, a place on the river Chebar, the residence of Ezekiel (Ezek. 3:15). The site is unknown.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1144,
+   "name": "Telaim",
+   "sha256": "1c1f8fbd0a4ce29fd0e0a26806f31c5b7a72a8f2338cc75779427f1593008dcb",
+   "text": "Young lambs, a place at which Saul gathered his army to fight against Amalek (1 Sam. 15:4); probably the same as Telem (2).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1145,
+   "name": "Telassar",
+   "sha256": "fa24b18227ba2ba74e0ad1033845936938d6a0765d02d0eb9c385e66b14bc6e6",
+   "text": "Or Thelasar, (Isa. 37:12; 2 Kings 19:12), a province in the south-east of Assyria, probably in Babylonia. Some have identified it with Tel Afer, a place in Mesopotamia, some 30 miles from Sinjar.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1146,
+   "name": "Telem",
+   "sha256": "de8894de214d446064ee64b950dccb6b684e6242efb33c128db068015316197e",
+   "text": "A town in the southern border of Judah (Josh. 15:24); probably the same as Telaim.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1149,
+   "name": "Tema",
+   "sha256": "96ef8b53bba328046e136358821a017a53cb7a1bdaace2812542f67b7e2927be",
+   "text": "South; desert, one of the sons of Ishmael, and father of a tribe so called (Gen. 25:15; 1 Chr. 1:30; Job 6:19; Isa. 21:14; Jer. 25:23) which settled at a place to which he gave his name, some 250 miles south-east of Edom, on the route between Damascus and Mecca, in the northern part of the Arabian peninsula, toward the Syrian desert; the modern Teyma’.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1150,
+   "name": "Teman",
+   "sha256": "345892d38b87cf6ea4274cc4769552be5fb57c01311fc00c6a24acd2c30f0ea6",
+   "text": "A place in Southern Idumea, the land of “the sons of the east,” frequently mentioned in the Old Testament. It was noted for the wisdom of its inhabitants (Amos 1:12; Obad. 1:8; Jer. 49:7; Ezek. 25:13). It was divided from the hills of Paran by the low plain of Arabah (Hab. 3:3).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the sons of the east,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1151,
+   "name": "Terah",
+   "sha256": "0e84a224ec3e67548b3ea701f95d518774368cdbd11103e334fe8b2336b1840c",
+   "text": "Stopping; station, an encampment of the Hebrews in the wilderness (Num. 33:27, 28).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1154,
+   "name": "Skull",
+   "sha256": "550297ce24b8acefe236a7b1de169d9ee18c3af45d7ee3732e363192c62a5dc0",
+   "text": "Only in Luke 23:33, the Latin name Calvaria, which was used as a translation of the Greek word Kranion, by which the Hebrew word Gulgoleth was interpreted, “the place of a skull.” It probably took this name from its shape, being a hillock or low, rounded, bare elevation somewhat in the form of a human skull. It is nowhere in Scripture called a “hill.” The crucifixion of our Lord took place outside the city walls (Heb. 13:11-13) and near the public thoroughfare. “This thing was not done in a corner.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the place of a skull.",
+     "kind": "unsure",
+     "verses": [
+      41015022
+     ],
+     "es": "Y le llevan al lugar de Gólgotha, que declarado quiere decir: Lugar de la Calavera.",
+     "pt": "E o levaram ao lugar de Gólgota, que traduzido é: o lugar da caveira."
+    },
+    {
+     "n": 1,
+     "english": "hill.",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "This thing was not done in a corner.",
+     "kind": "partial",
+     "verses": [
+      44026026
+     ],
+     "es": "Pues el rey sabe estas cosas, delante del cual también hablo confiadamente. Pues no pienso que ignora nada de esto; pues no ha sido esto hecho en algún rincón.",
+     "pt": "Porque o rei, a quem eu estou falando livremente, ele sabe muito bem destas coisas; porque eu não creio que nenhuma disto lhe seja oculto; por que isto não foi feito num canto."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1155,
+   "name": "Pavement",
+   "sha256": "3b60dbc67740db679855fb1500aaca311a40010ab02c615f108028618bffea13",
+   "text": "It was the custom of the Roman governors to erect their tribunals in open places, as the market-place, the circus, or even the highway. Pilate caused his seat of judgment to be set down in a place called “the Pavement” (John 19:13) i.e., a place paved with a mosaic of coloured stones. It was probably a place thus prepared in front of the “judgment hall.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the Pavement",
+     "kind": "wording",
+     "verses": [
+      43019013
+     ],
+     "es": "Entonces Pilato, oyendo este dicho, llevó fuera á Jesús, y se sentó en el tribunal en el lugar que se dice Lithóstrotos, y en hebreo Gabbatha.",
+     "pt": "Então Pilatos, ouvindo este dito, levou fora a Jesus, e sentou-se no tribunal, no lugar chamado Litóstrotos, ou pavimento ,e em hebraico Gabatá."
+    },
+    {
+     "n": 1,
+     "english": "judgment hall.",
+     "kind": "other"
+    }
+   ]
+  }
+ ],
+ "glossary": {
+  "Abel-shittim": {
+   "es": "Abel-sitim",
+   "pt": "Abel-Sitim"
+  },
+  "Absalom": {
+   "pt": "Absalão"
+  },
+  "Ain": {
+   "es": "Aín",
+   "pt": "Aim"
+  },
+  "Alexandria": {
+   "es": "Alejandrina"
+  },
+  "Amalek": {
+   "es": "Amalec",
+   "pt": "Amaleque"
+  },
+  "Amos": {
+   "es": "Amós",
+   "pt": "Amós"
+  },
+  "Amraphel": {
+   "es": "Amrafel",
+   "pt": "Anrafel"
+  },
+  "Arabah": {
+   "pt": "Arabá"
+  },
+  "Aram": {
+   "pt": "Arã"
+  },
+  "Artaxerxes": {
+   "es": "Artajerjes"
+  },
+  "Ashdod": {
+   "es": "Asdod",
+   "pt": "Asdode"
+  },
+  "Asher": {
+   "es": "Aser",
+   "pt": "Aser"
+  },
+  "Ashtoreth": {
+   "pt": "Astarote"
+  },
+  "Asia": {
+   "pt": "Ásia"
+  },
+  "Assyria": {
+   "es": "Asiria",
+   "pt": "Assíria"
+  },
+  "Athens": {
+   "es": "Atenas",
+   "pt": "Atenas"
+  },
+  "Babylon": {
+   "es": "Babilonia",
+   "pt": "Babilônia"
+  },
+  "Babylonia": {
+   "es": "Babilonia",
+   "pt": "Babilônia"
+  },
+  "Barak": {
+   "es": "Barac",
+   "pt": "Baraque"
+  },
+  "Beersheba": {
+   "es": "Beer-seba",
+   "pt": "Berseba"
+  },
+  "Benjamin": {
+   "es": "Benjamín",
+   "pt": "Benjamim"
+  },
+  "Bethel": {
+   "es": "Bet-el",
+   "pt": "Betel"
+  },
+  "Bethlehem": {
+   "es": "Bet-lehem",
+   "pt": "Belém"
+  },
+  "Bozrah": {
+   "es": "Bosra",
+   "pt": "Bozra (place); Bosra (place)"
+  },
+  "Caesarea": {
+   "es": "Cesarea",
+   "pt": "Cesareia"
+  },
+  "Canaan": {
+   "es": "Canaán",
+   "pt": "Canaã"
+  },
+  "Carmel": {
+   "es": "Carmelo",
+   "pt": "Carmelo"
+  },
+  "Chaldea": {
+   "es": "Caldeos",
+   "pt": "Caldeia"
+  },
+  "Chebar": {
+   "es": "Quebar",
+   "pt": "Quebar"
+  },
+  "Cilicia": {
+   "pt": "Cilícia"
+  },
+  "Cyrene": {
+   "es": "Cireneo",
+   "pt": "Cirene"
+  },
+  "Damascus": {
+   "es": "Damasco",
+   "pt": "Damasco"
+  },
+  "Dan": {
+   "pt": "Dã"
+  },
+  "Darius": {
+   "es": "Darío",
+   "pt": "Dario"
+  },
+  "David": {
+   "pt": "Davi"
+  },
+  "Deborah": {
+   "es": "Débora",
+   "pt": "Débora"
+  },
+  "Ebal": {
+   "es": "Seba"
+  },
+  "Egypt": {
+   "es": "Egipto",
+   "pt": "Egito"
+  },
+  "Elam": {
+   "es": "Belam",
+   "pt": "Elão"
+  },
+  "Elisha": {
+   "es": "Eliseo",
+   "pt": "Eliseu"
+  },
+  "Ephesus": {
+   "es": "Efeso",
+   "pt": "Éfeso"
+  },
+  "Ephraim": {
+   "es": "Efraim",
+   "pt": "Efraim"
+  },
+  "Esau": {
+   "es": "Esaú",
+   "pt": "Esaú"
+  },
+  "Esther": {
+   "es": "Ester",
+   "pt": "Ester"
+  },
+  "Ethiopia": {
+   "es": "Etiopía",
+   "pt": "Cuxe"
+  },
+  "Euphrates": {
+   "es": "Eufrates",
+   "pt": "Eufrates"
+  },
+  "Ezekiel": {
+   "es": "Ezequiel",
+   "pt": "Ezequiel"
+  },
+  "Galilee": {
+   "es": "Galilea",
+   "pt": "Galileia"
+  },
+  "Gideon": {
+   "es": "Gedeón",
+   "pt": "Gideão"
+  },
+  "Greece": {
+   "es": "Grecia",
+   "pt": "Grécia"
+  },
+  "Hamath-zobah": {
+   "es": "Amat",
+   "pt": "Hamate"
+  },
+  "Hebron": {
+   "es": "Hebrón",
+   "pt": "Hebrom"
+  },
+  "Hermon": {
+   "es": "Hermón",
+   "pt": "Hermom"
+  },
+  "Herod": {
+   "es": "Herodes",
+   "pt": "Herodes"
+  },
+  "Heshbon": {
+   "es": "Hesbón",
+   "pt": "Hesbom"
+  },
+  "Hezekiah": {
+   "es": "Ezequías",
+   "pt": "Ezequias"
+  },
+  "Horeb": {
+   "pt": "Horebe"
+  },
+  "Idumea": {
+   "pt": "Idumeia"
+  },
+  "Isaac": {
+   "pt": "Isaque"
+  },
+  "Isaiah": {
+   "es": "Isaías",
+   "pt": "Isaías"
+  },
+  "Ishmael": {
+   "es": "Ismael",
+   "pt": "Ismael"
+  },
+  "Issachar": {
+   "es": "Isacar",
+   "pt": "Issacar"
+  },
+  "Jabbok": {
+   "es": "Jaboc",
+   "pt": "Jaboque"
+  },
+  "Jacob": {
+   "pt": "Jacó"
+  },
+  "Jeremiah": {
+   "es": "Jeremías",
+   "pt": "Jeremias"
+  },
+  "Jericho": {
+   "es": "Jericó",
+   "pt": "Jericó"
+  },
+  "Jerusalem": {
+   "es": "Jerusalén",
+   "pt": "Jerusalém"
+  },
+  "Jezreel": {
+   "es": "Jezreelita"
+  },
+  "Joab": {
+   "pt": "Joabe"
+  },
+  "Job": {
+   "pt": "Jó"
+  },
+  "John": {
+   "es": "Juan",
+   "pt": "João"
+  },
+  "Jonah": {
+   "es": "Jonás",
+   "pt": "Jonas"
+  },
+  "Joppa": {
+   "es": "Jope",
+   "pt": "Jope"
+  },
+  "Jordan": {
+   "es": "Jordán",
+   "pt": "Jordão"
+  },
+  "Joshua": {
+   "es": "Josué (person); Jesuá (person)",
+   "pt": "Josué (person); Jesua (person)"
+  },
+  "Judah": {
+   "es": "Judá (person); Jehudas (person)",
+   "pt": "Judá"
+  },
+  "Kadesh": {
+   "es": "Cades",
+   "pt": "Cades"
+  },
+  "Karkor": {
+   "es": "Carcor",
+   "pt": "Carcor"
+  },
+  "Kibroth-hattaavah": {
+   "es": "Kibrot-hataavah",
+   "pt": "Quibrote-Hataavá"
+  },
+  "Kohath": {
+   "es": "Coat",
+   "pt": "Coate"
+  },
+  "Manasseh": {
+   "es": "Manasés",
+   "pt": "Manassés"
+  },
+  "Megiddo": {
+   "es": "Megido",
+   "pt": "Megido"
+  },
+  "Memphis": {
+   "es": "Memfis",
+   "pt": "Egito"
+  },
+  "Mesopotamia": {
+   "pt": "Mesopotâmia"
+  },
+  "Moab": {
+   "pt": "Moabe"
+  },
+  "Moses": {
+   "es": "Moisés",
+   "pt": "Moisés"
+  },
+  "Mount Gilboa": {
+   "es": "Monte Gilboa",
+   "pt": "Monte Gilboa"
+  },
+  "Nathan": {
+   "es": "Natán",
+   "pt": "Natã"
+  },
+  "Nazareth": {
+   "es": "Nazaret",
+   "pt": "Nazaré"
+  },
+  "Nehemiah": {
+   "es": "Nehemías",
+   "pt": "Neemias"
+  },
+  "Nile": {
+   "es": "Nilo",
+   "pt": "Nilo"
+  },
+  "Nineveh": {
+   "es": "Nínive",
+   "pt": "Nínive"
+  },
+  "Noah": {
+   "es": "Noé (person); Noa (person)",
+   "pt": "Noé (person); Noa (person)"
+  },
+  "Og": {
+   "pt": "Ogue"
+  },
+  "On": {
+   "es": "Hon",
+   "pt": "Om"
+  },
+  "Paran": {
+   "es": "Parán",
+   "pt": "Parã"
+  },
+  "Paul": {
+   "es": "Pablo",
+   "pt": "Paulo"
+  },
+  "Pelusium": {
+   "pt": "Pelúsio"
+  },
+  "Philistia": {
+   "es": "Palestina",
+   "pt": "Filístia"
+  },
+  "Pithom": {
+   "es": "Fitom",
+   "pt": "Pitom"
+  },
+  "Rameses": {
+   "pt": "Ramessés"
+  },
+  "Red Sea": {
+   "es": "Mar Rojo",
+   "pt": "Mar Vermelho"
+  },
+  "Rehoboth": {
+   "es": "Rehobot",
+   "pt": "Reobote (place); Reobote-Ir (place)"
+  },
+  "Rephidim": {
+   "es": "Refidim",
+   "pt": "Refidim"
+  },
+  "Reuben": {
+   "es": "Rubén",
+   "pt": "Rúben"
+  },
+  "Rome": {
+   "es": "Roma",
+   "pt": "Roma"
+  },
+  "Sarah": {
+   "es": "Sara",
+   "pt": "Sara"
+  },
+  "Saul": {
+   "es": "Saúl"
+  },
+  "Sea of Galilee": {
+   "es": "Mar de Galilea",
+   "pt": "Mar da Galileia"
+  },
+  "Sennacherib": {
+   "es": "Senaquérib",
+   "pt": "Senaqueribe"
+  },
+  "Shaalabbin": {
+   "es": "Saalabín",
+   "pt": "Saalabim"
+  },
+  "Shalmaneser": {
+   "es": "Salmanasar",
+   "pt": "Salmaneser"
+  },
+  "Shechem": {
+   "es": "Sequem (person); Siquem (place)",
+   "pt": "Siquém"
+  },
+  "Shiloh": {
+   "es": "Silo",
+   "pt": "Siló"
+  },
+  "Shimron": {
+   "es": "Simrón",
+   "pt": "Sinrom"
+  },
+  "Shinar": {
+   "pt": "Sinear"
+  },
+  "Shoa": {
+   "pt": "Soa"
+  },
+  "Shunem": {
+   "es": "Sunem",
+   "pt": "Suném"
+  },
+  "Sidon": {
+   "es": "Sidón",
+   "pt": "Sidom"
+  },
+  "Sihon": {
+   "es": "Sehón",
+   "pt": "Seom"
+  },
+  "Siloam": {
+   "es": "Siloé",
+   "pt": "Siloé"
+  },
+  "Sin": {
+   "pt": "Sim"
+  },
+  "Sinai": {
+   "es": "Sinaí"
+  },
+  "Sisera": {
+   "es": "Sísara",
+   "pt": "Sísera"
+  },
+  "Smyrna": {
+   "es": "Smirna",
+   "pt": "Esmirna"
+  },
+  "Sodom": {
+   "es": "Sodoma",
+   "pt": "Sodoma"
+  },
+  "Solomon": {
+   "es": "Salomón",
+   "pt": "Salomão"
+  },
+  "Spain": {
+   "es": "España",
+   "pt": "Espanha"
+  },
+  "Succoth": {
+   "es": "Succot",
+   "pt": "Sucote"
+  },
+  "Suphah": {
+   "pt": "Sufa"
+  },
+  "Susa": {
+   "es": "Susán",
+   "pt": "Susã"
+  },
+  "Syria": {
+   "es": "Siria",
+   "pt": "Síria"
+  },
+  "Taberah": {
+   "pt": "Taberá"
+  },
+  "Tamar": {
+   "es": "Tadmor",
+   "pt": "Tadmor"
+  },
+  "Tappuah": {
+   "es": "Tapua (place); Tafua (person)",
+   "pt": "Tapua"
+  },
+  "Tarshish": {
+   "es": "Tarsis",
+   "pt": "Társis"
+  },
+  "Telem": {
+   "pt": "Telém"
+  },
+  "Thebes": {
+   "es": "No-amón",
+   "pt": "Nô-Amom"
+  },
+  "Tyre": {
+   "es": "Tiro",
+   "pt": "Tiro"
+  },
+  "Zebulun": {
+   "es": "Zabulón",
+   "pt": "Zebulom"
+  },
+  "Zidon": {
+   "es": "Sidón",
+   "pt": "Sidom"
+  },
+  "Zion": {
+   "es": "Sión",
+   "pt": "Sião"
+  },
+  "Zuph": {
+   "es": "Suf"
+  }
+ }
+}

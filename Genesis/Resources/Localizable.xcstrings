@@ -29244,6 +29244,22 @@
         }
       }
     },
+    "Translated from Easton's Bible Dictionary (1897). Not Scripture.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Traducido del Diccionario Bíblico de Easton (1897). No es Escritura."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Traduzido do Dicionário Bíblico de Easton (1897). Não é Escritura."
+          }
+        }
+      }
+    },
     "Translation, %@": {
       "localizations": {
         "es": {

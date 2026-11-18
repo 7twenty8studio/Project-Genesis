@@ -1,0 +1,1397 @@
+{
+ "batch": "038",
+ "entries": [
+  {
+   "kind": "place",
+   "id": 796,
+   "name": "Midian",
+   "sha256": "4f2ab8dc551ad6dd380e828813c3cabfadbace5fcbddc3ca3f8ab3900b3286e1",
+   "text": "An Arabian tribe descended from Midian. They inhabited principally the desert north of the peninsula of Arabia. The peninsula of Sinai was the pasture-ground for their flocks. They were virtually the rulers of Arabia, being the dominant tribe. Like all Arabians, they were a nomad people. They early engaged in commercial pursuits. It was to one of their caravans that Joseph was sold (Gen. 37:28, 36). The next notice of them is in connection with Moses’ flight from Egypt (Ex. 2:15-21). Here in Midian Moses became the servant and afterwards the son-in-law of Reuel or Jethro, the priest. After the Exodus, the Midianites were friendly to the Israelites so long as they traversed only their outlying pasture-ground on the west of the Arabah; but when, having passed the southern end of Edom, they entered into the land of Midian proper, they joined with Balak, the king of Moab, in a conspiracy against them (Num. 22:4-7). Balaam, who had been sent for to curse Israel, having utterly failed to do so, was dismissed by the king of Moab; nevertheless he still tarried among the Midianites, and induced them to enter into correspondence with the Israelites, so as to bring them into association with them in the licentious orgies connected with the worship of Baal-Peor. This crafty counsel prevailed. The Israelites took part in the heathen festival, and so brought upon themselves a curse indeed. Their apostasy brought upon them a severe punishment. A plague broke out amongst them, and more than twenty-four thousand of the people perished (Num. 25:9). But the Midianites were not to be left unpunished. A terrible vengeance was denounced against them. A thousand warriors from each tribe, under the leadership of Phinehas, went forth against them. The Midianites were utterly routed. Their cities were consumed by fire, five of their kings were put to death, and the whole nation was destroyed (Josh. 13:21, 22). Balaam also perished by the sword, receiving the “wages of his unrighteousness” (Num. 31:8; 2 Pet. 2:15). The whole of the country on the east of Jordan, now conquered by the Israelites (see SIHON; OG), was divided between the two tribes of Reuben and Gad and the half tribe of Manasseh.\n\n Some two hundred and fifty years after this the Midianites had regained their ancient power, and in confederation with the Amalekites and the “children of the east” they made war against their old enemies the Israelites, whom for seven years they oppressed and held in subjection. They were at length assailed by Gideon in that ever-memorable battle in the great plain of Esdraelon, and utterly destroyed (Judg. 6:1-ch. 7). Frequent allusions are afterwards made to this great victory (Ps. 83:10, 12; Isa. 9:4; 10:6). They now wholly pass away from the page of history both sacred and profane.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "wages of his unrighteousness",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "children of the east",
+     "kind": "unsure",
+     "verses": [
+      7006003
+     ],
+     "es": "Pues como los de Israel habían sembrado, subían los Madianitas, y Amalecitas, y los orientales: subían contra ellos;",
+     "pt": "Pois quando os de Israel haviam semeado, subiam os midianitas, e amalequitas, e os orientais: subiam contra eles;"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 797,
+   "name": "Migdal-el",
+   "sha256": "55792f588348bdb1ea145f454bd8f8aaf79e815040a4be99ce9aa4fc601aad3a",
+   "text": "Tower of God, a fortified city of Naphtali (Josh. 19:38), supposed by some to be identical with Magdala (q.v.).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 798,
+   "name": "Migdal-gad",
+   "sha256": "48792c96f73577cebb1dc41147dd64c59f8ef81b3714a9d9d2f23bca0925bfe5",
+   "text": "Tower of fortune, a town in the plains of Judah, probably the modern el-Mejdel, a little to the north-east of Ascalon (Josh. 15:37).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 799,
+   "name": "Migdol",
+   "sha256": "6ab09e2a5e0b2a2b96ed51d33659b2fd1696d369f9dfcffd52d223030ed37e83",
+   "text": "A strongly-fortified place 12 miles from Pelusium, in the north of Egypt (Jer. 44:1; 46:14). This word is rendered “tower” in Ezek. 29:10, but the margin correctly retains the name Migdol, “from Migdol to Syene;” i.e., from Migdol in the north to Syene in the south, in other words, the whole of Egypt.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "tower",
+     "kind": "wording",
+     "verses": [
+      26029010
+     ],
+     "es": "Por tanto, he aquí yo contra ti, y contra tus ríos; y pondré la tierra de Egipto en asolamientos de la soledad del desierto, desde Migdol hasta Seveneh, hasta el término de Etiopía.",
+     "pt": "Portanto eis que eu sou contra ti, e contra teus rios; e tornarei a terra do Egito em desertas e assoladas solidões, desde Migdol e Sevene, até o limite de Cuxe."
+    },
+    {
+     "n": 1,
+     "english": "from Migdol to Syene;",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 800,
+   "name": "Migron",
+   "sha256": "9d43b2c5f6451e21610c3d4a3c74f22da23e4b2e386f80e08ff09f13f70bf8e0",
+   "text": "Precipice or landslip, a place between Aiath and Michmash (Isa. 10:28). The town of the same name mentioned in 1 Sam. 14:2 was to the south of this.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 801,
+   "name": "Miletus",
+   "sha256": "0acfe724d3e4157fc8e3f8fd5c88d16b9fa66361d8e16ef979ebee9609b61a89",
+   "text": "(Miletum, 2 Tim. 4:20), a seaport town and the ancient capital of Ionia, about 36 miles south of Ephesus. On his voyage from Greece to Syria, Paul touched at this port, and delivered that noble and pathetic address to the elders (“presbyters,” ver. 28) of Ephesus recorded in Acts 20:15-35. The site of Miletus is now some 10 miles from the coast.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "presbyters,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 802,
+   "name": "Millo",
+   "sha256": "45150d9c762e42b8806e69e9723d7d1575db9ae14a54d8cbefdcf4ae44478a96",
+   "text": "Probably the Canaanite name of some fortification, consisting of walls filled in with earth and stones, which protected Jerusalem on the north as its outermost defence. It is always rendered Akra i.e., “the citadel”, in the LXX. It was already existing when David conquered Jerusalem (2 Sam. 5:9). He extended it to the right and left, thus completing the defence of the city. It was rebuilt by Solomon (1 Kings 9:15, 24; 11:27) and repaired by Hezekiah (2 Chr. 32:5).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the citadel",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 803,
+   "name": "Minni",
+   "sha256": "41b0c783be75eb1c22a47cc2208eac4df401a1985b071b04ab687e77365e12ba",
+   "text": "Only in Jer. 51:27, as the name of a province in Armenia, which was at this time under the Median kings. Armenia is regarded by some as = Har-minni i.e., the mountainous country of Minni.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 804,
+   "name": "Minnith",
+   "sha256": "bb28b53b52570f33ef86cba1f3abf8e586e82aed87693fac730ca47cd4aa1f78",
+   "text": "Distribution, an Ammonitish town (Judg. 11:33) from which wheat was exported to Tyre (Ezek. 27:17). It was probably somewhere in the Mishor or table-land on the east of Jordan. There is a gentle valley running for about 4 miles east of Dhiban called Kurm Dhiban, “the vineyards of Dibon.” Tristram supposes that this may be the “vineyards” mentioned in Judg. (l.c.).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the vineyards of Dibon.",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "vineyards",
+     "kind": "wording",
+     "verses": [
+      7011033
+     ],
+     "es": "Y los hirió de grandísimo estrago desde Aroer hasta llegar á Minnith, veinte ciudades; y hasta la vega de las viñas. Así fueron domeñados los Ammonitas delante de los hijos de Israel.",
+     "pt": "E os feriu de grandíssimo dano desde Aroer até chegar a Minite, vinte cidades; e até a Abel-Queramim. Assim foram dominados os amonitas diante dos filhos de Israel."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 805,
+   "name": "Mishal",
+   "sha256": "d81dbd0ee440078ff79ded8a731b094e1bb0ccfb780c9cbfef791d907a087d73",
+   "text": "A city of the tribe of Asher (Josh. 21:30; 1 Chr. 6:74). It is probably the modern Misalli, on the shore near Carmel.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 806,
+   "name": "Misrephoth-maim",
+   "sha256": "c501230582da683713deb7667298281cea5259ce840bb63d939f9b20fe14d609",
+   "text": "Burning of waters, supposed to be salt-pans, or lime-kilns, or glass-factories, a place to which Joshua pursued a party of Canaanites after the defeat of Jabin (Josh. 11:8). It is identified with the ruin Musheirifeh, at the promontory of en-Nakhurah, some 11 miles north of Acre.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 807,
+   "name": "Mithkah",
+   "sha256": "5c83133c729aca8c298a882d982d7b98f74b1a2b04df425a9c8f3afdc7bbbd52",
+   "text": "Sweetness, one of the stations of the Israelites in the wilderness (Num. 33:28, 29).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 808,
+   "name": "Mitylene",
+   "sha256": "8321d3f7eef4160be60af4f8b8f1e2b5afe1639bc72905aff5aa067264ed5406",
+   "text": "The chief city of the island of Lesbos, on its east coast, in the AEgean Sea. Paul, during his third missionary journey, touched at this place on his way from Corinth to Judea (Acts 20:14), and here tarried for a night. It lies between Assos and Chios. It is now under the Turkish rule, and bears the name of Metelin.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 809,
+   "name": "Mizpah",
+   "sha256": "20e729facc7d7913e275cc88a9701a12d34797c24fb8ea5ddfee66bd2df22105",
+   "text": "A place in Gilead, so named by Laban, who overtook Jacob at this spot (Gen. 31:49) on his return to Palestine from Padan-aram. Here Jacob and Laban set up their memorial cairn of stones. It is the same as Ramath-mizpeh (Josh. 13:26).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 810,
+   "name": "Mizpah",
+   "sha256": "d1ddc75c128e27fe4701063b153a5b03d555ebb0b4bc313896bf37f730b777c6",
+   "text": "Another place in Gilead, at the foot of Mount Hermon, inhabited by Hivites (Josh. 11:3, 8). The name in Hebrew here has the article before it, “the Mizpeh,” “the watch-tower.” The modern village of Metullah, meaning also “the look-out,” probably occupies the site so called.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the Mizpeh,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "the watch-tower.",
+     "kind": "unsure",
+     "verses": [
+      14020024
+     ],
+     "es": "Y luego que vino Judá á la atalaya del desierto, miraron hacia la multitud; mas he aquí yacían ellos en tierra muertos, que ninguno había escapado.",
+     "pt": "E logo que veio Judá ao posto de observação do deserto, olharam até a multidão; mas eis que jaziam eles em terra mortos, que ninguém havia escapado."
+    },
+    {
+     "n": 2,
+     "english": "the look-out,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 811,
+   "name": "Mizpah",
+   "sha256": "ce91249ba9ac0e94dbc2173a67d24613bcb52af3823295e6d1a40e99a14bb6ef",
+   "text": "A city of Benjamin, “the watch-tower”, where the people were accustomed to meet in great national emergencies (Josh. 18:26; Judg. 20:1, 3; 21:1, 5; 1 Sam. 7:5-16). It has been supposed to be the same as Nob (1 Sam. 21:1; 22:9-19). It was some 4 miles north-west of Jerusalem, and was situated on the loftiest hill in the neighbourhood, some 600 feet above the plain of Gibeon. This village has the modern name of Neby Samwil, i.e., the prophet Samuel, from a tradition that Samuel’s tomb is here.\n\n Samuel inaugurated the reformation that characterized his time by convening a great assembly of all Israel at Mizpeh, now the politico-religious centre of the nation. There, in deep humiliation on account of their sins, they renewed their vows and entered again into covenant with the God of their fathers. It was a period of great religious awakening and of revived national life. The Philistines heard of this assembly, and came up against Israel. The Hebrews charged the Philistine host with great fury, and they were totally routed. Samuel commemorated this signal victory by erecting a memorial-stone, which he called “Ebenezer” (q.v.), saying, “Hitherto hath the Lord helped us” (1 Sam. 7:7-12).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the watch-tower",
+     "kind": "unsure",
+     "verses": [
+      14020024
+     ],
+     "es": "Y luego que vino Judá á la atalaya del desierto, miraron hacia la multitud; mas he aquí yacían ellos en tierra muertos, que ninguno había escapado.",
+     "pt": "E logo que veio Judá ao posto de observação do deserto, olharam até a multidão; mas eis que jaziam eles em terra mortos, que ninguém havia escapado."
+    },
+    {
+     "n": 1,
+     "english": "Ebenezer",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "Hitherto hath the Lord helped us",
+     "kind": "partial",
+     "verses": [
+      9007012
+     ],
+     "es": "Tomó luego Samuel una piedra, y púsola entre Mizpa y Sen, y púsole por nombre Eben-ezer, diciendo: Hasta aquí nos ayudó Jehová.",
+     "pt": "Tomou logo Samuel uma pedra, e a pôs entre Mispá e Sem, e pôs-lhe por nome Ebenézer, dizendo: Até aqui nos ajudou o SENHOR."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 814,
+   "name": "Mizpeh",
+   "sha256": "8bd83ae10f625ab1bf48dc2280fe66533c3dc7d3b02bb17bdbdb6e78ac64dba2",
+   "text": "A town of Moab to which David removed his parents for safety during his persecution by Saul (1 Sam. 22:3). This was probably the citadel known as Kir-Moab, now Kerak. While David resided here he was visited by the prophet Gad, here mentioned for the first time, who was probably sent by Samuel to bid him leave the land of Moab and betake himself to the land of Judah. He accordingly removed to the forest of Hareth (q.v.), on the edge of the mountain chain of Hebron.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 815,
+   "name": "Moab",
+   "sha256": "1fb77b09d0d3e019bb680276e7a00d98e878dcce9d72c7c45d959e77b7ed9540",
+   "text": "The land of Moab (Jer. 48:24), called also the “country of Moab” (Ruth 1:2, 6; 2:6), on the east of Jordan and the Dead Sea, and south of the Arnon (Num. 21:13, 26). In a wider sense it included the whole region that had been occupied by the Amorites. It bears the modern name of Kerak.\n\n In the Plains of Moab, opposite Jericho (Num. 22:1; 26:63; Josh. 13:32), the children of Israel had their last encampment before they entered the land of Canaan. It was at that time in the possession of the Amorites (Num. 21:22). “Moses went up from the plains of Moab unto the mountain of Nebo, to the top of Pisgah,” and “died there in the land of Moab, according to the word of the Lord” (Deut. 34:5, 6). “Surely if we had nothing else to interest us in the land of Moab, the fact that it was from the top of Pisgah, its noblest height, this mightiest of the prophets looked out with eye undimmed upon the Promised Land; that it was here on Nebo, its loftiest mountain, that he died his solitary death; that it was here, in the valley over against Beth-peor, he found his mysterious sepulchre, we have enough to enshrine the memory in our hearts.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "country of Moab",
+     "kind": "partial",
+     "verses": [
+      8001001
+     ],
+     "es": "Y ACONTECIÓ en los días que gobernaban los jueces, que hubo hambre en la tierra. Y un varón de Beth-lehem de Judá, fué á peregrinar en los campos de Moab, él y su mujer, y dos hijos suyos.",
+     "pt": "E aconteceu nos dias que governavam os juízes, que houve fome na terra. E um homem de Belém de Judá, foi a peregrinar nos campos de Moabe, ele e sua mulher, e dois filhos seus."
+    },
+    {
+     "n": 1,
+     "english": "Moses went up from the plains of Moab unto the mountain of Nebo, to the top of Pisgah,",
+     "kind": "partial",
+     "verses": [
+      5034001
+     ],
+     "es": "Y SUBIÓ Moisés de los campos de Moab al monte de Nebo, á la cumbre de Pisga, que está enfrente de Jericó: y mostróle Jehová toda la tierra de Galaad hasta Dan,",
+     "pt": "E Moisés subiu dos campos de Moabe ao monte Nebo, ao cume de Pisga, que está em frente de Jericó; e o SENHOR mostrou-lhe toda a terra de Gileade até Dã,"
+    },
+    {
+     "n": 2,
+     "english": "died there in the land of Moab, according to the word of the Lord",
+     "kind": "partial",
+     "verses": [
+      5034005
+     ],
+     "es": "Y murió allí Moisés siervo de Jehová, en la tierra de Moab, conforme al dicho de Jehová.",
+     "pt": "E morreu ali Moisés, servo do SENHOR, na terra de Moabe, conforme o dito do SENHOR."
+    },
+    {
+     "n": 3,
+     "english": "Surely if we had nothing else to interest us in the land of Moab, the fact that it was from the top of Pisgah, its noblest height, this mightiest of the prophets looked out with eye undimmed upon the Promised Land; that it was here on Nebo, its loftiest mountain, that he died his solitary death; that it was here, in the valley over against Beth-peor, he found his mysterious sepulchre, we have enough to enshrine the memory in our hearts.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 816,
+   "name": "Moladah",
+   "sha256": "2e91aa45f43872f92228e7579349f688f217943987b99f86b9a95508c00910be",
+   "text": "Birth, a city in the south of Judah which fell to Simeon (Josh. 15:21-26; 19:2). It has been identified with the modern el-Milh, 10 miles east of Beersheba.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 817,
+   "name": "Moreh (Shechem)",
+   "sha256": "0a081e97bc1aa1c91a65d60ff6a38b4423f404adaf555673cae60f21641fe478",
+   "text": "A Canaanite probably who inhabited the district south of Shechem, between Mounts Ebal and Gerizim, and gave his name to the “plain” there (Gen. 12:6). Here at this “plain,” or rather (R.V.) “oak,” of Moreh, Abraham built his first altar in the land of Palestine; and here the Lord appeared unto him. He afterwards left this plain and moved southward, and pitched his tent between Bethel on the west and Hai on the east (Gen. 12:7, 8).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "plain",
+     "kind": "wording",
+     "verses": [
+      1012006
+     ],
+     "es": "Y pasó Abram por aquella tierra hasta el lugar de Sichêm, hasta el valle de Moreh: y el Cananeo estaba entonces en la tierra.",
+     "pt": "E passou Abrão por aquela terra até o lugar de Siquém, até o carvalho de Moré; e os cananeus estavam então na terra."
+    },
+    {
+     "n": 1,
+     "english": "plain,",
+     "kind": "wording",
+     "verses": [
+      1012006
+     ],
+     "es": "Y pasó Abram por aquella tierra hasta el lugar de Sichêm, hasta el valle de Moreh: y el Cananeo estaba entonces en la tierra.",
+     "pt": "E passou Abrão por aquela terra até o lugar de Siquém, até o carvalho de Moré; e os cananeus estavam então na terra."
+    },
+    {
+     "n": 2,
+     "english": "oak,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 818,
+   "name": "Moreh (little Hermon)",
+   "sha256": "8444358afa67476fbde6f6d55a8bb1d8cd11892e9f83664f7871a14689add0c6",
+   "text": "Probably identical with “little Hermon,” the modern Jebel ed-Duhy, or perhaps one of the lower spurs of this mountain. It is a gray ridge parallel to Gilboa on the north; and between the two lay the battle-field, the plain of Jezreel (q.v.), where Gideon overthrew the Midianites (Judg. 7:1-12).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "little Hermon,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 820,
+   "name": "Moresheth-gath",
+   "sha256": "a1f2394ff94d5fb8afc8b0126a15d435e78cfabd3076ec92248e26f91647dadf",
+   "text": "Possession of the wine-press, the birthplace of the prophet Micah (1:14), who is called the “Morasthite” (Jer. 26:18). This place was probably a suburb of Gath.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Morasthite",
+     "kind": "wording",
+     "verses": [
+      24026018
+     ],
+     "es": "Miqueas de Morasti profetizó en tiempo de Ezechîas rey de Judá, diciendo: Así ha dicho Jehová de los ejércitos: Sión será arada como campo, y Jerusalem vendrá á ser montones, y el monte del templo en cumbres de bosque.",
+     "pt": "Miqueias, o morastita, profetizou nos dias de Ezequias rei de Judá, e falou a todo o povo de Judá, dizendo: Assim diz o SENHOR dos exércitos: Sião será arada como campo, e Jerusalém se tornará em amontoados de pedras , e o monte do templo em lugares altos de mato."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 821,
+   "name": "Moriah",
+   "sha256": "372982832377fdbe9d35b56a922daf822223068c3d782795cee60a255a343a10",
+   "text": "The chosen of Jehovah. Some contend that Mount Gerizim is meant, but most probably we are to regard this as one of the hills of Jerusalem. Here Solomon’s temple was built, on the spot that had been the threshing-floor of Ornan the Jebusite (2 Sam. 24:24, 25; 2 Chr. 3:1). It is usually included in Zion, to the north-east of which it lay, and from which it was separated by the Tyropoean valley. This was “the land of Moriah” to which Abraham went to offer up his son Isaac (Gen. 22:2). It has been supposed that the highest point of the temple hill, which is now covered by the Mohammedan Kubbetes-Sakhrah, or “Dome of the Rock,” is the actual site of Araunah’s threshing-floor. Here also, one thousand years after Abraham, David built an altar and offered sacrifices to God.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the land of Moriah",
+     "kind": "partial",
+     "verses": [
+      1022002
+     ],
+     "es": "Y dijo: Toma ahora tu hijo, tu único, Isaac, á quien amas, y vete á tierra de Moriah, y ofrécelo allí en holocausto sobre uno de los montes que yo te diré.",
+     "pt": "E disse: Toma agora teu filho, teu único, Isaque, a quem amas, e vai à terra de Moriá, e oferece-o ali em holocausto sobre um dos montes que eu te direi."
+    },
+    {
+     "n": 1,
+     "english": "Dome of the Rock,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 822,
+   "name": "Mortar",
+   "sha256": "b2a852d8276ea2bd460c19b7532a3fbf8e2c36dd08bd4079de1faa86c9c080b2",
+   "text": "Mortar, a place in or near Jerusalem inhabited by silver merchants (Zeph. 1:11). It has been conjectured that it was the “Phoenician quarter” of the city, where the traders of that nation resided, after the Oriental custom.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Phoenician quarter",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 823,
+   "name": "Moserah",
+   "sha256": "adeba972a9071d9fd2dffd121b7e9dfc4e567953f342c123f38ae552d0f07f86",
+   "text": "A bond, one of the stations of the Israelites in the wilderness (Deut. 10:6), at the foot of Mount Hor. (Comp. Num. 33:37, 38). It has been identified with el-Tayibeh, a small fountain at the bottom of the pass leading to the ascent of Mount Hor.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 824,
+   "name": "Moseroth",
+   "sha256": "a9004d3e7d68d712160bb4cf45eea3d0a240adaf56704d4bc675bf6e789ec6a6",
+   "text": "Bonds, one of the stations in the wilderness (Num. 33:30, 31), probably the same as Mosera.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 827,
+   "name": "Most Holy Place",
+   "sha256": "de10d081f05ae53d25e6ea1e451daea9ce79a226eb42335f6f294206df8e1de3",
+   "text": "One of the two portions into which the tabernacle was divided (Ex. 26:31; 37:17-25; Heb. 9:2). It was 20 cubits long and 10 in height and breadth. It was illuminated by the golden candlestick, as it had no opening to admit the light. It contained the table of showbread (Ex. 25:23-29) and the golden altar of incense (30:1-11). It was divided from the holy of holies by a veil of the most costly materials and the brightest colours.\n\n The arrangement of the temple (q.v.) was the same in this respect. In it the walls of hewn stone were wainscotted with cedar and overlaid with gold, and adorned with beautiful carvings. It was entered from the porch by folding doors overlaid with gold and richly embossed. Outside the holy place stood the great tank or “sea” of molten brass, supported by twelve oxen, three turned each way, capable of containing two thousand baths of water. Besides this there were ten lavers and the brazen altar of burnt sacrifice.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "sea",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 828,
+   "name": "Mount of Olives",
+   "sha256": "1878eb413e3cb9254f470c0497294ee4f81b0c9cb54e2473fc7b8d6184cb13ca",
+   "text": "So called from the olive trees with which its sides are clothed, is a mountain ridge on the east of Jerusalem (1 Kings 11:7; Ezek. 11:23; Zech. 14:4), from which it is separated by the valley of Kidron. It is first mentioned in connection with David’s flight from Jerusalem through the rebellion of Absalom (2 Sam. 15:30), and is only once again mentioned in the Old Testament, in Zech. 14:4. It is, however, frequently alluded to (1 Kings 11:7; 2 Kings 23:13; Neh. 8:15; Ezek. 11:23).\n\n It is frequently mentioned in the New Testament (Matt. 21:1; 26:30, etc.). It now bears the name of Jebel et-Tur, i.e., “Mount of the Summit;” also sometimes called Jebel ez-Zeitun, i.e., “Mount of Olives.” It is about 200 feet above the level of the city. The road from Jerusalem to Bethany runs as of old over this mount. It was on this mount that Jesus stood when he wept over Jerusalem. “No name in Scripture,” says Dr. Porter, “calls up associations at once so sacred and so pleasing as that of Olivet. The ‘mount’ is so intimately connected with the private, the devotional life of the Saviour, that we read of it and look at it with feelings of deepest interest and affection. Here he often sat with his disciples, telling them of wondrous events yet to come, of the destruction of the Holy City; of the sufferings, the persecution, and the final triumph of his followers (Matt. 24). Here he gave them the beautiful parables of the ten virgins and the five talents (25); here he was wont to retire on each evening for meditation, and prayer, and rest of body, when weary and harassed by the labours and trials of the day (Luke 21:37); and here he came on the night of his betrayal to utter that wonderful prayer, ‘O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt’ (Matt. 26:39). And when the cup of God’s wrath had been drunk, and death and the grave conquered, he led his disciples out again over Olivet as far as to Bethany, and after a parting blessing ascended to heaven (Luke 24:50, 51; Acts 1:12).”\n\n This mount, or rather mountain range, has four summits or peaks: (1) the “Galilee” peak, so called from a tradition that the angels stood here when they spoke to the disciples (Acts 1:11); (2) the “Mount of Ascension,” the supposed site of that event, which was, however, somewhere probably nearer Bethany (Luke 24:51, 52); (3) the “Prophets,” from the catacombs on its side, called “the prophets’ tombs;” and (4) the “Mount of Corruption,” so called because of the “high places” erected there by Solomon for the idolatrous worship of his foreign wives (1 Kings 11:7; 2 Kings 23:13; Vulg., “Mount of Offence”).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Mount of the Summit;",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "Mount of Olives.",
+     "kind": "partial",
+     "verses": [
+      40021001
+     ],
+     "es": "Y COMO se acercaron á Jerusalem, y vinieron á Bethfagé, al monte de las Olivas, entonces Jesús envió dos discípulos,",
+     "pt": "E quando se aproximaram de Jerusalém, e chegaram a Betfagé, ao monte das Oliveiras, então Jesus mandou dois discípulos, dizendo-lhes:"
+    },
+    {
+     "n": 2,
+     "english": "No name in Scripture,",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "calls up associations at once so sacred and so pleasing as that of Olivet. The ‘mount’ is so intimately connected with the private, the devotional life of the Saviour, that we read of it and look at it with feelings of deepest interest and affection. Here he often sat with his disciples, telling them of wondrous events yet to come, of the destruction of the Holy City; of the sufferings, the persecution, and the final triumph of his followers (Matt. 24). Here he gave them the beautiful parables of the ten virgins and the five talents (25); here he was wont to retire on each evening for meditation, and prayer, and rest of body, when weary and harassed by the labours and trials of the day (Luke 21:37); and here he came on the night of his betrayal to utter that wonderful prayer, ‘O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt’ (Matt. 26:39). And when the cup of God’s wrath had been drunk, and death and the grave conquered, he led his disciples out again over Olivet as far as to Bethany, and after a parting blessing ascended to heaven (Luke 24:50, 51; Acts 1:12).",
+     "kind": "other"
+    },
+    {
+     "n": 4,
+     "english": "Galilee",
+     "kind": "wording",
+     "verses": [
+      44001011
+     ],
+     "es": "Los cuales también les dijeron: Varones Galileos, ¿qué estáis mirando al cielo? este mismo Jesús que ha sido tomado desde vosotros arriba en el cielo, así vendrá como le habéis visto ir al cielo.",
+     "pt": "Os quais também disseram: Homens galileus, por que estais olhando para o céu? Este Jesus, que foi tomado de vós acima ao céu, assim virá, da maneira como o vistes ir ao céu."
+    },
+    {
+     "n": 5,
+     "english": "Mount of Ascension,",
+     "kind": "other"
+    },
+    {
+     "n": 6,
+     "english": "Prophets,",
+     "kind": "other"
+    },
+    {
+     "n": 7,
+     "english": "the prophets’ tombs;",
+     "kind": "other"
+    },
+    {
+     "n": 8,
+     "english": "Mount of Corruption,",
+     "kind": "unsure",
+     "verses": [
+      12023013
+     ],
+     "es": "Asimismo profanó el rey los altos que estaban delante de Jerusalem, á la mano derecha del monte de la destrucción, los cuales Salomón rey de Israel había edificado á Astharoth, abominación de los Sidonios, y á Chêmos abominación de Moab, y á Milcom abominación de los hijos de Ammón.",
+     "pt": "Também profanou o rei os altos que estavam diante de Jerusalém, à direita do monte da destruição, os quais Salomão rei de Israel havia edificado a Astarote, abominação dos sidônios, e a Camos abominação de Moabe, e a Milcom abominação dos filhos de Amom."
+    },
+    {
+     "n": 9,
+     "english": "high places",
+     "kind": "other"
+    },
+    {
+     "n": 10,
+     "english": "Mount of Offence",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 830,
+   "name": "Mount Baalah",
+   "sha256": "841bbb6832dbcad2184f3dc66b28345d6179612ceb8e20966b2d75ec755520ad",
+   "text": "A mountain on the north-western boundary of Judah and Dan (Josh. 15:11).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 832,
+   "name": "Mount Ebal",
+   "sha256": "60c2c45fd2489e1fb2cc2adbdcc1de00f2c400d8ee8163966f07357bf5207b9b",
+   "text": "A mountain 3,076 feet above the level of the sea, and 1,200 feet above the level of the valley, on the north side of which stood the city of Shechem (q.v.). On this mountain six of the tribes (Deut. 27:12, 13) were appointed to take their stand and respond according to a prescribed form to the imprecations uttered in the valley, where the law was read by the Levites (11:29; 29:4, 13). This mountain was also the site of the first great altar erected to Jehovah (Deut. 27:5-8; Josh. 8:30-35). After this the name of Ebal does not again occur in Jewish history.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 834,
+   "name": "Mount Ephron",
+   "sha256": "c99a74236f2f88f58a7a3f293eaf2089db96892f4faf39069b58c68e04227eda",
+   "text": "A mountain range which formed one of the landmarks on the north boundary of the tribe of Judah (Josh. 15:9), probably the range on the west side of the Wady Beit-Hanina.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 836,
+   "name": "Mount Gerizim",
+   "sha256": "ee03388f164423d2cde8bfacecc8e27bb586d3a9394de3e7a39569175d9e1fde",
+   "text": "A mountain of Samaria, about 3,000 feet above the Mediterranean. It was on the left of the valley containing the ancient town of Shechem (q.v.), on the way to Jerusalem. It stood over against Mount Ebal, the summits of these mountains being distant from each other about 2 miles (Deut. 27; Josh. 8:30-35). On the slopes of this mountain the tribes descended from the handmaids of Leah and Rachel, together with the tribe of Reuben, were gathered together, and gave the responses to the blessing pronounced as the reward of obedience, when Joshua in the valley below read the whole law in the hearing of all the people; as those gathered on Ebal responded with a loud Amen to the rehearsal of the curses pronounced on the disobedient. It was probably at this time that the coffin containing the embalmed body of Joseph was laid in the “parcel of ground which Jacob bought of the sons of Hamor” (Gen. 33:19; 50:25).\n\n Josephus relates (Ant. 11:8, 2-4) that Sanballat built a temple for the Samaritans on this mountain, and instituted a priesthood, as rivals to those of the Jews at Jerusalem. This temple was destroyed after it had stood two hundred years. It was afterwards rebuilt by Herod the Great. There is a Samaritan tradition that it was the scene of the incident recorded in Gen. 22. There are many ruins on this mountain, some of which are evidently of Christian buildings. To this mountain the woman of Sychar referred in John 4:20. For centuries Gerizim was the centre of political outbreaks. The Samaritans (q.v.), a small but united body, still linger here, and keep up their ancient ceremonial worship.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "parcel of ground which Jacob bought of the sons of Hamor",
+     "kind": "partial",
+     "verses": [
+      6024032
+     ],
+     "es": "Y enterraron en Sichêm los huesos de José que los hijos de Israel habían traído de Egipto, en la parte del campo que Jacob compró de los hijos de Hemor padre de Sichêm, por cien corderas; y fué en posesión á los hijos de José.",
+     "pt": "E enterraram em Siquém os ossos de José que os filhos de Israel haviam trazido do Egito, na parte do campo que Jacó comprou dos filhos de Hamor, pai de Siquém, por cem peças de prata; e foi em possessão aos filhos de José."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 839,
+   "name": "Mount Halak",
+   "sha256": "7de87e7c34df4c1c03eba9b4ae8c0db71c10cc33d3da830931118c829af644a0",
+   "text": "Smooth; bald, a hill at the southern extremity of Canaan (Josh. 11:17). It is referred to as if it were a landmark in that direction, being prominent and conspicuous from a distance. It has by some been identified with the modern Jebel el-Madura, on the south frontier of Judah, between the south end of the Dead Sea and the Wady Gaian.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 840,
+   "name": "Mount Heres",
+   "sha256": "dd0838bdea76ee9f6b08387ce1c99c6be18907dae225c26b750949a140a500aa",
+   "text": "“Mount Heres” (Judg. 1:35), Heb. Har-heres, i.e., “sun-mountain;” probably identical with Irshemesh in Josh. 19:41.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Mount Heres",
+     "kind": "wording",
+     "verses": [
+      7001035
+     ],
+     "es": "Y quiso el Amorrheo habitar en el monte de Heres, en Ajalón y en Saalbín; mas como la mano de la casa de José tomó fuerzas, hiciéronlos tributarios.",
+     "pt": "E os amorreus quiseram habitar no monte de Heres, em Aijalom e em Saalbim; mas a mão da tribo de José foi mais forte, e os fizeram tributários."
+    },
+    {
+     "n": 1,
+     "english": "sun-mountain;",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 842,
+   "name": "Mount Hor",
+   "sha256": "3a284b0138ae913000fbe0d6f3dbe6b57dfcbc3a7cbcba1419ad45a46cf9e6c0",
+   "text": "One of the mountains of the chain of Seir or Edom, on the confines of Idumea (Num. 20:22-29; 33:37). It was one of the stations of the Israelites in the wilderness (33:37), which they reached in the circuitous route they were obliged to take because the Edomites refused them a passage through their territory. It was during the encampment here that Aaron died (Num. 33:37-41). The Israelites passed this mountain several times in their wanderings. It bears the modern name of Jebel Harun, and is the highest and most conspicious of the whole range. It stands about midway between the Dead Sea and the Elanitic gulf. It has two summits, in the hallow between which it is supposed that Aaron died. Others, however, suppose that this mountain is the modern Jebel Madurah, on the opposite, i.e., the western, side of the Arabah.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 843,
+   "name": "Mount Hor",
+   "sha256": "4636b7919d8ef5e96a3dbd463c2461f32ed986c8d70ef5ec46828379271a0eb4",
+   "text": "One of the marks of the northern boundary of Palestine (Num. 34:7, 8). Nowhere else mentioned. Perhaps it is one of the peaks of Lebanon.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 845,
+   "name": "Mount Jearim",
+   "sha256": "a56110742716466d406af9a8f33761f60261137ae149a34e65e2fd5a85252d63",
+   "text": "Forests, a mountain on the border of Judah (Josh. 15:10).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 847,
+   "name": "Hill Mizar",
+   "sha256": "90032e86413e5b0ce5933113702ad227a87023cc8a775c1d28fd89e247696353",
+   "text": "Smallness, a summit on the eastern ridge of Lebanon, near which David lay after escaping from Absalom (Ps. 42:6). It may, perhaps, be the present Jebel Ajlun, thus named, “the little”, in contrast with the greater elevation of Lebanon and Hermon.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the little",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 849,
+   "name": "Mount Nebo",
+   "sha256": "d1e2ef946c635476cc66aed992e40a5061f9f191b7ba4506e175fa0644231429",
+   "text": "A mountain in the land of Moab from which Moses looked for the first and the last time on the Promised Land (Deut. 32:49; 34:1). It has been identified with Jebel Nebah, on the eastern shore of the Dead Sea, near its northern end, and about 5 miles south-west of Heshbon. It was the summit of the ridge of Pisgah (q.v.), which was a part of the range of the “mountains of Abarim.” It is about 2,643 feet in height, but from its position it commands a view of Western Palestine. Close below it are the plains of Moab, where Balaam, and afterwards Moses, saw the tents of Israel spread along.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "mountains of Abarim.",
+     "kind": "unsure",
+     "verses": [
+      4033047
+     ],
+     "es": "Y partidos de Almon-diblathaim, asentaron en los montes de Abarim, delante de Nebo.",
+     "pt": "E partidos de Almom-Diblataim, assentaram nos montes de Abarim, diante de Nebo."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 850,
+   "name": "Mount Paran",
+   "sha256": "705fba5d278018b08c6584995a4769b2d240e7a33f5a2d5573ed9a478e0dfc8d",
+   "text": "Probably the hilly region or upland wilderness on the north of the desert of Paran forming the southern boundary of the Promised Land (Deut. 33:2; Hab. 3:3).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 851,
+   "name": "Mount Perazim",
+   "sha256": "9ad518471d56ede66234d4d88b8c4086783b22ad2f63f91aa89da5ac0b68035e",
+   "text": "Mount of breaches, only in Isa. 28:21. It is the same as BAAL-PERAZIM (q.v.), where David gained a victory over the Philistines (2 Sam. 5:20).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 853,
+   "name": "Mount Seir",
+   "sha256": "d1466bed89990c27c54101adfa33e383e7a57016a8fb649278e2efa461ebed59",
+   "text": "A mountain range (not the Edomite range, Gen. 32:3) lying between the Wady Aly and the Wady Ghurab (Josh. 15:10).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 854,
+   "name": "Mount Shapher",
+   "sha256": "12de39ffb5f95fb26c8d703cfeef8085b1cd8d2f01e04661c2e29ea0e8073a65",
+   "text": "Brightness, one of the stations where Israel encamped in the wilderness (Num. 33:23, 24).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 855,
+   "name": "Mount Sinai",
+   "sha256": "77ebdc54f203a972d2f6ec10a89d156250820de6b61a23d9317aa3edb06c739c",
+   "text": "Of Sin (the moon god), called also Horeb, the name of the mountain district which was reached by the Hebrews in the third month after the Exodus. Here they remained encamped for about a whole year. Their journey from the Red Sea to this encampment, including all the windings of the route, was about 150 miles. The last twenty-two chapters of Exodus, together with the whole of Leviticus and Num. ch. 1-11, contain a record of all the transactions which occurred while they were here. From Rephidim (Ex. 17:8-13) the Israelites journeyed forward through the Wady Solaf and Wady esh-Sheikh into the plain of er-Rahah, “the desert of Sinai,” about 2 miles long and half a mile broad, and encamped there “before the mountain.” The part of the mountain range, a protruding lower bluff, known as the Ras Sasafeh (Sufsafeh), rises almost perpendicularly from this plain, and is in all probability the Sinai of history. Dean Stanley thus describes the scene:, “The plain itself is not broken and uneven and narrowly shut in, like almost all others in the range, but presents a long retiring sweep, within which the people could remove and stand afar off. The cliff, rising like a huge altar in front of the whole congregation, and visible against the sky in lonely grandeur from end to end of the whole plain, is the very image of the ‘mount that might be touched,’ and from which the voice of God might be heard far and wide over the plain below.” This was the scene of the giving of the law. From the Ras Sufsafeh the law was proclaimed to the people encamped below in the plain of er-Rahah. During the lengthened period of their encampment here the Israelites passed through a very memorable experience. An immense change passed over them. They are now an organized nation, bound by covenant engagement to serve the Lord their God, their ever-present divine Leader and Protector. At length, in the second month of the second year of the Exodus, they move their camp and march forward according to a prescribed order. After three days they reach the “wilderness of Paran,” the “et-Tih”, i.e., “the desert”, and here they make their first encampment. At this time a spirit of discontent broke out amongst them, and the Lord manifested his displeasure by a fire which fell on the encampment and inflicted injury on them. Moses called the place Taberah (q.v.), Num. 11:1-3. The journey between Sinai and the southern boundary of the Promised Land (about 150 miles) at Kadesh was accomplished in about a year.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the desert of Sinai,",
+     "kind": "unsure",
+     "verses": [
+      2019002
+     ],
+     "es": "Porque partieron de Rephidim, y llegaron al desierto de Sinaí, y asentaron en el desierto; y acampó allí Israel delante del monte.",
+     "pt": "Porque partiram de Refidim, e chegaram ao deserto de Sinai, e assentaram no deserto; e acampou ali Israel diante do monte."
+    },
+    {
+     "n": 1,
+     "english": "before the mountain.",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "The plain itself is not broken and uneven and narrowly shut in, like almost all others in the range, but presents a long retiring sweep, within which the people could remove and stand afar off. The cliff, rising like a huge altar in front of the whole congregation, and visible against the sky in lonely grandeur from end to end of the whole plain, is the very image of the ‘mount that might be touched,’ and from which the voice of God might be heard far and wide over the plain below.",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "wilderness of Paran,",
+     "kind": "unsure",
+     "verses": [
+      1021021
+     ],
+     "es": "Y habitó en el desierto de Parán; y su madre le tomó mujer de la tierra de Egipto.",
+     "pt": "E habitou no deserto de Parã; e sua mãe lhe tomou mulher da terra do Egito."
+    },
+    {
+     "n": 4,
+     "english": "et-Tih",
+     "kind": "other"
+    },
+    {
+     "n": 5,
+     "english": "the desert",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 856,
+   "name": "Mount Sion",
+   "sha256": "ee575b7143b4338d4fc8c11acb4b2cfe71dd54c149a9360a84193aba7411356f",
+   "text": "Denotes Mount Hermon in Deut. 4:48; called Sirion by the Sidonians, and by the Amorites Shenir (Deut. 3:9).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 858,
+   "name": "Mount Zalmon",
+   "sha256": "fe17d0f4b9845854ce93942f7c1828a3bf99c3b26cf9882209c3878a4d6bcbb9",
+   "text": "Shady; or Zalmon (q.v.), a hill covered with dark forests, south of Shechem, from which Abimelech and his men gathered wood to burn that city (Judg. 9:48). In Ps. 68:14 the change from war to peace is likened to snow on the dark mountain, as some interpret the expression. Others suppose the words here mean that the bones of the slain left unburied covered the land, so that it seemed to be white as if covered with snow. The reference, however, of the psalm is probably to Josh. 11 and 12. The scattering of the kings and their followers is fitly likened unto the snow-flakes rapidly falling on the dark Salmon. It is the modern Jebel Suleiman.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 859,
+   "name": "Mount Zemaraim",
+   "sha256": "8197217868dd7226bbdd48462ce52c0ef723e60585194b54f6306fbe6363f6b6",
+   "text": "A mount in the highlands of Ephraim, to the north of Jerusalem (2 Chr. 13:4-20). Here the armies of Abijah and Jeroboam engaged in a bloody battle, which issued in the total defeat of the king of Israel, who never “recovered strength again,” and soon after died.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "recovered strength again,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 860,
+   "name": "Mount Zion",
+   "sha256": "d7600219a0286dc5a8ae6a6180c0bd975ae587c3a890b59a89328c3ce9edbd71",
+   "text": "Sunny; height, one of the eminences on which Jerusalem was built. It was surrounded on all sides, except the north, by deep valleys, that of the Tyropoeon (q.v.) separating it from Moriah (q.v.), which it surpasses in height by 105 feet. It was the south-eastern hill of Jerusalem.\n\n When David took it from the Jebusites (Josh. 15:63; 2 Sam. 5:7) he built on it a citadel and a palace, and it became “the city of David” (1 Kings 8:1; 2 Kings 19:21, 31; 1 Chr. 11:5). In the later books of the Old Testament this name was sometimes used (Ps. 87:2; 149:2; Isa. 33:14; Joel 2:1) to denote Jerusalem in general, and sometimes God’s chosen Israel (Ps. 51:18; 87:5).\n\n In the New Testament it is used sometimes to denote the Church of God (Heb. 12:22), and sometimes the heavenly city (Rev. 14:1).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the city of David",
+     "kind": "partial",
+     "verses": [
+      11008001
+     ],
+     "es": "ENTONCES juntó Salomón los ancianos de Israel, y á todas las cabezas de las tribus, y á los príncipes de las familias de los hijos de Israel, al rey Salomón en Jerusalem para traer el arca del pacto de Jehová de la ciudad de David, que es Sión.",
+     "pt": "Então juntou Salomão os anciãos de Israel, e a todos os chefes das tribos, e aos príncipes das famílias dos filhos de Israel, ao rei Salomão em Jerusalém para trazer a arca do pacto do SENHOR da cidade de Davi, que é Sião."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 861,
+   "name": "Mount of Olives",
+   "sha256": "1878eb413e3cb9254f470c0497294ee4f81b0c9cb54e2473fc7b8d6184cb13ca",
+   "text": "So called from the olive trees with which its sides are clothed, is a mountain ridge on the east of Jerusalem (1 Kings 11:7; Ezek. 11:23; Zech. 14:4), from which it is separated by the valley of Kidron. It is first mentioned in connection with David’s flight from Jerusalem through the rebellion of Absalom (2 Sam. 15:30), and is only once again mentioned in the Old Testament, in Zech. 14:4. It is, however, frequently alluded to (1 Kings 11:7; 2 Kings 23:13; Neh. 8:15; Ezek. 11:23).\n\n It is frequently mentioned in the New Testament (Matt. 21:1; 26:30, etc.). It now bears the name of Jebel et-Tur, i.e., “Mount of the Summit;” also sometimes called Jebel ez-Zeitun, i.e., “Mount of Olives.” It is about 200 feet above the level of the city. The road from Jerusalem to Bethany runs as of old over this mount. It was on this mount that Jesus stood when he wept over Jerusalem. “No name in Scripture,” says Dr. Porter, “calls up associations at once so sacred and so pleasing as that of Olivet. The ‘mount’ is so intimately connected with the private, the devotional life of the Saviour, that we read of it and look at it with feelings of deepest interest and affection. Here he often sat with his disciples, telling them of wondrous events yet to come, of the destruction of the Holy City; of the sufferings, the persecution, and the final triumph of his followers (Matt. 24). Here he gave them the beautiful parables of the ten virgins and the five talents (25); here he was wont to retire on each evening for meditation, and prayer, and rest of body, when weary and harassed by the labours and trials of the day (Luke 21:37); and here he came on the night of his betrayal to utter that wonderful prayer, ‘O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt’ (Matt. 26:39). And when the cup of God’s wrath had been drunk, and death and the grave conquered, he led his disciples out again over Olivet as far as to Bethany, and after a parting blessing ascended to heaven (Luke 24:50, 51; Acts 1:12).”\n\n This mount, or rather mountain range, has four summits or peaks: (1) the “Galilee” peak, so called from a tradition that the angels stood here when they spoke to the disciples (Acts 1:11); (2) the “Mount of Ascension,” the supposed site of that event, which was, however, somewhere probably nearer Bethany (Luke 24:51, 52); (3) the “Prophets,” from the catacombs on its side, called “the prophets’ tombs;” and (4) the “Mount of Corruption,” so called because of the “high places” erected there by Solomon for the idolatrous worship of his foreign wives (1 Kings 11:7; 2 Kings 23:13; Vulg., “Mount of Offence”).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Mount of the Summit;",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "Mount of Olives.",
+     "kind": "partial",
+     "verses": [
+      40021001
+     ],
+     "es": "Y COMO se acercaron á Jerusalem, y vinieron á Bethfagé, al monte de las Olivas, entonces Jesús envió dos discípulos,",
+     "pt": "E quando se aproximaram de Jerusalém, e chegaram a Betfagé, ao monte das Oliveiras, então Jesus mandou dois discípulos, dizendo-lhes:"
+    },
+    {
+     "n": 2,
+     "english": "No name in Scripture,",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "calls up associations at once so sacred and so pleasing as that of Olivet. The ‘mount’ is so intimately connected with the private, the devotional life of the Saviour, that we read of it and look at it with feelings of deepest interest and affection. Here he often sat with his disciples, telling them of wondrous events yet to come, of the destruction of the Holy City; of the sufferings, the persecution, and the final triumph of his followers (Matt. 24). Here he gave them the beautiful parables of the ten virgins and the five talents (25); here he was wont to retire on each evening for meditation, and prayer, and rest of body, when weary and harassed by the labours and trials of the day (Luke 21:37); and here he came on the night of his betrayal to utter that wonderful prayer, ‘O my Father, if it be possible, let this cup pass from me: nevertheless not as I will, but as thou wilt’ (Matt. 26:39). And when the cup of God’s wrath had been drunk, and death and the grave conquered, he led his disciples out again over Olivet as far as to Bethany, and after a parting blessing ascended to heaven (Luke 24:50, 51; Acts 1:12).",
+     "kind": "other"
+    },
+    {
+     "n": 4,
+     "english": "Galilee",
+     "kind": "wording",
+     "verses": [
+      44001011
+     ],
+     "es": "Los cuales también les dijeron: Varones Galileos, ¿qué estáis mirando al cielo? este mismo Jesús que ha sido tomado desde vosotros arriba en el cielo, así vendrá como le habéis visto ir al cielo.",
+     "pt": "Os quais também disseram: Homens galileus, por que estais olhando para o céu? Este Jesus, que foi tomado de vós acima ao céu, assim virá, da maneira como o vistes ir ao céu."
+    },
+    {
+     "n": 5,
+     "english": "Mount of Ascension,",
+     "kind": "other"
+    },
+    {
+     "n": 6,
+     "english": "Prophets,",
+     "kind": "other"
+    },
+    {
+     "n": 7,
+     "english": "the prophets’ tombs;",
+     "kind": "other"
+    },
+    {
+     "n": 8,
+     "english": "Mount of Corruption,",
+     "kind": "unsure",
+     "verses": [
+      12023013
+     ],
+     "es": "Asimismo profanó el rey los altos que estaban delante de Jerusalem, á la mano derecha del monte de la destrucción, los cuales Salomón rey de Israel había edificado á Astharoth, abominación de los Sidonios, y á Chêmos abominación de Moab, y á Milcom abominación de los hijos de Ammón.",
+     "pt": "Também profanou o rei os altos que estavam diante de Jerusalém, à direita do monte da destruição, os quais Salomão rei de Israel havia edificado a Astarote, abominação dos sidônios, e a Camos abominação de Moabe, e a Milcom abominação dos filhos de Amom."
+    },
+    {
+     "n": 9,
+     "english": "high places",
+     "kind": "other"
+    },
+    {
+     "n": 10,
+     "english": "Mount of Offence",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 862,
+   "name": "Mozah",
+   "sha256": "41ed505a71fcbc71c99be8fd719c12b0c0cc99d8a9fb2106176df78f61645416",
+   "text": "An issuing of water, a city of Benjamin (Josh. 18:26).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 864,
+   "name": "Myra",
+   "sha256": "a9fb21651f24e496eb06bb6e601c8a494632e3fda1b89531316d0ff66ce90bdd",
+   "text": "One of the chief towns of Lycia, in Asia Minor, about 2 1/2 miles from the coast (Acts 27:5). Here Paul removed from the Adramyttian ship in which he had sailed from Caesarea, and entered into the Alexandrian ship, which was afterwards wrecked at Melita (27:39-44).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 865,
+   "name": "Mysia",
+   "sha256": "ed1ec56795ad351d17f0612b7140dd978b35e192ff7dfd9a5bab829a611517ae",
+   "text": "A province in the north-west of Asia Minor. On his first voyage to Europe (Acts 16:7, 8) Paul passed through this province and embarked at its chief port Troas.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 866,
+   "name": "Naamah",
+   "sha256": "a27103909cf00a91bf15af63eadd894fd2e988a0bf17f863dc1a53d2e06d5010",
+   "text": "A city in the plain of Judah (Josh. 15:41), supposed by some to be identified with Na’aneh, some 5 miles south-east of Makkedah.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 867,
+   "name": "Naarah",
+   "sha256": "ac388dceb6510d2a0ac8119abc772d58279d356f5443eef1089cd9fc3036d006",
+   "text": "Girl, a town on the boundary between Ephraim and Benjamin (Josh. 16:7), not far probably from Jericho, to the north (1 Chr. 7:28).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 868,
+   "name": "Naaran",
+   "sha256": "77b5511e5000ed01f583c2397df902b3a63fd0e98b29f804d1a7dff5a9178be5",
+   "text": "Boyish, juvenile, a town in Ephraim between Bethel and Jericho (1 Chr. 7:28).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 869,
+   "name": "Nahalal",
+   "sha256": "e033c2ecf85ca110c8ebc1f3cf5acb21137d188d11e95f5ef78021bce6a15797",
+   "text": "Pasture, a city in Zebulun on the border of Issachar (Josh. 19:15), the same as Nahalol (Judg. 1:30). It was given to the Levites. It has been by some identified with Malul in the plain of Esdraelon, 4 miles from Nazareth.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 870,
+   "name": "Nahaliel",
+   "sha256": "25662d04e77a8cbf40610ec3102eab8dfc60842cc4ffaf7487f80562d75a113f",
+   "text": "Possession, or valley of God, one of the encampments of the Israelites in the wilderness (Num. 21:19), on the confines of Moab. This is identified with the ravine of the Zerka M’ain, the ancient Callirhoe, the hot springs on the east of the Jordan, not far from the Dead Sea.",
+   "quotes": []
+  }
+ ],
+ "glossary": {
+  "Aaron": {
+   "es": "Aarón",
+   "pt": "Arão"
+  },
+  "Abijah": {
+   "es": "Abías",
+   "pt": "Abias"
+  },
+  "Abimelech": {
+   "pt": "Abimeleque"
+  },
+  "Abraham": {
+   "pt": "Abraão"
+  },
+  "Absalom": {
+   "pt": "Absalão"
+  },
+  "Aiath": {
+   "pt": "Aiate"
+  },
+  "Arabah": {
+   "pt": "Arabá"
+  },
+  "Arabia": {
+   "pt": "Arábia"
+  },
+  "Arnon": {
+   "es": "Arnón",
+   "pt": "Arnom"
+  },
+  "Asher": {
+   "es": "Aser",
+   "pt": "Aser"
+  },
+  "Asia": {
+   "pt": "Ásia"
+  },
+  "Assos": {
+   "es": "Asón",
+   "pt": "Assôs"
+  },
+  "Balaam": {
+   "pt": "Balaão"
+  },
+  "Balak": {
+   "es": "Balac",
+   "pt": "Balaque"
+  },
+  "Beersheba": {
+   "es": "Beer-seba",
+   "pt": "Berseba"
+  },
+  "Benjamin": {
+   "es": "Benjamín",
+   "pt": "Benjamim"
+  },
+  "Beth-peor": {
+   "es": "Bet-peor",
+   "pt": "Bete-Peor"
+  },
+  "Bethany": {
+   "es": "Betania",
+   "pt": "Betânia"
+  },
+  "Bethel": {
+   "es": "Bet-el",
+   "pt": "Betel"
+  },
+  "Caesarea": {
+   "es": "Cesarea",
+   "pt": "Cesareia"
+  },
+  "Canaan": {
+   "es": "Canaán",
+   "pt": "Canaã"
+  },
+  "Carmel": {
+   "es": "Carmelo",
+   "pt": "Carmelo"
+  },
+  "Chios": {
+   "es": "Quío",
+   "pt": "Quios"
+  },
+  "Corinth": {
+   "es": "Corinto",
+   "pt": "Corinto"
+  },
+  "Dan": {
+   "pt": "Dã"
+  },
+  "David": {
+   "pt": "Davi"
+  },
+  "Dibon": {
+   "es": "Dibón",
+   "pt": "Dibom"
+  },
+  "Ebal": {
+   "es": "Seba"
+  },
+  "Ebenezer": {
+   "es": "Eben-ezer",
+   "pt": "Ebenézer"
+  },
+  "Egypt": {
+   "es": "Egipto",
+   "pt": "Egito"
+  },
+  "Ephesus": {
+   "es": "Efeso",
+   "pt": "Éfeso"
+  },
+  "Ephraim": {
+   "es": "Efraim",
+   "pt": "Efraim"
+  },
+  "Gad": {
+   "pt": "Gade"
+  },
+  "Galilee": {
+   "es": "Galilea",
+   "pt": "Galileia"
+  },
+  "Gath": {
+   "es": "Gat",
+   "pt": "Gate"
+  },
+  "Gibeon": {
+   "es": "Gabaón",
+   "pt": "Gibeom (person); Gibeão (place)"
+  },
+  "Gideon": {
+   "es": "Gedeón",
+   "pt": "Gideão"
+  },
+  "Gilead": {
+   "es": "Galaad",
+   "pt": "Gileade"
+  },
+  "Greece": {
+   "es": "Grecia",
+   "pt": "Grécia"
+  },
+  "Hebron": {
+   "es": "Hebrón",
+   "pt": "Hebrom"
+  },
+  "Hermon": {
+   "es": "Hermón",
+   "pt": "Hermom"
+  },
+  "Herod": {
+   "es": "Herodes",
+   "pt": "Herodes"
+  },
+  "Heshbon": {
+   "es": "Hesbón",
+   "pt": "Hesbom"
+  },
+  "Hezekiah": {
+   "es": "Ezequías",
+   "pt": "Ezequias"
+  },
+  "Horeb": {
+   "pt": "Horebe"
+  },
+  "Idumea": {
+   "pt": "Idumeia"
+  },
+  "Isaac": {
+   "pt": "Isaque"
+  },
+  "Issachar": {
+   "es": "Isacar",
+   "pt": "Issacar"
+  },
+  "Jabin": {
+   "es": "Jabín",
+   "pt": "Jabim"
+  },
+  "Jacob": {
+   "pt": "Jacó"
+  },
+  "Jebusite": {
+   "es": "Jebuseo"
+  },
+  "Jericho": {
+   "es": "Jericó",
+   "pt": "Jericó"
+  },
+  "Jeroboam": {
+   "pt": "Jeroboão"
+  },
+  "Jerusalem": {
+   "es": "Jerusalén",
+   "pt": "Jerusalém"
+  },
+  "Jesus": {
+   "es": "Jesús"
+  },
+  "Jethro": {
+   "es": "Jetro",
+   "pt": "Jetro"
+  },
+  "Jezreel": {
+   "es": "Jezreelita"
+  },
+  "John": {
+   "es": "Juan",
+   "pt": "João"
+  },
+  "Jordan": {
+   "es": "Jordán",
+   "pt": "Jordão"
+  },
+  "Joseph": {
+   "es": "José (person); Josef (person); Jefone (person)",
+   "pt": "José"
+  },
+  "Joshua": {
+   "es": "Josué (person); Jesuá (person)",
+   "pt": "Josué (person); Jesua (person)"
+  },
+  "Judah": {
+   "es": "Judá (person); Jehudas (person)",
+   "pt": "Judá"
+  },
+  "Judea": {
+   "pt": "Judeia"
+  },
+  "Kadesh": {
+   "es": "Cades",
+   "pt": "Cades"
+  },
+  "Kidron": {
+   "es": "Cedrón",
+   "pt": "Cedrom"
+  },
+  "Laban": {
+   "es": "Labán",
+   "pt": "Labão (person); Labã (place)"
+  },
+  "Leah": {
+   "es": "Lea",
+   "pt": "Lia"
+  },
+  "Lebanon": {
+   "es": "Líbano",
+   "pt": "Líbano"
+  },
+  "Lycia": {
+   "es": "Licia",
+   "pt": "Lícia"
+  },
+  "Makkedah": {
+   "es": "Maceda",
+   "pt": "Maquedá"
+  },
+  "Manasseh": {
+   "es": "Manasés",
+   "pt": "Manassés"
+  },
+  "Melita": {
+   "pt": "Malta"
+  },
+  "Micah": {
+   "es": "Micás (person); Micá (person)",
+   "pt": "Mica"
+  },
+  "Michmash": {
+   "es": "Micmas",
+   "pt": "Micmás"
+  },
+  "Midian": {
+   "es": "Madián",
+   "pt": "Midiã"
+  },
+  "Miletus": {
+   "es": "Mileto",
+   "pt": "Mileto"
+  },
+  "Minni": {
+   "es": "Mini",
+   "pt": "Mini"
+  },
+  "Mizpeh": {
+   "es": "Mizpa"
+  },
+  "Moab": {
+   "pt": "Moabe"
+  },
+  "Moreh": {
+   "es": "More",
+   "pt": "Moré"
+  },
+  "Moriah": {
+   "pt": "Moriá"
+  },
+  "Moses": {
+   "es": "Moisés",
+   "pt": "Moisés"
+  },
+  "Mount Ebal": {
+   "es": "Monte Ebal",
+   "pt": "Monte Ebal"
+  },
+  "Mount Gerizim": {
+   "es": "Monte Gerizim",
+   "pt": "Monte Gerizim"
+  },
+  "Mount Heres": {
+   "es": "Monte Heres",
+   "pt": "Monte Heres"
+  },
+  "Mount Hermon": {
+   "es": "Monte Hermón",
+   "pt": "Monte Hermom"
+  },
+  "Mount Hor": {
+   "es": "Monte Hor",
+   "pt": "Monte Hor"
+  },
+  "Mount of Olives": {
+   "es": "Monte de los Olivos",
+   "pt": "Monte das Oliveiras"
+  },
+  "Nahalol": {
+   "es": "Naalol",
+   "pt": "Naalol"
+  },
+  "Naphtali": {
+   "es": "Neftalí",
+   "pt": "Naftali"
+  },
+  "Nazareth": {
+   "es": "Nazaret",
+   "pt": "Nazaré"
+  },
+  "Nob": {
+   "pt": "Nobe"
+  },
+  "Olivet": {
+   "es": "Olivas",
+   "pt": "Oliveiras"
+  },
+  "On": {
+   "es": "Hon",
+   "pt": "Om"
+  },
+  "Ornan": {
+   "es": "Ornán",
+   "pt": "Ornã"
+  },
+  "Paran": {
+   "es": "Parán",
+   "pt": "Parã"
+  },
+  "Paul": {
+   "es": "Pablo",
+   "pt": "Paulo"
+  },
+  "Pelusium": {
+   "pt": "Pelúsio"
+  },
+  "Phinehas": {
+   "es": "Finees",
+   "pt": "Fineias"
+  },
+  "Pisgah": {
+   "es": "Pisga",
+   "pt": "Pisga"
+  },
+  "Rachel": {
+   "es": "Raquel",
+   "pt": "Raquel"
+  },
+  "Ramath-mizpeh": {
+   "es": "Ramatmispe",
+   "pt": "Ramate-Mispa"
+  },
+  "Red Sea": {
+   "es": "Mar Rojo",
+   "pt": "Mar Vermelho"
+  },
+  "Rephidim": {
+   "es": "Refidim",
+   "pt": "Refidim"
+  },
+  "Reuben": {
+   "es": "Rubén",
+   "pt": "Rúben"
+  },
+  "Reuel": {
+   "es": "Rehuel"
+  },
+  "Rock": {
+   "pt": "Maom"
+  },
+  "Ruth": {
+   "es": "Rut",
+   "pt": "Rute"
+  },
+  "Salmon": {
+   "es": "Salmón",
+   "pt": "Salmom"
+  },
+  "Sanballat": {
+   "pt": "Sambalate"
+  },
+  "Saul": {
+   "es": "Saúl"
+  },
+  "Shechem": {
+   "es": "Sequem (person); Siquem (place)",
+   "pt": "Siquém"
+  },
+  "Simeon": {
+   "es": "Simeón (person); Simón (person)",
+   "pt": "Simeão"
+  },
+  "Sin": {
+   "pt": "Sim"
+  },
+  "Sinai": {
+   "es": "Sinaí"
+  },
+  "Sirion": {
+   "es": "Sirión",
+   "pt": "Sírion"
+  },
+  "So": {
+   "pt": "Sô"
+  },
+  "Solomon": {
+   "es": "Salomón",
+   "pt": "Salomão"
+  },
+  "Sychar": {
+   "es": "Sicar",
+   "pt": "Sicar"
+  },
+  "Syene": {
+   "es": "Seveneh",
+   "pt": "Sevene"
+  },
+  "Syria": {
+   "es": "Siria",
+   "pt": "Síria"
+  },
+  "Taberah": {
+   "pt": "Taberá"
+  },
+  "Tower": {
+   "es": "Torre",
+   "pt": "Torre"
+  },
+  "Troas": {
+   "pt": "Trôade"
+  },
+  "Tyre": {
+   "es": "Tiro",
+   "pt": "Tiro"
+  },
+  "Zalmon": {
+   "es": "Salmón",
+   "pt": "Salmom"
+  },
+  "Zebulun": {
+   "es": "Zabulón",
+   "pt": "Zebulom"
+  },
+  "Zion": {
+   "es": "Sión",
+   "pt": "Sião"
+  }
+ }
+}

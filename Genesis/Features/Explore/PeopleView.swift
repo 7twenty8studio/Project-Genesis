@@ -84,7 +84,7 @@ struct PersonDetailView: View {
                 VStack(alignment: .leading, spacing: 26) {
                     header(person)
                     if !person.biography.isEmpty {
-                        DetailSection(title: String(localized: "Biography")) { DictionaryText(text: person.biography) }
+                        DetailSection(title: String(localized: "Biography")) { DictionaryText(text: person.biography, isTranslated: person.biographyIsTranslated) }
                     }
                     if !family.isEmpty {
                         DetailSection(title: String(localized: "Family Tree")) {

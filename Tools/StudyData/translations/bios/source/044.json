@@ -1,0 +1,885 @@
+{
+ "batch": "044",
+ "entries": [
+  {
+   "kind": "place",
+   "id": 1224,
+   "name": "Valley of Zered",
+   "sha256": "890e310c6cb5f0daf53ff294a65137361f77aefd83af96f93ca101c2ecdb6baa",
+   "text": "Zared, luxuriance; willow bush, a brook or valley communicating with the Dead Sea near its southern extremity (Num. 21:12; Deut. 2:14). It is called the “brook of the willows” (Isa. 15:7) and the “river of the wilderness” (Amos 6:14). It has been identified with the Wady el-Aksy.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "brook of the willows",
+     "kind": "partial",
+     "verses": [
+      23015007
+     ],
+     "es": "Por tanto las riquezas que habrán adquirido, y las que habrán reservado, llevaránlas al torrente de los sauces.",
+     "pt": "Por isso levarão os bens que acumularam e seus pertences ao ribeiro dos salgueiros."
+    },
+    {
+     "n": 1,
+     "english": "river of the wilderness",
+     "kind": "partial",
+     "verses": [
+      30006014
+     ],
+     "es": "Pues he aquí, levantaré yo sobre vosotros, oh casa de Israel, dice Jehová Dios de los ejércitos, gente que os oprimirá desde la entrada de Hamath hasta el arroyo del desierto.",
+     "pt": "Diz o SENHOR Deus dos exércitos: Pois eis que eu levantarei contra vós, ó casa de Israel, uma nação que vos oprimirá desde a entrada de Hamate até o ribeiro de Arabá."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1225,
+   "name": "River of Arnon",
+   "sha256": "d261ca2df1ddbf40feaaf99c0165ee568f561ed4743d9e62d957e12ff5d56899",
+   "text": "Swift, the southern boundary of the territory of Israel beyond Jordan, separating it from the land of Moab (Deut. 3:8, 16). This river (referred to twenty-four times in the Bible) rises in the mountains of Gilead, and after a circuitous course of about 80 miles through a deep ravine it falls into the Dead Sea nearly opposite Engedi. The stream is almost dry in summer. It is now called el-Mujeb. The territory of the Amorites extended from the Arnon to the Jabbok.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1229,
+   "name": "Field",
+   "sha256": "2ab34564d422659afdb1744a668fc0d6c867ffeeb1a742aa38add73e947f679c",
+   "text": "A spot near Jerusalem (2 Kings 18:17; Isa. 36:2; 7:3), on the side of the highway west of the city, not far distant from the “upper pool” at the head of the valley of Hinnom. Here the fullers pursued their occupation.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "upper pool",
+     "kind": "wording",
+     "verses": [
+      12018017
+     ],
+     "es": "Después el rey de Asiria envió al rey Ezechîas, desde Lachîs contra Jerusalem, á Thartán y á Rabsaris y á Rabsaces, con un grande ejército: y subieron, y vinieron á Jerusalem. Y habiendo subido, vinieron y pararon junto al conducto del estanque de arriba, que es en el camino de la heredad del batanero.",
+     "pt": "Depois o rei da Assíria enviou ao rei Ezequias, desde Laquis contra Jerusalém, a Tartã e a Rabe-Saris e a Rabsaqué, com um grande exército: e subiram, e vieram a Jerusalém. E havendo subido, vieram e pararam junto ao aqueduto do tanque de acima,"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1230,
+   "name": "Water Gate",
+   "sha256": "a4ac2c8c3ab51e473de7c62a515a7be19ae09594a385936ae240bd7f21cec946",
+   "text": "The fruit of a species of palm (q.v.), the Phoenix dactilifera. This was a common tree in Palestine (Joel 1:12; Neh. 8:15). Palm branches were carried by the Jews on festive occasions, and especially at the feast of Tabernacles (Lev. 23:40; Neh. 8:15).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1234,
+   "name": "Zaanan",
+   "sha256": "9874ca041af0c52b0c1482988391818a0b164cfe62d7ba4076f2fa1f9185c76b",
+   "text": "Place of flocks, mentioned only in Micah 1:11. It may be identified with Zenan, in the plain country of Judah (Josh. 15:37).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1235,
+   "name": "Zaanannim",
+   "sha256": "fa53275fd70be4889b44c6cf312a5a675fae4c9164e38b7647727fad2f39178d",
+   "text": "Wanderings; the unloading of tents, so called probably from the fact of nomads in tents encamping amid the cities and villages of that region, a place in the north-west of Lake Merom, near Kedesh, in Naphtali. Here Sisera was slain by Jael, “the wife of Heber the Kenite,” who had pitched his tent in the “plain [R.V., ’as far as the oak’] of Zaanaim” (Judg. 4:11).\n\n It has been, however, suggested by some that, following the LXX. and the Talmud, the letter b, which in Hebrew means “in,” should be taken as a part of the word following, and the phrase would then be “unto the oak of Bitzanaim,” a place which has been identified with the ruins of Bessum, about half-way between Tiberias and Mount Tabor.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the wife of Heber the Kenite,",
+     "kind": "partial",
+     "verses": [
+      7004017
+     ],
+     "es": "Y Sísara se acogió á pie á la tienda de Jael mujer de Heber Cineo; porque había paz entre Jabín rey de Asor y la casa de Heber Cineo.",
+     "pt": "E Sísera se refugiou a pé à tenda de Jael mulher de Héber queneu; porque havia paz entre Jabim rei de Hazor e a casa de Héber queneu."
+    },
+    {
+     "n": 1,
+     "english": "plain [R.V., ’as far as the oak’] of Zaanaim",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "in,",
+     "kind": "wording",
+     "verses": [
+      7004011
+     ],
+     "es": "Y Heber Cineo, de los hijos de Hobab suegro de Moisés, se había apartado de los Cineos, y puesto su tienda hasta el valle de Zaananim, que está junto á Cedes.",
+     "pt": "E Héber queneu, dos filhos de Hobabe sogro de Moisés, havia se afastado dos queneus, e posto sua tenda até o vale de Zaanim, que está junto a Quedes."
+    },
+    {
+     "n": 3,
+     "english": "unto the oak of Bitzanaim,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1236,
+   "name": "Zair",
+   "sha256": "c35dba583c5523817a489118346679f493e8d7825d670678676a92ad0c0d1488",
+   "text": "Little, a place probably east of the Dead Sea, where Joram discomfited the host of Edom who had revolted from him (2 Kings 8:21).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1237,
+   "name": "Zalmon",
+   "sha256": "5f44d154fb445b213bc5e3324ee8460b53219f6af3fae4232fb83a983dcc1d73",
+   "text": "A wood near Shechem, from which Abimelech and his party brought boughs and “put them to the hold” of Shechem, “and set the hold on fire” (Judg. 9:48). Probably the southern peak of Gerizim, now called Jebel Sulman.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "put them to the hold",
+     "kind": "partial",
+     "verses": [
+      7009049
+     ],
+     "es": "Y así todo el pueblo cortó también cada uno su rama, y siguieron á Abimelech, y pusiéronlas junto á la fortaleza, y prendieron fuego con ellas á la fortaleza: por manera que todos los de la torre de Sichêm murieron, como unos mil hombres y mujeres.",
+     "pt": "E assim todo aquele povo cortou também cada um seu ramo, e seguiram a Abimeleque, e puseram-nas junto à fortaleza, e prenderam fogo com elas à fortaleza: por maneira que todos os da torre de Siquém morreram, como uns mil homens e mulheres."
+    },
+    {
+     "n": 1,
+     "english": "and set the hold on fire",
+     "kind": "partial",
+     "verses": [
+      7009049
+     ],
+     "es": "Y así todo el pueblo cortó también cada uno su rama, y siguieron á Abimelech, y pusiéronlas junto á la fortaleza, y prendieron fuego con ellas á la fortaleza: por manera que todos los de la torre de Sichêm murieron, como unos mil hombres y mujeres.",
+     "pt": "E assim todo aquele povo cortou também cada um seu ramo, e seguiram a Abimeleque, e puseram-nas junto à fortaleza, e prenderam fogo com elas à fortaleza: por maneira que todos os da torre de Siquém morreram, como uns mil homens e mulheres."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1238,
+   "name": "Zalmonah",
+   "sha256": "64528b3eb61834aace7811e7dd1d05492d46f47ba7e74a4530ccd28bb13f42ef",
+   "text": "Shady, one of the stations of the Israelites in the wilderness (Num. 33:41, 42).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1239,
+   "name": "Zanoah",
+   "sha256": "2d09de4f52efbb96ec0b324593c3506b4cbfa106a332890c0c14eb4be6e26090",
+   "text": "A town in the low country or shephelah of Judah, near Zorah (Josh. 15:34). It was re-occupied after the return from the Captivity (Neh. 11:30). Zanu’ah in Wady Ismail, 10 miles west of Jerusalem, occupies probably the same site.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1240,
+   "name": "Zanoah",
+   "sha256": "cd86c9ad3958f268aa4b358e9e809ce18760138d25050d2415eb51039201589e",
+   "text": "A town in the hill country of Judah, some 10 miles to the south-west of Hebron (Josh. 15:56).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1242,
+   "name": "Zarephath",
+   "sha256": "c336c941edfd27d9f2530df1b4b1f301cd67f22196f3149322328cf1aef52f47",
+   "text": "Smelting-shop, “a workshop for the refining and smelting of metals”, a small Phoenician town, now Surafend, about a mile from the coast, almost midway on the road between Tyre and Sidon. Here Elijah sojourned with a poor widow during the “great famine,” when the “heaven was shut up three years and six months” (Luke 4:26; 1 Kings 17:10). It is called Sarepta in the New Testament (Luke 4:26).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "a workshop for the refining and smelting of metals",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "great famine,",
+     "kind": "wording",
+     "verses": [
+      42004025
+     ],
+     "es": "Mas en verdad os digo, que muchas viudas había en Israel en los días de Elías, cuando el cielo fué cerrado por tres años y seis meses, que hubo una grande hambre en toda la tierra;",
+     "pt": "Porém em verdade vos digo que hava muitas viúvas em Israel nos dias de Elias, quando o céu se fechou por três anos e seis meses, de modo que em toda aquela terra houve grande fome."
+    },
+    {
+     "n": 2,
+     "english": "heaven was shut up three years and six months",
+     "kind": "partial",
+     "verses": [
+      42004025
+     ],
+     "es": "Mas en verdad os digo, que muchas viudas había en Israel en los días de Elías, cuando el cielo fué cerrado por tres años y seis meses, que hubo una grande hambre en toda la tierra;",
+     "pt": "Porém em verdade vos digo que hava muitas viúvas em Israel nos dias de Elias, quando o céu se fechou por três anos e seis meses, de modo que em toda aquela terra houve grande fome."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1243,
+   "name": "Zarethan",
+   "sha256": "66ebd477dd3c81c45c9fcdeee271ae2230cf199ca2cfc21b8dee01b63ccd9ccc",
+   "text": "When the Hebrews crossed the Jordan, as soon as the feet of the priests were dipped in the water, the flow of the stream was arrested. The point of arrest was the “city of Adam beside Zaretan,” probably near Succoth, at the mouth of the Jabbok, some 30 miles up the river from where the people were encamped. There the water “stood and rose upon an heap.” Thus the whole space of 30 miles of the river-bed was dry, that the tribes might pass over (Josh. 3:16, 17; comp. Ps. 104:3).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "city of Adam beside Zaretan,",
+     "kind": "loose",
+     "verses": [
+      6003015,
+      6003016
+     ],
+     "es": "Cuando los que llevaban el arca entraron en el Jordán, así como los pies de los sacerdotes que llevaban el arca fueron mojados á la orilla del agua, (porque el Jordán suele reverter sobre todos sus bordes todo el tiempo de la siega,) Las aguas que venían de arriba, se pararon como en un montón bien lejos de la ciudad de Adam, que está al lado de Sarethan; y las que descendían á la mar de los llanos, al mar Salado, se acabaron y fueron partidas; y el pueblo pasó en derecho de Jericó.",
+     "pt": "Quando os que levavam a arca chegaram no Jordão, assim como os pés dos sacerdotes que levavam a arca foram molhados à beira da água, (porque o Jordão costuma transbordar sobre todas as suas margens todo aquele tempo da colheita,) As águas que vinham de cima pararam, e amontoaram-se bem longe, na cidade de Adã, que está ao lado de Zaretã; e as que desciam ao mar das planícies, ao mar Salgado, esgotaram-se e foram totalmente interrompidas; e o povo passou em frente de Jericó."
+    },
+    {
+     "n": 1,
+     "english": "stood and rose upon an heap.",
+     "kind": "loose",
+     "verses": [
+      6003015,
+      6003016
+     ],
+     "es": "Cuando los que llevaban el arca entraron en el Jordán, así como los pies de los sacerdotes que llevaban el arca fueron mojados á la orilla del agua, (porque el Jordán suele reverter sobre todos sus bordes todo el tiempo de la siega,) Las aguas que venían de arriba, se pararon como en un montón bien lejos de la ciudad de Adam, que está al lado de Sarethan; y las que descendían á la mar de los llanos, al mar Salado, se acabaron y fueron partidas; y el pueblo pasó en derecho de Jericó.",
+     "pt": "Quando os que levavam a arca chegaram no Jordão, assim como os pés dos sacerdotes que levavam a arca foram molhados à beira da água, (porque o Jordão costuma transbordar sobre todas as suas margens todo aquele tempo da colheita,) As águas que vinham de cima pararam, e amontoaram-se bem longe, na cidade de Adã, que está ao lado de Zaretã; e as que desciam ao mar das planícies, ao mar Salgado, esgotaram-se e foram totalmente interrompidas; e o povo passou em frente de Jericó."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1244,
+   "name": "Zeboiim",
+   "sha256": "588b55b613e6e4311c02f7cc9aad7ba4fd7108f07ef37fe8f9d146f1c99bbf1a",
+   "text": "One of the “five cities of the plain” of Sodom, generally coupled with Admah (Gen. 10:19; 14:2; Deut. 29:23; Hos. 11:8). It had a king of its own (Shemeber), and was therefore a place of some importance. It was destroyed along with the other cities of the plain.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "five cities of the plain",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1245,
+   "name": "Zeboim",
+   "sha256": "ef8d66fdf889b4b077f6e8f0d01127a843fe789cba5a49f16e541d55105aba74",
+   "text": "A place mentioned only in Neh. 11:34, inhabited by the Benjamites after the Captivity.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1246,
+   "name": "Zedad",
+   "sha256": "707f6d80ea6ba728833dd6ea06e41ffd12b0a6a945411435fce465180ec3aafd",
+   "text": "Side; sloping place, a town in the north of Palestine, near Hamath (Num. 34:8; Ezek. 47:15). It has been identified with the ruins of Sudud, between Emesa (Hums) and Baalbec, but that is uncertain.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1247,
+   "name": "Zela",
+   "sha256": "f23217effeb993b68eca5c03c9fe014a98d6f654bfc409069afdb01856535f30",
+   "text": "Slope; side, a town in Benjamin, where Saul and his son Jonathan were buried (2 Sam. 21:14). It was probably Saul’s birthplace.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1249,
+   "name": "Zemaraim",
+   "sha256": "4e3554d37f4c8aa1d26c5ee495290aa406ed79b1bb194ad5ed3aff2de47256e2",
+   "text": "A town of Benjamin (Josh. 18:22); now the ruin, rather two ruins, es-Sumrah, 4 miles north of Jericho.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1251,
+   "name": "Zephath",
+   "sha256": "8a8c9e89b3d38b9743766731b5745c5021b30c971c0f10ae4f7ee5d650318279",
+   "text": "Beacon; watch-tower, a Canaanite town; called also Hormah (q.v.), Judg. 1:17. It has been identified with the pass of es-Sufah, but with greater probability with S’beita.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1253,
+   "name": "Zered",
+   "sha256": "890e310c6cb5f0daf53ff294a65137361f77aefd83af96f93ca101c2ecdb6baa",
+   "text": "Zared, luxuriance; willow bush, a brook or valley communicating with the Dead Sea near its southern extremity (Num. 21:12; Deut. 2:14). It is called the “brook of the willows” (Isa. 15:7) and the “river of the wilderness” (Amos 6:14). It has been identified with the Wady el-Aksy.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "brook of the willows",
+     "kind": "partial",
+     "verses": [
+      23015007
+     ],
+     "es": "Por tanto las riquezas que habrán adquirido, y las que habrán reservado, llevaránlas al torrente de los sauces.",
+     "pt": "Por isso levarão os bens que acumularam e seus pertences ao ribeiro dos salgueiros."
+    },
+    {
+     "n": 1,
+     "english": "river of the wilderness",
+     "kind": "partial",
+     "verses": [
+      30006014
+     ],
+     "es": "Pues he aquí, levantaré yo sobre vosotros, oh casa de Israel, dice Jehová Dios de los ejércitos, gente que os oprimirá desde la entrada de Hamath hasta el arroyo del desierto.",
+     "pt": "Diz o SENHOR Deus dos exércitos: Pois eis que eu levantarei contra vós, ó casa de Israel, uma nação que vos oprimirá desde a entrada de Hamate até o ribeiro de Arabá."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1254,
+   "name": "Zeredah",
+   "sha256": "844411513d0a599e0e9f0d1ca80edde8aa94c6de48867c0c6dbc2367cbb9a65b",
+   "text": "The fortress, a city on the north of Mount Ephraim; the birthplace of Jeroboam (1 Kings 11:26). It is probably the same as Zaretan (Josh. 3:16), Zererath (Judg. 7:22), Zartanah (1 Kings 4:12), or the following.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1255,
+   "name": "Zeredah",
+   "sha256": "c56725bf9130028e05e688646e1117cc6c0a13c7a1606dd3e6743e9052b85c85",
+   "text": "A place in the plain of Jordan; the same as Zarthan (2 Chr. 4:17; 1 Kings 7:46). Here Solomon erected the foundries in which Hiram made the great castings of bronze for the temple.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1256,
+   "name": "Zererah",
+   "sha256": "235a979691874623344c8f251370bf25ec8f60c69b482b73a9ff0e2200d0436f",
+   "text": "(Judg. 7:22), perhaps identical with Zereda or Zeredathah. Some identify it with Zahrah, a place about 3 miles west of Beth-shean.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1258,
+   "name": "Ziddim",
+   "sha256": "c5174d487dc4363713cf8d169cc85f3e21a795e6615004830f347e86890fb40f",
+   "text": "Sides, a town of Naphtali (Josh. 19:35), has been identified with Kefr-Hattin, the “village of the Hittites,” about 5 miles west of Tiberias.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "village of the Hittites,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1259,
+   "name": "Ziklag",
+   "sha256": "412521201f35a3a359bdaa84dd54982d472a971c3e9c43ad144ae972ec738f0b",
+   "text": "A town in the Negeb, or south country of Judah (Josh. 15:31), in the possession of the Philistines when David fled to Gath from Ziph with all his followers. Achish, the king, assigned him Ziklag as his place of residence. There he dwelt for over a year and four months. From this time it pertained to the kings of Judah (1 Sam. 27:6). During his absence with his army to join the Philistine expedition against the Israelites (29:11), it was destroyed by the Amalekites (30:1, 2), whom David, however, pursued and utterly routed, returning all the captives (1 Sam. 30:26-31). Two days after his return from this expedition, David received tidings of the disastrous battle of Gilboa and of the death of Saul (2 Sam. 1:1-16). He now left Ziklag and returned to Hebron, along with his two wives, Ahinoam and Abigail, and his band of 600 men. It has been identified with ‘Asluj, a heap of ruins south of Beersheba. Conder, however, identifies it with Khirbet Zuheilikah, ruins found on three hills half a mile apart, some seventeen miles north-west of Beersheba, on the confines of Philistia, Judah, and Amalek.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1261,
+   "name": "Zin",
+   "sha256": "a82c57336e5f1540587ffe401a4083055649f5b0002cd6ece260d01392e2bbdb",
+   "text": "A low palm-tree, the south-eastern corner of the desert et-Tih, the wilderness of Paran, between the Gulf of Akabah and the head of the Wady Guraiyeh (Num. 13:21). To be distinguished from the wilderness of Sin (q.v.).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1262,
+   "name": "Zin",
+   "sha256": "a82c57336e5f1540587ffe401a4083055649f5b0002cd6ece260d01392e2bbdb",
+   "text": "A low palm-tree, the south-eastern corner of the desert et-Tih, the wilderness of Paran, between the Gulf of Akabah and the head of the Wady Guraiyeh (Num. 13:21). To be distinguished from the wilderness of Sin (q.v.).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1263,
+   "name": "Zion",
+   "sha256": "d7600219a0286dc5a8ae6a6180c0bd975ae587c3a890b59a89328c3ce9edbd71",
+   "text": "Sunny; height, one of the eminences on which Jerusalem was built. It was surrounded on all sides, except the north, by deep valleys, that of the Tyropoeon (q.v.) separating it from Moriah (q.v.), which it surpasses in height by 105 feet. It was the south-eastern hill of Jerusalem.\n\n When David took it from the Jebusites (Josh. 15:63; 2 Sam. 5:7) he built on it a citadel and a palace, and it became “the city of David” (1 Kings 8:1; 2 Kings 19:21, 31; 1 Chr. 11:5). In the later books of the Old Testament this name was sometimes used (Ps. 87:2; 149:2; Isa. 33:14; Joel 2:1) to denote Jerusalem in general, and sometimes God’s chosen Israel (Ps. 51:18; 87:5).\n\n In the New Testament it is used sometimes to denote the Church of God (Heb. 12:22), and sometimes the heavenly city (Rev. 14:1).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the city of David",
+     "kind": "partial",
+     "verses": [
+      11008001
+     ],
+     "es": "ENTONCES juntó Salomón los ancianos de Israel, y á todas las cabezas de las tribus, y á los príncipes de las familias de los hijos de Israel, al rey Salomón en Jerusalem para traer el arca del pacto de Jehová de la ciudad de David, que es Sión.",
+     "pt": "Então juntou Salomão os anciãos de Israel, e a todos os chefes das tribos, e aos príncipes das famílias dos filhos de Israel, ao rei Salomão em Jerusalém para trazer a arca do pacto do SENHOR da cidade de Davi, que é Sião."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1264,
+   "name": "Zion's",
+   "sha256": "d7600219a0286dc5a8ae6a6180c0bd975ae587c3a890b59a89328c3ce9edbd71",
+   "text": "Sunny; height, one of the eminences on which Jerusalem was built. It was surrounded on all sides, except the north, by deep valleys, that of the Tyropoeon (q.v.) separating it from Moriah (q.v.), which it surpasses in height by 105 feet. It was the south-eastern hill of Jerusalem.\n\n When David took it from the Jebusites (Josh. 15:63; 2 Sam. 5:7) he built on it a citadel and a palace, and it became “the city of David” (1 Kings 8:1; 2 Kings 19:21, 31; 1 Chr. 11:5). In the later books of the Old Testament this name was sometimes used (Ps. 87:2; 149:2; Isa. 33:14; Joel 2:1) to denote Jerusalem in general, and sometimes God’s chosen Israel (Ps. 51:18; 87:5).\n\n In the New Testament it is used sometimes to denote the Church of God (Heb. 12:22), and sometimes the heavenly city (Rev. 14:1).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the city of David",
+     "kind": "partial",
+     "verses": [
+      11008001
+     ],
+     "es": "ENTONCES juntó Salomón los ancianos de Israel, y á todas las cabezas de las tribus, y á los príncipes de las familias de los hijos de Israel, al rey Salomón en Jerusalem para traer el arca del pacto de Jehová de la ciudad de David, que es Sión.",
+     "pt": "Então juntou Salomão os anciãos de Israel, e a todos os chefes das tribos, e aos príncipes das famílias dos filhos de Israel, ao rei Salomão em Jerusalém para trazer a arca do pacto do SENHOR da cidade de Davi, que é Sião."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1265,
+   "name": "Zior",
+   "sha256": "2c45a72bbcae622dbd4e96b81324b3ed37063f07d9cbde659c68b2420dd0ca88",
+   "text": "Littleness, a city in the mountains of Judah (Josh. 15:54); the modern Si’air, 4 1/2 miles north-north-east of Hebron.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1266,
+   "name": "Ziph",
+   "sha256": "6c1c35671e7abef45ab84aa2daa6e1879719acd4ec22deedbb2fd12f367d13d6",
+   "text": "A city in the mountains of Judah (Josh. 15:55), identified with the uninhabited ruins of Tell ez-Zif, about 5 miles south-east of Hebron. Here David hid himself during his wanderings (1 Sam. 23:19; Ps. 54, title).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1267,
+   "name": "Ziph",
+   "sha256": "b95f22e22ad67ea23b277f210f86583c48977cf58fe81ca82408e58338441b22",
+   "text": "A city in the south of Judah (Josh. 15:24), probably at the pass of Sufah.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1268,
+   "name": "Ziphron",
+   "sha256": "69d4b8baebe5238adb58605614d40bacd1c67f8982904d8a77e1ebbcb51fe58e",
+   "text": "Sweet odour, a city on the northern border of Palestine (Num. 34:9), south-east of Hamath.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1269,
+   "name": "Ziz",
+   "sha256": "841d4c31b8566ff6ee35ee18732ee570829d4d6d8f49da5ca7d0160f5b2a68cf",
+   "text": "Projecting; a flower, a cleft or pass, probably that near En-gedi, which leads up from the Dead Sea (2 Chr. 20:16) in the direction of Tekoa; now Tell Hasasah.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1270,
+   "name": "Zoan",
+   "sha256": "6c1494eae74c6761442ecd5a835ebd48d25c21f45adbd44d83e38fad20efe3e9",
+   "text": "(Old Egypt. Sant= “stronghold,” the modern San). A city on the Tanitic branch of the Nile, called by the Greeks Tanis. It was built seven years after Hebron in Palestine (Num. 13:22). This great and important city was the capital of the Hyksos, or Shepherd kings, who ruled Egypt for more than 500 years. It was the frontier town of Goshen. Here Pharaoh was holding his court at the time of his various interviews with Moses and Aaron. “No trace of Zoan exists; Tanis was built over it, and city after city has been built over the ruins of that” (Harper, Bible and Modern Discovery). Extensive mounds of ruins, the wreck of the ancient city, now mark its site (Isa. 19:11, 13; 30:4; Ezek. 30:14). “The whole constitutes one of the grandest and oldest ruins in the world.”\n\n This city was also called “the Field of Zoan” (Ps. 78:12, 43) and “the Town of Rameses” (q.v.), because the oppressor rebuilt and embellished it, probably by the forced labour of the Hebrews, and made it his northern capital.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "stronghold,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "No trace of Zoan exists; Tanis was built over it, and city after city has been built over the ruins of that",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "The whole constitutes one of the grandest and oldest ruins in the world.",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "the Field of Zoan",
+     "kind": "partial",
+     "verses": [
+      19078012
+     ],
+     "es": "Delante de sus padres hizo maravillas en la tierra de Egipto, en el campo de Zoán.",
+     "pt": "Ele fez maravilhas perante seus pais na terra do Egito, no campo de Zoã."
+    },
+    {
+     "n": 4,
+     "english": "the Town of Rameses",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 1271,
+   "name": "Zoar",
+   "sha256": "271824d4c05d4f7dd34dfb1c0f347bd3c71e71508ee65e9bf19c1eef65dcb872",
+   "text": "Small, a town on the east or south-east of the Dead Sea, to which Lot and his daughters fled from Sodom (Gen. 19:22, 23). It was originally called Bela (14:2, 8). It is referred to by the prophets Isaiah (15:5) and Jeremiah (48:34). Its ruins are still seen at the opening of the ravine of Kerak, the Kir-Moab referred to in 2 Kings 3, the modern Tell esh-Shaghur.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1272,
+   "name": "Zobah",
+   "sha256": "e09f19b6fa61e9e513b7c5eb1c53dbdbe5f54d0d0288194698953a2908d04d7e",
+   "text": "Aram-Zobah, (Ps. 60, title), a Syrian province or kingdom to the south of Coele-Syria, and extending from the eastern slopes of Lebanon north and east toward the Euphrates. Saul and David had war with the kings of Zobah (1 Sam. 14:47; 2 Sam. 8:3; 10:6).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1273,
+   "name": "Zobah-Hamath",
+   "sha256": "f337b7c7b1a125de6a5bb2a53315fdf82621f02edec355d4005d2af92080a9c2",
+   "text": "Fortress of Zobah, (2 Chr. 8:3) is supposed by some to be a different place from the foregoing; but this is quite uncertain.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1274,
+   "name": "Zophim",
+   "sha256": "b2027e57423c9a7bf16222ca9844ce918e600de39601e139e4ffc8db63b76cd5",
+   "text": "Field of watchers, a place in Moab on the range of Pisgah (Num. 23:14). To this place Balak brought Balaam, that he might from thence curse the children of Israel. Balaam could only speak the word of the Lord, and that was blessing. It is the modern Tal’at-es-Safa.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1275,
+   "name": "Zorah",
+   "sha256": "8e0d6d12e91b86fc690b3dd5b8dc21e5eeb9f9b3acc88164c79d19edf72d0ea3",
+   "text": "Place of wasps, a town in the low country of Judah, afterwards given to Dan (Josh. 19:41; Judg. 18:2), probably the same as Zoreah (Josh. 15:33). This was Samson’s birthplace (Judg. 13:2, 25), and near it he found a grave (16:31). It was situated on the crest of a hill overlooking the valley of Sorek, and was fortified by Rehoboam (2 Chr. 11:10). It has been identified with Sur’ah, in the Wady Surar, 8 miles west of Jerusalem. It is noticed on monuments in the fifteenth century B.C. as attacked by the Abiri or Hebrews.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1276,
+   "name": "Zuph",
+   "sha256": "6037bc156249fd1aa15a61fa1ae9966bcf6ee04aab16029de44563f855a42dc1",
+   "text": "(1 Sam. 9:5, 6), a district in which lay Samuel’s city, Ramah. It was probably so named after Elkanah’s son, Zuph (1 Chr. 6:26, marg.).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 1278,
+   "name": "Trogyllium",
+   "sha256": "71876502b1853e3accda98398d17612684420fb449e1b43d50771477743d9d85",
+   "text": "A town on the western coast of Asia Minor, where Paul “tarried” when on his way from Assos to Miletus, on his third missionary journey (Acts 20:15).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "tarried",
+     "kind": "other"
+    }
+   ]
+  }
+ ],
+ "glossary": {
+  "Aaron": {
+   "es": "Aarón",
+   "pt": "Arão"
+  },
+  "Abimelech": {
+   "pt": "Abimeleque"
+  },
+  "Achish": {
+   "es": "Aquís",
+   "pt": "Aquis"
+  },
+  "Adam": {
+   "pt": "Adão (person); Adã (place)"
+  },
+  "Admah": {
+   "es": "Adma",
+   "pt": "Admá"
+  },
+  "Ahinoam": {
+   "pt": "Ainoã"
+  },
+  "Amalek": {
+   "es": "Amalec",
+   "pt": "Amaleque"
+  },
+  "Amos": {
+   "es": "Amós",
+   "pt": "Amós"
+  },
+  "Arnon": {
+   "es": "Arnón",
+   "pt": "Arnom"
+  },
+  "Asia": {
+   "pt": "Ásia"
+  },
+  "Assos": {
+   "es": "Asón",
+   "pt": "Assôs"
+  },
+  "Balaam": {
+   "pt": "Balaão"
+  },
+  "Balak": {
+   "es": "Balac",
+   "pt": "Balaque"
+  },
+  "Beersheba": {
+   "es": "Beer-seba",
+   "pt": "Berseba"
+  },
+  "Bela": {
+   "pt": "Belá"
+  },
+  "Benjamin": {
+   "es": "Benjamín",
+   "pt": "Benjamim"
+  },
+  "Beth-shean": {
+   "es": "Bet-san",
+   "pt": "Bete-Seã"
+  },
+  "Dan": {
+   "pt": "Dã"
+  },
+  "David": {
+   "pt": "Davi"
+  },
+  "Egypt": {
+   "es": "Egipto",
+   "pt": "Egito"
+  },
+  "Elijah": {
+   "es": "Elías",
+   "pt": "Elias"
+  },
+  "Elkanah": {
+   "es": "Elcana",
+   "pt": "Elcana"
+  },
+  "Engedi": {
+   "pt": "En-Gedi"
+  },
+  "Ephraim": {
+   "es": "Efraim",
+   "pt": "Efraim"
+  },
+  "Euphrates": {
+   "es": "Eufrates",
+   "pt": "Eufrates"
+  },
+  "Field": {
+   "es": "Campo",
+   "pt": "Campo"
+  },
+  "Gath": {
+   "es": "Gat",
+   "pt": "Gate"
+  },
+  "Gilead": {
+   "es": "Galaad",
+   "pt": "Gileade"
+  },
+  "Goshen": {
+   "es": "Gosén",
+   "pt": "Gósen"
+  },
+  "Hamath": {
+   "es": "Hamat",
+   "pt": "Hamate"
+  },
+  "Heber": {
+   "pt": "Héber"
+  },
+  "Hebron": {
+   "es": "Hebrón",
+   "pt": "Hebrom"
+  },
+  "Hiram": {
+   "pt": "Hirão"
+  },
+  "Hormah": {
+   "es": "Horma",
+   "pt": "Hormá"
+  },
+  "Isaiah": {
+   "es": "Isaías",
+   "pt": "Isaías"
+  },
+  "Jabbok": {
+   "es": "Jaboc",
+   "pt": "Jaboque"
+  },
+  "Jeremiah": {
+   "es": "Jeremías",
+   "pt": "Jeremias"
+  },
+  "Jericho": {
+   "es": "Jericó",
+   "pt": "Jericó"
+  },
+  "Jeroboam": {
+   "pt": "Jeroboão"
+  },
+  "Jerusalem": {
+   "es": "Jerusalén",
+   "pt": "Jerusalém"
+  },
+  "Jonathan": {
+   "es": "Jonatán",
+   "pt": "Jônatas"
+  },
+  "Joram": {
+   "pt": "Jorão"
+  },
+  "Jordan": {
+   "es": "Jordán",
+   "pt": "Jordão"
+  },
+  "Judah": {
+   "es": "Judá (person); Jehudas (person)",
+   "pt": "Judá"
+  },
+  "Kedesh": {
+   "es": "Cedes",
+   "pt": "Quedes"
+  },
+  "Lebanon": {
+   "es": "Líbano",
+   "pt": "Líbano"
+  },
+  "Lot": {
+   "pt": "Ló"
+  },
+  "Micah": {
+   "es": "Micás (person); Micá (person)",
+   "pt": "Mica"
+  },
+  "Miletus": {
+   "es": "Mileto",
+   "pt": "Mileto"
+  },
+  "Moab": {
+   "pt": "Moabe"
+  },
+  "Moriah": {
+   "pt": "Moriá"
+  },
+  "Moses": {
+   "es": "Moisés",
+   "pt": "Moisés"
+  },
+  "Mount Ephraim": {
+   "es": "Monte Efraim",
+   "pt": "Monte Efraim"
+  },
+  "Mount Tabor": {
+   "es": "Monte Tabor",
+   "pt": "Monte Tabor"
+  },
+  "Naphtali": {
+   "es": "Neftalí",
+   "pt": "Naftali"
+  },
+  "Negeb": {
+   "pt": "Negueve"
+  },
+  "Nile": {
+   "es": "Nilo",
+   "pt": "Nilo"
+  },
+  "Paran": {
+   "es": "Parán",
+   "pt": "Parã"
+  },
+  "Paul": {
+   "es": "Pablo",
+   "pt": "Paulo"
+  },
+  "Pharaoh": {
+   "es": "Faraón",
+   "pt": "Faraó"
+  },
+  "Philistia": {
+   "es": "Palestina",
+   "pt": "Filístia"
+  },
+  "Pisgah": {
+   "es": "Pisga",
+   "pt": "Pisga"
+  },
+  "Ramah": {
+   "es": "Rama (place); Horma (place)",
+   "pt": "Ramá (place); Hormá (place)"
+  },
+  "Rameses": {
+   "pt": "Ramessés"
+  },
+  "Rehoboam": {
+   "es": "Roboam",
+   "pt": "Roboão"
+  },
+  "Samson": {
+   "es": "Samsón",
+   "pt": "Sansão"
+  },
+  "Saul": {
+   "es": "Saúl"
+  },
+  "Shechem": {
+   "es": "Sequem (person); Siquem (place)",
+   "pt": "Siquém"
+  },
+  "Shemeber": {
+   "pt": "Semeber"
+  },
+  "Sidon": {
+   "es": "Sidón",
+   "pt": "Sidom"
+  },
+  "Sin": {
+   "pt": "Sim"
+  },
+  "Sisera": {
+   "es": "Sísara",
+   "pt": "Sísera"
+  },
+  "Sodom": {
+   "es": "Sodoma",
+   "pt": "Sodoma"
+  },
+  "Solomon": {
+   "es": "Salomón",
+   "pt": "Salomão"
+  },
+  "Succoth": {
+   "es": "Succot",
+   "pt": "Sucote"
+  },
+  "Tekoa": {
+   "es": "Tecoa",
+   "pt": "Tecoa"
+  },
+  "Tiberias": {
+   "pt": "Tibérias"
+  },
+  "Tyre": {
+   "es": "Tiro",
+   "pt": "Tiro"
+  },
+  "Zenan": {
+   "es": "Senán",
+   "pt": "Zenã"
+  },
+  "Ziklag": {
+   "es": "Siclag",
+   "pt": "Ziclague"
+  },
+  "Ziph": {
+   "es": "Zif",
+   "pt": "Zife"
+  },
+  "Zoan": {
+   "es": "Zoán",
+   "pt": "Zoã"
+  },
+  "Zobah": {
+   "es": "Soba",
+   "pt": "Zobá"
+  },
+  "Zorah": {
+   "es": "Sora",
+   "pt": "Zorá"
+  },
+  "Zuph": {
+   "es": "Suf"
+  }
+ }
+}

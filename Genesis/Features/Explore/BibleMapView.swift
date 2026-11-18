@@ -273,7 +273,7 @@ struct PlaceDetailView: View {
                         }
                     }
                     if !place.description.isEmpty {
-                        DetailSection(title: String(localized: "About")) { DictionaryText(text: place.description) }
+                        DetailSection(title: String(localized: "About")) { DictionaryText(text: place.description, isTranslated: place.descriptionIsTranslated) }
                     }
                     if !events.isEmpty {
                         DetailSection(title: String(localized: "Events Here")) {

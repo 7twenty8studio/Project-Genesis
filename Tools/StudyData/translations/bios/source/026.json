@@ -1,0 +1,1529 @@
+{
+ "batch": "026",
+ "entries": [
+  {
+   "kind": "place",
+   "id": 16,
+   "name": "Achaia",
+   "sha256": "850db85234503bf24647e1fd24ca57dee235f90110fcb10a002a42c3587058b1",
+   "text": "The name originally of a narrow strip of territory in Greece, on the north-west of the Peloponnesus. Subsequently it was applied by the Romans to the whole Peloponnesus, now called the Morea, and the south of Greece. It was then one of the two provinces (Macedonia being the other) into which they divided the country when it fell under their dominion. It is in this latter enlarged meaning that the name is always used in the New Testament (Acts 18:12, 27; 19:21; Rom. 15: 26; 16:5, etc.). It was at the time when Luke wrote the Acts of the Apostles under the proconsular form of government; hence the appropriate title given to Gallio as the “deputy,” i.e., proconsul, of Achaia (Acts 18:12).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "deputy,",
+     "kind": "wording",
+     "verses": [
+      44018012
+     ],
+     "es": "Y siendo Galión procónsul de Acaya, los Judíos se levantaron de común acuerdo contra Pablo, y le llevaron al tribunal,",
+     "pt": "Mas sendo Gálio o procônsul da Acaia, os judeus se levantaram em concordância contra Paulo, e o trouxeram ao tribunal,"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 17,
+   "name": "Achshaph",
+   "sha256": "4f523960d4a2097c0769b490d61d76f712a5891a2a9aa398a8e01039fecf9c4a",
+   "text": "Fascination, a royal city of the Canaanites, in the north of Palestine (Josh. 11:1; 12:20; 19:25). It was in the eastern boundary of the tribe of Asher, and is identified with the modern ruined village of Kesaf or Yasif, N.E. of Accho.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 18,
+   "name": "Achzib",
+   "sha256": "4e843141c3d39be7aac5d9cd8a2fc1c67c9427ef5e968b631759f0463cc5fe5a",
+   "text": "A town in the Shephelah, or plain country of Judah (Josh. 15:44); probably the same as Chezib of Gen. 38:5 = Ain Kezbeh.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 19,
+   "name": "Achzib",
+   "sha256": "bfbf619f3ac3c3059e277cf67c8cdaf76f4a81dfa1b5e74278def8167844c938",
+   "text": "A Phoenician city (the Gr. Ecdippa), always retained in their possession though assigned to the tribe of Asher (Josh. 19:29; Judg. 1:31). It is identified with the modern es-Zib, on the Mediterranean, about 8 miles north of Accho.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 21,
+   "name": "Adam",
+   "sha256": "668433392dd08a09fb89b7d989a3d3f842574269585bbe05570311bc1e15ee2c",
+   "text": "Is referred to in Josh. 3:16. It stood “beside Zarethan,” on the west bank of Jordan (1 Kings 4:12). At this city the flow of the water was arrested and rose up “upon an heap” at the time of the Israelites’ passing over (Josh. 3:16).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "beside Zarethan,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "upon an heap",
+     "kind": "partial",
+     "verses": [
+      6003016
+     ],
+     "es": "Las aguas que venían de arriba, se pararon como en un montón bien lejos de la ciudad de Adam, que está al lado de Sarethan; y las que descendían á la mar de los llanos, al mar Salado, se acabaron y fueron partidas; y el pueblo pasó en derecho de Jericó.",
+     "pt": "As águas que vinham de cima pararam, e amontoaram-se bem longe, na cidade de Adã, que está ao lado de Zaretã; e as que desciam ao mar das planícies, ao mar Salgado, esgotaram-se e foram totalmente interrompidas; e o povo passou em frente de Jericó."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 22,
+   "name": "Adamah",
+   "sha256": "b953e1607aa6a59fe9a2440be985b10e409cc3e127a3a1a4316eb0c8c88015cb",
+   "text": "Red earth, a fortified city of Naphtali, probably the modern Damieh, on the west side of the sea of Tiberias (Josh. 19:33, 36).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 23,
+   "name": "Adami-nekeb",
+   "sha256": "0767521cd3f0cce2d28aaf8b5b9061a0b6ed271bbc065cf0015abd0dd6e9c781",
+   "text": "Cavern, a town on the boundary of Naphtali (Josh. 19:33). It has with probability, been identified with Seiyadeh, nearly 2 miles east of Bessum, a ruin half way between Tiberias and Mount Tabor.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 24,
+   "name": "Addar",
+   "sha256": "70ffdf7578f82910973d0d98f3f7c82c66ba58d2659d2b1f8097adacac099390",
+   "text": "Large, the sixth month of the civil and the twelfth of the ecclesiastical year of the Jews (Esther 3:7, 13; 8:12; 9:1, 15, 17, 19, 21). It included the days extending from the new moon of our March to the new moon of April. The name was first used after the Captivity. When the season was backward, and the lambs not yet of a paschal size, or the barley not forward enough for abib, then a month called Veadar, i.e., a second Adar, was intercalated.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 25,
+   "name": "Addon",
+   "sha256": "930bd96b68bba0bcee734074ba249a4aa09176e582d9a3dca98980148595bcd9",
+   "text": "Low, one of the persons named in Neh. 7:61 who could not “shew their father’s house” on the return from captivity. This, with similar instances (ver. 63), indicates the importance the Jews attached to their genealogies.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "shew their father’s house",
+     "kind": "partial",
+     "verses": [
+      16007061
+     ],
+     "es": "Y estos son los que subieron de Telmelah, Tel-harsa, Chêrub, Addón, é Immer, los cuales no pudieron mostrar la casa de sus padres, ni su linaje, si eran de Israel:",
+     "pt": "Também estes subiram de Tel-Melá, Tel-Harsa, Querube, Adom, e Imer, porém não puderam mostrar a casa de seus pais, nem sua linhagem, se eram de Israel:"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 27,
+   "name": "Admah",
+   "sha256": "0ef452f9fcc5bf3e4fb4a42e78aecfd6588c6a34b9ea4e03108c1fe9d29dd673",
+   "text": "Earth, one of the five cities of the vale of Siddim (Gen. 10:19). It was destroyed along with Sodom and Gomorrah (19:24; Deut. 29:23). It is supposed by some to be the same as the Adam of Josh. 3:16, the name of which still lingers in Damieh, the ford of Jordan.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 29,
+   "name": "Adramyttium",
+   "sha256": "3749d65151bd15b435bbc96c8b685d0eb61bc9e29ee2c0aea1e03e1ee2ec97ec",
+   "text": "A city of Asia Minor on the coast of Mysia, which in early times was called AEolis. The ship in which Paul embarked at Caesarea belonged to this city (Acts 27:2). He was conveyed in it only to Myra, in Lycia, whence he sailed in an Alexandrian ship to Italy. It was a rare thing for a ship to sail from any port of Palestine direct for Italy. It still bears the name Adramyti, and is a place of some traffic.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 30,
+   "name": "Adria",
+   "sha256": "ec5f6933a5efe57cbef879e8096869024659a275a0943c8a77f25ed4c1d49ce5",
+   "text": "(Acts 27:27; R.V., “the sea of Adria”), the Adriatic Sea, including in Paul’s time the whole of the Mediterranean lying between Crete and Sicily. It is the modern Gulf of Venice, the Mare Superum of the Romans, as distinguished from the Mare Inferum or Tyrrhenian Sea.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the sea of Adria",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 31,
+   "name": "Adullam",
+   "sha256": "dee4349a4dc1ba6f86624a17003fb27d397c3519e235268b2bf6ed52ac860cd5",
+   "text": "One of the royal cities of the Canaanites, now ‘Aid-el-ma (Josh. 12:15; 15:35). It stood on the old Roman road in the valley of Elah (q.v.), which was the scene of David’s memorable victory over Goliath (1 Sam. 17:2), and not far from Gath. It was one of the towns which Rehoboam fortified against Egypt (2 Chr. 11:7). It was called “the glory of Israel” (Micah 1:15).\n\n The Cave of Adullam has been discovered about 2 miles south of the scene of David’s triumph, and about 13 miles west from Bethlehem. At this place is a hill some 500 feet high pierced with numerous caverns, in one of which David gathered together “every one that was in distress, and every one that was in debt, and every one that was discontented” (1 Sam. 22:2). Some of these caverns are large enough to hold 200 or 300 men. According to tradition this cave was at Wady Khureitun, between Bethlehem and the Dead Sea, but this view cannot be well maintained.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the glory of Israel",
+     "kind": "partial",
+     "verses": [
+      33001015
+     ],
+     "es": "Aun te traeré heredero, oh moradora de Maresah: la gloria de Israel vendrá hasta Adullam.",
+     "pt": "Ainda trarei a ti um conquistador, ó moradora de Maressa; a glória de Israel virá até Adulão."
+    },
+    {
+     "n": 1,
+     "english": "every one that was in distress, and every one that was in debt, and every one that was discontented",
+     "kind": "partial",
+     "verses": [
+      9022002
+     ],
+     "es": "Y juntáronse con él todos los afligidos, y todo el que estaba adeudado, y todos los que se hallaban en amargura de espíritu, y fué hecho capitán de ellos: y tuvo consigo como cuatrocientos hombres.",
+     "pt": "E juntaram-se com ele todos os afligidos, e todo aquele que estava endividado, e todos os que se achavam em amargura de espírito, e foi feito capitão deles: e teve consigo como quatrocentos homens."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 32,
+   "name": "Adummim",
+   "sha256": "b6714096c54f4336ec606e66c7e337854a0fdd0a6ef0a6c9ea41bd1bea5e3e1c",
+   "text": "The red ones, a place apparently on the road between Jericho and Jerusalem, “on the south side of the torrent” Wady Kelt, looking toward Gilgal, mentioned Josh. 15:7; 18:17. It was nearly half-way between Jerusalem and Jericho, and now bears the name of Tal-at-ed-Dumm. It is supposed to have been the place referred to in the parable of the Good Samaritan (Luke 10:30-37). Recently a new carriage-road has been completed, and carriages for the first time have come along this road from Jerusalem.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "on the south side of the torrent",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 33,
+   "name": "Aenon",
+   "sha256": "a26a89245d86e935d2848eca23dba28504120def58adc0dac1fe2083d11363dc",
+   "text": "Springs, a place near Salim where John baptized (John 3:23). It was probably near the upper source of the Wady Far’ah, an open valley extending from Mount Ebal to the Jordan. It is full of springs. A place has been found called ‘Ainun, four miles north of the springs.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 34,
+   "name": "Ahava",
+   "sha256": "29f506bd709ed5f85f6750a0849eb40488120217e0abe25899157074d628ca8a",
+   "text": "Water, the river (Ezra 8:21) by the banks of which the Jewish exiles assembled under Ezra when about to return to Jerusalem from Babylon. In all probability this was one of the streams of Mesopotamia which flowed into the Euphrates somewhere in the north-west of Babylonia. It has, however, been supposed to be the name of a place (Ezra 8:15) now called Hit, on the Euphrates, east of Damascus.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 35,
+   "name": "Ahlab",
+   "sha256": "e563ae31f5a004be851d4ac0ff5ab2135e4fae59a8b2302ba71e626041345346",
+   "text": "Fatness, a town of Asher lying within the unconquered Phoenician border (Judg. 1:31), north-west of the Sea of Galilee; commonly identified with Giscala, now el-Jish.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 36,
+   "name": "Ai",
+   "sha256": "5faa40acc10d3cc74cc2cb43395a1183adc2f394358f3d0e32c00887fd1b0b43",
+   "text": "One of the royal cities of the Canaanites (Josh. 10:1; Gen. 12:8; 13:3). It was the scene of Joshua’s defeat, and afterwards of his victory. It was the second Canaanite city taken by Israel (Josh. 7:2-5; 8:1-29). It lay rebuilt and inhibited by the Benjamites (Ezra 2:28; Neh. 7:32; 11:31). It lay to the east of Bethel, “beside Beth-aven.” The spot which is most probably the site of this ancient city is Haiyan, 2 miles east from Bethel. It lay up the Wady Suweinit, a steep, rugged valley, extending from the Jordan valley to Bethel.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "beside Beth-aven.",
+     "kind": "partial",
+     "verses": [
+      6007002
+     ],
+     "es": "Y Josué envió hombres desde Jericó á Hai, que estaba junto á Beth-aven hacia el oriente de Beth-el; y hablóles diciendo: Subid, y reconoced la tierra. Y ellos subieron, y reconocieron á Hai.",
+     "pt": "E Josué enviou homens desde Jericó a Ai, que estava junto a Bete-Áven até o oriente de Betel; e falou-lhes dizendo: Subi, e reconhecei a terra. E eles subiram, e reconheceram a Ai."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 37,
+   "name": "Ai",
+   "sha256": "c6f3586b267a129aaccdd1dbc5c85423429796dd7e0f1d63570d27c8f7332eab",
+   "text": "A city in the Ammonite territory (Jer. 49:3). Some have thought that the proper reading of the word is Ar (Isa. 15:1).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 40,
+   "name": "Aijalon",
+   "sha256": "2e9c613e87e075840574085ee18fae22c87b5f718e274c56142986ed35528624",
+   "text": "A city in the tribe of Zebulun (Judg. 12:12), the modern Jalun, three miles north of Cabul.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 43,
+   "name": "Akeldama",
+   "sha256": "1b11f72d5654ed3aee6391b4ab0497c8d7c0191decf3c22dcef41f881524f345",
+   "text": "The name which the Jews gave in their proper tongue, i.e., in Aramaic, to the field which was purchased with the money which had been given to the betrayer of our Lord. The word means “field of blood.” It was previously called “the potter’s field” (Matt. 27:7, 8; Acts 1:19), and was appropriated as the burial-place for strangers. It lies on a narrow level terrace on the south face of the valley of Hinnom. Its modern name is Hak ed-damm.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "field of blood.",
+     "kind": "partial",
+     "verses": [
+      40027008
+     ],
+     "es": "Por lo cual fué llamado aquel campo, Campo de sangre, hasta el día de hoy.",
+     "pt": "Por isso aquele campo tem sido chamado campo de sangue até hoje."
+    },
+    {
+     "n": 1,
+     "english": "the potter’s field",
+     "kind": "partial",
+     "verses": [
+      40027007
+     ],
+     "es": "Mas habido consejo, compraron con ellas el campo del alfarero, por sepultura para los extranjeros.",
+     "pt": "Então juntamente se aconselharam, e compraram com elas o campo do oleiro, para ser cemitério dos estrangeiros."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 44,
+   "name": "Akrabbim",
+   "sha256": "1a70546608053a6fda8df4ba343f941794deffd750cd78b407dfe485d4e2a3d3",
+   "text": "Scorpions, probably the general name given to the ridge containing the pass between the south of the Dead Sea and Zin, es-Sufah, by which there is an ascent to the level of the land of Palestine. Scorpions are said to abound in this whole district, and hence the name (Num. 34:4). It is called “Maaleh-acrabbim” in Josh. 15:3, and “the ascent of Akrabbim” in Num. 34:4.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Maaleh-acrabbim",
+     "kind": "wording",
+     "verses": [
+      6015003
+     ],
+     "es": "Y salía hacia el mediodía á la subida de Acrabim, pasando hasta Zin; y subiendo por el mediodía hasta Cades-barnea, pasaba á Hebrón, y subiendo por Addar daba vuelta á Carca;",
+     "pt": "E saía até o sul à subida de Acrabim, passando até Zim; e subindo pelo sul até Cades-Barneia, passava a Hebrom, e subindo por Adar dava volta a Carca;"
+    },
+    {
+     "n": 1,
+     "english": "the ascent of Akrabbim",
+     "kind": "partial",
+     "verses": [
+      4034004
+     ],
+     "es": "Y este término os irá rodeando desde el mediodía hasta la subida de Acrabbim, y pasará hasta Zin; y sus salidas serán del mediodía á Cades-barnea; y saldrá á Hasar-addar, y pasará hasta Asmón;",
+     "pt": "E este termo vos irá rodeando desde o sul até a subida de Acrabim, e passará até Zim; e suas saídas serão do sul a Cades-Barneia; e sairá a Hazar-Adar, e passará até Azmom;"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 45,
+   "name": "Alemeth",
+   "sha256": "e677d63766ba9244f1a3ef987633814a89c87123e34da8fb2dfd77e05184f9be",
+   "text": "A sacerdotal city of Benjamin (1 Chr. 6:60), called also Almon (Josh. 21:18), now Almit, a mile north-east of the ancient Anathoth.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 46,
+   "name": "Alexandria",
+   "sha256": "8fb6747cdba3b81a691410d6f6bccb1709f3e5dd289963e5987cf46585be1899",
+   "text": "The ancient metropolis of Lower Egypt, so called from its founder, Alexander the Great (about B.C. 333). It was for a long period the greatest of existing cities, for both Nineveh and Babylon had been destroyed, and Rome had not yet risen to greatness. It was the residence of the kings of Egypt for 200 years. It is not mentioned in the Old Testament, and only incidentally in the New. Apollos, eloquent and mighty in the Scriptures, was a native of this city (Acts 18:24). Many Jews from Alexandria were in Jerusalem, where they had a synagogue (Acts 6:9), at the time of Stephen’s martyrdom. At one time it is said that as many as 10,000 Jews resided in this city. It possessed a famous library of 700,000 volumes, which was burned by the Saracens (A.D. 642). It was here that the Hebrew Bible was translated into Greek. This is called the Septuagint version, from the tradition that seventy learned men were engaged in executing it. It was, however, not all translated at one time. It was begun B.C. 280, and finished about B.C. 200 or 150.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 48,
+   "name": "Allon-bacuth",
+   "sha256": "785c55bd41c63759f3565a1ed542e9ac52b51ff51fcb50b8c652efe275fd8c9e",
+   "text": "Oak of weeping, a tree near Bethel, at the spot where Deborah, Rebekah’s nurse, was buried (Gen. 35:8). Large trees, from their rarity in the plains of Palestine, were frequently designated as landmarks. This particular tree was probably the same as the “palm tree of Deborah” (Judg. 4:5).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "palm tree of Deborah",
+     "kind": "partial",
+     "verses": [
+      7004005
+     ],
+     "es": "La cual Débora habitaba debajo de una palma entre Rama y Beth-el, en el monte de Ephraim: y los hijos de Israel subían á ella á juicio.",
+     "pt": "A qual se sentava debaixo da palmeira de Débora entre Ramá e Betel, no monte de Efraim: e os filhos de Israel subiam a ela a juízo."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 49,
+   "name": "Almon",
+   "sha256": "420f50d291d1c875aa11901e4e3faef6ec3f268b0015304b086b290b0dce160f",
+   "text": "Hidden, one of the sacerdotal cities of Benjamin (Josh. 21:18), called also Alemeth (1 Chr. 6:60).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 50,
+   "name": "Almon-diblathaim",
+   "sha256": "2b85a3aae0d6116ebd10ca897fc04c0324ef5f47e744ad83616fe8c90ba3453d",
+   "text": "Two cakes, a city of Moab, on the east of the Dead Sea (Num. 33:46; Jer. 48:22).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 51,
+   "name": "Alush",
+   "sha256": "1a667fbc8931b38f593204a9e3f85968b995f11c6e43ce9eb36313940038889c",
+   "text": "One of the places, the last before Rephidim, at which the Hebrews rested on their way to Sinai (Num. 33:13, 14). It was probably situated on the shore of the Red Sea.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 53,
+   "name": "Amalek",
+   "sha256": "893545349161230c4f005e4763ddf7ba3c24d3ed8cffc705df3a7a4ebfc48633",
+   "text": "A tribe that dwelt in Arabia Petraea, between the Dead Sea and the Red Sea. They were not the descendants of Amalek, the son of Eliphaz, for they existed in the days of Abraham (Gen. 14:7). They were probably a tribe that migrated from the shores of the Persian Gulf and settled in Arabia. “They dwelt in the land of the south...from Havilah until thou comest to Shur” (Num. 13:29; 1 Sam. 15:7). They were a pastoral, and hence a nomadic race. Their kings bore the hereditary name of Agag (Num. 24:7; 1 Sam. 15:8). They attempted to stop the Israelites when they marched through their territory (Deut. 25:18), attacking them at Rephidim (Ex. 17:8-13; comp. Deut. 25:17; 1 Sam. 15:2). They afterwards attacked the Israelites at Hormah (Num. 14:45). We read of them subsequently as in league with the Moabites (Judg. 3:13) and the Midianites (Judg. 6:3). Saul finally desolated their territory and destroyed their power (1 Sam. 14:48; 15:3), and David recovered booty from them (1 Sam. 30:18-20). In the Babylonian inscriptions they are called Sute, in those of Egypt Sittiu, and the Amarna tablets include them under the general name of Khabbati, or “plunderers.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "They dwelt in the land of the south...from Havilah until thou comest to Shur",
+     "kind": "loose",
+     "verses": [
+      9015007
+     ],
+     "es": "Y Saúl hirió á Amalec, desde Havila hasta llegar á Shur, que está á la frontera de Egipto.",
+     "pt": "E Saul feriu a Amaleque, desde Havilá até chegar a Sur, que está à fronteira do Egito."
+    },
+    {
+     "n": 1,
+     "english": "plunderers.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 55,
+   "name": "Amana",
+   "sha256": "ceaaf4ca5fd814145adbd7ec7d692926ec742a7989d8c1cc15402e82b8008dd7",
+   "text": "A mountain (Cant. 4:8), probably the southern summit of Anti-Libanus, at the base of which are the sources of the Abana.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 57,
+   "name": "Ammah",
+   "sha256": "21ffc4189b679187b411742dddda77201a2376c44c8e6e3a8cb638ea9b2df7d4",
+   "text": "A cubit, the name of a hill which Joab and Abishai reached as the sun went down, when they were in pursuit of Abner (2 Sam. 2:24). It lay to the east of Gibeon.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 58,
+   "name": "Ammon",
+   "sha256": "1f917d654f0a2976c2f89fcc12b4155ba142a0f5eeeb59fc8f0d1a9a565a4ef8",
+   "text": "The usual name of the descendants of Ammon, the son of Lot (Gen. 19:38). From the very beginning (Deut. 2:16-20) of their history till they are lost sight of (Judg. 5:2), this tribe is closely associated with the Moabites (Judg. 10:11; 2 Chr. 20:1; Zeph. 2:8). Both of these tribes hired Balaam to curse Israel (Deut. 23:4). The Ammonites were probably more of a predatory tribe, moving from place to place, while the Moabites were more settled. They inhabited the country east of the Jordan and north of Moab and the Dead Sea, from which they had expelled the Zamzummims or Zuzims (Deut. 2:20; Gen. 14:5). They are known as the Beni-ammi (Gen. 19:38), Ammi or Ammon being worshipped as their chief god. They were of Semitic origin, and closely related to the Hebrews in blood and language. They showed no kindness to the Israelites when passing through their territory, and therefore they were prohibited from “entering the congregation of the Lord to the tenth generation” (Deut. 23:3). They afterwards became hostile to Israel (Judg. 3:13). Jephthah waged war against them, and “took twenty cities with a very great slaughter” (Judg. 11:33). They were again signally defeated by Saul (1 Sam. 11:11). David also defeated them and their allies the Syrians (2 Sam. 10:6-14), and took their chief city, Rabbah, with much spoil (2 Sam. 10:14; 12:26-31). The subsequent events of their history are noted in 2 Chr. 20:25; 26:8; Jer. 49:1; Ezek. 25:3, 6. One of Solomon’s wives was Naamah, an Ammonite. She was the mother of Rehoboam (1 Kings 14:31; 2 Chr. 12:13).\n\n The prophets predicted fearful judgments against the Ammonites because of their hostility to Israel (Zeph. 2:8; Jer. 49:1-6; Ezek. 25:1-5, 10; Amos 1:13-15).\n\n The national idol worshipped by this people was Molech or Milcom, at whose altar they offered human sacrifices (1 Kings 11:5, 7). The high places built for this idol by Solomon, at the instigation of his Ammonitish wives, were not destroyed till the time of Josiah (2 Kings 23:13).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "entering the congregation of the Lord to the tenth generation",
+     "kind": "loose",
+     "verses": [
+      5023001,
+      5023002
+     ],
+     "es": "NO entrará en la congregación de Jehová el que fuere quebrado, ni el castrado. No entrará bastardo en la congregación de Jehová: ni aun en la décima generación entrará en la congregación de Jehová.",
+     "pt": "Não entrará na congregação do SENHOR o que tiver os testículos esmagados, nem o castrado. Não entrará bastardo na congregação do SENHOR: nem ainda na décima geração entrará na congregação do SENHOR."
+    },
+    {
+     "n": 1,
+     "english": "took twenty cities with a very great slaughter",
+     "kind": "loose",
+     "verses": [
+      7011032,
+      7011033
+     ],
+     "es": "Pasó pues Jephté á los hijos de Ammón para pelear contra ellos; y Jehová los entregó en su mano. Y los hirió de grandísimo estrago desde Aroer hasta llegar á Minnith, veinte ciudades; y hasta la vega de las viñas. Así fueron domeñados los Ammonitas delante de los hijos de Israel.",
+     "pt": "Passou, pois, Jefté aos filhos de Amom para lutar contra eles; e o SENHOR os entregou em sua mão. E os feriu de grandíssimo dano desde Aroer até chegar a Minite, vinte cidades; e até a Abel-Queramim. Assim foram dominados os amonitas diante dos filhos de Israel."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 59,
+   "name": "Amphipolis",
+   "sha256": "e3a76590b5d3efdf848e5c606a40f4f294a6c26236d2d3648897c67eb5280d70",
+   "text": "City on both sides, a Macedonian city, a great Roman military station, through which Paul and Silas passed on their way from Philippi to Thessalonica, a distance of 33 Roman miles from Philippi (Acts 17:1).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 60,
+   "name": "Anab",
+   "sha256": "09dc4d0f196299a8ed32aa4c4d794e24fa5f588cdc2e06a8ebc33e6903797faa",
+   "text": "Grape-town, one of the cities in the mountains of Judah, from which Joshua expelled the Anakim (Josh. 11:21; 15:50). It still retains its ancient name. It lies among the hills, 10 miles south-south-west of Hebron.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 62,
+   "name": "Ananiah",
+   "sha256": "93a6628e80654c28aeb47a2747e03f9086aa588524f9f8e3a7b47d52f98e1fa1",
+   "text": "Protected by Jehovah, the name of a town in the tribe of Benjamin between Nob and Hazor (Neh. 11:32). It is probably the modern Beit Hanina, a small village 3 miles north of Jerusalem.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 63,
+   "name": "Anathoth",
+   "sha256": "a833267daa10db83dbb22c4a95702e9a9c881e4860a97951eef9951281775cde",
+   "text": "The name of one of the cities of refuge, in the tribe of Benjamin (Josh. 21:18). The Jews, as a rule, did not change the names of the towns they found in Palestine; hence this town may be regarded as deriving its name from the goddess Anat. It was the native place of Abiezer, one of David’s “thirty” (2 Sam. 23:27), and of Jehu, another of his mighty men (1 Chr. 12:3). It is chiefly notable, however, as the birth-place and usual residence of Jeremiah (Jer. 1:1; 11:21-23; 29:27; 32:7-9). It suffered greatly from the army of Sennacherib, and only 128 men returned to it from the Exile (Neh. 7:27; Ezra 2:23). It lay about 3 miles north of Jerusalem. It has been identified with the small and poor village of ‘Anata, containing about 100 inhabitants.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "thirty",
+     "kind": "wording",
+     "verses": [
+      13012004
+     ],
+     "es": "E Ismaías Gabaonita, valiente entre los treinta, y más que los treinta; y Jeremías, Jahaziel, Joanán, Jozabad Gederathita,",
+     "pt": "E Ismaías, o gibeonita, valente entre os trinta, e capitão dos trinta; e Jeremias, Jaaziel, Joanã, Jozabade o gederatita;"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 64,
+   "name": "Anem",
+   "sha256": "5d51a84e8e7926a9483c83f365ef76109610f9b5f29f1bdfed54e2140ed4440a",
+   "text": "Two fountains, a Levitical city in the tribe of Issachar (1 Chr. 6:73). It is also called En-gannim (q.v.) in Josh. 19:21; the modern Jenin.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 65,
+   "name": "Aner",
+   "sha256": "ddb96cbb74d59ac192159f1b1ade8fdbe8a5ca3e189292347b817bcdad8fa0aa",
+   "text": "A city of Manasseh given to the Levites of Kohath’s family (1 Chr. 6:70).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 67,
+   "name": "Anim",
+   "sha256": "62251e11f5945a1c3690cf6d06efb642b30fe3bf17c58b6536d30becb0ee2072",
+   "text": "Fountains, a city in the mountains of Judah (Josh. 15:50), now el-Ghuwein, near Eshtemoh, about 10 miles south-west of Hebron.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 68,
+   "name": "Antioch (Syria)",
+   "sha256": "a5529699acc8cf4d4cd8b9db72ec3fbc555efa6f50d974edf8f3708dd2ba8ff9",
+   "text": "In Syria, on the river Orontes, about 16 miles from the Mediterranean, and some 300 miles north of Jerusalem. It was the metropolis of Syria, and afterwards became the capital of the Roman province in Asia. It ranked third, after Rome and Alexandria, in point of importance, of the cities of the Roman empire. It was called the “first city of the East.” Christianity was early introduced into it (Acts 11:19, 21, 24), and the name “Christian” was first applied here to its professors (Acts 11:26). It is intimately connected with the early history of the gospel (Acts 6:5; 11:19, 27, 28, 30; 12:25; 15:22-35; Gal. 2:11, 12). It was the great central point whence missionaries to the Gentiles were sent forth. It was the birth-place of the famous Christian father Chrysostom, who died A.D. 407. It bears the modern name of Antakia, and is now a miserable, decaying Turkish town. Like Philippi, it was raised to the rank of a Roman colony. Such colonies were ruled by “praetors” (R.V. marg., Acts 16:20, 21).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "first city of the East.",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "Christian",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "praetors",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 69,
+   "name": "Antioch (Pisidia)",
+   "sha256": "6d1c5b162c66f8552e3c248915b28265b2cc0419aaf594c4495e07cbf3e41997",
+   "text": "In the extreme north of Pisidia; was visited by Paul and Barnabas on the first missionary journey (Acts 13:14). Here they found a synagogue and many proselytes. They met with great success in preaching the gospel, but the Jews stirred up a violent opposition against them, and they were obliged to leave the place. On his return, Paul again visited Antioch for the purpose of confirming the disciples (Acts 14:21). It has been identified with the modern Yalobatch, lying to the east of Ephesus.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 70,
+   "name": "Antipatris",
+   "sha256": "da9773254cf848dd362ae9d9d6f913b6970f20ff56859c92ccb5d97c7755fc96",
+   "text": "A city built by Herod the Great, and called by this name in honour of his father, Antipater. It lay between Caesarea and Lydda, two miles inland, on the great Roman road from Caesarea to Jerusalem. To this place Paul was brought by night (Acts 23:31) on his way to Caesarea, from which it was distant 28 miles. It is identified with the modern, Ras-el-Ain, where rise the springs of Aujeh, the largest springs in Palestine.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 71,
+   "name": "Aphek",
+   "sha256": "67c2edb251f1aad8d10f5687a9effe725eb756299479ae6c229f58629c2e8f1c",
+   "text": "A city of the tribe of Asher. It was the scene of the licentious worship of the Syrian Aphrodite. The ruins of the temple, “magnificent ruins” in a “spot of strange wildness and beauty”, are still seen at Afka, on the north-west slopes of Lebanon, near the source of the river Adonis (now Nahr Ibrahim), 12 miles east of Gebal.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "magnificent ruins",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "spot of strange wildness and beauty",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 72,
+   "name": "Aphek",
+   "sha256": "ae226461dd9f89e78a4501f6b4e803ec009b8590c6655a43dd5106eeb0d2b40a",
+   "text": "A city of the tribe of Issachar, near to Jezreel (1 Sam. 4:1; 29:1; comp. 28:4).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 73,
+   "name": "Aphek",
+   "sha256": "7d7285401ab1095399cb923d7579d9d716887ab47440d7a424c7c82f47902d1e",
+   "text": "A town on the road from Damascus to Palestine, in the level plain east of Jordan, near which Benhadad was defeated by the Israelites (1 Kings 20:26, 30; 2 Kings 13:17). It has been identified with the modern Fik, 6 miles east of the Sea of Galilee, opposite Tiberias.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 75,
+   "name": "Aphik",
+   "sha256": "8baa481a102822d2b92f7a73de6dbfa5c037ff3e002ec79c71678f5da5a26631",
+   "text": "(Judg. 1:31); Aphek (Josh. 13:4; 19:30), stronghold.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 76,
+   "name": "Apollonia",
+   "sha256": "25d39b78dae89bd1235c3cd2edffc3bde85d11cd95229a0dfeef64f41a6e8907",
+   "text": "A city of Macedonia between Amphipolis and Thessalonica, from which it was distant about 36 miles. Paul and Silas passed through it on their way to Thessalonica (Acts 17:1).",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 78,
+   "name": "Arab",
+   "sha256": "acb3c2ded0d3f3fd7df1d671706870f9267c7924fefee131ca9bc2487e62ed03",
+   "text": "Ambush, a city in the mountains of Judah (Josh. 15:52), now Er-Rabiyeh.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 79,
+   "name": "Arabah",
+   "sha256": "fa6da956e4bea9ff2f5d0317f4205c6da2cae7a4f5afb08f399f02dda6c4f7d8",
+   "text": "Plain, in the Revised Version of 2 Kings 14:25; Josh. 3:16; 8:14; 2 Sam. 2:29; 4:7 (in all these passages the A.V. has “plain”); Amos 6:14 (A.V. “wilderness”). This word is found in the Authorized Version only in Josh. 18:18. It denotes the hollow depression through which the Jordan flows from the Lake of Galilee to the Dead Sea. It is now called by the Arabs el-Ghor. But the Ghor is sometimes spoken of as extending 10 miles south of the Dead Sea, and thence to the Gulf of Akabah on the Red Sea is called the Wady el-Arabah.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "plain",
+     "kind": "wording",
+     "verses": [
+      12014025
+     ],
+     "es": "El restituyó los términos de Israel desde la entrada de Amath hasta la mar de la llanura, conforme á la palabra de Jehová Dios de Israel, la cual había él hablado por su siervo Jonás hijo de Amittai, profeta que fué de Gath-hepher.",
+     "pt": "Ele restituiu os termos de Israel desde a entrada de Hamate até o mar da planície, conforme à palavra do SENHOR Deus de Israel, a qual havia ele falado por seu servo Jonas filho de Amitai, profeta que foi de Gate-Hefer."
+    },
+    {
+     "n": 1,
+     "english": "wilderness",
+     "kind": "wording",
+     "verses": [
+      30006014
+     ],
+     "es": "Pues he aquí, levantaré yo sobre vosotros, oh casa de Israel, dice Jehová Dios de los ejércitos, gente que os oprimirá desde la entrada de Hamath hasta el arroyo del desierto.",
+     "pt": "Diz o SENHOR Deus dos exércitos: Pois eis que eu levantarei contra vós, ó casa de Israel, uma nação que vos oprimirá desde a entrada de Hamate até o ribeiro de Arabá."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 80,
+   "name": "Arabia",
+   "sha256": "fc1f5719118259a308046e5fffc2a2d246abbdd9f1c481424cd3ce7c45c8d41c",
+   "text": "Arabia Petraea, i.e., the Rocky Arabia, so called from its rocky mountains and stony plains. It comprehended all the north-west portion of the country, and is much better known to travellers than any other portion. This country is, however, divided by modern geographers into (1) Arabia Proper, or the Arabian Peninsula; (2) Northern Arabia, or the Arabian Desert; and (3) Western Arabia, which includes the peninsula of Sinai and the Desert of Petra, originally inhabited by the Horites (Gen. 14:6, etc.), but in later times by the descendants of Esau, and known as the Land of Edom or Idumea, also as the Desert of Seir or Mount Seir.\n\n The whole land appears (Gen. 10) to have been inhabited by a variety of tribes of different lineage, Ishmaelites, Arabians, Idumeans, Horites, and Edomites; but at length becoming amalgamated, they came to be known by the general designation of Arabs. The modern nation of Arabs is predominantly Ishmaelite. Their language is the most developed and the richest of all the Semitic languages, and is of great value to the student of Hebrew.\n\n The Israelites wandered for forty years in Arabia. In the days of Solomon, and subsequently, commercial intercourse was to a considerable extent kept up with this country (1 Kings 10:15; 2 Chr. 9:14; 17:11). Arabians were present in Jerusalem at Pentecost (Acts 2:11). Paul retired for a season into Arabia after his conversion (Gal. 1:17). This country is frequently referred to by the prophets (Isa. 21:11; 42:11; Jer. 25:24, etc.)",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 81,
+   "name": "Arad",
+   "sha256": "9bf59706cae33891bad827aec07cbdee3e2a1094a62f88bcd5402131be4fcfe0",
+   "text": "Now Tell Arad, a Canaanite city, about 20 miles south of Hebron. The king of Arad “fought against Israel and took of them prisoners” when they were retreating from the confines of Edom (Num. 21:1; 33:40; Judg. 1:16). It was finally subdued by Joshua (12:14).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "fought against Israel and took of them prisoners",
+     "kind": "loose",
+     "verses": [
+      4021001
+     ],
+     "es": "Y OYENDO el Cananeo, el rey de Arad, el cual habitaba al mediodía, que venía Israel por el camino de los centinelas, peleó con Israel, y tomó de él presa.",
+     "pt": "E quando o cananeu, o rei de Arade, que habitava ao sul, ouviu falar que Israel vinha pelo caminho de Atarim, lutou contra Israel, e dele levou alguns como prisioneiros."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 82,
+   "name": "Aram",
+   "sha256": "544f081859e390e093024c83449ca4cd364950adf7354ac5a748ba7e9dd732c2",
+   "text": "The son of Shem (Gen. 10:22); according to Gen. 22:21, a grandson of Nahor. In Matt. 1:3, 4, and Luke 3:33, this word is the Greek form of Ram, the father of Amminadab (1 Chr. 2:10).\n\n The word means high, or highlands, and as the name of a country denotes that elevated region extending from the northeast of Palestine to the Euphrates. It corresponded generally with the Syria and Mesopotamia of the Greeks and Romans. In Gen. 25:20; 31:20, 24; Deut. 26:5, the word “Syrian” is properly “Aramean” (R.V., marg.). Damascus became at length the capital of the several smaller kingdoms comprehended under the designation “Aram” or “Syria.”",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Syrian",
+     "kind": "wording",
+     "verses": [
+      1025020
+     ],
+     "es": "Y era Isaac de cuarenta años cuando tomó por mujer á Rebeca, hija de Bethuel Arameo de Padan-aram, hermana de Labán Arameo.",
+     "pt": "E era Isaque de quarenta anos quando tomou por mulher a Rebeca, filha de Betuel arameu de Padã-Arã, irmã de Labão arameu."
+    },
+    {
+     "n": 1,
+     "english": "Aramean",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "Aram",
+     "kind": "wording",
+     "verses": [
+      1025020
+     ],
+     "es": "Y era Isaac de cuarenta años cuando tomó por mujer á Rebeca, hija de Bethuel Arameo de Padan-aram, hermana de Labán Arameo.",
+     "pt": "E era Isaque de quarenta anos quando tomou por mulher a Rebeca, filha de Betuel arameu de Padã-Arã, irmã de Labão arameu."
+    },
+    {
+     "n": 3,
+     "english": "Syria.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 84,
+   "name": "Aram-naharaim",
+   "sha256": "2b7f4ba7cfdac08fe39d279348462650a6d3bc7c6733680e8cab94ea17685b6b",
+   "text": "Aram of the two rivers, is Mesopotamia (as it is rendered in Gen. 24:10), the country enclosed between the Tigris on the east and the Euphrates on the west (Ps. 60, title); called also the “field of Aram” (Hos. 12:12, R.V.) i.e., the open country of Aram; in the Authorized Version, “country of Syria.” Padan-aram (q.v.) was a portion of this country.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "field of Aram",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "country of Syria.",
+     "kind": "partial",
+     "verses": [
+      28012012
+     ],
+     "es": "Mas Jacob huyó á tierra de Aram, y sirvió Israel por mujer, y por mujer fué pastor.",
+     "pt": "Mas Jacó fugiu à terra de Arã, e Israel serviu em troca de uma mulher, e por uma mulher apascentou ovelhas ."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 85,
+   "name": "Aram-zobah",
+   "sha256": "b37ff086feb066bc5a13eb109fd06320146beb8a898ee7070130bf0a2451cba5",
+   "text": "(Ps. 60, title), probably the region between the Euphrates and the Orontes.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 86,
+   "name": "Ararat",
+   "sha256": "a3a955fd2a5014860e42b8fb71c7626c51e8aab20e293bdd14102818da43466c",
+   "text": "Sacred land or high land, the name of a country on one of the mountains of which the ark rested after the Flood subsided (Gen. 8:4). The “mountains” mentioned were probably the Kurdish range of South Armenia. In 2 Kings 19:37, Isa. 37:38, the word is rendered “Armenia” in the Authorized Version, but in the Revised Version, “Land of Ararat.” In Jer. 51:27, the name denotes the central or southern portion of Armenia. It is, however, generally applied to a high and almost inaccessible mountain which rises majestically from the plain of the Araxes. It has two conical peaks, about 7 miles apart, the one 14,300 feet and the other 10,300 feet above the level of the plain. Three thousand feet of the summit of the higher of these peaks is covered with perpetual snow. It is called Kuh-i-nuh, i.e., “Noah’s mountain”, by the Persians. This part of Armenia was inhabited by a people who spoke a language unlike any other now known, though it may have been related to the modern Georgian. About B.C. 900 they borrowed the cuneiform characters of Nineveh, and from this time we have inscriptions of a line of kings who at times contended with Assyria. At the close of the seventh century B.C. the kingdom of Ararat came to an end, and the country was occupied by a people who are ancestors of the Armenians of the present day.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "mountains",
+     "kind": "wording",
+     "verses": [
+      1008004
+     ],
+     "es": "Y reposó el arca en el mes séptimo, á diecisiete días del mes, sobre los montes de Armenia.",
+     "pt": "E repousou a arca no mês sétimo, a dezessete dias do mês, sobre os montes de Ararate."
+    },
+    {
+     "n": 1,
+     "english": "Armenia",
+     "kind": "wording",
+     "verses": [
+      12019037
+     ],
+     "es": "Y aconteció que, estando él adorando en el templo de Nisroch su dios, Adramelech y Saresar sus hijos lo hirieron á cuchillo; y huyéronse á tierra de Ararat. Y reinó en su lugar Esar-hadón su hijo.",
+     "pt": "E aconteceu que, estando ele adorando no templo de Nisroque seu deus, Adrameleque e Sarezer seus filhos o feriram à espada; e fugiram-se à terra de Ararate. E reinou em seu lugar Esar-Hadom seu filho."
+    },
+    {
+     "n": 2,
+     "english": "Land of Ararat.",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "Noah’s mountain",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 87,
+   "name": "Areopagus",
+   "sha256": "af2fb64e806a76e65763ccc81c39faf8cd9f089846e11ee93433142ba26c25d8",
+   "text": "The Areopagus or rocky hill in Athens, north-west of the Acropolis, where the Athenian supreme tribunal and court of morals was held. From some part of this hill Paul delivered the address recorded in Acts 17:22-31.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 88,
+   "name": "Argob",
+   "sha256": "e67aca7e8f1584aacaaaae99501e717d40e7c7f14cbcad3a9a5de4b46a8c8aa4",
+   "text": "Stony heap, an “island,” as it has been called, of rock about 30 miles by 20, rising 20 or 30 feet above the table-land of Bashan; a region of crags and chasms wild and rugged in the extreme. On this “island” stood sixty walled cities, ruled over by Og. It is called Trachonitis (“the rugged region”) in the New Testament (Luke 3:1). These cities were conquered by the Israelites (Deut. 3:4; 1 Kings 4:13). It is now called the Lejah. Here “sixty walled cities are still traceable in a space of 308 square miles. The architecture is ponderous and massive. Solid walls 4 feet thick, and stones on one another without cement; the roofs enormous slabs of basaltic rock, like iron; the doors and gates are of stone 18 inches thick, secured by ponderous bars. The land bears still the appearance of having been called the ‘land of giants’ under the giant Og.” “I have more than once entered a deserted city in the evening, taken possession of a comfortable house, and spent the night in peace. Many of the houses in the ancient cities of Bashan are perfect, as if only finished yesterday. The walls are sound, the roofs unbroken, and even the window-shutters in their places. These ancient cities of Bashan probably contain the very oldest specimens of domestic architecture in the world” (Porter’s Giant Cities).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "island,",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "island",
+     "kind": "other"
+    },
+    {
+     "n": 2,
+     "english": "the rugged region",
+     "kind": "other"
+    },
+    {
+     "n": 3,
+     "english": "sixty walled cities are still traceable in a space of 308 square miles. The architecture is ponderous and massive. Solid walls 4 feet thick, and stones on one another without cement; the roofs enormous slabs of basaltic rock, like iron; the doors and gates are of stone 18 inches thick, secured by ponderous bars. The land bears still the appearance of having been called the ‘land of giants’ under the giant Og.",
+     "kind": "other"
+    },
+    {
+     "n": 4,
+     "english": "I have more than once entered a deserted city in the evening, taken possession of a comfortable house, and spent the night in peace. Many of the houses in the ancient cities of Bashan are perfect, as if only finished yesterday. The walls are sound, the roofs unbroken, and even the window-shutters in their places. These ancient cities of Bashan probably contain the very oldest specimens of domestic architecture in the world",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 89,
+   "name": "Ariel",
+   "sha256": "6a2fd0469a921fce87eafb579a5dd46cd40b1a67a0a0c7014826647a1b0e3208",
+   "text": "A symbolic name for Jerusalem (Isa. 29:1, 2, 7) as “victorious under God,” and in Ezek. 43:15, 16, for the altar (marg., Heb. ‘ariel) of burnt offerings, the secret of Israel’s lion-like strength.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "victorious under God,",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 90,
+   "name": "Arimathea",
+   "sha256": "e5e287bef1333c11f4fcf026e39473f16590b059ae6cfc84e5cdb11245e88a98",
+   "text": "A “city of the Jews” (Luke 23:51), the birth-place of Joseph in whose sepulchre our Lord was laid (Matt. 27:57, 60; John 19:38). It is probably the same place as Ramathaim in Ephraim, and the birth-place of Samuel (1 Sam. 1:1, 19). Others identify it with Ramleh in Dan, or Rama (q.v.) in Benjamin (Matt. 2:18).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "city of the Jews",
+     "kind": "partial",
+     "verses": [
+      42023051
+     ],
+     "es": "(El cual no había consentido en el consejo ni en los hechos de ellos), de Arimatea, ciudad de la Judea, el cual también esperaba el reino de Dios;",
+     "pt": "(Que não tinha concordado, nem com o conselho, nem em atos que fizeram), da cidade de Arimateia, da terra dos judeus, e que também esperava pelo Reino de Deus."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 91,
+   "name": "Armageddon",
+   "sha256": "315fb13c09ecb203056e56ba3841ef6370fcd3353f970c5ded447d16d2908e90",
+   "text": "Occurs only in Rev. 16:16 (R.V., “Har-Magedon”), as symbolically designating the place where the “battle of that great day of God Almighty” (ver. 14) shall be fought. The word properly means the “mount of Megiddo.” It is the scene of the final conflict between Christ and Antichrist. The idea of such a scene was suggested by the Old Testament great battle-field, the plain of Esdraelon (q.v.).",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Har-Magedon",
+     "kind": "other"
+    },
+    {
+     "n": 1,
+     "english": "battle of that great day of God Almighty",
+     "kind": "partial",
+     "verses": [
+      66016014
+     ],
+     "es": "Porque son espíritus de demonios, que hacen señales, para ir á los reyes de la tierra y de todo el mundo, para congregarlos para la batalla de aquel gran día del Dios Todopoderoso.",
+     "pt": "Porque são espíritos de demônios, e fazem sinais sobrenaturais, os quais vão aos reis da terra, e de todo o mundo, para os ajuntarem à batalha daquele grande dia do Deus Todo-Poderoso."
+    },
+    {
+     "n": 2,
+     "english": "mount of Megiddo.",
+     "kind": "other"
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 92,
+   "name": "Arnon",
+   "sha256": "d261ca2df1ddbf40feaaf99c0165ee568f561ed4743d9e62d957e12ff5d56899",
+   "text": "Swift, the southern boundary of the territory of Israel beyond Jordan, separating it from the land of Moab (Deut. 3:8, 16). This river (referred to twenty-four times in the Bible) rises in the mountains of Gilead, and after a circuitous course of about 80 miles through a deep ravine it falls into the Dead Sea nearly opposite Engedi. The stream is almost dry in summer. It is now called el-Mujeb. The territory of the Amorites extended from the Arnon to the Jabbok.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 93,
+   "name": "Aroer",
+   "sha256": "63445be9d09d57d3db152020af527bad07df6afc1481febe56c2b1a4f90a072f",
+   "text": "A town on the north bank of the Arnon (Deut. 4:48; Judg. 11:26; 2 Kings 10:33), the southern boundary of the kingdom of Sihon (Josh. 12:2). It is now called Arair, 13 miles west of the Dead Sea.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 94,
+   "name": "Aroer",
+   "sha256": "a5d6e10c7d65cec767d543d5426eacfd0e8a30b81c0e2bd19a4dcbceb016eff5",
+   "text": "One of the towns built by the tribe of Gad (Num. 32:34) “before Rabbah” (Josh. 13:25), the Ammonite capital. It was famous in the history of Jephthah (Judg. 11:33) and of David (2 Sam. 24:5). (Comp. Isa. 17:2; 2 Kings 15:29.)",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "before Rabbah",
+     "kind": "wording",
+     "verses": [
+      6013025
+     ],
+     "es": "Y el término de ellos fué Jacer, y todas las ciudades de Galaad, y la mitad de la tierra de los hijos de Ammón hasta Aroer, que está delante de Rabba.",
+     "pt": "E o termo deles foi Jazer, e todas as cidades de Gileade, e a metade da terra dos filhos de Amom até Aroer, que está diante de Rabá."
+    }
+   ]
+  },
+  {
+   "kind": "place",
+   "id": 95,
+   "name": "Aroer",
+   "sha256": "3c655dc5ea0d1040c19a312ff3c5fc640346aff8d2fab0417e0fa5d00242d181",
+   "text": "A city in the south of Judah, 12 miles south-east of Beersheba, to which David sent presents after recovering the spoil from the Amalekites at Ziklag (1 Sam. 30:26, 28). It was the native city of two of David’s warriors (1 Chr. 11:44). It is now called Ar’arah.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 96,
+   "name": "Arpad",
+   "sha256": "7583ca0ccc0a1f49e31c49b11a4c72cf35fbc4e49faf8edbae32eb0efaea7597",
+   "text": "(Isa. 10:9; 36:19; 37:13), also Arphad, support, a Syrian city near Hamath, along with which it is invariably mentioned (2 Kings 19:13; 18:34; Isa. 10:9), and Damascus (Jer. 49:23). After a siege of three years it fell (B.C. 742) before the Assyrian king Tiglath-pileser II. Now Tell Erfud.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 99,
+   "name": "Arvad",
+   "sha256": "c91710296a7f8e644771d0238ad57b7b78d506b57e5dcfb3c660684fcf57e541",
+   "text": "Wandering, (Ezek. 27:8), a small island and city on the coast of Syria, mentioned as furnishing mariners and soldiers for Tyre. The inhabitants were called Arvadites. The name is written Aruada or Arada in the Tell-el-Amarna tablets.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 101,
+   "name": "Ashdod",
+   "sha256": "fb479ba7c078a4d87b49c6c00cadab39c8d4222968413b935bda2e807b8797f1",
+   "text": "Stronghold, a Philistine city (Josh. 15:47), about midway between Gaza and Joppa, and 3 miles from the Mediterranean. It was one of the chief seats of the worship of Dagon (1 Sam. 5:5). It belonged to the tribe of Judah (Josh. 15:47), but it never came into their actual possession. It was an important city, as it stood on the highroad from Egypt to Palestine, and hence was strongly fortified (2 Chr. 26:6; Isa. 20:1). Uzziah took it, but fifty years after his death it was taken by the Assyrians (B.C. 758). According to Sargon’s record, it was captured by him in B.C. 711. The only reference to it in the New Testament, where it is called Azotus, is in the account of Philip’s return from Gaza (Acts 8:40). It is now called Eshdud.",
+   "quotes": []
+  },
+  {
+   "kind": "place",
+   "id": 102,
+   "name": "Ashdod's",
+   "sha256": "fb479ba7c078a4d87b49c6c00cadab39c8d4222968413b935bda2e807b8797f1",
+   "text": "Stronghold, a Philistine city (Josh. 15:47), about midway between Gaza and Joppa, and 3 miles from the Mediterranean. It was one of the chief seats of the worship of Dagon (1 Sam. 5:5). It belonged to the tribe of Judah (Josh. 15:47), but it never came into their actual possession. It was an important city, as it stood on the highroad from Egypt to Palestine, and hence was strongly fortified (2 Chr. 26:6; Isa. 20:1). Uzziah took it, but fifty years after his death it was taken by the Assyrians (B.C. 758). According to Sargon’s record, it was captured by him in B.C. 711. The only reference to it in the New Testament, where it is called Azotus, is in the account of Philip’s return from Gaza (Acts 8:40). It is now called Eshdud.",
+   "quotes": []
+  }
+ ],
+ "glossary": {
+  "Abishai": {
+   "es": "Abisai",
+   "pt": "Abisai"
+  },
+  "Abraham": {
+   "pt": "Abraão"
+  },
+  "Achaia": {
+   "es": "Acaya",
+   "pt": "Acaia"
+  },
+  "Adam": {
+   "pt": "Adão (person); Adã (place)"
+  },
+  "Adria": {
+   "es": "Adriático",
+   "pt": "Adriático"
+  },
+  "Adullam": {
+   "pt": "Adulão"
+  },
+  "Agag": {
+   "pt": "Agague"
+  },
+  "Ain": {
+   "es": "Aín",
+   "pt": "Aim"
+  },
+  "Akrabbim": {
+   "es": "Acrabim",
+   "pt": "Acrabim"
+  },
+  "Alemeth": {
+   "es": "Alemet",
+   "pt": "Alemete"
+  },
+  "Alexander": {
+   "es": "Alejandro",
+   "pt": "Alexandre"
+  },
+  "Alexandria": {
+   "es": "Alejandrina"
+  },
+  "Almon": {
+   "es": "Almón",
+   "pt": "Almom"
+  },
+  "Amalek": {
+   "es": "Amalec",
+   "pt": "Amaleque"
+  },
+  "Amminadab": {
+   "es": "Aminadab",
+   "pt": "Aminadabe"
+  },
+  "Ammon": {
+   "es": "Amón",
+   "pt": "Amom"
+  },
+  "Amos": {
+   "es": "Amós",
+   "pt": "Amós"
+  },
+  "Amphipolis": {
+   "es": "Amfípolis",
+   "pt": "Anfípolis"
+  },
+  "Anathoth": {
+   "es": "Anatot",
+   "pt": "Anatote"
+  },
+  "Antioch": {
+   "es": "Antioquía",
+   "pt": "Antioquia"
+  },
+  "Aphek": {
+   "es": "Afec"
+  },
+  "Apollos": {
+   "es": "Apolos",
+   "pt": "Apolo"
+  },
+  "Arabia": {
+   "pt": "Arábia"
+  },
+  "Arad": {
+   "pt": "Arade"
+  },
+  "Aram": {
+   "pt": "Arã"
+  },
+  "Ararat": {
+   "pt": "Ararate"
+  },
+  "Areopagus": {
+   "es": "Areópago"
+  },
+  "Arnon": {
+   "es": "Arnón",
+   "pt": "Arnom"
+  },
+  "Asher": {
+   "es": "Aser",
+   "pt": "Aser"
+  },
+  "Asia": {
+   "pt": "Ásia"
+  },
+  "Assyria": {
+   "es": "Asiria",
+   "pt": "Assíria"
+  },
+  "Athens": {
+   "es": "Atenas",
+   "pt": "Atenas"
+  },
+  "Azotus": {
+   "es": "Azoto",
+   "pt": "Azoto"
+  },
+  "Babylon": {
+   "es": "Babilonia",
+   "pt": "Babilônia"
+  },
+  "Babylonia": {
+   "es": "Babilonia",
+   "pt": "Babilônia"
+  },
+  "Balaam": {
+   "pt": "Balaão"
+  },
+  "Barnabas": {
+   "es": "Bernabé",
+   "pt": "Barnabé"
+  },
+  "Bashan": {
+   "es": "Basán",
+   "pt": "Basã"
+  },
+  "Beersheba": {
+   "es": "Beer-seba",
+   "pt": "Berseba"
+  },
+  "Benjamin": {
+   "es": "Benjamín",
+   "pt": "Benjamim"
+  },
+  "Beth-aven": {
+   "es": "Bet-aven",
+   "pt": "Bete-Áven"
+  },
+  "Bethel": {
+   "es": "Bet-el",
+   "pt": "Betel"
+  },
+  "Bethlehem": {
+   "es": "Bet-lehem",
+   "pt": "Belém"
+  },
+  "Caesarea": {
+   "es": "Cesarea",
+   "pt": "Cesareia"
+  },
+  "Chezib": {
+   "es": "Quezib",
+   "pt": "Quezibe"
+  },
+  "Crete": {
+   "es": "Creta",
+   "pt": "Creta"
+  },
+  "Dagon": {
+   "es": "Dagón",
+   "pt": "Dagom"
+  },
+  "Damascus": {
+   "es": "Damasco",
+   "pt": "Damasco"
+  },
+  "Dan": {
+   "pt": "Dã"
+  },
+  "David": {
+   "pt": "Davi"
+  },
+  "Deborah": {
+   "es": "Débora",
+   "pt": "Débora"
+  },
+  "Ebal": {
+   "es": "Seba"
+  },
+  "Egypt": {
+   "es": "Egipto",
+   "pt": "Egito"
+  },
+  "Elah": {
+   "es": "Ela",
+   "pt": "Elá"
+  },
+  "Eliphaz": {
+   "es": "Elifaz",
+   "pt": "Elifaz"
+  },
+  "En-gannim": {
+   "es": "Enganim (place); En-ganim (place)",
+   "pt": "En-Ganim"
+  },
+  "Engedi": {
+   "pt": "En-Gedi"
+  },
+  "Ephesus": {
+   "es": "Efeso",
+   "pt": "Éfeso"
+  },
+  "Ephraim": {
+   "es": "Efraim",
+   "pt": "Efraim"
+  },
+  "Esau": {
+   "es": "Esaú",
+   "pt": "Esaú"
+  },
+  "Eshtemoh": {
+   "es": "Estemo",
+   "pt": "Estemo"
+  },
+  "Esther": {
+   "es": "Ester",
+   "pt": "Ester"
+  },
+  "Euphrates": {
+   "es": "Eufrates",
+   "pt": "Eufrates"
+  },
+  "Ezra": {
+   "es": "Esdras",
+   "pt": "Esdras"
+  },
+  "Gad": {
+   "pt": "Gade"
+  },
+  "Galilee": {
+   "es": "Galilea",
+   "pt": "Galileia"
+  },
+  "Gallio": {
+   "es": "Galión",
+   "pt": "Gálio"
+  },
+  "Gath": {
+   "es": "Gat",
+   "pt": "Gate"
+  },
+  "Gibeon": {
+   "es": "Gabaón",
+   "pt": "Gibeom (person); Gibeão (place)"
+  },
+  "Gilead": {
+   "es": "Galaad",
+   "pt": "Gileade"
+  },
+  "Goliath": {
+   "es": "Goliat",
+   "pt": "Golias"
+  },
+  "Gomorrah": {
+   "es": "Gomorra",
+   "pt": "Gomorra"
+  },
+  "Greece": {
+   "es": "Grecia",
+   "pt": "Grécia"
+  },
+  "Hamath": {
+   "es": "Hamat",
+   "pt": "Hamate"
+  },
+  "Havilah": {
+   "es": "Havila",
+   "pt": "Havilá"
+  },
+  "Hazor": {
+   "es": "Asor (place); Hasor (place)"
+  },
+  "Hebron": {
+   "es": "Hebrón",
+   "pt": "Hebrom"
+  },
+  "Herod": {
+   "es": "Herodes",
+   "pt": "Herodes"
+  },
+  "Hormah": {
+   "es": "Horma",
+   "pt": "Hormá"
+  },
+  "Idumea": {
+   "pt": "Idumeia"
+  },
+  "Issachar": {
+   "es": "Isacar",
+   "pt": "Issacar"
+  },
+  "Italy": {
+   "es": "Italia",
+   "pt": "Itália"
+  },
+  "Jabbok": {
+   "es": "Jaboc",
+   "pt": "Jaboque"
+  },
+  "Jehu": {
+   "es": "Jehú",
+   "pt": "Jeú"
+  },
+  "Jephthah": {
+   "es": "Jefté",
+   "pt": "Jefté"
+  },
+  "Jeremiah": {
+   "es": "Jeremías",
+   "pt": "Jeremias"
+  },
+  "Jericho": {
+   "es": "Jericó",
+   "pt": "Jericó"
+  },
+  "Jerusalem": {
+   "es": "Jerusalén",
+   "pt": "Jerusalém"
+  },
+  "Jezreel": {
+   "es": "Jezreelita"
+  },
+  "Joab": {
+   "pt": "Joabe"
+  },
+  "John": {
+   "es": "Juan",
+   "pt": "João"
+  },
+  "Joppa": {
+   "es": "Jope",
+   "pt": "Jope"
+  },
+  "Jordan": {
+   "es": "Jordán",
+   "pt": "Jordão"
+  },
+  "Joseph": {
+   "es": "José (person); Josef (person); Jefone (person)",
+   "pt": "José"
+  },
+  "Joshua": {
+   "es": "Josué (person); Jesuá (person)",
+   "pt": "Josué (person); Jesua (person)"
+  },
+  "Josiah": {
+   "es": "Josías",
+   "pt": "Josias"
+  },
+  "Judah": {
+   "es": "Judá (person); Jehudas (person)",
+   "pt": "Judá"
+  },
+  "Kohath": {
+   "es": "Coat",
+   "pt": "Coate"
+  },
+  "Lebanon": {
+   "es": "Líbano",
+   "pt": "Líbano"
+  },
+  "Lot": {
+   "pt": "Ló"
+  },
+  "Lycia": {
+   "es": "Licia",
+   "pt": "Lícia"
+  },
+  "Lydda": {
+   "es": "Lyda",
+   "pt": "Lida"
+  },
+  "Macedonia": {
+   "pt": "Macedônia"
+  },
+  "Manasseh": {
+   "es": "Manasés",
+   "pt": "Manassés"
+  },
+  "Megiddo": {
+   "es": "Megido",
+   "pt": "Megido"
+  },
+  "Mesopotamia": {
+   "pt": "Mesopotâmia"
+  },
+  "Micah": {
+   "es": "Micás (person); Micá (person)",
+   "pt": "Mica"
+  },
+  "Moab": {
+   "pt": "Moabe"
+  },
+  "Molech": {
+   "es": "Moloch",
+   "pt": "Moloque"
+  },
+  "Mount Ebal": {
+   "es": "Monte Ebal",
+   "pt": "Monte Ebal"
+  },
+  "Mount Seir": {
+   "es": "Monte Seir",
+   "pt": "Monte Seir"
+  },
+  "Mount Tabor": {
+   "es": "Monte Tabor",
+   "pt": "Monte Tabor"
+  },
+  "Myra": {
+   "es": "Mira",
+   "pt": "Mira"
+  },
+  "Mysia": {
+   "es": "Misia",
+   "pt": "Mísia"
+  },
+  "Naamah": {
+   "es": "Naama",
+   "pt": "Naamá"
+  },
+  "Nahor": {
+   "es": "Nacor",
+   "pt": "Naor"
+  },
+  "Naphtali": {
+   "es": "Neftalí",
+   "pt": "Naftali"
+  },
+  "Nineveh": {
+   "es": "Nínive",
+   "pt": "Nínive"
+  },
+  "Noah": {
+   "es": "Noé (person); Noa (person)",
+   "pt": "Noé (person); Noa (person)"
+  },
+  "Nob": {
+   "pt": "Nobe"
+  },
+  "Og": {
+   "pt": "Ogue"
+  },
+  "On": {
+   "es": "Hon",
+   "pt": "Om"
+  },
+  "Paul": {
+   "es": "Pablo",
+   "pt": "Paulo"
+  },
+  "Philip": {
+   "es": "Felipe",
+   "pt": "Filipe"
+  },
+  "Philippi": {
+   "es": "Filipos",
+   "pt": "Filipos"
+  },
+  "Pisidia": {
+   "pt": "Pisídia"
+  },
+  "Plain": {
+   "es": "Llanura",
+   "pt": "Planície"
+  },
+  "Rabbah": {
+   "es": "Raba",
+   "pt": "Rabá"
+  },
+  "Ram": {
+   "pt": "Rão"
+  },
+  "Rebekah": {
+   "es": "Rebeca",
+   "pt": "Rebeca"
+  },
+  "Red Sea": {
+   "es": "Mar Rojo",
+   "pt": "Mar Vermelho"
+  },
+  "Rehoboam": {
+   "es": "Roboam",
+   "pt": "Roboão"
+  },
+  "Rephidim": {
+   "es": "Refidim",
+   "pt": "Refidim"
+  },
+  "Rome": {
+   "es": "Roma",
+   "pt": "Roma"
+  },
+  "Saul": {
+   "es": "Saúl"
+  },
+  "Sea of Galilee": {
+   "es": "Mar de Galilea",
+   "pt": "Mar da Galileia"
+  },
+  "Sennacherib": {
+   "es": "Senaquérib",
+   "pt": "Senaqueribe"
+  },
+  "Shem": {
+   "es": "Sem",
+   "pt": "Sem"
+  },
+  "Shur": {
+   "pt": "Sur"
+  },
+  "Sihon": {
+   "es": "Sehón",
+   "pt": "Seom"
+  },
+  "Sinai": {
+   "es": "Sinaí"
+  },
+  "Sodom": {
+   "es": "Sodoma",
+   "pt": "Sodoma"
+  },
+  "Solomon": {
+   "es": "Salomón",
+   "pt": "Salomão"
+  },
+  "Stephen": {
+   "es": "Esteban",
+   "pt": "Estêvão"
+  },
+  "Syria": {
+   "es": "Siria",
+   "pt": "Síria"
+  },
+  "Thessalonica": {
+   "es": "Tesalónica",
+   "pt": "Tessalônica"
+  },
+  "Tiberias": {
+   "pt": "Tibérias"
+  },
+  "Trachonitis": {
+   "es": "Traconite",
+   "pt": "Traconites"
+  },
+  "Tyre": {
+   "es": "Tiro",
+   "pt": "Tiro"
+  },
+  "Uzziah": {
+   "es": "Uzías",
+   "pt": "Uzias (person); Uzia (person)"
+  },
+  "Zarethan": {
+   "es": "Zaretán",
+   "pt": "Zaretã"
+  },
+  "Zebulun": {
+   "es": "Zabulón",
+   "pt": "Zebulom"
+  },
+  "Ziklag": {
+   "es": "Siclag",
+   "pt": "Ziclague"
+  },
+  "Zin": {
+   "pt": "Zim"
+  }
+ }
+}

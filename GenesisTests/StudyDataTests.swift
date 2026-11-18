@@ -165,10 +165,11 @@ struct StudyTranslationTests {
         #expect(place.name == jerusalem)
         #expect(try study.place(id: place.id)?.name == jerusalem)
         #expect(try study.routes().first?.title == journey)
-        // Descriptions stay English until they're translated.
+        // A description is Easton's English until its translation passes the check.
         let person = try #require(try study.person(id: found.id))
         let english = try #require(try repository(nil).person(id: found.id))
-        #expect(person.biography == english.biography)
+        #expect(!english.biographyIsTranslated)
+        #expect(person.biographyIsTranslated != (person.biography == english.biography))
     }
 
     @Test(arguments: ["es", "pt"])
