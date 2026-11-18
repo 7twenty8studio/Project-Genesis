@@ -144,3 +144,9 @@ What the translators reported per batch, beyond the review files.
 - wrong_verse: Azal (place 126) q1 (2 Kgs 10:24 given, Zech 14:5 meant).
 - Wording quotes where the BLIVRE already has Easton's correction (Arabah, Aram, Ararat, Akrabbim) give the A.V. word; Aram-naharaim's "terra de Arã" loses the A.V. contrast.
 - Amalek: Num 13:29 part outside the quote. Source: Bashan entry cut off ("quatro distritos,"); Baalath-beer unclosed parenthesis; Ashdod, Baalath, Bealoth duplicates.
+
+## es 024–025
+- Glossary/app name errors found: Shealtiel was "Zorobabel" (!), Gaddi "Gadiel", and modernizer slips Frygia, Lyda, Bitynia, Syntyqué, Tyrano, Efeso, plus untranslated Monte Shapher, Puerta de Miphkad, Valle de Jiphthahel/Rephaim/Zephathah. All fixed in manual.json (Salatiel, Gadi, Frigia, Lida, Bitinia, Síntique, Tirano, Éfeso, Monte Sefer, Puerta del Juicio, Valle de Jefte-el/Refaim/Sefata).
+- TODO before loading: earlier es batches wrote "Frygia", "Lyda", "Efeso" in Easton's own text; replace outside the quotation marks (RV1909 quotes keep its spelling).
+- wrong_verse: Abel q2: quoted Gen 4:5 RV1909 verbatim by hand (the matcher gave only 4:3–4).
+- Unsure translated: Stephen "Durmió" (Acts 7:60), Zerah "exceeding much spoil", Zacharias "nacido fuera de tiempo". Sisera: Roberts's verse rendering translated from his English.
