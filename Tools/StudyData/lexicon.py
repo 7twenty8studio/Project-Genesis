@@ -57,7 +57,7 @@ BATCH_WORDS = 6000
 LETTER = "֐-׿Ͱ-ͽͿ-ΆΈ-Ͽἀ-῿"
 ORIGINAL_WORD = re.compile(rf"[{LETTER}][{LETTER}̀-ͯ]*")
 # STEPBible's references: "Jhn.13:35", "1Co.2:3", "2Mac.4:1", "Mat.5" (a chapter).
-STEP_REFERENCE = re.compile(r"(?<![\w.])[1-4]?[A-Z][a-z]{1,3}\.\s?\d+(?::\d+(?:[-–]\d+)?)?")
+STEP_REFERENCE = re.compile(r"(?<![\w.])[1-4]?[A-Z][a-z]{1,3}\. ?\d+(?::\d+(?:[-–]\d+)?)?")
 # Abbott-Smith also cites with a space ("Jn 2:13", "La 3:63", "Su 1:13",
 # often a numbered book's later chapters): in the Greek these are codes too.
 SHORT_REFERENCE = re.compile(r"(?<![\w.])(?:[1-4IV]{1,3} ?)?[A-Z][a-z]{0,3} \d+:\d+(?:[-–]\d+)?")
@@ -67,8 +67,16 @@ SIGLUM = re.compile(r"(?<![\w])(?:[A-Z]{2,}[a-z]*|[IVX]+)(?![\w])")
 MARKS = re.compile(r"[†*§]")
 GREEK_STOPS = re.compile(r"[\u037e\u0387][;,.:]?")
 # Words in capitals that aren't sigla, and the ones that change: OT is AT.
-NOT_SIGLA = {"JESUS", "LORD", "GOD", "I"}
+NOT_SIGLA = {"JESUS", "LORD", "GOD", "I", "SEÑOR", "SENHOR", "DIOS", "DEUS", "JESÚS", "QUESTION", "PREGUNTA", "PERGUNTA"}
 SIGLA_IN = {"OT": "AT"}
+
+
+# STEPBible's slips in the English, fixed before translating (each with why).
+SOURCE_FIXES = {
+    # Strong's has "(and irreg. in Exod. 8:17, 18 [Heb. 13, 14])": the Hebrew
+    # Bible's verse numbers, which the expansion of "Heb." made Hebrews 13:14.
+    ("H3654", "derivation"): ("Exodus 8:17,18; Hebrews 13:14", "Exodus 8:17,18 [Hebrew 8:13,14]"),
+}
 
 
 def sha(entry):
@@ -88,6 +96,10 @@ def entries_from_db():
     for strongs, language, lemma, gloss, definition, derivation in rows:
         entry = {"strongs": strongs, "language": language, "lemma": lemma or ""}
         for field, value in zip(FIELDS, (gloss, definition, derivation)):
+            if (strongs, field) in SOURCE_FIXES and value:
+                was, now = SOURCE_FIXES[(strongs, field)]
+                assert value.count(was) == 1, (strongs, field)
+                value = value.replace(was, now)
             if value and value.strip():
                 entry[field] = value
         if any(f in entry for f in FIELDS):

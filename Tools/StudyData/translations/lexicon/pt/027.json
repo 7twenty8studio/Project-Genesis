@@ -1,0 +1,3335 @@
+{
+ "batch": "027",
+ "lang": "pt",
+ "entries": [
+  {
+   "strongs": "H8231",
+   "sha256": "b3752bc8d5714f1e1bf1c94d64bb61599b91964a3b0bca26585be31e8ccec580",
+   "gloss": "polir",
+   "definition": "reluzir, isto é, (figuradamente) ser (causativamente, tornar) formoso",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8232",
+   "sha256": "7ad14ebbadc0d1404e8f584353733252726aba3d4e6fbefc35fcfa1700b01896",
+   "gloss": "ser agradável",
+   "definition": "ser belo",
+   "derivation": "(aramaico) correspondente a 8231;"
+  },
+  {
+   "strongs": "H8233",
+   "sha256": "3f8a5a0ee1d0cac5d37556536d13919a4aee1f4ccb3b15c393b505fe5932675a",
+   "gloss": "beleza",
+   "definition": "beleza",
+   "derivation": "de 8231;"
+  },
+  {
+   "strongs": "H8234",
+   "sha256": "a989c7359762ab397ea0c5424014af7c296df4c463f8ce2fee2d4d7ae6ad2910",
+   "gloss": "(Monte) Séfer",
+   "definition": "Séfer, um lugar no deserto",
+   "derivation": "o mesmo que 8233;"
+  },
+  {
+   "strongs": "H8235",
+   "sha256": "4aa18e44aabba3b692f0d8be56dfdbd7754d8c60ca0b83ee98bedc8586ca184c",
+   "gloss": "claridade",
+   "definition": "brilho",
+   "derivation": "de 8231;"
+  },
+  {
+   "strongs": "H8236",
+   "sha256": "e36f911d954c20826500338546a192eba72b2c1074ff5b40aa90dc6135efebac",
+   "gloss": "Sifrá",
+   "definition": "Sifrá, uma israelita",
+   "derivation": "o mesmo que 8235;"
+  },
+  {
+   "strongs": "H8237",
+   "sha256": "db274ad936aa6896ef8e5e2cb1e7aeb2f15ce5503ae5739be3e08b95b748f91c",
+   "gloss": "pavilhão",
+   "definition": "esplêndido, isto é, uma tapeçaria ou dossel",
+   "derivation": "de 8231;"
+  },
+  {
+   "strongs": "H8238",
+   "sha256": "1a69e80a879786386567e4719a89e98833937d7dcdcd7168d13c55380b0ed8ea",
+   "gloss": "alva",
+   "definition": "a alva (como brilhante com a aurora)",
+   "derivation": "(aramaico) de 8231;"
+  },
+  {
+   "strongs": "H8239",
+   "sha256": "5ef814e1290d885861898fb916f1afa1ea5624e2e8e368aaf8f75fcbdb991324",
+   "gloss": "pôr",
+   "definition": "situar, isto é, (em geral) pendurar ou (figuradamente) estabelecer, reduzir",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8240A",
+   "sha256": "3e8e9efd228e524a20cd5ecb2b498d2f47f936282b4760bf93c0b37abc3a41ba",
+   "gloss": "monturo",
+   "definition": "um curral (duplo) (para o gado); também um gancho (de duas pontas) (para esfolar animais)",
+   "derivation": "de 8239;"
+  },
+  {
+   "strongs": "H8240B",
+   "sha256": "a489d7dc4b8055b960cfaf7f06996e82b775b49f02ad81c318310fe934fbe0fc",
+   "gloss": "gancho",
+   "definition": "um curral (duplo) (para o gado); também um gancho (de duas pontas) (para esfolar animais)",
+   "derivation": "de 8239;"
+  },
+  {
+   "strongs": "H8241",
+   "sha256": "1bfe655f407ef6f399b537bb1e59e420e00b876a93db1c251d2c34ff20eec54a",
+   "gloss": "transbordamento",
+   "definition": "um acesso (de ira)",
+   "derivation": "de 7857 (por aliteração com 7110);"
+  },
+  {
+   "strongs": "H8242",
+   "sha256": "ba24426d95b5e7c47cf38be55f3733338e142e58d33687030385e24f98da5cac",
+   "gloss": "pano de saco",
+   "definition": "propriamente, uma malha (que deixa passar um líquido), isto é, pano grosso e frouxo ou aniagem (usado no luto e para fazer sacos); daí, um saco (para cereal etc.)",
+   "derivation": "de 8264;"
+  },
+  {
+   "strongs": "H8243",
+   "sha256": "a5a4ec810ab92f3cec79726f32944974cb8b75497b35602e5f618d64918e6ef8",
+   "gloss": "perna",
+   "definition": "a perna",
+   "derivation": "(aramaico) correspondente a 7785;"
+  },
+  {
+   "strongs": "H8244",
+   "sha256": "0c06f61e51fe720f0f5d0ca5ecd0aa30d27c89fc12cbee143803b8d3d7684de9",
+   "gloss": "atar",
+   "definition": "prender",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8245",
+   "sha256": "e405c730d73eda1a42b56496113c59fccb685047c5d6615ec7d5ee8b56f9da46",
+   "gloss": "vigiar",
+   "definition": "estar alerta, isto é, sem dormir; daí estar à espreita (seja para o bem ou para o mal)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8246",
+   "sha256": "4d61768ba89f9a33685241a4f5162cd8863a734518b1f19c60a3d6236a904004",
+   "gloss": "ter forma de amêndoa",
+   "definition": "ser (intensivamente, tornar) em forma de amêndoa",
+   "derivation": "denominativo de 8247;"
+  },
+  {
+   "strongs": "H8247",
+   "sha256": "01e86922368865bbe6e2325701b74ecc9acb4192fc50796193a0f981cf5b96fd",
+   "gloss": "amendoeira",
+   "definition": "a amendoeira (árvore ou fruto; por ser a primeira a florescer)",
+   "derivation": "de 8245;"
+  },
+  {
+   "strongs": "H8248G",
+   "sha256": "14f907288e0924e0a08e18a3d94bc6c22f194c7a69dbcceffef433e7d480799a",
+   "gloss": "dar de beber: regar",
+   "definition": "beber em grandes goles, isto é, (causativamente) regar ou dar uma bebida a",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8248H",
+   "sha256": "a255a7cb0ad6137219fa58e431998864c4614fc9f25b0adf4e191cca9a6731c3",
+   "gloss": "dar de beber: beber",
+   "definition": "beber em grandes goles, isto é, (causativamente) regar ou dar uma bebida a",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8248I",
+   "sha256": "68bfcc98247b70b0af59f9ce9d590404df7f2e4172a42aa19146cd0186ab8e54",
+   "gloss": "dar de beber: copeiro",
+   "definition": "beber em grandes goles, isto é, (causativamente) regar ou dar uma bebida a",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8249",
+   "sha256": "0348d46b1f576df8db696955653415ea85c1a8d7d3f5d6716d0d5d290ad11b5e",
+   "gloss": "bebida",
+   "definition": "(plural coletivo) um gole",
+   "derivation": "de 8248;"
+  },
+  {
+   "strongs": "H8250",
+   "sha256": "065b1eab45e4ebc0c1fc6475c32767c6bdc4aca597c9e4f405072396c62f9204",
+   "gloss": "bebida",
+   "definition": "uma bebida; umidade, isto é, (figuradamente) refrigério",
+   "derivation": "de 8248;"
+  },
+  {
+   "strongs": "H8251",
+   "sha256": "642224d79ae53a9d477c2372dbb0c95dd48e6828d3d3b2f65e23d67b3c3dc85d",
+   "gloss": "abominação",
+   "definition": "repugnante, isto é, imundo; especialmente idólatra ou (concretamente) um ídolo",
+   "derivation": "ou שִׁקֻּץ; de 8262;"
+  },
+  {
+   "strongs": "H8252",
+   "sha256": "edf7333fa534d044465655f7b84bf0fadf78287cab1577c73a12c0a2a9ee6446",
+   "gloss": "aquietar",
+   "definition": "repousar (geralmente figurado)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8253",
+   "sha256": "9a543e27f419ffee8126d1630742ca7cbac9c9771d48480f4824da9fe8a0ad84",
+   "gloss": "quietude",
+   "definition": "tranquilidade",
+   "derivation": "de 8252;"
+  },
+  {
+   "strongs": "H8254",
+   "sha256": "2e114de3f033add6bc2e1017efbcd9b00b4594fd2f00b596c6891c5d9ec4f688",
+   "gloss": "pesar",
+   "definition": "suspender ou equilibrar (especialmente no comércio)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8255",
+   "sha256": "a1cc4958e64ceec3f889ed821531989962f6fd61c55b048fee46f6ec4a52457f",
+   "gloss": "siclo",
+   "definition": "provavelmente um peso; usado como padrão comercial",
+   "derivation": "de 8254;"
+  },
+  {
+   "strongs": "H8256",
+   "sha256": "852c837904159080bf9e878149a3d74d55611817f8978a391ad1d0cc0fcca264",
+   "gloss": "sicômoro",
+   "definition": "um sicômoro (geralmente a árvore)",
+   "derivation": "ou (feminino) שִׁקְמָה; de derivação incerta;"
+  },
+  {
+   "strongs": "H8257",
+   "sha256": "ae0c6e0ee330b8aab3dfb7be2684c054b9536d50f455805e4b99f2885477b8a6",
+   "gloss": "afundar",
+   "definition": "baixar; por implicação, ser inundado, cessar; causativamente, abater, subjugar",
+   "derivation": "(abreviado Amós 8:8); raiz primitiva;"
+  },
+  {
+   "strongs": "H8258",
+   "sha256": "4312ac23cc59d4947045ec4f67da637c77e3d0d104b02b9146760a2fb314d079",
+   "gloss": "concavidade",
+   "definition": "uma depressão",
+   "derivation": "de 8257;"
+  },
+  {
+   "strongs": "H8259",
+   "sha256": "dc3305741ac12659219009d239f018cb3af423e64ad22d535c01c7476d8ba99b",
+   "gloss": "olhar",
+   "definition": "propriamente, inclinar-se para fora (de uma janela), isto é, (por implicação) espreitar ou contemplar (passivamente, ser um espetáculo)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8260",
+   "sha256": "4a0aca684ef0d0bca56eb98b471d8910c1685df13dfdbc8382281ecb9328fa5b",
+   "gloss": "moldura",
+   "definition": "uma seteira (para olhar para fora), para deixar entrar luz e ar",
+   "derivation": "de 8259;"
+  },
+  {
+   "strongs": "H8261",
+   "sha256": "03c5dc7d469851440aec4c2bce5ba2e2dbd94b8aace1623c1509d6f55e96bb68",
+   "gloss": "moldura",
+   "definition": "uma abertura com o umbral chanfrado",
+   "derivation": "particípio passivo de 8259; (compare 8260)"
+  },
+  {
+   "strongs": "H8262",
+   "sha256": "400a4c1bfa422c39c96bc00389b24b70d7700f5e497b5d066f2e25dd6330eacf",
+   "gloss": "detestar",
+   "definition": "ser imundo, isto é, (intensivamente) detestar, poluir",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8263",
+   "sha256": "718df571d54282c2713a6d8eef45da815e5017491fc3e80787892d73ed1ef70d",
+   "gloss": "abominação",
+   "definition": "imundícia, isto é, (figurada e especificamente) um objeto idólatra",
+   "derivation": "de 8262;"
+  },
+  {
+   "strongs": "H8264",
+   "sha256": "0374d7d16f84227bc50b676aa5166fbe21968bbd57e0b97afad1e259df54cf2e",
+   "gloss": "correr",
+   "definition": "correr (como um animal de rapina); por implicação, buscar avidamente",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8265",
+   "sha256": "8ed91e8c6ea53ad57bfb2b7a1dfff0517d6eb0369ed54897fe465766ec7a151a",
+   "gloss": "piscar os olhos",
+   "definition": "olhar de soslaio, isto é, piscar com coqueteria",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8266",
+   "sha256": "7621d44c7b83d9c6845effffb5d83f9c027b9079e32e6abf1e97379a457a7c40",
+   "gloss": "agir falsamente",
+   "definition": "enganar, isto é, ser falso (geralmente em palavras)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8267",
+   "sha256": "6e94aa4bb2dade8fa2b494d9ff1768eb021bc4ad8798c9c4a1c573427978c466",
+   "gloss": "engano",
+   "definition": "uma inverdade; por implicação, um embuste (muitas vezes adverbial)",
+   "derivation": "de 8266;"
+  },
+  {
+   "strongs": "H8268",
+   "sha256": "013c79f45736b4ea29ceff77e5f87207697b92525e390a400bec5f5918ea91a8",
+   "gloss": "bebedouro",
+   "definition": "um bebedouro (para dar água)",
+   "derivation": "de 8248;"
+  },
+  {
+   "strongs": "H8269",
+   "sha256": "f7d7176083d387c7a8a81368baa24eecc43f284c7de9a687eca23bfb5328389c",
+   "gloss": "governante",
+   "definition": "uma pessoa principal (de qualquer posição ou classe)",
+   "derivation": "de 8323;"
+  },
+  {
+   "strongs": "H8270",
+   "sha256": "39efe0bae4f44a75708307c9f5f4934f8d34582049591dea9b3d93448865ef4d",
+   "gloss": "cordão umbilical",
+   "definition": "um cordão (por ser torcido), isto é, (especificamente) o cordão umbilical (também figuradamente, como o centro da força)",
+   "derivation": "de 8324; (compare 8306)"
+  },
+  {
+   "strongs": "H8271",
+   "sha256": "d5a72659eea8fd54b6ff4ca0ed3c555555f9e6535c4b3fef83925f936ff1e6d7",
+   "gloss": "soltar",
+   "definition": "libertar, separar; figuradamente, desatar, começar; por implicação (de descarregar os animais) residir",
+   "derivation": "(aramaico) raiz correspondente à de 8293;"
+  },
+  {
+   "strongs": "H8272G",
+   "sha256": "89b935ea3c71c825ae32eb748156d149c6fde0e0471ad179211c06964415a022",
+   "gloss": "Sarezer",
+   "definition": "Sarezer, nome de um assírio e de um israelita",
+   "derivation": "de derivação estrangeira;"
+  },
+  {
+   "strongs": "H8272H",
+   "sha256": "89b935ea3c71c825ae32eb748156d149c6fde0e0471ad179211c06964415a022",
+   "gloss": "Sarezer",
+   "definition": "Sarezer, nome de um assírio e de um israelita",
+   "derivation": "de derivação estrangeira;"
+  },
+  {
+   "strongs": "H8273",
+   "sha256": "54372186038e93ba5779f637945cd4dd15bb39e0d1e9b6b61836472db0d5fde1",
+   "gloss": "calor abrasador",
+   "definition": "brilho trêmulo (do ar), especialmente a miragem",
+   "derivation": "de uma raiz não usada que significa brilhar intensamente;"
+  },
+  {
+   "strongs": "H8274G",
+   "sha256": "993911a60de9d8d3ea19bdd5011266ecb6534299c1a1f907f12671a4d8df8db3",
+   "gloss": "Serebias",
+   "definition": "Serebias, nome de dois israelitas",
+   "derivation": "de 8273 e 3050; Jah trouxe calor;"
+  },
+  {
+   "strongs": "H8274H",
+   "sha256": "993911a60de9d8d3ea19bdd5011266ecb6534299c1a1f907f12671a4d8df8db3",
+   "gloss": "Serebias",
+   "definition": "Serebias, nome de dois israelitas",
+   "derivation": "de 8273 e 3050; Jah trouxe calor;"
+  },
+  {
+   "strongs": "H8275",
+   "sha256": "b87c062e4761cbc39263985968fa5b99834ac122636d17db721ae883a2ccf721",
+   "gloss": "cetro",
+   "definition": "um cetro de império",
+   "derivation": "por 7626;"
+  },
+  {
+   "strongs": "H8276",
+   "sha256": "e0dd4f60bf9489e3be3b92c2969e879a9d16abf7a35505f49f57891cb7b2f643",
+   "gloss": "entrelaçar",
+   "definition": "entrelaçar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8277",
+   "sha256": "bb33c9f81acd7d10cdd956a316055b7d6f560cf28fdb90b99ec34c03ca1afbb3",
+   "gloss": "escapar",
+   "definition": "propriamente, furar, isto é, (figuradamente, pela ideia de escapulir) escapar ou sobreviver",
+   "derivation": "raiz primitiva; (compare 8279)"
+  },
+  {
+   "strongs": "H8278",
+   "sha256": "845f519b4428ce4995667cbcb5b75e93fd73817bce2133eaee86edb6d95416ee",
+   "gloss": "trançado",
+   "definition": "costura (como perfurada com uma agulha)",
+   "derivation": "de 8277;"
+  },
+  {
+   "strongs": "H8279",
+   "sha256": "7cafe262f14af39f4ed6d84b079e88ee2165a72a80445143d7544f1c518b2957",
+   "gloss": "compasso",
+   "definition": "uma sovela de traçar (de carpinteiro) (para marcar ou riscar medidas)",
+   "derivation": "de 8277;"
+  },
+  {
+   "strongs": "H8280",
+   "sha256": "4eab9cf11a9b0e7f507f0b3b39dd6b12bd207626b0b05ba21fa17b567c4a7034",
+   "gloss": "lutar",
+   "definition": "prevalecer",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8281",
+   "sha256": "0bd213d9becb26edb1e47dbe7c755cc6df551ab7834c7cd23b83964bca9d9b17",
+   "gloss": "libertar",
+   "definition": "libertar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8282",
+   "sha256": "78baa0bec9bae1ebaffbb372cad974f5e01d58b1b5d93553dd8e5c7f06dec1de",
+   "gloss": "princesa",
+   "definition": "uma senhora, isto é, mulher nobre",
+   "derivation": "feminino de 8269;"
+  },
+  {
+   "strongs": "H8283",
+   "sha256": "97badfced4b6d95892a4818319259007d996aa64788d614d0094c70b0c36f398",
+   "gloss": "Sara",
+   "definition": "Sara, a esposa de Abraão",
+   "derivation": "o mesmo que 8282;"
+  },
+  {
+   "strongs": "H8284",
+   "sha256": "502a51f3cd01773b9aa45f090722f4326df8cba457b7edddc9832747c255a707",
+   "gloss": "fileira de videiras",
+   "definition": "uma fortificação (literal ou figuradamente)",
+   "derivation": "provavelmente feminino de 7791;"
+  },
+  {
+   "strongs": "H8285",
+   "sha256": "f503c5081dac68c286e430800ed1fcdc8d8f51727741cfd55152ed77bd923c4f",
+   "gloss": "bracelete",
+   "definition": "uma pulseira (por ser compacta ou apertar)",
+   "derivation": "de 8324 em seu sentido original de apertar;"
+  },
+  {
+   "strongs": "H8286",
+   "sha256": "2c23a6bd8990120ac1619e473f1539776eed28784e60fd8204a0b7932c7c9ddb",
+   "gloss": "Serugue",
+   "definition": "Serugue, um patriarca pós-diluviano",
+   "derivation": "de 8276; gavinha;"
+  },
+  {
+   "strongs": "H8287",
+   "sha256": "3d4205d9e1c7dbac2bbc567cfcac9496ad09a658e1a577f8ca7e131021be14ee",
+   "gloss": "Saruém",
+   "definition": "Saruém, um lugar na Palestina",
+   "derivation": "provavelmente de 8281 (no sentido de habitar (compare 8271) e 2580; morada de prazer;"
+  },
+  {
+   "strongs": "H8288",
+   "sha256": "246827802417ac2a8fd1e54af1c2b94d52252a357fb621853a7c64eef5a2f641",
+   "gloss": "correia",
+   "definition": "uma correia (por ser amarrada ou atada)",
+   "derivation": "de 8308;"
+  },
+  {
+   "strongs": "H8289G",
+   "sha256": "87bed05aa6d6121afe5eaed4cbf478656fd8c7c056adc9c781dde1173102582d",
+   "gloss": "Lasarom",
+   "definition": "Sarom, nome de um lugar na Palestina",
+   "derivation": "provavelmente abreviado de 3474; planície;"
+  },
+  {
+   "strongs": "H8289H",
+   "sha256": "c19f2747ab7260f32ce44a40db34230a8a2a9db565d7a6912330dea5e7193d1d",
+   "gloss": "Sarom",
+   "definition": "Sarom, nome de um lugar na Palestina",
+   "derivation": "provavelmente abreviado de 3474; planície;"
+  },
+  {
+   "strongs": "H8289I",
+   "sha256": "c19f2747ab7260f32ce44a40db34230a8a2a9db565d7a6912330dea5e7193d1d",
+   "gloss": "Sarom",
+   "definition": "Sarom, nome de um lugar na Palestina",
+   "derivation": "provavelmente abreviado de 3474; planície;"
+  },
+  {
+   "strongs": "H8290",
+   "sha256": "229e357d041a3bb39b3cfaa3cced43d3ae9f0e550a4ba2e8a80c7ea05e28bbb4",
+   "gloss": "saronita",
+   "definition": "um saronita ou habitante de Sarom",
+   "derivation": "pátrio de 8289;"
+  },
+  {
+   "strongs": "H8291",
+   "sha256": "ad486ae707a70ae9390934d30e9709f6890733ed746b12494997207ab888a73c",
+   "gloss": "gavinha",
+   "definition": "uma videira",
+   "derivation": "particípio passivo do mesmo que 8321;"
+  },
+  {
+   "strongs": "H8292",
+   "sha256": "72855db2c0313989e09739e1ce29a3f6410a833ed4211798a168cbdd29fb82ed",
+   "gloss": "assobio",
+   "definition": "um assobio (de escárnio); por analogia, um som de flauta",
+   "derivation": "ou (por permutação) שְׁרִיקָה; particípio passivo feminino de 8319;"
+  },
+  {
+   "strongs": "H8293",
+   "sha256": "6afd72503fef3abbec30d4568f4b40bbdfaae00528da21e19df885eacdb0b053",
+   "gloss": "remanescente",
+   "definition": "liberdade",
+   "derivation": "de 8281 abreviado;"
+  },
+  {
+   "strongs": "H8294",
+   "sha256": "dc152cbfd8456d25642e5e5b70ef774e5a22c4d9c98a288b13c684ba72bc7c49",
+   "gloss": "Sera",
+   "definition": "Sera, uma israelita",
+   "derivation": "por permutação por 5629; excesso;"
+  },
+  {
+   "strongs": "H8295",
+   "sha256": "f3bfb48c1e3f0e39ae603e731255ebd145645916fd46bcf41fe7e43ebfe08c76",
+   "gloss": "retalhar",
+   "definition": "golpear",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8296A",
+   "sha256": "7ba090aed3028524660b4885d231b2791c7d96418d6496f42ab5e8f128e7ea9f",
+   "gloss": "incisão",
+   "definition": "uma incisão",
+   "derivation": "e שָׂרֶטֶת; de 8295;"
+  },
+  {
+   "strongs": "H8296B",
+   "sha256": "7ba090aed3028524660b4885d231b2791c7d96418d6496f42ab5e8f128e7ea9f",
+   "gloss": "incisão",
+   "definition": "uma incisão",
+   "derivation": "e שָׂרֶטֶת; de 8295;"
+  },
+  {
+   "strongs": "H8297",
+   "sha256": "e1a187d2a7fa4c6b43f6fe999d374f07aeb8fb488d71a367d834424e32383e85",
+   "gloss": "Sarai",
+   "definition": "Sarai, a esposa de Abraão",
+   "derivation": "de 8269; dominador;"
+  },
+  {
+   "strongs": "H8298",
+   "sha256": "a7e68ce743115e45589b0052efb47101385534eeb1a1be44bdc2c8c7bcd6e317",
+   "gloss": "Sarai",
+   "definition": "Sarai, um israelita",
+   "derivation": "provavelmente de 8324; hostil;"
+  },
+  {
+   "strongs": "H8299",
+   "sha256": "f792ef1c20a05777c1611124510a2252d1d4c89773d927d40705c1b68cd3a4c9",
+   "gloss": "gavinha",
+   "definition": "uma gavinha (por enroscar-se)",
+   "derivation": "de 8276;"
+  },
+  {
+   "strongs": "H8300",
+   "sha256": "b171bc12b486cfe497569cfff217d14c6277c67b58302ffb89d11e3dbc0c54c9",
+   "gloss": "sobrevivente",
+   "definition": "um sobrevivente",
+   "derivation": "de 8277;"
+  },
+  {
+   "strongs": "H8301",
+   "sha256": "ec5a6f2a54a12360f1a3b5b954bcc9b1c403edd5eecbbb63d5491335d6251426",
+   "gloss": "Saride",
+   "definition": "Saride, um lugar na Palestina",
+   "derivation": "o mesmo que 8300;"
+  },
+  {
+   "strongs": "H8302A",
+   "sha256": "6ec818888b50f683118826cbbb3be6f81da3970f744e411cf8ba658aa18977aa",
+   "gloss": "lança",
+   "definition": "uma couraça (como se torcida)",
+   "derivation": "ou שִׁרְיֹן; e שִׁרְיָן; também (feminino) שִׁרְיָה; e שִׁרְיֹנָה; de 8281 no sentido original de voltar;"
+  },
+  {
+   "strongs": "H8302B",
+   "sha256": "1287cfac11b539fd324399802e38bd219fd94932905cea3461248c55f2340ae6",
+   "gloss": "armadura",
+   "definition": "uma couraça (como se torcida)",
+   "derivation": "ou שִׁרְיֹן; e שִׁרְיָן; também (feminino) שִׁרְיָה; e שִׁרְיֹנָה; de 8281 no sentido original de voltar;"
+  },
+  {
+   "strongs": "H8303",
+   "sha256": "dac04f9beeff12fd192703d2746d50e155aa7df2a113719af9b197eea49df646",
+   "gloss": "Siriom",
+   "definition": "Siriom, um pico do Líbano",
+   "derivation": "e שִׂרְיֹן; o mesmo que 8302 (isto é, coberto de neve);",
+   "note": "Strong's two spellings (Shirjon or Sirjon) are both Siriom in Almeida / Bíblia Livre."
+  },
+  {
+   "strongs": "H8304G",
+   "sha256": "73e8329b570cb4e9a891162520e85c759420c7ab695271346a1278dbe282720e",
+   "gloss": "Seraías",
+   "definition": "Seraías, nome de nove israelitas",
+   "derivation": "ou שְׂרָיָהוּ; de 8280 e 3050; Jah prevaleceu;"
+  },
+  {
+   "strongs": "H8304H",
+   "sha256": "73e8329b570cb4e9a891162520e85c759420c7ab695271346a1278dbe282720e",
+   "gloss": "Seraías",
+   "definition": "Seraías, nome de nove israelitas",
+   "derivation": "ou שְׂרָיָהוּ; de 8280 e 3050; Jah prevaleceu;"
+  },
+  {
+   "strongs": "H8304I",
+   "sha256": "73e8329b570cb4e9a891162520e85c759420c7ab695271346a1278dbe282720e",
+   "gloss": "Seraías",
+   "definition": "Seraías, nome de nove israelitas",
+   "derivation": "ou שְׂרָיָהוּ; de 8280 e 3050; Jah prevaleceu;"
+  },
+  {
+   "strongs": "H8304J",
+   "sha256": "73e8329b570cb4e9a891162520e85c759420c7ab695271346a1278dbe282720e",
+   "gloss": "Seraías",
+   "definition": "Seraías, nome de nove israelitas",
+   "derivation": "ou שְׂרָיָהוּ; de 8280 e 3050; Jah prevaleceu;"
+  },
+  {
+   "strongs": "H8304K",
+   "sha256": "73e8329b570cb4e9a891162520e85c759420c7ab695271346a1278dbe282720e",
+   "gloss": "Seraías",
+   "definition": "Seraías, nome de nove israelitas",
+   "derivation": "ou שְׂרָיָהוּ; de 8280 e 3050; Jah prevaleceu;"
+  },
+  {
+   "strongs": "H8304L",
+   "sha256": "73e8329b570cb4e9a891162520e85c759420c7ab695271346a1278dbe282720e",
+   "gloss": "Seraías",
+   "definition": "Seraías, nome de nove israelitas",
+   "derivation": "ou שְׂרָיָהוּ; de 8280 e 3050; Jah prevaleceu;"
+  },
+  {
+   "strongs": "H8304M",
+   "sha256": "73e8329b570cb4e9a891162520e85c759420c7ab695271346a1278dbe282720e",
+   "gloss": "Seraías",
+   "definition": "Seraías, nome de nove israelitas",
+   "derivation": "ou שְׂרָיָהוּ; de 8280 e 3050; Jah prevaleceu;"
+  },
+  {
+   "strongs": "H8304N",
+   "sha256": "73e8329b570cb4e9a891162520e85c759420c7ab695271346a1278dbe282720e",
+   "gloss": "Seraías",
+   "definition": "Seraías, nome de nove israelitas",
+   "derivation": "ou שְׂרָיָהוּ; de 8280 e 3050; Jah prevaleceu;"
+  },
+  {
+   "strongs": "H8305",
+   "sha256": "0aaa31cded5f8f542fa65b2e9fa0cf1377663af0660b6514ee9e5fa369dc89b3",
+   "gloss": "cardado",
+   "definition": "cardagem (ou pentear o linho), isto é, (concretamente) estopa (por extensão, pano de linho)",
+   "derivation": "do mesmo que 8321 no sentido original de furar;"
+  },
+  {
+   "strongs": "H8306",
+   "sha256": "2332a6d8e28dcadce7dc21de184de57bd32fc66de52756142f5465f06e66d7d0",
+   "gloss": "músculo",
+   "definition": "uma corda, isto é, (por analogia) tendão",
+   "derivation": "de 8324 no sentido original como em 8270 (compare 8326);"
+  },
+  {
+   "strongs": "H8307",
+   "sha256": "999dab31d68d2d13bc35801621d138b8160feb48395bfe1af2e715bca0c269fb",
+   "gloss": "teimosia",
+   "definition": "obstinação",
+   "derivation": "de 8324 no sentido de torcido, isto é, firme;"
+  },
+  {
+   "strongs": "H8308",
+   "sha256": "aac939d29593969be6c95d6a8ed172000f01b6e333d286512c44e822425f8e84",
+   "gloss": "torcer",
+   "definition": "entrelaçar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8309",
+   "sha256": "b8fc2cf164dff2c92a0a167169b12fb709b90c56c56205caefdea2201be9c5f1",
+   "gloss": "campo",
+   "definition": "um campo comum",
+   "derivation": "provavelmente por um erro ortográfico por 7709;"
+  },
+  {
+   "strongs": "H8310",
+   "sha256": "3f651e10132190aff6ad2915f42af3873c70f970a770a11ca62fc2b5e3c05c42",
+   "gloss": "Sangar, Nebo-Sarsequim",
+   "definition": "Sarsequim, um general babilônico",
+   "derivation": "de derivação estrangeira;"
+  },
+  {
+   "strongs": "H8311",
+   "sha256": "d6d24fda585872d3badbfa1ab97e45a879331f29166d5bd6245181c20e41e594",
+   "gloss": "estender",
+   "definition": "prolongar, isto é, (reflex.) ser deformado por excesso de membros",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8312",
+   "sha256": "c41892d6ddaa47c3343cc15f5b0f62605e948dd1fc0a616cb841a8b23fb0c11a",
+   "gloss": "ansiedade",
+   "definition": "cogitação",
+   "derivation": "por 5587;"
+  },
+  {
+   "strongs": "H8313",
+   "sha256": "0284e9cdaacdbf755c4f411200d83eb4121a8043a908758cfa3270e061498baf",
+   "gloss": "queimar",
+   "definition": "estar (causativamente, pôr) em fogo",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8314A",
+   "sha256": "1c58a4cc4ed04816bcf750266c48a61bf31e1c731f98c9804a3f4a9237e0ab43",
+   "gloss": "serpente",
+   "definition": "ardente, isto é, (figuradamente) venenosa (serpente); especificamente, um serafim ou criatura simbólica (por sua cor de cobre)",
+   "derivation": "de 8313;"
+  },
+  {
+   "strongs": "H8314B",
+   "sha256": "f2de5b0f3cde656f2d5fa74af5d1d9f3f94e1bfdc56e49ae4c608d016928090b",
+   "gloss": "Serafim",
+   "definition": "ardente, isto é, (figuradamente) venenosa (serpente); especificamente, um serafim ou criatura simbólica (por sua cor de cobre)",
+   "derivation": "de 8313;"
+  },
+  {
+   "strongs": "H8315",
+   "sha256": "71f02260139d05487970a20a61338c7e6bfda3d70d912f48d49d468eed2c6326",
+   "gloss": "Sarafe",
+   "definition": "Sarafe, um israelita",
+   "derivation": "o mesmo que 8314;"
+  },
+  {
+   "strongs": "H8316",
+   "sha256": "51b114e0388e59805b78302c7f3e8e872fde73939c580cfb858e5bebc931c3fb",
+   "gloss": "fogo",
+   "definition": "cremação",
+   "derivation": "de 8313;"
+  },
+  {
+   "strongs": "H8317",
+   "sha256": "123094f15b0e3be765ad1b796b875306a0d9beb1dca22450e64e99f28e5cb9ae",
+   "gloss": "pulular",
+   "definition": "serpear, isto é, (por implicação) pulular ou abundar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8318",
+   "sha256": "bb51dd4c36638ff8876fea6d4fb53992bb4c4e7bc5f35230ae7be13136cdd587",
+   "gloss": "enxame",
+   "definition": "um enxame, isto é, massa ativa de animais minúsculos",
+   "derivation": "de 8317;"
+  },
+  {
+   "strongs": "H8319",
+   "sha256": "261ef868ee176e61d6847fb9727ed4f15d8c108cc0eac755ca8b87d1941e6605",
+   "gloss": "assobiar",
+   "definition": "propriamente, ser estridente, isto é, assobiar ou sibilar (como chamado ou por escárnio)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8320",
+   "sha256": "207cac7e85483ae13141826213d7211eb9495e5b1dbd417f63a5db8757e73b6d",
+   "gloss": "alazão",
+   "definition": "vermelho vivo (por ferir a vista), isto é, baio",
+   "derivation": "de 8319;"
+  },
+  {
+   "strongs": "H8321A",
+   "sha256": "5167032f73b0df8c562c9a7c11a83e9737b209a071e69d36397ea22271f5ec9a",
+   "gloss": "videira",
+   "definition": "uma cepa de videira (propriamente, uma que dá uvas roxas, a variedade mais rica)",
+   "derivation": "ou שׂוֹרֵק; e (feminino) שֹׂרֵקָה; de 8319 no sentido de vermelhidão (compare 8320);"
+  },
+  {
+   "strongs": "H8321B",
+   "sha256": "5167032f73b0df8c562c9a7c11a83e9737b209a071e69d36397ea22271f5ec9a",
+   "gloss": "videira",
+   "definition": "uma cepa de videira (propriamente, uma que dá uvas roxas, a variedade mais rica)",
+   "derivation": "ou שׂוֹרֵק; e (feminino) שֹׂרֵקָה; de 8319 no sentido de vermelhidão (compare 8320);"
+  },
+  {
+   "strongs": "H8322",
+   "sha256": "4db61728f40db528e15011168780bf5dcfcd878761957e26c9442c3a17466d29",
+   "gloss": "assobio",
+   "definition": "uma zombaria",
+   "derivation": "de 8319;"
+  },
+  {
+   "strongs": "H8323A",
+   "sha256": "f36a25e04fb557b032dea6f37302c14b21a3e6faaa1da83c892f57e843747043",
+   "gloss": "dominar",
+   "definition": "ter (transitivamente, exercer; reflexivamente, obter) domínio",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8323B",
+   "sha256": "390e2a32b3a820e4b6b9d30a27cf1cc7b613f4a5ee3578656c6f3c600830c1dc",
+   "gloss": "fortalecer",
+   "definition": "ter (transitivamente, exercer; reflexivamente, obter) domínio",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8324",
+   "sha256": "c3dc7eba89b5de226c73fd8390f6d730e4c5bc61acd9eb05ebe466db6a2df6ef",
+   "gloss": "inimigo",
+   "definition": "ser hostil (só particípio ativo um adversário)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8325",
+   "sha256": "c53ac4ee06422acc67099842a19e710ee1efbf0eafa8d185ac7daed26837e80e",
+   "gloss": "Sarar",
+   "definition": "Sarar, um israelita",
+   "derivation": "de 8324; hostil;"
+  },
+  {
+   "strongs": "H8326",
+   "sha256": "b2020fe02d69a880c4a1b01ad91d09b88184f695e39ebb72958f9fa0e131f171",
+   "gloss": "umbigo",
+   "definition": "o cordão umbilical, isto é, (por extensão) um corpete",
+   "derivation": "de 8324 no sentido de torcer (compare 8270);"
+  },
+  {
+   "strongs": "H8327",
+   "sha256": "95d774fe441f16528ec47490209c7f24e1c4a4023bb18b5d73510a10aabd170b",
+   "gloss": "desarraigar",
+   "definition": "enraizar, isto é, penetrar no solo, ou (por implicação) arrancar dele",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8328",
+   "sha256": "e1fde14c770eb83746fa530224b11fa0133df0d6665959ce45227af554c0b21f",
+   "gloss": "raiz",
+   "definition": "uma raiz (literal ou figuradamente)",
+   "derivation": "de 8327;"
+  },
+  {
+   "strongs": "H8329",
+   "sha256": "0a3e5286da3eb17d7494098c2e424586f78fe532bcb4d4e21a3977c650289bf6",
+   "gloss": "Seres",
+   "definition": "Seres, um israelita",
+   "derivation": "o mesmo que 8328;"
+  },
+  {
+   "strongs": "H8330",
+   "sha256": "e33661a9b99e94c6add5fd22691b4a0db077fc978aa6206152976bbff6158442",
+   "gloss": "raiz",
+   "derivation": "(aramaico) correspondente a 8328"
+  },
+  {
+   "strongs": "H8331",
+   "sha256": "db2c684050541627db42745162e80ef05155a4f55cd1ec9ab7d1e720d3c4ba7d",
+   "gloss": "cadeia",
+   "definition": "uma cadeia (como enraizada, isto é, ligada)",
+   "derivation": "de 8327;"
+  },
+  {
+   "strongs": "H8332",
+   "sha256": "20ddb121328781fe72f975735e869725be4a2261fd2a467ca4e4dc8eb315bd50",
+   "gloss": "banimento",
+   "definition": "erradicação, isto é, (figuradamente) exílio",
+   "derivation": "(aramaico) de uma raiz correspondente a 8327;"
+  },
+  {
+   "strongs": "H8333",
+   "sha256": "8e4fb60120d6cad3e2cf5e8cb741c4dd2fdf585a861c9b734a773f88e82c3a6c",
+   "gloss": "cadeia",
+   "definition": "uma cadeia; (arquitetônico) provavelmente uma grinalda",
+   "derivation": "de 8327 (compare 8331);"
+  },
+  {
+   "strongs": "H8334",
+   "sha256": "d23579984f669b021d9e69f9522a5924de8dd47c9a26b614be9fc11f23ff13a2",
+   "gloss": "ministrar",
+   "definition": "servir como criado ou adorador; figuradamente, contribuir para",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8335",
+   "sha256": "39b5efc9ea020444574953b1b1e863d8cc3e1780b15171c293ad88f9ad1c2a45",
+   "gloss": "ministério",
+   "definition": "serviço (no templo)",
+   "derivation": "infinitivo de 8334;"
+  },
+  {
+   "strongs": "H8336A",
+   "sha256": "81af533893dd9e62af7c6af3a02193f0888c503defaaabfb19abd03ad50b9d9a",
+   "gloss": "alabastro",
+   "definition": "tecido alvejado, isto é, linho branco ou (por analogia) mármore",
+   "derivation": "ou (por aliteração com 4897) שְׁשִׁי; por 7893;"
+  },
+  {
+   "strongs": "H8336B",
+   "sha256": "2aa8505358b8c7cf338a287c146fbf51c3adab2ad79d6b43b1e99993c03c84c3",
+   "gloss": "linho",
+   "definition": "tecido alvejado, isto é, linho branco ou (por analogia) mármore",
+   "derivation": "ou (por aliteração com 4897) שְׁשִׁי; por 7893;"
+  },
+  {
+   "strongs": "H8337",
+   "sha256": "6e515e955996c846c2376348fac3e58aec3e726f064de18b86a8920a39ee3dbc",
+   "gloss": "seis",
+   "definition": "seis (como um excedente além de cinco ou dos dedos da mão); como ordinal sexto",
+   "derivation": "masculino שִׁשָּׁה; um número primitivo; veja 7797"
+  },
+  {
+   "strongs": "H8338",
+   "sha256": "0152c7ac7119fefd4e51696232effe4414a9ec93b7fd79f835c7a8c187cc9f58",
+   "gloss": "conduzir",
+   "definition": "aniquilar",
+   "derivation": "raiz primitiva; aparentemente,",
+   "note": "Source derivation is cut off ('a primitive root; apparently,'); translated as is."
+  },
+  {
+   "strongs": "H8339",
+   "sha256": "0eaab07a8a2c0bfd2e08ad1820aeba95989cd5db72c4dc8936e6b84cc8168e9a",
+   "gloss": "Sesbazar",
+   "definition": "Sesbazar, o nome persa de Zorobabel",
+   "derivation": "de derivação estrangeira;"
+  },
+  {
+   "strongs": "H8340",
+   "sha256": "5d112156a47b79af457746ce590baa5bf3db976314d2b9804a3b91d3078ec0cc",
+   "gloss": "Sesbazar",
+   "derivation": "(aramaico) correspondente a 8339"
+  },
+  {
+   "strongs": "H8341",
+   "sha256": "b7ddb89cb51fbac83944cb36dac402ee36cc8d8ea111790d01186905b17d0d84",
+   "gloss": "dar a sexta parte",
+   "definition": "tomar a sexta parte ou dividir em sextos",
+   "derivation": "denominativo de 8337;"
+  },
+  {
+   "strongs": "H8342",
+   "sha256": "b6f8b238f4b6499e0e5c9b7f948c8a6f38d1537cdec04919ca55855a3e744acc",
+   "gloss": "regozijo",
+   "definition": "alegria; especificamente, boas-vindas",
+   "derivation": "ou שָׂשֹׂן; de 7797;"
+  },
+  {
+   "strongs": "H8343",
+   "sha256": "7f81f6f41a1b2117ede3221e4b81fc924fe2bd3551a18bbe02a336b9a3dc525c",
+   "gloss": "Sasai",
+   "definition": "Sasai, um israelita",
+   "derivation": "talvez de 8336; esbranquiçado;"
+  },
+  {
+   "strongs": "H8344",
+   "sha256": "c5a53c837607c4387fac6239450a493751663bf665916be95224ce490b20bec7",
+   "gloss": "Sesai",
+   "definition": "Sesai, um cananeu",
+   "derivation": "provavelmente por 8343;"
+  },
+  {
+   "strongs": "H8345",
+   "sha256": "fb1ce8ca16f9aaefbb24a64fc98192ba5d2e6dd54adb87a0f194bc9722363694",
+   "gloss": "sexto",
+   "definition": "sexto, ordinal ou (feminino) fracionário",
+   "derivation": "de 8337;"
+  },
+  {
+   "strongs": "H8346",
+   "sha256": "0bf2ed11f2271153b2e551605bb95b5e374b054d6ec47dcc7792c114e018e337",
+   "gloss": "sessenta",
+   "definition": "sessenta",
+   "derivation": "múltiplo de 8337;"
+  },
+  {
+   "strongs": "H8347",
+   "sha256": "7309ac957132ebf5bed1459b1b6224e40e9af565bf954aa083dde27d69691f41",
+   "gloss": "Babilônia",
+   "definition": "Sesaque, um nome simbólico da Babilônia",
+   "derivation": "de derivação estrangeira;"
+  },
+  {
+   "strongs": "H8348",
+   "sha256": "091bf4541b6dfba9002e2536835a224824d177e9307d09eed9422ffedad1f0b7",
+   "gloss": "Sesã",
+   "definition": "Sesã, um israelita",
+   "derivation": "talvez por 7799; lírio;"
+  },
+  {
+   "strongs": "H8349",
+   "sha256": "0de477b62be938c6c9ebf1c2e38903a9fea2614daa9e542e5e8f9bb4f0abcf52",
+   "gloss": "Sasaque",
+   "definition": "Sasaque, um israelita",
+   "derivation": "provavelmente da base de 7785; pedestre;"
+  },
+  {
+   "strongs": "H8350",
+   "sha256": "8c5954b352f19c6f236d622652c48934772e49d59c5b619787b7ffc176c744c2",
+   "gloss": "vermelhão",
+   "definition": "ocre vermelho (por sua cor penetrante)",
+   "derivation": "talvez da base de 8324 no sentido da de 8320;"
+  },
+  {
+   "strongs": "H8351",
+   "sha256": "364396425b8a431160727c28886ac95df9205b2a3a984a082626f70bdf0e9cfb",
+   "gloss": "Sete",
+   "definition": "tumulto",
+   "derivation": "(Números 24:17) de 7582;"
+  },
+  {
+   "strongs": "H8352",
+   "sha256": "79837cb38dffcef301baae8df453c86124b59cfaad596bc9bfbb8d15e5e337b7",
+   "gloss": "Sete",
+   "definition": "Sete, terceiro filho de Adão",
+   "derivation": "de 7896; posto, isto é, substituído;"
+  },
+  {
+   "strongs": "H8353",
+   "sha256": "936e7ec5b06603877e39349294005f874304249f317437d1868be87f5281f713",
+   "gloss": "seis",
+   "derivation": "(aramaico) ou שִׁת; (aramaico), correspondente a 8337;"
+  },
+  {
+   "strongs": "H8354",
+   "sha256": "7f52653b91982c37087492cbc6fff60b826fdf96dec4bd8e5f34323f81adca51",
+   "gloss": "beber",
+   "definition": "beber (literal ou figuradamente)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8355",
+   "sha256": "8eeb46833421ef0eefd5ae4e04abaaecc04fd3efa5ae95b5aba8728d2f604a78",
+   "gloss": "beber",
+   "derivation": "(aramaico) correspondente a 8354"
+  },
+  {
+   "strongs": "H8356",
+   "sha256": "570d2ea8977e84e62408548eb971600f270cd28b6d8caa9786b412689afe6a31",
+   "gloss": "fundamento",
+   "definition": "uma base, isto é, (figuradamente) apoio político ou moral",
+   "derivation": "de 7896;"
+  },
+  {
+   "strongs": "H8357",
+   "sha256": "61ebe44263b4a890d57dbad02ac88089160f99bf4753280d4d133cfdb5936e06",
+   "gloss": "nádega",
+   "definition": "o assento (da pessoa)",
+   "derivation": "de 7896;"
+  },
+  {
+   "strongs": "H8358",
+   "sha256": "c1f56e98a9a9b5672a04488f98f1c4c8aad36f6aa59d4a73c4be3ed2f8534be6",
+   "gloss": "embriaguez",
+   "definition": "embriaguez",
+   "derivation": "de 8354;"
+  },
+  {
+   "strongs": "H8359",
+   "sha256": "2b7cb2e6bd43a8ffc46a299be1f3151498caa16b6749a206528a04e7842a59a7",
+   "gloss": "urdidura",
+   "definition": "algo fixo, isto é, a urdidura na tecelagem",
+   "derivation": "de 7896;"
+  },
+  {
+   "strongs": "H8360",
+   "sha256": "1f356dac8c8a93ada739491f9624843523db8ebf2a6f10fcc6c79b59ce021369",
+   "gloss": "bebida",
+   "definition": "bebedeira",
+   "derivation": "feminino de 8358;"
+  },
+  {
+   "strongs": "H8361",
+   "sha256": "3377126605a53824ad77e5b60d9111e57980cfc498105b610249d8901eef8338",
+   "gloss": "sessenta",
+   "definition": "sessenta",
+   "derivation": "(aramaico) correspondente a 8346 (compare 8353);"
+  },
+  {
+   "strongs": "H8362",
+   "sha256": "f5194a697635c920685133d0708fe07a7c9b0ee17e51f8f44348f9aa4ef17aae",
+   "gloss": "transplantar",
+   "definition": "transplantar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8363",
+   "sha256": "b4430376fe459801252078358be6352973ca43205515f7bb3388f2e918a7b6b8",
+   "gloss": "rebento",
+   "definition": "um broto (como se transplantado), isto é, rebento",
+   "derivation": "de 8362;"
+  },
+  {
+   "strongs": "H8364",
+   "sha256": "bb0a822a7d0c6ba2ebcc37c70b8bfd7f4387ea67c0d7ffa54b63df03d13ad36d",
+   "gloss": "sutelaíta",
+   "definition": "um sutelaíta (coletivamente) ou descendentes de Sutela",
+   "derivation": "patronimicamente de 7803;"
+  },
+  {
+   "strongs": "H8365",
+   "sha256": "61ceffdbca8806d6217ebd09ce53089763a8a72ed9f163c2c5165013156e3138",
+   "gloss": "abrir",
+   "definition": "desvendar (figuradamente)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8366",
+   "sha256": "b8ea7acc5e65c8d86abbf7653b1efdd5920c35ec981e9144d041106cc208c6e0",
+   "gloss": "urinar",
+   "definition": "(causativamente) fazer água, isto é, urinar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8367",
+   "sha256": "4639c1259eb1002f6dff32d1f1451cfdddd9bc77af4af8c4bd8a4e1d1c858928",
+   "gloss": "aquietar-se",
+   "definition": "baixar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8368",
+   "sha256": "dbff95598e4161fb79588a9c83cd895fe12dd2bfae611eadc16d899b986f2615",
+   "gloss": "irromper",
+   "definition": "irromper (como uma erupção)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8369",
+   "sha256": "a9f47cf54f5c00dc33276b3f9ad979bdbf20a1befbedf84ffeeccabf7b9ac829",
+   "gloss": "Setar",
+   "definition": "Setar, um sátrapa persa",
+   "derivation": "de derivação estrangeira;"
+  },
+  {
+   "strongs": "H8370",
+   "sha256": "4d553047e58c5467445150b0de9c5adea742ac867fb828bac08c7f14b50aa46d",
+   "gloss": "Setar-Bozenai",
+   "definition": "Setar-Bozenai, um oficial persa",
+   "derivation": "de derivação estrangeira;"
+  },
+  {
+   "strongs": "H8371",
+   "sha256": "d6078ff9eb88207f82e55360a4eb93a41628164dff6f6b7baa7ab93acfd376ea",
+   "gloss": "designar",
+   "definition": "colocar, isto é, dispor; reflex. deitar-se",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8372",
+   "sha256": "e3d431bc0c281ee19778a4edf6661c942b6dfe2081ceffbbe44d4fe6df4e090b",
+   "gloss": "câmara",
+   "definition": "um aposento (por ser delimitado)",
+   "derivation": "e (feminino) תָּאָה; (Ezequiel 40:12), de (a base de) 8376;"
+  },
+  {
+   "strongs": "H8373",
+   "sha256": "99161e15d95b78bd6df3859ec987976ca61a19e73af43ee4500af9a9d0fc1b6f",
+   "gloss": "ansiar por",
+   "definition": "desejar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8374",
+   "sha256": "1d6d087e05fbc2e01625680ed09f1c140063e4f6783076ca933b223f636686fc",
+   "gloss": "detestar",
+   "definition": "detestar (moralmente)",
+   "derivation": "raiz primitiva (provavelmente idêntica a 8373 pela ideia de bufar com desdém; compare 340);"
+  },
+  {
+   "strongs": "H8375",
+   "sha256": "aec2f76375e8fe9070875af9f0b0063988515084322173233d10d92961e8c08e",
+   "gloss": "anseio",
+   "definition": "desejo",
+   "derivation": "de 8374 (compare 15);"
+  },
+  {
+   "strongs": "H8376",
+   "sha256": "f93ee1bd3999efdd6cef129ddae0a8fa52de9dbe58ba0c5acb960330d9c58caf",
+   "gloss": "demarcar",
+   "definition": "demarcar, isto é, (intensivamente) designar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8377",
+   "sha256": "eb2989448dfc24929428d94b753a3d2162eb33773b7dd218bd6c53086d04163a",
+   "gloss": "antílope",
+   "definition": "uma espécie de antílope (provavelmente pela listra branca na face)",
+   "derivation": "e תּוֹא; (a forma original), de 8376;"
+  },
+  {
+   "strongs": "H8378",
+   "sha256": "1122e6ac2fd288fc47402f9ea66c8dc46ff975986171402f616e701769ea623e",
+   "gloss": "desejo",
+   "definition": "um anseio; por implicação, um deleite (subjetivamente, satisfação, objetivamente, um encanto)",
+   "derivation": "de 183 (abreviado);"
+  },
+  {
+   "strongs": "H8379",
+   "sha256": "b4f0000def00f4321cbd681dff2d339bb37b722099906f1d4ba6fcddbb322cc6",
+   "gloss": "limite",
+   "definition": "um limite, isto é, extensão completa",
+   "derivation": "de 8376;"
+  },
+  {
+   "strongs": "H8380",
+   "sha256": "4b4f6a21b05f8529a65a40cdb2f04d56b88bd5bcef22137a11e3da63a640c70d",
+   "gloss": "gêmeo",
+   "definition": "um gêmeo (só no plural), literal ou figuradamente",
+   "derivation": "ou תָּאֹם; de 8382;"
+  },
+  {
+   "strongs": "H8381",
+   "sha256": "77fd1d17eea8c40bd5b9c62add44a0dc58289661cddb223f78563ca2445d90b1",
+   "gloss": "maldição",
+   "definition": "uma imprecação",
+   "derivation": "de 422;"
+  },
+  {
+   "strongs": "H8382",
+   "sha256": "54915b8fbd32d412844f25991c87c36779bb671c2697ac0c66462a33fcc71ea9",
+   "gloss": "ser duplo",
+   "definition": "ser (causativamente, tornar) geminado, isto é, (figuradamente) duplicado ou (arquitetônico) articulado",
+   "derivation": "raiz primitiva; ser completo; mas usado só como denominativo de 8380,"
+  },
+  {
+   "strongs": "H8383",
+   "sha256": "dd77a3e7e8730832fb2ad3aea0d41c63c12e778d96e467bed53199df1b8d2c44",
+   "gloss": "fadiga",
+   "definition": "maldade, isto é, fadiga",
+   "derivation": "de 205;"
+  },
+  {
+   "strongs": "H8384",
+   "sha256": "e317b6297b293164762a89e73aa6a5ed56f843e4b10340c14bb53efe85c5dadb",
+   "gloss": "figo",
+   "definition": "o figo (árvore ou fruto)",
+   "derivation": "ou (no singular, feminino) תְּאֵנָה; talvez de derivação estrangeira"
+  },
+  {
+   "strongs": "H8385A",
+   "sha256": "5bb88cb827badf24a93ed14c5d6306619a7cc6818a4b244d397e2f273e2ace69",
+   "gloss": "no cio",
+   "definition": "uma oportunidade ou (subjetivamente) propósito",
+   "derivation": "ou תֹּאֲנָה; de 579;"
+  },
+  {
+   "strongs": "H8385B",
+   "sha256": "fbf762ab54bac9ef1078519bff1a9d67cf83885fc1498537c8bf5eed88b0e835",
+   "gloss": "ocasião",
+   "definition": "uma oportunidade ou (subjetivamente) propósito",
+   "derivation": "ou תֹּאֲנָה; de 579;"
+  },
+  {
+   "strongs": "H8386",
+   "sha256": "a4fb27c7e7ca823817f124630cfd3a4da41271c81c84e5ea552afe332a98bb12",
+   "gloss": "pranto",
+   "definition": "lamentação",
+   "derivation": "de 578;"
+  },
+  {
+   "strongs": "H8387",
+   "sha256": "dff0fdd6c7812dd2e81dad1f6f411a543c2b5d345c9ed1220ae542362ef8a12a",
+   "gloss": "Taanate-Siló",
+   "definition": "Taanate-Siló, um lugar na Palestina",
+   "derivation": "de 8385 e 7887; aproximação de Siló;"
+  },
+  {
+   "strongs": "H8388A",
+   "sha256": "4437ca7f0b35894b6d28e9361bb8febf94d161c2a94982db61f5d2128771802f",
+   "gloss": "confinar",
+   "definition": "delinear; reflex. estender-se",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8388B",
+   "sha256": "e2040ac22656b2edc8424293b381e1b3353e2aee58a96ea9fa7f79a81cab60eb",
+   "gloss": "delimitar",
+   "definition": "delinear; reflex. estender-se",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8389",
+   "sha256": "18780a9a9772ffa49a23d865afbc42ccd42d637afbb9bff31e4be3c811e8a6cb",
+   "gloss": "aparência",
+   "definition": "contorno, isto é, figura ou aparência",
+   "derivation": "de 8388;"
+  },
+  {
+   "strongs": "H8390",
+   "sha256": "bf658fd11a83f3441bd6385fc5798f9be9bc79875a9c2a160642ddf68071da46",
+   "gloss": "Tareia",
+   "definition": "Tareia, um israelita",
+   "derivation": "talvez de 772;"
+  },
+  {
+   "strongs": "H8391",
+   "sha256": "f34e155f0db203121c61d6b50f26001d4b7391a66b90844af433af42c0abbfb9",
+   "gloss": "buxo",
+   "definition": "uma espécie de cedro (por ser ereto)",
+   "derivation": "de 833;"
+  },
+  {
+   "strongs": "H8392",
+   "sha256": "0042399157057e02cb208bcee33f93112cd357517cf4b16134101ce7c016476d",
+   "gloss": "arca",
+   "definition": "uma caixa",
+   "derivation": "talvez de derivação estrangeira;"
+  },
+  {
+   "strongs": "H8393",
+   "sha256": "67fe781a1216bb0052163c941c703f0276a91aa58692080b3dc105a144e9a5b2",
+   "gloss": "produto",
+   "definition": "renda, isto é, produto (literal ou figuradamente)",
+   "derivation": "de 935;"
+  },
+  {
+   "strongs": "H8394",
+   "sha256": "6d911c97a0b654241b5039ecdf1154569ea2501131cdb6bfbf2314f05fd8062f",
+   "gloss": "entendimento",
+   "definition": "inteligência; por implicação, um argumento; por extensão, capricho",
+   "derivation": "e (feminino) תְּבוּנָה; ou תּוֹבֻנָה; de 995;"
+  },
+  {
+   "strongs": "H8395",
+   "sha256": "865d5ad705ae58108881d370dc2c70be17f484c73862c57905435667b7a26194",
+   "gloss": "ruína",
+   "definition": "um pisoteamento, isto é, ruína",
+   "derivation": "de 947;"
+  },
+  {
+   "strongs": "H8396G",
+   "sha256": "f4f9fe02d5fd3ba74500c245d86f81ca9653f3737c88c531d988341b46e302b9",
+   "gloss": "(Monte) Tabor",
+   "definition": "Tabor, um monte na Palestina, também uma cidade vizinha",
+   "derivation": "de uma raiz correspondente a 8406; região quebrada;"
+  },
+  {
+   "strongs": "H8396H",
+   "sha256": "c876dbf0624b5165c9c49f87e296943516653b3f70a902c2b7bb4a734777066c",
+   "gloss": "Tabor",
+   "definition": "Tabor, um monte na Palestina, também uma cidade vizinha",
+   "derivation": "de uma raiz correspondente a 8406; região quebrada;"
+  },
+  {
+   "strongs": "H8396I",
+   "sha256": "c876dbf0624b5165c9c49f87e296943516653b3f70a902c2b7bb4a734777066c",
+   "gloss": "Tabor",
+   "definition": "Tabor, um monte na Palestina, também uma cidade vizinha",
+   "derivation": "de uma raiz correspondente a 8406; região quebrada;"
+  },
+  {
+   "strongs": "H8397",
+   "sha256": "1cb9310850803c53607dd1fffda27b0c3ac1ff097c40366d9d8b896ec5d5eaef",
+   "gloss": "perversão",
+   "definition": "mistura, isto é, bestialidade antinatural",
+   "derivation": "aparentemente de 1101;"
+  },
+  {
+   "strongs": "H8398",
+   "sha256": "7db617b662f9558b7c72447aa4444f5a5c61ed930643410e3bb1ce562ea8dd7c",
+   "gloss": "mundo",
+   "definition": "a terra (como úmida e, portanto, habitada); por extensão, o globo; por implicação, seus habitantes; especificamente, uma terra particular, como Babilônia, Palestina",
+   "derivation": "de 2986;"
+  },
+  {
+   "strongs": "H8399",
+   "sha256": "3646c24da22f03bce53046203aae650c596356635e015ba1b06a1750d82eaad4",
+   "gloss": "destruição",
+   "definition": "consumação",
+   "derivation": "de 1086;"
+  },
+  {
+   "strongs": "H8400",
+   "sha256": "6d04383b0022a1ddc1f077789bad565b9adf5a599717484db0e3c44a7f7208d8",
+   "gloss": "defeito",
+   "definition": "uma catarata (no olho)",
+   "derivation": "de 1101 no sentido original de fluir;"
+  },
+  {
+   "strongs": "H8401",
+   "sha256": "7d3cf00cc6905bb5e2502948518e69dfb52e5084720b71f10e3ade4e7217f321",
+   "gloss": "palha",
+   "definition": "propriamente, material, isto é, (especificamente) restolho ou talos de cereal (como picados na debulha e usados como forragem)",
+   "derivation": "provavelmente de 1129;"
+  },
+  {
+   "strongs": "H8402",
+   "sha256": "125d2cefd050fa54bfd980fc22bfbb6a9c6a576bdfab8f662b38bc344a6860a3",
+   "gloss": "Tibni",
+   "definition": "Tibni, um israelita",
+   "derivation": "de 8401; de palha;"
+  },
+  {
+   "strongs": "H8403",
+   "sha256": "356628f0ed41fadf78e78a621bfd8a0e64a23668ae97a7fe363fd23409dce1a9",
+   "gloss": "modelo",
+   "definition": "estrutura; por implicação, um modelo, semelhança",
+   "derivation": "de 1129;"
+  },
+  {
+   "strongs": "H8404",
+   "sha256": "afa2cab64fcfdca11a5c930e7f18967f62055fcdb7ab586e4ccb7378527653e7",
+   "gloss": "Taberá",
+   "definition": "Taberá, um lugar no deserto",
+   "derivation": "de 1197; queimada;"
+  },
+  {
+   "strongs": "H8405",
+   "sha256": "c1cc29c11b453d666b0878869492bb874c65b429bc90a1431cc29947827a4326",
+   "gloss": "Tebes",
+   "definition": "Tebes, um lugar na Palestina",
+   "derivation": "do mesmo que 948; brancura;"
+  },
+  {
+   "strongs": "H8406",
+   "sha256": "0529c3456e07a3af7d39dcbbfb06a8d63bfe496e956f6d97842f804d17879091",
+   "gloss": "quebrar",
+   "definition": "ser frágil (figuradamente)",
+   "derivation": "(aramaico) correspondente a 7665;"
+  },
+  {
+   "strongs": "H8407",
+   "sha256": "8799444b04160af262cc00c97f7a8781b136cc642865d0a1367c64993be27a18",
+   "gloss": "Tiglate-Pileser",
+   "definition": "Tiglate-Pileser ou Tilgate-Pilneser, um rei assírio",
+   "derivation": "ou תִּגְלַת פְּלֶסֶר; ou תִּלְגַּת פִּלְנְאֶסֶר ou תִּלְגַּת פִּלְנֶסֶר; de derivação estrangeira;"
+  },
+  {
+   "strongs": "H8408",
+   "sha256": "635a8f5502b2fb1497b27220267d7c8c050798fc7e1e57c60dd506049a0a60c0",
+   "gloss": "benefício",
+   "definition": "uma dádiva",
+   "derivation": "de 1580;"
+  },
+  {
+   "strongs": "H8409",
+   "sha256": "3d8494f69c54caba0803fd651c0e96a4ce04c7b22353d99b3abae55b172f6b71",
+   "gloss": "contenda",
+   "definition": "contenda, isto é, castigo",
+   "derivation": "de 1624;"
+  },
+  {
+   "strongs": "H8410",
+   "sha256": "a52447fab9ead408a04895817bcbb77586018fd6d32cd4149e2443732e1267bf",
+   "gloss": "olmeiro",
+   "definition": "duradouro; uma espécie de madeira dura ou árvore duradoura (talvez carvalho)",
+   "derivation": "aparentemente de 1725;"
+  },
+  {
+   "strongs": "H8411",
+   "sha256": "97f6b0e4d319eaba178e63c656be456df3b87501ec694de5c9fd713664765fb4",
+   "gloss": "continuidade",
+   "definition": "permanência, isto é, (advérbio) constantemente",
+   "derivation": "(aramaico) de 1753 no sentido original de durar;"
+  },
+  {
+   "strongs": "H8412",
+   "sha256": "0f5da8fb04a03ca274558b792e40bc563ae642569e1bd1770a653f59c36afcf2",
+   "gloss": "Tadmor",
+   "definition": "Tadmor, um lugar perto da Palestina",
+   "derivation": "ou תַּמֹּר; (1 Reis 9:18), aparentemente de 8558; cidade das palmeiras;"
+  },
+  {
+   "strongs": "H8413",
+   "sha256": "21f0a6284f585d53d61c2dd0feea12c7adc3edfbca29c71a9284cbccceb73726",
+   "gloss": "Tidal",
+   "definition": "Tidal, um cananeu",
+   "derivation": "talvez de 1763; temor;"
+  },
+  {
+   "strongs": "H8414",
+   "sha256": "572d8674a125d7cdb99b19628a74f41a6ac287ac9566c9f6d47c404a3b05f7bd",
+   "gloss": "informidade",
+   "definition": "uma desolação (da superfície), isto é, deserto; figuradamente, uma coisa sem valor; adverbialmente, em vão",
+   "derivation": "de uma raiz não usada que significa estar devastado;"
+  },
+  {
+   "strongs": "H8415",
+   "sha256": "488efdbe943c9fd38266acfd95bb1db8f2b4a01c0fb055b6ff4315f53c90a583",
+   "gloss": "abismo",
+   "definition": "um abismo (como uma massa agitada de água), especialmente o abismo (o mar principal ou o reservatório subterrâneo de água)",
+   "derivation": "ou תְּהֹם; (geralmente feminino) de 1949;"
+  },
+  {
+   "strongs": "H8416",
+   "sha256": "505864ccb5fb19f3275cce00c9827b93c172518ef25a7668cfce14230ffceb9b",
+   "gloss": "louvor",
+   "definition": "louvor; especificamente (concretamente) um hino",
+   "derivation": "de 1984;"
+  },
+  {
+   "strongs": "H8417",
+   "sha256": "cb253bdc0596494b4f2bee511df8cb09bf577eba310bd1b31fbb1116ddf59866",
+   "gloss": "erro",
+   "definition": "fanfarronice, isto é, (por implicação) insensatez",
+   "derivation": "feminino de um substantivo não usado (aparentemente de 1984) que significa fanfarrice;"
+  },
+  {
+   "strongs": "H8418",
+   "sha256": "0390f67b21fb7681df34cb5052d2068f591c9545feb10121821a0e689a255674",
+   "gloss": "procissão",
+   "definition": "uma procissão",
+   "derivation": "de 1980;"
+  },
+  {
+   "strongs": "H8419",
+   "sha256": "c02e974550ea7baaa793539dc8d5252e4df8a414951acba9a8c92466ca5b0521",
+   "gloss": "perversidade",
+   "definition": "uma perversidade ou fraude",
+   "derivation": "de 2015;"
+  },
+  {
+   "strongs": "H8420",
+   "sha256": "e4820c1363ef231c31a95dbb42d7951e47c9a438389876356aefb0057b53bd7e",
+   "gloss": "sinal",
+   "definition": "um sinal; por implicação, uma assinatura",
+   "derivation": "de 8427;"
+  },
+  {
+   "strongs": "H8421G",
+   "sha256": "7aba89bda7dc2afa95ec118b7943accb97cd14697620f566bee2b55ba8529512",
+   "gloss": "voltar: voltar",
+   "definition": "especificamente (transitivo e elíp.) responder",
+   "derivation": "(aramaico) correspondente a 7725, voltar;"
+  },
+  {
+   "strongs": "H8421H",
+   "sha256": "9ee712bf9d0ce18e2cf9874a1eddcca47789bb005c02b41543ac0bca85958f5f",
+   "gloss": "voltar: resgatar",
+   "definition": "especificamente (transitivo e elíp.) responder",
+   "derivation": "(aramaico) correspondente a 7725, voltar;"
+  },
+  {
+   "strongs": "H8421I",
+   "sha256": "ebc56866f1465258c04291a54e4d6fb7b54d546af871e4384580d133df9e798d",
+   "gloss": "voltar: responder",
+   "definition": "especificamente (transitivo e elíp.) responder",
+   "derivation": "(aramaico) correspondente a 7725, voltar;"
+  },
+  {
+   "strongs": "H8422G",
+   "sha256": "83cfd4ebe59b12bc21e888d6a7c3976d1d7fbb1cb47af30a04b91b68b70fc3a6",
+   "gloss": "Tubal",
+   "definition": "Tubal, um patriarca pós-diluviano e sua posteridade",
+   "derivation": "ou תֻּבַל; provavelmente de derivação estrangeira;"
+  },
+  {
+   "strongs": "H8422H",
+   "sha256": "83cfd4ebe59b12bc21e888d6a7c3976d1d7fbb1cb47af30a04b91b68b70fc3a6",
+   "gloss": "Tubal",
+   "definition": "Tubal, um patriarca pós-diluviano e sua posteridade",
+   "derivation": "ou תֻּבַל; provavelmente de derivação estrangeira;"
+  },
+  {
+   "strongs": "H8422I",
+   "sha256": "b124173f0156edff3c2c07cadc544850c94c4e0f6e0d8732392daf8881237d88",
+   "gloss": "(Meseque)-Tubal",
+   "definition": "Tubal, um patriarca pós-diluviano e sua posteridade",
+   "derivation": "ou תֻּבַל; provavelmente de derivação estrangeira;"
+  },
+  {
+   "strongs": "H8423",
+   "sha256": "0f2f800190132309722b6f15d836c9f36872f4f932f664c51c654c76757db03a",
+   "gloss": "Tubalcaim",
+   "definition": "Tubalcaim, um patriarca antediluviano",
+   "derivation": "aparentemente de 2986 (compare 2981) e 7014; descendência de Caim;"
+  },
+  {
+   "strongs": "H8424",
+   "sha256": "ed19aeaa6664f989d4e70327b1609369b20bc3feb5a4cf5938b80b61f5339640",
+   "gloss": "tristeza",
+   "definition": "abatimento (do ânimo); concretamente uma tristeza",
+   "derivation": "de 3013;"
+  },
+  {
+   "strongs": "H8425G",
+   "sha256": "1fff9d5f59e44a4947863ec9e2142c023240c170df11c2ac5417fc331c1346fb",
+   "gloss": "Togarma",
+   "definition": "Togarma, um filho de Gômer e sua posteridade",
+   "derivation": "ou תֹּגַרְמָה; provavelmente de derivação estrangeira;"
+  },
+  {
+   "strongs": "H8425H",
+   "sha256": "d3b1b8a4f8cb0a57a7f36eff2951175ddf13a07eded0339e0098bce1a9ed9f67",
+   "gloss": "(Bete)-Togarma",
+   "definition": "Togarma, um filho de Gômer e sua posteridade",
+   "derivation": "ou תֹּגַרְמָה; provavelmente de derivação estrangeira;"
+  },
+  {
+   "strongs": "H8426",
+   "sha256": "5234008103211ccadad2870b84d9f18929bb5a4ed42b407b7f4c7751bb284191",
+   "gloss": "ação de graças",
+   "definition": "propriamente, uma extensão da mão, isto é, (por implicação) confissão, ou (geralmente) adoração; especificamente, um coro de adoradores",
+   "derivation": "de 3034;"
+  },
+  {
+   "strongs": "H8427",
+   "sha256": "499f4bab22585d55bebf9c4e241d3d8170d09998abea2a8fc3cf2969d36d95ec",
+   "gloss": "demarcar",
+   "definition": "marcar, isto é, (primitivo) arranhar ou (definido) imprimir",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8428",
+   "sha256": "83154e04e31152b1089b98e609a6a2134aa1ed5aac4e7698a0f1835b023e3bf5",
+   "gloss": "ferir",
+   "definition": "entristecer",
+   "derivation": "raiz primitiva (ou talvez idêntica a 8427 por uma ideia semelhante, de raspar em pedaços);"
+  },
+  {
+   "strongs": "H8429",
+   "sha256": "6734010075268749dc79ecdb53e58f3a38fda9e172f834ad59b37cea3e9a95f4",
+   "gloss": "sobressaltar-se",
+   "definition": "espantar, isto é, (reflex. por implicação) alarmar-se",
+   "derivation": "(aramaico) correspondente a 8539 ou talvez a 7582 pela ideia de varrer para a ruína (compare 8428);"
+  },
+  {
+   "strongs": "H8430",
+   "sha256": "b331c4abbd01f931464ccad07d1896f3e4fc04cb7ec9c755a5ec445ab2d849c0",
+   "gloss": "Toá",
+   "definition": "Toá, um israelita",
+   "derivation": "de uma raiz não usada que significa abaixar; humilde;"
+  },
+  {
+   "strongs": "H8431",
+   "sha256": "eafe4b97b421e2b96fd76013bc9004978d22dc3f2559183f315d6486873f87fa",
+   "gloss": "esperança",
+   "definition": "expectativa",
+   "derivation": "de 3176;"
+  },
+  {
+   "strongs": "H8432",
+   "sha256": "57ec9ef5591c03fb34922228c12a184ecbc4cf5506e495c903c118fc03b4d5a3",
+   "gloss": "meio",
+   "definition": "uma bissecção, isto é, (por implicação) o centro",
+   "derivation": "de uma raiz não usada que significa cortar;"
+  },
+  {
+   "strongs": "H8433A",
+   "sha256": "2b8ae622cbc4b121354169c40ac8a2a237e821905ec8c2c7975f1a56f63f89c7",
+   "gloss": "repreensão",
+   "definition": "castigo; figuradamente (por palavras) correção, refutação, prova (até em defesa)",
+   "derivation": "e תּוֹכַחַת; de 3198;"
+  },
+  {
+   "strongs": "H8433B",
+   "sha256": "a90b00a6ff1be80e64d1e1cadf7abe32e50d01867c734e618da919c5574044cb",
+   "gloss": "argumento",
+   "definition": "castigo; figuradamente (por palavras) correção, refutação, prova (até em defesa)",
+   "derivation": "e תּוֹכַחַת; de 3198;"
+  },
+  {
+   "strongs": "H8434",
+   "sha256": "567e006021651bffd12657d36d86f3c3c62bf223d6f71c7dd0d56614f6e226d0",
+   "gloss": "Tolade",
+   "definition": "Tolade, um lugar na Palestina",
+   "derivation": "de 3205; posteridade;"
+  },
+  {
+   "strongs": "H8435",
+   "sha256": "bcd6f4f84a6a299c764392c5d74811bf71ac207814684085d3966138f25454b5",
+   "gloss": "geração",
+   "definition": "(só no plural) descendência, isto é, família; (figuradamente) história",
+   "derivation": "ou תֹּלְדָה; de 3205;"
+  },
+  {
+   "strongs": "H8436",
+   "sha256": "1d122bb1fb247a642d407926942a9c8eeb93cd3138b28dd70765b0045297fc23",
+   "gloss": "Tilom",
+   "definition": "Tilom, um israelita",
+   "derivation": "de 8524; suspensão;"
+  },
+  {
+   "strongs": "H8437",
+   "sha256": "f121cfbcf695e029bb5f5ea64bb5a3aed2af11b203336ae4a46c5a306ca7281c",
+   "gloss": "atormentador",
+   "definition": "que faz uivar, isto é, um opressor",
+   "derivation": "de 3213;"
+  },
+  {
+   "strongs": "H8438A",
+   "sha256": "1fc00a8e70e52aee7a3a5a00e54ec126740da14a6bbdedfae50250896a57edb0",
+   "gloss": "verme",
+   "definition": "um verme (por ser voraz); especificamente (muitas vezes com elipse de 8144) o verme carmesim, mas usado só (nesta conexão) da cor que dele se obtém, e de panos tingidos com ela",
+   "derivation": "e (feminino) תּוֹלֵעָה; ou תּוֹלַעַת; ou תֹּלַעַת; de 3216;"
+  },
+  {
+   "strongs": "H8438B",
+   "sha256": "1fc00a8e70e52aee7a3a5a00e54ec126740da14a6bbdedfae50250896a57edb0",
+   "gloss": "verme",
+   "definition": "um verme (por ser voraz); especificamente (muitas vezes com elipse de 8144) o verme carmesim, mas usado só (nesta conexão) da cor que dele se obtém, e de panos tingidos com ela",
+   "derivation": "e (feminino) תּוֹלֵעָה; ou תּוֹלַעַת; ou תֹּלַעַת; de 3216;"
+  },
+  {
+   "strongs": "H8439G",
+   "sha256": "eaaec788aea2e823029fcc18dc30d5a8b1d31840dda03d194aec6d8e60aee64e",
+   "gloss": "Tola",
+   "definition": "Tola, nome de dois israelitas",
+   "derivation": "o mesmo que 8438; verme;"
+  },
+  {
+   "strongs": "H8439H",
+   "sha256": "eaaec788aea2e823029fcc18dc30d5a8b1d31840dda03d194aec6d8e60aee64e",
+   "gloss": "Tola",
+   "definition": "Tola, nome de dois israelitas",
+   "derivation": "o mesmo que 8438; verme;"
+  },
+  {
+   "strongs": "H8440",
+   "sha256": "0392eba617ea3b1cdbd87ea2b3b3ba7cf1c0451c6d22bd4b925ba4abf17c42c8",
+   "gloss": "tolaíta",
+   "definition": "um tolaíta (coletivamente) ou descendentes de Tola",
+   "derivation": "patronimicamente de 8439;"
+  },
+  {
+   "strongs": "H8441",
+   "sha256": "7427fdb648b5099a845b7fe9f955aac63b87165b40e7c3f7083e0d8182a086a5",
+   "gloss": "abominação",
+   "definition": "propriamente, algo repugnante (moralmente), isto é, (como substantivo) uma abominação; especialmente idolatria ou (concretamente) um ídolo",
+   "derivation": "ou תֹּעֵבַה; particípio ativo feminino de 8581;"
+  },
+  {
+   "strongs": "H8442",
+   "sha256": "32a97bde6dcd3cfbfd74cd9414f97b647b5b5a644ddff8c81537437768c3b554",
+   "gloss": "erro",
+   "definition": "erro, isto é, (moralmente) impiedade, ou (politicamente) dano",
+   "derivation": "particípio ativo feminino de 8582;"
+  },
+  {
+   "strongs": "H8443",
+   "sha256": "778d89925c6ebafd6e16eb6b61e9a6d96cb91ba1eb4951573ec70d42f9ca06f6",
+   "gloss": "pico",
+   "definition": "(só no plural coletivo) cansaço, isto é, (por implicação) labuta (o tesouro assim obtido) ou rapidez",
+   "derivation": "de 3286;"
+  },
+  {
+   "strongs": "H8444",
+   "sha256": "50745641d1c99979bf890d931187d0c4f599ad67a7198d23f06e9ce9b13fa651",
+   "gloss": "saída",
+   "definition": "(só no plural coletivo) saída, isto é, (geograficamente) limite, ou (figuradamente) livramento, (ativamente) fonte",
+   "derivation": "ou תֹּצָאָה; de 3318;"
+  },
+  {
+   "strongs": "H8445",
+   "sha256": "b680177216f4ea279043bc0fe8c84b81bb67310eb74d1da08b4761451afca12a",
+   "gloss": "Tocate",
+   "definition": "Tocate, um israelita",
+   "derivation": "do mesmo que 3349; obediência;"
+  },
+  {
+   "strongs": "H8446",
+   "sha256": "684ddeb90af0a7aedbcee8f952a512878a1c6a97f0ddf27fa32a5d69a11740e8",
+   "gloss": "espiar",
+   "definition": "serpentear (causativamente, guiar) de um lado para outro, especialmente para comércio ou reconhecimento",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8447",
+   "sha256": "1674a87c73732b0fe22fd5a2e29ac7af1e01fe2dab9e6423f025fbc8a4d5bbd5",
+   "gloss": "trança",
+   "definition": "uma sucessão, isto é, um fio ou (abstratamente) ordem",
+   "derivation": "ou תֹּר; de 8446;"
+  },
+  {
+   "strongs": "H8448",
+   "sha256": "c0fb3578f13918a27d911d9e84df80ee0941b2bd20b7ee7b7379e69a00527079",
+   "gloss": "contorno",
+   "definition": "uma maneira (como uma espécie de volta)",
+   "derivation": "provavelmente o mesmo que 8447;"
+  },
+  {
+   "strongs": "H8449",
+   "sha256": "f12d3088a483cca84fb7a6b243b2733261fb0a80f7eee3f141d40db6fdd995b6",
+   "gloss": "rola",
+   "definition": "uma rola, muitas vezes (figuradamente) como termo carinhoso",
+   "derivation": "ou תֹּר; provavelmente o mesmo que 8447;"
+  },
+  {
+   "strongs": "H8450",
+   "sha256": "4f6ca6b3d9b95e98de2da9cdc79db6d52d4a350e8bcd12e904b7c2875ed6b6bc",
+   "gloss": "novilho",
+   "definition": "um touro",
+   "derivation": "(aramaico) correspondente (por permutação) a 7794;"
+  },
+  {
+   "strongs": "H8451",
+   "sha256": "a7f5e1ed68da9873481a7b395836354940d9df3c857d8ee709eb53776e1f86ca",
+   "gloss": "instrução",
+   "definition": "um preceito ou estatuto, especialmente o Decálogo ou o Pentateuco",
+   "derivation": "ou תֹּרָה; de 3384;"
+  },
+  {
+   "strongs": "H8452",
+   "sha256": "77d0b9a896dc9305c57f3100a1584920e1f346e4ca73630344247342d8a09d54",
+   "gloss": "costume",
+   "definition": "um costume",
+   "derivation": "provavelmente feminino de 8448;"
+  },
+  {
+   "strongs": "H8453A",
+   "sha256": "7de670ea6670c9e32d6bc33b5832d0e48e8f85f78cbb63b525f896810501175b",
+   "gloss": "peregrino",
+   "definition": "um morador, mas não estrangeiro [5237]; especialmente (distinto do cidadão nativo [particípio ativo de 3427] e de um hóspede temporário [1616] ou mero inquilino [3885]) estrangeiro residente",
+   "derivation": "ou תֹּשָׁב; (1 Reis 17:1), de 3427;"
+  },
+  {
+   "strongs": "H8453B",
+   "sha256": "c449dabbbefc86b0c433920ed4057b07c52bcd0c27459fe4bef78167ff365cd8",
+   "gloss": "Tisbe",
+   "definition": "um morador, mas não estrangeiro [5237]; especialmente (distinto do cidadão nativo [particípio ativo de 3427] e de um hóspede temporário [1616] ou mero inquilino [3885]) estrangeiro residente",
+   "derivation": "ou תֹּשָׁב; (1 Reis 17:1), de 3427;"
+  },
+  {
+   "strongs": "H8454",
+   "sha256": "0c5285f194d28d0e9aaf88cfbb6d838593ea125ea2530993155774299e628b92",
+   "gloss": "sabedoria",
+   "definition": "apoio ou (por implicação) capacidade, isto é, (direto) ajuda, (de propósito) um empreendimento, (intelectual) entendimento",
+   "derivation": "ou תֻּשִׁיָּה; de uma raiz não usada que provavelmente significa substanciar;"
+  },
+  {
+   "strongs": "H8455",
+   "sha256": "823fc93672219d2b7bc608adacd5242165a0865665dfdec0de200b956fc429d8",
+   "gloss": "clava",
+   "definition": "uma clava",
+   "derivation": "de uma raiz não usada que significa golpear;"
+  },
+  {
+   "strongs": "H8456",
+   "sha256": "d40b5914b17a5a74ce38ef9b5deb479728b33f154351f21e3d5562a4dc2713a7",
+   "gloss": "cortar",
+   "definition": "decepar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8457",
+   "sha256": "964b3107a50386ef789560d8dea78a2527f643d05089c7750176ccc16189e8a2",
+   "gloss": "prostituição",
+   "definition": "prostituição, isto é, (figuradamente) idolatria",
+   "derivation": "ou תַּזְנֻת; de 2181;"
+  },
+  {
+   "strongs": "H8458",
+   "sha256": "431e572f49cc08a233ed3ee3fbdeb9b5df8d0db022d36c2f848e3edcad282295",
+   "gloss": "conselho",
+   "definition": "(só no plural) propriamente, direção (como manejo de cordas), isto é, (figuradamente) orientação ou (por implicação) um plano",
+   "derivation": "ou תַּחְבּוּלָה; de 2254 como denominativo de 2256;"
+  },
+  {
+   "strongs": "H8459",
+   "sha256": "e9704a342844bf99c3af491b6de6d65201c7bf867529145de3e74bbe51ab6d75",
+   "gloss": "Toú",
+   "definition": "Toú, um israelita",
+   "derivation": "de uma raiz não usada que significa abaixar; humilhação;"
+  },
+  {
+   "strongs": "H8460",
+   "sha256": "bbae1650961acccd8b7c0b43283c15b964ee066eef31a0f4f9bbe21998509ca3",
+   "gloss": "debaixo",
+   "definition": "embaixo",
+   "derivation": "(aramaico) ou תּחֹת; (aramaico), correspondente a 8478;"
+  },
+  {
+   "strongs": "H8461",
+   "sha256": "3eaa8971449e0bedbe498add30981b1bdc670a480fbad428b3a156db287c06b9",
+   "gloss": "taquemonita",
+   "definition": "Taquemoni, um israelita",
+   "derivation": "provavelmente por 2453; sagaz;"
+  },
+  {
+   "strongs": "H8462",
+   "sha256": "03c6dee94220f58b84ec39a25cde9bf106c6ad819e8c2092e3d18124ba4af5b2",
+   "gloss": "princípio",
+   "definition": "um começo; relativamente original (advérbio, originalmente)",
+   "derivation": "de 2490 no sentido de abrir;"
+  },
+  {
+   "strongs": "H8463",
+   "sha256": "a42bf0a53eff616dcbd9f0496eeb0b6251e32289663772dcbe52f41f20d3f637",
+   "gloss": "doença",
+   "definition": "uma enfermidade",
+   "derivation": "ou תַּחֲלֻא; de 2456;"
+  },
+  {
+   "strongs": "H8464",
+   "sha256": "702f252adc0ee91b9188baf96dc56b9ba6c10ddad388ff86dfb67e9ad8a6d7c3",
+   "gloss": "avestruz",
+   "definition": "uma espécie de ave imunda (por sua violência), talvez uma coruja",
+   "derivation": "de 2554;"
+  },
+  {
+   "strongs": "H8465G",
+   "sha256": "9e1b970ce82ccf0a8d658648c27e3b314b1935c585f57d8823017cf4ae1188b8",
+   "gloss": "Taã",
+   "definition": "Taã, nome de dois israelitas",
+   "derivation": "provavelmente de 2583; estação;"
+  },
+  {
+   "strongs": "H8465H",
+   "sha256": "9e1b970ce82ccf0a8d658648c27e3b314b1935c585f57d8823017cf4ae1188b8",
+   "gloss": "Taã",
+   "definition": "Taã, nome de dois israelitas",
+   "derivation": "provavelmente de 2583; estação;"
+  },
+  {
+   "strongs": "H8466",
+   "sha256": "8ff2d2686763df1282ddabba04c73aebddba97260cad338054742b4782ac6597",
+   "gloss": "acampamento",
+   "definition": "(só no plural coletivamente) um acampamento",
+   "derivation": "de 2583;"
+  },
+  {
+   "strongs": "H8467",
+   "sha256": "a2de03f58ea401783ddb641ab92f5af89f0fd0a8ebd8c13baee7c3fdf8442d4a",
+   "gloss": "súplica",
+   "definition": "graciosidade; causativamente, súplica",
+   "derivation": "de 2603;"
+  },
+  {
+   "strongs": "H8468",
+   "sha256": "d10cd816f6acbb3a59b85a1b4c42637146b7246f0d547ee41ef969bf3f124e00",
+   "gloss": "Teína",
+   "definition": "Teína, um israelita",
+   "derivation": "o mesmo que 8467;"
+  },
+  {
+   "strongs": "H8469",
+   "sha256": "6019f2e3aca5589f2460372eec05a4f0ba3ae951e0c16ba8c70fb5512db2a840",
+   "gloss": "súplica",
+   "definition": "oração fervorosa",
+   "derivation": "ou (feminino) תַּחֲנוּנָה; de 2603;"
+  },
+  {
+   "strongs": "H8470",
+   "sha256": "854429eff955637288be64932bd3db35d1dfa5d800c9ea7ddbc070b9e36c1b58",
+   "gloss": "taanita",
+   "definition": "um taanita (coletivamente) ou descendentes de Taã",
+   "derivation": "patronimicamente de 8465;"
+  },
+  {
+   "strongs": "H8471",
+   "sha256": "b5ee1252fa865ebe63944c536388f33243046cad3a49bbd3fc0862bdabb258dd",
+   "gloss": "Tafnes",
+   "definition": "Tafnes, um lugar no Egito",
+   "derivation": "ou תְּחַפְנְחֵס; (Ezequiel 30:18), ou תַּחְפְּנֵס; (Jeremias 2:16), de derivação egípcia;",
+   "note": "Strong's three spellings (Tachpanches, Techaphneches or Tachpenes) are all Tafnes in Almeida / Bíblia Livre; the Hebrew forms stay in the derivation."
+  },
+  {
+   "strongs": "H8472",
+   "sha256": "f249b627dc9ba51ceeb5bbc79d7fb8c224cd6090fc95f0aafaa8f01e435fa97a",
+   "gloss": "Tafnes",
+   "definition": "Tafnes, uma mulher egípcia",
+   "derivation": "de derivação egípcia;"
+  },
+  {
+   "strongs": "H8473",
+   "sha256": "1fabb5ef4bbef0f201b26a0c1908c3198c63d2b1b64651844ce47e3cf26a7c37",
+   "gloss": "couraça",
+   "definition": "uma couraça de linho (por ser branca ou oca)",
+   "derivation": "de 2734 no sentido original de 2352 ou 2353;"
+  },
+  {
+   "strongs": "H8474",
+   "sha256": "b651b470d5fd5fdcc718f87af1c72c34429bbc3ad7cd510d34cfb95ad3cf8f9b",
+   "gloss": "competir",
+   "definition": "competir com um rival",
+   "derivation": "uma raiz fictícia de 2734 pela ideia do calor do ciúme;"
+  },
+  {
+   "strongs": "H8475",
+   "sha256": "b82504b44bf16c225af76042eabb6d6d68e75d71501fa253150266fd1bafc452",
+   "gloss": "Tareia",
+   "definition": "Tareia, um israelita",
+   "derivation": "por 8390;"
+  },
+  {
+   "strongs": "H8476",
+   "sha256": "cb275e3ec92c41d543826555d0744599970ed69c6cac29c0259cf695cfd03a94",
+   "gloss": "couro",
+   "definition": "um animal (limpo) com pelo, provavelmente uma espécie de antílope",
+   "derivation": "provavelmente de derivação estrangeira;"
+  },
+  {
+   "strongs": "H8477",
+   "sha256": "5c1ecc065d1fd1439f1f08e0e25c0a6a2d50972f336c06b7e320b21204840703",
+   "gloss": "Taás",
+   "definition": "Taás, um parente de Abraão",
+   "derivation": "o mesmo que 8476;"
+  },
+  {
+   "strongs": "H8478G",
+   "sha256": "5f813f0488d5e957437b79ba7d974a297d1d8464a42ad5106274903e0433b345",
+   "gloss": "embaixo: debaixo",
+   "definition": "o fundo (como rebaixado); só adverbialmente, abaixo (muitas vezes com prefixo preposicional embaixo), em lugar de etc.",
+   "derivation": "do mesmo que 8430;"
+  },
+  {
+   "strongs": "H8478H",
+   "sha256": "6d6dce9157fe66ace731767cd746c5ff638408618cac3d74c7f4a563b0e28b85",
+   "gloss": "embaixo: em lugar de",
+   "definition": "o fundo (como rebaixado); só adverbialmente, abaixo (muitas vezes com prefixo preposicional embaixo), em lugar de etc.",
+   "derivation": "do mesmo que 8430;"
+  },
+  {
+   "strongs": "H8478I",
+   "sha256": "74918ff106219d397e339349eed371429462427addffb30cc7da39c62494ed9a",
+   "gloss": "embaixo: estar",
+   "definition": "o fundo (como rebaixado); só adverbialmente, abaixo (muitas vezes com prefixo preposicional embaixo), em lugar de etc.",
+   "derivation": "do mesmo que 8430;"
+  },
+  {
+   "strongs": "H8478J",
+   "sha256": "092f8c62a3670af7c56ffb4284983886544b7fc3b711f716b28d42a0f17b4adf",
+   "gloss": "embaixo: por causa de",
+   "definition": "o fundo (como rebaixado); só adverbialmente, abaixo (muitas vezes com prefixo preposicional embaixo), em lugar de etc.",
+   "derivation": "do mesmo que 8430;"
+  },
+  {
+   "strongs": "H8478K",
+   "sha256": "4d8801b572fbc5b8611b846cfcc4fb3da09c628c5378678c8717dc18f63c6450",
+   "gloss": "embaixo: possuir",
+   "definition": "o fundo (como rebaixado); só adverbialmente, abaixo (muitas vezes com prefixo preposicional embaixo), em lugar de etc.",
+   "derivation": "do mesmo que 8430;"
+  },
+  {
+   "strongs": "H8478L",
+   "sha256": "fddd2d72c442714508d4a9ef01d67d257a22927bc31e11ce5a2b3f7235deb8ee",
+   "gloss": "embaixo: jurar",
+   "definition": "o fundo (como rebaixado); só adverbialmente, abaixo (muitas vezes com prefixo preposicional embaixo), em lugar de etc.",
+   "derivation": "do mesmo que 8430;"
+  },
+  {
+   "strongs": "H8479",
+   "sha256": "43172d378369a08e7c91cb123026aa0d74e3a1dad3d56a84902457cce93ba7d3",
+   "gloss": "debaixo",
+   "derivation": "(aramaico) correspondente a 8478"
+  },
+  {
+   "strongs": "H8480G",
+   "sha256": "4b0dab27a285b441297a8981b3888cf5cef35bcc6b1a153e7e108f65cad8d4a9",
+   "gloss": "Taate",
+   "definition": "Taate, nome de um lugar no deserto e também de três israelitas",
+   "derivation": "o mesmo que 8478;"
+  },
+  {
+   "strongs": "H8480H",
+   "sha256": "4b0dab27a285b441297a8981b3888cf5cef35bcc6b1a153e7e108f65cad8d4a9",
+   "gloss": "Taate",
+   "definition": "Taate, nome de um lugar no deserto e também de três israelitas",
+   "derivation": "o mesmo que 8478;"
+  },
+  {
+   "strongs": "H8480I",
+   "sha256": "4b0dab27a285b441297a8981b3888cf5cef35bcc6b1a153e7e108f65cad8d4a9",
+   "gloss": "Taate",
+   "definition": "Taate, nome de um lugar no deserto e também de três israelitas",
+   "derivation": "o mesmo que 8478;"
+  },
+  {
+   "strongs": "H8480J",
+   "sha256": "4b0dab27a285b441297a8981b3888cf5cef35bcc6b1a153e7e108f65cad8d4a9",
+   "gloss": "Taate",
+   "definition": "Taate, nome de um lugar no deserto e também de três israelitas",
+   "derivation": "o mesmo que 8478;"
+  },
+  {
+   "strongs": "H8481G",
+   "sha256": "22438ca7661d424d8eee35b576d23922b64ddd604262ca25af336da5688216d8",
+   "gloss": "(Bete-Horom) de Baixo",
+   "definition": "o mais baixo",
+   "derivation": "ou תַּחְתֹּן; de 8478;"
+  },
+  {
+   "strongs": "H8481H",
+   "sha256": "402adbba01c082f138208d0029873d8da250251c3b58fa90a4b7dc8ec45e142d",
+   "gloss": "inferior",
+   "definition": "o mais baixo",
+   "derivation": "ou תַּחְתֹּן; de 8478;"
+  },
+  {
+   "strongs": "H8482",
+   "sha256": "2c7c091839cfa07ce1adfd06f77b4250db23516fc61fa10f130a3040a99c0b9c",
+   "gloss": "inferior",
+   "definition": "o mais baixo; como substantivo (plural feminino) as profundezas (figuradamente, uma cova, o ventre)",
+   "derivation": "de 8478;"
+  },
+  {
+   "strongs": "H8483",
+   "sha256": "32811c9a6d1b9157b5e8fbd4daf6912a8eb8076d249af8cfc7a66540b41b1a47",
+   "gloss": "Cades",
+   "definition": "Tatim-Hodsi, um lugar na Palestina",
+   "derivation": "aparentemente do plural masculino de 8482 ou 8478 e 2320; (os) de baixo mensalmente;",
+   "note": "Gloss 'Kadesh' (STEPBible) translated as Cades; the definition's Tachtim-Chodshi is Tatim-Hodsi (2 Samuel 24:6; the Bíblia Livre has 'terra baixa de Hodsi')."
+  },
+  {
+   "strongs": "H8484",
+   "sha256": "e38814e3ff7913c8509fb0443bda4aaede53882c9b1b9a8c6763cd8c5e219da1",
+   "gloss": "do meio",
+   "definition": "central",
+   "derivation": "ou תִּיכֹן; de 8432;",
+   "note": "Definition: the Portuguese word is spelled as in English (central)."
+  },
+  {
+   "strongs": "H8485G",
+   "sha256": "6e8fe69623b2a6ead43af9565c9f3e3e013484f6597c106308f2b49fd34a795c",
+   "gloss": "Tema",
+   "definition": "Tema, um filho de Ismael, e a região povoada por ele",
+   "derivation": "ou תֵּמָא; provavelmente de derivação estrangeira;"
+  },
+  {
+   "strongs": "H8485H",
+   "sha256": "6e8fe69623b2a6ead43af9565c9f3e3e013484f6597c106308f2b49fd34a795c",
+   "gloss": "Tema",
+   "definition": "Tema, um filho de Ismael, e a região povoada por ele",
+   "derivation": "ou תֵּמָא; provavelmente de derivação estrangeira;"
+  },
+  {
+   "strongs": "H8486",
+   "sha256": "1a4c4cb7b90db2c22fc4eb9e0bdf1d7c198c53932c454acdc7a5d82dd8624be4",
+   "gloss": "sul",
+   "definition": "o sul (por estar à mão direita de quem olha para o oriente)",
+   "derivation": "ou תֵּמָן; denominativo de 3225;"
+  },
+  {
+   "strongs": "H8487G",
+   "sha256": "77f3eb2440cb25da1b56456d97ce190001f884161191c18df858379ae1b2c226",
+   "gloss": "Temã",
+   "definition": "Temã, nome de dois edomitas e da região e descendente de um deles",
+   "derivation": "ou תֵּמָן; o mesmo que 8486;"
+  },
+  {
+   "strongs": "H8487H",
+   "sha256": "77f3eb2440cb25da1b56456d97ce190001f884161191c18df858379ae1b2c226",
+   "gloss": "Temã",
+   "definition": "Temã, nome de dois edomitas e da região e descendente de um deles",
+   "derivation": "ou תֵּמָן; o mesmo que 8486;"
+  },
+  {
+   "strongs": "H8488",
+   "sha256": "ffef141f566f33a3024a189e1f74c62031d1f949428e96d479293489019bbc5b",
+   "gloss": "Temeni",
+   "definition": "Temeni, um israelita",
+   "derivation": "provavelmente por 8489;"
+  },
+  {
+   "strongs": "H8489",
+   "sha256": "5ebd8394f7c2cb5afcbd994720d1753f6a42fe59fd6d0b4b10d3e6ce920d6353",
+   "gloss": "temanita",
+   "definition": "um temanita ou descendente de Temã",
+   "derivation": "patronimicamente de 8487;"
+  },
+  {
+   "strongs": "H8490",
+   "sha256": "4863a183c223d7777c33b6971a88afb8278f5b637a90bc98ac36495a1888832c",
+   "gloss": "coluna",
+   "definition": "uma coluna, isto é, nuvem",
+   "derivation": "ou תִּמָרָה; do mesmo que 8558;"
+  },
+  {
+   "strongs": "H8491",
+   "sha256": "1e9109bdb2b9c118f06b4315f5e92fcbe5353972fba8cd45ee7b4fa62d1b798f",
+   "gloss": "tizita",
+   "definition": "um tizita ou descendente ou habitante de um Tiz desconhecido",
+   "derivation": "pátrio ou patronimicamente de um substantivo não usado de significado incerto;"
+  },
+  {
+   "strongs": "H8492",
+   "sha256": "842720cd42669e0770a0df63962e2186f054af874a86114558f61f3f6d3dd120",
+   "gloss": "vinho novo",
+   "definition": "mosto ou suco de uva fresco (como acabado de espremer); por implicação (raramente) vinho fermentado",
+   "derivation": "ou תִּירֹשׁ; de 3423 no sentido de expulsão;"
+  },
+  {
+   "strongs": "H8493",
+   "sha256": "751ba614258652c788e97cc09a0d479b17d7ae3ec08be9e97cf4a9b54dc30af3",
+   "gloss": "Tíria",
+   "definition": "temeroso, Tíria, um israelita",
+   "derivation": "provavelmente de 3372;"
+  },
+  {
+   "strongs": "H8494",
+   "sha256": "36adbbdc8af1a9f960c60ccf0ccb76ac3987a20bb5e7bfed6ca104f181c44698",
+   "gloss": "Tirás",
+   "definition": "Tirás, um filho de Jafé",
+   "derivation": "provavelmente de derivação estrangeira;"
+  },
+  {
+   "strongs": "H8495",
+   "sha256": "0bf1a6fe1c3fa8b3549dff9b7351d6a669791f7eb5c5894cce5c2ae9239c624d",
+   "gloss": "bode",
+   "definition": "um bode (por ser dado a dar marradas)",
+   "derivation": "de uma raiz não usada que significa dar marradas;"
+  },
+  {
+   "strongs": "H8496",
+   "sha256": "42553b67043471343b89cdf6e2866ad4c3bb05f289d7a058e4cbd916328932d3",
+   "gloss": "opressão",
+   "definition": "opressão",
+   "derivation": "ou תּוֹך; (Salmos 72:14), da mesma base que 8432 (no sentido de cortar em pedaços);"
+  },
+  {
+   "strongs": "H8497",
+   "sha256": "398085397af6f73e4a232a8559f61399f15af1dbcda5d39f0ad748e51fb4a5b2",
+   "gloss": "seguir",
+   "definition": "espalhar, isto é, acampar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8498",
+   "sha256": "b79169f8fc5a351242ac31672518e389b765de1f0da04c49434a1ff2594143a5",
+   "gloss": "adequado",
+   "definition": "ajuste, isto é, estrutura; por implicação, equipamento",
+   "derivation": "particípio passivo feminino de 8505;"
+  },
+  {
+   "strongs": "H8499",
+   "sha256": "c4c4b75609044702e0548a53937550570e1182ae497acfb0a165963a1ce59128",
+   "gloss": "lugar",
+   "definition": "algo arranjado ou fixo, isto é, um lugar",
+   "derivation": "de 3559; ou provavelmente idêntico a 8498;"
+  },
+  {
+   "strongs": "H8500",
+   "sha256": "296f86239218a7551a538d7ebd2cb74aa31e507bc3ddbdd871c1d1c4929b1692",
+   "gloss": "pavão",
+   "definition": "provavelmente de derivação estrangeira; alguma criatura importada, provavelmente um pavão",
+   "derivation": "ou תּוּכִּי;"
+  },
+  {
+   "strongs": "H8501",
+   "sha256": "125ff116c337f39d5efc6cc59e8b6c1488c08f16f9f446568c03b7494cc96795",
+   "gloss": "enganoso",
+   "definition": "separar, isto é, esmagar",
+   "derivation": "de uma raiz não usada que significa",
+   "note": "Source derivation is cut off ('from an unused root meaning'); translated as is."
+  },
+  {
+   "strongs": "H8502",
+   "sha256": "89abda948e4eca9b26f03e409f1de5acc552895bba16feedc0bbb8f6a2582a75",
+   "gloss": "perfeição",
+   "definition": "completude",
+   "derivation": "de 3615;"
+  },
+  {
+   "strongs": "H8503",
+   "sha256": "5bd183634d8b02a6f51eb579562410735d03ff2d81162fee47833a212dbab592",
+   "gloss": "limite",
+   "definition": "conclusão; por implicação, uma extremidade",
+   "derivation": "de 3615;"
+  },
+  {
+   "strongs": "H8504",
+   "sha256": "83424107933b63726b90a738a6eeb3aa5e69d5452319035e99c9ce0b7167acae",
+   "gloss": "azul",
+   "definition": "o molusco cerúleo, isto é, a cor (violeta) dele obtida ou tecido tingido com ela",
+   "derivation": "provavelmente por 7827;"
+  },
+  {
+   "strongs": "H8505",
+   "sha256": "aca28d27aca36563cdf86771eb114f202a3ae963e7fcaef43a7c4445069756ff",
+   "gloss": "medir",
+   "definition": "equilibrar, isto é, medir (por peso ou dimensão); figuradamente arranjar, igualar, pela ideia de nivelar (medida, estimativa, prova)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8506",
+   "sha256": "bf6b0b6b392246c123939dcfb731dba09b91bee3d6fabde399eb7caf876568df",
+   "gloss": "quantidade",
+   "definition": "uma quantidade fixa",
+   "derivation": "de 8505;"
+  },
+  {
+   "strongs": "H8507",
+   "sha256": "1f897cdef52da8ee086f90045e8527fc61253e06c21a1d5c2d1e84e6b0e0f47e",
+   "gloss": "Toquém",
+   "definition": "Toquém, um lugar na Palestina",
+   "derivation": "o mesmo que 8506;"
+  },
+  {
+   "strongs": "H8508",
+   "sha256": "7c4c5a7f137095ce1630d13a6013b50564cbec0495c35dbedb2c0dd26db39f11",
+   "gloss": "proporção",
+   "definition": "medição, isto é, consumação",
+   "derivation": "de 8506;"
+  },
+  {
+   "strongs": "H8509",
+   "sha256": "53ec4f0203b002ae371ef99b26baa947ae6a8b3f3f3de533c3ee045b9aaddfb6",
+   "gloss": "manto",
+   "definition": "um envoltório ou manto",
+   "derivation": "aparentemente de uma raiz não usada que significa rodear;"
+  },
+  {
+   "strongs": "H8510",
+   "sha256": "8addb4dd762b72b55bdc57f7e807223f7785b8a73e165202492487a3383b0ce0",
+   "gloss": "montão",
+   "definition": "um montão",
+   "derivation": "por contração de 8524;"
+  },
+  {
+   "strongs": "H8511",
+   "sha256": "5b200a35e6d70cb067394b8397a580df970f8363501b610f81d3411c64a51ad8",
+   "gloss": "pendurar",
+   "definition": "suspender; figuradamente (pela hesitação) estar incerto; por implicação (de dependência mental) habituar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8512",
+   "sha256": "6f64bb7512bb9163010ddb66271a662ba6e732ffdceffe6dbcff6bbb7a46780c",
+   "gloss": "Tel-Abibe",
+   "definition": "Tel-Abibe, um lugar na Caldeia",
+   "derivation": "de 8510 e 24; montão de vegetação verde;"
+  },
+  {
+   "strongs": "H8513",
+   "sha256": "de75e2d0b65e73fbd8844dd637a441cea3a9a706ed742b354dee0b7439d0c1f6",
+   "gloss": "dificuldade",
+   "definition": "aflição",
+   "derivation": "de 3811;"
+  },
+  {
+   "strongs": "H8514",
+   "sha256": "b08d5c51b491e0a989f2d1572c9e9156f79c42a529aeefebf242d173a78f61fa",
+   "gloss": "seca",
+   "definition": "dessecação",
+   "derivation": "de 3851;"
+  },
+  {
+   "strongs": "H8515",
+   "sha256": "924f9f41a3d9afd841f6cb08c69e082f7858a3de6b0443f890400ad2cc9b9b56",
+   "gloss": "Telassar",
+   "definition": "Telassar, uma região da Assíria",
+   "derivation": "ou תְּלַשַּׂר; de derivação estrangeira;"
+  },
+  {
+   "strongs": "H8516",
+   "sha256": "9960c821d1c76ff48e45846b582361a89ff884e514e13b7daa3fdf158f4f10b0",
+   "gloss": "vestimenta",
+   "definition": "uma vestimenta",
+   "derivation": "de 3847;"
+  },
+  {
+   "strongs": "H8517",
+   "sha256": "1fc273aaa365511f1ee3f9a2d9145ceaac1b71e11217b9509c5eefcb8dae7e2d",
+   "gloss": "neve",
+   "definition": "neve",
+   "derivation": "(aramaico) correspondente a 7950;"
+  },
+  {
+   "strongs": "H8518",
+   "sha256": "3256c6e6487a3584ab980a6147d2b88204e19ffaf76159f322617ca215909bb0",
+   "gloss": "pendurar",
+   "definition": "suspender (especialmente na forca)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8519",
+   "sha256": "87c7d5f1d3c9b0821ff9f5d959ec2fc2c6ae8d2c574dec78df78d6d81ab4788c",
+   "gloss": "murmuração",
+   "definition": "uma murmuração",
+   "derivation": "ou תּלֻנָּה; de 3885 no sentido de obstinação;"
+  },
+  {
+   "strongs": "H8520",
+   "sha256": "101d75b5563280db3f5e7bd0b95136bfc7feef1e5553eb12bf78e4d50eab9b2c",
+   "gloss": "Telá",
+   "definition": "Telá, um israelita",
+   "derivation": "provavelmente de uma raiz não usada que significa separar; brecha;"
+  },
+  {
+   "strongs": "H8521",
+   "sha256": "260581c772686e927d4a8dedbd3b13bd4cde26e49e7aed9404f71549a732830e",
+   "gloss": "Tel-Harsa",
+   "definition": "Tel-Harsa, um lugar na Babilônia",
+   "derivation": "de 8510 e o feminino de 2798; montão de artífice;"
+  },
+  {
+   "strongs": "H8522",
+   "sha256": "c9f10a162d6ab85d1d6e5f5194dae0b226a15144b87a3e6c2915ba01918b82dd",
+   "gloss": "aljava",
+   "definition": "uma aljava (por ser pendurada)",
+   "derivation": "provavelmente de 8518;"
+  },
+  {
+   "strongs": "H8523A",
+   "sha256": "901f723f869492fed54fd206e1a49c829bf0bb048f4f32644fd626d2f9f3fadd",
+   "gloss": "terceiro",
+   "definition": "terceiro",
+   "derivation": "(aramaico) ou תַּלְתִּי; (aramaico), ordinal de 8532;"
+  },
+  {
+   "strongs": "H8523B",
+   "sha256": "901f723f869492fed54fd206e1a49c829bf0bb048f4f32644fd626d2f9f3fadd",
+   "gloss": "terceiro",
+   "definition": "terceiro",
+   "derivation": "(aramaico) ou תַּלְתִּי; (aramaico), ordinal de 8532;"
+  },
+  {
+   "strongs": "H8524",
+   "sha256": "f9238a5638503c74bffb0a32fb2c954932d87b921d952631b96456b3c1a6fa3e",
+   "gloss": "ser eminente",
+   "definition": "amontoar, isto é, elevar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8525",
+   "sha256": "db44d23c890ac723bbaa5f5676c87400c63de415422a9ca9c8fad7ca55dca8a6",
+   "gloss": "sulco",
+   "definition": "uma ribanceira ou terraço",
+   "derivation": "de uma raiz não usada que significa acumular;"
+  },
+  {
+   "strongs": "H8526G",
+   "sha256": "2b00ddaf5efd3e9843947965cb6a605ac4536cc835803f9fdef1de46d77012ed",
+   "gloss": "Talmai",
+   "definition": "Talmai, nome de um cananeu e de um sírio",
+   "derivation": "de 8525; sulcado;"
+  },
+  {
+   "strongs": "H8526H",
+   "sha256": "2b00ddaf5efd3e9843947965cb6a605ac4536cc835803f9fdef1de46d77012ed",
+   "gloss": "Talmai",
+   "definition": "Talmai, nome de um cananeu e de um sírio",
+   "derivation": "de 8525; sulcado;"
+  },
+  {
+   "strongs": "H8527",
+   "sha256": "d02d266d1985538d3a7e721db23f16ceeb938f95b0e96a39c15c82cd16031d49",
+   "gloss": "discípulo",
+   "definition": "um discípulo",
+   "derivation": "de 3925;"
+  },
+  {
+   "strongs": "H8528",
+   "sha256": "69bfbc79abb68f864563d8a77da20e380b04787b79be7fb47705c3810e17b09d",
+   "gloss": "Tel-Melá",
+   "definition": "Tel-Melá, um lugar na Babilônia",
+   "derivation": "de 8510 e 4417; montão de sal;"
+  },
+  {
+   "strongs": "H8529",
+   "sha256": "82d06e73a864265f3e3f195d783e39b13a731390e7cf5ab1d531e406538cae35",
+   "gloss": "vestir de escarlate",
+   "definition": "tingir de carmesim, isto é, tingir dessa cor",
+   "derivation": "denominativo de 8438;"
+  },
+  {
+   "strongs": "H8530",
+   "sha256": "e2b66d66f3167be8222c990d2c0de71c4bef94a000f965cdf76487321b3224f2",
+   "gloss": "arma",
+   "definition": "algo alto, isto é, (plural coletivo) esbeltez",
+   "derivation": "feminino de uma raiz não usada que significa elevar-se como torre;"
+  },
+  {
+   "strongs": "H8531",
+   "sha256": "f67d24c8d51653e784fd1cd19163a292b4f1b008f721c9c9d80d6145dfdcf604",
+   "gloss": "terceiro",
+   "definition": "uma posição de terceiro grau",
+   "derivation": "(aramaico) de 8532;"
+  },
+  {
+   "strongs": "H8532",
+   "sha256": "4e481fb60ae57e7ba2bf49d79fdde8e9c4ba0497033298b43278dc130746d3a9",
+   "gloss": "três",
+   "definition": "três ou terceiro",
+   "derivation": "(aramaico) masculino תְּלָתָה; (aramaico), ou תְּלָתָא; (aramaico), correspondente a 7969;"
+  },
+  {
+   "strongs": "H8533",
+   "sha256": "40dd80434c65a3e3427d79c753a52442f7bb63a7274e3362a405a89ff497e88a",
+   "gloss": "trinta",
+   "definition": "dez vezes três",
+   "derivation": "(aramaico) múltiplo de 8532;"
+  },
+  {
+   "strongs": "H8534",
+   "sha256": "45b67f1d2dc16afd460491bf9baac0ace10fe70e1362526f40459ece7b20ff85",
+   "gloss": "cacho",
+   "definition": "um ramo pendente (por ser pendular)",
+   "derivation": "por reduplicação, de 8524 pela ideia de vibração;"
+  },
+  {
+   "strongs": "H8535",
+   "sha256": "fb56cefa9ec542d45fa096f789b604fda5bae670a60b8b491dc4be8002a71a71",
+   "gloss": "completo",
+   "definition": "completo; geralmente (moralmente) piedoso; especificamente, gentil, querido",
+   "derivation": "de 8552;"
+  },
+  {
+   "strongs": "H8536",
+   "sha256": "19bee9ec76ef292ffb238b809f8a8e422d32a0e8a3abead07c5b0cfb15581340",
+   "gloss": "ali",
+   "definition": "ali",
+   "derivation": "(aramaico) correspondente a 8033;"
+  },
+  {
+   "strongs": "H8537",
+   "sha256": "1cb0d42777fd235e19fbc9f93b6622d8ca7d62ed0dbe346ac50a70a5b4e72b80",
+   "gloss": "integridade",
+   "definition": "completude; figuradamente, prosperidade; geralmente (moralmente) inocência",
+   "derivation": "de 8552;"
+  },
+  {
+   "strongs": "H8538",
+   "sha256": "c670089d5263f6bc4ded302e2e5b0c6d1f60624b08a70dfdf5db236fc2f24d1d",
+   "gloss": "integridade",
+   "definition": "inocência",
+   "derivation": "feminino de 8537;"
+  },
+  {
+   "strongs": "H8539",
+   "sha256": "93b9d1995953f6af386cb6cb0b901aa096468ecc74aff43657b8c9ace90b4c3e",
+   "gloss": "espantar-se",
+   "definition": "ficar consternado",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8540",
+   "sha256": "80d6213da6d3c69bc872ecad37d1fde7ca222d7553d0647d6348c0812b8d1c22",
+   "gloss": "maravilha",
+   "definition": "um milagre",
+   "derivation": "(aramaico) de uma raiz correspondente a 8539;"
+  },
+  {
+   "strongs": "H8541",
+   "sha256": "1873cdb159fc795c0b661467b09740bf64be688bfafabf7ac39f9b0723ba4edd",
+   "gloss": "perplexidade",
+   "definition": "consternação",
+   "derivation": "de 8539;"
+  },
+  {
+   "strongs": "H8542",
+   "sha256": "a905f9f5de0a5004cd8ce25245181866ae1ae8b625169a9ef3311cbc9048d8f7",
+   "gloss": "Tamuz",
+   "definition": "Tamuz, uma divindade fenícia",
+   "derivation": "de derivação incerta;"
+  },
+  {
+   "strongs": "H8543",
+   "sha256": "89e87cfa2ef94d85f1f4cc0c8ba6569c3f1450ea9df5933cd48ace78ac3da3c7",
+   "gloss": "ontem",
+   "definition": "propriamente, atrás, isto é, há (pouco ou muito) tempo; especialmente ontem, ou anteontem",
+   "derivation": "ou תְּמֹל; provavelmente por 865; às vezes com 8032"
+  },
+  {
+   "strongs": "H8544",
+   "sha256": "3a3c8cb1fd2cd7770add30210ec713a485d8a8f0c4b41ee52349290bb6e5978a",
+   "gloss": "semelhança",
+   "definition": "algo repartido (isto é, modelado), como uma forma, isto é, (indefinidamente) fantasma, ou (especificamente) encarnação, ou (figuradamente) manifestação (de favor)",
+   "derivation": "ou תְּמֻנָה; de 4327;"
+  },
+  {
+   "strongs": "H8545",
+   "sha256": "8becd5d8d34cd91a879047231153f2dcfa7451ed1db08aa68adbcab707a8643d",
+   "gloss": "troca",
+   "definition": "troca, compensação",
+   "derivation": "de 4171;"
+  },
+  {
+   "strongs": "H8546",
+   "sha256": "d341aa4a999cbc6659bcc66ef543a1300d9b3d654effe905f6ec80f5acbd457d",
+   "gloss": "morte",
+   "definition": "execução (como sentença)",
+   "derivation": "de 4191;"
+  },
+  {
+   "strongs": "H8547",
+   "sha256": "0665dc70f4ed060c0ffd367ae1f27be518d0a27e6914ed92556764160d807402",
+   "gloss": "Temá",
+   "definition": "Temá, um dos netineus",
+   "derivation": "de derivação incerta;"
+  },
+  {
+   "strongs": "H8548",
+   "sha256": "b9a20f78f0d660a5e42b12b224de9442e59f54c7bc5256b8c634f9f8a57efea1",
+   "gloss": "continuamente",
+   "definition": "propriamente, continuidade (como extensão indefinida); mas usado só (atributivamente como adjetivo) constante (ou adverbialmente, constantemente); elipticamente o sacrifício regular (diário)",
+   "derivation": "de uma raiz não usada que significa estender;"
+  },
+  {
+   "strongs": "H8549G",
+   "sha256": "77198ae1be1a398a4fe37a70bdf357a0ded80e89f67142ba5afc1eef49a7e5bf",
+   "gloss": "sem defeito",
+   "definition": "íntegro (literal, figurada ou moralmente); também (como substantivo) integridade, verdade",
+   "derivation": "de 8552;"
+  },
+  {
+   "strongs": "H8549H",
+   "sha256": "83bb8cbd9f3d2992d72975cd4fa66279c3bbeb97b7ed43ab24a509eed089b9be",
+   "gloss": "sem defeito: irrepreensível",
+   "definition": "íntegro (literal, figurada ou moralmente); também (como substantivo) integridade, verdade",
+   "derivation": "de 8552;"
+  },
+  {
+   "strongs": "H8549I",
+   "sha256": "01227e058f967d2a123b2c9e84de4d6c37c5b4aa2e8d6c1703a043fbc94872aa",
+   "gloss": "sem defeito: completo",
+   "definition": "íntegro (literal, figurada ou moralmente); também (como substantivo) integridade, verdade",
+   "derivation": "de 8552;"
+  },
+  {
+   "strongs": "H8549J",
+   "sha256": "3092b541e6a57d25b644b83eddab6cf28bd5825701659d06052981046b4cead4",
+   "gloss": "sem defeito: Tumim",
+   "definition": "íntegro (literal, figurada ou moralmente); também (como substantivo) integridade, verdade",
+   "derivation": "de 8552;"
+  },
+  {
+   "strongs": "H8550",
+   "sha256": "262e87c7870101d8da18207a21b2f47457f5c7671305f35fc387212d11940cea",
+   "gloss": "Tumim",
+   "definition": "perfeições, isto é, (técn.) um dos epítetos dos objetos no peitoral do sumo sacerdote como emblema da Verdade completa",
+   "derivation": "plural de 8537;"
+  },
+  {
+   "strongs": "H8551",
+   "sha256": "df3fab5873ab259579d670ac978633268ab938cb7cc219a1016022454cf1a5e3",
+   "gloss": "segurar",
+   "definition": "sustentar; por implicação, obter, segurar firme; figuradamente, ajudar, seguir de perto",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8552",
+   "sha256": "f6a63ab793c153326047fca39e37c5ae6e62ea4aca15d1206dfaa5264f51e885",
+   "gloss": "acabar",
+   "definition": "completar, em bom ou mau sentido, literal ou figurado, transitivo ou intransitivo",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8553G",
+   "sha256": "d0eed8827f3d56b409e3a9c1c0817501030769c6b1469ff25580a420ba29cc2b",
+   "gloss": "Timna",
+   "definition": "Timna, nome de dois lugares na Palestina",
+   "derivation": "de 4487; uma porção designada;"
+  },
+  {
+   "strongs": "H8553H",
+   "sha256": "d0eed8827f3d56b409e3a9c1c0817501030769c6b1469ff25580a420ba29cc2b",
+   "gloss": "Timna",
+   "definition": "Timna, nome de dois lugares na Palestina",
+   "derivation": "de 4487; uma porção designada;"
+  },
+  {
+   "strongs": "H8554",
+   "sha256": "620f30c90ab89b8b3b81e000d7d5f3eab59d8d80a65aa54e82b069427b5d0a7b",
+   "gloss": "timnita",
+   "definition": "um timnita ou habitante de Timna",
+   "derivation": "pátrio de 8553;"
+  },
+  {
+   "strongs": "H8555G",
+   "sha256": "aa4aa1430542352739feec8d5c7a18aecb6f7fda90fc39de5b0b7dafa8ec3838",
+   "gloss": "Timna",
+   "definition": "Timna, nome de dois edomitas",
+   "derivation": "de 4513; restrição;"
+  },
+  {
+   "strongs": "H8555H",
+   "sha256": "aa4aa1430542352739feec8d5c7a18aecb6f7fda90fc39de5b0b7dafa8ec3838",
+   "gloss": "Timna",
+   "definition": "Timna, nome de dois edomitas",
+   "derivation": "de 4513; restrição;"
+  },
+  {
+   "strongs": "H8555I",
+   "sha256": "aa4aa1430542352739feec8d5c7a18aecb6f7fda90fc39de5b0b7dafa8ec3838",
+   "gloss": "Timna",
+   "definition": "Timna, nome de dois edomitas",
+   "derivation": "de 4513; restrição;"
+  },
+  {
+   "strongs": "H8556A",
+   "sha256": "d3a361137108eb11ab89555e84d76170411f78a46c63e189f6210cd7901b94c3",
+   "gloss": "Timnate-Heres",
+   "definition": "Timnate-Heres, um lugar na Palestina",
+   "derivation": "ou תִּמְנַת סֶרַח; de 8553 e 2775; porção do sol;"
+  },
+  {
+   "strongs": "H8556B",
+   "sha256": "aa867ed08d565f2e2eaf74ef9af93424741b1004e2e5424d2dd38cc64cb9a4f9",
+   "gloss": "Timnate-Sera",
+   "definition": "Timnate-Heres, um lugar na Palestina",
+   "derivation": "ou תִּמְנַת סֶרַח; de 8553 e 2775; porção do sol;",
+   "note": "Timnath-serah (gloss) is Timnate-Sera in Almeida; the Bíblia Livre reads Timnate-Heres in Josué 19:50 too. Definition's Timnath-Cheres is Timnate-Heres."
+  },
+  {
+   "strongs": "H8557",
+   "sha256": "3fdaf19291e3d647a339b6f0f6075ae53e51d423d88e6f154f81269e073ad97a",
+   "gloss": "derretimento",
+   "definition": "liquefação, isto é, desaparecimento",
+   "derivation": "de 4529;"
+  },
+  {
+   "strongs": "H8558",
+   "sha256": "9962562afa1ec2afd47a72277054a2fcf1ceadf168f4f214f1b2e4d9d55b8f5d",
+   "gloss": "palmeira",
+   "definition": "uma palmeira",
+   "derivation": "de uma raiz não usada que significa estar ereto;"
+  },
+  {
+   "strongs": "H8559G",
+   "sha256": "6f22a7179bf1c5b2103e2a57a8c5f6929bec6539fb996a15ae12f3a74c638e46",
+   "gloss": "Tamar",
+   "definition": "Tamar, nome de três mulheres e de um lugar",
+   "derivation": "o mesmo que 8558;"
+  },
+  {
+   "strongs": "H8559H",
+   "sha256": "6f22a7179bf1c5b2103e2a57a8c5f6929bec6539fb996a15ae12f3a74c638e46",
+   "gloss": "Tamar",
+   "definition": "Tamar, nome de três mulheres e de um lugar",
+   "derivation": "o mesmo que 8558;"
+  },
+  {
+   "strongs": "H8559I",
+   "sha256": "6f22a7179bf1c5b2103e2a57a8c5f6929bec6539fb996a15ae12f3a74c638e46",
+   "gloss": "Tamar",
+   "definition": "Tamar, nome de três mulheres e de um lugar",
+   "derivation": "o mesmo que 8558;"
+  },
+  {
+   "strongs": "H8559J",
+   "sha256": "6f22a7179bf1c5b2103e2a57a8c5f6929bec6539fb996a15ae12f3a74c638e46",
+   "gloss": "Tamar",
+   "definition": "Tamar, nome de três mulheres e de um lugar",
+   "derivation": "o mesmo que 8558;"
+  },
+  {
+   "strongs": "H8559K",
+   "sha256": "6f22a7179bf1c5b2103e2a57a8c5f6929bec6539fb996a15ae12f3a74c638e46",
+   "gloss": "Tamar",
+   "definition": "Tamar, nome de três mulheres e de um lugar",
+   "derivation": "o mesmo que 8558;"
+  },
+  {
+   "strongs": "H8560",
+   "sha256": "0707869369d80b031c0220c66c006aa49e64c6a9905d234aa969b07a72b6fa0c",
+   "gloss": "palmeira",
+   "definition": "um tronco de palmeira",
+   "derivation": "da mesma raiz que 8558;"
+  },
+  {
+   "strongs": "H8561",
+   "sha256": "3b14480397fa45070be4afbccd7d743a6274e6bdcfbfa280752f939769aae26e",
+   "gloss": "palmeira",
+   "definition": "(arquitetônico) uma pilastra em forma de palmeira (isto é, umbelada)",
+   "derivation": "(plural ou (feminino) תִּמֹּרָה; (singular e plural), da mesma raiz que 8558;"
+  },
+  {
+   "strongs": "H8562",
+   "sha256": "756d6b1c0757f4532d43ddff2b8d448007fd82baaab1aadcc52cdf006cf09b26",
+   "gloss": "cosmético",
+   "definition": "propriamente, um esfregar, isto é, sabão ou perfumaria para o banho; figuradamente, um detergente",
+   "derivation": "ou תַּמְרֻק; ou תַּמְרִיק; de 4838;"
+  },
+  {
+   "strongs": "H8563",
+   "sha256": "2176ac0c371f490704801841cb91a71e016d40a85a5620d10c30ea2c58c97bf4",
+   "gloss": "amargura",
+   "definition": "amargura (plural como coletivo)",
+   "derivation": "de 4843;"
+  },
+  {
+   "strongs": "H8564",
+   "sha256": "43893f9c9140c00cc9bb998c4adfc27f936dcc11dc82f2b799d899e8b23e5473",
+   "gloss": "marco",
+   "definition": "algo erguido, isto é, coluna (provavelmente como marco indicador)",
+   "derivation": "da mesma raiz que 8558;"
+  },
+  {
+   "strongs": "H8565",
+   "sha256": "c7535ce3281fe17aa2e8bcf9f381d162c9d9f480adf797bf9ca2004522f0091d",
+   "gloss": "dragão",
+   "definition": "um monstro (como formado de modo sobrenatural), isto é, uma serpente marinha (ou outro enorme animal marinho); também um chacal (ou outro animal terrestre hediondo)",
+   "derivation": "de uma raiz não usada que provavelmente significa alongar;"
+  },
+  {
+   "strongs": "H8566",
+   "sha256": "0c02d511e95073cbffdabe7fc8e622da253069b2601de564025c18f59dc22c68",
+   "gloss": "contratar",
+   "definition": "oferecer (um incentivo mercenário), isto é, negociar com (uma prostituta)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8567",
+   "sha256": "b08ab3cca1c513518851ae4b27047b6b425cb945d5aa18b7bc5ea3b8d632000f",
+   "gloss": "relatar",
+   "definition": "atribuir (louvor), isto é, celebrar, comemorar",
+   "derivation": "raiz primitiva (idêntica a pela ideia de atribuir honra);",
+   "note": "Source derivation reads 'identical with through' (number missing in the source); translated as is."
+  },
+  {
+   "strongs": "H8568",
+   "sha256": "bd8ffb1f46475b4005d55e73b2358f043063b4ca2a41a8ee215d79486aff9741",
+   "gloss": "dragão",
+   "definition": "uma chacal fêmea",
+   "derivation": "provavelmente feminino de 8565;"
+  },
+  {
+   "strongs": "H8569",
+   "sha256": "159629b91f0fa7dfd39561c563a5032c83d5b3bad63f2367f9e854ff4946443b",
+   "gloss": "oposição",
+   "definition": "alienação; por implicação, inimizade",
+   "derivation": "de 5106;"
+  },
+  {
+   "strongs": "H8570",
+   "sha256": "09fbfbce19f6d0b1c845096056f1dfc88bf1b483e28d797083bc203077e70190",
+   "gloss": "fruto",
+   "definition": "produto",
+   "derivation": "de 5107;"
+  },
+  {
+   "strongs": "H8571",
+   "sha256": "2e7d9002686f30e3d77e944505de1461a3d653a20227dab9b9c353ba7d67a69e",
+   "gloss": "lóbulo",
+   "definition": "um pináculo, isto é, extremidade",
+   "derivation": "talvez do mesmo que 594 pela ideia de prolongamento;"
+  },
+  {
+   "strongs": "H8572",
+   "sha256": "4ad379e3be16ed5c4e1ef646f20162b6fb5b78a64962e6d13bcaacad93988de1",
+   "gloss": "sonolência",
+   "definition": "sonolência, isto é, sono",
+   "derivation": "de 5123;"
+  },
+  {
+   "strongs": "H8573",
+   "sha256": "8c70457aa6a8735b140f904924a0ff30a0c239793278054845437be6ea8e836e",
+   "gloss": "oferta movida",
+   "definition": "um brandir (em ameaça); por implicação, tumulto; especificamente, a ondulação oficial das ofertas sacrificiais",
+   "derivation": "de 5130;"
+  },
+  {
+   "strongs": "H8574G",
+   "sha256": "7fce3ae632e1f1ac64b47db97115f93f6830a31b2a2d8a906bb74bdf147dd17d",
+   "gloss": "(Torre dos) Fornos",
+   "definition": "um fogareiro",
+   "derivation": "de 5216;"
+  },
+  {
+   "strongs": "H8574H",
+   "sha256": "9747bc6a57ca1dc3ca68f802ece115751940c1c741ba967b20cdeb276543b607",
+   "gloss": "forno",
+   "definition": "um fogareiro",
+   "derivation": "de 5216;"
+  },
+  {
+   "strongs": "H8575",
+   "sha256": "26cd63947358a82621b5b77db4767bac242e9593c6c4502a0c8e1e5f0e7fab79",
+   "gloss": "consolação",
+   "definition": "compaixão, consolo",
+   "derivation": "ou תַּנְחֻם; e (feminino) תַּנְחוּמָה; de 5162;"
+  },
+  {
+   "strongs": "H8576",
+   "sha256": "7ff1df6873f4d9514097573e38e1f43c661ba44b0ed699ab10bc0cd5c328fbb8",
+   "gloss": "Tanumete",
+   "definition": "Tanumete, um israelita",
+   "derivation": "por 8575 (feminino);"
+  },
+  {
+   "strongs": "H8577A",
+   "sha256": "ecfb4e34f8e7b0c797e89424e97f766f760d1ecc5a3be7899bfa3e40d4fcede6",
+   "gloss": "chacal",
+   "definition": "um monstro marinho ou terrestre, isto é, serpente marinha ou chacal",
+   "derivation": "ou תַּנִּים; (Ezequiel 29:3), intensivo do mesmo que 8565;"
+  },
+  {
+   "strongs": "H8577B",
+   "sha256": "02a1a8b8299fda811b640ceee5857b0f13ae388894588b0b685bfff49e18fac5",
+   "gloss": "Dragão",
+   "definition": "um monstro marinho ou terrestre, isto é, serpente marinha ou chacal",
+   "derivation": "ou תַּנִּים; (Ezequiel 29:3), intensivo do mesmo que 8565;"
+  },
+  {
+   "strongs": "H8577M",
+   "sha256": "b8f04fd2298ae68cce4d06e33d66f9b85dc89ef4d1f160c3427f20e3464f6eb2",
+   "gloss": "serpente: cobra",
+   "definition": "um monstro marinho ou terrestre, isto é, serpente marinha ou chacal",
+   "derivation": "ou תַּנִּים; (Ezequiel 29:3), intensivo do mesmo que 8565;"
+  },
+  {
+   "strongs": "H8577N",
+   "sha256": "f2e582b51354616452d2179690e4a507a6044c2d0ab147e898caddc7b4924d50",
+   "gloss": "serpente: monstro",
+   "definition": "um monstro marinho ou terrestre, isto é, serpente marinha ou chacal",
+   "derivation": "ou תַּנִּים; (Ezequiel 29:3), intensivo do mesmo que 8565;"
+  },
+  {
+   "strongs": "H8578",
+   "sha256": "af1efff1c8ccae5c1d01bd972d2642f6e3029bc436d97c83c35f7947db6ec702",
+   "gloss": "segundo",
+   "definition": "segundo",
+   "derivation": "(aramaico) correspondente a 8147;"
+  },
+  {
+   "strongs": "H8579",
+   "sha256": "ce02afd8c8a70261ed64312b7f16922500e1b387b444c78f7a581c16dba83d29",
+   "gloss": "segunda vez",
+   "definition": "uma segunda vez",
+   "derivation": "(aramaico) de 8578;"
+  },
+  {
+   "strongs": "H8580",
+   "sha256": "f6903c993ce8fb2138d97d90a348d8997b5a314880f6c35a0fe189fcf7a006e4",
+   "gloss": "camaleão",
+   "definition": "propriamente, um que respira com dificuldade, isto é, nome de duas criaturas imundas, um lagarto e uma ave (ambos talvez por mudarem de cor pela irascibilidade), provavelmente a rela e a galinha-d’água",
+   "derivation": "de 5395;"
+  },
+  {
+   "strongs": "H8581",
+   "sha256": "d735e666754ec45872be97468e1827721e04406e95a0420f2ee3b41bf2b318fe",
+   "gloss": "abominar",
+   "definition": "detestar, isto é, (moralmente) abominar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8582",
+   "sha256": "51ac55e7e81ee57a1e3cd02bf4a182a291e0758a8d95140a1be77f98bc82656f",
+   "gloss": "desviar-se",
+   "definition": "vacilar, isto é, cambalear ou desviar-se (literal ou figuradamente); também causativo de ambos",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8583",
+   "sha256": "ebc4288b59dcfcded537d481392f70177c61e996c7de671ec544c4b5c0afacb4",
+   "gloss": "Toí",
+   "definition": "Toú ou Toí, um rei sírio",
+   "derivation": "ou תֹּעִי; de 8582; erro"
+  },
+  {
+   "strongs": "H8584",
+   "sha256": "5a07d6986018e664e94b8ebd64dd566539239d72d6dcbd3750abe9e618e2be51",
+   "gloss": "testemunho",
+   "definition": "atestação, isto é, um preceito, uso",
+   "derivation": "de 5749;"
+  },
+  {
+   "strongs": "H8585A",
+   "sha256": "086b5164db0f11780a8079777bf095b4f8a64ef7f06b9bac95a139b4a02ebaa0",
+   "gloss": "aqueduto",
+   "definition": "um canal (para onde se eleva a água para irrigação); também uma atadura ou emplastro (como posto sobre uma ferida)",
+   "derivation": "de 5927;"
+  },
+  {
+   "strongs": "H8585B",
+   "sha256": "7598410d4ca02ce544320f86070005f39cd6ffa6ab4cd0142d204935fdd01634",
+   "gloss": "cura",
+   "definition": "um canal (para onde se eleva a água para irrigação); também uma atadura ou emplastro (como posto sobre uma ferida)",
+   "derivation": "de 5927;"
+  },
+  {
+   "strongs": "H8586",
+   "sha256": "0d0177ab53841c81161f1b231248b339b6d48e5839d7b264347a7f5e1cca60c2",
+   "gloss": "capricho",
+   "definition": "capricho (como um acesso que sobrevém), isto é, vexação; concretamente um tirano",
+   "derivation": "de 5953;"
+  },
+  {
+   "strongs": "H8587",
+   "sha256": "61ae20cb831298cb67279fd0cd03ac3fcd509b5a2bdb818560c9d494fa2333fb",
+   "gloss": "segredo",
+   "definition": "um segredo",
+   "derivation": "de 5956;"
+  },
+  {
+   "strongs": "H8588",
+   "sha256": "6fe821aec70ff7e1772916d29da1c1b42ab497a27356f64d0fc073fa048b475d",
+   "gloss": "luxo",
+   "definition": "luxo",
+   "derivation": "ou תַּעֲנֻג; e (feminino) תַּעֲנֻגָה; de 6026;"
+  },
+  {
+   "strongs": "H8589",
+   "sha256": "1bf81c66a0f61007346b3c693322aa5e325f43dbc5397d452e8580ecc8d83915",
+   "gloss": "jejum",
+   "definition": "aflição (de si mesmo), isto é, jejum",
+   "derivation": "de 6031;"
+  },
+  {
+   "strongs": "H8590",
+   "sha256": "08e8597a0be6d41ed659ec45086c7270f684a9df40f20c9eac912225a94385d1",
+   "gloss": "Taanaque",
+   "definition": "Taanaque, um lugar na Palestina",
+   "derivation": "ou תַּעְנָךְ; de derivação incerta;",
+   "note": "Strong's two spellings (Taanak or Tanak) are both Taanaque in Almeida / Bíblia Livre."
+  },
+  {
+   "strongs": "H8591",
+   "sha256": "40fc8cfdfa8a187da95b81ade04dc78a4fa45b1efb829923eaea4a6d293729d2",
+   "gloss": "zombar",
+   "definition": "enganar; por analogia, maltratar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8592",
+   "sha256": "57e6e7286a15c7ec9eb4d3ba71e888f5ea242df5e252d74d58746399eebf1a0a",
+   "gloss": "poder",
+   "definition": "poder (plural coletivo)",
+   "derivation": "de 6105;"
+  },
+  {
+   "strongs": "H8593",
+   "sha256": "e8ec16754e593f006a39cb9554175732ce106474d7b7533190798db3b7489076",
+   "gloss": "navalha",
+   "definition": "uma faca ou navalha (por desnudar); também uma bainha (por estar nua, isto é, vazia)",
+   "derivation": "de 6168;"
+  },
+  {
+   "strongs": "H8594",
+   "sha256": "6cac6824d334fcada289e2dc897a24c2a7ae69bbc9f9a3bf5846b4418046042c",
+   "gloss": "penhor",
+   "definition": "fiança, isto é, (concretamente) um penhor",
+   "derivation": "de 6148;"
+  },
+  {
+   "strongs": "H8595",
+   "sha256": "7bbbb668b1cbaf1cfd0f4252201fce12f115ffea09813f313d6013501028f996",
+   "gloss": "ilusão",
+   "definition": "uma fraude",
+   "derivation": "de 8591;"
+  },
+  {
+   "strongs": "H8596",
+   "sha256": "317b5d7ef548f6d4d5c7cac70da05012e7586caad6c5ff212dcaa79ea4f00e34",
+   "gloss": "tamboril",
+   "definition": "um tamboril",
+   "derivation": "de 8608 contraído;"
+  },
+  {
+   "strongs": "H8597",
+   "sha256": "e886ac0dc08f2727a316678c8d85ad3220ae8e9e3e4ff04d3fe1b77b475b5618",
+   "gloss": "beleza",
+   "definition": "ornamento (abstrata ou concretamente, literal ou figuradamente)",
+   "derivation": "ou תִּפְאֶרֶת; de 6286;"
+  },
+  {
+   "strongs": "H8598",
+   "sha256": "5e309256a34b0d398843548d503d9eb91910747ea8b65670b82b7e4fc5d05e39",
+   "gloss": "maçã",
+   "definition": "uma maçã (por sua fragrância), isto é, o fruto ou a árvore (provavelmente incluindo outros da ordem das pomóideas, como o marmelo, a laranja etc.)",
+   "derivation": "de 5301;"
+  },
+  {
+   "strongs": "H8599A",
+   "sha256": "831e39f09c07b71d695dd7eddfd1c087fcd5650030bb58483f19f6b8e10f2f05",
+   "gloss": "Tapua",
+   "definition": "Tapua, nome de dois lugares na Palestina, também de um israelita",
+   "derivation": "o mesmo que 8598;"
+  },
+  {
+   "strongs": "H8599B",
+   "sha256": "831e39f09c07b71d695dd7eddfd1c087fcd5650030bb58483f19f6b8e10f2f05",
+   "gloss": "Tapua",
+   "definition": "Tapua, nome de dois lugares na Palestina, também de um israelita",
+   "derivation": "o mesmo que 8598;"
+  },
+  {
+   "strongs": "H8599G",
+   "sha256": "831e39f09c07b71d695dd7eddfd1c087fcd5650030bb58483f19f6b8e10f2f05",
+   "gloss": "Tapua",
+   "definition": "Tapua, nome de dois lugares na Palestina, também de um israelita",
+   "derivation": "o mesmo que 8598;"
+  },
+  {
+   "strongs": "H8600",
+   "sha256": "2fdfea9629b8425e08e914ed1bc9e5ba92fef2343cc8cff4fb6f88833e185471",
+   "gloss": "dispersão",
+   "definition": "uma dispersão",
+   "derivation": "de 6327;"
+  },
+  {
+   "strongs": "H8601",
+   "sha256": "739ffd4b7b3e316dffb336530beb69d628c9d9ab42f4294053b3b92d9bc2c26a",
+   "gloss": "cozido",
+   "definition": "culinária, isto é, (concretamente) um bolo",
+   "derivation": "de 644;"
+  },
+  {
+   "strongs": "H8602A",
+   "sha256": "17e6f1f71992118d53bbc54a04cd480f3f297b86015a4da8cd6b613bd1235f13",
+   "gloss": "insípido",
+   "definition": "reboco (por ser pegajoso) ou lodo; (figuradamente) frivolidade",
+   "derivation": "de uma raiz não usada que significa untar;"
+  },
+  {
+   "strongs": "H8602B",
+   "sha256": "23f91930c04f860896c6c6bac2654fc545cb40f5c3565041367e4f22f74a0dbc",
+   "gloss": "reboco",
+   "definition": "reboco (por ser pegajoso) ou lodo; (figuradamente) frivolidade",
+   "derivation": "de uma raiz não usada que significa untar;"
+  },
+  {
+   "strongs": "H8603",
+   "sha256": "af1e484df1640ad2704e52b48a2063082e5ed9c69d211ae444e3be8827a15ba4",
+   "gloss": "Tofel",
+   "definition": "Tofel, um lugar perto do deserto",
+   "derivation": "do mesmo que 8602; atoleiro;"
+  },
+  {
+   "strongs": "H8604",
+   "sha256": "7d917348280857a28bf9540d7e618385526505ec1cebb330ac188cafe572f2d2",
+   "gloss": "loucura",
+   "definition": "frivolidade",
+   "derivation": "do mesmo que 8602;"
+  },
+  {
+   "strongs": "H8605",
+   "sha256": "34b10dfd1ea2fcb37ee2f8ccc5157a6922f724d8c26563215a5b721b4e7f42bf",
+   "gloss": "oração",
+   "definition": "intercessão, súplica; por implicação, um hino",
+   "derivation": "de 6419;"
+  },
+  {
+   "strongs": "H8606",
+   "sha256": "208b3bbd7d6f45d16135184226140991b5acc034d261bbd719c3d4d535679817",
+   "gloss": "terror",
+   "definition": "temor",
+   "derivation": "de 6426;",
+   "note": "Gloss: the Portuguese word is spelled as in English (terror)."
+  },
+  {
+   "strongs": "H8607G",
+   "sha256": "00743314e45f2c9447dfa0e9cd2c1f37a606d9f120d795a82e787f31339e5836",
+   "gloss": "Tifsa",
+   "definition": "Tifsa, um lugar na Mesopotâmia",
+   "derivation": "de 6452; vau;"
+  },
+  {
+   "strongs": "H8607H",
+   "sha256": "00743314e45f2c9447dfa0e9cd2c1f37a606d9f120d795a82e787f31339e5836",
+   "gloss": "Tifsa",
+   "definition": "Tifsa, um lugar na Mesopotâmia",
+   "derivation": "de 6452; vau;"
+  },
+  {
+   "strongs": "H8608",
+   "sha256": "8c4b4c02bb2851ac85052ec59c3a572df4ad0222ff5eb8aef7c4afbaf1896933",
+   "gloss": "tocar tamboril",
+   "definition": "tamborilar, isto é, tocar (como) no tamboril",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8609",
+   "sha256": "b5a0ec36a458661d871754554b9b94b0b9eaa49645c924cda48eee3392e93b64",
+   "gloss": "costurar",
+   "definition": "costurar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8610",
+   "sha256": "e80fb35d8051aa8ab49125954f5819f19c78f781684dec01cadbe7402078ec78",
+   "gloss": "capturar",
+   "definition": "manipular, isto é, agarrar; principalmente capturar, empunhar, especificamente, revestir; figuradamente, usar sem direito",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8611",
+   "sha256": "bb55b4d35953f94c1e2023ffbab4684129dcbbe438c18cb51f47f9540e2813c7",
+   "gloss": "cuspe",
+   "definition": "um golpe, isto é, (figuradamente) desprezo",
+   "derivation": "da base de 8608;"
+  },
+  {
+   "strongs": "H8612",
+   "sha256": "d09208fa008c168f2e11d81d8ff0d954be09ff18423296f57530986a1fd46dee",
+   "gloss": "Tofete",
+   "definition": "Tofete, um lugar perto de Jerusalém",
+   "derivation": "o mesmo que 8611;"
+  },
+  {
+   "strongs": "H8613",
+   "sha256": "e46325eefd909aae9d950745d4014657ad4a08df81628bf786f6a9833eefafde",
+   "gloss": "lugar de queima",
+   "definition": "Tofete, um lugar de cremação",
+   "derivation": "provavelmente uma forma de 8612;"
+  },
+  {
+   "strongs": "H8614",
+   "sha256": "60bc8947c05f4ffa7a6747d551e4bb2af6584694685889c517db5d221152ca40",
+   "gloss": "magistrado",
+   "definition": "judicial, isto é, um jurista",
+   "derivation": "(aramaico) talvez de 8199;"
+  },
+  {
+   "strongs": "H8615A",
+   "sha256": "d961c65eec42b99fc638b232ff7a599f0b425dd903da129b7dca15d3a726689c",
+   "gloss": "cordão",
+   "definition": "literalmente um cordão (como ligação); figuradamente, expectativa",
+   "derivation": "de 6960; (compare 6961)"
+  },
+  {
+   "strongs": "H8615B",
+   "sha256": "97cb528e13971070abdb0aff04132bdc2e3f6b4458a942b4f7e3566117ce91a5",
+   "gloss": "esperança",
+   "definition": "literalmente um cordão (como ligação); figuradamente, expectativa",
+   "derivation": "de 6960; (compare 6961)"
+  },
+  {
+   "strongs": "H8616G",
+   "sha256": "26b4db135ff5016e306e14ab83b05cbca4c42776899591dd323758f7b154b83a",
+   "gloss": "Ticvá",
+   "definition": "Ticvá, nome de dois israelitas",
+   "derivation": "o mesmo que 8615;"
+  },
+  {
+   "strongs": "H8616H",
+   "sha256": "26b4db135ff5016e306e14ab83b05cbca4c42776899591dd323758f7b154b83a",
+   "gloss": "Ticvá",
+   "definition": "Ticvá, nome de dois israelitas",
+   "derivation": "o mesmo que 8615;"
+  },
+  {
+   "strongs": "H8617",
+   "sha256": "4f8aa0d1eed0597a4d136877d7c2044510346f800e618535a09a641e5a67590f",
+   "gloss": "resistência",
+   "definition": "capacidade de resistir",
+   "derivation": "de 6965;"
+  },
+  {
+   "strongs": "H8618",
+   "sha256": "4a50d7e2e058015e6947e0e7a05067bd9abf84b53d20d0f2720193a73222303b",
+   "gloss": "enfrentar",
+   "definition": "um adversário",
+   "derivation": "de 6965;"
+  },
+  {
+   "strongs": "H8619",
+   "sha256": "0837f494ea96161eb16a73fdd6fa50b326678cd48ca7f9cf9faa6273b320fba5",
+   "gloss": "trombeta",
+   "definition": "uma trombeta",
+   "derivation": "de 8628 (no sentido musical);"
+  },
+  {
+   "strongs": "H8620",
+   "sha256": "6b205892abedde2bd4eb3c68856d4108e730ff0aaa779262c89194909fee29b4",
+   "gloss": "Tecoa",
+   "definition": "Tecoa, um lugar na Palestina",
+   "derivation": "uma forma de 8619;"
+  },
+  {
+   "strongs": "H8621",
+   "sha256": "8ac70f0f065671da91073bfa1793ce66b300271f0a2715fc5334421f72537df1",
+   "gloss": "Tecoa",
+   "definition": "um tecoíta ou habitante de Tecoa",
+   "derivation": "ou תְּקֹעִי; patronimicamente de 8620;"
+  },
+  {
+   "strongs": "H8622",
+   "sha256": "53cff55dd222242a01e65d3b6a93b2320874e73b457a489e32554167bcc469f1",
+   "gloss": "circuito",
+   "definition": "uma revolução, isto é, (do sol) curso, (do tempo) decurso",
+   "derivation": "ou תְּקֻפָה; de 5362;"
+  },
+  {
+   "strongs": "H8623",
+   "sha256": "69010b045d7bc1f11cbdd05177b7962354b705d4d03274956d35aa7f5d0f5fdc",
+   "gloss": "poderoso",
+   "definition": "poderoso",
+   "derivation": "de 8630;"
+  },
+  {
+   "strongs": "H8624",
+   "sha256": "b092779116c4b9e7fcb76a986c323efa5a429a2cbc3a22a313974ec0bfaf20f6",
+   "gloss": "forte",
+   "derivation": "(aramaico) correspondente a 8623"
+  },
+  {
+   "strongs": "H8625A",
+   "sha256": "3c0946c31686cfea81d6c8a0807011e74cdc5972974b0baec1e64863dc5c3c59",
+   "gloss": "pesar",
+   "definition": "equilibrar",
+   "derivation": "(aramaico) correspondente a 8254;"
+  },
+  {
+   "strongs": "H8625B",
+   "sha256": "6c6dccd34121d4b13f2ece9521fc33772756e0b3c7276ff7d788bdcdd8eeb915",
+   "gloss": "siclo",
+   "definition": "equilibrar",
+   "derivation": "(aramaico) correspondente a 8254;"
+  },
+  {
+   "strongs": "H8626",
+   "sha256": "6eb22ab9cf3a161705aa321e465822c56de39216c05f9572cd632affce18c731",
+   "gloss": "ser reto",
+   "definition": "igualar, isto é, endireitar (intransitivo ou transitivo); figuradamente, compor",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8627",
+   "sha256": "c4a7cf648be5707a736c978954adea3234b9e8ce60525e3c2f7cdb6f178f4d82",
+   "gloss": "confirmar",
+   "definition": "endireitar, isto é, confirmar",
+   "derivation": "(aramaico) correspondente a 8626;"
+  },
+  {
+   "strongs": "H8628",
+   "sha256": "8582ed924004aff48df70a2e337377411ee3dda85305f2635ccd2bc3bbffcdbf",
+   "gloss": "tocar",
+   "definition": "estalar, isto é, bater (as mãos), fazer soar (um instrumento); por analogia, cravar (um prego ou estaca de tenda, um dardo etc.); por implicação, tornar-se fiador com um aperto de mãos)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8629",
+   "sha256": "f39523578f2cba3f6b1ac7edfdc657a957dfd33ae144804d33eb1c8e9c8997bb",
+   "gloss": "toque",
+   "definition": "um toque de trombeta",
+   "derivation": "de 8628;"
+  },
+  {
+   "strongs": "H8630",
+   "sha256": "bc973e9892eac042e935d53693bfb88f176268805111dcacd4b415bd246e20bf",
+   "gloss": "prevalecer",
+   "definition": "dominar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H8631",
+   "sha256": "a706a3bb4f246cfce1ce4bbbe0dfd5c77937b3f21cf2f616bce4e59df1aa3157",
+   "gloss": "fortalecer-se",
+   "definition": "tornar-se (causativamente, tornar) poderoso ou (figuradamente) obstinado",
+   "derivation": "(aramaico) correspondente a 8630;"
+  },
+  {
+   "strongs": "H8632A",
+   "sha256": "5e402687d78676403be360b8297ad7eed66df2f039258def938946a3189cf64b",
+   "gloss": "poderio",
+   "definition": "poder",
+   "derivation": "(aramaico) correspondente a 8633;"
+  },
+  {
+   "strongs": "H8632B",
+   "sha256": "5e402687d78676403be360b8297ad7eed66df2f039258def938946a3189cf64b",
+   "gloss": "poderio",
+   "definition": "poder",
+   "derivation": "(aramaico) correspondente a 8633;"
+  },
+  {
+   "strongs": "H8633",
+   "sha256": "ff95b67f7a5ff651111baf1ac6b5224e4ac41052ee8c8a0d372526fa5604ea54",
+   "gloss": "poder",
+   "definition": "poderio ou (figuradamente) firmeza",
+   "derivation": "de 8630;"
+  },
+  {
+   "strongs": "H8634",
+   "sha256": "6c6d1d3029742285df51d83deadd0ddb8a1f314397ede45d9390d389b5ca6a72",
+   "gloss": "Tarala",
+   "definition": "Tarala, um lugar na Palestina",
+   "derivation": "provavelmente por 8653; um cambalear;"
+  }
+ ]
+}

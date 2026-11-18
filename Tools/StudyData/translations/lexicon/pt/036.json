@@ -1,0 +1,798 @@
+{
+ "batch": "036",
+ "lang": "pt",
+ "entries": [
+  {
+   "strongs": "G1107",
+   "sha256": "d664457544cce3d9ed61949c6af46f5c49bcbbb0d6978bc62fe83a9f655ef944",
+   "gloss": "dar a conhecer",
+   "definition": "γνωρίζω\n(γιγνώσκω), [na LXX principalmente por ידע hi. ;]\n1. como mais comumente no cl., vir a conhecer, descobrir, saber: Php.1:22 (mas cf. R, mg.).\n2. dar a conhecer: com acusativo, Rom.9:22, 23; com acusativo de coisa(s), dat. de pessoa(s), Luk.2:15, Jhn.15:15 17:26, Act.2:28\" (LXX), 1Co.15:1, 2Co.8:1, Gal.1:11, Eph.1:9 6:19, 21 Col.4:7, 9 2Pe.1:16; com dativo, antes de ὅτι, 1Co.12:3; antes de τί, Col.1:27; περί, Luk.2:17. Pass., Act.7:13, Rom.16:26, Eph.3:3, 6 10, Php.4:6 (Cremer, 677; cf. ἀνα-, δια-γνωρίζω).\n†"
+  },
+  {
+   "strongs": "G1108",
+   "sha256": "0bf4717ecd7101decd6fcfdee1f5db2b41510b65b982012f8badb99a30b41764",
+   "gloss": "conhecimento",
+   "definition": "γνῶσις, -εως, ἡ\n(γιγνώσκω), [na LXX principalmente por דַּעַת ;]\n1. um buscar conhecer, indagação, investigação.\n2. conhecimento; no NT, especialmente do conh. da verdade espiritual: absol., Luk.11:52, Rom.2:20 15:14, 1Co.1:5 (Lft., Notes, 147) 8:1, 7, 10, 11, 13:2, 8 14:6, 2Co.6:6 8:7 11:6, Eph.3:19, Col.2:3, 1Pe.3:7, 2Pe.1:5, 6; com genitivo obj., σωτηρίας, Luk.1:77; τ. δόξης τ. θεοῦ, 2Co.4:6; τ. θεοῦ, 2Co.2:14 10:5; Χριστοῦ Ἰησοῦ, Php.3:8 (veja Deiss., LAE, 383.8), 2Pe.3:18; com genitivo subj., θεοῦ, Rom.11:33; λόγος γνώσεως, 1Co.12:8; ψευδωνύμου γνώσεως, 1Ti.6:20.\n† SYN.: σοφία, φρόνησις (cf. ἐπί-γνωσις e veja Lft. sobre Col.2:3; Cremer, 156)."
+  },
+  {
+   "strongs": "G1109",
+   "sha256": "570f057268061a3da28e1f916aab50e9efe2df1aa35de179f4079bb28c7abf72",
+   "gloss": "perito em",
+   "definition": "γνώστης, -ου, ὁ\n(γιγνώσκω), [na LXX principalmente por יִדְּעֹנִי ;]\naquele que conhece, um perito: Act.26:3.†"
+  },
+  {
+   "strongs": "G1110",
+   "sha256": "3d8c3b6f9f536fadaeb7067abcfb4bc2d9de4c37c8104fb039c552939a8ee55d",
+   "gloss": "conhecido de",
+   "definition": "γνωστός, -ή, -όν, forma tardia de γνωστός\n(γιγνώσκω), [na LXX por várias partes de ידע ;]\nconhecido: Act.9:42; com dativo, Jhn.18:15, 16 (Rec.), Act.1:19 2:14 4:10 13:38 15:18 19:17 28:22, 28; γ. σημεῖον, um sinal notável (EV), algo que é matéria de conhecimento, Act.4:16; γνωστὸν, Act.15:17, 18; τὸ γνωστὸν θεοῦ, Rom.1:19; no pl., como subst., γνωστοί, conhecidos, Luk.2:44 23:49; assim também no sing., Jhn.18:16 (WH).†"
+  },
+  {
+   "strongs": "G1111",
+   "sha256": "6575b91745519e68213322cc44fdeb3a375cd373229df5243e8c4073efbdde95",
+   "gloss": "murmurar",
+   "definition": "γογγύζω,\n[na LXX principalmente por לוּן ;]\nresmungar, murmurar: 1Co.10:10; antes de κατά, Mat.20:11; πρός, Luk.5:30; περί, Jhn.6:41, 61; μετ᾽ ἀλλήλων, Jhn.6:43; com acusativo, antes de περί, Jhn.7:32 (cf. δια-γογγύζω).†"
+  },
+  {
+   "strongs": "G1112",
+   "sha256": "87d78b5cbd8240c91532966ab2f2bc52234c493796042cc4d409411acd00c29f",
+   "gloss": "murmuração",
+   "definition": "γογγυσμός, -οῦ, ὁ,\n[na LXX: Isa.58:9 (אָוֶן), Exo.16:7-9, Num.17:5, 10 (תְּלוּנָה), Wis.1:10, 11 Sir.46:7 * ;]\numa murmuração, um resmungo: Jhn.7:12, Act.6:1; ἄνευ γ., 1Pe.4:9; pl., χωρὶς γ., Php.2:14.†"
+  },
+  {
+   "strongs": "G1113",
+   "sha256": "56932a58f8894dfddedfab4a2427760c771446a757e986b1ac0db56ab26a719b",
+   "gloss": "um murmurador",
+   "definition": "γογγυστής, -οῦ, ὁ (γογγύζω); [em Sm.: Pro.26:22, Isa.29:24; Th.: Pro.26:20 * ;]\num murmurador: Ju 16.†"
+  },
+  {
+   "strongs": "G1114",
+   "sha256": "f683b1ada89819100ba83da3a173595b9299df6833d9ed4c01405b5e84ce7eeb",
+   "gloss": "impostor",
+   "definition": "γόης, -ητος, ὁ (γοάω, lamentar-se),\n1. um carpidor.\n2. um feiticeiro.\n3. um impostor (cf. γοητεία, trapaça, 2Ma.12:24): 2Ti.3:13.\n†"
+  },
+  {
+   "strongs": "G1115",
+   "sha256": "24a21686c2c5b4fd85049795fa8e6a72c87dc55393e71d94bc2ab3448e63c6a3",
+   "gloss": "Gólgota",
+   "definition": "Γολγοθά (Rec. -θᾶ; WH, mg., Γολγόθ, Jo, l. com, aram. גָּלְגָּלְתָּא = heb. גֻּלְגֹּלֶת, LXX, κρανίον, Jdg.9:53, 2Ki.9:35); indecl. (exc. Mrk.15:22, -άν),\nGólgota, o lugar da crucificação: Mat.27:33, Mrk.15:22, Jhn.19:17.†"
+  },
+  {
+   "strongs": "G1116",
+   "sha256": "bf944f6a94de6e595b4d13f8df100c3cd9c0f9fa01f11af6e247fc39808c5e97",
+   "gloss": "Gomorra",
+   "definition": "Γόμορρα, -ας, ἡ, e -ων, τά (heb. עֲמֹרָה),\nGomorra, uma das cidades da planície (Gen.19): Mat.10:15, Rom.9:29\" (LXX), 2Pe.2:6, Ju 7.†"
+  },
+  {
+   "strongs": "G1117",
+   "sha256": "1e98c01ee3a61bb56b5d3f8768a2d3f5f110e72b1c9454d0b350d2b6e6b05cc6",
+   "gloss": "carga",
+   "definition": "γόμος, -ου, ὁ\n(γέμω), [na LXX: Exo.23:5, 4Ki.5:17 (מַשָּׂא) * ;]\no frete de um navio, carga: Act.21:3, Rev.18:11, 12.†"
+  },
+  {
+   "strongs": "G1118",
+   "sha256": "3d782d5c992915986adfbae70f8c90716ae73309fb617b085ad6200d8928fec7",
+   "gloss": "pai ou mãe",
+   "definition": "γονεύς, -έως, ὁ\n(γίγνομαι), [na LXX por אָב, אֵם ;]\num genitor, um pai; geralmente no pl., οἱ γ., os pais: Luk.2:41, 43 8:56 21:16, Jhn.9:2, 3 20, 22, 23 Rom.1:30, 2Co.12:14, Eph.6:1, Col.3:20, 2Ti.3:2; acusativo pl. (helenístico, veja Thackeray, Gr., i, 148), γονεῖς, Mat.10:21, Mrk.13:22, Luk.2:27 18:29, Jhn.9:18.†"
+  },
+  {
+   "strongs": "G1119",
+   "sha256": "df4688b579bc0ca81b5bcf2622405398462d2f18e29feb348cc1356a3a3ec7d1",
+   "gloss": "um joelho",
+   "definition": "γόνυ, -ατος, τό,\n[na LXX principalmente por בֶּרֶךְ ;]\no joelho: Heb.12:12; de um suplicante, προσπίπτειν τοῖς γ., Luk.5:8; assim também τιθέναι τὰ γ., ajoelhar-se: Luk.22:41, Act.7:60 9:40 20:36 21:5; em zombaria, Mrk.15:19; κάμπτειν τὰ γ., dobrar o joelho: Rom.11:4 (LXX) 14:11 (LXX), Eph.3:14, Php.2:10.†"
+  },
+  {
+   "strongs": "G1120",
+   "sha256": "ed77841ca54429a17db46f4dd27a726607223e3ea1b05a7dfc34806e215d5622",
+   "gloss": "ajoelhar-se",
+   "definition": "γονυπετέω, -ῶ) (γόνυ, πίπτω);\n1. cair de joelhos: antes de ἔμπροσθεν, Mat.27:29.\n2. prostrar-se diante de alguém: com acusativo, Mat.17:14, Mrk.1:40, R, txt., 10:17.\n†"
+  },
+  {
+   "strongs": "G1121",
+   "sha256": "fdb0c337e0ffdca0dd5c17db631d7133ebeae28f2abde6e2a32f6696775cbc83",
+   "gloss": "algo escrito",
+   "definition": "γράμμα, -τος, τό\n(γράφω), [na LXX por סֵפֶר, etc. ;]\n1. aquilo que é traçado ou desenhado, uma figura.\n2. aquilo que é escrito;\n(1) um caractere, letra: Gal.6:11;\n(2) um escrito, um documento escrito;\n(a) uma nota ou conta: Luk.16:6, 7;\n(b) uma carta: Act.28:21;\n(c.) τὰ ἱερὰ γ., os escritos sagrados, isto é, o AT: 2Ti.3:15 (assim em Fílon, Vit. Mos., iii, 39) ;\n(d) τὸ γ., a letra, a palavra escrita como autoridade externa, em contraste com a influência direta do Espírito, tal como se manifesta na nova Aliança: Rom.2:27, 29 7:6, 2Co.3:6, 7;\n(3) τὰ γ., letras, isto é, instrução: Jhn.7:15, Act.26:24. (Nos π., uma pessoa iletrada é muito frequentemente referida como γράμματα μ᾽̀ εἰδότης, e isso \"nunca significa outra coisa senão incapacidade de escrever\": MM, Exp., x; mas veja também Cremer, 166; DCG, i, 202; ii, 584.)\n†",
+   "note": "Source '(with)' is a garbled '(c)' (between (b) and (d)): rendered '(c.)'."
+  },
+  {
+   "strongs": "G1122",
+   "sha256": "ddd1042a27e134bbef3494b0d71a00d8a3e43c95373699a8bad20c9d06ec0af2",
+   "gloss": "escriba",
+   "definition": "γραμματεύς, -έως (acusativo pl., -εῖς, veja Bl., §8, 2), ὁ\n(γράμμα), [na LXX sempre por שׁטר no Hex., em outros lugares principalmente por ספר ;]\n1. um secretário; γ. τ. πόλεως, um escrivão da cidade: Act.19:35.\n2. Nos π., de um oficial militar (Deiss., BS, 110s.). Assim Jdg.5:14, 4Ki.25:19 (ספר), al.\n3. um escriba, um erudito bíblico, mestre da lei (assim pela primeira vez em I Est.8:3, II Est.7:6; em Luk.5:17, νομοδιδάσκαλος; em Luk.10:25, νομικός): Mat.7:29, Mrk.1:22, e frequentemente nos Evang. γ. καὶ ἀρχιερεῖς, Mat.2:4, e al.; γ. κ. Φαρισαῖοι, Mat.5:20, e al.; γ. μαθητευθεὶς τῇ βασιλείᾳ τ. οὐρ., Mat.13:52; ποῦ σοφός; ποῦ γ., 1Co.1:20 (Cremer, 167; DB, iv, 420, 800)."
+  },
+  {
+   "strongs": "G1123",
+   "sha256": "cb1a5eaf6064b919ae0a037c75b726becead752dcf2627aba5dfcd0e210f8a68",
+   "gloss": "escrito",
+   "definition": "γραπτός, -ή, -όν\n(γράφω), [na LXX por מִכְתָּב ;]\n1. pintado.\n2. escrito: Rom.2:15.\n†"
+  },
+  {
+   "strongs": "G1124",
+   "sha256": "bfd179d4bc3a3388688ad495b5dc30337ea824ca7881531df95576692f8fa337",
+   "gloss": "um escrito",
+   "definition": "γραφή, -ῆς, ἡ\n(γράφω), [na LXX principalmente por כְּתָב ;]\n1. um desenho, pintura.\n2.\n(a) escrita;\n(b) aquilo que é escrito, um escrito: πᾶσα γ., 2Ti.3:16; γ. ἅγιαι, Rom.1:2; προφητικαί, Rom.16:26; al αἱ γ. τ. προφητῶν, Mat.26:56; ἡ γ., αἱ γ., os escritos sagrados, as Escrituras (isto é, o AT; veja Milligan, NTD, 205); no pl., quando se quer dizer os escritos sagrados como um todo, p. ex. Mat.21:42 26:54, Jhn.5:39, Rom.15:4; no sing., quando se faz referência a uma passagem particular, como em Luk.4:21, Jhn.19:24, Rom.4:3 9:17 10:11 11:2, Jas.2:23 (Cremer, 165; DCG, ii, 584)."
+  },
+  {
+   "strongs": "G1125",
+   "sha256": "8d701fb8d54980c19b24b08c9bf68832f4488cc683abe04757ff6950d6c94612",
+   "gloss": "escrever",
+   "definition": "γράφω, [na LXX principalmente por כּתב ];\n1. raspar, arranhar (Hom.), e mais tarde (Hdt.) esboçar, desenhar.\n2. escrever;\n(a) de formar ou traçar letras sobre material de escrita: Jhn.8:[6], Gal.6:11, 2Th.3:17;\n(b) exprimir por escrito, pôr por escrito, registrar: Luk.1:63, Jhn.19:21, 22 Rev.1:11, 19 al.; da Escritura como autoridade permanente (Deiss., BS, 112ss.), γέγραπται, está escrito (Lutero), Mat.4:4, Mrk.7:6, Luk.4:8, Rom.1:17, 1Co.1:31, al.; id. antes de ἐν, Mrk.1:2, Act.1:20, al.; com acusativo, escrever sobre: Jhn.1:46, Rom.10:5; antes de περί, Mat.26:24, Mrk.14:21, Jhn.5:46; al.; com dativo (WM, §31, 4), Luk.18:31; id. antes de ἵνα (M, Pr., 207s.), Mrk.12:19, Luk.20:28; κατὰ τ. γεγραμμένον, 2Co.4:13; γεγραμμένον ἐστί, Jhn.2:17; ἐγράφη, Rom.4:24; ἐπ᾽ αὐτῷ γεγραμμένα, Jhn.12:16;\n(c.) de escrever instruções ou informações, com dativo de pessoa(s): Rom.15:15, 2Co.7:12, al.;\n(d) daquilo que contém o registro ou a mensagem: βιβλίον, Mrk.10:4, Jhn.21:25, Rev.5:1; τίτλον, Jhn.19:19; ἐπιστολήν, Act.23:25; ἐντολήν, Mrk.10:5 (cf. ἀπο-, ἐγ-, ἐπι-, κατα-, προ-).",
+   "note": "Source '(with)' is a garbled '(c)' (between (b) and (d)): rendered '(c.)'."
+  },
+  {
+   "strongs": "G1126",
+   "sha256": "a2e4fe3c4369352755e180a92decf2c66457ca2fc8d7ac146d31a5d1512ef616",
+   "gloss": "fábula de velhas",
+   "definition": "γραώδης, -ες (γραῦς, uma velha, εἶδος),\nsenil, próprio de velhas: 1Ti.4:7.†"
+  },
+  {
+   "strongs": "G1127",
+   "sha256": "a7f62814d7671e75200ff569366a230396016c9bd0d7b6bf6e11a538fb337dbf",
+   "gloss": "vigiar",
+   "definition": "γρηγορέω, -ῶ, = ático ἐργήγορα, pf. de ἐγείρω, veja,\n[na LXX (só nos livros tardios) principalmente por שׁקד ;]\n1. estar acordado; metaforicamente, de estar vivo, 1Th.5:10.\n2. vigiar: Mat.24:43 26:38, 40 Mrk.13:34 14:34, 37 Luk.12:37, 39; metaforicamente, Mat.24:42 25:13 26:41, Mrk.13:35, 37 14:38, Act.20:31, 1Co.16:13, 1Th.5:6, 1Pe.5:8, Rev.3:2, 3 16:15; antes de ἐν, Col.4:2. (Cf. δια-γρηγορέω).†\nSYN.: veja: ἀγρθπνέω."
+  },
+  {
+   "strongs": "G1128",
+   "sha256": "d6c59518f08f83c8669eb9a36e309cfe7c07669bf7fd7cc643a00fea450a1a5b",
+   "gloss": "treinar",
+   "definition": "γυμνάζω\n(γυμνός), [na LXX: 2Ma.10:15 * ;]\n1. propriamente, exercitar-se nu.\n2. De modo geral, exercitar, treinar o corpo ou a mente: 1Ti.4:7, Heb.5:14 12:11, 2Pe.2:14.\n†"
+  },
+  {
+   "strongs": "G1129",
+   "sha256": "36788fa9a14b4538a31e788eb2c6f049584ba8242611c9cb0f3a08d8b9dad856",
+   "gloss": "treinamento",
+   "definition": "γυμνασία, -ας, ἡ\n(γυμνάζω), [na LXX: 4Ma.11:20 * ;]\nexercício: 1Ti.4:8.†"
+  },
+  {
+   "strongs": "G1130",
+   "sha256": "39a829ee494938b2756f175cea77f024800ef9d648bc99170589818a90a2720b",
+   "gloss": "estar nu",
+   "definition": "γυμνιτεύω (Rec. γυμνητ-, V. Tdf ., Pr., 81),\nestar nu ou malvestido: 1Co.4:11 (cf. ἐν ψύχει κ. γυμνότητι), 2Co.11:27; γυμνοί, Jas.2:15. Nos escritores κοινή, γ. significa também andar com armamento leve.†"
+  },
+  {
+   "strongs": "G1131",
+   "sha256": "534cfd2de82e106f368c9b54c69ce61a77d1c4052b152371b28e2036f03264c1",
+   "gloss": "nu",
+   "definition": "γυμνός, -ή, -όν,\n[na LXX principalmente por עָרוֹם ;]\nnu, sem roupa, e às vezes (como frequentemente no cl.) escassa ou pobremente vestido (Isa.20:2ss., Tob.1:16, 2Ma.11:12): Mat.25:36, 38 43, 44, Mrk.14:52, Jhn.21:7, Act.19:16, Jas.2:15, Rev.3:17 16:15, 17:16; como subst., to γ., o corpo nu, Mrk.14:51. Metafórico, de coisas expostas, Heb.4:13; da alma sem corpo (Plat., Crat., c., 20, e cf. Deiss., LAE, 293), 2Co.5:3; da semente, nua, 1Co.15:37 (Cremer, 168).†",
+   "note": "Source 'Crat., with, 20' is a garbled 'c.' (chapter): rendered 'Crat., c., 20'. 'to' before the Greek is the source's (the article τό), kept."
+  },
+  {
+   "strongs": "G1132",
+   "sha256": "23a10af3eee6475cc858807349447ff3caa32af638590dbd96de19e3b6b265c4",
+   "gloss": "nudez",
+   "definition": "γυμνότης, -ητος, ἡ\n(γυμνός), [na LXX por עֵירֹם, Deu.28:48 * ;]\nnudez: Rom.8:35, 2Co.11:27, Rev.3:18.†"
+  },
+  {
+   "strongs": "G1133",
+   "sha256": "cc0603658c42356d1a67d836af80700f1bf3536b8845da0ceb0da426975ba16a",
+   "gloss": "mulher fraca",
+   "definition": "γυναικάριον, -ου, τό (diminutivo de γυνή),\numa mulherzinha; com desprezo, uma mulher tola (EV): 2Ti.3:6.†"
+  },
+  {
+   "strongs": "G1134",
+   "sha256": "c410d3d6b62d7bfa96629f8138545576ef65ecdfe84f9edd7cc3e9f05665bb4c",
+   "gloss": "feminino",
+   "definition": "γυναικεῖος, -α, -ον\n(γυνή), [na LXX principalmente por אִשָּׁה ;]\nfeminino: 1Pe.3:7.†"
+  },
+  {
+   "strongs": "G1135G",
+   "sha256": "bb964e79cd8c9558e00f660678a5c2c602b1895be1055db5decc7d88d77cc62b",
+   "gloss": "mulher",
+   "definition": "γυνή, -αικός, ἡ,\n[na LXX por אִשָּׁה ;]\n1. uma mulher, casada ou solteira: Mat.11:11 14:21, al.; ὕπανδρος γ., Rom.7:2; γ. χήρα, Luk.4:26; no vocat., γύναι não implica nem repreensão nem severidade, mas é usado frequentemente como termo de respeito e carinho, Mat.15:28, Jhn.2:4, 4:21 19:26.\n2. uma esposa: Mat.1:20, 1Co.7:3, 4 al.; γ. ἀπολύειν, Mrk.10:2, al.; γ. ἔχειν Mrk.6:18; γ. λαβεῖν, Mrk.12:19; γ. γαμεῖν, Luk.14:20.\n3. uma diaconisa, 1Ti.3:11 (CGT, em l.)."
+  },
+  {
+   "strongs": "G1135H",
+   "sha256": "02cbb85b11538aa664d76de2da7c9c300d1046dd5539f5112044bde0d5eb1f11",
+   "gloss": "mulher: esposa",
+   "definition": "γυνή, -αικός, ἡ,\n[na LXX por אִשָּׁה ;]\n1. uma mulher, casada ou solteira: Mat.11:11 14:21, al.; ὕπανδρος γ., Rom.7:2; γ. χήρα, Luk.4:26; no vocat., γύναι não implica nem repreensão nem severidade, mas é usado frequentemente como termo de respeito e carinho, Mat.15:28, Jhn.2:4, 4:21 19:26.\n2. uma esposa: Mat.1:20, 1Co.7:3, 4 al.; γ. ἀπολύειν, Mrk.10:2, al.; γ. ἔχειν Mrk.6:18; γ. λαβεῖν, Mrk.12:19; γ. γαμεῖν, Luk.14:20.\n3. uma diaconisa, 1Ti.3:11 (CGT, em l.)."
+  },
+  {
+   "strongs": "G1136",
+   "sha256": "371174c12f21361e3a7b1f10e16b03cd5eecc55e8fbdb43b823c01d1140eda11",
+   "gloss": "Gogue",
+   "definition": "Γώγ, ὁ (heb. גּוֹג), indecl.,\nGogue, associado a Magogue (q.v): Rev.20:8.†"
+  },
+  {
+   "strongs": "G1137",
+   "sha256": "20340b9a71a5d490537bc832663d66fc24dde7ac463e4e205b23fc15be968018",
+   "gloss": "canto",
+   "definition": "γωνία, -ας, ἡ\n(γόνυ), [na LXX principalmente por פִּנָּה ;]\num ângulo, um canto: Mat.6:5, Act.26:26; τ. τέσσαρας γ. τ. γῆς, Rev.7:1, 20:8; κεφαλὴ γνωνίας (רֹאשׁ פִּנָּה, Ps 117(118):22, LXX), Mat.21:42, Mrk.12:10, Luk.20:17, Act.4:11, 1Pe.2:7.†"
+  },
+  {
+   "strongs": "G1138",
+   "sha256": "69c88b7a2af18ac4817386e14402c5709e901cd7a245d3bfa525332697ea36f4",
+   "gloss": "Davi",
+   "definition": "Δαυείδ (Rec. Δαβίδ), ὁ, indecl. (heb. דָּוִד),\nDavi, rei de Israel: Mat.1:6; 12:3, e al.; σκηνὴ Δ., Act.15:16; κλεὶς Δ., Rev.3:7; θρόνος Δ., Luk.1:32; ῥίζα Δ., Rev.5:5; βασιλεία Δ., Mrk.11:10; υἱὸς Δ., o Messias (Ps. Sol., 17:23; para outras reff. na lit. judaica, veja Dalman, Words, 317), Mat.1:1 9:27, e al.; ἐν Δ., isto é, o Saltério, Heb.4:7",
+   "note": "'Words' is Dalman's title, kept."
+  },
+  {
+   "strongs": "G1139",
+   "sha256": "c8f8e64b01ee83900e865daf59e2228667b0ec2fe47d8a58fb0d76e6b2b37acd",
+   "gloss": "estar endemoninhado",
+   "definition": "δαιμονίζομαι\n(no cl. também δαιμονάω; δαίμων), [em Aq.: Ps 90(91):6 * ;]\nestar sob o poder de um δαίμων (δαιμόνιον, veja), estar possesso: Mat.15:22; nos demais casos sempre no part., -ιζόμενος, -ισθείς: Mat.4:24; 8:16, 28, 33 9:32 12:22, Mrk.1:32 15 16 18, Luk.8:36, Jhn.10:21 (Cremer, 171).†"
+  },
+  {
+   "strongs": "G1140",
+   "sha256": "44cefc480e98925e3430a9172ed163169bc68c9d597c5f457ef25b82c9ae2a9f",
+   "gloss": "demônio",
+   "definition": "δαιμόνιον, -ου, τό\n(neut. de δαιμόνιος, -α, -ον, divino), [na LXX (assim também em π; veja MM, Exp., x) por שֵׁד, אֱלִיל, (frequentemente em To) ;]\n1. como no cl.;\n(a) o poder divino, a divindade (Hdt., Plat., al.);\n(b) uma divindade inferior, deidade ou demônio (como nos π mágicos, Deiss., BS, 281; MM, Exp., x): ξένα δ., Act.17:18.\n2. (a) no AT, divindades pagãs, falsos deuses (p. ex. Deu.32:17, Psa.95 (96):5);\n(b) no NT, espíritos malignos, demônios: θύουσιν δαιμονίοις, 1Co.10:20; διδασκαλίαι δαιμονίων, 1Ti.4:1; προσκυνεῖν τὰ δ., Rev.9:20; ἄρχων τῶν δ., Mat.9:34; especialmente (sin. de πνεῦμα ἀκάθαρτον) como agindo sobre os homens e \"possuindo-os\" (cf. δαιμονίζομαι): Mat.11:18, e al.; εἰσέρχεσθαι δ. εἰς. . ., Luk.8:30; δ. ἔχειν, Luk.4:33; δ. ἐκβάλλειν, Mat.7:22 Na expressão πνεῦμα δαιμονίου ἀκαθάρτου, Luk.4:33, reconhece-se o uso cl. mais amplo (1. b), sendo ἀκ., em outros lugares do NT, o epíteto de πν., e δ. = πν. ἀκ. (veja ICC, em l; Cremer, 168)"
+  },
+  {
+   "strongs": "G1141",
+   "sha256": "a5b0fac36243636565e89512877b696c8ffd262d141f1358fd328f5646dab7d0",
+   "gloss": "demoníaco",
+   "definition": "δαιμονιώδης, -ες\n(δαιμόνιον, εἶδος), [em Sm.: Ps 90(91):6 * ;]\nsemelhante a demônio: Jas.3:15 (Cremer, 171).†"
+  },
+  {
+   "strongs": "G1142",
+   "sha256": "83dda17b846d50273f7e9321d6bc677abd27d4aa12a65e95461cd8e71673ee39",
+   "gloss": "demônio",
+   "definition": "δαίμων, -ονος, ὁ, ἡ\n[na LXX por גַּד, Isa.65:11 (א; δαιμονίῳ, AB) * ;]\nno cl. e no NT = δαιμόνιον; um demônio: Mat.8:31.†"
+  },
+  {
+   "strongs": "G1143",
+   "sha256": "2210da2926c627694064413d17d1897f5162ff281997f4b571883b0883064ec3",
+   "gloss": "morder",
+   "definition": "δάκνω\n[na LXX por נשׁךְ, Gen.49:17, al., exc. Deu.8:15 (שׂרף) ;]\nmorder: metaforicamente, Gal.5:15.†"
+  },
+  {
+   "strongs": "G1144",
+   "sha256": "b0f82f20215f491a65d2d6bf67f75063cb3835596c644d3de81800d294e336ba",
+   "gloss": "lágrima",
+   "definition": "δάκρυον (forma poét. δάκρυ), -ου, τό,\n[na LXX por דִּמְעָה ;]\numa lágrima: Mrk.9:24 (WH, txt., R, txt. omitem), Act.20:19, 31, 2Co.2:4, 2Ti.1:4, Heb.5:7 12:17, Rev.7:17 21:4; metaforicamente, dativo pl., δάκρυσι (La 2:11, Thuc., vii, 75; Bl., § 9, 3), Luk.7:38, 44.†"
+  },
+  {
+   "strongs": "G1145",
+   "sha256": "8855e3bd1d7cbdb26b07f1ffa57302c489cd12b6de72da668decff83f5af55e2",
+   "gloss": "chorar",
+   "definition": "δακρύω\n[na LXX por בָּכָה, etc. ;]\nchorar, derramar lágrimas: Jhn.11:35.†\nSYN.: κλαίω, do choro audível, chorar alto; ὀδύρομαι, da dor expressa em palavras, lamentar; θρηνέω, da lamentação formal, entoar um canto fúnebre; ἀλαλάζω, prantear à maneira oriental; στενάζω, da dor expressa por sons inarticulados, gemer."
+  },
+  {
+   "strongs": "G1146",
+   "sha256": "9e8c376eab2dc0e5bda8f2b935cb80d1c0956b6d3ec0fcad1ead7de93a639bc8",
+   "gloss": "anel",
+   "definition": "δακτύλιος, -ου, ὁ\n(δάκτυλος), [na LXX principalmente por טַבַּעַת ;]\num anel: Luk.15:22.†"
+  },
+  {
+   "strongs": "G1147",
+   "sha256": "78b5bf2547cd2cae2dcabafc721be9c09a48d4b5bb4e226e45f763e41b832918",
+   "gloss": "dedo",
+   "definition": "δάκτυλος, -ου, ὁ\n[na LXX principalmente por אֶצְבַּע ;]\num dedo: Mat.23:4, Mrk.7:33, Luk.11:46 16:24, Jhn.8:6, 8 20:25, 27; metaforicamente, δ. θεοῦ (cf. Exo.8:19), Luk.11:20.†"
+  },
+  {
+   "strongs": "G1148",
+   "sha256": "21dfb943a75ffadef65c62f8b62571bb6f6f3455a089adefe47b2c36853bc1e0",
+   "gloss": "Dalmanuta",
+   "definition": "Δαλμανουθά, ἡ\nindecl.,\nDalmanuta, um lugar não identificado perto do mar da Galileia: Mrk.8:10 (cf. Μαγαδάν).†"
+  },
+  {
+   "strongs": "G1149",
+   "sha256": "4d721072731664839a0504e4141e0c2c71bb5792b5463a8ed6be76c992388e83",
+   "gloss": "Dalmácia",
+   "definition": "Δαλματία (L, Δελ-), -ας, ἡ\nDalmácia, uma parte da Ilíria na costa L. do Adriático: 2Ti.4:10.†"
+  },
+  {
+   "strongs": "G1150",
+   "sha256": "005bfaa3dcf59b49cdf99156b1e44ec97dee3ea61b37c63a8e52d7ab5fc9a30a",
+   "gloss": "domar",
+   "definition": "δαμάζω\n[na LXX: Dan.2:40 (חֲשַׁל) * ;]\ndomar, subjugar: Mrk.5:4, Jas.3:7; metaforicamente, τ. γλῶσσαν, Jas.3:8 (Field, Notes, 237s.).†"
+  },
+  {
+   "strongs": "G1151",
+   "sha256": "a5346b3140576e95b798e5e13e5d041cab1a262ec75e2ab54f3d1268a2522b4d",
+   "gloss": "novilha",
+   "definition": "δάμαλις, -εως, ἡ\n(fem. de δαμάλης, um novilho), [na LXX principalmente por פָּרָה, עֶגְלָה ;]\numa novilha, Heb.9:13.†"
+  },
+  {
+   "strongs": "G1152",
+   "sha256": "adb4f559fd287ead21933f6bcafd4ee84369df4133a0501f43f8f821d9ee637b",
+   "gloss": "Dâmaris",
+   "definition": "Δάμαρις, -ιδος, ἡ\n(δάμαρ, poét., uma esposa),\nDâmaris: Act.17:34.†"
+  },
+  {
+   "strongs": "G1153",
+   "sha256": "a05931de08f2af31a33454f79bb159640b559fcb281ae61550eb5e2c0c8bcf36",
+   "gloss": "Damasco",
+   "definition": "Δαμασκηνός, -ή, -όν\nde Damasco, damasceno: 2Co.11:32.†"
+  },
+  {
+   "strongs": "G1154",
+   "sha256": "9fdf465a706c7a33cd6f537a6910d750d073f317b7de3643a4e6368bd9bd5134",
+   "gloss": "Damasco",
+   "definition": "Δαμασκός, -οῦ, ἡ (heb. דַּמֶּשֶׂק),\nDamasco: Act.9.2ss. 22:5ss.26.12,20, 2Co.11:32, Gal.1:17.†"
+  },
+  {
+   "strongs": "G1155",
+   "sha256": "3a48fa9e355e575105e69fcf4931b5477f47ec72c34c0976a47eedd6797238c4",
+   "gloss": "emprestar/tomar emprestado",
+   "definition": "δανίζω\n(forma tardia do cl. -είζω, Rec., Bl., § 3; Thackeray, Gr., 85s.) [na LXX principalmente por לוה (Pro.19:17) ;]\nemprestar dinheiro a juros: Luk.6:34, 35; méd., tomar emprestado: Mat.5:42.†\nSYN.: κίχρημι (veja: χράω), emprestar de modo amigável."
+  },
+  {
+   "strongs": "G1156",
+   "sha256": "d2aebb8f231aea86fb5190427dad245d3a328545d3ce531e5244099c90e88cf6",
+   "gloss": "dívida",
+   "definition": "δάνιον, -ου, τό\n(forma tardia de δάνειον, Rec.; veja: δανίζω), [na LXX: Deu.24:11 (נָשָׁה) 15:8, 10 (עָבַט hi.), 4Ma.2:8 * ;]\num empréstimo: Mat.18:27.†"
+  },
+  {
+   "strongs": "G1157",
+   "sha256": "fd7802f69d057df3e9f6fcbb2619e4dd37ba7eb793694433d762df5650e0b29b",
+   "gloss": "credor",
+   "definition": "δανιστής, -οῦ, ὁ\n(forma tardia de -ειστής, Rec.; veja: δανείζω), [na LXX: 4Ki.4:1, Psa.108(109):11 (נשׁה), Pro.29:13 (רָשׁ), Sir.29:28 * ;]\num prestamista: Luk.7:41.†"
+  },
+  {
+   "strongs": "G1158",
+   "sha256": "dd66191cb23adb3110f51f52a7e6aac28e09694069d7efbfd52e68f00368bb7b",
+   "gloss": "Daniel",
+   "definition": "Δανιήλ, ὁ, indecl. (heb. דָּנִיֵּאל, Deus é o meu Juiz),\nDaniel, o profeta: Mat.24:15.†"
+  },
+  {
+   "strongs": "G1159",
+   "sha256": "d8f53215627ba5ae1934ea994a26630c62ee5b29174e7024caac9b72239b7d4e",
+   "gloss": "gastar",
+   "definition": "δαπανάω, -ῶ\n[na LXX: Tob.1:7, 1Ma.14:32, al. ;]\n1. gastar, despender: com acusativo, Mrk.5:26; antes de ἐπί, com dativo de pessoa(s), Act.21:24; ὑπέρ, 2Co.12:15.\n2. consumir, esbanjar: Luk.15:14; ἐν τ. ἡδσναῖς (sobre a constr. com ἐν, veja Hort, Mayor, em l.), Jas.4:3 (cf. ἐκ-, προσ- δ.).†"
+  },
+  {
+   "strongs": "G1160",
+   "sha256": "acc2a4c72902a74b7bf32888fb8d08f8c42191e65a85f563fe3418dfd74a2f43",
+   "gloss": "custo",
+   "definition": "δαπάνη, -ης, ἡ\n[na LXX: Est.6:4, 8 (נִפְקָא), Dan LXX Bel 1:21, al. ;]\ndespesa, custo: Luk.14:28.†"
+  },
+  {
+   "strongs": "G1161",
+   "sha256": "f9c4c29fcecaf5ef8df6d61d4aea429ec4f1f8ce812c239ed93a0e0406ebfde4",
+   "gloss": "então",
+   "definition": "δέ (antes de vogais δ᾽; sobre a negligência geral da elisão no NT, veja WH, App., 146; Tdf., Pr., 96),\npartícula conjuntiva pospositiva;\n1. copulativa, mas, em seguida, e, ora (Abbott, JG, 104): Mat.1:2ss., 2Co.6:15, 16, 2Pe.1:5-7; em repetição para dar ênfase, Rom.3:21, 22, 9:30, 1Co.2:6, Gal.2:2, Php.2:8; na transição para algo novo, Mat.1:18, 2:19, Luk.13:1, Jhn.7:14, Act.6:1, Rom.8:28, 1Co.7:1 8:1, al.; em parêntese ou acréscimo explicativo, Jhn.3:19, Rom.5:8, 1Co.1:12, Eph.2:4, 5:32, al.; ὡς δέ, Jhn.2:9; καὶ . . . δέ, mas também, Mat.10:18, Luk.1:76, Jhn.6:51, Rom.11:23, al.; καὶ ἐὰν δέ, sim, ainda que, Jhn.8:16.\n2. Adversativa, mas, por outro lado, prop., respondendo a um μέν precedente (veja), e distinguindo uma palavra ou oração de outra anterior (no NT, na maioria das vezes sem μέν; Bl., §77, 12): ἐὰν δέ, Mat.6:14, 23, al.; ἐγὼ (σὺ, etc.) δέ, Mat.5:22, 6:6, Mrk.8:29, al.; ὁ δέ, αὐτὸς δέ, Mrk.1:45, Luk.4:40, al.; depois de uma negação, Mat.6:19, 20, Rom.3:4, 1Th.5:21, al."
+  },
+  {
+   "strongs": "G1162",
+   "sha256": "280e08efb0f3698d18fa68749f5baac343666f512eeba5c2a54f18441d0f62e4",
+   "gloss": "súplica",
+   "definition": "δέησις, -εως, ἡ\n(δέομαι), [na LXX por תְּחִנָּה, רִנָּה, תְּפִלָּה, etc. ;]\n1. uma falta, necessidade (assim Ps 21(22):25).\n2. um pedido, rogo, súplica; no NT sempre dirigida a Deus: Luk.1:13, 2Co.1:11, Php.1:19, 2Ti.1:3, Jas.5:16, 1Pe.3:12\" (LXX) ; com νηστεῖαι, Luk.2:37; προσυνχή, -αί, Eph.6:18, Php.4:6, 1Ti.2:1 5:5; ἱκετηρίαι, Heb.5:7; προσκαρτέρησις, Eph.6:18; ἐντεύξεις, 1Ti.2:1; δ. ποιεῖσθαι (Deiss., BS, 250), Luk.5:33, Php.1:4 (pl.), 1Ti.2:1; antes de ὑπέρ, 2Co.9:14, Php.1:4; περί, Eph.6:18; πρός, Rom.10:1.†\nSYN.: προσευχή, usado da oração em geral, enquanto δ. dá relevo ao sentido de necessidade; por outro lado, δ. é usado também de pedidos de homem a homem, enquanto π. se limita à oração a Deus. ἔντευξις, nos π., é a palavra habitual para uma petição a um superior (Deiss., BS, 250; cf. o paulino ἐντυγχάνειν, suplicar). Cf. também εὐχή. (Jas.5:15), αἴτημα, ἱκετηρία (Tr., Syn., § li; Cremer, 73, 174, 684)."
+  },
+  {
+   "strongs": "G1163",
+   "sha256": "e6364ce838dffd3a5d55ecfb7eb5388275d3b22ec2f090d7c8c21b1630742923",
+   "gloss": "ser necessário",
+   "definition": "δεῖ impessoal (δέω),\n[na LXX principalmente por infin. com לְ ;]\né preciso, é necessário: com inf., Mat.26:54, Mrk.13:7, Act.5:29, al.; com acusativo e inf., Mat.16:21, Mrk.8:31, Jhn.3:7, Act.25:10, al.; com elipse do acusativo, Mat.23:23; do acusativo e do inf., Mrk.13:14, Rom.1:27 8:26; οὐ (μὴ) δεῖ (non licet), não se deve, não é permitido: Act.25:24, 2Ti.2:24; impf., ἔδει, de necessidade ou obrigação no passado relativa a um acontecimento passado (Bl., § 63, 4), Mat.18:33, Luk.15:32, Jhn.4:4, Act.27:21, al.; perifr., δέον ἐστίν (como no ático, χρεών ἐστι = χρή, veja: δέον), Act.19:36; id., com elipse de ἐστίν, 1Pe.1:6 τὰ μὴ δέοντα (= ἃ οὐ δεῖ 1Ti.5:13.\nSYN.: ὀφείλει, que exprime obrigação moral, distinto de δεῖ, que denota necessidade lógica, e de χρή, uma necessidade que resulta da conveniência das coisas (veja Tr., Syn., § cvii, 10; Westc. sobre Heb.2:1, 1Jn.2:6; Hort sobre Jas.3:10)."
+  },
+  {
+   "strongs": "G1164",
+   "sha256": "26523186e6ce01513340f3c3d3067a6c2452c48804841303d2af2bb7cc493f51",
+   "gloss": "exemplo",
+   "definition": "δεῖγμα, -τος, τό\n(δείκνυμι);\n1. (cl.) uma coisa mostrada, uma amostra.\n2. = cl. παράδ- (cf. ὑπόδ-, 2Pe.2:6), um exemplo (uma advertência): Ju 7.†"
+  },
+  {
+   "strongs": "G1165",
+   "sha256": "d540d363c37fd38dcf61164e1b4e442c0ce6ebdf55ab3551ae2fc1eca57b8fda",
+   "gloss": "desonrar",
+   "definition": "δειγματίζω\n(δεῖγμα),\npalavra rara (ICC, ll. com), fazer espetáculo de, expor: Mat.1:19 (Rec. παραδ-, veja), Col.2:15.†"
+  },
+  {
+   "strongs": "G1166",
+   "sha256": "7021ce15f857ac6ff2073ad8303e16f48adec58c63e2660f312ce9d0b0664efd",
+   "gloss": "mostrar",
+   "definition": "δείκνυμι, δεικνύω (veja Bl., § 23, 1; Veitch, veja a palavra),\n[na LXX principalmente por רָאָה hi. ;]\nmostrar, com acusativo de coisa(s) (de pessoa(s)), dativo de pessoa(s);\n(a) mostrar, exibir: Mat.4:8 8:4, Mrk.1:44 14:15, Luk.4:5 5:14 20:24 22:12 24:40, Jhn.2:18 5:20 10:32; 20:20 Act.7:3\" (LXX), 1Ti.6:15, Rev.17:1 21:9, 10 22:1, 8, pass., Heb.8:5 (LXX);\n(b) dar a conhecer: Mat.16:21, Jhn.14:8, 9, Act.10:28, 1Co.12:31, Rev.1:1 4:1 22:6;\n(c.) provar: Jas.2:18 3:13.†",
+   "note": "Source '(with)' is a garbled '(c)' (after (a), (b)): rendered '(c.)'."
+  },
+  {
+   "strongs": "G1167",
+   "sha256": "c2414ffe266dc5a33364163eb751ad7ab56a8cf6797a329e2aa9cb92770752b0",
+   "gloss": "timidez",
+   "definition": "δειλία, -ας, ἡ\n(δειλός), [na LXX por אֵימָה, מְחִתָּה, etc. ;]\ncovardia, timidez (nunca em bom sentido): 2Ti.1:7.†\nSYN.: φόβος, medo em geral, bom ou mau; εὐλάβεια (veja), apreensão em geral, mas principalmente o temor piedoso, \"aquela reverência cuidadosa e vigilante que atenta para cada circunstância naquilo com que tem de lidar\" (cf. Tr., Syn., § x).†"
+  },
+  {
+   "strongs": "G1168",
+   "sha256": "355fc5ddfe5de1e7e2d87002e6299ee0d4adb47bf236849c14c48feb45985276",
+   "gloss": "ser tímido",
+   "definition": "δειλιάω, -ῶ\n(δειλία), [na LXX por חתת ni., פּחד, etc. ;]\n= o mais frequente ἀποδ-, ser covarde, tímido, medroso: Jhn.14:27.†"
+  },
+  {
+   "strongs": "G1169",
+   "sha256": "8230decb3db3bff4abdc18b046c8c576beb6d0fb71077ab401a53b0b2adae46d",
+   "gloss": "tímido",
+   "definition": "δειλός, -ή, όν\n(δέος), [na LXX por רַךְ, etc. ;]\ncovarde, medroso: Mat.8:26, Mrk.4:40, Rev.21:8.†"
+  },
+  {
+   "strongs": "G1170",
+   "sha256": "fdb7b2b7e235a01368b3885bd8434ec7ee827c4dc7a218f751193d7c5edb9632",
+   "gloss": "um certo",
+   "definition": "δεῖνα, ὁ, ἡ, τό (genitivo -νος, dativo -νι, acusativo -να),\n[em Aq.: Rut.4:1, 1Ki.21:2 (3) (também Sm.), 4Ki.6:8 * ;]\nfulano, um certo, a quem não se pode ou não se quer nomear: Mat.26:18.†"
+  },
+  {
+   "strongs": "G1171",
+   "sha256": "388d29b101ff75e19c4dd86f0aaf3a5f4efc8c3f3a38c8418e9dc9f960767d52",
+   "gloss": "terrivelmente",
+   "definition": "δεινῶς ,\nadv. (δέος), [na LXX: Job.10:16, Wis.17:3, al. ;]\n1. terrivelmente: Mat.8:6.\n2. veementemente: Luk.11:53.†"
+  },
+  {
+   "strongs": "G1172",
+   "sha256": "e716d09a0e021d97fa9e0a62883b0b67bcdb5dca4c49613f4385aa857acb1a28",
+   "gloss": "jantar",
+   "definition": "δειπνέω, -ῶ\n(δεῖπνον, veja), [na LXX: Pro.23:1 (לחם), Tob.7:8 8:1, Dan LXX 11:27 * ;]\ntomar a refeição principal do dia, jantar, cear: Luk.17:8 22:20 (WH, entre colch., R, mg. omite), 1Co.11:25; metaforicamente, Rev.3:20.†"
+  },
+  {
+   "strongs": "G1173",
+   "sha256": "c34c8763aeab33691b0b7e45c322e4ad5c199a4eafe54a6be2c259e1b504db2b",
+   "gloss": "jantar",
+   "definition": "δεῖπνον, -ου, τό\n[na LXX principalmente por פַּת־בַּג (Da) ;]\na refeição principal do dia, jantar, ceia: Mat.23:6, Mrk.12:39, Luk.14:17, 24 20:46, Jhn.13:2, 4 21:20, 1Co.11:21; δ. ποιεῖν, Mrk.6:21, Luk.14:12, 16, Jhn.12:2; κυριακὸν (veja) δ., 1Co.11:20; metaforicamente (Dalman, Words, 118), δ. τ. γάμου τ. ἀρνίου, Rev.19:9; δ. τ. μέγα τ. Θεοῦ, Rev.19:17.†",
+   "note": "'Words' is Dalman's title, kept."
+  },
+  {
+   "strongs": "G1174",
+   "sha256": "f5b10b9278880bf41230eee284eb80954487114130fbd7e2a6f4cdad5f2a021c",
+   "gloss": "religioso",
+   "definition": "δεισι-δαίμων, -ον\n(δείδω, temer; δαίμων, divindade)\nreverente para com a divindade, religioso; compar. -μονεστέρους (AV, too superstitious, R, txt., somewhat superstitious, sentido em que a palavra às vezes é usada; cf. Field, Notes, 125), mais religioso, temente a Deus, do que outros, muito religioso (Abbott, Essays, 105 ss.; Deiss., LAE, 285): Act.17:22.†\nSYN.: εὐσεβής (veja), θεοσεβής, θρῆσκος (Cremer, 681; DB, ext., 142 a).",
+   "note": "AV's and RV's English renderings 'too superstitious' and 'somewhat superstitious' kept as quoted; 'Essays' is Abbott's title."
+  },
+  {
+   "strongs": "G1175",
+   "sha256": "dcd065f984aa5520bb27b5253ae9c3f9ec2841b5a7c5931a4732c61caeeeff7d",
+   "gloss": "religião",
+   "definition": "δεισιδαιμονία, -ας, ἡ\n(δεισιδαίμων, veja);\n1. temor dos deuses;\n(a) piedade, religião;\n(b) superstição.\n2. Objetivamente, uma religião: Act.25:19 (Cremer, 72, 682).†"
+  },
+  {
+   "strongs": "G1176",
+   "sha256": "8c192bc0fd07b09299f7136d40c56b63ae8e627007988e74f2c68a8c0054a68a",
+   "gloss": "dez",
+   "definition": "δέκα, οἱ, αἱ, τά,\ndez: Mat.20:24, al.; θλίψις ἡμερῶν δ., isto é, de breve duração: Rev.2:10.†\nδεκα-οκτώ, T por δέκα ὀκτώ,\ndezoito: Luk.13:4.†"
+  },
+  {
+   "strongs": "G1177",
+   "sha256": "6c147b62ba394e15b5145e4824d2279962a9de392107bbc80b1dfb76c6b61137",
+   "gloss": "doze",
+   "definition": "δεκα-δύω, Rec. por δώδεκα Act.19:7 24:11.†"
+  },
+  {
+   "strongs": "G1178",
+   "sha256": "31c16826b362a55f08670089b201d2106d3fee1b6746158f8a834a3da9061d39",
+   "gloss": "quinze",
+   "definition": "δεκα-πέντε\n[na LXX: Exo.27:15, 1Ma.10:40, al. ;]\nforma tardia de πεντεκαίδεκα, quinze: Jhn.11:18, Act.27:5, WH, mg., ib. 28, Gal.1:18.†"
+  },
+  {
+   "strongs": "G1179",
+   "sha256": "9255c1e17a59a159a6cd1130720f8c6c8c7d5c6f327568d408a8e37902beb5d0",
+   "gloss": "Decápolis",
+   "definition": "Δεκά-πολις, -εως, ὴ\nDecápolis, uma região a leste do Jordão que continha dez cidades: Mat.4:25, Mrk.5:20 7:31.†"
+  },
+  {
+   "strongs": "G1180",
+   "sha256": "d136bd1c9ffabf8d287e9467621c7a128c83126db04d8adf62858a0416e6e01c",
+   "gloss": "catorze",
+   "definition": "δεκατέσσαρες, -ων, oἱ, αἱ, -α, τά\n[na LXX: Gen.31:41, Tob.8:19, al. ;]\n= cl. τεσσαρεσκαίδεκα, mais frequente no gr. tardio do que a forma mais antiga, e universal no MGr. (de treze para cima), catorze: Mat.1:17, 2Co.12:2, Gal.2:1 (cf. τεσσαρεσκαιδέκατος).†"
+  },
+  {
+   "strongs": "G1181",
+   "sha256": "b55b10f7f04f7c4a2b16134dc938640cce230525f963c79d2622871aca83362c",
+   "gloss": "décimo",
+   "definition": "δεκάτη, -ης, ἡ prop. fem. (sc. μέρος) de δέκατος, -η, -ον,\n[na LXX por מַעֲשֵׂר: Gen.14:20, Neh.12:44, e al. ;]\numa décima parte, um dízimo: Heb.7:2, 4; 8, 9 (para uma curiosa inversão do uso bíblico, veja MM, veja a palavra).†"
+  },
+  {
+   "strongs": "G1182",
+   "sha256": "543ca31e9a87f1e04e3c8058011f4ac4a2e8f82922384d47fbefdd0a0a185b0e",
+   "gloss": "décimo",
+   "definition": "δέκατος, -η, -ον\n(δέκα), [na LXX por מַעֲשֵׂר e formas cognatas ;]\ndécimo: Jhn.1:40, Act.19:9 (WH, txt., RV omitem), Rev.11:13; 21:20.†"
+  },
+  {
+   "strongs": "G1183",
+   "sha256": "e70dc05e01f4badfb398f2b9b1b16657c8aa98fa0629911e20c98fd0563d658d",
+   "gloss": "dizimar",
+   "definition": "δεκατόω, -ῶ,\n= cl. -τεύω (δεκάτη), [na LXX: Neh.10:37 (38) (עשׂר pi.) * ;]\ncobrar o dízimo de: com acusativo de pessoa(s), Heb.7:6; pass., pagar o dízimo: Heb.7:9.†"
+  },
+  {
+   "strongs": "G1184",
+   "sha256": "3ea05aa0d064901adbc5e1b205397862260e275a414c0a7915ece71f9a1925af",
+   "gloss": "aceitável",
+   "definition": "δεκτός, -ή, -όν\nadj. verbal de δέχομαι, [na LXX principalmente por רָצוֹן: Pro.11:1, al. ;]\naceitável: Luk.4:19 (LXX) 24, Act.10:35, 2Co.6:2\" (LXX), Php.4:18 (cf. εὐπροσδ-).†"
+  },
+  {
+   "strongs": "G1185",
+   "sha256": "77697d70a1d3d512f20214e9af8f3ed7847ce0a1b2e2b46c2dc7f787532aea44",
+   "gloss": "seduzir",
+   "definition": "δελεάζω\n(δέλεαρ, uma isca),\natrair com isca: metaforicamente, atrair, seduzir: com acusativo, 2Pe.2:14, 18; pass., Jas.1:14.†"
+  },
+  {
+   "strongs": "G1186",
+   "sha256": "9aecba2fd8e9826ae43dcf84eb9732d3a47726b6727fd2eb0931d5957db90f2f",
+   "gloss": "árvore",
+   "definition": "δένδρον, -ου, τό\n[na LXX por עֵץ, etc. ;]\numa árvore: Mat.3:10, al.; δ. ἀγαθόν, Mat.7:17, 18; δ. καλόν, Mat.12:33, Luk.6:43; δ. σαπρόν, Mat.7:17, 18 12:33, Luk.6:43; γίνεσθαι δ., Mat.13:32; γ. εἰς δ., Luk.13:19."
+  },
+  {
+   "strongs": "G1187",
+   "sha256": "ba4135634cc40b53c3833e485e2c084a579945fc22f2fe69489acf52175dee9a",
+   "gloss": "fundibulário",
+   "definition": "δεξιολάβος, -ου, ὁ\n(δεξιός, λαμβάνω),\numa espécie de soldado, prob. um lanceiro (Vg., lancearius) ou fundibulário: Act.23:23.†\nδεξιο-βόλος, -ου, ὁ\n(δεξιός, βάλλω),\naquele que lança com a mão direita: L por δεξιολάβος, Act.23:23.†"
+  },
+  {
+   "strongs": "G1188",
+   "sha256": "b3709e53d8d3855510b807dca296a0f8ba226438df52ddc0daea3d8ed3daa9b2",
+   "gloss": "direito",
+   "definition": "δεξιός, -ά, -όν\n[na LXX principalmente por יָמִין ;]\no direito: Mat.5:29, Jhn.18:10, al.; ὅπλα δ., armas levadas na mão direita, isto é, para o ataque, 2Co.6:7 ; ἡ δ. χείρ, Mat.5:30, Luk.6:6, al.; ἡ δ. (sc. χείρ), Mat.6:3, al.; ἐπὶ τὴν δ., na mão direita (R, txt., sobre R, mg.), Rev.5:1; διδόναι τὴν δ., em amizade (Deiss., BS, 251), Gal.2:9; metaforicamente, do poder, τῇ δ. αὐτοῦ, Act.2:33 5:31; τὰ δ., o lado direito, Mrk.16:5; ἐκ δεξιῶν, à direita, com genitivo, Mat.25:33, 34, Mrk.15:27, Luk.1:11, al.; de um lugar de honra no Reino messiânico (cf. 3Ki.2:19, Psa.44(45):10), καθίσαι ἐκ δεξιῶν, Mat.20:21, Mrk.10:37; da sessão celestial de Cristo, Mat.26:64, Mrk.14:62, Heb.1:13 (Cremer, 172)"
+  },
+  {
+   "strongs": "G1189",
+   "sha256": "2b213d8370016e9223dcd2cb8b1fe94bfce31d55fe0441e920c3ca7a25377b8f",
+   "gloss": "orar",
+   "definition": "δέομαι\n(méd. de δέω, II, veja, como depoen.) [na LXX por חנן, etc. ;]\nquerer para si;\n1. carecer, precisar:\n(a) absol.;\n(b) com genitivo\n2. pedir, solicitar, rogar, orar;\n(i) em geral: absol., Act.26:3, WH; com genitivo de pessoa(s), Luk.5:12; 8:28; 38 (ἐδεῖτο; T, ἐδέετο, cf. Veitch, veja a palavra δέω) 9:38, Act.8:34; 21:39, 2Co.5:20, Gal.4:12; antes de ἵνα, Luk.9:40; antes de τό, com inf., 2Co.10:2; com genitivo de pessoa(s) e de coisa(s), 2Co.8:4;\n(ii) da oração a Deus: absol., Act.4:31; antes de εἴ πως, Rom.1:10; ἵνα, Luk.21:36; 22:32; εἰς τό, 1Th.3:10; ὑπὲρ ἐμοῦ πρὸς τ. κύριον, ὅπως, Act.8:24; com genitivo, τοῦ κυρίου, ὅπως, Mat.9:38, Luk.10:2; τοῦ Θεοῦ, Act.10:2; antes de εἰ ἄρα, Act.8:22.†\nSYN.: αἰτέω, e cf. δέησις."
+  },
+  {
+   "strongs": "G1190",
+   "sha256": "b34178e238a3b9c6d22ef6201a0bed3337d2a3be7331da624a3b102fd1463fa0",
+   "gloss": "Derbe",
+   "definition": "Δερβαῖος, -α, -ον\nde Derbe: Act.20:4.†"
+  },
+  {
+   "strongs": "G1191",
+   "sha256": "0330354b3f6ee7d4a1117f8193e6036c1d5b0edcef89897dddfcdc5188d33f5b",
+   "gloss": "Derbe",
+   "definition": "Δέρβη, -ης, ἡ,\nDerbe, uma cidade da Licaônia: Act.14:6, 20 16:1.†"
+  },
+  {
+   "strongs": "G1192",
+   "sha256": "a77f355bbd6b1aadad4a03d92c2fb372e480307bd5cc7a8a4c92a403d054e029",
+   "gloss": "couro",
+   "definition": "δέρμα, -τος, τό\n(δέρω), [na LXX por עוֹר ;]\na pele, o couro de animais: ἐν αἰγίοις δ., Heb.11:37.†"
+  },
+  {
+   "strongs": "G1193",
+   "sha256": "8c92a11fc9e84c9c7a012426d7b037b0e1c87b337f14399631c86227e2f06974",
+   "gloss": "feito de couro",
+   "definition": "δερμάτινος, -η, -ον\n(δέρμα), [na LXX por עוֹר ;]\nde pele, de couro: Mat.3:4, Mrk.1:6 (cf. 4Ki.1:8).†"
+  },
+  {
+   "strongs": "G1194",
+   "sha256": "e7fc397b1f4ed63a905f1759d4a25ca154874c247eafdf9d5248475b80eac220",
+   "gloss": "espancar",
+   "definition": "δέρω\n[na LXX: Lev.1:6, 2Ch.29:34; 35:11 (פָּשַׁט hi.)* ;]\n1. esfolar, tirar a pele.\n2. (cf. a gíria ingl. hide) bater, surrar: com acusativo, Mat.21:35, Mrk.12:3, 5, Luk.20:10, 11 22:63, Jhn.18:23, Act.5:40 16:37 22:19; ὡς ἀέρα δέρων, 1Co.9:26; εἰς πρόσωπου δ., 2Co.11:20. Pass., Mrk.13:9, Luk.12:47, 48 (δαρήσεται πολλάς, ὀλίγας, Sc. πληγάς).†",
+   "note": "The English slang word 'hide' kept as the word discussed; source 'of.' read as 'cf.'."
+  },
+  {
+   "strongs": "G1195",
+   "sha256": "28c65780dcf2946f6f8bf61ebc2633b206864a2f99052fa7c3b0a8367ec2d961",
+   "gloss": "amarrar",
+   "definition": "δεσμεύω\n(δεσμός), [na LXX por אָסַר (Jdg.16:11, al.), אָלַם pi. (Gen.37:7, al.), etc. ;]\n1. acorrentar: Luk.8:29, Act.22:4.\n2. atar, amarrar juntos: φορτία, Mat.23:4.†"
+  },
+  {
+   "strongs": "G1196",
+   "sha256": "2a019d7ae203f7644354b4350f7f9f9a378e3850850f668fedd7aa412a27fe99",
+   "gloss": "algemar",
+   "definition": "δεσμέω, -ῶ\nRec. por δεσμεύω, veja: Luk.8:29.†\nδεσμεύω\n(δεσμός), [na LXX por אָסַר (Jdg.16:11, al.), אָלַם pi. (Gen.37:7, al.), etc. ;]\n1. acorrentar: Luk.8:29, Act.22:4.\n2. atar, amarrar juntos: φορτία, Mat.23:4.†"
+  },
+  {
+   "strongs": "G1197",
+   "sha256": "4de677e789f4505cc43f9722e6b543f8223de95584f1036d923e4dbf7dd9bf00",
+   "gloss": "feixe",
+   "definition": "δέσμη (Rec. δεσμή), -ης, ἡ\n(δέω), [na LXX por אֲגֻדָּה, Exo.12:22 * ;]\num feixe: δήσατε αὐτὰ εἰς δέσμας (D, Orig., omitem εἰς, e Blass pensa que é a leitura original, δέσμας δέσμας; veja Deiss., LAE, 125.4), Mat.13:30.†"
+  },
+  {
+   "strongs": "G1198",
+   "sha256": "553746b3eed5124506d1e7500c4e4bebfd2b1d726fe20d82c1ff5ebbaddc0dde",
+   "gloss": "prisioneiro",
+   "definition": "δέσμιος, -ον (também -α, -ον;\nδεσμός), [na LXX por אסר;]\n1. que prende.\n2. preso, cativo; ὁ δ., como subst., um prisioneiro: Mat.27:15, 16, Mrk.15:6, Act.16:25, 27 23:18 25:14, 27 28:16 (Rec.) 17, Heb.10:34 13:3; ὁ δ. τοῦ Χριστοῦ, Eph.3:1, 2Ti.1:8, Phm 1, 9; ὁ δ. ἐν κυρίῳ, Eph.4:1.†"
+  },
+  {
+   "strongs": "G1199",
+   "sha256": "8af43e84eaa5ff1fe3fab3a31647fd3854a04ba21d9cca4e631e1d7ead3f5de3",
+   "gloss": "corrente",
+   "definition": "δεσμός, -οῦ, ὁ\n(δέω), [na LXX principalmente por אסר ;]\numa faixa, um laço: metaforicamente, Luk.13:16; ὁ δεσμὸς τ. γλώσσης, Mrk.7:35 (para esta expressão nos π., veja Deiss., LAE, 306 ss.; de laços reais, veja Ruth., Gr., 9). Pl., δεσμοί, Php.1:13; δεσμά (como também no cl.), Luk.8:29, Act.16:26 20:23; genitivo, dativo, Act.23:29 26:29, 31, Php.1:7, 14, 17, Col.4:18, 2Ti.2:9, Phm 10, Heb.11:36, Ju 6; ἐν τοῖς δ. τοῦ εὐαγγελίου Phm 13.†"
+  },
+  {
+   "strongs": "G1200",
+   "sha256": "f0bd29d8cbc9f58abde7947653298b367dc3d7370c5529de1414e738b99b473a",
+   "gloss": "carcereiro",
+   "definition": "δεσμο-φύλαξ, -κος, ὁ\n(δεσμός, φύλαξ),\num guarda de prisão, carcereiro: Act.16:23, 27, 36 (cf. ἀρχιδ-, Gen.39:21).†"
+  },
+  {
+   "strongs": "G1201",
+   "sha256": "c2aecc5302ad3a1b16fb41a27cc4fc62d67b8e7ac59061235c9829c2ff9e5ebc",
+   "gloss": "prisão",
+   "definition": "δεσμωτήριον, -ου, τό\n[na LXX por בֵּית סֹהַר (Ge), אָסִיר ;]\numa prisão: Mat.11:2, Act.5:21, 23 16:26.†"
+  },
+  {
+   "strongs": "G1202",
+   "sha256": "b24406542852146536cff65646fb248a5fe9ccdf113b8c36be026b7844a58ccb",
+   "gloss": "prisioneiro",
+   "definition": "δεσμώτης, -ου, ὁ\n[na LXX por אסר, מַסְגֵּר ;]\num prisioneiro: Act.27:1, 42.†"
+  },
+  {
+   "strongs": "G1203",
+   "sha256": "6edfaa196b1b2e87a159b72a6731f79830e7c2fb9a71bf08020ab33d514d1b3a",
+   "gloss": "senhor",
+   "definition": "δεσπότης, -ου, ὁ\n[na LXX principalmente por אָדוֹן, אֲדֹנָי; em Jdth.9:17, δ. τ. οὐρανῶν κ. τ. γῆς];\num senhor, amo, correlativo de δοῦλος, οἰκέτης: 1Ti.6:1, 2, 2Ti.2:21, Tit.2:9, 1Pe.2:18; como título de Deus, voc., δέσποτα (assim geralmente na LXX), Luk.2:29, Act.4:24; ὁ δ. = voc. δέσποτα (cf. B1., § 33, 4), Rev.6:10; de Cristo, 2Pe.2:1, Ju 4, R, txt. (mas cf. mg.).†\nSYN.: κύριος (veja), que implica limitação de autoridade e uma relação mais geral do que δ., que \"denotava propriedade absoluta e poder sem controle\" (Thayer)."
+  },
+  {
+   "strongs": "G1204",
+   "sha256": "015e8ca63cab0437a64f38fa0e23d589c782062f29a092b7b761c3a74154067a",
+   "gloss": "vem",
+   "definition": "δεῦρο\nadv., [na LXX principalmente por לֵךְ, לֵכָה ;]\n1. de lugar;\n(a) para cá, com verbos de movimento;\n(b) (no cl., principalmente poét.) como imperat., aqui! vem!: Mat.19:21, Mrk.10:21, Luk.18:22, Jhn.11:43, Act.7:3\" (LXX) , 34 (LXX), Rev.17:1 21:9.\n2. De tempo, até agora, agora: Rev.1:13.†"
+  },
+  {
+   "strongs": "G1205",
+   "sha256": "5aeaf4b27c7509ec0cf2ff218c91adac6973ac32deb31a0bf0304e878eebdd52",
+   "gloss": "vinde",
+   "definition": "δεῦτε\nadv., como pl. de δεῦρο, 1. (b), veja, [na LXX principalmente por לְכוּ ;]\nvamos! vinde cá! vinde!: com imperat., Mat.25:34 28:6, Jhn.4:29 21:12, Rev.19:17; com subj., Mat.21:38, Mrk.12:7; antes de ὀπίσω, Mat.4:19, Mrk.1:17; πρός, Mat.11:28; εἰς, Mat.22:4, Mrk.6:31.†"
+  },
+  {
+   "strongs": "G1206",
+   "sha256": "e300659704f3e448c8739bb3aa946b894aba42a5af9bb66aae11dcc5d9bfcb23",
+   "gloss": "no dia seguinte",
+   "definition": "δευτεραῖος, -α, -ον\n(δεύτερος),\nadj. com sentido adverbial;\nno segundo dia: δευτεραῖοι ἤλθομεν, Act.28:13.†"
+  },
+  {
+   "strongs": "G1207",
+   "sha256": "74ef320e32f458fb11484710057b233cb62ac39c28d494a7d241350ce112f99c",
+   "gloss": "segundo-primeiro",
+   "definition": "δευτερό-πρωτος, -ον\nsegundo-primeiro (em que sentido, não há explicação satisfatória. A leitura prob. não é original, veja ICC, em l.; DCG, i, 411; ii, 541, 724): Luk.6:1, WH, mg., R, mg.†"
+  },
+  {
+   "strongs": "G1208",
+   "sha256": "62c705357a81e8bf20a4448077b2c3cbcab6dfae67edd7adddaa249c6b2e1b0f",
+   "gloss": "em segundo lugar",
+   "definition": "δεῦτερος, -α, -ον,\nsegundo na ordem, com ou sem ideia de tempo: Mat.22:26, 39, al.; θάνατος, Rev.2:11 20:14 21:8; χάρις, 2Co.1:15. No neut., como adv., em segundo lugar, uma segunda vez; o oposto de πρῶτον: Jhn.3:4 21:16, 1Co.12:28, Rev.19:3; τὸ δ., 2Co.13:2, Ju 5; ἐν τ. δ., na segunda vez: Act.7:13; no uso posterior (como 1Ma.9:1), ἐκ δ., Mrk.14:72, Jhn.9:24, Act.11:9, Heb.9:28."
+  },
+  {
+   "strongs": "G1209",
+   "sha256": "807dd68e415f871faadb41494843b2f4360e8cbfa539d088bc48a223209af7aa",
+   "gloss": "receber",
+   "definition": "δέχομαι, depoen. méd.,\n[na LXX principalmente por לקח ;]\nreceber, aceitar;\n1. com acusativo de coisa(s), de tomar ou aceitar o que é oferecido: γράμματα, Luk.16:6, 7; id. em sentido diferente, Act.28:21; ποτήριον, Luk.22:17; παιδίον (εἰς τ. ἀγκάλας), Luk.2:28; περικεφαλαίαν, μάχαιραν, Eph.6:17; ἐπιστολάς, Act.22:5; τ. βασιλείαν τ. Θεοῦ, Mrk.10:15, Luk.18:17; λογία ζῶντα, Act.7:38; εὐαγγέλιον, 2Co.11:4; τ. χάριν τ. Θεοῦ, 2Co.6:1; metaforicamente, da aceitação mental, Mat.11:14; τ. λόγον, Luk.8:13, Act.8:14 11:1 17:11, 1Th.1:6 2:13, Jas.1:21; τὰ τ. πνεύματος, 1Co.2:14; τ. παράκλησιν, 2Co.8:17; τ. ἀγάπην τ. ἀληθείας, 2Th.2:10.\n2. com acusativo de pessoa(s), de receber com bondade ou hospitalidade, Mat.10:14 40, 41, Mrk.6:11, Luk.9:5 53 10:8, 10, Jhn.4:45, 2Co.7:15 11:16, Gal.4:14, Col.4:10, Heb.11:31; παιδίον, Mat.18:5, Mrk.9:37, Luk.9:48; εἰς οἴκους, σκηνάς, Luk.16:4, 9; δέξαι τ. πνεῦμά μου, Act.7:59; ὃν δεῖ οὐρανὸν δέασθαι, Act.3:21 (cf. ἀνα-, ἀπο, δια-, εἰσ-, ἐκ-, ἀπ-εκ-, ἐν-, ἐπι-, παρα-, προσ-, ὑπο-δέχομαι; Cremer, 174).†"
+  },
+  {
+   "strongs": "G1210",
+   "sha256": "af1b9f049807f83b436efc7b57ad5d9d8cf364c60c527bba9557f71b8ed3df97",
+   "gloss": "amarrar",
+   "definition": "δέω (I),\n[na LXX principalmente por אסר ;]\natar, amarrar, prender;\n(1) com acusativo de coisa(s), antes de εἰς δεσμάς, Mat.13:30; de um jumento, Mat.21:2, Mrk.11:2, 4 Luk.19:30.\n(2) com acusativo de pessoa(s), de envolver um cadáver, ὀθονίοις, Jhn.19:40; δεδομένος τ. πόδας . . . κειρίαις (Bl., §34, 6; Kühner 3, iii, 125), Jhn.11:44; de prender com correntes, ἀγγέλους, Rev.9:14; um endemoninhado, πέδαις κ. ἁλύσεσι, Mrk.5:3, 4; cativos, Mat.12:29 14:3 22:13 27:2, Mrk.3:27 6:17 15:1, 7, Jhn.18:12, 24, Act.9:2, 14, 21, 21:11, 13 22:5, 29 24:27, Col.4:3, Rev.20:2; ἁλύσεσι, Act.12:6 21:33. Metafórico, ὁ λόγος τ. Θεοῦ, 2Ti.2:9; de Satanás prendendo por doença (MM, veja a palavra), Luk.13:16; de constrangimento ou obrigação, Act.20:22; do vínculo do casamento, 1Co.7:39; id. com dativo de pessoa(s), ἀνδρί, Rom.7:2; γυναικί, 1Co.7:27; na ling. rabínica (Dalman, Words, 213s.), proibir, declarar proibido, Mat.16:19 18:18 (cf. κατα-, περι-, συν-, ὐπο-δέω; Cremer, 82).\n†",
+   "note": "'Words' is Dalman's title, kept."
+  },
+  {
+   "strongs": "G1211",
+   "sha256": "6accc96425911ceaf92f544ff9f8f4f0256ec81cf31ac9e2db9ba132889b19e2",
+   "gloss": "pois",
+   "definition": "δή\npartícula coordenativa consecutiva sem equivalente exato em ingl., que dá maior precisão e ênfase à palavra ou às palavras a que se liga; às vezes traduzível por ora pois, então, em verdade, certamente.\n1. Com verbos: imperat., Act.6:3 (WH, mg.) 13:2, 1Co.6:20; subj. hort., Luk.2:15, Act.15:36; indic., δή που (Τ, δήπου, veja), Heb.2:16.\n2. Com pronomes: ὃ δή, ora, este é o que, Mat.13:23.†"
+  },
+  {
+   "strongs": "G1212",
+   "sha256": "56593f78e56a3f7c90d72af0e924cf037e5aab34ad6bb2d9f0c71d17aa5d97ec",
+   "gloss": "Urim",
+   "definition": "δῆλος, -η, -ον\n[na LXX por אוּר, etc. ;]\n1. visível.\n2. claro para a mente, evidente: Mat.26:73; δ. (sc. ἐστίν), antes de ὅτι, 1Co.15:27, Gal.3:11.†\nSYN.: φανερός, com ref. à aparência exterior, manifesto, em oposição a oculto; δ. com ref. à percepção interior, evidente, conhecido, entendido.",
+   "note": "Gloss 'Urim' (as in STEPBible, for δῆλος) kept: the same word in Portuguese."
+  },
+  {
+   "strongs": "G1213",
+   "sha256": "3e8459a34d6f84225d7aac6399182860e1d92dff58dd09dcc69f4bb876f6c351",
+   "gloss": "esclarecer",
+   "definition": "δηλόω, -ῶ\n[na LXX principalmente por ידע ;]\ntornar claro, declarar: com acusativo, 1Co.3:13, Col.1:8, Heb.9:8 12:27; com dativo de pessoa(s), 2Pe.1:14; com dativo de pessoa(s), antes de περί (pass.), 1Co.1:11; antes de εἰς, 1Pe.1:11.†\nSYN.: ἐμφανίζω, tornar manifesto, tornar visível à vista; δ. tornar evidente à mente."
+  },
+  {
+   "strongs": "G1214",
+   "sha256": "44c364be4aed905da569335996ed853e64bfad5bc566e5dbf4acf2c6a0516db8",
+   "gloss": "Demas",
+   "definition": "Δημᾶς, ὁ\n(talvez contraído de Δημήτριος),\nDemas, um companheiro de São Paulo: Col.4:14, Phm 24, 2Ti.4:10.†"
+  },
+  {
+   "strongs": "G1215",
+   "sha256": "bbf07ad6cf599066074408d38d7d531a25f0807ada832a0260a721eeebc943a9",
+   "gloss": "discursar",
+   "definition": "δημηγορέω, -ῶ\n(δῆμος, ἀγορεύω, falar na assembleia), [na LXX: Pro.24:66 (30:31), 4Ma.5:15 * ;]\nproferir um discurso: Act.12:21.†"
+  },
+  {
+   "strongs": "G1216",
+   "sha256": "380c96924771f879c4657493022048b213133addebc577be1448b82f4a614691",
+   "gloss": "Demétrio",
+   "definition": "Δημήτριος, -ου, ὁ\nDemétrio;\n1. um ourives, Act.19:24 38.\n2. Um discípulo cristão, III Jn 12.†"
+  },
+  {
+   "strongs": "G1217",
+   "sha256": "319785f9efa8b4ce42a9ee1b26f067552220afb0bbc875d49a77d9a3e1996fb8",
+   "gloss": "construtor",
+   "definition": "δημιουργός, -οῦ, ὑ\n(δῆμος, ἔργον), [na LXX: 2Ma.4:1 * ;]\n1. aquele que trabalha para o povo.\n2. Em geral, um autor, construtor, criador; o criador do mundo (Xen., Mem., I, 4, 9, al.), Heb.11:10.†\nSYN.: κτίστης, criador, τεχνίτης, artífice, projetista. Em He, l. com, τ. refere-se ao plano, δ. à sua execução."
+  },
+  {
+   "strongs": "G1218",
+   "sha256": "b1c21ca58fb9fe1e90fb53debb6cb20c52897a73cbcf0d374c8336f37e7061ae",
+   "gloss": "povo",
+   "definition": "δῆμος, -ου, ὁ\n[na LXX principalmente por מִשְׁפָּחָה ;]\n1. um distrito, região.\n2. o povo comum, o povo em geral; esp. o povo reunido: Act.12:22 17:5 19:30 33.\n† SYN.: λαός, o povo em geral: δ., o povo como corpo político; o oposto de δ. é ὄχλος, a multidão desorganizada. ἔθνος, no sing., significa no NT, como nos escritores gr. em geral, uma nação, mas no pl. denota o resto da humanidade à parte dos judeus: os gentios. λ. também, raro no cl. (Att... λεώς), é frequente na LXX e no NT, e geralmente se limita ao povo escolhido, Israel (cf. Cl. Rev., i, 42 s.; Cremer, 689)."
+  },
+  {
+   "strongs": "G1219",
+   "sha256": "f54feb90f731fdb554eebc1d9e23cfd7ae5403c24809dda9b611f567dcab2a75",
+   "gloss": "público",
+   "definition": "δημόσιος, -α, -ον\n(δῆμος), [na LXX: 2Ma.6:10, 3Ma.2:27 4:7 * ;]\npertencente ao povo, público: Act.5:18; dativo fem. usado adverbialmente (cl.);\n(a) à custa pública, por consentimento público;\n(b) publicamente: Act.16:37 18:28 20:20.†"
+  },
+  {
+   "strongs": "G1220",
+   "sha256": "48c225a7731d05c4e44fc7ae0c7f8b20714c78b12dbf714a32602f090204673d",
+   "gloss": "denário",
+   "definition": "δηνάριον, -ου, τό\no denarius lat., uma moeda romana, quase igual à δραχμή, veja: Mat.18:28 20:2, 9, 13 22:19, Mrk.6:37 12:15 14:5, Luk.7:41 10:35 20:24, Jhn.6:7 12:5, Rev.6:6; τὸ ἀνὰ δ., Mat.20:10.†"
+  },
+  {
+   "strongs": "G1221",
+   "sha256": "9bd1f93ab54a7da76a5a28643d30b3a135ed8a66ea745a057664073732cd339c",
+   "gloss": "qualquer que",
+   "definition": "δή-ποτε\nadv. indef. (também escrito δή ποτε), com força generalizante;\n1. absol., alguma vez.\n2. Com adv. ou relat., -quer que: ᾦ δ., Jhn.5:4 (L, οἱῳδηποτοῦν).†"
+  },
+  {
+   "strongs": "G1222",
+   "sha256": "2e7f297dfe78f6cd60e541e91d6b2814dab8e2078cc5fd52b38d0e9fa3a1c244",
+   "gloss": "certamente",
+   "definition": "δή-που (WH, δή που),\nadv. indef.,\ngeralmente no sentido de certamente, é claro, bem sabemos: Heb.2:16 T (WH, δή που).†"
+  },
+  {
+   "strongs": "G1223",
+   "sha256": "78e96a8cb5db42db5a61406736c7ca48184332a4045714cfba3dad1a0c5d7a92",
+   "gloss": "através de/por causa de",
+   "definition": "διά (antes de vogal δ᾽, exc. Rom.8:10, 2Co.5:7, e em nomes próprios; Tdf., Pr., 94),\nprep. com genitivo, acusativo, como no cl.;\n1. com genitivo, através de;\n(i) de lugar, depois de verbos de movimento ou ação: Mat.2:12 12:43, Mrk.2:23, Luk.4:30, Jhn.4:4, 2Co.11:33, al.; σώζεσθαι (διας-) δ. πυρός, ὕδατος, 1Co.3:15, 1Pe.3:20; βλέπειν δ. ἐσόπτρου, 1Co.13:12; metaforicamente, de um estado ou condição: Rom.14:20, 2Co.2:4 5:7, 10; δ. γράμματος, ἀκροβυστίας (Lft., Notes, 263, 279), Rom.2:27 4:11; δι ̓ὑπομενῆς, Rom.8:25.\n(ii) De tempo;\n(a) durante o qual: Mat.26:61, Mrk.14:58, Luk.5:5; δ. παντὸς τοῦ ζῆν, Heb.2:15; δ. παντός (διαπαντός em Mrk.5:5, Luk.24:53), sempre, continuamente, Mat.18:10, Act.2:25\" (LXX) 10:2 24:16, Rom.11:10\" (LXX), 2Th.3:16, Heb.9:6 13:15.\n(b) dentro do qual: Act.1:3; δ. νυκτός, Act.5:19 16:9 17:10 23:31;\n(c.) depois do qual (Field, Notes, 20; Abbott, JG, 255s.): Mrk.2:1, Act.24:17, Gal.2:1.\n(iii) Do meio ou instrumento;\n(1) da causa eficiente (considerada também como o instrumento): de Deus, Rom.11:36, 1Co.1:9, Gal.4:7, Heb.2:10 7:21; de Cristo, Rom.1:8 5:1, 17, 1Co.15:21, 1Pe.4:11, al.; δ. τ. ὑμῶν δεήσεως, Rom.1:12, 2Co.1:4, Gal.4:23, al.;\n(2) do agente, instrumento ou meio;\n(a) com genitivo de pessoa(s), Mat.11:2, Luk.1:70, Jhn.1:17, Act.1:16, Rom.2:16, 1Co.1:21, Eph.1:5, Heb.2:14, Rev.1:1, al.; ὑπὸ τ. κυρίου δ. τ. προφήτου (δ. τ. κυρίου, 1Th.4:2 (M, Th., em l.); Lft., Rev., 121s.), Mat.1:22 2:15, Rom.1:2; δ. ἐπιστολῆς ὡς δ. ἡμῶν (Field, Notes, 202), 2Th.2:2; δ. Σ. (NTD, 22), 1Pe.5:12;\n(b) com genitivo de coisa(s) (onde no cl. muitas vezes se usa o dativo simples; Jannaris, Gr., 375), Jhn.11:4, Act.5:12; δ. τ. πίστεως, Rom.3:30; δ. λόγου θεοῦ, 1Pe.1:23; δ. παραβολῆς, Luk.8:4; δουλεύειν δ. τ. ἀγάπης, Gal.5:13; δ. ἐπαγγελίας, Gal.3:18,\n2. C. acusativo;\n(i) raramente, como com genitivo, através de (Hom), δ. μέσον Σαμαρίας (ICC, em l.; Bl., §42, 1; Robertson, Gr., 581), Luk.17:11.\n(ii) em razão de, por causa de, por amor de;\n(a) com acusativo de pessoa(s) (M, Pr., 105), Mrk.2:27, Jhn.6:57 11:42, Rom.8:20;\n(b) com acusativo de coisa(s), δ. φθόνον, Mat.27:18, Mrk.15:10; δ. φόβον, Jhn.7:13 20:19; δ. ἀγάπην, Eph.2:4; δ. τοῦτο, freq., por esta causa, portanto, Mat.6:25, Mrk.6:14, Luk.11:49, Jhn.6:65, al.; id. antes de ὅτι, Jhn.5:16 10:17, al.; δ. τί, por quê, Mat.9:11, 14 Mrk.2:18, Jhn.7:45, al.; δ. τό, com inf., Mrk.5:4, Luk.9:7, Jas.4:2.\n3. Em composição,\n(1) através, como em διαβαίνω;\n(2) de separação, em pedaços, como em διασπάω;\n(3) de distribuição, por toda parte, como em διαγγέλλω;\n(4) de transição, como διαλλάσσω;\n(5) de ação \"perfectiva\" (M, Pr., 112s., 115s.), como διαφύγω, διακαθαρίζω.",
+   "note": "Source '(with)' is a garbled '(c)' (after (a), (b)): rendered '(c.)'. 'Rev.' in 'Lft., Rev.' is Lightfoot's work (On a Fresh Revision), kept."
+  },
+  {
+   "strongs": "G1224",
+   "sha256": "3101cf0dc835f2665caea85e529d68fd7f4abde3e2f79419c2238dd98e828504",
+   "gloss": "atravessar",
+   "definition": "δια-βαίνω\n[na LXX principalmente por עבר ;]\n1. dar uma passada.\n2. passar por cima, atravessar;\n(a) trans.: τ. θάλασσαι, Heb.11:29;\n(b) intr.: antes de εἰς, Act.16:9; πρός, Luk.16:26.†"
+  },
+  {
+   "strongs": "G1225",
+   "sha256": "9deab0e5bbbe4951d89d7e619b65c1e7253f4d271dbfaf13247c18a034787ba5",
+   "gloss": "acusar",
+   "definition": "δια-βάλλω\n[na LXX: Dan LXX 3:8, Da TH 3:8; 6:24 (25) (אֲכַל קְרַץ), 2Ma.3:11, 4Ma.4:1 * ;]\n1. lançar através.\n2. Caluniar, difamar, acusar falsa ou maliciosamente: Luk.16:1 (Cremer, 120).†"
+  },
+  {
+   "strongs": "G1226",
+   "sha256": "f01ce8aa50adbc5e14e29560c5522a8cc985cccd9e389aa5a97e8c7865128f03",
+   "gloss": "insistir",
+   "definition": "δια-βεβαιόομαι, -οῦμαι\nafirmar com confiança: Tit.3:8; antes de περί, 1Ti.1:7 (Cremer, 140).†"
+  },
+  {
+   "strongs": "G1227",
+   "sha256": "ac3b8dd98072ea5cf949b95a532172294a63dc1ae629e45549916fa3c55fa79f",
+   "gloss": "ver claramente",
+   "definition": "δια-βλέπω\n1. olhar bem em frente.\n2. ver claramente: Mat.7:5, Mrk.8:25, Luk.6:42 (cf. διάβλεψις, Aq., Isa.61:1, por LXX ἀνάβ-).†",
+   "note": "Source 'to took' is a misprint for 'to look': rendered 'olhar'."
+  },
+  {
+   "strongs": "G1228",
+   "sha256": "3c5d21efb656c855b9e54f282a7355846cf341633bb3bcb88c0fcb4530a7b2d0",
+   "gloss": "caluniador/o Diabo",
+   "definition": "διάβολος, -ον\n(διαβάλλω, veja) [na LXX por שָׂטָן (como Job.1:6), exc. Est.7:4 8:1 (צַר, צָרַר) ;]\ncaluniador, que acusa falsamente. Como subst., ὁ, ἡ, δ.;\n(a) em geral (cf. Es, ll. com), um caluniador, falso acusador: 1Ti.3:6, 7 (CGT, em l., mas veja infr.) 3:11, 2Ti.3:3, Tit.2:3;\n(b) como principalmente na LXX, de Satanás, o Acusador, o Diabo: Mat.4:1, 5, 8, 11 13:39 25:41, Luk.4:2, 3, 6, 13 8:12, Jhn.13:2, Act.10:38, Eph.4:27 6:11, 1Ti.3:6, 7 (mas veja supr.), 2Ti.2:26, Heb.2:14, Jas.4:7, 1Pe.5:8, Ju 9, Rev.2:10 12:9, 12 20:2, 10; εἶναι ἐκ τοῦ δ., Jhn.8:44, 1Jn.3:8; τέκνα τοῦ δ., 1Jn.3:10; υἱὸς, Act.13:10; metaforicamente, de Judas, Jhn.6:70 (Cremer, 121; DCG, ii, 605).†"
+  },
+  {
+   "strongs": "G1229",
+   "sha256": "750a7f2fee94688383b7aaa7b35cdf57955b3fe532dbea4615bf1a3e1b7f728a",
+   "gloss": "proclamar",
+   "definition": "δι-αγγέλω\n[na LXX por ספר pi., etc. ;]\ndivulgar por toda parte, proclamar: com acusativo, Luk.9:60, Act.21:26, Rom.9:17\" (LXX) .†"
+  },
+  {
+   "strongs": "G1230",
+   "sha256": "dc69343555c9b1ffdc56ebc4f2a0fba65cfac95eda45461a9ab550792c17dfb1",
+   "gloss": "passar",
+   "definition": "δια-γίνομαι\n(jôn. e gr. tardio por διαγίγν-), [na LXX, 2Ma.11:26 * ;]\n1. atravessar, passar, p. ex. τ. νύκτα; absol., viver.\n2. De tempo, intervir, decorrer: part., com ἡμερῶν τινῶν, Act.25:13; ἱκανοῦ χρόνου, ib. 27:9; τ. σαβάτου, Mrk.16:1.†"
+  },
+  {
+   "strongs": "G1231",
+   "sha256": "254f8d766a1bd079d73a60253036d72de8437eef22cb684b8d8cd7b28be2feb6",
+   "gloss": "decidir",
+   "definition": "δια-γινώσκω\n(veja a palavra anterior), [na LXX principalmente por ידע, e cf. 2Ma.9:15 ;]\n1. distinguir, averiguar com exatidão: Act.23:15\n2. Como termo jurídico ateniense, determinar: τὰ καθ᾽ ὑμᾶς, a vossa causa, Act.24:22 (Cremer, 673).†"
+  },
+  {
+   "strongs": "G1232",
+   "sha256": "8b215d0b1033066b348e5ad8babb2528ffdf23d2fb144dd87e0a1ee90fce4fb6",
+   "gloss": "relatar",
+   "definition": "δια-γνωρίζω\ndivulgar por toda parte:\nLuk.2:17, Rec. (ἐγνώρισεν, Edd.).†"
+  },
+  {
+   "strongs": "G1233",
+   "sha256": "5ac674018321fe8262e2cbac473099d6da0e1093245c918b981f1e20cf8cd0dd",
+   "gloss": "decisão",
+   "definition": "διά-γνωσις, -εως, ἡ\n(διαγιγνώσκω), [na LXX: Wis.3:18 * ;]\n1. um distinguir, também como termo médico.\n2. Como termo jurídico (lat. cognitio), determinação, decisão: Act.25:21 (Cremer, 674).†"
+  },
+  {
+   "strongs": "G1234",
+   "sha256": "751eb93638b27e68fa6c42eda1e28ac38e02af2e5838f6e0b837f5736b6ff27e",
+   "gloss": "murmurar",
+   "definition": "δια-γογγύζω\n[na LXX principalmente por לין, לון, como Exo.16:2, e cf. Si 34(31):24 ;]\nde um grupo, murmurar ou resmungar entre si: Luk.15:2 19:7.†"
+  },
+  {
+   "strongs": "G1235",
+   "sha256": "52ba0a5028ea4b9a78dc0e174739779cc4901b668d731e4dc5d44391bf22b8f0",
+   "gloss": "despertar",
+   "definition": "δια-γρηγορέω, -ῶ\n(a) prop., permanecer acordado (R, mg.);\n(b) estar plenamente acordado (R, txt.): Luk.9:32.†"
+  }
+ ]
+}

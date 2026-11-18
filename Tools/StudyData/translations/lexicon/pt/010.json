@@ -1,0 +1,2746 @@
+{
+ "batch": "010",
+ "lang": "pt",
+ "entries": [
+  {
+   "strongs": "H2902B",
+   "sha256": "72de7ffe92a9a80052f8e94a43d3e5079b9ab9d6e138ca968eee50ed132bca81",
+   "gloss": "ser rebocado",
+   "definition": "rebocar, especialmente com cal",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2903",
+   "sha256": "e976456733bf3c3a57c704483fcfbde9ac3c44c781a2e5a21ce106c355abdd79",
+   "gloss": "filactérios",
+   "definition": "uma faixa para a testa",
+   "derivation": "de uma raiz não usada que significa rodear ou atar;"
+  },
+  {
+   "strongs": "H2904",
+   "sha256": "ce677291182fbd10d2820eb80fe6eeb29d80fdc40f828f807cb7607057240503",
+   "gloss": "lançar",
+   "definition": "arremessar ou cambalear; daí (transitivamente) derrubar ou expulsar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2905",
+   "sha256": "551a0f8a7983568892231bc167890b9c829645919678e920f920440e4fc100ab",
+   "gloss": "fileira",
+   "definition": "uma fileira; daí, um muro",
+   "derivation": "de uma raiz não usada que significa dispor de maneira regular;"
+  },
+  {
+   "strongs": "H2906",
+   "sha256": "a1fb31e601b59a6fa4ec1e097cf3ba727fa638300f45b9f71adb6e95d37c5ed1",
+   "gloss": "monte",
+   "definition": "uma rocha ou colina",
+   "derivation": "(aramaico) correspondente a 6697;"
+  },
+  {
+   "strongs": "H2907",
+   "sha256": "ff481b59bcb12be5c078a21e3c9f7c371821f3e4be86de0bad9e065fdedfaf2c",
+   "gloss": "lançar-se",
+   "definition": "lançar-se como uma ave de rapina",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2908",
+   "sha256": "11b3e7c8d855cd8a181519ed1acb3a4d8d41d70b0bda353e259ce20359e10307",
+   "gloss": "jejum",
+   "definition": "fome (como algo que retorce)",
+   "derivation": "(aramaico) de uma raiz correspondente a 2901;"
+  },
+  {
+   "strongs": "H2909",
+   "sha256": "47aee8016dc6c7da65e98f775552535be4b048278af1b01dbd1a5ac9452903c8",
+   "gloss": "atirar",
+   "definition": "retesar um arco, como um arqueiro",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2910",
+   "sha256": "d7710a530bfdec449ffb34e1c4ec5e47272f5eb483f45adf3b2656194c91fabc",
+   "gloss": "partes íntimas",
+   "definition": "(só no plural) os rins (por estarem cobertos); daí (figuradamente) o pensamento mais íntimo",
+   "derivation": "de 2909 (ou 2902) no sentido de revestir;"
+  },
+  {
+   "strongs": "H2911",
+   "sha256": "84ec7e121e55b8653a97740f83db310336639f1f969f1196a484f7695474e4dc",
+   "gloss": "moagem",
+   "definition": "um moinho de mão; daí, uma mó",
+   "derivation": "de 2912;"
+  },
+  {
+   "strongs": "H2912",
+   "sha256": "518b8ec96e56bc1ff24ce8cd9ad6771881bfda19921df0bd55eb83f7e4e1375c",
+   "gloss": "moer",
+   "definition": "moer farinha; daí, ser concubina (sendo esse o seu trabalho)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2913",
+   "sha256": "d7ecac97a78c9c17ac2b7a6c91118ed00ecf8b914a6e46e36e7d1b1b7ffd86c8",
+   "gloss": "moinho",
+   "definition": "um moinho de mão; daí (figuradamente) mastigação",
+   "derivation": "de 2912;"
+  },
+  {
+   "strongs": "H2914",
+   "sha256": "d4378beeaaf861a0169950dabbea260639cf68e1e369375f584ac6c541e2da60",
+   "gloss": "tumor",
+   "definition": "um furúnculo ou úlcera (pela inflamação), especialmente um tumor no ânus ou nas partes pudendas (as hemorroidas)",
+   "derivation": "de uma raiz não usada que significa queimar;",
+   "note": "Gloss: the Portuguese word is spelled as in English (tumor)."
+  },
+  {
+   "strongs": "H2915",
+   "sha256": "882e52edee6051c9a5e93909c4931659881538148b448c53e4360fb9bbe38ab3",
+   "gloss": "reboco",
+   "definition": "argamassa ou reboco",
+   "derivation": "de (o equivalente de) 2902;"
+  },
+  {
+   "strongs": "H2916",
+   "sha256": "17125147dd380f14276bb12ae13bb2c6d075ba2690b250e79e9cee0dc216767d",
+   "gloss": "lama",
+   "definition": "lama ou barro; figuradamente, calamidade",
+   "derivation": "de uma raiz não usada que significa aparentemente ser pegajoso (ou antes talvez um demonstrativo); de 2894, pela ideia de sujeira a ser varrida);"
+  },
+  {
+   "strongs": "H2917",
+   "sha256": "1b74ff21b32975ac7e1b2a237a9f1f650e0eeb69340c0f36cdedbac93ef210e9",
+   "gloss": "comum",
+   "definition": "barro",
+   "derivation": "(aramaico) talvez, por intercâmbio, por uma palavra correspondente a 2916;"
+  },
+  {
+   "strongs": "H2918",
+   "sha256": "9802705fb482312896da1c0343b612016272cefbaa5f2ebef9bb192e622d465d",
+   "gloss": "acampamento",
+   "definition": "um muro; daí, uma fortaleza ou uma aldeia",
+   "derivation": "feminino de (um equivalente de) 2905;"
+  },
+  {
+   "strongs": "H2919",
+   "sha256": "b93557c64d88dccbfd42f9bd93a7fcbbb186a595004a00eed43e62abd80d1d62",
+   "gloss": "orvalho",
+   "definition": "orvalho (por cobrir a vegetação)",
+   "derivation": "de 2926;"
+  },
+  {
+   "strongs": "H2920",
+   "sha256": "66feb5f8e7463dfd8b95c6fd344faf5efd1a59c55380040e7578e03bd3376c6f",
+   "gloss": "orvalho",
+   "derivation": "(aramaico) o mesmo que 2919"
+  },
+  {
+   "strongs": "H2921",
+   "sha256": "be3d765543bced936d2ba5fd0f52d77e48d4032c48ba5bf8667114cfe68312a9",
+   "gloss": "manchar",
+   "definition": "propriamente, cobrir com remendos; isto é, (por implicação) manchar ou matizar (como uma tapeçaria)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2922",
+   "sha256": "e27284cb6ef044b10a64c3b8f4ec3e8d9d92e19cba4c1a413f9deb73fcdf7f57",
+   "gloss": "cordeiro",
+   "definition": "um cordeiro",
+   "derivation": "aparentemente de 2921 no sentido (orig.) de cobrir (para proteção); (compare 2924)"
+  },
+  {
+   "strongs": "H2923",
+   "sha256": "200a50bf0c031b1de7113fa51b330fafd65d29d0810c7e5007065fb6b3c30021",
+   "gloss": "Telaim",
+   "definition": "Telaim, um lugar na Palestina",
+   "derivation": "do plural de 2922; cordeiros;"
+  },
+  {
+   "strongs": "H2924",
+   "sha256": "f0a3c7c91434096c7bdfcf3ad1511f55a65f30233a2bf954b10b20ce95a9628b",
+   "gloss": "cordeiro",
+   "definition": "um cordeiro",
+   "derivation": "por variação de 2922;"
+  },
+  {
+   "strongs": "H2925",
+   "sha256": "a137d865a9a5d08c616990ca2a6c8e3ec15d1b8b9b4d964d7bf8e2da518e2cfb",
+   "gloss": "cativeiro",
+   "definition": "derrubada ou rejeição",
+   "derivation": "de 2904;"
+  },
+  {
+   "strongs": "H2926",
+   "sha256": "e1a5a2bcbe5dfd4b6c09cc469d4e63b766bd713ac12fe7c27ebf34b35ac84084",
+   "gloss": "cobrir",
+   "definition": "propriamente, espalhar por cima, isto é, (por implicação) cobrir ou revestir (com vigas)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2927",
+   "sha256": "486e59f7511a657aeed0f175660587cea903f653a7a0eccf71d76e7ef925a2c3",
+   "gloss": "ter sombra",
+   "definition": "cobrir com sombra",
+   "derivation": "(aramaico) correspondente a 2926;"
+  },
+  {
+   "strongs": "H2928G",
+   "sha256": "017e565bea37b95d5f7a2aab47eea7b1dae628a83f837f77634b5310888b1d9d",
+   "gloss": "Telém",
+   "definition": "Telém, nome de um lugar na Idumeia, também de um porteiro do templo",
+   "derivation": "de uma raiz não usada que significa quebrar ou tratar com violência; opressão;"
+  },
+  {
+   "strongs": "H2928H",
+   "sha256": "017e565bea37b95d5f7a2aab47eea7b1dae628a83f837f77634b5310888b1d9d",
+   "gloss": "Telém",
+   "definition": "Telém, nome de um lugar na Idumeia, também de um porteiro do templo",
+   "derivation": "de uma raiz não usada que significa quebrar ou tratar com violência; opressão;"
+  },
+  {
+   "strongs": "H2929",
+   "sha256": "8dd6b724154a54acab7f53e967fb3162a3a600dad07a047b2023ba825fb5e0c5",
+   "gloss": "Talmom",
+   "definition": "Talmom, um porteiro do templo",
+   "derivation": "do mesmo que 2728; opressivo;"
+  },
+  {
+   "strongs": "H2930A",
+   "sha256": "2fad3c22dad7992ea4c82dfe0c0ef2e2b23ce62a8d333aa7ed8f41f675dd87ba",
+   "gloss": "contaminar",
+   "definition": "ser imundo, especialmente em sentido cerimonial ou moral (contaminado)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2930B",
+   "sha256": "0079274d189cea2f78d38d93f2169a370c6e0fbfa1024526cbe68ac09a51297e",
+   "gloss": "impureza",
+   "definition": "ser imundo, especialmente em sentido cerimonial ou moral (contaminado)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2931",
+   "sha256": "18b91b906548e169f1ee4f26c75f6e1044ef74fd3856ed8695f4d76858cdbb7d",
+   "gloss": "impuro",
+   "definition": "imundo em sentido religioso",
+   "derivation": "de 2930;"
+  },
+  {
+   "strongs": "H2932",
+   "sha256": "c49327cf04e8e07eea3e5e4707ebb2f2fc4370e0f74e7f31a403bb93a1c629b0",
+   "gloss": "impureza",
+   "definition": "impureza religiosa",
+   "derivation": "de 2930;"
+  },
+  {
+   "strongs": "H2933",
+   "sha256": "a72ad57c60c1494ede38a7e58e3c74affda63a8c1d582230c1080b77e2278261",
+   "gloss": "contaminar",
+   "definition": "ser impuro em sentido religioso",
+   "derivation": "uma forma colateral de 2930;"
+  },
+  {
+   "strongs": "H2934",
+   "sha256": "13497d085d2893931c9bee89849b9823bd809a58de9f9cebaee6cee4015431b2",
+   "gloss": "esconder",
+   "definition": "esconder (cobrindo)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2935",
+   "sha256": "b7011d71ccddbd68b1ad558e065dcfad347bd3f2d4bfef508b3d87f6518da9b5",
+   "gloss": "cesto",
+   "definition": "um cesto (de vime entrançado)",
+   "derivation": "de uma raiz não usada que provavelmente significa tecer;"
+  },
+  {
+   "strongs": "H2936",
+   "sha256": "b0ae66a02ad9ad532ff31a6ed855a8ba328f013a061dcb80f4cc6e24aee97624",
+   "gloss": "sujar",
+   "definition": "sujar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2937",
+   "sha256": "4b22a5845caced6e3acff773e8c4398c342afef6663c68e1f0eaa1b74f0b1574",
+   "gloss": "desviar-se",
+   "definition": "vaguear; causativamente desencaminhar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2938",
+   "sha256": "0183da870716b49ad570049c324c53b4adf59c7e9979f0e88332ac7ef001f8f4",
+   "gloss": "perceber",
+   "definition": "provar; figuradamente, perceber",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2939",
+   "sha256": "cc06a6f95c9a91f3a72fc606d2f56d3859fa43fd1144ae4dae4714beda6474f9",
+   "gloss": "alimentar",
+   "definition": "provar; causativamente alimentar",
+   "derivation": "(aramaico) correspondente a 2938;"
+  },
+  {
+   "strongs": "H2940",
+   "sha256": "50b43c892008f08d65612c279d67f4d851ceef5da5e485ab34a0cf6d990202e1",
+   "gloss": "gosto",
+   "definition": "propriamente, um gosto, isto é, (figuradamente) percepção; por implicação, inteligência; transitivamente, um mandado",
+   "derivation": "de 2938;"
+  },
+  {
+   "strongs": "H2941",
+   "sha256": "d3dbfa61ac8d9f0e309626247f4631096f869de08d20350e8e4363eedc88d03f",
+   "gloss": "conta",
+   "definition": "propriamente, um gosto, isto é, uma sentença judicial",
+   "derivation": "(aramaico) de 2939; compare 2940)"
+  },
+  {
+   "strongs": "H2942",
+   "sha256": "e8daabf07d331688caef28beb9d676debec4e3f13e12b8fc06554504eb80c4ae",
+   "gloss": "ordem",
+   "definition": "propriamente, sabor; figuradamente, juízo (tanto subjetivo quanto objetivo); daí, conta (tanto subjetiva quanto objetivamente)",
+   "derivation": "(aramaico) de 2939, e equivalente a 2941;"
+  },
+  {
+   "strongs": "H2943",
+   "sha256": "76acc74ed8afecdbe78119d319f79551c7cc98b01c6d34e32220dc4e8abcc512",
+   "gloss": "carregar",
+   "definition": "carregar um animal",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2944",
+   "sha256": "9cb521804131b0643c28148c126f53f98aab4f28f4531dbe8b4090b292fc3222",
+   "gloss": "traspassar",
+   "definition": "apunhalar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2945",
+   "sha256": "86d387ea35cfa7ceaada5d9eb6f5a051c54a6fd804043a128d7c16d39529d173",
+   "gloss": "criança",
+   "definition": "uma família (usado sobretudo coletivamente no singular)",
+   "derivation": "de 2952 (talvez referindo-se ao andar a passinhos das crianças);"
+  },
+  {
+   "strongs": "H2946",
+   "sha256": "1a845da814e61b060c5bdaaf6ed7aa0fc02c3b7c5779e934ca55bfdb47943c6c",
+   "gloss": "estender",
+   "definition": "achatar ou estender (como uma tenda); figuradamente, criar uma criança (como quem promove o crescimento);",
+   "derivation": "raiz primitiva; ou talvez um denominativo de 2947, de embalar nas palmas das mãos"
+  },
+  {
+   "strongs": "H2947",
+   "sha256": "47c7e92888b854f1691f49d9c4cd815afcdd72a30ca21f7b2692b4de130f5b9d",
+   "gloss": "palmo",
+   "definition": "a extensão da mão, isto é, um palmo de largura (não o 'palmo' dos dedos abertos); na arquitetura, uma mísula (como uma palma que sustenta)",
+   "derivation": "de 2946;"
+  },
+  {
+   "strongs": "H2948",
+   "sha256": "fdc8251140bb585899e40208aac8879f52dae7ee8cc98bd7484f7d824223c1d2",
+   "gloss": "palmo",
+   "definition": "(o mesmo que 2947)",
+   "derivation": "de 2946"
+  },
+  {
+   "strongs": "H2949",
+   "sha256": "0176c10d4ed5de07deddd6d021d6362153f9ff1d468a4163d4941d26df3a0b1d",
+   "gloss": "cuidado terno",
+   "definition": "criação",
+   "derivation": "de 2946;"
+  },
+  {
+   "strongs": "H2950",
+   "sha256": "b2c1b729f9a591b26d306aa40c8b84a1de76ccbc55a140e352d51216014cbfe8",
+   "gloss": "besuntar",
+   "definition": "propriamente, grudar como um remendo; figuradamente, imputar falsamente",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2951",
+   "sha256": "ddb0653e44450776d7994516f4bf7cb1bf2cfe9fe8cb168bdcb34050471a6670",
+   "gloss": "oficial",
+   "definition": "um governador militar",
+   "derivation": "de derivação estrangeira;"
+  },
+  {
+   "strongs": "H2952",
+   "sha256": "cb436bbe50b76c68a036b31b1b9978ffd7b591ea94f2901655f7d08cbea11dcf",
+   "gloss": "andar a passinhos",
+   "definition": "andar (a passos curtos) com faceirice",
+   "derivation": "raiz primitiva; aparentemente"
+  },
+  {
+   "strongs": "H2953",
+   "sha256": "b1cddefabec04016081fdeeaf3873fdc0a02189a4914bb67347f9a01869cb843",
+   "gloss": "unha/garra",
+   "definition": "uma unha; também um casco ou garra",
+   "derivation": "(aramaico) de uma raiz correspondente a 6852, e que significa o mesmo que 6856;"
+  },
+  {
+   "strongs": "H2954",
+   "sha256": "0f7bcf137ce7161c8a2b12ba0e60145fa4a07eece1107774d789989bd21af8be",
+   "gloss": "ser insensível",
+   "definition": "propriamente, aparentemente ser espesso; figuradamente, ser estúpido",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2955",
+   "sha256": "95fd59a0909b83d9f49281d5d7e28abcb03b29048ea048f098c811b638c753e4",
+   "gloss": "Tafate",
+   "definition": "Tafate, uma israelita",
+   "derivation": "provavelmente de 5197; um gotejar (de unguento);"
+  },
+  {
+   "strongs": "H2956",
+   "sha256": "bd496fa10b8bb65f4d28d535aa0fef8aac8be684e17d2e6246f2c574539d098a",
+   "gloss": "perseguir",
+   "definition": "impelir; figuradamente, seguir de perto",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2957",
+   "sha256": "acb08a20047a95d6e0a3a5bbd8790f6f77200663b433509c2a7d70d40686cb76",
+   "gloss": "afugentar",
+   "definition": "expulsar",
+   "derivation": "(aramaico) correspondente a 2956;"
+  },
+  {
+   "strongs": "H2958",
+   "sha256": "653617e098e45123c07bd079f7677177228bf104529a8b1984fc3f33edf1e04c",
+   "gloss": "antes",
+   "definition": "ainda não",
+   "derivation": "uma variação de 2962;"
+  },
+  {
+   "strongs": "H2959",
+   "sha256": "fc81aa17f27dc6960bba997ee321e4d4d2dddf8c0b1ee7e38e6e298339910a71",
+   "gloss": "sobrecarregar",
+   "definition": "sobrecarregar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2960",
+   "sha256": "e8fce19e7559e79593cef28f822d29b11e3ea2f462d667fb79de50c99dbc0609",
+   "gloss": "fardo",
+   "definition": "um fardo",
+   "derivation": "de 2959;"
+  },
+  {
+   "strongs": "H2961",
+   "sha256": "f515715474e5e5950cd595c9d39acb992a2f7f4eabbda26c5eebe34ee2cfb665",
+   "gloss": "fresco",
+   "definition": "propriamente, gotejante; daí, fresco (isto é, que acaba de ficar assim)",
+   "derivation": "de uma raiz não usada que aparentemente significa estar úmido;"
+  },
+  {
+   "strongs": "H2962",
+   "sha256": "df52b8b1e8d3fe7eff5ca483b8805b309fca0730b0f23ee7db886d8ef32fdee8",
+   "gloss": "antes",
+   "definition": "propriamente, não ocorrência; usado adverbialmente, ainda não ou antes",
+   "derivation": "de uma raiz não usada que aparentemente significa interromper ou suspender;"
+  },
+  {
+   "strongs": "H2963",
+   "sha256": "27983d0a70137e51f7da7a36244118f6b3009639be9224455cc62f26575e79ab",
+   "gloss": "despedaçar",
+   "definition": "arrancar ou despedaçar; causativamente prover de alimento (como em bocados)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2964",
+   "sha256": "50c5952f8dc35e389b578afc45aee160df26b89387fdbf96cf72aa1756241f38",
+   "gloss": "presa",
+   "definition": "algo despedaçado, isto é, um fragmento, por exemplo uma folha fresca, presa, alimento",
+   "derivation": "de 2963;"
+  },
+  {
+   "strongs": "H2965",
+   "sha256": "5358b94c40ee9befecd134a78869f5fc6472cff45d50163815fd39690ca16438",
+   "gloss": "recém-arrancado",
+   "definition": "recém-arrancado, isto é, fresco",
+   "derivation": "de 2963;"
+  },
+  {
+   "strongs": "H2966",
+   "sha256": "404571c0bf4066d5b0de3eb52bd0043573e04e6edfb3a2fc752976cc3e3dc131",
+   "gloss": "animal despedaçado",
+   "definition": "presa, isto é, rebanhos devorados por animais",
+   "derivation": "feminino (coletivamente) de 2964;"
+  },
+  {
+   "strongs": "H2967",
+   "sha256": "66694de32fea56669833e96c09ebb4ff5188d38b4331df89fd4b89f68c2b9cbb",
+   "gloss": "oficiais",
+   "definition": "um tarpelita (coletivamente) ou habitantes de Tarpel, um lugar na Assíria",
+   "derivation": "(aramaico) de um nome de derivação estrangeira;"
+  },
+  {
+   "strongs": "H2968",
+   "sha256": "d19fb64c196045b902452c18cb09369ec332f6fc9d9be447cf4ef0aa131df116",
+   "gloss": "ansiar",
+   "definition": "desejar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2969",
+   "sha256": "e01d4d76e449ce830dba2810e4c841bdf41b7a44b3185670166f6ff61e2defea",
+   "gloss": "convir",
+   "definition": "ser conveniente",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2970G",
+   "sha256": "e4334e6bf3c4d366b2b3052c79a251db83aab544f97ca678e384f0920b7db46c",
+   "gloss": "Jazanias",
+   "definition": "Jazanias, nome de quatro israelitas",
+   "derivation": "ou יַאֲזַנְיָהוּ; de 238 e 3050; ouvido de Jah;"
+  },
+  {
+   "strongs": "H2970H",
+   "sha256": "e4334e6bf3c4d366b2b3052c79a251db83aab544f97ca678e384f0920b7db46c",
+   "gloss": "Jazanias",
+   "definition": "Jazanias, nome de quatro israelitas",
+   "derivation": "ou יַאֲזַנְיָהוּ; de 238 e 3050; ouvido de Jah;"
+  },
+  {
+   "strongs": "H2970I",
+   "sha256": "e4334e6bf3c4d366b2b3052c79a251db83aab544f97ca678e384f0920b7db46c",
+   "gloss": "Jazanias",
+   "definition": "Jazanias, nome de quatro israelitas",
+   "derivation": "ou יַאֲזַנְיָהוּ; de 238 e 3050; ouvido de Jah;"
+  },
+  {
+   "strongs": "H2970J",
+   "sha256": "f98907bde78efc69730afba05e93ad5d4bfbcb71f161041b952d40e7e0b1f716",
+   "gloss": "Jezanias",
+   "definition": "Jazanias, nome de quatro israelitas",
+   "derivation": "ou יַאֲזַנְיָהוּ; de 238 e 3050; ouvido de Jah;"
+  },
+  {
+   "strongs": "H2971G",
+   "sha256": "c82fc3851b4ca67ab4826ffc1024e8d7d5eca22f63bea4fa82663c605be4c0ac",
+   "gloss": "Jair",
+   "definition": "Jair, nome de quatro israelitas",
+   "derivation": "de 215; iluminador;"
+  },
+  {
+   "strongs": "H2971H",
+   "sha256": "c82fc3851b4ca67ab4826ffc1024e8d7d5eca22f63bea4fa82663c605be4c0ac",
+   "gloss": "Jair",
+   "definition": "Jair, nome de quatro israelitas",
+   "derivation": "de 215; iluminador;"
+  },
+  {
+   "strongs": "H2971I",
+   "sha256": "c82fc3851b4ca67ab4826ffc1024e8d7d5eca22f63bea4fa82663c605be4c0ac",
+   "gloss": "Jair",
+   "definition": "Jair, nome de quatro israelitas",
+   "derivation": "de 215; iluminador;"
+  },
+  {
+   "strongs": "H2971J",
+   "sha256": "c82fc3851b4ca67ab4826ffc1024e8d7d5eca22f63bea4fa82663c605be4c0ac",
+   "gloss": "Jair",
+   "definition": "Jair, nome de quatro israelitas",
+   "derivation": "de 215; iluminador;"
+  },
+  {
+   "strongs": "H2972",
+   "sha256": "1c776e9af8f500dea10aedb4f04a23521e3fed64669336f871c0ebd6a21a1d50",
+   "gloss": "jairita",
+   "definition": "um jairita ou descendente de Jair",
+   "derivation": "patronimicamente de 2971;"
+  },
+  {
+   "strongs": "H2973",
+   "sha256": "99e2b03b43837516a7bc9fea4d99f6e2d10687acacfce4a0d1f510da9fb0340c",
+   "gloss": "ser insensato",
+   "definition": "propriamente, ser frouxo, isto é, (figuradamente) ser insensato",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2974",
+   "sha256": "42beb9a4abd452800178a7a393692c06f1c9e1e28c0a8b11aebce18fd250c7ee",
+   "gloss": "querer",
+   "definition": "propriamente, ceder, especialmente assentir; daí (pos.) empreender como um ato de vontade",
+   "derivation": "raiz primitiva (provavelmente antes o mesmo que 2973 pela ideia de fraqueza mental);"
+  },
+  {
+   "strongs": "H2975G",
+   "sha256": "8b1c7b29be417fed92624108b28c0816983cee875ca823741f3a8fdf6b860481",
+   "gloss": "Nilo",
+   "definition": "um canal, por exemplo um fosso, canal, poço; especificamente o Nilo, como o único rio do Egito, incluindo suas valas colaterais; também o Tigre, como o rio principal da Assíria",
+   "derivation": "de origem egípcia;"
+  },
+  {
+   "strongs": "H2975H",
+   "sha256": "ffe40ef01329d071024513b718be4a3f510d7541185119052bfece483b9b8d4d",
+   "gloss": "ribeiro",
+   "definition": "um canal, por exemplo um fosso, canal, poço; especificamente o Nilo, como o único rio do Egito, incluindo suas valas colaterais; também o Tigre, como o rio principal da Assíria",
+   "derivation": "de origem egípcia;"
+  },
+  {
+   "strongs": "H2976",
+   "sha256": "e98235a0b136089220369c6aa2a0c57af1e66e5de18cf98437e97d9a969609b9",
+   "gloss": "desesperar",
+   "definition": "desistir, isto é, (figuradamente) desanimar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2977G",
+   "sha256": "7bd41cc06ab00f906d26fb0a703aeeb1769f73c78cdcf97fa1c1e0d52315077d",
+   "gloss": "Josias",
+   "definition": "Josias, nome de dois israelitas",
+   "derivation": "ou יֹאשִׁיָּהוּ; da mesma raiz que 803 e 3050; fundado de Jah;"
+  },
+  {
+   "strongs": "H2977H",
+   "sha256": "7bd41cc06ab00f906d26fb0a703aeeb1769f73c78cdcf97fa1c1e0d52315077d",
+   "gloss": "Josias",
+   "definition": "Josias, nome de dois israelitas",
+   "derivation": "ou יֹאשִׁיָּהוּ; da mesma raiz que 803 e 3050; fundado de Jah;"
+  },
+  {
+   "strongs": "H2978",
+   "sha256": "c6eb0d5dfcf8d81b6dfcc298def8545a53b99429200809d71e7f99abb3fd0139",
+   "gloss": "entrada",
+   "definition": "uma entrada",
+   "derivation": "de 857;"
+  },
+  {
+   "strongs": "H2979",
+   "sha256": "b025092eca7c9ed21c934268f1b7d7e460341f7070f9238c71de0e845683e5f1",
+   "gloss": "Jeaterai",
+   "definition": "Jeaterai, um israelita",
+   "derivation": "do mesmo que 871; que pisa;"
+  },
+  {
+   "strongs": "H2980",
+   "sha256": "92a44e40571017c28458d60d9f1fc5bdbe0aa717fd6eb8aaa3894a598bb5b91f",
+   "gloss": "gritar",
+   "definition": "berrar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2981",
+   "sha256": "903800cc863e877b1df32b0b7c2c5bdadb0190a15b1b3feaea03248539aeb9a1",
+   "gloss": "colheitas",
+   "definition": "produto, isto é, uma colheita ou (figuradamente) riqueza",
+   "derivation": "de 2986;"
+  },
+  {
+   "strongs": "H2982",
+   "sha256": "9a8d98ea2f00e8bd76cf86239753ea9375aea6d333c5f163089ebc82ca6c4ca7",
+   "gloss": "Jebus",
+   "definition": "Jebus, o nome original de Jerusalém",
+   "derivation": "de 947; pisado, isto é, eira;"
+  },
+  {
+   "strongs": "H2983G",
+   "sha256": "b684a3abec3fe6f2d4fcc719bd8c4b4db54c8aaf982340e969f8a1cc8c2b1c39",
+   "gloss": "jebuseu",
+   "definition": "um jebuseu ou habitante de Jebus",
+   "derivation": "pátrio de 2982;"
+  },
+  {
+   "strongs": "H2983H",
+   "sha256": "de1493dbb289b97d1bfb266c5c30314b6c0bcfc6adbe8ee54c3e14896f5f68a5",
+   "gloss": "Jebus",
+   "definition": "um jebuseu ou habitante de Jebus",
+   "derivation": "pátrio de 2982;"
+  },
+  {
+   "strongs": "H2984",
+   "sha256": "f659bbc5ec842973be98fe1a2f4e0586a74fb6baa9d1362983de8495f96b5ddf",
+   "gloss": "Ibar",
+   "definition": "Ibar, um israelita",
+   "derivation": "de 977; escolha;"
+  },
+  {
+   "strongs": "H2985G",
+   "sha256": "50a53a0c3ebe4186d814b0fc3f14bb931bdf7cf77df72c62162cf084b9d63a8d",
+   "gloss": "Jabim",
+   "definition": "Jabim, nome de dois reis cananeus",
+   "derivation": "de 995; inteligente;"
+  },
+  {
+   "strongs": "H2985H",
+   "sha256": "50a53a0c3ebe4186d814b0fc3f14bb931bdf7cf77df72c62162cf084b9d63a8d",
+   "gloss": "Jabim",
+   "definition": "Jabim, nome de dois reis cananeus",
+   "derivation": "de 995; inteligente;"
+  },
+  {
+   "strongs": "H2986",
+   "sha256": "dcbb0bcb4de3c39cc9d3d2014353d3da12924e54b12cf3966679bed8b697757b",
+   "gloss": "conduzir",
+   "definition": "propriamente, fluir; causativamente, trazer (especialmente com pompa)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H2987",
+   "sha256": "5591281615b6800c91ea57c5d6a5a11063872c2b6e3af578bd7ce75752ffd96a",
+   "gloss": "trazer",
+   "definition": "trazer",
+   "derivation": "(aramaico) correspondente a 2986;"
+  },
+  {
+   "strongs": "H2988",
+   "sha256": "e1bf6e0da841758776787e83c1cb0ec78c8078f46a6805767a196642946e23bd",
+   "gloss": "ribeiro",
+   "definition": "um ribeiro",
+   "derivation": "de 2986;"
+  },
+  {
+   "strongs": "H2989",
+   "sha256": "bc92f210cefb2dc6c69da7bf20cd269688306abc67d43495b4adceebf12d5f5c",
+   "gloss": "Jabal",
+   "definition": "Jabal, um antediluviano",
+   "derivation": "o mesmo que 2988;"
+  },
+  {
+   "strongs": "H2990",
+   "sha256": "35e8ac3bc0d09b136d04639178e0af5209f7b5ff398f111a6a034c24ec3a35f6",
+   "gloss": "supurante",
+   "definition": "que tem feridas supurantes",
+   "derivation": "de 2986;"
+  },
+  {
+   "strongs": "H2991",
+   "sha256": "5233413a5631f0b5666e5960090b008dc1e4e38e0ce2c6498530fef562c9e640",
+   "gloss": "Ibleão",
+   "definition": "Ibleão, um lugar na Palestina",
+   "derivation": "de 1104 e 5971; povo que devora;"
+  },
+  {
+   "strongs": "H2992",
+   "sha256": "ecaf8e5cdff402f95741da6e49db7ed5f4cdf44afd51996b7b0171df7fa11660",
+   "gloss": "ser cunhado",
+   "definition": "casar-se com a viúva de um irmão (falecido)",
+   "derivation": "raiz primitiva de sentido duvidoso; usada só como denominativo de 2993;"
+  },
+  {
+   "strongs": "H2993",
+   "sha256": "68dc9df2a8e9bdada1aec31c1f733fde41a4b43bdf0507532c7e28513ac34f09",
+   "gloss": "cunhado",
+   "definition": "um cunhado",
+   "derivation": "de (o orig. de) 2992;"
+  },
+  {
+   "strongs": "H2994",
+   "sha256": "1b91cbe0972168ea14a6a494884121c5750cd916fc5f186064939f34058565cb",
+   "gloss": "cunhada",
+   "definition": "uma cunhada",
+   "derivation": "particípio feminino de 2992;"
+  },
+  {
+   "strongs": "H2995G",
+   "sha256": "cf23ddb5a31265babfcd352f4fa54c40316f17d998a3a07c09dae9da63aa6c98",
+   "gloss": "Jabneel",
+   "definition": "Jabneel, nome de dois lugares na Palestina",
+   "derivation": "de 1129 e 410; edificado de Deus;"
+  },
+  {
+   "strongs": "H2995H",
+   "sha256": "cf23ddb5a31265babfcd352f4fa54c40316f17d998a3a07c09dae9da63aa6c98",
+   "gloss": "Jabneel",
+   "definition": "Jabneel, nome de dois lugares na Palestina",
+   "derivation": "de 1129 e 410; edificado de Deus;"
+  },
+  {
+   "strongs": "H2996",
+   "sha256": "3ecb245ead8fe7ff951e3cc9ce99c88344dfcf3aaff2a617c90f835407dfc56e",
+   "gloss": "Jabné",
+   "definition": "Jabné, um lugar na Palestina",
+   "derivation": "de 1129; um edifício;"
+  },
+  {
+   "strongs": "H2997",
+   "sha256": "3bd7a3169fd1976baefe1be5292a6f4ba2dc4d0c55821dbc93486bd48df31b19",
+   "gloss": "Ibneias",
+   "definition": "Ibneias, um israelita",
+   "derivation": "de 1129 e 3050; edificado de Jah;"
+  },
+  {
+   "strongs": "H2998",
+   "sha256": "258c3302d6ebd1dc6f1154c8f6f50e4be59701867c11b8a1fa04cff385422fef",
+   "gloss": "Ibnias",
+   "definition": "Ibnias, um israelita",
+   "derivation": "de 1129 e 3050; edificação de Jah;"
+  },
+  {
+   "strongs": "H2999",
+   "sha256": "cea03d1b3e556bb504f7aaa0189a86d6eb86213c46b8a49c83186bf8b81de733",
+   "gloss": "Jaboque",
+   "definition": "Jaboque, um rio a leste do Jordão",
+   "derivation": "provavelmente de 1238; que se derrama;"
+  },
+  {
+   "strongs": "H3000",
+   "sha256": "33d3d780214c7f9108c554cef6806b0ae2ea3c3d5161689f6b0f6d526dbfd951",
+   "gloss": "Jeberequias",
+   "definition": "Jeberequias, um israelita",
+   "derivation": "de 1288 e 3050; abençoado de Jah;"
+  },
+  {
+   "strongs": "H3001",
+   "sha256": "a572dc7a92e2eea010d7d2eee1874ba9cb1001fa2e29a87e517bfa302f15dfa1",
+   "gloss": "secar",
+   "definition": "estar envergonhado, confuso ou desapontado; também (como quem falha) secar (como a água) ou murchar (como a erva)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H3002",
+   "sha256": "50e69a5d96ece354218ec3ba160ea4cd185c0fe30670de6b406367f46b489e85",
+   "gloss": "seco",
+   "definition": "seco",
+   "derivation": "de 3001;"
+  },
+  {
+   "strongs": "H3003G",
+   "sha256": "f6bb65350993c7d01213cdec888ce5ecfad5a72c9d8d20128ba2454e90593951",
+   "gloss": "Jabes (Gileade)",
+   "definition": "Jabes, nome de um israelita e de um lugar na Palestina",
+   "derivation": "o mesmo que 3002 (também יָבֵישׁ; frequentemente com o acréscimo de 1568, isto é, Jabes de Gileade);"
+  },
+  {
+   "strongs": "H3003H",
+   "sha256": "4136f9b9c060e204dcde2fb45357792ad4102e8e241cfbc8ad03047905b3592d",
+   "gloss": "Jabes",
+   "definition": "Jabes, nome de um israelita e de um lugar na Palestina",
+   "derivation": "o mesmo que 3002 (também יָבֵישׁ; frequentemente com o acréscimo de 1568, isto é, Jabes de Gileade);"
+  },
+  {
+   "strongs": "H3003I",
+   "sha256": "4136f9b9c060e204dcde2fb45357792ad4102e8e241cfbc8ad03047905b3592d",
+   "gloss": "Jabes",
+   "definition": "Jabes, nome de um israelita e de um lugar na Palestina",
+   "derivation": "o mesmo que 3002 (também יָבֵישׁ; frequentemente com o acréscimo de 1568, isto é, Jabes de Gileade);"
+  },
+  {
+   "strongs": "H3004",
+   "sha256": "2883b9b745d35c5089475906436ff09431d22d33e9cf10c23dfdcf21c958fe7d",
+   "gloss": "terra seca",
+   "definition": "chão seco",
+   "derivation": "de 3001;"
+  },
+  {
+   "strongs": "H3005",
+   "sha256": "2b72c4d6e13c1da115308f9a4b311ca7f7437f028e91ef138cbbaaadb8cb8e29",
+   "gloss": "Ibsão",
+   "definition": "Ibsão, um israelita",
+   "derivation": "do mesmo que 1314; perfumado;"
+  },
+  {
+   "strongs": "H3006",
+   "sha256": "6cc97c2dd6f0de6095c306d1788474c431b65aa39aa225b32fc3e550e52ba8e5",
+   "gloss": "terra seca",
+   "definition": "chão seco",
+   "derivation": "uma variação de 3004;"
+  },
+  {
+   "strongs": "H3007",
+   "sha256": "092c5641ec262afcee222218f432217404570296cd7945363fd0ab9e07f3432d",
+   "gloss": "terra",
+   "definition": "terra seca",
+   "derivation": "(aramaico) correspondente a 3006;"
+  },
+  {
+   "strongs": "H3008G",
+   "sha256": "a702160466682c01d68b7fcfbb2548f39ef0f829c34e2e765f9a3e8b772e33c5",
+   "gloss": "Igal",
+   "definition": "Igal, nome de três israelitas",
+   "derivation": "de 1350; vingador;"
+  },
+  {
+   "strongs": "H3008H",
+   "sha256": "a702160466682c01d68b7fcfbb2548f39ef0f829c34e2e765f9a3e8b772e33c5",
+   "gloss": "Igal",
+   "definition": "Igal, nome de três israelitas",
+   "derivation": "de 1350; vingador;"
+  },
+  {
+   "strongs": "H3008I",
+   "sha256": "a702160466682c01d68b7fcfbb2548f39ef0f829c34e2e765f9a3e8b772e33c5",
+   "gloss": "Igal",
+   "definition": "Igal, nome de três israelitas",
+   "derivation": "de 1350; vingador;"
+  },
+  {
+   "strongs": "H3009",
+   "sha256": "b18f1e26b4d33800d6bea5ef465cd2cdf856922363daacf25c6bcef43f992c4d",
+   "gloss": "lavrar",
+   "definition": "cavar ou arar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H3010",
+   "sha256": "b206f3e4a35e17ad0e8b117e4691bacd70c00c3487408e3e4a43245b65b81b12",
+   "gloss": "campo",
+   "definition": "um campo arado",
+   "derivation": "de 3009;"
+  },
+  {
+   "strongs": "H3011",
+   "sha256": "b3fe809ec73c8a7c4bb168337b12e8736f5704f00194b73f8946b217d58f0217",
+   "gloss": "Jogbeá",
+   "definition": "Jogbeá, um lugar a leste do Jordão",
+   "derivation": "feminino de 1361; outeiro;"
+  },
+  {
+   "strongs": "H3012",
+   "sha256": "d7bcbaeee8b46f50beae4d0301e079331db1a20716386d46b4c7e033935211e4",
+   "gloss": "Jigdalias",
+   "definition": "Jigdalias, um israelita",
+   "derivation": "de 1431 e 3050; engrandecido de Jah;"
+  },
+  {
+   "strongs": "H3013",
+   "sha256": "0510b3746a2ae400adcca3dbebed9410d4d09ef833eab53f9896e88d5d02538b",
+   "gloss": "sofrer",
+   "definition": "afligir-se",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H3014",
+   "sha256": "ec7d37130e0ca9e6c7bc8f6e1c8190ad439f928a14b78a98132d12d56952c29c",
+   "gloss": "repelir",
+   "definition": "empurrar para longe",
+   "derivation": "raiz primitiva (provavelmente antes o mesmo que 3013 pela ideia comum de insatisfação);"
+  },
+  {
+   "strongs": "H3015",
+   "sha256": "e5f35e98bd92f9c4ecb4785c28f1d2c18df388bffbd5e73215dcaa0281f25ac1",
+   "gloss": "tristeza",
+   "definition": "aflição",
+   "derivation": "de 3013;"
+  },
+  {
+   "strongs": "H3016",
+   "sha256": "119b80857a94b2f76bb3ca9ed35091b9c62042ca0ce5caea16131679c742a9a7",
+   "gloss": "temeroso",
+   "definition": "temeroso",
+   "derivation": "de 3025;"
+  },
+  {
+   "strongs": "H3017",
+   "sha256": "985d66dfb8b7d1779bb85abd67f2a28ea598de569fadfae83c838d84ab637d22",
+   "gloss": "Jagur",
+   "definition": "Jagur, um lugar na Palestina",
+   "derivation": "provavelmente de 1481; uma hospedagem;"
+  },
+  {
+   "strongs": "H3018",
+   "sha256": "1911a9854ae4d1b2b6fd559f4ce589dab9a5b830978268588957689115d69c61",
+   "gloss": "labor",
+   "definition": "labor; daí, uma obra, produto, propriedade (como resultado do trabalho)",
+   "derivation": "de 3021;"
+  },
+  {
+   "strongs": "H3019",
+   "sha256": "229a1d1be1f28d217ea2af582eb2d9d4e7e6d4d76f95a70e9212a8c0e11524e3",
+   "gloss": "cansado",
+   "definition": "cansado",
+   "derivation": "de 3021;"
+  },
+  {
+   "strongs": "H3020",
+   "sha256": "2fd490c0c75fd6c999164d73281be4177a0f39fbf177f73f9f928d098817244c",
+   "gloss": "Jogli",
+   "definition": "Jogli, um israelita",
+   "derivation": "de 1540; exilado;"
+  },
+  {
+   "strongs": "H3021",
+   "sha256": "49d0fa2dc70ecc461ac5978cdb63b7e547080248b8794823f58ea7c98b4127dd",
+   "gloss": "cansar-se/labutar",
+   "definition": "propriamente, ofegar; daí, ficar exausto, cansar-se, labutar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H3022",
+   "sha256": "c13e425ebfa8e21c05431387c132ab5f7dad7a18ce1112b3a236fa7e603af079",
+   "gloss": "labor",
+   "definition": "ganhos (como produto do labor)",
+   "derivation": "de 3021;"
+  },
+  {
+   "strongs": "H3023",
+   "sha256": "b11d3bace59d3dd20ede66e7b527b9ae7ded49ce2e22f53142af23709cb27cda",
+   "gloss": "cansado",
+   "definition": "cansado; daí (transitivo) cansativo",
+   "derivation": "de 3021;"
+  },
+  {
+   "strongs": "H3024",
+   "sha256": "ac8dbe14a135089c089936574557601b7b05465f85ff30e39d84bc7358fcd47d",
+   "gloss": "cansaço",
+   "definition": "fadiga",
+   "derivation": "feminino de 3019;"
+  },
+  {
+   "strongs": "H3025",
+   "sha256": "ec9ab4c84bad26ba9f25496f1b88c6da7d101d03c62231aeed2be9d244089d0d",
+   "gloss": "temer",
+   "definition": "temer",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H3026A",
+   "sha256": "299bd9bcdff4ec10cb1d114a1d6d04c53e959006803063424324876da49bb75b",
+   "gloss": "Jegar",
+   "definition": "Jegar-Saaduta, um montão de pedras a leste do Jordão",
+   "derivation": "(aramaico) de uma palavra derivada de uma raiz não usada (que significa juntar) e uma derivação de uma raiz correspondente a 7717; montão do testemunho;"
+  },
+  {
+   "strongs": "H3026B",
+   "sha256": "28a0691fa7bbd6b2e163c09ba511bc7b3d1186dd3898692d927c74feab778eec",
+   "gloss": "(Ramote)-Saaduta",
+   "definition": "Jegar-Saaduta, um montão de pedras a leste do Jordão",
+   "derivation": "(aramaico) de uma palavra derivada de uma raiz não usada (que significa juntar) e uma derivação de uma raiz correspondente a 7717; montão do testemunho;"
+  },
+  {
+   "strongs": "H3027G",
+   "sha256": "2fe3cb36cf0e322738e4352dccf79d3fd2ab404b4532ce8f693f729260148c6c",
+   "gloss": "mão",
+   "definition": "uma mão (a aberta [que indica poder, meios, direção etc.], em distinção de 3709, a fechada); usada (como substantivo, advérbio etc.) numa grande variedade de aplicações, tanto literal quanto figuradamente, tanto próximas quanto remotas [como segue]",
+   "derivation": "palavra primitiva;"
+  },
+  {
+   "strongs": "H3027H",
+   "sha256": "1dbe06d549967b0b994782bf9225638f5fce35fb22e18e873fda755f226410ce",
+   "gloss": "mão: poder",
+   "definition": "uma mão (a aberta [que indica poder, meios, direção etc.], em distinção de 3709, a fechada); usada (como substantivo, advérbio etc.) numa grande variedade de aplicações, tanto literal quanto figuradamente, tanto próximas quanto remotas [como segue]",
+   "derivation": "palavra primitiva;"
+  },
+  {
+   "strongs": "H3027I",
+   "sha256": "fb997c7de872628684e3525a29828cf1fb3868ecf7f54a41d5cb01c6d451bc07",
+   "gloss": "mão: eles mesmos",
+   "definition": "uma mão (a aberta [que indica poder, meios, direção etc.], em distinção de 3709, a fechada); usada (como substantivo, advérbio etc.) numa grande variedade de aplicações, tanto literal quanto figuradamente, tanto próximas quanto remotas [como segue]",
+   "derivation": "palavra primitiva;"
+  },
+  {
+   "strongs": "H3027J",
+   "sha256": "19356eface04f8ffe7b5c17d0ed14814c3009b5efbc7c5d682557702e068b35f",
+   "gloss": "mão: por",
+   "definition": "uma mão (a aberta [que indica poder, meios, direção etc.], em distinção de 3709, a fechada); usada (como substantivo, advérbio etc.) numa grande variedade de aplicações, tanto literal quanto figuradamente, tanto próximas quanto remotas [como segue]",
+   "derivation": "palavra primitiva;"
+  },
+  {
+   "strongs": "H3027K",
+   "sha256": "db6087bd11b2d970d4d051e02d6754d3c40b272a7d52c441ddf25dad7b06b3bf",
+   "gloss": "mão: a",
+   "definition": "uma mão (a aberta [que indica poder, meios, direção etc.], em distinção de 3709, a fechada); usada (como substantivo, advérbio etc.) numa grande variedade de aplicações, tanto literal quanto figuradamente, tanto próximas quanto remotas [como segue]",
+   "derivation": "palavra primitiva;"
+  },
+  {
+   "strongs": "H3027L",
+   "sha256": "e76303e21d0f4fb1cb341b8b78cc4773b99295b1349ec35bead1423d8004db31",
+   "gloss": "mão: vezes",
+   "definition": "uma mão (a aberta [que indica poder, meios, direção etc.], em distinção de 3709, a fechada); usada (como substantivo, advérbio etc.) numa grande variedade de aplicações, tanto literal quanto figuradamente, tanto próximas quanto remotas [como segue]",
+   "derivation": "palavra primitiva;"
+  },
+  {
+   "strongs": "H3027M",
+   "sha256": "eb244bbf8c2f430178886139f5b0d273176a8437e0e57961a7fca509c43afed9",
+   "gloss": "mão: monumento",
+   "definition": "uma mão (a aberta [que indica poder, meios, direção etc.], em distinção de 3709, a fechada); usada (como substantivo, advérbio etc.) numa grande variedade de aplicações, tanto literal quanto figuradamente, tanto próximas quanto remotas [como segue]",
+   "derivation": "palavra primitiva;"
+  },
+  {
+   "strongs": "H3027N",
+   "sha256": "2728baae65be88003e26c4fb5fb7013cd5ec18b0c560fb76f9dea392e8e2a37a",
+   "gloss": "mão: pênis",
+   "definition": "uma mão (a aberta [que indica poder, meios, direção etc.], em distinção de 3709, a fechada); usada (como substantivo, advérbio etc.) numa grande variedade de aplicações, tanto literal quanto figuradamente, tanto próximas quanto remotas [como segue]",
+   "derivation": "palavra primitiva;"
+  },
+  {
+   "strongs": "H3027O",
+   "sha256": "ac650e1a32e15a2ba91837fd3927b465e9a62ffa1a9dfff5506019be71f2501e",
+   "gloss": "mão: ferramenta",
+   "definition": "uma mão (a aberta [que indica poder, meios, direção etc.], em distinção de 3709, a fechada); usada (como substantivo, advérbio etc.) numa grande variedade de aplicações, tanto literal quanto figuradamente, tanto próximas quanto remotas [como segue]",
+   "derivation": "palavra primitiva;"
+  },
+  {
+   "strongs": "H3027P",
+   "sha256": "459de527fd8cdc70d117352098f4d73c3d7effae153471e0409d44c8df090275",
+   "gloss": "mão: margem",
+   "definition": "uma mão (a aberta [que indica poder, meios, direção etc.], em distinção de 3709, a fechada); usada (como substantivo, advérbio etc.) numa grande variedade de aplicações, tanto literal quanto figuradamente, tanto próximas quanto remotas [como segue]",
+   "derivation": "palavra primitiva;"
+  },
+  {
+   "strongs": "H3027Q",
+   "sha256": "19bb031b5c4b1f6151194dead35bbb56d75f02132092ec6aff2052df28764645",
+   "gloss": "mão: espaçoso",
+   "definition": "uma mão (a aberta [que indica poder, meios, direção etc.], em distinção de 3709, a fechada); usada (como substantivo, advérbio etc.) numa grande variedade de aplicações, tanto literal quanto figuradamente, tanto próximas quanto remotas [como segue]",
+   "derivation": "palavra primitiva;"
+  },
+  {
+   "strongs": "H3027R",
+   "sha256": "eaf8edcacb8b316a3bc1ffa13c2ae244bf7ba8b43c0627f1df7820316bb6204b",
+   "gloss": "mão: doar",
+   "definition": "uma mão (a aberta [que indica poder, meios, direção etc.], em distinção de 3709, a fechada); usada (como substantivo, advérbio etc.) numa grande variedade de aplicações, tanto literal quanto figuradamente, tanto próximas quanto remotas [como segue]",
+   "derivation": "palavra primitiva;"
+  },
+  {
+   "strongs": "H3027S",
+   "sha256": "85480d1e822bfdcc8ad29df9fd1f62f0b8537a7ee30efc1daf7874ce18f3ef08",
+   "gloss": "mão: voto",
+   "definition": "uma mão (a aberta [que indica poder, meios, direção etc.], em distinção de 3709, a fechada); usada (como substantivo, advérbio etc.) numa grande variedade de aplicações, tanto literal quanto figuradamente, tanto próximas quanto remotas [como segue]",
+   "derivation": "palavra primitiva;"
+  },
+  {
+   "strongs": "H3027T",
+   "sha256": "5824681ef4fd9beaf67b4eee517de6f5f24177247c2aa67c8e0c7096e860b245",
+   "gloss": "mão: gastar",
+   "definition": "uma mão (a aberta [que indica poder, meios, direção etc.], em distinção de 3709, a fechada); usada (como substantivo, advérbio etc.) numa grande variedade de aplicações, tanto literal quanto figuradamente, tanto próximas quanto remotas [como segue]",
+   "derivation": "palavra primitiva;"
+  },
+  {
+   "strongs": "H3027U",
+   "sha256": "6a4262f28993f7ac18cf9c9c708e3776d94a7f00784edf8fe749d0464b9052a7",
+   "gloss": "mão: empreender",
+   "definition": "uma mão (a aberta [que indica poder, meios, direção etc.], em distinção de 3709, a fechada); usada (como substantivo, advérbio etc.) numa grande variedade de aplicações, tanto literal quanto figuradamente, tanto próximas quanto remotas [como segue]",
+   "derivation": "palavra primitiva;"
+  },
+  {
+   "strongs": "H3027V",
+   "sha256": "bb48a845bfe112177ffa1f1916f28a4a794e7a1f7a9a372a9006a1010d6a475e",
+   "gloss": "mão: certamente",
+   "definition": "uma mão (a aberta [que indica poder, meios, direção etc.], em distinção de 3709, a fechada); usada (como substantivo, advérbio etc.) numa grande variedade de aplicações, tanto literal quanto figuradamente, tanto próximas quanto remotas [como segue]",
+   "derivation": "palavra primitiva;"
+  },
+  {
+   "strongs": "H3027W",
+   "sha256": "76c9ef7bcb207e7bbe4a2a1785ad04000502ce866af48034d2c0b75043dea14a",
+   "gloss": "mão: dono",
+   "definition": "uma mão (a aberta [que indica poder, meios, direção etc.], em distinção de 3709, a fechada); usada (como substantivo, advérbio etc.) numa grande variedade de aplicações, tanto literal quanto figuradamente, tanto próximas quanto remotas [como segue]",
+   "derivation": "palavra primitiva;"
+  },
+  {
+   "strongs": "H3027X",
+   "sha256": "5249c5b35b00690e7ba0239415fef3fcf98ab1416a1548d05f97f84f0afe13ad",
+   "gloss": "mão: jurar",
+   "definition": "uma mão (a aberta [que indica poder, meios, direção etc.], em distinção de 3709, a fechada); usada (como substantivo, advérbio etc.) numa grande variedade de aplicações, tanto literal quanto figuradamente, tanto próximas quanto remotas [como segue]",
+   "derivation": "palavra primitiva;"
+  },
+  {
+   "strongs": "H3028",
+   "sha256": "5057ce1b6ba7aa5953a22a0f8404b65e788b2fe5bdc8ec090e6c005da24fbd7f",
+   "gloss": "mão",
+   "derivation": "(aramaico) correspondente a 3027"
+  },
+  {
+   "strongs": "H3029",
+   "sha256": "d751ae5e6a1b131f2a70d5b01da2ddc81b5511bdd4d12da6649138a2d2b37305",
+   "gloss": "louvar",
+   "definition": "louvar",
+   "derivation": "(aramaico) correspondente a 3034;"
+  },
+  {
+   "strongs": "H3030",
+   "sha256": "17413ae9c7766ae162d60a16b9b0b2b8d63982bbe55f4673db515b5f7089a8a7",
+   "gloss": "Idala",
+   "definition": "Idala, um lugar na Palestina",
+   "derivation": "de derivação incerta;"
+  },
+  {
+   "strongs": "H3031",
+   "sha256": "f7d00be876dba17320ab67f832e665f5e43a10116173bd0a97577a46bf330e52",
+   "gloss": "Idbás",
+   "definition": "Idbás, um israelita",
+   "derivation": "do mesmo que 1706; talvez melífluo;"
+  },
+  {
+   "strongs": "H3032",
+   "sha256": "b75e2620f62637868f07d3b8578b07e271ef7ccf317106ed9beb0b5694dfb02c",
+   "gloss": "lançar sorte",
+   "definition": "propriamente, manusear, isto é, lançar, por exemplo sortes",
+   "derivation": "raiz primitiva; (compare 3034)"
+  },
+  {
+   "strongs": "H3033",
+   "sha256": "71ed203a0f0050a40bb7c5215cc22b929f718df1ce33bb282ca32dca3ad4b668",
+   "gloss": "amado",
+   "definition": "propriamente, afeição; concretamente, um objeto querido",
+   "derivation": "de 3039;"
+  },
+  {
+   "strongs": "H3034",
+   "sha256": "e9e091d7b67b12435268d0a68e97d25c7afd84934137a54bb6be2c5273a91668",
+   "gloss": "dar graças",
+   "definition": "fisicamente, lançar (uma pedra, uma flecha) contra algo ou para longe; especialmente reverenciar ou adorar (com as mãos estendidas); intensivamente, lamentar (torcendo as mãos)",
+   "derivation": "raiz primitiva; usada só como denominativo de 3027; literalmente, usar (isto é, estender) a mão;"
+  },
+  {
+   "strongs": "H3035G",
+   "sha256": "d3490d24cf8e6a0189f675d7c6979ae1134f23281b4cd2645cdda1b7b4f4ca1d",
+   "gloss": "Ido",
+   "definition": "Ido, um israelita",
+   "derivation": "de 3034; louvado;"
+  },
+  {
+   "strongs": "H3035H",
+   "sha256": "e417f5c096387048e1eee6eb1186f46fb8ae8f8bce9255c0522824417d0b5b1f",
+   "gloss": "Jadai",
+   "definition": "Ido, um israelita",
+   "derivation": "de 3034; louvado;"
+  },
+  {
+   "strongs": "H3036",
+   "sha256": "06142b17282102a9f87187317b206016dd06bbe3e2287c354120686041293ca2",
+   "gloss": "Jadom",
+   "definition": "Jadom, um israelita",
+   "derivation": "de 3034; agradecido;"
+  },
+  {
+   "strongs": "H3037G",
+   "sha256": "64e024e158a7c4ff4563e95d990fc676c56a74453526207e16556f0e27a24fdd",
+   "gloss": "Jadua",
+   "definition": "Jadua, nome de dois israelitas",
+   "derivation": "de 3045; que conhece;"
+  },
+  {
+   "strongs": "H3037H",
+   "sha256": "64e024e158a7c4ff4563e95d990fc676c56a74453526207e16556f0e27a24fdd",
+   "gloss": "Jadua",
+   "definition": "Jadua, nome de dois israelitas",
+   "derivation": "de 3045; que conhece;"
+  },
+  {
+   "strongs": "H3038G",
+   "sha256": "4d56bdb507b2cf59df39d283e41d806261b59a07d2a640a9f8951e33b2127ff2",
+   "gloss": "Jedutum",
+   "definition": "Jedutum, um israelita",
+   "derivation": "ou יְדֻתוּן; ou יְדִיתוּן; provavelmente de 3034; laudatório;"
+  },
+  {
+   "strongs": "H3038H",
+   "sha256": "4d56bdb507b2cf59df39d283e41d806261b59a07d2a640a9f8951e33b2127ff2",
+   "gloss": "Jedutum",
+   "definition": "Jedutum, um israelita",
+   "derivation": "ou יְדֻתוּן; ou יְדִיתוּן; provavelmente de 3034; laudatório;"
+  },
+  {
+   "strongs": "H3039A",
+   "sha256": "a279ea4fc5eb05cee417c8f5824cf075bd21b8a9d64757acfb0f714301d3fbbe",
+   "gloss": "amado",
+   "definition": "amado",
+   "derivation": "do mesmo que 1730;"
+  },
+  {
+   "strongs": "H3039B",
+   "sha256": "430c72e54637b3b3e7996bb7e5bdca86980a0a2dfb9cb8eded2f3f8cd40075a1",
+   "gloss": "amor",
+   "definition": "amado",
+   "derivation": "do mesmo que 1730;"
+  },
+  {
+   "strongs": "H3040",
+   "sha256": "a2f48313e364b7e735e655079171dca197dc46478f7afb1c0642fb87bc4e6a76",
+   "gloss": "Jedida",
+   "definition": "Jedida, uma israelita",
+   "derivation": "feminino de 3039; amada;"
+  },
+  {
+   "strongs": "H3041",
+   "sha256": "6d83d072727773d82f8ec4fe7668a4d90647e2de72e746f7cb8afe73eb5a1fae",
+   "gloss": "Jedidias",
+   "definition": "Jedidias, um nome de Salomão",
+   "derivation": "de 3039 e 3050; amado de Jah;"
+  },
+  {
+   "strongs": "H3042G",
+   "sha256": "20eaa0c5db72f9e57a844317a3141d09e11b38656dd055461c2f5ff1cc6c0d7c",
+   "gloss": "Jedaías",
+   "definition": "Jedaías, nome de dois israelitas",
+   "derivation": "de 3034 e 3050; louvado de Jah;"
+  },
+  {
+   "strongs": "H3042H",
+   "sha256": "20eaa0c5db72f9e57a844317a3141d09e11b38656dd055461c2f5ff1cc6c0d7c",
+   "gloss": "Jedaías",
+   "definition": "Jedaías, nome de dois israelitas",
+   "derivation": "de 3034 e 3050; louvado de Jah;"
+  },
+  {
+   "strongs": "H3043G",
+   "sha256": "5737acc43730911da8a6fdb184f54c8e4f74ffb1965240a65cb0582e59246f9a",
+   "gloss": "Jediael",
+   "definition": "Jediael, nome de três israelitas",
+   "derivation": "de 3045 e 410; que conhece a Deus;"
+  },
+  {
+   "strongs": "H3043H",
+   "sha256": "5737acc43730911da8a6fdb184f54c8e4f74ffb1965240a65cb0582e59246f9a",
+   "gloss": "Jediael",
+   "definition": "Jediael, nome de três israelitas",
+   "derivation": "de 3045 e 410; que conhece a Deus;"
+  },
+  {
+   "strongs": "H3043I",
+   "sha256": "5737acc43730911da8a6fdb184f54c8e4f74ffb1965240a65cb0582e59246f9a",
+   "gloss": "Jediael",
+   "definition": "Jediael, nome de três israelitas",
+   "derivation": "de 3045 e 410; que conhece a Deus;"
+  },
+  {
+   "strongs": "H3043J",
+   "sha256": "5737acc43730911da8a6fdb184f54c8e4f74ffb1965240a65cb0582e59246f9a",
+   "gloss": "Jediael",
+   "definition": "Jediael, nome de três israelitas",
+   "derivation": "de 3045 e 410; que conhece a Deus;"
+  },
+  {
+   "strongs": "H3044",
+   "sha256": "98720b2854f279e82295a46c4990218ec9567ec543b1da5470c4235b3014080a",
+   "gloss": "Jidlafe",
+   "definition": "Jidlafe, um mesopotâmio",
+   "derivation": "de 1811; choroso;"
+  },
+  {
+   "strongs": "H3045",
+   "sha256": "c44036dc1a5d3ebc71bcc7ab2cbeb8b5a808970c280623f6dac101050e7b04a1",
+   "gloss": "conhecer",
+   "definition": "conhecer (propriamente, averiguar vendo); usado numa grande variedade de sentidos, figurada, literal, eufemística e inferencialmente (incluindo observação, cuidado, reconhecimento; e, causativamente, instrução, designação, punição etc.)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H3046",
+   "sha256": "c7f876ca969ebad1d35822b45859bfec71800b63daaeb42572b5ece2af57e0a3",
+   "gloss": "conhecer",
+   "derivation": "(aramaico) correspondente a 3045"
+  },
+  {
+   "strongs": "H3047",
+   "sha256": "28b66c1a4f7933d59e2a5ae1a5fdecdca6fb2d6bbc101b76ac7f7eeff7d3e404",
+   "gloss": "Jada",
+   "definition": "Jada, um israelita",
+   "derivation": "de 3045; que conhece;"
+  },
+  {
+   "strongs": "H3048G",
+   "sha256": "3dbf6214987ced04b68f1de7dfbd4f075a8a6940132171ac6b75defbd5835a3f",
+   "gloss": "Jedaías",
+   "definition": "Jedaías, nome de dois israelitas",
+   "derivation": "de 3045 e 3050; Jah conheceu;"
+  },
+  {
+   "strongs": "H3048H",
+   "sha256": "3dbf6214987ced04b68f1de7dfbd4f075a8a6940132171ac6b75defbd5835a3f",
+   "gloss": "Jedaías",
+   "definition": "Jedaías, nome de dois israelitas",
+   "derivation": "de 3045 e 3050; Jah conheceu;"
+  },
+  {
+   "strongs": "H3048I",
+   "sha256": "3dbf6214987ced04b68f1de7dfbd4f075a8a6940132171ac6b75defbd5835a3f",
+   "gloss": "Jedaías",
+   "definition": "Jedaías, nome de dois israelitas",
+   "derivation": "de 3045 e 3050; Jah conheceu;"
+  },
+  {
+   "strongs": "H3048J",
+   "sha256": "3dbf6214987ced04b68f1de7dfbd4f075a8a6940132171ac6b75defbd5835a3f",
+   "gloss": "Jedaías",
+   "definition": "Jedaías, nome de dois israelitas",
+   "derivation": "de 3045 e 3050; Jah conheceu;"
+  },
+  {
+   "strongs": "H3049",
+   "sha256": "178868da2b6f06a958544dbdff1bcd7a347a2534781bd13994f2ef9be0684a73",
+   "gloss": "adivinho",
+   "definition": "propriamente, um que sabe; especificamente, um mago; (por implicação) um espírito de morto",
+   "derivation": "de 3045;"
+  },
+  {
+   "strongs": "H3050",
+   "sha256": "fe599066740ec9d9104f4658a276e377e3452ec93938bc785a918f9a67934c3f",
+   "gloss": "SENHOR",
+   "definition": "Jah, o nome sagrado",
+   "derivation": "contração de 3068, e que significa o mesmo;"
+  },
+  {
+   "strongs": "H3051",
+   "sha256": "fe5c63eb53d670a6b711940d3b5305e625a80ea83309f411fdfcee45083a6670",
+   "gloss": "dar",
+   "definition": "dar (seja literal ou figurado); em geral, pôr; imperativamente (reflexivo) vem",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H3052",
+   "sha256": "6ac214fe00df14ec60962f30400628d26de8a3fb508636ced93609a31efd8abd",
+   "gloss": "dar",
+   "derivation": "(aramaico) correspondente a 3051"
+  },
+  {
+   "strongs": "H3053",
+   "sha256": "52c24b67d7dc181847c5bb946bca59770e803ff303672e90a3c3c4d30da0bbed",
+   "gloss": "fardo",
+   "definition": "propriamente, o que é dado (pela Providência), isto é, uma sorte",
+   "derivation": "de 3051;"
+  },
+  {
+   "strongs": "H3054",
+   "sha256": "2c15369677a11d1c246f682b428abd7af6d43eb51675f2a81326c6adc02d2f4e",
+   "gloss": "tornar-se judeu",
+   "definition": "judaizar, isto é, tornar-se judeu",
+   "derivation": "denominativo de uma forma correspondente a 3061;"
+  },
+  {
+   "strongs": "H3055",
+   "sha256": "2f15dcdf9ddd06705549e476b2a34bca8483652174cd063342380fd7e579c2ff",
+   "gloss": "Jeúde",
+   "definition": "Jeúde, um lugar na Palestina",
+   "derivation": "uma forma mais breve de uma correspondente a 3061;"
+  },
+  {
+   "strongs": "H3056",
+   "sha256": "fec5ee1a67256ef79082d3d8ed544f92ba3f1ad71a1353d89c4427097d9b09f3",
+   "gloss": "Jadai",
+   "definition": "Jadai, um israelita",
+   "derivation": "talvez de uma forma correspondente a 3061; judaizante;"
+  },
+  {
+   "strongs": "H3057",
+   "sha256": "b5a696c90fe8e8eaef3c1825d357da5016c7caae7298b6e588c4390e431af54b",
+   "gloss": "esposa judia",
+   "definition": "Judia, uma judia",
+   "derivation": "feminino de 3064;"
+  },
+  {
+   "strongs": "H3058G",
+   "sha256": "7f5799959430fa0cb9d36a01c84376ac04a0ead9f937c7ec8596377372e08df7",
+   "gloss": "Jeú",
+   "definition": "Jeú, nome de cinco israelitas",
+   "derivation": "de 3068 e 1931; Jeová (é) Ele;"
+  },
+  {
+   "strongs": "H3058H",
+   "sha256": "7f5799959430fa0cb9d36a01c84376ac04a0ead9f937c7ec8596377372e08df7",
+   "gloss": "Jeú",
+   "definition": "Jeú, nome de cinco israelitas",
+   "derivation": "de 3068 e 1931; Jeová (é) Ele;"
+  },
+  {
+   "strongs": "H3058I",
+   "sha256": "7f5799959430fa0cb9d36a01c84376ac04a0ead9f937c7ec8596377372e08df7",
+   "gloss": "Jeú",
+   "definition": "Jeú, nome de cinco israelitas",
+   "derivation": "de 3068 e 1931; Jeová (é) Ele;"
+  },
+  {
+   "strongs": "H3058J",
+   "sha256": "7f5799959430fa0cb9d36a01c84376ac04a0ead9f937c7ec8596377372e08df7",
+   "gloss": "Jeú",
+   "definition": "Jeú, nome de cinco israelitas",
+   "derivation": "de 3068 e 1931; Jeová (é) Ele;"
+  },
+  {
+   "strongs": "H3058K",
+   "sha256": "7f5799959430fa0cb9d36a01c84376ac04a0ead9f937c7ec8596377372e08df7",
+   "gloss": "Jeú",
+   "definition": "Jeú, nome de cinco israelitas",
+   "derivation": "de 3068 e 1931; Jeová (é) Ele;"
+  },
+  {
+   "strongs": "H3059G",
+   "sha256": "ae34e0937154c1495044380c6c82b230021dc707d7759b67b31417be325481b6",
+   "gloss": "Jeoacaz",
+   "definition": "Jeoacaz, nome de três israelitas",
+   "derivation": "de 3068 e 270; tomado por Jeová;"
+  },
+  {
+   "strongs": "H3059H",
+   "sha256": "ae34e0937154c1495044380c6c82b230021dc707d7759b67b31417be325481b6",
+   "gloss": "Jeoacaz",
+   "definition": "Jeoacaz, nome de três israelitas",
+   "derivation": "de 3068 e 270; tomado por Jeová;"
+  },
+  {
+   "strongs": "H3059I",
+   "sha256": "7f9a57a018509df549c520179588583ad40b7effc349abdfb2b0d975e929a17b",
+   "gloss": "Acazias",
+   "definition": "Jeoacaz, nome de três israelitas",
+   "derivation": "de 3068 e 270; tomado por Jeová;"
+  },
+  {
+   "strongs": "H3060G",
+   "sha256": "249659388322b69f990510172eb0344ef38bd62cba29fdb11643282f86204809",
+   "gloss": "Jeoás",
+   "definition": "Jeoás, nome de dois reis israelitas",
+   "derivation": "de 3068 e (talvez) 784; abrasado por Jeová;"
+  },
+  {
+   "strongs": "H3060H",
+   "sha256": "249659388322b69f990510172eb0344ef38bd62cba29fdb11643282f86204809",
+   "gloss": "Jeoás",
+   "definition": "Jeoás, nome de dois reis israelitas",
+   "derivation": "de 3068 e (talvez) 784; abrasado por Jeová;"
+  },
+  {
+   "strongs": "H3061",
+   "sha256": "9080100cebe6daaa5a0ca138f9cb54864de18651cac9691c0c0df273e4833a7c",
+   "gloss": "Judá",
+   "definition": "propriamente, Judá; daí, a Judeia",
+   "derivation": "(aramaico) contraído de uma forma correspondente a 3063;"
+  },
+  {
+   "strongs": "H3062",
+   "sha256": "8154064629d2812eff258aeb344402de0cb9a527139a445be8479b4b3e823c56",
+   "gloss": "judeu",
+   "definition": "um judaíta, isto é, judeu",
+   "derivation": "(aramaico) pátrio de 3061;"
+  },
+  {
+   "strongs": "H3063G",
+   "sha256": "922d2e15b6e5a5475e73f743ed7a934dc63bdcc0dc7380d1336fd88f11895e20",
+   "gloss": "Judá",
+   "definition": "Judá, nome de cinco israelitas; também da tribo descendente do primeiro e de seu território",
+   "derivation": "de 3034; celebrado;"
+  },
+  {
+   "strongs": "H3063H",
+   "sha256": "922d2e15b6e5a5475e73f743ed7a934dc63bdcc0dc7380d1336fd88f11895e20",
+   "gloss": "Judá",
+   "definition": "Judá, nome de cinco israelitas; também da tribo descendente do primeiro e de seu território",
+   "derivation": "de 3034; celebrado;"
+  },
+  {
+   "strongs": "H3063I",
+   "sha256": "922d2e15b6e5a5475e73f743ed7a934dc63bdcc0dc7380d1336fd88f11895e20",
+   "gloss": "Judá",
+   "definition": "Judá, nome de cinco israelitas; também da tribo descendente do primeiro e de seu território",
+   "derivation": "de 3034; celebrado;"
+  },
+  {
+   "strongs": "H3063J",
+   "sha256": "922d2e15b6e5a5475e73f743ed7a934dc63bdcc0dc7380d1336fd88f11895e20",
+   "gloss": "Judá",
+   "definition": "Judá, nome de cinco israelitas; também da tribo descendente do primeiro e de seu território",
+   "derivation": "de 3034; celebrado;"
+  },
+  {
+   "strongs": "H3063K",
+   "sha256": "922d2e15b6e5a5475e73f743ed7a934dc63bdcc0dc7380d1336fd88f11895e20",
+   "gloss": "Judá",
+   "definition": "Judá, nome de cinco israelitas; também da tribo descendente do primeiro e de seu território",
+   "derivation": "de 3034; celebrado;"
+  },
+  {
+   "strongs": "H3063L",
+   "sha256": "922d2e15b6e5a5475e73f743ed7a934dc63bdcc0dc7380d1336fd88f11895e20",
+   "gloss": "Judá",
+   "definition": "Judá, nome de cinco israelitas; também da tribo descendente do primeiro e de seu território",
+   "derivation": "de 3034; celebrado;"
+  },
+  {
+   "strongs": "H3063M",
+   "sha256": "922d2e15b6e5a5475e73f743ed7a934dc63bdcc0dc7380d1336fd88f11895e20",
+   "gloss": "Judá",
+   "definition": "Judá, nome de cinco israelitas; também da tribo descendente do primeiro e de seu território",
+   "derivation": "de 3034; celebrado;"
+  },
+  {
+   "strongs": "H3063N",
+   "sha256": "a6c224720afd9cdbe0d2351343323e4129cf7891fe325e1729dfe4b7a72e277f",
+   "gloss": "Judeia",
+   "definition": "Judá, nome de cinco israelitas; também da tribo descendente do primeiro e de seu território",
+   "derivation": "de 3034; celebrado;"
+  },
+  {
+   "strongs": "H3063O",
+   "sha256": "2c6b6a4b75031b348f40e06bf0e989b045e65439dc4d610f37a7bb55b72912d8",
+   "gloss": "(Baalá de)Judá",
+   "definition": "Judá, nome de cinco israelitas; também da tribo descendente do primeiro e de seu território",
+   "derivation": "de 3034; celebrado;"
+  },
+  {
+   "strongs": "H3064G",
+   "sha256": "da00691ad8cf2e366ae7b8c49514251e630f4444b0f7299680895a5e3da2569f",
+   "gloss": "judeu",
+   "definition": "um judaíta (isto é, judeu), ou descendente de Judá",
+   "derivation": "patronimicamente de 3063;"
+  },
+  {
+   "strongs": "H3064H",
+   "sha256": "07f4b7b94ba7caece82c26f4f87177a6ffd224d820ced9815bb525ce97f0aac6",
+   "gloss": "da Judeia",
+   "definition": "um judaíta (isto é, judeu), ou descendente de Judá",
+   "derivation": "patronimicamente de 3063;"
+  },
+  {
+   "strongs": "H3064I",
+   "sha256": "91d3dbae05fc4974cf2e4f9f08ee9561bc0481fc9b6bbf75d5aba395efbc4913",
+   "gloss": "de Judá",
+   "definition": "um judaíta (isto é, judeu), ou descendente de Judá",
+   "derivation": "patronimicamente de 3063;"
+  },
+  {
+   "strongs": "H3065",
+   "sha256": "f77b540f6fe849eff2134d2acd20f295be5f00b2cbf16c710ba594965a7b62ef",
+   "gloss": "Jeudi",
+   "definition": "Jeudi, um israelita",
+   "derivation": "o mesmo que 3064;"
+  },
+  {
+   "strongs": "H3066G",
+   "sha256": "20b3ef11bdb1cf2935ea71d9dd4a4b48292c725aa8a0a77668196dae1d24cc60",
+   "gloss": "judaíta",
+   "definition": "a língua judaica (usado adverbialmente)",
+   "derivation": "feminino de 3064;"
+  },
+  {
+   "strongs": "H3066H",
+   "sha256": "481e2341d290ea01499eaaf0e75bafc2f2db6da0c17a53b9e81a1a564f04e771",
+   "gloss": "judaico",
+   "definition": "a língua judaica (usado adverbialmente)",
+   "derivation": "feminino de 3064;"
+  },
+  {
+   "strongs": "H3067",
+   "sha256": "5d46602caf7d4b5ebcbfbd3699113e2bfc75d4ef5925edbacb4cb8bf2c93b9b1",
+   "gloss": "Judite",
+   "definition": "Judite, uma cananeia",
+   "derivation": "o mesmo que 3066; judia;"
+  },
+  {
+   "strongs": "H3068G",
+   "sha256": "b4c56f3d8e8b20e3845fe56e26a78642a387467429dcd31c636591791de2f0fb",
+   "gloss": "SENHOR",
+   "definition": "(o) que existe por si mesmo ou Eterno; Jeo-vá, nome nacional judaico de Deus",
+   "derivation": "de 1961;"
+  },
+  {
+   "strongs": "H3068H",
+   "sha256": "2eb15f3eb864accde0f1588439b5d13eb9aa9e8b649d4f0af0f634edcae7037a",
+   "gloss": "O Senhor",
+   "definition": "(o) que existe por si mesmo ou Eterno; Jeo-vá, nome nacional judaico de Deus",
+   "derivation": "de 1961;"
+  },
+  {
+   "strongs": "H3068I",
+   "sha256": "4e337cfc429c579f23f2837e53404e9030dab67edf488f422f6599eba7d8afd3",
+   "gloss": "(Jerusalém do) Senhor",
+   "definition": "(o) que existe por si mesmo ou Eterno; Jeo-vá, nome nacional judaico de Deus",
+   "derivation": "de 1961;"
+  },
+  {
+   "strongs": "H3069",
+   "sha256": "7092e8d505db31b45916d5d14fb4785f83deb02d6947d16a0a627f23ab9dc694",
+   "gloss": "YHWH/Deus",
+   "derivation": "uma variação de 3068 [usada depois de 136, e pronunciada pelos judeus como 430, para evitar a repetição do mesmo som, visto que em outros lugares pronunciam 3068 como 136]"
+  },
+  {
+   "strongs": "H3070",
+   "sha256": "879c142d04b6675f63e3179c05d9b30add3ad7d55dc0df2efac30897ec8f438d",
+   "gloss": "Provedor",
+   "definition": "Jeová-Jiré, um nome simbólico do monte Moriá",
+   "derivation": "de 3068 e 7200; Jeová proverá;"
+  },
+  {
+   "strongs": "H3071",
+   "sha256": "c38f05f3c85cd238f9ad70336c37095ea58d852915aa51b73c432fa75ef54ef7",
+   "gloss": "YHWH/Jeová-Nissi",
+   "definition": "Jeová-Nissi, um nome simbólico de um altar no deserto",
+   "derivation": "de 3068 e 5251 com o sufixo pronominal; Jeová (é) a minha bandeira;"
+  },
+  {
+   "strongs": "H3072",
+   "sha256": "3d2f815272b25ea321366f4544929f16923eb0ba52f0b4585a5f512702672dbf",
+   "gloss": "YHWH/Javé-Tsidquenu",
+   "definition": "Jeová-Tsidquenu, um epíteto simbólico do Messias e de Jerusalém",
+   "derivation": "de 3068 e 6664 com sufixo pronominal; Jeová (é) a nossa justiça;"
+  },
+  {
+   "strongs": "H3073",
+   "sha256": "baea3a150d37618942cfcdd63743f84dad12a240bbab196519aa10b33665eb20",
+   "gloss": "YHWH/Javé-Shalom",
+   "definition": "Jeová-Shalom, um nome simbólico de um altar na Palestina",
+   "derivation": "de 3068 e 7965; Jeová (é) paz;"
+  },
+  {
+   "strongs": "H3074",
+   "sha256": "809e6ea282ddd0a9824f3b7697e6e99edba47597bb2f67722bbd26cc40029f05",
+   "gloss": "YHWH/Javé-Samá",
+   "definition": "Jeová-Samá, um título simbólico de Jerusalém",
+   "derivation": "de 3068 e 8033 com enclítico direcional; Jeová (está) ali;"
+  },
+  {
+   "strongs": "H3075G",
+   "sha256": "cb401ee1d223515722c1abf3938a92d07950f4a366bce30ccf369a60e6a230f9",
+   "gloss": "Jeozabade",
+   "definition": "Jeozabade, nome de três israelitas",
+   "derivation": "de 3068 e 2064; dotado por Jeová;"
+  },
+  {
+   "strongs": "H3075H",
+   "sha256": "cb401ee1d223515722c1abf3938a92d07950f4a366bce30ccf369a60e6a230f9",
+   "gloss": "Jeozabade",
+   "definition": "Jeozabade, nome de três israelitas",
+   "derivation": "de 3068 e 2064; dotado por Jeová;"
+  },
+  {
+   "strongs": "H3075I",
+   "sha256": "cb401ee1d223515722c1abf3938a92d07950f4a366bce30ccf369a60e6a230f9",
+   "gloss": "Jeozabade",
+   "definition": "Jeozabade, nome de três israelitas",
+   "derivation": "de 3068 e 2064; dotado por Jeová;"
+  },
+  {
+   "strongs": "H3076G",
+   "sha256": "d53e84b52ff3424ed5c28ba747964cef3c7e489557b61583793ebcaa1304937b",
+   "gloss": "Joanã",
+   "definition": "Joanã, nome de oito israelitas",
+   "derivation": "de 3068 e 2603; favorecido por Jeová;"
+  },
+  {
+   "strongs": "H3076H",
+   "sha256": "d53e84b52ff3424ed5c28ba747964cef3c7e489557b61583793ebcaa1304937b",
+   "gloss": "Joanã",
+   "definition": "Joanã, nome de oito israelitas",
+   "derivation": "de 3068 e 2603; favorecido por Jeová;"
+  },
+  {
+   "strongs": "H3076I",
+   "sha256": "7187cce109cf9eee93f74ea20fd689a673528cdecd9165da1ec8ebd89754634d",
+   "gloss": "Jeoanã",
+   "definition": "Joanã, nome de oito israelitas",
+   "derivation": "de 3068 e 2603; favorecido por Jeová;"
+  },
+  {
+   "strongs": "H3076J",
+   "sha256": "7187cce109cf9eee93f74ea20fd689a673528cdecd9165da1ec8ebd89754634d",
+   "gloss": "Jeoanã",
+   "definition": "Joanã, nome de oito israelitas",
+   "derivation": "de 3068 e 2603; favorecido por Jeová;"
+  },
+  {
+   "strongs": "H3076K",
+   "sha256": "7187cce109cf9eee93f74ea20fd689a673528cdecd9165da1ec8ebd89754634d",
+   "gloss": "Jeoanã",
+   "definition": "Joanã, nome de oito israelitas",
+   "derivation": "de 3068 e 2603; favorecido por Jeová;"
+  },
+  {
+   "strongs": "H3076L",
+   "sha256": "d53e84b52ff3424ed5c28ba747964cef3c7e489557b61583793ebcaa1304937b",
+   "gloss": "Joanã",
+   "definition": "Joanã, nome de oito israelitas",
+   "derivation": "de 3068 e 2603; favorecido por Jeová;"
+  },
+  {
+   "strongs": "H3076M",
+   "sha256": "7187cce109cf9eee93f74ea20fd689a673528cdecd9165da1ec8ebd89754634d",
+   "gloss": "Jeoanã",
+   "definition": "Joanã, nome de oito israelitas",
+   "derivation": "de 3068 e 2603; favorecido por Jeová;"
+  },
+  {
+   "strongs": "H3076N",
+   "sha256": "7187cce109cf9eee93f74ea20fd689a673528cdecd9165da1ec8ebd89754634d",
+   "gloss": "Jeoanã",
+   "definition": "Joanã, nome de oito israelitas",
+   "derivation": "de 3068 e 2603; favorecido por Jeová;"
+  },
+  {
+   "strongs": "H3076O",
+   "sha256": "7187cce109cf9eee93f74ea20fd689a673528cdecd9165da1ec8ebd89754634d",
+   "gloss": "Jeoanã",
+   "definition": "Joanã, nome de oito israelitas",
+   "derivation": "de 3068 e 2603; favorecido por Jeová;"
+  },
+  {
+   "strongs": "H3076P",
+   "sha256": "7187cce109cf9eee93f74ea20fd689a673528cdecd9165da1ec8ebd89754634d",
+   "gloss": "Jeoanã",
+   "definition": "Joanã, nome de oito israelitas",
+   "derivation": "de 3068 e 2603; favorecido por Jeová;"
+  },
+  {
+   "strongs": "H3076Q",
+   "sha256": "7187cce109cf9eee93f74ea20fd689a673528cdecd9165da1ec8ebd89754634d",
+   "gloss": "Jeoanã",
+   "definition": "Joanã, nome de oito israelitas",
+   "derivation": "de 3068 e 2603; favorecido por Jeová;"
+  },
+  {
+   "strongs": "H3077G",
+   "sha256": "ce3963b834a263b5efbcb12daaad4519758ff09e4b2e42a7664c0809a5d9f6dd",
+   "gloss": "Joiada",
+   "definition": "Joiada, nome de três israelitas",
+   "derivation": "de 3068 e 3045; conhecido por Jeová;"
+  },
+  {
+   "strongs": "H3077H",
+   "sha256": "ce3963b834a263b5efbcb12daaad4519758ff09e4b2e42a7664c0809a5d9f6dd",
+   "gloss": "Joiada",
+   "definition": "Joiada, nome de três israelitas",
+   "derivation": "de 3068 e 3045; conhecido por Jeová;"
+  },
+  {
+   "strongs": "H3077I",
+   "sha256": "ce3963b834a263b5efbcb12daaad4519758ff09e4b2e42a7664c0809a5d9f6dd",
+   "gloss": "Joiada",
+   "definition": "Joiada, nome de três israelitas",
+   "derivation": "de 3068 e 3045; conhecido por Jeová;"
+  },
+  {
+   "strongs": "H3077J",
+   "sha256": "ce3963b834a263b5efbcb12daaad4519758ff09e4b2e42a7664c0809a5d9f6dd",
+   "gloss": "Joiada",
+   "definition": "Joiada, nome de três israelitas",
+   "derivation": "de 3068 e 3045; conhecido por Jeová;"
+  },
+  {
+   "strongs": "H3078",
+   "sha256": "d6ec6ebe45fae5a5a04ca930e32bfe70003469c2b4eec278f1f0830749dda23d",
+   "gloss": "Joaquim",
+   "definition": "Joaquim, um rei judeu",
+   "derivation": "de 3068 e 3559; Jeová estabelecerá;"
+  },
+  {
+   "strongs": "H3079",
+   "sha256": "1d29fa10fe31de65c2ad4791e5f2aed892edf8862373f84c1575bc934629e43e",
+   "gloss": "Jeoaquim",
+   "definition": "Jeoaquim, um rei judeu",
+   "derivation": "de 3068 abreviado e 6965; Jeová levantará;"
+  },
+  {
+   "strongs": "H3080G",
+   "sha256": "cc947fff93ff30b2319250670deb6e1589da32dab09d25bdb8aef32a1179d7a8",
+   "gloss": "Jeoiaribe",
+   "definition": "Jeoiaribe, nome de dois israelitas",
+   "derivation": "de 3068 e 7378; Jeová contenderá;"
+  },
+  {
+   "strongs": "H3080H",
+   "sha256": "cc947fff93ff30b2319250670deb6e1589da32dab09d25bdb8aef32a1179d7a8",
+   "gloss": "Jeoiaribe",
+   "definition": "Jeoiaribe, nome de dois israelitas",
+   "derivation": "de 3068 e 7378; Jeová contenderá;"
+  },
+  {
+   "strongs": "H3081",
+   "sha256": "8f0c94f48012ccf9fa0f0084d6da6f3cd65df473e35252b4219d49417cf0bb9c",
+   "gloss": "Jeucal",
+   "definition": "Jeucal, um israelita",
+   "derivation": "de 3201; poderoso;"
+  },
+  {
+   "strongs": "H3082G",
+   "sha256": "42be71f837dec81d44328c296fba1e565bc10b678c3467ac9c75024e2901f374",
+   "gloss": "Jonadabe",
+   "definition": "Jonadabe, nome de um israelita e de um árabe",
+   "derivation": "de 3068 e 5068; agraciado por Jeová;"
+  },
+  {
+   "strongs": "H3082H",
+   "sha256": "42be71f837dec81d44328c296fba1e565bc10b678c3467ac9c75024e2901f374",
+   "gloss": "Jonadabe",
+   "definition": "Jonadabe, nome de um israelita e de um árabe",
+   "derivation": "de 3068 e 5068; agraciado por Jeová;"
+  },
+  {
+   "strongs": "H3083G",
+   "sha256": "b73940c061005aeb3fa866202e45d51af917aa36c5b86ffec4157b41f60d9d3b",
+   "gloss": "Jônatas",
+   "definition": "Jônatas, nome de quatro israelitas",
+   "derivation": "de 3068 e 5414; dado por Jeová;"
+  },
+  {
+   "strongs": "H3083H",
+   "sha256": "b73940c061005aeb3fa866202e45d51af917aa36c5b86ffec4157b41f60d9d3b",
+   "gloss": "Jônatas",
+   "definition": "Jônatas, nome de quatro israelitas",
+   "derivation": "de 3068 e 5414; dado por Jeová;"
+  },
+  {
+   "strongs": "H3083I",
+   "sha256": "b73940c061005aeb3fa866202e45d51af917aa36c5b86ffec4157b41f60d9d3b",
+   "gloss": "Jônatas",
+   "definition": "Jônatas, nome de quatro israelitas",
+   "derivation": "de 3068 e 5414; dado por Jeová;"
+  },
+  {
+   "strongs": "H3083J",
+   "sha256": "b73940c061005aeb3fa866202e45d51af917aa36c5b86ffec4157b41f60d9d3b",
+   "gloss": "Jônatas",
+   "definition": "Jônatas, nome de quatro israelitas",
+   "derivation": "de 3068 e 5414; dado por Jeová;"
+  },
+  {
+   "strongs": "H3083K",
+   "sha256": "b73940c061005aeb3fa866202e45d51af917aa36c5b86ffec4157b41f60d9d3b",
+   "gloss": "Jônatas",
+   "definition": "Jônatas, nome de quatro israelitas",
+   "derivation": "de 3068 e 5414; dado por Jeová;"
+  },
+  {
+   "strongs": "H3083L",
+   "sha256": "28755b5963a77beb06f3554c82c3a983befa6ff46008fcb0bd4fa05a46849818",
+   "gloss": "Jônatas",
+   "definition": "Jônatas, nome de quatro israelitas",
+   "derivation": "de 3068 e 5414; dado por Jeová;"
+  },
+  {
+   "strongs": "H3083M",
+   "sha256": "28755b5963a77beb06f3554c82c3a983befa6ff46008fcb0bd4fa05a46849818",
+   "gloss": "Jônatas",
+   "definition": "Jônatas, nome de quatro israelitas",
+   "derivation": "de 3068 e 5414; dado por Jeová;"
+  },
+  {
+   "strongs": "H3083N",
+   "sha256": "b73940c061005aeb3fa866202e45d51af917aa36c5b86ffec4157b41f60d9d3b",
+   "gloss": "Jônatas",
+   "definition": "Jônatas, nome de quatro israelitas",
+   "derivation": "de 3068 e 5414; dado por Jeová;"
+  },
+  {
+   "strongs": "H3083O",
+   "sha256": "b73940c061005aeb3fa866202e45d51af917aa36c5b86ffec4157b41f60d9d3b",
+   "gloss": "Jônatas",
+   "definition": "Jônatas, nome de quatro israelitas",
+   "derivation": "de 3068 e 5414; dado por Jeová;"
+  },
+  {
+   "strongs": "H3084",
+   "sha256": "08bfc459dbd8636bca69eae4c6c6212d22d89d37055c61010d774cbb04872ec4",
+   "gloss": "José",
+   "definition": "José, um filho de Jacó",
+   "derivation": "uma forma mais plena de 3130;"
+  },
+  {
+   "strongs": "H3085",
+   "sha256": "fe826a6085398e2ed01b1c0552ea17a099bb94f09066dbb0a342c28e54b1f522",
+   "gloss": "Jeoada",
+   "definition": "Jeoada, um israelita",
+   "derivation": "de 3068 e 5710; adornado por Jeová;"
+  },
+  {
+   "strongs": "H3086",
+   "sha256": "cb31705abd508e0874e71c0cb1941883f9eb9067fe37659a440443e64a930041",
+   "gloss": "Jeoadã",
+   "definition": "Jeoadim ou Jeoadã, uma israelita",
+   "derivation": "ou יְהוֹעַדָּן; de 3068 e 5727; agradável a Jeová;"
+  },
+  {
+   "strongs": "H3087",
+   "sha256": "f2266f7a0416b65ff7d8db2577767789ba9478632e769075e6db2067a533d2df",
+   "gloss": "Jeozadaque",
+   "definition": "Jeozadaque, um israelita",
+   "derivation": "de 3068 e 6663; justificado por Jeová;"
+  },
+  {
+   "strongs": "H3088G",
+   "sha256": "84d6e219b40a94bd88251b5269c76e348a13dba712d7c9d41c3c2da4d2d13147",
+   "gloss": "Jeorão",
+   "definition": "Jeorão, nome de um sírio e de três israelitas",
+   "derivation": "de 3068 e 7311; exaltado por Jeová;"
+  },
+  {
+   "strongs": "H3088H",
+   "sha256": "84d6e219b40a94bd88251b5269c76e348a13dba712d7c9d41c3c2da4d2d13147",
+   "gloss": "Jeorão",
+   "definition": "Jeorão, nome de um sírio e de três israelitas",
+   "derivation": "de 3068 e 7311; exaltado por Jeová;"
+  },
+  {
+   "strongs": "H3088I",
+   "sha256": "63ae36b8b2000466195f6a911f435875ed3bc3389a22ab99b8c7177a30b2b77e",
+   "gloss": "Jorão",
+   "definition": "Jeorão, nome de um sírio e de três israelitas",
+   "derivation": "de 3068 e 7311; exaltado por Jeová;"
+  },
+  {
+   "strongs": "H3089",
+   "sha256": "df0ceb4d943f61170e47cfe06eb724bf690642bed05cbb4eb24b3995015c37e0",
+   "gloss": "Jeoseba",
+   "definition": "Jeoseba, uma israelita",
+   "derivation": "de 3068 e 7650; jurado por Jeová;"
+  },
+  {
+   "strongs": "H3090",
+   "sha256": "38d470848ae3078f86060e596102ef4160b5edc2bc2e2ad7756d83a91de62252",
+   "gloss": "Jeosabeate",
+   "definition": "Jeosabeate, uma israelita",
+   "derivation": "uma forma de 3089;"
+  },
+  {
+   "strongs": "H3091G",
+   "sha256": "1b69bf5685f7f20f49dfda26a338d9c57b03462904b98e74444cae25114b1d17",
+   "gloss": "Josué",
+   "definition": "Josué, o líder judeu",
+   "derivation": "ou יְהוֹשֻׁעַ; de 3068 e 3467; salvo por Jeová;"
+  },
+  {
+   "strongs": "H3091H",
+   "sha256": "1b69bf5685f7f20f49dfda26a338d9c57b03462904b98e74444cae25114b1d17",
+   "gloss": "Josué",
+   "definition": "Josué, o líder judeu",
+   "derivation": "ou יְהוֹשֻׁעַ; de 3068 e 3467; salvo por Jeová;"
+  },
+  {
+   "strongs": "H3091I",
+   "sha256": "1b69bf5685f7f20f49dfda26a338d9c57b03462904b98e74444cae25114b1d17",
+   "gloss": "Josué",
+   "definition": "Josué, o líder judeu",
+   "derivation": "ou יְהוֹשֻׁעַ; de 3068 e 3467; salvo por Jeová;"
+  },
+  {
+   "strongs": "H3091J",
+   "sha256": "1b69bf5685f7f20f49dfda26a338d9c57b03462904b98e74444cae25114b1d17",
+   "gloss": "Josué",
+   "definition": "Josué, o líder judeu",
+   "derivation": "ou יְהוֹשֻׁעַ; de 3068 e 3467; salvo por Jeová;"
+  },
+  {
+   "strongs": "H3092G",
+   "sha256": "a6cc2a9dc44bfd511fd6de725d7f0dd962c5b0b3b98bbedcf96758c84d4da722",
+   "gloss": "Josafá",
+   "definition": "Josafá, nome de seis israelitas; também de um vale perto de Jerusalém",
+   "derivation": "de 3068 e 8199; julgado por Jeová;"
+  },
+  {
+   "strongs": "H3092H",
+   "sha256": "a6cc2a9dc44bfd511fd6de725d7f0dd962c5b0b3b98bbedcf96758c84d4da722",
+   "gloss": "Josafá",
+   "definition": "Josafá, nome de seis israelitas; também de um vale perto de Jerusalém",
+   "derivation": "de 3068 e 8199; julgado por Jeová;"
+  },
+  {
+   "strongs": "H3092I",
+   "sha256": "a6cc2a9dc44bfd511fd6de725d7f0dd962c5b0b3b98bbedcf96758c84d4da722",
+   "gloss": "Josafá",
+   "definition": "Josafá, nome de seis israelitas; também de um vale perto de Jerusalém",
+   "derivation": "de 3068 e 8199; julgado por Jeová;"
+  },
+  {
+   "strongs": "H3092J",
+   "sha256": "a6cc2a9dc44bfd511fd6de725d7f0dd962c5b0b3b98bbedcf96758c84d4da722",
+   "gloss": "Josafá",
+   "definition": "Josafá, nome de seis israelitas; também de um vale perto de Jerusalém",
+   "derivation": "de 3068 e 8199; julgado por Jeová;"
+  },
+  {
+   "strongs": "H3092K",
+   "sha256": "d24c4e42d33d2e3d4d2f52ee1fd24cca30e374c0aef6faa8acb4d0a3ef38ceef",
+   "gloss": "(Vale de) Josafá",
+   "definition": "Josafá, nome de seis israelitas; também de um vale perto de Jerusalém",
+   "derivation": "de 3068 e 8199; julgado por Jeová;"
+  },
+  {
+   "strongs": "H3093",
+   "sha256": "de48569cfb8bd1bb1a2d2bdd0fa5b7c5d7d6b4c2d959d579d526999403d1fac8",
+   "gloss": "orgulhoso",
+   "definition": "exaltado; daí, arrogante",
+   "derivation": "provavelmente do mesmo que 2022;"
+  },
+  {
+   "strongs": "H3094G",
+   "sha256": "fb01cfeea8b1075c130d7228f3e422ede38311fae0244342f94d4dbe2735bdb4",
+   "gloss": "Jealelel",
+   "definition": "Jealelel, nome de dois israelitas",
+   "derivation": "de 1984 e 410; que louva a Deus;"
+  },
+  {
+   "strongs": "H3094H",
+   "sha256": "fb01cfeea8b1075c130d7228f3e422ede38311fae0244342f94d4dbe2735bdb4",
+   "gloss": "Jealelel",
+   "definition": "Jealelel, nome de dois israelitas",
+   "derivation": "de 1984 e 410; que louva a Deus;"
+  },
+  {
+   "strongs": "H3095",
+   "sha256": "25ee09e5b12716b07a4f59c779ffb4ee5d00f2262cda394c2dad4f2898341e0b",
+   "gloss": "jaspe",
+   "definition": "uma pedra preciosa, provavelmente ônix",
+   "derivation": "de 1986 (no sentido de dureza);"
+  },
+  {
+   "strongs": "H3096",
+   "sha256": "ae9ff0fb00ab22abbd5efeb61c2c9a16fb8f6c356a16db28015ab5744cfc009f",
+   "gloss": "Jaza",
+   "definition": "Jaza ou Jaaza, um lugar a leste do Jordão",
+   "derivation": "ou יַהְצָה; ou (feminino) יַהְצָה; de uma raiz não usada que significa pisar; talvez eira;"
+  },
+  {
+   "strongs": "H3097G",
+   "sha256": "0d32105a1908782f5c4153da5f3dde835803891d8c5e49aac9f7542bedb3d569",
+   "gloss": "Joabe",
+   "definition": "Joabe, nome de três israelitas",
+   "derivation": "de 3068 e 1; Jeová é pai;"
+  },
+  {
+   "strongs": "H3097H",
+   "sha256": "0d32105a1908782f5c4153da5f3dde835803891d8c5e49aac9f7542bedb3d569",
+   "gloss": "Joabe",
+   "definition": "Joabe, nome de três israelitas",
+   "derivation": "de 3068 e 1; Jeová é pai;"
+  },
+  {
+   "strongs": "H3097I",
+   "sha256": "0d32105a1908782f5c4153da5f3dde835803891d8c5e49aac9f7542bedb3d569",
+   "gloss": "Joabe",
+   "definition": "Joabe, nome de três israelitas",
+   "derivation": "de 3068 e 1; Jeová é pai;"
+  },
+  {
+   "strongs": "H3097J",
+   "sha256": "0d32105a1908782f5c4153da5f3dde835803891d8c5e49aac9f7542bedb3d569",
+   "gloss": "Joabe",
+   "definition": "Joabe, nome de três israelitas",
+   "derivation": "de 3068 e 1; Jeová é pai;"
+  },
+  {
+   "strongs": "H3098G",
+   "sha256": "c9a4622bd7eaa846f6155ff4a1152b0930ade10d31b4da648eb5aeaebe22cbd5",
+   "gloss": "Joá",
+   "definition": "Joá, nome de quatro israelitas",
+   "derivation": "de 3068 e 251; Jeová é irmão;"
+  },
+  {
+   "strongs": "H3098H",
+   "sha256": "c9a4622bd7eaa846f6155ff4a1152b0930ade10d31b4da648eb5aeaebe22cbd5",
+   "gloss": "Joá",
+   "definition": "Joá, nome de quatro israelitas",
+   "derivation": "de 3068 e 251; Jeová é irmão;"
+  },
+  {
+   "strongs": "H3098I",
+   "sha256": "c9a4622bd7eaa846f6155ff4a1152b0930ade10d31b4da648eb5aeaebe22cbd5",
+   "gloss": "Joá",
+   "definition": "Joá, nome de quatro israelitas",
+   "derivation": "de 3068 e 251; Jeová é irmão;"
+  },
+  {
+   "strongs": "H3098J",
+   "sha256": "c9a4622bd7eaa846f6155ff4a1152b0930ade10d31b4da648eb5aeaebe22cbd5",
+   "gloss": "Joá",
+   "definition": "Joá, nome de quatro israelitas",
+   "derivation": "de 3068 e 251; Jeová é irmão;"
+  },
+  {
+   "strongs": "H3098K",
+   "sha256": "c9a4622bd7eaa846f6155ff4a1152b0930ade10d31b4da648eb5aeaebe22cbd5",
+   "gloss": "Joá",
+   "definition": "Joá, nome de quatro israelitas",
+   "derivation": "de 3068 e 251; Jeová é irmão;"
+  },
+  {
+   "strongs": "H3098L",
+   "sha256": "c9a4622bd7eaa846f6155ff4a1152b0930ade10d31b4da648eb5aeaebe22cbd5",
+   "gloss": "Joá",
+   "definition": "Joá, nome de quatro israelitas",
+   "derivation": "de 3068 e 251; Jeová é irmão;"
+  },
+  {
+   "strongs": "H3099G",
+   "sha256": "0ff859d5bb36e96efc88dc8a51e4a0f0a10178da1f8784e616a43a6bc16957fe",
+   "gloss": "Joacaz",
+   "definition": "Joacaz, nome de dois israelitas",
+   "derivation": "uma forma de 3059;"
+  },
+  {
+   "strongs": "H3099H",
+   "sha256": "0ff859d5bb36e96efc88dc8a51e4a0f0a10178da1f8784e616a43a6bc16957fe",
+   "gloss": "Joacaz",
+   "definition": "Joacaz, nome de dois israelitas",
+   "derivation": "uma forma de 3059;"
+  },
+  {
+   "strongs": "H3099I",
+   "sha256": "5d41db18ecf085d8c65e1327f2e1a86abad7262c6fc36c47c99cba04999402a7",
+   "gloss": "Jeoacaz",
+   "definition": "Joacaz, nome de dois israelitas",
+   "derivation": "uma forma de 3059;"
+  },
+  {
+   "strongs": "H3100G",
+   "sha256": "7aa6e29087147c32f0a0149898a3f696e53a6ebd865574cf64c5a2bee1923104",
+   "gloss": "Joel",
+   "definition": "Joel, nome de doze israelitas",
+   "derivation": "de 3068 e 410; Jeová (é seu) Deus;"
+  },
+  {
+   "strongs": "H3100H",
+   "sha256": "7aa6e29087147c32f0a0149898a3f696e53a6ebd865574cf64c5a2bee1923104",
+   "gloss": "Joel",
+   "definition": "Joel, nome de doze israelitas",
+   "derivation": "de 3068 e 410; Jeová (é seu) Deus;"
+  },
+  {
+   "strongs": "H3100I",
+   "sha256": "7aa6e29087147c32f0a0149898a3f696e53a6ebd865574cf64c5a2bee1923104",
+   "gloss": "Joel",
+   "definition": "Joel, nome de doze israelitas",
+   "derivation": "de 3068 e 410; Jeová (é seu) Deus;"
+  },
+  {
+   "strongs": "H3100J",
+   "sha256": "7aa6e29087147c32f0a0149898a3f696e53a6ebd865574cf64c5a2bee1923104",
+   "gloss": "Joel",
+   "definition": "Joel, nome de doze israelitas",
+   "derivation": "de 3068 e 410; Jeová (é seu) Deus;"
+  },
+  {
+   "strongs": "H3100K",
+   "sha256": "7aa6e29087147c32f0a0149898a3f696e53a6ebd865574cf64c5a2bee1923104",
+   "gloss": "Joel",
+   "definition": "Joel, nome de doze israelitas",
+   "derivation": "de 3068 e 410; Jeová (é seu) Deus;"
+  },
+  {
+   "strongs": "H3100L",
+   "sha256": "7aa6e29087147c32f0a0149898a3f696e53a6ebd865574cf64c5a2bee1923104",
+   "gloss": "Joel",
+   "definition": "Joel, nome de doze israelitas",
+   "derivation": "de 3068 e 410; Jeová (é seu) Deus;"
+  },
+  {
+   "strongs": "H3100M",
+   "sha256": "7aa6e29087147c32f0a0149898a3f696e53a6ebd865574cf64c5a2bee1923104",
+   "gloss": "Joel",
+   "definition": "Joel, nome de doze israelitas",
+   "derivation": "de 3068 e 410; Jeová (é seu) Deus;"
+  },
+  {
+   "strongs": "H3100N",
+   "sha256": "7aa6e29087147c32f0a0149898a3f696e53a6ebd865574cf64c5a2bee1923104",
+   "gloss": "Joel",
+   "definition": "Joel, nome de doze israelitas",
+   "derivation": "de 3068 e 410; Jeová (é seu) Deus;"
+  },
+  {
+   "strongs": "H3100O",
+   "sha256": "7aa6e29087147c32f0a0149898a3f696e53a6ebd865574cf64c5a2bee1923104",
+   "gloss": "Joel",
+   "definition": "Joel, nome de doze israelitas",
+   "derivation": "de 3068 e 410; Jeová (é seu) Deus;"
+  },
+  {
+   "strongs": "H3100P",
+   "sha256": "7aa6e29087147c32f0a0149898a3f696e53a6ebd865574cf64c5a2bee1923104",
+   "gloss": "Joel",
+   "definition": "Joel, nome de doze israelitas",
+   "derivation": "de 3068 e 410; Jeová (é seu) Deus;"
+  },
+  {
+   "strongs": "H3100Q",
+   "sha256": "7aa6e29087147c32f0a0149898a3f696e53a6ebd865574cf64c5a2bee1923104",
+   "gloss": "Joel",
+   "definition": "Joel, nome de doze israelitas",
+   "derivation": "de 3068 e 410; Jeová (é seu) Deus;"
+  },
+  {
+   "strongs": "H3100R",
+   "sha256": "7aa6e29087147c32f0a0149898a3f696e53a6ebd865574cf64c5a2bee1923104",
+   "gloss": "Joel",
+   "definition": "Joel, nome de doze israelitas",
+   "derivation": "de 3068 e 410; Jeová (é seu) Deus;"
+  },
+  {
+   "strongs": "H3100S",
+   "sha256": "7aa6e29087147c32f0a0149898a3f696e53a6ebd865574cf64c5a2bee1923104",
+   "gloss": "Joel",
+   "definition": "Joel, nome de doze israelitas",
+   "derivation": "de 3068 e 410; Jeová (é seu) Deus;"
+  },
+  {
+   "strongs": "H3100T",
+   "sha256": "7aa6e29087147c32f0a0149898a3f696e53a6ebd865574cf64c5a2bee1923104",
+   "gloss": "Joel",
+   "definition": "Joel, nome de doze israelitas",
+   "derivation": "de 3068 e 410; Jeová (é seu) Deus;"
+  },
+  {
+   "strongs": "H3100U",
+   "sha256": "7aa6e29087147c32f0a0149898a3f696e53a6ebd865574cf64c5a2bee1923104",
+   "gloss": "Joel",
+   "definition": "Joel, nome de doze israelitas",
+   "derivation": "de 3068 e 410; Jeová (é seu) Deus;"
+  },
+  {
+   "strongs": "H3101G",
+   "sha256": "e0ff6b011a40dcae2078aca31f7a2e0aa092bb1eb70441e1c42c7514a5e79d23",
+   "gloss": "Joás",
+   "definition": "Joás, nome de seis israelitas",
+   "derivation": "ou יֹאָשׁ; (2 Crônicas 24:1), uma forma de 3060;"
+  },
+  {
+   "strongs": "H3101H",
+   "sha256": "e0ff6b011a40dcae2078aca31f7a2e0aa092bb1eb70441e1c42c7514a5e79d23",
+   "gloss": "Joás",
+   "definition": "Joás, nome de seis israelitas",
+   "derivation": "ou יֹאָשׁ; (2 Crônicas 24:1), uma forma de 3060;"
+  },
+  {
+   "strongs": "H3101I",
+   "sha256": "e0ff6b011a40dcae2078aca31f7a2e0aa092bb1eb70441e1c42c7514a5e79d23",
+   "gloss": "Joás",
+   "definition": "Joás, nome de seis israelitas",
+   "derivation": "ou יֹאָשׁ; (2 Crônicas 24:1), uma forma de 3060;"
+  },
+  {
+   "strongs": "H3101J",
+   "sha256": "e0ff6b011a40dcae2078aca31f7a2e0aa092bb1eb70441e1c42c7514a5e79d23",
+   "gloss": "Joás",
+   "definition": "Joás, nome de seis israelitas",
+   "derivation": "ou יֹאָשׁ; (2 Crônicas 24:1), uma forma de 3060;"
+  },
+  {
+   "strongs": "H3101K",
+   "sha256": "e0ff6b011a40dcae2078aca31f7a2e0aa092bb1eb70441e1c42c7514a5e79d23",
+   "gloss": "Joás",
+   "definition": "Joás, nome de seis israelitas",
+   "derivation": "ou יֹאָשׁ; (2 Crônicas 24:1), uma forma de 3060;"
+  },
+  {
+   "strongs": "H3101L",
+   "sha256": "e0ff6b011a40dcae2078aca31f7a2e0aa092bb1eb70441e1c42c7514a5e79d23",
+   "gloss": "Joás",
+   "definition": "Joás, nome de seis israelitas",
+   "derivation": "ou יֹאָשׁ; (2 Crônicas 24:1), uma forma de 3060;"
+  },
+  {
+   "strongs": "H3102",
+   "sha256": "9f79f3cdf49c0e48455412229c9da210b63a5da5bdf3a3dcffaaffc2d92bd0db",
+   "gloss": "Jó",
+   "definition": "Jó, um israelita",
+   "derivation": "talvez uma forma de 3103, mas mais provavelmente por transcrição errônea de 3437;"
+  },
+  {
+   "strongs": "H3103G",
+   "sha256": "8e0a394e3a8cf99c362e85c8dbe4e0da7642b3cda965c27a8d2c2bd60d4313c8",
+   "gloss": "Jobabe",
+   "definition": "Jobabe, nome de dois israelitas e de três estrangeiros",
+   "derivation": "de 2980; o que uiva;"
+  },
+  {
+   "strongs": "H3103H",
+   "sha256": "8e0a394e3a8cf99c362e85c8dbe4e0da7642b3cda965c27a8d2c2bd60d4313c8",
+   "gloss": "Jobabe",
+   "definition": "Jobabe, nome de dois israelitas e de três estrangeiros",
+   "derivation": "de 2980; o que uiva;"
+  },
+  {
+   "strongs": "H3103I",
+   "sha256": "8e0a394e3a8cf99c362e85c8dbe4e0da7642b3cda965c27a8d2c2bd60d4313c8",
+   "gloss": "Jobabe",
+   "definition": "Jobabe, nome de dois israelitas e de três estrangeiros",
+   "derivation": "de 2980; o que uiva;"
+  },
+  {
+   "strongs": "H3103J",
+   "sha256": "8e0a394e3a8cf99c362e85c8dbe4e0da7642b3cda965c27a8d2c2bd60d4313c8",
+   "gloss": "Jobabe",
+   "definition": "Jobabe, nome de dois israelitas e de três estrangeiros",
+   "derivation": "de 2980; o que uiva;"
+  },
+  {
+   "strongs": "H3103K",
+   "sha256": "8e0a394e3a8cf99c362e85c8dbe4e0da7642b3cda965c27a8d2c2bd60d4313c8",
+   "gloss": "Jobabe",
+   "definition": "Jobabe, nome de dois israelitas e de três estrangeiros",
+   "derivation": "de 2980; o que uiva;"
+  },
+  {
+   "strongs": "H3104",
+   "sha256": "b9f086e309054535b8937e19832f2773ec98a0288dbdec11eac0d60020fa6254",
+   "gloss": "jubileu/chifre",
+   "definition": "o toque de uma trombeta (por seu som contínuo); especificamente, o sinal das trombetas de prata; daí, o próprio instrumento e a festa assim introduzida",
+   "derivation": "ou יֹבֵל; aparentemente de 2986;"
+  },
+  {
+   "strongs": "H3105",
+   "sha256": "e1bf6e0da841758776787e83c1cb0ec78c8078f46a6805767a196642946e23bd",
+   "gloss": "ribeiro",
+   "definition": "um ribeiro",
+   "derivation": "de 2986;"
+  },
+  {
+   "strongs": "H3106",
+   "sha256": "bda805e7cd014e36b158eb2db32cf5f43f8a5b96bb1e018aff79ac5cff09ca37",
+   "gloss": "Jubal",
+   "definition": "Jubal, um antediluviano",
+   "derivation": "de 2986; ribeiro;"
+  },
+  {
+   "strongs": "H3107G",
+   "sha256": "ee7bc95a6fa6c4d24c0ccdd09883930482da891303ea21648ee2fa7b554f9209",
+   "gloss": "Jozacar",
+   "definition": "Jozabade, nome de dez israelitas",
+   "derivation": "uma forma de 3075;"
+  },
+  {
+   "strongs": "H3107H",
+   "sha256": "34bea8bd76facf96b523a234c68cde1b810b90a006000adfd1e75297d9a00103",
+   "gloss": "Jozabade",
+   "definition": "Jozabade, nome de dez israelitas",
+   "derivation": "uma forma de 3075;"
+  },
+  {
+   "strongs": "H3107I",
+   "sha256": "34bea8bd76facf96b523a234c68cde1b810b90a006000adfd1e75297d9a00103",
+   "gloss": "Jozabade",
+   "definition": "Jozabade, nome de dez israelitas",
+   "derivation": "uma forma de 3075;"
+  },
+  {
+   "strongs": "H3107J",
+   "sha256": "34bea8bd76facf96b523a234c68cde1b810b90a006000adfd1e75297d9a00103",
+   "gloss": "Jozabade",
+   "definition": "Jozabade, nome de dez israelitas",
+   "derivation": "uma forma de 3075;"
+  },
+  {
+   "strongs": "H3107K",
+   "sha256": "34bea8bd76facf96b523a234c68cde1b810b90a006000adfd1e75297d9a00103",
+   "gloss": "Jozabade",
+   "definition": "Jozabade, nome de dez israelitas",
+   "derivation": "uma forma de 3075;"
+  },
+  {
+   "strongs": "H3107L",
+   "sha256": "34bea8bd76facf96b523a234c68cde1b810b90a006000adfd1e75297d9a00103",
+   "gloss": "Jozabade",
+   "definition": "Jozabade, nome de dez israelitas",
+   "derivation": "uma forma de 3075;"
+  },
+  {
+   "strongs": "H3107M",
+   "sha256": "34bea8bd76facf96b523a234c68cde1b810b90a006000adfd1e75297d9a00103",
+   "gloss": "Jozabade",
+   "definition": "Jozabade, nome de dez israelitas",
+   "derivation": "uma forma de 3075;"
+  },
+  {
+   "strongs": "H3107N",
+   "sha256": "34bea8bd76facf96b523a234c68cde1b810b90a006000adfd1e75297d9a00103",
+   "gloss": "Jozabade",
+   "definition": "Jozabade, nome de dez israelitas",
+   "derivation": "uma forma de 3075;"
+  },
+  {
+   "strongs": "H3107O",
+   "sha256": "34bea8bd76facf96b523a234c68cde1b810b90a006000adfd1e75297d9a00103",
+   "gloss": "Jozabade",
+   "definition": "Jozabade, nome de dez israelitas",
+   "derivation": "uma forma de 3075;"
+  },
+  {
+   "strongs": "H3107P",
+   "sha256": "34bea8bd76facf96b523a234c68cde1b810b90a006000adfd1e75297d9a00103",
+   "gloss": "Jozabade",
+   "definition": "Jozabade, nome de dez israelitas",
+   "derivation": "uma forma de 3075;"
+  },
+  {
+   "strongs": "H3107Q",
+   "sha256": "34bea8bd76facf96b523a234c68cde1b810b90a006000adfd1e75297d9a00103",
+   "gloss": "Jozabade",
+   "definition": "Jozabade, nome de dez israelitas",
+   "derivation": "uma forma de 3075;"
+  },
+  {
+   "strongs": "H3108",
+   "sha256": "b67574bf54f67b90818e955d7c6d0458e26f77fbdcc84aa00d3c5650060f6206",
+   "gloss": "Jozacar",
+   "definition": "Jozacar, um israelita",
+   "derivation": "de 3068 e 2142; lembrado por Jeová;"
+  },
+  {
+   "strongs": "H3109G",
+   "sha256": "03ea1388cfdba82ed79df7b2713f173f2c8b1224e8155c1a54aa2462027235fa",
+   "gloss": "Joá",
+   "definition": "Joá, nome de dois israelitas",
+   "derivation": "provavelmente de 3068 e uma variação de 2421; revivificado por Jeová;"
+  },
+  {
+   "strongs": "H3109H",
+   "sha256": "03ea1388cfdba82ed79df7b2713f173f2c8b1224e8155c1a54aa2462027235fa",
+   "gloss": "Joá",
+   "definition": "Joá, nome de dois israelitas",
+   "derivation": "provavelmente de 3068 e uma variação de 2421; revivificado por Jeová;"
+  },
+  {
+   "strongs": "H3110G",
+   "sha256": "15868e78925d6cfd19fd43b5fdd706e688d1d2563e5b2175c1a08dbc9a803587",
+   "gloss": "Joanã",
+   "definition": "Joanã, nome de nove israelitas",
+   "derivation": "uma forma de 3076;"
+  },
+  {
+   "strongs": "H3110H",
+   "sha256": "15868e78925d6cfd19fd43b5fdd706e688d1d2563e5b2175c1a08dbc9a803587",
+   "gloss": "Joanã",
+   "definition": "Joanã, nome de nove israelitas",
+   "derivation": "uma forma de 3076;"
+  },
+  {
+   "strongs": "H3110I",
+   "sha256": "15868e78925d6cfd19fd43b5fdd706e688d1d2563e5b2175c1a08dbc9a803587",
+   "gloss": "Joanã",
+   "definition": "Joanã, nome de nove israelitas",
+   "derivation": "uma forma de 3076;"
+  },
+  {
+   "strongs": "H3110J",
+   "sha256": "15868e78925d6cfd19fd43b5fdd706e688d1d2563e5b2175c1a08dbc9a803587",
+   "gloss": "Joanã",
+   "definition": "Joanã, nome de nove israelitas",
+   "derivation": "uma forma de 3076;"
+  },
+  {
+   "strongs": "H3110K",
+   "sha256": "15868e78925d6cfd19fd43b5fdd706e688d1d2563e5b2175c1a08dbc9a803587",
+   "gloss": "Joanã",
+   "definition": "Joanã, nome de nove israelitas",
+   "derivation": "uma forma de 3076;"
+  },
+  {
+   "strongs": "H3110L",
+   "sha256": "15868e78925d6cfd19fd43b5fdd706e688d1d2563e5b2175c1a08dbc9a803587",
+   "gloss": "Joanã",
+   "definition": "Joanã, nome de nove israelitas",
+   "derivation": "uma forma de 3076;"
+  },
+  {
+   "strongs": "H3111G",
+   "sha256": "35680e03b02dca439b8e703ca51e497f9764f3eebeafc4e299ccd084bdcc823a",
+   "gloss": "Joiada",
+   "definition": "Joiada, nome de dois israelitas",
+   "derivation": "uma forma de 3077;"
+  },
+  {
+   "strongs": "H3111H",
+   "sha256": "35680e03b02dca439b8e703ca51e497f9764f3eebeafc4e299ccd084bdcc823a",
+   "gloss": "Joiada",
+   "definition": "Joiada, nome de dois israelitas",
+   "derivation": "uma forma de 3077;"
+  },
+  {
+   "strongs": "H3112",
+   "sha256": "0e6a94911ee2cb4141e7e7c6698f4635bb364a4e141691ac282d3567f6deadd3",
+   "gloss": "Joaquim",
+   "definition": "Joaquim, um rei israelita",
+   "derivation": "uma forma de 3078;"
+  },
+  {
+   "strongs": "H3113",
+   "sha256": "c5dff85cfc11325d07fb751a71a2c067668ef13a8288848a7d28238c7e7f038a",
+   "gloss": "Joiaquim",
+   "definition": "Joiaquim, um israelita",
+   "derivation": "uma forma de 3079;"
+  },
+  {
+   "strongs": "H3114G",
+   "sha256": "808c438592e0badc1fe698b2f32e9422607773e4bcc11446db5d770c1b433204",
+   "gloss": "Joiaribe",
+   "definition": "Joiaribe, nome de quatro israelitas",
+   "derivation": "uma forma de 3080;"
+  },
+  {
+   "strongs": "H3114H",
+   "sha256": "808c438592e0badc1fe698b2f32e9422607773e4bcc11446db5d770c1b433204",
+   "gloss": "Joiaribe",
+   "definition": "Joiaribe, nome de quatro israelitas",
+   "derivation": "uma forma de 3080;"
+  },
+  {
+   "strongs": "H3114I",
+   "sha256": "808c438592e0badc1fe698b2f32e9422607773e4bcc11446db5d770c1b433204",
+   "gloss": "Joiaribe",
+   "definition": "Joiaribe, nome de quatro israelitas",
+   "derivation": "uma forma de 3080;"
+  },
+  {
+   "strongs": "H3115",
+   "sha256": "edbdaf64b9ed8ceb87938a3b724ccfbc231a4d554ac3aad68a6e8375fe7c9d67",
+   "gloss": "Joquebede",
+   "definition": "Joquebede, a mãe de Moisés",
+   "derivation": "de 3068 contraído e 3513; glorificado por Jeová;"
+  },
+  {
+   "strongs": "H3116",
+   "sha256": "be3dd2f6ca3b55a86848f5ce7e2b5a51332681d93a93fcdcafacc16779ba9239",
+   "gloss": "Jucal",
+   "definition": "Jucal, um israelita",
+   "derivation": "uma forma de 3081;"
+  },
+  {
+   "strongs": "H3117G",
+   "sha256": "3a6c0268f5e9f08d30a63d4b88bbb63b06e37b632f8bbedc2ea2033c8624fee7",
+   "gloss": "dia",
+   "definition": "um dia (como as horas quentes), seja literal (do nascer ao pôr do sol, ou de um pôr do sol ao seguinte), ou figurado (um espaço de tempo definido por um termo associado), (frequentemente usado como advérbio)",
+   "derivation": "de uma raiz não usada que significa estar quente;"
+  },
+  {
+   "strongs": "H3117H",
+   "sha256": "3da0db3c757facb5993dd27065c3089f050abfcfcb019ff4570ad8a1a358e0bf",
+   "gloss": "dia: velho",
+   "definition": "um dia (como as horas quentes), seja literal (do nascer ao pôr do sol, ou de um pôr do sol ao seguinte), ou figurado (um espaço de tempo definido por um termo associado), (frequentemente usado como advérbio)",
+   "derivation": "de uma raiz não usada que significa estar quente;"
+  },
+  {
+   "strongs": "H3117I",
+   "sha256": "f94814840eadf4ed7616d3fd97db449cd9c446ed57fda7bb7988df48a7dbf6d6",
+   "gloss": "dia: ano",
+   "definition": "um dia (como as horas quentes), seja literal (do nascer ao pôr do sol, ou de um pôr do sol ao seguinte), ou figurado (um espaço de tempo definido por um termo associado), (frequentemente usado como advérbio)",
+   "derivation": "de uma raiz não usada que significa estar quente;"
+  },
+  {
+   "strongs": "H3117J",
+   "sha256": "51de22f4c6a1d18385b81d1aa978a309e924aad52c783f5063aaca531d76d8ce",
+   "gloss": "dia: diariamente",
+   "definition": "um dia (como as horas quentes), seja literal (do nascer ao pôr do sol, ou de um pôr do sol ao seguinte), ou figurado (um espaço de tempo definido por um termo associado), (frequentemente usado como advérbio)",
+   "derivation": "de uma raiz não usada que significa estar quente;"
+  },
+  {
+   "strongs": "H3117K",
+   "sha256": "5177309b5cba5481bb7ad7b188f895598593cd9ebe5db32d3cd18a1ab1f8390f",
+   "gloss": "dia: sempre",
+   "definition": "um dia (como as horas quentes), seja literal (do nascer ao pôr do sol, ou de um pôr do sol ao seguinte), ou figurado (um espaço de tempo definido por um termo associado), (frequentemente usado como advérbio)",
+   "derivation": "de uma raiz não usada que significa estar quente;"
+  },
+  {
+   "strongs": "H3117L",
+   "sha256": "de7e9759b3c7d500a9da666ffee07de827de3d7d40e4ec9edf34ae89d5588a02",
+   "gloss": "dia: hoje",
+   "definition": "um dia (como as horas quentes), seja literal (do nascer ao pôr do sol, ou de um pôr do sol ao seguinte), ou figurado (um espaço de tempo definido por um termo associado), (frequentemente usado como advérbio)",
+   "derivation": "de uma raiz não usada que significa estar quente;"
+  },
+  {
+   "strongs": "H3118",
+   "sha256": "95325821620b98b49b06457da58b7ab6a9d50788a063f0e3e8ac8cb707e2c6bd",
+   "gloss": "dia",
+   "definition": "um dia",
+   "derivation": "(aramaico) correspondente a 3117;"
+  },
+  {
+   "strongs": "H3119",
+   "sha256": "f8f1f21618a8e3368925c20b25ff8e9962ea74021737a2170e03928226c4c4c4",
+   "gloss": "de dia",
+   "definition": "diariamente",
+   "derivation": "de 3117;"
+  },
+  {
+   "strongs": "H3120G",
+   "sha256": "e400e0cf9d73ef4c70ec06b45f3a53cf8c3e71f756ca3b12626de25299d7e4d4",
+   "gloss": "Javã",
+   "definition": "Javã, nome de um filho de Joctã, e da raça (os jônios, isto é, os gregos) dele descendente, com seu território; também de um lugar na Arábia",
+   "derivation": "provavelmente do mesmo que 3196; efervescente (isto é, quente e ativo);"
+  },
+  {
+   "strongs": "H3120H",
+   "sha256": "e0fd84e56569d7a66a1751d9cc28d2a1ff22a305157b9563ef8a36a5d3472c79",
+   "gloss": "Grécia",
+   "definition": "Javã, nome de um filho de Joctã, e da raça (os jônios, isto é, os gregos) dele descendente, com seu território; também de um lugar na Arábia",
+   "derivation": "provavelmente do mesmo que 3196; efervescente (isto é, quente e ativo);"
+  },
+  {
+   "strongs": "H3121",
+   "sha256": "fba3421e6f9164a7a9f8af2c14af18b85e80721fa7f0680a734639bc23886961",
+   "gloss": "lamaçal",
+   "definition": "propriamente, borra (como algo que fermenta); daí, lama",
+   "derivation": "do mesmo que 3196;"
+  },
+  {
+   "strongs": "H3122G",
+   "sha256": "be8f5718ffea318c758d77bf9f91b76cc067933a7ebfcdb735669955d52c7611",
+   "gloss": "Jonadabe",
+   "definition": "Jonadabe, nome de um israelita e de um recabita",
+   "derivation": "uma forma de 3082;"
+  },
+  {
+   "strongs": "H3122H",
+   "sha256": "be8f5718ffea318c758d77bf9f91b76cc067933a7ebfcdb735669955d52c7611",
+   "gloss": "Jonadabe",
+   "definition": "Jonadabe, nome de um israelita e de um recabita",
+   "derivation": "uma forma de 3082;"
+  },
+  {
+   "strongs": "H3123",
+   "sha256": "06c7e6bc444529ad7ce7dcdf1cd7bfd57c541375d932543ec701a68c9554ee90",
+   "gloss": "pomba",
+   "definition": "uma pomba (aparentemente pelo calor do seu acasalamento)",
+   "derivation": "provavelmente do mesmo que 3196;"
+  },
+  {
+   "strongs": "H3124",
+   "sha256": "c90294ab3c506a6a0bfdddd9247f5ca2f879d320248c726742d425fa079dcbac",
+   "gloss": "Jonas",
+   "definition": "Jonas, um israelita",
+   "derivation": "o mesmo que 3123;"
+  },
+  {
+   "strongs": "H3125",
+   "sha256": "68d2f60770bddc40721d3857ea35a3eef721d23df2fc589d4a9ed31f722f521a",
+   "gloss": "grego",
+   "definition": "um javanita, ou descendente de Javã",
+   "derivation": "patronimicamente de 3121;"
+  },
+  {
+   "strongs": "H3126",
+   "sha256": "cea9c084c583b255e1819a2ccab6ee9039c473d3ba3a3596152f16ca02cb1bd7",
+   "gloss": "renovo",
+   "definition": "um rebento; daí, um ramo (de uma árvore cortada que rebrota)",
+   "derivation": "particípio ativo de 3243;"
+  },
+  {
+   "strongs": "H3127",
+   "sha256": "d61f901c37af8d2e0c3508bb4228859a7cb8111110bffa9fd377f32cc177e82b",
+   "gloss": "broto",
+   "definition": "um broto",
+   "derivation": "feminino de 3126;"
+  },
+  {
+   "strongs": "H3128",
+   "sha256": "e8cd00c9b61244b2b59b49e11377451f94f608ac2daad4c575987368faf70445",
+   "gloss": "Pomba nos Terebintos Distantes",
+   "definition": "pomba do silêncio (isto é, o Israel mudo) das (isto é, entre as) distâncias (isto é, estranhos); o título de uma cantiga (usado como nome de sua melodia)",
+   "derivation": "de 3123 e 482 e o plural de 7350;"
+  },
+  {
+   "strongs": "H3129G",
+   "sha256": "cc9e775b5d7b34c568b53870c02600e40369679ec23bad64214a785ad95eefd1",
+   "gloss": "Jônatas",
+   "definition": "Jônatas, nome de dez israelitas",
+   "derivation": "uma forma de 3083;"
+  },
+  {
+   "strongs": "H3129H",
+   "sha256": "cc9e775b5d7b34c568b53870c02600e40369679ec23bad64214a785ad95eefd1",
+   "gloss": "Jônatas",
+   "definition": "Jônatas, nome de dez israelitas",
+   "derivation": "uma forma de 3083;"
+  },
+  {
+   "strongs": "H3129I",
+   "sha256": "cc9e775b5d7b34c568b53870c02600e40369679ec23bad64214a785ad95eefd1",
+   "gloss": "Jônatas",
+   "definition": "Jônatas, nome de dez israelitas",
+   "derivation": "uma forma de 3083;"
+  },
+  {
+   "strongs": "H3129J",
+   "sha256": "cc9e775b5d7b34c568b53870c02600e40369679ec23bad64214a785ad95eefd1",
+   "gloss": "Jônatas",
+   "definition": "Jônatas, nome de dez israelitas",
+   "derivation": "uma forma de 3083;"
+  },
+  {
+   "strongs": "H3129K",
+   "sha256": "cc9e775b5d7b34c568b53870c02600e40369679ec23bad64214a785ad95eefd1",
+   "gloss": "Jônatas",
+   "definition": "Jônatas, nome de dez israelitas",
+   "derivation": "uma forma de 3083;"
+  }
+ ]
+}

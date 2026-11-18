@@ -1,0 +1,798 @@
+{
+ "batch": "037",
+ "lang": "pt",
+ "entries": [
+  {
+   "strongs": "G1236",
+   "sha256": "5aea7833c0da7b72be8081e23daed7c0ab5d7ca2c3d30c0c7ecc93c175ed1cf9",
+   "gloss": "viver",
+   "definition": "δι-άγω\n[na LXX por עבר hi., etc. ;]\n1. transportar.\n2. De tempo, passar: βίον, 1Ti.2:2; absol., viver, antes de ἐν, Tit.3:3.†"
+  },
+  {
+   "strongs": "G1237",
+   "sha256": "0f49d1cea17d6a42b2bf80caa61528b6dcfbd5f6b65f08cabc29fc003db4a445",
+   "gloss": "receber por sua vez",
+   "definition": "δια-δέχομαι\n[na LXX por מִשְׁנֶה (Deiss., BS, 115), פַּרְבָּר ;]\nreceber por meio de outro, receber por sua vez: Act.7:45 (RV, in their turn; veja Field, Notes, 116).†",
+   "note": "RV's English rendering 'in their turn' kept as quoted."
+  },
+  {
+   "strongs": "G1238",
+   "sha256": "74fb6a47d81ddf4699fcc6a3618c3712393a09467a687e9056877c609e62fd76",
+   "gloss": "diadema",
+   "definition": "διάδημα, -τος, τό\n(διαδέω, atar em volta), [na LXX por כֶּתֶר (como Est.1:11), etc. ;]\na faixa em volta da τιάρα de um rei persa; um diadema, a insígnia da realeza: Rev.12:3 13:1 19:12.†\nSYN.: στέφανος, a insígnia \"da vitória, do valor, da alegria nupcial, do júbilo festivo \" (mas veja M, Th., i, 219; cf. DB, i, 530, 604)."
+  },
+  {
+   "strongs": "G1239",
+   "sha256": "b39632dd8c92fb44a711a68686729ddcaf76a11e92a1f1252ab05e51dc05e11e",
+   "gloss": "distribuir",
+   "definition": "δια-διδωμι\n[na LXX por חלק pi., etc. ;]\n1. entregar, passar adiante: Rev.17:13, Rec.\n2. distribuir: Luk.11:22 18:22, Jhn.6:11, Act.4:35†"
+  },
+  {
+   "strongs": "G1240",
+   "sha256": "0ede9dae1f075ceddf57203b75bddad9fcf25cac65b422861ea19350fd253817",
+   "gloss": "sucessor",
+   "definition": "διά-δοχος, -ου, ὁ, ἡ\n(διαδέχομαι), [na LXX: 1Ch.18:17 (לְיַד), 2Ch.26:11 (שַׂר) 28:7 (מִשְׁנֶה), Sir.46:1 48:8, 2Ma.4:29 14:26 * ;]\num sucessor: Act.24:27 (para o uso na LXX e nos π. no sentido de oficial da corte, veja Deiss., BS, 115).†"
+  },
+  {
+   "strongs": "G1241",
+   "sha256": "afddc488c6e1d9fe1a954dc2c9b305e14c8246c8cb60f884aee3b02a59ace0cd",
+   "gloss": "cingir",
+   "definition": "δια-ζώννυμι, (também -ννύω)\n[na LXX por חֲגוֹר, Eze.23:15 A * ;]\ncingir em volta: ἑαυτόν, Jhn.13:4; pass., ib. 13:5; méd., cingir-se com: com acusativo, Jhn.21:7.†"
+  },
+  {
+   "strongs": "G1242",
+   "sha256": "12cbc6661db41629e5a95db6694375f55893b86e514d9ab6f97986afb2ce33eb",
+   "gloss": "aliança",
+   "definition": "διαθήκη, -ης, ἡ\n(διατίθημι), [frequentemente na LXX, e quase sempre por בְּרִית ;]\n1. como geralmente no cl., uma disposição, testamento, última vontade (Plat., al.): Gal.3:15 (R, mg., mas veja Lft., em l.), Heb.9:16, 17 (R, txt.; MM, Exp., xi; Milligan, NTD, 75; Abbott, Essays, 107; Deiss., LAE, 341; mas veja infr.).\n2. Como na LXX (por בְּרִית) = cl. συνθήκη, uma convenção, acordo, aliança (exc. nos casos disputados mencionados acima, sempre entre Deus e o homem, \"talvez com o sentimento de que o composto em δια- era mais adequado do que o em συν- para uma aliança com Deus---συνθ. poderia sugerir termos iguais,\" MM, Exp., l. com): Gal.3:15 (R, txt., mas veja supr., e cf. Thayer, veja a palavra), Heb.9:16, 17 (R, mg., Westc., em l.; Hatch, Essays, 47; mas veja supr.), Mat.26:28, Mrk.14:24, Luk.1:72, Act.3:25 7:8, Rom.11:27\" (LXX), 2Co.3:14, Gal.3:17, Heb.7:22 8:6, ib. 9, 10\" (LXX) 9:4, 15-17 20\" (LXX) 10:16 (LXX), 29 12:24 13:20, Rev.11:19; καινὴ δ., Mat.26:28, e Mrk.14:24 (R, mg.), Luk.22:20, 1Co.11:25, 2Co.3:6, Heb.8:8\" (LXX) 9:15; pl. Rom.9:4, Gal.4:24, Eph.2:12.†",
+   "note": "'Essays' is the title of Abbott's and Hatch's books, kept."
+  },
+  {
+   "strongs": "G1243",
+   "sha256": "0929bbedf1ad338498f496dc9f45a2ed49dd187ce767f1b7f9d2b4d818bc7236",
+   "gloss": "variedade",
+   "definition": "δι-αίρεσις, -εως, ἡ\n(διαιρέω), [na LXX principalmente por מַחֲלֹקֶת ;]\n1. uma distinção, diferença.\n2. uma divisão, distribuição: 1Co.12:4-6 (cf. διαιρέω; Cremer, 616).†"
+  },
+  {
+   "strongs": "G1244",
+   "sha256": "5815652d7509d1938e0f4faf56b7b5a43da31517844222cdb84b4feb6ba92ca2",
+   "gloss": "distribuir",
+   "definition": "δι-αιρέω, -ῶ\n[na LXX por בּתר (como Gen.15:10), חלק (como Jos.18:5), etc. ;]\n1. dividir em partes, cortar em pedaços.\n2. distribuir: com acusativo de coisa(s), dativo de pessoa(s), Luk.15:12, 1Co.12:11.†"
+  },
+  {
+   "strongs": "G1245",
+   "sha256": "7a03e221ff862e174a3470de31624c52cbc3de74e92dbcb7b5d46465f29d91cf",
+   "gloss": "limpar inteiramente",
+   "definition": "δια-καθαρίζω\n= θαίρω: Mat.3:12.†\nδια-καθαίρω,\nlimpar completamente: Luk.3:17.†"
+  },
+  {
+   "strongs": "G1246",
+   "sha256": "6ce323f4053cf8a2cb8de0fe6f4fa6360a42d2ea4700a4e646d105e41d2bc1b2",
+   "gloss": "refutar",
+   "definition": "δια-κατ-ελέγχομαι\nrefutar completamente: Act.18:28.†"
+  },
+  {
+   "strongs": "G1247",
+   "sha256": "4b70b08f6098c65d018fff9e8d5d486a8cb456c7a4762a298fc8f0c28e9889a0",
+   "gloss": "servir",
+   "definition": "διακονέω, ῶ\n(δίακονος);\n1. em geral, ministrar, servir, atender, especialmente à mesa, prestar um serviço a alguém, cuidar das necessidades de alguém: absol., Mat.20:28, Mrk.10:45, Luk.10:40 22:26, 27, Jhn.12:2, 1Pe.4:11; ὅσα διηκόνησεν, 2Ti.1:18; com dativo de pessoa(s), Mat.4:11 8:15 25:44 27:55, Mrk.1:13, 31 15:41, Luk.4:39 8:3 12:37 17:8, Jhn.12:26, Act.6:2 19:22, Rom.15:25, Phm 13, Heb.6:10.\n2. servir como diácono: 1Ti.3:10, 3:13.\n3. C. acusativo de coisa(s), ministrar, prover, prover por ministração: 1Pe.1:12 4:10; pass., 2Co.3:3 8:19, 20.†\nSYN.: λειτουργέω, veja (Cremer, 179).",
+   "note": "Source misprints 'serre' (serve) and 'cure' (care) read as meant."
+  },
+  {
+   "strongs": "G1248",
+   "sha256": "2f8f49804ae8dedd5adbf087f839ef5cdbd8a4b5fbaf886b91b74381a1859c8c",
+   "gloss": "serviço",
+   "definition": "διακονία, -ας, ἡ\n(διάκονος), [na LXX por נַעַר, שָׁרַת pi.: Est.6:3, Est.6:5 A; 1Ma.11:58 * ;]\no ofício e o trabalho de um διάκονος, serviço, ministério;\n(a) de deveres domésticos (Field, Notes, 63): Luk.10:40\n(b) espec. da ministração religiosa e do exercício das funções ministeriais na Igreja: Act.1:17, 25 6:1, 4 11:29 12:25 20:24; 21:19, Rom.11:13 12:7 15:31, 1Co.16:15, 2Co.4:1 6:3 8:4 9:1, 13, Eph.4:12, Col.4:17, 1Ti.1:12, 2Ti.4:5, 11, Heb.1:14, Rev.2:19; δ. τ. θανάτου, 2Co.3:7; τ. πνεύματος, 2Co. 3:8; τ. κατακρίσεως, τ, δικαιοσύνης, 2Co. 3:9; τ. καταλλαγῆς, 2Co. 5:18; τ. λειτουργίας, 2Co. 9:12; com genitivo obj., τὴν ὑμῶν δ., ib. 11:8; pl., 1Co.12:5.†"
+  },
+  {
+   "strongs": "G1249",
+   "sha256": "d14b37b47a44c5f38e5a6e58adb4590df362cdafa4a1bb398fb145449450ef36",
+   "gloss": "servo",
+   "definition": "διάκονος, -ου, ὁ, ἡ\n(derivação desconhecida), [na LXX por נַעַר, שָׁרַת pi.: Est.6:3, 5, א B Est.1:10 2:2, Pro.10:4, 4Ma.9:17 * ;]\n1. em geral, um servo, assistente, ministro: Mat.20:26 22:13 23:11, Mrk.9:35 10:43, Jhn.2:5, 9, 1Co.3:5, Gal.2:17, Eph.6:21, Col.4:7; δ. θεοῦ, Rom.13:4, 2Co.6:4, 1Th.3:2; δ. Χριστοῦ, 2Co.11:23, Col.1:7, 1Ti.4:6; cf. ὁ δ. ὁ ἐμός, Jhn.12:26; δ. περιτομῆς, Rom.15:8; δ. καινῆς διαθήκης, 2Co.3:6; δ. δικαιοσύνης, 2Co.11:15; δ. [εὐαγγελίου], Eph.3:7, Col.1:23; δ. [ἐκκλησίας], Col.1:25.\n2. Como termo técnico para um oficial da Igreja (assim em tempos pré-cristãos, veja M, Th., I, 32), um diácono: Php.1:1, 1Ti.3:8, 12; fem. (cf. ecl. διακονίσσα), Rom.16:1 (cf. 1Ti.3:11, e CGT, em l., também M, Th., l. com).†\nSYN.: δοῦλος, escravo; θεράπων, servo que age voluntariamente; ὑπηρέτης, servo, assistente, que pela etimol. sugere subordinação. Todos estes implicam relação com uma pessoa, em distinção da qual δ. representa antes o servo em relação ao seu trabalho. Cf. também λειτουργός, um servidor público, em que se destaca a ideia de serviço à comunidade; οἰκέτης, um servo doméstico."
+  },
+  {
+   "strongs": "G1250",
+   "sha256": "eac83739b805224d2716398868e607bcb5b5d1b62eb6e3f43ac8488ba4b842cb",
+   "gloss": "duzentos",
+   "definition": "διακόσιοι, -αι, -α\nduzentos: Mrk.6:37, e al."
+  },
+  {
+   "strongs": "G1251",
+   "sha256": "cf84e97ef65542ce6ca2ed373f7cf23185c42c4f931b3d44582544e733a1bd5a",
+   "gloss": "dar audiência",
+   "definition": "δι-ακούω\n[na LXX: Deu.1:16 (שׁמע), Job.9:33 (יָד שִׁית hi.)* ;]\nouvir até o fim, ouvir plenamente; tecnicamente, ouvir judicialmente (como De, l. com; cf. Deiss., BS, 230): Act.23:35.†"
+  },
+  {
+   "strongs": "G1252",
+   "sha256": "7301073cce80fafc014feffeee6bc691d57721ae033d882d2b23c8f60b54f1a1",
+   "gloss": "julgar/duvidar",
+   "definition": "δια-κρίνω\n[na LXX por שׁפט, דִּין, etc. ;]\n1. separar, daí, distinguir, discriminar, discernir: μηδὲν δ., Act.11:12; οὐδὲν δ. μεταξύ, Act.15:9; σε, 1Co.4:7; τὸ σῶμα, 1Co.11:29.\n2. resolver, decidir, julgar, arbitrar: Mat.16:3, 1Co.6:5 11:29 (ICC, em l.), ib. 31 14:29. Méd. e pass.;\n1. obter uma decisão, contender, disputar: antes de πρός, Act.11:2; com dativo (mas veja ICC, em l.), Ju 9; absol., Ju 22 (R,mg.).\n2. Helenístico (NT e ecl., mas não LXX), estar dividido na mente, hesitar, duvidar: Mat.21:21 Rom.14:23, Jas.1:6; ἐν ἐαυτῷ, Jas.2:4; ἐν τ. καρδίᾳ, Mrk.11:23; μηδὲν δ., Act.10:20; δ. τ. ἀπιστίᾳ, Rom.4:20, Ju 22 (R, txt.).†"
+  },
+  {
+   "strongs": "G1253",
+   "sha256": "20fe282ffe7724fe22f02b89be3adffecd9da2e8bcb99c3ae7b957a038033f0a",
+   "gloss": "discernimento",
+   "definition": "διά-κρισις, -εως, ἡ\n(διακρίνω) [na LXX por מִפְלָשׂ, Job.37:16 * ;]\no ato de julgar, discernimento: Rom.14:1, 1Co.12:10, Heb.5:14.†"
+  },
+  {
+   "strongs": "G1254",
+   "sha256": "7c0141ebe2f01e316a74f27c4218dda905d3e85dd7ea519564c21076badbd30e",
+   "gloss": "impedir",
+   "definition": "δια-κωλεύω\n[na LXX: Jdth.4:7 12:7 * ;]\nimpedir, deter: com acusativo, Mat.3:14.†"
+  },
+  {
+   "strongs": "G1255",
+   "sha256": "aaa831f6472dbd2a7dcf36c605b9a17695dfbf61cf09ef368b01898bf51c781a",
+   "gloss": "discutir",
+   "definition": "δια-λαλέω, -ῶ\n[em Sm.: Ps 50(51):16, e al. ;]\n1. conversar com: πρός, Luk.6:11.\n2. comentar: pass., Luk.1:65.†"
+  },
+  {
+   "strongs": "G1256",
+   "sha256": "596a5e6083ef646ac376b95b214b700e3712de4ef2b727fb3cfe1fec3abd0cfb",
+   "gloss": "disputar",
+   "definition": "δια-λέγομαι\n(méd. de διαλέγω, escolher, distinguir, como depoen.), [na LXX: Exo.6:27, Isa.63:1 (דּבר pi.), Jdg.8:1 (ריב), 1Es.8:46, Est.5:2, Sir.14:20, 2Ma.11:20 * ;]\nconversar com, discorrer (veja Cl. Rev., i, 45), discutir, argumentar: Act.18:4 19:8,9 20:9; com dativo de pessoa(s), Act.17:17 18:19 20:7, Heb.12:5; antes de πρός, Mrk.9:34, Act.17:17 24:12; περί Act.24:25, Ju 9; ἀπὸ τ. γραφῶν, Act.17:2.†"
+  },
+  {
+   "strongs": "G1257",
+   "sha256": "4fd545b1c70daac3076b3732e5ef912f429beb3d07bae670187af18f02ed2edd",
+   "gloss": "cessar",
+   "definition": "δια-λείπω\n[na LXX por יחל (como 1Ki.10:8), etc. ;]\ninterromper, deixar por algum tempo: Luk.7:45.†"
+  },
+  {
+   "strongs": "G1258",
+   "sha256": "6425b7032c48a9e2f96b20a585a2d66ec80b0297b190025f9b65dc0863373ea9",
+   "gloss": "língua",
+   "definition": "διά-λεκτος, -ου, ἡ\n(διαλέγομαι), [na LXX: Dan LXX 1:4 (לָשׁוֹן), Est.9:26 * ;]\n1. conversação, discurso, fala (Plat., Dem., al.).\n2. Como em Polyb. e escritores posteriores, a língua ou o dialeto de um país ou distrito particular: Act.1:19 2:6, 8 21:40 22:2 26:14.†"
+  },
+  {
+   "strongs": "G1259",
+   "sha256": "fa01d10c80b3c8d74e0f96d86ba43dfa6b358df425adf6bf64d7d1edeefdf8f6",
+   "gloss": "reconciliar-se",
+   "definition": "δι-αλλάσσω\n[na LXX: 1Ki.29:4 (רָצָה hitp.), I Est.4:31, al. ;]\n1. mudar, trocar.\n2. trocar a inimizade pela amizade, reconciliar: pass., com dativo de pessoa(s), Mat.5:24. \"A palavra denota concessão mútua depois de hostilidade mútua, ideia ausente de καταλλ-,\" veja (Lft., Notes, 288; cf. Deiss., LAE, 178.15; Cremer, 91, 632).†"
+  },
+  {
+   "strongs": "G1260",
+   "sha256": "5e08b7099ac2de146f4fd6d0c1bbaffccbf8a6ec857174fd20944b87811178cf",
+   "gloss": "discutir",
+   "definition": "δια-λογίζομαι, depoen.\n[na LXX principalmente por חשׁב, frequentemente nos Sl. ;]\n1. acertar contas (Dem.).\n2. considerar, raciocinar (Isocr.): Luk.1:29 5:21; ἐν τ. καρδία, Mrk.2:6, 8, Luk.5:22; περί Luk.3:15; ἐν ἑαυτῷ (-οῖς), Mat.16:7-8, Mrk.2:8, Luk.12:17; πρὸς ἑ., Mrk.9:33 11:31, Luk.20:14; παρ᾽ ἑ., Mat.21:25 (ἐν ἑ., T, WH, mg.); πρὸς ἀλλήλους, Mrk.8:16; ὅτι, Mrk.8:17, Jhn.11:50, Rec. (DB, i, 611; Cremer, 400).†"
+  },
+  {
+   "strongs": "G1261",
+   "sha256": "a5c57bdcd665a8651539aae5944e4384795dfb7989c7b207add75c3e7e02078e",
+   "gloss": "raciocínio",
+   "definition": "δια-λογισμός, -οῦ, ὁ\n(διαλογίζομαι) [na LXX principalmente por מַחֲשָׁבָה ;]\num pensamento, raciocínio, questionamento interior: Mat.15:19, Mrk.7:21, Luk.2:35 5:22 6:8 9:46, 47 24:38, Rom.1:21 14:1, 1Co.3:20\" (LXX), Php.2:14; κριταὶ δ. πονηρῶν, genitivo de qualidade (cf. Pro.12:5), Jas.2:4; χωρὶς ὀργῆς καὶ δ. (onde talvez δ., como מְזִמָּה, em Ps 138(139):20, al., implique má intenção), 1Ti.2:8 (veja Hort, em l.; cf. Cremer, 400).†"
+  },
+  {
+   "strongs": "G1262",
+   "sha256": "79d6a7bacb30e0fc24e327bdbc75b0b6af52799fb1561b850b753201ec83455d",
+   "gloss": "dispersar",
+   "definition": "δια-λύω\n[na LXX por אבה, חבל, etc. ;]\nseparar, dissolver; de uma assembleia, pass., dispersar-se: Act.5:36.†"
+  },
+  {
+   "strongs": "G1263",
+   "sha256": "feb5a0e89853b422c5f0c52264c152d2d5fdef1dba064db59c2cb80154b67e00",
+   "gloss": "testemunhar solenemente",
+   "definition": "δια-μαρτύρομαι, depoen., de origem jônica, intensivo do simples μαρτύρομαι, veja,\n[na LXX principalmente por עוּד hi., geralmente com dativo de pessoa(s), Deu.4:26 8:19, 1Ki.8:9, al. ;]\nprotestar solenemente: Luk.16:28, Act.2:40 8:25 10:42 18:5 20:21, 23, 24 23:11 28:23, 1Th.4:6, Heb.2:6; em adjuração, antes de ἐνώπιον τ. θεοῦ, 1Ti.5:21, 2Ti.2:14 4:1 (Cremer, 415).†"
+  },
+  {
+   "strongs": "G1264",
+   "sha256": "045d9c8a39b58a2b4b4c9a7ea48147113fd5fac2de380e3d4984bf7f0146a3b8",
+   "gloss": "contender asperamente",
+   "definition": "δια-μάχομαι\n[na LXX por לחם ni., Dan LXX 10:20; Sir.8:1, 3 38:28 51:19 * ;]\n1. lutar contra.\n2. Em discussão, contender: Act.23:9.†"
+  },
+  {
+   "strongs": "G1265",
+   "sha256": "8c5357518951b953be36c1ad8f57285e62e4481f6dad836d3e345ba99fdf5a66",
+   "gloss": "permanecer",
+   "definition": "δια-μένω\n[na LXX por עמד, etc.;]\npermanecer, continuar: Luk.1:22 22:28, Gal.2:5, Heb.1:11\" (LXX), 2Pe.3:4.†"
+  },
+  {
+   "strongs": "G1266",
+   "sha256": "a34cbed3915931f45ff950552ffb7eb950090c10b8f83a737124fda5d4a10969",
+   "gloss": "dividir",
+   "definition": "δια-μερίζω\n[na LXX principalmente por חלק pi. ;]\n1. distribuir: com dativo de pessoa(s), Act.2:45; antes de εἰς, Luk.22:17, pass., Act.2:3. Méd., distribuir entre si: Mat.27:35, Mrk.15:24, Luk.23:34; com ἑαυτοῖς redundante, Jhn.19:24 (LXX) (veja M, Pr., 157).\n2. dividir, separar: pass., antes de ἐπί, com acusativo, Luk.11:17-18; ἐπί, com dativo, Luk.12:52-53.†"
+  },
+  {
+   "strongs": "G1267",
+   "sha256": "e082f5c9d6b0481bbbd4d279b5b1d284b3c859e834f288614d675e03e2996c73",
+   "gloss": "divisão",
+   "definition": "δια-μερισμός, -οῦ, ὁ\n(διαμερίζω), [na LXX: Eze.48:29 (מַחֲלֹקֶת), Mic.7:12 * ;]\numa divisão: o oposto de εἰρήνη, Luk.12:51.†"
+  },
+  {
+   "strongs": "G1268",
+   "sha256": "767283124cb1e565e253909040655d7df0b3e7f12f8fc17a567482d1b8138a63",
+   "gloss": "espalhar",
+   "definition": "δια-νέμω\n[na LXX por חלק, Deu.29:25 * ;]\ndistribuir, dividir: pass., ser espalhado, Act.4:17.†"
+  },
+  {
+   "strongs": "G1269",
+   "sha256": "3eb971342e132bab670c8d05057313269efe29b5656bf8b5b497acfcc1b13402",
+   "gloss": "fazer sinais",
+   "definition": "δια-νεύω\n[na LXX: Ps 34(35):19 (קרץ), Sir.27:22 * ;]\npiscar para, acenar com a cabeça para, fazer sinal a: Luk.1:22.†"
+  },
+  {
+   "strongs": "G1270",
+   "sha256": "c8ef67b93de60587966bc94ae5caa0b3dc8e6f8575deb29fb332600fcd445bdb",
+   "gloss": "pensamento",
+   "definition": "δια-νόημα, -τος, τό\n(διανοέομαι, pensar), [na LXX por מַחֲשָׁבָה, etc., Isa.55:9, al., frequentemente em Sir ;]\num pensamento: Luk.11:17.†"
+  },
+  {
+   "strongs": "G1271",
+   "sha256": "c0b00f59619fde4780356a0f9462042883a07e9d055c07db57202e04e2b16e3d",
+   "gloss": "mente",
+   "definition": "διάνοια, -ας, ἡ\n[na LXX principalmente por לֵב, לֵבָב ;]\no entendimento, a mente: Luk.1:51, Eph.4:18, Col.1:21, 1Pe.1:13, 2Pe.3:1, 1Jn.5:20; pl., Eph.2:3; em citações da LXX, Mat.22:37, Mrk.12:30, Luk.10:27, Heb.8:10 10:16 (Cremer, 79, 438).†"
+  },
+  {
+   "strongs": "G1272",
+   "sha256": "401e5f020df0993b6dee354a99c9628cbbd016187d379998ba3b2b5485687f9e",
+   "gloss": "abrir",
+   "definition": "δι-αν-οίγω\n[na LXX por פֶּטֶר (Ex, Nu), פָּקַח, פָּתַח, etc. ;]\nabrir completamente, abrir: Luk.2:23 (LXX); pass., Mrk.7:34, Act.7:56. Metafórico, δ. τ. νοῦν, Luk.24:45, τ. καρδίαν, Act.16:14, pass., οἱ ὀφθαλμοί, Luk.24:31; de explicar, τ. γραφάς, Luk.24:32, Act.17:3.†"
+  },
+  {
+   "strongs": "G1273",
+   "sha256": "b21ace8f086165d374bc54f89ea22c2a50c97d6158c9766b0ec6ac1d9dd7a957",
+   "gloss": "passar a noite",
+   "definition": "δια-νυκτερεύω\n(cf. διημερεύω, passar o dia) [na LXX: Job.2:9 * ;]\npassar a noite: antes de ἐν τ. προσευχῆ, Luk.6:12.†"
+  },
+  {
+   "strongs": "G1274",
+   "sha256": "a26dbdfb96b47eb70e8287587554f1e08f88e390ef2b73911eba1984f74b3143",
+   "gloss": "continuar",
+   "definition": "δι-ανύω\n[na LXX: 2Ma.12:17 * ;]\n1. realizar plenamente, terminar, completar: Act.21:7 (EV).\n2. Nos escritores tardios (Xen., al., Clem., I ad Cor., xxv, 3), continuar: Ac, l. com (Field, Notes, 134s.).†"
+  },
+  {
+   "strongs": "G1275",
+   "sha256": "27dc13c331695fbc8f96c8ae7b16f4b87486c6710946cb7572736295eec59ea0",
+   "gloss": "sempre",
+   "definition": "δια-παντός, veja διά, com genitivo\nδιά (antes de vogal δ᾽, exc. Rom.8:10, 2Co.5:7, e em nomes próprios; Tdf., Pr., 94),\nprep. com genitivo, acusativo, como no cl.;\n1. com genitivo, através de;\n(i) de lugar, depois de verbos de movimento ou ação: Mat.2:12 12:43, Mrk.2:23, Luk.4:30, Jhn.4:4, 2Co.11:33, al.; σώζεσθαι (διας-) δ. πυρός, ὕδατος, 1Co.3:15, 1Pe.3:20; βλέπειν δ. ἐσόπτρου, 1Co.13:12; metaforicamente, de um estado ou condição: Rom.14:20, 2Co.2:4 5:7, 10; δ. γράμματος, ἀκροβυστίας (Lft., Notes, 263, 279), Rom.2:27 4:11; δι ̓ὑπομενῆς, Rom.8:25.\n(ii) De tempo;\n(a) durante o qual: Mat.26:61, Mrk.14:58, Luk.5:5; δ. παντὸς τοῦ ζῆν, Heb.2:15; δ. παντός (διαπαντός em Mrk.5:5, Luk.24:53), sempre, continuamente, Mat.18:10, Act.2:25\" (LXX) 10:2 24:16, Rom.11:10\" (LXX), 2Th.3:16, Heb.9:6 13:15.\n(b) dentro do qual: Act.1:3; δ. νυκτός, Act.5:19 16:9 17:10 23:31;\n(c.) depois do qual (Field, Notes, 20; Abbott, JG, 255s.): Mrk.2:1, Act.24:17, Gal.2:1.\n(iii) Do meio ou instrumento;\n(1) da causa eficiente (considerada também como o instrumento): de Deus, Rom.11:36, 1Co.1:9, Gal.4:7, Heb.2:10 7:21; de Cristo, Rom.1:8 5:1, 17, 1Co.15:21, 1Pe.4:11, al.; δ. τ. ὑμῶν δεήσεως, Rom.1:12, 2Co.1:4, Gal.4:23, al.;\n(2) do agente, instrumento ou meio;\n(a) com genitivo de pessoa(s), Mat.11:2, Luk.1:70, Jhn.1:17, Act.1:16, Rom.2:16, 1Co.1:21, Eph.1:5, Heb.2:14, Rev.1:1, al.; ὑπὸ τ. κυρίου δ. τ. προφήτου (δ. τ. κυρίου, 1Th.4:2 (M, Th., em l.); Lft., Rev., 121s.), Mat.1:22 2:15, Rom.1:2; δ. ἐπιστολῆς ὡς δ. ἡμῶν (Field, Notes, 202), 2Th.2:2; δ. Σ. (NTD, 22), 1Pe.5:12;\n(b) com genitivo de coisa(s) (onde no cl. muitas vezes se usa o dativo simples; Jannaris, Gr., 375), Jhn.11:4, Act.5:12; δ. τ. πίστεως, Rom.3:30; δ. λόγου θεοῦ, 1Pe.1:23; δ. παραβολῆς, Luk.8:4; δουλεύειν δ. τ. ἀγάπης, Gal.5:13; δ. ἐπαγγελίας, Gal.3:18,\n2. C. acusativo;\n(i) raramente, como com genitivo, através de (Hom), δ. μέσον Σαμαρίας (ICC, em l.; Bl., §42, 1; Robertson, Gr., 581), Luk.17:11.\n(ii) em razão de, por causa de, por amor de;\n(a) com acusativo de pessoa(s) (M, Pr., 105), Mrk.2:27, Jhn.6:57 11:42, Rom.8:20;\n(b) com acusativo de coisa(s), δ. φθόνον, Mat.27:18, Mrk.15:10; δ. φόβον, Jhn.7:13 20:19; δ. ἀγάπην, Eph.2:4; δ. τοῦτο, freq., por esta causa, portanto, Mat.6:25, Mrk.6:14, Luk.11:49, Jhn.6:65, al.; id. antes de ὅτι, Jhn.5:16 10:17, al.; δ. τί, por quê, Mat.9:11, 14 Mrk.2:18, Jhn.7:45, al.; δ. τό, com inf., Mrk.5:4, Luk.9:7, Jas.4:2.\n3. Em composição,\n(1) através, como em διαβαίνω;\n(2) de separação, em pedaços, como em διασπάω;\n(3) de distribuição, por toda parte, como em διαγγέλλω;\n(4) de transição, como διαλλάσσω;\n(5) de ação \"perfectiva\" (M, Pr., 112s., 115s.), como διαφύγω, διακαθαρίζω.",
+   "note": "Source '(with)' is a garbled '(c)' (after (a), (b)): rendered '(c.)'. 'Rev.' in 'Lft., Rev.' is Lightfoot's work (On a Fresh Revision), kept."
+  },
+  {
+   "strongs": "G1276",
+   "sha256": "cfce418582732b6aa704cb95ad27ad203a70a3611432b9024b54670e93ce9bf3",
+   "gloss": "atravessar",
+   "definition": "δια-περάω, -ῶ\n[na LXX: Deu.30:13, Isa.23:2 (עבר), עבר), 1Ma.6:1-63 * ;]\npassar para o outro lado, atravessar: Mat.9:1; antes de ἐπὶ τ. γῆν, Mat.14:34, Mrk.6:53; εἰς, Mrk.5:21, Act.21:2; πρὸς ἡμᾶς, Luk.16:28.†"
+  },
+  {
+   "strongs": "G1277",
+   "sha256": "b0b4f717eff0a4a4936af7d94bd2dfd1013cee2a07dbf08451ecaf4687f21c9f",
+   "gloss": "navegar através",
+   "definition": "navegar através , Thuc.; εἰς Αἴγιναν (Aristophanes Comicus): metaforicamente, δ. βίον fazer a viagem da vida , (Plato Philosophus) (ML)",
+   "note": "'Aristophanes Comicus' and 'Plato Philosophus' kept as the source's Latin citations."
+  },
+  {
+   "strongs": "G1278",
+   "sha256": "e288e7e1c927df9c4886d67d040eae9311fc8fee2aafec08bbb0dde2a4f13b26",
+   "gloss": "afligir-se",
+   "definition": "δια-πονέω, -ῶ\n[na LXX: Ecc.10:9 (עָצַב ni.), 2Ma.2:28; em Aq.: Gen.6:6, 1Ki.20:3 * ;]\nelaborar com trabalho. Pass., estar exausto, muito perturbado: Mrk.14:4 (WH, mg.), Act.4:2 16:18.†"
+  },
+  {
+   "strongs": "G1279",
+   "sha256": "d2058f13726102bb47a321d2f1630b4d795700a2bf0f3851becfa8c91326082d",
+   "gloss": "atravessar",
+   "definition": "δια-πορεύω\n[na LXX por עָבַר, הָלַךְ, etc. ;]\ntransportar. Pass., passar através, viajar através: absol., Luk.18:36, Rom.15:24; antes de κατὰ πόλεις κ. κώμας, Luk.13:22; διά, com genitivo, Mrk.2:23, Luk.6:1 (cf. Pro.9:12 c., Wis.3:1); com acusativo, Act.16:4.†",
+   "note": "Source 'Pro.9:12 with' is a garbled 'c' (a part of the verse, as in 'Crat., with, 20'): rendered 'Pro.9:12 c.'."
+  },
+  {
+   "strongs": "G1280",
+   "sha256": "1cb74b15814ce037a6de334ab387e3537f2aa4a6bd470d9ac4a61922f4410598",
+   "gloss": "estar perplexo",
+   "definition": "δι-απορέω, -ῶ\n[em Sm.: Psa.77:5, Dan.2:1 * ;]\nestar completamente sem saber o que fazer, estar em grande perplexidade: absol., Act.2:12; antes de διὰ τό, com inf., Luk.9:7; περί, Act.5:24; ἐν ἑαυτῷ, Act.10:17.†"
+  },
+  {
+   "strongs": "G1281",
+   "sha256": "5df732ef1ee1f2602d4cee92bd78eb353e3f1101bd01afc621b4459a0b6d6b8a",
+   "gloss": "lucrar no comércio",
+   "definition": "δια-πραγματεύομαι , \"composto perfectivo\" (veja M, Pr., 118);\n1. examinar a fundo (Plat.).\n2. Nos escritores tardios (Dion. Hal.), ganhar negociando: Luk.19:15.†"
+  },
+  {
+   "strongs": "G1282",
+   "sha256": "524a0056dd2056d955c6175fd10565b08111ae75bc46e4a5bf25ea6284978cad",
+   "gloss": "enfurecer-se",
+   "definition": "δια-πρίω\n[na LXX: 1Ch.20:3 (סוּר) * ;]\nserrar em dois. Pass., metaforicamente (vernác.?), EV, cut to the heart: Act.5:33; antes de τ. καρδίαις αὐτῶν, Act.7:54.†",
+   "note": "EV's English rendering 'cut to the heart' kept as quoted."
+  },
+  {
+   "strongs": "G1283",
+   "sha256": "262cb12c71c038c7c6e824d8a769ac34b70cece91e64864516b3a01ab64e70e6",
+   "gloss": "saquear",
+   "definition": "δι-αρπάζω\n[na LXX por בָּזַז, גָּזַל, שָׁסַס, etc. ;]\nsaquear: Mat.12:29, Mrk.3:27.†"
+  },
+  {
+   "strongs": "G1284",
+   "sha256": "983e6257bbc572ab03a66c73bcb8a1aacf1a3f2db8d50846ca8aa254f730127f",
+   "gloss": "rasgar",
+   "definition": "δια-ρήσσω (assim WH, exc. Ac, l. com), δια-ρρήσσω\n(forma poética e tardia de διαρρήγνυμι), [na LXX principalmente por קָרָא ;]\nromper, arrebentar, rasgar: δεσμά, Luk.8:29; pass., δίκτυα, Luk.5:6; ἱμάτια, χιτῶνας, em dor ou ira (como Gen.37:29, al.), Mat.26:65, Act.14:14, Mrk.14:63.†"
+  },
+  {
+   "strongs": "G1285",
+   "sha256": "9445262fda71a35113c6be4fc0e99f77c0eaaff87b6f568441b691dd9c7c2442",
+   "gloss": "explicar",
+   "definition": "δια-σαφέω, -ῶ\n(σαφής, claro), [na LXX: Deu.1:5 (בָּאַר pi.), Dan LXX 2:6 (חָוָה afel.), I-III Ma 9 * ;]\ntornar claro, explicar plenamente: com acusativo de coisa(s), dativo de pessoa(s), Mat.13:26 18:31.†"
+  },
+  {
+   "strongs": "G1286",
+   "sha256": "e60449e5353f8ed98e18ac05c52ca62c0e70ef5e9b9eb3c10aef2d78b29e0f42",
+   "gloss": "extorquir",
+   "definition": "δια-σείω\n[na LXX: Job.4:14 (פָּחַד hi.), 3Ma.7:21 * ;]\nsacudir violentamente; metaforicamente, intimidar: Luk.3:14.†"
+  },
+  {
+   "strongs": "G1287",
+   "sha256": "61590ae9132fdab08ce8868d331bafce3b160e17cf00085a175301378b2e49b1",
+   "gloss": "espalhar",
+   "definition": "δια-σκορπίζω\n[na LXX por פּוּץ, זָרָה, etc. ;]\nespalhar por toda parte, dispersar: de ovelhas, Mat.26:31 = Mrk.14:27\" (LXX) ; de pessoas, Luk.1:51, Act.5:37, o oposto de συνάγω, Jhn.11:52; de joeirar o grão, Mat.25:24, 26; metaforicamente, de bens, esbanjar, desperdiçar: Luk.15:13 16:1.†"
+  },
+  {
+   "strongs": "G1288",
+   "sha256": "5f5c8b5d4156e1f9857a2d634298aee7b8e2d9a5f9933d20ba0ab0bf0754c0f2",
+   "gloss": "despedaçar",
+   "definition": "δια-σπάω, -ῶ\n[na LXX principalmente por נָתַק, como Jdg.16:9 ;]\nquebrar ou despedaçar: pass., ἁλύσεις, Mrk.5:4; Παῦλος, Act.23:10.†"
+  },
+  {
+   "strongs": "G1289",
+   "sha256": "b946c55f947f65b518b7b69bf13ec5aabd13ad3239bb45bba5fcfe174695a9b5",
+   "gloss": "espalhar",
+   "definition": "δια-σπείρω\n[frequentemente na LXX por פּוּץ, etc. ;]\nespalhar por toda parte, dispersar: Act.8:1, 4 11:19.†"
+  },
+  {
+   "strongs": "G1290",
+   "sha256": "f7be6e658d3cd4ccdbb142281c39f6757371dbb89f9194ae20d735b0d6cdb50e",
+   "gloss": "dispersão",
+   "definition": "δια-σπορά, -ᾶς, ἡ\n(διασπείρω), [na LXX, dos israelitas dispersos e exilados em terras estrangeiras, como Deu.28:25 (זַעֲוָה) Deu.30:4 (נָדַח ni.), Isa.49:6 (נער); por meton., dos próprios exilados (como Psa.147:2, 2Ma.1:27) ;]\numa dispersão: δ. τῶν Ἑλλήνων, Jhn.7:35; metaforicamente, dos cristãos (DB, iii, 782 s.), Jas.1:1, 1Pe.1:1 (veja Hort, em ll).†"
+  },
+  {
+   "strongs": "G1291",
+   "sha256": "807db6ae3adf2eb114fb43fe58d758af080c4b2ca8fdc23fb8987ef899c5ef01",
+   "gloss": "dar ordens",
+   "definition": "δια-στελλω\n[na LXX por בָּדַל hi. (Deu.10:8, al.), זְהַר hi. (Eze.3:18-19, al.), e 19 outras palavras]\n1. dividir, distinguir, definir.\n2. ordenar, encarregar expressamente: pass., τὸ διαστελλόμενον, Heb.12:20. Méd., no gr. tardio com o mesmo sentido (assim Ez, l. com; e al. na LXX; MM, veja a palavra); c. dativo de pessoa(s), Mrk.8:15, Act.15:24; antes de ἵνα, Mat.16:20, Mrk.5:43 7:36 9:9.†",
+   "note": "Source 'a. dative' is a garbled 'c. dat.': rendered 'c. dativo'."
+  },
+  {
+   "strongs": "G1292",
+   "sha256": "52b50cf7e403f955faa83e8308507d80a57cdb0144345ef4db8331952872baf4",
+   "gloss": "intervalo",
+   "definition": "διάστημα, -τος, τό\n(διίστημι), [na LXX por רֶוַח, etc. ;]\num intervalo, espaço: de tempo (Sir, prol. 24), Act.5:7.†"
+  },
+  {
+   "strongs": "G1293",
+   "sha256": "0f4672bf5562e2e68e359f592743ac3213a404cf7dd1a61381c36ef00838d9fd",
+   "gloss": "distinção",
+   "definition": "δια-στολή, -ῆς, ἡ\n(διαστέλλω), [na LXX por פְּדוּת: Exo.8:23, etc. ;]\n1. uma separação.\n2. uma distinção, diferença: Rom.3:22 10:12, 1Co.14:7.†"
+  },
+  {
+   "strongs": "G1294",
+   "sha256": "37b26498ce592b72e4bd51aec7892e4b7ce61069e5c7e269f8f10b7c13b79294",
+   "gloss": "perverter",
+   "definition": "δια-στρέφω\n[na LXX por הָפַךְ, עָקַשׁ, etc. ;]\ndistorcer, torcer; metaforicamente, distorcer, perverter: Luk.23:2, Act.13:8, 10; διεστραμμένος, perverso: Mat.17:17, Luk.9:41, Act.20:30, Php.2:15.†"
+  },
+  {
+   "strongs": "G1295",
+   "sha256": "5cbdcb10c53af7be53e174c1fde165f58970227fde91069522e2c6ca62d68858",
+   "gloss": "salvar",
+   "definition": "δια-σώζω\n[na LXX por מָלַט, יָשַׁע, etc. ;]\nlevar a salvo através de um perigo: Luk.7:3, Act.27:43; antes de πρός, Act.23:24. Pass., chegar a salvo: Act.28:1; ἐπὶ τ. γῆν, Act.27:44; ἐκ τ. θαλάσσης, Act.28:4; δι᾽ ὕδατος, 1Pe.3:20; de doença, recuperar-se: Mat.14:36.†"
+  },
+  {
+   "strongs": "G1296",
+   "sha256": "3e3c450cc6e2831be8fd2fc3eb8b60ae30eeb248f86a1eb430c5d8c68a47901c",
+   "gloss": "ordenança",
+   "definition": "δια-ταγή, -ῆς, ἡ\n(διατάσσω), [na LXX: Est.4:11 (פַּרְשֶׁגֶן)* ;]\nnos escritores tardios (Deiss., LAE, 86 ss.) pelo cl. διάταξις (WH., porém, encontra-se na LXX, Psa.119:91, al.);\n(a) disposição (cf. διάταξις por צָבָא; Sm., 4Ki.23:4, Jer.8:2 19:13); εἰς διαταγὰς ἀγγέλων, AV, pela disposição de anjos (Alf., em l, Field, Notes, 116; mas veja infr.): Act.7:53;\n(b) ordenança (C. I. 3465): Rom.13:2, Act.7:53, R, txt. (e veja mg.; Page e EGT, em l; mas veja também supr.).†"
+  },
+  {
+   "strongs": "G1297",
+   "sha256": "b5dfb3d989d1f6f964f3bf3056bc230940ba72e97ea52eacded2d1c40f43e42a",
+   "gloss": "édito",
+   "definition": "διά-ταγμα, -τος, τό\n(διατάσσω), [na LXX: Est.7:11 (נִשְׁתְּוָן), Est.3:13, Wis.11:7 * ;]\num édito, mandato: Heb.11:23.†"
+  },
+  {
+   "strongs": "G1298",
+   "sha256": "f1f2b09ee5a571f6b75c0a30abd806d1cc0bce788cc3948691cfb5ec917652d2",
+   "gloss": "perturbar",
+   "definition": "δια-ταράσσω\n[em Sm.: 3Ki.20:43 * ;]\nagitar grandemente (lat. perturbare): Luk.1:29,†"
+  },
+  {
+   "strongs": "G1299",
+   "sha256": "70167c7917cafa436334945aac148c4710024accc578b99ca780f4607b37e29a",
+   "gloss": "dirigir",
+   "definition": "δια-τάσσω\n[na LXX por שׂוּם, שָׁמַר, etc. ;]\nencarregar, dar ordens a, designar, dispor, ordenar: com dativo, Mat.11:1, 1Co.9:14 16:1; antes de inf., Luk.8:55, Act.18:2. Méd., 1Co.7:17, Act.20:13; com acusativo, 1Co.11:34; com dativo, Tit.1:5; antes de inf., Act.7:44 24:23. Pass., τὸ διατεταγμένον, Luk.3:13, Act.23:31; τὰ διαταχθέντα, Luk.17:9-10; διαταγείς, Gal.3:19.†"
+  },
+  {
+   "strongs": "G1300",
+   "sha256": "1269531d01f462dd37ffb9630f1d47d1243749213d9cb911d7250f37ed4da8df",
+   "gloss": "continuar",
+   "definition": "δια-τελέω, -ῶ\n[na LXX: Deu.9:7 (הָיָה), Jer.20:7, 18 (כָּלָה), Est.8:13, 2Ma.5:27 * ;]\nprop. trans., realizar; usado com elipse do obj. como intr. (Bl., § 81, 1), e unido a particípios (em Ac, Lc., a adj.; veja Bl., § 73, 4) com sentido adverbial (= continuamente), continuar: Act.27:33.†"
+  },
+  {
+   "strongs": "G1301",
+   "sha256": "f098aa0eec6933449c707499f25d41b8cae78863069b7263db762d8c556771bb",
+   "gloss": "guardar",
+   "definition": "δια-τηρέω, -ῶ\n[na LXX por שָׁמַר, נָצַר, etc.; antes de ἀπό (por מִן), como em Psa.12:7 (8) ;]\nguardar cuidadosamente: Luk.2:51; antes de ἐκ, Act.15:29.†"
+  },
+  {
+   "strongs": "G1302",
+   "sha256": "4ed2276751f84159f338e824841df89d0c580ad562326289425d1f1f211655ab",
+   "gloss": "por quê?",
+   "definition": "δια-τί , por quê, Mat.9:11, 14 Mrk.2:18, Jhn.7:45, al.; δ. τό, com inf., Mrk.5:4, Luk.9:7, Jas.4:2.\n3. Em composição,\n(1) através, como em διαβαίνω;\n(2) de separação, em pedaços, como em διασπάω;\n(3) de distribuição, por toda parte, como em διαγγέλλω;\n(4) de transição, como διαλλάσσω;\n(5) de ação \"perfectiva\" (M, Pr., 112s., 115s.), como διαφύγω, διακαθαρίζω."
+  },
+  {
+   "strongs": "G1303",
+   "sha256": "0142ea53205018b0236e5098960fa5d4a58ce6fbf05399369851df5388b6d019",
+   "gloss": "fazer uma aliança",
+   "definition": "δια-τίθημι\n[na LXX principalmente por כָּרַת, frequentemente δ. διαθήκην (כָּרַת) ;]\ncolocar à parte, ordenar, dispor. Méd., só no NT;\n1. (a) em geral, dispor de; com dativo de pessoa(s), atribuir a alguém, Luk.22:29;\n(b) dispor por testamento, fazer testamento (no cl., δ. διαθήκην também neste sentido): Heb.9:16-17 (mas cf. R, mg., e veja: διαθήκη).\n2. δ. διαθήκην, fazer uma aliança (Aristoph.): com dativo de pessoa(s), Heb.8:10 (LXX); antes de πρ, com acusativo de pessoa(s), Act.3:25, Heb.10:16\" (LXX) (cf. ἀντι-διατίθημι).†"
+  },
+  {
+   "strongs": "G1304",
+   "sha256": "1f9bb88e87579758a2d052e17b0f417e69c07f5634238d70315edaac5a0d8bf3",
+   "gloss": "permanecer",
+   "definition": "δια-τρίβω\n[na LXX Lev.14:8 (יָשַׁב), Jer.35:7 (גּוּר), Tob.11:8, 12, Jdth.10:2, 2Ma.14:23 * ;]\nesfregar com força, gastar esfregando, consumir; δ. χρόνον, ἡμέρας, passar o tempo: Act.14:3, 28 16:12 20:6 25:6, 14. Intransitivamente, com elipse do objeto (El., § 81, 1), passar o tempo, ficar: Jhn.3:22 11:54, Act.15:35, Act.12:19.†"
+  },
+  {
+   "strongs": "G1305",
+   "sha256": "bbcd95fb6def86f9277d0df1098510ec2fbbde40540ba1702dccb0dc293e45ef",
+   "gloss": "alimento",
+   "definition": "δια-τροφή, ῆς, ἡ\n(διατρέφω, suster, sustentar), [na LXX: 1Ma.6:49 * ;]\nalimento, sustento: 1Ti.6:8.†"
+  },
+  {
+   "strongs": "G1306",
+   "sha256": "b1e29b2194010e83e7ebd91287ba9ec1989f9acdef1078c55aaef0a21842c947",
+   "gloss": "raiar",
+   "definition": "δι-αυγάζω\n[em Aq.: Job.25:5 * ;]\nbrilhar através, raiar: 2Pe.1:19 (cf. ἕως οὗ διαπνεύσῃ ἡ ἡμέρα, Gal.2:17).†"
+  },
+  {
+   "strongs": "G1307",
+   "sha256": "5b9e9d1604c54d4ed3183eb5dfb0f8cbccc3402c84dd3f8a28fcf396a3b55a4f",
+   "gloss": "transparente",
+   "definition": "διαφανής, -ές\n(διαφαίνω deixar ver através, brilhar através) [na LXX: Exo.30:34 (זַךְ), Isa.3:22 (גִּלָּיוֹן), Est.1:6 * ;]\ntransparente: Rev.21:21 (Rec.; veja διαγής).†"
+  },
+  {
+   "strongs": "G1308",
+   "sha256": "de676a63dd6ae7e3e34f5ce44c0857c547f1d31406826455ee1a1b1d99ca2c45",
+   "gloss": "espalhar/superar",
+   "definition": "δια-φέρω\n[na LXX por שְׁנָא (שְׁנָא (Dan.7:1-28 somente); 1Ki.17:39, Est.3:13, al. ;]\n1. trans.,\n(a) levar através: antes de διά, Mrk.11:16;\n(b) levar de um lado para outro, espalhar por toda parte: pass., Act.13:49 27:27.\n2. Intr.,\n(a) diferir: τὰ διαφέροντα, Rom.2:18, Php.1:10 (R, mg., mas veja infr.); impess., διαφέρει, faz diferença, importa: Gal.2:6;\n(b) sobressair: com genitivo Mat.6:26 10:31 12:12, Luk.12:7, 24, 1Co.15:41, Gal.4:1; τὰ διαφέροντα, Rom.2:18, Php.1:10 (R, txt.; para discussão e reff. veja ICC sobre Ro, Phi, ll. com).†"
+  },
+  {
+   "strongs": "G1309",
+   "sha256": "860014bd4378fd6b51ec68df0259e437e2e43f6c3ce673008af8f3689b3fc405",
+   "gloss": "escapar",
+   "definition": "δια-φεύγω\n[na LXX: Jos.8:22 (פָּלִיט), Jos.10:28 (שָׂרִיד), etc. ;]\nfugir através, escapar: Act.27:42.†"
+  },
+  {
+   "strongs": "G1310",
+   "sha256": "1c2adaed8022b1f20bfc344249ee5faf180694bad2e0b91a797ccbe94c39f2b1",
+   "gloss": "divulgar",
+   "definition": "δια-φημίζω\nsomente nos escritores tardios, espalhar por toda parte: τ. λόγον (= דָּבָר, o assunto), Mrk.1:45, Mat.28:15; com acusativo de pessoa(s), espalhar a fama de alguém: Mat.9:31.†"
+  },
+  {
+   "strongs": "G1311",
+   "sha256": "e16d6249cfd55563d136ed2dc11dc4f01a8ea1c5c24fefe3c3b8a7c618ebcac4",
+   "gloss": "destruir",
+   "definition": "δια-φθείρω\n[na LXX principalmente por שָׁחַת hi. ;]\n1. destruir completamente: Luk.12:33, Rev.11:18; pass., ser destruído, inutilizado: Rev.8:9, 2Co.4:16.\n2. Em sentido moral, corromper, depravar: τ. γῆν, Rev.11:18; pass., διεφθαρμένοι τ. νοῦν, 1Ti.6:5.†"
+  },
+  {
+   "strongs": "G1312",
+   "sha256": "bc4ecbe35e13d4b624eb27954b4ae5949d5a1a7df6d14b07fa7434cb2140296a",
+   "gloss": "decomposição",
+   "definition": "δια-φθορὰ, -ᾶς, ἡ\n(διαφθείρω), [na LXX principalmente por שָׁחַת e formas cogn. ;]\n1. destruição.\n2. corrupção (física ou moral): do sepulcro, Act.2:27 (LXX), Act.2:31 13:34-37.†"
+  },
+  {
+   "strongs": "G1313",
+   "sha256": "53b5b6f010227f390c1c386dc896daaea697fb2eeb305aa84367dd899e84d31c",
+   "gloss": "diferente",
+   "definition": "διά-φορος, -ον\n(διαφέρω), [na LXX por שְׁנָא (Dan.7:7, 19); também, como em Polyb., iv, 188, al., Τὸ δ., τὰ δ., dinheiro: Sir.27:1 42:5, 2Ma.3:6 ;]\n1. diferente: Rom.12:6, Heb.9:10.\n2. excelente: compar., -ώτερος, Heb.1:4 8:6.†"
+  },
+  {
+   "strongs": "G1314",
+   "sha256": "7a17de74d15da4dc0dd1dacbfa7f3114bfc41e11dc7f13cc5e3d5317d867da0b",
+   "gloss": "proteger",
+   "definition": "δια-φυλάσσω\n[na LXX principalmente por שָׁמַר (como Psa.91:11) ;]\nguardar cuidadosamente (M, Pr., 116), defender: com acusativo, Luk.4:10 (LXX).†"
+  },
+  {
+   "strongs": "G1315",
+   "sha256": "ac203ff3cde5a091888f48cd9f08203c9493d0531df1edbc0d52381e5993fe82",
+   "gloss": "matar",
+   "definition": "δια-χειρίζω\n(χείρ),\nter nas mãos, conduzir, administrar. Méd.\n(a) = at.;\n(b) nos escritores tardios (Polyb., FlJ, al.), deitar as mãos sobre, matar: com acusativo, Act.5:30 26:21.†"
+  },
+  {
+   "strongs": "G1316",
+   "sha256": "212e4788a889e099f047a9b174e0015d5dfafe507fde56209009d7f6e239060a",
+   "gloss": "separar-se",
+   "definition": "δια-χωρίζω\n[na LXX: Gen.1:4 ss (בָּדַל hi.), Gen.13:9 ss. (פָּרַד ni.), etc. ;]\nseparar inteiramente. Méd., separar-se, partir: antes de ἀπό Luk.9:33.†"
+  },
+  {
+   "strongs": "G1317",
+   "sha256": "36ad9fdb90f1c0684c0b9639aa02f8c3d42f63062312238cc63379e610d00023",
+   "gloss": "apto para ensinar",
+   "definition": "διδακτικός, -ή, -όν\n(= cl. διδασκαλικός)\napto para ensinar: 1Ti.3:2, 2Ti.2:24.†"
+  },
+  {
+   "strongs": "G1318",
+   "sha256": "724d0ffaa8ff767f7e853ebf6dd97c57600faf33581c9f10a7c0334957d59d3d",
+   "gloss": "ensinado",
+   "definition": "διδακτός, -ή, -όν\n(διδάσκω), [na LXX: Isa.54:13 (לִמּוּד), 1Ma.4:7 * ;]\n1. que pode ser ensinado.\n2. ensinado; com genitivo, da fonte do ensino (no cl., só poét.);\n(a) de pessoas: δ. θεοῦ, Jhn.6:45 (LXX);\n(b) de coisas, λόγοις δ. πνεύματος, 1Co.2:13.†"
+  },
+  {
+   "strongs": "G1319",
+   "sha256": "bd1cdaec229e7966891762da1d43e1a735b6ac6bee4725eaf2c0aeec1db9930d",
+   "gloss": "ensino",
+   "definition": "διδασκαλία, -ας, ἡ\n(διδάσκω), [na LXX: Pro.2:17 (אַלּוּף), Isa.29:13 (לָמַד), Sir.24:33 39:8 * ;]\nensino, instrução, tanto no sentido ativo como no objetivo, na maioria das vezes neste último: Rom.12:7 15:4, Eph.4:14, 1Ti.4:6, 13, 16 5:17 6:1, 3, 2Ti.3:10 3:16, Tit.2:7, 10; ὑγιαινοῦσα δ., 1Ti.1:10, 2Ti.4:3, Tit.1:9 2:1; pl., δ. τ. ἀνθρώπων, Col.2:22; δ. δαιμονίων, 1Ti.4:1, δ. διδάσκειν, Mat.15:9, Mrk.7:7\" (LXX) (Cremer, 182).†\nSYN.: διδαχή"
+  },
+  {
+   "strongs": "G1320",
+   "sha256": "ea2bc2025ac334f857be23329c34cebcffa7f96b62aa862228560631581e5386",
+   "gloss": "mestre",
+   "definition": "διδάσκαλος, -ου, ὁ\n(διδάσκω), [na LXX: Est.6:1, 2Ma.1:10 * ;]\ndado como tradução do heb. רַבִּי ,רַבּוֺן (NT, Ῥαββεί, Ῥαββουνεί veja);\num mestre: Jhn.1:39 20:16; de mestres judeus, Luk.2:46, Jhn.3:10, cf. Rom.2:20-21; de João Batista, Luk.3:12; de Jesus, Jhn.3:2, 10 8:4 11:28 13:13-14, e muitas vezes nos Sin., na maioria das vezes no voc., como título de tratamento, como Mat.8:19, Mrk.4:38; de Jesus por si mesmo, Mat.23:8; de um apóstolo, 1Ti.2:7, 2Ti.1:11; de cristãos, 1Co.12:28-29, Eph.4:11, Act.13:1, Jas.3:1; de falsos mestres, 2Ti.4:3 (Cremer, 181; DB, i, 609, iii, 294, iv, 691)\nSYN.: παιδευτής, q.v"
+  },
+  {
+   "strongs": "G1321",
+   "sha256": "093886fded49853dad7547c72dc190ce20ac6a0002c63b226f078fe986421fb6",
+   "gloss": "ensinar",
+   "definition": "διδάσκω\n[na LXX principalmente por למד pl., também por ידע hi., ירה hi., etc. ;]\nensinar (isto é, instruir) uma pessoa, ensinar uma coisa;\n1. trans.: com acusativo de pessoa(s), Mat.5:2, Mrk.1:22, al.; antes de ὅτι, Mrk.8:31; περί, 1Jn.2:27; com inf., Luk.11:1; com acusativo de coisa(s), Mrk.6:30 12:14; com acusativo cogn., Mat.15:9 (LXX); com acusativo duplo, Mrk.4:2, Jhn.14:26; pass., Gal.1:12, 2Th.2:15; com dativo de pessoa(s) (como no heb., cf. Job.21:23, mas prob. um uso vernác., veja Swete, em l.), Rev.2:14.\n2. Absol., ensinar, dar instrução: Mat.4:23, Mrk.1:21, e muitas vezes nos Evang., Rom.12:7, 1Co.4:17, 1Ti.2:12, al.\nSYN.: παιδεύω (cf. Westc., Heb., 402; Cremer, 180)."
+  },
+  {
+   "strongs": "G1322",
+   "sha256": "eb4d0d7b13bfbf82b76a5ef1adb1819e4dd798425d74463a7b63df92eced6384",
+   "gloss": "ensino",
+   "definition": "διδαχή, -ῆς, ἡ\n(διδάσκω), [na LXX: Psa.60:1-12 título. (לָמַד pi.); Sm.: Deu.33:8 * ;]\n1. objetivamente, ensino, doutrina, aquilo que é ensinado: Mrk.1:27, Jhn.7:16, Act.17:19, Rom.6:7 16:17, 2Jn.10, Rev.2:24; com genitivo poss., Mat.7:28 16:12 22:33, Mrk.1:22 11:18, Luk.4:32, Jhn.18:19, Act.5:28, Rev.2:14-15; ἡ δ., de Cristo, Jhn.7:17, Act.13:12, 2Jn.9; cf. τὴν δ., Tit.1:9; com genitivo obj., βαπτισμῶν δ., Heb.6:2; pl., Heb.13:9.\n2. Ativamente, ensino: Act.2:42, 2Ti.4:2; ἐν τ. δ., no decorrer do seu ensino: Mrk.4:2 12:38; λαλεῖν ἐν δ., 1Co.14:6; ἔχειν δ., 1Co.14:26 (DCG, i, 485; Cremer, 181).†\nSYN.: διδασκαλία"
+  },
+  {
+   "strongs": "G1323",
+   "sha256": "903329f2eadb22f5b368e2f9e720d60798bdc2a7e58a4056f565d253b100b284",
+   "gloss": "didracma",
+   "definition": "δίδραχμος, -ον\n(δίς, δραχμή),\nque vale duas dracmas; τὸ δ. (sc. νόμισμα, moeda),\n[na LXX principalmente por שֶׁקֶל (Gen.23:15, a1.), também por כֶּסֶף: Gen.20:16, Deu.22:29 ;]\numa dracma dupla, quase igual ao meio siclo judaico, o valor do imposto do templo: Mat.17:24 (DB, iii, 428).†"
+  },
+  {
+   "strongs": "G1324",
+   "sha256": "4a8a80501a32621b2664a4b0395b3d03566ac4d11bda67d641b4d962509f00d2",
+   "gloss": "Gêmeo",
+   "definition": "Δίδυμος, -ου, ὁ\n(nome próprio, de δίδυμος, -η, -ον, duplo, sc. παῖς, gêmeo)\nDídimo, sobrenome do apóstolo Tomé: Jhn.11:16 20:24 21:2.†"
+  },
+  {
+   "strongs": "G1325",
+   "sha256": "f26c69e243597126a4617e385b3fe99429c2b867d457ac747537138f86daf7c0",
+   "gloss": "dar",
+   "definition": "δίδωμι,\n[na LXX principalmente por נָתַן (53 palavras ao todo) ;]\ndar, em vários sentidos, segundo o contexto: conceder, outorgar, suprir, entregar, confiar, produzir: absol., Act.20:35; com acusativo de coisa(s) e dativo de pessoa(s), Mat.4:9 5:31, Jhn.1:12, al. mult.; com dativo de pessoa(s), antes de ἐκ, Mat.25:8; id. com genitivo part.. Rev.2:17; com acusativo de pessoa(s), Jhn.3:16, Rev.20:13, al.; δεξιάς, Gal.2:9; φίλημα, Luk.7:45; γνῶσιν, Luk.1:77; κρίσιν, Jhn.5:22; da semente que produz fruto, Mrk.4:7, 8; ἐργασίαν (Deiss., LAE, 117s.), Luk.12:58; com inf. final, Mat.27:34, Mrk.5:43, Luk.8:55, Jhn.6:52, al.; com dativo de pessoa(s) e inf., Luk.1:74, al.; com acusativo e inf., Act.2:27, Rev.3:9; com acusativo duplo, Mat.20:28, Mrk.10:45, Eph.1:22 4:11, 2Th.3:9, 1Ti.2:6, al.; ἑαυτὸν δ. εἰς (Polyb., al.), Act.19:31; com dativo de pessoa(s), antes de κατά (MM, Exp., xi), Rev.2:28 (LXX); δ. ἵνα, Rev.3:9; δέδωκα ἐνώπιόν σου θύραν ἀνεῳγμένην, Rev.3:8.\nSYN.: δωρέομαι.",
+   "note": "Source 'accusative to context' is a garbled 'acc. to' (according to): rendered 'segundo'."
+  },
+  {
+   "strongs": "G1326",
+   "sha256": "c93f8621dd933b83977f199b7a78b11db3ddb5889db5d395e86830fc30c93749",
+   "gloss": "despertar",
+   "definition": "δι-εγείρω\n[na LXX: Jdth.1:4, Est.1:1, 2Ma.7:21 2Mac 15:10, 3Ma.5:15 * ;]\ndespertar completamente, despertar como do repouso ou do sono: Luk.8:24; pass., Mrk.4:39, Luk.8:24; do mar, Jhn.6:18. Metafórico, da mente: ἐν ὑπομνήσει, 2Pe.1:13 3:1.†"
+  },
+  {
+   "strongs": "G1327",
+   "sha256": "8a3adfba918b60c20496f7d7ec30b54503e3321b8f893cf651e132d005f91523",
+   "gloss": "encruzilhada",
+   "definition": "δι-έ-οδος, -ου, ἡ\n[na LXX principalmente por תּוֹצָאָה, como Num.34:4ss, e frequentemente em Jos;]\nnos π., da conclusão de um julgamento (MM, Exp., xi); uma saída através, um escoadouro; pl., δ. τῶν ὁδῶν, RV, as encruzilhadas dos caminhos: Mat.22:9.†"
+  },
+  {
+   "strongs": "G1328",
+   "sha256": "93b4ad9309d8b1fbdf3d5176ea4b8515cd1d827e4b0d4d78d684ec0a1f711bb0",
+   "gloss": "intérprete",
+   "definition": "δι-ερμηνευτής, -οῦ, ὁ\n(διερμηνεύω),\num intérprete: 1Co.14:28.†"
+  },
+  {
+   "strongs": "G1329",
+   "sha256": "b6fd9a56aa6af6effac27ff2d62265b0fbb029541a168bf1367379a0dc8a6cf4",
+   "gloss": "interpretar",
+   "definition": "δι-ερμηνεύω\n[na LXX: 2Ma.1:36 * ;]\nintensivo de ἐρμηνεύω, interpretar;\n(a) explicar, expor: com acusativo, Luk.24:27; absol., 1Co.12:30 14:5 14:13 14:27;\n(b) traduzir: Act.9:36.†"
+  },
+  {
+   "strongs": "G1330",
+   "sha256": "827abd5e49c13aa7b297b7a7d9261d6eacffa79d73e813ba5ca452ae5805d120",
+   "gloss": "atravessar",
+   "definition": "δι-έρχομαι\n[na LXX por אֵבֶר, הָלַךְ, בּוֹא, etc. ;]\n1. ir através, atravessar;\n(a) de coisas: Mat.19:24, Mrk.10:25, Luk.2:35, al.;\n(b) de pessoas: Luk.19:4; com acusativo de lugar, Luk.19:1, Heb.4:14, Act.12:10; antes de διά, com genitivo de lugar, Mat.12:43, 1Co.10:1; antes de εἰς, Mrk.4:35; ἕως, Luk.2:15.\n2. andar de um lado para outro: Luk.9:6, Act.20:25; de uma notícia, espalhar-se, divulgar-se (Thuc.), Luk.5:15"
+  },
+  {
+   "strongs": "G1331",
+   "sha256": "69f97fc15197940016ff8f7ac3258b5a47a542faf222d190c50aa7e4f8864e0f",
+   "gloss": "averiguar",
+   "definition": "δι-ερωτάω, -ῶ\ndescobrir por indagação: com acusativo, Act.10:17.†"
+  },
+  {
+   "strongs": "G1332",
+   "sha256": "5cf55e16bf49df66e93bc9964b78d5c17e8fb905218ed7feb07eac1c778b2104",
+   "gloss": "de dois anos",
+   "definition": "διετής, -ές\n(δίς, ἔτος), [na LXX: 2Ma.10:3 * ;]\n1. que dura dois anos.\n2. de dois anos de idade: ἀπὸ δ. (sc. παιδός, ou neutro; cf. 1Ch.27:23, ἀπὸ εἰκοσαετοῦς), Mat.2:16.†"
+  },
+  {
+   "strongs": "G1333",
+   "sha256": "0f8e2ef3d3761b2c252af86f3962c84c241151ec127aabbec533de69c70fdbde",
+   "gloss": "dois anos",
+   "definition": "διετία, -ας, ἡ\n(διετής), [na LXX (Græc. Ven.): Gen.41:1 45:5 * ;]\no espaço de dois anos: Act.24:27 28:30.†"
+  },
+  {
+   "strongs": "G1334",
+   "sha256": "a0384efc4be8cc536af9c5f9b0affcd045ff68600299861f0abb120a222bb852",
+   "gloss": "relatar inteiramente",
+   "definition": "δι-ηγέομαι, -οῦμαι\n[na LXX principalmente por סָפַר pi. ;]\nexpor em detalhe, contar, descrever: absol., Heb.11:32; com acusativo de coisa(s), Act.8:33; com dativo de pessoa(s), antes de πῶς, Mrk.5:16, Act.9:27 12:17; ἅ εἶδον, Mrk.9:9; ὅσα ἐποίησε, -αν, Luk.8:39 9:10.†"
+  },
+  {
+   "strongs": "G1335",
+   "sha256": "544d02e4b3b13842771912ae154092debe7f454de66d413395647927566cc8a3",
+   "gloss": "narrativa",
+   "definition": "δι-ήγησις, -εως, ἡ\n(διηγέομαι), [na LXX: Jdg.7:15 מִסְפָּר Hab.2:6 חִידָה), frequentemente em (Sir.6:35, al.), 2Ma.2:32 2Mac 6:17 ;]\numa narrativa: Luk.1:1 (cf. Milligan, NTD, 130).†"
+  },
+  {
+   "strongs": "G1336",
+   "sha256": "17973fe8b3898b33cc76c9e4a353917a23574b8cb12e87b16d23a9d4dc7d6dd0",
+   "gloss": "perpétuo",
+   "definition": "δι-ηνεκής, -ές\n(διήνεγκα, aoristo de διαφέρω) [em Sm.: Psa.48:15, 89:30 ;]\nininterrupto, contínuo: adverbialmente, εἰς τὸ δ., continuamente (para exs., veja Deiss., BS, 251), Heb.7:3 10:1, 12 10:14†"
+  },
+  {
+   "strongs": "G1337",
+   "sha256": "7a50957d44205c532997fdcee830387bff0788cd5ec61cc556b6a76c1a5608ea",
+   "gloss": "banco de areia",
+   "definition": "διθάλασσος, -ον\n(δις, θύλασσα);\n1. dividido em dois mares (como o Euxino, Strab., ii, 522).\n2. que divide o mar: τόπον δ., uma língua de terra, ou recife, que avança para o mar: Act.27:41.†"
+  },
+  {
+   "strongs": "G1338",
+   "sha256": "86c7e83f388f7d504488e3f1ff04d8ebb64651e9ca81868290175d1568e57e8b",
+   "gloss": "penetrar",
+   "definition": "δι-ικνέομαι (Rec. διϊκ-), -οῦμαι,\n[na LXX por בָּרַח hi., Exo.26:28 * ;]\natravessar, penetrar: Heb.4:12.†"
+  },
+  {
+   "strongs": "G1339",
+   "sha256": "ab436e00f78c4b04d58fadbdd91093a00812d0993e3377971deeabd62b3365f8",
+   "gloss": "passar",
+   "definition": "δι-ίσπημι\n(Rec. διΐσ), [na LXX: Eze.5:1 (חָלַק pi.), Pro.17:9 (פָּרַד hi.), etc. ;]\npôr à parte, separar; de tempo (ou espaço), fazer um intervalo, intervir: διαστάσης ὥρας μιᾶς, Luk.22:59; βραχὺ διαστήσαντες, Act.27:28. No pass., no méd. e no 2 aor., no pf. e no m.-q.-perf. at., apartar-se, retirar-se: Luk.24:51.†"
+  },
+  {
+   "strongs": "G1340",
+   "sha256": "bbb0c0d6e998ef5a90419d89b1043ec6fb777067668aa8fb1dbff9656992bed4",
+   "gloss": "insistir",
+   "definition": "δι-ισχυρίζομαι (T, Rec. διϊσ-), depoen.;\n1. apoiar-se em.\n2. afirmar com confiança: com part., Luk.22:59; com acusativo e inf. (Bl., § 70, 3), Act.12:15.†"
+  },
+  {
+   "strongs": "G1341",
+   "sha256": "896ca3f79b60fb2c7d5025a8ad7bdc4c920c1217a0925292009c696841497734",
+   "gloss": "justiça",
+   "definition": "δικαιοκρισία, -ας, ἡ\njuízo justo: Rom.2:5 (cf. τ. δικαίας κρίσεως, 2Th.1:5; τὴν δ. κ., Jhn.7:24. Para o uso nos π., veja Deiss., LAE, 89 s.).†"
+  },
+  {
+   "strongs": "G1342",
+   "sha256": "f928989968f8ee181386a91f030bee8b6b06de936567cd0eb6e911848c9055c8",
+   "gloss": "justo",
+   "definition": "δίκαιος, -α, -ον\n(δίκη), [na LXX principalmente por צַדִּיק (para a tradução de צַדִּיק no sentido de correto, veja Deiss., BS, 115 s.); às vezes por נָקִי, como Pro.1:11, al. ;]\nnos escritores gr. antigos\n(a) de pessoas, que observa a δίκη, o costume, a regra, o direito, justo no cumprimento dos deveres para com os deuses e os homens ;\n(b) de coisas, justo, conforme ao direito.\nNo NT\n1. justo, principalmente no sentido amplo, como acima, da pessoa ou coisa que corresponde ao padrão divino do que é reto\n(a) de pessoas: de Deus, Rom.3:26, 1Jn.2:29 Jn 3:7; de Cristo, Act.3:14 7:52 22:14, 1Pe.3:18, 1Jn.2:1; dos homens, Mat.1:19 (Abbott, Essays, 75 s.) Mat.10:41 13:17, 43 13:49, Luk.1:6, 17, Rom.5:7, 1Ti.1:9, Jas.5:6, 1Pe.3:12, 1Jn.3:7, Rev.22:11, al.; δ. καὶ εὐλαβής, Luk.2:25; ἅγιος, Mrk.6:20; ἀγαθός, Luk.23:50; φοβούμενος τ. θεόν, Act.10:22; o oposto de ἀμαρτωλοὶ καὶ ἀσεβεῖς, 1Pe.4:18; ἄδικοι, Mat.5:45, Act.24:15; δ. ἐκ πίστεως, Rom.1:17, Gal.3:11, Heb.10:38\" (LXX) ; δ. παρὰ τ. θεῷ, Rom.2:13\n(b) de coisas: ἔργα δ., o oposto de πονηρὰ, 1Jn.3:12; ἐντολή, Rom.7:12; metaforicamente, αἷμα, Mat.23:35; τὸ δ., Luk.12:57; δ. ἐστιν, Act.4:19, Eph.6:1, Php.1:7; ὅ, Mat.20:4; ὅσα, Php.4:8\n2. Em sentido mais estrito\n(a) de pessoas, como nos escritores cl. posteriores, justo, que dá a cada um o que lhe é devido: Tit.1:8, 1Jn.1:9; δ. κριτής, 2Ti.4:8\n(b) de coisas: τὸ δ., Col.4:1; δ., sc. ἐστιν, 2Th.1:6; κρίσις δ., Jhn.5:30; ὁδοί, Rev.15:3\nSYN.: ἀγαθός (veja), καλός, χρηστός (Cremer, 183, 690).",
+   "note": "'Essays' is Abbott's title, kept."
+  },
+  {
+   "strongs": "G1343",
+   "sha256": "4a67a07a835d892dfae6cc7a09753cfe169badf71626bfeba24dcfdbe477f7f7",
+   "gloss": "justiça",
+   "definition": "δικαιοσύνη, -ης, ἡ\n(δίκαιος), [na LXX principalmente por צֶדֶק e cognatos, Gen.15:6, al., raramente por חֶסֶד, Gen.19:19 ;]\no caráter de ὁ δίκαιος (veja)\n1. em sentido amplo, justiça, conformidade com a vontade divina no propósito, no pensamento e na ação: Mat.5:6, Jhn.16:8, Act.13:10, Rom.4:3; λόγος δικαιοσύνης, ensino da j., Heb.5:13; βασιλεὺς δ. (cf. FlJ, BJ, vi, 10, β. δίκαιος), Heb.7:2; ὅπλα δ., Rom.6:13; ὁδὸς δ., Mat.21:32; θώραξ τῆς δ., Eph.6:14; διὰκονοι δ., 2Co.11:15; ὁσιότης καὶ δ., Luk.1:75, cf. Eph.4:24; ἀγαθωσύνῃ καὶ δ., Eph.5:9; δ. κ. εἰρήνη κ. χαρά, Rom.14:17; δ. κ. ἁγιασμός, 1Co.1:30; o oposto de ἁμαρτία, Rom.8:10; ἀνομία, 2Co.6:14; άδικία, Rom.3:5; ποιεῖν τὴν δ., 1Jn.2:29 Jn 3:7; id. como termo abrangente para os deveres ativos da vida religiosa (ICC, em l; Abbott, Essays, 73 ss), Mat.6:1; ἐργάζεσθαι δ., Act.10:35; διώκειν δ., 1Ti.6:11; πληροῦν πᾶσαν δ., Mat.3:15; ζῆν τῇ δ., 1Pe.2:24; δ. θεοῦ, uma justiça divina em seu caráter e origem, Mat.6:33, Jas.1:20, (onde inclui também a ideia da j. pessoal de Deus; veja ICC, sobre Rom.1:17) Rom.1:17 3:5, 21-26 10:3, 2Co.5:21, Php.3:9; ἡ δ. τ. πίσιεως, Rom.4:11; ἡ ἐκ π. δ., Rom.9:30; ἡ κατὰ π. δ., Heb.11:7; o oposto disto é ἡ ἐκ νόμου δ., Rom.10:5; ἡ δ. ἐν ν., Php.3:6; ἡ ἰδία δ., Rom.10:3, cf. Php.3:9\n2. Em sentido mais estrito (cf. δίκαιος), justiça: Act.17:31, 2Pe.1:1, Rev.19:11 (DCG, ii, 529 ss.; Cremer, 190, 690).",
+   "note": "'Essays' is Abbott's title, kept. 'r.' (righteousness) abbreviated 'j.' (justiça)."
+  },
+  {
+   "strongs": "G1344",
+   "sha256": "a8f8f60fe83346f839024159e389a4a70fe430f3e610515b356fc4bd1cfcf36d",
+   "gloss": "justificar",
+   "definition": "δικαιόω, -ῶ\n(δίκαιος), [na LXX principalmente por צָדַק pi., hi., (1) como Eze.16:51, Jer.3:11 (cf. o uso do NT); (2) como Deu.25:1; Exo.23:7, Isa.50:8 ;]\n1. no cl.,\n(a) com acusativo de coisa(s), julgar justo;\n(b) com acusativo de pessoa(s), fazer justiça a alguém; pass., δικαιοῦσθαι, ser tratado com justiça, o oposto de ἀδικεῖσθαι.\n2. No NT, como na LXX, e como é habitual nos verbos em -όω derivados de adjetivos de sentido moral;\n(1) mostrar que é justo: Mat.11:19, Luk.7:35, Rom.3:4\" (LXX), 1Ti.3:16;\n(2) declarar, pronunciar justo: Luk.7:29 10:29 16:15 18:14, Rom.2:13 3:24, 26 3:28 4:5 8:30, 33, Tit.3:7; antes de ἀπό, Mat.11:19, Luk.7:35, Act.13:39, Rom.6:7; ἐκ πίστεως, Rom.3:30 5:1, Gal.2:16 3:8, 24; ἐξ ἔργων, Rom.3:20 (LXX) Rom.4:2, Gal.2:16, Jas.2:21, 24-25; ἐκ τ. λόγων, Mat.12:37; διὰ τ. πίστεως, Rom.3:30; com dativo, Rom.3:24, 28, Tit.3:7; antes de ἐν, Act.13:39, Rom.3:4 5:9, 1Co.4:4 6:11, Gal.2:17 3:11 5:4, 1Ti.3:16 (veja Cremer, 193, 693; DB, ii, 826 ss.).†"
+  },
+  {
+   "strongs": "G1345",
+   "sha256": "d2164a3a207b4b207a214633a33c88be906068a8f90f0e16030698a08c4e872a",
+   "gloss": "ato de justiça",
+   "definition": "δικαίωμα, -τος, τ\n(δικαιόω), [na LXX com mais frequência por חֹק, em Ez, principalmente por מִשְׁפָּט, nos Sl, τὰ δ., frequentemente por פִּקּוּד ;]\numa expressão concreta da justiça, a expressão e o resultado do ato de δικαίωσις, \"uma declaração de que uma coisa é δίκαιον, ou de que uma pessoa é δίκαιος,\" daí,\n(a) uma ordenança: δ. τ. θεοῦ, Rom.1:32; τ. κυρίου, Luk.1:6; τ. νόμου, Rom.2:26 8:4; λατρείας, Heb.9:1; σαρκός, Heb.9:10;\n(b) uma sentença: de absolvição, Rom.5:16 (também Rom.5:18; ICC, em l), ou de condenação;\n(c.) um ato de justiça: Rom.5:18 (RV), Rev.15:4 19:8 (sobre o uso de π., veja MM, Exp., iii, xi).\n†",
+   "note": "Source '(with)' is a garbled '(c)' (after (a), (b)): rendered '(c.)'."
+  },
+  {
+   "strongs": "G1346",
+   "sha256": "79fe1b7f9a3a3a0d28d8e66e09fa50aebb83c019e21d710768492c2277ebae4c",
+   "gloss": "retamente",
+   "definition": "δικαίως\nadv. (δίκαιος, veja), [na LXX por צֶדֶק, etc. ;]\n1. retamente: 1Co.15:34, 1Th.2:10, Tit.2:12.\n2. justamente: Luk.23:41, 1Pe.2:23.†"
+  },
+  {
+   "strongs": "G1347",
+   "sha256": "8b51ec1b9999e0bd02df263f131d417194ae9fd65f6dff96eca7a26d9bb3fae1",
+   "gloss": "justificação",
+   "definition": "δικαίωσις, -εως, ἡ\n(δικαιόω), [na LXX por מִשְׁפָּט, Lev.24:22 * ;]\no ato de pronunciar justo, justificação, absolvição: Rom.4:25 5:18 (Cremer, 199).†"
+  },
+  {
+   "strongs": "G1348",
+   "sha256": "223976f3755a9331ffe447971bdeaf70c04c5f20adaaa72eb583b0e156beb1e8",
+   "gloss": "magistrado",
+   "definition": "δικαστής, -οῦ, ὁ\n(δικάζω), [na LXX por שָׁפַט ;]\num juiz: Act.7:27, 35\" (LXX) .†\nSYN.: κριτής, WH. \"dá relevo ao processo mental\" (Thayer). δ. é o termo forense. No direito ático, os δικασταί eram jurados, com um κριτής como presidente (LS, veja a palavra; Enc. Brit. 11, xii, 504 s.)"
+  },
+  {
+   "strongs": "G1349",
+   "sha256": "edbbbb494c4650967c5208dfa11e679d910fcf0019596dff52afb57552e0138e",
+   "gloss": "condenação",
+   "definition": "δίκη, -ης, ἡ\n[na LXX por נָקָם, רִיב, etc. ;]\n1. costume.\n2. direito.\n3. uma audiência judicial; daí, seu resultado, a execução de uma sentença, castigo: δ. τίνειν, 2Th.1:9; δ. υπεχειν, Ju 7.\n4. Personificada (cf. lat. Justitia), a justiça, a vingança: Act.28:4.†"
+  },
+  {
+   "strongs": "G1350",
+   "sha256": "dc35950a3146a9df3f3422f4d148ee1376420e8f21df849453967f51a235e889",
+   "gloss": "rede",
+   "definition": "δίκτυον, -ον, τό\n[na LXX principalmente por רֶשֶׁת, שְׂבָכָה ;]\ntermo geral para rede: Mat.4:20-21, Mrk.1:18-19, Luk.5:2, 4-6, Jhn.21:6, 8 21:11 †\nSYN.: ἀμφίβληστρον (veja), σαγήνη."
+  },
+  {
+   "strongs": "G1351",
+   "sha256": "6933a20ff888e20719ae1cbb704e37781d0de631196c25d90bec77268e01f22a",
+   "gloss": "falso",
+   "definition": "διλογος, -ον\n(δίς, λέγω),\n1. no sentido de διλογεῖν, -ία (Xen.), dado à repetição.\n2. No NT, prob. (cf. δίγλωσσος, Pro.11:13, Sir.5:9) de língua dobre: 1Ti.3:8.†"
+  },
+  {
+   "strongs": "G1352",
+   "sha256": "fc0f1d285f9fab4ca4f2afeb4fe68069204fdac378e785ccffc2287c9d163e74",
+   "gloss": "portanto",
+   "definition": "διό\nconjunç. por δι᾽ ὅ,\npor isso, por cuja razão: Mat.27:8, Luk.7:7, Act.15:19, Rom.1:24, al.; δ. καί, Luk.1:35, Act.10:29 24:26, Rom.4:22 15:22, 2Co.1:20 4:13 5:9, Php.2:9, Heb.11:12 13:12 (veja Ellic. sobre Gal.4:31)."
+  },
+  {
+   "strongs": "G1353",
+   "sha256": "cf0f2dc277a75bf8b7fcdb857c4d5fd9a874a2fc17dc8b800df9ccc47ed03cb8",
+   "gloss": "percorrer",
+   "definition": "δι-οδεύω,\n[na LXX principalmente por עבר ;]\n1. viajar através de: com acusativo, Act.17:1\n2. viajar ao longo de (Bar.4:2, 1Ma.12:32-33): Luk.8:1.†"
+  },
+  {
+   "strongs": "G1354",
+   "sha256": "f09ae1fec8e8f8487238ec3c41df6238712e857a4274fff8cd81ff090a739b14",
+   "gloss": "Dionísio",
+   "definition": "Διονύσιος, -ου, ὁ\nDionísio, um ateniense: Act.17:34.†"
+  },
+  {
+   "strongs": "G1355",
+   "sha256": "194ba77d663f8e2cc45c343397527ce59cd84b025d4c1503f73858a53ecc6181",
+   "gloss": "por isso",
+   "definition": "διό-περ conjunç. (διό, veja, reforçado por πέρ),\n[na LXX: Jdth.8:17; Jdt.8.1-36; 2Ma.5:1-27 * ;]\npor essa mesma razão: 1Co.8:13 10:14.†"
+  },
+  {
+   "strongs": "G1356",
+   "sha256": "d2a6253c4e52ba01032a9c71ee4481ee2708f981a9aaebf939ff0c7210f67762",
+   "gloss": "caído do céu",
+   "definition": "διοπετής (escrito também διϊπ-), -ές\n(δῖος, πίπτω, veja Page sobre Ac, l. com; DB, i, 605, n., ext., 112a; Field, Notes, 130 s.),\ncaído do céu (R, mg.): τὸ δ. (sc. ἄγαλμα, estátua, imagem), Act.19:35.†"
+  },
+  {
+   "strongs": "G1357",
+   "sha256": "fe38e21315089bcbc31c0ba13fb0b6c33b5347b1a103ebba61e58368062be4d9",
+   "gloss": "reforma",
+   "definition": "διόρθωσις, -εως, ἡ (veja supr.),\n1. um endireitar.\n2. uma reforma, reformação (usado nos escritores tardios de leis, etc.): Heb.9:10 (Cremer, 807).†\nδιόρθωμα, -τος, τό\n(διορθόω, endireitar, corrigir),\numa correção, reforma: Act.24:3.†\nδιόρθωσις, -εως, ἡ (veja supr.),\n1. um endireitar.\n2. uma reforma, reformação (usado nos escritores tardios de leis, etc.): Heb.9:10 (Cremer, 807).†"
+  },
+  {
+   "strongs": "G1358",
+   "sha256": "4aec406a1383fdcbdc96edf60589761d1296a420f855d013b6d6a98af54adc9b",
+   "gloss": "arrombar",
+   "definition": "δι-ορύσσω\n[na LXX: Job.24:16, Exo.12:5, 7 12:12, (חָתַר) * ;]\ncavar através: com acusativo, do arrombamento de casas (como nos π.; MM, Exp., xi), Mat.24:43, Luk.12:39; absol., Mat.6:19-20.†"
+  },
+  {
+   "strongs": "G1359",
+   "sha256": "275f9a5595bf74cb5e513dad75828849595ad903a7c6fee61ad92ff445d7efd3",
+   "gloss": "os deuses gêmeos",
+   "definition": "Διόσ-κουροι, -ων, οἱ\n(forma jôn. e κοινή do át..., Διόσκοροι; Διός, genitivo de Ζεύς + κόρος, um filho),\nos Dióscuros (Castor e Pólux), filhos gêmeos de Zeus e Leda (RV, Os Irmãos Gêmeos): Act.28:11.†"
+  },
+  {
+   "strongs": "G1360",
+   "sha256": "5751b30a73c231cd2ebe083551228eccb68288781daedb193ac80417e9f25883",
+   "gloss": "porque",
+   "definition": "δι-ότι , conjunç., por διὰ τοῦτο, ὅτι (lat. propterea quod),\nporque: Luk.1:13 2:7 21:28, Act.13:35 18:10 20:26 22:18, Rom.1:19, 21 3:20 8:7, 21, 1Co.15:9, Php.2:26, 1Th.2:8, 18 (Lft., Notes, 37) 1Th.4:6, Heb.11:5, 23, Jas.4:3, 1Pe.1:16 1:24 2:6. Geralmente é mais forte do que ὅτι, mas às vezes, como em Luk.1:13, Rom.1:19, 1Th.2:18, aproxima-se do sentido do MGr., pois; cf. Milligan, Th., l. com†"
+  },
+  {
+   "strongs": "G1361",
+   "sha256": "2ebfe58110f2d4627e414b4a63d141933ccf904fbf53175c3580a532bd886ed9",
+   "gloss": "Diótrefes",
+   "definition": "Διοτρέφης (Rec. -τρεψής), -ες\n(Διός, genitivo de Ζεύς + τρέφω: estimado por Zeus),\ncomo nome próprio, Diótrefes: III Jn 9.†"
+  },
+  {
+   "strongs": "G1362",
+   "sha256": "b29470888e5034cdbefdd8094baee61fd42ebc258578f23a9ad26f063497328a",
+   "gloss": "duplo",
+   "definition": "διπλόος\n(poét., διπλός, donde corp. -ότερον), -όη, -όον (-οῦ, -ῆ, -οῦν) [na LXX por כָּפַל, מִשְׁנֶה e cognatos ;]\nduplo, dobrado: 1Ti.5:17, Rev.18:6; διπλότιρον, em dobro: Mat.23:15.†"
+  },
+  {
+   "strongs": "G1363",
+   "sha256": "742eef62e3fbf79ef49db7f2f0a13209995ac319a95fb468727e3fa27371f2f2",
+   "gloss": "dobrar",
+   "definition": "διπλόω, -ῶ\n(δυτλόος),\ndobrar: δ. τὰ διπλᾶ, Rev.18:6.†"
+  },
+  {
+   "strongs": "G1364",
+   "sha256": "432e706f2190fbf6d60f7ee3b0eeccdb4b198c6b353052c7f8832ddf68655b23",
+   "gloss": "duas vezes",
+   "definition": "δίς\nadv.,\nduas vezes: Mrk.14:30, 72; δ. τ. σαββάτου, Luk.18:12; καὶ ἅπαξ κ. δ., Php.4:16, 1Th.2:18; δ. ἀποθανόντα, Ju 12 (veja Mayor, ICC, em l); δ. μυριάδες, Rev.9:16.†"
+  },
+  {
+   "strongs": "G1365",
+   "sha256": "0a8050920abe924849943bb58d6fb50c2d2bb86b7ffb533b2ff45495b4a97d25",
+   "gloss": "duvidar",
+   "definition": "διστάζω\n(δίς),\nduvidar, hesitar: Mat.14:31 28:17.†\nSYN.: ἀπορέω, διαπορέω, διακρίνομαι, μετεωρίζομαι (veja DCG, i, 491)"
+  }
+ ]
+}

@@ -58,6 +58,12 @@ it says 0 fail and 0 to do.
   abbreviation not in the table: keep it if it's Latin or a siglum,
   otherwise use the usual Spanish / Portuguese one.
 
+- STEPBible expanded some of Abbott-Smith's abbreviations by machine, and
+  got a few wrong. Render them all the same way: "(with)", "§ with",
+  "Crat., with, 20" (a misread "c.") -> "(c.)", "§ c.", "Crat., c., 20";
+  "accusative to" / "accusative, to" (a misread "acc. to", according to)
+  -> "según" / "segundo". Add a note naming the entry each time.
+
 ## Translate
 - Everything else, faithfully and completely: no summarising, no notes,
   nothing added. Keep the punctuation pattern (Strong's lists of senses
@@ -97,6 +103,11 @@ it says 0 fail and 0 to do.
 - Theological terms: the usual evangelical/Protestant ones, the same
   across batches (as in Easton's and Nave's: expiación / expiação,
   santificación / santificação, pacto / aliança). Non-denominational.
+- Where Abbott-Smith or Strong's compares a word with English ("like the
+  English verb to be", "not always translatable into English"), keep the
+  comparison with English, the English words in «» with the
+  Spanish/Portuguese after them: "como el verbo inglés «to be» (ser,
+  estar)". Don't turn it into a remark about Spanish or Portuguese.
 - English words the lexicon discusses as words ("AV renders it 'charity'")
   stay in English inside the quotation, with the rest translated.
 - `gloss`: the plain word or two, lower case as in the English. If the
