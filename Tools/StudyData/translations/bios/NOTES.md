@@ -122,3 +122,9 @@ What the translators reported per batch, beyond the review files.
 - wrong_verse: Samuel 2469 q11 (quoted from 1 Sam 25:1 RV1909 verbatim, entered as translated).
 - Saul/Shaul both "Saúl" (RV1909 too), Salmon/Zalmon both "Salmón" (the Bibles spell them alike).
 - Saul 021 q23 includes the rest of the RV1909 verse ("hasta que haya tomado venganza…") so the run stays unbroken. Samson's bracket moved after the quote.
+
+## pt 022–023
+- Glossary: Saul "Saulo" for the apostle (Almeida, Acts 9:4), "Saul" for the king; Thebes "a antiga Tebas" (Shishak); Sharar "Sarar"; Shammua "Samua".
+- wrong_verse: Sherezer 2670 q0 (Gen 33:14 given, Zech 7:2 meant); Seraiah 2500 q1 and Shem 2613 q0: the BLIVRE already has the corrected reading Easton contrasts with the KJV, so the KJV wording is translated.
+- Unsure with wrong verses, translated: Paul "a whole year", "a long time"; Sennacherib "In that night"; Peter "From that time forth".
+- Simon Zelotes: the BLIVRE's "o zeloso" for "Canaanite" contradicts Easton, so "cananeu". Zidon/Sidon both "Sidom". Shuah 2727 keeps Easton's missing book number "(Cr 1:32)".
