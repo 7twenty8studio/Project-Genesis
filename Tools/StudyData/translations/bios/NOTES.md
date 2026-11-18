@@ -226,3 +226,6 @@ What the translators reported per batch, beyond the review files.
 - wrong_verse: Shiloh q3 (an LXX reading, not Scripture; the matcher marked it loose and gave an Exodus hail verse); Ur q3 (a brick inscription, 1 Kgs 6:2 given).
 - Brook Eshcol: BLIVRE has only "vale de Escol", so the A.V./R.V. contrast is lost. Tishbe q2 joined "Elias Tisbita… de Gileade".
 - BLIVRE oddities verbatim: Tarsus "cidade não pouca importância"; Timnath-heres "o norte do monte de Gaás".
+
+## pt 044
+- Zered / Valley of Zered: "river of the wilderness" is the BLIVRE's “ribeiro de Arabá” (same Hebrew). Water Gate 1230 holds Easton's dates-and-palms text (source mismatch). Field "tanque de acima" (verse words).
