@@ -229,3 +229,7 @@ What the translators reported per batch, beyond the review files.
 
 ## pt 044
 - Zered / Valley of Zered: "river of the wilderness" is the BLIVRE's “ribeiro de Arabá” (same Hebrew). Water Gate 1230 holds Easton's dates-and-palms text (source mismatch). Field "tanque de acima" (verse words).
+
+## pt final pass (18 Nov)
+- Thousands with English commas outside quotations → Brazilian dots (031–035); "Nô-Amom" → "Tebas" (028); Mareshah "Js 15:44" (037).
+- Abel 025 q2: BLIVRE Gen 4:5 added verbatim to the quote (wrong_verse, the matcher gave 4:3–4). Jericho 034: the quote now reads Os filhos “de Jericó”, so the BLIVRE's doubled "de de" isn't shown.
