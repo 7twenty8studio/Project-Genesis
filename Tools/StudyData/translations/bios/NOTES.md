@@ -191,3 +191,14 @@ What the translators reported per batch, beyond the review files.
 - Reused identical texts: Egypt 362 (028/259), Ephrathah 404 (028/220), Elam 365 (010/1049), Elishah 370 (010/1154), Esau 408 (011/1216).
 - Names the app left in English for Spanish now set in manual.json: Adulam, Arabá, Arioc, Engadi, Erec, Haurán, Nahúm, Sinar, Tíquico. Batches before this wrote some of them in English (e.g. 030–031 "Hauran", "Adullam", "Shinar"): align in the final pass.
 - En-tappuah "En-tapua". Achmetha modernized "Acmeta". Dimnah "Rimmono" (verse). Translations to look at: "el santo teólogo", "pedo de lobo", "vacas de Basán".
+
+## pt 036–037
+- wrong_verse: Lachish q1 (an Amarna letter, Gen 34:29 given); Metheg-ammah q1 (R.V. of 2 Sam 8:1, Deut 22:14 given).
+- Unsure from uncited verses: "glória de Moabe", "anjos de Deus", "campo de Dã". Mamre "planície de Manre" and "Maané-Dã" keep Easton's A.V./R.V. contrast.
+- BLIVRE runs quoted verbatim that read oddly: “na rocha tua ninho”, “falai à rocha em olhos deles”, “homem Macedônio”.
+- Mareshah: Easton's "John. 15:44" (Josh 15:44) kept as "Jo 15:44": correct to "Js" in the final pass (es too).
+
+## es 032–033
+- Shobach was "Siros" ("Syrians") in the es glossary: now "Sobac" in manual.json (also met in 011).
+- Gibeah "Gabaa" (466) / "Gibea" (467, Josh 15:57); Hazor "Asor" throughout (026–027 also had "Hasor"). Wording quotes keep RV1909 spellings (Elath, Hamath, Chârán, Nachôr).
+- Hermon "rocío de Hermón" (Ps 133:3; Easton cites 89:12). Hachilah "al sur de Jesimón" translated (RV1909 "á la mano derecha del desierto").
