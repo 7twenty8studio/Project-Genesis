@@ -202,3 +202,8 @@ What the translators reported per batch, beyond the review files.
 - Shobach was "Siros" ("Syrians") in the es glossary: now "Sobac" in manual.json (also met in 011).
 - Gibeah "Gabaa" (466) / "Gibea" (467, Josh 15:57); Hazor "Asor" throughout (026–027 also had "Hasor"). Wording quotes keep RV1909 spellings (Elath, Hamath, Chârán, Nachôr).
 - Hermon "rocío de Hermón" (Ps 133:3; Easton cites 89:12). Hachilah "al sur de Jesimón" translated (RV1909 "á la mano derecha del desierto").
+
+## pt 038–039
+- wrong_verse: Ophel q0 "tower" (Neh 3:25 given, 2 Kgs 5:24 meant). Unsure translated: Penuel "com um homem", Perga "pregaram a palavra".
+- Mount of Olives 27/48 identical; "Galileia" for the peak; "Monte da Corrupção" (verse has "monte da destruição").
+- Negeb: Easton's "1 Sam. 33:24" (no such chapter; probably 30:14) kept. Nineveh "acabará com Nínive" future tense in a past sentence. Pelusium quote marks as Easton.
