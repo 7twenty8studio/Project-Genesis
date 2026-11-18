@@ -1,0 +1,6372 @@
+{
+ "batch": "024",
+ "lang": "es",
+ "items": [
+  {
+   "kind": "topic",
+   "id": 5140,
+   "sha256": "c111c71c19893e2eddebe14005202b70f954d21cd089b29ea9744719cc8213fd",
+   "text": "Viuda"
+  },
+  {
+   "kind": "entry",
+   "id": 23627,
+   "sha256": "f73e7af18a50c59fc626b257eafe958de3802462a4a40007afac52b0edad76ef",
+   "text": "Sus votos, obligatorios"
+  },
+  {
+   "kind": "entry",
+   "id": 23628,
+   "sha256": "48223268aeb106c8c15060b8f39dfd30d7663bb4b447d0d2a71b12402cb898ff",
+   "text": "Cuando son hijas de sacerdotes, deben ser sustentadas por sus padres"
+  },
+  {
+   "kind": "entry",
+   "id": 23629,
+   "sha256": "d11134d785d26f5970856f09ee7194ffbb801888bcba5920a056e6a978ae3bac",
+   "text": "Se prohíbe a los sacerdotes casarse con ellas"
+  },
+  {
+   "kind": "entry",
+   "id": 23630,
+   "sha256": "83a0d82528260eb3bd0e2b5a8647d1e2a96cded4ff42967a9eff95161d14ccdd",
+   "text": "Su matrimonio, autorizado"
+  },
+  {
+   "kind": "entry",
+   "id": 23631,
+   "sha256": "0b8f98338f35695ea4d0ab7d3f60f071e8565c99fdf6d2be31f7faa4b8b44ae6",
+   "text": "Dote de las viudas"
+  },
+  {
+   "kind": "entry",
+   "id": 23632,
+   "sha256": "ce7d5969d61fcd3cb250402a8ea5cd2eb98a3c4133af7e5fc849dcb32d3d6bad",
+   "text": "Otros pasajes relacionados con"
+  },
+  {
+   "kind": "entry",
+   "id": 23633,
+   "sha256": "7c1c8557a8387d3fe11230c2c38f832cd8d86fbdad0a54a1e50cc1535e959f43",
+   "text": "Casos de"
+  },
+  {
+   "kind": "entry",
+   "id": 23634,
+   "sha256": "83408d4a7be8942fb541fed530174e337d924dd9aa436a4948fc280875a7c290",
+   "text": "Noemí"
+  },
+  {
+   "kind": "entry",
+   "id": 23635,
+   "sha256": "8d7c3cbd40c916e95f23ed1b6aea1d53262e1081010a727854d6ed8a5a4181c1",
+   "text": "Rut"
+  },
+  {
+   "kind": "entry",
+   "id": 23636,
+   "sha256": "6bbbe515f5096caab9c733fb1f0d86d9091f6b7969d44880077983d4e74094d5",
+   "text": "La viuda de Sarepta, que sustentó a Elías durante una hambruna"
+  },
+  {
+   "kind": "entry",
+   "id": 23637,
+   "sha256": "e372237a91ae9d0eb2d4039741297ab20c21e1aac3f366c5a31afc2962a2c254",
+   "text": "La mujer cuyos hijos libró Eliseo de ser vendidos por una deuda"
+  },
+  {
+   "kind": "entry",
+   "id": 23638,
+   "sha256": "bf4fccd616251b678c56b9cb7a46819b1266853c180637642f5bc7d6b01f5554",
+   "text": "Ana"
+  },
+  {
+   "kind": "entry",
+   "id": 23639,
+   "sha256": "2137abbb421385f290a51d5330829724d5d90e503089c4167831cefb17aa0e69",
+   "text": "La mujer que dio dos blancas (leptos) en el atrio del templo"
+  },
+  {
+   "kind": "entry",
+   "id": 23640,
+   "sha256": "f3364647a93bc5991b650b27f1e7284d4068c9fd874de9d4ab293f9ba620d40f",
+   "text": "La viuda de Naín, cuyo único hijo Jesús resucitó de los muertos"
+  },
+  {
+   "kind": "topic",
+   "id": 5141,
+   "sha256": "dff69fd1aafb65500b1e0dc0adabdca59d3190f2cd9b846f03503a5156c92e41",
+   "text": "Esposa"
+  },
+  {
+   "kind": "entry",
+   "id": 23641,
+   "sha256": "3bb8faf30715b01cb7e0fb7cdd033bcbf5912a57f46289bb2090d470b6f3c610",
+   "text": "Llamada"
+  },
+  {
+   "kind": "entry",
+   "id": 23642,
+   "sha256": "736c2355793842f7acb2e20174b0c1b5f8e9cbd613b7621a335ff451056dd9bb",
+   "text": "Deleite de los ojos"
+  },
+  {
+   "kind": "entry",
+   "id": 23643,
+   "sha256": "b79cac926e0b2e347e72cc91d5174037c9e17ae7733fd7bdb570f71b10cd7bfc",
+   "text": "Ayuda"
+  },
+  {
+   "kind": "entry",
+   "id": 23644,
+   "sha256": "0f4bfba83ab7d0983d80dc56ed6716dabf0c02c1cfd80bf4ebbd7cdce24d0c64",
+   "text": "Vid fértil"
+  },
+  {
+   "kind": "entry",
+   "id": 23645,
+   "sha256": "ed52ea9ce176f60168236ce4569ec1c200482ee3a46de0485bcd19d1f0f4fb64",
+   "text": "El juicio pronunciado contra Eva"
+  },
+  {
+   "kind": "entry",
+   "id": 23646,
+   "sha256": "073ae331e4fa1f7b52e303c87c24b2bc41ffa9e4d4f6744d1bc188614a2cb162",
+   "text": "Su relación con el esposo"
+  },
+  {
+   "kind": "entry",
+   "id": 23647,
+   "sha256": "b26cd599cad38b15b87944f911228c8e73ad6ae070f9a4760c105aee64c21e72",
+   "text": "Sus deberes domésticos"
+  },
+  {
+   "kind": "entry",
+   "id": 23648,
+   "sha256": "4b34c2720affda817acfec44ab2236e63c7a622351381c30e23480125732b4c0",
+   "text": "Amada, por Isaac"
+  },
+  {
+   "kind": "entry",
+   "id": 23649,
+   "sha256": "52e077dc52629a7d99af0b7cacc68e2276eb918764c54f2a8f883c9814086aa2",
+   "text": "Amada, por Jacob"
+  },
+  {
+   "kind": "entry",
+   "id": 23650,
+   "sha256": "92fc3f6addca5aed143bb254bb55f7f6ab1803d75e1526f3795688cc77a964ef",
+   "text": "Aborrecida"
+  },
+  {
+   "kind": "entry",
+   "id": 23651,
+   "sha256": "5aa428d48afad12accedb54207760c655884049ef4aaab1497c0af38593f3fe4",
+   "text": "Leal"
+  },
+  {
+   "kind": "entry",
+   "id": 23652,
+   "sha256": "02aa095c8cc5eb8945cd5a1c493ded7c2654c91d86121b1a5df2f9e58aa9b96b",
+   "text": "Infiel"
+  },
+  {
+   "kind": "entry",
+   "id": 23653,
+   "sha256": "bcc068a3ab581cdefab782c1655d9ed0fb7354100ab08c0f47c2305a1dd09b88",
+   "text": "La de Potifar"
+  },
+  {
+   "kind": "entry",
+   "id": 23654,
+   "sha256": "9006d33770441b19a548ebafcd48a4fac886fe25c95f027ea6d1741b7de2faac",
+   "text": "Betsabé"
+  },
+  {
+   "kind": "entry",
+   "id": 23655,
+   "sha256": "a05a40670d091a5d056f5fef4f9b89dcba8e9eec924bd658308b991ed8d05efa",
+   "text": "Contenciosa, Séfora"
+  },
+  {
+   "kind": "entry",
+   "id": 23656,
+   "sha256": "8ee3ace6ea45f37e50aa2109294c8f01245942b9bb5af0e8d59c84e09af0913e",
+   "text": "Idólatras, las esposas de Salomón"
+  },
+  {
+   "kind": "entry",
+   "id": 23657,
+   "sha256": "f2980099c44365bde9a72e9e501f8c8b8c04f230b36d13bafaa27956ef56ff1d",
+   "text": "Jezabel"
+  },
+  {
+   "kind": "entry",
+   "id": 23658,
+   "sha256": "a1eadbfb6d05d624132ef784efbfb4fe135d8999952c488860b38f400eff0359",
+   "text": "Incorruptible, Vasti"
+  },
+  {
+   "kind": "entry",
+   "id": 23659,
+   "sha256": "f19bf2eb14da9cf93a0edded13deaaaca074a1408b06e651d5ab273b9e1e7830",
+   "text": "Prudente, Abigail"
+  },
+  {
+   "kind": "entry",
+   "id": 23660,
+   "sha256": "5fa14d9aa5232fc0768296f8f313c29cee57f9543bb7a03341a239814a7becd4",
+   "text": "Comprada"
+  },
+  {
+   "kind": "entry",
+   "id": 23661,
+   "sha256": "29d39f31edb5b2552b530e204f2f5a87c261111c947715a36498f7ebb253eb25",
+   "text": "Obtenida por la fuerza"
+  },
+  {
+   "kind": "entry",
+   "id": 23662,
+   "sha256": "b26fd69926ddb1959de10aa2abf0088eba522cf83e0d74d44d46c0badb705547",
+   "text": "Procurada"
+  },
+  {
+   "kind": "entry",
+   "id": 23663,
+   "sha256": "8264181eaf429119584e05243bfdea864d9e6bd740862efb6c1483ac9943308a",
+   "text": "Sus votos"
+  },
+  {
+   "kind": "entry",
+   "id": 23664,
+   "sha256": "ce7d5969d61fcd3cb250402a8ea5cd2eb98a3c4133af7e5fc849dcb32d3d6bad",
+   "text": "Otros pasajes relacionados con"
+  },
+  {
+   "kind": "topic",
+   "id": 5142,
+   "sha256": "1ad2126e8b5fc267f170f8343e9aaafbb03e8fb8dd1af2ca41039f3e6bb24675",
+   "text": "Desierto"
+  },
+  {
+   "kind": "entry",
+   "id": 23665,
+   "sha256": "0610e6ec32fef4c6eb35675a0d7bed7ec2787f315a720b70a6c3c74d24b4aa23",
+   "text": "Peregrinación de los israelitas en el, véase [4228]ISRAEL"
+  },
+  {
+   "kind": "entry",
+   "id": 23666,
+   "sha256": "dd2194bd1042ec118560eccfc233d49406c502244b20791684abe0b85bcc3cc6",
+   "text": "Figura del estado del pecador"
+  },
+  {
+   "kind": "entry",
+   "id": 23667,
+   "sha256": "ea2cf16c6cc76c295dccbddc202c116bd6f190a601f8c4b62bc4ca324adc6349",
+   "text": "La tentación de Jesús en el"
+  },
+  {
+   "kind": "topic",
+   "id": 5143,
+   "sha256": "6cef4ccc1019d6cee6b9cad39d49cabf808ba2e0665d5832b70c44c09c2dfae0",
+   "text": "Voluntad"
+  },
+  {
+   "kind": "entry",
+   "id": 23668,
+   "sha256": "9b42a0c9cdf8b31fc3bd1471b51aa59147a7f66893d8bd4f7ddf54971f372a59",
+   "text": "La facultad mental"
+  },
+  {
+   "kind": "entry",
+   "id": 23669,
+   "sha256": "6a5560244eb2439f50644ddf19e0c8f1437958a1b9047af950dbd6a8b9eecd46",
+   "text": "Su libertad, reconocida por Dios"
+  },
+  {
+   "kind": "entry",
+   "id": 23670,
+   "sha256": "88c6cfd8278bb09d46e09e009a2633ef18bbb943a1b09ff39b53de9b19fa89ee",
+   "text": "De Dios, la regla suprema del deber"
+  },
+  {
+   "kind": "entry",
+   "id": 23671,
+   "sha256": "fce4a28bae33063732d21fc118aa9c8a9bf06de003409bb578b3b5ec12abb307",
+   "text": "Un testamento"
+  },
+  {
+   "kind": "entry",
+   "id": 23672,
+   "sha256": "0b40d80864e58c27a2749a792dee5b9b95dd95369b377bb74aaa426b6e294577",
+   "text": "De Abraham"
+  },
+  {
+   "kind": "entry",
+   "id": 23673,
+   "sha256": "e86b22cd0c417431cec52f27d6d714264a738a72e18ad777e002ff9fa349a297",
+   "text": "De Jacob"
+  },
+  {
+   "kind": "entry",
+   "id": 23674,
+   "sha256": "7c43969a4a986c3db11d1194ab3dd41f630c555ecc934f4f81af442690693115",
+   "text": "De David"
+  },
+  {
+   "kind": "entry",
+   "id": 23675,
+   "sha256": "9629b5a773e47fe40b5eb807dd1cd03e12613a3dc7a0a0d37e1700f5f010fd72",
+   "text": "De Josafat"
+  },
+  {
+   "kind": "entry",
+   "id": 23676,
+   "sha256": "2e486fc38abc94446618438b357767deacd932b4360fb3a44b56eaeccd6f8046",
+   "text": "No puede anularse"
+  },
+  {
+   "kind": "entry",
+   "id": 23677,
+   "sha256": "f208a78391c8eab8424952c29c9721aae76dba0ad893f37efef0a75ed49375ea",
+   "text": "Vigente solo después de la muerte"
+  },
+  {
+   "kind": "topic",
+   "id": 5144,
+   "sha256": "d95fc96249095142ce1e4616a811e2265f8d6e36efbdf993eb9b54e60c095067",
+   "text": "Obstinación"
+  },
+  {
+   "kind": "topic",
+   "id": 5145,
+   "sha256": "0a8a36409cd2a5534b6f36f0b45759ff7e098ffb1392b581562d836639def63e",
+   "text": "Sauce"
+  },
+  {
+   "kind": "entry",
+   "id": 23678,
+   "sha256": "4df70ed109416e52ee80c34a55946c4f03ca21bba1c012579212e7f3ad0d137d",
+   "text": "Pasajes generales sobre"
+  },
+  {
+   "kind": "entry",
+   "id": 23679,
+   "sha256": "da54bbbf7ef901d343d7a104be2ea0befd9d53a3b56d1ab9fbec8e86dca50c5d",
+   "text": "En sentido figurado"
+  },
+  {
+   "kind": "topic",
+   "id": 5146,
+   "sha256": "ff25381c07f91e6e3f4aa99fe6cca21e79bcd0229776efc7f12946862f9c0474",
+   "text": "Toca"
+  },
+  {
+   "kind": "entry",
+   "id": 23680,
+   "sha256": "1d3bd51c9e72d98e9ad08f8355f1bde5f12e493d19d79073a152ac4f2ba6687d",
+   "text": "(Un paño que se llevaba sobre la cabeza y alrededor del cuello y la barbilla))"
+  },
+  {
+   "kind": "topic",
+   "id": 5147,
+   "sha256": "d151346fe7eea3c6a0865199579ca6017487dbf981d59cdd1fcadadb03518dc8",
+   "text": "Viento"
+  },
+  {
+   "kind": "entry",
+   "id": 23681,
+   "sha256": "fa7c478f9dbacf0c20529fa933d8bc53c208ac79ac13ccc3f127d72ed4ab3592",
+   "text": "Abrasador"
+  },
+  {
+   "kind": "entry",
+   "id": 23682,
+   "sha256": "4e2cd851cfdab8b554b71408d984989127f1db0430f647c711863c42d20f39e7",
+   "text": "Del este"
+  },
+  {
+   "kind": "entry",
+   "id": 23683,
+   "sha256": "74dd64df6e8cb1f213bf7ab476827569a80d8abadcc6fe624b1753a01769e08f",
+   "text": "Caliente y abrasador en Egipto"
+  },
+  {
+   "kind": "entry",
+   "id": 23684,
+   "sha256": "afad732197c1d5f81e001588341d0769bd9be8e2167938c4a3b449a8298f99af",
+   "text": "En el valle del río Eufrates"
+  },
+  {
+   "kind": "entry",
+   "id": 23685,
+   "sha256": "c9abb24c9307320f9eff9d9c3c77dc992e34e65e662e18dcd87b6dc684262507",
+   "text": "En Canaán"
+  },
+  {
+   "kind": "entry",
+   "id": 23686,
+   "sha256": "f8bb0abc58627eb539e890374bcf9cd15d43441e7eae273519e4bdd0e5f3996f",
+   "text": "En la ciudad de Nínive"
+  },
+  {
+   "kind": "entry",
+   "id": 23687,
+   "sha256": "e41cc734ca76c52c6507b3271b890858b8a4382cbd948850437827a039eeb78c",
+   "text": "Tempestuoso en la tierra de Uz"
+  },
+  {
+   "kind": "entry",
+   "id": 23688,
+   "sha256": "41a6741e9a0faee34fec1fce082d6c634d48b44aee0d15bee819d12917073df8",
+   "text": "Del oeste"
+  },
+  {
+   "kind": "entry",
+   "id": 23689,
+   "sha256": "f91fb78b1a6fcf250a69b0e0e1cf906eeb58dc27810a34c9b6b413758822f1a6",
+   "text": "Se llevó la plaga de langostas de la tierra de Egipto"
+  },
+  {
+   "kind": "entry",
+   "id": 23690,
+   "sha256": "43f853bbb592860098a76140c1770ee2add66f4720453d64dcf225178e238e57",
+   "text": "Del norte"
+  },
+  {
+   "kind": "entry",
+   "id": 23691,
+   "sha256": "affe2dc0e4654697285b2325d418505ba493a02b41f734256c97d08eedeff47d",
+   "text": "Libre de humedad en Canaán"
+  },
+  {
+   "kind": "entry",
+   "id": 23692,
+   "sha256": "0dd2dae4dd83ae3085cd80ac1bfc28e8d76ba51ddfd972c269fe9f98a85c099a",
+   "text": "Del sur"
+  },
+  {
+   "kind": "entry",
+   "id": 23693,
+   "sha256": "f9877826cf8bd46648a69f675f4d7c31fb03970ed2e44557f4bdaa5929a03689",
+   "text": "Apacible"
+  },
+  {
+   "kind": "entry",
+   "id": 23694,
+   "sha256": "eb70783b54ea9d7e23803ba89d935ebc88809c12d432e524bcbc1c516a8e1193",
+   "text": "Tempestuoso"
+  },
+  {
+   "kind": "entry",
+   "id": 23695,
+   "sha256": "f99d1ea675d8040ca90bace1bbf9f1b7133b39bc2f137ba2f4887dca9e1c7597",
+   "text": "Purificador"
+  },
+  {
+   "kind": "entry",
+   "id": 23696,
+   "sha256": "da54bbbf7ef901d343d7a104be2ea0befd9d53a3b56d1ab9fbec8e86dca50c5d",
+   "text": "En sentido figurado"
+  },
+  {
+   "kind": "entry",
+   "id": 23697,
+   "sha256": "7e7b41885b272e342060bd8c0d37460b8792c3992022dfcd530670b410137e11",
+   "text": "De los juicios de Dios"
+  },
+  {
+   "kind": "entry",
+   "id": 23698,
+   "sha256": "21ebd4dcc0d5d7a375fd36f04e1fa217a44d2275c7930db52b857a97f365dd3e",
+   "text": "Del Espíritu"
+  },
+  {
+   "kind": "entry",
+   "id": 23699,
+   "sha256": "3f69129aec03905a2c76ebf43f303fbf00c07f9ea54eb4cef55f32c3cdff4bed",
+   "text": "De la herejía"
+  },
+  {
+   "kind": "topic",
+   "id": 5148,
+   "sha256": "19734a1b58cabc22cae1f88493289ee94f40ff2b350f7f1b9f7011ea84096916",
+   "text": "Ventana"
+  },
+  {
+   "kind": "entry",
+   "id": 23700,
+   "sha256": "4df70ed109416e52ee80c34a55946c4f03ca21bba1c012579212e7f3ad0d137d",
+   "text": "Pasajes generales sobre"
+  },
+  {
+   "kind": "topic",
+   "id": 5149,
+   "sha256": "3889e6c049489fc3c748b912de47aa167c0421940aa3f3347a4870160dcf980d",
+   "text": "Vino"
+  },
+  {
+   "kind": "entry",
+   "id": 23701,
+   "sha256": "47519d6ad61671ad549ed7856d8879b50f7bdabe848dd331ff9fbb6c21698a5f",
+   "text": "Hecho de uvas"
+  },
+  {
+   "kind": "entry",
+   "id": 23702,
+   "sha256": "c49efe21ada515afb49db80c128a9f79305e1331ad70568d8ca5e17b46a81339",
+   "text": "De granadas Cnt 8:2"
+  },
+  {
+   "kind": "entry",
+   "id": 23703,
+   "sha256": "bca6e8c638add68afc00408bda30c70c29c72686440b647a223ab6934f521afa",
+   "text": "Guardado en tinajas"
+  },
+  {
+   "kind": "entry",
+   "id": 23704,
+   "sha256": "50331aec7a811752daedc59ad76056e93849e79ccba24b226b29a607b1a32335",
+   "text": "En odres (R. V.)"
+  },
+  {
+   "kind": "entry",
+   "id": 23705,
+   "sha256": "62069be3c662a87c02bd2f7f9afe371e38ccd8c1b72730056987ec50505c28e1",
+   "text": "En botellas"
+  },
+  {
+   "kind": "entry",
+   "id": 23706,
+   "sha256": "ab7fd4e6f5010c86ec194e480ddafee9786d33a20a7833e5c406cd35460d4f2d",
+   "text": "Bodegas para el"
+  },
+  {
+   "kind": "entry",
+   "id": 23707,
+   "sha256": "18fdd549b2ed367ac0c74cbec1214644728515b30edbcb78e7d322757a7c8359",
+   "text": "Nuevo"
+  },
+  {
+   "kind": "entry",
+   "id": 23708,
+   "sha256": "bca97160f4e1211fe659338d0a9705a7dff8aa3ea2e1be1cc1958100a33962c2",
+   "text": "Añejo"
+  },
+  {
+   "kind": "entry",
+   "id": 23709,
+   "sha256": "ba85b05495420240ccec5e54f0ac81ace47b3ac0deefff2386e5cd78a06555c0",
+   "text": "Uso medicinal del"
+  },
+  {
+   "kind": "entry",
+   "id": 23710,
+   "sha256": "94d0af8ca95f6f045d7fd168908f0a095199a67a808391f3f61e0c29347ba3a7",
+   "text": "Recomendado por Pablo a Timoteo"
+  },
+  {
+   "kind": "entry",
+   "id": 23711,
+   "sha256": "383b23b7fee22786db6cdb694a592870b2c7f4b410cf1cd1b91fc2e08f4aafb6",
+   "text": "Usado en las comidas"
+  },
+  {
+   "kind": "entry",
+   "id": 23712,
+   "sha256": "a64dbb09467ecd8052b2559b91f1c27ebe2da5af9586c64ad927f8df3bedda31",
+   "text": "Hecho por Jesús en las bodas de Caná"
+  },
+  {
+   "kind": "entry",
+   "id": 23713,
+   "sha256": "761e3f529ab8a360657e19af3595f9a2d7e94b2737637149c03fb1d26f67fe14",
+   "text": "Uso sacramental del"
+  },
+  {
+   "kind": "entry",
+   "id": 23714,
+   "sha256": "ec9f6678c4e90ea257f164fe4b676a74476dadc8f7cf0fb92cd41879c32ccdf4",
+   "text": "Prohibido a los sacerdotes mientras servían"
+  },
+  {
+   "kind": "entry",
+   "id": 23715,
+   "sha256": "0b3ed532a1ee43bd1d73efd1445fe35dc09d249c302ed79f2797343b669ed183",
+   "text": "Prohibido a los nazareos"
+  },
+  {
+   "kind": "entry",
+   "id": 23716,
+   "sha256": "3ccddee9c15f1c463c064f298a0f49d7abf6135c537330a4d449ad85a41e8a3f",
+   "text": "Abstinencia del"
+  },
+  {
+   "kind": "entry",
+   "id": 23717,
+   "sha256": "a7d26cd225ef6f63f5b5aa1d6f6df0d08c906e847a9806da8b908a6987913ebf",
+   "text": "De Daniel"
+  },
+  {
+   "kind": "entry",
+   "id": 23718,
+   "sha256": "a4cbfa641ee1e20db5ab96f7a75d71b518ab6593606d8cf54bf28f61184c2e7f",
+   "text": "De los cortesanos de Asuero"
+  },
+  {
+   "kind": "entry",
+   "id": 23719,
+   "sha256": "c3eef189b6fc03b5f6c6feb1876121fd5a5975d501b4254c0859a487ae457cc5",
+   "text": "De Timoteo"
+  },
+  {
+   "kind": "entry",
+   "id": 23720,
+   "sha256": "e3930567e29db4ac14d9906ffc6911202868dd164caec8aacc4ec5af2468ebe2",
+   "text": "Se prohíbe a la madre de Sansón beberlo"
+  },
+  {
+   "kind": "entry",
+   "id": 23721,
+   "sha256": "23162ea9ca0e8ae284aa8d05ebe22a0393dc8d46ecd0a68f716e367abff66d7f",
+   "text": "Prohibido a los reyes"
+  },
+  {
+   "kind": "entry",
+   "id": 23722,
+   "sha256": "cdf73c51ab29941021a793f9953baba178bab105d6cb56bfa14919692cd1071e",
+   "text": "Negado a los israelitas en el desierto, para que supieran que el Señor era su Dios"
+  },
+  {
+   "kind": "entry",
+   "id": 23723,
+   "sha256": "28282da3e703a287c4119e86291b859bc7ef8dbc0ebd0dcfbe8e1c09ee2931a5",
+   "text": "Ofrecido con los sacrificios"
+  },
+  {
+   "kind": "entry",
+   "id": 23724,
+   "sha256": "a9df7de99fd0309558d47311279ac5ca84b5dc528176366ca4503f28d725ec10",
+   "text": "Dado por Melquisedec a Abraham"
+  },
+  {
+   "kind": "entry",
+   "id": 23725,
+   "sha256": "70e1aa3f3f87a9b5f7edc3c97a556e8ad241297d97d1169e9686c3f1a2133189",
+   "text": "Fermentado"
+  },
+  {
+   "kind": "entry",
+   "id": 23726,
+   "sha256": "d81ab3063ec476535604befadd2d7543875359eb40bf563324887321eda16769",
+   "text": "Refinado"
+  },
+  {
+   "kind": "entry",
+   "id": 23727,
+   "sha256": "2106f17edeb1fa47706000c72fd0fc72fb73816eebcccd4b1d09fb0f49e537c9",
+   "text": "De aturdimiento (R. V.)"
+  },
+  {
+   "kind": "entry",
+   "id": 23728,
+   "sha256": "535ccbdf109438a00c5536b6c0cb8fbd3b6b66f095e5722527999abe8e60b5b1",
+   "text": "Enrojece los ojos"
+  },
+  {
+   "kind": "entry",
+   "id": 23729,
+   "sha256": "45f0a626fe3653dbde0b8495afeb6c03a3fdd186481477811223405327d8b73f",
+   "text": "Comercio de"
+  },
+  {
+   "kind": "entry",
+   "id": 23730,
+   "sha256": "f22255a63a002dd4c3b43bbd067ecd845dd1e80f1a75bab43300227631913fe9",
+   "text": "Banquetes de"
+  },
+  {
+   "kind": "entry",
+   "id": 23731,
+   "sha256": "b4eb2808a718c7e567467fbbab031e7004051b0e2136527cb0fac6fe421a9f4f",
+   "text": "Vino barato (como vinagre) dado a Jesús en la crucifixión"
+  },
+  {
+   "kind": "entry",
+   "id": 23732,
+   "sha256": "7786a95f9ac6ba0c56a928cfb25469081e2d33f16706323cfa79c5fe2c5977cf",
+   "text": "Embriaguez por el uso del"
+  },
+  {
+   "kind": "entry",
+   "id": 23733,
+   "sha256": "b11197a797c43801a577974e15a47b574fd73773dde5408ab0133f6f7b0e0f9f",
+   "text": "Casos de embriaguez por el"
+  },
+  {
+   "kind": "entry",
+   "id": 23734,
+   "sha256": "678202b3c0c345ef8e5ce5451dcd3b7b33d657bd9a1ff73b29ea20988bf5acb8",
+   "text": "Noé"
+  },
+  {
+   "kind": "entry",
+   "id": 23735,
+   "sha256": "23ea1b1beb5529f4f4cbe47df67ef01587f29229a112e020eff530d5033fbcff",
+   "text": "Lot"
+  },
+  {
+   "kind": "entry",
+   "id": 23736,
+   "sha256": "832b1871e5d27af73d41946ebe1ddf6890273d4df195ab4444e81ba209fe761e",
+   "text": "José y sus hermanos"
+  },
+  {
+   "kind": "entry",
+   "id": 23737,
+   "sha256": "25ed44df1f2cf386494840925971b57df0ad658ba47a44b25f0ba21eb4420746",
+   "text": "Nabal"
+  },
+  {
+   "kind": "entry",
+   "id": 23738,
+   "sha256": "a498cdb4cb58ba3d8b15dd1425a1be89093cf8dcf81303122c05f2a08c156299",
+   "text": "Amnón"
+  },
+  {
+   "kind": "entry",
+   "id": 23739,
+   "sha256": "df4bc87ed34810a3623e92d1ad0c444468ec75e69ab34b356420b133f621138f",
+   "text": "Asuero"
+  },
+  {
+   "kind": "entry",
+   "id": 23740,
+   "sha256": "0323655a86de9a0fe6f6bb6570b8ba44e22fe7cfc30277c542d661e3e41eb8b2",
+   "text": "Reyes de Israel"
+  },
+  {
+   "kind": "entry",
+   "id": 23741,
+   "sha256": "531938ef801e7bf9b7e73341acb1c3cc3fb298d4acd5a3818c199c4b631fa993",
+   "text": "Atribuido falsamente a los discípulos"
+  },
+  {
+   "kind": "entry",
+   "id": 23742,
+   "sha256": "da54bbbf7ef901d343d7a104be2ea0befd9d53a3b56d1ab9fbec8e86dca50c5d",
+   "text": "En sentido figurado"
+  },
+  {
+   "kind": "entry",
+   "id": 23743,
+   "sha256": "fb3896dd1197e5f1cf1f272d75dba32904acd91629a6163f78cc2fe61e3fcc03",
+   "text": "De los juicios divinos"
+  },
+  {
+   "kind": "entry",
+   "id": 23744,
+   "sha256": "3d436a4ca52e775e7d67d3e7da3704b3dfb032bdff6cc0ee6f64cd506457dc37",
+   "text": "Del gozo de la sabiduría"
+  },
+  {
+   "kind": "entry",
+   "id": 23745,
+   "sha256": "191c7d89916c9b87b57b15ae5a055126457ce49f0e6988c04c63f1982477488f",
+   "text": "De los gozos de las cosas espirituales"
+  },
+  {
+   "kind": "entry",
+   "id": 23746,
+   "sha256": "fd04477c1e62348bc75eb876bfa917f4d8b781468d44c2a136495ea0b426b170",
+   "text": "De las abominaciones"
+  },
+  {
+   "kind": "entry",
+   "id": 23747,
+   "sha256": "17be2c91cd44bc21b827e7cc553cd57c51acf87526e42e4cc945eea851bd1e2e",
+   "text": "En sentido simbólico"
+  },
+  {
+   "kind": "entry",
+   "id": 23748,
+   "sha256": "69941f33855c42ebc0698a29213596bd95e6f1b4aa5dd515bb7a3a0f46280888",
+   "text": "De la sangre de Jesús"
+  },
+  {
+   "kind": "entry",
+   "id": 23749,
+   "sha256": "ce7d5969d61fcd3cb250402a8ea5cd2eb98a3c4133af7e5fc849dcb32d3d6bad",
+   "text": "Otros pasajes relacionados con"
+  },
+  {
+   "kind": "entry",
+   "id": 23750,
+   "sha256": "5be84bdea9a22884dd742d709230dc3cedc4173982884a122ba9337a18f6e3df",
+   "text": "Advertencias contra el uso del"
+  },
+  {
+   "kind": "topic",
+   "id": 5150,
+   "sha256": "971f3beca25b7523f9a123f6f3c5844333f0a752dbf775fc2fbd7c663df724f0",
+   "text": "Bebedor de vino (borracho)"
+  },
+  {
+   "kind": "entry",
+   "id": 23751,
+   "sha256": "a7ad61ca8815b81a1cfaf33aa95537637ec2427778f59b1584b09a941376fa00",
+   "text": "Jesús, acusado falsamente de ser un"
+  },
+  {
+   "kind": "topic",
+   "id": 5151,
+   "sha256": "746ca517256445d3e4a70de295db4754c505603ae2f3e9c4f7da14435982171c",
+   "text": "Lagar"
+  },
+  {
+   "kind": "entry",
+   "id": 23752,
+   "sha256": "4df70ed109416e52ee80c34a55946c4f03ca21bba1c012579212e7f3ad0d137d",
+   "text": "Pasajes generales sobre"
+  },
+  {
+   "kind": "entry",
+   "id": 23753,
+   "sha256": "f535be436c06c28dd36d8f3c7ddb0d3b5f721688990277aded82de51bc7a7a46",
+   "text": "En las viñas"
+  },
+  {
+   "kind": "entry",
+   "id": 23754,
+   "sha256": "0f54fe30f057ae0b975665d3684e223100582bafc9932645fcce96ad4160ebe9",
+   "text": "Pisado con gozo y gritos de júbilo"
+  },
+  {
+   "kind": "entry",
+   "id": 23755,
+   "sha256": "da54bbbf7ef901d343d7a104be2ea0befd9d53a3b56d1ab9fbec8e86dca50c5d",
+   "text": "En sentido figurado"
+  },
+  {
+   "kind": "entry",
+   "id": 23756,
+   "sha256": "e942d47c273e0d9a6ac1fa62ea67df854d5f05aa3b1867fee87f95a28d543c17",
+   "text": "Pisar el, figura de los sufrimientos de Cristo"
+  },
+  {
+   "kind": "entry",
+   "id": 23757,
+   "sha256": "7e7b41885b272e342060bd8c0d37460b8792c3992022dfcd530670b410137e11",
+   "text": "De los juicios de Dios"
+  },
+  {
+   "kind": "topic",
+   "id": 5152,
+   "sha256": "578a232a570441ac9858541fca480a0e11654ef2a54cfe778d93977d66bb1e4c",
+   "text": "Aventamiento"
+  },
+  {
+   "kind": "entry",
+   "id": 23758,
+   "sha256": "544eaf0f47f6f36cb1a5bdcf4b6242eaba1b5b1816d92ca2a559d74ace0a565a",
+   "text": "Del grano"
+  },
+  {
+   "kind": "topic",
+   "id": 5153,
+   "sha256": "1b17869e03ecc1b0f86b003c199606eb68eaceb18927e3843a935cf7f6157152",
+   "text": "Invierno"
+  },
+  {
+   "kind": "entry",
+   "id": 23759,
+   "sha256": "282413587bab9433010f033d544ccb31c89c56d91ec95aaef7188e7911d13a3c",
+   "text": "Su regreso anual, nunca cesará"
+  },
+  {
+   "kind": "entry",
+   "id": 23760,
+   "sha256": "c53acca1e3f4d606c16fee900c12e85ac6496f8d7ebcd281dfafc6c19c4aea96",
+   "text": "Arar en, en Canaán (margen)"
+  },
+  {
+   "kind": "entry",
+   "id": 23761,
+   "sha256": "dd36a52093406c4b6b63928550a29195e4ac2deb5c73b5f7366a668e42f0a805",
+   "text": "Temporada de lluvias en, en Canaán Cnt 2:11"
+  },
+  {
+   "kind": "entry",
+   "id": 23762,
+   "sha256": "53568e756289ab4163f12c774e64da9c9a7d0abf2e870e49c18328a9ea87091a",
+   "text": "Se suspende la navegación en, en el mar Mediterráneo"
+  },
+  {
+   "kind": "entry",
+   "id": 23763,
+   "sha256": "ccf7f6aa74098aeadb460e828eebca60a7219519e604677c612c871e00e218ce",
+   "text": "Pablo pasa uno, en Nicópolis"
+  },
+  {
+   "kind": "entry",
+   "id": 23764,
+   "sha256": "542886bdf7aeeb0e3773574182d944e215eaa9e6da758f4b9e72596b72d07bac",
+   "text": "Casas de verano y de invierno"
+  },
+  {
+   "kind": "topic",
+   "id": 5154,
+   "sha256": "834459084c92274c56c465ca9ced3c595a01a74dc85f6b5b63151b741f882521",
+   "text": "Sabiduría"
+  },
+  {
+   "kind": "entry",
+   "id": 23765,
+   "sha256": "c0019f01ef3340570f1595d878e3d41ecbaf81f7fc4ebaed70ef49fef674d13b",
+   "text": "De José"
+  },
+  {
+   "kind": "entry",
+   "id": 23766,
+   "sha256": "d9421548b4b36a2c0b67c7379a2789aa12ef4106109cf542a388ed089a00c3a0",
+   "text": "De Moisés"
+  },
+  {
+   "kind": "entry",
+   "id": 23767,
+   "sha256": "915e59d9554a1645dbbfede90fe271953a6e6d9ebc0c00a6dd715dc767a69916",
+   "text": "De Besaleel"
+  },
+  {
+   "kind": "entry",
+   "id": 23768,
+   "sha256": "ecedef6d1a3fddb9bc381860369bb90ce6dd1cd78f8677f310fb226c145c800a",
+   "text": "De Aholiab"
+  },
+  {
+   "kind": "entry",
+   "id": 23769,
+   "sha256": "bc280669d3211cb3701f295a547ad39d4e56155b208d99fd797fb913cb6e009a",
+   "text": "De otros artesanos hábiles"
+  },
+  {
+   "kind": "entry",
+   "id": 23770,
+   "sha256": "e1cccf44c09074872fcb81b16bfea8337699d59f5fcb1608b0c48fca26d5f341",
+   "text": "De las mujeres"
+  },
+  {
+   "kind": "entry",
+   "id": 23771,
+   "sha256": "108f0db785dddeba72f29dbf1671a7d40fd8473f2dee8c11e339ed970b790bdc",
+   "text": "De Hiram"
+  },
+  {
+   "kind": "entry",
+   "id": 23772,
+   "sha256": "cc7a5800a236d6cf68a42fa137b87f248628ca0a1b0c40c1da920a66aa9f5261",
+   "text": "De Salomón"
+  },
+  {
+   "kind": "entry",
+   "id": 23773,
+   "sha256": "9910e8a1e5f5e8fd8f25dd70d40fa96a753c970429a8b66949df24be518f190e",
+   "text": "De Etán, Hemán, Calcol y Darda"
+  },
+  {
+   "kind": "entry",
+   "id": 23774,
+   "sha256": "dfbc73faf474b7ea9733e061052a275746ed78b092d6add2508442f796d85194",
+   "text": "De los príncipes de la tribu de Isacar"
+  },
+  {
+   "kind": "entry",
+   "id": 23775,
+   "sha256": "c6490e8d2996ed98fc57fbf683fe0a27345c729a41a721cde9369e86218522d1",
+   "text": "De Esdras"
+  },
+  {
+   "kind": "entry",
+   "id": 23776,
+   "sha256": "a7d26cd225ef6f63f5b5aa1d6f6df0d08c906e847a9806da8b908a6987913ebf",
+   "text": "De Daniel"
+  },
+  {
+   "kind": "entry",
+   "id": 23777,
+   "sha256": "150095280eba4fe836d0bde5af588fb71c8fdf24a895239a368206868abfa1d4",
+   "text": "De Pablo"
+  },
+  {
+   "kind": "entry",
+   "id": 23778,
+   "sha256": "807b70acdc527575cebb391a6067d44938d08c0fe3909d28cc0e077fdda89d23",
+   "text": "De los magos (sabios del oriente)"
+  },
+  {
+   "kind": "entry",
+   "id": 23779,
+   "sha256": "271c24e9ae7bc28c6b3a29ff56147ff5cc3aa824ae9092f02719f2850e796eaf",
+   "text": "Espiritual"
+  },
+  {
+   "kind": "entry",
+   "id": 23780,
+   "sha256": "ce7d5969d61fcd3cb250402a8ea5cd2eb98a3c4133af7e5fc849dcb32d3d6bad",
+   "text": "Otros pasajes relacionados con"
+  },
+  {
+   "kind": "entry",
+   "id": 23781,
+   "sha256": "6b1e1d8edb2c9d045bee908b536764f4061789e064cf980242d765d0584a3d28",
+   "text": "Espiritual, de Dios"
+  },
+  {
+   "kind": "entry",
+   "id": 23782,
+   "sha256": "35082e8ee83d6ce13099522c9a6986f8fc1f1398339004469f395983457b78d8",
+   "text": "Oración pidiendo sabiduría espiritual"
+  },
+  {
+   "kind": "entry",
+   "id": 23783,
+   "sha256": "179d89707b3a4b89fef177c565e9926c2841a0337f9f06711608c6650f2d1799",
+   "text": "Mundana"
+  },
+  {
+   "kind": "topic",
+   "id": 5155,
+   "sha256": "a71c3b0ec7f5ff3534cc2dd787bd2340230eed3fdcf3ae678eed757da3f0d912",
+   "text": "Sabios"
+  },
+  {
+   "kind": "entry",
+   "id": 23784,
+   "sha256": "6993cbc3cd7eac13925e29d140729a7c4be3eb0789b52306fb36e7319dfbc7ff",
+   "text": "De Egipto"
+  },
+  {
+   "kind": "entry",
+   "id": 23785,
+   "sha256": "1752604b17d00efbebacc10984f5c764adc539e0395ecc0ef65f23ee7cfe1075",
+   "text": "Salomón"
+  },
+  {
+   "kind": "entry",
+   "id": 23786,
+   "sha256": "3286f1044cd2135697a7c9a8f631fe82b3c518861beb437ac443a660a3cfb842",
+   "text": "De Babilonia"
+  },
+  {
+   "kind": "entry",
+   "id": 23787,
+   "sha256": "081fce38f1219a4848e9ac74635b63a8b1108a38322eee79f320746c8e87470f",
+   "text": "Del oriente (los magos)"
+  },
+  {
+   "kind": "topic",
+   "id": 5156,
+   "sha256": "74255d73a1781be1ae462bfcef960aa41b748394c004d18f84b3de9b20417e76",
+   "text": "Hechicería"
+  },
+  {
+   "kind": "entry",
+   "id": 23788,
+   "sha256": "dab1a60c5c9b19811e4542873187071ee1b65d649a55d0f82bbf1aaf3ff1d590",
+   "text": "Ley sobre la"
+  },
+  {
+   "kind": "entry",
+   "id": 23789,
+   "sha256": "e9f41f6cb98f9df43528136a6bb0d3c97076974e1718964f042592472f27a5b1",
+   "text": "La adivina de Endor"
+  },
+  {
+   "kind": "entry",
+   "id": 23790,
+   "sha256": "bb4cbc293fec61971f5d0bb883b6a250357607d9c9436b2f2ae9426d1638842c",
+   "text": "Hechiceras destruidas"
+  },
+  {
+   "kind": "topic",
+   "id": 5157,
+   "sha256": "5464a8914419f3a1a237fce86c26fb85906a3a3184e9d9f92aac59fccd2eaaf9",
+   "text": "Testigo"
+  },
+  {
+   "kind": "entry",
+   "id": 23791,
+   "sha256": "4df70ed109416e52ee80c34a55946c4f03ca21bba1c012579212e7f3ad0d137d",
+   "text": "Pasajes generales sobre"
+  },
+  {
+   "kind": "entry",
+   "id": 23792,
+   "sha256": "0e6412dc072e67fa86b2be00281ce3a30ffe088d96eae881ef2478744aaff453",
+   "text": "Obligado por juramento"
+  },
+  {
+   "kind": "entry",
+   "id": 23793,
+   "sha256": "7562a4c57903a8940a89b04fcdc2adac34ad6b9b1557f4e816b96a3acc177c55",
+   "text": "Poniendo las manos sobre el acusado"
+  },
+  {
+   "kind": "entry",
+   "id": 23794,
+   "sha256": "43d9398a78848727656fe34eb93f89ac442d70bd99a044a3755c3f4b600bf0ae",
+   "text": "Se necesitan dos para establecer un hecho"
+  },
+  {
+   "kind": "entry",
+   "id": 23795,
+   "sha256": "f63844a07f2a1e10257ad7699a23beed7defebda4eec4d9430efb002a7fa3665",
+   "text": "Debía arrojar la primera piedra al ejecutarse la sentencia"
+  },
+  {
+   "kind": "entry",
+   "id": 23796,
+   "sha256": "f727ca08f697f0c4e57ad63f6da11d3762ef9d2ee31b6c82762d1a75ac40c25e",
+   "text": "Del traspaso de tierras"
+  },
+  {
+   "kind": "entry",
+   "id": 23797,
+   "sha256": "3e189bdb7d1a340e79cb1b0c6f363573ad8db530202f443d6b8f7162c6810e45",
+   "text": "Del matrimonio"
+  },
+  {
+   "kind": "entry",
+   "id": 23798,
+   "sha256": "8bac370b7eec64f19d675074983be79739da70faa2896794b89bdd67dd6a64b4",
+   "text": "Incorruptible"
+  },
+  {
+   "kind": "entry",
+   "id": 23799,
+   "sha256": "deab8af64f01a3163029fd11a829449c82e5480ba834e4bf05ddecf5d74a968f",
+   "text": "Corrompido por dinero"
+  },
+  {
+   "kind": "entry",
+   "id": 23800,
+   "sha256": "da54bbbf7ef901d343d7a104be2ea0befd9d53a3b56d1ab9fbec8e86dca50c5d",
+   "text": "En sentido figurado"
+  },
+  {
+   "kind": "entry",
+   "id": 23801,
+   "sha256": "80f2b44aa0c07c1a980ef8a4889a551f2ac05edf9c44df5b56063e03e83f5da8",
+   "text": "De la instrucción en justicia"
+  },
+  {
+   "kind": "topic",
+   "id": 5158,
+   "sha256": "8816c52bc5877a2b24e3a2f4ae7313d29cf4eba0ca568a36f2d00616cfe721d0",
+   "text": "Mago"
+  },
+  {
+   "kind": "topic",
+   "id": 5159,
+   "sha256": "ea858afbf837aae714617e89a36524aced28f7de921f7798e72810fd8839a462",
+   "text": "Lobo"
+  },
+  {
+   "kind": "entry",
+   "id": 23802,
+   "sha256": "4197769291ad8b46201351977b06eefadfa413d941d30ad77996dca62562cb71",
+   "text": "Rapaz"
+  },
+  {
+   "kind": "entry",
+   "id": 23803,
+   "sha256": "da54bbbf7ef901d343d7a104be2ea0befd9d53a3b56d1ab9fbec8e86dca50c5d",
+   "text": "En sentido figurado"
+  },
+  {
+   "kind": "entry",
+   "id": 23804,
+   "sha256": "55383cf534c8864e2fe7ffdf2bd816f07b17aafd32750e6d00ea1c14706c64c1",
+   "text": "De los enemigos de los justos"
+  },
+  {
+   "kind": "entry",
+   "id": 23805,
+   "sha256": "df964ee680fe3be116530767e2c5c776a8f5fc6c873300d884558d7b8832ba58",
+   "text": "Del poder reconciliador del evangelio"
+  },
+  {
+   "kind": "topic",
+   "id": 5160,
+   "sha256": "81c511ebf87c040e4c2d5a2831387a954a622f127be475fb4244555dd2f1b827",
+   "text": "Mujeres"
+  },
+  {
+   "kind": "entry",
+   "id": 23806,
+   "sha256": "b147435cb18443200e9421195494e1aa9bf03ad6d1a7903cedc298de1e07f281",
+   "text": "Creación de la mujer"
+  },
+  {
+   "kind": "entry",
+   "id": 23807,
+   "sha256": "8605605ae026648455e9f51d5bab792ece1b170418ea9d0791860f5402a09f72",
+   "text": "Nombrada"
+  },
+  {
+   "kind": "entry",
+   "id": 23808,
+   "sha256": "d4fd2cdb1e8ec2af7e2ab8c4cd14045145c2201e9ca4e6939c7ce05425e6cc37",
+   "text": "Su caída y la maldición sobre ella"
+  },
+  {
+   "kind": "entry",
+   "id": 23809,
+   "sha256": "07db54669fe8acf970054c86742adf11ed2d2657794b94da70902ca0f6e8c21a",
+   "text": "Promesa a la mujer"
+  },
+  {
+   "kind": "entry",
+   "id": 23810,
+   "sha256": "0830d27ccd8cadb734b00735c4bb8ee44df74cac8689c460c40934e962bff1c8",
+   "text": "Tenían aposentos separados en las viviendas"
+  },
+  {
+   "kind": "entry",
+   "id": 23811,
+   "sha256": "082777dce93b3629e5a8895fd59fdfbd8d021fd3b2cc86ceabe0ff3337d36161",
+   "text": "Se cubrían el rostro con velo"
+  },
+  {
+   "kind": "entry",
+   "id": 23812,
+   "sha256": "8264181eaf429119584e05243bfdea864d9e6bd740862efb6c1483ac9943308a",
+   "text": "Sus votos"
+  },
+  {
+   "kind": "entry",
+   "id": 23813,
+   "sha256": "ec7654a0b1b5cd0af4b8d5beafb0be26906f943128b5c5e783e549f9baa8d316",
+   "text": "Cuando eran acusadas por celos de infidelidad, su culpa o inocencia se determinaba mediante una prueba"
+  },
+  {
+   "kind": "entry",
+   "id": 23814,
+   "sha256": "46915292b43a1c7edc6c5ce198a5bfa599bba711ecdffef109bf625f43027be9",
+   "text": "Participaban en la adoración antigua"
+  },
+  {
+   "kind": "entry",
+   "id": 23815,
+   "sha256": "6f671e3e527eda0ad637f397d1c2f881cd972f19d8c2630e01d45c0f4366625d",
+   "text": "En coro"
+  },
+  {
+   "kind": "entry",
+   "id": 23816,
+   "sha256": "c8f86d18f989a170ae7d51db98b352eb3c716f269a9cace0ed89e3399ab2a102",
+   "text": "Adoraban en compartimientos separados"
+  },
+  {
+   "kind": "entry",
+   "id": 23817,
+   "sha256": "36fa2a76a14a89910befc416b90a6e48190c225dbea88f64e9ffd01ca1019b72",
+   "text": "Consagraron joyas al tabernáculo"
+  },
+  {
+   "kind": "entry",
+   "id": 23818,
+   "sha256": "239a80c28df7f3be7281e79445b0ae93dbeb5ada256537520edb4527811a6ecc",
+   "text": "Espejos"
+  },
+  {
+   "kind": "entry",
+   "id": 23819,
+   "sha256": "fc91257c2ba662a38b1372072ff325df769a8092d6f089e1a3b64b98b9266a3b",
+   "text": "Obligadas a asistir a la lectura de la ley de Moisés"
+  },
+  {
+   "kind": "entry",
+   "id": 23820,
+   "sha256": "330b0c35c59499e823d697457de5a49e61271b217a4e0dbe129a89c1f9a6ba3e",
+   "text": "Sus purificaciones"
+  },
+  {
+   "kind": "entry",
+   "id": 23821,
+   "sha256": "a623a97c2dfd2f1da2bce73067bb8e97e8a6cb18a4f5e0be9196033c62d4de58",
+   "text": "Después de la menstruación"
+  },
+  {
+   "kind": "entry",
+   "id": 23822,
+   "sha256": "34cef688be75587ff15d682dea00bedf6f1bc6859dae00a9345fddf36757ad9a",
+   "text": "Después del parto"
+  },
+  {
+   "kind": "entry",
+   "id": 23823,
+   "sha256": "1876da276b8dbe1cbff1d52db1c527d14d289f1fbc6b83fed295c780c939bc29",
+   "text": "Diferencia en las ceremonias entre los hijos varones y las hijas"
+  },
+  {
+   "kind": "entry",
+   "id": 23824,
+   "sha256": "ad0727d2ee17175424d63d2897cd7149bfde736c9252ade7487eb50d9d1f95f2",
+   "text": "Sus privilegios religiosos entre los primeros cristianos"
+  },
+  {
+   "kind": "entry",
+   "id": 23825,
+   "sha256": "b26cd599cad38b15b87944f911228c8e73ad6ae070f9a4760c105aee64c21e72",
+   "text": "Sus deberes domésticos"
+  },
+  {
+   "kind": "entry",
+   "id": 23826,
+   "sha256": "df4a1f5843ab56ba46a96327503d901db950722bf4c00077ee3f793bc1fd4495",
+   "text": "Cocinaban"
+  },
+  {
+   "kind": "entry",
+   "id": 23827,
+   "sha256": "d0b6498c92302f5a7a666d30560e3a4bb7fff259375334eb41d502311246b767",
+   "text": "Hilaban"
+  },
+  {
+   "kind": "entry",
+   "id": 23828,
+   "sha256": "33131b0b60e0051f27e7156382d56779edda2c8dc4560fb75edc9f28eec3a0ed",
+   "text": "Bordaban"
+  },
+  {
+   "kind": "entry",
+   "id": 23829,
+   "sha256": "a82b3f4f80da5282e775c85cff0d37988c1d457934dffdc71d2bc77abef54265",
+   "text": "Hacían vestidos"
+  },
+  {
+   "kind": "entry",
+   "id": 23830,
+   "sha256": "2f05ff18d9f0d2cfd97276e889d738c8d24eea0d4e2596f842247c7c4c625353",
+   "text": "Espigaban"
+  },
+  {
+   "kind": "entry",
+   "id": 23831,
+   "sha256": "97fde5875226ec789c99a816f18aca1911aab73e7ab316f6dce43b0d0cd0e890",
+   "text": "Guardaban viñas Cnt 1:6"
+  },
+  {
+   "kind": "entry",
+   "id": 23832,
+   "sha256": "f4952840991fcd6dd9a886408909b6bc28be379a00ff17d3eae6d9c1b4b6b354",
+   "text": "Cuidaban rebaños y ganado"
+  },
+  {
+   "kind": "entry",
+   "id": 23833,
+   "sha256": "cb28a2f2f1a60d433d6765b46109e67023581306669204232547f6f4fdbc2d77",
+   "text": "Trabajaban en los campos"
+  },
+  {
+   "kind": "entry",
+   "id": 23834,
+   "sha256": "aa18b17b7aac94af8094fa6d63eba6a57f1dce39bb72307728f3d1838b502938",
+   "text": "Era portera"
+  },
+  {
+   "kind": "entry",
+   "id": 23835,
+   "sha256": "26dbafc0acfd09ed86502dc6dfac87affc8a781849be1f7e8602519eb9f08d7a",
+   "text": "Prohibido vestir ropa de hombre"
+  },
+  {
+   "kind": "entry",
+   "id": 23836,
+   "sha256": "884b0b6715f00b0851f988e261d845b80aef72fa9b52f5b8d0f4366d45219de9",
+   "text": "Llevaban el cabello largo"
+  },
+  {
+   "kind": "entry",
+   "id": 23837,
+   "sha256": "a38bf86f746ec36d987654c2a09cf00ddd72535c941177571e81d10adf551bde",
+   "text": "Reglas para el vestido de la cristiana"
+  },
+  {
+   "kind": "entry",
+   "id": 23838,
+   "sha256": "4239ff91a4b4feb01b655ec9d07938c4b8e839df5f2de5329ae36470bdb67e8b",
+   "text": "Sus adornos"
+  },
+  {
+   "kind": "entry",
+   "id": 23839,
+   "sha256": "e8737678cb647118cda50bf127a4882412108bc3f770f793c9eb77b07a55b268",
+   "text": "Más débiles que los hombres"
+  },
+  {
+   "kind": "entry",
+   "id": 23840,
+   "sha256": "eee9871f5d67257feef05c4f9f32d412784b28abc16cf3deee85136c93e1326b",
+   "text": "Son tímidas"
+  },
+  {
+   "kind": "entry",
+   "id": 23841,
+   "sha256": "6ad8f79ffe4b32a0020d518c0b071805ef699524490c81d5c28c69ba51dccd20",
+   "text": "Son afectuosas"
+  },
+  {
+   "kind": "entry",
+   "id": 23842,
+   "sha256": "ea650934e03951a3877f667458a1b8a2bbc96323fbb3f83a7bce67d1466dea01",
+   "text": "Son tiernas con su descendencia"
+  },
+  {
+   "kind": "entry",
+   "id": 23843,
+   "sha256": "e720d803ce96d1892086e0184de9413b882c86012d5df2c648f903f110b5f1ab",
+   "text": "Son alegres"
+  },
+  {
+   "kind": "entry",
+   "id": 23844,
+   "sha256": "62278dd8254cc2a861d7a686b84f8c74cbee32a44e774c79d2e0b64b2bf79eac",
+   "text": "Son corteses con los extraños"
+  },
+  {
+   "kind": "entry",
+   "id": 23845,
+   "sha256": "6d037b1b08a8b6a8ec5996880bfd761300f27aeb0633682c122bd875da0d49b1",
+   "text": "No podían casarse sin el consentimiento de los padres"
+  },
+  {
+   "kind": "entry",
+   "id": 23846,
+   "sha256": "8b38f812a621e1a9bd5a8e784566d7f2cb38f2df88e091eb7327ad97def97280",
+   "text": "No ser dada en matrimonio se consideraba una desgracia"
+  },
+  {
+   "kind": "entry",
+   "id": 23847,
+   "sha256": "2d104a8ceac7111be17bc358eb21b91e3c5b0ca5c8bb2dc11527adb2845b34ae",
+   "text": "Llevadas cautivas"
+  },
+  {
+   "kind": "entry",
+   "id": 23848,
+   "sha256": "d86877df1ead1394c1c2006882f1012340bbac00f535ec12deeaa863c42dfe35",
+   "text": "Castigo que debía imponerse a los hombres por seducirlas, estando desposadas"
+  },
+  {
+   "kind": "entry",
+   "id": 23849,
+   "sha256": "0ebe2b37890df3562f1d35700e00d354bf6de40a5af2047afd3261d0c56feb6f",
+   "text": "Castigo por seducirlas, no estando desposadas"
+  },
+  {
+   "kind": "entry",
+   "id": 23850,
+   "sha256": "2dcfa312f998faeee6fd9c5957fff9fd2620c928418196237b33897a492ddf1c",
+   "text": "Tratadas con crueldad en la guerra"
+  },
+  {
+   "kind": "entry",
+   "id": 23851,
+   "sha256": "b002ac123dce59bc0bccf256da7941b9a6c3ae872f5a978603d55b53e62174e3",
+   "text": "La virtuosa, tenida en alta estima"
+  },
+  {
+   "kind": "entry",
+   "id": 23852,
+   "sha256": "7e93e206707152e5c2167c076f17a765a54cff6861f657ae657ef9b538f728da",
+   "text": "Amantes de la complacencia propia"
+  },
+  {
+   "kind": "entry",
+   "id": 23853,
+   "sha256": "4aba0e9333f702f98e037de0b6c04f4e3d649d8278557ed0af011c053fa1030d",
+   "text": "Amantes de los adornos"
+  },
+  {
+   "kind": "entry",
+   "id": 23854,
+   "sha256": "7f7b84b6856f18a0efc7cad45364033705bd3ead4e7f7145a01ffd24e6f2d0a1",
+   "text": "Astutas y engañosas"
+  },
+  {
+   "kind": "entry",
+   "id": 23855,
+   "sha256": "268baa1ce25a3b6f30a7e06764e724130899cf6d2f8ee88908bcb253d7f7733d",
+   "text": "Necias, y fácilmente inducidas al error"
+  },
+  {
+   "kind": "entry",
+   "id": 23856,
+   "sha256": "88975d4c9c8d364f32d81b70570f94d97a41b06bbc99d7ce47b850b291b2e801",
+   "text": "Celosas en fomentar la superstición y la idolatría"
+  },
+  {
+   "kind": "entry",
+   "id": 23857,
+   "sha256": "300ee31b3ce11f74f5fb873d86c56f87df62eb2f55cf09678503bb585ef1cb13",
+   "text": "Activas en incitar a la maldad"
+  },
+  {
+   "kind": "entry",
+   "id": 23858,
+   "sha256": "66fcec624e0990fbbea9066489c09ad867c32dd809de47f5cd7d3f370d35db06",
+   "text": "Culpables de sodomía"
+  },
+  {
+   "kind": "entry",
+   "id": 23859,
+   "sha256": "029a2fa42ecba584bba7eff679c6727524d8f5c8fbe601747a7065eec62c17fe",
+   "text": "Como gobernantes"
+  },
+  {
+   "kind": "entry",
+   "id": 23860,
+   "sha256": "83412c4c9a8b78df19243f98ac1083203ac1475bd01917e330f3887c4632686c",
+   "text": "Débora"
+  },
+  {
+   "kind": "entry",
+   "id": 23861,
+   "sha256": "e24dd4f0f0c50ec9b775b609ac71378cfb7cf20067bcf552a97fa2227252d7c9",
+   "text": "Atalía"
+  },
+  {
+   "kind": "entry",
+   "id": 23862,
+   "sha256": "85094d05bdfcc9c1fdbdc6f5e5bde7dea2eb61f7afd630100ecf9afcd9d5a84c",
+   "text": "La reina de Sabá"
+  },
+  {
+   "kind": "entry",
+   "id": 23863,
+   "sha256": "12db0be82c178f33e411da33573145538acd0a0f08eb62c85d6502fda4989757",
+   "text": "La reina Candace"
+  },
+  {
+   "kind": "entry",
+   "id": 23864,
+   "sha256": "669db5729c588549bb25374ec6b96876991b5d1ec19ab9eeb763ca60f0a0fae1",
+   "text": "Una reina persa se sentaba en un trono junto a su rey"
+  },
+  {
+   "kind": "entry",
+   "id": 23865,
+   "sha256": "441aa337b291ea75cbfc9b75e2bfd41876aa238ece807b12bf2ceec7075e9e1d",
+   "text": "Patriotas"
+  },
+  {
+   "kind": "entry",
+   "id": 23866,
+   "sha256": "ddef973ee0e6b6f81bb67ed8b4fd266cfd57ef920299ccaf815e892c7dc70b00",
+   "text": "María"
+  },
+  {
+   "kind": "entry",
+   "id": 23867,
+   "sha256": "83412c4c9a8b78df19243f98ac1083203ac1475bd01917e330f3887c4632686c",
+   "text": "Débora"
+  },
+  {
+   "kind": "entry",
+   "id": 23868,
+   "sha256": "f6db1bea319683ae25fa52b9e0c3a9d52eba328188a2e65a609d6819baf0d264",
+   "text": "Las mujeres de Israel"
+  },
+  {
+   "kind": "entry",
+   "id": 23869,
+   "sha256": "46fd0ffafa34d82b500267538e99309787b2dbfde16ba660a1a9f2ef1aefc3b3",
+   "text": "Las mujeres de los filisteos"
+  },
+  {
+   "kind": "entry",
+   "id": 23870,
+   "sha256": "db79f2131d38830c0541a65fb172c0e311abb419c8941be10f2b4e6dbb2fe7f6",
+   "text": "Ayudan en las operaciones defensivas"
+  },
+  {
+   "kind": "entry",
+   "id": 23871,
+   "sha256": "9c767c012110c0dcae082f5438339dea37bd624a288b4c295609bb6e505a83ac",
+   "text": "Como poetisas"
+  },
+  {
+   "kind": "entry",
+   "id": 23872,
+   "sha256": "ddef973ee0e6b6f81bb67ed8b4fd266cfd57ef920299ccaf815e892c7dc70b00",
+   "text": "María"
+  },
+  {
+   "kind": "entry",
+   "id": 23873,
+   "sha256": "83412c4c9a8b78df19243f98ac1083203ac1475bd01917e330f3887c4632686c",
+   "text": "Débora"
+  },
+  {
+   "kind": "entry",
+   "id": 23874,
+   "sha256": "79cb79153c08657ed66fe366e7e92fef8dcbc8be1a2e91f7cace938d61dc4b96",
+   "text": "Ana"
+  },
+  {
+   "kind": "entry",
+   "id": 23875,
+   "sha256": "22c304f1b7815ee19c911b75c4a1be614630c44c5b70d1e56658cf5193f1d79a",
+   "text": "Elisabet"
+  },
+  {
+   "kind": "entry",
+   "id": 23876,
+   "sha256": "aebac53c46bbeff10fdd26ca0e2196a9bfc1d19bf88eb1efd65a36151c581051",
+   "text": "María"
+  },
+  {
+   "kind": "entry",
+   "id": 23877,
+   "sha256": "5ebe8fbc6e17a0d13a9241b81870c72f03dc4247ef7ffa202865b3d69fcbe913",
+   "text": "Como profetisas"
+  },
+  {
+   "kind": "entry",
+   "id": 23878,
+   "sha256": "ddef973ee0e6b6f81bb67ed8b4fd266cfd57ef920299ccaf815e892c7dc70b00",
+   "text": "María"
+  },
+  {
+   "kind": "entry",
+   "id": 23879,
+   "sha256": "83412c4c9a8b78df19243f98ac1083203ac1475bd01917e330f3887c4632686c",
+   "text": "Débora"
+  },
+  {
+   "kind": "entry",
+   "id": 23880,
+   "sha256": "6ceb498f678f07b4f168f315981fbb3dec3d77c7f72c59b2721de0bec2fbd6c5",
+   "text": "Hulda"
+  },
+  {
+   "kind": "entry",
+   "id": 23881,
+   "sha256": "7f45f59d9fc17364e0f04c49468437115932b734ab2826ef9585f0127da6a6fc",
+   "text": "Noadías"
+  },
+  {
+   "kind": "entry",
+   "id": 23882,
+   "sha256": "bf4fccd616251b678c56b9cb7a46819b1266853c180637642f5bc7d6b01f5554",
+   "text": "Ana"
+  },
+  {
+   "kind": "entry",
+   "id": 23883,
+   "sha256": "41174e74103cbab21d8ac4dff2e1e8f51399f0669ca43c12830cbaf564a68fc9",
+   "text": "Las cuatro hijas solteras de Felipe"
+  },
+  {
+   "kind": "entry",
+   "id": 23884,
+   "sha256": "703714abbcccdc2cbb0878da24ea0a796712b29c29d48c47cac87b0c72d77c31",
+   "text": "Falsas profetisas"
+  },
+  {
+   "kind": "entry",
+   "id": 23885,
+   "sha256": "6ec46790bea0a773b9308ddedb0f2ffb243fbf2be4923e077ccd0bafb625ac60",
+   "text": "En los negocios"
+  },
+  {
+   "kind": "entry",
+   "id": 23886,
+   "sha256": "34d0e1d86f6230664e44a367ede3960c250f69b532117b59dab2db3fc534a3e6",
+   "text": "Sus derechos de propiedad"
+  },
+  {
+   "kind": "entry",
+   "id": 23887,
+   "sha256": "6da84bbdfa7cc977f39fbcbb69bfba0bb75f667e8335ea002cc0d207f2ce6e6f",
+   "text": "En la herencia"
+  },
+  {
+   "kind": "entry",
+   "id": 23888,
+   "sha256": "56c07b002fb6c8a5bd91adda612d4ed24306e8895b1d5996be0954fff13c7062",
+   "text": "Para vender bienes raíces"
+  },
+  {
+   "kind": "entry",
+   "id": 23889,
+   "sha256": "c457a9e652112d08a8c3f6e7b58a1df1d2a48d090c95873aa8b4afe221bf8fb9",
+   "text": "Vendidas por las deudas del esposo"
+  },
+  {
+   "kind": "entry",
+   "id": 23890,
+   "sha256": "37dac4fb2e7dfed9e8b9d377b1ab52824ad28cb03ea87ef7bf9458260c619dd4",
+   "text": "Las primeras en pecar"
+  },
+  {
+   "kind": "entry",
+   "id": 23891,
+   "sha256": "2b210d30236fc61fc221fe2494475c2fe29d46e1fd5dd0efa38b1155a4b8191d",
+   "text": "Las últimas en la cruz"
+  },
+  {
+   "kind": "entry",
+   "id": 23892,
+   "sha256": "f99b24a36286fef0bd2ade3430ac7cc47f3424063abcf79f1e5eec2cfe62ab65",
+   "text": "Las primeras en el sepulcro"
+  },
+  {
+   "kind": "entry",
+   "id": 23893,
+   "sha256": "5051c1ad2d81b0590979723855c34bfb25b08186ec77aeaeea60efe47c09b3ae",
+   "text": "Las primeras a quienes se apareció el Señor resucitado"
+  },
+  {
+   "kind": "entry",
+   "id": 23894,
+   "sha256": "99c7a10db5ec9db79f10de2f1e0b27a55f6141b4b061730b55f925c87d650cab",
+   "text": "Convertidas por la predicación de Pablo"
+  },
+  {
+   "kind": "entry",
+   "id": 23895,
+   "sha256": "58d7d0257c92d19254260d23b4e36fcf08997cce112bbc035708357a403b9617",
+   "text": "Su posición social"
+  },
+  {
+   "kind": "entry",
+   "id": 23896,
+   "sha256": "ca878128839cd5a04b80079c3d69c56f35f1e07afd5f74a42b46949677e27ff0",
+   "text": "En Persia"
+  },
+  {
+   "kind": "entry",
+   "id": 23897,
+   "sha256": "354b030d9423c36790a221b5f7fb09e83464f60d208f4e2a5833b432007c8991",
+   "text": "En las costumbres romanas"
+  },
+  {
+   "kind": "entry",
+   "id": 23898,
+   "sha256": "ce7d5969d61fcd3cb250402a8ea5cd2eb98a3c4133af7e5fc849dcb32d3d6bad",
+   "text": "Otros pasajes relacionados con"
+  },
+  {
+   "kind": "entry",
+   "id": 23899,
+   "sha256": "c939327ca16dcf97ca32521d8b834bf1de16573d21deda3bb2a337cf403787a6",
+   "text": "Buenas"
+  },
+  {
+   "kind": "entry",
+   "id": 23900,
+   "sha256": "7c1c8557a8387d3fe11230c2c38f832cd8d86fbdad0a54a1e50cc1535e959f43",
+   "text": "Casos de"
+  },
+  {
+   "kind": "entry",
+   "id": 23901,
+   "sha256": "4da019c64cf3f28f5ef01368a5f35db0f6c2f13420f15618ba637920837e28b4",
+   "text": "Débora, jueza, profetisa y líder militar"
+  },
+  {
+   "kind": "entry",
+   "id": 23902,
+   "sha256": "503535722c5cbf5dc7f5906a50d5b08f4fed9917a26686b10e2c0d76b2df7850",
+   "text": "La madre de Sansón"
+  },
+  {
+   "kind": "entry",
+   "id": 23903,
+   "sha256": "83408d4a7be8942fb541fed530174e337d924dd9aa436a4948fc280875a7c290",
+   "text": "Noemí"
+  },
+  {
+   "kind": "entry",
+   "id": 23904,
+   "sha256": "8d7c3cbd40c916e95f23ed1b6aea1d53262e1081010a727854d6ed8a5a4181c1",
+   "text": "Rut"
+  },
+  {
+   "kind": "entry",
+   "id": 23905,
+   "sha256": "0f67514b901da8b9c613167848294cb0010b3c0e696732aa1a0c9737e5be69b1",
+   "text": "Y"
+  },
+  {
+   "kind": "entry",
+   "id": 23906,
+   "sha256": "d4cef0da5cf140c652a5f1f53ca1c7fc3b10a1161be711c00c63d943aff2cd16",
+   "text": "Ana, la madre de Samuel"
+  },
+  {
+   "kind": "entry",
+   "id": 23907,
+   "sha256": "71499b44964019fc677e3642b6f84a39f77c6a2ae6fb5516c036f3d01c15396e",
+   "text": "La viuda de Sarepta, que alimentó a Elías durante la hambruna"
+  },
+  {
+   "kind": "entry",
+   "id": 23908,
+   "sha256": "b8660726331d7d5b78b04b59d458ccba2277265c58b2ae9c566346b4ceea5852",
+   "text": "La sunamita, que dio hospitalidad a Eliseo"
+  },
+  {
+   "kind": "entry",
+   "id": 23909,
+   "sha256": "4fa75d2dc60b189257e7a84db4cf31428bf52834371d0081cdaad3565f8337f6",
+   "text": "Vasti"
+  },
+  {
+   "kind": "entry",
+   "id": 23910,
+   "sha256": "6ae15f72c92e7fad0ce07a21aec6bd2911c7eb145c5a0820cd2d79b69aad1049",
+   "text": "Ester"
+  },
+  {
+   "kind": "entry",
+   "id": 23911,
+   "sha256": "aebac53c46bbeff10fdd26ca0e2196a9bfc1d19bf88eb1efd65a36151c581051",
+   "text": "María"
+  },
+  {
+   "kind": "entry",
+   "id": 23912,
+   "sha256": "22c304f1b7815ee19c911b75c4a1be614630c44c5b70d1e56658cf5193f1d79a",
+   "text": "Elisabet"
+  },
+  {
+   "kind": "entry",
+   "id": 23913,
+   "sha256": "bf4fccd616251b678c56b9cb7a46819b1266853c180637642f5bc7d6b01f5554",
+   "text": "Ana"
+  },
+  {
+   "kind": "entry",
+   "id": 23914,
+   "sha256": "2da6e4430ea89f6925effaa4284dc949673ea9d4ca1069c9222d8ab3ac31a265",
+   "text": "La viuda que echó sus dos blancas (pequeñas monedas, en griego: leptos) en el arca de las ofrendas"
+  },
+  {
+   "kind": "entry",
+   "id": 23915,
+   "sha256": "53cb20781730bdfabe9f11390775d371d5cf3a5fd5770ad34d70537edbed9ab5",
+   "text": "María y Marta"
+  },
+  {
+   "kind": "entry",
+   "id": 23916,
+   "sha256": "477fbf3e9384bdf5c6c83a79b996664ff26d79e359b9aec1541630a1c1a2dbd3",
+   "text": "María Magdalena"
+  },
+  {
+   "kind": "entry",
+   "id": 23917,
+   "sha256": "8f426712349f3d90e4d88a8daf6125bd2a36987cf987554b518c9229eb38561d",
+   "text": "La esposa de Pilato"
+  },
+  {
+   "kind": "entry",
+   "id": 23918,
+   "sha256": "55a65b5c3be5ba72ee71edc5f52f6e98956c6bb1a4baefdaf2640cd9f01ae0a4",
+   "text": "Dorcas (Tabita)"
+  },
+  {
+   "kind": "entry",
+   "id": 23919,
+   "sha256": "5a28fa1fccb69b988973e02d1f11e68f601eafb869d9487396c2c1210aa3da9a",
+   "text": "Lidia"
+  },
+  {
+   "kind": "entry",
+   "id": 23920,
+   "sha256": "358f84df148ecc11ebfbcec5e2ede6df2c4b614d8c7704fc4558ed793bf2111b",
+   "text": "Priscila (Prisca)"
+  },
+  {
+   "kind": "entry",
+   "id": 23921,
+   "sha256": "ee5398848187d0a3970e996a1c1777e12d793d5cffa7182c6a76f8ea0f4b28c8",
+   "text": "Febe"
+  },
+  {
+   "kind": "entry",
+   "id": 23922,
+   "sha256": "e89fe62ec86347c2b50f4a874bf6cc5e67b1cd579a9989a8bf7cb956045d40d7",
+   "text": "Julia"
+  },
+  {
+   "kind": "entry",
+   "id": 23923,
+   "sha256": "aebac53c46bbeff10fdd26ca0e2196a9bfc1d19bf88eb1efd65a36151c581051",
+   "text": "María"
+  },
+  {
+   "kind": "entry",
+   "id": 23924,
+   "sha256": "5b84705f4f54bb0f3f0d7900a929171fdff7a8eda6dbba0558a3049fdac1069f",
+   "text": "Loida y Eunice"
+  },
+  {
+   "kind": "entry",
+   "id": 23925,
+   "sha256": "e50a01d76c523daf76c2731738594bac1c6707cfbc67729ecf8dbb5488590e97",
+   "text": "Las cristianas de Filipos"
+  },
+  {
+   "kind": "entry",
+   "id": 23926,
+   "sha256": "da54bbbf7ef901d343d7a104be2ea0befd9d53a3b56d1ab9fbec8e86dca50c5d",
+   "text": "En sentido figurado"
+  },
+  {
+   "kind": "entry",
+   "id": 23927,
+   "sha256": "4796a7bbb1d60148f0cc03a4cb83dbc6fec6c0a1880dbe316f99e7df7e8a5892",
+   "text": "Del cuerpo (la ekklesia) de Cristo"
+  },
+  {
+   "kind": "entry",
+   "id": 23928,
+   "sha256": "389cb6978b0df15ed49b2990f02620c9ed4df987ada7e43867f772879283f339",
+   "text": "De los santos"
+  },
+  {
+   "kind": "entry",
+   "id": 23929,
+   "sha256": "df5a6c561a602db0fb6e4527a9d0ecff9cb0acd735c0b885032a083948f1b4ef",
+   "text": "Malas"
+  },
+  {
+   "kind": "entry",
+   "id": 23930,
+   "sha256": "a1ff32503e1724b2280b6cb1f701fb84dd8088dee3c998dfc050dc0ef4738100",
+   "text": "Su celo en las prácticas licenciosas de la idolatría"
+  },
+  {
+   "kind": "entry",
+   "id": 23931,
+   "sha256": "7873b66fa31da82679d70da51b35ea2b2e4ab1faa0ae8ad0262f033b5d8bcef9",
+   "text": "Llena de engaño y lascivia"
+  },
+  {
+   "kind": "entry",
+   "id": 23932,
+   "sha256": "42b96b6767611408dc27d0ac05b097e54241545ac799ae35f92a8fc556fe8f6f",
+   "text": "Comete falsificación"
+  },
+  {
+   "kind": "entry",
+   "id": 23933,
+   "sha256": "5c42a68582a090d9ec8c4057532b02a6781f9cf6c01739932906ad3e162ff686",
+   "text": "Necia y descarriada"
+  },
+  {
+   "kind": "entry",
+   "id": 23934,
+   "sha256": "7c1c8557a8387d3fe11230c2c38f832cd8d86fbdad0a54a1e50cc1535e959f43",
+   "text": "Casos de"
+  },
+  {
+   "kind": "entry",
+   "id": 23935,
+   "sha256": "3e953157c675a43689cbee0751ef70aea4e76aed929d4babdd8b077b72ca80e1",
+   "text": "Eva, al ceder a la tentación e inducir a su esposo"
+  },
+  {
+   "kind": "entry",
+   "id": 23936,
+   "sha256": "844c91ce510194c2d0c5e5821de017bb1ec83ef121ecefe6258d9739afaf804e",
+   "text": "Sara, en sus celos y su malicia hacia Agar"
+  },
+  {
+   "kind": "entry",
+   "id": 23937,
+   "sha256": "43f8bdf5ab7cc5e0539ee2ed3eef9a34182bb7db9d88d566f8c86c1d9fdceee8",
+   "text": "La esposa de Lot, en su rebeldía contra su situación y contra la destrucción de Sodoma"
+  },
+  {
+   "kind": "entry",
+   "id": 23938,
+   "sha256": "037cf427ce5580aa08b93aa31eee4c2dbb7fcaf01f61987c0d4c502f6108d316",
+   "text": "Las hijas de Lot, en su deseo incestuoso"
+  },
+  {
+   "kind": "entry",
+   "id": 23939,
+   "sha256": "815af0e6b657f020b9f80a0c5409db032e7693ed578bb966e95edae88bbe7110",
+   "text": "Rebeca, en su preferencia por Jacob y su artimaña para obtener para él la bendición de Isaac"
+  },
+  {
+   "kind": "entry",
+   "id": 23940,
+   "sha256": "288afd5bbb26be46455cd018ab9667c99ac532a9e3cf663da556b26ea715ba62",
+   "text": "Raquel, en sus celos de Lea"
+  },
+  {
+   "kind": "entry",
+   "id": 23941,
+   "sha256": "041b0d10291062d51a91eb9d21aa2d85d69839775200c339be53a71f6c5a5fbe",
+   "text": "Raquel, al robar los ídolos"
+  },
+  {
+   "kind": "entry",
+   "id": 23942,
+   "sha256": "038754c121e8dc61d059d86de41f52b58e7498e3fa62d629ade666a0c9156057",
+   "text": "Lea, al imitar a Raquel en el asunto de los hijos"
+  },
+  {
+   "kind": "entry",
+   "id": 23943,
+   "sha256": "6b0158dbe3694fca907e1e1172612c655ab6f96960288b95b69920ec7f9d295f",
+   "text": "Dina, en su fornicación"
+  },
+  {
+   "kind": "entry",
+   "id": 23944,
+   "sha256": "1e5a2a524101f909823228a9dc6a4ae844c1dbfb1e8435b812e94aed99008d9f",
+   "text": "Tamar, en su adulterio"
+  },
+  {
+   "kind": "entry",
+   "id": 23945,
+   "sha256": "25a88de2ae77c7abaa2bd1f25e02a27714af4e5be319141114e0355782dd6024",
+   "text": "La esposa de Potifar, en su deseo lascivo y su calumnia contra José"
+  },
+  {
+   "kind": "entry",
+   "id": 23946,
+   "sha256": "51d275e07307f8e7c8c4aa08e93dc10ecaa71ede34bc0e8587ea88b004d8aa45",
+   "text": "Séfora, en su hostigamiento a Moisés a causa de sus obligaciones religiosas"
+  },
+  {
+   "kind": "entry",
+   "id": 23947,
+   "sha256": "cdf548507e709977393e60722dcf2cd91ee1156382af29524f5ce45ff5a4ad6a",
+   "text": "María, en su sedición con Aarón contra Moisés"
+  },
+  {
+   "kind": "entry",
+   "id": 23948,
+   "sha256": "3f608950d0a786f494ca47f24090d3e8cdd6dcba5211fd3c51ce3f2c41c71090",
+   "text": "Rahab, en su prostitución"
+  },
+  {
+   "kind": "entry",
+   "id": 23949,
+   "sha256": "6371e2cc45eefe99eedbf28631bbb0af629ca863d12d6e9d88ee1c06d3140a7a",
+   "text": "Dalila, en su conspiración contra Sansón"
+  },
+  {
+   "kind": "entry",
+   "id": 23950,
+   "sha256": "eca12530b41bb6eaac2811aa42caf159678be7694da868e3c92d7a540a2a29b7",
+   "text": "Penina, la esposa de Elcana, en sus burlas celosas contra Ana"
+  },
+  {
+   "kind": "entry",
+   "id": 23951,
+   "sha256": "6b0253c35a857acb9d89ed345fe5cfaf5304d13995051e07fda57f235f58bd08",
+   "text": "La mujer madianita en el campamento de Israel, sorprendida en adulterio"
+  },
+  {
+   "kind": "entry",
+   "id": 23952,
+   "sha256": "1fc0f39a355e5e66d721f28744bbb3ce20d5c1af57cf02429ed72158bb6a3bfc",
+   "text": "Mical, en su burla del celo religioso de David"
+  },
+  {
+   "kind": "entry",
+   "id": 23953,
+   "sha256": "a33d043d433a0b5addccb50a4a23f49f98d8fa4a3a6bf694ff7878a106f326b5",
+   "text": "Betsabé, en su adulterio, al hacerse esposa del asesino de su marido"
+  },
+  {
+   "kind": "entry",
+   "id": 23954,
+   "sha256": "aa0d349aff86e1ec78b37d823a6f0e40a7d895bdcb19530dacea8f18562b50a6",
+   "text": "Las esposas de Salomón, en su influencia idólatra y perversa sobre Salomón"
+  },
+  {
+   "kind": "entry",
+   "id": 23955,
+   "sha256": "e9d53809cc7587afd55029fb6d662ce411a99e9fa839d633c910a0402212df91",
+   "text": "Jezabel, en su persecución y destrucción de los profetas del Señor"
+  },
+  {
+   "kind": "entry",
+   "id": 23956,
+   "sha256": "665728478f5059856d2e9dce107cd38ed79cd6803b1911a562f9199efd432bdd",
+   "text": "Jezabel, en su persecución de Elías"
+  },
+  {
+   "kind": "entry",
+   "id": 23957,
+   "sha256": "0fac301a8b7e32e9cee3d438b6f9ed8aa89195e1d01569149de1884348ce0402",
+   "text": "Jezabel, en su conspiración contra Nabot para quitarle con engaño su viña"
+  },
+  {
+   "kind": "entry",
+   "id": 23958,
+   "sha256": "6a06062c9f3d5bd1a3fa25b8daedbd887838a3c21768d12983438ace09f24975",
+   "text": "Jezabel, en sus malos consejos a Acab y su influencia sobre él"
+  },
+  {
+   "kind": "entry",
+   "id": 23959,
+   "sha256": "0f67514b901da8b9c613167848294cb0010b3c0e696732aa1a0c9737e5be69b1",
+   "text": "Y"
+  },
+  {
+   "kind": "entry",
+   "id": 23960,
+   "sha256": "ba74601e76a11f595cd01ccb36d45096bdb377ecd5ac40806eb98a7446118f83",
+   "text": "Las madres caníbales de Samaria"
+  },
+  {
+   "kind": "entry",
+   "id": 23961,
+   "sha256": "9211c3678118bdffa46ead091dccaa6796101e464458da94f0d07d468fc0d94c",
+   "text": "Atalía, al destruir la familia real y usurpar el trono"
+  },
+  {
+   "kind": "entry",
+   "id": 23962,
+   "sha256": "5024141ae3cb536dfb25cc637c7b07cf217478954e3731ed5d5d0055ea6575b2",
+   "text": "Las sodomitas del reino del sur (Judá)"
+  },
+  {
+   "kind": "entry",
+   "id": 23963,
+   "sha256": "18b58fdff9316a8b7044ca91c5d341dde4cb8d719dfac29f4a63eb266b106afe",
+   "text": "Noadías, una falsa profetisa, al intentar intimidar a los judíos cuando restauraban Jerusalén"
+  },
+  {
+   "kind": "entry",
+   "id": 23964,
+   "sha256": "14898930c5b9ed7fa0a0cedff447eff8b45451b78e4c0b63fc918b77d7c96a92",
+   "text": "La esposa de Amán, al aconsejarle que ahorcara a Mardoqueo"
+  },
+  {
+   "kind": "entry",
+   "id": 23965,
+   "sha256": "05510482345d9163d9b3b401ae83a4cd1a3d657a8d27a3675da112e18fe13d58",
+   "text": "La esposa de Job, al sugerirle que maldijera a Dios y muriera"
+  },
+  {
+   "kind": "entry",
+   "id": 23966,
+   "sha256": "9bc3fd554e8a5e839d0d3ab7d00f0fc63dfd290fa8b370a1428ce9bafc7a89e0",
+   "text": "Gomer, la esposa adúltera de Oseas"
+  },
+  {
+   "kind": "entry",
+   "id": 23967,
+   "sha256": "799f79d9343c1fda9d8a6bbd086ddeb816d30339e8ab537bf71d9fe1da1e25c3",
+   "text": "Herodías, en su matrimonio incestuoso con Herodes Antipas"
+  },
+  {
+   "kind": "entry",
+   "id": 23968,
+   "sha256": "1eda9aa69918e8cb56c774012b6d15ba56945f2074c67adb3dcbaac96f7a2435",
+   "text": "Herodías, al causar indirectamente que Juan el Bautista fuera decapitado"
+  },
+  {
+   "kind": "entry",
+   "id": 23969,
+   "sha256": "39899e2ef960675dd5c865bc0fdf9397c8c5e28bb96850fecd6f7d42f92f6084",
+   "text": "La hija de Herodías, en su complicidad con su madre para conseguir la muerte de Juan el Bautista"
+  },
+  {
+   "kind": "entry",
+   "id": 23970,
+   "sha256": "1faa329f2f6ba628ca03e573e5c5abd7d804ff495c300817e0421847d29079ee",
+   "text": "Safira, en su mentira blasfema"
+  },
+  {
+   "kind": "entry",
+   "id": 23971,
+   "sha256": "0c789f002cc05be8588ee59ac88563fe8d65947a71cb86cd8bcc4bab9d1874d7",
+   "text": "La mujer sorprendida en el acto de adulterio y traída a Jesús en el templo"
+  },
+  {
+   "kind": "entry",
+   "id": 23972,
+   "sha256": "da54bbbf7ef901d343d7a104be2ea0befd9d53a3b56d1ab9fbec8e86dca50c5d",
+   "text": "En sentido figurado"
+  },
+  {
+   "kind": "entry",
+   "id": 23973,
+   "sha256": "9c1bfbdd70ced870ad4d962b469fa3dea3c26bfa0e2c505848fb327446795d33",
+   "text": "De la apostasía"
+  },
+  {
+   "kind": "entry",
+   "id": 23974,
+   "sha256": "2d383fe7a65b50373c6b9a0b6b561caf4944ce8b5cb59dfd05428cc15e2be55d",
+   "text": "De las personas malas"
+  },
+  {
+   "kind": "entry",
+   "id": 23975,
+   "sha256": "17be2c91cd44bc21b827e7cc553cd57c51acf87526e42e4cc945eea851bd1e2e",
+   "text": "En sentido simbólico"
+  },
+  {
+   "kind": "entry",
+   "id": 23976,
+   "sha256": "2ee02a96ccbb68b1adb0ae4db00ebe494833d4724fa0aaad409a169828b96958",
+   "text": "De la maldad"
+  },
+  {
+   "kind": "topic",
+   "id": 5161,
+   "sha256": "d8e564378543fc7c5587fd01ca0b6740095bc15943ba21464ce126205f5f6191",
+   "text": "Admirable"
+  },
+  {
+   "kind": "entry",
+   "id": 23977,
+   "sha256": "eb09490a94163301f24463e0c8b3ecfc299f0b618e86953a059c3b7b25e5d7b5",
+   "text": "Un nombre del Mesías"
+  },
+  {
+   "kind": "topic",
+   "id": 5162,
+   "sha256": "5f91efa41797d91df4b8c624612f9f64b336bcdbc2e8dd0df43331992d07c3e5",
+   "text": "Lana"
+  },
+  {
+   "kind": "entry",
+   "id": 23978,
+   "sha256": "c4368a9518085c155e20419b1146a87390c704dd3e8db1d9ed9855ad47770c35",
+   "text": "Usada para vestir"
+  },
+  {
+   "kind": "entry",
+   "id": 23979,
+   "sha256": "fa9c006da4afd0c69865f7f030ecb09ac5eee66299081e54d7c018d1564f3e25",
+   "text": "Prohibida en la vestidura del sacerdote en el templo"
+  },
+  {
+   "kind": "entry",
+   "id": 23980,
+   "sha256": "50ba35f88ea1e5d01854965d756db4f16c69b45efe6a5c6d0773011044f193a1",
+   "text": "Se prohíbe mezclarla con otros tejidos"
+  },
+  {
+   "kind": "entry",
+   "id": 23981,
+   "sha256": "467bc2a0fe2df8d95b368d222db3c589cfcd008d2b8b5a4d226094de1e7dba48",
+   "text": "Vellón de"
+  },
+  {
+   "kind": "entry",
+   "id": 23982,
+   "sha256": "ef12f72173e99076dab1c8d1a36274f3f236b4c45688e725d08a93fbb93f2303",
+   "text": "El primer vellón, pertenecía a los sacerdotes"
+  },
+  {
+   "kind": "topic",
+   "id": 5163,
+   "sha256": "3a2860ece5a4ee0b48b41ee96dd8054cf9bc6f113249ec601478b2582d72ead4",
+   "text": "Verbo"
+  },
+  {
+   "kind": "entry",
+   "id": 23983,
+   "sha256": "2c3ffe5207fede3d34e443420882b4687166dc37a8ac7c877d448402e1dd4aaf",
+   "text": "Un título de Jesús"
+  },
+  {
+   "kind": "topic",
+   "id": 5164,
+   "sha256": "368ab1dcc942380e34c2aac64f161586aa66ea9b12618e4f5dedcc3c5d058873",
+   "text": "Palabra de Dios"
+  },
+  {
+   "kind": "entry",
+   "id": 23984,
+   "sha256": "3bb8faf30715b01cb7e0fb7cdd033bcbf5912a57f46289bb2090d470b6f3c610",
+   "text": "Llamada"
+  },
+  {
+   "kind": "entry",
+   "id": 23985,
+   "sha256": "909cb81127c5e1944b16dc5944ade59facb822c7a3f250d1f0256293bfd3c055",
+   "text": "Libro"
+  },
+  {
+   "kind": "entry",
+   "id": 23986,
+   "sha256": "b7c4aabf1d524737bc7b6df860c34663a733e5a8aa37c3103e07a2059208fa1f",
+   "text": "Libro del Señor"
+  },
+  {
+   "kind": "entry",
+   "id": 23987,
+   "sha256": "4143e2a019be77873ecf071368e5ae37f385fb988ee37964c643f35df52db2fb",
+   "text": "Libro de la ley"
+  },
+  {
+   "kind": "entry",
+   "id": 23988,
+   "sha256": "ee452a99bf6a61afd39dcafcaa9d95eb1ca67e2e1fcda76790311187838898ab",
+   "text": "Buena palabra de Dios"
+  },
+  {
+   "kind": "entry",
+   "id": 23989,
+   "sha256": "50eb9d4045d15bd7c2fb003ce35ceed2071ed9c8ef0b1f2737fca745cbaf196f",
+   "text": "Santas Escrituras"
+  },
+  {
+   "kind": "entry",
+   "id": 23990,
+   "sha256": "1b58860ab71695201d21671708aa1b9ed54b8bfe54174f289d30d905acf2f789",
+   "text": "Ley del Señor"
+  },
+  {
+   "kind": "entry",
+   "id": 23991,
+   "sha256": "1cf89e7ebfa79fe7a5df597ccb6cb9178fc267185f9258ad94d9b9968c4ae506",
+   "text": "Palabras de Dios"
+  },
+  {
+   "kind": "entry",
+   "id": 23992,
+   "sha256": "f62cb13946f7187483056b89badd365472e1e4c9242670046a97e75843ad8f63",
+   "text": "Escrituras"
+  },
+  {
+   "kind": "entry",
+   "id": 23993,
+   "sha256": "d4a9f85c4476cb4c90eff25fd5c723cbf2cbd3541e6f6bef81242be98fda4438",
+   "text": "Escritura de verdad"
+  },
+  {
+   "kind": "entry",
+   "id": 23994,
+   "sha256": "805f37070397a27efd28f7ebf95702770b9f8a87274acc82a9312ad39274c049",
+   "text": "Espada del Espíritu"
+  },
+  {
+   "kind": "entry",
+   "id": 23995,
+   "sha256": "0ce6d6e034414c11686fe8f55001b45f8273ca265d6763eae842dc9793f1091c",
+   "text": "La Palabra"
+  },
+  {
+   "kind": "entry",
+   "id": 23996,
+   "sha256": "368ab1dcc942380e34c2aac64f161586aa66ea9b12618e4f5dedcc3c5d058873",
+   "text": "Palabra de Dios"
+  },
+  {
+   "kind": "entry",
+   "id": 23997,
+   "sha256": "4f189ba428f8af05afe5e1d6f22b6695461c0ca4a7ca04869bd4e6f72918ed85",
+   "text": "Palabra de Cristo"
+  },
+  {
+   "kind": "entry",
+   "id": 23998,
+   "sha256": "a10213b17acb0e9b53e3cfd2ab5c11dd9a14e6aba6945f391426c1101ba56672",
+   "text": "Palabra de vida"
+  },
+  {
+   "kind": "entry",
+   "id": 23999,
+   "sha256": "d060a1bbd1e46c69b299e6ce421568bd69bf34ed56320d02533d1f3cdcca8624",
+   "text": "Palabra de verdad"
+  },
+  {
+   "kind": "entry",
+   "id": 24000,
+   "sha256": "17c858fc6d7f4a9e4e226ca34b8d36f05b6716febf8598d0f5822f0cec657502",
+   "text": "Comparada"
+  },
+  {
+   "kind": "entry",
+   "id": 24001,
+   "sha256": "94415b38087391149d53128b9a74032dff69f3897b93db542be56f5350bccb19",
+   "text": "Con la semilla"
+  },
+  {
+   "kind": "entry",
+   "id": 24002,
+   "sha256": "bbc00aa6a03a0d2b6afcdb39b67bbdfd359ea5380f3c6f27d090f231fe54de1a",
+   "text": "Con una espada de dos filos"
+  },
+  {
+   "kind": "entry",
+   "id": 24003,
+   "sha256": "d800626a95af8cbb41cf73095caf666f0dfc9c64fc39850ac0ffad099fadcdea",
+   "text": "Debe leerse públicamente"
+  },
+  {
+   "kind": "entry",
+   "id": 24004,
+   "sha256": "98da8c3f0b23e91b909132390e9c649e9e046b6e8a8d7b2dc25b8a38aab41217",
+   "text": "El pueblo se puso de pie y respondió diciendo: \"Amén\""
+  },
+  {
+   "kind": "entry",
+   "id": 24005,
+   "sha256": "8d190957269e201c2da01003077620a62820476bd62e0c1f440ace0dafa33cc8",
+   "text": "Expuesta"
+  },
+  {
+   "kind": "entry",
+   "id": 24006,
+   "sha256": "e87ef0264c959028e0ca5232a0f55741a1dbf9d1ac258b42b9919d3e5a0e6e26",
+   "text": "Por Jesús"
+  },
+  {
+   "kind": "entry",
+   "id": 24007,
+   "sha256": "9fc7f11668697dc6421661b14dbed97e4f0d5e60246dbc531fc7656f4bceb8bc",
+   "text": "Escudriñada"
+  },
+  {
+   "kind": "entry",
+   "id": 24008,
+   "sha256": "7bc24d3d92329abb6eec905062ee3234b16d285440f69e7aa6894dac3ce6b154",
+   "text": "Se manda escudriñarla"
+  },
+  {
+   "kind": "entry",
+   "id": 24009,
+   "sha256": "ee6920254d2c86abe41d2d1dd7985e917dfc7513cf97b8192ca6f8044093bbe3",
+   "text": "Sus textos, deben escribirse en los postes de las puertas"
+  },
+  {
+   "kind": "entry",
+   "id": 24010,
+   "sha256": "ddab6237370c42ec984bf076f6a211b88ce4dd829ec7c7cf127ccfe0dc36d066",
+   "text": "No se le debe añadir ni quitar"
+  },
+  {
+   "kind": "entry",
+   "id": 24011,
+   "sha256": "b50db98d0c8f0ea4e62df0b1982c6774f59319cd92650733b022ce80ec532323",
+   "text": "Convicción de pecado al leerla"
+  },
+  {
+   "kind": "entry",
+   "id": 24012,
+   "sha256": "36d63a3be2527fa68bef36f6414bb90224ddfdbe893a36fbf69540320ae156d9",
+   "text": "Cumplida por Jesús"
+  },
+  {
+   "kind": "entry",
+   "id": 24013,
+   "sha256": "d4aec11207bfbf247f014ba0e9a4973aafdc6c7111d73cb0ace50156dfdac92d",
+   "text": "Dan testimonio de Jesús"
+  },
+  {
+   "kind": "entry",
+   "id": 24014,
+   "sha256": "ea8cd768b5504e71e9d07b8dca6036cf98b09fd72b103e9ed3418e1f9b53e2c4",
+   "text": "Enseñada por los apóstoles"
+  },
+  {
+   "kind": "entry",
+   "id": 24015,
+   "sha256": "c3b008c043af4ca0208e2ac78fe634553eebc8ad445c3b7db9a7cf14e3e7375b",
+   "text": "La norma del juicio"
+  },
+  {
+   "kind": "entry",
+   "id": 24016,
+   "sha256": "42304e523371f2f69ed91dcf18b89900a67c1ae701e82adf8e5421aaf91c2294",
+   "text": "No debe manejarse con engaño"
+  },
+  {
+   "kind": "entry",
+   "id": 24017,
+   "sha256": "ce7d5969d61fcd3cb250402a8ea5cd2eb98a3c4133af7e5fc849dcb32d3d6bad",
+   "text": "Otros pasajes relacionados con"
+  },
+  {
+   "kind": "entry",
+   "id": 24018,
+   "sha256": "31db61d163e1a721ae6d33b4fd36d13beb11c0ced408ddff5141d1fff7e0a50a",
+   "text": "Su inspiración"
+  },
+  {
+   "kind": "entry",
+   "id": 24019,
+   "sha256": "c4626618a221e732ecf8d1fe285232860687ed740353b6d2ac9a8bf7bdcb5082",
+   "text": "Incredulidad en la"
+  },
+  {
+   "kind": "topic",
+   "id": 5165,
+   "sha256": "0a8be89a52a87051cb7e735ea1fee01c553a1cac1cb77318c9d6aa407ff51e51",
+   "text": "Palabras"
+  },
+  {
+   "kind": "entry",
+   "id": 24020,
+   "sha256": "c9381d336f3a7f2f8e0b933aeeb7a6035582c06dccb55001252c33251c0c471f",
+   "text": "De Jesús"
+  },
+  {
+   "kind": "entry",
+   "id": 24021,
+   "sha256": "4c0283ed269fe97bcb32a785012016d8d8831feb6fea568632104db9fa911750",
+   "text": "Llenas de gracia"
+  },
+  {
+   "kind": "entry",
+   "id": 24022,
+   "sha256": "f498ecd958419f933b1deea95503e28e958afc8bf3d728cd9da09ec888ca5cbc",
+   "text": "Son espíritu y vida"
+  },
+  {
+   "kind": "entry",
+   "id": 24023,
+   "sha256": "294aca2e6a2440c3b9dfe6a634ca5414336723212922efbf083ec343412306f2",
+   "text": "De vida eterna"
+  },
+  {
+   "kind": "entry",
+   "id": 24024,
+   "sha256": "2ed88ba788536a91e7c17fd2b3e8fdb7d10dc706d1cf3f84ec15b20c51d36bd7",
+   "text": "Juzgarán"
+  },
+  {
+   "kind": "entry",
+   "id": 24025,
+   "sha256": "2de24f04313e557d8775ef49df6107473ebe4f44b0dc5495ad891b81774e56d1",
+   "text": "De los sabios"
+  },
+  {
+   "kind": "entry",
+   "id": 24026,
+   "sha256": "d2bb158eaa8ca027e4c2c9c329abb7838eb724c6454bd3b2e86d62a8bac16ae5",
+   "text": "Como aguijones y como clavos bien hincados"
+  },
+  {
+   "kind": "entry",
+   "id": 24027,
+   "sha256": "4c0283ed269fe97bcb32a785012016d8d8831feb6fea568632104db9fa911750",
+   "text": "Llenas de gracia"
+  },
+  {
+   "kind": "entry",
+   "id": 24028,
+   "sha256": "73b6fe86b5a789f2843665bf8de96916459196e351dfc8e42a526948ad008acc",
+   "text": "Dichas a su tiempo"
+  },
+  {
+   "kind": "entry",
+   "id": 24029,
+   "sha256": "f6e53959cce81985c2bc502f0d93445b3f057ffa5e3d2dcc17cab07bce616f21",
+   "text": "Dichas como conviene, como manzanas de oro con figuras de plata"
+  },
+  {
+   "kind": "entry",
+   "id": 24030,
+   "sha256": "ed0fa0f37b367375e3588403435734130f0abc24786d6fa5f8d2386537102dd4",
+   "text": "Del hombre perfecto, apacibles"
+  },
+  {
+   "kind": "entry",
+   "id": 24031,
+   "sha256": "0ceac3aea16f954bee54a0d33060a865b5550d91033e315a92882413d5ed5ad0",
+   "text": "Deben ser agradables a Dios"
+  },
+  {
+   "kind": "entry",
+   "id": 24032,
+   "sha256": "5b335196f7c71c6f3aa74015922e9122f79569e4d35f78dcb86527eb681615c4",
+   "text": "Del maestro, deben ser claras"
+  },
+  {
+   "kind": "entry",
+   "id": 24033,
+   "sha256": "e3a756af4f1fe1795c865b3ea0882343e59be1d41f4f3b9529143dced6dfa172",
+   "text": "Inútiles, deben evitarse"
+  },
+  {
+   "kind": "entry",
+   "id": 24034,
+   "sha256": "33eca752a7dabbfa28c923b20d5160eac4a7af1f8613f6ac20d24a1693951d9d",
+   "text": "Inefables, oídas por Pablo en el paraíso"
+  },
+  {
+   "kind": "entry",
+   "id": 24035,
+   "sha256": "515284ddbf57cf20971c7d30e3bc274fda9cd62eb4d923f58bd84887479016bf",
+   "text": "Vanas, no deben tenerse en cuenta"
+  },
+  {
+   "kind": "entry",
+   "id": 24036,
+   "sha256": "6273f08f6873a150d321128c7d6bc1874c9fcc163acb59acefc6032de2c9af98",
+   "text": "Como una tempestad"
+  },
+  {
+   "kind": "entry",
+   "id": 24037,
+   "sha256": "bb2f45de03c432e75cdaed1ac2ad213b1f486994e226992b9590388330aeb93f",
+   "text": "Sin conocimiento, oscurecen el consejo"
+  },
+  {
+   "kind": "entry",
+   "id": 24038,
+   "sha256": "d766da1fab3bf249717c1e742c24289c63f6f4795f2f7b246a5b4ce25b523570",
+   "text": "Ociosas, se dará cuenta de ellas en el día del juicio"
+  },
+  {
+   "kind": "entry",
+   "id": 24039,
+   "sha256": "cae802533e604d4f8fef583882db3135a3e407ea980a36cf35cdd1f4bb09a12a",
+   "text": "Precipitadas, su necedad"
+  },
+  {
+   "kind": "entry",
+   "id": 24040,
+   "sha256": "6fe2a491a7a8303de2c2def35e1bc594e3f91c53c94e5b4124d296865754f23a",
+   "text": "En las muchas, hay pecado"
+  },
+  {
+   "kind": "entry",
+   "id": 24041,
+   "sha256": "9b6081a2b9e1d524d5c07a088f1b630e495eec79efad4050e79aa1abb0d1488d",
+   "text": "El necio se conoce por la multitud de"
+  },
+  {
+   "kind": "entry",
+   "id": 24042,
+   "sha256": "c0fbd779f702ea268d20cf199d06aca80402f4585ca4df300e1b2201d60287d4",
+   "text": "Lo devorarán a sí mismo"
+  },
+  {
+   "kind": "entry",
+   "id": 24043,
+   "sha256": "b197b7b8af2dd231c7e67dd8eabf2d9d44f3242919543568d27ea8c867d17335",
+   "text": "Sediciosas, engañan a los ingenuos"
+  },
+  {
+   "kind": "entry",
+   "id": 24044,
+   "sha256": "f3352e3f877133ac49b99d8fcb65996fb012e6527b90b54ee44a5487d78b4390",
+   "text": "Engañosas, son lazo para quien las pronuncia"
+  },
+  {
+   "kind": "entry",
+   "id": 24045,
+   "sha256": "27f70ea758c54f2c40d64f2cfb4f18dc1028866d572021a444bf60684c4b4f24",
+   "text": "Del hipócrita, más blandas que el aceite"
+  },
+  {
+   "kind": "entry",
+   "id": 24046,
+   "sha256": "c04580ef524e4b3481a2dd70d4367631014b4d0aa7d04dcda5f7a4e90da25c4a",
+   "text": "Del chismoso, heridas para el alma"
+  },
+  {
+   "kind": "topic",
+   "id": 5166,
+   "sha256": "104ab9213e28e4ff5ba0b4086457503e8a4656815cfec7bcf2799d76a3db081d",
+   "text": "Trabajo"
+  },
+  {
+   "kind": "topic",
+   "id": 5167,
+   "sha256": "2b4c8c6d38db43a9b038d256f1b54d9685ecc1578603d82f3f49f2bda9922efe",
+   "text": "Obras"
+  },
+  {
+   "kind": "entry",
+   "id": 24047,
+   "sha256": "c939327ca16dcf97ca32521d8b834bf1de16573d21deda3bb2a337cf403787a6",
+   "text": "Buenas"
+  },
+  {
+   "kind": "entry",
+   "id": 24048,
+   "sha256": "ab7379b2a697019f09228f0e047acb142fb5bb2fb624ff536b424e51f09c949a",
+   "text": "Jesús, ejemplo de"
+  },
+  {
+   "kind": "entry",
+   "id": 24049,
+   "sha256": "118cbf8c31ff37daa9e993661ad619ad61b369fae6eb54931217cc48779f3d6c",
+   "text": "Las mujeres santas deben manifestar"
+  },
+  {
+   "kind": "entry",
+   "id": 24050,
+   "sha256": "d3ad2d25addc0b691b1fbf9ddce1a1332e0b6d78a4a277625c547dda450cb81c",
+   "text": "Dios recuerda las"
+  },
+  {
+   "kind": "entry",
+   "id": 24051,
+   "sha256": "79c451cadc4ce21cdd50c8db027d303faa154c432a2c2323b62594df82bab5f7",
+   "text": "Serán traídas a juicio"
+  },
+  {
+   "kind": "entry",
+   "id": 24052,
+   "sha256": "b574a6d98805d54bb774abdbfdf6b897b63f6ce1794a4a9b97b396e17326ed54",
+   "text": "En el juicio, serán evidencia de la fe"
+  },
+  {
+   "kind": "entry",
+   "id": 24053,
+   "sha256": "9f442627883241f6dff8220220a187faee299d74b57f698f38bcfa5b0bf1597e",
+   "text": "Los siervos deben ser ejemplo de"
+  },
+  {
+   "kind": "entry",
+   "id": 24054,
+   "sha256": "489c28a224646536a9158b3d7bcabe11e5ed9c9aef1cba9c51e7f0245b85cab1",
+   "text": "Los siervos deben exhortar a"
+  },
+  {
+   "kind": "entry",
+   "id": 24055,
+   "sha256": "488694b8f0a4d4a3d92e92aa665d3cad34957ad4bb7d3c8d98b716b795c52c5a",
+   "text": "Dios es glorificado por las"
+  },
+  {
+   "kind": "entry",
+   "id": 24056,
+   "sha256": "7f92b89448a142ca4011848a67f47e3599c2a4e42a0a6cbba8e397ab0d98e3bb",
+   "text": "Destinadas a llevar a otros a glorificar a Dios"
+  },
+  {
+   "kind": "entry",
+   "id": 24057,
+   "sha256": "a749abfa219a98eea0dc767ed05af2b37c5a72e6537aff6be00e722f58d0eb05",
+   "text": "Una bendición acompaña a las"
+  },
+  {
+   "kind": "entry",
+   "id": 24058,
+   "sha256": "c080d072091e423ccd9e08d569e01b61b8f361a152f2f6feb3ece0bb077ff2a5",
+   "text": "De los justos, son manifiestas"
+  },
+  {
+   "kind": "entry",
+   "id": 24059,
+   "sha256": "83ca41fa471f855518073abb06bea187844c7f1a3955adb112b7bbf3d5ab1b22",
+   "text": "Parábolas relacionadas con las"
+  },
+  {
+   "kind": "entry",
+   "id": 24060,
+   "sha256": "a679d9339afbfaf7282308e7a75adc70511fd68cfc95aaa97c742904265178e2",
+   "text": "Los talentos"
+  },
+  {
+   "kind": "entry",
+   "id": 24061,
+   "sha256": "22cebf5f80f926d88bdb15339570d6519be8a9a724f7985a6f56ba8bf0a7b13b",
+   "text": "Las minas"
+  },
+  {
+   "kind": "entry",
+   "id": 24062,
+   "sha256": "74b1a17ff97b11de70f783a63dc6e6740cd6a24699f24960256ed8dafdcb0619",
+   "text": "Los obreros en la viña"
+  },
+  {
+   "kind": "entry",
+   "id": 24063,
+   "sha256": "026e9d1073550d50eadd27562c64a55b6d24dd1f7ab7c9ae839da336e5647bf2",
+   "text": "Los dos hijos"
+  },
+  {
+   "kind": "entry",
+   "id": 24064,
+   "sha256": "946da17669a3f6ac64ce11bebe16f6e81c25fa3776ff3093fe0baf8395698fb1",
+   "text": "La higuera estéril"
+  },
+  {
+   "kind": "entry",
+   "id": 24065,
+   "sha256": "ce7d5969d61fcd3cb250402a8ea5cd2eb98a3c4133af7e5fc849dcb32d3d6bad",
+   "text": "Otros pasajes relacionados con"
+  },
+  {
+   "kind": "entry",
+   "id": 24066,
+   "sha256": "6ab3a838d78f3692b4ad8378a99354bc556839998bae9ad11680f8f1fbe9375f",
+   "text": "Su insuficiencia para la salvación"
+  },
+  {
+   "kind": "entry",
+   "id": 24067,
+   "sha256": "de5edda2f78ba34813d1df2a50f66b0e74e55c790e45868a6ad7fe62fc5aa726",
+   "text": "De Dios"
+  },
+  {
+   "kind": "topic",
+   "id": 5168,
+   "sha256": "78ae647dc5544d227130a0682a51e30bc7777fbb6d8a8f17007463a3ecd1d524",
+   "text": "Mundo"
+  },
+  {
+   "kind": "topic",
+   "id": 5169,
+   "sha256": "2ad7419b655257eac15345b82829c7cca3185459043e263de52953eaf5a12f7a",
+   "text": "Mundanalidad"
+  },
+  {
+   "kind": "entry",
+   "id": 24068,
+   "sha256": "4df70ed109416e52ee80c34a55946c4f03ca21bba1c012579212e7f3ad0d137d",
+   "text": "Pasajes generales sobre"
+  },
+  {
+   "kind": "entry",
+   "id": 24069,
+   "sha256": "7c1c8557a8387d3fe11230c2c38f832cd8d86fbdad0a54a1e50cc1535e959f43",
+   "text": "Casos de"
+  },
+  {
+   "kind": "entry",
+   "id": 24070,
+   "sha256": "eba85953531bdbb8b9eadd2a542a53cbc3fe91a802e1562f648cedb6b06032bb",
+   "text": "Esaú"
+  },
+  {
+   "kind": "entry",
+   "id": 24071,
+   "sha256": "8141d2b17b7344d1c058e0cfaa031768e23bab8eb32613d3345655b37876436c",
+   "text": "Jacob"
+  },
+  {
+   "kind": "entry",
+   "id": 24072,
+   "sha256": "d842c85e2ee313c066aa92c834a36fbe3928af222ae81bcce1aa17f462491a1f",
+   "text": "Judá"
+  },
+  {
+   "kind": "entry",
+   "id": 24073,
+   "sha256": "a913a5ba345a40eb67a04b9cd7502a31d09ec9a08847226c759d93ca18ccd0b6",
+   "text": "Israelitas"
+  },
+  {
+   "kind": "entry",
+   "id": 24074,
+   "sha256": "e5ef4ff74df0255ba21b22e5f5101635347e3629fe389adb288c9946f2b3828b",
+   "text": "Balaam"
+  },
+  {
+   "kind": "entry",
+   "id": 24075,
+   "sha256": "80b2871e3a2b660f55dea95843d9afb1ab3c95772948e2dd13561c50472cf210",
+   "text": "Los hijos de Elí"
+  },
+  {
+   "kind": "entry",
+   "id": 24076,
+   "sha256": "5cda32a0739756468783270d0854424ba69bc7483b10dce9c714972563f20c34",
+   "text": "Giezi"
+  },
+  {
+   "kind": "entry",
+   "id": 24077,
+   "sha256": "678245ac13fbab14fc90aecb50f71a46abc4f2f8e64a17c765bd7acc2daa3550",
+   "text": "Herodes Antipas"
+  },
+  {
+   "kind": "entry",
+   "id": 24078,
+   "sha256": "03575d140d9a281ef9ee6bb38f3459ff95df6f6476998c7a8214f23744b009e9",
+   "text": "Cretenses"
+  },
+  {
+   "kind": "topic",
+   "id": 5170,
+   "sha256": "cb1c3d2360fbf924f91bff0cf9dafcd4cf7e837a2e7e32914b1b9892e65c1d70",
+   "text": "Gusano"
+  },
+  {
+   "kind": "entry",
+   "id": 24079,
+   "sha256": "4df70ed109416e52ee80c34a55946c4f03ca21bba1c012579212e7f3ad0d137d",
+   "text": "Pasajes generales sobre"
+  },
+  {
+   "kind": "entry",
+   "id": 24080,
+   "sha256": "7e315bb3b88a97803a20be712742110496d73b817f1492533307688de5c8a88d",
+   "text": "Herodes Agripa I fue comido de, (Josefo lo confirmó)"
+  },
+  {
+   "kind": "entry",
+   "id": 24081,
+   "sha256": "da54bbbf7ef901d343d7a104be2ea0befd9d53a3b56d1ab9fbec8e86dca50c5d",
+   "text": "En sentido figurado"
+  },
+  {
+   "kind": "entry",
+   "id": 24082,
+   "sha256": "dc85908a89bbfd48e951f57ef4e80aa71d9fc40a29a7874ca3a4671ceebde483",
+   "text": "Del remordimiento"
+  },
+  {
+   "kind": "topic",
+   "id": 5171,
+   "sha256": "36718c9f5f01e82380e979c061a95e15ee9a1089dfa16dc3ef3b409cc9add33a",
+   "text": "Ajenjo"
+  },
+  {
+   "kind": "entry",
+   "id": 24083,
+   "sha256": "5c532f1e7665cabc8c18a3f164375b48c5e5b31b5e4ce11bff55eedba2fee97e",
+   "text": "Una planta amarga"
+  },
+  {
+   "kind": "entry",
+   "id": 24084,
+   "sha256": "da54bbbf7ef901d343d7a104be2ea0befd9d53a3b56d1ab9fbec8e86dca50c5d",
+   "text": "En sentido figurado"
+  },
+  {
+   "kind": "entry",
+   "id": 24085,
+   "sha256": "17be2c91cd44bc21b827e7cc553cd57c51acf87526e42e4cc945eea851bd1e2e",
+   "text": "En sentido simbólico"
+  },
+  {
+   "kind": "topic",
+   "id": 5172,
+   "sha256": "6dcd9b69d372ca50d5f35348d7dba4a1d928e9d1599d045123f0a7b4c4dc149a",
+   "text": "Adoración"
+  },
+  {
+   "kind": "entry",
+   "id": 24086,
+   "sha256": "a5a0494d454e864dc9f58ab978ddf5c97d93c15ad0bce6a5ba3b3e48daa9d4c7",
+   "text": "Debe rendirse solo a Dios"
+  },
+  {
+   "kind": "entry",
+   "id": 24087,
+   "sha256": "c9381d336f3a7f2f8e0b933aeeb7a6035582c06dccb55001252c33251c0c471f",
+   "text": "De Jesús"
+  },
+  {
+   "kind": "entry",
+   "id": 24088,
+   "sha256": "074e71172b3b87c6813b640e1d93edc5107b7ed0f55672e8cccceb5c09980167",
+   "text": "Agradable a Dios"
+  },
+  {
+   "kind": "entry",
+   "id": 24089,
+   "sha256": "87fbdfa6eac3db05d470fb6135bc167a0024da31a1a5b00ed095ae29860c275f",
+   "text": "De los impíos, rechazada"
+  },
+  {
+   "kind": "entry",
+   "id": 24090,
+   "sha256": "045c1d474e6ad30c47db7f84dc63ce86f1a5a65df6fc7e25497a0eafaf677788",
+   "text": "Iniquidad de las cosas santas"
+  },
+  {
+   "kind": "entry",
+   "id": 24091,
+   "sha256": "2b754333a8bcff47242df2b50ebb93d5ce52f727123d7b3b439059e6277c7dde",
+   "text": "Pública, en el templo"
+  },
+  {
+   "kind": "entry",
+   "id": 24092,
+   "sha256": "82a7984a73e9938afbeb1c1563450581a69ecad1707cab51a0f7ef0bf8902cbb",
+   "text": "Las ordenanzas de David para la"
+  },
+  {
+   "kind": "entry",
+   "id": 24093,
+   "sha256": "bd2d677b2ed4381b48bb1d0841052c6d076e7d634d5052e85dcbe0b8a0dedd80",
+   "text": "Familiar"
+  },
+  {
+   "kind": "entry",
+   "id": 24094,
+   "sha256": "0b40d80864e58c27a2749a792dee5b9b95dd95369b377bb74aaa426b6e294577",
+   "text": "De Abraham"
+  },
+  {
+   "kind": "entry",
+   "id": 24095,
+   "sha256": "e86b22cd0c417431cec52f27d6d714264a738a72e18ad777e002ff9fa349a297",
+   "text": "De Jacob"
+  },
+  {
+   "kind": "entry",
+   "id": 24096,
+   "sha256": "28b919f3449576d75e75776ee1a260892fdcc91a5e178c2fef1572ec372323d6",
+   "text": "De JOB"
+  },
+  {
+   "kind": "entry",
+   "id": 24097,
+   "sha256": "a638da545787dacedd7707e0ec5c1a65a8cf87d184f0f4ce378effa841a59169",
+   "text": "Del carcelero de Filipos"
+  },
+  {
+   "kind": "entry",
+   "id": 24098,
+   "sha256": "11db7949ab63399eb34dd15bd5254716d0576e713c31332600b8047500600c52",
+   "text": "En casas particulares"
+  },
+  {
+   "kind": "entry",
+   "id": 24099,
+   "sha256": "246cbcd4ece8b4a29b48bcb5cfe70315a8e135cdf4bca3942533d47703ea6d42",
+   "text": "De noche"
+  },
+  {
+   "kind": "entry",
+   "id": 24100,
+   "sha256": "641ed241b40e83f0283186d4878d4bdf506c237792e4e9fe81fddfe227f93784",
+   "text": "Jesús ora toda la noche"
+  },
+  {
+   "kind": "entry",
+   "id": 24101,
+   "sha256": "719c4c200a8fbe57a62e3a9d6d2c85957e8add33adcf62b0666ce2da4564c670",
+   "text": "Posturas en la"
+  },
+  {
+   "kind": "entry",
+   "id": 24102,
+   "sha256": "b930973e2d2effc0ba996b509564cb0b3cbce2936c3c948b7c2a4fa323402bdc",
+   "text": "Inclinarse"
+  },
+  {
+   "kind": "entry",
+   "id": 24103,
+   "sha256": "a74297f8260c818be01504728e33c2cb75b262609d818603e68c7517ddcfef58",
+   "text": "Postrarse"
+  },
+  {
+   "kind": "entry",
+   "id": 24104,
+   "sha256": "0e698ba68ff09b6e325ac2459750dbc1a2f18f589c99e65ce163f3a0958dec9e",
+   "text": "Oración en la"
+  },
+  {
+   "kind": "entry",
+   "id": 24105,
+   "sha256": "282674545b324193d52b9f20fbf064b36e543f86e737ec39d516003a2e1cc750",
+   "text": "La presencia de Dios en la"
+  },
+  {
+   "kind": "entry",
+   "id": 24106,
+   "sha256": "eadf3906502fb3988cbef6a6fefce33f898ccf1267e417b3cfbe0e32c1adfc73",
+   "text": "Amada por su pueblo"
+  },
+  {
+   "kind": "entry",
+   "id": 24107,
+   "sha256": "92019e21661623efba7b7f5a41888c239233757a57cd09d297749c5171e80c48",
+   "text": "Bendiciones pronunciadas"
+  },
+  {
+   "kind": "entry",
+   "id": 24108,
+   "sha256": "773878dd19eff52c93bae6dfa245ccc3fdcbe63aebcd69ba838473f7ae1c0b2a",
+   "text": "Toda la nación debía reunirse para la, incluidos hombres, mujeres, niños, siervos y extranjeros"
+  },
+  {
+   "kind": "entry",
+   "id": 24109,
+   "sha256": "86a3f2eb3894385d56f0b877e987127af5b74fff52bba6147d2b8192769a1a19",
+   "text": "En el monte Gerizim y el monte Ebal"
+  },
+  {
+   "kind": "entry",
+   "id": 24110,
+   "sha256": "e0fd43838f5affbffb59d575a933a801bf59e0f8d09794f9a50c12bab5abda35",
+   "text": "La palabra de Dios leída en las asambleas públicas"
+  },
+  {
+   "kind": "entry",
+   "id": 24111,
+   "sha256": "797ce6062625b2e2a13de5d037908044ad7a95a3dd6fc13b020398e4d84dc5c6",
+   "text": "De ángeles, prohibida"
+  },
+  {
+   "kind": "entry",
+   "id": 24112,
+   "sha256": "ce7d5969d61fcd3cb250402a8ea5cd2eb98a3c4133af7e5fc849dcb32d3d6bad",
+   "text": "Otros pasajes relacionados con"
+  },
+  {
+   "kind": "entry",
+   "id": 24113,
+   "sha256": "ac2bcecc3d29a38fcdd3288a3012bb44602fb50e76da3d7a0413a9fdfe1517eb",
+   "text": "Mandada"
+  },
+  {
+   "kind": "topic",
+   "id": 5173,
+   "sha256": "16a5581737830beeeed12427dc58e79cf615e79c58931b54eb17454009f62867",
+   "text": "Heridas"
+  },
+  {
+   "kind": "entry",
+   "id": 24114,
+   "sha256": "d3c280f9f58f6a0157342bf3334f47a087b6f5bd979f9d08d67ce993ef00ed32",
+   "text": "Tratamiento de las"
+  },
+  {
+   "kind": "topic",
+   "id": 5174,
+   "sha256": "119acf47524fde99876be2236aa55b13ce5e36be2bf7c17371714763659e050d",
+   "text": "Ira"
+  },
+  {
+   "kind": "entry",
+   "id": 24115,
+   "sha256": "f9d9e670b7ac196145dbd745664bafafc98788127c435d47a4c6ef236ed110b1",
+   "text": "(Enojo, juicio, castigo)"
+  },
+  {
+   "kind": "topic",
+   "id": 5175,
+   "sha256": "248b110990314195f4ee0b2f32145881706887649294bb48043193565f770002",
+   "text": "Lucha"
+  },
+  {
+   "kind": "entry",
+   "id": 24116,
+   "sha256": "da54bbbf7ef901d343d7a104be2ea0befd9d53a3b56d1ab9fbec8e86dca50c5d",
+   "text": "En sentido figurado"
+  },
+  {
+   "kind": "topic",
+   "id": 5176,
+   "sha256": "a8bfae3eee941527f2568d7e1ae4d526cc1c764fd09ee1e62deb13e5f00c6078",
+   "text": "Escritura"
+  },
+  {
+   "kind": "entry",
+   "id": 24117,
+   "sha256": "fea17d5f40e337fce4ef1fa5b395de66fecd3bbd744385dd66e41d3fad458314",
+   "text": "A los copistas se les llamaba \"escribas.\""
+  },
+  {
+   "kind": "topic",
+   "id": 5177,
+   "sha256": "a6bc6427187faf7208b8d3a74679f09ff97529915793e6f7594ea3a3adf61173",
+   "text": "Hilo"
+  },
+  {
+   "kind": "entry",
+   "id": 24118,
+   "sha256": "4df70ed109416e52ee80c34a55946c4f03ca21bba1c012579212e7f3ad0d137d",
+   "text": "Pasajes generales sobre"
+  },
+  {
+   "kind": "topic",
+   "id": 5178,
+   "sha256": "89f6832560dec0b7f8721d1fe3ba0b5036a5d1464ce4339bb16c3e1485bfec34",
+   "text": "Año"
+  },
+  {
+   "kind": "entry",
+   "id": 24119,
+   "sha256": "4df70ed109416e52ee80c34a55946c4f03ca21bba1c012579212e7f3ad0d137d",
+   "text": "Pasajes generales sobre"
+  },
+  {
+   "kind": "entry",
+   "id": 24120,
+   "sha256": "09349135e0a41b45d236e6e928a6b51fb078899b40d699e56462c56b7e50ed71",
+   "text": "Dividido en meses"
+  },
+  {
+   "kind": "entry",
+   "id": 24121,
+   "sha256": "930ab5deffcace8e2d7bd84490c5241a5f4cc789297d6a343b3e4b881a129a0b",
+   "text": "Fiestas anuales"
+  },
+  {
+   "kind": "entry",
+   "id": 24122,
+   "sha256": "8ad70c411999b3e3eec87f26d6dadd9a705facc6be4c9b937b13d03ed5ed90a4",
+   "text": "El rescate de las casas vendidas, limitado a uno"
+  },
+  {
+   "kind": "entry",
+   "id": 24123,
+   "sha256": "366f5eab471d411d03db42dafea618cffda4147c5af5c2b8a07873fc4bac37ab",
+   "text": "La tierra debe descansar uno de cada siete"
+  },
+  {
+   "kind": "entry",
+   "id": 24124,
+   "sha256": "543d811df61057af2a29958eec7aa4f79ad3b5de559f01da83ede457cb63f22f",
+   "text": "De remisión"
+  },
+  {
+   "kind": "entry",
+   "id": 24125,
+   "sha256": "cc61885c9ba92c4f967e926abc290f5d7397bb5be7c66cdb0b9fe9d2a48ca786",
+   "text": "La edad se calculaba por"
+  },
+  {
+   "kind": "entry",
+   "id": 24126,
+   "sha256": "0b40d80864e58c27a2749a792dee5b9b95dd95369b377bb74aaa426b6e294577",
+   "text": "De Abraham"
+  },
+  {
+   "kind": "entry",
+   "id": 24127,
+   "sha256": "e86b22cd0c417431cec52f27d6d714264a738a72e18ad777e002ff9fa349a297",
+   "text": "De Jacob"
+  },
+  {
+   "kind": "entry",
+   "id": 24128,
+   "sha256": "a5c307ecb099a9ffb4c4cbcb88de5ac1a5cbeced156ac435ead775350097ae24",
+   "text": "Mil, para el Señor son como un día"
+  },
+  {
+   "kind": "entry",
+   "id": 24129,
+   "sha256": "bc989a59015d4ee85034646a9069ce8e690b6197a9047d65259ae3b04191a1db",
+   "text": "Satanás será atado por mil"
+  },
+  {
+   "kind": "topic",
+   "id": 5179,
+   "sha256": "10f07a37361f94d930eab658e38c19e952488926d91b4b4fb571203eb6a0e3f7",
+   "text": "Yugo"
+  },
+  {
+   "kind": "entry",
+   "id": 24130,
+   "sha256": "da54bbbf7ef901d343d7a104be2ea0befd9d53a3b56d1ab9fbec8e86dca50c5d",
+   "text": "En sentido figurado"
+  },
+  {
+   "kind": "topic",
+   "id": 5180,
+   "sha256": "28696751404138808e6b55765c7deb1ecf35c865120830826319e1b9cf5bce2f",
+   "text": "Jóvenes"
+  },
+  {
+   "kind": "entry",
+   "id": 24131,
+   "sha256": "4df70ed109416e52ee80c34a55946c4f03ca21bba1c012579212e7f3ad0d137d",
+   "text": "Pasajes generales sobre"
+  },
+  {
+   "kind": "entry",
+   "id": 24132,
+   "sha256": "3654f4bc63a59851ccc198e921489d5bd52fef883ae326dcb7998ce7abddeeb0",
+   "text": "Casos de jóvenes piadosos"
+  },
+  {
+   "kind": "entry",
+   "id": 24133,
+   "sha256": "31cd6e60ad0d9b689fed643d711dc1a99803a294d47143e85aba0fcda384881a",
+   "text": "El joven rico"
+  },
+  {
+   "kind": "topic",
+   "id": 5181,
+   "sha256": "935de7a78b1854df111052a2f692b322f16fded3c8a1f1335e7a3ed7ac433534",
+   "text": "Zaananim"
+  },
+  {
+   "kind": "entry",
+   "id": 24134,
+   "sha256": "76ff053663e16919817bd931db79194b01395e60e2c3c03942fcd95c8d593c4b",
+   "text": "También llamado ZAANANIM"
+  },
+  {
+   "kind": "entry",
+   "id": 24135,
+   "sha256": "e3206ac8e8b6e26cac0048cd8fc6e07d4ad7344b9d8d1e0975fcb6eb850be2fb",
+   "text": "Una llanura cerca de Cedes"
+  },
+  {
+   "kind": "topic",
+   "id": 5182,
+   "sha256": "5da5f25593a52f1ba61c813126f54a757f6f1d1bcb01e1ea5a655abbfae09967",
+   "text": "Saanán"
+  },
+  {
+   "kind": "entry",
+   "id": 24136,
+   "sha256": "b00db0e77c9e4062098d1785d6213f5fe24ec4fcd55fc6525798457007b02c8d",
+   "text": "También llamado SENÁN"
+  },
+  {
+   "kind": "entry",
+   "id": 24137,
+   "sha256": "b2779b3cc70919b8f02cd19adcb4cd7dfee4ac78a7c249a2fe3e666159f5b6ea",
+   "text": "Un lugar de ubicación incierta"
+  },
+  {
+   "kind": "topic",
+   "id": 5183,
+   "sha256": "c3150b74d3d79089e4133051d9f603f2a042e3512c39267c32417796f464aff7",
+   "text": "Zaananim"
+  },
+  {
+   "kind": "topic",
+   "id": 5184,
+   "sha256": "75d14bdb17e4524a716e587afab5278bd24023e1b5352838ec3e706816e2aaa6",
+   "text": "Zaaván"
+  },
+  {
+   "kind": "entry",
+   "id": 24138,
+   "sha256": "75e3e49036924d0d04e164b26dbd83910a4449dc47bf0eeac00fb1bcfb97a52d",
+   "text": "También llamado ZAAVÁN"
+  },
+  {
+   "kind": "entry",
+   "id": 24139,
+   "sha256": "49c7020d5f974528c6907b5d83ef02618a7cd7c8aa61cd4a3415c235ffa6350e",
+   "text": "Un hijo de Ezer"
+  },
+  {
+   "kind": "topic",
+   "id": 5185,
+   "sha256": "9aeeaf030b735dc614b8fcfb1b4528f073aec99bceaf9c8aec741f8b5b69fb59",
+   "text": "Zabad"
+  },
+  {
+   "kind": "entry",
+   "id": 24140,
+   "sha256": "40bbd232a230ee2cf10ff1241c37287fecb8282ff60ecbdc901171930d828325",
+   "text": "1. Hijo de Natán"
+  },
+  {
+   "kind": "entry",
+   "id": 24141,
+   "sha256": "1771f562c084829e52c75e4d98d449f86d548fd1e06ec38958d6b77fdbf66ccc",
+   "text": "2. Un efrateo"
+  },
+  {
+   "kind": "entry",
+   "id": 24142,
+   "sha256": "5a0298d4bbaa627e16bbb8f5e7d7b1056e3cbf39aa9f6d590012c7535b9fb78a",
+   "text": "3. Uno de los valientes de David"
+  },
+  {
+   "kind": "entry",
+   "id": 24143,
+   "sha256": "efb39c7f5a32abad2afc7440a4633d1cc849742ed72d243a2b3d0ff88b73ba93",
+   "text": "4. Un asesino del rey Joás"
+  },
+  {
+   "kind": "entry",
+   "id": 24144,
+   "sha256": "28ba50556c99e15fb10fafad6941a05e8aa7a78482b00a92c00395ab2370073b",
+   "text": "Llamado JOZACAR en"
+  },
+  {
+   "kind": "entry",
+   "id": 24145,
+   "sha256": "e7b6bf66c465c24f780f9ca48ab3c62640cbfb6769c240ea45d604589c9b91a4",
+   "text": "5. Tres israelitas que se divorciaron de sus esposas gentiles"
+  },
+  {
+   "kind": "topic",
+   "id": 5186,
+   "sha256": "aaf1daccc3093e0744b23711ae0f582b228b1b03f6c217ba6b726cd7b7a5bc6f",
+   "text": "Zabai"
+  },
+  {
+   "kind": "entry",
+   "id": 24146,
+   "sha256": "0fd732cbc0f7b2123c4ce756e6abb2c5385e55eea9ce165c1b06d4353f5ce0a7",
+   "text": "1. Hijo de Bebai"
+  },
+  {
+   "kind": "entry",
+   "id": 24147,
+   "sha256": "612ea6422a5c2a04b6b8d6c988e7f2e6b8d688f507cbb41e8234f81fd5ab9aa5",
+   "text": "2. Padre de Baruc"
+  },
+  {
+   "kind": "topic",
+   "id": 5187,
+   "sha256": "2aec1e4b8aaa5dc0066cb1f04e600c076d7548ef8ccee3b3fe28d829e6a3e737",
+   "text": "Zabud"
+  },
+  {
+   "kind": "entry",
+   "id": 24148,
+   "sha256": "506eb67508e0b77581dd5212b0f40321c7d4a14cac60e666d654c41fcd0dd8dd",
+   "text": "Un exiliado que regresó"
+  },
+  {
+   "kind": "topic",
+   "id": 5188,
+   "sha256": "c0e35bb9c7ad0b42b2b20d0c9a37b0b2d1801e3e070a8fa2fc1a8cf1b24e10c0",
+   "text": "Zabdi"
+  },
+  {
+   "kind": "entry",
+   "id": 24149,
+   "sha256": "262c6e58fcd4dd9e2a4c3f4782a25fd5567489af3b68b6da29ca9fc3169904ec",
+   "text": "1. Padre de Carmi"
+  },
+  {
+   "kind": "entry",
+   "id": 24150,
+   "sha256": "4d77ef88514e85ee4c2e3ae88838841f92d3051a7417c985e2b395be08509754",
+   "text": "2. Un benjamita"
+  },
+  {
+   "kind": "entry",
+   "id": 24151,
+   "sha256": "32a805b54c4221f9b0268a014aa2e9092c1084456d18ab188ac7f02e1a87f0f5",
+   "text": "3. El encargado de los almacenes de David"
+  },
+  {
+   "kind": "entry",
+   "id": 24152,
+   "sha256": "b9683b32fa309f857e23114ea3229cb742d97ae6ea7d890238774b29ce3e0c10",
+   "text": "4. Hijo de Asaf"
+  },
+  {
+   "kind": "topic",
+   "id": 5189,
+   "sha256": "acbba14d057fc4e2f80398e20a6c0a71c71d61ab49902c7235aec7668b29e976",
+   "text": "Zabdiel"
+  },
+  {
+   "kind": "entry",
+   "id": 24153,
+   "sha256": "242b58ee4151134536d029c36da4f9f8c5b43dd48b4fc379a848106c8fd09e7b",
+   "text": "1. Padre de Jasobam"
+  },
+  {
+   "kind": "entry",
+   "id": 24154,
+   "sha256": "5a48013108a10752bf8807d772e4986a6e0815d54d1798f6389235e79e47669e",
+   "text": "2. Supervisor de ciento veintiocho hombres valientes y esforzados, que vivían en Jerusalén"
+  },
+  {
+   "kind": "topic",
+   "id": 5190,
+   "sha256": "32fb85cd8a9a65fc8e24d1e4bbcdc53ed8f54e09282f2dcb508beed16b9f7c00",
+   "text": "Zabud"
+  },
+  {
+   "kind": "entry",
+   "id": 24155,
+   "sha256": "4e9a86d6e480a8d8c0e7125f31baa2d694b2f1701af64de4530e1b97bccca743",
+   "text": "Un alto funcionario de Salomón"
+  },
+  {
+   "kind": "topic",
+   "id": 5191,
+   "sha256": "52ad001c53ea6766eaa49604a5aeb32d3913c9ccfecf724c3255fee5a482e9b5",
+   "text": "Zabulón"
+  },
+  {
+   "kind": "topic",
+   "id": 5192,
+   "sha256": "935167b42bfbf3800ea2b48f0135aa17b0b98e8c2d27376f9fefc59511c1b835",
+   "text": "Zacái"
+  },
+  {
+   "kind": "entry",
+   "id": 24156,
+   "sha256": "dd53fa7752053aa5bcab47d7ddf3d4e32a25330d7d11e79168c02aa537caa1bf",
+   "text": "Un judío cuyos descendientes regresaron del exilio en Babilonia"
+  },
+  {
+   "kind": "topic",
+   "id": 5193,
+   "sha256": "e7095d15a6a2670622fb01c93d6aedd0c6e05a22b19cc6485b81104e57528e27",
+   "text": "Zaqueo"
+  },
+  {
+   "kind": "entry",
+   "id": 24157,
+   "sha256": "f15508f1f19f835449726cbfe7625a4c4c109eb58fe4e2b17279438c17249e6b",
+   "text": "(Un recaudador de impuestos en Jericó)"
+  },
+  {
+   "kind": "entry",
+   "id": 24158,
+   "sha256": "36d39bf99554aa5116d58b7ee893a2f1a57fbd7d43aa4c66810e95e25d49d885",
+   "text": "Hospeda a Jesús"
+  },
+  {
+   "kind": "topic",
+   "id": 5194,
+   "sha256": "10f3879f43626b647c8845f1543ae849edb22ac1b257bba092e19749988a7db8",
+   "text": "Zacur"
+  },
+  {
+   "kind": "entry",
+   "id": 24159,
+   "sha256": "ed5f9ea713e5e882d4bcadd188dbad87553026227fcbab173d7aefd39aa2e4ab",
+   "text": "Un simeonita"
+  },
+  {
+   "kind": "topic",
+   "id": 5195,
+   "sha256": "4e90b4221f5f05c8194ecb6f4c171226ebc216593833b796f76cef20cc0b797b",
+   "text": "Zacur"
+  },
+  {
+   "kind": "entry",
+   "id": 24160,
+   "sha256": "cbb181bac9f4095451cc4e483e1bf574a4782556eebf496df6162fa739aab30a",
+   "text": "1. Un rubenita"
+  },
+  {
+   "kind": "entry",
+   "id": 24161,
+   "sha256": "2bffcc8752a35ef06321e8f87e9c704f4daef3b6e08a1f9b1e5b874119e08139",
+   "text": "2. También llamado [4345]ZACUR"
+  },
+  {
+   "kind": "entry",
+   "id": 24162,
+   "sha256": "0b355933145469a74b5bfbe9c470b29c24039e50463b31f7c801d458f23beb0e",
+   "text": "3. Un merarita"
+  },
+  {
+   "kind": "entry",
+   "id": 24163,
+   "sha256": "b9683b32fa309f857e23114ea3229cb742d97ae6ea7d890238774b29ce3e0c10",
+   "text": "4. Hijo de Asaf"
+  },
+  {
+   "kind": "entry",
+   "id": 24164,
+   "sha256": "97098ffb10cb4fbb8012cfc5d592bdd5e0d8383e6e155c068fde538a76d22d46",
+   "text": "5. Hijo de Imri"
+  },
+  {
+   "kind": "topic",
+   "id": 5196,
+   "sha256": "34a2cba03bb7efc9263302846b631a6d0570e5a795d164c9a493e7933af9fb82",
+   "text": "Zacarías"
+  },
+  {
+   "kind": "entry",
+   "id": 24165,
+   "sha256": "eda5280183f34aa7c8756ea5dce6ae227e8adae3c8b3e1859d5c4be0e92b6635",
+   "text": "1. Hijo de Jeroboam, y el último de la casa de Jehú"
+  },
+  {
+   "kind": "entry",
+   "id": 24166,
+   "sha256": "c11f339b4528fba9101c8af454686d700e2f432c4ba373f89fc643e538453cac",
+   "text": "2. Abuelo de Ezequías"
+  },
+  {
+   "kind": "topic",
+   "id": 5197,
+   "sha256": "a64797bce9c033a4aea6318ce5626f855d7405899d6855fc88c03f9a3fe5070e",
+   "text": "Zacarías"
+  },
+  {
+   "kind": "entry",
+   "id": 24167,
+   "sha256": "d879941c24f0820fff90773a62d292a42e46613cb18b2e69c5ba183f9cd81e3d",
+   "text": "1. Un hombre al que mataron los judíos"
+  },
+  {
+   "kind": "entry",
+   "id": 24168,
+   "sha256": "27a70664300c23a2daf611f8bd260a456e9058a5e8ce16baf3eb7b46c0553086",
+   "text": "Mencionado por Jesús"
+  },
+  {
+   "kind": "entry",
+   "id": 24169,
+   "sha256": "887be93a93a60dcee540ca9ec9dd84ce46e781f0c1b377f7ec1de98e554061f7",
+   "text": "2. El padre de Juan el Bautista"
+  },
+  {
+   "kind": "topic",
+   "id": 5198,
+   "sha256": "36ce0ae0adc5d23733bc3d28bfbec7318c59f56f0cb5d7e20b4ec034b6c88cc9",
+   "text": "Zequer"
+  },
+  {
+   "kind": "entry",
+   "id": 24170,
+   "sha256": "d5d22d356f148467dfe385b434b33a228b4ed6e171675addb11d3805f430024c",
+   "text": "Un benjamita"
+  },
+  {
+   "kind": "entry",
+   "id": 24171,
+   "sha256": "a9fcc5b4d6104f770d04c186cecbf6ceb4c2cf9058f30558f5f9f38da2e740cc",
+   "text": "Llamado ZACARÍAS en"
+  },
+  {
+   "kind": "topic",
+   "id": 5199,
+   "sha256": "a41468713b35f56206eb09e0e14bb8c427ae24f4094a78bc4ed8d8d1d068e4fa",
+   "text": "Sadoc"
+  },
+  {
+   "kind": "entry",
+   "id": 24172,
+   "sha256": "2ac483ee7deaf94ce48b5bbbbfc121569b7f3be1d850614c05b03d7a72e993e1",
+   "text": "1. El sumo sacerdote durante el reinado de David"
+  },
+  {
+   "kind": "entry",
+   "id": 24173,
+   "sha256": "1e3d5eba9cc93c8872596f47dcd185a3d4bd26681ee45409de6aa3ab5750b03b",
+   "text": "Saca el arca del pacto de Jerusalén cuando Absalom usurpa el trono; regresa con el arca del pacto por orden de David"
+  },
+  {
+   "kind": "entry",
+   "id": 24174,
+   "sha256": "4d06955e669f575921d81a02402a5a340422beca7af4adcc7e04e81296f374f5",
+   "text": "Se mantiene apartado de Adonías cuando este intenta usurpar el trono"
+  },
+  {
+   "kind": "entry",
+   "id": 24175,
+   "sha256": "8de3ee9f93c1b9cb4a524dff332ae7247f3f176c1d8248fdf90e232f3a7ff47d",
+   "text": "Llamado por David para ungir rey a Salomón"
+  },
+  {
+   "kind": "entry",
+   "id": 24176,
+   "sha256": "d3f61705ef28d5c1f5ed024b8ba51ff6b698b7fd542cc84875afcf542b412815",
+   "text": "Ejerce la función de sumo sacerdote después de que Salomón depuso a Abiatar"
+  },
+  {
+   "kind": "entry",
+   "id": 24177,
+   "sha256": "59f2f1d0a05a1ab5755d71a81417a92e19a1fd80a9193d59df9a6306be94f3db",
+   "text": "2. Padre de Jerusa"
+  },
+  {
+   "kind": "entry",
+   "id": 24178,
+   "sha256": "9ef4019ed7d4cc72f79b4ffc025da2a21793bd2d312461004f0309669173898e",
+   "text": "3. Hijo de Ahitob"
+  },
+  {
+   "kind": "entry",
+   "id": 24179,
+   "sha256": "5b09953a4883a76c9b4d5ccfda14c6537a88e78da3b91a1cf2fdd5db99bff818",
+   "text": "4. Un hombre valiente"
+  },
+  {
+   "kind": "entry",
+   "id": 24180,
+   "sha256": "d2ff34530cb4223c1031def951ce8b033010c75f48ce49e7af553d4079ef7f03",
+   "text": "5. Hijo de Baana"
+  },
+  {
+   "kind": "entry",
+   "id": 24181,
+   "sha256": "18f5876ef78ae300115febf01789ce808cdb266ec1205128ebd10dc9273b28b2",
+   "text": "6. Un sacerdote"
+  },
+  {
+   "kind": "entry",
+   "id": 24182,
+   "sha256": "5247c15adf934fd2bdedf1b95db4bc84da21d1ab5f18d3285f8e98f9c476612e",
+   "text": "7. Un exiliado que regresó"
+  },
+  {
+   "kind": "entry",
+   "id": 24183,
+   "sha256": "130406604581e7ab89882b29636ffdc32fc3935b6aa0817a1b420cd7cb3b32c2",
+   "text": "8. Hijo de Meraiot"
+  },
+  {
+   "kind": "entry",
+   "id": 24184,
+   "sha256": "bf4ef70273b4418ebb4c19acb88936f43ddac7c8700609fcdb0514e32bdec598",
+   "text": "9. Un tesorero del templo"
+  },
+  {
+   "kind": "topic",
+   "id": 5200,
+   "sha256": "d898ce14ac51c58f32e06eb56128637b4434c32ec4f077542ed9a557b44f1216",
+   "text": "Zaham"
+  },
+  {
+   "kind": "entry",
+   "id": 24185,
+   "sha256": "ac9adf59443723d87188d90755d7f6750fac20a4bed52d12cc5fa68115a2cb38",
+   "text": "Nieto de Salomón"
+  },
+  {
+   "kind": "topic",
+   "id": 5201,
+   "sha256": "8dc871dc5cd28560f09457cc783e07e50f5826ce1b46ca8a1d569acd02afd90b",
+   "text": "Zair"
+  },
+  {
+   "kind": "entry",
+   "id": 24186,
+   "sha256": "bad95f95222f1a330ed97005d5ea262a6e14ea260d759b481c2cbad283eca248",
+   "text": "Una ciudad del país de Edom"
+  },
+  {
+   "kind": "topic",
+   "id": 5202,
+   "sha256": "373aabfa5e1b5b97e43c885ab83b7ef2005246a7dbd9a1ac48dd326beb6fae1f",
+   "text": "Salaf"
+  },
+  {
+   "kind": "entry",
+   "id": 24187,
+   "sha256": "56f303351a983d2d085b0bca543468c0e411e11495831a2692fef76660532e5f",
+   "text": "Padre de Hanún"
+  },
+  {
+   "kind": "topic",
+   "id": 5203,
+   "sha256": "0304a89022752636447750886c9b716d5005ecbe03ef43a6440c8b4a16523eef",
+   "text": "Salmón"
+  },
+  {
+   "kind": "entry",
+   "id": 24188,
+   "sha256": "6a9d8b441e285f0f22f523406c48be9c17bc971c68825806d67290d8da720541",
+   "text": "1. También llamado SALMÓN, probablemente"
+  },
+  {
+   "kind": "entry",
+   "id": 24189,
+   "sha256": "9420797e2046f371176ea1d7c65c942e1010f8fbf1e8abd2fa8228021b93c38e",
+   "text": "Una colina de Samaria"
+  },
+  {
+   "kind": "entry",
+   "id": 24190,
+   "sha256": "bc60654b00ff00959295e149577fe7dff785a9d2c381cdb4833581cbf79760bb",
+   "text": "2. Uno de los guerreros de David"
+  },
+  {
+   "kind": "topic",
+   "id": 5204,
+   "sha256": "b2767b931f0b6d9f27a2d8cfa463051f6dbad0a3b81c30f45183fcf7f4754cd1",
+   "text": "Salmona"
+  },
+  {
+   "kind": "entry",
+   "id": 24191,
+   "sha256": "0204dc30476b5223ffae688e8d73faf4245fe176b466e3bfbc65904403ca814a",
+   "text": "Uno de los lugares donde acampó Israel"
+  },
+  {
+   "kind": "topic",
+   "id": 5205,
+   "sha256": "4bf793abaf4cf0cbe46f5a4e2bd3554ea9e74b5f5e2cefaa9be2bcf57f331ddc",
+   "text": "Zalmuna"
+  },
+  {
+   "kind": "entry",
+   "id": 24192,
+   "sha256": "87676e77478887b2171a6a0271ac0b39b843a675e606c1d0f9205ef642a67671",
+   "text": "Rey de Madián"
+  },
+  {
+   "kind": "topic",
+   "id": 5206,
+   "sha256": "3220738481b4ed008040a2e3a9df2cad3529e4390a32b5ea5db3feac08a8760b",
+   "text": "Zomzomeos"
+  },
+  {
+   "kind": "entry",
+   "id": 24193,
+   "sha256": "b86e5df1617384a58d412be958e5ba1662192ebac2c7037c8ba1281d524e8e6f",
+   "text": "También llamados ZUZEOS"
+  },
+  {
+   "kind": "entry",
+   "id": 24194,
+   "sha256": "3aa4ce9e984afb3bb7b9074d11b1e24142b3e2c12924daba47f3f29bcd3f5511",
+   "text": "Una raza de gigantes"
+  },
+  {
+   "kind": "topic",
+   "id": 5207,
+   "sha256": "fc1e41cba302ff8feac09452a09d51215c9b6b850619a71bc5170f1e30457e05",
+   "text": "Zanoa"
+  },
+  {
+   "kind": "entry",
+   "id": 24195,
+   "sha256": "4646faced2c2e0df4018ece2837d94d06d606588941b8e115fef75d5b018e69b",
+   "text": "1. Una ciudad del occidente de Judá"
+  },
+  {
+   "kind": "entry",
+   "id": 24196,
+   "sha256": "589c9188404585dd20a84ae3034e7c70ee55f1650037ed30719603895a3cae3a",
+   "text": "2. Una ciudad del oriente de Judá"
+  },
+  {
+   "kind": "entry",
+   "id": 24197,
+   "sha256": "ecaf5cd11bcfcae23e34bb6c08da6b8f438692de9a0212a59fab34811556fd19",
+   "text": "3. Un descendiente de Caleb"
+  },
+  {
+   "kind": "topic",
+   "id": 5208,
+   "sha256": "3463959e3d408f95bbbf63d305b960403bb803e22d0bafffda9f85bae60281a8",
+   "text": "Zafnat-panea"
+  },
+  {
+   "kind": "entry",
+   "id": 24198,
+   "sha256": "5c50e97eba87af809b2f5c8a681661a4c023defd5eea147ae4f1feac04e23e71",
+   "text": "Un nombre que Faraón dio a José"
+  },
+  {
+   "kind": "topic",
+   "id": 5209,
+   "sha256": "64a8e69f9068813352600997150df324c3630847d6a0ec04e7f334eb2888799d",
+   "text": "Safón"
+  },
+  {
+   "kind": "entry",
+   "id": 24199,
+   "sha256": "0d9990fb1c67801e6bff54c1ea7ece3d96522c90bcaf19a333fd18c04e5c2712",
+   "text": "Una ciudad en el territorio de la tribu de Gad"
+  },
+  {
+   "kind": "topic",
+   "id": 5210,
+   "sha256": "cc56058b3510d8bf5044b77e4fe67e91aa45769e1c8b1b5f8a23e1bf3389ed98",
+   "text": "Zara"
+  },
+  {
+   "kind": "entry",
+   "id": 24200,
+   "sha256": "3d5b934be37106810c061d0361bcd7edd72695c6abde52fd52413dcc22a87947",
+   "text": "También llamado ZARA"
+  },
+  {
+   "kind": "entry",
+   "id": 24201,
+   "sha256": "9e0ebe12659e56100cf68bf1475fe02609ed583d67335e8d986803bcb732da3a",
+   "text": "Hijo de Judá"
+  },
+  {
+   "kind": "topic",
+   "id": 5211,
+   "sha256": "085aeda729250f2bbbabdcfb068ef81c7bd242f5f4e6a8b85d66aeee68799aca",
+   "text": "Zara"
+  },
+  {
+   "kind": "entry",
+   "id": 24202,
+   "sha256": "78507360a22658e7c5728aa99f1f769165fb360f332e47f09dd1542e73dccdad",
+   "text": "También llamado ZERA y ZARA"
+  },
+  {
+   "kind": "entry",
+   "id": 24203,
+   "sha256": "10776dc71becb0a5d0408e77610c313afd392557d95bbaa8fa8fefdff908ad9d",
+   "text": "Hijo de Judá y Tamar"
+  },
+  {
+   "kind": "topic",
+   "id": 5212,
+   "sha256": "3e2037aeb7da76847db3b263b67b6c81796ea0636db90952a3bce2717d38499d",
+   "text": "Zora"
+  },
+  {
+   "kind": "entry",
+   "id": 24204,
+   "sha256": "3f88cd9583c794b8937ac491189333bdaaa57682b719a0ba900e5f37c1596a77",
+   "text": "Una ciudad de la tribu de Judá"
+  },
+  {
+   "kind": "topic",
+   "id": 5213,
+   "sha256": "d73cbdbadeba95768da04c0ecd85d7793590ecfab9c63f9c174ee3a02af67317",
+   "text": "Zared"
+  },
+  {
+   "kind": "entry",
+   "id": 24205,
+   "sha256": "447b5a0b1d6114ab1903bb121f0ebdab8fd22444c0ac2bb039591de896f431ab",
+   "text": "También llamado ZERED"
+  },
+  {
+   "kind": "entry",
+   "id": 24206,
+   "sha256": "f05cfb4c28cc6bbedb01c18e6990d4d605003af9c539c6a16031b0f11664bf56",
+   "text": "Un arroyo"
+  },
+  {
+   "kind": "topic",
+   "id": 5214,
+   "sha256": "a92091873ad26d5c177699502ea891bac6cb2a0056ea5a76bfce86244bd7aab1",
+   "text": "Sarepta"
+  },
+  {
+   "kind": "entry",
+   "id": 24207,
+   "sha256": "b7120131ffaf1675605d8005302faf2ea4c16017c194dbe3f818a22cdcf0e79c",
+   "text": "(Una ciudad entre Tiro y Sidón)"
+  },
+  {
+   "kind": "entry",
+   "id": 24208,
+   "sha256": "ca512a314330b010ee8d47cb6f1bdac2df42edd941fe6a8b611330903eb45a0f",
+   "text": "Elías hace dos milagros en"
+  },
+  {
+   "kind": "entry",
+   "id": 24209,
+   "sha256": "597fea956d7260da67b74307be034eb7d2bf1e57eea4dc5b0c459deb9a411833",
+   "text": "Llamada SAREPTA (A. V.) en"
+  },
+  {
+   "kind": "topic",
+   "id": 5215,
+   "sha256": "3de351c5067a56c4c96f5a9f50e6de658195e92b37a162871e1a84f18120f060",
+   "text": "Saretán"
+  },
+  {
+   "kind": "entry",
+   "id": 24210,
+   "sha256": "38cba8cddeacd6841bf91b0d0fb39575246582fd3744c2c19d92eedee72dc0f7",
+   "text": "Probablemente la misma que SARTANA y SARETÁN"
+  },
+  {
+   "kind": "entry",
+   "id": 24211,
+   "sha256": "49e70b2f43d855ff9fbab9a382cf1ea12e70b6ae91d1c00bae6fb79eb8ab7fad",
+   "text": "Una ciudad de ubicación incierta"
+  },
+  {
+   "kind": "topic",
+   "id": 5216,
+   "sha256": "f35fda563e092ada4625952ffa9bd1f70b9ff14e607dfaa36b1b6fb4b75e3340",
+   "text": "Zaret-sahar"
+  },
+  {
+   "kind": "entry",
+   "id": 24212,
+   "sha256": "5adcc2889030ec346d21b44e038da5eff43517630ad9717ea594fa12d04c6176",
+   "text": "Una ciudad en el territorio de la tribu de Rubén"
+  },
+  {
+   "kind": "topic",
+   "id": 5217,
+   "sha256": "c5740ee9338acb5348aedf7ac9fbd67cb379e2b0439f13b962dc5e0543ffe78e",
+   "text": "Zatu"
+  },
+  {
+   "kind": "topic",
+   "id": 5218,
+   "sha256": "f8c4a64bcb0a2b400e06e7ef8ec418525ff05e22e7ae3472781fd7add0585e5b",
+   "text": "Zatu"
+  },
+  {
+   "kind": "entry",
+   "id": 24213,
+   "sha256": "85892fb07de3af5fd1d5fc9d9ee01923b92a20fe50f916b825c5dc6ce3e3f11f",
+   "text": "1. Uno cuyos descendientes regresaron con Zorobabel"
+  },
+  {
+   "kind": "entry",
+   "id": 24214,
+   "sha256": "2635a0145ef67529a69a891375115babdb38d69496f9f2c50ff16e72cc05e8ff",
+   "text": "2. Probablemente el mismo que ZATU"
+  },
+  {
+   "kind": "entry",
+   "id": 24215,
+   "sha256": "7f7e9d047d75712a853c63f79ceee03b9d6e6044f1ba482b3e1c96e7628f869b",
+   "text": "Uno que selló el pacto con Nehemías"
+  },
+  {
+   "kind": "topic",
+   "id": 5219,
+   "sha256": "25b16dc4134f705334e6d8e8aae63f3022cdab41356c3378bad4950940c1e0be",
+   "text": "Zaaván"
+  },
+  {
+   "kind": "topic",
+   "id": 5220,
+   "sha256": "61d73466b9228822e9ce32d507c76530f116cc1a943b3745e09b2033b9b2204c",
+   "text": "Zaza"
+  },
+  {
+   "kind": "entry",
+   "id": 24216,
+   "sha256": "0b68c2515c65f6b9f81503ef01ebaa22be4a0d7e97d4a5c2c467ff607ee30628",
+   "text": "Hijo de Jonatán"
+  },
+  {
+   "kind": "topic",
+   "id": 5221,
+   "sha256": "28ceb2967085a3229fda420b4a9531389cc66ea9016accf26e369dc9037eb7cd",
+   "text": "Celo religioso"
+  },
+  {
+   "kind": "entry",
+   "id": 24217,
+   "sha256": "4df70ed109416e52ee80c34a55946c4f03ca21bba1c012579212e7f3ad0d137d",
+   "text": "Pasajes generales sobre"
+  },
+  {
+   "kind": "entry",
+   "id": 24218,
+   "sha256": "c181072c0eb94988ea34d7c54fd9230b39b37ab26e35d65f49633dcb45fb0436",
+   "text": "Ejemplos"
+  },
+  {
+   "kind": "entry",
+   "id": 24219,
+   "sha256": "7c1c8557a8387d3fe11230c2c38f832cd8d86fbdad0a54a1e50cc1535e959f43",
+   "text": "Casos de"
+  },
+  {
+   "kind": "entry",
+   "id": 24220,
+   "sha256": "b4b140c9d039ca28bdf9ca1b7954efcb323392701020fe1a3087e0ff3f248632",
+   "text": "Moisés"
+  },
+  {
+   "kind": "entry",
+   "id": 24221,
+   "sha256": "f3b46d038abf77aa255400e9f2f3d5b029210106a1b5bcb6323b73f8e254c15f",
+   "text": "Finees"
+  },
+  {
+   "kind": "entry",
+   "id": 24222,
+   "sha256": "cb14bf5073ebaf6d9d04b63164b7017b2011d3558fb2f80f9450c9f5de6f6de8",
+   "text": "Josué"
+  },
+  {
+   "kind": "entry",
+   "id": 24223,
+   "sha256": "1741fe3b200a28513069d84d7018309f867ba03dd86bf65e86dc3c03fcacb3d9",
+   "text": "Gedeón"
+  },
+  {
+   "kind": "entry",
+   "id": 24224,
+   "sha256": "c6bd2e7938e9e8e4e910ceb65473058257558c52d25f12d8aaea88503dc6362e",
+   "text": "Jefté"
+  },
+  {
+   "kind": "entry",
+   "id": 24225,
+   "sha256": "b1f6d1241c57d145f1eabc2377ff03bf003ee722bdf2d27f7c530f52f588baf2",
+   "text": "Samuel"
+  },
+  {
+   "kind": "entry",
+   "id": 24226,
+   "sha256": "35fc5dafd3b019de22d158ae53d483b134aac3891118e64df7367cbbb0315e30",
+   "text": "El rey Saúl"
+  },
+  {
+   "kind": "entry",
+   "id": 24227,
+   "sha256": "a4545a2bdf29cf26563ab6999a5dc2524b2a727cfd374580ae37566be262c362",
+   "text": "El rey David"
+  },
+  {
+   "kind": "entry",
+   "id": 24228,
+   "sha256": "39fdd90473172fb13a47c05651e430778ec3de65b0c73def12fd736c011f480e",
+   "text": "Elías"
+  },
+  {
+   "kind": "entry",
+   "id": 24229,
+   "sha256": "18ed8667f7825d4ae75a628baf1bbda4f346a674634be88add7e8595db1ff40d",
+   "text": "Abdías"
+  },
+  {
+   "kind": "entry",
+   "id": 24230,
+   "sha256": "b4ceee5bdcb88f0719231ebf8baff3bbd8f3e2e40471bd4b0c7a087890904382",
+   "text": "Joás"
+  },
+  {
+   "kind": "entry",
+   "id": 24231,
+   "sha256": "77fa1867388a4046a878a2048e50a62a2b651d07bd3216ee8468c298a2cfd78e",
+   "text": "Jehú"
+  },
+  {
+   "kind": "entry",
+   "id": 24232,
+   "sha256": "4daa4ed8f7213e0a66c5bb05e19f44f5a0fa7efe3e03783446c1d27ad4194719",
+   "text": "Joiada"
+  },
+  {
+   "kind": "entry",
+   "id": 24233,
+   "sha256": "eb9ba6ff4b47c2997bf120b73f63f8b3c8ec14cc8ca2e92d52bcc07fb2765542",
+   "text": "Asa"
+  },
+  {
+   "kind": "entry",
+   "id": 24234,
+   "sha256": "0b39493baa446eb2786d6d9601b91a9a331b82b549dcbd471394314d2dd7dc66",
+   "text": "Josías"
+  },
+  {
+   "kind": "entry",
+   "id": 24235,
+   "sha256": "bc817c4c0f8980692f67f17bd172fd9f79cd53a06e8994929a0920581dd92d9c",
+   "text": "Sacerdotes"
+  },
+  {
+   "kind": "entry",
+   "id": 24236,
+   "sha256": "70f4fac203ef8065e981bc569deff09c1abf87cfd837e3e88dab5d19317f25a6",
+   "text": "Esdras"
+  },
+  {
+   "kind": "entry",
+   "id": 24237,
+   "sha256": "ddf7fc363db20f00663f0147b864d3e392ac341579c6277aba9e817362f3be78",
+   "text": "Nehemías"
+  },
+  {
+   "kind": "entry",
+   "id": 24238,
+   "sha256": "4d8225e6b96e4dcddee14134b3900923b80e2f90741d373fce4e5e3e0bdd6316",
+   "text": "Jeremías"
+  },
+  {
+   "kind": "entry",
+   "id": 24239,
+   "sha256": "7dda1801d7c0ff6475c0b32b4538acefe290e32166d3458be894fd647f4ccaa2",
+   "text": "Pastores"
+  },
+  {
+   "kind": "entry",
+   "id": 24240,
+   "sha256": "bf4fccd616251b678c56b9cb7a46819b1266853c180637642f5bc7d6b01f5554",
+   "text": "Ana"
+  },
+  {
+   "kind": "entry",
+   "id": 24241,
+   "sha256": "b56d9ec84f627cf8ca7f91b97f2f980d4313a6ebdbe4ac58250c98a57a3fba46",
+   "text": "Andrés y Felipe"
+  },
+  {
+   "kind": "entry",
+   "id": 24242,
+   "sha256": "d1307dfd69d8d5d2905ba0bc7a982476602bec01aa3c1da649e1b16912aef892",
+   "text": "Dos ciegos que divulgaron el milagro de su sanidad, contra la orden de Jesús"
+  },
+  {
+   "kind": "entry",
+   "id": 24243,
+   "sha256": "ec15a3c0c9778c4ea9a37e9537ff9be207c8a87aaef15f2ace981b8c2f7bc777",
+   "text": "El leproso sanado"
+  },
+  {
+   "kind": "entry",
+   "id": 24244,
+   "sha256": "e61843c166e47f223a1749405422cc598ee3a7a04acd06ba3e29b0285f6af14a",
+   "text": "El sordomudo sanado"
+  },
+  {
+   "kind": "entry",
+   "id": 24245,
+   "sha256": "91605a55360327c3de974ce2a4f59ed08b956053d7b56b8a9cab45f438c04c2c",
+   "text": "Pedro reprendiendo a Jesús"
+  },
+  {
+   "kind": "entry",
+   "id": 24246,
+   "sha256": "ea72c79594296e45b8c2a296644d988581f58cfac6601d122ed0a8bd7c02e8bf",
+   "text": "Pedro"
+  },
+  {
+   "kind": "entry",
+   "id": 24247,
+   "sha256": "a8cfcd74832004951b4408cdb0a5dbcd8c7e52d43f7fe244bf720582e05241da",
+   "text": "Juan"
+  },
+  {
+   "kind": "entry",
+   "id": 24248,
+   "sha256": "fdc437273dcd12a7e85292fed94652347e4032d608e196dae70643a81c99d742",
+   "text": "Pablo y Bernabé"
+  },
+  {
+   "kind": "entry",
+   "id": 24249,
+   "sha256": "ee5398848187d0a3970e996a1c1777e12d793d5cffa7182c6a76f8ea0f4b28c8",
+   "text": "Febe"
+  },
+  {
+   "kind": "entry",
+   "id": 24250,
+   "sha256": "d4181d48b76f8dc13141788a5a1b15ce55d6e54955c9b449beaaf91a0b18579c",
+   "text": "Efesios"
+  },
+  {
+   "kind": "entry",
+   "id": 24251,
+   "sha256": "c75bbfb7969d2150131075dd4bf0b50c169e3f291287aa43980a8c3aa78af9dc",
+   "text": "Ejemplificado por Pablo"
+  },
+  {
+   "kind": "entry",
+   "id": 24252,
+   "sha256": "4f0f0006c0dbaa0eb80a49d9f98b8b60d79ce8a19681e7ac1124aefd26fa9a7e",
+   "text": "Sin conocimiento"
+  },
+  {
+   "kind": "entry",
+   "id": 24253,
+   "sha256": "cd63b71e0ae129f6ccbb75f9ad9ba69bedf6e84ea10c73566474d19bee73e4fb",
+   "text": "Al castigar a las personas malas"
+  },
+  {
+   "kind": "entry",
+   "id": 24254,
+   "sha256": "bce2cecf1abe383b06ca2d3eadc38310ce6c30d792b2a7841419e32d14eeb61b",
+   "text": "Moisés y los levitas"
+  },
+  {
+   "kind": "entry",
+   "id": 24255,
+   "sha256": "f3b46d038abf77aa255400e9f2f3d5b029210106a1b5bcb6323b73f8e254c15f",
+   "text": "Finees"
+  },
+  {
+   "kind": "entry",
+   "id": 24256,
+   "sha256": "a913a5ba345a40eb67a04b9cd7502a31d09ec9a08847226c759d93ca18ccd0b6",
+   "text": "Israelitas"
+  },
+  {
+   "kind": "entry",
+   "id": 24257,
+   "sha256": "b1f6d1241c57d145f1eabc2377ff03bf003ee722bdf2d27f7c530f52f588baf2",
+   "text": "Samuel"
+  },
+  {
+   "kind": "entry",
+   "id": 24258,
+   "sha256": "a6b54c20a7b96eeac1a911e6da3124a560fe6dc042ebf270e3676e7095b95652",
+   "text": "David"
+  },
+  {
+   "kind": "entry",
+   "id": 24259,
+   "sha256": "39fdd90473172fb13a47c05651e430778ec3de65b0c73def12fd736c011f480e",
+   "text": "Elías"
+  },
+  {
+   "kind": "entry",
+   "id": 24260,
+   "sha256": "77fa1867388a4046a878a2048e50a62a2b651d07bd3216ee8468c298a2cfd78e",
+   "text": "Jehú"
+  },
+  {
+   "kind": "entry",
+   "id": 24261,
+   "sha256": "4daa4ed8f7213e0a66c5bb05e19f44f5a0fa7efe3e03783446c1d27ad4194719",
+   "text": "Joiada"
+  },
+  {
+   "kind": "entry",
+   "id": 24262,
+   "sha256": "0b39493baa446eb2786d6d9601b91a9a331b82b549dcbd471394314d2dd7dc66",
+   "text": "Josías"
+  },
+  {
+   "kind": "entry",
+   "id": 24263,
+   "sha256": "fc8c00d209d9d752290e93069233aca9572ef3de40cac8f4909847ce7abd63fd",
+   "text": "Al reprender la iniquidad"
+  },
+  {
+   "kind": "topic",
+   "id": 5222,
+   "sha256": "484e5fd4bd8cf03cb4e5bd5f27f09e6ba6989f56ec5306d0b0b79dd993d3e196",
+   "text": "Zebadías"
+  },
+  {
+   "kind": "entry",
+   "id": 24264,
+   "sha256": "a2de308ef0fd596703f616e90c447f765ecf9b56caac1d49a72d9fe61b42050c",
+   "text": "1. Dos benjamitas"
+  },
+  {
+   "kind": "entry",
+   "id": 24265,
+   "sha256": "5a3db75d3a4452d5ab8e1c42dec368dbb75c4b38889141ad07c1e8c38e16c0f6",
+   "text": "2. Un israelita que se unió a David en Siclag"
+  },
+  {
+   "kind": "entry",
+   "id": 24266,
+   "sha256": "0498dd2cf6998257a9768d3ec5a1e52a5c12f084fa8e76ae26edfc9442cfb38a",
+   "text": "3. Un portero coreíta del templo"
+  },
+  {
+   "kind": "entry",
+   "id": 24267,
+   "sha256": "d3cd51c4870313d026808982e343ff296598e616cceec106c53584b99ca86b42",
+   "text": "4. Hijo de Asael"
+  },
+  {
+   "kind": "entry",
+   "id": 24268,
+   "sha256": "12ea374eb5c5ce9286d57afddbcf48c7d031f9c2ab1cc8d23d5eadb33374e2bf",
+   "text": "5. Un levita maestro itinerante"
+  },
+  {
+   "kind": "entry",
+   "id": 24269,
+   "sha256": "cd321138fda7bc49aec1bba82a68260eab94e0aff375811df1960a2f0acfa323",
+   "text": "6. Hijo de Ismael y consejero del rey"
+  },
+  {
+   "kind": "entry",
+   "id": 24270,
+   "sha256": "50b3b225224e844735aceac9d7ea86f3b95b46c9997dbe2c8f19b20fa27315cf",
+   "text": "7. Hijo de Sefatías"
+  },
+  {
+   "kind": "entry",
+   "id": 24271,
+   "sha256": "c30b29709e93bc49ff2056b7442d2dda456582772cacc2fedf397d2d05f49b85",
+   "text": "8. Un sacerdote que se contaminó al casarse con una mujer idólatra"
+  },
+  {
+   "kind": "topic",
+   "id": 5223,
+   "sha256": "bb71ffc90cd70b021c4341e35e177e3ac28d1365cbab4f0eda44066ed5f67042",
+   "text": "Zeba"
+  },
+  {
+   "kind": "entry",
+   "id": 24272,
+   "sha256": "87676e77478887b2171a6a0271ac0b39b843a675e606c1d0f9205ef642a67671",
+   "text": "Rey de Madián"
+  },
+  {
+   "kind": "topic",
+   "id": 5224,
+   "sha256": "1303c4b4ba441d15b4aa318823fa1e488b4a37ddcac44fcb014b0f4bda1a3cd9",
+   "text": "Zebaim"
+  },
+  {
+   "kind": "entry",
+   "id": 24273,
+   "sha256": "7d24d25cce099c0115667e80ce73bc762c4c63f71b8565d1890b61de5f075cad",
+   "text": "Un lugar cuya ubicación exacta se desconoce"
+  },
+  {
+   "kind": "topic",
+   "id": 5225,
+   "sha256": "72f7f7ecbd0be284c5fcef7a97c5fb92ec9365b42152c85ce9d93663969ce4f3",
+   "text": "Zebedeo"
+  },
+  {
+   "kind": "entry",
+   "id": 24274,
+   "sha256": "9edbb768b8ebd1a05877a36f401c2618f2b0a3a694d6d3fba942f6968e07ff50",
+   "text": "Padre de Jacobo y Juan (apodados \"Boanerges\")"
+  },
+  {
+   "kind": "topic",
+   "id": 5226,
+   "sha256": "2f724121b19a0b1bf39d67be013d3914487338f3794e905a3b05d85d425176fe",
+   "text": "Zebina"
+  },
+  {
+   "kind": "entry",
+   "id": 24275,
+   "sha256": "74b757679f9adee2fa9efdc73e40154efe927ca31de29db958536fce85b42fe6",
+   "text": "Hijo de Nebo"
+  },
+  {
+   "kind": "topic",
+   "id": 5227,
+   "sha256": "bca7793dfc344e2a0199b9aff5099068ef7b4a3eb1271b5887ba23ee5491fdf8",
+   "text": "Seboim"
+  },
+  {
+   "kind": "entry",
+   "id": 24276,
+   "sha256": "d5b9dcc4ccbb1cfd124f85d1746ed5a0df7f9c3b38c09622a228caf19be4bddb",
+   "text": "1. También llamada SEBOIM"
+  },
+  {
+   "kind": "entry",
+   "id": 24277,
+   "sha256": "8ce30c970245450de0307a5b2b802613f8c27d19baca48f6f5e9fcc9b84e4bfa",
+   "text": "Una de las ciudades del valle de Sidim"
+  },
+  {
+   "kind": "entry",
+   "id": 24278,
+   "sha256": "6cb6f6a683742c5ea8275e034f2f7bc1d0d4e318251e7d5c17e8911696af6011",
+   "text": "2. Una ciudad y un valle en Benjamín"
+  },
+  {
+   "kind": "topic",
+   "id": 5228,
+   "sha256": "2dd0cc2263d1a844dd17f040447926b3a464b41a606190d759ad29b6db018ce4",
+   "text": "Zebuda"
+  },
+  {
+   "kind": "entry",
+   "id": 24279,
+   "sha256": "1413504502a77b5aa398a85eb0066f0740b5fc30ff75811730c029afbaaec177",
+   "text": "Esposa de Josías, rey de Judá"
+  },
+  {
+   "kind": "topic",
+   "id": 5229,
+   "sha256": "2c534a4b20bc6e8496b2d0773d82eba7e368562de221ee450e481f0a9f5ab802",
+   "text": "Zebul"
+  },
+  {
+   "kind": "entry",
+   "id": 24280,
+   "sha256": "62c5bb9abe34367ddbc17ddcbcc0832534cd79381e8d4e3dd4d6c974d38f04ed",
+   "text": "Un oficial de Abimelec"
+  },
+  {
+   "kind": "topic",
+   "id": 5230,
+   "sha256": "1c125d1b47c7ffe98c63aa7a6147e9525b8a3a59353b485060cfee75ec89de65",
+   "text": "Zabulón"
+  },
+  {
+   "kind": "entry",
+   "id": 24281,
+   "sha256": "90a486b8ed6d59b8d80204b062eb7743f9fd5d79162908ef186e8bbbfac113c2",
+   "text": "1. Hijo de Jacob y Lea"
+  },
+  {
+   "kind": "entry",
+   "id": 24282,
+   "sha256": "40243e705ae47cd17eca71fa867cd9b5bd2b0567ab096257d6877dbb73e8425f",
+   "text": "Descendientes de"
+  },
+  {
+   "kind": "entry",
+   "id": 24283,
+   "sha256": "78f402dfc93b9b4e044889d6e3d47743706e614997ecc1bf223141260bc50fce",
+   "text": "También llamado ZABULÓN"
+  },
+  {
+   "kind": "entry",
+   "id": 24284,
+   "sha256": "f3cb0779457e6cebd67995ec9b49c9d36242da3ca89b8e6f63551005bbf4e3ef",
+   "text": "2. Tribu de"
+  },
+  {
+   "kind": "entry",
+   "id": 24285,
+   "sha256": "83251e738021dca9d4ac809abe07b1346081166d895ce6a1e70966fdcf51c223",
+   "text": "Su lugar en la marcha y en el campamento"
+  },
+  {
+   "kind": "entry",
+   "id": 24286,
+   "sha256": "2695b84c87677028620bd60ded854028a4fdfebc116c6f310b844e06bf200ce5",
+   "text": "Territorio asignado a"
+  },
+  {
+   "kind": "entry",
+   "id": 24287,
+   "sha256": "421c3e773eb0ddc60904469bcf52f4eeb00b2995b53a47a83aba9944c608c956",
+   "text": "Los habitantes originarios de su territorio, no expulsados"
+  },
+  {
+   "kind": "entry",
+   "id": 24288,
+   "sha256": "9e64dc8e6928fe9302556a5a5747ef0f0ce2f331e9f39574c7de4ab7b0740bd6",
+   "text": "Ciudades levíticas de"
+  },
+  {
+   "kind": "entry",
+   "id": 24289,
+   "sha256": "3982a375809fa47dfbe77a07ecc8baf8402672cdb5e1024fcb540e2e9754213a",
+   "text": "La bendición de Moisés sobre"
+  },
+  {
+   "kind": "entry",
+   "id": 24290,
+   "sha256": "0e542a3435a7914cd7097c742414a547ec0642e0a3af1d021bfc77c8f7b616cd",
+   "text": "Su lealtad al resistir a los enemigos de Israel"
+  },
+  {
+   "kind": "entry",
+   "id": 24291,
+   "sha256": "2d1ee3b80dd53ef0e4594c2dcaa6bca630316d25c7df80117b04beb09a4dc27a",
+   "text": "Con Barac contra Sísara"
+  },
+  {
+   "kind": "entry",
+   "id": 24292,
+   "sha256": "0d42188e615154f6ce72e564be378c752712e0c307995ef0e3638a5ea0bb1568",
+   "text": "Con Gedeón contra los madianitas"
+  },
+  {
+   "kind": "entry",
+   "id": 24293,
+   "sha256": "5b35f711ff05dd000aec1f155dd0eb1111f10bddd5c0bf04d088f8e7a694833c",
+   "text": "Con David cuando fue hecho rey sobre Israel"
+  },
+  {
+   "kind": "entry",
+   "id": 24294,
+   "sha256": "e024e6866032c0d7195cdbcb2e5fb059fb48b49f10a37e3450372671a24c4729",
+   "text": "Se une a Ezequías en la renovación de la Pascua"
+  },
+  {
+   "kind": "entry",
+   "id": 24295,
+   "sha256": "63132ff7e53b245283a220ac07037dbec754e49289633ad7496e7cf6caaa6994",
+   "text": "Conquistada por Tiglat-pileser; llevada cautiva a Asiria"
+  },
+  {
+   "kind": "entry",
+   "id": 24296,
+   "sha256": "465e40e77615dacea4c5e7997a4e51f9547d498272e2848ebc1cc96ebfc3308f",
+   "text": "Jesús vivió en la tierra de"
+  },
+  {
+   "kind": "entry",
+   "id": 24297,
+   "sha256": "f726cd15a22ee7c60b4b80912c7575e4c1cad18d06573dd8acef5623b883fabe",
+   "text": "Doce mil sellados"
+  },
+  {
+   "kind": "topic",
+   "id": 5231,
+   "sha256": "084756657231286059b50d1add4ea7399300a1deb41d51588c8bbe2749120667",
+   "text": "Zacarías"
+  },
+  {
+   "kind": "entry",
+   "id": 24298,
+   "sha256": "cbb181bac9f4095451cc4e483e1bf574a4782556eebf496df6162fa739aab30a",
+   "text": "1. Un rubenita"
+  },
+  {
+   "kind": "entry",
+   "id": 24299,
+   "sha256": "75e9761e69b95c1d9a45ef88f1c3df828cb3c6b07c17a8d54ecd79371f345d67",
+   "text": "2. Tres levitas en los días de David"
+  },
+  {
+   "kind": "entry",
+   "id": 24300,
+   "sha256": "ebb130904bb5faac69cb3fcee3c741ad733732fec0b53f97670631ed07bfb916",
+   "text": "3. Un benjamita"
+  },
+  {
+   "kind": "entry",
+   "id": 24301,
+   "sha256": "0083c1ebea9fcb149923ccc4de88268f3fe29650e4b9968b092007cb6ee94268",
+   "text": "Llamado ZEQUER en"
+  },
+  {
+   "kind": "entry",
+   "id": 24302,
+   "sha256": "e737133efb4c9b9e0ef4c0e2786f86a8457fc4e50e9736d1520ffcb5f76dfb2b",
+   "text": "4. Dos coatitas"
+  },
+  {
+   "kind": "entry",
+   "id": 24303,
+   "sha256": "90aa70a5dfe0a75b2e82d69a34b451c73b815a208e6c1ffb6698cc957535e5a0",
+   "text": "5. Un portero merarita del templo"
+  },
+  {
+   "kind": "entry",
+   "id": 24304,
+   "sha256": "3682f1b9760bb3cd0ac4ba500eec62a77e2d595e7ec5d9aa37928082cea3892c",
+   "text": "6. Padre de Ido"
+  },
+  {
+   "kind": "entry",
+   "id": 24305,
+   "sha256": "0ded2d2dc65b635b38dab58bff8d1142c2bd0228b69e6b99b7c8c4fead191b8d",
+   "text": "7. Un príncipe enviado por Josafat junto con sacerdotes y levitas para enseñar en las ciudades"
+  },
+  {
+   "kind": "entry",
+   "id": 24306,
+   "sha256": "2db277bd18a57129d7afeeb3d3fca9149cde34461f3969d5b204035771e13188",
+   "text": "8. Un levita, padre de Jahaziel"
+  },
+  {
+   "kind": "entry",
+   "id": 24307,
+   "sha256": "d3a804e44ff34c74288cd88200b8b100327ea2a64f97752e5a632471a327d700",
+   "text": "9. Hijo de Josafat"
+  },
+  {
+   "kind": "entry",
+   "id": 24308,
+   "sha256": "dd98de951bfe78d11cade81cfda727a6420ad80b0a055c070287ffda9616730a",
+   "text": "10. Sumo sacerdote, hijo o nieto de Joiada"
+  },
+  {
+   "kind": "entry",
+   "id": 24309,
+   "sha256": "bca53bcdf0b3a616f6ee7f3b881e12703b789f9afd1f41cb0c807ea0d46077b1",
+   "text": "Muerto por profetizar contra Jerusalén"
+  },
+  {
+   "kind": "entry",
+   "id": 24310,
+   "sha256": "049336d950cd1bffd3d823cbd742a0e6b766ef31ce43810bb8ab78acaa2678e8",
+   "text": "11. Un profeta durante el reinado de Uzías"
+  },
+  {
+   "kind": "entry",
+   "id": 24311,
+   "sha256": "3b942add4c1f4de201967eee80751685669b07862931ba44fb01c73571222a1a",
+   "text": "12. Un jefe del templo"
+  },
+  {
+   "kind": "entry",
+   "id": 24312,
+   "sha256": "e5ff8ddd93cfb1c347f9f0da7374f5cb7a3b759aaad26f2b3e5ecc7ee9c28851",
+   "text": "13. El profeta"
+  },
+  {
+   "kind": "entry",
+   "id": 24313,
+   "sha256": "c55c8ae8c107f2c3c6e292534873e066ab4602bc8fcffefd4fa9b81c7730adfe",
+   "text": "Hijo de Berequías"
+  },
+  {
+   "kind": "entry",
+   "id": 24314,
+   "sha256": "48440fe319048c5a6c1113a57fcab9da5e724cb5218dd30ba13fa69a0f0c7df5",
+   "text": "Profetizó durante el reinado de Darío"
+  },
+  {
+   "kind": "entry",
+   "id": 24315,
+   "sha256": "395c124b76684d82dde70fa1e60315c43c94d5162ab4beb19adf9f4f7ff6a74f",
+   "text": "Probablemente el sacerdote mencionado en"
+  },
+  {
+   "kind": "entry",
+   "id": 24316,
+   "sha256": "5cd0ddb2d48a2d2630b7e1caf24c34dae3b35ca9c5381ece0e241b844b9294cf",
+   "text": "14. Dos jefes que regresaron con Esdras"
+  },
+  {
+   "kind": "entry",
+   "id": 24317,
+   "sha256": "2e7459a5eea362f8b6a2a2c319d6b9d90e2605017472db63c3988e8bfc2d607d",
+   "text": "15. Nombre de varios judíos después del cautiverio"
+  },
+  {
+   "kind": "entry",
+   "id": 24318,
+   "sha256": "4846d8d75df5c2561ce997e79d47760fa4f571539ecec6a599c557c0e4a744eb",
+   "text": "16. Un sacerdote y músico del templo"
+  },
+  {
+   "kind": "entry",
+   "id": 24319,
+   "sha256": "70d353c1fca259bde71de1f72f718dccfd500020bba0ffc89152ca14d1924b06",
+   "text": "17. Quizás el mismo que el número once anterior"
+  },
+  {
+   "kind": "entry",
+   "id": 24320,
+   "sha256": "23f4e59b61ee424d181328975942d2fae59a7f9136c7b2246b9e37291d928da0",
+   "text": "18. Un levita durante el reinado de Ezequías"
+  },
+  {
+   "kind": "entry",
+   "id": 24321,
+   "sha256": "3d5eb5445cfd20925ccdf3113451cc379636c8f0fa97d53e86a5a2f20e777c24",
+   "text": "19. Zacarías"
+  },
+  {
+   "kind": "topic",
+   "id": 5232,
+   "sha256": "d30f0c08d681e95b538a83f70497bd3eefa9f7b326209b8ff382879f189fd9d8",
+   "text": "Sedad"
+  },
+  {
+   "kind": "entry",
+   "id": 24322,
+   "sha256": "ba7ff7659f85755eca3bc23f61132878aff3f168a0221ae7121913a9db0b754f",
+   "text": "Un lugar cerca de Hamat"
+  },
+  {
+   "kind": "topic",
+   "id": 5233,
+   "sha256": "0b8eaf266d91c335cbcb47cc1dfeef1038f065dadec13b2af1799f732b936446",
+   "text": "Sedequías"
+  },
+  {
+   "kind": "entry",
+   "id": 24323,
+   "sha256": "843871bcd153402bd24c6c67ff5a4c0b97a74e8ef0515b008270f29bd4160af0",
+   "text": "1. Hecho rey de Judá por Nabucodonosor"
+  },
+  {
+   "kind": "entry",
+   "id": 24324,
+   "sha256": "e7d979c3ed65aa2d67a48d256fc03971a4914995ca93397a2d53a6c7522d68dc",
+   "text": "Rompe su lealtad a Nabucodonosor"
+  },
+  {
+   "kind": "entry",
+   "id": 24325,
+   "sha256": "547819fe569e9b3ce59608fed4d1c5da2d805845e5d9bfe22727c3104185fa7c",
+   "text": "Forma una alianza con el rey de Egipto"
+  },
+  {
+   "kind": "entry",
+   "id": 24326,
+   "sha256": "60acd6edcffacdeb4e7f3a69588e15895643d64b98df1b36eac8c6748f4abe70",
+   "text": "La alianza, denunciada"
+  },
+  {
+   "kind": "entry",
+   "id": 24327,
+   "sha256": "f56c31290ac888aa714646b98f59e315e23358c61735cc2b0b5e0e4fdc848f3e",
+   "text": "Por Jeremías"
+  },
+  {
+   "kind": "entry",
+   "id": 24328,
+   "sha256": "37059dec43ce0838eca775d5c944c84859ecdcf53e4ac1d1e2ad156250f847b6",
+   "text": "Por Ezequiel"
+  },
+  {
+   "kind": "entry",
+   "id": 24329,
+   "sha256": "79caf4f1037ff7902442ec5504eb22430a4cc4e5d91beee9346a7e2b861968d0",
+   "text": "Encarcela a Jeremías a causa de sus denuncias"
+  },
+  {
+   "kind": "entry",
+   "id": 24330,
+   "sha256": "025b58867b17be0f0e55830a929d8b5b5321b71669028389a7f3696420d0c4e7",
+   "text": "Busca la intercesión de Jeremías ante Dios en su favor"
+  },
+  {
+   "kind": "entry",
+   "id": 24331,
+   "sha256": "b990253b93dec416b8b836dbc672e5b5abcaec0cfd842310467f9c9b91d27f5b",
+   "text": "El mal reinado de"
+  },
+  {
+   "kind": "entry",
+   "id": 24332,
+   "sha256": "06fbc3a335ae61f0164409f66b9249a6baecd87ba1807e2fe11c819b5787c0ce",
+   "text": "Nabucodonosor destruye la ciudad y el templo, lo lleva cautivo a Babilonia, le saca los ojos y mata a sus hijos"
+  },
+  {
+   "kind": "entry",
+   "id": 24333,
+   "sha256": "bd1f284d4993885797b9841171db6f5987d33d56b1c6a965f99ae18b08f9f7a6",
+   "text": "2. Nieto de Joacim"
+  },
+  {
+   "kind": "entry",
+   "id": 24334,
+   "sha256": "3a47d7100bbdb376c07b9ae78ffa6874e190ceaf6bdbc5699cc4de6537fb1234",
+   "text": "3. Un falso profeta"
+  },
+  {
+   "kind": "entry",
+   "id": 24335,
+   "sha256": "d8e17ca4484750e07c7a8641877b9c636b56392bd88da65049bc2ede67419700",
+   "text": "4. Un príncipe de Judá"
+  },
+  {
+   "kind": "entry",
+   "id": 24336,
+   "sha256": "ca407ade07000a16503d04c5e26024fd7dd105acf6faa35f7d9371a097a5cb7c",
+   "text": "5. Un falso profeta"
+  },
+  {
+   "kind": "entry",
+   "id": 24337,
+   "sha256": "2dc0485cad56626926d8960fa69449a76a84d6f2d4c3d916caae8f0c625af39b",
+   "text": "Profetiza a Acab que vencerá a los sirios, en lugar de ser derrotado"
+  },
+  {
+   "kind": "entry",
+   "id": 24338,
+   "sha256": "6459dd7069ee8ccb94d52a2ae266577c2efba6c7176d667b750ade54b85727ba",
+   "text": "Golpea a Miqueas, el verdadero profeta"
+  },
+  {
+   "kind": "topic",
+   "id": 5234,
+   "sha256": "f91fdf5ab32254f1a469bf60c29eab58b6cb28038babd890a41f2413e0f24d8e",
+   "text": "Zeeb"
+  },
+  {
+   "kind": "entry",
+   "id": 24339,
+   "sha256": "fa915c7ffccc06c4a859c70783a76af05bb8312f9c9f1a7fe24eb554ee1adb10",
+   "text": "Un príncipe de Madián"
+  },
+  {
+   "kind": "topic",
+   "id": 5235,
+   "sha256": "d033e6cb023ef893378ca8d28df5c41503656c40310f84f0566ee7faaba26986",
+   "text": "Sela"
+  },
+  {
+   "kind": "entry",
+   "id": 24340,
+   "sha256": "02c1fe67717bdb5748176d9e2e1299ef434db98fca259b05119e213d2717da86",
+   "text": "(Una ciudad en el territorio de la tribu de Benjamín)"
+  },
+  {
+   "kind": "entry",
+   "id": 24341,
+   "sha256": "423e17e418136456c4af9f727f634db50cec06c2ec96c74fb71e1a1a13370b97",
+   "text": "Saúl sepultado en"
+  },
+  {
+   "kind": "topic",
+   "id": 5236,
+   "sha256": "b6cf27ac29d84b969109b4fb9d0aacfb8c8c5bc51d126117bc3c0eb82240b16b",
+   "text": "Selec"
+  },
+  {
+   "kind": "entry",
+   "id": 24342,
+   "sha256": "8c57ba43275738f513508a367e9963575c8d7192508fe1d5f6395fbd5e153dc9",
+   "text": "Un amonita"
+  },
+  {
+   "kind": "topic",
+   "id": 5237,
+   "sha256": "44f981758d87d6877136396333837bef4f1e8af1ce4dad56777591b865c3f10a",
+   "text": "Salfaad"
+  },
+  {
+   "kind": "entry",
+   "id": 24343,
+   "sha256": "4699de773dab31764b2d0fe7689c5dea4eafa2fb0ec2c0ecc44eebe36205cd11",
+   "text": "(Nieto de Galaad)"
+  },
+  {
+   "kind": "entry",
+   "id": 24344,
+   "sha256": "6efafa7e46eae6862b6d0c7b892582f451ac6ffc830b55c597d7c5f8dcb22a64",
+   "text": "Sus hijas piden su herencia"
+  },
+  {
+   "kind": "topic",
+   "id": 5238,
+   "sha256": "9e7f4f74f8c98007bcd4a6ec27334ac2e86c6fd22d8b61e086f78c3c20ac1690",
+   "text": "Zelote"
+  },
+  {
+   "kind": "topic",
+   "id": 5239,
+   "sha256": "0e7ca37d789ab03993561d80065adf489d9afef693cdfcdeac73e74adf5ddc21",
+   "text": "Selsah"
+  },
+  {
+   "kind": "entry",
+   "id": 24345,
+   "sha256": "04d0a34d590787b8492d4363c3f47badc2e1e78783ddcd30f3d1a3045757ef79",
+   "text": "Una ciudad del territorio de la tribu de Benjamín"
+  },
+  {
+   "kind": "topic",
+   "id": 5240,
+   "sha256": "4bd8357462649523afa97b4add0984fed036ae596d5d05f045076e73d488df56",
+   "text": "Samaraim"
+  },
+  {
+   "kind": "entry",
+   "id": 24346,
+   "sha256": "e4891a5eac5147045dda12063f48bd3286c6b0cefeae73110e7b85c54334e5a6",
+   "text": "1. Una ciudad de la tribu de Benjamín"
+  },
+  {
+   "kind": "entry",
+   "id": 24347,
+   "sha256": "ccdcfe448e0f0f603d46472d22b8aee75c2c07056ec4aa2f503ae26e25a81b99",
+   "text": "2. Una parte del monte Efraim"
+  },
+  {
+   "kind": "topic",
+   "id": 5241,
+   "sha256": "27f3ae56361d606ad38919db8a61529d4f35cc703021a284cb07e16836110181",
+   "text": "Zemareos"
+  },
+  {
+   "kind": "entry",
+   "id": 24348,
+   "sha256": "0f18f6b484a20d9c46d09ba1d7ded36f0994212e59c713323f33ffc77d017d6c",
+   "text": "Una tribu que descendía de Canaán"
+  },
+  {
+   "kind": "topic",
+   "id": 5242,
+   "sha256": "13c1670503d8e83b4d610d0c4daf0b815f50a1cface49536307e1a6c2232e105",
+   "text": "Zemira"
+  },
+  {
+   "kind": "entry",
+   "id": 24349,
+   "sha256": "8c9c0b057531c855453b80afda366fc87a88b3913c6aa3f3efcc2b78c54682c9",
+   "text": "Un hijo de Bequer"
+  },
+  {
+   "kind": "topic",
+   "id": 5243,
+   "sha256": "1d871704af4d08c43612345b836e245a46c6de5ba89f57bec4734f5f47d98419",
+   "text": "Senán"
+  },
+  {
+   "kind": "entry",
+   "id": 24350,
+   "sha256": "0abcd4e57dd74eddd288a44fb2b6ff476641884eba5f178b1f8264ee1d1a77b2",
+   "text": "Una ciudad del territorio de la tribu de Judá"
+  },
+  {
+   "kind": "topic",
+   "id": 5244,
+   "sha256": "c314cb761364cb87d3881871f966b14fbad748657ddc8037d396dd778c5ecdde",
+   "text": "Zenas"
+  },
+  {
+   "kind": "entry",
+   "id": 24351,
+   "sha256": "8c79bcbea4166a7b790f4263e996153c1a6381137e052c6f2d55eb639f7a8acb",
+   "text": "Un creyente cristiano e intérprete de la ley"
+  },
+  {
+   "kind": "topic",
+   "id": 5245,
+   "sha256": "269cbc8b63f6847fb003e73572a0729c781d0bd0f1c911b4793aa88a08010b1d",
+   "text": "Sofonías"
+  },
+  {
+   "kind": "entry",
+   "id": 24352,
+   "sha256": "497be1ba93aeb2479c449c7bc951442b3db085e7520de22e0673f7fc15f5849a",
+   "text": "1. Un sacerdote en el reinado de Sedequías, rey de Judá"
+  },
+  {
+   "kind": "entry",
+   "id": 24353,
+   "sha256": "c41aaf6d52cdf14d3b5ac6a8e061eba98c960d85bc5176b4c1830a419a3acd73",
+   "text": "Enviado por el rey a Jeremías con un mensaje que solicitaba la intercesión y las oraciones del profeta"
+  },
+  {
+   "kind": "entry",
+   "id": 24354,
+   "sha256": "5b1e5be526fa89b119155182016f7327f46999f00b4b70bb281af39a9fb32313",
+   "text": "Muestra a Jeremías la carta del falso profeta"
+  },
+  {
+   "kind": "entry",
+   "id": 24355,
+   "sha256": "26681217ed265d34eb3683e8bb48f8ae87a047ebf7ea2450df575c898f23c5ea",
+   "text": "Llevado a Ribla y muerto"
+  },
+  {
+   "kind": "entry",
+   "id": 24356,
+   "sha256": "59559c301297c42d74934656287f71fee28f4810999e00161c97cbe496da5631",
+   "text": "2. Un coatita"
+  },
+  {
+   "kind": "entry",
+   "id": 24357,
+   "sha256": "bb3bf659c6460a8cfa47c0e4cbb03d18c2ff53a48f8bf7dd1632cb71a9823ec5",
+   "text": "3. Un profeta en los días de Josías"
+  },
+  {
+   "kind": "entry",
+   "id": 24358,
+   "sha256": "77aa06ed519714f711b7b4fb1cb7895c168c21b20821c88a9ab7639bd754be60",
+   "text": "4. Padre de Josías"
+  },
+  {
+   "kind": "topic",
+   "id": 5246,
+   "sha256": "57ebd12b565a06ff5725f4e8b72dcd4b40a36c2b9d7656d4177a357bd2a7a8a0",
+   "text": "Sefat"
+  },
+  {
+   "kind": "entry",
+   "id": 24359,
+   "sha256": "5a4531b927f5776da5924ea3a5e84f7f9c2ace3d68d631d45b7f196c095444f7",
+   "text": "Una ciudad cananea"
+  },
+  {
+   "kind": "topic",
+   "id": 5247,
+   "sha256": "add1ce4a6c5bb3f3de87e6dbbadec94fdb3ea3d10dbbec49349eab6095a53327",
+   "text": "Sefata"
+  },
+  {
+   "kind": "entry",
+   "id": 24360,
+   "sha256": "2d9cea0915c356b6cc5289595e586f4e7831215aba65dce715c07c16bf1ba4cb",
+   "text": "Un valle al oeste de Judá"
+  },
+  {
+   "kind": "topic",
+   "id": 5248,
+   "sha256": "7c33e22510ca16dbbfdd43b20d181cd4e2200ac56bb5318ddb71851aed6d93ce",
+   "text": "Zefi"
+  },
+  {
+   "kind": "topic",
+   "id": 5249,
+   "sha256": "8bbb0836a7cdb18bbc2ac2226558475e9544656dc22842ff925a53dfb5135592",
+   "text": "Zefo"
+  },
+  {
+   "kind": "entry",
+   "id": 24361,
+   "sha256": "817c12c009dd4b342a547fd601730cefd6f40de6da56fa5958384b2ae7e6ba61",
+   "text": "También llamado ZEFI"
+  },
+  {
+   "kind": "entry",
+   "id": 24362,
+   "sha256": "131b1b58814673ef1d8b6be26b563416a9bd44f7b23b46f06e425ac306a28d65",
+   "text": "Hijo de Elifaz"
+  },
+  {
+   "kind": "topic",
+   "id": 5250,
+   "sha256": "053aea5d4c2995d07867c327915c08e82cd6239c5cf76e4b7d63c458ba164f3e",
+   "text": "Zefón"
+  },
+  {
+   "kind": "entry",
+   "id": 24363,
+   "sha256": "4ec7ac2c01efb69b7979d5e84714d8a909b387f718717177e412cb461d4c853b",
+   "text": "Hijo de Gad"
+  },
+  {
+   "kind": "topic",
+   "id": 5251,
+   "sha256": "df501afe12cd37163c7c74abf10f879c5dc16d21b8e81fc6615477932c02b46a",
+   "text": "Ser"
+  },
+  {
+   "kind": "entry",
+   "id": 24364,
+   "sha256": "68f8e153366bb03dbab69e914aa170ea6b3692c8b59ed97f1cd2795ba7271867",
+   "text": "Una ciudad en el territorio de la tribu de Neftalí"
+  },
+  {
+   "kind": "topic",
+   "id": 5252,
+   "sha256": "ea4f75f501348fedcd6033c5926b5eedf9fbb2699e3b9a33249b02f753a46bd2",
+   "text": "Zera"
+  },
+  {
+   "kind": "entry",
+   "id": 24365,
+   "sha256": "cbe05f9a7f05d2e842f105e10e20f890baae5bebd6c546b86b6176cbb79a1a80",
+   "text": "1. Hijo de Reuel"
+  },
+  {
+   "kind": "entry",
+   "id": 24366,
+   "sha256": "0442a7fbc3bacd4acaf9130fbfa265c5e94e24d29f65833bcdb4a0a3727de9f1",
+   "text": "2. Padre de Jobab"
+  },
+  {
+   "kind": "entry",
+   "id": 24367,
+   "sha256": "d5ecdc26d6aa77a8826d45a1e6b3af40302eb45c437bc64bacccaf62a1bec950",
+   "text": "3. Zera"
+  },
+  {
+   "kind": "entry",
+   "id": 24368,
+   "sha256": "b1c10c62ece4ba3c816fe3120bde04bc096364322a878f0f05cbe6a425159020",
+   "text": "4. Hijo de Simeón"
+  },
+  {
+   "kind": "entry",
+   "id": 24369,
+   "sha256": "66c2b57fe382fd2cda18972f3c9eda026d66d7feaba96237be48ef62b9f33bad",
+   "text": "5. Un gersonita"
+  },
+  {
+   "kind": "entry",
+   "id": 24370,
+   "sha256": "6247288afb7a0f36094759697721ad8550c901545021a563b06ab8175abc24c0",
+   "text": "6. Un levita"
+  },
+  {
+   "kind": "entry",
+   "id": 24371,
+   "sha256": "5f6a044918c6a52d9ce81486ad6b926f3811b27b55a702443cba1782c7171b45",
+   "text": "7. Rey de Etiopía"
+  },
+  {
+   "kind": "topic",
+   "id": 5253,
+   "sha256": "5cae5334665ac986fcbf5c48235c5645df0ed01430036b2dea45a9bfbdc472b2",
+   "text": "Zeraías"
+  },
+  {
+   "kind": "entry",
+   "id": 24372,
+   "sha256": "2cf281b91436aa2a965d79fa9b8f78f20ba479a9e8a759fcbead36c116076602",
+   "text": "1. Un antepasado de Esdras"
+  },
+  {
+   "kind": "entry",
+   "id": 24373,
+   "sha256": "2e9ef7dd4e2427006e72247bf60f34bd9689d5fb12491dafa06e94065cc95713",
+   "text": "2. Padre de Elioenai"
+  },
+  {
+   "kind": "topic",
+   "id": 5254,
+   "sha256": "8795a3da87fa1cfc93a53d222c3620f20913e300fac0679d1be4c562871a4b41",
+   "text": "Zered"
+  },
+  {
+   "kind": "topic",
+   "id": 5255,
+   "sha256": "4655d553d2fe0d9126c5476c897fe962352742fd4e68b38e2ac5b972965baa4c",
+   "text": "Zereda"
+  },
+  {
+   "kind": "entry",
+   "id": 24374,
+   "sha256": "677d368304af6dc5f47c52e02eb7b83357e3a392c90d391fa46368c0c00104b5",
+   "text": "Una ciudad o región de Efraín"
+  },
+  {
+   "kind": "topic",
+   "id": 5256,
+   "sha256": "b4f261355239306c0b09d9520876fc79e6bf616756f5e0ef2c35d421bb24c397",
+   "text": "Zereda"
+  },
+  {
+   "kind": "entry",
+   "id": 24375,
+   "sha256": "39ddf2a9244a9bf6fabcb0aa9d4dc6b54a2102582af473e6b117cb55cb24b625",
+   "text": "En el territorio de la tribu de Manasés"
+  },
+  {
+   "kind": "topic",
+   "id": 5257,
+   "sha256": "f99f22ef890d1bf55a6940c88ec2f56645f1fc13d660e1e216e3c39b654c7bfc",
+   "text": "Zererat"
+  },
+  {
+   "kind": "entry",
+   "id": 24376,
+   "sha256": "6f86b0652a4983eed513cf1faed50f0041c2c5164d2bb7412da9e24f61dd71ac",
+   "text": "Una región de ubicación incierta"
+  },
+  {
+   "kind": "topic",
+   "id": 5258,
+   "sha256": "ddc512815102cb0e1e142ca53228cb87b51dbdbbf08c15c9631c184fbd2c9450",
+   "text": "Zeres"
+  },
+  {
+   "kind": "entry",
+   "id": 24377,
+   "sha256": "78fec481ae17cff10728c66a2389afa86d97063d731b5a6f1f07fffe23b6cf8a",
+   "text": "Esposa de Amán"
+  },
+  {
+   "kind": "topic",
+   "id": 5259,
+   "sha256": "d161544eaac908f65280a398b7f4bf3fcf21a6a2f7697fe4271e303a9d5f0f6b",
+   "text": "Seret"
+  },
+  {
+   "kind": "entry",
+   "id": 24378,
+   "sha256": "3f48f002929b170477f5e82189d835fa3e47cbd720be4f9acb14ca605bdecb98",
+   "text": "Hijo de Asur"
+  },
+  {
+   "kind": "topic",
+   "id": 5260,
+   "sha256": "3a06a8e5985b29e9df46161676719001c4e8e34e8aed4d2b02e9c7244406e049",
+   "text": "Zeri"
+  },
+  {
+   "kind": "entry",
+   "id": 24379,
+   "sha256": "089581250772cad23ace0141e4c7bb3b4fe94bf48d43125c4a1122b42117ef28",
+   "text": "Hijo de Jedutún"
+  },
+  {
+   "kind": "topic",
+   "id": 5261,
+   "sha256": "39406ad7be54996a0c1c7254d48254606261ef8f371abe634584d465ff839df7",
+   "text": "Seor"
+  },
+  {
+   "kind": "entry",
+   "id": 24380,
+   "sha256": "4e617e9e490f45842cb57958d73165887d5fb03deb05899a64792cbb8635561c",
+   "text": "Padre de Abiel"
+  },
+  {
+   "kind": "topic",
+   "id": 5262,
+   "sha256": "c85104187fe2e42f307a7364cf64388cdbc4802d080151cd9482fda16f3f0b8c",
+   "text": "Zeruah"
+  },
+  {
+   "kind": "entry",
+   "id": 24381,
+   "sha256": "4dcb51e1e9d39dfa0f5a8dd792b09662477365c89c45b0c705d42fc109deb4d7",
+   "text": "Madre de Jeroboam"
+  },
+  {
+   "kind": "topic",
+   "id": 5263,
+   "sha256": "d94cd722f205ce44612ae095c7e8cdbaac351adb441259ff06f6c9e9907721d4",
+   "text": "Zorobabel"
+  },
+  {
+   "kind": "entry",
+   "id": 24382,
+   "sha256": "adff04c3f3fa009fe2ca28673e83bdb158671a2f0b1cf9ccfca194e1397591ba",
+   "text": "También llamado SESBASAR"
+  },
+  {
+   "kind": "entry",
+   "id": 24383,
+   "sha256": "32d5dad3be0419ce040f4d73129325eaadfcdc27cda0f7a09af5c4a932357f23",
+   "text": "Dirige la reconstrucción del altar y del templo después de su regreso del cautiverio en Babilonia"
+  },
+  {
+   "kind": "entry",
+   "id": 24384,
+   "sha256": "5da3b964c687643edce4680c218eb1bb1ed0b1719e1a3217efe1af864bd18301",
+   "text": "Conduce a los judíos liberados de regreso desde Babilonia"
+  },
+  {
+   "kind": "entry",
+   "id": 24385,
+   "sha256": "251f1c9632edd59feb8f4c40370d27789c2441c2d8fd27c12394ab96e40a0645",
+   "text": "Designa a los levitas para iniciar la reconstrucción del templo"
+  },
+  {
+   "kind": "entry",
+   "id": 24386,
+   "sha256": "7c15a65bc534051437533e390c34efffdcb8768cda915550410efc21a4b477a8",
+   "text": "Profecías relativas a"
+  },
+  {
+   "kind": "entry",
+   "id": 24387,
+   "sha256": "6a7d9e3a7f9c16d77125032db24de37209cab9d0d6fb0ef239101ccfd03e5a8d",
+   "text": "Llamado ZOROBABEL en la genealogía de José"
+  },
+  {
+   "kind": "topic",
+   "id": 5264,
+   "sha256": "a6d21bf39b2272d3a23f86dc91f5a57b749b62f2f607342cc64e3685a880f003",
+   "text": "Sarvia"
+  },
+  {
+   "kind": "entry",
+   "id": 24388,
+   "sha256": "4a94dd7d8dcb63372521ac042a347dc160d1b56f06b0b95bd74ab6a7d7b2885c",
+   "text": "Hermana de David"
+  },
+  {
+   "kind": "entry",
+   "id": 24389,
+   "sha256": "cc7d7c27bed758b2ecc4131f7d736cd6e4b72d3a141809707601159909a132f8",
+   "text": "Madre de tres de los grandes soldados de David"
+  },
+  {
+   "kind": "topic",
+   "id": 5265,
+   "sha256": "d262fb295c582c1749ea98f9d9911bb1b6b6712c410b410c5e34fe771c7d1283",
+   "text": "Zetam"
+  },
+  {
+   "kind": "entry",
+   "id": 24390,
+   "sha256": "a44b8a29cf52be567fdde8707b02e34529fa7cb5cf5d7c5a5df887c2f822f404",
+   "text": "Un hijo de Laadán"
+  },
+  {
+   "kind": "topic",
+   "id": 5266,
+   "sha256": "7f78de29260740c0525a0184b714ba2866f0e0df2f2ee7b8c734810a3d13a6e4",
+   "text": "Zetán"
+  },
+  {
+   "kind": "entry",
+   "id": 24391,
+   "sha256": "ec06c8ea4c5aa93b290183f740e2437c69c74fddcc99bb15e4145b420ca76ff9",
+   "text": "Hijo de Bilhán"
+  },
+  {
+   "kind": "topic",
+   "id": 5267,
+   "sha256": "7a2b6232a4a699fc1848160521aff46d7ccb693d345f2df047a1afb7317edfe5",
+   "text": "Zetar"
+  },
+  {
+   "kind": "entry",
+   "id": 24392,
+   "sha256": "b856e7fbdc854444f1630c16e73f6730e6b7a866ad470f09a2cff840eea4d544",
+   "text": "Uno de los siete eunucos del rey de Persia"
+  },
+  {
+   "kind": "topic",
+   "id": 5268,
+   "sha256": "25ce970a956f5e42c4a3178b4905c18b4a3b15b7c9a429e45c53cee7af6ed731",
+   "text": "Zia"
+  },
+  {
+   "kind": "entry",
+   "id": 24393,
+   "sha256": "08765b33822c398dedcf9d78f5e2e6ff4c093fce2112fcbb4bfdefc6def68619",
+   "text": "Un gadita"
+  },
+  {
+   "kind": "topic",
+   "id": 5269,
+   "sha256": "cb8ca8f71968818ce0c2b729d7e2f2575139300e52bc64ebcbec091d87671c8e",
+   "text": "Siba"
+  },
+  {
+   "kind": "entry",
+   "id": 24394,
+   "sha256": "b696743837930d3e01f410e0b13b5d49fa8671326b0a5517075d627900541187",
+   "text": "(Siervo del rey Saúl)"
+  },
+  {
+   "kind": "entry",
+   "id": 24395,
+   "sha256": "fd03872ee122005dfcf6255d467e866e73c106d71850c912dab035011cad6da0",
+   "text": "Su fidelidad a Mefi-boset"
+  },
+  {
+   "kind": "entry",
+   "id": 24396,
+   "sha256": "2ae25d33b3793b22b62ba0901c532ef4f2904d49f03dd695e4541f00db568b93",
+   "text": "Su fidelidad a David"
+  },
+  {
+   "kind": "topic",
+   "id": 5270,
+   "sha256": "dc7971b7413ac871c3bc9552e2bde5d57b31d8ee915bbad7a160a5f80ccee47b",
+   "text": "Zibeón"
+  },
+  {
+   "kind": "entry",
+   "id": 24397,
+   "sha256": "cd690a8c52e865ee92cf3f7e81a57f1e2d7b8802cb5d30acf36b92e3d65fc0be",
+   "text": "1. Un heveo"
+  },
+  {
+   "kind": "entry",
+   "id": 24398,
+   "sha256": "ae3ba0f3a07f8fc412559b6312efdacb181dec0e52c959af56b0d7f26d07393b",
+   "text": "2. Hijo de Seir"
+  },
+  {
+   "kind": "topic",
+   "id": 5271,
+   "sha256": "540df789885507d0e11fc5f568440bf33d0e5f527ca8e18adcd18958934b764f",
+   "text": "Sibias"
+  },
+  {
+   "kind": "entry",
+   "id": 24399,
+   "sha256": "d5d22d356f148467dfe385b434b33a228b4ed6e171675addb11d3805f430024c",
+   "text": "Un benjamita"
+  },
+  {
+   "kind": "topic",
+   "id": 5272,
+   "sha256": "eaee9e5a356f5caabb0e6c0658ac1405591994dcebb58b04cbf8c46c328bb23d",
+   "text": "Sibia"
+  },
+  {
+   "kind": "entry",
+   "id": 24400,
+   "sha256": "ea5a3ae7281f0e78a811ace8cb22d98900cee6f3bf54b6aa45467e28e03b1e4e",
+   "text": "Esposa de Ocozías"
+  },
+  {
+   "kind": "topic",
+   "id": 5273,
+   "sha256": "ddad49616692f8f7d99578b61efad57566b6096b0c4e719c49adbddf31d0bc0a",
+   "text": "Zicri"
+  },
+  {
+   "kind": "entry",
+   "id": 24401,
+   "sha256": "1782437c983c732906d443739657068dd6a0c0b6b95ec08806620a73e6a2723c",
+   "text": "1. Hijo de Ishar"
+  },
+  {
+   "kind": "entry",
+   "id": 24402,
+   "sha256": "11557bd96b9abc326c85bfe858af14c668c8a45063eda63f27651f5756140b2f",
+   "text": "2. Tres benjamitas"
+  },
+  {
+   "kind": "entry",
+   "id": 24403,
+   "sha256": "8f22b2b04220d9f70329a176c33459f56c67f2b06cd5f0d15e3899c2ee5e7e8f",
+   "text": "3. Un levita"
+  },
+  {
+   "kind": "entry",
+   "id": 24404,
+   "sha256": "91beb30c966eada74f1d52fb4bb3c36ac5bc9f8682b29317ee6971e93028d079",
+   "text": "4. Dos jefes en los días de David"
+  },
+  {
+   "kind": "entry",
+   "id": 24405,
+   "sha256": "87515218e8cdd79d38e2dd0f17f436896bc5c07ac5f4a3e4b46606fbab9bf0d0",
+   "text": "5. Padre de Amasías"
+  },
+  {
+   "kind": "entry",
+   "id": 24406,
+   "sha256": "327e8d36c724bc608cb891e0e254e94217d9576a009b0591805f6cf4a1fd803a",
+   "text": "6. Padre de Elisafat"
+  },
+  {
+   "kind": "entry",
+   "id": 24407,
+   "sha256": "b0507c83132c02519c1c4ff63962f39e3c8e369cf28489c288c1103bf6ec3278",
+   "text": "7. Un efrateo"
+  },
+  {
+   "kind": "entry",
+   "id": 24408,
+   "sha256": "11891e0ecc616620332f2ad26ebf56e238747f0217deda60d45e710a116ae468",
+   "text": "8. Padre de Joel"
+  },
+  {
+   "kind": "entry",
+   "id": 24409,
+   "sha256": "29cd44d99314810f1e953b8f4474759d0236c8c33b41e2b7be83a07abb583fc4",
+   "text": "9. Un sacerdote"
+  },
+  {
+   "kind": "topic",
+   "id": 5274,
+   "sha256": "0a92869aee70113b6fafd64e90358eb482495274b9f37abe7d13c18b31c60068",
+   "text": "Sidim"
+  },
+  {
+   "kind": "entry",
+   "id": 24410,
+   "sha256": "68f8e153366bb03dbab69e914aa170ea6b3692c8b59ed97f1cd2795ba7271867",
+   "text": "Una ciudad en el territorio de la tribu de Neftalí"
+  },
+  {
+   "kind": "topic",
+   "id": 5275,
+   "sha256": "10c7fd43f697f2879154467b4bb79416ea00b24686c386f8cf4ee4ab6a3ea099",
+   "text": "Sedequías"
+  },
+  {
+   "kind": "entry",
+   "id": 24411,
+   "sha256": "68472177c0f00c05396e5eeb72dbbeb6d92001137d921c26148ff7e366c8b70d",
+   "text": "Un príncipe principal de los exiliados que regresaron a Jerusalén"
+  },
+  {
+   "kind": "topic",
+   "id": 5276,
+   "sha256": "c4f1aab136516b30b3b034e2b683d3b9dccb5ba72ff650c90149048cbd8194b8",
+   "text": "Sidón"
+  },
+  {
+   "kind": "topic",
+   "id": 5277,
+   "sha256": "9d02a838fe3db5f5b1f7e23aa33f1d883680aa84ee08d0e9eff9ed863cc8b62c",
+   "text": "Zif"
+  },
+  {
+   "kind": "entry",
+   "id": 24412,
+   "sha256": "8d5470ba532b7f474ca4a4d75b6b8a4e19955185e13f5aea5879285478d24388",
+   "text": "El mes segundo (mayo)"
+  },
+  {
+   "kind": "topic",
+   "id": 5278,
+   "sha256": "4c8d547b4a6019b77cc0f6c72882170423145a03bf33649151b3226df5bea28e",
+   "text": "Siha"
+  },
+  {
+   "kind": "entry",
+   "id": 24413,
+   "sha256": "2e5f920de271f75c90f579596c73f448f54964f75be164fa95c1430e21de3d73",
+   "text": "1. Uno de los netineos"
+  },
+  {
+   "kind": "entry",
+   "id": 24414,
+   "sha256": "a850cc75b57ed1efc35b4331851ad40ffebe704140202e78e4cde40f3fb34bad",
+   "text": "2. Un jefe de los netineos"
+  },
+  {
+   "kind": "topic",
+   "id": 5279,
+   "sha256": "005a0e9705feff6aad854978f0e79a1f2dbee1830ba9e4e335d57f5a9e3b884b",
+   "text": "Siclag"
+  },
+  {
+   "kind": "entry",
+   "id": 24415,
+   "sha256": "53f2d3f0e38e1a546bb9688cd272904de3c81029e50aab2397f2453049937090",
+   "text": "Una ciudad dentro del territorio asignado a la tribu de Judá"
+  },
+  {
+   "kind": "entry",
+   "id": 24416,
+   "sha256": "fb3eec8a24e21efcf6c691651d328b4fbf06e341da9f777e13e3de0984d3d060",
+   "text": "Reasignada a la tribu de Simeón"
+  },
+  {
+   "kind": "entry",
+   "id": 24417,
+   "sha256": "605e9cae190cd91462662b6b65f886092b0870660e3c9b1995da26d8676a97eb",
+   "text": "David vive en"
+  },
+  {
+   "kind": "entry",
+   "id": 24418,
+   "sha256": "b0fb53c31d5aa0c375f20daea6ceff6ce89ce6088ccd0cd3f8f28eff26b2d8ee",
+   "text": "Los amalecitas destruyen"
+  },
+  {
+   "kind": "entry",
+   "id": 24419,
+   "sha256": "8064ddfcbf67235008ebff3279129cd20c6147816a6783cbe2ad980d65c04ebd",
+   "text": "Habitada por los exiliados de Judá que regresaron"
+  },
+  {
+   "kind": "topic",
+   "id": 5280,
+   "sha256": "18245fb672e9352bc48f8fa6161d274a6ab262d29f45a6dbe8197428e8ca9019",
+   "text": "Zilla"
+  },
+  {
+   "kind": "entry",
+   "id": 24420,
+   "sha256": "772a2aa5e68df0fef6f28ab4277b893698088dd45dab9e2e897f8e1cc94927d8",
+   "text": "Esposa de Lamec"
+  },
+  {
+   "kind": "topic",
+   "id": 5281,
+   "sha256": "494a4be1277b0de2789b46a031000697c6f2775d7107da00097cbd3222e0cb0f",
+   "text": "Zilpa"
+  },
+  {
+   "kind": "entry",
+   "id": 24421,
+   "sha256": "37b6db318dd3a45f92e19f2645d1a9aa615dbb6a587c4b7d0ab3d05a0d9e554f",
+   "text": "Sierva de Lea"
+  },
+  {
+   "kind": "entry",
+   "id": 24422,
+   "sha256": "d256e0d6963c7362a81fa15fd8c03840f1f28c19f50ff36e75125156742c3852",
+   "text": "Madre de Gad y Aser, hijos de Jacob"
+  },
+  {
+   "kind": "topic",
+   "id": 5282,
+   "sha256": "bda355cba79a9772fd58731bb334572da50f2478ea137a12af6c18db71ea2248",
+   "text": "Silitai"
+  },
+  {
+   "kind": "entry",
+   "id": 24423,
+   "sha256": "c7bfb978c9b6f069b8ad2b245640793d4255837f95011d7408dcd9d45cc9068d",
+   "text": "1. Un benjamita"
+  },
+  {
+   "kind": "entry",
+   "id": 24424,
+   "sha256": "d42fbf62b4ad7a46516930eba9401b8619f3885c53bcf5f403b295b1bfeff536",
+   "text": "2. Un capitán de la tribu de Manasés"
+  },
+  {
+   "kind": "topic",
+   "id": 5283,
+   "sha256": "5bfcdfdb689594431238d44e1c62a309de2c5363166664ceb5f3f4c267ffc9b7",
+   "text": "Zima"
+  },
+  {
+   "kind": "entry",
+   "id": 24425,
+   "sha256": "87d736f77ff0dad0852154643254208bb1d87c8ee1973488422434956baf3601",
+   "text": "1. Un hijo de Jahat"
+  },
+  {
+   "kind": "entry",
+   "id": 24426,
+   "sha256": "c4de480757e820589520bc669217025ae38eeeb8fb10b8d64167c189cc4415ae",
+   "text": "2. Dos gersonitas"
+  },
+  {
+   "kind": "topic",
+   "id": 5284,
+   "sha256": "8c4296c31725fd17ca17bab09f75da36bc2c6bd74ae491772464a486421e936a",
+   "text": "Zimram"
+  },
+  {
+   "kind": "entry",
+   "id": 24427,
+   "sha256": "015ccea3bd828a682f859b860d8dd865a100490ec16e519f65b469b7f5ed952a",
+   "text": "Un hijo de Abraham"
+  },
+  {
+   "kind": "topic",
+   "id": 5285,
+   "sha256": "5e322b3980f5adbe9f4f0b0d0eb3f93b7f13ccd853f4ea4dcdbf452628f3224f",
+   "text": "Zimri"
+  },
+  {
+   "kind": "entry",
+   "id": 24428,
+   "sha256": "d5ef5f95f417684739eeefab66f3b762f2853c5d7c369cc6ec333723d8ff3031",
+   "text": "1. Un jefe de Simeón"
+  },
+  {
+   "kind": "entry",
+   "id": 24429,
+   "sha256": "ccb4b0368c9c72135efe9c28154a77772437f7958d4f4df7b71df164605fd1b4",
+   "text": "2. Rey de Israel"
+  },
+  {
+   "kind": "entry",
+   "id": 24430,
+   "sha256": "53a4af06934f5faaca4099f11d976e65d98881f50d574b720ce7f89b1281523c",
+   "text": "3. Hijo de Zera"
+  },
+  {
+   "kind": "entry",
+   "id": 24431,
+   "sha256": "7a7a0829af4abc77c8622840ac8008dba223e9a5c75c85706d249042a39ed1e5",
+   "text": "4. Un benjamita"
+  },
+  {
+   "kind": "entry",
+   "id": 24432,
+   "sha256": "fddfb4ca2b5612429b519c0f5e3102837d356ac92152e008b57aa21e6d1ec4ec",
+   "text": "5. Un lugar desconocido"
+  },
+  {
+   "kind": "topic",
+   "id": 5286,
+   "sha256": "775553aedc9a618943eb89019a3b1117e3c9fc0bfa1266cf1e68a95968c4ad88",
+   "text": "Zin"
+  },
+  {
+   "kind": "entry",
+   "id": 24433,
+   "sha256": "ac86f0f7818bae98321ba98eb09bbcb01170c1c55c753657140da21417a3b986",
+   "text": "Un desierto al sur de Judá"
+  },
+  {
+   "kind": "topic",
+   "id": 5287,
+   "sha256": "d096723513014b93eb9ee1cc0f621bdecdfbcaefa01f0c9d6ca8ec35775cc7e9",
+   "text": "Zina"
+  },
+  {
+   "kind": "entry",
+   "id": 24434,
+   "sha256": "b6c0a7c97df74cfe81abf006018b9c89c6a0ce75fb74c60f538c5450a79199bc",
+   "text": "Un hijo de Simi"
+  },
+  {
+   "kind": "entry",
+   "id": 24435,
+   "sha256": "03166c8eed7288559428abde2309cbfec728a1b870ddec4a258973745838184e",
+   "text": "Llamado ZINAT en"
+  },
+  {
+   "kind": "topic",
+   "id": 5288,
+   "sha256": "4e28c5777c52ec0e987eb3d55604ff5f14b5226976d4b5e2b87440fb09985a1c",
+   "text": "Sión"
+  },
+  {
+   "kind": "entry",
+   "id": 24436,
+   "sha256": "babbafd0510def198d827f7ec80f1f0aa15909d033e0d059ce0060ea034c7903",
+   "text": "(Una fortaleza de Jerusalén)"
+  },
+  {
+   "kind": "entry",
+   "id": 24437,
+   "sha256": "91cdf28f96349fa2dd697afdbefe076e85a9f77862e1aa46485c73ea45a203eb",
+   "text": "También llamado SION"
+  },
+  {
+   "kind": "entry",
+   "id": 24438,
+   "sha256": "87fc889452c4915af79b79e0a3af369e1040af925f228c1039c9fa2c7e5732df",
+   "text": "Tomado de los jebuseos por David"
+  },
+  {
+   "kind": "entry",
+   "id": 24439,
+   "sha256": "5ba792fb52c778b09b9048663329a6d85fae6418d355b47ba1929ce389076c60",
+   "text": "Llamado desde entonces \"la ciudad de David\""
+  },
+  {
+   "kind": "entry",
+   "id": 24440,
+   "sha256": "edf8ca01ce97c9d5d86d059435e1d60c26dd50c82d3c459a54ed0ca65bbd6df3",
+   "text": "El arca del pacto"
+  },
+  {
+   "kind": "entry",
+   "id": 24441,
+   "sha256": "22771b49fde99fe600587fa17c7a447ada3ada2d71e68a5909898a88193888f8",
+   "text": "Colocada en"
+  },
+  {
+   "kind": "entry",
+   "id": 24442,
+   "sha256": "2a4b18cbaed217294d141535ecf595b69f19524ba7bb9468be765864234fa7c7",
+   "text": "Trasladada desde, al templo de Salomón en el monte Moriah"
+  },
+  {
+   "kind": "entry",
+   "id": 24443,
+   "sha256": "07da842d0e980f2a1d628e5947ec2f27edbdfb1a82b7df97bf1daa2307592dea",
+   "text": "En conjunto, el lugar, las formas y las asambleas del culto israelita"
+  },
+  {
+   "kind": "entry",
+   "id": 24444,
+   "sha256": "1a1735a1c142749dcd7b7752c6773440ccb633e18e00b1b195045a525afde20c",
+   "text": "Su nombre, aplicado a Jerusalén"
+  },
+  {
+   "kind": "entry",
+   "id": 24445,
+   "sha256": "b9e09aaff84240f3cea7e37e74ba972b2703326d4882f5e476326abccfad2d0a",
+   "text": "Llamado la ciudad de Dios"
+  },
+  {
+   "kind": "entry",
+   "id": 24446,
+   "sha256": "fb1a8db646f635703e62ebc9cd63b01fc3fb527deb0046c8afd2440ad977f338",
+   "text": "Su restauración, prometida"
+  },
+  {
+   "kind": "entry",
+   "id": 24447,
+   "sha256": "25c67639430efb2743ab22bcc30ffdf721f207b703da11e28596424a2d2beb84",
+   "text": "Su nombre, aplicado a la ciudad de los redimidos"
+  },
+  {
+   "kind": "topic",
+   "id": 5289,
+   "sha256": "0209e3c28ee9720a10ed68e606ff7fcf6f0a2b1f29ec01858a867d5fbc84f984",
+   "text": "Sior"
+  },
+  {
+   "kind": "entry",
+   "id": 24448,
+   "sha256": "fdd8d406a80a3400d4dad7ae4a4418145edccef8c85f8241dfca2289a6c539f4",
+   "text": "Una ciudad en el territorio de la tribu de Judá"
+  },
+  {
+   "kind": "topic",
+   "id": 5290,
+   "sha256": "b326d564c59dc7dc63d834e73d0b67371893b618e494e11aa6509b205d997c8d",
+   "text": "Zif"
+  },
+  {
+   "kind": "entry",
+   "id": 24449,
+   "sha256": "f2fd3cf7fa0b7aee831e6b2c182313fda014d810bb140e2bb4b55ffa9ee0d654",
+   "text": "1. Dos ciudades de la tribu de Judá"
+  },
+  {
+   "kind": "entry",
+   "id": 24450,
+   "sha256": "86076edfd5b1577d743b140c4d8f8ab7a541b99709efe98f835e494455bdc74d",
+   "text": "2. Nieto de Caleb"
+  },
+  {
+   "kind": "entry",
+   "id": 24451,
+   "sha256": "f6f32b6e12d9488f731e79c930ed6e4887fe4d2c70b254804d957010bc93d5bf",
+   "text": "3. Hijo de Jaleleel"
+  },
+  {
+   "kind": "topic",
+   "id": 5291,
+   "sha256": "3a5776e552c53d9cd4cea1606ca849677a9d75868f4a5ca1def26744d5dc11b0",
+   "text": "Zifas"
+  },
+  {
+   "kind": "entry",
+   "id": 24452,
+   "sha256": "482662a6210a7e6d55241d579783778fa9fed1b5aca0e71309987df2edad47b4",
+   "text": "Un hijo de Jaleleel"
+  },
+  {
+   "kind": "topic",
+   "id": 5292,
+   "sha256": "6f157e2f9d8d1c88ecd1fa3e1a970d23d84cff856da183a0dbf3b1a82907527c",
+   "text": "Zifión"
+  },
+  {
+   "kind": "entry",
+   "id": 24453,
+   "sha256": "66fe569566dee4db01d3350b1125a9a7f609801f407b76b87c9f6f19b7b6b634",
+   "text": "Un hijo de Gad"
+  },
+  {
+   "kind": "entry",
+   "id": 24454,
+   "sha256": "f7ac670d381ed1c63727091a25c8bef863f00ae6d80de5c23abed4d0165fcf3b",
+   "text": "Llamado ZEFÓN en"
+  },
+  {
+   "kind": "topic",
+   "id": 5293,
+   "sha256": "006903ebe41b5b8949bb40400c071dcac1d21b19f2603d3e3ce7cc6463830f85",
+   "text": "Zifón"
+  },
+  {
+   "kind": "entry",
+   "id": 24455,
+   "sha256": "c218a283dcef931414406a8b0c27f582114443de648d8af8f9fc63776a0cb894",
+   "text": "Un lugar en el norte de Palestina"
+  },
+  {
+   "kind": "topic",
+   "id": 5294,
+   "sha256": "0bcc14969ac6acfe62403afe3e5dc14a8f950ade1603635b9a5ead65bc699e71",
+   "text": "Zipor"
+  },
+  {
+   "kind": "entry",
+   "id": 24456,
+   "sha256": "66e653ebd3352b877be76fed585ddd8f2fbaec6247eb149d266bbe63911644b8",
+   "text": "Padre de Balac"
+  },
+  {
+   "kind": "topic",
+   "id": 5295,
+   "sha256": "1e82febe6018cb7e0d48612df3569299421db8b856c371fc897e928492d8917b",
+   "text": "Séfora"
+  },
+  {
+   "kind": "entry",
+   "id": 24457,
+   "sha256": "4ba657693d3511825e25160a5960a2d32523832da427fd8628f5311cb8f5f78a",
+   "text": "Esposa de Moisés"
+  },
+  {
+   "kind": "entry",
+   "id": 24458,
+   "sha256": "32eb7007d150f2e9fa1422a3d2b337b72664fb8c27b6290bed19d3d81e81763b",
+   "text": "Reprocha a Moisés"
+  },
+  {
+   "kind": "entry",
+   "id": 24459,
+   "sha256": "2e398ac3f50d9d6890660759726ed7b5c4852284d0d27d0a18ff6c4d7de704c7",
+   "text": "Se separa de Moisés; su padre la trae de nuevo a él"
+  },
+  {
+   "kind": "entry",
+   "id": 24460,
+   "sha256": "ed2b0a8ea2a777bb495627ad105baa295773d9c4609bd31f1092d80f4a6edaf6",
+   "text": "María y Aarón reprochan a Moisés a causa de"
+  },
+  {
+   "kind": "topic",
+   "id": 5296,
+   "sha256": "758af09cdd45ceb7c39c2eb4b1736d9a4f7bb7ce551fe0bd8d0f931dc412645a",
+   "text": "Zitri"
+  },
+  {
+   "kind": "entry",
+   "id": 24461,
+   "sha256": "48a034aea8d4b44923b4ccb8e3f5bfbe6ae4688cddb69690da5c3697e95ccf69",
+   "text": "Un hijo de Uziel"
+  },
+  {
+   "kind": "topic",
+   "id": 5297,
+   "sha256": "8b1de179f9ef9ad735cf68945b1ab1218984878beab2a849e36388dede40bc58",
+   "text": "Sis"
+  },
+  {
+   "kind": "entry",
+   "id": 24462,
+   "sha256": "dc238ed3bc534b2c49cb6a333f5508b89adacfda98db87269282bc45d01127ea",
+   "text": "Un paso en el territorio de la tribu de Judá"
+  },
+  {
+   "kind": "topic",
+   "id": 5298,
+   "sha256": "05a9fdb332e908efe6a96a26f706156f5eba5957597f3344906c7aa3c71894ca",
+   "text": "Ziza"
+  },
+  {
+   "kind": "entry",
+   "id": 24463,
+   "sha256": "50817cad6fa9dd975d76c8afef5bb0bfb7d20137aff719a97f60f55ce651039f",
+   "text": "1. Un simeonita"
+  },
+  {
+   "kind": "entry",
+   "id": 24464,
+   "sha256": "653319da7c08a93f2c0709633faa19c7073056c0c588055eb00c75ae7daf4fab",
+   "text": "2. Hijo de Roboam"
+  },
+  {
+   "kind": "topic",
+   "id": 5299,
+   "sha256": "4876b5487644cfb901a2e71effe9ba7e511f2c2e5a344a60fe5ca99a5748fe42",
+   "text": "Zinat"
+  },
+  {
+   "kind": "entry",
+   "id": 24465,
+   "sha256": "e3ae06bd6e98a3530d825d1315b4208e04543fe87a485743b55ac25f38a7c694",
+   "text": "Un gersonita"
+  },
+  {
+   "kind": "entry",
+   "id": 24466,
+   "sha256": "b4be0f3867735ebbf4883274f7d8d52244c65a76b56c70beb948b815b0fa7f3e",
+   "text": "Llamado ZINA en"
+  },
+  {
+   "kind": "topic",
+   "id": 5300,
+   "sha256": "31b6e9c6c25386226de379563dc8428dc52d2ff19a31d9556eb3d854dfbe3c58",
+   "text": "Zoán"
+  },
+  {
+   "kind": "entry",
+   "id": 24467,
+   "sha256": "349d4f66adff1b63343e1b7431d8a95504a9eb56ad949dd8def7b1056dbe063b",
+   "text": "(Una ciudad de Egipto)"
+  },
+  {
+   "kind": "entry",
+   "id": 24468,
+   "sha256": "06becab6753c3ba8c20929671f27113b78a53c63b0dcae6d44ed631268c69b20",
+   "text": "Edificada siete años después de Hebrón, en la tierra de Canaán"
+  },
+  {
+   "kind": "entry",
+   "id": 24469,
+   "sha256": "2514cb3c77bd1feb51f487f75fbcd22d3a9743b6b076dcf153835b761bd4ef05",
+   "text": "Profecías sobre"
+  },
+  {
+   "kind": "entry",
+   "id": 24470,
+   "sha256": "590a8a9b0846de650e3869548cd0e741c5d4b2ee9139abcc2365ae5473c37b2b",
+   "text": "Sus sabios eran consejeros de Faraón"
+  },
+  {
+   "kind": "entry",
+   "id": 24471,
+   "sha256": "ed90c233de88989e5aa77cc34664466c95f2213acbc93cab536d703c7afed099",
+   "text": "Príncipes de"
+  },
+  {
+   "kind": "topic",
+   "id": 5301,
+   "sha256": "7c3ed783a9d014eee721350a4de9d013d2df9b2394fd878e03615183f29018ff",
+   "text": "Zoar"
+  },
+  {
+   "kind": "entry",
+   "id": 24472,
+   "sha256": "8575d313f7ac1349436b7b273d93d80ed1e961a582af98d0a9ce0e021da87ddc",
+   "text": "Una ciudad de los moabitas, cerca del río Jordán"
+  },
+  {
+   "kind": "entry",
+   "id": 24473,
+   "sha256": "fc3f6b97669e5c2abf6dbe511a8962df0d40c62f888bd61f9dbf214ab1c230f1",
+   "text": "Territorio de"
+  },
+  {
+   "kind": "entry",
+   "id": 24474,
+   "sha256": "e0e6f80b6fcf5fd0ddbde2cc7bbd6ac7ec9d49987a426bd6a8393c7cc8114f21",
+   "text": "Su rey peleó contra Quédorlaomer"
+  },
+  {
+   "kind": "entry",
+   "id": 24475,
+   "sha256": "ea03364dc8999f40ffe73685f75b6b3ebe37b4e99180cabfae158286fab869a0",
+   "text": "No fue destruida con Sodoma y Gomorra"
+  },
+  {
+   "kind": "topic",
+   "id": 5302,
+   "sha256": "d1977eb70760ce98eefe1454ffd595c5f88c07c2aa6c435c6a0125211687d5cf",
+   "text": "Soba"
+  },
+  {
+   "kind": "topic",
+   "id": 5303,
+   "sha256": "003413f0aa8ea2b212bb68e2368bc48b60731cfa6e70200c61d2740dd1bff1fc",
+   "text": "Soba"
+  },
+  {
+   "kind": "entry",
+   "id": 24476,
+   "sha256": "e7a29530b78256771fccb2914029a0ea379868d55ca06abe53d3b1bdbda6dc30",
+   "text": "También llamada SOBA; ARAM-SOBA; HAMAT-SOBA"
+  },
+  {
+   "kind": "entry",
+   "id": 24477,
+   "sha256": "70bd22e372511ee1a94ea2cefaf09252cc5483b29f12a036a5202ac23bd6d4ff",
+   "text": "Un reino en el norte de Palestina"
+  },
+  {
+   "kind": "entry",
+   "id": 24478,
+   "sha256": "caf0d975351a6e9febf8e0110871f2482e69437aeabdada6c4929ae8b14ec1cd",
+   "text": "Conquistado por David"
+  },
+  {
+   "kind": "entry",
+   "id": 24479,
+   "sha256": "184490b68e7f3cd5a71fc1432af15c4b0dc62598a27e7cd92e5b38569ce714c6",
+   "text": "Sus habitantes, mercenarios de los amonitas contra David"
+  },
+  {
+   "kind": "entry",
+   "id": 24480,
+   "sha256": "d36a90bdd8786cb244ebe43e1d0f21740e04e0d6ce492c9346e29527c65bf7ed",
+   "text": "David escribe un salmo después de conquistarlo, véase el título del"
+  },
+  {
+   "kind": "entry",
+   "id": 24481,
+   "sha256": "cca33ad2b59fbbe7ce6a1dc213119374894f2de474494436345df94c7fdcff83",
+   "text": "Invadido por Salomón"
+  },
+  {
+   "kind": "topic",
+   "id": 5304,
+   "sha256": "6ebcd2a68574bfd69a5f263f8cc18a6f82070eb65b1b1be34e56b355ca1fde81",
+   "text": "Zodíaco"
+  },
+  {
+   "kind": "entry",
+   "id": 24482,
+   "sha256": "e368bcdfb8d5315fd7ab5af6b534cdf863c436a8756f218ea092224ebb216c36",
+   "text": "Signos del"
+  },
+  {
+   "kind": "topic",
+   "id": 5305,
+   "sha256": "3c0541524df89a2f131e995210c4f502a8132dacd8b10eacb24922fefc165258",
+   "text": "Sobeba"
+  },
+  {
+   "kind": "entry",
+   "id": 24483,
+   "sha256": "cd7cca4d4e3327a704cfc6e27601d351602db8f5e720755934313799f6b464ee",
+   "text": "Hija de Cos"
+  },
+  {
+   "kind": "topic",
+   "id": 5306,
+   "sha256": "6fc35fb79e7290975af91dd9582f28bada943af02c7b0b41d6b85e64716f8960",
+   "text": "Zohar"
+  },
+  {
+   "kind": "entry",
+   "id": 24484,
+   "sha256": "f0f38343c1fcbfecf43b8bf6426365b00a028479fed55c6348232083e7c85f9c",
+   "text": "1. Padre de Efrón"
+  },
+  {
+   "kind": "entry",
+   "id": 24485,
+   "sha256": "ee7b7186bf7e52d4e95b9787c57d6528d9fa637d012b1d21299229017584c7e5",
+   "text": "2. Hijo de Simeón"
+  },
+  {
+   "kind": "topic",
+   "id": 5307,
+   "sha256": "1bed605048f86d0bc9469b04004d2bae733f2c70139d2e4f3881444a72eb3ea4",
+   "text": "Zohelet"
+  },
+  {
+   "kind": "entry",
+   "id": 24486,
+   "sha256": "1d4ab6c1925e3cd972232567040ae259cc3e33dfe7e67a09ba8c74df7721be17",
+   "text": "Una piedra cerca de Rogel"
+  },
+  {
+   "kind": "topic",
+   "id": 5308,
+   "sha256": "0448c57cd4c0a0474f514eb7d92bbd18fe2cc34988d1ccce51e0e38d55308183",
+   "text": "Zohet"
+  },
+  {
+   "kind": "entry",
+   "id": 24487,
+   "sha256": "6ea7b73849201a95699c60ca816bec298fed9424df5b779eec576386abef08f4",
+   "text": "Hijo de Isi"
+  },
+  {
+   "kind": "topic",
+   "id": 5309,
+   "sha256": "36e50b66331d580f73201280fb88affa82d5d9dc2bb23d3b66b38e5e38e49fc0",
+   "text": "Sofa"
+  },
+  {
+   "kind": "entry",
+   "id": 24488,
+   "sha256": "ae3fa23d970dd11254bea51eff3cf620373ea8c8da1d7b39c99aa105bcc8d41e",
+   "text": "Hijo de Helem"
+  },
+  {
+   "kind": "topic",
+   "id": 5310,
+   "sha256": "5f67327b77a82aaacfe338e683f9ed6cf03bfc44dc700b6ae011e63ce4fb1077",
+   "text": "Zofai"
+  },
+  {
+   "kind": "entry",
+   "id": 24489,
+   "sha256": "acc0ff0d87c0de233b5eab6010ad5638d880c61e7c978aa5920f73e9da08b132",
+   "text": "Hijo de Elcana"
+  },
+  {
+   "kind": "topic",
+   "id": 5311,
+   "sha256": "693cfe73d6cb1abdfe86eaf05551641b53f6923c2aaa826f3c61124dc064776e",
+   "text": "Sofar"
+  },
+  {
+   "kind": "entry",
+   "id": 24490,
+   "sha256": "800ca26eb378bc5631d2150add8983da0413c30997b69fc6e4f854468e277267",
+   "text": "Uno de los tres amigos de Job"
+  },
+  {
+   "kind": "topic",
+   "id": 5312,
+   "sha256": "2113ff924f44af42903a3e1634506b054946ec58d156832c94c5c8700b2c96d4",
+   "text": "Sofim"
+  },
+  {
+   "kind": "entry",
+   "id": 24491,
+   "sha256": "790fb24e8615e88795a8e4af07b7e9754c6a4b1202e725d0dc0b567d0f0bed24",
+   "text": "1. Un lugar en la cumbre del Pisga"
+  },
+  {
+   "kind": "entry",
+   "id": 24492,
+   "sha256": "4095805ebadc5d2dffd6a9603b2a5ae5a8e35c1b7d910a56ab815c33d0694c33",
+   "text": "2. Una ciudad en el monte Efraim"
+  },
+  {
+   "kind": "topic",
+   "id": 5313,
+   "sha256": "30b6928455d59592ce4d302da7de0a1ac2b13a3cf40111e757898807307821e6",
+   "text": "Sora"
+  },
+  {
+   "kind": "entry",
+   "id": 24493,
+   "sha256": "a61f12ec29d77b7a74fba8a5448f8de1207aa95709a63e9eae0cff440ac57e82",
+   "text": "También llamada ZORA y ZOREA"
+  },
+  {
+   "kind": "entry",
+   "id": 24494,
+   "sha256": "aeb87c6a268d1667af4a446356e7fc46c44bc4b5149a614cf0e6df5136ea3c00",
+   "text": "Una ciudad de la tribu de Dan o posiblemente de la tribu de Judá"
+  },
+  {
+   "kind": "entry",
+   "id": 24495,
+   "sha256": "ad3653dd88e304bcf01e901dd847e74fd10b3106720c14003325e1bc9d9e46f2",
+   "text": "La ciudad de Sansón"
+  },
+  {
+   "kind": "entry",
+   "id": 24496,
+   "sha256": "f1691d1c2f09f8a20d199f1b23f1dc9ad23bc3da048c9cc8460e54d283ed2ea8",
+   "text": "Representantes de la tribu de Dan enviados desde, para reconocer la tierra con miras a conquistarla"
+  },
+  {
+   "kind": "entry",
+   "id": 24497,
+   "sha256": "17717f0636cfc6c242e96d14843d30e440f36774cfbafaf89cc3e415668ad144",
+   "text": "Fortificada por Roboam"
+  },
+  {
+   "kind": "entry",
+   "id": 24498,
+   "sha256": "d16c011b9bc2c734111f47057aeb5761c3108fe90ac26a27fb6ddad7363190f7",
+   "text": "Repoblada después del cautiverio"
+  },
+  {
+   "kind": "topic",
+   "id": 5314,
+   "sha256": "81282384fb2d66b05975ab2f4e4505efa7145d5f07e46b59bfd6c1f82b58bf9e",
+   "text": "Zorobabel"
+  },
+  {
+   "kind": "entry",
+   "id": 24499,
+   "sha256": "83a861594c3904964a1c9547cb38763aa44250bd8a455a912448226d38119c19",
+   "text": "También llamado ZOROBABEL SESBASAR"
+  },
+  {
+   "kind": "entry",
+   "id": 24500,
+   "sha256": "cb990a9f0a7301807d97a26f9c935f86cd68f8b9c6442fe7ed3b1f7d03d69c20",
+   "text": "Un antepasado de José"
+  },
+  {
+   "kind": "topic",
+   "id": 5315,
+   "sha256": "bb971e7d24837111afabee06f4c46fa14b6fd65854eff70c191cb04817178d24",
+   "text": "Suar"
+  },
+  {
+   "kind": "entry",
+   "id": 24501,
+   "sha256": "dc47b0d048f2a975f5c678c50196d9ccff8b5d2d0531daa91d324ebf844d230b",
+   "text": "Padre de Natanael"
+  },
+  {
+   "kind": "topic",
+   "id": 5316,
+   "sha256": "7b6656f5609ea5f325c21837cecbc28e0dee2d4ed4ab2c3f537616df82386972",
+   "text": "Suf"
+  },
+  {
+   "kind": "entry",
+   "id": 24502,
+   "sha256": "cd95f9d288f7e1d75333e0efc9c724f4f642742e87cf4c029d9d9a5f614cf21b",
+   "text": "1. Un coatita"
+  },
+  {
+   "kind": "entry",
+   "id": 24503,
+   "sha256": "f06344370c9715edd0c7f87129f8f81508436f0bebce0fc69a9d5f1e28727079",
+   "text": "2. Una región al noroeste de Jerusalén"
+  },
+  {
+   "kind": "topic",
+   "id": 5317,
+   "sha256": "b0874e5ba7e00f75ad9fdf5f96375ed6f9348abaf2f8a23638674e84a280b70a",
+   "text": "Zur"
+  },
+  {
+   "kind": "entry",
+   "id": 24504,
+   "sha256": "467686910f11eadb5ed50a6faa1b9ad284358cd25a1eb6d6d454c88d5f892353",
+   "text": "1. Un príncipe de Madián"
+  },
+  {
+   "kind": "entry",
+   "id": 24505,
+   "sha256": "4d77ef88514e85ee4c2e3ae88838841f92d3051a7417c985e2b395be08509754",
+   "text": "2. Un benjamita"
+  },
+  {
+   "kind": "topic",
+   "id": 5318,
+   "sha256": "b7b4c8bf103fbaf41abc473d1de8c487aedfb426b5f3083def1c5c33163a6cd1",
+   "text": "Suriel"
+  },
+  {
+   "kind": "entry",
+   "id": 24506,
+   "sha256": "49ef1e2bf717db164c31893f72be5e228dd3c73e7f92c22a90b6015fdfb14aa1",
+   "text": "Un merarita"
+  },
+  {
+   "kind": "topic",
+   "id": 5319,
+   "sha256": "c457a318e59d6e0a0f0b73d5dd87533a0eb32eb3d2f21178d27976205b6ecbac",
+   "text": "Zurisadai"
+  },
+  {
+   "kind": "entry",
+   "id": 24507,
+   "sha256": "34f7f115a86b6c907835ffc90f5e44de714c301cdf622b1f79d14cb47b84320d",
+   "text": "Padre de Selumiel"
+  }
+ ]
+}

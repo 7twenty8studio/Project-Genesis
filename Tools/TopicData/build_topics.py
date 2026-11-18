@@ -36,6 +36,10 @@ def verse_id(book, chapter, verse):
     return book * 1_000_000 + chapter * 1_000 + verse
 
 
+# Slips in the source CSV.
+SOURCE_FIXES = {"0f Man for Jesus": "Of Man for Jesus"}
+
+
 def nice(text):
     """Nave's capitalises headings; show them in title case instead."""
     text = text.strip(" ,;:-")
@@ -140,6 +144,7 @@ def main():
             entry_id += 1
             sort += 1
             label = nice(label) or "General"
+            label = SOURCE_FIXES.get(label, label)
             # The app shows two levels; deeper headings join their parent's
             # ("Parable: Of the sower") under the top-level heading.
             if depth >= 2 and (depth - 1) in parents and 0 in parents:

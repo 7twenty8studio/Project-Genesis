@@ -648,6 +648,16 @@
    "Thebes": "No-amón",
    "Thomas": "Tomás",
    "Uz": "Uz"
+  },
+  "ids": {
+   "person:2493": "Sausa",
+   "person:932": "Quenaana",
+   "person:933": "Quenaana",
+   "person:3040": "Sofonías",
+   "person:2227": "Obal (hijo de Joctán)",
+   "person:1598": "Igal",
+   "place:631": "Jegar-sahaduta",
+   "place:949": "Piratón"
   }
  },
  "pt": {
@@ -1253,6 +1263,10 @@
    "Stephen": "Estêvão",
    "Thebes": "Nô-Amom",
    "Thomas": "Tomé"
+  },
+  "ids": {
+   "person:2493": "Sausa",
+   "person:2227": "Obal (filho de Joctã)"
   }
  }
 }
