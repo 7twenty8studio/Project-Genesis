@@ -106,3 +106,8 @@ What the translators reported per batch, beyond the review files.
 - wrong_verse: Pilate q20 (Ex 33:11 given, John 19:12 meant). Unsure ones with wrong verses translated: Pilate "Son of God", "Whence art thou?", Noah "walked with God", Othni "mighty man of valour".
 - BLIVRE oddities quoted verbatim: "Crucifica -o !" spacing; "para lhe ajudasse" (Tiglath-pileser); Obadiah "Eis que Elias" without "está aqui"; Ram's "Arão" for Aram.
 - Easton: Noah 26/27 duplicates with stray "(28:29).."; Pedaiah starts ". "; Rehob "Tobah" probably Zobah.
+
+## es 018–019
+- wrong_verse: Pilate q20 (as pt). Same weak "unsure" matches translated as in pt 018–019.
+- Loose: Tiglath-pileser “porque le ayudara”, Obil “de los camellos”, Phygellus “contrario”.
+- Noah 2210/2211: the second ("daughter of Zelophehad") holds both biographies in the English source: data issue. Easton's "Dier el-Bahari" kept.
