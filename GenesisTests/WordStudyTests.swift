@@ -95,6 +95,24 @@ struct WordStudyTests {
         #expect(try portuguese.entry(strongs: "G2316")?.gloss == "Deus")
     }
 
+    @Test func entriesHoldOnlyTheirOwnArticle() throws {
+        let url = try #require(Bundle.main.url(forResource: "WordStudy", withExtension: "sqlite"))
+        for language in [nil, "es", "pt"] {
+            let study = try WordStudyRepository(url: url, language: language)
+            // STEPBible had appended the article on βασιλεία to οὐρανός's.
+            let heaven = try #require(try study.entry(strongs: "G3772"))
+            #expect(heaven.definition.hasPrefix("οὐρανός, -οῦ, ὁ,"))
+            #expect(!heaven.definition.contains("βασιλεία, -ας, ἡ"))
+            #expect(!heaven.definition.hasSuffix("\\"))
+            // Forms of σύ carried αὐτός's article; now σύ's.
+            let you = try #require(try study.entry(strongs: "G4571"))
+            #expect(you.definition == (try study.entry(strongs: "G4771"))?.definition)
+            #expect(!you.definition.contains("αὐτός, -ή, -ό"))
+            // μόδιος held μοιχαλίς's article: only its gloss is left.
+            #expect(try study.entry(strongs: "G3426")?.definition.isEmpty == true)
+        }
+    }
+
     @Test func versesFollowTheKJV() throws {
         let study = try repository()
         // Psalm titles belong to verse 1, as in the KJV.

@@ -335,10 +335,10 @@
   },
   {
    "strongs": "G4076",
-   "sha256": "19bf9bfc006c6dfd9eabadd2a38837fb317ce96e7e46a61ca5688a16019980c0",
+   "sha256": "8bd3080cacf48b54b0abd8952349a6d5e0c547457e6c350b03e43b93c700f8bc",
    "gloss": "ruda",
-   "definition": "πήγανον, -ου, τό\nπερισσότερον, -ως, véase: περισσῶς\nπερισσῶς\nadv. (περισσός) [en LXX: Psa.31:23 (יֶתֶר -עַל), Da TH Dan.7:7, 19 8:9 (יַתִּיר, יֶתֶר) 2Ma.8:27 2Mac 12:44 A * ;]\nsobremanera, en extremo, abundantemente: Mat.27:23, Mrk.10:26 15:14, Act.26:11. Compar.\n(a) περισσότερον (véase: περισσός);\n(b) περισσοτέρως: 2Co.1:12 2:4 7:15 11:23, Gal.1:14, Php.1:14, 1Th.2:17, Heb.2:1 13:19; π. μᾶλλον, 2Co.7:13; opuesto a ἧττον, 2Co.12:15.†",
-   "note": "The source's article under πήγανον is περισσῶς's (a STEPBible mix-up); translated as it stands."
+   "definition": "πήγανον, -ου, τό",
+   "note": "STEPBible's English also held περισσῶς's article; cut from the source and the translation (ARTICLE_FIXES)."
   },
   {
    "strongs": "G4077",

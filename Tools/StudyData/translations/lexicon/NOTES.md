@@ -40,18 +40,33 @@ and Greek punctuation. Dates (BC/AD), TIME/QUESTION-style gloss tags and
 
 ## Glosses that don't fit their article (STEPBible's lists; kept or fixed)
 - Translated as given, with a note: G0062 "unschooled" (ἀγραυλέω),
-  G1623 "sixth" (ἐκτός), G1744 "to sneak" (ἐνδύω), G1749 "hinderance"
+  G1744 "to sneak" (ἐνδύω), G1749 "hinderance"
   (ἐνέδρα), G2600 "descent", G4821 "to reign with" (to advise),
   G2450/G2452 "Jew", G2491K/G2495G "John" on Jonah's article, G1212
   "Urim" (δῆλος), H4519 "Moses", H8176 "to know", H2256A "Mahalab",
   H6905G "Ible", H7316G "Dumah" on Rumah, H8483 "Kadesh".
 - Corrected: G2985 λαμπάς "window" → antorcha / tocha; G3426 μόδιος
-  "bucket" → almud / alqueire (its article is μοιχαλίς's, translated as it
-  stands); G3479/G3480 "Nazareth" → nazareno; G2858 "Colossae" → colosense (es).
-- Entries carrying another word's article (translated as they stand):
-  G3772 (βασιλεία), G4076 (περισσῶς), G4571/G4671/G4675/G5209/G5210/G5213
-  (αὐτός on σύ forms), G3746/G3755, G4055/G4056/G4069/G4191/G4193 (not
-  Abbott-Smith's text), G1605 runs into δειλία.
+  "bucket" → almud / alqueire (a dry measure); G3479/G3480 "Nazareth" → nazareno; G2858 "Colossae" → colosense (es).
+
+## Misplaced articles fixed (`ARTICLE_FIXES` in lexicon.py)
+STEPBible's TBESG put another word's article in some entries, whole or
+appended. They are fixed in the English (WordStudy.sqlite's lexicon, by
+`fix_database`, which add_lexicon_translations.py runs first) and in both
+translations, cut at the same line:
+- Appended articles cut: G3772 οὐρανός (βασιλεία's, and a stray "\"),
+  G1605 ἐκπλήσσω (δειλία's), G3925 παρεμβολή (παρεμβάλλω's), G3982 πείθω
+  (Πειθώ's), G3988 πεισμονή (πείθω's), G4007 πέρ (ὥσπερ's), G4076 πήγανον
+  (περισσῶς's; only its heading is left).
+- Prefixed article cut: G1633 ἐκχωρέω (ἐκχύννω's before its own).
+- No article of its own, so the gloss stands alone: G3426 μόδιος
+  (μοιχαλίς's), G1623 ἕκτος, sixth (ἐκτός's), G4776 συγκαθίζω (περικαθίζω's).
+- Forms of σύ given σύ's article (G4771) instead of αὐτός's or a garble:
+  G4571, G4671, G4675, G5209, G5210, G5213, G5216.
+- Kept: G3746 ὅσπερ ("see: ὅς" followed by ὅς's article, the word it
+  refers to), G3755 ὅτου (ὅστις's article, whose form it is), the forms of
+  εἰμί, ἐγώ, οὗτος and εἰ that share their word's article, and the short
+  LSJ/Mounce notes that stand in for Abbott-Smith (G4055, G4056, G4069,
+  G4191, G4193, G1622 ἐκτός).
 
 ## Names (RV1909 modernized / Bíblia Livre, else Almeida)
 - Check in review: es G3104 Μεννά "Mainán" (RV1909 Lk 3:31; pt Mainã);

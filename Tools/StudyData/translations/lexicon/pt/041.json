@@ -249,10 +249,10 @@
   },
   {
    "strongs": "G1605",
-   "sha256": "243a4e7b4d3438a08a94184a142f4fa6708e99fc34995a058d5a394a19324faf",
+   "sha256": "2d47dc4c6f1798e210f220e9fe4f50aea46fede871b474bb9c48170964837d76",
    "gloss": "ficar espantado",
-   "definition": "ἐκ-πλήσσω\n(ático -ττω, Act.13:12), [na LXX: (pass.) Ecc.7:16, (שָׁמֵם hitp.), Wis.13:4, 2Ma.7:12, 4Ma.8:4 4Mac 17:16 * ;]\n1. prop., expulsar golpeando, afugentar.\n2. ferir de pânico ou de choque, assombrar, espantar: pass., Mat.13:54 19:25, Mrk.6:2 7:37 10:26, Luk.2:48; antes de ἐπί, com dativo de coisa(s), Mat.7:28 22:33, Mrk.1:22 11:18, Luk.4:32 9:43, Act.13:12.†\nSYN.: \" πτωεῖν G?, aterrorizar, agitar com medo;\nτρεμεῖν, tremer, predominantemente físico;\nφοβεῖν, temer, \"o termo geral,\" Thayer;\ncf. também φρίσσω, estremecer, e veja: δειλία\nδειλία, -ας, ἡ\n(δειλός), [na LXX por אֵימָה, מְחִתָּה, etc. ;]\ncovardia, timidez (nunca em bom sentido): 2Ti.1:7.†\nSYN.: φόβος, medo, em geral, bom ou mau; εὐλάβεια (veja), apreensão em geral, mas principalmente temor piedoso, \"aquela reverência cuidadosa e vigilante que atende a todas as circunstâncias daquilo com que tem de lidar\" (cf. Tr., Syn., § x).†",
-   "note": "The source runs the δειλία entry (cowardice) into this one after \"see:\"; translated as it stands. 'G?' copied as in the source."
+   "definition": "ἐκ-πλήσσω\n(ático -ττω, Act.13:12), [na LXX: (pass.) Ecc.7:16, (שָׁמֵם hitp.), Wis.13:4, 2Ma.7:12, 4Ma.8:4 4Mac 17:16 * ;]\n1. prop., expulsar golpeando, afugentar.\n2. ferir de pânico ou de choque, assombrar, espantar: pass., Mat.13:54 19:25, Mrk.6:2 7:37 10:26, Luk.2:48; antes de ἐπί, com dativo de coisa(s), Mat.7:28 22:33, Mrk.1:22 11:18, Luk.4:32 9:43, Act.13:12.†\nSYN.: \" πτωεῖν G?, aterrorizar, agitar com medo;\nτρεμεῖν, tremer, predominantemente físico;\nφοβεῖν, temer, \"o termo geral,\" Thayer;\ncf. também φρίσσω, estremecer, e veja: δειλία",
+   "note": "STEPBible's English also held δειλία's article; cut from the source and the translation (ARTICLE_FIXES)."
   },
   {
    "strongs": "G1606",
@@ -361,10 +361,9 @@
   },
   {
    "strongs": "G1623",
-   "sha256": "b57f1c5ab94beb9a329de8bb6fe25f3bd06601dcc10615b6b747c44801ad7f33",
+   "sha256": "ee7c14dbb9e8fb278da784de9f6eabbefa3b735d4a6661b30d3912a8211bbbde",
    "gloss": "sexto",
-   "definition": "ἐκτός,\nadv. [na LXX Jdg.8:26 20:15, 3Ki.10:13, al. (בַּד, Jdg.5:28 (בַּד), בַּד), Sng.4:1-3 (בַּד), al, ;]\n1. como adv., fora, além: τὸ ἐ., com genitivo poss., o lado de fora, Mat.23:26; no gr. tardio (veja Deiss., BS, 118), pleonástico, ἐκτός εἰ μή, 1Co.14:5 15:2, 1Ti.5:19.\n2. Com força de prep., com genitivo;\n(a) fora de: 1Co.6:18, 2Co.12:2;\n(b) além de, além, exceto: Act.26:22, 1Co.15:27.†",
-   "note": "The gloss is 'sixth' (ἕκτος) but the source's article is that of ἐκτός (outside); both translated as they stand."
+   "note": "The English article under ἕκτος was ἐκτός's (ARTICLE_FIXES); only the gloss is translated."
   },
   {
    "strongs": "G1624",
@@ -423,9 +422,10 @@
   },
   {
    "strongs": "G1633",
-   "sha256": "84a36ffd1fce7f299b777ab0df6fe63b058250a16c9ddc963db83257a3d145cd",
+   "sha256": "083afedecebdffab8cf55e384637c7828e6abf39868091d00e938b33fe477fee",
    "gloss": "sair",
-   "definition": "εκ-χύννω\nForma helenística de ἐκχέω, veja (E1., § 17): Mat.23:35 26:28, Mrk.14:24, Luk.5:37 11:50 22:20, Act.1:18 10:45 22:20, Rom.5:5, Ju 11.†\nἐκ-χωρέω, -ῶ\n[na LXX: Num.16:45 (רוּם ni.), Jdg.7:3 (צָפַר), Amo.7:12 (בָּרַח), 1Es.4:44 Est.4:57, 1Ma.9:62 * ;]\npartir, retirar-se: Luk.21:21.†"
+   "definition": "ἐκ-χωρέω, -ῶ\n[na LXX: Num.16:45 (רוּם ni.), Jdg.7:3 (צָפַר), Amo.7:12 (בָּרַח), 1Es.4:44 Est.4:57, 1Ma.9:62 * ;]\npartir, retirar-se: Luk.21:21.†",
+   "note": "STEPBible's English also held ἐκχύννω's article (before this one); cut from the source and the translation (ARTICLE_FIXES)."
   },
   {
    "strongs": "G1634",

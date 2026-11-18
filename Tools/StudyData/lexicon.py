@@ -95,6 +95,72 @@ SOURCE_FIXES = {
     **{(s, "definition"): ("af6ictions", "afflictions") for s in ("G3985G", "G3985H", "G3985I")},
 }
 
+# Definitions where STEPBible put another word's article, whole or in part.
+# ("lines", start, end, total): keep lines [start:end] of a definition that
+# has `total` lines (an appended or prefixed article cut off; translations
+# keep the same lines, so the same cut applies to them). ("same", strongs):
+# the article of the word this one is a form of. ("none",): no article of
+# its own in the source, so the gloss stands alone.
+ARTICLE_FIXES = {
+    "G3772": ("lines", 0, 8, 16),   # οὐρανός + βασιλεία's article and a stray "\"
+    "G1605": ("lines", 0, 8, 12),   # ἐκπλήσσω + δειλία's
+    "G3925": ("lines", 0, 7, 13),   # παρεμβολή + παρεμβάλλω's
+    "G3982": ("lines", 0, 8, 11),   # πείθω + Πειθώ's
+    "G3988": ("lines", 0, 3, 11),   # πεισμονή + πείθω's
+    "G4007": ("lines", 0, 3, 6),    # πέρ + ὥσπερ's
+    "G1633": ("lines", 2, 5, 5),    # ἐκχύννω's article before ἐκχωρέω's
+    "G4076": ("lines", 0, 1, 7),    # πήγανον's heading + περισσῶς's article
+    "G3426": ("none",),             # μόδιος: μοιχαλίς's article
+    "G1623": ("none",),             # ἕκτος (sixth): ἐκτός's article
+    "G4776": ("none",),             # συγκαθίζω: περικαθίζω's article
+    # Forms of σύ that carried αὐτός's article (or a garble): σύ's article.
+    **{s: ("same", "G4771") for s in ("G4571", "G4671", "G4675", "G5209", "G5210", "G5213", "G5216")},
+}
+
+
+def fix_source(strongs, field, value):
+    """The English with SOURCE_FIXES applied (once; already fixed text is left)."""
+    if (strongs, field) in SOURCE_FIXES and value:
+        was, now = SOURCE_FIXES[(strongs, field)]
+        if was in value:
+            assert value.count(was) == 1, (strongs, field)
+            value = value.replace(was, now)
+    return value
+
+
+def fix_article(strongs, definition, definitions):
+    """A definition with ARTICLE_FIXES applied; `definitions` gives other
+    entries' (for "same"). Already fixed text is left as it is."""
+    fix = ARTICLE_FIXES.get(strongs)
+    if not fix or not definition:
+        return definition
+    if fix[0] == "lines":
+        _, start, end, total = fix
+        lines = definition.split("\n")
+        return "\n".join(lines[start:end]) if len(lines) == total else definition
+    if fix[0] == "same":
+        return definitions[fix[1]]
+    return None
+
+
+def fix_database(path=None):
+    """Writes the fixed English into WordStudy.sqlite's lexicon (idempotent),
+    so English readers get the same corrections; returns the changed count."""
+    db = sqlite3.connect(path or WORDSTUDY)
+    rows = {s: list(r) for s, *r in db.execute("SELECT strongs, gloss, definition, derivation FROM lexicon")}
+    definitions = {s: fix_source(s, "definition", r[1]) for s, r in rows.items()}
+    changed = 0
+    for strongs, (gloss, definition, derivation) in rows.items():
+        new = [fix_source(strongs, "gloss", gloss),
+               fix_article(strongs, fix_source(strongs, "definition", definition), definitions),
+               fix_source(strongs, "derivation", derivation)]
+        if new != [gloss, definition, derivation]:
+            db.execute("UPDATE lexicon SET gloss = ?, definition = ?, derivation = ? WHERE strongs = ?", (*new, strongs))
+            changed += 1
+    db.commit()
+    db.close()
+    return changed
+
 
 def sha(entry):
     return hashlib.sha256("\x1f".join(entry.get(f) or "" for f in FIELDS).encode("utf-8")).hexdigest()
@@ -108,15 +174,15 @@ def batches():
 
 def entries_from_db():
     db = sqlite3.connect(WORDSTUDY)
-    rows = db.execute("SELECT strongs, language, lemma, gloss, definition, derivation FROM lexicon ORDER BY language DESC, strongs")
+    rows = db.execute("SELECT strongs, language, lemma, gloss, definition, derivation FROM lexicon ORDER BY language DESC, strongs").fetchall()
+    definitions = {r[0]: fix_source(r[0], "definition", r[4]) for r in rows}
     out = {}
     for strongs, language, lemma, gloss, definition, derivation in rows:
         entry = {"strongs": strongs, "language": language, "lemma": lemma or ""}
         for field, value in zip(FIELDS, (gloss, definition, derivation)):
-            if (strongs, field) in SOURCE_FIXES and value:
-                was, now = SOURCE_FIXES[(strongs, field)]
-                assert value.count(was) == 1, (strongs, field)
-                value = value.replace(was, now)
+            value = fix_source(strongs, field, value)
+            if field == "definition":
+                value = fix_article(strongs, value, definitions)
             if value and value.strip():
                 entry[field] = value
         if any(f in entry for f in FIELDS):

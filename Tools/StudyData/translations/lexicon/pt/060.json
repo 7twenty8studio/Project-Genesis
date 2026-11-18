@@ -4,10 +4,10 @@
  "entries": [
   {
    "strongs": "G3925",
-   "sha256": "15d3d4439162cace99101a29b0c8e2884fc377e4a145469df7378f296e852442",
+   "sha256": "359cfbc7b6dc7af0555a1c83db60f5c8febac71b60cc53dd45e4a775605c6453",
    "gloss": "quartel",
-   "definition": "παρ-εμ-βολή, -ῆς, ἡ\n(παρεμβάλλω), [na LXX principalmente por מַחֲנֶה ;]\n1. inserção, interpolação (Æschin.)\n2. No dialeto macedônio (Rutherford, NPhr., 473), como termo militar;\n(a) exército em ordem de batalha: Heb.11:34 (cf. Exo.14:19-20, Jdg.4:16, al.; frequentemente em Polyb.);\n(b) acampamento (Exo.29:14, al.) : Heb.13:11, 13 Rev.20:9;\n(c.) quartel, alojamento de soldados: Act.21:34, 37 22:24 23:10, 16 23:32 28:16 (WH, txt., R, om.).†\nπαρ-εμ-βάλλω,\n[na LXX frequentemente e principalmente por מַחֲנֶה ;]\n1. colocar ao lado ou entre, interpor.\n2. Em escritores tardios (Polyb., al., LXX) como termo técnico militar;\n(a) de soldados, dispor em linha (frequentemente em 1Ma.2:32, al.);\n(b) de obras de cerco, levantar: com acusativo e dativo, χάρακά σοι, Luk.19:43.†",
-   "note": "Source '(with)' is a garbled '(c)' (after (a), (b)): rendered '(c.)'. The source runs the παρεμβάλλω article into this one; translated as it stands."
+   "definition": "παρ-εμ-βολή, -ῆς, ἡ\n(παρεμβάλλω), [na LXX principalmente por מַחֲנֶה ;]\n1. inserção, interpolação (Æschin.)\n2. No dialeto macedônio (Rutherford, NPhr., 473), como termo militar;\n(a) exército em ordem de batalha: Heb.11:34 (cf. Exo.14:19-20, Jdg.4:16, al.; frequentemente em Polyb.);\n(b) acampamento (Exo.29:14, al.) : Heb.13:11, 13 Rev.20:9;\n(c.) quartel, alojamento de soldados: Act.21:34, 37 22:24 23:10, 16 23:32 28:16 (WH, txt., R, om.).†",
+   "note": "Source '(with)' is a garbled '(c)' (the third subsection), rendered '(c.)'. STEPBible's English also held παρεμβάλλω's article; cut from the source and the translation (ARTICLE_FIXES)."
   },
   {
    "strongs": "G3926",
@@ -370,9 +370,10 @@
   },
   {
    "strongs": "G3982",
-   "sha256": "522485030ac863b20c7e064ef2d40af63abc5ff67aab5e9d089694bc938b0b63",
+   "sha256": "ecff6d9c74a6e2ae5c3326e7ba9dc9a731a93441c4a2ba3a4593fb732fdf5ce3",
    "gloss": "persuadir",
-   "definition": "πείθω,\n[na LXX principalmente por בָּטַח בֶּטַח, suas formas e derivados ;]\n(i) Ativa;\n1. trans., usar de persuasão (\"conativo\" no pres.; veja M, Pr., 147), convencer ou ganhar, persuadir: absol., Mat.28:14, Act.19:26; antes de περί, com genitivo de coisa(s), Act.19:8; com acusativo de pessoa(s), Act.12:20 14:19 18:4, 2Co.5:11, Gal.1:10; τ. καρδίας ἡμῶν, 1Jn.3:19; com acusativo antes de περί, Act.28:23; com acusativo e inf., Act.13:43 26:28 (veja Field, Notas, 141 ss.); com acusativo antes de ἵνα (Plut.), Mat.27:20.\n2. Intrans., 2 pf. πέποιθα com sentido de pres. (veja M, Pr., 147, 154; Bl., § 59, 2): confiar, estar confiante, ter confiança: com acusativo e inf., Rom.2:19; com acusativo de ref. (veja Ellic., in l) : Php.1:6, 25; com dativo, Php.1:14, Phm 21; ἑαυτῷ, com inf., 2Co.10:7; antes de ἐν, Php.3:3-4; ἐν κυρίῳ ὅτι, Php.2:24; ἐπί, com dativo, Mat.27:43 (WH, mg.), Mrk.10:24 (T, WH, R, mg., om.), Luk.11:22 18:9, 2Co.1:9, Heb.2:13; ἐπί, com acusativo, Mat.27:43 (com dativo, WH, mg.); id. antes de ὅτι, 2Co.2:3, 2Th.3:4 (veja Lft., Notas, 127); εἰς, com acusativo de pessoa(s) antes de ὅτι, Gal.5:10.\n(ii) Pass. e méd.;\n1. ser persuadido, crer (veja M, Pr., 158) : absol., Luk.16:31, Act.17:4 21:14, Heb.13:18; com dativo, Act.28:24; com acusativo e inf., Act.26:26; assim também o pf., πέπεισμαι, πεπεισμένος εἰμί: com acusativo de ref. antes de περί, Heb.6:9; com acusativo e inf., Luk.20:6; ὅτι, Rom.8:38, 2Ti.1:5 1:12; id. com ἐν κυρίῳ, Rom.14:14; περί, com genitivo antes de ὅτι, Rom.15:14.\n2. dar ouvidos a, obedecer: com dativo de pessoa(s), Act.5:36-37, 40 23:21 27:11, Rom.2:8, Gal.5:7, Heb.13:17, Jas.3:3 (cf. ἀνα-πείθω).†\nΠειθώ, -οῦς, ἡ\n1. Peitó, a Persuasão (como deusa).\n2. per­suasão: ἐν πειθοῖ (assim Orig., Eus. e alguns cursivos em 1Co.2:4 por πειθός, veja).†"
+   "definition": "πείθω,\n[na LXX principalmente por בָּטַח בֶּטַח, suas formas e derivados ;]\n(i) Ativa;\n1. trans., usar de persuasão (\"conativo\" no pres.; veja M, Pr., 147), convencer ou ganhar, persuadir: absol., Mat.28:14, Act.19:26; antes de περί, com genitivo de coisa(s), Act.19:8; com acusativo de pessoa(s), Act.12:20 14:19 18:4, 2Co.5:11, Gal.1:10; τ. καρδίας ἡμῶν, 1Jn.3:19; com acusativo antes de περί, Act.28:23; com acusativo e inf., Act.13:43 26:28 (veja Field, Notas, 141 ss.); com acusativo antes de ἵνα (Plut.), Mat.27:20.\n2. Intrans., 2 pf. πέποιθα com sentido de pres. (veja M, Pr., 147, 154; Bl., § 59, 2): confiar, estar confiante, ter confiança: com acusativo e inf., Rom.2:19; com acusativo de ref. (veja Ellic., in l) : Php.1:6, 25; com dativo, Php.1:14, Phm 21; ἑαυτῷ, com inf., 2Co.10:7; antes de ἐν, Php.3:3-4; ἐν κυρίῳ ὅτι, Php.2:24; ἐπί, com dativo, Mat.27:43 (WH, mg.), Mrk.10:24 (T, WH, R, mg., om.), Luk.11:22 18:9, 2Co.1:9, Heb.2:13; ἐπί, com acusativo, Mat.27:43 (com dativo, WH, mg.); id. antes de ὅτι, 2Co.2:3, 2Th.3:4 (veja Lft., Notas, 127); εἰς, com acusativo de pessoa(s) antes de ὅτι, Gal.5:10.\n(ii) Pass. e méd.;\n1. ser persuadido, crer (veja M, Pr., 158) : absol., Luk.16:31, Act.17:4 21:14, Heb.13:18; com dativo, Act.28:24; com acusativo e inf., Act.26:26; assim também o pf., πέπεισμαι, πεπεισμένος εἰμί: com acusativo de ref. antes de περί, Heb.6:9; com acusativo e inf., Luk.20:6; ὅτι, Rom.8:38, 2Ti.1:5 1:12; id. com ἐν κυρίῳ, Rom.14:14; περί, com genitivo antes de ὅτι, Rom.15:14.\n2. dar ouvidos a, obedecer: com dativo de pessoa(s), Act.5:36-37, 40 23:21 27:11, Rom.2:8, Gal.5:7, Heb.13:17, Jas.3:3 (cf. ἀνα-πείθω).†",
+   "note": "STEPBible's English also held Πειθώ's article; cut from the source and the translation (ARTICLE_FIXES)."
   },
   {
    "strongs": "G3983",
@@ -429,10 +430,10 @@
   },
   {
    "strongs": "G3988",
-   "sha256": "46bd6b1b555aef69bbc132891f9119bd716ebf66ff39f5d4ae12409b1a48d47b",
+   "sha256": "a2b3826c850e360defd4913bdc6a0607ccdd3df3041aa565d44bbeb483ba4117",
    "gloss": "persuasão",
-   "definition": "πεισμονή, -ῆς, ἡ\n(πείθω),\npersuasão: Gal.5:8.†\nπείθω,\n[na LXX principalmente por בָּטַח בֶּטַח, suas formas e derivados ;]\n(i) Ativa;\n1. trans., usar de persuasão (\"conativo\" no pres.; veja M, Pr., 147), convencer ou ganhar, persuadir: absol., Mat.28:14, Act.19:26; antes de περί, com genitivo de coisa(s), Act.19:8; com acusativo de pessoa(s), Act.12:20 14:19 18:4, 2Co.5:11, Gal.1:10; τ. καρδίας ἡμῶν, 1Jn.3:19; com acusativo antes de περί, Act.28:23; com acusativo e inf., Act.13:43 26:28 (veja Field, Notas, 141 ss.); com acusativo antes de ἵνα (Plut.), Mat.27:20.\n2. Intrans., 2 pf. πέποιθα com sentido de pres. (veja M, Pr., 147, 154; Bl., § 59, 2): confiar, estar confiante, ter confiança: com acusativo e inf., Rom.2:19; com acusativo de ref. (veja Ellic., in l) : Php.1:6, 25; com dativo, Php.1:14, Phm 21; ἑαυτῷ, com inf., 2Co.10:7; antes de ἐν, Php.3:3-4; ἐν κυρίῳ ὅτι, Php.2:24; ἐπί, com dativo, Mat.27:43 (WH, mg.), Mrk.10:24 (T, WH, R, mg., om.), Luk.11:22 18:9, 2Co.1:9, Heb.2:13; ἐπί, com acusativo, Mat.27:43 (com dativo, WH, mg.); id. antes de ὅτι, 2Co.2:3, 2Th.3:4 (veja Lft., Notas, 127); εἰς, com acusativo de pessoa(s) antes de ὅτι, Gal.5:10.\n(ii) Pass. e méd.;\n1. ser persuadido, crer (veja M, Pr., 158) : absol., Luk.16:31, Act.17:4 21:14, Heb.13:18; com dativo, Act.28:24; com acusativo e inf., Act.26:26; assim também o pf., πέπεισμαι, πεπεισμένος εἰμί: com acusativo de ref. antes de περί, Heb.6:9; com acusativo e inf., Luk.20:6; ὅτι, Rom.8:38, 2Ti.1:5 1:12; id. com ἐν κυρίῳ, Rom.14:14; περί, com genitivo antes de ὅτι, Rom.15:14.\n2. dar ouvidos a, obedecer: com dativo de pessoa(s), Act.5:36-37, 40 23:21 27:11, Rom.2:8, Gal.5:7, Heb.13:17, Jas.3:3 (cf. ἀνα-πείθω).†",
-   "note": "The source runs the πείθω article into this one; translated as it stands."
+   "definition": "πεισμονή, -ῆς, ἡ\n(πείθω),\npersuasão: Gal.5:8.†",
+   "note": "STEPBible's English also held πείθω's article; cut from the source and the translation (ARTICLE_FIXES)."
   },
   {
    "strongs": "G3989",
@@ -548,10 +549,10 @@
   },
   {
    "strongs": "G4007",
-   "sha256": "63fca53a3e729f887d342db3c3ba83c14b93a46b4badfc2a1a87d0ceaa465023",
+   "sha256": "40c0c6d8c6f95ada6a4aefc6d32686eefc85f5a2c2757299661ad7d9a98b606a",
    "gloss": "de fato",
-   "definition": "πέρ\n(aparentado com περί),\npartícula enclítica que acrescenta força ou certeza à palavra que a precede: de fato, de longe, etc. No NT está sempre afixada à palavra a que se refere, veja: διόπερ, άἐνπερ, εἴπερ, ἐπείπερ, ἐπειδήπερ, ἤπερ, καθάπερ, καίπερ, ἅσπερ, ὥσπερ\nὥσ-περ\nadv.,\nassim como, como: Mat.6:2 20:28, Act.3:17, 1Co.8:5, 1Th.5:3 al.; na prótase, com οὕτως (καί) na apódose: Mat.12:40, Luk.17:24, Jhn.5:21, Rom.5:19, Gal.4:29, Jas.2:26, al",
-   "note": "The source runs the ὥσπερ article into this one; translated as it stands."
+   "definition": "πέρ\n(aparentado com περί),\npartícula enclítica que acrescenta força ou certeza à palavra que a precede: de fato, de longe, etc. No NT está sempre afixada à palavra a que se refere, veja: διόπερ, άἐνπερ, εἴπερ, ἐπείπερ, ἐπειδήπερ, ἤπερ, καθάπερ, καίπερ, ἅσπερ, ὥσπερ",
+   "note": "STEPBible's English also held ὥσπερ's article; cut from the source and the translation (ARTICLE_FIXES)."
   },
   {
    "strongs": "G4008",

@@ -238,7 +238,8 @@ shares; README.md has the architecture.
   Built from Tools/StudyData/translations/lexicon (`lexicon.py
   export/check/status`: 74 batches with source shas; Hebrew/Greek words,
   numbers, STEPBible codes and sigla checked verbatim; `SOURCE_FIXES` for
-  slips in the English) by add_lexicon_translations.py, which
+  slips in the English and `ARTICLE_FIXES` for misplaced articles, both
+  written into the English lexicon too by `fix_database`) by add_lexicon_translations.py, which
   build_wordstudy.py also runs. Review notes: translations/lexicon/NOTES.md.
   The meanings in a verse, grammar and commentary stay English: when the
   Bible or the app isn't English, the Original header, the word sheet and

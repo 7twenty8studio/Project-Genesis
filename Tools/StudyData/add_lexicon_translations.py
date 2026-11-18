@@ -24,6 +24,9 @@ import lexicon  # noqa: E402
 
 
 def add(path=lexicon.WORDSTUDY):
+    # The English slips and misplaced articles first (lexicon.py SOURCE_FIXES,
+    # ARTICLE_FIXES), so English readers see the corrected entries too.
+    lexicon.fix_database(path)
     rows = []
     for lang in lexicon.LANGUAGES:
         for strongs, fields in lexicon.check(lang, quiet=True).items():
