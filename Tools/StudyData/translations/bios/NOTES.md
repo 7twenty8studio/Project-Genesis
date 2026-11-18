@@ -158,3 +158,10 @@ What the translators reported per batch, beyond the review files.
 
 ## Name tooling (18 Nov)
 - translate_study.py picked between equally scored words by dict order, so Shupham/Hupham and Shuppim/Huppim swapped between runs. Ties now go to the closer spelling, then the word; manual.json pins Shupham "Sufam", Shuppim "Supim", Nebajoth "Nabajot", Sisera "Sísara", Tel-melah "Tel-mela". Two runs give identical files.
+
+## pt 030–031
+- App names that were Portuguese words: Enaim was "Então", Peresh "Seres": fixed in manual.json (Enaim, Peres). Scan of single-word pt names that are common BLIVRE words found no others wrong (Num, Quarto, Segundo, Sete, Sem, Sim are right).
+- Rameses the pharaohs "Ramsés"; Dimnah wording quote "Rimono" (the verse's word); Eder "Eder" (Migdal-Eder).
+- Unsure, translated: En-dor "da geração", Edom "The field of Edom", Egypt "land of the south", "land of Goshen".
+- Egypt 362 and Ephrathah 404 reuse 028's Brook of Egypt 259 / Bethlehem Ephrathah 220 translations (identical English). TODO: pt/028.json still says "Nô-Amom" for Thebes outside quotes; change to "Tebas" in the final pass.
+- Thousands kept with the English comma here ("1,000"), unlike other pt batches: normalise in the final pass.
