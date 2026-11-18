@@ -71,3 +71,8 @@ What the translators reported per batch, beyond the review files.
 - wrong_verse: Elijah (1131) q4, Eve (1231) q3; Elhanan (1070) q0–1 and Gad (1262) q0: A.V. words the RV1909 doesn't have (it already reads as Easton prefers), translated.
 - Eleazar: "con Gabaa en lugar de collado" added so Easton's point survives. Esau "rojo" (verse has "rubio"). Enos: RV1909 already gives Easton's reading (1). Hadarezer “á extender su término” differs in sense.
 - Eutychus was "Euticó" in es.json: fixed to "Eutico" in manual.json (RV1909 "Eutichô"); regenerate es.json before loading.
+
+## es 012–013
+- Glossary: Philistia "Filistea" (es.json had the RV1909's "Palestina", which reads as Palestine), Pamphylia "Panfilia" (was "Pamfylia"), Olivet "monte de los Olivos" in the text. Fixed in manual.json (Olivet's place name "Monte del Olivar", as Acts 1:12 and the existing alias, so it doesn't duplicate Mount of Olives). Oded kept "Obed" (RV1909).
+- Hannah (1400) q3 ends at v27; Easton's v28 part left out (pt kept it as indirect speech). Hezekiah "(185,000 hombres)" after the quote.
+- Huram (1569) "Generally ‘Huram’" probably Easton's slip for Hupham. Other Easton slips as in pt 012–013.
