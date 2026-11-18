@@ -111,3 +111,9 @@ What the translators reported per batch, beyond the review files.
 - wrong_verse: Pilate q20 (as pt). Same weak "unsure" matches translated as in pt 018–019.
 - Loose: Tiglath-pileser “porque le ayudara”, Obil “de los camellos”, Phygellus “contrario”.
 - Noah 2210/2211: the second ("daughter of Zelophehad") holds both biographies in the English source: data issue. Easton's "Dier el-Bahari" kept.
+
+## pt 020–021
+- wrong_verse: Samuel 2469 q11 (1 Sam 28:3 given, 25:1 meant: "his house").
+- Samson 2468 q4: Easton's bracket moved after the quotation, "mais" added.
+- BLIVRE flaws quoted verbatim: 1 Sam 2:26 "sendo bem estimando"; 1 Sam 13:5 "povo quando a areia".
+- Glossary: Salmon and Zalmon both "Salmom", so "Sombrio; ou Salmom (q.v.)" repeats itself; Mizpeh has no pt value (Mispá used). Check later.
