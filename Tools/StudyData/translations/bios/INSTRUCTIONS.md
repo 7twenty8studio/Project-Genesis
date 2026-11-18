@@ -50,8 +50,11 @@ and fix everything it reports until it says 0 fail and 0 to do.
     meaning (use the verse's words only if it plainly is that verse).
   - `other`: not Scripture (Easton's term, a name's meaning, another
     author). Translate it.
-  If the verse given plainly isn't the one Easton quotes, still follow the
-  rule for its kind (the check enforces it) and mention it in your report.
+  If the verse given plainly isn't the one Easton quotes (no words in
+  common, another subject), add the quotation's `n` to the entry's
+  `"wrong_verse": [n, …]` list and translate that quotation, keeping its
+  quotation marks; the check then lists it for review instead of
+  enforcing the verse. Use it only when the verse is plainly wrong.
   The check enforces whole, partial and loose; those three, wording and
   unsure are listed in review/NNN.md for the owner to look over.
 - Names of people and places: use the batch's `glossary` (English ->

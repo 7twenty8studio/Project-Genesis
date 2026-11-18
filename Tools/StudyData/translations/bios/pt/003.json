@@ -1,0 +1,720 @@
+{
+ "batch": "003",
+ "lang": "pt",
+ "entries": [
+  {
+   "kind": "person",
+   "id": 141,
+   "sha256": "9d237970903378114d6b273e5bb69cd31d358b6ff63c66ee553d4f0d446c96b2",
+   "text": "Irmão de apoio = ajudador, um dos cinco que Josias enviou para consultar a profetisa Hulda a respeito da descoberta do livro da lei (2 Rs 22:12-14; 2 Cr 34:20). Era filho de Safã, o secretário real, e pai de Gedalias, governador da Judeia depois da destruição de Jerusalém pelos babilônios (2 Rs 25:22; Jr 40:5-16; 43:6). Certa ocasião protegeu Jeremias contra a fúria de Jeoaquim (Jr 26:24). Foi na câmara de outro filho (Gemarias) de Safã que Baruque leu aos ouvidos de todo o povo o rolo de Jeremias."
+  },
+  {
+   "kind": "person",
+   "id": 143,
+   "sha256": "02651defd964fb5f501587ad441a17dda49b019b6a2d3f794a3b8e3baaad7af9",
+   "text": "O pai de Ainoã, a mulher de Saul (1 Sm 14:50)."
+  },
+  {
+   "kind": "person",
+   "id": 144,
+   "sha256": "986e81463ece1a375c43523e93acb0232f06f4e3be18b249508939a56e57fb2c",
+   "text": "Filho e sucessor de Zadoque no ofício de sumo sacerdote (1 Cr 6:8, 53). Por ocasião da revolta de Absalão permaneceu fiel a Davi e prestou-lhe serviço levando-lhe notícias do que Absalão fazia em Jerusalém (2 Sm 15:24-37; 17:15-21). Era veloz de pés e foi o primeiro a levar a Davi a notícia da derrota de Absalão, embora, por delicadeza de sentimento, se abstivesse de lhe falar de sua morte (2 Sm 18:19-33)."
+  },
+  {
+   "kind": "person",
+   "id": 146,
+   "sha256": "cd8b46619ab4c89c6988969319f6a2248f20b023633f5fa2ec13941d3afdf740",
+   "text": "Um dos três irmãos gigantes anaquins que Calebe e os espias viram no monte de Hebrom (Nm 13:22) quando entraram para explorar a terra. Foram depois expulsos e mortos (Js 15:14; Jz 1:10)."
+  },
+  {
+   "kind": "person",
+   "id": 147,
+   "sha256": "2b70ff0245d2e11551420ab8fb3972d852730825454b9b88f841be2fde2e273d",
+   "text": "Um dos guardas do templo depois do Exílio (1 Cr 9:17)."
+  },
+  {
+   "kind": "person",
+   "id": 149,
+   "sha256": "5e43308ddf1a5ea03c500e3b2a27fd70ae9181b82fb65047e0ddcf2457b847b3",
+   "text": "Filho de Abiatar e sumo sacerdote no tempo de Davi (1 Cr 18:16). Na passagem paralela, 2 Sm 8:17, temos o nome Aimeleque, e Abiatar, filho de Aimeleque. A maioria das autoridades considera esta a leitura mais correta."
+  },
+  {
+   "kind": "person",
+   "id": 150,
+   "sha256": "2377c881e8f3823061aaa9c87689b3792d0a7b25ed5a962b3492d9ba64c5fe2d",
+   "text": "Um levita coatita, pai de Elcana (1 Cr 6:35)."
+  },
+  {
+   "kind": "person",
+   "id": 151,
+   "sha256": "bb724d169ca3f4af9bc2642cc6f987b7b43ec01838754e244354c151fcfd2891",
+   "text": "Irmão de liberalidade = liberal, um dos doze oficiais de abastecimento nomeados por Salomão em outros tantos distritos de seu reino para recolher provisões, por turnos mensais, para a sua casa. Foi designado para o distrito de Maanaim (1 Rs 4:14), a leste do Jordão."
+  },
+  {
+   "kind": "person",
+   "id": 152,
+   "sha256": "f85de2f781f9c28935940e691d7e01f5860c041442d91b78120762814fca9bf8",
+   "text": "Filha de Aimaás e mulher de Saul (1 Sm 14:50)."
+  },
+  {
+   "kind": "person",
+   "id": 153,
+   "sha256": "c22be3e84151a3ce90ce5b009075d7d9122280c49d10fc4fefb8bc1f48645615",
+   "text": "Uma jezreelita, a primeira mulher de Davi (1 Sm 25:43; 27:3). Foi mãe de Amnom (2 Sm 3:2). (Veja 1 Sm 30:5, 18; 2 Sm 2:2.)"
+  },
+  {
+   "kind": "person",
+   "id": 154,
+   "sha256": "345ee8ee2a4a8e9b844060324bc4a0d8bd0b9d5001287d63eedec8bed5d1581f",
+   "text": "Um dos filhos de Abinadabe, o levita. Enquanto Uzá ia ao lado da arca, ele caminhava diante dela guiando os bois que puxavam o carro em que era levada, depois de a terem trazido da casa de seu pai em Gibeá (1 Cr 13:7; 2 Sm 6:3, 4)."
+  },
+  {
+   "kind": "person",
+   "id": 155,
+   "sha256": "94ee6366d4b86e060b54f6b1708d52f05b6c325daf8572c50ac09f16c0ae2626",
+   "text": "Um dos filhos de Berias (1 Cr 8:14)."
+  },
+  {
+   "kind": "person",
+   "id": 156,
+   "sha256": "a0fca698fd749742cb0d3d6e7dd2351254a07fc5291b3e5c002963295bdf1fdb",
+   "text": "Um dos filhos de Jeiel, o gibeonita (1 Cr 8:31; 9:37)."
+  },
+  {
+   "kind": "person",
+   "id": 157,
+   "sha256": "4bee44f6162ed4d8660681d73264c0ef798fcaf8ac1ffb6ab25bbbf883295a10",
+   "text": "Irmão do mal = desafortunado, ou meu irmão é amigo, chefe da tribo de Naftali no tempo do Êxodo (Nm 1:15; 2:29)."
+  },
+  {
+   "kind": "person",
+   "id": 161,
+   "sha256": "95b33bb3c9228c4d5be27486c2fd3da71c1c047fccf21b9a397d09d720594370",
+   "text": "Irmão do cântico = cantor, o oficial que era “mordomo” de Salomão (1 Rs 4:6)."
+  },
+  {
+   "kind": "person",
+   "id": 162,
+   "sha256": "dd5e7fc963c38de791ddf3df6e7cd1f9ea42a5951120f7e4b446fa2e00e41d3b",
+   "text": "Irmão da insipidez ou da impiedade, homem muito afamado entre os judeus por sua sagacidade. No tempo da revolta de Absalão abandonou Davi (Sl 41:9; 55:12-14) e abraçou a causa de Absalão (2 Sm 15:12). Davi mandou seu velho amigo Husai de volta a Absalão, para que contrariasse o conselho de Aitofel (2 Sm 15:31-37). Esse fim foi alcançado a tal ponto que Aitofel viu que já não tinha nenhuma influência e, por isso, deixou imediatamente o acampamento de Absalão e voltou a Gilo, sua terra natal, onde, depois de pôr em ordem os seus negócios terrenos, se enforcou e foi sepultado no sepulcro de seus pais (2 Sm 17:1-23). Foi o tipo de Judas (Sl 41:9)."
+  },
+  {
+   "kind": "person",
+   "id": 163,
+   "sha256": "a638179e2cf9595954b376f6f6b76480737e8c495f4f97cfbdee6ee31078cb4b",
+   "text": "Filho de Fineias. Por morte de seu avô Eli, sucedeu-o no ofício de sumo sacerdote, e foi ele mesmo sucedido por seu filho Aías (1 Sm 14:3; 22:9, 11, 12, 20)."
+  },
+  {
+   "kind": "person",
+   "id": 164,
+   "sha256": "74fd9b6cb3f7ee2f1dff28998eba5ca62692d6298f3efa9fa45cdcddb4130d20",
+   "text": "Pai de Zadoque, que foi feito sumo sacerdote por Saul depois do extermínio da família de Aimeleque (1 Cr 6:7, 8; 2 Sm 8:17)."
+  },
+  {
+   "kind": "person",
+   "id": 168,
+   "sha256": "7802b46e4897f8023df8abd1e79ad80bdce7f13b7fb82db5e6b69869bd951a7f",
+   "text": "Fraternal, um dos filhos de Belá, filho de Benjamim (1 Cr 8:4). É chamado também Aías (v. 7) e Iri (1 Cr 7:7). Os seus descendentes eram chamados aoítas (2 Sm 23:9, 28)."
+  },
+  {
+   "kind": "person",
+   "id": 170,
+   "sha256": "a56e72c11277f36bfee958d5b881cf93b066738315fdc7b67aa67cd10a02bd06",
+   "text": "Tenda do pai, um artífice da tribo de Dã, designado para a obra de preparar os materiais para o tabernáculo (Êx 31:6; 35:34; 36:1, 2; 38:23)."
+  },
+  {
+   "kind": "person",
+   "id": 171,
+   "sha256": "3734eedc4b6a9d78fa9199bafae29ea26ef4ba1475b85816c4ddb826a57ea8dd",
+   "text": "Minha tenda está nela, o nome de uma meretriz imaginária, aplicado simbolicamente a Jerusalém, porque ela havia abandonado o culto do verdadeiro Deus e se entregara às idolatrias das nações estrangeiras. (Ez 23:4, 11, 22, 36, 44)."
+  },
+  {
+   "kind": "person",
+   "id": 179,
+   "sha256": "f1f3a3af20aec860ec5097c54a3712a233574f64c956106938875a84f06e6fdc",
+   "text": "Ele torce, um dos filhos de Ézer, filho de Seir, o horeu (1 Cr 1:42)."
+  },
+  {
+   "kind": "person",
+   "id": 180,
+   "sha256": "4218f197a11ba2b18b8f30cb3e3a0124b1ae06eafd6713fc5743009e4faabef1",
+   "text": "Um descendente de Davi (1 Cr 3:24)."
+  },
+  {
+   "kind": "person",
+   "id": 181,
+   "sha256": "fb0d2a7c4278a90bd6c4b0943dd8b3bc9ff0321df4d2d3e48b272c60aff365bf",
+   "text": "Um levita que guardava a porta do templo depois da volta da Babilônia (1 Cr 9:17; Ed 2:42; Ne 7:45)."
+  },
+  {
+   "kind": "person",
+   "id": 182,
+   "sha256": "387d8db311ae0afdd36a60ff9a5d45c9fd03c60417301d49a8808d0c60de9344",
+   "text": "O chefe de uma das famílias dos netinins (Ed 2:45)."
+  },
+  {
+   "kind": "person",
+   "id": 184,
+   "sha256": "9eadb974bad04a19315de4844d2cdc760b68a1e259c4882985b480ef5c4d63bb",
+   "text": "Um dos nove filhos de Bequer, filho de Benjamim (1 Cr 7:8)."
+  },
+  {
+   "kind": "person",
+   "id": 185,
+   "sha256": "64b1688f2ad4e9142a961fffeb8e79797d25348977f863f2fa445c1144f9bb4b",
+   "text": "Um dos filhos de Jeoada, ou Jaerá, filho de Acaz (1 Cr 8:36)."
+  },
+  {
+   "kind": "person",
+   "id": 186,
+   "sha256": "fc450e5f739bed08abd6757dce35bda7d95c8c5daf6bad69ef35a9c7250a625f",
+   "text": "Um homem cujo pai, Simão, o cireneu, levou a cruz de Cristo (Mc 15:21)."
+  },
+  {
+   "kind": "person",
+   "id": 187,
+   "sha256": "8c468d8394392a76ebec0f1ff9746f036009c411d95decdc0d695cde02cfc1cc",
+   "text": "Um parente de Anás, o sumo sacerdote, presente quando Pedro e João foram interrogados perante o Sinédrio (At 4:6)."
+  },
+  {
+   "kind": "person",
+   "id": 188,
+   "sha256": "66b6600096b0afddca330572030024ac1aaea43bd714595a8748dced58b082fb",
+   "text": "Um judeu de Éfeso que tomou parte destacada no tumulto levantado ali pela pregação de Paulo (At 19:33). Os judeus o puseram à frente para defender a causa deles diante da multidão. Provavelmente se pretendia que ele mostrasse que ele e os demais judeus não tinham mais simpatia por Paulo do que os efésios. É possível que este homem fosse o mesmo que o seguinte."
+  },
+  {
+   "kind": "person",
+   "id": 189,
+   "sha256": "b92bca5a8df324dea8ab3414254aead42a11977471b0845a02cfc44a6bc2e8b5",
+   "text": "Um latoeiro que, com Himeneu e outros, propagou certas heresias a respeito da ressurreição (1 Tm 1:19; 2 Tm 4:14) e naufragou na fé e na boa consciência. Paulo o excomungou (1 Tm 1:20; cf. 1 Co 5:5)."
+  },
+  {
+   "kind": "person",
+   "id": 190,
+   "sha256": "eb43661bc103953db7d578fd31c3c93d9de029b13cb06476fc438b3ea75feeb3",
+   "text": "Filho de Jedaías, da família dos simeonitas, que expulsaram os camitas do vale de Gedor (1 Cr 4:37)."
+  },
+  {
+   "kind": "person",
+   "id": 191,
+   "sha256": "b117d6f8eb54e504492c276762fce88657385b17733d1637fe4e32964e2e8f61",
+   "text": "Imensurável, o primeiro dos filhos de Joctã mencionados (Gn 10:26), fundador de uma tribo árabe."
+  },
+  {
+   "kind": "person",
+   "id": 192,
+   "sha256": "0483db79aa1e3a1ba9c5cc6ca33e42d9d968c2f68ecf537c20dc27d1f7b2d990",
+   "text": "Pai de Tiago, o Menor, o apóstolo e autor da epístola (Mt 10:3; Mc 3:18; Lc 6:15; At 1:13), e marido de Maria (Jo 19:25). A forma hebraica desse nome é Cleopas, ou Clopas (q.v.)."
+  },
+  {
+   "kind": "person",
+   "id": 193,
+   "sha256": "27b5d7d5cb267442c28ff16a7ee84e235736be9665c3180c87cff28583f98854",
+   "text": "Pai de Levi, ou Mateus (Mc 2:14)."
+  },
+  {
+   "kind": "person",
+   "id": 197,
+   "sha256": "a04a7228e33a1dd4e0511c31aa77297eb2efdc2de98b560a8b06fe07427477d1",
+   "text": "Habitante de um vale, filho de Elifaz e neto de Esaú (Gn 36:12; 1 Cr 1:36); chefe de uma tribo idumeia (Gn 36:16). Sua mãe era horeia, uma tribo cujo território os descendentes de Esaú haviam tomado."
+  },
+  {
+   "kind": "person",
+   "id": 198,
+   "sha256": "de88a7ae9175a8f814d7770bc8a366bd96f172b5f473ed6b303ff18907dddc8b",
+   "text": "Um dos descendentes de Arão por meio de Eleazar (1 Cr 6:7, 52). Provavelmente foi o último dos sumos sacerdotes da linhagem de Eleazar antes da transferência desse ofício para Eli, da linhagem de Itamar."
+  },
+  {
+   "kind": "person",
+   "id": 199,
+   "sha256": "ebebc557c9bb11956208334e178d744b00872912e25f78fe27aa478c72120557",
+   "text": "1 Cr 6:11; Ed 7:3."
+  },
+  {
+   "kind": "person",
+   "id": 200,
+   "sha256": "7f25d5c1152f4b3329b8fdee58f0066384961031fbcc29d21a961b6f37aa17b7",
+   "text": "Um levita, filho de Hebrom, da linhagem de Moisés (1 Cr 23:19; 24:23)."
+  },
+  {
+   "kind": "person",
+   "id": 201,
+   "sha256": "99e62c5d7b30c83584e513d9f544c01582ca799605db5b9ef945f112989853c9",
+   "text": "Um “sumo sacerdote” que tomou parte ativa na reforma sob Josafá (2 Cr 19:11); provavelmente o mesmo mencionado em 1 Cr 6:9."
+  },
+  {
+   "kind": "person",
+   "id": 202,
+   "sha256": "85241b52f7947f3d16b6b7755f6653da9becfb1117b217c57268db2374aa56a6",
+   "text": "Um dos sumos sacerdotes no tempo de Ezequias (2 Cr 31:15)."
+  },
+  {
+   "kind": "person",
+   "id": 203,
+   "sha256": "a8d18cca4499ceea64e9e9aa61713393c951487bb5b7b10be0243397ceba8b32",
+   "text": "Ed 10:42."
+  },
+  {
+   "kind": "person",
+   "id": 204,
+   "sha256": "3a6f4af6c9d76c313933bf010ec50d0540b68d2b3da7c10e7a6b3b5660c66be2",
+   "text": "Ne 10:3."
+  },
+  {
+   "kind": "person",
+   "id": 205,
+   "sha256": "1e4b0be47c69039607000477f2411c8959b800da0831ead6996cdef5885d8158",
+   "text": "Ne 11:4."
+  },
+  {
+   "kind": "person",
+   "id": 206,
+   "sha256": "cb8c0cf093ec71aca84525c4b7fdd6aad07d2fd5e181d9f3812c98d05d5073bd",
+   "text": "Sf 1:1."
+  },
+  {
+   "kind": "person",
+   "id": 207,
+   "sha256": "88fe8c4ddc9ad5be2e8a5147875bd46b772d1992756b79df869039e068f123a5",
+   "text": "Filho de Abigail, irmã do rei Davi (1 Cr 2:17; 2 Sm 17:25). Foi nomeado por Davi para comandar o exército em lugar de seu primo Joabe (2 Sm 19:13), que mais tarde o matou traiçoeiramente, como a um rival perigoso (2 Sm 20:4-12)."
+  },
+  {
+   "kind": "person",
+   "id": 208,
+   "sha256": "e314c0779bf4bd1cacd554612238fcfaf5cbb829d57326e419b609cfce1754a3",
+   "text": "Filho de Hadlai e chefe de Efraim (2 Cr 28:12) no reinado de Acaz."
+  },
+  {
+   "kind": "person",
+   "id": 209,
+   "sha256": "61b00e6dd6389933c44f26beb0efd3ef5d320c0da1733a823b0481ee8900771d",
+   "text": "Um levita, filho de Elcana, dos antepassados de Samuel (1 Cr 6:25, 35)."
+  },
+  {
+   "kind": "person",
+   "id": 210,
+   "sha256": "0909f1ec23b4cbb89e81eb61adb0ff51bec0859f60b7a7477dc48d05bcd0591b",
+   "text": "O chefe de um grupo de homens que se uniram a Davi na “fortaleza”, provavelmente a de Adulão (1 Cr 12:18)."
+  },
+  {
+   "kind": "person",
+   "id": 211,
+   "sha256": "9cbf431e7b76da093723f7aa900ec902e0c0a43c0beea8b7e0707fdf1fd029fe",
+   "text": "Um dos sacerdotes designados para ir à frente da arca tocando trombetas, quando foi levada da casa de Obede-Edom (1 Cr 15:24)."
+  },
+  {
+   "kind": "person",
+   "id": 212,
+   "sha256": "605df075a883946f6ddd717f3f7b9110c26544d5038f2a8937ccc138b9c424bd",
+   "text": "Pai de um levita, um dos dois coatitas que tomaram parte destacada, a pedido de Ezequias, na purificação do templo (2 Cr 29:12)."
+  },
+  {
+   "kind": "person",
+   "id": 213,
+   "sha256": "51b52680f45f15087f305189368e03c61b25d18ccd1609116839d2b254e48a3c",
+   "text": "Carga de (isto é, “sustentado por”) Jeová, o “filho de Zicri, o qual se havia oferecido voluntariamente ao SENHOR”, capitão de milhares sob Josafá (2 Cr 17:16; cf. Jz 5:9)."
+  },
+  {
+   "kind": "person",
+   "id": 214,
+   "sha256": "fcb7a7978882d8de7abd64303e2b01bc0481143b3afcb173b313eb4bdde34ed0",
+   "text": "Filho e sucessor de Joás e oitavo rei do reino separado de Judá (2 Rs 14:1-4). Começou o seu reinado castigando os assassinos de seu pai (5-7; 2 Cr 25:3-5). Foi o primeiro a empregar um exército mercenário de 100.000 soldados israelitas, o que fez em sua tentativa de submeter de novo os edomitas ao jugo de Judá (2 Cr 25:5, 6). Recebeu ordem de um profeta do Senhor para mandar de volta os mercenários, o que fez (2 Cr 25:7-10, 13), para grande desgosto deles. A sua obediência a essa ordem foi seguida de uma vitória decisiva sobre os edomitas (2 Cr 25:14-16). Amazias começou a adorar alguns dos ídolos que tomara dos edomitas, e essa foi a sua ruína, pois foi vencido por Joás, rei de Israel, a quem desafiara para a batalha. O desastre que assim trouxe sobre Judá, por sua obstinação em declarar guerra a Israel, provavelmente ocasionou a conspiração em que perdeu a vida (2 Rs 14:8-14, 19). Foi morto em Laquis, para onde havia fugido, e o seu corpo foi trazido sobre cavalos a Jerusalém, onde foi sepultado no sepulcro real (2 Rs 14:19, 20; 2 Cr 25:27, 28)."
+  },
+  {
+   "kind": "person",
+   "id": 215,
+   "sha256": "ee1f357b18fcbed5e6d938abbfe3b5a280fad6f0d73ed9b56baa6500479a371d",
+   "text": "Pai de Josa, um dos chefes simeonitas no tempo de Ezequias (1 Cr 4:34)."
+  },
+  {
+   "kind": "person",
+   "id": 216,
+   "sha256": "c3567bb383e2ff03dc16f62a6fee136bb1f5074b8e404c5406b52add93b5dd86",
+   "text": "Um levita, filho de Hilquias, dos descendentes de Etã, o merarita (1 Cr 6:45)."
+  },
+  {
+   "kind": "person",
+   "id": 217,
+   "sha256": "f9da98e0f2a23e86c0b27716155ce79746f705a032da523ab2d87d886d54eeab",
+   "text": "Um sacerdote dos bezerros de ouro em Betel (Am 7:10-17)."
+  },
+  {
+   "kind": "person",
+   "id": 218,
+   "sha256": "d0f4b21aa4448e2a540bbca6df2f32bc4286649bdc62f72b2f965838712b7d91",
+   "text": "Ne 7:59."
+  },
+  {
+   "kind": "person",
+   "id": 219,
+   "sha256": "01992f1f65eafdfa15dc2755c1a946cfe61b623e146983cef076a9099260b4ac",
+   "text": "Verdadeiro, pai do profeta Jonas, natural de Gate-Hefer (2 Rs 14:25; Jn 1:1)."
+  },
+  {
+   "kind": "person",
+   "id": 220,
+   "sha256": "ae8ab32f22cf7b3493e154130440c435dd91070255847f16c50661653268656a",
+   "text": "Um dos doze espias enviados por Moisés para reconhecer a terra de Canaã (Nm 13:12). Foi um dos dez que pereceram pela praga por causa de seu relatório desfavorável (Nm 14:37)."
+  },
+  {
+   "kind": "person",
+   "id": 221,
+   "sha256": "868d890311e5c04825abce9b07e8ba7308c131a90364fcaa1ae9bdacf7a6129e",
+   "text": "Pai de Maquir, de Lo-Debar, em cuja casa residia Mefibosete (2 Sm 9:4, 5; 17:27)."
+  },
+  {
+   "kind": "person",
+   "id": 222,
+   "sha256": "aef4afceacd3af23e6c2d25b80fcad3d76dec7ead7296a3f210897407a29a095",
+   "text": "Um dos filhos de Obede-Edom, o levita (1 Cr 26:5)."
+  },
+  {
+   "kind": "person",
+   "id": 223,
+   "sha256": "d2ef1314fa6dbe204d564ea9a8aa08cc151e87b2c3c651473fd039fa54d67d49",
+   "text": "Pai de Elisama, chefe efraimita, no tempo do Êxodo (Nm 1:10; 2:18; 7:48, 53)."
+  },
+  {
+   "kind": "person",
+   "id": 224,
+   "sha256": "7a6a9cb1d18e4a4e332fa8db6f452372caf740aa3a61c950bc1bc285b211138d",
+   "text": "Nm 34:20."
+  },
+  {
+   "kind": "person",
+   "id": 225,
+   "sha256": "c2ba241a0e48946e49c5d526ece65be6e2776d3ebcdc5de2fde811cd79002510",
+   "text": "Nm 34:28."
+  },
+  {
+   "kind": "person",
+   "id": 226,
+   "sha256": "01300d918071d912cd71a05ba148dc20bbad344d8b08f98127a2776465761249",
+   "text": "Pai de Talmai, rei de Gesur, para junto de quem Absalão fugiu depois do assassinato de Amnom (2 Sm 13:37)."
+  },
+  {
+   "kind": "person",
+   "id": 227,
+   "sha256": "f4c7344269569c3d03b6bba98afb1bd740922f4e06beb7a88e01cfc267ccff99",
+   "text": "Filho de Onri e pai de Utai (1 Cr 9:4)."
+  },
+  {
+   "kind": "person",
+   "id": 228,
+   "sha256": "f0a10cafafa44815084ae6bb32f1175bf4e81dcee47135dd4f2033b5fa316866",
+   "text": "Pai de Naassom, que era chefe da tribo de Judá (Nm 1:7; 2:3; 7:12, 17; 10:14). Sua filha Eliseba casou-se com Arão (Êx 6:23)."
+  },
+  {
+   "kind": "person",
+   "id": 229,
+   "sha256": "8b5c3e27599ceba0c55f5131ec310ffd08b17f050093d990dd9239ab092a4a00",
+   "text": "Chefe dos 112 descendentes de Uziel, o levita (1 Cr 15:10, 11)."
+  },
+  {
+   "kind": "person",
+   "id": 230,
+   "sha256": "bf007bcd3f8263c7e22d563f2b379911de4dda34c377a62fbe87073bf7de2267",
+   "text": "Povo do Todo-Poderoso, pai de Aiezer, que era chefe dos danitas no tempo do Êxodo (Nm 1:12; 2:25). Este é um dos poucos nomes compostos com o nome de Deus, Shaddai, “Todo-Poderoso”."
+  },
+  {
+   "kind": "person",
+   "id": 231,
+   "sha256": "b81d0ae90e47b651110cf838de72669a5a67d02110306883592739021ca8b82e",
+   "text": "Povo do doador, filho de Benaia, que era o terceiro capitão e chefe do exército sob Davi (1 Cr 27:6)."
+  },
+  {
+   "kind": "person",
+   "id": 232,
+   "sha256": "19d21ce220b895c73e9b89f9c809d0fb391ad4e9db42c55104e65a5957194399",
+   "text": "O filho mais velho de Davi, com Ainoã de Jezreel (1 Cr 3:1; 2 Sm 3:2). Absalão mandou matá-lo por seu grande crime no caso de Tamar (2 Sm 13:28, 29)."
+  },
+  {
+   "kind": "person",
+   "id": 233,
+   "sha256": "0276eba919000862c8ad5a4dd73e03081f65aeb016c47f6535928a573fcbfc73",
+   "text": "Um dos filhos de Samai, dos filhos de Esdras (1 Cr 4:20; cf. 17)."
+  },
+  {
+   "kind": "person",
+   "id": 235,
+   "sha256": "b71523b821646cb70e32793e275f817636eb9517621064ba2970fabb94523cc0",
+   "text": "O governador de Samaria no tempo de Acabe. O profeta Micaías foi entregue à sua custódia (1 Rs 22:26; 2 Cr 18:25)."
+  },
+  {
+   "kind": "person",
+   "id": 236,
+   "sha256": "7c93ba76f02a58d7fb48830c4c54d4514609b532dbf38a02f3b8e05fc3a18291",
+   "text": "Filho de Manassés e décimo quarto rei de Judá. Restaurou a idolatria e erigiu as imagens que seu pai havia derrubado. Sofonias (1:4; 3:4, 11) refere-se à depravação moral que prevalecia no reinado desse rei.\n\n Foi assassinado (2 Rs 21:18-26: 2 Cr 33:20-25) por seus próprios servos, que conspiraram contra ele.55"
+  },
+  {
+   "kind": "person",
+   "id": 237,
+   "sha256": "dd33be1382ee5ae410948b0eba75df65e35524c5f6ce2ce0d41b691d91c1235b",
+   "text": "Montanheses, ou habitantes das colinas, o nome dado aos descendentes de um dos filhos de Canaã (Gn 14:7), chamados Amurra ou Amurri nas inscrições assírias e egípcias. Nos antigos monumentos babilônicos toda a Síria, incluindo a Palestina, é conhecida como “a terra dos amorreus”. As encostas meridionais dos montes da Judeia são chamadas “monte dos amorreus” (Dt 1:7, 19, 20). Parecem ter ocupado originalmente a terra que se estende desde as alturas a oeste do mar Morto (Gn 14:7) até Hebrom (13. Cf. 13:8; Dt 3:8; 4:46-48), abrangendo “todo Gileade, e todo Basã” (Dt 3:10), com o vale do Jordão a leste do rio (4:49), a terra dos “dois reis pelos amorreus”, Seom e Ogue (Dt 31:4; Js 2:10; 9:10). Os cinco reis dos amorreus foram derrotados com grande matança por Josué (10:10). Foram de novo derrotados junto às águas de Merom por Josué, que os feriu até não restar nenhum (Js 11:8). Menciona-se como circunstância surpreendente que nos dias de Samuel houve paz entre eles e os israelitas (1 Sm 7:14). A discrepância que se supõe existir entre Dt 1:44 e Nm 14:45 explica-se pela circunstância de que os termos “amorreus” e “amalequitas” são usados como sinônimos de “cananeus”. Da mesma maneira explicamos o fato de que os “heveus” de Gn 34:2 são os “amorreus” de 48:22. Cf. Js 10:6; 11:19 com 2 Sm 21:2; também Nm 14:45 com Dt 1:44. Os amorreus eram montanheses belicosos. São representados nos monumentos egípcios com pele clara, cabelos claros, olhos azuis, narizes aquilinos e barbas pontudas. Supõe-se que eram homens de grande estatura; o seu rei, Ogue, é descrito por Moisés como o último “que havia restado dos refains” (Dt 3:11). Tanto Seom como Ogue eram reis independentes. Só uma palavra da língua amorreia sobrevive, “Senir”, o nome que deram ao monte Hermom (Dt 3:9)."
+  },
+  {
+   "kind": "person",
+   "id": 238,
+   "sha256": "b75848e32b1ec1e2c4df45d372c398becb75d9cc4d7e147b349a77c4c4884c29",
+   "text": "Carregado; um fardo, um dos doze profetas menores. Era natural de Tecota, a moderna Tekua, cidade a cerca de 12 milhas a sudeste de Belém. Era homem de origem humilde, nem “profeta, nem filho de profeta”, mas “criador de gado e cultivador de sicômoros”, R.V. Profetizou nos dias de Uzias, rei de Judá, e foi contemporâneo de Isaías e Oseias (Am 1:1; 7:14, 15; Zc 14:5), que lhe sobreviveram alguns anos. Sob Jeroboão II o reino de Israel chegou ao auge de sua prosperidade; mas a isso se seguiu o predomínio do luxo, do vício e da idolatria. Nesse período Amós foi chamado de sua obscuridade para lembrar ao povo a lei da justiça retributiva de Deus e chamá-lo ao arrependimento.\n\n O Livro de Amós consta de três partes:"
+  },
+  {
+   "kind": "person",
+   "id": 240,
+   "sha256": "8dd9d4946be04b9e835e3bc249137348385335be551d2b89cefd80c494d62a41",
+   "text": "Forte, pai do profeta Isaías (2 Rs 19:2, 20; 20:1; Is 1:1; 2:1). Quanto à sua história pessoal, pouco se sabe com certeza. Alguns supõem que ele foi o “homem de Deus” mencionado em 2 Cr 25:7, 8."
+  },
+  {
+   "kind": "person",
+   "id": 241,
+   "sha256": "e47adfd2ede3d6059d2983c715d914abd924b74eb5e3738ccf3dbf610c74771c",
+   "text": "Um cristão romano saudado por Paulo (Rm 16:8)."
+  },
+  {
+   "kind": "person",
+   "id": 242,
+   "sha256": "1681c9b25922bfed880ca3d740821a0ff4c131f54e3df4246b68dc0b374b9bcb",
+   "text": "Filho de Coate, filho de Levi. Casou-se com Joquebede, “sua tia”, e foi pai de Arão, Miriã e Moisés (Êx 6:18, 20; Nm 3:19). Morreu no Egito com a idade de 137 anos (Êx 6:20). Os seus descendentes foram chamados anramitas (Nm 3:27; 1 Cr 26:23)."
+  },
+  {
+   "kind": "person",
+   "id": 243,
+   "sha256": "5d87432a9c7b1e5c5906d3d33bb3b56c944c8fb539322269ceb44f3a36b8674f",
+   "text": "Ed 10:34."
+  },
+  {
+   "kind": "person",
+   "id": 244,
+   "sha256": "44e7a73c072d1883033f452cd04f0eb5cb5ebc2df8d4a660b3adcad4ad1b4aa4",
+   "text": "Rei de Sinear, a Caldeia meridional, um dos confederados de Quedorlaomer, rei de Elão, numa guerra contra Sodoma e as cidades da planície (Gn 14:1, 4). Sabe-se agora que Anrafel (ou Ammirapaltu) é o Khammu-rabi cujo nome aparece em monumentos recentemente descobertos. Depois de derrotar Arioque (q.v.), uniu a Babilônia sob um só governo e fez de Babilônia a sua capital."
+  },
+  {
+   "kind": "person",
+   "id": 252,
+   "sha256": "25c1c35a84ac90aa3c5f4db1bd8fa1af99a8564c96d2fa7c892bb499563f1706",
+   "text": "De pescoço comprido, filho de Arba, pai dos anaquins (Js 15:13; 21:11, heb. Anok)."
+  },
+  {
+   "kind": "person",
+   "id": 253,
+   "sha256": "df54917a5553a3d8b3ff5c294c7c3d495aa67558f9d0e1c28e6c7cc18b7fa56f",
+   "text": "O nome de uma tribo egípcia descendente de Mizraim (Gn 10:13; 1 Cr 1:11)."
+  },
+  {
+   "kind": "person",
+   "id": 254,
+   "sha256": "619d247b0ca7543f618b4b53f8a5633c0b762eaa4705adf26fe65e2f3e2bf18d",
+   "text": "Um dos deuses adorados pelo povo de Sefarvaim, que colonizou Samaria (2 Rs 17:31). O nome significa “Anu é rei”. Era uma divindade feminina que representava a lua, assim como Adrameleque (q.v.) era a masculina que representava o sol."
+  },
+  {
+   "kind": "person",
+   "id": 255,
+   "sha256": "7e41a9b772d1e5affd9cb5091e57380188500f91d7951be1dc8371800832829d",
+   "text": "Nuvem, um dos israelitas que selaram a aliança depois da volta da Babilônia (Ne 10:26)."
+  },
+  {
+   "kind": "person",
+   "id": 258,
+   "sha256": "e523addb7a5bd7e447654bb3800bf44d38a5981bffa71bb061b4414bc813a30c",
+   "text": "Um dos membros da igreja em Jerusalém, que conspirou com sua mulher Safira para enganar os irmãos, e que caiu e expirou imediatamente depois de ter proferido a mentira (At 5:5). Por comum acordo os membros da primitiva comunidade cristã dedicavam os seus bens à obra de promover o evangelho e de socorrer os pobres e necessitados. O produto das propriedades que vendiam era posto à disposição dos apóstolos (At 4:36, 37). Ananias poderia ter conservado a sua propriedade se assim o quisesse; mas professou estar de acordo com os irmãos no propósito comum e, por sua própria vontade, a havia dedicado toda, como dizia, a esses fins sagrados. Contudo, reteve uma parte dela para os seus próprios fins, e assim mentiu ao declarar que a dera toda. “A ofensa de Ananias e Safira mostrou desprezo para com Deus, vaidade e ambição nos ofensores, e total indiferença à corrupção que estavam introduzindo na comunidade. Tal pecado, cometido a despeito da luz que possuíam, exigia uma marca especial da indignação divina.”"
+  },
+  {
+   "kind": "person",
+   "id": 259,
+   "sha256": "0064b7cb942f453c4c7a9b0e51e7bb6ac6de7553b01d942ba24b75421befd88c",
+   "text": "Um cristão em Damasco (At 9:10). Tornou-se instrutor de Paulo; mas quando ou por que meios ele mesmo se tornou cristão, não temos informação. Era “homem devoto conforme a Lei, que tinha bom testemunho de todos os judeus que moravam ali” em Damasco (22:12)."
+  },
+  {
+   "kind": "person",
+   "id": 260,
+   "sha256": "7e84aa333a4b62565d6d21ef8ec1dfa69266a4e5b04676acea38db9a8909cfe6",
+   "text": "O sumo sacerdote perante o qual Paulo foi levado no tempo da procuradoria de Félix (At 23:2, 5, 24). Ficou tão enfurecido com a nobre declaração de Paulo, “com toda boa consciência eu tenho andado diante de Deus até o dia de hoje”, que ordenou a um de seus assistentes que lhe batesse na boca. Ferido por esse insulto não provocado, Paulo respondeu prontamente: “Deus vai te espancar, parede caiada!” Sendo lembrado de que Ananias era o sumo sacerdote, a cujo ofício se devia todo o respeito, ele respondeu: “Eu não sabia, irmãos, que ele era o sumo sacerdote” (At 23:5). Essa expressão tem ocasionado alguma dificuldade, pois é pouco provável que Paulo ignorasse um fato tão público. A expressão pode significar (a) que Paulo, no momento, tinha esquecido a honra devida ao sumo sacerdote; ou (b), como outros pensam, que Paulo falou ironicamente, como se tivesse dito: “O sumo sacerdote violando a lei! O sumo sacerdote de Deus, um tirano e transgressor da lei! Vejo um homem de vestes brancas e ouvi a sua voz, mas certamente não pode ser, não deveria ser, a voz do sumo sacerdote.” (Veja Dr. Lindsay sobre Atos, in loco.) (c) Outros pensam que, por defeito da vista, Paulo não pôde perceber que quem falava era o sumo sacerdote. Em tudo isso, porém, como quer que se explique, Paulo, com toda a sua excelência, fica aquém do exemplo de seu divino Mestre, que, quando era injuriado, não injuriava em resposta."
+  },
+  {
+   "kind": "person",
+   "id": 261,
+   "sha256": "99fc48dbcb06886cd560374b318d24f07c5d4ece1a9c726ee3420767f808aa9a",
+   "text": "Uma resposta; isto é, a uma “oração”, pai de Sangar, que foi um dos juízes de Israel (Jz 3:31)."
+  },
+  {
+   "kind": "person",
+   "id": 264,
+   "sha256": "c60f6d9b21358443fdafa624d0ccae12b9cbd344e69a9774fe1a724d56047313",
+   "text": "Varonilidade, um nome grego; um dos apóstolos de nosso Senhor. Era de Betsaida, na Galileia (Jo 1:44), e era irmão de Simão Pedro (Mt 4:18; 10:2). Certa ocasião João Batista, de quem era então discípulo, apontando para Jesus, disse: “Eis o Cordeiro de Deus” (Jo 1:40); e André, ouvindo-o, tornou-se imediatamente seguidor de Jesus, o primeiro de seus discípulos. Depois de ter sido levado a reconhecer Jesus como o Messias, o seu primeiro cuidado foi trazer também a Jesus o seu irmão Simão. Os dois irmãos parecem, depois disso, ter continuado por algum tempo em sua ocupação habitual de pescadores, e não se tornaram acompanhantes constantes do Senhor senão depois do encarceramento de João (Mt 4:18, 19; Mc 1:16, 17). Muito pouco se conta de André. Era um dos discípulos de confiança (Jo 6:8; 12:22) e, com Pedro, Tiago e João, perguntou em particular a nosso Senhor a respeito de sua vinda futura (Mc 13:3). Esteve presente na alimentação dos cinco mil (Jo 6:9) e apresentou os gregos que desejavam ver Jesus (Jo 12:22); mas pouco se sabe de sua história posterior. É digno de nota que André por três vezes traz outros a Cristo: (1) Pedro; (2) o rapaz com os pães; e (3) certos gregos. Esses incidentes podem ser considerados uma chave para o seu caráter."
+  },
+  {
+   "kind": "person",
+   "id": 265,
+   "sha256": "17eea5efb639997273353d4e7dbc7a8871645a505d05d50f003ff30307765cc1",
+   "text": "Vencedor de homens, um cristão judeu, parente e companheiro de prisão de Paulo (Rm 16:7); “notáveis entre os apóstolos”."
+  },
+  {
+   "kind": "person",
+   "id": 266,
+   "sha256": "bacdef4a84aa48dbf17930a71ca448c946af9757a9b72673c425a9ccb17b5b8d",
+   "text": "Um chefe cananeu que uniu as suas forças às de Abraão na perseguição a Quedorlaomer (Gn 14:13, 24)."
+  },
+  {
+   "kind": "person",
+   "id": 268,
+   "sha256": "010de62b2ba22507e349cd23487b4e9f0be746e4c42ddd68add861a6e3e32fcb",
+   "text": "Graça, uma viúva idosa, filha de Fanuel. Era uma “profetisa”, como Miriã, Débora e Hulda (2 Cr 34:22). Depois de sete anos de vida conjugal, seu marido morreu, e durante a sua longa viuvez ela frequentava diariamente os serviços do templo. Quando tinha oitenta e quatro anos, entrou no templo no momento em que o idoso Simeão pronunciava as suas memoráveis palavras de louvor e ação de graças a Deus por ter cumprido a sua antiga promessa, enviando o seu Filho ao mundo (Lc 2:36, 37)."
+  },
+  {
+   "kind": "person",
+   "id": 269,
+   "sha256": "512b8faf460e5ee6abec7e00e8dc7f8644a4416b0005dfe9cf28d0601e8933b1",
+   "text": "Foi sumo sacerdote de 7 a 14 d.C. Em 25 d.C., Caifás, que se casara com a filha de Anás (Jo 18:13), foi elevado a esse ofício, e provavelmente Anás foi então feito presidente do Sinédrio, ou substituto ou coadjutor do sumo sacerdote, e assim era também chamado sumo sacerdote juntamente com Caifás (Lc 3:2). Pela lei mosaica o sumo sacerdócio era vitalício (Nm 3:10); e, embora Anás tivesse sido deposto pelo procurador romano, os judeus podem ainda tê-lo considerado legalmente o sumo sacerdote. Nosso Senhor foi levado primeiro a Anás e, depois de um breve interrogatório feito por ele (Jo 18:19-23), foi enviado a Caifás, quando alguns membros do Sinédrio se haviam reunido, e teve lugar o primeiro julgamento de Jesus (Mt 26:57-68). Esse interrogatório de nosso Senhor perante Anás é registrado somente por João. Anás era presidente do Sinédrio perante o qual Pedro e João foram levados (At 4:6)."
+  },
+  {
+   "kind": "person",
+   "id": 270,
+   "sha256": "9ede3c2bf8d1ee0883ad2e49f1d77215575cb7c2a82dca40d646b5297f598258",
+   "text": "Uma “fiel testemunha” (Ap 2:13), da qual nada mais se sabe com certeza."
+  },
+  {
+   "kind": "person",
+   "id": 273,
+   "sha256": "568249e144dd48f4487b3117535fd86ceab1fe90c3469cbf5a25df453a584ea0",
+   "text": "Um cristão em Roma a quem Paulo saúda (Rm 16:10) e chama “aprovado em Cristo”."
+  },
+  {
+   "kind": "person",
+   "id": 276,
+   "sha256": "5d1bfe6a352d1a553738d5e6cd412755363a3450bed3f90e9fa2450a275a99cd",
+   "text": "Um judeu “natural de Alexandria”, homem versado nas Escrituras e eloquente (At 18:24; R.V., “erudito”). Veio a Éfeso (por volta de 49 d.C.), onde falou “ousadamente” na sinagoga (18:26), embora ainda não soubesse que Jesus de Nazaré era o Messias. Áquila e Priscila o instruíram mais perfeitamente sobre “o caminho de Deus”, isto é, no conhecimento de Cristo. Ele seguiu então para Corinto, onde encontrou Paulo (At 18:27; 19:1). Ali foi muito útil em regar a boa semente que Paulo havia semeado (1 Co 1:12) e em ganhar muitos para Cristo. Os seus discípulos eram muito apegados a ele (1 Co 3:4-7, 22). Estava com Paulo em Éfeso quando este escreveu a Primeira Epístola aos Coríntios; e Paulo faz referência amável a ele em sua carta a Tito (3:13). Alguns supuseram, embora sem fundamento suficiente, que ele foi o autor da Epístola aos Hebreus."
+  },
+  {
+   "kind": "person",
+   "id": 278,
+   "sha256": "ffee37228d2ecba32e3d5a99f77fc93627222a6fc4ef4e316d55adc94d182556",
+   "text": "Crescente, uma cristã em Colossos (Fm 1:2), que alguns supõem ter sido a mulher de Filemom."
+  },
+  {
+   "kind": "person",
+   "id": 279,
+   "sha256": "dbaaa851774e08d4a83758c0cc58a35e74b180daa486bced11632f7131049a54",
+   "text": "Águia, natural do Ponto, fabricante de tendas por ofício, a quem Paulo encontrou em sua primeira visita a Corinto (At 18:2). Juntamente com sua mulher Priscila, havia fugido de Roma em consequência de um decreto (50 d.C.) de Cláudio que ordenava a todos os judeus que deixassem a cidade. Paulo hospedou-se com ele em Corinto, e trabalharam juntos em seu ofício comum, fazendo pano de pelo cilício para tendas. Na partida de Paulo de Corinto, depois de dezoito meses, Áquila e sua mulher acompanharam-no a Éfeso, onde permaneceram, enquanto ele seguiu para a Síria (At 18:18, 26). Quando se tornaram cristãos não somos informados, mas em Éfeso eram (1 Co 16:19) “cooperadores em Cristo Jesus” de Paulo. Encontramo-los depois em Roma (Rm 16:3), interessando-se ainda pela causa de Cristo. São mencionados alguns anos depois como estando em Éfeso (2 Tm 4:19). Esta é a última notícia que temos deles."
+  },
+  {
+   "kind": "person",
+   "id": 281,
+   "sha256": "1c852ec38367bf56d5a604c6ab8938ec2997779e8e3dbcafa7831cbd99604bfc",
+   "text": "Um dos filhos de Berias (1 Cr 8:15)."
+  },
+  {
+   "kind": "person",
+   "id": 285,
+   "sha256": "544f081859e390e093024c83449ca4cd364950adf7354ac5a748ba7e9dd732c2",
+   "text": "Filho de Sem (Gn 10:22); segundo Gn 22:21, neto de Naor. Em Mt 1:3, 4 e Lc 3:33, esta palavra é a forma grega de Rão, pai de Aminadabe (1 Cr 2:10).\n\n A palavra significa alto, ou terras altas, e como nome de um país designa aquela região elevada que se estende do nordeste da Palestina até o Eufrates. Correspondia em geral à Síria e à Mesopotâmia dos gregos e romanos. Em Gn 25:20; 31:20, 24; Dt 26:5, a palavra “sírio” é propriamente “arameu” (R.V., marg.). Damasco tornou-se por fim a capital dos vários reinos menores compreendidos sob a designação de “Arã” ou “Síria”."
+  },
+  {
+   "kind": "person",
+   "id": 286,
+   "sha256": "544f081859e390e093024c83449ca4cd364950adf7354ac5a748ba7e9dd732c2",
+   "text": "Filho de Sem (Gn 10:22); segundo Gn 22:21, neto de Naor. Em Mt 1:3, 4 e Lc 3:33, esta palavra é a forma grega de Rão, pai de Aminadabe (1 Cr 2:10).\n\n A palavra significa alto, ou terras altas, e como nome de um país designa aquela região elevada que se estende do nordeste da Palestina até o Eufrates. Correspondia em geral à Síria e à Mesopotâmia dos gregos e romanos. Em Gn 25:20; 31:20, 24; Dt 26:5, a palavra “sírio” é propriamente “arameu” (R.V., marg.). Damasco tornou-se por fim a capital dos vários reinos menores compreendidos sob a designação de “Arã” ou “Síria”."
+  },
+  {
+   "kind": "person",
+   "id": 288,
+   "sha256": "2e0a76d20327576959e19ffcf03519facf39303f17a9248724f6db65c5d79b0e",
+   "text": "Cabra-montês, um descendente de Seir, o horeu (Gn 36:28)."
+  },
+  {
+   "kind": "person",
+   "id": 289,
+   "sha256": "dc8e444d446bcb2a239c4d5722f2cddae5891d119e1821bdfeba67227cc8c452",
+   "text": "Ágil; chamado também Ornã em 1 Cr 21:15, um jebuseu que habitava em Jerusalém antes que ela fosse tomada pelos israelitas. O anjo destruidor, enviado para castigar Davi por sua vaidade ao fazer o recenseamento do povo, foi detido em sua obra de destruição perto de uma eira que pertencia a Araúna, situada no monte Moriá. Araúna ofereceu-a a Davi como dádiva gratuita, juntamente com os bois e os instrumentos de debulha; mas o rei insistiu em comprá-la pelo seu preço total (2 Sm 24:24; 1 Cr 21:24, 25), pois, segundo a lei dos sacrifícios, não podia oferecer a Deus o que nada lhe custasse. No mesmo lugar Salomão edificou depois o templo (2 Sm 24:16; 2 Cr 3:1)."
+  },
+  {
+   "kind": "person",
+   "id": 291,
+   "sha256": "3cb720cc99a7e81bbb5336cb556252977e57b51b1395b5d7399319a9557638bc",
+   "text": "Governante do povo, filho de Herodes, o Grande, e de Maltace, uma mulher samaritana. Foi educado em Roma juntamente com seu irmão Antipas. Herdou de seu pai uma terça parte de seu reino, a saber, a Idumeia, a Judeia e Samaria, e por isso é chamado “rei” (Mt 2:22). Foi por medo dele que José e Maria se desviaram em seu caminho de volta do Egito. Até poucos dias antes de sua morte, Herodes havia nomeado Antipas como seu sucessor, mas em seus últimos momentos nomeou Arquelau."
+  },
+  {
+   "kind": "person",
+   "id": 292,
+   "sha256": "3c69d1d83dc53756d80b6ed1148623614e7076c1d055ac867efab9df1f0d1f2b",
+   "text": "Mestre do cavalo, um “companheiro de lutas” de Paulo (Fm 1:2), a quem ele exorta a uma atividade renovada (Cl 4:17). Era membro da família de Filemom, provavelmente seu filho."
+  },
+  {
+   "kind": "person",
+   "id": 294,
+   "sha256": "5135fbdf0cfde8e90280221d8a41a5bb215c0907eef42a4df3ddc9781aae98dc",
+   "text": "Descida, neto de Benjamim (Nm 26:38-40). Em 1 Cr 8:3 é chamado Adar. Os seus descendentes são mencionados em Nm 26:40."
+  },
+  {
+   "kind": "person",
+   "id": 295,
+   "sha256": "be7e890b3bff2938c02c56d0666dc45ee15f07f6d9ccf3b31a66bd69663c26c9",
+   "text": "Descendente, o último dos três filhos de Calebe com sua primeira mulher, Azuba (1 Cr 2:18)."
+  },
+  {
+   "kind": "person",
+   "id": 297,
+   "sha256": "8c936f9ca6e2b23e63f9088603afa1b0a69e8a3d80327112fbd3ef62baaaf092",
+   "text": "Sogro de Herodes Antipas e rei da Arábia Pétrea. Sua filha voltou para junto dele por ocasião da aliança adúltera de seu marido com Herodias, mulher de Herodes Filipe, seu meio-irmão (Lc 3:19, 20; Mc 6:17; Mt 14:3). Isso levou a uma guerra entre Aretas e Herodes Antipas. O exército de Herodes foi totalmente destruído (36 d.C.). Aretas, aproveitando-se das complicações da época por causa da morte do imperador Tibério (37 d.C.), tomou posse de Damasco (2 Co 11:32; cf. At 9:25). Nesse tempo Paulo voltou da Arábia para Damasco."
+  },
+  {
+   "kind": "person",
+   "id": 301,
+   "sha256": "c7c502221a0db05239e840e1c9b59d718e808b51de80b1e8f6ea3916104d9d1b",
+   "text": "O leão, o nome de um dos guardas mortos com Pecaías em Samaria (2 Rs 15:25) pelo conspirador Peca."
+  },
+  {
+   "kind": "person",
+   "id": 302,
+   "sha256": "f92defefc7028edef0ade031f55227e2133e9e34d288f6a6598e6b60c002d086",
+   "text": "Um dos homens principais enviados por Esdras para conseguir levitas para o santuário (Ed 8:16)."
+  },
+  {
+   "kind": "person",
+   "id": 303,
+   "sha256": "f78c8ac083d51b3b86c5b77f3bed3cac4e6548534e76e8f4f14eadf1734ad970",
+   "text": "Um rei de Elasar que foi confederado de Quedorlaomer (Gn 14:1, 9). As tábuas recentemente descobertas pelo Sr. Pinches (veja CALDEIA) mostram que a verdadeira leitura é Eri-Aku de Larsa. Esse nome elamita significava “servo do deus-lua”. Foi depois mudado para Rimsin, “Tem misericórdia, ó deus-lua”."
+  },
+  {
+   "kind": "person",
+   "id": 304,
+   "sha256": "0d5771afe625d2c50caba8cfbe89f89b34743a88742bb9849a545af7c70048c8",
+   "text": "Dn 2:14."
+  },
+  {
+   "kind": "person",
+   "id": 306,
+   "sha256": "bd75e875e09399b3811d950481be21cfdf1722d233b341a70eb6b528ef65431a",
+   "text": "Melhor governante, natural de Tessalônica (At 20:4), companheiro de Paulo (At 19:29; 27:2). Foi “companheiro de prisão” de Paulo em Roma (Cl 4:10; Fm 1:24)."
+  },
+  {
+   "kind": "person",
+   "id": 308,
+   "sha256": "868ec726f356de60520901082219c85fa2ca4f3a546fb4a0d7740efe57c3344e",
+   "text": "(Gn 10:17; 1 Cr 1:15), designação de certos descendentes dos fenícios ou sidônios, os habitantes de Arka, 12 milhas ao norte de Trípoli, defronte da extremidade setentrional do Líbano."
+  },
+  {
+   "kind": "person",
+   "id": 309,
+   "sha256": "5172410d9cec677490842c018d94e961bc30af45cccd81f449ccc3918ee76cb8",
+   "text": "Habitante de uma fortaleza, o primeiro dos dois filhos de Saul e Rispa. Foi entregue por Davi aos gibeonitas e enforcado por eles (2 Sm 21:8, 9)."
+  },
+  {
+   "kind": "person",
+   "id": 312,
+   "sha256": "2ed186e92b35189b284a20d739c8b6d5f62567c5fe72716f564a422019fa5623",
+   "text": "Filho de Sem, nascido no ano seguinte ao Dilúvio. Morreu com a idade de 438 anos (Gn 11:10-13; 1 Cr 1:17, 18; Lc 3:36). Habitou na Mesopotâmia e tornou-se, segundo o historiador judeu Josefo, o progenitor dos caldeus. A tendência é reconhecer na palavra o nome do país mais próximo do antigo domínio dos caldeus. Alguns consideram a palavra uma forma egipcianizada do nome territorial de Ur Kasdim, ou Ur dos caldeus."
+  },
+  {
+   "kind": "person",
+   "id": 313,
+   "sha256": "a282197703a4edcb61fa70120e6c24000666bb3bfbdb47ad28feefbedabfd437",
+   "text": "O rei que obstruiu a reconstrução do templo (Ed 4:7). Provavelmente era o Esmérdis da história profana."
+  },
+  {
+   "kind": "person",
+   "id": 314,
+   "sha256": "939da0852cf7445ea27e365e51dc0030e128cf882888892f794b87fbfd78d79b",
+   "text": "O rei mencionado em Ed 7:1, no sétimo ano (458 a.C.) de cujo reinado Esdras conduziu uma segunda colônia de judeus de volta a Jerusalém, foi provavelmente Longímano, que reinou quarenta anos (464-425 a.C.); o neto de Dario, que, catorze anos depois, permitiu a Neemias voltar e reconstruir Jerusalém."
+  }
+ ]
+}

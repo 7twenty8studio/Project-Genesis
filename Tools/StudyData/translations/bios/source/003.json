@@ -1430,7 +1430,7 @@
    "pt": "Acabe"
   },
   "Ahaz": {
-   "es": "Acaz",
+   "es": "Acaz (person); Ahaz (person)",
    "pt": "Acaz"
   },
   "Ahiah": {
@@ -1611,7 +1611,7 @@
    "pt": "Egito"
   },
   "Elam": {
-   "es": "Belam",
+   "es": "Elam (person); Belam (person)",
    "pt": "Elão"
   },
   "Eliphaz": {
@@ -1655,12 +1655,12 @@
    "pt": "Eufrates"
   },
   "Ezer": {
-   "es": "Eser",
-   "pt": "Ézer (person); Eser (person)"
+   "es": "Ezer (person); Eser (person)",
+   "pt": "Ézer (person); Ezer (person); Eser (person)"
   },
   "Ezra": {
-   "es": "Esdras",
-   "pt": "Esdras"
+   "es": "Esdras (person); Ezra (person)",
+   "pt": "Esdras (person); Ezra (person)"
   },
   "Felix": {
    "es": "Félix",
@@ -1679,7 +1679,7 @@
    "pt": "Gedalias"
   },
   "Gedor": {
-   "es": "Gador"
+   "es": "Gador (place); Gedor (person)"
   },
   "Geshur": {
    "es": "Gesur",
@@ -1763,7 +1763,7 @@
    "pt": "Jedaías"
   },
   "Jehiel": {
-   "es": "Jehieli",
+   "es": "Jehiel (person); Jehieli (person)",
    "pt": "Jeiel (person); Jeieli (person)"
   },
   "Jehoiakim": {
@@ -1789,7 +1789,7 @@
    "es": "Jesús"
   },
   "Jezreel": {
-   "es": "Jezreelita"
+   "es": "Jezreel (person); Jezreelita (place)"
   },
   "Joab": {
    "pt": "Joabe"
@@ -1940,7 +1940,7 @@
    "pt": "Onri"
   },
   "On": {
-   "es": "Hon",
+   "es": "Hon (person); On (place)",
    "pt": "Om"
   },
   "Ornan": {
@@ -2049,8 +2049,8 @@
    "pt": "Síria"
   },
   "Tamar": {
-   "es": "Tadmor",
-   "pt": "Tadmor"
+   "es": "Tamar (person); Tadmor (place)",
+   "pt": "Tamar (person); Tadmor (place)"
   },
   "Thessalonica": {
    "es": "Tesalónica",

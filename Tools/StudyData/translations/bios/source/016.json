@@ -1122,8 +1122,8 @@
    "pt": "Ester"
   },
   "Ezra": {
-   "es": "Esdras",
-   "pt": "Esdras"
+   "es": "Esdras (person); Ezra (person)",
+   "pt": "Esdras (person); Ezra (person)"
   },
   "Gallim": {
    "pt": "Galim"
@@ -1133,7 +1133,7 @@
    "pt": "Gate"
   },
   "Gedor": {
-   "es": "Gador"
+   "es": "Gador (place); Gedor (person)"
   },
   "Gemariah": {
    "es": "Jemarías (person); Gemarías (person)",
@@ -1160,7 +1160,7 @@
    "pt": "Hadade"
   },
   "Ham": {
-   "es": "Cam",
+   "es": "Cam (person); Ham (place)",
    "pt": "Cam (person); Hã (place)"
   },
   "Haman": {
@@ -1349,7 +1349,7 @@
    "pt": "Miamim"
   },
   "Miniamin": {
-   "es": "Miniamín (person); Benjamín (person)",
+   "es": "Miniamín (person); Benjamín (person); Miniamin (person)",
    "pt": "Miamim (person); Miniamim (person)"
   },
   "Mispereth": {
@@ -1402,7 +1402,7 @@
    "pt": "Onri"
   },
   "On": {
-   "es": "Hon",
+   "es": "Hon (person); On (place)",
    "pt": "Om"
   },
   "Paul": {
@@ -1493,8 +1493,8 @@
    "pt": "Vasti"
   },
   "Zabdi": {
-   "es": "Zabdías",
-   "pt": "Zabdias"
+   "es": "Zabdi (person); Zabdías (person)",
+   "pt": "Zabdi (person); Zabdias (person)"
   },
   "Zerubbabel": {
    "es": "Zorobabel",

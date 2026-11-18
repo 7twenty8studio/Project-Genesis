@@ -848,7 +848,7 @@
    "pt": "Adonias"
   },
   "Ahaz": {
-   "es": "Acaz",
+   "es": "Acaz (person); Ahaz (person)",
    "pt": "Acaz"
   },
   "Aiah": {
@@ -900,7 +900,7 @@
    "es": "Booz"
   },
   "Cush": {
-   "es": "Etiopía",
+   "es": "Cush (person); Etiopía (person)",
    "pt": "Cuxe"
   },
   "Damascus": {
@@ -915,7 +915,7 @@
    "pt": "Dalila"
   },
   "Ebal": {
-   "es": "Seba"
+   "es": "Ebal (person); Seba (person)"
   },
   "Ebenezer": {
    "es": "Eben-ezer",
@@ -941,8 +941,8 @@
    "pt": "Esaú"
   },
   "Ezra": {
-   "es": "Esdras",
-   "pt": "Esdras"
+   "es": "Esdras (person); Ezra (person)",
+   "pt": "Esdras (person); Ezra (person)"
   },
   "Gibeah": {
    "es": "Gabaa (place); Gibea (place)",
@@ -1084,7 +1084,7 @@
    "pt": "Obede"
   },
   "On": {
-   "es": "Hon",
+   "es": "Hon (person); On (place)",
    "pt": "Om"
   },
   "Pekah": {
@@ -1180,8 +1180,8 @@
    "pt": "Síria"
   },
   "Tamar": {
-   "es": "Tadmor",
-   "pt": "Tadmor"
+   "es": "Tamar (person); Tadmor (place)",
+   "pt": "Tamar (person); Tadmor (place)"
   },
   "Zalmon": {
    "es": "Salmón",

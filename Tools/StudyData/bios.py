@@ -99,9 +99,16 @@ def name_maps():
             for key, entry in data[kind].items():
                 base = english.get((kind, key))
                 local = re.sub(r"\s*\(.*\)$", "", entry["name"])
-                if base and local and local != base:
+                if base and local:
                     spellings.setdefault(base, Counter())[(kind, local)] += 1
+        # Names the translation keeps ("Tamar") count too, so a shared
+        # English name shows every spelling.
+        for (kind, key), base in english.items():
+            if key not in data[kind] and base in spellings:
+                spellings[base][(kind, base)] += 1
         for base, counts in spellings.items():
+            if all(local == base for _, local in counts):
+                continue
             locals_ = {}
             for (kind, local), n in counts.most_common():
                 locals_.setdefault(local, kind)
@@ -195,8 +202,10 @@ def verbatim(piece: str, bible: str) -> bool:
     return (piece[0].swapcase() + piece[1:]) in bible
 
 
-def check_quotes(lang, quotes, text):
-    """Problems with the quotations, and the review lines for this entry."""
+def check_quotes(lang, quotes, text, wrong_verse=()):
+    """Problems with the quotations, and the review lines for this entry.
+    `wrong_verse` lists quotations (n) whose verse the translator found
+    wasn't the one Easton meant: translated, and flagged for review."""
     problems, review = [], []
     found = QUOTED.findall(text)
     if len(found) != len(quotes):
@@ -204,6 +213,9 @@ def check_quotes(lang, quotes, text):
     for q, t in zip(quotes, found):
         bible = q.get(lang, "")
         kind = q["kind"]
+        if q["n"] in wrong_verse and kind in ("whole", "partial", "loose", "wording", "unsure"):
+            review.append(f"- verse looked wrong, translated ({kind}, {', '.join(str(v) for v in q.get('verses', []))}): “{q['english']}” → “{t}”")
+            continue
         ref = ", ".join(f"{scripture_quotes.BOOKS[v // 1_000_000 - 1]} {v // 1000 % 1000}:{v % 1000}" for v in q.get("verses", []))
         if kind == "whole" and not (verbatim(t, bible) and len(t.strip(" ,.;:")) >= 0.8 * len(bible.strip(" ,.;:"))):
             problems.append(f"quotation {q['n'] + 1} isn't the whole verse verbatim")
@@ -214,7 +226,7 @@ def check_quotes(lang, quotes, text):
     return problems, review
 
 
-def check_entry(source: str, text: str, quotes=(), lang="es"):
+def check_entry(source: str, text: str, quotes=(), lang="es", wrong_verse=()):
     """(problems, review lines) for one translation; no problems when it's fine."""
     problems = []
     if not text.strip():
@@ -235,7 +247,7 @@ def check_entry(source: str, text: str, quotes=(), lang="es"):
     ratio = len(text) / max(1, len(source))
     if len(source) > 200 and not 0.8 <= ratio <= 1.7:
         problems.append(f"length {ratio:.2f}x the English")
-    quote_problems, review = check_quotes(lang, list(quotes), text)
+    quote_problems, review = check_quotes(lang, list(quotes), text, wrong_verse)
     return problems + quote_problems, review
 
 
@@ -265,7 +277,7 @@ def check(lang, only=None):
                 print(f"{lang} {b} {e['kind']} {e['id']} {e['name']}: stale (English changed)")
                 failed += 1
                 continue
-            problems, review = check_entry(e["text"], t["text"], e.get("quotes", []), lang)
+            problems, review = check_entry(e["text"], t["text"], e.get("quotes", []), lang, t.get("wrong_verse", []))
             if problems:
                 print(f"{lang} {b} {e['kind']} {e['id']} {e['name']}: " + "; ".join(problems))
                 failed += 1
