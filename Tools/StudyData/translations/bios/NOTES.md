@@ -236,3 +236,7 @@ What the translators reported per batch, beyond the review files.
 
 ## es 044
 - Water Gate 1230 is the dates entry (source). Duplicates Zered 1224/1253, Zin 1261/1262, Zion 1263/1264. Some Jordan-valley names follow Easton's spelling (Saretán, Zartana, Sereda…); Zaanannim's R.V. readings translated.
+
+## es 038–039
+- wrong_verse: Ophel q0 (as pt). Moab 815 q1: "Subió" outside the quote (the verse starts in capitals). Perez-uzzah "tuvo" (verse "túvola").
+- Mount of Olives 828/861 identical. Negeb "1 S 33:24" kept as Easton. Pelusium quote marks as Easton.
