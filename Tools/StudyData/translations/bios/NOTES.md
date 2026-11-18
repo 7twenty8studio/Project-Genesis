@@ -175,3 +175,8 @@ What the translators reported per batch, beyond the review files.
 - Reused identical-text translations: Beth-maacah 221 (025/5), Bilhah 249 (004/502), Arabah 260 (026/79), Cush 312 (008/962); Chinnereth 293–295 one translation. Brook of Egypt 259 holds Easton's whole Egypt article (source quirk).
 - Beth-le-aphrah 216: the KJV "in the house of Aphrah" has no RV1909 words, so the contrast is lost. Bethlehem 218's loose quote is longer than Easton's. Beth-millo "torre de Sichêm" (verse spelling).
 - Unsure translated: Bethlehem "by the wayside", Cabul "good for nothing".
+
+## pt 032–033
+- Ethiopia 032, Isa 18:2: the BLIVRE follows the R.V. sense ("gente alta e de pele lisa"), so the A.V. "scattered and peeled" quote is forced to the R.V. words and Easton's contrast is lost: reword in review (a wrong_verse case).
+- Haran: "Charran" kept (LXX/Acts 7:2 spelling). Hermon "orvalho de Hermom" from Ps 133:3 (Easton cites 89:12). Hena: modern "Anah" kept.
+- Numbers keep Easton's commas ("1,700"): normalise in the final pass with 030–031.
