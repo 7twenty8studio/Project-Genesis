@@ -90,3 +90,8 @@ What the translators reported per batch, beyond the review files.
 - Nabal q0 and Moses q23: parts outside the given verse put outside the quotation marks. Moses "(q.v.)" and Nahash "[os amonitas]" moved after their quotations.
 - Molech: BLIVRE renders "your Moloch" as "vosso rei", the same as the R.V. reading Easton contrasts, so it's “vosso Moloque”.
 - Nathan 29/30 identical English entries.
+
+## es 014–015
+- Same wrong verses as pt 014–015 (Joseph q3, q6; Korah q1; Luke q0), plus Zedekiah 1950 q0 (1 Kgs 15:26 given, 2 Kgs 24:19 meant; same wording).
+- Lucius: "Cireneo" (adjective, Acts 13:1) vs the place "Cirene". Judas 1760 q4: RV1909 has no "headlong", only “reventó por medio…” quoted. Aholibamah 1761 "Judía".
+- "$2, 10s." in Joseph kept (Easton probably meant £2 10s).
