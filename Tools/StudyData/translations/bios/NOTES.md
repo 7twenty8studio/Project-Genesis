@@ -128,3 +128,8 @@ What the translators reported per batch, beyond the review files.
 - wrong_verse: Sherezer 2670 q0 (Gen 33:14 given, Zech 7:2 meant); Seraiah 2500 q1 and Shem 2613 q0: the BLIVRE already has the corrected reading Easton contrasts with the KJV, so the KJV wording is translated.
 - Unsure with wrong verses, translated: Paul "a whole year", "a long time"; Sennacherib "In that night"; Peter "From that time forth".
 - Simon Zelotes: the BLIVRE's "o zeloso" for "Canaanite" contradicts Easton, so "cananeu". Zidon/Sidon both "Sidom". Shuah 2727 keeps Easton's missing book number "(Cr 1:32)".
+
+## pt 024–025
+- Abel (025) loose q2: Easton quotes Gen 4:4–5 but the matcher only found v4, so the BLIVRE's v5 ("mas não olhou com bons olhos a Caim…") is missing from the quote. Fix: let the matcher take v5, re-export, redo that entry (both languages).
+- Abronah: A.V. "Ebronah" rendered "Ebrona" to keep the A.V./R.V. contrast. Zavan "chamado também Zaavã" reads oddly.
+- Stephen "He fell asleep" (unsure, wrong Gospel verse) translated "Adormeceu". Tobiah/Urijah lead-ins adjusted so first-person verse runs read well.
