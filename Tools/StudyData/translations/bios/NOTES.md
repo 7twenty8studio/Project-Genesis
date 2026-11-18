@@ -180,3 +180,9 @@ What the translators reported per batch, beyond the review files.
 - Ethiopia 032, Isa 18:2: the BLIVRE follows the R.V. sense ("gente alta e de pele lisa"), so the A.V. "scattered and peeled" quote is forced to the R.V. words and Easton's contrast is lost: reword in review (a wrong_verse case).
 - Haran: "Charran" kept (LXX/Acts 7:2 spelling). Hermon "orvalho de Hermom" from Ps 133:3 (Easton cites 89:12). Hena: modern "Anah" kept.
 - Numbers keep Easton's commas ("1,700"): normalise in the final pass with 030–031.
+
+## pt 034–035
+- wrong_verse: Jordan 653 q3 is Porter's Handbook (not Scripture) with Lev 26:31–34 inside: Porter translated, the inner passage filled with BLIVRE Lev 26:31–34 verbatim.
+- BLIVRE typo Ezra 2:34 "Os filhos de de Jericó" quoted verbatim in Jericho q6: shorten the quote to avoid showing it.
+- Jokmeam "Jocneão" and Joppa "Jafo" keep Easton's A.V. remarks. Joppa q1 joins two reordered runs with "…".
+- Source fragments kept: Italy starts "Acts 18:2…)", Jordan "But besides these two…", Jericho bracket. Duplicates: Holy Place, Hukkok, Jerusalem, Jokmeam, Judea.
