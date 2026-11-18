@@ -138,3 +138,9 @@ What the translators reported per batch, beyond the review files.
 - Glossary: Alexandria was "Alejandrina" and Cyrene "Cireneo" (adjectives): now "Alejandría" and "Cirene" in manual.json. Saul the apostle "Saulo". Thebes kept "No-amón" (pt used "Tebas"; reviewer's choice).
 - wrong_verse: Sherezer, Seraiah, Shem as in pt 022–023.
 - Simon Zelotes: R.V. "Cananaean" → "Cananista", apart from RV1909 "Cananita". Shuah "Cr 1:32" as Easton (probably 1 Chr).
+
+## pt 026–027
+- Glossary: Rameses the pharaoh "Ramsés II" (glossary's "Ramessés" is the place); Rezin "Rezim"; Arphad "Arfade".
+- wrong_verse: Azal (place 126) q1 (2 Kgs 10:24 given, Zech 14:5 meant).
+- Wording quotes where the BLIVRE already has Easton's correction (Arabah, Aram, Ararat, Akrabbim) give the A.V. word; Aram-naharaim's "terra de Arã" loses the A.V. contrast.
+- Amalek: Num 13:29 part outside the quote. Source: Bashan entry cut off ("quatro distritos,"); Baalath-beer unclosed parenthesis; Ashdod, Baalath, Bealoth duplicates.
