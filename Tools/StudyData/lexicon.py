@@ -67,15 +67,32 @@ SIGLUM = re.compile(r"(?<![\w])(?:[A-Z]{2,}[a-z]*|[IVX]+)(?![\w])")
 MARKS = re.compile(r"[†*§]")
 GREEK_STOPS = re.compile(r"[\u037e\u0387][;,.:]?")
 # Words in capitals that aren't sigla, and the ones that change: OT is AT.
-NOT_SIGLA = {"JESUS", "LORD", "GOD", "I", "SEÑOR", "SENHOR", "DIOS", "DEUS", "JESÚS", "QUESTION", "PREGUNTA", "PERGUNTA"}
+NOT_SIGLA = {"TIME", "TIEMPO", "TEMPO", "JESUS", "LORD", "GOD", "I", "SEÑOR", "SENHOR", "DIOS", "DEUS", "JESÚS", "QUESTION", "PREGUNTA", "PERGUNTA"}
 SIGLA_IN = {"OT": "AT"}
 
 
 # STEPBible's slips in the English, fixed before translating (each with why).
+# Grammar abbreviations that look like a STEPBible reference ("Mid. 1." is
+# the middle voice, sense 1), so they're translated, not copied.
+NOT_BOOKS = {"Mid", "Med", "Méd"}
+
 SOURCE_FIXES = {
     # Strong's has "(and irreg. in Exod. 8:17, 18 [Heb. 13, 14])": the Hebrew
     # Bible's verse numbers, which the expansion of "Heb." made Hebrews 13:14.
     ("H3654", "derivation"): ("Exodus 8:17,18; Hebrews 13:14", "Exodus 8:17,18 [Hebrew 8:13,14]"),
+    # A scanning slip in πειράζω's article: "af6ictions" is "afflictions".
+    # Words run into a siglum or a reference.
+    ("G0237", "definition"): ("(seeMM", "(see MM"),
+    ("G0373", "definition"): ("ofIs 11:2", "of Is 11:2"),
+    ("G3636", "definition"): ("forPro.6:6", "for Pro.6:6"),
+    # "WH." is a misread "which" here, not Westcott-Hort.
+    ("G0622", "definition"): ('verb, WH. "', 'verb, which "'),
+    ("G0629", "definition"): ("extent to WH. the word", "extent to which the word"),
+    # "contradict" typed with a Greek omicron.
+    ("G0483", "definition"): ("c\u03bfntradict", "contradict"),
+    # Sophocles' Oedipus Tyrannus, not the Old Testament (OT -> AT otherwise).
+    ("G5418", "definition"): ("Soph., OT, 1387", "Soph., Oedipus Tyrannus, 1387"),
+    **{(s, "definition"): ("af6ictions", "afflictions") for s in ("G3985G", "G3985H", "G3985I")},
 }
 
 
@@ -156,7 +173,8 @@ def masked(text):
 def codes(text, greek):
     """The references copied unchanged: STEPBible's, and in the Greek also
     Abbott-Smith's "Jn 2:13" kind."""
-    found = [(m.start(), m.group(0)) for m in STEP_REFERENCE.finditer(text)]
+    found = [(m.start(), m.group(0)) for m in STEP_REFERENCE.finditer(text)
+             if m.group(0).split(".")[0] not in NOT_BOOKS]
     if greek:
         found += [(m.start(), m.group(0)) for m in SHORT_REFERENCE.finditer(STEP_REFERENCE.sub(lambda m: " " * len(m.group(0)), text))]
     return [code for _, code in sorted(found)]
@@ -197,7 +215,8 @@ def check_field(field, source, text, lang, greek=False):
         problems.append(f"references differ ({[refs.label(r) for r in want[:6]]} -> {[refs.label(r) for r in have[:6]]})")
     if field != "gloss":
         count = max(1, len(text.split()))
-        english = len(bios.ENGLISH.findall(text))
+        # English the lexicon discusses as words is quoted in «» (INSTRUCTIONS.md)
+        english = len(bios.ENGLISH.findall(re.sub(r"«[^»]*»", "", text)))
         if english / count > 0.03 and english > 2:
             problems.append(f"looks untranslated ({english} English words)")
         ratio = len(text) / max(1, len(source))

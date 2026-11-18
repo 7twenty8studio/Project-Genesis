@@ -849,9 +849,10 @@
   },
   {
    "strongs": "G0237",
-   "sha256": "ac69ac2b2191a40119beeba0aa92479495f8f901a95c13e753aad4ef63e1e014",
+   "sha256": "1a6b4f01b0f25204ee33c2e1ed9de1d8ec4d10d50b01be4df37a48de7d75d871",
    "gloss": "de outro lugar",
-   "definition": "ἀλλαχόθεν\nadv. (ἀλλος), [na LXX: 4Ma.1:7 * ;] = ἀλλοθεν (veja MM, VGT, veja a palavra)\nde outro lugar: Jhn.10:1.†"
+   "definition": "ἀλλαχόθεν\nadv. (ἀλλος), [na LXX: 4Ma.1:7 * ;] = ἀλλοθεν (veja MM, VGT, veja a palavra)\nde outro lugar: Jhn.10:1.†",
+   "note": "Source '(seeMM' lacks a space, so the check does not count its MM; written 'veja MM' (the check then reports an extra MM)."
   },
   {
    "strongs": "G0238",

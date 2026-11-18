@@ -1,0 +1,969 @@
+{
+ "batch": "030",
+ "lang": "pt",
+ "entries": [
+  {
+   "strongs": "G0245",
+   "sha256": "7858a058395c239e8cb7c36fc63670f705c81d993ef7aa89afe4bbdcd964d09d",
+   "gloss": "alheio",
+   "definition": "ἀλλότριος, -α, -ον\n(ἄλλος), [na LXX por זוּר, נֵכָר, אַחֵר ;]\n1. pertencente a outro, não próprio (oposto a ἴδιος): Luk.16:12, Rom.14:4 15:20 (Field, Notes, 165 s.), 2Co.10:15-16, 1Ti.5:22, Heb.9:25.\n2. estrangeiro, estranho, alheio (oposto a οἰκεῖος; veja MM, VGT, veja a palavra): Mat.17:25-26, Jhn.10:5, Act.7:6, Heb.11:9, 34.†"
+  },
+  {
+   "strongs": "G0246",
+   "sha256": "faa09edeb682f8dff518586087c40090bbee2d4a44b9e0def4e000e5a40ad247",
+   "gloss": "estrangeiro",
+   "definition": "ἀλλόφυλος, -ον\n(ἄλλος, φῦλον, uma tribo), [na LXX principalmente por פְּלֶשֶׁת ;]\nestrangeiro, de outra raça (MM, VGT, veja a palavra); em oposição a um judeu, um gentio: Act.10:28.†"
+  },
+  {
+   "strongs": "G0247",
+   "sha256": "2e4aefb4a1507c8630e6e6c21b5504b7d647f2d0d592b0333ff1c23d68450a5b",
+   "gloss": "de outro modo",
+   "definition": "ἄλλως\nadv. (ἄλλος),\nde outro modo: 1Ti.5:25.†"
+  },
+  {
+   "strongs": "G0248",
+   "sha256": "340294715ce812fe5a10eac3733ab5c7eb66f65ff39137777c39e6aa3d2aecc1",
+   "gloss": "debulhar",
+   "definition": "ἀλοάω, -ῶ\n(ἅλως, veja: ἅλων; e cf. MM, VGT, veja a palavra), [na LXX principalmente por דּוּשׁ ;]\ndebulhar: 1Co.9:9 9:13; 1Ti.5:18.†"
+  },
+  {
+   "strongs": "G0249",
+   "sha256": "e72f99a48f2a0e2404b8081c90778d64557d604036829041b137292e0a5d863c",
+   "gloss": "irracional",
+   "definition": "ἄ-λογος, -ον\n[na LXX: Exo.6:12 (שָׂפָה עָרֵל), Num.6:12 (נָפַל), Job.11:12, Wis.11:15-16, 4Ma.3:1-21 * ;]\n1. sem razão, irracional: ζῷα, 2Pe.2:12, Ju 10.\n2. contrário à razão: Act.25:27 (veja MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0250",
+   "sha256": "89817de94221f2b568caf301b55c2b3ca2aee004e2abb0cce122d434801eb275",
+   "gloss": "aloés",
+   "definition": "ἀλόη, -ης, ἡ\n[na LXX: Sng.4:14 א (אֲהָלִים)* ;]\no aloés (o pó de uma madeira aromática): Jhn.19:39.†"
+  },
+  {
+   "strongs": "G0251",
+   "sha256": "ecd72ecc83e36602e9b7cbab1954218b21ebda8b7ce9111a774aaff77bd23e94",
+   "gloss": "sal",
+   "definition": "ἅλς, ἁλός, ὁ\nvariante de ἅλας (veja): Mrk.9:49, Rec. WH, mg., R, mg.†"
+  },
+  {
+   "strongs": "G0252",
+   "sha256": "67f37142904c7e74032e0fc58b6f6a74708a25090ae8fbb55c81b54cd8e56aff",
+   "gloss": "salgado",
+   "definition": "ἁλυκός, -ή, -όν\n(ἅλς), [na LXX por מְלַח, שִׂדִּים ;]\nsalgado: Jas.3:12.†"
+  },
+  {
+   "strongs": "G0253",
+   "sha256": "f93e875efde46ac98de963bb8ef6d541dab0599cd959448c42c25c91fef3eb26",
+   "gloss": "sem ansiedade",
+   "definition": "ἄλυπος, -ον\n(λύπη),\nlivre de tristeza: Php.2:28.†"
+  },
+  {
+   "strongs": "G0254",
+   "sha256": "e7c907294a748c3aff868ec0db4b04791537df885ba4cb5795cc3bfc4f13f643",
+   "gloss": "corrente",
+   "definition": "ἅλυσις, -εως, ἡ\n[na LXX: Wis.17:17 * ;]\numa corrente, cadeia: Mrk.5:3-4, Luk.8:29, Act.12:6-7 21:33 28:20, Eph.6:20, 2Ti.1:16, Rev.20:1.†"
+  },
+  {
+   "strongs": "G0255",
+   "sha256": "b7bd141a3a273f7dbfe8c7ebf5bd9ec896fc088386b1e59de913846304e6e562",
+   "gloss": "sem proveito",
+   "definition": "ἀ-λυσιτελής, -ές\n(cf. λυσιτελέω), sem proveito: Heb.13:17.†"
+  },
+  {
+   "strongs": "G0256G",
+   "sha256": "810163103b3714deca5d1581b99ff6268114e45e6015517cc1ad6bdfb152a591",
+   "gloss": "Alfeu",
+   "definition": "Ἀλφαῖος (WH, Ἀλ-), -ου, ὁ (aram. חַלְפַּי)\nAlfeu.\n1. Pai de Levi: Mrk.2:14.\n2. Pai de Tiago: Mat.10:3, Mrk.3:13, Luk.6:15, Act.1:13.†"
+  },
+  {
+   "strongs": "G0256H",
+   "sha256": "810163103b3714deca5d1581b99ff6268114e45e6015517cc1ad6bdfb152a591",
+   "gloss": "Alfeu",
+   "definition": "Ἀλφαῖος (WH, Ἀλ-), -ου, ὁ (aram. חַלְפַּי)\nAlfeu.\n1. Pai de Levi: Mrk.2:14.\n2. Pai de Tiago: Mat.10:3, Mrk.3:13, Luk.6:15, Act.1:13.†"
+  },
+  {
+   "strongs": "G0257",
+   "sha256": "caecff851440ad19937ef6153569df93ba8e0daee189beef0166d3d20f25c0d7",
+   "gloss": "eira",
+   "definition": "ἅλων, -ωνος\n(pelo ático ἅλως, -ω, veja MM, VGT, veja a palavra), ἡ, [na LXX principalmente por גֹּרֶן ;]\numa eira: Mat.3:12, Luk.3:17 (aqui prob. por meton. = o grão na eira).†"
+  },
+  {
+   "strongs": "G0258",
+   "sha256": "c0558aff6518d04fdb055d52a45c5ead75c42d9ccf004576491e17fa5e41d1a0",
+   "gloss": "raposa",
+   "definition": "ἀλώπηξ, -εκος, ἡ\n[na LXX por שׁוּעָל ;]\numa raposa: Mat.8:20, Luk.9:58; metaforicamente, de Herodes, Luk.13:32.†"
+  },
+  {
+   "strongs": "G0259",
+   "sha256": "80e8b81af74a4a290110822ad89688a5f5a77c675ad300342bbe8d3c2a66f21d",
+   "gloss": "captura",
+   "definition": "ἅλωσις, -εως, ἡ\n(ἁλίσκομαι), [na LXX: Jer.50:46 (תָּפַשׂ ni.)* ;]\num apanhar, captura: 2Pe.2:12.†"
+  },
+  {
+   "strongs": "G0260",
+   "sha256": "d489338b399779d9fdef78e47ad2f769d6c63d219bf259ef3e0406adae09da0b",
+   "gloss": "juntamente",
+   "definition": "ἅμα\nadv.,\nao mesmo tempo (lat. simul): Act.24:26 27:40, Rom.3:12 (todos juntos = יַחַד, Psa.14:3), Col.4:3, 1Ti.5:13, Phm 22; antes de σύν, 1Th.4:17 5:10; como prep. com dativo, juntamente com: Mat.13:29 (veja MM, VGT, veja a palavra); também, com adv., ἅ. πρωΐ (cl., ἅ. ἕω, etc.), de manhã cedo: Mat.20:1.†"
+  },
+  {
+   "strongs": "G0261",
+   "sha256": "49806dbc578a1a64898b6c6fb4b4f10107077f8f1c784472e63a827b4c78c482",
+   "gloss": "ignorante",
+   "definition": "ἀμαθής, -ές\n(μανθάνω), [em Sm.: Psa.49:11 * ;]\ninculto, ignorante: 2Pe.3:16 (sobre a raridade desta palavra, veja MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0262",
+   "sha256": "9f3283e6cb8584d8ddfb613528e805491e7b53425d7da511d8ddec95390342e4",
+   "gloss": "imarcescível",
+   "definition": "ἀμαράντινος, -ον\n(ἀμάραντος),\nde amaranto (inscr.); daí, que não murcha: 1Pe.5:4.†"
+  },
+  {
+   "strongs": "G0263",
+   "sha256": "0c1c1f4bf009b3fdd5db8f0eb450052009213e18152b5d20223caa1a58f0776b",
+   "gloss": "imarcescível",
+   "definition": "ἀμάραντος, -ον\n(μαραίνομαι), [na LXX: Wis.6:12 (σοφία)* ;]\nque não murcha (donde ὁ ἀ., o amaranto, uma flor que não murcha): 1Pe.1:4 (cf. MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0264",
+   "sha256": "2352e5f96200f68729d742d3039b224c30f397dd5b8970ba6973797e22922fb5",
+   "gloss": "pecar",
+   "definition": "ἁμαρτάνω\n(presente formado do aor. ἁμαρτεῖν), [na LXX por חָטָא, também por אָשַׁם, רָשַׁע, etc. ;]\n1. errar o alvo (Hom., Æsch., al.); daí, metaforicamente (Hom., al.), errar, fazer o mal\n2. Na LXX e no NT, violar a lei de Deus, pecar (para exs. não cristãos, veja MM, VGT, veja a palavra): absol., Mat.18:25 27:4, Luk.17:3, Jhn.5:14 8:11 9:2-3 Rom.2:12 3:23 5:12, 14 5:16 6:15, 1Co.7:28 7:36 15:34, Eph.4:26, 1Ti.5:20, Tit.3:11, Heb.3:17 10:26, 1Pe.2:20, 2Pe.2:4 2:4 1Jn.1:10 Jn 2:1 Jn 3:6-9 Jn 5:18; com acusativo cogn., ἁ. ἁμαρτίαν (cf. Exo.32:30, חֲטָאָה חָטָא), 1Jn.5:16; antes de εἰς, Mat.18:21, Luk.15:18, 21 17:4, Act.25:8 (καίσαρα). 1Co.6:18 8:12 (Field, Notes, 173); ἐνώπιον, Luk.15:18, 21; πρὸς θάνατον (cf. Num.18:22, מוּת חֵטְא), 1Jn.5:16 (Cremer, 98, 633).†"
+  },
+  {
+   "strongs": "G0265",
+   "sha256": "09704e075b90a95fea79383742ea95d55e1a2d0f718df5fc674cf12d955b7a59",
+   "gloss": "pecado",
+   "definition": "ἁμάρτημα, -τος, τό\n(ἁμαρτεῖν, veja supr.), [na LXX por חַטָּאָה, עָוֺן etc. ;]\num ato de desobediência à lei divina (Lft., Notes, 273), uma ação pecaminosa, um pecado: Mrk.3:28-29, Rom.3:25, 1Co.6:18, 2Pe.1:9, WH, mg.; αἰώνιωv ἀ. (DCG, i, 788a), Mrk.3:29 (para exs. dos π., veja MM, VGT, veja a palavra).†\nSYN.: ἀγνόημα, ἁμαρτία, ἀνομία, ἀσέβεια, ἥττημα, παράβασις, παρακοή, παρανομία, παράπτωμα (ν. Cremer, 100; Tr., Syn., § lxvi; DB, iv, 532; DCG, l.c.; Westc, Eph., 165 s.)",
+   "note": "Source 'l.with' is a garbled 'l.c.' (loco citato): rendered 'l.c.'; the Greek 'ν.' (for 'v.', vide) is the source's and kept."
+  },
+  {
+   "strongs": "G0266",
+   "sha256": "ec64b1931e3326cab3d478608e5b9cd5f7bc1a591a1598117fb26302f9a197e1",
+   "gloss": "pecado",
+   "definition": "ἁμαρτία, -ας, ἡ\n(ἁμαρτάνω, veja), [na LXX principalmente por חַטָּאת e formas cogn., também por פֶּשַׁע ,עָוֹן, etc. ;]\nprop., um errar o alvo; no cl. (veja as reff. a CR em MM, VGT, veja a palavra);\n(a) culpa, pecado (Plat., Arist., al.);\n(b) mais freq., de Æsch. em diante, uma falta, falha. No NT (como na LXX) sempre em sentido ético;\n1. como princípio e qualidade da ação, = τὸ ἁμαρτάνειν, um pecar, pecado: Rom.5:12, 13 20; ὑφ᾽ ἁμαρτίαν εἶναι, Rom.3:9; ἐπιμένειν, Rom.6:1; ἀποθνήσκειν, νεκρὸν εἶναι τῇ ἁ., Rom.6:2, 11; τὴν ἀ. γινώσκειν, Rom.7:7; σῶμα τῆς ἁ., Rom.6:6; ἀπάτη τῆς ἁ., Heb.3:13; personificado como princípio dominante, ἁ. βασιλεύει, κυριεύει, etc., Rom.5:21 6:12, 14 7:17, 20; δουλεύειν, Rom.6:6; δοῦλος τῆς ἁ., ib. 17; νόμος τῆς ἁ., Rom.7:23 8:2; δύναμις τῆς ἁ., 1Co.15:56 (cf. Gen.4:7).\n2. Como termo genérico (disting. dos termos específicos ἁμάρτημα, veja, etc.) para a transgressão concreta, a violação da lei divina, pecado: Jhn.8:46, Jas.1:15, al.; ποιεῖν (τὴν) ἁ., Jhn.8:34, 2Co.11:7, 1Jn.3:8; εἴχειν ἁ., Jhn.9:41 15:22, 24 19:11, 1Jn.1:8; no pl. ἁμαρτίαι, o pecado em seu conjunto, 1Th.2:16 (veja Milligan, em l.); ποιεῖν ἁμαρτίας, Jas.5:15; πλῆθος ἁμαρτιῶν, Jas.5:20, 1Pe.4:8; ἄφεσις ἁμαρτιῶν, Mat.26:28, Mrk.1:4, al.; ἐν ἁμαρτίαις εἶναι, 1Co.15:17; coletivamente, αἴρειν τὴν ἁ. τ. κόσμου, Jhn.1:29; ἀποθνήσκειν ἐν τῇ ἁ., Jhn.8:21.\n3. = ἁμάρτημα, uma ação pecaminosa, um pecado: Mat.12:31, Act.7:60, 1Jn.5:16.\nSYN.: veja: ἁμάρτημα."
+  },
+  {
+   "strongs": "G0267",
+   "sha256": "cb329a2173d42bbe1578b5a79ce74a1943efa68e263d9e12b3a9c612f424556d",
+   "gloss": "sem testemunho",
+   "definition": "ἀμάρτυρος, -ον\n(μάρτυς),\nsem testemunho: Act.14:17.†"
+  },
+  {
+   "strongs": "G0268",
+   "sha256": "046b08cf75eab1e4a20a011223ed547cc1c09ea998cf39ffde46f6afc8550d45",
+   "gloss": "pecador",
+   "definition": "ἁμαρτωλός, -όν\n(ἁμαρτάνω), [na LXX principalmente por רָשָׁע ;]\npecaminoso, um pecador: de todos os homens, 1Ti.1:15; dos especialmente perversos, 1Ti.1:9, 1Pe.4:18; p1., Mat.9:10-13 11:19 26:45, al. (veja MM, VGT, veja a palavra; Cremer, 102, 634)"
+  },
+  {
+   "strongs": "G0269",
+   "sha256": "9feff303bbee68b06ffa80a0bbc5cb31b158bb949d93109fbe9657523e3a2283",
+   "gloss": "pacífico",
+   "definition": "ἄμαχος, -ον\n(μάχη);\n1. invencível (frequentemente no cl.).\n2. que se abstém de lutar, não combatente (Xen.). Metafórico (cf. MM, VGT, veja a palavra), não contencioso: 1Ti.3:3, Tit.3:2.†"
+  },
+  {
+   "strongs": "G0270",
+   "sha256": "a0d8c0b5b321d68ed68585ae59e26220c2689fbeb93704d3b1fd196de7bebf0a",
+   "gloss": "ceifar",
+   "definition": "ἀμάω, -ῶ\n(no cl. principalmente poét.),\nceifar: Jas.5:4.†"
+  },
+  {
+   "strongs": "G0271",
+   "sha256": "dfc14839c8ee3f3d0e99e5367d4d17eb3f556ba4a3a7f6d35e22d309603e0c0d",
+   "gloss": "ametista",
+   "definition": "ἀμέθυστος, -ου, ἡ\n(segundo Plut., ἀ- μεθύω, por ser considerada um antídoto contra a embriaguez) [na LXX: Exo.28:19 36:19 39:12 Eze.28:13 * ;]\nametista, um quartzo púrpura: Rev.21:20.†",
+   "note": "Source 'accusative to Plut.' is a garbled 'acc. to' (according to): rendered 'segundo'."
+  },
+  {
+   "strongs": "G0272",
+   "sha256": "b02d6074874471adbae113624460dc7abbe8069d763976fc29c1bad8375f1fa1",
+   "gloss": "negligenciar",
+   "definition": "ἀμελέω, -ῶ\n(μέλει), [na LXX: Jer.4:17 (מָרָה) Jer.31:32 (בַּעַל), Wis.3:10, 2Ma.4:14 * ;]\n(a) absol., ser descuidado, não se importar: Mat.22:5;\n(b) com genitivo, descuidar-se de, negligenciar: 1Ti.4:14, Heb.2:3 8:9 (veja MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0273",
+   "sha256": "9e525f883f62ce29ad6cf570ec2999f23cc6597b398953d025a3ad94682c3121",
+   "gloss": "irrepreensível",
+   "definition": "ἄ-μεμπτος, -ον\n(μέμφομσι), [na LXX principalmente por תָּם ;]\nirrepreensível, sem falta (nos π., de um contrato de casamento; M, Th., I, 3:13; cf. MM, VGT, veja a palavra): Luk.1:6, Php.2:15 3:6, 1Th.3:13 (WH, mg., -ως) Heb.8:7.†\nSYN.: ἄμωμος, ἀνέγκλητος, ἀνεπίλημπτος, veja (Tr., Syn., § ciii)"
+  },
+  {
+   "strongs": "G0274",
+   "sha256": "e864d7f1f52d7491df3d2be0593c08846771a220e41685365f86e640cb29d48e",
+   "gloss": "irrepreensivelmente",
+   "definition": "ἀ-μέμπτως,\nadv. (ἄμεμπτος), [na LXX: Est.3:13 * ;]\nirrepreensivelmente (Lft., Notes, 28, 89; MM, VGT, veja a palavra -ος): 1Th.2:10 3:13 WH mg., 5:23.†"
+  },
+  {
+   "strongs": "G0275",
+   "sha256": "f887378f5fcd44f178cc806bdb43e2bcfb8d23b8c847a3adfcac56492a471de0",
+   "gloss": "tranquilo",
+   "definition": "ἀμέριμνος, -ον\n(μέριμνα), [na LXX: Wis.6:15 7:23 * ;]\nlivre de ansiedade ou preocupação: Mat.28:14, 1Co.7:32 (para exs., veja MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0276",
+   "sha256": "595a7035d9fb3243fee07d1bba8151601fb07adb3ef9cba0d3bb902f51ed5636",
+   "gloss": "imutável",
+   "definition": "ἀ-μετάθετος, -ον\n(μετατίθημι), [na LXX: 3Ma.5:1 3Mac 5:12 * ;]\nimutável: Heb.6:18; como subst., τὸ ἀ., imutabilidade, Heb.6:17 (veja MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0277",
+   "sha256": "f5251a38d6d5b80407a6437289f0879e1c5a6675f1c45b8051293bac7935ff8b",
+   "gloss": "inabalável",
+   "definition": "ἀ-μετα-κίνητος, -ον\n(μετακινέω),\ninabalável, firme: 1Co.15:58.†"
+  },
+  {
+   "strongs": "G0278",
+   "sha256": "4a0cad2a1f50f5abfbee1cb9d585bfcc1d90f840a6ccb436c20facd750aee5ea",
+   "gloss": "irrevogável",
+   "definition": "ἀ-μεταμέλητος, -ον\n(μεταμέλομαι),\nde que não se arrepende, sem pesar: Rom.11:29, 2Co.7:10.†"
+  },
+  {
+   "strongs": "G0279",
+   "sha256": "6cde18ba9141ee075d9ba0b3ce00b8a23c012078f13f8549e613c405ba7f83de",
+   "gloss": "impenitente",
+   "definition": "ἀμετανόητος, -ον\n(μετανοέω)\n1. impenitente: Rom.2:5\n2. = ἀμεταμέλητος (π., Philo, al.; veja Deiss., BS, 257; MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0280",
+   "sha256": "6266f3f8c4be56a2253cc8e82692dda6c8e4c4aa58ba79bccf54ee32f72df5bf",
+   "gloss": "desmedido",
+   "definition": "ἄμετρος, -ον\n(μέτρον),\nsem medida: adverbialmente, εἰς τὰ ἄ., excessivamente, 2Co.10:13 10:15†"
+  },
+  {
+   "strongs": "G0281",
+   "sha256": "92a8fc2f1fa802bac536db2c72f43a642752f1a8fd4cdaee2811748225e7a7e0",
+   "gloss": "amém",
+   "definition": "ἀμήν, indecl. (heb. אָמֵן, adj. verbal de אמן, sustentar; ni., ser firme),\n[na LXX: 1Ch.16:36, I Est.9:46, Neh.5:13 8:6, Tob.8:8 14:15, 3Ma.7:23, 4Ma.18:24 (em outros lugares ''א é traduzido por ἀληθινός, Isa.65:16; ἀληθῶς, Je 35 (28):6; γένοιτο, Num.5:22, Deu.27:15ss., 3Ki.1:36, Psa.40 (41):13 71 (72):19 105 (106):48, Jer.11:5)*.]\n1. Como adj. (cf. Is, l.c.), ὁ ἀ., Rev.3:14.\n2. Como adv.,\n(a) em assentimento solene às declarações ou orações de outro (Nu, Ne, etc., ll. c.): ὁ ἀ., 1Co.14:16;\n(b) de modo semelhante, no fim da própria oração ou atribuição de louvor: Rom.1:25 15:33, Gal.1:5, 1Ti.1:17;\n(c.) nos Evangelhos, exclusivamente, introduzindo declarações solenes de nosso Senhor, em verdade, verdadeiramente: Mat.5:18, 26 Mrk.3:28 (veja Swete, em l.), Luk.4:24, al.; ἀ. ἀ., sempre em Jhn.1:52 3:3 5:19, al.; τὸ ναί, καὶ . . . τὸ ἀ., 2Co.1:20 (sobre o uso nos π., veja MM, VGT, veja a palavra).",
+   "note": "Source 'l.with' / 'll. with' are garbled 'l.c.' / 'll. c.', and '(with) in the Gospels' a garbled '(c)' (the third sense): rendered 'l.c.', 'll. c.' and '(c.)'."
+  },
+  {
+   "strongs": "G0282",
+   "sha256": "9afa3f395e884170cdc7f2cae849e3bc632e1307366bb24abcca756c2e6559d7",
+   "gloss": "sem mãe",
+   "definition": "ἀμήτωρ, -ορος, ὁ, ἡ\n(μήτηρ), sem mãe (frequentemente nos escritores gr., dos deuses): ἀπάτωρ ἀ.\nde alguém sem genealogia registrada, Heb.7:3 (cf. MM, VGT, veja a palavra)"
+  },
+  {
+   "strongs": "G0283",
+   "sha256": "74c25aa2d79049efd252e555351123f6214b39d573cd59abbb8a7cfb610332e9",
+   "gloss": "puro",
+   "definition": "ἀ-μίαντος, -ον\n(μιαίνω), [na LXX: Wis.3:13 4:2 8:20, 2Ma.14:36 2Mac 15:34 * ;]\nincontaminado, livre de contaminação (nos π., do αἰθήρ; MM, VGT, veja a palavra): Heb.7:26 13:4, 1Pe.1:4, Jas.1:27.†\nSYN.: ἄμωμος, ἄσπιλος (Cremer, 784)"
+  },
+  {
+   "strongs": "G0284",
+   "sha256": "f947391f5d06f9d1cbf5d723d8f2c7c659fad4cdd241931604934194db103d4d",
+   "gloss": "Aminadabe",
+   "definition": "Ἀμιναδάβ, ὁ indecl. (heb עַמִּינָדָב),\nAminadabe: Mat.1:4, Luk.3:33 (WH om.).†"
+  },
+  {
+   "strongs": "G0285",
+   "sha256": "3ff8875557c5a92bb9edb2edfb1a4caa1064da39933586b17912de42f964b4ff",
+   "gloss": "areia",
+   "definition": "ἄμμος, -ου, ἡ\n[na LXX principalmente por חוֹל ;]\nareia, terreno arenoso: Mat.7:26, Rom.9:27, Heb.11:12, Rev.18:1, Rev.20:8.†"
+  },
+  {
+   "strongs": "G0286",
+   "sha256": "4a1c8bcfed7f495b8fc3a4a304950f1a6c579911e4b527b30d7ae54155887ca2",
+   "gloss": "cordeiro",
+   "definition": "ἀμνός, -οῦ, ὁ\n[na LXX principalmente por כֶּבֶשׂ ;]\num cordeiro: figuradamente, de Cristo (DCG, ii, 620b), Jhn.1:29, 36, Act.8:32\" (LXX), 1Pe.1:19 (cf. ἀρνίον; Cremer, 102, 635).†"
+  },
+  {
+   "strongs": "G0287",
+   "sha256": "dda987138daf2f9dde940a309272dd12f5b592cb33e4c83c45028b0cdb947ba3",
+   "gloss": "retribuição",
+   "definition": "ἀμοιβή, -ῆς, ἡ\n(ἀμείβομαι, retribuir); [em Aq., Sm.: Pro.12:14, al. ;]\nretribuição, recompensa: 1Ti.5:4 (para ilustração dos τ.. veja MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0288",
+   "sha256": "c088ea73a928a49a6e08707e7070888e5c43c8895c0e554cceb1da1033ecd5b9",
+   "gloss": "videira",
+   "definition": "ἄμπελος, -ου, ἡ\n[na LXX por גֶּפֶן ;]\nvideira: Mat.26:29, Mrk.14:25, Luk.22:18 Jas.3:12; figuradamente, de Cristo, Jhn.15:1, 4-5; de seus inimigos (sobre o uso aqui, veja MM, VGT, veja a palavra): Rev.14:18-19.†"
+  },
+  {
+   "strongs": "G0289",
+   "sha256": "b4fdc07719454784f39808fef1a1ff9030a61a5b9cb73419ca9920480e41431c",
+   "gloss": "um vinhateiro",
+   "definition": "ἀμπελουργός, -οῦ, ὁ, ἡ\n[na LXX por כֹּרֵם ;]\num vinhateiro: Luk.13:7.†"
+  },
+  {
+   "strongs": "G0290",
+   "sha256": "7dfcd71e00bfff4ec6d94540cb1237c56ac836d788e099d9bc12c474c19b3406",
+   "gloss": "vinha",
+   "definition": "ἀμπελών, -ῶνος, ὁ\n(ἄμπελος), [na LXX por כֶּרֶם ;]\numa vinha: Mat.20:1 ss. Mat.21:28 ss, Luk.13:6 20:9 ss., 1Co.9:7. Æschin., 49, 13; Diod., al.; veja MM, VGT, veja a palavra; LS, veja a palavra ἀμπελουργεῖον.)"
+  },
+  {
+   "strongs": "G0291",
+   "sha256": "ca4caea840c1505def799c8e3abfe256441ae21d143761693a6db8011f2d78af",
+   "gloss": "Amplíato",
+   "definition": "Ἀμπλιᾶτος (T, -ίατος; Rec. Ἀμπλιᾶς; veja MM, VGT, 5.veja), -ου, ὁ\nAmplíato: Rom.1:6 8:8.†"
+  },
+  {
+   "strongs": "G0292",
+   "sha256": "25831011eef4a03f33e082f2a05eb275db557a7fecf56e46d94d4d052259bb75",
+   "gloss": "defender",
+   "definition": "ἀμύνω\n[na LXX (méd.): Jos.10:13 (נָקַם), נָקַם), Psa.118:10-12 מוּל hi.), Isa.59:16 (יָשַׁע hi.), Wis.11:3, al. ;]\nrepelir etc. Méd.\n(a) defender-se de;\n(b) retribuir;\n(c.) = at., defender, socorrer (Isa, l.c.): com acusativo de pessoa(s), Act.7:24 (MM, VGT, veja a palavra).†",
+   "note": "Source '(with) = act.' is a garbled '(c)' (the third sense after (a), (b)) and 'l.with' a garbled 'l.c.': rendered '(c.)' and 'l.c.'."
+  },
+  {
+   "strongs": "G0293",
+   "sha256": "2638c6688ad757e0a65fc3f5218fc3e9210bc99ecde4261c079d93a9da39fe4f",
+   "gloss": "rede",
+   "definition": "ἀμφίβληστρον, -ου, τό\n(ἀμφιβάλλω), [na LXX principalmente por חֵרֶם ;]\nalgo lançado ao redor, como uma veste; espec., uma tarrafa: Mat.4:18.†"
+  },
+  {
+   "strongs": "G0294",
+   "sha256": "2dad324bfd17d210bff010a19ecf76e68d0a65526976374e1a7fd35608a41e37",
+   "gloss": "vestir",
+   "definition": "ἀμφιέννυμι\n(ἕννυμι, vestir),\nvestir: Mat.6:30 11:8, Luk.7:25 (cf. ἀμφιάζω).†"
+  },
+  {
+   "strongs": "G0295",
+   "sha256": "7ac59608c56cd3e8acde3a34bde91601f53f2fd5e35be76ef7be6f33acf8e65f",
+   "gloss": "Anfípolis",
+   "definition": "Ἀμφίπολις, -εως, ἡ\nAnfípolis, na Macedônia, assim chamada porque o rio Estrimão corria ao seu redor: Act.17:1.†"
+  },
+  {
+   "strongs": "G0296",
+   "sha256": "d451bb5b718355487525d0e461b670b2a5c2ab6e9e2aee571bc242011733c18f",
+   "gloss": "rua",
+   "definition": "ἄμφοδον, -ου, το\n(ἀμφί ὁδός), [na LXX por אַרְמוֹן (Jer.17:27 30:10 49:27)* ;]\nprop., uma estrada em volta de alguma coisa (RV, the open street): Mrk.11:4, Act.19:28, WH, mg.†",
+   "note": "RV's English rendering 'the open street' kept as quoted."
+  },
+  {
+   "strongs": "G0297",
+   "sha256": "649574a86a3394ae72d372512958afc0ecc7be6f631ca16e761f5e51c74dcb6d",
+   "gloss": "ambos",
+   "definition": "ἀμφότεροι, -αι, -α\n(substitui ἄμφω na κοινή, V. M, Pr., 57; usado de mais de dois, Pr., 80; MM, VGT, veja a palavra), ambos (de dois): Mat.9:17, al."
+  },
+  {
+   "strongs": "G0298",
+   "sha256": "cb2e4ec7379a60a7647e8bebe0e194e0129204a8f739096ac5c3a4e7bcbf3f45",
+   "gloss": "irrepreensível",
+   "definition": "ἀ-μώμητος, -ου\n(μωμάομαι),\nirrepreensível: 2Pe.3:14.†\nSYN.: ἄμεμπτος (veja), ἀνέγκλητος, ἀνεπίλημπτος"
+  },
+  {
+   "strongs": "G0299",
+   "sha256": "00116397ad18b4a50382d40cd4a8cbf5ffe1a07b43ce15a582e7fc732d0ecb53",
+   "gloss": "irrepreensível",
+   "definition": "ἄ-μωμος, -ον\n(μῶμος, veja), [na LXX principalmente por תָּמִים ];\nde vítimas sacrificiais, sem defeito: de Cristo, Heb.9:14, 1Pe.1:19; eticamente, sem mácula, sem falta: Eph.1:4 5:27, Php.2:15, Col.1:22, Ju 24, Rev.14:5 (Cremer, 425, 788; MM, VGT, veja a palavra).†\nSYN.: ἀμίαντος, ἄσπιλος"
+  },
+  {
+   "strongs": "G0300",
+   "sha256": "e72d45e30ac07c7ca889ec94942e817c62eea53e816b956429420e14fa1be2bb",
+   "gloss": "Amós",
+   "definition": "Ἀμών, ὁ indecl. (heb. אָמוֹן),\nAmom, rei de Judá: Mat.1:10 (Rec.).†"
+  },
+  {
+   "strongs": "G0301G",
+   "sha256": "7bc6d1e4d60bd9ae0e6a929babb7613047efec2c926e4e01857cc9b81be1df97",
+   "gloss": "Amós",
+   "definition": "Ἀμώς, ὁ indecl. (heb. אָמוֹץ, Isa.1:1; עָמוֹס, Amo.1:1; אָמוֹן, 4Ki.21:18 ss. B)\n1. como em 2Ki, Lc. B (Α. Ἀμμών; Jos., Ἀμμών, \"Αμωσσς), Amom: Mat.1:10.\n2. Amós: Luk.3:25.†"
+  },
+  {
+   "strongs": "G0301H",
+   "sha256": "7bc6d1e4d60bd9ae0e6a929babb7613047efec2c926e4e01857cc9b81be1df97",
+   "gloss": "Amós",
+   "definition": "Ἀμώς, ὁ indecl. (heb. אָמוֹץ, Isa.1:1; עָמוֹס, Amo.1:1; אָמוֹן, 4Ki.21:18 ss. B)\n1. como em 2Ki, Lc. B (Α. Ἀμμών; Jos., Ἀμμών, \"Αμωσσς), Amom: Mat.1:10.\n2. Amós: Luk.3:25.†"
+  },
+  {
+   "strongs": "G0302",
+   "sha256": "414a6df29232d1bb5bdab43695ce65bbee27578715320dea6d42fd0ab9929c40",
+   "gloss": "se",
+   "definition": "ἄν,\npartícula condicional,\nque geralmente não pode ser traduzida separadamente em inglês, dependendo sua força das construções que a contêm (veja ainda LS, veja a palavra; WM, §xlii; M, Pr., 165 ss.; MM, VGT, veja a palavra).\n1. Na apódose,\n(i) com indic. imperfeito ou aor., exprimindo o que seria ou teria sido se (εἰ com impf., aor. ou m.-q.-perf.) alguma condição se cumprisse ou se tivesse cumprido: Luk.7:39 17:6, Jhn.5:46, Gal.1:10, Mat.12:7 24:43, 1Co.2:8, Act.18:14, 1Jn.2:19, al. A prótase às vezes fica subentendida (como também no cl.): Mat.25:27, Luk.19:23. Em frases hipotéticas que exprimem irrealidade, ἄν (como muitas vezes nos escritores tardios, mais raramente no cl.) é omitido: Jhn.8:39 15:24 19:11, Rom.7:7, Gal.4:15;\n(ii) com opt., inf., part. (cl.; veja LS, veja a palavra; M, Int., §275; M, Pr., 167:4).\n2. Em combinação com palavras condicionais, relativas, temporais e finais;\n(i) como no cl., com subj.,\n(a) na prótase com εἰ, na contr. ática ἐάν, veja;\n(b) em orações condicionais, relativas e temporais (fundindo-se com ὅτε, ἐπεί, etc.; veja: ὅταν, ἐπάν, etc.), -quer que, quer que seja;\n(α) com pres., ἡνίκα, 2Co.3:15; ὃς ἄν, Rom.9:15 (LXX) 16:2, al.; ὅσοι ἄν, Luk.9:5; ὡς ἄν, Rom.15:24 (M, Pr., 167);\n(β) com aor., ὃς ἄν, Mat.5:21, 22, 31; ἕως ἄν, até que, Mat.2:13, Mrk.6:10, al.; ὡς ἄν, logo que (M, Pr., 167), 1Co.11:34, Php.2:23. Sobre o uso frequente de ἐάν por ἄν com as palavras precedentes, veja: ἐάν;\n(ii) no gr. tardio, quando se fala de algum fato real, com indic.: ὅταν (veja); ὅπου ἄν, Mrk.6:56 (M, Pr., 168); καθότι ἄν, Act.2:45 4:35; ὡς ἄν, 1Co.12:2.\n3. em construção iterativa, com imperfeito e aor. indic. (M, Pr., 167): Act.2:45 4:35, 1Co.12:2.\n4. com optativo, dando sentido potencial a uma pergunta ou desejo: Act.8:31 26:29.\n5. Construções elípticas: εἰ μή τι ἄν (M, Pr., 169), 1Co.7:5; ὡς ἄν, com inf., como que (op. cit. 167), 2Co.10:9."
+  },
+  {
+   "strongs": "G0303",
+   "sha256": "1a64105e9c9ef6e0acbc0c69a3a95b3aaccee7040ee80b07a07249242a94d6f1",
+   "gloss": "cada",
+   "definition": "ἀνά\nprep. (a mais rara no NT; M, Pr., 98; MM, VGT, veja a palavra), prop.,\npara cima, acima, sempre com acusativo\n1. Em frases: ἀ. μέσον, entre, no meio de, com genitivo, Mat.13:1-58 25:1-46, Mrk.7:31, 1Co.6:5 (M, Pr., 99), Rev.7:17 [assim na LXX por בְּתוׄך׃]; ἀ. μέρος, por sua vez, 1Co.14:27 (ambos encontrados em Polyb.; cf. MGr. ἀνάμεσα).\n2. Distrib., cada um, por: Mat.20:9-10, Luk.9:3 (WH om.), Luk.9:14 Luk.10:1, Jhn.2:6, Rev.4:8.\n3. Adverbialmente (\"um vulgarismo\", B1., § 51, 5; cf. Deiss., BS, 139 s.), ἀ. εἷς ἕκαστος, Rev.21:21.\nComo prefixo, ἀ. significa\n(a) para cima: ἀναβαίνειν;\n(b) a: ἀναγγέλλειν;\n(c.) de novo: ἀναγεννᾶν;\n(d) para trás: ἀνακάμπτειν.†",
+   "note": "Source '(with) anew' is a garbled '(c)' (the third sense after (a), (b)): rendered '(c.)'."
+  },
+  {
+   "strongs": "G0304",
+   "sha256": "800ebe0a24089f3c77c5513d9b8025bc844bdf479fabd37702c0bdc3e71ec332",
+   "gloss": "escadas",
+   "definition": "ἀνα-βαθμός, -οῦ, ὁ\n(ἀναβαίνω), [na LXX por מַעֲלָה: מַעֲלָה: 3Ki.10:19-20, 4Ki.9:13 20:9 ss, 2Ch.9:18-19, Isa.38:8, Eze.40:6, 49; ᾠδὴ τῶν ἀ., tít. Psa.120:1-7 121:1-8 122:1-9 123:1-4 124:1-8 125:1-5 126:1-6 127:1-5 128:1-6 129:1-8 130:1-8 131:1-3 132:1-18 133:1-3 134:1-3)* ;]\n1. uma subida, ascensão (Pss, ll. c. ?).\n2. um degrau (LXX); p1., um lance de escadas: Act.21:35, 40. (Sobre a formação em -θμός, veja MM, VGT, veja a palavra)†",
+   "note": "Source 'll. with' is a garbled 'll. c.' (locis citatis): rendered 'll. c.'."
+  },
+  {
+   "strongs": "G0305",
+   "sha256": "79b1d3e04edd7230537b698e3fe7afab8c8c8f32072e9f5956ef40f98345d623",
+   "gloss": "subir",
+   "definition": "ἀναβαίνω\n[na LXX principalmente por עָלָה ;]\nsubir, ascender,\n(a) de pessoas: ἐπί συκομωρέαν, Luk.19:4; εἰς τ. πλοῖον, Mrk.6:51; εἰς Ἱεροσόλυμα, Mat.20:17; εἰς τ. ἱερόν, com inf. (M, Pr., 205), Luk.18:10; com menção do lugar de partida, Mat.3:16 (ἀπό), Act.8:39 (ἐκ);\n(b) de coisas, elevar-se, brotar, surgir: um peixe, Mat.17:27; fumaça, Rev.8:4; plantas que crescem, Mat.13:7; metaforicamente, de coisas que surgem na mente (como o heb. לֵב אֵל עָלָה; 4Ki.12:4, al.), Luk.24:38, 1Co.2:9; de orações, Act.10:4; de mensagens, Act.21:31 (para exs. tardios, veja MM, VGT, veja a palavra)"
+  },
+  {
+   "strongs": "G0306",
+   "sha256": "479760a3a9e4fd5c2994ae16c3992614717e3473f03735e155e2f2a1fc0a72f4",
+   "gloss": "adiar",
+   "definition": "ἀνα-βάλλω\n[na LXX: Psa.78:21 89:38 (עָבַר), 1Ki.28:14, Psa.104:2 (עָטָה) ;]\nadiar, protelar (MM, VGT, veja a palavra): méd., Act.24:22.†"
+  },
+  {
+   "strongs": "G0307",
+   "sha256": "ad3a30237200b2c76871c51f6f4a3e682f5f4dd0a82b1dd6626d9f0f9747cd65",
+   "gloss": "puxar para cima",
+   "definition": "ἀνα-βιβάζω\n(causal de ἀναβαίνω), [na LXX principalmente por עָלָה hi., também por רָכַב hi., etc. ;]\nfazer subir, puxar para cima, como um navio (Xen.): σαγήνην, Mat.13:48 (metaforicamente, MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0308",
+   "sha256": "ae6750792ddd9d1b87a170b58eafecf4c7fb054d75b58d36757824facbbf31ff",
+   "gloss": "olhar para cima/de novo",
+   "definition": "ἀνα-βλέπω\n[na LXX principalmente por נָשָׂא ;]\n1. olhar para cima: Mrk.8:24, al.; antes de εἰς, Mat.14:19, al. (Xen., Plat.).\n2. recobrar a vista (Plat., Aristoph.; cf. MM, VGT, veja a palavra): Mat.11:5, Jhn.9:11, al"
+  },
+  {
+   "strongs": "G0309",
+   "sha256": "265fec37bee7808a63d6b339ffe02829ffb20a1e4f8faaf07d7afe32cea032d6",
+   "gloss": "recuperação da vista",
+   "definition": "ἀνά-βλεψις, -εως, ή\n(ἀναβλέπω), [na LXX: Isa.61:1 (פְּקַח־קוֹחַ)* ;]\nrecuperação da vista: Luk.4:18 (Lxx).†"
+  },
+  {
+   "strongs": "G0310",
+   "sha256": "08f5dc2c34d1f97252301703ebbebedafa8527315f29befa94ada6383058fec7",
+   "gloss": "clamar",
+   "definition": "ἀνα-βοάω, -ῶ\n[na LXX por צָעַק, זָעַק, קָרָא, etc. ;]\nclamar: Mat.27:46 (WH, ἐβόησεν; veja MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0311",
+   "sha256": "34190cb7602cefed4e0482521ee0bae8f5afbc0adc52370e720e7461e38e6075",
+   "gloss": "demora",
+   "definition": "ἀναβολή, - ῆς, ἡ\n(ά αβάλλω), [na LXX por בּנף, etc. ;]\ndemora: Act.25:17 (para exs. de outros significados, veja MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0312",
+   "sha256": "3f4eacae3a1969af3b47ad192bd752c96a58e86c700178b8907cf415f8b5e551",
+   "gloss": "anunciar",
+   "definition": "ἀν-αγγέλλω\n[na LXX principalmente por נָגַד hi ;]\n1. trazer notícia de volta, relatar (Æsch., Thuc., al.): Jhn.5:15 (WH, εἶπεν), Act.14:27 15:4, 2Co.7:7\n2. Mais tarde, = ἀπαγγέλλω (MM, VGT, veja a palavra), anunciar, declarar (LXX; Cremer, 24): Mat.28:11 (WH, ἀπ-), Jhn.4:25 16:13-15, Act.19:18 20:20, 27 Rom.15:21, 1Pe.1:12, 1Jn.1:5.†"
+  },
+  {
+   "strongs": "G0313",
+   "sha256": "03c88dcad239a3b30e11120aa5df56ef4c35fccc74e8664712e902fee47506d9",
+   "gloss": "gerar de novo",
+   "definition": "ἀνα-γεννάω, -ῶ\n[na LXX: Sir prol.17 א* (ΑΒאc παρα-)* ;]\ngerar de novo: metaforicamente, do nascimento espiritual, 1Pe.1:3 1:23 (cf. Cremer, 147; MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0314",
+   "sha256": "e6c2d23b15c6a54c925adc21b2e8da50351f4eae7f042ae1757ccfddc32d2d69",
+   "gloss": "ler",
+   "definition": "ἀνα-γινώσκω\n(ático ἀναγιγν-), [na LXX principalmente por קָרָא ;]\n1. conhecer com certeza, conhecer de novo, reconhecer.\n2. De caracteres escritos, ler: Mat.24:15, Mrk.13:14, Act.15:31 23:34, Eph.3:4; com acusativo de coisa(s), Mat.22:31, Mrk.12:10 Luk.6:3, Jhn.19:20, Act.8:30, 32, 2Co.1:13, Rev.1:3; com acusativo de pessoa(s), Ἠσαίαν τ. προφήτην, Act.8:28, 30; antes de ἐν, Mat.12:5 21:42, Mrk.12:26 (sc. ἐν τ. νόμῳ), Luk.10:26; antes de ὅτι, Mat.19:4 21:16; τί ἐποίησε, Mat.12:3, Mrk.2:25; pass. 2Co.3:2; da leitura em voz alta (MM, VGT, veja a palavra), Luk.4:16, Act.13:27 15:21, 2Co.3:15, Col.4:16, 1Th.5:27 (M, Th., em l).†",
+   "note": "Source 'so.' is a slip for 'sc.' (scilicet): rendered 'sc.'."
+  },
+  {
+   "strongs": "G0315",
+   "sha256": "adfba0cd24cc90907f05a78d650e4208d69e3042719f72739d76a8a24376c370",
+   "gloss": "obrigar",
+   "definition": "ἀναγκάζω\n(ἀνάγκη), [na LXX: Pro.6:7 (שֹׁטֵר), I Est.3:24, 1Ma.2:25, al. ;]\ntornar necessário, obrigar pela força ou pela persuasão, constranger: com acusativo, 2Co.12:11; id. com inf., Mat.14:22, Mrk.6:45, Luk.14:23, Act.26:11 (sobre o imperfeito aqui, veja Field, Notes, 141; M, Pr., 128 s., 247), Gal.2:14 6:12; pass., C. inf., Act.28:19, Gal.2:3 (para exs., veja MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0316",
+   "sha256": "3f6b802e2e848733688583bce2fcd848118d6aaf12fe94efa20fba4d1ec0cdb0",
+   "gloss": "necessário",
+   "definition": "ἀναγκαῖος, -αῖα, -αῖον\n(ἀνάγκη), [na LXX: Est.8:13, Wis.16:3, Sir prol.22, 2Ma.4:23 2Mac 9:21, 4Ma.1:2 * ;]\n1. necessário: Act.13:46, 1Co.12:22, 2Co.9:5, Php.2:25, Tit.3:14, Heb.8:3; comp. -αιότερον, Php.1:24.\n2. De pessoas ligadas por laços naturais ou de amizade, próximo, íntimo (Field, Notes, 118; ΜΜ, VGT, veja a palavra): ἀ. φίλοι, Act.10:24.†"
+  },
+  {
+   "strongs": "G0317",
+   "sha256": "c8f8ad746bd981bd00a34fb2ab2ef1913cd3864d6394233149d996202c338749",
+   "gloss": "necessariamente",
+   "definition": "ἀναγκαστῶς\nadv.,\nnecessariamente ou por constrangimento: oposto a ἑκουσίως, 1Pe.5:2 (raro).†"
+  },
+  {
+   "strongs": "G0318",
+   "sha256": "d6bc9f14e7687227de58a657d998287a048b83b51f6a570205257accb9d7df93",
+   "gloss": "necessidade",
+   "definition": "ἀνάγκη, -ης, ἡ\n[na LXX principalmente por מָצוֹק, צַר ;]\n1. necessidade: ἔχειν ἀ-, com inf., ser obrigado, Luk.14:18 23:17 (Rec., R, mg.), 1Co.7:37, Ju 3, Heb.7:27; ἐξ ἀ., κατ᾽ ἀ., por necessidade, 2Co.9:7, Heb.7:12, Phm 14; ἀ. μοι ἐπίκειται, a n. me é imposta, 1Co.9:16; com inf. (= ἀναγκαῖον ἐστι), Mat.18:7, Rom.13:5, Heb.9:16, 23\n2. força, violência; daí, dor, aflição (Diod., al.; LXX; veja M, Th., 41; MM, VGT, veja a palavra; cf. θλίψις): Luk.21:23, 1Co.7:26, 1Th.3:7; pl. (veja B1., § 32, 6; Swete, Mk., 153), ἐν ἀ., 2Co.6:4 12:10.†"
+  },
+  {
+   "strongs": "G0319",
+   "sha256": "673cb33708112894cab8e984e7b98a1e4408e4da8aa61a7f0b01f567dcb6618a",
+   "gloss": "reconhecer",
+   "definition": "ἀνα-γνωρίζω\n[na LXX: Gen.45:1 (יָדַע hit.)* ;]\nreconhecer: Act.7:13 (WH, txt., ἐγνωρίσθη).†"
+  },
+  {
+   "strongs": "G0320",
+   "sha256": "66029f2f2c96ee517f556d416955c0105dd714b3d2e867b1bf124902f75b7247",
+   "gloss": "leitura",
+   "definition": "ἀνά-γνωσις, -εως, ἡ\n[na LXX: Neh.8:8 (מִקְרָא), I Est.9:48, Sir prol. 9, 13 * ;]\n1. reconhecimento (Hdt.).\n2. leitura (Plat., al.): da leitura pública das Escrituras (Milligan, NTD, 173, 210 s.): Act.13:15, 2Co.3:14, 1Ti.4:13 (Cremer, 158; MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0321",
+   "sha256": "48259970088c9fbb9f63683f841aaaabd7d112f9b7f153a0aacb1fe1d4b1e317",
+   "gloss": "conduzir",
+   "definition": "ἀν-άγω\n[na LXX principalmente por עָלָה hi. ;]\nconduzir ou levar para cima: antes de είς, com acusativo de lugar, Mat.4:1, Luk.2:22 4:5 (WH om. είς, κ.τ.λ.), Act.9:39 16:34; da ressurreição dos mortos (cl.), ἐκ νεκρῶν, Rom.10:7, Heb.13:20; apresentar e pôr diante de, τ. λαῷ, Act.12:4 (MM, VGT, veja a palavra); em sentido sacrificial (MM, 1 c.), oferecer, θυσίαν, Act.7:41. Méd., em sentido náutico (Hom., Hdt., Thuc., al.), fazer-se ao mar: Luk.8:22, Act.13:13 16:11 18:21 20:3, 13 21:1-2 27:2, 4 27:12, 21 28:10-11 (cf.ἐπ-ανάγω).†",
+   "note": "Source '1 with' is a garbled 'l. c.' (loco citato): rendered '1 c.' (the source's '1' kept for the number check)."
+  },
+  {
+   "strongs": "G0322",
+   "sha256": "050cbc17569ca2857c07844cd42e18d70bf53a559a52a94399f716a085631995",
+   "gloss": "designar",
+   "definition": "ἀνα-δείκνυμι\n[na LXX: Hab.3:2 (יָדַע), Dan LXX 1:11 (מָנָה), Dan.1:20 (מָצָא), 1Esdra.6.2, 3Mac.9 * ;]\n1. levantar e mostrar, manifestar, declarar (cf. 2Ma.2:8, veja MM, VGT, veja a palavra): Act.1:24.\n2. consagrar, separar, (Strab., Plut., Anth.): Luk.10:1.†"
+  },
+  {
+   "strongs": "G0323",
+   "sha256": "477a11c6f16e9b3416276222f2eed07eddf1f96e0461482c0f3d62bd13ad7442",
+   "gloss": "manifestação pública",
+   "definition": "ἀνά-δειξις, -εως, ἡ\n(ἀναδείκνυμι), [na LXX: Sir.43:6 * ;]\numa manifestação, anúncio: Luk.1:80.†",
+   "note": "Source 'sheaving forth' is an OCR slip for 'shewing forth': rendered 'manifestação'."
+  },
+  {
+   "strongs": "G0324",
+   "sha256": "98265d2493c75a246ab52d6586d0c90216033a16a845e749e4c27c8170ee4cfe",
+   "gloss": "receber",
+   "definition": "ἀνα-δέχομαι\n[na LXX: 2Ma.6:19 2Mac 8:36 * ;]\n1. assumir, encarregar-se de (nos π. frequentemente como termo legal: MM, VGT, veja a palavra): ἐπαγγελίας, Heb.11:17.\n2. = cl. ὑποδέχομαι, receber: de hóspedes, Act.28:7.†"
+  },
+  {
+   "strongs": "G0325",
+   "sha256": "d7e6ccdfba6ff7c535536e15e7647b87c6b8d31104e1c93650cd5141c2396e0d",
+   "gloss": "entregar",
+   "definition": "ἀνα-δίδωμι\n[na LXX: Sir.1:22, 2Ma.13:15 * ;]\n1. produzir, fazer subir, como das plantas (Hdt., al.).\n2. entregar, ceder, passar às mãos (MM, VGT, veja a palavra): Act.23:33.†"
+  },
+  {
+   "strongs": "G0326",
+   "sha256": "ab979d4ef0b1f9b3e9c900c0fa3c30853fae0cf735d3f08cbd83c3e8d00fb542",
+   "gloss": "reviver",
+   "definition": "ἀνα-ζάω, -ῶ\n[em Al.: Gen.45:27 * ;]\nviver de novo, recobrar a vida (cf. cl. ἀναβιόω; Cremer, 722; e, para outros exs., v MM, VGT, veja a palavra): metaforicamente, do reavivamento moral, Luk.15:24 (WH, mg., ἔζησεν); do pecado, Rom.7:9.†"
+  },
+  {
+   "strongs": "G0327",
+   "sha256": "216fc0f2ad06f61ab53dedd58630d2f4fd4a7318c0920263e1f8f1c036b9d1fa",
+   "gloss": "procurar",
+   "definition": "ἀνα-ζητέω, -ῶ\n[na LXX: Job.3:4 (דָּרַשׁ), Job.10:6 (בָּקַשׁ pi.), 2Ma.13:21 * ;]\nprocurar ou buscar com cuidado (\"especialmente da busca de seres humanos, com uma implicação de dificuldade\": MM, VGT, veja a palavra): Luk.2:44-45 Act.11:25.†"
+  },
+  {
+   "strongs": "G0328",
+   "sha256": "2f0683f416b3424652f1a0abdcdc3592dceb2b03e3bb346d743c8097307132f7",
+   "gloss": "cingir",
+   "definition": "ἀνα-ζώννυμι\n[na LXX: Jdg.18:16, Pro.31:17 (חָגַר)* ;]\ncingir: figuradamente, τ. ὀσφύας τ. διανοίας, 1Pe.1:13.†"
+  },
+  {
+   "strongs": "G0329",
+   "sha256": "aa0ee0b0c045906cfd4ec4cbd8d88d917d019e9d38fde4b814b2443c222960b0",
+   "gloss": "reavivar",
+   "definition": "ἀνα-ζωπυργέω, -ῶ\n(ζωός, πῦρ), [na LXX: 1Ma.13:7 * ;]\nreacender: metaforicamente, 2Ti.1:6 (para exs. vernác., veja MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0330",
+   "sha256": "4adce6bc917ab7ebb7b3ce1239cf2965318414aaa61e253a7de54517c47f0255",
+   "gloss": "renovar",
+   "definition": "ἀνα-θάλλω\n(θάλλω, florescer), [na LXX: Psa.28:7 (עָלַז), Eze.17:24 (פָּרַח hi.), Hos.8:9, Wis.4:4, Sir.5:1-15 * ;]\nreviver: Php.4:10 (cf. MM, VGT, veja a palavra).†",
+   "note": "Source '(of MM' is a slip for '(cf. MM': rendered 'cf.'."
+  },
+  {
+   "strongs": "G0331",
+   "sha256": "34df8f109597487d620feb83bd08f9eed84ab6f280e77d50764a322d8c4a045a",
+   "gloss": "consagrado",
+   "definition": "ἀνάθεμα, -τος, τό\n(ἀνατίθημι),\nhelenístico pelo ático ἀνάθημα (Bl., § 27, 2);\n1. prop. = τὸ ἀνατιθέμένον, aquilo que é posto à parte para ser guardado, uma oferta votiva (como ἀνάθημα em 2Ma.2:13, Luk.21:5—onde LT leem -θεμα, veja M, Pr., 46).\n2. [Como equiv. na LXX de חֵרֶם,] consagrado, uma coisa consagrada a Deus (veja Driver, De., 98 s., e cf. Lev.27:28-29); daí:\n(a) da sentença pronunciada (Deu.13:15), uma maldição: Act.23:14;\n(b) do objeto sobre o qual se lança a maldição, maldito (Deu.7:26): Rom.9:3, 1Co.12:3 16:22, Gal.1:8-9 (veja ICC sobre Ro.; Lft., Ga., ll. c.; Cremer, 547; Tr., Syn., § v; MM, VGT, veja a palavra).†",
+   "note": "Source 'll. with' is a garbled 'll. c.' (locis citatis): rendered 'll. c.'."
+  },
+  {
+   "strongs": "G0332",
+   "sha256": "b6518e877013195a69fdf373f948eef8def7ff436c2c6ca8858ce8e8c4d4fa28",
+   "gloss": "fazer juramento",
+   "definition": "ἀνα-θεματίζω\n(ἀνίθεμα), [na LXX principalmente por חָרַם hi. (Num.21:2, 1Ki.15:3, al.), 1Ma.5:5 ;]\nvotar à destruição, declarar ou invocar anátema: absol., Mrk.14:71; ἐαντόν, obrigar-se sob maldição: Act.23:12, 14 23:21 (cf. καταναθεματίζω, e, sobre a ocorrência da palavra nos π., veja Deiss., LAE, 92 s.; MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0333",
+   "sha256": "ab86212acbb8f4cfdcfc038f8af772505b5504594606fe8e114ff897073c2cd0",
+   "gloss": "contemplar",
+   "definition": "ἀνα-θεωρέω, -ῶ\nobservar com cuidado, considerar bem: Act.17:23, Heb.13:7 (Diod., al.).†"
+  },
+  {
+   "strongs": "G0334",
+   "sha256": "fe1fd55b334841d807e7a64d98cf79b2522fef49979fffa44a01456dbb47ce46",
+   "gloss": "uma oferta votiva",
+   "definition": "ἀνάθημα, -τος, τό\n(cf. ἀνάθημα, e veja MM, VGT, veja a palavra), [na LXX muitas vezes como seel. por ἀνάθεμα (חָרַם), e em Num.21:3, Jdg.1:17 por חׇרְמָה, mas prop. em 3Ma.3:17, al. ;]\num presente posto num templo, uma oferta votiva: Luk.21:5 (LT, -θεμα).†",
+   "note": "Source 'seel.' (a garbled abbreviation, probably 'v.l.') kept as written."
+  },
+  {
+   "strongs": "G0335",
+   "sha256": "9c025b7675c68919a78dde747364b7df425cb8540bc8022857ae546b36ac83b4",
+   "gloss": "desfaçatez",
+   "definition": "ἀναιδία (Rec. -εία, como no cl.), -ας, ἡ\n(αἰδώς), [na LXX: Sir.25:22 * ;]\ndesfaçatez, importunação: Luk.11:8 (para exs. dos π., veja MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0336",
+   "sha256": "5998ce066a5bb65b84e375b3fe9c24a0b2355c9156099ba4ca49796e743864dd",
+   "gloss": "assassinato",
+   "definition": "ἀν-αίρεσις, -εως, ἡ\n(ἀναιρέω), [na LXX: Num.11:15 (הָרַג), Jdg.15:17 (רָמָה), Jdth.15:4, 2Ma.5:13 * ;]\n1. um levantar ou remover (Thuc.).\n2. um destruir, matar, assassinato (Field, Notes, 116; MM, VGT, veja a palavra): Act.8:1.†"
+  },
+  {
+   "strongs": "G0337",
+   "sha256": "a35531d816b7a2a9beeb9b724cf884472b7ee0b86d3e965afa5591d106d330be",
+   "gloss": "matar",
+   "definition": "ἀν-αιρέω, -ῶ\n[na LXX por הָרַג hi., מוּת hi., נָכָה hi., etc. ;]\n1. levantar, recolher: méd., Act.7:21.\n2. tirar, pôr fim a, destruir (para exs. tardios de vários sentidos, veja MM, VGT, veja a palavra);\n(a) de coisas (como frequentemente no cl., de leis etc.): Heb.10:9;\n(b) de pessoas, matar: Mat.2:16, Luk.22:2 23:32, Act.2:23 5:33, 36 7:28 9:23-24, 29 10:39 12:2 13:28 16:27 22:20 23:15, 21 23:27 25:3 26:10, 2Th.2:8, WH, txt., R, txt.†"
+  },
+  {
+   "strongs": "G0338",
+   "sha256": "1a7a58ae3c6a1546b17b0be4c32bffc31e21ada46262e85ea7972fd479782977",
+   "gloss": "inocente",
+   "definition": "ἀν-αίτιος, -ον\n(αἰτία), [na LXX: Deu.19:10, 13 21:8-9 (נָקִי), Dan LXX TH Sus1:62, sempre de αἷμα (cf. MM, VGT, veja a palavra)* ;]\nsem culpa, inocente: Mat.12:5, 7.†",
+   "note": "Source '(of. MM' is a slip for '(cf. MM': rendered 'cf.'."
+  },
+  {
+   "strongs": "G0339",
+   "sha256": "ab754aadecaa289531e3e661131ddc6870e58f26f51fca8c930d7b187dcccd5c",
+   "gloss": "sentar-se",
+   "definition": "ἀνα-καθ-ίζω\n(veja: καθίζω);\n1. trans., erguer.\n2. Intr., sentar-se: Luk.7:15 (WH, mg., ἐκάθισεν), Act.9:40 (frequentemente nos escritos médicos: MM, VGT, veja a palavra).\n†"
+  },
+  {
+   "strongs": "G0340",
+   "sha256": "db6f1da8facae4ad733d64c046c052ec05101ebe48dc21619f8784ed08970387",
+   "gloss": "restaurar",
+   "definition": "ἀνα-καινίζω\n(καινός), [na LXX: 2Ch.15:8, Psa.103:5 104:30, La 5:21 (חָדַשׁ pi., hit)., Psa.39:2 (עָכַר ni.), 1Ma.6:9 * ;]\nrenovar: Heb.6:6 (Isocr., Plut.).†"
+  },
+  {
+   "strongs": "G0341",
+   "sha256": "38f1a82f50a3e5d12e8ac6c605bd538169deb94a10dd381eb381f5adbf75de0f",
+   "gloss": "renovar",
+   "definition": "ἀνα-καινόω, -ῶ\n= ἀνακαινίζω (cf. MM, VGT, veja a palavra),\ntornar novo: 2Co.4:16, Col.3:10 (veja Cremer, 323).†"
+  },
+  {
+   "strongs": "G0342",
+   "sha256": "48ac002feb63359502ef324eee537e7cecdd1e99b7f41c39106fe5f560b35a3d",
+   "gloss": "renovação",
+   "definition": "ἀνακαίνωσις, -εως, ἡ\n(ἀνακαινόω),\nrenovação: Rom.12:2, Tit.3:5 (Cremer, 324; MM, VGT, veja a palavra).†\nSYN.: παλινγενεσία, no NT, o novo nascimento, do qual ἀ. é a consequente renovação ou restauração, na qual o homem toma parte tanto quanto Deus (veja Tr., Syn., § xviii)"
+  },
+  {
+   "strongs": "G0343",
+   "sha256": "dc1b10e628c48d6f39019212acebb7430be2da0a06d74a32e7dcd6e27eb6a4f7",
+   "gloss": "desvendar",
+   "definition": "ἀνα-καλύπτω\n[na LXX principalmente por גָּלָה ni., pi. ;]\ntirar o véu: metaforicamente, da remoção do obstáculo à percepção das coisas espirituais, 2Co.3:14 3:18.†"
+  },
+  {
+   "strongs": "G0344",
+   "sha256": "b4618032be7c7b47102a684cb78a02cb5f14554c1795557b4663c8f330549e29",
+   "gloss": "voltar",
+   "definition": "ἀνα-κάμπτω\n[na LXX: 1Ch.19:5, Jer.3:1, al. (שׁוּב), Jer.15:5 (סוּר) ;]\n1. trans., dobrar ou voltar para trás.\n2. Intr., voltar: Mat.2:12, Act.18:21, Heb.11:15; metaforicamente (cf. MM, VGT, veja a palavra), Luk.10:6.†"
+  },
+  {
+   "strongs": "G0345",
+   "sha256": "fca88b145e84ae1ed30e1bc96d7101e2bfb4624defed1e220087fd414a8b62c1",
+   "gloss": "reclinar-se",
+   "definition": "ἀνά-κειμαι\n[na LXX: I Est.4:10, Tob.9:6 א * ;]\n1. no cl., como pass. de ἀνατίθημ, estar guardado, posto: Mrk.5:40 Rec.\n2. Em escritores tardios (cf. MM, VGT, veja a palavra) = κεῖσθαι, κατακεῖσθαι, reclinar-se à mesa: Mat.26:20; part. ἀνακείμενος, Mat.9:10 22:10-11 26:7, Mrk.6:26 14:18 16:14, Luk.22:27, Jhn.6:11 12:2 13:23, 28.†\nSYN.: ἀνακλίνω, ἀναπίπτω, este último denotando um ato mais do que um estado e, assim, em Jhn.13:25, diferindo de ἀνάκειμαι (veja Jhn.13:23) por indicar uma mudança de posição."
+  },
+  {
+   "strongs": "G0346",
+   "sha256": "62c7fc1df2ae4b89c21d783761f6a6d97a3b57361596539bf1481afea8365056",
+   "gloss": "resumir",
+   "definition": "ἀνα-κεφαλαιόω, ῶ\n(veja: κεφαλαιόω) [em Th., Al.: Psa.72:20 * ;]\nresumir, reunir, apresentar como um todo: méd., Rom.13:9, Eph.1:10 (sobre WH. veja Lft., Notes, 321 L; AR, em l; Cremer, 354, 748).†"
+  },
+  {
+   "strongs": "G0347",
+   "sha256": "72852a39e9aba3020b969854522af8039b0aa5748e1bc201be82dd177083eb3b",
+   "gloss": "reclinar",
+   "definition": "ἀνα-κλίνω\n[na LXX: 3Ma.5:16 * ;]\ndeitar sobre, encostar a; daí,\n(a) deitar: Luk.2:7;\n(b) fazer reclinar: Mrk.6:39, WH, mg., Luk.12:37. Pass., recostar-se, reclinar-se: Mat.8:11 14:19, Luk.13:29.†\nSYN.: ἀνάκειμαι (veja), ἀναπίπτω"
+  },
+  {
+   "strongs": "G0348",
+   "sha256": "98a2727dcedc8cdfc979a04137062b8e44c4dfdb9f0273dd3fa6e603582a28cf",
+   "gloss": "conter",
+   "definition": "1. fazer recuar , (Odisseia de Homero)\n2. repelir um agressor, (Tucídides)\n3. deter:—; Pass. ser detido, parar de repente , τινός de uma coisa, (Luciano) (ML)"
+  },
+  {
+   "strongs": "G0349",
+   "sha256": "8bf0fd25c563c5159b2e97dc5c0b58ba2b92255ea35da8842c22ba4423225f46",
+   "gloss": "gritar",
+   "definition": "ἀνα-κράζω\n[na LXX por קָרָא, etc. ;]\nclamar, gritar: Mrk.1:23 6:49, Luk.4:33 8:28 23:18.†"
+  },
+  {
+   "strongs": "G0350",
+   "sha256": "f94ce85c728c5a256ecbdaa5bc357a78175bd476180585474049f5a6cc0addd2",
+   "gloss": "investigar",
+   "definition": "ἀνα-κρίνω\n[na LXX: 1Ki.20:12 (חָקַר), Dan LXX Su 1:13, LXX, TH Su 1:48, 51 * ;]\nexaminar, investigar, interrogar (Lft., Notes, 181 s.): Act.17:11, 1Co.2:14-15 4:3-4 9:3 10:25 10:27 14:24; em sentido forense (MM, VGT, veja a palavra; esp. do interrogatório sob tortura; veja Field, Notes, 120 s.), Luk.23:14, Act.4:9 12:19 24:8 28:18.†\nSYN.: veja: ἐξετάζω"
+  },
+  {
+   "strongs": "G0351",
+   "sha256": "05b9388a196d92428425b840904bb9942688bcff4be0407ad87bfaed83b14d37",
+   "gloss": "investigação",
+   "definition": "ἀνά-κρισις, -εως, ἡ\n[na LXX: 3Ma.7:5 * ;]\num exame: espec. da investigação legal preliminar, Act.25:26 (veja MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0352",
+   "sha256": "c17bd8568119c4db8bf768fa1684c685ba13000439772e180210eb090dfbac74",
+   "gloss": "endireitar-se",
+   "definition": "άνα-κύπτω\n[na LXX: Job.10:15 (נָשָׂא רֹאשׁ), Dan LXX, Su 1:35 * ;]\nlevantar-se;\n(a) fisicamente; Luk.13:11, Jhn.8:7, 10;\n(b) mentalmente, animar-se: Luk.21:28 (cf. MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0353",
+   "sha256": "2bc282c7f907f5b0dcf2324804f91d29c85329237e232f7f8dac968f42587191",
+   "gloss": "tomar",
+   "definition": "ἀνα-λαμβάνω\n[na LXX principalmente por נָשָׂא, também por לָקַח, etc. ;]\n1. elevar, levantar: Mrk.16:19, Act.1:2, 11 1:22 10:16, 1Ti.3:16.\n2. tomar, tomar consigo: Act.7:43 20:13-14 23:31, Eph.6:13, 16, 2Ti.4:11 (para exs. tardios, v MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0354",
+   "sha256": "040e85cf304f5afc518fe423eb90bd6bfa8da1269df50b2aca669eedc76d082c",
+   "gloss": "ascensão",
+   "definition": "ἀνά-λημψις, -εως, ἡ\n(forma κοινή de ἀνάληψις; veja Th., Gr., 108 s.),\num ser elevado: Luk.9:51 (MM, VGT, veja a palavra).†\nἀνά-ληψις, -εως, ἡ, Rec. por ἀνάλημψις, veja"
+  },
+  {
+   "strongs": "G0355",
+   "sha256": "cdde5b9d0e966ed2817cad139ac25c1a8fff32076acd7bf00030fe685fa48797",
+   "gloss": "consumir",
+   "definition": "ἀν-αλίσκω\n(sobre a etimologia, veja MM, VGT, veja a palavra), [na LXX principalmente por אָכַל também por כָּלָה, etc. ;]\n1. gastar.\n2. consumir, destruir: Luk.9:54, Gal.5:15, 2Th.2:8, Rec. WH, mg.†"
+  },
+  {
+   "strongs": "G0356",
+   "sha256": "a4f19ff96802b2680a38b78ee91ab2a66a2e00cdf75a1d60f222e473b1b8a32c",
+   "gloss": "proporção",
+   "definition": "ἀναλογία, -ας, ἡ\n(λόγος), [em Al.: Lev.27:1-34\"18 * ;]\nproporção (MM, VGT, veja a palavra): Rom.12:6 (cf. Cremer, 397).†"
+  },
+  {
+   "strongs": "G0357",
+   "sha256": "ce0f94b0925f037965ee09f9b3b0bd2b8bccffb058175b690999ff1bed5f3675",
+   "gloss": "considerar",
+   "definition": "ἀνα-λογίζομαι\n[na LXX: Wis.17:13 א, 2Ma.12:43 A, 3Ma.7:7 * ;]\nconsiderar: Heb.12:3 (MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0358",
+   "sha256": "af0490e517ab0935fdfd3219b248c04e69c4849b98d911f71ee4da9574628743",
+   "gloss": "insosso",
+   "definition": "ἄναλος, -ον\n(ἅλς), [em Aq.: Eze.13:10-11, 15 22:28 * ;]\nsem sal, insípido: Mrk.9:50.†"
+  },
+  {
+   "strongs": "G0359",
+   "sha256": "9af9eac8c5d9c3b16c70ccb5aafc7f16277b9a855d3c192ad45cf03e3e209ffe",
+   "gloss": "partida",
+   "definition": "ἀνά-λυσις, -εως, ἡ\n(ἀναλύω),\num soltar, p. ex., de um navio de suas amarras; daí, partida: desta vida, 2Ti.4:6.†"
+  },
+  {
+   "strongs": "G0360",
+   "sha256": "43a9746a69d60e4b274d1ca26cfd3ff35128d68e538bece16f109abe232f03a4",
+   "gloss": "partir",
+   "definition": "ἀνα-λύω\n[na LXX: I Est.3:3, Tob.2:9, Jdth.13:1, Sir.3:15, Wis.3:1-19 2:1-24,3 Mac.10 * ;]\n1. desatar.\n2. soltar as amarras para partir, partir (MM, VGT, veja a palavra): desta vida, Php.1:23\n3. voltar, Luk.12:36.†"
+  },
+  {
+   "strongs": "G0361",
+   "sha256": "2900500b78368ebe2d6cf07add2ad77297e92bb2fbde95a00b45b42714e92ee6",
+   "gloss": "sem pecado",
+   "definition": "ἀναμάρτητος, -ον\n(ἁμαρτεῖν), [na LXX: Deu.29:19 (18) 2Ma.8:4 2Mac 12:42 * ;]\n1. que não erra, infalível (Xen.).\n2. Em sentido moral, sem falta (Plat.), sem pecado: Jhn.8:7 (veja Cremer, 102, 634; MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0362",
+   "sha256": "21c8f2b1416840c6db0421ec3ecff57fec19de91fdd6e6302cee5709b12856f7",
+   "gloss": "aguardar",
+   "definition": "ἀνα-μένω\n[na LXX por קָוָה pi. ;]\naguardar \"alguém cuja vinda se espera, talvez com a ideia adicional de paciência e confiança\" com acusativo, 1Th.1:10 (veja M, Th., em l; MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0363",
+   "sha256": "b4d9208871ac70e40251c68851bf20e050e6687b2702c84df2f7b11e3d53ecb6",
+   "gloss": "lembrar",
+   "definition": "ἀνα-μιμνήσκω\n[na LXX por זָכַר hi. ;]\nlembrar, trazer à memória de alguém: com acusativo de coisa(s), 1Co.4:17; com inf., 2Ti.1:6. Pass., lembrar-se, recordar: Mrk.11:21 14:72, 2Co.7:15, Heb.10:32.†"
+  },
+  {
+   "strongs": "G0364",
+   "sha256": "b3eb79c18ffc1131c0b6dd606929e67390963ad035bec26a967296baf760abc5",
+   "gloss": "lembrança",
+   "definition": "ἀνάμνησις, -εως, ἡ\n(ἀναμιμνήσκω), [na LXX: Psa.38:1-22 70:1-5 tít. (זָכַר hi.), Lev.24:7 (אַזְכָּרָה), Num.10:10 (זִכְרוֹן), Wis.16:6 * ;]\nlembrança, memória: εἰς τ. ἐμὴν ἀ., Luk.22:19 (WH om.), 1Co.11:24-25; ἀ. ἁμαρτιῶν, Heb.10:3 (veja Abbott, Essays, 122 ss.; DCG, ii, 74a).†\nSYN.: ὑπόμνησις (veja Tr., Syn., § cvii)."
+  },
+  {
+   "strongs": "G0365",
+   "sha256": "edaa6b21fbbccd7b3901de8aab4340c14c996b66f5132aa6f273d377eb36bd8a",
+   "gloss": "renovar",
+   "definition": "ἀνα-νεόω, -ῶ\n(νέος), [na LXX: Job.33:24, Est.3:13, 1; Ezr.3.1-13, 4Ma.8:1-29 * ;]\nrenovar: pass., Eph.4:23 (veja Cremer, 428; MM, VGT, veja a palavra)†"
+  },
+  {
+   "strongs": "G0366",
+   "sha256": "2fce3ff6a651cf4b3fea0acaa295f435626dc5bd61d00d5a5bd485fd115a4e5a",
+   "gloss": "voltar a si",
+   "definition": "ἀνα-νήφω\nvoltar à sobriedade: metaforicamente, 2Ti.2:26 (cf. ἐκνήφω).†",
+   "note": "Source '(of. ἐκνήφω)' is a slip for '(cf.': rendered 'cf.'."
+  },
+  {
+   "strongs": "G0367G",
+   "sha256": "56462b12bd82b16ed4170c3da2887e58a79654385cd50b38b073f9e810be9a78",
+   "gloss": "Ananias",
+   "definition": "Ἀνανίας (WH, Ἁναν-), -α, ὁ (heb. חֲנַנְיָה),\nAnanias;\n1. de Jerusalém: Act.5:1, 3 5:5.\n2. De Damasco: Act.9:10-13, 17 22:12.\n3. Sumo Sacerdote: Act.23:2 24:1.†",
+   "note": "Gloss \"Ananias\" is the same name in Portuguese."
+  },
+  {
+   "strongs": "G0367H",
+   "sha256": "56462b12bd82b16ed4170c3da2887e58a79654385cd50b38b073f9e810be9a78",
+   "gloss": "Ananias",
+   "definition": "Ἀνανίας (WH, Ἁναν-), -α, ὁ (heb. חֲנַנְיָה),\nAnanias;\n1. de Jerusalém: Act.5:1, 3 5:5.\n2. De Damasco: Act.9:10-13, 17 22:12.\n3. Sumo Sacerdote: Act.23:2 24:1.†",
+   "note": "Gloss \"Ananias\" is the same name in Portuguese."
+  },
+  {
+   "strongs": "G0367I",
+   "sha256": "56462b12bd82b16ed4170c3da2887e58a79654385cd50b38b073f9e810be9a78",
+   "gloss": "Ananias",
+   "definition": "Ἀνανίας (WH, Ἁναν-), -α, ὁ (heb. חֲנַנְיָה),\nAnanias;\n1. de Jerusalém: Act.5:1, 3 5:5.\n2. De Damasco: Act.9:10-13, 17 22:12.\n3. Sumo Sacerdote: Act.23:2 24:1.†",
+   "note": "Gloss \"Ananias\" is the same name in Portuguese."
+  },
+  {
+   "strongs": "G0368",
+   "sha256": "0fc2fb3010a2c5c83a65bd0bd53bcfe0ea634e38c6097cd4f4ffb3c0f49cd433",
+   "gloss": "incontestável",
+   "definition": "ἀν-αντί-ρητος\n(Τ, -ρρητος, -ον (ῥητός, falado), [em Sm.: Job.11:2 33:13 * ;]\nque não se pode contradizer, inegável: Act.19:36 (MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0369",
+   "sha256": "27ad79ed2fb655bcc73c25d40c632b312ff1be74dfa8a421c0d7053a2f105155",
+   "gloss": "sem objeção",
+   "definition": "ἀν-αντι-ρήτως (T, -ρρήτως),\nadv.,\nsem contradição: Act.10:29.†"
+  },
+  {
+   "strongs": "G0370",
+   "sha256": "7dd3d9e6359897b39648efcb5113390d8739eeaf2a80d29b1c89a39e75a27b35",
+   "gloss": "indigno",
+   "definition": "ἀν-άξιος, -ον\n(ἀ- neg., ἄξιος), [na LXX: Jer.15:19 א2 (זָלַל), Est.8:13, Sir.25:8 * ;]\nindigno: com genitivo, 1Co.6:2 (MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0371",
+   "sha256": "900976b4771990d92bebc6bf515751012729693a09edb726bcd751879c4e340a",
+   "gloss": "indignamente",
+   "definition": "ἀναξίως\n(veja supr.), adv., [na LXX: 2Ma.14:42 * ;]\nde maneira indigna: 1Co.11:27.†"
+  },
+  {
+   "strongs": "G0372",
+   "sha256": "b4382ce81704e143b67663383cd7f32dd2d2cb2609be14e44bfefdcc6fb98179",
+   "gloss": "descanso",
+   "definition": "ἀνά-παυσις, -εως, ή\n(ἀνάπαύω) [na LXX principalmente por נוּחַ e seus derivados, שַׁבָּת e seus cognatos (Ex, Le) ;]\ncessação, descanso, refrigério: Mat.11:26 12:43, Luk.11:24, Rev.4:8 14:11.†\nSYN.: ἄνεσις (lit., o afrouxamento das cordas de uma lira), prop. significa o descanso ou alívio que vem do afrouxamento de condições desfavoráveis, como, p. ex., a aflição; ἀνάπ., o descanso que vem da cessação temporária do trabalho (veja Tr., Stn., § xl; Cremer, 827; MM, VGT, veja a palavra)"
+  },
+  {
+   "strongs": "G0373",
+   "sha256": "cae137319451335bea16084dc6a5a61ac235673e07fdc9ecac954dfac06aca6c",
+   "gloss": "dar descanso",
+   "definition": "ἀνα-παύω,\n[na LXX por catorze palavras diferentes, principalmente נוּחַ, também רָבַץ, שָׁאַן, etc. ;]\ndar trégua do trabalho, dar descanso, refrigerar: Mat.11:28, 1Co.16:18, Phm 20; pass., Phm 7, 2Co.7:13. Méd., descansar, gozar de descanso: Mat.26:45, Mrk.6:31 14:41, Luk.12:19, Rev.6:11 14:13; como no heb. de Is 11:2 (עַל נוּחַ), τὸ πνεῦμα ἐφ᾽ ὑᾶμς ἀ., 1Pe.4:14. (Nos π. esta palavra é usada como termo técnico agrícola; veja MM, VGT, veja a palavra; e cf. Le 2634 s.; Cremer, 826.)†",
+   "note": "Source 'ofIs 11:2' lacks a space, so the check does not read 'Is 11:2' as a code there; written 'de Is 11:2' (the check then reports an extra reference)."
+  },
+  {
+   "strongs": "G0374",
+   "sha256": "c9ff404200dc3736575b9102f44d8ffbdd8be43bf874a1f2a2a71f21bf9a7a07",
+   "gloss": "persuadir",
+   "definition": "ἀνα-πείθω\n[na LXX: Jer.29:8 (נָשָׁא hi.), 1Ma.1:11 * ;]\npersuadir, incitar: Act.18:13 (cf. MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0375",
+   "sha256": "f4b2c57436a498f25191983e908605e52827d1338547068165d73172fa6891b5",
+   "gloss": "enviar de volta",
+   "definition": "ἀνα-πέμπω\n1. enviar para cima,\n(a) a um lugar mais alto (Æsch., Plat., al.);\n(b) a uma autoridade superior (Deiss., BS, 229; MM, VGT, veja a palavra; cf. também Field, Notes, 140): Luk.23:7, 15, Act.25:21.\n2. enviar de volta (Pind.): Luk.23:11, Phm 11.†"
+  },
+  {
+   "strongs": "G0376",
+   "sha256": "a7ad119a9712775b9047cfe620bc83967b028eec4ad62942404ad214336bf19c",
+   "gloss": "aleijado",
+   "definition": "ἀνά-πηρος (WH, -ειρος; veja Field, Notes, 67), -ον (πηρός, mutilado)\n[na LXX: Tob.14:2 א, 2Ma.8:24 * ;]\nmutilado, aleijado: Luk.14:13, 21.†"
+  },
+  {
+   "strongs": "G0377",
+   "sha256": "1f879be03f356761d955a276cbf17497d86c63410c721de5a1672ca18403103e",
+   "gloss": "reclinar-se",
+   "definition": "ἀνα-πίπτω\n[na LXX: Gen.49:9 (כָּרַע) Tob.2:1 7:8, Jdth.12:10, Sir.25:18 32:2, Da TH Sus 1:37 * ;]\n1. (cl.) cair para trás.\n2. Em escritores tardios = ἀνα-κλίνομαι, reclinar-se para uma refeição (MM, VGT, veja a palavra): à mesa, Luk.11:37 14:10 17:7 22:14, Jhn.13:12 21:20; no chão, Mat.15:35 Mrk.6:40 8:6 Jhn.6:10; inclinar-se para trás, Jhn.13:25 (T, ἐπιπεσών; veja: ἀνάκειμαι, ad fin.).†\nSYN.: ἀνάκειμαι (veja), ἀνακλίνομαι"
+  },
+  {
+   "strongs": "G0378",
+   "sha256": "4a6e900fb2df78ac2a4fd38233c87f04a1a16e30c97693ec4ee7d70554cc356c",
+   "gloss": "cumprir",
+   "definition": "ἀνα-πληρόω, -ῶ\n[na LXX principalmente por מָלֵא, Lev.12:6, al.; também שָׁלַם (Gen.15:16, 3Ki.7:51, Isa.60:20), etc. ;]\n1. encher, completar (nos π., do cumprimento de contratos e do pagamento do aluguel; cf. MM, VGT, veja a palavra): τόπον, ocupar o lugar de alguém (cf. heb. מָקוֹם שָׁלַם), 1Co.14:16; άμαρτίας, completar o número, 1Th.2:16; τ. νόμον, observar perfeitamente, Gal.6:2; pass., προφητεία, cumprida, Mat.13:14.\n2. suprir: τό ὑστέρημα, 1Co.16:17, Php.2:30 (Cremer, 838).†"
+  },
+  {
+   "strongs": "G0379",
+   "sha256": "1bb481f9c61de2f3e2b487ea814f8f4ff4c97a674a7a03b9e555de93ec19c9c1",
+   "gloss": "indesculpável",
+   "definition": "ἀναπολόγητος, -ον\n(ἀπολογεόμαι),\nsem desculpa, indesculpável (em Polyb., al., como termo forense; veja Lft., Notes, 252): Rom.1:20 2:1.†"
+  },
+  {
+   "strongs": "G0380",
+   "sha256": "73f85bb06a9d060585e5b128866f4a31366ae9180e4d0ffe6fae373296960263",
+   "gloss": "desenrolar",
+   "definition": "ἀνα-πτύσσω\n[na LXX por פָּרַשׂ,etc. ;]\ndesenrolar: τ. βιβλίον, Luk.4:17 (WH, R, ἀνοίξας).†"
+  },
+  {
+   "strongs": "G0381",
+   "sha256": "9eef8db6a38d7fa434c4e4261199a6c4a880f212cb9985cc07e50384dc6a828b",
+   "gloss": "acender",
+   "definition": "ἀν-άπτω\n[na LXX principalmente por יָצָא ;]\nacender: Luk.12:49, Jas.3:5 (MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0382",
+   "sha256": "b9d5b9742e7c1702141255505fdf4759794179a55d84155d93f8807251af4867",
+   "gloss": "incontável",
+   "definition": "ἀν-αρίθμητος, -ον\n(ἀριθμέω), [Job.31:25, al.],\ninumerável: Heb.11:12.†"
+  },
+  {
+   "strongs": "G0383",
+   "sha256": "619994bf1f5466acc33f12a06555292d9f247d73b1ac6546fa9556e225427e4e",
+   "gloss": "incitar",
+   "definition": "ἀνα-σείω\n[em Aq.: 1Ki.26:19, Job.2:3; Aq., Sm.: Isa.36:18 * ;]\n1. sacudir, agitar para trás, mover de um lado para outro (Thuc., a1.).\n2. Em escritores tardios (Diod., al.; veja MM, VGT, veja a palavra), agitar; metaforicamente, excitar: τ. ὄχλον, Mrk.15:11; τ. λαόν, Luk.23:5.†"
+  },
+  {
+   "strongs": "G0384",
+   "sha256": "cd239aa9aebc1b0a5dce01ee2260e1a39dc5af2ebdaa6200c9627560c34acfce",
+   "gloss": "perturbar",
+   "definition": "ἀνα-σκευάζω\n(σκεῦος, um vaso),\nprop., arrumar a bagagem; daí, desmantelar, devastar, destruir; metaforicamente, perturbar, subverter (MM, VGT, veja a palavra): ψυχάς, Act.15:24.†"
+  },
+  {
+   "strongs": "G0385",
+   "sha256": "79d2a9957f599ee89c8253ad9fce7f2c2ec18984d4a40ed85030b7837a09f123",
+   "gloss": "puxar para cima",
+   "definition": "ἀνα-σπάω, -ῶ\n[na LXX por לָקַח, עָלָה hi. ;]\npuxar para cima: Luk.14:5, Act.11:10 (nos π., de arrancar cevada; MM, VGT, veja a palavra).†"
+  },
+  {
+   "strongs": "G0386",
+   "sha256": "1bae364182fbb7c347274e9b9e351b849cb3d73ce2661712b1265b4581c9de76",
+   "gloss": "ressurreição",
+   "definition": "ἀνά-στασις, -εως, ή\n(ἀνίστημι), [na LXX: Zep.3:8 (קוּם), La 3:63 (קִימָה), קִימָה), Psa.66:1-20 tít., Dan LXX 11:20, 2Ma.7:14 2Mac 12:43 * ;]\n1. um levantar, despertar, erguer-se (nas inscr., da ereção de um monumento, veja MM, VGT, veja a palavra): Luk.2:34.\n2. um levantar-se dentre os mortos (veja DCG, ii, 605b);\n(a) de Cristo: Act.1:22 2:31 4:33 Rom.6:5, Php.3:10, 1Pe.3:21; ἐξ ἀ. νεκρῶν, Rom.1:4 (ICC, em l); ἐκ νεκρῶν, 1Pe.1:3;\n(b) de pessoas na hist. do AT (p. ex., 3Ki.17:17 ss.): Heb.11:35;\n(c.) da ressurreição geral: Mat.22:23, 28 22:30 Mrk.12:18, 23 Luk.20:27, 33 20:36, Jhn.11:24, Act.17:18 23:8 24:15, 2Ti.2:18; ἀ. ἐκ νεκρῶν, Luk.20:35, Act.4:2; τῶν νεκρῶν, Mat.22:31, Act.17:32 23:6 24:21 26:23, 1Co.15:12-13 15:21 15:42, Heb.6:2; ἀ. ζωῆς, ressurreição para a vida (cf. 2Ma.7:14, ἀ. εἰς ζωήν) e ἀ. τ. κρίσεως, τ. para o juízo, Jhn.5:29; ἀ. τ. δικαίων, Luk.14:14; κρείττων ἀ., Heb.11:35; sobre ἡ ἀ. ἡ πρώτη, Rev.20:5-8, veja Swete, em l, Weste. sobre Jhn.5:1-47, mas veja também Thayer, veja a palavra; por meton., de Cristo como Autor da ἀ., Jhn.11:25 (veja DB, iv, 231; Cremer, 307).†",
+   "note": "Source '(with) of the general resurrection' is a garbled '(c)' (the third sense after (a), (b)): rendered '(c.)'."
+  },
+  {
+   "strongs": "G0387",
+   "sha256": "1e375496c2cf2422c7fe581abf631d827c67c9130be0b6155c81a5bd13efd8c3",
+   "gloss": "causar tumulto",
+   "definition": "ἀνα-στατόω, ῶ\n(ἀνάστατος, expulso de casa; ἀνίστημι), [na LXX: Dan.7:23 (דּוּשׁ;* também em Aq., e nos π. (veja Deiss., LAE, 80 s.; MM, VGT, veja a palavra),]\nagitar, excitar, perturbar: com acusativo;\n(a) ao tumulto e à sedição: Act.17:6 21:38;\n(b) por falso ensino: Gal.5:12 (veja Milligan, NTD, 73 s.).†"
+  },
+  {
+   "strongs": "G0388",
+   "sha256": "fc156c5b4e34d499c44a7b0cec4b6b0be9380b4469106261c75bfa84562b4253",
+   "gloss": "crucificar de novo",
+   "definition": "ἀνα-σταυρόω\n1. empalar (Hdt.).\n2. levantar numa cruz, crucificar (Polyb., al.).\n3. crucificar de novo: Heb.6:6 (veja Westc., em l).†"
+  },
+  {
+   "strongs": "G0389",
+   "sha256": "e6035178efa321578be49631a1d4416750ad182abd12f70ef2035b75011b832a",
+   "gloss": "suspirar profundamente",
+   "definition": "ἀνα-στενάζω\n[na LXX: La 1:4 (אָנַח ni.), Sir.25:17), Da TH Sus 1:22, 2Ma.6:30 * ;]\nsuspirar profundamente: Mrk.8:12.†"
+  },
+  {
+   "strongs": "G0390",
+   "sha256": "e27b1a01c65bcd979a7d273c1474e59e8e8256066728db064076b1da4bee386b",
+   "gloss": "viver/voltar",
+   "definition": "ἀνα-στρέφω\n[na LXX principalmente por שׁוּב ;]\n1. virar, derrubar: Jhn.2:15.\n2. voltar, regressar: Act.5:22 15:16.\n3. virar de um lado para outro; pass., andar de um lado para outro, peregrinar, habitar: Mat.17:22 Rec.; metaforicamente (como o heb. הָלַךְ, nos escritores da κοινή e nos π.; veja Deiss., LAE, 315; BS, 88, 194; MM, VGT, veja a palavra), conduzir-se, comportar-se, viver: 2Co.1:12, Eph.2:3, 1Ti.3:15, Heb.10:33 13:18, 1Pe.1:17, 2Pe.2:18.\n† SYN.: περιπατέω (helenístico), πολιτεύω"
+  },
+  {
+   "strongs": "G0391",
+   "sha256": "ccc4e4ea7bdc8f32ede0506c06ba4b1a28eabc78906ad9338b59f4a2d8f2cdd7",
+   "gloss": "comportamento",
+   "definition": "ἀνα-στροφή, -ῆς, ἡ\n(ἀναστρέφομαι) [na LXX: Tob.4:14, 2Ma.5:8 2Mac 6:23 * ;]\n1. um voltar-se para baixo ou para trás, uma volta (Soph., Thuc., al.).\n2. Em escritores tardios (Polyb., al.; veja: ἀναστρέφω, e cf. Hort sobre Jas.3:13; MM, VGT, veja a palavra), modo de vida, comportamento, conduta: Gal.1:13, Eph.4:22, 1Ti.4:12, Heb.13:7, Jas.3:13, 1Pe.1:15 1:18 2:12 3:1-2 3:16, 2Pe.2:7 3:11.†"
+  },
+  {
+   "strongs": "G0392",
+   "sha256": "8d00057da68b10da9c36b1ad4b5c0be8efb46c0c388f9786ec2365507c2bdfa5",
+   "gloss": "compor",
+   "definition": "ἀνα-τάσσομαι\n[na LXX só como seel. (Ald.) em Ecc.2:20 ;]\npôr em ordem, reunir de memória (Blass., Phil. Gosp., 14 ss.; MM, VGT, veja a palavra): Luk.1:1.†",
+   "note": "Source 'seel.' (a garbled abbreviation, probably 'v.l.') kept as written."
+  },
+  {
+   "strongs": "G0393",
+   "sha256": "cb463ada3070b8adfe76c945e1a66549dc5e074d8a1e6eed4d0334033356dc5c",
+   "gloss": "nascer",
+   "definition": "ἀνα-τέλλω\n[na LXX por צָמַח, פָּרַח, זָרַח, etc. ;]\n1. trans., fazer nascer: Mat.5:45.\n2. Intr., nascer, levantar-se: φῶς, Mat.4:16 (= Isa.9:1); ὁ ἥλιος, Mat.13:6, Mrk.4:6 16:2, Jas.1:11; νεφέλη, Luk.12:54; φωσφόρος, 2Pe.1:19; ὁ Κύριος, prob. com ref. metafórica ao sol ou a uma estrela, Heb.7:14 (cf. ἐξ-ανατέλλω).†"
+  },
+  {
+   "strongs": "G0394",
+   "sha256": "f3577a95c48d843acbc6e83ecc86462369fd9b84cd06638e66686d0b8663a5a9",
+   "gloss": "expor",
+   "definition": "ἀνα-τίθημι\n[na LXX principalmente por חָרַם (Cremer, 546) ;]\npôr sobre, erguer etc. Méd. -εμαι, nos escritores tardios (Plut., al.; veja também MM, VGT, veja a palavra), expor, declarar: Act.25:14, Gal.2:2.†"
+  },
+  {
+   "strongs": "G0395",
+   "sha256": "5dba8a4c21a644cbde052e015735014b1b5327e011c8070e94457293996a2b53",
+   "gloss": "oriente",
+   "definition": "ἀνατολή, -ῆς, ἡ\n(ἀνατέλλω), [na LXX principalmente por מִזְרָח קָדִים ;]\n1. um nascer: da luz, Luk.1:78.\n2. o nascer do sol, o oriente (MM, VGT, veja a palavra): Mat.2:2, 9, Rev.21:13; ἀ. ἡλίου, Rev.7:2 16:12 (WΗ, p1.); pl., Mat.2:1 8:11 24:27, Luk.13:29.†"
+  },
+  {
+   "strongs": "G0396",
+   "sha256": "f395eb73cb73f738bd184314bdc9706e0ee8dd59ec1327072a1abe7aae00a0c4",
+   "gloss": "derrubar",
+   "definition": "ἀνα-τρέπω\n[na LXX por דָּחָה, הָדַף, etc. ;]\nderrubar, destruir: Jhn.2:15 WH, txt.; metaforicamente, subverter (MM, VGT, veja a palavra): 2Ti.2:18, Tit.1:11.†"
+  },
+  {
+   "strongs": "G0397",
+   "sha256": "325cf6bc70cd45291775d4dedb5136c430045d1203ec2478c953f825532638ae",
+   "gloss": "criar",
+   "definition": "ἀνα-τρέφω\n[na LXX: Wis.7:4 B, 4Ma.10:2 4Mac 11:15 א* ;]\ncriar, alimentar, educar: Luk.4:16, WΗ, mg., Act.7:20-21 22:3.†"
+  }
+ ]
+}
