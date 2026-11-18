@@ -32,10 +32,18 @@ it says 0 fail and 0 to do.
 ## Keep exactly as written
 - Every Hebrew and Greek word, letter for letter, accents and breathings
   included, in the same order ("ἀγάπη, -ης, ἡ" stays at the start). Never
-  transliterate, translate or drop one.
+  transliterate, translate or drop one. Retyped Hebrew comes out with its
+  marks in another order, so have your script copy each Hebrew and Greek
+  word from the source string (the check compares them exactly). A Greek
+  question mark ";" (U+037E) or ano teleia "·" after a Greek word is
+  the source's own punctuation: copy it once, don't add another.
 - Strong's numbers and every other number ("from 2336", "§ 47", "70f.").
 - STEPBible references: "Jhn.13:35", "1Co.2:3", "Act.4:5 4:7", "2Ma.4:1"
-  are codes: copy them unchanged, with their "†" or "*" marks.
+  are codes: copy them unchanged, with their "†" or "*" marks. In the
+  Greek, Abbott-Smith's other references are codes too ("Jn 2:13", "La
+  3:63", "Su 1:13", "III Ki 15:6"), even where one looks wrong ("1Jn.1:1
+  Jn 2:13", which means 1 John 2:13): copy them unchanged and never drop
+  part of one.
 - References with English book names (Strong's: "Ezekiel 29:4",
   "Psalm 45:1") are written with Spanish / Portuguese names, as in Easton's
   table (`../bios/INSTRUCTIONS.md` › Books): "Ezequiel 29:4" / "Ezequiel 29:4".
@@ -91,7 +99,9 @@ it says 0 fail and 0 to do.
   santificación / santificação, pacto / aliança). Non-denominational.
 - English words the lexicon discusses as words ("AV renders it 'charity'")
   stay in English inside the quotation, with the rest translated.
-- `gloss`: the plain word or two, lower case as in the English.
+- `gloss`: the plain word or two, lower case as in the English. If the
+  right word is spelled as in English ("memorial", "error"), keep it and
+  add a `note` saying so; don't pick a worse word to get past the check.
 
 If something must stay as it is (an English quotation, a siglum the check
 doesn't know), add `"note": "<why>"` to that entry; notes are listed for

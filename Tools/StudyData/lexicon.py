@@ -52,14 +52,20 @@ LANGUAGES = ("es", "pt")
 FIELDS = ("gloss", "definition", "derivation")
 BATCH_WORDS = 6000
 
-LETTER = "֐-׿Ͱ-Ͽἀ-῿"
+# Hebrew and Greek letters; the Greek question mark (;, U+037E) and ano
+# teleia (·, U+0387) are punctuation, kept as they are but not part of a word.
+LETTER = "֐-׿Ͱ-ͽͿ-ΆΈ-Ͽἀ-῿"
 ORIGINAL_WORD = re.compile(rf"[{LETTER}][{LETTER}̀-ͯ]*")
 # STEPBible's references: "Jhn.13:35", "1Co.2:3", "2Mac.4:1", "Mat.5" (a chapter).
 STEP_REFERENCE = re.compile(r"(?<![\w.])[1-4]?[A-Z][a-z]{1,3}\.\s?\d+(?::\d+(?:[-–]\d+)?)?")
+# Abbott-Smith also cites with a space ("Jn 2:13", "La 3:63", "Su 1:13",
+# often a numbered book's later chapters): in the Greek these are codes too.
+SHORT_REFERENCE = re.compile(r"(?<![\w.])(?:[1-4IV]{1,3} ?)?[A-Z][a-z]{0,3} \d+:\d+(?:[-–]\d+)?")
 NUMBER = re.compile(r"\d+")
 # Sigla of works, editions and versions (LXX, MM, WH, VGT…) and marks (†, *, §).
 SIGLUM = re.compile(r"(?<![\w])(?:[A-Z]{2,}[a-z]*|[IVX]+)(?![\w])")
 MARKS = re.compile(r"[†*§]")
+GREEK_STOPS = re.compile(r"[\u037e\u0387][;,.:]?")
 # Words in capitals that aren't sigla, and the ones that change: OT is AT.
 NOT_SIGLA = {"JESUS", "LORD", "GOD", "I"}
 SIGLA_IN = {"OT": "AT"}
@@ -135,7 +141,16 @@ def masked(text):
     return STEP_REFERENCE.sub(" ", text)
 
 
-def check_field(field, source, text, lang):
+def codes(text, greek):
+    """The references copied unchanged: STEPBible's, and in the Greek also
+    Abbott-Smith's "Jn 2:13" kind."""
+    found = [(m.start(), m.group(0)) for m in STEP_REFERENCE.finditer(text)]
+    if greek:
+        found += [(m.start(), m.group(0)) for m in SHORT_REFERENCE.finditer(STEP_REFERENCE.sub(lambda m: " " * len(m.group(0)), text))]
+    return [code for _, code in sorted(found)]
+
+
+def check_field(field, source, text, lang, greek=False):
     problems = []
     if not text.strip():
         return ["empty"]
@@ -152,15 +167,20 @@ def check_field(field, source, text, lang):
     kept = Counter(x for x in SIGLUM.findall(text) if x not in NOT_SIGLA)
     if sigla != kept:
         problems.append(f"sigla differ (missing {list((sigla - kept).elements())[:6]}, extra {list((kept - sigla).elements())[:6]})")
+    if Counter(GREEK_STOPS.findall(source)) != Counter(GREEK_STOPS.findall(text)):
+        problems.append("Greek punctuation differs (a ; or · after a Greek word is the source's own: don't add another)")
     if Counter(MARKS.findall(source)) != Counter(MARKS.findall(text)):
         problems.append("marks † * § differ")
-    if STEP_REFERENCE.findall(source) != STEP_REFERENCE.findall(text):
-        want, have = STEP_REFERENCE.findall(source), STEP_REFERENCE.findall(text)
+    if codes(source, greek) != codes(text, greek):
+        want, have = codes(source, greek), codes(text, greek)
         missing = list((Counter(want) - Counter(have)).elements())
         extra = list((Counter(have) - Counter(want)).elements())
         problems.append(f"STEPBible references differ (missing {missing[:6]}, extra {extra[:6]})" if missing or extra
                         else "STEPBible references in another order")
-    want, have = refs.references(masked(source), "en"), refs.references(masked(text), lang)
+    if greek:  # Abbott-Smith's references are all codes, checked above
+        want = have = []
+    else:
+        want, have = refs.references(masked(source), "en"), refs.references(masked(text), lang)
     if want != have:
         problems.append(f"references differ ({[refs.label(r) for r in want[:6]]} -> {[refs.label(r) for r in have[:6]]})")
     if field != "gloss":
@@ -184,7 +204,7 @@ def check_entry(entry, t, lang):
         source, text = entry[field], t.get(field) or ""
         if text == source and re.search(r"(?<![\w-])[a-z]{3,}", STEP_REFERENCE.sub("", source)) and not t.get("note"):
             problems.append(f"{field}: not translated (or give a note)")
-        for p in check_field(field, source, text, lang):
+        for p in check_field(field, source, text, lang, greek=entry["language"] == "greek"):
             problems.append(f"{field}: {p}")
     if t.get("note"):
         review.append(f"- note: {t['note']}")
