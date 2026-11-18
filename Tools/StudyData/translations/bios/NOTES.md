@@ -216,3 +216,13 @@ What the translators reported per batch, beyond the review files.
 - wrong_verse: Lachish q1, Metheg-ammah q1 (as pt).
 - Glossary: Rhodes was "Rhodas", Hazor varied between "Asor" and "Hasor": manual.json now pins "Rodas" and "Hasor" (align earlier "Asor" in the final pass).
 - Lehi: R.V. "hollow place" has no RV1909 words; loose quote joined from two runs; the A.V. phrase translated apart. Mahaneh-dan transliterated. Mareshah "Jos 15:44" corrected here (pt still "Jo").
+
+## pt 040–041
+- wrong_verse: Ramath-lehi q0 "in the jaw" (BLIVRE has only "em Leí", which is q1): "na queixada".
+- Sea of Galilee q4 "Cala-te, aquieta-te" (Mark 4:39; Easton cites 7:31–35). River q0 "dilúvio" (A.V. word; the verse's "rio" would repeat the R.V.).
+- Sheba the place "Sabá" (Almeida), Seba in Josh 19; Senir wording "Siriom". Pethor loses Easton's "[the god] Ammo" point; Rephidim "cabeça de nações" a little awkward.
+
+## pt 042–043
+- wrong_verse: Shiloh q3 (an LXX reading, not Scripture; the matcher marked it loose and gave an Exodus hail verse); Ur q3 (a brick inscription, 1 Kgs 6:2 given).
+- Brook Eshcol: BLIVRE has only "vale de Escol", so the A.V./R.V. contrast is lost. Tishbe q2 joined "Elias Tisbita… de Gileade".
+- BLIVRE oddities verbatim: Tarsus "cidade não pouca importância"; Timnath-heres "o norte do monte de Gaás".
