@@ -44,7 +44,12 @@ struct TopicDetailView: View {
                     }
                     Section {
                     } footer: {
-                        Text("Verses from the \(library.currentTranslation.abbreviation). \(TopicRepository.attribution)")
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Verses from the \(library.currentTranslation.abbreviation). \(TopicRepository.attribution)")
+                            if topic.isTranslated {
+                                Text(TopicRepository.translatedNote)
+                            }
+                        }
                     }
                 } else {
                     ProgressView().frame(maxWidth: .infinity)

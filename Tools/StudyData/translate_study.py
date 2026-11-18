@@ -255,7 +255,10 @@ def main(rv1909: str):
         out = {"person": {}, "place": {}, "event": {}, "era": {}, "route": {}}
         for (kind, pid), (name, _, _) in entities.items():
             base, note = split_name(name)
-            if name in names:
+            pinned = manual[lang].get("ids", {}).get(f"{kind}:{pid}")
+            if pinned:
+                text = pinned  # one person or place, where others share the English name
+            elif name in names:
                 text = names[name]
             else:
                 text = found.get((kind, pid)) or say(base)

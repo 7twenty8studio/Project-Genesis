@@ -17,6 +17,7 @@ import csv
 import os
 import re
 import sqlite3
+import sys
 
 USFM = (
     "GEN EXO LEV NUM DEU JOS JDG RUT 1SA 2SA 1KI 2KI 1CH 2CH EZR NEH EST JOB PSA PRO ECC SNG ISA JER LAM "
@@ -33,6 +34,10 @@ CHAPTER_REF = re.compile(r"^(\d+)(?::([\d,\-–\s]+))?$")
 
 def verse_id(book, chapter, verse):
     return book * 1_000_000 + chapter * 1_000 + verse
+
+
+# Slips in the source CSV.
+SOURCE_FIXES = {"0f Man for Jesus": "Of Man for Jesus"}
 
 
 def nice(text):
@@ -139,6 +144,7 @@ def main():
             entry_id += 1
             sort += 1
             label = nice(label) or "General"
+            label = SOURCE_FIXES.get(label, label)
             # The app shows two levels; deeper headings join their parent's
             # ("Parable: Of the sower") under the top-level heading.
             if depth >= 2 and (depth - 1) in parents and 0 in parents:
@@ -204,6 +210,15 @@ def main():
     db.execute("VACUUM")
     db.close()
     print(f"Topics: {len(topics)}, entries: {len(entries)}, references: {len(refs)}, see-also: {len(set(see_also))}, entries with unreadable refs: {skipped}")
+    if os.path.abspath(args.out) == os.path.abspath(naves_topics()):
+        from add_topic_translations import add
+        print(f"translations: {add()} rows")
+
+
+def naves_topics():
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import naves
+    return naves.TOPICS
 
 
 if __name__ == "__main__":

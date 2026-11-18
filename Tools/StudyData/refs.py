@@ -25,6 +25,7 @@ ENGLISH_EXTRA = {
     "Exod.": "Ex", "Judge.": "Judg", "Exek.": "Ezek", "Mat.": "Matt", "Job.": "Job",
     "Psalm": "Ps", "Psalms": "Ps", "1 Thes.": "1Thess", "2 King": "2Kings", "Ge": "Gen",
     "Acts.": "Acts", "1 Sam": "1Sam", "John.": "John",
+    "So": "Cant",  # BibleData's Song of Solomon, left in a few of Nave's headings
     # Full names ("the prophet Isaiah, 19:13").
     "Genesis": "Gen", "Exodus": "Ex", "Leviticus": "Lev", "Numbers": "Num",
     "Deuteronomy": "Deut", "Joshua": "Josh", "Judges": "Judg", "Isaiah": "Isa",
