@@ -201,9 +201,10 @@
   {
    "strongs": "H2283",
    "sha256": "ac97ca82fa26928947a9bca11f11c1f371720397a60f28b680cb16acc394b78a",
-   "gloss": "espanto",
+   "gloss": "terror",
    "definition": "propiamente, vértigo, es decir, (figuradamente) temor",
-   "derivation": "de una raíz no usada que significa girar (compárese 2287);"
+   "derivation": "de una raíz no usada que significa girar (compárese 2287);",
+   "note": "\"terror\" is the same word in Spanish (as in the other \"terror\" glosses)."
   },
   {
    "strongs": "H2284",
@@ -1076,8 +1077,9 @@
    "strongs": "H2384",
    "sha256": "de17f37568f4c4483435037f1f9358d7e3b0c554d244cbc1bd58ce2021bd7e3c",
    "gloss": "visión",
-   "definition": "una revelación, expectación por sueño",
-   "derivation": "de 2372;"
+   "definition": "una revelación, especialmente por sueño",
+   "derivation": "de 2372;",
+   "note": "Strong's \"espec.\" (especially), which STEPBible expanded as \"expectation\"."
   },
   {
    "strongs": "H2385",

@@ -1,0 +1,776 @@
+{
+ "batch": "053",
+ "lang": "pt",
+ "entries": [
+  {
+   "strongs": "G3021",
+   "sha256": "aba32c53c29fecda8d3fe958fe47884eb8a989c4a769b145988fd36dd072801c",
+   "gloss": "branquear",
+   "definition": "λευκαίνω\n(λευκός), [na LXX: Psa.51:7, Isa.1:18 (לָבַן hi.), etc. ;]\nbranquear, tornar branco: com acusativo de coisa(s), Mrk.9:3, Rev.7:14.†"
+  },
+  {
+   "strongs": "G3022",
+   "sha256": "8b7e5cd7c5312f49b0769bccc8a4b77374262e2b7f11aea97ed1817a20e4e5fe",
+   "gloss": "branco",
+   "definition": "λευκο-βύσσινος, -ον\n(cf. λευκολινής, veste de linho branco, C.I., 155, 17),\nlinho branco: Rev.19:14 (WH, mg.).†\nλευκός, ή, -όν\n[na LXX principalmente por לָבָן ;]\n1. claro, brilhante: de roupas, Mat.17:2, Mrk.9:3 16:5, Luk.9:29, Act.1:10, Rev.3:5 4:4 6:11 7:9, 13 19:14 (cf. Ecc.9:8); ὡς χιών, Mat.28:3; ἐν λ.. (sc. ἱματίοις), Jhn.20:12, Rev.3:4; θρόνος, Rev.20:11.\n2. branco: Mat.5:36, Rev.1:14 2:17 4:4 6:2 14:14 19:11; figuradamente, das vestes, Rev.3:18; do grão maduro, Jhn.4:35.†"
+  },
+  {
+   "strongs": "G3023",
+   "sha256": "b5188495667e781427dbbdbccdef1e7dbda7513a4faeeec3cb4e1c3a9cf7ad17",
+   "gloss": "leão",
+   "definition": "λέων, -οντος, ὁ\n[na LXX principalmente por אֲרִי, אַרְיֵה, também por כְּפִיר, etc. ;]\nleão: Heb.11:33, 1Pe.5:8, Rev.4:7 9:8, 17 10:3 13:2; metaforicamente, 2Ti.4:17, Rev.5:5.†"
+  },
+  {
+   "strongs": "G3024",
+   "sha256": "1308e88c6e8d5204bce3999df2a11f81d3ba160368bd58ff76b58d617ce9eb9a",
+   "gloss": "esquecimento",
+   "definition": "λήθη, -ης, ἡ\n(λήθω = λανθάνω) [na LXX: Lev.5:15 (מַעַל), Wis.16:11, Sir.14:7, al. ;]\nesquecimento: λ. λαβεῖν (sobre a expressão, veja Mayor, in l): 2Pe.1:9.†"
+  },
+  {
+   "strongs": "G3025",
+   "sha256": "908693f9d83babfb436916a9f15c2480efaf6cd78b59718d529a14c8906e7e89",
+   "gloss": "lagar",
+   "definition": "ληνός, -οῦ, ἡ\n(em alguns MSS., LXX e NT, ὁ), [na LXX principalmente por יֶקֶב Num.18:27, al.; também por רַהַט (Gen.30:38, 41), גַּת (Neh.13:15, al.), etc. ;]\ncocho ou tina; esp. para pisar uvas: Mat.21:33, Rev.14:20 19:16; τὴν λ. . . . τὸν μέγαν (um solecismo talvez inadvertido), Rev.14:19 (cf. ὑπολήνιον).†"
+  },
+  {
+   "strongs": "G3026",
+   "sha256": "1b6fbd489e54237e1502b9e6865031306450ad691cf8d7df172fa9ab8fc65d12",
+   "gloss": "tolice",
+   "definition": "λῆρος, -ου, ὁ\n[na LXX: 4Ma.5:10 * ;]\nconversa tola, disparate: Luk.24:11.†"
+  },
+  {
+   "strongs": "G3027",
+   "sha256": "c6f53568f86d1dcc59ee70791cbc769211585d68b6fae8ab6c36860e74b72a0c",
+   "gloss": "salteador/rebelde",
+   "definition": "λῃστής, -οῦ, ὁ\n(ép. ληίς = λεία, despojo), [na LXX por גְּדוּד, etc. ;]\nsalteador, bandido: Mat.21:13 (LXX) Mat.26:55 27:38, 44, Mrk.11:17 14:48 15:27, Luk.10:30, 36 19:46 22:52, Jhn.10:1, 8 18:40, 2Co.11:26.†\nSYN.: κλέπτης, q.v"
+  },
+  {
+   "strongs": "G3028",
+   "sha256": "33e1d45e4fa6265da8bcb225b283a56c1fdaf25ad0cca47db88624ec98f7924d",
+   "gloss": "recebimento",
+   "definition": "λῆμψις (Rec. λῆψις, assim no cl.), -εως, ἡ\n(λαμβάνω), [na LXX (λῆψ-): Pro.15:29; λ. δώρων, Pro.15:27 (מַתָּנָה); λ. καὶ δόσις, Sir.41:19 42:7 * ;]\no receber: δόσις καὶ λ., Php.4:15.†"
+  },
+  {
+   "strongs": "G3029",
+   "sha256": "1d95a6fc3fac6250ea91b5419d09f613a02f517b1fc8c3b3c96e8c84e7ca5e2b",
+   "gloss": "muito",
+   "definition": "λίαν,\nadv. [na LXX principalmente por מְאֹד Gen.1:31 4:5, Jer.24:3, al.; Tob.9:4, 2Ma.11:1, al. ;]\nmuito, extremamente: Mat.2:16 4:8 8:28 27:14 Mrk.1:35 6:51 (Rec. λ. ἐκ περισσοῦ) Mrk.9:3 16:2, Luk.23:8, 2Ti.4:15, II Jn 4, 3Jn.3 (cf. ὑτερλίαν).†"
+  },
+  {
+   "strongs": "G3030",
+   "sha256": "8dcbe8553759a1c62d92e02a8d5c76339ea53f9b7da9191c5d35eab1227aba8e",
+   "gloss": "incenso",
+   "definition": "λίβανος, -ου, ὁ\n(raramente ἡ), (do semítico; cf. o equivalente heb.), [na LXX por לְבוֹנָה Exo.30:34, Isa.60:6; Sir.24:15, al. ;]\n1. no cl., a árvore do incenso.\n2. (Ocasionalmente no cl.) incenso (assim Lev.2:1; cf. λιβανωτός): Mat.2:11, Rev.18:13.†"
+  },
+  {
+   "strongs": "G3031",
+   "sha256": "57c6fd071da29757259d6eea3514c15597b073f558cf574a688d9aed485ad7ce",
+   "gloss": "incensário",
+   "definition": "λιβανωτός, -οῦ, ὁ\n(λίβανος), [na LXX: 1Ch.9:29, 3Ma.5:2 * ;]\n1. no cl. (e na LXX), incenso, a goma do líbano.\n2. = gr. tardio, λιβανωτρίς, incensário: Rev.8:3, 5 (a mesma forma aparece nas inscr.; MM, xvi).†"
+  },
+  {
+   "strongs": "G3032",
+   "sha256": "c1a19f8e0e35d233ea9e7bc49c2d3b798e73a46a9ed3e885d148f21429a23c89",
+   "gloss": "Libertos",
+   "definition": "Λιβερῖτνος, -ου, ὁ (lat. libertinus),\nliberto: ἡ συναγωγὴ ἡ λεγομένη Λιβερτίνων Act.6:9 (Bl. pensa que a leitura original era Λιβυστίνων, Phil. Gosp., 69 s.).†",
+   "note": "'Phil. Gosp.' (Blass, Philology of the Gospels) copied as in the source."
+  },
+  {
+   "strongs": "G3033",
+   "sha256": "53cb1347e69f1fe3a9cbc7b38524f53ddd85738a8b6fb042178c2e73810892ae",
+   "gloss": "Líbia",
+   "definition": "Líbia, a parte norte da África a oeste do Egito, (Odisseia de Homero); em escritores posteriores também para todo o continente (ML)",
+   "note": "'(ML)' copied as in the source; 'Odyssey by Homer' translated."
+  },
+  {
+   "strongs": "G3034",
+   "sha256": "78355e69786ef9d078639f803fe15cb0bdb3df2963ceacca134f0539bccf03bf",
+   "gloss": "apedrejar",
+   "definition": "λιθάζω\n(λίθος), [na LXX (antes de ἐν λίθοις): 2Ki.16:6 16:13 (סָקַל pi.)* ;]\n1. atirar pedras (Arist., Polyb., al.).\n2. = λιθοβολέω (LXX, NT), atingir com pedras, apedrejar: com acusativo de pessoa(s), Jhn.8:6 10:31-31 11:8, Act.14:10; pass., Act.5:26, 2Co.11:25, Heb.11:37 (veja DB, art., \" Crimes and punishments,\" e cf. κατα-λιθάζω).†",
+   "note": "'Crimes and punishments' is the title of DB's article, kept."
+  },
+  {
+   "strongs": "G3035",
+   "sha256": "5c4233d9673d7839b55662b429961fc17340b6b4bf22196126bc5cf18665f564",
+   "gloss": "de pedra",
+   "definition": "λίθινος, -η, -ον\n(λίθος) [na LXX por אֶבֶן ;]\nde pedra: Jhn.2:6, 2Co.3:3, Rev.9:20.†"
+  },
+  {
+   "strongs": "G3036",
+   "sha256": "52d943dfd3b63d7719701917c5c4245453dd3f5ef27a0967e7d2ecec095ccd71",
+   "gloss": "apedrejar",
+   "definition": "λιθο-βολέω, -ῶ\n(λίθος, βάλλω), [na LXX por סָקַל, רָגַם, Exo.19:13, Lev.20:2, al. ;]\natingir com pedras, matar por apedrejamento, apedrejar (cf. λιθάζω): com acusativo de pessoa(s), Mat.21:35 23:37, Luk.13:34 Act.7:58-59 14:5; pass., Heb.12:20 (LXX).†"
+  },
+  {
+   "strongs": "G3037",
+   "sha256": "ef2d633f4429d78d1c6aad422fd3919f544458bc3321fa154efbe185210817a7",
+   "gloss": "pedra",
+   "definition": "λίθος, -ου, ὁ\n(e, no át.., das pedras preciosas, ἡ.) [na LXX por אֶבֶן, Gen.11:3, al.; λ. τίμιος, por פָּז, Psa.19:10 21:3, Pro.8:19, al. ;]\npedra: Mat.4:6, al.; pl., Mat.3:9, al.; à entrada de um sepulcro, Mat.27:60, 66 28:2, Mrk.15:46 16:3-4, Luk.24:2, Jhn.11:38, 32 11:41 20:1; λ. μυλικός, Luk.17:2, cf. Rev.18:21; das pedras de construção, Mat.21:42, [44], Mat.24:2, Mrk.12:10 13:1-2, Luk.19:44 20:17-18 21:5-6 Act.4:11, 1Pe.2:7; metaforicamente, de Cristo, λ. ἀκρογωναῖος, ἐκλεκτός, ἔντιμος, 1Pe.2:6 (LXX); λ. ζῶν, 1Pe.2:4; προσκόμματος, 1Pe.2:8, Rom.9:33; dos cristãos, λ. ζῶντες, 1Pe.2:5; das pedras preciosas, λ. τίμιος, Rev.17:4 18:12, 16 21:11, 19; ἴασπις, Rev.4:3; ἐνδεδυμένοι λ. καθαρόν, Rev.15:6 (λίνον, Rec., R, mg., veja Swete, in l); metaforicamente, λ. τίμιοι, 1Co.3:12; das tábuas da lei, 2Co.3:7; dos ídolos, Act.17:29"
+  },
+  {
+   "strongs": "G3038",
+   "sha256": "1901820dc26e269eabde87b2d3601a384aad2092e6a52b5d30e37b6ee23b5755",
+   "gloss": "O Pavimento de Pedra",
+   "definition": "λιθό-στρωτος, -ον\n(στρώννυμι), [na LXX: 2Ch.7:3, Est.1:6, Sng.3:10 (רִצְפָּה, רָצַף)* ;]\npavimentado com pedras, esp. de obra em mosaico (Ca, i.e.); como subst., τὸ λ., pavimento de mosaico: Jhn.19:13 (cf. Γαββαθᾶ).†",
+   "note": "'(Ca, i.e.)' (probably 'Ct, l. c.', Song of Songs 3:10) copied as in the source."
+  },
+  {
+   "strongs": "G3039",
+   "sha256": "f17169e18b776ff9bba9777464f5571c165dc8c9692b776a806dfa68b9d099ba",
+   "gloss": "esmagar",
+   "definition": "λικμάω, -ῶ\n(λικμός = λίκνον, joeira), [na LXX principalmente por זָרָה ni., pi., Rut.3:2 3Ki.14:15, Isa.17:13, Jer.31:10, Dan.2:44, al. ;]\n1. no cl., joeirar (assim Rt, l. com).\n2. Na LXX (ll com, exc. Rt), espalhar (como palha ou pó): Luk.20:18 (RV, «scatter as dust»; Deiss., BS, 225 s., cita ex. nos π. que sugere o sentido arruinar, destruir; cf. Vg. comminuet, AV, «grind to powder»; cf. também Kennedy, Sources, 126), Mat.21:44 [WH], R, txt.†",
+   "note": "'scatter as dust' (RV) and 'grind to powder' (AV) are the versions' renderings, kept in English. 'Sources' is Kennedy's title, kept. Abbott-Smith's 'Ru' (Ruth, no verse) written 'Rt'."
+  },
+  {
+   "strongs": "G3040",
+   "sha256": "e82b9b6da13cee56040ba97ddfecc7dc9cb44f7eff86d5ec9d9948d6c143b743",
+   "gloss": "Portos",
+   "definition": "λιμήν, -ένος, ὁ\n[na LXX: Psa.107:30 (מָחוֹז), Psa.107:35, 1Es.5:55 Est.5:1-2 Est.5:1-73 4Macc 7:1-23 * ;]\nporto, ancoradouro: Act.27:8, 12 (cf. Καλοὶ Λιμένες).†",
+   "note": "Gloss as in the Bíblia Livre's 'Bons Portos' (Act.27:8)."
+  },
+  {
+   "strongs": "G3041",
+   "sha256": "5f9a2d602277fbd0ed9df393ac8ae2b9741c1831bbd8d7ffbbe11f852095fcb2",
+   "gloss": "lago",
+   "definition": "λίμνη, -ης, ἡ\n[na LXX: Psa.107:35 114:8 (אֲגַם), Sng.7:5 (בְּרֵכָה) 1Ma.11:35, 2Ma.12:16 * ;]\nlago: do mar da Galileia (Mt, Mc, veja: θάλασσα), Luk.5:2 8:22-23, 33; λ. Γεννησαρέτ (veja), Luk.5:1; λ. τ. πυρός, Rev.19:20 20:10, 14-15; καιομένη πυρί, Rev.21:8.†"
+  },
+  {
+   "strongs": "G3042",
+   "sha256": "18dd77db5fb60271aec1f17dae9399dd05b70e07906a24a30927f7d8d32c25ab",
+   "gloss": "fome",
+   "definition": "λιμός, -οῦ, ὁ\n(assim no át..; no dór. ἡ, e assim às vezes na LXX, veja Th., Gr., 146; no NT: Luk.15:14, Act.11:28; cf. M, Pr., 60), [na LXX principalmente por רָעָב ;]\nfome, carestia: Luk.4:25 15:14, 17, Act.7:11\" (LXX) Act.11:28, Rom.8:35, Rev.6:8 18:8; λ. καὶ δίψος, 2Co.11:27; pl., Mat.24:7, Mrk.13:8, Luk.21:11.†"
+  },
+  {
+   "strongs": "G3043",
+   "sha256": "12ecbd3642c390bb13ad9467c98515ec30c8698443f4425681962912dbd44614",
+   "gloss": "linho/pavio",
+   "definition": "λίνον\n(Tr. λῖνον), -ου, τό [na LXX: Exo.9:31 (פִּשְׁתָּה), al. ;]\n1. linho (planta): Mat.12:20 (LXX).\n2. linho: Rev.15:6 (R, mg., veja: λίθος).†\nλίθος, -ου, ὁ\n(e, no át.., das pedras preciosas, ἡ.) [na LXX por אֶבֶן, Gen.11:3, al.; λ. τίμιος, por פָּז, Psa.19:10 21:3, Pro.8:19, al. ;]\npedra: Mat.4:6, al.; pl., Mat.3:9, al.; à entrada de um sepulcro, Mat.27:60, 66 28:2, Mrk.15:46 16:3-4, Luk.24:2, Jhn.11:38, 32 11:41 20:1; λ. μυλικός, Luk.17:2, cf. Rev.18:21; das pedras de construção, Mat.21:42, [44], Mat.24:2, Mrk.12:10 13:1-2, Luk.19:44 20:17-18 21:5-6 Act.4:11, 1Pe.2:7; metaforicamente, de Cristo, λ. ἀκρογωναῖος, ἐκλεκτός, ἔντιμος, 1Pe.2:6 (LXX); λ. ζῶν, 1Pe.2:4; προσκόμματος, 1Pe.2:8, Rom.9:33; dos cristãos, λ. ζῶντες, 1Pe.2:5; das pedras preciosas, λ. τίμιος, Rev.17:4 18:12, 16 21:11, 19; ἴασπις, Rev.4:3; ἐνδεδυμένοι λ. καθαρόν, Rev.15:6 (λίνον, Rec., R, mg., veja Swete, in l); metaforicamente, λ. τίμιοι, 1Co.3:12; das tábuas da lei, 2Co.3:7; dos ídolos, Act.17:29"
+  },
+  {
+   "strongs": "G3044",
+   "sha256": "f8b24a6d925f09946cf33bf794fd9ced7352a760cb67dcdd5a7f8add8d8f19b5",
+   "gloss": "Lino",
+   "definition": "1. Lino , cantor mítico, filho de Apolo e Urânia (Calíope), mestre de Orfeu, (Theocritus Poeta Bucolicus), etc.\n2. como apelativo, o canto ou balada de Lino , cantado por um menino ao som da cítara enquanto os vindimadores trabalham, Λίνον ὑπὸ καλὸν ἄειδεν cantava a bela balada de Lino em acompanhamento, (Ilíada de Homero):—;compare αἴλινος que é um canto fúnebre. (ML)",
+   "note": "Classical authors' and works' names in Latin form ('Theocritus Poeta Bucolicus') and '(ML)' kept as in the source; 'Iliad/Odyssey by Homer' translated."
+  },
+  {
+   "strongs": "G3045",
+   "sha256": "da4f28d5b522693897ffce2a70e34203af7461ed852329bea144d8afee05b417",
+   "gloss": "rico",
+   "definition": "λιπαρός, -ά, -όν\n(λίπος, gordura), [na LXX: Jdg.3:29, Neh.9:35, Is 30:23 (שָׁמֵן)* ;]\noleoso, gordo; metaforicamente, do modo de viver, rico, delicado: τὰ λ. καὶ τ. λαμπρά, Rev.18:14.†"
+  },
+  {
+   "strongs": "G3046",
+   "sha256": "c89bb34a24be0c4bb951f1b5e3710b61f0d7134a80fa1f6bff4b20503c99f00a",
+   "gloss": "libra",
+   "definition": "λίτρα, -ας, ἡ\n(cf. lat. libra),\n1. moeda siciliana = rom. libra ou asse.\n2. Em peso, uma libra: Jhn.12:3 19:39.†"
+  },
+  {
+   "strongs": "G3047",
+   "sha256": "5abfebef92eafe08e206b19fe87ae967cfd952c4df991196e638479003e1dc7c",
+   "gloss": "sudoeste",
+   "definition": "λίψ, λιβός, ὁ\n[na LXX principalmente por נֶגֶב, também por תֵּימָן, מַעֲרָב, etc., Gen.13:14, Num.2:10, 2Ch.32:30, al. ;]\no vento SO.: βλέποντα κατὰ λ., Act.27:12 (veja Page, in l; Deiss., ES, 141).†",
+   "note": "'SW.' (south-west) written 'SO.' (sudoeste)."
+  },
+  {
+   "strongs": "G3048",
+   "sha256": "652f2383110a53d821e444051b4642593fb9beaf58f380446882331321624294",
+   "gloss": "coleta",
+   "definition": "λογία\n(prop., -εία, veja BS, 142 ss.), -ας, ἡ (λογεύω, coletar, palavra encontrada nos π., veja Deiss., BS, l. com; LAE, 70, 103; MM, xvi),\ncoleta: 1Co.16:1-2.†"
+  },
+  {
+   "strongs": "G3049",
+   "sha256": "350576b4ba9122eab1f42d1481ff3e1b78fadf523bbbbc489000a52793c89a77",
+   "gloss": "contar",
+   "definition": "λογίζομαι\n(λόγος), [na LXX principalmente por חָשַׁב ;]\n1. prop., do cálculo numérico, contar, calcular: com acusativo antes de μετά, Mrk.15:23 (LXX) (Rec., R, mg.), Luk.22:37.\n2. Metafórico, sem referência a números, por uma avaliação de características ou razões;\n(a) levar em conta, imputar: com acusativo de coisa(s), 1Co.13:5; id. antes de dativo de pessoa(s), Rom.4:3 (LXX), Rom.4:4, 6 4:8\" (LXX), 2Co.5:19, 2Ti.4:16; antes de εἰς (cf. heb. ל חָשַׁב; Bl., § 33, 3), Act.19:27, Rom.2:26 4:3, 5 4:9-11, 22-24 9:8 Gal.3:6\" (LXX), Jas.2:23 (LXX);\n(b) considerar, ponderar: com acusativo de coisa(s), Php.4:8; antes de ὅτι, Jhn.11:50, Heb.11:10; τοῦτο, ὅτι, 2Co.10:11; com acusativo de pessoa(s), com inf., Rom.6:11; antes de ὡς, Rom.8:36 (LXX);\n(c.) supor, julgar, considerar: 1Co.13:11; ὡς, 1Pe.5:12; οὕτως, 1Co.4:1; com acusativo de coisa(s), 2Co.3:5; id. antes de εἰς, 2Co.12:6; ὅτι, Rom.8:18; τοῦτο, ὅτι, Rom.2:3, 2Co.10:7; com inf., 2Co.11:5; acusativo e inf., Rom.3:28 14:14, Php.3:13; com acusativo de pessoa(s) antes de ὡς, 2Co.10:2;\n(d) propor-se, decidir: com inf. (Eur., Or., 555), 2Co.10:2\n(cf. ἀνα-, δια-, παρα-, συλ-λογίζομαι).†",
+   "note": "Source '(with)' is a garbled '(c)' (after (a), (b)): rendered '(c.)'."
+  },
+  {
+   "strongs": "G3050",
+   "sha256": "40576a5bf6ee901a0b6864027e3941b15ece94722d6f920386228685dd1564d8",
+   "gloss": "espiritual",
+   "definition": "λογικός, -ή, -όν\n(λόγος, razão)\nrazoável, racional: λατρεία, Rom.12:1; τὸ λ. (isto é, espiritual) γάλα (veja Hort, in l; MM, xvi), 1Pe.2:2 (em apoio da AV, «milk of the word», veja ICC, in l).†",
+   "note": "'milk of the word' is the AV's rendering, kept in English."
+  },
+  {
+   "strongs": "G3051",
+   "sha256": "8b176b497779727ffd0a76bc4b7eb0913200f6d395a706d7d2054f8361791599",
+   "gloss": "oráculos",
+   "definition": "λόγιον, -ου, τό\n(dim. de λόγος, veja ICC, Ro., 70), [na LXX principalmente por אִמְרָה, אֵמֶר, Psa.18:30 19:14, al.; também por דָּבָר, Isa.28:13, al.; (cf. λογεῖον (-ιον) por חֹשֶׁן, o peitoral oracular do sumo sacerdote, Exo.28:15, al.) ;]\noráculo: Act.7:38, Rom.3:2, Heb.5:12, 1Pe.4:11 (sobre o uso ecl., λόγια τ. Κυρίου, veja Lft., Essay on Sup. Rel., 172 ss.).†",
+   "note": "'Essay on Sup. Rel.' is Lightfoot's title, kept; 'the H.P.' (High Priest) written out."
+  },
+  {
+   "strongs": "G3052",
+   "sha256": "47287d4fc4fd5b6ec8ad0ce139a78f3b5c94ead76a2ec9c22fa2433f12953a9e",
+   "gloss": "erudito",
+   "definition": "λόγιος, -ον\n(λόγος),\n1. no cl., erudito (At, l. com, R, txt.).\n2. No gr. tardio, eloquente: Act.18:24 (veja Page, in l; Field, Notas, 129).†"
+  },
+  {
+   "strongs": "G3053",
+   "sha256": "d48769619bbfbe731e43dbc72063da7c8f34337ed71795ecf0207e89cd4fa462",
+   "gloss": "pensamento",
+   "definition": "λογισμός, -οῦ, ὁ\n(λογίζομαι), [na LXX: Psa.33:10-11, Pro.19:21, Isa.66:18, al. (מַחֲשָׁבָה) ;]\nraciocínio, pensamento: Rom.2:15, 2Co.10:5.†"
+  },
+  {
+   "strongs": "G3054",
+   "sha256": "9316b93e834ef99a76dd6247c7ffef761280ca90faa4a6bb68eabb28c52d6506",
+   "gloss": "contender",
+   "definition": "λογομαχέω, -ῶ\n(λόγος, μάχομαι),\ncontender com palavras: 2Ti.2:14.†"
+  },
+  {
+   "strongs": "G3055",
+   "sha256": "9bf9f669aa458ac965c8486e52ce72b936e679ef55535aa295dce7019416b9af",
+   "gloss": "contenda",
+   "definition": "λογομαχία, -ας, ἡ\n(λογομαχέω),\ncontenda de palavras: pl., 1Ti.6:4.†"
+  },
+  {
+   "strongs": "G3056",
+   "sha256": "89d813f9f624869075e8dc7e22cad38d51be3b225e0dd342b2b925f6d2da30ea",
+   "gloss": "palavra",
+   "definition": "λόγος, -ου, ὁ (λέγω)\n[na LXX principalmente por דָּבָר, também por מִלָּה ,אֵמֶר, etc. ;]\nI. Daquilo pelo qual se expressa o pensamento interior, lat. oratio, sermo, vox, verbum.\n1. palavra, não no sentido gramatical de um mero nome (ἔπος, ὄνομα, ῥῆμα), mas a palavra enquanto encarna um conceito ou ideia: Mat.8:8, Luk.7:7, 1Co.14:9, 19 Heb.12:19, al.\n2. dito, afirmação, declaração: Mat.19:22 (T om.), Mrk.5:36 7:29, Luk.1:29, Jhn.2:22 6:60, Act.7:29, al.; com genitivo atrib., Act.13:15, Rom.9:9, Heb.7:28, al.; dos ditos, mandamentos, promessas, etc., de mestres, Mat.7:24 10:14, Mrk.8:38, Luk.9:4, Jhn.14:24, al.; λ. κενοί, Eph.5:6; ἀληθινοί, Rev.19:9; πιστοί, Rev.22:6; esp. dos preceitos, decretos e promessas de Deus, ὁ λ. τ. θεοῦ, a palavra de Deus: Mrk.7:13, Jhn.10:35, Rom.13:9, 1Co.14:36, Php.1:14, al.; absol., ὁ λ., Mat.13:21, 22 Mrk.16:[20], Luk.1:2, Act.6:4, Heb.4:12, al.\n3. fala, discurso: Act.14:12, 2Co.10:10, Jas.3:2; em oposição a ἐπιστολή, 2Th.2:15; distinto de σοφία, 1Co.2:1; ἀναστροφή, 1Ti.4:12; δύναμις, 1Co.4:19, 1Th.1:5; ἔργον, Rom.15:18; οὐδενὸς λ. τίμιον (não digno de menção), Act.20:24; da faculdade da fala, Luk.24:19, 2Co.11:6; do estilo da fala, Mat.5:37, 1Co.1:5; do ensino, Col.4:3, 1Pe.3:1; com genitivo de pessoa(s), Jhn.5:24 8:52, Act.2:41, al.; ὁ λ. ὁ ἐμός, Jhn.8:31; com genitivo obj. (τ.) ἀληθείας, 2Co.6:7, Col.1:5, Jas.1:18; τ. καταλλαγῆς, 2Co.5:19; τ. σταυροῦ, 1Co.1:18; da mera conversa, 1Co.4:19, 2o, Col.2:23, 1Jn.3:18; da conversa que alguém provoca; daí, reputação: Col.2:23.\n4. assunto; daí, ensino, doutrina: Act.18:15, 2Ti.2:17, al.; esp. da doutrina cristã: Mat.13:20-23, Mrk.4:14-20 8:32, Luk.1:2, Act.8:4, Gal.6:6, 1Th.1:6, al.; com genitivo de pessoa(s), τ. θεοῦ, Luk.5:1, Jhn.17:6, Act.4:29, 1Co.14:36, I Jhn.1:10, Rev.6:9, al.; τ. Κυρίου, Act.8:25, 1Th.1:8, al.; τ. Χριστοῦ, Col.3:16, Rev.3:8; com genitivo appos., Act.15:7; com genitivo atrib., Heb.5:13.\n5. história, relato, narrativa: Mat.28:15, Jhn.21:23, Act.1:1 11:22; antes de περί, Luk.5:15.\n6. Aquilo de que se fala (Plat., al.; V. Kennedy, Sources, 124), assunto, negócio, coisa: Mat.21:24, Mrk.1:45 11:29, Luk.20:3, Act.8:21; de uma questão em disputa, como causa ou processo judicial, Act.19:38; pl. (1Ma.7:33, al.), Luk.1:4.\nII. Do próprio pensamento interior, lat. ratio.\n1. razão,\n(a) da faculdade mental (Hdt., Plat., al.): κατὰ λόγον, Act.18:14;\n(b) razão, causa: τίνι λόγῳ, Act.10:29; παρεκτὸς λόγου πορνείας, Mat.5:32 19:9, WH, mg., R, mg.\n2. conta,\n(a) consideração: Act.20:24, Rec.;\n(b) prestação de contas: Php.4:15, 17; συναίρειν (veja) λ., Mat.18:23 25:19; em sentido forense, Rom.14:12, Heb.13:17, 1Pe.4:5; com genitivo de coisa(s), Luk.16:2; antes de περί, Mat.12:36, Act.19:40, 1Pe.3:15.\n3. proporção, analogia: Php.2:16 (Field, Notas, 193 s.).\nIII. ὁ λ., o Verbo divino ou Logos: Jhn.1:1, 14; τ. ζωῆς, 1Jn.1:1; τ. θεοῦ, Rev.19:13 (veja Westc, Swete, CGT, in ll.; reff. nos artt., Logos, DB, DCG).",
+   "note": "'Sources' is Kennedy's title, kept. '2o' copied as in the source."
+  },
+  {
+   "strongs": "G3057",
+   "sha256": "2832988a4a9f104d68df14204406290595cc22443406e13a85707c01567b6f33",
+   "gloss": "lança",
+   "definition": "λόγχη, -ης, ἡ\n[na LXX por רֹמַח, etc. ;]\n1. ponta de lança.\n2. lança: Mat.27:49 ([WH], R, mg.), Jhn.19:34.†"
+  },
+  {
+   "strongs": "G3058",
+   "sha256": "d49cec811f70e60c830bbe75f4a743d3439d84e88e7bd80bf601fa904c77dd1a",
+   "gloss": "injuriar",
+   "definition": "λοιδορέω, -ῶ\n(λοίδορος) [na LXX principalmente por רִיב ;]\nultrajar, injuriar: com acusativo de pessoa(s), Jhn.9:28, Act.23:4; pass., 1Co.4:12, 1Pe.2:23 (cf. ἀντι-λοιδορέω).†"
+  },
+  {
+   "strongs": "G3059",
+   "sha256": "1822713e376e14ab6f359be60e27497cf9e2194390c8f291b6281e904f95f5ec",
+   "gloss": "injúria",
+   "definition": "λοιδορία, -ας, ἡ\n(λοιδορέω), [na LXX principalmente por רִיב, מְרִיבָה ;]\nultraje, maledicência: 1Ti.5:14, 1Pe.3:9.†"
+  },
+  {
+   "strongs": "G3060",
+   "sha256": "fb8ed374d61c858cbec07eac4c3c0c5cc2ee6b9b3f6520eb1f60dcf1f84cb311",
+   "gloss": "maldizente",
+   "definition": "λοίδορος, -ον\n[na LXX: Pro.25:24 26:21 27:15 (מִדְיָן) Sir.23:8 * ;]\nmaldizente, injurioso; como subst., ὁ λ., um maldizente: 1Co.5:11 6:10.†"
+  },
+  {
+   "strongs": "G3061",
+   "sha256": "c10bb2f01c7c443871e3c71cc2ce4a099fc5aace59ffa6c82257c3ee1fe1b7a2",
+   "gloss": "peste",
+   "definition": "λοιμός, -οῦ, ὁ\n[na LXX por לוּץ, עָרִיץ, בְּלִיַּעַל, etc. ;]\npeste: pl., Luk.21:11; metaforicamente (como no cl.; LXX: Psa.1:1, Pro.21:24, 1Ma.15:21, al.), de pessoas, uma peste: Act.24:5 (também como adj., ἄνδρες λοιμοί, 1Ma.10:61, al.).†"
+  },
+  {
+   "strongs": "G3062",
+   "sha256": "394c57b331bb050537c581e50ee127604f0750f5e0759750fcbd4e0190fb8fc6",
+   "gloss": "restante",
+   "definition": "λοιπός, -ή, -όν\n(λείπω), [na LXX principalmente por יָתַר, também por שְׁאָר, etc. ;]\nrestante, o resto,\n1. pl., οἱ λ.: com subst., Mat.25:11, Act.2:37, Rom.1:13, al.; absol., Mat.22:6, Mrk.16:13, Luk.24:10, al.; οἱ λ. οἱ (B1., § 47, 8), Act.28:9, 1Th.4:13, Rev.2:24; οἱ λ. τ. ἀνθρώπων (LS, veja a palavra, ad. init.), Rev.9:20; τὰ λ., Mrk.4:19, Rev.3:2, al.\n2. Neut. sing. (acusativo ref.), adverbialmente, τὸ λ.;\n(a) quanto ao futuro, doravante: Mrk.14:41, 1Co.7:29 (Lft., Notas, 232 s.), Heb.10:13; anart. (Deiss., LAE, 17616, 1885, 20), Act.27:20, 2Ti.4:8; τοῦ λ. (sc. χρόνου; LS, veja a palavra; M, Pr., 73; Bl., § 36, 13), Gal.6:17, Eph.6:10;\n(b) além disso, de resto, quanto ao mais: Php.3:1 4:8; anart., 1Co.1:16 4:2, 1Th.4:1 (M, Th., in l; Lft., Notas, 51)",
+   "note": "'B1.' (for Bl.) copied as in the source."
+  },
+  {
+   "strongs": "G3063",
+   "sha256": "fc854b81beeb24fa4b7766d24babdd9ea59c28959d1042328d8ce7622168bebc",
+   "gloss": "doravante",
+   "definition": "λοιπός, -ή, -όν\n(λείπω), [na LXX principalmente por יָתַר, também por שְׁאָר, etc. ;]\nrestante, o resto,\n1. pl., οἱ λ.: com subst., Mat.25:11, Act.2:37, Rom.1:13, al.; absol., Mat.22:6, Mrk.16:13, Luk.24:10, al.; οἱ λ. οἱ (B1., § 47, 8), Act.28:9, 1Th.4:13, Rev.2:24; οἱ λ. τ. ἀνθρώπων (LS, veja a palavra, ad. init.), Rev.9:20; τὰ λ., Mrk.4:19, Rev.3:2, al.\n2. Neut. sing. (acusativo ref.), adverbialmente, τὸ λ.;\n(a) quanto ao futuro, doravante: Mrk.14:41, 1Co.7:29 (Lft., Notas, 232 s.), Heb.10:13; anart. (Deiss., LAE, 17616, 1885, 20), Act.27:20, 2Ti.4:8; τοῦ λ. (sc. χρόνου; LS, veja a palavra; M, Pr., 73; Bl., § 36, 13), Gal.6:17, Eph.6:10;\n(b) além disso, de resto, quanto ao mais: Php.3:1 4:8; anart., 1Co.1:16 4:2, 1Th.4:1 (M, Th., in l; Lft., Notas, 51)",
+   "note": "'B1.' (for Bl.) copied as in the source."
+  },
+  {
+   "strongs": "G3064",
+   "sha256": "fc854b81beeb24fa4b7766d24babdd9ea59c28959d1042328d8ce7622168bebc",
+   "gloss": "doravante",
+   "definition": "λοιπός, -ή, -όν\n(λείπω), [na LXX principalmente por יָתַר, também por שְׁאָר, etc. ;]\nrestante, o resto,\n1. pl., οἱ λ.: com subst., Mat.25:11, Act.2:37, Rom.1:13, al.; absol., Mat.22:6, Mrk.16:13, Luk.24:10, al.; οἱ λ. οἱ (B1., § 47, 8), Act.28:9, 1Th.4:13, Rev.2:24; οἱ λ. τ. ἀνθρώπων (LS, veja a palavra, ad. init.), Rev.9:20; τὰ λ., Mrk.4:19, Rev.3:2, al.\n2. Neut. sing. (acusativo ref.), adverbialmente, τὸ λ.;\n(a) quanto ao futuro, doravante: Mrk.14:41, 1Co.7:29 (Lft., Notas, 232 s.), Heb.10:13; anart. (Deiss., LAE, 17616, 1885, 20), Act.27:20, 2Ti.4:8; τοῦ λ. (sc. χρόνου; LS, veja a palavra; M, Pr., 73; Bl., § 36, 13), Gal.6:17, Eph.6:10;\n(b) além disso, de resto, quanto ao mais: Php.3:1 4:8; anart., 1Co.1:16 4:2, 1Th.4:1 (M, Th., in l; Lft., Notas, 51)",
+   "note": "'B1.' (for Bl.) copied as in the source."
+  },
+  {
+   "strongs": "G3065",
+   "sha256": "b718c0432a2af84cbaa79ef6536accdb9cfad97ac22088ad36bbeebda71cab1c",
+   "gloss": "Lucas",
+   "definition": "Λουκᾶς, -ᾶ, ὁ\n(prob. abreviação de Λουκανός; veja Lft., Col., 240; ICC, Lk., xviii; Bl., § 29; segundo Ramsay, Exp., dez., 1912, pp. 502 ss., forma secundária de Λούκιος, do lat. Lucius),\nLucas: Lc, tít., Col.4:14, 2Ti.4:11, Phm 24.†",
+   "note": "Source 'accusative to' is a misread 'acc. to' (according to): rendered 'segundo'. Abbott-Smith's 'Lk, tit.' (the Gospel's title) written 'Lc, tít.'; 'Col.' and 'ICC, Lk.' are commentary titles, kept."
+  },
+  {
+   "strongs": "G3066",
+   "sha256": "67282e6b74f78fd77c6b5f570be65bd1e034d6cd59899d646d01d05aa703a770",
+   "gloss": "Lúcio",
+   "definition": "λούκιος, -ου, ὁ (lat. Lucius),\nLúcio: Act.13:1, Rom.16:21.†"
+  },
+  {
+   "strongs": "G3067",
+   "sha256": "9afb052aad442d7b343f709c0b09852e37a21cca50d0b49573bdcebff299bfe3",
+   "gloss": "lavagem",
+   "definition": "λουτρόν, -οῦ, τό\n(λούω), [na LXX: Sng.4:2 6:5, (6) (רַחְצָה), Sir.34:25 * ;]\nlavagem, banho: τ. ὕδατος, Eph.5:26; τ. παλιγγενεσίας, Tit.3:5 (veja AR, Eph., l. com).†"
+  },
+  {
+   "strongs": "G3068",
+   "sha256": "c44837bba3b8bb4162dbaa5dad7b8129d18456125d9bf880ba3de29984c43e15",
+   "gloss": "lavar",
+   "definition": "λούω\n[na LXX principalmente por רָחַץ (frequentemente da lavagem cerimonial; cf. Deiss., BS, 226 s.) ;]\nbanhar, lavar o corpo: com acusativo de pessoa(s), Act.9:37 (de um cadáver); id. antes de ἀπό (Deiss., BS, l. com), Act.16:33; part. pass. pf., Jhn.13:10, Heb.10:22; méd., lavar-se (Mayor, in l; M. Pr., 155 s., 238 s.), 2Pe.2:22; metaforicamente, Rev.1:5, Rec., R, mg. (cf. ἀπο-λούω).†\nSYN.: νίπτω, usado de partes do corpo — mãos, pés, rosto; πλύνω, de coisas, como roupas, etc. (veja Lev.15:11; cf. Tr., Syn., § xlv)"
+  },
+  {
+   "strongs": "G3069",
+   "sha256": "dda6aaa33582002d95812e5e55a06e2690db1a78d1e72969d9c1d8b17be11d8c",
+   "gloss": "Lida",
+   "definition": "λύδδα, -ας (Act.9:38, -ης Rec.), ἡ e λύδδα, -ων, τά (Act.9:32, 35; -αν, Rec.), (heb. לֹד),\nLida (a moderna Ludd): At, ll. com†",
+   "note": "Abbott-Smith's 'Ac, ll. with' (Acts, the places cited) written 'At, ll. com'."
+  },
+  {
+   "strongs": "G3070",
+   "sha256": "24e38214d2e560700211500b0f4509cf39af74c09a7641ed738c59860ea130a5",
+   "gloss": "Lídia",
+   "definition": "Λυδία, -ας, ἡ\nLídia, mulher de Tiatira: Act.16:14, 40.†"
+  },
+  {
+   "strongs": "G3071",
+   "sha256": "535336ca58e009ef2a2f3f729f296a848da65894026929168df4b8d34dd1f8e1",
+   "gloss": "Licaônia",
+   "definition": "Λυκαονία, -ας, ἡ\nLicaônia, região da Ásia Menor: Act.14:6.†"
+  },
+  {
+   "strongs": "G3072",
+   "sha256": "e1058ee170ee316a6cf03850c87c2fc4e983a0c2021da8bc0387809cd9b45677",
+   "gloss": "licaônico",
+   "definition": "Λυκαονιστί\nadv.,\nem licaônico (língua): Act.14:11.†"
+  },
+  {
+   "strongs": "G3073",
+   "sha256": "8f95bcbdcb8a1964b34d31a6c6360777c7b8e1085de1864617e6a9e178ce206e",
+   "gloss": "Lícia",
+   "definition": "Λυκία, -ας, ἡ\nLícia, região da Ásia Menor; Act.27:5.†",
+   "note": "The source's 'Lydia' here is a slip for Lycia (Λυκία, the gloss): written 'Lícia' (Bíblia Livre, Act.27:5)."
+  },
+  {
+   "strongs": "G3074",
+   "sha256": "d096da3cc7b77d6ee376a83aa25adbafa4814f3e557695e060da081370ab3600",
+   "gloss": "lobo",
+   "definition": "λύκος, -ου, ὁ\n[na LXX por זְאֵב ;]\nlobo: Mat.10:16, Luk.10:3, Jhn.10:12; figuradamente (como Eze.22:27, Zep.3:3, Jer.5:6, al.), Mat.7:1, Act.20:29.†"
+  },
+  {
+   "strongs": "G3075",
+   "sha256": "0da2295c6d13e4c14a1bf9ef859f8805d0c43288b53c528a41ba0ed822b27fc1",
+   "gloss": "devastar",
+   "definition": "λυμαίνομαι\n(λύμη, ultraje), [na LXX principalmente por שָׁחַת pi., hi., também por כִּרְסֵם, etc. ;]\n1. ultrajar, maltratar: com acusativo, Act.8:3.\n2. corromper, contaminar (Eze.16:25, Pro.23:8, 4Ma.18:8, al.).†"
+  },
+  {
+   "strongs": "G3076",
+   "sha256": "55c1f959bf3cc015eee14b99b81ed52e6aeceb626f362b46ae97d7513a01a231",
+   "gloss": "entristecer",
+   "definition": "λυπέω, -ῶ\n(λύπη), [na LXX por חָרָה, etc. ;]\nafligir, entristecer, causar dor ou tristeza: com acusativo de pessoa(s), 2Co.2:2 2:5 7:8; pass., Mat.14:9 17:23 18:31 19:22 26:22, Mrk.10:22 14:19, Jhn.16:20 21:17, Rom.14:15, 2Co.2:4, 1Th.4:13, 1Pe.1:6; λ. καὶ ἀδημονεῖν, Mat.26:37; em oposição a χαίρειν, 2Co.6:10; κατὰ θεόν, 2Co.7:9 7:11; τ. πνεῦμα τ. ἅγιον, Eph.4:30 (cf. συν-λνπέω),†\nSYN.: veja: θρηνέω"
+  },
+  {
+   "strongs": "G3077",
+   "sha256": "c3498bcd8bf29ef85d0b8de3f140ba7629934659edc39b36299da109632a1a7e",
+   "gloss": "tristeza",
+   "definition": "λύπη, -ης, ἡ\n[na LXX por עֶצֶב e formas cogn., etc. ;]\ndor do corpo ou da mente, aflição, tristeza: Jhn.16:6, 2Co.2:7; em oposição a χαρά, Jhn.16:20, Heb.12:11; ἀπὸ τῆς λ., Luk.22:45; ἐκ λ., 2Co.9:7; ἡ κατὰ θεὸν λ., em oposição a ἡ τ. κόσ-μου λ., 2Co.7:10; λ. μοι ἐστιν, Rom.9:2; λ. ἔχω, Jhn.16:21-22; id. antes de ἀπό, 2Co.2:3; λ. ἐπὶ λ. ἔχω, Php.2:27; ἐν λ. ἐλθεῖν, 2Co.2:1 (vir triste e causar tristeza); pl. (cf. Gen.3:16, Pro.15:13, al.), 1Pe.2:19.†"
+  },
+  {
+   "strongs": "G3078",
+   "sha256": "b82fb6d8e67b3aafde2906e82e80a71d7cde53859f05f2ac1e62e30b870c5405",
+   "gloss": "Lisânias",
+   "definition": "Λυσανίας, -ου, ὁ\nLisânias: Luk.3:1.†"
+  },
+  {
+   "strongs": "G3079",
+   "sha256": "b0b3e1e0f6b36c49fa262d8d7fc9445fe7c4a2867e8584a2961a4649005cf45a",
+   "gloss": "Lísias",
+   "definition": "Λυσίας, -ου, ὁ\nLísias (Cláudio L., Act.23:26), Act.24:7, 22.†"
+  },
+  {
+   "strongs": "G3080",
+   "sha256": "fa10c3e8cf24777ed2c6c126fffb7338cc372fa089c1a881f323436600ceb67f",
+   "gloss": "divórcio",
+   "definition": "λύσις, -εως, ἡ\n(λύω), [na LXX: Ecc.8:1 (Ecc.8:1) (פֵּשֶׁר), Dan LXX 12:8, Wis.8:8 * ;]\ndesligamento: do divórcio, 1Co.7:27.†"
+  },
+  {
+   "strongs": "G3081",
+   "sha256": "efe4a4bbe6da587179c3038d62d6b5940f73ced035f78442011cdb2232970036",
+   "gloss": "ser proveitoso",
+   "definition": "λυσιτελέω, -ῶ\n(λυσιτελής, útil, prop., τὰ τέλη λύων), [na LXX: Tob.3:6, Sir.20:10, 14 29:11 * ;]\n1. prop., indenizar, pagar as despesas.\n2. ser útil, ser proveitoso; geralmente impess., λυσιτελεῖ, é proveitoso: com, dativo de pessoa(s), antes de εἰ . . . ἤ, Luk.17:2.†"
+  },
+  {
+   "strongs": "G3082",
+   "sha256": "79ac4fb4f49d1aa1b050454abfab6ed2e322a48e36d74aba2b32264094a82d4b",
+   "gloss": "Listra",
+   "definition": "λύστρα, -ας, ἡ\ne (em Act.14:8 16:2, 2Tm, l. com) -ων, τά (cf. Λύδδα),\nListra, cidade da Licaônia: Act.14:6, 8 14:21 16:1-2, 2Ti.3:11.†"
+  },
+  {
+   "strongs": "G3083",
+   "sha256": "af61df2b36c72320ee67ecb98afb8faf0d897c812ded235ea36db567b2383438",
+   "gloss": "resgate",
+   "definition": "λύτρον, -ον, τό\n(λύω), [na LXX (Pent. .15 Pv .2, Is .1) por פִּדְיוֹם e formas cogn., גְּאֻלָּה, כֹּפֶר, מְחִיר ;]\nresgate (como por uma vida, Exo.21:30; por escravos, Lev.19:20; por cativos, Isa.45:13): ἀντὶ πολλῶν, Mat.20:28, Mrk.10:45 (veja Swete, in l, e, para discussão de λ. e seus cognatos, Westc., He., 295 s.; Deiss., LAE, 331 s.; cf. também ἀντί-λύτρον).†",
+   "note": "Abbott-Smith's counts '(Pent. .15 Pr .2, Isa .1)' (Proverbs, Isaiah) written with the Portuguese abbreviations."
+  },
+  {
+   "strongs": "G3084",
+   "sha256": "7dc30e69b33103c7ce60e8af340be779fe69e406355cb158c498d084c0aa2aba",
+   "gloss": "resgatar",
+   "definition": "λυτρόω, -ῶ\n(λύτρον, veja), [na LXX principalmente por פָּדָה, גָּאַל ;]\nlibertar mediante recebimento de resgate; méd., libertar pagando resgate, redimir: em sentido espiritual, Tit.2:14; pass, 1Pe.1:18; em sentido geral, livrar (cf. Exo.6:6, Psa.69:18, al.): Luk.24:21.†"
+  },
+  {
+   "strongs": "G3085",
+   "sha256": "344516c3a2ad681d8e013ea5670fb60e35d90722c92633858d81b5a2abda0e62",
+   "gloss": "redenção",
+   "definition": "λύτρωσις, -εως, ἡ\n(λυτρόω), [na LXX: Lev.25:29, 48, Isa.63:4 גְּאֻלָּה), Num.18:16, Psa.49:8 111:9 130:7 (פָּדָה, פִּדְיוֹם, פְּדוּת), Jdg.1:15 * ;]\nresgate, redenção (αἰχμαλώτων, Plut., Arat., 11): da obra mediadora de Cristo, Heb.9:12; em sentido geral, livramento(cf. Psa.4:8, l. com): Luk.1:68 2:38.†"
+  },
+  {
+   "strongs": "G3086",
+   "sha256": "ff1a63f7bd358920936323de2f3d65b84f27ff82987f166b0af43f0d94f86595",
+   "gloss": "redentor",
+   "definition": "λυτρωτής, -οῦ, ὁ\n(λυτρόω), [na LXX: de Deus, Psa.19:14 78:35 (גָּאַל)* ;]\nredentor, libertador: Act.7:35 (não se encontra em outro lugar).†"
+  },
+  {
+   "strongs": "G3087",
+   "sha256": "aec61c0e1a7e59f1a589f3124fdaff136721a10b1dcd799a2cb22beaca26eff5",
+   "gloss": "candelabro",
+   "definition": "λυχνία, -ας, ἡ\n(forma vulgar de λυχνίον = λυχνοῦχος; veja Kennedy, Sources, 40), [na LXX por מְנוֹרָה (Exo.25:31 40:4, al.) ;]\ncandelabro: Mat.5:15, Mrk.4:21, Luk.8:16 11:33; do que havia no Tabernáculo, Heb.9:2; metaforicamente, das duas testemunhas, Rev.11:4; das sete igrejas da Ásia, Rev.1:12-13, 20 2:1; da remoção de uma igreja de sua posição, κινεῖν τ. λυχνίαν κ.τ.λ., Rev.2:5.†",
+   "note": "'Sources' is Kennedy's title, kept."
+  },
+  {
+   "strongs": "G3088",
+   "sha256": "730f8256f52e90848dc98c94bc3663cc0a374a3b42e445f64cdbc2f1100316da",
+   "gloss": "lâmpada",
+   "definition": "λύχνος, -ου, ὁ\n[na LXX por נִיר (Exo.25:37), al.) ;]\nlâmpada (portátil, e geralmente posta sobre um suporte, λυχνία): Mat.5:15, Luk.11:36; ἔρχεται ὁ λ., Mrk.4:21; λ. ἅπτειν Luk.8:16 11:33 15:8; φῶς λύχνου, Rev.18:23; id. em oposição a φ.ἡλίου, Rev.22:5; metaforicamente, do olho, Mat.6:22 Luk.11:34; de João Batista, Jhn.5:35; do Cordeiro, Rev.21:23; da profecia, 2Pe.1:19; da prontidão espiritual, pl., λύχνοι (como sempre na LXX; frequentemente no át.. λύχνα), Luk.12:35.†\nSYN.: λαμπάς, q.v"
+  },
+  {
+   "strongs": "G3089",
+   "sha256": "1d72eac180f6cd25e3969fc97ef12f189936b679184a0924c8fc044d552a0275",
+   "gloss": "soltar",
+   "definition": "λύω\n[na LXX por פָּתַח, נָתַר hi., etc. ;]\n1. soltar, desatar, libertar: de coisas, Mrk.1:7, Luk.3:16, al.; de animais, Mat.21:2, Luk.13:15, al.; de pessoas, Jhn.11:44, Act.22:30; de Satanás, Rev.20:3, 7; metaforicamente, do vínculo matrimonial, 1Co.7:27; de um enfermo, Luk.13:16; da libertação do pecado, Rev.1:5, WH, R, txt. (veja: λούω).\n2. Resolver um todo em suas partes, desligar, dissolver, desfazer, destruir: Jhn.2:19, Act.27:41, Rev.5:2; metaforicamente, 2Pe.3:11; de uma assembleia, despedir: Act.13:43; τ. μεσότοιχον τ. φραγμοῦ, Eph.2:14; τ. στοιχεῖα, 2Pe.3:10; οὐρανοί, 2Pe.3:12; τ. ἔργα τ. διαβόλου, 1Jn.3:8; τ. ὠδῖνας τ. θανάτου, Act.2:24; de leis, etc., violar, anular, cancelar (MM, xvi): ἐντολήν, Mat.5:19; τ. νόμον, Jhn.7:23; τ. σάββατον, Jhn.5:18; τ. γραφήν, Jhn.10:35.\n(cf. ἀνα-, ἀπο-, δια-, ἐκ-, ἐπι-, κατα-, παρα-λύω.)"
+  },
+  {
+   "strongs": "G3090",
+   "sha256": "5c2ad34d144140a84b1f326e275163cb5b1fac68fa7bb4ee2f970fd7f826fe55",
+   "gloss": "Loide",
+   "definition": "Λωίς (Rec. Λωΐς), -ίδος, ἡ\nLoide: 2Ti.1:5.†"
+  },
+  {
+   "strongs": "G3091",
+   "sha256": "e656930873876d641c982e137340e9dc87950c5472a22dcb240ced36c3346794",
+   "gloss": "Ló",
+   "definition": "Λώτ, ὁ (heb. לוֹט), indecl.,\nLó (Gen.11:27, al.): Luk.17:28-29, 32, 2Pe.2:7.†"
+  },
+  {
+   "strongs": "G3092",
+   "sha256": "211dabc1e7dad4f884db9accf78810a119ccaf727d19b8ac80f874caaf53d517",
+   "gloss": "Maate",
+   "definition": "Μαάθ, ὁ\nindecl.,\nMaate: Luk.3:26.†"
+  },
+  {
+   "strongs": "G3093",
+   "sha256": "cc58fcd57402803971fa6e21657ae601bdf0548a1b8a60edaf5a367b9ee8ef1c",
+   "gloss": "Magadã",
+   "definition": "Μαγαδάν\nMagadã, lugar não identificado na costa do mar da Galileia: Mat.15:39 (Rec. Μαγδαλά; cf. Mrk.8:10, onde, em lugar de Δαλμανουθά, D* tem Μελεγαδά, D1 Μαγαιδά, alguns cursivos Μαγαδά, e Euseb. Onomast. Μεγαιδάν; cf. DB, iii, veja a palavra).†\nΜαγδαλά (aram. מַגְדְֺּלָא = heb. H4026, que em Jos.15:37 B é traduzido Μαγαδά),\nMagdala: Mat.15:39 (Rec. por Μαγαδάν, veja).†",
+   "note": "The Bíblia Livre follows the Rec. reading 'Magdala' at Mat.15:39, so 'Magadan' is written with the usual Almeida spelling 'Magadã'. 'H4026' (a Strong's number where the source lost a Hebrew word) copied as in the source."
+  },
+  {
+   "strongs": "G3094",
+   "sha256": "af47004cea53b2cd5e85653c19d2690f27852c6c43dcffd2f313a2c1f16e17e8",
+   "gloss": "Madalena",
+   "definition": "Μαγδαληνός, -ά, όν\nMadalena, de Magdala: Μαρία (veja) ἡ MM., Mat.27:56, 61 28:1, Mrk.15:40, 47 16:1, 9, Luk.8:2 24:10, Jhn.19:25 20:1, 18†",
+   "note": "'MM.' (for Μ.) copied as in the source."
+  },
+  {
+   "strongs": "G3095",
+   "sha256": "85076c805aba2d3c43a4e6076e4ecd7b4a067f87f922f5440c52cadce15691ea",
+   "gloss": "magia",
+   "definition": "μαγία (Rec. -εία), -ας, ἡ\n(μάγος),\n1. a ciência dos magos (Plat.).\n2. magia: pl., artes mágicas, feitiçarias: Act.8:11.†"
+  },
+  {
+   "strongs": "G3096",
+   "sha256": "d07f3e798f8ed1c474361c1e5247325501cfcf73f9a815a94467c0622cb62946",
+   "gloss": "praticar magia",
+   "definition": "μαγεύω (Eur., Plut., al.),\n1. ser mago, ou versado na ciência dos magos.\n2. praticar magia: Act.8:9.†"
+  },
+  {
+   "strongs": "G3097",
+   "sha256": "773f9b19be9e1801494b69a8e1d54475e31805cdb2cbdc34323cf6bcbd106a0d",
+   "gloss": "mago",
+   "definition": "μάγος, -ου, ὁ\n[na LXX por אַשָּׁף, Dan LXX TH Dan.2:2, 10, al. (cf. chefe dos magos, Jer.39:3, 13) ;]\n1. um dos Μάγοι, tribo meda (Hat).\n2. mago, membro de uma casta sagrada, originalmente meda, que parece ter-se conformado à religião persa, embora conservando algumas de suas antigas crenças (veja DB, I vol., 565 s.; DB, iii, 203 ss.): Mat.2:1, 7 2:16\n3. feiticeiro, mágico: Act.13:6, 8 (cf. Wis.17:7, Act.8:9; ?Act.8:1).†",
+   "note": "'(Hat)' (for Hdt.) copied as in the source."
+  },
+  {
+   "strongs": "G3098",
+   "sha256": "5959bc9ee3ccbebcf2fbbcfb47b9cc98071a8ede60951f379e2a7d95571846fd",
+   "gloss": "Magogue",
+   "definition": "Μαγώγ, ὁ indecl. (heb. מָגוֹג, Gen.10:2, Exo.38:2, al.),\nMagogue, associado a Gogue: Rev.20:8 (veja Swete, in l).†"
+  },
+  {
+   "strongs": "G3099",
+   "sha256": "fd5bb94eea4f415769a3b2a67cf949aac8be34104e33a9338fefae26d77b26d9",
+   "gloss": "Midiã",
+   "definition": "Μαδιάμ, ὁ indecl. (heb. מִדְיָן),\nMidiã;\n1. filho de Abraão (Gen.25:2).\n2. Uma tribo árabe (Gen.36:35, Psa.83:9, al).\n3. γῆ Μ. (heb. מִדְיָן אֶרֶץ), a terra de Midiã (Exo.2:15, al.): Act.7:29.†"
+  },
+  {
+   "strongs": "G3100",
+   "sha256": "092d593c8ac18d8470b00f0fdcf9e4e7d05982c8ef997e23b3ff606d2f9894df",
+   "gloss": "fazer discípulos",
+   "definition": "μαθητεύω\n(μαθητής),\n1. intr. (como verbo prop. em -εύω, e assim Plut., mor. 837 c. e em outros lugares), ser discípulo: com dativo, Mat.27:57 (Rec., WH, mg.).\n2. Trans., fazer discípulo: com acusativo, Mat.28:19, Act.14:21; pass., antes de dativo, τ. Ἰησοῦ, Mat.27:57 (WH, R); τ. βασιλείᾳ, Mat.13:52.†",
+   "note": "Source 'mor. 837 with' is a misread 'c' (Plutarch's page section): rendered '837 c.'."
+  },
+  {
+   "strongs": "G3101",
+   "sha256": "6191fd66a882444a08492d42200922cd6676c4474766a011a1ba9d420808d263",
+   "gloss": "discípulo",
+   "definition": "μαθητής, -οῦ, ὁ (μανθάνω),\n[na LXX apenas como seel. (A) em Jer.13:21 20:11 26(46):9 * ;]\ndiscípulo: em oposição a διδάσκαλος, Mat.10:24, Luk.6:40; Ἰωάννου, Mat.9:14, Luk.7:18, Jhn.3:25; τ. Φαρισσίων, Mat.22:16, Mrk.2:18, Luk.5:33; Μωυσέως, Jhn.9:28; Ἰησοῦ, Luk.6:17 7:11 19:37, Jhn.6:66 7:3 19:38; esp. os doze, Mat.10:1 11:1, Mrk.7:17, Luk.8:9, Jo 2:2, al.; mais tarde, dos cristãos em geral, Act.6:1, 2 7 9:19, al.; τ. κυρίου, Act.9:1.",
+   "note": "'seel.' (probably 'v.l.') copied as in the source."
+  },
+  {
+   "strongs": "G3102",
+   "sha256": "53fd8331dbd3f8199d61c1d2d731a10a7bffffd5e80cca5e04cec16865dfa605",
+   "gloss": "discípula",
+   "definition": "μαθήτρια, -ας, ἡ\n(= μαθητρίς, fem, de μαθητής, veja)\ndiscípula: Act.9:36.†"
+  },
+  {
+   "strongs": "G3103",
+   "sha256": "2883405b37c664ff57aa932c7e15e75b84c758abf05a1a31fbd69f327da82c43",
+   "gloss": "Matusalém",
+   "definition": "Μαθουσάλα (WH, -αλά), ὁ (heb. מְתוּשֶׁלַח),\nMatusalém: Luk.3:37.†"
+  },
+  {
+   "strongs": "G3104",
+   "sha256": "b72b7514303a2ad63e35456abb2b23fc81d1f01472041d3eed1b3c2fc9d21a69",
+   "gloss": "Mainã",
+   "definition": "Μεννά (L, Μεννᾶς, -ᾶ; Rec. Μαϊνάν) ὁ,\nMainã: Luk.3:31.†",
+   "note": "The Bíblia Livre follows the Rec. reading (Luk.3:31 'Mainã'); the English has 'Menna' from Μεννά."
+  },
+  {
+   "strongs": "G3105",
+   "sha256": "f33fabdf2824d77116f7cec3bf48e806c642f6fdd30eb7aed8e15761eb4129a5",
+   "gloss": "delirar",
+   "definition": "μαίνομαι\n[na LXX: Jer.25:16 (הָלַל hit.) Jer.29:26 (שָׁגַע pu.), Wis.14:28, a). ;]\n1. enfurecer-se, estar furioso.\n2. delirar, estar louco: Jhn.10:29, Act.12:15 26:24-25, 1Co.14:23 (cf. ἐμ-μαίνομαι).†",
+   "note": "'a).' (for al.) copied as in the source."
+  },
+  {
+   "strongs": "G3106",
+   "sha256": "6eab45a5abd36b52ef5f3027eedbfe56e822086fb433c11b4204116689438f72",
+   "gloss": "bendizer",
+   "definition": "μακαρζω\n(μακάριος), [na LXX por אָשַׁר pi., pu. ;]\nbendizer, declarar bem-aventurado ou feliz: com acusativo de pessoa(s), Luk.1:48, Jas.5:11.†"
+  },
+  {
+   "strongs": "G3107",
+   "sha256": "6888b71aca43c3620973adf7e89792209f6c8eb756dc74eda3c5d6d0abcb9bb2",
+   "gloss": "bem-aventurado",
+   "definition": "μακάριος, -α, -ον\n(forma colateral do poét. μάκαρ, em Hom., Hes., principalmente dos deuses e dos falecidos), [na LXX por אֹשֶׁר ;]\nbem-aventurado, feliz (DCG, i, 177, 213): θεός (δυνάστης), 1Ti.1:11 6:15; ἐλπίς, Tit.2:13; esp. em congratulações, geralmente com omissão da cópula (M, Pr., 180; B1., § 30, 3), μ. ὁ, Mat.5:3 ss., Luk.6:20 ss. Jhn.20:29, Rev.1:3, al.; antes de part., Luk.1:45, al.; ὅς, Mat.11:6, Luk.7:23, Rom.4:7-8; ὅτι, Mat.13:16, al.; ἐάν, Jhn.13:17, 1Co.7:40; compar., μ. . . . μᾶλλον, Act.20:35; -ώτερος, 1Co.7:40\nSYN.: εὐλογητός, q.v",
+   "note": "'B1.' (for Bl.) copied as in the source."
+  },
+  {
+   "strongs": "G3108",
+   "sha256": "4ff4a834ae6c40f2c8843c93e743f7c972bd669418592961b7912b2daaa385b3",
+   "gloss": "bem-aventurança",
+   "definition": "μακαρισμός, -οῦ, ὁ\n(μακαρίζω)\ndeclaração de bem-aventurança, felicitação: Rom.4:6, 9, Gal.4:15 (Plat., Arist.).†"
+  },
+  {
+   "strongs": "G3109",
+   "sha256": "dbb984c31d6f925ea45da7ed9ffe2f038101ff458597c128ccc0fbc5309c8f74",
+   "gloss": "Macedônia",
+   "definition": "Μακεδονία, -ας, ἡ\nMacedônia: Act.16:9-10, 1Co.16:5, 2Co.1:16, Php.4:15, al.; M. καὶ Ἀχαία, Act.19:21, Rom.15:26, 1Th.1:7-8"
+  },
+  {
+   "strongs": "G3110",
+   "sha256": "8958b880effa702bde65a6354f29811e7ad44356caf26ba9b78e5b2bb88722b1",
+   "gloss": "Macedônia",
+   "definition": "Μακεδών, -όνος, ὁ\nmacedônio: Act.16:9 19:29 27:2, 2Co.9:2 9:4.†",
+   "note": "The gloss 'Macedonia' follows the English (the entry is 'a Macedonian')."
+  },
+  {
+   "strongs": "G3111",
+   "sha256": "9828c61ff732d1687d5058e0fbb15ea278f675f17b5a78e9f554b49f7bc74cb0",
+   "gloss": "mercado de carne",
+   "definition": "μάκελλον, -ου, τό (lat. macellum),\nmercado de carne: 1Co.10:25 (veja Deiss., LAE, 274; MM, xvi).†"
+  },
+  {
+   "strongs": "G3112",
+   "sha256": "f2ba24d679b5810d4721057d980eee2e695d6ee8096520bb82171b182a4c061b",
+   "gloss": "longe",
+   "definition": "μακράν (prop. fem. acusativo de μακρός, Sc. ὁδόν), adv. ,\n[na LXX por רָחוֹק hi., רָחַק, etc. ;]\na grande distância, longe: Luk.15:20, Act.22:21; antes de ἀπό, Mat.8:30, Luk.7:6, Jhn.21:8, Act.17:27; id. metaforicamente, Mrk.12:34; οἱ εἰς μ., Act.2:39 (cf. Isa.2:2); metaforicamente, οἱ ποτὲ ὄντες μ. (em oposição a ἐγγύς), Eph.2:13; οἱ μ., Eph.2:17.†"
+  },
+  {
+   "strongs": "G3113",
+   "sha256": "9f2115fea48d08702347f582688cab90ab36866b2f81705746fd2a945282204c",
+   "gloss": "de longe",
+   "definition": "μακρόθεν\n(μακρός),\nadv. (principalmente tardio),\n[na LXX por רָחוֹק, רָחַק, etc. ;]\nde longe, ao longe: Luk.18:13 22:54; ἀπὸ μ. (Psa.138:6, Est.3:13, al.), Mat.26:58 27:55, Mrk.5:6 8:3 11:13 14:54 15:40, Luk.16:23 23:49, Rev.18:10, 15 18:17.†"
+  },
+  {
+   "strongs": "G3114",
+   "sha256": "f72a98ed5b179450fa41f1b6234499be2108547f442ff9a9e443430852a121c2",
+   "gloss": "ter paciência",
+   "definition": "μακροθυμέω, -ῶ\n(μακρό-θυμος, longânimo; veja: -ία), [na LXX: Ecc.8:12 א2, Pro.19:11 (אָרַךְ, אַף אָרַךְ), Job.7:16, Sir.2:4, al. ;]\n1. ativamente = καρτερέω, perseverar (Plut., 2, 593 F).\n2. Passivamente, ser paciente, longânimo: absol., 1Co.13:4, Heb.6:15, Jas.5:8; antes de ἕως, com genitivo, Jas.5:7; ἐπί, com dativo, ib. (Sir.2:4); πρός, com acusativo, 1Th.5:14; ἐπί, com dativo, Mat.18:26, 29, Luk.18:7; εἰς, 2Pe.3:9.†\nSYN.: ὑπομένω, q.v"
+  },
+  {
+   "strongs": "G3115",
+   "sha256": "812be50dcc1d78f14f81bfedd289f7e3e6d64872f0c911e5b7ca32ef2f2f3e9b",
+   "gloss": "paciência",
+   "definition": "μακροθυμία, -ας, ἡ\n(μακρό-θυμος), [na LXX: Pro.25:15 (אַף אֹרֶךְ), Jer.15:15 (אַף אָרֵךְ) Isa.57:15, Sir.5:11, 1Ma.8:4 * ;],\npaciência, longanimidade: dos homens, esp. ao passar por provações e dificuldades, Col.1:11, 2Ti.3:10, Heb.6:12, Jas.5:10; da tolerância de Deus, Rom.2:4 9:22, 2Co.6:6, Gal.5:22, Eph.4:2, Col.3:12, 1Ti.1:16, 2Ti.4:2, 1Pe.3:20, 2Pe.3:15.†\nSYN.: ὑπομονή (cf. Lft., Col., 138; Tr., Syn., liii)"
+  },
+  {
+   "strongs": "G3116",
+   "sha256": "9c866ab18ad70965bb611f03df6d1a2f192e2e88f6a4ae132b1595b5cde3ef3f",
+   "gloss": "pacientemente",
+   "definition": "μακροθύμως\nadv.,\ncom tolerância, pacientemente: Act.26:3.†"
+  },
+  {
+   "strongs": "G3117",
+   "sha256": "603333ff1e6a51bf159a5baa2d753538f5a823c65c07d7284b41ba5929de3241",
+   "gloss": "longo/distante",
+   "definition": "μακρός, -ά, -όν\n[na LXX por אָרֹךְ, רָחוֹק e formas cognatas, etc. ;]\nde espaço e de tempo, longo: μακρὰ προσεύχεσθαι, Mrk.12:40, Luk.20:47.\nde distância, longe, muito distante: χώρα, Luk.15:13 19:12.†"
+  },
+  {
+   "strongs": "G3118",
+   "sha256": "1f8dc2ca31b731d41a408ed97f5c97a57b36896be928dce4d4f58c215702532d",
+   "gloss": "de vida longa",
+   "definition": "μακρο-χρόνιος, -ον\n(μακρός, χρόνος), [na LXX. μ. γίγνεσθαι, εἶναι (יוֹם אָרַךְ), Exo.20:12, Deu.4:40 5:16 17:20 * ;]\nde longa duração, de vida longa: Eph.6:3 (LXX).†"
+  },
+  {
+   "strongs": "G3119",
+   "sha256": "18acac7a35cb6f814a5f77c271a55fceb581015a4f85f4fdd70d1371c0843631",
+   "gloss": "enfermidade",
+   "definition": "μαλακία -ας, ἡ\n(μαλακός), [na LXX principalmente por חֳלִי Deu.7:15 28:61, Isa.38:9 53:3, al. ;]\n1. prop., moleza, efeminação (Hdt., Thuc., al).\n2. No NT, como na LXX, = ἀσθένεια, fraqueza, enfermidade: νόσος καὶ μ., Mat.4:23 9:35 10:1.†\nSYN.: veja: ἀσθένεια"
+  },
+  {
+   "strongs": "G3120",
+   "sha256": "92dd4fb45d65176f438f1f82874a205c4ab94f7ed48e0f994294dead91840794",
+   "gloss": "macio/efeminado",
+   "definition": "μαλακός, -ή, -όν\n[na LXX: Pro.25:15 (רַךְ) Pro.26:22 (לָהַם)* ;]\nmacio;\n1. prop., ao tato (em oposição a σκληρός): de roupas, pl., Mat.11:8, Luk.7:25.\n2. De pessoas e do seu modo de viver;\n(a) brando, gentil;\n(b) mole, efeminado: 1Co.6:9 (prob. em sentido obsceno, cf. Deiss., LAE, 150, 4; MM, xvi; Zorell, veja a palavra).†"
+  },
+  {
+   "strongs": "G3121",
+   "sha256": "e8edd43019c566a09bf034e3e9f10c9cb38af779c06c562a63bdd71366754ad2",
+   "gloss": "Maleleel",
+   "definition": "Μαλελεήλ (T, Μελ-), ὁ (heb. מַהֲלַלְאֵל),\nMaleleel: Luk.3:37.†"
+  },
+  {
+   "strongs": "G3122",
+   "sha256": "237536aa1b59b33c4f8520d0b0dfd87ae2fa7fab2da728eafa7e446be8fe3cb9",
+   "gloss": "especialmente",
+   "definition": "μάλιστα, veja: μάλα.\nμάλα\nadv., [na LXX por אֲבָל, 3Ki.1:43, Dan LXX 10:21, al.; compar. por מ, Num.13:32 (31), al.; μᾶλλον ἠ (מ), Gen.19:9, al.; superlat., 2Ma.8:7, 4Ma.4:22 12:9 15:4 ;]\nI. Pos., muito, grandemente, extremamente (cl.; LXX ut supr.; no NT seu lugar é ocupado por λίαν, σφόδρα, etc.).\nII. Compar., μᾶλλον.\n1. De aumento, mais; com palavras qualificativas: πολλῷ, Mrk.10:48, Luk.18:39, Rom.5:15, 17, Php.2:12, al.; πόσῳ, Luk.12:24, Rom.11:12, al.; τοσούτῳ . . . ὅσῳ, Heb.10:25.\n2. De comparação, mais: Luk.5:15, Jhn.5:18, Act.5:14, 1Th.4:1, 10, 2Pe.1:10; ἔτι μ. καὶ μ., Php.1:9; com compar., Mrk.7:36, 2Co.7:13; πολλῴ μ. κρεῖσον, Php.1:23; μ. διαφέρειν, com genitivo, Mat.6:26; μ. ἤ, Mat.18:13; com genitivo, 1Co.14:18; como perífrase do compar., Act.20:35, 1Co.9:15, Gal.4:27; μ. δέ (EV, «yea rather»), Rom.8:34.\n3. De preferência, antes, de preferência, mais cedo: com palavras qualificativas, πολλῷ, Mat.6:30, al.; πολύ, Heb.12:25; πόσῳ, Mat.7:11, al.; numa pergunta, οὐ μ., 1Co.9:12; depois de neg., Mat.10:6, al.; θέλω (εὐδοκῶ) μ., 1Co.14:5, 2Co.5:8; ζηλῶ, 1Co.14:1; com subst., τ. σκότος ἢ τ. φῶς, Jhn.3:19; μ. δέ, Gal.4:9.\nIII. Superl., μάλιστα\n, o mais, mais que tudo, sobretudo: Act.20:38 25:26, Gal.6:10, Php.4:22, 1Ti.4:10 5:8, 17, 2Ti.4:13, Tit.1:10, Phm 16, 2Pe.2:10; μ. γνώστης, Act.26:3",
+   "note": "'yea rather' is the English versions' (EV) rendering, kept in English."
+  },
+  {
+   "strongs": "G3123G",
+   "sha256": "14bd90d42f3ad1d4740a7b88502f9bdd17b2ac403a678d56b81a7b2204909409",
+   "gloss": "mais",
+   "definition": "μάλα\nadv., [na LXX por אֲבָל, 3Ki.1:43, Dan LXX 10:21, al.; compar. por מ, Num.13:32 (31), al.; μᾶλλον ἠ (מ), Gen.19:9, al.; superlat., 2Ma.8:7, 4Ma.4:22 12:9 15:4 ;]\nI. Pos., muito, grandemente, extremamente (cl.; LXX ut supr.; no NT seu lugar é ocupado por λίαν, σφόδρα, etc.).\nII. Compar., μᾶλλον.\n1. De aumento, mais; com palavras qualificativas: πολλῷ, Mrk.10:48, Luk.18:39, Rom.5:15, 17, Php.2:12, al.; πόσῳ, Luk.12:24, Rom.11:12, al.; τοσούτῳ . . . ὅσῳ, Heb.10:25.\n2. De comparação, mais: Luk.5:15, Jhn.5:18, Act.5:14, 1Th.4:1, 10, 2Pe.1:10; ἔτι μ. καὶ μ., Php.1:9; com compar., Mrk.7:36, 2Co.7:13; πολλῴ μ. κρεῖσον, Php.1:23; μ. διαφέρειν, com genitivo, Mat.6:26; μ. ἤ, Mat.18:13; com genitivo, 1Co.14:18; como perífrase do compar., Act.20:35, 1Co.9:15, Gal.4:27; μ. δέ (EV, «yea rather»), Rom.8:34.\n3. De preferência, antes, de preferência, mais cedo: com palavras qualificativas, πολλῷ, Mat.6:30, al.; πολύ, Heb.12:25; πόσῳ, Mat.7:11, al.; numa pergunta, οὐ μ., 1Co.9:12; depois de neg., Mat.10:6, al.; θέλω (εὐδοκῶ) μ., 1Co.14:5, 2Co.5:8; ζηλῶ, 1Co.14:1; com subst., τ. σκότος ἢ τ. φῶς, Jhn.3:19; μ. δέ, Gal.4:9.\nIII. Superl., μάλιστα\n, o mais, mais que tudo, sobretudo: Act.20:38 25:26, Gal.6:10, Php.4:22, 1Ti.4:10 5:8, 17, 2Ti.4:13, Tit.1:10, Phm 16, 2Pe.2:10; μ. γνώστης, Act.26:3",
+   "note": "'yea rather' is the English versions' (EV) rendering, kept in English."
+  },
+  {
+   "strongs": "G3123H",
+   "sha256": "8329b8dcc2b420d8301c8fab379a670f96781a233b3f90fba3cbb1578517e069",
+   "gloss": "mais: antes",
+   "definition": "μάλα\nadv., [na LXX por אֲבָל, 3Ki.1:43, Dan LXX 10:21, al.; compar. por מ, Num.13:32 (31), al.; μᾶλλον ἠ (מ), Gen.19:9, al.; superlat., 2Ma.8:7, 4Ma.4:22 12:9 15:4 ;]\nI. Pos., muito, grandemente, extremamente (cl.; LXX ut supr.; no NT seu lugar é ocupado por λίαν, σφόδρα, etc.).\nII. Compar., μᾶλλον.\n1. De aumento, mais; com palavras qualificativas: πολλῷ, Mrk.10:48, Luk.18:39, Rom.5:15, 17, Php.2:12, al.; πόσῳ, Luk.12:24, Rom.11:12, al.; τοσούτῳ . . . ὅσῳ, Heb.10:25.\n2. De comparação, mais: Luk.5:15, Jhn.5:18, Act.5:14, 1Th.4:1, 10, 2Pe.1:10; ἔτι μ. καὶ μ., Php.1:9; com compar., Mrk.7:36, 2Co.7:13; πολλῴ μ. κρεῖσον, Php.1:23; μ. διαφέρειν, com genitivo, Mat.6:26; μ. ἤ, Mat.18:13; com genitivo, 1Co.14:18; como perífrase do compar., Act.20:35, 1Co.9:15, Gal.4:27; μ. δέ (EV, «yea rather»), Rom.8:34.\n3. De preferência, antes, de preferência, mais cedo: com palavras qualificativas, πολλῷ, Mat.6:30, al.; πολύ, Heb.12:25; πόσῳ, Mat.7:11, al.; numa pergunta, οὐ μ., 1Co.9:12; depois de neg., Mat.10:6, al.; θέλω (εὐδοκῶ) μ., 1Co.14:5, 2Co.5:8; ζηλῶ, 1Co.14:1; com subst., τ. σκότος ἢ τ. φῶς, Jhn.3:19; μ. δέ, Gal.4:9.\nIII. Superl., μάλιστα\n, o mais, mais que tudo, sobretudo: Act.20:38 25:26, Gal.6:10, Php.4:22, 1Ti.4:10 5:8, 17, 2Ti.4:13, Tit.1:10, Phm 16, 2Pe.2:10; μ. γνώστης, Act.26:3",
+   "note": "'yea rather' is the English versions' (EV) rendering, kept in English."
+  },
+  {
+   "strongs": "G3124",
+   "sha256": "2b16546440cdd4e3ae15c83b90e4499f85c73fe52d065c384b18f172ad0bc331",
+   "gloss": "Malco",
+   "definition": "Μάλχος, -ου, ὁ (forma helenística do heb. מֶלֶךְ),\nMalco: Jhn.18:10.†"
+  },
+  {
+   "strongs": "G3125",
+   "sha256": "eb3270af0dc7525229aee0a8a3b816e906db55e559f19c00f7030137493b7ab0",
+   "gloss": "avó",
+   "definition": "μάμμη, -ης, ἡ\n(onomat.), [na LXX: 4Ma.16:9 * ;]\n1. no cl., nome infantil para mãe.\n2. No gr. tardio (= cl., τήθη), avó: (LXX, l. com), 2Ti.1:5.†"
+  },
+  {
+   "strongs": "G3126",
+   "sha256": "62c21f59f4f2c537a731d186d2bb54cf24e3b6995bf5abf372f035ba96080d9e",
+   "gloss": "riqueza",
+   "definition": "μαμωνᾶς (Rec. μαμμ-), -ᾶ (Bl., § 7, 4), ό (aram. מָמוֺנָא),\nmamom, riquezas: Mat.6:24, Luk.16:9, 11 16:13.†"
+  },
+  {
+   "strongs": "G3127",
+   "sha256": "1a9006e327a0a4154c6b8be692d0ec8ab8d5f8c7085e1a0307c88dcebed25789",
+   "gloss": "Manaem",
+   "definition": "Μαναήν, ὁ (heb. מְנַחֵם),\nManaem: Act.13:1.†"
+  },
+  {
+   "strongs": "G3128G",
+   "sha256": "96a1c6d38fa1b9e6c9f863d2a0e40e97b232058b4ea0c9b7eaf344e13f244b77",
+   "gloss": "Manassés",
+   "definition": "Μανασσῆς, -ῆ, ὁ (heb. מְנַשֶּׁה),\nManassés;\n1. (a) o primogênito de José;\n(b) a tribo que levava o seu nome: Rev.7:6.\n2. Rei de Judá: Mat.1:10.†"
+  },
+  {
+   "strongs": "G3128H",
+   "sha256": "96a1c6d38fa1b9e6c9f863d2a0e40e97b232058b4ea0c9b7eaf344e13f244b77",
+   "gloss": "Manassés",
+   "definition": "Μανασσῆς, -ῆ, ὁ (heb. מְנַשֶּׁה),\nManassés;\n1. (a) o primogênito de José;\n(b) a tribo que levava o seu nome: Rev.7:6.\n2. Rei de Judá: Mat.1:10.†"
+  },
+  {
+   "strongs": "G3129",
+   "sha256": "ef36e7c2ae2e41d1592485973cc5a45d2f6c82d6f6abaee0d0cce46962b4613f",
+   "gloss": "aprender",
+   "definition": "μανθάνω\n[na LXX principalmente por לָמַד ;]\n1. aprender, esp. por indagação: absol., 1Co.14:31, 1Ti.2:11, 2Ti.3:7; com acusativo de coisa(s), Jhn.7:15 (sc. αὐτά), Rom.16:17, 1Co.14:35, Php.4:9, 2Ti.3:14, Rev.14:3; antes de quaes. indir., Mat.9:13; Χριστόν, Eph.4:20 (ICC, in l); antes de ἀπό, com genitivo de coisa(s), Mat.24:32, Mrk.13:28; ἀπό, com genitivo de pessoa(s), Mat.11:29, Col.1:7; παρά, com genitivo de pessoa(s), 2Ti.3:14; ἐν, com dativo de pessoa(s), 1Co.4:6; aoristo \"pontual\" (M, Pr., 117), certificar-se, antes de ὅτι, Act.23:27; com acusativo antes de ἀπό, Gal.3:2.\n2. aprender pelo uso e pela prática, adquirir o hábito de, acostumar-se a: com inf. (Bl., § 69, 4), 1Ti.5:4, Tit.3:14; id. com nom, no pred. (El., § 72, 1), Php.4:11; com acusativo de coisa(s) antes de ἀπό, Heb.5:8; ἀργαὶ μανθάνουσιν (EV, «they learn to be idle»; Bl., § 73, 5; Field, Notas, 210), 1Ti.5:13.†",
+   "note": "'they learn to be idle' is the English versions' (EV) rendering, kept in English. 'El.' (for Bl.) copied as in the source."
+  },
+  {
+   "strongs": "G3130",
+   "sha256": "16b2b8e1b066b248580fa7f6a81d5dd091b4ee5cec7c1c0297b643816d545c71",
+   "gloss": "loucura",
+   "definition": "μανία, -ας, ἡ\n(μαίνομαι) [na LXX: Hos.9:7-8 מַשְׂטֵמָה), Wis.5:4, al. ;]\nfrenesi, loucura: Act.26:24.†"
+  },
+  {
+   "strongs": "G3131",
+   "sha256": "f034ee44689f65ef0b0f084a9763e71ce041ee8f97041306f7aedf3a9473c38f",
+   "gloss": "maná",
+   "definition": "μάννα, τό ,\n(em FlJ, também ἡ),\nindecl.\n[na LXX: τὸ μάν, Exo.16:31 ss., em outros lugares τ. μάννα, Num.11:6 ss., al. (מָן, aram. מַנָּא) ;]\nmaná: Jhn.6:31, 49, Heb.9:4; simb., Rev.2:17.†"
+  },
+  {
+   "strongs": "G3132",
+   "sha256": "a6f660cb862937e7a4924f34b4f61f235b1e4f456554f9be33aff6269435f59e",
+   "gloss": "adivinhar",
+   "definition": "μαντεύομαι\n(μαντίς, vidente, adivinho), [na LXX por קָסַם, Deu.18:10, al. ;]\nadivinhar, praticar a adivinhação: Act.16:16.†\nSYN.: προφητεύω, veja, em distinção do qual μ. é usado na LXX e no NT apenas dos falsos profetas e dos que praticam as artes pagãs da adivinhação e dos agouros (cf. 1Ki.28:8, e veja Tr., Syn., § vi)"
+  },
+  {
+   "strongs": "G3133",
+   "sha256": "44211c49edf9501e3287fee91d123d75b087d7612ba1c8566376bf55fbc30873",
+   "gloss": "murchar",
+   "definition": "μαραίνω\n[na LXX: Job.15:30 (יָבֵשׁ pi.), Job.24:24, Wis.2:8 19:21 * ;]\nno cl.,\n1. prop., apagar o fogo; pass., do fogo, extinguir-se, apagar-se.\n2. Em várias relações, extinguir, consumir, desgastar (cf. Wis.19:21); pass., definhar; em escritores posteriores (Plut., Luc., al.), do murchar das flores e da vegetação (at., Job.15:30; pass., Job.24:24, Wis.2:8): Jas.1:11 (cf. ἀμάραντον).†"
+  },
+  {
+   "strongs": "G3134",
+   "sha256": "d9e9a67ea89a393d6387c08c3cda208a61e02338fe4779db6798f1a99f9e60e9",
+   "gloss": "Vem, Senhor!",
+   "definition": "μαρὰν ἀθά (Rec. μαραναθά; aram.: sobre a forma original veja Dalman, Gr., § 41, 1; 74, 3; Words, 328),\nMaranata, isto é, o Senhor vem (mas veja Dalman, ll. com; Field, Notas, 180; ICC, in l): 1Co.16:22.†",
+   "note": "'Words' is Dalman's title, kept."
+  },
+  {
+   "strongs": "G3135",
+   "sha256": "db41c3b9bea888bd6a322cef7d34b0bd9c1374fdeba8c868c05e2e0dcd9fd61c",
+   "gloss": "pérola",
+   "definition": "μαργαρίτης, -ου, ὁ\npérola: Mat.13:45-46, 1Ti.2:9, Rev.17:4 18:12, 16 21:21 (-ῖται, WH); proverbialmente, Mat.7:6.†"
+  },
+  {
+   "strongs": "G3136",
+   "sha256": "bf10de689788c6aeb78fdaea074c36e2c269cb5c1e8b65181a8ad4a3fdabca06",
+   "gloss": "Marta",
+   "definition": "Μάρθα, -ας (Bl., § 7, 2), ἡ (aram. מָרְתָּא),\nMarta: Luk.10:38, 40-41, Jhn.11:1, 5 11:19 ss. Luk.12:2.†"
+  },
+  {
+   "strongs": "G3137G",
+   "sha256": "2edd46bcb7555c08152f722a12d26269153df2a33b9ef825f071b14dc994ac9d",
+   "gloss": "Maria",
+   "definition": "Μαρία, -ας (forma helenizada), e Μαριάμ, indecl., ἡ (aram. מַרְיָם; heb. מִרְיָם)\nMaria. No NT;\n1. a mãe de Jesus: Mat.1:16 ss. Mat.2:11 13:55, Mrk.6:3, Luk.1:27 ss. Luk.2:5, 16 2:19, 34, Act.1:14\n2. M. Madalena (veja).\n3. A mulher de Cleofas (Jhn.19:25) e mãe de Tiago, o menor, e de José: Mat.27:56, 61 28:1, Mrk.15:40, 47 16:1, Luk.24:10.\n4. A irmã de Marta e Lázaro: Luk.10:39, 42 Jhn.11:1-2, 19 ss. Jhn.12:3.\n5. A mãe de João Marcos: Act.12:12.\n6. Uma cristã saudada por S. Paulo: Rom.16:6 (sobre o significado do nome, veja Zorell, veja a palavra; sobre o uso das formas alternativas no NT, DB, iii, 278 bn).†",
+   "note": "Names as in the Bíblia Livre: 'Cleofas' (Jhn.19:25, for Clopas), 'Tiago, o menor' and 'José' (Mrk.15:40, for Joses)."
+  },
+  {
+   "strongs": "G3137H",
+   "sha256": "2edd46bcb7555c08152f722a12d26269153df2a33b9ef825f071b14dc994ac9d",
+   "gloss": "Maria",
+   "definition": "Μαρία, -ας (forma helenizada), e Μαριάμ, indecl., ἡ (aram. מַרְיָם; heb. מִרְיָם)\nMaria. No NT;\n1. a mãe de Jesus: Mat.1:16 ss. Mat.2:11 13:55, Mrk.6:3, Luk.1:27 ss. Luk.2:5, 16 2:19, 34, Act.1:14\n2. M. Madalena (veja).\n3. A mulher de Cleofas (Jhn.19:25) e mãe de Tiago, o menor, e de José: Mat.27:56, 61 28:1, Mrk.15:40, 47 16:1, Luk.24:10.\n4. A irmã de Marta e Lázaro: Luk.10:39, 42 Jhn.11:1-2, 19 ss. Jhn.12:3.\n5. A mãe de João Marcos: Act.12:12.\n6. Uma cristã saudada por S. Paulo: Rom.16:6 (sobre o significado do nome, veja Zorell, veja a palavra; sobre o uso das formas alternativas no NT, DB, iii, 278 bn).†",
+   "note": "Names as in the Bíblia Livre: 'Cleofas' (Jhn.19:25, for Clopas), 'Tiago, o menor' and 'José' (Mrk.15:40, for Joses)."
+  },
+  {
+   "strongs": "G3137I",
+   "sha256": "2edd46bcb7555c08152f722a12d26269153df2a33b9ef825f071b14dc994ac9d",
+   "gloss": "Maria",
+   "definition": "Μαρία, -ας (forma helenizada), e Μαριάμ, indecl., ἡ (aram. מַרְיָם; heb. מִרְיָם)\nMaria. No NT;\n1. a mãe de Jesus: Mat.1:16 ss. Mat.2:11 13:55, Mrk.6:3, Luk.1:27 ss. Luk.2:5, 16 2:19, 34, Act.1:14\n2. M. Madalena (veja).\n3. A mulher de Cleofas (Jhn.19:25) e mãe de Tiago, o menor, e de José: Mat.27:56, 61 28:1, Mrk.15:40, 47 16:1, Luk.24:10.\n4. A irmã de Marta e Lázaro: Luk.10:39, 42 Jhn.11:1-2, 19 ss. Jhn.12:3.\n5. A mãe de João Marcos: Act.12:12.\n6. Uma cristã saudada por S. Paulo: Rom.16:6 (sobre o significado do nome, veja Zorell, veja a palavra; sobre o uso das formas alternativas no NT, DB, iii, 278 bn).†",
+   "note": "Names as in the Bíblia Livre: 'Cleofas' (Jhn.19:25, for Clopas), 'Tiago, o menor' and 'José' (Mrk.15:40, for Joses)."
+  },
+  {
+   "strongs": "G3137J",
+   "sha256": "2edd46bcb7555c08152f722a12d26269153df2a33b9ef825f071b14dc994ac9d",
+   "gloss": "Maria",
+   "definition": "Μαρία, -ας (forma helenizada), e Μαριάμ, indecl., ἡ (aram. מַרְיָם; heb. מִרְיָם)\nMaria. No NT;\n1. a mãe de Jesus: Mat.1:16 ss. Mat.2:11 13:55, Mrk.6:3, Luk.1:27 ss. Luk.2:5, 16 2:19, 34, Act.1:14\n2. M. Madalena (veja).\n3. A mulher de Cleofas (Jhn.19:25) e mãe de Tiago, o menor, e de José: Mat.27:56, 61 28:1, Mrk.15:40, 47 16:1, Luk.24:10.\n4. A irmã de Marta e Lázaro: Luk.10:39, 42 Jhn.11:1-2, 19 ss. Jhn.12:3.\n5. A mãe de João Marcos: Act.12:12.\n6. Uma cristã saudada por S. Paulo: Rom.16:6 (sobre o significado do nome, veja Zorell, veja a palavra; sobre o uso das formas alternativas no NT, DB, iii, 278 bn).†",
+   "note": "Names as in the Bíblia Livre: 'Cleofas' (Jhn.19:25, for Clopas), 'Tiago, o menor' and 'José' (Mrk.15:40, for Joses)."
+  }
+ ]
+}

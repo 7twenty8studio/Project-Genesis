@@ -166,7 +166,7 @@
    "strongs": "G3047",
    "sha256": "5abfebef92eafe08e206b19fe87ae967cfd952c4df991196e638479003e1dc7c",
    "gloss": "suroeste",
-   "definition": "λίψ, λιβός, ὁ\n[en LXX principalmente por נֶגֶב, también por תֵּימָן, מַעֲרָב, etc., Gen.13:14, Num.2:10, 2Ch.32:30, al. ;]\nel viento del suroeste (SW.): βλέποντα κατὰ λ., Act.27:12 (véase Page, in l; Deiss., ES, 141).†",
+   "definition": "λίψ, λιβός, ὁ\n[en LXX principalmente por נֶגֶב, también por תֵּימָן, מַעֲרָב, etc., Gen.13:14, Num.2:10, 2Ch.32:30, al. ;]\nel viento del suroeste (SO.): βλέποντα κατὰ λ., Act.27:12 (véase Page, in l; Deiss., ES, 141).†",
    "note": "'SW.' (south-west) kept as the source writes it, after the Spanish 'suroeste', since the check counts it as a siglum."
   },
   {
@@ -525,9 +525,9 @@
   {
    "strongs": "G3104",
    "sha256": "b72b7514303a2ad63e35456abb2b23fc81d1f01472041d3eed1b3c2fc9d21a69",
-   "gloss": "Mená",
-   "definition": "Μεννά (L, Μεννᾶς, -ᾶ; Rec. Μαϊνάν) ὁ,\nMená: Luk.3:31.†",
-   "note": "The Reina-Valera 1909 reads 'Mainán' (Lk 3:31), from the Received Text's Μαϊνάν; the entry is for Μεννά, so rendered 'Mená'."
+   "gloss": "Mainán",
+   "definition": "Μεννά (L, Μεννᾶς, -ᾶ; Rec. Μαϊνάν) ὁ,\nMainán: Luk.3:31.†",
+   "note": "RV1909 Lucas 3:31 'Mainán' (Bíblia Livre 'Mainã')."
   },
   {
    "strongs": "G3105",

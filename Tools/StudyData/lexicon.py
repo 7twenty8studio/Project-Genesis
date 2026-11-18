@@ -67,8 +67,8 @@ SIGLUM = re.compile(r"(?<![\w])(?:[A-Z]{2,}[a-z]*|[IVX]+)(?![\w])")
 MARKS = re.compile(r"[†*§]")
 GREEK_STOPS = re.compile(r"[\u037e\u0387][;,.:]?")
 # Words in capitals that aren't sigla, and the ones that change: OT is AT.
-NOT_SIGLA = {"TIME", "TIEMPO", "TEMPO", "JESUS", "LORD", "GOD", "I", "SEÑOR", "SENHOR", "DIOS", "DEUS", "JESÚS", "QUESTION", "PREGUNTA", "PERGUNTA"}
-SIGLA_IN = {"OT": "AT"}
+NOT_SIGLA = {"BC", "AD", "TIME", "TIEMPO", "TEMPO", "JESUS", "LORD", "GOD", "I", "SEÑOR", "SENHOR", "DIOS", "DEUS", "JESÚS", "QUESTION", "PREGUNTA", "PERGUNTA"}
+SIGLA_IN = {"OT": "AT", "SW": "SO"}
 
 
 # STEPBible's slips in the English, fixed before translating (each with why).
