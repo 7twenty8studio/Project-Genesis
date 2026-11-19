@@ -196,13 +196,15 @@ def check_gloss(source, text, lang, meaning, note):
         problems.append(f"brackets differ ({''.join(BRACKETS.findall(source))} -> {''.join(BRACKETS.findall(text))})")
     elif re.search(r"\[\s*\]|<\s*>", text):
         problems.append("empty brackets")
-    for mark in "?!":
-        if source.count(mark) != text.count(mark):
-            problems.append(f"{mark} differs")
-    opened = {"?": "¿", "!": "¡"}
-    for mark, opener in opened.items():
+    # A question the English shows only by its word order ("will we eat")
+    # may take one "?" (Spanish "¿…?").
+    if source.count("!") != text.count("!"):
+        problems.append("! differs")
+    if not source.count("?") <= text.count("?") <= source.count("?") + 1:
+        problems.append("? differs")
+    for mark, opener in (("?", "¿"), ("!", "¡")):
         lowest = source.count(opener)
-        highest = lowest + (source.count(mark) if lang == "es" else 0)
+        highest = lowest + (text.count(mark) if lang == "es" else 0)
         if not lowest <= text.count(opener) <= highest:
             problems.append(f"{opener} differs")
     if Counter(NUMBER.findall(source)) != Counter(NUMBER.findall(text)):

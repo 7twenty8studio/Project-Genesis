@@ -91,8 +91,9 @@ it's listed for qualified review. Don't flag ordinary words.
   `Lord my` → `Señor mío` / `Senhor meu`; STEPBible's lone `!` (paragogic
   nun) and `?` stay as written.
 - `<obj.>` (Hebrew's object marker) stays `<obj.>` in both languages.
-  Don't add words to make a question read as one (no "acaso"): a gloss
-  with no `?` or `¿` is translated as it stands.
+  A question the English shows only by word order (`will we eat`) gets
+  a question mark instead of an added word (no "acaso"): `¿comeremos?` /
+  `comeremos?`.
 - The same English gloss with the same morph gets the same translation
   everywhere in the batch; with another morph, follow the morph.
 - A transliteration or a word spelled as in English that stays as it is

@@ -41,6 +41,9 @@ class Check(unittest.TestCase):
         self.assertIn("¿ differs", problems("¿ human", "humano"))
         # Portuguese doesn't open questions.
         self.assertIn("¿ differs", problems("[is] it not?", "¿não [é]?", "pt"))
+        self.assertEqual(problems("will we eat", "¿comeremos?"), [])
+        self.assertEqual(problems("will we eat", "comeremos?", "pt"), [])
+        self.assertIn("? differs", problems("will we eat", "¿comeremos??"))
         self.assertIn("numbers differ", problems("[19] And", "Y"))
 
     def test_capitals_english_and_length(self):
