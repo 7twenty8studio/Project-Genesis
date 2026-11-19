@@ -50,7 +50,11 @@ struct OriginalWordSheet: View {
                     } footer: {
                         VStack(alignment: .leading, spacing: 6) {
                             if WordStudyRepository.needsEnglishNote(bibleLanguage: library.currentTranslation.language) {
-                                if wordStudy?.language != nil {
+                                if wordStudy?.translatesGlosses == true {
+                                    Text("The grammar is in English.")
+                                    Text(OriginalGlosses.translatedNote)
+                                    Text(OriginalGlosses.attribution)
+                                } else if wordStudy?.language != nil {
                                     Text("The meaning in this verse and the grammar are in English.")
                                 } else {
                                     Text("Word meanings and grammar are in English.")
@@ -101,6 +105,9 @@ struct OriginalWordSheet: View {
             }
             .padding(.vertical, 4)
             LabeledContent("In this verse", value: word.gloss)
+            if let english = word.englishGloss {
+                LabeledContent("In English", value: english)
+            }
             if let strongs = word.strongs {
                 LabeledContent("Strong's number", value: strongs)
             }

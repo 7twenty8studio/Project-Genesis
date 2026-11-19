@@ -77,7 +77,7 @@ final class WordStudyRepository: Sendable {
                 [.int(low.rawValue), .int(high.rawValue), .int(edition.rawValue)]
             ) { Self.greekWord($0, edition: edition) }
         }
-        return Dictionary(grouping: rows.filter { wanted.contains($0.verse) }, by: \.verse)
+        return Dictionary(grouping: withTranslatedGlosses(rows.filter { wanted.contains($0.verse) }), by: \.verse)
     }
 
     /// The word another edition has at the same place as a Greek word, if
@@ -272,8 +272,11 @@ struct OriginalWord: Identifiable, Hashable, Sendable {
     let transliteration: String
     /// STEPBible's extended Strong's number (H0430G, G2316), if tagged.
     let strongs: String?
-    /// English gloss in this context.
-    let gloss: String
+    /// The gloss in this context: STEPBible's English, or its translation
+    /// in the app's language (`OriginalGlosses`).
+    var gloss: String
+    /// STEPBible's English gloss when `gloss` is a translation; nil otherwise.
+    var englishGloss: String? = nil
     /// Morphology code (ETCBC for Hebrew, Robinson style for Greek).
     let morphology: String
     /// The Greek edition the word was read from; nil for Hebrew.

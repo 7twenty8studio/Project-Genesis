@@ -10,6 +10,7 @@ struct OriginalSourceSheet: View {
 
     @Environment(\.palette) private var palette
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.wordStudy) private var wordStudy
 
     var body: some View {
         NavigationStack {
@@ -25,6 +26,10 @@ struct OriginalSourceSheet: View {
                     Section("Source") {
                         Text(credit)
                             .foregroundStyle(palette.text)
+                        if wordStudy?.translatesGlosses == true {
+                            Text(OriginalGlosses.attribution)
+                                .foregroundStyle(palette.text)
+                        }
                     }
                     .listRowBackground(palette.surface)
                 }

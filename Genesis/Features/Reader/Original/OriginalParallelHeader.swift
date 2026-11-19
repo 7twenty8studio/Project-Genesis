@@ -17,6 +17,7 @@ struct OriginalParallelHeader: View {
 
     @Environment(ReaderSettings.self) private var settings
     @Environment(\.palette) private var palette
+    @Environment(\.wordStudy) private var wordStudy
     @State private var showsSource = false
 
     var body: some View {
@@ -45,7 +46,7 @@ struct OriginalParallelHeader: View {
                     .fixedSize(horizontal: false, vertical: true)
             }
             if WordStudyRepository.needsEnglishNote(bibleLanguage: translation.language) {
-                Text("Word meanings and grammar are in English.")
+                Text(wordStudy?.translatesGlosses == true ? OriginalGlosses.translatedNote : String(localized: "Word meanings and grammar are in English."))
                     .font(.caption)
                     .foregroundStyle(palette.secondaryText)
                     .fixedSize(horizontal: false, vertical: true)

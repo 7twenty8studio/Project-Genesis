@@ -88,7 +88,11 @@ struct VerseStudyList: View {
                 } footer: {
                     VStack(alignment: .leading, spacing: 6) {
                         if WordStudyRepository.needsEnglishNote(bibleLanguage: library.premiumToolsTranslation.language) {
-                            if wordStudy?.language != nil {
+                            if wordStudy?.translatesGlosses == true {
+                                Text("Commentary and grammar are in English.")
+                                Text(OriginalGlosses.translatedNote)
+                                Text(OriginalGlosses.attribution)
+                            } else if wordStudy?.language != nil {
                                 Text("Commentary and the meanings of words in this verse are in English.")
                             } else {
                                 Text("Definitions and commentary are in English.")
