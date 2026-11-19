@@ -94,6 +94,7 @@ it's listed for qualified review. Don't flag ordinary words.
   A question the English shows only by word order (`will we eat`) gets
   a question mark instead of an added word (no "acaso"): `¿comeremos?` /
   `comeremos?`.
+- A bracketed plural ending: `animal[s]` → `animal[es]` / `animal[-ais]`.
 - The same English gloss with the same morph gets the same translation
   everywhere in the batch; with another morph, follow the morph.
 - A transliteration or a word spelled as in English that stays as it is
