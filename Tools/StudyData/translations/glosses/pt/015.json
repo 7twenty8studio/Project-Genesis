@@ -431,7 +431,7 @@
   "9e588bcb81893c7e": "dá à luz",
   "c8e83694d42da8ef": "dará à luz?",
   "7585f4d952b42e21": "gerarão filhos",
-  "dc42ce59362a858f": "eles [masc.] darão à luz !",
+  "dc42ce59362a858f": "eles [masc] darão à luz !",
   "6daba02d562264b9": "dará à luz?",
   "0ab944458423eb5b": "demos à luz",
   "f449f40999752751": "dei à luz",
@@ -2002,7 +2002,9 @@
   "d88c37a0b56f91ee": "e os empalaram",
   "d503796ca8d76ef5": "e se deslocou"
  },
- "notes": {},
+ "notes": {
+  "9119ce744904cf9b": "Morfologia 2mp; o sujeito são 'tuas apostasias' (3fp, mesma forma): terceira pessoa."
+ },
  "uncertain": {
   "ddeefef9649ee836": "yaḥmûr: roe deer or fallow deer; the animal's identification is uncertain",
   "245a71867dcd1613": "yaḥmûr: roe deer or fallow deer; the animal's identification is uncertain",

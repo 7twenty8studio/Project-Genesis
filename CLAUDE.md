@@ -241,9 +241,29 @@ shares; README.md has the architecture.
   slips in the English and `ARTICLE_FIXES` for misplaced articles, both
   written into the English lexicon too by `fix_database`) by add_lexicon_translations.py, which
   build_wordstudy.py also runs. Review notes: translations/lexicon/NOTES.md.
-  The meanings in a verse, grammar and commentary stay English: when the
-  Bible or the app isn't English, the Original header, the word sheet and
-  VerseStudyView say so (`WordStudyRepository.needsEnglishNote`).
+  The word-by-word meanings in a verse (STEPBible's TAHOT/TAGNT English
+  glosses, CC BY 4.0) are in Spanish and Portuguese too (VRS-6): the
+  bundled Glosses.sqlite (separate from WordStudy.sqlite; `glosses` keyed
+  by FNV-1a of "strongs␟morph␟gloss", `occurrence_glosses` for a verse
+  that needs another word, `awaiting` for uncertain meanings), read by
+  `OriginalGlosses` through `WordStudyRepository.words(inVerses:)`
+  (`OriginalWord.englishGloss`, `awaitsReview` shows "(?)" and
+  `awaitingReviewNote`; `translatedNote` and `attribution`, the CC BY
+  credit, wherever they show). English where a gloss is missing. Built
+  from Tools/StudyData/translations/glosses (`glosses.py
+  export/status/check/context`: 58 batches with source shas; brackets,
+  marks, numbers, question particle ¿ as "acaso"/"porventura", "will"
+  never querer, verse reading required for supplied verbs) by
+  add_gloss_translations.py; sources, pinned STEPBible commit and
+  checksums in SOURCES.md, rules in INSTRUCTIONS.md, notes in NOTES.md.
+  Only translations from sources whose licences allow translation and
+  redistribution (owner, 19 November 2026): Global Bible Tools' es/pt and
+  TAGNT's Spanish column stay out until their terms are confirmed.
+  Uncertain meanings stay awaiting review until a qualified reviewer signs
+  them off in reviewed.json (by hand); passing the checks never does.
+  Grammar and commentary stay English: when the Bible or the app isn't
+  English, the Original header, the word sheet and VerseStudyView say so
+  (`WordStudyRepository.needsEnglishNote`).
 - Pronunciation (free): `PronounceButton` on `OriginalWordSheet` (word and
   dictionary form) and `LexiconEntryView` says the word with the device's
   Hebrew (he) or Greek (el) voice via `WordPronouncer` (environment; silent

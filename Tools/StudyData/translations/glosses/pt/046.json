@@ -441,7 +441,7 @@
   "497ef1c87699b527": "uma",
   "44eeb6abf005e467": "de uma",
   "6be446a26762d631": "uma’",
-  "ce8c4646bb465eb4": "um?",
+  "ce8c4646bb465eb4": "uma?",
   "4d2197b577dc564b": "primeiro [dia]",
   "700c20d155782821": "em uma",
   "ff26acc041ef3cda": "de um",
@@ -720,14 +720,14 @@
   "1656f4bac765cf1c": "cada um",
   "ff1b41125cc3c898": "A cada um",
   "2b9f812bb79667a4": "a cada um",
-  "fd145c372d9ae81b": "de cada um",
+  "fd145c372d9ae81b": "de cada",
   "38fbe7713164cc80": "cada [mulher]",
   "b487143a2797d787": "Um homem",
   "66ef126ba8d84257": "Um",
   "eebeb899791b6f30": "cada [um deles]",
   "3232bba2bf594fc0": "cada homem",
   "67ecd4ab835912bc": "cada um",
-  "81c4182f54d5e59f": "Cada um",
+  "81c4182f54d5e59f": "Cada",
   "fe4b483752e39ef0": "em todo momento",
   "ea8fadb7e8662e31": "cem",
   "ff42231078740bc4": "cento",
@@ -3408,6 +3408,34 @@
   },
   "0e5ba82a7e590d97": {
    "44011016.16": "com [o]"
+  },
+  "7bec2aef90661319": {
+   "40005041.6": "uma",
+   "40012011.13": "uma",
+   "40018005.5": "uma",
+   "40027014.7": "uma",
+   "44028025.11": "uma",
+   "43003027.10": "uma"
+  },
+  "f8d9f30174ec3e47": {
+   "40013046.4": "uma",
+   "40021024.11": "uma",
+   "41011029.10": "uma",
+   "42020003.9": "uma"
+  },
+  "0e7bab394b6e567f": {
+   "40018012.12": "uma",
+   "44023006.7": "uma"
+  },
+  "88c0b594e37c89b4": {
+   "42012052.8": "uma",
+   "48005014.6": "uma"
+  },
+  "5dcc16c1a5dcd666": {
+   "45015006.4": "uma"
+  },
+  "9fe1cbcd2db61248": {
+   "66021021.14": "uma"
   }
  }
 }
