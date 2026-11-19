@@ -197,6 +197,20 @@ struct StudyTranslationTests {
         }
     }
 
+    @Test func otherNamesLeaveOutTheNameItself() {
+        #expect(OtherNames.distinct("Lucas", besides: "Lucas") == "")
+        #expect(OtherNames.distinct("Elias", besides: "Elías") == "")
+        #expect(OtherNames.distinct("Asaf, Abiasaf, asaf", besides: "Asaf (levita)") == "Abiasaf")
+        #expect(OtherNames.distinct("Saul", besides: "Paul") == "Saul")
+        #expect(OtherNames.distinct("", besides: "Paul") == "")
+        #expect(PersonSummary(id: 1, name: "Lucas", alsoCalled: "Lucas", verseCount: 3).alsoCalled.isEmpty)
+    }
+
+    @Test(arguments: [("es", 85, "Nacimiento de Jacob y Esaú"), ("pt", 85, "Nascimento de Jacó e Esaú"), ("es", 220, "Profecías de Miqueas"), ("pt", 220, "Profecias de Miqueias")])
+    func eventTitlesNamePeopleAsTheBibleDoes(language: String, id: Int, title: String) throws {
+        #expect(try repository(language).event(id: id)?.title == title)
+    }
+
     @Test func groupLabelsAreShownOneByOne() {
         let person = Person(
             summary: PersonSummary(id: 1, name: "Judas", alsoCalled: "", verseCount: 1),

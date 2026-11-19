@@ -75,6 +75,8 @@ def modern_spanish(word: str) -> str:
             return ("Qu" if upper else "qu") + nxt
         return ("C" if upper else "c") + nxt
     w = re.sub(r"(Ch|ch)(.)", ch, w)
+    # ...and at the end of a word: "Abimelech" -> Abimelec, "Lamech" -> Lamec.
+    w = re.sub(r"(?<=[a-zâêîôûáéíóú])ch$", "c", w)
     # Double letters are single today (Mattathías -> Matatías); ll, rr and cc stay.
     w = re.sub(r"([bdfgkmnpstvz])\1", r"\1", w)
     stress = next((i for i, c in enumerate(w) if c in CIRCUMFLEX), None)
@@ -187,6 +189,19 @@ def find_name(name, verses, bible, others):
     return None
 
 
+def distinct_others(other: str, name: str) -> str:
+    """Other names without repeats or the name itself ("Lucas, also Lucas").
+    Left empty, the app shows the English other names, so when nothing
+    else is left the name stays and the app leaves it out."""
+    base = fold(split_name(name)[0])
+    kept, seen = [], {base}
+    for part in (p.strip() for p in other.split(",")):
+        if part and fold(part) not in seen:
+            seen.add(fold(part))
+            kept.append(part)
+    return ", ".join(kept) if kept else other.split(",")[0].strip()
+
+
 BASE = re.compile(r"^(.*?)\s*\((.*)\)\s*$")
 
 
@@ -263,16 +278,20 @@ def main(rv1909: str):
             else:
                 text = found.get((kind, pid)) or say(base)
                 if note:
-                    text += " (" + (manual[lang]["notes"].get(note) or fill(manual[lang]["notes"], note) or say(note)) + ")"
+                    said = manual[lang]["notes"].get(note) or fill(manual[lang]["notes"], note) or say(note)
+                    # "Eber (Heber)" is one name in Spanish and Portuguese.
+                    if fold(said) != fold(text):
+                        text += " (" + said + ")"
             entry = {"name": text}
             if kind == "person":
                 (also,) = study.execute("SELECT also_called FROM people WHERE id = ?", (pid,)).fetchone()
                 if also:
-                    entry["other"] = manual[lang]["also"].get(name) or ", ".join(say(a.strip()) for a in also.split(","))
+                    other = manual[lang]["also"].get(name) or ", ".join(say(a.strip()) for a in also.split(","))
+                    entry["other"] = distinct_others(other, text)
             else:
                 (aliases,) = study.execute("SELECT aliases FROM places WHERE id = ?", (pid,)).fetchone()
                 if aliases:
-                    entry["other"] = manual[lang]["aliases"].get(aliases, aliases)
+                    entry["other"] = distinct_others(manual[lang]["aliases"].get(aliases, aliases), text)
             if entry["name"] != name or "other" in entry:
                 out[kind][str(pid)] = entry
         for eid, title in study.execute("SELECT id, title FROM events"):
