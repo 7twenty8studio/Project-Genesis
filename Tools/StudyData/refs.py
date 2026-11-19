@@ -31,6 +31,11 @@ ENGLISH_EXTRA = {
     "Deuteronomy": "Deut", "Joshua": "Josh", "Judges": "Judg", "Isaiah": "Isa",
     "Jeremiah": "Jer", "Ezekiel": "Ezek", "Daniel": "Dan", "Hosea": "Hos",
     "Matthew": "Matt", "Romans": "Rom", "Hebrews": "Heb", "Revelation": "Rev",
+    # Strong's Hebrew Dictionary's full names ("Proverbs 31:4").
+    "Proverbs": "Prov", "Nehemiah": "Neh", "1 Chronicles": "1Chr", "2 Chronicles": "2Chr",
+    "1 Samuel": "1Sam", "2 Samuel": "2Sam", "Ecclesiastes": "Eccl", "Lamentations": "Lam",
+    "Zechariah": "Zech", "Zephaniah": "Zeph", "Song of Solomon": "Cant", "Habakkuk": "Hab",
+    "Haggai": "Hag", "Malachi": "Mal", "Nahum": "Nah", "Obadiah": "Obad",
 }
 
 

@@ -86,10 +86,16 @@ struct LexiconEntryView: View {
         .listRowBackground(palette.surface)
 
         if !entry.definition.isEmpty {
-            Section("Definition") {
+            Section {
                 Text(entry.definition)
                     .foregroundStyle(palette.text)
                     .accessibilityIdentifier("lexicon.definition")
+            } header: {
+                Text("Definition")
+            } footer: {
+                if entry.isTranslated {
+                    Text(WordStudyRepository.translatedNote)
+                }
             }
             .listRowBackground(palette.surface)
         }

@@ -65,6 +65,54 @@ struct WordStudyTests {
         #expect(try study.occurrences(of: "H1254A") <= study.occurrences(of: "H1254"))
     }
 
+    @Test func lexiconReadsInSpanishAndPortuguese() throws {
+        let url = try #require(Bundle.main.url(forResource: "WordStudy", withExtension: "sqlite"))
+        let english = try WordStudyRepository(url: url)
+        let spanish = try WordStudyRepository(url: url, language: "es")
+        let portuguese = try WordStudyRepository(url: url, language: "pt")
+        #expect(english.language == nil)
+        #expect(spanish.language == "es")
+        #expect(try WordStudyRepository(url: url, language: "fr").language == nil)
+
+        let create = try #require(try english.entry(strongs: "H1254A"))
+        #expect(create.gloss == "to create")
+        #expect(!create.isTranslated)
+        let crear = try #require(try spanish.entry(strongs: "H1254A"))
+        #expect(crear.gloss == "crear")
+        #expect(crear.derivation == "raíz primitiva;")
+        #expect(crear.isTranslated)
+        // The Hebrew, the number and the KJV's renderings stay as they are.
+        #expect(crear.lemma == create.lemma)
+        #expect(crear.strongs == create.strongs)
+        #expect(crear.usage == create.usage)
+        #expect(try portuguese.entry(strongs: "H1254A")?.gloss == "criar")
+        // A number with no entry of its own still falls back, translated.
+        #expect(try spanish.entry(strongs: "H1254Z")?.isTranslated == true)
+
+        let theos = try #require(try spanish.entry(strongs: "G2316"))
+        #expect(theos.gloss == "Dios")
+        #expect(theos.definition.hasPrefix("θεός, -οῦ, ὁ, ἡ"))
+        #expect(try portuguese.entry(strongs: "G2316")?.gloss == "Deus")
+    }
+
+    @Test func entriesHoldOnlyTheirOwnArticle() throws {
+        let url = try #require(Bundle.main.url(forResource: "WordStudy", withExtension: "sqlite"))
+        for language in [nil, "es", "pt"] {
+            let study = try WordStudyRepository(url: url, language: language)
+            // STEPBible had appended the article on βασιλεία to οὐρανός's.
+            let heaven = try #require(try study.entry(strongs: "G3772"))
+            #expect(heaven.definition.hasPrefix("οὐρανός, -οῦ, ὁ,"))
+            #expect(!heaven.definition.contains("βασιλεία, -ας, ἡ"))
+            #expect(!heaven.definition.hasSuffix("\\"))
+            // Forms of σύ carried αὐτός's article; now σύ's.
+            let you = try #require(try study.entry(strongs: "G4571"))
+            #expect(you.definition == (try study.entry(strongs: "G4771"))?.definition)
+            #expect(!you.definition.contains("αὐτός, -ή, -ό"))
+            // μόδιος held μοιχαλίς's article: only its gloss is left.
+            #expect(try study.entry(strongs: "G3426")?.definition.isEmpty == true)
+        }
+    }
+
     @Test func versesFollowTheKJV() throws {
         let study = try repository()
         // Psalm titles belong to verse 1, as in the KJV.

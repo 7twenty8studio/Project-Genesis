@@ -50,7 +50,11 @@ struct OriginalWordSheet: View {
                     } footer: {
                         VStack(alignment: .leading, spacing: 6) {
                             if WordStudyRepository.needsEnglishNote(bibleLanguage: library.currentTranslation.language) {
-                                Text("Word meanings and grammar are in English.")
+                                if wordStudy?.language != nil {
+                                    Text("The meaning in this verse and the grammar are in English.")
+                                } else {
+                                    Text("Word meanings and grammar are in English.")
+                                }
                             }
                             Text(WordStudyRepository.attribution)
                         }
@@ -184,9 +188,15 @@ private struct OriginalWordDetails: View {
             .listRowBackground(palette.surface)
         }
         if let entry, !entry.definition.isEmpty {
-            Section("Definition") {
+            Section {
                 Text(entry.definition)
                     .foregroundStyle(palette.text)
+            } header: {
+                Text("Definition")
+            } footer: {
+                if entry.isTranslated {
+                    Text(WordStudyRepository.translatedNote)
+                }
             }
             .listRowBackground(palette.surface)
         }

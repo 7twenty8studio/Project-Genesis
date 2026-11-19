@@ -1,0 +1,1312 @@
+{
+ "batch": "029",
+ "strongs": [
+  "G0105",
+  "G0106",
+  "G0107",
+  "G0108",
+  "G0109",
+  "G0110",
+  "G0111",
+  "G0112",
+  "G0113",
+  "G0114",
+  "G0115",
+  "G0116",
+  "G0117",
+  "G0118",
+  "G0119",
+  "G0120",
+  "G0121",
+  "G0122",
+  "G0123",
+  "G0124",
+  "G0125",
+  "G0126",
+  "G0127",
+  "G0128",
+  "G0129G",
+  "G0129H",
+  "G0130",
+  "G0131",
+  "G0132",
+  "G0133",
+  "G0134",
+  "G0135",
+  "G0136",
+  "G0137",
+  "G0138",
+  "G0139",
+  "G0140",
+  "G0141",
+  "G0142",
+  "G0143",
+  "G0144",
+  "G0145",
+  "G0146",
+  "G0147",
+  "G0148",
+  "G0149",
+  "G0150",
+  "G0151",
+  "G0152",
+  "G0153",
+  "G0154",
+  "G0155",
+  "G0156",
+  "G0157",
+  "G0158",
+  "G0159",
+  "G0160",
+  "G0161",
+  "G0162",
+  "G0163",
+  "G0164",
+  "G0165G",
+  "G0165H",
+  "G0166",
+  "G0167",
+  "G0168",
+  "G0169",
+  "G0170",
+  "G0171",
+  "G0172",
+  "G0173",
+  "G0174",
+  "G0175",
+  "G0176",
+  "G0177",
+  "G0178",
+  "G0179",
+  "G0180",
+  "G0181",
+  "G0182",
+  "G0183",
+  "G0184",
+  "G0185",
+  "G0186",
+  "G0187",
+  "G0188",
+  "G0189",
+  "G0190",
+  "G0191",
+  "G0192",
+  "G0193",
+  "G0194",
+  "G0195",
+  "G0196",
+  "G0197",
+  "G0198",
+  "G0199",
+  "G0200",
+  "G0201",
+  "G0202",
+  "G0203",
+  "G0204",
+  "G0205",
+  "G0206",
+  "G0207",
+  "G0208",
+  "G0209",
+  "G0210",
+  "G0211",
+  "G0212",
+  "G0213",
+  "G0214",
+  "G0215",
+  "G0216",
+  "G0217",
+  "G0218",
+  "G0219",
+  "G0220",
+  "G0221",
+  "G0222",
+  "G0223G",
+  "G0223H",
+  "G0223I",
+  "G0223J",
+  "G0224",
+  "G0225",
+  "G0226",
+  "G0227",
+  "G0228",
+  "G0229",
+  "G0230",
+  "G0231",
+  "G0232",
+  "G0233",
+  "G0234",
+  "G0235",
+  "G0236",
+  "G0237",
+  "G0238",
+  "G0239",
+  "G0240",
+  "G0241",
+  "G0242",
+  "G0243",
+  "G0244"
+ ],
+ "entries": [
+  {
+   "strongs": "G0105",
+   "language": "greek",
+   "lemma": "ἀετός",
+   "gloss": "eagle",
+   "definition": "ἀετός, -οῦ, ὁ,\n[in LXX for נֶשֶׁר ;]\nan eagle: Rev.4:7 8:13 (Rec. ἀγγέλου) 12:14. Where carrion is referred to, ἀ. is probably a vulture (cf. Job.39:30, Pro.30:17): Mat.24:28, Luk.17:37 (MM, VGT, see word).†",
+   "sha256": "a62b4c889798650437fcc86c440fbb9272d48617efdc80997d25d200be48a137"
+  },
+  {
+   "strongs": "G0106",
+   "language": "greek",
+   "lemma": "ἄζυμος",
+   "gloss": "unleavened",
+   "definition": "ἄζυμος, -ον\n(ζύμη), [in LXX for מָצָּה; τὰ ἄ. (sc. λάγανα, cakes) = הַמָצָּה ;]\nunleavened: ἡ ἑορτὴ τῶν ἄ. (הַג הַמָצָּה), the paschal feast (also called τὰ ἄ., Mrk.14:1), Luk.22:1; ἡμέρα τῶν ἄ., Mat.26:17, Mrk.14:12, Luk.22:7; ἡμέραι, Act.12:3 20:6. Fig., of Christians, free from corruption: 1Co.5:7; exhorted to keep festival, ἐν ἀζύμοις (sc. ἄρτοις, λάγανοις, or, indefinitely, \"unleavened elements\"), ib. 8 (Cremer, 724).†",
+   "sha256": "7bc410f17a4a8c618b8702a322422287f64faeca7ccc2d3023a762b8bfa970b0"
+  },
+  {
+   "strongs": "G0107",
+   "language": "greek",
+   "lemma": "Ἀζώρ",
+   "gloss": "Azor",
+   "definition": "Ἀζώρ, ὁ, indecl.,\nAzor: Mat.1:13,14.†",
+   "sha256": "5d5499f88c4eea53d11276c6270bd0381d1944992382c1ae455c3c86aa82e614"
+  },
+  {
+   "strongs": "G0108",
+   "language": "greek",
+   "lemma": "Ἄζωτος",
+   "gloss": "Azotus",
+   "definition": "Ἄζωτος, -ου, ἡ (Heb., אַשְׁדּוֹד),\nAzotus, a Philistine city: Act.8:40.†",
+   "sha256": "c44804f59fd807b58a70ae0aee4dc87228a787b2c357c275772796c2778c1f96"
+  },
+  {
+   "strongs": "G0109",
+   "language": "greek",
+   "lemma": "ἀήρ",
+   "gloss": "air",
+   "definition": "ἀήρ, ἀέρος, ὁ,\n[in LXX: 2Ki.22:12 (= Psa.17(18):11 שׁחק), Wi .8 ;]\nin Hom., Hes., the lower air which surrounds the earth, as opposite to the purer αἰθήρ of the higher regions; generally, air (MM, VGT, see word): Act.22:23, 1Th.4:17, Rev.9:2 16:17; of the air as the realm of demons, Eph.2:2; ἀ. δέρειν, of striving to no purpose, 1Co.9:26; εἰς ἀ. λαλεῖν, of speaking without effect, not being understood, 1Co.14:9.†",
+   "sha256": "7f380c53d67ae71c72129105085b132e999eab6907800a12b4f5876ea68ebe2d"
+  },
+  {
+   "strongs": "G0110",
+   "language": "greek",
+   "lemma": "ἀθανασία",
+   "gloss": "immortality",
+   "definition": "ἀθανασία, -ας, ἡ\n(ἀ-θάνατος, undying; V. MM, VGT, see word), [in LXX: Wis.3:4 4:1 8:13,17 15:3, 4Ma.14:5 16:13 * ;]\nimmortality: 1Co.15:53,54 1Ti.6:16 (cf. Cremer, 285 f.).†",
+   "sha256": "8471dc7c9a89a824e177c90e2623f210994fc19d823f4fcb2536faaaa55fc333"
+  },
+  {
+   "strongs": "G0111",
+   "language": "greek",
+   "lemma": "ἀθέμιτος",
+   "gloss": "unlawful",
+   "definition": "ἀ-θέμιτος (late form of ἀθέμιστος, LS, MM, VGT, see word), -ον\n(θέμις, custom, right), [in LXX: 2Ma.6:5 7:1 10:34, 3Ma.5:20 * ;]\n(a) of persons, lawless (III Mac, l.with);\n(b) of things, lawless, unlawful: Act.10:28, 1Pe.4:3.†\nSYN.: see: ἄθεσμος.",
+   "sha256": "e7843dd37fd63a7407d67001cecef87eb85afc63778b6485a9c233bcf39a2d10"
+  },
+  {
+   "strongs": "G0112",
+   "language": "greek",
+   "lemma": "ἄθεος",
+   "gloss": "without God",
+   "definition": "ἄ-θεος, -ον,\n1. in cl.\n(a) slighting or denyiyig the gods (Plat.; cf. MM, VGT, see word);\n(b) godless, ungodly (Pind.);\n(with) abandoned by the gods (Soph.)\n2. In the NT (cf. Lft. on Ign. ad Trail, §3), of the heathen, without God, not knowing God (Cremer, 281): Eph.2:12.\n†",
+   "sha256": "39a4772e77cf81c609a48aa2a9d2158d37c8bff7bc7c0e17f22fd6e648e41475"
+  },
+  {
+   "strongs": "G0113",
+   "language": "greek",
+   "lemma": "ἄθεσμος",
+   "gloss": "lawless",
+   "definition": "ἄθεσμος, -ον\n(θεσμός, law, custom), [in LXX: 3Ma.5:12 6:26 * ;]\nlawless, esp. of those who violate the law of nature and conscience (cf. MM, VGT, see word): 2Pe.2:7 3:17.†\nSYN.: ἀθέμιτος, ἄνομος, κακός, πονηρός, φαῦλος (see Tr., Syn., §lxxiv; DCG, ii, 821b).",
+   "sha256": "d679bd316c2bf1d4b20e047853227af252017d76612d8a648f44b85e2626d077"
+  },
+  {
+   "strongs": "G0114",
+   "language": "greek",
+   "lemma": "ἀθετέω",
+   "gloss": "to reject",
+   "definition": "ἀθετέω, -ῶ (τίθημι), [in LXX for seventeen different words, פּשׁע, מרד, בּגד, מעל, etc., often meaning, as 1Ki.13:3 (Heb., al.), to revolt; properly, to make ἄθετον , or do away with what has been laid down (see DCG, i, 453 f.)].\n1. to set aside, disregard (in Gramm., to reject as spurious): διαθήκην , Gal.3:16; ἐντολήν , Mrk.7:9; νόμον . Heb.10:28; πίστιν , 1Ti.5:12.\n2. to nullify, make void: Luk.7:30 (see Field, Notes, 59), 1Co.1:19, Gal.2:21.\n3. to reject: Mrk.6:26 (Field, op. cit., 30), Lk 10:16, Jhn.12:48, I Th 48, Ju 8 (for exx. in π., see MM, VGT, see word).\n†",
+   "sha256": "1b4669552a5876e21c2039e70d186e173b5f27cae576aba10a4a74248ecd7e80"
+  },
+  {
+   "strongs": "G0115",
+   "language": "greek",
+   "lemma": "ἀθέτησις",
+   "gloss": "nullification",
+   "definition": "ἀθέτησις, -εως, ἡ\n(ἀθετέω), [in LXX, usually of unfaithful, rebellious action: 1Ki.24:12 (פֶּשַׁע), Jer.12:1 (בֶּגֶד), Da TH 9:7 (מַעַל), 2Ma.14:28 * ;]\na disannulling, setting aside: Heb.7:18 9:26 (for similar usage in π., see Deiss., BS, 228 f.; MM, VGT, see word).†",
+   "sha256": "4a6f10d3c59a29e239afcfe08fabcbe8acf328c9cc3f0b3fbb6abdb72bc21f3f"
+  },
+  {
+   "strongs": "G0116",
+   "language": "greek",
+   "lemma": "Ἀθῆναι",
+   "gloss": "Athens",
+   "definition": "Ἀθῆναι, -ῶν, αἱ (plural because consisting of several parts),\nAthens: Act.17:15,16 18:1, 1Th.3:1.†",
+   "sha256": "d2320684ca812b1afa7c589b53ad5930a299bd22dcd644159d6de0a336e37421"
+  },
+  {
+   "strongs": "G0117",
+   "language": "greek",
+   "lemma": "Ἀθηναῖος",
+   "gloss": "Athenian",
+   "definition": "Athenian, of or from Athens , (Iliad by Homer), etc (ML)",
+   "sha256": "8db031840560cd972d6c243c2aa0950631b9e6d3e8edbf6640357d9c3d11213b"
+  },
+  {
+   "strongs": "G0118",
+   "language": "greek",
+   "lemma": "ἀθλέω",
+   "gloss": "to compete",
+   "definition": "ἀθλέω, -ῶ (in cl. also ἀθλεύω, ἆθλος, a contest, in war or in sport),\nto contend in games, wrestle, combat: 2Ti.2:5.†",
+   "sha256": "3cc73b6a3e7c3ddd4d861b0ca6767e30db27db0c38e28ba9d559800a38b6e00e"
+  },
+  {
+   "strongs": "G0119",
+   "language": "greek",
+   "lemma": "ἄθλησις",
+   "gloss": "struggle",
+   "definition": "ἄθλησις, -εως, ἡ\n(ἀθλέω),\na contest, combat, esp. of athletes; figuratively, a struggle: Heb.10:32 (for exx., see MM, VGT, see word).†",
+   "sha256": "ae9c0841ecfd6ed779bea343bb037585ea82ea5c6f39ca2c69e29c5908ed0f04"
+  },
+  {
+   "strongs": "G0120",
+   "language": "greek",
+   "lemma": "ἀθυμέω",
+   "gloss": "be discouraged",
+   "definition": "ἀθυμέω, -ῶ (ἄ-θυμος, without heart),\n[in LXX for חרה, etc. ;]\nto be disheartened: Col.3:21.†",
+   "sha256": "fd1e1f0ddaebdb356209a18760c26c7350749cb85b9220fd7076a196e6cbc077"
+  },
+  {
+   "strongs": "G0121",
+   "language": "greek",
+   "lemma": "ἀθῷος",
+   "gloss": "innocent",
+   "definition": "ἀθῷος (Rec. wrongly, -ῶος; LS, see word; Mayser, 131), -ον\n(θωή, a penalty), [in LXX chiefly for נקה ni., pi., נָקִי ;]\n1. unpunished (MM, VGT, see word).\n2. innocent: Mat.27:4 (WH, R, mg., δίκαιον) 27:24.",
+   "sha256": "459213875df9d61b90d30db57385087fbb16d126a5ca3a6f925f3ca5c25b27b5"
+  },
+  {
+   "strongs": "G0122",
+   "language": "greek",
+   "lemma": "αἴγειος",
+   "gloss": "goat's",
+   "definition": "αἴγειος (WH, -γιος), -α, -ον (αἶξ, a goat),\n[in LXX for עֵז ;]\nof a goat: Heb.11:37 (MM, VGT, see word).†",
+   "sha256": "246a118f76b514a4da0680a4040648cb3264ebe04c97e473b1de2698bdaa6936"
+  },
+  {
+   "strongs": "G0123",
+   "language": "greek",
+   "lemma": "αἰγιαλός",
+   "gloss": "shore",
+   "definition": "αἰγιαλός, -οῦ, ὁ (on the derivation, see Boisacq, see word),\n[in LXX: Jdg.5:17 (חוֹף), Sir.24:14 * ;]\nthe sea-shore, beach (cf. Field, Notes, 146; DCG, i, 175 f.; MM, VGT, see word): Mat.13:2,48 Jhn.21:4, Act.21:5 27:39,40.†",
+   "sha256": "d4e8467935b6fca17443ee4dc9535568cc25751af61f14ab78a7b2afe8a19321"
+  },
+  {
+   "strongs": "G0124",
+   "language": "greek",
+   "lemma": "Αἰγύπτιος",
+   "gloss": "Egyptian",
+   "definition": "Αἰγύπτιος, -α, ον,\nEgyptian: Act.7:22,24,28 21:38, Heb.11:29.†",
+   "sha256": "a9869e1c4b99a48808f6adf70b3b83d40d24a22fb630b09606b29ae52d1bc6b6"
+  },
+  {
+   "strongs": "G0125",
+   "language": "greek",
+   "lemma": "Αἴγυπτος",
+   "gloss": "Egypt",
+   "definition": "Αἴγυπτος, ου, ἡ,\nEgypt: Mat.2:13-15,19, Act.2:10 7:9-39, Heb.3:16 11:26,27; γῆ Αἴ., Act.7:40 13:17, Heb.8:9, Ju 5 (cf. Exo.5:12, al.); ἡ Αἴ., Act.7:11; figuratively, of Jerusalem as hostile to God, Rev.11:8.†",
+   "sha256": "494b188444fca03b9550414129121782981de6f0295c65cf00169117c3e30816"
+  },
+  {
+   "strongs": "G0126",
+   "language": "greek",
+   "lemma": "ἀΐδιος",
+   "gloss": "eternal",
+   "definition": "ἀΐδιος, -ον\n(ἀεί), [in LXX: Wis.7:26, 4Ma.10:15 * ;]\neverlasting (frequently in Inscr.; MM, VGT, see word): Rom.1:20, Ju 6.†\nSYN.: αἰώνιος, also frequently in Inscr. (Deiss., BS, 363 J. The etymological distinction between the meanings of the two words seems not to be retained in late Greek (see Thayer, see word, αἰώνιος; cf. Cremer, 79, 611).",
+   "sha256": "8d4954958d7b3c121828495516bda56d2a6b579e01d8eee9eebd9a1ca0d68eda"
+  },
+  {
+   "strongs": "G0127",
+   "language": "greek",
+   "lemma": "αἰδώς",
+   "gloss": "modesty",
+   "definition": "αἰδώς (-όος), -οῦς, ἡ,\n[in LXX: 3Ma.1:19 4:5 * ;]\na sense of shame, modesty: 1Ti.2:9 (for exx., see MM, VGT, see word).†\nSYN.: αἰσχύνη (see Thayer, 14; Tr., Syn., §xix; Cremer, 611 f.; CGT on I Ti, l.with).",
+   "sha256": "c4d78287fadfbaa2afc854230dd4a602cf6f1be772c81ccebb4eb9eb0a121b06"
+  },
+  {
+   "strongs": "G0128",
+   "language": "greek",
+   "lemma": "Αἰθίοψ",
+   "gloss": "Ethiopian",
+   "definition": ".*Αἰθίοψ, -οπος, ὁ\n(αἴθω, to burn, ὤψ, face; i.e. swarthy), [in LXX for כּוּשׁ ;]\nEthiopian: Act.8:27.†",
+   "sha256": "8def770b60d051213a14d1c52bec6258951d2af02b8d29a54f1da9ae91785aeb"
+  },
+  {
+   "strongs": "G0129G",
+   "language": "greek",
+   "lemma": "αἷμα",
+   "gloss": "blood",
+   "definition": "αἷμα, ατος, τό,\n[in LXX for דָּם ;]\nblood.\n1. In the ordinary sense: Mrk.5:25, Luk.8:43,44 22:44, Jhn.19:34, Act.15:20,29 21:25, Rev.8:7,8 11:6 16:3,4,6 19:13.\n2. In special senses:\n(a) of generation, origin, kinship (cl.): Jhn.1:13 (see MM, VGT, see word);\n(b) as in OT (AR on Eph, l.with), in the phrase σάρξ καὶ αἷ. (αἷ. κ. σ.), to indicate human nature as opposite to God and created spirits: Mat.16:17, 1Co.15:50, Gal.1:16, Eph.6:12, Heb.2:14;\n(with) of things in colour resembling blood: Act.2:19,20, Rev.6:12 14:18-20.\n(d) of bloodshed, a bloody death (cl.): Mat.23:30,35 27:4,6,8,24,25, Luk.11:50,51 13:1, Act.1:19 5:28 18:6 20:26 22:20, Heb.12:4, Rev.6:10 17:6 18:24 19:2 ; αἷ. ἐκχέειν (Deiss., LAE, 428; MM, VGT, see word, αἷ.), Rom.3:15, Rev.16:6;\n(e) of sacrificial blood, as an expiation: Heb.9:7,12,13,18-22,25 10:4 11:28 13:11; of the blood of Christ, Mat.26:28, Mrk.14:24, Luk.22:20, Jhn.6:53,54,56, Act.20:28, Rom.3:25 5:9, 1Co.10:16 11:25,27, Eph.1:7 2:13, Col.1:20, Heb.9:12,14 10:19,29 12:24 13:20, 1Pe.1:2,19, 1Jn.1:7 (cf. 5:6,8), Rev.1:5 5:9 7:14 12:11. (Cremer, 69 f., 612 f.)\n†",
+   "sha256": "3b4f9832fcd88ac80e37207b9c249e14538123f09324b00724a32423feb40a46"
+  },
+  {
+   "strongs": "G0129H",
+   "language": "greek",
+   "lemma": "αἷμα",
+   "gloss": "(Field of) Blood",
+   "definition": "αἷμα, ατος, τό,\n[in LXX for דָּם ;]\nblood.\n1. In the ordinary sense: Mrk.5:25, Luk.8:43,44 22:44, Jhn.19:34, Act.15:20,29 21:25, Rev.8:7,8 11:6 16:3,4,6 19:13.\n2. In special senses:\n(a) of generation, origin, kinship (cl.): Jhn.1:13 (see MM, VGT, see word);\n(b) as in OT (AR on Eph, l.with), in the phrase σάρξ καὶ αἷ. (αἷ. κ. σ.), to indicate human nature as opposite to God and created spirits: Mat.16:17, 1Co.15:50, Gal.1:16, Eph.6:12, Heb.2:14;\n(with) of things in colour resembling blood: Act.2:19,20, Rev.6:12 14:18-20.\n(d) of bloodshed, a bloody death (cl.): Mat.23:30,35 27:4,6,8,24,25, Luk.11:50,51 13:1, Act.1:19 5:28 18:6 20:26 22:20, Heb.12:4, Rev.6:10 17:6 18:24 19:2 ; αἷ. ἐκχέειν (Deiss., LAE, 428; MM, VGT, see word, αἷ.), Rom.3:15, Rev.16:6;\n(e) of sacrificial blood, as an expiation: Heb.9:7,12,13,18-22,25 10:4 11:28 13:11; of the blood of Christ, Mat.26:28, Mrk.14:24, Luk.22:20, Jhn.6:53,54,56, Act.20:28, Rom.3:25 5:9, 1Co.10:16 11:25,27, Eph.1:7 2:13, Col.1:20, Heb.9:12,14 10:19,29 12:24 13:20, 1Pe.1:2,19, 1Jn.1:7 (cf. 5:6,8), Rev.1:5 5:9 7:14 12:11. (Cremer, 69 f., 612 f.)\n†",
+   "sha256": "d4df0e8b748eb72e4722920d372e681840eb53937c1fc311ce8420d4564dff88"
+  },
+  {
+   "strongs": "G0130",
+   "language": "greek",
+   "lemma": "αἱματεκχυσία",
+   "gloss": "bloodshed",
+   "definition": "αἱματεκχυσία, -ας, ἡ\n(αἷμα, ἐκ, χέω),\nshedding of blood (Eccl.; Cremer, 71): Heb.9:22.†",
+   "sha256": "045ed73fdd030e4b4b28bcadba13624ca271d95ff930026115cf784c0f0247a0"
+  },
+  {
+   "strongs": "G0131",
+   "language": "greek",
+   "lemma": "αἱμορροέω",
+   "gloss": "to bleed",
+   "definition": "αἱμορροέω,\n(αἷμα, ῥέω), [in LXX: Lev.15:33 (דָּוֶה) * ;]\nto lose blood, suffer from a flow of blood (Hipp.): Mat.9:20.†",
+   "sha256": "d311906b3067f9c155898d4944140c97a8a4ba557621e50559d238a467f7ec82"
+  },
+  {
+   "strongs": "G0132",
+   "language": "greek",
+   "lemma": "Αἰνέας",
+   "gloss": "Aeneas",
+   "definition": "Αἰνέας, -οῦ, ὁ,\nÆneas: Act.9:33,34.†",
+   "sha256": "6afa9418980aa2fd92a0798ebd7571691e6db3584f770ad3626ee16bc9489e89"
+  },
+  {
+   "strongs": "G0133",
+   "language": "greek",
+   "lemma": "αἴνεσις",
+   "gloss": "praise",
+   "definition": "αἴνεσις, -εως, ἡ\n(αἰνέω), [in LXX chiefly for תּוֹדָה, תְּהִלָּה ;]\npraise (Eccl.): θυσία αἰνέσεως (Lev.7:12, זֶבַח תּוֹדָה), Heb.13:15.†",
+   "sha256": "9b9992f76974c068ed6a6665fee6880f21f7dbdd61c374fcfa7af4913fa4a1d0"
+  },
+  {
+   "strongs": "G0134",
+   "language": "greek",
+   "lemma": "αἰνέω",
+   "gloss": "to praise",
+   "definition": "αἰνέω, -ῶ (αἶνος), poët., Ion. and late prose (MM, VGT, see word) for cl. ἐπαινέω,\n[in LXX chiefly for הלל, ידה ;]\nto praise: with accusative, τ. θεόν, Luk.2:13,20 19:37 24:53, Act.2:47 3:8,9, Rom.15:11; with dative, τ. Θεῷ (Jer.20:13, al. for הִלֵּל לְ; see Field, Notes, 245), Rev.19:5.†\nSYN.: ἐξομολογέω, εὐλογέω, εὐχαριστέω, μακαρίζω (see DCG, i, 211).",
+   "sha256": "8ea6354678f174e611003b8d2c301c221513c04fda17960f50110c5d6f88ddfe"
+  },
+  {
+   "strongs": "G0135",
+   "language": "greek",
+   "lemma": "αἴνιγμα",
+   "gloss": "obscure thing",
+   "definition": "αἴνιγμα, -ατος, τό\n(αἰνίσσομαι, to speak in riddles; αἰνός = δεινός, dread, strange), [in LXX for חִידָה, Num.12:8 and always exc. Deu.28:37 (שַׁמָּה) ;]\na dark saying, riddle: 1Co.13:12 (cf. Nu, l.with).†",
+   "sha256": "52c520d195ba3cf28d98891631516e4edafb4eee441be9e142b425033228da89"
+  },
+  {
+   "strongs": "G0136",
+   "language": "greek",
+   "lemma": "αἶνος",
+   "gloss": "praise",
+   "definition": "αἶνος, ου, ὁ,\n[in LXX for הלל pi, עֹז ;]\npoët, and Ion.,\n1. = μῦθος, a tale (Horn., al.).\n2. = Att. ἔπαινος, praise (Horn., al.): Mat.21:16 (LXX), Luk.18:43.\n3. In π., a decree (MM, VGT, see word).\n†",
+   "sha256": "9be38f88886796481b77c008637812f66dd394bccfb232dde0cf60d9f692153c"
+  },
+  {
+   "strongs": "G0137",
+   "language": "greek",
+   "lemma": "Αἰνών",
+   "gloss": "Aenon",
+   "definition": "Αἰνών, ἡ, indecl. (cf. Heb.עַיִן, a spring),\nAenon: Jhn.3:23.†",
+   "sha256": "1cc1620cbe8f5c3bb539707ca516030b420893586596bd8606682ad9bc56a6b8"
+  },
+  {
+   "strongs": "G0138",
+   "language": "greek",
+   "lemma": "αἱρέω",
+   "gloss": "to choose",
+   "definition": "αἱρέω,\n[in LXX for אמר hi., בּחר, etc. ;]\nto take; Mid., -ομαι (M, Pr., 158 f.; MM, VGT, see word), to choose: Php.1:22, 2Th.2:13, Heb.11:25. (Cf. ἀν-, ἀφ-, δι-, ἐξ-, καθ-, περι-, προ-αιρέω.) †",
+   "sha256": "51c5a64a6d15136e007a6953e7a8247233c458415104f6ab864cdc6a72134903"
+  },
+  {
+   "strongs": "G0139",
+   "language": "greek",
+   "lemma": "αἵρεσις",
+   "gloss": "sect",
+   "definition": "αἵρεσις, -εως, ἡ\n(αἱρέω, -ομαι), [in LXX for נְדָבָה,]\n1. capture.\n2. choosing, choice (see MM, VGT, see word).\n3. that which is chosen, hence, opinion; esp. a peculiar opinion, heresy: 1Co.11:19, Gal.5:20, 2Pe.2:1 R, txt.\n4. In late writers (MM, VGT), of a set of persons professing particular principles or opinions, a school, sect, party, faction: Act.5:17 15:5 24:5,14 26:5 28:22, I Co, Ga, II Pe, l.with, R, mg. (Cremer, 614).\n†",
+   "sha256": "7687614cf9ec319f71074865be3daed79d8e5551f56c3752c57eabf1f51b2ebb"
+  },
+  {
+   "strongs": "G0140",
+   "language": "greek",
+   "lemma": "αἱρετίζω",
+   "gloss": "to choose",
+   "definition": "αἱρετίζω,\n[in LXX chiefly for בּחר (see Cremer, 615) ;] = αἱρέομαι (Hipp., Inscr.),\nto choose: Mat.12:18 (LXX, ἀντιλήμψομαι).†",
+   "sha256": "72383880886d9a45ade91166537f211f5c94ef61276cd0e37a7a8d45830985e1"
+  },
+  {
+   "strongs": "G0141",
+   "language": "greek",
+   "lemma": "αἱρετικός",
+   "gloss": "schismatic",
+   "definition": "αἱρετικός, -ή, όν\n(αἱρέομαι),\n1. capable of choosing (Plat.).\n2. causing division, heretical, factious (Cremer, 614): as subst., Tit.3:10.\n†",
+   "sha256": "02d8bd8601f38f8928456057a86b6b9f91788a4dc7a23a716100f3c9d28b6c7a"
+  },
+  {
+   "strongs": "G0142",
+   "language": "greek",
+   "lemma": "αἴρω",
+   "gloss": "to take up",
+   "definition": "αἴρω,\n[in LXX chiefly for נשׂא, also for לקח, etc. ;]\n1. to raise, take up, lift or draw up: Jhn.8:59 11:41, Act.27:17, al.\n2. to bear, carry: Mat.4:6 16:24, al.\n3. to bear or take away, carry off, remove: Mat.21:21, Jhn.19:31, 1Co.5:12 6:15 (see Lft., Notes, 216), al.; of the taking away sin by Christ, Jhn.1:29, 1Jn.3:5. (Cf. ἀπ᾽, ἐξ-, ἐπ-, μετ-, συν-, ὑπερ-αίρω). For exx. from π., see MM, VGT, see word)",
+   "sha256": "c93f3de87959c87939beff7ccacc3741479d326693a9bfa0aaf2163c113e0ff4"
+  },
+  {
+   "strongs": "G0143",
+   "language": "greek",
+   "lemma": "αἰσθάνομαι",
+   "gloss": "to perceive",
+   "definition": "αἰσθάνομαι,\n[in LXX for בּין, חפז, ידע ;]\nto perceive: withaccusative of thing(s) (Bl., §36, 5; MM, VGT, see word), Luk.9:45 (Cremer, 619 f.).†",
+   "sha256": "316308c5dc09d33a45d8379c1a217a51935c3327b5bc731345603019a695fce4"
+  },
+  {
+   "strongs": "G0144",
+   "language": "greek",
+   "lemma": "αἴσθησις",
+   "gloss": "insight",
+   "definition": "αἴσθησις, -εως, ἡ\n(αἰσθάνομαι), [in LXX chiefly for דַּעַת ;]\nperception (MM, VGT, see word): Php.1:9.†\nSYN.: ἐπίγνωσις, which see (cf. Cremer, 620).",
+   "sha256": "c95e5a6cbf3060c4b85f07ccf00cd40433c353c6afb91fc8917ba0ec7d78e5cb"
+  },
+  {
+   "strongs": "G0145",
+   "language": "greek",
+   "lemma": "αἰσθητήριον",
+   "gloss": "sense",
+   "definition": "αἰσθητήριον, -ου, τό\n(αἰσθάνομαι), [in LXX: Jer.4:19 (קִיר), 4Ma.2:22 * ;]\nsense, organ of perception: Heb.5:14 (MM, VGT, see word).†",
+   "sha256": "34732060f3e72c422fb046cc17742dc82b783ad354c65509a4307bfef6bf4039"
+  },
+  {
+   "strongs": "G0146",
+   "language": "greek",
+   "lemma": "αἰσχροκερδής",
+   "gloss": "greedy",
+   "definition": "αἰσχροκερδής, -ες\n(αἰσχρός, κέρδος),\ngreedy of base gains: 1Ti.3:3,8 Abbot-Smith omits 1Ti.3:3, Tit.1:7.†",
+   "sha256": "89ed01134382a6ed61f7c706830b684d3bc4a5ffe6618a3c42e975af87059cbf"
+  },
+  {
+   "strongs": "G0147",
+   "language": "greek",
+   "lemma": "αἰσχροκερδῶς",
+   "gloss": "greedily",
+   "definition": "αἰσχροκερδῶς, adv.,\nfrom eagerness for base gain: 1Pe.5:2 (here only).†",
+   "sha256": "8d108fd0331d4bfe6192a9c988ae19e0c877fc4af8a84b8497a9f4523a0b0ed4"
+  },
+  {
+   "strongs": "G0148",
+   "language": "greek",
+   "lemma": "αἰσχρολογία",
+   "gloss": "obscenity",
+   "definition": "αἰσχρολογία, -ας, ἡ\n(αἰσχρός, λέγω),\nabusive language, abuse (Lft., ICC, in l.; MM, VGT, see word): Col.3:8.†",
+   "sha256": "dba085057bf3bf9b5f5e62bf3d89fa03c8caa887594a0c29289c41e3bd7069f4"
+  },
+  {
+   "strongs": "G0149",
+   "language": "greek",
+   "lemma": "αἰσχρόν",
+   "gloss": "shameful",
+   "definition": "αἰσχρός, -ά, όν\n(αἶσχος, shame, disgrace), [in LXX: Gen.41:3 ff. (רַע, רֹעַ), Jdth.12:12, al. ;]\nbase, shameful: 1Co.11:6 14:35, Eph.5:12, Tit.1:11 (MM, VGT, see word).†",
+   "sha256": "7801420f75aced3e6738f396f306b66909b982aa0c0c0834d27b5e16dcff9fc2"
+  },
+  {
+   "strongs": "G0150",
+   "language": "greek",
+   "lemma": "αἰσχρός",
+   "gloss": "shameful",
+   "definition": "αἰσχρός, -ά, όν\n(αἶσχος, shame, disgrace), [in LXX: Gen.41:3 ff. (רַע, רֹעַ), Jdth.12:12, al. ;]\nbase, shameful: 1Co.11:6 14:35, Eph.5:12, Tit.1:11 (MM, VGT, see word).†",
+   "sha256": "7801420f75aced3e6738f396f306b66909b982aa0c0c0834d27b5e16dcff9fc2"
+  },
+  {
+   "strongs": "G0151",
+   "language": "greek",
+   "lemma": "αἰσχρότης",
+   "gloss": "obscenity",
+   "definition": "αἰσχρότης, -τητος, ἡ\n(αἰσχρός),\nbaseness: Eph.5:4.†",
+   "sha256": "afe0f9144433332efa13c9c9806759b1ce9dfc23dc5c0e0b4e66ee20e523df47"
+  },
+  {
+   "strongs": "G0152",
+   "language": "greek",
+   "lemma": "αἰσχύνη",
+   "gloss": "shame",
+   "definition": "αἰσχύνη, -ης, ἡ\n(αἶσχος, shame, disgrace), [in LXX chiefly for בּשֶׁת ;]\nshame (MM, VGT, see word): subjectively, Luk.14:19, 2Co.4:2; objectively, Php.3:19, Heb.12:2; as something to be ashamed of, Rev.3:18; pl. (Bl., §32, 6), shameful deeds, Ju 13.†\nSYN.: αἰδώς, which see",
+   "sha256": "1d6b8fe36732cb4992466968fa219b6ae6200016468904a537b47d2b74f45c7b"
+  },
+  {
+   "strongs": "G0153",
+   "language": "greek",
+   "lemma": "αἰσχύνω",
+   "gloss": "be ashamed",
+   "definition": "αἰσχύνω\n(αἶσχος, shame), [in LXX chiefly for בּוּשׁ ;]\n1. to disfigure (Hom.).\n2. to dishonour (Pro.29:15).\n3. to make ashamed (Sir.13:7). Pass., to be put to shame, be ashamed: 2Co.10:8; Php.1:20, 1Pe.4:16, 1Jn.2:28; with inf. (M, Pr., 205), Luk.16:3 (cf. ἐπ- (-ομαι), κατ- αἰσχύνω).\n†",
+   "sha256": "75486c9b801ff18b757465b8e7c974f05dc0e037e88c1444a84d0a0f8b80f84c"
+  },
+  {
+   "strongs": "G0154",
+   "language": "greek",
+   "lemma": "αἰτέω",
+   "gloss": "to ask",
+   "definition": "αἰτέω, -ῶ,\n[in LXX chiefly for שׁאל ;]\nto ask, request: absol., Mat.7:7, Jas.1:6; with accusative of person(s), Mat.5:42, Luk.6:30; with accusative of thing(s), before ἀπό, Mat.20:20, 1Jn.5:15; id. before παρά, Act.3:2, Jas.1:5; with dupl. accusative Mat.7:9, Mrk.6:22, Jhn.16:23. Mid. (on the distinction bet. mid. and act., see M, Pr., 160): absol., Mrk.15:8, Jhn.16:26, Jas.4:3; with accusative of thing(s), Mat.14:7, Mrk.6:24, al.; with accusative of person(s), Mat.27:20, Luk.23:25; with accusative of thing(s), before παρά, Act.9:2; with accusative and inf., Luk.23:23. with inf. Act.7:46, Eph.3:13 (cf. ἀπ-, ἐξ-, ἐπ-, παρ-, προσ- αιτέω).\nSYN.: ἐρωτάω, which see, πυνθάνομαι. On the proper distinction between these words, see Tr., Syn., § xl, Thayer, see word αἰ. In late Gk., however, αἰ. and ἐ. seem to have become practically synonymous (cf. Act.3:2,3; see Field, Notes, 101 f.; M, Th., I, 4:1; M, Pr., 66.n; MM, VGT, see word).",
+   "sha256": "27c7e4fdc04ec4853bb44a56926627ddd54348fef1894e8e56663a027a24e278"
+  },
+  {
+   "strongs": "G0155",
+   "language": "greek",
+   "lemma": "αἴτημα",
+   "gloss": "request",
+   "definition": "αἴτημα, -ατος, τό\n(αἰτέω), [in LXX chiefly for שְׁאֵלָה ;]\nthat which has been asked for, a petition, request: Luk.23:24, Php.4:6, Jhn.5:15.†\nSYN.: see: δέησις.",
+   "sha256": "3e05bc3e33bbeda66ded819fe8a5cff2247c63e13e5a5beb0243f8fe746a9270"
+  },
+  {
+   "strongs": "G0156",
+   "language": "greek",
+   "lemma": "αἰτία",
+   "gloss": "cause/charge",
+   "definition": "αἰτία, -ας, ἡ,\n[in LXX: Gen.4:13 (עָוֹן), Pro.28:17 (עָשַׁק), and frequently in Wi, II, III Mac ;]\n1. cause, reason, occasion, case: Mat.19:3, Luk.8:47, Act.10:21 22:24 28:20, 2Ti.1:6,12, Tit.1:13, Heb.2:11 ; εἰ οὕτως ἐστιν ἡ αἰ. (cf. Lat. si ita res se habet, and see MM. VGT, see word), Mat.19:10.\n2. In forensic sense,\n(a) accusation: Act.25:18,27;\n(b) cause for punishment, crime: Mat.27:37, Mrk.15:26, Jhn.18:38 19:4,6, Act.13:28 23:28 28:18.\n† SYN.: ἔλεγχος, a charge, whether moral or judicial, which has been proven, αἰ. is an accusation simply, false or true.",
+   "sha256": "0ed20b9f55ff6383e03768e43cd914cfcab3bdaeb090088c09b709bfa0cb0323"
+  },
+  {
+   "strongs": "G0157",
+   "language": "greek",
+   "lemma": "αἰτίαμα",
+   "gloss": "charge",
+   "definition": "αἰτίωμα (Rec. αἰτίαμα, the usual form; see MM, VGT, see word), -τος, τό\n(αἰτιάομαι, αἰτία),\na charge, accusation: Act.25:7.†",
+   "sha256": "2619033e4e1c4719c1668d0eec92e08556eb6c66f193e21f4525b01eb3c538a7"
+  },
+  {
+   "strongs": "G0158",
+   "language": "greek",
+   "lemma": "αἴτιον",
+   "gloss": "reason for charge",
+   "definition": "αἴτιον, -ου, τό, see: αἴτιος.\nαἴτιος, -α, ὁ\n(αἰτία), [in LXX: 1Ki.22:22 (סבב) Dan LXX Bel 41, TH ib. 42, Su 53, 2Ma.4:47 13:4, 4Ma.1:11 * ;]\n1. causative of, responsible for; as subst., ὁ αἰ., the cause, author: Heb.5:9; τὸ αἰ., the cause, Act.19:40.\n2. blameworthy, culpable; as subst., ὁ αἰ., the culprit, the accused (Lat. reus); τὸ αἰ. (= αἰτία, 3), the crime, Luk.23:4,14,22.\n†",
+   "sha256": "39cb64ddc100704d2c6c3bffe87671efb765af1952687f1763dddb002c76e422"
+  },
+  {
+   "strongs": "G0159",
+   "language": "greek",
+   "lemma": "αἴτιος",
+   "gloss": "causer",
+   "definition": "αἴτιος, -α, ὁ\n(αἰτία), [in LXX: 1Ki.22:22 (סבב) Dan LXX Bel 41, TH ib. 42, Su 53, 2Ma.4:47 13:4, 4Ma.1:11 * ;]\n1. causative of, responsible for; as subst., ὁ αἰ., the cause, author: Heb.5:9; τὸ αἰ., the cause, Act.19:40.\n2. blameworthy, culpable; as subst., ὁ αἰ., the culprit, the accused (Lat. reus); τὸ αἰ. (= αἰτία, 3), the crime, Luk.23:4,14,22.\n†",
+   "sha256": "7e2bf8b039b73576efcbcbaf769240f67f31bf482cc0c81189fbd1e85db6f5a2"
+  },
+  {
+   "strongs": "G0160",
+   "language": "greek",
+   "lemma": "αἰφνίδιος",
+   "gloss": "sudden",
+   "definition": "αἰφνίδιος (in Lk, l.with, ἐφν- WH; see M, Pr., 35), -ον\n(αἴφνης = ἄφνως, suddenly), [in LXX: Wis.17:15, 2Ma.14:17, 3Ma.3:24 * ;]\nsudden, unexpected: Luk.21:34, 1Th.5:3.†",
+   "sha256": "68823ed248ea9c6a3192a908782706f6bccc9bbc37c1a6d4e98879e28c291c68"
+  },
+  {
+   "strongs": "G0161",
+   "language": "greek",
+   "lemma": "αἰχμαλωσία",
+   "gloss": "captivity",
+   "definition": "αἰχμαλωσία -ας, ἡ\n(αἰχμάλωτος), [in LXX chiefly for שְׁבִי, גּוֹלָה ;]\ncaptivity (Diod., al.): Rev.13:10; pl., abstr. for concr., = αἰχμάλωτοι, Eph.4:8 (LXX).†",
+   "sha256": "59fa22653db0e86baae3886116307bf45193a7b14fa1ef4333817318272d96fd"
+  },
+  {
+   "strongs": "G0162",
+   "language": "greek",
+   "lemma": "αἰχμαλωτεύω",
+   "gloss": "to take captive",
+   "definition": "αἰχμαλωτεύω\n(αἰχμάλωτος), [in LXX chiefly for שׁבה ;] = αἰχμαλωτίζω, which see,\nto lead captive: Eph.4:8 (LXX).†",
+   "sha256": "fcb95af3c525bf442349ffec4303867ceb7f9489dae12cf055cceac362c1373b"
+  },
+  {
+   "strongs": "G0163",
+   "language": "greek",
+   "lemma": "αἰχμαλωτίζω",
+   "gloss": "to capture",
+   "definition": "αἰχμαλωτίζω\n(αἰχμάλωτος), [in LXX chiefly for שׁבה ;] in late writers = cl. αἰχμάλωτον ποιῶ (ἄγω),\nto take or lead captive: before εἰς, Luk.21:24 (cf. Tob.1:10); metaphorically, Rom.7:23, 2Co.10:5, 2Ti.3:6.†",
+   "sha256": "021b34d90e681717b7e7c2d5d0b2b99a31e31446128c0c685b72e223e184074c"
+  },
+  {
+   "strongs": "G0164",
+   "language": "greek",
+   "lemma": "αἰχμάλωτος",
+   "gloss": "captive",
+   "definition": "αἰχμάλωτος, -ον\n(αἰχμή, a spear, ἁλίσκομαι, to be taken), [in LXX chiefly for שָׁבָה, גּוֹלָה ;]\ncaptive: Luk.4:18 (LXX).†",
+   "sha256": "782a38c620a6e64a56288f7832bc621282b80ff14aa1371f9dcb899865764d9b"
+  },
+  {
+   "strongs": "G0165G",
+   "language": "greek",
+   "lemma": "αἰών",
+   "gloss": "an age: age",
+   "definition": "αἰών, -ῶνος, ὁ,\n[in LXX chiefly for עַד ,עוֹלָם ;]\n1. in cl., like Lat. aevum (LS, MM, VGT, see word), a space of time, as, a lifetime, generation, period of history, an indefinitely long period; in NT of an indefinitely long period, an age, eternity, usually with prep. (MM, VGT);\n(a) of the past: ἀπ᾽ αἰ. (cf. Heb. מֵעוֹלָם), Luk.1:70;\n(b) of the future: εἰς τ. αἰ. (cf. לְעוֹלָם), forever, Mat.21:19; id., with neg., never, Jhn.4:14; more strongly, εἰς τὸν αἰ. τοῦ αἰ., Heb.1:8 (LXX); εἰς τοὺς αἰ., Mat.6:13; εἰς τοὺς αἰ. τῶν αἰ. (cf. Isa.45:17, עַד־עוֹלְמֵי עַד), Rom.16:27, LT; cf. also Eph.3:21, 2Pe.3:18, Ju 25, Rev.14:11.\n2. οἱ αἰ., the worlds, the universe, \"the sum of the periods of time, including all that is manifested in them\": He :12 11:3 (cf. 1Ti.1:17, where τῶν αἰ. are prob. \"the ages or world-periods which when summed up make eternity\".\n3. the present age (Heb. הָעוֹלָם הַזֶּה): ὁ αἰ., Mat.13:22; ὁ αἰ. οὗτος, Mat.12:32; ὁ νῦν αἰ., 1Ti.6:17; ὁ ἐνεστὼς αἰ., Gal.1:4; similarly, of the time after Christ's second coming (הָעוֹלָם הַבָּא), ὁ αἰ. ἐκεῖνος, Luk.20:35; ὁ αἰ. μέλλων, Mat.12:32; ὁ αἰ. ὁ ἐρχόμενος, Mrk.10:30.\nSYN.: κόσμος, the ordered universe, the scheme of material things; οἰκουμένη, the inhabited earth; in contrast with both of which αἰ. is the world under aspects of time (cf. Westc. on Heb.1:2; Tr., Syn., §lix; Thayer, see word, αἰ.; Cremer, 74, 620; MM, VGT).",
+   "sha256": "458eafae4db1c5bc61c885af9c69ab4044dd16c319c8b403fd744e241eac597d"
+  },
+  {
+   "strongs": "G0165H",
+   "language": "greek",
+   "lemma": "αἰών",
+   "gloss": "an age: eternity",
+   "definition": "αἰών, -ῶνος, ὁ,\n[in LXX chiefly for עַד ,עוֹלָם ;]\n1. in cl., like Lat. aevum (LS, MM, VGT, see word), a space of time, as, a lifetime, generation, period of history, an indefinitely long period; in NT of an indefinitely long period, an age, eternity, usually with prep. (MM, VGT);\n(a) of the past: ἀπ᾽ αἰ. (cf. Heb. מֵעוֹלָם), Luk.1:70;\n(b) of the future: εἰς τ. αἰ. (cf. לְעוֹלָם), forever, Mat.21:19; id., with neg., never, Jhn.4:14; more strongly, εἰς τὸν αἰ. τοῦ αἰ., Heb.1:8 (LXX); εἰς τοὺς αἰ., Mat.6:13; εἰς τοὺς αἰ. τῶν αἰ. (cf. Isa.45:17, עַד־עוֹלְמֵי עַד), Rom.16:27, LT; cf. also Eph.3:21, 2Pe.3:18, Ju 25, Rev.14:11.\n2. οἱ αἰ., the worlds, the universe, \"the sum of the periods of time, including all that is manifested in them\": He :12 11:3 (cf. 1Ti.1:17, where τῶν αἰ. are prob. \"the ages or world-periods which when summed up make eternity\".\n3. the present age (Heb. הָעוֹלָם הַזֶּה): ὁ αἰ., Mat.13:22; ὁ αἰ. οὗτος, Mat.12:32; ὁ νῦν αἰ., 1Ti.6:17; ὁ ἐνεστὼς αἰ., Gal.1:4; similarly, of the time after Christ's second coming (הָעוֹלָם הַבָּא), ὁ αἰ. ἐκεῖνος, Luk.20:35; ὁ αἰ. μέλλων, Mat.12:32; ὁ αἰ. ὁ ἐρχόμενος, Mrk.10:30.\nSYN.: κόσμος, the ordered universe, the scheme of material things; οἰκουμένη, the inhabited earth; in contrast with both of which αἰ. is the world under aspects of time (cf. Westc. on Heb.1:2; Tr., Syn., §lix; Thayer, see word, αἰ.; Cremer, 74, 620; MM, VGT).",
+   "sha256": "8275d75b57a5b9c180c43350f2b2bcc9bf363f65b13a4fb46160186abcd65f30"
+  },
+  {
+   "strongs": "G0166",
+   "language": "greek",
+   "lemma": "αἰώνιος",
+   "gloss": "eternal",
+   "definition": "αἰώνιος, -ον (as usual in Attic), also -α, -ον. 2Th.2:16, Heb.9:12;\n(αἰών), [in LXX chiefly for עוֹלָם ;]\nage-long, eternal,\n(a) of that which is without either beginning or end: Rom.16:26, Heb.9:14;\n(b) of that which is without beginning: Rom.16:25, 2Ti.1:9, Tit.1:2;\n(with) of that which is without end (MM, VGT, see word): σκηναί, Luk.16:9 οἰκία, 2Co.5:1; διαθήκη, Heb.13:20; εὐαγγέλιον, Rev.14:6; παράκλησις, 2Th.2:16; λύτρωσις, Heb.9:12; κληρονομία, ib. 15; κόλασις, Mat.25:46; κρίμα, Heb.6:2; κρίσις, Mrk.3:29; ὄλεθρον, 2Th.1:9; πῦρ, Mat.18:8; frequently with ζωή, which see\nSYN.: ἀΐδιος, which see",
+   "sha256": "f2c18f7636326302296cb3c2683e6335cebde5a6016d2e3289bba99ae45b71ec"
+  },
+  {
+   "strongs": "G0167",
+   "language": "greek",
+   "lemma": "ἀκαθαρσία",
+   "gloss": "impurity",
+   "definition": "ἀκαθαρσία, -ας, ἡ\n(ἀκάθαρτος), [in LXX chiefly for טֻמְאָה, טָמֵא ;]\nuncleanness, impurity,\n(a) physical (MM, VGT, see word): Mat.23:27;\n(b) moral: Rom.1:24 6:19, 2Co.12:21, Gal.5:19, Eph.4:19 5:3, Col.3:5, 1Th.2:3 4:7.\n†",
+   "sha256": "6b8c01c8a60263e3d1ba018c56c5338a70a6fa606139babbf3d45c615dbc2ae1"
+  },
+  {
+   "strongs": "G0168",
+   "language": "greek",
+   "lemma": "ἀκαθάρτης",
+   "gloss": "uncleanness",
+   "definition": "ἀκαθάρτης, -τος, ἡ,\nuncleanness: Rev.17:4, Rec. (for τ. ἀκάθαρτα).†",
+   "sha256": "dcecf0b7e53b65a699572b2e5513e13ab2aeb77c943f08096c25bdbb67ad3623"
+  },
+  {
+   "strongs": "G0169",
+   "language": "greek",
+   "lemma": "ἀκάθαρτος",
+   "gloss": "unclean",
+   "definition": "ἀκάθαρτος, -ον\n(ἀ- neg., καθαίρω), [in LXX chiefly for טָמֵא ;]\nunclean, impure;\n(a) physically (LS, MM, VGT, see word);\n(b) ceremonially: Act.10:14,28 11:8, 1Co.7:14, 2Co.6:17, Rev.18:2;\n(with) morally: Eph.5:5, Rev.17:4; with πνεῦμα, as always in Gosp., Mat.10:1 12:43, Mrk.1:23,26,27 3:11,30 5:2,8,13 6:7 7:25 9:25, Luk.4:33,36 6:18 8:29 9:42 11:24, Act.5:16 8:7, Rev.16:13 (cf. Cremer, 320).\n†",
+   "sha256": "5fc77049fd597a430ed13b183ff2de38543f8fe670f4436f30dda0f124a58d8c"
+  },
+  {
+   "strongs": "G0170",
+   "language": "greek",
+   "lemma": "ἀκαιρέω",
+   "gloss": "to lack opportunity",
+   "definition": "ἀκαιρέομαι, -οῦμαι\n(ἄκαιρος, unseasonable),\nto have no opportunity (opposite to εὐκαιρέω): Php.4:10.†",
+   "sha256": "565fe3723419691fad4d2279d3a3506a27cf8b873b8eb8d96bf743f80efe30a6"
+  },
+  {
+   "strongs": "G0171",
+   "language": "greek",
+   "lemma": "ἀκαίρως",
+   "gloss": "unseasonably",
+   "definition": "ἀκαίρως, adv.\n(ἄκαιρος, unseasonable), [in LXX: Si 35 (32):4 * ;]\nout of season, unseasonably: opposite to εὐκαίρως (which see), 2Ti.4:2 (cf. Cremer, 740; MM, VGT, see word).†",
+   "sha256": "6b9f90294f5eb35906652c4da59957dead5f21cb1caf88b0eca3b0e9322c2c7a"
+  },
+  {
+   "strongs": "G0172",
+   "language": "greek",
+   "lemma": "ἄκακος",
+   "gloss": "innocent",
+   "definition": "ἄκακος, -ον,\n[in LXX for פְּתִי, תָּם, etc. ;]\n(a) as in cl. (Æsch., Plat., al.), of persons, simple, guileless: Rom.16:18, Heb.7:26 (cf. Cremer, 327);\n(b) of things, undamaged (? MM, VGT, see word).\n†",
+   "sha256": "3b860f3b90a64ae18ba8bfdc18f3dfa5bcbe3a6e61c0599e76e85f1febc4757d"
+  },
+  {
+   "strongs": "G0173",
+   "language": "greek",
+   "lemma": "ἄκανθα",
+   "gloss": "a thorn",
+   "definition": "ἄκανθα, -ης, ἡ\n(ἀκή, a point), [in LXX chiefly for קוֹץ, also for סִיר, שַׁיִת, etc. ;]\na prickly plant, thorn, brier; in NT always pl.: Mat.7:16 13:7,22 27:29, Mrk.4:7,18, Luk.6:44 8:7,14, Jhn.19:2, Heb.6:8 (see MM, VGT, see word).†",
+   "sha256": "3784410131da3ba13b265675c66ba870c23a561549b4c10291f673cbb226b589"
+  },
+  {
+   "strongs": "G0174",
+   "language": "greek",
+   "lemma": "ἀκάνθινος",
+   "gloss": "thorny",
+   "definition": "ἀκάνθινος, -ον\n(ἄκανθα), [in LXX: Isa.34:13 (סיר) * ;]\n1. of thorns: Mrk.15:17, Jhn.19:5.\n2. of acantha-wood (Hdt.; π. ap. MM, VGT, see word).\n†",
+   "sha256": "4ebca2fb40f6216d779fdf192fb7b6032e79b6951feae1ba0ed83ab10c79fb94"
+  },
+  {
+   "strongs": "G0175",
+   "language": "greek",
+   "lemma": "ἄκαρπος",
+   "gloss": "unfruitful",
+   "definition": "ἄ-καρπος, -ον,\n[in LXX: Jer.2:6 (צַלְמָוֶת), Wis.15:4, 4Ma.16:7 ;]\nunfruitful, barren: figuratively, Mat.13:22, Mrk.4:19, 1Co.14:14, Eph.5:11, Tit.3:14, 2Pe.1:8, Ju 12.†",
+   "sha256": "e72e94c2f545256b48d0adcab75417e7557285394086b8c874f602a60cdde11d"
+  },
+  {
+   "strongs": "G0176",
+   "language": "greek",
+   "lemma": "ἀκατάγνωστος",
+   "gloss": "beyond reproach",
+   "definition": "ἀ-κατά-γνωστος, -ον\n(καταγινώσκω), [in LXX: 2Ma.4:47 ;]\nnot open to just rebuke, irreprehensible: Tit.2:8 (see Cremer, 676; and for other exx., MM, VGT, see word).†",
+   "sha256": "80446f8d108bac9237395901a47bff1d03017535c789660dfb15762df318f689"
+  },
+  {
+   "strongs": "G0177",
+   "language": "greek",
+   "lemma": "ἀκατακάλυπτος",
+   "gloss": "uncovered",
+   "definition": "ἀ-κατα-κάλυπτος, -ον\n(κατακαλύπτω), [in LXX: Lev.13:45 A (פָּרוּע) * ;]\nuncovered, unveiled: 1Co.11:5, 13.†",
+   "sha256": "0332d19ce08d7572b54e4cdca215755f4d3e1a2e3f61d882cef7319ca04f43ee"
+  },
+  {
+   "strongs": "G0178",
+   "language": "greek",
+   "lemma": "ἀκατάκριτος",
+   "gloss": "uncondemned",
+   "definition": "ἀ-κατά-κριτος, -ον\n(κατακρίνω),\n1. uncondemned (EV): Act.16:37, 22:25.\n2. = cl. ἄκριτος, without trial, not yet tried (MM, VGT, see word) Ac, ll. cc.\n†",
+   "sha256": "7d0b8fdf7ee492175f5997ed6e4c0f41471fe76f116019e7a2592e5419c528bd"
+  },
+  {
+   "strongs": "G0179",
+   "language": "greek",
+   "lemma": "ἀκατάλυτος",
+   "gloss": "indestructible",
+   "definition": "ἀ-κατά-λυτος, -ον\n(καταλύω), [in LXX: 4Ma.10:11 * ;]\nindissoluble: Heb.7:16.†",
+   "sha256": "f07e2fcfd134912d03175b8ee63113388e56da6bab762591e9e4c878588e4aaa"
+  },
+  {
+   "strongs": "G0180",
+   "language": "greek",
+   "lemma": "ἀκατάπαυστος",
+   "gloss": "unceasing",
+   "definition": "ἀκατάπαυστος, -ον\n(καταπαύω),\nthat cannot cease, not to be restrained: with genitive of thing(s), 2Pe.2:14, T, Tr. txt.†",
+   "sha256": "2fef8f5c1dfeada44cb32a39609f1aece840021c1e0f4268685f248855980f0f"
+  },
+  {
+   "strongs": "G0181",
+   "language": "greek",
+   "lemma": "ἀκαταστασία",
+   "gloss": "disorder",
+   "definition": "ἀκαταστασία, -ας, ἡ (ἀκατάστατος),\n[in LXX: Pro.26:28 (מִדְחֶה), Tob.4:13 * ;]\ninstability (MM, VGT, see word); hence, confusion, tumult: 1Co.14:33, Jas.3:16; pl. (Bl., §32, 6), Luk.21:9, 2Co.6:5, 12:20 (Polyb., al.; see Cremer, 739).†",
+   "sha256": "e757ece530fd6a77cfdc79fa65c6a5f8f711a70c351cfdedce0fb4bdabe89d14"
+  },
+  {
+   "strongs": "G0182",
+   "language": "greek",
+   "lemma": "ἀκατάστατος",
+   "gloss": "restless",
+   "definition": "ἀ-κατά-στατος, -ον (καθίστημι),\n[in LXX: Isa.54:11 (סֹעֲרָה) ;]\nunsettled, unstable: Jas.1:8, 3:8.†",
+   "sha256": "685addd808c4e69f1e110d6cf27886cb303f762ad7cf965342c59c47b1eb71b6"
+  },
+  {
+   "strongs": "G0183",
+   "language": "greek",
+   "lemma": "ἀκατάσχετος",
+   "gloss": "uncontrollable",
+   "definition": "ἀκατάσχετος, -ον\n(κατέχω), [in LXX: Job.31:11, 3Ma.6:17 * ;]\nthat cannot be restrained: Jas.3:8 Rec. (for -στατος, which see).†",
+   "sha256": "278d43b91a70bae999b27b91580723e04f462c0e540fa868d39dbf3eb804dbee"
+  },
+  {
+   "strongs": "G0184",
+   "language": "greek",
+   "lemma": "Ἀκελδαμά",
+   "gloss": "Akeldama",
+   "definition": "§ Akeldama dama (Proper name) (traditionally located south of the valley of Hinnom), \"field of blood\"",
+   "sha256": "e7cfbda99f2ebf762f65fbf4414bcc72d318a4f3a6ead61f4e3d561ba18ab4da"
+  },
+  {
+   "strongs": "G0185",
+   "language": "greek",
+   "lemma": "ἀκέραιος",
+   "gloss": "innocent",
+   "definition": "ἀκέραιος, -ον\n(κεράννυμι), [in LXX: Est.8:13 * ;]\nunmixed, pure, hence, metaphorically (cf. MM, VGT, see word), guileless, simple: Mat.10:16, Rom.16:19, Php.2:15.†\nSYN.: ἄδολος, ἄκακος, ἁπλοῦς (cf. Ellic. on Phl., l.with; Tr., Syn., §lvi).",
+   "sha256": "e6db7088c776e3f40927217ff8c7318f743523e134d610138b9c13ffb71526d7"
+  },
+  {
+   "strongs": "G0186",
+   "language": "greek",
+   "lemma": "ἀκλινής",
+   "gloss": "unwavering",
+   "definition": "ἀκλινής, -ές (κλίνω),\n[in LXX: 4Ma.6:7 17:3 * ;]\nunbending, firm: metaphorically (MM, VGT, see word). Heb.10:23.†",
+   "sha256": "181f8e8754f8a04b56144d6e4a673abee009cb68cc00548924bf033a2072e50b"
+  },
+  {
+   "strongs": "G0187",
+   "language": "greek",
+   "lemma": "ἀκμάζω",
+   "gloss": "to ripen",
+   "definition": "ἀκμάζω\n(ἀκμήν), [in LXX: 4Ma.2:3 * ;]\nto be at the prime; of produce of the ground, to be ripe (Thuc.): Rev.14:18 (MM, VGT, see word).†",
+   "sha256": "9fd7999c5f36c8d46baf8b64b0c7d2ffd1edc43bb1c19359c9812a73e240ce2b"
+  },
+  {
+   "strongs": "G0188",
+   "language": "greek",
+   "lemma": "ἀκμήν",
+   "gloss": "still",
+   "definition": "ἀκμήν, accusative of ἀκμή,\na point, used as adv., at the present point of time, even now, even yet: Mat.15:16.†",
+   "sha256": "85fcd72c9b5edc9a090ac7deb0eaf1c02ff563032281c798e06ad4c008959313"
+  },
+  {
+   "strongs": "G0189",
+   "language": "greek",
+   "lemma": "ἀκοή",
+   "gloss": "hearing",
+   "definition": "ἀκοή, -ῆς, ἡ\n(ἀκούω), [in LXX: Exo.15:26, al. for שׁמע, its parts and derivatives, exc. Deu.11:22 (שׁמר) ;]\n1. hearing, the sense of hearing: 1Co.12:17, 2Pe.2:8; \"Hebraic dative,\" ἀκοῇ ακούειν (frequently in LXX; V. M, Pr., 14, 75), Mat.13:14, Act.28:26.\n2. organ of hearing, the ear (Arist., al.; MM, VGT, see word): 2Ti.4:3-4; pl., Mrk.7:35, Luk.7:1, Act.17:20, Heb.5:11.\n3. a thing heard, i.e.,\n(a) a message, teaching: Jhn.12:38 and Rom.16:16,17\" (LXX), Gal.3:2,5 R, mg.; λόγος ἀκοῆς, 1Th.2:13, Heb.4:2;\n(b) a report, rumour: with genitive, of person(s), Mat.4:24, 14:1, 24:6; Mrk.1:28 13:7 (Cremer, 82, 623; MM, VGT, see word).†",
+   "sha256": "b27d62f6fdf010b22b8ea15edd49e4a960fc01fac22bab5a68e7739146cabc66"
+  },
+  {
+   "strongs": "G0190",
+   "language": "greek",
+   "lemma": "ἀκολουθέω",
+   "gloss": "to follow",
+   "definition": "ἀκολουθέω, -ῶ\n(ἀκόλουθος, following; ἀ- cop., κέλευθος, poët., away), [in LXX chiefly for הָלַךְ ;]\nto accompany, follow: Mat.4:25, al. Metaphorical, of discipleship: Mat.9:9, Mrk.9:38, Jhn.12:26, al. Absol.: Mat.18:10; more freq., with dative (cl.), Mat.8:1, al.; before μετά, with genitive, (cl.; Eutherford, N.Phr., 458 f.), Luk.9:49; ὀπίσω, with genitive (Heb. הָלַךְ אָהֲרֵי), Mat.10:38 (cf. ἐξ-, ἐπ-, κατ-, παρ-, συν-ἀκολουθέω).\nSYN.: (cl.) ἕπομαι, not in NT (see Cremer, 80; MM, VGT, see word).",
+   "sha256": "9b0d96d7e8071a80316d628b83901ea0f256885fb92486279e6649085868064a"
+  },
+  {
+   "strongs": "G0191",
+   "language": "greek",
+   "lemma": "ἀκούω",
+   "gloss": "to hear",
+   "definition": "ἀκούω,\n[in LXX chiefly for שׁמע ]\nto hear, listen, attend, perceive by hearing, comprehend by hearing.\n1. Intrans.: Mrk.4:3 7:37, Jas.2:5, Rev.2:7, al.; τ. ὠσίν, Mat.13:15 (LXX); with cogn. dative, ακοῇ ἀ. (see: ἀκοή), Mat.13:14, Act.28:26\" (LXX) ; ὁ ἔχων ὦτα (οὖς) ἀκούειν, ἀκουσάτω, Mat.11:15, Mrk.4:23, Rev.2:7, al.\n2. Trans., prop. with accusative of thing(s), of thing heard, genitive of person(s), from whom heard (LS, see word): Act.1:4; with accusative of thing(s), Mat.12:19, Jhn.3:8 (Abbott, JG, 76), Act.22:9, al.; with dupl. accusative, Jhn.12:18, 1Co.11:18; with genitive of thing(s), Jhn.7:40 (Abbott, JV, 116); τ. φωνῆς (cf. Heb. שָׁמַע בְּקוֹל, Exo.18:19), Jhn.5:25, 28 Act.9:7 (on the distinction bet. this and ἀ. φωνήν, ib. 4, see M, Pr., 66; Field, Notes, 117; Abbott, Essays, 93f.); of God answering prayer, Jhn.9:31, 1Jn.5:14, 15; with accusative of thing(s), before παρά, Jhn.8:26, 40 Act.10:22, 2Ti.2:2; id. before ἀπό, 1Jn.1:5; with genitive pars. before ptcp., Mrk.14:58, Luk.18:36, al. (On NT usage generally, see Bl., §36, 5; Cremer, 82.)",
+   "sha256": "a379dc79363bf45884ab0c9089e0be6b64f3d6bb2d2a7df07df43284f74fbc4c"
+  },
+  {
+   "strongs": "G0192",
+   "language": "greek",
+   "lemma": "ἀκρασία",
+   "gloss": "self-indulgence",
+   "definition": "ἀκρασία, -ας, ἡ\n(ἀκρατής, which see), [in LXX: 1Ma.6:26 * ;]\nin Arist. and later writers = ἀκράτεια (Lft., Notes, 222 f.), want of power, hence want of self-control, incontinence: Mat.23:25, 1Co.7:5.†",
+   "sha256": "7467a0ed80947372555f603bcc83e22f0f5453866e4ed312099383009de0d577"
+  },
+  {
+   "strongs": "G0193",
+   "language": "greek",
+   "lemma": "ἀκρατής",
+   "gloss": "intemperate",
+   "definition": "ἀκρατής, -ές\n(κράτος), [in LXX: Pro.27:20 * ;]\n(a) powerless, impotent;\n(b) in moral sense, lacking self-control, incontinent: 2Ti.3:3.†",
+   "sha256": "731fe98eb5ec605889696dc0026fb881bb7d1813bf579797c28c8a94e9d7bc02"
+  },
+  {
+   "strongs": "G0194",
+   "language": "greek",
+   "lemma": "ἄκρατος",
+   "gloss": "undiluted",
+   "definition": "ἄκρατος, -ον\n(κεράννυμι), [in LXX: Psa.75:8 (חֲמַר), Jer.25:15 (חֵמָה), 3Ma.5:2 * ;]\nunmixed, pure: οἶνος, Rev.14:10.†",
+   "sha256": "3859098da878d6b960684bae114488b8da872d553de47931a974a569803dd55c"
+  },
+  {
+   "strongs": "G0195",
+   "language": "greek",
+   "lemma": "ἀκρίβεια",
+   "gloss": "strictness",
+   "definition": "ἀκρίβεια, -ας, ἡ\n(ἀκριβής), [in LXX: Dan LXX TH 7:16 (יַצִּיב), Wis.12:21, Sir.16:25 42:4 * ;]\nexactness, precision (for exx., see MM, VGT, see word): Act.22:3.†",
+   "sha256": "786ce1a064e20c06e83558856d6b627de01d405bbe66fc0e76ff5f308d9a5c61"
+  },
+  {
+   "strongs": "G0196",
+   "language": "greek",
+   "lemma": "ἀκριβέστατος",
+   "gloss": "strictest",
+   "definition": "ἀκριβής, -ές\n[in LXX: Dan LXX 2:45 6:12 (יַצִּיב) Dan.4:25, Est.4:5, Sir.18:29 19:25 31:24 32:3 * ;]\nexact, precise, careful, of things and persons: superl., Act.26:5.†",
+   "sha256": "83dc64fa3eb8155eb335efba5515b6730adfac392980e6025c34d47329ea8e8b"
+  },
+  {
+   "strongs": "G0197",
+   "language": "greek",
+   "lemma": "ἀκριβέστερον",
+   "gloss": "stricter",
+   "definition": "ἀκριβῶς\nadv. (ἀκριβής), [in LXX: Deu.19:18 (יָטַב), Da TH 7:19 (יְצֵב), Eze.39:14, Wis.19:18, Sir.18:29 ;]\nwith exactness, carefully: Mat.2:8, Luk.1:3, Act.18:25, Eph.5:15, 1Th.5:2 (M, Th., in l). Compar., ἀκριβέστερον (Milligan, NTD, 111; MM, VGT, see word), Act.18:26 23:15, 20 24:22.†",
+   "sha256": "993b6ffc281655e9730d7705a7c1b47d92e519088ccab720850327c0a2638d60"
+  },
+  {
+   "strongs": "G0198",
+   "language": "greek",
+   "lemma": "ἀκριβόω",
+   "gloss": "be exactly",
+   "definition": "ἀκριβόω, -ῶ\n(ἀκριβής), [in Aq.: Isa.30:8 49:16 * ;]\nto enquire with exactness, learn carefully: Mat.2:7, 16 (for similar ex., see MM, VGT, sv.).†",
+   "sha256": "071c4a1d5c024286078a39870012d9b24731cc6ccd3623b3def998ed3e83f0a1"
+  },
+  {
+   "strongs": "G0199",
+   "language": "greek",
+   "lemma": "ἀκριβῶς",
+   "gloss": "exactly",
+   "definition": "ἀκριβῶς\nadv. (ἀκριβής), [in LXX: Deu.19:18 (יָטַב), Da TH 7:19 (יְצֵב), Eze.39:14, Wis.19:18, Sir.18:29 ;]\nwith exactness, carefully: Mat.2:8, Luk.1:3, Act.18:25, Eph.5:15, 1Th.5:2 (M, Th., in l). Compar., ἀκριβέστερον (Milligan, NTD, 111; MM, VGT, see word), Act.18:26 23:15, 20 24:22.†",
+   "sha256": "71e33f1c3797c9368417b1bf0c3357b50743daf8495d500b655c28a420b19ea8"
+  },
+  {
+   "strongs": "G0200",
+   "language": "greek",
+   "lemma": "ἀκρίς",
+   "gloss": "locust",
+   "definition": "ἀκρίς, -ίδος, ἡ\n[in LXX chiefly for אַרְבֶּה, also for חָגָב, etc. ;]\na locust: Mat.3:4, Mrk.1:6, Rev.9:3, 7.†",
+   "sha256": "e3ba9950e26d9c821cfb72d55467de6694993461faee84c2ecb3e1291ee97aec"
+  },
+  {
+   "strongs": "G0201",
+   "language": "greek",
+   "lemma": "ἀκροατήριον",
+   "gloss": "hall",
+   "definition": "ἀκροατήριον, -ου, τό\n(ἀκροάομαι, to listen)\na place of audience: Act.25:23 (Plut.).†",
+   "sha256": "328ce87c93f485d34516416d6a0235135b518c0448c4880ac0b7a689ea510fbc"
+  },
+  {
+   "strongs": "G0202",
+   "language": "greek",
+   "lemma": "ἀκροατής",
+   "gloss": "hearer",
+   "definition": "ἀκροατής, οῦ, ὁ (see supr.)\n[in LXX: Isa.3:3 (לַחַשׁ), Sir.3:29 ;]\na hearer: Rom.2:13, Jas.1:22, 23, 25.†",
+   "sha256": "ed52541d8bd86f34786a31605a756111d9c225467d59f09f8d6131ade3662583"
+  },
+  {
+   "strongs": "G0203",
+   "language": "greek",
+   "lemma": "ἀκροβυστία",
+   "gloss": "uncircumcision",
+   "definition": "ἀκροβυστία, -ας, ή\n(perh. an Alexandrian form of cl. ἀκροποσθία; cf. MM, VGT, see word) [in LXX for עׇרְלָה ;]\nthe prepuce, foreskin (LXX), hence abstr., uncircumcision: Act.11:3, Rom.2:25-27 3:30 4:10-12, 1Co.7:18-19, Gal.5:6 6:15, Col.2:13 3:11 By meton., the uncircumcised: Rom.4:9, Gal.2:7, Eph.2:11.†",
+   "sha256": "13a3188a4f3058bf7d437f40e9b2af3fdd5c1fa5cd8558eab5b008d2db32ad60"
+  },
+  {
+   "strongs": "G0204",
+   "language": "greek",
+   "lemma": "ἀκρογωνιαῖος",
+   "gloss": "cornerstone",
+   "definition": "ἀκρο-γωνιαῖος, -αία, -αῖον\n(ἄκροι, γωνία, an angle) [in LXX: Isa.28:16 (פִּנָּה) * ;] = Attic γωνιαῖος (frequently in Inscr.; MM, VGT, see word ἀ.),\nat the extreme angle: ὁ ἀ., the corner foundation stone, Eph.2:20, 1Pe.2:6.†",
+   "sha256": "cdd59551b9bea561009d8c811cf21fa929f0690c4319b3d385e1941b2d7af4f2"
+  },
+  {
+   "strongs": "G0205",
+   "language": "greek",
+   "lemma": "ἀκροθίνιον",
+   "gloss": "fine spoils",
+   "definition": "ἀκροθίνιον, -ου, τό\n(ἄκρος, θίς, a heap),\nprop., the top of a heap, hence, in pl.,\n1. first-fruits (Xen.; MM, VGT, see word).\n2. In war, the choicest spoils (cf. Hdt., viii, 121 f.): Heb.7:4.\n†",
+   "sha256": "a4d13d64b6ccda7838cd23fe7879900dbb952bab72635dc8ba77ccb7412916fd"
+  },
+  {
+   "strongs": "G0206",
+   "language": "greek",
+   "lemma": "ἄκρον",
+   "gloss": "end",
+   "definition": "ἄκρος, -α, -ον\n[in LXX for קֶצַח, בֹּהֶן, etc. ;]\nhighest, extreme; as subst., τὸ ἄ., the top, extremity: Mrk.13:27, Luk.16:24, Heb.11:21; pl. (cf. MM, VGT, see word), Mat.24:31.†",
+   "sha256": "d4516382f8a3bc981bc3527769327240fdb75f829293f36f06e192964cc5beff"
+  },
+  {
+   "strongs": "G0207",
+   "language": "greek",
+   "lemma": "Ἀκύλας",
+   "gloss": "Aquila",
+   "definition": "Ἀκύλας, -ου (and -α; MM, VGT, see word), ὁ (Lat.),\nAquila: Act.18:2, 18 18:26, Rom.16:3, 1Co.16:19, 2Ti.4:19.†",
+   "sha256": "2ef9a60616b64d6a7cc4cfbd44ab9e353d4a3abc36d186dc1a60418bf753f986"
+  },
+  {
+   "strongs": "G0208",
+   "language": "greek",
+   "lemma": "ἀκυρόω",
+   "gloss": "to nullify",
+   "definition": "ἀκυρόω, -ῶ\n(κῦρος, authority), [in LXX: 1Es.6:32 Est.6:1-34, 2Ma.6:1-31 * ;]\nto revoke, invalidate (MM, VGT, see word): Mat.15:6, Mrk.7:13, Gal.3:17 (Plut.).†",
+   "sha256": "a68d5b7f0e7476c3f2578e87ef9cf9cabf48ddc6ac56d919e719914a1034d175"
+  },
+  {
+   "strongs": "G0209",
+   "language": "greek",
+   "lemma": "ἀκωλύτως",
+   "gloss": "freely",
+   "definition": "ἀκωλύτως\nadv. (κωλύω), [in Sm.: Job.34:31 * ;]\nwithout hindrance (so frequently in legal documents; MM, VGT, see word): Act.28:31.†",
+   "sha256": "ce55e06981455c2008d3550836ef10016478ebf6177187d97e7a6e9d9f66648c"
+  },
+  {
+   "strongs": "G0210",
+   "language": "greek",
+   "lemma": "ἄκων",
+   "gloss": "unwilling",
+   "definition": "ἀκων (Attic contr. for ἀέκων), -ουα, -ον\n(ἀ- neg., ἅκων, willing), [in LXX: Job.14:17, 2Ma.11:12 * ;]\nunwilling: 1Co.9:17.†",
+   "sha256": "02fda9a564282e270c4b644033f99bd79bfdb1447739502d79ed20450c944600"
+  },
+  {
+   "strongs": "G0211",
+   "language": "greek",
+   "lemma": "ἀλάβαστρον",
+   "gloss": "jar",
+   "definition": "ἀλάβαστρον, -ου, τό (also -ος, ὁ, ἡ; colloq. and κοινή for ἀλάβαστος),\n[in LXX: 4Ki.21:13 (צַלַּחַת)* ;]\na box of alabaster (ἀλαβαστίτης) for ointment: Mat.26:7, Mrk.14:3, Luk.7:37 (see DCG, i, 41b; MM, VGT, see word).†",
+   "sha256": "b7772617f7145e5fae1623c4ab182fb752a3d9c316375cf5ab7b355b2eaf64a6"
+  },
+  {
+   "strongs": "G0212",
+   "language": "greek",
+   "lemma": "ἀλαζονεία",
+   "gloss": "boasting",
+   "definition": "ἀλαζονία(Rec. -εία, the earlier form), -ας, ἡ\n(ἀλαζών), [in LXX: Wis.5:8 17:7, 2; 4Ma.5:1-38 * ;]\nthe character of an ἀλαζών, boastfulness, vainglory, vaunting: Jas.4:16 (Mayor, in l), 1Jn.2:16.†",
+   "sha256": "532efafd32369f9dadfe58957332ffbda19ad2a00c149a3ff17aed25f2c713c1"
+  },
+  {
+   "strongs": "G0213",
+   "language": "greek",
+   "lemma": "ἀλαζών",
+   "gloss": "braggart",
+   "definition": "ἀλαζών, -όνος, ὁ, ἡ\n(ἄλη, wandering) [in LXX: Job.28:8 (שַׁחַץ) Hab.2:5 (יָהִיר), Pro.21:24 (לוּץ)* ;]\nprop, a vagabond, hence, an impostor, a boaster: Rom.1:30, 2Ti.3:2.†\nSYN.: ὐβριστής, ὑπερήφανος (see Tr., Syn., § xxix; Lft., Notes, 256)",
+   "sha256": "599b55965d6a74d381552a774a077fd6667c98c5fdb91a3f159808bfbe2c4ed4"
+  },
+  {
+   "strongs": "G0214",
+   "language": "greek",
+   "lemma": "ἀλαλάζω",
+   "gloss": "to wail",
+   "definition": "ἀλαλάζω\n(onomat. from the battle-cry ἀλαλά), [in LXX chiefly for רוּעַ hi., יָלַל ;]\nprop, to raise a war-cry, shout with triumph or joy; rarely of grief, to wail: Mrk.5:38 (cf. Jer.4:8); of a cymbal, ἀλαλάζον (RV. clanging), 1Co.13:1 (cf. ὀλολύζω).†",
+   "sha256": "b2a711334477f397174ec522fc376ee26432909b7defa7f3e3f6a2e90d813e9e"
+  },
+  {
+   "strongs": "G0215",
+   "language": "greek",
+   "lemma": "ἀλάλητος",
+   "gloss": "inexpressible",
+   "definition": "ἀ-λάλητος, -ον\n(λαλέω),\ninexpressible, not to be uttered: Rom.8:26.†",
+   "sha256": "c9ce23be6485da294ec36afa1f16713355ae925d3c0e38a813a0547246b68060"
+  },
+  {
+   "strongs": "G0216",
+   "language": "greek",
+   "lemma": "ἄλαλος",
+   "gloss": "mute",
+   "definition": "ἄ-λαλος, -ον\n(λάλος, talkative), [in LXX: Psa.31:18 (אָלַם ni.) Psa.38:13 (אִלֵּם)* ;]\ndumb, speechless: Mrk.7:37 9:17, 25.†",
+   "sha256": "e8508c4e184ae92e6a5c5fbd7055034e9aa18e6b832c91f363d8f626ed3b20b1"
+  },
+  {
+   "strongs": "G0217",
+   "language": "greek",
+   "lemma": "ἅλας",
+   "gloss": "salt",
+   "definition": "ἅλας (T, ἅλα), -ατος, τό, late form of cl. ἅλς, -ος, ὁ (MM, VGT, see word),\n[in LXX chiefly for מְלַח ;]\nsalt, lit, and figuratively: Mat.5:13, Mrk.9:50 Luk.14:34; like cl. ἅλες, wit, of wisdom and grace in speech: Col.4:6.†",
+   "sha256": "1dd6d11678a1961c0625d424a4033136d5901ac60d619243ff3dd66049dd5979"
+  },
+  {
+   "strongs": "G0218",
+   "language": "greek",
+   "lemma": "ἀλείφω",
+   "gloss": "to anoint",
+   "definition": "ἀλείφω\n(cf. λίπος, oil), [in LXX: Gen.31:13, Exo.40:15, Num.3:3 (מָשַׁח), Eze.13:10 ff. (טוּחַ), Rut.3:3, 2Ki.12:20 14:2, 4Ki.4:2, 2Ch.28:15, Mic.6:15, Dan LXX TH Dan.10:3 (סוּךְ), Est.2:12, Jdth.16:8 * ;]\nto anoint, festally or in homage: with accusative of thing(s) or of person(s), Mat.6:17, Jhn.12:3, Mrk.16:1; before dative, ἐλαίῳ, Mrk.6:13, Jas.5:14; μύρῳ, Luk.7:38, 46, Jhn.11:2.†\nSYN.: χρίω, μυρίζω (against the distinction made bet. ἀ. and χ. in Tr., Syn., § 38, see MM, VGT, see word, ἀ.)",
+   "sha256": "bbb818eafb9008d496539b900fc26fb42de2d833358501d5d9dbba4b7257c0d9"
+  },
+  {
+   "strongs": "G0219",
+   "language": "greek",
+   "lemma": "ἀλεκτοροφωνία",
+   "gloss": "crowing",
+   "definition": "ἀλεκτοροφωνία, -ας, ἡ\n(ἀλέκτωρ, φωνή),\ncock-crowing, i.e. the third watch in the night: Mrk.13:35.†",
+   "sha256": "d87431558b98502c2c8656f3ef1bba4f139d5fea5f37cb46d1b1d53613c79783"
+  },
+  {
+   "strongs": "G0220",
+   "language": "greek",
+   "lemma": "ἀλέκτωρ",
+   "gloss": "rooster",
+   "definition": "ἀλέκτωρ, -ορος, ὁ\n(poët. form of ἀλεκτρυών; see MM, VGT, see word), [in LXX: Pro.30:31) (זַרְזִיר; BDB, Lex., 267)* ;]\na cock: Mat.26:34, Mrk.14:30, 68 14:72 Luk.22:34, 60-61, Jhn.13:38 18:27.†",
+   "sha256": "40435cf3c522f676c23f1a265b897cfdb8ce860b5c50b36e947170d1f30858a0"
+  },
+  {
+   "strongs": "G0221",
+   "language": "greek",
+   "lemma": "Ἀλεξανδρεύς",
+   "gloss": "Alexandrian",
+   "definition": "Ἀλεξανδρεύς, -έως, ὁ\nan Alexandrian: Act.6:9 18:24.†",
+   "sha256": "785286c48679e7ab2f166b9841b9844f67d6d4c47913d832c89c394f60da0ca0"
+  },
+  {
+   "strongs": "G0222",
+   "language": "greek",
+   "lemma": "Ἀλεξανδρῖνος",
+   "gloss": "Alexandria",
+   "definition": "Ἀλεξανδρινός (Rec. -δρῖνο; see Kühner3, II, 296), -ή, -όν,\nAlexan­drian: Act.27:6 28:11.†",
+   "sha256": "ec36621a1e90bfe3ab99b9aa58efeeadb54f4fc958017917b7dea83717d3f88e"
+  },
+  {
+   "strongs": "G0223G",
+   "language": "greek",
+   "lemma": "Ἀλέξανδρος",
+   "gloss": "Alexander",
+   "definition": "Ἀλέξανδρος, -ου, ὁ,\nAlexander\n1. Son of Simon of Cyrene: Mrk.15:21\n2. A kinsman of the High Priest: Act.4:6.\n3. A certain Jew: Act.19:33.\n4. A coppersmith: 1Ti.1:20.\n5. Perh. = 4 (see Ellic. on I Ti, l.with): 2Ti.4:14.\n†",
+   "sha256": "389e875ea1ab3840e72c3b3bd054ab8332b8e9fb026ac1ec6e619dba8604a128"
+  },
+  {
+   "strongs": "G0223H",
+   "language": "greek",
+   "lemma": "Ἀλέξανδρος",
+   "gloss": "Alexander",
+   "definition": "Ἀλέξανδρος, -ου, ὁ,\nAlexander\n1. Son of Simon of Cyrene: Mrk.15:21\n2. A kinsman of the High Priest: Act.4:6.\n3. A certain Jew: Act.19:33.\n4. A coppersmith: 1Ti.1:20.\n5. Perh. = 4 (see Ellic. on I Ti, l.with): 2Ti.4:14.\n†",
+   "sha256": "389e875ea1ab3840e72c3b3bd054ab8332b8e9fb026ac1ec6e619dba8604a128"
+  },
+  {
+   "strongs": "G0223I",
+   "language": "greek",
+   "lemma": "Ἀλέξανδρος",
+   "gloss": "Alexander",
+   "definition": "Ἀλέξανδρος, -ου, ὁ,\nAlexander\n1. Son of Simon of Cyrene: Mrk.15:21\n2. A kinsman of the High Priest: Act.4:6.\n3. A certain Jew: Act.19:33.\n4. A coppersmith: 1Ti.1:20.\n5. Perh. = 4 (see Ellic. on I Ti, l.with): 2Ti.4:14.\n†",
+   "sha256": "389e875ea1ab3840e72c3b3bd054ab8332b8e9fb026ac1ec6e619dba8604a128"
+  },
+  {
+   "strongs": "G0223J",
+   "language": "greek",
+   "lemma": "Ἀλέξανδρος",
+   "gloss": "Alexander",
+   "definition": "Ἀλέξανδρος, -ου, ὁ,\nAlexander\n1. Son of Simon of Cyrene: Mrk.15:21\n2. A kinsman of the High Priest: Act.4:6.\n3. A certain Jew: Act.19:33.\n4. A coppersmith: 1Ti.1:20.\n5. Perh. = 4 (see Ellic. on I Ti, l.with): 2Ti.4:14.\n†",
+   "sha256": "389e875ea1ab3840e72c3b3bd054ab8332b8e9fb026ac1ec6e619dba8604a128"
+  },
+  {
+   "strongs": "G0224",
+   "language": "greek",
+   "lemma": "ἄλευρον",
+   "gloss": "flour",
+   "definition": "ἄλευρον, -ου, τό\n(ἀλεύω, to grind), [in LXX for קֶמַח, Num.5:15, al. ;]\nreal: Mat.13:33, Luk.13:21.†",
+   "sha256": "16488be6c09e024584673174af44bbf934b8f8302facddbad854d8e8533034b9"
+  },
+  {
+   "strongs": "G0225",
+   "language": "greek",
+   "lemma": "ἀλήθεια",
+   "gloss": "truth",
+   "definition": "ἀλήθεια, -ας, ἡ\n(ἀληθής), [in LXX chiefly for אֱמֶת (on which, see Cremer, 627f.), אֱמוּנָה ;]\ntruth (see DB, iv, 818f.).\n1. Objectively, \"the reality lying at the basis of an appearance; the manifested, veritable essence of a matter\" (Cremer, 86): Rom.9:1, al.; of religious truth, Rom.1:25, al.; esp. of Christian doctrine, Gal.2:5, al.; ἀ. θεοῦ, Rom.15:8.\n2. Subjectively, truthfulness, truth, not merely verbal (cl.), but sincerity and integrity of character: Jhn.8:44, 3Jo.3.\n3. In phrases (MM, VGT, see word): ἐπ᾽ ἀληθείας, Mrk.12:14, al.; ἀ. λέγειν (εἰπεῖν, λαλεῖν), Rom.9:1, 2Co.12:6, Eph.4:25, al.; ἀ. ποιεῖν, Jhn.3:21, 1Jn.1:6 (cf. DB, iv, 818b, ff.).",
+   "sha256": "d7ff3a38712c3bacaf89480febbbcc0a5d53984d4260660fda32a6961407d376"
+  },
+  {
+   "strongs": "G0226",
+   "language": "greek",
+   "lemma": "ἀληθεύω",
+   "gloss": "be truthful",
+   "definition": "ἀληθεύω\n(ἀληθής), [in LXX: Gen.20:16 (יָכַח) Gen.42:16 (אֶמֶת), Pro.21:3 (מִשְׁפָּט), Isa.44:26 (שָׁלַם), Sir.34:4 * ;]\nto speak the truth (R, mg., deal truly; Field, Notes, 192): Gal.4:16, Eph.4:15.†",
+   "sha256": "b0757ad3da5c5d300af4c4a1e0deb7dfe52d8872e788aca994d40646973afdbd"
+  },
+  {
+   "strongs": "G0227",
+   "language": "greek",
+   "lemma": "ἀληθής",
+   "gloss": "true",
+   "definition": "ἀληθής, -ές\n(λήθω = λανθάνω, hence primarily, unconcealed, manifest; hence, actual, real), [in LXX for אֶמֶת, etc. ;]\n(a) of things, true, conforming to reality: Jhn.4:18 5:31-32 6:55 (= ἀληθινός, which see) Jhn.8:13-14, 17 10:41 19:35 21:24, Act.12:9, Php.4:8, Tit.1:13, 1Pe.5:12, 2Pe.2:22, 1Jn.2:6, 3Jn.12;\n(b) of persons, truthful: Mat.22:16, Mrk.12:14, Jhn.3:33 7:18 8:26, Rom.3:4, 2Co.6:8.†\nSYN.: ἀληθινός, real, genuine, ideal, as opposite to spurious or imperfect ἀληθής, true to fact, as opposite to false, lying, denotes the actuality of a thing: ἀληθινός, its relation to the corresponding con­ception. (Cf. Tr., Syn., § viii; Cremer, 84 f., 631 Abbott, JV, 234 f.; DB, iv, 818 f.; MM, VGT, s.vv.)",
+   "sha256": "e5c747a59744e7a4a4751c5ae03b132db73524e6546c874a13cb646b4084fb6c"
+  },
+  {
+   "strongs": "G0228",
+   "language": "greek",
+   "lemma": "ἀληθινός",
+   "gloss": "true",
+   "definition": "ἀληθινός, -ή, -όν\n(ἀληθής), [in LXX for אֶמֶת ;]\ntrue, in the sense of real, ideal, genuine: Luk.16:11 Jhn.1:9 4:23, 37 6:32 7:28 8:16 15:1 17:3 19:35, 1Th.1:9, Heb.8:2 9:24 10:22, 1Jn.2:8 Jn 5:20, Rev.3:7, 14 6:10 15:3 16:7 19:2; = ἀληθής, Rev.19:9 21:5 22:6 (MM, VGT, see word).†\nSYN.: ἀληθής, q.v",
+   "sha256": "24361afa6945673e98c9887176f801290fc8e5ecded6b3523b3cd60d6f713c64"
+  },
+  {
+   "strongs": "G0229",
+   "language": "greek",
+   "lemma": "ἀλήθω",
+   "gloss": "to grind",
+   "definition": "ἀλήθω\n(κοινή form of the Attic ἀλέω), [in LXX for טָחַן ;]\nto grind: Mat.24:41, Luk.17:35.†",
+   "sha256": "9fba1dce36d0f2de850b517e6ca05c5cd1a32c5791012a05bc97c12351986c1e"
+  },
+  {
+   "strongs": "G0230",
+   "language": "greek",
+   "lemma": "ἀληθῶς",
+   "gloss": "truly",
+   "definition": "ἀληθῶς\nadv. (ἀληθής). [in LXX (Jer.28:6, Psa.58:1, al.) chiefly for אָמֵן and cogn. forms ;]\ntruly, surely: Mat.14:33 26:73 Mrk.14:70 15:39, Luk.9:27 12:44 21:3, Jhn.1:48 4:42 6:14 7:26, 40 8:31 17:8 Act.12:11, 1Th.2:13, 1Jn.2:5.†",
+   "sha256": "b3693792f5b1ed4aded5846201182456d3b96f2c7cbf3b922bf41d5023a54b58"
+  },
+  {
+   "strongs": "G0231",
+   "language": "greek",
+   "lemma": "ἁλιεύς",
+   "gloss": "fisherman",
+   "definition": "ἁλεεύς (Rec. ἁλιεύς, the older form; WH, App., 151, -έως, ὁ\n(ἅλς, the sea) [in LXX for דָּג, דַּוָּג ;]\na fisherman: Mat.4:18, 19, Mrk.1:16, 17, Luk.5:2",
+   "sha256": "a5c909c2aed395298a56021c8e8dbb1d8eafb1f8c5211b312567d1291342cd22"
+  },
+  {
+   "strongs": "G0232",
+   "language": "greek",
+   "lemma": "ἁλιεύω",
+   "gloss": "to fish",
+   "definition": "ἁλιεύω\n(ἁλιεύς), [in LXX: Jer.16:16 (דִּיג)* ;]\nto fish: Jhn.21:3 (MM, VGT, see word).†",
+   "sha256": "84453761d5772483501313b00dd5a082e36e854bfd7fedde7e89fde1a603edaf"
+  },
+  {
+   "strongs": "G0233",
+   "language": "greek",
+   "lemma": "ἁλίζω",
+   "gloss": "to salt",
+   "definition": "ἁλίζω\n(ἅλς), [in LXX for מָלַח ;]\nto salt, season with salt: Mat.5:13, Mrk.9:49.†",
+   "sha256": "70886565710105e1ea267d08fc527f296a7409dd4ecf79233d75e852138c553f"
+  },
+  {
+   "strongs": "G0234",
+   "language": "greek",
+   "lemma": "ἀλίσγημα",
+   "gloss": "defilement",
+   "definition": "ἀλίσγημα, -τος, τό\n(late ἀλισγέω, to pollute)\npollution: Act.15:20.†",
+   "sha256": "7f11148cad7520f4e55f9defbcd88cff17c7623b47c76504379195145510bb8e"
+  },
+  {
+   "strongs": "G0235",
+   "language": "greek",
+   "lemma": "ἀλλά",
+   "gloss": "but",
+   "definition": "ἀλλά (ἀλλ᾽ usually bef. α and υ, often bef. ε and η, rarely bef. ο and ω, never bef. ι; Tdf., Pr., 93 f.; WH, App., 146),\nadversative particle,\nstronger than δέ; prop. neuter pl. of ἄλλος, used adverbially, with changed accent; hence prop. otherwise, on the other hand (cf. Rom.3:31);\n1. opposing a previous negation, but: οὐ (μὴ) . . . ἀ., Mat.5:15, 17 Mrk.5:39, Jhn.7:16, al.; rhetorically subordinating but not entirely negativing what precedes, οὐ . . . ἀ., not so much . . . as, Mrk.9:37, Mat.10:20, Jhn.12:44, al.; with ellipse of the negation, Mat.11:7-9, Act.19:2, 1Co.3:6 6:11 7:7, 2Co.7:1, Gal.2:3, al.; in opposition to a foregoing pos. sentence, ἀ. οὐ, Mat.24:6, 1Co.10:23; οὐ μόνον . . . ἀ. καί, Jhn.5:18, Rom.1:32, al.; elliptically, after a negation, ἀ. ἵνα, Mrk.14:49, Jhn.1:8 9:3, al.; = εἰ μή (Bl., §77, 13; M, Pr., 241; but cf. WM, §iii, 10), Mat.20:23, Mrk.4:22.\n2. Without previous negation, to express opposition, interruption, transition, etc., but: Jhn.16:20 12:27, Gal.2:14; before commands or requests, Act.10:20 26:16, Mat.9:18, Mrk.9:22, al.; to introduce an accessory idea, 2Co.7:11; in the apodosis after a condition or concession with εἰ, ἐάν, εἴπερ, yet, still, at least, Mrk.14:29, 1Co.9:2, 2Co.4:16, Col.2:5, al.; after μέν, Act.4:17, Rom.14:20, 1Co.14:17; giving emphasis to the following clause, ἀλλ᾽ ἔρχεται ὥρα, yea, etc., Jhn.16:2; so with neg., ἀλλ᾽ οὐδέ, nay, nor yet, Luk.23:15.\n3. Joined with other particles (a practice which increases in late writers; Simcox, LNT, 166), ἀ. γε, yet at least, Luk.24:21, 1Co.9:2; ἄ ἤ., save only, except, Luk.12:51, 2Co.1:13; ἀ. μὲν οὖν, Php.3:8 (on this usage, see MM, VGT, see word).",
+   "sha256": "a7fe78089a764563aa54f6b828475be10dc5a7753965eb91c97836349584184d"
+  },
+  {
+   "strongs": "G0236",
+   "language": "greek",
+   "lemma": "ἀλλάσσω",
+   "gloss": "to change",
+   "definition": "ἀλλάσσω\n(ἄλλος), [in LXX chiefly for חָלַף, מוּר hi., etc. ;]\n1. to change: Act.6:14, Gal.4:20.\n2. to transform: 1Co.15:51-52, Heb.1:12.\n3. to exchange: with accusative, before ἐν (= בְּ, Psa.106:20) instead of simple genitive (Bl., § 36, 8), Rom.1:23\n(cf. ἀπ-, δι-, κατ-, ἀπο-κατ-, μετ-, συν-αλλάσσω; see MM, VGT, see word).†",
+   "sha256": "30efc1939dd01d79514f256379d9837f436bd6e36df492c1e8cdfa68c8d97052"
+  },
+  {
+   "strongs": "G0237",
+   "language": "greek",
+   "lemma": "ἀλλαχόθεν",
+   "gloss": "from elsewhere",
+   "definition": "ἀλλαχόθεν\nadv. (ἀλλος), [in LXX: 4Ma.1:7 * ;] = ἀλλοθεν (see MM, VGT, see word)\nfrom another place: Jhn.10:1.†",
+   "sha256": "1a6b4f01b0f25204ee33c2e1ed9de1d8ec4d10d50b01be4df37a48de7d75d871"
+  },
+  {
+   "strongs": "G0238",
+   "language": "greek",
+   "lemma": "ἀλληγορέω",
+   "gloss": "to use an analogy",
+   "definition": "ἀλληγορέω, -ῶ\n(ἄλλος, ἀγορεύω)\nto speak allegorically (Cremer, 96 ff.): Gal.4:24.†",
+   "sha256": "3ca25d3095e0ff5d03319a2427a90e01918c805eef1a88c3594d4187ce4c7b6a"
+  },
+  {
+   "strongs": "G0239",
+   "language": "greek",
+   "lemma": "ἀλληλουϊα",
+   "gloss": "hallelujah",
+   "definition": "ἁλληλουιά\n(Rec. ἀλληλούϊα; Heb. הָלַל יָהּ, praise the Lord), [in LXX in the titles of certain Psa (104 (105), al.), and at the end of Psa.150:1-6; also Tob.13:18, 3Ma.7:13 ;]\nhallelujah, alleluia: Rev.19:1, 3-4 19:6.†",
+   "sha256": "43b89fe500f8ccbd10eadb4aad529ead1e0681895cdc007540f38fd5c8293e4e"
+  },
+  {
+   "strongs": "G0240",
+   "language": "greek",
+   "lemma": "ἀλλήλων",
+   "gloss": "one another",
+   "definition": "ἀλλήλων (genitive pl.), dative -οις, -αις, accusative -ους, -ας, -α (no nom.), recipr. pron.\n(ἄλλος),\nof one another, mutually: Mat.25:32, Mrk.4:41, Jhn.13:22, al.",
+   "sha256": "cacdc22c279ca73154affc07703feb5c32f494b6be331ea761f5e6381a4bc794"
+  },
+  {
+   "strongs": "G0241",
+   "language": "greek",
+   "lemma": "ἀλλογενής",
+   "gloss": "foreign",
+   "definition": "ἀλλογενής, -ές\n(ἄλλος, γένος), [in LXX chiefly for זוּר, נֵכָר ;]\nof another race, a foreigner ( = ἀλλόφυλος; Cremer, 150; MM, VGT, see word): Luk.17:18.†",
+   "sha256": "76d9769581cdea2d24190f47d9b6280d0d9b5070884f122021884c25d834e654"
+  },
+  {
+   "strongs": "G0242",
+   "language": "greek",
+   "lemma": "ἅλλομαι",
+   "gloss": "to spring",
+   "definition": "ἅλλομαι\n[in LXX for צָלַח, דָּלַג pi., etc. ;]\nto leap: Act.3:8 14:10; of water, to spring up, Jhn.4:14 (MM, VGT, see word).†",
+   "sha256": "7c32c8e6d14292d1edd47c0b2c55792a66c8dccc1829440f387221ad5be52fbf"
+  },
+  {
+   "strongs": "G0243",
+   "language": "greek",
+   "lemma": "ἄλλος",
+   "gloss": "another",
+   "definition": "ἄλλος, -η, -ο, (cf. Lat. alius, Eng. else),\n[in LXX for אַחֵר ,אֶחָד, etc. ;]\nother, another: absol., Mat.20:3, al.; ἄ. δέ, 1Co.3:10 12:8; pl., Mrk.6:15; attached to a noun, Mat.2:12 4:21, al.; with art., ὁ ἄ., the other, Mat.5:39, Jhn.19:32 (Bl., §47, 8); οἱ ἄ., the others, the rest, Jhn.20:25, 1Co.14:29; ἄ. πρὸς ἄλλον = πρὸς ἀλλήλους (BL, §48, 10), Act.2:12; ἄλλ᾽ (i.e. ἄλλο) ἤ (Bl., §77, 13), Luk.12:51; before πλήν, Mrk.12:32; εἰ μή, Jhn.6:22; παρά with accusative, 1Co.3:11.\nSYN.: ἕτερος, which see ἄ. denotes numerical, ἕ. qualitative difference (Cremer, 89). ἄ. generally \"denotes simply distinction of individuals, ἕ. involves the secondary idea of difference in kind\" (see Lft., Meyer, Ramsay, on Gal.1:6, 7; Tr., Syn., §xcv; BL, §51, 6; M, Pr., 79f., 246; MM, VGT, s.vv.). As to whether the distinction can be maintained in 1Co.12:8, 10 see ICC, in l., and on Heb.11:35f., see Westc, in l.",
+   "sha256": "9b22677c68b05b4e003dd1c923950c3afe0bb588ce5cfaab7b04e169f4963101"
+  },
+  {
+   "strongs": "G0244",
+   "language": "greek",
+   "lemma": "ἀλλοτριεπίσκοπος",
+   "gloss": "meddler",
+   "definition": "ἀλλοτρι-επίσκοπος (Rec. ἀλλοτριοεπ-), -ου, ὁ\none who meddles in things alien to his calling: 1Pe.4:15 (see ICC, in l; Deiss., BS, 224-4; MM, VGT, see word).†",
+   "sha256": "6610c501a8e7049771ff9a461cc0f86d8671f7aa6851b38629b32e3cf77d469f"
+  }
+ ]
+}

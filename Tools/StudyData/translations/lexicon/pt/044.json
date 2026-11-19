@@ -1,0 +1,608 @@
+{
+ "batch": "044",
+ "lang": "pt",
+ "entries": [
+  {
+   "strongs": "G1984",
+   "sha256": "8d792bca608c0a76cc49566ab00a1fffbf055af7080a3ecd12446ae4733e8459",
+   "gloss": "supervisão",
+   "definition": "ἐπι-σκοπή, -ῆς, ἡ\n[na LXX principalmente por פָּקַד פְּקֻדָּה ;]\n1. visita, visitação (εἰς ἐ. τοῦ παιδός, Lucian, dial. deor., 20, 6); como na LXX (seguindo o heb.), da visitação de Deus em misericórdia ou em juízo (Lev.19:20 Job.10:12, Jer.6:15, Wis.2:20, al.): Luk.19:44, 1Pe.2:12 (veja Hort, in l).\n2. ofício, encargo, esp. o ofício de ἐπίσκοιος (veja): Act.1:20 (LXX), 1Ti.3:1 (Cremer, 527 s., 864; DCG, ii, 809b).†",
+   "note": "Source 'chiey' is a misprinted 'chiefly': rendered 'principalmente'."
+  },
+  {
+   "strongs": "G1985",
+   "sha256": "e2fd42af7794d2a958e2a2341494b201defddcaa69198dc3ff5eed265d1b9de2",
+   "gloss": "supervisor",
+   "definition": "ἐπί-σκοπος, -ου, ὁ\n(σκοπός, vigia), [na LXX por פָּקַד, suas formas e derivados, Num.4:16 31:14, Jdg.9:28, 4Ki.11:15 11:18, 2Ch.34:12 34:17, Neh.11:9, 14 11:22; אֵל, Job.20:29; נָגַשׂ:, Isa.60:17; Wis.1:6, 1Ma.1:51 * ;]\nsuperintendente, guardião, supervisor (cl.; para exs. veja LS, veja a palavra): Act.20:28, 1Pe.2:25 (ICC, in l); como termo técnico de um ofício religioso (Deiss., BS, 230 s.), nas epístolas paulinas posteriores, do dirigente de uma igreja (Vg. episcopus), bispo: Php.1:1, 1Ti.3:2, Tit.1:7 (veja reff. veja a palavra ἐπισκοπή).†"
+  },
+  {
+   "strongs": "G1986",
+   "sha256": "e86802a41b0088e673ff923aa0688c1bd455cf2d1227238d90ac1938e86d45b0",
+   "gloss": "desfazer a circuncisão",
+   "definition": "ἐπι-σπάω, -ῶ\n[na LXX: Isa.5:18 (מָשַׁךְ), etc. ;]\npuxar sobre: méd., no sentido peculiar de apagar os sinais do judaísmo (cf. 1Ma.1:15, FlJ, Ant., xii, 5, i; veja Thayer, veja a palavra), tornar-se como incircunciso: 1Co.7:18.†"
+  },
+  {
+   "strongs": "G1987",
+   "sha256": "6ebffe28c708a3aa6fcb39c882f28a679bcab7fe06b576212c74c8348b2a4539",
+   "gloss": "saber/entender",
+   "definition": "ἐπίσταμαι\n(prob. antiga méd. de ἐφίστημι, veja), [na LXX principalmente por יָדַע ;]\nsaber, ter conhecimento de, entender: com acusativo de pessoa(s), Act.19:15; com part., Act.24:10; com acusativo de coisa(s), Mrk.14:68, Act.18:25, 1Ti.6:4, Jas.4:14, Ju 10; antes de περί, Act.26:26; ὅτι, Act.15:7 19:25 22:19; ὡς, Act.10:28; πῶς, Act.20:18; ποῦ, Heb.11:8.†\nSYN: γινώσκω (veja), οἶδα"
+  },
+  {
+   "strongs": "G1988",
+   "sha256": "efcd7a3027b5fea097b6754b2441757cfe9ecc54c76ddf8f7cf900c801dfba5f",
+   "gloss": "mestre",
+   "definition": "ἐπιστάτης, -ου, ό\n(ἐφίστημι), [na LXX: 4Ki.25:19, Jer.29:26 52:25 (פָּקִיד), 2Ch.31:12 (נָגִיד), 2Ma.5:22, etc. ;]\nchefe, comandante, mestre: Luk.5:5 8:24, 45 9:33, 49 17:13 (cf. Dalman, Words, 336 ss.).†",
+   "note": "'Words' is Dalman's title, kept."
+  },
+  {
+   "strongs": "G1989",
+   "sha256": "d9946f804d0d367c2eaaaaee0878a0cfccb1f04c07668077ce5b96cef5a6b444",
+   "gloss": "escrever a",
+   "definition": "ἐπι-στέλλω\n[na LXX: 3Ki.5:8 Neh.6:19 (שָׁלַח), Jdth.15:4, 1Ma.10:25 1Mac 12:7 1Mac 13:18 (em cada caso com seel. ἀποσ-) * ;]\n1. enviar a.\n2. mandar recado por carta, escrever (MM, Exp., xiv): com dativo de pessoa(s), Act.21:25, Heb.13:22; antes de τοῦ, com inf., Act.15:20.†",
+   "note": "'seel.' copied as in the source (unclear abbreviation)."
+  },
+  {
+   "strongs": "G1990",
+   "sha256": "5b388ee6f5d14660c33c84c0a279bf8a3bdd330ba8f738964a9b47679b5eb3e5",
+   "gloss": "entendido",
+   "definition": "ἐπιστήμων, -ον, genitivo, -ονoς\n(ἐπίσταμαι) [na LXX: Deu.1:13 4:6, Isa.5:21 (בִּין ni.), I Est.8:44, Sir.10:25 21:15, etc. ;]\nentendido, hábil: Jas.3:13.†"
+  },
+  {
+   "strongs": "G1991",
+   "sha256": "c86818e7cee7ee9aab2a0d6a557186ba2215693e032af04b04a5713688666987",
+   "gloss": "fortalecer",
+   "definition": "ἐπι-στηρίζω\n[na LXX por סָמַךְ, etc. ;]\ntornar mais forte, confirmar: com acusativo, Act.14:22 15:32, 41.†"
+  },
+  {
+   "strongs": "G1992",
+   "sha256": "cbe96aecdd9d4c5b78d64da33dab1fd93a8de81eff72b4a9700658a447e96810",
+   "gloss": "epístola",
+   "definition": "ἐπι-στολή, -ῆς, ἡ\n(ἐπιατέλλω), [na LXX por אִגֶּרֶת, etc.; frequentemente em Mac ;]\n1. mensagem.\n2. carta, epístola: Act.9:2, 1Co.5:9, al.; pl., Act.22:5, 1Co.16:3, al.; ἐ. σνστατικαί, 2Co.3:1 (cf. Milligan, NTD, 254 s.). (Sobre as ἐπιστολαί do NT, cf. Milligan, Th., 121 ss.; NTD, 85 ss.; Deiss., BS, 3 ss.; St. Paul, 8 ss.)",
+   "note": "'St. Paul' is Deissmann's title, kept."
+  },
+  {
+   "strongs": "G1993",
+   "sha256": "935a988dff03080021c456c9d09d8274e3f93ec37bfc20404f04572920d87618",
+   "gloss": "fazer calar",
+   "definition": "ἐπι-στομίζω\n(στόμα),\npôr freio; metaforicamente, tapar a boca, fazer calar: Tit.1:11.†"
+  },
+  {
+   "strongs": "G1994",
+   "sha256": "89984e8fda8ef3227666f18407b874101e3b530e286d05e24cd4cf226b8f20c2",
+   "gloss": "voltar",
+   "definition": "ἐπι-στρέφω\n[muito frequentemente na LXX, principalmente por שׁוּב, nos seus vários sentidos, também por פָּנָה, etc. ;]\n1. trans., virar, voltar ou dirigir para, daí, metaforicamente, converter, fazer voltar (a Deus, à virtude, etc.): Luk.1:16-17 (cf. Mal.3:24), Jas.5:19-20.\n2. Intr.,\n(a) virar-se, voltar-se: Act.16:18; com inf., Rev.1:12; antes de πρός, Act.9:40; assim também pass. (cl.), Mrk.5:30 8:33, Jhn.21:20; metaforicamente, do voltar-se para Deus (veja Field, Notas, 246 ss.), ἐπὶ τ. κύριον (θεόν), Act.9:35 11:21 14:15 15:19 26:20; πρὸς τ. θεόν, 1Th.1:9, 2Co.3:16; ἀπὸ σκότους εἰς φῶς, Act.26:18; pass., 1Pe.2:25;\n(b) voltar (como no MGr.): Luk.8:55, Act.15:36; antes de ὀπίσω, com inf., Mat.24:18; antes de εἰς, Mat.12:44, Mrk.13:16, Luk.2:39 17:31; ἐπί, 2Pe.2:22; metaforicamente, antes de ἐπί, Gal.4:9; πρός, Luk.17:4; de reforma moral, Mat.13:15, Mrk.4:12, Luk.22:32, Act.3:19 28:27; pass., Mat.10:13 (Cremer, 531, 881).†"
+  },
+  {
+   "strongs": "G1995",
+   "sha256": "a4ef11ce47fbd1515ef0737f9040c03445adc9bbaa5961b2db41272bef8e6f8f",
+   "gloss": "conversão",
+   "definition": "ἐπι-στροφή, -ῆς, ἡ\n(ἐπιστρέφω) [na LXX: Eze.47:7 (שׁוּב), Sir.18:21 49:2, etc. ;]\no voltar-se; metaforicamente, conversão (Field, Notas, 246): Act.15:3.†"
+  },
+  {
+   "strongs": "G1996",
+   "sha256": "c25e785ff845d3717cc5eb2f6ccfcb1c0a61b1c81f600b12797ec93893b47903",
+   "gloss": "reunir",
+   "definition": "ἐπι-συν-άγω\n[na LXX por אָסַף, קָבַץ, etc. (Cremer, 65) ;]\n1. reunir, ajuntar: Mat.23:37 24:31, Mrk.13:27, Luk.13:34; pass., Mrk.1:33, Luk.12:1 17:37, (cf. Psa.102:23 106:47, 2Ma.1:27, al.).\n2. reunir contra (Mic.4:11, Zec.12:3, 1Ma.3:58, al.).†"
+  },
+  {
+   "strongs": "G1997",
+   "sha256": "aaca1c7e13689ce6f0990d9de7b39824ef16b16e2b663cbd4ba4e45eef71c63a",
+   "gloss": "reunião",
+   "definition": "ἐπι-συν-αγωγή, -ῆς, ἡ\n(ἐπισυνάγω), [na LXX: 2Ma.2:7 * ;]\najuntamento, assembleia: Heb.10:25; antes de ἐπί, 2Th.2:1 (cf. 2Mac, l. com).†"
+  },
+  {
+   "strongs": "G1998",
+   "sha256": "8321053b869ec7fab6de8a5ec213e6c0a1aead8aa6ddb2e07cb425088ac851d2",
+   "gloss": "acorrer juntos",
+   "definition": "ἐπι-συν-τρέχω\nacorrer juntos de novo: Mrk.9:25 (veja Swete, in l).†"
+  },
+  {
+   "strongs": "G1999",
+   "sha256": "1323fa96a55ea2d217ff7d5a8ffb50a7d5e60c99de1115b74968a653012c2030",
+   "gloss": "tumulto",
+   "definition": "ἐπι-σύστασις, -εως, ἡ\n(ἐπισυνίστημι) [na LXX: Num.16:40 (עֵדָה) Num.26:9 (נָצָה hi.), I Est.5:73 A* ;]\najuntamento, multidão amotinada: Rec. (em lugar de ἐπίστασις, veja), Act.24:12, 2Co.11:28.†"
+  },
+  {
+   "strongs": "G2000",
+   "sha256": "7aabe344195f05edf26e363dc0abd23b33cae418fd9a428ae1d8bff7b542aa36",
+   "gloss": "perigoso/instável",
+   "definition": "ἐπισφαλής, -ές\n(σφάλλω, fazer cair), [na LXX: Wis.9:14 (cf. -ῶς, Wis.4:4) * ;]\n1. propenso a cair (Plat.).\n2. perigoso (Hipp., Plut., al.): Act.27:9.†",
+   "note": "Source 'to cause to full' is a misprinted 'fall': rendered 'fazer cair'."
+  },
+  {
+   "strongs": "G2001",
+   "sha256": "6d74c2ec2bbb8858b51e79503f464e287a5baaa0a108a843a5531e3cb02ca12f",
+   "gloss": "insistir",
+   "definition": "ἐπ-ισχύω\n[na LXX: Sir.29:1, 1Ma.6:6 * ;]\n1. tornar mais forte (Sir, l. com).\n2. tornar-se mais forte; metaforicamente, insistir mais: Luk.23:5.†"
+  },
+  {
+   "strongs": "G2002",
+   "sha256": "71d6b8fadb2280ee24fa86b0c54d5b5e3cd040318aaea5aa76f75bbf84b2822f",
+   "gloss": "acumular",
+   "definition": "ἐπι-σωρεύω\n[em Sm.: Job.14:17, Sng.2:4 * ;]\namontoar; metaforicamente, διδασκάλους, 2Ti.4:3.†"
+  },
+  {
+   "strongs": "G2003",
+   "sha256": "67dd19ba1841c9702278ed502daec4a3ee6c1f9a9323b846756b6592c622561b",
+   "gloss": "ordem",
+   "definition": "ἐπι-ταγή, -ῆς, ἡ\n(ἐπιτάσσω), [na LXX: Dan LXX 3:16 (פִּתְגָּם), I Est.1:18, Wis.14:16 18:16 19:6, 3Ma.7:20 * ;]\n= cl., ἐπίταγμα,\nordem, mandado, Rom.16:26, 1Co.7:6 7:25, 2Co.8:8, 1Ti.1:1, Tit.1:3 (sobre o uso nas inscrições para ordens divinas, veja MM, Exp., xiv); μετὰ πάσης ἐ, com toda a autoridade: Tit.2:15.†"
+  },
+  {
+   "strongs": "G2004",
+   "sha256": "c1fec4dccfefc0aabb49803eee7f1e276ee52990540319e2b5f4d908b618c1ff",
+   "gloss": "ordenar",
+   "definition": "ἐπι-τάσσω\n[na LXX por אָמַר, צָוָה, etc. ;]\nordenar, mandar: com acusativo de coisa(s), Luk.14:22; com dativo de pessoa(s), Mrk.1:27 9:25, Luk.4:36 8:25; id. com acusativo de coisa(s), Phm 8; id. com inf., Mrk.6:39, Luk.8:31, Act.23:2; id. com imperat., Mrk.9:25; com acusativo e inf., Mrk.6:27.†\nSYN.: κελεύω"
+  },
+  {
+   "strongs": "G2005",
+   "sha256": "72e2c995d7223e47ae9d86513e31f3ad999d23e92c17299f3b80e796ee5ac311",
+   "gloss": "completar",
+   "definition": "ἐπι-τελέω, -ῶ\n[na LXX por כָּלָה, עָשָׂה, etc. ;]\ncompletar, cumprir, executar: com acusativo de coisa(s), Rom.15:28, 2Co.7:1 8:6 8:11, Php.1:6, Heb.8:5; de serviços religiosos (cf. Hdt., ii, 37, al.), Heb.9:6; art. inf., 2Co.8:11. Méd.,\n(a) completar para si, levar a termo (R, mg.; pass., R, txt; cf. Meyer, in l): Gal.3:3;\n(b) pagar por inteiro, pagar o tributo, estar sujeito a: com acusativo (cf. Xen., Mem., iv, 8, 8), 1Pe.5:9 (pass., RV, etc.; cf. Thayer, veja a palavra; ICC, in 1).†"
+  },
+  {
+   "strongs": "G2006",
+   "sha256": "4bb5d945b95e6a3f9a6a888964b32acdec5a4a7c7e6d8ddcf9607cf3889cf020",
+   "gloss": "necessário",
+   "definition": "ἐπιτήδειος, -α, -ον\n[na LXX: 1Ch.28:2, Wis.4:5, 1Ma.4:46, al. ;]\n1. adequado, conveniente,\n2. útil, necessário: τὰ ἐ., o necessário, Jas.2:16,†"
+  },
+  {
+   "strongs": "G2007",
+   "sha256": "d956ff266d3103123963addf79256c43d75d32d55c10d48c4136514def7dc540",
+   "gloss": "pôr/impor",
+   "definition": "ἐπι-τίθημι\n[na LXX por נָתַן, שָׁוָה, etc. ;]\n1. pôr, colocar ou assentar sobre: com acusativo de coisa(s), antes de ἐπί, com acusativo de coisa(s), Mat.23:4, Luk.15:5, Jhn.9:6 (WH, txt. Jhn.9:15), Act.15:10 28:3; ἐπί, com genitivo de coisa(s), Mat.27:29; ἐν, ib.; com dativo de pessoa(s), σταυρόν, Luk.23:26; στέφανον, Jhn.19:2; ὄνομα, Mrk.3:16-17; πληγάς, Luk.10:30, Act.16:23; ἐπί com acusativo de pessoa(s), Rev.22:18; da imposição das mãos, τ. χεῖρα (-ας), antes de ἐπί com acusativo de pessoa(s), Mat.9:18, Mrk.16:13, Act.8:17 9:17; com dativo de pessoa(s), Mat.19:13, 15, Mrk.5:23 6:5 7:32 8:23, Luk.4:40 13:13, Act.6:6 8:19 9:12 13:3 19:6 28:8, 1Ti.5:22. Méd.,\n(a) prover: Act.28:10 (RV, put on board; cf. Field, Notas, 149);\n(b) lançar-se sobre, atacar: com dativo de pessoa(s), Act.18:10.\n2. acrescentar a: Rev.22:18 (veja supr., e cf. Swete, in l).†",
+   "note": "'put on board' is the RV's English rendering, kept in English."
+  },
+  {
+   "strongs": "G2008",
+   "sha256": "a50aa0b329d9c4bb2c44253a96260ad5f4d1db981c82533fa57cfa6d3be0833f",
+   "gloss": "repreender",
+   "definition": "ἐπι-τιμάω, -ῶ\n[na LXX por גָּעַר, Gen.37:10, Psa.9:5, Zec.3:2; Sir.11:7, al. ;]\n1. honrar.\n2. aumentar o preço\n3. atribuir a medida devida;\n(a) conceder;\n(b) censurar, repreender, admoestar: absol., 2Ti.4:2; com dativo, Mat.8:26 17:13 19:13, Mrk.4:39 8:32 10:13, Luk.4:39, 41 8:24 9:21, 42 9:55 17:3 18:15 19:39, Ju 9; antes de ἵνα, Mat.12:16 16:20 20:31, Mrk.3:12 8:30 10:48, Luk.18:39; antes de λέγων, λέγει, etc., Mat.16:22, Mrk.1:25 8:33 9:25, Luk.4:35 23:40.†\nSYN.: ἐλέγχω, q.v"
+  },
+  {
+   "strongs": "G2009",
+   "sha256": "bc644f06f145d6d90fe5e2745b983f7b17370f74b6a423e4e23382d724bf62a3",
+   "gloss": "castigo",
+   "definition": "ἐπιτιμία, -ας, ἡ\n(ἐπιτιμάω), [na LXX: Wis_3:10 * ;]\n1. cidadania, direitos civis.\n2. Como nas inscrições (LS, veja a palavra), LXX, l. com (= cl. τὸ ἐπιτίμιον), castigo, pena: 2Co.2:6.†"
+  },
+  {
+   "strongs": "G2010",
+   "sha256": "1da5bc1a6846ef9ec9d96f151bc9a663f2ef36a8d4b0977e808ed3eb97dde0d9",
+   "gloss": "permitir",
+   "definition": "ἐπι-τρέπω\n[na LXX (geralmente com seel. ἐπιστρ-): Gen.39:6 (עָזַב), etc. ;]\n1. voltar-se para, confiar, entregar.\n2. ceder, permitir: 1Co.16:7, Heb.6:3; com dativo de pessoa(s), Mrk.5:13, Jhn.19:38; id. com inf. (cf. M, Pr., 205), Mat.8:21 19:8, Luk.8:32 9:52, 61 Act.21:39-40 27:3, 1Ti.2:12; com inf., Mrk.10:4. Pass., com dativo e inf., Act.26:1 28:16, 1Co.14:34.†",
+   "note": "'seel.' copied as in the source (unclear abbreviation)."
+  },
+  {
+   "strongs": "G2011",
+   "sha256": "9ee0cfd69ee4ff95df035644577cc49e98b6ebcae77ced9cf5ac23dc0108558d",
+   "gloss": "comissão",
+   "definition": "ἐπι-τροπή, -ῆς, ἡ\n(ἐπιτρέπω), [na LXX: 2Ma.13:14 * ;]\npoder de decidir, autoridade: Act.26:12.†"
+  },
+  {
+   "strongs": "G2012",
+   "sha256": "28a5b750a165c22a2fb30a3e84ea92011d50ef0b181bfe6251bd7d03662bfa00",
+   "gloss": "administrador",
+   "definition": "ἐπίτροπος, -ου, ὁ\n(ἐπιτρέπω), [na LXX: 2Ma.11:1 2Mac 13:2 2Mac 14:2 * ;]\n1. administrador, mordomo: Mat.20:3, Luk.8:3.\n2. tutor (com genitivo de pessoa(s), 2Mac, ll. com): Gal.4:2.†"
+  },
+  {
+   "strongs": "G2013",
+   "sha256": "a1fa173dfe9fc16a38cbbd0990bb0d60461dae2bdfd3b7c0eb87092e24c7b32f",
+   "gloss": "obter",
+   "definition": "ἐπι-τυγχάνω\n[na LXX: Gen.39:2 (צָלַח hi.), Pro.12:27 (חָרַךְ)* ;]\n1. dar com.\n2. obter, alcançar: Jas.4:2, com genitivo de coisa(s) (como no cl.), Heb.6:15 11:33; com acusativo (grego tardio), Rom.11:7 (Rec. τούτου).†"
+  },
+  {
+   "strongs": "G2014",
+   "sha256": "c8727212955da56a1a26bfaa501ca192ae40c1853440fc4ca5ca1071e31de286",
+   "gloss": "aparecer",
+   "definition": "ἐπι-φαίνω\n[na LXX por עוּר hi., etc. ;]\n1. mostrar.\n2. (= pass. no cl.) aparecer: Act.27:20; com dativo de pessoa(s), Luk.1:79; metaforicamente, Tit.3:4; com dativo, Tit.2:11 (Cremer, 567).†"
+  },
+  {
+   "strongs": "G2015",
+   "sha256": "0ce66ec8c6d4c8856f58471bc64b6b310629f77490f5bc5d99b43a7bb949ffbe",
+   "gloss": "aparecimento",
+   "definition": "ἐπιφάνεια, -ας, ἡ\n(ἐπιφανής), [na LXX: 2Ki.7:23 (יָרֵא), Est.5:1, Amo.5:22, 2Ma.2:21 2Mac 3:24 2Mac 5:4 2Mac 12:22 2Mac 14:16 2Mac 15:27, 3Ma.2:9 3Mac 5:8 3Mac 5:51,* ;] (no grego tardio e nas inscrições, frequentemente de divindades, veja MM, Exp., xiv)\nmanifestação, aparecimento: 2Th.2:8, 1Ti.6:14, 2Ti.1:10 4:1 4:8, Tit.2:13 (cf. M, Th., 148 s.).†"
+  },
+  {
+   "strongs": "G2016",
+   "sha256": "d2d198914822db2edc5b59dcc56ab577bf15d824b1ddc97b4262d13273f939c3",
+   "gloss": "glorioso",
+   "definition": "ἐπιφανής, -ές\n(ἐπιφαίνω), [na LXX (veja Thayer, veja a palavra) por יָרֵא, etc., Jdg.13:6, Jol.2:11, 31 al.; 2Ma.6:23, 3Ma.5:35, al. ;]\nfamoso, ilustre, notável: Act.2:20 (LXX) (cf. MM, Exp., xiv).†"
+  },
+  {
+   "strongs": "G2017",
+   "sha256": "7709324ea42a8a225fa184d36280e184d0d6913ab518c1a13eed59ccee0e8f20",
+   "gloss": "iluminar",
+   "definition": "ἐπι-φαύσκω\n(forma variante de ἐπιφώσκω, veja), [na LXX: Job.25:5 (אהל hi.) Job.31:26 41:18 (הָלַל hi.) * ;]\nresplandecer: figuradamente, com dativo, Eph.5:14 (sobre seel. -ψαύσει, veja ICC, Westc., AR, in l).†",
+   "note": "'seel.' copied as in the source (unclear abbreviation)."
+  },
+  {
+   "strongs": "G2018",
+   "sha256": "155fa43be2ed8b206f1534e9cb500cc59677665827149bb6f15f79a5eb6d9fe0",
+   "gloss": "infligir",
+   "definition": "ἐπι-φέρω\n[na LXX principalmente por שָׁלַח ;]\n1. trazer sobre ou contra: κρίσιν, Ju 9.\n2. impor, infligir: Rom.3:5.†"
+  },
+  {
+   "strongs": "G2019",
+   "sha256": "966f6d51c294a23398d0f0605800989fe259d470433ec029bb14553871112424",
+   "gloss": "gritar",
+   "definition": "ἐπι-φωνέω, -ῶ\n[na LXX: I Est.9:47 AR, 2Ma.1:23, 3Ma.7:13 * ;]\nbradar, gritar: com acusativo de coisa(s), Act.21:34; com dativo de pessoa(s), Act.22:24; antes de λέγοντες, Luk.23:21; prat. rect., Act.12:22.†",
+   "note": "'prat. rect.' (a misprinted 'orat. rect.', direct speech) copied as in the source."
+  },
+  {
+   "strongs": "G2020",
+   "sha256": "89c53071f78c98ce8ad943cb517cce0500f65cc40ba89f6924bb284b589a0a1c",
+   "gloss": "amanhecer",
+   "definition": "ἐπι-φώσκω\n[na LXX por הָלַל hi., Job.41:18 A (Βא, ἐπιφαύσκ-) * ;]\n1. fazer brilhar.\n2. amanhecer (cf. MM, Exp., xiv): Luk.23:54; antes de εἰς, Mat_28:1.†"
+  },
+  {
+   "strongs": "G2021",
+   "sha256": "dee987a2c8319b4da6161fc9b00330bdc1a5eced4985a9482f5a7d2c5c15c240",
+   "gloss": "tentar",
+   "definition": "ἐπιχειρέω, -ῶ\n(χεῖρ), [na LXX por חָשַׁב, Exo.9:25; גָּמַל, 2Ch.20:11, al. ;]\n1. pôr mão a.\n2. empreender, tentar: com inf., Luk.1:1, Act.9:29 19:13.†",
+   "note": "Source 'to pat one's hand to' is a misprinted 'put': rendered 'pôr mão a'."
+  },
+  {
+   "strongs": "G2022",
+   "sha256": "223e6dc120ccf61b7d1f57d939787ea109b7734e83cbb8544038d0d6087a1285",
+   "gloss": "derramar sobre",
+   "definition": "ἐπι-χέω\n[na LXX principalmente por יָצַק. Gen.28:18, al. ;]\nderramar sobre: Luk.10:34.†"
+  },
+  {
+   "strongs": "G2023",
+   "sha256": "9f93e00249130c69f506b0b1244d69eb91e44e28d786dda99f2a5d4bafc13733",
+   "gloss": "suprir",
+   "definition": "ἐπι-χορηγέω, -ῶ\n[na LXX: Sir.25:22, 2Ma.4:9 A * ;]\nsuprir, prover: com acusativo de coisa(s), 2Pe.1:5; id. com dativo de pessoa(s), 2Co.9:10, Gal.3:5; pass., Col.2:19, 2Pe.1:11 (cf. χορηγέω, e veja MM, Exp., xiv).†"
+  },
+  {
+   "strongs": "G2024",
+   "sha256": "34bc6622d15c2b8e2eaa95a89f5c2b49d4e0d87c1d41be6476b2391662ddbee2",
+   "gloss": "suprimento",
+   "definition": "ἐπι-χορηγία, -ας, ἡ\n(ἐπιχορηγέω),\nsuprimento: Eph.4:16, Php.1:19.†"
+  },
+  {
+   "strongs": "G2025",
+   "sha256": "41d85a54da8e7ddb6313eeb69754288f749a20872e583f1690f9058827e4ce85",
+   "gloss": "untar",
+   "definition": "ἐπι-χρίω\n[em Sm.: Eze.13:10 22:28 * ;]\nespalhar sobre, untar: com acusativo, Jhn.9:11; id. antes de hi-I, com acusativo, Jhn.9:6 (cf. MM, Exp., xiv).†",
+   "note": "'hi-I' (a garbled Greek ἐπί) copied as in the source."
+  },
+  {
+   "strongs": "G2026",
+   "sha256": "a5f5ddd472d88d6182a168ed17678643c84456b44aab60f39920581f0aa3af9b",
+   "gloss": "edificar sobre",
+   "definition": "ἐπ-οικοδομέω, -ῶ\nno NT, sempre metaforicamente, da vida espiritual considerada como um edifício (Cremer, 449);\n1. edificar sobre: 1Co.3:10 3:12 3:14; pass., Eph.2:20.\n2. edificar: Col.2:7, 1Pe.2:5 (T, οἰκοδ- WH, Rec.), Ju 20.†"
+  },
+  {
+   "strongs": "G2027",
+   "sha256": "89a72c3fd39550700b51835bdf1e3b2dc0590b3c9cf8cbbefd655c5e2a365400",
+   "gloss": "encalhar",
+   "definition": "ἐπι-κέλλω\nde um navio, encalhar: com acusativo, Act.27:41.†"
+  },
+  {
+   "strongs": "G2028",
+   "sha256": "283ae83db13f0b50c24dec9547c1ecb967fb781be9b72fac9357ae2a8972dfb6",
+   "gloss": "denominar",
+   "definition": "ἐπ-ονομάζω\n[na LXX principalmente por קָרָא ;]\ndenominar, chamar por um nome, dar sobrenome: pass., Rom.2:17.†"
+  },
+  {
+   "strongs": "G2029",
+   "sha256": "966743e5b156b1a9b9b451e7ade70ef5f79bab777939ceb99598c1e4d370ef9f",
+   "gloss": "observar",
+   "definition": "ἐπ-οπτεύω\n[em Sm.: Psa.10:14 33:13 * ;]\nvigiar (em Hom., como supervisor; cf Ps, ll. com), olhar para: 1Pe.2:12 3:2.†"
+  },
+  {
+   "strongs": "G2030",
+   "sha256": "251c87eaf115b5210dce74f0e1abe3fe685702a33341c2f932dff1b8ca04acca",
+   "gloss": "testemunha ocular",
+   "definition": "ἐπόπτης, -ου, ὁ\n[na LXX (de Deus): Est.5:1, 2Ma.3:39 2Mac 7:35, 3Ma.2:21 * ;]\n1. supervisor (LXX, ll. com).\n2. espectador: 2Pe.1:16 (sobre ἐ. aplicado a Deus, veja paralelos nas inscrições, MM, Exp., xiv; sobre o uso deste termo nos mistérios, veja Mayor sobre 2Pe, l. com; Thayer, veja a palavra).†"
+  },
+  {
+   "strongs": "G2031",
+   "sha256": "1cd6cf4db03c1a4b75d441dd52c9649c31f68cb06e0acd3bbd096ada8c0f3a52",
+   "gloss": "palavra",
+   "definition": "ἔπος, -εος (-ους), τό\n[na LXX: Zec.7:3, Sir.44:5 * ;]\npalavra: ὡς ἔ. εἰπεῖν (cl.), por assim dizer: Heb.7:9.†\nSYN.: λόγος, discurso racional; ῥῆμα, mera expressão articulada; ἔ., a expressão articulada de um pensamento"
+  },
+  {
+   "strongs": "G2032",
+   "sha256": "bf6b6c1722ad246ddcccceada3f6b0f704d7ef291e5dd67a8a9bb38c216b1648",
+   "gloss": "celestial",
+   "definition": "ἐπουράνιος, -ον\n(οὐρανός), [na LXX: Psa.68:14 (שַׁדַּי), DA TH Dan.4:23 A (שָׁמַיִם) 2Ma.3:39, 3Ma.6:28 3Mac 7:6, 4Ma.4:11 AR, 4Ma.11:3 א* ;]\nno céu ou do céu, celestial (em Hom., dos deuses): οἱ ἐ., em oposição a ἐπίγειοι e καταχθόνιοι, Php.2:10; a χοϊκός, 1Co.15:48-49; σώματα (veja Lft., Col., 376), 1Co.15:40; βασιλεία, 2Ti.4:18; παπρίς, Heb.11:16; Ἱερουσαλήμ, Heb.12:22; κλῆσις (cf. Lft. sobre Php.3:14), Heb.3:1; τὰ ἐ., Heb.8:5 9:23; em oposição a ἐπίγειος, Jhn.3:12; id., das regiões celestiais, Eph.1:3, 20 2:6 3:10 6:12; ἡ δωρεὰ ἡ ἐ., Heb.6:4 (Cremer, 468).†"
+  },
+  {
+   "strongs": "G2033",
+   "sha256": "ac2cc9078f513e9c8492480f1d16cdd2febef99bdc27a7ddf0f285366d0b0ada",
+   "gloss": "sete",
+   "definition": "ἐπτά, οἱ, αἱ, τά\nindecl.,\nsete: Mat.12:45 18:22 (cf. ἑβδομηκοντάκις), Mrk.8:5, al.; οἱ ἐ, Act.21:8"
+  },
+  {
+   "strongs": "G2034",
+   "sha256": "3f40f106323ae4bdec024fd19cfdb2ce5c47acf965cb99d41eb7685671daf8de",
+   "gloss": "sete vezes",
+   "definition": "ἐπτάκις\nadv.,\nsete vezes: Mat.18:21-22, Luk.17:4.†"
+  },
+  {
+   "strongs": "G2035",
+   "sha256": "2f6ad1b027cecba62eb5a27c84ecdf772d9317e38390d1dac05199ed5b0a3e2c",
+   "gloss": "sete mil",
+   "definition": "ἐπτακισχίλιοι, -αι, -α\nsete mil: Rom.11:4.†"
+  },
+  {
+   "strongs": "G2036",
+   "sha256": "df1b443c5927f740764299e4baa0eeaab2fae5b122b35210b1df8bee033a4c69",
+   "gloss": "dizer",
+   "definition": "εἶπον, 2 aoristo do presente obsoleto ἔπω (cf. Veitch), usado como aoristo de λέγω, veja"
+  },
+  {
+   "strongs": "G2037",
+   "sha256": "811d24fed503c53d811758ecfdcceb43a645d15b61bf723e7f83c75c8e3c96ca",
+   "gloss": "Erasto",
+   "definition": "Ἐραστος, -ου, ὁ\nErasto;\n1. companheiro de S. Paulo, Act.19:22, e prob. 2Ti.4:20.\n2. O tesoureiro de Corinto, Rom.16:23.†"
+  },
+  {
+   "strongs": "G2038",
+   "sha256": "202cf6bc9eb1fd8298f0ca184f4f54306e3b23b2bcaea4f264867075585b2928",
+   "gloss": "trabalhar",
+   "definition": "ἐργάζομαι\n(ἔργον), [na LXX por עָבַד, פָּעַל, עָשָׂה, etc. ;]\n1. intr.,\n(a) trabalhar, labutar: Mat.21:28, Luk.13:14, Jhn.5:17 9:4 b, Act.18:3, 1Co.9:6, 2Th.3:10-12; τ. χερσίν, 1Co.4:12, 1Th.4:11; νυκτὸς κ. ἡαέρας, 1Th.2:9, 2Th.3:8; do trabalho remunerado, Mat.21:28; por recompensa, Rom.4:4-5;\n(b) trabalhar num ofício ou negócio, negociar: antes de Iv (Dem.), Mat.25:16.\n2. Trans.,\n(a) operar, realizar, fazer, produzir, executar: com acusativo, 2Co.7:10, Col.3:23, 2Th.3:11, Jas.1:20, 2Jn.8, antes de εἰς, III Jn 5; ἔργον, Act.13:41 (LXX); id. antes de εἰς, Mat.26:10; ἐν, Mrk.14:6; ἔργα, Jhn.3:21; τὰ ἔ. τ. θεοῦ, Jhn.6:28 9:4; τὸ ἔ. κυρίου, 1Co.16:10; τ. ἀγαθόν, Rom.2:10, Eph.4:28 (veja AR, Eph.) 190); id. antes de πρός, Gal.6:10; κακόν, antes de dativo de pessoa(s) (mais frequentemente duplo acusativo, no cl.), Rom.13:10; δικαιοσύνην, Act.10:35, Heb.11:33; ἀνομίαν, Mat.7:23; ἁμαρτίαν, Jas.2:9; σημεῖον, Jhn.6:30; τ. ἱερά, 1Co.9:13; τ. θάλασσαν (trabalhar o mar, isto é, ganhar a vida com ele), Rev.18:17;\n(b) trabalhar por, ganhar trabalhando (cl.): Jhn.6:27 (cf. κατ-, περι-, προσ-εργάζομαι; Cremer, 258; sobre a força do aoristo deste verbo, veja M, Pr., 116).†",
+   "note": "'Iv' (a garbled Greek ἐν) copied as in the source. 'dupl. accusative' here is a double accusative: written 'duplo acusativo'."
+  },
+  {
+   "strongs": "G2039",
+   "sha256": "93f33cd8e3caafa4c335beef58a9c2df37fc2cfee2f75064510434e0346edcd2",
+   "gloss": "trabalho",
+   "definition": "ἐργασία, -ας, ἡ\n(ἔργον), [na LXX por מְלָאכָה, עֲבֹדָה, etc. ;]\n1. trabalho, negócio: Act.16:16, 19 19:24-25; δὸς ἐ. (lat. da operam), Luk.12:58.\n2. ação, prática: Eph.4:19.†"
+  },
+  {
+   "strongs": "G2040",
+   "sha256": "90439e5f4bd9dc488e3b16b82532e668e3108cfd8b99801a5571c2c896a1d308",
+   "gloss": "trabalhador",
+   "definition": "ἐργάτης, -ου, ὁ\n(ἐργάζομαι, veja), [na LXX: Wis.17:17, Sir.19:1 40:18, 1Ma.3:6 * ;]\n1. prop., trabalhador do campo, lavrador: Mat.9:37-38 20:1-2, 8, Luk.10:2, Jas.5:4 (cf. Wis, l. com).\n2. Em geral, operário, trabalhador: Mat.10:10, Luk.10:7, Act.19:25 (em oposição a τεχνίτης), 1Ti.5:18; de mestres cristãos, 2Co.11:13, Php.3:2, 2Ti.2:15.\n3. obreiro, praticante: τ. ἀδικίας, Luk.13:27 (cf. 1Mac, l. com).†"
+  },
+  {
+   "strongs": "G2041",
+   "sha256": "9d2e9c56dc2dba04dffe673182cd76a65bdec354fc259b071efa8ad9a522d839",
+   "gloss": "obra",
+   "definition": "ἔργον, -ου, τό (originalmente Ϝέργον, obra), [muito frequentemente na LXX, principalmente por מַשֶׂה, מְלָאכָה, também por עֲבֹדָה, פֹּעַל, etc. ;]\n1. trabalho, tarefa, ocupação: Mrk.13:34, Jhn.4:34 17:4, Act.13:2, Php.1:22 2:30, 1Th.5:13, al.; de uma empresa ou empreendimento (Deu.15:10, Wis.2:12), Act.5:38.\n2. feito, ação: Tit.1:16, Jas.1:25 . distinguindo-se de λόγος, Luk.24:19, Rom.15:18, 2Th.2:17, 1Jn.3:18; ἐν λόγοις κ. ἔ., Act.7:22; de atos de Deus, Jhn.9:3, Act.13:41\" (LXX), Heb.4:10, Rev.15:3; de Cristo, Mat.11:2; esp. em Jo, p. ex. 5:20, 36 7:3 10:38 14:11, 12 15:24; em sentido ético, das ações humanas (AR, Eph., 190), más ou boas, Mat.23:3, Luk.11:48, Jhn.3:20, 21 Jas.2:14 ss. 3:13, Rev.2:5 3:8; τὸ ἔ., coletivamente, Gal.6:4, Jas.1:4, 1Pe.1:17, Rev.22:12; τὸ ἔ. τ. νόμου, Rom.2:15; ἔ. ἀγαθόν, Rom.2:7, Col.1:10, 2Th.2:17, Tit.1:16, al.; καλόν, Mat.26:10, Mrk.14:6; pl. (como frequentemente no cl.), Mat.5:16, 1Ti.5:10, 25 Heb.10:24; ἔ. πίστεως, 1Th.1:3, 2Th.1:11; ἔ. πονηρά, Col.1:21, 2Jo.11; νέκρα, Heb.6:1 9:14; ἄκαρπα, Eph.5:11; ἔ. ἀσεβείας, Ju 15; τ. σκότους, Rom.13:12, Eph.5:11; ἔ. νόμου, Rom.3:20, 28 Gal.2:16 3:2, 5 10.\n3. aquilo que é feito ou fabricado, obra: 1Co.3:13-15; τ. χειρῶν, Act.7:41; das obras de Deus, Heb.1:10; γῆ κ. τὰ ἐν αὐτῇ ἔ., 2Pe.3:10; τὸ ἔ. τ. θεοῦ, Rom.14:20.",
+   "note": "Source 'listing, from' is a garbled 'as distinguished from': rendered 'distinguindo-se de'. Abbott-Smith's 'Jo' (John) is also the Portuguese abbreviation."
+  },
+  {
+   "strongs": "G2042",
+   "sha256": "89ec20eea247586fd69a0369a49b699c6d575bfb374a671ada1b4001ffc86b38",
+   "gloss": "provocar/irritar",
+   "definition": "ἐρεθίζω\n[na LXX: Dan LXX 11:10, 25 (גָּרָה hitp.), 1Ma.15:40, 2Ma.14:17, etc. ;]\n1. instigar, provocar (como no cl.): Col.3:21.\n2. Em bom sentido (cf. ἐρεθισμός, excitação, no MGr.), estimular, incitar: 2Co.9:2.†"
+  },
+  {
+   "strongs": "G2043",
+   "sha256": "d0cca72e3d5ae9b7d89226e9df6daa8e3c2f0284870b1726cdb4fb88919daa94",
+   "gloss": "imobilizar",
+   "definition": "ἐρείδω\n(principalmente nos poetas e na prosa tardia em lugar de ἐρυγγάνω), [na LXX por תָּמַךְ (Pro.4:4 5:5 11:16, al.), etc. ;]\nescorar, fixar firmemente: at., como méd., ἐρείσασα, de um navio que encalha (RV, struck), Act.27:41.†",
+   "note": "'struck' is the RV's English rendering, kept in English."
+  },
+  {
+   "strongs": "G2044",
+   "sha256": "373f4a84011d47ad84529201a24d8c3b2aafa2a5250b2c9a07b3402381197b1f",
+   "gloss": "proferir/proclamar",
+   "definition": "ἐρεύγομαι\n[na LXX principalmente por שָׁאַג, Hos.11:10, Amo.3:4, 8 al.; também por נָבַע, Psa.19:2, etc. ;]\n1. cuspir ou vomitar.\n2. Prop., de bois (Hom.), mugir, rugir; daí, como na LXX, falar em voz alta, proferir: Mat.13:35 (LXX). (Para outros exemplos do sentido atenuado de palavras no grego tardio, cf. σκύλλω, τρώγω, χορτάζω.) †"
+  },
+  {
+   "strongs": "G20447",
+   "sha256": "720b5e487b07966b5a28f3d9fd8316d53b619fe33b8c5635203143d54253b46b",
+   "gloss": "paragem",
+   "definition": "ἐπί-στασις, -εως, ἡ\n(ἐφίστημι), [na LXX: 2Ma.6:3 * ;]\n1. parada, alto (como de soldados): ὄχλου, juntando uma multidão (veja Rack-ham, Acts, l. com): Act.24:12 (WH, Rec. ἐπισύστασις).\n2. superintendência, atenção (mas veja Thayer, veja a palavra; Field, Notas, 185 s.): 2Co.11:28 (WH, Rec. ut supr.).†",
+   "note": "'Acts' is part of Rackham's title, kept."
+  },
+  {
+   "strongs": "G2045",
+   "sha256": "02faddc74086b7a675aa3d1d5996e0f0ba6e90f4b6a42d5a26c1e5eeace54fb9",
+   "gloss": "procurar/examinar",
+   "definition": "ἐραυνάω, -ῶ forma tardia de ἐρευνάω (Rec., ll. com; cf. Bl., § 6, 1; M, Pr., 46),\n[na LXX, ἐρευν- (exc. 1Ch.19:3 A), por חָפַשׂ pi., חָקַר, etc. ;]\ninvestigar, examinar: Jhn.7:52; com acusativo de coisa(s), Jhn.5:39, Rom.8:27, 1Co.2:10, Rev.2:23; antes de orat. obliq., 1Pe.1:11.†\nSYN.: veja: ἐξετάζω"
+  },
+  {
+   "strongs": "G2046",
+   "sha256": "9768270ec8529354f7da23882c31f537617126c996a5f57a413db096b322faa7",
+   "gloss": "dizer",
+   "definition": "λέγω,\n[na LXX muito freq., principalmente por אמר; λέγει por נְאֻם, Gen.22:16, al. ;]\n1. em Hom., escolher, reunir, contar, enumerar.\n2. Em Hdt. e no ático, dizer, falar, afirmar, declarar: absol., Act.13:15, 24:10; antes de orat. dir., Mat.9:34, Mrk.3:11, Jhn.1:29, al.; antes de ὅτι recit., Mrk.3:21, Luk.1:24, Jhn.6:14, al.; acusativo e inf., Luk.11:18, Jhn.12:29, al.; depois de outro verbo de dizer, προσφωνεῖν κ. λέγειν, Mat.11:17, al.; ἀπεκρίθη (ἐλάλησεν) λέγων (καὶ λέγει; Dalman, Words, 24 ss.), Mat.25:9, Mrk.3:33, 7:28, Luk.24:6, 7, al.; de pensamento não expresso, λ. ἐν ἑαυτῷ, Mat.3:9, Luk.3:8, al.; da escrita, 2Co.8:8, Php.4:11, al.; λέγει ἡ γραφή, Rom.4:3, Jas.2:23, al.; com acusativo de coisa(s), Luk.8:8, 9:33, Jhn.5:34, al.; σὺ λέγεις (expressão evasiva; Swete, Mk., 359, 369 s.), Mat.27:11, Mrk.15:2, Luk.23:3, Jhn.18:37; com dativo de pessoa(s), antes de orat. dir., Mat.8:20, Mrk.2:17, al. mult.; id. antes de ὅτι, Mat.3:9, al.; com prep., πρός, μετά, περί, etc., Mrk.4:41, Jhn.11:56, Heb.9:5, al.; querer dizer (cl.), Mrk.14:71, Jhn.6:71, 1Co.10:29, al.; chamar, nomear, Mrk.10:18; pass., Mat.9:9, Mrk.15:7, al (cf. ἀντι-, δια- (-μαι), προ-, συλ-λέγω).\nSYN.: λαλέω, que se refere ao ato de falar, como λέγω ao sentido do que é dito, à sua correspondência com o pensamento (Tr., Syn., Ixxvi; Thayer, veja a palavra λαλέω).",
+   "note": "'Words' is Dalman's title, kept. 'Ixxvi' (for lxxvi) copied as in the source."
+  },
+  {
+   "strongs": "G2047",
+   "sha256": "05459e30ede58a0191df16c0617b59609d0e65d8c8ce6bf192f5dcd94ce7b2ff",
+   "gloss": "deserto",
+   "definition": "ἐρημία, -ας, ἡ\n(ἔρημος), [na LXX: Isa.60:20, Eze.35:4 (חָרַב, חׇרְבָּה), Eze.35:9 (שְׁמָמָה), Wis.17:17, Sir.47:17, Bar.4:33, 4Ma.18:8 * ;]\nlugar solitário, ermo: Mat.15:33, Mrk.8:4, 2Co.11:26, Heb.11:38.†"
+  },
+  {
+   "strongs": "G2048",
+   "sha256": "852a091b64fc94117e463c0db99cc42223591dcf79c095abbd30333f13a58555",
+   "gloss": "deserto",
+   "definition": "ἔρημος\n(no grego mais antigo ἔρῆμος), -ον [na LXX principalmente por מִדְבָּר ;]\nsolitário, ermo, desolado, deserto:\n(a) de pessoas, γυνή, Gal.4:27 (LXX);\n(b) de lugares, Mat.14:13, 15 23:38 (WH, om.), Mrk.1:36 6:32, Luk.4:42 9:12, al.; como subst., ἡ ἔ. (sc. χώρα; como em Hdt., ii, 32, al.), o deserto, Mat.3:1, 3, Mrk.1:3-4, Jhn.3:14, al.; pl., αἱ ἔ., lugares desertos, Luk.1:80 5:16 8:29"
+  },
+  {
+   "strongs": "G2049",
+   "sha256": "36a4bb81ecebf420d52c786014d151904f0a1d64b1cc35ec2326974b91b81ff6",
+   "gloss": "devastar",
+   "definition": "ἐρημόω, -ῶ\n(ἔρημος), [na LXX por חָרַב hi., שָׁמֵם ni., etc. ;]\ndesolar, devastar: Mat.12:25, Luk.11:17, Rev.17:16 18:16, 19.†"
+  },
+  {
+   "strongs": "G2050",
+   "sha256": "3d7125648f1983cc82c823d726d60c93ea699ca10f36cc71bd7a873075d85cb4",
+   "gloss": "devastação",
+   "definition": "ἐρήμωσις, -εως, ἡ\n(ἐρημόω), [na LXX por שָׁמֵם, שָׁמֵם, Lev.26:34-35, Psa.73:10, Dan.9:27 11:31 12:11, al.; חׇרְבָּה, Jer.7:34 22:5, al. ;]\ndesolação, devastação: Luk.21:20; βδέλυγμα ἐρημώσεως (Da, ll. com, 1Ma.1:54), Mat.24:15\" (LXX), Mrk.13:14.†"
+  },
+  {
+   "strongs": "G2051",
+   "sha256": "1c8944abd6f29531fe2cf9efef2135ffa06c0b6d18e461ea2ea620300ad3bd50",
+   "gloss": "contender",
+   "definition": "ἐρίζω\n(ἔρις), [na LXX por מָרָה, etc. ;]\naltercar, contender: Mat.12:19 (LXX, κεκράζεται).†"
+  },
+  {
+   "strongs": "G2052",
+   "sha256": "dbf0b4bba372b11ce70f277299d27bfbaf2aec98b949c957a930d7bae8453b95",
+   "gloss": "rivalidade",
+   "definition": "ἐριθία\n(T, cl., -εία), -ας, ἡ, [em Sm.: Eze.23:11 * ;] (sobre a origem e a história da palavra, veja Hort, Ja., 81 ss.; Ellic. sobre Gal.5:20; Cremer, 262)\nambição, egoísmo, rivalidade: Jas.3:14, 16; κατ᾽ ἐριθίαν, Php.2:3; οἱ ἐξ ἐ., Rom.2:8, Php.1:17; pl. (Bl., § 32, 6; WM, 220; Swete, Mk., 153), 2Co.12:20, Gal.5:20.†",
+   "note": "Source '81 fly.' is a misprinted '81 ff.': rendered '81 ss.'."
+  },
+  {
+   "strongs": "G2053",
+   "sha256": "b9bb720dd16afcb34141e9f22dfb669bc4d3195913e8867e5833d3e8ab8180b2",
+   "gloss": "lã",
+   "definition": "ἔριον, -ου, τό\n[na LXX por צֶמֶר, Lev.13:47, Isa.1:18, al. ;]\nlã: Heb.9:19, Rev.1:14.†"
+  },
+  {
+   "strongs": "G2054",
+   "sha256": "40566bad164e4532e8ee66b0fdd5cd0cbd2fc9b1ed631a5dbe72b2595f87b410",
+   "gloss": "contenda",
+   "definition": "ἔρις, -ιδος acusativo, ἔριν (sobre a declinação, veja B1., § 8, 3; WH, App., 157), ἡ,\n[na LXX: Psa.139:20, Sir.28:11 40:5, 9 * ;]\ncontenda, altercação, discórdia: Rom.1:29 13:13, 1Co.3:3, 2Co.12:20, Gal.5:20, Php.1:15, 1Ti.6:4, Tit.3:9; pl. (veja: ἐριθία), Rom.13:13, WH, mg., 1Co.1:11, Ga, l. com, WH, mg.†",
+   "note": "'B1.' (for Bl.) copied as in the source."
+  },
+  {
+   "strongs": "G2055",
+   "sha256": "ee8279bc249c987e7c28fa64f29ac978791ff159b657ea4e4cab39cafc8c4ac7",
+   "gloss": "cabrito",
+   "definition": "ἐρίφιον, -ου, τό\n(dim. de ἔριφος, veja) [na LXX: Tob.2:13 * ;]\nMat.25:33, Luk.15:29 (ἔριφον, WH, txt.).†"
+  },
+  {
+   "strongs": "G2056",
+   "sha256": "acc1203b8d7c226a0d98ad500eb891e69aadefe4f1283c217f17ccd866ad20cc",
+   "gloss": "cabrito",
+   "definition": "ἔριφος, -ου\n[na LXX principalmente por גְּדִי ;]\ncabrito: Mat.25:32, Luk.15:29, WH, txt.†"
+  },
+  {
+   "strongs": "G2057",
+   "sha256": "d036f19b310da64623ea1a34a0d955087582507069b77155e145a6402d5aec72",
+   "gloss": "Hermas",
+   "definition": "Ἑρμᾶς, -ᾶ, acusativo, -ᾶν (forma dórica de Ἑρμῆς),\nHermas, cristão: Rom.16:14.†",
+   "note": "'Hermas' is spelled the same in Portuguese (Almeida)."
+  },
+  {
+   "strongs": "G2058",
+   "sha256": "24e21b6ae783578094bbc559e4d59282ca4dd394421a241878a9192c2603307f",
+   "gloss": "interpretação",
+   "definition": "ἑρμηνεία, veja: ἑρμηνία.\nἑρμηνία (T, cl., -εία), -ας, ἡ,\n(ἑρμηνεύω), [na LXX (-εία), Sir, prol. 14 Sir.47:17, da LXX Sir.5:1 * ;]\ninterpretação: 1Co.12:10 14:26.†"
+  },
+  {
+   "strongs": "G2059",
+   "sha256": "5637f425e5bb068c6bf17b0a3ad026c2c27a1cc8d35ce53ce3d8cc8417e8a7af",
+   "gloss": "interpretar",
+   "definition": "ἑρμηνεύω\n[na LXX: Est.4:7 (תִּרְגַּם), Est.10:3 Job.42:17β* ;]\n1. explicar.\n2. interpretar, traduzir: Luk.24:27 (WH, mg.), Jhn.1:39, 43 9:7, Heb.7:2.†"
+  },
+  {
+   "strongs": "G2060G",
+   "sha256": "5cd26cd5b31314eae1ffe64de6193770dc0de414631fa8fd61bd1b0fc6343e58",
+   "gloss": "Hermes",
+   "definition": "Ἑρμῆς, -οῦ\nacusativo, Ἑρμῆν, ὁ,\nHermes;\n(a) o deus grego (lat. Mercurius): Act.14:12;\n(b) cristão: Rom.16:14.† (veja)",
+   "note": "'Hermes' is spelled the same in Portuguese (Almeida)."
+  },
+  {
+   "strongs": "G2060H",
+   "sha256": "5cd26cd5b31314eae1ffe64de6193770dc0de414631fa8fd61bd1b0fc6343e58",
+   "gloss": "Hermes",
+   "definition": "Ἑρμῆς, -οῦ\nacusativo, Ἑρμῆν, ὁ,\nHermes;\n(a) o deus grego (lat. Mercurius): Act.14:12;\n(b) cristão: Rom.16:14.† (veja)",
+   "note": "'Hermes' is spelled the same in Portuguese (Almeida)."
+  },
+  {
+   "strongs": "G2061",
+   "sha256": "a890300f681d9342ef088bc397a391c7c300357d9f4cc4dfae57aebe94ae4406",
+   "gloss": "Hermógenes",
+   "definition": "Ἑρμογένης, -ους, ὁ\nHermógenes, cristão: 2Ti.1:15.†"
+  },
+  {
+   "strongs": "G2062",
+   "sha256": "28e3c65bb6083fcd4e8ea6d9825ac3cb7a6cb3cced050b725027399cad106807",
+   "gloss": "réptil",
+   "definition": "ἑρπετόν, -οῦ, τό\n(ἕρπω, rastejar), [na LXX principalmente por רֶמֶשׂ, שֶׁרֶץ ;]\nanimal que rasteja, réptil: Act.10:12 11:6, Rom.1:23, Jas.3:7.†"
+  },
+  {
+   "strongs": "G2063",
+   "sha256": "578fa8f004602982d85a1dcf30d6eb641677b93a5f5bd8753a24dc1b96d017eb",
+   "gloss": "Vermelho (mar)",
+   "definition": "ἐρυθρός, -ά, -όν\n[na LXX por אֱדֹם, Isa.63:2; ἐ. θάλασσα por סוּף -יָם Exo.10:19, al. ;]\nvermelho: ἡ ἐ. θάλασσα, o mar Vermelho, Act.7:36, Heb.11:29.†"
+  },
+  {
+   "strongs": "G2064",
+   "sha256": "b926e8f7c5fcdce746751c541ffbc87d76d1fb839b16b8b8e74de31422a625e1",
+   "gloss": "vir/ir",
+   "definition": "ἔρχομαι,\n[na LXX muito frequentemente por בּוֹא, também por הלךְ ni., אתה, etc., 34 palavras ao todo ;]\n1. vir;\n(a) de pessoas, chegando ou voltando de outro lugar: Mat.8:9, Mrk.6:31, Luk.7:8, Jhn.4:27, Rom.9:9, al.; antes de ἀπό, Mrk.5:35 7:1, Jhn.3:2, al.; ἐκ, Luk.5:17, Jhn.3:31, al.; εἰς, Mrk.1:29, al.; διά antes de εἰς, Mrk.7:31; ἐν (Cremer, 263 s., mas veja: ἐν), Rom.15:29, 1Co.4:21; ἐπί, com acusativo, Mrk.6:53 11:13, Jhn.19:33, al.; κατά, com acusativo, Luk.10:33 Act.16:7; παρά, com genitivo, Luk.8:49; com acusativo, Mat.15:29, Mrk.9:14, al.; com dativo comm., incomm. (M, Pr., 75, 245), Mat.21:5, Rev.2:5, 16; com advérbios: πόθεν, Jhn.3:8, al.; ἄνωθεν, Jhn.3:31; ὄπισθεν, Mrk.5:27; ὧδε, Mat.8:29; ἐκεῖ, Jhn.18:3; ποῦ, Heb.11:8; antes de ἕως, Luk.4:42; ἄχρι, Act.11:5; com o propósito expresso por inf., Mrk.5:14, Luk.1:59, al.; por part. fut., Mat.27:49; ἵνα, Jhn.12:9; εἰς τοῦτο, ἵνα, Act.9:21; διά, com acusativo, Jhn.12:9; antes de verbos de ação, ἔρχεται καί, ἦλθε καί, etc.: Mrk.2:18, Jhn.6:15, al.; ἔρχου καὶ ἴδε, Jhn.1:47 11:34; ἐλθών (redundante; Dalman, Words, 20 s.), Mat.2:8 8:7, Mrk.7:25, Act.16:39, al.; de modo semelhante ἐρχόμενος, Luk.15:25, al.; do aparecimento em público: esp. do Messias (ὁ ἐρχόμενος, Mat.11:3, al.; veja Cremer, 264), Luk.3:16, Jhn.4:25; daí, de Jesus, Mat.11:19, Luk.7:34, Jhn.5:43, al.; da segunda vinda, Mat.10:23, Act.1:11, 1Co.4:5, 1Th.5:2, al.;\n(b) de tempo: ἔρξονται ἡμέραι (presente pelo fut.: Bl., §56, 8), Luk.23:29, Heb.8:8\" (LXX) ; fut., Mat.9:15, Mrk.2:20, al.; ἔρξεται ὥρα, ὅτε, Jhn.4:21, 23. al.; ἦλθεν, ἐλήλυθε ἡ ὥρα, Jhn.13:1 16:32 17:1; ἡ ἡμέρα τ. κυρίου, 1Th.5:2; καιροί, Act.3:19;\n(c.) de coisas e acontecimentos: κατακλυσμός, Luk.17:27; λιμός, Act.7:11; ἡ ὀργή, 1Th.1:10; ὁ λύχνος, Mrk.4:21 (veja Swete, in l.). Metafórico, τ. ἀγαθά, Rom.3:8; τ. τέλειον, 1Co.13:10; ἡ πίστις, Gal.3:23, 25; ἡ ἐντολή, Rom.7:9; com preposições: ἐκ τ. θλίψεως, Rev.7:14; ἐις τ. χεῖρον, Mrk.5:26; εἰς πειρασμόν, ib. 14:38, al.\n2. ir: ὀπίσω, com genitivo (heb. הָלַךְ אַחֲרֵי), Mat.16:24, Mrk.8:34, Luk.9:23; σύν, Jhn.21:3; ὁδόν, Luk.2:44. (Cf. ἀν-, ἐπ-αν-, ἀπ-, δι-, εἰς, ἐπ-εἰσ-, συν-εἰσ-, ἐξ-, δι-εξ-, ἐπ-, κατ-, παρ-, ἀντι-παρ-, περι-, προ-, προσ-, συν-έρχομαι.)\nSYN.: πορεύομαι, χωρέω (v, Thayer, veja a palavra ἔρξομαι).",
+   "note": "Source '(with)' is a garbled '(c)' (after (a), (b)): rendered '(c.)'. 'Words' is Dalman's title, kept."
+  },
+  {
+   "strongs": "G2065",
+   "sha256": "26fc12c41c12502efe42fd002b812fe6c57f3b328c84025e9296f3b0911b77af",
+   "gloss": "perguntar",
+   "definition": "ἐρωτάω, -ῶ\n[na LXX principalmente por שָׁאַל ;]\n1. perguntar, interrogar (cl.): absol., Luk.19:31 22:68, Jhn.8:7 com acusativo de pessoa(s), Jhn.9:21 16:19, 30 8:21; antes de λέγων, Mat.16:13, Luk.23:3, Jhn.1:19, 21 5:12 9:19 16:5; com duplo acusativo (WM, § 32, 4a), Mat.21:24, Mrk.4:10, Luk.20:3, Jhn.16:23 (M, Pr., 66„); com acusativo de pessoa(s), antes de περί, Luk.9:45, Jhn.18:19.\n2. No grego tardio (Milligan, NTD, 51; não, como Cremer, 716, Thayer, veja a palavra, um \"hebraísmo\"), = αἰτέω (veja), pedir, rogar: com acusativo de pessoa(s), Jhn.14:16; antes de imperat., Luk.14:18-19 Php.4:3; λέγων, Mat.15:23, Jhn.12:21; antes de ἵνα (M, Pr., 208), Mrk.7:26, Luk.7:36 16:27, Jhn.4:47 17:15 19:31, 38, 1Th.4:1, 2Jn.5; ὅπως, Luk.7:3 11:37, Act.23:20; com inf., Luk.5:3 8:37, Jhn.4:40, Act.3:3 10:48 23:18, 1Th.5:12; com acusativo de pessoa(s), antes de περί, Luk.4:38 Jhn.17:9, 20, 1Jn.5:16; ὑπέρ, 2Th.2:1-2; τὰ (WH, txt., om. τὰ) πρὸς εἰρήνην, Luk.14:32 (cf. δι-, ἐπ-ερωτάω)\nSYN.: veja: αἰτέω",
+   "note": "'dupl. accusative' here is a double accusative: written 'duplo acusativo'."
+  },
+  {
+   "strongs": "G2066",
+   "sha256": "95939a74cf13e7f45d467a31fbef2be9892bd8259847fdea206e52bfb8b25bcc",
+   "gloss": "roupa",
+   "definition": "ἐσθής, -ῆτος, ἡ\n(ἕννυμι, vestir; daí, ἐσθής, Lk, ll. com, Elz.) [na LXX: 1Es.8:71 Est.8:73, 2Ma.8:35 2Mac 11:8 * ;]\nroupa, vestimenta: Luk.23:11 24:4, Act.10:30 12:21, Jas.2:2-3.†",
+   "note": "Source 'll with' is a misread 'll. c.': rendered 'll. com', as elsewhere."
+  },
+  {
+   "strongs": "G2067",
+   "sha256": "092779b31bcd430ffe225c2852111b20da1f5c0a4489729046cfb8d133ef9894",
+   "gloss": "roupa",
+   "definition": "ἔσθησις, -εως, ἡ\n[na LXX: pl., 2Ma.3:33, 3Ma.1:16 * ;]\nroupa: pl., Act.1:10.†"
+  },
+  {
+   "strongs": "G2068",
+   "sha256": "4b5ed3c2f4ea6d665467e62a8fbd5c952e0850a76472bd7b67a6335e6d8e6cc0",
+   "gloss": "comer",
+   "definition": "ἐσθίω, e (poét. e prosa tardia) ἔσθω,\n[na LXX principalmente por אכל ;]\ncomer;\n(a) absol.: Mat.14:20, 21 Mrk.6:31, Jhn.4:31, al.; ἐν τ. φαγεῖν (sobre esta forma de aor., veja M, Pr., 111), 1Co.11:21; διδόναι φαγεῖν, com dativo de pessoa(s), Mrk.5:43, al.; ἐ. καὶ πίνειν, Mat.6:25, 31 Luk.10:7, al.; do uso comum de comida e bebida, 1Co.9:4 11:22; de tomar alimento à mesa, Mrk.2:16, Luk.5:30, al.; em oposição ao jejum, Mat.11:18, Luk.5:33, al.; de orgias, Mat.24:49, Luk.12:45 .\n(b) com acusativo de coisa(s): Mat.6:25, Mrk.1:6, Jhn.6:31, Rom.14:2, al.; ἄρτον (heb. אָכַל לֶחֶם), Mat.15:2, Mrk.3:20, al.; τὸν ἑαυτοῦ ἄ., 2Th.3:12; ἄ. antes de παρά, genitivo de pessoa(s), 2Th.3:8; τά antes de id., Luk.10:7; τ. πάσχα, Mat.26:17, Mrk.14:12 al; τ. κυριακὸν δεῖπνον, 1Co.11:20; τ. θυσίας, 1Co.10:18; antes de ἐκ (= genitivo partitivo cl.), Jhn.6:26, 5o, 51, 1Co.11:28; ἀπό (cf. heb. אָכַל מִן), Mat.15:27, Mrk.7:28; metaforicamente, devorar, consumir: Heb.10:27, Jas.5:3, Rev.17:16 (cf. κατ-, συν-εσθίω) .",
+   "note": "'5o' (for 50) copied as in the source."
+  },
+  {
+   "strongs": "G2069",
+   "sha256": "ed6ad1d8134bf2fcdcb380c4549e3c8f7b0b53dbd45cc21018a340aa5d28e82f",
+   "gloss": "Esli",
+   "definition": "Ἐσλεί (Rec. 'Ἐσλί, veja WH, Notas, 155), ὁ,\nEsli, antepassado de Jesus: Luk.3:25.†",
+   "note": "'Esli' is spelled the same in Portuguese (Almeida)."
+  },
+  {
+   "strongs": "G2070",
+   "sha256": "098e61a692a619af938b4de714a453877e0f7f609a1741992a03ed5aee0b1ad1",
+   "gloss": "somos",
+   "definition": "εἰμί,\ncom diversos usos e significados, como o verbo inglês «to be» (ser, estar).\nI. Como verbo substantivo.\n1. De pessoas e coisas, ser, existir: Act.17:28, Jhn.1:1, 8:58, 17:5, al; ὁ ὢν καὶ ὁ ἦν (pelo part. passado), Rev.1:4, 8, 4:8, 11:17, 16:5 (veja Swete, Ap., 5; M, Pr., 228); τὰ (μὴ) ὄντα, Rom.4:17, 1Co.1:28.\n2. De tempos, acontecimentos, etc., ser, acontecer, ocorrer: Mat.24:3, Mrk.14:2, 15:42, Luk.21:23, Jhn.4:6, 23, 5:10, al.\n3. estar presente, estar num lugar, ter chegado: Mat.2:13, 15, Mrk.1:45, 5:21, 15:40, Luk.1:80, 5:29, Jhn.7:30, al.; antes de εἰς, Mrk.2:1; antes de ἐκ, (ἐξ), Mat.1:20, 21:25, Mrk.11:30, Jhn.3:31, al.\n4. Impess., ἔστι, ἦν, etc.;\n(a) há (fr. il y a), havia, etc.: Mat.16:28, Luk.16:19, Jhn.3:1, 5:2, Rom.3:10, al.; com dativo (do possuidor; Bl., §37, 3), Mat.16:22, Luk.1:7, Jhn.18.10, Rom.9:2, al.; ἔστιν ὅς, ὅστις (principalmente no pl), Mat.16:28, 19:2, Mrk.9:1, al.;\n(b) com inf., = ἔξεστιν (veja), é possível: Heb.9:5, 1Co.11:20, RV (mas veja ICC, in l.).\nII. Como cópula que une sujeito e predicado.\n1. Expressando simplesmente identidade ou equivalência: Mat.5:13, 14:15, Luk.1:18, 19, Jhn.1:1, 4:19, Rev.3:9, al. mult.\n2. Explicativo, como em parábola, figura, tipo, etc.: Mat.13:19, 1Co.9:2, 10:4, 11:25, Gal.4:24, Rev.17:15, al.; ταῦτ᾽ ἔστιν, Mat.27:46, Mrk.7:2, Rom.7:18 al.; ὅ ἐστιν, Mrk.3:17, Col.1:24, Heb.7:2, al.; afim a isso é o uso sacramental: Mat.26:26-28, Mrk.14:22, 24, Luk.22:19, 1Co.11:24 (veja ICC sobre Mk, I Co, ll. com; DB, iii, 148 s.).\n3. C. genitivo: de qualidade, etc., Mrk.5:42, Luk.3:23, 1Co.14:33, Heb.12:11, al.; partitivo, 1Ti.1:20, 2Ti.1:15; poss., Mat.5:3, 10, Mrk.12:7, Luk.4:7; de serviço ou partidarismo, Rom.8:9, 1Co.1:12, 2Co.10:7, 2Ti.2:19.\n4. C. dativo (BL, §37, 3): Act.1:8, 9:15, Rom.4:12, 1Co.1:18, 2:14, Rev.21:7, al.\n5. C. part., como perífrase do verbo simples (Bl., §62, 1, 2; M, Pr., 225 ss.);\n(a) com part. pf. (cl.): Mat.10:30, Luk.9:32, Jhn.3:24, Act.21:35, 1Co.15:19, al;\n(b) com part. pres. (esp. no impf., como no heb. e no aram.; Dalman, Words, 35 s.), Mat.7:29, Mrk.1:22, Luk.4:31, 14:1, Act.1:10, al. mult., id. por imper. (M, Pr., 180 s., 182 s.), com elipse de εἰμί, Rom.12:9, 10, Heb.13:5, al.;\n(c.) com part. aor. (cl), Luk.23:9.\n6. Seq. εἰς (cf. heb. הָיָה לְ), um uso vernác. (M, Pr., 71): Mat.19:5, Mrk.10:8, Heb.8:10, al.\n7. C. adv.: Mat.19:20, Mrk.4:26, Luk.18:11, al.\n8. Elipses;\n(a) da cópula (Bl., §30, 3): Mat.8:29, 24:32, Jhn.21:22, 23, Heb.6:4, al.;\n(b) do predicado: ἐγώ εἰμί, Mat.14:27, Mrk.6:50, al.; absol. (cf. Deu.32:39; אֲנִי הוּא), Mrk.13:6, Jhn.4:26, al. (cf. ἄπ-, ἔν-, πάρ-, συμ-πάρ-, σύν-ειμι).",
+   "note": "Abbott-Smith compares εἰμί with the English verb \"to be\": kept as «to be», with ser, estar. Source '(with) with ptcp. aor.' is a garbled '(c)' (after (a), (b)): rendered '(c.)'. 'Words' is Dalman's title, kept."
+  },
+  {
+   "strongs": "G2071",
+   "sha256": "3537afb6d1b3dda7ab3f40100e6654185f0a84a2978bc9288b529b7a248b5442",
+   "gloss": "será",
+   "definition": "εἰμί,\ncom diversos usos e significados, como o verbo inglês «to be» (ser, estar).\nI. Como verbo substantivo.\n1. De pessoas e coisas, ser, existir: Act.17:28, Jhn.1:1, 8:58, 17:5, al; ὁ ὢν καὶ ὁ ἦν (pelo part. passado), Rev.1:4, 8, 4:8, 11:17, 16:5 (veja Swete, Ap., 5; M, Pr., 228); τὰ (μὴ) ὄντα, Rom.4:17, 1Co.1:28.\n2. De tempos, acontecimentos, etc., ser, acontecer, ocorrer: Mat.24:3, Mrk.14:2, 15:42, Luk.21:23, Jhn.4:6, 23, 5:10, al.\n3. estar presente, estar num lugar, ter chegado: Mat.2:13, 15, Mrk.1:45, 5:21, 15:40, Luk.1:80, 5:29, Jhn.7:30, al.; antes de εἰς, Mrk.2:1; antes de ἐκ, (ἐξ), Mat.1:20, 21:25, Mrk.11:30, Jhn.3:31, al.\n4. Impess., ἔστι, ἦν, etc.;\n(a) há (fr. il y a), havia, etc.: Mat.16:28, Luk.16:19, Jhn.3:1, 5:2, Rom.3:10, al.; com dativo (do possuidor; Bl., §37, 3), Mat.16:22, Luk.1:7, Jhn.18.10, Rom.9:2, al.; ἔστιν ὅς, ὅστις (principalmente no pl), Mat.16:28, 19:2, Mrk.9:1, al.;\n(b) com inf., = ἔξεστιν (veja), é possível: Heb.9:5, 1Co.11:20, RV (mas veja ICC, in l.).\nII. Como cópula que une sujeito e predicado.\n1. Expressando simplesmente identidade ou equivalência: Mat.5:13, 14:15, Luk.1:18, 19, Jhn.1:1, 4:19, Rev.3:9, al. mult.\n2. Explicativo, como em parábola, figura, tipo, etc.: Mat.13:19, 1Co.9:2, 10:4, 11:25, Gal.4:24, Rev.17:15, al.; ταῦτ᾽ ἔστιν, Mat.27:46, Mrk.7:2, Rom.7:18 al.; ὅ ἐστιν, Mrk.3:17, Col.1:24, Heb.7:2, al.; afim a isso é o uso sacramental: Mat.26:26-28, Mrk.14:22, 24, Luk.22:19, 1Co.11:24 (veja ICC sobre Mk, I Co, ll. com; DB, iii, 148 s.).\n3. C. genitivo: de qualidade, etc., Mrk.5:42, Luk.3:23, 1Co.14:33, Heb.12:11, al.; partitivo, 1Ti.1:20, 2Ti.1:15; poss., Mat.5:3, 10, Mrk.12:7, Luk.4:7; de serviço ou partidarismo, Rom.8:9, 1Co.1:12, 2Co.10:7, 2Ti.2:19.\n4. C. dativo (BL, §37, 3): Act.1:8, 9:15, Rom.4:12, 1Co.1:18, 2:14, Rev.21:7, al.\n5. C. part., como perífrase do verbo simples (Bl., §62, 1, 2; M, Pr., 225 ss.);\n(a) com part. pf. (cl.): Mat.10:30, Luk.9:32, Jhn.3:24, Act.21:35, 1Co.15:19, al;\n(b) com part. pres. (esp. no impf., como no heb. e no aram.; Dalman, Words, 35 s.), Mat.7:29, Mrk.1:22, Luk.4:31, 14:1, Act.1:10, al. mult., id. por imper. (M, Pr., 180 s., 182 s.), com elipse de εἰμί, Rom.12:9, 10, Heb.13:5, al.;\n(c.) com part. aor. (cl), Luk.23:9.\n6. Seq. εἰς (cf. heb. הָיָה לְ), um uso vernác. (M, Pr., 71): Mat.19:5, Mrk.10:8, Heb.8:10, al.\n7. C. adv.: Mat.19:20, Mrk.4:26, Luk.18:11, al.\n8. Elipses;\n(a) da cópula (Bl., §30, 3): Mat.8:29, 24:32, Jhn.21:22, 23, Heb.6:4, al.;\n(b) do predicado: ἐγώ εἰμί, Mat.14:27, Mrk.6:50, al.; absol. (cf. Deu.32:39; אֲנִי הוּא), Mrk.13:6, Jhn.4:26, al. (cf. ἄπ-, ἔν-, πάρ-, συμ-πάρ-, σύν-ειμι).",
+   "note": "Abbott-Smith compares εἰμί with the English verb \"to be\": kept as «to be», with ser, estar. Source '(with) with ptcp. aor.' is a garbled '(c)' (after (a), (b)): rendered '(c.)'. 'Words' is Dalman's title, kept."
+  },
+  {
+   "strongs": "G2072",
+   "sha256": "c5623065121e3b49b631e559fa951e56168282057e021e1ad7c541a70dcef094",
+   "gloss": "espelho",
+   "definition": "ἔσ-οπτρον, -ου, ὁ\n[na LXX: Wis.7:26, Sir.12:11 * ;]\nespelho: 1Co.13:12, Jas.1:23.†"
+  },
+  {
+   "strongs": "G2073",
+   "sha256": "1ccf5c89c4fbccead12ffcc166b747e8901b23c992ab05726ca69248efd8c343",
+   "gloss": "tarde",
+   "definition": "ἑσπέρα, -ας, ἡ\n(prop. fem. de ἕσπερος), [na LXX principalmente por עָרַב ;]\n(a) (sc. ὥρα), tarde: Luk.24:29, Act.4:3 20:15 28:23;\n(b) (sc. χώρα), o ocidente.†",
+   "note": "Source 'so.' (in (b)) is a misprinted 'sc.': rendered 'sc.'."
+  },
+  {
+   "strongs": "G2074",
+   "sha256": "c2de52b30ae4fafeeed3ad20ba341184a8458cbcf9648562f339bd430a70371c",
+   "gloss": "Esrom",
+   "definition": "Ἑσρώμ\n(Ἑσρών, Lk, l. com; Rec. Ἑσρ-), ὁ (heb. חֶצְרוֹן, Gen.46:12, Num.26:21, 1Ch.25:1-31, al.), [na LXX ambas as formas, ut supr. (cf. ICC, sobre Mt, l. com; WH, § 408) ;]\nEsrom (AV), Hezron (RV), antepassado de Jesus: Mat.13:1-58, Luk.3:35.†",
+   "note": "'Esrom (AV), Hezron (RV)' are the English versions' spellings, kept; Almeida has 'Esrom' (Matthew 1:3), used for the gloss."
+  },
+  {
+   "strongs": "G2075",
+   "sha256": "5d22921cec9f2ca713b9b0554291495e72e7e41d0abc972fb7cf186395726282",
+   "gloss": "sois",
+   "definition": "εἰμί,\ncom diversos usos e significados, como o verbo inglês «to be» (ser, estar).\nI. Como verbo substantivo.\n1. De pessoas e coisas, ser, existir: Act.17:28, Jhn.1:1, 8:58, 17:5, al; ὁ ὢν καὶ ὁ ἦν (pelo part. passado), Rev.1:4, 8, 4:8, 11:17, 16:5 (veja Swete, Ap., 5; M, Pr., 228); τὰ (μὴ) ὄντα, Rom.4:17, 1Co.1:28.\n2. De tempos, acontecimentos, etc., ser, acontecer, ocorrer: Mat.24:3, Mrk.14:2, 15:42, Luk.21:23, Jhn.4:6, 23, 5:10, al.\n3. estar presente, estar num lugar, ter chegado: Mat.2:13, 15, Mrk.1:45, 5:21, 15:40, Luk.1:80, 5:29, Jhn.7:30, al.; antes de εἰς, Mrk.2:1; antes de ἐκ, (ἐξ), Mat.1:20, 21:25, Mrk.11:30, Jhn.3:31, al.\n4. Impess., ἔστι, ἦν, etc.;\n(a) há (fr. il y a), havia, etc.: Mat.16:28, Luk.16:19, Jhn.3:1, 5:2, Rom.3:10, al.; com dativo (do possuidor; Bl., §37, 3), Mat.16:22, Luk.1:7, Jhn.18.10, Rom.9:2, al.; ἔστιν ὅς, ὅστις (principalmente no pl), Mat.16:28, 19:2, Mrk.9:1, al.;\n(b) com inf., = ἔξεστιν (veja), é possível: Heb.9:5, 1Co.11:20, RV (mas veja ICC, in l.).\nII. Como cópula que une sujeito e predicado.\n1. Expressando simplesmente identidade ou equivalência: Mat.5:13, 14:15, Luk.1:18, 19, Jhn.1:1, 4:19, Rev.3:9, al. mult.\n2. Explicativo, como em parábola, figura, tipo, etc.: Mat.13:19, 1Co.9:2, 10:4, 11:25, Gal.4:24, Rev.17:15, al.; ταῦτ᾽ ἔστιν, Mat.27:46, Mrk.7:2, Rom.7:18 al.; ὅ ἐστιν, Mrk.3:17, Col.1:24, Heb.7:2, al.; afim a isso é o uso sacramental: Mat.26:26-28, Mrk.14:22, 24, Luk.22:19, 1Co.11:24 (veja ICC sobre Mk, I Co, ll. com; DB, iii, 148 s.).\n3. C. genitivo: de qualidade, etc., Mrk.5:42, Luk.3:23, 1Co.14:33, Heb.12:11, al.; partitivo, 1Ti.1:20, 2Ti.1:15; poss., Mat.5:3, 10, Mrk.12:7, Luk.4:7; de serviço ou partidarismo, Rom.8:9, 1Co.1:12, 2Co.10:7, 2Ti.2:19.\n4. C. dativo (BL, §37, 3): Act.1:8, 9:15, Rom.4:12, 1Co.1:18, 2:14, Rev.21:7, al.\n5. C. part., como perífrase do verbo simples (Bl., §62, 1, 2; M, Pr., 225 ss.);\n(a) com part. pf. (cl.): Mat.10:30, Luk.9:32, Jhn.3:24, Act.21:35, 1Co.15:19, al;\n(b) com part. pres. (esp. no impf., como no heb. e no aram.; Dalman, Words, 35 s.), Mat.7:29, Mrk.1:22, Luk.4:31, 14:1, Act.1:10, al. mult., id. por imper. (M, Pr., 180 s., 182 s.), com elipse de εἰμί, Rom.12:9, 10, Heb.13:5, al.;\n(c.) com part. aor. (cl), Luk.23:9.\n6. Seq. εἰς (cf. heb. הָיָה לְ), um uso vernác. (M, Pr., 71): Mat.19:5, Mrk.10:8, Heb.8:10, al.\n7. C. adv.: Mat.19:20, Mrk.4:26, Luk.18:11, al.\n8. Elipses;\n(a) da cópula (Bl., §30, 3): Mat.8:29, 24:32, Jhn.21:22, 23, Heb.6:4, al.;\n(b) do predicado: ἐγώ εἰμί, Mat.14:27, Mrk.6:50, al.; absol. (cf. Deu.32:39; אֲנִי הוּא), Mrk.13:6, Jhn.4:26, al. (cf. ἄπ-, ἔν-, πάρ-, συμ-πάρ-, σύν-ειμι).",
+   "note": "Abbott-Smith compares εἰμί with the English verb \"to be\": kept as «to be», with ser, estar. Source '(with) with ptcp. aor.' is a garbled '(c)' (after (a), (b)): rendered '(c.)'. 'Words' is Dalman's title, kept."
+  },
+  {
+   "strongs": "G2076",
+   "sha256": "faf6804fbd8f8fffbc1fff21419aace9525f069d13f64192c4fee107579fd7be",
+   "gloss": "é",
+   "definition": "εἰμί,\ncom diversos usos e significados, como o verbo inglês «to be» (ser, estar).\nI. Como verbo substantivo.\n1. De pessoas e coisas, ser, existir: Act.17:28, Jhn.1:1, 8:58, 17:5, al; ὁ ὢν καὶ ὁ ἦν (pelo part. passado), Rev.1:4, 8, 4:8, 11:17, 16:5 (veja Swete, Ap., 5; M, Pr., 228); τὰ (μὴ) ὄντα, Rom.4:17, 1Co.1:28.\n2. De tempos, acontecimentos, etc., ser, acontecer, ocorrer: Mat.24:3, Mrk.14:2, 15:42, Luk.21:23, Jhn.4:6, 23, 5:10, al.\n3. estar presente, estar num lugar, ter chegado: Mat.2:13, 15, Mrk.1:45, 5:21, 15:40, Luk.1:80, 5:29, Jhn.7:30, al.; antes de εἰς, Mrk.2:1; antes de ἐκ, (ἐξ), Mat.1:20, 21:25, Mrk.11:30, Jhn.3:31, al.\n4. Impess., ἔστι, ἦν, etc.;\n(a) há (fr. il y a), havia, etc.: Mat.16:28, Luk.16:19, Jhn.3:1, 5:2, Rom.3:10, al.; com dativo (do possuidor; Bl., §37, 3), Mat.16:22, Luk.1:7, Jhn.18.10, Rom.9:2, al.; ἔστιν ὅς, ὅστις (principalmente no pl), Mat.16:28, 19:2, Mrk.9:1, al.;\n(b) com inf., = ἔξεστιν (veja), é possível: Heb.9:5, 1Co.11:20, RV (mas veja ICC, in l.).\nII. Como cópula que une sujeito e predicado.\n1. Expressando simplesmente identidade ou equivalência: Mat.5:13, 14:15, Luk.1:18, 19, Jhn.1:1, 4:19, Rev.3:9, al. mult.\n2. Explicativo, como em parábola, figura, tipo, etc.: Mat.13:19, 1Co.9:2, 10:4, 11:25, Gal.4:24, Rev.17:15, al.; ταῦτ᾽ ἔστιν, Mat.27:46, Mrk.7:2, Rom.7:18 al.; ὅ ἐστιν, Mrk.3:17, Col.1:24, Heb.7:2, al.; afim a isso é o uso sacramental: Mat.26:26-28, Mrk.14:22, 24, Luk.22:19, 1Co.11:24 (veja ICC sobre Mk, I Co, ll. com; DB, iii, 148 s.).\n3. C. genitivo: de qualidade, etc., Mrk.5:42, Luk.3:23, 1Co.14:33, Heb.12:11, al.; partitivo, 1Ti.1:20, 2Ti.1:15; poss., Mat.5:3, 10, Mrk.12:7, Luk.4:7; de serviço ou partidarismo, Rom.8:9, 1Co.1:12, 2Co.10:7, 2Ti.2:19.\n4. C. dativo (BL, §37, 3): Act.1:8, 9:15, Rom.4:12, 1Co.1:18, 2:14, Rev.21:7, al.\n5. C. part., como perífrase do verbo simples (Bl., §62, 1, 2; M, Pr., 225 ss.);\n(a) com part. pf. (cl.): Mat.10:30, Luk.9:32, Jhn.3:24, Act.21:35, 1Co.15:19, al;\n(b) com part. pres. (esp. no impf., como no heb. e no aram.; Dalman, Words, 35 s.), Mat.7:29, Mrk.1:22, Luk.4:31, 14:1, Act.1:10, al. mult., id. por imper. (M, Pr., 180 s., 182 s.), com elipse de εἰμί, Rom.12:9, 10, Heb.13:5, al.;\n(c.) com part. aor. (cl), Luk.23:9.\n6. Seq. εἰς (cf. heb. הָיָה לְ), um uso vernác. (M, Pr., 71): Mat.19:5, Mrk.10:8, Heb.8:10, al.\n7. C. adv.: Mat.19:20, Mrk.4:26, Luk.18:11, al.\n8. Elipses;\n(a) da cópula (Bl., §30, 3): Mat.8:29, 24:32, Jhn.21:22, 23, Heb.6:4, al.;\n(b) do predicado: ἐγώ εἰμί, Mat.14:27, Mrk.6:50, al.; absol. (cf. Deu.32:39; אֲנִי הוּא), Mrk.13:6, Jhn.4:26, al. (cf. ἄπ-, ἔν-, πάρ-, συμ-πάρ-, σύν-ειμι).",
+   "note": "Abbott-Smith compares εἰμί with the English verb \"to be\": kept as «to be», with ser, estar. Source '(with) with ptcp. aor.' is a garbled '(c)' (after (a), (b)): rendered '(c.)'. 'Words' is Dalman's title, kept."
+  }
+ ]
+}

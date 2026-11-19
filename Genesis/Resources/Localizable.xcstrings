@@ -6244,6 +6244,22 @@
         }
       }
     },
+    "Commentary and the meanings of words in this verse are in English.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El comentario y los significados de las palabras en este versículo están en inglés."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O comentário e os significados das palavras neste versículo estão em inglês."
+          }
+        }
+      }
+    },
     "Comments": {
       "localizations": {
         "es": {
@@ -7142,6 +7158,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "As definições e o comentário estão em inglês."
+          }
+        }
+      }
+    },
+    "Definitions translated from Strong's Hebrew Dictionary (1890) and Abbott-Smith's Greek Lexicon (1922). Not Scripture.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Definiciones traducidas del Diccionario hebreo de Strong (1890) y del Léxico griego de Abbott-Smith (1922). No es Escritura."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Definições traduzidas do Dicionário hebraico de Strong (1890) e do Léxico grego de Abbott-Smith (1922). Não é Escritura."
           }
         }
       }
@@ -11090,6 +11122,22 @@
         }
       }
     },
+    "Hebrew and Greek words in your language": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Palabras hebreas y griegas en tu idioma"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Palavras hebraicas e gregas no seu idioma"
+          }
+        }
+      }
+    },
     "Hebrew and Greek words, glosses and Greek definitions from STEPBible.org, based on work at Tyndale House Cambridge (CC BY 4.0). Hebrew definitions from Strong's Hebrew Dictionary via the Open Scriptures Hebrew Bible project (CC BY 4.0). Commentary from Matthew Henry's Concise Commentary (public domain).": {
       "localizations": {
         "es": {
@@ -11843,6 +11891,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Em espanhol ou português, as pessoas, os lugares, os acontecimentos e os artigos do dicionário do Explorar agora estão no seu idioma, com os nomes como a sua Bíblia os escreve."
+          }
+        }
+      }
+    },
+    "In Spanish or Portuguese, tap a Hebrew or Greek word to read its meaning, definition and origin in your language. The Hebrew and Greek stay exactly as written.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En español o portugués, toca una palabra hebrea o griega para leer su significado, definición y origen en tu idioma. El hebreo y el griego se mantienen tal como están escritos."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Em espanhol ou português, toque em uma palavra hebraica ou grega para ler o significado, a definição e a origem no seu idioma. O hebraico e o grego continuam exatamente como foram escritos."
           }
         }
       }
@@ -27476,6 +27540,22 @@
         }
       }
     },
+    "The meaning in this verse and the grammar are in English.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El significado en este versículo y la gramática están en inglés."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O significado neste versículo e a gramática estão em inglês."
+          }
+        }
+      }
+    },
     "The medium Verse of the Day widget is now free, on the Home Screen next to the small one and the Lock Screen.": {
       "localizations": {
         "es": {
@@ -32715,6 +32795,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Palavra por palavra"
+          }
+        }
+      }
+    },
+    "Word meanings": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Significado de las palabras"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Significado das palavras"
           }
         }
       }

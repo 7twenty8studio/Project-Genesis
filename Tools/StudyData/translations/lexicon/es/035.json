@@ -1,0 +1,830 @@
+{
+ "batch": "035",
+ "lang": "es",
+ "entries": [
+  {
+   "strongs": "G0981",
+   "sha256": "1d9fc0c67e66a549f322a4945413988cbd543856e8b726d7fd96799979a7de48",
+   "gloss": "modo de vida",
+   "definition": "βίωσις, -εως, ἡ\n(βιόω), [en LXX: Si prol. 12 * ;]\nmodo de vida: Act.26:4.†"
+  },
+  {
+   "strongs": "G0982",
+   "sha256": "48654f25b8268b544775cd55280afc69437eae0cb7e9682c5b58619bd9bc3686",
+   "gloss": "de esta vida",
+   "definition": "βιωτικός, -ή, -όν\n(βιός),\nperteneciente a la vida, de ahí, mundano (Field, Notas, 171): Luk.21:34, 1Co.6:3, 4.†"
+  },
+  {
+   "strongs": "G0983",
+   "sha256": "5e52132bb1da63cca71e1e4cc45ed4ed26e809ebf94ede12cfb24644318f2f94",
+   "gloss": "dañino",
+   "definition": "βλαβερός, -ά, -όν\n(βλάπτω), [en LXX: Pro.10:26 * ;]\ndañino: 1Ti.6:9.†"
+  },
+  {
+   "strongs": "G0984",
+   "sha256": "b357f5e4456bd964bf0b9507b5838c8d41c445197a742fb3b9754d61dfc8980f",
+   "gloss": "dañar",
+   "definition": "βλάπτω,\n[en LXX: Pro.25:20, Tob.12:2, Wis.10:8 18:2, 2Ma.12:22, 4Ma.9:7 * ;]\ndañar, herir: con acusativo, Mrk.16:[18], Luk.4:35.†"
+  },
+  {
+   "strongs": "G0985",
+   "sha256": "0489e8435b263879e21a987724f0d3bc76fa0ac6bdd764c1046ca766ee12b65b",
+   "gloss": "brotar",
+   "definition": "βλαστάνω,\n[en LXX por צמח, etc. ;]\n1. brotar: Mat.13:26, Mrk.4:27, Heb.9:4.\n2. En gr. tardío, causal, hacer crecer, producir: con acusativo, Jas.5:18.\n†"
+  },
+  {
+   "strongs": "G0986",
+   "sha256": "258654c04b908d75fd374df603a38fdb31334624ad2aa9cb20af1715a76cd346",
+   "gloss": "Blasto",
+   "definition": "Βλάστος, -ου, ὁ,\nBlasto, camarero de Agripa: Act.12:20.†"
+  },
+  {
+   "strongs": "G0987",
+   "sha256": "5e2386bf23877b404e83261cf8ae399b1856bb4eeee875f3a5704099e3652c76",
+   "gloss": "blasfemar",
+   "definition": "βλασφημέω, -ῶ\n(βλάσφημος), [en LXX: 4Ki.19:4 (יכח hi.) ib. 6, 22 (גּדף pi.), Isa.52:5 (נאץ hit.), Dan LXX 3:29 (96) (אמר שׁלח), Tob.1:18, Da TH Bel 9, 2Ma.2 * ;]\n1. hablar con ligereza o de modo profano de las cosas sagradas (en cl., lo opuesto de εὐφημέω), esp. hablar impíamente de Dios, blasfemar, hablar blasfemamente: absol., Mat.9:3 26:65, Mrk.2:7, Jhn.10:36, Act.26:11, 1Ti.1:20, 2Pe.2:12; τ. θεόν, Act.19:37, Rev.16:11, 21; τὸ ὄνομα τ. θεοῦ, Rev.13:6 16:9; δόξας, Ju 3, 2Pe.2:10; εἰς τὸ πνεῦμα τὸ πνεῦμα τὸ ἅγιον, Mrk.3:29, Luk.12:10.\n2. injuriar, insultar, calumniar: absol., Luk.22:65, Act.13:45 18:6, 1Pe.4:4; con acusativo, Mat.27:39, Mrk.3:28 15:29, Luk.23:39, Tit.3:2, Jas.2:7, Ju 10. Pas.: Rom.2:24 3:8 14:16, 1Co.10:30, 1Ti.6:1, Tit.2:5, 2Pe.2:2 (Cremer, 570).\n†"
+  },
+  {
+   "strongs": "G0988",
+   "sha256": "235f081aa89a676a12061af5a914c20dbc44300ca2e0b84f5df0bfcd9d09db68",
+   "gloss": "blasfemia",
+   "definition": "βλασφημία, -ας, ἡ\n(βλάσφημος), [en LXX: Eze.35:12 (נֶאָצָה), Da TH 3:29 (96) (שׁלה), Tob.1:18, 1Ma.2:6, 2Ma.8:4 10:35 15:24 * ;]\n(a) calumnia injuriosa: Mat.12:31 15:19, Mrk.3:28 7:22, Eph.4:31, Col.3:8, 1Ti.6:4, Ju 9, Rev.2:9\n(b) espec., palabras impías contra Dios, blasfemia: Mat.26:65, Mrk.14:64, Luk.5:21, Jhn.10:33, Rev.13:5; ὄνομα βλασφημίας, Rev.13:1 17:3; con genitivo obj. Mat.12:31; πρὸς τ. θεόν, Rev.13:6 (Cremer, 570; DB, i, 305; DCG ii, 423).†"
+  },
+  {
+   "strongs": "G0989",
+   "sha256": "a00aa4aec8ca07a30efcdb168b5d65dd05c6b8bbd9fc3de1c60ad3b95b298c70",
+   "gloss": "blasfemo",
+   "definition": "βλάσφημος, -ον\n(βλασ-, de deriv. incierta, véase Thayer, Boisacq; + φήμη, habla), [en LXX: Isa.66:3 (מְבָרֵךְ אָוֶן), Wis.1:6, Sir.3:16, 2Ma.9:28 10:4, 36 * ;]\n(a) maldiciente, calumniador, blasfemo: Act.6:11, 2Ti.3:2, 2Pe.2:11 (cf. Ju 9);\n(b) como sust., un blasfemo: 1Ti.1:13 (Cremer, 570).\n†"
+  },
+  {
+   "strongs": "G0990",
+   "sha256": "22c7d0980a94c542cfa701e66b09b2de187024bf8b7a125fe6228ebb5c4dd1a6",
+   "gloss": "una mirada",
+   "definition": "βλέμμα, -τος, τό\n(βλέπω),\nuna mirada, un vistazo: βλέμματι καὶ ἀκοῇ, 2Pe.2:8, vista y oído, un sentido que no se halla para β. en la lit. gr., pero quizá admitido en la lengua vernácula (ICC, in l.)†"
+  },
+  {
+   "strongs": "G0991",
+   "sha256": "c432f3e9b59d4c7460803f0c8d0986cc4284128aa78bf5d3a57129e227c6d0d4",
+   "gloss": "ver",
+   "definition": "βλέπω,\n[en LXX principalmente por ראה, también por פּנה, etc. ;]\n1. de la vista corporal;\n(a) ver, tener vista (opuesto a τυφλὸς): Mat.12:22, Jhn.9:7, Act.9:9, Rom.11:8, Rev.3:18, al.;\n(b) percibir, mirar (a), ver: absol., Act.1:9; con acusativo, Mat.7:3, Mrk.5:31, Luk.6:41, Jhn.1:29, al.; ὅραμα, Act.12:9; γυναῖκα, Mat.5:28; βιβλίον, Rev.5:3, 4; τ. βλεπόμενα, 2Co.4:18.\n2. Metafórico, de la visión mental;\n(a) ver, percibir, discernir: absol., Mat.13:13, Luk.8:10; δι ̓ ἐσόπτρου, 1Co.13:12; con acusativo, Heb.2:9 10:25; ante ὅτι, Heb.3:19, Jas.2:22;\n(b) considerar, atender a, tener cuidado: absol., Mrk.13:23, 33; con acusativo, 1Co.1:26, al.; ante πῶς, con indic., Luk.8:18, 1Co.3:10, Eph.5:15; ante τί, con indic., Mrk.4:24; ante εἰς πρόσωπον, de la parcialidad, Mat.22:16, Mrk.12:14. Coloq. (para ejs. de los π., V. Deiss., LAE, 122; M, Pr., 107; MM, Exp., x; Milligan, NTD, 50), β. ἑαυτόν: Mrk.13:9; ante ἵνα μή, II Jo 8; β. ἀπό, Mrk.8:15 12:38; ante μή (cl. ὁρᾶν), con fut. indic., Col.2:8, Heb.3:12; íd. con aor. subj., Mat.24:4, Mrk.13:5.\n3. De situación y dirección (lat. specto), mirar, dar (hacia), de lugares, etc. (ante πρός, Xen, Hell., vii, 1, 17; Eze.40:23, 24): ante κατά, con acusativo, Act.27:12 (cf. ἀνα-, ἀπο-, δια-, ἐμ-, ἐπι-, περ-, προ-βλέπω), véase DCG, i, 446; ii, 596."
+  },
+  {
+   "strongs": "G0992",
+   "sha256": "77f1fa9e8084d78bd591d1b060809ef3a4875f895d4e982053c9daa2ff7ea69f",
+   "gloss": "debe ponerse",
+   "definition": "βλητέος, -α, -ον (gerundivo de βάλλω),\n(lo que) se debe poner: Luk.5:38.†"
+  },
+  {
+   "strongs": "G0993",
+   "sha256": "ba68bc901a0fa8b5679951836b2811a5bd53abb4ae666f828390bb9ece68a318",
+   "gloss": "Boanerges",
+   "definition": "Βοανηργές, indecl. (sobre la derivación, véase Dalman, Gr., 144; Words, 42; Swete, Mk., l. con; DCG, i, 216),\nBoanerges: Mrk.3:17.†"
+  },
+  {
+   "strongs": "G0994",
+   "sha256": "714f5fd0d14e487d866ae0548ce9aec26f841eadc19a807992d0f493159427bb",
+   "gloss": "clamar",
+   "definition": "βοάω, -ῶ\n(βοή), [en LXX principalmente por זעק, צעק, קרא ;]\n1. absol., clamar, gritar: Mat.3:3, 27:46, Mrk.1:3 15:34, Luk.3:4 9:38 18:38, Jhn.1:23, Act.8:7 17:6 25:24, Gal.4:27.\n2. C. dativo, clamar pidiendo ayuda (heb. זעק על, Hos.7:14, al.), Luk.18:7.†\nSYN.: καλέω, llamar, invitar, convocar; κράζω, gritar, de modo áspero o inarticulado, como los animales; κραυγάζω, intensivo de κράζω. βοάω expresa emoción, sea gozo, temor, etc."
+  },
+  {
+   "strongs": "G0995",
+   "sha256": "51b957a954c2ee851fd2e7e3566c6ccadc7a11c5f5793b91572ae2cb60ba5850",
+   "gloss": "clamor",
+   "definition": "βοή, -ῆς, ἡ,\n[en LXX por זְעָקָה, etc. ;]\nun clamor: Jas.5:4.†"
+  },
+  {
+   "strongs": "G0996",
+   "sha256": "4be1dc6b72e189487f396971b18605721b19c9ff6df6b1287eb9c7afab966a45",
+   "gloss": "ayuda",
+   "definition": "βοήθεια, -ας, ἡ (véase: βοηθέω),\n[en LXX por עֵזֶר, etc. ;]\nayuda: Heb.4:16; pl., refuerzos, \"frapping,\" término náutico técnico (MM, Exp., x; DB, ext., 367): Act.27:17.†",
+   "note": "The English nautical term 'frapping' (binding a ship's hull with cables) is quoted by the source and kept."
+  },
+  {
+   "strongs": "G0997",
+   "sha256": "858b1f0075492b3b5bcb49aca04129f01d753f23884d47acf8d52fcc269b0336",
+   "gloss": "ayudar",
+   "definition": "βοηθέω, -ῶ\n(βοή + θέω, correr), [en LXX principalmente por עזר ;]\nacudir en auxilio, ayudar, socorrer: absol., Act.21:28; con dativo, Mat.15:25, Mrk.9:22, 24 Act.16:9, 2Co.6:2\" (LXX), Heb.2:18, Rev.12:16.†"
+  },
+  {
+   "strongs": "G0998",
+   "sha256": "cf2b55c54b134203ee2d36d06bb494221a27146ee34e8e2092110961d6c03c27",
+   "gloss": "ayudador",
+   "definition": "βοηθός, -ον (véase: βοηθέω),\n[en LXX principalmente por עזר ;]\n1. (poét. -όος), que acude presuroso al grito de guerra (Hom.).\n2. que ayuda, auxiliar; como sust. (Hdt.), un ayudador: Heb.13:6 (LXX).\n†"
+  },
+  {
+   "strongs": "G0999",
+   "sha256": "9d8cf86e1c60b81703ad9deb6a9073bdc9cb98261a8cfc781738d09545a52d01",
+   "gloss": "hoyo",
+   "definition": "βόθυνος, -ου, ὁ (= βόθρος, más frecuente en cl.),\n[en LXX principalmente por פַּחַת ;]\nun hoyo: Mat.12:11 15:14, Luk.6:39 (cf. DB, iii, 885; DCG, ii, 367).†"
+  },
+  {
+   "strongs": "G1000",
+   "sha256": "f5b2c44e451f52420f2690feae07dc7ac7b8c85925b37f2c4c23b057895ae0ee",
+   "gloss": "tiro",
+   "definition": "βολή, -ῆς, ἡ\n(βάλλω), [en LXX: Gen.21:16 (טחה), 2Ma.5:3, 3Ma.5:26 * ;]\nun tiro; λίθου β. (Thuc., v, 65, 2), un tiro de piedra: Luk.22:41.†"
+  },
+  {
+   "strongs": "G1001",
+   "sha256": "a055fa3a1005c567c00b1c9373a7893cb7ad92b260707f86242652d3f5c48f20",
+   "gloss": "sondear",
+   "definition": "βολίζω\n(βολίς, en el sentido de sonda de plomo),\nechar la sonda, sondear: Act.27:28.†"
+  },
+  {
+   "strongs": "G1002",
+   "sha256": "ba02de0adc761597ccaa29fa608a6e0e536c9ba2ebd958ecd3cdd5a27ff49d82",
+   "gloss": "dardo",
+   "definition": "βολίς, -ίδος, ἡ\n(βάλλω), [en LXX por חֵץ, יָרָה, etc. ;]\nun dardo, una jabalina: Heb.12:20, Rec. (LXX).†"
+  },
+  {
+   "strongs": "G1003",
+   "sha256": "2130a6900b8485b213dbeb5c617ae2fabac368fcb326f2997f855d1c97d12980",
+   "gloss": "Booz",
+   "definition": "Βοός y Βοές (RV, Βοάζ, Rec. Βοόζ), ὁ, indecl. (heb. בֹּעַז),\nBooz (Rut.2:1): Mat.1:5, Luk.3:32.†"
+  },
+  {
+   "strongs": "G1004",
+   "sha256": "1ef1d939fcf8b3c3c14f1f416baae584c1f070a8e397dd92950ad18dbd80dc60",
+   "gloss": "cieno",
+   "definition": "βόρβορος, -ου, ὁ,\n[en LXX: Je 45(38):6 (טִיט)* ;]\nlodo, inmundicia: 2Pe.2:22.†"
+  },
+  {
+   "strongs": "G1005",
+   "sha256": "8f8ca782009ddd6c43942cb2be0e07d0f1ab3e1ba34e3ff85b1122b7c2bbdc20",
+   "gloss": "el norte",
+   "definition": "βορρᾶς, -ᾶ (contr. ática de Βορέας, el viento del norte personificado),\n[en LXX por צָפוֹן ;]\n1. Bóreas, el viento del norte.\n2. el norte: Luk.13:29, Rev.21:13.\n†"
+  },
+  {
+   "strongs": "G1006",
+   "sha256": "86a770bf7aa2a5ffc760dd7c95fd6f81d0e824306f48cc81ba21e01d9c9fe2eb",
+   "gloss": "apacentar",
+   "definition": "βόσκω,\n[en LXX por רעה ;]\nprop., de un pastor, apacentar: Mat.8:33, Mrk.5:14, Luk.8:34 15:15; metafóricamente, del cuidado pastoral cristiano, Jhn.21:15, 17. Pas., del ganado, pacer, pastar: Mat.8:30, Mrk.5:11, Luk.8:32.†\nSYN.: ποιμαίνειν, cuidar, pastorear, término más amplio, que incluye la supervisión tanto como la alimentación (véase Tr., Syn., §xxv)."
+  },
+  {
+   "strongs": "G1007",
+   "sha256": "85146d79d88f45c75c1d9fbd73ccff2266cb7215ba9b61db029c97c090de7015",
+   "gloss": "Beor",
+   "definition": "Βοσόρ véase Βεώρ - ὁ, indecl. (heb. בְּעוֹר),\nBeor, padre de Balaam: 2Pe.2:15 (Rec. Βοσόρ).†"
+  },
+  {
+   "strongs": "G1008",
+   "sha256": "10c09c0dc185dc34a28d4c7c9b5c07f635b6ef8bc31c3a9b9255728603275842",
+   "gloss": "cosecha",
+   "definition": "βοτάνη, -ῆς, ἡ\n(βόσκω), [en LXX por עֵשֶׂב, דֶשֶׁא, חָצִיר ;]\n1. hierba, forraje.\n2. hierba verde: Heb.6:7.†\nSYN.: λάχανον, una hortaliza, una verdura."
+  },
+  {
+   "strongs": "G1009",
+   "sha256": "f8b17c170f35615c61c45dc922cfcd28c35a55037938de5180cd920ea405395c",
+   "gloss": "racimo de uvas",
+   "definition": "βότρυς, -οῦ, ὁ,\n[en LXX por אֶשְׁכֹּל ;]\nun racimo de uvas: Rev.14:18 (cf. στραφυλή) .†"
+  },
+  {
+   "strongs": "G1010",
+   "sha256": "11aeee4341a938bfe39b89feb7f8d5ed60e383f8e9a7c3d2f2439a7f9ceb0541",
+   "gloss": "miembro de un concilio",
+   "definition": "βουλευτής, -οῦ, ὁ\n(βουλεύω), [en LXX: Job.3:14 12:17 (יעץ)* ;]\nun consejero, un senador; de un miembro del Sanedrín: Mrk.15:34, Luk.23:50.†"
+  },
+  {
+   "strongs": "G1011",
+   "sha256": "14e652eb518bba7352bbae8482ba5dcd2accc0be7ed226ac368502fffc88f44f",
+   "gloss": "planear",
+   "definition": "βουλεύω\n(βουλή), [en LXX principalmente por יעץ ;]\ntomar consejo, deliberar, resolver. En med.,\n1. deliberar consigo mismo, considerar: ante εἰ, Luk.14:31.\n2. determinar consigo mismo, resolver: con inf., Act.5:33 27:39; con acusativo, 2Co.1:17; ante ἵνα, Jhn.11:53 12:10 (cf. παρα-, συμ-).\n†"
+  },
+  {
+   "strongs": "G1012",
+   "sha256": "be37f69528d5fdf9bc517eb6e02ec754cd11906801f36d004f8167046bc25114",
+   "gloss": "designio",
+   "definition": "βουλή, -ῆς, ἡ\n(βούλομαι), [en LXX frecuentemente por עֵצָה ;]\nconsejo, propósito (en cl., esp. de los dioses): Luk.23:51, Act.4:28 5:38 19:1 27:12, 42; pl., 1Co.4:5; del propósito divino, Heb.6:17; τ. βουλὴν τ. θελήματος αὐτοῦ, Eph.1:11; β. τ. Θεοῦ, Luk.7:30, Act.2:23 13:36 20:27.†"
+  },
+  {
+   "strongs": "G1013",
+   "sha256": "cb640ae58eac0bca97c9e178ca1c07841a3f9d6118d5832c2049d6abfe90312a",
+   "gloss": "designio",
+   "definition": "βούλημα, -τος, τό\n(βούλομαι), [en LXX: Pro.9:10 (דַּעַת), 2Ma.15:5, 4Ma.8:18 * ;]\npropósito, voluntad: Act.27:43, Rom.9:19, 1Pe.4:3.†\nSYN.: θέλημα."
+  },
+  {
+   "strongs": "G1014",
+   "sha256": "2364e361cbf6cb9e68a1dd2044711d55bcade5a7eb6a9008260f2d72d13386d4",
+   "gloss": "proponerse",
+   "definition": "βούλομαι,\n[en LXX por חפץ, אבה, יעץ, etc. ;]\nquerer, desear, anhelar, proponerse, estar resuelto, lo que implica con más fuerza que θέλω (véase) el ejercicio deliberado de la volición (véase Hort sobre Jas.1:18): con inf. (M, Pr., 205; Bl., §69, 4), Mrk.15:15, Act.5:28, 33 12:4 15:37 17:20 18:15, 27 19:30 22:30 23:28 27:43 28:18, 2Co.1:15, 1Ti.6:9, Heb.6:17, II Jhn.12, 3Jo.10, Ju 5; con acusativo, 2Co.1:17; con acusativo e inf., Php.1:12, 1Ti.2:8 5:14, Tit.3:8, 2Pe.3:9; de la voluntad que elige entre alternativas, Mat.1:19 11:27, Luk.10:22, Act.25:20, 1Co.12:11, Jas.3:4 4:4; εἰ βούλει (cl., expresión cortés = θέλεις, coloq.; Bl., §21, 8; LS, véase la palabra), Luk.22:42; con subj., que da fuerza a una pregunta deliberativa (Bl., §64, 6), Jhn.18:39; βουληθείς, deliberadamente (véase Hort, in l.), Jas.1:18; impf., ἐβουλόμην (= cl. βουλοίμην ἄν; Bl., §63, 5; Lft., Phm. 13), Act.25:22, Phm 13 (véase también Cremer, 143).†"
+  },
+  {
+   "strongs": "G1015",
+   "sha256": "ee0b460308ba09eace05597dbe114f4de411865ad9864220cc5e53bffc5da9c3",
+   "gloss": "collado",
+   "definition": "βουνός, -οῦ, ὁ (palabra cirenaica, Hdt., iv, 199),\n[en LXX principalmente por גִּבְעָה ;]\nun collado: Luk.3:5 (LXX) 23:30.†"
+  },
+  {
+   "strongs": "G1016",
+   "sha256": "b0469ada4caa2ad12b6c443e198b3e79ac00046f5f2baa5f8a742502c1f33129",
+   "gloss": "buey",
+   "definition": "βοῦς, βοός, ὁ, ἡ,\n[en LXX principalmente por בָּקָר ;]\nun buey, una vaca: Luk.13:15 14:5, 19 Jhn.2:14, 15 1Co.9:9\" (LXX), 1Ti.5:18.†"
+  },
+  {
+   "strongs": "G1017",
+   "sha256": "4e9a0f8e7c07eef19580bb231cb3387d73e24bd71a5b8397bc30d79f5d77da15",
+   "gloss": "premio",
+   "definition": "βραβεῖον, -ου, τό\n(βραβεύς, un árbitro),\nun premio en los juegos: 1Co.9:24; metafóricamente, de la recompensa del cristiano, Php.3:14.†"
+  },
+  {
+   "strongs": "G1018",
+   "sha256": "9dd260465cc1e8b31a597ae15b46f07dfa170407b55574eb1d6578ae674a1b1f",
+   "gloss": "gobernar",
+   "definition": "βραβεύω\n(βραβεύς, un árbitro), [en LXX: Wis.10:12 * ;]\n(a) prop., actuar como árbitro; de ahí,\n(b) en general, arbitrar, decidir (Isocr., Dem.; Lft., Col., l. con; MM, véase la palabra): Col.3:15;\n(c.) en algunos escritores tardíos, dirigir, gobernar, dominar (así en Col., l. con, según Thayer, véase la palabra, Meyer, in l.), (cf. κατα-βραβεύω).\n†",
+   "note": "Source '(with)' is a garbled '(c)', rendered '(c)'; 'accusative to Thayer' is a garbled 'acc. to' (according to): rendered 'según'."
+  },
+  {
+   "strongs": "G1019",
+   "sha256": "223d5aec203ad115c72793fb49e8f9a0c7a14e8d8eb6d4638709e151ae940115",
+   "gloss": "tardar",
+   "definition": "βραδύνω\n(βραδύς), [en LXX: Gen.43:10 (מההּ hit.), Deu.7:10, Isa.46:13 (אחר pi.), Si 32 (35):18 * ;]\n1. trans., retardar (Soph., Is, l. con).\n2. Más frecuentemente intr., ser lento, tardar: 1Ti.3:15, 2Pe.3:9.\n†"
+  },
+  {
+   "strongs": "G1020",
+   "sha256": "0a7016f7420ae164ffdd899925ea611d43d8b7196813e7541d4d60098a4d3d18",
+   "gloss": "navegar despacio",
+   "definition": "βραδυπλοέω, -ῶ\n(βραδύς, πλοῦς),\nnavegar despacio: Act.27:7.†"
+  },
+  {
+   "strongs": "G1021",
+   "sha256": "a8b412ac0918f45123a00c56648cb1b29e04c3565a814d3c1a0673ca4b0340a7",
+   "gloss": "lento",
+   "definition": "βραδύς, -εῖα, -ύ,\nlento: εἰς τὸ λαλῆσαι, Jas.1:19; metafóricamente, del entendimiento: β. τ. καρδίᾳ, asociado con ἀνόητος, Luk.24:25.†"
+  },
+  {
+   "strongs": "G1022",
+   "sha256": "e05e98a7c0a456db9ab092e3b3991284dae08141c280df88da537bb83438c3d7",
+   "gloss": "lentitud",
+   "definition": "1. lentitud , (Ilíada de Homero), ático\n2. de la mente, (Platón, filósofo) (ML)"
+  },
+  {
+   "strongs": "G1023",
+   "sha256": "19af5d9ee1b09fb60b5e7ef9805a164803739d3939f5b71e9f2e85b6f456670a",
+   "gloss": "brazo",
+   "definition": "βραχίων, -ὀνος, ὁ,\n[en LXX, β. Κυρίου, frecuentemente por זְרוֹעַ יהוָֹה ;]\nel brazo; como en el AT, β. Κυρίου, metafóricamente, por el poder divino: Luk.1:51, Jhn.12:38\" (LXX), Act.13:17.†"
+  },
+  {
+   "strongs": "G1024",
+   "sha256": "73193c6d8ed7adaca5979d3d19a0c08170f7a8a74f578711787d25551d38babd",
+   "gloss": "poco",
+   "definition": "βραχύς, -εῖα, -ύ,\n[en LXX principalmente por מְעַט ;]\ncorto;\n(a) de tiempo; corto, poco: βραχύ, Act.5:34; μετὰ β., Luk.22:58; β. τι, un poco de tiempo, Heb.2:7, 9 RV, mg.;\n(b) de distancia: Act.27:28;\n(c.) de cantidad o valor, poco, pocos: Jhn.6:7, Heb.2:7, 9 RV, txt.; pl., διὰ βραχέων, en pocas palabras, Heb.13:22.\n†",
+   "note": "Source '(with)' is a garbled '(c)' (the third subsection), rendered '(c)'."
+  },
+  {
+   "strongs": "G1025",
+   "sha256": "f3a01eec754abbfe0ea6c4ded676377cdd97a8721fb944fa7cafa7187236bb19",
+   "gloss": "niño pequeño",
+   "definition": "βρέφος, -ους, τό,\n[en LXX: Sir.19:11, 1Ma.1:61, 2Ma.6:10, 3Ma.5:49, 4Ma.4:25 * ;]\n1. un niño aún no nacido: Luk.1:41, 44.\n2. un niño recién nacido, un bebé: Luk.2:12, 16 18:15, Act.7:19, 1Pe.2:2; ἀπὸ βρέφους, desde la niñez, 2Ti.3:15.\n†"
+  },
+  {
+   "strongs": "G1026",
+   "sha256": "4273583f2721dbf465cd0f4418d56c89e64e19931bb62d797e35832c51ee9fac",
+   "gloss": "hacer llover",
+   "definition": "βρέχω,\n[en LXX principalmente por מטר ;]\n1. mojar: Luk.7:38, 44.\n2. En escritores gr. tardíos y en la lengua vernác. = ὕειν, enviar lluvia, llover (Kennedy, Sources, 39, 155): Mat.5:45; trop., β. πῦρ κ. θεῖον, Luk.17:29; impers., βρέχει, llueve: Jas.5:17; con ὐετός como sujeto, Rev.11:6.\n†"
+  },
+  {
+   "strongs": "G1027",
+   "sha256": "879eeff76bb23693182a1b185290eb0780e5f0b11f5860ec4018ece11c4e4932",
+   "gloss": "trueno",
+   "definition": "βροντή, -ῆς, ἡ,\n[en LXX por רַעַם ;]\ntrueno: Mrk.3:17, Jhn.12:29, Rev.4:5 6:1 8:5 10:3, 4 11:19 14:2 16:18 19:6.†"
+  },
+  {
+   "strongs": "G1028",
+   "sha256": "6d42c6ef11909c7bb61f40814bef4fc20c4ac011222a6855560e816aab37fd4c",
+   "gloss": "lluvia",
+   "definition": "βροχή, -ῆς, ἡ\n(βρέχω), [en LXX: Psa.67 (68):9, 104 (105):32 (גֶּשֶׁם)* ;]\n1. = βροχετός, una mojadura (en los π., del riego en Egipto; Deiss., LAE, 77).\n2. Como en MGr. (Kennedy, Sources, 153), = ὑετός, lluvia: Mat.7:25, 27.\n†"
+  },
+  {
+   "strongs": "G1029",
+   "sha256": "e3dab50fbfad4459a882c131fbba20b376eae0fb2a8af6ac015eb327ce823cf4",
+   "gloss": "restricción",
+   "definition": "βρόχος, -ου, ὁ,\n[en LXX: Pro.6:5 (יָד) 7:21 (חֵלֶק) 22:25 (מוֹקֵשׁ), 3Ma.4:8 * ;]\nun lazo, un nudo corredizo, un ronzal: metafóricamente, una restricción (no, como AV, R, txt., una trampa): 1Co.7:35.†"
+  },
+  {
+   "strongs": "G1030",
+   "sha256": "bdde328b3ffdcec4d641ec14d46d026cc1aaf0ac761a2546b3c52d0a74370d61",
+   "gloss": "crujir",
+   "definition": "βρυγμός, -οῦ, ὁ\n(βρύχω), [en LXX: Pro.19:12 (נַהַם), Sir.51:3 * ;]\nun morder, un crujir de dientes: Mat.8:12 13:42, 50 22:13 24:51 25:30, Luk.13:28.†"
+  },
+  {
+   "strongs": "G1031",
+   "sha256": "494cff09efeb1b9a48978dca5947846d55bffdcbabc15736ea3f01c53c6bbe25",
+   "gloss": "rechinar",
+   "definition": "βρύχω (ático, βρύκω),\n[en LXX: Job.16:10(9), Psa.34 (35):16 36 (37):12 111 (112):10, La 2:16 (חרק)* ;]\n1. morder o comer con avidez.\n2. rechinar, hacer crujir los dientes: Act.7:54.\n†"
+  },
+  {
+   "strongs": "G1032",
+   "sha256": "46fac8453e584897e40ac3932dd0dd2542a5d41a7d985648751303a4c945a94b",
+   "gloss": "brotar",
+   "definition": "βρύω, poét., prosa tardía y vernác.,\nestar lleno hasta rebosar;\n1. de la tierra que produce vegetación.\n2. De las plantas que echan brotes.\n3. De los manantiales, manar agua: Jas.3:11.\n†"
+  },
+  {
+   "strongs": "G1033",
+   "sha256": "88df3f3c318785b877040f495221ff1a0df870c3002403dbfe16105492ad6eaa",
+   "gloss": "alimento",
+   "definition": "βρῶμα, -τος, τό (cf. βιβρώσκω),\n[en LXX principalmente por אֹכֶל ;]\nalimento: Rom.14:15, 20 1Co.8:8, 13 10:3; pl., Mat.14:15, Mrk.7:19, Luk.3:11 9:13, 1Co.6:13, 1Ti.4:3, Heb.9:10 13:9; trop., del alimento espiritual, Jhn.4:34, 1Co.3:2 (cf. βρῶσις).†"
+  },
+  {
+   "strongs": "G1034",
+   "sha256": "c2129b49dfa8d60b36fd0b87078e127d5630f470025bfc3dcd7e0a293e984f4d",
+   "gloss": "comestible",
+   "definition": "βρώσιμος, -ον\n(βρῶσις), [en LXX: Lev.19:23, Neh.9:25, Eze.47:12 (מַאֲכָל)* ;]\ncomestible: Luk.24:41.†"
+  },
+  {
+   "strongs": "G1035",
+   "sha256": "3f4c03b0bfb0dffd4ccf9a0e7dcdf85df17c32f861c785a3e4196a275a3d27f3",
+   "gloss": "comida",
+   "definition": "βρῶσις, -εως, ἡ (cf. βιβρώσκω),\n[en LXX principalmente por formas y derivados de אכל ;]\n1. el comer: β. καὶ πόσις, Rom.14:17, Col.2:16 (véase Lft., ICC, in l.); con genitivo obj., 1Co.8:4; metafóricamente, corrosión, herrumbre: Mat.6:19, 20.\n2. Como también en cl. (Hom., al.) = βρῶμα, alimento: Jhn.6:27a, 2Co.9:10, Col.2:16 (EV, pero véase supr.). Heb.12:16; metafóricamente, del sustento espiritual, Jhn.4:32 6:27b, 55.†"
+  },
+  {
+   "strongs": "G1036",
+   "sha256": "1643cc7323a9baae27010a15bf030c3375a63d216803bd8267e698d41a5acae4",
+   "gloss": "hundir",
+   "definition": "βυθίζω\n(βυθός), [en LXX: 2Ma.12:4 * ;]\ntrans., hacer hundir, hundir: metafóricamente, εἰς ὄλεθρον, 1Ti.6:9; pas., hundirse, intr.: Luk.5:7.†"
+  },
+  {
+   "strongs": "G1037",
+   "sha256": "50c377dc50ac85df3b78f5921a155fad0a7d21b5c58bf8c98a1e8cb4fcecfeae",
+   "gloss": "lo profundo",
+   "definition": "βυθός, -οῦ, ὁ,\n[en LXX: Exo.15:5, Neh.9:11 (מְצוֹלָה), Psa.67 (68):22 68 (69):2, 15 106 (107):24 (מְצוּלָה)* ;]\n1. el fondo.\n2. la profundidad del mar, alta mar: 2Co.11:25.\n†"
+  },
+  {
+   "strongs": "G1038",
+   "sha256": "a3bc0415cf65eb9075fab1a114feb7f269948b82834d445b9e93af94f9b07c0b",
+   "gloss": "curtidor",
+   "definition": "βυρσεύς, -έως, ὁ (βύρσα, un cuero), forma tardía por βυρσοδέψης,\nun curtidor: Act.9:43 10:6, 32.†"
+  },
+  {
+   "strongs": "G1039",
+   "sha256": "17e539f1d836262cf0ec33ac033d9eb0e9619b75450d686fb8c9a30803e8f7df",
+   "gloss": "lino fino",
+   "definition": "βύσσινος, -η, -ον\n(βύσσος), [en LXX principalmente por שֵׁשׁ, בּוּץ, etc. ;]\nhecho de βύσσος, lino fino: Rev.18:12, 16 19:8, 14.†"
+  },
+  {
+   "strongs": "G1040",
+   "sha256": "ef6d917a1481af527ff34511788d371cc42b7c043ba6366145261ccc5106d3e2",
+   "gloss": "lino fino",
+   "definition": "βύσσος, -οῦ, ἡ (cf. heb. בּוּץ),\n[en LXX principalmente por שֵׁשׁ, בּוּץ ;]\nbiso, una especie fina de lino, también el lienzo hecho de él: Luk.16:19.†"
+  },
+  {
+   "strongs": "G1041",
+   "sha256": "a3d33b9624b7071c6ac57489544d2ef2a3ec19e8f370cdf335abd50b59021afe",
+   "gloss": "altar",
+   "definition": "βωμός, -οῦ, ὁ\n(βαίνω), [en LXX (Hex.) por מִזְבֵּחַ, en los Prof., principalmente por בָּמָה ;]\n1. cualquier lugar elevado, una plataforma.\n2. un altar: Act.17:23 (cf. θυσιαστήριον y véase DB, i, 75).\n†",
+   "note": "Gloss 'altar' is the same word in Spanish."
+  },
+  {
+   "strongs": "G1042",
+   "sha256": "7958979058347ccf6a044cfcaaf78f77f7dcf16b2752ac11bcb7f0ed4ab39275",
+   "gloss": "Gabata",
+   "definition": "Γαββαθα (Rec. -θᾶ), ἡ, indecl.,\nGabata, la transliteración griega de una palabra aramea incierta (DB, véase la palabra; Dalman, Words, 7), usada como equivalente de λιθόστρωτον, enlosado: Jhn.19:13.†"
+  },
+  {
+   "strongs": "G1043",
+   "sha256": "cc9b0a906aec8e1732ff25ee6a56cd3a80bf3ade722e09b3c6b252981f51ccee",
+   "gloss": "Gabriel",
+   "definition": "Γαβριήλ, ὁ, indecl. (heb. גַּבְרִיאֵל, héroe de Dios),\nel arcángel Gabriel: Luk.1:19, 26.†",
+   "note": "Gloss 'Gabriel' is the same name in Spanish."
+  },
+  {
+   "strongs": "G1044",
+   "sha256": "8820a9ebcf63bea02f2859f1425f9b57e138eea43694a9bb64a9adfed6287918",
+   "gloss": "gangrena",
+   "definition": "γάγγραινα, -ης, ἡ,\nuna gangrena, una llaga que corroe y lleva a la necrosis: 2Ti.2:17.†"
+  },
+  {
+   "strongs": "G1045",
+   "sha256": "85170700443d517cff8d318b0683fccb272395f9d746a1dd205b2ce815b37b75",
+   "gloss": "Gad",
+   "definition": "Γάδ, ὁ, indecl. (heb. גָּד),\nGad (Gen.30:11 49:13, al.): Rev.7:5.†"
+  },
+  {
+   "strongs": "G1046",
+   "sha256": "21b004484fb16068c4d514e35f87ba62d08a571a60b532997852ce370272944f",
+   "gloss": "Gadara",
+   "definition": "Γαδαρηνός, -ή, -όν\n(Γαδαρά, Gadara, la capital de Perea),\ngadareno, de Gadara: Mat.8:28 (Rec. Γεργεσηνῶν), Mrk.5:1, Rec. (Edd., Γερασηνῶν), Luk.8:26, 37 Rec. (Edd., Γερασηνῶν).†"
+  },
+  {
+   "strongs": "G1047",
+   "sha256": "d8da5618775102f690bfe7423856f2bb0e3fd0149fac9678f706793b5e52ffd0",
+   "gloss": "tesorería",
+   "definition": "γάζα, -ης, ἡ (palabra persa),\n[en LXX por גִּנְזִין, II Est.5:17 6:1 7:20, 21, Est.4:7; גִּזְבָּר, II Est.7:21; Isa.39:2 * ;]\ntesoro: Act.8:27.†"
+  },
+  {
+   "strongs": "G1048",
+   "sha256": "32e76a3e1755e4ef0b0c99767e773a64bbca7644afd0caa3a8081184c5d70b51",
+   "gloss": "Gaza",
+   "definition": "Γάζα -ης, ἡ (heb. עַזָּה),\nGaza, en el AT, una de las cinco ciudades principales de los filisteos: Act.8:26.†"
+  },
+  {
+   "strongs": "G1049",
+   "sha256": "70f6ca9f2da72ccc3446e7028d35737d2729fd6a844a247cb4e6b3550137a2c9",
+   "gloss": "tesorería",
+   "definition": "γαζο-φυλάκιον, -ου, τό\n(γάζα, φυλακή), [en LXX principalmente por לִשְׁכָּה, נִשְׁכָּה (4Ki.23:11, al.), una vez por גְּנָזִים (Est.3:9); το͂ γ., τᾶ γ., del tesoro de un templo, Neh.10:37, 2Ma.3:6, al. ;]\ntesorería: también, al parecer, las arcas en forma de trompeta en las que se echaban las ofrendas del pueblo para el templo (DB, iv, 96; DCG, ii, 748): Mrk.12:41, 43 Luk.21:1, Jhn.8:20.†"
+  },
+  {
+   "strongs": "G1050G",
+   "sha256": "c35403a185e844c3728d120eb9d55f7ec5cc896e8667e41e11d6124418797d35",
+   "gloss": "Gayo",
+   "definition": "Γαῖος, -ου, ὁ (Γάϊος, Rec.),\nGayo, el nombre de un cristiano;\n1. de Macedonia: Act.19:29.\n2. De Derbe: Act.20:4.\n3. De Corinto: Rom.16:23, 1Co.1:14.\n4. Aquel a quien se dirige la Ep. de Jn: III Jo 1.\n†"
+  },
+  {
+   "strongs": "G1050H",
+   "sha256": "c35403a185e844c3728d120eb9d55f7ec5cc896e8667e41e11d6124418797d35",
+   "gloss": "Gayo",
+   "definition": "Γαῖος, -ου, ὁ (Γάϊος, Rec.),\nGayo, el nombre de un cristiano;\n1. de Macedonia: Act.19:29.\n2. De Derbe: Act.20:4.\n3. De Corinto: Rom.16:23, 1Co.1:14.\n4. Aquel a quien se dirige la Ep. de Jn: III Jo 1.\n†"
+  },
+  {
+   "strongs": "G1050I",
+   "sha256": "c35403a185e844c3728d120eb9d55f7ec5cc896e8667e41e11d6124418797d35",
+   "gloss": "Gayo",
+   "definition": "Γαῖος, -ου, ὁ (Γάϊος, Rec.),\nGayo, el nombre de un cristiano;\n1. de Macedonia: Act.19:29.\n2. De Derbe: Act.20:4.\n3. De Corinto: Rom.16:23, 1Co.1:14.\n4. Aquel a quien se dirige la Ep. de Jn: III Jo 1.\n†"
+  },
+  {
+   "strongs": "G1050J",
+   "sha256": "c35403a185e844c3728d120eb9d55f7ec5cc896e8667e41e11d6124418797d35",
+   "gloss": "Gayo",
+   "definition": "Γαῖος, -ου, ὁ (Γάϊος, Rec.),\nGayo, el nombre de un cristiano;\n1. de Macedonia: Act.19:29.\n2. De Derbe: Act.20:4.\n3. De Corinto: Rom.16:23, 1Co.1:14.\n4. Aquel a quien se dirige la Ep. de Jn: III Jo 1.\n†"
+  },
+  {
+   "strongs": "G1051",
+   "sha256": "70302d9fb55689ad9920f221884f5afabf858982ea4c07046dc92adefcfe1e85",
+   "gloss": "leche",
+   "definition": "γάλα, -ακτος, τό\n[en LXX por חלב ;]\nleche: 1Co.9:7. Metafórico, de la enseñanza cristiana elemental: 1Co.3:2, Heb.5:12, 13; τὸ λογικὸν ἄδολον γ., la leche racional (espiritual) genuina (véase Hort, in l.), 1Pe.2:2 (en apoyo del AV, milk of the word, véase ICC, in l.).†",
+   "note": "AV's English rendering 'milk of the word' kept as quoted."
+  },
+  {
+   "strongs": "G1052",
+   "sha256": "79f4e3efd45fc99538cd0aabbb6bbb54008793e0b6f4cc6bb6e99d9b3114b95e",
+   "gloss": "gálata",
+   "definition": "Γαλάτης, -ου, ὁ (originalmente sin. del cl. Κέλτης; cf. 1Ma.8:2, y véase la palabra siguiente),\nun gálata: Gal.3:1.†"
+  },
+  {
+   "strongs": "G1053",
+   "sha256": "3ccbe0afca825ee20c787ff43a3d30db7dec4a75eeb8ee0ea6ca37d58c87201b",
+   "gloss": "Galacia",
+   "definition": "Γαλατία, -ας, ἡ,\nGalacia;\n1. una región gentilicia de Asia Menor, poblada por galos (iii/a. C).\n2. Una provincia romana que incluía esta región (DB, ii, 85 ss.): 1Co.16:1, Gal.1:2, 2Ti.4:10 (T, Tr., mg., Γαλλίαν), 1Pe.1:1.\n†"
+  },
+  {
+   "strongs": "G1054",
+   "sha256": "355ffb75f6e9f962d7662362552e9a65f5d423c2925eed9545c5dfb098966784",
+   "gloss": "Galacia",
+   "definition": "Γαλατικός, -ή, -όν (véase la palabra anterior),\ngálata, perteneciente a Galacia: Act.16:6 18:23.†"
+  },
+  {
+   "strongs": "G1055",
+   "sha256": "ef7b09436fa1b8b5f047aeeb970cd4c0e45d6a1a9bd19976918410fbc95579d6",
+   "gloss": "calma",
+   "definition": "γαλήνη, -ης, ἡ,\nuna calma: Mat.8:26, Mrk.4:39, Luk.8:24.†"
+  },
+  {
+   "strongs": "G1056G",
+   "sha256": "e0dd5d6f58927bb25ee00780efc143d0f8ae37218838447cf25d3a5ee94acd82",
+   "gloss": "Galilea",
+   "definition": "Γαλιλαία, -ας, ἡ (heb. הַגָּלִיל, el círculo, el distrito),\nGalilea, el nombre de la región norte de Palestina en tiempos del NT: Γ. τῶν ἐθνῶν, Mat.4:15 (LXX); θάλασσα τῆς Γ., Mat.15:29 (cf. Jhn.6:1)."
+  },
+  {
+   "strongs": "G1056H",
+   "sha256": "91eb21590a81c82a3bbac92686a8a7ce5654a182deac23b51decaea25ef38454",
+   "gloss": "(mar de) Galilea",
+   "definition": "Γαλιλαία, -ας, ἡ (heb. הַגָּלִיל, el círculo, el distrito),\nGalilea, el nombre de la región norte de Palestina en tiempos del NT: Γ. τῶν ἐθνῶν, Mat.4:15 (LXX); θάλασσα τῆς Γ., Mat.15:29 (cf. Jhn.6:1)."
+  },
+  {
+   "strongs": "G1057",
+   "sha256": "02e7851ce634e58cd509f3777bb0e2ab2902b6a8020b509e0e2fa703ea509a91",
+   "gloss": "galileo",
+   "definition": "Γαλιλαῖος, -αία, -αῖον,\ngalileo: Mat.26:69, Mrk.14:70, Luk.13:1, 2 22:59, 23:6, Jhn.4:45, Act.1:11 2:7 5:37.†"
+  },
+  {
+   "strongs": "G1058",
+   "sha256": "2943a5ffbdf66f73e0e3807dfa92548628340bffc6b5356030ce651e2b90641e",
+   "gloss": "Galión",
+   "definition": "Γαλλίων, -ωνος, ὁ,\nGalión, procónsul de Acaya: Act.18:12, 14 17.†"
+  },
+  {
+   "strongs": "G1059",
+   "sha256": "e5f72f39e9d7f9b3ad070172580bf1b5c21ac0d347146c6f62c484588e29791e",
+   "gloss": "Gamaliel",
+   "definition": "Γαμαλιήλ, ὁ (heb. גַּמְלִיאֵל),\nGamaliel el anciano, fariseo y doctor de la ley: Act.5:34 22:3.†",
+   "note": "Gloss 'Gamaliel' is the same name in Spanish."
+  },
+  {
+   "strongs": "G1060",
+   "sha256": "2ca7186f4df314a9484f3da127771851ca7a2c4a0cc1e222fc92fee2a5902b28",
+   "gloss": "casarse",
+   "definition": "γαμέω, -ῶ,\n[en LXX: Est.10:3, 2Ma.14:25, 4Ma.16:9 * ;]\ncasarse;\n1. del hombre, casarse, tomar por esposa (ducere): absol., Mat.19:10 22:25, 30 24:38, Mrk.12:25, Luk.17:27, 20:34, 35, 1Co.7:28, 33; con acusativo: Mat.5:32 19:9, Mrk.6:17 10:11, Luk.14:20 16:18.\n2. De la mujer,\n(a) med. (y en escritores tardíos, pas.), darse en matrimonio, casarse (nubere): 1Co.7:39;\n(b) en el helenístico (M, Pr., 159), act. (como del hombre), casarse: absol., 1Co.7:28, 34 1Ti.5:11, 14. con acusativo, Mrk.10:12.\n3. De ambos sexos: absol., 1Ti.4:3, 1Co.7:9, 10 36.\n†"
+  },
+  {
+   "strongs": "G1061",
+   "sha256": "66c98cf1fc0c38c496a632b445f3be7f397944f8be0725c0d79905e4c2cfc76c",
+   "gloss": "dar en casamiento",
+   "definition": "γαμίζω\n(γάμος),\ndar en casamiento, a una hija: 1Co.7:38. Pas., Mat.22:30 24:38, Mrk.12:25, Luk.17:27 20:35 (WH, mg., γαμίσκονται; cf. γαμίζω).†"
+  },
+  {
+   "strongs": "G1062",
+   "sha256": "d5de8e60b99346b2585ef670b331535a609e27fcb8504c3e51300f42f7e3eae8",
+   "gloss": "boda",
+   "definition": "γάμος, -ου, ὁ,\n[en LXX por מִשְׁתֶּה ;]\n1. una boda, esp. un banquete de bodas: Mat.22:8, 10 11, 12, Jhn.2:1-3, Rev.19:7, 9; pl. (Field, Notas, 16), Mat.22:2-4, 9 25:10, Luk.12:36 14:8.\n2. matrimonio: Heb.13:4 (Cremer, 666).\n†"
+  },
+  {
+   "strongs": "G1063",
+   "sha256": "bcdbb45e9f7258681f69e0bd88f4cb41184b2f122792441f2da91e70bbdcd71e",
+   "gloss": "porque",
+   "definition": "γάρ,\npartícula coordinante, contr. de γε ἄρα,\nciertamente pues, de ahí, en verdad, de hecho, sí, pues, ¿por qué?, y cuando da una razón o explicación, porque, pues; el uso en el NT concuerda en general con el del cl.;\n1. explicativo y epexegético: Mat.4:18 19:12, Mrk.1:16 5:42 16:4, Luk.11:3o, Rom.7:1, 1Co.16:5, al.\n2. Conclusivo, en preguntas, respuestas y exclamaciones: Mat.9:5 27:23, Luk.9:25 22:27, Jhn.9:30, Act.8:31 16:37 19:35, Rom.15:26, 1Co.9:10, Php.1:18 (Ellic., in l.), 1Th.2:20, al.\n3. Causal: Mat.1:21 2:2, 5, 6, 3:23, Mrk.1:22, 9:6, Luk.1:15, 18, Jhn.2:25, Act.2:25, Rom.1:9, 11, 1Co.11:5, Rev.1:3, al.; al dar la razón de un mandato o prohibición, Mat.2:20 3:9, Rom.13:11, Col.3:3, 1Th.4:3, al.; cuando la causa está contenida en una oración interrog., Luk.22:27, Rom.3:3 4:3, 1Co.10:29; καὶ γάρ, porque también, Mrk.10:45, Luk.6:32, 1Co.5:7, al. íd. como en cl. = etenim, donde el καί pierde su fuerza conectiva (Bl., §78, 6; Kühner 3, ii, 854 s.), Mrk.14:70, Luk.1:66 22:37, 2Co.13:4. El lugar propio de γάρ es después de la primera palabra de una cláusula, pero en los poetas a menudo va en tercer o cuarto lugar, y así en la prosa tardía: 2Co.1:19. Sin embargo, \"lo que debe notarse no es el número sino la naturaleza de la palabra tras la cual se coloca\" (véase Thayer, véase la palabra)."
+  },
+  {
+   "strongs": "G1064",
+   "sha256": "0ae5b9767877a61e45725d9f2c9aa2d94d383d80b83c164e2abdca50cdc452f3",
+   "gloss": "vientre",
+   "definition": "γαστήρͅ, -τρός, ἡ,\n[en LXX por בֶּטֶן, ἐν γ. ἔχειν por הרה, ἐν γ. λαμβάνειν por חרה ;]\n1. el vientre: metafóricamente, un glotón, Tit.1:12.\n2. el seno materno: ἐν γ. ἔχειν, estar encinta, Mat.1:18, 23\" (LXX) 24:19, Mrk.13:17, Luk.21:23, 1Th.5:3, Rev.12:2; εν γ. συλλαμβ., concebir, Luk.1:31.\n†"
+  },
+  {
+   "strongs": "G1065",
+   "sha256": "c9b43404c6bb274f2ef6a06753ef02fb13546e8fc7990dc9eb37b033d280fffd",
+   "gloss": "ciertamente",
+   "definition": "γε, partícula enclítica pospositiva, más rara en la κοινή que en el cl., que da especial relieve a la palabra a la que se une, distinguiéndola como la menor o la más importante (Thayer, véase la palabra),\nciertamente, al menos, aun (pero no siempre traducible al inglés);\n1. usada sola: Luk.11:8 18:5 Rom.8:32.\n2. Más frecuentemente con otras partículas: αλλά γε, Luk.24:21, 1Co.9:2; ἄρα γε, Mat.7:20 17:26, Act.17:27; ἆρά γε, Act.8:30; εἴ γε (Rec. εἴγε), 2Co.5:3, Gal.3:4, Eph.3:2 4:21, Col.1:23 (véase Meyer, Ellic., sobre Ga, Eph, ll. con; Lft., sobre Ga, Col, ll. con); εἰ δὲ μήγε, tras una afirmación, Mat.6:1, Luk.10:6 13:9; una negación, Mat.9:17, Luk.5:36, 37 14:32, 2Co.11:16; καί γε (Rec. καίγε, cl. καὶ . . . γε), Luk.19:42 (WH om.), Act.2:18 17:27; καίτοιγε (L καίτοι γε, Tr. καί τοι γε), Jhn.4:2; μενοῦνγε (véase véase la palabra); μήτι γε, véase: μήτι; ὄφελόν, 1Co.4:8.\n†"
+  },
+  {
+   "strongs": "G1066",
+   "sha256": "23163da35f407200ab1b093816d248df41811f67137c444ab13304d631d16b03",
+   "gloss": "Gedeón",
+   "definition": "Γεδεών, ὁ, indecl. en la LXX y el NT, en FlJ, Ant., véase 6, 3 y 4 -ῶνος (heb. גִּדְעוֹן),\nGedeón (Jdg.6-8): Heb.11:32.†"
+  },
+  {
+   "strongs": "G1067",
+   "sha256": "2a85698944e4f5b634f900a03d487d7d10b43d5cb0bde2efb8bc845a4e6bd394",
+   "gloss": "infierno: Gehena",
+   "definition": "γέεννα (γέενα, Mrk.9:45, Rec.), -ης, ἡ (quizá a través del aram. גֵּיהִנָּם, del heb. גֵּי הִנֹּם, Neh.11:30; גֵּי בֶּן־הִנֹּם, Jhn.18:16; גֵּי בּנֵי־הִנֹּם, 4Ki.23:10; valle de (del hijo, de los hijos de) lamentación);\n[en la LXX lo más cercano a γ. es γαίεννα, Jos.18:16 (Γαὶ Ὀννόμ, A), en otras partes φάραγξ Ὀνόμ (Jos.15:8, al.), V. Swete sobre Mrk.9:43 ;]\nGehena, un valle al O. y al S. de Jerusalén, que, como lugar del culto al fuego desde el tiempo de Acaz, fue profanado por Josías y se convirtió en vertedero de los desperdicios de la ciudad. Más tarde, el nombre se usó como símbolo del lugar del castigo futuro, como en el NT: Mat.5:29, ; 10:28, Mrk.9:43, 45 47, Luk.12:5, Jas.3:6; γ. τ. πυρός, Mat.5:22 18:19, prob. con ref. a los fuegos de Moloc (DB, ii, 119b); υἱὸς γεέννης, Mat.23:15; κρίσις γεέννης, 23:33.†"
+  },
+  {
+   "strongs": "G1068",
+   "sha256": "ba89f74e7e7069701419c60cd65d52b8f83efa47589554c4bdef26768261426c",
+   "gloss": "Getsemaní",
+   "definition": "Γεθσημασεί (Rec. -νῆ, LTr. -νεῖ) indecl. (heb. גֵּת שְׁמָנִי, lagar de aceite),\nGetsemaní: llamado en Jhn.18:1 un κῆπος, pero nombrado solo en Mat.26:36, Mrk.14:32.†"
+  },
+  {
+   "strongs": "G1069",
+   "sha256": "73f506321393b5694f4f1bd7d5824bbcc068bd87fba24342f932d60a9aea1250",
+   "gloss": "vecino",
+   "definition": "γείτων, -ονος, ὁ, ἡ\n(γῆ), [en LXX principalmente por שָׁכֵן ;]\nun vecino: Luk.14:12 15:6, 9 Jhn.9:8.†"
+  },
+  {
+   "strongs": "G1070",
+   "sha256": "c9e78e623bd278a873f17956878cbafea08c6ac8e5da2da14d1d52d39b61cf48",
+   "gloss": "reír",
+   "definition": "γελάω, -ῶ,\n[en LXX principalmente por צחק, שׂחק ;]\nreír: Luk.6:25; fut., γελάσω) (M, Pr., 154), ib. 21 (cf. κατα-γελάω).†"
+  },
+  {
+   "strongs": "G1071",
+   "sha256": "56581c09b1972b2efc80527a9f00838fa2ee672611337e2a3e2f112d0ada9e84",
+   "gloss": "risa",
+   "definition": "γέλως, -ωτος, ὁ,\n[en LXX principalmente por שְׂחוֹק ;]\nrisa: Jas.4:9.†"
+  },
+  {
+   "strongs": "G1072",
+   "sha256": "d09fc94c7e898e83aa2f48d46d4a6ecb0412392d9fdb9f59bc66f3d79ad45185",
+   "gloss": "llenar",
+   "definition": "γεμίζω\n(γέμω), [en LXX: Gen.45:17 (טען), 3Ma.5:47, 4Ma.3:14 * ;]\nllenar;\n1. propiamente, de una nave (Thuc, al.): Mrk.4:37 (pas.).\n2. En escritores tardíos, en general (MGr., véase Kennedy, Sources, 155), con acusativo, ante genitivo, Mrk.15:36, Jhn.2:7 6:13, Rev.15:8; ἀπό, Luk.15:16, Rec. WH, mg.; ἐκ, Luk.15:16, WH, Rev.8:5. Pas., absol.: Luk.14:23.\n†"
+  },
+  {
+   "strongs": "G1073",
+   "sha256": "6ac44b839a82424c010a432d1a4a50397a39944d72c0a9e5c2c21dbcd100c883",
+   "gloss": "estar lleno",
+   "definition": "γέμω (usado solo en presente e impf.),\n[en LXX por מלא, נשׂא ;]\nestar lleno;\n1. propiamente, de una nave (Xen.).\n2. En general (Plat., al.),\n(a) con genitivo de cosa(s): Mat.23:27, Luk.11:39, Rom.3:14\" (LXX), Rev.4:6, 8 5:8 15:7 17:3 (Rec.) 4 21:9\n(b) ante ἐκ: Mat.23:25;\n(c.) con acusativo de cosa(s) (llamado solecismo en WM, 251; Bl., §36, 4), como en el gr. posterior desde los tiempos bizantinos hasta los modernos (Jannaris, Gr., 1319): Rev.17:3.\n†",
+   "note": "Source '(with)' is a garbled '(c)' (the third subsection), rendered '(c)'."
+  },
+  {
+   "strongs": "G1074",
+   "sha256": "39ac447b7b88b0e0f06d01345424ca0b561db96d35a5bfb0b3afeb08f955021d",
+   "gloss": "generación",
+   "definition": "γενεά, -ᾶς, ἡ\n(γίγνομαι), [en LXX principalmente por דּוֹר, דֹּר (Cremer, 148) ;]\n1. raza, linaje, familia (en el NT, γέννημα, véase).\n2. generación;\n(a) de los miembros contemporáneos de una familia: pl., Mat.1:17 (cf. Gen.31:3, מוֹלֶדֶת); metafóricamente, de los que se parecen en carácter, en mal sentido, Mat.17:17, Mrk.9:19, Luk.9:41 16:8, Act.2:40;\n(b) de todo el pueblo de un período dado: Mat.24:34, Mrk.13:30, Luk.21:32, Php.2:15; pl., Luk.1:48; esp. del pueblo judío, Mat.11:16 12:39, 41 42, 45 16:4 23:36, Mrk.8:12, 38 Luk.7:31 11:29, 30-32, 50, 51 17:25, Act.13:36, Heb.3:10\" (LXX) ; τὴν γ. αὐτοῦ τίς διηγήσεται, Act.8:33 (LXX);\n(c.) el período que abarca la vida de una generación, usado en pl. de manera amplia para edades sucesivas: Act.14:16 15:21, Eph.3:5, Col.1:26; εἰς γενεὰς καὶ γ. (= לִדוֹר וָדוֹר, al.), Luk.34:17, al), Luk.1:50; εἰς πάσας τὰς γ. τοῦ αἰῶνος τῶν αἰώνων, Eph.3:21 (Ellic, in l.; DCG, i, 639 s.).\n†",
+   "note": "Source '(with)' is a garbled '(c)' (the third subsection), rendered '(c)'. 'Luk.34:17' is the source's own (impossible) reference, kept as written."
+  },
+  {
+   "strongs": "G1075",
+   "sha256": "c6b94cf4e2231ebf2317ed49eabc4e09d147c8518ecccb34c386145056bb5551",
+   "gloss": "trazar la genealogía",
+   "definition": "γενεαλογέω, -ῶ\n(γενεά, λέγω), [en LXX: 1Ch.5:1 (יחשׁ)* ;]\ntrazar la ascendencia, contar la genealogía; pas., ante ἐκ: Heb.7:6.†"
+  },
+  {
+   "strongs": "G1076",
+   "sha256": "3555bf15ead8f1699debded5301665d589653d88032ff9be2d7c1b929aaa76cc",
+   "gloss": "genealogía",
+   "definition": "γενεαλογία, -ας, ἡ (véase la palabra anterior);\n1. la elaboración de un linaje.\n2. una genealogía: pl., 1Ti.1:4, Tit.3:9 (véase CGT, in l., e ib. Intr., xlix ss.; DB, ii, p. 141).\n†"
+  },
+  {
+   "strongs": "G1077",
+   "sha256": "addd69807b37e693344cfec614d7899db330f8e58e9320a70a89ad3981e13ae5",
+   "gloss": "cumpleaños",
+   "definition": "γενέσια, -ων, τά, neut. pl. del adj. -ιος, -ον, relativo al nacimiento (γένεσις);\n1. en gr. ático, una conmemoración de los muertos.\n2. En gr. tardío, un banquete de cumpleaños (= cl. γενέθλια; así en los π., véase MM, Exp., x; cf. también Ῥutherford, NPhr., 184): Mat.14:6, Mrk.6:21.\n†"
+  },
+  {
+   "strongs": "G1078",
+   "sha256": "59cb814bfdc7d000185893268bfec35844eb3568a40a7beae66d2e31e7109d87",
+   "gloss": "origen",
+   "definition": "γένεσις, -εως, ἡ\n(γίγνομαι), [en LXX principalmente por תּוֹלֵדֹת ;]\n1. origen, linaje: βίβλος γενέσεως (como en Gen.2:4a 5:1), Mat.1:1.\n2. nacimiento: Mat.1:18, Luk.1:14 (Rec. γέννησις); πρόσωπον τῆς γ., el rostro de su nacimiento (\"lo que Dios lo hizo ser,\" Hort., in l.), Jas.1:23; ὁ τροχὸς τῆς γ., la rueda (el curso) del nacimiento o de la creación (\"la rueda de la naturaleza del hombre según su propósito divino original,\" Hort), Jas.3:6.\n†"
+  },
+  {
+   "strongs": "G1079",
+   "sha256": "f0c62e0476b440a387a0fd60b8081b68d96ad902baabbc887cc1eb189550b447",
+   "gloss": "nacimiento",
+   "definition": "γενετή, -ῆς, ἡ = γενεή, jón. por γενεά,\n[en LXX: Lev.25:47 (עֵקֶר מִשְׁפָּחָו), Est.4:17 * ;]\nnacimiento: ἐκ γ., Jhn.9:1.†"
+  },
+  {
+   "strongs": "G1080",
+   "sha256": "2518bcd8617b2f48c7534f238ecbaa475d9a7bb1e74fc5a8701e03425239991a",
+   "gloss": "engendrar",
+   "definition": "γεννάω, -ῶ\n(γέννα, poét. por γένος), [en LXX principalmente por ילד ;]\n1. del padre, engendrar: con acusativo, Mat.1:1-16, Act.7:8, 29; ante ἐκ, Mat.1:3, 5, 6.\n2. De la madre, dar a luz, parir: Luk.1:13, 57 23:29, Jhn.16:21; εἰς δουλείαν, Gal.4:24. Pas.\n(1) ser engendrado: Mat.1:20;\n(2) nacer: Mat.2:1, 4 19:12 26:24, Mrk.14:21, Luk.1:35, Jhn.3:4, Act.7:20, Rom.9:11, Heb.11:23; ante εἰς, Jhn.16:21 18:37, 2Pe.2:12; ἐν, Act.2:8 22:3, (ἁμαρτίαις), Jhn.9:34; ἀπό, Heb.11:12 (WH, mg., ἐγεν-); ἐκ, Jhn.1:13 3:6 8:41; con adj., τυφλὸς γ., Jhn.9:2; [Ῥωμαῖος ], Act.22:28; κατὰ σάρκα: κ. πνεῦμα: Gal.4:29. Metafórico; μάχας, 2Ti.2:23; ὑμᾶς ἐγέννησα, 1Co.4:15, (ὅν), Phm 10; en cita, Psa.2:7 (LXX), Act.13:33, Heb.1:5 5:5; de los cristianos como engendrados por Dios, nacidos de nuevo: Jhn.1:13 3:3, 5-8, 1Jn.2:29 3:9 4:7 5:1, 4, 18 (cf. ἀνα-γεννάω); (Cremer, 146)."
+  },
+  {
+   "strongs": "G1081G",
+   "sha256": "f35b3dde76dc939b721e8f5c3d87a9362d175ea1391ef60de892d7f89066c1f3",
+   "gloss": "descendencia",
+   "definition": "γέννημα, -τος, τό\n(γεννάω), [en LXX principalmente por תְּבוּאָה ;]\ncría de hombres o de animales: ἐχιδνῶν, Mat.3:7 12:34 23:33, Luk.3:7 (y en otras partes en Rec. por γένημα, véase).†"
+  },
+  {
+   "strongs": "G1081H",
+   "sha256": "83b67f48ab72fa42c239bd72a79f37ec3e6a330dcff985fddcdefceef43ce616",
+   "gloss": "descendencia: fruto",
+   "definition": "γέννημα, -τος, τό\n(γεννάω), [en LXX principalmente por תְּבוּאָה ;]\ncría de hombres o de animales: ἐχιδνῶν, Mat.3:7 12:34 23:33, Luk.3:7 (y en otras partes en Rec. por γένημα, véase).†"
+  },
+  {
+   "strongs": "G1082",
+   "sha256": "94ba763540f0844afe737d383fa71cd084d92957329be9e600d228d98da66ded",
+   "gloss": "Genesaret",
+   "definition": "Γεννησαρέτ (Rec. Γενησ-, Mk, l. con; Targ. גְּנֵיסַר),\n[en LXX: Γεννησάρ (como en algunos MSS. de Mt, Mk), 1Ma.11:67 * ;]\nGenesaret, una llanura fértil en la ribera occidental del mar de Galilea; ἡ γῆ, Mat.14:34, Mrk.6:53; ἡ λίμνη (יָם כִּנֶּרֶת, Num.34:11, en otras partes ἡ θάλασσα τ. Γαλιλαίας, Mrk.1:16; ἡ θ. τ. Τιβεριάδος, Jhn.6:1), Luk.5:1.†"
+  },
+  {
+   "strongs": "G1083",
+   "sha256": "01922813713b28d77525e59bbb06e2f7ad5baf3aa8902bf3eba846980e0c7bf8",
+   "gloss": "nacimiento",
+   "definition": "γέννησις, -εως, ἡ,\n[en LXX: 1Ch.4:8 (מִשְׁפָּחָה), Ecc.7:2 (ילד ni.; γένεσις, Aא), Wis.3:13 א 1 (γένεσις, ABא 2), Sir.22:3 * ;]\n1. el engendrar.\n2. nacimiento: Mat.1:18, Luk.1:14, Rec.\n†"
+  },
+  {
+   "strongs": "G1084",
+   "sha256": "207fbba4d7969d81ec573fd0cb385556e53633f030849e71e4dcce633d0e9993",
+   "gloss": "nacido",
+   "definition": "γεννητός, -ή -όν\n(γεννάω), [en LXX: Job.11:2, 12 14:1 15:14 25:4 (ילד)* ;]\nengendrado, nacido: pl., γ. γυναικῶν (cf. יְלוּד אִשָּׁה, Job.14:1), perífrasis por el género humano, Mat.11:11, Luk.7:28 (Cremer, 147)."
+  },
+  {
+   "strongs": "G1085G",
+   "sha256": "66a0c7ad7a941b01016dd3803c1cffaba03bb75fa59ed195ac8016f3c01e52f9",
+   "gloss": "familia: descendiente",
+   "definition": "γένος, -ους, τό\n(γίγνομαι), [en LXX por עַם, מִין, זֶרַע, etc. ;]\n1. familia: Act.4:6 7:13 13:26.\n2. descendencia: Act.17:28, 29 Rev.22:16.\n3. raza, nación; Mrk.7:28, Act.4:36 7:19 18:2, 24, 2Co.11:26, Php.3:5, Gal.1:14, 1Pe.2:9.\n4. clase, especie, categoría: Mat.13:47 17:21, Rec., Mrk.9:29, 1Co.12:10, 28 14:10.\n†"
+  },
+  {
+   "strongs": "G1085H",
+   "sha256": "66c7b9216c8c0f941f9ce1f77edd027f25ded4b5ea0592321e53e1f10da0edb1",
+   "gloss": "familia: clase",
+   "definition": "γένος, -ους, τό\n(γίγνομαι), [en LXX por עַם, מִין, זֶרַע, etc. ;]\n1. familia: Act.4:6 7:13 13:26.\n2. descendencia: Act.17:28, 29 Rev.22:16.\n3. raza, nación; Mrk.7:28, Act.4:36 7:19 18:2, 24, 2Co.11:26, Php.3:5, Gal.1:14, 1Pe.2:9.\n4. clase, especie, categoría: Mat.13:47 17:21, Rec., Mrk.9:29, 1Co.12:10, 28 14:10.\n†"
+  },
+  {
+   "strongs": "G1086G",
+   "sha256": "35e22c482c6fc0b5d723d077d4236d0ad344cb290094d3f4ce9df49bc23da7cd",
+   "gloss": "geraseno",
+   "definition": "Γεργασηνός, -ή, -όν,\ngeraseno, de Gerasa, no la G. de Decápolis, a 30 millas al S.E. del lago, sino una Gerasa o Gergesa (quizá la moderna Kersa) en la ribera oriental; como sust., pl. οἱ Γ., Mrk.5:1, Luk.8:26, 37 (Γεργεσηνῶν, RV, mg. 1; Γαδαρηνῶν, RV, mg. 2).†"
+  },
+  {
+   "strongs": "G1086H",
+   "sha256": "464d816b545696cfd964c464ddb2a7cd0a4c25b3b31b04f522172c3d7bb9d405",
+   "gloss": "gergeseno",
+   "definition": "Γεργασηνός, -ή, -όν,\ngeraseno, de Gerasa, no la G. de Decápolis, a 30 millas al S.E. del lago, sino una Gerasa o Gergesa (quizá la moderna Kersa) en la ribera oriental; como sust., pl. οἱ Γ., Mrk.5:1, Luk.8:26, 37 (Γεργεσηνῶν, RV, mg. 1; Γαδαρηνῶν, RV, mg. 2).†"
+  },
+  {
+   "strongs": "G1087",
+   "sha256": "9f28659b457162510014ff7ee14c0d383fce4267b8de94471f788918684ae446",
+   "gloss": "consejo de ancianos",
+   "definition": "γερουσία, -ας, ἡ\n(γέρων), [en LXX (en el AT solo en el Hex.) por זָקֵן ;]\nun consejo de ancianos, senado; en el NT, del Sanedrín (Cl. Rev., i, 43 s.; DB, ext., 99): Act.5:21.†"
+  },
+  {
+   "strongs": "G1088",
+   "sha256": "5f287494d3a1381a46df9e487ddbe3266c2706b47d7f528c46228c97c21af90b",
+   "gloss": "un anciano",
+   "definition": "γέρων, -οντος, ὁ,\n[en LXX por זָקֵן ;]\nun anciano: Jhn.3:4.†"
+  },
+  {
+   "strongs": "G1089",
+   "sha256": "88f185c19f5e2ccb453b28cec7be907bea9adf17f27558d33091673bd3755a23",
+   "gloss": "gustar",
+   "definition": "γεύω, γεύομαι,\n[en LXX principalmente por טעם ;]\nhacer gustar. Med., gustar, comer: absol., Act.10:10 20:11, Col.2:21; con genitivo, Mat.27:34, Luk.14:24, Act.23:14; con acusativo (no cl., pero véase Westc, Heb., l. con; M, Pr., 66, 245), Jhn.2:9. Metafórico, Heb.6:4; ῥῆμα θεοῦ, Heb.6:5 (sobre el caso, véase supr., y cf. Milligan, NTD, 68) θανάτου (cf. el talmúdico טַעַם מִיתָה), Mat.16:28, Mrk.9:1, Luk.9:27, Jhn.8:52, Heb.2:9; ante ὅτι, 1Pe.2:3 (Cremer, 148).†"
+  },
+  {
+   "strongs": "G1090",
+   "sha256": "0ec1c47e929fd8f6031757c4c327f08f295feeb67ef1f48aa724a26bdf6cbbd9",
+   "gloss": "cultivar",
+   "definition": "γεωργέω, -ῶ\n(γεωργός), [en LXX: 1Ch.27:26 (עָשָׂה מְלֶאכֶת הַשָּׂדֶה), I Est.4:6, 1Ma.14:8 * ;]\nlabrar la tierra: pas., Heb.6:7."
+  },
+  {
+   "strongs": "G1091",
+   "sha256": "08b2497325ece4fd6fc2e6b3c37509ce59d10cfefef691e8531383805d0cbcde",
+   "gloss": "campo de cultivo",
+   "definition": "γεώργιον, -ου, τό\n(γεωργός), [en LXX, frecuentemente en Pr., por שָׂדֶה, etc. ;]\n1. un campo (Pro.24:5, 30, Strabo).\n2. cultivo, labranza, labor agrícola (Pro.6:7 9:12, Jer.28:23, Sir.27:6): 1Co.3:9.\n†"
+  },
+  {
+   "strongs": "G1092",
+   "sha256": "46970d577d38f74ec06484668ccc4ab06d8b7929de865735a7b75d5f4c2fe85d",
+   "gloss": "labrador",
+   "definition": "γεωργός, -οῦ, ὁ\n(γῆ, ἔργω = ἔρδω, hacer), [en LXX por אִכָּר, etc. ;]\n1. un labrador: 2Ti.2:6, Jas.5:7.\n2. un viñador (cf. ἀμπελουργός, Luk.13:7): Mat.21:33-35, 38, 40, 41, Mrk.12:1, 2 7, 9, Luk.20:9, 10 14, 16, Jhn.15:1.\n†"
+  },
+  {
+   "strongs": "G1093G",
+   "sha256": "4fb1d92fa53ec2a039c65d90f33947cd07f6aa0d25172f2a90ef025bedfe4afb",
+   "gloss": "tierra: planeta",
+   "definition": "γῆ, γῆς, ἡ,\n[en LXX por אֲדָמָה ,אֶרֶץ, etc. ;]\n1. la tierra, el mundo: Luk.21:35, Act.1:8, Heb.11:13, Rev.3:10, al.; opuesto a οὐρανός, Mat.5:18 11:25, Mrk.13:27, al.\n2. tierra;\n(a) opuesta al mar o al agua: Mrk.4:1, Luk.5:3, Jhn.6:21, al.;\n(b) como objeto de cultivo: Mat.13:5, Mrk.4:8, Luk.13:7, Heb.6:7, al.;\n(c.) el suelo: Mat.10:29, Mrk.8:6, Luk.24:5, Jhn.8:6, al.;\n(d) una región, un país: Luk.4:25, Rom.9:28, Jas.5:17; γῆ Ἰσραήλ, Mat.2:20, 21; Χαλδαίων, Act.7:4; ἡ Ἰουδαία γῆ, Jhn.3:22; con genitivo de persona(s), Act.7:3.",
+   "note": "Source '(with)' is a garbled '(c)' (the third subsection), rendered '(c)'."
+  },
+  {
+   "strongs": "G1093H",
+   "sha256": "cfda60cba8f8c72b322b74688c342e760eb57b4312426dee3f65923cf2ee0acd",
+   "gloss": "tierra: país",
+   "definition": "γῆ, γῆς, ἡ,\n[en LXX por אֲדָמָה ,אֶרֶץ, etc. ;]\n1. la tierra, el mundo: Luk.21:35, Act.1:8, Heb.11:13, Rev.3:10, al.; opuesto a οὐρανός, Mat.5:18 11:25, Mrk.13:27, al.\n2. tierra;\n(a) opuesta al mar o al agua: Mrk.4:1, Luk.5:3, Jhn.6:21, al.;\n(b) como objeto de cultivo: Mat.13:5, Mrk.4:8, Luk.13:7, Heb.6:7, al.;\n(c.) el suelo: Mat.10:29, Mrk.8:6, Luk.24:5, Jhn.8:6, al.;\n(d) una región, un país: Luk.4:25, Rom.9:28, Jas.5:17; γῆ Ἰσραήλ, Mat.2:20, 21; Χαλδαίων, Act.7:4; ἡ Ἰουδαία γῆ, Jhn.3:22; con genitivo de persona(s), Act.7:3.",
+   "note": "Source '(with)' is a garbled '(c)' (the third subsection), rendered '(c)'."
+  },
+  {
+   "strongs": "G1093I",
+   "sha256": "d6920b41d88301b20e6280e3d68b176cd38211fb6d3a4ba4ad28bcb1b5b134d8",
+   "gloss": "tierra: suelo",
+   "definition": "γῆ, γῆς, ἡ,\n[en LXX por אֲדָמָה ,אֶרֶץ, etc. ;]\n1. la tierra, el mundo: Luk.21:35, Act.1:8, Heb.11:13, Rev.3:10, al.; opuesto a οὐρανός, Mat.5:18 11:25, Mrk.13:27, al.\n2. tierra;\n(a) opuesta al mar o al agua: Mrk.4:1, Luk.5:3, Jhn.6:21, al.;\n(b) como objeto de cultivo: Mat.13:5, Mrk.4:8, Luk.13:7, Heb.6:7, al.;\n(c.) el suelo: Mat.10:29, Mrk.8:6, Luk.24:5, Jhn.8:6, al.;\n(d) una región, un país: Luk.4:25, Rom.9:28, Jas.5:17; γῆ Ἰσραήλ, Mat.2:20, 21; Χαλδαίων, Act.7:4; ἡ Ἰουδαία γῆ, Jhn.3:22; con genitivo de persona(s), Act.7:3.",
+   "note": "Source '(with)' is a garbled '(c)' (the third subsection), rendered '(c)'."
+  },
+  {
+   "strongs": "G1094",
+   "sha256": "b5da60d9b3ce7953f297f0d7cef23e4478f787018af27b2f1a6cbd48f7418896",
+   "gloss": "vejez",
+   "definition": "γῆρας, ático, genitivo (-αος) -ως, dativo ᾳ; jón. y κοινή, -εος (-ους), dativo -ει, τό,\n[en LXX por שֵׂיבָה, etc. ;]\nvejez: ἐν γήρει, Luk.1:36.†"
+  },
+  {
+   "strongs": "G1095",
+   "sha256": "202736aedbee38a471538034d46285410b896879d640c5ece819c30c7451e519",
+   "gloss": "envejecer",
+   "definition": "γηράσκω (también γηράω; γῆρας),\n[en LXX principalmente por זקן ;]\nenvejecer: Jhn.21:18, Heb.8:13.†\nSYN.: παλαιοῦμαι."
+  },
+  {
+   "strongs": "G1096",
+   "sha256": "cc19712e0af9042721a5bf027c6dfc984f59e2e88bae0d64a963bdd802b9c2da",
+   "gloss": "ser",
+   "definition": "γίνομαι, jón. y κοινή por el át. γίγν- (M. Pr., 47; Bl., §6, 8 Mayser, 166 s.),\n[en LXX principalmente por היה ;]\n1. de personas, cosas, sucesos, llegar a existir, nacer, surgir, sobrevenir: Jhn.1:15 8:58, 1Co.15:37; de una primera aparición en público, Mrk.1:4, Jhn.1:6, al.; ante ἐκ (del nacimiento), Rom.1:3, Gal.4:4; διά, Jhn.1:3; βροντή, Jhn.12:29; σεισμός, Rev.6:12; γογγυσμός, Act.6:1; χαρά, Act.8:8, muchos otros ejs. semejantes; ἡμέρα, Luk.22:66, al.; ὀψέ, Mrk.11:19; πρωΐα, Mat.27:1; νύξ, Act.27:27.\n2. De acontecimientos, acontecer, tener lugar, suceder: Mat.5:18, Mrk.5:14, Luk.1:20 2:15, Act.4:21, 2Ti.2:18, al.; μὴ γένοιτο [en LXX por חָלִילָה, Jhn.22:29, al.], lejos esté, en ninguna manera: Rom.3:4 (ICC, in l.), 1Co.6:15 y frecuentemente en Pl.; καὶ ἐγένετο, ἐγένετο δέ ([en LXX por וַיְהִי ;] véase Burton, 142 s.; M, Pr., 16 s.; Dalman, Words, 32 s.; Robertson, Gr., 1042 s.), con indic., Mat.7:28, Luk.1:8, al.; ante καί e indic., Luk.8:1, Act.5:7, al.; con acusativo e inf., Mrk.2:23, Luk.3:21, al.; ὡς δὲ ἐγένετο, ante τοῦ con inf., Act.10:25; con dativo de persona(s), sobrevenir a alguien: con inf., Act.20:16; con acusativo e inf., Act.22:6; con adv., εὖ, Eph.6:3; τ́ ἐγένετο αὐτῷ (Field, Notas, 115), Act.7:40 (LXX); ante εἰς, Act.28:6.\n3. ser hecho, realizado, ejecutado, observado, promulgado, ordenado, etc.: Mat.6:10 19:8, Mrk.2:27 11:23, Act.19:26, al.; ante διά con genitivo, Mrk.6:2, Act.2:43; ὑπό, Luk.13:17; ἐκ, Luk.4:23; ἐν, 1Co.9:15; ἀπογραφή, Luk.2:2; ἀνάκρισις Act.25:26; ἄφεσις, Heb.9:22; ὁ νόμος, Gal.3:17; τὸ πάσχα, Mat.26:2.\n4. llegar a ser, hacerse, venir a ser: con pred., Mat.4:3, Luk.4:3, Jhn.2:9, 1Co.13:11, al.; ante ὡς, ὡσεί, Mat.10:25, Mrk.9:26; εἰς (M, Pr., 71 s.), Mrk.12:1o, al.; con genitivo Rev.11:15; íd., de la edad, Luk.2:42; con dativo, γ. ἀνδρί ([en LXX por הָיָה לְאִישׁ, Rut.1:12, al. ;] véase Field, Notas, 156), Rom.7:3, 4; ante ἐν, Act.22:17, Rev.1:10, al.; ἐπάνω, Luk.19:19; μετά, con genitivo, Mrk.16:[10], Act.9:19; ante εἰς, ἐπί (Field, Notas, 135), κατά (ib., 62), con acusativo de lugar, Act.20:16 21:35 27:7, al.; ante ἐκ, Mrk.9:7, Luk.3:22, 2Th.2:7, al. Pf. aorístico γέγονα (M, Pr., 52, 145 s.; Field, Notas, 1 s.), Mat.25:6, Luk.10:36, al. Aor. ἐγενήθη (por ἐγένετο, M, Pr., 139 s.; Mayser, 379), Mat.11:23, al. (Cf. απο-, δια-, επι-, παρα-, συμ-, παρα-, προ-.)"
+  },
+  {
+   "strongs": "G1097",
+   "sha256": "fc6d4fa8129d22d12ddebff4eff719b6ad9298650259b0018d9435e0693e98e7",
+   "gloss": "conocer",
+   "definition": "γινώσκω (= γιγν-: véase la palabra anterior. Así también en el ático vulgar, en Inscr., véase Thumb, MGV, 207),\n[en LXX principalmente por ידע ;]\nestar adquiriendo conocimiento, llegar a conocer, reconocer, percibir, entender; en los tiempos pasados conocer, darse cuenta; pas., llegar a ser conocido: con acusativo, Mat.22:18, Mrk.5:43, Col.4:8, 1Th.3:5, al. Pas., Mat.10:26, Php.4:5, al.; ante ὅτι, Mat.21:45, Jhn.4:1, al.; τί, Mat.6:3; ἀπό, Mrk.15:45; ὅ, Rom.7:15; τ. λεγόμενα, Luk.18:34; τ. θέλημα, Luk.12:47; τ. καρδίας, Luk.16:15; con acusativo de persona(s), del reconocimiento por Dios, 1Co.8:3, Gal.4:9; por Cristo, neg., Mat.7:23; frecuentemente del conocimiento de las cosas divinas, de Dios y de Cristo; τ. θεόν, Rom.1:21 Gal.4:9; τ. πατέρα, Jhn.8:55; τ. κύριον, Heb.8:1 (LXX); νοῦν κυρίου, Rom.11:34; Χριστόν, Jhn.17:3, 1Jn.3:6; τὰ τοῦ πνεύματος, 1Co.2:14; τ. πνεύμα, 1Jn.4:6; τ. ἀλήθειαν, Jhn.8:32; del conocimiento que Cristo tiene del Padre (ἐπιγ.), Mat.11:27 (Dalman, Words, 282 ss.). En los escritores helenísticos [LXX por heb. ידע, Gal.4:1, al.], de la unión sexual, conocer carnalmente: Mat.1:25, Luk.1:34 (Cremer, 153).\nSYN.: γ., conocer por observación y experiencia, se distingue así prop. de οἶδα, saber por reflexión (un proceso mental, basado en la intuición o la información); cf. también ἐφίστημι, συνίημι. (Cf. ἀνα-, δια-, ἐπι-, κατα-, προ-γινώσκω.)"
+  },
+  {
+   "strongs": "G1098",
+   "sha256": "135352b53cbca3f42beadfbf4c61f21fd8160b3cfc6492768fb38af24624d7b0",
+   "gloss": "vino dulce",
+   "definition": "γλεῦκος (-εος), -ους, τό,\n[en LXX por יַיִן, Job.32:19 * ;]\nmosto, vino nuevo y dulce (Arist.): Act.2:13.†"
+  },
+  {
+   "strongs": "G1099",
+   "sha256": "90ebf040ad608f3be8af8a5c292cec4dd0a02c710b2f3bb29871bc5ff31ea1c8",
+   "gloss": "dulce",
+   "definition": "γλυκύς, -εῖα, -ύ,\n[en LXX principalmente por מָתוֹק ;]\nJas.3:11, 12; opuesto a πικρόν, ἁλυκόν, Rev.10:9, 10.†"
+  },
+  {
+   "strongs": "G1100",
+   "sha256": "2fb3f4db133276cd5439167e85d28eb118a2dcd9517d521b53867b3f5e8f30e2",
+   "gloss": "lengua",
+   "definition": "γλῶσσα, -ης, ἡ,\n[en LXX principalmente por לָשׁוֹן ;]\n1. la lengua, como órgano del habla: Mrk.7:33, 35 Luk.1:64 16:24, Act.2:26\" (LXX), Rom.3:13 (LXX) 14:11 (LXX), 1Co.14:9, Php.2:11, Jas.1:26 3:5, 6 8, 1Pe.3:10\" (LXX), 1Jo.3:18, Rev.16:10; de un objeto en forma de lengua, Act.2:3.\n2. una lengua, un idioma: Act.2:11; unido a φυλή, λαός, ἔθνος, frecuentemente en pl., Rev.5:9 7:9 10:11 11:9 13:7 14:6 17:15; λαλεῖν ἑτέραις γ., Act.2:4; γ. λαλεῖν καιναῖς, WH, txt. (RV, mg., omite καιναῖς), Mrk.16:17; λαλεῖν γλώσσαις, γλώσσῃ (véase ICC, ll. con; DB, iv, 793 ss.), Mrk.16:17, WH, txt., R, mg., Act.10:46 19:6, 1Co.12:30 13:1 14:2, 4-6, 13, 18, 23, 27, 39; γλῶσσαι (= λόγοι ἐν γλώσσῃ, 1Co.14:19), 1Co.13:8 14:22; γένη γλωσσῶν, 1Co.12:10, 28; προσεύχεσθαι γλώσσῃ, 1Co.14:14; γλῶσσαν ἔχειν, 1Co.14:26 (Cremer, 163, 679).\n†"
+  },
+  {
+   "strongs": "G1101",
+   "sha256": "d96a84c9315ef4c5c7844609baabd4b6be0520fcb9a5c66a37f0150f3f711c5a",
+   "gloss": "bolsa",
+   "definition": "γλωσσόκομον, -ου, τό, forma vernác. del cl. γλωσσοκομεῖον\n(γλῶσσα, κομέω), [en LXX por אָרוֹן, 2Ki.6:11, 2Ch.24:8, 10 11 * ;]\n1. = cl. -εῖον (véase supr.), un estuche para guardar las cañas o lengüetas de los instrumentos musicales.\n2. Como en la LXX, π. (MM, véase la palabra), una caja, un cofre: Jhn.12:6 13:29.\n†"
+  },
+  {
+   "strongs": "G1102",
+   "sha256": "cc0bf5eb83fd3c9630d5c2ddceeb4777809fda12138529a5f1a4aabf877bd30c",
+   "gloss": "lavador",
+   "definition": "γναφεύς, -έως, ὁ, forma jón. y κοινή del át. κναφεύς\n(κνάπτω, cardar lana), [en LXX por כָּבַס, 4Ki.18:17, Isa.7:3 36:2 * ;]\nun lavador, batanero: Mrk.9:3.†"
+  },
+  {
+   "strongs": "G1103",
+   "sha256": "4b2b58cf6471d9dbd5c4adb255dcf32d8807bbcf2f03cb3bd7fd5433aff7ee77",
+   "gloss": "genuino",
+   "definition": "γνήσιος, -α, -ον\n(γίγνομαι), [en LXX: Sir.7:18, 3Ma.3:19 * ;]\n1. prop., engendrado legítimamente, nacido de matrimonio (en los π., γυνὴ γ., una esposa legítima; MM, véase la palabra).\n2. verdadero, genuino, sincero: Php.4:3, 1Ti.1:2, Tit.1:4; como sust., τὸ γ. = ἡ γνησιότης, sinceridad, 2Co.8:8.\n†"
+  },
+  {
+   "strongs": "G1104",
+   "sha256": "8bd638c393e1847f0659f3ff543c036365afa7871a74182d2b683edfabb069a6",
+   "gloss": "sinceramente",
+   "definition": "γνησίως, adv.,\n[en LXX: 2Ma.14:8, 3Ma.3:23 * ;]\nsinceramente, honradamente: Phi 2:20 (para un paralelo en los π., véase MM, véase la palabra).†"
+  },
+  {
+   "strongs": "G1105",
+   "sha256": "749ba9eda5bbc665a06d57845b8385c2305ef03fa9ffd774b3bd2a24a8fd52e4",
+   "gloss": "oscuridad",
+   "definition": "γνόφος (forma posterior de δν-),\n[en LXX por אָפֵל, עֲרָפֶל, etc. ;]\noscuridad, tinieblas (que incluyen \"un elemento de tempestad,\" Tr., Syn., § c): Heb.12:18.†\nSYN.: ἀχλύς, ζόφος, σκότος (Tr., l. con; DB, i, 457a).",
+   "note": "Source '§with' is a garbled '§c' (Trench's section c), rendered '§c'."
+  },
+  {
+   "strongs": "G1106",
+   "sha256": "1aca7032333880e844e39a4ac39037e6481ee7a850ba03f92d576d2d0556d764",
+   "gloss": "resolución",
+   "definition": "γνώμη, -ης, ἡ\n(γιγνώσκω), [en LXX: Da TH 2:15 (דָּת), Ps 82(83):3 (סוֹד), en otras partes, principalmente en II Es, por טְעֵם ;]\n1. un medio de conocer, una señal (Theogn.).\n2. En los escritores áticos, la mente, sus operaciones y resultados (véase Edwards, Lex., App., A);\n(a) mente, entendimiento;\n(b) propósito, intención: Act.20:3;\n(c.) juicio, opinión: 1Co.1:10, Rev.17:13;\n(d) consejo, parecer: 1Co.7:25, 40 2Co.8:10, Phm 14;\n(e) propósito real, decreto (como en Da, I y II Es): Rev.17:17 (Cremer, 671).\n†",
+   "note": "Source '(with)' is a garbled '(c)' (the third subsection), rendered '(c)'."
+  }
+ ]
+}

@@ -1,0 +1,2893 @@
+{
+ "batch": "004",
+ "lang": "pt",
+ "entries": [
+  {
+   "strongs": "H0931",
+   "sha256": "04c8abb42570b76270734fc3c10ba022ef773e5da4713384b9a529c219ab9f0e",
+   "gloss": "polegar/dedão do pé",
+   "definition": "o polegar da mão ou o dedão do pé",
+   "derivation": "de uma raiz não usada que aparentemente significa ser espesso;"
+  },
+  {
+   "strongs": "H0932",
+   "sha256": "297e64f244288ccdf8cecce8509ccd45940ba0fe2f43daf04bd651ccb5432bde",
+   "gloss": "Boã",
+   "definition": "polegar, Boã, um israelita",
+   "derivation": "uma variação ortográfica de 931;"
+  },
+  {
+   "strongs": "H0933",
+   "sha256": "ff6c61ae08f80188cae07815c3decd8cb8b375aba1178f0545eff0a5f6b62490",
+   "gloss": "mancha",
+   "definition": "empigem branca",
+   "derivation": "de uma raiz não usada que significa ser pálido;"
+  },
+  {
+   "strongs": "H0934",
+   "sha256": "b7b8e7b1a000939696b81205e1731791760625c3cf7f2162db70c9dc5fc8783d",
+   "gloss": "mancha clara",
+   "definition": "uma mancha esbranquiçada na pele",
+   "derivation": "particípio ativo feminino do mesmo que 925;"
+  },
+  {
+   "strongs": "H0935G",
+   "sha256": "76c44bc963adbc4febd55ef6561232c67687f94a6da3a1c6641391995dba6da6",
+   "gloss": "vir (entrar): vir",
+   "definition": "ir ou vir (numa grande variedade de aplicações)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0935H",
+   "sha256": "8ce13fb24c223b48bd139d8adaf13e1126d29a9c9d5002ca3ac484889aaec265",
+   "gloss": "Lebo-(Hamate)",
+   "definition": "ir ou vir (numa grande variedade de aplicações)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0935I",
+   "sha256": "f72e7bf1d854a169f5ea9c456245d9be2b8a062e9f3855ff7fec05d663f97086",
+   "gloss": "vir (entrar): em direção a",
+   "definition": "ir ou vir (numa grande variedade de aplicações)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0935J",
+   "sha256": "79174e2bcfbd8df0acd32086e5b61498705d773b051e826a44431b0daa44f41f",
+   "gloss": "vir (entrar): avançado",
+   "definition": "ir ou vir (numa grande variedade de aplicações)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0935K",
+   "sha256": "6c3795047bb8b74dbe8a60ec15633a34dc473025c60f8568e87c4735b9fc29d0",
+   "gloss": "vir (entrar): pôr (do sol)",
+   "definition": "ir ou vir (numa grande variedade de aplicações)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0935L",
+   "sha256": "5f0bb77b4d50b4d41ce6345014b5b26b2c333540bcb13241256312bb635b096b",
+   "gloss": "vir (entrar): casar",
+   "definition": "ir ou vir (numa grande variedade de aplicações)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0935M",
+   "sha256": "9e989d01603644d6019457f81b755bc00cf414ebb74368b2792690f5261492f9",
+   "gloss": "vir (entrar): cumprir",
+   "definition": "ir ou vir (numa grande variedade de aplicações)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0935N",
+   "sha256": "163661397003ad9f980587ed6b05e326685e2a0f463794ac5c051aac953ab8af",
+   "gloss": "vir (entrar): sitiar",
+   "definition": "ir ou vir (numa grande variedade de aplicações)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0935O",
+   "sha256": "84d0121c77c0dd5bdc41b627c4ef62f8aa821b04e928fb1de17614439f5d7444",
+   "gloss": "Lebo",
+   "definition": "ir ou vir (numa grande variedade de aplicações)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0935P",
+   "sha256": "572ef4babeba98398e5e43d23f70c798a5c942b127dfc53875f441ed12b14173",
+   "gloss": "vir (entrar): trazer",
+   "definition": "ir ou vir (numa grande variedade de aplicações)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0936",
+   "sha256": "6083d3b00edaecc4a9efc9e047c19d6b221e7c8eec6c4931a80c26fd559424f1",
+   "gloss": "desprezar",
+   "definition": "desrespeitar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0937",
+   "sha256": "d1e446ed2d5865522cabb67afe27d3a8c3f6e2416083cbfd75bbd1870b102fa7",
+   "gloss": "desprezo",
+   "definition": "desrespeito",
+   "derivation": "de 936;"
+  },
+  {
+   "strongs": "H0938G",
+   "sha256": "8abdbc9bdcd3b0ca1fc48c414f9e43051749f22595a880dcfad5bef78bc49585",
+   "gloss": "Buz",
+   "definition": "Buz, nome de um filho de Naor e de um israelita",
+   "derivation": "o mesmo que 937;"
+  },
+  {
+   "strongs": "H0938H",
+   "sha256": "8abdbc9bdcd3b0ca1fc48c414f9e43051749f22595a880dcfad5bef78bc49585",
+   "gloss": "Buz",
+   "definition": "Buz, nome de um filho de Naor e de um israelita",
+   "derivation": "o mesmo que 937;"
+  },
+  {
+   "strongs": "H0938I",
+   "sha256": "8abdbc9bdcd3b0ca1fc48c414f9e43051749f22595a880dcfad5bef78bc49585",
+   "gloss": "Buz",
+   "definition": "Buz, nome de um filho de Naor e de um israelita",
+   "derivation": "o mesmo que 937;"
+  },
+  {
+   "strongs": "H0939",
+   "sha256": "c09db9077ebb4f5e4d92d0b5b2f1bb86d48135759d1136e01f2f4a396a4e2bc3",
+   "gloss": "desprezo",
+   "definition": "algo desprezado; um objeto de desprezo",
+   "derivation": "particípio passivo feminino de 936;"
+  },
+  {
+   "strongs": "H0940",
+   "sha256": "93bb5e84d3f3312075ffcb946f28e0a5c86c2e2982c8ac849fb8ee91f52001c3",
+   "gloss": "buzita",
+   "definition": "um buzita ou descendente de Buz",
+   "derivation": "patronímico de 938;"
+  },
+  {
+   "strongs": "H0941",
+   "sha256": "040341d54c947884ebe15b9e905926c271ee6a6a6583c2707c088a48dda0986e",
+   "gloss": "Buzi",
+   "definition": "Buzi, um israelita",
+   "derivation": "o mesmo que 940;"
+  },
+  {
+   "strongs": "H0942",
+   "sha256": "98203b5f5e51aec3454d1dc0ae110ef9bc1a519a4e83f3ecf664089392fd4f79",
+   "gloss": "Bavai",
+   "definition": "Bavai, um israelita",
+   "derivation": "provavelmente de origem persa;"
+  },
+  {
+   "strongs": "H0943",
+   "sha256": "80da29b3a899a46f5365959570f5458a5af0c527da309d3a0457b104f0c05875",
+   "gloss": "confundir",
+   "definition": "envolver (literal ou figuradamente)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0944",
+   "sha256": "55941bc799519a36df166d285dadbb9ea00ca853f161e79ee7afe164c5b4dff8",
+   "gloss": "produto",
+   "definition": "produto (da terra etc.)",
+   "derivation": "por 2981;"
+  },
+  {
+   "strongs": "H0945",
+   "sha256": "69c63240ebcfc46219b5f39dc4a29f51ce531abe8211f9473cc4935fe9e7c1b0",
+   "gloss": "Bul",
+   "definition": "Bul, o oitavo mês hebraico",
+   "derivation": "o mesmo que 944 (no sentido de chuva);"
+  },
+  {
+   "strongs": "H0946",
+   "sha256": "9b3eb88f32d0052eec29033ed9f83a43fc441ecfddb81037557f202eb646933c",
+   "gloss": "Buna",
+   "definition": "Buna, um israelita",
+   "derivation": "de 995; discernimento;"
+  },
+  {
+   "strongs": "H0947",
+   "sha256": "f7450b303240c79f6feca5b8ffffa083e6d998284d2e580e0693ace6269bd15b",
+   "gloss": "pisotear",
+   "definition": "pisotear (literal ou figuradamente)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0948",
+   "sha256": "4c886f25d5232dfb00193ddf9a16edf72f08d37f646de2a8aff2060511bd9ea3",
+   "gloss": "linho fino",
+   "definition": "provavelmente algodão (de algum tipo)",
+   "derivation": "de uma raiz não usada (da mesma forma) que significa branquear, isto é, (intransitivo) ser branco;"
+  },
+  {
+   "strongs": "H0949",
+   "sha256": "15fe54ef2ae2a17ce43b748a11f4acd1ae33ce70988e1eca52f925ad5c85f6eb",
+   "gloss": "Bozez",
+   "definition": "Bozez, uma rocha perto de Micmás",
+   "derivation": "do mesmo que 948; brilhante;"
+  },
+  {
+   "strongs": "H0950",
+   "sha256": "c1afd9a1eca443a0c6107aefd7789162a1a0322e42533eddcc654f14c5329087",
+   "gloss": "vazio",
+   "definition": "vazio (como adjetivo)",
+   "derivation": "particípio passivo feminino de uma raiz não usada (que significa ser oco);"
+  },
+  {
+   "strongs": "H0951",
+   "sha256": "83abd190786c4b62f70b620718a0aaa539942011b55731f4e0c9528ee0160b94",
+   "gloss": "boiadeiro",
+   "definition": "um cuidador de gado",
+   "derivation": "propriamente, particípio ativo de 1239 como denominativo de 1241;"
+  },
+  {
+   "strongs": "H0952",
+   "sha256": "c23dc89093d833e90f469fb682f78f7ddbbb0a0716d149d9679918baa59da338",
+   "gloss": "explicar",
+   "definition": "furar, isto é, (figuradamente) examinar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0953A",
+   "sha256": "c7043b5340dcc2ccf44a1a99b8bf5dc5ece0bda9d81980e24e9b8a9ebda10218",
+   "gloss": "cova",
+   "definition": "uma cova (especialmente usada como cisterna ou prisão)",
+   "derivation": "de 952 (no sentido de 877);"
+  },
+  {
+   "strongs": "H0953B",
+   "sha256": "c99318cfd023bcc93d8e644373cd6dcb2349d4f6207344eb7fdc0a1ce6e74a0f",
+   "gloss": "Cisterna",
+   "definition": "uma cova (especialmente usada como cisterna ou prisão)",
+   "derivation": "de 952 (no sentido de 877);"
+  },
+  {
+   "strongs": "H0954",
+   "sha256": "a546d483b9a7b87d7bd351e06568675ec811fc4d76346d516418f2e915747f22",
+   "gloss": "envergonhar-se",
+   "definition": "propriamente, empalidecer, isto é, por implicação envergonhar-se; também (por implicação) ser frustrado ou retardado",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0955",
+   "sha256": "213494dae880379148d794664bc83846a33f365faf0bfd38886e8f532792e7c3",
+   "gloss": "vergonha",
+   "definition": "vergonha",
+   "derivation": "particípio passivo feminino de 954;"
+  },
+  {
+   "strongs": "H0956",
+   "sha256": "8dc8cf1bd428a8a114c09c3bd0869072e300df735d2cbc01d28534c78a8144cc",
+   "gloss": "pernoitar",
+   "definition": "pernoitar",
+   "derivation": "(aramaico) aparente denominativo de 1005;"
+  },
+  {
+   "strongs": "H0957",
+   "sha256": "e75501eccbdf6867e968fa8a627ebb2d8b8a7a0588396a90307b02f4b347189e",
+   "gloss": "saque",
+   "definition": "saque",
+   "derivation": "de 962;"
+  },
+  {
+   "strongs": "H0958",
+   "sha256": "566951c2878a595e5d99ceff2d4f8dfa4804c26e4d9ec5038e659b86540b89d7",
+   "gloss": "dividir",
+   "definition": "provavelmente fender",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0959",
+   "sha256": "489f87746b3ddccbee0cd3e44a6ac3944ffcda3d3ddc390cfb16405201530c94",
+   "gloss": "desprezar",
+   "definition": "menosprezar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0960",
+   "sha256": "5877b47b779a6b026489e0ac5672cec06c24760c25f48a407ba443d840b3cbb0",
+   "gloss": "desprezar",
+   "definition": "desprezado",
+   "derivation": "de 959;"
+  },
+  {
+   "strongs": "H0961",
+   "sha256": "6ff2a26337af053b166e9771c7f514497907727f17071f257126c8933f4e85ce",
+   "gloss": "saque",
+   "definition": "despojo",
+   "derivation": "feminino de 957;"
+  },
+  {
+   "strongs": "H0962",
+   "sha256": "02f9ee93990b70454dcbfd713556cdf23cde78e297bf3d561c05185734816f49",
+   "gloss": "saquear",
+   "definition": "saquear",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0963",
+   "sha256": "04e43638082f5c508be01a94d7359e107d13ee9a6c4a2b5684ac4ebbfec561ed",
+   "gloss": "desprezo",
+   "definition": "menosprezo",
+   "derivation": "de 959"
+  },
+  {
+   "strongs": "H0964",
+   "sha256": "dfc3ddb5adbdd4eb29caf8a2a5b4bf5be36f07d92eda8a00d612ece1606c6a70",
+   "gloss": "Biziotiá",
+   "definition": "Biziotiá, um lugar na Palestina",
+   "derivation": "de 959 e 3050; desprezos de Jah;"
+  },
+  {
+   "strongs": "H0965",
+   "sha256": "1393da204be56f67d7d1815716b3dab94f165ba81970ef0bf8169086222501b6",
+   "gloss": "relâmpago",
+   "definition": "um clarão de relâmpago",
+   "derivation": "de uma raiz não usada que significa iluminar;"
+  },
+  {
+   "strongs": "H0966G",
+   "sha256": "e044118bc947e0bca65476b6b3f21625c1db67c5a4387b30b1436032b691b234",
+   "gloss": "Bezeque",
+   "definition": "Bezeque, um lugar na Palestina",
+   "derivation": "de 965; relâmpago;"
+  },
+  {
+   "strongs": "H0966H",
+   "sha256": "e044118bc947e0bca65476b6b3f21625c1db67c5a4387b30b1436032b691b234",
+   "gloss": "Bezeque",
+   "definition": "Bezeque, um lugar na Palestina",
+   "derivation": "de 965; relâmpago;"
+  },
+  {
+   "strongs": "H0967",
+   "sha256": "f923301fce3f9ee4ade16c680f8b2f1fc7dd33c9b67b9b807f1b3534be7a51b1",
+   "gloss": "espalhar",
+   "definition": "dispersar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0968",
+   "sha256": "0ffbd027a7f415e87b12b9ce47dcea0c21600d5d731ba0985d3450327e184649",
+   "gloss": "Bizta",
+   "definition": "Bizta, um eunuco de Xerxes",
+   "derivation": "de origem persa;"
+  },
+  {
+   "strongs": "H0969",
+   "sha256": "a5030ba5ab4e2b6af435e8522361db7cb207b8047408b5c0648a7532da439510",
+   "gloss": "ensaiador",
+   "definition": "um ensaiador de metais",
+   "derivation": "de 974;",
+   "note": "Source typo: 'an assayer or metals' read as 'of metals'."
+  },
+  {
+   "strongs": "H0970",
+   "sha256": "17e11adbe3311148606c9874b6f9b20b9ca1f4e243c8252b81de58268f3f30f1",
+   "gloss": "jovem",
+   "definition": "propriamente, escolhido, isto é, um jovem (muitas vezes coletivo)",
+   "derivation": "ou בָּחֻר; particípio passivo de 977;"
+  },
+  {
+   "strongs": "H0971",
+   "sha256": "115da0d221b6b0ba786d1e419f83985391d393c31fa6e376dd3712155198e0ad",
+   "gloss": "torre",
+   "definition": "uma torre de vigia de sitiadores",
+   "derivation": "outra forma de 975;"
+  },
+  {
+   "strongs": "H0972",
+   "sha256": "20be5ddc8ba608c97308f7ab5f2b2600dc71005d24c162777ff8946f47d16036",
+   "gloss": "escolhido",
+   "definition": "seleto",
+   "derivation": "de 977;"
+  },
+  {
+   "strongs": "H0973A",
+   "sha256": "bb67bc0311780cfd602649c78c6b83997a5fb41a52ec7c34a4c0dd71ac44af11",
+   "gloss": "detestar",
+   "definition": "detestar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0973B",
+   "sha256": "53c3d3cdbb3f5a1fe43459f6084f39bdf0de93cdca001eb362cad7d5b179a218",
+   "gloss": "ser ávido",
+   "definition": "detestar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0974",
+   "sha256": "004059c6f8ac8e0ba40db09da0675cec036c2d36b839de5c5a9a04a38b6101d4",
+   "gloss": "provar",
+   "definition": "provar (especialmente metais); em geral e figuradamente, investigar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0975",
+   "sha256": "61fd1902d0fda0ce3f625f97add914cc13f7197b41376be754c625b49f8155be",
+   "gloss": "atalaia",
+   "definition": "uma torre de vigia",
+   "derivation": "de 974 (no sentido de manter vigia);"
+  },
+  {
+   "strongs": "H0976",
+   "sha256": "662e421681de7e965186ddf708f856e358c1bd9a245b558629eded63c7accfcc",
+   "gloss": "prova",
+   "definition": "prova",
+   "derivation": "de 974;"
+  },
+  {
+   "strongs": "H0977",
+   "sha256": "e701204749b4c130b124787ce8f99917f9fa74e0f3a69577bfe212d1861fe86c",
+   "gloss": "escolher",
+   "definition": "propriamente, provar, isto é, (por implicação) escolher",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0978",
+   "sha256": "111ee8c2b89150cf7a22f8da8928a90f7d74cb97d38d7ff4eca51b7d4d728f8e",
+   "gloss": "baarumita",
+   "definition": "um baarumita ou habitante de Baurim",
+   "derivation": "pátrio de 980 (por transposição);"
+  },
+  {
+   "strongs": "H0979",
+   "sha256": "27c363a08ca0f0d581e40d68af962acff79b227d0593455eee95bde4af1a19bb",
+   "gloss": "jovem",
+   "definition": "juventude (coletiva e abstratamente)",
+   "derivation": "ou בְּחוּרוֹת; plural feminino de 970; também (plural masculino) בְּחֻרִים;"
+  },
+  {
+   "strongs": "H0980",
+   "sha256": "f5a488e907c5bd8ce3d12c11242552a3d2363944ffb88ed6302ad5dc0df74dbd",
+   "gloss": "Baurim",
+   "definition": "Baurim, um lugar na Palestina",
+   "derivation": "ou בַּחוּרִים; plural masculino de 970; jovens;"
+  },
+  {
+   "strongs": "H0981",
+   "sha256": "1dba7662821464169508f5c60aa8014d56f3f7202e78b7d62b0e284e6dbd8c94",
+   "gloss": "falar precipitadamente",
+   "definition": "tagarelar; daí, vociferar com ira",
+   "derivation": "ou בָּטָה; raiz primitiva;"
+  },
+  {
+   "strongs": "H0982",
+   "sha256": "eea742a9aca325029c2d663b0e4e7a8804254199ff780275907c3c4864aceb02",
+   "gloss": "confiar",
+   "definition": "propriamente, apressar-se em busca de refúgio (mas não tão precipitadamente quanto 2620); figuradamente, confiar, estar confiante ou seguro",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0983",
+   "sha256": "3413db198dbf3d27eea0643a4191bee1ca171bae4bd427961a414f5b2776deec",
+   "gloss": "segurança",
+   "definition": "propriamente, um lugar de refúgio; abstrato, segurança, tanto o fato (segurança) quanto o sentimento (confiança); muitas vezes (advérbio, com ou sem preposição) com segurança",
+   "derivation": "de 982;"
+  },
+  {
+   "strongs": "H0984",
+   "sha256": "5e7394df41c38b5a24a36690991270d39cd496fff45d703fd1ca5801100bd838",
+   "gloss": "Betá",
+   "definition": "Betá, um lugar na Síria",
+   "derivation": "o mesmo que 983;"
+  },
+  {
+   "strongs": "H0985",
+   "sha256": "4d8c36060c441adef25bfb8f3d648b0f73c6e774f3d7531b4a8ef5f513df7cf6",
+   "gloss": "confiança",
+   "definition": "confiança",
+   "derivation": "feminino de 984;"
+  },
+  {
+   "strongs": "H0986",
+   "sha256": "aab9ac34b4d941e0be6f838b9927b0bd1daf91b363c7ffe3d91ccc495c12af9d",
+   "gloss": "confiança",
+   "definition": "confiança",
+   "derivation": "de 982;"
+  },
+  {
+   "strongs": "H0987",
+   "sha256": "00bd3fde5151837c926195e72669cb9ec6a872e0e3514b2ba5b26970f610b3c7",
+   "gloss": "segurança",
+   "definition": "segurança",
+   "derivation": "plural feminino de 982;"
+  },
+  {
+   "strongs": "H0988",
+   "sha256": "7f34d5caee67f186c308f94998269174823f045cf26f4f835d42e7e5fc841ec3",
+   "gloss": "cessar",
+   "definition": "desistir do trabalho",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0989",
+   "sha256": "dba7839318f9d1f8a70b668356a737e37717bf4a1f85077b2dbd58c6d6567eea",
+   "gloss": "cessar",
+   "definition": "parar",
+   "derivation": "(aramaico) correspondente a 988;"
+  },
+  {
+   "strongs": "H0990G",
+   "sha256": "e2cc69e31ae4171084eeb37f8c498b18d735e24a8dbd6f26843464c0885f1837",
+   "gloss": "ventre: abdome",
+   "definition": "o ventre, especialmente o útero; também o seio ou o corpo de qualquer coisa",
+   "derivation": "de uma raiz não usada que provavelmente significa ser oco;"
+  },
+  {
+   "strongs": "H0990H",
+   "sha256": "038370836ca03edb7161cf9489cf499f08f945c5caef44d743aff9f72f0c1e37",
+   "gloss": "ventre: útero",
+   "definition": "o ventre, especialmente o útero; também o seio ou o corpo de qualquer coisa",
+   "derivation": "de uma raiz não usada que provavelmente significa ser oco;"
+  },
+  {
+   "strongs": "H0990I",
+   "sha256": "28d8e358a9dff26817473bf96e3c5f3caa28aa581855c59c843732c1f9b208a7",
+   "gloss": "ventre: corcova",
+   "definition": "o ventre, especialmente o útero; também o seio ou o corpo de qualquer coisa",
+   "derivation": "de uma raiz não usada que provavelmente significa ser oco;"
+  },
+  {
+   "strongs": "H0990J",
+   "sha256": "f06edaa3331a2e2b0a6a01a97be00e1b97296e3f6503ae4a9d94a91771c3e6f1",
+   "gloss": "ventre: corpo",
+   "definition": "o ventre, especialmente o útero; também o seio ou o corpo de qualquer coisa",
+   "derivation": "de uma raiz não usada que provavelmente significa ser oco;"
+  },
+  {
+   "strongs": "H0991",
+   "sha256": "2f0aa3ba77d3185e7e46f8022bc42068a999e6e3ac5dffebd6acba850000d23d",
+   "gloss": "Béten",
+   "definition": "Béten, um lugar na Palestina",
+   "derivation": "o mesmo que 990;"
+  },
+  {
+   "strongs": "H0992",
+   "sha256": "b2c85353f7ba397c9a72ce7b87a68628885228e17aef4e0ca9230ff50818a867",
+   "gloss": "pistache",
+   "definition": "(só no plural) uma noz de pistache (por sua forma)",
+   "derivation": "de 990;"
+  },
+  {
+   "strongs": "H0993",
+   "sha256": "0260533435d9b21d550814988ccb1bc308a2ee69d9336db165b7034bb97682ff",
+   "gloss": "Betonim",
+   "definition": "Betonim, um lugar na Palestina",
+   "derivation": "provavelmente plural de 992; cavidades;"
+  },
+  {
+   "strongs": "H0994",
+   "sha256": "f9ec4fa2a07445b15d74deb738c0e224b9dc63ec7d24f2364bded43fa2edf30d",
+   "gloss": "por favor",
+   "definition": "oxalá!; com licença, ou se for do agrado",
+   "derivation": "talvez de 1158 (no sentido de pedir); propriamente, um pedido; usado só adverbialmente (sempre com 'meu Senhor');"
+  },
+  {
+   "strongs": "H0995",
+   "sha256": "6eeea1c4d6260008a0b740b82bfc1d60c2cf690e00038f900f7085bd2c9376dc",
+   "gloss": "entender",
+   "definition": "separar mentalmente (ou distinguir), isto é, (em geral) entender",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H0996G",
+   "sha256": "356074bfc65f9fe8c00dd26f8308e9c3a96695792c90670b6e71d8e967decdba",
+   "gloss": "entre",
+   "definition": "entre (repetido antes de cada substantivo, muitas vezes com outras partículas); também como conjunção, ou...ou",
+   "derivation": "(às vezes no plural masculino ou feminino); propriamente, a forma construta de um substantivo de outro modo não usado, de 995; uma distinção; mas usado só como preposição,"
+  },
+  {
+   "strongs": "H0996H",
+   "sha256": "2fa0bdd983b9ddd1046ece5f7bb95cfe151d3810ce078ad8adee165a852a3b79",
+   "gloss": "entre: no meio de",
+   "definition": "entre (repetido antes de cada substantivo, muitas vezes com outras partículas); também como conjunção, ou...ou",
+   "derivation": "(às vezes no plural masculino ou feminino); propriamente, a forma construta de um substantivo de outro modo não usado, de 995; uma distinção; mas usado só como preposição,"
+  },
+  {
+   "strongs": "H0997",
+   "sha256": "6a706740e858d699a03f31995c42f302b30e5ec736dd5b976b03f01bf51ea350",
+   "gloss": "entre",
+   "derivation": "(aramaico) correspondente a 996"
+  },
+  {
+   "strongs": "H0998",
+   "sha256": "9b9515b7d381c291f4c534d098138cf4b9feb73efce5722f590cd2421c7fc2cf",
+   "gloss": "entendimento",
+   "definition": "entendimento",
+   "derivation": "de 995;"
+  },
+  {
+   "strongs": "H0999",
+   "sha256": "ae4560ffa8787948d4128dfe3f5a5b7aa7680ebadaa3049943a6cabb3fe6b60c",
+   "gloss": "entendimento",
+   "derivation": "(aramaico) correspondente a 998"
+  },
+  {
+   "strongs": "H1000",
+   "sha256": "d753339530e421d100f039f33831e3b29f2d209678ad8353a5477c7a291c1f24",
+   "gloss": "ovo",
+   "definition": "um ovo (por sua brancura)",
+   "derivation": "do mesmo que 948;"
+  },
+  {
+   "strongs": "H1001",
+   "sha256": "892f722368a9bf9d640c9bcbaf4710bfd09bf034d3bafd766b95d735bd612c72",
+   "gloss": "cidadela",
+   "definition": "um palácio",
+   "derivation": "(aramaico) correspondente a 1002;"
+  },
+  {
+   "strongs": "H1002",
+   "sha256": "3ce54d27954746dcfc5dd3878237f9bca79acfcc4d7c9a25ac5b63deeab6183b",
+   "gloss": "palácio",
+   "definition": "um castelo ou palácio",
+   "derivation": "de origem estrangeira;"
+  },
+  {
+   "strongs": "H1003",
+   "sha256": "491124845f0bebc84b6dd79c7ebee140719d4abe7286eed76b3d06058957e3c1",
+   "gloss": "fortaleza",
+   "definition": "uma fortaleza",
+   "derivation": "de 1002;"
+  },
+  {
+   "strongs": "H1004A",
+   "sha256": "e7fb965c8b1b23e29efda359b773bd3d9240df0627931bce4653490dfc63a08c",
+   "gloss": "lugar",
+   "definition": "uma casa (na maior variedade de aplicações, especialmente família etc.)",
+   "derivation": "provavelmente de 1129 abreviado;"
+  },
+  {
+   "strongs": "H1004B",
+   "sha256": "44109782154c62ed62f876caf5c0a3c7a45aeee2a1af288a1e4a04c003e0dbfb",
+   "gloss": "casa: lar",
+   "definition": "uma casa (na maior variedade de aplicações, especialmente família etc.)",
+   "derivation": "provavelmente de 1129 abreviado;"
+  },
+  {
+   "strongs": "H1004G",
+   "sha256": "5b78b2c6a2d9d1b1dfa161c09434781e6e779b9f930381466e5049c72615c42d",
+   "gloss": "Bete-(Asbeia)",
+   "definition": "uma casa (na maior variedade de aplicações, especialmente família etc.)",
+   "derivation": "provavelmente de 1129 abreviado;"
+  },
+  {
+   "strongs": "H1004H",
+   "sha256": "b6cc5dc98c9e0eac38ee57eeb2cda25dd1ced7be166bd2e944c6c50ecf3c24d6",
+   "gloss": "Bete (Hagã)",
+   "definition": "uma casa (na maior variedade de aplicações, especialmente família etc.)",
+   "derivation": "provavelmente de 1129 abreviado;"
+  },
+  {
+   "strongs": "H1004I",
+   "sha256": "38a93f522d2fd6465bcbac119a806d64b9d3fbe0ea53fd4f4d7cee8fcab34003",
+   "gloss": "Bete-(Togarma)",
+   "definition": "uma casa (na maior variedade de aplicações, especialmente família etc.)",
+   "derivation": "provavelmente de 1129 abreviado;"
+  },
+  {
+   "strongs": "H1004J",
+   "sha256": "fdbb97652cf01815c6c364d10bdab34f9ff3082ce7993b2e27cd538ef17586d1",
+   "gloss": "Casa (do Bosque)",
+   "definition": "uma casa (na maior variedade de aplicações, especialmente família etc.)",
+   "derivation": "provavelmente de 1129 abreviado;"
+  },
+  {
+   "strongs": "H1004K",
+   "sha256": "8083b609c2ce5426c9fea108d5fc26787bfe0daa469d8a70f2c8344052560c61",
+   "gloss": "Casa (do Bosque do Líbano)",
+   "definition": "uma casa (na maior variedade de aplicações, especialmente família etc.)",
+   "derivation": "provavelmente de 1129 abreviado;"
+  },
+  {
+   "strongs": "H1004L",
+   "sha256": "beb406ea898ad3e6b323eee6addc9b9554210d7f42e30261c90980d66afb79e5",
+   "gloss": "Bete-(Baal-Meom)",
+   "definition": "uma casa (na maior variedade de aplicações, especialmente família etc.)",
+   "derivation": "provavelmente de 1129 abreviado;"
+  },
+  {
+   "strongs": "H1004M",
+   "sha256": "6d1b98697547a6dd9bfb11805e27227dd6d9ddf0f7966c2478e27646c5c340f8",
+   "gloss": "casa: família",
+   "definition": "uma casa (na maior variedade de aplicações, especialmente família etc.)",
+   "derivation": "provavelmente de 1129 abreviado;"
+  },
+  {
+   "strongs": "H1004N",
+   "sha256": "bec4796bf64d3770578b344028613b2b66936ba6eccba238349b92e23a73006e",
+   "gloss": "casa: recipiente",
+   "definition": "uma casa (na maior variedade de aplicações, especialmente família etc.)",
+   "derivation": "provavelmente de 1129 abreviado;"
+  },
+  {
+   "strongs": "H1004O",
+   "sha256": "4cc319f8203d8d1ba8f3a78bcf75d0670f2d20a049b20cc1dc66a6ea96b7e7d2",
+   "gloss": "casa: interior",
+   "definition": "uma casa (na maior variedade de aplicações, especialmente família etc.)",
+   "derivation": "provavelmente de 1129 abreviado;"
+  },
+  {
+   "strongs": "H1004P",
+   "sha256": "b9e4726244d1607cddb8457ea72c7ee7b6f02e3fb705701377db184ca3a9d26a",
+   "gloss": "casa: palácio",
+   "definition": "uma casa (na maior variedade de aplicações, especialmente família etc.)",
+   "derivation": "provavelmente de 1129 abreviado;"
+  },
+  {
+   "strongs": "H1004Q",
+   "sha256": "00111868c7dd9d17ee9d442a698ec2ca5ca887b3442e558da058009f16fc23c9",
+   "gloss": "casa: templo",
+   "definition": "uma casa (na maior variedade de aplicações, especialmente família etc.)",
+   "derivation": "provavelmente de 1129 abreviado;"
+  },
+  {
+   "strongs": "H1005",
+   "sha256": "f333f07f87bbd8c8523bbc094250217da538ce5acc39dff3260f92044e9d3fcb",
+   "gloss": "casa",
+   "derivation": "(aramaico) correspondente a 1004"
+  },
+  {
+   "strongs": "H1006",
+   "sha256": "f7c0c9036808f0961701229ba24070e754581bb1789193abc367633ca927f276",
+   "gloss": "Bajite",
+   "definition": "Bajite, um lugar na Palestina",
+   "derivation": "o mesmo que 1004;"
+  },
+  {
+   "strongs": "H1007",
+   "sha256": "fe3b01eccce21a86209b87688492de9cc99c5e38cac17ea09dfeeab8aca27d89",
+   "gloss": "Bete-Áven",
+   "definition": "Bete-Áven, um lugar na Palestina",
+   "derivation": "de 1004 e 205; casa de vaidade;"
+  },
+  {
+   "strongs": "H1008G",
+   "sha256": "a3d3a02e47b32698d625d14e55d8de63f039a8791583b618fa972345b8b07b06",
+   "gloss": "Betel",
+   "definition": "Betel, um lugar na Palestina",
+   "derivation": "de 1004 e 410; casa de Deus;"
+  },
+  {
+   "strongs": "H1008H",
+   "sha256": "a3d3a02e47b32698d625d14e55d8de63f039a8791583b618fa972345b8b07b06",
+   "gloss": "Betel",
+   "definition": "Betel, um lugar na Palestina",
+   "derivation": "de 1004 e 410; casa de Deus;"
+  },
+  {
+   "strongs": "H1009",
+   "sha256": "7ce7f03297e11bc165f023fee4f84898623a1d23e5a9aced7236344695efd5b6",
+   "gloss": "Bete-Arbel",
+   "definition": "Bete-Arbel, um lugar na Palestina",
+   "derivation": "de 1004 e 695 e 410; casa da emboscada de Deus;"
+  },
+  {
+   "strongs": "H1010",
+   "sha256": "edc8428b99e6b14e349229dd05a6c691b418f1d93fe12b7d2c713ce3779cdf9f",
+   "gloss": "Bete-Meom",
+   "definition": "Bete-Baal-Meom, um lugar na Palestina",
+   "derivation": "de 1004 e 1168 e 4583; casa de Baal da habitação de (aparentemente por transposição); ou (mais curto) בֵּית מְעוֹןlema בֵּית מעוֹן sem vogal, corrigido para בֵּית מְעוֹן; casa da habitação de (Baal);"
+  },
+  {
+   "strongs": "H1011",
+   "sha256": "b91772ddaf55c8eddb48bd2ae9df2f3de943e62ee1b289a1045d2b72869c2156",
+   "gloss": "Bete-Biri",
+   "definition": "Bete-Biri, um lugar na Palestina",
+   "derivation": "de 1004 e 1254; casa de um que cria;"
+  },
+  {
+   "strongs": "H1012",
+   "sha256": "23a03fd2eb653768f56ec60af2918114859e053480c44a1ab37fa1610f3105bf",
+   "gloss": "Bete-Bara",
+   "definition": "Bete-Bara, um lugar na Palestina",
+   "derivation": "provavelmente de 1004 e 5679; casa do vau;"
+  },
+  {
+   "strongs": "H1013",
+   "sha256": "79938c8de785163c1de0bb901487e0671225a2fbe2c8d23c984c371bb127643a",
+   "gloss": "Bete-Gader",
+   "definition": "Bete-Gader, um lugar na Palestina",
+   "derivation": "de 1004 e 1447; casa do muro;"
+  },
+  {
+   "strongs": "H1014",
+   "sha256": "95216726cb5eb5e6997bc4d37ad837a7861f2d600cbc1c8372482f131c477087",
+   "gloss": "Bete-Gamul",
+   "definition": "Bete-Gamul, um lugar a leste do Jordão",
+   "derivation": "de 1004 e o particípio passivo de 1576; casa do desmamado;"
+  },
+  {
+   "strongs": "H1015",
+   "sha256": "6827af3ef02d01cdeffc42cc9ea0db6189ffb6ada60c4b7f6c981d4bb4dc74aa",
+   "gloss": "Bete-Diblataim",
+   "definition": "Bete-Diblataim, um lugar a leste do Jordão",
+   "derivation": "de 1004 e o dual de 1690; casa das duas tortas de figos;"
+  },
+  {
+   "strongs": "H1016G",
+   "sha256": "ea600dab0d5a9d50810968ba62565886efac882d6d5b22af394875114c5bb0d6",
+   "gloss": "Bete-Dagom",
+   "definition": "Bete-Dagom, nome de dois lugares na Palestina",
+   "derivation": "de 1004 e 1712; casa de Dagom;"
+  },
+  {
+   "strongs": "H1016H",
+   "sha256": "ea600dab0d5a9d50810968ba62565886efac882d6d5b22af394875114c5bb0d6",
+   "gloss": "Bete-Dagom",
+   "definition": "Bete-Dagom, nome de dois lugares na Palestina",
+   "derivation": "de 1004 e 1712; casa de Dagom;"
+  },
+  {
+   "strongs": "H1017",
+   "sha256": "07576800613751c3b08b53bc691e5be15dc82367ac739f352ebcbe23dcc0b28b",
+   "gloss": "betelita",
+   "definition": "um betelita, ou habitante de Betel",
+   "derivation": "pátrio de 1008 com o artigo interposto;"
+  },
+  {
+   "strongs": "H1018",
+   "sha256": "fd22368b7969313da42ac6d57d238afc7c0b68575f661ae39f1afdf4c933ad1d",
+   "gloss": "Bete-Ezel",
+   "definition": "Bete-Ezel, um lugar na Palestina",
+   "derivation": "de 1004 e 681 com o artigo interposto; casa do lado;"
+  },
+  {
+   "strongs": "H1019",
+   "sha256": "502e1ee4a6df844fe38fe6d9e0c5e1a4b62ff5f958898206341bb2b640b7b15d",
+   "gloss": "Bete-Gilgal",
+   "definition": "Bete-Gilgal, um lugar na Palestina",
+   "derivation": "de 1004 e 1537 com o artigo interposto; casa de Gilgal (ou do rolar);"
+  },
+  {
+   "strongs": "H1020",
+   "sha256": "55463f7af0d0b7ec189465f3f538e2975d23f82959149bb27f471969deb1a2bb",
+   "gloss": "Bete-Jesimote",
+   "definition": "Bete-Jesimote, uma cidade a leste do Jordão",
+   "derivation": "de 1004 e o plural de 3451 com o artigo interposto; casa dos desertos;"
+  },
+  {
+   "strongs": "H1021",
+   "sha256": "9a034032eec8fc8cb4c4d9486f377863c0362102089708895111d93a6d02e56a",
+   "gloss": "Bete-Haquerém",
+   "definition": "Bete-Haquerém, um lugar na Palestina",
+   "derivation": "de 1004 e 3754 com o artigo interposto; casa da vinha;"
+  },
+  {
+   "strongs": "H1022",
+   "sha256": "7698a3198c312346057f819b084a86a3fbe488650095bab900f8d7d37c90d302",
+   "gloss": "belemita",
+   "definition": "um belemita, ou natural de Belém",
+   "derivation": "pátrio de 1035 com o artigo inserido;"
+  },
+  {
+   "strongs": "H1023",
+   "sha256": "68526f889b2f2f738e4ff1f9dc91d62c425fc87beb189c49377f2daf510bad07",
+   "gloss": "Bete-Merca",
+   "definition": "Bete-Merca, um lugar na Palestina",
+   "derivation": "de 1004 e 4801 com o artigo interposto; casa da largura;"
+  },
+  {
+   "strongs": "H1024",
+   "sha256": "1dcee32059667d21b4dae52edb1d514a27441cc8bb75c5151fc5783af194bcf8",
+   "gloss": "Bete-Marcabote",
+   "definition": "Bete-Marcabote, um lugar na Palestina",
+   "derivation": "ou (abreviado) בֵּית מַרְכָּבוֹת; de 1004 e o plural de 4818 (com ou sem o artigo interposto); lugar dos carros;"
+  },
+  {
+   "strongs": "H1025",
+   "sha256": "419b33922092f09188982ba0abd299e53c25e8d794ddc375dfd6f4fdb03630fb",
+   "gloss": "Bete-Emeque",
+   "definition": "Bete-Emeque, um lugar na Palestina",
+   "derivation": "de 1004 e 6010 com o artigo interposto; casa do vale;"
+  },
+  {
+   "strongs": "H1026",
+   "sha256": "ebd6803572d2026a79620f587a9ebde87797e9067c06dc0f116a890c54654a6c",
+   "gloss": "Bete-Arabá",
+   "definition": "Bete-Arabá, um lugar na Palestina",
+   "derivation": "de 1004 e 6160 com o artigo interposto; casa do deserto;"
+  },
+  {
+   "strongs": "H1027",
+   "sha256": "29ad3654e162f69bf630dd3533712cf7d61f41e2d980ca4b9ec1d5ac75bc4509",
+   "gloss": "Bete-Harã",
+   "definition": "Bete-Harã, um lugar a leste do Jordão",
+   "derivation": "de 1004 e 7311 com o artigo interposto; casa da altura;"
+  },
+  {
+   "strongs": "H1028",
+   "sha256": "af878e96ec2209906c3e267cb36c7f016bb3dbf348d03cdddf156b2fefc9ecec",
+   "gloss": "Bete-Harã",
+   "definition": "Bete-Harã, um lugar a leste do Jordão",
+   "derivation": "provavelmente por 1027;"
+  },
+  {
+   "strongs": "H1029",
+   "sha256": "c53208bf24783c429469d02778cc95e7e8d4da4e9cdddd23060550338fc270ce",
+   "gloss": "Bete-Sita",
+   "definition": "Bete-Sita, um lugar na Palestina",
+   "derivation": "de 1004 e 7848 com o artigo interposto; casa da acácia;"
+  },
+  {
+   "strongs": "H1030",
+   "sha256": "9206abcf0d5d973422726b10f582f0c1302f01bb7f4a4d17137ff38842e3cdf6",
+   "gloss": "bete-semita",
+   "definition": "um bete-semita, ou habitante de Bete-Semes",
+   "derivation": "pátrio de 1053 com o artigo inserido;"
+  },
+  {
+   "strongs": "H1031",
+   "sha256": "925367d9fc481278a99c2eacd5485d48052fc63a5d70087819d98d3efe9bdd82",
+   "gloss": "Bete-Hogla",
+   "definition": "Bete-Hogla, um lugar na Palestina",
+   "derivation": "de 1004 e o mesmo que 2295; casa de uma perdiz;"
+  },
+  {
+   "strongs": "H1032G",
+   "sha256": "72241246d2915c81eb844d728b091652e2a1d51f4497f769d83213753a3d8dca",
+   "gloss": "Bete-Horom",
+   "definition": "Bete-Horom, nome de dois lugares vizinhos na Palestina",
+   "derivation": "de 1004 e 2356; casa da cavidade;"
+  },
+  {
+   "strongs": "H1032H",
+   "sha256": "b534ac3086edb0c70078945b1600326aab5e1fef54af9608b465bcc06e7ef8c5",
+   "gloss": "Bete-Horom (de Cima)",
+   "definition": "Bete-Horom, nome de dois lugares vizinhos na Palestina",
+   "derivation": "de 1004 e 2356; casa da cavidade;"
+  },
+  {
+   "strongs": "H1032I",
+   "sha256": "00d90846c068b8206153b3a70fe2e045da7819f8ba4ab4efceddee43d7694c48",
+   "gloss": "Bete-Horom (de Baixo)",
+   "definition": "Bete-Horom, nome de dois lugares vizinhos na Palestina",
+   "derivation": "de 1004 e 2356; casa da cavidade;"
+  },
+  {
+   "strongs": "H1033",
+   "sha256": "e2184fa2f1ecffebda640d321e567f3206a5c229305a16f13e3cb11c8904911b",
+   "gloss": "Bete-Car",
+   "definition": "Bete-Car, um lugar na Palestina",
+   "derivation": "de 1004 e 3733; casa da pastagem;"
+  },
+  {
+   "strongs": "H1034",
+   "sha256": "b5699911d6f24a1b0e694de0a240e264570bce567cf7e355786ad452c41d0c42",
+   "gloss": "Bete-Lebaote",
+   "definition": "Bete-Lebaote, um lugar na Palestina",
+   "derivation": "de 1004 e o plural de 3833; casa das leoas;"
+  },
+  {
+   "strongs": "H1035G",
+   "sha256": "220e5e2d2129c3f5fee8273271ef4f231a8334a2c97c79300d8738ac6fe40367",
+   "gloss": "Belém",
+   "definition": "Belém, um lugar na Palestina",
+   "derivation": "de 1004 e 3899; casa do pão;"
+  },
+  {
+   "strongs": "H1035H",
+   "sha256": "220e5e2d2129c3f5fee8273271ef4f231a8334a2c97c79300d8738ac6fe40367",
+   "gloss": "Belém",
+   "definition": "Belém, um lugar na Palestina",
+   "derivation": "de 1004 e 3899; casa do pão;"
+  },
+  {
+   "strongs": "H1036",
+   "sha256": "6d96e3125e9ad492a34a27a259645287d27a05021170c7c9410003b1dceaa423",
+   "gloss": "Bete-Leafra",
+   "definition": "Bete-Leafra, um lugar na Palestina",
+   "derivation": "de 1004 e o feminino de 6083 (com preposição interposta); casa para o (isto é, do) pó;"
+  },
+  {
+   "strongs": "H1037",
+   "sha256": "34d528437c7195d2150015f2136c03462518fbbdf98030639a3bb8938e112983",
+   "gloss": "Bete-Milo",
+   "definition": "Bete-Milo, nome de duas cidadelas",
+   "derivation": "ou בֵּית מִלֹּא; de 1004 e 4407; casa do baluarte;"
+  },
+  {
+   "strongs": "H1038",
+   "sha256": "da39f5d449ee59fd67a4c16d8310f5a1b9ba9b8785b68a9c3cb18144993e0e06",
+   "gloss": "(Abel)-Bete-Maaca",
+   "definition": "Bete-Maaca, um lugar na Palestina",
+   "derivation": "de 1004 e 4601; casa de Maaca;"
+  },
+  {
+   "strongs": "H1039",
+   "sha256": "48e7a9632e53222549b35631bccace94765ed05d9eb2c401927cc1746aa01abc",
+   "gloss": "Bete-Ninra",
+   "definition": "Bete-Ninra, um lugar a leste do Jordão",
+   "derivation": "de 1004 e o feminino de 5246; casa do leopardo;"
+  },
+  {
+   "strongs": "H1040",
+   "sha256": "db95fad8b583293fcb59eabb4d91b24a9792a8d0ae53fb7c223e9f213956d97f",
+   "gloss": "Bete-Éden",
+   "definition": "Bete-Éden, um lugar na Síria",
+   "derivation": "de 1004 e 5730; casa do prazer;"
+  },
+  {
+   "strongs": "H1041",
+   "sha256": "d00f8ad74ecea8bbe023cdae2a645dd9a8ab92a43cb7bb055242f953353244ae",
+   "gloss": "Bete-Azmavete",
+   "definition": "casa de Azmavete, um lugar na Palestina",
+   "derivation": "de 1004 e 5820;"
+  },
+  {
+   "strongs": "H1042",
+   "sha256": "069dd028b95ea4293ad5c6ea52cb2fcfe7552883850e1152c52cd38eb0bbbdcd",
+   "gloss": "Bete-Anote",
+   "definition": "Bete-Anote, um lugar na Palestina",
+   "derivation": "de 1004 e um plural de 6030; casa das respostas;"
+  },
+  {
+   "strongs": "H1043",
+   "sha256": "b01899984e74d187e0286bfbd1f8df079e72d38dceb35598e43b2bd7cb8a15b0",
+   "gloss": "Bete-Anate",
+   "definition": "Bete-Anate, um lugar na Palestina",
+   "derivation": "uma variação ortográfica por 1042;"
+  },
+  {
+   "strongs": "H1044",
+   "sha256": "823d20c89192e0a184c41904dbc74c5b6137f1ae75c5c2a98067bffab9e58e6a",
+   "gloss": "Bete-Equede",
+   "definition": "Bete-Equede, um lugar na Palestina",
+   "derivation": "de 1004 e um derivado de 6123; casa da amarração (para a tosquia das ovelhas);"
+  },
+  {
+   "strongs": "H1045",
+   "sha256": "aa506e231dd2929f32c8c2610dabf79cc6714a44f26897946c6b0e1c769c9a43",
+   "gloss": "Bete-Astarote",
+   "definition": "Bete-Astarote, um lugar na Palestina",
+   "derivation": "; de 1004 e 6252; casa das Astarotes;"
+  },
+  {
+   "strongs": "H1046",
+   "sha256": "aa3cc84171f17cad09e2111a46570fb385886f4f16a68451e153cc311133cbd7",
+   "gloss": "Bete-Pelete",
+   "definition": "Bete-Pelete, um lugar na Palestina",
+   "derivation": "de 1004 e 6412; casa do escape;"
+  },
+  {
+   "strongs": "H1047",
+   "sha256": "20c2a229e0d08336cf2e8a80bf1fa2cd5df556eeb347916def45d01e4f3e5395",
+   "gloss": "Bete-Peor",
+   "definition": "Bete-Peor, um lugar a leste do Jordão",
+   "derivation": "de 1004 e 6465; casa de Peor;"
+  },
+  {
+   "strongs": "H1048",
+   "sha256": "f417f68bdda86f7d31fa5718160ea8ecb64c9fd5bee60e46baa8990435e0f141",
+   "gloss": "Bete-Pazes",
+   "definition": "Bete-Pazes, um lugar na Palestina",
+   "derivation": "de 1004 e um derivado de 6327; casa da dispersão;"
+  },
+  {
+   "strongs": "H1049",
+   "sha256": "20f068c119b4c9903068f14b3ba360122b3250b4248edbb9697e7f7f06b4f0c2",
+   "gloss": "Bete-Zur",
+   "definition": "Bete-Zur, um lugar na Palestina",
+   "derivation": "de 1004 e 6697; casa da rocha;"
+  },
+  {
+   "strongs": "H1050",
+   "sha256": "dc357fc679be1ffd975a941b82f874ec3fe7b9cdfd5b41e88e4a2a7b0489bbb1",
+   "gloss": "Bete-Reobe",
+   "definition": "Bete-Reobe, um lugar na Palestina",
+   "derivation": "de 1004 e 7339; casa da rua;"
+  },
+  {
+   "strongs": "H1051",
+   "sha256": "4be4777c3dfbc5b072860502bedca970ad9f9b6d63388d3a65d25081c500ade7",
+   "gloss": "Bete-Rafa",
+   "definition": "Bete-Rafa, um israelita",
+   "derivation": "de 1004 e 7497; casa do gigante;"
+  },
+  {
+   "strongs": "H1052",
+   "sha256": "d2660ad03bd7d28cbdf6f54bf0a5d2a079fae4d369c52017200b60e0397139d8",
+   "gloss": "Bete-Seã",
+   "definition": "Bete-Seã ou Bete-Sã, um lugar na Palestina",
+   "derivation": "ou בֵּית שָׁן; de 1004 e 7599; casa do sossego;"
+  },
+  {
+   "strongs": "H1053G",
+   "sha256": "b1b7c14717c26666ab6e0feb4b24ffef6fcdd1f1996d66cef12d32a9796c4c22",
+   "gloss": "Bete-Semes",
+   "definition": "Bete-Semes, um lugar na Palestina",
+   "derivation": "de 1004 e 8121; casa do sol;"
+  },
+  {
+   "strongs": "H1053H",
+   "sha256": "b1b7c14717c26666ab6e0feb4b24ffef6fcdd1f1996d66cef12d32a9796c4c22",
+   "gloss": "Bete-Semes",
+   "definition": "Bete-Semes, um lugar na Palestina",
+   "derivation": "de 1004 e 8121; casa do sol;"
+  },
+  {
+   "strongs": "H1053I",
+   "sha256": "b1b7c14717c26666ab6e0feb4b24ffef6fcdd1f1996d66cef12d32a9796c4c22",
+   "gloss": "Bete-Semes",
+   "definition": "Bete-Semes, um lugar na Palestina",
+   "derivation": "de 1004 e 8121; casa do sol;"
+  },
+  {
+   "strongs": "H1053J",
+   "sha256": "1cf3d03bd8532b7a0fe56ac85829921f6f84355d23c257e1d9413a54ac92d731",
+   "gloss": "Heliópolis",
+   "definition": "Bete-Semes, um lugar na Palestina",
+   "derivation": "de 1004 e 8121; casa do sol;"
+  },
+  {
+   "strongs": "H1054",
+   "sha256": "902f164710a84d83606e0df601965c5f589812c8bd30c57a7801a3cb0481e7b4",
+   "gloss": "Bete-Tapua",
+   "definition": "Bete-Tapua, um lugar na Palestina",
+   "derivation": "de 1004 e 8598; casa da maçã;"
+  },
+  {
+   "strongs": "H1055",
+   "sha256": "20787e84e6b68ed43a0d77ac1a11ee2ffbe55f65a3d73d19a03920cee52c4bc6",
+   "gloss": "palácio",
+   "definition": "um palácio (isto é, casa grande)",
+   "derivation": "provavelmente de 1004;"
+  },
+  {
+   "strongs": "H1056",
+   "sha256": "0fb24527ccd1f21d8c11f7f4849fa4ae6aeb4732c7d48bb1ff51d1af36bcd7f6",
+   "gloss": "(Tofete de) Baca",
+   "definition": "Baca, um vale na Palestina",
+   "derivation": "de 1058, choro;"
+  },
+  {
+   "strongs": "H1057",
+   "sha256": "7c9a743b1264f230a9b0e9b718353d73152713e7ad6a88c883d78602d8f87f64",
+   "gloss": "bálsamo",
+   "definition": "a árvore que chora (alguma árvore que destila goma, talvez o bálsamo)",
+   "derivation": "o mesmo que 1056;"
+  },
+  {
+   "strongs": "H1058",
+   "sha256": "8d4f6efa69384aee52982f85941b29281ced092d0a848d0d09045cece8d1bbbc",
+   "gloss": "chorar",
+   "definition": "chorar; em geral, lamentar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H1059",
+   "sha256": "b8b04775a6b3e0ffaf671f70c79f0a79bbc5bf745200909603fb6fbafb49cb76",
+   "gloss": "amargamente",
+   "definition": "um choro",
+   "derivation": "de 1058;"
+  },
+  {
+   "strongs": "H1060",
+   "sha256": "68da40b7dd9842fb97e052ffb7b7320519b47a5287b7af3c7043b64687683adf",
+   "gloss": "primogênito",
+   "definition": "primogênito; daí, chefe",
+   "derivation": "de 1069;"
+  },
+  {
+   "strongs": "H1061",
+   "sha256": "e26791164c6142fef66bf4a7ee9c80750dbf00d127489f2461bd4f1977214868",
+   "gloss": "primícias",
+   "definition": "as primícias da colheita",
+   "derivation": "de 1069;"
+  },
+  {
+   "strongs": "H1062",
+   "sha256": "78a4e804656c079ce226f84b6101ada39a7ad0da0cadb4687664975b342fdf0a",
+   "gloss": "primogenitura",
+   "definition": "o primogênito de homem ou de animal; abstratamente, primogenitura",
+   "derivation": "ou (curto) בְּכֹרָה; feminino de 1060;"
+  },
+  {
+   "strongs": "H1063",
+   "sha256": "3679dd4d155ade0703ea8cd1ff9d2837226489dcc3fb78fbe9718093d0b15059",
+   "gloss": "figo temporão",
+   "definition": "o figo temporão",
+   "derivation": "feminino de 1061;"
+  },
+  {
+   "strongs": "H1064",
+   "sha256": "f9b6309e7178a477a671db5315f122be1eb55df7c1f94bc2a562ac01d8d12ccb",
+   "gloss": "Becorate",
+   "definition": "Becorate, um israelita",
+   "derivation": "feminino de 1062; primogenitura;"
+  },
+  {
+   "strongs": "H1065",
+   "sha256": "a855e6a74fd5941ad74e784a2e2e9fecf08bf347e60d33392424aa3f92b44caa",
+   "gloss": "choro",
+   "definition": "um choro; por analogia, um gotejar",
+   "derivation": "de 1058;"
+  },
+  {
+   "strongs": "H1066",
+   "sha256": "0244db9bd9a9bbc8a9c87cbb60a9c7c62d56ce932e93d1561e75a6b048d2c0e9",
+   "gloss": "Boquim",
+   "definition": "Boquim, um lugar na Palestina",
+   "derivation": "particípio ativo plural de 1058; (com o artigo) os que choram;"
+  },
+  {
+   "strongs": "H1067",
+   "sha256": "5798751227bcee900c68a9df65fa85484286b017dc46f9609a04759e64a12342",
+   "gloss": "primogênito",
+   "definition": "a filha mais velha",
+   "derivation": "feminino de 1069;"
+  },
+  {
+   "strongs": "H1068",
+   "sha256": "bbd6e801d2cf74ac516a4dee435686a78048ac4054946afb9db856e8df832223",
+   "gloss": "choro",
+   "definition": "um choro",
+   "derivation": "de 1058;"
+  },
+  {
+   "strongs": "H1069",
+   "sha256": "25b7cc585086cd11f413dd21b1a9188bd50e4e74f6f3f3df76b181b6e7979733",
+   "gloss": "ser/gerar primogênito",
+   "definition": "dar a primogenitura",
+   "derivation": "raiz primitiva; propriamente, romper o útero, isto é, (causativamente) dar ou produzir fruto temporão (de mulher ou árvore); também (como denominativo de 1061)"
+  },
+  {
+   "strongs": "H1070",
+   "sha256": "641c9768e9adefaa79dd5d155d76fb38ad373f591bb5d7914cbac8a4f6556026",
+   "gloss": "camelo jovem",
+   "definition": "um camelo jovem",
+   "derivation": "de 1069 (no sentido de juventude);"
+  },
+  {
+   "strongs": "H1071G",
+   "sha256": "1fb4b1a0e22b557387cbf89d93e291554ba58edcc73b0339129c582ca1deb18e",
+   "gloss": "Bequer",
+   "definition": "Bequer, nome de dois israelitas",
+   "derivation": "o mesmo que 1070;"
+  },
+  {
+   "strongs": "H1071H",
+   "sha256": "1fb4b1a0e22b557387cbf89d93e291554ba58edcc73b0339129c582ca1deb18e",
+   "gloss": "Bequer",
+   "definition": "Bequer, nome de dois israelitas",
+   "derivation": "o mesmo que 1070;"
+  },
+  {
+   "strongs": "H1072",
+   "sha256": "2d32c8c53c4c8020edcf5761dcac0d0aa08d97f1c2afa03cdf8ef8ca7e119435",
+   "gloss": "camelo jovem",
+   "definition": "uma camela jovem",
+   "derivation": "feminino de 1070;"
+  },
+  {
+   "strongs": "H1073",
+   "sha256": "ad0582bd39f7715be82a80e0d2a280bc1091c147284daccb047532cf9c1ca282",
+   "gloss": "primícias",
+   "definition": "um figo temporão",
+   "derivation": "por variação ortográfica por 1063;"
+  },
+  {
+   "strongs": "H1074",
+   "sha256": "4a77f139e646b5c72e7f06814a1309ec31124435631e25a6e5111808a12632ca",
+   "gloss": "Bocru",
+   "definition": "Bocru, um israelita",
+   "derivation": "de 1069; primogênito;"
+  },
+  {
+   "strongs": "H1075",
+   "sha256": "c10ecfdc3b7577b157a51aace0d61e669d0997a68b300b0b98af48833a8960f3",
+   "gloss": "Bicri",
+   "definition": "Bicri, um israelita",
+   "derivation": "de 1069; juvenil;"
+  },
+  {
+   "strongs": "H1076",
+   "sha256": "157688834dc663dd91a04a9be6136aa23eca00ccf984beacb753abe7d7b6fdc1",
+   "gloss": "bequerita",
+   "definition": "um bequerita (coletivamente) ou descendentes de Bequer",
+   "derivation": "patronimicamente de 1071;"
+  },
+  {
+   "strongs": "H1077",
+   "sha256": "b23634d8f6f5254916f24788d3c6f4330c4bd050caab9274ab04313a26d96abe",
+   "gloss": "não",
+   "definition": "propriamente, uma falta; por implicação nada; geralmente (advérbio) de modo nenhum; também para que não",
+   "derivation": "de 1086;"
+  },
+  {
+   "strongs": "H1078",
+   "sha256": "e7fe64a47c365731148e5cbb0f4028a370e7472b54a5d8a9f5b208a20b1cd82b",
+   "gloss": "Bel",
+   "definition": "Bel, o Baal dos babilônios",
+   "derivation": "por contração por 1168;"
+  },
+  {
+   "strongs": "H1079",
+   "sha256": "3f40f5d2ec3d34ddf888495eb59a5cbea62ef9fb5b06d8dc1d0e02f6503765b4",
+   "gloss": "mente",
+   "definition": "propriamente, ansiedade, isto é, (por implicação) o coração (como sua sede)",
+   "derivation": "(aramaico) de 1080;"
+  },
+  {
+   "strongs": "H1080",
+   "sha256": "e82af6384921ec14675e9db82da03d7889e379b0149a80f21e51319bd7abcdb2",
+   "gloss": "desgastar",
+   "definition": "afligir",
+   "derivation": "(aramaico) correspondente a 1086 (mas usado só em sentido mental);"
+  },
+  {
+   "strongs": "H1081",
+   "sha256": "0e838c2eb4eda5082ccaa1235c90c903d7e702952b65072280b02c439217b560",
+   "gloss": "Baladã",
+   "definition": "Baladã, nome de um príncipe babilônio",
+   "derivation": "de 1078 e 113 (contraído); Bel (é seu) senhor;"
+  },
+  {
+   "strongs": "H1082",
+   "sha256": "9dd8c0b53c1360aac10adc01914de8a3e7b24dc1573dc34a25a95f4a3462aa65",
+   "gloss": "alegrar-se",
+   "definition": "romper ou soltar (em sentido favorável ou desfavorável), isto é, desistir (da tristeza) ou invadir (com destruição)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H1083G",
+   "sha256": "038e0a8c95ca6ab17f5241c6b57141108143431f3dc9dc5da9e467c0f93e7cd8",
+   "gloss": "Bilga",
+   "definition": "Bilga, nome de dois israelitas",
+   "derivation": "de 1082; desistência;"
+  },
+  {
+   "strongs": "H1083H",
+   "sha256": "038e0a8c95ca6ab17f5241c6b57141108143431f3dc9dc5da9e467c0f93e7cd8",
+   "gloss": "Bilga",
+   "definition": "Bilga, nome de dois israelitas",
+   "derivation": "de 1082; desistência;"
+  },
+  {
+   "strongs": "H1084",
+   "sha256": "354f67aa345ee1996b093dfcfad11630f9eb62d77281cec5794eaa5f2b67f326",
+   "gloss": "Bilgai",
+   "definition": "Bilgai, um israelita",
+   "derivation": "de 1082; que desiste;"
+  },
+  {
+   "strongs": "H1085",
+   "sha256": "bdc53cc4673fdc781d67899a63de31c97833bb78e3e8af390d66db8e20055d06",
+   "gloss": "Bildade",
+   "definition": "Bildade, um dos amigos de Jó",
+   "derivation": "de derivação incerta;"
+  },
+  {
+   "strongs": "H1086",
+   "sha256": "0b62e2e0cc16caf20d0905d1588c07ed3cae75389b9d7bf319e9958e0dffbdf5",
+   "gloss": "envelhecer",
+   "definition": "falhar; por implicação desgastar-se, decair (causativamente, consumir, gastar)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H1087",
+   "sha256": "27b33287687a0d1f6e1e7b4b10e5b11d4e3b49f977feba8422577094101e389e",
+   "gloss": "velho",
+   "definition": "desgastado",
+   "derivation": "de 1086;"
+  },
+  {
+   "strongs": "H1088",
+   "sha256": "9d94ad73dce5adbbba06ddc6d7ea0fb9aafb2dc06ed1d33cdc7824e5de3f0b90",
+   "gloss": "Balá",
+   "definition": "Balá, um lugar na Palestina",
+   "derivation": "feminino de 1087; falta;"
+  },
+  {
+   "strongs": "H1089",
+   "sha256": "3505f6fc3ec3542285b8d4fb7845720b94b2a9e0a878af7c6dfdaaf7d7cd6eda",
+   "gloss": "perturbar",
+   "definition": "palpitar; daí, (causativamente) aterrorizar",
+   "derivation": "raiz primitiva (antes por transposição por 926);"
+  },
+  {
+   "strongs": "H1090A",
+   "sha256": "fd278f82de38f19bada7cddc9f935724861f7ee25de7bea42ba096bfaddf8001",
+   "gloss": "Bila",
+   "definition": "Bila, nome de uma das concubinas de Jacó; também de um lugar na Palestina",
+   "derivation": "de 1089; tímido;"
+  },
+  {
+   "strongs": "H1090B",
+   "sha256": "fd278f82de38f19bada7cddc9f935724861f7ee25de7bea42ba096bfaddf8001",
+   "gloss": "Bila",
+   "definition": "Bila, nome de uma das concubinas de Jacó; também de um lugar na Palestina",
+   "derivation": "de 1089; tímido;"
+  },
+  {
+   "strongs": "H1091",
+   "sha256": "d708102ca02f0432e40ab327b88a06e603082b68168520ffbf815df5863997f5",
+   "gloss": "terror",
+   "definition": "alarme; daí, destruição",
+   "derivation": "de 1089;",
+   "note": "Gloss: the Portuguese word is spelled as in English (terror)."
+  },
+  {
+   "strongs": "H1092G",
+   "sha256": "52ef4fa933db27dd85730b894371a76f0a204faab40a28bab20c68493686c729",
+   "gloss": "Bilã",
+   "definition": "Bilã, nome de um edomita e de um israelita",
+   "derivation": "de 1089; tímido;"
+  },
+  {
+   "strongs": "H1092H",
+   "sha256": "52ef4fa933db27dd85730b894371a76f0a204faab40a28bab20c68493686c729",
+   "gloss": "Bilã",
+   "definition": "Bilã, nome de um edomita e de um israelita",
+   "derivation": "de 1089; tímido;"
+  },
+  {
+   "strongs": "H1093",
+   "sha256": "9fc13038028cdec0e657727af4598c7d21346398c32e2f3c6e554b31d63fe973",
+   "gloss": "tributo",
+   "definition": "imposto (sobre artigos de consumo)",
+   "derivation": "(aramaico) de uma raiz correspondente a 1086;"
+  },
+  {
+   "strongs": "H1094",
+   "sha256": "12cabdf7d510736521f8f5502b074f982113fa029a1fe0bc95bfcbea9013cfaf",
+   "gloss": "velho",
+   "definition": "(só no plural construto) trapos",
+   "derivation": "ou (completo) בְּלוֹי; de 1086;"
+  },
+  {
+   "strongs": "H1095",
+   "sha256": "0d5e36f46fff2c3e1e66daf8d95b38b6c1e385fbee6f4edb27bf050020a3a879",
+   "gloss": "Beltessazar",
+   "definition": "Beltessazar, o nome babilônio de Daniel",
+   "derivation": "de derivação estrangeira;"
+  },
+  {
+   "strongs": "H1096",
+   "sha256": "c03999062db3ccf3dda1fe3f65a280665498bd08c5cccf901ab3eb176c80dd74",
+   "gloss": "Beltessazar",
+   "derivation": "(aramaico) correspondente a 1095"
+  },
+  {
+   "strongs": "H1097",
+   "sha256": "d4821ccbdf21654bfb8ce10af01874c6587ddd9239c9aa723d5543d448443b09",
+   "gloss": "sem",
+   "definition": "propriamente, falta, isto é, nada ou destruição; geralmente (com preposição) sem, ainda não, porque não, enquanto etc.",
+   "derivation": "de 1086;"
+  },
+  {
+   "strongs": "H1098",
+   "sha256": "929fb02d35bcc6752984e119184504fcfe6a078b009c60d542629a64ac6dc161",
+   "gloss": "forragem",
+   "definition": "misturado, isto é, (especificamente) ração (para gado)",
+   "derivation": "de 1101;"
+  },
+  {
+   "strongs": "H1099",
+   "sha256": "1411b150337f986b81f7689928093767b50e9a201fea0183f7e6ee10dec192e7",
+   "gloss": "nada",
+   "definition": "(como indefinido) nada absolutamente",
+   "derivation": "de 1097 e 4100;"
+  },
+  {
+   "strongs": "H1100G",
+   "sha256": "64b5071dc4632d82caf08bed2827e74ba0849ab4d788773d0e2352ac30fe1de6",
+   "gloss": "Belial",
+   "definition": "sem proveito, inutilidade; por extensão, destruição, perversidade",
+   "derivation": "de 1097 e 3276; (muitas vezes em conexão com 376, 802, 1121 etc.)"
+  },
+  {
+   "strongs": "H1100H",
+   "sha256": "5e70bfb4a3c57e2e5acf0bab3debe5534ca35e8370b52a2b60dd3c7d0be4134a",
+   "gloss": "Belial: destruição",
+   "definition": "sem proveito, inutilidade; por extensão, destruição, perversidade",
+   "derivation": "de 1097 e 3276; (muitas vezes em conexão com 376, 802, 1121 etc.)"
+  },
+  {
+   "strongs": "H1100I",
+   "sha256": "593df0b78c618ec59d9d7e51357ef77c3caf1dee4f9420f1fdecbac530390d8d",
+   "gloss": "Belial: inútil",
+   "definition": "sem proveito, inutilidade; por extensão, destruição, perversidade",
+   "derivation": "de 1097 e 3276; (muitas vezes em conexão com 376, 802, 1121 etc.)"
+  },
+  {
+   "strongs": "H1101A",
+   "sha256": "e9fcbe7af78bd0ca2a6e83807a5ce5fd3ca2a69888258ef1b382cc08ba968d7b",
+   "gloss": "misturar",
+   "definition": "transbordar (especificamente de azeite); por implicação, misturar; dar forragem",
+   "derivation": "raiz primitiva; (também denominativamente de 1098) dar forragem"
+  },
+  {
+   "strongs": "H1101B",
+   "sha256": "7ababc767e62dd2bce11b8ab244310f6d7ab5de194747f62e5dccba3ef573cbc",
+   "gloss": "alimentar",
+   "definition": "transbordar (especificamente de azeite); por implicação, misturar; dar forragem",
+   "derivation": "raiz primitiva; (também denominativamente de 1098) dar forragem"
+  },
+  {
+   "strongs": "H1102",
+   "sha256": "b512eec0c99864e00007071a8b46cd20ca4dbbcc8aa907422d614f947f71eb8a",
+   "gloss": "refrear",
+   "definition": "amordaçar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H1103",
+   "sha256": "541a1286067f681841841dac79ac2b5fd294bbc99ae0e42fce9f160f65a86226",
+   "gloss": "colher/cultivar figos",
+   "definition": "beliscar figos de sicômoro (processo necessário para amadurecê-los)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H1104",
+   "sha256": "84b561b3f5c98247a01ba4441e88f3dd32d49cc3e87cfb95a77e84288fb3cdd6",
+   "gloss": "tragar",
+   "definition": "dar cabo de (especificamente tragando); em geral, destruir",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H1105",
+   "sha256": "f0cc859c69c504d7f110ce291928f16e8b8203c564f32d015a31774c0c1461a6",
+   "gloss": "tragada",
+   "definition": "um trago; figuradamente, destruição",
+   "derivation": "de 1104;"
+  },
+  {
+   "strongs": "H1106A",
+   "sha256": "99a88d745d553e78503c267d3b5b8c79149045f40132ab6276b6b8c586b4441e",
+   "gloss": "Belá",
+   "definition": "Belá, nome de um lugar, também de um edomita e de dois israelitas",
+   "derivation": "o mesmo que 1105;"
+  },
+  {
+   "strongs": "H1106B",
+   "sha256": "99a88d745d553e78503c267d3b5b8c79149045f40132ab6276b6b8c586b4441e",
+   "gloss": "Belá",
+   "definition": "Belá, nome de um lugar, também de um edomita e de dois israelitas",
+   "derivation": "o mesmo que 1105;"
+  },
+  {
+   "strongs": "H1106G",
+   "sha256": "99a88d745d553e78503c267d3b5b8c79149045f40132ab6276b6b8c586b4441e",
+   "gloss": "Belá",
+   "definition": "Belá, nome de um lugar, também de um edomita e de dois israelitas",
+   "derivation": "o mesmo que 1105;"
+  },
+  {
+   "strongs": "H1106H",
+   "sha256": "99a88d745d553e78503c267d3b5b8c79149045f40132ab6276b6b8c586b4441e",
+   "gloss": "Belá",
+   "definition": "Belá, nome de um lugar, também de um edomita e de dois israelitas",
+   "derivation": "o mesmo que 1105;"
+  },
+  {
+   "strongs": "H1107",
+   "sha256": "3205d9abe5ede1a49b10cd723a22c424f090ecf04282dfdc88d50d4fee936c59",
+   "gloss": "além de",
+   "definition": "exceto, sem, além de",
+   "derivation": "ou בַּלְעֲדֵי; plural construto de 1077 e 5703, não até, isto é, (como preposição ou advérbio)"
+  },
+  {
+   "strongs": "H1108",
+   "sha256": "337dbe5fc2a65614192178ae1c0bbe4356ec4610efe88bbc2faf5136950e6ffa",
+   "gloss": "belaíta",
+   "definition": "um belaíta (coletivamente) ou descendentes de Belá",
+   "derivation": "patronimicamente de 1106;"
+  },
+  {
+   "strongs": "H1109A",
+   "sha256": "bfc7028e248e04d8776b47e1d43f1aa68841c5a3aabd67bafbb539254ab83cde",
+   "gloss": "Balaão",
+   "definition": "Balaão, um profeta mesopotâmico; também um lugar na Palestina",
+   "derivation": "provavelmente de 1077 e 5971; não (do) povo, isto é, estrangeiro;"
+  },
+  {
+   "strongs": "H1109B",
+   "sha256": "4966f300637d5f888914fc46a7a2e3e187299277f3be781cfab9b68a9aade676",
+   "gloss": "Bileã",
+   "definition": "Balaão, um profeta mesopotâmico; também um lugar na Palestina",
+   "derivation": "provavelmente de 1077 e 5971; não (do) povo, isto é, estrangeiro;"
+  },
+  {
+   "strongs": "H1110",
+   "sha256": "714915d320e571f395b9bfe92436cce3a39cc8165defc2f4edcfb1ba0f85f4c9",
+   "gloss": "devastar",
+   "definition": "aniquilar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H1111",
+   "sha256": "5c488eb8b6f345c42fad3ffe1eb7eae8d6da96a8e5102d0d757396825c9c6935",
+   "gloss": "Balaque",
+   "definition": "Balaque, um rei moabita",
+   "derivation": "de 1110; devastador;"
+  },
+  {
+   "strongs": "H1112",
+   "sha256": "a5f1a4d54138af74f4929e4916133412942c357a9846f34a95558d9f5b7abe3b",
+   "gloss": "Belsazar",
+   "definition": "Belsazar, um rei babilônio",
+   "derivation": "ou בֵּלְאשַׁצַּרlema בֵּלְאשַׁצּר sem vogal, corrigido para בֵּלְאשַׁצַּר; de origem estrangeira (compare 1095);"
+  },
+  {
+   "strongs": "H1113",
+   "sha256": "9125d51357c21696d3bb8f860a135247be6dc0fee599078d912f97d82b6dbf1e",
+   "gloss": "Belsazar",
+   "derivation": "(aramaico) correspondente a 1112"
+  },
+  {
+   "strongs": "H1114",
+   "sha256": "82ba68cc522f3b712ae7c7100b784999a18addce1da6de88d5c8ef08f00d5179",
+   "gloss": "Bilsã",
+   "definition": "Bilsã, um israelita",
+   "derivation": "de derivação incerta;"
+  },
+  {
+   "strongs": "H1115",
+   "sha256": "86e34279bd494dba01f1417432b7be4a607ed7912c2f95a72ab64df513ce620a",
+   "gloss": "para que não",
+   "definition": "propriamente, uma falta de, isto é, (usado só como partícula negativa, geralmente com prefixo preposicional) não, exceto, sem, a menos que, além de, porque não, até etc.",
+   "derivation": "feminino construto de 1086 (equivalente a 1097);"
+  },
+  {
+   "strongs": "H1116",
+   "sha256": "98342900e1f47437286d3902486d2cf7e47890754cf7e739930ce88fb1d2da99",
+   "gloss": "lugar alto",
+   "definition": "uma elevação",
+   "derivation": "de uma raiz não usada (que significa ser alto);"
+  },
+  {
+   "strongs": "H1117",
+   "sha256": "c05b961887a4ca0d358c7db59cf6a8b67b79b101dab234668e1522053624817e",
+   "gloss": "Bamá",
+   "definition": "Bamá, um lugar na Palestina",
+   "derivation": "o mesmo que 1116;"
+  },
+  {
+   "strongs": "H1118",
+   "sha256": "f7433937604d16b56e0598bf8a6e7aee09d8253f789d867d99cb0765636922bd",
+   "gloss": "Bimal",
+   "definition": "Bimal, um israelita",
+   "derivation": "provavelmente de 4107 com prefixo preposicional; com poda;"
+  },
+  {
+   "strongs": "H1119",
+   "sha256": "ab315dd1eaf6955e139f8f9c310e36c33c478b34c6efe74771a5a5829fd41f4c",
+   "gloss": "em/a/por",
+   "definition": "em, com, por etc.",
+   "derivation": "prolongamento do prefixo preposicional;"
+  },
+  {
+   "strongs": "H1120G",
+   "sha256": "29bf438c09055602ccd76bf5b7191d5f4fd53aad0628f9d44d6cc02936cb15c4",
+   "gloss": "Bamote",
+   "definition": "Bamote ou Bamote-Baal, um lugar a leste do Jordão",
+   "derivation": "plural de 1116; alturas; ou (completo) בָּמוֹת בַּעַל; do mesmo e 1168; alturas de Baal;"
+  },
+  {
+   "strongs": "H1120H",
+   "sha256": "29bf438c09055602ccd76bf5b7191d5f4fd53aad0628f9d44d6cc02936cb15c4",
+   "gloss": "Bamote",
+   "definition": "Bamote ou Bamote-Baal, um lugar a leste do Jordão",
+   "derivation": "plural de 1116; alturas; ou (completo) בָּמוֹת בַּעַל; do mesmo e 1168; alturas de Baal;"
+  },
+  {
+   "strongs": "H1121A",
+   "sha256": "74db57a4af9b4bee431f63dfd7857211c888bcd2bea5ad4ad31d77535f607124",
+   "gloss": "filho: criança",
+   "definition": "um filho (como edificador do nome da família), no sentido mais amplo (de parentesco literal e figurado, incluindo neto, súdito, nação, qualidade ou condição etc., (como pai ou irmão) etc.)",
+   "derivation": "de 1129;"
+  },
+  {
+   "strongs": "H1121B",
+   "sha256": "08b62248fa1e9639c95cbd47cbf7e3481249d04072aef9a01363ad2d15037b6f",
+   "gloss": "Beno",
+   "definition": "um filho (como edificador do nome da família), no sentido mais amplo (de parentesco literal e figurado, incluindo neto, súdito, nação, qualidade ou condição etc., (como pai ou irmão) etc.)",
+   "derivation": "de 1129;"
+  },
+  {
+   "strongs": "H1121G",
+   "sha256": "3170b20468134f0bd245d6cc99f27571d1634ff633177eebdc650300ab8a7517",
+   "gloss": "filho: descendente/povo",
+   "definition": "um filho (como edificador do nome da família), no sentido mais amplo (de parentesco literal e figurado, incluindo neto, súdito, nação, qualidade ou condição etc., (como pai ou irmão) etc.)",
+   "derivation": "de 1129;"
+  },
+  {
+   "strongs": "H1121H",
+   "sha256": "019ecde08b126d15ebb80a0a95266bb511b75b729b957ffb39f1a5929cf522b1",
+   "gloss": "filho: cria",
+   "definition": "um filho (como edificador do nome da família), no sentido mais amplo (de parentesco literal e figurado, incluindo neto, súdito, nação, qualidade ou condição etc., (como pai ou irmão) etc.)",
+   "derivation": "de 1129;"
+  },
+  {
+   "strongs": "H1121I",
+   "sha256": "f42d151d9ff6ff7bee005ec2f8244e4c5448e08640ddde185e065b44c329b3a2",
+   "gloss": "filho: tipo de",
+   "definition": "um filho (como edificador do nome da família), no sentido mais amplo (de parentesco literal e figurado, incluindo neto, súdito, nação, qualidade ou condição etc., (como pai ou irmão) etc.)",
+   "derivation": "de 1129;"
+  },
+  {
+   "strongs": "H1121J",
+   "sha256": "24616a6d818b88b6c25b524d17fcee80d088f11d7ade89b3be56e910c9c83bc7",
+   "gloss": "filho",
+   "definition": "um filho (como edificador do nome da família), no sentido mais amplo (de parentesco literal e figurado, incluindo neto, súdito, nação, qualidade ou condição etc., (como pai ou irmão) etc.)",
+   "derivation": "de 1129;"
+  },
+  {
+   "strongs": "H1121K",
+   "sha256": "28a29bb339f3af0f3d64141ccef1264ce197bb15f37a00aff7035ca5a5eb4c1b",
+   "gloss": "filho: guerreiro",
+   "definition": "um filho (como edificador do nome da família), no sentido mais amplo (de parentesco literal e figurado, incluindo neto, súdito, nação, qualidade ou condição etc., (como pai ou irmão) etc.)",
+   "derivation": "de 1129;"
+  },
+  {
+   "strongs": "H1121L",
+   "sha256": "d65802d13fa321e2ef1e7b80d41acb82a3d4edd6db78cbdaf44bc71ba8ff9803",
+   "gloss": "filho: de idade",
+   "definition": "um filho (como edificador do nome da família), no sentido mais amplo (de parentesco literal e figurado, incluindo neto, súdito, nação, qualidade ou condição etc., (como pai ou irmão) etc.)",
+   "derivation": "de 1129;"
+  },
+  {
+   "strongs": "H1122",
+   "sha256": "7c5e71ad8a391074d302f7b8367b1652e72c4df098fed8e8cfd7afa2bec3ed0e",
+   "gloss": "Ben",
+   "definition": "Ben, um israelita",
+   "derivation": "o mesmo que 1121;"
+  },
+  {
+   "strongs": "H1123",
+   "sha256": "c21239d7cdb93d51555048054a1b3c1e1fa4d62255f5faedfdd0298d523144f9",
+   "gloss": "filho",
+   "derivation": "(aramaico) correspondente a 1121"
+  },
+  {
+   "strongs": "H1124",
+   "sha256": "ad361837ad330e595b63e299ed93b20845934ad170ff2d1e91af2c3c015b9dbe",
+   "gloss": "edificar",
+   "definition": "edificar",
+   "derivation": "(aramaico) ou בְּנָה; (aramaico), correspondente a 1129;"
+  },
+  {
+   "strongs": "H1125",
+   "sha256": "f25880b3147c9bac0917cc774d4ec9cc477c5a5157f601764293cb319774be71",
+   "gloss": "Ben-Abinadabe",
+   "definition": "Ben-Abinadabe, um israelita",
+   "derivation": "de 1121 e 40; (o) filho de Abinadabe;"
+  },
+  {
+   "strongs": "H1126",
+   "sha256": "27a0f2833806c053ff0ccbb71acb39fb86817e862dd3c75ead4f7949f9ed1b1e",
+   "gloss": "Benoni",
+   "definition": "Benoni, o nome original de Benjamim",
+   "derivation": "de 1121 e 205; filho da minha dor;"
+  },
+  {
+   "strongs": "H1127",
+   "sha256": "20ffe1c0d68bab6323ceb1ddb5d945c9ffab982fbeb8bf86e6e558d9b3174563",
+   "gloss": "Ben-Geber",
+   "definition": "Ben-Geber, um israelita",
+   "derivation": "de 1121 e 1397; filho do herói;"
+  },
+  {
+   "strongs": "H1128",
+   "sha256": "67bc38bfbbc6aeb1b1d105e2a0d4c613203cd762cfe0e2a29b1ec1b64aff3924",
+   "gloss": "Ben-Dequer",
+   "definition": "Ben-Dequer, um israelita",
+   "derivation": "de 1121 e um derivado de 1856; filho da perfuração (ou de uma lança);"
+  },
+  {
+   "strongs": "H1129",
+   "sha256": "fdbfdd28fc687e720486386bbc8dac7682f710ab80720c630492fadd3da0e4a0",
+   "gloss": "edificar",
+   "definition": "edificar (literal e figuradamente)",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H1130G",
+   "sha256": "f92134394ec6b8777cccea99494ee48fa9845b95e66b310eb8aed7a617dce51e",
+   "gloss": "Ben-Hadade",
+   "definition": "Ben-Hadade, nome de vários reis sírios",
+   "derivation": "de 1121 e 1908; filho de Hadade;"
+  },
+  {
+   "strongs": "H1130H",
+   "sha256": "f92134394ec6b8777cccea99494ee48fa9845b95e66b310eb8aed7a617dce51e",
+   "gloss": "Ben-Hadade",
+   "definition": "Ben-Hadade, nome de vários reis sírios",
+   "derivation": "de 1121 e 1908; filho de Hadade;"
+  },
+  {
+   "strongs": "H1130I",
+   "sha256": "f92134394ec6b8777cccea99494ee48fa9845b95e66b310eb8aed7a617dce51e",
+   "gloss": "Ben-Hadade",
+   "definition": "Ben-Hadade, nome de vários reis sírios",
+   "derivation": "de 1121 e 1908; filho de Hadade;"
+  },
+  {
+   "strongs": "H1131G",
+   "sha256": "591d926b637c0fc964272a764e2e613a5b9a59d223abd280ed35386081d7a343",
+   "gloss": "Binui",
+   "definition": "Binui, um israelita",
+   "derivation": "de 1129; edificado;"
+  },
+  {
+   "strongs": "H1131H",
+   "sha256": "591d926b637c0fc964272a764e2e613a5b9a59d223abd280ed35386081d7a343",
+   "gloss": "Binui",
+   "definition": "Binui, um israelita",
+   "derivation": "de 1129; edificado;"
+  },
+  {
+   "strongs": "H1131I",
+   "sha256": "591d926b637c0fc964272a764e2e613a5b9a59d223abd280ed35386081d7a343",
+   "gloss": "Binui",
+   "definition": "Binui, um israelita",
+   "derivation": "de 1129; edificado;"
+  },
+  {
+   "strongs": "H1131J",
+   "sha256": "591d926b637c0fc964272a764e2e613a5b9a59d223abd280ed35386081d7a343",
+   "gloss": "Binui",
+   "definition": "Binui, um israelita",
+   "derivation": "de 1129; edificado;"
+  },
+  {
+   "strongs": "H1131K",
+   "sha256": "591d926b637c0fc964272a764e2e613a5b9a59d223abd280ed35386081d7a343",
+   "gloss": "Binui",
+   "definition": "Binui, um israelita",
+   "derivation": "de 1129; edificado;"
+  },
+  {
+   "strongs": "H1131L",
+   "sha256": "591d926b637c0fc964272a764e2e613a5b9a59d223abd280ed35386081d7a343",
+   "gloss": "Binui",
+   "definition": "Binui, um israelita",
+   "derivation": "de 1129; edificado;"
+  },
+  {
+   "strongs": "H1132",
+   "sha256": "c5ec6639aec354dcdac9561795e46d37e453706c7780e6816833402ad6c5287d",
+   "gloss": "Ben-Zoete",
+   "definition": "Ben-Zoete, um israelita",
+   "derivation": "de 1121 e 2105; filho de Zoete;"
+  },
+  {
+   "strongs": "H1133G",
+   "sha256": "fa7d2bb51856e57f4107583b47b7b935845d0af5c1ca03c5d0c7bc8b59c72ace",
+   "gloss": "Ben-Hur",
+   "definition": "Ben-Hur, um israelita",
+   "derivation": "de 1121 e 2354; filho de Hur;"
+  },
+  {
+   "strongs": "H1133H",
+   "sha256": "584ce175d05d21cb6389ac8dc95627cf41b05371fe42f566cdd42381325f766f",
+   "gloss": "Hur",
+   "definition": "Ben-Hur, um israelita",
+   "derivation": "de 1121 e 2354; filho de Hur;"
+  },
+  {
+   "strongs": "H1134",
+   "sha256": "9116aa1bc4b82249e8b1885910bdffb35deea81abc774ead78d9b2df0fa19d3b",
+   "gloss": "Ben-Hail",
+   "definition": "Ben-Hail, um israelita",
+   "derivation": "de 1121 e 2428; filho de poder;"
+  },
+  {
+   "strongs": "H1135",
+   "sha256": "b1ced6eca6aa934a5c4e8f4589be1301a20a87219c6ad4b77141270392a98aaf",
+   "gloss": "Ben-Hanã",
+   "definition": "Ben-Hanã, um israelita",
+   "derivation": "de 1121 e 2605; filho de Hanã;"
+  },
+  {
+   "strongs": "H1136",
+   "sha256": "e4799bec605c4bfe9029a8e05b7504313a0a59e1f95a0757ee8246fbca326440",
+   "gloss": "Ben-Hesede",
+   "definition": "Ben-Hesede, um israelita",
+   "derivation": "de 1121 e 2617; filho de benignidade;"
+  },
+  {
+   "strongs": "H1137G",
+   "sha256": "c6fefee026225bd5881953de1fdcfdd497a7663c86258c5a0903326d5c8ace01",
+   "gloss": "Bani",
+   "definition": "Bani, nome de cinco israelitas",
+   "derivation": "de 1129; edificado;"
+  },
+  {
+   "strongs": "H1137H",
+   "sha256": "c6fefee026225bd5881953de1fdcfdd497a7663c86258c5a0903326d5c8ace01",
+   "gloss": "Bani",
+   "definition": "Bani, nome de cinco israelitas",
+   "derivation": "de 1129; edificado;"
+  },
+  {
+   "strongs": "H1137I",
+   "sha256": "c6fefee026225bd5881953de1fdcfdd497a7663c86258c5a0903326d5c8ace01",
+   "gloss": "Bani",
+   "definition": "Bani, nome de cinco israelitas",
+   "derivation": "de 1129; edificado;"
+  },
+  {
+   "strongs": "H1137J",
+   "sha256": "c6fefee026225bd5881953de1fdcfdd497a7663c86258c5a0903326d5c8ace01",
+   "gloss": "Bani",
+   "definition": "Bani, nome de cinco israelitas",
+   "derivation": "de 1129; edificado;"
+  },
+  {
+   "strongs": "H1137K",
+   "sha256": "cc311faf410aa3ed07cb62e27f2adcf02c8d6ad03a361c4287f2cf6284dd83fe",
+   "gloss": "`filhos`",
+   "definition": "Bani, nome de cinco israelitas",
+   "derivation": "de 1129; edificado;"
+  },
+  {
+   "strongs": "H1137L",
+   "sha256": "c6fefee026225bd5881953de1fdcfdd497a7663c86258c5a0903326d5c8ace01",
+   "gloss": "Bani",
+   "definition": "Bani, nome de cinco israelitas",
+   "derivation": "de 1129; edificado;"
+  },
+  {
+   "strongs": "H1137M",
+   "sha256": "c6fefee026225bd5881953de1fdcfdd497a7663c86258c5a0903326d5c8ace01",
+   "gloss": "Bani",
+   "definition": "Bani, nome de cinco israelitas",
+   "derivation": "de 1129; edificado;"
+  },
+  {
+   "strongs": "H1137N",
+   "sha256": "c6fefee026225bd5881953de1fdcfdd497a7663c86258c5a0903326d5c8ace01",
+   "gloss": "Bani",
+   "definition": "Bani, nome de cinco israelitas",
+   "derivation": "de 1129; edificado;"
+  },
+  {
+   "strongs": "H1137O",
+   "sha256": "c6fefee026225bd5881953de1fdcfdd497a7663c86258c5a0903326d5c8ace01",
+   "gloss": "Bani",
+   "definition": "Bani, nome de cinco israelitas",
+   "derivation": "de 1129; edificado;"
+  },
+  {
+   "strongs": "H1137P",
+   "sha256": "c6fefee026225bd5881953de1fdcfdd497a7663c86258c5a0903326d5c8ace01",
+   "gloss": "Bani",
+   "definition": "Bani, nome de cinco israelitas",
+   "derivation": "de 1129; edificado;"
+  },
+  {
+   "strongs": "H1137Q",
+   "sha256": "c6fefee026225bd5881953de1fdcfdd497a7663c86258c5a0903326d5c8ace01",
+   "gloss": "Bani",
+   "definition": "Bani, nome de cinco israelitas",
+   "derivation": "de 1129; edificado;"
+  },
+  {
+   "strongs": "H1138G",
+   "sha256": "03c20340cda56f978fd9178727d7afc44f2d8779dd83c3ce4906818762b277c5",
+   "gloss": "Buni",
+   "definition": "Buni, um israelita",
+   "derivation": "ou (mais completo) בּוּנִי; de 1129; edificado;"
+  },
+  {
+   "strongs": "H1138H",
+   "sha256": "03c20340cda56f978fd9178727d7afc44f2d8779dd83c3ce4906818762b277c5",
+   "gloss": "Buni",
+   "definition": "Buni, um israelita",
+   "derivation": "ou (mais completo) בּוּנִי; de 1129; edificado;"
+  },
+  {
+   "strongs": "H1138I",
+   "sha256": "03c20340cda56f978fd9178727d7afc44f2d8779dd83c3ce4906818762b277c5",
+   "gloss": "Buni",
+   "definition": "Buni, um israelita",
+   "derivation": "ou (mais completo) בּוּנִי; de 1129; edificado;"
+  },
+  {
+   "strongs": "H1139",
+   "sha256": "b466b5bb61e16c9474706b4c0751dacde3abb01247822a34df33653ca4380936",
+   "gloss": "Bene-Beraque",
+   "definition": "filhos do relâmpago, Bene-Beraque, um lugar na Palestina",
+   "derivation": "do plural construto de 1121 e 1300;"
+  },
+  {
+   "strongs": "H1140",
+   "sha256": "1fb35e612b65f499b8ab6c017b5f9b557fe5981132f43240a4b36c67c2d87612",
+   "gloss": "edifício",
+   "definition": "uma estrutura",
+   "derivation": "feminino de 1129;"
+  },
+  {
+   "strongs": "H1141G",
+   "sha256": "be0fba31c22309ff63f8d4d73614ce8f381fa49cff758bf84b43f0ea175b5f34",
+   "gloss": "Benaia",
+   "definition": "Benaia, nome de doze israelitas",
+   "derivation": "ou בּנָיָהוּ; (prolongado) de 1129 e 3050; Jah edificou;"
+  },
+  {
+   "strongs": "H1141H",
+   "sha256": "be0fba31c22309ff63f8d4d73614ce8f381fa49cff758bf84b43f0ea175b5f34",
+   "gloss": "Benaia",
+   "definition": "Benaia, nome de doze israelitas",
+   "derivation": "ou בּנָיָהוּ; (prolongado) de 1129 e 3050; Jah edificou;"
+  },
+  {
+   "strongs": "H1141I",
+   "sha256": "be0fba31c22309ff63f8d4d73614ce8f381fa49cff758bf84b43f0ea175b5f34",
+   "gloss": "Benaia",
+   "definition": "Benaia, nome de doze israelitas",
+   "derivation": "ou בּנָיָהוּ; (prolongado) de 1129 e 3050; Jah edificou;"
+  },
+  {
+   "strongs": "H1141J",
+   "sha256": "be0fba31c22309ff63f8d4d73614ce8f381fa49cff758bf84b43f0ea175b5f34",
+   "gloss": "Benaia",
+   "definition": "Benaia, nome de doze israelitas",
+   "derivation": "ou בּנָיָהוּ; (prolongado) de 1129 e 3050; Jah edificou;"
+  },
+  {
+   "strongs": "H1141K",
+   "sha256": "be0fba31c22309ff63f8d4d73614ce8f381fa49cff758bf84b43f0ea175b5f34",
+   "gloss": "Benaia",
+   "definition": "Benaia, nome de doze israelitas",
+   "derivation": "ou בּנָיָהוּ; (prolongado) de 1129 e 3050; Jah edificou;"
+  },
+  {
+   "strongs": "H1141L",
+   "sha256": "be0fba31c22309ff63f8d4d73614ce8f381fa49cff758bf84b43f0ea175b5f34",
+   "gloss": "Benaia",
+   "definition": "Benaia, nome de doze israelitas",
+   "derivation": "ou בּנָיָהוּ; (prolongado) de 1129 e 3050; Jah edificou;"
+  },
+  {
+   "strongs": "H1141M",
+   "sha256": "be0fba31c22309ff63f8d4d73614ce8f381fa49cff758bf84b43f0ea175b5f34",
+   "gloss": "Benaia",
+   "definition": "Benaia, nome de doze israelitas",
+   "derivation": "ou בּנָיָהוּ; (prolongado) de 1129 e 3050; Jah edificou;"
+  },
+  {
+   "strongs": "H1141N",
+   "sha256": "be0fba31c22309ff63f8d4d73614ce8f381fa49cff758bf84b43f0ea175b5f34",
+   "gloss": "Benaia",
+   "definition": "Benaia, nome de doze israelitas",
+   "derivation": "ou בּנָיָהוּ; (prolongado) de 1129 e 3050; Jah edificou;"
+  },
+  {
+   "strongs": "H1141O",
+   "sha256": "be0fba31c22309ff63f8d4d73614ce8f381fa49cff758bf84b43f0ea175b5f34",
+   "gloss": "Benaia",
+   "definition": "Benaia, nome de doze israelitas",
+   "derivation": "ou בּנָיָהוּ; (prolongado) de 1129 e 3050; Jah edificou;"
+  },
+  {
+   "strongs": "H1141P",
+   "sha256": "be0fba31c22309ff63f8d4d73614ce8f381fa49cff758bf84b43f0ea175b5f34",
+   "gloss": "Benaia",
+   "definition": "Benaia, nome de doze israelitas",
+   "derivation": "ou בּנָיָהוּ; (prolongado) de 1129 e 3050; Jah edificou;"
+  },
+  {
+   "strongs": "H1141Q",
+   "sha256": "be0fba31c22309ff63f8d4d73614ce8f381fa49cff758bf84b43f0ea175b5f34",
+   "gloss": "Benaia",
+   "definition": "Benaia, nome de doze israelitas",
+   "derivation": "ou בּנָיָהוּ; (prolongado) de 1129 e 3050; Jah edificou;"
+  },
+  {
+   "strongs": "H1141R",
+   "sha256": "be0fba31c22309ff63f8d4d73614ce8f381fa49cff758bf84b43f0ea175b5f34",
+   "gloss": "Benaia",
+   "definition": "Benaia, nome de doze israelitas",
+   "derivation": "ou בּנָיָהוּ; (prolongado) de 1129 e 3050; Jah edificou;"
+  },
+  {
+   "strongs": "H1142G",
+   "sha256": "b6890e6aae998f99d74321ff03f5b1eaf16a5f2804c43a1a02255e42412d9a88",
+   "gloss": "Bene-Jaacã",
+   "definition": "Bene-Jaacã, um lugar no deserto",
+   "derivation": "do plural de 1121 e 3292; filhos de Jaacã;"
+  },
+  {
+   "strongs": "H1142H",
+   "sha256": "b22055ac45001cdad4abe390345507c7a4713eb3f6959ed4e8d301a2381e1d8a",
+   "gloss": "(Beerote) Bene-Jaacã",
+   "definition": "Bene-Jaacã, um lugar no deserto",
+   "derivation": "do plural de 1121 e 3292; filhos de Jaacã;"
+  },
+  {
+   "strongs": "H1143",
+   "sha256": "082b97284134f1970c88cd826b7eb775236bc3168be139ad005c4a4e97a183f3",
+   "gloss": "campeão",
+   "definition": "um intervalo duplo, isto é, o espaço entre dois exércitos",
+   "derivation": "dual de 996;"
+  },
+  {
+   "strongs": "H1144G",
+   "sha256": "08c49740c6fd22865ffa0b37f56d686e1833dec6f69d01934843319c76dcf334",
+   "gloss": "Benjamim",
+   "definition": "Benjamim, o filho mais novo de Jacó; também a tribo que dele descendeu e seu território",
+   "derivation": "de 1121 e 3225; filho da mão direita;"
+  },
+  {
+   "strongs": "H1144H",
+   "sha256": "08c49740c6fd22865ffa0b37f56d686e1833dec6f69d01934843319c76dcf334",
+   "gloss": "Benjamim",
+   "definition": "Benjamim, o filho mais novo de Jacó; também a tribo que dele descendeu e seu território",
+   "derivation": "de 1121 e 3225; filho da mão direita;"
+  },
+  {
+   "strongs": "H1144I",
+   "sha256": "08c49740c6fd22865ffa0b37f56d686e1833dec6f69d01934843319c76dcf334",
+   "gloss": "Benjamim",
+   "definition": "Benjamim, o filho mais novo de Jacó; também a tribo que dele descendeu e seu território",
+   "derivation": "de 1121 e 3225; filho da mão direita;"
+  },
+  {
+   "strongs": "H1144J",
+   "sha256": "08c49740c6fd22865ffa0b37f56d686e1833dec6f69d01934843319c76dcf334",
+   "gloss": "Benjamim",
+   "definition": "Benjamim, o filho mais novo de Jacó; também a tribo que dele descendeu e seu território",
+   "derivation": "de 1121 e 3225; filho da mão direita;"
+  },
+  {
+   "strongs": "H1144K",
+   "sha256": "08c49740c6fd22865ffa0b37f56d686e1833dec6f69d01934843319c76dcf334",
+   "gloss": "Benjamim",
+   "definition": "Benjamim, o filho mais novo de Jacó; também a tribo que dele descendeu e seu território",
+   "derivation": "de 1121 e 3225; filho da mão direita;"
+  },
+  {
+   "strongs": "H1144L",
+   "sha256": "6935ddd68c282002423e278d5a3b04a6ee77ac9aa6722215e46d202fb2d2e052",
+   "gloss": "(Porta de) Benjamim",
+   "definition": "Benjamim, o filho mais novo de Jacó; também a tribo que dele descendeu e seu território",
+   "derivation": "de 1121 e 3225; filho da mão direita;"
+  },
+  {
+   "strongs": "H1144M",
+   "sha256": "ac484fda298049da4f49e2e6b1c5e7a132476521579845b2891898d908a43623",
+   "gloss": "(Porta de) Benjamim",
+   "definition": "Benjamim, o filho mais novo de Jacó; também a tribo que dele descendeu e seu território",
+   "derivation": "de 1121 e 3225; filho da mão direita;"
+  },
+  {
+   "strongs": "H1145",
+   "sha256": "95bbf36566f3e97453f0897305f39af51951f80dc979a9c0497d33a90b07d364",
+   "gloss": "benjamita",
+   "definition": "um benjamita, ou descendente de Benjamim",
+   "derivation": "às vezes (com o artigo inserido) בֵּן־הַיּמִינִי; com 376 inserido (1 Samuel 9:1) בֶּן־אִישׁ ימִינִי; filho de um homem de Jemini; ou abreviado אִישׁ יְמִינִי; (1 Samuel 9:4; Ester 2:5) um homem de Jemini, ou (1 Samuel 20:1) simplesmente יְמִינִיxlit Yᵉmînîy corrigido para Yᵉmîynîy; um jeminita; (plural) בְּנֵי יְמִינִיxlit Bᵉnîy corrigido para Bᵉnêy; patronímico de 1144;"
+  },
+  {
+   "strongs": "H1146",
+   "sha256": "197070becb1245f4e155d4660ffc3370f428fbcf63c5911cd9958da4e2ecc8e2",
+   "gloss": "edifício",
+   "definition": "um edifício",
+   "derivation": "de 1129;"
+  },
+  {
+   "strongs": "H1147",
+   "sha256": "eb232b925ad44be944d5cedd6285c199a5f857e716e7f9f6499f5e6edaa523bb",
+   "gloss": "edifício",
+   "derivation": "(aramaico) correspondente a 1146"
+  },
+  {
+   "strongs": "H1148",
+   "sha256": "71584bf22974178e3204d9b07884049263dcc5b21caffd681bd94ee43e78c25d",
+   "gloss": "Beninu",
+   "definition": "Beninu, um israelita",
+   "derivation": "provavelmente de 1121 com sufixo pron.; nosso filho;"
+  },
+  {
+   "strongs": "H1149",
+   "sha256": "f8de1afe82ebe8cdc6f4fd4097778b93138afa309d0a150fa3757317e3efdec6",
+   "gloss": "irar-se",
+   "definition": "enfurecer-se",
+   "derivation": "(aramaico) de afinidade incerta;"
+  },
+  {
+   "strongs": "H1150",
+   "sha256": "256cfda0c08c413eef2b9a715ee0a1e8a67ecc97fe4be9c2b7b475ad65778700",
+   "gloss": "Bineá",
+   "definition": "Bineá, um israelita",
+   "derivation": "ou בִּנְעָה; de derivação incerta;"
+  },
+  {
+   "strongs": "H1151",
+   "sha256": "87be5597a754542ef1ee05bccba70508d90c0a100b9db1f24c02b32acba61dc6",
+   "gloss": "Ben-Ami",
+   "definition": "Ben-Ami, um filho de Ló",
+   "derivation": "de 1121 e 5971 com sufixo pronominal; filho do meu povo;"
+  },
+  {
+   "strongs": "H1152",
+   "sha256": "09469f8f06a356d2fe46b9baaf3bf53c8f04ce1362f5bc80f3f6b401ab8a868d",
+   "gloss": "Besodias",
+   "definition": "Besodias, um israelita",
+   "derivation": "de 5475 e 3050 com prefixo preposicional; no conselho de Jeová;"
+  },
+  {
+   "strongs": "H1153",
+   "sha256": "326ac86207305990edf9c8abbf9439e663dbc2b8984dbbf55c44d5a9482cfaaf",
+   "gloss": "Besai",
+   "definition": "Besai, um dos netineus",
+   "derivation": "de 947; dominador;"
+  },
+  {
+   "strongs": "H1154",
+   "sha256": "fefa9b9c8f9d8ded87ca9f74dd2f10452eecba00817adc3b352cb48b6158d834",
+   "gloss": "uva verde",
+   "definition": "uma uva verde",
+   "derivation": "de uma raiz não usada que significa ser azedo;"
+  },
+  {
+   "strongs": "H1155",
+   "sha256": "f3d8e6e9901eed8658602108f8492bd27ea31db559904d9015e4a669e657b66b",
+   "gloss": "uva verde",
+   "derivation": "do mesmo que 1154"
+  },
+  {
+   "strongs": "H1156",
+   "sha256": "308c72fa58d3d23fb213aa5c32466e5b0b422d53916bab98ab368606821d45fb",
+   "gloss": "pedir",
+   "definition": "buscar ou pedir",
+   "derivation": "(aramaico) ou בְּעָה; (aramaico), correspondente a 1158;"
+  },
+  {
+   "strongs": "H1157",
+   "sha256": "cdb7c68f30c7f015672640d34ab7ef13c74982fdd2e589c236367a43434839a0",
+   "gloss": "acerca de/através de/por",
+   "definition": "em, até ou defronte de; em geral junto a, ao lado de, entre, atrás de, por etc.",
+   "derivation": "de 5704 com prefixo preposicional;"
+  },
+  {
+   "strongs": "H1158",
+   "sha256": "3fc4bd3aeb9df34f171717918325e639d05649d6b24fa3acf2bc1dc736776a20",
+   "gloss": "inquirir",
+   "definition": "jorrar, isto é, inchar; (figuradamente) desejar ardentemente; por implicação pedir",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H1159",
+   "sha256": "b4061aedf4b0706166faecb5846d653216773ff5845bc198bb601ae90a9c6781",
+   "gloss": "petição",
+   "definition": "um pedido",
+   "derivation": "(aramaico) de 1156;"
+  },
+  {
+   "strongs": "H1160G",
+   "sha256": "f80cf01f0c12b31617d05c5a1bf2f6768ef156d7fb319b8d27f2ccd0678f4c71",
+   "gloss": "Beor",
+   "definition": "Beor, nome do pai de um rei edomita; também do de Balaão",
+   "derivation": "de 1197 (no sentido de queimar); uma lâmpada;"
+  },
+  {
+   "strongs": "H1160H",
+   "sha256": "f80cf01f0c12b31617d05c5a1bf2f6768ef156d7fb319b8d27f2ccd0678f4c71",
+   "gloss": "Beor",
+   "definition": "Beor, nome do pai de um rei edomita; também do de Balaão",
+   "derivation": "de 1197 (no sentido de queimar); uma lâmpada;"
+  },
+  {
+   "strongs": "H1161",
+   "sha256": "fc47c8e2351da8634627d45e57dbab815dec2b475e746c86e9489e0afc695cf6",
+   "gloss": "terror",
+   "definition": "alarmes",
+   "derivation": "plural masculino de 1204;",
+   "note": "Gloss: the Portuguese word is spelled as in English (terror)."
+  },
+  {
+   "strongs": "H1162G",
+   "sha256": "7213e68e7d924911f7a3a10d03c7da1771de1eb2d26f2e39810548be17ee3e14",
+   "gloss": "Boaz",
+   "definition": "Boaz, o antepassado de Davi; também o nome de uma coluna diante do templo",
+   "derivation": "de uma raiz não usada de significado incerto;"
+  },
+  {
+   "strongs": "H1162H",
+   "sha256": "7213e68e7d924911f7a3a10d03c7da1771de1eb2d26f2e39810548be17ee3e14",
+   "gloss": "Boaz",
+   "definition": "Boaz, o antepassado de Davi; também o nome de uma coluna diante do templo",
+   "derivation": "de uma raiz não usada de significado incerto;"
+  },
+  {
+   "strongs": "H1163",
+   "sha256": "3006dafe79c26a16bfa904c1571dcc4018f9625d42180687e632d49b16c23fb1",
+   "gloss": "dar coices",
+   "definition": "pisotear, isto é, (figuradamente) desprezar",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H1164",
+   "sha256": "548164b5542451eddce6e427ce67afbfcf122b95b8fe1d3cba79c77156d3a864",
+   "gloss": "ruínas",
+   "definition": "uma oração",
+   "derivation": "de 1158;"
+  },
+  {
+   "strongs": "H1165",
+   "sha256": "d4cbb81cb6082573d20398c154d6dd2b59f944205ed4326f42b12de9accea8db",
+   "gloss": "gado",
+   "definition": "gado",
+   "derivation": "de 1197 (no sentido de comer);"
+  },
+  {
+   "strongs": "H1166G",
+   "sha256": "08061f04ef0111c2888160d6ecfe1c212282ba896944b0a391ccecfe8fc54605",
+   "gloss": "Casada",
+   "definition": "ser senhor; daí, casar",
+   "derivation": "raiz primitiva; também como denominativo de 1167"
+  },
+  {
+   "strongs": "H1166H",
+   "sha256": "40bcbc30b34283560cbc22ef9867a3e220f3aa30e27ecf80170bf10129f3fd10",
+   "gloss": "dominar: dominar",
+   "definition": "ser senhor; daí, casar",
+   "derivation": "raiz primitiva; também como denominativo de 1167"
+  },
+  {
+   "strongs": "H1166I",
+   "sha256": "3dac7f4625a6e7ffff26137c796368e0d971ea97d1ccfc8a83578af622f70f6a",
+   "gloss": "dominar: casar",
+   "definition": "ser senhor; daí, casar",
+   "derivation": "raiz primitiva; também como denominativo de 1167"
+  },
+  {
+   "strongs": "H1167G",
+   "sha256": "747a58eb57f761322ecc4ae6b9c213b82caeb216d88fb3d70edbaf0ed0a2f97d",
+   "gloss": "senhor",
+   "definition": "um senhor; daí, um marido, ou (figuradamente) dono (muitas vezes usado com outro substantivo em modificações deste último sentido)",
+   "derivation": "de 1166;"
+  },
+  {
+   "strongs": "H1167H",
+   "sha256": "846a57955b0313a79b3c85b7c4b7a7d1a3212fc0ec3cd3118e527e93be11d97d",
+   "gloss": "senhor: marido",
+   "definition": "um senhor; daí, um marido, ou (figuradamente) dono (muitas vezes usado com outro substantivo em modificações deste último sentido)",
+   "derivation": "de 1166;"
+  },
+  {
+   "strongs": "H1167I",
+   "sha256": "68a3d33fd6071735b97c902f4246208281c6d1804a5ecde8105d3b1c1df29ab9",
+   "gloss": "senhor: homens",
+   "definition": "um senhor; daí, um marido, ou (figuradamente) dono (muitas vezes usado com outro substantivo em modificações deste último sentido)",
+   "derivation": "de 1166;"
+  },
+  {
+   "strongs": "H1167J",
+   "sha256": "9c9ed5d5cc272b0654c52a6519d7e2184a62aee55970f610116b47e52f9ea6e4",
+   "gloss": "senhor: possuidor",
+   "definition": "um senhor; daí, um marido, ou (figuradamente) dono (muitas vezes usado com outro substantivo em modificações deste último sentido)",
+   "derivation": "de 1166;"
+  },
+  {
+   "strongs": "H1167K",
+   "sha256": "6aa189198f560733e5393181e96533e0620dcadfbce69676ec6b44629533867b",
+   "gloss": "senhor: [senhor de]",
+   "definition": "um senhor; daí, um marido, ou (figuradamente) dono (muitas vezes usado com outro substantivo em modificações deste último sentido)",
+   "derivation": "de 1166;"
+  },
+  {
+   "strongs": "H1168A",
+   "sha256": "c798cf1f1594b66170c507ebd0cf4cea3ea88d48ebb0e11178e1bf062faab8a6",
+   "gloss": "Baal",
+   "definition": "Baal, uma divindade fenícia",
+   "derivation": "o mesmo que 1167;"
+  },
+  {
+   "strongs": "H1168B",
+   "sha256": "c798cf1f1594b66170c507ebd0cf4cea3ea88d48ebb0e11178e1bf062faab8a6",
+   "gloss": "Baal",
+   "definition": "Baal, uma divindade fenícia",
+   "derivation": "o mesmo que 1167;"
+  },
+  {
+   "strongs": "H1168G",
+   "sha256": "c798cf1f1594b66170c507ebd0cf4cea3ea88d48ebb0e11178e1bf062faab8a6",
+   "gloss": "Baal",
+   "definition": "Baal, uma divindade fenícia",
+   "derivation": "o mesmo que 1167;"
+  },
+  {
+   "strongs": "H1168H",
+   "sha256": "c798cf1f1594b66170c507ebd0cf4cea3ea88d48ebb0e11178e1bf062faab8a6",
+   "gloss": "Baal",
+   "definition": "Baal, uma divindade fenícia",
+   "derivation": "o mesmo que 1167;"
+  },
+  {
+   "strongs": "H1168I",
+   "sha256": "42174935717c01a55028b10269a558de029980b1adb8c078a81eba4cd6cb29c4",
+   "gloss": "(Bamote)-Baal",
+   "definition": "Baal, uma divindade fenícia",
+   "derivation": "o mesmo que 1167;"
+  },
+  {
+   "strongs": "H1169",
+   "sha256": "ae19cad97c6ff064b0b0a0c999c2c53c3ec084ec18b0dfb42b481d2324ac5783",
+   "gloss": "comandante",
+   "derivation": "(aramaico) correspondente a 1167"
+  },
+  {
+   "strongs": "H1170",
+   "sha256": "ce1fec0477938cf251a49270b2cc105e747b95bd1fafa30cc7e244a94c3d6870",
+   "gloss": "Baal-Berite",
+   "definition": "Baal-Berite, uma divindade especial dos siquemitas",
+   "derivation": "de 1168 e 1285; Baal da aliança;"
+  },
+  {
+   "strongs": "H1171",
+   "sha256": "820fdace256dee6795072c12f488b32f7f5806061b3cc94236e096deab0c527d",
+   "gloss": "Baal-Gade",
+   "definition": "Baal-Gade, um lugar na Síria",
+   "derivation": "de 1168 e 1409; Baal da Fortuna;"
+  },
+  {
+   "strongs": "H1172",
+   "sha256": "73b8c47ee673f9ac03dc457bee402ea11150654f8d1dab696980a345f1c3bcef",
+   "gloss": "senhora",
+   "definition": "uma senhora",
+   "derivation": "feminino de 1167;"
+  },
+  {
+   "strongs": "H1173G",
+   "sha256": "ff4d091c982535a0058fe4a16a654f751c8d63ac435b0a076675461878922c4c",
+   "gloss": "(Monte) Baalá",
+   "definition": "Baalá, nome de três lugares na Palestina",
+   "derivation": "o mesmo que 1172;"
+  },
+  {
+   "strongs": "H1173H",
+   "sha256": "228abd819889172a13f332a664f232639c61a7869274fa2f2b210507040fcf2d",
+   "gloss": "Baalá",
+   "definition": "Baalá, nome de três lugares na Palestina",
+   "derivation": "o mesmo que 1172;"
+  },
+  {
+   "strongs": "H1173I",
+   "sha256": "228abd819889172a13f332a664f232639c61a7869274fa2f2b210507040fcf2d",
+   "gloss": "Baalá",
+   "definition": "Baalá, nome de três lugares na Palestina",
+   "derivation": "o mesmo que 1172;"
+  },
+  {
+   "strongs": "H1174",
+   "sha256": "6e970679c1c3858ff425db10b31546b30bdbbfebc9c4bb74199a7a85702275e1",
+   "gloss": "Baal-Hamom",
+   "definition": "Baal-Hamom, um lugar na Palestina",
+   "derivation": "de 1167 e 1995; possuidor de uma multidão;"
+  },
+  {
+   "strongs": "H1175",
+   "sha256": "a2b21e3a367bdd53901435320ae794da2f0969387280aa896830b18f04583c11",
+   "gloss": "Bealote",
+   "definition": "Bealote, um lugar na Palestina",
+   "derivation": "plural de 1172; senhoras;"
+  },
+  {
+   "strongs": "H1176",
+   "sha256": "9da7f1a4a9581a7e8f26cddddc777de5ae29eed39b17985d913c2750143a4e1c",
+   "gloss": "Baal-Zebube",
+   "definition": "Baal-Zebube, uma divindade especial dos ecronitas",
+   "derivation": "de 1168 e 2070; Baal da Mosca;"
+  },
+  {
+   "strongs": "H1177G",
+   "sha256": "8ddb01ac7d137dd8cf5e782f8c49b458af35ffb4cf45e65ce88577d6c3cc4d29",
+   "gloss": "Baal-Hanã",
+   "definition": "Baal-Hanã, nome de um edomita, também de um israelita",
+   "derivation": "de 1167 e 2603; possuidor de graça;"
+  },
+  {
+   "strongs": "H1177H",
+   "sha256": "8ddb01ac7d137dd8cf5e782f8c49b458af35ffb4cf45e65ce88577d6c3cc4d29",
+   "gloss": "Baal-Hanã",
+   "definition": "Baal-Hanã, nome de um edomita, também de um israelita",
+   "derivation": "de 1167 e 2603; possuidor de graça;"
+  },
+  {
+   "strongs": "H1178",
+   "sha256": "ac08be6118477734b12c4218fdb05709582fcaf9c5e0ee8dfd970d5250e17dda",
+   "gloss": "Baal-Hazor",
+   "definition": "Baal-Hazor, um lugar na Palestina",
+   "derivation": "de 1167 e uma modificação de 2691; possuidor de uma aldeia;"
+  },
+  {
+   "strongs": "H1179",
+   "sha256": "a47ce278e1d74878b2b3069182ed7bcb04dec7c25768d449ce038c937c9f34f7",
+   "gloss": "(Monte) Baal-Hermom",
+   "definition": "Baal-Hermom, um lugar na Palestina",
+   "derivation": "de 1167 e 2768; possuidor do Hermom;"
+  },
+  {
+   "strongs": "H1180",
+   "sha256": "790947b786028b4a4fef3f89303e4e48269736b1c2210387889d13d82ebb9e74",
+   "gloss": "Baal",
+   "definition": "Baali, um nome simbólico de Jeová",
+   "derivation": "de 1167 com sufixo pron.; meu senhor;"
+  },
+  {
+   "strongs": "H1181",
+   "sha256": "5a21c220f9a6d267290cc5b81306b279cb56d5c546c5cbe7440a73e1357a6e14",
+   "gloss": "Baal-Bamote",
+   "definition": "Baal-Bamote, um lugar a leste do Jordão",
+   "derivation": "do plural de 1168 e do plural de 1116; Baalins das alturas;"
+  },
+  {
+   "strongs": "H1182",
+   "sha256": "b339e4f34ca38234d241552dd01ccb9c185b53d04502cf0f7d820db4c6a4ea00",
+   "gloss": "Beeliada",
+   "definition": "Beeliada, um israelita",
+   "derivation": "de 1168 e 3045; Baal conheceu;"
+  },
+  {
+   "strongs": "H1183",
+   "sha256": "7667632ba1874e027fcdb81405d90175e7ac82cc1a1ff1036544b9f56f1fe0bc",
+   "gloss": "Bealias",
+   "definition": "Bealias, um israelita",
+   "derivation": "de 1167 e 3050; Jah (é) senhor;"
+  },
+  {
+   "strongs": "H1184",
+   "sha256": "280887723fb75f6adfa7cb0a75f661d95a6e5252d2736f64dc315135712c24a0",
+   "gloss": "Baalim de Judá",
+   "definition": "Baalim de Judá, um lugar na Palestina",
+   "derivation": "do plural de 1167 e 3063; senhores de Judá;"
+  },
+  {
+   "strongs": "H1185",
+   "sha256": "0cf16f776f38df6415ab380e5be5893d762a25bc63faeeab59cd414d5e964872",
+   "gloss": "Baalis",
+   "definition": "Baalis, um rei amonita",
+   "derivation": "provavelmente de um derivado de 5965 com prefixo preposicional; em exultação;"
+  },
+  {
+   "strongs": "H1186",
+   "sha256": "3a9ff9c32aaa4b3d42f1e7dd61b0f9daa0ed6f4763849d4ebab56e1314bbe120",
+   "gloss": "Baal-Meom",
+   "definition": "Baal-Meom, um lugar a leste do Jordão",
+   "derivation": "de 1168 e 4583; Baal da habitação (de) (compare 1010);"
+  },
+  {
+   "strongs": "H1187",
+   "sha256": "61bc9ec5be5528d43f7758959f513974eb19e84558fccaaaa893ea7adaa3c41e",
+   "gloss": "Baal de Peor",
+   "definition": "Baal-Peor, uma divindade moabita",
+   "derivation": "de 1168 e 6465; Baal de Peor;"
+  },
+  {
+   "strongs": "H1188",
+   "sha256": "a95b8ebb6e33192c923c498c6a51ed115be4e7ad61f1068e7cf5a343e7703ee7",
+   "gloss": "Baal-Perazim",
+   "definition": "Baal-Perazim, um lugar na Palestina",
+   "derivation": "de 1167 e o plural de 6556; possuidor de brechas;"
+  },
+  {
+   "strongs": "H1189",
+   "sha256": "5d2026497f8a284a5a2db2270cf5159f6e1d4d71e3384188f6ba1ca101ef75fd",
+   "gloss": "Baal-Zefom",
+   "definition": "Baal-Zefom, um lugar no Egito",
+   "derivation": "de 1168 e 6828 (no sentido de frio) (segundo outros, uma forma egípcia de Tífon, o destruidor); Baal do inverno;"
+  },
+  {
+   "strongs": "H1190",
+   "sha256": "2e37c10e789a8cbd225500c0a582e8dd27b1276dff6447eaac08b17e765683a0",
+   "gloss": "Baal-Salisa",
+   "definition": "Baal de Salisa, Baal-Salisa, um lugar na Palestina",
+   "derivation": "de 1168 e 8031;"
+  },
+  {
+   "strongs": "H1191G",
+   "sha256": "f6a429f870d13f8c8912575d127f3b9d72fe4df0acd42e60044501673ed39f13",
+   "gloss": "Baalate",
+   "definition": "Baalate, um lugar na Palestina",
+   "derivation": "uma modificação de 1172; senhorio;"
+  },
+  {
+   "strongs": "H1191H",
+   "sha256": "f6a429f870d13f8c8912575d127f3b9d72fe4df0acd42e60044501673ed39f13",
+   "gloss": "Baalate",
+   "definition": "Baalate, um lugar na Palestina",
+   "derivation": "uma modificação de 1172; senhorio;"
+  },
+  {
+   "strongs": "H1192",
+   "sha256": "660af9cdd4940632fa0dfd596fd7c771732d01e03c301973440da205cc2fca46",
+   "gloss": "Baalate-Beer",
+   "definition": "Baalate-Beer, um lugar na Palestina",
+   "derivation": "de 1172 e 875; senhora de um poço;"
+  },
+  {
+   "strongs": "H1193",
+   "sha256": "077c587446ee088c0963e2525f2303ca8a4db167ac8f40038a2d0978a9ada085",
+   "gloss": "Baal-Tamar",
+   "definition": "Baal-Tamar, um lugar na Palestina",
+   "derivation": "de 1167 e 8558; possuidor da palmeira;"
+  },
+  {
+   "strongs": "H1194",
+   "sha256": "2fb41bc101c9865d9403bf0621dbbb40bb55f9e296a1da2b91e8aa4f4192f142",
+   "gloss": "Beom",
+   "definition": "Beom, um lugar a leste do Jordão",
+   "derivation": "provavelmente uma contração de 1010;"
+  },
+  {
+   "strongs": "H1195G",
+   "sha256": "a92e8df11d8559652145c00f46e891342be520da6ae48150c0b1432e502d10b2",
+   "gloss": "Baana",
+   "definition": "Baana, nome de quatro israelitas",
+   "derivation": "o mesmo que 1196;"
+  },
+  {
+   "strongs": "H1195H",
+   "sha256": "a92e8df11d8559652145c00f46e891342be520da6ae48150c0b1432e502d10b2",
+   "gloss": "Baana",
+   "definition": "Baana, nome de quatro israelitas",
+   "derivation": "o mesmo que 1196;"
+  },
+  {
+   "strongs": "H1195I",
+   "sha256": "a92e8df11d8559652145c00f46e891342be520da6ae48150c0b1432e502d10b2",
+   "gloss": "Baana",
+   "definition": "Baana, nome de quatro israelitas",
+   "derivation": "o mesmo que 1196;"
+  },
+  {
+   "strongs": "H1196G",
+   "sha256": "d21c21dfe83cedabf6d0b8abedc95f31977bc8b4b8ee0391dd25d0ca56d06256",
+   "gloss": "Baaná",
+   "definition": "Baaná, nome de quatro israelitas",
+   "derivation": "de um derivado de 6031 com prefixo preposicional; em aflição"
+  },
+  {
+   "strongs": "H1196H",
+   "sha256": "d21c21dfe83cedabf6d0b8abedc95f31977bc8b4b8ee0391dd25d0ca56d06256",
+   "gloss": "Baaná",
+   "definition": "Baaná, nome de quatro israelitas",
+   "derivation": "de um derivado de 6031 com prefixo preposicional; em aflição"
+  },
+  {
+   "strongs": "H1196I",
+   "sha256": "d21c21dfe83cedabf6d0b8abedc95f31977bc8b4b8ee0391dd25d0ca56d06256",
+   "gloss": "Baaná",
+   "definition": "Baaná, nome de quatro israelitas",
+   "derivation": "de um derivado de 6031 com prefixo preposicional; em aflição"
+  },
+  {
+   "strongs": "H1196J",
+   "sha256": "d21c21dfe83cedabf6d0b8abedc95f31977bc8b4b8ee0391dd25d0ca56d06256",
+   "gloss": "Baaná",
+   "definition": "Baaná, nome de quatro israelitas",
+   "derivation": "de um derivado de 6031 com prefixo preposicional; em aflição"
+  },
+  {
+   "strongs": "H1197A",
+   "sha256": "d7f1ab0860e215264038a580ec5e0ced7b93385938e18bde92f3c5ab5ab57964",
+   "gloss": "queimar: queimar",
+   "definition": "acender, isto é, consumir (pelo fogo ou comendo); ser (tornar-se) embrutecido",
+   "derivation": "raiz primitiva; também como denominativo de 1198"
+  },
+  {
+   "strongs": "H1197B",
+   "sha256": "58213a41f8bb4ff13ce026c90417036bba9719212acae5e2353e639fe352d269",
+   "gloss": "ser embrutecido",
+   "definition": "acender, isto é, consumir (pelo fogo ou comendo); ser (tornar-se) embrutecido",
+   "derivation": "raiz primitiva; também como denominativo de 1198"
+  },
+  {
+   "strongs": "H1197H",
+   "sha256": "b9a5c75b9239bea2dd385982304d0dfb07f11b3446fb89e5103204f14bcedc05",
+   "gloss": "queimar: destruir",
+   "definition": "acender, isto é, consumir (pelo fogo ou comendo); ser (tornar-se) embrutecido",
+   "derivation": "raiz primitiva; também como denominativo de 1198"
+  },
+  {
+   "strongs": "H1197I",
+   "sha256": "da91cab824e00be022244f021a55f24a7ce1a2a80c2007414bd34e506a88888a",
+   "gloss": "queimar: purgar",
+   "definition": "acender, isto é, consumir (pelo fogo ou comendo); ser (tornar-se) embrutecido",
+   "derivation": "raiz primitiva; também como denominativo de 1198"
+  },
+  {
+   "strongs": "H1198",
+   "sha256": "f4eba7ff38959e04a0d1da10b799788ec0674869f9af280efc84057723b9d61b",
+   "gloss": "estúpido",
+   "definition": "propriamente, alimento (como consumido); isto é, (por extensão) do gado, estupidez; (concretamente) estúpido",
+   "derivation": "de 1197;",
+   "note": "Source typo: 'foot (as consumed)' read as 'food' (alimento)."
+  },
+  {
+   "strongs": "H1199",
+   "sha256": "15ea825608820a395dd7d95500663269507b603513d2a55c4d1c4800799cb216",
+   "gloss": "Baara",
+   "definition": "Baara, uma mulher israelita",
+   "derivation": "de 1198; embrutecido;"
+  },
+  {
+   "strongs": "H1200",
+   "sha256": "be7481d8b395f183e9d04d808c4675b7f31d757446a68f301ec7ec98e9037194",
+   "gloss": "fogo",
+   "definition": "um incêndio",
+   "derivation": "de 1197;"
+  },
+  {
+   "strongs": "H1201",
+   "sha256": "310cbb04c49376ddb8650e44a388d325b1a018ce95293b585353fa88288811db",
+   "gloss": "Baasa",
+   "definition": "Baasa, um rei de Israel",
+   "derivation": "de uma raiz não usada que significa feder; repugnância;"
+  },
+  {
+   "strongs": "H1202",
+   "sha256": "20d786abf448a9a9c8f89d0aa0fd69ee28b4a3055944d246006d1b83d500f361",
+   "gloss": "Baaseias",
+   "definition": "Baaseias, um israelita",
+   "derivation": "de 6213 e 3050 com prefixo preposicional; na obra de Jah;"
+  },
+  {
+   "strongs": "H1203",
+   "sha256": "88f3fa7e0486efe3c1bbd229f1db3875031d5eb7d055ebc2a839bfc5083daa66",
+   "gloss": "Beesterá",
+   "definition": "Beesterá, um lugar a leste do Jordão",
+   "derivation": "de 6251 (como singular de 6252) com prefixo preposicional; com Astarote;"
+  },
+  {
+   "strongs": "H1204",
+   "sha256": "94f179b97ed10f7ae1bb3b7bb8cd1517cce0ea0f66f1fbca976d2ad5fc0f3aa2",
+   "gloss": "aterrorizar",
+   "definition": "temer",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H1205",
+   "sha256": "54a784b8712c4c1c18f46be2bf0e5478b9d6cde01d40b038d9e244f8a1cce3ac",
+   "gloss": "terror",
+   "definition": "temor",
+   "derivation": "de 1204;",
+   "note": "Gloss: the Portuguese word is spelled as in English (terror)."
+  },
+  {
+   "strongs": "H1206",
+   "sha256": "5ca584535d61923906967bbd37d1fd97be5627800215672d2c52559418d753c2",
+   "gloss": "lodo",
+   "definition": "lodo (como argila esbranquiçada)",
+   "derivation": "provavelmente o mesmo que 948;"
+  },
+  {
+   "strongs": "H1207",
+   "sha256": "9de2593683aba9fd070d0c971529acefa71ad4d5377e661093b194789e1ba764",
+   "gloss": "pântano",
+   "definition": "um pântano",
+   "derivation": "intensivo de 1206;"
+  },
+  {
+   "strongs": "H1208",
+   "sha256": "11dd00da906e374f9b815b87cbb49c28ed381a238d542cd8dff6675c2329da4e",
+   "gloss": "mata virgem",
+   "definition": "inacessível, isto é, elevado",
+   "derivation": "de 1219;"
+  },
+  {
+   "strongs": "H1209G",
+   "sha256": "b16e45933481f8d69aef072d5b0d3d5fd654baf6f9492674cbe88fa527d63d12",
+   "gloss": "Besai",
+   "definition": "Besai, nome de dois israelitas",
+   "derivation": "talvez o mesmo que 1153;"
+  },
+  {
+   "strongs": "H1209H",
+   "sha256": "b16e45933481f8d69aef072d5b0d3d5fd654baf6f9492674cbe88fa527d63d12",
+   "gloss": "Besai",
+   "definition": "Besai, nome de dois israelitas",
+   "derivation": "talvez o mesmo que 1153;"
+  },
+  {
+   "strongs": "H1210",
+   "sha256": "a9ef5ecaa0489777db2ec66e2ee5dc66f3f4794b4bcb20ce6536caec1a4aa260",
+   "gloss": "vindima",
+   "definition": "cortado, isto é, a colheita das uvas",
+   "derivation": "de 1219;"
+  },
+  {
+   "strongs": "H1211",
+   "sha256": "329b0cae302d3127801fe4f2ba2e48f5d8646d30690bac72a38ccffe4582efe0",
+   "gloss": "cebola",
+   "definition": "uma cebola",
+   "derivation": "de uma raiz não usada que aparentemente significa descascar;"
+  },
+  {
+   "strongs": "H1212G",
+   "sha256": "ab3021162ebd85e3657dc9a9d681eb30159f6013e3fb50d514e848b56f147915",
+   "gloss": "Bezalel",
+   "definition": "Bezalel, nome de dois israelitas",
+   "derivation": "provavelmente de 6738 e 410 com prefixo preposicional; na sombra (isto é, proteção) de Deus;"
+  },
+  {
+   "strongs": "H1212H",
+   "sha256": "ab3021162ebd85e3657dc9a9d681eb30159f6013e3fb50d514e848b56f147915",
+   "gloss": "Bezalel",
+   "definition": "Bezalel, nome de dois israelitas",
+   "derivation": "provavelmente de 6738 e 410 com prefixo preposicional; na sombra (isto é, proteção) de Deus;"
+  },
+  {
+   "strongs": "H1213",
+   "sha256": "4b33770e74587d8862339ae4a1c7e723095100dbd9a9011bcabdddb09041be50",
+   "gloss": "Bazlute",
+   "definition": "Bazlute ou Bazlite, um israelita",
+   "derivation": "ou בַּצְלִית; do mesmo que 1211; um descascamento;"
+  },
+  {
+   "strongs": "H1214G",
+   "sha256": "9a78a2aa279ab6a9b5e12c29bcd597736d2fdb61ba781b8f0caba9296d9166b2",
+   "gloss": "cortar",
+   "definition": "romper, isto é, (geralmente) saquear; figuradamente, terminar, ou (intransitivamente) parar",
+   "derivation": "raiz primitiva"
+  },
+  {
+   "strongs": "H1214H",
+   "sha256": "e898a09958bb4d41cefbf11eaa1a521228a9e593a1fdaee13d785e49ab7d0ea0",
+   "gloss": "cortar: terminar",
+   "definition": "romper, isto é, (geralmente) saquear; figuradamente, terminar, ou (intransitivamente) parar",
+   "derivation": "raiz primitiva"
+  },
+  {
+   "strongs": "H1214I",
+   "sha256": "ee5aafc76a6db71d7e5e52a5aaeaa8597b7f2ab5b295e888c24adbc088ecb1f6",
+   "gloss": "cortar: ganhar",
+   "definition": "romper, isto é, (geralmente) saquear; figuradamente, terminar, ou (intransitivamente) parar",
+   "derivation": "raiz primitiva"
+  },
+  {
+   "strongs": "H1215",
+   "sha256": "1a65e189450088c5b47430ede094efaffd83bb8a93bbedbe8ab6cd0c0e300f22",
+   "gloss": "ganho injusto",
+   "definition": "saque; por extensão, ganho (geralmente injusto)",
+   "derivation": "de 1214;"
+  },
+  {
+   "strongs": "H1216",
+   "sha256": "e277e4044b8ea35c8246572191a5f3dd636bbfa50a9665ea9ec4a56c9e77bb19",
+   "gloss": "inchar",
+   "definition": "talvez inchar, isto é, formar bolha",
+   "derivation": "raiz primitiva;"
+  },
+  {
+   "strongs": "H1217",
+   "sha256": "e2f5268dafed873b2c1ffe45e43a6897381599abcdbf5ad1a674724a291240c9",
+   "gloss": "massa",
+   "definition": "massa (por inchar com a fermentação)",
+   "derivation": "de 1216;"
+  },
+  {
+   "strongs": "H1218",
+   "sha256": "922d5cd35d27a7ed52d03f993785967c9c9287e709c5e2a38be86fa999f336db",
+   "gloss": "Bozcate",
+   "definition": "Bozcate, um lugar na Palestina",
+   "derivation": "de 1216; uma elevação do terreno;"
+  },
+  {
+   "strongs": "H1219",
+   "sha256": "662608583eb484f8fe4c436d09338aed976226ecfc31b74e887d4a08df415b22",
+   "gloss": "vindimar/refrear/fortificar",
+   "definition": "colher uvas; também ser isolado (isto é, inacessível pela altura ou fortificação)",
+   "derivation": "raiz primitiva; cortar; especificamente (como denominativo de 1210)"
+  },
+  {
+   "strongs": "H1220",
+   "sha256": "aec3bf08a46f823b98e2eadc0b2d33b7b692a50a708915658a1160555a15f825",
+   "gloss": "ouro",
+   "definition": "estritamente, um recorte, isto é, ouro (como extraído)",
+   "derivation": "de 1219;"
+  }
+ ]
+}

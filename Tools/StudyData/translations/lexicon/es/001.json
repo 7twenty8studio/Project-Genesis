@@ -1,0 +1,2971 @@
+{
+ "batch": "001",
+ "lang": "es",
+ "entries": [
+  {
+   "strongs": "H0001G",
+   "sha256": "635da5004235be19c15360a620d47d2c7c63055f032782f5774ed6b539d38e0f",
+   "gloss": "padre",
+   "definition": "padre, en una aplicación literal e inmediata, o figurada y remota",
+   "derivation": "palabra primitiva;"
+  },
+  {
+   "strongs": "H0001H",
+   "sha256": "25cb6d28a2ecd20e4f2f5de543c29717ca47f9a8f84b4ee5045de459496735be",
+   "gloss": "(Hiram)-abi",
+   "definition": "padre, en una aplicación literal e inmediata, o figurada y remota",
+   "derivation": "palabra primitiva;"
+  },
+  {
+   "strongs": "H0001I",
+   "sha256": "75e66133a23e98d5c8cef103da76ee6eee31edfe5ad13551b4d995fa2e12b203",
+   "gloss": "padre de",
+   "definition": "padre, en una aplicación literal e inmediata, o figurada y remota",
+   "derivation": "palabra primitiva;"
+  },
+  {
+   "strongs": "H0002",
+   "sha256": "4959fcdf98f7122f6ed930826f56ba78ff6b10b5a30b44a3d08923d2bcad4b33",
+   "gloss": "padre",
+   "derivation": "(arameo) correspondiente a 1"
+  },
+  {
+   "strongs": "H0003",
+   "sha256": "76b6376db2798412b231039db1cca7d7c9ac6d5b7a539762288f6eae2861b666",
+   "gloss": "verdor",
+   "definition": "una planta verde",
+   "derivation": "de lo mismo que 24;"
+  },
+  {
+   "strongs": "H0004",
+   "sha256": "70b0545366ec92bb9d5b63508499c6fae4e41e7ef796b445cc519453f84ce74b",
+   "gloss": "fruto",
+   "derivation": "(arameo) correspondiente a 3"
+  },
+  {
+   "strongs": "H0005",
+   "sha256": "4b71c3f91830e07a3b2f0cddb684d0ea9d55785ab13d78389fdc74d1fea5bd06",
+   "gloss": "Abagta",
+   "definition": "Abagta, un eunuco de Jerjes",
+   "derivation": "de origen extranjero;"
+  },
+  {
+   "strongs": "H0006",
+   "sha256": "befe90e068c9f23696f236d8ec4847b63a5e441831491e93ef5b7dea5d8f53ee",
+   "gloss": "perecer",
+   "definition": "propiamente, extraviarse, es decir, perderse; por implicación perecer (causativo, destruir)",
+   "derivation": "raíz primitiva;"
+  },
+  {
+   "strongs": "H0007",
+   "sha256": "58827f60c051c53c7eeda9bdb2e9086ee3f42bf93da7e8c7db638bb4a22d094d",
+   "gloss": "destruir",
+   "derivation": "(arameo) correspondiente a 6"
+  },
+  {
+   "strongs": "H0008",
+   "sha256": "019d67e8f0184ab6a52bc02d2a08d5d280bbf128b2d77126657b7c0120195f1e",
+   "gloss": "destrucción",
+   "definition": "(concreto) desdichado o (abstracto) destrucción",
+   "derivation": "activo de participio de 6;"
+  },
+  {
+   "strongs": "H0009",
+   "sha256": "32e09f0651efff023da820944bda86c3cb9ef53a5d11011d0d5ff5ab69eee906",
+   "gloss": "algo perdido",
+   "definition": "concreto, algo perdido; abstracto, destrucción, es decir, el Hades",
+   "derivation": "de 6; compárese 10."
+  },
+  {
+   "strongs": "H0010",
+   "sha256": "132e2b6f08ea36ec75659e19a6187673f73c64aa6a0df8355419c0f244541bf6",
+   "gloss": "destrucción",
+   "definition": "un perecer",
+   "derivation": "lo mismo que 9, mal escrito por 11;"
+  },
+  {
+   "strongs": "H0011",
+   "sha256": "978980f469e398b6d026fda3580cf86d1080d881001ccc0ad1ffe3144ad22e81",
+   "gloss": "Abadón",
+   "definition": "abstracto, un perecer; concreto, el Hades",
+   "derivation": "intensivo de 6;"
+  },
+  {
+   "strongs": "H0012",
+   "sha256": "66f0b850eab63cfb59af2a42c5d32918a56fd9b3353ad34749e1ea8bcb787169",
+   "gloss": "destrucción",
+   "definition": "un perecer",
+   "derivation": "de 6;"
+  },
+  {
+   "strongs": "H0013",
+   "sha256": "66f0b850eab63cfb59af2a42c5d32918a56fd9b3353ad34749e1ea8bcb787169",
+   "gloss": "destrucción",
+   "definition": "un perecer",
+   "derivation": "de 6;"
+  },
+  {
+   "strongs": "H0014",
+   "sha256": "7b315d0071b6b58c76fc14ff8a1dc28e3c20a93e2a6f4ed18ffa7f5c48922768",
+   "gloss": "querer",
+   "definition": "respirar tras algo, es decir, (figuradamente) estar dispuesto a consentir",
+   "derivation": "raíz primitiva;"
+  },
+  {
+   "strongs": "H0015",
+   "sha256": "0d911a93a6aec9f5578c13b192f78521b26f14c231b96eedd0a880db23d95045",
+   "gloss": "¡ojalá!",
+   "definition": "anhelo",
+   "derivation": "de 14;"
+  },
+  {
+   "strongs": "H0016",
+   "sha256": "91add18b423c1432ef9cd1854b42b2920c4b405878c375b0bb3999988a58b193",
+   "gloss": "papiro",
+   "definition": "el papiro",
+   "derivation": "de 14 (en el sentido de inclinarse hacia);"
+  },
+  {
+   "strongs": "H0017",
+   "sha256": "e058fe02e02ebbca72f4312d47f7cad1d869d0d97a6c4ca02f6c659c14c5514a",
+   "gloss": "¡dolor!",
+   "definition": "carencia",
+   "derivation": "de 14 (en el sentido de desear);"
+  },
+  {
+   "strongs": "H0018",
+   "sha256": "4b0b72b5016540e36c3a461e3b0dcf532c72659f7d1fc79ed8900c895b640e01",
+   "gloss": "pesebre",
+   "definition": "un pesebre o establo",
+   "derivation": "de 75;"
+  },
+  {
+   "strongs": "H0019",
+   "sha256": "82ffd9213f07834851e7509328b635a34d924274b567835c77f9d50c6c79f029",
+   "gloss": "matanza",
+   "definition": "blandir de una espada",
+   "derivation": "de una raíz no usada (que al parecer significa volver);"
+  },
+  {
+   "strongs": "H0020",
+   "sha256": "e7cecb5d028ff6feb63f7e5f4f13513432f2753048f9ad1b68a29ac683ecc07d",
+   "gloss": "melón",
+   "definition": "un melón (solo en plural)",
+   "derivation": "de derivación incierta;"
+  },
+  {
+   "strongs": "H0021",
+   "sha256": "b5ed77627dff27d34afab21d16740c6fbab8ad764d3dea8ce360d9a38963e454",
+   "gloss": "Abi",
+   "definition": "Abi, la madre de Ezequías",
+   "derivation": "de 1; paternal;"
+  },
+  {
+   "strongs": "H0022G",
+   "sha256": "d6fb7265fd583498781e536ce5c65f27b2ee6573f2e9314dc9a105369375ed4b",
+   "gloss": "Abiel",
+   "definition": "Abiel, nombre de dos israelitas",
+   "derivation": "de 1 y 410; padre (es decir, poseedor) de Dios;"
+  },
+  {
+   "strongs": "H0022H",
+   "sha256": "d6fb7265fd583498781e536ce5c65f27b2ee6573f2e9314dc9a105369375ed4b",
+   "gloss": "Abiel",
+   "definition": "Abiel, nombre de dos israelitas",
+   "derivation": "de 1 y 410; padre (es decir, poseedor) de Dios;"
+  },
+  {
+   "strongs": "H0023",
+   "sha256": "a8c052e5fc08f8aa34494f37fd58a38af0a256f7bd9b2985b6a6d5cd2ffb3bd1",
+   "gloss": "Abiasaf",
+   "definition": "Abiasaf, un israelita",
+   "derivation": "de 1 y 622; padre de reunión (es decir, el que reúne);"
+  },
+  {
+   "strongs": "H0024",
+   "sha256": "cc51e31b69f45d234e636942b1128f68d47a1c15f16795adf7ed5a0ad3aec162",
+   "gloss": "Abib",
+   "definition": "verde, es decir, una espiga tierna de grano; de ahí, el nombre del mes Abib o Nisán",
+   "derivation": "de una raíz no usada (que significa ser tierno);"
+  },
+  {
+   "strongs": "H0025",
+   "sha256": "50eb49f2ab8060e3b9ad1b1a4de16c90e7af2996617199237ff0e4ad8e41c9cd",
+   "gloss": "Abi-gabaón",
+   "definition": "Abi-gabaón, quizá un israelita",
+   "derivation": "de 1 y 1391; padre (es decir, fundador) de Gibón;"
+  },
+  {
+   "strongs": "H0026G",
+   "sha256": "547ddebeab4b88c9a7fd2a1e38d2e1c4bba692be9e9630c5d448c5bf3c29417c",
+   "gloss": "Abigail",
+   "definition": "Abigail o Abigal, nombre de dos israelitas (mujeres)",
+   "derivation": "o más corto אֲבִיגַל; de 1 y 1524; padre (es decir, fuente) de gozo;"
+  },
+  {
+   "strongs": "H0026H",
+   "sha256": "547ddebeab4b88c9a7fd2a1e38d2e1c4bba692be9e9630c5d448c5bf3c29417c",
+   "gloss": "Abigail",
+   "definition": "Abigail o Abigal, nombre de dos israelitas (mujeres)",
+   "derivation": "o más corto אֲבִיגַל; de 1 y 1524; padre (es decir, fuente) de gozo;"
+  },
+  {
+   "strongs": "H0027",
+   "sha256": "2ea2857373782b95d790d86fb9e5f8f185559e15a350d49fc0422196db541adb",
+   "gloss": "Abidán",
+   "definition": "Abidán, un israelita",
+   "derivation": "de 1 y 1777; padre de juicio (es decir, juez);"
+  },
+  {
+   "strongs": "H0028",
+   "sha256": "e8403b720e6ae418ae86514cf9f4d3f52fe16320c11f8690287d05dccaa2e093",
+   "gloss": "Abida",
+   "definition": "Abida, un hijo de Abraham por Cetura",
+   "derivation": "de 1 y 3045; padre de conocimiento (es decir, entendido);"
+  },
+  {
+   "strongs": "H0029G",
+   "sha256": "f4887dffa25d3b3fd56ed4f5a52b921bf940349c392eea30358e2e05972ae2a7",
+   "gloss": "Abías",
+   "definition": "Abías, nombre de varios israelitas varones y de dos israelitas mujeres",
+   "derivation": "o prolongado אֲבִיָּהוּ ; de 1 y 3050; padre (es decir, adorador) de Jah;"
+  },
+  {
+   "strongs": "H0029H",
+   "sha256": "f4887dffa25d3b3fd56ed4f5a52b921bf940349c392eea30358e2e05972ae2a7",
+   "gloss": "Abías",
+   "definition": "Abías, nombre de varios israelitas varones y de dos israelitas mujeres",
+   "derivation": "o prolongado אֲבִיָּהוּ ; de 1 y 3050; padre (es decir, adorador) de Jah;"
+  },
+  {
+   "strongs": "H0029I",
+   "sha256": "f4887dffa25d3b3fd56ed4f5a52b921bf940349c392eea30358e2e05972ae2a7",
+   "gloss": "Abías",
+   "definition": "Abías, nombre de varios israelitas varones y de dos israelitas mujeres",
+   "derivation": "o prolongado אֲבִיָּהוּ ; de 1 y 3050; padre (es decir, adorador) de Jah;"
+  },
+  {
+   "strongs": "H0029J",
+   "sha256": "4c580e44aed8b5b757fdfed7ecb909f2f82b3ad2301cc7a103bfdc64f2a48b7c",
+   "gloss": "`su padre`",
+   "definition": "Abías, nombre de varios israelitas varones y de dos israelitas mujeres",
+   "derivation": "o prolongado אֲבִיָּהוּ ; de 1 y 3050; padre (es decir, adorador) de Jah;"
+  },
+  {
+   "strongs": "H0029K",
+   "sha256": "f4887dffa25d3b3fd56ed4f5a52b921bf940349c392eea30358e2e05972ae2a7",
+   "gloss": "Abías",
+   "definition": "Abías, nombre de varios israelitas varones y de dos israelitas mujeres",
+   "derivation": "o prolongado אֲבִיָּהוּ ; de 1 y 3050; padre (es decir, adorador) de Jah;"
+  },
+  {
+   "strongs": "H0029L",
+   "sha256": "f4887dffa25d3b3fd56ed4f5a52b921bf940349c392eea30358e2e05972ae2a7",
+   "gloss": "Abías",
+   "definition": "Abías, nombre de varios israelitas varones y de dos israelitas mujeres",
+   "derivation": "o prolongado אֲבִיָּהוּ ; de 1 y 3050; padre (es decir, adorador) de Jah;"
+  },
+  {
+   "strongs": "H0029M",
+   "sha256": "f4887dffa25d3b3fd56ed4f5a52b921bf940349c392eea30358e2e05972ae2a7",
+   "gloss": "Abías",
+   "definition": "Abías, nombre de varios israelitas varones y de dos israelitas mujeres",
+   "derivation": "o prolongado אֲבִיָּהוּ ; de 1 y 3050; padre (es decir, adorador) de Jah;"
+  },
+  {
+   "strongs": "H0029N",
+   "sha256": "f4887dffa25d3b3fd56ed4f5a52b921bf940349c392eea30358e2e05972ae2a7",
+   "gloss": "Abías",
+   "definition": "Abías, nombre de varios israelitas varones y de dos israelitas mujeres",
+   "derivation": "o prolongado אֲבִיָּהוּ ; de 1 y 3050; padre (es decir, adorador) de Jah;"
+  },
+  {
+   "strongs": "H0030",
+   "sha256": "e8881872e88bb2b5f3364b0adcf2340a343bcb6b2298d2db30b14d7a960c7aec",
+   "gloss": "Abiú",
+   "definition": "Abiú, un hijo de Aarón",
+   "derivation": "de 1 y 1931; padre (es decir, adorador) de Él (es decir, Dios);"
+  },
+  {
+   "strongs": "H0031",
+   "sha256": "80189a2202cc55abf23efafe2b68dfa4583f4a547c38f9f4df565bda66fb42eb",
+   "gloss": "Abiud",
+   "definition": "Abiud, nombre de dos israelitas",
+   "derivation": "de 1 y 1935; padre (es decir, poseedor) de renombre;"
+  },
+  {
+   "strongs": "H0032G",
+   "sha256": "d3a747ee415a54607e426396afd0481887ebf3b9868215ec0b604aa2d3484e84",
+   "gloss": "Abihail",
+   "definition": "Abihail o Abijail, nombre de tres israelitas varones y de dos israelitas mujeres",
+   "derivation": "o (más correctamente) אֲבִיחַיִל ; de 1 y 2428; padre (es decir, poseedor) de poderío;"
+  },
+  {
+   "strongs": "H0032H",
+   "sha256": "d3a747ee415a54607e426396afd0481887ebf3b9868215ec0b604aa2d3484e84",
+   "gloss": "Abihail",
+   "definition": "Abihail o Abijail, nombre de tres israelitas varones y de dos israelitas mujeres",
+   "derivation": "o (más correctamente) אֲבִיחַיִל ; de 1 y 2428; padre (es decir, poseedor) de poderío;"
+  },
+  {
+   "strongs": "H0032I",
+   "sha256": "d3a747ee415a54607e426396afd0481887ebf3b9868215ec0b604aa2d3484e84",
+   "gloss": "Abihail",
+   "definition": "Abihail o Abijail, nombre de tres israelitas varones y de dos israelitas mujeres",
+   "derivation": "o (más correctamente) אֲבִיחַיִל ; de 1 y 2428; padre (es decir, poseedor) de poderío;"
+  },
+  {
+   "strongs": "H0032J",
+   "sha256": "d3a747ee415a54607e426396afd0481887ebf3b9868215ec0b604aa2d3484e84",
+   "gloss": "Abihail",
+   "definition": "Abihail o Abijail, nombre de tres israelitas varones y de dos israelitas mujeres",
+   "derivation": "o (más correctamente) אֲבִיחַיִל ; de 1 y 2428; padre (es decir, poseedor) de poderío;"
+  },
+  {
+   "strongs": "H0032K",
+   "sha256": "d3a747ee415a54607e426396afd0481887ebf3b9868215ec0b604aa2d3484e84",
+   "gloss": "Abihail",
+   "definition": "Abihail o Abijail, nombre de tres israelitas varones y de dos israelitas mujeres",
+   "derivation": "o (más correctamente) אֲבִיחַיִל ; de 1 y 2428; padre (es decir, poseedor) de poderío;"
+  },
+  {
+   "strongs": "H0033",
+   "sha256": "fd5b2279b24b18d7b5974d25f5648f248c645910a340869c5b87dae0cccf14ec",
+   "gloss": "abiezerita",
+   "definition": "un abiezerita o descendiente de Abiezer",
+   "derivation": "de 44 con el artículo insertado; padre del ezrita;"
+  },
+  {
+   "strongs": "H0034",
+   "sha256": "4dd4f8e2ec266416cf157c332cec2cda4e5acf9f2ff6413466ac9859697ad8c5",
+   "gloss": "necesitado",
+   "definition": "desamparado",
+   "derivation": "de 14, en el sentido de carencia (especialmente en el sentimiento);"
+  },
+  {
+   "strongs": "H0035",
+   "sha256": "68efd85857d91cfce5d63a80cf8636a8ec473c1570bdfe39cf5f7f416df9069f",
+   "gloss": "deseo",
+   "definition": "que provoca el deseo; la alcaparra (por su sabor estimulante)",
+   "derivation": "de 14;"
+  },
+  {
+   "strongs": "H0036",
+   "sha256": "f5ca537979023184d26d84c814f3214aad823f96cf7d87685113cdad386cf88e",
+   "gloss": "Abitob",
+   "definition": "Abitob, un israelita",
+   "derivation": "de 1 y 2898; padre de bondad (es decir, bueno);"
+  },
+  {
+   "strongs": "H0037",
+   "sha256": "540d13fb5bb63b19abcaadcb1596619330f8c38642690ea50e55189a0f021f19",
+   "gloss": "Abital",
+   "definition": "Abital, una esposa del rey David",
+   "derivation": "de 1 y 2919; padre del rocío (es decir, fresco);"
+  },
+  {
+   "strongs": "H0038",
+   "sha256": "0da6c44a371ae1ea1b9aff898a71da1f5fb803223cacc8fc6d2542830b9b0eb0",
+   "gloss": "Abiam",
+   "definition": "Abiam (o Abías), un rey de Judá",
+   "derivation": "de 1 y 3220; padre del mar (es decir, marinero);"
+  },
+  {
+   "strongs": "H0039",
+   "sha256": "71e25093b4c3919a75ac929ac2650d730a2dbb89b5f88552dc2c2362ac4e9356",
+   "gloss": "Abimael",
+   "definition": "Abimael, un hijo de Joctán",
+   "derivation": "de 1 y una palabra no usada en otro lugar (probablemente extranjera); padre de Mael (al parecer alguna tribu árabe);"
+  },
+  {
+   "strongs": "H0040G",
+   "sha256": "750326ff272f7ba207e6216ec35eb87806c7d9a2b223df37a11f8693b82a6ae4",
+   "gloss": "Abimelec",
+   "definition": "Abimelec, nombre de dos reyes filisteos y de dos israelitas",
+   "derivation": "de 1 y 4428; padre del rey;"
+  },
+  {
+   "strongs": "H0040H",
+   "sha256": "750326ff272f7ba207e6216ec35eb87806c7d9a2b223df37a11f8693b82a6ae4",
+   "gloss": "Abimelec",
+   "definition": "Abimelec, nombre de dos reyes filisteos y de dos israelitas",
+   "derivation": "de 1 y 4428; padre del rey;"
+  },
+  {
+   "strongs": "H0040I",
+   "sha256": "750326ff272f7ba207e6216ec35eb87806c7d9a2b223df37a11f8693b82a6ae4",
+   "gloss": "Abimelec",
+   "definition": "Abimelec, nombre de dos reyes filisteos y de dos israelitas",
+   "derivation": "de 1 y 4428; padre del rey;"
+  },
+  {
+   "strongs": "H0040J",
+   "sha256": "fb0bf418cc034dae8767a237b0637105085f54402fe2426be97954f5e29ecb33",
+   "gloss": "Ahimelec",
+   "definition": "Abimelec, nombre de dos reyes filisteos y de dos israelitas",
+   "derivation": "de 1 y 4428; padre del rey;"
+  },
+  {
+   "strongs": "H0041G",
+   "sha256": "cac4c6948d11ce1a045fe5615287ffac6c9e7d54514bdcc08ab504df0c8d0c3e",
+   "gloss": "Abinadab",
+   "definition": "Abinadab, nombre de cuatro israelitas",
+   "derivation": "de 1 y 5068; padre de generosidad (es decir, liberal);"
+  },
+  {
+   "strongs": "H0041H",
+   "sha256": "cac4c6948d11ce1a045fe5615287ffac6c9e7d54514bdcc08ab504df0c8d0c3e",
+   "gloss": "Abinadab",
+   "definition": "Abinadab, nombre de cuatro israelitas",
+   "derivation": "de 1 y 5068; padre de generosidad (es decir, liberal);"
+  },
+  {
+   "strongs": "H0041I",
+   "sha256": "cac4c6948d11ce1a045fe5615287ffac6c9e7d54514bdcc08ab504df0c8d0c3e",
+   "gloss": "Abinadab",
+   "definition": "Abinadab, nombre de cuatro israelitas",
+   "derivation": "de 1 y 5068; padre de generosidad (es decir, liberal);"
+  },
+  {
+   "strongs": "H0041J",
+   "sha256": "cac4c6948d11ce1a045fe5615287ffac6c9e7d54514bdcc08ab504df0c8d0c3e",
+   "gloss": "Abinadab",
+   "definition": "Abinadab, nombre de cuatro israelitas",
+   "derivation": "de 1 y 5068; padre de generosidad (es decir, liberal);"
+  },
+  {
+   "strongs": "H0042",
+   "sha256": "8d001864c38463deddb5e8aea2bc9c458f149382977b9248e5d93b9d0c48a9ad",
+   "gloss": "Abinoam",
+   "definition": "Abinoam, un israelita",
+   "derivation": "de 1 y 5278; padre de agrado (es decir, benévolo);"
+  },
+  {
+   "strongs": "H0043",
+   "sha256": "ac34cee1f09de6ff93cd88d8211e69ad9ca65a9248e50c435f99156f0e8e5842",
+   "gloss": "Ebiasaf",
+   "definition": "Ebiasaf, un israelita",
+   "derivation": "contracción de 23;"
+  },
+  {
+   "strongs": "H0044G",
+   "sha256": "7cdb316b9c17ccb5816022410ad948f00656c9e0a1de7b3fa26915ecc28eb04e",
+   "gloss": "Abiezer",
+   "definition": "Abiezer, nombre de dos israelitas",
+   "derivation": "de 1 y 5829; padre de ayuda (es decir, servicial);"
+  },
+  {
+   "strongs": "H0044H",
+   "sha256": "7cdb316b9c17ccb5816022410ad948f00656c9e0a1de7b3fa26915ecc28eb04e",
+   "gloss": "Abiezer",
+   "definition": "Abiezer, nombre de dos israelitas",
+   "derivation": "de 1 y 5829; padre de ayuda (es decir, servicial);"
+  },
+  {
+   "strongs": "H0044I",
+   "sha256": "7cdb316b9c17ccb5816022410ad948f00656c9e0a1de7b3fa26915ecc28eb04e",
+   "gloss": "Abiezer",
+   "definition": "Abiezer, nombre de dos israelitas",
+   "derivation": "de 1 y 5829; padre de ayuda (es decir, servicial);"
+  },
+  {
+   "strongs": "H0045",
+   "sha256": "d2b58615e0c57cbb5acc1077bdf6102e91f72a7476cd9c888b4700caaeed0d1f",
+   "gloss": "Abi-albón",
+   "definition": "Abi-albón, un israelita",
+   "derivation": "de 1 y una raíz no usada de derivación incierta; probablemente, padre de fuerza (es decir, valiente);"
+  },
+  {
+   "strongs": "H0046",
+   "sha256": "548dfa40f2dfd4e2871c9031302e2f24694c3b707d1dea01af3db7c823344c6f",
+   "gloss": "poderoso",
+   "definition": "poderoso (dicho de Dios)",
+   "derivation": "de 82;"
+  },
+  {
+   "strongs": "H0047G",
+   "sha256": "ca9b52e7c287e8e4fd0208e3631d9068d6e279d13a0e14ddbf1fdacff91e7a07",
+   "gloss": "poderoso: buey",
+   "derivation": "por 46"
+  },
+  {
+   "strongs": "H0047H",
+   "sha256": "c37bc01628c5d928cb40043d54b6f1b201006e4701c0a7228fbfcaadaf8fec2a",
+   "gloss": "poderoso: corcel",
+   "derivation": "por 46"
+  },
+  {
+   "strongs": "H0047I",
+   "sha256": "30a3439da1d3c410d7d8e8683138af112d62610685e6b5bd9c35f97cef7c6be9",
+   "gloss": "poderoso: fuerte",
+   "derivation": "por 46"
+  },
+  {
+   "strongs": "H0047J",
+   "sha256": "744641808b918a9173485c36be14d75b2103962e6996bdf3d7a763eeb4eec683",
+   "gloss": "poderoso: ángel",
+   "derivation": "por 46"
+  },
+  {
+   "strongs": "H0048G",
+   "sha256": "ff69d9ede5a3d7d50e3fdb6d526d8a6a7d2fb4a735e06d14f7c34bcfd8ba9975",
+   "gloss": "Abiram",
+   "definition": "Abiram, nombre de dos israelitas",
+   "derivation": "de 1 y 7311; padre de altura (es decir, elevado);"
+  },
+  {
+   "strongs": "H0048H",
+   "sha256": "ff69d9ede5a3d7d50e3fdb6d526d8a6a7d2fb4a735e06d14f7c34bcfd8ba9975",
+   "gloss": "Abiram",
+   "definition": "Abiram, nombre de dos israelitas",
+   "derivation": "de 1 y 7311; padre de altura (es decir, elevado);"
+  },
+  {
+   "strongs": "H0049",
+   "sha256": "08628805e2424390777983d305a0accb26ac6c6aaa22ec8f84182090cd0af738",
+   "gloss": "Abisag",
+   "definition": "Abisag, una concubina de David",
+   "derivation": "de 1 y 7686; padre de error (es decir, desatinado);"
+  },
+  {
+   "strongs": "H0050G",
+   "sha256": "2c2db2144cd419e4ca44721aad7e42beb8e3262ab6c46253032e50b0549b72df",
+   "gloss": "Abisúa",
+   "definition": "Abisúa, nombre de dos israelitas",
+   "derivation": "de 1 y 7771; padre de abundancia (es decir, próspero);"
+  },
+  {
+   "strongs": "H0050H",
+   "sha256": "2c2db2144cd419e4ca44721aad7e42beb8e3262ab6c46253032e50b0549b72df",
+   "gloss": "Abisúa",
+   "definition": "Abisúa, nombre de dos israelitas",
+   "derivation": "de 1 y 7771; padre de abundancia (es decir, próspero);"
+  },
+  {
+   "strongs": "H0051",
+   "sha256": "7f373f68b3d6a4f10e5946dee7245c7a8d283cb17093f02da7355be4a741996d",
+   "gloss": "Abisur",
+   "definition": "Abisur, un israelita",
+   "derivation": "de 1 y 7791; padre del muro (es decir, quizá albañil);"
+  },
+  {
+   "strongs": "H0052",
+   "sha256": "b0ddb0ec86f58e6e7de2f91ea0a33dfc6501d8088afec6371e060ba18589f60c",
+   "gloss": "Abisai",
+   "definition": "Abisai, un israelita",
+   "derivation": "o (más corto) אַבְשַׁי ; de 1 y 7862; padre de un don (es decir, probablemente generoso);"
+  },
+  {
+   "strongs": "H0053",
+   "sha256": "d4a9569c733da08e73de0141c683f177d0dc86617ee2b1d04f3e0f24e5e40b62",
+   "gloss": "Absalón",
+   "definition": "Absalón, un hijo de David; también (la forma más plena) un israelita posterior",
+   "derivation": "o (abreviado) אַבְשָׁלוֹם ; de 1 y 7965; padre de paz (es decir, amistoso);"
+  },
+  {
+   "strongs": "H0054",
+   "sha256": "0a9c2f7e857a0d01d8b45d60728a2aa652750d295f933689448d6bcca0d2e36c",
+   "gloss": "Abiatar",
+   "definition": "Abiatar, un israelita",
+   "derivation": "contracción de 1 y 3498; padre de abundancia (es decir, liberal);"
+  },
+  {
+   "strongs": "H0055",
+   "sha256": "3a0ed61194d731ba0c0ef28c26175ee40ec216042a234d3bc815f676efa75531",
+   "gloss": "enrollarse",
+   "definition": "probablemente enroscarse hacia arriba",
+   "derivation": "raíz primitiva;"
+  },
+  {
+   "strongs": "H0056",
+   "sha256": "e17ec78159f8fe1cc227416460305e3d7d41d9a1dd6ec2cf7b1c73c0adfdd1d8",
+   "gloss": "lamentar",
+   "definition": "plañir",
+   "derivation": "raíz primitiva;"
+  },
+  {
+   "strongs": "H0057",
+   "sha256": "34535e29d00f717ed4170504c1772feeda4e90ffaf214ab6a5b458ceb31ff3e3",
+   "gloss": "luto",
+   "definition": "que se lamenta",
+   "derivation": "de 56;"
+  },
+  {
+   "strongs": "H0058",
+   "sha256": "c091eacfcf9482c73f150acc2a0d79576341904d56816b386c8cadf3c6edd9b7",
+   "gloss": "prado",
+   "definition": "un prado",
+   "derivation": "de una raíz no usada (que significa ser herboso);"
+  },
+  {
+   "strongs": "H0059G",
+   "sha256": "feea31b060bf8e8e0cc42c86d132d6b90264c5aeba4b25654f94e936770ee02a",
+   "gloss": "Abel",
+   "definition": "Abel, nombre de dos lugares en Palestina.",
+   "derivation": "de 58; un prado;"
+  },
+  {
+   "strongs": "H0059H",
+   "sha256": "feea31b060bf8e8e0cc42c86d132d6b90264c5aeba4b25654f94e936770ee02a",
+   "gloss": "Abel",
+   "definition": "Abel, nombre de dos lugares en Palestina.",
+   "derivation": "de 58; un prado;"
+  },
+  {
+   "strongs": "H0060",
+   "sha256": "c05c5ac597107a7635cc51f3fc6d34b5fe32f6d38202286cf72df84e7b754b05",
+   "gloss": "luto",
+   "definition": "lamentación",
+   "derivation": "de 56;"
+  },
+  {
+   "strongs": "H0061",
+   "sha256": "b773f7337273fde5659bd5d95d977cf7d1c0ac3dc6a5656bfb1eb80694d56c1a",
+   "gloss": "ciertamente",
+   "definition": "no, es decir, en verdad o sin embargo",
+   "derivation": "al parecer de 56 a través de la idea de negación;"
+  },
+  {
+   "strongs": "H0062",
+   "sha256": "1cfff780f11f77c7a00ce204b83a2358c96859c4a2d4bb64b27f23a69c112d1e",
+   "gloss": "Abel-bet-maaca",
+   "definition": "Abel de Bet-maaca, un lugar en Palestina",
+   "derivation": "de 58 y 1004 y 4601; prado de Bet-maaca;"
+  },
+  {
+   "strongs": "H0063",
+   "sha256": "d5ce7a524d44f7396e66929c38055820c252236fc5ae99a1b54c6c167a7b423c",
+   "gloss": "Abel-sitim",
+   "definition": "Abel-sitim, un lugar en Palestina",
+   "derivation": "de 58 y el plural de 7848, con el artículo insertado; prado de las acacias;"
+  },
+  {
+   "strongs": "H0064",
+   "sha256": "c6a4207beec7b55213d7fdb3bc1b3a4c8fe2953494d49d8621d7363218404aec",
+   "gloss": "Abel-queramim",
+   "definition": "Abel-queramim, un lugar en Palestina",
+   "derivation": "de 58 y el plural de 3754; prado de viñas;"
+  },
+  {
+   "strongs": "H0065",
+   "sha256": "bbc3b9621e20e1b4bd49ad52c935edb279ce5acb1fdf10b2ac7f1a2a578e7b82",
+   "gloss": "Abel-mehola",
+   "definition": "Abel-mehola, un lugar en Palestina",
+   "derivation": "de 58 y 4246; prado de danza;"
+  },
+  {
+   "strongs": "H0066",
+   "sha256": "d1388de876742768192432c475e54817bb01fa113acb96196f7dcd597b7b31cd",
+   "gloss": "Abel-maim",
+   "definition": "Abel-maim, un lugar en Palestina",
+   "derivation": "de 58 y 4325; prado de aguas;"
+  },
+  {
+   "strongs": "H0067",
+   "sha256": "1d03d9198e06d7d1ae645eaa3d662d7a35cd73e929b3561ab8cd344c4129efaf",
+   "gloss": "Abel-mizraim",
+   "definition": "Abel-mizraim, un lugar en Palestina",
+   "derivation": "de 58 y 4714; prado de Egipto;"
+  },
+  {
+   "strongs": "H0068G",
+   "sha256": "2f07d42b24ed90cea85dba6f4d57e9832aba5dbed96afe4b59066ac6028a51ee",
+   "gloss": "piedra",
+   "definition": "una piedra",
+   "derivation": "de la raíz de 1129 a través del significado de edificar;"
+  },
+  {
+   "strongs": "H0068H",
+   "sha256": "1d6f907a9bb40dea66f79d9dad9983636ebd39cc114ec20dccd197f52a958501",
+   "gloss": "piedra: pesa",
+   "definition": "una piedra",
+   "derivation": "de la raíz de 1129 a través del significado de edificar;"
+  },
+  {
+   "strongs": "H0068I",
+   "sha256": "8d770731960a5aba05cfaa6acd3c2f56bc38b37629785eca1107b6b35de3eefa",
+   "gloss": "Piedra (de Zohelet)",
+   "definition": "una piedra",
+   "derivation": "de la raíz de 1129 a través del significado de edificar;"
+  },
+  {
+   "strongs": "H0069",
+   "sha256": "9d9a5d1253d7e24049902aab9819d6be903746792efcb80f65d6d9fd97d1c3be",
+   "gloss": "piedra",
+   "derivation": "(arameo) correspondiente a 68"
+  },
+  {
+   "strongs": "H0070",
+   "sha256": "8b3bf9f45f37c5ad13d0829b8421c795d2c1fbfaea43e7878d6c2f3e69e1e9e7",
+   "gloss": "rueda",
+   "definition": "un par de piedras (solo en dual); la rueda del alfarero o la silla de la partera (que constan igualmente de dos discos horizontales con un soporte entre ellos)",
+   "derivation": "de lo mismo que 68;"
+  },
+  {
+   "strongs": "H0071",
+   "sha256": "0ea5014f78f5717efed3e03fab6e4a19014cf8c69467d170658fa0bc067b90da",
+   "gloss": "Abana",
+   "definition": "Abana, un río cerca de Damasco",
+   "derivation": "quizá femenino de 68; pedregoso; compárese 549."
+  },
+  {
+   "strongs": "H0072",
+   "sha256": "b0a06aa2c49d0c121ec09123047d8c9662dd6fa69666d6486219c9b6fe528d88",
+   "gloss": "Eben-ezer",
+   "definition": "Eben-ezer, un lugar en Palestina",
+   "derivation": "de 68 y 5828 con el artículo insertado; piedra de la ayuda;"
+  },
+  {
+   "strongs": "H0073",
+   "sha256": "27ca5e73d2733e487a49de066daaff6d959b19b5402ac4b47e8acd97ea03f58e",
+   "gloss": "cinto",
+   "definition": "un cinto",
+   "derivation": "de derivación incierta;"
+  },
+  {
+   "strongs": "H0074",
+   "sha256": "a15c487dad55bec7082d88b83c2102c85cd758f343c0604f9a9724819da19ffd",
+   "gloss": "Abner",
+   "definition": "Abner, un israelita",
+   "derivation": "o (completo) אֲבִינֵר ; de 1 y 5216; padre de luz (es decir, que ilumina);"
+  },
+  {
+   "strongs": "H0075",
+   "sha256": "e0c368afd90ff5e20fcb66ebe0cbe8f1e8c55551713ec0e7eac4de2278657450",
+   "gloss": "engordar",
+   "definition": "alimentar con forraje",
+   "derivation": "raíz primitiva;"
+  },
+  {
+   "strongs": "H0076",
+   "sha256": "6b1577d30dafc093bb2de1fe9f6e8d732a49f7a092fb398b7f1ef174bd16a5fa",
+   "gloss": "úlcera",
+   "definition": "una pústula inflamatoria (como erupción)",
+   "derivation": "(por reduplicación) de una raíz no usada (que significa brotar a borbotones);"
+  },
+  {
+   "strongs": "H0077",
+   "sha256": "a2b78b6e4fbbb1b20b75a442a6327a47e651f5b9f8f90c5cd70ac9d8e51dc904",
+   "gloss": "Abez",
+   "definition": "Abez, un lugar en Palestina",
+   "derivation": "de una raíz no usada que probablemente significa resplandecer; conspicuo;"
+  },
+  {
+   "strongs": "H0078",
+   "sha256": "e8473a40205df709e865c4dce3e1d02fb7a622e363c67e92efb93b14434252e5",
+   "gloss": "Ibzán",
+   "definition": "Ibzán, un israelita",
+   "derivation": "de lo mismo que 76; espléndido;"
+  },
+  {
+   "strongs": "H0079",
+   "sha256": "121514823159ab6ee469c8d734ca3232389cd0c602ae8505abeb6da7e0c76e66",
+   "gloss": "luchar",
+   "definition": "cubrirse de polvo, es decir, luchar cuerpo a cuerpo",
+   "derivation": "raíz primitiva, probablemente alejarse flotando (como el vapor), pero usada solo como denominativo de 80;"
+  },
+  {
+   "strongs": "H0080",
+   "sha256": "7191d4003be329bd9ec0ae52be8dfb72bcf80488cca460683da90fc40407becf",
+   "gloss": "polvo",
+   "definition": "partículas ligeras (como volátiles)",
+   "derivation": "de la raíz de 79;"
+  },
+  {
+   "strongs": "H0081",
+   "sha256": "82eb9869ab0f728bbe6d9e9aedf394552be6c8560e952e8955fb7b60b785595f",
+   "gloss": "polvo aromático",
+   "derivation": "femenino de 80"
+  },
+  {
+   "strongs": "H0082",
+   "sha256": "7b6b49715b0a881c66742e703c696dc4b32ed926ea4d35d58e027d7fb3287a2a",
+   "gloss": "volar",
+   "definition": "remontarse",
+   "derivation": "raíz primitiva;"
+  },
+  {
+   "strongs": "H0083",
+   "sha256": "70caa6f1529fd30da9b37e8875bba49cf180a560a0f968aeef6275d2fed6499f",
+   "gloss": "ala",
+   "definition": "un ala",
+   "derivation": "de 82;"
+  },
+  {
+   "strongs": "H0084",
+   "sha256": "8b7497df7d522e308ec820b472db1f733cc9ee20cf161a720a2a8527967f5f76",
+   "gloss": "pluma",
+   "derivation": "femenino de 83"
+  },
+  {
+   "strongs": "H0085",
+   "sha256": "63befb8e078c792016b5715d870d4b5ae40c183f1a455717529b78448ccfd6a0",
+   "gloss": "Abraham",
+   "definition": "Abraham, el nombre posterior de Abram",
+   "derivation": "contracción de 1 y una raíz no usada (que probablemente significa ser populoso); padre de una multitud;"
+  },
+  {
+   "strongs": "H0086",
+   "sha256": "a4976ae88b36665d5dc6a0660d4e526febefffa905c8b681e5bce90747f04522",
+   "gloss": "arrodillarse",
+   "definition": "arrodillarse",
+   "derivation": "probablemente una palabra egipcia que significa"
+  },
+  {
+   "strongs": "H0087",
+   "sha256": "ea1a81239202043876e93bd52ebefa87be5baa4e51bc6e0b690c472f363d49bf",
+   "gloss": "Abram",
+   "definition": "Abram, el nombre original de Abraham",
+   "derivation": "contracción de 48; padre excelso;"
+  },
+  {
+   "strongs": "H0088",
+   "sha256": "b15dfcf2bbb68a5e7f7a97ba633a183b3192233a8540a82004e4a62f014a3885",
+   "gloss": "Obot",
+   "definition": "Obot, un lugar en el desierto",
+   "derivation": "plural de 178; odres;"
+  },
+  {
+   "strongs": "H0089",
+   "sha256": "cb2e8277ade20a3bb49656b4898969be59b403d115d58b4ca1dd686ba0749bec",
+   "gloss": "Age",
+   "definition": "Age, un israelita",
+   "derivation": "de derivación incierta (compárese 90);"
+  },
+  {
+   "strongs": "H0090G",
+   "sha256": "7f0f56c01d6489f2712733ddc2efba4e9048aa36400db42c6d547ba62edcf98b",
+   "gloss": "Agag",
+   "definition": "Agag, título de los reyes amalecitas",
+   "derivation": "o אֲגָג; de derivación incierta (compárese 89); llama;"
+  },
+  {
+   "strongs": "H0090H",
+   "sha256": "7f0f56c01d6489f2712733ddc2efba4e9048aa36400db42c6d547ba62edcf98b",
+   "gloss": "Agag",
+   "definition": "Agag, título de los reyes amalecitas",
+   "derivation": "o אֲגָג; de derivación incierta (compárese 89); llama;"
+  },
+  {
+   "strongs": "H0091",
+   "sha256": "335e245ad5b84a6539f3503912cc47c530e8f01e0cfd8fb1de1c6d88e0721a53",
+   "gloss": "agagueo",
+   "definition": "un agagueo o descendiente (súbdito) de Agag",
+   "derivation": "gentilicio o patronímico de 90;"
+  },
+  {
+   "strongs": "H0092",
+   "sha256": "72d7bab0822f5ea05f4bb1aeb5f8cceda67296c77ffd60dfb8ddbbb3aa5d1f22",
+   "gloss": "atadura",
+   "definition": "una atadura, haz, nudo o arco",
+   "derivation": "participio pasivo femenino de una raíz no usada (que significa atar);"
+  },
+  {
+   "strongs": "H0093",
+   "sha256": "c7a446d5ac2ce6e8016ccc3325134f339aea9032878d3e2ee747461a3ec86c86",
+   "gloss": "nuez",
+   "definition": "una nuez",
+   "derivation": "prob. de origen persa;"
+  },
+  {
+   "strongs": "H0094",
+   "sha256": "3b63e5d9eab6eb0647c95d27d3398861a2819366b6d65331d988b21d23f6bacc",
+   "gloss": "Agur",
+   "definition": "Agur, un nombre simbólico de Salomón",
+   "derivation": "participio pasivo de 103; recogido (es decir, recibido entre los sabios);"
+  },
+  {
+   "strongs": "H0095",
+   "sha256": "9673ac04e570e57c16ed016479d18e398ae4730a93a54bd4330bbb0a69f23f7a",
+   "gloss": "pieza",
+   "definition": "propiamente, algo recogido, es decir, quizá un grano o una baya; usado solo de una pequeña moneda (de plata)",
+   "derivation": "de lo mismo que 94;"
+  },
+  {
+   "strongs": "H0096",
+   "sha256": "2405d70c47ffd5707f01e8250d27a5ffd29c0678be237e96e4e70112cd53dad9",
+   "gloss": "gota",
+   "definition": "un depósito de agua",
+   "derivation": "de una raíz no usada (que significa fluir hacia abajo o juntarse como gotas);"
+  },
+  {
+   "strongs": "H0097",
+   "sha256": "065af70014c4ad7a42eb3da6cb7ecca1eedfd215fcbb10e320c573e97a0fdbe2",
+   "gloss": "Eglaim",
+   "definition": "Eglaim, un lugar en Moab",
+   "derivation": "dual de 96.; un estanque doble;"
+  },
+  {
+   "strongs": "H0098",
+   "sha256": "3b08f5e740f12ffe2a08a070b067891d8e9c63c9793cda3b5de0259ed7ec5a64",
+   "gloss": "estanque",
+   "definition": "un pantano; de ahí un junco (por crecer en los pantanos); de ahí una empalizada de juncos",
+   "derivation": "de una raíz no usada (que significa juntarse como el agua);"
+  },
+  {
+   "strongs": "H0099",
+   "sha256": "92f33107b87ece7b63a9a0bd4f7755ad82514a4a6e38b284e7d48e6ab3474271",
+   "gloss": "afligido",
+   "definition": "figuradamente, triste",
+   "derivation": "probablemente de lo mismo que 98 (en el sentido de agua estancada);"
+  },
+  {
+   "strongs": "H0100",
+   "sha256": "aaf6d1b1102c47dd15f2758041e58bede26edeac7e9ece5c3992d024be717dd9",
+   "gloss": "junco",
+   "definition": "un junco (por crecer allí); colectivamente una soga de juncos",
+   "derivation": "de lo mismo que 98; un charco pantanoso (otros, de una raíz diferente, una caldera); por implicación"
+  },
+  {
+   "strongs": "H0101",
+   "sha256": "a6801540105356771f75a3823797299f2d8dbafdee44554fed0f5a5a64bf9f64",
+   "gloss": "vasija",
+   "definition": "un tazón (como ahuecado a golpes)",
+   "derivation": "probablemente de 5059;"
+  },
+  {
+   "strongs": "H0102",
+   "sha256": "accfe34b670b0ca0ebbdd9bd72bb32521fbc7772151d8ff58f4f6d8600cc1a4d",
+   "gloss": "atadura",
+   "definition": "(solo en plural) alas de un ejército, o multitudes de tropas",
+   "derivation": "probablemente de 5062 (a través de la idea de inminencia); una cubierta o montón; es decir,"
+  },
+  {
+   "strongs": "H0103",
+   "sha256": "013ae9c0c0eafb8ab642b6244a2dd469830d2ee4d386af8a1c14c8ee6af791ae",
+   "gloss": "cosechar",
+   "definition": "cosechar",
+   "derivation": "raíz primitiva;"
+  },
+  {
+   "strongs": "H0104",
+   "sha256": "6c94a573d18a939b77d5d1d6c9ae983880be2125d01d1b3de694c1763fd64a30",
+   "gloss": "carta",
+   "definition": "una epístola (como llevada por un correo del estado o cartero)",
+   "derivation": "(arameo) de origen persa;"
+  },
+  {
+   "strongs": "H0105",
+   "sha256": "af255c925bdc4c05010291c19d17065dd9ac6ef0ed12062a52245c1b10b26dd7",
+   "gloss": "tazón",
+   "definition": "una palangana",
+   "derivation": "de derivación incierta;"
+  },
+  {
+   "strongs": "H0106",
+   "sha256": "fd4a1bde05650e1c6e568b126fa9ad15be4449b4f383f528b9be9c5996237b1e",
+   "gloss": "puño",
+   "definition": "la mano cerrada",
+   "derivation": "de 1640 (en el sentido de asir);"
+  },
+  {
+   "strongs": "H0107",
+   "sha256": "16a93553b2f913a2e9587bae4da0943a0b56ccb1b752566936c100307a851559",
+   "gloss": "carta",
+   "definition": "una epístola",
+   "derivation": "femenino de 104;"
+  },
+  {
+   "strongs": "H0108",
+   "sha256": "3e1f40134ddf9b7191c2f48e812b1fd4e4125508549a23eed2d646d5a2b0e482",
+   "gloss": "vapor",
+   "definition": "una niebla",
+   "derivation": "de lo mismo que 181 (en el sentido de envolver);"
+  },
+  {
+   "strongs": "H0109",
+   "sha256": "8299ab824a8c39010dbb0c1c71602e7f8eadf5b640b9bed55136b85c3d0ddf86",
+   "gloss": "afligirse",
+   "definition": "languidecer",
+   "derivation": "raíz primitiva;"
+  },
+  {
+   "strongs": "H0110",
+   "sha256": "48f2b82d1831c361d0fa5f2aa9d68d2f4fe57564924df5113fabaeb2b3975087",
+   "gloss": "Adbeel",
+   "definition": "Adbeel, un hijo de Ismael",
+   "derivation": "probablemente de 109 (en el sentido de castigo) y 410; disciplinado por Dios;"
+  },
+  {
+   "strongs": "H0111",
+   "sha256": "d1dd5fb186302cd8aa29c0897a607095cb8b16352beed03d231892bf83cc2c13",
+   "gloss": "Hadad",
+   "definition": "Adad (o Hadad), un edomita",
+   "derivation": "probablemente una variante ortográfica de 2301;"
+  },
+  {
+   "strongs": "H0112",
+   "sha256": "70216b162bce11de9c78cbd47e0ac7272fd89533f8d37de8590fd2ec7c28c2ea",
+   "gloss": "Iddo",
+   "definition": "Iddo, un israelita",
+   "derivation": "de derivación incierta;"
+  },
+  {
+   "strongs": "H0113",
+   "sha256": "f0e04df7c450106207a77f315db057347ea71682f90e778c99cefcee676174da",
+   "gloss": "señor",
+   "definition": "soberano, es decir, el que gobierna (humano o divino)",
+   "derivation": "o (abreviado) אָדֹן; de una raíz no usada (que significa gobernar);"
+  },
+  {
+   "strongs": "H0114",
+   "sha256": "52fc150aa8bdcf4bacc9c3c346d86cfcd845d6cdbd174048440de7b168ad408a",
+   "gloss": "Addón",
+   "definition": "Addón, al parecer un israelita",
+   "derivation": "probablemente intensivo de 113; poderoso;"
+  },
+  {
+   "strongs": "H0115",
+   "sha256": "4ab51e9bc6176aa1d52fb7bf5d7dfec2fe6929302c1ddba5ddd102d99a4102a5",
+   "gloss": "Adoraim",
+   "definition": "Adoraim, un lugar en Palestina",
+   "derivation": "dual de 142 (en el sentido de eminencia); doble montículo;"
+  },
+  {
+   "strongs": "H0116",
+   "sha256": "04369304e143c464ac0d7c3e18e2786e1cb87a9f38e5286220655ff5a28362e3",
+   "gloss": "entonces",
+   "definition": "entonces (de tiempo)",
+   "derivation": "(arameo) de derivación incierta;"
+  },
+  {
+   "strongs": "H0117",
+   "sha256": "5ef19b5b6de819f0a581a1c1bdbe1809abc9d1c15c312b55d567f6cc2425f6af",
+   "gloss": "grande",
+   "definition": "ancho o (en general) grande; figuradamente, poderoso",
+   "derivation": "de 142;"
+  },
+  {
+   "strongs": "H0118",
+   "sha256": "3541b85a31eb009360020216a720ccdbfdb09e35f37f951204976f29c540d13e",
+   "gloss": "Adalía",
+   "definition": "Adalía, un hijo de Amán",
+   "derivation": "de derivación persa;"
+  },
+  {
+   "strongs": "H0119",
+   "sha256": "2632c62d5a40074cd4aab5855c4c5c264ba05e5beae06465fa7d44e67435a1c0",
+   "gloss": "enrojecer",
+   "definition": "mostrar sangre (en el rostro), es decir, sonrojarse o ponerse rosado"
+  },
+  {
+   "strongs": "H0120G",
+   "sha256": "9528d0fbb9f401e9aca023c92b8a6a8d0c1c6e45d052b51d1ff855dcfa3ee5fc",
+   "gloss": "hombre",
+   "definition": "rojizo, es decir, un ser humano (un individuo o la especie, la humanidad, etc.)",
+   "derivation": "de 119;"
+  },
+  {
+   "strongs": "H0120H",
+   "sha256": "b05fa5eb5082e98e12358d291810d9541158edbd474bbcd7fc9e7bee5af7359b",
+   "gloss": "el hombre (Adán)",
+   "definition": "rojizo, es decir, un ser humano (un individuo o la especie, la humanidad, etc.)",
+   "derivation": "de 119;"
+  },
+  {
+   "strongs": "H0121G",
+   "sha256": "8cd461c9cb5569ba238ee56cc6592bbcc2cc5c25a127fb98c3092b66a01e7a93",
+   "gloss": "Adán",
+   "definition": "Adán, nombre del primer hombre, también de un lugar en Palestina",
+   "derivation": "lo mismo que 120;"
+  },
+  {
+   "strongs": "H0121H",
+   "sha256": "8cd461c9cb5569ba238ee56cc6592bbcc2cc5c25a127fb98c3092b66a01e7a93",
+   "gloss": "Adán",
+   "definition": "Adán, nombre del primer hombre, también de un lugar en Palestina",
+   "derivation": "lo mismo que 120;"
+  },
+  {
+   "strongs": "H0122A",
+   "sha256": "7e7d372963bbda0fd165986a08243a6a89c85c4864e53eb8d7bb181b8bfb684d",
+   "gloss": "rojo",
+   "definition": "rosado",
+   "derivation": "de 119;"
+  },
+  {
+   "strongs": "H0122B",
+   "sha256": "2ba7bd29ee3f94a3828d331a969cd0d00b90c07f5c173e0e9b6773a2e19d305c",
+   "gloss": "guiso rojo",
+   "definition": "rosado",
+   "derivation": "de 119;"
+  },
+  {
+   "strongs": "H0123G",
+   "sha256": "210581cd24a17040124b1ff71314bf89a307453ec1894c2af9cd7b4a61d6a327",
+   "gloss": "Edom",
+   "definition": "Edom, el hermano gemelo mayor de Jacob; de ahí la región (Idumea) que ocupó",
+   "derivation": "o (completo) אֱדוֹם ; de 122; rojo (véase Génesis 25:25);"
+  },
+  {
+   "strongs": "H0123H",
+   "sha256": "210581cd24a17040124b1ff71314bf89a307453ec1894c2af9cd7b4a61d6a327",
+   "gloss": "Edom",
+   "definition": "Edom, el hermano gemelo mayor de Jacob; de ahí la región (Idumea) que ocupó",
+   "derivation": "o (completo) אֱדוֹם ; de 122; rojo (véase Génesis 25:25);"
+  },
+  {
+   "strongs": "H0124",
+   "sha256": "0e84cb7a336ab3e00aaed7a68ff8d2e6f85ddd6e975cdae4c8143075321c9b1a",
+   "gloss": "sardio",
+   "definition": "rojez, es decir, el rubí, el granate u otra gema roja",
+   "derivation": "de 119;"
+  },
+  {
+   "strongs": "H0125",
+   "sha256": "bb89b24ab654b242ac6a50747742a65f71c24842b3d6205ff6ea9826cea8a423",
+   "gloss": "rojizo",
+   "definition": "rojizo",
+   "derivation": "reduplicado de 119;"
+  },
+  {
+   "strongs": "H0126",
+   "sha256": "2415a534633568ae0253d635a2f83ffa0e2e60ffdac7366f19f49c523ded8a47",
+   "gloss": "Adma",
+   "definition": "Adma, un lugar cerca del mar Muerto",
+   "derivation": "contracción de 127; terroso;"
+  },
+  {
+   "strongs": "H0127G",
+   "sha256": "fc6f293a116bb52572fe8c12542fe2a644bd684fb879567d5929efbb5c0d5607",
+   "gloss": "tierra: suelo",
+   "definition": "suelo (por su rojez general)",
+   "derivation": "de 119;"
+  },
+  {
+   "strongs": "H0127H",
+   "sha256": "52b8433c92792946001198141dd854f769d4ab5b955c67919ce5fd06c798b1b8",
+   "gloss": "tierra: país",
+   "definition": "suelo (por su rojez general)",
+   "derivation": "de 119;"
+  },
+  {
+   "strongs": "H0127I",
+   "sha256": "3a6c9decfab8a5e32f80ff9db5f28810015602fc39ce161bd3a86370540f6606",
+   "gloss": "tierra: planeta",
+   "definition": "suelo (por su rojez general)",
+   "derivation": "de 119;"
+  },
+  {
+   "strongs": "H0128",
+   "sha256": "4ecba002c33abecc01556ae703a139c609b3c3b7b29a51c5f54b71ad2e78cdb0",
+   "gloss": "Adama",
+   "definition": "Adama, un lugar en Palestina",
+   "derivation": "lo mismo que 127;"
+  },
+  {
+   "strongs": "H0129",
+   "sha256": "00c261c93f12805716cd3bdf9c4b648107c7871a6090010945567e3a2867374c",
+   "gloss": "Adami",
+   "definition": "Adami, un lugar en Palestina",
+   "derivation": "de 127; terroso;"
+  },
+  {
+   "strongs": "H0130",
+   "sha256": "2943b0eac4c9313e595836ed767e839152fe5faa15036141c69609af85958c37",
+   "gloss": "edomita",
+   "definition": "un edomita, o descendientes de (o habitantes de) Edom",
+   "derivation": "o (completo) אֱדוֹמִי ; patronímico de 123; véase 726."
+  },
+  {
+   "strongs": "H0131",
+   "sha256": "b2beab47c8da79ce33af1f733ae34ab9a9c20791f2cd56fa064d730d96f2660c",
+   "gloss": "Adumín",
+   "definition": "Adumín, un paso en Palestina",
+   "derivation": "plural de 121; manchas rojas;"
+  },
+  {
+   "strongs": "H0132",
+   "sha256": "06eac7b4c716018c2526062ed21163b20755b49a235f1df525436f022c0d346c",
+   "gloss": "rojo",
+   "definition": "rojizo (del cabello o de la tez)",
+   "derivation": "o (completo) אַדְמוֹנִי ; de 119;"
+  },
+  {
+   "strongs": "H0133",
+   "sha256": "6e03b63399a1ed398dac0889e91f6115a86a1efd1023a8a8b53112d145017550",
+   "gloss": "Admata",
+   "definition": "Admata, un noble persa",
+   "derivation": "probablemente de derivación persa;"
+  },
+  {
+   "strongs": "H0134",
+   "sha256": "11e8f34f662aa36845bfdac8c4033617277dbd88dd7156f3ff425b3236b53ad9",
+   "gloss": "basa",
+   "definition": "una base (de un edificio, una columna, etc.)",
+   "derivation": "de lo mismo que 113 (en el sentido de fuerza);"
+  },
+  {
+   "strongs": "H0135",
+   "sha256": "5cf8326f3ab3d3f0f73f5dd49e82d9053102945e21fa47b1dd63b741ae2a66d7",
+   "gloss": "Addán",
+   "definition": "Addán, un israelita",
+   "derivation": "intensivo de lo mismo que 134; firme;"
+  },
+  {
+   "strongs": "H0136",
+   "sha256": "9667633a2af397e300bd963b92bac6b50ab01ad455e21b02056705ab18722251",
+   "gloss": "Señor",
+   "definition": "el Señor (usado solo como nombre propio de Dios)",
+   "derivation": "una forma enfática de 113;"
+  },
+  {
+   "strongs": "H0137",
+   "sha256": "7a7fde9610eaf96c27ca20f02cbc37585e2badf4d5c391941c32e0bbdfe72edd",
+   "gloss": "Adoni-bezec",
+   "definition": "Adoni-bezec; un rey cananeo",
+   "derivation": "de 113 y 966; señor de Bezec;"
+  },
+  {
+   "strongs": "H0138G",
+   "sha256": "af31cada56b88270763c303a89dddac52f29fed23935d6a1edfedef44cd1e645",
+   "gloss": "Adonías",
+   "definition": "Adonías, nombre de tres israelitas",
+   "derivation": "original (prolongado) אֲדֹנִיָּהוּ ; de 113 y 3050; señor (es decir, adorador) de Jah;"
+  },
+  {
+   "strongs": "H0138H",
+   "sha256": "af31cada56b88270763c303a89dddac52f29fed23935d6a1edfedef44cd1e645",
+   "gloss": "Adonías",
+   "definition": "Adonías, nombre de tres israelitas",
+   "derivation": "original (prolongado) אֲדֹנִיָּהוּ ; de 113 y 3050; señor (es decir, adorador) de Jah;"
+  },
+  {
+   "strongs": "H0138I",
+   "sha256": "af31cada56b88270763c303a89dddac52f29fed23935d6a1edfedef44cd1e645",
+   "gloss": "Adonías",
+   "definition": "Adonías, nombre de tres israelitas",
+   "derivation": "original (prolongado) אֲדֹנִיָּהוּ ; de 113 y 3050; señor (es decir, adorador) de Jah;"
+  },
+  {
+   "strongs": "H0139",
+   "sha256": "f69c97dd24a17665af50d214dc688cb7620003a2bc41361f11d8deb0aaba24c5",
+   "gloss": "Adonisedec",
+   "definition": "Adonisedec, un rey cananeo",
+   "derivation": "de 113 y 6664; señor de justicia;"
+  },
+  {
+   "strongs": "H0140",
+   "sha256": "bb0c0834572e33a0dd62a75aae2f3435ba730863331d7abdbc564c1d6b743430",
+   "gloss": "Adonicam",
+   "definition": "Adonicam, nombre de uno o dos israelitas",
+   "derivation": "de 113 y 6965; señor de levantamiento (es decir, alto);"
+  },
+  {
+   "strongs": "H0141",
+   "sha256": "868bccba5396859d69d5d130a211365c50dd5e0beb480f35d88ec19a359b74c9",
+   "gloss": "Adoniram",
+   "definition": "Adoniram, un israelita",
+   "derivation": "de 113 y 7311; señor de altura;"
+  },
+  {
+   "strongs": "H0142",
+   "sha256": "4b87fe6d841570a522a5117698c1e9eb35b49968ddd119501d7aea467b8e60dd",
+   "gloss": "ser glorioso",
+   "definition": "expandirse, es decir, ser grande o (figuradamente) magnífico",
+   "derivation": "raíz primitiva;"
+  },
+  {
+   "strongs": "H0143",
+   "sha256": "4aec3e0fa0eb53a1d009ed0a6446ca96cafdef6c65b53a0bb877a6e31d7827bd",
+   "gloss": "Adar",
+   "definition": "Adar, el 12.º mes hebreo",
+   "derivation": "probablemente de derivación extranjera; quizá significa fuego;"
+  },
+  {
+   "strongs": "H0144",
+   "sha256": "c060f283bcfe73de00741d32b59847145fffad0f2064b7f404c92c7bac8c8bf0",
+   "gloss": "Adar",
+   "derivation": "(arameo) correspondiente a 143"
+  },
+  {
+   "strongs": "H0145",
+   "sha256": "8697ee038784d4b91c7d2f567b395eecbbe6aabe6f7d47a839f9fa0e266a6741",
+   "gloss": "manto",
+   "definition": "amplitud, es decir, (concreto) un manto; también (figuradamente) esplendor",
+   "derivation": "de 142;"
+  },
+  {
+   "strongs": "H0146G",
+   "sha256": "08d48b4e2e9bd57cb0cf5c26eb3e3f22b385bc97c57be25669136af344781e52",
+   "gloss": "Adar",
+   "definition": "Adar, un lugar en Palestina; también un israelita",
+   "derivation": "intensivo de 142; amplio;"
+  },
+  {
+   "strongs": "H0146H",
+   "sha256": "08d48b4e2e9bd57cb0cf5c26eb3e3f22b385bc97c57be25669136af344781e52",
+   "gloss": "Adar",
+   "definition": "Adar, un lugar en Palestina; también un israelita",
+   "derivation": "intensivo de 142; amplio;"
+  },
+  {
+   "strongs": "H0147",
+   "sha256": "4d27d8e2204fdac9b6db3ef15eedf4cc43e7fb0765654495686c39f7e84703e0",
+   "gloss": "era",
+   "definition": "amplio, es decir, una era",
+   "derivation": "(arameo) intensivo, de una raíz correspondiente a 142;"
+  },
+  {
+   "strongs": "H0148",
+   "sha256": "5f61c6bd306caeecec6882c887bc2c3d0f5c0117dc2023d15a20f7de50da9404",
+   "gloss": "juez",
+   "definition": "un adivino principal, o astrólogo",
+   "derivation": "(arameo) de lo mismo que 147, y 1505;"
+  },
+  {
+   "strongs": "H0149",
+   "sha256": "20554d1f9a0c93f80590c090f07aaab579ffbb20fd332cdeab764c3c39835f05",
+   "gloss": "diligentemente",
+   "definition": "rápida o cuidadosamente",
+   "derivation": "(arameo) probablemente de origen persa;"
+  },
+  {
+   "strongs": "H0150",
+   "sha256": "6a5258a4a9f6c337b1e26441c32c0c94b2e4746a4ac20a1d02596961f6ac5a8a",
+   "gloss": "dracma",
+   "definition": "un dárico o moneda persa",
+   "derivation": "de origen persa;"
+  },
+  {
+   "strongs": "H0151",
+   "sha256": "d809ee182f1f7117cf6b608eda416dd529ed5f1d28090bfb0c059823fe05cea2",
+   "gloss": "Adoram",
+   "definition": "Adoram (o Adoniram), un israelita",
+   "derivation": "contracción de 141;"
+  },
+  {
+   "strongs": "H0152G",
+   "sha256": "d41e7c713ee3bdff2ef7bdbd2dc6654904d48d76830b5f00fb13785eb2cfecb9",
+   "gloss": "Adramelec",
+   "definition": "Adramelec, nombre de un ídolo asirio, también de un hijo de Senaquerib",
+   "derivation": "de 142 y 4428; esplendor del rey;"
+  },
+  {
+   "strongs": "H0152H",
+   "sha256": "d41e7c713ee3bdff2ef7bdbd2dc6654904d48d76830b5f00fb13785eb2cfecb9",
+   "gloss": "Adramelec",
+   "definition": "Adramelec, nombre de un ídolo asirio, también de un hijo de Senaquerib",
+   "derivation": "de 142 y 4428; esplendor del rey;"
+  },
+  {
+   "strongs": "H0153",
+   "sha256": "cb8ddb6d94f43fc017098d5a89f27cef17dc431096dac6ae8961b01684be9d56",
+   "gloss": "fuerza",
+   "definition": "un brazo, es decir, (figuradamente) poder",
+   "derivation": "(arameo) una variante ortográfica de 1872;"
+  },
+  {
+   "strongs": "H0154",
+   "sha256": "3e34b0889e1dfd862fe3d8f37d92ffaf76fdddcb12fd2d3d0c280ebe228665a5",
+   "gloss": "Edrei",
+   "definition": "Edrei, nombre de dos lugares en Palestina",
+   "derivation": "del equivalente de 153; poderoso;"
+  },
+  {
+   "strongs": "H0155",
+   "sha256": "60f914fdb725768e9cc7ee7515f08b0cffb9fef745aadf9d9998da67389c2cef",
+   "gloss": "vestido",
+   "definition": "algo amplio (como una vid grande, un vestido ancho)",
+   "derivation": "femenino de 117; ; también lo mismo que 145"
+  },
+  {
+   "strongs": "H0156",
+   "sha256": "fc6120e669574b14611eeb78c0665914451576dd571b71df96a8bc8af68106e8",
+   "gloss": "trillar",
+   "definition": "trillar (grano)",
+   "derivation": "raíz primitiva;"
+  },
+  {
+   "strongs": "H0157G",
+   "sha256": "d41439397b9684ffb9bbcb012cd9ef88c72cf0166af8d26f9eec03458a7b1fd0",
+   "gloss": "amar: amante",
+   "definition": "tener afecto por (sexualmente o de otro modo)",
+   "derivation": "o אָהֵב ; raíz primitiva;"
+  },
+  {
+   "strongs": "H0157H",
+   "sha256": "3cd0b75ba2708c2d3dbe9329d690496c2691fac8cf1f1ea61ff8a738ea054db4",
+   "gloss": "amar: amigo",
+   "definition": "tener afecto por (sexualmente o de otro modo)",
+   "derivation": "o אָהֵב ; raíz primitiva;"
+  },
+  {
+   "strongs": "H0158",
+   "sha256": "d42a68262f92d77b4f8e43b463a9913b87f5f5a795b4626add637616f4734999",
+   "gloss": "amante",
+   "definition": "afecto (en buen o mal sentido)",
+   "derivation": "de 157;"
+  },
+  {
+   "strongs": "H0159",
+   "sha256": "a326a647e613553f3d540be810170cafd966e3ce2ab41933fa9d67f297997272",
+   "gloss": "amado",
+   "derivation": "de 156; que significa lo mismo que 158"
+  },
+  {
+   "strongs": "H0160",
+   "sha256": "d7e200d4a948ab82896d0dd07fa6a194c7226cb70b89ee21bf680d0d0c0e560a",
+   "gloss": "amor",
+   "derivation": "femenino de 158 y que significa lo mismo"
+  },
+  {
+   "strongs": "H0161",
+   "sha256": "81884959ea6dc9185bb7c8236d797cd01513fe9f5fb98f7f63d6ef52be3b3730",
+   "gloss": "Ohad",
+   "definition": "Ohad, un israelita",
+   "derivation": "de una raíz no usada que significa estar unido; unidad;"
+  },
+  {
+   "strongs": "H0162",
+   "sha256": "7ef254e6841dfd50c986bbec5a9e5921939bd36ff8937c18d58a90608a36ec4e",
+   "gloss": "¡ay!",
+   "definition": "¡Ah!",
+   "derivation": "al parecer una palabra primitiva que expresa dolor en forma exclamativa;"
+  },
+  {
+   "strongs": "H0163",
+   "sha256": "ccd041d85e2424897f33b76446ae0d7d0f4821ffc1b0eb1d84afa385c89200b3",
+   "gloss": "Ahava",
+   "definition": "Ahava, un río de Babilonia",
+   "derivation": "probablemente de origen extranjero;"
+  },
+  {
+   "strongs": "H0164G",
+   "sha256": "dd8485b463d7ecf12c80355f462ccab6bfbc05322757554a064c2542790b5f4d",
+   "gloss": "Aod",
+   "definition": "Aod, nombre de dos o tres israelitas",
+   "derivation": "de lo mismo que 161; unido;"
+  },
+  {
+   "strongs": "H0164H",
+   "sha256": "dd8485b463d7ecf12c80355f462ccab6bfbc05322757554a064c2542790b5f4d",
+   "gloss": "Aod",
+   "definition": "Aod, nombre de dos o tres israelitas",
+   "derivation": "de lo mismo que 161; unido;"
+  },
+  {
+   "strongs": "H0165",
+   "sha256": "d1c244e576c390f0a3843c0783f0e8ce811aa88deec78f4e53fe38e47fb3a9cb",
+   "gloss": "¿dónde?",
+   "definition": "dónde",
+   "derivation": "al parecer una variante ortográfica de 346;"
+  },
+  {
+   "strongs": "H0166",
+   "sha256": "4e61bdd4b0df125045df74af3a038f0d46ed1f308e05bc0b8e1340d4959f3135",
+   "gloss": "resplandecer",
+   "definition": "ser claro",
+   "derivation": "raíz primitiva;"
+  },
+  {
+   "strongs": "H0167",
+   "sha256": "5fde792111a22aa504b2575243339331565a1cef999e8045eaac012c793a396c",
+   "gloss": "plantar la tienda",
+   "definition": "poner la tienda",
+   "derivation": "un denominativo de 168;"
+  },
+  {
+   "strongs": "H0168G",
+   "sha256": "f7083ba3c8183bf485e803093ca6d0404baec9bbf54683f2eb65147a4dcb8acc",
+   "gloss": "tienda",
+   "definition": "una tienda (como claramente visible desde lejos)",
+   "derivation": "de 166;"
+  },
+  {
+   "strongs": "H0168H",
+   "sha256": "ada92dc2f2aa4722cb8829281a1c4f6fba8188fd2fb16d93ffd5185f93a35c27",
+   "gloss": "tienda: hogar",
+   "definition": "una tienda (como claramente visible desde lejos)",
+   "derivation": "de 166;"
+  },
+  {
+   "strongs": "H0169",
+   "sha256": "0ab020f921a7d04097f8a8354127d718868bc2396478d37694953ea59c285802",
+   "gloss": "Ohel",
+   "definition": "Ohel, un israelita",
+   "derivation": "lo mismo que 168;"
+  },
+  {
+   "strongs": "H0170",
+   "sha256": "4e0847fb274397e89a45265f24d37befc91de8a2f42e181e6883acc7dbf8893c",
+   "gloss": "Ahola",
+   "definition": "Ahola, un nombre simbólico de Samaria",
+   "derivation": "en la forma un femenino de 168, pero en realidad por אׇהֳלָהּ; de 168; su tienda (es decir, santuario idolátrico);"
+  },
+  {
+   "strongs": "H0171",
+   "sha256": "b6ba3c3d8c7efc6c1e310ba99c6ee1252f70b7d865865b87835deb9ff5098f9d",
+   "gloss": "Aholiab",
+   "definition": "Aholiab, un israelita",
+   "derivation": "de 168 y 1; tienda de (su) padre;"
+  },
+  {
+   "strongs": "H0172",
+   "sha256": "faf074600bba0b24fefd0970b629fac39141822b28f8b5a1856fb058e537295b",
+   "gloss": "Aholiba",
+   "definition": "Aholiba, un nombre simbólico de Judá",
+   "derivation": "(de modo semejante a 170) por אׇהֳלִיבָהּ ; de 168; mi tienda (está) en ella;"
+  },
+  {
+   "strongs": "H0173G",
+   "sha256": "2aa300688d937bb920d3916aea6b7962c40cec84a218bea94c2684a7f9a3fd1a",
+   "gloss": "Aholibama",
+   "definition": "Aholibama, una esposa de Esaú",
+   "derivation": "de 168 y 1116; tienda de (la) altura;"
+  },
+  {
+   "strongs": "H0173H",
+   "sha256": "2aa300688d937bb920d3916aea6b7962c40cec84a218bea94c2684a7f9a3fd1a",
+   "gloss": "Aholibama",
+   "definition": "Aholibama, una esposa de Esaú",
+   "derivation": "de 168 y 1116; tienda de (la) altura;"
+  },
+  {
+   "strongs": "H0173I",
+   "sha256": "2aa300688d937bb920d3916aea6b7962c40cec84a218bea94c2684a7f9a3fd1a",
+   "gloss": "Aholibama",
+   "definition": "Aholibama, una esposa de Esaú",
+   "derivation": "de 168 y 1116; tienda de (la) altura;"
+  },
+  {
+   "strongs": "H0174",
+   "sha256": "3785a1f30c7c7b5c7db8bb98fcc567c0df3b593b0c22eed7bd290e705e2411e3",
+   "gloss": "áloe",
+   "definition": "madera de áloe (es decir, varas)",
+   "derivation": "o (femenino) אֲהָלוֹת (usado así solo en plural); de origen extranjero;"
+  },
+  {
+   "strongs": "H0175",
+   "sha256": "df4e31a8d548c6ea5d892a0412fef595cc24260838695bdee00a2fc6fe806027",
+   "gloss": "Aarón",
+   "definition": "Aarón, el hermano de Moisés",
+   "derivation": "de derivación incierta;"
+  },
+  {
+   "strongs": "H0176A",
+   "sha256": "b74f4c3c61ef3e771cb15195a7304cd1d5b1cfd20e3ac4e668da4b3195bcf781",
+   "gloss": "o",
+   "definition": "deseo (y así probablemente en Proverbios 31:4); de ahí (a modo de alternativa) o, también si",
+   "derivation": "supuestamente la forma 'constructa' o genitival de אַו ; abreviatura de 185;"
+  },
+  {
+   "strongs": "H0176B",
+   "sha256": "811e48320c74005ea6ec83d709c1ce7791a8c89f33ab82f05bf4869d6f9df9cd",
+   "gloss": "deseo",
+   "definition": "deseo (y así probablemente en Proverbios 31:4); de ahí (a modo de alternativa) o, también si",
+   "derivation": "supuestamente la forma 'constructa' o genitival de אַו ; abreviatura de 185;"
+  },
+  {
+   "strongs": "H0177",
+   "sha256": "df95f435aa24deae1730a37f3ed047a8e79d40157bdeb822181e0734daf3d0bd",
+   "gloss": "Uel",
+   "definition": "Uel, un israelita",
+   "derivation": "de 176 y 410; deseo de Dios;"
+  },
+  {
+   "strongs": "H0178",
+   "sha256": "6dfbb982366787fba594e51e2de64b506f8591a1a646ec0f462de6ce2158157f",
+   "gloss": "médium",
+   "definition": "propiamente, un murmullo, es decir, un odre (por su sonido hueco); de ahí un nigromante (ventrílocuo, como desde un cántaro)",
+   "derivation": "de lo mismo que 1 (al parecer a través de la idea de balbucear el nombre de un padre);"
+  },
+  {
+   "strongs": "H0179",
+   "sha256": "0bef62da11b3688871d6100bb23f8dd97236a7926e9d19c805aec46addbabc92",
+   "gloss": "Obil",
+   "definition": "Obil, un ismaelita",
+   "derivation": "probablemente de 56; lúgubre;"
+  },
+  {
+   "strongs": "H0180",
+   "sha256": "4f9edd101573e3f2efa620d2cf525868ab95fb246f8755f44cf0dab1db666e0f",
+   "gloss": "río",
+   "definition": "una corriente",
+   "derivation": "o (abreviado) אֻבָל ; de 2986 (en el sentido de 2988);"
+  },
+  {
+   "strongs": "H0181",
+   "sha256": "c5f8c9a9f590f48adb01e5abb8302210445e77a82fd4c83254e0d97275288246",
+   "gloss": "tizón",
+   "definition": "un atizador (para remover o juntar las brasas)",
+   "derivation": "de una raíz no usada que significa rastrillar;"
+  },
+  {
+   "strongs": "H0182",
+   "sha256": "645791c4d0c7c170a0d391e67aab398de3a1d44545eab30726fec101a33d847f",
+   "gloss": "porque",
+   "definition": "vueltas (es decir, ocasiones); (adverbio) a causa de",
+   "derivation": "o (abreviado) אֹדוֹת (solo así en plural); de lo mismo que 181;"
+  },
+  {
+   "strongs": "H0183",
+   "sha256": "3ebf64491ce72437454aada6a3b2bb12cff35b1e20998b302da89bf48409a1fb",
+   "gloss": "desear",
+   "definition": "anhelar",
+   "derivation": "raíz primitiva;"
+  },
+  {
+   "strongs": "H0184",
+   "sha256": "3d9f481f6912a306b1ce1336edf5ce1ffe2dea976d6ab27bf7ea3519bd055874",
+   "gloss": "trazar",
+   "definition": "extender o trazar",
+   "derivation": "raíz primitiva;"
+  },
+  {
+   "strongs": "H0185",
+   "sha256": "289ba9da0b1c4f70e9511a2eaca4001c428ed8127667874cebfb48564fd86625",
+   "gloss": "deseo",
+   "definition": "anhelo",
+   "derivation": "de 183;"
+  },
+  {
+   "strongs": "H0186",
+   "sha256": "455d9bb51d7081962dbf94e7757d50526abfaa864269edf86fb6f83f48556d50",
+   "gloss": "Uzai",
+   "definition": "Uzai, un israelita",
+   "derivation": "quizá por permutación por 5813, fuerte;"
+  },
+  {
+   "strongs": "H0187G",
+   "sha256": "758d9c624dd0c9e318ae05d21b0e7a0c055dedc2946346eee630fa8810c0fef2",
+   "gloss": "Uzal",
+   "definition": "Uzal, un hijo de Joctán",
+   "derivation": "de derivación incierta;"
+  },
+  {
+   "strongs": "H0187H",
+   "sha256": "758d9c624dd0c9e318ae05d21b0e7a0c055dedc2946346eee630fa8810c0fef2",
+   "gloss": "Uzal",
+   "definition": "Uzal, un hijo de Joctán",
+   "derivation": "de derivación incierta;"
+  },
+  {
+   "strongs": "H0188",
+   "sha256": "d445992e8dd90698a6a1ddf2bb85df33f1dffc5f53dfed6b6671e770074f8bcd",
+   "gloss": "¡ay!",
+   "definition": "lamentación; también como interjección ¡Ay!",
+   "derivation": "probablemente de 183 (en el sentido de clamar tras algo);"
+  },
+  {
+   "strongs": "H0189",
+   "sha256": "6db203a3fd95ed9964059156a9bf9c42c45f13670b625bc2a6cfe89ec7e23035",
+   "gloss": "Evi",
+   "definition": "Evi, un jefe madianita",
+   "derivation": "probablemente de 183; deseoso;"
+  },
+  {
+   "strongs": "H0190",
+   "sha256": "a0a7fcaee2690c9b3f89a2ca7bac6a4c13c69ce905c8c550ec3379f9e7519cca",
+   "gloss": "¡ay!",
+   "derivation": "femenino de 188"
+  },
+  {
+   "strongs": "H0191",
+   "sha256": "0e78d92a7c7c3c0488f6847dd283dae0a8b35eb7baaf123fe1791a38188f2563",
+   "gloss": "necio",
+   "definition": "(figuradamente) necio",
+   "derivation": "de una raíz no usada (que significa ser perverso);"
+  },
+  {
+   "strongs": "H0192",
+   "sha256": "854eafc33da5fdfba55586d8e7d14f9ce32e6644729ac24d85b5c594b9c8ae9d",
+   "gloss": "Evil-merodac",
+   "definition": "Evil-merodac, un rey babilonio",
+   "derivation": "de derivación aramea y que probablemente significa soldado de Merodac;"
+  },
+  {
+   "strongs": "H0193A",
+   "sha256": "d33601e21e5f7cfbea45637df776d5ef4db828d6d6eb5f488a701035d377802f",
+   "gloss": "fuerza",
+   "definition": "el cuerpo (como enrollado sobre sí); también poderoso",
+   "derivation": "de una raíz no usada que significa torcer, es decir, (por implicación) ser fuerte;"
+  },
+  {
+   "strongs": "H0193B",
+   "sha256": "8b80fd242e55676d6ad1c0c66ccc6d0258b6808f2eeac04873c108ccf81cc42b",
+   "gloss": "poderoso",
+   "definition": "el cuerpo (como enrollado sobre sí); también poderoso",
+   "derivation": "de una raíz no usada que significa torcer, es decir, (por implicación) ser fuerte;"
+  },
+  {
+   "strongs": "H0194",
+   "sha256": "d65bcc4ee19b79ffb1ac3614d2ab27d3684fe4dafcff9796d1b5c88b6bd5df64",
+   "gloss": "quizá",
+   "definition": "si no; de ahí quizá",
+   "derivation": "o (abreviado) אֻלַי; de 176;"
+  },
+  {
+   "strongs": "H0195",
+   "sha256": "1797b6f2b7380cb5233bd643edcddfe5e115dcfe02443178241d53c09e79ffd1",
+   "gloss": "Ulai",
+   "definition": "el Ulai (o Euleo), un río de Persia",
+   "derivation": "de derivación persa;"
+  },
+  {
+   "strongs": "H0196",
+   "sha256": "7bbbb62f599d675ab0adaf9f80393e11fb7180b5563658b13c55c0244a5db73b",
+   "gloss": "insensato",
+   "definition": "necio, insensato; de ahí (moralmente) impío",
+   "derivation": "de 191;"
+  },
+  {
+   "strongs": "H0197G",
+   "sha256": "a480c0820ff726f2703f3404d819e8702e9a0f17b499536edb66b2208c0d2c07",
+   "gloss": "Sala (de las columnas)",
+   "definition": "un vestíbulo (como unido al edificio)",
+   "derivation": "o (abreviado), אֻלָם ; de 481 (en el sentido de atar);"
+  },
+  {
+   "strongs": "H0197H",
+   "sha256": "665692c5abdc0eb7d2e8f95c39860d1033df3cfc974d9df6d7f2db7e0e93650e",
+   "gloss": "Sala (del Juicio)",
+   "definition": "un vestíbulo (como unido al edificio)",
+   "derivation": "o (abreviado), אֻלָם ; de 481 (en el sentido de atar);"
+  },
+  {
+   "strongs": "H0197I",
+   "sha256": "9180cf9529df0a0186e816f11de26641f54b82911ada75c79901aad9cd2459a1",
+   "gloss": "Sala (del Trono)",
+   "definition": "un vestíbulo (como unido al edificio)",
+   "derivation": "o (abreviado), אֻלָם ; de 481 (en el sentido de atar);"
+  },
+  {
+   "strongs": "H0197J",
+   "sha256": "ec5ff72773cc41e10ac9586d2964581b945a4fe3d11695c60e6cba1e276aafa5",
+   "gloss": "Pórtico",
+   "definition": "un vestíbulo (como unido al edificio)",
+   "derivation": "o (abreviado), אֻלָם ; de 481 (en el sentido de atar);"
+  },
+  {
+   "strongs": "H0198G",
+   "sha256": "d98f90d3701ed29675004d715d93b884e7024e81ba5735c19f15a9f94d8e553a",
+   "gloss": "Ulam",
+   "definition": "Ulam, nombre de dos israelitas",
+   "derivation": "al parecer, de 481 (en el sentido de mudez); solitario;"
+  },
+  {
+   "strongs": "H0198H",
+   "sha256": "d98f90d3701ed29675004d715d93b884e7024e81ba5735c19f15a9f94d8e553a",
+   "gloss": "Ulam",
+   "definition": "Ulam, nombre de dos israelitas",
+   "derivation": "al parecer, de 481 (en el sentido de mudez); solitario;"
+  },
+  {
+   "strongs": "H0199",
+   "sha256": "e7148e9bf91f4c0050a0070bb04117db508a045de4a91988395ced2e13fe50a9",
+   "gloss": "pero",
+   "definition": "sin embargo o por el contrario",
+   "derivation": "al parecer una variante de 194;"
+  },
+  {
+   "strongs": "H0200",
+   "sha256": "12ce7ba738b3ccdfe824831333266516aee7a6afc6ca1eb78811ba0afed0c640",
+   "gloss": "insensatez",
+   "definition": "necedad",
+   "derivation": "de lo mismo que 191;"
+  },
+  {
+   "strongs": "H0201",
+   "sha256": "eed0ab792057768bf56ad8196f7857d56cdff2139cea870bc41590282be836b0",
+   "gloss": "Omar",
+   "definition": "Omar, un nieto de Esaú",
+   "derivation": "de 559; locuaz;"
+  },
+  {
+   "strongs": "H0202",
+   "sha256": "fbb169339806f30453efda833019a58405bd1dc763d1ed578ec6dd1da2ee215f",
+   "gloss": "fuerza",
+   "definition": "capacidad, poder, (figuradamente) riqueza",
+   "derivation": "probablemente de lo mismo que 205 (en el sentido de esfuerzo, pero fructuoso);"
+  },
+  {
+   "strongs": "H0203",
+   "sha256": "ae738f286e5d4307b5e5159d934bd09601deb5830807b4546f078e889992a5bd",
+   "gloss": "On",
+   "definition": "On, un israelita",
+   "derivation": "lo mismo que 202;"
+  },
+  {
+   "strongs": "H0204",
+   "sha256": "72d934b3888c45ba3d3ff597bafc031b8eed06c6158d5007710329ec60ddd982",
+   "gloss": "On",
+   "definition": "On, una ciudad de Egipto",
+   "derivation": "o (abreviado); אֹן; de derivación egipcia;"
+  },
+  {
+   "strongs": "H0205G",
+   "sha256": "e179ee735766d278be8119a0bb40e0c4816c0962579351058bec0fa22e262724",
+   "gloss": "maldad: iniquidad",
+   "definition": "estrictamente nada; también aflicción, vanidad, maldad; específicamente un ídolo",
+   "derivation": "de una raíz no usada que quizá significa propiamente, jadear (de ahí, esforzarse, por lo general en vano; quedar en nada);"
+  },
+  {
+   "strongs": "H0205H",
+   "sha256": "79018aecde3c68df34f20097b37277b4420b2a113de1ab46359d32a4b1bfa8ee",
+   "gloss": "maldad: aflicción",
+   "definition": "estrictamente nada; también aflicción, vanidad, maldad; específicamente un ídolo",
+   "derivation": "de una raíz no usada que quizá significa propiamente, jadear (de ahí, esforzarse, por lo general en vano; quedar en nada);"
+  },
+  {
+   "strongs": "H0206G",
+   "sha256": "2769f1787e352342ddd78abfd4920cb3b065b43b354aad3cd13cb523c5fafa59",
+   "gloss": "(Valle de) Avén",
+   "definition": "Avén, el sinónimo despectivo de tres lugares, uno en Celesiria, uno en Egipto (On) y uno en Palestina (Bet-el)",
+   "derivation": "lo mismo que 205; idolatría;"
+  },
+  {
+   "strongs": "H0206H",
+   "sha256": "94f33771b0b45b5bf2e04d5fec7fb078ee6243e90f8d0604dd0ffdcf04e73af6",
+   "gloss": "Avén",
+   "definition": "Avén, el sinónimo despectivo de tres lugares, uno en Celesiria, uno en Egipto (On) y uno en Palestina (Bet-el)",
+   "derivation": "lo mismo que 205; idolatría;"
+  },
+  {
+   "strongs": "H0207",
+   "sha256": "78186e9d2b1a43edcb7cf628bb50f18227e60ba0bfb65b67c5f1e0b6db5bd5e9",
+   "gloss": "Ono",
+   "definition": "Ono, un lugar en Palestina",
+   "derivation": "o (abreviado) אֹנוֹ; prolongado de 202; fuerte;"
+  },
+  {
+   "strongs": "H0208G",
+   "sha256": "5d74fe89b1b6cc7b2f32ab6eaaf46a58ac9678329a228eb8fe71891160c6d406",
+   "gloss": "Onam",
+   "definition": "Onam, nombre de un edomita y de un israelita",
+   "derivation": "una variante de 209; fuerte;"
+  },
+  {
+   "strongs": "H0208H",
+   "sha256": "5d74fe89b1b6cc7b2f32ab6eaaf46a58ac9678329a228eb8fe71891160c6d406",
+   "gloss": "Onam",
+   "definition": "Onam, nombre de un edomita y de un israelita",
+   "derivation": "una variante de 209; fuerte;"
+  },
+  {
+   "strongs": "H0209",
+   "sha256": "fc5bdf94dcd055cc2c40d8d5bab167abd0a0852c3669692999aa5f23132d6949",
+   "gloss": "Onán",
+   "definition": "Onán, un hijo de Judá",
+   "derivation": "una variante de 207; fuerte;"
+  },
+  {
+   "strongs": "H0210",
+   "sha256": "bff21aeb9a048cd6818468c953a7dad53534b970c8e9532a10db83981c1b962e",
+   "gloss": "Ufaz",
+   "definition": "Ufaz, una famosa región del oro",
+   "derivation": "quizá una corrupción de 211;"
+  },
+  {
+   "strongs": "H0211G",
+   "sha256": "fa15bd216aaf7573616f93446ce7780696631bc8307f3d43539aa4ef89b8b291",
+   "gloss": "Ofir",
+   "definition": "Ofir, nombre de un hijo de Joctán, y de una región del oro en el Oriente",
+   "derivation": "o (abreviado) אֹפִיר; y אוֹפִר; de derivación incierta;"
+  },
+  {
+   "strongs": "H0211H",
+   "sha256": "fa15bd216aaf7573616f93446ce7780696631bc8307f3d43539aa4ef89b8b291",
+   "gloss": "Ofir",
+   "definition": "Ofir, nombre de un hijo de Joctán, y de una región del oro en el Oriente",
+   "derivation": "o (abreviado) אֹפִיר; y אוֹפִר; de derivación incierta;"
+  },
+  {
+   "strongs": "H0212",
+   "sha256": "c4deb2fecbc38949f717200cd226491736391a90225660df3ded822a5d95f6d4",
+   "gloss": "rueda",
+   "definition": "una rueda",
+   "derivation": "o (abreviado) אֹפָן; de una raíz no usada que significa girar;"
+  },
+  {
+   "strongs": "H0213",
+   "sha256": "7735f8ee6aceb2e2e5c6fff43175bd2f5412b2463b88efd98456e2f79ddbb2f7",
+   "gloss": "apresurarse",
+   "definition": "apretar; (por implicación) estar estrecho, apresurarse, retirarse",
+   "derivation": "raíz primitiva;"
+  },
+  {
+   "strongs": "H0214",
+   "sha256": "3479a772f84fbe53e3a2c27651934dd64904e487603ee99e9a04ae881a020161",
+   "gloss": "tesoro",
+   "definition": "un depósito",
+   "derivation": "de 686;"
+  },
+  {
+   "strongs": "H0215",
+   "sha256": "5cb75b295243dbbc0b7624c46ebfc2bcc18cee2e0cb1f6e8fd7759df4986a3dd",
+   "gloss": "alumbrar",
+   "definition": "ser (causativo, hacer) luminoso (literal y metafóricamente)",
+   "derivation": "raíz primitiva;"
+  },
+  {
+   "strongs": "H0216",
+   "sha256": "c43dee555f5462c92909821e8bba3a27edb3a49cef9f15f38649631305246b2b",
+   "gloss": "luz",
+   "definition": "iluminación o (concreto) lumbrera (en todo sentido, incluidos el relámpago, la felicidad, etc.)",
+   "derivation": "de 215;"
+  },
+  {
+   "strongs": "H0217A",
+   "sha256": "e5b2801c083a042d9de82c9283522be886c7380534af76d43c9385029c4ed6d8",
+   "gloss": "llama",
+   "definition": "llama; de ahí (en plural) el Oriente (como la región de la luz)",
+   "derivation": "de 215;"
+  },
+  {
+   "strongs": "H0217B",
+   "sha256": "e5b2801c083a042d9de82c9283522be886c7380534af76d43c9385029c4ed6d8",
+   "gloss": "llama",
+   "definition": "llama; de ahí (en plural) el Oriente (como la región de la luz)",
+   "derivation": "de 215;"
+  },
+  {
+   "strongs": "H0218A",
+   "sha256": "21af99d384fe1473615883e10702b1eb4af09a21e1a3e2687c9127c94b34bda6",
+   "gloss": "Ur",
+   "definition": "Ur, un lugar en Caldea; también un israelita",
+   "derivation": "lo mismo que 217;"
+  },
+  {
+   "strongs": "H0218B",
+   "sha256": "21af99d384fe1473615883e10702b1eb4af09a21e1a3e2687c9127c94b34bda6",
+   "gloss": "Ur",
+   "definition": "Ur, un lugar en Caldea; también un israelita",
+   "derivation": "lo mismo que 217;"
+  },
+  {
+   "strongs": "H0219A",
+   "sha256": "96d7481085537621904eac08bf3c79dd571e599b7724029a16fce38899affdcd",
+   "gloss": "luz",
+   "definition": "luminosidad, es decir, (figuradamente) prosperidad; también una planta (por ser brillante)",
+   "derivation": "femenino de 216;"
+  },
+  {
+   "strongs": "H0219B",
+   "sha256": "112dea8737ebbff2706608cc3727812aadbc492a397546ae0419c0af19134341",
+   "gloss": "hierba",
+   "definition": "luminosidad, es decir, (figuradamente) prosperidad; también una planta (por ser brillante)",
+   "derivation": "femenino de 216;"
+  },
+  {
+   "strongs": "H0220",
+   "sha256": "a7410dab0880843436586393f6e7f875399b59e2de32614d8905cb3e2c453ea9",
+   "gloss": "establo",
+   "definition": "un establo",
+   "derivation": "por transposición por 723;"
+  },
+  {
+   "strongs": "H0221G",
+   "sha256": "d639e823da1988a1761c7475046dc6fa6e3fcb92623403231b839a060f3bed02",
+   "gloss": "Uri",
+   "definition": "Uri, nombre de tres israelitas",
+   "derivation": "de 217; ardiente;"
+  },
+  {
+   "strongs": "H0221H",
+   "sha256": "d639e823da1988a1761c7475046dc6fa6e3fcb92623403231b839a060f3bed02",
+   "gloss": "Uri",
+   "definition": "Uri, nombre de tres israelitas",
+   "derivation": "de 217; ardiente;"
+  },
+  {
+   "strongs": "H0221I",
+   "sha256": "d639e823da1988a1761c7475046dc6fa6e3fcb92623403231b839a060f3bed02",
+   "gloss": "Uri",
+   "definition": "Uri, nombre de tres israelitas",
+   "derivation": "de 217; ardiente;"
+  },
+  {
+   "strongs": "H0222G",
+   "sha256": "cd0d941b07a49d7403ead73a45dac11185b90bae7385d5ffaefaf4ebb087422d",
+   "gloss": "Uriel",
+   "definition": "Uriel, nombre de dos israelitas",
+   "derivation": "de 217 y 410; llama de Dios;"
+  },
+  {
+   "strongs": "H0222H",
+   "sha256": "cd0d941b07a49d7403ead73a45dac11185b90bae7385d5ffaefaf4ebb087422d",
+   "gloss": "Uriel",
+   "definition": "Uriel, nombre de dos israelitas",
+   "derivation": "de 217 y 410; llama de Dios;"
+  },
+  {
+   "strongs": "H0222I",
+   "sha256": "cd0d941b07a49d7403ead73a45dac11185b90bae7385d5ffaefaf4ebb087422d",
+   "gloss": "Uriel",
+   "definition": "Uriel, nombre de dos israelitas",
+   "derivation": "de 217 y 410; llama de Dios;"
+  },
+  {
+   "strongs": "H0223A",
+   "sha256": "82c45aab81ddb15eed05b73013c5a42af333635db1fc4258759aae592c081911",
+   "gloss": "Urías",
+   "definition": "Urías, nombre de un heteo y de cinco israelitas",
+   "derivation": "o (prolongado) אוּרִיָּהוּ ; de 217 y 3050; llama de Jah;"
+  },
+  {
+   "strongs": "H0223B",
+   "sha256": "82c45aab81ddb15eed05b73013c5a42af333635db1fc4258759aae592c081911",
+   "gloss": "Urías",
+   "definition": "Urías, nombre de un heteo y de cinco israelitas",
+   "derivation": "o (prolongado) אוּרִיָּהוּ ; de 217 y 3050; llama de Jah;"
+  },
+  {
+   "strongs": "H0223G",
+   "sha256": "82c45aab81ddb15eed05b73013c5a42af333635db1fc4258759aae592c081911",
+   "gloss": "Urías",
+   "definition": "Urías, nombre de un heteo y de cinco israelitas",
+   "derivation": "o (prolongado) אוּרִיָּהוּ ; de 217 y 3050; llama de Jah;"
+  },
+  {
+   "strongs": "H0223H",
+   "sha256": "82c45aab81ddb15eed05b73013c5a42af333635db1fc4258759aae592c081911",
+   "gloss": "Urías",
+   "definition": "Urías, nombre de un heteo y de cinco israelitas",
+   "derivation": "o (prolongado) אוּרִיָּהוּ ; de 217 y 3050; llama de Jah;"
+  },
+  {
+   "strongs": "H0223I",
+   "sha256": "82c45aab81ddb15eed05b73013c5a42af333635db1fc4258759aae592c081911",
+   "gloss": "Urías",
+   "definition": "Urías, nombre de un heteo y de cinco israelitas",
+   "derivation": "o (prolongado) אוּרִיָּהוּ ; de 217 y 3050; llama de Jah;"
+  },
+  {
+   "strongs": "H0224",
+   "sha256": "1ca9813f407e39e41faecc34221d0f04cf183d612c84cbb21bcabfcdfd9bb892",
+   "gloss": "Urim",
+   "definition": "Urim, el brillo oracular de las figuras del pectoral del sumo sacerdote",
+   "derivation": "plural de 217; luces;"
+  },
+  {
+   "strongs": "H0225",
+   "sha256": "14dcd9698d5292c0860eee6fedd5d2f5c776d978c0c3030036e246805da6bf08",
+   "gloss": "consentir",
+   "definition": "propiamente, venir, es decir, (implícito) asentir",
+   "derivation": "raíz primitiva;"
+  },
+  {
+   "strongs": "H0226G",
+   "sha256": "651338a7660b4134cb6cd0844ae641238ca2d9f384d8fb800b26a53bdd5a1beb",
+   "gloss": "señal: milagrosa",
+   "definition": "una señal (literal o figuradamente), como una bandera, almenara, monumento, presagio, prodigio, evidencia, etc.",
+   "derivation": "probablemente de 225 (en el sentido de aparecer);"
+  },
+  {
+   "strongs": "H0226H",
+   "sha256": "9bbea948654b987e64a34c79f841ad93206acc4d914c2cd6d3da464ec9bb0bab",
+   "gloss": "señal:  indicio",
+   "definition": "una señal (literal o figuradamente), como una bandera, almenara, monumento, presagio, prodigio, evidencia, etc.",
+   "derivation": "probablemente de 225 (en el sentido de aparecer);"
+  },
+  {
+   "strongs": "H0227A",
+   "sha256": "e0ace763cdd503c7c1239ccc7964dace87e44737f670bde6145f3f8bc199ff5e",
+   "gloss": "entonces",
+   "definition": "en aquel tiempo o lugar; también como conjunción, por tanto",
+   "derivation": "un adverbio demostrativo;"
+  },
+  {
+   "strongs": "H0227B",
+   "sha256": "19c43571ef38722de5d53849bb4dbe54ba51cb03357232eae0bb9115269ee828",
+   "gloss": "el pasado",
+   "definition": "en aquel tiempo o lugar; también como conjunción, por tanto",
+   "derivation": "un adverbio demostrativo;"
+  },
+  {
+   "strongs": "H0228",
+   "sha256": "ede17772a9a4a6984215da8be38bfd0f7a8f7d46f9c9c8889f12c00272b88239",
+   "gloss": "calentar",
+   "definition": "encender; (por implicación) calentar",
+   "derivation": "(arameo) o אֲזָה (arameo);"
+  },
+  {
+   "strongs": "H0229",
+   "sha256": "76f51e03b362db1d69aa3b731e4d9a2c4e863d9615981022981b1901f7e7af5e",
+   "gloss": "Ezbai",
+   "definition": "Ezbai, un israelita",
+   "derivation": "probablemente de 231; semejante al hisopo;"
+  },
+  {
+   "strongs": "H0230",
+   "sha256": "37a655f0fd9beb91debb19470f2e61edfcf4ea663dda342fb115d9a75577d062",
+   "gloss": "ido",
+   "definition": "firme",
+   "derivation": "(arameo) de derivación incierta;"
+  },
+  {
+   "strongs": "H0231",
+   "sha256": "6f8d91b9fecc19c95c252ea41e61a85d1a7151efc4253a75c03c7e935e5a1930",
+   "gloss": "hisopo",
+   "definition": "hisopo",
+   "derivation": "probablemente de derivación extranjera;"
+  },
+  {
+   "strongs": "H0232",
+   "sha256": "2f0f0beb9fcb9e4b389b2996ce1d2734f5b8737faee8d177ccdbe2c3956ea991",
+   "gloss": "cinto",
+   "definition": "algo ceñido; un cinto, también una banda",
+   "derivation": "de 246;"
+  },
+  {
+   "strongs": "H0233",
+   "sha256": "27f54d3a12d1051e6e500383ae8a3ecebfde8d28ca0594a6c5836f1699e44450",
+   "gloss": "en ese caso",
+   "definition": "en aquel tiempo",
+   "derivation": "probablemente de 227;"
+  },
+  {
+   "strongs": "H0234",
+   "sha256": "b9583144b7554ca9352f7c4768c91d91d489c25e98d955ade0430ccdf3825077",
+   "gloss": "recordatorio",
+   "definition": "un recordatorio; específicamente ofrenda memorial",
+   "derivation": "de 2142;"
+  },
+  {
+   "strongs": "H0235",
+   "sha256": "01b48a808d38f8289559086a34fd71c5fc70eed7422060f4ce6d047d5307ee88",
+   "gloss": "irse",
+   "definition": "irse, de ahí, desaparecer",
+   "derivation": "raíz primitiva;"
+  },
+  {
+   "strongs": "H0236",
+   "sha256": "67ce6d53b450b111de442241be59a8442bf2db0fdd690ddc42fd10040589a8c9",
+   "gloss": "ir",
+   "definition": "partir",
+   "derivation": "(arameo) lo mismo que 235;"
+  },
+  {
+   "strongs": "H0237",
+   "sha256": "cf9298dcbc6c52ca8146608c4146861a5b1c02d0f6b7fe350c68ed22043d66d5",
+   "gloss": "Ezel",
+   "definition": "Ezel, una piedra memorial en Palestina",
+   "derivation": "de 235; partida;"
+  },
+  {
+   "strongs": "H0238",
+   "sha256": "d4efc917a250a3367f33e2bcc0928cd2316257ca67bd5fa943755f306c7bfcdf",
+   "gloss": "escuchar",
+   "definition": "ensanchar la oreja (con la mano), es decir, (por implicación) escuchar",
+   "derivation": "raíz primitiva; probablemente expandir; pero usada solo como denominativo de 241;"
+  },
+  {
+   "strongs": "H0239",
+   "sha256": "b5c03fe0c7f3775d2b61e0395a8890fe785941616bbc6a4aa6ff85e0b97f84e7",
+   "gloss": "ponderar",
+   "definition": "pesar, es decir, (figuradamente) ponderar",
+   "derivation": "raíz primitiva (más bien idéntica a 238 a través de la idea de una balanza como si fueran dos orejas);"
+  },
+  {
+   "strongs": "H0240",
+   "sha256": "5d1ca883f1c10f8a739efeb3a93f943a00096c57912382f9cd76420df6c6208c",
+   "gloss": "arma",
+   "definition": "una pala o remo (por tener un extremo ancho)",
+   "derivation": "de 238;"
+  },
+  {
+   "strongs": "H0241G",
+   "sha256": "ec73e2f84f923547251f796b9e9e1c18d991436ede884b65a65792ce2e19957d",
+   "gloss": "oído",
+   "definition": "anchura. es decir, (concreto) la oreja (por su forma en el hombre)",
+   "derivation": "de 238;"
+  },
+  {
+   "strongs": "H0241H",
+   "sha256": "015cff8392c2bbd691e8700c6f07758099ddf6b97122cfa1adc31467806434ca",
+   "gloss": "oído: audición",
+   "definition": "anchura. es decir, (concreto) la oreja (por su forma en el hombre)",
+   "derivation": "de 238;"
+  },
+  {
+   "strongs": "H0241I",
+   "sha256": "88be771104634b3717f0e8b1154b4c608a68fa0baa1bf6b76ccc95062183cdc5",
+   "gloss": "oído: a los oídos",
+   "definition": "anchura. es decir, (concreto) la oreja (por su forma en el hombre)",
+   "derivation": "de 238;"
+  },
+  {
+   "strongs": "H0242",
+   "sha256": "61818630b1c6abbe8478d0054aaaf6f58396d4a3222ce937a04f1d657a964e06",
+   "gloss": "Uzen-seera",
+   "definition": "Uzen-seera, un lugar en Palestina",
+   "derivation": "de 238 y 7609; parcela de Seera (es decir, poblada por ella);"
+  },
+  {
+   "strongs": "H0243",
+   "sha256": "23a6c1dcfa8d23c8885fe6570852c978bda6854950646ad715e96647ef8faf52",
+   "gloss": "Aznot-tabor",
+   "definition": "Aznot-tabor, un lugar en Palestina",
+   "derivation": "de 238 y 8396; llanos (es decir, cumbres) de Tabor (es decir, situados en él);"
+  },
+  {
+   "strongs": "H0244A",
+   "sha256": "ab7636179e6fdd883dfd330aeb96a921c89663b201189161df12356adaa789ce",
+   "gloss": "Ozni",
+   "definition": "Ozni, un israelita; también un oznita (colectivamente), su descendiente",
+   "derivation": "de 241; que tiene oídos (rápidos);"
+  },
+  {
+   "strongs": "H0244B",
+   "sha256": "48c28fb1b7abc1cba01a59868adb98305d50231d16003f14e23f380e4f16d459",
+   "gloss": "oznita",
+   "definition": "Ozni, un israelita; también un oznita (colectivamente), su descendiente",
+   "derivation": "de 241; que tiene oídos (rápidos);"
+  },
+  {
+   "strongs": "H0245",
+   "sha256": "0b4a58196d1a3f28e0ff5c980d1d88532d93aac938052c9838d98328d50deb75",
+   "gloss": "Azanías",
+   "definition": "Azanías, un israelita",
+   "derivation": "de 238 y 3050; oído por Jah;"
+  },
+  {
+   "strongs": "H0246",
+   "sha256": "dcaf7e87cc13156359ce9004b2e7279999620c31d233a4943d2090e7680274dc",
+   "gloss": "cadenas",
+   "definition": "esposas (grilletes)",
+   "derivation": "una variante de 2131;"
+  },
+  {
+   "strongs": "H0247",
+   "sha256": "4f5b8cc070b0ca938c38fa0b42f7cd17a5187ea7e2e6d4079629bbffccbe9dc4",
+   "gloss": "ceñir",
+   "definition": "ceñir",
+   "derivation": "raíz primitiva;"
+  },
+  {
+   "strongs": "H0248",
+   "sha256": "5e13899b5f38c74f563237b67cc41f9908adea49b27767ecd5c83113395ba4dc",
+   "gloss": "brazo",
+   "definition": "el brazo",
+   "derivation": "una variante de 2220;"
+  },
+  {
+   "strongs": "H0249",
+   "sha256": "bcf0613e58bbc8f1b3487f758cf31d2e028a621d4788d80cdf936b8e7ce06dcc",
+   "gloss": "nativo",
+   "definition": "un crecimiento espontáneo, es decir, nativo (árbol o personas)",
+   "derivation": "de 2224 (en el sentido de brotar);"
+  },
+  {
+   "strongs": "H0250",
+   "sha256": "66527d816e924156cb9c75ad09db281fc6fd0d2f2b76bbdc0dd510a91e0fa0fd",
+   "gloss": "ezraíta",
+   "definition": "un ezraíta o descendiente de Zera",
+   "derivation": "patronímico de 2226;"
+  },
+  {
+   "strongs": "H0251G",
+   "sha256": "b19b88d92bf8e3bd9c785cbc47b5fbe0193ba2895713631ed390a431f27affe2",
+   "gloss": "hermano: hermano varón",
+   "definition": "un hermano (usado en el sentido más amplio de parentesco literal y de afinidad o semejanza metafórica [como 1])",
+   "derivation": "palabra primitiva;"
+  },
+  {
+   "strongs": "H0251H",
+   "sha256": "ad3d8bb14a0d83f126bb961e9f76d0af8d958a36d0b0c15c6205083e600ac634",
+   "gloss": "hermano: pariente varón",
+   "definition": "un hermano (usado en el sentido más amplio de parentesco literal y de afinidad o semejanza metafórica [como 1])",
+   "derivation": "palabra primitiva;"
+  },
+  {
+   "strongs": "H0251I",
+   "sha256": "34fe6db11342ac4ef3878f187dbd6526778f82f7ecf030ebbb49c0743644e3d8",
+   "gloss": "hermano: compatriota",
+   "definition": "un hermano (usado en el sentido más amplio de parentesco literal y de afinidad o semejanza metafórica [como 1])",
+   "derivation": "palabra primitiva;"
+  },
+  {
+   "strongs": "H0252",
+   "sha256": "e31ddf6f967e50777054c3d41c02d318ae43b35b2c67f2455c570a1572c94984",
+   "gloss": "hermano",
+   "derivation": "(arameo) correspondiente a 251"
+  },
+  {
+   "strongs": "H0253",
+   "sha256": "740aaa39c6eeca6fe1d1c30e927e209a7f6fd6c75ab67e13abc95c7881d44783",
+   "gloss": "¡ah!",
+   "definition": "¡Ah! (que expresa dolor o sorpresa)",
+   "derivation": "una variante de 162;"
+  },
+  {
+   "strongs": "H0254",
+   "sha256": "79e10c52e5a04d2104a9a92215520db61b5913ecf721bfdd682132cd09d1f75b",
+   "gloss": "brasero",
+   "definition": "un brasero o escalfador",
+   "derivation": "de derivación incierta;"
+  },
+  {
+   "strongs": "H0255",
+   "sha256": "21e3ccad3b7f3be4925f8fa06e3150aeb9916b6761251acbc4cee0ad4e2b937e",
+   "gloss": "animal aullador",
+   "definition": "un aullador o animal salvaje solitario",
+   "derivation": "probablemente de 253;"
+  },
+  {
+   "strongs": "H0256G",
+   "sha256": "c2e20533c874e9ae1df2f3ee451c0571ee320a03f2addad748a6bb957b50c614",
+   "gloss": "Acab",
+   "definition": "Acab, nombre de un rey de Israel y de un profeta en Babilonia",
+   "derivation": "una vez (por contracción) אֶחָב (Jeremías 29:22); de 251 y 1; hermano (es decir, amigo) de (su) padre;"
+  },
+  {
+   "strongs": "H0256H",
+   "sha256": "c2e20533c874e9ae1df2f3ee451c0571ee320a03f2addad748a6bb957b50c614",
+   "gloss": "Acab",
+   "definition": "Acab, nombre de un rey de Israel y de un profeta en Babilonia",
+   "derivation": "una vez (por contracción) אֶחָב (Jeremías 29:22); de 251 y 1; hermano (es decir, amigo) de (su) padre;"
+  },
+  {
+   "strongs": "H0257",
+   "sha256": "171d2b99ebd9bb7bd8808fab529f59a4158ba0706effb1a706b3939a59ba7dfd",
+   "gloss": "Ahbán",
+   "definition": "Ahbán, un israelita",
+   "derivation": "de 251 y 995; hermano (es decir, poseedor) de entendimiento;"
+  },
+  {
+   "strongs": "H0258",
+   "sha256": "082bdaafb3ac26dcade64c9ab6f011501646a313e4d379e51f85acd81c0ee99c",
+   "gloss": "ir a un lado u otro",
+   "definition": "unificar, es decir, (figuradamente) recoger (los pensamientos)",
+   "derivation": "quizá raíz primitiva;"
+  },
+  {
+   "strongs": "H0259",
+   "sha256": "b70cff2c1a773bb4bb2fa01f8451235cf4c1d25d8ae1222f77e18d954db979b6",
+   "gloss": "uno",
+   "definition": "propiamente, unido, es decir, uno; o (como ordinal) primero",
+   "derivation": "un numeral de 258;"
+  },
+  {
+   "strongs": "H0260",
+   "sha256": "4ae51f23777d3108d386fa51fdc622033c335a2c6dc18b45ebfcb901e0e1aca2",
+   "gloss": "prado",
+   "definition": "un junco o cualquier hierba de pantano (en particular la del Nilo)",
+   "derivation": "de derivación incierta (quizá egipcia);"
+  },
+  {
+   "strongs": "H0261",
+   "sha256": "950a60de77c7da3f68512a14c3ea74da1ac7e6ae4cb53f95883f92cf60aac93a",
+   "gloss": "Aod",
+   "definition": "Aod, nombre de tres israelitas",
+   "derivation": "de 258; unido;"
+  },
+  {
+   "strongs": "H0262",
+   "sha256": "0ace9037ce7c89be6b88d59a0b23932920414df14cc32d83e9b475d5d468515b",
+   "gloss": "declaración",
+   "definition": "una declaración",
+   "derivation": "de 2331 (en el sentido de 2324);"
+  },
+  {
+   "strongs": "H0263",
+   "sha256": "44bf7beb805c5867978108da769cecccef2b0955c749d89afc35ee60727abcad",
+   "gloss": "explicación",
+   "definition": "solución (de enigmas)",
+   "derivation": "(arameo) correspondiente a 262;"
+  },
+  {
+   "strongs": "H0264",
+   "sha256": "c2c2dc3ef8058a78df6cba62e4e0e68fab9210036de2b8c858c2243fb6a053be",
+   "gloss": "hermandad",
+   "definition": "fraternidad",
+   "derivation": "de 251;"
+  },
+  {
+   "strongs": "H0265",
+   "sha256": "4aad89707f9f82bb7e62e2058c427a23a15f7179ec6d0a04077168bc937911a5",
+   "gloss": "Ahoa",
+   "definition": "Ahoa, un israelita",
+   "derivation": "por reduplicación de 251; fraternal;"
+  },
+  {
+   "strongs": "H0266",
+   "sha256": "be5aa12a002b2f6b388874aa8e9631c613d4d9d41936fbdfc8a7ab52516ad79c",
+   "gloss": "ahohíta",
+   "definition": "un ahohíta o descendiente de Ahoa",
+   "derivation": "patronímico de 264;"
+  },
+  {
+   "strongs": "H0267",
+   "sha256": "a108eefedef93705eee016acd0387bb3872c9534b8bddacbb4c3df9d8108b7aa",
+   "gloss": "Ahumai",
+   "definition": "Ahumai, un israelita",
+   "derivation": "quizá de 251 y 4325; hermano (es decir, vecino) del agua;"
+  },
+  {
+   "strongs": "H0268",
+   "sha256": "91b5a0e84e15b1eef3207c8f14f6092b3ce9c53a50d6023d73d18616286a0e08",
+   "gloss": "espalda",
+   "definition": "la parte trasera; de ahí (adverbio) detrás, hacia atrás; también (mirando al norte) el Occidente",
+   "derivation": "o (abreviado) אָחֹר ; de 299;"
+  },
+  {
+   "strongs": "H0269",
+   "sha256": "c99db2bf9539c6be08d6d0dd2f1b11959a9e29c11fe736da6b063616ac6e1611",
+   "gloss": "hermana",
+   "definition": "una hermana (usado muy ampliamente [como 251number 250, corregido a 251], literal y figuradamente)",
+   "derivation": "femenino irregular de 251;"
+  },
+  {
+   "strongs": "H0270",
+   "sha256": "b555a254c31c19f0452fcf6679c081ebc7c5e5c890468e9e975b7da87ed360ce",
+   "gloss": "asir",
+   "definition": "asir (a menudo con la idea accesoria de retener en posesión)",
+   "derivation": "raíz primitiva;"
+  },
+  {
+   "strongs": "H0271G",
+   "sha256": "8246b55f0cc74577d0c8d08f58d3fe0b6136baad217bc9fa72fbb4fbae8636f4",
+   "gloss": "Acaz",
+   "definition": "Acaz, nombre de un rey judío y de un israelita",
+   "derivation": "de 270; poseedor;"
+  },
+  {
+   "strongs": "H0271H",
+   "sha256": "8246b55f0cc74577d0c8d08f58d3fe0b6136baad217bc9fa72fbb4fbae8636f4",
+   "gloss": "Acaz",
+   "definition": "Acaz, nombre de un rey judío y de un israelita",
+   "derivation": "de 270; poseedor;"
+  },
+  {
+   "strongs": "H0272",
+   "sha256": "fa6924ee00d49ec04f0f703816b8558d4e971030d1028bbb002c917af8536ef8",
+   "gloss": "posesión",
+   "definition": "algo asido, es decir, una posesión (especialmente de tierra)",
+   "derivation": "participio pasivo femenino de 270;"
+  },
+  {
+   "strongs": "H0273",
+   "sha256": "e4eebbd3462417b275d7b9ba92067160e4ab85bddfc44eabf97215d1a94cc4c6",
+   "gloss": "Ahzai",
+   "definition": "Ahzai, un israelita",
+   "derivation": "de 270; el que ase;"
+  },
+  {
+   "strongs": "H0274G",
+   "sha256": "5e90d6a96ae0c793166dd9dee33f61e26262834c0a27634f9c8add372f57d8ad",
+   "gloss": "Ocozías",
+   "definition": "Ocozías, nombre de un rey judío y de un rey israelita",
+   "derivation": "o (prolongado) אֲחַזְיָהוּ ; de 270 y 3050; Jah ha asido;"
+  },
+  {
+   "strongs": "H0274H",
+   "sha256": "5e90d6a96ae0c793166dd9dee33f61e26262834c0a27634f9c8add372f57d8ad",
+   "gloss": "Ocozías",
+   "definition": "Ocozías, nombre de un rey judío y de un rey israelita",
+   "derivation": "o (prolongado) אֲחַזְיָהוּ ; de 270 y 3050; Jah ha asido;"
+  },
+  {
+   "strongs": "H0275",
+   "sha256": "5180c84067595ee80c8b91af5a6728564ff50945fabab5d35cf23ffa0221b944",
+   "gloss": "Ahuzam",
+   "definition": "Ahuzam, un israelita",
+   "derivation": "de 270; asimiento;"
+  },
+  {
+   "strongs": "H0276",
+   "sha256": "e7f0d768e119c5b44f8aeb6226c1c872db1f487ae393e6cba39e6fc4a164512b",
+   "gloss": "Ahuzat",
+   "definition": "Ahuzat, un filisteo",
+   "derivation": "una variante de 272; posesión;"
+  },
+  {
+   "strongs": "H0277G",
+   "sha256": "c90abe91f45c2210e20f6f2b033eec680362e34fb3e0d183234735fb39ae4eac",
+   "gloss": "Ahí",
+   "definition": "Ahí, nombre de dos israelitas",
+   "derivation": "de 251; fraternal;"
+  },
+  {
+   "strongs": "H0277H",
+   "sha256": "6f63b6c1c2d4e8d1157335000d8a6e687a8f39af9f8b453dd8102f21aa7d9593",
+   "gloss": "`hermano`",
+   "definition": "Ahí, nombre de dos israelitas",
+   "derivation": "de 251; fraternal;"
+  },
+  {
+   "strongs": "H0278",
+   "sha256": "ed41bfce96d3f21885f8c6cf90238d4b692ef378e651a8c368c87925005ea7de",
+   "gloss": "Ehi",
+   "definition": "Ehi, un israelita",
+   "derivation": "probablemente lo mismo que 277;"
+  },
+  {
+   "strongs": "H0279",
+   "sha256": "4c9a7f5cd40e22f9b84ff434e9ea29167c0aa449ab06982c0674a55ee0da014e",
+   "gloss": "Ahiam",
+   "definition": "Ahiam, un israelita",
+   "derivation": "de 251 y 517; hermano de la madre (es decir, tío);"
+  },
+  {
+   "strongs": "H0280",
+   "sha256": "1bb621926c4a457e64b573b5b248ad5f189719eaae5b59d9a562dc5e8ae6b864",
+   "gloss": "enigma",
+   "definition": "un enigma",
+   "derivation": "(arameo) correspondiente a 2420,"
+  },
+  {
+   "strongs": "H0281G",
+   "sha256": "80c3adcb67e5358d768b513dda367f9807e71f995344914762e5c46cd794fddb",
+   "gloss": "Ahías",
+   "definition": "Ahías, nombre de nueve israelitas",
+   "derivation": "o (prolongado) אֲחִיָּהוּ ; de 251 y 3050; hermano (es decir, adorador) de Jah;"
+  },
+  {
+   "strongs": "H0281H",
+   "sha256": "80c3adcb67e5358d768b513dda367f9807e71f995344914762e5c46cd794fddb",
+   "gloss": "Ahías",
+   "definition": "Ahías, nombre de nueve israelitas",
+   "derivation": "o (prolongado) אֲחִיָּהוּ ; de 251 y 3050; hermano (es decir, adorador) de Jah;"
+  },
+  {
+   "strongs": "H0281I",
+   "sha256": "80c3adcb67e5358d768b513dda367f9807e71f995344914762e5c46cd794fddb",
+   "gloss": "Ahías",
+   "definition": "Ahías, nombre de nueve israelitas",
+   "derivation": "o (prolongado) אֲחִיָּהוּ ; de 251 y 3050; hermano (es decir, adorador) de Jah;"
+  },
+  {
+   "strongs": "H0281J",
+   "sha256": "80c3adcb67e5358d768b513dda367f9807e71f995344914762e5c46cd794fddb",
+   "gloss": "Ahías",
+   "definition": "Ahías, nombre de nueve israelitas",
+   "derivation": "o (prolongado) אֲחִיָּהוּ ; de 251 y 3050; hermano (es decir, adorador) de Jah;"
+  },
+  {
+   "strongs": "H0281K",
+   "sha256": "80c3adcb67e5358d768b513dda367f9807e71f995344914762e5c46cd794fddb",
+   "gloss": "Ahías",
+   "definition": "Ahías, nombre de nueve israelitas",
+   "derivation": "o (prolongado) אֲחִיָּהוּ ; de 251 y 3050; hermano (es decir, adorador) de Jah;"
+  },
+  {
+   "strongs": "H0281L",
+   "sha256": "80c3adcb67e5358d768b513dda367f9807e71f995344914762e5c46cd794fddb",
+   "gloss": "Ahías",
+   "definition": "Ahías, nombre de nueve israelitas",
+   "derivation": "o (prolongado) אֲחִיָּהוּ ; de 251 y 3050; hermano (es decir, adorador) de Jah;"
+  },
+  {
+   "strongs": "H0281M",
+   "sha256": "80c3adcb67e5358d768b513dda367f9807e71f995344914762e5c46cd794fddb",
+   "gloss": "Ahías",
+   "definition": "Ahías, nombre de nueve israelitas",
+   "derivation": "o (prolongado) אֲחִיָּהוּ ; de 251 y 3050; hermano (es decir, adorador) de Jah;"
+  },
+  {
+   "strongs": "H0281N",
+   "sha256": "6a606573edecabd4e02d5a0901c8f429b65deb3aea7b29a6512ec10eb0ec9c82",
+   "gloss": "Ahía",
+   "definition": "Ahías, nombre de nueve israelitas",
+   "derivation": "o (prolongado) אֲחִיָּהוּ ; de 251 y 3050; hermano (es decir, adorador) de Jah;"
+  },
+  {
+   "strongs": "H0281O",
+   "sha256": "80c3adcb67e5358d768b513dda367f9807e71f995344914762e5c46cd794fddb",
+   "gloss": "Ahías",
+   "definition": "Ahías, nombre de nueve israelitas",
+   "derivation": "o (prolongado) אֲחִיָּהוּ ; de 251 y 3050; hermano (es decir, adorador) de Jah;"
+  },
+  {
+   "strongs": "H0282",
+   "sha256": "d9cb248e1620635ccc188689b7fc52eae25a4ce7ec7a9ebdd139162f41b472ec",
+   "gloss": "Ahiud",
+   "definition": "Ahiud, un israelita",
+   "derivation": "de 251 y 1935; hermano (es decir, poseedor) de renombre;"
+  },
+  {
+   "strongs": "H0283G",
+   "sha256": "4dec98ac4331f791a2bc7648b6847f68102fa143c64c4671a7143843fd84a865",
+   "gloss": "Ahío",
+   "definition": "Ahío, nombre de tres israelitas",
+   "derivation": "prolongado de 251; fraternal;"
+  },
+  {
+   "strongs": "H0283H",
+   "sha256": "4dec98ac4331f791a2bc7648b6847f68102fa143c64c4671a7143843fd84a865",
+   "gloss": "Ahío",
+   "definition": "Ahío, nombre de tres israelitas",
+   "derivation": "prolongado de 251; fraternal;"
+  },
+  {
+   "strongs": "H0283I",
+   "sha256": "4dec98ac4331f791a2bc7648b6847f68102fa143c64c4671a7143843fd84a865",
+   "gloss": "Ahío",
+   "definition": "Ahío, nombre de tres israelitas",
+   "derivation": "prolongado de 251; fraternal;"
+  },
+  {
+   "strongs": "H0284",
+   "sha256": "90edb1fd12e38e02939b7c61c8fc4505ba261955d23d4a2a9118743b6540cafe",
+   "gloss": "Ahiud",
+   "definition": "Ahiud, un israelita",
+   "derivation": "de 251 y 2330; hermano de un enigma (es decir, misterioso);"
+  },
+  {
+   "strongs": "H0285G",
+   "sha256": "e38284bc063744819aee0f32183dd812c8951db55f08580f12b9118546bfd69c",
+   "gloss": "Ahitob",
+   "definition": "Ahitob, nombre de varios sacerdotes",
+   "derivation": "de 251 y 2898; hermano de bondad;"
+  },
+  {
+   "strongs": "H0285H",
+   "sha256": "e38284bc063744819aee0f32183dd812c8951db55f08580f12b9118546bfd69c",
+   "gloss": "Ahitob",
+   "definition": "Ahitob, nombre de varios sacerdotes",
+   "derivation": "de 251 y 2898; hermano de bondad;"
+  },
+  {
+   "strongs": "H0285I",
+   "sha256": "e38284bc063744819aee0f32183dd812c8951db55f08580f12b9118546bfd69c",
+   "gloss": "Ahitob",
+   "definition": "Ahitob, nombre de varios sacerdotes",
+   "derivation": "de 251 y 2898; hermano de bondad;"
+  },
+  {
+   "strongs": "H0285J",
+   "sha256": "e38284bc063744819aee0f32183dd812c8951db55f08580f12b9118546bfd69c",
+   "gloss": "Ahitob",
+   "definition": "Ahitob, nombre de varios sacerdotes",
+   "derivation": "de 251 y 2898; hermano de bondad;"
+  },
+  {
+   "strongs": "H0286",
+   "sha256": "b9a7ce31460b72d7d2f08d23a56e6ff31c1f8e4a504ef655785d583777f54c3e",
+   "gloss": "Ahilud",
+   "definition": "Ahilud, un israelita",
+   "derivation": "de 251 y 3205; hermano de uno nacido;"
+  },
+  {
+   "strongs": "H0287",
+   "sha256": "04a74a2962c11225be08429ab881d0f550be261581694b2bb068f464f97f18a0",
+   "gloss": "Ahimot",
+   "definition": "Ahimot, un israelita",
+   "derivation": "de 251 y 4191; hermano de muerte;"
+  },
+  {
+   "strongs": "H0288G",
+   "sha256": "a3116c0feb83dd06474511fca7909a382a2b7c7dc0e26c540fc04bba47c77d5e",
+   "gloss": "Ahimelec",
+   "definition": "Ahimelec, nombre de un israelita y de un heteo",
+   "derivation": "de 251 y 4428; hermano del rey;"
+  },
+  {
+   "strongs": "H0288H",
+   "sha256": "a3116c0feb83dd06474511fca7909a382a2b7c7dc0e26c540fc04bba47c77d5e",
+   "gloss": "Ahimelec",
+   "definition": "Ahimelec, nombre de un israelita y de un heteo",
+   "derivation": "de 251 y 4428; hermano del rey;"
+  },
+  {
+   "strongs": "H0288I",
+   "sha256": "a3116c0feb83dd06474511fca7909a382a2b7c7dc0e26c540fc04bba47c77d5e",
+   "gloss": "Ahimelec",
+   "definition": "Ahimelec, nombre de un israelita y de un heteo",
+   "derivation": "de 251 y 4428; hermano del rey;"
+  },
+  {
+   "strongs": "H0289G",
+   "sha256": "1b84b50cbad3c85a94e98bc1d7c1c20d27a02c29385b711f9d3f5312bec3ab43",
+   "gloss": "Ahimán",
+   "definition": "Ahimán, nombre de un anaceo y de un israelita",
+   "derivation": "o אֲחִימָן ; de 251 y 4480; hermano de una porción (es decir, don);"
+  },
+  {
+   "strongs": "H0289H",
+   "sha256": "1b84b50cbad3c85a94e98bc1d7c1c20d27a02c29385b711f9d3f5312bec3ab43",
+   "gloss": "Ahimán",
+   "definition": "Ahimán, nombre de un anaceo y de un israelita",
+   "derivation": "o אֲחִימָן ; de 251 y 4480; hermano de una porción (es decir, don);"
+  },
+  {
+   "strongs": "H0290G",
+   "sha256": "ad7f63ca0c5ef9b9ce1090ae2b356964c731975c1ebbc8af15cda724d82be324",
+   "gloss": "Ahimaas",
+   "definition": "Ahimaas, nombre de tres israelitas",
+   "derivation": "de 251 y el equivalente de 4619; hermano de ira;"
+  },
+  {
+   "strongs": "H0290H",
+   "sha256": "ad7f63ca0c5ef9b9ce1090ae2b356964c731975c1ebbc8af15cda724d82be324",
+   "gloss": "Ahimaas",
+   "definition": "Ahimaas, nombre de tres israelitas",
+   "derivation": "de 251 y el equivalente de 4619; hermano de ira;"
+  },
+  {
+   "strongs": "H0290I",
+   "sha256": "ad7f63ca0c5ef9b9ce1090ae2b356964c731975c1ebbc8af15cda724d82be324",
+   "gloss": "Ahimaas",
+   "definition": "Ahimaas, nombre de tres israelitas",
+   "derivation": "de 251 y el equivalente de 4619; hermano de ira;"
+  },
+  {
+   "strongs": "H0291",
+   "sha256": "cb9123ed1d6ed3d0ce7bf95f3579fee712ca0d16be6f87fe2056c38ef41a9dbb",
+   "gloss": "Ahián",
+   "definition": "Ahián, un israelita",
+   "derivation": "de 251; fraternal;"
+  },
+  {
+   "strongs": "H0292",
+   "sha256": "934bb4ffde8d786f85c73990ccf731b637ffd124014df03ab52eff94b3e475e1",
+   "gloss": "Ahinadab",
+   "definition": "Ahinadab, un israelita",
+   "derivation": "de 251 y 5068; hermano de liberalidad;"
+  },
+  {
+   "strongs": "H0293G",
+   "sha256": "26fe4f3b4b01d386a9cf1edd53f430660750d3b523064ff8418e1670ee4f74dd",
+   "gloss": "Ahinoam",
+   "definition": "Ahinoam, nombre de dos israelitas (mujeres)",
+   "derivation": "de 251 y 5278; hermano de agrado;"
+  },
+  {
+   "strongs": "H0293H",
+   "sha256": "26fe4f3b4b01d386a9cf1edd53f430660750d3b523064ff8418e1670ee4f74dd",
+   "gloss": "Ahinoam",
+   "definition": "Ahinoam, nombre de dos israelitas (mujeres)",
+   "derivation": "de 251 y 5278; hermano de agrado;"
+  },
+  {
+   "strongs": "H0294",
+   "sha256": "4e5c74f55e86f6914e86a14cc7c62cadcc230a7d3e6623768374fedc1571cec4",
+   "gloss": "Ahisamac",
+   "definition": "Ahisamac, un israelita",
+   "derivation": "de 251 y 5564; hermano de apoyo;"
+  },
+  {
+   "strongs": "H0295G",
+   "sha256": "17442e7b381b26cc43aa886e5c703af8f1e72abc4524c11a757033d3c6921f91",
+   "gloss": "Ahiezer",
+   "definition": "Ahiezer, nombre de dos israelitas",
+   "derivation": "de 251 y 5828; hermano de ayuda;"
+  },
+  {
+   "strongs": "H0295H",
+   "sha256": "17442e7b381b26cc43aa886e5c703af8f1e72abc4524c11a757033d3c6921f91",
+   "gloss": "Ahiezer",
+   "definition": "Ahiezer, nombre de dos israelitas",
+   "derivation": "de 251 y 5828; hermano de ayuda;"
+  },
+  {
+   "strongs": "H0296",
+   "sha256": "82b34b57ccafa0818b5b5bdef6d3f7006acffee7280de9c20b35f9e696a63570",
+   "gloss": "Ahicam",
+   "definition": "Ahicam, un israelita",
+   "derivation": "de 251 y 6965; hermano de levantamiento (es decir, alto);"
+  },
+  {
+   "strongs": "H0297",
+   "sha256": "9823f88fa45d275b996d03d1c7e672432841ff814082cd381a734410650581cc",
+   "gloss": "Ahiram",
+   "definition": "Ahiram, un israelita",
+   "derivation": "de 251 y 7311; hermano de altura (es decir, alto);"
+  },
+  {
+   "strongs": "H0298",
+   "sha256": "413f7af316eedae723ec480f695bc26882bf00fc0ac83d7d99b722dd8158371e",
+   "gloss": "ahiramita",
+   "definition": "un ahiramita o descendiente (colectivamente) de Ahiram",
+   "derivation": "patronímico de 297;"
+  },
+  {
+   "strongs": "H0299",
+   "sha256": "d3390260cf32a55b1291ff43554d65507f4e9818ea027b585845c0549f895d7c",
+   "gloss": "Ahira",
+   "definition": "Ahira, un israelita",
+   "derivation": "de 251 y 7451; hermano de agravio;"
+  },
+  {
+   "strongs": "H0300",
+   "sha256": "e23fc9c48e0d6601f4879100c9a31e6c231f4c3ccce5dcaa85ef5a8812afbc43",
+   "gloss": "Ahisahar",
+   "definition": "Ahisahar, un israelita",
+   "derivation": "de 251 y 7837; hermano del alba;"
+  },
+  {
+   "strongs": "H0301",
+   "sha256": "81841a24c09e7fe5125521ad520be9ba36b1ae09948c42ece9fad217f60f2c42",
+   "gloss": "Ahisar",
+   "definition": "Ahisar, un israelita",
+   "derivation": "de 251 y 7891; hermano del cantor;"
+  },
+  {
+   "strongs": "H0302",
+   "sha256": "0f798239b9e18815116926243d0f2b7052b4668698e70fe1eb2359453116b487",
+   "gloss": "Ahitofel",
+   "definition": "Ahitofel, un israelita",
+   "derivation": "de 251 y 8602; hermano de locura;"
+  },
+  {
+   "strongs": "H0303",
+   "sha256": "2f2d94e89b902ceea631647fbc2c8abe683c5ef534da87d486adab4554b75eb3",
+   "gloss": "Ahlab",
+   "definition": "Ahlab, un lugar en Palestina",
+   "derivation": "de la misma raíz que 2459; gordura (es decir, fértil);"
+  },
+  {
+   "strongs": "H0304G",
+   "sha256": "978a975f4468c5a1368006394127ca1b7d9fe1e791975aaa2fd2ec3a0ae771ae",
+   "gloss": "Ahlai",
+   "definition": "Ahlai, nombre de una israelita y de un israelita",
+   "derivation": "lo mismo que 305; deseoso;"
+  },
+  {
+   "strongs": "H0304H",
+   "sha256": "978a975f4468c5a1368006394127ca1b7d9fe1e791975aaa2fd2ec3a0ae771ae",
+   "gloss": "Ahlai",
+   "definition": "Ahlai, nombre de una israelita y de un israelita",
+   "derivation": "lo mismo que 305; deseoso;"
+  },
+  {
+   "strongs": "H0305",
+   "sha256": "cae5819315c3ebff34f5393dfe5b998b1d413774d84b88d72ee687028f805440",
+   "gloss": "¡Ojalá!",
+   "definition": "¡ojalá!",
+   "derivation": "o אַחֲלֵי; prob. de 253 y una variante de 3863;"
+  },
+  {
+   "strongs": "H0306",
+   "sha256": "303b2e2c06a6e409c4aa53fd5184fa5740e84e6e9d2fea501fbfca5835ced919",
+   "gloss": "amatista",
+   "definition": "una gema, probablemente la amatista",
+   "derivation": "quizá de 2492 (y así piedra del sueño);"
+  },
+  {
+   "strongs": "H0307",
+   "sha256": "c3abb44d9d390d7f4e3166a2e5c36f4e3aef65b60aa716528043a0ddd474b81c",
+   "gloss": "Ecbatana",
+   "definition": "Acmeta (es decir, Ecbatana), la capital de verano de Persia",
+   "derivation": "de derivación persa;"
+  },
+  {
+   "strongs": "H0308",
+   "sha256": "d1fc3482084a53f49f1bf1462a156f87fa6b25a5ecaf89240e2e09bb2282003f",
+   "gloss": "Ahasbai",
+   "definition": "Ahasbai, un israelita",
+   "derivation": "de derivación incierta;"
+  },
+  {
+   "strongs": "H0309",
+   "sha256": "a623fdaada6f010798a7a5727dcad7ff66af777c9987d76f5e40e69f0e07072b",
+   "gloss": "demorarse",
+   "definition": "rezagarse (es decir, quedarse atrás); por implicación demorar",
+   "derivation": "raíz primitiva;"
+  },
+  {
+   "strongs": "H0310A",
+   "sha256": "16f9609cd2f23b8c0928e94beda69396772a71e2d9eab8440df3c61a7608796a",
+   "gloss": "después",
+   "definition": "propiamente, la parte trasera; usado generalmente como adverbio o conjunción, después (en varios sentidos)",
+   "derivation": "de 309;"
+  },
+  {
+   "strongs": "H0310B",
+   "sha256": "ea08e76b799213f333ff1387a38aa9e77955a46561fb1570b5dd7bcf79bc6b22",
+   "gloss": "hacia atrás",
+   "definition": "propiamente, la parte trasera; usado generalmente como adverbio o conjunción, después (en varios sentidos)",
+   "derivation": "de 309;"
+  },
+  {
+   "strongs": "H0311",
+   "sha256": "b6920cb694e54805126d9c7d63e4aed9b17605a7578ec7df62c0eb07bd130505",
+   "gloss": "después",
+   "definition": "después",
+   "derivation": "(arameo) correspondiente a 310;"
+  },
+  {
+   "strongs": "H0312",
+   "sha256": "37c48e2ac702b38f4f12262101b3c6a294062243da0936f8c74665e5f966faf9",
+   "gloss": "otro",
+   "definition": "propiamente, posterior; generalmente, siguiente, otro, etc.",
+   "derivation": "de 309;"
+  },
+  {
+   "strongs": "H0313",
+   "sha256": "c5f92ae1826d4fc89641b4dfd56fea3f29130ec4e9d417484b23afca763d11df",
+   "gloss": "Aher",
+   "definition": "Aher, un israelita",
+   "derivation": "lo mismo que 312;"
+  },
+  {
+   "strongs": "H0314",
+   "sha256": "345df09020d11ea275aa4ef7f4edb49a7881bf6c2ccce5845219a7b2c8782791",
+   "gloss": "último",
+   "definition": "posterior; generalmente, tardío o último; específicamente (mirando al oriente) occidental",
+   "derivation": "o (abreviado) אַחֲרֹן; de 309;"
+  },
+  {
+   "strongs": "H0315",
+   "sha256": "c7dd93b65f46046cfde13eaeb229cb4cd53f6143e91a2be50ec6d8602ccc9328",
+   "gloss": "Ahara",
+   "definition": "Ahara, un israelita",
+   "derivation": "de 310 y 251; después de (su) hermano;"
+  },
+  {
+   "strongs": "H0316",
+   "sha256": "b844a5cdcd7c168d964afb6c64f3619f109ac8214ad422ff7cf2016a77422218",
+   "gloss": "Aharhel",
+   "definition": "Aharhel, un israelita",
+   "derivation": "de 310 y 2426; detrás del atrincheramiento (es decir, seguro);"
+  },
+  {
+   "strongs": "H0317",
+   "sha256": "4b42ebc949e64caecba89807daa8f428606255ae3adef34b51a2758c655f5ffc",
+   "gloss": "otro",
+   "definition": "otro",
+   "derivation": "(arameo) de 311;"
+  },
+  {
+   "strongs": "H0318",
+   "sha256": "6c53f365ae84ec7384b328babddfe67a686d8809136b366efe4c2aeb6a6a8eda",
+   "gloss": "finalmente",
+   "definition": "último",
+   "derivation": "(arameo) o (abreviado) אׇחֳרֵן; (arameo) de 317;"
+  },
+  {
+   "strongs": "H0319",
+   "sha256": "32a43a81faaf4f96a856d553cde0bd85bc3e05c968a234b3801c7a9d30f02034",
+   "gloss": "fin",
+   "definition": "lo último o el fin, de ahí, el futuro; también la posteridad",
+   "derivation": "de 310;"
+  },
+  {
+   "strongs": "H0320",
+   "sha256": "4207f592c77d94ea4124ace33f4271b81f09d0b9c88003cf88122e6e601edaab",
+   "gloss": "postrero",
+   "definition": "más tarde",
+   "derivation": "(arameo) de 311; lo mismo que 319;"
+  },
+  {
+   "strongs": "H0321",
+   "sha256": "9013221802bb9e0de0037da839c0cae413878ebe6f5dab008579ab066ca87c0c",
+   "gloss": "otro",
+   "definition": "otro",
+   "derivation": "(arameo) de 311; lo mismo que 317;"
+  },
+  {
+   "strongs": "H0322",
+   "sha256": "ca7ac805e37ab4261316289009d6ad2dc45c668c65c094d1b6605074fc77d2c1",
+   "gloss": "hacia atrás",
+   "definition": "hacia atrás",
+   "derivation": "prolongado de 268;"
+  },
+  {
+   "strongs": "H0323",
+   "sha256": "b2dbc775465fc481e31384e8f6d2949f7f37d23ef8d3764254fa66c05eef707f",
+   "gloss": "sátrapa",
+   "definition": "un sátrapa o gobernador de una provincia principal (de Persia)",
+   "derivation": "de derivación persa;"
+  },
+  {
+   "strongs": "H0324",
+   "sha256": "9c3494f445c47f3b15d4351184f0d503d019aa053529c8c1bbb66827a8d23dc4",
+   "gloss": "sátrapa",
+   "derivation": "(arameo) correspondiente a 323"
+  }
+ ]
+}

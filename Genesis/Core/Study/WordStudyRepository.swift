@@ -16,21 +16,36 @@ import SwiftUI
 final class WordStudyRepository: Sendable {
     static let attribution = String(localized: "Hebrew and Greek words, glosses and Greek definitions from STEPBible.org, based on work at Tyndale House Cambridge (CC BY 4.0). Hebrew definitions from Strong's Hebrew Dictionary via the Open Scriptures Hebrew Bible project (CC BY 4.0). Commentary from Matthew Henry's Concise Commentary (public domain).")
 
-    /// Glosses, definitions, grammar and commentary are English only, so
+    /// The lexicon's glosses, definitions and origins are also in these
+    /// languages (table lexicon_translations, Tools/StudyData/lexicon.py);
+    /// the meanings in a verse, grammar and commentary are English only, so
     /// screens say so when the Bible or the app is in another language.
     static func needsEnglishNote(bibleLanguage: String) -> Bool {
         bibleLanguage != "en" || AppLanguage.code != "en"
     }
 
-    private let database: SQLiteDatabase
+    /// Languages the lexicon is translated into. Only these reach the SQL below.
+    static let translatedLanguages: Set<String> = ["es", "pt"]
 
-    init(url: URL) throws {
-        database = try SQLiteDatabase(readOnly: url)
+    /// Shown under a translated definition.
+    static let translatedNote = String(localized: "Definitions translated from Strong's Hebrew Dictionary (1890) and Abbott-Smith's Greek Lexicon (1922). Not Scripture.")
+
+    private let database: SQLiteDatabase
+    /// "es" or "pt" when the database has that language's lexicon; nil for English.
+    let language: String?
+
+    /// - Parameter language: the app's language code ("en", "es", "pt");
+    ///   nil or one without a translated lexicon shows the English.
+    init(url: URL, language: String? = nil) throws {
+        let database = try SQLiteDatabase(readOnly: url)
+        let hasTranslations = try !database.query("SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'lexicon_translations'", map: { _ in true }).isEmpty
+        self.database = database
+        self.language = language.flatMap { Self.translatedLanguages.contains($0) && hasTranslations ? $0 : nil }
     }
 
     /// The bundled database, or nil if it's missing from the build.
-    static func bundled(in bundle: Bundle = .main) -> WordStudyRepository? {
-        bundle.url(forResource: "WordStudy", withExtension: "sqlite").flatMap { try? WordStudyRepository(url: $0) }
+    static func bundled(in bundle: Bundle = .main, language: String? = AppLanguage.code) -> WordStudyRepository? {
+        bundle.url(forResource: "WordStudy", withExtension: "sqlite").flatMap { try? WordStudyRepository(url: $0, language: language) }
     }
 
     // MARK: Words
@@ -83,12 +98,12 @@ final class WordStudyRepository: Sendable {
     /// plain number's first entry.
     func entry(strongs: String) throws -> LexiconEntry? {
         guard let tag = StrongsNumber.normalized(strongs) else { return nil }
-        let columns = "SELECT strongs, lemma, translit, gloss, definition, derivation, usage, language FROM lexicon"
-        if let exact = try database.query("\(columns) WHERE strongs = ?", [.text(tag)], map: Self.entry).first {
+        let columns = entryColumns
+        if let exact = try database.query("\(columns) WHERE lexicon.strongs = ?", [.text(tag)], map: Self.entry).first {
             return exact
         }
-        let related = Self.family(of: StrongsNumber.base(of: tag))
-        return try database.query("\(columns) WHERE \(related.sql) ORDER BY strongs LIMIT 1", related.arguments, map: Self.entry).first
+        let related = Self.family(of: StrongsNumber.base(of: tag), column: "lexicon.strongs")
+        return try database.query("\(columns) WHERE \(related.sql) ORDER BY lexicon.strongs LIMIT 1", related.arguments, map: Self.entry).first
     }
 
     /// How many words in the Bible carry the number. A plain number (H430)
@@ -170,6 +185,18 @@ final class WordStudyRepository: Sendable {
         )
     }
 
+    /// The lexicon's columns, with the translation's gloss, definition and
+    /// origin where it has them (and whether it did, last).
+    private var entryColumns: String {
+        let english = "SELECT lexicon.strongs, lemma, translit, gloss, definition, derivation, usage, language, 0 FROM lexicon"
+        guard let language else { return english }
+        return """
+            SELECT lexicon.strongs, lemma, translit, COALESCE(tr.gloss, lexicon.gloss), COALESCE(tr.definition, lexicon.definition),
+                COALESCE(tr.derivation, lexicon.derivation), usage, language, tr.strongs IS NOT NULL
+            FROM lexicon LEFT JOIN lexicon_translations tr ON tr.lang = '\(language)' AND tr.strongs = lexicon.strongs
+            """
+    }
+
     private static let commentaryColumns = "SELECT id, source, start_verse, end_verse, title, text FROM commentary"
 
     private static func entry(_ row: SQLiteDatabase.Row) -> LexiconEntry {
@@ -181,7 +208,8 @@ final class WordStudyRepository: Sendable {
             definition: row.text(4),
             derivation: row.text(5),
             usage: row.text(6),
-            language: OriginalLanguage(rawValue: row.text(7)) ?? (row.text(0).hasPrefix("G") ? .greek : .hebrew)
+            language: OriginalLanguage(rawValue: row.text(7)) ?? (row.text(0).hasPrefix("G") ? .greek : .hebrew),
+            isTranslated: row.int(8) != 0
         )
     }
 
@@ -207,8 +235,8 @@ final class WordStudyRepository: Sendable {
     }
 
     /// "H0430" and "H0430A"…"H0430Z", but not "H04300" (five-digit numbers exist in Greek).
-    private static func family(of base: String) -> (sql: String, arguments: [SQLiteDatabase.Value]) {
-        ("(strongs = ? OR (strongs BETWEEN ? AND ? AND length(strongs) = ?))",
+    private static func family(of base: String, column: String = "strongs") -> (sql: String, arguments: [SQLiteDatabase.Value]) {
+        ("(\(column) = ? OR (\(column) BETWEEN ? AND ? AND length(\(column)) = ?))",
          [.text(base), .text(base + "A"), .text(base + "Z"), .int(base.count + 1)])
     }
 
@@ -278,6 +306,9 @@ struct LexiconEntry: Identifiable, Hashable, Sendable {
     /// How the KJV renders the word, from Strong's (Hebrew only).
     let usage: String
     let language: OriginalLanguage
+    /// The gloss, definition and origin are a translation of the English
+    /// lexicon (`WordStudyRepository.translatedNote`); usage stays English.
+    var isTranslated = false
 
     var id: String { strongs }
 }

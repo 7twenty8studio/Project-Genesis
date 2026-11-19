@@ -1,0 +1,988 @@
+{
+ "batch": "051",
+ "lang": "pt",
+ "entries": [
+  {
+   "strongs": "G2744",
+   "sha256": "dd751eb0e996ce950721a4c9224076e9542a70528e8b4884690633c8b2915cca",
+   "gloss": "gloriar-se",
+   "definition": "καυχάομαι, -ῶμαι\n[na LXX por הָלַל hit., etc. ;]\ngloriar-se ou vangloriar-se (na LXX, de exultação jubilosa, e assim nas citações do NT, infr.; cf. DB, ii, 790b; Hort sobre Jas.1:9): absol., 1Co.1:31 (LXX) 1Co.4:7 13:3, 2Co.10:13 10:17\" (LXX) 2Co.11:16 11:18 12:1 12:6, Eph.2:9, Jas.4:16; com acusativo de coisa(s), 2Co.9:2 11:30; antes de ἐν (LXX), Rom.2:23 5:3, 1Co.3:21, 2Co.5:12 10:15 11:12 12:5 12:9, Gal.6:13-14 Jas.1:9; ἐν (τ.) θεῷ, Rom.2:17 5:11; ἐν κυρίῳ, 1Co.1:31 (LXX) 2Co.10:17 (LXX); ἐν Χ. Ἰησοῦ, Php.3:3; antes de ἐπί com dativo, Rom.5:2; περί, com genitivo, 2Co.10:8; εἰς, 2Co.10:16; ὑπέρ, com genitivo de pessoa(s), 2Co.7:14 12:5; ἐνώπιον τ. θεοῦ, 1Co.1:29 (cf. ἐν, κατα-καυχάομαι).†"
+  },
+  {
+   "strongs": "G2745",
+   "sha256": "d6cf126ca1ac6fcb763721aa5bd549f1719b01aa7390085fd04f8ceeba358ebf",
+   "gloss": "orgulho",
+   "definition": "καύχημα, -τος, τό\n(καυχάομαι), [na LXX principalmente por תְּהִלָּה, תִּפְאָרָה ;]\n1. jactância (Pind.): 2Co.5:12 9:3 (Thayer, veja a palavra; e. contra, 2, Ellic., Lft., sobre Gal.6:4; Lft., Notas, 204, 277).\n2. motivo ou matéria de glória: Rom.4:2, 1Co.5:6 9:15-16, 2Co.1:14, Gal.6:4, Php.1:26 2:16, Heb.3:6 (cf. καύχησις).†"
+  },
+  {
+   "strongs": "G2746",
+   "sha256": "c5a4e2dcb75ff278cb48223fc2918f49f5db7bac802dcfe5f4bb529d0577998a",
+   "gloss": "orgulho",
+   "definition": "καύχησις, -εως, ἡ\n(καυχάομαι), [na LXX por תִּפְאָרָה (1Ch.29:13, Eze.16:12, al) ;]\no gloriar-se, jactância: Rom.3:27, 2Co.11:10 11:17, Jas.4:16; antes de ὑπέρ, 2Co.7:4 8:24; ἐτί, com genitivo, 2Co.7:14; ἔχω τὴν κ. ἐν Χρ. Ἰησ., Rom.15:17; στέφανος καυχήσεως (Ez. l. com, al.), 1Th.2:19; do motivo de glória, uma glória ( = καύχημα), 2Co.1:12.†"
+  },
+  {
+   "strongs": "G2747",
+   "sha256": "34ff968cf0bc19e43cee10582e375803be8b56a075d40505d19f2d1f7d9c985d",
+   "gloss": "Cencreia",
+   "definition": "Κενχρεαί (Rec. Κεχγ-; ν. WH, App., 150), -ῶν, αἱ,\nCencreia, porto de Corinto: Act.18:18, Rom.16:1.†"
+  },
+  {
+   "strongs": "G2748",
+   "sha256": "138a6f85a8c44ce62480349e8f2d527284bd3ee8ff73dd41dcd0ed102392420b",
+   "gloss": "Cedrom",
+   "definition": "κέδρος, -ου, ἡ\n[na LXX principalmente por אֶרֶז, Num.24:6, al.; χειμάρρους τῶν Κέδρων, 2Ki.15:23, 3Ki.15:13 (קִדְרוֹן) ;]\ncedro: χείμαρρος τῶν Κ. (como em 2Sm, 1Rs, ll. com), Jhn.18:1 (Rec. Tr., WH, R, mg.; τοῦ Κέδρου, T, WH, mg., veja: Κεδρών, e cf. Westc., in l; WH, App., 89 s.; Abbott, JG, 513 ss).†\nΚεδρών\n(veja: κέδρος), ὁ,\nindecl.\n(em FlJ, genitivo -ῶνος; heb. קִדְרוֹן), [na LXX: 2Ki.15:23, 4Ki.23:6, al. ;]\nCedrom (AT, Cedrom): χείμαρρος τοῦ Κ., Jhn.18:1 (L, Tr., mg., R, txt.; cf. Bl., 10, 5; Lft., Essays, 172 ss).†",
+   "note": "The English distinguishes 'Cedron' (NT) and 'Kidron' (OT); the Bíblia Livre has 'Cedrom' for both (Jhn.18:1, 2Sa.15:23). 'Essays' is Lightfoot's title, kept. Abbott-Smith's '2Sam, 1Ki' (no verse) written with the Portuguese abbreviations."
+  },
+  {
+   "strongs": "G2749",
+   "sha256": "125ec3e004232cef4db4934bb4fe09c4b4f91039ddc5d11f1f1d98e2d9d72cf2",
+   "gloss": "jazer/ser posto",
+   "definition": "κεῖμαι\n[na LXX: Jer.24:1 (יָעַד hof,), al. ;]\nusado como passivo de τίθημι (LS, veja a palavra), ser posto, jazer;\n(a) de pessoas: uma criança, Luk.2:12, 16; um cadáver, Mat.28:6, Luk.23:53, Jhn.20:12;\n(b) de coisas, jazer, estar posto ou colocado, estar: Mat.5:14, Jhn.2:6 19:29 20:5-7 21:9, Rev.4:2 21:16; trop., Θεμέλιος, 1Co.3:11; antes de prep. com acusativo, πρός, Mat.3:10, Luk.3:9; εἰς, Luk.12:19; ἐπί, trop., κάλυμμα, 2Co.3:15. Metafórico, ὁ κόσμος ἐν τ. πονηριῷ κ., 1Jn.5:19; ser estabelecido, designado: da lei, com dativo de pessoa(s), 1Ti.1:9; antes de εἰς com acusativo (de finalidade), Luk.2:34, Php.1:16, 1Th.3:3\n(cf. ἀνά-, συν-ανά-, ἀντί-, ἀπό-, ἐπί-, κατά-, παρά-, περί-, πρό-κειμαι).†"
+  },
+  {
+   "strongs": "G2750",
+   "sha256": "054325b7a479d40b7f118ca7c308e0b2ce3f5e4ad9752571cfd4530cdb179adf",
+   "gloss": "faixas mortuárias",
+   "definition": "κειρία, -ας, ἡ\n[na LXX: Pro.7:16 (מַרְבַד)* ;]\npalavra vernácula,\n1 1, corda de cama (Aristoph., AV., 816; Pv, l. com).\n2. No pl., faixas (cf. Field, Notas, 96 s.): Jhn.11:44.†",
+   "note": "'AV.' here is Aristophanes' Aves (Birds), copied as in the source; '1 1,' copied as in the source. 'Pr, l.with' (Proverbs, LXX Pro.7:16) written 'Pv, l. com'."
+  },
+  {
+   "strongs": "G2751",
+   "sha256": "89f9ac1f4ab06d3b1777e2d8f350d208dd1b908c0708992be619ec8e15a983ee",
+   "gloss": "tosquiar",
+   "definition": "κείρω\n[na LXX principalmente por גָּזַז, Isa.53:7, al. ;]\ncortar curto o cabelo, tosquiar: uma ovelha, Act.8:32 (Is, l. com). Méd., cortar o próprio cabelo, ser tosquiado: absol., 1Co.11:6; τ-. κεφαλήν, Act.18:18.†"
+  },
+  {
+   "strongs": "G2752",
+   "sha256": "eb5fa72082cb3954dd40e0abe75a375b763b8d571c514ceb3060087741b35057",
+   "gloss": "ordem",
+   "definition": "κέλευσμα, -τος, τό\n(κελεύω), [na LXX: Pro.30:27 * ;]\nchamado, convocação, grito de comando: 1Th.4:16 (veja M, Th., in l).†"
+  },
+  {
+   "strongs": "G2753",
+   "sha256": "a363d227dd7b47ca2c539866837777bf46b6e5babd8a375b8bce2075f46f84ef",
+   "gloss": "ordenar",
+   "definition": "κελεύω\n[na LXX: I Est.9:53, Tob.8:18, al., e frequentemente em 1-4Mac ;]\nincitar, mandar de viva voz, ordenar, comandar (geralmente de quem tem autoridade): com acusativo e inf. aor., Mat.14:19, 28 18:25 27:64, Luk.18:40, Act.4:15 5:34 8:38 22:30 23:10 25:6, 17; com elipse do acusativo, Mat.8:18 14:9 27:58, Act.12:19 21:33; com acusativo e inf. pres., Act.21:34 22:24 23:3, 35 25:21 27:43; com elipse do acusativo, Act.16:22; part. aor., Act.25:23.†\nSYN.: veja: ἐντέλλω"
+  },
+  {
+   "strongs": "G2754",
+   "sha256": "e5adae5a62646f08a7dfbc76a97a30e34f880f7717feb91fbdbc739afeabf111",
+   "gloss": "vanglória",
+   "definition": "κενοδοξία, -ας, ἡ\n(κενόδοξος), [na LXX: Wis.14:14, 2Ma.2:15 2Mac 8:10 * ;]\n1. fantasia tola, opinião vã, erro (LXX, ll. com).\n2. vanglória, presunção infundada: Php.2:3.†"
+  },
+  {
+   "strongs": "G2755",
+   "sha256": "e2bb3f4c354c636156e5a60a43ca3dd6b0e46d980d8d79366eeece4d1b9252cf",
+   "gloss": "vaidoso",
+   "definition": "κενόδοξος, -ον\n(κενός, δόξα),\nvanglorioso: Gal.5:26.†"
+  },
+  {
+   "strongs": "G2756",
+   "sha256": "ac4b27f6f13ff842882478582ba98b7255a2e0c27246c265b76591ab96cba278",
+   "gloss": "vazio",
+   "definition": "κενός, -ή, -όν\n[na LXX principalmente por רִיק e formas cognatas ;]\nvazio (Gen.37:24, Jdg.7:16). Metafórico,\n(a) vazio, vão: λόγοι, Eph.5:6; ἀπάτη, Col.2:8; κήρυγμα, πίστις, 1Co.15:14;\n(b) vão, infrutífero: ἡ χάρις, 1Co.15:10; κόπος, 1Co.15:50; ἡ εἴσοδος, 1Th.2:1; κενά, Act.4:25 (LXX); εἰς κενόν, em vão, inutilmente (Diod., LXX; cl. διὰ κενῆς), 2Co.6:1, Gal.2:2, Php.2:16, 1Th.3:5;\n(c.) de pessoas, de mãos vazias: Mrk.12:3, Luk.1:53 20:10-11; vão, Jas.2:20.†\nSYN.: μάταιος, do objetivo ou efeito de uma ação, κ. da sua qualidade (Lft. sobre Cl. Rom., 1Co., § 7; Tr., Syn., xlix)",
+   "note": "Source '(with)' is a garbled '(c)' (after (a), (b)): rendered '(c.)'."
+  },
+  {
+   "strongs": "G2757",
+   "sha256": "2696a07e133c9d6a7b875069eb0049eb95e1646e879d972c667d58add853e74d",
+   "gloss": "conversa vazia",
+   "definition": "κενοφωνία, -ας, ἡ\n(κενός, φωνέω), [cf. κενολογέω (צָפַף), Isa.8:19 * ;]\nconversa vazia, palavrório: pl., 1Ti.6:20, 2Ti.2:16.†"
+  },
+  {
+   "strongs": "G2758",
+   "sha256": "4a2aae70532884817efa0c4ba2079238231a7d5ed5af93e677e05efbbbb7163c",
+   "gloss": "esvaziar",
+   "definition": "κενόω, -ῶ\n(κενός, veja), [na LXX: Jer.14:2 15:9 (עָמָל pu.)* ;]\nesvaziar. Metafórico, esvaziar, tornar vazio, vão ou sem efeito: καύχημα, 1Co.9:15; ἑαυτόν, de Cristo, Php.2:7 (v Lft.; ICC, in 1, e esp. Gifford, Incarn., 54 ss.); pass., πίστις, Rom.4:14; ὁ σταυρός, 1Co.1:17; καύχημα, 2Co.9:3†"
+  },
+  {
+   "strongs": "G2759",
+   "sha256": "6996665e485bc069ed2dda63cb51d05bc7e888bd3483f3153fa97bc4e2fff2eb",
+   "gloss": "aguilhão",
+   "definition": "κέντρον, -ου, τό\n(εκντέω, picar), [na LXX: Pro.26:3 (מֶתֶג), Hos.13:14 (קֹטֶב), Hos.5:12, Sir.38:25, 4Ma.14:19 * ;]\n1. ferrão (4Mac, l. com): Rev.9:10. Metafórico (como Hos.13:14): τ. θανάτου, 1Co.15:55 (LXX), 1Co.15:56,\n2. aguilhão: pl., Act.26:14.†"
+  },
+  {
+   "strongs": "G2760",
+   "sha256": "b83eccf08ca8d78be3deb9273c68bd721ee418d914caceadaefec862cf6ab9fe",
+   "gloss": "centurião",
+   "definition": "κεντυρίων, -ωνος, ὁ (lat. centurio);\ncenturião: Mrk.15:39, 44-45 (Mt, Lc, usam ἑκιτόνταρχος (-ης), q.v).†"
+  },
+  {
+   "strongs": "G2761",
+   "sha256": "2fe147622ea43701d77606e421e9e50b140d4fe1392788eb096f94b0c48dd98b",
+   "gloss": "em vão",
+   "definition": "κενῶς\nadv., [na LXX: Isa.49:4 (רִיק)* ;]\nem vão, inutilmente: Jas.4:5.†"
+  },
+  {
+   "strongs": "G2762",
+   "sha256": "152c54785b54d56a2916d74e2e426a6c54205e45dac03ed26fa85f68ee3f99d7",
+   "gloss": "til",
+   "definition": "κεραία (WH, κερέα, veja App., 151), -ας, ἠ\n(κέρας),\npequeno chifre: da ponta ou extremidade que distingue algumas letras heb. de outras (p. ex. ד de ר; DCG, ii, 733), Mat.5:18, Luk.16:17.†"
+  },
+  {
+   "strongs": "G2763G",
+   "sha256": "c816a5eb2e920651299f4c00767aea1a5e026ce0ed723fae8927ee960a80a75c",
+   "gloss": "oleiro",
+   "definition": "κεραμεύς, -εως, ὁ\n(κεράννυμι), [na LXX por יָצַר, Psa.2:9, Jer.18:2, al. ;]\noleiro: Rom.9:21; ὁ ἀγρὸς τοῦ κ., Mat.27:7, (LXX).†"
+  },
+  {
+   "strongs": "G2763H",
+   "sha256": "550dfb59db77ff8ef3abc0a3f71729e861b0324089c5a099d49b167ff57b0cc8",
+   "gloss": "(Campo do) Oleiro",
+   "definition": "κεραμεύς, -εως, ὁ\n(κεράννυμι), [na LXX por יָצַר, Psa.2:9, Jer.18:2, al. ;]\noleiro: Rom.9:21; ὁ ἀγρὸς τοῦ κ., Mat.27:7, (LXX).†"
+  },
+  {
+   "strongs": "G2764",
+   "sha256": "23087ad361c1246bd9bfe733f0cfe921d26018945ca078928c7db48d19ce4ddd",
+   "gloss": "de barro",
+   "definition": "κεραμικός, -ή, -όν\n(κέραμος), [na LXX: Dan LXX 2:41 (פֶּחָר)* ;]\n1. (cl.) de oleiro (p. ex. γῆ).\n2. Na LXX e no NT, = cl., κεραμεοῦς (Plut., κεράμειος, Polyb., -μαῖος, etc), de barro: Rev.2:27.†"
+  },
+  {
+   "strongs": "G2765",
+   "sha256": "74cf6a4a16ea008fae9eff603727a6efedf721a361813f156507b60cddaa4c07",
+   "gloss": "jarro de barro",
+   "definition": "κεράμιον, -ου, τό\n(κέραμος), [na LXX: Jer.35:5 (גְּבִיעַ), etc. ;]\nvaso de barro, jarro ou cântaro: ὕδατος, Mrk.14:13, Luk.22:10.†"
+  },
+  {
+   "strongs": "G2766",
+   "sha256": "56b794d541a7c67b0e289a8cf2e50f26b4c30adcf9275c0d6234799d1acaf779",
+   "gloss": "telha de barro",
+   "definition": "κεραμος, -ου, ὁ\n(κεράννυμι), [na LXX: 2Ki.17:28 (יָצַר כְּלִי)* ;]\n1. barro de oleiro.\n2. vaso de barro.\n3. telha: Luk.5:19.†"
+  },
+  {
+   "strongs": "G2767",
+   "sha256": "802d2d14ad29673bfd4d720710ce2397afc5238bf940348f57d5eac8367ee9f6",
+   "gloss": "misturar",
+   "definition": "κεράννυμι\n[na LXX por מָסַךְ, Isa.5:22, al. ;]\nmisturar, mesclar, principalmente do diluir o vinho: Rev.18:6; por oxímoro, κεκεράσμενος ἄκρατος, Rev.14:10.†\nSYN.: μίγνυμι. κ. implica \"uma mistura de duas coisas, de modo que se fundem e formam um composto, como no vinho e na água, ao passo que μ. implica uma mistura sem tal composição, como em duas espécies de grão\" (LS, veja a palavra κρᾶσις)",
+   "note": "The quoted definition (LS) is translated."
+  },
+  {
+   "strongs": "G2768",
+   "sha256": "f6542321fd136c236f9a0b0230e92f479dc3dea735d27bee894990d3fa9bf438",
+   "gloss": "chifre",
+   "definition": "κέρας, -ατος\n(pl. não irreg. como no ático), τό, [na LXX principalmente por קָרַן ;]\nchifre: Rev.5:6 12:3 13:1, 11 17:3, 7 17:12, 16; das saliências nos cantos do altar (Exo.29:12, al.): Rev.9:13. Metafórico, como símbolo de força, κ. σωτηρίας (cf. Psa.18:3, al.): Luk.1:69.†"
+  },
+  {
+   "strongs": "G2769",
+   "sha256": "d84763affceca0e93b1981138278fd8de7f679ca6d3a5f1296c925855dc209f1",
+   "gloss": "alfarroba",
+   "definition": "κεράτιον, -ου, τό\n(dim. de κέρας),\n1. pequeno chifre (Arist.).\n2. No pl. (o fruto da κερατέα), vagens de alfarrobeira: Luk.15:16.†"
+  },
+  {
+   "strongs": "G2770",
+   "sha256": "065a1c7182aea30f332c57391b74e2b82acfabe97b50c74e3c1a9d46bf77455e",
+   "gloss": "ganhar",
+   "definition": "κερδαίνω\n[em Sm.: Job.22:3 * ;]\nganhar: com acusativo, Mat.25:16-17, 20 25:22; τ. κόσμον, Mat.16:26, Mrk.8:36, Luk.9:25; absol., ter lucro, obter ganho: Jas.4:13. Metafórico, com acusativo de coisa(s), poupar-se de, evitar: Act.27:21 (Field, Notas, 145); com acusativo de pessoa(s), ganhar, conquistar: Mat.18:15, 1Co.9:19-22, Php.3:8; pass., 1Pe.3:1.†"
+  },
+  {
+   "strongs": "G2771",
+   "sha256": "3f19efe40bdc280c2e87e1c0df9c82fa460a19c28c88fd590abeba7860b58289",
+   "gloss": "ganho",
+   "definition": "κέρδος, -εος (-ους), τό\n[em Aq.: Eze.27:24; Sm.: Psa.30:10, al. ;]\nganho: Php.1:21 3:7, Tit.1:11.†"
+  },
+  {
+   "strongs": "G2772",
+   "sha256": "f0243886fc02edbe9394168fefb6f18568c54b65ebb7ced4c6dc049093e04285",
+   "gloss": "moeda",
+   "definition": "κέρμα, -τος, τό\n(κείρω),\n1. fatia; daí,\n2. moeda pequena: pl., Jhn.2:15.†"
+  },
+  {
+   "strongs": "G2773",
+   "sha256": "0a73b730814d61739e49b69946e81d08de25e98a823671a174302d050be17b35",
+   "gloss": "cambista",
+   "definition": "κερματιατής, -οῦ, ὁ\n(κερματίζω, cortar em pedaços pequenos, trocar em moeda miúda),\ncambista: Jhn.2:14.†"
+  },
+  {
+   "strongs": "G2774",
+   "sha256": "99e1852f07bc0971813e92150decfc8ed3d65c0eb26d9283cddb5bdaf75f242b",
+   "gloss": "soma",
+   "definition": "κεφάλαιος, -α, -ον\n(κεφαλή), [na LXX (-αιον, τό) por רֹאשׁ, Num_4:2, al. ;]\nda cabeça; metaforicamente, principal, capital; geralmente como subst., κεφάλαιον, τό;\n1. o ponto principal: Heb.8:1.\n2. a soma total, quantia: Act.22:28 (outro sentido, LS, veja a palavra).†"
+  },
+  {
+   "strongs": "G2775",
+   "sha256": "6ff4989d0deb0e01723f9aa840eb0142ed91d9bb9318814238cd19d7867959b2",
+   "gloss": "ferir na cabeça",
+   "definition": "κεφαλιόω (Rec. -αιόω, [assim na LXX: Sir.32:8 *]), -ῶ\n(κεφάλιον, dim. de κεφαλή, em escritores tardios)\n1. (-αιόω) resumir (Thuc., al.).\n2. (No NT, apenas) ferir na cabeça: Mrk.12:4.†"
+  },
+  {
+   "strongs": "G2776",
+   "sha256": "61291ba649579774c05adb1e5797fbbd3194f7d696cfd457a2823e6f7eeb62f9",
+   "gloss": "cabeça",
+   "definition": "κεφαλή, -ῆς, ἡ\n[na LXX quase sempre por רֹאשׁ ;]\na cabeça: Mat.5:35, Mrk.6:24, Rev.1:14 9:7, al. mult.; figuradamente, ἄνθρακες ἐπὶ τὴν κ., Rom.12:20 (LXX); αἷμι, Act.18:6; metaforicamente, do marido, com genitivo, 1Co.1:13, Eph.5:23; de Cristo, 1Co.11:3, Eph.4:15 5:23, Col.1:18 2:10, 19; de coisas, κ. γωνίας, Mat.21:42 (LXX)"
+  },
+  {
+   "strongs": "G2777",
+   "sha256": "97d73ce46a4253c2260bca4ce9cc453e5ed22c444e45c3ecc7f19eb81b3fd194",
+   "gloss": "rolo",
+   "definition": "κεφαλίς, -ίδος, ἡ\n(dim. de κεφαλή), [na LXX por מְגִלָּה, וָו, etc. ;]\n1. pequena cabeça.\n2. extremidade, capitel (de coluna).\n3. (Como em Exo.2:9, Psa.40:8, Est.6:2) rolo: κ. βιβλίου, Heb.10:7 (LXX).†"
+  },
+  {
+   "strongs": "G2778",
+   "sha256": "a42adda78ddc04d035cec014d71dad6ec77dc728c0c1fe971987e6558fe0b514",
+   "gloss": "imposto",
+   "definition": "κῆνσος, -ου, ὁ (lat. census),\nimposto por cabeça: Mat.17:25 22:17, Mrk.12:14 (WH, mg., ἐπικεφάλαιον); τ. νόμισμα τοῦ κ., Mat.22:19 (veja MM, Exp., xv).†"
+  },
+  {
+   "strongs": "G2779",
+   "sha256": "836d139cf1d67f5a936114f00b18555f7ab89a934e64a69bb7342be68dad941a",
+   "gloss": "jardim",
+   "definition": "κῆπος, -ου, ὁ\n[na LXX por גַּן, גַּנָּה, גִּנָּה, Deu.11:10, Sng.4:12, al. ;]\njardim: Luk.13:19, Jhn.18:1, 26 19:41.†"
+  },
+  {
+   "strongs": "G2780",
+   "sha256": "0cc9a18c8f443ef791d3a63ef801c7553e41672bef5b5e26bbf441c480c8355a",
+   "gloss": "jardineiro",
+   "definition": "κηπ-ουρός, -οῦ, ὁ\n(κῆπος + οὖρος, vigia)\njardineiro: Jhn.20:15.†"
+  },
+  {
+   "strongs": "G2781",
+   "sha256": "0309cc9862656acf26077c3785510e71a5c0329e911880299f73183f653455f8",
+   "gloss": "favo de mel",
+   "definition": "κηρίον, -ου, τό\n(κηρός, cera), [na LXX por נֹפֶת, צוּף, Psa.19:10 118:12, Pro.16:24, al. ;]\nfavo de mel: κ. μελίσσιον, Luk.24:42 (Rec.; WH, txt., R, txt., omitem).†"
+  },
+  {
+   "strongs": "G2782",
+   "sha256": "272d343c2447b31b3d28b03a6e011919ea3ab5bf029031b421376dc6ca995dcc",
+   "gloss": "pregação",
+   "definition": "κήρυγμα, -τος, τό\n(κηρύσσω), [na LXX: 2Ch.30:5 (קוֹל), Jon.3.2 (קְרִיאָה), Pro.9:3, I Est.9:3 * ;]\nno cl.,\naquilo que é apregoado por um arauto, proclamação. No NT (veja Lft., Notas, 161), dos arautos de Deus, proclamação, mensagem, pregação (isto é, o conteúdo, distinto do ato, que seria expresso por † κήρυξις): Mat.12:41, Luk.11:32, 1Co.1:21, 2Ti.4:17, Tit.1:3; com genitivo cubic., τὸ κ. μου, 1Co.2:4; ἡμῶν, 1Co.15:14; com genitivo obj., Ἰησοῦ Χρ., Rom.16:25.†",
+   "note": "'cubic.' (a misread 'subj.') copied as in the source."
+  },
+  {
+   "strongs": "G2783",
+   "sha256": "cc73dfa46a1118bd8a36cb161b69de15c7a870f27041d898740cffdf6a4c38ab",
+   "gloss": "pregador",
+   "definition": "κῆρυξ\n(κήρ-, T), -υκος, ὁ [na LXX: Dan LXX TH Dan.3:4 (כָּרוֹז), Gen.41:43, Sir.20:15, 4Ma.6:4 * ;]\narauto: 1Ti.2:7, 2Ti.1:11, 2Pe.2:5.†"
+  },
+  {
+   "strongs": "G2784",
+   "sha256": "b779b2cea93e3480803368b9433495080dc36e9b2c2304282a1115692617d766",
+   "gloss": "pregar",
+   "definition": "κηρύσσω\n[na LXX principalmente por קָרָא ;]\nser arauto, proclamar: Mrk.1:45 7:36, Luk.4:18-19\" (LXX) (mas veja Field, Notas, 174) Luk.8:39, Rom.2:21, 1Co.9:27, Gal.5:11, al.; no NT, principalmente da proclamação do Evangelho, proclamar, pregar: τὸ εὐαγέλιον, Mat.4:23 9:35 24:14 26:13, Mrk.1:14 13:10 14:9 16:15, Gal.2:2, Col.1:23, 1Th.2:9; antes de εἰς, Mrk.1:39 13:10, Luk.4:44, 1Th.2:9; ἵνα, Mrk.6:12; com inf.. Rom.2:21; κ. Χριστόν, Ἰησοῦν, Act.8:5 9:20 19:13, 1Co.1:23 15:12, 2Co.1:19 11:4, Php.1:15; 1Ti.3:16 (cf. προ-κηρύσσω)"
+  },
+  {
+   "strongs": "G2785",
+   "sha256": "70389e2774496d5035154e4e74880ed3bbabd840efb1b934f083ad388939e410",
+   "gloss": "monstro marinho",
+   "definition": "κῆτος, -εος (-ους), τό\n[na LXX: Jon.2.1; Jon.2.10 (דָּג) Gen.1:21 (תַּנִּין), etc. ;]\npeixe enorme, monstro marinho: Mat.12:40 (LXX).†"
+  },
+  {
+   "strongs": "G2786",
+   "sha256": "6d146d8822a630905903c77fc37c95cb9c74e2a818e1439ddc01eac1931a35fe",
+   "gloss": "Cefas",
+   "definition": "Κηφᾶς, -ᾶ (veja Bl., § 10, 3), ὁ (aram. כֵּיפָא),\nCefas, isto é, Pedro: Jhn.1:43, 1Co.1:12 3:22 9:5 15:5, Gal.1:18 2:9, 11 2:14.†"
+  },
+  {
+   "strongs": "G2787G",
+   "sha256": "74b53d43e163ed389d96f305a6f8b2ef4743303acbadda390e0b38b59d632f3a",
+   "gloss": "arca: aliança",
+   "definition": "κιβωτός, -οῦ, ἡ\n[na LXX: Gen.6:1-22 7:1-24 8:1-22 9:1-29 (תֵּבָה), em outros lugares, muito freq., como Exo.25:9 (10), por אָרוֹן ;]\ncaixa ou baú de madeira: da arca de Noé, Mat.24:38, Luk.17:27, Heb.11:7, 1Pe.3:20; da arca da aliança, Heb.9:4, Rev.11:19.†"
+  },
+  {
+   "strongs": "G2787H",
+   "sha256": "062585f58d66ed7f713538db555d7cf3c96bf6e6529cce367c8f879494b60589",
+   "gloss": "arca: Noé",
+   "definition": "κιβωτός, -οῦ, ἡ\n[na LXX: Gen.6:1-22 7:1-24 8:1-22 9:1-29 (תֵּבָה), em outros lugares, muito freq., como Exo.25:9 (10), por אָרוֹן ;]\ncaixa ou baú de madeira: da arca de Noé, Mat.24:38, Luk.17:27, Heb.11:7, 1Pe.3:20; da arca da aliança, Heb.9:4, Rev.11:19.†"
+  },
+  {
+   "strongs": "G2788",
+   "sha256": "096d45dd0b12fae6f11e5df557e8aa66d6e46b006f9f045e8c78e6f22d1688f5",
+   "gloss": "harpa",
+   "definition": "κιθάρα, -ας, ἡ\n[na LXX principalmente por כִּנּוֹר, frequentemente em Psa.33:2, al.); e em (Dan.3:5, al.) por קִיתָרֹס, ele próprio transliteração de κίθαρις, a forma homérica de κ. (cf. CB, Dn., lviii) ;]\nlira, harpa: 1Co.14:7, Rev.5:8 14:2 15:2.†"
+  },
+  {
+   "strongs": "G2789",
+   "sha256": "8cf4e0861085097e6976ed165cc8aec9a4d111c14a6779363bc9a456d0c06da2",
+   "gloss": "tocar harpa",
+   "definition": "κιθαρίζω\n[na LXX: Isa.23:16 (נָגַן pi.)* ;]\ntocar lira ou harpa: 1Co.14:7, Rev.14:2.†"
+  },
+  {
+   "strongs": "G2790",
+   "sha256": "5e1da6b11c538567ce3e945a014beca83a4013272bd7ae72274f5bbbe1cc7bd4",
+   "gloss": "harpista",
+   "definition": "κιθαρ-ωδός, -οῦ, ὁ\n(κιθάρα, ἀοιδός, cantor)\naquele que toca e canta ao som da lira, harpista: Rev.14:2 18:22.†"
+  },
+  {
+   "strongs": "G2791",
+   "sha256": "5998c90152c72ddaebadb6eb6a44b043501aa04ee8458742035c2ea74f68b711",
+   "gloss": "Cilícia",
+   "definition": "Κιλικία, -ας, ἡ\nCilícia, província da Ásia Menor: Act.6:9 15:23, 41 21:39 22:3 23:34 27:5, Gal.1:21.†"
+  },
+  {
+   "strongs": "G2792",
+   "sha256": "1b742c5294589a0a2dc98b126619845c7896b743e62e70ad108b8f1136eb6035",
+   "gloss": "canela",
+   "definition": "κιννάμωμον(Rec. κινάμ-), -υο, τό\n(do fenício, veja LS, veja a palavra, e cf. heb. קִנָּמוֹן)\ncanela: Rev.18:13.†"
+  },
+  {
+   "strongs": "G2793",
+   "sha256": "5dc331de0cf1f8e9e08ae1646340eaa9605ca3954222bb1527ff73711069971f",
+   "gloss": "estar em perigo",
+   "definition": "κινδυνεύω\n(κίνδυνος), [na LXX por יָקֹשׁ ni., etc. ;]\n1. ser ousado, arriscar-se.\n2. estar em perigo: Luk.8:23, Act.19:27, 40, 1Co.15:30.†"
+  },
+  {
+   "strongs": "G2794",
+   "sha256": "9326de7215114410bb7b339b7ca095af3cae3cc238d9bb7de16e5af5e6096320",
+   "gloss": "perigo",
+   "definition": "κίνδυνος, -ου, ὁ\n[na LXX: Psa.116:3 (מֵצַר), Sir.3:26, al. ;]\nperigo, risco: Rom.8:35; pl., 2Co.11:26.†"
+  },
+  {
+   "strongs": "G2795",
+   "sha256": "b37062f556fd0ebb47f31842c8cc40ebb5eb76e868c2d8e331724e5c90cd0dd6",
+   "gloss": "mover",
+   "definition": "κινέω, -ῶ\n[na LXX por נוּעַ hi., רָמַשׂ, etc. ;]\n1. pôr em movimento, mover: Mat.23:4; τ. κεφαλήν (Psa.22:8, al.), Mat.27:39, Mrk.15:29; pass. (cf. Gen.7:21), Act.17:28.\n2. remover: Rev.2:5 6:14.\n3. excitar, agitar: Act.24:5; pass., Act.21:30 (cf. μετα-, συν-κινέω).†"
+  },
+  {
+   "strongs": "G2796",
+   "sha256": "dfff413955757fb89081f769c5286b2ded69c8e80438ffe7ef87d21bad9c1586",
+   "gloss": "movimento",
+   "definition": "κίνησις, -εως, ἡ\n(κινέω), [na LXX: Job.16:6 (5), (נִיד), al. ;]\nmovimento: Jhn.5:3.†"
+  },
+  {
+   "strongs": "G2797",
+   "sha256": "5f25cae7d9f4f043c13c098e6cfa99443332ea35dc48a907710871c878850214",
+   "gloss": "Quis",
+   "definition": "Κείς (Rec. Κίς), ὁ, indecl. (heb. קִישׁ),\nQuis: Act.13:21.†"
+  },
+  {
+   "strongs": "G2798",
+   "sha256": "4a5d711872c75182f54b533666aadb9f8115118b9293d90813322523aeef25cf",
+   "gloss": "ramo",
+   "definition": "κλάδος, -ου, ὁ\n(κλάω), [na LXX por דָּלִיָּה, כַּף, etc. ;]\nbroto jovem e tenro quebrado para enxertia; depois, ramo: Mat.13:32 21:8 24:32, Mrk.4:32 13:28, Luk.13:19; metaforicamente, de descendentes (cf. Sir.40:15), Rom.11:16-19, 21.†"
+  },
+  {
+   "strongs": "G2799",
+   "sha256": "7e4ae0af00d33f48a40ee8e55f2852c9952e3e3f963871711a10d51d0fbcb186",
+   "gloss": "chorar",
+   "definition": "κλαίω\n[na LXX principalmente por בָּכָה ;]\nde qualquer expressão ruidosa de dor ou tristeza, esp. pelos mortos, chorar, lamentar;\n(a) intr.: Mrk.5:38-39 14:72 (M, Pr., 131) Mrk.16:10, Luk.7:13, 32 7:38 8:52, Jhn.11:31, 33 16:20 20:11, 13 20:15 Act.9:39 21:13, 1Co.7:30, Php.3:18, Jas.4:9 5:1, Rev.5:5 18:15, 19; πολύ, Rev.5:4; πολλά, Act.8:24 (WH, mg.); πικρῶς, Mat.26:75, Luk.22:62; em oposição a γελάω, Luk.6:21, 25; χαίρω, Rom.12:15; antes de ἐπί, com acusativo, Luk.19:41 23:28, Rev.18:9;\n(b) trans., com acusativo de pessoa(s), chorar ou lamentar por, prantear: Mat.2:18.†\nSYN.: veja: δακρύω"
+  },
+  {
+   "strongs": "G2800",
+   "sha256": "bc0a29f289f316e94719719997708fef4cca42e1094bb4429c518e2c381f3b83",
+   "gloss": "partir",
+   "definition": "κλάσις, -εως, ἡ\n(κλάω),\no partir: Luk.24:35, Act.2:42.†"
+  },
+  {
+   "strongs": "G2801",
+   "sha256": "47391518f3ff8af4b85c6c56a2c17ab56f8d81f3fec80c8d30dfff7f86924066",
+   "gloss": "pedaço",
+   "definition": "κλάσμα, -τος, τό\n(κλάω), [na LXX por פַּת, פֶּלַח ;]\npedaço partido, fragmento: Mat.14:20 15:37, Mrk.6:43 8:8, 19-20, Luk.9:17, Jhn.6:12-13 †"
+  },
+  {
+   "strongs": "G2802",
+   "sha256": "2679cddda6b86806a4ef3317b9ee14df82fb6f930c93627d5941f741fa1e2f01",
+   "gloss": "Clauda",
+   "definition": "Καῦδα (TR, mg., Κλαῦδα; Rec. Κλαύδή), ἡ,\nCauda, Clauda, ilha perto de Creta: Act.27:16.†",
+   "note": "The gloss follows the Bíblia Livre ('Clauda', Act.27:16); the definition keeps both forms the lexicon names."
+  },
+  {
+   "strongs": "G2803",
+   "sha256": "0d05e39948a4d09bc0ff18d9e85b2bbaea5b865304f02c210f39eb5adfee8010",
+   "gloss": "Cláudia",
+   "definition": "Κλαυδία, -ας, ἡ\nCláudia: 2Ti.4:21.†"
+  },
+  {
+   "strongs": "G2804G",
+   "sha256": "b89b7007360b294c4950efccec525afecc9c56252bf6af0934db04d8f35c42df",
+   "gloss": "Cláudio",
+   "definition": "Κλαύδιος, -ου, ὁ\nCláudio;\n1. o imperador: Act.11:28 18:2.\n2. Um tribuno militar, C. Lísias: Act.23:26.†"
+  },
+  {
+   "strongs": "G2804H",
+   "sha256": "b89b7007360b294c4950efccec525afecc9c56252bf6af0934db04d8f35c42df",
+   "gloss": "Cláudio",
+   "definition": "Κλαύδιος, -ου, ὁ\nCláudio;\n1. o imperador: Act.11:28 18:2.\n2. Um tribuno militar, C. Lísias: Act.23:26.†"
+  },
+  {
+   "strongs": "G2805",
+   "sha256": "f963c7f9b366b1c964fdc80161242170b4b91561bf1f0f61df5375494600284d",
+   "gloss": "choro",
+   "definition": "κλαυθμός, -οῦ, ὁ\n(κλαίω), [na LXX principalmente por בְּכִי ;]\npranto, choro, Act.20:37; κ. καὶ ὀδυρμός, Mat.2:18 (LXX); ὁ κ. καὶ ὁ βρυγμός, Mat.8:12 13:42, 50 22:13 24:51 25:30, Luk.13:28.†"
+  },
+  {
+   "strongs": "G2806",
+   "sha256": "094cc0a04da73630e43e65f4fea27bb99e9c71b1ea3cb2c965cb6127c4ac7fd9",
+   "gloss": "partir",
+   "definition": "κλάω\n[na LXX: Jer.16:7 (פַּרְנַךְ), al. ;]\npartir, partir em pedaços: do pão, Mat.14:19 15:36 26:26, Mrk.8:6 14:22, Luk.22:19 24:30, Act.2:46 20:7, 11 27:35, 1Co.10:16 11:24; antes de εἰς, com acusativo de pessoa(s), Mrk.8:19 (cf. ἐκ-, κατα-κλάω).†"
+  },
+  {
+   "strongs": "G2807",
+   "sha256": "a6b80cd050a7614085e710c8943d391a5321c8d38a4f219a1259637e11dc06c2",
+   "gloss": "chave",
+   "definition": "κλείς, -δός át.. acusativo, κλεῖν, mais tarde -εῖδα, pl., κλεῖδες, -ας, contr., -εῖς, ἡ,\n[na LXX por מַפְתֵּחַ, Isa.22:22, al. ;]\nchave. Fig., τ. βασιλείας τ. οὐρανῶν, Mat.16:19; τ. γνώσεως, Luk.11:52; de Davi (cf. LXX, l. com), Rev.3:7; τ. θανάτου κ. τ. ᾅδου, Rev.1:18; τ. ἀβύσσαυ, Rev.20:1; τ. φρέατος τῆς ἀ., Rev.9:1.†"
+  },
+  {
+   "strongs": "G2808",
+   "sha256": "1540dfbb0f08736176b8070791734642dcf81f25996d42f57d9ebb515e0e46f3",
+   "gloss": "fechar",
+   "definition": "κλείω\n[na LXX principalmente por סָגַר ;]\nfechar: θύραν, Mat.6:6; τ. ἄβυσσον, Rev.20:3; pass., θύρα, Mat.25:10, Luk.11:7 (pl.), Jhn.20:19, 26, Act.21:30; δεσμωτήριον, Act.5:23; πυλῶνες, Rev.21:25. Metafórico, τ. οὐρανόν, Luk.4:25, Rom.11:6; τ. σπλάγχνα, 1Jn.3:17; τ. βασιλείαν, Mat.23:14; id. absol., Rev.3:7; τ. θύραν, Rev.3:8. (cf. ἀπο-, ἐκ-, κατα-, συν-κλείω.) †"
+  },
+  {
+   "strongs": "G2809",
+   "sha256": "af004bb0148fe4f1c4641f35dcef5438768f7c76e1903316ffa1ecd0017648ce",
+   "gloss": "furto",
+   "definition": "κλέμμα, -τος, τό\n(κλέπτω), [na LXX: Gen.31:39, Exo.22:3-4 (2-3) (גָּנַב, גְּנֵבָה)* ;]\n1. coisa furtada (Arist., LXX)\n2. = κλοπή, furto (Plato, al.): pl., Rev.9:21.†"
+  },
+  {
+   "strongs": "G2810",
+   "sha256": "569b906e00ffc9fdc09df02627745e0a8c60a206e3a2278f40fe862cdcb8527a",
+   "gloss": "Cleofas",
+   "definition": "Κλεόπας, -α (veja B1., § 7, 2), ὁ\nCleofas: Luk.24:18.†",
+   "note": "Name as in the Bíblia Livre (Luk.24:18 'Cleofas'; it also spells Κλωπᾶς 'Cleofas', Jhn.19:25). 'B1.' (for Bl.) copied as in the source."
+  },
+  {
+   "strongs": "G2811",
+   "sha256": "348556af98e27dd49a1310aaf0ea26e7e4829277f50f2f6d302f98059555286c",
+   "gloss": "crédito",
+   "definition": "κλέος, -ους, τό\n[na LXX: Job.28:22 (שֵׁמַע) Job.30:8 * ;]\n1. rumor, notícia.\n2. boa fama, renome, glória: 1Pe.2:20.†"
+  },
+  {
+   "strongs": "G2812",
+   "sha256": "22e4dc67aeae2611e6072bd6b514d0f6fa8e6b9dc6730293638d1647d5e933a0",
+   "gloss": "ladrão",
+   "definition": "κλέπτης, -ου, ὁ\n[na LXX por גַּנָּב ;]\nladrão: Mat.6:19-20 24:43, Luk.12:33, 39, Jhn.10:1, 10 12:6, 1Co.6:10, 1Pe.4:15. Fig., ὡς κ. ἐν νυκτί, 1Th.5:2 5:4 (κλέπτας, WH, txt., R, mg.; veja Lft., Notas, 73; mas cf. também M, Th., l. com), 2Pe.3:10, Rev.3:3 16:15. Metafórico, dos falsos mestres, Jhn.10:8.†\nSYN.: λῃστής, salteador, bandido que saqueia abertamente, com violência; κ. é o ladrão que furta em segredo, por fraude e astúcia (Tr., Syn., § xliv)"
+  },
+  {
+   "strongs": "G2813",
+   "sha256": "7a2efe6f1facc54ac0fe2382153b37c4afa1fc0dd9dec9c6775142552de4c623",
+   "gloss": "furtar",
+   "definition": "κλέπτω\n[na LXX por גָּנַב ;]\nfurtar: absol., Mat.6:19-20 19:18, Mrk.10:19, Luk.18:20, Jhn.10:10, Rom.2:21 13:9, Eph.4:28; com acusativo, Mat.27:64 28:13.†"
+  },
+  {
+   "strongs": "G2814",
+   "sha256": "a54a7a97d54b256fb7f1d04b214e77dfcb69869af19b85d18edbf5e26db39e4c",
+   "gloss": "ramo",
+   "definition": "κλῆμα, -τος, τό\n(κλάω), [na LXX principalmente por זְמוֹרָה, דָּלִיָּה, Eze.15:2 17:6-7, al. ;]\nsarmento, ramo de videira: Jhn.15:2, 4-6.†"
+  },
+  {
+   "strongs": "G2815",
+   "sha256": "89a6eab8e3691e16414b0bb848c92dec08d53d598389703806cf2c2cffc89e7c",
+   "gloss": "Clemente",
+   "definition": "Κλήμης, -εντος, ὁ\nClemente: Php.4:3.†"
+  },
+  {
+   "strongs": "G2816",
+   "sha256": "75bcd26bc7ee497367a64ba2b6682ca51ecd8ac504171915a7735297c48eb70b",
+   "gloss": "herdar",
+   "definition": "κληρονομέω, -ῶ\n(κληρονόμος) [na LXX principalmente por יָרַשׁ, também por נָחַל, etc. ;]\n1. receber por sorte.\n2. herdar (no cl., geralmente com genitivo de coisa(s)): absol., Gal.4:30 (LXX); em geral, apossar-se de, receber como seu, obter (como Deu.4:5, al., cf. Psa.25:3, Isa.61:7): com acusativo de coisa(s) (como geralmente no gr. tardio, veja M, Pr., 65), do Reino messiânico (cf. Psa.37:11, Sir.4:13 37:26, e veja Dalman, Words, 125 ss.) e de suas bênçãos e privilégios, τ. γῆν, Mat.5:5 (cf. LXX); τ. βασιλείαν, β. θεοῦ, Mat.25:34, 1Co.6:9-10 15:50, Gal.5:21; ζωὴν αἰώνιον, Mat.19:29, Mrk.10:17, Luk.10:25 18:18; σωτηρίαν, Heb.1:14; τ. ἐπαγγελίας, Heb.6:12; ἀφθαρσίαν, 1Co.15:50; ὄνομα, Heb.1:4; τ. εὐλογίαν, Heb.12:17, 1Pe.3:9; ταῦτα, Rev.21:7 (cf. κατα-κληρονομέω).†",
+   "note": "'Words' is Dalman's title, kept."
+  },
+  {
+   "strongs": "G2817",
+   "sha256": "395b632805a4e8fabda9b12586a94b31b07d62292cd2c66fa13ff34bcd6436e9",
+   "gloss": "herança",
+   "definition": "κληρονομία, -ας, ἡ\n(κληρονόμος) [na LXX principalmente por נַחֲלָה, também por יְרֻשָּׁה, etc. ;]\nprop., propriedade herdada, herança: Mat.21:38, Mrk.12:7, Luk.12:13 20:14; em geral, possessão, herança: Act.7:5, Heb.11:8; do Reino messiânico e de suas bênçãos, Act.20:32, Gal.3:18, Col.3:24, Eph.1:14, 18 5:5, Heb.9:15, 1Pe.1:4.†"
+  },
+  {
+   "strongs": "G2818",
+   "sha256": "3159bac6ce465d19441196fdebb907db417f67645f042b9a1ae61ae831b90dcc",
+   "gloss": "herdeiro",
+   "definition": "κληρο-νόμος, -ου, ὁ\n(κλῆρος, νέμομαι, possuir) [na LXX: Jdg.18:7, 2Ki.14:7, Mic.1:15, Jer.8:10 (יָרַשׁ), Sir.23:22 * ;]\n1. (como no cl.) herdeiro: Mat.21:38, Mrk.12:7, Luk.20:14, Gal.4:1; dos que, como filhos de Deus, herdam os privilégios do Reino messiânico; do próprio Cristo, Heb.1:2; de Abraão, Rom.4:13-14; dos cristãos, Rom.8:17, Gal.3:29, Tit.3:7, Jas.2:5.\n2. (Como na LXX: Jz, Mq, Jr, ll. com) possuidor: Heb.6:17 11:7 (Cremer, 359 s.).†"
+  },
+  {
+   "strongs": "G2819",
+   "sha256": "8561328f3eab447d84ce52546d75692dc999a89570397b80d68ffc24ba977f39",
+   "gloss": "sorte",
+   "definition": "κλῆρος, -ου, ὁ\n[na LXX principalmente por נַחֲלָה גּוֹרָל ;]\nsorte;\n(a) aquilo que é lançado ou tirado: Mat.27:35, Mrk.15:24, Luk.23:34, Jhn.19:24\" (LXX), Act.1:26;\n(b) aquilo que se obtém por sorteio: Act.1:17 8:21; de uma parte no Reino de Deus (cf. Wis 55), Act.26:18, Col.1:12; no pl., da \"cura\" de um presbítero, 1Pe.5:3 (veja ICC, in l).†"
+  },
+  {
+   "strongs": "G2820",
+   "sha256": "40cd1ab17af508de7389fadafb9a592a7ad62aaef98f7add6ec6cba63306e786",
+   "gloss": "obter",
+   "definition": "κληρόω, -ῶ\n[na LXX: 1Ki.14:41 (לָכַד ni.), Est.4:11 A (קָרָא ni.), Isa.17:11 * ;]\n1. lançar sortes.\n2. escolher por sorte.\n3. atribuir por sorte, atribuir uma porção: pass., ἐν ᾧ καὶ ἐκληρώθημεν, Eph.1:11 (sobre as várias interpretações, veja ICC; AR; Ellic., in l).†"
+  },
+  {
+   "strongs": "G2821",
+   "sha256": "30ed6060215c3078fa0d8a46dfc7df0b39a8983a5790259d99eb38c70f2bcd21",
+   "gloss": "chamado",
+   "definition": "κλῆσις, -εως, ἡ (καλέω)\n[na LXX: Jer.31:6 (קָרָא), Jdth.12:10 A, 3Ma.5:14 * ;]\nchamamento, chamado; no NT, sempre do chamado divino à salvação: Rom.11:29, 1Co.1:26 7:20, Eph.1:18 4:1, 4, Php.3:14, 2Th.1:11, 2Ti.1:9, Heb.3:1, 2Pe.1:10 (Cremer, 332).†"
+  },
+  {
+   "strongs": "G2822",
+   "sha256": "78694eaad0a7586f32d6b30210f487197e3bd5e75084017994ec4e542a331713",
+   "gloss": "chamado",
+   "definition": "κλητός, -ή, -όν\n(καλέω), [na LXX por קָרָא, מִקְרָא, Exo.12:16, al. ;]\nchamado, convidado (como a um banquete, Æsch., 1Sa 1:41, 3Ma.5:14); no NT, sempre do chamado divino;\n(a) a algum ofício: κ. ἀπόστολος, Rom.1:1, 1Co.1:1;\n(b) à salvação: Rom.8:28, 1Co.1:24, Ju 1; κ. καὶ ἐκλεκτοὶ κ. πιστοί, Rev.17:14; nos evang. (não no pl., veja: καλέω) distinto de ἐκλεκτός, Mat.20:16 (WH, txt., R, omitem), Mat.22:14; κ. Ἰησοῦ Χρ., Rom.1:6; κ. ἅγιοι, santos por chamamento, Rom.1:7, 1Co.1:2.†"
+  },
+  {
+   "strongs": "G2823",
+   "sha256": "c28eb3523eca651b38af383f1907fed79445900465bc87b6d05ec8a69da42aae",
+   "gloss": "forno",
+   "definition": "κλίβανος, -ον, ό\n(át.., κρίβ-, mas κλ- no jônico, Hdt., ii, 92), [na LXX por תַּנּוּר, Gen.15:17, Hos.7:4, 6 al. ;]\n1. no cl., clibanus, cribanus, vaso de barro para cozer pão.\n2. Na LXX e no NT, fornalha (cf. MM, Exp., xv), forno: Mat.6:30, Luk.12:28.†"
+  },
+  {
+   "strongs": "G2824",
+   "sha256": "54f475fee577d3da9e5aa6c34ba54933257c8fe4d4583362854d5f0b7f9d9a0f",
+   "gloss": "região",
+   "definition": "κλίμα, -τος, τό\n(κλίνω) [na LXX: Jdg.20:2 A (פִּנָּה)* ;]\n1. inclinação, declive, esp. o declive do equador ao polo (Arist).\n2. região (Polyb., al.): pl., Rom.15:23, 2Co.11:10, Gal.1:21.†"
+  },
+  {
+   "strongs": "G2825",
+   "sha256": "71e189d99c7e9b38ba38aeff492bc0f5649822700976d36e4ccd5a5ac523c398",
+   "gloss": "cama",
+   "definition": "κλίνη, -ης, ἡ\n(κλίνω), [na LXX principalmente por מִטָּה ;]\ncama, leito: Mat.9:2, 6, Mrk.4:21 7:4, 30, Luk.5:18 8:16 17:34, Rev.2:22 (cf. MM, Exp., xv).†"
+  },
+  {
+   "strongs": "G2826",
+   "sha256": "a22db8f564071af07522949c0baed4d6cc97d630d052263bb1e5256e74345406",
+   "gloss": "leito",
+   "definition": "κλινίδιον, -ου, τό\ndim. de κλίνη,\npequeno leito: Luk.5:19, 24 (cf. κλενάριον).†",
+   "note": "Source 'a conch' is a misprinted 'a couch': rendered 'pequeno leito'."
+  },
+  {
+   "strongs": "G2827",
+   "sha256": "a3ad5de5fe9af88804e5820a16c43a35562c5330606f8696ace7d390b9954048",
+   "gloss": "inclinar/deitar",
+   "definition": "κλίνω\n[na LXX principalmente por נָטָה ;]\n1. fazer curvar, inclinar: τ. κεφαλήν (de quem morre), Jhn.19:30; τ. πρόσωτον (de pessoas aterrorizadas), Luk.24:5.\n2. fazer recostar, repousar: τ. κεφαλήν (no sono), Mat.8:20, Luk.9:58.\n3. Como em Hom., de soldados, pôr (em fuga), παρεμβολάς, Heb.11:34.\n4. No gr. tardio (como o méd. no cl.), declinar: intr., ἡ ἡμέρα, Luk.9:12 24:29.†"
+  },
+  {
+   "strongs": "G2828",
+   "sha256": "edc5417b1d074d2c05abfb8be8824818e4c8f53d8bfc4585ed55b268f4f67c50",
+   "gloss": "grupo",
+   "definition": "κλισία, -ας, ή\n(κλίνω), [na LXX: 3Ma.6:31 A* ;]\n1. lugar para reclinar-se; daí,\n(a) cabana;\n(b) poltrona;\n(c.) leito.\n2. grupo de pessoas reclinadas: pl., Luk.9:14 (cf. FlJ, Ant., xii, 2, 12)",
+   "note": "Source '(with)' is a garbled '(c)' (after (a), (b)): rendered '(c.)'."
+  },
+  {
+   "strongs": "G2829",
+   "sha256": "2d1690a926d8af7191cd5ae0d5f8689f195211c0a3ea23a2aa028fdf6971fee2",
+   "gloss": "furto",
+   "definition": "κλοπή, -ῆν, ἡ\n(κλέπτω), [na LXX por גָּנַב ;]\nfurto: pl., Mat.15:19, Mrk.7:22.†"
+  },
+  {
+   "strongs": "G2830",
+   "sha256": "d4e98827b3ebfb6e2353d7aa6ff64bf4bf6dcf2d1207c600d1ae8e6406730fc4",
+   "gloss": "ondas",
+   "definition": "κλύδων, -ωνος, ὁ\n(κλύζω, do mar, banhar, inundar), [na LXX: Jon.1.4; Jon.1.12 (סַעַר), al. ;]\nvagalhão, onda encapelada: Luk.8:24, Jas.1:6.†\nSYN.: κῦμα, onda"
+  },
+  {
+   "strongs": "G2831",
+   "sha256": "a59407cfc6f7c50957eba4db155813f1bc980dea08e344db4fe83562db26ea7a",
+   "gloss": "ser agitado",
+   "definition": "κλυδωνίζομαι\n(κλύδων), [na LXX: Isa.57:20 (גָּרַשׁ)* ;]\nser agitado pelas ondas; metaforicamente, ser agitado como as ondas (cf. FlJ, Ant., ix, 11, 3): Eph.4:14.†"
+  },
+  {
+   "strongs": "G2832",
+   "sha256": "cf837795dfdfc86fb457f5efdbcb1187280489f06bf7aa3b805f7c4052dcc6c6",
+   "gloss": "Cleofas",
+   "definition": "Κλωπᾶς, -ᾶ, ὁ (aram.; sobre o original, veja Lft., Gal., 267 s.),\nCleofas: Jhn.19:25.†",
+   "note": "Name as in the Bíblia Livre (Jhn.19:25 'Cleofas'), which spells Κλεόπας the same way (Luk.24:18); the English distinguishes Clopas and Cleopas."
+  },
+  {
+   "strongs": "G2833",
+   "sha256": "2bacb860e807e6b33c59f71ec062a1b40b2bf6d1efe1bcec09dec88d8714079b",
+   "gloss": "coçar",
+   "definition": "κνήθω\n(forma tardia de κνάω),\n1. coçar.\n2. fazer cócegas; pass., sentir coceira: 2Ti.4:3.†"
+  },
+  {
+   "strongs": "G2834",
+   "sha256": "d8599070b0daebcbf828ffa854d9fe4203f586754e6a5a24c0635434f4395cbc",
+   "gloss": "Cnido",
+   "definition": "Κνίδος, -ου, ἡ\nCnido, cidade (e península) na costa sudoeste da Ásia Menor: Act.27:7.†"
+  },
+  {
+   "strongs": "G2835",
+   "sha256": "47cf8686d039b3518eb02afe066ee8f40e6655e5e857179bf72dfa5df72ff571",
+   "gloss": "quadrante",
+   "definition": "κοδράντης, -ου, ὁ (lat. quadrans, a quarta parte de um asse),\nquadrante (AV, «farthing»): Mat.5:26, Mrk.12:42.†",
+   "note": "'farthing' is the AV's rendering, kept in English."
+  },
+  {
+   "strongs": "G2836",
+   "sha256": "49360095dd9abe5a8c6b161d86d032ed93de49297f6240e9adac08d48f5fa8ce",
+   "gloss": "ventre/útero/estômago",
+   "definition": "κοιλία, -ας, ἡ\n(κοῖλος, oco), [na LXX principalmente por בֶּטֶן, מֵעֶה, קֶרֶב, Deu.7:13, 2Ki.7:12, Gen.41:21, al.; também (Job.3:11 10:18 31:15 38:8) por רֶחֶם ;]\n1. o ventre (estômago ou intestinos, ou ambos): Mat.12:40 15:17, Mrk.7:19, Luk.15:16, Rom.16:18, 1Co.6:13, Php.3:19, Rev.10:9-10.\n2. (Como frequentemente na LXX) o útero: Luk.1:41-42, 44 2:21 11:27 23:29, Jhn.3:4; ἐκ κ. μητρός (cf. Psa.22:11, Job.1:21, al.), Mat.19:12, Luk.1:15, Act.3:2 14:8, Gal.1:15.\n3. Metafórico (como o heb. בֶּטֶן, cf. Job.15:35, Pro.20:27, Sir.19:12), do coração: Jhn.7:38.†"
+  },
+  {
+   "strongs": "G2837",
+   "sha256": "8712db1acd111644c8eff89924007b9701fd1cce0e91d0ad8233915af54dd7a4",
+   "gloss": "dormir",
+   "definition": "κοιμάω, -ῶ\n[na LXX principalmente por שָׁכַב ;]\nembalar para dormir, fazer dormir. Méd. e pass., adormecer (M, Pr., 162; M, Th., 1, 4, 13): Mat.28:13, Luk.22:45, Jhn.11:12, Act.12:6. Metaf., da morte: Mat.27:52, Jhn.11:11 Act.7:60 13:36, 1Co.7:39 11:30 15:6 15:18 15:20 15:51, 1Th.4:13-15, 2Pe.3:4 (cf. Isa.14:8 43:17, 2Ma.12:45).†\nSYN.: καθεύδω"
+  },
+  {
+   "strongs": "G2838",
+   "sha256": "b74e5f3e9f099c7359b1d36a035d19eb4b24a24896de9f553aaa199aa353c480",
+   "gloss": "sono",
+   "definition": "κοίμησις, -εως, ἡ\n[na LXX: Sir.46:19 48:13 * ;]\no reclinar-se, repouso: Jhn.11:13.†"
+  },
+  {
+   "strongs": "G2839G",
+   "sha256": "9c12b0e7b33b7df155eacdb476a1835e02392f9a39e726734c9ad06da073d401",
+   "gloss": "comum: profano",
+   "definition": "κοινός, -ή, -όν\n[na LXX: Pro.1:14 (אֶחָד) Pro.21:9 25:24 (חֶבֶר), Wis.7:3, al. ;]\n1. comum (geral; = lat. communis): Act.2:44 4:32; κ. πίστις, Tit.1:4; σωτηρία, Ju 3\n2. comum (ordinário; = vulgaris); daí, na LXX (1Ma.1:47, al.) e no NT, profano, impuro (cl., βέβηλος, veja): Mrk.7:2, 5, Act.10:14, 28 11:8, Rom.14:14, Heb.10:29, Rev.21:27.†"
+  },
+  {
+   "strongs": "G2839H",
+   "sha256": "9f4027ce50df08f22db9f0b87bf4db1b41cf035632dd32b69d96b2a8a171a272",
+   "gloss": "comum: compartilhado",
+   "definition": "κοινός, -ή, -όν\n[na LXX: Pro.1:14 (אֶחָד) Pro.21:9 25:24 (חֶבֶר), Wis.7:3, al. ;]\n1. comum (geral; = lat. communis): Act.2:44 4:32; κ. πίστις, Tit.1:4; σωτηρία, Ju 3\n2. comum (ordinário; = vulgaris); daí, na LXX (1Ma.1:47, al.) e no NT, profano, impuro (cl., βέβηλος, veja): Mrk.7:2, 5, Act.10:14, 28 11:8, Rom.14:14, Heb.10:29, Rev.21:27.†"
+  },
+  {
+   "strongs": "G2840",
+   "sha256": "3c8579853fd5cf88d4b803871a0494e1920980d86de7af2c2c97b49db10ecf6e",
+   "gloss": "profanar",
+   "definition": "κοινόω, -ῶ\n[na LXX: 4Ma.7:6 א R* ;]\n1. no cl., tornar comum.\n2. Na LXX, l. com, e no NT (como κοινός, 2), tornar cerimonialmente impuro, profanar (= cl., βεληλόω): Mat.15:11, 18 15:20, Mrk.7:15, 18 7:20, 23, Act.21:28; pass., Heb.9:13.\n3. considerar impuro (cf. δικαιόω): Act.10:15 11:9.†\nSYN.: βεβηλόω. Thayer (veja a palavra κ.) menciona que Winer observa a precisão com que se diz que os judeus usam κ. ao se dirigirem a judeus, Act.21:28, e β. ao falarem a Félix, 24:6 (Cremer, 362)",
+   "note": "Source 'Winer Notes' (capital N) is the verb 'notes': rendered 'observa'."
+  },
+  {
+   "strongs": "G2841",
+   "sha256": "e50ceeaf4599ac7e40dc02eb4da1ae4ece9948d124fc0c83bd7b82dc69aeb534",
+   "gloss": "participar",
+   "definition": "κοινωνέω, -ῶ\n[na LXX: 2Ch.20:35, Job.34:8, Ecc.9:4 (חָבַר), Pro.1:11, Wis.6:23, Sir.13:1, al. ;]\nter parte em, compartilhar (algo) com (alguém), tomar parte em: com genitivo de coisa(s) (como geralmente no cl., assim Pv, l. com), Heb.2:14; com dativo de coisa(s), Rom.12:13 15:27, 1Ti.5:22, 1Pe.4:13, 2Jn.11; com dativo de pessoa(s), antes de εἰς, Php.4:15; ἐν, Gal.6:6 (cf. συν-κοινωνέω).†",
+   "note": "'Pr, l.with' (Proverbs, LXX Pro.1:11) written 'Pv, l. com'."
+  },
+  {
+   "strongs": "G2842",
+   "sha256": "d052ee77a1cd7847f02b8640a5805df33682e1b853416b1a7fca02b44113e720",
+   "gloss": "participação",
+   "definition": "κοινωνία, -ας, ἡ\n(κοινωνός), [na LXX: Lev.6:2 (יָד תְּשׂוּמֶת), Wis.8:18, 3Ma.4:6 * ;]\n1. comunhão, participação: Act.2:42, 2Co.6:14, Php.1:5; τ. υἱοῦ, 1Co.1:9; τ. αἵματος, σώματος Χρ., 1Co.10:10 : παθημάτων αὐτσῦ, Php.3:10; τ. πνεύματος, 2Co.13:13, Php.2:1; δεξιὰς κοινωνίας, Gal.2:9; τ. πίστεώς σου, Phm 6; antes de μετὰ: τ. πατρός, 1Jn.1:3 Jn 1:6; ἡμῶν, ἀλλήλων, 1Jn.1:3 Jn 1:7.\n2. contribuição (como fruto da comunhão): Rom.15:26, 2Co.8:4 9:13, Heb.13:6 (cf. art. Communion, DB, i, 460 ss.; MM, Exp., xv).†",
+   "note": "'Communion' is the title of DB's article, kept."
+  },
+  {
+   "strongs": "G2843",
+   "sha256": "c5ae644ef9580f5367e3463ee2d48855129cec366e6d41663bff3656596fe6a1",
+   "gloss": "generoso",
+   "definition": "κοινωνικός, -ή, -όν\n(κοινωνία),\n1. sociável.\n2. pronto a comunicar ou repartir (R, mg., pronto a compadecer-se, veja Field, Notas, 213 s.): 1Ti.6:18.†"
+  },
+  {
+   "strongs": "G2844",
+   "sha256": "150c37c50a3718a50abcaa8b32edc3440361422859127629cfc5062b0d176754",
+   "gloss": "participante",
+   "definition": "κοινωνός, -ή, -όν\n(κοινός), [na LXX: Pro.28:24, Isa.1:23 (חָבֵר), Mal.2:14 (חֲבֶרֶת), Est.8:13, al. ;]\n1. como adj., = κοινός.\n2. Como subst., ὁ, ἡ κ.,\n(a) sócio, associado, companheiro: 2Co.8:23, Phm 17; com dativo de pessoa(s), Luk.5:10; com genitivo de pessoa(s), Heb.10:33; id. antes de ἐν, Mat.23:30;\n(b) participante, partícipe: com genitivo de coisa(s), 1Co.10:18 10:20, 2Co.1:7, 1Pe.5:1, 2Pe.1:4 (veja Deiss., BS, 368 n2).†"
+  },
+  {
+   "strongs": "G2845",
+   "sha256": "afdc7ab712485fbfe102bd6e5a6a8e165f94b55b9b84767f61a02f59c6dcd454",
+   "gloss": "cama",
+   "definition": "κοίτη, -ης, ἡ (em Hom., κοῖτος)\n[na LXX principalmente por מִשְׁכָּב, também por שְׁכָבָה, etc. ;]\ncama: Luk.11:7; esp. o leito conjugal: κ. ἀμίαντος, Heb.13:4; κ. ἔχειν, da mulher que concebe, Rom.9:10 (cf. expressões peculiares na LXX, Lev.15:18, al.); de relações ilícitas, pl., Rom.13:13.†"
+  },
+  {
+   "strongs": "G2846",
+   "sha256": "9b6b40cb80507c608a12e2ffd7ef01aabddebf3284f79ed0d19194ccc8db06e5",
+   "gloss": "quarto/camareiro",
+   "definition": "κοιτών, -ῶνος, ὁ\n(κοίτη = át.., δωμότιον, veja Kennedy, Sources, 40), [na LXX principalmente por חֶדֶר, 2Ki.4:7, Jol.2:16; I Est.3:3, al. ;]\nquarto de dormir; ὁ ἐπὶ τοῦ κ., camareiro: Act.12:20.†",
+   "note": "'Sources' is Kennedy's title, kept."
+  },
+  {
+   "strongs": "G2847",
+   "sha256": "8f3c57e5f3ab70324b1d49afc815d9b85f46c97e86e794559dafb423334770fb",
+   "gloss": "escarlate",
+   "definition": "κόκκινος, -η, -ον\n(κόκκος, como usado da \"baga\" do ilex coccifera, veja DB, iv, 416), [na LXX por תּוֹלָע, תּוֹלָע, שָׁנִי, Exo.25:4, Gen.38:23, Isa.1:18, al. ;]\nescarlate: Mat.27:28, Heb.9:19, Rev.17:3; neut., sem substantivo, de roupas, Rev.17:4 18:12, 16,†"
+  },
+  {
+   "strongs": "G2848",
+   "sha256": "b06e208523f9657a1aefa00ba9bb9c5c2bd1945662b14b83b2a36f2780e87f92",
+   "gloss": "semente",
+   "definition": "κόκκος, -ου, ὁ\n[na LXX: La 4:5 B א R (תּוֹלָע), Sir.45:11 * ;]\ngrão: Mat.13:31 17:20, Mrk.4:31, Luk.13:19 17:6, Jhn.12:24, 1Co.15:37.†"
+  },
+  {
+   "strongs": "G2849",
+   "sha256": "38ae31f330d053efff56c0f7423ed3457432a16bae0b96faa1c6b210f0d14cea",
+   "gloss": "punir",
+   "definition": "κολάζω\n(κόλος, cortado), [na LXX: Dan.6:12 (13) (sem heb.), I Est.8:24, Wis.3:4 (e freq.), 1Ma.7:7, al. ;]\n1. cortar, aparar, podar.\n2. conter, refrear.\n3. castigar, corrigir, punir: pass., 2Pe.2:9; méd., fazer punir (3Ma.7:3): Act.4:21.†"
+  },
+  {
+   "strongs": "G2850",
+   "sha256": "024e83af1878392600ea6364ec2c5d66291ad789450fa05d3131ab75f3fd3003",
+   "gloss": "bajulação",
+   "definition": "κολακία (Rec. -εία), -ας, ἡ\n(κολακεύω, bajular),\nbajulação: 1Th.2:5 (veja Lft., Notas, 23).†"
+  },
+  {
+   "strongs": "G2851",
+   "sha256": "9ee96b21303a7c75fa0c6b25f59df03e972256bb6ce1968d3fcefabf125b7776",
+   "gloss": "castigo",
+   "definition": "κόλασις, -εως, ἡ\n(κολάζω), [na LXX: Eze.14:3-7 18:30 44:12, (מִכְשׁוֹל) Eze.43:11, λαμβάνειν τὴν κ. (כָּלַם ni.); Wis.11:13 16:2, 24 19:4, Jer.18:20, 2-4 Mac.5 * ;]\ncorreção, pena, castigo: Mat.25:46, 1Jn.4:18.†\nSYN.: τιμωρία, retribuição. Arist. distingue entre κ . como aquilo que, sendo disciplinar, se refere a quem sofre, e τ. como aquilo que, sendo penal, se refere à satisfação de quem inflige (veja Thayer, veja a palavra κ., e cf. Tr., Syn., § vii). Mas, especialmente no gr. tardio, a distinção nem sempre é mantida (veja reff. em Thayer)"
+  },
+  {
+   "strongs": "G2852",
+   "sha256": "630b2a9b1a2f1ab45e87af1b2c1034a1beb08ad5774f804941c7238d50c5a42d",
+   "gloss": "esbofetear",
+   "definition": "κολαφίζω\n(κόλαφος = át.., κόνδυλοι, os nós dos dedos, o punho fechado)\nbater com o punho, esbofetear: Mat.26:67, Mrk.14:65, 2Co.12:7; pass., 1Co.4:11, 1Pe.2:20.†"
+  },
+  {
+   "strongs": "G2853",
+   "sha256": "8da946362050ff698dab030b9cc929862db2cdadc1ab09c317dc90a5e7cbc13c",
+   "gloss": "unir",
+   "definition": "κολλάω, -ῶ\n(κόλλα, cola), [na LXX principalmente por דָּבַק ;]\n1. colar ou cimentar.\n2. Em geral, unir, juntar firmemente. Pass., apegar-se a, juntar-se (a): com dativo de pessoa(s), Mat.19:5(LXX), Luk.10:11 15:15, Act.5:13 (mas veja Field, Notas, 118) Act.9:26 10:28 (veja Field, l. com) Act.17:34; τ. πόρνῃ, 1Co.6:16; τ. Κυρίῳ, 1Co.6:17; com dativo de coisa(s), ἅρματι, Act.8:29; τ. ἀγαθῴ, Rom.12:9; dos pecados que se acumulam, ἄχρι τ. οὐρανοῦ, Rev.18:5, do pó, Luk.10:11 (cf. τροσ-κολλάω).†"
+  },
+  {
+   "strongs": "G2854",
+   "sha256": "8989e647c53a2354c13bc227b9bf04d55b336186066dbabf2a9191f85da42b97",
+   "gloss": "colírio",
+   "definition": "κολλούριον\n(TTr., κολλύ-, a forma mais usual), -ου, τό (dim. de κολλύρα = κόλλιξ, pão grosseiro em rolo), [na LXX: 3Ki.12:24 hil B* ;]\n1. pequeno pão em rolo (LXX, ll. com).\n2. (Geralmente no pl., LS, veja a palavra) colírio em forma de rolo: Rev.3:18.†",
+   "note": "'hil' copied as in the source."
+  },
+  {
+   "strongs": "G2855",
+   "sha256": "bb89a72036ecad0b6865b986d963486df86161308db46239cb05a8e80c298710",
+   "gloss": "cambista",
+   "definition": "κολλυβιστής, -οῦ, ὁ\n(κόλλυβος, moeda pequena, taxa de câmbio),\ncambista: Mat.21:12, Mrk.11:15, Jhn.2:15 (of. κερματιοτής).†",
+   "note": "'of.' (for cf.) copied as in the source."
+  },
+  {
+   "strongs": "G2856",
+   "sha256": "27d6421dc42784197058dfb125af925b11a83d58a257c238795bb69739709f8a",
+   "gloss": "abreviar",
+   "definition": "κολοβόω, -ῶ\n(κολοβός, cortado), [na LXX: 2Ki.4:12 (קָצַץ pi.) * ;]\ncortar, amputar (LXX); daí, encurtar, abreviar: Mat.24:22, Mrk.13:20.†"
+  },
+  {
+   "strongs": "G2857G",
+   "sha256": "b6955cfcb4f048a8337faa736bd7d7d2b5ba4017a77e00d4b06f7185eefa0dc3",
+   "gloss": "Colossos",
+   "definition": "Κολοσσαί\n(assim no cl.; -ασσαί, Rec., LTr.), -ῶν, αἰ\nColossos, cidade junto ao Lico, na Frígia: Col.1:2.†"
+  },
+  {
+   "strongs": "G2857H",
+   "sha256": "b6955cfcb4f048a8337faa736bd7d7d2b5ba4017a77e00d4b06f7185eefa0dc3",
+   "gloss": "Colossos",
+   "definition": "Κολοσσαί\n(assim no cl.; -ασσαί, Rec., LTr.), -ῶν, αἰ\nColossos, cidade junto ao Lico, na Frígia: Col.1:2.†"
+  },
+  {
+   "strongs": "G2858",
+   "sha256": "b5d1450f6012a2e03433a8406f458e2311dda5f6256f72d6896766ad86a1e4fa",
+   "gloss": "Colossos",
+   "definition": "Κολασσαεύς (Rec. Κολοσ-), -έως, ὁ\ncolossense: pl., Cl., tít. (e subscr., Rec., Tr.).†",
+   "note": "The gloss 'Colossae' follows the English (the entry is 'a Colossian'). Abbott-Smith's 'Col., tit.' (the epistle's title) written 'Cl., tít.'."
+  },
+  {
+   "strongs": "G2859",
+   "sha256": "5a020415d58bbe51e61ec7a2265c54fb4208c61570aa05b173496fcdf15a3d8d",
+   "gloss": "seio",
+   "definition": "κόλπος, -ου, ὁ\n[na LXX principalmente por חֵיק ;]\n1. prop., o seio: Jhn.13:23; fig., de associação íntima, ἐν (εἰς τὸν) τοῖς κ. Ἀβραάμ, Luk.16:22-23 (cf. 4Ma.13:16); ὁ ὢν εἰς τὸν κ. τ. πατρός, Jhn.1:18\n2. O seio ou dobra de uma veste solta que cai sobre o cinto, usada como bolso; daí, figuradamente, εἰς τὸν κ. Isa.65:6, Jer.32:18 : Luk.6:38\n3. Uma concavidade semelhante a um seio, como uma baía ou golfo: Act.27:39.†"
+  },
+  {
+   "strongs": "G2860",
+   "sha256": "3c8333f040d9e20a830f6ebafc6fa1042bc5d9422aff3fe274ff23c0e8b29624",
+   "gloss": "nadar",
+   "definition": "κολυμβάω, -ῶ\n[em AI.: Isa.25:11 * ;]\nmergulhar, lançar-se ao mar: Act.27:43 (cf. ἐκ-κολνμβάω).†",
+   "note": "'AI.' (for Al.) copied as in the source."
+  },
+  {
+   "strongs": "G2861",
+   "sha256": "19aeab868545320e434f5538ba718f1df010ff7c791f4db40673a6473380e78a",
+   "gloss": "tanque",
+   "definition": "κολυμβήθρα, -ας, ἡ\n(κολνμβάω), [na LXX por בְּרֵכָה, 4Ki.18:27, al. ;]\npiscina, tanque: Jhn.5:2, 4 5:7 9:7.†"
+  },
+  {
+   "strongs": "G2862",
+   "sha256": "66d794024249c986827f312261f0fc1be6ffa24b19d288f20cad8c0c15c4007b",
+   "gloss": "colônia romana",
+   "definition": "κολωνία (Rec. -ώνια), -ας, ἡ\n(lat. colonic),\ncolônia: Act.16:12 (veja Lft., Phi., 50 s.).†",
+   "note": "'colonic' (for colonia) copied as in the source."
+  },
+  {
+   "strongs": "G2863",
+   "sha256": "a08979365a56192ec2b26ab09524cf0e4dc422ed954aa8ee8425ee791b6193c8",
+   "gloss": "ter cabelo comprido",
+   "definition": "κομάω, -ῶ\n(κόμη),\nusar cabelo comprido: 1Co.11:14-15.†"
+  },
+  {
+   "strongs": "G2864",
+   "sha256": "8f323d5d320ff1362781a5a98af37cc22e620b9331f1d9985f44da9ab8cef308",
+   "gloss": "cabelo",
+   "definition": "κόμη, -ης, ἡ\n[na LXX: Num.6:5, Eze.44:20 (פֶּרַע), al. ;]\no cabelo: 1Co.11:15.†"
+  },
+  {
+   "strongs": "G2865",
+   "sha256": "8b08a08425a35bc304eedd99ef575a7c275a65a900b0a46421a59cba32ce7f0f",
+   "gloss": "trazer/ser recompensado",
+   "definition": "κομίζω\n[na LXX por נָשָׂא, etc. ;]\n1. cuidar de.\n2. levar em segurança.\n3. levar como despojo.\n4. trazer ou levar: Luk.7:37. Méd., levar para si; daí,\n(a) receber: Heb.10:36 11:13, 39, 1Pe.1:9 5:4, 2Pe.2:13;\n(b) receber de volta, recuperar (no cl. assim também o at.): Mat.25:27, Heb.11:19; metaforicamente, da retribuição, 2Co.5:10, Col.3:25; παρὰ Κυρίου, Eph.6:8 (cf. ἐκ-, συν-κομίζω).†"
+  },
+  {
+   "strongs": "G2866",
+   "sha256": "4497c1f4133496626f629116b89355bbe6a76868e63e06a84bf9f11f69fff1f5",
+   "gloss": "melhor",
+   "definition": "κομψός, -ή, -όν\n(κομέω, cuidar de),\nbem vestido, elegante, fino; compar. neut., κομψότερον ἔχειν (cf. κόμψως ἔχειν, Epict., e o inglês coloquial «to be doing finely» (estar muito bem)): Jhn.4:52.†",
+   "note": "Comparison with colloquial English kept: «to be doing finely», with the Portuguese after it."
+  },
+  {
+   "strongs": "G2867",
+   "sha256": "76a191e1b0c0a08d0d43e6738140fd98475a9fa2594cf69cfecc6dd1140b9ddc",
+   "gloss": "caiar",
+   "definition": "κονιάω, -ῶ\n(κονία, pó, cal), [na LXX: Deu.27:2, 4 (שִׂיד), Pro.21:9 * ;]\nrebocar ou caiar: de sepulcros, Mat.23:27; figuradamente, de um hipócrita, Act.23:3.†"
+  },
+  {
+   "strongs": "G2868",
+   "sha256": "e494fba6bc3170013ce1261aa901a05297c25e87efe30e0bfa929508b765e239",
+   "gloss": "pó",
+   "definition": "κονιορτός, -οῦ, ὁ\n(κόνις ou κονία, pó, ὄρνυμι, levantar), [na LXX por אָבָק, etc. ;]\nno cl., poeira levantada (Exo.9:9, Isa.5:24); no NT, simplesmente pó: Mat.10:14, Luk.9:5 10:11, Act.13:51 22:23.†"
+  },
+  {
+   "strongs": "G2869",
+   "sha256": "1cdb0d042b62a2a558df6be00fe07a1bf7fc91a5367770c1a112e7096e0f9246",
+   "gloss": "acalmar",
+   "definition": "κοπάζω\n(κόπος), [na LXX: Gen.8:1, Est.2:1 7:10 (שָׁכַךְ), Rut.1:18, al. (חָדַל), חָדַל), Jon.1.11-12 (שָׁתַק), al. ;]\ncansar-se; do vento (Hdt., Jn., l. com), acalmar-se, cessar de soprar com fúria: Mat.14:32, Mrk.4:39 6:51.†",
+   "note": "Abbott-Smith's 'Jh.' (Jonah, LXX Jon.1:11-12) written 'Jn.'."
+  },
+  {
+   "strongs": "G2870",
+   "sha256": "9eee2055f74048a53a25f44f9fc879508da9f501d84845e57a7d78b75504da4d",
+   "gloss": "lamentação",
+   "definition": "κοπετός, -οῦ, ὁ\n(κόπτω, méd.), [na LXX principalmente por מִסְפֵּד ;]\n= cl. κομμός, o bater na cabeça e no peito, lamentação: antes de ἐπί com dativo de pessoa(s), Act.8:2.†"
+  },
+  {
+   "strongs": "G2871",
+   "sha256": "13c3c0b7756938cfac70accf83dc89e81fac9d308f4fafb7cec93f1268d27025",
+   "gloss": "matança",
+   "definition": "κοπή, -ῆς, ἡ\n(κόπτω), [na LXX: Gen.14:17, Jos.10:20 (נָכָה hi., מַכָּה), Deu.28:25 (נָגַף), Jdth.15:7 * ;]\n1. no cl., golpe, pilagem (como num pilão).\n2. Na LXX, derrota em batalha: Heb.7:1 (LXX).†"
+  },
+  {
+   "strongs": "G2872",
+   "sha256": "b40f639673b96877d7098b77e2e32315b8557641b4f92b4f9d1845432cf591f5",
+   "gloss": "trabalhar",
+   "definition": "κοπιάω, -ῶ\n(κόπος), [na LXX principalmente por יָגַע ;]\n1. (como no cl.) cansar-se: Mat.11:28, Jhn.4:6, Rev.2:3 (cf. Isa.40:31).\n2. Daí, na LXX e no NT, trabalhar com esforço, labutar: absol., Mat.6:23, Luk.5:5 12:27, Jhn.4:38, Act.20:35, 1Co.4:12, Eph.4:28, 2Ti.2:5; com acusativo de coisa(s), Jhn.4:38; frequentemente nas epístolas paulinas, do trabalho ministerial: 1Co.15:10 16:16; antes de ἐν, Rom.16:12, 1Th.5:12 (veja M, Th., in l), 1Ti.5:17; εἰς, Rom.16:6, Gal.4:11, Php.2:16, Col.1:29, 1Ti.4:10.†"
+  },
+  {
+   "strongs": "G2873",
+   "sha256": "d473737bd10558d0b2d35dd308a97ba22e551e823d136a93a68f2a664cc38d25",
+   "gloss": "trabalho",
+   "definition": "κόπος, -ου, ὁ\n(κόπτω) [na LXX principalmente por עָמָל, também por אָוֶן, etc. ;]\n1. golpe, pancada (em Jer.45:3 = κοπετός)\n2. trabalho penoso, fadiga: Jhn.4:38, 1Co.3:8 15:58, 1Th.3:5; κ. τ. ἀγάπης, 1Th.1:3; ἔργα καὶ κ., Rev.2:2; κ. καὶ μόχθος, 2Co.11:27, 1Th.2:9, 2Th.3:8; pl., ἐν κ., 2Co.6:5 10:15 11:23; ἐκ τ. κ., Rev.14:13; κόπονς (-ον) παρέχειν (no cl. mais frequentemente π. πράγματα, πονον), com dativo de pessoa(s), Mat.26:10, Mrk.14:6, Luk.11:7 18:5, Gal.6:17.†\nSYN.: μόλθος, labuta; πόνος (veja), fadiga, esforço penoso; no cl., \"π. dá relevo ao esforço (o trabalho como exigindo força), κ. ao cansaço, μ. (sobretudo poético) à dureza\" (Thayer, veja a palavra κ.)",
+   "note": "The quoted definition (Thayer) is translated."
+  },
+  {
+   "strongs": "G2874",
+   "sha256": "ede9562f0454e28a1c98dc967f10b1e3bbdad273e219dbf5f83584a877b74d2a",
+   "gloss": "esterco",
+   "definition": "κοπρία, -ας, ἡ\n[na LXX principalmente por אַשְׁפֹּת ;]\nmonturo (1Ki.2:8, Psa.113:7 al.): Luk.14:35.†\nκόπριον, -ου, τό,\n[na LXX (pl.): Jer.25:33 (דֹּמֶן), Sir.22:2, 1Ma.2:62 * ;]\n= κόπρος, esterco: pl., Luk.13:8 (WH, mg., κόφινον κοπρίων).†"
+  },
+  {
+   "strongs": "G2875",
+   "sha256": "297009730eb1476444224b2f268bb3c395f38ab40f0967b1c16ebc18cae964ba",
+   "gloss": "cortar/lamentar",
+   "definition": "κόπτω\n[na LXX por כָּרַת, סָפַד, נָכָה hi., etc. ;]\n1. bater, ferir.\n2. cortar: com acusativo de coisa(s), antes de ἀπό, Mat.21:8; ἐκ, Mrk.11:8. Méd., bater no peito de dor, lamentar, prantear: Mat.11:17 24:30; com acusativo de pessoa(s), Luk.8:52 23:27; antes de ἐπί, com acusativo, Rev.1:7 18:9 (cf. ἀνα-, ἀπο-, ἐκ-, ἐν-, κατα-, προ-, προσ-κόπτω).†\nSYN.: θρηνέω, q.v"
+  },
+  {
+   "strongs": "G2876",
+   "sha256": "84fee9db74689c2e8d22f782a2d5ae665cd4d04167a07d5e327993ee571a36e3",
+   "gloss": "corvo",
+   "definition": "κόραξ, -ακος, ὁ\n[na LXX por עֹרֵב ;]\ncorvo: Luk.12:24.†"
+  },
+  {
+   "strongs": "G2877",
+   "sha256": "a5833eb0ab501911fd63316b8ea64f3e18fe7734e2ff21883f5134270d03dd27",
+   "gloss": "menina",
+   "definition": "κοράσιον, -ου, τό\n(dim. de κόρη), [na LXX principalmente por נַעֲרָה, Rut.2:8, al.; em Joel 4:3, Zec.8:5 por יַלְדָּה ;]\npalavra coloquial que sobrevive no MGr. (Kennedy, Sourcs, e154), menina, moça: Mat.9:24-25 14:11, Mrk.5:41-42 6:22, 28.†",
+   "note": "'Sourcs, e154' (for Sources, 154) copied as in the source; 'Joel 4:3' kept as written (the Hebrew Bible's numbering)."
+  },
+  {
+   "strongs": "G2878",
+   "sha256": "5a151806a0cc81556da7c9d81e7b95e0ec698549bf900c9759db8d1b1dc5f844",
+   "gloss": "corbã",
+   "definition": "κορβάν (Rec., T, -βᾶν), indecl. (heb. קׇרְבָּן),\noferta, dádiva oferecida a Deus: Mrk.7:11 (cf. κορβανᾶς).†"
+  },
+  {
+   "strongs": "G2879",
+   "sha256": "3709e34f7a95712765b7ac62fc6676465b67b2d4dd1e1191b51bb6f71a85dbbf",
+   "gloss": "Coré",
+   "definition": "Κορέ indecl.\n(em FlJ, -έου), ὁ (heb. קֶרַח)\nCoré: Ju 11.†"
+  },
+  {
+   "strongs": "G2880",
+   "sha256": "866b9432f1757651c7b2ed9a4c6a2b86974be2956b4a2dd685a19dc8db794ec9",
+   "gloss": "saciar",
+   "definition": "κορέννυμι\n(κόρος, saciedade), [em Symmachus.: Psa.22:27, Al, Psa.103:5 * ;]\nsaciar: pass., τροφῆς, Act.27:38; metaforicamente, de coisas espirituais, 1Co.4:8.†"
+  },
+  {
+   "strongs": "G2881",
+   "sha256": "c0249ca956b5fb2809376a7e3576c3b06eaef4df4e0d526e9faf6c20d3017715",
+   "gloss": "coríntio",
+   "definition": "κορίνθιος, -α, -ον\ncoríntio; como subst., ὁ Κ., um coríntio: Act.18:8 27:1-44 (WH, txt., R, omitem), 2Co.6:11; 1Co, 2Co, tít.†"
+  },
+  {
+   "strongs": "G2882",
+   "sha256": "5626a1b8641eec9bfa8facb788d855f8823f7ecdb5d7b50213e23f37379b9a4e",
+   "gloss": "Corinto",
+   "definition": "Κόρινθος, -ου, ἡ\nCorinto: Act.18:1, 27 19:1, 1Co.1:2, 2Co.1:1 1:23, 2Ti.4:20.†"
+  },
+  {
+   "strongs": "G2883",
+   "sha256": "b84defd8b5f507bbc3e625de0bd5afe30cfa5115dc2e3174d035b112d9846278",
+   "gloss": "Cornélio",
+   "definition": "Κορνήλιος, -ου, ὁ (lat.)\nCornélio: Act.10:1 ss.†"
+  },
+  {
+   "strongs": "G2884",
+   "sha256": "f5beaf435f1130b98d0067ec1f9a2d93c63948486bdf8c7105b8f759e7af52b2",
+   "gloss": "coro",
+   "definition": "κόρος, -ου, ὁ\n(heb. כֹּר), [na LXX: Lev.27:16, Num.11:32, Eze.45:13 (חֹמֶר); mais freq., 2Ch.27:5, al.(כֹּר) ;]\ncoro, medida hebraica (AV, RV, «measure»): Luk.16:7.†",
+   "note": "'measure' is the AV/RV rendering, kept in English."
+  },
+  {
+   "strongs": "G2885",
+   "sha256": "14bf050d94ced92b568dd8826276e9c6086384806034b29c6346022926a8d4ce",
+   "gloss": "ordenar",
+   "definition": "κοσμέω, -ῶ\n(κόσμος), [na LXX por עָדָה, תָּקַן, etc. ;]\n1. ordenar, arrumar, preparar (em Hom. esp. de dispor exércitos): Mat.25:7 (cf. Sir.50:9, al.).\n2. adornar, mobiliar: οἶκον, pass., Mat.12:44, Luk.11:25; μνημεῖα, Mat.23:29; τὸ ἱερόν, pass., Luk.21:5; θεμέλιοι, Rev.21:19; νύμφην, pass., Rev.21:2; ἐαυτάς, antes de ἐν, 1Ti.2:9. Metafórico, com acusativo de pessoa(s), 1Pe.3:5; com acusativo de coisa(s), Tit.2:10.†"
+  },
+  {
+   "strongs": "G2886",
+   "sha256": "a5d198c1977b085a5e06c5a98b874dc77e480607590ae2f86fba42cec00839b0",
+   "gloss": "terreno",
+   "definition": "κοσμικός, -ή, -όν\n(κόσμος)\n1. pertencente ao mundo ou universo.\n2. deste mundo, terreno. Heb.9:1.\n3. Em sentido ético, mundano: ἐπιθυμίαι, Tit.2:12.†"
+  },
+  {
+   "strongs": "G2887",
+   "sha256": "baa826df711eba41f30d164d99aca44cf806397c64def31b2f4f3ef4745bb7b1",
+   "gloss": "respeitável",
+   "definition": "κόσμιος, -ον (no cl. -α, -ον),\n(κόσμος), [na LXX: Ecc.12:9 (תָּקַן)* ;]\nordeiro, decente, modesto: 1Ti.2:9 (WH, mg., -ίως, veja) 1Ti.3:2.†"
+  },
+  {
+   "strongs": "G2888",
+   "sha256": "536469f5922da6c79a9071fe415f0aaa84574e2207330351e97820bbe3e29790",
+   "gloss": "poder mundial",
+   "definition": "κοσμοκράτωρ, -ορος, ὁ\n(κόσμος, κρατέω),\n1. nos hinos órficos, al. (veja AR, Eph., l. com), governante do mundo inteiro (e assim nos escritos rabínicos: קוֺזמוֺקְרָטוֺר).\n2. governante deste mundo (em contraste com παντο κράτωρ): οἱ κ. τ. σκότους τούτου, os governantes deste mundo tenebroso, Eph.6:12.†"
+  },
+  {
+   "strongs": "G2889",
+   "sha256": "058504172c4d974be423b91714b7776c7220e6a311256179baadf97fdfb95d5e",
+   "gloss": "mundo",
+   "definition": "κόσμος, -ου, ὁ\n[na LXX: Gen.2:1, Deu.4:19 17:3, Isa.24:21 40:26 (צבא), Exo.33:5, 6 Jer.2:32 4:30, Eze.7:20 16:11 23:40 (עֲדִי), Isa.61:10 (כְּלִי), al., Wis.2:24 e freq., Sir.6:30, al ;]\n1. ordem (Hom., Plat., al.).\n2. ornamento, adorno, esp. das mulheres (Hom., al.): 1Pe.3:3.\n3. Mais tarde, o mundo ou universo, como sistema ordenado (Plat., al.): Act.17:24, Rom.4:13, 1Co.3:22, Php.2:15, Heb.4:3, al.\n4. Apenas em escritores tardios, o mundo, isto é, a terra (= ἡ οἰκουμένη, cf. Mat.4:8 com Luk.4:5): Mat.4:8, Mrk.16:[15], Col.2:20, 1Ti.6:7, al.; daí, por meton.,\n(a) dos habitantes humanos do mundo: Mat.5:14 15:38, Mrk.14:9, Jhn.1:10 4:42 12:47, Rom.3:6, 1Co.4:13, 2Co.5:19, 2Pe.2:5, al.;\n(b) dos negócios ou bens do mundo: Mat.16:26, Mrk.8:36, Luk.9:25, 1Co.7:31, 1Jn.2:16, al.;\n(c.) em sentido ético, dos ímpios: Jhn.7:7 14:17, 27 1Co.1:21, Jas.1:27, 1Jn.4:4, al.;\n(d) metaforicamente: ὁ κ. τῆς ἀδικίας, Jas.3:6.\nSYN.: αἰών, veja (cf . também Dalman, Words, 162ss.; Tr., Syn., §lix; Westc., nota adicional sobre Jhn.1:10; DB, iv, 938ss.).",
+   "note": "Source '(with)' is a garbled '(c)' (after (a), (b)): rendered '(c.)'. 'Words' is Dalman's title, kept."
+  },
+  {
+   "strongs": "G2890",
+   "sha256": "39f34ca880dd39c249a84cdc2a9f1c5475442d147aa5744974ce9c811645da40",
+   "gloss": "Quarto",
+   "definition": "Κούαρτος, -ου, ὁ\n(lat.), Quarto: Rom.16:23.†"
+  },
+  {
+   "strongs": "G2891",
+   "sha256": "f14f1a3f371ad62263e74ed4a62b8c5a0f8e56fafd67ca2990474f0738767e26",
+   "gloss": "levanta-te!",
+   "definition": "κούμ (Tr., txt., κοῦμ, Rec. κοῦμι) (heb. imperat. masc., usado como interjeição, קוּם),\nkoum (levanta-te): Mrk.5:41.†"
+  },
+  {
+   "strongs": "G2892",
+   "sha256": "cf76cb00c87dff36fb41c0eb8a00170499f91f35937a9090ead58a822d3661b9",
+   "gloss": "guarda",
+   "definition": "κουστωδία, -ας, ἡ (lat. custodia),\nguarda: Mat.27:65-66 28:11.†"
+  },
+  {
+   "strongs": "G2893",
+   "sha256": "f83505c48db1a1dfd390125da1f2e8d9b2882abb0aef143b463f8476b1827d01",
+   "gloss": "aliviar",
+   "definition": "κουφίζω\n(κοῦφος, leve), [na LXX: Exo.18:22, Jon.1.5, al. (קָלַל hi.), Est.5:1, al. ;]\n1. intr., ser leve (principalmente poético).\n2. aliviar, tornar leve: com acusativo, Act.27:38.†"
+  },
+  {
+   "strongs": "G2894",
+   "sha256": "5d6f0542f28d351f4a799dc3db7484cf6de45461940ed7c370c3f284ee415342",
+   "gloss": "cesto",
+   "definition": "κόφινος, -ου, ὁ\n[na LXX: Jdg.6:19 (סַל), Psa.81:6 (דּוּד)* ;]\ncesto, provavelmente de vime, como os que os judeus levavam para alimentos: Mat.14:20 16:9, Mrk.6:43 8:19 9:17 13:8, Jhn.6:13 (cf. σφυρίς).†"
+  },
+  {
+   "strongs": "G2895",
+   "sha256": "c7cc889ddc277d93097dec1bf6af79e093c8e2bf7766ab09928eaf23d4c58524",
+   "gloss": "leito",
+   "definition": "κράβαττος (Rec. κράββατος), ου, ὁ\n(palavra macedônia, = lat. grabatus, cl. σκίμπους), [em Aquila.: Amo.3:12 * ;]\ncama de campanha, enxerga: Mrk.2:4, 9 2:11-12 6:55, Jhn.5:8-11, Act.5:15 9:33 (veja Swete, Mk., 24, e cf. κλίνη).†"
+  },
+  {
+   "strongs": "G2896",
+   "sha256": "7d842551613b92106d04ae856c030a392cf7c17f87de9153bfa05dafda1fc927",
+   "gloss": "clamar",
+   "definition": "κράζω\n[na LXX por זָעַק, צָעַק, קָרָא, etc. ;]\nno cl. principalmente poét.,\n1. prop. onomat., do corvo, crocitar; daí, em geral, de gritos inarticulados, gritar, berrar (Æsch., al.): Mrk.5:5 9:26 15:39 (Rec., R, mg.), Luk.9:39, al.; do clamor por vingança (cf. Gen.4:10), Jas.5:4.\n2. clamar, chamar em alta voz: com acusativo de coisa(s), Act.19:32; antes de orat. dir., Mrk.10:48, Luk.18:39, al.; (ἐν) φωνῇ μεγάλῃ, Mrk.5:7, Rev.14:15, al.; λέγων, Mat.8:29, al.; do ensino público, Jhn.1:15, Rom.9:27, al.; da oração insistente (cf. Job.35:12, Psa.3:5, al.), Rom.8:15, Gal.4:6; pf. com sentido de pres. (vernác.; M, Pr., 147), Jhn.1:15\nSYN.: veja: βοάω"
+  },
+  {
+   "strongs": "G2897",
+   "sha256": "9a98492c38d76d0b58c6bcbdace706d74c2f7b8aa57c3fd87214aa5f947aa0d1",
+   "gloss": "dissipação",
+   "definition": "κραιπάλη\n(κρεπάλη, WH), -ης, ἡ (cf. κραιπαλάω por שִׁכּוֹר, Isa.24:20 29:9)\nnáusea da embriaguez (EV, «surfeiting»): Luk.21:34.†\nSYN.: κῶμος, folia; μέθη, embriaguez; οἰνοφλυγία, orgia; πότος, bebedeira (veja Tr., Syn., § lxi).",
+   "note": "'surfeiting' is the English versions' (EV) rendering, kept in English."
+  }
+ ]
+}

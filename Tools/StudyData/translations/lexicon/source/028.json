@@ -1,0 +1,1570 @@
+{
+ "batch": "028",
+ "strongs": [
+  "H8635",
+  "H8636",
+  "H8637",
+  "H8638",
+  "H8639",
+  "H8640",
+  "H8641",
+  "H8642",
+  "H8643",
+  "H8644",
+  "H8645",
+  "H8646G",
+  "H8646H",
+  "H8647",
+  "H8648",
+  "H8649A",
+  "H8649B",
+  "H8650",
+  "H8651",
+  "H8652",
+  "H8653",
+  "H8654",
+  "H8655",
+  "H8656G",
+  "H8656H",
+  "H8657",
+  "H8658",
+  "H8659G",
+  "H8659H",
+  "H8659I",
+  "H8660",
+  "H8661",
+  "H8662",
+  "H8663",
+  "H8664",
+  "H8665",
+  "H8666",
+  "H8667",
+  "H8668G",
+  "H8668H",
+  "H8669",
+  "H8670",
+  "H8671",
+  "H8672",
+  "H8673",
+  "H8674",
+  "H9005",
+  "H9007",
+  "H9008",
+  "H9030",
+  "H9031",
+  "H9032",
+  "H9033",
+  "H9034",
+  "H9035",
+  "H9036",
+  "H9037",
+  "H9038",
+  "H9039",
+  "G0001G",
+  "G0001H",
+  "G0002",
+  "G0003",
+  "G0004",
+  "G0005",
+  "G0006",
+  "G0007G",
+  "G0007H",
+  "G0008",
+  "G0009",
+  "G0010",
+  "G0011",
+  "G0012",
+  "G0013",
+  "G0014",
+  "G0015",
+  "G0016",
+  "G0017",
+  "G0018",
+  "G0019",
+  "G0020",
+  "G0021",
+  "G0022",
+  "G0023",
+  "G0024",
+  "G0025",
+  "G0026",
+  "G0027",
+  "G0028",
+  "G0029",
+  "G0030",
+  "G0031",
+  "G0032G",
+  "G0032H",
+  "G0033",
+  "G0034",
+  "G0035",
+  "G0036",
+  "G0037",
+  "G0038",
+  "G0039G",
+  "G0039H",
+  "G0040G",
+  "G0040H",
+  "G0041",
+  "G0042",
+  "G0043",
+  "G0044",
+  "G0045",
+  "G0046",
+  "G0047",
+  "G0048",
+  "G0049",
+  "G0050",
+  "G0051",
+  "G0052",
+  "G0053",
+  "G0054",
+  "G0055",
+  "G0056",
+  "G0057",
+  "G0058",
+  "G0059",
+  "G0060",
+  "G0061",
+  "G0062",
+  "G0063",
+  "G0064",
+  "G0065",
+  "G0066",
+  "G0067",
+  "G0068",
+  "G0068G",
+  "G0068H",
+  "G0069",
+  "G0070",
+  "G0071",
+  "G0072",
+  "G0073",
+  "G0074",
+  "G0075",
+  "G0076",
+  "G0077",
+  "G0078",
+  "G0079",
+  "G0080",
+  "G0081",
+  "G0082",
+  "G0083",
+  "G0084",
+  "G0085",
+  "G0086",
+  "G0087",
+  "G0088",
+  "G0089",
+  "G0090",
+  "G0091",
+  "G0092",
+  "G0093",
+  "G0094",
+  "G0095",
+  "G0096",
+  "G0097",
+  "G0098",
+  "G0099",
+  "G0100",
+  "G0101",
+  "G0102",
+  "G0103",
+  "G0104"
+ ],
+ "entries": [
+  {
+   "strongs": "H8635",
+   "language": "hebrew",
+   "lemma": "תַּרְבּוּת",
+   "gloss": "increase",
+   "definition": "multiplication, i.e. progeny",
+   "derivation": "from 7235;",
+   "sha256": "459d9728912c74e1400f9f8cccd50e5cd96fd04896a5ba8b9a0b1c2d4a2ff937"
+  },
+  {
+   "strongs": "H8636",
+   "language": "hebrew",
+   "lemma": "תַּרְבִּית",
+   "gloss": "increment",
+   "definition": "multiplication, i.e. percentage or bonus in addition to principal",
+   "derivation": "from 7235;",
+   "sha256": "fd5565dcbe709168760e087a4c476462ea861978eb15bd4fc0e7baf9b764c096"
+  },
+  {
+   "strongs": "H8637",
+   "language": "hebrew",
+   "lemma": "תִּרְגַּל",
+   "gloss": "to teach",
+   "definition": "to cause to walk",
+   "derivation": "a denominative from 7270;",
+   "sha256": "d7cf1b38d8cde2414ae613c502b9a9443b1c83bd79df0f5436ff44226c29533b"
+  },
+  {
+   "strongs": "H8638",
+   "language": "hebrew",
+   "lemma": "תִּרְגֵּם",
+   "gloss": "to translate",
+   "definition": "to transfer, i.e. translate",
+   "derivation": "a denominative from 7275 in the sense of throwing over;",
+   "sha256": "0b9687aafa526f4461fd3508e1c95b8acfd3c46ab0a9652a5c0d8ad01b752ee6"
+  },
+  {
+   "strongs": "H8639",
+   "language": "hebrew",
+   "lemma": "תַּרְדֵּמָה",
+   "gloss": "deep sleep",
+   "definition": "a lethargy or (by implication) trance",
+   "derivation": "from 7290;",
+   "sha256": "3d785e926fcf42a24d2a8b0d2a77abf59f4e35b0507172884f4fd23d9173d701"
+  },
+  {
+   "strongs": "H8640",
+   "language": "hebrew",
+   "lemma": "תִּרְהָקָה",
+   "gloss": "Tirhakah",
+   "definition": "Tirhakah, a king of Kush",
+   "derivation": "of foreign derivation;",
+   "sha256": "857deac7ed45c3274d5c29f7535cc9ac241ba0da87759053498ef1e8bdb5df5e"
+  },
+  {
+   "strongs": "H8641",
+   "language": "hebrew",
+   "lemma": "תְּרוּמָה",
+   "gloss": "contribution",
+   "definition": "a present (as offered up), especially in sacrifice or as tribute",
+   "derivation": "or תְּרֻמָה; (Deuteronomy 12:11), from 7311;",
+   "sha256": "4e4ad3c07d1265da602ff2d003fc39f1cf38cd22ca3c2fd026d94c5e6fc35a33"
+  },
+  {
+   "strongs": "H8642",
+   "language": "hebrew",
+   "lemma": "תְּרוּמִיָּה",
+   "gloss": "contribution",
+   "definition": "a sacrificial offering",
+   "derivation": "formed as 8641;",
+   "sha256": "6ebc0b7c60e5a2b8ab280c8aed26a5ec91375aa9e51d28d352a2b9631883513e"
+  },
+  {
+   "strongs": "H8643",
+   "language": "hebrew",
+   "lemma": "תְּרוּעָה",
+   "gloss": "shout",
+   "definition": "clamor, i.e. acclamation of joy or a battle-cry; especially clangor of trumpets, as an alarum",
+   "derivation": "from 7321;",
+   "sha256": "f8f76786e985b4b4757eddf7af936b8a1bf0e17fc0465446a2c42603cf8b91a0"
+  },
+  {
+   "strongs": "H8644",
+   "language": "hebrew",
+   "lemma": "תְּרוּפָה",
+   "gloss": "healing",
+   "definition": "a remedy",
+   "derivation": "from 7322 in the sense of its congener 7495;",
+   "sha256": "a714b0d6b37f18145951eef39ec129c6e89e35fd8066ba4849ea21275d34d546"
+  },
+  {
+   "strongs": "H8645",
+   "language": "hebrew",
+   "lemma": "תִּרְזָה",
+   "gloss": "cypress",
+   "definition": "a species of tree (apparently from its slenderness), perhaps the cypress",
+   "derivation": "probably from 7329;",
+   "sha256": "68554a593006a648ae9580bc3842a463d489b4c64b169b2694f812dba4e80c2e"
+  },
+  {
+   "strongs": "H8646G",
+   "language": "hebrew",
+   "lemma": "תֶּ֫רַח",
+   "gloss": "Terah",
+   "definition": "Terach, the father of Abraham; also a place in the Desert",
+   "derivation": "of uncertain derivation;",
+   "sha256": "c47d2df3eab51b4bf63228ba4c3e01cea326b41e1872b083a489a004b42d5747"
+  },
+  {
+   "strongs": "H8646H",
+   "language": "hebrew",
+   "lemma": "תֶּ֫רַח",
+   "gloss": "Terah",
+   "definition": "Terach, the father of Abraham; also a place in the Desert",
+   "derivation": "of uncertain derivation;",
+   "sha256": "c47d2df3eab51b4bf63228ba4c3e01cea326b41e1872b083a489a004b42d5747"
+  },
+  {
+   "strongs": "H8647",
+   "language": "hebrew",
+   "lemma": "תִּרְחֲנָה",
+   "gloss": "Tirhanah",
+   "definition": "Tirchanah, an Israelite",
+   "derivation": "of uncertain derivation;",
+   "sha256": "08932be0a2156dd346f72bd6c35e4e1664f6ad0b26a387aa90a84d45103213d1"
+  },
+  {
+   "strongs": "H8648",
+   "language": "hebrew",
+   "lemma": "תְּרֵין",
+   "gloss": "two",
+   "definition": "two",
+   "derivation": "(Aramaic) feminine תַּרְתֵּין; corresponding to 8147;",
+   "sha256": "eb27b17aef59955832f9f7913068d621a1fa3699da15a8880dc20d355f95f9d2"
+  },
+  {
+   "strongs": "H8649A",
+   "language": "hebrew",
+   "lemma": "תׇּרְמָה",
+   "gloss": "treachery",
+   "definition": "fraud",
+   "derivation": "and תַּרְמוּת; or תַּרְמִית; from 7411;",
+   "sha256": "c8ab54e3abb964d133cdbd26063bc66ccfef8214144e84359a22ef9bcc72ed2d"
+  },
+  {
+   "strongs": "H8649B",
+   "language": "hebrew",
+   "lemma": "תַּרְמִית",
+   "gloss": "deceitfulness",
+   "definition": "fraud",
+   "derivation": "and תַּרְמוּת; or תַּרְמִית; from 7411;",
+   "sha256": "ff339ec9b57d14a56bb3e87772662fd5476173c99e66452057edc617eca927a0"
+  },
+  {
+   "strongs": "H8650",
+   "language": "hebrew",
+   "lemma": "תֹּ֫רֶן",
+   "gloss": "mast",
+   "definition": "a pole (as a mast or flagstaff)",
+   "derivation": "probably for 766;",
+   "sha256": "993547c8388c547142df5dc0be1710cfcb1cc449997e8ca99c11a024555c9738"
+  },
+  {
+   "strongs": "H8651",
+   "language": "hebrew",
+   "lemma": "תְּרַע",
+   "gloss": "door",
+   "definition": "a door; by implication, a palace",
+   "derivation": "(Aramaic) corresponding to 8179;",
+   "sha256": "e72fc09ff8776215a299a26dd5d44afc3dc1140be06015b50d9fcb8365154e1d"
+  },
+  {
+   "strongs": "H8652",
+   "language": "hebrew",
+   "lemma": "תָּרָע",
+   "gloss": "doorkeeper",
+   "definition": "a doorkeeper",
+   "derivation": "(Aramaic) from 8651;",
+   "sha256": "5097a72f7cf6539498eb55dcd5f4c9b81a28ed74381401e3b4250966851281e0"
+  },
+  {
+   "strongs": "H8653",
+   "language": "hebrew",
+   "lemma": "תַּרְעֵלָה",
+   "gloss": "reeling",
+   "definition": "reeling",
+   "derivation": "from 7477;",
+   "sha256": "d299913879d3ee94c933f6ee5e62a33dade93f9dd2e150e96bc10c003204801f"
+  },
+  {
+   "strongs": "H8654",
+   "language": "hebrew",
+   "lemma": "תִּרְעָתִים",
+   "gloss": "Tirathite",
+   "definition": "a Tirathite or inhabitant of an unknown Tirah",
+   "derivation": "patrial from an unused name meaning gate;",
+   "sha256": "1957986654e65d8cd91481e7846de05eb2e06e3e6cd343907c21395644b47b1b"
+  },
+  {
+   "strongs": "H8655",
+   "language": "hebrew",
+   "lemma": "תְּרָפִים",
+   "gloss": "teraphim",
+   "definition": "Teraphim (singular or plural) a family idol",
+   "derivation": "plural from 7495; a healer;",
+   "sha256": "0d8723fb97b7fa515af89049a594992bc6a8488589c64257e187c9812bf847c1"
+  },
+  {
+   "strongs": "H8656G",
+   "language": "hebrew",
+   "lemma": "תִּרְצָה",
+   "gloss": "Tirzah",
+   "definition": "Tirtsah, a place in Palestine; also an Israelitess",
+   "derivation": "from 7521; delightsomeness;",
+   "sha256": "19bf84445a6920254fca1106d506238beca513aa3279800eda22ba2d12f42b59"
+  },
+  {
+   "strongs": "H8656H",
+   "language": "hebrew",
+   "lemma": "תִּרְצָה",
+   "gloss": "Tirzah",
+   "definition": "Tirtsah, a place in Palestine; also an Israelitess",
+   "derivation": "from 7521; delightsomeness;",
+   "sha256": "19bf84445a6920254fca1106d506238beca513aa3279800eda22ba2d12f42b59"
+  },
+  {
+   "strongs": "H8657",
+   "language": "hebrew",
+   "lemma": "תֶּ֫רֶשׁ",
+   "gloss": "Teresh",
+   "definition": "Teresh, a eunuch of Xerxes",
+   "derivation": "of foreign derivation;",
+   "sha256": "c90a045e0a998ec8b791e52d46696aa38b55df76beed910c1393504d42a2c486"
+  },
+  {
+   "strongs": "H8658",
+   "language": "hebrew",
+   "lemma": "תַּרְשִׁישׁ",
+   "gloss": "jasper",
+   "definition": "a gem, perhaps the topaz",
+   "derivation": "probably of foreign derivation (compare 8659);",
+   "sha256": "73774e00c7e3faf1e9fc526a7a5bd1064754f3af40f857af1012b075da270717"
+  },
+  {
+   "strongs": "H8659G",
+   "language": "hebrew",
+   "lemma": "תַּרְשִׁישׁ",
+   "gloss": "Tarshish",
+   "definition": "Tarshish, a place on the Mediterranean, hence, the ephithet of a merchant vessel (as if for or from that port); also the name of a Persian and of an Israelite",
+   "derivation": "probably the same as 8658 (as the region of the stone, or the reverse);",
+   "sha256": "b918d47470537dacd69ccd233601f4a98ea4c719b239b39c7c1e67dd4236dffb"
+  },
+  {
+   "strongs": "H8659H",
+   "language": "hebrew",
+   "lemma": "תַּרְשִׁישׁ",
+   "gloss": "Tarshish",
+   "definition": "Tarshish, a place on the Mediterranean, hence, the ephithet of a merchant vessel (as if for or from that port); also the name of a Persian and of an Israelite",
+   "derivation": "probably the same as 8658 (as the region of the stone, or the reverse);",
+   "sha256": "b918d47470537dacd69ccd233601f4a98ea4c719b239b39c7c1e67dd4236dffb"
+  },
+  {
+   "strongs": "H8659I",
+   "language": "hebrew",
+   "lemma": "תַּרְשִׁישׁ",
+   "gloss": "Tarshish",
+   "definition": "Tarshish, a place on the Mediterranean, hence, the ephithet of a merchant vessel (as if for or from that port); also the name of a Persian and of an Israelite",
+   "derivation": "probably the same as 8658 (as the region of the stone, or the reverse);",
+   "sha256": "b918d47470537dacd69ccd233601f4a98ea4c719b239b39c7c1e67dd4236dffb"
+  },
+  {
+   "strongs": "H8660",
+   "language": "hebrew",
+   "lemma": "תִּרְשָׁתָא",
+   "gloss": "governor",
+   "definition": "the title of a Persian deputy or governor",
+   "derivation": "of foreign derivation;",
+   "sha256": "a652ad3c4b5c8d5aea9915eca4e0fd5bad728632bc85f65492faf4645f77d90e"
+  },
+  {
+   "strongs": "H8661",
+   "language": "hebrew",
+   "lemma": "תַּרְתָּן",
+   "gloss": "Tartan",
+   "definition": "Tartan, an Assyrian",
+   "derivation": "of foreign derivation;",
+   "sha256": "938d530ed6844a9d68c07a5848bfa92f171b04722fc92f8d0c543d3b11b2565d"
+  },
+  {
+   "strongs": "H8662",
+   "language": "hebrew",
+   "lemma": "תַּרְתָּ֑ק",
+   "gloss": "Tartak",
+   "definition": "Tartak, a deity of the Avvites",
+   "derivation": "of foreign derivation;",
+   "sha256": "1aad0ab44f1cada93171cb5374d4cc8144bcdde5e731f35ccc9d55d13776a8ee"
+  },
+  {
+   "strongs": "H8663",
+   "language": "hebrew",
+   "lemma": "תְּשֻׁאָה",
+   "gloss": "shout",
+   "definition": "a crashing or loud clamor",
+   "derivation": "from 7722;",
+   "sha256": "03cc8d267990d51c7883d47175ce696d779051f199eb01d0f91e39bbe561ad54"
+  },
+  {
+   "strongs": "H8664",
+   "language": "hebrew",
+   "lemma": "תִּשְׁבִּי",
+   "gloss": "Tishbite",
+   "definition": "a Tishbite or inhabitant of Tishbeh (in Gilead)",
+   "derivation": "patrial from an unused name meaning recourse;",
+   "sha256": "b9bdb15fbaa3bb81002a893a1660bca6a1676589bd22da7f7a1a4155e8efd763"
+  },
+  {
+   "strongs": "H8665",
+   "language": "hebrew",
+   "lemma": "תַּשְׁבֵּץ",
+   "gloss": "checkered",
+   "definition": "checkered stuff (as reticulated)",
+   "derivation": "from 7660;",
+   "sha256": "946be3053ad7b77c941ebef9bf6b1ef38e22f1569fdb7fb8966725a0fc250ea1"
+  },
+  {
+   "strongs": "H8666",
+   "language": "hebrew",
+   "lemma": "תְּשׁוּבָה",
+   "gloss": "turn",
+   "definition": "a recurrence (of time or place); a reply (as returned)",
+   "derivation": "or תְּשֻׁבָה; from 7725;",
+   "sha256": "a7dcfc95b0163e5c6e2bfc6496079a8d86f09bd7a455743d530dd136e31ee541"
+  },
+  {
+   "strongs": "H8667",
+   "language": "hebrew",
+   "lemma": "תְּשׂ֫וּמֶת",
+   "gloss": "security",
+   "definition": "a deposit, i.e. pledging",
+   "derivation": "from 7760;",
+   "sha256": "bad0acb190a6f602d328c8fa50ac928df4c5b9ed493811c7781eb2cb57578259"
+  },
+  {
+   "strongs": "H8668G",
+   "language": "hebrew",
+   "lemma": "תְּשׁוּעָה",
+   "gloss": "deliverance: salvation",
+   "definition": "rescue (literal or figurative, persons, national or spiritual)",
+   "derivation": "or תְּשֻׁעָה; from 7768 in the sense of 3467;",
+   "sha256": "e18310a209e2ca147f57d20e40249ff6acd8b41b4c9ab41728d260fa7a7c7879"
+  },
+  {
+   "strongs": "H8668H",
+   "language": "hebrew",
+   "lemma": "תְּשׁוּעָה",
+   "gloss": "deliverance: victory",
+   "definition": "rescue (literal or figurative, persons, national or spiritual)",
+   "derivation": "or תְּשֻׁעָה; from 7768 in the sense of 3467;",
+   "sha256": "c2f9eb556dfe21db97bab135474b86cd346f2f36be7fd4938d672bb423bad725"
+  },
+  {
+   "strongs": "H8669",
+   "language": "hebrew",
+   "lemma": "תְּשׁוּקָה",
+   "gloss": "desire",
+   "definition": "a longing",
+   "derivation": "from 7783 in the original sense of stretching out after;",
+   "sha256": "1628b857b1ce85ea061b753df3bf73614ee28296e20b85b86aff1b7c46311ca3"
+  },
+  {
+   "strongs": "H8670",
+   "language": "hebrew",
+   "lemma": "תְּשׁוּרָה",
+   "gloss": "present",
+   "definition": "a gift",
+   "derivation": "from 7788 in the sense of arrival;",
+   "sha256": "129b29d866d6b562c3d53f46afd1d1d90c385cc444b190cdf45d5228f7cca8f7"
+  },
+  {
+   "strongs": "H8671",
+   "language": "hebrew",
+   "lemma": "תְּשִׁיעִי",
+   "gloss": "ninth",
+   "definition": "ninth",
+   "derivation": "ordinal from 8672;",
+   "sha256": "40efc9a05de6827639914e97f00771e5d4d9196b3723b1926e0650a2a028a684"
+  },
+  {
+   "strongs": "H8672",
+   "language": "hebrew",
+   "lemma": "תֵּ֫שַׁע",
+   "gloss": "nine",
+   "definition": "nine or (ordinal) ninth",
+   "derivation": "or (masculine) תִּשְׁעָה; perhaps from 8159 through the idea of a turn to the next or full number ten;",
+   "sha256": "32851f1496ef0066216540f6b3cb6ef32145d46bc8160095723325da52b7283b"
+  },
+  {
+   "strongs": "H8673",
+   "language": "hebrew",
+   "lemma": "תִּשְׁעִים",
+   "gloss": "ninety",
+   "definition": "ninety",
+   "derivation": "multiple from 8672;",
+   "sha256": "6d76c764f08186d58564f8c8af6280c3d28472dad39a8f4048025a63ff94ad51"
+  },
+  {
+   "strongs": "H8674",
+   "language": "hebrew",
+   "lemma": "תַּתְּנַי",
+   "gloss": "Tattenai",
+   "definition": "Tattenai, a Persian",
+   "derivation": "of foreign derivation;",
+   "sha256": "c10e0cdfcc7b18b302e6ebf4b6c425f85b7b03fb0ff71d0edd3ec4825ee9c0fa"
+  },
+  {
+   "strongs": "H9005",
+   "language": "hebrew",
+   "lemma": "/ל",
+   "gloss": "to/for",
+   "sha256": "e97ad83ace341fa38896c5b407d9696343637b94bb235a4591cdfdb7c7ea9fe5"
+  },
+  {
+   "strongs": "H9007",
+   "language": "hebrew",
+   "lemma": "/שׁ",
+   "gloss": "which/that",
+   "sha256": "e51211ddb6eb0fabae1b24c06d318acdc6438e373b7092a248a1f5c290513e94"
+  },
+  {
+   "strongs": "H9008",
+   "language": "hebrew",
+   "lemma": "/ה",
+   "gloss": "[?]",
+   "sha256": "7a0e312a3ded25d8fad1a12425c8258ee93d753cffa9f013e25c5f352f57cadf"
+  },
+  {
+   "strongs": "H9030",
+   "language": "hebrew",
+   "lemma": "נִי",
+   "gloss": "me",
+   "sha256": "045220b7e8be2d205c5b096e9063b1b8d2e13116c4e0b1362beefedba0059a39"
+  },
+  {
+   "strongs": "H9031",
+   "language": "hebrew",
+   "lemma": "ךָּ",
+   "gloss": "you",
+   "sha256": "f6e64d2a0e374953e6ec4fc3c7fd58da8f62dae0a9867bf2aa1067aaabc092ef"
+  },
+  {
+   "strongs": "H9032",
+   "language": "hebrew",
+   "lemma": "ךְ",
+   "gloss": "you",
+   "sha256": "f6e64d2a0e374953e6ec4fc3c7fd58da8f62dae0a9867bf2aa1067aaabc092ef"
+  },
+  {
+   "strongs": "H9033",
+   "language": "hebrew",
+   "lemma": "וֹ",
+   "gloss": "him",
+   "sha256": "55b42d18657a09ee6a8278073b050a608f1d9d4fba3073ed51c1acbf44caf89f"
+  },
+  {
+   "strongs": "H9034",
+   "language": "hebrew",
+   "lemma": "הָ",
+   "gloss": "her",
+   "sha256": "937dc1d152f089b12a5c23b71776645e96dca2dfb4de715d13adb99951cd433c"
+  },
+  {
+   "strongs": "H9035",
+   "language": "hebrew",
+   "lemma": "נוּ",
+   "gloss": "us",
+   "sha256": "a79b64c2a0cd0dabea93914813fddb9603cac3ba7adef4b1fc09cb02b42a1caa"
+  },
+  {
+   "strongs": "H9036",
+   "language": "hebrew",
+   "lemma": "כֶם",
+   "gloss": "you",
+   "sha256": "f6e64d2a0e374953e6ec4fc3c7fd58da8f62dae0a9867bf2aa1067aaabc092ef"
+  },
+  {
+   "strongs": "H9037",
+   "language": "hebrew",
+   "lemma": "כֶן",
+   "gloss": "you",
+   "sha256": "f6e64d2a0e374953e6ec4fc3c7fd58da8f62dae0a9867bf2aa1067aaabc092ef"
+  },
+  {
+   "strongs": "H9038",
+   "language": "hebrew",
+   "lemma": "הֶם",
+   "gloss": "them",
+   "sha256": "fec0016206d4af45a68f1e85a23d1097e52882a15e8c07b9c7babbb09c9548c9"
+  },
+  {
+   "strongs": "H9039",
+   "language": "hebrew",
+   "lemma": "הֶן",
+   "gloss": "them",
+   "sha256": "fec0016206d4af45a68f1e85a23d1097e52882a15e8c07b9c7babbb09c9548c9"
+  },
+  {
+   "strongs": "G0001G",
+   "language": "greek",
+   "lemma": "α, Ἀλφα",
+   "gloss": "Alpha",
+   "definition": "Α, α, ἄλφα (which see), τό, indecl.,\nalpha, the first letter of the Greek alphabet. As a numeral, ά = 1, α = 1000. As a prefix, it appears to have at least two and perhaps three distinct senses:\n1. ἀ- (before a vowel, ἀν-) negative, as in ἄ-γνωστος, ἄ-δικος.\n2. ἀ-, ἁ- copulative, indicating community and fellowship, as in ἁ-πλοῦς, ἀ-κολουθέω, ἀ-δελφός.\n3. An intensive force (LS, s. α), as in ἀ-τενίζω is sometimes assumed (but see Boisacq, see word).",
+   "sha256": "98cb35639b49bea3db95126ef8f1dfe8fabfc9bb49747efd1ca47062c44db894"
+  },
+  {
+   "strongs": "G0001H",
+   "language": "greek",
+   "lemma": "ἆ",
+   "gloss": "ah!",
+   "definition": "ἔα,\ninterj.,\nexpressing surprise, indignation, fear (in cl. chiefly in poët.), ah! ha!: Luk.4:34.†",
+   "sha256": "73d1aa1a0f4d895b31f9d45dffccb83790264d4f3c593b3c4c5545e5654cda0f"
+  },
+  {
+   "strongs": "G0002",
+   "language": "greek",
+   "lemma": "Ἀαρών",
+   "gloss": "Aaron",
+   "definition": "Ἀαρών (Heb. אַהֲרוֹן), indecl. (in FlJ, -ῶνος),\nAaron (Exo.4:14, al.): Luk.1:5, Act.7:40, Heb.5:4, 7:11, 9:4.†",
+   "sha256": "18e5913b31f5bf926cda7ec0003f771521c7ff8ec7a749e34ab0fec034ecc13f"
+  },
+  {
+   "strongs": "G0003",
+   "language": "greek",
+   "lemma": "Ἀβαδδών",
+   "gloss": "Abaddon",
+   "definition": "Ἀβαδδών (Heb. אֲבַדּוֹן, destruction; LXX, ἀπώλεια, only in Wisdom Lit., of the place of the ruined dead: Job.26:6, 28:22, 31:12, Psa.88:12, Pro.15:11*), indecl.;\nin NT, Abaddon, the angel of the Abyss: Rev.9:11.†",
+   "sha256": "58a06844764f80784012097f70380418be08a378957024f8d14d29c672dc687b"
+  },
+  {
+   "strongs": "G0004",
+   "language": "greek",
+   "lemma": "ἀβαρής",
+   "gloss": "not burdensome",
+   "definition": "αβαρής, -ές\n(βαρός),\nwithout weight; metaphorically (MM, VGT, see word) not burdensome: 2Co.11:9.†",
+   "sha256": "1f4872ddd4ea5b9597ba95ce54fbd489d849c1eee7ebea29a86323ec9aba4b1e"
+  },
+  {
+   "strongs": "G0005",
+   "language": "greek",
+   "lemma": "ἀββά",
+   "gloss": "Abba",
+   "definition": "Ἀββά (T, -ᾶ), indecl. (Aram, אַבָּא, emphatic form of אַב = Heb. אָב, father),\nused in the phrase Ἀ. ὁ παήρ, Abba, Father (see Swete on Mk, I.with): Mrk.14:36, Rom.8:15, Gal.4:6.†",
+   "sha256": "7e40a2b7d0298c393b0e3a98f549becfa138c26f62b508edf2790b196e9d2e3d"
+  },
+  {
+   "strongs": "G0006",
+   "language": "greek",
+   "lemma": "Ἄβελ",
+   "gloss": "Abel",
+   "definition": "Ἄβελ, (WH, Ἅ-), ὁ, indecl.\n(הֶבֶל),\nAbel (Gen.4:2-10): Heb.11:4, 12:24; αἵμα Ἄ., Mat.23:35, Luk.11:51.†",
+   "sha256": "675c811e8ef6e20d789411cd410d99b7c409ff185e90fb3da27456799f0782b9"
+  },
+  {
+   "strongs": "G0007G",
+   "language": "greek",
+   "lemma": "Ἀβιά",
+   "gloss": "Abijah",
+   "definition": "Ἀβιά (Heb. אֲבִיָּה, אֲבִיָּהוּ), ὁ, indecl. (in FlJ, Ἀβίας, -α),\nAbia, Abijah.\n1. Son of Rehoboam (3Ki.14:1): Mat.1:7.\n2. A priest of the line of Eleazar (1Ch.24:3, 10): Luk.1:5.\n†",
+   "sha256": "0d8a8ae621246a4b081a6082ab468de69c7fc38a6e5d11b53da56ac00d443bf0"
+  },
+  {
+   "strongs": "G0007H",
+   "language": "greek",
+   "lemma": "Ἀβιά",
+   "gloss": "Abijah",
+   "definition": "Ἀβιά (Heb. אֲבִיָּה, אֲבִיָּהוּ), ὁ, indecl. (in FlJ, Ἀβίας, -α),\nAbia, Abijah.\n1. Son of Rehoboam (3Ki.14:1): Mat.1:7.\n2. A priest of the line of Eleazar (1Ch.24:3, 10): Luk.1:5.\n†",
+   "sha256": "0d8a8ae621246a4b081a6082ab468de69c7fc38a6e5d11b53da56ac00d443bf0"
+  },
+  {
+   "strongs": "G0008",
+   "language": "greek",
+   "lemma": "Ἀβιαθάρ",
+   "gloss": "Abiathar",
+   "definition": "Ἀβιάθαρ, ὁ, indecl. (Heb. אֶבְיָתָר),\nAbiathar (1Ki.21:1): Mrk.2:26.†",
+   "sha256": "b233f3e4cdfb92eccfccae30bd72e1d54f545aff79aa1e4bbd19c1abd5fbce01"
+  },
+  {
+   "strongs": "G0009",
+   "language": "greek",
+   "lemma": "Ἀβιληνή",
+   "gloss": "Abilene",
+   "definition": "Ἀβειληνή (T, Rec. Ἀβι-), -ῆς, ἡ, (sc. χώρα),\nAbilene, a district in the Anti-Lebanon: Luk.3:1.†",
+   "sha256": "7aab43b306faaaa92b4c00bd8d9e4348cc7df3cb3a0d75a125c2181f45693f06"
+  },
+  {
+   "strongs": "G0010",
+   "language": "greek",
+   "lemma": "Ἀβιούδ",
+   "gloss": "Abiud",
+   "definition": "Ἀβιούδ, ὁ, indecl. (Heb. אֲבִיָּהוּד),\nAbiud, Abihud: Mat.1:13.†",
+   "sha256": "1f0884af464e6c53ffca987289cd72181e2416b8aefec52be7a87087d9a1e9ed"
+  },
+  {
+   "strongs": "G0011",
+   "language": "greek",
+   "lemma": "Ἀβραάμ",
+   "gloss": "Abraham",
+   "definition": "Ἀβραάμ (Heb. אַבְרָהָם), ὁ, indecl. (in FlJ, Ἄβραμος, -ου; MM, VGT, see word),\nAbraham (Gen.17:5 al.): Mat.1:1, 2 al.",
+   "sha256": "672f3aed0614509db274a5e105bd006f4e453f406286780aa02db5faf38b68d2"
+  },
+  {
+   "strongs": "G0012",
+   "language": "greek",
+   "lemma": "ἄβυσσος",
+   "gloss": "abyss",
+   "definition": "ἄ-βυσσος, -ον (Ion. βυσσός = βυθός),\n1. in cl., boundless, bottomless (e.g. ἄ. πέλαγος, ἄ. πλοῦτος Æsch.).\n2. [In LXX (for תְּהוֹם, Gen.1:2, al.; exc. Isa.44:27, Job.41:22 for צוּלָה, מְצוּלָה, Job.36:16 for רַחַב) and] NT, as subst. (MM, VGT, see word), ἡ ἄ. (sc. χώρα), the abyss;\n(a) of the sea (Gen.1:2);\n(b) of the underworld, as the abode of the dead: Rom.10:7 (a paraphrase of Deu.30:13 LXX); as the abode of demons, Luk.8:31, Rev.9:1, 2, 11, 11:7, 17:8, 20:1, 3 (Cremer, 2).\n†",
+   "sha256": "f09f7e2d681e5608be292d7ff3f241dd5a0010a8b97ae47a7621874015158fe2"
+  },
+  {
+   "strongs": "G0013",
+   "language": "greek",
+   "lemma": "Ἄγαβος",
+   "gloss": "Agabus",
+   "definition": "Ἄγαβος, -ου, ὁ\nAgabus: Act.11:28, 21:10.†",
+   "sha256": "16105e5b6e6c7e7812bd2f0e03b58ec0d93f81c9b7c81d0f772a5e3656580a80"
+  },
+  {
+   "strongs": "G0014",
+   "language": "greek",
+   "lemma": "ἀγαθοεργέω",
+   "gloss": "to do good",
+   "definition": "ἀγαθοεργέω, -ῶ,\nto do good, show kindness: 1 Ti 6:18 (Cremer, 8).†\nἀγαθουργέω, -ῶ, contracted form (rare, see WH, App., 145) of ἀγαθοερ- (which see),\nto do good: Act.14:17.†",
+   "sha256": "08fdd8b44d2bd5558bb55273efce24019df43476155914d06f3250da85550849"
+  },
+  {
+   "strongs": "G0015",
+   "language": "greek",
+   "lemma": "ἀγαθοποιέω",
+   "gloss": "to do good",
+   "definition": "ἀγαθὀ-ποιέω, -ῶ (= cl. ἀγαθὸν ποιεῖν, εὐεργετεῖν),\n[in LXX: Num.10:32, Jdg.17:13 A, Zep.1:12 (יטב hi.), Tob.12:13 B, 1Ma.11:33, 2Ma.1:2 * ;]\nto do good;\n(a) univ.: 1Pe.2:15, 20, 3:6, 17, 3Jo.11;\n(b) for another's benefit: Mrk.3:4 (T, ἀγαθὸν ποιῆσαι), Luk.6:9;\n(with) accusative of person(s), Luk.6:33, 35 (Cremer, 8).\n†",
+   "sha256": "b9121c2d5f7717f80e5941857592fb631e798c30e72737df7975cd4c8b08c3d9"
+  },
+  {
+   "strongs": "G0016",
+   "language": "greek",
+   "lemma": "ἀγαθοποιΐα",
+   "gloss": "doing good",
+   "definition": "ἀγαθοποιία, -ας, ἡ\n(ἀγαθοποιός),\nwell-doing: 1Pe.4:19.†",
+   "sha256": "bafd8989c103bf64ea53f2054ad57eeb34355f8b0d9e1b8efa1b7c18fefc8a59"
+  },
+  {
+   "strongs": "G0017",
+   "language": "greek",
+   "lemma": "ἀγαθοποιός",
+   "gloss": "doing good",
+   "definition": "ἀγαθοποιός, -όν = cl. ἀγαθουργός,\n[in LXX, of a woman who deals pleasantly in order to corrupt, Sir.42:14 * ;]\ndoing well, acting rightly (Plut.): 1Pe.2:14 (Cremer, 8; MM, VGT, see word).†",
+   "sha256": "67ce58e4c220907c6209d16f97046ad7ad7702cdaa97f4f87ac4d76c4215f049"
+  },
+  {
+   "strongs": "G0018",
+   "language": "greek",
+   "lemma": "ἀγαθός",
+   "gloss": "good",
+   "definition": "ἀγαθός, -ή, -όν,\n[in LXX chiefly for טוֹב ;]\nin general, good, in physical and in moral sense, used of persons, things, acts, conditions, etc., applied to that which is regarded as \"perfect in its kind, so as to produce pleasure and satisfaction, . . . that which, in itself good, is also at once for the good and the advantage of him who comes in contact with it\" (Cremer, 3): γῆ, Luk.8:8; δένδρον, Mat.7:18; καρδία, Luk.8:15; δόσις, Jas.1:17; μέρις, Luk.10:42; ἔργον (frequently in Pl.), Php.1:6; ἐλπίς, 2Th.2:16; θησαυρός, Mat.12:35; μνεία, 1Th.3:6 (cf. 2Ma.7:20); as subst., τὸ ἀ, that which is morally good, beneficial, acceptable to God, Rom.12:2; ἐργάζεσθαι τὸ ἀ, Rom.2:10, Eph.4:28; πράσσειν, Rom.9:11, 2Co.5:10; διώκειν, 1Th.5:15; μιμεῖσθαι, III Jo 11; κολλᾶσθαι τῷ ἀ, Rom.12:9; ερωτᾶν περὶ τοῦ ἀ., Mat.19:17; διάκονος εἰς τὸ ἀ., Rom.13:4; τὸ ἀ. σου, thy favour, benefit, Phm 14; pl., τὰ ἀ., of goods, possessions, Luk.12:18; of spiritual benefits, Rom.10:15, Heb.9:11, 10:1. ἀ is opposite to πονηρός, Mat.5:45, 20:5; κακός, Rom.7:19; φαῦλος, Rom.9:11, 2Co.5:10 (cf. MM, VGT, see word).\nSYN.: καλός, δίκαιος. κ. properly refers to goodliness as manifested in form: ἀ. to inner excellence (cf. the cl. καλὸς κἀγαθός and ἐν καρδία κ. καὶ ἀ., Luk.8:15). In Rom.5:7, where it is contrasted with δ., ἀ. implies a kindliness and attractiveness not necessarily possessed by the δίκαιος, who merely measures up to a high standard of rectitude (cf. ἀγαθωσύνη).",
+   "sha256": "85256fb01f393ddde483dd72b2092bec9ccdc84bf7dfb249ec5328b2d0754f77"
+  },
+  {
+   "strongs": "G0019",
+   "language": "greek",
+   "lemma": "ἀγαθωσύνη",
+   "gloss": "goodness",
+   "definition": "ἀγαθωσύνη (on the termination, see: ἁγιότης, and cf . WH, App., 152; MM, VGT, see word), -ης, ἡ\n(ἀγαθός), [in LXX for טוֹבָה, טוֹב, טוּב, only in Heb. bks. ;]\ngoodness (representing \"the kindlier, as δικαιοσύνη, the sterner element in the ideal character,\" AE, Eph., 5:9; on its relation to χρηστότης, see Tr., Syn., §lxiii): Rom.15:14, Gal.5:22, 2Th.1:11.†",
+   "sha256": "1e086c2f6d257a45a769486951217bcb7781f73b195d2d1636c1b9ec1e60ea24"
+  },
+  {
+   "strongs": "G0020",
+   "language": "greek",
+   "lemma": "ἀγαλλίασις",
+   "gloss": "joy",
+   "definition": "ἀγαλλίασις, -εως, ἡ\n(ἀγαλλιάω), [in LXX (most frequently in Pss. and often coupled with εὐφροσύνη, as Ps 44(45):15) chiefly for גִּיל ;]\nexultation, exuberant joy: Luk.1:44, Act.2:46, Heb.1:9, Ju 24; χαρὰ καὶ ἀ., Luk.1:14 (Cremer, 592).†",
+   "sha256": "e3e3a2cdc009154efb8b5daeb1a90e31f417ca21d23740d779c74e6b45114ab0"
+  },
+  {
+   "strongs": "G0021",
+   "language": "greek",
+   "lemma": "ἀγαλλιάω",
+   "gloss": "to rejoice",
+   "definition": "ἀγαλλιάω, -ῶ, Hellenistic form of cl. ἀγάλλω, to glorify, mid. -ομαι, to exult in;\n[in LXX (most frequently in Pss.) chiefly for גיל, רנן pi. ;]\nto exult, rejoice greatly: before ἐπί, with dative, Luk.1:47; with dative mod., 1Pe.1:8, Rev.19:7. Mid., with same sense: Mat.5:12, Luk.10:21, Act.2:26, 16:34, 1Pe.4:13; before ἵνα, Jhn.8:56; ἐν, Jhn.5:35 (1 aor. pass. perh. as mid.; but see Mozley, Psalter, 5), 1Pe.1:6 (Cremer, 590).†",
+   "sha256": "fdb5fad9b6c86a90bd67fb7ef53e58699f10b7740805eb5bdf90a3dec7ee8203"
+  },
+  {
+   "strongs": "G0022",
+   "language": "greek",
+   "lemma": "ἄγαμος",
+   "gloss": "unmarried",
+   "definition": "ἄ-γαμος, -ον\n[in LXX: 4Ma.16:9 * ;]\nunmarried: 1Co.7:8, 32; fem. (= cl. ἄνανδρος), ib. 11, 34.†",
+   "sha256": "bf80e85960e50771896132ad02517dbae233d2c01c626c13a88b35b87570313d"
+  },
+  {
+   "strongs": "G0023",
+   "language": "greek",
+   "lemma": "ἀγανακτέω",
+   "gloss": "be indignant",
+   "definition": "ἀγανακτέω, -ῶ (ἄγαν, much, ἄχομαι, to grieve),\n[in LXX: Wis.5:22, 12:27, Da TH Bel 28, 4Ma.4:21 * ;]\nto be indignant: Mat.21:15, 26:8, Mrk.10:14, 14:4; before περί, Mat.20:24, Mrk.10:41; before ὅτι, Luk.13:14 (see MM, VGT, see word).†",
+   "sha256": "186774c09e83edf6ada3114c259b7437917054f2469b783e6bc004f4b9f8b6e0"
+  },
+  {
+   "strongs": "G0024",
+   "language": "greek",
+   "lemma": "ἀγανάκτησις",
+   "gloss": "indignation",
+   "definition": "ἀγανάκτησις, -εως, ἡ\n(ἀγανακτέω), [in LXX: Est.18:3 א 1 * ;]\nindignation: 2Co.7:11 (see MM, VGT, see word).†",
+   "sha256": "eb5bd0936885e641b56533ead40be4ae11bf5d226f03d99113971cbd70d6b99e"
+  },
+  {
+   "strongs": "G0025",
+   "language": "greek",
+   "lemma": "ἀγαπάω",
+   "gloss": "to love",
+   "definition": "ἀγαπάω, -ῶ,\n[in LXX chiefly for אהב ;]\nto love, to feel and exhibit esteem and goodwill to a person, to prize and delight in a thing.\n1. Of human affection, to men: τ. πλησίον, Mat.5:43; τ. ἐχθρούς, ib. 44; to Christ, Jhn.8:42; to God, Mat.22:37; with accusative of thing(s), Luk.11:43, Jhn.12:43, Eph.5:25, II Tim 4:8, 10, Heb.1:9, 1Pe.2:17, 3:10, 2Pe.2:15, 1Jn.2:15, Rev.12:11.\n2. Of divine love;\n(a) God's love: to men, Rom.8:37; to Christ, Jhn.3:35;\n(b) Christ's love: to men, Mrk.10:21; to God, Jhn.14:31; with cogn. accusative, Jhn.17:26, Eph.2:4.\nSYN.: φιλέω. From its supposed etymology (Thayer, LS; but see also Boisacq) ἀ. is commonly understood properly to denote love based on esteem (diligo), as distinct from that expressed by φιλέω (amo), spontaneous natural affection, emotional and unreasoning. If this distinction holds, ἀ. is fitly used in NT of Christian love to God and man, the spiritual affection which follows the direction of the will, and which, therefore, unlike that feeling which is instinctive and unreasoned, can be commanded as a duty. (Cf. ἀγάπη, and v. Tr., Syn. §xii; Cremer, 9, 592; and esp. MM, VGT, see word)",
+   "sha256": "ad32ef3f4d0026a1f089eb4883a7e789fa5951c72c275b892544c7e056a58e10"
+  },
+  {
+   "strongs": "G0026",
+   "language": "greek",
+   "lemma": "ἀγάπη",
+   "gloss": "love",
+   "definition": "ἀγάπη, -ης, ἡ\n[in LXX for אַהֲבָה, which is also rendered by ἀγάπησις and φιλία ;]\nlove, goodwill, esteem. Outside of bibl. and eccl. books, there is no clear instance (with Deiss., LAE, 18:4, 70:2, cf. the same writer in Constr. Quar., ii, 4; and with MM, VGT, see word, cf. Dr. Moulton in Exp. Times, xxvi, 3, 139). In NT, like ἀγαπάω, -ῶ,\n1. Of men's love:\n(a) to one another, Jhn.13:35;\n(b) to God, 1Jn.2:5.\n2. Of divine love;\n(a) God's love: to men, Rom.5:8; to Christ, Jhn.17:26;\n(b) Christ's love to men: Rom.8:35.\n3. In pl., love feasts: Ju 12 (DB, iii, 157).\nSYN.: φιλία. ἀ., signifying properly (see: ἀγαπάω) love which chooses its object, is taken over from LXX, where its connotation is more general, into NT, and there used exclusively to express that spiritual bond of love between God and man and between man and man, in Christ, which is characteristic of Christianity. It is thusdistinct from φιλία, friendship (Jas.4:4 only), στοργή, natural affection (in NT only in compounds, see: ἄστοργος) and ἔρως, sexual love, which is not used in NT, its place being taken by ἐπιθυμία. (Cf. ἀγαπάω; and see Abbott, Essays, 70f.; DB, vol. i., 555; Cremer, 13, 593; MM, VGT, see word).",
+   "sha256": "f9d9b62d49e726a44233154d06d97e5894e8c961bf1fa62643bd0cee2b7d0032"
+  },
+  {
+   "strongs": "G0027",
+   "language": "greek",
+   "lemma": "ἀγαπητός",
+   "gloss": "beloved",
+   "definition": "ἀγαπητός, -ή, -όν\n(ἀγαπάω), [in LXX chiefly for יָתִיד, יָדִיד ;]\nbeloved (see M, Pr., 221);\n(a) by God: of Christ, Mat.3:17; of men, Rom.1:7;\n(b) by Christians, of one another: 1Co.4:14; frequently as form of address, ib. 10:14; opposite to ἐχθρός, Rom.11:28 (see AR, Eph., 229; Cremer, 17; MM, VGT, see word).",
+   "sha256": "1c3c6d48bec236e62e219a98b69d6f97d7c3a0a56e7259a221e2ddb3a4d55364"
+  },
+  {
+   "strongs": "G0028",
+   "language": "greek",
+   "lemma": "Ἄγαρ",
+   "gloss": "Hagar",
+   "definition": "Ἅγαρ (Rec. Ἄ-), ἡ, indecl. (in FlJ, Ἀγάρα, -ης, Heb. הָגָר),\nHagar (Gen.16): Gal.4:24,25.†",
+   "sha256": "94e6a65fa46e5d7ba4f721768a9a74c1bb939202420e980f279f41bc704f28ea"
+  },
+  {
+   "strongs": "G0029",
+   "language": "greek",
+   "lemma": "ἀγγαρεύω",
+   "gloss": "to force",
+   "definition": "ἀγγαρεύω (from the Persian; cf. Vg. angiare, and the Heb. אִגֶרֶת; on the orthogr., see Bl., §6, 1; M, Pr., 46),\nto impress into public service, employ a courier; hence, to compel to perform a service (prob. common in the vernac.; cf. Deiss., BS, 86f., MM, Exp., iv; VGT, see word): Mat.5:41, 27:32, Mrk.15:21.†",
+   "sha256": "c631ee46ffa6f56f1d532640ba5c09b5eb9c18d63ba1ba06523fdcd4765ce8dd"
+  },
+  {
+   "strongs": "G0030",
+   "language": "greek",
+   "lemma": "ἀγγεῖον",
+   "gloss": "jar",
+   "definition": "ἀγγεῖον, -ου, τό\n(ἄγγος), [in LXX chiefly for כְּלִי ;]\na vessel (see MM, VGT, see word): Mat.25:4.†",
+   "sha256": "6629fa203a2df56970f0188ced711891e0b61fe65bdb4c405ce681c262512b9d"
+  },
+  {
+   "strongs": "G0031",
+   "language": "greek",
+   "lemma": "ἀγγελία",
+   "gloss": "message",
+   "definition": "ἀγγελία, -ας, ἡ\n(ἄγγελος), [in LXX chiefly for שְׁמוּעָה ;]\na message: 1Jo.1:5, 3:11 (Cremer, 18; MM, VGT, see word).†",
+   "sha256": "2b3a224255255d44af886dd7f8fdacf634a14c8635b55c74dc2fe948d515c0fc"
+  },
+  {
+   "strongs": "G0032G",
+   "language": "greek",
+   "lemma": "ἄγγελος",
+   "gloss": "angel",
+   "definition": "ἄγγελος, -ου, ὁ,\n[in LXX chiefly for מַלְאָךְ ;]\n1. a messenger, one sent: Mat.11:10, Jas.22:25.\n2. As in LXX, in the special sense of angel, a spiritual, heavenly being, attendant upon God and employed as his messenger to men, to make known his purposes, as Luk.1:11, or to execute them, as Mat.4:6. The ἄ. in Rev.1:20-2:1, al., is variously understood as\n(1) a messenger or delegate,\n(2) a bishop or ruler,\n(3) a guardian angel,\n(4) the prevailing spirit of each church, i.e. the Church itself. (Cf. Swete, Ap)., in l.; DB, iv, 991; Thayer, see word; Cremer, 18; MM, VGT, see word)",
+   "sha256": "d2213d7715249dede603cfc5da2e7f09cd04b83ea1f67a4f340e7c0d59e3a549"
+  },
+  {
+   "strongs": "G0032H",
+   "language": "greek",
+   "lemma": "ἄγγελος",
+   "gloss": "angel: messenger",
+   "definition": "ἄγγελος, -ου, ὁ,\n[in LXX chiefly for מַלְאָךְ ;]\n1. a messenger, one sent: Mat.11:10, Jas.22:25.\n2. As in LXX, in the special sense of angel, a spiritual, heavenly being, attendant upon God and employed as his messenger to men, to make known his purposes, as Luk.1:11, or to execute them, as Mat.4:6. The ἄ. in Rev.1:20-2:1, al., is variously understood as\n(1) a messenger or delegate,\n(2) a bishop or ruler,\n(3) a guardian angel,\n(4) the prevailing spirit of each church, i.e. the Church itself. (Cf. Swete, Ap)., in l.; DB, iv, 991; Thayer, see word; Cremer, 18; MM, VGT, see word)",
+   "sha256": "4bb48bb7e8f06908d9ece1c34802d31269d3ddc4222804b74dedfc34e9467b80"
+  },
+  {
+   "strongs": "G0033",
+   "language": "greek",
+   "lemma": "ἄγε",
+   "gloss": "to lead",
+   "definition": "ἄγε, prop. imperat. of ἄγω,\ncome! used as adv. and addressed, like φέρε, to one or more persons: Jas.4:13, 5:1.†",
+   "sha256": "888478e9bd5bc62c742c434b005a5807e8494b6b82cf55fdb067e89e99d85622"
+  },
+  {
+   "strongs": "G0034",
+   "language": "greek",
+   "lemma": "ἀγέλη",
+   "gloss": "herd",
+   "definition": "ἀγέλη, -ης, ἡ\n(ἄγω), [in LXX chiefly for עֵ֫דֶר ;]\na herd: Mat.8:30-32, Mrk.5:11, 13, Luk.8:32,33.†",
+   "sha256": "7f659023189497d84da291538fcb3205f50254655c8e7ff243707a760355b720"
+  },
+  {
+   "strongs": "G0035",
+   "language": "greek",
+   "lemma": "ἀγενεαλόγητος",
+   "gloss": "without genealogy",
+   "definition": "ἀγενεαλόγητος, -ον\n(γενεαλογέω),\nwithout genealogy, i.e. without recorded pedigree (cf. Neh.7:64): Heb.7:3 (Cremer, 152; MM, VGT, see word).†",
+   "sha256": "f1fabad363670151f2dd52743ea0c1ed5efecdfb160dce7fba149ffd9dcf5593"
+  },
+  {
+   "strongs": "G0036",
+   "language": "greek",
+   "lemma": "ἀγενής",
+   "gloss": "lowly",
+   "definition": "ἀγενής, -ές\n(γένος),\n1. unborn (Plat.);\n2. of no family, ignoble, base (opposite to ἀγαθός, Soph., Fr., 105): opposite to εὐγενής, 1Co.1:28 (for exx. from π., see MM, VGT, see word).\n†",
+   "sha256": "12dddfe3757608d0c41a343fbf7185d82abc039fda91a8a58b12fc3b10b3f2f9"
+  },
+  {
+   "strongs": "G0037",
+   "language": "greek",
+   "lemma": "ἁγιάζω",
+   "gloss": "to sanctify",
+   "definition": "ἁγιάζω, Hellenistic form of ἁγίζω\n(ἅγιος),\nto make holy, consecrate, sanctify; [in LXX chiefly for קדשׁ pi., hi. ;]\n1. to dedicate, separate, set apart for God; of things: Mat.23:17,19, 2Ti.2:21; of persons: Christ, Jhn.10:36, 17:19.\n2. to purify, make conformable in character to such dedication: forensically, to free from guilt, 1Co.6:11, Eph.5:26, Heb.2:11, 10:10, 14, 29, 13:12; internally, by actual sanctification of life, Jhn.17:17, 19, Act.20:32, 26:18, Rom.15:16, 1Co.1:2, 7:14, 1Th.5:23, Rev.22:11; of a nonbeliever influenced by marriage with a Christian, 1Co.7:14.\n3. In the intermediate sense of ceremonial or levitical purification:\n(a) of things, 2Ti.2:21;\n(b) of persons, Heb.9:13.\n4. to treat as holy: Mat.6:9, Luk.11:2, 1Pe.3:16 (Cremer, 53, 602; MM, VGT, see word).\n†",
+   "sha256": "0aef5d0aab4d17ce33c9956b9b1d027c6b514e780c511f5ce09515a7d157c979"
+  },
+  {
+   "strongs": "G0038",
+   "language": "greek",
+   "lemma": "ἁγιασμός",
+   "gloss": "holiness",
+   "definition": "ἁγιασμός, -οῦ, ὁ\n(ἁγιάζω), [in LXX: Eze.45:4 (מִקְדָּשׁ), Sir.7:31, etc. ;]\nas an active verbal noun in -μός, it signifies properly the process τὸ ἁγιάζειν, rather than the resultant state, ἁγιωσύνη, hence,\n1. consecration;\n2. sanctification: so strictly in Rom.6:19,22 (but see Meyer), 1Co.1:30, 1Th.4:3,7, 2Th.2:13, Heb.12:14, 1Pe.1:2. Elsewhere it perhaps (Ellic.; but see Milligan, Th., 48) inclines to the resultant state: 1Th.4:4, 1Ti.2:15 (Cremer, 55, 602).\n†",
+   "sha256": "b671506bceaa9abbfdab1a9d9bf9e18b845724e39fece8b9542b3b284dd07864"
+  },
+  {
+   "strongs": "G0039G",
+   "language": "greek",
+   "lemma": "ἅγιον",
+   "gloss": "Holy Place",
+   "definition": "ἅγιος, -α, ον\n(τό ἅγός, religious awe; ἅζω, to venerate), [in LXX chiefly for קֹ֫דֶשׁ ;]\nprimarily, dedicated to the gods, sacred (Hdt.; rare in Att., never in Hom., Hes. and Trag., who use ἁγνός), hence, holy, characteristic of God, separated to God, worthy of veneration.\n1. Its highest application is to God himself, in his purity, majesty, and glory: Luk.1:49, Jhn.17:11, Rev.4:8. Hence\n(a) of things and places which have a claim to reverence as sacred to God, e.g. the Temple: Mat.24:15, Heb.9:1;\n(b) of persons employed by him, as angels: 1Th.3:13; prophets, Luk.1:70; apostles, Eph.3:5.\n2. Applied to persons as separated to God's service:\n(a) of Christ, Mrk.1:24, Jhn.6:69, Act.4:30;\n(b) of Christians, Act.9:13, Rom.1:7, Heb.6:10, Rev.5:8.\n3. In the moral sense of sharing God's purity: Mrk.6:20, Jhn.17:11, Act.3:14, Rev.3:7.\n4. Of pure, clean sacrifices and offerings: 1Co.7:14, Eph.1:4.\nSYN.: ἁγνός, pure, both in ceremonial and spiritual sense; ἱερός (sacer), sacred, that which is inviolable because of its (external) relation to God; ὅσιος (sanctus as opposite to nefas), that which is based on everlasting ordinances of right. (Cf. Tr., Syn., §lxxxviii; DB, ii, 399 f.; Cremer, 34, 594-601; MM, VGT, see word)",
+   "sha256": "24595c026f98df6bf1ba9a3caa1e47f870de75d989d4026732886c7403beb66e"
+  },
+  {
+   "strongs": "G0039H",
+   "language": "greek",
+   "lemma": "ἅγιον",
+   "gloss": "Most Holy Place",
+   "definition": "ἅγιος, -α, ον\n(τό ἅγός, religious awe; ἅζω, to venerate), [in LXX chiefly for קֹ֫דֶשׁ ;]\nprimarily, dedicated to the gods, sacred (Hdt.; rare in Att., never in Hom., Hes. and Trag., who use ἁγνός), hence, holy, characteristic of God, separated to God, worthy of veneration.\n1. Its highest application is to God himself, in his purity, majesty, and glory: Luk.1:49, Jhn.17:11, Rev.4:8. Hence\n(a) of things and places which have a claim to reverence as sacred to God, e.g. the Temple: Mat.24:15, Heb.9:1;\n(b) of persons employed by him, as angels: 1Th.3:13; prophets, Luk.1:70; apostles, Eph.3:5.\n2. Applied to persons as separated to God's service:\n(a) of Christ, Mrk.1:24, Jhn.6:69, Act.4:30;\n(b) of Christians, Act.9:13, Rom.1:7, Heb.6:10, Rev.5:8.\n3. In the moral sense of sharing God's purity: Mrk.6:20, Jhn.17:11, Act.3:14, Rev.3:7.\n4. Of pure, clean sacrifices and offerings: 1Co.7:14, Eph.1:4.\nSYN.: ἁγνός, pure, both in ceremonial and spiritual sense; ἱερός (sacer), sacred, that which is inviolable because of its (external) relation to God; ὅσιος (sanctus as opposite to nefas), that which is based on everlasting ordinances of right. (Cf. Tr., Syn., §lxxxviii; DB, ii, 399 f.; Cremer, 34, 594-601; MM, VGT, see word)",
+   "sha256": "1100624398767db33aadbc0f0bc4cf8954f5833e900b434c1a3fd2f6a2c07552"
+  },
+  {
+   "strongs": "G0040G",
+   "language": "greek",
+   "lemma": "ἅγιος",
+   "gloss": "holy",
+   "definition": "ἅγιος, -α, ον\n(τό ἅγός, religious awe; ἅζω, to venerate), [in LXX chiefly for קֹ֫דֶשׁ ;]\nprimarily, dedicated to the gods, sacred (Hdt.; rare in Att., never in Hom., Hes. and Trag., who use ἁγνός), hence, holy, characteristic of God, separated to God, worthy of veneration.\n1. Its highest application is to God himself, in his purity, majesty, and glory: Luk.1:49, Jhn.17:11, Rev.4:8. Hence\n(a) of things and places which have a claim to reverence as sacred to God, e.g. the Temple: Mat.24:15, Heb.9:1;\n(b) of persons employed by him, as angels: 1Th.3:13; prophets, Luk.1:70; apostles, Eph.3:5.\n2. Applied to persons as separated to God's service:\n(a) of Christ, Mrk.1:24, Jhn.6:69, Act.4:30;\n(b) of Christians, Act.9:13, Rom.1:7, Heb.6:10, Rev.5:8.\n3. In the moral sense of sharing God's purity: Mrk.6:20, Jhn.17:11, Act.3:14, Rev.3:7.\n4. Of pure, clean sacrifices and offerings: 1Co.7:14, Eph.1:4.\nSYN.: ἁγνός, pure, both in ceremonial and spiritual sense; ἱερός (sacer), sacred, that which is inviolable because of its (external) relation to God; ὅσιος (sanctus as opposite to nefas), that which is based on everlasting ordinances of right. (Cf. Tr., Syn., §lxxxviii; DB, ii, 399 f.; Cremer, 34, 594-601; MM, VGT, see word)",
+   "sha256": "7fbe1c0aa99ccc21e62b4d963dbe09b8f7c895059e76e466832ac459d62c5fb2"
+  },
+  {
+   "strongs": "G0040H",
+   "language": "greek",
+   "lemma": "ἅγιος",
+   "gloss": "holy: saint",
+   "definition": "ἅγιος, -α, ον\n(τό ἅγός, religious awe; ἅζω, to venerate), [in LXX chiefly for קֹ֫דֶשׁ ;]\nprimarily, dedicated to the gods, sacred (Hdt.; rare in Att., never in Hom., Hes. and Trag., who use ἁγνός), hence, holy, characteristic of God, separated to God, worthy of veneration.\n1. Its highest application is to God himself, in his purity, majesty, and glory: Luk.1:49, Jhn.17:11, Rev.4:8. Hence\n(a) of things and places which have a claim to reverence as sacred to God, e.g. the Temple: Mat.24:15, Heb.9:1;\n(b) of persons employed by him, as angels: 1Th.3:13; prophets, Luk.1:70; apostles, Eph.3:5.\n2. Applied to persons as separated to God's service:\n(a) of Christ, Mrk.1:24, Jhn.6:69, Act.4:30;\n(b) of Christians, Act.9:13, Rom.1:7, Heb.6:10, Rev.5:8.\n3. In the moral sense of sharing God's purity: Mrk.6:20, Jhn.17:11, Act.3:14, Rev.3:7.\n4. Of pure, clean sacrifices and offerings: 1Co.7:14, Eph.1:4.\nSYN.: ἁγνός, pure, both in ceremonial and spiritual sense; ἱερός (sacer), sacred, that which is inviolable because of its (external) relation to God; ὅσιος (sanctus as opposite to nefas), that which is based on everlasting ordinances of right. (Cf. Tr., Syn., §lxxxviii; DB, ii, 399 f.; Cremer, 34, 594-601; MM, VGT, see word)",
+   "sha256": "f3a3e2fc7600df1e36032649b2230db072daf992f7147dba8ddd5ed1cd7b7899"
+  },
+  {
+   "strongs": "G0041",
+   "language": "greek",
+   "lemma": "ἁγιότης",
+   "gloss": "holiness",
+   "definition": "ἁγιότης, -ητος, ἡ\n(ἅγιος), [in LXX: 2Ma.15:2 * ;]\nsanctity, holiness, regarded, properly, as an abstract quality (see next word, and cf. Lft. Notes, 49; MM, VGT, see word): 2Co.1:12, Heb.12:10.†",
+   "sha256": "6a193634425ae8b2c429a8b6462840655a1ddeb9d941071b637a2e18b13b76bf"
+  },
+  {
+   "strongs": "G0042",
+   "language": "greek",
+   "lemma": "ἁγιωσύνη",
+   "gloss": "holiness",
+   "definition": "ἁγιωσύνη (cf. ἀγαθωσύνη), -ης, ἡ\n(ἅγιος), [in LXX: Psa.29 (30):4 96(97):12 (קֹדֶשׁ), 95(96):6 (עֹז), 144(145):5 (הוֹד), 2Ma.3:12 * ;]\nholiness, the state in man resulting from ἁγιασμός, which see: Rom.1:4, 2Co.7:1, 1Th.3:13 (Cremer, 52; MM, VGT, see word).†",
+   "sha256": "3be48064471d17d26ee9b23b9312b6cfadb8707de78604fbc7159f130a56cdb2"
+  },
+  {
+   "strongs": "G0043",
+   "language": "greek",
+   "lemma": "ἀγκάλη",
+   "gloss": "arm",
+   "definition": "ἀγκάλη,-ης, ἡ\n(ἄγκος, a bend), [in LXX for אַצִּיל, חֵיק ;]\nthe bent arm: Luk.2:28 (cf. ἐναγκαλίζομαι).†",
+   "sha256": "d50da4676d9c6006624fe44bd83ccf518f3d0a93b7b9de111136f81d3a174dd9"
+  },
+  {
+   "strongs": "G0044",
+   "language": "greek",
+   "lemma": "ἄγκιστρον",
+   "gloss": "fishhook",
+   "definition": "ἄγκιστρον, -ου, τό\n(ἄγκος, a bend), [in LXX חַכָּה, etc. ;]\na fish-hook: Mat.17:27.†",
+   "sha256": "9c5f279e48b126c02179129673589c35d56dd24abf7babd8654c03b430be2347"
+  },
+  {
+   "strongs": "G0045",
+   "language": "greek",
+   "lemma": "ἄγκυρα",
+   "gloss": "anchor",
+   "definition": "ἄγκυρα, -ας, ἡ (ἄγκος, a bend), [in Sm.: Jer.52:18 * ;]\nan anchor: Act.27:29, 30 40 ; figuratively (MM, VGT, see word), Heb.6:19.†",
+   "sha256": "0a7149678c46aea910db4e7042a10266f92c99ba73b355f7cbc84feb22de01b7"
+  },
+  {
+   "strongs": "G0046",
+   "language": "greek",
+   "lemma": "ἄγναφος",
+   "gloss": "unshrunk",
+   "definition": "ἄγναφος, -ον (= ἄγναπτος, γνάπτω, late form of κνάπτω, to card wool),\nuncarded, undressed, i.e. new (MM, VGT, see word): Mat.92:6, Mrk.2:21.†",
+   "sha256": "f99d8a1570acdf0b16153bd9b693c5a28f67e88e7a769a47d187ce12f9ea6168"
+  },
+  {
+   "strongs": "G0047",
+   "language": "greek",
+   "lemma": "ἁγνεία",
+   "gloss": "purity",
+   "definition": "ἁγνεία (WH, ἁγνία),\n[in LXX for טָהֳרָה, נָזִיר, נֶזֶר, etc. ;]\npurity: 1Ti.4:12, 5:2 (Cremer, 58. For exx. of ceremonial use in π., see MM, Exp., iv).†",
+   "sha256": "0239b802ed24f22270be7f67e007038d7edb9fbe66cb9ed23a54e6b549573920"
+  },
+  {
+   "strongs": "G0048",
+   "language": "greek",
+   "lemma": "ἁγνίζω",
+   "gloss": "to purify",
+   "definition": "ἁγνίζω (> ἁγνός),\n[in LXX always ceremonially, chiefly for קָדַשׁ ;]\nto purify, cleanse from defilement;\n(a) ceremonially: Jhn.11:55, Act.21:24, 26 24:18;\n(b) morally: Jas.4:8, 1Pe.1:22, 1Jn.3:3.\n† SYN.: καθαρίζω, which see (and see: ἁγνός).",
+   "sha256": "f929ee164d21f8c81ac9100246923d1779538a4a82aaa83bf2f01caa969ce826"
+  },
+  {
+   "strongs": "G0049",
+   "language": "greek",
+   "lemma": "ἁγνισμός",
+   "gloss": "purification",
+   "definition": "ἁγνισμός, -οῦ, ὁ (> ἁγνίζω),\n[in LXX: Num.6:5 (נֵזֶר) 8:7 19:17 (חַטָּאָה), etc. ;]\npurification: in ceremonial sense, Act.21:26 (LXX).†",
+   "sha256": "53c24a49948aa1b1f823c98e3de0fade18b4a4e6c59ff17caeac5f02732cccd9"
+  },
+  {
+   "strongs": "G0050",
+   "language": "greek",
+   "lemma": "ἀγνοέω",
+   "gloss": "be ignorant",
+   "definition": "ἀγνοέω, -ῶ (> ἁγνίζω),\n[in LXX for שָׁגָה, שָׁגַג, אָשַׁם, etc. ;]\n1. to be ignorant, not to know: absol., Ι Ti 1:13, Heb.5:2; with accusative, Act.13:27 17:23, Rom.10:3, 2Co.2:11; ἐν οἷς, 2Pe.2:12; before ὅτι, Rom.2:4 6:3 7:1, 1Co.14:38; οὐ θέλω ὑμᾶς ἀγνοεῖν, a Pauline phrase: with accusative, Rom.11:25; before ὑπέρ, 2Co.1:8; περί, 1Co.12:1, 1Th.4:13. ὅτι, Rom.1:13, 1Co.10:1 (for similar usage in π., V. MM, VGT, see word). Pass.: 1Co.14:38, 2Co.6:9, Gal.1:22.\n2. not to understand: with accusative, Mrk.9:32, Luk.9:45.\n†",
+   "sha256": "adedec5062adc28287bc904941088cf2dde367e463de534dbbd0b85ee97c8240"
+  },
+  {
+   "strongs": "G0051",
+   "language": "greek",
+   "lemma": "ἀγνόημα",
+   "gloss": "error",
+   "definition": "ἀγνόημα, -τός, τό\n(ἀγνοέω), [in LXX: Gen.43:12 (מִשְׁגֶּה), Tob.3:3, Jdth.5:20, Sir.23:2 51:19, 1Ma.13:39 * ;]\na sin of ignorance (so in π.; see MM, VGT, see word): Heb.9:7.†",
+   "sha256": "a96dfd457f9eecff90cc2aed8818d644516d8c2245cb808657bda8272eb928bc"
+  },
+  {
+   "strongs": "G0052",
+   "language": "greek",
+   "lemma": "ἄγνοια",
+   "gloss": "ignorance",
+   "definition": "ἄγνοια, -ας, ἡ\n(ἀγνοέω), [in LXX chiefly for אָשָׁם, שְׁגָגָה ;]\nignorance : Act.3:17 17:30, Eph.4:18 (with sense of wilful blindness; cf. MM, VGT, see word), 1Pe.1:14.†",
+   "sha256": "b1b21b220ec53b43e942c7a6254b00aec8b6c906d57bf6ec36f9ad3a31e1de73"
+  },
+  {
+   "strongs": "G0053",
+   "language": "greek",
+   "lemma": "ἁγνός",
+   "gloss": "pure",
+   "definition": "ἁγνός, -ή, -όν\n(ἅγος, see: ἅγιος), [in LXX chiefly for טָהוֹר (Pss, and Pr. only), also 2Ma.13:8, 4Ma.18:7, al. ;]\n1. free from ceremonial defilement, in a condition prepared for worship (for exx. of pagan usage, V. MM, VGT, see word).\n2. holy, sacred, venerable (II Mac, l.with).\n3. As in OT (cl.), pure, chaste, undefiled, guiltless;\n(a) of persons: 2Co.7:11 11:12, 1Ti.5:22, Tit.2:5, 1Jn.3:3;\n(b) of things: Php.4:8, Jas.3:17, 1Pe.3:2.\n† SYN.: εἰλικρινής (which see), pure, primarily as winnowed, purged, first found in ethical sense in NT (sincere). On the equivalence of ἁ. and καθαρός (which see), see DCG, ii, 459a though Westc. (Epp. Jo., 101) notes a distinction between them.",
+   "sha256": "fe07453cca656095c678085d4391489f9375705ec7d4aaf431e7bd659f275bdb"
+  },
+  {
+   "strongs": "G0054",
+   "language": "greek",
+   "lemma": "ἁγνότης",
+   "gloss": "purity",
+   "definition": "ἁγνότης, -τητος, ἡ\n(ἁγνός),\npurity, chastity (cf. ἁγιότης): 2Co.6:6 11:3.†",
+   "sha256": "1f858d1329875015fd22a34bfcfa4e344debd2c234bd3c413cccee8af6b1832e"
+  },
+  {
+   "strongs": "G0055",
+   "language": "greek",
+   "lemma": "ἁγνῶς",
+   "gloss": "purely",
+   "definition": "ἁγνῶς\n(ἁγνός),\nadv.,\npurely, with pure motives: Php.1:17.†",
+   "sha256": "2cbd73fe4d1876260514575c66b5a18bd3202194751ae3ffa7e700cecac3d906"
+  },
+  {
+   "strongs": "G0056",
+   "language": "greek",
+   "lemma": "ἀγνωσία",
+   "gloss": "ignorance",
+   "definition": "ἀγνωσία, -ας, ἡ\n(γινώσκω), [in LXX: Job.35:16 (בִּבְלִי־דַּעַת), Wis.13:1, 3Ma.5:27 * ;]\nignorance (opposite to γνῶσις): 1Co.15:34, 1Pe.2:15 (see Hort in l.; MM, VGT, see word).†",
+   "sha256": "6f664fc7caa04ea63c82830966f1833ff93c93302ec0440d7714790009857a52"
+  },
+  {
+   "strongs": "G0057",
+   "language": "greek",
+   "lemma": "ἄγνωστος",
+   "gloss": "unknown",
+   "definition": "ἄγνωστος, -ον\n(γινώσκω), [in LXX: Wis.11:18 18:3, 2Ma.1:19 2:7 (Cremer, 157) * ;]\nunknown: Act.17:23 (cf. MM, VGT, see word).†",
+   "sha256": "21c028bc6afd2eff8e9c94102794368c5816599679f516c772fe7003743d4ef5"
+  },
+  {
+   "strongs": "G0058",
+   "language": "greek",
+   "lemma": "ἀγορά",
+   "gloss": "marketplace",
+   "definition": "ἀγορά, -ας, ἡ (ἀγείρω, to bring together)\n[in LXX for עִזָּבוֹן, שׁוּק ;]\n1. an assembly (Hom., Xen., al.).\n2. a place of assembly, a public place or forum, a market-place (Hom., Thuc, al.; LXX): Mat.11:16 20:2 23:7, Mrk.6:56 (cf . MM, VGT, see word, ἀγυιά) 7:4 (Bl., §46, 7) 12:38, Luk.7:32 (Bl., l.with) 11:43 20:46, Act.16:19 17:7 (Cremer, 59; MM, VGT, see word).\n†",
+   "sha256": "9414a54be1ceb33d278da57c7953d7d17eec5ad52540ebfd05b8478ad0242ba6"
+  },
+  {
+   "strongs": "G0059",
+   "language": "greek",
+   "lemma": "ἀγοράζω",
+   "gloss": "to buy",
+   "definition": "ἀγοράζω\n(ἀγορά), [in LXX chiefly for שׁבר, קנה ;]\n1. to frequent the ἀγορά (Hdt., al.).\n2. to buy in the market, purchase (Xen., al.; LXX; in π. very common in deeds of sale, see MM, VGT, see word): absol., Mat.21:12, Mrk.11:15; with accusative of thing(s), Mat.13:44, 46, al.; before παρά, with genitive of person(s), Rev.3:18 (LXX, Polyb.); ἐκ, Mat.27:7; with genitive pret., Mrk.6:37, al.; metaphorically, 1Co.6:20 7:23, 2Pe.2:1, Rev.5:9 14:3, 4.",
+   "sha256": "88d681df78fcfbf0e3f182560580e0ce3f5f520a06c72d7ad9bdefa062d18602"
+  },
+  {
+   "strongs": "G0060",
+   "language": "greek",
+   "lemma": "ἀγοραῖος",
+   "gloss": "of the marketplace",
+   "definition": "ἀγοραῖος, -ον\n(ἀγορά),\n1. frequenting the ἀγορά , a lounger in the ἀγορά (Xen., al.): Act.17:5.\n2. In late writers (Strab., al.), proper to the ἀγορά : ἀγοραῖοι (sc. ἥμεραι) ἀγονται (cf. Lat. conventus agere), court-days are kept, Act.19:38 (for exx. of both usages, see MM, VGT, see word).\n†",
+   "sha256": "f7aaf00c2010fc6fb56a270e64c3c1712209865821d4edc894050a9dd9dea9c8"
+  },
+  {
+   "strongs": "G0061",
+   "language": "greek",
+   "lemma": "ἄγρα",
+   "gloss": "catch",
+   "definition": "ἄγρα, -ας, ἡ\n(ἄγω),\n1. the chase, a hunting or catching: Luk.5:4.\n2. that which is taken, a catch: of fish, Luk.5:9.\n†",
+   "sha256": "20fbd0970dcd4fce27804e68e12fadae40c03cb688e7c49751d1c37b37070d30"
+  },
+  {
+   "strongs": "G0062",
+   "language": "greek",
+   "lemma": "ἀγράμματος",
+   "gloss": "unschooled",
+   "definition": "ἀγραυλέω, -ῶ\n(ἀγραυλος, dwelling in the field; ἀγρός, αὐλή),\nto live in the fields: Luk.2:8.†",
+   "sha256": "5a05d46e08c4f942919dfbdc3e2f19556a77f8902b5aec0ae30da5bb8ac614eb"
+  },
+  {
+   "strongs": "G0063",
+   "language": "greek",
+   "lemma": "ἀγραυλέω",
+   "gloss": "to live outside",
+   "definition": "to dwell in the field , (New Testament) (ML)",
+   "sha256": "6ab59663f31dee110098bfc6e8c1e2bbbc9d7cf28568c435010478851c0c1789"
+  },
+  {
+   "strongs": "G0064",
+   "language": "greek",
+   "lemma": "ἀγρεύω",
+   "gloss": "to catch",
+   "definition": "ἀγρεύω (ἄγρα),\n[in LXX: Job.10:16, Pro.5:22 6:25,26, Hos.5:2 (לקח ni., שׁחט, etc.)* ;]\nto catch or take by hunting or fishing; metaphorically, Mrk.12:13.†",
+   "sha256": "7a05c07923dcbd7108aed88100e25d985daf44b6a407b61c4b30dbb85c2a4b42"
+  },
+  {
+   "strongs": "G0065",
+   "language": "greek",
+   "lemma": "ἀγριέλαιος",
+   "gloss": "wild olive tree",
+   "definition": "ἀγρι-έλαιος, -ον\n1. of the wild olive (Anth.).\n2. As subst., the wild olive: Rom.11:17, 24 (CGT, in 1.; MM, VGT, see word).\n†",
+   "sha256": "642cea503f9cdfaa863dc2b1d8dc7721580e850a8163d24bf2f70ad207c75003"
+  },
+  {
+   "strongs": "G0066",
+   "language": "greek",
+   "lemma": "ἄγριος",
+   "gloss": "wild",
+   "definition": "ἄγριος, -α, -ον\n(ἀγρός), [in LXX for שָׂדֶה, etc. ;]\n1. living in fields, wild: μέλι. Mat.3:4, Mrk.1:6.\n2. savage, fierce: Ju 13. (Cf. usage in π. of a malignant wound; MM, VGT, see word)\n†",
+   "sha256": "3d9d75af168acdba17c8e1dc1e77fd24212752a78e20fb8079faa8f9734350df"
+  },
+  {
+   "strongs": "G0067",
+   "language": "greek",
+   "lemma": "Ἀγρίππας",
+   "gloss": "Agrippa",
+   "definition": "Ἀγρίππας, -α (Bl., §7, 2), ὁ\nAgrippa (II): Act.25:13, 22, 23, 24, 26 26:1, 2, 19, 27, 28, 32. (For Agrippa I, see: Ἡρῴδης, 3.) †",
+   "sha256": "f3a8835060f1c5f60019eabba3cc00e3c4be2512eac7ec0c0ae64e5349d14ee5"
+  },
+  {
+   "strongs": "G0068",
+   "language": "greek",
+   "lemma": "ἀγρός",
+   "gloss": "Field of",
+   "definition": "ἀγρός, -οῦ, ὁ,\n[in LXX chiefly for שָׂדֶה ];\n1. a field: Mat.6:28, al.\n2. the country: Mrk.15:21, al.; pl., country places, farms: Mrk.5:14 6:36 56, Luk.8:34 9:12.\n3. = χωρίον a piece of ground: Mrk.10:29, Act.4:27, al. (On the occurrence of this word as compared with χώρα, χωρίον see MM, VGT, see word)",
+   "sha256": "ba595fff8a5c90c1645c268d73bff27edd61caf30a8b6f3e1924a44b5261e5aa"
+  },
+  {
+   "strongs": "G0068G",
+   "language": "greek",
+   "lemma": "ἀγρός",
+   "gloss": "field",
+   "definition": "ἀγρός, -οῦ, ὁ,\n[in LXX chiefly for שָׂדֶה ];\n1. a field: Mat.6:28, al.\n2. the country: Mrk.15:21, al.; pl., country places, farms: Mrk.5:14 6:36 56, Luk.8:34 9:12.\n3. = χωρίον a piece of ground: Mrk.10:29, Act.4:27, al. (On the occurrence of this word as compared with χώρα, χωρίον see MM, VGT, see word)",
+   "sha256": "024e7c0fcf47faee33c211021e266ee1504061d46fe9ee542d979c5e2f458711"
+  },
+  {
+   "strongs": "G0068H",
+   "language": "greek",
+   "lemma": "ἀγρός",
+   "gloss": "Field (of blood)",
+   "definition": "ἀγρός, -οῦ, ὁ,\n[in LXX chiefly for שָׂדֶה ];\n1. a field: Mat.6:28, al.\n2. the country: Mrk.15:21, al.; pl., country places, farms: Mrk.5:14 6:36 56, Luk.8:34 9:12.\n3. = χωρίον a piece of ground: Mrk.10:29, Act.4:27, al. (On the occurrence of this word as compared with χώρα, χωρίον see MM, VGT, see word)",
+   "sha256": "efeed376dd184f5363fd93e4f0ad8eff7d0abc059b9b6552e7361b98d59af56a"
+  },
+  {
+   "strongs": "G0069",
+   "language": "greek",
+   "lemma": "ἀγρυπνέω",
+   "gloss": "be watchful",
+   "definition": "ἀγρυπνέω, -ῶ (ἄγρυπνος, seeking sleep ; ἀγρεύω, ὕπνος),\n[in LXX chiefly for שׁקד ;]\nto be sleepless, wakeful (Theogn., Xen., al.); metaphorically (LXX) = cl. ἐγρήγορα, to be watchful, vigilant: Mrk.13:33, Luk.21:36, Eph.6:18, Heb.13:17.†\nSYN.: γρηγορέω, which see; νήφω, associated with γ. in 1Pe.5:8, expressing a wariness which results from self-control, a condition of moral, not merely mental alertness (see M, Th., I, 5:6).",
+   "sha256": "c610dd24a04f31a2d41bb75f863160f5c770aec6f5f672c1e1a99ffd8112ae23"
+  },
+  {
+   "strongs": "G0070",
+   "language": "greek",
+   "lemma": "ἀγρυπνία",
+   "gloss": "sleeplessness",
+   "definition": "ἀγρυπνία, -ας, ἡ (see supr.),\n[in LXX: Si .9, 2Ma.2:26 * ;]\nsleeplessness, watching: 2Co.6:5 11:27. (Plat., Hdt.; for exx. in π., see MM, VGT, see word) †",
+   "sha256": "6b13b45a5eb3d1ca7692d4b778670e062aa2bed4214d0f99dba6e1dc01f60aeb"
+  },
+  {
+   "strongs": "G0071",
+   "language": "greek",
+   "lemma": "ἄγω",
+   "gloss": "to bring",
+   "definition": "ἄγω,\n[in LXX for בּוא hi., לקח, נהג, etc. ;]\n1. to lead, bring, carry: with ace, before ἐπί, εἰς, ἕως, πρός and simple dative; metaphorically, to lead, guide, impel: Jhn.10:16 Rom.2:4, Heb.2:10, 2Ti.3:6, al.\n2. to spend or keep a day: Luk.24:21, Act.19:38\n3. Intrans., to go: subjunc., ἄγωμεν, Mat.2:46, al. (Cramer, 61; MM, VGT, see word).",
+   "sha256": "8fe957459eb12361c54df02c808f8ba0897bb2b318673441f734c0159326e200"
+  },
+  {
+   "strongs": "G0072",
+   "language": "greek",
+   "lemma": "ἀγωγή",
+   "gloss": "self-conduct",
+   "definition": "ἀγωγή, -ῆς, ἡ\n(ἄγω), [in LXX: Est.2:20 10:3, 2Ma.4:16 6:8 11:24, 3Ma.4:10 * ;]\n1. a carrying away.\n2. a leading, guiding; metaphorically, training; hence, from the expression ἀ. τοῦ βίου, absol., conduct, way of life: 2Ti.3:10 (Cremer, 61; MM, VGT, see word).\n†",
+   "sha256": "daea8c8f81182827cbf14901e1e85dbbf2d971d18a6e6ab17600a64295da6c7f"
+  },
+  {
+   "strongs": "G0073",
+   "language": "greek",
+   "lemma": "ἀγών",
+   "gloss": "fight",
+   "definition": "ἀγών, -ῶνος, ὁ\n(ἄγω), [in LXX: Isa.7:13 (לאה), Est.4:17, Wis.4:2 10:12, II Mac.6, 4Mac .5 * ;]\n1. a gathering, esp. for games.\n2. a place of assembly.\n3. a contest, struggle, trial; metaphorically (MM, VGT, see word),\n(a) of the Christian life as a contest and struggle: Php.1:30, 1Th.2:2, 1Ti.6:12, 2Ti.4:7 Heb.12:1;\n(b) solicitude, anxiety: Col.2:1.\n†",
+   "sha256": "fb4e5791d908f31e3c9126bdd422a5ed622901f94c44cf368cb7ceca9f6fbb2f"
+  },
+  {
+   "strongs": "G0074",
+   "language": "greek",
+   "lemma": "ἀγωνία",
+   "gloss": "a struggle",
+   "definition": "ἀγωνία, -ας, ἡ\n(ἀγών), [in LXX: 2Ma.3:14,16 15:19 * ;]\n1. a contest, wrestling (Eur., Xen.).\n2. Of the mind, great fear, agony, anguish (Dem., Arist.): Luk.22:44 (cf . Field, Notes, 77 f. ; Abbott, Essays, 101 f. ; MM, VGT, see word).\n†",
+   "sha256": "11196e4406fb3fb7a822f8fbd2fad9a28a30d8e6b41bef2269f901ff9f029198"
+  },
+  {
+   "strongs": "G0075",
+   "language": "greek",
+   "lemma": "ἀγωνίζομαι",
+   "gloss": "to struggle",
+   "definition": "ἀγωνίζομαι\n(ἀγών), [in LXX: Da TH 6:14 (שׂוּם בָּל), Sir.4:28, I, II, 4Mac .5 * ;]\n1. to contend for a prize: 1Co.9:25,\n2. to fight, struggle, strive: Jhn.18:36; metaphorically (MM, VGT, see word). Col.1:29 4:12, 1Ti.4:10 6:12, 2Ti.4:7; with inf. (Field, Notes, 66), Luk.13:24 (Cremer, 609)\n†",
+   "sha256": "c4f88fab61dc3dac2a4b93eb1c354299e573b8d7667aff06e6a2c648b77500ff"
+  },
+  {
+   "strongs": "G0076",
+   "language": "greek",
+   "lemma": "Ἀδάμ",
+   "gloss": "Adam",
+   "definition": "Ἀδάμ, ὁ indecl. (Heb. אָדָם),\nAdam: Luk.3:38, Rom.5:14, 1Co.15:22,45, 1Ti.2:13,14 Ju 14. Christ ὁ ἔσχατος Ἀ., 1Co.15:45.†",
+   "sha256": "0d8eabf3e52216711bef59e5182ff4214a93ba686a8a23a56db206b85f353f4a"
+  },
+  {
+   "strongs": "G0077",
+   "language": "greek",
+   "lemma": "ἀδάπανος",
+   "gloss": "free",
+   "definition": "ἀδάπανος, -ον\n(δαπάνη),\nwithout expense, free of charge: 1Co.9:18.†",
+   "sha256": "9e2f2c95049b0a12aa0f0e169a7973d25da5b52673aa9660995cda9608224bf0"
+  },
+  {
+   "strongs": "G0078",
+   "language": "greek",
+   "lemma": "Ἀδδί",
+   "gloss": "Addi",
+   "definition": "Ἀδδεί (Rec. Ἀδδί), ὁ,\nAddei: Luk.3:28.†",
+   "sha256": "ce03d800a36ffdd619ae9aa352f5a4eed240e1681faef4f5583dbf78f7171ad2"
+  },
+  {
+   "strongs": "G0079",
+   "language": "greek",
+   "lemma": "ἀδελφή",
+   "gloss": "sister",
+   "definition": "ἀδελφή, -ῆς, ἡ\n(ἀδελφός), [in LXX for אָהוֹת ;]\na sister: Mat.19:29, al.; metaphorically (MM, VGT, see word), of a member of the Christian community: Rom.16:1, 1Co.7:15 Jas.21:15, al.",
+   "sha256": "1e239342382e2695421acc997715ed202545937d5ccbc757b402ef6ac1e68cd7"
+  },
+  {
+   "strongs": "G0080",
+   "language": "greek",
+   "lemma": "ἀδελφός",
+   "gloss": "brother",
+   "definition": "ἀδελφός, -οῦ, ὁ\n(ἀ- copul., δελφύς, womb),\nin cl., a brother, born of the same parent or parents. [In LXX (Hort, Ja., 102f.), for אָח ;]\n1. lit. of a brother (Gen.4:2, al.).\n2. Of a neighbour (Lev.19:17).\n3. Of a member of the same nation (Exo.2:14, Deu.15:3). In NT in each of these senses (1. Mat.1:2, al.; 2. Mat.7:3; 3. Rom.9:3) and also,\n4. of a fellow-Christian: 1Co.1:1, Act.9:30. This usage finds illustration in π., where ἀ. is used of members of a pagan religious community (M, Th., I, 1:4; MM, VGT, see word). The ἀδελφοὶ τ. Κυρίου (Mat.12:46-49 13:55 28:10, Mrk.3:31-34, Luk.8:19-21, Jhn.2:12 7:3, 5 10 20:17, Act.1:14, 1Co.9:5) may have been sons of Joseph and Mary (Mayor, Ja., Intr. viff.; DB, i, 320ff.) or of Joseph by a former marriage (Lft., Gal., 252ff.; DCG, i, 232ff.), but the view of Jerome, which makes ἀ. equivalent to ἀνεψιός, is inconsistent with Greek usage. (Cremer, 66.)",
+   "sha256": "d1c7b10c2154853930540130ed96aaa07d5a88dfa75ce2d432b4be191487f8d7"
+  },
+  {
+   "strongs": "G0081",
+   "language": "greek",
+   "lemma": "ἀδελφότης",
+   "gloss": "brotherhood",
+   "definition": "ἀδελφότης, -ητος, ἡ\n(ἀδελφός), [in LXX: 1Ma.12:10,17, 4Mac .5 * ;]\n1. abstract, brotherhood, brotherly affection (LXX).\n2. Concrete, the brotherhood, the Christian community: 1Pe.2:17 5:9 (MM, VGT, see word).\n†",
+   "sha256": "ed550e95308171151cc4da86b9544ea503ccf5b31ff9ec7112cd10dd56e3702a"
+  },
+  {
+   "strongs": "G0082",
+   "language": "greek",
+   "lemma": "ἄδηλος",
+   "gloss": "unclear",
+   "definition": "ἄ-δηλος, -ον\n(δῆλος), [in LXX: Ps 50 (51):6 (בַּטֻחוֹת) ;]\n1. unseen, unobserved, not manifest (Ps, l.with): Luk.11:44.\n2. uncertain, indistinct: 1Co.14:8.\n†",
+   "sha256": "43f8ca985257d5d4416b47ab8611bf523a5faaae4531e857aa74a44ac8b56abf"
+  },
+  {
+   "strongs": "G0083",
+   "language": "greek",
+   "lemma": "ἀδηλότης",
+   "gloss": "uncertainty",
+   "definition": "ἀδηλότης, -ητος, ἡ\n(ἄδηλος),\nuncertainty: 1Ti.6:17.†",
+   "sha256": "0560a1d8716edcb2368adf6f54085eeba199081fbfe3b0dc124c514761502256"
+  },
+  {
+   "strongs": "G0084",
+   "language": "greek",
+   "lemma": "ἀδήλως",
+   "gloss": "uncertainly",
+   "definition": "ἀδήλως\n(ἄδηλος),\nadv. uncertainly: of direction, 1Co.9:26.†",
+   "sha256": "0b1eca47bf7fe149819a1d52cc137cca1f8771a9b2f542fd0044e18959c82277"
+  },
+  {
+   "strongs": "G0085",
+   "language": "greek",
+   "lemma": "ἀδημονέω",
+   "gloss": "be distressed",
+   "definition": "ἀδημονέω, -ῶ (on the derivation, see MM, VGT, see word), [in Aq.: Job.18:20; Sm.: Psa.60 (61):3 115:2 (116:11), Ecc.7:17(16), Eze.3:15 * ;]\nto be troubled, distressed (MM, l.with): Mat.26:37, Mrk.14:33, Php.2:26.†",
+   "sha256": "922e5755e3635a12b779d7c84a686fb4a03db9aeba675713e7d11bd86d816176"
+  },
+  {
+   "strongs": "G0086",
+   "language": "greek",
+   "lemma": "ᾍδης",
+   "gloss": "hell: Hades",
+   "definition": "ᾅδης, -ου, ὁ\n[in LXX ehiefly for שְׁאוֹל, also for דּוּמָה, מָוֶת, etc. ;]\n1. in Hom., Hades (Pluto), the god of the underworld.\n2. the abode of Hades, the underivorld; in NT, the abode of departed spirits, Hades: ἐν τ. ᾅ., Luk.16:23; εἰς ᾅ., Act.2:27,31; πύλαι ᾅδου, Mat.16:18; κλεῖς τοῦ ᾅ., Rev.1:18; metaphorically, ἕως ᾅ., Mat.11:23, Luk.10:15; personified, Rev.6:8 20:13,14 (Cremer, 67, 610; MM, VGT, see word).\n†",
+   "sha256": "4a399c96479e6f5bf50a28f09b9fb47daee47260670837e88fde53d653c21010"
+  },
+  {
+   "strongs": "G0087",
+   "language": "greek",
+   "lemma": "ἀδιάκριτος",
+   "gloss": "impartial",
+   "definition": "ἀ-διά-κριτος, -ον\n(διακρίνω), [in LXX: Pro.25:1 * ;]\n1. not to be parted, mixed, undistinguishable (cf. Pr, l.with, and see Lft., Ignat. Eph., §3).\n2. without uncertainty (Hort, in l., but see MM, VGT, see word): Jas.3:17.\n†",
+   "sha256": "0a95684ac96a0dc7e9355cacd07f0afc2d6d07b1a51b52e379411759d1e4110d"
+  },
+  {
+   "strongs": "G0088",
+   "language": "greek",
+   "lemma": "ἀδιάλειπτος",
+   "gloss": "continuous",
+   "definition": "ἀδιάλειπτος, -ον\n(διαλείπω),\nunremitting, incessant: Rom.9:2, 2Ti.1:3. (For exx., see MM, VGT, see word) †",
+   "sha256": "66cb4f7f7d7f07db488fcdbb1075105f58a370aa217318f38f6722285d44ec40"
+  },
+  {
+   "strongs": "G0089",
+   "language": "greek",
+   "lemma": "ἀδιαλείπτως",
+   "gloss": "unceasingly",
+   "definition": "ἀδιαλείπτως (see supr.), adv.,\n[in LXX: 1Ma.12:11, II Mac .4, 3Ma.6:33 * ;]\nunremittingly, incessantly: Rom.1:9, 1Th.1:3 2:13 5:17.†",
+   "sha256": "cb5903c9de6cf83dba2d3cb878c8a159acc189c533aa69566ab2481588d5dfab"
+  },
+  {
+   "strongs": "G0090",
+   "language": "greek",
+   "lemma": "ἀδιαφθορία",
+   "gloss": "unspoilable",
+   "definition": "incorruption, uprightness , (New Testament) (ML)",
+   "sha256": "52dce94861275a3a74722a91e22df7715e07f44d73538705c0480b41f96de3d6"
+  },
+  {
+   "strongs": "G0091",
+   "language": "greek",
+   "lemma": "ἀδικέω",
+   "gloss": "to harm",
+   "definition": "ἀδικέω, -ῶ\n(ἄδικος), [in LXX for עשׁק, עוה, etc. ;]\n1. intrans., to be ἄδικος, do wrong, act wickedly or criminally: Act.25:11, 1Co.6:8, 2Co.7:12, Col.3:25, Rev.22:11; to do hurt, Rev.9:19.\n2. Trans.\n(a) to do some wrong: ὃ ἠδίκησεν, Col.3:25; to wrong some one, Mat.20:13, Act.7:26, 27 25:10, 2Co.7:2, Gal.4:12, Phm 18, 2Pe.2:13; pass., Act.7:24, 2Co.7:12; mid., 1Co.6:7 (suffer . . . to be wronged; WM, §38, 3; but see Bl., §54, 5; and cf. ἀποστερέω);\n(b) to injure, hurt: Luk.10:19 Rev.2:11 6:6 7:2, 3 9:4,10 11:5.\n†",
+   "sha256": "8d2df694e1d49b53d601b8dd932f99d963bdff1d68b54311db641474a1e93333"
+  },
+  {
+   "strongs": "G0092",
+   "language": "greek",
+   "lemma": "ἀδίκημα",
+   "gloss": "crime",
+   "definition": "ἀδίκημα, -τος, τό\n(ἀδικέω), [in LXX for עָוֹן, פֶּשַׁע, etc. ;]\na wrong, injury, misdeed (MM, VGT, see word): Act.18:14 24:20, Rev.18:5.†",
+   "sha256": "4501a301f278a69c4e6667d130dcca4996a5475f0b48fb985a64169607fe8567"
+  },
+  {
+   "strongs": "G0093",
+   "language": "greek",
+   "lemma": "ἀδικία",
+   "gloss": "unrighteousness",
+   "definition": "ἀδικία, -ας, ἡ\n(ἄδικος), [in LXX for עָוֹן, פֶּשַׁע, עָוֶל, etc. ;]\n1. injustice: Luk.18:6, Rom.9:14.\n2. unrighteousness, iniquity: Jhn.7:18, Act.8:23, Rom.1:18, 29 2:8 6:13, 2Ti.2:19, 1Jn.1:9 5:17; opposite to ἀλήθεια, 1Co.13:6, 2Th.2:12; to δικαιοσύνη ], Rom.3:5; ἀπάτη τῆς ἀ., 2Th.2:10; μισθὸς ἀδικίας, Act.1:18, 2Pe.2:13,15; ἐγράται τῆς ἀ., Luk.13:27; μαμωνᾶς τῆς ἀ., Luk.16:9; κόσμος τῆς ἀ., Jas.3:6; οἰκονόμος τῆς ἀ., Luk.16:8.\n3. = ἀδίκημα, an unrighteous act: ironically, a favour, 2Co.12:13; pl., Heb.8:12 (Cremer, 261; MM, VGT, see word).\n†",
+   "sha256": "b41c7a3192af6acba9c7009ecacca8c19b7c572585458857f5e6df4f4524bf00"
+  },
+  {
+   "strongs": "G0094",
+   "language": "greek",
+   "lemma": "ἄδικος",
+   "gloss": "unjust",
+   "definition": "ἄδικος, -ον\n(δίκη), [in LXX for שׁקר, עול, etc. ;]\n1. unjust: Rom.3:5, Heb.6:10.\n2. unrighteous, wicked: Luk.16:11 18:11, Act.24:15, 1Co.6:1,9 1Pe.3:18; opposite to δίκαιος, Mat.5:45; to εὐσεβής, 2Pe.2:9; to πιστός, Luk.16:10 (Cremer, 200).\n†",
+   "sha256": "e30d4b37f27b5ee1f5439f3d81485a3fd2ebb431bfee9d0deaa284214bfd1ca4"
+  },
+  {
+   "strongs": "G0095",
+   "language": "greek",
+   "lemma": "ἀδίκως",
+   "gloss": "unjustly",
+   "definition": "ἀδίκως, adv.\n(ἄδικος), [in LXX for שׁקר, עול, etc. ;]\nunjustly, undeservedly: 1Pe.2:19.†",
+   "sha256": "19767e563fb62e135fb2c7a93f96ed0bbbf00b4611204c1749f23a8bea85cfb5"
+  },
+  {
+   "strongs": "G0096",
+   "language": "greek",
+   "lemma": "ἀδόκιμος",
+   "gloss": "failing",
+   "definition": "ἀ-δόκιμος, -ον,\n[in LXX: Pro.25:4, Isa.1:22 (סִיג) * ;]\n1. of things (prop. of metals: LXX, ll. with), not standing the test, rejected: γῆ, Heb.6:8.\n2. Of persons, rejected after testing, reprobate: Rom.1:28, 1Co.9:27, 2Co.13:5-7, 2Ti.3:8, Tit.1:16 (Cremer, 212).\n†",
+   "sha256": "b89d2f5d6cac878f75395ba57e33de78cc57465d7e701ff43090c98aae8c23bd"
+  },
+  {
+   "strongs": "G0097",
+   "language": "greek",
+   "lemma": "ἄδολος",
+   "gloss": "pure",
+   "definition": "ἄδολος, -ον,\n1. guileless (Pind., Thuc).\n2. Of liquids (Æsch., Eur., and late prose writers), genuine, pure (in π. and in MGr. of wine, also of corn: MM, VGT, see word; Milligan, NTD, 77): of milk, metaphorically, 1Pe.2:2.\n† SYN.: ἀκέραιος (which see), ἄκακος, ἁπλοῦς.",
+   "sha256": "747de4d934c9af585d86d7aeb3be3cf574940629e9e932d6dcf5d0f27276fea2"
+  },
+  {
+   "strongs": "G0098",
+   "language": "greek",
+   "lemma": "Ἀδραμυττηνός",
+   "gloss": "Adramyttium",
+   "definition": "Ἁδραμυντηνός (T, Rec. Ἀδραμυττηνός), -ή,-όν,\nof Adramyttium, a seaport of Mysia: Act.27:2.†",
+   "sha256": "7bbc56bd2d1e24beeaaafbfb1aeaa3e87cca871fc4e75947ed544e4ef60f447f"
+  },
+  {
+   "strongs": "G0099",
+   "language": "greek",
+   "lemma": "Ἀδρίας",
+   "gloss": "Adriatic Sea",
+   "definition": "Ἁδρίας (T, Rec. Ἀδρίας), -ου, ὁ,\nthe Adriatic sea, in later Greek usage extended to take in all the waters between Greece and Italy: Act.27:27.†",
+   "sha256": "803f88e9c829099e7fad46fb4ddf15f9b7f1af7bcce6e335bd17ba7b61711269"
+  },
+  {
+   "strongs": "G0100",
+   "language": "greek",
+   "lemma": "ἁδρότης",
+   "gloss": "abundance",
+   "definition": "ἁδρότης, -τος, ἡ\n(ἁδρός, thick, well-grown),\n1. thickness, vigour.\n2. abundance, bounty: 2Co.8:20.\n†",
+   "sha256": "4d24650461c6d8d26304fcd87a2af2432c22ff55339f81e3ad2e7637c64b89c9"
+  },
+  {
+   "strongs": "G0101",
+   "language": "greek",
+   "lemma": "ἀδυνατέω",
+   "gloss": "be impossible",
+   "definition": "ἀδυνατέω, -ῶ\n(ἀδύνατος), [in LXX: Deu.17:8, Zec.8:6 (פּלא ni.), Job.42:2 (בּצר ni.), al. ;]\n1. Abbott-Smith omits this number to be unable (cl., Philo; π., see MM, VGT, see word).\n2. In LXX and NT (Kennedy, Sources, 124; Hatch, Essays, 4; Field, Notes, 46 f.), to be impossible: Mat.17:20, Luk.1:37.\n†",
+   "sha256": "ffd773cc76b36f7a4c097847ac26f7c06e2209730c3c1e301557d09e76afbcc2"
+  },
+  {
+   "strongs": "G0102",
+   "language": "greek",
+   "lemma": "ἀδύνατος",
+   "gloss": "unable",
+   "definition": "ἀ-δύνατος, -ον,\n[in LXX for אֶבְיוֹן, דַּל, etc. ;]\n1. of persons, unable, powerless: Act.14:8; figuratively Rom.15:1 (MM, VGT, see word).\n2. Of things, impossible: Mat.19:26, Mrk.10:27, Luk.18:27, Rom.8:3, Heb.6:4,18 10:4 11:6.\n†",
+   "sha256": "a7fbf68fc0bba04dca5ed6ca3ae9791d54e87293936cd475133a88aea089345c"
+  },
+  {
+   "strongs": "G0103",
+   "language": "greek",
+   "lemma": "ᾄδω",
+   "gloss": "to sing",
+   "definition": "ᾄδω (Attic form of Ion. and poët. ἀείδω),\n[in LXX chiefly for שִׁיר ;]\nto sing,\n(a) intrans., with dative (MM, VGT, see word), of praise to God: Eph.5:19, Col.3:16 ;\n(b) trans., with cogn. accusative: ᾠδὴν, Rev.5:9 14:3 15:3.\n†",
+   "sha256": "8f2331094eddf67e4760de8f9faca92eebe2b8182cc7104daddf71b8de4e6f10"
+  },
+  {
+   "strongs": "G0104",
+   "language": "greek",
+   "lemma": "ἀεί",
+   "gloss": "always",
+   "definition": "ἀεί, adv.,\n[in LXX: Isa.42:14 (מֵעוֹלָם) 51:13 (תָּמִיד), Ps 94(95):10, al. ;]\never;\n1. of continuous time, unceasingly, perpetually: Act.7:51, 2 Co.4.11; 6:10, Tit.1:12, Heb.3:10.\n2. Of successive occurrences, on every occasion (MM, VGT, see word): 1Pe.3:15, 2Pe.1:12.\n†",
+   "sha256": "ddd66a21ff2992ac2a778b3a3e211761c3c16a4768343c0d14b88cf493d11113"
+  }
+ ]
+}

@@ -639,6 +639,9 @@ def main():
     db.execute("VACUUM")
     db.close()
     print(f"wrote {OUTPUT}: {os.path.getsize(OUTPUT) / 1_000_000:.1f} MB")
+    # The Spanish and Portuguese lexicon (VRS-8), from its checked batches.
+    import add_lexicon_translations
+    print(f"lexicon_translations: {add_lexicon_translations.add(OUTPUT)} rows")
 
 
 if __name__ == "__main__":

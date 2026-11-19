@@ -27,7 +27,7 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar, verseWallpapers, widgetBackgrounds, keepsakeWidgets, widgetPhotoFraming, movingSeasonsAndYourBible, newLook, freeWidgets, languageChoice, ambientLockScreen, groupNamesAndRoles, twoPageSpread, originalWithEveryBible, portuguese, studyInSpanishAndPortuguese]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar, verseWallpapers, widgetBackgrounds, keepsakeWidgets, widgetPhotoFraming, movingSeasonsAndYourBible, newLook, freeWidgets, languageChoice, ambientLockScreen, groupNamesAndRoles, twoPageSpread, originalWithEveryBible, portuguese, studyInSpanishAndPortuguese, wordMeaningsInSpanishAndPortuguese]
 
     static let notifications = WhatsNewAnnouncement(
         id: "notifications-your-way",
@@ -887,6 +887,21 @@ enum WhatsNewCatalog {
                 detail: String(localized: "Search Nave's topics by their Spanish or Portuguese names, and read every heading in your language. The verses still come from your Bible.")
             ),
         ]
+    )
+
+    /// Strong's and Abbott-Smith's definitions in Spanish and Portuguese
+    /// (WordStudy.sqlite lexicon_translations).
+    static let wordMeaningsInSpanishAndPortuguese = WhatsNewAnnouncement(
+        id: "word-meanings-spanish-portuguese",
+        title: String(localized: "Hebrew and Greek words in your language"),
+        items: [
+            WhatsNewItem(
+                systemImage: "character.book.closed",
+                title: String(localized: "Word meanings"),
+                detail: String(localized: "In Spanish or Portuguese, tap a Hebrew or Greek word to read its meaning, definition and origin in your language. The Hebrew and Greek stay exactly as written.")
+            ),
+        ],
+        feature: .wordStudy
     )
 
     static let audioBible = WhatsNewAnnouncement(

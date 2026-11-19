@@ -1,0 +1,946 @@
+{
+ "batch": "068",
+ "lang": "es",
+ "entries": [
+  {
+   "strongs": "G4893",
+   "sha256": "f57ee0b512e407b2ee9c6a70c9a741db66cdcadbefad0d6853363237b00e06d9",
+   "gloss": "conciencia",
+   "definition": "συν-είδησις, -εως, ἡ\n(συνεῖδον), [en LXX: Ecc.10:20 (מַדָּע), Wis.17:11, Sir.42:18 א * ;]\n1. conocimiento interior: con genitivo obj., Heb.10:2, 1Pe.2:19.\n2. En sentido ético, discernimiento innato, conocimiento que se juzga a sí mismo, conciencia (estoicos y escritores tardíos): Rom.2:15 9:1, 1Co.10:29, 2Co.1:12 4:2 5:11, 1Ti.4:2, Heb.9:14; σ. ἀγαθή, Act.23:1, 1Ti.1:5 1:19, 1Pe.3:16 3:21; ἀσθενής, 1Co.8:7 8:10; ἀσθενοῦσα, 1Co.8:12; ἀπρόσκοπος, Act.24:16; καθαρά, 1Ti.3:9, 2Ti.1:3; καλή, Heb.13:18; πονηρά, Heb.10:22; ὁ νοῦς καὶ ἡ σ., Tit.1:15; διὰ τὴν σ., Rom.13:5, 1Co.10:25 10:27-28; κατὰ σ., Heb.9:9; ὑπὸ (τῆς) σ., Jhn.8:1-59 [9] (Rec.), 1Co.10:29 (cf. Cremer, 233 ff.; ICC sobre Rom.2:15; DB, i, 468 ff.).†"
+  },
+  {
+   "strongs": "G4894",
+   "sha256": "b2eed7eedf6fb3705497ff6dd4651a9f2c4c4be8425299cf08da3eafb0eea4b3",
+   "gloss": "darse cuenta",
+   "definition": "συν-εῖδον aoristo irreg. de συνοράω (véase: εἶδον),\n[en LXX: 1Ma.4:21 א, 2Ma.2:24 2Mac 4:4 2Mac 4:41 R 2Ma.5:17 2Mac 7:4 2Mac 7:20 2Mac 8:8, 3Ma.2:8 A * ;]\n1. ver juntamente o al mismo tiempo (Arist., Xen.).\n2. ver de una sola mirada; de ahí, de la visión mental, comprender, entender (LXX, Polyb., Plut., al.) : Act.12:12 14:6 (sobre el afín σύνοιδα, véase véase la palabra).†"
+  },
+  {
+   "strongs": "G4895",
+   "sha256": "3f4023aaa2497f40596dddb25bd4b662af71fa18b66b7985a70843f035d814cd",
+   "gloss": "estar con",
+   "definition": "σύν-ειμι\n(εἰμί ser), [en LXX: Jer.3:20 (רֵעַ), al. ;]\nestar con: Luk.9:18 (WH, mg., συνήντησαν), Act.22:11.†"
+  },
+  {
+   "strongs": "G4896",
+   "sha256": "187617efd19dd838eccc1f4dbc57ca4e4582c051920688562988ec1dff4626fc",
+   "gloss": "reunirse",
+   "definition": "σύν-ειμι\n(εἶμι, ir),\nreunirse: Luk.8:4.†"
+  },
+  {
+   "strongs": "G4897",
+   "sha256": "dc87a5f09b46757327e135ef21a6d2c3f5bbdaffa4692f9d82844d660d7d49ac",
+   "gloss": "entrar con",
+   "definition": "συν-εισ-έρχομαι\n[en LXX: Job.22:4 (עִם בּוֹא), etc. ;]\nentrar juntamente: con dativo de persona(s), ante εἰς, con acusativo loc., Jhn.6:22 18:15.†"
+  },
+  {
+   "strongs": "G4898",
+   "sha256": "0997806f93c2d9aff21ee70199b4c42712f3ab935cd936544c2e089e82997143",
+   "gloss": "compañero",
+   "definition": "συν-έκδημος, -ου, ὁ\n(ἔκδημος, en el extranjero),\nun compañero de viaje: Act.19:29, 2Co.8:1.†"
+  },
+  {
+   "strongs": "G4899",
+   "sha256": "1be2409626990d0ec395a9af170362562f2ddb1726d7c1d696f3ed13f2e515fd",
+   "gloss": "elegido juntamente",
+   "definition": "συν-εκ-λεκτός, -ή, -όν\nelegido juntamente con, coelegido: ἡ ἐν Βαβυλῶνι συνεκλεκτή (sobre el significado, véase ICC, in l), 1Pe.5:13.†"
+  },
+  {
+   "strongs": "G4900",
+   "sha256": "98e804606c0b23b59b59e1deb85346e00c61a4a5ac0fece63a685ceb0d0d22a8",
+   "gloss": "reconciliar",
+   "definition": "συν-ελαύνω\n[en LXX: 2Ma.4:26 2Mac 4:42 2Mac 5:5 * ;]\nempujar juntamente, forzar a juntarse: εἰς εἰρήνην, Act.7:26, Rec. (WH, RV, συνήλλασσεν).†",
+   "note": "Gloss 'to bring together' rendered 'reconciliar' (its sense in Acts 7:26)."
+  },
+  {
+   "strongs": "G4901",
+   "sha256": "5625cb3e98963e8cafcee90ea44681a02b3709a0da45c178c455bdfcced8f0b8",
+   "gloss": "testificar juntamente",
+   "definition": "συν-επι-μαρτυρέω, -ῶ\nunirse en atestiguar, dar testimonio juntamente con: Heb.2:4 (Arist., Polyb., a1.).†"
+  },
+  {
+   "strongs": "G4902",
+   "sha256": "d2dd0258f5d0406cf0a2d1da680e8308f527b103d061fa6a046b4ff64f01a95d",
+   "gloss": "acompañar",
+   "definition": "συν-έπομαι\n[en LXX: 2Ma.15:2, 3Ma.5:48 R 3Ma.6:21 * ;]\nseguir con, acompañar: con dativo de persona(s), Act.20:4.†"
+  },
+  {
+   "strongs": "G4903",
+   "sha256": "9ff7cba6c7c828cfed9f0797ae283c30bcd766fb79e47a4a42d3a6c6706c57df",
+   "gloss": "colaborar",
+   "definition": "συνεργέω, -ῶ\n[en LXX: I Est.7:2, 1Ma.12:1 * ;]\n1. prop., trabajar juntamente (con): absol., Mrk.16:20, 1Co.16:16, 2Co.6:1; con dativo, Jas.2:22; dativo commodi, Rom.8:28, T, R, txt. (pero véase infr.).\n2. En escritores helenísticos (M, Pr., 65), trans., hacer que obren juntamente (cf. ICC, in l): con acusativo de cosa(s), Rom.8:28 [WH] R, mg. (pero véase supr.).†"
+  },
+  {
+   "strongs": "G4904",
+   "sha256": "e15a6b9f84aa9df7dc107047532f466539cf940a8ef77a8724d3000b518ff860",
+   "gloss": "colaborador",
+   "definition": "συνεργός, -όν\n[en LXX: 2Ma.8:7 Mac 14:5 * ;]\nun colaborador: con genitivo de persona(s), Rom.16:3, 9 16:21, Php.2:25 4:3, 1Th.3:2, Rec., Phm 1 24; θεοῦ (cf. Lft., Notas, 41, 188), 1Co.3:9 (pl.), 1Th.3:2 [WH] R, mg. (R, txt., διάκονον τοῦ θ.; sobre la lectura original, véase ICC, in l); τ. χαρᾶς ὑηῶν, 2Co.1:24; τ. ἀληθείᾳ, III Jn 8; ante εἰς, 2Co.8:23, Col.4:11.†"
+  },
+  {
+   "strongs": "G4905",
+   "sha256": "9316ce10cee0bfb815abfd4bc4bdba303a082c065b8d64dd14b4d26f60376b2d",
+   "gloss": "reunirse",
+   "definition": "συν-έρχομαι\n[en LXX por הָלַךְ, בּוֹא, אָסַף ni., etc. ;]\n1. (cl.) juntarse, reunirse: Mrk.3:20 14:53, T, WH, txt., Act.1:6 2:6 10:27 16:13 19:32 21:22 22:30 28:17, 1Co.14:26; ante εἰς, con acusativo loc., Act.5:16; ἐπὶ τ. αὐτό, 1Co.11:20 14:23; con dativo de persona(s), Mrk.14:53, WH, mg., R (πρὸς αὐτόν, véase Field, Notas, 40), Jhn.11:33; ἐν ἐκκλησίᾳ, 1Co.11:18; ἐνθάδε, Act.25:17; Mrk.6:33, WH, mg. (cf. WH, Intr., 95 ff.); ὅπου, Jhn.18:20; con inf., Luk.5:15; εἰς τ. φαγεῖν, 1Co.11:33; εἰς τ. ἧσσον, 1Co.11:17 11:34; de la unión sexual (Xen., al.; γυναικί o absol.), Mat.1:18.\n2. En un sentido posterior (véanse ejs. en Milligan, Selections, 64, 105), acompañar: con dativo de persona(s), Luk.23:55, Act.1:21 9:39 10:23, 45 11:12; ante σύν, Act.21:16; εἰς, Act.15:38.†"
+  },
+  {
+   "strongs": "G4906",
+   "sha256": "9e935eaff1cc20d8bc87eacb78b58ad66f6ce737dfbc94568b25b1ed4570e05c",
+   "gloss": "comer con",
+   "definition": "συν-εσθίω\n[en LXX: Gen.43:32, Exo.18:12 (אָכַל), 4Ki.12:17 (בָּרָה), Psa.101:5 * ;]\ncomer con alguien: con dativo de persona(s), Luk.15:2, Act.10:41 11:3, 1Co.5:11; ante μετά, con genitivo de persona(s), Gal.2:12.†"
+  },
+  {
+   "strongs": "G4907",
+   "sha256": "f69d5a8632f9991e6f8a6a3b2871aa4618ef05e76434749e0a7f1a63a5c661a8",
+   "gloss": "entendimiento",
+   "definition": "σύνεσις, -εως, ἡ\n(συνίημι), [en LXX por בִּינָה y formas cogn., מַשְׂכִּית, דַּעַת, חׇכְמָה, etc. ;]\n1. un concurrir o confluir (Hom.).\n2. (a) entendimiento: Luk.2:47, 1Co.1:19\" (LXX), Eph.3:4, Col.1:9 2:2, 2Ti.2:7\n(b) el entendimiento, la mente o inteligencia: Mrk.12:33.†\nSYN.: véase: σοφία"
+  },
+  {
+   "strongs": "G4908",
+   "sha256": "ad26cb21af2e925565e58c651c11a8601cbec5b64fb58d60ba988528b399c41d",
+   "gloss": "inteligente",
+   "definition": "συνετός, ή, -όν\n(συνίημι), [en LXX por בִּין, חָכָם, etc. ;]\ninteligente, sagaz, entendido: Mat.11:25, Luk.10:21, Act.13:7, 1Co.1:19\" (LXX) .†"
+  },
+  {
+   "strongs": "G4909",
+   "sha256": "f6ba8ff502c3fdd10262ae0ae7b8a8ef3e4f3bd99db96f5b8e5b84bd3e5f33e6",
+   "gloss": "consentir",
+   "definition": "συν-ευ-δοκέω, -ῶ\n[en LXX: 1Ma.1:57, 1Ma.4:28 א1, 2Ma.11:24 2Mac 11:35 * ;]\nunirse en la aprobación, consentir, estar de acuerdo con: absol., Act.22:20; con dativo de persona(s), Rom.1:32; con dativo de cosa(s), Luk.11:48, Act.8:1; con inf., 1Co.7:12-13 (principalmente en escritores tardíos).†"
+  },
+  {
+   "strongs": "G4910",
+   "sha256": "01d07c60fe330d62015ee9b2a5c63474637d8bb6d374f34b11b382ddb04e4267",
+   "gloss": "banquetear con",
+   "definition": "συν-ευωχέω, -ῶ\nagasajar juntamente. Pas., comer espléndidamente o banquetear juntos o con: Ju 12; con dativo de persona(s), 2Pe.2:13 (Arist., Luc., al.).†"
+  },
+  {
+   "strongs": "G4911",
+   "sha256": "188d763df68da61158e2083407871bf54dc1e5b3178ae58b14d8e199acd123fe",
+   "gloss": "atacar",
+   "definition": "συν-εφ-ίστημι\nponer sobre. Pas.,\n1. estar sobre (Thuc.).\n2. levantarse juntos: ante κατά, con genitivo de persona(s) (contra), Act.16:22.†"
+  },
+  {
+   "strongs": "G4912",
+   "sha256": "a4b933cfb8176f58cbcadd302cf9cde312d195586fc772a0f53618ad96ce3745",
+   "gloss": "retener/oprimir",
+   "definition": "συν-έχω\n[en LXX por עָצָר, חָבַר, etc. ;]\n1. mantener unido (τ. συνέχον τ. πάντα, Wis.1:7): de taparse los oídos, Act.7:57 (τ. στόμα, Isa.52:15); cercar, apretar por todos lados: Luk.8:45 19:43.\n2. retener con firmeza;\n(a) de un prisionero, tener bajo custodia (Luc.; cf. ejs. en Deiss., BS, 160; MM, xxiv): Luk.22:63;\n(b) constreñir: 2Co.5:14; pas., Luk.12:50, Act.18:5 (τ. λόγῳ; cf. Field, Notas, 128), Php.1:23; en pas., de males, estar presa de, aquejado por, padecer: Mat.4:24, Luk.4:38 8:37, Act.28:8.†"
+  },
+  {
+   "strongs": "G4913",
+   "sha256": "ff7e48b1815fcc3cf7cc6068e49a8336f68a00297e40ed81a0ee9082337c6450",
+   "gloss": "deleitarse",
+   "definition": "συν-ήδομαι\nregocijarse juntamente; con dativo, regocijarse con o en: τ. νόμῳ τ. θεοῦ, Rom.7:22 (véase Lft., Notas, 304).†"
+  },
+  {
+   "strongs": "G4914",
+   "sha256": "c102a38ea9e33e41ee9ac49d07523c63533bc0439c74446e49e787cca7b1fe36",
+   "gloss": "costumbre",
+   "definition": "συνήθεια, -ας, ἡ\n(ἦθος), [en LXX: 4Ma.2:12 4Mac 6:13 4Mac 13:22 4Mac 13:27 * ;]\n1 1 intimidad.\n2. hábito, costumbre: Jhn.18:39, 1Co.11:16; con genitivo obj. (cf. Æschin., 23, 37, y véase MM, xxiv), uso habitual, fuerza de la costumbre respecto de, 1Co.8:7.†"
+  },
+  {
+   "strongs": "G4915",
+   "sha256": "331bd2d2f8bb2208de716b96fa550869ac41eafc5ee8ee426a38678c8e3ba0f4",
+   "gloss": "contemporáneo",
+   "definition": "συν-ηλικιώτης\n(ἡλικία), = συνῆλιζ (Æsch.),\nuno de la misma edad, un coetáneo: Gal.1:14.†"
+  },
+  {
+   "strongs": "G4916",
+   "sha256": "342603e9c4e0cbcc6b8ee3d559e5badf33b6ff91998ca1c76cca9e03fc42f140",
+   "gloss": "ser sepultado con",
+   "definition": "συν-θάπτω\nsepultar juntamente con: en sentido simbólico, del bautismo, σὐτῷ (con Cristo), Rom.6:4, Col.2:12.†"
+  },
+  {
+   "strongs": "G4917",
+   "sha256": "e41cf5e1e5290baad65c07d76d24915dcdc7c1921f3b29b40c6d032631758b21",
+   "gloss": "quebrantar",
+   "definition": "συν-θλάω, -ῶ\n[en LXX por מָחַץ etc. ;]\nquebrantar, desmenuzar: Mat.21:44 ([WH], R, mg., om.), Luk.20:18.†"
+  },
+  {
+   "strongs": "G4918",
+   "sha256": "c742140469501ea72b2cc2f92af7b9bba0bfd47a6b5be48952da0f69443cad71",
+   "gloss": "apretar",
+   "definition": "συν-θλίβω\n[en LXX: Ecc.12:6 א A (רָצַץ), Sir.34:14 (31:14), 1Ma.15:14 A * ;]\napretar, oprimir por todos lados: Mrk.5:24, 31.†"
+  },
+  {
+   "strongs": "G4919",
+   "sha256": "de173534e73ca3908e95b94ff4c6e364f442bea344ee7c0278701e01c46a4207",
+   "gloss": "quebrantar",
+   "definition": "συν-θρύπτω\nhacer pedazos, quebrantar: metafóricamente, τ. καρδίαν, Act.21:13.†"
+  },
+  {
+   "strongs": "G4920",
+   "sha256": "c92c8a2c91991d00a31ad0577bd4e8ed7ee582f27d641cb7f7043972961af981",
+   "gloss": "entender",
+   "definition": "συν-ίημι y συνίω (véase Bl., § 23, 7),\n[en LXX principalmente por בִּין hi., שָׂכַל hi. ;]\n1. juntar o reunir.\n2. Metafóricamente, percibir, entender: Mat.13:13-15 (LXX), Mat.13:19 15:10, Mrk.4:9 (WH, mg.), Mrk.4:12 7:14 8:17, 21 Luk.8:10, Act.7:25 28:26-27, Rom.15:21\" (LXX), 2Co.10:12; con acusativo de cosa(s), Mat.13:23, 51, Luk.2:50 18:34 24:45; ante ὅτι, Mat.16:12 17:13; ante quæst. indir., Eph.5:17; ἐπὶ τ. ἄρτοις, Mrk.6:52; como sust., συνίων (ὁ σ., WH, mg.), un hombre entendido, es decir, en sentido moral y religioso, Rom.3:11 (LXX).†"
+  },
+  {
+   "strongs": "G4921",
+   "sha256": "404c1bff9663b4ff1354819d3f233823b1f22e6d93914c7bef954214a853bf8c",
+   "gloss": "recomendar",
+   "definition": "συν-ίστημι\n[en LXX por צָוָה pi., קָהַל ni., etc.; 1Ma.12:43, 2Ma.4:24, 3Ma.1:19 (y frecuentemente en estos libros) ;]\n1. trans.,\n(a) encomendar, recomendar: con acusativo de persona(s), 2Co.3:1 6:4 10:12 10:18; íd. con dativo, Rom.16:1 (como frecuentemente al comienzo de una carta; Deiss., LAE, 226), 2Co.5:12; ante πρός, 2Co.4:2; pas., ante ὑπό, 2Co.12:11;\n(b) mostrar, probar, establecer: con acusativo, Rom.3:5 5:8, 2Co.6:4; doble acusativo, Gal.2:13; acusativo e inf., 2Co.7:11\n2. Intr., pf., συνέστηκα (como también el 2 aor. y el plpf.);\n(a) estar con o cerca de: Luk.9:32;\n(b) estar compuesto de, consistir, mantenerse unido: Col.1:17 (véase Lft., in l), 2Pe.3:5.†"
+  },
+  {
+   "strongs": "G4922",
+   "sha256": "8fa99ab58e080dcb89a59f0c31390c87947859ad11a587a012867a212b014f2f",
+   "gloss": "viajar con",
+   "definition": "συν-οδεύω\n[en LXX: Zec.8:21 א1 (הָלַךְ), Tob.5:16 א, Wis.6:23 * ;]\nviajar con: con dativo de persona(s), Act.9:7 (Plut., al.).†"
+  },
+  {
+   "strongs": "G4923",
+   "sha256": "525cacf5d790fb5987af4c9b2d6a99e05a3542b073b2f38eaea0e013dceaadd3",
+   "gloss": "caravana",
+   "definition": "συνοδία, -ας, ἡ\n[en LXX: Neh.7:5, 64 (יָחַשׂ) * ;]\n1. un viaje en compañía (Plut., al.).\n2. Por meton., κ compañía de viajeros, una caravana: Luk.2:44.†"
+  },
+  {
+   "strongs": "G4924",
+   "sha256": "c4d45d7cc485d6ae92e6aaaabc0d12ad5f9263530e1050f379df807ee3adfb08",
+   "gloss": "vivir con",
+   "definition": "συν-οικέω, -ῶ\n[en LXX por בַּעַל etc. ;]\nhabitar juntos: del marido y la mujer (Hdt., al.), con dativo de persona(s), 1Pe.3:7,†"
+  },
+  {
+   "strongs": "G4925",
+   "sha256": "dbd855fca531b4f97afdc6a23d13229cf81dc99d0bfc528e33a7d448d3b5425d",
+   "gloss": "ser edificado juntamente",
+   "definition": "συν-οίκοδομέω, -ῶ\n[en LXX: I Est.5:68 * ;]\n1. edificar juntamente o con (con dativo de persona(s), 1 Esdras, l. con).\n2. De diversos materiales, edificar juntamente (Thuc., al.): metafóricamente, de los cristianos, Eph.2:22.†"
+  },
+  {
+   "strongs": "G4926",
+   "sha256": "8e7f94ff7685c670a9253c2aa9966f979cf99d74b1e3cb10411a4eed3658541c",
+   "gloss": "conversar",
+   "definition": "συν-ομιλέω, -ῶ\nconversar con (absol., FlJ, Bl, v, 13, 1; ante μετά, Cebes, 13): con dativo de persona(s), Act.10:27.†"
+  },
+  {
+   "strongs": "G4927",
+   "sha256": "048c261b04db9d8c1e94eff1f50177464109b990a4806c52352239f5641f46f7",
+   "gloss": "estar junto a",
+   "definition": "συν-ομορέω, -ῶ\nlindar con: con dativo, Act.18:7 (Byz.).†"
+  },
+  {
+   "strongs": "G4928",
+   "sha256": "023d357f584aa7a22ae9aa580f5a246a3001b0a61eeb59a35ff87d89f36c0ebe",
+   "gloss": "angustia",
+   "definition": "συν-οχή, -ῆς, ή\n(συνέχω), [en LXX: Jdg.2:3 (?), Job.30:3 (שׁוֹא), Job.38:28 A; Mic.5:1 (4:14), Jer.52:5 (מָצוֹר) * ;]\n1. un mantener o ser mantenido unido.\n2. un lugar estrecho (Hom., al.). Metafóricamente, aprieto, angustia: Luk.21:25; καρδίας, 2Co.2:4.†"
+  },
+  {
+   "strongs": "G4929",
+   "sha256": "7b32d7b9540469ae33cfba32d8ba8ba27791fc1e7dc7a6d7cb765357e3ad6559",
+   "gloss": "ordenar",
+   "definition": "συν-τάσσω\n[en LXX principalmente por צָוָה pi. ;]\nprescribir, ordenar, disponer: con dativo de persona(s), Mat.21:6 26:19 27:10\" (LXX) .†"
+  },
+  {
+   "strongs": "G4930",
+   "sha256": "1ece34a3f036a0c83242e566d302e86a4496343b42f9ce0ccf0d9e70ed830cfa",
+   "gloss": "consumación",
+   "definition": "συντέλεια, -ας, ἡ\n(συντελέω), [en LXX principalmente por כָּלָה y (en Da) por קוּם ;]\n1. en cl., un pago o contribución conjunta para el servicio público; de ahí, en general, acción conjunta (Plat.).\n2. En escritores tardíos (Polyb., al.), consumación, cumplimiento: σ. τ. αἰῶνος, -ων (cf. Dan LXX TH Dan.12:13, al.), Mat.13:39-40, 49 24:3 28:20, Heb.9:26.†"
+  },
+  {
+   "strongs": "G4931",
+   "sha256": "ba5667c3aa67064cebab9e1913c00131a167068a59b7daefc8213fb4fda7ae88",
+   "gloss": "completar",
+   "definition": "συν-τελέω, -ῶ\n[en LXX principalmente por כָּלָה pi., también por עָשָׂה, תָּמַם, etc. ;]\n\"perfectivo\" de τελέω (cf. M, Pr., 118),\n1. completar, acabar, llevar a término: Luk.4:13; pas., Luk.4:2, Jhn.2:3, WH, mg., Act.21:27.\n2. efectuar, realizar, llevar a cumplimiento (cf. MM, xxiv): Mrk.13:4, Rom.9:28, Heb.8:8.†"
+  },
+  {
+   "strongs": "G4932",
+   "sha256": "6236ab68d41bbabc7161aa625e8c9d5478f787d1f0f8709f7c1bbfdaacb9a143",
+   "gloss": "abreviar",
+   "definition": "συν-τέμνω\n[en LXX principalmente por חָרַץ ;]\n1. cortar en pedazos.\n2. cortar, abreviar: metaf., λόγον, Rom.9:28 (LXX) (Hdt., Plat., Fur., al.).†"
+  },
+  {
+   "strongs": "G4933",
+   "sha256": "13b1ad72ddb8f2fc84687d2ca9b4129c592854faa0c7c71f21e5e97f75382ad5",
+   "gloss": "guardar",
+   "definition": "συν-τηρέω, -ῶ\n[en LXX: Eze.18:19 (שָׁמַר), Da TH Dan.7:28 A (נְטַר), Sir.13:12 y frec., Tob.1:11, 2Ma.12:42, al. ;]\n\"perfectivo\" de τηρέω (véase M, Pr., 113, 116),\npreservar, guardar a salvo, guardar bien: con acusativo de persona(s), Mrk.6:20; con acusativo de cosa(s), Mat.9:17; ἐν τ. καρδίᾳ, Luk.2:19 (Arist. y escritores posteriores; cf. MM, xxiv).†"
+  },
+  {
+   "strongs": "G4934",
+   "sha256": "30f0a2ef74b43101a19755e0fb71c0fe8f465ef38bf238ea5ab011524d93cc7f",
+   "gloss": "convenir",
+   "definition": "συν-τίθημι\n[en LXX: 1Ki.22:13 (קָשַׁר), etc. ;]\nponer o colocar juntamente, en diversos sentidos. Med.,\n(a) observar, percibir;\n(b) determinar, convenir, pactar: con inf., Luk.22:5; ante τοῦ, con inf., Act.23:20; ante ἵνα, Jhn.9:22.†\nσυν-επι-τίθημι,\n[en LXX por שִׁית, etc. ;]\nayudar a poner. Med., unirse en el ataque (Thuc.): Act.24:9 (RV, «joined in the charge», se unieron en la acusación).†"
+  },
+  {
+   "strongs": "G4935",
+   "sha256": "7ef54392d0b2d676b9d96eaef374c294d1cba960c67047cc206b3950833d04ad",
+   "gloss": "brevemente",
+   "definition": "συν-τόμως,\nadv. (συντέμνω) [en LXX: Pro.13:23 23:28, 3Ma.5:25 * ;]\nconcisamente, brevemente: Act.24:4 (para un ej. semejante, véase MM, xxiv).†"
+  },
+  {
+   "strongs": "G4936",
+   "sha256": "ca74e27686e7e1d790822d09098183ec1714261764d4d63fa89705b1f1b4df76",
+   "gloss": "acudir juntos",
+   "definition": "συν-τρέχω\n[en LXX: Psa.50:18 (עִם רָצָה), עִם רָצָה), 2Ma.2:1-32, Jdt.4.1-15 * ;]\ncorrer juntamente o con: ante ἐκεῖ, Mrk.6:33; πρόσ, con acusativo, Act.3:11; metafóricamente, 1Pe.4:4.†"
+  },
+  {
+   "strongs": "G4937",
+   "sha256": "0892b97bfe6c1a30beb26e1bab8a8884d78067c455ddcec89207ae4d2c683462",
+   "gloss": "quebrar",
+   "definition": "συν-τρίβω\n[en LXX principalmente por שָׁבַר ;]\nquebrar, hacer pedazos: Mat.12:20 (LXX), Mrk.5:4 14:3, Jhn.19:36\" (LXX), Rev.2:27; de personas y partes del cuerpo, quebrantar, aplastar, magullar: Luk.9:39; figuradamente, Rom.16:20.†"
+  },
+  {
+   "strongs": "G4938",
+   "sha256": "d684264e8da02ac381b1e880bc6a87435412b4bc465961b465d486e6ba86a28f",
+   "gloss": "ruina",
+   "definition": "σύν-τριμμα, -τος, τό\n(συντρίβω), [en LXX (Lev.21:19, al.) principalmente por שֶׁבֶר; también por שֹׁד (Isa.59:7), etc. ;]\nuna fractura (Arist.; Le, l. con, al.). Metafóricamente, calamidad, destrucción (Isa, l. con, Wis.3:3, al.): Rom.3:16\" (LXX) .†"
+  },
+  {
+   "strongs": "G4939",
+   "sha256": "7a86770caf3c470dda119d16be2ffd86601c1a14d53387a6a8537f3bf54929f3",
+   "gloss": "criado con",
+   "definition": "σύν-τροφος, -ου, ὁ\n(συντρέφομαι, ser criado juntamente) [en LXX: 3Ki.12:24, 1Ma.1:6 R, 2Ma.9:29 * ;]\n1. prop., uno alimentado o criado con otro, un hermano de leche: Act.13:1 EV.\n2. En el uso helenístico, como término de la corte, un amigo íntimo de un rey (véase Deiss., BS, 305, 310 f.): Act.13:1 (cf. también MM, xxiv).†"
+  },
+  {
+   "strongs": "G4940",
+   "sha256": "2b4a1c9935925d078e7e37f105486d37bd25daf5d464257f0aa46d254bb40132",
+   "gloss": "encontrarse con",
+   "definition": "συν-τυγχάνω\n[en LXX: 2Ma.8:14 * ;]\nencontrarse con, toparse con: con dativo de persona(s), Luk.8:19.†"
+  },
+  {
+   "strongs": "G4941",
+   "sha256": "b07a8983d66eb01e35b77b2050ab62a7fdcce23ca99f18ee1776dd4b4c93d5df",
+   "gloss": "Síntique",
+   "definition": "Συντύχη (T, -τυχή), -ης, ἡ\nSíntique: Php.4:2.†"
+  },
+  {
+   "strongs": "G4942",
+   "sha256": "c13772eccac9de7cc754a37cf4001c62e044e077a89f277aa7076b8b77c9e7b5",
+   "gloss": "disimular juntamente",
+   "definition": "συν-υπο-κρίνομαι\nrepresentar un papel con, disimular con: con dativo, Gal.2:13 (Polyb.).†"
+  },
+  {
+   "strongs": "G4943",
+   "sha256": "4f3c2923d671393fbb409132431288fd50443bbca36411e5f0e6f9ee4917ecd8",
+   "gloss": "cooperar",
+   "definition": "συν-υπουργέω, -ῶ\nayudar juntamente, unirse en el servicio: con dativo instr., 2Co.1:11.†"
+  },
+  {
+   "strongs": "G4944",
+   "sha256": "9a39087dbf7c808ab85f4c0b7d3042a5442e64dd40ca592d0d562cc42a80ece4",
+   "gloss": "sufrir dolores de parto juntamente",
+   "definition": "συν-ωδίνω\nestar juntamente con dolores de parto (Arist.): metaf. (Eur.), Rom.8:22.†"
+  },
+  {
+   "strongs": "G4945",
+   "sha256": "60f760e90b619ed547828e36e3970686d858da790ba7ebf8e6fff80459c7df9f",
+   "gloss": "complot",
+   "definition": "συνωμοσία, -ας, ή\n(συνόμνυμι, conspirar), [en Sm.: Eze.22:25 * ;]\nuna conjuración: Act.23:13.†"
+  },
+  {
+   "strongs": "G4946",
+   "sha256": "cd6e687bf5dbd8bb1ff231cca60de491a5bba39ba0c7b1a8fffb570e83ec955b",
+   "gloss": "Siracusa",
+   "definition": "jónico Συρήκουσαι, dórico Συράκοσαι, y Σῦράκοσσαι, Siracusa , (Heródoto el Historiador), etc. (ML)"
+  },
+  {
+   "strongs": "G4947",
+   "sha256": "16e5126435f58a35331b93c5089af6bb27bb0b4bbb9622346fb79ee9bca537fb",
+   "gloss": "Siria",
+   "definition": "Συρία, -'ιό, ή\nSiria: Mat.4:24, Luk.2:2, Act.15:23, 41 18:18 20:3 21:3, Gal.1:21.†"
+  },
+  {
+   "strongs": "G4948",
+   "sha256": "d97d590960c8de6a3e6864ad8e300c727fbbd553728802227eca0a497a4bfefd",
+   "gloss": "sirio",
+   "definition": "Σύρος, -ου, ὁ, fem. Σύρα\nun sirio: Luk.4:27, Mrk.7:26, WH, mg.†"
+  },
+  {
+   "strongs": "G4949",
+   "sha256": "5a6c04a0df1084d11ed9837e23c650afe1a8e7e8ebc64d66d48c7d66ea0a9992",
+   "gloss": "sirofenicia",
+   "definition": "Συροφοινίκισσα (Rec. -φοίνισσα), -ης, ἡ\nuna mujer sirofenicia: Mrk.7:26, WH, txt., RV (cf. ἡ Φοινίκη Συρία, Diod., 19, 93).†"
+  },
+  {
+   "strongs": "G4950",
+   "sha256": "a280cd956031c873a5662b950b8ddecd16c3e04f2bb62cce4d1748106914a287",
+   "gloss": "Sirte",
+   "definition": "Σύρτις (L, σῦρτις), -εως, acusativo -ιν, ἡ,\nla Sirte, nombre de dos grandes bancos de arena en la costa de Libia: Act.27:17.†"
+  },
+  {
+   "strongs": "G4951",
+   "sha256": "689a1b7fa2974a9e025acee2abf59b54b36a0dd022a70c549ffccb8d37389d1b",
+   "gloss": "arrastrar",
+   "definition": "σύρω\n[en LXX: 4Ki.17:13 (סָחַב), 4Ma.6:1, al. ;]\ntirar de, arrastrar: con acusativo de cosa(s), Jhn.21:8, Rev.12:4; con acusativo de persona(s), de llevar a juicio o al castigo, Act.8:3; ἔξω τ. πόλεως, Act.14:19; ἐπὶ τ. πολιτάρχας (cf. 4Mac, l. con), Act.17:6 (cf. κατα-ούρω).†"
+  },
+  {
+   "strongs": "G4952",
+   "sha256": "0632bfaedb41617d11e21f8efbdf81fc57c6778047dd0f21e30eebf89d605601",
+   "gloss": "sacudir con violencia",
+   "definition": "συ-σπαράσσω\nconvulsionar por completo: con acusativo de persona(s), Mrk.9:20, Luk.9:42 (cf. σπαράσσω).†"
+  },
+  {
+   "strongs": "G4953",
+   "sha256": "da7971db5f9cc24aa7b07c5728f4ca3f69b5d0e1df1d8fbfd5558e74e3a606bd",
+   "gloss": "señal convenida",
+   "definition": "σύσ-σημον (T, συν-), -ου, τό\n(σῆμα), [en LXX: Jdg.20:38, 40 (מַשְׂאֵת), Isa.5:26 49:22 62:10 (נֵס) * ;]\nuna seña o señal fijada: Mrk.14:44. (Strab., Plut., al.; condenado por los aticistas, véase Rutherford, NPhr., 492 f.) †"
+  },
+  {
+   "strongs": "G4954",
+   "sha256": "5fde3e9d4ca1d7dd1a883c69525be1bfa34052a5978c59e90a6886ccc8fcf5c1",
+   "gloss": "del mismo cuerpo",
+   "definition": "σύν-σωμος (Rec. συσσ-), -ον\n(σῶμα),\ndel mismo cuerpo: Eph.3:6 (Eccl.).†"
+  },
+  {
+   "strongs": "G4955",
+   "sha256": "1e3d7c41d88c99090f59e58ac1c28999c153c4863430a16547da939e3ac69f3d",
+   "gloss": "insurrecto",
+   "definition": "στασιαστής\n(στασιάζω, promover sedición, Jdth.7:15, 2Ma.4:30 2Mac 14:6 *)\n= át. στασιώτης,\nun rebelde, revolucionario, uno que promueve sedición: Mrk.15:7 (FlJ, al.).†\nσυ-στασιαστής, -οῦ, ὁ,\nun compañero de motín: Mrk.15:7, Rec.†"
+  },
+  {
+   "strongs": "G4956",
+   "sha256": "a43b8a988b409a0e7c9d09bb14e605db9f35dbd21568adf8a36b6a75ad7bec1f",
+   "gloss": "recomendado",
+   "definition": "συ-στατικός (Tr. συν-), -ή, -όν\n(συνίστημι),\n1. para juntar, constructivo.\n2. para poner en contacto, de presentación, de recomendación: ἐπιστολή (Arist., Diog. L., al.; y véase MM, xxiv), 2Co.3:1.†"
+  },
+  {
+   "strongs": "G4957",
+   "sha256": "6f81807b065c3bc7b3ab798e5af755edeb1e55416b739b47675d0a32fe1ce1c9",
+   "gloss": "crucificar con",
+   "definition": "συν-σταυρόω (Rec. συσ-), -ῶ,\ncrucificar juntamente con: pas., con dativo, Jhn.19:32; íd. ante σύν, Mat.27:44, Mrk.15:32. Metafóricamente, de la muerte mística del cristiano con Cristo: Rom.6:6, Gal.2:20 (Eccl.).†"
+  },
+  {
+   "strongs": "G4958",
+   "sha256": "39fd7453b6a50be0c327375c04d79d674c17fe443255210e3e698bdaa1676897",
+   "gloss": "envolver",
+   "definition": "συν-στέλλω\n(Rec. συσ-), [en LXX: Jdg.8:28 11:33 (כָּנַע ni.), Sir.4:31, al. ;]\n1. recoger, contraer, acortar: del tiempo, 1Co.7:29.\n2. envolver: de amortajar un cuerpo para sepultarlo (Eur.), con acusativo, Act.5:6.†"
+  },
+  {
+   "strongs": "G4959",
+   "sha256": "e88451480a6d3891ab60579eac8c0ea1c8f628b8ca18fb6804d93cdbe9ee4b9f",
+   "gloss": "gemir con",
+   "definition": "συν-στενάζω (Rec. συσ-),\ngemir juntamente o con: Rom.8:22 (con dativo de persona(s), Eur., Ion., 935).†"
+  },
+  {
+   "strongs": "G4960",
+   "sha256": "e0c50879e06611fac1ee37a3b3081fbe1b7ecc3cf2c2276eb5d9ced56b1f1631",
+   "gloss": "corresponder a",
+   "definition": "συν-στοιχέω (Rec. συσ-), -ῶ,\nestar en la misma fila o línea (Polyb). Metafóricamente, corresponder a: Gal.4:25 (véase Lft., in l).†"
+  },
+  {
+   "strongs": "G4961",
+   "sha256": "bdc33dda03b660f413b0c005f4657d04d8ee6d4715e596db7e1c31f3225c7a93",
+   "gloss": "compañero de milicia",
+   "definition": "συν-στρατιώτης (Rec. συσ-), -ου, ὁ\nun compañero de armas (Plat., Xen., al.). Metafóricamente, de la comunión en el servicio cristiano: Php.2:25, Phm 2 .†"
+  },
+  {
+   "strongs": "G4962",
+   "sha256": "ec70cef277e47fa4bb58e32182d6b717ce72cc9668ff37c0d9bdf60eb441be82",
+   "gloss": "reunir",
+   "definition": "συ-στέφω\n[en LXX principalmente por קָשַׁר ;]\n1. retorcer juntamente: con acusativo de cosa(s), Act.28:3.\n2. Pas., de personas, reunirse: Mat.17:22 (WH, R, mg.).†"
+  },
+  {
+   "strongs": "G4963",
+   "sha256": "0a5a493b4f0c4b8b94e51cb981514633a44f584c73fcff6279a1bf92e883e882",
+   "gloss": "alboroto/complot",
+   "definition": "συ-στροφή, -ῆς, ἡ\n(συστρέφω), [en LXX: Rom.4:19 13:12 (צָרַר); σ. ποιεῖσθαι, Amo.7:10 (קָשַׁר), etc. ;]\n1. un retorcimiento conjunto (Plat.).\n2. un concurso de gente, una reunión tumultuosa (Polyb.): Act.19:40; σ. ποιεῖσθαι (Am, l. con), hacer un pacto (RV, «banded themselves together», se juntaron): Act.23:12.†"
+  },
+  {
+   "strongs": "G4964",
+   "sha256": "3f735d5f65782cfe75342d5a4500681f66476b3ed991a06e19e69cb1b62a0790",
+   "gloss": "conformarse a",
+   "definition": "συν-σχηματιζω (Rec. συσ-),\n(σχῆμα),\nconformar a (Arist.). Pas., ser conformado a, conformarse a: Rom.12:2, 1Pe.1:14.†"
+  },
+  {
+   "strongs": "G4965",
+   "sha256": "a968fe847ec6dd912b51965383f62073a44b5f9fcb4891c37861003c2d3bdcd2",
+   "gloss": "Sicar",
+   "definition": "Συχάρ\n(Ε, Σιχάρ), indecl., ἡ\nSicar, una ciudad de Samaria: Jhn.4:5.†"
+  },
+  {
+   "strongs": "G4966",
+   "sha256": "9552a0f73f727f981d8727ead1ebdf1d7671f6c45fe9309473fcd7ec63cc384b",
+   "gloss": "Siquem",
+   "definition": "Συχέμ indecl. (heb. שְׁכֶם),\nSiquem;\n1. el hijo de Hemor (Gen.33:19): Act.7:16 b, Rec.\n2. Una ciudad de Samaria (AV, Sychem; en la LXX también a veces Σίκιμα, -ων, como en FlJ): Act.7:16 a,b.†"
+  },
+  {
+   "strongs": "G4967",
+   "sha256": "3e5dce9c0e227b67c8132d31ea5a23df2363d636af46db591a4f0cbc3121e0c4",
+   "gloss": "matanza",
+   "definition": "σφαγή, -ῆς, ἡ\n(σφάζω), [en LXX por טָבַח, הֲרֵגָה, etc. ;]\nmatanza: Act.8:32 (LXX); πρόβατα σφαγῆς, Rom.8:36 (LXX); ἡμέρα σφαγῆς, Jas.5:5.†"
+  },
+  {
+   "strongs": "G4968",
+   "sha256": "1a297af58fa582f3f4621f5a8cd4c06890c2d9cbb2c64774ef59a70f9d5503aa",
+   "gloss": "víctima",
+   "definition": "σφάγιον, -ου, τό\n(σφαγή), [en LXX: Amo.5:25 (זֶבַח), Eze.21:10, 15 21:28 (טֶבַח), Lev.22:23 (נְדָבָה) * ;]\nuna víctima para el sacrificio: Act.7:42 (LXX).†"
+  },
+  {
+   "strongs": "G4969",
+   "sha256": "23804c63eb075b71185e054b091dc735d1ce57c386d7b35bf3e3c6d0faed991c",
+   "gloss": "degollar",
+   "definition": "σφάζω\n[en LXX principalmente por שָׁחַט ;]\nmatar, degollar (esp. de víctimas para el sacrificio): ἀρνίον, Rev.5:6, 12 13:8; de personas, 1Jn.3:12, Rev.5:9 6:4, 9 18:24; ἐσφαγμένη εἰς θάνατον (RV, «smitten unto death», herida de muerte), Rev.13:3 (cf. κατα-σφάζω).†"
+  },
+  {
+   "strongs": "G4970",
+   "sha256": "1fdcbb21dd68d236a81a0b9fac1f7eebbc1c2362b36a29205f13cf2b4cd81e6d",
+   "gloss": "mucho",
+   "definition": "σφόδρα adv. (prop. neut. de σφοδρός, excesivo, violento)\n[en LXX principalmente por מְאֹד ;]\nmuy, mucho, sobremanera: con verbos, Mat.17:6, 23 18:31 19:25 26:22 27:54, Act.6:7; con adjetivos, Mat.2:10, Mrk.16:4, Luk.18:23, Rev.16:21.†"
+  },
+  {
+   "strongs": "G4971",
+   "sha256": "d43618b11235d56986aae7221e168cc69a3ffca4237369178e69a9cf7deb4d39",
+   "gloss": "violentamente",
+   "definition": "σφοδρῶς\nadv.,\nsobremanera: Act.27:18.†"
+  },
+  {
+   "strongs": "G4972",
+   "sha256": "3c8745d194ebfcd1669696e5e603e3b8ab2056a288671d1d5b8498f005274d18",
+   "gloss": "sellar",
+   "definition": "σφραγίζω\n[en LXX principalmente por חָתַם (Deu.32:34, al.), también por סָתַם (Da TH Dan.8:26) ;]\nsellar,\n(a) por seguridad: Mat.27:66, Rev.20:3; τ. καρπὸν τοῦτον, figuradamente (cf. Deiss., BS, 238 f.; MM, xxiv; DB, iv, 427a), Rom.15:28;\n(b) para ocultar; de ahí, metafóricamente, esconder (Da TH Dan.9:24, Jhn.14:17): Rev.10:4 22:10;\n(c.) para distinguir, Rev.7:3-8; metafóricamente, Eph.4:30; med., 2Co.1:22;\n(d) para autenticar (Est.8:8): Jhn.3:33 6:27 (cf. κατα-σφραγίζω).†",
+   "note": "G4972: source '(with)' is a misread '(c)' (third subsection), rendered '(c.)'."
+  },
+  {
+   "strongs": "G4973",
+   "sha256": "0b62fed4ef19f2aec4a308a45ae514c0bf19025a782f0d809555fe922c09e49e",
+   "gloss": "sello",
+   "definition": "σφραγίς, -ῖδος, ἡ\n[en LXX: Exo.28:11, al. (חוֹתָם) Exo.35:22 (חָח), Sir.17:22, al. ;]\n1. un sello, anillo de sellar: Rev.7:2.\n2. La impresión de un sello o anillo, un sello (sobre sus diversos fines, véase: σφραγίζω): en un libro o rollo, Rev.5:1-2, 5 5:9 6:1, 3 6:5, 7 6:9, 12 8:1; metafóricamente, Rom.4:11, 1Co.9:2, 2Ti.2:19, Rev.9:4.†"
+  },
+  {
+   "strongs": "G4974",
+   "sha256": "d000b4d7b5e84b3c10ff62c72592fb2049bbc521838e1270f4c583bc2e81f855",
+   "gloss": "tobillo",
+   "definition": "σφυρόν, -οῦ, τό,\n[en LXX: Job.41:21 (לָהַט) * ;]\nel tobillo: Act.3:7, Rec. (T, WH, σφυδρόν; véase Bl., § 6, 8).†"
+  },
+  {
+   "strongs": "G4975",
+   "sha256": "4a5cc818438cfd917883c54126f9f3c1c1adf8e3f397295d59524a4c75cebd25",
+   "gloss": "casi",
+   "definition": "σχέδον\nadv. (ἔχω), [en LXX: 2Ma.5:2, 3Ma.5:14 3Mac 5:45 * ;]\n1. de lugar, cerca.\n2. De grado, casi, poco menos: Act.13:44 19:26, Heb.9:22.†"
+  },
+  {
+   "strongs": "G4976",
+   "sha256": "81b8d426cc6052b362dabe0053b916bdc69c77c35b2f363aaf3e811f1029fad8",
+   "gloss": "forma",
+   "definition": "σχῆμα, -τος, τό\n(ἔχω), [en LXX: Isa.3:17 (פֹּת) * ;]\nfigura, apariencia: 1Co.7:31, Php.2:8.†\nSYN.: véase: μορφή"
+  },
+  {
+   "strongs": "G4977",
+   "sha256": "ced9abd364849d1957efdb874ec626a38808a1a19c6d01eda392bf05986a2705",
+   "gloss": "rasgar",
+   "definition": "σχίζω\n[en LXX principalmente por בָּקַע ;]\nhender, rasgar: Mat.27:51, Mrk.1:10 15:38, Luk.5:36 23:45, Jhn.19:24 21:11; metafóricamente, en pas., dividirse en bandos, Act.14:4 23:7.†"
+  },
+  {
+   "strongs": "G4978",
+   "sha256": "ed8ba37fd3c07713007b0779194c240fed37596504517d038e227ab27cebb872",
+   "gloss": "rotura",
+   "definition": "σχίσμα, -τος, τό\n(σχίζω),\nuna rotura (Arist., al.): Mat.9:16, Mrk.2:21. Metafóricamente, una disensión, división: Jhn.7:43 9:16 10:19, 1Co.1:10 11:18 12:25.†\nSYN.: véase: αἵρεσις"
+  },
+  {
+   "strongs": "G4979",
+   "sha256": "3cc871da07fad482a8818c1b06d021e203fe7769e788fe85b24c641e3cab2ca0",
+   "gloss": "cuerda",
+   "definition": "σχοινίον, -ου, τό\n(dim. de σχοῖνος, un junco),\n[en LXX principalmente por una cuerda (prop., una hecha de juncos): Jhn.2:15, Act.27:32.†",
+   "note": "The source's LXX bracket is cut short ('[in LXX chiefly for a rope'); translated as it stands."
+  },
+  {
+   "strongs": "G4980",
+   "sha256": "b8b9bb172b75902c799802bfa6ca53eb7f4e73f5b2dfbb3ce9a70ca4b56b5ed2",
+   "gloss": "dedicarse/estar desocupado",
+   "definition": "σχολάζω\n(σχολή), [en LXX: Exo.5:8, 17, Psa.46:10 (רָפָה ni., hi.) * ;]\nestar ocioso; de ahí, tener tiempo u ocasión para, dedicarse a, ocuparse en: 1Co.7:5; de cosas, estar desocupado, vacío (Plut., Eur., al.): οἶκος, Mat.12:44, Luk.11:25 (T [WH], R, om.).†"
+  },
+  {
+   "strongs": "G4981",
+   "sha256": "449bd23294947d15ad8dfc0e0ce9b2d4da27725c50cb17528173364e21bfc56b",
+   "gloss": "escuela",
+   "definition": "σχολή, -ῆς, ἡ\n[en LXX: Gen.33:14 (κατὰ σ., אַט), Pro.28:19, Sir.38:24 * ;]\n1. ocio.\n2. Más tarde (desde Platón en adelante),\n(a) aquello en que se emplea el ocio, una disputa, lección;\n(b) el lugar donde se dan las lecciones, una escuela: Act.19:9 (para el sentido posterior de ocupación, véase MM, xxiv).†"
+  },
+  {
+   "strongs": "G4982",
+   "sha256": "dd3226ed87e922446e134b6689a67a0795c534bc585a4b67aafa070306f9699a",
+   "gloss": "salvar",
+   "definition": "σώζω (sobre la forma más exacta σῴζω, véase WH, Intr., §410; Bl., §3, 1-3),\n[en LXX principalmente por ישׁע hi., también por מלט ni., נצל ni., etc. ;]\nsalvar de peligro, daño o sufrimiento: Mat.8:25, Mrk.13:20, Luk.23:35, al.; τ. ψυχήν, Mat.16:25, al.; ante ἐκ, Jhn.12:27, Heb.5:7, Ju 5; de sanar, devolver la salud: Mat.9:22, Mrk.5:34, al. En el NT, esp. de la salvación de la enfermedad y la muerte espirituales, sentido en el que \"se habla de ella en la Escritura como (1) pasada, (2) presente o (3) futura, según se tenga en vista la redención, la gracia o la gloria. Así (1) Rom.8:24, Eph.2:5, 8 2Ti.1:9, Tit.3:5; (2) Act.2:47, 1Co.1:18, 15:2, 2Co.2:15; (3) Mat.10:22, Rom.13:11, Php.2:12, Heb.9:28\" (Vau. sobre Rom.5:9). Seq. ἀπό, Mat.1:21, Act.2:40, Rom.5:9; ἐκ, Jas.5:20, Ju 23 (cf. Cremer, 532ff.)."
+  },
+  {
+   "strongs": "G4983",
+   "sha256": "b219ec81669a16c68c607beb0687f97934557326a273c5e0adf4466f854da573",
+   "gloss": "cuerpo",
+   "definition": "σῶμα, -τος, τό,\n[en LXX por גְּוִיָּה ,בָּשָׂר, etc., y por el aram. נְבֵלָה ;]\nun cuerpo.\n1. Prop., del cuerpo humano,\n(a) como siempre en Hom. (opuesto a δέμας), del cuerpo muerto: Mat.27:58, 59 Mrk.15:43, al.;\n(b) del cuerpo vivo: Luk.11:34, 1Co.6:13, al.; ἐν σ. εἶναι, Heb.13:3; como instrumento del alma, τὰ διὰ τοῦ σ., 2Co.5:10; opuesto a πνεῦμα, Rom.8:10, 1Co.5:3 7:4, Jas.2:26; a ψυχή, Mat.6:25 10:28, Luk.12:22 (cf. Wis.1:1, al.); a τὸ π. καὶ ἡ ψ., 1Th.5:23; σ. ψυχικόν, opuesto a σ. πνευματικόν, 1Co.15:44; ὁ ναὸς τοῦ σ. αὐτοῦ (genitivo epexeg.), Jhn.2:21; τὸ σ. τ. ταπεινώσεως (\"genitivo de definición\" hebraizante; M, Pr., 73f.; Bl., §35, 5), opuesto a τὸ σ. τ. δοξῆς αὐτοῦ, Php.3:21; de modo semejante, τὸ σ. τ. σαρκός, Col.1:22; σ. τοῦ θανάτου (sujeto a la muerte), Rom.7:24; σ. τ. ἁμαρτίας, Rom.6:6;\n(c.) perifr., ἀνθρώπου, luego absol., σῶμα (Soph., Xen., al.), una persona, y en escritores posteriores (Polyb., al.), un esclavo: Rev.18:13 (cf. MM, i, ii, xxiv; Deiss., BS, 160).\n2. De los cuerpos de animales: vivos, Jas.3:3; muertos, Heb.13:11 ( Exo.29:14, al.).\n3. De objetos inanimados (cf. el inglés «heavenly bodies», cuerpos celestes): 1Co.15:37, 38 40 (Diod., al.).\n4. De cualquier sustancia corpórea (Plat., al.): opuesto a σκιά, Col.2:17. Metafóricamente, de un número de personas unidas por un vínculo común; en el NT, de la Iglesia como el cuerpo espiritual de Cristo: Rom.12:5, 1Co.10:16, 17 12:13, 27, Eph.1:23 2:16 4:4, 12, 16 5:23, 30, Col.1:18, 24 2:19 3:15; ἓν σ. κ. ἓν πνεῦμα, Eph.4:4.",
+   "note": "G4983: source '(with)' is a misread '(c)' (third subsection), rendered '(c.)'; the English 'heavenly bodies' comparison kept in «»."
+  },
+  {
+   "strongs": "G4984",
+   "sha256": "9787f8680e2b558c88528eadb49f94348d7bca6409850903c7d7839badf707b0",
+   "gloss": "corporal",
+   "definition": "σωματικός, -ή, -όν\n(σῶμα), [en LXX: 4Ma.1:32 4Mac 3:1 * ;]\n(a) del cuerpo o para el cuerpo, corporal: γυμνασία, 1Ti.4:8;\n(b) (opuesto a ἀσώματος) corporal, corpóreo: εἶδος, Luk.3:22.†"
+  },
+  {
+   "strongs": "G4985",
+   "sha256": "30f09ab2293f14b347dd1b6188c2a2bd71749a86ae916bb0e20aa73e8642dc73",
+   "gloss": "corporalmente",
+   "definition": "σωματικῶς\nadv.,\ncorporalmente, en forma corpórea: Col.2:9 (véase ICC, Lft., in l).†"
+  },
+  {
+   "strongs": "G4986",
+   "sha256": "e4fffd00666efb965a275fb63859035f60de0b337b252655c339f5d706a9c9c6",
+   "gloss": "Sopater",
+   "definition": "Σώπατρος, -ου, ὁ\nSopater: Act.20:4.†",
+   "note": "'Sopater' is the RV1909 spelling (Acts 20:4), the same as the English."
+  },
+  {
+   "strongs": "G4987",
+   "sha256": "e97790d9c72572e70dc32ea4b72bd7a6b8b3a813c30dbe0ff16a49328415f7d6",
+   "gloss": "amontonar",
+   "definition": "σωρεύω\n[en LXX: Pro.25:22 (חָתָה), Jdth.15:11 * ;]\n(a) amontonar sobre: con acusativo ante ἐπί con acusativo, Rom.12:20 (LXX) (Arist., al.);\n(b) cargar de: con acusativo y dativo, metafóricamente, ἁμαρτίαις, 2Ti.3:6 (abrumadas de, Field, Notas, 217) (Polyb.).†"
+  },
+  {
+   "strongs": "G4988",
+   "sha256": "997487a2d65486862beba62b8ddd706ad7a3f9361cb92c33c2b61fdd36328605",
+   "gloss": "Sóstenes",
+   "definition": "Σωσθένης, -ου, ὁ\nSóstenes;\n(a) un principal judío: Act.18:7;\n(b) un cristiano: 1Co.1:1.†"
+  },
+  {
+   "strongs": "G4989",
+   "sha256": "b7d875b0149f5d55b6801fa7f98e029d131c448b983bf9b33e7bea9333ffd379",
+   "gloss": "Sosipater",
+   "definition": "Σωσίπατρος, -ου, ὁ\nSosipater: Rom.16:21.†",
+   "note": "'Sosipater' is the RV1909 spelling (Romans 16:21), the same as the English."
+  },
+  {
+   "strongs": "G4990",
+   "sha256": "277d18d544d29c3aa41eb5cfac7212992f243bf6daef452172e88b8dd800ae92",
+   "gloss": "salvador",
+   "definition": "σωτήρ, -ῆρος, ὁ\n(σώζω), [en LXX por יָשַׁע y formas cognadas ;]\nsalvador, libertador, preservador, epíteto frecuente de los reyes en los períodos ptolemaico y romano (Deiss., BS, 83; LAE, 368 f.; MM, xxiv); en el NT,\n(a) de Dios (como en la LXX: Psa.24:5, Isa.12:2, al.): Luk.1:47, 1Ti.1:1 2:3 4:10, Tit.1:3 2:10 3:4, Ju 25;\n(b) de Cristo: Luk.2:11, Act.5:31 13:23, Php.3:20; τ. κόσμου, Jhn.4:42, 1Jn.4:14 (para el uso general de la palabra, véase Westc., in l); ἡμῶν, 2Ti.1:10, Tit.1:4 3:6; θεὸς (κύριος) καὶ σ. (véase Deiss., LAE, 348.4; M, Pr., 84), Tit.2:13, 2Pe.1:1 1:11 2:20 3:2 3:18; σ. τοῦ σώματος (es decir, de la Iglesia; véase: σῶμα, 5), Eph.5:23.†"
+  },
+  {
+   "strongs": "G4991",
+   "sha256": "531e67a72fc719ba7956e7a92748ac6945c7cb22d306c974774f008f41eb4331",
+   "gloss": "salvación",
+   "definition": "σωτηρία, -ας, ἡ\n(σωτήρ), [en LXX por יֶשַׁע, יְשׁוּעָה, תְּשׁוּעָה, פְּלֵיטָה, etc. ;]\nliberación, preservación, salvación, seguridad (lat. salus): Act.7:25 27:34, Heb.11:7; ἐξ ἐχθρῶν, Luk.1:71. En el NT esp. de la salvación mesiánica y espiritual (véase: σώζω): Luk.19:9, Jhn.4:22, Act.4:12 13:47, Rom.11:11, 2Th.2:13, 2Ti.3:15, Heb.2:3 6:9, 2Pe.3:15, Ju 3; opuesto a ἀπηώλεια, Php.1:28; αἰώνιος-., Heb.5:9; ὁ λόγος (τὸ εὐαγγέλιον) τῆς σ., Act.13:26, Eph.1:13; ὁδὸς σωτηρίας, Act.16:17; κέρας σωτηρίας, Luk.1:69; ἡμέρα σωτηρίας, 2Co.6:2 (LXX); κατεργάζεσθαι τὴν ἑαυτοῦ σ., Php.2:12; κληρονομεῖν σ., Heb.1:14; ὁ ἀρχηγὸς τῆς σ., Heb.2:10; εἰς σ., Rom.1:16 10:1, 10, 1Pe.2:2; σ. como posesión presente (véase: σώζω), Luk.1:77, 2Co.1:6 7:10, Php.1:19, 2Ti.2:10; como realizada más plenamente en el futuro: Rom.13:11, 1Th.5:8-9, Heb.9:28, 1Pe.1:5 1:9-10, Rev.7:10 12:10 19:1.†"
+  },
+  {
+   "strongs": "G4992",
+   "sha256": "fe9a34d173b7e5708bde7ffc8f5adbffc3f4a345bc5a56614c5fd58adb49c88f",
+   "gloss": "salvador",
+   "definition": "σωτήριος, -ον\n(σωτήρ), [en LXX por יְשׁוּעָה, שֶׁלֶם, etc. ;]\nsalvador, que trae salvación, en el NT siempre en sentido espiritual (véase: σώζω, σωτηρία): ἡ χάρις ἡ σ., Tit.2:1. Neut., -τὸ σ., como sust. (cl.), salvación: Luk.2:30; τ. σ. τ. θεοῦ, Luk.3:6, Act.28:28; περικεφαλαίαν τοῦ σ., Eph.6:17.†"
+  },
+  {
+   "strongs": "G4993",
+   "sha256": "ad404404568c6b0567686f146f3a35bc9b5c24dd22fdb734217fe8c17b809c8b",
+   "gloss": "estar en su juicio",
+   "definition": "σωφρονέω, -ῶ\n(σώφρων),\n(a) estar en su sano juicio o en sus cabales: Mrk.5:15, Luk.8:35; opuesto a ἐκστῆναι, 2Co.5:13 (Hdt.);\n(b) ser templado, discreto, dueño de sí (opuesto a μαίνεσθαι, ὑβρίζειν, etc.; sch., Thuc., al.): Tit.2:6; opuesto a ὑπερφρονεῖν, Rom.12:3; σ. καὶ νήφειν, 1Pe.4:7.†"
+  },
+  {
+   "strongs": "G4994",
+   "sha256": "d175ecb1fa7bd6e190b29b6383beede4823d5c2d01041aa09fb680de9f4633da",
+   "gloss": "enseñar",
+   "definition": "σωφρονίζω\n[en Aq.: Isa.38:16 * ;]\nhacer σώφρων, hacer volver a uno en sí, refrenar (RV, «train», enseñar): con acusativo de persona(s), Tit.2:4.†"
+  },
+  {
+   "strongs": "G4995",
+   "sha256": "eb0aa340d2f2c6b9352608c1a7411273d452a603d374bf3f49ffb519eaf30a16",
+   "gloss": "dominio propio",
+   "definition": "σωφρονισμός, -οῦ, ὁ\n(σωφρονίζω),\n(a) una amonestación (F1J, Plut., al.);\n(b) dominio propio, autodisciplina: 2Ti.1:7 (sobre el sentido reflexivo aquí, véase Ellic., in l).†"
+  },
+  {
+   "strongs": "G4996",
+   "sha256": "81cababa174a5fbebfff5fae672423e28bdb19a34cf3cbdc9bc2792320d7524d",
+   "gloss": "con dominio propio",
+   "definition": "σωφρόνως\nadv., [en LXX: Wis.9:11 * ;]\ncon sano juicio, prudentemente, sobriamente: Tit.2:12.†"
+  },
+  {
+   "strongs": "G4997",
+   "sha256": "5ac364b11a8bb24b9d74899f721d99912e6ba6850a614b8b494cb6b74640d291",
+   "gloss": "cordura",
+   "definition": "σωφροσύνη, -ης, ἡ\n[en LXX: Est.3:13, Wis.8:7, 2Ma.4:37, 4Ma.6:1-35 * ;]\n(a) sanidad de mente, buen sentido, cordura (opuesto a μανία, Xen.): Act.26:25;\n(b) dominio propio, sobriedad: 1Ti.2:9 (véase Tr., Syn., § xx), 1Ti.2:15.†"
+  },
+  {
+   "strongs": "G4998",
+   "sha256": "e8e8f232b963d2cccfb689fd538019ac20b28fba758954218a9c7760837e857b",
+   "gloss": "dueño de sí",
+   "definition": "σώφρων, -ον\n[en LXX: 4Ma.9:1-32 * ;]\n(a) de mente sana, cuerdo, sensato;\n(b) dueño de sí, sobrio: 1Ti.3:2, Tit.1:8 2:2, 5 (Arist.).†"
+  },
+  {
+   "strongs": "G4999",
+   "sha256": "a90dc51a9235af4539cf8be88c12cf6ade058bae1218f77f6ed67ec3c26ad8fe",
+   "gloss": "Tabernas",
+   "definition": "ταβέρνη\n(lat. taberna), véase: Τρεῖς Ταβέρναι.\nΤρεῖς Ταβέρναι\n(véase: ταβέρνη),\nLas Tres Tabernas (lat. Tres Tabernae), un lugar de parada en la Vía Apia: Act.28:15 (véase DB, iv, 690).†",
+   "note": "'(Lit. Tres Tabernae)' is the Latin name; rendered '(lat. Tres Tabernae)'."
+  },
+  {
+   "strongs": "G5000",
+   "sha256": "f169ee4388fd347399612cacef3a484dc9ae2c76e5666feb0b3fa441d0141239",
+   "gloss": "Tabita",
+   "definition": "Ταβειθά (Rec. Ταβιθά), ἡ (aram. טַבְיְתָא o טְבִיתָא),\nTabita: Act.9:36, 40 (cf. Δορκάς).†"
+  },
+  {
+   "strongs": "G5001",
+   "sha256": "b74322738c755b8abf5bfa9adf04901ab3a61f5dce7c3ee17c2d89e3c45e6c07",
+   "gloss": "orden",
+   "definition": "τάγμα, -τος, τό\n(τάσσω), [en LXX principalmente por דֶּגֶל, también por חַי, רַגְלִי ;]\nlo que ha sido dispuesto o puesto en orden; esp. como término militar, una compañía, tropa, división, fila: metafóricamente, 1Co.15:23 (véase ICC, in l).†"
+  },
+  {
+   "strongs": "G5002",
+   "sha256": "e829735165931bc0433d0ad8727a013eba4f7c12cd03298e6c0193c3d03030c7",
+   "gloss": "señalado",
+   "definition": "τακτός, -ή, -όν\n(τάσσω), [en LXX: Job.12:5 (שַׁאֲנָן) * ;]\nordenado, fijado, señalado: ἡμέρα, Act.12:21,†"
+  },
+  {
+   "strongs": "G5003",
+   "sha256": "4c19bc4f09d4b33023360c8d2f230749cb418176cbf3c57ae735bc000e6783f6",
+   "gloss": "afligirse",
+   "definition": "ταλαιπωρέω, -ῶ\n(ταλαίπωρος), [en LXX principalmente por שָׁדַד pu. ;]\n1. hacer trabajos duros, padecer penalidades o aflicción: Jas.4:9.\n2. En cl. a veces trans., fatigar, afligir (así Psa.17:9, Isa.33:1).†"
+  },
+  {
+   "strongs": "G5004",
+   "sha256": "e2b3cd572be591a065317701691238e26673129113cfe058d3827d58a2f7bdef",
+   "gloss": "miseria",
+   "definition": "ταλαιπωρία, -ας, ἡ\n(ταλαίπωρος) [en LXX principalmente por שֹׁד ;]\n1. trabajo duro (Hippocr.).\n2. penalidad, sufrimiento, aflicción: Rom.3:16 (LXX) pl., Jas.5:1 (véase B1., § 32, 6; WM, 220; Swete, Mk., 153).\n(Hdt., Thuc., al.; y cf. MM, xxiv.)†"
+  },
+  {
+   "strongs": "G5005",
+   "sha256": "fab5f465e6012abac626987d650682451952c317122faef1a727402bb5eb4cdf",
+   "gloss": "miserable",
+   "definition": "ταλαίωρος, -ον\n[en LXX: Psa.137:8 (שָׁדַד), Isa.33:1 (ποιεῖν τ., שָׁדַד), Tob.13:10, Wis.3:11, al. ;]\nafligido, desdichado, miserable: Rom.7:24, Rev.3:17.†"
+  },
+  {
+   "strongs": "G5006",
+   "sha256": "cb3de34f8146e194f4272ecdbf197ea50bcbde5a8269e55ed95076216a39150e",
+   "gloss": "del peso de un talento",
+   "definition": "ταλαντιαῖος, -α, -ον\n(τάλαντον),\n(a) que vale un talento;\n(b) del peso de un talento: Rev.16:21.†"
+  },
+  {
+   "strongs": "G5007",
+   "sha256": "45bb2ebd44b88938372a21a0356141e0fe7acb08c60312f230a3b087c8b4402a",
+   "gloss": "talento",
+   "definition": "τάλαντομ, -ον, τ\n[en LXX por כִּכָּר ;]\n1. una balanza (Hom.).\n2. lo que se pesa, un talento;\n(a) un talento de peso (en Horn. siempre de oro);\n(b) una suma de dinero, sea de oro o de plata, equivalente a un talento de peso (véase DB, iii, 418 ff.): Mat.18:24 25:15 ff.†"
+  },
+  {
+   "strongs": "G5008",
+   "sha256": "fcbe42452a060f5592ad9ebdaea0b265e8f35fcdc498e90389df658a3b0253ce",
+   "gloss": "niña",
+   "definition": "ταλειθά (Rec. ταλιθά), (aram. טְלִיתָא, véase Dalman, Gr., 150),\ntalitha, es decir, muchacha: Mrk.5:41.†"
+  },
+  {
+   "strongs": "G5009",
+   "sha256": "4344cdcc23b0210220e4ec9590bd85c10e460da3d8ab0fa52d8fe3c5e76f24e2",
+   "gloss": "aposento",
+   "definition": "ταμεῖον\n(forma sincopada tardía del cl. ταμιεῖον; véase M, Pr., 44 f.; Bl., § 6, 5; Thackeray, Gr., 63 ff.; Deiss., BS, 182 f.), -ον, τό, [en LXX principalmente por חֶדֶר ;]\n1. un tesoro (Thuc., al).\n2. una despensa (Arist., Xen.; Deu.28:8): Luk.12:24.\n3. un aposento interior (Xen., Hell., v, 4, 5 Isa.26:20, al.): Mat.6:6 24:26, Luk.12:3.†"
+  },
+  {
+   "strongs": "G5010",
+   "sha256": "d85d3ba716d212ddb70ed606def57c771ba1420af200e4e9a786ff226f670061",
+   "gloss": "orden",
+   "definition": "τάξις, -εως, ἡ\n(τάσσω), [en LXX: Job.38:12 (מָקוֹם), Psa.110:4 (דִּבְרָה), 2Ma.9:18, al. ;]\n1. un disponer; de ahí, en sentido militar, disposición de un ejército, orden de batalla (Thuc., al.).\n2. disposición, orden (Plat., al): Luk.1:8.\n3. el debido orden: Col.2:5 (ICC, in l); κατὰ τάξιν, 1Co.14:40.\n4. oficio, orden (para ejs., véase MM, xxiv): Heb.5:6 (LXX), Heb.5:6 6:20 7:11, 17\" (LXX) .†"
+  },
+  {
+   "strongs": "G5011",
+   "sha256": "672d21107b5caeff703f3c18678b9fa11101ecdef6cb171e67d9796e1bd79483",
+   "gloss": "humilde",
+   "definition": "ταπεινός, -ή, -όν\n[en LXX por שָׁפָל, עָנִי, etc. ;]\nbajo, de poca altura; metafóricamente,\n(a) humilde, de baja condición, abatido: Jas.1:9, 2Co.7:6 (cf. Sir.25:23); οἱ τ., opuesto a δυνάσται, Luk.1:52; τ. ταπεινοῖς (neut., R, txt.; masc., R, mg.; véase ICC, in l), Rom.12:16;\n(b) humilde de espíritu, modesto; en cl. por lo general en sentido despectivo (véase Tr., Syn., § xlii; pero véase también Abbott, Essays, 81), en el NT en sentido honroso: 2Co.10:1; ante τ. καρδίᾳ, Mat.11:29 (cf. Psa.34:19); opuesto a ὑπερήφανος, Jas.4:6, 1Pe.5:5\" (LXX) .†"
+  },
+  {
+   "strongs": "G5012",
+   "sha256": "d6d3737d7eac38026b06d689a3054e89666d0ce5f47b654e184b3d2f3ab2473b",
+   "gloss": "humildad",
+   "definition": "ταπεινοφροσύνη, -ης, ἡ\n(ταπεινόφρων)\nhumildad de ánimo, humildad: Act.20:19, Eph.4:2, Php.2:3, Col.3:12, 1Pe.5:5; de una falsa humildad, Col.2:18, 23 (rara fuera del NT, pero hallada en mal sentido en FlJ, BJ, iv, 9, 2; también en Epictet., véase Tr., Syn., § xlii).†"
+  },
+  {
+   "strongs": "G5013",
+   "sha256": "bd4aeba5dcf33f00aa44e332c4116cfcff91d296ce2091cb723ffd1674937eba",
+   "gloss": "humillar",
+   "definition": "ταπεινόω, -ῶ\n(ταπεινός), [en LXX principalmente por עָנָה, también por שָׁפֵל, כָּנַע, etc. ;]\nrebajar: ὄρος (βουνόν), Luk.3:5 (LXX). Metafóricamente, humillar, abatir: Mat.18:4 23:12, Luk.14:11 18:14, 2Co.11:7 12:21, Php.2:8; pas., Mat.23:12, Luk.14:11 18:14, Php.4:12; íd. con sentido med., Jas.4:10, 1Pe.5:6.†"
+  },
+  {
+   "strongs": "G5014",
+   "sha256": "6232d2bbdb82d0d2719ebce919c766c1759832dfff376d8b91adeccb2dd8014b",
+   "gloss": "bajeza",
+   "definition": "ταπείνωσις, -εως, ἡ\n(ταπεινόω), [en LXX principalmente por עֳנִי ;]\nabatimiento, humillación, baja condición: Luk.1:48, Act.8:33\" (LXX), Php.3:21, Jas.1:10 (Plat., Arist., y escritores posteriores).†"
+  },
+  {
+   "strongs": "G5015",
+   "sha256": "1ce7dd1dbb91db119d7e4e19be13708c2fdeafdddcb75f0fbcc4aa0774459aa0",
+   "gloss": "turbar",
+   "definition": "ταράσσω\n[en LXX por בָּהַל, רָגַז, etc., cuarenta y seis palabras en total ;]\nperturbar, turbar, agitar: primeramente en sentido físico (Hom., Eur.): τ. ὕδωρ, Jhn.1:5 [4], Jhn.1:7. Metafóricamente, de la mente (Æsch., Plat., al.), turbar, inquietar, dejar perplejo: Act.15:24, Gal.1:7 5:10; ἑαυτόν (se turbó; Westc., in l), Jhn.11:33; de una multitud, alborotar, Act.17:8, 13; pas., Mat.2:3 14:26, Mrk.6:50, Luk.1:12 24:38, Jhn.12:27 (Psa.6:4) Psa.14:1, 7, 1Pe.3:14\" (LXX) ; τ. πνεύματι, Jhn.13:21 (cf. δια-, ἐκ-ταράσσω)"
+  },
+  {
+   "strongs": "G5016",
+   "sha256": "4c3c6b38502ea427f027a058be0d09c8b7eaabfb9d604932ee223a655ff1413c",
+   "gloss": "perturbación",
+   "definition": "ταραχή, -ῆς, ἡ\n(ταράσσω), [en LXX por חָלָה, מְהוּמָה, etc. ;]\nagitación, perturbación: τ. ὕδατος, Jhn.1:5 [4]. En pl. (como en cl.), tumultos: Mrk.13:8, Rec.†"
+  },
+  {
+   "strongs": "G5017",
+   "sha256": "e68005c4b6930ad60daa062979bdd5f52c539158b2b0d4e0c1a2e033c44593f6",
+   "gloss": "alboroto",
+   "definition": "τάραχος, -ου, ὁ\n(ταράσσω), [en LXX por מְהוּמָה, etc. ;]\nforma tardía de ταραχή (Xen., al.; véase Thackeray, Gr., 159): Act.12:18 19:23.†"
+  },
+  {
+   "strongs": "G5018",
+   "sha256": "fe0a177ac11a1faf04106d35d95d4eaeb5ed27afc0a7df9db9a514808b5c328e",
+   "gloss": "de Tarso",
+   "definition": "Ταρσεύς, -έως, ὁ\n(Ταρσός),\nde Tarso: Act.9:11 21:39.†"
+  },
+  {
+   "strongs": "G5019",
+   "sha256": "99fb4992e99df8bde8bacb67ae366cd77e022df0c3f6072d6f6e2556f106750e",
+   "gloss": "Tarso",
+   "definition": "Ταρσός, -oῦ\nTarso, una ciudad de Cilicia: Act.9:30 11:25 22:3.†"
+  },
+  {
+   "strongs": "G5020",
+   "sha256": "60df304673d1dcb19c2643a804a7db92a01993994d028025746893b49aae3240",
+   "gloss": "infierno: Tártaro",
+   "definition": "ταρταρόω, -ῶ\n(Τάρταρος, nombre griego del mundo subterráneo, esp. la morada de los condenados),\narrojar al infierno: 2Pe.2:4 (véase Mayor, in l).†"
+  },
+  {
+   "strongs": "G5021",
+   "sha256": "c65d7993e835b38c34001fd0288f91a6f5c629f19c3a62ad90dce0c2d5b00535",
+   "gloss": "designar",
+   "definition": "τάσσω\n[en LXX principalmente por שׂוּם, también por צָוָה pi., נָתַן, etc. ;]\nprimeramente en sentido militar, luego en general, formar en orden, poner en su lugar, asignar, designar, ordenar: con dativo (acusativo) e inf. (Bl., § 72, 5), Act.15:2 18:2 (διατ-, WH) Act.22:10; ἑαυτούς, 1Co.16:15; pas., Mat.8:9 (T [WH], R, txt., om.), Luk.7:8, Rom.13:1; ὅσοι ἦσαν τεταγμένοι εἰς ζωὴν αἰώνιον (quizá en sentido med.; véase EGT y Page, in l), Act.13:48; med., designar para sí o por propia autoridad, Mat.28:16, Act.28:23.†"
+  },
+  {
+   "strongs": "G5022",
+   "sha256": "7f71673a66d79840838f587bf45aa5c9d43c3c1dd48b40098c4bcd8adfba07d8",
+   "gloss": "toro",
+   "definition": "ταῦρος, -ου, ὁ\n[en LXX principalmente por שׁוֹר ;]\nun toro: Mat.22:4, Act.14:13, Heb.9:13 10:4.†"
+  },
+  {
+   "strongs": "G5023",
+   "sha256": "a2b07527528e3da95f3f6a9f02f0c2f4ccc0d50c5281018026dc0fdd2f32cff4",
+   "gloss": "este",
+   "definition": "οὗτος, αὕτη, τοῦτο, genitivo, τούτου, ταύτης, τούτου,\n[en LXX principalmente por זֹאת ,זֶה ;]\npron. demostr. (relacionado con ἐκεῖνος como hic con ille),\neste;\n1. como sust., este, él;\n(a) absol.: Mat.3:17, Mrk.9:7, Luk.7:44, 45, Jhn.1:15, Act.2:15, al.; expresando desprecio (cl.), Mat.13:55, 56, Mrk.6:2, 3, Jhn.6:42, al.; εἰς τοῦτο, Mrk.1:38, Rom.14:9; μετὰ τοῦτο (ταῦτα; V. Westc. sobre Jhn.5:1), Jhn.2:12 11:7, al.;\n(b) epanaléptico (que se refiere a lo que precede): Mat.5:19, Mrk.3:35, Luk.9:48, Jhn.6:46, Rom.7:10, al.;\n(c.) proléptico (que se refiere a lo que sigue): ante ἵνα (Bl., §69, 6), Luk.1:43, Jhn.3:19 (y frec.) 15:8, Rom.14:9, al.; ante ὅτι, Luk.10:11, Jhn.9:3o, Act.24:14, Rom.2:3, al.; ὅπως, Rom.9:17; ἐάν, Jhn.13:35;\n(d) modismos especiales: τοῦτο μὲν . . . τ. δέ (cl), en parte . . . en parte. Heb.10:33; καὶ τοῦτο (τοῦτον, ταῦτα), y eso (a él) también, Rom.13:11, 1Co.2:2, Heb.11:12; τοῦτ᾽ ἐστιν, Mat.27:46.\n2. Como adj., con sust.;\n(a) con art.\n(α) antes del art.: Mat.12:32, Mrk.9:29, Luk.7:44, Jhn.4:15, Rom.11:24, Rev.19:9, al.;\n(β) después del sustantivo: Mat.3:9, Mrk.12:16, Luk.11:31, Jhn.4:13, Act.6:13, Rom.15:28, 1Co.1:20, Rev.2:24, al.;\n(b) con sust. anart. (con fuerza predicativa; Bl., §49, 4): Luk.1:36 2:2 24:21, Jhn.2:11 4:54 21:14, 2Co.13:1.",
+   "note": "G5023: source '(with)' is a misread '(c)' (third subsection), rendered '(c.)'."
+  },
+  {
+   "strongs": "G5024",
+   "sha256": "b4cedecd7deac73eeadf8671f35d24618a6c02d872c35727fbaa7e7b2e01edbe",
+   "gloss": "así",
+   "definition": "así, de la misma manera"
+  },
+  {
+   "strongs": "G5025",
+   "sha256": "c5786803e72a8040835e1d8fec84a3f38442c9813cbcb73e5c56fb7f94dbd793",
+   "gloss": "de ahí",
+   "definition": "de ahí, (a o con o por, etc.) estas"
+  },
+  {
+   "strongs": "G5026",
+   "sha256": "5388747ac71bcd4393e2f6580a354df87fe5d2cd36d9bf5b5ec136e242da3b4a",
+   "gloss": "ella",
+   "definition": "- (hacia o de) esta"
+  },
+  {
+   "strongs": "G5027",
+   "sha256": "67e200a6d7deec2436dc4e95e70cb4b6edeb31654ae4e1b24dea06d3fd9cca00",
+   "gloss": "sepultura",
+   "definition": "ταφή, -ῆς, ἡ\n(θάπτω), [en LXX principalmente por קָבַר y formas cognadas ;]\nsepultura: Mat.27:7 (Hdt., al.; para otros significados, véase LS, véase la palabra, Deiss., BS, 355 f., MM xxiv).†"
+  },
+  {
+   "strongs": "G5028",
+   "sha256": "af60b269edfcc88443288fbb2e6188c98af723f91d5a2a664a30491f7a935833",
+   "gloss": "sepulcro",
+   "definition": "τάφος, -ου, ὁ\n(θάντω), [en LXX principalmente por קֶבֶר ;]\n1. una sepultura (Hom., al.).\n2. un sepulcro, tumba (Res., Hdt., al.): Mat.23:27, 29 27:61, 64 27:66 28:1, Rom.3:13\" (LXX) .†"
+  },
+  {
+   "strongs": "G5029",
+   "sha256": "6e4e2c8bc1cc4d4533080dd9fc787cf7a0dbdb8c22bc75e665eddb9ca5284cb1",
+   "gloss": "quizá",
+   "definition": "τάχα\n(ταχύς),\nadv., [en LXX: Wis.13:6 14:19 * ;]\n(a) (principalmente poét.), rápidamente, pronto;\n(b) quizá: Rom.5:7, Phm 15.†"
+  },
+  {
+   "strongs": "G5030",
+   "sha256": "5b9640afa69c4a58fe172646264127ebb69b506c325022269c391439b2adcc96",
+   "gloss": "pronto",
+   "definition": "ταχέως\n(ταχύς)\nadv., [en LXX principalmente por מְהֵרָה y formas cognadas ;]\nrápidamente, apresuradamente: Luk.14:21 16:6, Jhn.11:31, 1Co.4:19, Php.2:19, 24, 2Ti.4:9; con idea de precipitación, Gal.1:6, 2Th.2:2, 1Ti.5:22.†"
+  },
+  {
+   "strongs": "G5031",
+   "sha256": "b3d96d2dfea7883881d4a0c8a06a3f57599ddf1567b612ed41dfc8cee163fa33",
+   "gloss": "inminente",
+   "definition": "ταχινός, -ή, -όν\n[en LXX: Pro.1:16, Hab.1:6, Isa.59:7 (מָהַר), Wis.13:2, Sir.11:22 18:26 * ;]\npoét. y tardío por ταχύς, veloz: de lo que se acerca velozmente, 2Pe.1:14 2:1.†"
+  },
+  {
+   "strongs": "G5032",
+   "sha256": "37106594acecdd4d3360bde2f60c51bc290094ff581e0e5350fa5c927470bda6",
+   "gloss": "más rápido",
+   "definition": "τάχειον, véase: ταχύ.\nταχύ\n(neut. de ταχύς),\nadv., [en LXX principalmente por מָהַר pi. ;]\nrápidamente, prontamente, en seguida: Mat.5:25 28:7-8, Mrk.9:39, Luk.15:22, Jhn.11:29, Rev.2:16 3:11 11:14 22:7, 12 22:2 o. Compar., τάχειον (T, Rec. τάχιον), = cl. θᾶσσον, θᾶττον (át.), (véase Bl., § 44, 3): Jhn.13:27 20:4, 1Ti.3:14 (T, Rec.), Heb.13:19, 23 Superl., τάχιστα: ὡς τ., lo más pronto posible (BL, § 11, 3), Act.17:15.†"
+  },
+  {
+   "strongs": "G5033",
+   "sha256": "07548a8a9de2d97a1081339392832f66d953912aa9a537eee5e79c8143113513",
+   "gloss": "lo más rápido",
+   "definition": "τάχιστα, véase: ταχύ.\nταχύ\n(neut. de ταχύς),\nadv., [en LXX principalmente por מָהַר pi. ;]\nrápidamente, prontamente, en seguida: Mat.5:25 28:7-8, Mrk.9:39, Luk.15:22, Jhn.11:29, Rev.2:16 3:11 11:14 22:7, 12 22:2 o. Compar., τάχειον (T, Rec. τάχιον), = cl. θᾶσσον, θᾶττον (át.), (véase Bl., § 44, 3): Jhn.13:27 20:4, 1Ti.3:14 (T, Rec.), Heb.13:19, 23 Superl., τάχιστα: ὡς τ., lo más pronto posible (BL, § 11, 3), Act.17:15.†"
+  },
+  {
+   "strongs": "G5034",
+   "sha256": "c73ad843df6020f394985a66d8bdba724ceffde2264908f5d4b323054963284f",
+   "gloss": "rapidez",
+   "definition": "τάχος, -ους, τό\n[en LXX principalmente por partes y derivados de מָהַר ;]\nrapidez, prontitud. Adverbialmente, ἐν τ. (ταχέως), rápidamente, prontamente, pronto: Luk.18:8, Act.12:7 22:18 25:4, Rom.16:20, 1Ti.3:14, Rev.1:1 22:6.†"
+  },
+  {
+   "strongs": "G5035",
+   "sha256": "df45070559c1ead58c142e3312676b8347dc0c942d3e6aa2c81d3b1b415e783f",
+   "gloss": "pronto",
+   "definition": "ταχύ\n(neut. de ταχύς),\nadv., [en LXX principalmente por מָהַר pi. ;]\nrápidamente, prontamente, en seguida: Mat.5:25 28:7-8, Mrk.9:39, Luk.15:22, Jhn.11:29, Rev.2:16 3:11 11:14 22:7, 12 22:2 o. Compar., τάχειον (T, Rec. τάχιον), = cl. θᾶσσον, θᾶττον (át.), (véase Bl., § 44, 3): Jhn.13:27 20:4, 1Ti.3:14 (T, Rec.), Heb.13:19, 23 Superl., τάχιστα: ὡς τ., lo más pronto posible (BL, § 11, 3), Act.17:15.†"
+  },
+  {
+   "strongs": "G5036",
+   "sha256": "7bf6a8b45fdfaa9f8b5cb6e497632413aacf015d242b991399679c1ea84f2dae",
+   "gloss": "pronto",
+   "definition": "ταχύς, -εῖα, -ύ\n[en LXX principalmente por מָהַר pi. ;]\nrápido, veloz, pronto: opuesto a βραδύς, Ja 119.†"
+  },
+  {
+   "strongs": "G5037",
+   "sha256": "c97670812ea07a3a6f007577718c5201cb199b88368be6402c561afe8b3d8224",
+   "gloss": "y/tanto",
+   "definition": "τέ,\npartícula copulativa enclítica (= lat. -que, como καί = y, ac, atque, no muy frecuente en el NT, pues más de dos tercios de los casos están en Hch.\n1. τέ solitarium, y, que denota una afinidad más estrecha que καί entre las palabras y oraciones que une (BL, §77, 8): Mat.28:12, Jhn.4:42, Act.2:33, 37 40 10:22 11:21, al.\n2. Denotando una conexión más estrecha que el simple καί, τὲ . . . καί, τὲ καί, τὲ . . . τέ (Act.26:16 Rom.14:8), así . . . como también, tanto . . . como: Luk.12:45, Act.1:1 15:9, 21:30, al.; τὲ . . . δέ, y . . . y, Act.19:2; τὲ γάρ . . . ὁμοίως δὲ καί, Rom.1:26, 27.",
+   "note": "The source's parenthesis '(= Lat. -que as καί = and, ac, atque' is never closed; kept so. 'Ac.' (Acts) rendered 'Hch.'."
+  },
+  {
+   "strongs": "G5038",
+   "sha256": "d11b89ed71cefd8a177174ba49163a2aa1c053a13d4a8ac1474cb63e26382f58",
+   "gloss": "muro",
+   "definition": "τεῖχος, -ους, τό\n[en LXX principalmente por חוֹמָה ;]\nun muro, esp. el que rodea una ciudad: Act.9:25, 2Co.11:33, Heb.11:30, Rev.21:12-19 †"
+  },
+  {
+   "strongs": "G5039",
+   "sha256": "b8c9bcce5664a77b2a51eaedf98e861dba70092bb8278df2be81e005f8678a01",
+   "gloss": "prueba indubitable",
+   "definition": "τεκμήριον, -ου, τό\n(τέκμαρ, una marca, señal), [en LXX: Wis.5:4 19:13, 3Ma.3:24 * ;]\nuna señal segura, una prueba positiva: Act.1:1-26 (para ejs., véase MM, xxiv).†\nSYN.: ἔνδειγμα, q.v"
+  },
+  {
+   "strongs": "G5040",
+   "sha256": "088cad14eebf1107ab4985d4a764a42de9c2baa28be6cf0552fcc3dae731129c",
+   "gloss": "hijitos",
+   "definition": "τεκνίον, -ου, τό\n(dim. de τέκνον),\nun hijito: como término de cariño, en voc. pl., Jhn.13:33, Gal.4:19, 1Jn.2:1 Jn 2:12 Jn 2:28 Jn 3:7 Jn 3:13 Jn 4:4 Jn 5:21.†"
+  },
+  {
+   "strongs": "G5041",
+   "sha256": "2b9ae3fd6af866ee284d3fce059669c370afdfd47e173f587d38fbde951f2847",
+   "gloss": "tener hijos",
+   "definition": "τεκνογονέω, -ῶ\nengendrar o dar a luz hijos: 1Ti.5:14 (Anthol.).†"
+  },
+  {
+   "strongs": "G5042",
+   "sha256": "400659e291dade3277960f9588cb8cb2d97ad849f69ad4cc5c7a13cebe2b4ccb",
+   "gloss": "crianza de hijos",
+   "definition": "τεκνογονία, -ας, ἡ,\nel tener hijos: 1Ti.2:15 (Arist.).†"
+  },
+  {
+   "strongs": "G5043",
+   "sha256": "af46a6c53f71cfa32b8794c0c1e24a5a4624a052eb6e5fa44cfd4adea1b6d839",
+   "gloss": "hijo",
+   "definition": "τέκνον, -ου, τό\n(τίκτω), [en LXX principalmente por בֵּן, también por יֶלֶד, etc. ;]\nlo que es engendrado, nacido (cf. el escocés «bairn», criatura), un hijo de uno u otro sexo: Mrk.13:12, Luk.1:7, Act.7:5; pl., Mat.7:11, Mrk.7:27, Luk.1:17, Eph.6:1, al.; τέκνα ἐπαγγελίας, Rom.9:8; τ. τῆς σαρκός, ib.; en sentido más amplio (como el heb. בָּנִים), de la posteridad, Mat.2:18, Luk.3:8, al.; específicamente, de un hijo varón, Mat.21:28, Act.21:21, a,l.; en voc. como forma de trato afectuoso de un mayor a un menor o de un maestro a un discípulo, Mat.9:2 21:28, Mrk.2:5, Luk.2:48; τ. μου (= cl. τ. μοι; véase Bl., §37, 5), Gal.4:19 (τεκνία, WH, txt.), 2Ti.2:1. Metafóricamente,\n(a) de discípulos (aparte del trato directo, véase supr.): Phm 10, 1Ti.1:2, Tit.1:4, 3Jo.4;\n(b) con referencia a la paternidad de Dios (véase: πατήρ, γεννάω), τέκνα τ. θεοῦ (cf. Isa.30:1, Wis.16:21): Rom.8:16, Eph.5:1, Php.2:15; y esp. en los libros joánicos (cf. Westc, Epp. Jo., 94, 120), Jhn.1:12, 1Jn.3:1 al.;\n(c.) de los que imitan a otros y por eso son considerados descendencia espiritual de sus modelos: Mat.3:9, Luk.3:8, Jhn.8:39, Rom.9:7, 1Pe.3:6; τ. διαβόλου, 1Jn.3:10;\n(d) como en heb. (LXX, Jol.2:23, Psa.149:2, 1Ma.1:38), de los habitantes de una ciudad: Mat.23:37, Luk.13:34 19:44, Gal.4:25;\n(e) con un genitivo adjetival, que frecuentemente traduce una expresión hebrea, tomada de la LXX o formada por analogía con su lenguaje, pero a veces con paralelos en escritores griegos (véase Deiss., BS, 161ff.): τέκνα φωτός, Eph.5:8; τ. ὑπακοῆς, 1Pe.1:14; κατάρας, 2Pe.2:14; ὀργῆς, Eph.2:3.\nSYN.: véase: παῖς.",
+   "note": "G5043: source '(with)' is a misread '(c)' (third subsection), rendered '(c.)'; the Scottish 'bairn' kept in «»."
+  },
+  {
+   "strongs": "G5044",
+   "sha256": "05cfc92ddfd867486eba74d3fa150e5af5f7ba8ef1a5a28a06d135aac85e56ac",
+   "gloss": "criar hijos",
+   "definition": "τεκνο-τροφέω, -ῶ\ncriar crías (de las abejas, Arist.),\ncriar hijos: 1Ti.5:10.†"
+  },
+  {
+   "strongs": "G5045",
+   "sha256": "e2ad712bfe0c2013cfd6c01b22ed18ee7efcea2a56a7c6df82fe77512fd48471",
+   "gloss": "artesano",
+   "definition": "τέκτων, -ονος, ὁ\n[en LXX principalmente por חָרָשׁ ;]\nun artífice en madera, piedra o metal, pero esp. un carpintero (véase MM, xxiv): Mat.13:55, Mrk.6:3.†"
+  },
+  {
+   "strongs": "G5046",
+   "sha256": "3d5da96a7ea742a35ecab964a92276adff03ec266e0b743d6f05f5fa29a9568b",
+   "gloss": "perfecto",
+   "definition": "τέλειος, -α, -ον\n(τέλος), [en LXX principalmente por שָׁלֵם, תָּמִים y formas cogn. ;]\nque ha llegado a su fin, acabado, maduro, completo, perfecto;\n1. de personas, primeramente del desarrollo físico,\n(a) adulto, maduro: Heb.5:14; éticamente: Php.3:15; opuesto a νήπιος (-άζειν), 1Co.2:6 14:20, Eph.4:13; τ. καὶ πεπληροφορημένοι, Col.4:12; τ. ἐν Χριστῷ, Col.1:28;\n(b) completo, perfecto (expresando la idea simple de bondad completa, sin referencia ni a la madurez ni a la idea filosófica de un τέλος; véase Hort sobre Jas.1:4): Mat.5:48 19:21, Jas.1:4 3:2; de Dios, Mat.5:48.\n2. De cosas, completo, perfecto: Rom.12:2; ἔργον, Jas.1:4; νόμος, Jas.1:25; δώρημα, Jas.1:17; ἀγάπη, 1Jn.4:18; τὸ τ., 1Co.13:10; compar., τελειοτέρα (σκηνή), Heb.9:11.\n(Probablemente no hay en el uso de San Pablo referencia alguna al uso de este término en los antiguos misterios; cf. ICC sobre Col.1:28; pero véase también Lft., in l, y Notes, 173 f.) †\nSYN.: véase: ὁλόκληρος (y cf. Rendall, He., 158 ff.)"
+  },
+  {
+   "strongs": "G5047",
+   "sha256": "c32c69132cd523acd2a18c2a6ea62d076f55a9c68372463837ddd983e4afa086",
+   "gloss": "perfección",
+   "definition": "τελειότης, -ητος, ἡ\n(τέλειος), [en LXX: Jdg.9:16, 19 (תָּמִים), Pro.11:3 (תֻּמָּה), Wis.6:15 12:17, Jer.2:2 * ;]\nperfección, plenitud: Col.3:14, Heb.6:1"
+  }
+ ]
+}

@@ -1,0 +1,4347 @@
+{
+ "batch": "014",
+ "strongs": [
+  "H4057A",
+  "H4057B",
+  "H4057G",
+  "H4058",
+  "H4059",
+  "H4060A",
+  "H4060B",
+  "H4060G",
+  "H4061",
+  "H4062",
+  "H4063",
+  "H4064",
+  "H4065",
+  "H4066",
+  "H4067",
+  "H4068",
+  "H4069",
+  "H4070A",
+  "H4070B",
+  "H4071",
+  "H4072",
+  "H4073",
+  "H4074G",
+  "H4074H",
+  "H4074I",
+  "H4075",
+  "H4076G",
+  "H4076H",
+  "H4077",
+  "H4078",
+  "H4079",
+  "H4080G",
+  "H4080H",
+  "H4081",
+  "H4082",
+  "H4083",
+  "H4084",
+  "H4085",
+  "H4086",
+  "H4087",
+  "H4088",
+  "H4089G",
+  "H4089H",
+  "H4090",
+  "H4091",
+  "H4092",
+  "H4093",
+  "H4094",
+  "H4095",
+  "H4096",
+  "H4097",
+  "H4098",
+  "H4099",
+  "H4100",
+  "H4101",
+  "H4102",
+  "H4103",
+  "H4104",
+  "H4105G",
+  "H4105H",
+  "H4106",
+  "H4107",
+  "H4108",
+  "H4109",
+  "H4110",
+  "H4111G",
+  "H4111H",
+  "H4112",
+  "H4113",
+  "H4114",
+  "H4115",
+  "H4116A",
+  "H4116B",
+  "H4117",
+  "H4118A",
+  "H4118B",
+  "H4119",
+  "H4120",
+  "H4121",
+  "H4122",
+  "H4123",
+  "H4124G",
+  "H4124H",
+  "H4124I",
+  "H4125",
+  "H4126",
+  "H4127",
+  "H4128",
+  "H4129",
+  "H4130",
+  "H4131",
+  "H4132",
+  "H4133",
+  "H4134",
+  "H4135A",
+  "H4135B",
+  "H4136",
+  "H4137",
+  "H4138",
+  "H4139",
+  "H4140",
+  "H4141",
+  "H4142",
+  "H4143",
+  "H4144",
+  "H4145",
+  "H4146",
+  "H4147",
+  "H4148G",
+  "H4148H",
+  "H4148I",
+  "H4149A",
+  "H4149B",
+  "H4150G",
+  "H4150H",
+  "H4150I",
+  "H4150J",
+  "H4151",
+  "H4152",
+  "H4153",
+  "H4154",
+  "H4155",
+  "H4156",
+  "H4157",
+  "H4158",
+  "H4159",
+  "H4160",
+  "H4161",
+  "H4162G",
+  "H4162H",
+  "H4163",
+  "H4164",
+  "H4165",
+  "H4166",
+  "H4167",
+  "H4168",
+  "H4169",
+  "H4170",
+  "H4171",
+  "H4172A",
+  "H4172B",
+  "H4173",
+  "H4174",
+  "H4175",
+  "H4176G",
+  "H4176H",
+  "H4177",
+  "H4178",
+  "H4179",
+  "H4180",
+  "H4181",
+  "H4182",
+  "H4183",
+  "H4184",
+  "H4185",
+  "H4186",
+  "H4187",
+  "H4188",
+  "H4189",
+  "H4190",
+  "H4191",
+  "H4192",
+  "H4193",
+  "H4194",
+  "H4195",
+  "H4196",
+  "H4197",
+  "H4198",
+  "H4199",
+  "H4200",
+  "H4201",
+  "H4202",
+  "H4203",
+  "H4204",
+  "H4205",
+  "H4206A",
+  "H4206B",
+  "H4207A",
+  "H4207B",
+  "H4208",
+  "H4209",
+  "H4210",
+  "H4211",
+  "H4212",
+  "H4213",
+  "H4214",
+  "H4215",
+  "H4216",
+  "H4217G",
+  "H4217H",
+  "H4218",
+  "H4219",
+  "H4220",
+  "H4221",
+  "H4222",
+  "H4223",
+  "H4224A",
+  "H4224B",
+  "H4225",
+  "H4226",
+  "H4227",
+  "H4228",
+  "H4229A",
+  "H4229B",
+  "H4229C",
+  "H4230",
+  "H4231",
+  "H4232",
+  "H4233",
+  "H4234",
+  "H4235",
+  "H4236",
+  "H4237",
+  "H4238",
+  "H4239",
+  "H4240",
+  "H4241",
+  "H4242",
+  "H4243",
+  "H4244G",
+  "H4244H",
+  "H4245A",
+  "H4245B",
+  "H4246",
+  "H4247",
+  "H4248",
+  "H4249G",
+  "H4249H",
+  "H4250",
+  "H4251",
+  "H4252",
+  "H4253",
+  "H4254",
+  "H4255",
+  "H4256",
+  "H4257",
+  "H4258G",
+  "H4258H",
+  "H4259",
+  "H4260",
+  "H4261",
+  "H4262",
+  "H4263",
+  "H4264",
+  "H4265",
+  "H4266",
+  "H4267",
+  "H4268",
+  "H4269",
+  "H4270",
+  "H4271",
+  "H4272",
+  "H4273",
+  "H4274",
+  "H4275",
+  "H4276",
+  "H4277",
+  "H4278",
+  "H4279",
+  "H4280",
+  "H4281",
+  "H4282",
+  "H4283",
+  "H4284",
+  "H4285",
+  "H4286",
+  "H4287G",
+  "H4287H",
+  "H4287I",
+  "H4288",
+  "H4289",
+  "H4290",
+  "H4291",
+  "H4292",
+  "H4293",
+  "H4294G",
+  "H4294H",
+  "H4294I",
+  "H4294J",
+  "H4294K",
+  "H4295",
+  "H4296",
+  "H4297",
+  "H4298",
+  "H4299",
+  "H4300",
+  "H4301",
+  "H4302",
+  "H4303",
+  "H4304",
+  "H4305",
+  "H4306",
+  "H4307G",
+  "H4307H",
+  "H4308",
+  "H4309",
+  "H4310",
+  "H4311",
+  "H4312",
+  "H4313",
+  "H4314",
+  "H4315",
+  "H4316G",
+  "H4316H",
+  "H4316I",
+  "H4316J",
+  "H4317G",
+  "H4317H",
+  "H4317I",
+  "H4317J",
+  "H4317K",
+  "H4317L",
+  "H4317M",
+  "H4317N",
+  "H4317O",
+  "H4317P",
+  "H4317Q",
+  "H4318G",
+  "H4318H",
+  "H4318I",
+  "H4318J",
+  "H4318K",
+  "H4318L",
+  "H4318M",
+  "H4318N",
+  "H4319",
+  "H4320G",
+  "H4320H",
+  "H4320I",
+  "H4320J",
+  "H4321G",
+  "H4321H",
+  "H4321I",
+  "H4322G",
+  "H4322H",
+  "H4323",
+  "H4324G",
+  "H4324H",
+  "H4325G",
+  "H4325H",
+  "H4326G",
+  "H4326H",
+  "H4326I",
+  "H4327",
+  "H4328",
+  "H4329",
+  "H4330",
+  "H4331",
+  "H4332G",
+  "H4332H",
+  "H4332I",
+  "H4333",
+  "H4334",
+  "H4335",
+  "H4336",
+  "H4337",
+  "H4338",
+  "H4339",
+  "H4340",
+  "H4341",
+  "H4342",
+  "H4343",
+  "H4344",
+  "H4345",
+  "H4346",
+  "H4347",
+  "H4348",
+  "H4349",
+  "H4350",
+  "H4351",
+  "H4352",
+  "H4353G",
+  "H4353H",
+  "H4354",
+  "H4355",
+  "H4356",
+  "H4357",
+  "H4358",
+  "H4359",
+  "H4360",
+  "H4361",
+  "H4362",
+  "H4363",
+  "H4364A",
+  "H4364B",
+  "H4365A",
+  "H4365B",
+  "H4366",
+  "H4367",
+  "H4368",
+  "H4369",
+  "H4370",
+  "H4371",
+  "H4372",
+  "H4373",
+  "H4374",
+  "H4375",
+  "H4376",
+  "H4377",
+  "H4378",
+  "H4379",
+  "H4380",
+  "H4381",
+  "H4382",
+  "H4383",
+  "H4384",
+  "H4385",
+  "H4386",
+  "H4387",
+  "H4388",
+  "H4389",
+  "H4390",
+  "H4391",
+  "H4392",
+  "H4393",
+  "H4394",
+  "H4395",
+  "H4396",
+  "H4397G",
+  "H4397H",
+  "H4398",
+  "H4399",
+  "H4400",
+  "H4401",
+  "H4402",
+  "H4403",
+  "H4404",
+  "H4405",
+  "H4406",
+  "H4407",
+  "H4408",
+  "H4409A",
+  "H4409B",
+  "H4409G",
+  "H4409H"
+ ],
+ "entries": [
+  {
+   "strongs": "H4057A",
+   "language": "hebrew",
+   "lemma": "מִדְבָּר",
+   "gloss": "mouth",
+   "definition": "a pasture (i.e. open field, whither cattle are driven); by implication, a desert; also speech (including its organs)",
+   "derivation": "from 1696 in the sense of driving;",
+   "sha256": "f8ca9c157fbb17ad54db75b040ae5a37897e406ed4913b658a89f6b4f6a76449"
+  },
+  {
+   "strongs": "H4057B",
+   "language": "hebrew",
+   "lemma": "מִדְבָּר",
+   "gloss": "wilderness",
+   "definition": "a pasture (i.e. open field, whither cattle are driven); by implication, a desert; also speech (including its organs)",
+   "derivation": "from 1696 in the sense of driving;",
+   "sha256": "c580da4ccebe3ccb7a9605f4e3a053ed99c6759abf57f04aa009b9beba178a3a"
+  },
+  {
+   "strongs": "H4057G",
+   "language": "hebrew",
+   "lemma": "מִדְבָּר",
+   "gloss": "Wilderness (of Sinai)",
+   "definition": "a pasture (i.e. open field, whither cattle are driven); by implication, a desert; also speech (including its organs)",
+   "derivation": "from 1696 in the sense of driving;",
+   "sha256": "2c24044dc8800bf18f4f0c7fd397289f17eb932dab132bca83f90aa472725a4f"
+  },
+  {
+   "strongs": "H4058",
+   "language": "hebrew",
+   "lemma": "מָדַד",
+   "gloss": "to measure",
+   "definition": "properly, to stretch; by implication, to measure (as if by stretching a line); figuratively, to be extended",
+   "derivation": "a primitive root;",
+   "sha256": "982d4907854b2b6bc32825b320ac0d312be83214bdc1b4f82ef2da1998c82a3b"
+  },
+  {
+   "strongs": "H4059",
+   "language": "hebrew",
+   "lemma": "מָדַד",
+   "gloss": "to extend",
+   "definition": "flight",
+   "derivation": "from 5074;",
+   "sha256": "696a5850729ba6a23fb33c3a0e86dd7f4494c614b2ae79ed181fdfdc11305abb"
+  },
+  {
+   "strongs": "H4060A",
+   "language": "hebrew",
+   "lemma": "מִדָּה",
+   "gloss": "measure",
+   "definition": "properly, extension, i.e. height or breadth; also a measure (including its standard); hence a portion (as measured) or a vestment; specifically, tribute (as measured)",
+   "derivation": "feminine of 4055;",
+   "sha256": "84f4c0c504acf0c38d21480caf199676000234a143ebb4822d5d44ecd5fb0664"
+  },
+  {
+   "strongs": "H4060B",
+   "language": "hebrew",
+   "lemma": "מִדָּה",
+   "gloss": "tribute",
+   "definition": "properly, extension, i.e. height or breadth; also a measure (including its standard); hence a portion (as measured) or a vestment; specifically, tribute (as measured)",
+   "derivation": "feminine of 4055;",
+   "sha256": "aa83b6f2f5ded13cd046bb6c7203c019d2cd604b7b2c76ac80cb385a167efd62"
+  },
+  {
+   "strongs": "H4060G",
+   "language": "hebrew",
+   "lemma": "מִדָּה",
+   "gloss": "`great stature`",
+   "definition": "properly, extension, i.e. height or breadth; also a measure (including its standard); hence a portion (as measured) or a vestment; specifically, tribute (as measured)",
+   "derivation": "feminine of 4055;",
+   "sha256": "5b2dbf07d5d9006560da2bb43b8c4492c24024a33c4b0d46d9ed459865ed8b1f"
+  },
+  {
+   "strongs": "H4061",
+   "language": "hebrew",
+   "lemma": "מִנְדָּה",
+   "gloss": "tribute",
+   "definition": "tribute in money",
+   "derivation": "(Aramaic) or מִנְדָּה; (Aramaic), corresponding to 4060;",
+   "sha256": "40e9e060e0e38ee2d4a4b787b60aa7ef2bc3ecf7b8d725e04a2157479a598315"
+  },
+  {
+   "strongs": "H4062",
+   "language": "hebrew",
+   "lemma": "מַדְהֵבָה",
+   "gloss": "insolence",
+   "definition": "goldmaking, i.e. exactness",
+   "derivation": "perhaps from the equivalent of 1722;",
+   "sha256": "d2d9f0ea9e7b110be1a6978a79be317bca2c9e8d7f630618d7058b1c6f9ffa54"
+  },
+  {
+   "strongs": "H4063",
+   "language": "hebrew",
+   "lemma": "מָ֫דוּ",
+   "gloss": "garment",
+   "definition": "properly, extent, i.e. measure; by implication, a dress (as measured)",
+   "derivation": "from an unused root meaning to stretch;",
+   "sha256": "e3919466dba3403968eaf7d194b8d272cff445401be957e74c989ed5b8dbab2c"
+  },
+  {
+   "strongs": "H4064",
+   "language": "hebrew",
+   "lemma": "מַדְוֶה",
+   "gloss": "disease",
+   "definition": "sickness",
+   "derivation": "from 1738;",
+   "sha256": "8dd618c6bd7c5aaac3c03e3955bdd3d6adc621194a5dac5d75eb8e426ab3734d"
+  },
+  {
+   "strongs": "H4065",
+   "language": "hebrew",
+   "lemma": "מַדּוּחַ",
+   "gloss": "enticement",
+   "definition": "seduction",
+   "derivation": "from 5080;",
+   "sha256": "cc79c02fff768d0397b60b9eb76f76c30af99801d0a93ccf03dbc736f3592284"
+  },
+  {
+   "strongs": "H4066",
+   "language": "hebrew",
+   "lemma": "מָדוֹן",
+   "gloss": "strife",
+   "definition": "a contest or quarrel",
+   "derivation": "from 1777;",
+   "sha256": "91e46a85f2732cd5d174f927032441a0d87babc40f70f2b8245cfdf6af8c2b62"
+  },
+  {
+   "strongs": "H4067",
+   "language": "hebrew",
+   "lemma": "מָדוֹן",
+   "gloss": "stature",
+   "definition": "extensiveness, i.e. height",
+   "derivation": "from the same as 4063;",
+   "sha256": "fdd4cd42310ecdc0143a25f479b1b3b25e4935c9dd32df17e96ea82f8be13bb3"
+  },
+  {
+   "strongs": "H4068",
+   "language": "hebrew",
+   "lemma": "מָדוֹן",
+   "gloss": "Madon",
+   "definition": "Madon, a place in Palestine",
+   "derivation": "the same as 4067;",
+   "sha256": "c8ab6c821ba8d303f249677fde25e5dc7d656cdd5c547658d6e6228bd8a5de98"
+  },
+  {
+   "strongs": "H4069",
+   "language": "hebrew",
+   "lemma": "מַדּוּעַ",
+   "gloss": "why?",
+   "definition": "what (is) known?; i.e. (by implication) (adverbially) why?",
+   "derivation": "or מַדֻּעַ; from 4100 and the passive participle of 3045;",
+   "sha256": "63bfa146e8d61966f7d49ac803fd828e6bd80d20a31e386bd3a081503e319380"
+  },
+  {
+   "strongs": "H4070A",
+   "language": "hebrew",
+   "lemma": "מְדוֹר",
+   "gloss": "dwelling",
+   "definition": "a dwelling",
+   "derivation": "(Aramaic) or מְדֹר; (Aramaic), or מְדָר; (Aramaic), from 1753;",
+   "sha256": "830a29f8053db1192bd12775ea5e26b19651b67df2d41af6867cb7e3985ffd0f"
+  },
+  {
+   "strongs": "H4070B",
+   "language": "hebrew",
+   "lemma": "מְדָר",
+   "gloss": "dwelling",
+   "definition": "a dwelling",
+   "derivation": "(Aramaic) or מְדֹר; (Aramaic), or מְדָר; (Aramaic), from 1753;",
+   "sha256": "830a29f8053db1192bd12775ea5e26b19651b67df2d41af6867cb7e3985ffd0f"
+  },
+  {
+   "strongs": "H4071",
+   "language": "hebrew",
+   "lemma": "מְדוּרָה",
+   "gloss": "pile",
+   "definition": "a pile of fuel",
+   "derivation": "or מְדֻרָה; from 1752 in the sense of accumulation;",
+   "sha256": "10da1d4048f8eaaec1f77e7494267d6e169f2632cb79b745a91b839e46a10ea5"
+  },
+  {
+   "strongs": "H4072",
+   "language": "hebrew",
+   "lemma": "מִדְחֶה",
+   "gloss": "ruin",
+   "definition": "overthrow",
+   "derivation": "from 1760;",
+   "sha256": "898f878de0e1549da887a77fb84ef060e6ec5305fb204d5e621ec2182c37e8fb"
+  },
+  {
+   "strongs": "H4073",
+   "language": "hebrew",
+   "lemma": "מַדְחֵפָה",
+   "gloss": "thrust",
+   "definition": "a push, i.e. ruin",
+   "derivation": "from 1765;",
+   "sha256": "274d280f15e4907633b0175fd3f54ba86940e51dff9cfc7bc10d82f4a0f223fd"
+  },
+  {
+   "strongs": "H4074G",
+   "language": "hebrew",
+   "lemma": "מָדַי",
+   "gloss": "Madai",
+   "definition": "Madai, a country of central Asia",
+   "derivation": "of foreign derivation;",
+   "sha256": "6900f22a825bf1fb035bebfb036df4f5efa25d7f8df8117878f89bfae9bd6a2c"
+  },
+  {
+   "strongs": "H4074H",
+   "language": "hebrew",
+   "lemma": "מָדַי",
+   "gloss": "Media",
+   "definition": "Madai, a country of central Asia",
+   "derivation": "of foreign derivation;",
+   "sha256": "c21f26bc510c4c08164830cd2470775e8a80744f7542aaabc9ba1fdb0f42a1df"
+  },
+  {
+   "strongs": "H4074I",
+   "language": "hebrew",
+   "lemma": "מָדַי",
+   "gloss": "Mede",
+   "definition": "Madai, a country of central Asia",
+   "derivation": "of foreign derivation;",
+   "sha256": "5d56ec6180aa51765243d71472fe6ecbbc1d4776fd6761f80dc7cdc7733a3d7a"
+  },
+  {
+   "strongs": "H4075",
+   "language": "hebrew",
+   "lemma": "מָדָאָה",
+   "gloss": "Mede",
+   "definition": "a Madian or native of Madai",
+   "derivation": "patrial from 4074;",
+   "sha256": "bd88feeb5ab20fac10f67a20d873081172d7ad273839b873a1d15d38f4d992b2"
+  },
+  {
+   "strongs": "H4076G",
+   "language": "hebrew",
+   "lemma": "מָדַי",
+   "gloss": "Mede",
+   "derivation": "(Aramaic) corresponding to 4074",
+   "sha256": "c01b7b5e72adb75f7160b96ac999ebd6b3f36704a309a45d03d33c02a84662f1"
+  },
+  {
+   "strongs": "H4076H",
+   "language": "hebrew",
+   "lemma": "מָדַי",
+   "gloss": "Media",
+   "derivation": "(Aramaic) corresponding to 4074",
+   "sha256": "a63fba9f833b5862cea75b412a206a2b54f1be44558e73b4a52021ca17c813e6"
+  },
+  {
+   "strongs": "H4077",
+   "language": "hebrew",
+   "lemma": "מָדָאָה",
+   "gloss": "Mede",
+   "derivation": "(Aramaic) corresponding to 4075",
+   "sha256": "38eed7e16653f87d2f9b878c8a36da314ff7e3c6c7c0640c29eac6d9508a0473"
+  },
+  {
+   "strongs": "H4078",
+   "language": "hebrew",
+   "lemma": "מַדַּי",
+   "gloss": "sufficiency",
+   "definition": "what (is) enough, i.e. sufficiently",
+   "derivation": "from 4100 and 1767;",
+   "sha256": "3ffa098c9e761c8f2a47d69b84097080415dab8c94aa2a13c037aae5a2285e00"
+  },
+  {
+   "strongs": "H4079",
+   "language": "hebrew",
+   "lemma": "מִדְיָן",
+   "gloss": "contention",
+   "derivation": "a variation for 4066",
+   "sha256": "368f7f7410cc5685075405b57b27fd6a47fc9b8ee5ce91c149a97c4bf5f75024"
+  },
+  {
+   "strongs": "H4080G",
+   "language": "hebrew",
+   "lemma": "מִדְיָן",
+   "gloss": "Midian",
+   "definition": "Midjan, a son of Abraham; also his country and (collectively) his descendants",
+   "derivation": "the same as 4079;",
+   "sha256": "ff365ff465b07e034900f687453293222c9a866a69169cafaae20acf1701cf2a"
+  },
+  {
+   "strongs": "H4080H",
+   "language": "hebrew",
+   "lemma": "מִדְיָן",
+   "gloss": "Midian",
+   "definition": "Midjan, a son of Abraham; also his country and (collectively) his descendants",
+   "derivation": "the same as 4079;",
+   "sha256": "ff365ff465b07e034900f687453293222c9a866a69169cafaae20acf1701cf2a"
+  },
+  {
+   "strongs": "H4081",
+   "language": "hebrew",
+   "lemma": "מִדִּין",
+   "gloss": "Middin",
+   "derivation": "a variation for 4080",
+   "sha256": "318a26f809ec6be3221ec57f26a5cbf745b9580428d7bf2fcb1e141256149a6a"
+  },
+  {
+   "strongs": "H4082",
+   "language": "hebrew",
+   "lemma": "מְדִינָה",
+   "gloss": "province",
+   "definition": "properly, a judgeship, i.e. jurisdiction; by implication, a district (as ruled by a judge); generally, a region",
+   "derivation": "from 1777;",
+   "sha256": "3b5e27ecaa9228ff0e5dec6f0ebea7258fd57ed2393b929099c5b644fc00c509"
+  },
+  {
+   "strongs": "H4083",
+   "language": "hebrew",
+   "lemma": "מְדִינָה",
+   "gloss": "province",
+   "derivation": "(Aramaic) corresponding to 4082",
+   "sha256": "4bcdc4661583fb5052f4481b9d1eae1d4035bc68a886c4005fde996bab3b40d1"
+  },
+  {
+   "strongs": "H4084",
+   "language": "hebrew",
+   "lemma": "מִדְיָנִי",
+   "gloss": "Midianite",
+   "definition": "a Midjanite or descendant (native) of Midjan",
+   "derivation": "patronymical or patrial from 4080;",
+   "sha256": "d25a919201c9dbade941aeb6a5699aa4ecbf5a9e49ba0474174f413e466f53cd"
+  },
+  {
+   "strongs": "H4085",
+   "language": "hebrew",
+   "lemma": "מְדֹכָה",
+   "gloss": "mortar",
+   "definition": "a mortar",
+   "derivation": "from 1743;",
+   "sha256": "f6d0ee19166df2817d8820f237696498100300b5a469202b65c3303ee5f0ec2d"
+  },
+  {
+   "strongs": "H4086",
+   "language": "hebrew",
+   "lemma": "מַדְמֵן",
+   "gloss": "Madmen",
+   "definition": "Madmen, a place in Palestine",
+   "derivation": "from the same as 1828; dunghill;",
+   "sha256": "2c9f45715f64f162841dd0587e05d0955a02b4ee12111abf181120b7167b195f"
+  },
+  {
+   "strongs": "H4087",
+   "language": "hebrew",
+   "lemma": "מַדְמֵנָה",
+   "gloss": "dunghill",
+   "definition": "a dunghill",
+   "derivation": "feminine from the same as 1828;",
+   "sha256": "5c7b0a2f8d853f30a3b7768e97c5000fda1a5b17e9659e6bda4d9affe5c234c7"
+  },
+  {
+   "strongs": "H4088",
+   "language": "hebrew",
+   "lemma": "מַדְמֵנָה",
+   "gloss": "Madmenah",
+   "definition": "Madmenah, a place in Palestine",
+   "derivation": "the same as 4087;",
+   "sha256": "1fdf9a505dfa0a0da4bcd494d2e13c8a87fec9c7f6cad81288951213d92b648e"
+  },
+  {
+   "strongs": "H4089G",
+   "language": "hebrew",
+   "lemma": "מַדְמַנָּה",
+   "gloss": "Madmannah",
+   "definition": "Madmannah, a place in Palestine",
+   "derivation": "a variation for 4087;",
+   "sha256": "f4e8e2263fee162eba5a0621f14cfde4fb33a3a05b914eda3f130accee2805a8"
+  },
+  {
+   "strongs": "H4089H",
+   "language": "hebrew",
+   "lemma": "מַדְמַנָּה",
+   "gloss": "Madmannah",
+   "definition": "Madmannah, a place in Palestine",
+   "derivation": "a variation for 4087;",
+   "sha256": "f4e8e2263fee162eba5a0621f14cfde4fb33a3a05b914eda3f130accee2805a8"
+  },
+  {
+   "strongs": "H4090",
+   "language": "hebrew",
+   "lemma": "מְדָן",
+   "gloss": "strife",
+   "derivation": "a form of 4066",
+   "sha256": "4daa8452c388e7c9bbf4984986a3b2379b070d8b1eb1e52280072d56c0b1ef18"
+  },
+  {
+   "strongs": "H4091",
+   "language": "hebrew",
+   "lemma": "מְדָן",
+   "gloss": "Medan",
+   "definition": "Medan, a son of Abraham",
+   "derivation": "the same as 4090;",
+   "sha256": "87f08a95aff7c5b46253034f73eda6188bbaaaa8b3015a972a136e5b948db705"
+  },
+  {
+   "strongs": "H4092",
+   "language": "hebrew",
+   "lemma": "מְדָנִי",
+   "gloss": "Midianite",
+   "derivation": "a variation of 4084",
+   "sha256": "51837b08ab889f4d2d98fbd38a4e521e3fe522340950b5eab7030233ff954557"
+  },
+  {
+   "strongs": "H4093",
+   "language": "hebrew",
+   "lemma": "מַדָּע",
+   "gloss": "knowledge",
+   "definition": "intelligence or consciousness",
+   "derivation": "or מַדַּע; from 3045;",
+   "sha256": "0fa3ed88c550201dfaae36349ce623fbc3542a4af3a41ebd941f0840f11ef75d"
+  },
+  {
+   "strongs": "H4094",
+   "language": "hebrew",
+   "lemma": "מַדְקָרָה",
+   "gloss": "thrust",
+   "definition": "a wound",
+   "derivation": "from 1856;",
+   "sha256": "187361ce795f7cbb09c02080bbfc87c0fe649c2ac8a61cb3ab16dbb18a54bbb1"
+  },
+  {
+   "strongs": "H4095",
+   "language": "hebrew",
+   "lemma": "מַדְרֵגָה",
+   "gloss": "steep",
+   "definition": "properly, a step; by implication, a steep or inaccessible place",
+   "derivation": "from an unused root meaning to step;",
+   "sha256": "e79313a8ead72777a247a2e439945148b57e1e1fac037817ecff575ec884b488"
+  },
+  {
+   "strongs": "H4096",
+   "language": "hebrew",
+   "lemma": "מִדְרָךְ",
+   "gloss": "treading",
+   "definition": "a treading, i.e. a place for stepping on",
+   "derivation": "from 1869;",
+   "sha256": "8593dfbb394c190d786d40ddd60d39d901527f52420ecc2bf3970b1d14ad0784"
+  },
+  {
+   "strongs": "H4097",
+   "language": "hebrew",
+   "lemma": "מִדְרָשׁ",
+   "gloss": "story",
+   "definition": "properly, an investigation, i.e. (by implication) a treatise or elaborate compilation",
+   "derivation": "from 1875;",
+   "sha256": "19c500c337565a18f27bdc80f620e21cd58a01ea8bd00ba628277bbe050d2533"
+  },
+  {
+   "strongs": "H4098",
+   "language": "hebrew",
+   "lemma": "מְדֻשָֿׁה",
+   "gloss": "threshed",
+   "definition": "a threshing, i.e. (concretely and figuratively) down-trodden people",
+   "derivation": "from 1758;",
+   "sha256": "bf995cbebc5d7f512045e94cda67af6aeeb4782797cbc1ba012d2840e4184fce"
+  },
+  {
+   "strongs": "H4099",
+   "language": "hebrew",
+   "lemma": "הַמְּדָתָא",
+   "gloss": "Hammedatha",
+   "definition": "Medatha, the father of Haman",
+   "derivation": "of Persian origin;",
+   "sha256": "f663ebe85aa9fc955f39439fe349f86c72865a10798a0329f8eeed1345814b05"
+  },
+  {
+   "strongs": "H4100",
+   "language": "hebrew",
+   "lemma": "מָה",
+   "gloss": "what?",
+   "definition": "properly, interrogative what? (including how? why? when?); but also exclamation, what! (including how!), or indefinitely what (including whatever, and even relatively, that which); often used with prefixes in various adverbial or conjunctive senses",
+   "derivation": "or מַה; or מָ; or מַ; also מֶה; a primitive particle;",
+   "sha256": "06682556b38f31fca2547782afa29c30cadf1637317c40e8801b3b3f63fa5f8f"
+  },
+  {
+   "strongs": "H4101",
+   "language": "hebrew",
+   "lemma": "מָה",
+   "gloss": "what?",
+   "derivation": "(Aramaic) corresponding to 4100",
+   "sha256": "65bf37c938caf2db8fad394790b366f4a61cf29a002d3238c658a6d1dec8a365"
+  },
+  {
+   "strongs": "H4102",
+   "language": "hebrew",
+   "lemma": "מָהַהּ",
+   "gloss": "to delay",
+   "definition": "properly, to question or hesitate, i.e. (by implication) to be reluctant",
+   "derivation": "apparently a denominative from 4100;",
+   "sha256": "757db5113babf50f333117811a78dfaae294a7dfb83097b63735b1e2e6f7da42"
+  },
+  {
+   "strongs": "H4103",
+   "language": "hebrew",
+   "lemma": "מְהוּמָה",
+   "gloss": "tumult",
+   "definition": "confusion or uproar",
+   "derivation": "from 1949;",
+   "sha256": "a3afaa83bcb1b1fb6e9dba46c212cd85eb25b0382c9dd167fb51229bef66cbbb"
+  },
+  {
+   "strongs": "H4104",
+   "language": "hebrew",
+   "lemma": "מְהוּמָן",
+   "gloss": "Mehuman",
+   "definition": "Mehuman, a eunuch of Xerxes",
+   "derivation": "of Persian origin;",
+   "sha256": "f9ab71a8de192ff7af3090fa2a2987eacc332b5ab3274b83eb65b71185aabe8b"
+  },
+  {
+   "strongs": "H4105G",
+   "language": "hebrew",
+   "lemma": "מְהֵיטַבְאֵל",
+   "gloss": "Mehetabel",
+   "definition": "Mehetabel, the name of an Edomitish man and woman",
+   "derivation": "from 3190 (augmented) and 410; bettered of God;",
+   "sha256": "a99a1b578ba4ef6e183cc4e041052ac2d9e925601b362eeb9f661e739da7de12"
+  },
+  {
+   "strongs": "H4105H",
+   "language": "hebrew",
+   "lemma": "מְהֵיטַבְאֵל",
+   "gloss": "Mehetabel",
+   "definition": "Mehetabel, the name of an Edomitish man and woman",
+   "derivation": "from 3190 (augmented) and 410; bettered of God;",
+   "sha256": "a99a1b578ba4ef6e183cc4e041052ac2d9e925601b362eeb9f661e739da7de12"
+  },
+  {
+   "strongs": "H4106",
+   "language": "hebrew",
+   "lemma": "מָהִיר",
+   "gloss": "quick",
+   "definition": "quick; hence, skilful",
+   "derivation": "or מָהִר; from 4116;",
+   "sha256": "86d7be5cf194af11255b42fa02c15986751b17cae2a67a444c3ba9387e98a4b4"
+  },
+  {
+   "strongs": "H4107",
+   "language": "hebrew",
+   "lemma": "מָהַל",
+   "gloss": "to weaken",
+   "definition": "properly, to cut down or reduce, i.e. by implication, to adulterate",
+   "derivation": "a primitive root;",
+   "sha256": "b3cf3baab4dcb962c8f1e1a8045adbe3f5d3e065856dd6666a0e7c2e4df935be"
+  },
+  {
+   "strongs": "H4108",
+   "language": "hebrew",
+   "lemma": "מַהְלֵךְ",
+   "gloss": "path",
+   "definition": "a walking (plural collectively), i.e. access",
+   "derivation": "from 1980;",
+   "sha256": "ee98cbc4364116dd14bcf5b43da45df09c19d093532c1dd317a2ad739782b893"
+  },
+  {
+   "strongs": "H4109",
+   "language": "hebrew",
+   "lemma": "מַהֲלָךְ",
+   "gloss": "journey",
+   "definition": "a walk, i.e. a passage or a distance",
+   "derivation": "from 1980;",
+   "sha256": "0bd6c876479f590f81a25067405c0d760a19970ae99fa168dec55a6fcb0bbfb5"
+  },
+  {
+   "strongs": "H4110",
+   "language": "hebrew",
+   "lemma": "מַהֲלָל",
+   "gloss": "praise",
+   "definition": "fame",
+   "derivation": "from 1984;",
+   "sha256": "ef3ab5d2ee713b92e13286d7b889ec24d4e3efe9569f14a59dd8ebb314459b3c"
+  },
+  {
+   "strongs": "H4111G",
+   "language": "hebrew",
+   "lemma": "מַהֲלַלְאֵל",
+   "gloss": "Mahalalel",
+   "definition": "Mahalalel, the name of an antediluvian patriarch and of an Israelite",
+   "derivation": "from 4110 and 410; praise of God;",
+   "sha256": "35dde7a90aa7f49d27868802ec9fe851f7a436a0c178fb41810d2b908344857a"
+  },
+  {
+   "strongs": "H4111H",
+   "language": "hebrew",
+   "lemma": "מַהֲלַלְאֵל",
+   "gloss": "Mahalalel",
+   "definition": "Mahalalel, the name of an antediluvian patriarch and of an Israelite",
+   "derivation": "from 4110 and 410; praise of God;",
+   "sha256": "35dde7a90aa7f49d27868802ec9fe851f7a436a0c178fb41810d2b908344857a"
+  },
+  {
+   "strongs": "H4112",
+   "language": "hebrew",
+   "lemma": "מַהֲלֻמֿוֹת",
+   "gloss": "blow",
+   "definition": "a blow",
+   "derivation": "from 1986;",
+   "sha256": "7e6abcecb17fd1375091f71b6a7a951d6c4d683f0057d740c559bef7c6554a69"
+  },
+  {
+   "strongs": "H4113",
+   "language": "hebrew",
+   "lemma": "מַהֲמֹרָה",
+   "gloss": "flood",
+   "definition": "perhaps an abyss",
+   "derivation": "from an unused root of uncertain meaning;",
+   "sha256": "851c434d7109dd7076606e53408062346013eb547e16315b4a20479b151451fc"
+  },
+  {
+   "strongs": "H4114",
+   "language": "hebrew",
+   "lemma": "מַהְפֵּכָה",
+   "gloss": "overthrow",
+   "definition": "a destruction",
+   "derivation": "from 2015;",
+   "sha256": "24cd7cd869f2f6f636dfca98c65a6b6ef20edc0daf87c7641e53189afed21820"
+  },
+  {
+   "strongs": "H4115",
+   "language": "hebrew",
+   "lemma": "מַהְפֶּ֫כֶת",
+   "gloss": "stocks",
+   "definition": "a wrench, i.e. the stocks",
+   "derivation": "from 2015;",
+   "sha256": "b7b82c6ac0232d1b6e6a0420aa00dd2a2d505a745efa7223e1f3a3323a109085"
+  },
+  {
+   "strongs": "H4116A",
+   "language": "hebrew",
+   "lemma": "מָהַר",
+   "gloss": "to hasten",
+   "definition": "properly, to be liquid or flow easily, i.e. (by implication); to hurry (in a good or a bad sense); often used (with another verb) adverbially, promptly",
+   "derivation": "a primitive root;",
+   "sha256": "68a4b31c834942b9132bd670eb4d2b45f0bf412689ef905d9a00a57639a256cc"
+  },
+  {
+   "strongs": "H4116B",
+   "language": "hebrew",
+   "lemma": "מָהַר",
+   "gloss": "to buy",
+   "definition": "properly, to be liquid or flow easily, i.e. (by implication); to hurry (in a good or a bad sense); often used (with another verb) adverbially, promptly",
+   "derivation": "a primitive root;",
+   "sha256": "fcb6dd712645c3d1a2276d013f0345343721ace22c29a7ef78f7c4b3e7b0330c"
+  },
+  {
+   "strongs": "H4117",
+   "language": "hebrew",
+   "lemma": "מָהַר",
+   "gloss": "to pay brideprice",
+   "definition": "to bargain (for a wife), i.e. to wed",
+   "derivation": "a primitive root (perhaps rather the same as 4116 through the idea of readiness in assent);",
+   "sha256": "ccf58d4099c01fe14fd93939774fa404e45bb2f7f50f728bc2c5b2f6d46d2cda"
+  },
+  {
+   "strongs": "H4118A",
+   "language": "hebrew",
+   "lemma": "מַהֵר",
+   "gloss": "quick",
+   "definition": "properly, hurrying; hence (adverbially) in a hurry",
+   "derivation": "from 4116;",
+   "sha256": "7bb309a32fd8c93fac6de07433967926fd9ace4488ce1859d04e7642329e8225"
+  },
+  {
+   "strongs": "H4118B",
+   "language": "hebrew",
+   "lemma": "מַהֵר",
+   "gloss": "quickly",
+   "definition": "properly, hurrying; hence (adverbially) in a hurry",
+   "derivation": "from 4116;",
+   "sha256": "0f8793ec5289d6dd20334c9d853a42026463b5efd2a291d1d705a96519842669"
+  },
+  {
+   "strongs": "H4119",
+   "language": "hebrew",
+   "lemma": "מֹ֫הַר",
+   "gloss": "brideprice",
+   "definition": "a price (for a wife)",
+   "derivation": "from 4117;",
+   "sha256": "0a3a3eddd133f37e75977be27d914b924a4c4ca25a48237b10d0707b77ea648d"
+  },
+  {
+   "strongs": "H4120",
+   "language": "hebrew",
+   "lemma": "מְהֵרָה",
+   "gloss": "haste",
+   "definition": "properly, a hurry; hence (adverbially) promptly",
+   "derivation": "feminine of 4118;",
+   "sha256": "0612126212dce5902bd099e460a8a122ce33aee8dd7d726bdb79f5769e6bbfbe"
+  },
+  {
+   "strongs": "H4121",
+   "language": "hebrew",
+   "lemma": "מַהֲרַי",
+   "gloss": "Maharai",
+   "definition": "Maharai, an Israelite",
+   "derivation": "from 4116; hasty;",
+   "sha256": "e0dcf9a1f2fff174ecc427be15769f4242fe52e34cb6180da842d41716b129ff"
+  },
+  {
+   "strongs": "H4122",
+   "language": "hebrew",
+   "lemma": "מַהֵר שָׁלָל חָשׁ בַּז",
+   "gloss": "Maher-shalal-hash-baz",
+   "definition": "Maher-Shalal-Chash-Baz; the symbolical name of the son of Isaiah",
+   "derivation": "from 4118 and 7998 and 2363 and 957; hasting (is he (the enemy) to the) booty, swift (to the) prey;",
+   "sha256": "edcb97c988af5939a28f802cda76fea7556b2a3fb32beb73d9527b0cf20c8d43"
+  },
+  {
+   "strongs": "H4123",
+   "language": "hebrew",
+   "lemma": "מַֽהֲתַלּוֹת",
+   "gloss": "deception",
+   "definition": "a delusion",
+   "derivation": "from 2048;",
+   "sha256": "ef3e1b0d8f53c236dc4d6a15d70c1d012f67593ee45cacb3d64bf12121be4c89"
+  },
+  {
+   "strongs": "H4124G",
+   "language": "hebrew",
+   "lemma": "מוֹאָב",
+   "gloss": "Moab",
+   "definition": "Moab, an incestuous son of Lot; also his territory and descendants",
+   "derivation": "from a prolonged form of the prepositional prefix m- and 1; from (her [the mother's]) father;",
+   "sha256": "afb1373c74156a02e9b6858bad5154f92da054286519d0ef9035f5c7aeaaea8f"
+  },
+  {
+   "strongs": "H4124H",
+   "language": "hebrew",
+   "lemma": "מוֹאָב",
+   "gloss": "Moab",
+   "definition": "Moab, an incestuous son of Lot; also his territory and descendants",
+   "derivation": "from a prolonged form of the prepositional prefix m- and 1; from (her [the mother's]) father;",
+   "sha256": "afb1373c74156a02e9b6858bad5154f92da054286519d0ef9035f5c7aeaaea8f"
+  },
+  {
+   "strongs": "H4124I",
+   "language": "hebrew",
+   "lemma": "מוֹאָב",
+   "gloss": "(Plains of) Moab",
+   "definition": "Moab, an incestuous son of Lot; also his territory and descendants",
+   "derivation": "from a prolonged form of the prepositional prefix m- and 1; from (her [the mother's]) father;",
+   "sha256": "ca0fa5fc817ba9c019303533835f59b2b19c05eea43e410449419393370377ae"
+  },
+  {
+   "strongs": "H4125",
+   "language": "hebrew",
+   "lemma": "מוֹאָבִי",
+   "gloss": "Moabite",
+   "definition": "a Moabite or Moabitess, i.e. a descendant from Moab",
+   "derivation": "feminine מוֹאָבִיָּה; or מוֹאָבִיתxlit Môwâbîyth corrected to Môwʼâbîyth; patronymical from 4124;",
+   "sha256": "f5658bc9cfff65401b8a449e3f6c57b8f8966f2b6c0cdb7e5298584568d3e0c1"
+  },
+  {
+   "strongs": "H4126",
+   "language": "hebrew",
+   "lemma": "מוֹבָא",
+   "gloss": "entrance",
+   "definition": "an entrance",
+   "derivation": "by transp. for 3996;",
+   "sha256": "08fd443b1561c9b46d1f5401bfe936f201ddc5a8a3f728946c8bf9f79c7c893c"
+  },
+  {
+   "strongs": "H4127",
+   "language": "hebrew",
+   "lemma": "מוּג",
+   "gloss": "to melt",
+   "definition": "to melt, i.e. literally (to soften, flow down, disappear), or figuratively (to fear, faint)",
+   "derivation": "a primitive root;",
+   "sha256": "ef5065aee0efa76d290be8707e0dc9f1b0795aac1c3708aa67e7e5498726e4c9"
+  },
+  {
+   "strongs": "H4128",
+   "language": "hebrew",
+   "lemma": "מוּד",
+   "gloss": "to shake",
+   "definition": "to shake",
+   "derivation": "a primitive root;",
+   "sha256": "d7bd582d9de806f3e193e05e2e9992248c69f23b893e61bcdd8f93b771a9f9e4"
+  },
+  {
+   "strongs": "H4129",
+   "language": "hebrew",
+   "lemma": "מוֹדַע",
+   "gloss": "kinsman",
+   "definition": "an acquaintance",
+   "derivation": "or rather מֹדָע; from 3045;",
+   "sha256": "458472baa20e00bc35036a3b4c0a3ca454bd123ba3ddcef741babb3f458d168b"
+  },
+  {
+   "strongs": "H4130",
+   "language": "hebrew",
+   "lemma": "מֹדַ֫עַת",
+   "gloss": "kinsman",
+   "definition": "acquaintance",
+   "derivation": "from 3045;",
+   "sha256": "3f93f2d5c51af4af9cc4d18bf4ab27f4590c88edf6c441a9b89adba4415adf44"
+  },
+  {
+   "strongs": "H4131",
+   "language": "hebrew",
+   "lemma": "מוֹט",
+   "gloss": "to shake",
+   "definition": "to waver; by implication, to slip, shake, fall",
+   "derivation": "a primitive root;",
+   "sha256": "f8c25a96e04b74a26ed93b869b4215fb1ed6e8d161bbd9f7699ee66b4b00fc5f"
+  },
+  {
+   "strongs": "H4132",
+   "language": "hebrew",
+   "lemma": "מוֹט",
+   "gloss": "yoke",
+   "definition": "a wavering, i.e. fall; by implication, a pole (as shaking); hence, a yoke (as essentially a bent pole)",
+   "derivation": "from 4131;",
+   "sha256": "9181d016dbc5fea0fb1a747735fc5056bc6c20fcb8469ea9474bae558c847e67"
+  },
+  {
+   "strongs": "H4133",
+   "language": "hebrew",
+   "lemma": "מוֹטָה",
+   "gloss": "yoke",
+   "definition": "a pole; by implication, an ox-bow; hence, a yoke (either literal or figurative)",
+   "derivation": "feminine of 4132;",
+   "sha256": "f3304367d9843ea61bc357bb66aa0fa9d9767395c87b54d7e4c5ac17534b4585"
+  },
+  {
+   "strongs": "H4134",
+   "language": "hebrew",
+   "lemma": "מוּךְ",
+   "gloss": "be poor",
+   "definition": "to become thin, i.e. (figuratively) be impoverished",
+   "derivation": "a primitive root;",
+   "sha256": "6008da6c1fcc8ccecb83e5d81634c81801b2366db3bfdd4de80ed299e7e22863"
+  },
+  {
+   "strongs": "H4135A",
+   "language": "hebrew",
+   "lemma": "מוּל",
+   "gloss": "to circumcise",
+   "definition": "to cut short, i.e. curtail (specifically the prepuce, i.e. to circumcise); by implication, to blunt; figuratively, to destroy",
+   "derivation": "a primitive root;",
+   "sha256": "346d2a56b30f30eb6d7864e7568589bb449609121f6eb5aabd4269ce537d9e8f"
+  },
+  {
+   "strongs": "H4135B",
+   "language": "hebrew",
+   "lemma": "מָלַל",
+   "gloss": "to circumcise",
+   "definition": "to cut short, i.e. curtail (specifically the prepuce, i.e. to circumcise); by implication, to blunt; figuratively, to destroy",
+   "derivation": "a primitive root;",
+   "sha256": "346d2a56b30f30eb6d7864e7568589bb449609121f6eb5aabd4269ce537d9e8f"
+  },
+  {
+   "strongs": "H4136",
+   "language": "hebrew",
+   "lemma": "מוּל",
+   "gloss": "opposite",
+   "definition": "properly, abrupt, i.e. a precipice; by implication, the front; used only adverbially (with prepositional prefix) opposite",
+   "derivation": "or מוֹל; (Deuteronomy 1:1), or מוֹאל; (Nehemiah 12:38), or מֻל; (Numbers 22:5), from 4135;",
+   "sha256": "095a52f4bfd18e9411e7169a6f1e42e2719095989ed84a32a30cb766c5b83ccc"
+  },
+  {
+   "strongs": "H4137",
+   "language": "hebrew",
+   "lemma": "מוֹלָדָה",
+   "gloss": "Moladah",
+   "definition": "Moladah, a place in Palestine",
+   "derivation": "from 3205; birth;",
+   "sha256": "cf771c26db3d0b18f7388e31d801ecb21886a10aa7e7a6e01f1b5346c7e31006"
+  },
+  {
+   "strongs": "H4138",
+   "language": "hebrew",
+   "lemma": "מוֹלֶ֫דֶת",
+   "gloss": "relatives",
+   "definition": "nativity (plural birth-place); by implication, lineage, native country; also offspring, family",
+   "derivation": "from 3205;",
+   "sha256": "ee4136b98238dc90da2b40e08784a9fe90c6aabb1881e1b0a5a95f4946d7fd51"
+  },
+  {
+   "strongs": "H4139",
+   "language": "hebrew",
+   "lemma": "מוּלָה",
+   "gloss": "circumcision",
+   "definition": "circumcision",
+   "derivation": "from 4135;",
+   "sha256": "843228c1f9d505086f64418da08df822c701abd9c2433c597d13bcde33acb21e"
+  },
+  {
+   "strongs": "H4140",
+   "language": "hebrew",
+   "lemma": "מוֹלִיד",
+   "gloss": "Molid",
+   "definition": "Molid, an Israelite",
+   "derivation": "from 3205; genitor;",
+   "sha256": "d0c162ee533baf401bcf02d36e57bf6d69f0349931b04774343fe579986ba6f8"
+  },
+  {
+   "strongs": "H4141",
+   "language": "hebrew",
+   "lemma": "מוּסָב",
+   "gloss": "surrounding",
+   "definition": "a turn, i.e. circuit (of a building)",
+   "derivation": "from 5437;",
+   "sha256": "a9c4479fb206efc263491be89078074b42d2ab313b49f1f44094e48f10bb5dc2"
+  },
+  {
+   "strongs": "H4142",
+   "language": "hebrew",
+   "lemma": "מוּסַבָּה",
+   "gloss": "surrounded",
+   "definition": "a reversal, i.e. the backside (of a gem), fold (of a double-leaved door), transmutation (of a name)",
+   "derivation": "or מֻסַבָּה; feminine of 4141;",
+   "sha256": "364cf0a583d55cbcdf45c3420009e46e08b8344ebd1719733196df4a2e190e0c"
+  },
+  {
+   "strongs": "H4143",
+   "language": "hebrew",
+   "lemma": "מוּסָד",
+   "gloss": "foundation",
+   "definition": "a foundation",
+   "derivation": "from 3245;",
+   "sha256": "de5f15f06c2b9dadc0f4467d329578e3cad2690e4292e35f3a3bf0bed6928cc2"
+  },
+  {
+   "strongs": "H4144",
+   "language": "hebrew",
+   "lemma": "מוֹסָד",
+   "gloss": "foundation",
+   "definition": "a foundation",
+   "derivation": "from 3245;",
+   "sha256": "de5f15f06c2b9dadc0f4467d329578e3cad2690e4292e35f3a3bf0bed6928cc2"
+  },
+  {
+   "strongs": "H4145",
+   "language": "hebrew",
+   "lemma": "מוּסָדָה",
+   "gloss": "appointment",
+   "definition": "a foundation; figuratively, an appointment",
+   "derivation": "feminine of 4143;",
+   "sha256": "f38c0a15ec44b749d6388be9507bd8ea6aa3458f5c0dd55af0325e2d2bd4192d"
+  },
+  {
+   "strongs": "H4146",
+   "language": "hebrew",
+   "lemma": "מוֹסָדָה",
+   "gloss": "foundation",
+   "definition": "a foundation",
+   "derivation": "or מֹסָדָה; feminine of 4144;",
+   "sha256": "d4c89f3a46a54e467f8f6d942306af3ddd01e839c5888b35c5b3d709142c5c1d"
+  },
+  {
+   "strongs": "H4147",
+   "language": "hebrew",
+   "lemma": "מוֹסֵר",
+   "gloss": "bond",
+   "definition": "properly, chastisement, i.e. (by implication) a halter; figuratively, restraint",
+   "derivation": "also (in plural) feminine מוֹסֵרָה; or מֹסְרָה; from 3256;",
+   "sha256": "0ca1da70e547426c446483d6b3ae2a51d0badf1f1871e7aa49250f477ae1c21e"
+  },
+  {
+   "strongs": "H4148G",
+   "language": "hebrew",
+   "lemma": "מוּסָר",
+   "gloss": "discipline",
+   "definition": "properly, chastisement; figuratively, reproof, warning or instruction; also restraint",
+   "derivation": "from 3256;",
+   "sha256": "87406c81d948abfe795641d3b4ee061547de33e715ee6bef01fb3a2090c16725"
+  },
+  {
+   "strongs": "H4148H",
+   "language": "hebrew",
+   "lemma": "מוּסָר",
+   "gloss": "discipline: instruction",
+   "definition": "properly, chastisement; figuratively, reproof, warning or instruction; also restraint",
+   "derivation": "from 3256;",
+   "sha256": "c3389a22d2b41dd9b456287aaac5fe358880c1fed1f330f5dc4fc79026b48a4f"
+  },
+  {
+   "strongs": "H4148I",
+   "language": "hebrew",
+   "lemma": "מוּסָר",
+   "gloss": "discipline: bonds",
+   "definition": "properly, chastisement; figuratively, reproof, warning or instruction; also restraint",
+   "derivation": "from 3256;",
+   "sha256": "2f4901b6015d10844bbdc6dc2bf6e13c5c9a631fcbc7b29da9745d8d3a1e0762"
+  },
+  {
+   "strongs": "H4149A",
+   "language": "hebrew",
+   "lemma": "מוֹסֵרָה",
+   "gloss": "Moserah",
+   "definition": "Moserah, a place in the Desert",
+   "derivation": "or (plural) מֹסְרוֹת feminine of 4147; correction or corrections;",
+   "sha256": "c3c8882132a10c2fdfda458b3cc10338913ee3dc00017c7e7b7238559ef46b38"
+  },
+  {
+   "strongs": "H4149B",
+   "language": "hebrew",
+   "lemma": "מֹסֵרוֹת",
+   "gloss": "Moseroth",
+   "definition": "Moserah, a place in the Desert",
+   "derivation": "or (plural) מֹסְרוֹת feminine of 4147; correction or corrections;",
+   "sha256": "97766b7715210da09e31688573f3da1563b01b15f54f10793675e1eaef0e7062"
+  },
+  {
+   "strongs": "H4150G",
+   "language": "hebrew",
+   "lemma": "מוֹעֵד",
+   "gloss": "meeting: time appointed",
+   "definition": "properly, an appointment, i.e. a fixed time or season; specifically, a festival; conventionally a year; by implication, an assembly (as convened for a definite purpose); technically the congregation; by extension, the place of meeting; also a signal (as appointed beforehand)",
+   "derivation": "or מֹעֵד; or (feminine) מוֹעָדָה; (2 Chronicles 8:13), from 3259;",
+   "sha256": "f6434a2bb58597798f6e05bed0131adbc7561270b88d95d9681f31b565539e51"
+  },
+  {
+   "strongs": "H4150H",
+   "language": "hebrew",
+   "lemma": "מוֹעֵד",
+   "gloss": "meeting: festival",
+   "definition": "properly, an appointment, i.e. a fixed time or season; specifically, a festival; conventionally a year; by implication, an assembly (as convened for a definite purpose); technically the congregation; by extension, the place of meeting; also a signal (as appointed beforehand)",
+   "derivation": "or מֹעֵד; or (feminine) מוֹעָדָה; (2 Chronicles 8:13), from 3259;",
+   "sha256": "d5facb71eeb2002ba7335771f0ec9a7451123a8104b22f819c568d612ff1c2fb"
+  },
+  {
+   "strongs": "H4150I",
+   "language": "hebrew",
+   "lemma": "מוֹעֵד",
+   "gloss": "meeting",
+   "definition": "properly, an appointment, i.e. a fixed time or season; specifically, a festival; conventionally a year; by implication, an assembly (as convened for a definite purpose); technically the congregation; by extension, the place of meeting; also a signal (as appointed beforehand)",
+   "derivation": "or מֹעֵד; or (feminine) מוֹעָדָה; (2 Chronicles 8:13), from 3259;",
+   "sha256": "5fe787c074cd15a70bb39041679ca7380e51e5c802eea0f0c4cd9a6c44bd5905"
+  },
+  {
+   "strongs": "H4150J",
+   "language": "hebrew",
+   "lemma": "מוֹעֵד",
+   "gloss": "meeting: signal appointed",
+   "definition": "properly, an appointment, i.e. a fixed time or season; specifically, a festival; conventionally a year; by implication, an assembly (as convened for a definite purpose); technically the congregation; by extension, the place of meeting; also a signal (as appointed beforehand)",
+   "derivation": "or מֹעֵד; or (feminine) מוֹעָדָה; (2 Chronicles 8:13), from 3259;",
+   "sha256": "9c8d0dfa07cd73b9fdce5eb35307c360739b4f3662c6dcf167dc2be85ef1b380"
+  },
+  {
+   "strongs": "H4151",
+   "language": "hebrew",
+   "lemma": "מוֹעָד",
+   "gloss": "ranks",
+   "definition": "properly, an assembly figuratively, a troop",
+   "derivation": "from 3259; (as in 4150);",
+   "sha256": "97d8cffe0e320457e2606256840567d7e7de1945a31e97d47543f449ad8135bf"
+  },
+  {
+   "strongs": "H4152",
+   "language": "hebrew",
+   "lemma": "מוּעָדָה",
+   "gloss": "designated",
+   "definition": "an appointed place, i.e. asylum",
+   "derivation": "from 3259;",
+   "sha256": "ea24c6fa3579ddecbfedfa0537b3cccd0c496f58b1bcdb29b1c24586e172b6a5"
+  },
+  {
+   "strongs": "H4153",
+   "language": "hebrew",
+   "lemma": "מוֹעַדְיָה",
+   "gloss": "Moadiah",
+   "definition": "Moadjah, an Israelite",
+   "derivation": "from 4151 and 3050; assembly of Jah;",
+   "sha256": "bb2e74eb12da71017868ebf67d0273cae9e1daa68d02f4a597c6d48f954370fa"
+  },
+  {
+   "strongs": "H4154",
+   "language": "hebrew",
+   "lemma": "מוּעֶדֶת",
+   "gloss": "disjointed",
+   "definition": "properly, made to slip, i.e. dislocated",
+   "derivation": "feminine passive participle of 4571;",
+   "sha256": "fd651bdb5c0c9d7ed1236e740600485bf33ce294ce54b62c3b3e9a271aa2f55b"
+  },
+  {
+   "strongs": "H4155",
+   "language": "hebrew",
+   "lemma": "מוּעָף",
+   "gloss": "gloom",
+   "definition": "properly, covered, i.e. dark; abstractly, obscurity, i.e. distress",
+   "derivation": "from 5774;",
+   "sha256": "e3a969dee582039df626f504bdb7a86aea99d0e24dcc1cf8b377880c279790b8"
+  },
+  {
+   "strongs": "H4156",
+   "language": "hebrew",
+   "lemma": "מוֹעֵצָה",
+   "gloss": "counsel",
+   "definition": "a purpose",
+   "derivation": "from 3289;",
+   "sha256": "03076a19ad2fc4b11fa98e2b6bec1007c92c655cfcb93f67fd82be0b2654aa50"
+  },
+  {
+   "strongs": "H4157",
+   "language": "hebrew",
+   "lemma": "מוּעָקָה",
+   "gloss": "distress",
+   "definition": "pressure, i.e. (figuratively) distress",
+   "derivation": "from 5781;",
+   "sha256": "e15c1f160d8d3bd0fbd83beafde4daca30b8af123d205bab853ef4f0c76b32ff"
+  },
+  {
+   "strongs": "H4158",
+   "language": "hebrew",
+   "lemma": "מֵיפַ֫עַת",
+   "gloss": "Mephaath",
+   "definition": "Mophaath or Mephaath, a place in Palestine",
+   "derivation": "(Jeremiah 48:21) or מֵיפַעַת; or מֵפַעַת; from 3313; illuminative;",
+   "sha256": "3dc479a73e3c03a67dd6ea281da90e63f568aa67ab14c7497df812d9edc94eb0"
+  },
+  {
+   "strongs": "H4159",
+   "language": "hebrew",
+   "lemma": "מוֹפֵת",
+   "gloss": "wonder",
+   "definition": "a miracle; by implication, a token or omen",
+   "derivation": "or מֹפֵת; from 3302 in the sense of conspicuousness;",
+   "sha256": "590e0a9df406dd74f85b49a6d77d3a8e9e6deab039ea65198f81f8854952c248"
+  },
+  {
+   "strongs": "H4160",
+   "language": "hebrew",
+   "lemma": "מֵץ",
+   "gloss": "extortioner",
+   "definition": "to press, i.e. (figuratively) to oppress",
+   "derivation": "a primitive root;",
+   "sha256": "0a311a9e895d6a13e83039e7c57358d7991d83af6b6462dc8d99e9da301aeabd"
+  },
+  {
+   "strongs": "H4161",
+   "language": "hebrew",
+   "lemma": "מוֹצָא",
+   "gloss": "exit",
+   "definition": "a going forth, i.e. (the act) an egress, or (the place) an exit; hence, a source or product; specifically, dawn, the rising of the sun (the East), exportation, utterance, a gate, a fountain, a mine, a meadow (as producing grass)",
+   "derivation": "or מֹצָאxlit môtsâ corrected to môtsâʼ; from 3318;",
+   "sha256": "82a5b1129ef683abb6dc5cdc65121a61c4280dfcb7571d886f3c76428b838d57"
+  },
+  {
+   "strongs": "H4162G",
+   "language": "hebrew",
+   "lemma": "מוֹצָא",
+   "gloss": "Moza",
+   "definition": "Motsa, the name of two Israelites",
+   "derivation": "the same as 4161;",
+   "sha256": "11b8d607501202a8b8f917c20c447e966b0de64d9d00c64088098bf06face796"
+  },
+  {
+   "strongs": "H4162H",
+   "language": "hebrew",
+   "lemma": "מוֹצָא",
+   "gloss": "Moza",
+   "definition": "Motsa, the name of two Israelites",
+   "derivation": "the same as 4161;",
+   "sha256": "11b8d607501202a8b8f917c20c447e966b0de64d9d00c64088098bf06face796"
+  },
+  {
+   "strongs": "H4163",
+   "language": "hebrew",
+   "lemma": "מוֹצָאָה",
+   "gloss": "going forth",
+   "definition": "a family descent; also a sewer",
+   "derivation": "feminine of 4161; (marg.; compare 6675)",
+   "sha256": "3d993bc8184dd3227f850353e1a1e169dda4572f310af06b572fa76a72106187"
+  },
+  {
+   "strongs": "H4164",
+   "language": "hebrew",
+   "lemma": "מוּצָק",
+   "gloss": "constraint",
+   "definition": "narrowness; figuratively, distress",
+   "derivation": "or מוּצָק; from 3332;",
+   "sha256": "8047f2a7816c40322153299188e3b627323d3d2363d710bb1734ed2d4354dd49"
+  },
+  {
+   "strongs": "H4165",
+   "language": "hebrew",
+   "lemma": "מוּצָק",
+   "gloss": "casting",
+   "definition": "properly, fusion, i.e. literally, a casting (of metal); figuratively, a mass (of clay)",
+   "derivation": "from 5694;",
+   "sha256": "f3192e6dc481a0e61db867d0ac11326ea84949a7ba1bb1e070c8173e542ee438"
+  },
+  {
+   "strongs": "H4166",
+   "language": "hebrew",
+   "lemma": "מוּצֶ֫קֶת",
+   "gloss": "casting",
+   "definition": "properly, something poured out, i.e. a casting (of metal); by implication, a tube (as cast)",
+   "derivation": "or מֻצָקָה; from 3332;",
+   "sha256": "a406eaa123807e3aa3dd2cf926953eb78ef763c4860eb2b92e09db9ddd88e544"
+  },
+  {
+   "strongs": "H4167",
+   "language": "hebrew",
+   "lemma": "מוּק",
+   "gloss": "to mock",
+   "definition": "to jeer, i.e. (intens.) blaspheme",
+   "derivation": "a primitive root;",
+   "sha256": "9bf4233a4e739504f4200de48082550f262303f5b6085d31013c7d8bda3519bf"
+  },
+  {
+   "strongs": "H4168",
+   "language": "hebrew",
+   "lemma": "מוֹקֵד",
+   "gloss": "burning",
+   "definition": "a fire or fuel; abstractly, a conflagration",
+   "derivation": "from 3344;",
+   "sha256": "1cc0b1bd885d41a53ecf0ed9419899ac47c237891c452811f088f6bef9123c60"
+  },
+  {
+   "strongs": "H4169",
+   "language": "hebrew",
+   "lemma": "מוֹקְדָה",
+   "gloss": "hearth",
+   "definition": "fuel",
+   "derivation": "feminine of 4168;",
+   "sha256": "dd6f61f827c29349d3817ec8f625848955563eef2e00c5ca47ad634d5898118a"
+  },
+  {
+   "strongs": "H4170",
+   "language": "hebrew",
+   "lemma": "מוֹקֵשׁ",
+   "gloss": "snare",
+   "definition": "a noose (for catching animals) (literally or figuratively); by implication, a hook (for the nose)",
+   "derivation": "or מֹקֵשׁ; from 3369;",
+   "sha256": "9ef15d57df69b0b826bb431c6aa6bc2863ed2262725dd16cb556018887bdb417"
+  },
+  {
+   "strongs": "H4171",
+   "language": "hebrew",
+   "lemma": "מוּר",
+   "gloss": "to change",
+   "definition": "to alter; by implication, to barter, to dispose of",
+   "derivation": "a primitive root;",
+   "sha256": "3e5f5d2cd08911edb00eaebcd68068d9468fe53a4372b52a8685f26479d4b749"
+  },
+  {
+   "strongs": "H4172A",
+   "language": "hebrew",
+   "lemma": "מוֹרָא",
+   "gloss": "fear",
+   "definition": "fear; by implication, a fearful thing or deed",
+   "derivation": "or מֹרָא; or מוֹרָהxlit môrâh corrected to môwrâh; (Psalm 9:20), from 3372;",
+   "sha256": "05e5998f4be312d30a749efa967c19a76c94adeca3a4f07eaecdf3906f1962f9"
+  },
+  {
+   "strongs": "H4172B",
+   "language": "hebrew",
+   "lemma": "מוֹרָה",
+   "gloss": "fear",
+   "definition": "fear; by implication, a fearful thing or deed",
+   "derivation": "or מֹרָא; or מוֹרָהxlit môrâh corrected to môwrâh; (Psalm 9:20), from 3372;",
+   "sha256": "05e5998f4be312d30a749efa967c19a76c94adeca3a4f07eaecdf3906f1962f9"
+  },
+  {
+   "strongs": "H4173",
+   "language": "hebrew",
+   "lemma": "מוֹרַג",
+   "gloss": "threshing sled",
+   "definition": "a threshing sledge",
+   "derivation": "or מֹרַג; from an unused root meaning to triturate;",
+   "sha256": "9e6feadb99c53625914872e8ef35050ef0445348e3c12efd74bd840e96d21fbe"
+  },
+  {
+   "strongs": "H4174",
+   "language": "hebrew",
+   "lemma": "מוֹרָד",
+   "gloss": "descent",
+   "definition": "a descent; as architecture, an ornamental appendage, perhaps a festoon",
+   "derivation": "from 3381;",
+   "sha256": "3b023891eacffca540e1570f854ae9d776d466d8a78b22d125bedb1e98b8f0f1"
+  },
+  {
+   "strongs": "H4175",
+   "language": "hebrew",
+   "lemma": "מוֹרֶה",
+   "gloss": "rain/teacher",
+   "definition": "an archer; also teacher or teaching; also the early rain",
+   "derivation": "from 3384; (see 3138)",
+   "sha256": "f9a2e73d4e13e1a2133e12cec6370d00e450ba4c46b2f0c0d90525e84a2ebd7e"
+  },
+  {
+   "strongs": "H4176G",
+   "language": "hebrew",
+   "lemma": "מוֹרֶה",
+   "gloss": "Moreh",
+   "definition": "Moreh, a Canaanite; also a hill (perhaps named from him)",
+   "derivation": "or מֹרֶה; the same as 4175;",
+   "sha256": "20e4c165b0f8f5fe8df146a886a12ce544c953d3d20f0b54c9c69d07ff7156d7"
+  },
+  {
+   "strongs": "H4176H",
+   "language": "hebrew",
+   "lemma": "מוֹרֶה",
+   "gloss": "Moreh",
+   "definition": "Moreh, a Canaanite; also a hill (perhaps named from him)",
+   "derivation": "or מֹרֶה; the same as 4175;",
+   "sha256": "20e4c165b0f8f5fe8df146a886a12ce544c953d3d20f0b54c9c69d07ff7156d7"
+  },
+  {
+   "strongs": "H4177",
+   "language": "hebrew",
+   "lemma": "מוֹרָה",
+   "gloss": "razor",
+   "definition": "a razor",
+   "derivation": "from 4171 in the sense of shearing;",
+   "sha256": "9f79ba139b5e467ae24a66b4fef56f8238354abd64f73a47ec1e2469b8037819"
+  },
+  {
+   "strongs": "H4178",
+   "language": "hebrew",
+   "lemma": "מוֹרָט",
+   "gloss": "to peel",
+   "definition": "obstinate, i.e. independent",
+   "derivation": "from 3399;",
+   "sha256": "a6ee4d5a4cb1e309e0532aaf69e103bb932666f4c672ad16380cf4c3aa9e80c7"
+  },
+  {
+   "strongs": "H4179",
+   "language": "hebrew",
+   "lemma": "מֹרִיָּה",
+   "gloss": "(Mount) Moriah",
+   "definition": "Morijah, a hill in Palestine",
+   "derivation": "or מֹרִיָּה; from 7200 and 3050; seen of Jah;",
+   "sha256": "2ae7fcf8cfd63ec148da14fbeb49ee66ff238e486cdd31199dcfa25b092c87f3"
+  },
+  {
+   "strongs": "H4180",
+   "language": "hebrew",
+   "lemma": "מוֹרָשׁ",
+   "gloss": "possession",
+   "definition": "a possession; figuratively, delight",
+   "derivation": "from 3423;",
+   "sha256": "ab7b8410f4a48f74ed1129de58ef103ba5aedd649ca024717cc3cf248b80b4da"
+  },
+  {
+   "strongs": "H4181",
+   "language": "hebrew",
+   "lemma": "מוֹרָשָׁה",
+   "gloss": "possession",
+   "definition": "a possession",
+   "derivation": "feminine of 4180;",
+   "sha256": "e6672ede30fdfa3bafe85779b9b3e594e70c6a31d8ea4902e01bc3d2b5c62409"
+  },
+  {
+   "strongs": "H4182",
+   "language": "hebrew",
+   "lemma": "מוֹרֶ֫שֶׁת גַּת",
+   "gloss": "Moresheth-gath",
+   "definition": "Moresheth-Gath, a place in Palestine",
+   "derivation": "from 3423 and 1661; possession of Gath;",
+   "sha256": "2d7d577aa2721f93300755ddbade556a2f391b3f0aa28e3b41016a13f812dfbd"
+  },
+  {
+   "strongs": "H4183",
+   "language": "hebrew",
+   "lemma": "מוֹרַשְׁתִּי",
+   "gloss": "Moreshethite",
+   "definition": "a Morashtite or inhabitant of Moresheth-Gath",
+   "derivation": "patrial from 4182;",
+   "sha256": "d168084c47a64130d766924adcce7476daa2268975a2eeb8ba2f91e43c1d5d1c"
+  },
+  {
+   "strongs": "H4184",
+   "language": "hebrew",
+   "lemma": "מוּשׁ",
+   "gloss": "to feel",
+   "definition": "to touch",
+   "derivation": "a primitive root;",
+   "sha256": "3f8ceed3c3503f93c9b344f413dea0693581e20c8a96bacbc6646e64bbdc95ed"
+  },
+  {
+   "strongs": "H4185",
+   "language": "hebrew",
+   "lemma": "מוּשׁ",
+   "gloss": "to remove",
+   "definition": "to withdraw (both literally and figuratively, whether intransitive or transitive)",
+   "derivation": "a primitive root (perhaps rather the same as 4184 through the idea of receding by contact);",
+   "sha256": "ee0e4aec79f44421057911532fb0fc987d9719a8d8bc952454c703d0e163a073"
+  },
+  {
+   "strongs": "H4186",
+   "language": "hebrew",
+   "lemma": "מוֹשָׁב",
+   "gloss": "seat",
+   "definition": "a seat; figuratively, a site; abstractly, a session; by extension an abode (the place or the time); by implication, population",
+   "derivation": "or מֹשָׁב; from 3427;",
+   "sha256": "caa5471f830320d81d2a56ce88d3a9f337059735bc87db15b3dea794b22af64e"
+  },
+  {
+   "strongs": "H4187",
+   "language": "hebrew",
+   "lemma": "מוּשִׁי",
+   "gloss": "Mushi",
+   "definition": "Mushi, a Levite",
+   "derivation": "or מֻשִּׁי; from 4184; sensitive;",
+   "sha256": "a15b5d906bdae73735ea71056ee92b3d55fa450a0d7699445866ef33e088c388"
+  },
+  {
+   "strongs": "H4188",
+   "language": "hebrew",
+   "lemma": "מוּשִׁי",
+   "gloss": "Mushite",
+   "definition": "a Mushite (collectively) or descendants of Mushi",
+   "derivation": "patronymical from 4187;",
+   "sha256": "8da0ad9807be2e6cdff04327cf7e075c596771e4825a76b437c40e77a933c9da"
+  },
+  {
+   "strongs": "H4189",
+   "language": "hebrew",
+   "lemma": "מֹשֶׁכֶת",
+   "gloss": "cord",
+   "definition": "something drawing, i.e. (figuratively) a cord",
+   "derivation": "act participle feminine of 4900;",
+   "sha256": "1a562e48f9215d0721f5526b2caa82330eaa542a83f06640a22d8e964443ecb5"
+  },
+  {
+   "strongs": "H4190",
+   "language": "hebrew",
+   "lemma": "מוֹשָׁעָה",
+   "gloss": "salvation",
+   "definition": "deliverance",
+   "derivation": "from 3467;",
+   "sha256": "167b5bf39d8832b3ad8f3d10d9a68c738b6c4761042a36c1dd6d4947bdeed84c"
+  },
+  {
+   "strongs": "H4191",
+   "language": "hebrew",
+   "lemma": "מוּת",
+   "gloss": "to die",
+   "definition": "to die (literally or figuratively); causatively, to kill",
+   "derivation": "a primitive root;",
+   "sha256": "495089832c6d68b75e177635febb72dd5b2c2cad55aecec3a9544a7036a06df0"
+  },
+  {
+   "strongs": "H4192",
+   "language": "hebrew",
+   "lemma": "לַבֵּן",
+   "gloss": "(Muth-)labben",
+   "definition": "'To die for the son', probably the title of a popular song",
+   "derivation": "(Psalm 48:14) or מוּת לַבֵּן; from 4191 and 1121 with the preposition and article interposed;",
+   "sha256": "bab872dc73b646b5237722d75716197591a7cb5574747b8000294bbc19d62004"
+  },
+  {
+   "strongs": "H4193",
+   "language": "hebrew",
+   "lemma": "מוֹת",
+   "gloss": "death",
+   "definition": "death",
+   "derivation": "(Aramaic) corresponding to 4194;",
+   "sha256": "9e82ab453658ac15da1ca5f9ebc8fd7d13263945bf4a417bcee5fc996727586b"
+  },
+  {
+   "strongs": "H4194",
+   "language": "hebrew",
+   "lemma": "מָ֫וֶת",
+   "gloss": "death",
+   "definition": "death (natural or violent); concretely, the dead, their place or state (hades); figuratively, pestilence, ruin",
+   "derivation": "from 4191;",
+   "sha256": "9a580562cf3b901a1f6aefa899a7ff0139ac456b2817cb8d2a05918d8b6bba0c"
+  },
+  {
+   "strongs": "H4195",
+   "language": "hebrew",
+   "lemma": "מוֹתָר",
+   "gloss": "advantage",
+   "definition": "literally gain; figuratively, superiority",
+   "derivation": "from 3498;",
+   "sha256": "53fa42be9a7159c5837b86facdddbefa2261741ef9811fce7336006bc4594fd6"
+  },
+  {
+   "strongs": "H4196",
+   "language": "hebrew",
+   "lemma": "מִזְבֵּחַ",
+   "gloss": "altar",
+   "definition": "an altar",
+   "derivation": "from 2076;",
+   "sha256": "39b9e6a4c04ff635f360023c42291d2453282fe4cab9945e7da3c057992c27f0"
+  },
+  {
+   "strongs": "H4197",
+   "language": "hebrew",
+   "lemma": "מֶ֫זֶג",
+   "gloss": "mixture",
+   "definition": "tempered wine",
+   "derivation": "from an unused root meaning to mingle (water with wine);",
+   "sha256": "ceef5d7c643542ea2ec63e16c4fe78c4f82d03ac2ae2e998db40fc7d0efcd1a3"
+  },
+  {
+   "strongs": "H4198",
+   "language": "hebrew",
+   "lemma": "מָזֶה",
+   "gloss": "empty",
+   "definition": "exhausted",
+   "derivation": "from an unused root meaning to suck out;",
+   "sha256": "cdda7e50317f9ba4d8030540614db6a3c27f09b485aa17057f659c494818a1b4"
+  },
+  {
+   "strongs": "H4199",
+   "language": "hebrew",
+   "lemma": "מִזָּה",
+   "gloss": "Mizzah",
+   "definition": "Mizzah, an Edomite",
+   "derivation": "probably from an unused root meaning to faint with fear; terror;",
+   "sha256": "78554d0fb5349601232ea31287b9e6be07aae4bbb00ee95e4c092c0a94d99e81"
+  },
+  {
+   "strongs": "H4200",
+   "language": "hebrew",
+   "lemma": "מָ֫זוּ",
+   "gloss": "granary",
+   "definition": "a granary",
+   "derivation": "probably from an unused root meaning to gather in;",
+   "sha256": "0eab968f778215fb1404985c1cf4b8985c087e82a63b4af53167444502e26803"
+  },
+  {
+   "strongs": "H4201",
+   "language": "hebrew",
+   "lemma": "מְזוּזָה",
+   "gloss": "doorpost",
+   "definition": "a door-post (as prominent)",
+   "derivation": "or מְזֻזָה; from the same as 2123;",
+   "sha256": "981051f573e58a9b1bfcba2c284fe1e44ac2a1ef79b879e9a0d73cc26bc7b013"
+  },
+  {
+   "strongs": "H4202",
+   "language": "hebrew",
+   "lemma": "מָזוֹן",
+   "gloss": "food",
+   "definition": "food",
+   "derivation": "from 2109;",
+   "sha256": "90a1bf38096cd259324398a4eae75bc066e6e1b0bb332afbbd6aebb92d32ec51"
+  },
+  {
+   "strongs": "H4203",
+   "language": "hebrew",
+   "lemma": "מָזוֹן",
+   "gloss": "food",
+   "derivation": "(Aramaic) corresponding to 4202",
+   "sha256": "5291e713c52c6855fcbd0fb30e27f170aacd79a54052ca0bdd7dd50a9d973909"
+  },
+  {
+   "strongs": "H4204",
+   "language": "hebrew",
+   "lemma": "מָזוֹר",
+   "gloss": "net",
+   "definition": "treachery, i.e. a plot",
+   "derivation": "from 2114 in the sense of turning aside from truth;",
+   "sha256": "e7742f9e206fdbd8afe42f2b65ff31003b493b2fdcb84f5414ad6ec883cb9fb0"
+  },
+  {
+   "strongs": "H4205",
+   "language": "hebrew",
+   "lemma": "מָזוֹר",
+   "gloss": "wound",
+   "definition": "a bandage, i.e. remedy; hence, a sore (as needing a compress)",
+   "derivation": "or מָזֹר; from 2115 in the sense of binding up;",
+   "sha256": "ba35b875a7767b915941f1332a038e005df84561d777566da5732d23beaf9be5"
+  },
+  {
+   "strongs": "H4206A",
+   "language": "hebrew",
+   "lemma": "מֵ֫זַח",
+   "gloss": "belt",
+   "definition": "a belt (as movable)",
+   "derivation": "or מֵזַח; from 2118;",
+   "sha256": "98bd4ea83aa328634b92134716a20ddeeb383543be6db8551c86b4d563fe7b74"
+  },
+  {
+   "strongs": "H4206B",
+   "language": "hebrew",
+   "lemma": "מְזִיחַ",
+   "gloss": "belt",
+   "definition": "a belt (as movable)",
+   "derivation": "or מֵזַח; from 2118;",
+   "sha256": "98bd4ea83aa328634b92134716a20ddeeb383543be6db8551c86b4d563fe7b74"
+  },
+  {
+   "strongs": "H4207A",
+   "language": "hebrew",
+   "lemma": "מַזְלֵג",
+   "gloss": "fork",
+   "definition": "a fork",
+   "derivation": "or (feminine) מִזְלָגָה; from an unused root meaning to draw up;",
+   "sha256": "8840eea5d2db64ae470b76a4c9b0b39db5076b579b646d25947dad03b88d21c2"
+  },
+  {
+   "strongs": "H4207B",
+   "language": "hebrew",
+   "lemma": "מִזְלָגָה",
+   "gloss": "fork",
+   "definition": "a fork",
+   "derivation": "or (feminine) מִזְלָגָה; from an unused root meaning to draw up;",
+   "sha256": "8840eea5d2db64ae470b76a4c9b0b39db5076b579b646d25947dad03b88d21c2"
+  },
+  {
+   "strongs": "H4208",
+   "language": "hebrew",
+   "lemma": "מַזָּלוֹת",
+   "gloss": "constellation",
+   "definition": "a constellation, i.e. Zodiacal sign (perhaps as affecting the weather)",
+   "derivation": "apparently from 5140 in the sense of raining;",
+   "sha256": "6bcec819a796d5f09fa5d044fae2ebfe496135725b8683411b74735509923dd5"
+  },
+  {
+   "strongs": "H4209",
+   "language": "hebrew",
+   "lemma": "מְזִמָּה",
+   "gloss": "plot",
+   "definition": "a plan, usually evil (machination), sometimes good (sagacity)",
+   "derivation": "from 2161;",
+   "sha256": "96b5bca611773db9c60d0af050131c632ea428b6c11780f31f24ce684a728735"
+  },
+  {
+   "strongs": "H4210",
+   "language": "hebrew",
+   "lemma": "מִזְמוֹר",
+   "gloss": "melody",
+   "definition": "properly, instrumental music; by implication, a poem set to notes",
+   "derivation": "from 2167;",
+   "sha256": "87c32b392d0b55d200a2803b4be094c79b4e68253c3e04c1b10bae0078f9501f"
+  },
+  {
+   "strongs": "H4211",
+   "language": "hebrew",
+   "lemma": "מַזְמֵרָה",
+   "gloss": "pruner",
+   "definition": "a pruning-knife",
+   "derivation": "from 2168;",
+   "sha256": "3f65bffcf0927a83602066bc938c407ff3a83be3e3c3224e96528439dd29c609"
+  },
+  {
+   "strongs": "H4212",
+   "language": "hebrew",
+   "lemma": "מְזַמֶּרֶת",
+   "gloss": "snuffer",
+   "definition": "a tweezer (only in the plural)",
+   "derivation": "from 2168;",
+   "sha256": "cd6b0951acc36f3c732ff97750e89718fb888e7454d75e9b8015a61813cce4ef"
+  },
+  {
+   "strongs": "H4213",
+   "language": "hebrew",
+   "lemma": "מִזְעָר",
+   "gloss": "little",
+   "definition": "fewness; by implication, as superlative diminutiveness",
+   "derivation": "from the same as 2191;",
+   "sha256": "a2a45ce78f0f76cc431c97f78f96f3c3e31a14085055ef430bd89e91309d84a8"
+  },
+  {
+   "strongs": "H4214",
+   "language": "hebrew",
+   "lemma": "מִזְרֶה",
+   "gloss": "pitchfork",
+   "definition": "a winnowing shovel (as scattering the chaff)",
+   "derivation": "from 2219;",
+   "sha256": "f6c91337f547e54ddd5acb19a4bfefff0bea2f9bc1b8f68bea4e22d527a857a0"
+  },
+  {
+   "strongs": "H4215",
+   "language": "hebrew",
+   "lemma": "מְזָרֶה",
+   "gloss": "scattering wind",
+   "definition": "properly, a scatterer, i.e. the north wind (as dispersing clouds; only in plural)",
+   "derivation": "apparently from 2219;",
+   "sha256": "93dc33891d40fbaee1c0bd60b21a905a37d3b70c068e83a01c8bff3eda4cf6e3"
+  },
+  {
+   "strongs": "H4216",
+   "language": "hebrew",
+   "lemma": "מַזָּרוֹת",
+   "gloss": "Mazzaroth",
+   "definition": "some noted constellation (only in the plural), perhaps collectively, the zodiac",
+   "derivation": "apparently from 5144 in the sense of distinction;",
+   "sha256": "76f2a4e3668254c6f3c0b5ff04e467ed86279ece7b9df3a0ceca88608c43cbaf"
+  },
+  {
+   "strongs": "H4217G",
+   "language": "hebrew",
+   "lemma": "מִזְרָח",
+   "gloss": "East (Gate)",
+   "definition": "sunrise, i.e. the east",
+   "derivation": "from 2224;",
+   "sha256": "8d2c5083474ff67afc037cfc14d6feb3be28cc36343dc7f9aaa4caeb6735119c"
+  },
+  {
+   "strongs": "H4217H",
+   "language": "hebrew",
+   "lemma": "מִזְרָח",
+   "gloss": "east",
+   "definition": "sunrise, i.e. the east",
+   "derivation": "from 2224;",
+   "sha256": "af01fed4d73b0451bc1c5e1cd4859e3ac64239fdeba0234f55242bfb6dee1c39"
+  },
+  {
+   "strongs": "H4218",
+   "language": "hebrew",
+   "lemma": "מִזְרָע",
+   "gloss": "sowing",
+   "definition": "a planted field",
+   "derivation": "from 2232;",
+   "sha256": "8aefd431bb239da831e946850d6a8432fe083bb9fb95cc121c872d13a5c87dbe"
+  },
+  {
+   "strongs": "H4219",
+   "language": "hebrew",
+   "lemma": "מִזְרָק",
+   "gloss": "bowl",
+   "definition": "a bowl (as if for sprinkling)",
+   "derivation": "from 2236;",
+   "sha256": "0156b27cbd0bbc7ad85b7d2f754d304fc7fee228be14deb98f54505bd4fdbbb8"
+  },
+  {
+   "strongs": "H4220",
+   "language": "hebrew",
+   "lemma": "מֵחַ",
+   "gloss": "fatling",
+   "definition": "fat; figuratively, rich",
+   "derivation": "from 4229 in the sense of greasing;",
+   "sha256": "b10d1c7c05bf53a5a7036fa9762b3e9286e90427b84dd76badab0a843deaff8d"
+  },
+  {
+   "strongs": "H4221",
+   "language": "hebrew",
+   "lemma": "מֹחַ",
+   "gloss": "marrow",
+   "definition": "fat, i.e. marrow",
+   "derivation": "from the same as 4220;",
+   "sha256": "e3309295233438cabb3f4713ae939c312497192329690be6b26814542a9bf5c3"
+  },
+  {
+   "strongs": "H4222",
+   "language": "hebrew",
+   "lemma": "מָחָא",
+   "gloss": "to clap",
+   "definition": "to rub or strike the hands together (in exultation)",
+   "derivation": "a primitive root;",
+   "sha256": "92a300e75e83cb005cf39945ae0a9497cbce6a3b071bd73f210485ff9e4dbe79"
+  },
+  {
+   "strongs": "H4223",
+   "language": "hebrew",
+   "lemma": "מְחָא",
+   "gloss": "to smite",
+   "definition": "to strike in pieces; also to arrest; specifically to impale",
+   "derivation": "(Aramaic) corresponding to 4222;",
+   "sha256": "27c464711d34fc242b8124300703535167e50202a160a482469d430192f93b4d"
+  },
+  {
+   "strongs": "H4224A",
+   "language": "hebrew",
+   "lemma": "מַחֲבֵא",
+   "gloss": "hiding-place",
+   "definition": "a refuge",
+   "derivation": "or מַחֲבֹא; from 2244;",
+   "sha256": "988a62d1d33a01b9521ac46569acc85288c72999bf435f5258d764d5f09c76b2"
+  },
+  {
+   "strongs": "H4224B",
+   "language": "hebrew",
+   "lemma": "מַחֲבֹא",
+   "gloss": "refuge",
+   "definition": "a refuge",
+   "derivation": "or מַחֲבֹא; from 2244;",
+   "sha256": "fb7e7be1fb28e742b23177f1801431b4a6200e63f4f2e1587ba35aac912b737b"
+  },
+  {
+   "strongs": "H4225",
+   "language": "hebrew",
+   "lemma": "מַחְבֶּ֫רֶת",
+   "gloss": "joining",
+   "definition": "a junction, i.e. seam or sewed piece",
+   "derivation": "from 2266;",
+   "sha256": "95a05ef36b256be44a3f88678f96c1852f7c1bd16c07954c81b283b19ec00dd2"
+  },
+  {
+   "strongs": "H4226",
+   "language": "hebrew",
+   "lemma": "מְחַבְּרָה",
+   "gloss": "clamp",
+   "definition": "a joiner, i.e. brace or cramp",
+   "derivation": "from 2266;",
+   "sha256": "a17b45fa827e21d1e26bd24df0c5512559e87045fb22c7fcfb6a9dec6d399b2b"
+  },
+  {
+   "strongs": "H4227",
+   "language": "hebrew",
+   "lemma": "מַחֲבַת",
+   "gloss": "griddle",
+   "definition": "a pan for baking in",
+   "derivation": "from the same as 2281;",
+   "sha256": "770384bf1d7f38775a29ffcbe5ab62622ce5185bd4dc55fd7654958341970d7d"
+  },
+  {
+   "strongs": "H4228",
+   "language": "hebrew",
+   "lemma": "מַחֲגֹ֫רֶת",
+   "gloss": "girding",
+   "definition": "a girdle",
+   "derivation": "from 2296;",
+   "sha256": "ed1fc27afbe0b637fd574689dced398eadcd681154681d8d57b739eded62ff31"
+  },
+  {
+   "strongs": "H4229A",
+   "language": "hebrew",
+   "lemma": "מָחָה",
+   "gloss": "to wipe",
+   "definition": "properly, to stroke or rub; by implication, to erase; also to smooth (as if with oil), i.e. grease or make fat; also to touch, i.e. reach to",
+   "derivation": "a primitive root;",
+   "sha256": "ff9f9632b68556428ee8bf56874539e6681fdf27c08e665533b66e92189425b7"
+  },
+  {
+   "strongs": "H4229B",
+   "language": "hebrew",
+   "lemma": "מָחָה",
+   "gloss": "to strike",
+   "definition": "properly, to stroke or rub; by implication, to erase; also to smooth (as if with oil), i.e. grease or make fat; also to touch, i.e. reach to",
+   "derivation": "a primitive root;",
+   "sha256": "29f67369466d2dc04f24b207b579a4685f4c84990c1c23781c47ddccbb032325"
+  },
+  {
+   "strongs": "H4229C",
+   "language": "hebrew",
+   "lemma": "מָחָה",
+   "gloss": "be marrow",
+   "definition": "properly, to stroke or rub; by implication, to erase; also to smooth (as if with oil), i.e. grease or make fat; also to touch, i.e. reach to",
+   "derivation": "a primitive root;",
+   "sha256": "5768825c93617c6eafba4e7c6a74a186b9a280196defa5f9cdcd5aa164368a96"
+  },
+  {
+   "strongs": "H4230",
+   "language": "hebrew",
+   "lemma": "מְחוּגָה",
+   "gloss": "compass",
+   "definition": "an instrument for marking a circle, i.e. compasses",
+   "derivation": "from 2328;",
+   "sha256": "f983ca7e39edb5b12e670462237ca9fb6b2210ae3083af68bc81ac1609245639"
+  },
+  {
+   "strongs": "H4231",
+   "language": "hebrew",
+   "lemma": "מָחוֹז",
+   "gloss": "haven",
+   "definition": "a harbor (as shut in by the shore)",
+   "derivation": "from an unused root meaning to enclose;",
+   "sha256": "e69dc8bd0b28454c994c276c38161366bf955b60fd399562055450c18e2c1a1f"
+  },
+  {
+   "strongs": "H4232",
+   "language": "hebrew",
+   "lemma": "מְחוּיָאֵל",
+   "gloss": "Mehujael",
+   "definition": "Mechujael or Mechijael, an antediluvian patriarch",
+   "derivation": "or מְחִיּיָאֵל; from 4229 and 410; smitten of God;",
+   "sha256": "d26efe2e43b852476d540f01a266291f495193b449f52d97200d6dbece9c0773"
+  },
+  {
+   "strongs": "H4233",
+   "language": "hebrew",
+   "lemma": "מַחֲוִים",
+   "gloss": "Mahavite",
+   "definition": "a Machavite or inhabitant of some place named Machaveh",
+   "derivation": "apparently a patrial, but from an unknown place (in the plural only for a singular);",
+   "sha256": "1d723d715152e88d7d083843b590f6ac89cbae1942ab6e0605536b80e5e7e115"
+  },
+  {
+   "strongs": "H4234",
+   "language": "hebrew",
+   "lemma": "מָחוֹל",
+   "gloss": "dance",
+   "definition": "a (round) dance",
+   "derivation": "from 2342;",
+   "sha256": "d1896e3d208d890fdd205416c9a77f22e91b834c77ab48d5ed666ed9c43ea961"
+  },
+  {
+   "strongs": "H4235",
+   "language": "hebrew",
+   "lemma": "מָחוֹל",
+   "gloss": "Mahol",
+   "definition": "Machol, an Israelite",
+   "derivation": "the same as 4234; dancing;",
+   "sha256": "d83766a3f2c261664e6833717039c879608dd48ea259d33096e92b60a732094f"
+  },
+  {
+   "strongs": "H4236",
+   "language": "hebrew",
+   "lemma": "מַחֲזֶה",
+   "gloss": "vision",
+   "definition": "a vision",
+   "derivation": "from 2372;",
+   "sha256": "05aa759d506a9d6f09d23e45ab24511d9573972a9998116db3874aa81cc4aa35"
+  },
+  {
+   "strongs": "H4237",
+   "language": "hebrew",
+   "lemma": "מֶחֱזָה",
+   "gloss": "window",
+   "definition": "a window",
+   "derivation": "from 2372;",
+   "sha256": "b0c8dbfddf1101f31ae9cecc0d6d0f3051ceb449a86df0a55f70f9a3d76ccb93"
+  },
+  {
+   "strongs": "H4238",
+   "language": "hebrew",
+   "lemma": "מַחֲזִיאֹת",
+   "gloss": "Mahazioth",
+   "definition": "Machazioth, an Israelite",
+   "derivation": "feminine plural from 2372; visions;",
+   "sha256": "883665ded79c42c61fc9abca02d2fb1343bd881e9e3d5805b12933b4f5473942"
+  },
+  {
+   "strongs": "H4239",
+   "language": "hebrew",
+   "lemma": "מְחִי",
+   "gloss": "blow",
+   "definition": "a stroke, i.e. battering-ram",
+   "derivation": "from 4229;",
+   "sha256": "2516199ba7c723bc08f064ba0b30f82fbeee3e2b6caef1730bfa4177d7d7a70f"
+  },
+  {
+   "strongs": "H4240",
+   "language": "hebrew",
+   "lemma": "מְחִידָא",
+   "gloss": "Mehida",
+   "definition": "Mechida, one of the Nethinim",
+   "derivation": "from 2330; junction;",
+   "sha256": "410272de4e8783c8d1efa093d92ef13d9dde172043f7a3be4fcc1a43dde6e3e9"
+  },
+  {
+   "strongs": "H4241",
+   "language": "hebrew",
+   "lemma": "מִחְיָה",
+   "gloss": "recovery",
+   "definition": "preservation of life; hence, sustenance; also the live flesh, i.e. the quick",
+   "derivation": "from 2421;",
+   "sha256": "96c1bd87f9541b376f92446287d9af18dbd8febb18c4b634dfb604726878d6a0"
+  },
+  {
+   "strongs": "H4242",
+   "language": "hebrew",
+   "lemma": "מְחִיר",
+   "gloss": "price",
+   "definition": "price, payment, wages",
+   "derivation": "from an unused root meaning to buy;",
+   "sha256": "3ffede78f3896cafe8897fd729d5bd21b2bf00525a14bd8b60978de16168416e"
+  },
+  {
+   "strongs": "H4243",
+   "language": "hebrew",
+   "lemma": "מְחִיר",
+   "gloss": "Mehir",
+   "definition": "Mechir, an Israelite",
+   "derivation": "the same as 4242; price;",
+   "sha256": "6c1fece12594b1949f45f35cdafb1cdbd8d92f66b57f2fafbffb1e01df21e753"
+  },
+  {
+   "strongs": "H4244G",
+   "language": "hebrew",
+   "lemma": "מַחְלָה",
+   "gloss": "Mahlah",
+   "definition": "Machlah, the name apparently of two Israelitesses",
+   "derivation": "from 2470; sickness;",
+   "sha256": "cc2fe9eeff5593f8c2633a94bb554e5a168a189352f17da41de3f0f357d22299"
+  },
+  {
+   "strongs": "H4244H",
+   "language": "hebrew",
+   "lemma": "מַחְלָה",
+   "gloss": "Mahlah",
+   "definition": "Machlah, the name apparently of two Israelitesses",
+   "derivation": "from 2470; sickness;",
+   "sha256": "cc2fe9eeff5593f8c2633a94bb554e5a168a189352f17da41de3f0f357d22299"
+  },
+  {
+   "strongs": "H4245A",
+   "language": "hebrew",
+   "lemma": "מַחֲלֶה",
+   "gloss": "sickness",
+   "definition": "sickness",
+   "derivation": "or (feminine) מַחֲלָה; from 2470;",
+   "sha256": "a6acb8bb088e058a4112dd9cfde9f86db5af0a9c3707fbfeffdf2dcd0c945bc6"
+  },
+  {
+   "strongs": "H4245B",
+   "language": "hebrew",
+   "lemma": "מַחֲלָה",
+   "gloss": "sickness",
+   "definition": "sickness",
+   "derivation": "or (feminine) מַחֲלָה; from 2470;",
+   "sha256": "a6acb8bb088e058a4112dd9cfde9f86db5af0a9c3707fbfeffdf2dcd0c945bc6"
+  },
+  {
+   "strongs": "H4246",
+   "language": "hebrew",
+   "lemma": "מְחוֹלָה",
+   "gloss": "dance",
+   "definition": "a dance",
+   "derivation": "feminine of 4234;",
+   "sha256": "f5d3e5b11c770803ea7bab7aa3920dfe83021514a363c5413dc93709c17dd011"
+  },
+  {
+   "strongs": "H4247",
+   "language": "hebrew",
+   "lemma": "מְחִלָּה",
+   "gloss": "hole",
+   "definition": "a cavern (as if excavated)",
+   "derivation": "from 2490;",
+   "sha256": "20838a7e8e1bc3548afbd8ea032a7c1fecfbee8cdcae6bc64a83dad1958515bf"
+  },
+  {
+   "strongs": "H4248",
+   "language": "hebrew",
+   "lemma": "מַחְלוֹן",
+   "gloss": "Mahlon",
+   "definition": "Machlon, an Israelite",
+   "derivation": "from 2470; sick;",
+   "sha256": "2702a7ed85b3c45cf18904028a023c44f1b2c0a4d74783333cab97e0d329943f"
+  },
+  {
+   "strongs": "H4249G",
+   "language": "hebrew",
+   "lemma": "מַחְלִי",
+   "gloss": "Mahli",
+   "definition": "Machli, the name of two Israelites",
+   "derivation": "from 2470; sick;",
+   "sha256": "e07aedd271f3aa856f43e632978b990adf06e7dbccbf327b92f3afb0145afcfc"
+  },
+  {
+   "strongs": "H4249H",
+   "language": "hebrew",
+   "lemma": "מַחְלִי",
+   "gloss": "Mahli",
+   "definition": "Machli, the name of two Israelites",
+   "derivation": "from 2470; sick;",
+   "sha256": "e07aedd271f3aa856f43e632978b990adf06e7dbccbf327b92f3afb0145afcfc"
+  },
+  {
+   "strongs": "H4250",
+   "language": "hebrew",
+   "lemma": "מַחְלִי",
+   "gloss": "Mahlite",
+   "definition": "a Machlite or (collectively) descendants of Machli",
+   "derivation": "patronymical from 4249;",
+   "sha256": "0f11e137165381a4d0b4b97a7dbe1759c68de5a0745f93b06f1bca52c0a2e3b1"
+  },
+  {
+   "strongs": "H4251",
+   "language": "hebrew",
+   "lemma": "מַחֲלוּי",
+   "gloss": "suffering",
+   "definition": "a disease",
+   "derivation": "from 2470;",
+   "sha256": "10b0b846fd1248103ab4e29e0b4ed0d37502b23358397b7161a774a48d09dfd1"
+  },
+  {
+   "strongs": "H4252",
+   "language": "hebrew",
+   "lemma": "מַחֲלָף",
+   "gloss": "knife",
+   "definition": "a (sacrificial) knife (as gliding through the flesh)",
+   "derivation": "from 2498;",
+   "sha256": "b6f41efc458ef65d9f47c7d1a1abbc32f3f3fce146676dcb49d4e617043aa1a7"
+  },
+  {
+   "strongs": "H4253",
+   "language": "hebrew",
+   "lemma": "מַחֲלָפָה",
+   "gloss": "lock",
+   "definition": "a ringlet of hair (as gliding over each other)",
+   "derivation": "from 2498;",
+   "sha256": "000a7cee030f53ec21338562f261be28814614fd878d4236789c47299eac2a36"
+  },
+  {
+   "strongs": "H4254",
+   "language": "hebrew",
+   "lemma": "מַחֲלָצָה",
+   "gloss": "robe",
+   "definition": "a mantle (as easily drawn off)",
+   "derivation": "from 2502;",
+   "sha256": "f0479a5871ca370e53788ab7acd3ca27aec187e7ae7de9a2dd857a4118d409a3"
+  },
+  {
+   "strongs": "H4255",
+   "language": "hebrew",
+   "lemma": "מַחְלְקָה",
+   "gloss": "class",
+   "definition": "a section (of the Levites)",
+   "derivation": "(Aramaic) corresponding to 4256;",
+   "sha256": "72651ef9e52f77fa623406be8bd4dcd0bb55bb0cbb5eb108eb89e77d53d2a97a"
+  },
+  {
+   "strongs": "H4256",
+   "language": "hebrew",
+   "lemma": "מַחֲלֹ֫קֶת",
+   "gloss": "division",
+   "definition": "a section (of Levites, people or soldiers)",
+   "derivation": "from 2505;",
+   "sha256": "47a6bd0560a8dad883c6fffbd1e4023a9332e0a24e634701e17d4ffaa113453d"
+  },
+  {
+   "strongs": "H4257",
+   "language": "hebrew",
+   "lemma": "מַחֲלַת",
+   "gloss": "Mahalath",
+   "definition": "'Machalath', probably the title (initial word) of a popular song",
+   "derivation": "from 2470; sickness;",
+   "sha256": "702feefa4fc1de56b35da66f4386f613fd5c687b95f316077cf35ecbafc85e96"
+  },
+  {
+   "strongs": "H4258G",
+   "language": "hebrew",
+   "lemma": "מַחֲלַת",
+   "gloss": "Mahalath",
+   "definition": "Machalath, the name of an Ishmaelitess and of an Israelitess",
+   "derivation": "the same as 4257; sickness;",
+   "sha256": "47100232769ff8acf63b8f0c14004ed3ed9307bf95d62d06aff7e02fe2efcad3"
+  },
+  {
+   "strongs": "H4258H",
+   "language": "hebrew",
+   "lemma": "מַחֲלַת",
+   "gloss": "Mahalath",
+   "definition": "Machalath, the name of an Ishmaelitess and of an Israelitess",
+   "derivation": "the same as 4257; sickness;",
+   "sha256": "47100232769ff8acf63b8f0c14004ed3ed9307bf95d62d06aff7e02fe2efcad3"
+  },
+  {
+   "strongs": "H4259",
+   "language": "hebrew",
+   "lemma": "מְחֹלָתִי",
+   "gloss": "Meholathite",
+   "definition": "a Mecholathite or inhabitant of Abel-Mecholah",
+   "derivation": "patrial from 65;",
+   "sha256": "6add8237e6420b5d4058bb7a4d8fae56d7fa904bcb5b0585f74c34ce9ae45795"
+  },
+  {
+   "strongs": "H4260",
+   "language": "hebrew",
+   "lemma": "מַחֲמָאֹת",
+   "gloss": "butter",
+   "definition": "something buttery (i.e. unctuous and pleasant), as (figuratively) flattery",
+   "derivation": "a denominative from 2529;",
+   "sha256": "b574cefb081d50bb27b8059306435a5ce0cb06f920bd38875988ddc424061326"
+  },
+  {
+   "strongs": "H4261",
+   "language": "hebrew",
+   "lemma": "מַחְמָד",
+   "gloss": "desire",
+   "definition": "delightful; hence, a delight, i.e. object of affection or desire",
+   "derivation": "from 2530;",
+   "sha256": "dc56bd378eb1f751e0944527271cf33df41af5d7ea7b36131610c39af6c8cef2"
+  },
+  {
+   "strongs": "H4262",
+   "language": "hebrew",
+   "lemma": "מַחְמֹד",
+   "gloss": "desirable",
+   "definition": "desired; hence, a valuable",
+   "derivation": "or מַחְמוּד; from 2530;",
+   "sha256": "fb87bece95bab15fadd158946be828a076f6db4a470e996ed51f9a5bf3eb677c"
+  },
+  {
+   "strongs": "H4263",
+   "language": "hebrew",
+   "lemma": "מַחְמָל",
+   "gloss": "compassion",
+   "definition": "properly, sympathy;",
+   "derivation": "from 2550; (by paronomasia with 4261) delight",
+   "sha256": "76df1a317f36ce706910f6b518b7758e9892f3a1ccbb10c52bf3866c9f93aa87"
+  },
+  {
+   "strongs": "H4264",
+   "language": "hebrew",
+   "lemma": "מַחֲנֶה",
+   "gloss": "camp",
+   "definition": "an encampment (of travellers or troops); hence, an army, whether literal (of soldiers) or figurative (of dancers, angels, cattle, locusts, stars; or even the sacred courts)",
+   "derivation": "from 2583;",
+   "sha256": "0a822026bec3f9a36d0e41c6e8fe96a861bfc13e6f228737dffdbaa576f06fa5"
+  },
+  {
+   "strongs": "H4265",
+   "language": "hebrew",
+   "lemma": "מַחֲנֵה־דָ֑ן",
+   "gloss": "Mahaneh-dan",
+   "definition": "Machaneh-Dan, a place in Palestine",
+   "derivation": "from 4264 and 1835; camp of Dan;",
+   "sha256": "a6bda735be5556ca4f181c1b4d924d490f6e1d61d479a7b2724af8cd9c83b321"
+  },
+  {
+   "strongs": "H4266",
+   "language": "hebrew",
+   "lemma": "מַחֲנַיִם",
+   "gloss": "Mahanaim",
+   "definition": "Machanajim, a place in Palestine",
+   "derivation": "dual of 4264; double camp;",
+   "sha256": "076fa58db1500a2c1a84b82d26d49fb604095d8677d8fb3b3bd33d347855b49d"
+  },
+  {
+   "strongs": "H4267",
+   "language": "hebrew",
+   "lemma": "מַחֲנָק",
+   "gloss": "strangling",
+   "definition": "choking",
+   "derivation": "from 2614;",
+   "sha256": "ae7910d903e2d9446447e50895144e7f70d5dea6f5748639e51de8858a272178"
+  },
+  {
+   "strongs": "H4268",
+   "language": "hebrew",
+   "lemma": "מַחְסֶּה",
+   "gloss": "refuge",
+   "definition": "a shelter (literally or figuratively)",
+   "derivation": "or מַחְסֶה; from 2620;",
+   "sha256": "4fbe269996f8ea6d149f3a27601ba6f5367c56a6736fb42572ce359dd99561c9"
+  },
+  {
+   "strongs": "H4269",
+   "language": "hebrew",
+   "lemma": "מַחְסוֹם",
+   "gloss": "muzzle",
+   "definition": "a muzzle",
+   "derivation": "from 2629;",
+   "sha256": "7de2827dd68626f80e8128d01674a667b12ba8b613daacbb64f89053691a93c9"
+  },
+  {
+   "strongs": "H4270",
+   "language": "hebrew",
+   "lemma": "מַחְסוֹר",
+   "gloss": "need",
+   "definition": "deficiency; hence, impoverishment",
+   "derivation": "or מַחְסֹר; from 2637;",
+   "sha256": "7edea33c64d54b6f01160b723fcddfe1da43dc8bbc12321f254ec5de09e00e09"
+  },
+  {
+   "strongs": "H4271",
+   "language": "hebrew",
+   "lemma": "מַחְסֵיָה",
+   "gloss": "Mahseiah",
+   "definition": "Machsejah, an Israelite",
+   "derivation": "from 4268 and 3050; refuge of (i.e. in) Jah;",
+   "sha256": "d78e8ed82e2f8e1c68aa0a54c6e70cf2d6474ce4f38bc44819ac5472d6214e2c"
+  },
+  {
+   "strongs": "H4272",
+   "language": "hebrew",
+   "lemma": "מָחַץ",
+   "gloss": "to wound",
+   "definition": "to dash asunder; by implication, to crush, smash or violently plunge; figuratively, to subdue or destroy",
+   "derivation": "a primitive root;",
+   "sha256": "0524359cdd0fa8aba3a3714c87fc682a3da0cf72eec2186706170c166f156007"
+  },
+  {
+   "strongs": "H4273",
+   "language": "hebrew",
+   "lemma": "מַ֫חַץ",
+   "gloss": "wound",
+   "definition": "a contusion",
+   "derivation": "from 4272;",
+   "sha256": "29d248ee3388881b51891b7b4be952f1f63546a99a3e40a88abd567d05a01be6"
+  },
+  {
+   "strongs": "H4274",
+   "language": "hebrew",
+   "lemma": "מַחְצֵב",
+   "gloss": "hewing",
+   "definition": "properly, a hewing; concretely, a quarry",
+   "derivation": "from 2672;",
+   "sha256": "d6eab349b270b11d305adf5fcfa107e26043b0d90cdb996b8d40cbca1e70bcd1"
+  },
+  {
+   "strongs": "H4275",
+   "language": "hebrew",
+   "lemma": "מֶחֱצָה",
+   "gloss": "half",
+   "definition": "a halving",
+   "derivation": "from 2673;",
+   "sha256": "35c227f5cb2aeeee20aff9ff1f852d7b438d5067fb398b57e505de32e8c4cdbb"
+  },
+  {
+   "strongs": "H4276",
+   "language": "hebrew",
+   "lemma": "מַחֲצִית",
+   "gloss": "half",
+   "definition": "a halving or the middle",
+   "derivation": "from 2673;",
+   "sha256": "d059a2eb886159fadb6788e9f4effea78e36b4b7966287e49ca279b2e94be3cb"
+  },
+  {
+   "strongs": "H4277",
+   "language": "hebrew",
+   "lemma": "מָחַק",
+   "gloss": "to destroy",
+   "definition": "to crush",
+   "derivation": "a primitive root;",
+   "sha256": "398fff124c28ffd914e846d0566c0831254e5f0197725c0c8383728ff1ece833"
+  },
+  {
+   "strongs": "H4278",
+   "language": "hebrew",
+   "lemma": "מֶחְקָר",
+   "gloss": "range",
+   "definition": "properly, scrutinized, i.e. (by implication) a recess",
+   "derivation": "from 2713;",
+   "sha256": "f72144cb63179785b01f84b389e66eb3c0bbdc6625db79b1f8deb84e53558eec"
+  },
+  {
+   "strongs": "H4279",
+   "language": "hebrew",
+   "lemma": "מָחָר",
+   "gloss": "tomorrow",
+   "definition": "properly, deferred, i.e. the morrow; usually (adverbially) tomorrow; indefinitely, hereafter",
+   "derivation": "probably from 309;",
+   "sha256": "c6858a7a2bc87fb530246862aaa796be7aca834ac539722b9b37ad9ad65aecd0"
+  },
+  {
+   "strongs": "H4280",
+   "language": "hebrew",
+   "lemma": "מַחֲרָאָה",
+   "gloss": "sewer",
+   "definition": "a sink",
+   "derivation": "from the same as 2716;",
+   "sha256": "5bb94c22382898908c1bcb91183754431956e52721ce3c0acc76b413c0a3f724"
+  },
+  {
+   "strongs": "H4281",
+   "language": "hebrew",
+   "lemma": "מַחֲרֵשָׁה",
+   "gloss": "plowshare",
+   "definition": "probably a pick-axe",
+   "derivation": "from 2790;",
+   "sha256": "1b3689c550076e98dfad4c28773628861049759af587ae89d63fd59caee0dce3"
+  },
+  {
+   "strongs": "H4282",
+   "language": "hebrew",
+   "lemma": "מַחֲרֶ֫שֶׁת",
+   "gloss": "share",
+   "definition": "probably a hoe",
+   "derivation": "from 2790;",
+   "sha256": "204e027101304b081875b2cd6d0ce48831dc074d6486896f2ffa058533400f00"
+  },
+  {
+   "strongs": "H4283",
+   "language": "hebrew",
+   "lemma": "מׇחֳרָת",
+   "gloss": "morrow",
+   "definition": "the morrow or (adverbially) tomorrow",
+   "derivation": "or מׇחֳרָתָם; (1 Samuel 30:17), feminine from the same as 4279;",
+   "sha256": "442c2e1b1167f5c8c7d170b730e7b5c70a02ec20721387140c116b8ca22acd4e"
+  },
+  {
+   "strongs": "H4284",
+   "language": "hebrew",
+   "lemma": "מַחֲשָׁבָה",
+   "gloss": "plot",
+   "definition": "a contrivance, i.e. (concretely) a texture, machine, or (abstractly) intention, plan (whether bad, a plot; or good, advice)",
+   "derivation": "or מַחֲשֶׁבֶת; from 2803;",
+   "sha256": "ae405d4c18f89a2b05b9740f60ff5468ed32a07ca23e0f9d8956c41c4823747e"
+  },
+  {
+   "strongs": "H4285",
+   "language": "hebrew",
+   "lemma": "מַחְשָׁךְ",
+   "gloss": "darkness",
+   "definition": "darkness; concretely, a dark place",
+   "derivation": "from 2821;",
+   "sha256": "47fe7a224fff34faa5c24f629cd848b7e2c72a913d0b7742383ae88dd6dac4fe"
+  },
+  {
+   "strongs": "H4286",
+   "language": "hebrew",
+   "lemma": "מַחְשֹׂף",
+   "gloss": "exposing",
+   "definition": "a peeling",
+   "derivation": "from 2834;",
+   "sha256": "f6df83b4c73036d72218c5d038b82f8748257320e1af686427de354d047da203"
+  },
+  {
+   "strongs": "H4287G",
+   "language": "hebrew",
+   "lemma": "מַ֫חַת",
+   "gloss": "Mahath",
+   "definition": "Machath, the name of two Israelites",
+   "derivation": "probably from 4229; erasure;",
+   "sha256": "b6c4f6d5ccb5020c1fccd1f2d2b4919e56424317426e2330779918a6b7d8f2a4"
+  },
+  {
+   "strongs": "H4287H",
+   "language": "hebrew",
+   "lemma": "מַ֫חַת",
+   "gloss": "Mahath",
+   "definition": "Machath, the name of two Israelites",
+   "derivation": "probably from 4229; erasure;",
+   "sha256": "b6c4f6d5ccb5020c1fccd1f2d2b4919e56424317426e2330779918a6b7d8f2a4"
+  },
+  {
+   "strongs": "H4287I",
+   "language": "hebrew",
+   "lemma": "מַ֫חַת",
+   "gloss": "Mahath",
+   "definition": "Machath, the name of two Israelites",
+   "derivation": "probably from 4229; erasure;",
+   "sha256": "b6c4f6d5ccb5020c1fccd1f2d2b4919e56424317426e2330779918a6b7d8f2a4"
+  },
+  {
+   "strongs": "H4288",
+   "language": "hebrew",
+   "lemma": "מְחִתָּה",
+   "gloss": "terror",
+   "definition": "properly, a dissolution; concretely, a ruin, or (abstractly) consternation",
+   "derivation": "from 2846;",
+   "sha256": "ab5704aefcd81ba976748b6a3c66e026959704f72dd994adfb05101b9105f0fa"
+  },
+  {
+   "strongs": "H4289",
+   "language": "hebrew",
+   "lemma": "מַחְתָּה",
+   "gloss": "censer",
+   "definition": "a pan for live coals",
+   "derivation": "the same as 4288 in the sense of removal;",
+   "sha256": "a4ab1e2250507fe13fa4d1955f5cf860e22e0070a49a92f7176fbb9bef764f8a"
+  },
+  {
+   "strongs": "H4290",
+   "language": "hebrew",
+   "lemma": "מַחְתֶּ֫רֶת",
+   "gloss": "breaking",
+   "definition": "a burglary; figuratively, unexpected examination",
+   "derivation": "from 2864;",
+   "sha256": "98fde822122945efb6652b45f1caed97c3d45ddbcee097aec265454792b85ea4"
+  },
+  {
+   "strongs": "H4291",
+   "language": "hebrew",
+   "lemma": "מְטָא",
+   "gloss": "to reach",
+   "definition": "to arrive, extend or happen",
+   "derivation": "(Aramaic) or מְטָה; (Aramaic), apparently corresponding to 4672 in the intransitive sense of being found present;",
+   "sha256": "a7eea345eec417334b6502bab78138d61c409af93366add8e50567ec5e2a3617"
+  },
+  {
+   "strongs": "H4292",
+   "language": "hebrew",
+   "lemma": "מַטְאֲטֵא",
+   "gloss": "broom",
+   "definition": "a broom (as removing dirt (compare English 'to dust', i.e. remove dust))",
+   "derivation": "apparently a denominative from 2916;",
+   "sha256": "cfc784e14cf97ca37cca66d23429447a130e11e6ed96524d98980dd853c91668"
+  },
+  {
+   "strongs": "H4293",
+   "language": "hebrew",
+   "lemma": "מַטְבֵּחַ",
+   "gloss": "slaughter",
+   "definition": "slaughter",
+   "derivation": "from 2873;",
+   "sha256": "8120c1cc9dc0e72f06f86ed542fdc5f5b6c5b74e7851e19237f02add894d1f3d"
+  },
+  {
+   "strongs": "H4294G",
+   "language": "hebrew",
+   "lemma": "מַטֶּה",
+   "gloss": "tribe: rod",
+   "definition": "a branch (as extending); figuratively, a tribe; also a rod, whether for chastising (figuratively, correction), ruling (a sceptre), throwing (a lance), or walking (a staff; figuratively, a support of life, e.g. bread)",
+   "derivation": "or (feminine) מַטָּה; from 5186;",
+   "sha256": "345228d59acf3530aa3cbe9991023b7f34b467ae721b22addf38330bca46efeb"
+  },
+  {
+   "strongs": "H4294H",
+   "language": "hebrew",
+   "lemma": "מַטֶּה",
+   "gloss": "tribe",
+   "definition": "a branch (as extending); figuratively, a tribe; also a rod, whether for chastising (figuratively, correction), ruling (a sceptre), throwing (a lance), or walking (a staff; figuratively, a support of life, e.g. bread)",
+   "derivation": "or (feminine) מַטָּה; from 5186;",
+   "sha256": "4cb81b05f428341d4f2358685203205aa8fe4e4a23b660d40e3e7148e889d805"
+  },
+  {
+   "strongs": "H4294I",
+   "language": "hebrew",
+   "lemma": "מַטֶּה",
+   "gloss": "tribe: arrow",
+   "definition": "a branch (as extending); figuratively, a tribe; also a rod, whether for chastising (figuratively, correction), ruling (a sceptre), throwing (a lance), or walking (a staff; figuratively, a support of life, e.g. bread)",
+   "derivation": "or (feminine) מַטָּה; from 5186;",
+   "sha256": "ae469023edfeedf9e335f99d83711d0f7ca637d8bbbdeeee7407145874bfbd02"
+  },
+  {
+   "strongs": "H4294J",
+   "language": "hebrew",
+   "lemma": "מַטֶּה",
+   "gloss": "tribe: stick",
+   "definition": "a branch (as extending); figuratively, a tribe; also a rod, whether for chastising (figuratively, correction), ruling (a sceptre), throwing (a lance), or walking (a staff; figuratively, a support of life, e.g. bread)",
+   "derivation": "or (feminine) מַטָּה; from 5186;",
+   "sha256": "993cde42437ec0e4620f818e7681028f7a6b3fea05c7c05a199ba09c383e1d5a"
+  },
+  {
+   "strongs": "H4294K",
+   "language": "hebrew",
+   "lemma": "מַטֶּה",
+   "gloss": "tribe: supply",
+   "definition": "a branch (as extending); figuratively, a tribe; also a rod, whether for chastising (figuratively, correction), ruling (a sceptre), throwing (a lance), or walking (a staff; figuratively, a support of life, e.g. bread)",
+   "derivation": "or (feminine) מַטָּה; from 5186;",
+   "sha256": "5cbc19a1f04de5b287aa6d5ba143e058c155ae6c05be9409698840f184b240c5"
+  },
+  {
+   "strongs": "H4295",
+   "language": "hebrew",
+   "lemma": "מַ֫טָּה",
+   "gloss": "beneath",
+   "definition": "downward, below or beneath; often adverbially with or without prefixes",
+   "derivation": "from 5786 with directive enclitic appended;",
+   "sha256": "866e56c67075d3e9913b88ed1f1d192e6aa89e81361b7cc1cf8878d32f36ee4a"
+  },
+  {
+   "strongs": "H4296",
+   "language": "hebrew",
+   "lemma": "מִטָּה",
+   "gloss": "bed",
+   "definition": "a bed (as extended) for sleeping or eating; by analogy, a sofa, litter or bier",
+   "derivation": "from 5186;",
+   "sha256": "306e429c030ebcaa8eac4d09e8c325517486269c6c0fb32c7c1d75c27ba0e0cf"
+  },
+  {
+   "strongs": "H4297",
+   "language": "hebrew",
+   "lemma": "מֻטֶּה",
+   "gloss": "perversion",
+   "definition": "a stretching, i.e. distortion (figuratively, iniquity)",
+   "derivation": "from 5186;",
+   "sha256": "de4a35bd4ddd20fa00ac629d966495ea7d6e3c6295a513e3ca5266e9a07b70fa"
+  },
+  {
+   "strongs": "H4298",
+   "language": "hebrew",
+   "lemma": "מֻטָּה",
+   "gloss": "spread",
+   "definition": "expansion",
+   "derivation": "from 5186;",
+   "sha256": "eee2ad0ff899980e2ddd280ea418d7533be4659d65cd359706121b49b84ff5f0"
+  },
+  {
+   "strongs": "H4299",
+   "language": "hebrew",
+   "lemma": "מַטְוֶה",
+   "gloss": "yarn",
+   "definition": "something spun",
+   "derivation": "from 2901;",
+   "sha256": "690e852a9bca79be11de350ec2019fa2b4dda3d08ea983f8c21746e02904eadf"
+  },
+  {
+   "strongs": "H4300",
+   "language": "hebrew",
+   "lemma": "מְטִיל",
+   "gloss": "rod",
+   "definition": "an iron bar (as forged)",
+   "derivation": "from 2904 in the sense of hammering out;",
+   "sha256": "7fc51aa8f9f6159004c10ee012d8d6294684f53c01cd7f099b33bd6d77f20bfe"
+  },
+  {
+   "strongs": "H4301",
+   "language": "hebrew",
+   "lemma": "מַטְמוֹן",
+   "gloss": "treasure",
+   "definition": "a secret storehouse; hence, a secreted valuable (buried); generally money",
+   "derivation": "or מַטְמֹן; or מַטְמֻן; from 2934;",
+   "sha256": "71e6067c8def54dbaccf9a2a373485ff16d728d6cf0fef967b8ffa7b12d46cdd"
+  },
+  {
+   "strongs": "H4302",
+   "language": "hebrew",
+   "lemma": "מַטָּע",
+   "gloss": "plantation",
+   "definition": "something planted, i.e. the place (a garden or vineyard), or the thing (a plant, figuratively or men); by implication, the act, planting",
+   "derivation": "from 5193;",
+   "sha256": "4412d6891900c3b98a6578017d4d65108eb91f00794841204f4fd39d19a8ab65"
+  },
+  {
+   "strongs": "H4303",
+   "language": "hebrew",
+   "lemma": "מַטְעָם",
+   "gloss": "delicacy",
+   "definition": "a delicacy",
+   "derivation": "or (feminine) מַטְעַמָּה; from 2938;",
+   "sha256": "e0dbbe0d395c4c336b827bc64a39336384a276ee93a96a9130fc1b8306d1bf50"
+  },
+  {
+   "strongs": "H4304",
+   "language": "hebrew",
+   "lemma": "מִטְפַּ֫חַת",
+   "gloss": "cloak",
+   "definition": "a wide cloak (for a woman)",
+   "derivation": "from 2946;",
+   "sha256": "fb4f1456ed4356c45c6f57a906ab278fc2e8325feac7dbdbf7710aab85531573"
+  },
+  {
+   "strongs": "H4305",
+   "language": "hebrew",
+   "lemma": "מָטַר",
+   "gloss": "to rain",
+   "definition": "to rain",
+   "derivation": "a primitive root;",
+   "sha256": "5d9ed46023333b6c3d3f04ca5b8db4158e8c25d41d5c6b35366de947fba4972a"
+  },
+  {
+   "strongs": "H4306",
+   "language": "hebrew",
+   "lemma": "מָטַר",
+   "gloss": "rain",
+   "definition": "rain",
+   "derivation": "from 4305;",
+   "sha256": "b57cc48c6277c84ca6bff40c61080aa51b83fcf3b369e07ebdadca839e751fc1"
+  },
+  {
+   "strongs": "H4307G",
+   "language": "hebrew",
+   "lemma": "מַטָּרָה",
+   "gloss": "(Gate of the) Guard",
+   "definition": "a jail (as a guard-house); also an aim (as being closely watched)",
+   "derivation": "or מַטָּרָה; from 5201;",
+   "sha256": "b1ac26518670b32f2d14c77528f12e7a6247d2261ea0f487cf9e2a4a1ca444da"
+  },
+  {
+   "strongs": "H4307H",
+   "language": "hebrew",
+   "lemma": "מַטָּרָה",
+   "gloss": "guardhouse",
+   "definition": "a jail (as a guard-house); also an aim (as being closely watched)",
+   "derivation": "or מַטָּרָה; from 5201;",
+   "sha256": "bfab991fffcb30a0fd2db0bfbb3b7033bbf35802044c209dd94fd4371ed0d24f"
+  },
+  {
+   "strongs": "H4308",
+   "language": "hebrew",
+   "lemma": "מַטְרֵד",
+   "gloss": "Matred",
+   "definition": "Matred, an Edomitess",
+   "derivation": "from 2956; propulsive;",
+   "sha256": "599eb38df6200062d09b1a3fc513907d525fada95e2203bcaaeebad91f480440"
+  },
+  {
+   "strongs": "H4309",
+   "language": "hebrew",
+   "lemma": "מַטְרִי",
+   "gloss": "Matrite",
+   "definition": "Matri, an Israelite",
+   "derivation": "from 4305; rainy;",
+   "sha256": "796a62255b872ff9385c3cb01d333f3ea3fb6d0b244e328b1abbf4f649575782"
+  },
+  {
+   "strongs": "H4310",
+   "language": "hebrew",
+   "lemma": "מִי",
+   "gloss": "who?",
+   "definition": "who? (occasionally, by a peculiar idiom, of things); also (indefinitely) whoever; often used in oblique construction with prefix or suffix",
+   "derivation": "an interrogative pronoun of persons, as 4100 is of things,",
+   "sha256": "8b87d34699fd7714c8a24603f391a55d307cc852e5ac4619ceb8df3a2d78a1d0"
+  },
+  {
+   "strongs": "H4311",
+   "language": "hebrew",
+   "lemma": "מֵידְבָא",
+   "gloss": "Medeba",
+   "definition": "Medeba, a place in Palestine",
+   "derivation": "from 4325 and 1679; water of quiet;",
+   "sha256": "b7c2744285879e430cfaef737c66501ff8e8979403d0281de75d716ddd1a089c"
+  },
+  {
+   "strongs": "H4312",
+   "language": "hebrew",
+   "lemma": "מֵידָד",
+   "gloss": "Medad",
+   "definition": "Medad, an Israelite",
+   "derivation": "from 3032 in the sense of loving; affectionate;",
+   "sha256": "88cb49dd7668d01ef0298808bb485df926c418f92443d4a72a1315679d1ecd8a"
+  },
+  {
+   "strongs": "H4313",
+   "language": "hebrew",
+   "lemma": "מֵי הַיַּרְקוֹן",
+   "gloss": "Me-jarkon",
+   "definition": "Me-haj-Jarkon, a place in Palestine",
+   "derivation": "from 4325 and 3420 with the art. interposed; water of the yellowness;",
+   "sha256": "afda512596be4ed55428fd206d50aeb3873c4f6933747c6c0582c9bdad44312c"
+  },
+  {
+   "strongs": "H4314",
+   "language": "hebrew",
+   "lemma": "מֵי זָהָב",
+   "gloss": "Mezahab",
+   "definition": "Me-Zahab, an Edomite",
+   "derivation": "from 4325 and 2091, water of gold;",
+   "sha256": "a34a8b8c2096e3e1d284cb5315af97118a054491f025bdf90b47f3a71ec236b6"
+  },
+  {
+   "strongs": "H4315",
+   "language": "hebrew",
+   "lemma": "מֵיטָב",
+   "gloss": "best",
+   "definition": "the best part",
+   "derivation": "from 3190;",
+   "sha256": "41ec23bc84b392fbee968c0328fe0a2bb5265c751b0c4c8d46f97a523bbccc48"
+  },
+  {
+   "strongs": "H4316G",
+   "language": "hebrew",
+   "lemma": "מִיכָא",
+   "gloss": "Mica",
+   "definition": "Mica, the name of two Israelites",
+   "derivation": "a variation for 4318;",
+   "sha256": "a71c2f50ef2deb025827abd5d0b2889427fc60463da1aa99cff3660c2b82805c"
+  },
+  {
+   "strongs": "H4316H",
+   "language": "hebrew",
+   "lemma": "מִיכָא",
+   "gloss": "Mica",
+   "definition": "Mica, the name of two Israelites",
+   "derivation": "a variation for 4318;",
+   "sha256": "a71c2f50ef2deb025827abd5d0b2889427fc60463da1aa99cff3660c2b82805c"
+  },
+  {
+   "strongs": "H4316I",
+   "language": "hebrew",
+   "lemma": "מִיכָא",
+   "gloss": "Mica",
+   "definition": "Mica, the name of two Israelites",
+   "derivation": "a variation for 4318;",
+   "sha256": "a71c2f50ef2deb025827abd5d0b2889427fc60463da1aa99cff3660c2b82805c"
+  },
+  {
+   "strongs": "H4316J",
+   "language": "hebrew",
+   "lemma": "מִיכָא",
+   "gloss": "Mica",
+   "definition": "Mica, the name of two Israelites",
+   "derivation": "a variation for 4318;",
+   "sha256": "a71c2f50ef2deb025827abd5d0b2889427fc60463da1aa99cff3660c2b82805c"
+  },
+  {
+   "strongs": "H4317G",
+   "language": "hebrew",
+   "lemma": "מִיכָאֵל",
+   "gloss": "Michael",
+   "definition": "Mikael, the name of an archangel and of nine Israelites",
+   "derivation": "from 4310 and (the prefix derivative from) 3588 and 410; who (is) like God?;",
+   "sha256": "f3044512944f4881a22a6c82e56e19ce0b046824f48dadba7c6d6d865d7db006"
+  },
+  {
+   "strongs": "H4317H",
+   "language": "hebrew",
+   "lemma": "מִיכָאֵל",
+   "gloss": "Michael",
+   "definition": "Mikael, the name of an archangel and of nine Israelites",
+   "derivation": "from 4310 and (the prefix derivative from) 3588 and 410; who (is) like God?;",
+   "sha256": "f3044512944f4881a22a6c82e56e19ce0b046824f48dadba7c6d6d865d7db006"
+  },
+  {
+   "strongs": "H4317I",
+   "language": "hebrew",
+   "lemma": "מִיכָאֵל",
+   "gloss": "Michael",
+   "definition": "Mikael, the name of an archangel and of nine Israelites",
+   "derivation": "from 4310 and (the prefix derivative from) 3588 and 410; who (is) like God?;",
+   "sha256": "f3044512944f4881a22a6c82e56e19ce0b046824f48dadba7c6d6d865d7db006"
+  },
+  {
+   "strongs": "H4317J",
+   "language": "hebrew",
+   "lemma": "מִיכָאֵל",
+   "gloss": "Michael",
+   "definition": "Mikael, the name of an archangel and of nine Israelites",
+   "derivation": "from 4310 and (the prefix derivative from) 3588 and 410; who (is) like God?;",
+   "sha256": "f3044512944f4881a22a6c82e56e19ce0b046824f48dadba7c6d6d865d7db006"
+  },
+  {
+   "strongs": "H4317K",
+   "language": "hebrew",
+   "lemma": "מִיכָאֵל",
+   "gloss": "Michael",
+   "definition": "Mikael, the name of an archangel and of nine Israelites",
+   "derivation": "from 4310 and (the prefix derivative from) 3588 and 410; who (is) like God?;",
+   "sha256": "f3044512944f4881a22a6c82e56e19ce0b046824f48dadba7c6d6d865d7db006"
+  },
+  {
+   "strongs": "H4317L",
+   "language": "hebrew",
+   "lemma": "מִיכָאֵל",
+   "gloss": "Michael",
+   "definition": "Mikael, the name of an archangel and of nine Israelites",
+   "derivation": "from 4310 and (the prefix derivative from) 3588 and 410; who (is) like God?;",
+   "sha256": "f3044512944f4881a22a6c82e56e19ce0b046824f48dadba7c6d6d865d7db006"
+  },
+  {
+   "strongs": "H4317M",
+   "language": "hebrew",
+   "lemma": "מִיכָאֵל",
+   "gloss": "Michael",
+   "definition": "Mikael, the name of an archangel and of nine Israelites",
+   "derivation": "from 4310 and (the prefix derivative from) 3588 and 410; who (is) like God?;",
+   "sha256": "f3044512944f4881a22a6c82e56e19ce0b046824f48dadba7c6d6d865d7db006"
+  },
+  {
+   "strongs": "H4317N",
+   "language": "hebrew",
+   "lemma": "מִיכָאֵל",
+   "gloss": "Michael",
+   "definition": "Mikael, the name of an archangel and of nine Israelites",
+   "derivation": "from 4310 and (the prefix derivative from) 3588 and 410; who (is) like God?;",
+   "sha256": "f3044512944f4881a22a6c82e56e19ce0b046824f48dadba7c6d6d865d7db006"
+  },
+  {
+   "strongs": "H4317O",
+   "language": "hebrew",
+   "lemma": "מִיכָאֵל",
+   "gloss": "Michael",
+   "definition": "Mikael, the name of an archangel and of nine Israelites",
+   "derivation": "from 4310 and (the prefix derivative from) 3588 and 410; who (is) like God?;",
+   "sha256": "f3044512944f4881a22a6c82e56e19ce0b046824f48dadba7c6d6d865d7db006"
+  },
+  {
+   "strongs": "H4317P",
+   "language": "hebrew",
+   "lemma": "מִיכָאֵל",
+   "gloss": "Michael",
+   "definition": "Mikael, the name of an archangel and of nine Israelites",
+   "derivation": "from 4310 and (the prefix derivative from) 3588 and 410; who (is) like God?;",
+   "sha256": "f3044512944f4881a22a6c82e56e19ce0b046824f48dadba7c6d6d865d7db006"
+  },
+  {
+   "strongs": "H4317Q",
+   "language": "hebrew",
+   "lemma": "מִיכָאֵל",
+   "gloss": "Michael",
+   "definition": "Mikael, the name of an archangel and of nine Israelites",
+   "derivation": "from 4310 and (the prefix derivative from) 3588 and 410; who (is) like God?;",
+   "sha256": "f3044512944f4881a22a6c82e56e19ce0b046824f48dadba7c6d6d865d7db006"
+  },
+  {
+   "strongs": "H4318G",
+   "language": "hebrew",
+   "lemma": "מִיכָה",
+   "gloss": "Micah",
+   "definition": "Micah, the name of seven Israelites",
+   "derivation": "an abbreviated form of 4320;",
+   "sha256": "e787e3254981a295cfe4562ee6e57ec765c79284697665075b4a698d3ab45c43"
+  },
+  {
+   "strongs": "H4318H",
+   "language": "hebrew",
+   "lemma": "מִיכָה",
+   "gloss": "Micah",
+   "definition": "Micah, the name of seven Israelites",
+   "derivation": "an abbreviated form of 4320;",
+   "sha256": "e787e3254981a295cfe4562ee6e57ec765c79284697665075b4a698d3ab45c43"
+  },
+  {
+   "strongs": "H4318I",
+   "language": "hebrew",
+   "lemma": "מִיכָה",
+   "gloss": "Micah",
+   "definition": "Micah, the name of seven Israelites",
+   "derivation": "an abbreviated form of 4320;",
+   "sha256": "e787e3254981a295cfe4562ee6e57ec765c79284697665075b4a698d3ab45c43"
+  },
+  {
+   "strongs": "H4318J",
+   "language": "hebrew",
+   "lemma": "מִיכָה",
+   "gloss": "Micah",
+   "definition": "Micah, the name of seven Israelites",
+   "derivation": "an abbreviated form of 4320;",
+   "sha256": "e787e3254981a295cfe4562ee6e57ec765c79284697665075b4a698d3ab45c43"
+  },
+  {
+   "strongs": "H4318K",
+   "language": "hebrew",
+   "lemma": "מִיכָה",
+   "gloss": "Micah",
+   "definition": "Micah, the name of seven Israelites",
+   "derivation": "an abbreviated form of 4320;",
+   "sha256": "e787e3254981a295cfe4562ee6e57ec765c79284697665075b4a698d3ab45c43"
+  },
+  {
+   "strongs": "H4318L",
+   "language": "hebrew",
+   "lemma": "מִיכָה",
+   "gloss": "Mica",
+   "definition": "Micah, the name of seven Israelites",
+   "derivation": "an abbreviated form of 4320;",
+   "sha256": "4adc9bc00550856973400951c943ef8346cef96b0c79b26c9f834376d323d851"
+  },
+  {
+   "strongs": "H4318M",
+   "language": "hebrew",
+   "lemma": "מִיכָה",
+   "gloss": "Micah",
+   "definition": "Micah, the name of seven Israelites",
+   "derivation": "an abbreviated form of 4320;",
+   "sha256": "e787e3254981a295cfe4562ee6e57ec765c79284697665075b4a698d3ab45c43"
+  },
+  {
+   "strongs": "H4318N",
+   "language": "hebrew",
+   "lemma": "מִיכָה",
+   "gloss": "Micaiah",
+   "definition": "Micah, the name of seven Israelites",
+   "derivation": "an abbreviated form of 4320;",
+   "sha256": "d1f31f78e5fd6335f78a64cf3497716f4ff5e4e305b6b027e7de803d0aac392c"
+  },
+  {
+   "strongs": "H4319",
+   "language": "hebrew",
+   "lemma": "מִיכָהוּ",
+   "gloss": "Micahu",
+   "definition": "Mikehu, an Israelite prophet",
+   "derivation": "a contr. for 4321;",
+   "sha256": "a7502c1b5129067ad349aa7bd28bbae0f47c6bd246d5f9ac7dd442bb2b1234be"
+  },
+  {
+   "strongs": "H4320G",
+   "language": "hebrew",
+   "lemma": "מִיכָיָה",
+   "gloss": "Micaiah",
+   "definition": "Micajah, the name of two Israelites",
+   "derivation": "from 4310 and (the prefix derivative from) 3588 and 3050; who (is) like Jah?;",
+   "sha256": "80e80d6467e8acc4dba697a6ee0a7d7d47b7e122d1e7467d9ffa254325d8b836"
+  },
+  {
+   "strongs": "H4320H",
+   "language": "hebrew",
+   "lemma": "מִיכָיָה",
+   "gloss": "Micaiah",
+   "definition": "Micajah, the name of two Israelites",
+   "derivation": "from 4310 and (the prefix derivative from) 3588 and 3050; who (is) like Jah?;",
+   "sha256": "80e80d6467e8acc4dba697a6ee0a7d7d47b7e122d1e7467d9ffa254325d8b836"
+  },
+  {
+   "strongs": "H4320I",
+   "language": "hebrew",
+   "lemma": "מִיכָיָה",
+   "gloss": "Micaiah",
+   "definition": "Micajah, the name of two Israelites",
+   "derivation": "from 4310 and (the prefix derivative from) 3588 and 3050; who (is) like Jah?;",
+   "sha256": "80e80d6467e8acc4dba697a6ee0a7d7d47b7e122d1e7467d9ffa254325d8b836"
+  },
+  {
+   "strongs": "H4320J",
+   "language": "hebrew",
+   "lemma": "מִיכָה",
+   "gloss": "Micah",
+   "definition": "Micajah, the name of two Israelites",
+   "derivation": "from 4310 and (the prefix derivative from) 3588 and 3050; who (is) like Jah?;",
+   "sha256": "3d1b0405fcdd6f0681142236a916fac269d5d23638624b48a852cfa423907352"
+  },
+  {
+   "strongs": "H4321G",
+   "language": "hebrew",
+   "lemma": "מִיכָֽיְהוּ",
+   "gloss": "Micaiah",
+   "definition": "Mikajah, the name of three Israelites",
+   "derivation": "or מִכָיְהוּ; (Jeremiah 36:11), abbreviated form for 4322;",
+   "sha256": "6d41afbbf56fd6c73e2a12369d5d9633c59aad1513d59a10b9651f5e278a2a4a"
+  },
+  {
+   "strongs": "H4321H",
+   "language": "hebrew",
+   "lemma": "מִיכָֽיְהוּ",
+   "gloss": "Micaiah",
+   "definition": "Mikajah, the name of three Israelites",
+   "derivation": "or מִכָיְהוּ; (Jeremiah 36:11), abbreviated form for 4322;",
+   "sha256": "6d41afbbf56fd6c73e2a12369d5d9633c59aad1513d59a10b9651f5e278a2a4a"
+  },
+  {
+   "strongs": "H4321I",
+   "language": "hebrew",
+   "lemma": "מִיכָֽיְהוּ",
+   "gloss": "Micah",
+   "definition": "Mikajah, the name of three Israelites",
+   "derivation": "or מִכָיְהוּ; (Jeremiah 36:11), abbreviated form for 4322;",
+   "sha256": "30b386500901746f36fd09c03a8e65ea7c1900c622eae0246e9cb9b2b26ce040"
+  },
+  {
+   "strongs": "H4322G",
+   "language": "hebrew",
+   "lemma": "מִיכָיָ֫הוּ",
+   "gloss": "Micaiah",
+   "definition": "Mikajah, the name of an Israelite and an Israelitess",
+   "derivation": "for 4320;",
+   "sha256": "ea1e28792056febc9076b4438947143cf596a51b676f0ef4d9903d9cc20545b6"
+  },
+  {
+   "strongs": "H4322H",
+   "language": "hebrew",
+   "lemma": "מִיכָיָ֫הוּ",
+   "gloss": "Micaiah",
+   "definition": "Mikajah, the name of an Israelite and an Israelitess",
+   "derivation": "for 4320;",
+   "sha256": "ea1e28792056febc9076b4438947143cf596a51b676f0ef4d9903d9cc20545b6"
+  },
+  {
+   "strongs": "H4323",
+   "language": "hebrew",
+   "lemma": "מִיכָל",
+   "gloss": "brook",
+   "definition": "properly, a container, i.e. a streamlet",
+   "derivation": "from 3201;",
+   "sha256": "afde1eef9d3b1082a1dde0970c50d128d62913950783ba5bfd2565845587b15e"
+  },
+  {
+   "strongs": "H4324G",
+   "language": "hebrew",
+   "lemma": "מִיכַל",
+   "gloss": "Michal",
+   "definition": "Mikal, Saul's daughter",
+   "derivation": "apparently the same as 4323; revulet;",
+   "sha256": "9096f40f73a425185e3d6e62fb886fd1fc0bbdc5a98266411da5989a359e1081"
+  },
+  {
+   "strongs": "H4324H",
+   "language": "hebrew",
+   "lemma": "מִיכַל",
+   "gloss": "Merab",
+   "definition": "Mikal, Saul's daughter",
+   "derivation": "apparently the same as 4323; revulet;",
+   "sha256": "9a1799883bceb3a935cfc4f9850728d5bb8444554f3d78644a54b652839c3899"
+  },
+  {
+   "strongs": "H4325G",
+   "language": "hebrew",
+   "lemma": "מַי",
+   "gloss": "water",
+   "definition": "water; figuratively, juice; by euphemism, urine, semen",
+   "derivation": "dual of a primitive noun (but used in a singular sense);",
+   "sha256": "5583f3fda3c7655debd461d209cc9687d1f2a8b4164b17ab53f9e83eee896354"
+  },
+  {
+   "strongs": "H4325H",
+   "language": "hebrew",
+   "lemma": "מַי",
+   "gloss": "Water (Gate)",
+   "definition": "water; figuratively, juice; by euphemism, urine, semen",
+   "derivation": "dual of a primitive noun (but used in a singular sense);",
+   "sha256": "7d1fa159ed0ceda03d11d0e7e45ce62e5732fbea9f32c06959f8e60cb8eeb006"
+  },
+  {
+   "strongs": "H4326G",
+   "language": "hebrew",
+   "lemma": "מִיָּמִן",
+   "gloss": "Mijamin",
+   "definition": "Mijamin, the name of three Israelites",
+   "derivation": "a form for 4509;",
+   "sha256": "c7b3e15bf1b3fe06e22e77a9fed39ce044b5c6d58c918694226f6a089523d2fc"
+  },
+  {
+   "strongs": "H4326H",
+   "language": "hebrew",
+   "lemma": "מִיָּמִן",
+   "gloss": "Mijamin",
+   "definition": "Mijamin, the name of three Israelites",
+   "derivation": "a form for 4509;",
+   "sha256": "c7b3e15bf1b3fe06e22e77a9fed39ce044b5c6d58c918694226f6a089523d2fc"
+  },
+  {
+   "strongs": "H4326I",
+   "language": "hebrew",
+   "lemma": "מִיָּמִן",
+   "gloss": "Mijamin",
+   "definition": "Mijamin, the name of three Israelites",
+   "derivation": "a form for 4509;",
+   "sha256": "c7b3e15bf1b3fe06e22e77a9fed39ce044b5c6d58c918694226f6a089523d2fc"
+  },
+  {
+   "strongs": "H4327",
+   "language": "hebrew",
+   "lemma": "מִין",
+   "gloss": "kind",
+   "definition": "a sort, i.e. species",
+   "derivation": "from an unused root meaning to portion out;",
+   "sha256": "c02c7abaf0239b119485316db49add23f673d122bb6cd563c87d9454605684c7"
+  },
+  {
+   "strongs": "H4328",
+   "language": "hebrew",
+   "lemma": "מְיֻסָּדָה",
+   "gloss": "foundation",
+   "definition": "something founded, i.e. a foundation",
+   "derivation": "properly, feminine passive participle of 3245;",
+   "sha256": "6b642a4553ed96c474ea8e5a7781396e654cc01a5403b6fd841c6376a96bc978"
+  },
+  {
+   "strongs": "H4329",
+   "language": "hebrew",
+   "lemma": "מוּסָךְ",
+   "gloss": "portico",
+   "definition": "a portico (as covered)",
+   "derivation": "from 5526;",
+   "sha256": "651ad8f5ec5e25511419993efff9dec6c39d54cf83184458b0d15dd1b3470216"
+  },
+  {
+   "strongs": "H4330",
+   "language": "hebrew",
+   "lemma": "מִיץ",
+   "gloss": "pressing",
+   "definition": "pressure",
+   "derivation": "from 4160;",
+   "sha256": "dcb6e6a67d8a5705105c11ec3c76b657ca737d4b094a0c690a446af9e5bdfdaa"
+  },
+  {
+   "strongs": "H4331",
+   "language": "hebrew",
+   "lemma": "מֵישָׁא",
+   "gloss": "Mesha",
+   "definition": "Mesha, a place in Arabia; also an Israelite",
+   "derivation": "from 4185; departure;",
+   "sha256": "d95591c82217ad8b7e04300fdf91cf503ac7a373009a451af196637d8de774ca"
+  },
+  {
+   "strongs": "H4332G",
+   "language": "hebrew",
+   "lemma": "מִישָׁאֵל",
+   "gloss": "Mishael",
+   "definition": "Mishael, the name of three Israelites",
+   "derivation": "from 4310 and 410 with the abbreviated form insep. relatively (see 834) interposed; who (is) what God (is) ?;",
+   "sha256": "9120603003d0f727410e2b3e5c027050571afadb260fd008714916d1efa5d00b"
+  },
+  {
+   "strongs": "H4332H",
+   "language": "hebrew",
+   "lemma": "מִישָׁאֵל",
+   "gloss": "Mishael",
+   "definition": "Mishael, the name of three Israelites",
+   "derivation": "from 4310 and 410 with the abbreviated form insep. relatively (see 834) interposed; who (is) what God (is) ?;",
+   "sha256": "9120603003d0f727410e2b3e5c027050571afadb260fd008714916d1efa5d00b"
+  },
+  {
+   "strongs": "H4332I",
+   "language": "hebrew",
+   "lemma": "מִישָׁאֵל",
+   "gloss": "Mishael",
+   "definition": "Mishael, the name of three Israelites",
+   "derivation": "from 4310 and 410 with the abbreviated form insep. relatively (see 834) interposed; who (is) what God (is) ?;",
+   "sha256": "9120603003d0f727410e2b3e5c027050571afadb260fd008714916d1efa5d00b"
+  },
+  {
+   "strongs": "H4333",
+   "language": "hebrew",
+   "lemma": "מִישָׁאֵל",
+   "gloss": "Mishael",
+   "definition": "Mishael, an Israelite",
+   "derivation": "(Aramaic) corresponding to 4332;",
+   "sha256": "691e9c714c93c799116d3d8614019f5852867269a547699c79654bcce1c3d65f"
+  },
+  {
+   "strongs": "H4334",
+   "language": "hebrew",
+   "lemma": "מִישׁוֹר",
+   "gloss": "plain",
+   "definition": "a level, i.e. a plain (often used (with the article prefix) as a proper name of certain districts); figuratively, concord; also straightness, i.e. (figuratively) justice (sometimes adverbially, justly)",
+   "derivation": "or מִישֹׁר; from 3474;",
+   "sha256": "0040e217846f3fb44ee727a42c2f2d0828daebd01222b42bffe2028916b29f8d"
+  },
+  {
+   "strongs": "H4335",
+   "language": "hebrew",
+   "lemma": "מֵישַׁךְ",
+   "gloss": "Meshach",
+   "definition": "Meshak, an Israelite",
+   "derivation": "borrowed from 4336;",
+   "sha256": "9f07e1e961dae66036d3fb67ec0552ed9b93d20440e147f4d33d9e61ddd2faac"
+  },
+  {
+   "strongs": "H4336",
+   "language": "hebrew",
+   "lemma": "מֵישַׁךְ",
+   "gloss": "Meshach",
+   "definition": "Meshak, the Babylonian",
+   "derivation": "(Aramaic) of foreign origin and doubtful significance; name of 4333",
+   "sha256": "7062a36e952955e28182f77c33a456a48315a7adf057987232d39f16c8339fd4"
+  },
+  {
+   "strongs": "H4337",
+   "language": "hebrew",
+   "lemma": "מֵישָׁע",
+   "gloss": "Mareshah",
+   "definition": "Mesha, an Israelite",
+   "derivation": "from 3467; safety;",
+   "sha256": "64bc51c3f2e96fa36f84c40e0ee849884e4b252172e54ad9124c451206a1bda4"
+  },
+  {
+   "strongs": "H4338",
+   "language": "hebrew",
+   "lemma": "מֵישַׁע",
+   "gloss": "Mesha",
+   "definition": "Mesha, a Moabite",
+   "derivation": "a variation for 4337; safety;",
+   "sha256": "bbf1a6547db4833cd6f2f3bda215768bfdaa48d73278f90bd42dd5f8a562478d"
+  },
+  {
+   "strongs": "H4339",
+   "language": "hebrew",
+   "lemma": "מֵישָׁר",
+   "gloss": "uprightness",
+   "definition": "evenness, i.e. (figuratively) prosperity or concord; also straightness, i.e. (figuratively) rectitude (only in plural with singular sense; often adverbially)",
+   "derivation": "from 3474;",
+   "sha256": "cb53f1b7423560536504816c12a8e98fa06cad2450488d215fc3573a173c81b1"
+  },
+  {
+   "strongs": "H4340",
+   "language": "hebrew",
+   "lemma": "מֵיתָר",
+   "gloss": "cord",
+   "definition": "a cord (of a tent); or the string (of a bow)",
+   "derivation": "from 3498; (compare 3499)",
+   "sha256": "f2d7c4b2825aac13f0cf402d21d4437c5ba913104900bb88c4ea4eb573b5e8ee"
+  },
+  {
+   "strongs": "H4341",
+   "language": "hebrew",
+   "lemma": "מַכְאוֹב",
+   "gloss": "pain",
+   "definition": "anguish or (figuratively) affliction",
+   "derivation": "sometimes מַכְאוֹב; also (feminine Isaiah 53:3) מַכְאֹבָה; from 3510;",
+   "sha256": "b28b9b68118f14b3f4fccc7c3355c145cf5e055b4742814b24c8ef147b664058"
+  },
+  {
+   "strongs": "H4342",
+   "language": "hebrew",
+   "lemma": "מַכְבִּיר",
+   "gloss": "to increase",
+   "definition": "plenty",
+   "derivation": "transitive participle of 3527;",
+   "sha256": "9165a6996509fad29741ed7ab38bbefa13ddc2281266ad45f89b45d214c1af52"
+  },
+  {
+   "strongs": "H4343",
+   "language": "hebrew",
+   "lemma": "מַכְבֵּנָה",
+   "gloss": "Machbenah",
+   "definition": "Macbena, a place in Palestine settled by him",
+   "derivation": "from the same as 3522; knoll;",
+   "sha256": "4f02ab04e2cb024bc54771c0aa4fb223e2d989e982711d4dff066930c227d7a0"
+  },
+  {
+   "strongs": "H4344",
+   "language": "hebrew",
+   "lemma": "מַכְבַּנַּי",
+   "gloss": "Machbannai",
+   "definition": "a Macbannite or native of Macbena",
+   "derivation": "patrial from 4343;",
+   "sha256": "bd515030e19616528919cc74b8a10055fe8d0cfa884faf6cbcc3bdea3d8a87b2"
+  },
+  {
+   "strongs": "H4345",
+   "language": "hebrew",
+   "lemma": "מִכְבָּר",
+   "gloss": "grate",
+   "definition": "a grate",
+   "derivation": "from 3527 in the sense of covering (compare 3531);",
+   "sha256": "69e1375677f47c4ed16797fb649984d84b098014e0101418f7598c8471c148b1"
+  },
+  {
+   "strongs": "H4346",
+   "language": "hebrew",
+   "lemma": "מַכְבֵּר",
+   "gloss": "cloth",
+   "definition": "a cloth (as netted)",
+   "derivation": "from 3527 in the sense of covering; (compare 4345)",
+   "sha256": "6ac85ecbf17f6bc4e6e6a3d7bdb4ada6fbd45d5d84b19e4ca3ce27f09141c5a8"
+  },
+  {
+   "strongs": "H4347",
+   "language": "hebrew",
+   "lemma": "מַכָּה",
+   "gloss": "wound",
+   "definition": "a blow (in 2 Chronicles 2:10, of the flail); by implication, a wound; figuratively, carnage, also pestilence",
+   "derivation": "or (masculine) מַכֶּה; (plural only) from 5221;",
+   "sha256": "ee28e4bead9b4b904138911a66e6f4c26860c3b1cd8e42846a83a34ac5a25169"
+  },
+  {
+   "strongs": "H4348",
+   "language": "hebrew",
+   "lemma": "מִכְוָה",
+   "gloss": "burn",
+   "definition": "a burn",
+   "derivation": "from 3554;",
+   "sha256": "9b444d842c452dc440fd2ab9954135fad00b81a22f858e613502935716b6b253"
+  },
+  {
+   "strongs": "H4349",
+   "language": "hebrew",
+   "lemma": "מָכוֹן",
+   "gloss": "foundation",
+   "definition": "properly, a fixture, i.e. a basis; generally a place, especially as an abode",
+   "derivation": "from 3559;",
+   "sha256": "cace87ce682350e01c6a8ed4c396a5a3cf92505c602151eaf240314a661eac10"
+  },
+  {
+   "strongs": "H4350",
+   "language": "hebrew",
+   "lemma": "מְכוֹנָה",
+   "gloss": "base",
+   "definition": "a pedestal, also a spot",
+   "derivation": "or מְכֹנָה; feminine of 4349;",
+   "sha256": "40ed2d5ebaed605314e521359021f611e1fcc82d033008af549afc766b70ba12"
+  },
+  {
+   "strongs": "H4351",
+   "language": "hebrew",
+   "lemma": "מְכֹרָה",
+   "gloss": "origin",
+   "definition": "origin (as if a mine)",
+   "derivation": "or מְכֹרָה; from the same as 3564 in the sense of dipping;",
+   "sha256": "83e98733c1455ca86d1542bb2930803113f0ca8775877ec0d530376b838a422d"
+  },
+  {
+   "strongs": "H4352",
+   "language": "hebrew",
+   "lemma": "מָכִי",
+   "gloss": "Machi",
+   "definition": "Maki, an Israelite",
+   "derivation": "probably from 4134; pining;",
+   "sha256": "bcebb028300435439d65f8c0d64d14f9a9a1b0f21b5ea2385ffd271c1aee2a12"
+  },
+  {
+   "strongs": "H4353G",
+   "language": "hebrew",
+   "lemma": "מָכִיר",
+   "gloss": "Machir",
+   "definition": "Makir, an Israelite",
+   "derivation": "from 4376; salesman;",
+   "sha256": "4f1a98de4ae9e68a95e0a25f4177320006ab0906b7d7113c912f04266e8f5273"
+  },
+  {
+   "strongs": "H4353H",
+   "language": "hebrew",
+   "lemma": "מָכִיר",
+   "gloss": "Machir",
+   "definition": "Makir, an Israelite",
+   "derivation": "from 4376; salesman;",
+   "sha256": "4f1a98de4ae9e68a95e0a25f4177320006ab0906b7d7113c912f04266e8f5273"
+  },
+  {
+   "strongs": "H4354",
+   "language": "hebrew",
+   "lemma": "מָכִירִי",
+   "gloss": "Machirite",
+   "definition": "a Makirite or descendant of Makir",
+   "derivation": "patronymical from 4353;",
+   "sha256": "f00ed55474e09ab2bc503056a8a3faffd7412d382eafef53d8b0da30804a00af"
+  },
+  {
+   "strongs": "H4355",
+   "language": "hebrew",
+   "lemma": "מָכַךְ",
+   "gloss": "to sink",
+   "definition": "to tumble (in ruins); figuratively, to perish",
+   "derivation": "a primitive root;",
+   "sha256": "acecace8446c1d93184064f6fddaa3ba8c31b65570abd9e64a6c61d62e1dfdb9"
+  },
+  {
+   "strongs": "H4356",
+   "language": "hebrew",
+   "lemma": "מִכְלָה",
+   "gloss": "fold",
+   "definition": "a pen (for flocks)",
+   "derivation": "or מִכְלָה; from 3607;",
+   "sha256": "2727ff94054782b9fac188876712c844fa8b7e6acb559262b4d2b17bcb2b284a"
+  },
+  {
+   "strongs": "H4357",
+   "language": "hebrew",
+   "lemma": "מִכְלָה",
+   "gloss": "perfection",
+   "definition": "completion (in plural concrete adverbial, wholly)",
+   "derivation": "from 3615;",
+   "sha256": "2dc898f3ce0d5f00776a5c5288834b8f31ae688456e8f0f3ce3a2cdd3a86fdb0"
+  },
+  {
+   "strongs": "H4358",
+   "language": "hebrew",
+   "lemma": "מִכְלוֹל",
+   "gloss": "perfection",
+   "definition": "perfection (i.e. concrete adverbial, splendidly)",
+   "derivation": "from 3634;",
+   "sha256": "b088f68c852177b5a2c563b24226459a650073caedfceda599db671782496d78"
+  },
+  {
+   "strongs": "H4359",
+   "language": "hebrew",
+   "lemma": "מִכְלָל",
+   "gloss": "perfection",
+   "definition": "perfection (of beauty)",
+   "derivation": "from 3634;",
+   "sha256": "5c5cf20228ffdc2ab6adf5065f43e7440853dbdcbc05971a2c7a9a6d01691992"
+  },
+  {
+   "strongs": "H4360",
+   "language": "hebrew",
+   "lemma": "מַכְלֻל",
+   "gloss": "perfection",
+   "definition": "something perfect, i.e. a splendid garment",
+   "derivation": "from 3634;",
+   "sha256": "c186a5c51f01afb05833cdeaac3b2c8402e39cc0ea2238dcb6419661ba57de51"
+  },
+  {
+   "strongs": "H4361",
+   "language": "hebrew",
+   "lemma": "מַכֹּ֫לֶת",
+   "gloss": "food",
+   "definition": "nourishment",
+   "derivation": "from 398;",
+   "sha256": "8524094a6eddfc06bbce8ddf97d9b332bad75ce4b249806f0d7e4aebf33c0aa9"
+  },
+  {
+   "strongs": "H4362",
+   "language": "hebrew",
+   "lemma": "מִכְמָן",
+   "gloss": "hidden",
+   "definition": "treasure (as hidden)",
+   "derivation": "from the same as 3646 in the sense of hiding;",
+   "sha256": "0d2938ab95f8dca930ee6d63eb8334347dc30e5706b268765ea5dbab82f3fcdc"
+  },
+  {
+   "strongs": "H4363",
+   "language": "hebrew",
+   "lemma": "מִכְמָס, מִכְמָשׂ",
+   "gloss": "Michmash",
+   "definition": "Mikmas or Mikmash, a place in Palestine",
+   "derivation": "(Ezra 2:2 or מִכְמָשׁ; or מִכְמַשׁ; (Nehemiah 11:31), from 3647; hidden;",
+   "sha256": "bff2d4b6f0998ca47dcbe09e86e8e3a2ccef35a758ce6babee5325f4f4aeeb67"
+  },
+  {
+   "strongs": "H4364A",
+   "language": "hebrew",
+   "lemma": "מִכְמָר",
+   "gloss": "net",
+   "definition": "a (hunter's) net (as dark from concealment)",
+   "derivation": "or מִכְמֹר; from 3648 in the sense of blackening by heat;",
+   "sha256": "5be68b3057e7ad3e39b14cc54cd8d627ec66d9bae7e3ba3532e914de3987640d"
+  },
+  {
+   "strongs": "H4364B",
+   "language": "hebrew",
+   "lemma": "מַכְמֹר",
+   "gloss": "net",
+   "definition": "a (hunter's) net (as dark from concealment)",
+   "derivation": "or מִכְמֹר; from 3648 in the sense of blackening by heat;",
+   "sha256": "5be68b3057e7ad3e39b14cc54cd8d627ec66d9bae7e3ba3532e914de3987640d"
+  },
+  {
+   "strongs": "H4365A",
+   "language": "hebrew",
+   "lemma": "מִכְמֶ֫רֶת",
+   "gloss": "net",
+   "definition": "a (fisher's) net",
+   "derivation": "or מִכְמֹרֶת; feminine of 4364;",
+   "sha256": "8864c0efa2c2c23555e27049881f82d1ec50094370e445db1d0f2cbdb2a2fd77"
+  },
+  {
+   "strongs": "H4365B",
+   "language": "hebrew",
+   "lemma": "מִכְמֹ֫רֶת",
+   "gloss": "net",
+   "definition": "a (fisher's) net",
+   "derivation": "or מִכְמֹרֶת; feminine of 4364;",
+   "sha256": "8864c0efa2c2c23555e27049881f82d1ec50094370e445db1d0f2cbdb2a2fd77"
+  },
+  {
+   "strongs": "H4366",
+   "language": "hebrew",
+   "lemma": "מִכְמְתָת",
+   "gloss": "Michmethath",
+   "definition": "Mikmethath, a place in Palestine",
+   "derivation": "apparently from an unused root meaning to hide; concealment;",
+   "sha256": "43e11280ede1cafcecc0e311d714e2f01b9a72eb74ba52678f1b183c84c52767"
+  },
+  {
+   "strongs": "H4367",
+   "language": "hebrew",
+   "lemma": "מַכְנַדְבַי",
+   "gloss": "Machnadebai",
+   "definition": "Maknadbai, an Israelite",
+   "derivation": "from 4100 and 5068 with a particle interposed; what (is) like (a) liberal (man) ?;",
+   "sha256": "1d8cd3bc0f19f3459730e148a2e3d9428999182ec2429e9523d27af416cdd99e"
+  },
+  {
+   "strongs": "H4368",
+   "language": "hebrew",
+   "lemma": "מְכֹנָה",
+   "gloss": "Meconah",
+   "definition": "Mekonah, a place in Palestine",
+   "derivation": "the same as 4350; a base;",
+   "sha256": "dcc5e6edb180f54c3114dedc997c499e9888d10d4172a949fb8b9f7f88653295"
+  },
+  {
+   "strongs": "H4369",
+   "language": "hebrew",
+   "lemma": "מְכֻנָה",
+   "gloss": "base",
+   "definition": "a spot",
+   "derivation": "the same as 4350;",
+   "sha256": "f953be1160e13d0b4e71f68d09f88697eb38c8c13dce0a70b42e8cda020dc6ac"
+  },
+  {
+   "strongs": "H4370",
+   "language": "hebrew",
+   "lemma": "מִכְנָס",
+   "gloss": "undergarment",
+   "definition": "(only in dual) drawers (from concealing the private parts)",
+   "derivation": "from 3647 in the sense of hiding;",
+   "sha256": "999abc9ffc313c8222e99d1ceffe7661ce841c2359e70bc931878866224ff172"
+  },
+  {
+   "strongs": "H4371",
+   "language": "hebrew",
+   "lemma": "מֶ֫כֶס",
+   "gloss": "tribute",
+   "definition": "an assessment (as based upon a census)",
+   "derivation": "probably from an unused root meaning to enumerate;",
+   "sha256": "55d7ffde4b0d6e16a37fca4e7bb071057e2e7736064e975979f68e04d95d4eee"
+  },
+  {
+   "strongs": "H4372",
+   "language": "hebrew",
+   "lemma": "מִכְסֶה",
+   "gloss": "covering",
+   "definition": "a covering, i.e. weatherboarding",
+   "derivation": "from 3680;",
+   "sha256": "a91f5d792e9928a6ca8118859cb4218bbd32dd5cd8677f688eb831d4513d3316"
+  },
+  {
+   "strongs": "H4373",
+   "language": "hebrew",
+   "lemma": "מִכְסָה",
+   "gloss": "number",
+   "definition": "an enumeration; by implication, a valuation",
+   "derivation": "feminine of 4371;",
+   "sha256": "840e33be43e793d3b76b5465d07f1886fadc5b2197969d6b1239f223f48c8e5e"
+  },
+  {
+   "strongs": "H4374",
+   "language": "hebrew",
+   "lemma": "מְכַסֶּה",
+   "gloss": "covering",
+   "definition": "a covering, i.e. garment; specifically, a coverlet (for a bed), an awning (from the sun); also the omentum (as covering the intestines)",
+   "derivation": "from 3680;",
+   "sha256": "c883b9b7b04444958e01c5d398f26f30c25da989389a851ffeb67317f3421048"
+  },
+  {
+   "strongs": "H4375",
+   "language": "hebrew",
+   "lemma": "מַכְפֵּלָה",
+   "gloss": "Machpelah",
+   "definition": "Makpelah, a place in Palestine",
+   "derivation": "from 3717; a fold;",
+   "sha256": "64472cc2829c15318e621d4cef7df791045e51fdbd32dd78a9e5c9ce1bad8e1d"
+  },
+  {
+   "strongs": "H4376",
+   "language": "hebrew",
+   "lemma": "מָכַר",
+   "gloss": "to sell",
+   "definition": "to sell, literally (as merchandise, a daughter in marriage, into slavery), or figuratively (to surrender)",
+   "derivation": "a primitive root;",
+   "sha256": "b88c476216f7415c3d9dc9bb26578581efe9fc925d1eb4b7f89f01ca4926cdc5"
+  },
+  {
+   "strongs": "H4377",
+   "language": "hebrew",
+   "lemma": "מֶ֫כֶר",
+   "gloss": "merchandise",
+   "definition": "merchandise; also value",
+   "derivation": "from 4376;",
+   "sha256": "32e7be47ecc3747ecf2848612645ff79baa8100b896065e70a62f44a931c1224"
+  },
+  {
+   "strongs": "H4378",
+   "language": "hebrew",
+   "lemma": "מַכָּר",
+   "gloss": "acquaintance",
+   "definition": "an acquaintance",
+   "derivation": "from 5234;",
+   "sha256": "2c2dc576bc3e3a24a5317d45f807ddb73942a22862b43ca53c404dc624427eda"
+  },
+  {
+   "strongs": "H4379",
+   "language": "hebrew",
+   "lemma": "מִכְרֶה",
+   "gloss": "pit",
+   "definition": "a pit (for salt)",
+   "derivation": "from 3738;",
+   "sha256": "aada04d4f2bd8d8c3d6750230ecefa133bd54a7cb2355b6f44b39b52e95a12b5"
+  },
+  {
+   "strongs": "H4380",
+   "language": "hebrew",
+   "lemma": "מְכֵרָה",
+   "gloss": "sword",
+   "definition": "a sword",
+   "derivation": "probably from the same as 3564 in the sense of stabbing;",
+   "sha256": "747c9473d27105acf77c8b735c78626fc7e1099fa6dabc822cfabfde41e68acf"
+  },
+  {
+   "strongs": "H4381",
+   "language": "hebrew",
+   "lemma": "מִכְרִי",
+   "gloss": "Michri",
+   "definition": "Mikri, an Israelite",
+   "derivation": "from 4376; salesman;",
+   "sha256": "8ad2ba5ef46bc374d3ec115babe73bd0a9e6e46753e1827b644e83bb8a3a94d6"
+  },
+  {
+   "strongs": "H4382",
+   "language": "hebrew",
+   "lemma": "מְכֵרָתִי",
+   "gloss": "Mecherathite",
+   "definition": "a Mekerathite, or inhabitant of Mekerah",
+   "derivation": "patrial from an unused name (the same as 4380) of a place in Palestine;",
+   "sha256": "7c2c87b52aa03c7ed804ada867961ffd212f3635059e9684912810f01d2ab0fc"
+  },
+  {
+   "strongs": "H4383",
+   "language": "hebrew",
+   "lemma": "מִכְשׁוֹל",
+   "gloss": "stumbling",
+   "definition": "a stumbling-block, literally or figuratively (obstacle, enticement (specifically an idol), scruple)",
+   "derivation": "or מִכְשֹׁל; masculine from 3782;",
+   "sha256": "4c759d5876709710a6fba8b68b398087b212c6a72077b2dec675c44d7c785f4e"
+  },
+  {
+   "strongs": "H4384",
+   "language": "hebrew",
+   "lemma": "מַכְשֵׁלָה",
+   "gloss": "ruins",
+   "definition": "a stumbling-block, but only figuratively (fall, enticement [idol])",
+   "derivation": "feminine from 3782;",
+   "sha256": "149b6196fab5ee9074e4ae3c1f114d56503e6766f33cbfa216c037ad30296973"
+  },
+  {
+   "strongs": "H4385",
+   "language": "hebrew",
+   "lemma": "מִכְתָּב",
+   "gloss": "writing",
+   "definition": "a thing written, the characters, or a document (letter, copy, edict, poem)",
+   "derivation": "from 3789;",
+   "sha256": "0571cc1aa5b6cc8f960dc065180f9fc84926893c6e225cc12ac556b424a2771e"
+  },
+  {
+   "strongs": "H4386",
+   "language": "hebrew",
+   "lemma": "מְכִתָּה",
+   "gloss": "fragment",
+   "definition": "a fracture",
+   "derivation": "from 3807;",
+   "sha256": "1229588a6da5a18512d0e6797ff69ec4fc33e6b73b9f838ddc6f69a4e7b9b044"
+  },
+  {
+   "strongs": "H4387",
+   "language": "hebrew",
+   "lemma": "מִכְתָּם",
+   "gloss": "Miktam",
+   "definition": "an engraving, i.e. (techn.) a poem",
+   "derivation": "from 3799;",
+   "sha256": "94ede72f147189b8cd99a8ece5c4e0253b11071968c315d3c9b3b721088ac3ed"
+  },
+  {
+   "strongs": "H4388",
+   "language": "hebrew",
+   "lemma": "מַכְתֵּשׁ",
+   "gloss": "hollow",
+   "definition": "a mortar; by analogy, a socket (of a tooth)",
+   "derivation": "from 3806;",
+   "sha256": "786803a4dd7c7b05a21cb375b86cfe0a23ee697967faf8c43ce4eb392c1b3e50"
+  },
+  {
+   "strongs": "H4389",
+   "language": "hebrew",
+   "lemma": "מַכְתֵּשׁ",
+   "gloss": "Mortar",
+   "definition": "dell; the Maktesh, a place in Jerusalem",
+   "derivation": "the same as 4388;",
+   "sha256": "c98172e404c18d5cc3b0d80c5f12aee08cf3c7a8785f17bd96f0645c7b420b58"
+  },
+  {
+   "strongs": "H4390",
+   "language": "hebrew",
+   "lemma": "מָלֵא",
+   "gloss": "to fill",
+   "definition": "to fill or (intransitively) be full of, in a wide application (literally and figuratively)",
+   "derivation": "or מָלָא; (Esther 7:5), a primitive root;",
+   "sha256": "1420b17968ec85b4d42b9ab78da9b205907597cc787348dab9423768497dbbe5"
+  },
+  {
+   "strongs": "H4391",
+   "language": "hebrew",
+   "lemma": "מְלָא",
+   "gloss": "to fill",
+   "definition": "to fill",
+   "derivation": "(Aramaic) corresponding to 4390;",
+   "sha256": "ee02bd59e8c0157a9a5637190b3c70012d153e036ab19bbfa077ddbe6d93b598"
+  },
+  {
+   "strongs": "H4392",
+   "language": "hebrew",
+   "lemma": "מָלֵא",
+   "gloss": "full",
+   "definition": "full (literally or figuratively) or filling (literally); also (concretely) fulness; adverbially, fully",
+   "derivation": "from 4390;",
+   "sha256": "e53657e2cad834ec23568bde18b7a6914c657aa1312917aaea0d8225bd5901a5"
+  },
+  {
+   "strongs": "H4393",
+   "language": "hebrew",
+   "lemma": "מְלֹא",
+   "gloss": "fullness",
+   "definition": "fulness (literally or figuratively)",
+   "derivation": "rarely מְלוֹא; or מְלוֹ; (Ezekiel 41:8), from 4390;",
+   "sha256": "2e206e726da499bef6530b752b72f89742fb1ffbf7cb68251d65e21c42384557"
+  },
+  {
+   "strongs": "H4394",
+   "language": "hebrew",
+   "lemma": "מִלֻּא",
+   "gloss": "setting",
+   "definition": "a fulfilling (only in plural), i.e. (literally) a setting (of gems), or (technically) consecration (also concretely, a dedicatory sacrifice)",
+   "derivation": "from 4390;",
+   "sha256": "3bcde53a89b32d4cd578ab079f4f20ce6dc4dc06ae4f11e840801a4e85a73781"
+  },
+  {
+   "strongs": "H4395",
+   "language": "hebrew",
+   "lemma": "מְלֵאָה",
+   "gloss": "fruit",
+   "definition": "something fulfilled, i.e. abundance (of produce)",
+   "derivation": "feminine of 4392;",
+   "sha256": "db149bebd41da96224bd23dc7c67f73e13bab4b23015f32e4ddc6b3b56439fc4"
+  },
+  {
+   "strongs": "H4396",
+   "language": "hebrew",
+   "lemma": "מִלֻּאָה",
+   "gloss": "setting",
+   "definition": "a filling, i.e. setting (of gems)",
+   "derivation": "feminine of 4394;",
+   "sha256": "8e098702584b8f358d3052ead51700fc29245e3ed0c5365e8eebb75acfe9b874"
+  },
+  {
+   "strongs": "H4397G",
+   "language": "hebrew",
+   "lemma": "מַלְאָךְ",
+   "gloss": "messenger",
+   "definition": "a messenger; specifically, of God, i.e. an angel (also a prophet, priest or teacher)",
+   "derivation": "from an unused root meaning to despatch as a deputy;",
+   "sha256": "4ffdc8ccea6cd9271a54561570cf2dacd7ac0762e9c04aef46ca33fefe57bb28"
+  },
+  {
+   "strongs": "H4397H",
+   "language": "hebrew",
+   "lemma": "מַלְאָךְ",
+   "gloss": "messenger: angel",
+   "definition": "a messenger; specifically, of God, i.e. an angel (also a prophet, priest or teacher)",
+   "derivation": "from an unused root meaning to despatch as a deputy;",
+   "sha256": "37460117bf6837a3127062d45d0f2dcc02db600df87451abf84641b93f3cd30f"
+  },
+  {
+   "strongs": "H4398",
+   "language": "hebrew",
+   "lemma": "מַלְאַךְ",
+   "gloss": "angel",
+   "definition": "an angel",
+   "derivation": "(Aramaic) corresponding to 4397;",
+   "sha256": "7bba8969dd30e5f965e8acdfce1e2223aad63379c32215a85e17dc0b41a48097"
+  },
+  {
+   "strongs": "H4399",
+   "language": "hebrew",
+   "lemma": "מְלָאכָה",
+   "gloss": "work",
+   "definition": "properly, deputyship, i.e. ministry; generally, employment (never servile) or work (abstractly or concretely); also property (as the result of labor)",
+   "derivation": "from the same as 4397;",
+   "sha256": "78fc29cd02af6b12f76303d2821e6f94dee681db7aa3e38feb3c637654c861f2"
+  },
+  {
+   "strongs": "H4400",
+   "language": "hebrew",
+   "lemma": "מַלְאָכוּת",
+   "gloss": "message",
+   "definition": "a message",
+   "derivation": "from the same as 4397;",
+   "sha256": "a109ce37dc0106290e8de57b68a886ad431c6d9cbe890f59787e0c6a5ab1744b"
+  },
+  {
+   "strongs": "H4401",
+   "language": "hebrew",
+   "lemma": "מַלְאָכִי",
+   "gloss": "Malachi",
+   "definition": "Malaki, a prophet",
+   "derivation": "from the same as 4397; ministrative;",
+   "sha256": "dc34c82574543dd1e3c32421468a52b7ab2e3730568e7cb76928f9beb8ffc3d2"
+  },
+  {
+   "strongs": "H4402",
+   "language": "hebrew",
+   "lemma": "מִלֵּאת",
+   "gloss": "setting",
+   "definition": "fulness, i.e. (concretely) a plump socket (of the eye)",
+   "derivation": "from 4390;",
+   "sha256": "318af2e635f07b9cf215f4dc9e0dcc852a2f4ac222b8a5cc9f7f25d615446394"
+  },
+  {
+   "strongs": "H4403",
+   "language": "hebrew",
+   "lemma": "מַלְבּוּשׁ",
+   "gloss": "garment",
+   "definition": "a garment, or (collectively) clothing",
+   "derivation": "or מַלְבֻּשׁ; from 3847;",
+   "sha256": "1a135d4c2272e3c94aeaae11c9172f58aece439e8e7dc61a064fdcbbfb5c5968"
+  },
+  {
+   "strongs": "H4404",
+   "language": "hebrew",
+   "lemma": "מַלְבֵּן",
+   "gloss": "brick",
+   "definition": "a brickkiln",
+   "derivation": "from 3835 (denominative);",
+   "sha256": "cf97b4b786a2e61894dc1778e9df03aba50423be4a973af9841a9aa9ac196908"
+  },
+  {
+   "strongs": "H4405",
+   "language": "hebrew",
+   "lemma": "מִלָּה",
+   "gloss": "speech",
+   "definition": "a word; collectively, a discourse; figuratively, a topic",
+   "derivation": "from 4448 (plural masculine as if from מִלֶּה;",
+   "sha256": "0c92cdd4e4173049214586cc5b1b93e81fcf9ce3da184dc037640d86f2d0ae73"
+  },
+  {
+   "strongs": "H4406",
+   "language": "hebrew",
+   "lemma": "מִלָּה",
+   "gloss": "word",
+   "definition": "a word, command, discourse, or subject",
+   "derivation": "(Aramaic) corresponding to 4405;",
+   "sha256": "836261f83c4de6c6d25c1ed54de18acfd3edb64bfecc4dd84b4dcd5510f815db"
+  },
+  {
+   "strongs": "H4407",
+   "language": "hebrew",
+   "lemma": "מִלּוֹא",
+   "gloss": "Millo",
+   "definition": "a rampart (as filled in), i.e. the citadel",
+   "derivation": "or מִלֹּא; (2 Kings 12:20), from 4390;",
+   "sha256": "8e771018d44ca86db165946015e2fd55be215907ba6bc3987432e0525df4fce3"
+  },
+  {
+   "strongs": "H4408",
+   "language": "hebrew",
+   "lemma": "מַלּוּחַ",
+   "gloss": "mallow",
+   "definition": "sea-purslain (from its saltness)",
+   "derivation": "from 4414;",
+   "sha256": "eefb8fd3bcbf7b26c1b02f25ded4ea7155eda3bf543f46dc02922946dc1793e7"
+  },
+  {
+   "strongs": "H4409A",
+   "language": "hebrew",
+   "lemma": "מַלּוּךְ",
+   "gloss": "Malluch",
+   "definition": "Malluk, the name of five Israelites",
+   "derivation": "or מַלּוּכִי; (Nehemiah 12:14), from 4427; regnant;",
+   "sha256": "c67049189940ca4e1d848247056fd735a65465ef16f9bbdff4294fd32ce9bb97"
+  },
+  {
+   "strongs": "H4409B",
+   "language": "hebrew",
+   "lemma": "מְלִיכוּ",
+   "gloss": "Mallichi",
+   "definition": "Malluk, the name of five Israelites",
+   "derivation": "or מַלּוּכִי; (Nehemiah 12:14), from 4427; regnant;",
+   "sha256": "3fd75864c47cd6245bda619548a55257fff95c69c890e8fbab2181aa2a1da05b"
+  },
+  {
+   "strongs": "H4409G",
+   "language": "hebrew",
+   "lemma": "מַלּוּךְ",
+   "gloss": "Malluch",
+   "definition": "Malluk, the name of five Israelites",
+   "derivation": "or מַלּוּכִי; (Nehemiah 12:14), from 4427; regnant;",
+   "sha256": "c67049189940ca4e1d848247056fd735a65465ef16f9bbdff4294fd32ce9bb97"
+  },
+  {
+   "strongs": "H4409H",
+   "language": "hebrew",
+   "lemma": "מַלּוּךְ",
+   "gloss": "Malluch",
+   "definition": "Malluk, the name of five Israelites",
+   "derivation": "or מַלּוּכִי; (Nehemiah 12:14), from 4427; regnant;",
+   "sha256": "c67049189940ca4e1d848247056fd735a65465ef16f9bbdff4294fd32ce9bb97"
+  }
+ ]
+}

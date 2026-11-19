@@ -1,0 +1,511 @@
+{
+ "batch": "040",
+ "strongs": [
+  "G1509",
+  "G1510",
+  "G1511",
+  "G1512",
+  "G1513",
+  "G1514",
+  "G1515",
+  "G1516",
+  "G1517",
+  "G1518",
+  "G1519",
+  "G1520",
+  "G1521",
+  "G1522",
+  "G1523",
+  "G1524",
+  "G1525",
+  "G1526",
+  "G1527",
+  "G1528",
+  "G1529",
+  "G1530",
+  "G1531",
+  "G1532",
+  "G1533",
+  "G1534",
+  "G1535",
+  "G1536",
+  "G1537",
+  "G1538",
+  "G1539",
+  "G1540",
+  "G1541",
+  "G1542",
+  "G1543",
+  "G1544",
+  "G1545",
+  "G1546",
+  "G1547",
+  "G1548",
+  "G1549",
+  "G1550",
+  "G1551",
+  "G1552",
+  "G1553",
+  "G1554",
+  "G1555",
+  "G1556",
+  "G1557",
+  "G1558",
+  "G1559",
+  "G1560",
+  "G1561",
+  "G1562",
+  "G1563",
+  "G1564"
+ ],
+ "entries": [
+  {
+   "strongs": "G1509",
+   "language": "greek",
+   "lemma": "εἰ μή τι",
+   "gloss": "except what",
+   "definition": "εἰ,\nconjunctive particle, used in conditions and in indirect questions.\nI. Conditional, if;\n1. with indic, expressing a general assumption;\n(a) pres.: before indic, pres., Mat.11:14, Rom.8:25, al.; before imperat., Mrk.4:23 9:22, Jhn.15:18, 1Co.7:9, al.; before fut. indic., Luk.16:31, Rom.8:11, al.; before pf. or aor., with negation in apodosis, Mat.12:26, Rom.4:14, al.; similarly, before impf., Luk.17:6, Jhn.8:39; before quæst., Mat.6:23, Jhn.5:47 7:23 8:46, 1Pe.2:20;\n(b) fut.: Mat.26:33, 1Pe.2:20;\n(with) pf.: Jhn.11:12, Rom.6:5, al.;\n(d) aor.: Luk.16:11 19:8, Jhn.13:32, 18:23, Rev.20:15, al.\n2. Where the assumption is certain = ἐπεί: Mat.12:28, Jhn.7:4, Rom.5:17, al.\n3. Of an unfulfilled condition, with indic, impf., aor. or plpf., before ἄν, with imp. or aor. (see: ἄν, I, i).\n4. C. indic., after verbs denoting wonder, etc., sometimes, but not always, coupled with an element of doubt: Mrk.15:44, 1Jn.3:13, al.\n5. C. indic., as in LXX (Num.14:3o, 1Ki.14:45, al. = Heb. אִם), in oaths, with the formula of imprecation understood in a suppressed apodosis (WM, 627; Burton, §272): Mrk.8:12, Heb.3:11\" (LXX) 4:3 (LXX).\n6. Rarely (cl.) with optative, to express a merely possible condition: Act.24:19 27:39, 1Co.14:10 15:37, I Pe3:14, 17.\nII. Interrogative, if, whether.\n1. As in cl., in indir. questions after verbs of seeing, asking, knowing, saying, etc.: with indic. pres., Mat.26:63, Mrk.15:36, Act.19:2, 2Co.13:5, al.; fut., Mrk.3:2, Act.8:22, al.; aor., Mrk.15:44, 1Co.1:16, al.; with subjc. aor. (M, Pr., 194), Php.3:12.\n2. As in LXX (= Heb. אִם and interrog. הֲ, Gen.17:17, al.; see WM, 639f.; Viteau, i, 22), in direct questions: Mrk.8:23 (Tr., WH, txt.), Luk.13:23, 22:49, Act.19:2, al.\nIII. With other particles.\n1. εἰ ἄρα, εἴγε, εἰ δὲ μήγε, see: ἄρα, γε.\n2. εἰ δὲ καί, but if also: Luk.11:18; but even if, 1Co.4:7, 2Co.4:3 11:16.\n3. εἰ δὲ μή, but if not, but if otherwise: Mrk.2:21, 22 Jhn.14:2, Rev.2:5, al.\n4. εἰ καί, if even, if also, although: Mrk.14:29, Luk.11:8, 1Co.7:21, 2Co.4:16, Php.2:17, al.\n5. καὶ εἰ, even if, see: καί\n6. εἰ μή, if not, unless, except, but only: Mat.24:22, Mrk.2:26 6:5, Jhn.9:33, 1Co.7:17 (only), Gal.1:19 (cf. ἐὰν μή, 2:16; see Hort., Ja., xvi); ἐκτὸς εἰ μή, pleonastic (Bl., §65, 6), 1Co.14:5 15:2, 1Ti.5:19.\n7. εἰ μήν = cl. ἦ μήν (M, Pr., 46), in oaths, surely (Eze.33:27, al.): Heb.6:14.\n8. εἴ πως, if haply: Act.27:12, Rom.1:10.\n9. εἴτε . . . εἴτε, whether . . . or; Rom.12:6-8, 1Co.3:22 13:8, al.",
+   "sha256": "0dc1b58219788424508869106e590557d6ef876f7e899cab23e9b0b14370bdec"
+  },
+  {
+   "strongs": "G1510",
+   "language": "greek",
+   "lemma": "εἰμί",
+   "gloss": "to be",
+   "definition": "εἰμί,\nwith various uses and significations, like the English verb to be.\nI. As substantive verb.\n1. Of persons and things, to be, exist: Act.17:28, Jhn.1:1, 8:58, 17:5, al; ὁ ὢν καὶ ὁ ἦν (for past ptcp.), Rev.1:4, 8, 4:8, 11:17, 16:5 (see Swete, Ap., 5; M, Pr., 228); τὰ (μὴ) ὄντα, Rom.4:17, 1Co.1:28.\n2. Of times, events, etc., to be, happen, take place: Mat.24:3, Mrk.14:2, 15:42, Luk.21:23, Jhn.4:6, 23, 5:10, al.\n3. to be present, be in a place, have come: Mat.2:13, 15, Mrk.1:45, 5:21, 15:40, Luk.1:80, 5:29, Jhn.7:30, al.; before εἰς, Mrk.2:1; before ἐκ, (ἐξ), Mat.1:20, 21:25, Mrk.11:30, Jhn.3:31, al.\n4. Impers., ἔστι, ἦν, etc.;\n(a) there is (Fr. il y a), was, etc.: Mat.16:28, Luk.16:19, Jhn.3:1, 5:2, Rom.3:10, al.; with dative (of the possessor; Bl., §37, 3), Mat.16:22, Luk.1:7, Jhn.18.10, Rom.9:2, al.; ἔστιν ὅς, ὅστις (chiefly in pl), Mat.16:28, 19:2, Mrk.9:1, al.;\n(b) with inf., = ἔξεστιν (which see), it is possible: Heb.9:5, 1Co.11:20, RV (but see ICC, in l.).\nII. As copula uniting subject and predicate.\n1. Expressing simply identity or equivalence: Mat.5:13, 14:15, Luk.1:18, 19, Jhn.1:1, 4:19, Rev.3:9, al. mult.\n2. Explicative, as in parable, figure, type, etc.: Mat.13:19, 1Co.9:2, 10:4, 11:25, Gal.4:24, Rev.17:15, al.; ταῦτ᾽ ἔστιν, Mat.27:46, Mrk.7:2, Rom.7:18 al.; ὅ ἐστιν, Mrk.3:17, Col.1:24, Heb.7:2, al.; akin to this is the sacramental usage: Mat.26:26-28, Mrk.14:22, 24, Luk.22:19, 1Co.11:24 (see ICC on Mk, I Co, ll. with; DB, iii, 148 f.).\n3. C. genitive: qual., etc., Mrk.5:42, Luk.3:23, 1Co.14:33, Heb.12:11, al.; part., 1Ti.1:20, 2Ti.1:15; poss., Mat.5:3, 10, Mrk.12:7, Luk.4:7; of service or partisanship, Rom.8:9, 1Co.1:12, 2Co.10:7, 2Ti.2:19.\n4. C. dative (BL, §37, 3): Act.1:8, 9:15, Rom.4:12, 1Co.1:18, 2:14, Rev.21:7, al.\n5. C. ptcp., as a periphrasis for the simple verb (Bl., §62, 1, 2; M, Pr., 225 ff.);\n(a) with ptcp. pf. (cl.): Mat.10:30, Luk.9:32, Jhn.3:24, Act.21:35, 1Co.15:19, al;\n(b) with ptcp. pr. (esp. in impf., as in Heb. and Aram.; Dalman, Words, 35 f.), Mat.7:29, Mrk.1:22, Luk.4:31, 14:1, Act.1:10, al. mult., id. for imper. (M, Pr., 180f., 182f.), with ellipsis of εἰμί, Rom.12:9, 10, Heb.13:5, al.;\n(with) with ptcp. aor. (cl), Luk.23:9.\n6. Seq. εἰς (cf. Heb. הָיָה לְ), a vernac. usage (M, Pr., 71): Mat.19:5, Mrk.10:8, Heb.8:10, al.\n7. C. adv.: Mat.19:20, Mrk.4:26, Luk.18:11, al.\n8. Ellipses;\n(a) of the copula (Bl., §30, 3): Mat.8:29, 24:32, Jhn.21:22, 23, Heb.6:4, al.;\n(b) of the predicate: ἐγώ εἰμί, Mat.14:27, Mrk.6:50, al.; absol. (cf. Deu.32:39; אֲנִי הוּא), Mrk.13:6, Jhn.4:26, al. (cf. ἄπ-, ἔν-, πάρ-, συμ-πάρ-, σύν-ειμι).",
+   "sha256": "d7d3a44829daa16836319fcbe66eb430a9471fb959d7abefa7d95fc7128f2771"
+  },
+  {
+   "strongs": "G1511",
+   "language": "greek",
+   "lemma": "εἶναι",
+   "gloss": "to exist",
+   "definition": "εἰμί,\nwith various uses and significations, like the English verb to be.\nI. As substantive verb.\n1. Of persons and things, to be, exist: Act.17:28, Jhn.1:1, 8:58, 17:5, al; ὁ ὢν καὶ ὁ ἦν (for past ptcp.), Rev.1:4, 8, 4:8, 11:17, 16:5 (see Swete, Ap., 5; M, Pr., 228); τὰ (μὴ) ὄντα, Rom.4:17, 1Co.1:28.\n2. Of times, events, etc., to be, happen, take place: Mat.24:3, Mrk.14:2, 15:42, Luk.21:23, Jhn.4:6, 23, 5:10, al.\n3. to be present, be in a place, have come: Mat.2:13, 15, Mrk.1:45, 5:21, 15:40, Luk.1:80, 5:29, Jhn.7:30, al.; before εἰς, Mrk.2:1; before ἐκ, (ἐξ), Mat.1:20, 21:25, Mrk.11:30, Jhn.3:31, al.\n4. Impers., ἔστι, ἦν, etc.;\n(a) there is (Fr. il y a), was, etc.: Mat.16:28, Luk.16:19, Jhn.3:1, 5:2, Rom.3:10, al.; with dative (of the possessor; Bl., §37, 3), Mat.16:22, Luk.1:7, Jhn.18.10, Rom.9:2, al.; ἔστιν ὅς, ὅστις (chiefly in pl), Mat.16:28, 19:2, Mrk.9:1, al.;\n(b) with inf., = ἔξεστιν (which see), it is possible: Heb.9:5, 1Co.11:20, RV (but see ICC, in l.).\nII. As copula uniting subject and predicate.\n1. Expressing simply identity or equivalence: Mat.5:13, 14:15, Luk.1:18, 19, Jhn.1:1, 4:19, Rev.3:9, al. mult.\n2. Explicative, as in parable, figure, type, etc.: Mat.13:19, 1Co.9:2, 10:4, 11:25, Gal.4:24, Rev.17:15, al.; ταῦτ᾽ ἔστιν, Mat.27:46, Mrk.7:2, Rom.7:18 al.; ὅ ἐστιν, Mrk.3:17, Col.1:24, Heb.7:2, al.; akin to this is the sacramental usage: Mat.26:26-28, Mrk.14:22, 24, Luk.22:19, 1Co.11:24 (see ICC on Mk, I Co, ll. with; DB, iii, 148 f.).\n3. C. genitive: qual., etc., Mrk.5:42, Luk.3:23, 1Co.14:33, Heb.12:11, al.; part., 1Ti.1:20, 2Ti.1:15; poss., Mat.5:3, 10, Mrk.12:7, Luk.4:7; of service or partisanship, Rom.8:9, 1Co.1:12, 2Co.10:7, 2Ti.2:19.\n4. C. dative (BL, §37, 3): Act.1:8, 9:15, Rom.4:12, 1Co.1:18, 2:14, Rev.21:7, al.\n5. C. ptcp., as a periphrasis for the simple verb (Bl., §62, 1, 2; M, Pr., 225 ff.);\n(a) with ptcp. pf. (cl.): Mat.10:30, Luk.9:32, Jhn.3:24, Act.21:35, 1Co.15:19, al;\n(b) with ptcp. pr. (esp. in impf., as in Heb. and Aram.; Dalman, Words, 35 f.), Mat.7:29, Mrk.1:22, Luk.4:31, 14:1, Act.1:10, al. mult., id. for imper. (M, Pr., 180f., 182f.), with ellipsis of εἰμί, Rom.12:9, 10, Heb.13:5, al.;\n(with) with ptcp. aor. (cl), Luk.23:9.\n6. Seq. εἰς (cf. Heb. הָיָה לְ), a vernac. usage (M, Pr., 71): Mat.19:5, Mrk.10:8, Heb.8:10, al.\n7. C. adv.: Mat.19:20, Mrk.4:26, Luk.18:11, al.\n8. Ellipses;\n(a) of the copula (Bl., §30, 3): Mat.8:29, 24:32, Jhn.21:22, 23, Heb.6:4, al.;\n(b) of the predicate: ἐγώ εἰμί, Mat.14:27, Mrk.6:50, al.; absol. (cf. Deu.32:39; אֲנִי הוּא), Mrk.13:6, Jhn.4:26, al. (cf. ἄπ-, ἔν-, πάρ-, συμ-πάρ-, σύν-ειμι).",
+   "sha256": "da87496e3cd2ca48fdcfc709009115802d5a2654ac8f57c53e3089c2b6df12d6"
+  },
+  {
+   "strongs": "G1512",
+   "language": "greek",
+   "lemma": "εἴπερ",
+   "gloss": "if so/since",
+   "definition": "εἴ-περ, see: εἰ.\nεἰ,\nconjunctive particle, used in conditions and in indirect questions.\nI. Conditional, if;\n1. with indic, expressing a general assumption;\n(a) pres.: before indic, pres., Mat.11:14, Rom.8:25, al.; before imperat., Mrk.4:23 9:22, Jhn.15:18, 1Co.7:9, al.; before fut. indic., Luk.16:31, Rom.8:11, al.; before pf. or aor., with negation in apodosis, Mat.12:26, Rom.4:14, al.; similarly, before impf., Luk.17:6, Jhn.8:39; before quæst., Mat.6:23, Jhn.5:47 7:23 8:46, 1Pe.2:20;\n(b) fut.: Mat.26:33, 1Pe.2:20;\n(with) pf.: Jhn.11:12, Rom.6:5, al.;\n(d) aor.: Luk.16:11 19:8, Jhn.13:32, 18:23, Rev.20:15, al.\n2. Where the assumption is certain = ἐπεί: Mat.12:28, Jhn.7:4, Rom.5:17, al.\n3. Of an unfulfilled condition, with indic, impf., aor. or plpf., before ἄν, with imp. or aor. (see: ἄν, I, i).\n4. C. indic., after verbs denoting wonder, etc., sometimes, but not always, coupled with an element of doubt: Mrk.15:44, 1Jn.3:13, al.\n5. C. indic., as in LXX (Num.14:3o, 1Ki.14:45, al. = Heb. אִם), in oaths, with the formula of imprecation understood in a suppressed apodosis (WM, 627; Burton, §272): Mrk.8:12, Heb.3:11\" (LXX) 4:3 (LXX).\n6. Rarely (cl.) with optative, to express a merely possible condition: Act.24:19 27:39, 1Co.14:10 15:37, I Pe3:14, 17.\nII. Interrogative, if, whether.\n1. As in cl., in indir. questions after verbs of seeing, asking, knowing, saying, etc.: with indic. pres., Mat.26:63, Mrk.15:36, Act.19:2, 2Co.13:5, al.; fut., Mrk.3:2, Act.8:22, al.; aor., Mrk.15:44, 1Co.1:16, al.; with subjc. aor. (M, Pr., 194), Php.3:12.\n2. As in LXX (= Heb. אִם and interrog. הֲ, Gen.17:17, al.; see WM, 639f.; Viteau, i, 22), in direct questions: Mrk.8:23 (Tr., WH, txt.), Luk.13:23, 22:49, Act.19:2, al.\nIII. With other particles.\n1. εἰ ἄρα, εἴγε, εἰ δὲ μήγε, see: ἄρα, γε.\n2. εἰ δὲ καί, but if also: Luk.11:18; but even if, 1Co.4:7, 2Co.4:3 11:16.\n3. εἰ δὲ μή, but if not, but if otherwise: Mrk.2:21, 22 Jhn.14:2, Rev.2:5, al.\n4. εἰ καί, if even, if also, although: Mrk.14:29, Luk.11:8, 1Co.7:21, 2Co.4:16, Php.2:17, al.\n5. καὶ εἰ, even if, see: καί\n6. εἰ μή, if not, unless, except, but only: Mat.24:22, Mrk.2:26 6:5, Jhn.9:33, 1Co.7:17 (only), Gal.1:19 (cf. ἐὰν μή, 2:16; see Hort., Ja., xvi); ἐκτὸς εἰ μή, pleonastic (Bl., §65, 6), 1Co.14:5 15:2, 1Ti.5:19.\n7. εἰ μήν = cl. ἦ μήν (M, Pr., 46), in oaths, surely (Eze.33:27, al.): Heb.6:14.\n8. εἴ πως, if haply: Act.27:12, Rom.1:10.\n9. εἴτε . . . εἴτε, whether . . . or; Rom.12:6-8, 1Co.3:22 13:8, al.",
+   "sha256": "f5527f401ea5cc871c59e8dbb50c74c99989e6057c75c2ddbccf1b865911e5e6"
+  },
+  {
+   "strongs": "G1513",
+   "language": "greek",
+   "lemma": "εἴπως",
+   "gloss": "if somehow",
+   "definition": "εἴ-πως, see: εἰ.\nεἰ,\nconjunctive particle, used in conditions and in indirect questions.\nI. Conditional, if;\n1. with indic, expressing a general assumption;\n(a) pres.: before indic, pres., Mat.11:14, Rom.8:25, al.; before imperat., Mrk.4:23 9:22, Jhn.15:18, 1Co.7:9, al.; before fut. indic., Luk.16:31, Rom.8:11, al.; before pf. or aor., with negation in apodosis, Mat.12:26, Rom.4:14, al.; similarly, before impf., Luk.17:6, Jhn.8:39; before quæst., Mat.6:23, Jhn.5:47 7:23 8:46, 1Pe.2:20;\n(b) fut.: Mat.26:33, 1Pe.2:20;\n(with) pf.: Jhn.11:12, Rom.6:5, al.;\n(d) aor.: Luk.16:11 19:8, Jhn.13:32, 18:23, Rev.20:15, al.\n2. Where the assumption is certain = ἐπεί: Mat.12:28, Jhn.7:4, Rom.5:17, al.\n3. Of an unfulfilled condition, with indic, impf., aor. or plpf., before ἄν, with imp. or aor. (see: ἄν, I, i).\n4. C. indic., after verbs denoting wonder, etc., sometimes, but not always, coupled with an element of doubt: Mrk.15:44, 1Jn.3:13, al.\n5. C. indic., as in LXX (Num.14:3o, 1Ki.14:45, al. = Heb. אִם), in oaths, with the formula of imprecation understood in a suppressed apodosis (WM, 627; Burton, §272): Mrk.8:12, Heb.3:11\" (LXX) 4:3 (LXX).\n6. Rarely (cl.) with optative, to express a merely possible condition: Act.24:19 27:39, 1Co.14:10 15:37, I Pe3:14, 17.\nII. Interrogative, if, whether.\n1. As in cl., in indir. questions after verbs of seeing, asking, knowing, saying, etc.: with indic. pres., Mat.26:63, Mrk.15:36, Act.19:2, 2Co.13:5, al.; fut., Mrk.3:2, Act.8:22, al.; aor., Mrk.15:44, 1Co.1:16, al.; with subjc. aor. (M, Pr., 194), Php.3:12.\n2. As in LXX (= Heb. אִם and interrog. הֲ, Gen.17:17, al.; see WM, 639f.; Viteau, i, 22), in direct questions: Mrk.8:23 (Tr., WH, txt.), Luk.13:23, 22:49, Act.19:2, al.\nIII. With other particles.\n1. εἰ ἄρα, εἴγε, εἰ δὲ μήγε, see: ἄρα, γε.\n2. εἰ δὲ καί, but if also: Luk.11:18; but even if, 1Co.4:7, 2Co.4:3 11:16.\n3. εἰ δὲ μή, but if not, but if otherwise: Mrk.2:21, 22 Jhn.14:2, Rev.2:5, al.\n4. εἰ καί, if even, if also, although: Mrk.14:29, Luk.11:8, 1Co.7:21, 2Co.4:16, Php.2:17, al.\n5. καὶ εἰ, even if, see: καί\n6. εἰ μή, if not, unless, except, but only: Mat.24:22, Mrk.2:26 6:5, Jhn.9:33, 1Co.7:17 (only), Gal.1:19 (cf. ἐὰν μή, 2:16; see Hort., Ja., xvi); ἐκτὸς εἰ μή, pleonastic (Bl., §65, 6), 1Co.14:5 15:2, 1Ti.5:19.\n7. εἰ μήν = cl. ἦ μήν (M, Pr., 46), in oaths, surely (Eze.33:27, al.): Heb.6:14.\n8. εἴ πως, if haply: Act.27:12, Rom.1:10.\n9. εἴτε . . . εἴτε, whether . . . or; Rom.12:6-8, 1Co.3:22 13:8, al.",
+   "sha256": "32fdfb510683b4395cb0fe9dcb13bcc83c915bba34d10c009e57f712bfd066f5"
+  },
+  {
+   "strongs": "G1514",
+   "language": "greek",
+   "lemma": "εἰρηνεύω",
+   "gloss": "be at peace",
+   "definition": "εἰρηνεύω\n(εἰρήνη), [in LXX chiefly for שׁלם, שׁקט ;]\n1. to bring to peace, reconcile (so 1Ma.6:60).\n2. to keep peace, be at peace: Mrk.9:50, Rom.12:18, 2Co.13:11, 1Th.5:13 (cf. Sir.28:9; Cremer, 246).\n†",
+   "sha256": "e40faaa50f4dbbfa2017334f962a30a168076f52a8e57a247557e217400c7455"
+  },
+  {
+   "strongs": "G1515",
+   "language": "greek",
+   "lemma": "εἰρήνη",
+   "gloss": "peace",
+   "definition": "εἰρήνη, -ης, ἡ,\n[in LXX chiefly for שָׁלוֹם ;]\npeace;\n1. of public peace, freedom from war: Luk.14:32, Act.12:20 24:2; of the church, Ac 9:31.\n2. Of peace between persons, concord, agreement : Mat.10:34, Luk.12:51, Rom.14:17, 1Co.7:15, Gal.5:22, Jas.3:18; ζητεῖν εἰ., 1Pe.3:11; διώκειν, 2Ti.2:22; ib. before μετὰ πάντων, Heb.12:14; by meton., of him who brings peace, Eph.2:14.\n3. As in LXX (= Heb. שָׁלוֹם, Aram. שְׁלָם), of a state of security and safety: Jhn.16:33, Rom.2:10, 1Th.5:3,́ whence the formulae, ὕπαγε (πορεύου) εἰς εἰ, Mrk.5:34, Luk.7:50 (cf. 1Ki.1:17, al.; לְכִי לְשָׁלוֹם); εἰ. ὑμῖν (שָׁלוֹם לָכֶם), Jhn.20:19, 21, 26; ἀπολύειν ἐν εἰ., Luk.2:29, cf. 1Co.16:11; ἡ εἰ. ὑμῶν, Mat.10:13, Luk.10:6; υἱὸς εἰρήνης, ib.\n4. Of spiritual peace, the peace of Christ's kingdom (DCG, ii, 330f.): Luk.1:79 2:14 Jhn.16:33, Rom.2:10 5:1 8:6, al.; ὁ κύριος τῆς εἰ., 2Th.3:16; ὁ θεὸς τῆς εἰ., Rom.15:33 16:20, 2Co.13:11, al.; in epistolary salutations, Rom.1:7, 1Co.1:3, Gal.1:3, 1Th.1:1, 1Pe.1:2, 2Jo.3, Rev.1:4, al. (see Cremer, 244).",
+   "sha256": "3b44caff17543f0d955e5a2f9081a2e248b66a035c24a517524bf94ed58507e4"
+  },
+  {
+   "strongs": "G1516",
+   "language": "greek",
+   "lemma": "εἰρηνικός",
+   "gloss": "peaceful",
+   "definition": "είρηνικός, -ή, -όν\n(εἰρήνη), [in LXX for שָׁלוֹם and cognates ;]\npeaceful: Heb.12:11, Jas.3:17.†",
+   "sha256": "6d06b3a80b1eed1217b110588179e200dde0e333b31dcf3a877b25a6c60bc143"
+  },
+  {
+   "strongs": "G1517",
+   "language": "greek",
+   "lemma": "εἰρηνοποιέω",
+   "gloss": "to make peace",
+   "definition": "εἰρηνο-ποιέω, -ῶ\n[in LXX: Pro.10:10 * ;]\nto make peace: Col.1:20.†",
+   "sha256": "1dddd01167eded1cf6da9c71b29bac4eca9e3ffa9f8ef9579562fc36e8326116"
+  },
+  {
+   "strongs": "G1518",
+   "language": "greek",
+   "lemma": "εἰρηνοποιός",
+   "gloss": "peacemaker",
+   "definition": "εἰρηνοποιός, -όν\npeace-making, a peacemaker: Mat.5:9†",
+   "sha256": "3db41dc9a1ab365683022a5e84fce0091d086c5c2e128fa03b2a412e2e696e91"
+  },
+  {
+   "strongs": "G1519",
+   "language": "greek",
+   "lemma": "εἰς",
+   "gloss": "toward",
+   "definition": "εἰς,\nprep. with accusative,\nexpressing entrance, direction, limit, into, unto, to, upon, towards, for, among (Lat. in, with accusative).\nI. Of place.\n1. After verbs of motion;\n(a) of entrance into: Mat.8:23, 9:7, Mrk.1:45, Luk.2:15, 8:31, al.;\n(b) of approach, to or towards: Mrk.11:1, Luk.6:8, 19:28, Jhn.11:31, 21:6, al.;\n(with) before pl. and collective nouns, among: Mrk.4:7, 8:19, 20, Luk.11:49, Jhn.21:23, al.;\n(d) Of a limit reached, unto, on, upon: Mat.8:18, 21:1, Mrk.11:1, 13:16, Luk.14:10, Jhn.6:3, 11:32, al.; with accusative of person(s) (as in Ep. and Ion.), Act.23:15, Rom.5:12, 16:19, 2Co.10:14;\n(e) elliptical: ἐπιστολαὶ εἰς Δαμασκόν, Act.9:2; ἡ διακονία μου ἡ εἰς Ἱ., Rom.15:31; metaphorically, of entrance into a certain state or condition, or of approach or direction towards some end (Thayer, B, i, 1; ii, 1), εἰς τ. ὄνομα, M, Pr., 200.\n2. Of direction;\n(a) after verbs of seeing: Mat.6:26, Mrk.6:41, Luk.9:16, 62, Jhn.13:22, al.; metaphorically, of the mind, Heb.11:26, 12:2, al.;\n(b) after verbs of speaking: Mat.13:10, 14:9, 1Th.2:9, al.\n3. After verbs of rest;\n(a) in \"pregnant\" construction, implying previous motion (cl.; see WM, 516; Bl., §39, 3; M, Pr., 234f.): Mat.2:23, 4:13, 2Th.2:4, 2Ti.1:11, Heb.11:9, al.;\n(b) by an assimilation general in late Gk (see Bl., M, Pr., ll. with) = ἐν: Luk.1:44, 4:23, Act.20:16, 21:17, Jhn.1:18 (but see Westc, in l.), al.\nII. Of time, for, unto;\n1. accentuating the duration expressed by the accusative: εἰς τ. αἰῶνα, Mat.21:19; εἰς γενεὰς καὶ γ., Luk.1:50; εἰς τ. διηνεκές, Heb.7:3, al.\n2. Of a point or limit of time, unto, up to, until: Mat.6:34, Act.4:3, 25:21, Php.1:10, 2:16, 1Th.4:15, 2Ti.1:12; of entrance into a future period, σεις τὸ μέλλον (see: μέλλω), next (year), Luk.13:9 (but with ICC, in l.); εἰς τ. μεταξὺ σάββατον, on the next Sabbath, Act.13:42; εἰς τὸ πάλιν (see: πάλιν, 2Co.13:2.\nIII. Of result, after verbs of changing, joining, dividing, etc.: στρέφειν εἰς, Rev.11:6; μετας-, Act.2:20, Jas.4:9; μεταλλάσσειν, Rom.1:26; σχίζειν εἰς δύο, Mat.27:51, al.; predicatively with εἴναι, Act.8:23.\nIV. Of relation, to, towards, for, in regard to (so in cl., but more frequently in late Gk., εἰς encroaching on the simple dative, which it has wholly displaced in MGr.; Jannaris, Gr., §1541; Robertson, Gr., 594; Deiss., BS, 117f.): Luk.7:30, Rom.4:20, 15:2, 26, 1Co.16:1, Eph.3:16, al.; ἀγάπη εἰς, Rom.5:8, al.; χρηστός, Eph.4:32; φρονεῖν εἰς, Rom.12:16; θαρρεῖν, 2Co.10:1.\nV. Of the end or object: εὔθετος εἰς, Luk.14:34; σόφος, Rom.16:19; ἰσχύειν, Mat.5:13; εἰς τοῦτο, Mrk.1:38, al.; ἀφορίζειν εἰς, Rom.1:1; indicating purpose, εἰς φόβον, Rom.8:15; εἰς ἔνδειξιν, Rom.3:25; εἰς τό, with inf. (= ἵνα or ὥστε; Bl., §71, 5; M, Pr., 218ff.): Mat.20:19, Rom.1:11, 1Co.9:18, al.\nVI. Adverbial phrases: εἰς τέλος, εἰς τὸ πάλιν, etc (see: τέλος, πάλιν, etc.).",
+   "sha256": "9feac2349af65cc4150915d7b5da272b585ba07e4c1ee40ce879e1aef9816f20"
+  },
+  {
+   "strongs": "G1520",
+   "language": "greek",
+   "lemma": "εἷς",
+   "gloss": "one",
+   "definition": "εἷς\nιά, ἕν, genitive ἑνός, μιᾶς, ἑνός,\ncardinal numeral, one;\n1. one, as opposite to many: Mat.25:15, Rom.5:12, 1Co.10:8, al.; as subst., Rom.5:15, Eph.2:14; id. with genitive partit., Mat.5:19, al.; before ἐκ (ἐξ), Mrk.14:18, Jhn.6:8, al.; metaphorically, of union and concord, Jhn.10:30 17:11, Rom.12:4-5, Php.1:27; ἀπὸ μιᾶς (B1., § 44, 1), Luk.14:18; with neg., εἷς. . . οὐ (μή), more emphatic than οὐδείς, no one, none (cl.), Mat.5:18 10:29, Luk.11:46 12:6.\n2. Emphatically, to the exclusion of others;\n(a) a single (one): Mat.21:24, Mrk.8:14; absol., 1Co.9:24, al.; οὐδὲ εἷς, Mat.27:14, Jhn.1:3, Rom.3:10, al.;\n(b) one, alone: Mrk.2:7 10:18, Luk.18:19;\n(with) one and the same: Rom.3:30, 1Co.3:8 11:5 12:11, 1Jn.5:8.\n3. In late Gk., with weakened force, = τις or indef. art. (of. Heb. אֶחָד, Gen.22:13, al.; see B1., § 45, 2; M, Pr., 96 f.): Mat.8:19 19:6, Rev.8:13, al.; εἷς τις (Bl., l.with), Luk.22:50, Jhn.11:49\n4. Distributively: εἷς καστος (cl.), Luk.4:40, Act.2:6, al.; εἷς . . . καὶ εἷς (cl., εἷς μὲν . . . εἷς δέ), Mat.17:4, Mrk.9:5, Jhn.20:12, al. (cf. LXX and use of Heb. אֶחָד, Exo.17:12, al); ὁ εἷς . . . ὁ ἕτερος (ἄλλος) = cl. ὁ μὲν (ἕτερος) . . . ὁ δέ (ἕτερος), Mat.6:24, Luk.7:41, Rev.17:10; καθ᾽ εἷς, εἷς κ. είς (in which καθ᾽ is adverbial, or the expression formed from the analogy of ἕν καθ᾽ ἔν; M, Pr., 105), one by one, severally: Mrk.14:19, Rom.12:5, al.; εἷς τὸν ἕνα = ἀλλήλους (B1., 45, 2; M, Pr., 246), 1Th.5:11.\n5. As ordinal = πρῶτος (like Heb. אֶחָד; Bl., § 45, 1; M, Pr., 95 f.), first: Mat.28:1, Mrk.16:2, al",
+   "sha256": "0d17909daa4cdb84290c192014d79723aa0e3cae36f26123529991fd3685f378"
+  },
+  {
+   "strongs": "G1521",
+   "language": "greek",
+   "lemma": "εἰσάγω",
+   "gloss": "to bring in",
+   "definition": "εἰσ-άγω\n[in LXX chiefly for בּוֹא, hi. ;]\nto bring in: with accusative, Luk.2:27, Jhn.18:16, Act.7:45; before εἰς, Luk.22:54, Act.9:8 21:28-29, 37 22:24, Heb.1:6; ὧδε, Luk.14:21.†",
+   "sha256": "336f96a18f656abe0531008bd8bf028120fd819ca022e0ebfd579ec71b13662f"
+  },
+  {
+   "strongs": "G1522",
+   "language": "greek",
+   "lemma": "εἰσακούω",
+   "gloss": "to listen to",
+   "definition": "είσ-ακούω\n[in LXX chiefly for שָׁמַע, also for עָנָה, etc. ;]\nto listen to, in two senses;\n(a) to obey: 1Co.14:21 (cf. Deu.1:43, Sir.3:6)\n(b) to listen, assent to; pass., to be heard: of persons praying, Mat.6:7, Heb.5:7; of the prayer offered, Luk.1:13, Act.10:31 (cf. Psa.4:2, Sir.34:26); see Cremer, 624).†",
+   "sha256": "6a9bc3e989f2faecd50c8fe55ae4c84b384a1a6daa5b4a8e7ff09f3ea0ce3bfb"
+  },
+  {
+   "strongs": "G1523",
+   "language": "greek",
+   "lemma": "εἰσδέχομαι",
+   "gloss": "to receive",
+   "definition": "εἰσ-δέχομαι\n[in LXX for קָבַץ ;]\nto admit, receive: 2Co.6:17 (LXX) (Cremer, 687).†",
+   "sha256": "df83d5f75ca65f6b31f3da8cee06c99ae610cddef8257dcfae049d3185e9dad7"
+  },
+  {
+   "strongs": "G1524",
+   "language": "greek",
+   "lemma": "εἴσειμι",
+   "gloss": "to enter",
+   "definition": "εἴσ-ειμι\n[in LXX for בּוֹא ;]\nto go in, enter: before εἰς, Act.3:3 21:26, Heb.9:6; πρὸς Ἰάκωβον, Act.21:18.†",
+   "sha256": "62da97e6fc55614a4479f043879b83555a66dc964278a1ddaefd4349f558f8a0"
+  },
+  {
+   "strongs": "G1525",
+   "language": "greek",
+   "lemma": "εἰσέρχομαι",
+   "gloss": "to enter",
+   "definition": "εἰσ-έρχομαι,\n[in LXX chiefly for בּוֹא ;]\nto go in or into, enter: Mat.9:25, Luk.7:45, al.; before εἰς, Mat.10:12, Mrk.2:1, al.; before διά (πύλης, θύρας, etc.), Mat.7:13, Jhn.10:1, al.; ὑπὸ τ. στέγην, Mat.8:8; with adv.: ὅπου, Mrk.14:14, Heb.6:20; ὧδε, Mat.22:12; ἔσω, Mat.26:58; before πρός, with accusative of person(s), Mrk.15:43, Luk.1:28, Act.10:3 11:3 16:40 17:2 28:8, Rev.3:20; of demons taking possession, Mrk.9:25, Luk.8:30 22:3, Jhn.13:27; of food, Mat.15:11, Act.11:8. Metaphorical, of thoughts, Luk.9:46; εἰς κόπον, Jhn.4:38; εἰς πειρασμόν, Mat.26:41, Luk.22:40, 46; of hope as an anchor, Heb.6:19; βοαί, Jas.5:4; πνεῦμα ζωῆς, Rev.11:11; εἰς τ. κόσμον (cf. Wis.2:24 14:14, Jhn.18:37), Rom.5:12, Heb.10:5; in counterparts of Jewish Aram. phrases relating to the theocracy (cf. Dalman, Words, 116ff.): εἰς τ. γάμους, Mat.25:10; εἰς τ. χάραν τ. κυρίου, Mat.25:21, 23; εἰς τ. ζωήν, Mat.18:8, 9 19:17, Mrk.9:43, 45; εἰς τ. βασιλ. τ. οὐρανῶν, Mat.5:20 7:21, al. (see: βασιλεία); εἰς τ. κατάπαυσιν, Heb.3:11, 18 4:1ff.; εἰς τ. δόξαν, Luk.24:26; εἰσ. καὶ ἐξερχ., to go in and out (like Heb. בוֹא וְצֵאת, Deu.28:6, etc.), of familiar intercourse, Act.1:21; figuratively, of moral freedom, Jhn.10:9 (cf. ἐπ-, παρ-, συν-εισέρχομαι).",
+   "sha256": "42412b14ccec9a8ac7aff843c9ef8e87fbc046fcdf8b9de818acb7d0cc236ffd"
+  },
+  {
+   "strongs": "G1526",
+   "language": "greek",
+   "lemma": "εἰσί",
+   "gloss": "they are",
+   "definition": "εἰμί,\nwith various uses and significations, like the English verb to be.\nI. As substantive verb.\n1. Of persons and things, to be, exist: Act.17:28, Jhn.1:1, 8:58, 17:5, al; ὁ ὢν καὶ ὁ ἦν (for past ptcp.), Rev.1:4, 8, 4:8, 11:17, 16:5 (see Swete, Ap., 5; M, Pr., 228); τὰ (μὴ) ὄντα, Rom.4:17, 1Co.1:28.\n2. Of times, events, etc., to be, happen, take place: Mat.24:3, Mrk.14:2, 15:42, Luk.21:23, Jhn.4:6, 23, 5:10, al.\n3. to be present, be in a place, have come: Mat.2:13, 15, Mrk.1:45, 5:21, 15:40, Luk.1:80, 5:29, Jhn.7:30, al.; before εἰς, Mrk.2:1; before ἐκ, (ἐξ), Mat.1:20, 21:25, Mrk.11:30, Jhn.3:31, al.\n4. Impers., ἔστι, ἦν, etc.;\n(a) there is (Fr. il y a), was, etc.: Mat.16:28, Luk.16:19, Jhn.3:1, 5:2, Rom.3:10, al.; with dative (of the possessor; Bl., §37, 3), Mat.16:22, Luk.1:7, Jhn.18.10, Rom.9:2, al.; ἔστιν ὅς, ὅστις (chiefly in pl), Mat.16:28, 19:2, Mrk.9:1, al.;\n(b) with inf., = ἔξεστιν (which see), it is possible: Heb.9:5, 1Co.11:20, RV (but see ICC, in l.).\nII. As copula uniting subject and predicate.\n1. Expressing simply identity or equivalence: Mat.5:13, 14:15, Luk.1:18, 19, Jhn.1:1, 4:19, Rev.3:9, al. mult.\n2. Explicative, as in parable, figure, type, etc.: Mat.13:19, 1Co.9:2, 10:4, 11:25, Gal.4:24, Rev.17:15, al.; ταῦτ᾽ ἔστιν, Mat.27:46, Mrk.7:2, Rom.7:18 al.; ὅ ἐστιν, Mrk.3:17, Col.1:24, Heb.7:2, al.; akin to this is the sacramental usage: Mat.26:26-28, Mrk.14:22, 24, Luk.22:19, 1Co.11:24 (see ICC on Mk, I Co, ll. with; DB, iii, 148 f.).\n3. C. genitive: qual., etc., Mrk.5:42, Luk.3:23, 1Co.14:33, Heb.12:11, al.; part., 1Ti.1:20, 2Ti.1:15; poss., Mat.5:3, 10, Mrk.12:7, Luk.4:7; of service or partisanship, Rom.8:9, 1Co.1:12, 2Co.10:7, 2Ti.2:19.\n4. C. dative (BL, §37, 3): Act.1:8, 9:15, Rom.4:12, 1Co.1:18, 2:14, Rev.21:7, al.\n5. C. ptcp., as a periphrasis for the simple verb (Bl., §62, 1, 2; M, Pr., 225 ff.);\n(a) with ptcp. pf. (cl.): Mat.10:30, Luk.9:32, Jhn.3:24, Act.21:35, 1Co.15:19, al;\n(b) with ptcp. pr. (esp. in impf., as in Heb. and Aram.; Dalman, Words, 35 f.), Mat.7:29, Mrk.1:22, Luk.4:31, 14:1, Act.1:10, al. mult., id. for imper. (M, Pr., 180f., 182f.), with ellipsis of εἰμί, Rom.12:9, 10, Heb.13:5, al.;\n(with) with ptcp. aor. (cl), Luk.23:9.\n6. Seq. εἰς (cf. Heb. הָיָה לְ), a vernac. usage (M, Pr., 71): Mat.19:5, Mrk.10:8, Heb.8:10, al.\n7. C. adv.: Mat.19:20, Mrk.4:26, Luk.18:11, al.\n8. Ellipses;\n(a) of the copula (Bl., §30, 3): Mat.8:29, 24:32, Jhn.21:22, 23, Heb.6:4, al.;\n(b) of the predicate: ἐγώ εἰμί, Mat.14:27, Mrk.6:50, al.; absol. (cf. Deu.32:39; אֲנִי הוּא), Mrk.13:6, Jhn.4:26, al. (cf. ἄπ-, ἔν-, πάρ-, συμ-πάρ-, σύν-ειμι).",
+   "sha256": "f8cf5aad99486aa3ff18da6c3b30da384188b060b6f034f7d4a797461af2d06e"
+  },
+  {
+   "strongs": "G1527",
+   "language": "greek",
+   "lemma": "εἷς καθ᾽ εἷς",
+   "gloss": "one by one",
+   "definition": "severallyrally, one by one, single person, united",
+   "sha256": "35ec2dbc698622e10f12a810d7d21f2ba4ccc731ba310252dc6d556436594316"
+  },
+  {
+   "strongs": "G1528",
+   "language": "greek",
+   "lemma": "εἰσκαλέω",
+   "gloss": "to invite",
+   "definition": "εἰσ-καλέω, -ῶ,\nto call in: mid., with accusative of person(s), Act.10:23.†",
+   "sha256": "4f8e89984518ac4c04588755cfcfb6a9b582d9a3b3c16758e0d5d9efb2891872"
+  },
+  {
+   "strongs": "G1529",
+   "language": "greek",
+   "lemma": "εἴσοδος",
+   "gloss": "entry",
+   "definition": "εἴσ-οδος, -ου, ὁ\n(ὁδός) [in LXX chiefly for בּוֹא ;]\n1. a means of entering, place of entrance: Heb.10:19, 2Pe.1:11 (cf. Westc., He., l.with; MM, Exp., xii; but see infr.).\n2. a going in, entrance: Act.13:24; with genitive loc., Heb.10:19 (Thayer, see word; but see supr.); before εἰς, 2Pe.1:11 (Mayor, in l.; Thayer; but see supr.); πρός, 2Th.1:9 2:1.†",
+   "sha256": "e43385f3e253c1a59f5ff210684cb6c5210abebbbe1cf30d9d779eceb7801819"
+  },
+  {
+   "strongs": "G1530",
+   "language": "greek",
+   "lemma": "εἰσπηδάω",
+   "gloss": "to rush into",
+   "definition": "εἰσ-πηδάω, -ῶ\n[in LXX: Amo.5:19 (בּוֹא), Da TH Sus 1:26* ;]\nto spring in, rush in: Act.14:14 (Rec.), Act.16:29 (for exx. from π., see MM, Exp., xii).†",
+   "sha256": "e5612c0f857ff6516aac0b59410b58dab435dffa471d71276e0d4ebd7be9dba8"
+  },
+  {
+   "strongs": "G1531",
+   "language": "greek",
+   "lemma": "εἰσπορεύω",
+   "gloss": "to enter",
+   "definition": "εἰσ-πορεύομαι\n[in LXX chiefly for בּוֹא ;]\nto go into, enter: Luk.8:16 11:33 19:30; before εἰς, Mrk.1:21 6:56 11:2, Luk.22:10, Act.3:2; πρός, with accusative of person(s), Act.28:30; ὅπου, Mrk.5:40; κατά τ. οἴκους, house after house, Act.8:3; of things (food), Mat.15:17, Mrk.7:15, 18-19 Metaphorical (cf. εἰοέρχομαι, 2), Mrk.4:19, Luk.18:24; εἰσ. καὶ ἐκπορ., to associate with, before μετά (cf. εἰσέρχομαι), Act.9:28.†",
+   "sha256": "b23ba437abaa02b7635cdb056f44cc2715105eccccfa470d8789659991bba79d"
+  },
+  {
+   "strongs": "G1532",
+   "language": "greek",
+   "lemma": "εἰστρέχω",
+   "gloss": "to run in",
+   "definition": "εἰσ-τρέχω\n[in LXX: 2Ma.5:26 * ;]\nto run in: Act.12:14.†",
+   "sha256": "13517a5b3867a3ffc00ac7320e38fa91b354ef4135adb61b13f04967ff0e48ae"
+  },
+  {
+   "strongs": "G1533",
+   "language": "greek",
+   "lemma": "εἰσφέρω",
+   "gloss": "to bring in",
+   "definition": "εἰσ-φέρω\n[in LXX chiefly for בּוֹא hi. ;]\nto bring in, into: with accusative of person(s), Luk.5:18-19; before εἰς, Mat.6:13, Luk.11:4; ἐπί, Luk.12:11; with accusative of thing(s), before εἰς, 1Ti.6:7; pass., Heb.13:11.†",
+   "sha256": "a6cbe584f0153b7407bb9d4b7c10ae188c27bb775121dda2ba27338a4af31a21"
+  },
+  {
+   "strongs": "G1534",
+   "language": "greek",
+   "lemma": "εἶτα",
+   "gloss": "then",
+   "definition": "εἶτα\nadv.,\ndenoting sequence;\n1. of time; then, next: Mrk.8:25, Luk.8:12, Jhn.13:5 19:27 20:27, 1Ti.3:10, Jas.1:15; before genitive abs., Mrk.4:17; in enumerations, 1Co.15:5 15:7 15:24, 1Ti.2:13.\n2. In argument;\n(a) therefore, then,\n(b) furthermore: Heb.12:9 (cf. εἶτεν).†",
+   "sha256": "87368ca64443b9e89ea1940c5f85a24aaaff6fbdc2f4b5481b769b57217f16f8"
+  },
+  {
+   "strongs": "G1535",
+   "language": "greek",
+   "lemma": "εἴτε",
+   "gloss": "whether",
+   "definition": "εἴτε, see: εἰ.\nεἰ,\nconjunctive particle, used in conditions and in indirect questions.\nI. Conditional, if;\n1. with indic, expressing a general assumption;\n(a) pres.: before indic, pres., Mat.11:14, Rom.8:25, al.; before imperat., Mrk.4:23 9:22, Jhn.15:18, 1Co.7:9, al.; before fut. indic., Luk.16:31, Rom.8:11, al.; before pf. or aor., with negation in apodosis, Mat.12:26, Rom.4:14, al.; similarly, before impf., Luk.17:6, Jhn.8:39; before quæst., Mat.6:23, Jhn.5:47 7:23 8:46, 1Pe.2:20;\n(b) fut.: Mat.26:33, 1Pe.2:20;\n(with) pf.: Jhn.11:12, Rom.6:5, al.;\n(d) aor.: Luk.16:11 19:8, Jhn.13:32, 18:23, Rev.20:15, al.\n2. Where the assumption is certain = ἐπεί: Mat.12:28, Jhn.7:4, Rom.5:17, al.\n3. Of an unfulfilled condition, with indic, impf., aor. or plpf., before ἄν, with imp. or aor. (see: ἄν, I, i).\n4. C. indic., after verbs denoting wonder, etc., sometimes, but not always, coupled with an element of doubt: Mrk.15:44, 1Jn.3:13, al.\n5. C. indic., as in LXX (Num.14:3o, 1Ki.14:45, al. = Heb. אִם), in oaths, with the formula of imprecation understood in a suppressed apodosis (WM, 627; Burton, §272): Mrk.8:12, Heb.3:11\" (LXX) 4:3 (LXX).\n6. Rarely (cl.) with optative, to express a merely possible condition: Act.24:19 27:39, 1Co.14:10 15:37, I Pe3:14, 17.\nII. Interrogative, if, whether.\n1. As in cl., in indir. questions after verbs of seeing, asking, knowing, saying, etc.: with indic. pres., Mat.26:63, Mrk.15:36, Act.19:2, 2Co.13:5, al.; fut., Mrk.3:2, Act.8:22, al.; aor., Mrk.15:44, 1Co.1:16, al.; with subjc. aor. (M, Pr., 194), Php.3:12.\n2. As in LXX (= Heb. אִם and interrog. הֲ, Gen.17:17, al.; see WM, 639f.; Viteau, i, 22), in direct questions: Mrk.8:23 (Tr., WH, txt.), Luk.13:23, 22:49, Act.19:2, al.\nIII. With other particles.\n1. εἰ ἄρα, εἴγε, εἰ δὲ μήγε, see: ἄρα, γε.\n2. εἰ δὲ καί, but if also: Luk.11:18; but even if, 1Co.4:7, 2Co.4:3 11:16.\n3. εἰ δὲ μή, but if not, but if otherwise: Mrk.2:21, 22 Jhn.14:2, Rev.2:5, al.\n4. εἰ καί, if even, if also, although: Mrk.14:29, Luk.11:8, 1Co.7:21, 2Co.4:16, Php.2:17, al.\n5. καὶ εἰ, even if, see: καί\n6. εἰ μή, if not, unless, except, but only: Mat.24:22, Mrk.2:26 6:5, Jhn.9:33, 1Co.7:17 (only), Gal.1:19 (cf. ἐὰν μή, 2:16; see Hort., Ja., xvi); ἐκτὸς εἰ μή, pleonastic (Bl., §65, 6), 1Co.14:5 15:2, 1Ti.5:19.\n7. εἰ μήν = cl. ἦ μήν (M, Pr., 46), in oaths, surely (Eze.33:27, al.): Heb.6:14.\n8. εἴ πως, if haply: Act.27:12, Rom.1:10.\n9. εἴτε . . . εἴτε, whether . . . or; Rom.12:6-8, 1Co.3:22 13:8, al.",
+   "sha256": "2948096a50df9ee1663fd46d66e1a71d45d215f82e69e682088d95881ccd6760"
+  },
+  {
+   "strongs": "G1536",
+   "language": "greek",
+   "lemma": "εἴ τις",
+   "gloss": "if any",
+   "definition": "if any, if everny, if ever",
+   "sha256": "fc48f81aecfcddc0e3a4b6afe370e9d3db6c709b3e9383e722df5ad20cb0f375"
+  },
+  {
+   "strongs": "G1537",
+   "language": "greek",
+   "lemma": "ἐκ",
+   "gloss": "out from",
+   "definition": "ἐκ (ἐξ),\nprep. with genitive,\nfrom out of, from (see Addendum, p. 492).\nThis entry is included here, but in the print version the entry is found on p. 492. ἐκ, before a vowel ἐξ,\nprep. with genitive,\nof motion outwards, separation from (opposite to εἰς; = Lat. e, ex), from out of, from among, from.\nI. Of Place,\n1. of motion, out of, forth from, off from: Jhn.6:31, Act.9:3, Gal.1:8, al.; esp. after verbs of motion, Mat.8:28 17:9, Mrk.1:25 7:28, Jhn.1:33 20:1, Act.12:7, 17 27:30, al.; constr. praeg., σώζειν (διας) ἐκ, Ju 5, Act.28:4. Metaphorical, Mat.7:4, 5, 1Pe.2:9; ἐκ τ. χειρός (-ῶν), before genitive of person(s), Luk.1:74, Jhn.10:28, 29, 39, Act.12:4 24:7, Rev.19:2; πίνειν (which see) ἐκ; of the place from which an action proceeds, Luk.5:3 (cf. 12:36, Jhn.13:4, 2Co.2:4).\n2. Of change from one place or condition to another: Jhn.8:42, Rom.6:13 13:11, Rev.7:14, al.; with ellips. of verb of motion, 2Ti.2:26, 2Pe.2:21, Rev.2:21, al.\n3. Of separation or distinction from a number, before collective or pl. nouns: Mat.13:47, 49, Jhn.12:1, Act.3:15, 1Pe.1:3, al.; after εἷς, Mat.10:29 Luk.17:15, al.; οὐδείς, Jhn.7:19, al.; πολλοί, Jhn.11:19, al.; τις, Luk.11:15, al.; τίς, Mat.6:27, al.; in partitive phrase as subject of sentence, Jhn.16:17; Hebraistically, ἐκ μέσου before genitive, = ἐκ (Heb. מִתּוֹךְ), Mat.13:49, al.\n4. Of position or direction (so in cl. = ἔξω): ἐκ δεξιῶν (see: δεξιός); ἐξ ἐναντίας, Mrk.15:39 (metaphorically, Tit.2:8); ἐκ ῥιζῶν (i.e., utterly), Mat.11:20.\nII. Of Time,\n1. of the point of time from which, from, since: ἐκ γενετῆς, Jhn.9:1, cf. Mrk.10:20, Luk.23:8, Act.24:10, al.\n2. Of succession in time: ἐκ δευτέρου, a second time, Mrk.14:72, al., cf. Mat.26:44; ἡμέραν ἐξ ἡμέρας, from day to day, 2Pe.2:8.\nIII. Of Origin,\n1. of nativity, lineage, race: κοίτην (ἐν γαστρί) ἔχειν, Rom.9:10, Mat.1:18; γεννᾶν ἐκ, Mat.1:3ff.; γεννᾶσθαι (γίνεσθαι) ἐκ, Jhn.3:6 8:41, Gal.4:4; ἐκ πνεύματος (θεοῦ), Jhn.1:13 3:5ff., al. ἔρχεσθαι, εἶναι, etc., ἐκ τ. πολέως, Jhn.1:44; φυλῆς, Luk.2:36, al.; τ. ἐξουσίας Ἡρῴδου, Luk.23:7; ὁ ὢν ἐκ τ. γῆς, Jhn.3:31.\n2. Of the author, occasion or source: Mat.5:37, Jhn.2:16, Rom.2:29, 1Co.8:6, Gal.5:8, al.; ἐκ (τ. θεοῦ, 1Co.7:7, 2Co.5:1, 1Jn.4:7; ἐκ τ. πατρός, Jhn.6:65, al.; ἐκ τ. γῆς ἐστιν, λαλεῖ, Jhn.3:31; εκ καρδίας, Rom.6:17, cf. Mrk.12:30, 1Ti.1:5; ἐκ ψυχῆς, Eph.6:6, Col.3:23; ἐκ πίστεως, Rom.14:23; κρίνειν ἐκ, Luk.19:22, Rev.20:12.\n3. Of the agent, after passive verbs: Mat.15:5, Mrk.7:11, 2Co.2:2, al.; frequently in Re after αδικεῖσθαι (2:11), etc.\n4. Of cause, dependence, source of supply: τ. πόνου (των), Rev.16:10, 11; τ. φωνῶν, Rev.8:13; ἐκ τούτου, Jhn.6:66 19:12 (but see Meyer, in ll.); ἐκ θεοῦ λαλεῖν, 2Co.2:17; ἐκ τ. ἀληθείας, Jhn.18:37, 1Jn.3:19; ὁ ἐκ πίστεως, Rom.3:26 4:16; οἱ (ὄντες) ἐκ περιτομῆς, Act.11:2, Rom.4:12, Gal.2:12, Col.4:11; πίνειν ἐκ, Mat.26:29, Mrk.14:25, Jhn.4:13, al.; θερίζειν, Gal.6:8; μετέχειν ἐκ (= partit. genitive), 1Co.10:13; with inf., ἐκ τοῦ ἔχειν, 2Co.8:11.\n5. Of material: Mat.27:29, Jhn.2:15 19:2, Rom.9:21, 1Co.11:12, Rev.18:12, al.; allied to which is its use of price (= cl. genitive): Mat.27:7, cf. ib. 20:2, Act.1:18.\nIV. By attraction = ἐν (cl.): τὰ ἐκ τ. οἰκιας, Mat.24:17; τ. ἐξ αὐτοῦ δύναμιν, Mrk.5:30 (see Field, in l.); ὁ πατὴρ ὁ ἐξ οὐρανοῦ, Luk.11:13.\nV. Adverbial phrases: ἐξ ἀνάγκης, 2Co.9:7, Heb.7:12; ἐξ ἰσότητος, 2Co.8:13; ἐκ μέρους, 1Co.12:27 13:9-12; ἐκ μέτρου, Jhn.3:34; ἐκ συμφώνου, 1Co.7:5.\nVI. in composition, ἐκ signifies,\n1. procession, removal: ἐκβαίνω, ἐκβάλλω.\n2. Opening out, unfolding: ἐκτείνω; metaphorically, ἐξαγγάλλω.\n3. Origin: ἔκγονος.\n4. Completeness: ἐξαπορέω (see M, Pr., 237), ἐκπληρόω, ἐκτελέω.",
+   "sha256": "68caa7a97c3688d9acc63c651209f4905b3ddc011c78fa68b3cdec167ef6a4a8"
+  },
+  {
+   "strongs": "G1538",
+   "language": "greek",
+   "lemma": "ἕκαστος",
+   "gloss": "each",
+   "definition": "1. every, every one, each, each one , Lat. quisque, (Homer), etc.; the singular is often joined with a pl. Verb, ἔβαν οἴκονδε ἕκαστος they went home every one of them , (Iliad by Homer); ἕκαστος ἐπίστασθε (Xenophon Historicus):—;the singular is also put in apposition with a pl. Noun, Τρῶας ἕκαστον ὑπήλυθε τρόμος (for Τρώων ἕκαστον)) fear seized them every one , (Iliad by Homer)\n2. in plural all and each one , (Homer)\n3. more definitely, εἷς ἕκαστος, Lat. unusquisque, every single one, (Herdotus Historicus), etc.:—; καθ᾽ ἕκαστον singly, by itself , Lat. singulatim, (Plato Philosophus), etc.\n4. ὡς ἕκαστοι each by himself , (Herdotus Historicus), etc. (ML)",
+   "sha256": "437ad1b633f51b8b1f41a4ec9410d2f4207315ae79561be2b51c8e75ae20470d"
+  },
+  {
+   "strongs": "G1539",
+   "language": "greek",
+   "lemma": "ἑκάστοτε",
+   "gloss": "always",
+   "definition": "ἑκάστοτε\nadv.,\neach time, always: 2Pe.1:15.†",
+   "sha256": "9a7a2a8430b5a532199eba51329efa7bb1defeef1fbbe0a4c68ac13ce25e3ff9"
+  },
+  {
+   "strongs": "G1540",
+   "language": "greek",
+   "lemma": "ἑκατόν",
+   "gloss": "hundred",
+   "definition": "ἑκατόν, οἱ, αἱ, τά\nindecl.,\na hundred: Mat.13:8, 23 Luk.15:4, al.; κατὰ ἑ, Mrk.6:40; εἰς, ἐν ἑ., Mrk.4:8, 20",
+   "sha256": "7e0775d72e3379258e443d16d0112685e547624c4abc147e12d1cdbdb31f599c"
+  },
+  {
+   "strongs": "G1541",
+   "language": "greek",
+   "lemma": "ἑκατονταέτης",
+   "gloss": "a hundred years old",
+   "definition": "ἑκατονταετής (Rec. έτης), -ές\n(ἑκατόν, ἔτης) [in LXX for שָׁנֶה מֵאָה בֵּן, Gen.17:17 * ;]\na hundred years old: Rom.4:19.†",
+   "sha256": "a65067a4e117dc11210631ec197e30fa117020f6455fccb4e351696fe9eb528f"
+  },
+  {
+   "strongs": "G1542",
+   "language": "greek",
+   "lemma": "ἑκατονταπλασίων",
+   "gloss": "a hundred times",
+   "definition": "a hundred times as much or many , (Xenophon Historicus) (ML)",
+   "sha256": "817757693aa5462facce0efeb832c118889d2b8e84c6e3454c6ccc9ebe464234"
+  },
+  {
+   "strongs": "G1543",
+   "language": "greek",
+   "lemma": "ἑκατόνταρχος",
+   "gloss": "centurion",
+   "definition": "ἑκατοντάρχης (-άρχος, Mat.8:5, 8 27:54, Luk.7:2, Act.22:25 28:16; cf. M, Pr., 48); -ου\n(ἑκατόν, ἄρχω,), [in LXX for מֵאָה שַׂר ;]\na centurion: Mat.8:13, Luk.7:6 23:47, Act.10:1, 22 21:32 22:26 23:17, 23 24:23 27:1, 6 27:11, 31 27:43 (cf. κεντυρίως).†",
+   "sha256": "e3dba98cfe414c4851ba7f5515d28edd22739228f5b64dff5e428133785af29c"
+  },
+  {
+   "strongs": "G1544",
+   "language": "greek",
+   "lemma": "ἐκβάλλω",
+   "gloss": "to expel",
+   "definition": "ἐκ-βάλλω\n[in LXX chiefly for גָּרַשׁ pi., also for שָׁלַךְ hi., יָצָא hi., יָרַשׁ hi., etc. ;]\n1. to drive, cast or send out, to expel: with accusative of thing(s), mid. (σῖτον), before εἰς, Act.27:38; pass., Mat.15:17; with accusative of person(s), Mat.21:12, Mrk.11:15, al.; δαιμόνια, Mat.7:22, Mrk.1:34, al.; id. before ἐκ, Mrk.7:26; παρά, Mrk.16:9; ἐν, Mrk.3:22; (ἐν) τ. ὀνόματι, Mat.7:22, Mrk.9:38; λόγῳ, Mat.8:16; before ἔξω, Jhn.6:37; id. with genitive, Mrk.12:8, al.; of expulsion from home, Gal.4:30; from the Church, III Jn 10.\n2. In LXX and NT (like Heb. יָצָא and Aram. הַנְפֵּק), to command or cause to depart: Mat.9:38, Mrk.1:12 (see Swete, in l.), ib. Mrk.1:43 5:40, Luk.10:2, Jas.2:25; τ. κρίσιν εἰς νῖκος (to cause to proceed to its goal), Mat.12:20 (LXX).\n3. to reject (cl.): τ. ὄνομα ὑμῶς ὡς πονηρόν (cf. Deu.25:14), Luk.6:22; to leave out, Rev.11:2.\n4. to take, draw or pluck out;\n(a) with violence: Mat.7:5, Mrk.9:47, Luk.6:42;\n(b) to bring forth or out of: Mat.12:35, Luk.10:35.",
+   "sha256": "7933feb042ae707b5d828c99a4fdf60c5e8ad3d845533e08bda81ec6d9fcf4fb"
+  },
+  {
+   "strongs": "G1545",
+   "language": "greek",
+   "lemma": "ἔκβασις",
+   "gloss": "way out",
+   "definition": "ἔκ-βασις, -εως, ἡ\n(ἐκβαίνω), [in LXX: Wis.2:17 8:8 11:14 * ;]\n1. a way out (Hom., Xen.): 1Co.10:13.\n2. the issue (Menand.) Heb.13:7.†",
+   "sha256": "129f759fa695fd5a03e0e0778d95730f82d328d17985cb1c47bd327ba2ddd132"
+  },
+  {
+   "strongs": "G1546",
+   "language": "greek",
+   "lemma": "ἐκβολή",
+   "gloss": "jettisoning",
+   "definition": "ἐκ-βολή, -ῆς\n(ἐκβάλλω), [in LXX: Exo.11:1 (גָּרַשׁ), Jos.1:5 (ἐκβολὴν ποιεῖσθαι, טול hi.), Eze.47:8 (יָצָא)* ;]\n1. a throwing out.\n2. a jettison, a throwing overboard of cargo: Act.27:18 (cf. Jos, l.with; and see Field, Notes, 144 f.).†",
+   "sha256": "7f769faf0fc99a50e600e21fe576884f3a5cf18d048406602dd7577ae6b4515f"
+  },
+  {
+   "strongs": "G1547",
+   "language": "greek",
+   "lemma": "ἐκγαμίζω",
+   "gloss": "to marry",
+   "definition": "ἐκ-γαμίζω\nRec. for γαμίζω, which see: Mat.22:30 24:38, Luk.17:27, 1Co.7:38. Not elsewhere.†",
+   "sha256": "1779bf9e77daa257b8eee585419fb996c8a8b2e88b55c085a500ff8ba2eedc52"
+  },
+  {
+   "strongs": "G1548",
+   "language": "greek",
+   "lemma": "ἐκγαμίσκω",
+   "gloss": "to give in marriage",
+   "definition": "ἐκ-γαμίσκω\nRec. for γαμίσκω, which see: Luk.20:34-35. Not elsewhere.†\nγαμίζω\n(γάμος),\nto give in marriage, a daughter: 1Co.7:38. Pass., Mat.22:30 24:38, Mrk.12:25, Luk.17:27 20:35 (WH, mg., γαμίσκονται; cf. γαμίζω).†",
+   "sha256": "0522d69e22ee12695884522f13553dcfa26ced5d89e9c720010e1b2d4412c7c3"
+  },
+  {
+   "strongs": "G1549",
+   "language": "greek",
+   "lemma": "ἔκγονος",
+   "gloss": "descendant",
+   "definition": "ἔκ-γονος, -ον\n(ἐκγίγνομαι, to be born of), [in LXX for פְּרִי (neut.), בֵּן, etc. ;]\n1. with genitive, born of.\n2. As subst., ὁ, ἡ ἔ., a child, son or daughter; in pl., descendants: τέκνα ἢ ἔ., children or grand-children, 1Ti.5:4.†",
+   "sha256": "24da578ea05c51dbb2fdf68fa266eecaf546c327dc72a41d05c617ccbfedd4f1"
+  },
+  {
+   "strongs": "G1550",
+   "language": "greek",
+   "lemma": "ἐκδαπανάω",
+   "gloss": "to expend",
+   "definition": "εκ-δαπανάω, -ῶ\nstrengthened form of δαπανάω, to spend wholly; pass., with reflexive force, to spend oneself wholly: before ὑπέρ, 2Co.12:15.†",
+   "sha256": "a9abd9b8a4fcb5e817dd5efa7325eca614409133f1deb8f7ed5ee5341689b64c"
+  },
+  {
+   "strongs": "G1551",
+   "language": "greek",
+   "lemma": "ἐκδέχομαι",
+   "gloss": "to wait for",
+   "definition": "ἐκ-δέχομαι\n[in LXX for עֶרֶב, קָבַץ, etc. ;]\n1. to take or receive from (Hom., Hdt., a1.).\n2. (Rare in cl.), to expect, await: with accusative of thing(s), Jhn.5:3, Heb.11:10, Jas.5:7; with accusative of person(s), Act.17:16, 1Co.11:33 16:11; before ἕως, Heb.10:13 (Cremer, 687).†",
+   "sha256": "0ae34b92c54bd810884a5711885ddc89ea9149aac28e08a944608641d64cb32b"
+  },
+  {
+   "strongs": "G1552",
+   "language": "greek",
+   "lemma": "ἔκδηλος",
+   "gloss": "clearly evident",
+   "definition": "ἔκ-δηλος, -ον\n(δῆλος), [in LXX: 3Ma.3:19 3Mac 6:5 * ;]\nstrengthened form of δῆλος, which see, quite clear, evident: 2Ti.3:9.†",
+   "sha256": "2d0d3c07ca34f63c2debbb8f829387dff23f0a69c856fe90083d00eab1a1ab0b"
+  },
+  {
+   "strongs": "G1553",
+   "language": "greek",
+   "lemma": "ἐκδημέω",
+   "gloss": "be away",
+   "definition": "ἐκ-δημέω, -ῶ\n(ἔκδημος, from home; cf. -ία, 3Ma.4:11)*;\nto be from home, absent: 2Co.5:6; before ἀπό, 2Co.5:8; before ἐκ, 2Co.5:9 (cf. ἀπο-, ἐνδημέω).†",
+   "sha256": "35eedce60dba0a076705aa4c8880e047f7240741a9abd284a9ee1ac73b377e77"
+  },
+  {
+   "strongs": "G1554",
+   "language": "greek",
+   "lemma": "ἐκδίδωμι",
+   "gloss": "to lease",
+   "definition": "ἐκ-δίδωμι\n[in LXX for נָתַן, etc. ;]\n1. to surrender, give up, give out.\n2. to let out for hire (Hdt.); mid. (as frequently in π.; see MM, Exp., xii); to let out to one's advantage, Mat.21:33, 41, Mrk.12:1, Luk.20:9.†",
+   "sha256": "d87ff5971b51abad62b60e214a569693632930267c52e8a7da552a67cdc49e84"
+  },
+  {
+   "strongs": "G1555",
+   "language": "greek",
+   "lemma": "ἐκδιηγέομαι",
+   "gloss": "to tell in detail",
+   "definition": "ἐκ-δι-ηγέομαι, -οῦμαι depon.,\n[in LXX chiefly for סָפַר, pi. ;]\nto tell in detail, relate, declare: Act.13:41 (LXX) Act.15:3.†",
+   "sha256": "543aa631d92e9c72e5a16f1efbea9711c65c5111af5b2098e19832970fc4c26a"
+  },
+  {
+   "strongs": "G1556",
+   "language": "greek",
+   "lemma": "ἐκδικέω",
+   "gloss": "to avenge",
+   "definition": "ἐκδικέω, -ῶ\n(ἔκδικος), [in LXX for פָּקַד, נָקַם, שָׁפַט, etc. ;]\n1. to vindicate: with accusative of person(s), Luk.18:3, 5.\n2. to avenge: with accusative of person(s), ἑαυτούς, Rom.12:19; with accusative of thing(s), παρακοήν, 2Co.10:6; αἷμα, Rev.6:10 19:2 (Cremer, 203; for exx. from π. in both senses, see MM, Exp., xii).†",
+   "sha256": "9930b3d5183a517707bca28a365547cefb85f817d3b2f6ba4403919a278ae0bc"
+  },
+  {
+   "strongs": "G1557",
+   "language": "greek",
+   "lemma": "ἐκδίκησις",
+   "gloss": "vengeance",
+   "definition": "ἐκ-δίκησις, -εως, ἡ\n(ἐκδικέω), [in LXX chiefly for נָקָם ;]\nvengeance, vindication: Luk.21:22, Rom.12:19 (see MM, Exp., xii), Heb.10:30 (LXX), 2Co.7:11; of the injured person, with genitive, Luk.18:7-8; with dative, Act.7:24; of the offender, with genitive obj., 1Pe.2:14; with dative, 2Th.1:8 (cf. Sir.12:6).†",
+   "sha256": "1a08ecdac61228649188855fee386f22f69f65dc452d7f37b18cae2a994c8ab3"
+  },
+  {
+   "strongs": "G1558",
+   "language": "greek",
+   "lemma": "ἔκδικος",
+   "gloss": "avenging",
+   "definition": "ἔκδικος, -ον\n(δίκη), [in LXX: Wis.12:12, Sir.30:6, 4Ma.15:29 * ;]\n1. without law, unjust.\n2. exacting penalty from; as subst., an avenger: Rom.13:4; before περί, 1Th.4:6 (in π., a legal representative; Milligan, Th., l.with).†",
+   "sha256": "f111aa287fde5f6e22ceaeafaac549731fc56b16ce83869a3349f87233a831ca"
+  },
+  {
+   "strongs": "G1559",
+   "language": "greek",
+   "lemma": "ἐκδιώκω",
+   "gloss": "to persecute",
+   "definition": "ἐκ-διώκω\n[in LXX for בָּרַח hi., צָמַת, הָדַף, etc. ;]\nto chase away, drive out: 1Th.2:15 (cf. Deu.6:19, Jol.2:20).†",
+   "sha256": "fea9f4fedf1607c7e0a4a5585797013045658de6b121d10046461766ffaffd40"
+  },
+  {
+   "strongs": "G1560",
+   "language": "greek",
+   "lemma": "ἔκδοτος",
+   "gloss": "handed over",
+   "definition": "ἔκ-δοτος, -ον\n(ἐκδίδωμι), [in LXX: Da TH Bel 1:22 * ;]\ngiven up, delivered over: Act.2:23 (for construction, see Field, Notes, 111 f.).†",
+   "sha256": "6bdcbac4e48a3079b8f6fe5f7d3ae144987c72b53bf5c7f3ebda98aeb1bcad7a"
+  },
+  {
+   "strongs": "G1561",
+   "language": "greek",
+   "lemma": "ἐκδοχή",
+   "gloss": "expectation",
+   "definition": "ἐκ-δοχή ῆς, ἡ\n(ἐκδέχομαι);\n1. in cl.,\n(a) a receiving from, succession;\n(b) an interpretation.\n2. In NT, = προσδοκία, expectation: Heb.10:27 (cf. Field, Notes, 231; Cremer, 688).†",
+   "sha256": "dce31ae3f002a57df661fd4175b30682f1936701dbe2b714fd040694d4c08b0e"
+  },
+  {
+   "strongs": "G1562",
+   "language": "greek",
+   "lemma": "ἐκδύω",
+   "gloss": "to strip",
+   "definition": "ἐκ-δύω\n[in LXX chiefly for פָּשַׁט ;]\nto take of, strip of, strip: with accusative of person(s) (sc. clothing), Mat.27:28; with accusative of person(s) and of thing(s), Mat.27:31, Mrk.15:20, Luk.10:30; mid., to put off: figuratively, of the body, 2Co.5:4.†",
+   "sha256": "a87225e23df6d7f2f8fb7dc210941f1089c50e3638559cbcec52b67b68979b2d"
+  },
+  {
+   "strongs": "G1563",
+   "language": "greek",
+   "lemma": "ἐκεῖ",
+   "gloss": "there",
+   "definition": "ἐκεῖ\nadv., [in LXX chiefly for שָׁם ;]\n1. properly, of place, there: Mat.2:13 5:24, al.; οἱ ἐ., Mat.26:71; οὗ . . . ἐ., Mat.6:21 18:20 24:28, Mrk.6:10, Luk.12:34; pleonastic, ὅπου . . . ἐ. (= שָׁם אֲשֶׁר, Deu.4:5, al.), Rev.12:6, 14 (cf. Bl., § 50, 4).\n2. As often in cl. (Hdt., Thuc., al.), with verbs of motion, for ἐκεῖσε, thither: Mat.2:22 17:20 24:28 26:36, Mrk.6:33, Luk.12:18 17:37 21:2, Jhn.11:8 18:2-3, Rom.15:24",
+   "sha256": "c81d53438e1f7adcf38d7c082492a401c69bb93ffd4add5f71b091afaf685a40"
+  },
+  {
+   "strongs": "G1564",
+   "language": "greek",
+   "lemma": "ἐκεῖθεν",
+   "gloss": "from there",
+   "definition": "ἐκεῖθεν\nadv., [in LXX chiefly for שָׁם ;]\n1. of place, thence: Mat.4:21, Mrk.6:1, al.\n2. Of time, thereafter (see: κἀκεῖθεν).",
+   "sha256": "9d65d4c4a68820d2a26ac43bdae723e2a160abee2457c0b3175aa9346f95deb6"
+  }
+ ]
+}

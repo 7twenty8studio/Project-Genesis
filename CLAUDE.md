@@ -229,11 +229,21 @@ shares; README.md has the architecture.
   teaser. Hebrew uses the bundled Noto Serif Hebrew, Greek EB Garamond.
   Word study elsewhere (VerseStudyView) reads the TR, through
   `OriginalVersification` for the Reina-Valera (English Bibles share the
-  KJV's numbers); definitions and commentary stay English.
-  Glosses, definitions, grammar and commentary are English for now (more
-  languages planned): when the Bible or the app isn't English, the
-  Original header, the word sheet and VerseStudyView say so
-  (`WordStudyRepository.needsEnglishNote`).
+  KJV's numbers).
+  Lexicon entries (gloss, definition, derivation; not "In the KJV") are in
+  Spanish and Portuguese: WordStudy.sqlite's `lexicon_translations` (lang,
+  strongs, …), read by `WordStudyRepository(url:language:)` (bundled:
+  `AppLanguage.code`) with English per entry where missing;
+  `LexiconEntry.isTranslated` shows `translatedNote` ("…Not Scripture.").
+  Built from Tools/StudyData/translations/lexicon (`lexicon.py
+  export/check/status`: 74 batches with source shas; Hebrew/Greek words,
+  numbers, STEPBible codes and sigla checked verbatim; `SOURCE_FIXES` for
+  slips in the English and `ARTICLE_FIXES` for misplaced articles, both
+  written into the English lexicon too by `fix_database`) by add_lexicon_translations.py, which
+  build_wordstudy.py also runs. Review notes: translations/lexicon/NOTES.md.
+  The meanings in a verse, grammar and commentary stay English: when the
+  Bible or the app isn't English, the Original header, the word sheet and
+  VerseStudyView say so (`WordStudyRepository.needsEnglishNote`).
 - Pronunciation (free): `PronounceButton` on `OriginalWordSheet` (word and
   dictionary form) and `LexiconEntryView` says the word with the device's
   Hebrew (he) or Greek (el) voice via `WordPronouncer` (environment; silent
