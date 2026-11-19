@@ -57,6 +57,10 @@ and English gloss meet, and those verses can need different words. So:
   Canaan", KJV "is")… Portuguese the same (`era`, `estava`, `foi`, `havia`,
   `é`). `[will]` before a verb is the future (`[comerá]`), never "querer"
   unless the verse means wanting.
+- Keep STEPBible's mood: a supplied `[is]` stays indicative (`[is]
+  cursed` → `[es] maldito` / `[é] maldito`, not "sea", even where the KJV
+  has "cursed be"). Change a supplied verb's tense only where the verse
+  itself sets another time (Gen 9:18).
 - English "do-support" (`[does]`, `[did]` in questions and negatives) is
   never "hacer" / "fazer": use the verb or tense the verse needs (`[did]
   … [belong]` → `[era]`, `[pertenecía]`).
