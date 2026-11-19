@@ -57,6 +57,9 @@ and English gloss meet, and those verses can need different words. So:
   Canaan", KJV "is")… Portuguese the same (`era`, `estava`, `foi`, `havia`,
   `é`). `[will]` before a verb is the future (`[comerá]`), never "querer"
   unless the verse means wanting.
+- English "do-support" (`[does]`, `[did]` in questions and negatives) is
+  never "hacer" / "fazer": use the verb or tense the verse needs (`[did]
+  … [belong]` → `[era]`, `[pertenecía]`).
 - Keep person, number, gender and tense exactly as the morphology and the
   English give them, and keep every uncertainty visible: if the English is
   unsure (a "?", an alternative "/"), the translation is too.
