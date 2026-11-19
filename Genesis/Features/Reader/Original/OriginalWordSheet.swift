@@ -104,7 +104,13 @@ struct OriginalWordSheet: View {
                 }
             }
             .padding(.vertical, 4)
-            LabeledContent("In this verse", value: word.gloss)
+            LabeledContent("In this verse", value: word.shownGloss)
+            if word.awaitsReview {
+                Text(OriginalGlosses.awaitingReviewNote)
+                    .font(.footnote)
+                    .foregroundStyle(palette.secondaryText)
+                    .accessibilityIdentifier("originalWord.awaitingReview")
+            }
             if let english = word.englishGloss {
                 LabeledContent("In English", value: english)
             }

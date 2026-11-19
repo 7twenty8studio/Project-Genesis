@@ -277,6 +277,12 @@ struct OriginalWord: Identifiable, Hashable, Sendable {
     var gloss: String
     /// STEPBible's English gloss when `gloss` is a translation; nil otherwise.
     var englishGloss: String? = nil
+    /// The translated gloss is an uncertain meaning still awaiting qualified
+    /// review (`OriginalGlosses.awaitingReviewNote`); views mark it.
+    var awaitsReview = false
+
+    /// The gloss as shown: marked "(?)" while it awaits review.
+    var shownGloss: String { awaitsReview ? "\(gloss) (?)" : gloss }
     /// Morphology code (ETCBC for Hebrew, Robinson style for Greek).
     let morphology: String
     /// The Greek edition the word was read from; nil for Hebrew.

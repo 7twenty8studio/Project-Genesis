@@ -28583,6 +28583,22 @@
         }
       }
     },
+    "This meaning is uncertain and awaits review by a qualified reviewer.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este significado es incierto y está pendiente de revisión por un revisor cualificado."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este significado é incerto e aguarda revisão por um revisor qualificado."
+          }
+        }
+      }
+    },
     "This page is too large to sync, so it stays on this device.": {
       "localizations": {
         "es": {

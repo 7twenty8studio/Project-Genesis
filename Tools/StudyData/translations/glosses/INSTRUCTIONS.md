@@ -18,7 +18,9 @@ Write `es/NNN.json` and `pt/NNN.json`:
 {"batch": "NNN", "lang": "es",
  "glosses": {"011a94384553160b": "su padre", "84fe9144c0b3ca7c": "[el] padre de"},
  "notes": {"…": "why this one is as it is"},
- "uncertain": {"…": "why the meaning is uncertain"}}
+ "uncertain": {"…": "why the meaning is uncertain"},
+ "checked": ["…every id read in its verses…"],
+ "occurrences": {"…id…": {"1009018.12": "[es] [el] padre de"}}}
 ```
 
 Every id of the batch, with its translation. Write the file with a short
@@ -30,6 +32,34 @@ Sources and licences: `SOURCES.md`. Translate only the English `gloss`
 given here; don't bring in glosses from other interlinears, lexicons or
 Bible translations (Global Bible Tools, TAGNT's Spanish column, printed
 interlinears), even ones you remember.
+
+## Read the verse
+A gloss here stands for every verse where that Strong's number, morphology
+and English gloss meet, and those verses can need different words. So:
+
+- `python3 Tools/StudyData/glosses.py needs-context NNN` lists the ids you
+  must read in their verses: supplied verbs and modals (`[was]`, `[is]`,
+  `[will]`, `let`…), the question particle `¿`, and everything you flag
+  uncertain. Read each with
+  `python3 Tools/StudyData/glosses.py context NNN <id> [<id>…]` (`--all`
+  for every verse): each verse's English glosses with this word in ⟦ ⟧,
+  and the KJV verse. Then list the id in `checked`.
+- Also read the verses of any other gloss whose sense could change with
+  the verse (spirit/wind, flesh, soul/life, lord/master, word/thing, hand,
+  way, house/household, peace, judgment…) and list it in `checked`.
+- If the verses need different words, give the usual one in `glosses` and
+  the others in `occurrences`, by the verse and position `context` prints
+  ("1009018.12"). Never one word for all when the verses disagree.
+- Supplied verbs: the tense, mood and verb the verse needs, not a habit.
+  `[was]` is `era` only where the Hebrew context is a past description or
+  state that "era" fits; it may be `estaba`, `fue`, `había`, `es` (STEPBible's
+  "[was]" in a present statement, as Gen 9:18 "Ham [was] the father of
+  Canaan", KJV "is")… Portuguese the same (`era`, `estava`, `foi`, `havia`,
+  `é`). `[will]` before a verb is the future (`[comerá]`), never "querer"
+  unless the verse means wanting.
+- Keep person, number, gender and tense exactly as the morphology and the
+  English give them, and keep every uncertainty visible: if the English is
+  unsure (a "?", an alternative "/"), the translation is too.
 
 ## Flag what's uncertain
 Put a gloss in `uncertain` (id → a short reason) when its meaning in
@@ -47,9 +77,18 @@ it's listed for qualified review. Don't flag ordinary words.
 - `<the>`, `<to>`: words the original has that English leaves out. Keep
   the angle brackets, translate inside: `<el>`, `<a>`.
 - Brackets stay in the same order as the English. Keep `(`, `)`, digits
-  and `?` `!` as they are. A leading `¿` is STEPBible's mark for the
-  Hebrew question prefix: keep it where it is (`¿ human` → `¿ humano`).
-  Spanish may add an opening `¿`/`¡` where the English ends with `?`/`!`.
+  and `?` `!` as they are.
+- `¿` is STEPBible's mark for the Hebrew question particle (morph `Ti`),
+  not punctuation: translate the particle as a word, `acaso` (Spanish) /
+  `porventura` (Portuguese), where the `¿` stands, with no mark:
+  `¿ is it willing` → `acaso querrá` / `porventura quererá`; `¿ [the]
+  keeper` → `acaso [el] guarda` / `porventura [o] guarda`. The question's
+  own mark belongs to the verse, not to one word.
+- Question marks: a gloss that is itself a question (`who?`, `where?`,
+  or `will we eat` shown by word order) is punctuated in full inside the
+  gloss: Spanish `¿quién?`, `¿comeremos?`; Portuguese `quem?`,
+  `comeremos?`. Portuguese never uses `¿` or `¡`; Spanish never leaves
+  one open.
 - First letter: never a capital the English doesn't have (`the fathers`
   → `los padres`). Keep the English's capital (`He put` → `Puso`) except
   where Spanish/Portuguese write lower case or the word order changes:
