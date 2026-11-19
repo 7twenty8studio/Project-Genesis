@@ -95,6 +95,25 @@ struct WordStudyTests {
         #expect(try portuguese.entry(strongs: "G2316")?.gloss == "Deus")
     }
 
+    /// Mistakes found when every Spanish and Portuguese entry was read
+    /// against the English (translations/lexicon/ai-review/fixes.jsonl).
+    @Test func lexiconTranslationReviewFixes() throws {
+        let url = try #require(Bundle.main.url(forResource: "WordStudy", withExtension: "sqlite"))
+        let spanish = try WordStudyRepository(url: url, language: "es")
+        let portuguese = try WordStudyRepository(url: url, language: "pt")
+        // "thou" is singular, "ye" plural.
+        #expect(try spanish.entry(strongs: "H0607")?.gloss == "tú")
+        #expect(try portuguese.entry(strongs: "H0608")?.gloss == "vós")
+        // "late fig", not an early one.
+        #expect(try portuguese.entry(strongs: "G3653")?.gloss == "figo tardio")
+        // STEPBible's garbled "of person(s) pron." is the personal pronoun.
+        let yo = try #require(try spanish.entry(strongs: "G1473"))
+        #expect(yo.definition.contains("pron. personal\nyo."))
+        let eu = try #require(try portuguese.entry(strongs: "G1473"))
+        #expect(eu.definition.contains("pron. pessoal\neu."))
+        #expect(!eu.definition.contains("pessoa(s)"))
+    }
+
     @Test func entriesHoldOnlyTheirOwnArticle() throws {
         let url = try #require(Bundle.main.url(forResource: "WordStudy", withExtension: "sqlite"))
         for language in [nil, "es", "pt"] {
