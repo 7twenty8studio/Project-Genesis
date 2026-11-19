@@ -1421,6 +1421,22 @@
         }
       }
     },
+    "A commentary is one writer's interpretation, not Scripture.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un comentario es la interpretación de un autor, no la Escritura."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Um comentário é a interpretação de um autor, não as Escrituras."
+          }
+        }
+      }
+    },
     "A concise, careful commentary on the whole Bible, verse by verse.": {
       "localizations": {
         "es": {
@@ -2188,6 +2204,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sobre"
+          }
+        }
+      }
+    },
+    "About This Commentary": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acerca de este comentario"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sobre este comentário"
           }
         }
       }
@@ -11412,6 +11444,22 @@
         }
       }
     },
+    "His Exposition of the Old and New Testaments appeared in the early 1700s, and other ministers completed it from his notes after his death in 1714.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Su Exposición del Antiguo y del Nuevo Testamento apareció a comienzos del siglo XVIII, y otros ministros la completaron a partir de sus notas después de su muerte en 1714."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sua Exposição do Antigo e do Novo Testamento apareceu no início do século XVIII, e outros ministros a completaram a partir de suas notas depois de sua morte, em 1714."
+          }
+        }
+      }
+    },
     "Home": {
       "localizations": {
         "es": {
@@ -11891,6 +11939,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Em espanhol ou português, as pessoas, os lugares, os acontecimentos e os artigos do dicionário do Explorar agora estão no seu idioma, com os nomes como a sua Bíblia os escreve."
+          }
+        }
+      }
+    },
+    "In Spanish or Portuguese, Word Study's Commentary tab shows Matthew Henry's Concise Commentary in your language, and the verses he quotes come from your language's Bible.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En español o portugués, la pestaña Comentario de Estudio de palabras muestra el Comentario conciso de Matthew Henry en tu idioma, y los versículos que cita vienen de la Biblia de tu idioma."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Em espanhol ou português, a aba Comentário do Estudo de palavras mostra o Comentário conciso de Matthew Henry no seu idioma, e os versículos que ele cita vêm da Bíblia do seu idioma."
           }
         }
       }
@@ -12391,6 +12455,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Talvez tenha sido apagado em outro dispositivo."
+          }
+        }
+      }
+    },
+    "It reflects the historical context of his time and his own theological views.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Refleja el contexto histórico de su época y sus propias convicciones teológicas."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ele reflete o contexto histórico de sua época e suas próprias convicções teológicas."
           }
         }
       }
@@ -14395,6 +14475,70 @@
           "stringUnit": {
             "state": "translated",
             "value": "Masculino"
+          }
+        }
+      }
+    },
+    "Matthew Henry (1662–1714)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matthew Henry (1662–1714)"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matthew Henry (1662–1714)"
+          }
+        }
+      }
+    },
+    "Matthew Henry (1662–1714): a historical commentary, one writer's interpretation, not Scripture.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matthew Henry (1662–1714): un comentario histórico, la interpretación de un autor, no Escritura."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matthew Henry (1662–1714): um comentário histórico, a interpretação de um autor, não Escritura."
+          }
+        }
+      }
+    },
+    "Matthew Henry in your language": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matthew Henry en tu idioma"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matthew Henry no seu idioma"
+          }
+        }
+      }
+    },
+    "Matthew Henry was an English Presbyterian minister.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matthew Henry fue un ministro presbiteriano inglés."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matthew Henry foi um ministro presbiteriano inglês."
           }
         }
       }
@@ -20711,6 +20855,22 @@
         }
       }
     },
+    "Read it alongside the Bible, not in place of it.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Léelo junto a la Biblia, no en su lugar."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leia-o ao lado da Bíblia, não em lugar dela."
+          }
+        }
+      }
+    },
     "Read like an open book": {
       "localizations": {
         "es": {
@@ -22691,6 +22851,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Escritura"
+          }
+        }
+      }
+    },
+    "Scripture in italics: Bíblia Livre (BLIVRE), © Diego Santos, Mario Sérgio and Marco Teles, February 2018, CC BY 4.0 Brasil.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escritura en cursiva: Bíblia Livre (BLIVRE), © Diego Santos, Mario Sérgio y Marco Teles, febrero de 2018, CC BY 4.0 Brasil."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escritura em itálico: Bíblia Livre (BLIVRE), © Diego Santos, Mario Sérgio e Marco Teles, fevereiro de 2018, CC BY 4.0 Brasil."
+          }
+        }
+      }
+    },
+    "Scripture in italics: Reina-Valera 1909 (public domain).": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escritura en cursiva: Reina-Valera 1909 (dominio público)."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escritura em itálico: Reina-Valera 1909 (domínio público)."
           }
         }
       }
@@ -27556,6 +27748,22 @@
         }
       }
     },
+    "The meanings of words in this verse and their grammar are in English.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los significados de las palabras de este versículo y su gramática están en inglés."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Os significados das palavras deste versículo e sua gramática estão em inglês."
+          }
+        }
+      }
+    },
     "The medium Verse of the Day widget is now free, on the Home Screen next to the small one and the Lock Screen.": {
       "localizations": {
         "es": {
@@ -29436,6 +29644,22 @@
         }
       }
     },
+    "Translated from Matthew Henry's Concise Commentary. Not Scripture.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Traducido del Comentario Conciso de Matthew Henry. No es Escritura."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Traduzido do Comentário Conciso de Matthew Henry. Não é Escritura."
+          }
+        }
+      }
+    },
     "Translation, %@": {
       "localizations": {
         "es": {
@@ -30862,6 +31086,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "O Versely lê em voz alta e vira as páginas à medida que avança, mesmo com o celular bloqueado."
+          }
+        }
+      }
+    },
+    "Versely uses Matthew Henry's Concise Commentary on the Whole Bible, a later abridgment of that work, and shows this edition complete, with nothing left out.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versely usa el Comentario conciso de toda la Biblia de Matthew Henry, un compendio posterior de esa obra, y muestra esta edición completa, sin omitir nada."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Versely usa o Comentário conciso de toda a Bíblia de Matthew Henry, um resumo posterior dessa obra, e mostra esta edição completa, sem omitir nada."
           }
         }
       }

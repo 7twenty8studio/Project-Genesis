@@ -1,0 +1,532 @@
+{
+ "batch": "093",
+ "lang": "es",
+ "entries": [
+  {
+   "kind": "section",
+   "id": 3806,
+   "sha256": "83945a447928836cdd60d736ebf9decbd7ec5d43d58d5228c241194a05b6f7d9",
+   "title": "Indica varios deberes particulares.",
+   "text": "Los ministros del evangelio son descritos por la obra de su oficio, que es servir y honrar al Señor. Es su deber no solo dar buen consejo, sino también advertir al rebaño de los peligros y reprender todo lo que esté mal. El pueblo debe honrar y amar a sus ministros, porque su ocupación es el bienestar de las almas de los hombres. Y el pueblo debe estar en paz entre sí, haciendo todo lo posible para precaverse de cualquier desavenencia. Pero el amor a la paz no debe hacernos cerrar los ojos al pecado. Los espíritus temerosos y afligidos deben ser animados, y una palabra amable puede hacer mucho bien. Debemos soportar y ser tolerantes. Debemos ser sufridos y reprimir la ira, y esto para con todos. Hagan los hombres lo que hagan con nosotros, debemos hacer bien a los demás.",
+   "flags": [
+    "Source slip \"Whatever man do to us\" read as \"Whatever men do to us\".",
+    "unlisted echo of 1 Thess 5:14: RV1909 \"sufridos para con todos\" used (as \"ser sufridos ... para con todos\")."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3807,
+   "sha256": "007e0faa975e16a21075efe9c232db7c5d457ac13aa8b3510684d9366b342074",
+   "text": "Hemos de regocijarnos en los consuelos de las criaturas como si no nos regocijáramos, y no debemos esperar vivir muchos años y regocijarnos en todos ellos; pero si nos regocijamos en Dios, podemos hacerlo siempre. Una vida verdaderamente religiosa es una vida de gozo constante. Y nos regocijaríamos más si oráramos más. La oración hará avanzar todo negocio lícito y toda buena obra. Si oramos sin cesar, no nos faltará materia de acción de gracias en todo. Veremos motivo para dar gracias por las misericordias que nos preservan y nos previenen, comunes y extraordinarias, pasadas y presentes, temporales y espirituales. No solo por las providencias prósperas y agradables, sino también por las que afligen, por los castigos y las correcciones; porque Dios lo dispone todo para nuestro bien, aunque al presente no veamos cómo contribuyen a ello. No apaguéis el Espíritu. Se dice que los cristianos son bautizados en Espíritu Santo y en fuego. Él obra como el fuego, iluminando, vivificando y purificando las almas de los hombres. Así como el fuego se apaga quitándole el combustible, y se extingue echándole agua o echándole encima mucha tierra, así debemos cuidarnos de no apagar el Espíritu Santo, consintiendo las concupiscencias y afectos carnales, ocupándonos solo de las cosas terrenales. Los creyentes a menudo estorban su crecimiento en la gracia por no entregarse a los afectos espirituales que el Espíritu Santo despierta en sus corazones. Por profecías se entiende aquí la predicación de la palabra, la interpretación y aplicación de las Escrituras. No debemos menospreciar la predicación, aunque sea sencilla y no se nos diga más de lo que ya sabíamos. Debemos escudriñar las Escrituras. Y el examinarlo todo ha de ser para retener lo bueno. Debemos apartarnos del pecado, y de todo lo que parece pecado, conduce a él y linda con él. El que no se aparta de las apariencias del pecado, que no huye de sus ocasiones, y que no evita las tentaciones y los acercamientos a él, no tardará en cometer el pecado.",
+   "quotes": [
+    {
+     "n": 0,
+     "mode": "translated",
+     "reason": "Henry turns Eccl 11:8 (\"si el hombre viviere muchos años, y en todos ellos hubiere gozado alegría\") into an infinitive after \"expect\"; the RV1909's conditional forms can't stand there."
+    },
+    {
+     "n": 1,
+     "text": "en Espíritu Santo y en fuego"
+    },
+    {
+     "n": 2,
+     "mode": "translated",
+     "reason": "Henry turns the imperative \"retened lo bueno\" into an infinitive (\"to hold fast that which is good\"); rendered \"retener lo bueno\"."
+    }
+   ],
+   "flags": [
+    "unlisted quotation of 1 Thess 5:19: RV1909 \"No apaguéis el Espíritu\" used verbatim; \"Orad sin cesar\" / \"Dad gracias en todo\" (5:17-18) echoed in Henry's own sentence.",
+    "\"abstain from ... whatever looks like sin\" rests on the KJV's \"all appearance of evil\" (1 Thess 5:22); the RV1909 has \"toda especie de mal\"."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3808,
+   "sha256": "11e12ebacab312f8fb61a170c266d88b0c02009fffbb75af6176f464488af483",
+   "title": "Y concluye con oración, saludos y una bendición.",
+   "text": "El apóstol ora para que sean santificados más perfectamente, porque los mejores solo están santificados en parte mientras están en este mundo; por eso debemos orar por la santidad completa y avanzar hacia ella. Y como caeríamos si Dios no continuara su buena obra en el alma, debemos orar a Dios que perfeccione su obra, hasta que seamos presentados sin mancha delante del trono de su gloria. Debemos orar unos por otros; y los hermanos deben expresar así el amor fraternal. Esta epístola debía ser leída a todos los hermanos. No solo se permite al pueblo común leer las Escrituras, sino que es su deber, y lo que se le debe persuadir a hacer. La palabra de Dios no debe guardarse en una lengua desconocida, sino ser traducida, para que, así como a todos los hombres les importa conocer las Escrituras, todos puedan leerlas. Las Escrituras deben leerse en todas las congregaciones públicas, especialmente para beneficio de los iletrados. No necesitamos nada más para ser felices que conocer la gracia de nuestro Señor Jesucristo. Él es una fuente de gracia que siempre fluye y rebosa, para suplir todas nuestras necesidades.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "la gracia de nuestro Señor Jesucristo"
+    }
+   ],
+   "flags": [
+    "\"transplanted\" (Henry's word for translating Scripture into other tongues) rendered \"traducida\".",
+    "sensitive: \"The word of God should not be kept in an unknown tongue\" is aimed at the Roman Catholic practice of the Latin Scriptures, though no church is named."
+   ]
+  },
+  {
+   "kind": "intro",
+   "id": 53,
+   "sha256": "ef649742b0f6c4dae9ebfc39542f2a43adc507c303851e02c82563252e299674",
+   "text": "La segunda epístola a los tesalonicenses fue escrita poco después de la primera. Al apóstol se le informó que, a causa de algunas expresiones de su primera carta, muchos esperaban que la segunda venida de Cristo estuviera cerca, y que el día del juicio llegaría en su tiempo. Algunos de ellos descuidaban sus deberes en el mundo. San Pablo escribió de nuevo para corregir su error, que estorbaba la extensión del evangelio. Había escrito conforme a las palabras de los profetas del Antiguo Testamento; y les dice que había muchos designios del Altísimo que aún debían cumplirse antes de que viniera aquel día del Señor, aunque, por ser seguro, había hablado de él como cercano. El tema dio lugar a una notable predicción de algunos de los acontecimientos futuros que habían de tener lugar en las edades posteriores de la iglesia cristiana, y que muestran el espíritu profético que poseía el apóstol.",
+   "quotes": [
+    {
+     "n": 0,
+     "mode": "translated",
+     "reason": "Not a quotation: Henry's own opening sentence only happens to match the KJV's subscription to 2 Thessalonians."
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3809,
+   "sha256": "88fb3c9076f034256b05d26c4f22e43243621e6d4fff42799d47b4cb1078175b",
+   "title": "El apóstol bendice a Dios por el creciente estado del amor y la paciencia de los tesalonicenses.",
+   "text": "Donde hay gracia verdadera, habrá aumento de ella. Mas la senda de los justos es como la luz de la aurora, que va en aumento hasta que el día es perfecto. Y donde hay aumento de gracia, Dios debe tener toda la gloria. Donde la fe crece, el amor abundará, porque la fe obra por el amor. Muestra una fe y una paciencia tales que pueden proponerse como modelo para otros, cuando las pruebas de parte de Dios y las persecuciones de parte de los hombres avivan el ejercicio de esas gracias; porque la paciencia y la fe de que el apóstol se gloriaba los sostuvieron y los capacitaron para soportar todas sus tribulaciones.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "la senda de los justos es como la luz de la aurora"
+    },
+    {
+     "n": 1,
+     "text": "que va en aumento hasta que el día es perfecto"
+    }
+   ],
+   "flags": [
+    "Quotes 0-1 (Prov 4:18): the RV1909's opening \"Mas\" is kept; KJV \"shining light\" is \"la luz de la aurora\" in the RV1909.",
+    "\"faith works by love\" (Gal 5:6) translated; the RV1909 has \"la fe que obra por la caridad\"."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3810,
+   "sha256": "cbd4aa7259072bafd8e541bdd637c92cf07d580ba1546580ef0f2801a84c7f80",
+   "title": "Y los anima a perseverar en todos sus padecimientos por Cristo, considerando su venida en el gran día de rendir cuentas.",
+   "text": "La religión, si vale algo, lo vale todo; y los que no tienen religión, o ninguna que valga la pena tener, o no saben estimarla, no pueden resolverse en su corazón a padecer por ella. No podemos merecer el cielo con todos nuestros padecimientos, como tampoco con nuestros servicios; pero por nuestra paciencia en los padecimientos somos preparados para el gozo prometido. Nada señala más claramente a un hombre para la ruina eterna que un espíritu de persecución y enemistad contra el nombre y el pueblo de Dios. Dios atribulará a los que atribulan a su pueblo. Y hay un reposo para el pueblo de Dios; un reposo del pecado y del dolor. La certeza de la recompensa futura se prueba por la justicia de Dios. El pensamiento de esto debe ser terrible para los hombres malvados, y sostener a los justos. La fe, mirando al gran día, es capacitada para entender en parte el libro de la providencia, que parece confuso a los incrédulos. El Señor Jesús aparecerá en aquel día desde el cielo. Vendrá en la gloria y el poder del mundo de arriba. Su luz será penetrante y su poder consumidor para todos los que en aquel día sean hallados como paja. Esta aparición será terrible para los que no conocieron a Dios, especialmente para los que se rebelan contra la revelación, y no obedecen al evangelio de nuestro Señor Jesucristo. Este es el gran crimen de multitudes: el evangelio es revelado, y no quieren creerlo; o si fingen creer, no quieren obedecerlo. Creer las verdades del evangelio tiene por fin que obedezcamos los preceptos del evangelio. Aunque los pecadores sean perdonados por largo tiempo, al fin serán castigados. Hicieron la obra del pecado, y deben recibir la paga del pecado. Aquí Dios castiga a los pecadores por medio de criaturas como instrumentos; pero entonces será destrucción por el Todopoderoso; ¿y quién conoce la fortaleza de su ira? Será un día de gozo para algunos, para los santos, para los que creen y obedecen el evangelio. En aquel día resplandeciente y bendito, Cristo Jesús será glorificado y admirado por sus santos. Y Cristo será glorificado y admirado en ellos. Su gracia y su poder se mostrarán cuando aparezca lo que él ha comprado para los que creen en él, lo que ha obrado en ellos y lo que les ha concedido. ¡Señor, si la gloria puesta sobre tus santos será admirada así, cuánto más serás tú admirado como el Dador de esa gloria! La gloria de tu justicia en la condenación de los impíos será admirada, pero no como la gloria de tu misericordia en la salvación de los creyentes. ¡Cómo llenará esto de santa admiración a los ángeles que adoran, y transportará en arrobamiento eterno a tus santos que te admiran! El creyente más humilde gozará más de lo que el corazón más ensanchado puede imaginar mientras estamos aquí; Cristo será admirado en todos los que creen, sin exceptuar al creyente más humilde.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "obedecen al evangelio de nuestro Señor Jesucristo"
+    }
+   ],
+   "flags": [
+    "unlisted quotation of Joel 1:15 (or Isa 13:6): RV1909 \"destrucción por el Todopoderoso\" used",
+    "unlisted quotation of Ps 90:11: RV1909 \"quién conoce la fortaleza de tu ira\" adapted to \"de su ira\" (Henry: \"his anger\")",
+    "\"those that know not God\" (2 Thess 1:8) rendered with the RV1909's past tense \"no conocieron a Dios\"."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3811,
+   "sha256": "b92965910110fe0111b4bde1709374256d4cda342862563dcff903c4f03de168",
+   "text": "Los pensamientos y expectativas llenos de fe acerca de la segunda venida de Cristo deben llevarnos a orar más a Dios, por nosotros y por otros. Si hay algún bien en nosotros, se debe al beneplácito de su bondad, y por eso se llama gracia. Hay en Dios muchos propósitos de gracia y buena voluntad hacia su pueblo, y el apóstol ora para que Dios complete en ellos la obra de fe con potencia. Esto es para que hagan toda otra buena obra. El poder de Dios no solo comienza, sino que lleva adelante la obra de fe. Y este es el gran fin y propósito de la gracia de nuestro Dios y del Señor Jesucristo, que se nos da a conocer y se obra en nosotros.",
+   "quotes": [
+    {
+     "n": 0,
+     "mode": "translated",
+     "reason": "The RV1909 renders 2 Thess 1:11 \"hincha de bondad todo buen intento\", with no \"good pleasure of his goodness\"; Henry's point (that it is called grace) needs his wording."
+    },
+    {
+     "n": 1,
+     "text": "obra de fe con potencia"
+    }
+   ],
+   "flags": [
+    "\"This is to their doing every other good work\" is elliptical in the English; rendered \"Esto es para que hagan toda otra buena obra\"."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3812,
+   "sha256": "a7f3b0546ff05ffe313d9e423c7c3f9755cd7be1a8a283423ebb5a29b5a35ee9",
+   "title": "Previene contra el error de que el tiempo de la venida de Cristo estaba muy cerca. Primero habría una apostasía general de la fe, y la manifestación del anticristiano hombre de pecado.",
+   "text": "Si surgen errores entre los cristianos, debemos corregirlos; y los hombres buenos tendrán cuidado de suprimir los errores que nacen de malentender sus palabras y acciones. Tenemos un adversario astuto, que vigila para hacer daño, y que promoverá errores aun por medio de las palabras de la Escritura. Cualquiera que sea la incertidumbre en que estemos, o cualesquiera errores que surjan acerca del tiempo de la venida de Cristo, esa venida en sí es cierta. Esta ha sido la fe y la esperanza de todos los cristianos, en todas las edades de la iglesia; fue la fe y la esperanza de los santos del Antiguo Testamento. Todos los creyentes serán reunidos con Cristo, para estar con él y ser felices en su presencia para siempre. Debemos creer firmemente en la segunda venida de Cristo; pero había peligro de que los tesalonicenses, equivocados en cuanto al tiempo, pusieran en duda la verdad o la certeza de la cosa misma. Las falsas doctrinas son como los vientos que agitan el agua de un lado a otro; y perturban la mente de los hombres, que es tan inestable como el agua. Nos basta saber que nuestro Señor vendrá, y reunirá consigo a todos sus santos. Se da una razón por la cual no debían esperar la venida de Cristo como inminente. Primero habría una apostasía general, tal que daría ocasión al surgimiento del anticristo, aquel hombre de pecado. Ha habido grandes disputas acerca de quién o qué se entiende por este hombre de pecado e hijo de perdición. El hombre de pecado no solo practica la maldad, sino que también promueve y ordena el pecado y la maldad en otros; y es el hijo de perdición, porque está destinado a una destrucción cierta, y es el instrumento para destruir a muchos otros, tanto en el alma como en el cuerpo. Así como Dios estaba en el templo en la antigüedad, y era adorado allí, y está ahora en su iglesia y con ella, así el anticristo aquí mencionado es un usurpador de la autoridad de Dios en la iglesia cristiana, que reclama honores divinos.",
+   "flags": [
+    "unlisted quotation of 2 Thess 2:3: RV1909 \"hombre de pecado\" and \"hijo de perdición\" used; \"falling away\" rendered \"apostasía\" as in the RV1909.",
+    "sensitive: Henry's reading of the \"man of sin\" points ahead to the papacy (made explicit in section 3813)."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3813,
+   "sha256": "a222b69c0e7b32ce9ecfbe1ae9f494f7d7892968ed4f989e2b6b872c32c50f1a",
+   "title": "Su destrucción, y la de los que le obedecen.",
+   "text": "Algo estorbaba o detenía al hombre de pecado. Se supone que era el poder del Imperio romano, que el apóstol no mencionó más claramente en aquel tiempo. La corrupción de la doctrina y del culto entró poco a poco, y la usurpación del poder fue gradual; así prevaleció el misterio de iniquidad. La superstición y la idolatría fueron promovidas por una devoción fingida, y la intolerancia y la persecución fueron fomentadas por un celo fingido por Dios y su gloria. Este misterio de iniquidad ya había comenzado entonces; mientras los apóstoles aún vivían, hubo personas que fingían celo por Cristo, pero en realidad se le oponían. Se declara la caída o ruina del estado anticristiano. La pura palabra de Dios, con el Espíritu de Dios, descubrirá este misterio de iniquidad, y a su debido tiempo será destruido por el resplandor de la venida de Cristo. Se pretenden señales y prodigios, visiones y milagros; pero son señales falsas para sostener doctrinas falsas; y milagros mentirosos, o solo milagros fingidos, para engañar al pueblo; y los engaños diabólicos con que se ha sostenido el estado anticristiano son notorios. Se describe a las personas que son sus súbditos voluntarios. Su pecado es este: no amaron la verdad, y por eso no la creyeron; y se complacieron en nociones falsas. Dios los deja a sí mismos, y entonces el pecado seguirá naturalmente, y juicios espirituales aquí, y castigos eternos en lo venidero. Estas profecías se han cumplido en gran medida, y confirman la verdad de las Escrituras. Este pasaje concuerda exactamente con el sistema del papismo, tal como prevalece en la iglesia romana y bajo los papas romanos. Pero aunque el hijo de perdición ha sido revelado, aunque se ha opuesto y se ha levantado contra todo lo que se llama Dios, ó que se adora; y ha hablado y obrado como si fuera un dios sobre la tierra, y ha proclamado su soberbia insolente, y ha sostenido sus engaños con milagros mentirosos y toda clase de fraudes; aun así el Señor no lo ha destruido todavía por completo con el resplandor de su venida; esa y otras profecías quedan por cumplirse antes de que venga el fin.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "contra todo lo que se llama Dios, ó que se adora"
+    },
+    {
+     "n": 1,
+     "text": "con el resplandor de su venida"
+    }
+   ],
+   "flags": [
+    "sensitive: Henry identifies the man of sin with \"popery\", \"the Romish church\" and \"the Romish popes\" (\"papismo\", \"la iglesia romana\", \"los papas romanos\"); translated in full.",
+    "unlisted quotations of 2 Thess 2:7, 2:9: RV1909 \"misterio de iniquidad\" and \"milagros mentirosos\" used.",
+    "Quote 0: KJV \"exalteth himself above\" is \"levantándose contra\" in the RV1909, used as \"se ha levantado contra\"."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3814,
+   "sha256": "bf322009f3ba38962cbbb6b0f772354bb4b0ef76ec3082dbd41ff11c160a0d4f",
+   "title": "La seguridad de los tesalonicenses frente a la apostasía; una exhortación a la firmeza, y oración por ellos.",
+   "text": "Cuando oímos de la apostasía de muchos, es un gran consuelo y gozo que han quedado reliquias por la elección de gracia, que persevera y perseverará; especialmente debemos regocijarnos si tenemos motivo para esperar que somos de ese número. La preservación de los santos se debe a que Dios los amó con amor eterno, desde el principio del mundo. El fin y los medios no deben separarse. La fe y la santidad deben ir unidas, así como la santidad y la felicidad. El llamamiento externo de Dios es por el evangelio; y este se hace eficaz por la obra interna del Espíritu. La fe de la verdad lleva al pecador a confiar en Cristo, y así a amarle y obedecerle; es sellada por el Espíritu Santo en su corazón. No tenemos prueba cierta de que los apóstoles hayan transmitido cosa alguna más de lo que encontramos contenido en las Santas Escrituras. Estemos, pues, firmes en las doctrinas enseñadas por los apóstoles, y rechacemos toda añadidura y las tradiciones vanas.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "han quedado reliquias por la elección de gracia"
+    }
+   ],
+   "flags": [
+    "Quote 0: the RV1909's \"reliquias\" (remnant) kept as in Rom 11:5.",
+    "unlisted quotations: Jer 31:3 \"amor eterno\", 2 Thess 2:13 \"fe de la verdad\" and 2 Thess 2:15 \"estad firmes\" (as \"Estemos firmes\") from the RV1909.",
+    "sensitive: \"reject all additions, and vain traditions\" is aimed against Roman Catholic tradition, though no church is named."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3815,
+   "sha256": "0e8d8d62dcd789697314f1b581f2f312b6b613da65b0989bba68736ac8c5310a",
+   "text": "Podemos y debemos dirigir nuestras oraciones, no solo a Dios el Padre, por medio de nuestro Señor Jesucristo, sino también al mismo Señor nuestro Jesucristo. Y debemos orar en su nombre a Dios, no solo como su Padre, sino como nuestro Padre en él y por medio de él. El amor de Dios en Cristo Jesús es el manantial y la fuente de todo el bien que tenemos o esperamos. Hay buena razón para un fuerte consuelo, porque los santos tienen buena esperanza por gracia. La libre gracia y la misericordia de Dios son lo que esperan, y aquello en que se fundan sus esperanzas, y no algún valor o mérito propio. Cuanto más placer hallemos en la palabra, las obras y los caminos de Dios, más probable será que perseveremos en ellos. Pero si vacilamos en la fe y somos de ánimo dudoso, cojeando y titubeando en nuestro deber, no es de extrañar que seamos extraños a los gozos de la religión.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "mismo Señor nuestro Jesucristo"
+    }
+   ],
+   "flags": [
+    "unlisted quotation of 2 Thess 2:16: RV1909 \"buena esperanza por gracia\" used verbatim"
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3816,
+   "sha256": "e25ae8bf0b7f7a209a70ab154de5b0703e2acb0b5139ec35ad8dcdec06defb29",
+   "title": "El apóstol expresa su confianza en los tesalonicenses y ora por ellos.",
+   "text": "Los que están lejos unos de otros aún pueden encontrarse ante el trono de la gracia; y los que no pueden hacer ni recibir ninguna otra bondad, pueden de este modo hacer y recibir una bondad real y muy grande. Los enemigos de la predicación del evangelio, y los perseguidores de sus fieles predicadores, son hombres importunos y malos. Muchos no creen el evangelio; y no es de extrañar que los tales estén inquietos y muestren malicia en sus esfuerzos por oponerse a él. El mal del pecado es el mayor mal, pero hay otros males de los que necesitamos ser preservados, y tenemos aliento para depender de la gracia de Dios. Una vez hecha la promesa, el cumplimiento es seguro y cierto. El apóstol tenía confianza en ellos, pero esta se fundaba en su confianza en Dios; porque de otro modo no hay confianza en el hombre. Ora por ellos pidiendo bendiciones espirituales. Es nuestro pecado y nuestra miseria que pongamos nuestros afectos en objetos equivocados. No hay verdadero amor de Dios sin fe en Jesucristo. Si, por la gracia especial de Dios, tenemos esa fe que multitudes no tienen, debemos orar fervientemente para que seamos capacitados, sin reserva, para obedecer sus mandamientos, y para que seamos capacitados, sin reserva, para el amor de Dios y la paciencia de Cristo.",
+   "flags": [
+    "unlisted quotations of 2 Thess 3:2 and 3:5: RV1909 \"hombres importunos y malos\" and \"el amor de Dios, y en la paciencia de Cristo\" (as \"el amor de Dios y la paciencia de Cristo\") used.",
+    "The last sentence repeats \"that we may be enabled, without reserve\" and its second half (\"enabled ... to the love of God\") is incomplete in the English (KJV 2 Thess 3:5 \"direct your hearts into the love of God\"); translated as it stands, repetition kept."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3817,
+   "sha256": "f77cc3e1955cb3b0b5545d13cd2f5396a552bf55becbb8e88464a9e3357174f2",
+   "title": "Les ordena apartarse de los que andan desordenadamente, en particular de los perezosos y los entrometidos.",
+   "text": "Los que han recibido el evangelio han de vivir conforme al evangelio. Los que podían trabajar y no querían no debían ser mantenidos en la ociosidad. El cristianismo no ha de favorecer la pereza, que consumiría lo que está destinado a alentar a los laboriosos y a sostener a los enfermos y afligidos. La laboriosidad en nuestros oficios como hombres es un deber que exige nuestro llamamiento como cristianos. Pero algunos esperaban ser mantenidos en la ociosidad, y se entregaban a un temple curioso y presuntuoso. Se entrometían en los asuntos de otros, y hacían mucho daño. Es un gran error y un abuso de la religión hacer de ella un manto para la ociosidad o para cualquier otro pecado. El siervo que espera debidamente la venida de su Señor debe estar trabajando como su Señor le ha mandado. Si estamos ociosos, el diablo y un corazón corrupto pronto nos hallarán algo que hacer. La mente del hombre es una cosa activa; si no se emplea en hacer el bien, estará haciendo el mal. Es una unión excelente, pero rara, ser activo en los propios asuntos y, sin embargo, tranquilo en cuanto a los de los demás. Si alguno se negaba a trabajar con quietud, debían señalarlo con censura y apartarse de su compañía, pero debían procurar su bien con amorosas amonestaciones. El Señor está con vosotros mientras vosotros estéis con él. Seguid vuestro camino, y seguid hasta el fin. Nunca debemos abandonar nuestra obra ni cansarnos en ella. Habrá tiempo de sobra para descansar cuando lleguemos al cielo.",
+   "flags": [
+    "Source typo \"The Lords is with you\" read as \"The Lord is with you\"."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3818,
+   "sha256": "c179af11cd97b46c4eb80b4535f51e255cf78367c7bee204b2dd4b8b8e6ef5dd",
+   "title": "Y concluye con una oración por ellos y un saludo.",
+   "text": "El apóstol ora por los tesalonicenses. Y deseemos las mismas bendiciones para nosotros y para nuestros amigos. Paz con Dios. Esta paz se desea para ellos siempre, o en todo. Paz por todos los medios; de toda manera; para que, así como gozaban de los medios de gracia, usaran todos los métodos para asegurar la paz. No necesitamos nada más para estar seguros y ser felices, ni podemos desear nada mejor para nosotros y nuestros amigos, que tener con nosotros y con ellos la presencia misericordiosa de Dios. No importa dónde estemos, si Dios está con nosotros; ni quién esté ausente, si Dios está presente. Es por la gracia de nuestro Señor Jesucristo que esperamos tener paz con Dios y gozar de la presencia de Dios. Esta gracia es el todo en todo para hacernos felices; aunque deseemos muchísimo a otros, queda bastante para nosotros.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "la gracia de nuestro Señor Jesucristo"
+    }
+   ],
+   "flags": [
+    "Henry's \"always, or in every thing\" / \"by all means\" rest on the KJV's \"always by all means\" (2 Thess 3:16); the RV1909 has \"siempre en toda manera\"."
+   ]
+  },
+  {
+   "kind": "intro",
+   "id": 54,
+   "sha256": "3d899e0c09dfa6cedfc50ef6c2a5c5ad53d93bcbfc7676b651e66ec3a8259891",
+   "text": "El propósito de la epístola parece ser que, habiendo quedado Timoteo en Éfeso, san Pablo le escribió para instruirle en la elección de oficiales idóneos en la iglesia, así como en el ejercicio de un ministerio ordenado. También para prevenirle contra la influencia de los falsos maestros, que con distinciones sutiles y disputas interminables corrompían la pureza y sencillez del evangelio. Le encarece una constante atención a la mayor diligencia, fidelidad y celo. Estos temas ocupan los cuatro primeros capítulos; el quinto capítulo da instrucciones respecto de clases particulares; en la última parte se condenan las controversias y disputas, se reprueba el amor al dinero y se exhorta a los ricos a las buenas obras."
+  },
+  {
+   "kind": "section",
+   "id": 3819,
+   "sha256": "b8fe786d85db1262a1b4a8a7fdc2b0f23d22580de3b8f87e9d43c37f152d7f1b",
+   "title": "El apóstol saluda a Timoteo.",
+   "text": "Jesucristo es la esperanza del cristiano; todas nuestras esperanzas de vida eterna se edifican sobre él; y Cristo es en nosotros la esperanza de gloria. El apóstol parece haber sido el medio de la conversión de Timoteo, quien sirvió con él en su ministerio como un hijo obediente con un padre amoroso. Lo que suscita cuestiones no es para edificación; lo que da ocasión a disputas dudosas derriba la iglesia en lugar de edificarla. La piedad del corazón y de la vida solo puede mantenerse y aumentar por el ejercicio de la fe en las verdades y promesas de Dios, por medio de Jesucristo.",
+   "flags": [
+    "unlisted quotation of Col 1:27: RV1909 \"la esperanza de gloria\" used verbatim"
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3820,
+   "sha256": "d3342f2006edb5dfde61554f57e58e069a3778f362af0a74ba6cb6c6dd7c7a17",
+   "title": "El propósito de la ley dada por Moisés.",
+   "text": "Todo lo que tiende a debilitar el amor a Dios, o el amor a los hermanos, tiende a frustrar el fin del mandamiento. El propósito del evangelio se cumple cuando los pecadores, mediante el arrepentimiento para con Dios y la fe en Jesucristo, son llevados a ejercitar el amor cristiano. Y como los creyentes eran personas justas según el camino establecido por Dios, la ley no estaba contra ellos. Pero a menos que seamos hechos justos por la fe en Cristo, arrepintiéndonos de veras y abandonando el pecado, estamos todavía bajo la maldición de la ley, aun según el evangelio del Dios bendito, y no somos aptos para participar de la santa felicidad del cielo.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "evangelio … del Dios bendito"
+    }
+   ],
+   "flags": [
+    "Quote 0: the RV1909 reads \"el evangelio de la gloria del Dios bendito\"; Henry leaves out \"glorious\", so only \"evangelio\" and \"del Dios bendito\" are used."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3821,
+   "sha256": "74228eb0beeb514051c8735ee5ebbb7938a360be455ddb9a7c1e472d42402d11",
+   "title": "De su propia conversión y llamamiento al apostolado.",
+   "text": "El apóstol sabía que con justicia habría perecido si el Señor hubiera mirado con rigor lo que estaba mal; y también si su gracia y su misericordia no hubieran abundado para con él cuando estaba muerto en el pecado, obrando en su corazón fe y amor a Cristo. Palabra fiel es esta; estas son palabras verdaderas y fieles, en las cuales se puede confiar: que el Hijo de Dios vino al mundo, voluntaria y deliberadamente, para salvar á los pecadores. Ningún hombre, con el ejemplo de Pablo delante, puede dudar del amor y del poder de Cristo para salvarlo, si de veras desea confiar en él como el Hijo de Dios, que una vez murió en la cruz y ahora reina sobre el trono de gloria, para salvar a todos los que por él se acercan a Dios. Admiremos, pues, y alabemos la gracia de Dios nuestro Salvador; y atribuyamos al Padre, al Hijo y al Espíritu Santo, tres Personas en la unidad de la Deidad, la gloria de todo lo hecho en nosotros, por nosotros y para nosotros.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "Palabra fiel"
+    }
+   ],
+   "flags": [
+    "unlisted quotation of 1 Tim 1:15: RV1909 \"vino al mundo\" and \"para salvar á los pecadores\" used around Henry's inserted \"willingly and purposely\".",
+    "\"extreme to mark what was amiss\" echoes Ps 130:3 KJV; the RV1909 there (\"si mirares á los pecados\") is different, so translated."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3822,
+   "sha256": "a3bc5113150d61deaa451befd5f65be74a05e75e0d0d9883e517e2c1b4b1ae1f",
+   "title": "La obligación de mantener la fe y una buena conciencia.",
+   "text": "El ministerio es una milicia contra el pecado y Satanás, llevada adelante bajo el Señor Jesús, que es el Capitán de nuestra salvación. Las buenas esperanzas que otros han tenido de nosotros deben estimularnos al deber. Y seamos rectos en nuestra conducta en todas las cosas. El propósito de las censuras más severas en la iglesia primitiva era impedir más pecado y recobrar al pecador. Que todos los que son tentados a desechar la buena conciencia y a abusar del evangelio recuerden que este es el camino para hacer naufragio también en la fe.",
+   "flags": [
+    "\"the Captain of our salvation\" (Heb 2:10 KJV): the RV1909 has \"el autor de la salud de ellos\"; Henry's title translated \"el Capitán de nuestra salvación\".",
+    "unlisted echo of 1 Tim 1:19: RV1909 \"hicieron naufragio en la fe\" (as \"hacer naufragio también en la fe\")."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3823,
+   "sha256": "02169ca5820464e32887b77339a534bd6640dbe885eb3b5b10b43b392ec85d39",
+   "title": "Se ha de orar por todas las personas, ya que la gracia del evangelio no hace diferencia de rangos ni posiciones.",
+   "text": "Los discípulos de Cristo deben ser gente de oración; todos, sin distinción de nación, secta, rango o partido. Nuestro deber como cristianos se resume en dos palabras: piedad, es decir, el recto culto a Dios; y honestidad, es decir, la buena conducta para con todos los hombres. Estas deben ir juntas: no somos verdaderamente honestos si no somos piadosos y no damos a Dios lo que le es debido; y no somos verdaderamente piadosos si no somos honestos. Lo que es agradable delante de Dios nuestro Salvador, en eso debemos abundar. Hay un solo Mediador, y ese Mediador se dió á sí mismo en precio del rescate por todos. Y esta disposición se ha hecho para beneficio de los judíos y de los gentiles de toda nación; para que todos los que quieran puedan acudir por este camino al propiciatorio de un Dios que perdona, para buscar la reconciliación con él. El pecado había creado una enemistad entre nosotros y Dios; Jesucristo es el Mediador que hace la paz. Él es un rescate que había de darse a conocer a su debido tiempo. En los tiempos del Antiguo Testamento, sus padecimientos y la gloria que había de seguir se anunciaban como cosas que serían reveladas en los últimos tiempos. Los que son salvos deben llegar al conocimiento de la verdad, porque ese es el camino que Dios ha establecido para salvar a los pecadores: si no conocemos la verdad, no podemos ser gobernados por ella.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "agradable delante de Dios nuestro Salvador"
+    },
+    {
+     "n": 1,
+     "text": "se dió á sí mismo en precio del rescate por todos"
+    },
+    {
+     "n": 2,
+     "text": "llegar al conocimiento de la verdad"
+    }
+   ],
+   "flags": [
+    "\"godliness\" and \"honesty\" (1 Tim 2:2 KJV): the RV1909 has \"piedad y honestidad\", matching Henry's two words."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3824,
+   "sha256": "692f9d14159225805a2b53c450ac9ac9e17413a613cddad5863a65587c21726e",
+   "title": "Cómo deben comportarse los hombres y las mujeres, tanto en su vida religiosa como en la vida común.",
+   "text": "Bajo el evangelio, la oración no ha de limitarse a una casa de oración en particular, sino que los hombres deben orar en todo lugar. Debemos orar en nuestros aposentos, orar en nuestras familias, orar en nuestras comidas, orar cuando estamos de viaje, y orar en las asambleas solemnes, sean más públicas o más privadas. Debemos orar con caridad; sin ira, ni malicia, ni enojo contra persona alguna. Debemos orar con fe, sin dudar y sin contender. Las mujeres que profesan la religión cristiana deben ser modestas en el vestir, sin buscar la ostentación, la vistosidad ni el lujo. Las buenas obras son el mejor adorno; estas son de grande estima delante de Dios. En los vestidos hay que atender más a la modestia y al aseo que a la elegancia y la moda. Y sería bueno que los que profesan una piedad seria estuvieran del todo libres de vanidad en el vestir. Deberían gastar más tiempo y dinero en socorrer a los enfermos y afligidos que en adornarse a sí mismos y a sus hijos. Hacer esto de una manera impropia de su posición en la vida y de su profesión de piedad es pecaminoso. No son minucias, sino mandamientos divinos. Los mejores adornos para los que profesan piedad son las buenas obras. Según san Pablo, a las mujeres no se les permite ser maestras públicas en la iglesia; porque enseñar es un oficio de autoridad. Pero las mujeres buenas pueden y deben enseñar a sus hijos en casa los principios de la verdadera religión. Además, las mujeres no deben creerse dispensadas de aprender lo que es necesario para la salvación, aunque no deben usurpar autoridad. Así como la mujer fue la última en la creación, lo cual es una razón de su sujeción, así fue la primera en la transgresión. Pero hay una palabra de consuelo: que las que permanecen en la modestia serán salvas en el dar a luz hijos, o con el dar a luz hijos, por el Mesías, que nació de mujer. Y el dolor especial al que está sujeto el sexo femenino debe llevar a los hombres a ejercer su autoridad con mucha suavidad, ternura y afecto.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "de grande estima delante de Dios"
+    }
+   ],
+   "flags": [
+    "sensitive: Henry on women (no public teaching in the church, woman's subjection because created last and first in the transgression, men's authority); translated in full.",
+    "Henry's \"in child-bearing, or with child-bearing\" weighs the KJV's preposition (1 Tim 2:15 \"saved in childbearing\"); the RV1909 has \"se salvará engendrando hijos\".",
+    "\"sobriety\" (KJV 1 Tim 2:15) rendered \"modestia\", as in the RV1909 (\"con modestia\").",
+    "unlisted echo of 1 Tim 2:8: RV1909 \"en todo lugar\" and \"sin ira\" in Henry's sentence."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3825,
+   "sha256": "a2f8b6251cb6b4e4392df1f16ffc221522112fab385d32b08a205d6db1875063",
+   "title": "Las cualidades y la conducta de los obispos del evangelio.",
+   "text": "Si un hombre deseaba el oficio pastoral, y por amor a Cristo y a las almas de los hombres estaba dispuesto a negarse a sí mismo y a sufrir penalidades consagrándose a ese servicio, buscaba ser empleado en una buena obra, y su deseo debía aprobarse, siempre que estuviera capacitado para el oficio. Un ministro debe dar tan poca ocasión de censura como sea posible, no sea que traiga oprobio sobre su oficio. Debe ser sobrio, templado, moderado en todas sus acciones y en el uso de todos los consuelos de las criaturas. La sobriedad y la vigilancia se ponen juntas en la Escritura; se ayudan la una a la otra. Las familias de los ministros deben ser ejemplos de bien para todas las demás familias. Debemos guardarnos del orgullo; es un pecado que convirtió a ángeles en demonios. Debe tener buena reputación entre sus vecinos, y no estar bajo ningún reproche por su vida anterior. Para alentar a todos los ministros fieles, tenemos la misericordiosa palabra de promesa de Cristo: he aquí, yo estoy con vosotros todos los días, hasta el fin del mundo, Mt 28:20. Y él capacitará a sus ministros para su obra, los llevará a través de las dificultades con consuelo y recompensará su fidelidad.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "he aquí, yo estoy con vosotros todos los días, hasta el fin del mundo"
+    }
+   ],
+   "flags": [
+    "Quote 0: the RV1909 reads \"todos los días\" for the KJV's \"alway\"."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3826,
+   "sha256": "5ef772c603355ce5675a6403f7c395b25098da7cc92586fec0f988ee6fb01b85",
+   "title": "Y de los diáconos y sus esposas.",
+   "text": "Los diáconos fueron designados al principio para distribuir la caridad de la iglesia y administrar sus asuntos; sin embargo, había entre ellos pastores y evangelistas. A los diáconos se les confiaba una gran responsabilidad. Deben ser hombres graves, serios y prudentes. No conviene que se pongan cargos públicos en manos de nadie hasta que se halle que son aptos para la tarea que se les ha de confiar. Todos los que están emparentados con los ministros deben tener gran cuidado de andar como conviene al evangelio de Cristo."
+  },
+  {
+   "kind": "section",
+   "id": 3827,
+   "sha256": "588435b919f9868e0fde8d7b5c3f9d5d47c8de35921d08cad69182f350da3f5a",
+   "title": "La razón de escribir acerca de estas y otras cosas de la iglesia.",
+   "text": "La iglesia es la casa de Dios; él habita allí. La iglesia sostiene en alto la Escritura y la doctrina de Cristo, como una columna sostiene una proclama. Cuando una iglesia deja de ser columna y apoyo de la verdad, podemos y debemos abandonarla; porque nuestra consideración por la verdad debe ser la primera y la mayor. El misterio de la piedad es Cristo. Él es Dios, que se hizo carne, y fue manifestado en carne. Dios tuvo a bien manifestarse al hombre, tomando su propio Hijo la naturaleza del hombre. Aunque fue vituperado como pecador y muerto como malhechor, Cristo fue resucitado por el Espíritu, y así fue justificado de todas las falsas acusaciones con que se le había cargado. Los ángeles le servían, porque él es el Señor de los ángeles. Los gentiles acogieron el evangelio que los judíos rechazaron. Recordemos que Dios ha sido manifestado en carne, para quitar nuestros pecados, para redimirnos de toda iniquidad, y limpiar para sí un pueblo propio, celoso de buenas obras. Estas doctrinas deben mostrarse por los frutos del Espíritu en nuestras vidas.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "manifestado en carne"
+    },
+    {
+     "n": 1,
+     "text": "Dios ha sido manifestado en carne"
+    },
+    {
+     "n": 2,
+     "text": "para redimirnos de toda iniquidad, y limpiar para sí un pueblo propio, celoso de buenas obras"
+    }
+   ],
+   "flags": [
+    "unlisted quotation of 1 Tim 3:15: RV1909 \"columna y apoyo de la verdad\" used; \"el misterio de la piedad\" (3:16) likewise.",
+    "Quote 2 also takes in the RV1909's \"para redimirnos de toda iniquidad\" (Titus 2:14), which Henry quotes just before; the source's trailing \"These\" is Henry's own word (\"Estas doctrinas\").",
+    "\"justified\" by the Spirit: the RV1909 has \"justificado con el Espíritu\"; Henry's explanation translated."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3828,
+   "sha256": "8291a8436fcd2ede0fda86c56a4d292ca630f4765fdcfc6b9758c859a82725dd",
+   "title": "De las apostasías de la fe que ya comenzaban a aparecer.",
+   "text": "El Espíritu Santo, tanto en el Antiguo como en el Nuevo Testamento, habló de un apartamiento general de la fe de Cristo y del culto puro de Dios. Esto había de venir durante la dispensación cristiana, porque esos son llamados los postreros días. Los falsos maestros prohíben como malo lo que Dios ha permitido, y mandan como deber lo que él ha dejado como indiferente. Hallamos ejercicio para la vigilancia y la abnegación en atender a los requisitos de la ley de Dios, sin que se nos impongan deberes imaginarios que rechazan lo que él ha permitido. Pero nada justifica un uso intemperante o impropio de las cosas; y nada será bueno para nosotros a menos que busquemos en oración la bendición del Señor sobre ello.",
+   "flags": [
+    "\"the latter days\": the RV1909 of 1 Tim 4:1 has \"los venideros tiempos\"; Henry's phrase translated \"los postreros días\"."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3829,
+   "sha256": "eaa1bb3db574bce0b6b427f409e47c35500b20c954fb6325202877cf7ff4e9c9",
+   "title": "Varias instrucciones, con motivos para el debido cumplimiento de los deberes.",
+   "text": "Los actos externos de abnegación aprovechan poco. ¿De qué nos servirá mortificar el cuerpo, si no mortificamos el pecado? Ninguna diligencia en cosas meramente externas podría ser de mucha utilidad. La ganancia de la piedad está mayormente en la promesa; y las promesas al pueblo piadoso se refieren en parte a esta vida presente, pero especialmente a la venidera: aunque perdamos por Cristo, no perderemos con él. Si Cristo es así el Salvador de todos los hombres, mucho más será el Galardonador de los que le buscan y le sirven; proveerá bien para aquellos a quienes ha hecho nuevas criaturas.",
+   "flags": [
+    "unlisted quotation of 1 Tim 4:8, 4:10: RV1909 \"esta vida presente, y de la venidera\" (as \"esta vida presente, pero especialmente a la venidera\") and \"Salvador de todos los hombres\" used."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3830,
+   "sha256": "3facec51e979fee6d58d94b4c7f66f28ae31c5ade23b09ceb62d9e73ddf5b42d",
+   "text": "La juventud de los hombres no será menospreciada si se guardan de las vanidades y las locuras. Los que enseñan con su doctrina deben enseñar con su vida. Su conversación debe ser edificante; su conducta debe ser santa; deben ser ejemplos de amor a Dios y a todos los hombres buenos, ejemplos de una mente espiritual. Los ministros deben ocuparse en estas cosas como su obra y tarea principal. De este modo su aprovechamiento será manifiesto en todas las cosas, así como a todas las personas; este es el camino para aprovechar en conocimiento y gracia, y también para hacer provecho a otros. La doctrina de un ministro de Cristo debe ser bíblica, clara, evangélica y práctica; bien expuesta, explicada, defendida y aplicada. Pero estos deberes no dejan tiempo para placeres mundanos, visitas frívolas ni conversación ociosa, y muy poco para lo que es mero entretenimiento y solo ornamental. Que todo creyente sea capacitado para que su aprovechamiento sea manifiesto á todos los hombres; procurando experimentar el poder del evangelio en su propia alma, y dar sus frutos en su vida.",
+   "flags": [
+    "Source typo \"wordly\" read as \"worldly\" (\"mundanos\").",
+    "unlisted quotation of 1 Tim 4:15: RV1909 \"aprovechamiento sea manifiesto á todos\" used, Henry's \"men\" added (\"á todos los hombres\").",
+    "Henry's \"conversation\" (1 Tim 4:12 KJV, conduct) rendered \"conducta\"; \"discourse\" rendered \"conversación\"."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3831,
+   "sha256": "c9cc4582531ddb764f2771f5cb3f191a1b18a17e34279f110ecc1961c212eb7f",
+   "title": "Instrucciones acerca de los hombres y mujeres mayores y jóvenes.",
+   "text": "Debe guardarse respeto a la dignidad de los años y del puesto. Los más jóvenes, si faltan, deben ser reprendidos, no como quien desea hallarles faltas, sino como quien quiere sacar de ellos lo mejor. Hace falta mucha mansedumbre y cuidado al reprender a los que merecen reprensión."
+  },
+  {
+   "kind": "section",
+   "id": 3832,
+   "sha256": "c5f33b24de00eab7933ccbf34255b6111b4ce388956695dad66de67310f5ffa7",
+   "title": "Y acerca de las viudas pobres.",
+   "text": "Honra á las viudas que en verdad son viudas; socórrelas y sostenlas. Es deber de los hijos, si sus padres están necesitados y ellos pueden socorrerlos, hacerlo hasta donde alcance su poder. La viudez es un estado de desolación; pero que las viudas confíen en el Señor y perseveren en la oración. Todos los que viven en deleites, viviendo están muertos, espiritualmente muertos, muertos en delitos y pecados. ¡Ay, cuántos hay de esta clase entre los cristianos de nombre, aun hasta el último período de la vida! Si algunos hombres o mujeres no sostienen a sus parientes pobres, en efecto niegan la fe. Si gastan en sus concupiscencias y placeres lo que debería sostener a sus familias, han negado la fe y son peores que los infieles. Si los que profesan el evangelio ceden a cualquier principio o conducta corruptos, son peores que los que no profesan creer las doctrinas de la gracia.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "Honra á las viudas que en verdad son viudas"
+    }
+   ],
+   "flags": [
+    "unlisted quotations: 1 Tim 5:6 \"viviendo está muerta\" (as \"viviendo están muertos\"), Eph 2:1 \"muertos en vuestros delitos y pecados\" (as \"muertos en delitos y pecados\") and 1 Tim 5:8 \"peor que un infiel\" (plural) from the RV1909.",
+    "sensitive: \"worse than infidels\" (\"peores que los infieles\"), Henry following 1 Tim 5:8."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3833,
+   "sha256": "9b6e6579fbc1a6fb950e96b8ff23d16a1efe347e549e41f4d5e8f9b8edd6b3d2",
+   "title": "Acerca de las viudas.",
+   "text": "Todo aquel que es puesto en algún oficio en la iglesia debe estar libre de justa censura; y muchos son objetos apropiados de caridad, y sin embargo no deben ser empleados en servicios públicos. Los que quieran hallar misericordia cuando estén en aflicción deben mostrar misericordia cuando estén en prosperidad; y los que muestran más disposición para toda buena obra son los que más probablemente serán fieles en lo que se les confíe. Los que están ociosos muy rara vez solo están ociosos: siembran el mal entre los vecinos y la discordia entre los hermanos. A todos los creyentes se les exige socorrer a los de sus familias que están desamparados, para que la iglesia no se vea impedida de socorrer a los que están enteramente desamparados y sin amigos."
+  },
+  {
+   "kind": "section",
+   "id": 3834,
+   "sha256": "461eeabe255f3e16191866487c4b37be794dbd120ddac7c41734256da8c39d87",
+   "title": "El respeto que debe darse a los ancianos. Timoteo debe tener cuidado al reprender a los que pecan, al ordenar ministros, y en cuanto a su propia salud.",
+   "text": "Hay que cuidar de que los ministros sean sostenidos. Y los que trabajan con afán en esta obra son dignos de doble honra y estima. Es lo que justamente se les debe, tanto como el salario del obrero. El apóstol encarga solemnemente a Timoteo que se guarde de la parcialidad. Tenemos gran necesidad de velar en todo tiempo, para no comunicar en pecados ajenos. Consérvate en limpieza, no solo no haciendo tú lo mismo, sino no favoreciéndolo ni ayudando de ningún modo a ello en otros. El apóstol también encarga a Timoteo que cuide de su salud. Así como no hemos de hacer de nuestros cuerpos amos, tampoco esclavos; sino usarlos de modo que nos sean de la mayor ayuda en el servicio de Dios. Hay pecados secretos y hay pecados manifiestos: los pecados de algunos hombres son manifiestos de antemano, y van delante al juicio; a otros les siguen después. Dios aclarará lo oculto de las tinieblas, y dará a conocer los designios de todos los corazones. Mirando al día del juicio, atendamos todos a nuestros oficios propios, sea en posiciones altas o bajas, procurando que el nombre y la doctrina de Dios nunca sean blasfemados por causa nuestra.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "en pecados ajenos … consérvate en limpieza"
+    },
+    {
+     "n": 1,
+     "text": "los pecados de algunos hombres … son manifiestos"
+    },
+    {
+     "n": 2,
+     "text": "aclarará lo oculto de las tinieblas"
+    }
+   ],
+   "flags": [
+    "Quote 1: the RV1909 puts \"antes que vengan ellos á juicio\" inside the run; Henry's order kept and only the RV1909's words in his order used.",
+    "\"worthy of double honour\" (1 Tim 5:17): the RV1909 has \"dignos de doblada honra\"; Henry's own phrase translated \"doble honra\"."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3835,
+   "sha256": "d9c80e58a3486ed3d1e510d0d8eab020c136c24cb0e98b263554088bd87841cf",
+   "title": "El deber de los cristianos para con los amos creyentes, así como para con los demás.",
+   "text": "Los cristianos no debían suponer que el conocimiento religioso o los privilegios cristianos les daban algún derecho a menospreciar a los amos paganos, o a desobedecer órdenes lícitas, o a exponer sus faltas ante otros. Y los que gozaban del privilegio de vivir con amos creyentes no debían negarles el debido respeto y reverencia por ser iguales en cuanto a los privilegios religiosos, sino que debían servir con doble diligencia y alegría, a causa de su fe en Cristo, y como participantes de su libre salvación. No hemos de asentir a ningunas palabras como sanas, excepto a las palabras de nuestro Señor Jesucristo; a estas debemos dar un asentimiento no fingido. Comúnmente los más orgullosos son los que menos saben; porque no se conocen a sí mismos. De ahí nacen envidias, pleitos, maledicencias, malas sospechas, disputas que son todo sutileza y sin ninguna solidez, entre hombres de mente corrupta y carnal, ignorantes de la verdad y de su poder santificador, que buscan su ventaja mundana. (1 Ti 6:6-10)",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "palabras de nuestro Señor Jesucristo"
+    },
+    {
+     "n": 1,
+     "text": "envidias, pleitos, maledicencias, malas sospechas"
+    }
+   ],
+   "flags": [
+    "sensitive: \"heathen masters\" (\"amos paganos\").",
+    "sensitive: Henry's teaching on servants' (slaves') duty to masters (1 Tim 6:1-2), translated in full.",
+    "The English ends with a stray outline reference \"(1Ti 6:6-10)\" (the next section's verses); kept as \"(1 Ti 6:6-10)\".",
+    "Quote 0: KJV \"wholesome words, even the words of our Lord\"; the RV1909 has \"sanas palabras de nuestro Señor Jesucristo\"."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3836,
+   "sha256": "0f8b304e333edd5b8d7c59ad119630e75b6ee5c7f360c0af0b5f1d7354183487",
+   "title": "La ventaja de la piedad con contentamiento.",
+   "text": "Los que hacen del cristianismo un negocio para servir a sus fines en este mundo quedarán defraudados; pero los que lo atienden como su llamamiento hallarán que tiene promesa de la vida presente, así como de la venidera. El que es piadoso está seguro de ser feliz en el otro mundo; y si está contento con su condición en este mundo, tiene bastante; y todas las personas verdaderamente piadosas están contentas. Cuando nos vemos en los mayores aprietos, no podemos ser más pobres que cuando vinimos a este mundo; una mortaja, un ataúd y una tumba es todo lo que el hombre más rico del mundo puede sacar de todas sus riquezas. Si la naturaleza debe contentarse con poco, la gracia debe contentarse con menos. Las cosas necesarias para la vida limitan los deseos del verdadero cristiano, y con ellas procurará estar contento. Vemos aquí el mal de la avaricia. No dice: los que son ricos, sino los que quieren enriquecerse; los que ponen su felicidad en la riqueza, y son ansiosos y resueltos en su búsqueda. Los que son así dan a Satanás la oportunidad de tentarlos, llevándolos a usar medios deshonestos y otras malas prácticas para aumentar sus ganancias. También los llevan a tantas ocupaciones y a tal ajetreo de negocios que no les queda tiempo ni inclinación para la religión espiritual; los llevan a relaciones que arrastran al pecado y a la locura. ¡A qué pecados no serán arrastrados los hombres por el amor del dinero! La gente puede tener dinero y, sin embargo, no amarlo; pero si lo ama, esto la empujará a todo mal. Toda clase de maldad y de vicio, de una manera u otra, nace del amor del dinero. No podemos mirar a nuestro alrededor sin percibir muchas pruebas de esto, especialmente en un tiempo de prosperidad externa, grandes gastos y profesión relajada.",
+   "flags": [
+    "Henry's point turns on the KJV's \"they that will be rich\" (1 Tim 6:9); the RV1909's \"los que quieren enriquecerse\" (used verbatim) carries the same sense.",
+    "unlisted quotation of 1 Tim 6:10: RV1909 \"el amor del dinero\" used."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3837,
+   "sha256": "ce94edbb21eeff713ff94dc65d5d1311e88a25fba380749fb318e13907bf40b7",
+   "title": "Un encargo solemne a Timoteo para que sea fiel.",
+   "text": "Mal les sienta a todos los hombres, pero especialmente a los hombres de Dios, poner su corazón en las cosas de este mundo; los hombres de Dios deben estar ocupados en las cosas de Dios. Tiene que haber un combate contra la corrupción, y las tentaciones, y las potestades de las tinieblas. La vida eterna es la corona propuesta para nuestro aliento. Somos llamados a echar mano de ella. A los ricos se les deben señalar especialmente sus peligros y deberes en cuanto al uso debido de las riquezas. Pero ¿quién puede dar tal encargo, si él mismo no está por encima del amor a las cosas que la riqueza puede comprar? La manifestación de Cristo es cierta, pero no nos toca a nosotros saber el tiempo. Los ojos mortales no pueden soportar el resplandor de la gloria divina. Nadie puede acercarse a él sino en cuanto se da a conocer a los pecadores en Cristo y por medio de él. La Deidad es adorada aquí sin distinción de Personas, pues todas estas cosas se dicen propiamente, sea del Padre, del Hijo o del Espíritu Santo. Dios se nos revela solo en la naturaleza humana de Cristo y por medio de ella, como el Hijo unigénito del Padre."
+  },
+  {
+   "kind": "section",
+   "id": 3838,
+   "sha256": "2a3dad934c7d17476088cf97b12a0337856298b98d025e894fe2bd629654c49b",
+   "title": "El apóstol repite su advertencia a los ricos, y concluye con una bendición.",
+   "text": "Ser rico en este mundo es del todo diferente de ser rico para con Dios. Nada es más incierto que la riqueza mundana. Los que son ricos deben ver que Dios les da sus riquezas; y solo él puede darles que las gocen en abundancia; porque muchos tienen riquezas, pero las gozan pobremente, por no tener corazón para usarlas. ¿Qué vale la mejor hacienda, sino en cuanto da ocasión de hacer más bien? Mostrando la fe en Cristo con frutos de amor, echemos mano á la vida eterna, cuando los indulgentes consigo mismos, los avaros y los impíos de alrededor alcen sus ojos en el tormento. El saber que se opone a la verdad del evangelio no es verdadera ciencia, ni conocimiento real; de otro modo aprobaría el evangelio y asentiría a él. Los que ponen la razón por encima de la fe están en peligro de dejar la fe. La gracia incluye todo lo que es bueno, y la gracia es arras, un comienzo de la gloria; dondequiera que Dios da gracia, dará gloria.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "mano á la vida eterna"
+    }
+   ],
+   "flags": [
+    "Quote 0: RV1909 \"echen mano á la vida eterna\", with the verb changed to Henry's \"let us\" (\"echemos\").",
+    "\"not true science\" answers the KJV's \"science falsely so called\" (1 Tim 6:20); the RV1909 has \"la falsamente llamada ciencia\"."
+   ]
+  }
+ ]
+}

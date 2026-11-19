@@ -1,0 +1,549 @@
+{
+ "batch": "001",
+ "entries": [
+  {
+   "kind": "intro",
+   "id": 1,
+   "book": 1,
+   "sha256": "1fc4af66e2e4af372f092f2e372849b962d982f8934403cb559aa77a4484e726",
+   "text": "Genesis is a name taken from the Greek, and signifies \"the book of generation or production;\" it is properly so called, as containing an account of the origin of all things. There is no other history so old. There is nothing in the most ancient book which exists that contradicts it; while many things recorded by the oldest heathen writers, or to be traced in the customs of different nations, confirm what is related in the book of Genesis.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 1,
+   "book": 1,
+   "start_verse": 1001001,
+   "end_verse": 1001002,
+   "sha256": "6813cece35b0fed127b7338fde0d902f569e883ecbd90ebd09c22168abe01137",
+   "title": "God creates heaven and earth.",
+   "text": "The first verse of the Bible gives us a satisfying and useful account of the origin of the earth and the heavens. The faith of humble Christians understands this better than the fancy of the most learned men. From what we see of heaven and earth, we learn the power of the great Creator. And let our make and place as men, remind us of our duty as Christians, always to keep heaven in our eye, and the earth under our feet. The Son of God, one with the Father, was with him when he made the world; nay, we are often told that the world was made by him, and nothing was made without him. Oh, what high thoughts should there be in our minds, of that great God whom we worship, and of that great Mediator in whose name we pray! And here, at the beginning of the sacred volume, we read of that Divine Spirit, whose work upon the heart of man is so often mentioned in other parts of the Bible. Observe, that at first there was nothing desirable to be seen, for the world was without form, and void; it was confusion, and emptiness. In like manner the work of grace in the soul is a new creation: and in a graceless soul, one that is not born again, there is disorder, confusion, and every evil work: it is empty of all good, for it is without God; it is dark, it is darkness itself: this is our condition by nature, till Almighty grace works a change in us.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "was without form, and void",
+     "verses": [
+      1001002
+     ],
+     "es": "Y la tierra estaba desordenada y vacía, y las tinieblas estaban sobre la haz del abismo, y el Espíritu de Dios se movía sobre la haz de las aguas.",
+     "pt": "E a terra estava desordenada e vazia, e as trevas estavam sobre a face do abismo, e o Espírito de Deus se movia sobre a face das águas."
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 2,
+   "book": 1,
+   "start_verse": 1001003,
+   "end_verse": 1001005,
+   "sha256": "4ae0b6a5d17e897ca9fdf813539f6b466745dc27463ea2c8d6a2c029074fe4c1",
+   "title": "The creation of light.",
+   "text": "God said, Let there be light; he willed it, and at once there was light. Oh, the power of the word of God! And in the new creation, the first thing that is wrought in the soul is light: the blessed Spirit works upon the will and affections by enlightening the understanding. Those who by sin were darkness, by grace become light in the Lord. Darkness would have been always upon fallen man, if the Son of God had not come and given us understanding, 1Jo 5:20. The light which God willed, he approved of. God divided the light from the darkness; for what fellowship has light with darkness? In heaven there is perfect light, and no darkness at all; in hell, utter darkness, and no gleam of light. The day and the night are the Lord's; let us use both to his honour, by working for him every day, and resting in him every night, meditating in his law both day and night.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "God said, Let there be light",
+     "verses": [
+      1001003
+     ],
+     "es": "Y dijo Dios: Sea la luz: y fué la luz.",
+     "pt": "E disse Deus: Haja luz; e houve luz."
+    },
+    {
+     "n": 1,
+     "english": "God divided the light from the darkness",
+     "verses": [
+      1001004
+     ],
+     "es": "Y vió Dios que la luz era buena: y apartó Dios la luz de las tinieblas.",
+     "pt": "E viu Deus que a luz era boa: e separou Deus a luz das trevas."
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3,
+   "book": 1,
+   "start_verse": 1001006,
+   "end_verse": 1001013,
+   "sha256": "bd0e436fdfae0eb03d1d329307c377f2ac17b15c57e58ac9a0d369e2b43d8ae3",
+   "title": "God separates the earth from the waters, and makes it fruitful.",
+   "text": "The earth was emptiness, but by a word spoken, it became full of God's riches, and his they are still. Though the use of them is allowed to man, they are from God, and to his service and honour they must be used. The earth, at his command, brings forth grass, herbs, and fruits. God must have the glory of all the benefit we receive from the produce of the earth. If we have, through grace, an interest in Him who is the Fountain, we may rejoice in him when the streams of temporal mercies are dried up.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 4,
+   "book": 1,
+   "start_verse": 1001014,
+   "end_verse": 1001019,
+   "sha256": "f0510e85218e567a358c3dfade4743a8653e3341383944c00ebea1e3257b2723",
+   "title": "God forms the sun, moon, and stars.",
+   "text": "In the fourth day's work, the creation of the sun, moon, and stars is accounted for. All these are the works of God. The stars are spoken of as they appear to our eyes, without telling their number, nature, place, size, or motions; for the Scriptures were written, not to gratify curiosity, or make us astronomers, but to lead us to God, and make us saints. The lights of heaven are made to serve him; they do it faithfully, and shine in their season without fail. We are set as lights in this world to serve God; but do we in like manner answer the end of our creation? We do not: our light does not shine before God, as his lights shine before us. We burn our Master's candles, but do not mind our Master's work.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 5,
+   "book": 1,
+   "start_verse": 1001020,
+   "end_verse": 1001025,
+   "sha256": "1c3c3389e3af99b2c50a348140c8bb1437faf7eff1b5e812ebc3bdc2e47eeb5a",
+   "title": "Animals created.",
+   "text": "God commanded the fish and fowl to be produced. This command he himself executed. Insects, which are more numerous than the birds and beasts, and as curious, seem to have been part of this day's work. The Creator's wisdom and power are to be admired as much in an ant as in an elephant. The power of God's providence preserves all things, and fruitfulness is the effect of his blessing.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 6,
+   "book": 1,
+   "start_verse": 1001026,
+   "end_verse": 1001028,
+   "sha256": "cb790b9477597976ef79680d4204c413014c94dc7d73a0cae0c15d51fb760b0d",
+   "title": "Man created in the image of God.",
+   "text": "Man was made last of all the creatures: this was both an honour and a favour to him. Yet man was made the same day that the beasts were; his body was made of the same earth with theirs; and while he is in the body, he inhabits the same earth with them. God forbid that by indulging the body, and the desires of it, we should make ourselves like the beasts that perish! Man was to be a creature different from all that had been hitherto made. Flesh and spirit, heaven and earth, must be put together in him. God said, \"Let us make man.\" Man, when he was made, was to glorify the Father, Son, and Holy Ghost. Into that great name we are baptized, for to that great name we owe our being. It is the soul of man that especially bears God's image. Man was made upright, Ec 7:29. His understanding saw Divine things clearly and truly; there were no errors or mistakes in his knowledge; his will consented at once, and in all things, to the will of God. His affections were all regular, and he had no bad appetites or passions. His thoughts were easily brought and fixed to the best subjects. Thus holy, thus happy, were our first parents in having the image of God upon them. But how is this image of God upon man defaced! May the Lord renew it upon our souls by his grace!",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "God said, \"Let us make man",
+     "verses": [
+      1001026
+     ],
+     "es": "Y dijo Dios: Hagamos al hombre á nuestra imagen, conforme á nuestra semejanza; y señoree en los peces de la mar, y en las aves de los cielos, y en las bestias, y en toda la tierra, y en todo animal que anda arrastrando sobre la tierra.",
+     "pt": "E disse Deus: Façamos ao ser humano à nossa imagem, conforme nossa semelhança; e domine os peixes do mar, e as aves dos céus, e os animais, e toda a terra, e todo animal que anda arrastando sobre a terra."
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 7,
+   "book": 1,
+   "start_verse": 1001029,
+   "end_verse": 1001030,
+   "sha256": "4a4598a4ebc5bb8c2c6bebf7a20379245b30c1b6897bda9233d0aa808488741a",
+   "title": "Food appointed.",
+   "text": "Herbs and fruits must be man's food, including corn, and all the products of the earth. Let God's people cast their care upon him, and not be troubled about what they shall eat, and what they shall drink. He that feeds his birds will not starve his babes.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 8,
+   "book": 1,
+   "start_verse": 1001031,
+   "end_verse": 1001031,
+   "sha256": "2e20bf7f4b3b587183f82691c7c09013519ba769985c197a333a1a2f6001f6f9",
+   "title": "The work of creation ended and approved.",
+   "text": "When we come to think about our works, we find, to our shame, that much has been very bad; but when God saw his work, all was very good. Good, for it was all just as the Creator would have it to be. All his works, in all places of his dominion, bless him; and therefore, bless thou the Lord, O my soul. Let us bless God for the gospel of Christ, and when we consider his almighty power, let us sinners flee from the wrath to come. If new--created unto the image of God in holiness, we shall at length enter the \"new heavens and new earth, wherein dwelleth righteousness.\"",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "All his works, in all places of his dominion, bless",
+     "verses": [
+      19103022
+     ],
+     "es": "Bendecid á Jehová, vosotras todas sus obras, en todos los lugares de su señorío. Bendice, alma mía, á Jehová.",
+     "pt": "Bendizei ao SENHOR todas as suas obras, em todos os lugares de seu domínio; louva, minha alma, ao SENHOR!"
+    },
+    {
+     "n": 1,
+     "english": "bless thou the Lord, O my soul",
+     "verses": [
+      19104035
+     ],
+     "es": "Sean consumidos de la tierra los pecadores, y los impíos dejen de ser. Bendice, alma mía, á Jehová. Aleluya.",
+     "pt": "Os pecadores serão consumidos da terra, e os maus não existirão mais. Bendizei, ó minha alma, ao SENHOR! Aleluia!"
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 9,
+   "book": 1,
+   "start_verse": 1002001,
+   "end_verse": 1002003,
+   "sha256": "addbb4599270bdeefc684035fe35929ac263b5de307c15ffc5011b2207cae1c0",
+   "title": "The first sabbath.",
+   "text": "After six days, God ceased from all works of creation. In miracles, he has overruled nature, but never changed its settled course, or added to it. God did not rest as one weary, but as one well pleased. Notice the beginning of the kingdom of grace, in the sanctification, or keeping holy, of the sabbath day. The solemn observing of one day in seven as a day of holy rest and holy work, to God's honour, is the duty of all to whom God has made known his holy sabbaths. At this time none of the human race were in being but our first parents. For them the sabbath was appointed; and clearly for all succeeding generations also. The Christian sabbath, which we observe, is a seventh day, and in it we celebrate the rest of God the Son, and the finishing the work of our redemption.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 10,
+   "book": 1,
+   "start_verse": 1002004,
+   "end_verse": 1002007,
+   "sha256": "3ac9ce19250d265cfd362d4aba9229d4af79737b35e7c5cc010f2e635fc7c8d8",
+   "title": "Particulars about the creation.",
+   "text": "Here is a name given to the Creator, \"Jehovah.\" Where the word \"LORD\" is printed in capital letters in our English Bibles, in the original it is \"Jehovah.\" Jehovah is that name of God, which denotes that he alone has his being of himself, and that he gives being to all creatures and things. Further notice is taken of plants and herbs, because they were made and appointed to be food for man. The earth did not bring forth its fruits of itself: this was done by Almighty power. Thus grace in the soul grows not of itself in nature's soil, but is the work of God. Rain also is the gift of God; it came not till the Lord God caused it. Though God works by means, yet when he pleases he can do his own work without them; and though we must not tempt God in the neglect of means, we must trust God, both in the use and in the want of means. Some way or other, God will water the plants of his own planting. Divine grace comes down like the dew, and waters the church without noise. Man was made of the small dust, such as is on the surface of the earth. The soul was not made of the earth, as the body: pity then that it should cleave to the earth, and mind earthly things. To God we must shortly give an account, how we have employed these souls; and if it be found that we have lost them, though it were to gain the world, we are undone for ever! Fools despise their own souls, by caring for their bodies before their souls.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 11,
+   "book": 1,
+   "start_verse": 1002008,
+   "end_verse": 1002014,
+   "sha256": "4a9224c0834cc62cbdd8fc5959a20f88ba261a3d01fb1d08980a0413c94c2c47",
+   "title": "The planting of the garden of Eden.",
+   "text": "The place fixed upon for Adam to dwell in, was not a palace, but a garden. The better we take up with plain things, and the less we seek things to gratify pride and luxury, the nearer we approach to innocency. Nature is content with a little, and that which is most natural; grace with less; but lust craves every thing, and is content with nothing. No delights can be satisfying to the soul, but those which God himself has provided and appointed for it. Eden signifies delight and pleasure. Wherever it was, it had all desirable conveniences, without any inconvenience, though no other house or garden on earth ever was so. It was adorned with every tree pleasant to the sight, and enriched with every tree that yielded fruit grateful to the taste and good for food. God, as a tender Father, desired not only Adam's profit, but his pleasure; for there is pleasure with innocency, nay there is true pleasure only in innocency. When Providence puts us in a place of plenty and pleasure, we ought to serve God with gladness of heart in the good things he gives us. Eden had two trees peculiar to itself. 1. There was the tree of life in the midst of the garden. Of this man might eat and live. Christ is now to us the Tree of life, Re 2:7; 22:2; and the Bread of life, Joh 6:48, 51. 2. There was the tree of the knowledge of good and evil, so called because there was a positive revelation of the will of God about this tree, so that by it man might know moral good and evil. What is good? It is good not to eat of this tree. What is evil? It is evil to eat of this tree. In these two trees God set before Adam good and evil, the blessing and the curse.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the tree of life",
+     "verses": [
+      66002007
+     ],
+     "es": "El que tiene oído, oiga lo que el Espíritu dice á las iglesias. Al que venciere, daré á comer del árbol de la vida, el cual está en medio del paraíso de Dios.",
+     "pt": "Quem tem ouvidos, ouça o que o Espírito diz às igrejas: Ao que vencer, eu lhe darei de comer da árvore da vida, que está no meio do paraíso de Deus."
+    },
+    {
+     "n": 1,
+     "english": "in the midst of the garden",
+     "verses": [
+      1002009
+     ],
+     "es": "Y había Jehová Dios hecho nacer de la tierra todo árbol delicioso á la vista, y bueno para comer: también el árbol de vida en medio del huerto, y el árbol de ciencia del bien y del mal.",
+     "pt": "E havia o SENHOR Deus feito nascer da terra toda árvore agradável à vista, e boa para comer: também a árvore da vida em meio do jardim, e a árvore do conhecimento do bem e do mal."
+    },
+    {
+     "n": 2,
+     "english": "the Tree of life",
+     "verses": [
+      66002007
+     ],
+     "es": "El que tiene oído, oiga lo que el Espíritu dice á las iglesias. Al que venciere, daré á comer del árbol de la vida, el cual está en medio del paraíso de Dios.",
+     "pt": "Quem tem ouvidos, ouça o que o Espírito diz às igrejas: Ao que vencer, eu lhe darei de comer da árvore da vida, que está no meio do paraíso de Deus."
+    },
+    {
+     "n": 3,
+     "english": "the tree of the knowledge of good and evil",
+     "verses": [
+      1002017
+     ],
+     "es": "Mas del árbol de ciencia del bien y del mal no comerás de él; porque el día que de él comieres, morirás.",
+     "pt": "Mas da árvore do conhecimento do bem e do mal não comerás dela; porque no dia que dela comeres, morrerás."
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 12,
+   "book": 1,
+   "start_verse": 1002015,
+   "end_verse": 1002015,
+   "sha256": "8c8ad7904b8add6ba81d92ee036b49add83a655fc59fab4e450c2693df88dd87",
+   "title": "Man is placed in it.",
+   "text": "After God had formed Adam, he put him in the garden. All boasting was thereby shut out. Only he that made us can make us happy; he that is the Former of our bodies, and the Father of our spirits, and none but he, can fully provide for the happiness of both. Even in paradise itself man had to work. None of us were sent into the world to be idle. He that made our souls and bodies, has given us something to work with; and he that gave us this earth for our habitation, has made us something to work upon. The sons and heirs of heaven, while in this world, have something to do about this earth, which must have its share of their time and thoughts; and if they do it with an eye to God, they as truly serve him in it, as when they are upon their knees. Observe that the husbandman's calling is an ancient and honourable calling; it was needful even in paradise. Also, there is true pleasure in the business God calls us to, and employs us in. Adam could not have been happy if he had been idle: it is still God's law, He that will not work has no right to eat, 2Th 3:10.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 13,
+   "book": 1,
+   "start_verse": 1002016,
+   "end_verse": 1002017,
+   "sha256": "d630ada00537fcd197223cced04756cd4b28567d611032e0bad4d69c40bdfc47",
+   "title": "God's command.",
+   "text": "Let us never set up our own will against the holy will of God. There was not only liberty allowed to man, in taking the fruits of paradise, but everlasting life made sure to him upon his obedience. There was a trial appointed of his obedience. By transgression he would forfeit his Maker's favour, and deserve his displeasure, with all its awful effects; so that he would become liable to pain, disease, and death. Worse than that, he would lose the holy image of God, and all the comfort of his favour; and feel the torment of sinful passions, and the terror of his Maker's vengeance, which must endure for ever with his never dying soul. The forbidding to eat of the fruit of a particular tree was wisely suited to the state of our first parents. In their state of innocence, and separated from any others, what opportunity or what temptation had they to break any of the ten commandments? The event proves that the whole human race were concerned in the trial and fall of our first parents. To argue against these things is to strive against stubborn facts, as well as Divine revelation; for man is sinful, and shows by his first actions, and his conduct ever afterwards, that he is ready to do evil. He is under the Divine displeasure, exposed to sufferings and death. The Scriptures always speak of man as of this sinful character, and in this miserable state; and these things are true of men in all ages, and of all nations.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 14,
+   "book": 1,
+   "start_verse": 1002018,
+   "end_verse": 1002025,
+   "sha256": "01800b85bb87f4a32d71ece7d0549b9b4424dff6758c032d3bf0dc4592b79aea",
+   "title": "The animals named, The making of woman, The Divine institution of marriage.",
+   "text": "Power over the creatures was given to man, and as a proof of this he named them all. It also shows his insight into the works of God. But though he was lord of the creatures, yet nothing in this world was a help meet for man. From God are all our helpers. If we rest in God, he will work all for good. God caused deep sleep to fall on Adam; while he knows no sin, God will take care that he shall feel no pain. God, as her Father, brought the woman to the man, as his second self, and a help meet for him. That wife, who is of God's making by special grace, and of God's bringing by special providence, is likely to prove a help meet for a man. See what need there is, both of prudence and prayer in the choice of this relation, which is so near and so lasting. That had need to be well done, which is to be done for life. Our first parents needed no clothes for covering against cold or heat, for neither could hurt them: they needed none for ornament. Thus easy, thus happy, was man in his state of innocency. How good was God to him! How many favours did he load him with! How easy were the laws given to him! Yet man, being in honour, understood not his own interest, but soon became as the beasts that perish.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 15,
+   "book": 1,
+   "start_verse": 1003001,
+   "end_verse": 1003005,
+   "sha256": "b0a302ce68d626706f6dcc92aaa8ec9d9c5689cce1d3d5de9696b90d20464e94",
+   "title": "The serpent deceives Eve.",
+   "text": "Satan assaulted our first parents, to draw them to sin, and the temptation proved fatal to them. The tempter was the devil, in the shape and likeness of a serpent. Satan's plan was to draw our first parents to sin, and so to separate between them and their God. Thus the devil was from the beginning a murderer, and the great mischief maker. The person tempted was the woman: it was Satan's policy to enter into talk with her when she was alone. There are many temptations to which being alone gives great advantage; but the communion of saints tends very much to their strength and safety. Satan took advantage by finding her near the forbidden tree. They that would not eat the forbidden fruit, must not come near the forbidden tree. Satan tempted Eve, that by her he might tempt Adam. It is his policy to send temptations by hands we do not suspect, and by those that have most influence upon us. Satan questioned whether it were a sin or not, to eat of this tree. He did not disclose his design at first, but he put a question which seemed innocent. Those who would be safe, need to be shy of talking with the tempter. He quoted the command wrong. He spoke in a taunting way. The devil, as he is a liar, so he is a scoffer from the beginning; and scoffers are his children. It is the craft of Satan to speak of the Divine law as uncertain or unreasonable, and so to draw people to sin; it is our wisdom to keep up a firm belief of God's command, and a high respect for it. Has God said, Ye shall not lie, nor take his name in vain, nor be drunk, &c.? Yes, I am sure he has, and it is well said; and by his grace I will abide by it. It was Eve's weakness to enter into this talk with the serpent: she might have perceived by his question, that he had no good design, and should therefore have started back. Satan teaches men first to doubt, and then to deny. He promises advantage from their eating this fruit. He aims to make them discontented with their present state, as if it were not so good as it might be, and should be. No condition will of itself bring content, unless the mind be brought to it. He tempts them to seek preferment, as if they were fit to be gods. Satan ruined himself by desiring to be like the Most High, therefore he sought to infect our first parents with the same desire, that he might ruin them too. And still the devil draws people into his interest, by suggesting to them hard thoughts of God, and false hopes of advantage by sin. Let us, therefore, always think well of God as the best good, and think ill of sin as the worst evil: thus let us resist the devil, and he will flee from us.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "God said, Ye shall not",
+     "verses": [
+      1003001
+     ],
+     "es": "EMPERO la serpiente era astuta, más que todos los animales del campo que Jehová Dios había hecho; la cual dijo á la mujer: ¿Conque Dios os ha dicho: No comáis de todo árbol del huerto?",
+     "pt": "Porém a serpente era astuta, mais que todos os animais do campo que o SENHOR Deus havia feito. E ela disse à mulher: Deus vos disse: Não comais de toda árvore do jardim?"
+    },
+    {
+     "n": 1,
+     "english": "resist the devil, and he will flee from",
+     "verses": [
+      59004007
+     ],
+     "es": "Someteos pues á Dios; resistid al diablo, y de vosotros huirá.",
+     "pt": "Sujeitai-vos, pois, a Deus; resisti ao diabo, e ele fugirá de vós."
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 16,
+   "book": 1,
+   "start_verse": 1003006,
+   "end_verse": 1003008,
+   "sha256": "6ed68612f40b4f9a7f018b5b61cd755beaba36512de986ff59dd31984588b3b5",
+   "title": "Adam and Eve transgress the Divine command, and fall into sin and misery.",
+   "text": "Observe the steps of the transgression: not steps upward, but downward toward the pit. 1. She saw. A great deal of sin comes in at the eye. Let us not look on that which we are in danger of lusting after, Mt 5:28. 2. She took. It was her own act and deed. Satan may tempt, but he cannot force; may persuade us to cast ourselves down, but he cannot cast us down, Mt 4:6. 3. She did eat. When she looked perhaps she did not intend to take; or when she took, not to eat: but it ended in that. It is wisdom to stop the first motions of sin, and to leave it off before it be meddled with. 4. She gave it also to her husband with her. Those that have done ill, are willing to draw in others to do the same. 5. He did eat. In neglecting the tree of life, of which he was allowed to eat, and eating of the tree of knowledge, which was forbidden, Adam plainly showed a contempt of what God had bestowed on him, and a desire for what God did not see fit to give him. He would have what he pleased, and do what he pleased. His sin was, in one word, disobedience, Ro 5:19; disobedience to a plain, easy, and express command. He had no corrupt nature within, to betray him; but had a freedom of will, in full strength, not weakened or impaired. He turned aside quickly. He drew all his posterity into sin and ruin. Who then can say that Adam's sin had but little harm in it? When too late, Adam and Eve saw the folly of eating forbidden fruit. They saw the happiness they fell from, and the misery they were fallen into. They saw a loving God provoked, his grace and favour forfeited. See her what dishonour and trouble sin is; it makes mischief wherever it gets in, and destroys all comfort. Sooner or later it will bring shame; either the shame of true repentance, which ends in glory, or that shame and everlasting contempt, to which the wicked shall rise at the great day. See here what is commonly the folly of those that have sinned. They have more care to save their credit before men, than to obtain their pardon from God. The excuses men make to cover and lessen their sins, are vain and frivolous; like the aprons of fig-leaves, they make the matter never the better: yet we are all apt to cover our transgressions as Adam. Before they sinned, they would have welcomed God's gracious visits with humble joy; but now he was become a terror to them. No marvel that they became a terror to themselves, and full of confusion. This shows the falsehood of the tempter, and the frauds of his temptations. Satan promised they should be safe, but they cannot so much as think themselves so! Adam and Eve were now miserable comforters to each other!",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 17,
+   "book": 1,
+   "start_verse": 1003009,
+   "end_verse": 1003013,
+   "sha256": "e6179a5c179a074b4b96108564faaf550c209c35a4513c1e4f35872f897af11e",
+   "title": "God calls upon Adam and Eve to answer.",
+   "text": "Observe the startling question, Adam, where art thou? Those who by sin go astray from God, should seriously consider where they are; they are afar off from all good, in the midst of their enemies, in bondage to Satan, and in the high road to utter ruin. This lost sheep had wandered without end, if the good Shepherd had not sought after him, and told him, that where he was straying he could not be either happy or easy. If sinners will but consider where they are, they will not rest till they return to God. It is the common fault and folly of those that have done ill, when questioned about it, to acknowledge only that which is so manifest that they cannot deny it. Like Adam, we have reason to be afraid of approaching to God, if we are not covered and clothed with the righteousness of Christ. Sin appears most plainly in the glass of the commandment, therefore God set it before Adam; and in it we should see our faces. But instead of acknowledging the sin in its full extent, and taking shame to themselves, Adam and Eve excuse the sin, and lay the shame and blame on others. There is a strange proneness in those that are tempted, to say, they are tempted of God; as if our abuse of God's gifts would excuse our breaking God's laws. Those who are willing to take the pleasure and profit of sin, are backward to take the blame and shame of it. Learn hence, that Satan's temptations are all beguilings; his arguments are all deceits; his allurements are all cheats; when he speaks fair, believe him not. It is by the deceitfulness of sin the heart is hardened. See Ro 7:11; He 3:13. But though Satan's subtlety may draw us into sin, yet it will not justify us in sin. Though he is the tempter, we are the sinners. Let it not lessen our sorrow for sin, that we were beguiled into it; but let it increase our self-indignation, that we should suffer ourselves to be deceived by a known cheat, and a sworn enemy, who would destroy our souls.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 18,
+   "book": 1,
+   "start_verse": 1003014,
+   "end_verse": 1003015,
+   "sha256": "7a016b7ab8be8dbf93f4f9a778d6db9e6a89a455c13b4a3edbe7ae91ef86224e",
+   "title": "The serpent cursed, The promised Seed.",
+   "text": "God passes sentence; and he begins where the sin began, with the serpent. The devil's instruments must share in the devil's punishments. Under the cover of the serpent, the devil is sentenced to be degraded and accursed of God; detested and abhorred of all mankind: also to be destroyed and ruined at last by the great Redeemer, signified by the breaking of his head. War is proclaimed between the Seed of the woman and the seed of the serpent. It is the fruit of this enmity, that there is a continual warfare between grace and corruption, in the hearts of God's people. Satan, by their corruptions, buffets them, sifts them, and seeks to devour them. Heaven and hell can never be reconciled, nor light and darkness; no more can Satan and a sanctified soul. Also, there is a continual struggle between the wicked and the godly in this world. A gracious promise is here made of Christ, as the Deliverer of fallen man from the power of Satan. Here was the drawn of the gospel day: no sooner was the wound given, than the remedy was provided and revealed. This gracious revelation of a Saviour came unasked, and unlooked for. Without a revelation of mercy, giving some hope of forgiveness, the convinced sinner would sink into despair, and be hardened. By faith in this promise, our first parents, and the patriarchs before the flood, were justified and saved. Notice is given concerning Christ. 1. His incarnation, or coming in the flesh. It speaks great encouragement to sinners, that their Saviour is the Seed of the woman, bone of our bone, He 2:11, 14. 2. His sufferings and death; pointed at in Satan's bruising his heel, that is, his human nature. And Christ's sufferings are continued in the sufferings of the saints for his name. The devil tempts them, persecutes and slays them; and so bruises the heel of Christ, who is afflicted in their afflictions. But while the heel is bruised on earth, the Head is in heaven. 3. His victory over Satan thereby. Christ baffled Satan's temptations, rescued souls out of his hands. By his death he gave a fatal blow to the devil's kingdom, a wound to the head of this serpent that cannot be healed. As the gospel gains ground, Satan falls.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 19,
+   "book": 1,
+   "start_verse": 1003016,
+   "end_verse": 1003019,
+   "sha256": "73f97b77cbbc53b927b00f69a12b48fb06604c670f86f3c658cfe54f05b3d1ae",
+   "title": "The punishment of mankind.",
+   "text": "The woman, for her sin, is condemned to a state of sorrow, and of subjection; proper punishments of that sin, in which she had sought to gratify the desire of her eye, and of the flesh, and her pride. Sin brought sorrow into the world; that made the world a vale of tears. No wonder our sorrows are multiplied, when our sins are so. He shall rule over thee, is but God's command, Wives, be subject to your own husbands. If man had not sinned, he would always have ruled with wisdom and love; if the woman had not sinned, she would always have obeyed with humility and meekness. Adam laid the blame on his wife; but though it was her fault to persuade him to eat the forbidden fruit, it was his fault to hearken to her. Thus men's frivolous pleas will, in the day of God's judgment, be turned against them. God put marks of displeasure on Adam. 1. His habitation is cursed. God gave the earth to the children of men, to be a comfortable dwelling; but it is now cursed for man's sin. Yet Adam is not himself cursed, as the serpent was, but only the ground for his sake. 2. His employments and enjoyments are imbittered to him. Labour is our duty, which we must faithfully perform; it is part of man's sentence, which idleness daringly defies. Uneasiness and weariness with labour are our just punishment, which we must patiently submit to, since they are less than our iniquity deserves. Man's food shall become unpleasant to him. Yet man is not sentenced to eat dust as the serpent, only to eat the herb of the field. 3. His life also is but short; considering how full of trouble his days are, it is in favour to him that they are few. Yet death being dreadful to nature, even when life is unpleasant, that concludes the punishment. Sin brought death into the world: if Adam had not sinned, he had not died. He gave way to temptation, but the Saviour withstood it. And how admirably the satisfaction of our Lord Jesus, by his death and sufferings, answered the sentence passed on our first parents! Did travailing pains come with sin? We read of the travail of Christ's soul, Is 53:11; and the pains of death he was held by, are so called, Ac 2:24. Did subjection came in with sin? Christ was made under the law, Ga 4:4. Did the curse come in with sin? Christ was made a curse for us, he died a cursed death, Ga 3:13. Did thorns come in with sin? He was crowned with thorns for us. Did sweat come in with sin? He sweat for us, as it had been great drops of blood. Did sorrow come in with sin? He was a man of sorrows; his soul was, in his agony, exceeding sorrowful. Did death come in with sin? He became obedient unto death. Thus is the plaster as wide as the wound. Blessed be God for his Son our Lord Jesus Christ.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "He shall rule over thee",
+     "verses": [
+      1003016
+     ],
+     "es": "A la mujer dijo: Multiplicaré en gran manera tus dolores y tus preñeces; con dolor parirás los hijos; y á tu marido será tu deseo, y él se enseñoreará de ti.",
+     "pt": "E para a mulher disse: “Multiplicarei grandemente as tuas dores e teus sofrimentos de parto; com dor darás à luz filhos; e o teu desejo será para o teu marido, e ele te dominará”."
+    },
+    {
+     "n": 1,
+     "english": "eat the herb of the field",
+     "verses": [
+      1003018
+     ],
+     "es": "Espinos y cardos te producirá, y comerás hierba del campo;",
+     "pt": "Espinhos e cardos te produzirá, e comerás erva do campo."
+    },
+    {
+     "n": 2,
+     "english": "the pains of death",
+     "verses": [
+      44002024
+     ],
+     "es": "Al cual Dios levantó, sueltos los dolores de la muerte, por cuanto era imposible ser detenido de ella.",
+     "pt": "Ao qual Deus ressuscitou, tendo soltado as dores da morte; porque não era possível ele ser retido por ela;"
+    },
+    {
+     "n": 3,
+     "english": "made under the law",
+     "verses": [
+      48004004
+     ],
+     "es": "Mas venido el cumplimiento del tiempo, Dios envió su Hijo, hecho de mujer, hecho súbdito á la ley,",
+     "pt": "Mas quando o tempo se completou, Deus enviou o seu Filho, nascido de mulher, nascido sob a Lei,"
+    },
+    {
+     "n": 4,
+     "english": "made a curse for us",
+     "verses": [
+      48003013
+     ],
+     "es": "Cristo nos redimió de la maldición de la ley, hecho por nosotros maldición; (porque está escrito: Maldito cualquiera que es colgado en madero:)",
+     "pt": "Cristo nos resgatou da maldição da Lei ao se fazer maldição para o nosso benefício (pois está escrito: Maldito todo aquele que for pendurado em um madeiro.)"
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 20,
+   "book": 1,
+   "start_verse": 1003020,
+   "end_verse": 1003021,
+   "sha256": "3bc82864a9df9bd10d2c2587e4a12f458acc6383da45395e1f9e0455b5e6e877",
+   "title": "The first clothing of mankind.",
+   "text": "God named the man, and called him Adam, which signifies red earth; Adam named the woman, and called her Eve, that is, life. Adam bears the name of the dying body, Eve of the living soul. Adam probably had regard to the blessing of a Redeemer, the promised Seed, in calling his wife Eve, or life; for He should be the life of all believers, and in Him all the families of the earth should be blessed. See also God's care for our first parents, notwithstanding their sin. Clothes came in with sin. Little reason have we to be proud of our clothes, which are but the badges of our shame. When God made clothes for our first parents, he made them warm and strong, but coarse and very plain; not robes of scarlet, but coats of skin. Let those that are meanly clad, learn from hence not to complain. Having food and a covering, let them be content; they are as well off as Adam and Eve. And let those that are finely clad, learn not to make the putting on of apparel their adorning. The beasts, from whose skins they were clothed, it is supposed were slain, not for man's food, but for sacrifice, to typify Christ, the great Sacrifice. Adam and Eve made for themselves aprons of fig-leaves, a covering too narrow for them to wrap themselves in, Is 28:20. Such are all the rags of our own righteousness. But God made them coats of skin, large, strong, durable, and fit for them: such is the righteousness of Christ; therefore put ye on the Lord Jesus Christ.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "put ye on the Lord Jesus Christ",
+     "verses": [
+      45013014
+     ],
+     "es": "Mas vestíos del Señor Jesucristo, y no hagáis caso de la carne en sus deseos.",
+     "pt": "Em vez disso, revesti-vos do Senhor Jesus Cristo, e não fiqueis pensando em realizar os desejos da carne."
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 21,
+   "book": 1,
+   "start_verse": 1003022,
+   "end_verse": 1003024,
+   "sha256": "9019b73111929e0be9d3a062b2cd8ecff1525beca39a9f2499657fa30baa03b8",
+   "title": "Adam and Eve are driven out from paradise.",
+   "text": "God bid man go out; told him he should no longer occupy and enjoy that garden: but man liked the place, and was unwilling to leave it, therefore God made him go out. This signified the shutting out of him, and all his guilty race, from that communion with God, which was the bliss and glory of paradise. But man was only sent to till the ground out of which he was taken. He was sent to a place of toil, not to a place of torment. Our first parents were shut out from the privileges of their state of innocency, yet they were not left to despair. The way to the tree of life was shut. It was henceforward in vain for him and his to expect righteousness, life, and happiness, by the covenant of works; for the command of that covenant being broken, the curse of it is in full force: we are all undone, if we are judged by that covenant. God revealed this to Adam, not to drive him to despair, but to quicken him to look for life and happiness in the promised Seed, by whom a new and living way into the holiest is laid open for us.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 22,
+   "book": 1,
+   "start_verse": 1004001,
+   "end_verse": 1004007,
+   "sha256": "fd44bbdbe975d57917640c589054538180ec84d81d2a83cf40110fac56833311",
+   "title": "The birth, employment, and religion of Cain and Abel.",
+   "text": "When Cain was born, Eve said, I have gotten a man from the Lord. Perhaps she thought that this was the promised seed. If so, she was wofully disappointed. Abel signifies vanity: when she thought she had the promised seed in Cain, whose name signifies possession, she was so taken up with him that another son was as vanity to her. Observe, each son had a calling. It is the will of God for every one to have something to do in this world. Parents ought to bring up their children to work. Give them a Bible and a calling, said good Mr. Dod, and God be with them. We may believe that God commanded Adam, after the fall, to shed the blood of innocent animals, and after their death to burn part or the whole of their bodies by fire. Thus that punishment which sinners deserve, even the death of the body, and the wrath of God, of which fire is a well-known emblem, and also the sufferings of Christ, were prefigured. Observe that the religious worship of God is no new invention. It was from the beginning; it is the good old way, Jer 6:16. The offerings of Cain and Abel were different. Cain showed a proud, unbelieving heart. Therefore he and his offering were rejected. Abel came as a sinner, and according to God's appointment, by his sacrifice expressing humility, sincerity, and believing obedience. Thus, seeking the benefit of the new covenant of mercy, through the promised Seed, his sacrifice had a token that God accepted it. Abel offered in faith, and Cain did not, He 11:4. In all ages there have been two sorts of worshippers, such as Cain and Abel; namely, proud, hardened despisers of the gospel method of salvation, who attempt to please God in ways of their own devising; and humble believers, who draw near to him in the way he has revealed. Cain indulged malignant anger against Abel. He harboured an evil spirit of discontent and rebellion against God. God notices all our sinful passions and discontents. There is not an angry, envious, or fretful look, that escapes his observing eye. The Lord reasoned with this rebellious man; if he came in the right way, he should be accepted. Some understand this as an intimation of mercy. \"If thou doest not well, sin, that is, the sin-offering, lies at the door, and thou mayest take the benefit of it.\" The same word signifies sin, and a sacrifice for sin. \"Though thou hast not done well, yet do not despair; the remedy is at hand.\" Christ, the great sin-offering, is said to stand at the door, Re 3:20. And those well deserve to perish in their sins, that will not go to the door to ask for the benefit of this sin-offering. God's acceptance of Abel's offering did not change the birthright, and make it his; why then should Cain be so angry? Sinful heats and disquiets vanish before a strict and fair inquiry into the cause.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "said, I have gotten a man from the Lord",
+     "verses": [
+      1004001
+     ],
+     "es": "Y CONOCIÓ Adam á su mujer Eva, la cual concibió y parió á Caín, y dijo: Adquirido he varón por Jehová.",
+     "pt": "E Adão conheceu a sua mulher Eva, a qual concebeu e deu à luz a Caim, e disse: Obtive um homem pelo SENHOR."
+    },
+    {
+     "n": 1,
+     "english": "If thou doest not well, sin",
+     "verses": [
+      1004007
+     ],
+     "es": "Si bien hicieres, ¿no serás ensalzado? y si no hicieres bien, el pecado está á la puerta: con todo esto, á ti será su deseo, y tú te enseñorearás de él.",
+     "pt": "Se bem fizeres, não serás aceito? E se não fizeres bem, o pecado está à porta; contra ti será o seu desejo, porém tu deves dominá-lo."
+    },
+    {
+     "n": 2,
+     "english": "stand at the door",
+     "verses": [
+      66003020
+     ],
+     "es": "He aquí, yo estoy á la puerta y llamo: si alguno oyere mi voz y abriere la puerta, entraré á él, y cenaré con él, y él conmigo.",
+     "pt": "Eis que eu estou à porta, e bato; se alguém ouvir a minha voz, e abrir a porta, entrarei até ele, e cearei com ele, e ele comigo."
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 23,
+   "book": 1,
+   "start_verse": 1004008,
+   "end_verse": 1004015,
+   "sha256": "6e5187267877934a273dcc131bc162ed3c747e00c52a9999488109d3255d3ce3",
+   "title": "Cain murders Abel, The curse of Cain.",
+   "text": "Malice in the heart ends in murder by the hands. Cain slew Abel, his own brother, his own mother's son, whom he ought to have loved; his younger brother, whom he ought to have protected; a good brother, who had never done him any wrong. What fatal effects were these of our first parents' sin, and how must their hearts have been filled with anguish! Observe the pride, unbelief, and impenitence of Cain. He denies the crime, as if he could conceal it from God. He tries to cover a deliberate murder with a deliberate lie. Murder is a crying sin. Blood calls for blood, the blood of the murdered for the blood of the murderer. Who knows the extent and weight of a Divine curse, how far it reaches, how deep it pierces? Only in Christ are believers saved from it, and inherit the blessing. Cain was cursed from the earth. He found his punishment there where he chose his portion, and set his heart. Every creature is to us what God makes it, a comfort or a cross, a blessing or a curse. The wickedness of the wicked brings a curse upon all they do, and all they have. Cain complains not of his sin, but of his punishment. It shows great hardness of heart to be more concerned about our sufferings than our sins. God has wise and holy ends in prolonging the lives even of very wicked men. It is in vain to inquire what was the mark set upon Cain. It was doubtless known, both as a brand of infamy on Cain, and a token from God that they should not kill him. Abel, being dead, yet speaketh. He tells the heinous guilt of murder, and warns us to stifle the first risings of wrath, and teaches us that persecution must be expected by the righteous. Also, that there is a future state, and an eternal recompence to be enjoyed, through faith in Christ and his atoning sacrifice. And he tells us the excellency of faith in the atoning sacrifice and blood of the Lamb of God. Cain slew his brother, because his own works were evil, and his brother's righteous, 1Jo 3:12. In consequence of the enmity put between the Seed of the woman and the seed of the serpent, the war broke out, which has been waged ever since. In this war we are all concerned, none are neuter; our Captain has declared, He that is not with me is against me. Let us decidedly, yet in meekness, support the cause of truth and righteousness against Satan.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "because his own works were evil, and his brother's righteous",
+     "verses": [
+      62003012
+     ],
+     "es": "No como Caín, que era del maligno, y mató á su hermano. ¿Y por qué causa le mató? Porque sus obras eran malas, y las de su hermano justas.",
+     "pt": "Não sejamos como Caim, que era do maligno, e matou o seu irmão. E por que o matou? Porque as suas obras eram más, e as do seu irmão justas."
+    },
+    {
+     "n": 1,
+     "english": "He that is not with me is against me",
+     "verses": [
+      40012030
+     ],
+     "es": "El que no es conmigo, contra mí es; y el que conmigo no recoge, derrama.",
+     "pt": "Quem não é comigo é contra mim; e quem não ajunta comigo, espalha."
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 24,
+   "book": 1,
+   "start_verse": 1004016,
+   "end_verse": 1004018,
+   "sha256": "8f0495db6193298c135c1abdb2dabfd7e78529e6d74accc3a02bb131c9f6e97d",
+   "title": "The conduct of Cain, His family.",
+   "text": "Cain cast off all fear of God, and attended no more on God's ordinances. Hypocritical professors, who dissemble and trifle with God, are justly left to themselves to do something grossly scandalous. So they throw off that form of godliness to which they have been a reproach, and of which they deny the power. Cain went out from the presence of the Lord, and we never find that he came into it again, to his comfort. The land Cain dwelt in was called the land of Nod, which means, shaking,' or trembling,' and so shows the restlessness and uneasiness of his own spirit, or the land of a vagabond:' they that depart from God cannot find rest any where else. Those on earth who looked for the heavenly city, chose to dwell in tabernacles or tents; but Cain, as not minding that city, built one on earth. Thus all who are cursed of God seek their settlement and satisfaction here below.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "Cain went out from the presence of the Lord",
+     "verses": [
+      1004016
+     ],
+     "es": "Y salió Caín de delante de Jehová, y habitó en tierra de Nod, al oriente de Edén.",
+     "pt": "E saiu Caim de diante do SENHOR, e habitou na terra de Node, ao oriente de Éden."
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 25,
+   "book": 1,
+   "start_verse": 1004019,
+   "end_verse": 1004024,
+   "sha256": "b9eba13eb8ca35b8671c94a115dabd30f839a480812366493086903ede3daf8a",
+   "title": "Lamech and his wives, The skill of Cain's descendants.",
+   "text": "One of Cain's wicked race is the first recorded, as having broken the law of marriage. Hitherto, one man had but one wife at a time; but Lamech took two. Wordly things, are the only things that carnal, wicked people set their hearts upon, and are most clever and industrious about. So it was with this race of Cain. Here was a father of shepherds, and a father of musicians, but not a father of the faithful. Here is one to teach about brass and iron, but none to teach the good knowledge of the Lord: here are devices how to be rich, and how to be mighty, and how to be merry; but nothing of God, of his fear and service. Present things fill the heads of most. Lamech had enemies, whom he had provoked. He draws a comparison betwixt himself and his ancestor Cain; and flatters himself that he is much less criminal. He seems to abuse the patience of God in sparing Cain, into an encouragement to expect that he may sin unpunished.",
+   "quotes": []
+  }
+ ],
+ "glossary": {
+  "Adam": {
+   "pt": "Adão (person); Adã (place)"
+  },
+  "Cain": {
+   "es": "Caín",
+   "pt": "Caim"
+  },
+  "Eden": {
+   "es": "Edén",
+   "pt": "Éden"
+  },
+  "Eve": {
+   "es": "Eva",
+   "pt": "Eva"
+  },
+  "Jesus": {
+   "es": "Jesús"
+  },
+  "Jesus Christ": {
+   "es": "Jesucristo",
+   "pt": "Jesus Cristo"
+  },
+  "Lamech": {
+   "pt": "Lameque"
+  },
+  "Nod": {
+   "pt": "Node"
+  },
+  "Satan": {
+   "es": "Satanás",
+   "pt": "Satanás"
+  }
+ }
+}

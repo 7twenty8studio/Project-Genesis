@@ -642,6 +642,10 @@ def main():
     # The Spanish and Portuguese lexicon (VRS-8), from its checked batches.
     import add_lexicon_translations
     print(f"lexicon_translations: {add_lexicon_translations.add(OUTPUT)} rows")
+    # Matthew Henry in Spanish and Portuguese, and Versely's editorial notes.
+    import add_commentary_translations
+    sections, intros = add_commentary_translations.add(OUTPUT)
+    print(f"commentary_translations: {sections} rows, introduction_translations: {intros} rows")
 
 
 if __name__ == "__main__":
