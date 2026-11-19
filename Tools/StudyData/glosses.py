@@ -297,7 +297,7 @@ def check_gloss(source, text, lang, meaning, note):
         problems.append("extra spaces")
     if BRACKETS.findall(source) != BRACKETS.findall(text) and BRACKETS.findall(SUPPLIED_ONE.sub("", source)) != BRACKETS.findall(text):
         problems.append(f"brackets differ ({''.join(BRACKETS.findall(source))} -> {''.join(BRACKETS.findall(text))})")
-    elif re.search(r"\[\s*\]|<\s*>", text):
+    elif re.search(r"\[\s*\]|<\s*>", text) and text != source:  # STEPBible's own "[ ]" placeholder stays
         problems.append("empty brackets")
     # A question the English shows only by its word order ("will we eat")
     # may take one "?" (Spanish "¿…?").

@@ -41,6 +41,7 @@ class Check(unittest.TestCase):
     def test_brackets_and_marks(self):
         self.assertIn("brackets differ ([] -> )", problems("[the] father of", "el padre de"))
         self.assertIn("empty brackets", problems("[the] father", "[] padre"))
+        self.assertEqual(problems("[ ]", "[ ]"), [])  # STEPBible's empty placeholder
         # A supplied "[one]" may go: Spanish and Portuguese use the adjective as the noun.
         self.assertEqual(problems("a cruel [one]", "un cruel"), [])
         self.assertEqual(problems("the [one] who", "el que"), [])
