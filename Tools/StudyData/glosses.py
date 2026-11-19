@@ -33,8 +33,8 @@ Translations, translations/glosses/<lang>/NNN.json:
 The check (after each batch): every id present, a translation for each;
 the same [supplied] and <untranslated> brackets, in the same order, and
 the same ¿ (STEPBible's mark for Hebrew's question prefix), ? and ! (Spanish
-may open ¿ ¡ where the English closes one); the same numbers; the first
-letter capital only where the English's is; no Hebrew or Greek letters;
+may open ¿ ¡ where the English closes one); the same numbers; no capital first
+letter where the English has none; no Hebrew or Greek letters;
 no English words left; a sensible length. A translation spelled as the
 English (a name, "Baal") passes when it's capitalised or the lexicon's
 Spanish/Portuguese meaning is spelled the same; otherwise it needs a note.
@@ -210,8 +210,10 @@ def check_gloss(source, text, lang, meaning, note):
     if ORIGINAL_LETTERS.search(text):
         problems.append("Hebrew or Greek letters")
     a, b = first_letter(source), first_letter(text)
-    if a and b and a.isupper() != b.isupper():
-        problems.append("capital first letter differs from the English")
+    # No capital the English lacks; a capital English start may become lower
+    # case (gentilics "Edomite" → "edomita", "Abel towards" → "hacia Abel").
+    if a and b and b.isupper() and not a.isupper():
+        problems.append("capital first letter where the English has none")
     if not note:
         left = [w for w in ENGLISH.findall(text)]
         if left and text != source:

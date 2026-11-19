@@ -50,8 +50,11 @@ it's listed for qualified review. Don't flag ordinary words.
   and `?` `!` as they are. A leading `¿` is STEPBible's mark for the
   Hebrew question prefix: keep it where it is (`¿ human` → `¿ humano`).
   Spanish may add an opening `¿`/`¡` where the English ends with `?`/`!`.
-- First letter: a capital only where the English starts with one
-  (`He put` → `Puso`, `the fathers` → `los padres`).
+- First letter: never a capital the English doesn't have (`the fathers`
+  → `los padres`). Keep the English's capital (`He put` → `Puso`) except
+  where Spanish/Portuguese write lower case or the word order changes:
+  gentilics (`Edomite` → `edomita`), `Abel towards` → `hacia Abel` /
+  `para Abel`.
 
 ## Translate
 - The gloss's own sense in this verse; the lexicon meaning is a guide,
@@ -81,6 +84,12 @@ it's listed for qualified review. Don't flag ordinary words.
 - Theological terms: the usual evangelical/Protestant ones, the same in
   every batch (expiación / expiação, santificación / santificação, pacto /
   aliança, justicia / justiça). Non-denominational.
+- Settled in batch 001, keep them: a hidden plural `master<s> his` →
+  `su amo<s>` / `seu amo<s>`; Portuguese possessives without an article
+  (`seu pai`, `em tua ira`) unless the article is bracketed; `[one]` for
+  a person `[varón]` / `[varão]`; master → amo, lord → señor / senhor,
+  `Lord my` → `Señor mío` / `Senhor meu`; STEPBible's lone `!` (paragogic
+  nun) and `?` stay as written.
 - The same English gloss with the same morph gets the same translation
   everywhere in the batch; with another morph, follow the morph.
 - A transliteration or a word spelled as in English that stays as it is

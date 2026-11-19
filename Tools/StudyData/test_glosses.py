@@ -44,7 +44,9 @@ class Check(unittest.TestCase):
         self.assertIn("numbers differ", problems("[19] And", "Y"))
 
     def test_capitals_english_and_length(self):
-        self.assertIn("capital first letter differs from the English", problems("he covered", "Cubrió"))
+        self.assertIn("capital first letter where the English has none", problems("he covered", "Cubrió"))
+        self.assertEqual(problems("Edomite", "edomita"), [])
+        self.assertEqual(problems("Abel towards", "hacia Abel"), [])
         self.assertIn("English left (the)", problems("the fathers", "the padres"))
         self.assertIn("not translated (or give a note)", problems("eduth", "eduth"))
         self.assertEqual(problems("eduth", "eduth", note="a transliteration"), [])
