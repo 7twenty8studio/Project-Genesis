@@ -2739,5 +2739,30 @@
  "notes": {
   "b990eaa66e8ae0c8": "Morfología 2fp; el sujeto son 'tus ciudades' (3fp, misma forma): tercera persona.",
   "abcd03d3e4a8708d": "Morfología 2fs; la forma escrita coincide con la 1cs y el versículo (Jer 2:20) habla Dios: primera persona, como el inglés."
+ },
+ "occurrences": {
+  "fd26d68a699be76f": {
+   "12011004.2": "<el> séptimo",
+   "12018009.8": "<el> séptimo",
+   "14023001.2": "<el> séptimo",
+   "16010031.20": "<el> séptimo",
+   "26020001.3": "<el> séptimo",
+   "3023016.4": "<el> séptimo",
+   "3025004.2": "<el> séptimo",
+   "3025020.6": "<el> séptimo",
+   "5015012.12": "<el> séptimo"
+  },
+  "73a9bf5d40ae4bc2": {
+   "6019040.7": "<la> séptima"
+  },
+  "7f5560e5c6a2a32a": {
+   "20027007.2": "saciado"
+  },
+  "91f2b79fb65b3c66": {
+   "27002048.7": "muchas"
+  },
+  "391dace3cf35593d": {
+   "27007005.21": "mucha"
+  }
  }
 }

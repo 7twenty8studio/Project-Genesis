@@ -139,8 +139,8 @@ it's listed for qualified review. Don't flag ordinary words.
   aliança, justicia / justiça). Non-denominational.
 - Settled in batch 001, keep them: a hidden plural `master<s> his` →
   `su amo<s>` / `seu amo<s>`; Portuguese possessives without an article
-  (`seu pai`, `em tua ira`) unless the article is bracketed; `[one]` for
-  a person `[varón]` / `[varão]`; master → amo, lord → señor / senhor,
+  (`seu pai`, `em tua ira`) unless the article is bracketed; a supplied
+  `[one]` may go (`un cruel`, `el que`), never `[varón]` / `[varão]`; master → amo, lord → señor / senhor,
   `Lord my` → `Señor mío` / `Senhor meu`; STEPBible's lone `!` (paragogic
   nun) and `?` stay as written.
 - `<obj.>` (Hebrew's object marker) stays `<obj.>` in both languages.
@@ -152,3 +152,16 @@ it's listed for qualified review. Don't flag ordinary words.
   everywhere in the batch; with another morph, follow the morph.
 - A transliteration or a word spelled as in English that stays as it is
   ("eduth", "error"): keep it, add a note.
+- A pronoun takes the case it has in the verse (owner's review, 19 November
+  2026): an object is a clitic (`I have loved you` ὑμᾶς → `os` / `vos`,
+  `him` → `lo` / `o`; a dative → `le`, `les` / `lhe`, `lhes`), the stressed
+  form only after a preposition (`a | él`, `de | ti`), the subject form for
+  the subject of an infinitive. A supplied pronoun appears once (`echa [lo]`,
+  never `échala [la]`).
+- Articles, adjectives, demonstratives and possessives agree with the
+  Spanish or Portuguese noun, not with the Greek or Hebrew one (ἐντολὴ
+  καινή → `un mandamiento nuevo`; ἡ πορνεία → `a imoralidade`).
+- Where STEPBible's English contradicts the morphology or the lexicon
+  (φαρμακειῶν "sorcerers"), follow the Hebrew or Greek and add a note.
+  `Tools/StudyData/translations/glosses/audits/run.sh` applies the first two
+  across every batch.

@@ -1505,8 +1505,8 @@
   "9a25079bd8c70f05": "ordenou severamente",
   "cfff489386b0c48e": "murmuravam",
   "61bc20e7da17a970": "comovendo-se profundamente",
-  "f3fe2f20c2a9645c": "A mim mesmo",
-  "144b891d669855d5": "a mim mesmo",
+  "f3fe2f20c2a9645c": "Mim mesmo",
+  "144b891d669855d5": "eu mesmo",
   "4afed08c2cde7c51": "vomitar",
   "c73d9257cec999d4": "enfurecido",
   "a362672fc411f7f9": "Emanuel",
@@ -3379,6 +3379,7 @@
    "41013032.5": "aquele"
   },
   "739586fc64a92844": {
+   "42015014.11": "aquele",
    "43001039.18": "aquele"
   },
   "0f5a084fc2d64cf1": {
@@ -3436,6 +3437,30 @@
   },
   "9fe1cbcd2db61248": {
    "66021021.14": "uma"
+  },
+  "bc69cddd87512222": {
+   "42020018.5": "aquela [mesma]"
+  },
+  "d1e00274e98aceaf": {
+   "43005035.1": "Ela"
+  },
+  "b788f4c8b4bd9942": {
+   "44019016.28": "aquela"
+  },
+  "23913c97c3ec1efe": {
+   "44020002.5": "aquelas"
+  },
+  "49ea7041d23ea821": {
+   "45003008.22": "justa"
+  },
+  "6eadcadc3ff57730": {
+   "60002009.4": "escolhida"
+  },
+  "b2693276f3df084c": {
+   "60004008.8": "fervoroso"
+  },
+  "fef456a771c93775": {
+   "66006012.8": "sexto"
   }
  }
 }

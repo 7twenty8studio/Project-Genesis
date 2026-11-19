@@ -1505,8 +1505,8 @@
   "9a25079bd8c70f05": "encargó rigurosamente",
   "cfff489386b0c48e": "murmuraban",
   "61bc20e7da17a970": "conmoviéndose profundamente",
-  "f3fe2f20c2a9645c": "A mí mismo",
-  "144b891d669855d5": "a mí mismo",
+  "f3fe2f20c2a9645c": "Mí mismo",
+  "144b891d669855d5": "yo mismo",
   "4afed08c2cde7c51": "vomitar",
   "c73d9257cec999d4": "enfurecido",
   "a362672fc411f7f9": "Emanuel",
@@ -3379,6 +3379,7 @@
    "41013032.5": "aquel"
   },
   "739586fc64a92844": {
+   "42015014.11": "aquel",
    "43001039.18": "aquel"
   },
   "0f5a084fc2d64cf1": {
@@ -3423,6 +3424,7 @@
    "42020003.9": "una"
   },
   "0e7bab394b6e567f": {
+   "40005018.14": "una",
    "40018012.12": "una",
    "44023006.7": "una"
   },
@@ -3435,6 +3437,36 @@
   },
   "9fe1cbcd2db61248": {
    "66021021.14": "una"
+  },
+  "d2aeaf08722b39b7": {
+   "40011030.10": "ligera"
+  },
+  "3b24289af717d03a": {
+   "42007025.14": "espléndida"
+  },
+  "bc69cddd87512222": {
+   "42020018.5": "aquella [misma]"
+  },
+  "48f5b6b9d14d88f3": {
+   "43007021.7": "Una"
+  },
+  "b788f4c8b4bd9942": {
+   "44019016.28": "aquella"
+  },
+  "23913c97c3ec1efe": {
+   "44020002.5": "aquellas"
+  },
+  "49ea7041d23ea821": {
+   "45003008.22": "justa"
+  },
+  "f8eb4737323b8b80": {
+   "45005018.5": "una"
+  },
+  "6eadcadc3ff57730": {
+   "60002009.4": "escogida"
+  },
+  "fef456a771c93775": {
+   "66006012.8": "sexto"
   }
  }
 }

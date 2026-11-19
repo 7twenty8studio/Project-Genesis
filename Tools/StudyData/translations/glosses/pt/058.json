@@ -25,7 +25,7 @@
   "8c563e2eb11eb931": "o fariseu",
   "bf3a136d388e10a8": "fariseu",
   "c0249b987d5aa5d5": "feitiçaria",
-  "559954b9713eede1": "feiticeiros",
+  "559954b9713eede1": "feitiçarias",
   "1f52b5bf581d5d81": "feitiçaria",
   "3530bd4a320e9ddd": "a feiticeiros",
   "93b46a66b4f3a7da": "a feiticeiros",
@@ -1666,7 +1666,8 @@
  },
  "notes": {
   "e60a5cf4604136fe": "Portuguese \"favor\", a word spelled as in English, the same word in this language",
-  "cececf2e10439464": "Imperativo de saudação (χαίρετε): fórmula fixa."
+  "cececf2e10439464": "Imperativo de saudação (χαίρετε): fórmula fixa.",
+  "559954b9713eede1": "φαρμακειῶν (G5331, N-GPF) is \"sorceries\"; STEPBible's English reads \"sorcerers\", so the morphology and the lexicon were followed (Rev 9:21)"
  },
  "uncertain": {
   "388f312148d5e362": "a identificação desta pedra (Ap 21:19) é incerta",
@@ -1888,6 +1889,12 @@
   },
   "e719923ac76964fe": {
    "66013003.8": "[estava] como"
+  },
+  "e62a9a95f0793bbf": {
+   "44006013.4": "falsas"
+  },
+  "6b17e4925b20ec8d": {
+   "59003016.10": "má"
   }
  }
 }

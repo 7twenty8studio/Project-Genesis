@@ -42,6 +42,34 @@ struct OriginalGlossesTests {
         #expect(spanish.contains { $0.strongs == "G2316" && $0.gloss.contains("Dios") })
         #expect(spanish.filter { $0.englishGloss != nil }.count == words.count)
     }
+
+    /// The owner's review of 19 November 2026 (PR #33), as the app reads
+    /// them from Glosses.sqlite (Tools/StudyData/test_glosses.py checks
+    /// the batches, and the same kinds of mistake across all of them).
+    @Test func reviewedExamplesReadRight() throws {
+        let url = try #require(Bundle.main.url(forResource: "WordStudy", withExtension: "sqlite"))
+        let study = try WordStudyRepository(url: url)
+        func words(_ book: Int, _ chapter: Int, _ verse: Int, _ language: String) throws -> [OriginalWord] {
+            try study.words(in: VerseID(book: book, chapter: chapter, verse: verse), glossLanguage: language)
+        }
+        // Matthew 5:29–30: one object pronoun, masculine for the eye, feminine for the hand.
+        #expect(try words(40, 5, 29, "es").first { $0.englishGloss == "do cast [it]" }?.gloss == "echa [lo]")
+        #expect(try words(40, 5, 29, "pt").first { $0.englishGloss == "do cast [it]" }?.gloss == "lança [-o]")
+        #expect(try words(40, 5, 30, "es").first { $0.englishGloss == "do cast [it]" }?.gloss == "echa [la]")
+        #expect(try words(40, 5, 30, "pt").first { $0.englishGloss == "do cast [it]" }?.gloss == "lança [-a]")
+        // Revelation 9:21: φαρμακειῶν is sorceries, and Portuguese reads "a imoralidade".
+        #expect(try words(66, 9, 21, "es").first { $0.strongs == "G5331" }?.gloss == "hechicerías")
+        #expect(try words(66, 9, 21, "pt").first { $0.strongs == "G5331" }?.gloss == "feitiçarias")
+        let portuguese = try words(66, 9, 21, "pt")
+        let immorality = try #require(portuguese.firstIndex { $0.strongs == "G4202" })
+        #expect(portuguese[immorality - 1].gloss == "a")
+        // John 13:34 and 15:12: ὑμᾶς is the object, os / vos.
+        for (chapter, verse) in [(13, 34), (15, 12)] {
+            #expect(try words(43, chapter, verse, "es").first { $0.morphology == "P-2AP" }?.gloss == "os")
+            #expect(try words(43, chapter, verse, "pt").first { $0.morphology == "P-2AP" }?.gloss == "vos")
+        }
+        #expect(try words(43, 13, 34, "es").first { $0.strongs == "G2537" }?.gloss == "nuevo")
+    }
 }
 
 /// The word meanings' language is the reader's, apart from the app's:

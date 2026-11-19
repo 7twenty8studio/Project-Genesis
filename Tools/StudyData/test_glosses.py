@@ -78,5 +78,120 @@ class Check(unittest.TestCase):
         self.assertTrue(any(p.startswith("too long") for p in problems("go", "ir caminando por todo el camino largo hasta allá")))
 
 
+def _translations():
+    """{lang: ({id: gloss}, {(id, "verse.position"): gloss})} from every batch."""
+    import glob
+    import json
+    out = {}
+    for lang in ("es", "pt"):
+        units, own = {}, {}
+        for path in sorted(glob.glob(os.path.join(glosses.OUT, lang, "0*.json"))):
+            with open(path, encoding="utf-8") as f:
+                batch = json.load(f)
+            units.update(batch["glosses"])
+            for i, places in batch.get("occurrences", {}).items():
+                for place, text in places.items():
+                    own[(i, place)] = text
+        out[lang] = (units, own)
+    return out
+
+
+_TRANSLATED = None
+
+
+def verse(lang, ref):
+    """A verse's glosses in reading order: [(position, english, translation, id)]."""
+    global _TRANSLATED
+    if _TRANSLATED is None:
+        _TRANSLATED = _translations()
+    units, own = _TRANSLATED[lang]
+    _, by_verse = glosses.occurrences()
+    return [(p, g, own.get((i, f"{ref}.{p}"), units.get(i)), i) for p, g, i in by_verse[ref]]
+
+
+def word(lang, ref, english, nth=0):
+    found = [t for _, g, t, _ in verse(lang, ref) if g == english]
+    return found[nth]
+
+
+@unittest.skipUnless(os.path.exists(glosses.WORDSTUDY), "needs WordStudy.sqlite")
+class ReviewedExamples(unittest.TestCase):
+    """The owner's review of 19 November 2026 (PR #33): each example fixed,
+    and the kind of mistake checked across every batch."""
+
+    def test_one_object_pronoun_that_agrees(self):
+        # Matthew 5:29 (the eye: masculine) and 5:30 (the hand: feminine)
+        # had "échala [la]" / "lança [-a]": the pronoun twice, and feminine.
+        self.assertEqual(word("es", 40005029, "do cast [it]"), "echa [lo]")
+        self.assertEqual(word("pt", 40005029, "do cast [it]"), "lança [-o]")
+        self.assertEqual(word("es", 40005030, "do cast [it]"), "echa [la]")
+        self.assertEqual(word("pt", 40005030, "do cast [it]"), "lança [-a]")
+        self.assertEqual(word("es", 40005029, "it"), "lo")
+        self.assertEqual(word("es", 40005030, "it"), "la")
+
+    def test_sorceries_not_sorcerers(self):
+        # Revelation 9:21: φαρμακειῶν (G5331) is sorceries; STEPBible's English says "sorcerers".
+        self.assertEqual(word("es", 66009021, "sorcerers"), "hechicerías")
+        self.assertEqual(word("pt", 66009021, "sorcerers"), "feitiçarias")
+        # And the article agrees with the Portuguese noun: a imoralidade.
+        words = verse("pt", 66009021)
+        at = next(n for n, w in enumerate(words) if w[1] == "sexual immorality")
+        self.assertEqual(words[at - 1][2], "a")
+        self.assertEqual(verse("es", 66009021)[at - 1][2], "la")
+
+    def test_you_as_an_object(self):
+        # John 13:34 and 15:12: ὑμᾶς after "I loved" is the object: os / vos, not vosotros / vós.
+        self.assertEqual(word("es", 43013034, "you"), "os")
+        self.assertEqual(word("pt", 43013034, "you"), "vos")
+        self.assertEqual(word("es", 43015012, "you"), "os")
+        self.assertEqual(word("pt", 43015012, "you"), "vos")
+        # After a preposition the stressed form stays: "iré delante de vosotros" (Matthew 26:32).
+        self.assertEqual(word("es", 40026032, "you"), "vosotros")
+        # The subject of an infinitive keeps the subject form: "después que yo resucite".
+        self.assertEqual(word("es", 40026032, "Me"), "Yo")
+
+    def test_articles_and_adjectives_agree(self):
+        # John 13:34 "un mandamiento nuevo", 15:12 "este es el mandamiento, el mío".
+        self.assertEqual(word("es", 43013034, "new"), "nuevo")
+        self.assertEqual(word("pt", 43013034, "new"), "novo")
+        self.assertEqual(word("es", 43015012, "This"), "Este")
+        self.assertEqual(word("es", 43015012, "<the>", 1), "<el>")
+        self.assertEqual(word("pt", 43015012, "<the>", 1), "<o>")
+
+    def test_no_pronoun_twice(self):
+        # Across every batch: no verb with a pronoun on it followed by the same pronoun supplied.
+        import re
+        same = {"es": re.compile(r"\w{2}(lo|la|los|las|le|les)\s*\[\1\]"),
+                "pt": re.compile(r"-(o|a|os|as|lo|la|los|las|no|na|nos|nas)\s*\[-?\1\]")}
+        for lang, pattern in same.items():
+            units, own = _translations()[lang]
+            for text in list(units.values()) + list(own.values()):
+                self.assertIsNone(pattern.search(text), text)
+
+    def test_greek_object_pronouns_are_clitics(self):
+        # Across every batch: a Greek accusative personal pronoun glossed
+        # "him", "them", "you"… is an object (lo, los, os…; o, os, vos…)
+        # wherever no preposition and no infinitive it's the subject of make
+        # it otherwise; those verses have their own (occurrences).
+        import glob
+        import json
+        import re
+        stressed = {"es": {"él", "ella", "ellos", "ellas", "vosotros", "nosotros", "ti", "mí"},
+                    "pt": {"ele", "ela", "eles", "elas", "vós", "nós", "ti", "mim"}}
+        bare = re.compile(r"^(him|them|you|me|it|her|us)$", re.I)
+        accusative = re.compile(r"^P-(1AS|2AS|1AP|2AP|AS[MFN]|AP[MFN])$")
+        pronouns = set()
+        for path in sorted(glob.glob(os.path.join(glosses.OUT, "source", "0*.json"))):
+            with open(path, encoding="utf-8") as f:
+                for w in json.load(f)["words"]:
+                    for g in w["glosses"]:
+                        if accusative.match(g["morph"]) and bare.match(g["gloss"]):
+                            pronouns.add(g["id"])
+        self.assertGreater(len(pronouns), 10)
+        for lang in ("es", "pt"):
+            units, _ = _translations()[lang]
+            for i in pronouns:
+                self.assertNotIn(units[i].lower(), stressed[lang], i)
+
 if __name__ == "__main__":
     unittest.main()
