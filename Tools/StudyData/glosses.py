@@ -87,6 +87,10 @@ QUESTION_WORD = {"es": "acaso", "pt": "porventura"}
 ORIGINAL_LETTERS = re.compile(r"[֐-׿Ͱ-Ͽἀ-῿]")
 NUMBER = re.compile(r"\d+")
 BRACKETS = re.compile(r"[\[\]<>()]")
+# STEPBible's supplied "[one]" after an adjective or article ("a cruel [one]",
+# "the [one] who") needs no word in Spanish or Portuguese, which use the
+# adjective itself as the noun ("un cruel", "el que"), so it may be left out.
+SUPPLIED_ONE = re.compile(r"\[(?:one|ones|One|Ones)\]")
 # English words that are never Spanish or Portuguese words ("he", "son",
 # "come", "do", "me", "no", "a" are, so they aren't here).
 ENGLISH = re.compile(r"(?<![\w’'-])(the|and|of|to|with|from|she|they|we|you|your|yours|my|our|his|her|their|him|them|is|was|were|will|shall|not|who|whom|which|that|this|these|those|upon|into|all|been|have|had|said|says|say|went|came|give|gave|man|men|house|day|days|king|land|people|it|its|out|up|there|what|when|be|let|made|make|over|under|before|after|against|because|one|ones|did|does)(?![\w’'-])", re.IGNORECASE)
@@ -291,7 +295,7 @@ def check_gloss(source, text, lang, meaning, note):
     problems = []
     if text != text.strip() or "  " in text:
         problems.append("extra spaces")
-    if BRACKETS.findall(source) != BRACKETS.findall(text):
+    if BRACKETS.findall(source) != BRACKETS.findall(text) and BRACKETS.findall(SUPPLIED_ONE.sub("", source)) != BRACKETS.findall(text):
         problems.append(f"brackets differ ({''.join(BRACKETS.findall(source))} -> {''.join(BRACKETS.findall(text))})")
     elif re.search(r"\[\s*\]|<\s*>", text):
         problems.append("empty brackets")

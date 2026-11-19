@@ -41,6 +41,11 @@ class Check(unittest.TestCase):
     def test_brackets_and_marks(self):
         self.assertIn("brackets differ ([] -> )", problems("[the] father of", "el padre de"))
         self.assertIn("empty brackets", problems("[the] father", "[] padre"))
+        # A supplied "[one]" may go: Spanish and Portuguese use the adjective as the noun.
+        self.assertEqual(problems("a cruel [one]", "un cruel"), [])
+        self.assertEqual(problems("the [one] who", "el que"), [])
+        self.assertEqual(problems("[the] mighty [one] of", "[el] poderoso de"), [])
+        self.assertIn("brackets differ ([][] -> )", problems("[the] mighty [one] of", "el poderoso de"))
         self.assertIn("the question particle ¿ is “acaso” here", problems("¿ human", "¿ humano"))
         self.assertIn("a ¿ or ¡ with no closing mark in this gloss", problems("¿ human", "¿ acaso humano"))
         self.assertIn("Portuguese has no ¿ or ¡", problems("¿ is it willing", "¿ porventura quererá", "pt"))
