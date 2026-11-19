@@ -50,12 +50,19 @@ and English gloss meet, and those verses can need different words. So:
 - If the verses need different words, give the usual one in `glosses` and
   the others in `occurrences`, by the verse and position `context` prints
   ("1009018.12"). Never one word for all when the verses disagree.
+- The KJV is supporting context only. Settle tense and meaning from the
+  Hebrew or Greek and its grammar (the morph, the verse's own words and
+  STEPBible's English); a gloss that differs from the KJV isn't wrong for
+  that. Where the original stays ambiguous, keep the ambiguity (don't pick
+  one reading silently) and flag it `uncertain`.
 - Supplied verbs: the tense, mood and verb the verse needs, not a habit.
   `[was]` is `era` only where the Hebrew context is a past description or
-  state that "era" fits; it may be `estaba`, `fue`, `había`, `es` (STEPBible's
-  "[was]" in a present statement, as Gen 9:18 "Ham [was] the father of
-  Canaan", KJV "is")… Portuguese the same (`era`, `estava`, `foi`, `havia`,
-  `é`). `[will]` before a verb is the future (`[comerá]`), never "querer"
+  state that "era" fits; it may be `estaba`, `fue`, `había` or `es`
+  (Portuguese `era`, `estava`, `foi`, `havia`, `é`). A Hebrew nominal
+  clause has no tense of its own: Gen 9:18 "Ham [was] the father of
+  Canaan" states a standing fact, so `[es]` fits; the KJV's "is" supports
+  that but doesn't decide it. `[will]` before a verb is the future
+  (`[comerá]`), never "querer" (the check rejects it without a note)
   unless the verse means wanting.
 - Keep STEPBible's mood: a supplied `[is]` stays indicative (`[is]
   cursed` → `[es] maldito` / `[é] maldito`, not "sea", even where the KJV

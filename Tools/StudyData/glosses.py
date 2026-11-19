@@ -79,6 +79,10 @@ SUPPLIED_VERB = re.compile(r"\[(?:[^\]]*\s)?(?:was|were|is|are|am|be|been|being|
 MODAL = re.compile(r"(?<![\w-])(?:will|shall|would|should|may|might|let)(?![\w-])", re.IGNORECASE)
 # The Hebrew interrogative particle (morph Ti), which STEPBible marks "¿":
 # a word, not punctuation, so it's translated: "acaso" / "porventura".
+# "will" / "shall" as the future auxiliary is never "want" (a regression:
+# "[will] you" came out "[queréis]", which the other checks allowed).
+WANTING = re.compile(r"(?<!\w)(?:quier|quer|quis|quisie|quiere|queri)\w*", re.IGNORECASE)
+FUTURE = re.compile(r"(?<![\w-])(?:will|shall)(?![\w-])", re.IGNORECASE)
 QUESTION_WORD = {"es": "acaso", "pt": "porventura"}
 ORIGINAL_LETTERS = re.compile(r"[֐-׿Ͱ-Ͽἀ-῿]")
 NUMBER = re.compile(r"\d+")
@@ -307,6 +311,9 @@ def check_gloss(source, text, lang, meaning, note):
         word = QUESTION_WORD[lang]
         if len(re.findall(rf"(?<!\w){word}(?!\w)", text, re.IGNORECASE)) < source.count("¿"):
             problems.append(f"the question particle ¿ is “{word}” here")
+    if FUTURE.search(source) and not re.search(r"\b(?:want|wish|willing|desire)", source, re.IGNORECASE) \
+            and WANTING.search(text) and not note:
+        problems.append("“will/shall” is the future here, not “querer” (a note if the verse means wanting)")
     if lang == "pt" and re.search("[¿¡]", text):
         problems.append("Portuguese has no ¿ or ¡")
     if lang == "es":

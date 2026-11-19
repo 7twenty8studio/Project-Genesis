@@ -50,6 +50,17 @@ class Check(unittest.TestCase):
         self.assertIn("? differs", problems("will we eat", "¿comeremos??"))
         self.assertIn("numbers differ", problems("[19] And", "Y"))
 
+    def test_will_is_the_future_not_wanting(self):
+        # Regression: batch 004 had "[will] you" → "[queréis] vosotros", and
+        # every structural check passed it.
+        self.assertIn("“will/shall” is the future here, not “querer” (a note if the verse means wanting)",
+                      problems("[will] you", "[queréis] vosotros"))
+        self.assertIn("“will/shall” is the future here, not “querer” (a note if the verse means wanting)",
+                      problems("[will] you", "[quereis] vós", "pt"))
+        self.assertEqual(problems("he will eat", "comerá"), [])
+        self.assertEqual(problems("they were willing", "quisieron"), [])
+        self.assertEqual(problems("[will] you", "[queréis] vosotros", note="the verse asks what they want"), [])
+
     def test_capitals_english_and_length(self):
         self.assertIn("capital first letter where the English has none", problems("he covered", "Cubrió"))
         self.assertEqual(problems("Edomite", "edomita"), [])
