@@ -86,6 +86,41 @@ the scripts ran; the two kinds of mistake it found (a pronoun read as a noun,
 a genitive after "remember") were fixed in the scripts and the whole set run
 again. This is still a check by an AI, not a qualified reviewer's.
 
+## The full review of the audits' changes (19 November 2026)
+
+At the owner's request every verse with a word the audits changed (2,231
+verses, both languages) was read whole, with the Greek or Hebrew
+morphology: 622 findings (483 errors, 139 doubts), almost all in the
+audits' own changes or the words next to them. 617 are applied, place by
+place, from `audits/review.jsonl` (`review_fixes.py`); five findings in three places were
+left as they were (δεῖ with "le conviene" in Luke 17:25 and Acts 9:16,
+and "sardónice" in Revelation 21:20). What they found:
+
+- Agreement left half done: the article or adjective changed but the
+  demonstrative, second adjective or participle of the same noun not
+  ("<la> grande | <el> este"); the wrong noun picked as the head (a
+  genitive, a supplied "[persona]"); number ignored ("de las semana");
+  the shortened "primer", "tercer", "buen", "mal" after the noun; invented
+  forms ("de ora", "de plato", "cevado").
+- Pronouns: Spanish "a él?" / "a Mí!" for a plain object where Portuguese
+  had the clitic; a preposition further back (ἄχρι καὶ ὑμῶν, μετὰ πάντων
+  ὑμῶν) or at the end of the previous gloss ("delante", "junto") not
+  seen; possessive genitives ("his hand") made clitics; verbs whose
+  Spanish or Portuguese object differs from the Greek case (burlarse de,
+  seguir, servir, preguntar, suplicar); the opening ¿ or ¡ dropped.
+
+`audits/sweep.py` then applies the same patterns to every other verse
+(about 190 words, each read by hand before it was kept): "a él?" → "lo?",
+"delante de ellos", "le preguntó", "el agua" / "del arca", and the
+shortened forms after a Greek noun. The pronoun scripts now keep an
+opening ¿ and give Spanish the clitic before ? and ! too. `audits/run.sh`
+runs everything; on the batches as they are it changes nothing.
+842 words changed in 533 verses (537 Spanish, 305 Portuguese).
+
+This is a reading by AI reviewers, not qualified sign-off: it covers the
+words the audits changed and their neighbours, not every gloss, and the
+1,358 meanings per language awaiting review stay awaiting.
+
 ## Known limits (for the reviewer)
 
 - The structural checks don't judge meaning. Passing them says the marks,

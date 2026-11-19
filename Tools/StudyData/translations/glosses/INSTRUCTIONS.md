@@ -157,10 +157,19 @@ it's listed for qualified review. Don't flag ordinary words.
   `him` → `lo` / `o`; a dative → `le`, `les` / `lhe`, `lhes`), the stressed
   form only after a preposition (`a | él`, `de | ti`), the subject form for
   the subject of an infinitive. A supplied pronoun appears once (`echa [lo]`,
-  never `échala [la]`).
+  never `échala [la]`). Before `?` or `!` too (`crucifica | Lo!`, `¿Te?`).
+  A preposition can sit further back (`hasta | también | vosotros`) or at
+  the end of the previous gloss (`van delante | de vosotros`, `junto | a
+  él`); a possessive genitive stays possessive (`de él` / `dele`). Follow
+  the Spanish or Portuguese verb, not the Greek case: `se burlaban | de Él`,
+  `seguir | Lo`, `preguntaron | Le`.
 - Articles, adjectives, demonstratives and possessives agree with the
   Spanish or Portuguese noun, not with the Greek or Hebrew one (ἐντολὴ
-  καινή → `un mandamiento nuevo`; ἡ πορνεία → `a imoralidade`).
+  καινή → `un mandamiento nuevo`; ἡ πορνεία → `a imoralidade`). Every word
+  of the noun phrase agrees, in number too (`<la> grande | <la> esta`,
+  `de la | semana`); after the noun Spanish uses the full form (`el año |
+  <el> tercero`, `corazón | malo`); `el agua`, `del arca`; fixed phrases
+  stay (`de oro`, `de plata`).
 - Where STEPBible's English contradicts the morphology or the lexicon
   (φαρμακειῶν "sorcerers"), follow the Hebrew or Greek and add a note.
   `Tools/StudyData/translations/glosses/audits/run.sh` applies the first two

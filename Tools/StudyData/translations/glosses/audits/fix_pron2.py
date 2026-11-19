@@ -53,13 +53,14 @@ for v,ws in byv.items():
             prep = p and (U[p[2]]['morph'].startswith('PREP') or re.search(PREP[l],(text(T,O,l,p[2],v,p[0]) or '').rstrip(']>').strip()))
             if prep: t=st; kind='prep'
             elif partic: t=('a '+st) if case=='D' else st; kind='partic'
-            elif punct and l=='es': t='a '+st; kind='punct'
             elif case=='D' and p and U[p[2]]['strongs'] in TRANSITIVE: t=acc; kind='clitic-acc'
             elif case=='G' and p and U[p[2]]['strongs'] in REMEMBER: t=DE[l](st); kind='remember'
             else: t=dat if case=='D' else acc; kind='clitic'
             cnt[(l,case,kind)]+=1
             if word[0].isupper():
                 t=('a '+t[2].upper()+t[3:]) if t.startswith('a ') else t[0].upper()+t[1:]
+            cur=text(T,O,l,i,v,pos) or ''
+            if cur[:1] in '¿¡' and l=='es': t=cur[0]+t   # keep the question's opening mark
             want[l][i][f'{v}.{pos}']=t+punct
 changes=collections.Counter(); files={}
 for l in want:

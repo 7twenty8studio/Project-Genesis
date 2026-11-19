@@ -193,5 +193,30 @@ class ReviewedExamples(unittest.TestCase):
             for i in pronouns:
                 self.assertNotIn(units[i].lower(), stressed[lang], i)
 
+    def test_full_review_examples(self):
+        # The full review of every changed word (19 November 2026), one example of each kind.
+        self.assertEqual(word("es", 66004004, "golden"), "de oro")         # a fixed phrase, never "de ora"
+        self.assertEqual(word("es", 66006005, "third"), "tercero")         # after its noun, never "tercer"
+        self.assertEqual(word("es", 40026068, "You?"), "¿Te?")             # the clitic, and the opening ¿ kept
+        self.assertEqual(word("es", 41015013, "Him!"), "Lo!")              # a plain object: the clitic, as in Portuguese
+        self.assertEqual(word("es", 47010013, "you"), "vosotros")          # ἄχρι καὶ ὑμῶν: a preposition further back
+        self.assertEqual(word("pt", 47010013, "you"), "vós")
+
+    def test_el_agua(self):
+        # Across every verse: a feminine noun with a stressed a takes "el" in the singular.
+        import re
+        noun = re.compile(r"[\[<]?(agua|alma|águila|área|arca|hacha|habla)\b")
+        article = re.compile(r"[\[<]?(la|una|de la|a la)[\]>]?")
+        _, by_verse = glosses.occurrences()
+        for v in by_verse:
+            words, seen = [], set()
+            for p, _, t, _ in verse("es", v):
+                if p not in seen:
+                    seen.add(p)
+                    words.append(t or "")
+            for a, b in zip(words, words[1:]):
+                if article.fullmatch(a):
+                    self.assertIsNone(noun.match(b), (v, a, b))
+
 if __name__ == "__main__":
     unittest.main()

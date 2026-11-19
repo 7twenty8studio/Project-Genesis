@@ -34,7 +34,6 @@ def form(lang,u,kind):
     up=word[0].isupper()
     if kind=='obj':
         if emph: t=('a mí mismo' if lang=='es' else 'a mim mesmo')
-        elif punct and lang=='es': t='a '+f[1]
         else: t=f[0]
     elif kind=='prep':
         t=f[1]+((' mismo' if lang=='es' else ' mesmo') if emph else '')
@@ -72,6 +71,8 @@ for v,pos,i,kind,_ in cand:
         if kk=='obj' and 'G1163' in near and U[i]['morph'][2] not in '12':
             dat={'es':{'S':'le','P':'les'},'pt':{'S':'lhe','P':'lhes'}}[l][U[i]['morph'][3]]
             m=BARE.match(U[i]['gloss']); t=(dat[0].upper()+dat[1:] if m.group(1)[0].isupper() else dat)+m.group(2)
+        cur=text(T,O,l,i,v,pos) or ''
+        if cur[:1] in '¿¡' and l=='es' and t[:1] not in '¿¡': t=cur[0]+t   # keep the question's opening mark
         want[l][i][f'{v}.{pos}']=t
 changes=collections.Counter()
 files={}
