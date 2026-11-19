@@ -661,7 +661,20 @@
    "person:102": "Adoniram",
    "place:1011": "Roca",
    "person:1414": "Hasra",
-   "place:517": "Hamat de Soba"
+   "place:517": "Hamat de Soba",
+   "person:929": "Quelub",
+   "person:930": "Quelub",
+   "person:1982": "Mehir",
+   "person:1278": "Gamul",
+   "person:976": "Dara",
+   "person:1010": "Dibri",
+   "person:2268": "Palal",
+   "person:2398": "Reaía",
+   "person:2602": "Selef",
+   "person:2576": "Seber",
+   "person:2581": "Secanías",
+   "person:2236": "Oded",
+   "person:2237": "Oded"
   }
  },
  "pt": {
@@ -1279,7 +1292,12 @@
    "place:517": "Hamate-Zobá",
    "person:2053": "Miqueias",
    "person:791": "Joaquim",
-   "person:614": "Jerias"
+   "person:614": "Jerias",
+   "person:976": "Dara",
+   "person:1010": "Dibri",
+   "person:2236": "Odede",
+   "person:2237": "Odede",
+   "person:2209": "Noadias"
   }
  }
 }

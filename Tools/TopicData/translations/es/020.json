@@ -1146,7 +1146,7 @@
    "kind": "entry",
    "id": 19454,
    "sha256": "482654346272b673b26c92911bd10f235174251d5bb749782e964824658be10d",
-   "text": "Es desconsiderada y olvidadiza"
+   "text": "Es irreflexiva y olvidadiza"
   },
   {
    "kind": "entry",
@@ -2856,7 +2856,7 @@
    "kind": "entry",
    "id": 19686,
    "sha256": "a8a34039c38a7f6632a5121bfe82554d6bd71581176ad96c240a2d5154ab78d4",
-   "text": "Buscados por Simi"
+   "text": "Buscados por Semei"
   },
   {
    "kind": "entry",
@@ -3234,13 +3234,13 @@
    "kind": "entry",
    "id": 19749,
    "sha256": "b08ce6fc2896ad8c579f0e98c0e7764810ad2fdd695534ed3a518600596be5a1",
-   "text": "De Absalón"
+   "text": "De Absalom"
   },
   {
    "kind": "entry",
    "id": 19750,
    "sha256": "6707b0701a526e472970fed969cb1f2f9baacc4c236994961d5f625931648475",
-   "text": "De Simi"
+   "text": "De Semei"
   },
   {
    "kind": "entry",
@@ -3588,13 +3588,13 @@
    "kind": "entry",
    "id": 19805,
    "sha256": "b4bba5e924b26573e93b8f50d5bef3f5873fe40b80eaad6d0738a97918bb3fb0",
-   "text": "Una hambre duró en Egipto"
+   "text": "Un hambre duró en Egipto"
   },
   {
    "kind": "entry",
    "id": 19806,
    "sha256": "d313400422edb76df14f1fbad166b46ad192108d04c4cf1230b13158a82a778e",
-   "text": "Una hambre duró en Canaán"
+   "text": "Un hambre duró en Canaán"
   },
   {
    "kind": "entry",
@@ -4896,7 +4896,7 @@
    "kind": "entry",
    "id": 19973,
    "sha256": "6c89623d588139f09f50434d0b7553f67d753f2e0a50c0f3998afb1aed341121",
-   "text": "La columna de Absalón en"
+   "text": "La columna de Absalom en"
   },
   {
    "kind": "topic",
@@ -5142,7 +5142,8 @@
    "kind": "topic",
    "id": 4415,
    "sha256": "8f267a09e6d6c6254061b4942f916b979ca00c80bbe363f01f1f0a8c3002b195",
-   "text": "Sebet"
+   "text": "Seber",
+   "name_note": "Seber (1 Cr 2:48); the glossary gave Sebet; app name pinned too"
   },
   {
    "kind": "entry",
@@ -5202,7 +5203,7 @@
    "kind": "topic",
    "id": 4418,
    "sha256": "002d53ae77bf1295cd3aef002480bb0ba6c33aeb8fdcdb8058d59f62749de597",
-   "text": "Secanía"
+   "text": "Secanías"
   },
   {
    "kind": "entry",
@@ -5274,7 +5275,7 @@
    "kind": "entry",
    "id": 20018,
    "sha256": "acc32751a60df880dcbf83e1ec04e5655b4938f8ef37ccf801d07f57fabbfabe",
-   "text": "1. También llamada SICHEM y SYCHEM, una región en la parte central de la tierra de Canaán"
+   "text": "1. También llamada SIQUEM, una región en la parte central de la tierra de Canaán"
   },
   {
    "kind": "entry",
@@ -5364,7 +5365,7 @@
    "kind": "entry",
    "id": 20033,
    "sha256": "dbb295229ff45d958aa2aa8b8576fc8f24e0b3a4ea04d882cafa67dc4966da93",
-   "text": "Llamado SYCHEM"
+   "text": "Llamado SIQUEM"
   },
   {
    "kind": "entry",
@@ -5814,7 +5815,8 @@
    "kind": "topic",
    "id": 4433,
    "sha256": "9645afe0188c49e9cfab10e72563075461a53346881ac246de6cbc33f7bb14fa",
-   "text": "Shelef"
+   "text": "Selef",
+   "name_note": "Selef (Gn 10:26); the glossary kept the English Shelef; app name pinned too"
   },
   {
    "kind": "entry",

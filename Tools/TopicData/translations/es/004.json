@@ -894,7 +894,8 @@
    "kind": "entry",
    "id": 3527,
    "sha256": "f9ef5d8083651dd0b48d1980264856c849c3a1f15d938632574a5066b79e5d39",
-   "text": "Enviado como juicio"
+   "text": "Enviada como juicio",
+   "phrase_note": "the topic is feminine (oruga), so the participle agrees: enviada"
   },
   {
    "kind": "topic",
@@ -2676,7 +2677,8 @@
    "kind": "topic",
    "id": 1051,
    "sha256": "e0da316fa8cdab999f943b16cf6fef394cc382672b6b5a50a622c234a2d5370a",
-   "text": "Quélud"
+   "text": "Quelub",
+   "name_note": "the glossary had Quélud, a slip; Quelub in the RV1909 (1 Cr 4:11); app name pinned too"
   },
   {
    "kind": "entry",
@@ -3186,7 +3188,7 @@
    "kind": "entry",
    "id": 3830,
    "sha256": "4bdeef40ce98e7b4c86779b57adebdd42604c415e101c90cfe200c7b848d4a4f",
-   "text": "Joab reprende a David por lamentar la muerte de Absalón"
+   "text": "Joab reprende a David por lamentar la muerte de Absalom"
   },
   {
    "kind": "entry",
@@ -3300,7 +3302,7 @@
    "kind": "entry",
    "id": 3847,
    "sha256": "b2e8f9cf55af20460c367b830741bfd67f8151c8bc4b0dda4c79db1331c3f635",
-   "text": "Samsón"
+   "text": "Sansón"
   },
   {
    "kind": "entry",
@@ -3840,7 +3842,7 @@
    "kind": "entry",
    "id": 3937,
    "sha256": "b2e8f9cf55af20460c367b830741bfd67f8151c8bc4b0dda4c79db1331c3f635",
-   "text": "Samsón"
+   "text": "Sansón"
   },
   {
    "kind": "entry",
@@ -3996,7 +3998,7 @@
    "kind": "entry",
    "id": 3963,
    "sha256": "45721ff9ee25acf441b6ab0e519782a4acbbbf21e295031a0d9293d57cd34c56",
-   "text": "Absalón"
+   "text": "Absalom"
   },
   {
    "kind": "entry",
@@ -4020,7 +4022,7 @@
    "kind": "entry",
    "id": 3967,
    "sha256": "3726574ff8c7a2f4e6ecd2216f73f302f1a9d385e67f38bd9ea24bac2ab9dc7b",
-   "text": "Los muchachos de Bet-el"
+   "text": "Los muchachos de Betel"
   },
   {
    "kind": "entry",
@@ -4044,7 +4046,7 @@
    "kind": "entry",
    "id": 3971,
    "sha256": "4e0ab4e9a96cfc71bc5f16841e620183c07877368ef9e9a37373bbbdeb9141d5",
-   "text": "Los hijos de Senaquérib"
+   "text": "Los hijos de Senaquerib"
   },
   {
    "kind": "entry",
@@ -5922,7 +5924,7 @@
    "kind": "entry",
    "id": 4240,
    "sha256": "45721ff9ee25acf441b6ab0e519782a4acbbbf21e295031a0d9293d57cd34c56",
-   "text": "Absalón"
+   "text": "Absalom"
   },
   {
    "kind": "entry",
@@ -6006,7 +6008,7 @@
    "kind": "entry",
    "id": 4254,
    "sha256": "6e0e8c76868162efe26177b2e003b6cdbf519745df0cf90f7a6bb0eb6729eca8",
-   "text": "Los hijos de Senaquérib"
+   "text": "Los hijos de Senaquerib"
   },
   {
    "kind": "entry",
@@ -6300,7 +6302,7 @@
    "kind": "entry",
    "id": 4290,
    "sha256": "bb40c51778f4f5d04544ef51c8846d034eb9d764f11b3c564d2f529318b70c45",
-   "text": "Simi"
+   "text": "Simei"
   },
   {
    "kind": "entry",
@@ -7218,7 +7220,7 @@
    "kind": "entry",
    "id": 4408,
    "sha256": "671937d5fbe84833e9147c672b998b0b0fc107c670850b219e798c3fbb66ec65",
-   "text": "Henoch"
+   "text": "Enoc"
   },
   {
    "kind": "entry",
@@ -7866,7 +7868,7 @@
    "kind": "entry",
    "id": 4496,
    "sha256": "242db4644ccf8de7eece5c61c6ab98e5ca68ad88c6696c1894a818ed933a0ce9",
-   "text": "Senaquérib"
+   "text": "Senaquerib"
   },
   {
    "kind": "entry",
@@ -8148,7 +8150,7 @@
    "kind": "entry",
    "id": 4535,
    "sha256": "81cf2740c9aa642d9b4f52e245cf8e6fb7185167f7e5f3e15c7442573fb7e437",
-   "text": "Del profeta anciano de Bet-el"
+   "text": "Del profeta anciano de Betel"
   },
   {
    "kind": "entry",
@@ -8364,7 +8366,7 @@
    "kind": "entry",
    "id": 4563,
    "sha256": "c03622b3a944d20ca58fda8e2b2cbfbf343725876ceee387db138efa4b07f0f8",
-   "text": "Dalila, contra Samsón"
+   "text": "Dalila, contra Sansón"
   },
   {
    "kind": "entry",
@@ -8376,7 +8378,7 @@
    "kind": "entry",
    "id": 4565,
    "sha256": "b08ce6fc2896ad8c579f0e98c0e7764810ad2fdd695534ed3a518600596be5a1",
-   "text": "De Absalón"
+   "text": "De Absalom"
   },
   {
    "kind": "entry",
@@ -8454,7 +8456,7 @@
    "kind": "entry",
    "id": 4578,
    "sha256": "242db4644ccf8de7eece5c61c6ab98e5ca68ad88c6696c1894a818ed933a0ce9",
-   "text": "Senaquérib"
+   "text": "Senaquerib"
   },
   {
    "kind": "entry",
@@ -8484,7 +8486,7 @@
    "kind": "entry",
    "id": 4583,
    "sha256": "ef977fbc4c311e33715cd483d74c8507369ef08aa2607943277ba1aa83742344",
-   "text": "Sadrach, Mesach y Abed-nego"
+   "text": "Sadrac, Mesac y Abed-nego"
   },
   {
    "kind": "entry",
@@ -9984,7 +9986,7 @@
    "kind": "entry",
    "id": 4790,
    "sha256": "8d5a5ff6302ee57ac72c93b4f52735738cc10be860df765927c03e1a84cc33f6",
-   "text": "De Absalón"
+   "text": "De Absalom"
   },
   {
    "kind": "entry",

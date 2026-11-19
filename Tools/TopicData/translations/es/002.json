@@ -2418,7 +2418,7 @@
    "kind": "entry",
    "id": 1449,
    "sha256": "dbc28102bace8debd7882dde8e566063313705dc32e79fc2bf901e8e66fc17b7",
-   "text": "Sacada de Jerusalén por Sadoc en el tiempo de la rebelión de Absalón, pero devuelta por orden de David"
+   "text": "Sacada de Jerusalén por Sadoc en el tiempo de la rebelión de Absalom, pero devuelta por orden de David"
   },
   {
    "kind": "entry",
@@ -2736,7 +2736,7 @@
    "kind": "entry",
    "id": 1497,
    "sha256": "8e68bfdadc8f9fe1900878e36e0613b7686d7e910df6af7c65b2e3a06cd7956d",
-   "text": "Rapidez de acción: Abraham, en persecución de Quedorlaomer"
+   "text": "Rapidez de acción: Abraham, en persecución de Quédorlaomer"
   },
   {
    "kind": "entry",
@@ -3510,7 +3510,7 @@
    "kind": "entry",
    "id": 1609,
    "sha256": "afcd9d135c53a7b46960b4d633efe6367dfa1b10d16d96808e72e020d0c0532b",
-   "text": "Por Absalón"
+   "text": "Por Absalom"
   },
   {
    "kind": "entry",
@@ -4506,7 +4506,7 @@
    "kind": "entry",
    "id": 1737,
    "sha256": "9910b267f6093b30d75f7edc3660fe38652d6fca681c6c8be8aae360557af6d2",
-   "text": "Una antigua ciudad de Palestina tomada por Quedorlaomer"
+   "text": "Una antigua ciudad de Palestina tomada por Quédorlaomer"
   },
   {
    "kind": "topic",
@@ -4842,7 +4842,7 @@
    "kind": "entry",
    "id": 1778,
    "sha256": "4a25197bed20bff8e6ab1721d5cfb6186ca97bd8bd62cf44c01e04efffafed32",
-   "text": "Amnón, por Absalón"
+   "text": "Amnón, por Absalom"
   },
   {
    "kind": "entry",
@@ -8202,7 +8202,7 @@
    "kind": "entry",
    "id": 2199,
    "sha256": "21dd78472d91d16aee95006a85376cd3d2aad9cb263459507d68aae3a3be642b",
-   "text": "Absalón quema el campo de cebada de Joab"
+   "text": "Absalom quema el campo de cebada de Joab"
   },
   {
    "kind": "entry",
@@ -8394,7 +8394,8 @@
    "kind": "entry",
    "id": 2227,
    "sha256": "f9ef5d8083651dd0b48d1980264856c849c3a1f15d938632574a5066b79e5d39",
-   "text": "Enviado como juicio"
+   "text": "Enviada como juicio",
+   "phrase_note": "the topic is feminine (esterilidad), so the participle agrees: enviada"
   },
   {
    "kind": "topic",
