@@ -7,10 +7,11 @@ struct OriginalSourceSheet: View {
     let language: OriginalLanguage
     let greek: OriginalSource.Greek
     let translation: Translation
+    /// The language the word meanings are shown in (`GlossLanguage`).
+    let glossLanguage: String
 
     @Environment(\.palette) private var palette
     @Environment(\.dismiss) private var dismiss
-    @Environment(\.wordStudy) private var wordStudy
 
     var body: some View {
         NavigationStack {
@@ -26,7 +27,7 @@ struct OriginalSourceSheet: View {
                     Section("Source") {
                         Text(credit)
                             .foregroundStyle(palette.text)
-                        if wordStudy?.translatesGlosses == true {
+                        if GlossLanguage.isTranslated(glossLanguage) {
                             Text(OriginalGlosses.attribution)
                                 .foregroundStyle(palette.text)
                         }

@@ -49,12 +49,13 @@ struct OriginalWordSheet: View {
                     Section {
                     } footer: {
                         VStack(alignment: .leading, spacing: 6) {
-                            if WordStudyRepository.needsEnglishNote(bibleLanguage: library.currentTranslation.language) {
-                                if wordStudy?.translatesGlosses == true {
-                                    Text("The grammar is in English.")
-                                    Text(OriginalGlosses.translatedNote)
-                                    Text(OriginalGlosses.attribution)
-                                } else if wordStudy?.language != nil {
+                            if word.englishGloss != nil {
+                                // A translated meaning (the reader's gloss language).
+                                Text("The grammar is in English.")
+                                Text(OriginalGlosses.translatedNote)
+                                Text(OriginalGlosses.attribution)
+                            } else if WordStudyRepository.needsEnglishNote(bibleLanguage: library.currentTranslation.language) {
+                                if wordStudy?.language != nil {
                                     Text("The meaning in this verse and the grammar are in English.")
                                 } else {
                                     Text("Word meanings and grammar are in English.")

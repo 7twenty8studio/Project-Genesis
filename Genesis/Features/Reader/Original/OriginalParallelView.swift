@@ -30,12 +30,16 @@ struct OriginalParallelView: View {
     @AppStorage("reader.original.interlinear") private var interlinear = false
     /// Only the Hebrew or Greek, without the translation beside it.
     @AppStorage("reader.original.only") private var originalOnly = false
+    /// The word meanings' language: the Bible's by default, or the reader's
+    /// pick; never tied to the app's language (`GlossLanguage`).
+    @AppStorage(GlossLanguage.storageKey) private var glossChoice: GlossLanguageChoice = .bible
 
     @State private var rows: [OriginalParallelRow] = []
     @State private var picked: OriginalWord?
 
     private var unlocked: Bool { entitlements.allows(.wordStudy) }
     private var language: OriginalLanguage { chapterID.book >= 40 ? .greek : .hebrew }
+    private var glossLanguage: String { GlossLanguage.code(for: glossChoice, bibleLanguage: translation.language) }
 
     var body: some View {
         GeometryReader { proxy in
@@ -49,8 +53,10 @@ struct OriginalParallelView: View {
                         greek: greek,
                         sideBySide: sideBySide,
                         marksEditions: rows.contains { row in row.words.contains(where: \.isNotInComparison) },
+                        glossLanguage: glossLanguage,
                         interlinear: $interlinear,
-                        originalOnly: $originalOnly
+                        originalOnly: $originalOnly,
+                        glossChoice: $glossChoice
                     )
                     ForEach(Array(rows.enumerated()), id: \.element.id) { index, row in
                         OriginalVerseRow(
@@ -83,7 +89,7 @@ struct OriginalParallelView: View {
             .onTapGesture { reader.toggleControls() }
         }
         .background(palette.background)
-        .task(id: "\(chapterID.book)-\(chapterID.chapter)-\(translation.id)-\(greek.edition.rawValue)-\(unlocked)") { await load() }
+        .task(id: "\(chapterID.book)-\(chapterID.chapter)-\(translation.id)-\(greek.edition.rawValue)-\(unlocked)-\(glossLanguage)") { await load() }
         .sheet(item: $picked) { word in
             OriginalWordSheet(word: word)
         }
@@ -123,11 +129,12 @@ struct OriginalParallelView: View {
         let map = map
         let wordStudy = wordStudy
         let edition = greek.edition
+        let glossLanguage = glossLanguage
         let limit = unlocked ? nil : OriginalParallel.previewVerses
         rows = await Task.detached(priority: .userInitiated) {
             let verses = (try? bible.chapter(chapter))?.verses ?? []
             let needed = OriginalParallel.kjvVerses(for: verses.map(\.id), map: map)
-            let words = (try? wordStudy.words(inVerses: needed, greek: edition)) ?? [:]
+            let words = (try? wordStudy.words(inVerses: needed, greek: edition, glossLanguage: glossLanguage)) ?? [:]
             return OriginalParallel.rows(verses: verses, map: map, words: words, limit: limit)
         }.value
         // Keep the verse being read (so leaving parallel returns to it).

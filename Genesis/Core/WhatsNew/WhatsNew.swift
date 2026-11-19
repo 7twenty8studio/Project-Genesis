@@ -913,7 +913,7 @@ enum WhatsNewCatalog {
             WhatsNewItem(
                 systemImage: "text.word.spacing",
                 title: String(localized: "Word by word"),
-                detail: String(localized: "In Spanish or Portuguese, the Original view shows what each Hebrew and Greek word means in that verse, in your language.")
+                detail: String(localized: "Reading the Reina-Valera or the Bíblia Livre, the Original view shows what each Hebrew and Greek word means in that verse, in Spanish or Portuguese. Pick another language under Word Meanings.")
             ),
         ],
         feature: .wordStudy

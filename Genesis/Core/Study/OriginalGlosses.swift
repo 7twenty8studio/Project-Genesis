@@ -89,16 +89,12 @@ final class OriginalGlosses: Sendable {
 }
 
 extension WordStudyRepository {
-    /// The words with glosses in the repository's language, when the bundled
-    /// Glosses.sqlite has them; English otherwise.
-    func withTranslatedGlosses(_ words: [OriginalWord], glosses: OriginalGlosses? = .bundled) -> [OriginalWord] {
-        guard let language, let glosses else { return words }
-        return (try? glosses.translated(words, into: language)) ?? words
-    }
-
-    /// Whether this repository shows translated glosses (the bundled file is
-    /// there and the app's language is one it holds).
-    var translatesGlosses: Bool {
-        language.map(OriginalGlosses.languages.contains) == true && OriginalGlosses.bundled != nil
+    /// The words with their glosses in `glossLanguage` ("es", "pt") when
+    /// the bundled Glosses.sqlite has them; STEPBible's English otherwise.
+    /// The gloss language is the reader's (`GlossLanguage`), never the
+    /// app's.
+    func withTranslatedGlosses(_ words: [OriginalWord], into glossLanguage: String, glosses: OriginalGlosses? = .bundled) -> [OriginalWord] {
+        guard OriginalGlosses.languages.contains(glossLanguage), let glosses else { return words }
+        return (try? glosses.translated(words, into: glossLanguage)) ?? words
     }
 }

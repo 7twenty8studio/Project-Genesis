@@ -43,3 +43,56 @@ struct OriginalGlossesTests {
         #expect(spanish.filter { $0.englishGloss != nil }.count == words.count)
     }
 }
+
+/// The word meanings' language is the reader's, apart from the app's:
+/// by default it follows the Bible being read (GlossLanguage).
+@Suite("Gloss language")
+struct GlossLanguageTests {
+    /// The Reina-Valera 1909's language (its catalog row; it's downloaded).
+    static let reinaValera = "es"
+
+    @Test func followsTheBibleNotTheApp() {
+        // An English app reading the Reina-Valera gets Spanish meanings…
+        #expect(GlossLanguage.code(for: .bible, bibleLanguage: Self.reinaValera) == "es")
+        // …and a Spanish app reading the Bíblia Livre gets Portuguese ones.
+        #expect(GlossLanguage.code(for: .bible, bibleLanguage: Translation.bibliaLivre.language) == "pt")
+        // O Livro (pt-PT) has the Portuguese; the KJV and others keep English.
+        #expect(GlossLanguage.code(for: .bible, bibleLanguage: "pt-PT") == "pt")
+        #expect(GlossLanguage.code(for: .bible, bibleLanguage: "en") == "en")
+        #expect(GlossLanguage.code(for: .bible, bibleLanguage: "fr") == "en")
+    }
+
+    @Test func aChosenLanguageWins() {
+        #expect(GlossLanguage.code(for: .english, bibleLanguage: "es") == "en")
+        #expect(GlossLanguage.code(for: .spanish, bibleLanguage: "en") == "es")
+        #expect(GlossLanguage.code(for: .portuguese, bibleLanguage: "es") == "pt")
+        #expect(GlossLanguageChoice(rawValue: "bible") == .bible)
+    }
+
+    @Test func theSavedChoiceStartsAtTheBible() throws {
+        let defaults = try #require(UserDefaults(suiteName: "GlossLanguageTests"))
+        defaults.removePersistentDomain(forName: "GlossLanguageTests")
+        #expect(GlossLanguage.savedChoice(in: defaults) == .bible)
+        defaults.set("pt", forKey: GlossLanguage.storageKey)
+        #expect(GlossLanguage.savedChoice(in: defaults) == .portuguese)
+        defaults.removePersistentDomain(forName: "GlossLanguageTests")
+    }
+
+    /// The repository gives the meanings in the language asked for, whatever
+    /// language it (and the app) was opened in.
+    @Test func wordsComeInTheGlossLanguage() throws {
+        let url = try #require(Bundle.main.url(forResource: "WordStudy", withExtension: "sqlite"))
+        let genesis = VerseID(book: 1, chapter: 1, verse: 1)
+        // A repository opened in English (an English app) reading the RV1909.
+        let english = try WordStudyRepository(url: url, language: "en")
+        let rv1909 = GlossLanguage.code(for: .bible, bibleLanguage: Self.reinaValera)
+        #expect(try english.words(in: genesis, glossLanguage: rv1909).first { $0.strongs == "H0430G" }?.gloss == "Dios")
+        // One opened in Spanish (a Spanish app) reading the Bíblia Livre.
+        let spanish = try WordStudyRepository(url: url, language: "es")
+        let blivre = GlossLanguage.code(for: .bible, bibleLanguage: Translation.bibliaLivre.language)
+        #expect(try spanish.words(in: genesis, glossLanguage: blivre).first { $0.strongs == "H0430G" }?.gloss == "Deus")
+        // A Spanish app reading the KJV keeps STEPBible's English.
+        let kjv = GlossLanguage.code(for: .bible, bibleLanguage: Translation.kjv.language)
+        #expect(try spanish.words(in: genesis, glossLanguage: kjv).allSatisfy { $0.englishGloss == nil })
+    }
+}

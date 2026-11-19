@@ -249,7 +249,12 @@ shares; README.md has the architecture.
   `OriginalGlosses` through `WordStudyRepository.words(inVerses:)`
   (`OriginalWord.englishGloss`, `awaitsReview` shows "(?)" and
   `awaitingReviewNote`; `translatedNote` and `attribution`, the CC BY
-  credit, wherever they show). English where a gloss is missing. Built
+  credit, wherever they show). English where a gloss is missing. The
+  gloss language is the reader's, never the app's (`GlossLanguage`,
+  `GlossLanguageChoice`, "reader.original.glossLanguage"): by default the
+  Bible being read (RV1909 → Spanish, Bíblia Livre/O Livro → Portuguese,
+  others English), or English/Español/Português from the Original header's
+  Word Meanings menu; passed as `glossLanguage:` to `words(in:)`. Built
   from Tools/StudyData/translations/glosses (`glosses.py
   export/status/check/context`: 58 batches with source shas; brackets,
   marks, numbers, question particle ¿ as "acaso"/"porventura", "will"

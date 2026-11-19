@@ -11943,22 +11943,6 @@
         }
       }
     },
-    "In Spanish or Portuguese, the Original view shows what each Hebrew and Greek word means in that verse, in your language.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "En español o portugués, la vista Original muestra lo que significa cada palabra hebrea y griega en ese versículo, en tu idioma."
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Em espanhol ou português, a visualização Original mostra o que cada palavra hebraica e grega significa naquele versículo, no seu idioma."
-          }
-        }
-      }
-    },
     "In Your Memorize List": {
       "localizations": {
         "es": {
@@ -21226,6 +21210,22 @@
         }
       }
     },
+    "Reading the Reina-Valera or the Bíblia Livre, the Original view shows what each Hebrew and Greek word means in that verse, in Spanish or Portuguese. Pick another language under Word Meanings.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Al leer la Reina-Valera o la Bíblia Livre, la vista Original muestra lo que significa cada palabra hebrea y griega en ese versículo, en español o portugués. Elige otro idioma en Significados."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ao ler a Reina-Valera ou a Bíblia Livre, a visualização Original mostra o que cada palavra hebraica e grega significa naquele versículo, em espanhol ou português. Escolha outro idioma em Significados."
+          }
+        }
+      }
+    },
     "Reading time over the last two weeks: %@ in total": {
       "localizations": {
         "es": {
@@ -22448,6 +22448,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Igual ao iPhone"
+          }
+        }
+      }
+    },
+    "Same as the Bible (%@)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Igual que la Biblia (%@)"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Igual à Bíblia (%@)"
           }
         }
       }
@@ -32842,6 +32858,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Retirar"
+          }
+        }
+      }
+    },
+    "Word Meanings": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Significados"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Significados"
           }
         }
       }

@@ -46,6 +46,13 @@ struct VerseStudyList: View {
     @Environment(\.palette) private var palette
     @State private var tab: Tab = .words
     @State private var loaded: Loaded?
+    /// The word meanings follow the Bible being read, or the reader's pick
+    /// in the Original header (`GlossLanguage`), not the app's language.
+    @AppStorage(GlossLanguage.storageKey) private var glossChoice: GlossLanguageChoice = .bible
+
+    private var glossLanguage: String {
+        GlossLanguage.code(for: glossChoice, bibleLanguage: library.currentTranslation.language)
+    }
 
     private struct Loaded: Sendable {
         let words: [OriginalWord]
@@ -87,12 +94,12 @@ struct VerseStudyList: View {
                 Section {
                 } footer: {
                     VStack(alignment: .leading, spacing: 6) {
-                        if WordStudyRepository.needsEnglishNote(bibleLanguage: library.premiumToolsTranslation.language) {
-                            if wordStudy?.translatesGlosses == true {
-                                Text("Commentary and grammar are in English.")
-                                Text(OriginalGlosses.translatedNote)
-                                Text(OriginalGlosses.attribution)
-                            } else if wordStudy?.language != nil {
+                        if GlossLanguage.isTranslated(glossLanguage) {
+                            Text("Commentary and grammar are in English.")
+                            Text(OriginalGlosses.translatedNote)
+                            Text(OriginalGlosses.attribution)
+                        } else if WordStudyRepository.needsEnglishNote(bibleLanguage: library.premiumToolsTranslation.language) {
+                            if wordStudy?.language != nil {
                                 Text("Commentary and the meanings of words in this verse are in English.")
                             } else {
                                 Text("Definitions and commentary are in English.")
@@ -106,7 +113,7 @@ struct VerseStudyList: View {
         .themedScreen()
         .navigationTitle(PassageReference(verse: verse).description(in: library.premiumToolsTranslation.language))
         .navigationBarTitleDisplayMode(.inline)
-        .task(id: verse) { await load() }
+        .task(id: "\(verse.rawValue)-\(glossLanguage)") { await load() }
     }
 
     // MARK: Sections
@@ -195,9 +202,10 @@ struct VerseStudyList: View {
             return
         }
         let verses = kjvVerses
+        let glossLanguage = glossLanguage
         loaded = await Task.detached(priority: .userInitiated) {
             Loaded(
-                words: verses.flatMap { (try? wordStudy.words(in: $0)) ?? [] },
+                words: verses.flatMap { (try? wordStudy.words(in: $0, glossLanguage: glossLanguage)) ?? [] },
                 commentary: verses.first.flatMap { try? wordStudy.commentary(for: $0) } ?? []
             )
         }.value

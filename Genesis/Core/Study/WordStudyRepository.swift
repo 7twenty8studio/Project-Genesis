@@ -17,9 +17,10 @@ final class WordStudyRepository: Sendable {
     static let attribution = String(localized: "Hebrew and Greek words, glosses and Greek definitions from STEPBible.org, based on work at Tyndale House Cambridge (CC BY 4.0). Hebrew definitions from Strong's Hebrew Dictionary via the Open Scriptures Hebrew Bible project (CC BY 4.0). Commentary from Matthew Henry's Concise Commentary (public domain).")
 
     /// The lexicon's glosses, definitions and origins are also in these
-    /// languages (table lexicon_translations, Tools/StudyData/lexicon.py);
-    /// the meanings in a verse, grammar and commentary are English only, so
-    /// screens say so when the Bible or the app is in another language.
+    /// languages (table lexicon_translations, Tools/StudyData/lexicon.py),
+    /// and the meanings in a verse can be (`GlossLanguage`); grammar and
+    /// commentary are English only, so screens say so when the Bible or the
+    /// app is in another language.
     static func needsEnglishNote(bibleLanguage: String) -> Bool {
         bibleLanguage != "en" || AppLanguage.code != "en"
     }
@@ -52,16 +53,18 @@ final class WordStudyRepository: Sendable {
 
     /// The verse's Hebrew or Greek words, in the original order. A New
     /// Testament verse is read from one Greek edition (`greek`), in its
-    /// words, spelling and order.
-    func words(in verse: VerseID, greek edition: GreekEdition = .textusReceptus) throws -> [OriginalWord] {
-        try words(inVerses: [verse], greek: edition)[verse] ?? []
+    /// words, spelling and order. Glosses are in `glossLanguage` where
+    /// Glosses.sqlite has them (`GlossLanguage.code`), English otherwise.
+    func words(in verse: VerseID, greek edition: GreekEdition = .textusReceptus, glossLanguage: String = "en") throws -> [OriginalWord] {
+        try words(inVerses: [verse], greek: edition, glossLanguage: glossLanguage)[verse] ?? []
     }
 
     /// The words of several verses (KJV numbering) in one query, by verse,
     /// each in the original order, the Greek from one edition. Meant for a
     /// chapter's verses, which lie close together; verses with no words are
-    /// left out.
-    func words(inVerses verses: some Collection<VerseID>, greek edition: GreekEdition = .textusReceptus) throws -> [VerseID: [OriginalWord]] {
+    /// left out. Glosses are in `glossLanguage` where Glosses.sqlite has
+    /// them, English otherwise; the app's language plays no part.
+    func words(inVerses verses: some Collection<VerseID>, greek edition: GreekEdition = .textusReceptus, glossLanguage: String = "en") throws -> [VerseID: [OriginalWord]] {
         guard let low = verses.min(), let high = verses.max() else { return [:] }
         let wanted = Set(verses)
         var rows: [OriginalWord] = []
@@ -77,7 +80,7 @@ final class WordStudyRepository: Sendable {
                 [.int(low.rawValue), .int(high.rawValue), .int(edition.rawValue)]
             ) { Self.greekWord($0, edition: edition) }
         }
-        return Dictionary(grouping: withTranslatedGlosses(rows.filter { wanted.contains($0.verse) }), by: \.verse)
+        return Dictionary(grouping: withTranslatedGlosses(rows.filter { wanted.contains($0.verse) }, into: glossLanguage), by: \.verse)
     }
 
     /// The word another edition has at the same place as a Greek word, if
