@@ -142,7 +142,7 @@ struct WordStudyTests {
         // Every section in both languages.
         let genesisOne = try spanish.commentary(inChapter: ChapterID(book: 1, chapter: 1))
         #expect(genesisOne.count == 8)
-        #expect(genesisOne.allSatisfy(\.isTranslated))
+        #expect(genesisOne.allSatisfy { $0.isTranslated })
     }
 
     @Test func commentaryShipsWithoutEditorialNotes() throws {
