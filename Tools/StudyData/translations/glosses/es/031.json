@@ -27,7 +27,7 @@
   "5604fd0249d62486": "<la> copia de",
   "3fb8976859e8454b": "[es] [la] copia de",
   "6e8f30fff7be00d8": "[la] copia de",
-  "6d6aaa85973bc663": "el agujero hacia",
+  "6d6aaa85973bc663": "hacia el agujero",
   "4404964843b2f7e2": "y [el] relato completo de",
   "f8ce40c6109dbe0a": "[la] cantidad exacta de",
   "a21f3a944dafebf5": "extiende",
@@ -429,9 +429,9 @@
   "a2bfbcc0d346bb80": "[es] una [cosa] torcida",
   "d691994d4557ee6b": "y torcido",
   "c9cdf561260c86c7": "Pitón",
-  "fe2f093481aa3c27": "áspides",
-  "d7b14327fdc655da": "un áspid",
-  "56da303e0a34e6ba": "y un áspid",
+  "fe2f093481aa3c27": "cobras",
+  "d7b14327fdc655da": "una cobra",
+  "56da303e0a34e6ba": "y una cobra",
   "fea78b2396d50da8": "de repente",
   "144a87e206834c67": "en un instante",
   "7dcf9e94ce65a60a": "a lo repentino",
@@ -623,7 +623,7 @@
   "6b0238215690b6cc": "y se hinchará",
   "f88c309ddf1fc972": "hinchada",
   "209f9c5612dbb19c": "cualquier cosa",
-  "b871df2d2aa205f8": "manchado",
+  "b871df2d2aa205f8": "manchada",
   "eae670fc9a103643": "y alargó",
   "293fc38ea0fc351e": "[la] hermosura de",
   "de9ae68d22a2c208": "esplendor",
@@ -1228,7 +1228,7 @@
   "6d174cf99f221cb3": "Zohar",
   "706c24653c709bb8": "y Zohar",
   "e4412668aac8ee57": "y Zohar",
-  "3cb99ba0dea80594": "rojizas",
+  "3cb99ba0dea80594": "leonadas",
   "69503eba34170e70": "y naves",
   "a045b226ee34eb03": "y una nave",
   "101c0af8c5ce9be1": "<las> naves de",
@@ -2563,5 +2563,8 @@
   "69321b882582a09b": {
    "38013001.5": "abierta"
   }
+ },
+ "notes": {
+  "fe2f093481aa3c27": "Spelled as in English: Spanish \"cobras\" (cobras, the English gloss)."
  }
 }
