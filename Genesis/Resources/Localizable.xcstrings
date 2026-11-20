@@ -778,6 +778,22 @@
         }
       }
     },
+    "%lld on this device": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld en este dispositivo"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld neste dispositivo"
+          }
+        }
+      }
+    },
     "%lld pages left in chapter": {
       "localizations": {
         "es": {

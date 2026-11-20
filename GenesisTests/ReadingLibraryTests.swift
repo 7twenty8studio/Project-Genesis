@@ -82,6 +82,47 @@ struct ReadingLibraryTests {
         #expect(fromEnglish[0].translations.map(\.id) == ["KJV", "WEB", "ASV"], "The library's order within a language")
     }
 
+    @Test func homeShowsOneLanguageAtATime() throws {
+        let rv = try offer("RV1909", name: "Reina-Valera 1909", language: "es").translation
+        let livro = try offer("OL", name: "O Livro", language: "pt-PT").translation
+        let english = try ["BSB", "NIV", "NASB"].map { try offer($0, name: $0).translation }
+        let installed = Translation.bundled + english + [rv, livro]
+        let englishCount = installed.filter { $0.baseLanguage == "en" }.count
+
+        // Opens on the Bible being read's language, that Bible first.
+        let home = ReadingLibrary.shelf(installed, current: .web, language: nil, expanded: false)
+        #expect(home.language == "en")
+        #expect(home.groups.map(\.language) == ["en", "es", "pt"])
+        #expect(home.showsLanguages)
+        let shownIDs = home.shown.map(\.id)
+        #expect(shownIDs.first == "WEB", "The Bible being read leads")
+        #expect(home.shown.count == ReadingLibrary.shelfLimit)
+        #expect(home.hiddenCount == englishCount - ReadingLibrary.shelfLimit)
+
+        let all = ReadingLibrary.shelf(installed, current: .web, language: nil, expanded: true)
+        #expect(all.shown.count == englishCount)
+        #expect(all.hiddenCount == 0)
+
+        // Another language: only its Bibles; O Livro under Português.
+        let portuguese = ReadingLibrary.shelf(installed, current: .web, language: "pt-PT", expanded: false)
+        #expect(portuguese.language == "pt")
+        #expect(portuguese.shown.map(\.id) == ["BLIVRE", "OL"])
+
+        // A language with no Bible left falls back to the current one's.
+        let gone = ReadingLibrary.shelf(installed, current: .web, language: "de", expanded: false)
+        #expect(gone.language == "en")
+    }
+
+    @Test func homeNeverHidesJustOneBible() throws {
+        let extra = try offer("BSB", name: "Berean Standard Bible").translation
+        let niv = try offer("NIV", name: "NIV").translation
+        let installed = [Translation.kjv, .web, .asv, extra, niv]
+        let shelf = ReadingLibrary.shelf(installed, current: .kjv, language: nil, expanded: false, limit: 4)
+        #expect(shelf.shown.count == 5, "Five Bibles: all shown rather than hiding one")
+        #expect(shelf.hiddenCount == 0)
+        #expect(!shelf.showsLanguages, "One language: no picker")
+    }
+
     @Test func opensOnTheBibleBeingRead() {
         let available = ["en", "es", "pt"]
         #expect(ReadingLibrary.defaultLanguage(current: .kjv, appLanguage: "pt", available: available) == "en", "The Bible's language, not the app's")

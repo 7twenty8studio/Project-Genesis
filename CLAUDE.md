@@ -589,10 +589,14 @@ shares; README.md has the architecture.
   app's own language, and groups regions under their language (O Livro,
   pt-PT, under Português, its row saying "Português (Portugal)",
   `AppLanguage.regionalName`). The reader's quick Bible menu (and its Read
-  in Parallel list) and Home's Bibles on This Device list every installed
-  Bible grouped by language, the current Bible's first
-  (`ReadingLibrary.groups`); they're for switching, so nothing is
-  filtered out there. Also
+  in Parallel list) lists every installed Bible grouped by language, the
+  current Bible's first (`ReadingLibrary.groups`); it's for switching, so
+  nothing is filtered out there. Home's Bibles on This Device
+  (`HomeBiblesSection`) shows one language at a time: language chips with
+  counts (only with two or more languages; they wrap, never scroll away),
+  then that language's Bibles, the one being read first, four at a time
+  with Show all (`ReadingLibrary.shelf`, never hides just one); it goes
+  back to the current Bible's language when that changes. Also
   `TranslationGuideView` ("Which Bible is right for me?"). Logic in
   `ReadingLibrary`; details (`TranslationProfile`: approach, reading level,
   rights, popularity) come from bible_translations columns, falling back to
