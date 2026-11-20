@@ -102,7 +102,8 @@ struct WordStudyTests {
         let portuguese = try WordStudyRepository(url: url, language: "pt")
         #expect(english.commentaryLanguage == nil)
         #expect(spanish.commentaryLanguage == "es")
-        #expect(try WordStudyRepository(url: url, language: "fr").commentaryLanguage == nil)
+        let french = try WordStudyRepository(url: url, language: "fr")
+        #expect(french.commentaryLanguage == nil)
 
         let light = VerseID(book: 1, chapter: 1, verse: 3)
         let henry = try #require(try english.commentary(for: light).first)
@@ -130,8 +131,10 @@ struct WordStudyTests {
         let john = try #require(try spanish.bookIntroduction(43))
         #expect(john.isTranslated)
         #expect(john.text.hasPrefix("El apóstol y evangelista Juan"))
-        #expect(try english.bookIntroduction(43)?.isTranslated == false)
-        #expect(try portuguese.introduction(toBook: 43)?.hasPrefix("O apóstolo e evangelista João") == true)
+        let englishJohn = try english.bookIntroduction(43)
+        let portugueseJohn = try portuguese.introduction(toBook: 43)
+        #expect(englishJohn?.isTranslated == false)
+        #expect(portugueseJohn?.hasPrefix("O apóstolo e evangelista João") == true)
 
         // Every section in both languages.
         let genesisOne = try spanish.commentary(inChapter: ChapterID(book: 1, chapter: 1))
@@ -165,10 +168,13 @@ struct WordStudyTests {
         let spanish = try WordStudyRepository(url: url, language: "es")
         let portuguese = try WordStudyRepository(url: url, language: "pt")
         // "thou" is singular, "ye" plural.
-        #expect(try spanish.entry(strongs: "H0607")?.gloss == "tú")
-        #expect(try portuguese.entry(strongs: "H0608")?.gloss == "vós")
+        let thou = try spanish.entry(strongs: "H0607")
+        let ye = try portuguese.entry(strongs: "H0608")
+        #expect(thou?.gloss == "tú")
+        #expect(ye?.gloss == "vós")
         // "late fig", not an early one.
-        #expect(try portuguese.entry(strongs: "G3653")?.gloss == "figo tardio")
+        let lateFig = try portuguese.entry(strongs: "G3653")
+        #expect(lateFig?.gloss == "figo tardio")
         // STEPBible's garbled "of person(s) pron." is the personal pronoun.
         let yo = try #require(try spanish.entry(strongs: "G1473"))
         #expect(yo.definition.contains("pron. personal\nyo."))
