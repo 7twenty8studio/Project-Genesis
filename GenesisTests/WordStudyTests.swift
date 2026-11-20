@@ -118,15 +118,16 @@ struct WordStudyTests {
         #expect(luz.start == henry.start && luz.end == henry.end)
         #expect(luz.isTranslated)
         #expect(luz.title != henry.title)
-        // The RV1909's own words, quoted verbatim, in italics.
-        #expect(luz.quotations.contains("dijo Dios: Sea la luz"))
+        // The RV1909's own words, quoted verbatim, in italics: as they
+        // stand in the text, so a quote opening a sentence has its capital.
+        #expect(luz.quotations.contains("Dijo Dios: Sea la luz"))
         #expect(luz.quotationLanguage == "es")
-        let quoted = try #require(luz.paragraphs.first { $0.contains("dijo Dios: Sea la luz") })
+        let quoted = try #require(luz.paragraphs.first { $0.contains("Dijo Dios: Sea la luz") })
         let marked = luz.attributed(quoted)
-        let range = try #require(marked.range(of: "dijo Dios: Sea la luz"))
+        let range = try #require(marked.range(of: "Dijo Dios: Sea la luz"))
         #expect(marked[range].inlinePresentationIntent == .emphasized)
         let haja = try #require(try portuguese.commentary(for: light).first)
-        #expect(haja.quotations.contains("disse Deus: Haja luz"))
+        #expect(haja.quotations.contains("Disse Deus: Haja luz"))
         #expect(WordStudyRepository.quotationCredit(language: "pt")?.contains("Bíblia Livre") == true)
         #expect(WordStudyRepository.quotationCredit(language: "en") == nil)
 
