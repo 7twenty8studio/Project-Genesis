@@ -44,6 +44,7 @@ number; the same Bible references, book, chapter and verse, in order
 verbatim; no English left; a sensible length.
 add_commentary_translations.py uses only entries that pass.
 """
+import json
 import os
 import re
 import sqlite3
@@ -94,6 +95,42 @@ def english_references(text, book):
 
 
 # MARK: Source
+
+def source_fixes():
+    """{section id: [(old, new)]} from translations/commentary/source_fixes.json."""
+    path = os.path.join(OUT, "source_fixes.json")
+    fixes = {}
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as handle:
+            for f in json.load(handle)["fixes"]:
+                fixes.setdefault(f["id"], []).append((f["old"], f["new"]))
+    return fixes
+
+
+def fix_text(cid, text, fixes=None):
+    """A section's English with its source fixes applied (once; fixed text is left)."""
+    for old, new in (fixes if fixes is not None else source_fixes()).get(cid, []):
+        if old in text:
+            assert text.count(old) == 1, (cid, old)
+            text = text.replace(old, new)
+    return text
+
+
+def fix_database(path=None):
+    """Writes the source fixes into WordStudy.sqlite's commentary (idempotent),
+    so English readers get the same text; returns the changed section count."""
+    fixes = source_fixes()
+    db = sqlite3.connect(path or WORDSTUDY)
+    changed = 0
+    for cid in fixes:
+        row = db.execute("SELECT text FROM commentary WHERE id = ? AND source = 'mhcc'", (cid,)).fetchone()
+        if row and fix_text(cid, row[0], fixes) != row[0]:
+            db.execute("UPDATE commentary SET text = ? WHERE id = ?", (fix_text(cid, row[0], fixes), cid))
+            changed += 1
+    db.commit()
+    db.close()
+    return changed
+
 
 def source_entries():
     """[(kind, id, book, start, end, title, text)] in Bible order."""

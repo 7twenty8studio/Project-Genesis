@@ -156,7 +156,7 @@
   "7e19be946aaa562a": "mi seno",
   "f067cf188c2867d0": "en un seno",
   "d5cc1459c85c8c00": "siendo severa",
-  "cdef5e00377c82ac": "severa",
+  "cdef5e00377c82ac": "severo",
   "8469fa50e66e98c4": "han sido cortados",
   "d04104f64fd2ffd7": "dividiendo",
   "2d8a8e21c17bf2b6": "arqueros",
@@ -2839,6 +2839,9 @@
   "66659e11430e5dde": {
    "37001004.9": "[está] desolada",
    "37001009.19": "[está] desolada"
+  },
+  "13e9539ae858db84": {
+   "19058004.8": "sorda"
   }
  }
 }

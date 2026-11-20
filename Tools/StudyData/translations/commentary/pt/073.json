@@ -315,7 +315,7 @@
   {
    "kind": "section",
    "id": 3194,
-   "sha256": "80b11643844f77092e39a74f9d8a1b040f070cba534fd2e0d189a33fcd44a355",
+   "sha256": "ce9367d45eec78101dc1cc33c3c9148862870a8dbe5eb8cc40872595cc6e73ac",
    "title": "O nascimento de João Batista.",
    "text": "Nestes versículos temos um relato do nascimento de João Batista e da grande alegria entre todos os parentes da família. Ele será chamado Joanã, ou \"Gracioso\", porque introduzirá o evangelho de Cristo, no qual a graça de Deus brilha com mais esplendor. Zacarias recuperou a fala. A incredulidade fechou a sua boca, e o crer a abriu de novo: ele crê, por isso fala. Quando Deus abre os nossos lábios, a nossa boca deve anunciar o seu louvor; e é melhor ficar sem fala do que não a usar para louvar a Deus. Diz-se: A mão do Senhor estava com João, operando. Deus tem modos de operar nas crianças na sua infância que não podemos explicar. Devemos observar os tratos de Deus e esperar o desfecho.",
    "quotes": [
@@ -325,8 +325,8 @@
     }
    ],
    "flags": [
-    "English 'he believers, therefore he speaks' is a typo for 'believes' (echoing 2Cor 4:13); translated as 'ele crê, por isso fala'.",
-    "quote 0: Henry's 'was working with John' (KJV 'was with him'); the Bíblia Livre's 'a mão do Senhor estava com' kept, with 'João, operando' for Henry's wording."
+    "quote 0: Henry's 'was working with John' (KJV 'was with him'); the Bíblia Livre's 'a mão do Senhor estava com' kept, with 'João, operando' for Henry's wording.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

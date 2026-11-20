@@ -61,20 +61,24 @@
   {
    "kind": "section",
    "id": 188,
-   "sha256": "1e39330931447b63d4c04f0ccbdf787cec7072c27ae1508d6417158f0873f8ee",
+   "sha256": "bb5164d157f0109deaf3ad02ce354b56e1c8a791122ca8a3207d7dbc4843493b",
    "title": "Zabulón, Isacar, Dan.",
    "text": "Acerca de Zabulón: si la profecía dice que Zabulón será para puerto de navíos, podemos estar seguros de que la Providencia lo establecerá así. Dios señala los términos de nuestra habitación. Es nuestra sabiduría y nuestro deber acomodarnos a nuestra suerte y sacarle provecho; si Zabulón habita junto al puerto del mar, sea para puerto de navíos. Acerca de Isacar: vio que la tierra era deleitosa, pues no solo ofrecía vistas agradables, sino frutos agradables que recompensaban sus fatigas. Veamos nosotros, con ojos de fe, que el descanso celestial es bueno, y que aquella tierra de promisión es deleitosa; esto hará ligeros nuestros servicios presentes. Dan, con arte, astucia y sorpresa, ganaría ventajas sobre sus enemigos, como una serpiente que muerde el talón del viajero. Jacob, casi agotado y a punto de desfallecer, se alivia con estas palabras: \"¡Tu salud esperé, oh Jehová!\" La salvación que esperaba era Cristo, la Simiente prometida; ahora que iba a ser reunido con su pueblo, suspira por Aquel a quien se congregarán los pueblos. Declaró claramente que buscaba el cielo, la patria mejor, He 11:13, 14. Ahora que va a gozar de la salvación, se consuela de haber esperado la salvación. A Cristo, como nuestro camino al cielo, hay que esperar en él; y el cielo, como nuestro descanso en Cristo, hay que esperarlo. Es el consuelo de un santo moribundo haber esperado así la salvación del Señor; porque entonces tendrá lo que ha estado esperando.",
    "quotes": [
     {
      "n": 0,
+     "text": "para puerto de navíos"
+    },
+    {
+     "n": 1,
      "text": "Tu salud esperé, oh Jehová"
     }
    ],
    "flags": [
     "unlisted quotations, RV1909: Gn 49:13 ('será para puerto de navíos') and Gn 49:15 ('que la tierra era deleitosa').",
-    "Source oddity: 'dwell at the heaven of the sea' is 'haven'; rendered 'junto al puerto del mar'.",
     "Quote 0: the RV1909 says 'salud' (old sense 'salvation'); Henry's following 'salvation' rendered 'salvación'. 'to whom the gathering of the people shall be' echoes Gn 49:10 (RV1909 'á él se congregarán los pueblos').",
-    "Title: source has 'Dn' (abbreviation slip for Dan)."
+    "Title: source has 'Dn' (abbreviation slip for Dan).",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -159,7 +163,7 @@
   {
    "kind": "section",
    "id": 195,
-   "sha256": "073c2fb3f6002419e6f7fc1592bd6e3dc2899356fc6e91fbcea55d2b4a2b3ddb",
+   "sha256": "dd45b38432b1aad7b78584c4959cd7622286249a68ad8b42a1b4c72e0d85e6bc",
    "title": "La orden de José acerca de sus huesos; su muerte.",
    "text": "Habiendo honrado José a su padre, sus días fueron largos en la tierra que, por el momento, Dios le había dado. Cuando vio acercarse su muerte, consoló a sus hermanos con la seguridad de su regreso a Canaán a su debido tiempo. Debemos consolar a otros con los mismos consuelos con que nosotros hemos sido consolados por Dios, y animarlos a descansar en las promesas que son nuestro sostén. Como confesión de su propia fe y confirmación de la de ellos, les encarga que guarden sus restos sin sepultar hasta aquel día glorioso en que se establecieran en la tierra de la promesa. Así José, por la fe en la doctrina de la resurrección y en la promesa de Canaán, dió mandamiento acerca de sus huesos. Esto mantendría viva su esperanza de una pronta salida de Egipto, y les pondría a Canaán continuamente en la mente. Esto uniría también a la posteridad de José con sus hermanos. La muerte, así como la vida, de este eminente santo fue verdaderamente excelente; ambas nos dan un fuerte estímulo para perseverar en el servicio de Dios. ¡Qué dicha emprender temprano la carrera celestial, continuar en ella con constancia y acabar la carrera con gozo! Esto hizo José, y esto podemos hacer también nosotros. Aun cuando los dolores de la muerte estén sobre nosotros, si hemos confiado en aquel en quien confiaron los patriarcas, los profetas y los apóstoles, no necesitamos temer decir: \"Mi carne y mi corazón desfallecen: mas la roca de mi corazón y mi porción es Dios para siempre\".",
    "quotes": [
@@ -170,8 +174,8 @@
    ],
    "flags": [
     "unlisted quotations, RV1909: He 11:22 ('dió mandamiento acerca de sus huesos') and Hch 20:24 ('acabe mi carrera con gozo', rendered 'acabar la carrera con gozo').",
-    "Source oddity: 'How happy to set our early' (a word missing, 'set out early'); rendered 'emprender temprano'.",
-    "Quote 0 (Sal 73:26): the RV1909 says 'la roca de mi corazón' where the KJV has 'the strength of my heart'."
+    "Quote 0 (Sal 73:26): the RV1909 says 'la roca de mi corazón' where the KJV has 'the strength of my heart'.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -237,12 +241,13 @@
   {
    "kind": "section",
    "id": 200,
-   "sha256": "b2a77de0ab49e897a6829f57555fb9f17c1f4d2631566e7d829075577fe6138e",
+   "sha256": "82f857b81303e5ad29e29778822dc63179106ed62ad238ca34b9b199fff7f52b",
    "title": "Es hallado y criado por la hija de Faraón.",
    "text": "Venid, ved el lugar donde yacía aquel gran hombre, Moisés, cuando era niño; era una canasta de juncos a la orilla del río. Si lo hubieran dejado allí mucho tiempo, habría perecido. Pero la Providencia trae a la hija de Faraón al lugar donde yacía este pobre niño desamparado, e inclina su corazón a compadecerse de él, cosa que ella se atreve a hacer cuando ningún otro se atrevía. El cuidado de Dios por nosotros en nuestra infancia debe ser mencionado a menudo por nosotros para su alabanza. Faraón procuró cruelmente destruir a Israel, pero su propia hija tuvo compasión de un niño hebreo, y no solo eso, sino que, sin saberlo, preservó al libertador de Israel, y proveyó a Moisés de una buena nodriza, su propia madre. Para que tuviera una nodriza hebrea, la hermana de Moisés llevó a la madre al lugar de nodriza. Moisés fue tratado como hijo de la hija de Faraón. Muchos que por su nacimiento son oscuros y pobres, por sorprendentes sucesos de la Providencia son elevados en el mundo, para que los hombres sepan que Dios gobierna.",
    "quotes": [],
    "flags": [
-    "Source oddity: 'Pharoah's' (typo) in the English."
+    "Source oddity: 'Pharoah's' (typo) in the English.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -415,7 +420,7 @@
   {
    "kind": "section",
    "id": 212,
-   "sha256": "73f9eb85f7ea26012e4b5ad62d2ad6b04e4c153948e1af0df1a75570e5b98858",
+   "sha256": "05ae89f0b2603701827153393fe321d237e64120a2b48331387b766bf7112de3",
    "title": "El disgusto de Faraón; aumenta las tareas de los israelitas.",
    "text": "Dios reconocerá a su pueblo, aunque sea pobre y despreciado, y hallará un tiempo para defender su causa. Faraón trató con desprecio todo lo que había oído. No tenía conocimiento de Jehová, ni temor de él, ni amor a él, y por eso se negó a obedecerle. Así el orgullo, la ambición, la codicia y la sagacidad política de Faraón lo endurecieron para su propia destrucción. Lo que Moisés y Aarón piden es muy razonable: solo ir camino de tres días por el desierto, y eso con un buen propósito. Sacrificaremos á Jehová nuestro Dios. Faraón fue muy irrazonable al decir que el pueblo estaba ocioso, y que por eso hablaba de ir a sacrificar. Así los calumnia, para tener un pretexto para aumentar sus cargas. Hasta el día de hoy hallamos a muchos más dispuestos a criticar a sus vecinos por dedicar al servicio de Dios unas pocas horas sacadas de sus ocupaciones mundanas, que a culpar a otros que dan el doble de tiempo a placeres pecaminosos. La orden de Faraón fue bárbara. Moisés y Aarón mismos debían ir a las cargas. Los perseguidores se complacen en echar desprecio y penalidades sobre los ministros. Había que hacer la cuota habitual de ladrillos, sin la provisión habitual de paja para mezclar con el barro. Así se cargaba más trabajo sobre los hombres, de modo que, si lo cumplían, quedarían quebrantados por el trabajo; y si no, serían castigados.",
    "quotes": [
@@ -434,7 +439,7 @@
     }
    ],
    "flags": [
-    "Source oddity: 'wordly business' (typo for worldly)."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

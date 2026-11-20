@@ -21,9 +21,9 @@
   {
    "kind": "section",
    "id": 1403,
-   "sha256": "64748d741e01dbdb5384fa54daa2c34bcdaa7930cd56a91511219d13cff0eeb0",
+   "sha256": "13b1b10c8fa21e809334009e99dec2f9b05ea4a6622026f8fa9ce60bb1b035a6",
    "title": "Los hijos de los hombres puestos a prueba, y la felicidad del pueblo piadoso.",
-   "text": "Óyeme por amor de tu misericordia: ese es nuestro mejor argumento. El que no quiera pedir bendiciones tales como el perdón, la justicia que justifica y la vida eterna, ha de perecer por falta de ellas. ¡Ay, que tantos hagan una elección tan terrible! El salmista advierte contra el pecado. Mantened una santa reverencia ante la gloria y la majestad de Dios. Tenéis mucho que decir a vuestro corazón; se puede hablar con él, no quede sin decirse. Examinadlo por medio de una seria reflexión sobre vosotros mismos; fijad vuestros pensamientos en lo que es bueno, y aferraos a ello. Considerad vuestros caminos, y antes de entregaros al sueño por la noche, examinad vuestra conciencia respecto de lo que habéis hecho durante el día; en particular lo que habéis hecho mal, para que os arrepintáis de ello. Cuando despertéis en la noche, meditad en Dios y en las cosas que pertenecen a vuestra paz. En un lecho de enfermedad, en particular, debemos considerar nuestros caminos. Estad quietos. Cuando hayáis hecho una pregunta a la conciencia, sed serios, guardad silencio, esperad una respuesta. No abráis la boca para excusar el pecado. Toda confianza debe ser […] respuesta. No abráis la boca para excusar el pecado. Toda confianza solamente: por tanto, después de mandar los sacrificios de justicia, el salmista dice: Confiad en Jehová.",
+   "text": "Óyeme por amor de tu misericordia: ese es nuestro mejor argumento. El que no quiera pedir bendiciones tales como el perdón, la justicia que justifica y la vida eterna, ha de perecer por falta de ellas. ¡Ay, que tantos hagan una elección tan terrible! El salmista advierte contra el pecado. Mantened una santa reverencia ante la gloria y la majestad de Dios. Tenéis mucho que decir a vuestro corazón; se puede hablar con él, no quede sin decirse. Examinadlo por medio de una seria reflexión sobre vosotros mismos; fijad vuestros pensamientos en lo que es bueno, y aferraos a ello. Considerad vuestros caminos, y antes de entregaros al sueño por la noche, examinad vuestra conciencia respecto de lo que habéis hecho durante el día; en particular lo que habéis hecho mal, para que os arrepintáis de ello. Cuando despertéis en la noche, meditad en Dios y en las cosas que pertenecen a vuestra paz. En un lecho de enfermedad, en particular, debemos considerar nuestros caminos. Estad quietos. Cuando hayáis hecho una pregunta a la conciencia, sed serios, guardad silencio, esperad una respuesta. No abráis la boca para excusar el pecado. Toda confianza debe ponerse en la libre gracia de Dios, que justifica al verdadero convertido, solo por la fe: por tanto, después de mandar los sacrificios de justicia, el salmista dice: Confiad en Jehová.",
    "quotes": [
     {
      "n": 0,
@@ -31,22 +31,22 @@
     }
    ],
    "flags": [
-    "The English is garbled near the end and repeats itself: “All confidence must be pan answer. Open not the mouth to excuse sin. All confidence only:” (a line of the source seems to have been lost and part of the previous sentence duplicated; the sense is probably “All confidence must be placed in God only”). Translated as it stands, nothing dropped; the stray “pan” (which reads as Spanish “bread”) is marked “[…]” as lost text.",
     "“You have a great deal to say to your hearts, they may be spoken with, let it not be unsaid” is obscure; translated literally.",
     "Two sentences begin with a lower-case “when” in the English; kept lower-case (“cuando”).",
-    "“Be still” (Ps 4:4) rendered “Estad quietos”; the RV1909 has “desistid”."
+    "“Be still” (Ps 4:4) rendered “Estad quietos”; the RV1909 has “desistid”.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
    "kind": "section",
    "id": 1404,
-   "sha256": "dfa19818dee4d95a414ed39575263e0e98129632001e7a00a7b4aa6939571316",
+   "sha256": "7861c0624ca1d7571a0c18fcc3d7bc81c8f7ac53369a5d2499dfa9170d8811ab",
    "title": "El favor de Dios es la felicidad.",
    "text": "La gente mundana busca el bien, no el bien supremo; todo lo que quiere es el bien exterior, el bien presente, el bien parcial: buena comida, buena bebida, un buen negocio y una buena hacienda; pero ¿qué valen todas estas cosas? Cualquier bien basta para la mayoría de los hombres, pero un alma llena de gracia no se conformará así. Señor, concédenos tu favor, y haz que sepamos que lo tenemos, y no deseamos nada más; seamos asegurados de tu misericordia, y quedaremos satisfechos con ella. Muchos buscan la felicidad, pero David la había hallado. Cuando Dios pone gracia en el corazón, pone alegría en el corazón. Así consolado, tenía lástima del pecador más próspero, pero ni lo envidiaba ni lo temía. Encomienda todos sus asuntos a Dios, y está preparado para recibir con gusto su santa voluntad. Pero la salvación está solo en Cristo; ¿dónde se presentarán los que lo desprecian como su Mediador, y lo injurian en sus discípulos? Que tiemblen, y no pequen más contra el único remedio.",
    "flags": [
-    "“Wordly people” is a typo for “Worldly”; rendered “La gente mundana”.",
     "The English drops a “we” (“let us be satisfied of thy loving-kindness, and will be satisfied with it”); rendered as meant.",
-    "“stand in awe, and … sin” echoes Ps 4:4 (RV1909 “Temblad, y no pequéis”); translated in Henry's third person."
+    "“stand in awe, and … sin” echoes Ps 4:4 (RV1909 “Temblad, y no pequéis”); translated in Henry's third person.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -176,12 +176,12 @@
   {
    "kind": "section",
    "id": 1414,
-   "sha256": "764e8ce89fa5fe896fbf9f5e87f4324799628ffde7db83a3b5b0628bd19b4fa0",
+   "sha256": "c11c8497a63acf0d27651b49da741ef415ed6b4a15ae89552ac1ba79c77fc9cc",
    "title": "Y por motivos para alabarle.",
-   "text": "Los que creen que Dios es digno de ser en gran manera alabado, no solo desean alabarle mejor ellos mismos, sino que desean que otros se unan a ellos. Viene un día en que se verá que él no ha olvidado el clamor de los humildes; ni el clamor de su sangre, ni el clamor de sus oraciones. Nunca somos abatidos tan bajo, tan cerca de la muerte, que Dios no pueda levantarnos. Si nos ha salvado de la muerte espiritual y eterna, podemos esperar por ello que en todas nuestras angustias será para nosotros un pronto auxilio. La providencia soberana de Dios con frecuencia dispone las cosas de tal modo que los perseguidores y opresores son llevados a la ruina por los mismos proyectos que formaron para destruir al pueblo de Dios. Los borrachos se matan a sí mismos; los pródigos se empobrecen a sí mismos; los contenciosos atraen el mal sobre sí mismos: así los pecados de los hombres pueden leerse en su castigo, y se hace claro a todos que la destrucción de los pecadores procede de ellos mismos. Toda maldad vino originalmente del infierno con el maligno; y los que continúan en el pecado han de ir a ese lugar de tormento. El verdadero estado, tanto de las naciones como de los individuos, puede estimarse correctamente por esta sola regla: si en sus hechos se acuerdan de Dios o lo olvidan. David anima al pueblo de Dios a esperar su salvación, aunque se demore mucho. Dios hará ver que nunca los olvidó: no es posible que lo haga. Es extraño que el hombre, polvo en sí y en torno a sí, necesite todavía alguna aflicción aguda, alguna severa visitación de Dios, para llevarlo al conocimiento de sí mismo y hacerle sentir quién y qué es.",
+   "text": "Los que creen que Dios es digno de ser en gran manera alabado, no solo desean alabarle mejor ellos mismos, sino que desean que otros se unan a ellos. Viene un día en que se verá que él no ha olvidado el clamor de los humildes; ni el clamor de su sangre, ni el clamor de sus oraciones. Nunca somos abatidos tan bajo, tan cerca de la muerte, que Dios no pueda levantarnos. Si nos ha salvado de la muerte espiritual y eterna, podemos esperar por ello que en todas nuestras angustias será para nosotros un pronto auxilio. La providencia soberana de Dios con frecuencia dispone las cosas de tal modo que los perseguidores y opresores son llevados a la ruina por los mismos proyectos que formaron para destruir al pueblo de Dios. Los borrachos se matan a sí mismos; los pródigos se empobrecen a sí mismos; los contenciosos atraen el mal sobre sí mismos: así los pecados de los hombres pueden leerse en su castigo, y se hace claro a todos que la destrucción de los pecadores procede de ellos mismos. Toda maldad vino originalmente del infierno con el maligno; y los que continúan en el pecado han de ir a ese lugar de tormento. El verdadero estado, tanto de las naciones como de los individuos, puede estimarse correctamente por esta sola regla: si en sus hechos se acuerdan de Dios o lo olvidan. David anima al pueblo de Dios a esperar su salvación, aunque se demore mucho. Dios hará ver que nunca los olvidó: no es posible que lo haga. Es extraño que el hombre, polvo en su origen, pecador por su caída, a quien todo lo que hay en él y en torno a él le recuerda continuamente ambas cosas, necesite todavía alguna aflicción aguda, alguna severa visitación de Dios, para llevarlo al conocimiento de sí mismo y hacerle sentir quién y qué es.",
    "flags": [
-    "The English reads “dust in his and about him”, apparently “in him”; rendered “polvo en sí y en torno a sí”.",
-    "Echoes of Ps 48:1 (“digno de ser en gran manera alabado”), Ps 9:12 (RV1909 “no se olvidó del clamor de los pobres”; Henry “the humble”, kept as “humildes”) and Ps 46:1 (“pronto auxilio”); Henry's wording kept around them."
+    "Echoes of Ps 48:1 (“digno de ser en gran manera alabado”), Ps 9:12 (RV1909 “no se olvidó del clamor de los pobres”; Henry “the humble”, kept as “humildes”) and Ps 46:1 (“pronto auxilio”); Henry's wording kept around them.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -244,12 +244,12 @@
   {
    "kind": "section",
    "id": 1419,
-   "sha256": "2653675cef2b18227b0c8aa403511aa1c273f06b30a59305de9ba0b9deed155c",
+   "sha256": "c38b6c7aacab35519cc49dfefe75c9544a6df283df08ce82c544a4d6fe66f82b",
    "title": "El salmista se queja de que Dios se ha retirado por largo tiempo. Ora fervientemente pidiendo consuelo. Se asegura de una respuesta de paz.",
    "text": "Dios a veces esconde su rostro, y deja a sus propios hijos a oscuras en cuanto a su parte en él; y esto les duele más que cualquier tribulación exterior. Pero las preocupaciones ansiosas son cargas pesadas con que los creyentes a menudo se cargan más de lo necesario. El pan de dolores es a veces el pan cotidiano del santo; nuestro mismo Maestro fue varón de dolores. Es una tentación común, cuando la tribulación dura mucho, pensar que durará siempre. Los que han estado mucho tiempo sin gozo comienzan a estar sin esperanza. Nunca debemos permitirnos otras quejas que las que nos lleven de rodillas. Nada es más mortal para el alma que la falta del favor de Dios; nada más vivificante que su regreso. Los cambios repentinos y deleitosos en el libro de los Salmos son a menudo muy notables. Pasamos de la profundidad del abatimiento a la cumbre de la confianza y el gozo religiosos. Así es aquí, v. 5. Todo es sombrío abatimiento en el v. 4; pero aquí la mente del adorador desalentado se eleva por encima de todos sus temores angustiosos, y se arroja, sin reserva, a la misericordia y al cuidado de su divino Redentor. Ved el poder de la fe, y cuán bueno es acercarse a Dios. Si llevamos nuestras preocupaciones y aflicciones al trono de la gracia, y las dejamos allí, podemos irnos como Ana, y no se dirá más que nuestro semblante está triste, 1 S 1:18. La misericordia de Dios es el sostén de la fe del salmista. Hallando que tengo eso en que confiar, soy consolado, aunque no tengo ningún mérito propio. Su fe en la misericordia de Dios llenó su corazón de gozo en su salvación; porque el gozo y la paz vienen creyendo. Me ha hecho bien. Por la fe estaba tan seguro de la salvación como si ya se hubiera completado. De esta manera los creyentes derraman sus oraciones, renunciando a toda esperanza que no sea la misericordia de Dios por la sangre del Salvador; y a veces de repente, otras veces gradualmente, hallarán quitadas sus cargas y restaurados sus consuelos; entonces admiten que sus temores y quejas eran innecesarios, y reconocen que el Señor les ha hecho bien.",
    "flags": [
-    "The English reads “our countenances will be no more said”, a typo for “sad” (1 Sam 1:18, RV1909 “no estuvo más triste”); rendered as meant (“triste”).",
-    "Unlisted quotation of Ps 13:6 in the RV1909's words (“Me ha hecho bien”; KJV “He hath dealt bountifully with me”), echoed again at the end. Also Isa 53:3 (“varón de dolores”) and Rom 15:13 (“gozo y paz … creyendo”)."
+    "Unlisted quotation of Ps 13:6 in the RV1909's words (“Me ha hecho bien”; KJV “He hath dealt bountifully with me”), echoed again at the end. Also Isa 53:3 (“varón de dolores”) and Rom 15:13 (“gozo y paz … creyendo”).",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -332,13 +332,13 @@
   {
    "kind": "section",
    "id": 1423,
-   "sha256": "0f2a65935b24b2432dd0b8c301c843a9cba10f692e7c72ff01c097cf0fdfce30",
+   "sha256": "810503dbf038d7114d1e013ca25a69f2d2898d17a37257dc28a416b6528e1156",
    "title": "La integridad de David.",
-   "text": "Este salmo es una oración. Las oraciones fingidas son infructuosas; pero si nuestro corazón guía nuestras oraciones, Dios las recibirá con su favor. El salmista estaba acostumbrado a orar, de modo que no fueron su angustia y su peligro los que ahora por primera vez lo llevaron a su deber. Y su fe le animaba a esperar que Dios atendería sus oraciones. Una resolución constante y la vigilancia contra los pecados de la lengua serán una buena prueba de nuestra integridad. Consciente de la inclinación del hombre a las obras malas, y de sus propias tentaciones particulares, David había hecho de la palabra de Dios su preservativo de las sendas de Satanás, que llevan a la destrucción. Si evitamos cuidadosamente las sendas del pecado, será muy llevan a la destrucción. Si evitamos cuidadosamente las sendas del pecado, será muy consolador al recordarlo cuando estemos en tribulación. Los que, por la gracia, van por las sendas de Dios, deben orar para que sus pasos sean sustentados en esas sendas. David ora: Señor, sigue sosteniéndome. Los que quieran avanzar y perseverar en los caminos de Dios deben, por la fe y la oración, obtener de él cada día nuevas provisiones de gracia y de fuerza. Muestra tus estupendas misericordias, favores distintivos, no misericordias comunes, sino sé misericordioso conmigo; haz como sueles hacer con los que aman tu nombre.",
+   "text": "Este salmo es una oración. Las oraciones fingidas son infructuosas; pero si nuestro corazón guía nuestras oraciones, Dios las recibirá con su favor. El salmista estaba acostumbrado a orar, de modo que no fueron su angustia y su peligro los que ahora por primera vez lo llevaron a su deber. Y su fe le animaba a esperar que Dios atendería sus oraciones. Una resolución constante y la vigilancia contra los pecados de la lengua serán una buena prueba de nuestra integridad. Consciente de la inclinación del hombre a las obras malas, y de sus propias tentaciones particulares, David había hecho de la palabra de Dios su preservativo de las sendas de Satanás, que llevan a la destrucción. Si evitamos cuidadosamente las sendas del pecado, será muy consolador al recordarlo cuando estemos en tribulación. Los que, por la gracia, van por las sendas de Dios, deben orar para que sus pasos sean sustentados en esas sendas. David ora: Señor, sigue sosteniéndome. Los que quieran avanzar y perseverar en los caminos de Dios deben, por la fe y la oración, obtener de él cada día nuevas provisiones de gracia y de fuerza. Muestra tus estupendas misericordias, favores distintivos, no misericordias comunes, sino sé misericordioso conmigo; haz como sueles hacer con los que aman tu nombre.",
    "flags": [
-    "The English repeats itself (“it will be very lead to destruction. If we carefully avoid the paths of sin, it will be very comfortable”); the repetition is translated as it stands, not dropped.",
     "The English reads “by faith prayer”, apparently “by faith and prayer”; rendered “por la fe y la oración”.",
-    "Unlisted quotation of Ps 17:7 in the RV1909's words (“Muestra tus estupendas misericordias”; KJV “Shew thy marvellous lovingkindness”). Ps 17:5 “hold up my goings” follows the RV1909's “Sustenta mis pasos” (“sus pasos sean sustentados”)."
+    "Unlisted quotation of Ps 17:7 in the RV1909's words (“Muestra tus estupendas misericordias”; KJV “Shew thy marvellous lovingkindness”). Ps 17:5 “hold up my goings” follows the RV1909's “Sustenta mis pasos” (“sus pasos sean sustentados”).",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

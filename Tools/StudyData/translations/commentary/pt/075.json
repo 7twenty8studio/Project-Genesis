@@ -35,7 +35,7 @@
   {
    "kind": "section",
    "id": 3246,
-   "sha256": "3c5417690229c93537c155118f1c76bc3264a95d045ea9d4ee470a0d2795c0a1",
+   "sha256": "db70efa126c1a4d6ffca40952db23c26d625564d0f00e80cb03fc060c4ffeb28",
    "title": "Advertência contra a cobiça; a parábola do homem rico.",
    "text": "O reino de Cristo é espiritual, e não deste mundo. O cristianismo não se intromete na política; obriga a todos a agir com justiça, mas o domínio mundano não se funda na graça. Não anima a esperar vantagens mundanas pela religião. As recompensas dos discípulos de Cristo são de outra natureza. A cobiça é um pecado contra o qual precisamos ser constantemente advertidos; pois a felicidade e o conforto não dependem da riqueza deste mundo. As coisas do mundo não satisfarão os desejos de uma alma. Eis aqui uma parábola que mostra a loucura dos mundanos carnais enquanto vivem e a sua miséria quando morrem. O caráter descrito é exatamente o de um homem prudente e mundano, que não tem consideração agradecida pela providência de Deus, nem pensamento justo algum sobre a incerteza das coisas humanas, o valor da sua alma ou a importância da eternidade. Quantos, mesmo entre os que se dizem cristãos, apontam caracteres semelhantes como modelos a imitar e como pessoas apropriadas com quem estabelecer relações! Enganamo-nos se pensamos que os pensamentos estão escondidos e que os pensamentos são livres. Quando viu uma grande colheita na sua terra, em vez de agradecer a Deus por ela, ou de se alegrar por poder fazer mais bem, aflige-se. Que farei agora? O mendigo mais pobre da região não poderia ter dito palavra mais ansiosa. Quanto mais os homens têm, mais perplexidade têm com isso. Foi loucura dele pensar em não fazer outro uso da sua abundância senão satisfazer a carne e saciar os apetites sensuais, sem pensamento algum de fazer bem aos outros. Os mundanos carnais são loucos; e vem o dia em que Deus os chamará pelo seu próprio nome, e eles mesmos se chamarão assim. A morte de tais pessoas é miserável em si mesma e terrível para elas. Te pedirão tua alma. Ele reluta em separar-se dela; mas Deus a pedirá, pedirá contas dela, pedi-la-á como alma culpada para ser castigada sem demora. É a loucura da maioria dos homens cuidar e buscar o que é para o corpo e só para o tempo, mais do que o que é para a alma e para a eternidade.",
    "quotes": [
@@ -46,8 +46,8 @@
    ],
    "flags": [
     "'folly of carnal worldling while they live': singular noun with plural verb in the English; translated as plural 'dos mundanos carnais'",
-    "'wordly dominion': typo in the English for 'worldly'; translated 'o domínio mundano'",
-    "'God will call them by their own name': the parable's 'Thou fool' (the Bíblia Livre: 'Louco'); rendered with 'loucos' to keep the link"
+    "'God will call them by their own name': the parable's 'Thou fool' (the Bíblia Livre: 'Louco'); rendered with 'loucos' to keep the link",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -369,11 +369,11 @@
   {
    "kind": "section",
    "id": 3273,
-   "sha256": "4c80a4b58231d9a02344e414c051300bf71f77cb9c8bea7db5a49c34cf6fe766",
+   "sha256": "e1ae88bc17a6a9ef5a412abfd47495a7f289aa8e0cd4f89224d4398f61456129",
    "title": "O chefe impedido pelas suas riquezas.",
    "text": "Muitos têm em si muita coisa digna de louvor e, contudo, perecem por falta de uma só coisa; assim este chefe não pôde suportar as condições de Cristo, que o separariam dos seus bens. Muitos que relutam em deixar Cristo, contudo o deixam. Depois de uma longa luta entre as suas convicções e as suas corrupções, as suas corrupções levam a melhor. Lamentam muito não poderem servir a ambos; mas, se um tem de ser deixado, será o seu Deus, e não o seu ganho mundano. A sua alardeada obediência se verá ser mera aparência exterior; o amor do mundo, de uma forma ou de outra, está na raiz. Os homens são propensos a falar demais do que deixaram e perderam, do que fizeram e sofreram por Cristo, como fez Pedro. Mas antes devemos envergonhar-nos de ter havido algum pesar ou dificuldade em fazê-lo.",
    "flags": [
-    "'wordly gain': typo in the English for 'worldly'; translated 'ganho mundano'"
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

@@ -158,6 +158,20 @@ struct WordStudyTests {
         }
     }
 
+    @Test func commentarySourceFixesShip() throws {
+        // Lines the SWORD module lost or printed twice, restored from an
+        // independent copy (Tools/StudyData/translations/commentary/source_fixes.json).
+        let url = try #require(Bundle.main.url(forResource: "WordStudy", withExtension: "sqlite"))
+        let psalmFour = VerseID(book: 19, chapter: 4, verse: 4)
+        let english = try #require(try WordStudyRepository(url: url).commentary(for: psalmFour).first)
+        #expect(english.text.contains("All confidence must be placed on God's free grace"))
+        #expect(!english.text.contains("pan answer"))
+        let spanish = try #require(try WordStudyRepository(url: url, language: "es").commentary(for: psalmFour).first)
+        #expect(spanish.text.contains("libre gracia de Dios"))
+        let portuguese = try #require(try WordStudyRepository(url: url, language: "pt").commentary(for: psalmFour).first)
+        #expect(portuguese.text.contains("livre graça de Deus"))
+    }
+
     @MainActor @Test func commentaryAboutSheetNamesTheEdition() {
         let about = CommentaryAboutSheet.sentences.joined(separator: " ")
         #expect(about.contains("Concise Commentary on the Whole Bible"))
@@ -185,6 +199,29 @@ struct WordStudyTests {
         let eu = try #require(try portuguese.entry(strongs: "G1473"))
         #expect(eu.definition.contains("pron. pessoal\neu."))
         #expect(!eu.definition.contains("pessoa(s)"))
+    }
+
+    @Test func lexiconQueriesAnswered() throws {
+        // The AI review's open queries settled where the English is clear
+        // (translations/lexicon/ai-review/queries.jsonl).
+        let url = try #require(Bundle.main.url(forResource: "WordStudy", withExtension: "sqlite"))
+        let english = try WordStudyRepository(url: url)
+        let spanish = try WordStudyRepository(url: url, language: "es")
+        let portuguese = try WordStudyRepository(url: url, language: "pt")
+        // Strong's "a plural of 929", not "or". Values are read before
+        // #expect: a try inside it doesn't build with Xcode 27.
+        let behemoth = try english.entry(strongs: "H0930")
+        let behemot = try spanish.entry(strongs: "H0930")
+        #expect(behemoth?.derivation.contains("a plural of 929") == true)
+        #expect(behemot?.derivation.contains("un plural de 929") == true)
+        // Purah is "Phara" in the RV1909 (Judges 7:10), modernized.
+        let purah = try spanish.entry(strongs: "H6513")
+        #expect(purah?.gloss == "Fara")
+        // STEPBible's "bridegroom" for νυμφών, the bride-chamber.
+        let bridechamber = try portuguese.entry(strongs: "G3567")
+        #expect(bridechamber?.gloss == "câmara nupcial")
+        let stylus = try portuguese.entry(strongs: "H8279")
+        #expect(stylus?.gloss == "estilete")
     }
 
     @Test func entriesHoldOnlyTheirOwnArticle() throws {

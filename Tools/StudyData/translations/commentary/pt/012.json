@@ -224,11 +224,12 @@
   {
    "kind": "section",
    "id": 378,
-   "sha256": "e84a2d4af49e587b6b709324d032318254a5dd4ae2b271bfeae33376a6d0aa99",
+   "sha256": "ac560d08e730215963cd73fb07e2f3a13b2306feeb2a679fca7618a7fb7eaa96",
    "title": "A festa das Trombetas; o dia da expiação.",
    "text": "o toque das trombetas representava a pregação do evangelho, pela qual os homens são chamados a se arrepender do pecado e a aceitar a salvação de Cristo, que era significada pelo dia da expiação. Também convidava a alegrar-se em Deus e a tornar-se estrangeiros e peregrinos na terra, o que era indicado pela festa dos Tabernáculos, observada no mesmo mês. No começo do ano, eram chamados por esse som de trombeta a sacudir a sonolência espiritual, a examinar e provar os seus caminhos e a emendá-los. O dia da expiação era o nono dia depois deste; assim eram despertados para se preparar para aquele dia com arrependimento sincero e sério, para que fosse de fato para eles um dia de expiação. Humilhar a nossa alma pelo pecado e fazer a nossa paz com Deus é uma obra que requer o homem inteiro e a mais atenta aplicação da mente. Naquele dia Deus falava de paz ao seu povo e aos seus santos; por isso deviam pôr de lado todos os seus negócios mundanos, para que pudessem ouvir mais claramente aquela voz de gozo e alegria.",
    "flags": [
-    "The English starts with a lower-case \"the\"; kept lower-case (\"o toque\")."
+    "The English starts with a lower-case \"the\"; kept lower-case (\"o toque\").",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -267,19 +268,20 @@
   {
    "kind": "section",
    "id": 382,
-   "sha256": "6703ae610625488eb2ce2be37e15c750b94c342d0167c986b991956c834fd43b",
+   "sha256": "d865014cbe90f281045600a014e8195909562191fd021047a2fa1203f1e25ed4",
    "title": "O sábado de repouso para a terra no sétimo ano.",
    "text": "Todo trabalho devia cessar no sétimo ano, tanto quanto o trabalho diário no sétimo dia. Esses estatutos nos dizem que nos guardemos da ganância, porque a vida de alguém não consiste na abundância dos bens que possui. Devemos exercer uma dependência voluntária da providência de Deus para o nosso sustento; considerar-nos inquilinos ou administradores do Senhor e usar os nossos bens de acordo com isso. Este ano de repouso prefigurava o repouso espiritual em que todos os crentes entram por meio de Cristo. Por meio dele somos aliviados do fardo das preocupações e do trabalho mundanos, sendo ambos santificados e suavizados para nós; e somos capacitados e encorajados a viver pela fé.",
    "flags": [
-    "The English has \"These statues\", read as \"statutes\"; Lc 12:15 follows the Bíblia Livre (unlisted)."
+    "The English has \"These statues\", read as \"statutes\"; Lc 12:15 follows the Bíblia Livre (unlisted).",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
    "kind": "section",
    "id": 383,
-   "sha256": "772fc6d6d7eddac9a05da1ce3992c9a0f31e6d5c843c421002e4500facde0c9d",
+   "sha256": "f39eb59dadd18b967775f4312958ff82764bcdd4d0e97301a0ddb287999a4a74",
    "title": "O jubileu do quinquagésimo ano; proíbe-se a opressão.",
-   "text": "A palavra \"jubileu\" significa um som particularmente vibrante das trombetas de prata. Esse som devia ser feito na tarde do grande dia da expiação; pois a proclamação da liberdade e da salvação do evangelho resulta do sacrifício do Redentor. Ficava estabelecido que as terras não fossem vendidas para fora de suas famílias. Só podiam ser cedidas, por assim dizer, por arrendamento até o ano do jubileu, e então voltavam ao dono ou ao seu herdeiro. Isso tendia a preservar distintas as suas tribos e famílias até a vinda do Messias. A liberdade em que todo homem nascera, se vendida ou perdida, devia voltar no ano do jubileu. Isso era um tipo da redenção por Cristo da escravidão do pecado e de Satanás, e de sermos trazidos de novo à liberdade dos filhos de Deus. Todos os negócios deviam ser feitos segundo esta regra: \"não engane ninguém a seu irmão\", não se aproveitar da ignorância ou da necessidade do outro, \"mas terás temor de teu Deus\". O temor de Deus reinando no coração impediria de fazer mal ao nosso próximo por palavra ou por obra. Deu-se a garantia de que eles seriam grandes ganhadores por observar esses anos de repouso. Se tivermos o cuidado de cumprir o nosso dever, podemos confiar a Deus o nosso consolo. Isso era um milagre para encorajamento de todo o povo de Deus, em todas as épocas, a confiar nele no caminho do dever. Nada se perde pela fé e pela abnegação na obediência. Alguns perguntavam: Que comeremos no sétimo ano? Assim muitos cristãos antecipam males, perguntando o que farão, e temendo prosseguir no caminho do dever. Mas não temos o direito de antecipar males a ponto de nos afligirmos por causa deles. Para as mentes carnais podemos parecer agir de modo absurdo, mas o caminho do dever é sempre o caminho da segurança.",
+   "text": "A palavra \"jubileu\" significa um som particularmente vibrante das trombetas de prata. Esse som devia ser feito na tarde do grande dia da expiação; pois a proclamação da liberdade e da salvação do evangelho resulta do sacrifício do Redentor. Ficava estabelecido que as terras não fossem vendidas para fora de suas famílias. Só podiam ser cedidas, por assim dizer, por arrendamento até o ano do jubileu, e então voltavam ao dono ou ao seu herdeiro. Isso tendia a preservar distintas as suas tribos e famílias até a vinda do Messias. A liberdade em que todo homem nascera, se vendida ou perdida, devia voltar no ano do jubileu. Isso era um tipo da redenção por Cristo da escravidão do pecado e de Satanás, e de sermos trazidos de novo à liberdade dos filhos de Deus. Todos os negócios deviam ser feitos segundo esta regra: \"não engane ninguém a seu irmão\", não se aproveitar da ignorância ou da necessidade do outro, \"mas terás temor de teu Deus\". O temor de Deus reinando no coração impediria de fazer mal ao nosso próximo por palavra ou por obra. Deu-se a garantia de que eles seriam grandes ganhadores por observar esses anos de repouso. Se tivermos o cuidado de cumprir o nosso dever, podemos confiar a Deus o nosso consolo. Não lhes faltaria alimento naquele ano em que não semeavam nem colhiam. Isso era um milagre para encorajamento de todo o povo de Deus, em todas as épocas, a confiar nele no caminho do dever. Nada se perde pela fé e pela abnegação na obediência. Alguns perguntavam: Que comeremos no sétimo ano? Assim muitos cristãos antecipam males, perguntando o que farão, e temendo prosseguir no caminho do dever. Mas não temos o direito de antecipar males a ponto de nos afligirmos por causa deles. Para as mentes carnais podemos parecer agir de modo absurdo, mas o caminho do dever é sempre o caminho da segurança.",
    "quotes": [
     {
      "n": 0,
@@ -295,8 +297,8 @@
     }
    ],
    "flags": [
-    "The English is garbled here: \"This was a miracle for an encouragement to all neither sowed or reaped. This was a miracle for an encouragement to all God's people…\" (text lost, apparently about the sixth year's crop while they \"neither sowed or reaped\"); translated once, as the complete sentence.",
-    "Lv 25:14 in the Bíblia Livre says \"não engane ninguém a seu irmão\" for KJV \"Ye shall not oppress one another\"."
+    "Lv 25:14 in the Bíblia Livre says \"não engane ninguém a seu irmão\" for KJV \"Ye shall not oppress one another\".",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

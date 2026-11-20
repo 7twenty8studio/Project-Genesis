@@ -239,11 +239,11 @@
   {
    "kind": "section",
    "id": 3792,
-   "sha256": "a8350f5d05756b80b43794a8b853b48c671d0c7fc372f843fa3ccb657ec85c1a",
+   "sha256": "28ca94e0bff4452dd8edade221e8a2cde735589ab2de8166bd7fcc05d7ee545e",
    "title": "A fé, o amor e a paciência dos tessalonicenses são sinais evidentes da sua eleição, que se manifestou no poder com que o evangelho chegou a eles.",
    "text": "Assim como todo bem vem de Deus, assim nenhum bem os pecadores podem esperar senão de Deus em Cristo. E o maior bem pode ser esperado de Deus, como nosso Pai, por amor de Cristo. Devemos orar não só por nós mesmos, mas também pelos outros; lembrando-nos deles sem cessar. Onde quer que haja verdadeira fé, ela operará; afetará tanto o coração como a vida. A fé opera pelo amor; mostra-se no amor a Deus e no amor ao nosso próximo. E onde quer que haja uma esperança bem fundada da vida eterna, ela se manifestará pelo exercício da paciência; e é sinal de sinceridade quando, em tudo o que fazemos, procuramos ser aprovados por Deus. Por isto podemos conhecer a nossa eleição: se não apenas falamos das coisas de Deus com os nossos lábios, mas sentimos o seu poder no nosso coração, mortificando as nossas concupiscências, desapegando-nos do mundo e elevando-nos às coisas celestiais. Se o Espírito de Deus não vier com a palavra de Deus, ela será para nós letra morta. Assim eles a receberam pelo poder do Espírito Santo. Estavam plenamente convencidos da sua verdade, de modo a não ser abalados no ânimo por objeções e dúvidas; e estavam dispostos a deixar tudo por Cristo e a arriscar as suas almas e a sua condição eterna na verdade da revelação do evangelho.",
    "flags": [
-    "Source typo \"with out lips\" read as \"with our lips\" (\"com os nossos lábios\")."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -262,12 +262,12 @@
   {
    "kind": "section",
    "id": 3794,
-   "sha256": "3547f0a986c0a8941450b4eb123a1293dae2c2b0d9bf74c864e9633842b7a532",
+   "sha256": "552b6210d981c48451a155ff61d5c1e33e82dd2d45b594a9ea37798d2c588615",
    "title": "O apóstolo lembra aos tessalonicenses a sua pregação e o seu comportamento.",
    "text": "O apóstolo não tinha nenhum propósito mundano na sua pregação. O sofrimento por uma boa causa deve aguçar a santa resolução. O evangelho de Cristo encontrou de início muita oposição; e foi pregado com luta, com esforço na pregação e contra a oposição. E, assim como a matéria da exortação do apóstolo era verdadeira e pura, a maneira de ele falar era sem engano. O evangelho de Cristo destina-se a mortificar as afeições corruptas, e a que os homens sejam trazidos sob o poder da fé. Este é o grande motivo para a sinceridade: considerar que Deus não só vê tudo o que fazemos, mas conhece de longe os nossos pensamentos e sonda o coração. E é deste Deus, que prova os nossos corações, que devemos receber a nossa recompensa. As provas da sinceridade do apóstolo foram que ele evitou a lisonja e a avareza. Evitou a ambição e a vanglória.",
    "flags": [
-    "Source typo \"wordly\" read as \"worldly\" (\"mundano\").",
-    "\"this God who trieth our hearts\" (1 Ts 2:4): the Bíblia Livre's words \"que prova os nossos corações\" were used; unlisted quotation of 1 Ts 2:4."
+    "\"this God who trieth our hearts\" (1 Ts 2:4): the Bíblia Livre's words \"que prova os nossos corações\" were used; unlisted quotation of 1 Ts 2:4.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -291,7 +291,7 @@
   {
    "kind": "section",
    "id": 3797,
-   "sha256": "c8f455d625a3cc9691b37bccb43c4bb4e1b748534fc0a147a22f4b01bb23e3ce",
+   "sha256": "39bf0b92d9239e6f8f61658f3aee607780209a9f1e221435143276defe06572e",
    "title": "A sua alegria por causa deles.",
    "text": "Este mundo não é um lugar onde havemos de estar sempre, ou por muito tempo. No céu as almas santas se encontrarão e nunca mais se separarão. E, embora o apóstolo ainda não pudesse ir até eles, e pensasse que talvez nunca pudesse ir, contudo o nosso Senhor Jesus Cristo virá; nada impedirá isso. Que Deus dê ministros fiéis a todos os que o servem em seu espírito no evangelho do seu Filho, e os envie a todos os que estão em trevas",
    "quotes": [
@@ -301,7 +301,8 @@
     }
    ],
    "flags": [
-    "The source's last sentence ends without a full stop (\"…who are in darkness\"); kept as it stands."
+    "The source's last sentence ends without a full stop (\"…who are in darkness\"); kept as it stands.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

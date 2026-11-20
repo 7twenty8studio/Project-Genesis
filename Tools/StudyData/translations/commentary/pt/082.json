@@ -334,7 +334,7 @@
   {
    "kind": "section",
    "id": 3505,
-   "sha256": "afa811d7f5286830aabc05131baf0cda3e405c8b3ec6c7d574d6613e8317cdae",
+   "sha256": "227fea1318d5da6bfc158478e3ae8ff54cbc30ab9749e1f4fab78aa5801e56c5",
    "title": "Paulo instrui os discípulos de João em Éfeso.",
    "text": "Paulo, em Éfeso, encontrou algumas pessoas religiosas que olhavam para Jesus como o Messias. Não tinham sido levadas a esperar os poderes miraculosos do Espírito Santo, nem estavam informadas de que o evangelho era especialmente a ministração do Espírito. Mas falaram como quem estava pronto a acolher a notícia dele. Paulo mostra-lhes que João nunca pretendeu que os que ele batizava parassem ali, mas disse-lhes que cressem naquele que viria após ele, isto é, em Jesus Cristo. Eles aceitaram com gratidão a revelação, e foram batizados no nome do Senhor Jesus. O Espírito Santo veio sobre eles de maneira surpreendente e avassaladora; falavam em línguas, e profetizavam, como os apóstolos e os primeiros convertidos gentios. Embora não esperemos agora poderes miraculosos, contudo todos os que professam ser discípulos de Cristo devem ser chamados a examinar se receberam o selo do Espírito Santo, nas suas influências santificadoras, quanto à sinceridade da sua fé. Muitos parecem não ter ouvido que há Espírito Santo, e muitos julgam ilusão tudo o que se diz das suas graças e consolações. A tais pode-se perguntar com propriedade: \"Pois em que vós fostes batizados?\", porque evidentemente não conhecem o significado daquele sinal exterior em que depositam grande confiança.",
    "quotes": [
@@ -360,9 +360,9 @@
     }
    ],
    "flags": [
-    "Source typos: \"John never design\" read as \"designed\"; \"the first Gentile coverts\" read as \"converts\".",
     "Henry's \"on Christ Jesus\" is \"em Jesus Cristo\" in the Bíblia Livre, used as quoted.",
-    "Quote 4: Henry's \"then\" is rendered \"Pois\" before the Bíblia Livre's words."
+    "Quote 4: Henry's \"then\" is rendered \"Pois\" before the Bíblia Livre's words.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

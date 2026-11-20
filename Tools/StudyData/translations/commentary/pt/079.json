@@ -98,11 +98,12 @@
   {
    "kind": "section",
    "id": 3393,
-   "sha256": "061e4f2557304fa0a7313707471965910f0711428b8b51d0081f06ce2852b0c2",
+   "sha256": "91d14d4f8454f207bdef8f8c1a4cd6b2a246887a0e7c8adb67d180200403f30b",
    "title": "O seu amor pelos seus discípulos.",
    "text": "Aqueles a quem Deus ama como Pai podem desprezar o ódio do mundo inteiro. Assim como o Pai amou a Cristo, que era o mais digno, assim ele amou os seus discípulos, que eram indignos. Todos os que amam o Salvador devem continuar no seu amor por ele e aproveitar todas as ocasiões para mostrá-lo. A alegria do hipócrita dura apenas um momento, mas a alegria dos que permanecem no amor de Cristo é um banquete contínuo. Devem mostrar o seu amor por ele guardando os seus mandamentos. Se o mesmo poder que primeiro derramou o amor de Cristo no nosso coração não nos guardasse nesse amor, não permaneceríamos nele por muito tempo. O amor de Cristo por nós deve levar-nos a amar-nos uns aos outros. Ele fala como quem está para dar muitas coisas por encargo, e contudo nomeia somente esta; ela inclui muitos deveres.",
    "flags": [
-    "Source has \"the love of Christ's in our hearts\" (stray \"'s\"); translated as \"o amor de Cristo\"."
+    "Source has \"the love of Christ's in our hearts\" (stray \"'s\"); translated as \"o amor de Cristo\".",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -284,7 +285,7 @@
   {
    "kind": "section",
    "id": 3410,
-   "sha256": "76e9e76be616758d07f4f51ac8b5b091ce2044d1898c7b517421a7e31a2e92e9",
+   "sha256": "7266af8b472d11a75ce2bfd7d47c5c0704daed828f6ca84961bf03d20c96a4f7",
    "text": "És tu o Rei dos Judeus? Aquele Rei dos Judeus que há tanto tempo é esperado? O Messias, o Príncipe; és tu ele? Chamas-te a ti mesmo assim, e queres ser tido por tal? Cristo respondeu a esta pergunta com outra; não por evasiva, mas para que Pilatos considerasse o que fazia. Ele nunca tomou sobre si poder terreno algum; nunca lhe foram imputados princípios ou práticas de traição. Cristo deu conta da natureza do seu reino. A sua natureza não é mundana; é um reino dentro dos homens, estabelecido no seu coração e na sua consciência; as suas riquezas são espirituais, o seu poder é espiritual, e a sua glória é interior. Os seus sustentáculos não são mundanos; as suas armas são espirituais; não precisou nem usou da força para se manter e avançar, nem se opôs a reino algum senão ao do pecado e de Satanás. O seu objeto e o seu propósito não são mundanos. Quando Cristo disse: Eu sou a Verdade, disse, com efeito: Eu sou Rei. Ele vence pela evidência convincente da verdade; governa pelo poder soberano da verdade. Os súditos deste reino são os que são da verdade. Pilatos fez uma boa pergunta; disse: O que é a verdade? Quando investigamos as Escrituras e frequentamos o ministério da palavra, deve ser com esta pergunta: O que é a verdade? E com esta oração: Guia-me em tua verdade; em toda a verdade. Mas muitos fazem esta pergunta sem terem paciência para perseverar na sua busca da verdade, ou sem humildade bastante para recebê-la. Por esta solene declaração da inocência de Cristo, vê-se que, embora o Senhor Jesus fosse tratado como o pior dos malfeitores, nunca mereceu tal tratamento. Mas isto revela o propósito da sua morte: que ele morreu como Sacrifício pelos nossos pecados. Pilatos queria agradar a todos os lados, e era governado mais pela sabedoria mundana do que pelas regras da justiça. O pecado é um salteador; contudo, é tolamente escolhido por muitos em vez de Cristo, que verdadeiramente nos enriqueceria. Procuremos envergonhar os nossos acusadores como Cristo fez; e guardemo-nos de crucificar Cristo de novo.",
    "quotes": [
     {
@@ -293,8 +294,8 @@
     }
    ],
    "flags": [
-    "Source has \"it glory\" (for \"its glory\") and \"patience to preserve in their search\" (for \"persevere\"); translated as \"a sua glória\" and \"perseverar\".",
-    "unlisted quotations of Jo 18:38 (\"O que é a verdade?\") and Sl 25:5 (\"Guia-me em tua verdade\") in the Bíblia Livre's words."
+    "unlisted quotations of Jo 18:38 (\"O que é a verdade?\") and Sl 25:5 (\"Guia-me em tua verdade\") in the Bíblia Livre's words.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

@@ -35,12 +35,12 @@
   {
    "kind": "section",
    "id": 1705,
-   "sha256": "99bc3ab8fc1e72d2ee58a268012939cc164d887e4f0c627dc48d32d41f30ded6",
+   "sha256": "5c2901a830096b4765823e3667d0f24365430c45f097275f3f7fed54bd202f03",
    "title": "O seu afeto por Jerusalém.",
-   "text": "Aquilo que amamos, gostamos de pensar nisso. Os que se alegram em Deus fazem, por amor dele, de Jerusalém a sua alegria. Eles resolveram firmemente manter este afeto. Quando sofremos, devemos recordar com tristeza piedosa as misericórdias que perdemos e os pecados pelos quais as perdemos. Se as vantagens temporais alguma vez levam alguém a renunciar à sua profissão, a pior calamidade lhe sobreveio. Longe de nós vingar-nos; deixaremos isso Àquele que disse: A mim pertence a vingança. Os que se alegram com as calamidades, especialmente com as calamidades de Jerusalém, não ficarão impunes. Não podemos orar pelo êxito prometido à igreja de Deus sem ter em vista a ruína dos seus inimigos, ainda que não façamos uma oração por ela. Mas lembremo-nos de quem é a graça, e de quem é a salvação consumada, unicamente pelas quais temos alguma esperança de ser levados para casa, para a Jerusalém celestial.",
+   "text": "Aquilo que amamos, gostamos de pensar nisso. Os que se alegram em Deus fazem, por amor dele, de Jerusalém a sua alegria. Eles resolveram firmemente manter este afeto. Quando sofremos, devemos recordar com tristeza piedosa as misericórdias que perdemos e os pecados pelos quais as perdemos. Se as vantagens temporais alguma vez deixam quem professa a fé satisfeito longe das ordenanças de Deus, ou envergonhado da sua profissão, a pior calamidade lhe sobreveio. Longe de nós vingar-nos; deixaremos isso Àquele que disse: A mim pertence a vingança. Os que se alegram com as calamidades, especialmente com as calamidades de Jerusalém, não ficarão impunes. Não podemos orar pelo êxito prometido à igreja de Deus sem ter em vista a ruína dos seus inimigos, ainda que não façamos uma oração por ela. Mas lembremo-nos de quem é a graça, e de quem é a salvação consumada, unicamente pelas quais temos alguma esperança de ser levados para casa, para a Jerusalém celestial.",
    "flags": [
-    "\"If temporal advantages ever render a profession\" is obscure in the English (\"render\" read as \"make one give up\" a profession of faith); translated as \"levam alguém a renunciar à sua profissão\". Please check.",
-    "unlisted quotation of Rom 12:19 (\"Vengeance is mine\"): the Bíblia Livre's \"A mim pertence a vingança\" used."
+    "unlisted quotation of Rom 12:19 (\"Vengeance is mine\"): the Bíblia Livre's \"A mim pertence a vingança\" used.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -259,7 +259,7 @@
   {
    "kind": "section",
    "id": 1724,
-   "sha256": "86a819484df6d33966a2808a1e9c1b43c2b42bb0270f46dc1ae91ac396262cbc",
+   "sha256": "933ebf73339f91abf752a8b68f26ba43981a9b4db4cf280c69e5b1128991039c",
    "title": "O povo de Deus é exortado a louvá-lo pelas suas misericórdias e pelo seu cuidado.",
    "text": "Louvar a Deus é uma obra que é o seu próprio salário. É decoroso; convém-nos como criaturas racionais, e muito mais como pessoas em aliança com Deus. Ele recolhe pela sua graça os pecadores desterrados e os trará à sua santa habitação. Àqueles a quem Deus cura com as consolações do seu Espírito, ele fala de paz, assegura-lhes que os seus pecados estão perdoados. E por isso, que outros também o louvem. O conhecimento do homem logo chega ao fim; mas o conhecimento de Deus é uma profundidade que nunca se pode sondar. E, enquanto conta o número das estrelas, ele se digna ouvir o pecador de coração quebrantado. Enquanto alimenta os filhos dos corvos, não deixará desamparado o seu povo que ora. As nuvens parecem sombrias e melancólicas; contudo, sem elas não teríamos chuva, e portanto nenhum fruto. Assim as aflições parecem negras e desagradáveis; mas das nuvens da aflição vêm chuvas que fazem a alma produzir os frutos pacíficos da justiça. O salmista não se deleita nas coisas em que os pecadores confiam e se gloriam; mas uma consideração séria e conveniente para com Deus é, aos seus olhos, de grande valor. Não devemos ficar em dúvida entre a esperança e o temor, mas agir sob as graciosas influências da esperança e do temor unidos.",
    "quotes": [
@@ -269,7 +269,7 @@
     }
    ],
    "flags": [
-    "The English has the misprint \"a dept\" for \"a depth\"; translated as \"uma profundidade\"."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

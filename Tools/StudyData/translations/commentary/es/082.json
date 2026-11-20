@@ -309,7 +309,7 @@
   {
    "kind": "section",
    "id": 3505,
-   "sha256": "afa811d7f5286830aabc05131baf0cda3e405c8b3ec6c7d574d6613e8317cdae",
+   "sha256": "227fea1318d5da6bfc158478e3ae8ff54cbc30ab9749e1f4fab78aa5801e56c5",
    "title": "Pablo instruye a los discípulos de Juan en Éfeso.",
    "text": "Pablo, en Éfeso, halló a algunas personas religiosas que miraban a Jesús como el Mesías. No habían sido llevados a esperar los poderes milagrosos del Espíritu Santo, ni estaban informados de que el evangelio era especialmente el ministerio del Espíritu. Pero hablaron como dispuestos a acoger la noticia de ello. Pablo les muestra que Juan nunca se propuso que los que él bautizaba se detuvieran allí, sino que les dijo que creyesen en el que había de venir después de él, es á saber, en Jesús el Cristo. Aceptaron agradecidos la revelación, y fueron bautizados en el nombre del Señor Jesús. El Espíritu Santo vino sobre ellos de una manera sorprendente y arrolladora; hablaban en lenguas, y profetizaban, como lo hicieron los apóstoles y los primeros gentiles convertidos. Aunque ahora no esperamos poderes milagrosos, todos los que profesan ser discípulos de Cristo deben ser llamados a examinar si han recibido el sello del Espíritu Santo, en sus influencias santificadoras, para la sinceridad de su fe. Muchos parecen no haber oído que hay Espíritu Santo, y muchos consideran un engaño todo lo que se dice acerca de sus gracias y consuelos. A los tales se les puede preguntar con propiedad: \"¿En qué pues sois bautizados?\", porque evidentemente no conocen el significado de aquella señal exterior en la cual ponen gran confianza.",
    "quotes": [
@@ -335,8 +335,8 @@
     }
    ],
    "flags": [
-    "source typos \"never design\" (designed) and \"coverts\" (converts); translated as meant",
-    "quote 1: Henry has \"Christ Jesus\", the RV1909 \"Jesús el Cristo\""
+    "quote 1: Henry has \"Christ Jesus\", the RV1909 \"Jesús el Cristo\"",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

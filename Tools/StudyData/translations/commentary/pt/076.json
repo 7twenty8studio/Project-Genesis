@@ -78,11 +78,11 @@
   {
    "kind": "section",
    "id": 3290,
-   "sha256": "b865e3ea0c8aff044c72333a455032ba3c495d2379503443c98010d75f110056",
+   "sha256": "709244098137384a239ead942194206f3e9e02da92cb728ac326ba32115efd19",
    "title": "A ceia do Senhor instituída.",
    "text": "A ceia do Senhor é um sinal ou memorial de Cristo já vindo, que, morrendo, nos libertou; a sua morte é posta de modo especial diante de nós nessa ordenança, pela qual somos lembrados dela. O partir do corpo de Cristo como sacrifício por nós é ali trazido à nossa lembrança pelo partir do pão. Nada pode ser mais nutritivo e satisfatório para a alma do que a doutrina de que Cristo fez expiação pelo pecado, e a certeza de ter parte nessa expiação. Por isso fazemos isto em memória do que ele fez por nós quando morreu por nós; e como memorial do que nós fazemos ao unir-nos a ele numa aliança eterna. O derramamento do sangue de Cristo, pelo qual a expiação foi feita, é representado pelo vinho no cálice.",
    "flags": [
-    "'rememberance': typo in the English for 'remembrance'; translated 'em memória'"
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

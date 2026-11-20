@@ -205,12 +205,17 @@ from Henry's chapter outlines (LICENSE.txt); no words are cut.
   "[isto é, o domingo, o dia do Senhor]".
 - "Lord's day", where Henry writes it: día del Señor / dia do Senhor.
 
-## Source problems, translated as they stand (with a flag)
-- Section 30 (Gen 5:25-32) breaks off ("livelihood out comfort us.").
-- Section 239 (Ex 13) has lost words about Joseph's bones; 300 (Ex 32)
-  has lost words ("men who would have prayer of Moses could save them").
-- Section 309 repeats a garbled clause; both translations give it once.
-- Section 338 repeats a phrase; 383 has a broken sentence.
-- Typos read as Henry meant them: "drawn" (dawn), "See her" (here),
-  "temper" (tempter), "heaven of the sea" (haven), "Wordly", "statue(s)"
-  (statutes), "set our early" (out).
+## Source problems: fixed from an independent copy (20 November 2026)
+The SWORD module MHCC (the build's English) lost lines, printed some lines
+twice over the next one, swapped two lines (1427) and has misprints. 129
+fixes in 120 sections restore what an independent transcription of the
+Concise Commentary has (Internet Archive mhcc_20251130), and nothing else:
+`source_fixes.json` (each with a reason), written into WordStudy.sqlite's
+English by `commentary.fix_database` (add_commentary_translations.py runs
+it). The es/pt translations of those sections were updated to the fixed
+English (lost lines translated, translated duplicates removed) and their
+source shas renewed; every one passes `commentary.py check`. Tests:
+Tools/StudyData/test_commentary_fixes.py, WordStudyTests.commentarySourceFixesShip.
+
+Still garbled because the independent copy has the same slip: 3392, 3416,
+3559, 3591, 3664, 3665, 3697, 3920, 3952 and 4041 (ai-review/README.md).

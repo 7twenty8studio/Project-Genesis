@@ -24,6 +24,8 @@ and Greek punctuation. Dates (BC/AD), TIME/QUESTION-style gloss tags and
 - G0622, G0629: "WH." is a misread "which", not Westcott-Hort.
 - G0483: "contradict" typed with a Greek omicron.
 - G5418: "Soph., OT, 1387" is Sophocles' Oedipus Tyrannus, not the Old Testament.
+- G1296: "WH., however, is found in LXX" is "which, however" too.
+- H0930: "in form a plural or 929" is Strong's "a plural of 929".
 
 ## STEPBible's machine expansions, rendered the same way everywhere
 - "(with)", "§ with", "853 with", "l.with", "ll. with" are a misread "c."
@@ -133,3 +135,18 @@ Conventions left as they are, for the owner or a qualified reviewer:
   "Esq./Sóf." with "Æsch./Soph.".
 - pt (and sometimes es) gives one name where Strong's has "X or Y" and the
   two would be spelled the same in the Bible used.
+
+## The AI review's queries, answered (20 November 2026; AI, not qualified sign-off)
+Each of the 59 queries in `ai-review/queries.jsonl` now has a `resolution`
+and a `resolution_note`: 19 fixed where the English is clear (for example
+H0328A murmurador, H1785 obra de asedio, H6513 Fara as the RV1909's
+"Phara", H8279 estilete, G3567 and G3639 where STEPBible's gloss is a slip,
+G1188's RV margin «on», the two source fixes above), 5 already fixed by
+the review and only their notes brought up to date, 11 kept with a reason
+(names checked against the RV1909 and Bíblia Livre: Corasán, Kelaía, Sión),
+and 24 left open. The open ones are conventions or policies (one rule for
+the corpus) and doubts that need a Hebraist or Hellenist: the gloss-vs-sense
+choice where STEPBible's gloss differs from the article (H0801, H7070G,
+G2461, G2555, G2660, G3555, G4266), LSJ author labels, pt short references
+and AV/RV quotations, "X or Y" names, soalho/assoalho, measures (G5518),
+and H2448, G1418, G2450, G2496 (Jehoram), G3985I.

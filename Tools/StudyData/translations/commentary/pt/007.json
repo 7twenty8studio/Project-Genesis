@@ -59,19 +59,23 @@
   {
    "kind": "section",
    "id": 188,
-   "sha256": "1e39330931447b63d4c04f0ccbdf787cec7072c27ae1508d6417158f0873f8ee",
+   "sha256": "bb5164d157f0109deaf3ad02ce354b56e1c8a791122ca8a3207d7dbc4843493b",
    "title": "Zebulom, Issacar, Dã.",
    "text": "Quanto a Zebulom: se a profecia diz: Zebulom será para porto de navios, tenha certeza de que a Providência o estabelecerá assim. Deus determina os limites da nossa morada. É sabedoria e dever nosso acomodar-nos à nossa sorte e tirar proveito dela; se Zebulom habita no porto do mar, que seja para porto de navios. Quanto a Issacar: viu que a terra era deleitosa, produzindo não só vistas agradáveis, mas frutos agradáveis para recompensar as suas fadigas. Vejamos nós, com os olhos da fé, que o descanso celestial é bom, e que aquela terra da promessa é deleitosa; isso tornará fáceis os nossos serviços presentes. Dã haveria de obter vantagens sobre os seus inimigos pela arte, pela astúcia e pela surpresa, como uma serpente que morde o calcanhar do viajante. Jacó, quase exausto e a ponto de desfalecer, alivia-se com estas palavras: \"Tua salvação espero, ó SENHOR!\" A salvação que esperava era Cristo, a Semente prometida; agora que ia ser reunido ao seu povo, anseia por Aquele a quem se congregarão os povos. Declarou claramente que buscava o céu, a pátria melhor, Hb 11:13, 14. Agora que vai desfrutar a salvação, consola-se por ter esperado a salvação. Cristo, como o nosso caminho para o céu, deve ser servido com assiduidade; e o céu, como o nosso descanso em Cristo, deve ser esperado. É o consolo do santo que morre ter assim esperado a salvação do Senhor; pois então terá aquilo que esteve esperando.",
    "quotes": [
     {
      "n": 0,
+     "text": "para porto de navios"
+    },
+    {
+     "n": 1,
      "text": "Tua salvação espero, ó SENHOR"
     }
    ],
    "flags": [
     "Source title reads \"Zebulun, Issachar, Dn\" (a slip for Dan); translated \"Dã\".",
-    "Source has \"dwell at the heaven of the sea\", a misprint for \"haven\"; translated \"porto do mar\".",
-    "unlisted quotations in the Bíblia Livre's words: Gn 49:13 (\"será para porto de navios\"), Gn 49:15 (\"a terra era deleitosa\"), Gn 49:10 (\"se congregarão os povos\")."
+    "unlisted quotations in the Bíblia Livre's words: Gn 49:13 (\"será para porto de navios\"), Gn 49:15 (\"a terra era deleitosa\"), Gn 49:10 (\"se congregarão os povos\").",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -153,7 +157,7 @@
   {
    "kind": "section",
    "id": 195,
-   "sha256": "073c2fb3f6002419e6f7fc1592bd6e3dc2899356fc6e91fbcea55d2b4a2b3ddb",
+   "sha256": "dd45b38432b1aad7b78584c4959cd7622286249a68ad8b42a1b4c72e0d85e6bc",
    "title": "As instruções de José sobre os seus ossos; a sua morte.",
    "text": "Tendo José honrado seu pai, os seus dias foram longos na terra que, por ora, Deus lhe dera. Quando viu a sua morte se aproximar, consolou seus irmãos com a certeza de que voltariam a Canaã no devido tempo. Devemos consolar os outros com a mesma consolação com que nós mesmos fomos consolados por Deus, e animá-los a descansar nas promessas que são o nosso apoio. Como confissão da sua própria fé e confirmação da deles, ordena-lhes que guardem os seus restos sem sepultar até aquele dia glorioso em que estariam estabelecidos na terra da promessa. Assim José, pela fé na doutrina da ressurreição e na promessa de Canaã, deu ordem acerca dos seus ossos. Isso manteria viva a expectativa deles de uma partida próxima do Egito, e conservaria Canaã continuamente em sua mente. Isso também ligaria a descendência de José a seus irmãos. A morte, assim como a vida, deste eminente santo foi verdadeiramente excelente; ambas nos dão forte ânimo para perseverar no serviço de Deus. Que felicidade é partir cedo na corrida celestial, continuar com firmeza e terminar a carreira com alegria! Isto José fez, isto também nós podemos fazer. Mesmo quando as dores da morte estão sobre nós, se tivermos confiado naquele de quem dependiam os patriarcas, os profetas e os apóstolos, não precisamos temer dizer: \"Minha carne e meu coração desfalecem; porém Deus será a rocha do meu coração e minha porção para sempre.\"",
    "quotes": [
@@ -164,8 +168,8 @@
    ],
    "flags": [
     "unlisted quotation of Hb 11:22 in the Bíblia Livre's words (\"deu ordem acerca dos seus ossos\"); 2 Co 1:4 and At 20:24 echoed.",
-    "Source reads \"to set our early\", evidently \"to set out early\"; translated so.",
-    "Sl 73:26: the Bíblia Livre has \"rocha\" where the KJV has \"strength\"."
+    "Sl 73:26: the Bíblia Livre has \"rocha\" where the KJV has \"strength\".",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -229,12 +233,13 @@
   {
    "kind": "section",
    "id": 200,
-   "sha256": "b2a77de0ab49e897a6829f57555fb9f17c1f4d2631566e7d829075577fe6138e",
+   "sha256": "82f857b81303e5ad29e29778822dc63179106ed62ad238ca34b9b199fff7f52b",
    "title": "Ele é achado e criado pela filha de Faraó.",
    "text": "Vinde, vede o lugar onde aquele grande homem, Moisés, jazia quando era um menino pequeno; era numa cesta de juncos à beira do rio. Se tivesse ficado ali por muito tempo, teria perecido. Mas a Providência traz a filha de Faraó ao lugar onde jazia esta pobre criança abandonada, e inclina o seu coração a ter compaixão dela, o que ela ousa fazer quando ninguém mais ousaria. O cuidado de Deus conosco na nossa infância deve ser muitas vezes lembrado por nós para seu louvor. Faraó procurou cruelmente destruir Israel, mas a sua própria filha teve compaixão de uma criança hebreia, e não só isso, mas, sem o saber, preservou o libertador de Israel e providenciou para Moisés uma boa ama, a sua própria mãe. Para que ele tivesse uma ama hebreia, a irmã de Moisés levou a mãe a ocupar o lugar de ama. Moisés foi tratado como filho da filha de Faraó. Muitos que, pelo seu nascimento, são obscuros e pobres, por acontecimentos surpreendentes da Providência são elevados alto no mundo, para fazer os homens saberem que Deus governa.",
    "quotes": [],
    "flags": [
-    "Source misspells \"Pharoah's\"; translated normally."
+    "Source misspells \"Pharoah's\"; translated normally.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -405,7 +410,7 @@
   {
    "kind": "section",
    "id": 212,
-   "sha256": "73f9eb85f7ea26012e4b5ad62d2ad6b04e4c153948e1af0df1a75570e5b98858",
+   "sha256": "05ae89f0b2603701827153393fe321d237e64120a2b48331387b766bf7112de3",
    "title": "O desagrado de Faraó; ele aumenta as tarefas dos israelitas.",
    "text": "Deus reconhecerá o seu povo, ainda que pobre e desprezado, e achará um tempo para defender a sua causa. Faraó tratou com desprezo tudo o que ouvira. Não tinha conhecimento de Jeová, nem temor dele, nem amor a ele, e por isso se recusou a obedecer-lhe. Assim o orgulho, a ambição, a cobiça e o conhecimento político de Faraó o endureceram para a sua própria destruição. O que Moisés e Arão pedem é muito razoável: apenas ir caminho de três dias pelo deserto, e isso com um bom propósito. Sacrificaremos ao SENHOR nosso Deus. Faraó foi muito desarrazoado ao dizer que o povo estava ocioso e por isso falava em ir sacrificar. Assim os deturpa, para ter um pretexto para aumentar as suas cargas. Até hoje encontramos muitos mais dispostos a criticar os seus vizinhos por gastarem no serviço de Deus algumas horas poupadas dos seus negócios do mundo do que a censurar outros que dão o dobro do tempo a prazeres pecaminosos. A ordem de Faraó foi bárbara. Os próprios Moisés e Arão devem ir às cargas. Os perseguidores têm prazer em lançar desprezo e dureza sobre os ministros. A quantidade habitual de tijolos devia ser feita sem a porção habitual de palha para misturar com o barro. Assim, mais trabalho seria posto sobre os homens; se o cumprissem, ficariam quebrantados pelo esforço; se não, seriam castigados.",
    "quotes": [
@@ -425,7 +430,7 @@
    ],
    "flags": [
     "\"Jehovah\" kept as \"Jeová\" in Henry's sentence (Êx 5:2 in the Bíblia Livre: \"Não conheço o SENHOR\").",
-    "Source misspells \"wordly\"; translated normally."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

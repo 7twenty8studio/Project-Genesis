@@ -167,9 +167,9 @@
    "book": 40,
    "start_verse": 40010001,
    "end_verse": 40010004,
-   "sha256": "7e2c61e2370149ef23336015976e50cd938f64c1898c55531da1cde7044e0aa1",
+   "sha256": "e4f17d204f3770ccf3f093e033d3e60b5a978635b77fe9d4bb8902824969fd13",
    "title": "The apostles called.",
-   "text": "The word \"apostle\" signifies messenger; they were Christ's messengers, sent forth to proclaim his kingdom. Christ gave them power to heal all manner of sickness. In the grace of the gospel there is a slave for every sore, a remedy for every malady. There is no spiritual disease, but there is power in Christ for the cure of it. There names are recorded, and it is their honour; yet they had more reason to rejoice that their names were written in heaven, while the high and mighty names of the great ones of the earth are buried in the dust.",
+   "text": "The word \"apostle\" signifies messenger; they were Christ's messengers, sent forth to proclaim his kingdom. Christ gave them power to heal all manner of sickness. In the grace of the gospel there is a slave for every sore, a remedy for every malady. There is no spiritual disease, but there is power in Christ for the cure of it. Their names are recorded, and it is their honour; yet they had more reason to rejoice that their names were written in heaven, while the high and mighty names of the great ones of the earth are buried in the dust.",
    "quotes": [
     {
      "n": 0,
@@ -528,6 +528,7 @@
    "pt": "Abraão"
   },
   "Adam": {
+   "es": "Adán (person); Adam (place)",
    "pt": "Adão (person); Adã (place)"
   },
   "Capernaum": {

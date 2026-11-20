@@ -584,9 +584,9 @@
    "book": 41,
    "start_verse": 41002023,
    "end_verse": 41002028,
-   "sha256": "18765e64cfe49cc0dfdc83b216953f3d574caf4bb0580a742899040bf2881145",
+   "sha256": "8992f0e145479fd1e40f13605cc1c8517fe2d668e6e4529dce0794a3a8d292a6",
    "title": "He justifies his disciples for plucking corn on the sabbath.",
-   "text": "The sabbath is a sacred and Divine institution; a privilege and benefit, not a task and drudgery. God never designed it to be a burden to us, therefore we must not make it so to ourselves. The sabbath was instituted for the good of mankind, as living in society, having many wants and troubles, preparing for a state of happiness or misery. Man was not made for the sabbath, as if his keeping it could be of service to God, nor was he commanded to keep it outward observances to his real hurt. Every observance respecting it, is to be interpreted by the rule of mercy.",
+   "text": "The sabbath is a sacred and Divine institution; a privilege and benefit, not a task and drudgery. God never designed it to be a burden to us, therefore we must not make it so to ourselves. The sabbath was instituted for the good of mankind, as living in society, having many wants and troubles, preparing for a state of happiness or misery. Man was not made for the sabbath, as if his keeping it could be of service to God, nor was he commanded to keep its outward observances to his real hurt. Every observance respecting it, is to be interpreted by the rule of mercy.",
    "quotes": []
   },
   {
@@ -603,6 +603,7 @@
  ],
  "glossary": {
   "Adam": {
+   "es": "Adán (person); Adam (place)",
    "pt": "Adão (person); Adã (place)"
   },
   "Barabbas": {
@@ -650,6 +651,10 @@
   },
   "Levi": {
    "es": "Leví"
+  },
+  "Luke": {
+   "es": "Lucas",
+   "pt": "Lucas"
   },
   "Malachi": {
    "es": "Malaquías",

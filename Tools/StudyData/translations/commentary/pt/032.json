@@ -297,7 +297,7 @@
   {
    "kind": "section",
    "id": 1266,
-   "sha256": "ac138fcd23ebd491748665da7507d4726784dd8aabf7f5c337724edf727df9d8",
+   "sha256": "3a24ba32af7074f42e54af47bd350af36970ba843faa6d59bbe3f6a15395c09d",
    "title": "O êxito dos judeus.",
    "text": "Os inimigos dos judeus esperavam vencê-los pelo edito anterior. Se não tivessem tentado nada contra o povo de Deus, eles mesmos não teriam sofrido. Os judeus, agindo juntos, fortaleceram-se uns aos outros. Aprendamos a estar firmes num mesmo espírito e com um mesmo ânimo, combatendo juntos contra os inimigos da nossa alma, que se esforçam por roubar-nos a fé, que é mais preciosa do que a nossa vida. Os judeus, para honra da sua religião, mostraram desprezo pelas riquezas mundanas, para que se visse que nada desejavam senão a sua própria preservação. Em todos os casos o povo de Deus deve manifestar humanidade e desinteresse, recusando muitas vezes vantagens que poderiam ser legitimamente obtidas. Os judeus celebraram a sua festa no dia seguinte ao término da sua obra. Quando recebemos grandes misericórdias de Deus, devemos ser rápidos em lhe dar retribuições de gratidão.",
    "quotes": [
@@ -307,8 +307,8 @@
     }
    ],
    "flags": [
-    "source typo \"wordly\" read as \"worldly\".",
-    "Phil 1:27 alluded to with the Bíblia Livre's \"num mesmo espírito, com um mesmo ânimo, combatendo juntos\" (unlisted, adapted)."
+    "Phil 1:27 alluded to with the Bíblia Livre's \"num mesmo espírito, com um mesmo ânimo, combatendo juntos\" (unlisted, adapted).",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -413,9 +413,9 @@
   {
    "kind": "section",
    "id": 1275,
-   "sha256": "ffd896ffefcb34d7f710f82a3b8be5c65c0889d07b15370ff392b8a8b9441489",
+   "sha256": "9d526bf9076258d98b5160fcf61a5054a064f89786f174edd812bca636ce2811",
    "title": "Os seus amigos vêm consolá-lo.",
-   "text": "Os amigos de Jó parecem notáveis pela sua posição, assim como pela sabedoria e piedade. Grande parte do conforto desta vida está na amizade com os prudentes e virtuosos. Vindo para chorar com ele, eles expressaram uma dor que realmente sentiam. Vindo para consolá-lo, se sentaram com ele. Pareceria que suspeitavam que as suas aflições sem igual eram juízos por alguns crimes que ele tinha encoberto sob as suas profissões de piedade. Muitos consideram apenas uma cortesia visitar os seus amigos na tristeza; nós devemos considerar a vida. E, se o exemplo dos amigos de Jó não basta para nos levar a ter compaixão dos aflitos, busquemos o sentir que houve em Cristo.",
+   "text": "Os amigos de Jó parecem notáveis pela sua posição, assim como pela sabedoria e piedade. Grande parte do conforto desta vida está na amizade com os prudentes e virtuosos. Vindo para chorar com ele, eles expressaram uma dor que realmente sentiam. Vindo para consolá-lo, se sentaram com ele. Pareceria que suspeitavam que as suas aflições sem igual eram juízos por alguns crimes que ele tinha encoberto sob as suas profissões de piedade. Muitos consideram apenas uma cortesia visitar os seus amigos na tristeza; nós devemos considerá-lo um dever: se a religião vive no coração, isto será um fruto na vida. E, se o exemplo dos amigos de Jó não basta para nos levar a ter compaixão dos aflitos, busquemos o sentir que houve em Cristo.",
    "quotes": [
     {
      "n": 0,
@@ -423,8 +423,8 @@
     }
    ],
    "flags": [
-    "source garbled: \"we must look life\" (probably a lost phrase, e.g. \"we must look upon it as a duty\"); translated literally as \"nós devemos considerar a vida\".",
-    "\"vailed\" read as \"veiled\" (\"encoberto\")."
+    "\"vailed\" read as \"veiled\" (\"encoberto\").",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

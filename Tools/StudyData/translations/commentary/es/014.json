@@ -89,14 +89,14 @@
   {
    "kind": "section",
    "id": 440,
-   "sha256": "a75d810ec0fb2291c3edfe0089adb4bd62be6c099f11a2b02a33782cb26fef90",
+   "sha256": "b0599bdfcef31453c7e333d051fd4e46a91b90206e375e3f0b613f34a21ae099",
    "title": "La rebelión de Coré, Datán y Abiram. Coré disputa el sacerdocio.",
-   "text": "El orgullo y la ambición causan muchísimo mal, tanto en las iglesias como en los estados. Los rebeldes disputan contra el establecimiento del sacerdocio en Aarón y su familia. Poca razón tenían para jactarse de la pureza del pueblo, o del favor de Dios, siendo que el pueblo había sido contaminado con el pecado tantas veces y tan recientemente, y estaba ahora bajo las señales del desagrado de Dios. Acusan injustamente a Moisés y a Aarón de tomarse la honra a sí mismos, siendo que habían sido llamados por Dios para ello. Ved aquí: 1. De qué espíritu son los niveladores: los que resisten a las autoridades que Dios ha puesto sobre ellos. 2. Qué trato reciben los que han sido útiles. Moisés buscó instrucción de Dios. El corazón del sabio piensa para responder, y pide consejo a Dios. Moisés les muestra sus privilegios como levitas, y los convence del pecado de tener en poco esos privilegios. Nos ayudará a guardarnos de envidiar a los que están por encima de nosotros considerar debidamente cuántos hay por debajo de nosotros.",
+   "text": "El orgullo y la ambición causan muchísimo mal, tanto en las iglesias como en los estados. Los rebeldes disputan contra el establecimiento del sacerdocio en Aarón y su familia. Poca razón tenían para jactarse de la pureza del pueblo, o del favor de Dios, siendo que el pueblo había sido contaminado con el pecado tantas veces y tan recientemente, y estaba ahora bajo las señales del desagrado de Dios. Acusan injustamente a Moisés y a Aarón de tomarse la honra a sí mismos, siendo que habían sido llamados por Dios para ello. Ved aquí: 1. De qué espíritu son los niveladores: los que resisten a las autoridades que Dios ha puesto sobre ellos. 2. Qué trato pueden esperar aun los mejores y más útiles, aun de aquellos a quienes han servido. Moisés buscó instrucción de Dios. El corazón del sabio piensa para responder, y pide consejo a Dios. Moisés les muestra sus privilegios como levitas, y los convence del pecado de tener en poco esos privilegios. Nos ayudará a guardarnos de envidiar a los que están por encima de nosotros considerar debidamente cuántos hay por debajo de nosotros.",
    "quotes": [],
    "flags": [
-    "source garbled: '2. What usage they have been serviceable' (a word or more missing, perhaps 'they have who have been serviceable'); translated as 'Qué trato reciben los que han sido útiles'.",
     "'The heart of the wise studies to answer' echoes Pr 15:28 ('the heart of the righteous'; RV1909 'El corazón del justo piensa para responder'); not a verbatim quotation, translated.",
-    "title as in the source, two headings run together ('Abiram Korah')."
+    "title as in the source, two headings run together ('Abiram Korah').",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -334,7 +334,7 @@
   {
    "kind": "section",
    "id": 457,
-   "sha256": "4024673762812f27273ce943e6a77d49d8982b848f4a3ed20f8cfe70669e2750",
+   "sha256": "cde75c68fb52fe57a78f24154bcb74dd8ae6295dbbbea48e21ea4ab65645ebbb",
    "title": "El pueblo murmura y es castigado con serpientes ardientes. Arrepentidos, son sanados por medio de la serpiente de bronce.",
    "text": "Los hijos de Israel estaban cansados por una larga marcha alrededor de la tierra de Edom. Hablan con descontento de lo que Dios había hecho por ellos, y con desconfianza de lo que haría. ¿Con qué quedarán contentos aquellos a quienes el maná no contenta? Que el desprecio que algunos echan sobre la palabra de Dios no nos haga estimarla menos. Es el pan de vida, pan sustancioso, y alimentará para vida eterna a los que por la fe se nutren de ella, aunque haya quien la llame pan tan liviano. Vemos el justo juicio que Dios trajo sobre ellos por murmurar. Envió entre ellos serpientes ardientes, que mordieron o picaron a muchos hasta la muerte. Es de temer que no habrían reconocido el pecado si no hubieran sentido el dolor; pero se ablandan bajo la vara. Y Dios hizo una provisión maravillosa para su alivio. Los mismos judíos dicen que no era la vista de la serpiente de bronce lo que sanaba; sino que, al mirarla, miraban a Dios como el Señor que los sanaba. Había mucho del evangelio en esto. Nuestro Salvador declaró, Jn 3:14, 15, que como Moisés levantó la serpiente en el desierto, así es necesario que el Hijo del hombre sea levantado, para que todo aquel que en él creyere, no se pierda. Comparad la enfermedad de ellos y la nuestra. El pecado muerde como serpiente y pica como víbora. Comparad la aplicación del remedio de ellos y del nuestro. Ellos miraron y vivieron, y nosotros, si creemos, no pereceremos. Es por la fe que miramos a Jesús, He 12:2. Cualquiera que miraba, por desesperado que fuera su caso, o débil su vista, o distante su lugar, era sanado con certeza y por completo. El Señor puede librarnos de peligros y angustias por medios que la razón humana jamás habría ideado. ¡Oh, si el veneno de la serpiente antigua, que inflama las pasiones de los hombres y los hace cometer pecados que terminan en su destrucción eterna, se sintiera tan vivamente, y el peligro se viera tan claramente, como los israelitas sentían el dolor de la mordedura de las serpientes ardientes y temían la muerte que seguía! Entonces nadie cerraría los ojos a Cristo ni se apartaría de su evangelio. Entonces un Salvador crucificado sería tan estimado que todas las demás cosas se tendrían por pérdida por amor de él; entonces, sin demora, y con fervor y sencillez, todos acudirían a él por el camino señalado, clamando: ¡Señor, sálvanos, que perecemos! Ni abusaría nadie de la gratuidad de la salvación de Cristo, mientras considerara el precio que le costó.",
    "quotes": [
@@ -355,7 +355,8 @@
     "quote 1 is listed as Jn 12:34; Henry is quoting Jn 3:14 (the RV1909 has the same words there).",
     "'light bread' (KJV Nm 21:5): RV1909 'pan tan liviano' used; Henry applies it to the word of God, so the pronoun is feminine ('la llame').",
     "unlisted Mt 8:25: RV1909 'Señor, sálvanos, que perecemos' used.",
-    "'bites like a serpent, and stings like an adder' echoes Pr 23:32 (RV1909 'como serpiente morderá, y como basilisco dará dolor'); Henry changes the tense, translated."
+    "'bites like a serpent, and stings like an adder' echoes Pr 23:32 (RV1909 'como serpiente morderá, y como basilisco dará dolor'); Henry changes the tense, translated.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -477,9 +478,9 @@
   {
    "kind": "section",
    "id": 466,
-   "sha256": "876dea04468c06215bf9682f78b957091b4d13fa52707e4ac2455310c6716f1a",
+   "sha256": "c697148938a59d59284613a3563e6e59e388b7b9c2e6a2c59f471f8a54cda2b2",
    "title": "Balaam, dejando las adivinaciones, profetiza la dicha de Israel.",
-   "text": "Ahora Balaam no habló según su propio sentir, sino el lenguaje del Espíritu que vino sobre él. Muchos tienen los ojos abiertos y no tienen abierto el corazón; son iluminados, pero no santificados. El conocimiento que hincha de orgullo a los hombres solo servirá para alumbrarles el camino al infierno, adonde muchos van con los ojos abiertos. La bendición es casi la misma que las dadas antes. Admira en Israel su hermosura. El justo, sin duda, hace ventaja á su prójimo. Su fecundidad y crecimiento. Su honra y elevación. Su poder y victoria. Mira atrás a lo que se había hecho por ellos. Su poder y victoria. Mira atrás a lo que se había hecho por ellos. Su valor y seguridad. El justo está confiado como un leoncillo, no cuando asalta a otros, sino cuando reposa, porque Dios los hace habitar seguros. Su influencia sobre sus vecinos. Dios toma lo que se les hace, sea bien o mal, como hecho a él mismo. (Nm 24:10-14)",
+   "text": "Ahora Balaam no habló según su propio sentir, sino el lenguaje del Espíritu que vino sobre él. Muchos tienen los ojos abiertos y no tienen abierto el corazón; son iluminados, pero no santificados. El conocimiento que hincha de orgullo a los hombres solo servirá para alumbrarles el camino al infierno, adonde muchos van con los ojos abiertos. La bendición es casi la misma que las dadas antes. Admira en Israel su hermosura. El justo, sin duda, hace ventaja á su prójimo. Su fecundidad y crecimiento. Su honra y elevación. Su poder y victoria. Mira atrás a lo que se había hecho por ellos. Su valor y seguridad. El justo está confiado como un leoncillo, no cuando asalta a otros, sino cuando reposa, porque Dios los hace habitar seguros. Su influencia sobre sus vecinos. Dios toma lo que se les hace, sea bien o mal, como hecho a él mismo. (Nm 24:10-14)",
    "quotes": [
     {
      "n": 0,
@@ -487,11 +488,11 @@
     }
    ],
    "flags": [
-    "source repeats two sentences ('Their power and victory. He looks back upon what had been done for them.'); both copies translated.",
     "unlisted Pr 12:26 ('more excellent than his neighbour'): RV1909 'hace ventaja á su prójimo' used.",
     "'bold as a lion' (KJV Pr 28:1): RV1909 'confiado como un leoncillo' keeps Henry's point (bold when at rest).",
     "'God maketh them to dwell in safety' echoes Sal 4:8 (RV1909 'me harás estar confiado', first person); translated.",
-    "Henry's 'Many have their eyes open' plays on Nm 24:3 (RV1909 'el varón de ojos abiertos')."
+    "Henry's 'Many have their eyes open' plays on Nm 24:3 (RV1909 'el varón de ojos abiertos').",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

@@ -170,11 +170,17 @@
   {
    "kind": "section",
    "id": 481,
-   "sha256": "f9f8e586e67d906b3e7e5cec9f1c33aad9b14877b7eb75563f10e21954ae4495",
+   "sha256": "78b9f987156590a95f76601fd5fe5120fba177aed3212594072ee666ae093bf9",
    "text": "Por los sacrificios ordenados en este capítulo se nos recuerda el poder continuo del sacrificio de Cristo, y nuestra continua necesidad de depender de él. Ninguna ocupación apremiante, ni situación peligrosa, ni circunstancia próspera, debe causar flojedad en nuestros ejercicios religiosos; sino más bien movernos a mayor diligencia en buscar ayuda del Señor o en darle gracias. Y todo ha de ir acompañado de arrepentimiento, fe en el Señor Jesús y amor a él, y ha de producir verdadera santidad en nuestra conducta hacia todos los hombres; de lo contrario, Dios aborrecerá nuestros servicios más solemnes y nuestras devociones más abundantes. Y Cristo puede suplir las necesidades de cada día, cada semana, cada mes, cada año, cada ordenanza, cada caso.",
-   "quotes": [],
+   "quotes": [
+    {
+     "n": 0,
+     "mode": "translated",
+     "reason": "Henry's own words (repentance, faith in the Lord Jesus, and love), not a quotation of Ephesians 1:15"
+    }
+   ],
    "flags": [
-    "source typo: 'faith is the Lord Jesus' for 'faith in'; translated 'fe en el Señor Jesús'."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -210,13 +216,13 @@
   {
    "kind": "section",
    "id": 484,
-   "sha256": "f41a99ba88b046e914871e0fcaf6d2af35cfce83db8038a4245e97fee2f060ab",
+   "sha256": "b78211eed9d3838211c8c83cbb75f1f661214130cda76fa267e485933a01aeb9",
    "title": "Los votos han de cumplirse.",
    "text": "Nadie puede quedar obligado por su propia promesa a hacer lo que ya le está prohibido por el precepto divino. En otros asuntos el mandamiento es que no violará su palabra, aunque cambie de parecer.",
    "quotes": [],
    "flags": [
-    "source typo: 'through he may change' for 'though'.",
-    "'he shall not break his words' (Nm 30:2): RV1909 'no violará su palabra' used (unlisted)."
+    "'he shall not break his words' (Nm 30:2): RV1909 'no violará su palabra' used (unlisted).",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -319,12 +325,12 @@
   {
    "kind": "section",
    "id": 493,
-   "sha256": "abbe31af7dcc60c1a912e46118e3d8d0cacff734e17c4c1f029a9c6398ddd473",
+   "sha256": "64b36f2d6abad8125f380f7eb80514439f9ec48e34b7e075751bdd60f8c2681c",
    "title": "Moisés reprende a los rubenitas y a los gaditas.",
    "text": "La propuesta mostraba desprecio por la tierra de Canaán, desconfianza en la promesa del Señor y poca disposición a afrontar las dificultades y peligros de conquistar y expulsar a los habitantes de aquella tierra. Moisés se enoja con ellos. Mal le sienta a cualquiera del Israel de Dios quedarse sentado, despreocupado de los asuntos difíciles y peligrosos de sus hermanos, sean públicos o personales. Les recuerda las fatales consecuencias de la incredulidad y el desánimo de sus padres, cuando estaban, como ellos ahora, a punto de entrar en Canaán. Si los hombres consideraran como deben cuál sería el fin del pecado, temerían su principio.",
    "quotes": [],
    "flags": [
-    "source garbled: 'It will becomes'; read as 'It ill becomes' ('Mal le sienta')."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -477,12 +483,12 @@
   {
    "kind": "section",
    "id": 503,
-   "sha256": "ff557cc39b150a3f947f05d8621b57afe33f1ce334b844e7b23a5a9a8e9d9003",
+   "sha256": "02d4a86b11558f8d60d8df0c43e34ed6328c4dba7bf7b477a5aa8bc07176e125",
    "title": "Las hijas de Salfaad han de casarse dentro de su propia tribu.",
-   "text": "Los que consultan los oráculos de Dios acerca de cómo asegurar su herencia celestial no solo serán dirigidos en lo que deben hacer, sino que sus preguntas serán aceptadas con gracia. Dios no quería que una tribu se enriqueciera a costa de otra. Cada tribu debía conservar su propia heredad. Las hijas de Salfaad se sometieron a esta disposición. ¿Cómo podían dejar de casarse bien, cuando Dios mismo las dirigía? Aprenda el pueblo de Dios cuán conveniente y apropiado es, como las hijas de Israel, unirse solo con los de su propio pueblo. ¿No debería todo verdadero creyente Israel unirse solo con los de su propio pueblo? ¿No debería todo verdadero creyente en Jesús ser muy cuidadoso, en las relaciones cercanas y tiernas de la vida, de unirse solo con los que están unidos al Señor? Todas nuestras intenciones e inclinaciones deben someterse a la voluntad de Dios cuando esta se nos da a conocer, y especialmente al contraer matrimonio. Aunque la palabra de Dios permite el afecto y la preferencia en esta importante relación, no aprueba aquella pasión necia, ingobernable e idólatra que no se preocupa de cuál pueda ser el fin, sino que, desafiando la autoridad, se decide por la propia complacencia. Toda conducta semejante, por disfrazada que esté, va contra el sentido común, los intereses de la sociedad, la felicidad de la relación matrimonial y, lo que es peor aún, contra la religión de Cristo.",
+   "text": "Los que consultan los oráculos de Dios acerca de cómo asegurar su herencia celestial no solo serán dirigidos en lo que deben hacer, sino que sus preguntas serán aceptadas con gracia. Dios no quería que una tribu se enriqueciera a costa de otra. Cada tribu debía conservar su propia heredad. Las hijas de Salfaad se sometieron a esta disposición. ¿Cómo podían dejar de casarse bien, cuando Dios mismo las dirigía? Aprenda el pueblo de Dios cuán conveniente y apropiado es, como las hijas de Israel, unirse solo con los de su propio pueblo. ¿No debería todo verdadero creyente en Jesús ser muy cuidadoso, en las relaciones cercanas y tiernas de la vida, de unirse solo con los que están unidos al Señor? Todas nuestras intenciones e inclinaciones deben someterse a la voluntad de Dios cuando esta se nos da a conocer, y especialmente al contraer matrimonio. Aunque la palabra de Dios permite el afecto y la preferencia en esta importante relación, no aprueba aquella pasión necia, ingobernable e idólatra que no se preocupa de cuál pueda ser el fin, sino que, desafiando la autoridad, se decide por la propia complacencia. Toda conducta semejante, por disfrazada que esté, va contra el sentido común, los intereses de la sociedad, la felicidad de la relación matrimonial y, lo que es peor aún, contra la religión de Cristo.",
    "quotes": [],
    "flags": [
-    "source garbled: a run of words repeated ('Ought not every true believer Israel, to be united only to their own people. Ought not every true believer in Jesus…'); translated as it stands, the stray copy included."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -573,13 +579,13 @@
   {
    "kind": "section",
    "id": 509,
-   "sha256": "f88e8317db81c1f4f92da0731017baf2094ec696594610d6545c90987c5aa65d",
+   "sha256": "8906e8e5614539ae86743827de8d1b3458554cb736466d153704f5c5309b7f28",
    "title": "Los moabitas y los amonitas han de ser perdonados.",
    "text": "Tenemos el origen de los moabitas, edomitas y amonitas. Moisés también da un ejemplo más antiguo que todos estos: los caftoreos echaron a los heveos de su país. Estas revoluciones muestran cuán inciertas son las posesiones mundanas. Así fue antiguamente, y así será siempre. Las familias decaen, y de ellas los bienes pasan a familias que crecen; tan poca permanencia hay en estas cosas. Esto se registra para animar a los hijos de Israel. Si la providencia de Dios hizo esto por los moabitas y amonitas, mucho más lo haría su promesa por Israel, su pueblo peculiar. Se dan advertencias de no meterse con los moabitas y amonitas. Ni aun a los hombres malvados se les debe hacer agravio. Dios da y conserva bendiciones externas a los hombres malvados; estas no son las mejores cosas; él tiene cosas mejores reservadas para sus propios hijos.",
    "quotes": [],
    "flags": [
     "'Caphtorims… Avims' (KJV Dt 2:23): RV1909 'los Caftoreos… los Heveos'; the RV1909's names used.",
-    "source typo: 'wordly'."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

@@ -9421,19 +9421,19 @@
    "name": "Tofet"
   },
   "1177": {
-   "name": "Torre"
+   "name": "Torre de Hananeel"
   },
   "1178": {
    "name": "Siquem (torre)"
   },
   "1179": {
-   "name": "Torre"
+   "name": "Torre de Meah"
   },
   "118": {
    "name": "Atenas"
   },
   "1180": {
-   "name": "Torre"
+   "name": "Torre de los Hornos"
   },
   "1181": {
    "name": "Traconite"
@@ -9576,7 +9576,7 @@
    "name": "Valle de los que pasan"
   },
   "1229": {
-   "name": "Campo"
+   "name": "Heredad del Lavador"
   },
   "123": {
    "name": "Ava"
@@ -10020,7 +10020,7 @@
    "name": "Bet-sur"
   },
   "244": {
-   "name": "Río"
+   "name": "La Otra Parte del Río"
   },
   "245": {
    "name": "Bezec"
@@ -11109,7 +11109,7 @@
    "name": "Antioquía (Pisidia)"
   },
   "691": {
-   "name": "Estanque"
+   "name": "Estanque del Rey"
   },
   "692": {
    "name": "Valle de Shaveh",
@@ -11772,7 +11772,7 @@
    "name": "Ponto"
   },
   "957": {
-   "name": "Estanque"
+   "name": "Estanque de Selah"
   },
   "958": {
    "name": "Puerta Oriental"
@@ -11875,6 +11875,48 @@
   },
   "999": {
    "name": "Regio"
+  },
+  "1152": {
+   "name": "Jehová-sama"
+  },
+  "1153": {
+   "name": "Lugar de la Calavera"
+  },
+  "1154": {
+   "name": "Calvario"
+  },
+  "1232": {
+   "name": "Peñascos de las Cabras Monteses"
+  },
+  "261": {
+   "name": "Torrente de los Sauces"
+  },
+  "301": {
+   "name": "Ciudad Herez"
+  },
+  "302": {
+   "name": "Ciudad de la Sal"
+  },
+  "511": {
+   "name": "Pórtico del Juicio"
+  },
+  "512": {
+   "name": "Pórtico de Columnas"
+  },
+  "513": {
+   "name": "Pórtico del Trono"
+  },
+  "584": {
+   "name": "Casa del Bosque"
+  },
+  "66": {
+   "name": "Las Esquinas"
+  },
+  "690": {
+   "name": "Camino Real"
+  },
+  "954": {
+   "name": "Lugar de la Calavera"
   }
  },
  "route": {

@@ -204,13 +204,16 @@
   {
    "kind": "section",
    "id": 331,
-   "sha256": "dff329945f3e2f3eb3574d99f03f17fe2e6f863489728748f2eb23dba7e9769d",
+   "sha256": "2cdc5a36ab6fdc7fa2213384af69e4af6172883e2b8a116f031a6a5875b3561d",
    "text": "El sacrificio de paz de las vacas.\n\n(1-5)\n\nEl sacrificio de paz de las ovejas.\n\n(6-17)\n\nLos sacrificios de paz tenían en cuenta a Dios como el dador de todas las cosas buenas. Se dividían entre el altar, el sacerdote y el dueño. Se llamaban sacrificios de paz porque en ellos Dios y su pueblo, por así decirlo, celebraban juntos un banquete, en señal de amistad. Los sacrificios de paz se ofrecían a manera de súplica. Si un hombre buscaba alguna misericordia, añadía un sacrificio de paz a su oración por ella. Cristo es nuestra Paz, nuestro Sacrificio de paz; porque solo por medio de él podemos obtener una respuesta de paz a nuestras oraciones. O bien, el sacrificio de paz se ofrecía a manera de acción de gracias por alguna misericordia recibida. Debemos ofrecer a Dios sacrificio de alabanza continuamente, por medio de Cristo nuestra Paz; y entonces esto agradará á Jehová más que sacrificio de buey, ó becerro.",
    "quotes": [
     {
      "n": 0,
      "text": "agradará á Jehová más que sacrificio de buey, ó becerro"
     }
+   ],
+   "flags": [
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -313,12 +316,12 @@
   {
    "kind": "section",
    "id": 338,
-   "sha256": "5b890c4e39d12637a5e2b9144850a4a4b395405779316679b8d62736d9895528",
+   "sha256": "b9c8edb728c321629c2b7f669ef32bc66df0455af7e6a4b2cb1cdbbfc9889539",
    "title": "Acerca de las transgresiones contra el Señor.",
    "text": "He aquí ofrendas para expiar las transgresiones contra el prójimo. Si un hombre, sin saberlo, tomaba para su propio uso alguna cosa dedicada a Dios, debía traer este sacrificio. Debemos ser celosos sobre nosotros mismos, pedir perdón por el pecado y dar satisfacción por el agravio del cual solo sospechamos ser culpables. La ley de Dios es tan sumamente amplia, las ocasiones de pecado en este mundo son tan numerosas, y somos tan propensos al mal, que necesitamos temer siempre y orar siempre, para ser guardados del pecado. También deberíamos mirar delante de nosotros a cada paso. El verdadero cristiano se declara culpable cada día delante de Dios, y busca el perdón por medio de la sangre de Cristo. Y la salvación del evangelio es tan gratuita que el más pobre no queda excluido; y tan plena que la conciencia más cargada puede hallar alivio en ella. Sin embargo, el mal del pecado se muestra de tal manera que hace que todo pecador perdonado lo aborrezca y lo tema.",
    "flags": [
-    "Source oddity: the English repeats 'guilty of. The law of God is so very broad, the occasions of sin in this' (a duplicated line); translated once.",
-    "Henry says 'against a neighbour' though the section is about trespasses in holy things (Lv 5:15); kept as written."
+    "Henry says 'against a neighbour' though the section is about trespasses in holy things (Lv 5:15); kept as written.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

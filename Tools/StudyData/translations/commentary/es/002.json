@@ -62,14 +62,19 @@
   {
    "kind": "section",
    "id": 30,
-   "sha256": "654590850961db7646166856022821544e4bcd786a874e71b32c8faa658f73c3",
+   "sha256": "ece2b7cd3514fdf56c9ceb0d72ad67375d4fb41629e690ea0e2920340ac19a8b",
    "title": "De Matusalam a Noé.",
-   "text": "Matusalam significa: 'muere él, hay un dardo', 'un envío', es decir, del diluvio, que vino el año en que murió Matusalam. Vivió 969 años, lo más que hombre alguno ha vivido jamás en la tierra; pero el que más vive tiene que morir al fin. Noé significa descanso; sus padres le dieron ese nombre con la esperanza de que fuera una gran bendición para su generación. Observemos la queja de su padre sobre el estado calamitoso de la vida humana, por la entrada del pecado y la maldición del pecado. Toda nuestra vida se pasa en trabajo, y nuestro tiempo está lleno de continua fatiga. Habiendo Dios maldecido la tierra, apenas pueden algunos, con el mayor cuidado y esfuerzo, sacar de ella un duro sustento [...] nos aliviará.\" Esto significa no solo aquel deseo y aquella expectativa que los padres tienen generalmente acerca de sus hijos, de que les serán de consuelo y de ayuda, aunque a menudo resulten lo contrario; sino que significa también la esperanza de algo más. ¿Es Cristo nuestro? ¿Es el cielo nuestro? Necesitamos mejores consoladores en nuestra fatiga y tristeza que los parientes más queridos y la descendencia más prometedora; busquemos y hallemos consuelo en Cristo.",
-   "quotes": [],
+   "text": "Matusalam significa: 'muere él, hay un dardo', 'un envío', es decir, del diluvio, que vino el año en que murió Matusalam. Vivió 969 años, lo más que hombre alguno ha vivido jamás en la tierra; pero el que más vive tiene que morir al fin. Noé significa descanso; sus padres le dieron ese nombre con la esperanza de que fuera una gran bendición para su generación. Observemos la queja de su padre sobre el estado calamitoso de la vida humana, por la entrada del pecado y la maldición del pecado. Toda nuestra vida se pasa en trabajo, y nuestro tiempo está lleno de continua fatiga. Habiendo Dios maldecido la tierra, apenas pueden algunos, con el mayor cuidado y esfuerzo, sacar de ella un duro sustento. Lamec esperaba alivio por el nacimiento de este hijo: \"Este nos aliviará.\" Esto significa no solo aquel deseo y aquella expectativa que los padres tienen generalmente acerca de sus hijos, de que les serán de consuelo y de ayuda, aunque a menudo resulten lo contrario; sino que significa también la esperanza de algo más. ¿Es Cristo nuestro? ¿Es el cielo nuestro? Necesitamos mejores consoladores en nuestra fatiga y tristeza que los parientes más queridos y la descendencia más prometedora; busquemos y hallemos consuelo en Cristo.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "Este nos aliviará"
+    }
+   ],
    "flags": [
-    "source oddity: the English is cut off ('to get a hard livelihood out comfort us.\"'): words of Henry's text and the start of his quotation of Gn 5:29 are missing. Rendered with '[...]' and the RV1909's 'nos aliviará' (KJV 'shall comfort us'); Henry's lone closing quotation mark kept. Please restore from a full edition.",
     "source oddity: unbalanced quotation marks (he dies, there is a dart,' a sending forth,'); written as balanced single quotes.",
-    "Methuselah written 'Matusalam' (glossary; the RV1909 has 'Mathusalam')."
+    "Methuselah written 'Matusalam' (glossary; the RV1909 has 'Mathusalam').",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

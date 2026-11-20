@@ -108,11 +108,12 @@
   {
    "kind": "section",
    "id": 3393,
-   "sha256": "061e4f2557304fa0a7313707471965910f0711428b8b51d0081f06ce2852b0c2",
+   "sha256": "91d14d4f8454f207bdef8f8c1a4cd6b2a246887a0e7c8adb67d180200403f30b",
    "title": "Su amor a sus discípulos.",
    "text": "Aquellos a quienes Dios ama como Padre pueden menospreciar el odio de todo el mundo. Así como el Padre amó a Cristo, que era dignísimo, así él amó a sus discípulos, que eran indignos. Todos los que aman al Salvador deben perseverar en su amor a él y aprovechar toda ocasión para mostrarlo. El gozo del hipócrita no es sino por un momento, pero el gozo de los que permanecen en el amor de Cristo es un banquete continuo. Han de mostrarle su amor guardando sus mandamientos. Si el mismo poder que primero derramó el amor de Cristo en nuestros corazones no nos guardara en ese amor, no permaneceríamos mucho tiempo en él. El amor de Cristo por nosotros debería llevarnos a amarnos unos a otros. Habla como quien va a encargar muchas cosas, y sin embargo nombra solo esta; ella incluye muchos deberes.",
    "flags": [
-    "Source slip \"the love of Christ's in our hearts\" read as \"the love of Christ\"."
+    "Source slip \"the love of Christ's in our hearts\" read as \"the love of Christ\".",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -308,7 +309,7 @@
   {
    "kind": "section",
    "id": 3410,
-   "sha256": "76e9e76be616758d07f4f51ac8b5b091ce2044d1898c7b517421a7e31a2e92e9",
+   "sha256": "7266af8b472d11a75ce2bfd7d47c5c0704daed828f6ca84961bf03d20c96a4f7",
    "text": "¿Eres tú el Rey de los Judíos? ¿Aquel Rey de los judíos que ha sido esperado tanto tiempo? El Mesías Príncipe, ¿eres tú? ¿Te llamas así a ti mismo, y quieres que se te tenga por tal? Cristo respondió a esta pregunta con otra; no para evadirla, sino para que Pilato considerara lo que hacía. Nunca tomó sobre sí ningún poder terrenal; nunca se le imputaron principios ni prácticas de traición. Cristo dio razón de la naturaleza de su reino. Su naturaleza no es mundana; es un reino dentro de los hombres, establecido en su corazón y en su conciencia; sus riquezas son espirituales, su poder espiritual, y su gloria interior. Sus apoyos no son mundanos; sus armas son espirituales; no necesitó la fuerza ni la usó para mantenerlo y extenderlo, ni se opuso a ningún reino sino al del pecado y Satanás. Su objeto y su propósito no son mundanos. Cuando Cristo dijo: Yo soy la Verdad, dijo en efecto: Yo soy Rey. Conquista por la evidencia convincente de la verdad; gobierna por el poder imperioso de la verdad. Los súbditos de este reino son los que son de la verdad. Pilato hizo una buena pregunta; dijo: ¿Qué cosa es verdad? Cuando escudriñamos las Escrituras y asistimos al ministerio de la palabra, debe ser con esta pregunta: ¿Qué cosa es verdad? Y con esta oración: Encamíname en tu verdad; a toda verdad. Pero muchos hacen esta pregunta sin tener paciencia para perseverar en su búsqueda de la verdad, o sin humildad suficiente para recibirla. Por esta solemne declaración de la inocencia de Cristo se ve que, aunque el Señor Jesús fue tratado como el peor de los malhechores, nunca mereció tal trato. Pero ella revela el propósito de su muerte: que murió como Sacrificio por nuestros pecados. Pilato quería complacer a todas las partes, y se guiaba más por la sabiduría mundana que por las reglas de la justicia. El pecado es un ladrón, y sin embargo muchos lo escogen neciamente antes que a Cristo, que verdaderamente nos enriquecería. Procuremos avergonzar a nuestros acusadores como lo hizo Cristo; y guardémonos de crucificar a Cristo de nuevo.",
    "quotes": [
     {
@@ -317,9 +318,9 @@
     }
    ],
    "flags": [
-    "Source slips: \"it glory\" read as \"its glory\"; \"patience to preserve in their search\" read as \"persevere\".",
     "Unlisted quotations given in the RV1909's words: \"Messiah the Prince\" (Dan 9:25) \"El Mesías Príncipe\"; \"What is truth?\" (John 18:38) \"¿Qué cosa es verdad?\"; \"Lead me in thy truth\" (Ps 25:5) \"Encamíname en tu verdad\".",
-    "\"crucifying Christ afresh\" (Heb 6:6) translated."
+    "\"crucifying Christ afresh\" (Heb 6:6) translated.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

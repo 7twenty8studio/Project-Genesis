@@ -324,12 +324,12 @@
   {
    "kind": "section",
    "id": 1481,
-   "sha256": "b94f0a4e892be3a91b8899be722a5325b86184e1ae9936050f5eb2972ef15e06",
+   "sha256": "86022eeaf1a1b5a146c6380d5aa8f1cabefdf9c6bcb3187e39e9bbad57e4cb22",
    "title": "David procura aquietar su espíritu con esperanza y confianza en Dios.",
    "text": "En cuanto a la contienda que Dios tenía con David por el pecado, él ora: No entres en juicio conmigo; si Tú lo haces, seré condenado; pero en cuanto a la contienda que sus enemigos tenían con él, ora: Señor, júzgame, y en tu providencia manifiéstate en mi favor. Si no podemos consolarnos en Dios, podemos apoyarnos en él, y podemos tener sostenes espirituales cuando nos faltan deleites espirituales. Él nunca desechó a ninguno que confiara en él, cualesquiera que fueran los temores que tuvieran acerca de su propio estado. No necesitamos desear nada más para ser felices que el bien que fluye del favor de Dios y está incluido en su promesa. A los que Dios guía, los guía a su santo monte; por tanto, los que pretenden ser guiados por el Espíritu, y sin embargo dan la espalda a la ordenanza, se engañan a sí mismos. Debemos seguir orando por el Espíritu de luz y de verdad, que suple la falta de la presencia corporal de Cristo, para guiarnos en el camino al cielo. En cualquier cosa en que nos regocijemos o triunfemos, el Señor ha de ser el gozo de ella. David acude a Dios como su esperanza que nunca falla. Oremos fervientemente que el Señor envíe la verdad de su palabra y la luz de su Espíritu, para guiarnos al camino de la santidad, la paz y la salvación. El deseo del cristiano, como el del profeta en angustia, es ser salvado del pecado así como del dolor; ser enseñado en el camino de la justicia por la luz de la sabiduría celestial que resplandece en Jesucristo, y ser guiado por esta luz y esta verdad a la Nueva Jerusalén.",
    "flags": [
     "Sal 143:2 and Sal 43:1 ('Judge me, O God') adapted by Henry ('Enter not into judgment with me', 'Lord, judge me'); translated (RV1909 'no entres en juicio con tu siervo', 'Júzgame, oh Dios').",
-    "Source grammar 'the good that flow' read as 'the good that flows'; 'ordinance' (singular) kept as 'la ordenanza'."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -350,7 +350,7 @@
   {
    "kind": "section",
    "id": 1484,
-   "sha256": "536a0f03307ff0cff2ecb1b4201c2b388a25b960b182dde56f6990764f44bfa5",
+   "sha256": "f6d548dbbfed602fddd09b0b2b6f033b1455f2fc4a545dd94ec11a8b7c2bf76c",
    "text": "En las aflicciones no debemos buscar alivio en ninguna condescendencia pecaminosa, sino meditar continuamente en la verdad, la pureza y el conocimiento de nuestro Dios, que escudriña el corazón. Los pecados del corazón y los pecados secretos son conocidos por Dios, y habrá que dar cuenta de ellos. Él conoce el secreto del corazón; por tanto, juzga las palabras y las acciones. Mientras nuestras aflicciones no nos aparten de nuestro deber para con Dios, no debemos permitir que nos aparten de nuestro consuelo en Dios. Cuidémonos de que la prosperidad y la comodidad no nos hagan descuidados y tibios. La iglesia de Dios no puede ser inducida por la persecución a olvidarse de Dios; el corazón del creyente no se vuelve atrás de Dios. El Espíritu de profecía se refería a los que padecieron hasta la muerte por el testimonio de Cristo. Obsérvense los argumentos empleados, v. (25-26). No su propio mérito y justicia, sino los argumentos del pobre pecador. Ninguno de los que pertenecen a Cristo será desechado, sino que cada uno de ellos será salvo, y eso para siempre. La misericordia de Dios, comprada, prometida y que fluye constantemente y se ofrece a los creyentes, quita toda duda que surja de nuestros pecados, mientras oramos con fe: Redímenos por tu misericordia.",
    "quotes": [
     {
@@ -359,8 +359,8 @@
     }
    ],
    "flags": [
-    "Source typo 'Hearts sins' read as 'Heart sins' ('los pecados del corazón').",
-    "Sal 44:26: Henry's 'for thy mercies' sake' given with the RV1909's 'por tu misericordia'."
+    "Sal 44:26: Henry's 'for thy mercies' sake' given with the RV1909's 'por tu misericordia'.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

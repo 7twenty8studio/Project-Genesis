@@ -592,6 +592,7 @@
    "pt": "Abraão"
   },
   "Adam": {
+   "es": "Adán (person); Adam (place)",
    "pt": "Adão (person); Adã (place)"
   },
   "Ahab": {
@@ -604,6 +605,9 @@
   },
   "David": {
    "pt": "Davi"
+  },
+  "Eli": {
+   "es": "Elí"
   },
   "Elijah": {
    "es": "Elías",
@@ -646,6 +650,10 @@
   },
   "Levi": {
    "es": "Leví"
+  },
+  "Luke": {
+   "es": "Lucas",
+   "pt": "Lucas"
   },
   "Martha": {
    "es": "Marta",

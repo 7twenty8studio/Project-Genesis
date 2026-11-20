@@ -21,6 +21,8 @@ Usage:
     git clone --depth 1 https://github.com/robertrouse/theographic-bible-metadata /tmp/theographic
     git clone --depth 1 https://github.com/openbibleinfo/Bible-Geocoding-Data /tmp/openbible
     python3 Tools/StudyData/build_study.py /tmp/theographic /tmp/openbible
+
+    python3 Tools/StudyData/build_study.py --place-names   # PLACE_NAMES only
 """
 import collections
 import json
@@ -65,6 +67,45 @@ UNDATED_ERAS = {"creation", "noah"}
 # approximate) date rather than by the book that tells them, so a flashback in
 # Chronicles lands in the right era. Boundaries are astronomical years.
 DATED_ERA_ENDS = [(-1490, "abraham"), (-1450, "moses"), (-1420, "joshua"), (-1094, "judges"), (-585, "kings")]
+
+
+# Places the dataset names by one word of a longer name ("Place" for the place
+# of a skull, "Forest" for the house of the forest): the full name in the KJV's
+# words at the place's verses (the ASV's where the KJV has none, 1 Kgs 7:7,
+# Ezra 4:10). Same ids as the bundled Study.sqlite; the Spanish and Portuguese
+# names are pinned in translations/manual.json (`ids`).
+PLACE_NAMES = {
+    66: "Turning of the Wall",          # 2 Chr 26:9
+    244: "Beyond the River",            # Ezra 4:10 (ASV; KJV "this side the river")
+    261: "Brook of the Willows",        # Isa 15:7
+    301: "City of Destruction",         # Isa 19:18
+    302: "City of Salt",                # Josh 15:62
+    511: "Porch of Judgment",           # 1 Kgs 7:7
+    512: "Porch of Pillars",            # 1 Kgs 7:6
+    513: "Porch of the Throne",         # 1 Kgs 7:7 (ASV)
+    584: "House of the Forest",         # Isa 22:8
+    690: "King's Highway",              # Num 20:17
+    691: "King's Pool",                 # Neh 2:14
+    954: "Place of a Skull",            # Matt 27:33, Mark 15:22
+    957: "Pool of Siloah",              # Neh 3:15
+    1152: "The Lord Is There",          # Ezek 48:35
+    1153: "Place of a Skull",           # John 19:17
+    1154: "Calvary",                    # Luke 23:33
+    1177: "Tower of Hananeel",          # Neh 3:1
+    1179: "Tower of Meah",              # Neh 3:1
+    1180: "Tower of the Furnaces",      # Neh 3:11
+    1229: "Fuller's Field",             # 2 Kgs 18:17, Isa 7:3
+    1232: "Rocks of the Wild Goats",    # 1 Sam 24:2
+}
+
+
+def apply_place_names(db) -> int:
+    """Gives the places in PLACE_NAMES their full names. Safe to run again."""
+    changed = 0
+    for pid, name in PLACE_NAMES.items():
+        changed += db.execute("UPDATE places SET name = ? WHERE id = ? AND name != ?", (name, pid, name)).rowcount
+    db.commit()
+    return changed
 
 
 def era_for_event(book: int, chapter: int, start):
@@ -352,6 +393,7 @@ def build(source: str, openbible: str) -> None:
         os.remove(OUTPUT)
         sys.exit("Route stops not found in the dataset:\n  " + "\n  ".join(missing))
 
+    apply_place_names(db)
     db.executescript(
         """
         CREATE INDEX person_verses_by_verse ON person_verses (verse);
@@ -382,6 +424,11 @@ def resolve_place(stop: str, names_to_place: dict):
 
 
 if __name__ == "__main__":
+    if sys.argv[1:] == ["--place-names"]:
+        # Only the full place names, in the bundled database (no rebuild).
+        with sqlite3.connect(OUTPUT) as database:
+            print(f"{apply_place_names(database)} place names updated in {OUTPUT}")
+        sys.exit(0)
     if len(sys.argv) != 3:
         sys.exit(__doc__)
     build(sys.argv[1], sys.argv[2])

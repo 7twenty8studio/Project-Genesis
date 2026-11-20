@@ -51,7 +51,7 @@
   {
    "kind": "section",
    "id": 4042,
-   "sha256": "81302c9edea8b5cbc9b2487da40325f5dedba2a02ad2d4f9b28e140435dc02b4",
+   "sha256": "bca6991179b4fc85c75ce4bded32800921f570f19eca148b221f6c1ac45f7af8",
    "title": "Um novo céu e uma nova terra: a nova Jerusalém, onde Deus habita e de onde bane toda tristeza do seu povo.",
    "text": "O novo céu e a nova terra não estarão separados um do outro; a terra dos santos, os seus corpos glorificados, será celestial. O mundo antigo, com todas as suas aflições e tumultos, terá passado. Não haverá mar; isto representa bem a libertação das paixões em conflito, das tentações, aflições, mudanças e sobressaltos; de tudo o que possa dividir ou interromper a comunhão dos santos. Esta nova Jerusalém é a igreja de Deus no seu estado novo e perfeito, a igreja triunfante. A sua bem-aventurança veio inteiramente de Deus e depende dele. A presença de Deus com o seu povo no céu não será interrompida como o é na terra; com eles habitará continuamente. Todos os efeitos das aflições passadas serão removidos. Eles estiveram muitas vezes em lágrimas por causa do pecado, da aflição e das calamidades da igreja; mas nenhum sinal, nenhuma lembrança das tristezas passadas permanecerá. Cristo faz novas todas as coisas. Se estamos dispostos e desejosos de que o gracioso Redentor faça novas todas as coisas no nosso coração e na nossa natureza, ele fará novas todas as coisas quanto à nossa situação, até que nos tenha levado a desfrutar da felicidade completa. Vede a certeza da promessa. Deus dá os seus títulos, o Alfa e o Ômega, o princípio e o fim, como penhor do pleno cumprimento. Os prazeres sensuais e pecaminosos são águas lodosas e envenenadas; e os melhores confortos terrenos são como as escassas provisões de uma cisterna; quando idolatrados, tornam-se cisternas rotas e só produzem desgosto. Mas as alegrias que Cristo comunica são como águas que brotam de uma fonte: puras, refrescantes, abundantes e eternas. As consolações santificadoras do Espírito Santo preparam para a felicidade celestial; são correntes que fluem para nós no deserto. Os covardes não ousaram enfrentar as dificuldades da religião; o seu medo servil procedia da sua incredulidade; mas os que eram tão poltrões que não ousavam tomar a cruz de Cristo eram, contudo, tão desesperados que se precipitavam numa maldade abominável. As agonias e os terrores da primeira morte levarão às agonias e aos terrores muito maiores da morte eterna.",
    "quotes": [
@@ -65,8 +65,8 @@
     }
    ],
    "flags": [
-    "source slips: \"their glorified, bodies\" (stray comma), \"will not be interrupt\" (for \"interrupted\") and \"in order hearts\" (for \"in our hearts\"); translated as meant",
-    "Henry's \"The fearful\" (Rev 21:8, KJV) given as \"Os covardes\", the Bíblia Livre's word"
+    "Henry's \"The fearful\" (Rev 21:8, KJV) given as \"Os covardes\", the Bíblia Livre's word",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -123,7 +123,7 @@
   {
    "kind": "section",
    "id": 4046,
-   "sha256": "387e371c44234f6faca54df120ccdc79903ce247cf1ba28e49e1fe087b6731c1",
+   "sha256": "b563cae37bf33173849afd567e47ec8980fecc34f3b6ac4a707ba3cb9773910c",
    "title": "A verdade e o cumprimento certo de todas as visões proféticas. O Espírito Santo e a noiva, a igreja, convidam e dizem: Vem.",
    "text": "O Senhor Jesus falou por meio do anjo, confirmando solenemente o conteúdo deste livro, particularmente desta última visão. Ele é o Senhor Deus fiel e verdadeiro. Também por meio dos seus mensageiros: os santos anjos as mostraram a santos homens de Deus. São as coisas que devem acontecer em breve; Cristo virá logo e porá tudo fora de dúvida. E pela integridade daquele anjo que tinha sido o intérprete do apóstolo. Ele recusou aceitar de João culto religioso, e o repreendeu por oferecê-lo. Isto apresenta outro testemunho contra o culto idólatra aos santos e aos anjos. Deus chama a todos para testemunhar das declarações aqui feitas. Este livro, mantido assim aberto, terá efeito sobre os homens; os sujos e injustos o serão ainda mais, mas ele confirmará, fortalecerá e santificará ainda mais os que são retos para com Deus. Nunca pensemos que uma fé morta ou desobediente nos salvará, pois o primeiro e o último declarou que só são bem-aventurados os que guardam os seus mandamentos. É um livro que exclui do céu todas as pessoas ímpias e injustas, particularmente as que amam e praticam a mentira; portanto, ele mesmo não pode ser uma mentira. Não há lugar nem condição intermediária. Jesus, que é o Espírito da profecia, deu às suas igrejas esta luz matutina da profecia, para assegurá-las da luz do dia perfeito que se aproxima. Tudo é confirmado por um convite aberto e geral à humanidade, para que venha e participe livremente das promessas e dos privilégios do evangelho. O Espírito, pela palavra sagrada e pelas convicções e influências na consciência do pecador, diz: Vem a Cristo para a salvação; e a noiva, ou toda a igreja, na terra e no céu, diz: Vem e participa da nossa felicidade. Para que ninguém hesite, acrescenta-se: Quem quiser, ou estiver disposto, venha e tome de graça da água da vida. Que todo aquele que ouve ou lê estas palavras deseje aceitar de imediato o gracioso convite. São condenados todos os que ousarem corromper ou mudar a palavra de Deus, quer acrescentando-lhe, quer tirando-lhe.",
    "quotes": [
@@ -137,8 +137,8 @@
     }
    ],
    "flags": [
-    "source typo \"shuts out form heaven\" read as \"from heaven\"",
-    "unlisted quotations of Rev 22:6 (\"as coisas que devem acontecer em breve\") and Rev 22:17 (\"Vem\") in the Bíblia Livre's words; Henry's \"those ... who do his commandments\" (Rev 22:14, KJV) given as \"os que guardam os seus mandamentos\", after the Bíblia Livre"
+    "unlisted quotations of Rev 22:6 (\"as coisas que devem acontecer em breve\") and Rev 22:17 (\"Vem\") in the Bíblia Livre's words; Henry's \"those ... who do his commandments\" (Rev 22:14, KJV) given as \"os que guardam os seus mandamentos\", after the Bíblia Livre",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

@@ -308,7 +308,7 @@
   {
    "kind": "section",
    "id": 3194,
-   "sha256": "80b11643844f77092e39a74f9d8a1b040f070cba534fd2e0d189a33fcd44a355",
+   "sha256": "ce9367d45eec78101dc1cc33c3c9148862870a8dbe5eb8cc40872595cc6e73ac",
    "title": "El nacimiento de Juan el Bautista.",
    "text": "En estos versículos tenemos un relato del nacimiento de Juan el Bautista y del gran gozo entre todos los parientes de la familia. Se llamará Johanán, o \"Misericordioso\", porque traerá el evangelio de Cristo, en el cual la gracia de Dios resplandece con más brillo. Zacarías recobró el habla. La incredulidad le cerró la boca, y el creer se la abrió de nuevo: cree, por eso habla. Cuando Dios abre nuestros labios, nuestra boca debe publicar su alabanza; y mejor es estar sin habla que no usarla en alabar a Dios. Se dice: La mano del Señor estaba obrando con Juan. Dios tiene modos de obrar en los niños en su infancia que no podemos explicar. Debemos observar los tratos de Dios y esperar el resultado.",
    "quotes": [
@@ -318,9 +318,9 @@
     }
    ],
    "flags": [
-    "English typo \"he believers\" read as \"he believes\" (\"cree, por eso habla\", echoing 2 Co 4:13)",
     "Henry's \"Gracious\" (the meaning of Johanan) rendered \"Misericordioso\"",
-    "quote 0: Henry adds \"working with John\" to Lc 1:66; only the RV1909 run \"la mano del Señor estaba\" is quoted"
+    "quote 0: Henry adds \"working with John\" to Lc 1:66; only the RV1909 run \"la mano del Señor estaba\" is quoted",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

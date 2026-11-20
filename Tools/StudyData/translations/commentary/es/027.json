@@ -15,7 +15,7 @@
   {
    "kind": "section",
    "id": 1009,
-   "sha256": "224105e41bc69f6b56cf6e50bcb827bb5eee2b968f7e250c7d9c5164f092de72",
+   "sha256": "c236870c3f46d2d576b7bb1ed4632e891c33042387302777ab1dd207d88c1f19",
    "title": "Josafat hace alianza con Acab.",
    "text": "La misma facilidad de carácter que lleva a algunas personas piadosas a la amistad con los enemigos declarados de la religión, se la hace muy peligrosa. Serán arrastradas a hacer la vista gorda y a dar su aprobación a una conducta y una conversación contra las que deberían protestar con aborrecimiento. Dondequiera que vaya un hombre bueno, debe llevar consigo su religión, y no avergonzarse de confesarla cuando está con los que no tienen consideración alguna por ella. Josafat no había dejado atrás, en Jerusalén, su afecto y su reverencia por la palabra del Señor, sino que los confesó, y procuró introducirlos en la corte de Acab. Y los profetas de Acab, para agradar a Josafat, usaron el nombre de Jehová; para agradar a Acab, dijeron: Sube. Pero los falsos profetas no pueden imitar tan bien a los verdaderos que no pueda discernir el engaño quien tiene los sentidos espirituales ejercitados. Un solo profeta fiel del Señor valía por todos ellos. Los hombres mundanos han sido en todas las épocas igualmente absurdos en sus ideas sobre la religión. Quieren que el predicador ajuste su doctrina a la moda de los tiempos y al gusto de los oyentes, y que aun así añada: Así ha dicho Jehová, a las palabras que los hombres quisieran poner en su boca. Están prontos a clamar contra un hombre como grosero y necio, cuando tiene escrúpulo de procurar así asegurar sus propios intereses y engañar a otros.",
    "quotes": [
@@ -26,9 +26,9 @@
     }
    ],
    "flags": [
-    "Source typo 'Wordly' read as 'Worldly' ('mundanos').",
     "1 R 22:6 ('Sube', RV1909) and the RV1909's prophetic formula 'Así ha dicho Jehová' (1 R 22:11) used; He 5:14 ('los sentidos ejercitados') echoed.",
-    "'league' rendered 'alianza' (a political alliance, not the covenant)."
+    "'league' rendered 'alianza' (a political alliance, not the covenant).",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -251,13 +251,14 @@
   {
    "kind": "section",
    "id": 1027,
-   "sha256": "2150873dd827b5e7adbd122c363c0bd50f6165e53383e3d249c04127e1616c52",
+   "sha256": "9762b885ef4418a1d6a393a0d59da8dd416d2dab608f049dcc5f57a5741de860",
    "title": "La lepra de Naamán.",
    "text": "Aunque los sirios eran idólatras y oprimían al pueblo de Dios, la liberación de la que Naamán había sido el instrumento se atribuye aquí al Señor. Tal es el lenguaje correcto de la Escritura, mientras que los que escriben la historia común muestran claramente que no hay Dios en todos sus pensamientos. Ninguna grandeza ni honra humana puede poner a un hombre fuera del alcance de las calamidades más dolorosas de la vida humana: hay muchos cuerpos enfermizos y achacosos bajo ropas ricas y vistosas. Todo hombre tiene algún pero u otro, algo que lo afea y lo disminuye, alguna liga en su grandeza, alguna sombra en su gozo. Esta muchachita, aunque solo era una niña, pudo dar noticia del famoso profeta que los israelitas tenían entre ellos. A los niños se les debe hablar temprano de las maravillosas obras de Dios, para que, adondequiera que vayan, hablen de ellas. Como correspondía a una buena sierva, deseaba la salud y el bienestar de su amo, aunque era cautiva, sierva por la fuerza; mucho más deben los siervos por elección procurar el bien de sus amos. Los siervos pueden ser una bendición para las familias donde están, contando lo que saben de la gloria de Dios y de la honra de sus profetas. Naamán no despreció lo que ella dijo a causa de su baja condición. Bueno sería que los hombres sintieran la carga del pecado tanto como sienten la enfermedad corporal. Y cuando buscan las bendiciones que el Señor envía en respuesta a las oraciones de su pueblo fiel, hallarán que nada puede obtenerse, a menos que vengan como mendigos por un don gratuito, no como señores para exigirlo o comprarlo.",
    "flags": [
     "Source typo 'our of the reach' read as 'out of the reach'.",
     "'some but or other' alludes to the 'but' of 2 R 5:1 (KJV 'but he was a leper'; RV1909 'pero leproso'); rendered 'algún pero u otro'. 'allay' read as 'alloy' ('liga').",
-    "unlisted quotation of Sal 10:4 ('no hay Dios en todos sus pensamientos', RV1909)."
+    "unlisted quotation of Sal 10:4 ('no hay Dios en todos sus pensamientos', RV1909).",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

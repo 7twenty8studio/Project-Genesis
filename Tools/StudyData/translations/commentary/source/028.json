@@ -341,9 +341,9 @@
    "book": 12,
    "start_verse": 12017024,
    "end_verse": 12017041,
-   "sha256": "9741fb810c5b7a7cbcc5763e605ba75a47f58d9ddc3d85bedb18dc3bd40847fb",
+   "sha256": "d99fed22cdabcaf2fec1c6c0415f796a0cf318bde0761e825a3aef34cd700084",
    "title": "The nations placed in the land of Israel.",
-   "text": "The terror of the Almighty will sometimes produce a forced or feigned submission in unconverted men; like those brought from different countries to inhabit Israel. But such will form unworthy thoughts of God, will expect to please him by outward forms, and will vainly try to reconcile his service with the love of the world and the indulgence of their lusts. May that fear of the Lord, which is the beginning of wisdom, possess our hearts, and influence our conduct, that we may be ready for every change. Wordly settlements are uncertain; we know not whither we may be driven before we die, and we must soon leave the world; but the righteous hath chosen that good part which shall not be taken from him.",
+   "text": "The terror of the Almighty will sometimes produce a forced or feigned submission in unconverted men; like those brought from different countries to inhabit Israel. But such will form unworthy thoughts of God, will expect to please him by outward forms, and will vainly try to reconcile his service with the love of the world and the indulgence of their lusts. May that fear of the Lord, which is the beginning of wisdom, possess our hearts, and influence our conduct, that we may be ready for every change. Worldly settlements are uncertain; we know not whither we may be driven before we die, and we must soon leave the world; but the righteous hath chosen that good part which shall not be taken from him.",
    "quotes": [
     {
      "n": 0,
@@ -750,9 +750,9 @@
    "book": 13,
    "start_verse": 13001001,
    "end_verse": 13001027,
-   "sha256": "15da44f5e424c7b850a8ba3cfd066048f00c0d809b62a1cb7aeeda754066ea7b",
+   "sha256": "428e6c20e4d79e4eb10bec8edea853ca43e1036a6e1a2420aa76880ef38bd072",
    "title": "Genealogies, Adam to Abraham.",
-   "text": "This chapter, and many that follow, repeat the genealogies, or lists of fathers and children in the Bible history, and put them together, with many added. When compared with other places, there are some differences found; yet we must not therefore stumble at the word, but bless God that the things necessary to salvation are plain enough. The original of the Jewish nation is here traced from the first man that God created, and is thereby distinguished from the obscure, fabulous, and absurd origins assigned to other nations. But the nations now are all so mingled with one another, that no one nation, nor the greatest part of any, is descended entirely from any of one nation, nor the greatest part of any, is descended entirely from any of these fountains. Only this we are sure of, that God has created of one blood all nations of men; they are all descended from one Adam, one Noah. Have we not all one father? Has not one God created us? Mal 2:10.",
+   "text": "This chapter, and many that follow, repeat the genealogies, or lists of fathers and children in the Bible history, and put them together, with many added. When compared with other places, there are some differences found; yet we must not therefore stumble at the word, but bless God that the things necessary to salvation are plain enough. The original of the Jewish nation is here traced from the first man that God created, and is thereby distinguished from the obscure, fabulous, and absurd origins assigned to other nations. But the nations now are all so mingled with one another, that no one nation, nor the greatest part of any, is descended entirely from any of these fountains. Only this we are sure of, that God has created of one blood all nations of men; they are all descended from one Adam, one Noah. Have we not all one father? Has not one God created us? Mal 2:10.",
    "quotes": [
     {
      "n": 0,
@@ -791,6 +791,7 @@
    "pt": "Abraão"
   },
   "Adam": {
+   "es": "Adán (person); Adam (place)",
    "pt": "Adão (person); Adã (place)"
   },
   "Ahab": {
@@ -845,6 +846,7 @@
    "pt": "Eliseu"
   },
   "Evil-merodach": {
+   "es": "Evil-merodac",
    "pt": "Evil-Merodaque"
   },
   "Ezekiel": {
@@ -938,7 +940,7 @@
    "pt": "Manassés"
   },
   "Micah": {
-   "es": "Micás (person); Micá (person)",
+   "es": "Micá (person); Micás (person); Miqueas (person)",
    "pt": "Mica (person); Miqueias (person)"
   },
   "Nebuchadnezzar": {

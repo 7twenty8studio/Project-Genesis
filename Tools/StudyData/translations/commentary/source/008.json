@@ -494,10 +494,20 @@
    "book": 2,
    "start_verse": 2013017,
    "end_verse": 2013020,
-   "sha256": "ef80d02e4e01ab59b2cf287a6659640196ee2296ca424c68058012f3919854f0",
+   "sha256": "8b074e714322c0bdaf709d6928959bddda4ab4c64108931aad15e94f0e365f96",
    "title": "Joseph's bones carried with the Israelites, They come to Etham.",
-   "text": "There were two ways from Egypt to Canaan. One was only a few days' journey; the other was much further about, through the wilderness, and that was the way in which God chose to lead his people Israel. The Egyptians were to be drowned in the Red sea; the Israelites were to be humbled and proved in the wilderness. God's way is the right way, though it seems about. If we think he leads not his people the nearest way, yet we may be sure he leads them the best way, and so it will appear when we come to our journey's end. The Philistines were powerful enemies; it was needful that the Israelites should be prepared for the wars of Canaan, by passing through the difficulties of the wilderness. Thus God proportions his people's trials to their strength, 1Co 10:13. They went up in good order. They went up in five in a rank, some; in five bands, so others, which it seems rather to their faith and hope, that God would bring them to Canaan, in expectation of which they carried these bones with them while in the desert.",
-   "quotes": []
+   "text": "There were two ways from Egypt to Canaan. One was only a few days' journey; the other was much further about, through the wilderness, and that was the way in which God chose to lead his people Israel. The Egyptians were to be drowned in the Red sea; the Israelites were to be humbled and proved in the wilderness. God's way is the right way, though it seems about. If we think he leads not his people the nearest way, yet we may be sure he leads them the best way, and so it will appear when we come to our journey's end. The Philistines were powerful enemies; it was needful that the Israelites should be prepared for the wars of Canaan, by passing through the difficulties of the wilderness. Thus God proportions his people's trials to their strength, 1Co 10:13. They went up in good order. They went up in five in a rank, some; in five bands, so others, which it seems rather to mean. They took the bones of Joseph with them. It was an encouragement to their faith and hope, that God would bring them to Canaan, in expectation of which they carried these bones with them while in the desert.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "took the bones of Joseph",
+     "verses": [
+      2013019
+     ],
+     "es": "Tomó también consigo Moisés los huesos de José, el cual había juramentado á los hijos de Israel, diciendo: Dios ciertamente os visitará, y haréis subir mis huesos de aquí con vosotros.",
+     "pt": "Tomou também consigo Moisés os ossos de José, o qual havia juramentado aos filhos de Israel, dizendo: Deus certamente vos visitará, e fareis subir meus ossos daqui convosco."
+    }
+   ]
   },
   {
    "kind": "section",

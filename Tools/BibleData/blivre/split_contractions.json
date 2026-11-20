@@ -1,0 +1,159 @@
+{
+ "about": "Contractions split by a space in the Bíblia Livre as eBible.org publishes it (porbr2018_usfx.xml, February 2018 edition): in the USFX the contraction's first letter and the rest are on either side of an <add> boundary with a line break between them, which reads as a space. Versely keeps the publisher's text verbatim (owner, 20 November 2026) and reports them upstream (UPSTREAM_REPORT.md). Test: Tools/BibleData/tests/test_blivre_splits.py.",
+ "splits": [
+  {
+   "verse": 19017013,
+   "reference": "Psalms 17:13",
+   "as_published": "d as",
+   "intended": "das",
+   "context": ", derruba-o; livra minha alma d as mãos do perverso co"
+  },
+  {
+   "verse": 19017014,
+   "reference": "Psalms 17:14",
+   "as_published": "n esta",
+   "intended": "nesta",
+   "context": "são do mundo, cuja parte está n esta vida, cujo ventre e"
+  },
+  {
+   "verse": 19022010,
+   "reference": "Psalms 22:10",
+   "as_published": "d o",
+   "intended": "do",
+   "context": "ançado sobre ti desde que saí d o útero; desde o vent"
+  },
+  {
+   "verse": 19095010,
+   "reference": "Psalms 95:10",
+   "as_published": "d esta",
+   "intended": "desta",
+   "context": "ta anos aguentei com desgosto d esta geração, e disse: E"
+  },
+  {
+   "verse": 19102003,
+   "reference": "Psalms 102:3",
+   "as_published": "n um",
+   "intended": "num",
+   "context": "ossos se têm se queimado como n um forno."
+  },
+  {
+   "verse": 20010017,
+   "reference": "Proverbs 10:17",
+   "as_published": "d aquele",
+   "intended": "daquele",
+   "context": "O caminho para a vida é d aquele que guarda a correç"
+  },
+  {
+   "verse": 21008008,
+   "reference": "Ecclesiastes 8:8",
+   "as_published": "d esta",
+   "intended": "desta",
+   "context": "a morte, nem meios de escapar d esta guerra; nem a perve"
+  },
+  {
+   "verse": 23005023,
+   "reference": "Isaiah 5:23",
+   "as_published": "d os",
+   "intended": "dos",
+   "context": "Ai d os que inocentam o per"
+  },
+  {
+   "verse": 23014032,
+   "reference": "Isaiah 14:32",
+   "as_published": "d aquela",
+   "intended": "daquela",
+   "context": "se responderá aos mensageiros d aquela nação? Que o SENHOR"
+  },
+  {
+   "verse": 41006011,
+   "reference": "Mark 6:11",
+   "as_published": "d aquela",
+   "intended": "daquela",
+   "context": " no dia do juízo, do que a os d aquela cidade."
+  },
+  {
+   "verse": 42021034,
+   "reference": "Luke 21:34",
+   "as_published": "d esta",
+   "intended": "desta",
+   "context": "mbriaguez, e das preocupações d esta vida; e vos venha a"
+  },
+  {
+   "verse": 43004054,
+   "reference": "John 4:54",
+   "as_published": "d a",
+   "intended": "da",
+   "context": "ltou a fazer, quando ele veio d a Judeia a Galileia."
+  },
+  {
+   "verse": 43006034,
+   "reference": "John 6:34",
+   "as_published": "d este",
+   "intended": "deste",
+   "context": "e pois: Senhor, dá-nos sempre d este pão."
+  },
+  {
+   "verse": 44001015,
+   "reference": "Acts 1:15",
+   "as_published": "d aqueles",
+   "intended": "daqueles",
+   "context": "E em algum d aqueles dias, havendo uma m"
+  },
+  {
+   "verse": 44013014,
+   "reference": "Acts 13:14",
+   "as_published": "n um",
+   "intended": "num",
+   "context": "ia; e ao entrarem na sinagoga n um dia de sábado, sent"
+  },
+  {
+   "verse": 44021001,
+   "reference": "Acts 21:1",
+   "as_published": "n o",
+   "intended": "no",
+   "context": "iretamente, e viemos a Cós, e n o dia seguinte a Rode"
+  },
+  {
+   "verse": 44021008,
+   "reference": "Acts 21:8",
+   "as_published": "n o",
+   "intended": "no",
+   "context": "E n o dia seguinte, Paulo"
+  },
+  {
+   "verse": 44021018,
+   "reference": "Acts 21:18",
+   "as_published": "n o",
+   "intended": "no",
+   "context": "E n o dia seguinte, Paulo"
+  },
+  {
+   "verse": 44023011,
+   "reference": "Acts 23:11",
+   "as_published": "n a",
+   "intended": "na",
+   "context": "E n a noite seguinte o Se"
+  },
+  {
+   "verse": 44026017,
+   "reference": "Acts 26:17",
+   "as_published": "d este",
+   "intended": "deste",
+   "context": "Livrando-te d este povo, e dos gentios"
+  },
+  {
+   "verse": 47012005,
+   "reference": "2 Corinthians 12:5",
+   "as_published": "D este",
+   "intended": "Deste",
+   "context": "D este tal eu me orgulhare"
+  },
+  {
+   "verse": 66009017,
+   "reference": "Revelation 9:17",
+   "as_published": "n esta",
+   "intended": "nesta",
+   "context": "E assim eu vi os cavalos n esta visão; e os que cav"
+  }
+ ]
+}

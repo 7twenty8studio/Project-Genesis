@@ -62,14 +62,20 @@
   {
    "kind": "section",
    "id": 30,
-   "sha256": "654590850961db7646166856022821544e4bcd786a874e71b32c8faa658f73c3",
+   "sha256": "ece2b7cd3514fdf56c9ceb0d72ad67375d4fb41629e690ea0e2920340ac19a8b",
    "title": "De Matusalém a Noé.",
-   "text": "Matusalém significa 'ele morre, há um dardo', 'um envio', a saber, do dilúvio, que veio no ano em que Matusalém morreu. Viveu 969 anos, o mais longo que algum homem jamais viveu na terra; mas quem vive mais tempo também tem de morrer por fim. Noé significa descanso; seus pais lhe deram esse nome na expectativa de que ele fosse uma grande bênção para a sua geração. Observai a queixa de seu pai acerca do estado calamitoso da vida humana, pela entrada do pecado e pela maldição do pecado. Toda a nossa vida se passa em trabalho, e o nosso tempo está cheio de fadiga contínua. Tendo Deus amaldiçoado a terra, é o mais que alguns conseguem fazer, com o máximo cuidado e esforço, tirar dela um sustento penoso… nos aliviará.\" Isso significa não somente aquele desejo e expectativa que os pais geralmente têm acerca dos filhos, de que lhes sejam consolo e ajuda, embora muitas vezes se mostrem o contrário; mas significa também a perspectiva de algo mais. Cristo é nosso? O céu é nosso? Precisamos de consoladores melhores, na nossa fadiga e tristeza, do que os parentes mais queridos e a descendência mais promissora; que possamos buscar e achar consolo em Cristo.",
-   "quotes": [],
+   "text": "Matusalém significa 'ele morre, há um dardo', 'um envio', a saber, do dilúvio, que veio no ano em que Matusalém morreu. Viveu 969 anos, o mais longo que algum homem jamais viveu na terra; mas quem vive mais tempo também tem de morrer por fim. Noé significa descanso; seus pais lhe deram esse nome na expectativa de que ele fosse uma grande bênção para a sua geração. Observai a queixa de seu pai acerca do estado calamitoso da vida humana, pela entrada do pecado e pela maldição do pecado. Toda a nossa vida se passa em trabalho, e o nosso tempo está cheio de fadiga contínua. Tendo Deus amaldiçoado a terra, é o mais que alguns conseguem fazer, com o máximo cuidado e esforço, tirar dela um sustento penoso. Lameque esperava alívio pelo nascimento deste filho: \"Este nos aliviará.\" Isso significa não somente aquele desejo e expectativa que os pais geralmente têm acerca dos filhos, de que lhes sejam consolo e ajuda, embora muitas vezes se mostrem o contrário; mas significa também a perspectiva de algo mais. Cristo é nosso? O céu é nosso? Precisamos de consoladores melhores, na nossa fadiga e tristeza, do que os parentes mais queridos e a descendência mais promissora; que possamos buscar e achar consolo em Cristo.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "Este nos aliviará"
+    }
+   ],
    "flags": [
     "source oddity: text is missing between \"a hard livelihood out\" and \"comfort us.\"\" (Henry quotes Gn 5:29, \"This same shall comfort us\"; the fragment \"which same shall comfort us\" appears misplaced in section 34); the gap is marked with \"…\" and the fragment given in the Bíblia Livre's words (\"nos aliviará\"); the closing quotation mark without an opening one is kept as in the source",
     "Henry's following explanation plays on KJV \"comfort\" (comforts, comforters); the Bíblia Livre's Gn 5:29 has \"aliviará\", so \"consolo\" / \"consoladores\" are Henry's words, not the verse's",
-    "source oddity: broken quotation marks (\"he dies, there is a dart,' a sending forth,'\"), rendered 'ele morre, há um dardo', 'um envio'"
+    "source oddity: broken quotation marks (\"he dies, there is a dart,' a sending forth,'\"), rendered 'ele morre, há um dardo', 'um envio'",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

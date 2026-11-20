@@ -178,6 +178,20 @@ This is still a reading by AI reviewers, not qualified sign-off: it is
 the most thorough pass so far, but a reviewer who reads Hebrew and Greek
 should still read the uncertain meanings and sample the rest.
 
+## AI triage of the uncertain meanings (20 November 2026; not qualified review)
+Six AI reviewers read each of the 1,358 uncertain meanings per language in its
+verses and judged the Spanish and Portuguese against STEPBible's English:
+es 1,277 ok, 52 fixed, 29 for a scholar; pt 1,291 ok, 36 fixed, 31 for a
+scholar. The fixes (agreement with the es/pt noun, meanings that had followed
+another reading than the English, such as "dracmas" for darics, "búfalo" for
+wild ox, "piojos" for gnats, "se mutilarán" for Gal 5:12, missing Spanish ¿)
+are in the batches; checks and audits/run.sh pass. Every meaning stays
+uncertain and awaiting qualified review; reviewed.json is untouched. The
+reviewer worksheet, with the "for a scholar" items first (places where
+STEPBible's English itself looks doubtful, e.g. Amos 8:8 "like the light",
+Judg 5:8 "bread", 1 Kgs 20:40 "them"), is ai-triage/WORKSHEET.md; the full
+records are ai-triage/triage.jsonl (test: Tools/StudyData/test_gloss_triage.py).
+
 ## Known limits (for the reviewer)
 
 - The structural checks don't judge meaning. Passing them says the marks,

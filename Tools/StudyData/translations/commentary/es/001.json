@@ -225,14 +225,14 @@
   {
    "kind": "section",
    "id": 16,
-   "sha256": "6ed68612f40b4f9a7f018b5b61cd755beaba36512de986ff59dd31984588b3b5",
+   "sha256": "c7b8ed99803b03cca1f61aaf44644a0f22d967286ce4279c0ed63421e0301c83",
    "title": "Adán y Eva transgreden el mandato divino, y caen en el pecado y la miseria.",
    "text": "Observemos los pasos de la transgresión: no pasos hacia arriba, sino hacia abajo, hacia el abismo. 1. Ella vio. Mucho pecado entra por los ojos. No miremos aquello que corremos peligro de codiciar, Mt 5:28. 2. Ella tomó. Fue su propio acto y hecho. Satanás puede tentar, pero no puede forzar; puede persuadirnos a que nos echemos abajo, pero no puede echarnos abajo, Mt 4:6. 3. Ella comió. Cuando miró, quizá no tenía intención de tomar; o cuando tomó, de comer: pero terminó en eso. Es sabiduría detener los primeros movimientos del pecado, y dejarlo antes de entrometerse con él. 4. Dio también a su marido, que estaba con ella. Los que han hecho mal están dispuestos a arrastrar a otros a hacer lo mismo. 5. Él comió. Al descuidar el árbol de la vida, del cual se le permitía comer, y comer del árbol de la ciencia, que estaba prohibido, Adán mostró claramente desprecio por lo que Dios le había concedido, y deseo de lo que Dios no tuvo a bien darle. Quería tener lo que le placía, y hacer lo que le placía. Su pecado fue, en una palabra, desobediencia, Ro 5:19; desobediencia a un mandamiento claro, fácil y expreso. No tenía dentro una naturaleza corrompida que lo traicionara, sino que tenía libertad de voluntad, en plena fuerza, no debilitada ni menoscabada. Se desvió pronto. Arrastró a toda su descendencia al pecado y a la ruina. ¿Quién puede decir, entonces, que el pecado de Adán tuvo poco daño? Cuando ya era tarde, Adán y Eva vieron la locura de comer el fruto prohibido. Vieron la felicidad de la que cayeron, y la miseria en que habían caído. Vieron a un Dios amoroso provocado, su gracia y su favor perdidos. Veamos aquí qué deshonra y qué perturbación es el pecado; hace daño dondequiera que entra, y destruye todo consuelo. Tarde o temprano traerá vergüenza; o bien la vergüenza del verdadero arrepentimiento, que termina en gloria, o aquella vergüenza y confusión perpetua para la cual resucitarán los impíos en el gran día. Veamos aquí cuál es comúnmente la locura de los que han pecado. Tienen más cuidado de salvar su reputación ante los hombres que de obtener su perdón de Dios. Las excusas que los hombres dan para cubrir y atenuar sus pecados son vanas y frívolas; como los delantales de hojas de higuera, no mejoran en nada el asunto: aun así, todos somos propensos a encubrir nuestras transgresiones como Adán. Antes de pecar, habrían recibido con humilde gozo las visitas misericordiosas de Dios; pero ahora él se había convertido en un terror para ellos. No es de extrañar que se volvieran un terror para sí mismos, y se llenaran de confusión. Esto muestra la falsedad del tentador y los fraudes de sus tentaciones. Satanás prometió que estarían seguros, ¡pero ni siquiera pueden creerse seguros! ¡Adán y Eva eran ahora miserables consoladores el uno para el otro!",
    "quotes": [],
    "flags": [
     "unlisted quotation of Dn 12:2: 'vergüenza y confusión perpetua' (RV1909) for Henry's 'shame and everlasting contempt'; please verify.",
-    "source oddity: 'See her what dishonour' is read as 'See here' ('Veamos aquí').",
-    "'miserable comforters' (Job 16:2) translated; the RV1909 has 'Consoladores molestos'."
+    "'miserable comforters' (Job 16:2) translated; the RV1909 has 'Consoladores molestos'.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -382,12 +382,13 @@
   {
    "kind": "section",
    "id": 25,
-   "sha256": "b9eba13eb8ca35b8671c94a115dabd30f839a480812366493086903ede3daf8a",
+   "sha256": "207867ab06270c879799ef577c68ac525ae1573f99b4bd1bf391dd5246b3401f",
    "title": "Lamec y sus mujeres, La habilidad de los descendientes de Caín.",
    "text": "Uno de la impía raza de Caín es el primero de quien se registra que quebrantó la ley del matrimonio. Hasta entonces, un hombre tenía una sola esposa a la vez; pero Lamec tomó dos. Las cosas del mundo son las únicas en que la gente carnal e impía pone su corazón, y en las que es más hábil y diligente. Así sucedió con esta raza de Caín. Aquí había un padre de pastores y un padre de músicos, pero no un padre de los fieles. Aquí hay uno que enseña acerca del bronce y del hierro, pero ninguno que enseñe el buen conocimiento del Señor: aquí hay invenciones para ser rico, para ser poderoso y para estar alegre; pero nada de Dios, ni de su temor y servicio. Las cosas presentes llenan la cabeza de la mayoría. Lamec tenía enemigos, a quienes había provocado. Hace una comparación entre él y su antepasado Caín, y se halaga pensando que es mucho menos culpable. Parece abusar de la paciencia de Dios al perdonar a Caín, convirtiéndola en un estímulo para esperar que podrá pecar sin castigo.",
    "quotes": [],
    "flags": [
-    "'Lamech' written 'Lamec' (modernized from the RV1909's 'Lamech'; not in the glossary)."
+    "'Lamech' written 'Lamec' (modernized from the RV1909's 'Lamech'; not in the glossary).",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   }
  ]

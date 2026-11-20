@@ -63,11 +63,12 @@
   {
    "kind": "section",
    "id": 1370,
-   "sha256": "24d723cc613afe4679aafe857c03299871d241a890ff7a514ebb2236382ffb12",
+   "sha256": "43a9256e2dbea73c64558ce7f2bddd87aca0ad3ca64d945b87494b58d0e11af0",
    "title": "Eliú acusa a Job de atribuir injusticia a Dios.",
    "text": "Eliú llama a los presentes a decidir con él acerca de las palabras de Job. El cristiano más sencillo, cuya mente está iluminada, cuyo corazón está santificado por el Espíritu de Dios, y que está versado en las Escrituras, puede decir hasta qué punto los asuntos, las palabras o las acciones concuerdan con la verdadera religión, mejor que cualquiera de los que se apoyan en su propia prudencia. Job había hablado como si quisiera justificarse por completo. El que dice: En vano he limpiado mis manos, no solo ofende a los hijos de Dios, Sal 73:13-15, sino que complace a sus enemigos, y dice lo que ellos dicen.",
    "flags": [
-    "“He that say, I have cleansed my hands in vain” (grammar slip “say” translated as “dice”) paraphrases Ps 73:13; the RV1909 reads “en vano he limpiado mi corazón, y lavado mis manos en inocencia”, so Henry's form is translated, not quoted."
+    "“He that say, I have cleansed my hands in vain” (grammar slip “say” translated as “dice”) paraphrases Ps 73:13; the RV1909 reads “en vano he limpiado mi corazón, y lavado mis manos en inocencia”, so Henry's form is translated, not quoted.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -142,11 +143,11 @@
   {
    "kind": "section",
    "id": 1377,
-   "sha256": "31f63c1c5b13ee7e75ed42e5d7e38772bae66682be65cde0f36f7d0e08758b17",
+   "sha256": "c5a04eafa47e23efb26277c2219822aef6920dd9d1485457531f95e0370e7f50",
    "title": "Eliú pide la atención de Job.",
-   "text": "Eliú solo sostuvo que la aflicción había sido enviada para su prueba, y que se prolongaba porque Job aún no estaba profundamente humillado bajo ella. Procuró atribuir justicia a su Hacedor; dejar en claro esta verdad: que Dios es justo en todos sus caminos. Tal conocimiento ha de aprenderse de la palabra y del Espíritu de Dios, porque por naturaleza estamos alejados de él. Lo adecuado del discurso de Eliú a la disputa entre Job y sus amigos es evidente. Mostraba a Job la verdadera razón de aquellas pruebas con las que había sido mostraba a Job la verdadera razón de aquellas pruebas con las que había sido visitado. Enseñaba que Dios había obrado con misericordia para con él, y el beneficio espiritual que había de sacar de ellas. Corregía el error de sus amigos, y mostraba que las calamidades de Job eran para bien.",
+   "text": "Eliú solo sostuvo que la aflicción había sido enviada para su prueba, y que se prolongaba porque Job aún no estaba profundamente humillado bajo ella. Procuró atribuir justicia a su Hacedor; dejar en claro esta verdad: que Dios es justo en todos sus caminos. Tal conocimiento ha de aprenderse de la palabra y del Espíritu de Dios, porque por naturaleza estamos alejados de él. Lo adecuado del discurso de Eliú a la disputa entre Job y sus amigos es evidente. Mostraba a Job la verdadera razón de aquellas pruebas con las que había sido visitado. Enseñaba que Dios había obrado con misericordia para con él, y el beneficio espiritual que había de sacar de ellas. Corregía el error de sus amigos, y mostraba que las calamidades de Job eran para bien.",
    "flags": [
-    "The English repeats itself (“It pointed out to Job the true reason of those trials with which he had been pointed out to Job the true reason of those trials with which he had been visited”); the repetition is translated as it stands, not dropped."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

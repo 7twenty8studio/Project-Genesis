@@ -85,13 +85,13 @@
   {
    "kind": "section",
    "id": 126,
-   "sha256": "6e9ff6ccd632350a6345f97df89025c39051f599d0383f2a28fd413194049178",
+   "sha256": "de1e73a481a7ac8c936ab1e13492555c2252970e10aff5c1830e3275bf5a29e6",
    "title": "El pacto de Jacob por Raquel; el engaño de Labán.",
    "text": "Durante el mes que Jacob pasó como huésped no estuvo ocioso. Dondequiera que estemos, es bueno ocuparnos en algún trabajo útil. Labán deseaba que Jacob se quedara con él. No hay que aprovecharse de los parientes de condición inferior; es nuestro deber recompensarlos. Jacob dio a conocer a Labán el afecto que tenía por su hija Raquel. Y no teniendo bienes de este mundo con que dotarla, promete siete años de servicio. El amor hace cortos y fáciles los servicios largos y duros; por eso leemos del trabajo de amor, He 6:10. Si sabemos valorar la felicidad del cielo, los sufrimientos del tiempo presente no serán nada para nosotros. Una vida entera de trabajo no será sino como unos pocos días para los que aman a Dios y anhelan la venida de Cristo. Jacob, que había engañado a su padre, es engañado por Labán, su suegro, con un engaño semejante. En esto, por injusto que fuera Labán, el Señor fue justo: véase Jue 1:7. Aun los justos, si dan un paso en falso, a veces reciben así su pago en la tierra. Y muchos que no se ven, como Jacob, defraudados en la persona en su matrimonio, pronto se hallan, con no menos pesar, defraudados en el carácter. La elección de esa relación debe hacerse con buen consejo y reflexión por ambas partes. Hay razón para creer que la excusa de Labán no era verdadera. Su manera de arreglar el asunto empeoró lo malo. Jacob fue arrastrado a la inquietud de multiplicar esposas. No podía rechazar a Raquel, porque se había desposado con ella; menos aún podía rechazar a Lea. Todavía no había un mandamiento expreso contra casarse con más de una mujer. En los patriarcas fue un pecado de ignorancia; pero no justificará la misma práctica ahora, cuando la voluntad de Dios se ha dado a conocer claramente por la ley divina, Lv 18:18, y más plenamente después, por nuestro Salvador: que solo un hombre y una mujer deben unirse, 1 Co 7:2.",
    "quotes": [],
    "flags": [
     "unlisted quotation of He 6:10: 'el trabajo de amor' (RV1909).",
-    "Source oddity: 'wordly goods' (typo for worldly) and a missing full stop after 'seven years' service'."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -230,14 +230,15 @@
   {
    "kind": "section",
    "id": 137,
-   "sha256": "8bb30c2948d03478bb68cbcb00563e59e8d00d394a6a3abe23fd5faf3b96ed52",
+   "sha256": "843cbbe5a3bf31a41a7bac9504b3ad39ee990c92095f42b7d6f2221bc6a5eb1e",
    "title": "Lucha con el Ángel.",
    "text": "Mucho antes del alba, estando solo, Jacob expuso más plenamente sus temores delante de Dios en oración. Mientras así se ocupaba, Uno en semejanza de hombre luchó con él. Cuando el Espíritu ayuda nuestra flaqueza, y nuestros deseos fervientes e inmensos apenas hallan palabras para expresarse, y aún queremos decir más de lo que podemos expresar, entonces la oración es en verdad una lucha con Dios. Por probados o desalentados que estemos, prevaleceremos; y prevaleciendo con él en oración, prevaleceremos contra todos los enemigos que luchan con nosotros. Nada requiere más vigor y esfuerzo incesante que la lucha. Es emblema del verdadero espíritu de fe y de oración. Jacob se mantuvo firme; aunque la lucha duró mucho, esto no sacudió su fe ni acalló su oración. Quiere tener una bendición, y prefiere que se le descoyunten todos los huesos antes que irse sin ella. Los que quieran tener la bendición de Cristo deben resolverse a no aceptar una negativa. La oración ferviente es la oración eficaz. El Ángel pone sobre él una marca perdurable de honra, al cambiarle el nombre. Jacob significa suplantador. De aquí en adelante será celebrado, no por su astucia y sus hábiles manejos, sino por su verdadero valor. Serás llamado Israel, príncipe con Dios, un nombre más grande que los de los grandes hombres de la tierra. Es en verdad príncipe el que es príncipe con Dios; son verdaderamente honorables los que son poderosos en la oración. Teniendo poder con Dios, tendrá poder también con los hombres; prevalecerá y ganará el favor de Esaú. Jacob da un nuevo nombre al lugar. Lo llama Peniel, el rostro de Dios, porque allí había visto la aparición de Dios y obtenido el favor de Dios. Conviene a los que Dios honra admirar su gracia para con ellos. El Ángel que luchó con Jacob era la segunda Persona de la santa Trinidad, que después fue Dios manifestado en carne, y que, habitando en la naturaleza humana, es llamado Emanuel, Os 12:4, 5. Jacob cojeaba de su muslo. Podía servirle para que no se enalteciera por la grandeza de las revelaciones. El sol salió sobre Jacob: es la salida del sol para el alma que ha tenido comunión con Dios.",
    "quotes": [],
    "flags": [
     "unlisted quotations of Ro 8:26 ('el Espíritu ayuda nuestra flaqueza'), 1 Ti 3:16 ('Dios manifestado en carne', from 'Dios ha sido manifestado en carne') and 2 Co 12:7 ('la grandeza de las revelaciones'), RV1909.",
     "KJV-dependent: 'Israel, a prince with God' follows the KJV of Gn 32:28 ('as a prince hast thou power with God'); the RV1909 says 'has peleado con Dios'. 'Thou shalt be called Israel' translated.",
-    "'The fervent prayer is the effectual prayer' echoes Stg 5:16; translated."
+    "'The fervent prayer is the effectual prayer' echoes Stg 5:16; translated.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

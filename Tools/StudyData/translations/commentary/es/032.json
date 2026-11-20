@@ -295,7 +295,7 @@
   {
    "kind": "section",
    "id": 1266,
-   "sha256": "ac138fcd23ebd491748665da7507d4726784dd8aabf7f5c337724edf727df9d8",
+   "sha256": "3a24ba32af7074f42e54af47bd350af36970ba843faa6d59bbe3f6a15395c09d",
    "title": "El éxito de los judíos.",
    "text": "Esperaban los enemigos de los Judíos enseñorearse de ellos por el edicto anterior. Si no hubieran intentado nada contra el pueblo de Dios, ellos mismos no habrían sufrido. Los judíos, actuando juntos, se fortalecieron unos a otros. Aprendamos a estar firmes en un mismo espíritu, y unánimes, combatiendo juntamente contra los enemigos de nuestras almas, que procuran robarnos nuestra fe, que es más preciosa que nuestra vida. Los judíos, para honra de su religión, mostraron desprecio por las riquezas mundanas, para dejar ver que no deseaban nada sino su propia preservación. En todo caso el pueblo de Dios debe manifestar humanidad y desinterés, rehusando con frecuencia ventajas que podrían obtenerse lícitamente. Los judíos celebraron su fiesta el día después de haber terminado su obra. Cuando hemos recibido grandes misericordias de Dios, debemos apresurarnos a corresponderle con gratitud.",
    "quotes": [
@@ -305,8 +305,8 @@
     }
    ],
    "flags": [
-    "Source typo 'wordly wealth' read as 'worldly'.",
-    "Echo of Fil 1:27 (RV1909 'estáis firmes en un mismo espíritu, unánimes combatiendo juntamente') adapted to Henry's exhortation."
+    "Echo of Fil 1:27 (RV1909 'estáis firmes en un mismo espíritu, unánimes combatiendo juntamente') adapted to Henry's exhortation.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -412,9 +412,9 @@
   {
    "kind": "section",
    "id": 1275,
-   "sha256": "ffd896ffefcb34d7f710f82a3b8be5c65c0889d07b15370ff392b8a8b9441489",
+   "sha256": "9d526bf9076258d98b5160fcf61a5054a064f89786f174edd812bca636ce2811",
    "title": "Sus amigos vienen a consolarlo.",
-   "text": "Los amigos de Job parecen notables por su rango, así como por su sabiduría y piedad. Gran parte del consuelo de esta vida está en la amistad con los prudentes y virtuosos. Viniendo a llorar con él, dieron salida a un dolor que realmente sentían. Viniendo a consolarlo, se sentaron con él. Parecería que sospechaban que sus aflicciones sin ejemplo eran juicios por algunos crímenes que él había encubierto bajo su profesión de piedad. Muchos consideran visitar a sus amigos en la aflicción solo como una cortesía; nosotros debemos mirar la vida. Y si el ejemplo de los amigos de Job no basta para movernos a compadecernos de los afligidos, busquemos el sentir que hubo en Cristo.",
+   "text": "Los amigos de Job parecen notables por su rango, así como por su sabiduría y piedad. Gran parte del consuelo de esta vida está en la amistad con los prudentes y virtuosos. Viniendo a llorar con él, dieron salida a un dolor que realmente sentían. Viniendo a consolarlo, se sentaron con él. Parecería que sospechaban que sus aflicciones sin ejemplo eran juicios por algunos crímenes que él había encubierto bajo su profesión de piedad. Muchos consideran visitar a sus amigos en la aflicción solo como una cortesía; nosotros debemos mirarlo como un deber: si la religión vive en el corazón, esto será un fruto en la vida. Y si el ejemplo de los amigos de Job no basta para movernos a compadecernos de los afligidos, busquemos el sentir que hubo en Cristo.",
    "quotes": [
     {
      "n": 0,
@@ -422,8 +422,8 @@
     }
    ],
    "flags": [
-    "Source garbled: 'we must look life' (words seem missing, perhaps 'look further' or 'look upon it as a duty of life'); translated literally as 'debemos mirar la vida'.",
-    "'vailed' (= veiled) rendered 'encubierto'."
+    "'vailed' (= veiled) rendered 'encubierto'.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

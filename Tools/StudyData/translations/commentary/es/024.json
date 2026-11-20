@@ -12,12 +12,12 @@
   {
    "kind": "section",
    "id": 863,
-   "sha256": "25d9adc5d42ad3d8c0d2cde8b832cd2ee1344c9d07f150ac166a0e2d694eee76",
+   "sha256": "b617af43e8f6000f8880fde8d006471b30b77dbc5781e3406748074ee317562f",
    "title": "El lamento de David por Saúl y Jonatán.",
    "text": "Késet, o \"el arco\", fue probablemente el título de este canto triste y fúnebre. David no alaba a Saúl por lo que no era, y no dice nada de su piedad o bondad. Jonatán fue un hijo obediente, y Saúl un padre afectuoso; por eso se querían el uno al otro. David tenía razón para decir que el amor de Jonatán por él era maravilloso. Después del amor entre Cristo y su pueblo, el afecto que brota de él produce la amistad más fuerte. La aflicción del pueblo del Señor y los triunfos de sus enemigos siempre entristecerán a los verdaderos creyentes, cualesquiera que sean las ventajas que puedan obtener de ellos.",
    "flags": [
     "'Kasheth' (Hebrew qeshet, 'the bow', 2 S 1:18) transliterated 'Késet'; the RV1909 there reads 'que enseñasen al arco á los hijos de Judá'.",
-    "The English has a typo, 'springs form it', read as 'springs from it'."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -383,11 +383,11 @@
   {
    "kind": "section",
    "id": 893,
-   "sha256": "d1d12600685250d04bf8d906ed406a21fab2ae7807b59942fe8f90c084da2a09",
+   "sha256": "64aec5550128b2320d80211944865be8ea13069dcb887c7c69a657354d80a2c0",
    "title": "Intenta ocultar su crimen.",
    "text": "Ceder al pecado endurece el corazón y provoca la partida del Espíritu Santo. Robarle a un hombre la razón es peor que robarle el dinero; y arrastrarlo al pecado es peor que arrastrarlo a cualquier aflicción mundana.",
    "flags": [
-    "The English has a typo, 'wordly', read as 'worldly'."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

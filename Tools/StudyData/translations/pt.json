@@ -10240,19 +10240,19 @@
    "name": "Tofete"
   },
   "1177": {
-   "name": "Torre"
+   "name": "Torre de Hananel"
   },
   "1178": {
    "name": "Siquém (torre)"
   },
   "1179": {
-   "name": "Torre"
+   "name": "Torre de Meá"
   },
   "118": {
    "name": "Atenas"
   },
   "1180": {
-   "name": "Torre"
+   "name": "Torre dos Fornos"
   },
   "1181": {
    "name": "Traconites"
@@ -10398,7 +10398,7 @@
    "name": "Vaebe"
   },
   "1229": {
-   "name": "Campo"
+   "name": "Campo do Lavandeiro"
   },
   "123": {
    "name": "Hava"
@@ -10878,7 +10878,7 @@
    "name": "Bete-Zur"
   },
   "244": {
-   "name": "Rio"
+   "name": "Dalém do Rio"
   },
   "245": {
    "name": "Bezeque"
@@ -11041,7 +11041,7 @@
    "name": "Cilícia"
   },
   "301": {
-   "name": "Destruição"
+   "name": "Cidade da Destruição"
   },
   "303": {
    "name": "Cidade do Senhor"
@@ -12084,7 +12084,7 @@
    "name": "Antioquia (Pisídia)"
   },
   "691": {
-   "name": "Tanque"
+   "name": "Tanque do Rei"
   },
   "692": {
    "name": "Vale de Savé",
@@ -12861,7 +12861,7 @@
    "name": "Ponto"
   },
   "957": {
-   "name": "Tanque"
+   "name": "Tanque de Selá"
   },
   "958": {
    "name": "Porta Oriental"
@@ -12994,6 +12994,45 @@
   },
   "999": {
    "name": "Régio"
+  },
+  "1152": {
+   "name": "O Senhor Está Ali"
+  },
+  "1153": {
+   "name": "Lugar da Caveira"
+  },
+  "1154": {
+   "name": "Calvário"
+  },
+  "1232": {
+   "name": "Penhascos das Cabras Montesas"
+  },
+  "261": {
+   "name": "Ribeiro dos Salgueiros"
+  },
+  "302": {
+   "name": "Cidade do Sal"
+  },
+  "511": {
+   "name": "Pórtico do Juízo"
+  },
+  "512": {
+   "name": "Pórtico de Colunas"
+  },
+  "513": {
+   "name": "Pórtico do Trono"
+  },
+  "584": {
+   "name": "Casa do Bosque"
+  },
+  "66": {
+   "name": "As Esquinas"
+  },
+  "690": {
+   "name": "Caminho Real"
+  },
+  "954": {
+   "name": "Lugar da Caveira"
   }
  },
  "route": {

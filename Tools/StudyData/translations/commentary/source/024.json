@@ -18,9 +18,9 @@
    "book": 10,
    "start_verse": 10001017,
    "end_verse": 10001027,
-   "sha256": "25d9adc5d42ad3d8c0d2cde8b832cd2ee1344c9d07f150ac166a0e2d694eee76",
+   "sha256": "b617af43e8f6000f8880fde8d006471b30b77dbc5781e3406748074ee317562f",
    "title": "David's lamentation for Saul and Jonathan.",
-   "text": "Kasheth, or \"the bow,\" probably was the title of this mournful, funeral song. David does not commend Saul for what he was not; and says nothing of his piety or goodness. Jonathan was a dutiful son, Saul an affectionate father, therefore dear to each other. David had reason to say, that Jonathan's love to him was wonderful. Next to the love between Christ and his people, that affection which springs form it, produces the strongest friendship. The trouble of the Lord's people, and triumphs of his enemies, will always grieve true believers, whatever advantages they may obtain by them.",
+   "text": "Kasheth, or \"the bow,\" probably was the title of this mournful, funeral song. David does not commend Saul for what he was not; and says nothing of his piety or goodness. Jonathan was a dutiful son, Saul an affectionate father, therefore dear to each other. David had reason to say, that Jonathan's love to him was wonderful. Next to the love between Christ and his people, that affection which springs from it, produces the strongest friendship. The trouble of the Lord's people, and triumphs of his enemies, will always grieve true believers, whatever advantages they may obtain by them.",
    "quotes": []
   },
   {
@@ -500,9 +500,9 @@
    "book": 10,
    "start_verse": 10011006,
    "end_verse": 10011013,
-   "sha256": "d1d12600685250d04bf8d906ed406a21fab2ae7807b59942fe8f90c084da2a09",
+   "sha256": "64aec5550128b2320d80211944865be8ea13069dcb887c7c69a657354d80a2c0",
    "title": "He tries to conceal his crime.",
-   "text": "Giving way to sin hardens the heart, and provokes the departure of the Holy Spirit. Robbing a man of his reason, is worse than robbing him of his money; and drawing him into sin, is worse than drawing him into any wordly trouble whatever.",
+   "text": "Giving way to sin hardens the heart, and provokes the departure of the Holy Spirit. Robbing a man of his reason, is worse than robbing him of his money; and drawing him into sin, is worse than drawing him into any worldly trouble whatever.",
    "quotes": []
   },
   {
@@ -818,6 +818,9 @@
   },
   "David": {
    "pt": "Davi"
+  },
+  "Eli": {
+   "es": "Elí"
   },
   "Euphrates": {
    "es": "Eufrates",
