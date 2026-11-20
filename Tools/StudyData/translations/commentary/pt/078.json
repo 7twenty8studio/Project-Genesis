@@ -232,12 +232,12 @@
   {
    "kind": "section",
    "id": 3368,
-   "sha256": "93fd6f9840103ecd937e80ebe21624cca46d68a12e5af0bffc25568810667913",
+   "sha256": "991490e28bbe957789b1641c50300f58850ff46a3ad7a99ce9129530aa4d322f",
    "title": "Ele parte de Jerusalém.",
    "text": "Nenhuma arma forjada contra o nosso Senhor Jesus prosperará. Ele escapou, não porque tivesse medo de sofrer, mas porque a sua hora não era chegada. E aquele que soube livrar-se a si mesmo sabe livrar os piedosos das suas tentações e abrir-lhes um caminho de escape. Os perseguidores podem expulsar Cristo e o seu evangelho da sua própria cidade ou país, mas não podem expulsá-lo, nem a ele nem ao evangelho, do mundo. Quando conhecemos Cristo pela fé no nosso coração, descobrimos que tudo o que a Escritura diz dele é verdade.",
    "flags": [
-    "Source has \"our of\" twice (for \"out of\"); read as \"out of\".",
-    "\"No weapon formed against ... shall prosper\" adapts Is 54:17 to Christ (Bíblia Livre \"Nenhuma ferramenta preparada contra ti terá sucesso\"); translated, since Henry changes the person."
+    "\"No weapon formed against ... shall prosper\" adapts Is 54:17 to Christ (Bíblia Livre \"Nenhuma ferramenta preparada contra ti terá sucesso\"); translated, since Henry changes the person.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

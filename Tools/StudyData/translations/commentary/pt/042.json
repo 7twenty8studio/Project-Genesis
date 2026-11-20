@@ -299,7 +299,7 @@
   {
    "kind": "section",
    "id": 1615,
-   "sha256": "7ddda1430ced04457765ac5cea00ebeb2000779ceeedb6987305e43b84520410",
+   "sha256": "a86a119faebfd2c60e1e00b12847e7c60c234cc2aefbbeef656d10dae83e1f7d",
    "title": "Uma queixa dolorosa de grandes aflições.",
    "text": "Toda a palavra de Deus serve para nos dirigir na oração; mas aqui, como muitas vezes em outros lugares, o Espírito Santo pôs palavras na nossa boca. Eis aqui uma oração posta nas mãos dos aflitos; que a apresentem a Deus. Até os homens bons podem ficar quase esmagados pelas aflições. É nosso dever e nosso interesse orar; e é um consolo para um espírito aflito desabafar por meio de uma humilde exposição das suas dores. Devemos dizer: Bendito seja o nome do SENHOR, que dá e que tira. O salmista se considerava um homem moribundo: Meus dias têm sido como a sombra.",
    "quotes": [
@@ -313,7 +313,8 @@
     }
    ],
    "flags": [
-    "\"here, is often elsewhere\" is a slip for \"as often\"; translated \"como muitas vezes\"."
+    "\"here, is often elsewhere\" is a slip for \"as often\"; translated \"como muitas vezes\".",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

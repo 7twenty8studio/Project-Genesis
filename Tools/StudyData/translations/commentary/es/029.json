@@ -216,9 +216,9 @@
   {
    "kind": "section",
    "id": 1115,
-   "sha256": "12adfff09800a9cd909821f83b685e5209849215c13e7fc95ba22f0414ef6158",
+   "sha256": "4629ba11198619433c758f48948cf9338bdcb28833232e4b1562ebe6cf61d997",
    "title": "El salmo de alabanza de David.",
-   "text": "Que Dios sea glorificado en nuestras alabanzas. Que otros sean edificados e instruidos, para que los que son extraños a él sean llevados a adorarlo. Triunfemos nosotros mismos y confiemos en Dios. A los que dan gloria al nombre de Dios se les permite gloriarse en él. Que el pacto eterno sea el gran motivo de nuestro gozo su pueblo de antaño, sea recordado por nosotros con gratitud a él. Anunciad de día en día su salud, su prometida salvación por medio de Cristo. Tenemos razón para celebrarla de día en día, pues diariamente recibimos su beneficio, y es un tema que nunca puede agotarse. En medio de las alabanzas no debemos olvidarnos de orar por los siervos de Dios que están en angustia.",
+   "text": "Que Dios sea glorificado en nuestras alabanzas. Que otros sean edificados e instruidos, para que los que son extraños a él sean llevados a adorarlo. Triunfemos nosotros mismos y confiemos en Dios. A los que dan gloria al nombre de Dios se les permite gloriarse en él. Que el pacto eterno sea el gran motivo de nuestro gozo y alabanza. Acordaos de su pacto. Que las misericordias pasadas de Dios para con su pueblo de antaño sean recordadas por nosotros con gratitud a él. Anunciad de día en día su salud, su prometida salvación por medio de Cristo. Tenemos razón para celebrarla de día en día, pues diariamente recibimos su beneficio, y es un tema que nunca puede agotarse. En medio de las alabanzas no debemos olvidarnos de orar por los siervos de Dios que están en angustia.",
    "quotes": [
     {
      "n": 0,
@@ -226,8 +226,8 @@
     }
    ],
    "flags": [
-    "The English is garbled ('…the great matter of our joy his people of old, be remembered by us…'): words seem missing (perhaps 'and God's dealings with'); translated as it stands, nothing added.",
-    "1 Cr 16:23: the RV1909's 'salud' (and 'Anunciad') stands for Henry's (KJV) 'salvation' ('Show forth'); his own 'his promised salvation' rendered 'su prometida salvación'."
+    "1 Cr 16:23: the RV1909's 'salud' (and 'Anunciad') stands for Henry's (KJV) 'salvation' ('Show forth'); his own 'his promised salvation' rendered 'su prometida salvación'.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

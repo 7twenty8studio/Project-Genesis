@@ -70,10 +70,20 @@
    "book": 1,
    "start_verse": 1005025,
    "end_verse": 1005032,
-   "sha256": "654590850961db7646166856022821544e4bcd786a874e71b32c8faa658f73c3",
+   "sha256": "ece2b7cd3514fdf56c9ceb0d72ad67375d4fb41629e690ea0e2920340ac19a8b",
    "title": "Methuselah to Noah.",
-   "text": "Methuselah signifies, he dies, there is a dart,' a sending forth,' namely, of the deluge, which came the year that Methuselah died. He lived 969 years, the longest that any man ever lived on earth; but the longest liver must die at last. Noah signifies rest; his parents gave him that name, with a prospect of his being a great blessing to his generation. Observe his father's complaint of the calamitous state of human life, by the entrance of sin, and the curse of sin. Our whole life is spent in labour, and our time filled up with continual toil. God having cursed the ground, it is as much as some can do, with the utmost care and pains, to get a hard livelihood out comfort us.\" It signifies not only that desire and expectation which parents generally have about their children, that they will be comforts to them and helpers, though they often prove otherwise; but it signifies also a prospect of something more. Is Christ ours? Is heaven ours? We need better comforters under our toil and sorrow, than the dearest relations and the most promising offspring; may we seek and find comforts in Christ.",
-   "quotes": []
+   "text": "Methuselah signifies, he dies, there is a dart,' a sending forth,' namely, of the deluge, which came the year that Methuselah died. He lived 969 years, the longest that any man ever lived on earth; but the longest liver must die at last. Noah signifies rest; his parents gave him that name, with a prospect of his being a great blessing to his generation. Observe his father's complaint of the calamitous state of human life, by the entrance of sin, and the curse of sin. Our whole life is spent in labour, and our time filled up with continual toil. God having cursed the ground, it is as much as some can do, with the utmost care and pains, to get a hard livelihood out of it. Lamech hoped for relief by the birth of this son, \"This same shall comfort us.\" It signifies not only that desire and expectation which parents generally have about their children, that they will be comforts to them and helpers, though they often prove otherwise; but it signifies also a prospect of something more. Is Christ ours? Is heaven ours? We need better comforters under our toil and sorrow, than the dearest relations and the most promising offspring; may we seek and find comforts in Christ.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "This same shall comfort us",
+     "verses": [
+      1005029
+     ],
+     "es": "Y llamó su nombre Noé, diciendo: Este nos aliviará de nuestras obras, y del trabajo de nuestras manos, á causa de la tierra que Jehová maldijo.",
+     "pt": "E chamou seu nome Noé, dizendo: Este nos aliviará de nossas obras, e do trabalho de nossas mãos, por causa da terra que o SENHOR amaldiçoou."
+    }
+   ]
   },
   {
    "kind": "section",
@@ -548,6 +558,7 @@
  ],
  "glossary": {
   "Adam": {
+   "es": "Adán (person); Adam (place)",
    "pt": "Adão (person); Adã (place)"
   },
   "Ararat": {
@@ -566,7 +577,7 @@
    "pt": "Héber (person); Éber (person)"
   },
   "Enoch": {
-   "es": "Henoch",
+   "es": "Enoc",
    "pt": "Enoque"
   },
   "Eve": {
@@ -590,6 +601,10 @@
   },
   "Judea": {
    "pt": "Judeia"
+  },
+  "Lamech": {
+   "es": "Lamec",
+   "pt": "Lameque"
   },
   "Methuselah": {
    "es": "Matusalam",

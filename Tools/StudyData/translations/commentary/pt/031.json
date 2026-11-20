@@ -225,7 +225,7 @@
   {
    "kind": "section",
    "id": 1213,
-   "sha256": "8d16fef6d920bb16e4708aca38ebc771850e827d118f9b0edb91b988e94efa4e",
+   "sha256": "eee8539473821fe5b2f58ec9d36b362c0a311441083332f3d09a20b3352d27da",
    "title": "A confissão de pecados de Esdras.",
    "text": "O sacrifício, especialmente o sacrifício da tarde, era um tipo do bendito Cordeiro de Deus, que, na tarde do mundo, havia de aniquilar o pecado pelo sacrifício de si mesmo. A palavra de Esdras é uma confissão penitente do pecado, o pecado do seu povo. Mas seja este o consolo dos verdadeiros penitentes: embora os seus pecados cheguem até os céus, a misericórdia de Deus está nos céus. Esdras, falando do pecado, fala como quem está muito envergonhado. A santa vergonha é tão necessária no verdadeiro arrependimento como a santa tristeza. Esdras fala como quem está muito espantado. As descobertas da culpa causam espanto; quanto mais pensamos no pecado, pior ele parece. Dize: Ó Deus, tem misericórdia de mim, que sou pecador. Esdras fala como quem está muito temeroso. Não há presságio de ruína mais certo nem mais triste do que voltar ao pecado depois de grandes juízos e de grandes livramentos. Todo aquele que está na igreja de Deus tem de admirar-se de não ter esgotado a paciência do Senhor e trazido destruição sobre si mesmo. Qual será então o caso dos ímpios? Mas, embora o verdadeiro penitente nada tenha que alegar a seu favor, o Advogado celestial pleiteia por ele com o maior poder.",
    "quotes": [
@@ -236,8 +236,8 @@
    ],
    "flags": [
     "Source \"God be merciful to me sinner\" lacks \"a\" (Lc 18:13, unlisted): the Bíblia Livre's \"Ó Deus, tem misericórdia de mim, que sou pecador\" used.",
-    "Source \"saddler presage\" read as \"sadder\"; translated \"mais triste\".",
-    "Hb 9:26: the Bíblia Livre's \"aniquilar\" stands for the KJV's \"put away\", which Henry gives as \"take away\"."
+    "Hb 9:26: the Bíblia Livre's \"aniquilar\" stands for the KJV's \"put away\", which Henry gives as \"take away\".",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

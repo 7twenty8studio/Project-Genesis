@@ -132,7 +132,7 @@
   {
    "kind": "section",
    "id": 3019,
-   "sha256": "7e2c61e2370149ef23336015976e50cd938f64c1898c55531da1cde7044e0aa1",
+   "sha256": "e4f17d204f3770ccf3f093e033d3e60b5a978635b77fe9d4bb8902824969fd13",
    "title": "El llamamiento de los apóstoles.",
    "text": "La palabra \"apóstol\" significa mensajero; ellos eran los mensajeros de Cristo, enviados a proclamar su reino. Cristo les dio poder para que sanasen toda enfermedad y toda dolencia. En la gracia del evangelio hay un ungüento para cada llaga, un remedio para cada mal. No hay enfermedad espiritual para cuya cura no haya poder en Cristo. Sus nombres están registrados, y es su honra; sin embargo, tenían más razón para regocijarse de que sus nombres estuvieran escritos en el cielo, mientras los nombres altos y poderosos de los grandes de la tierra están sepultados en el polvo.",
    "quotes": [
@@ -143,8 +143,8 @@
    ],
    "flags": [
     "English typo 'a slave for every sore' read as 'a salve for every sore' ('un ungüento para cada llaga').",
-    "English typo 'There names are recorded' read as 'Their names' ('Sus nombres').",
-    "quote 0: Henry's 'all manner of sickness' given with the RV1909's full phrase 'toda enfermedad y toda dolencia' (the verse's one run for it)."
+    "quote 0: Henry's 'all manner of sickness' given with the RV1909's full phrase 'toda enfermedad y toda dolencia' (the verse's one run for it).",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

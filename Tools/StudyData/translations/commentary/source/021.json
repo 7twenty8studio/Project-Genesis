@@ -378,9 +378,9 @@
    "book": 8,
    "start_verse": 8001006,
    "end_verse": 8001014,
-   "sha256": "b7d1e9d53f3c9167e9e33d450e477da064fe89d1abe203a5f4c82c2cd4920c92",
+   "sha256": "6174eaba6a05289cecb90a2b41a643b9c09ab6c1a000742529d3761a2c13b91b",
    "title": "Naomi returns home.",
-   "text": "Naomi began to think of returning, after the death of her two sons. When death comes into a family, it ought to reform what is amiss there. Earth is made bitter to us, that heaven may be made dear. Naomi seems to have been a person of faith and piety. She dismissed her daughters-in-law with prayer. It is very proper for friends, when they part, to part with them thus part in love. Did Naomi do well, to discourage her daughters from going with her, when she might save them from the idolatry of Moab, and bring them to the faith and worship of the God of Israel? Naomi, no doubt, desired to do that; but if they went with her, she would not have them to go upon her account. Those that take upon them a profession of religion only to oblige their friends, or for the sake of company, will be converts of small value. If they did come with her, she would have them make it their deliberate choice, and sit down first and count the cost, as it concerns those to do who make a profession of religion. And more desire \"rest in the house of a husband,\" or some wordly settlement or earthly satisfaction, than the rest to which Christ invites our souls; therefore when tried they will depart from Christ, though perhaps with some sorrow.",
+   "text": "Naomi began to think of returning, after the death of her two sons. When death comes into a family, it ought to reform what is amiss there. Earth is made bitter to us, that heaven may be made dear. Naomi seems to have been a person of faith and piety. She dismissed her daughters-in-law with prayer. It is very proper for friends, when they part, to part with prayer. She dismissed them with affection. If relations must part, let them thus part in love. Did Naomi do well, to discourage her daughters from going with her, when she might save them from the idolatry of Moab, and bring them to the faith and worship of the God of Israel? Naomi, no doubt, desired to do that; but if they went with her, she would not have them to go upon her account. Those that take upon them a profession of religion only to oblige their friends, or for the sake of company, will be converts of small value. If they did come with her, she would have them make it their deliberate choice, and sit down first and count the cost, as it concerns those to do who make a profession of religion. And more desire \"rest in the house of a husband,\" or some worldly settlement or earthly satisfaction, than the rest to which Christ invites our souls; therefore when tried they will depart from Christ, though perhaps with some sorrow.",
    "quotes": []
   },
   {
@@ -629,7 +629,11 @@
    "es": "Dina",
    "pt": "Diná"
   },
+  "Eli": {
+   "es": "Elí"
+  },
   "Elimelech": {
+   "es": "Elimelec",
    "pt": "Elimeleque"
   },
   "Elkanah": {
@@ -682,7 +686,7 @@
    "pt": "Manoá"
   },
   "Micah": {
-   "es": "Micás (person); Micá (person)",
+   "es": "Micá (person); Micás (person); Miqueas (person)",
    "pt": "Mica (person); Miqueias (person)"
   },
   "Moab": {
@@ -708,7 +712,7 @@
    "pt": "Rute"
   },
   "Samson": {
-   "es": "Samsón",
+   "es": "Sansón",
    "pt": "Sansão"
   },
   "Satan": {

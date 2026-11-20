@@ -5,11 +5,11 @@
   {
    "kind": "section",
    "id": 1427,
-   "sha256": "b571d5083b15be4caee6fadf7fb6b61eadc4b729f056306d5cbce0dffbd869fd",
+   "sha256": "d19f29594ebc4a9364b8efcf3441f062e73eefbcf91dbf7b0f23ac3baa498dd8",
    "title": "Da a Dios la gloria de todas sus hazañas.",
-   "text": "Cuando alabamos por una misericordia, debemos notar las muchas más de que hemos estado rodeados todos nuestros días. Muchas cosas habían contribuido al engrandecimiento de David, y él reconoce la mano de Dios en todas ellas, para enseñarnos a hacer lo mismo. En el versículo (32) y los siguientes están los dones de Dios al guerrero espiritual, por los cuales es preparado para la contienda, siguiendo el ejemplo de su Caudillo victorioso. Aprended que debemos buscar la liberación siendo hecha por medio de Cristo, será rechazada. En David, el tipo, contemplamos fuera de la tribulación por medio de Cristo. La oración elevada, sin reconciliación Jesús nuestro Redentor, luchando con enemigos, rodeado de dolores y de torrentes de hombres impíos, soportando no solo los dolores de la muerte, sino la ira de Dios por nosotros; y sin embargo invocando al Padre con gran clamor y lágrimas; rescatado del sepulcro; procediendo a reconciliar, o a poner bajo sus pies, a todos los demás enemigos, hasta que la muerte, el postrer enemigo, sea destruida. Debemos amar al Señor, nuestra Fortaleza y nuestra Salvación; debemos invocarle en toda tribulación, y alabarle por toda liberación; debemos procurar andar con él en toda justicia y verdadera santidad, guardándonos del pecado. Si le pertenecemos, él vence y reina por nosotros, y nosotros venceremos y reinaremos por él, y participaremos de la misericordia de nuestro Rey ungido, que está prometida a toda su descendencia para siempre. Amén.",
+   "text": "Cuando alabamos por una misericordia, debemos notar las muchas más de que hemos estado rodeados todos nuestros días. Muchas cosas habían contribuido al engrandecimiento de David, y él reconoce la mano de Dios en todas ellas, para enseñarnos a hacer lo mismo. En el versículo (32) y los siguientes están los dones de Dios al guerrero espiritual, por los cuales es preparado para la contienda, siguiendo el ejemplo de su Caudillo victorioso. Aprended que debemos buscar la liberación de la tribulación por medio de Cristo. La oración elevada sin que se haya hecho la reconciliación por medio de Cristo será rechazada. En David, el tipo, contemplamos a Jesús nuestro Redentor, luchando con enemigos, rodeado de dolores y de torrentes de hombres impíos, soportando no solo los dolores de la muerte, sino la ira de Dios por nosotros; y sin embargo invocando al Padre con gran clamor y lágrimas; rescatado del sepulcro; procediendo a reconciliar, o a poner bajo sus pies, a todos los demás enemigos, hasta que la muerte, el postrer enemigo, sea destruida. Debemos amar al Señor, nuestra Fortaleza y nuestra Salvación; debemos invocarle en toda tribulación, y alabarle por toda liberación; debemos procurar andar con él en toda justicia y verdadera santidad, guardándonos del pecado. Si le pertenecemos, él vence y reina por nosotros, y nosotros venceremos y reinaremos por él, y participaremos de la misericordia de nuestro Rey ungido, que está prometida a toda su descendencia para siempre. Amén.",
    "flags": [
-    "The English is scrambled here (“Learn that we must seek release being made through Christ, shall be rejected. In David the type, we behold out of trouble through Christ. The prayer put up, without reconciliation Jesus our Redeemer, conflicting…”); the intended text is probably “Learn that we must seek release out of trouble through Christ. The prayer put up, without reconciliation being made through Christ, shall be rejected. In David the type, we behold Jesus our Redeemer, conflicting…”. Translated in the order given, nothing dropped or moved; a reviewer may prefer the restored order."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -115,7 +115,7 @@
   {
    "kind": "section",
    "id": 1434,
-   "sha256": "2f95549a6f7a8ff7506aced423fc14a77aa6bfea36a055a67c774efb5d210fae",
+   "sha256": "27d9497a6d087bf94cae69e323498a1ee081300e405ddf596319581286a4f3dd",
    "title": "Quejas de desaliento.",
    "text": "El Espíritu de Cristo, que estaba en los profetas, testifica en este salmo, clara y plenamente, las aflicciones que habían de venir á Cristo, y las glorias después de ellas. Tenemos una queja dolorosa porque Dios se ha retirado. Esto puede aplicarse a cualquier hijo de Dios oprimido, abrumado de dolor y terror. Los abandonos espirituales son las aflicciones más dolorosas de los santos; pero aun su queja bajo estas cargas es señal de vida espiritual, y de sentidos espirituales ejercitados. Clamar: Dios mío, ¿por qué estoy enfermo? ¿por qué soy pobre?, sabe a descontento y mundanalidad. Pero \"¿Por qué me has dejado?\" es el lenguaje de un corazón que liga su felicidad al favor de Dios. Esto debe aplicarse a Cristo. Con las primeras palabras de esta queja derramó su alma delante de Dios cuando estaba en la cruz, Mt 27:46. Siendo verdaderamente hombre, Cristo sintió una natural renuencia a pasar por tan grandes dolores, pero su celo y su amor prevalecieron. Cristo declaró la santidad de Dios, su Padre celestial, en sus sufrimientos más agudos; más aún, los declaró prueba de ella, por la cual sería continuamente alabado por su Israel, más que por todas las otras liberaciones que recibieron. Nunca ninguno que esperó en ti fue avergonzado de su esperanza; nunca ninguno que te buscó, te buscó en vano. Aquí hay una queja por el desprecio y el oprobio de los hombres. El Salvador habló aquí del estado abyecto a que fue reducido. La historia de los sufrimientos de Cristo, y de su nacimiento, explica esta profecía.",
    "quotes": [
@@ -129,9 +129,9 @@
     }
    ],
    "flags": [
-    "“To cry our” is a typo for “To cry out”; rendered “Clamar”.",
     "1 Pet 1:11: KJV “the glory that should follow”, RV1909 “las glorias después de ellas”; quoted.",
-    "Ps 22:1: KJV “forsaken”, RV1909 “dejado”."
+    "Ps 22:1: KJV “forsaken”, RV1909 “dejado”.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -431,7 +431,7 @@
   {
    "kind": "section",
    "id": 1452,
-   "sha256": "3c9731001f324766d328cbb9bc8a614265f0ab74fa435aa2218a8f12240960ae",
+   "sha256": "2b5358c4eae2750b37ef37a5d666289c797875a659dda4909eaf2d0bba0dece2",
    "title": "Oración en la tribulación.",
    "text": "Las tribulaciones de David lo hicieron varón de dolores. En esto fue tipo de Cristo, que fue experimentado en quebranto. David reconoció que sus aflicciones eran merecidas por sus propios pecados, pero Cristo sufrió por los nuestros. Los amigos de David no se atrevían a darle ninguna ayuda. No nos parezca extraño si somos así abandonados, sino asegurémonos de un Amigo en el cielo que no fallará. Dios ciertamente ordenará y dispondrá todo para lo mejor para todos los que también encomiendan su espíritu en su mano. El tiempo de la vida está en las manos de Dios, para alargarlo o acortarlo, hacerlo amargo o dulce, según el consejo de su voluntad. El camino del hombre no está en él mismo, ni en manos de nuestros amigos, ni en manos de nuestros enemigos, sino en las de Dios. Con esta fe y confianza ora para que el Señor lo salve por amor de su misericordia, y no por ningún mérito propio. Profetiza que serán reducidos al silencio los que injurian y hablan mal del pueblo de Dios. Viene un día en que el Señor ejecutará juicio sobre ellos. Entretanto, debemos empeñarnos, haciendo bien, si es posible, en hacer callar la ignorancia de los hombres vanos.",
    "quotes": [
@@ -444,7 +444,8 @@
     "Unlisted echo of Isa 53:3 in the RV1909's words (“varón de dolores, experimentado en quebranto”).",
     "“for his mercies's sake” has a slip in the English possessive; rendered “por amor de su misericordia”.",
     "“The way of man is not in himself” (Jer 10:23 KJV) is translated; the RV1909 reads “el hombre no es señor de su camino”.",
-    "1 Pet 2:15: KJV “foolish men”, RV1909 “hombres vanos”; quoted."
+    "1 Pet 2:15: KJV “foolish men”, RV1909 “hombres vanos”; quoted.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

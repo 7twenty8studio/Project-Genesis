@@ -1,0 +1,783 @@
+{
+ "about": [
+  "Slips in the English of Matthew Henry's Concise Commentary as the CrossWire SWORD module MHCC has it (the build's source, build_wordstudy.py): lines lost, lines printed twice over the next one, two lines swapped, and misprints. Each is checked against an independent copy of the Concise Commentary (Internet Archive item mhcc_20251130, mhcc.txt, a separate transcription with American spelling) and only restores what that copy has; British spelling, Henry's references and everything else stay as the module has them.",
+  "commentary.fix_database writes them into WordStudy.sqlite's commentary table (add_commentary_translations.py runs it, build_wordstudy.py runs that), so English readers get the same text the translations are made from. Each `old` must occur once in its section; fixed text is left as it is.",
+  "Not fixable this way (the independent copy has the same slip): sections 3392, 3416, 3559, 3591, 3664, 3665, 3697, 3920 (beyond 'know'), 3952 and 4041 (ai-review/README.md, 'Garbled English')."
+ ],
+ "fixes": [
+  {
+   "id": 16,
+   "old": "See her what",
+   "new": "See here what",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 25,
+   "old": "ut Lamech took two. Wordly things, are th",
+   "new": "ut Lamech took two. Worldly things, are th",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 30,
+   "old": "to get a hard livelihood out comfort us.\" It signifies not only",
+   "new": "to get a hard livelihood out of it. Lamech hoped for relief by the birth of this son, \"This same shall comfort us.\" It signifies not only",
+   "why": "A line of Henry's text is missing in the SWORD module; restored from the independent copy."
+  },
+  {
+   "id": 126,
+   "old": "chel. And having no wordly goods with whi",
+   "new": "chel. And having no worldly goods with whi",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 137,
+   "old": "all his bone put",
+   "new": "all his bones put",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 188,
+   "old": "at the heaven of the sea",
+   "new": "at the haven of the sea",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 195,
+   "old": "to set our early",
+   "new": "to set out early",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 200,
+   "old": "Pharoah's",
+   "new": "Pharaoh's",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 212,
+   "old": "s spared from their wordly business, than",
+   "new": "s spared from their worldly business, than",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 239,
+   "old": "so others, which it seems rather to their faith and hope, that",
+   "new": "so others, which it seems rather to mean. They took the bones of Joseph with them. It was an encouragement to their faith and hope, that",
+   "why": "A line of Henry's text is missing in the SWORD module; restored from the independent copy."
+  },
+  {
+   "id": 267,
+   "old": "ing ungodliness and wordly lusts, we shou",
+   "new": "ing ungodliness and worldly lusts, we shou",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 293,
+   "old": " according to their wordly ability; but t",
+   "new": " according to their worldly ability; but t",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 295,
+   "old": "f Christ to forward wordly interests.",
+   "new": "f Christ to forward worldly interests.",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 300,
+   "old": "manner of men who would have prayer of Moses could save them",
+   "new": "manner of men who would have none to plead for those they resolve to be severe with. Nothing but the prayer of Moses could save them",
+   "why": "A line of Henry's text is missing in the SWORD module; restored from the independent copy."
+  },
+  {
+   "id": 309,
+   "old": "feasts; and they were reminded not with idolaters, and all idolatrous feats; and they were reminded not to repeat the crime of making",
+   "new": "feasts; and they were reminded not to repeat the crime of making",
+   "why": "A line is printed twice (overwriting the next one) in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 314,
+   "old": "and he equally accepted",
+   "new": "and be equally accepted",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 331,
+   "old": "called peace-offering, because",
+   "new": "called peace-offerings, because",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 338,
+   "old": "which we do but suspect ourselves guilty of. The law of God is so very broad, the occasions of sin in this guilty of. The law of God",
+   "new": "which we do but suspect ourselves guilty of. The law of God",
+   "why": "A line is printed twice (overwriting the next one) in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 378,
+   "old": "lay aside all their wordly business, that",
+   "new": "lay aside all their worldly business, that",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 382,
+   "old": "ed of the burden of wordly care and labou",
+   "new": "ed of the burden of worldly care and labou",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 383,
+   "old": "may trust God with our comfort. This was a miracle for an encouragement to all neither sowed or reaped. This was",
+   "new": "may trust God with our comfort. They should not want food in that year in which they neither sowed or reaped. This was",
+   "why": "A line is printed twice in the SWORD module, in place of the one before it; restored from the independent copy."
+  },
+  {
+   "id": 440,
+   "old": "set over them. 2. What usage they have been serviceable. Moses sought",
+   "new": "set over them. 2. What usage even the best and most useful men may expect, even from those to whom they have been serviceable. Moses sought",
+   "why": "A line of Henry's text is missing in the SWORD module; restored from the independent copy."
+  },
+  {
+   "id": 457,
+   "old": "that whatsoever believeth",
+   "new": "that whosoever believeth",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 466,
+   "old": "and increase. Their honour and advancement. Their power and victory. He looks back upon what had been done for them. Their power and victory. He looks",
+   "new": "and increase. Their honour and advancement. Their power and victory. He looks",
+   "why": "A line is printed twice (overwriting the next one) in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 481,
+   "old": "faith is the Lord Jesus",
+   "new": "faith in the Lord Jesus",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 484,
+   "old": "words, through he may",
+   "new": "words, though he may",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 493,
+   "old": "It will becomes",
+   "new": "It ill becomes",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 503,
+   "old": "people. Ought not every true believer Israel, to be united only to their own people. Ought not every true believer in Jesus, to be very attentive",
+   "new": "people. Ought not every true believer in Jesus, to be very attentive",
+   "why": "A line is printed twice (overwriting the next one) in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 509,
+   "old": "at uncertain things wordly possessions ar",
+   "new": "at uncertain things worldly possessions ar",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 526,
+   "old": "look back and to look forward, to Canaan. Look which way we will, both to look back and to look forward will furnish us with arguments for",
+   "new": "look back and to look forward, will furnish us with arguments for",
+   "why": "A line is printed twice (overwriting the next one) in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 538,
+   "old": "wrought upon the forsake",
+   "new": "wrought upon to forsake",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 582,
+   "old": "eny ungodliness and wordly lusts, to live",
+   "new": "eny ungodliness and worldly lusts, to live",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 612,
+   "old": "Israelites form a cruel",
+   "new": "Israelites from a cruel",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 641,
+   "old": "not do evil that good may themselves to the God of Israel,",
+   "new": "not do evil that good may come. Had they owned their country, but left its idolatries, giving up themselves to the God of Israel,",
+   "why": "A line of Henry's text is missing in the SWORD module; restored from the independent copy."
+  },
+  {
+   "id": 641,
+   "old": "they were led to say it made of skins, and their clothes:",
+   "new": "they were led to say it again; and to say what was utterly false concerning their bread, their bottles made of skins, and their clothes:",
+   "why": "A line of Henry's text is missing in the SWORD module; restored from the independent copy."
+  },
+  {
+   "id": 653,
+   "old": "unsubdued, through Joshua",
+   "new": "unsubdued, though Joshua",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 656,
+   "old": "let Israel knows",
+   "new": "let Israel know",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 689,
+   "old": "strengthen he graces",
+   "new": "strengthen the graces",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 751,
+   "old": "when they part, to part with them thus part in love. Did",
+   "new": "when they part, to part with prayer. She dismissed them with affection. If relations must part, let them thus part in love. Did",
+   "why": "A line of Henry's text is missing in the SWORD module; restored from the independent copy."
+  },
+  {
+   "id": 751,
+   "old": "a husband,\" or some wordly settlement or ",
+   "new": "a husband,\" or some worldly settlement or ",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 860,
+   "old": "and he praises of men",
+   "new": "and the praises of men",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 863,
+   "old": "springs form it",
+   "new": "springs from it",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 893,
+   "old": "rawing him into any wordly trouble whatev",
+   "new": "rawing him into any worldly trouble whatev",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 943,
+   "old": "security of Solomon's throne, which was the murders he had committed, but",
+   "new": "security of Solomon's throne, which was the cause of God and Israel. It is evident Joab did not repent of the murders he had committed, but",
+   "why": "A line of Henry's text is missing in the SWORD module; restored from the independent copy."
+  },
+  {
+   "id": 970,
+   "old": "happy, that all the wealth",
+   "new": "happy, than all the wealth",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 990,
+   "old": "devoted to God's honour: he began to build, in defiance of the curse well devoted to God's honour: he began to build, in defiance of the curse well known",
+   "new": "devoted to God's honour: he began to build, in defiance of the curse well known",
+   "why": "A line is printed twice (overwriting the next one) in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 996,
+   "old": "be the world of God",
+   "new": "be the word of God",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 1009,
+   "old": "was worth them all. Wordly men have in al",
+   "new": "was worth them all. Worldly men have in al",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 1027,
+   "old": "place him our of",
+   "new": "place him out of",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 1069,
+   "old": "y for every change. Wordly settlements ar",
+   "new": "y for every change. Worldly settlements ar",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 1094,
+   "old": "is descended entirely from any of one nation, nor the greatest part of any, is descended entirely from any of these fountains. Only this we are",
+   "new": "is descended entirely from any of these fountains. Only this we are",
+   "why": "A line is printed twice (overwriting the next one) in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 1115,
+   "old": "the great matter of our joy his people of old, be remembered",
+   "new": "the great matter of our joy and praise. Be ye mindful of his covenant. Let God's former mercies to his people of old, be remembered",
+   "why": "A line of Henry's text is missing in the SWORD module; restored from the independent copy."
+  },
+  {
+   "id": 1157,
+   "old": "requires use to notice",
+   "new": "requires us to notice",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 1213,
+   "old": "surer or saddler presage",
+   "new": "surer or sadder presage",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 1266,
+   "old": " showed contempt of wordly wealth, that t",
+   "new": " showed contempt of worldly wealth, that t",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 1275,
+   "old": "friends in sorrow; we must look life. And if the example of",
+   "new": "friends in sorrow; we must look upon it as a duty: if religion live in the heart, this will be a fruit in the life. And if the example of",
+   "why": "A line of Henry's text is missing in the SWORD module; restored from the independent copy."
+  },
+  {
+   "id": 1291,
+   "old": "or that they did for some",
+   "new": "or that they died for some",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 1370,
+   "old": "He that say, I",
+   "new": "He that says, I",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 1377,
+   "old": "trials with which he had been pointed out to Job the true reason of those trials with which he had been visited. It taught that God had",
+   "new": "trials with which he had been visited. It taught that God had",
+   "why": "A line is printed twice (overwriting the next one) in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 1403,
+   "old": "Open not the mouth to excuse sin. All confidence must be pan answer. Open not the mouth to excuse sin. All confidence only: therefore,",
+   "new": "Open not the mouth to excuse sin. All confidence must be placed on God's free grace, who justifies the true convert, by faith only: therefore,",
+   "why": "A line is lost and the one before it printed again in the SWORD module; restored from the independent copy."
+  },
+  {
+   "id": 1404,
+   "old": "Wordly people inquire",
+   "new": "Worldly people inquire",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 1414,
+   "old": "Strange that man, dust in his and about him, should yet need",
+   "new": "Strange that man, dust in his origin, sinful by his fall, continually reminded of both by everything in him and about him, should yet need",
+   "why": "A line of Henry's text is missing in the SWORD module; restored from the independent copy."
+  },
+  {
+   "id": 1419,
+   "old": "no more said, ",
+   "new": "no more sad, ",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 1423,
+   "old": "of sin, it will be very lead to destruction. If we carefully avoid the paths of sin, it will be very comfortable in the reflection, when we",
+   "new": "of sin, it will be very comfortable in the reflection, when we",
+   "why": "A line is printed twice (overwriting the next one) in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 1427,
+   "old": "Learn that we must seek release being made through Christ, shall be rejected. In David the type, we behold out of trouble through Christ. The prayer put up, without reconciliation Jesus our Redeemer",
+   "new": "Learn that we must seek release out of trouble through Christ. The prayer put up, without reconciliation being made through Christ, shall be rejected. In David the type, we behold Jesus our Redeemer",
+   "why": "Two lines are swapped in the SWORD module; in the order of the independent copy."
+  },
+  {
+   "id": 1434,
+   "old": "To cry our, My God",
+   "new": "To cry out, My God",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 1452,
+   "old": "his mercies's sake",
+   "new": "his mercy's sake",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 1481,
+   "old": "the good that flow from",
+   "new": "the good that flows from",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 1484,
+   "old": "Hearts sins and secret",
+   "new": "Heart sins and secret",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 1584,
+   "old": "power and infinite love. Christ is the way and the truth. And the believing soul will be more desirous to be taught the way and the truth. And",
+   "new": "power and infinite love. Christ is the way and the truth. And",
+   "why": "A line is printed twice (overwriting the next one) in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 1615,
+   "old": "but here, is often elsewhere",
+   "new": "but here, as often elsewhere",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 1653,
+   "old": "make men think they are at them out of those ways. The tempter would make men think they are at liberty to follow the word of",
+   "new": "make men think they are at liberty to follow the word of",
+   "why": "A line is printed twice (overwriting the next one) in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 1705,
+   "old": "If temporal advantages ever render a profession, the worst calamity has befallen",
+   "new": "If temporal advantages ever render a professor satisfied at a distance from the ordinances of God, or ashamed of his profession, the worst calamity has befallen",
+   "why": "A line of Henry's text is missing in the SWORD module; restored from the independent copy."
+  },
+  {
+   "id": 1724,
+   "old": "is a dept that",
+   "new": "is a depth that",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 2462,
+   "old": "keep possesion of",
+   "new": "keep possession of",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 2501,
+   "old": "they built thereon. Wordly people bless t",
+   "new": "they built thereon. Worldly people bless t",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 2502,
+   "old": "completely moritified",
+   "new": "completely mortified",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 2506,
+   "old": "own words. Whatever wordly wise men or po",
+   "new": "own words. Whatever worldly wise men or po",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 2549,
+   "old": "plead if for an excuse",
+   "new": "plead it for an excuse",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 2573,
+   "old": "we die, thought it may be",
+   "new": "we die, though it may be",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 2610,
+   "old": "movable dwelling: this",
+   "new": "movable dwellings: this",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 2627,
+   "old": "which discourge them",
+   "new": "which discourage them",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 2638,
+   "old": "and mediating on the terror",
+   "new": "and meditating on the terror",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 2835,
+   "old": "not drive us from him, the children tremble",
+   "new": "not drive us from him. When he roars like a lion, the slaves tremble, and flee from him, the children tremble",
+   "why": "A line of Henry's text is missing in the SWORD module; restored from the independent copy."
+  },
+  {
+   "id": 2835,
+   "old": "religious service of Israel were",
+   "new": "religious services of Israel were",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 2835,
+   "old": "but such us despise Him",
+   "new": "but such as despise Him",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 2909,
+   "old": " are slaves to mere wordly pursuits. And ",
+   "new": " are slaves to mere worldly pursuits. And ",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 3019,
+   "old": "There names are recorded",
+   "new": "Their names are recorded",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3078,
+   "old": "yet been reveled",
+   "new": "yet been revealed",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3123,
+   "old": "to keep it outward observances",
+   "new": "to keep its outward observances",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3136,
+   "old": "ss, and expected no wordly advantage, yet",
+   "new": "ss, and expected no worldly advantage, yet",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 3194,
+   "old": "he believers, therefore",
+   "new": "he believes, therefore",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3246,
+   "old": "l to do justly, but wordly dominion is no",
+   "new": "l to do justly, but worldly dominion is no",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 3273,
+   "old": "heir God, not their wordly gain. Their bo",
+   "new": "heir God, not their worldly gain. Their bo",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 3290,
+   "old": "in rememberance of",
+   "new": "in remembrance of",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3318,
+   "old": "What Christ speak,",
+   "new": "What Christ spoke,",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3368,
+   "old": "the godly our of their",
+   "new": "the godly out of their",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3368,
+   "old": "gospel our of their own",
+   "new": "gospel out of their own",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3393,
+   "old": "love of Christ's in our hearts",
+   "new": "love of Christ in our hearts",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3410,
+   "old": "and it glory within",
+   "new": "and its glory within",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3427,
+   "old": "re ordained, not to wordly dignity and do",
+   "new": "re ordained, not to worldly dignity and do",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 3428,
+   "old": "previous though or meditation",
+   "new": "previous thought or meditation",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3469,
+   "old": "we make difficult for ourselves",
+   "new": "we make difficulties for ourselves",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3505,
+   "old": "John never design that",
+   "new": "John never designed that",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3505,
+   "old": "Gentile coverts did",
+   "new": "Gentile converts did",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3514,
+   "old": "word of grace help their growth",
+   "new": "word of grace helps their growth",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3514,
+   "old": "would find help forward",
+   "new": "would find helps forward",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3514,
+   "old": "but Christ tell us",
+   "new": "but Christ tells us",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3548,
+   "old": "last will bear witness. As they nature. Conscience is a witness, and first or last will bear witness. As they kept or broke these natural laws",
+   "new": "last will bear witness. As they kept or broke these natural laws",
+   "why": "A line is printed twice (overwriting the next one) in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3595,
+   "old": "diligent in all his wordly business, and ",
+   "new": "diligent in all his worldly business, and ",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 3615,
+   "old": " was foolishness to wordly-wise men. The ",
+   "new": " was foolishness to worldly-wise men. The ",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 3622,
+   "old": "day of trail comes",
+   "new": "day of trial comes",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3624,
+   "old": "it. The wisdom that wordly men esteem, is",
+   "new": "it. The wisdom that worldly men esteem, is",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 3650,
+   "old": "apostle points our the duty",
+   "new": "apostle points out the duty",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3721,
+   "old": "p by Satan, through wordly pleasures, int",
+   "new": "p by Satan, through worldly pleasures, int",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 3760,
+   "old": "power of his mighty we may",
+   "new": "power of his might we may",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3792,
+   "old": "with out lips",
+   "new": "with our lips",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3794,
+   "old": "The apostle had no wordly design in his ",
+   "new": "The apostle had no worldly design in his ",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 3797,
+   "old": "and thought he might never",
+   "new": "and though he might never",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3817,
+   "old": "The Lords is with you",
+   "new": "The Lord is with you",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3830,
+   "old": "eave no leisure for wordly pleasures, tri",
+   "new": "eave no leisure for worldly pleasures, tri",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 3874,
+   "old": "than ours own",
+   "new": "than our own",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3920,
+   "old": "may be know by",
+   "new": "may be known by",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 3921,
+   "old": "war in the members. Wordly and fleshly lu",
+   "new": "war in the members. Worldly and fleshly lu",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 3951,
+   "old": "able things wherein wordly-minded men see",
+   "new": "able things wherein worldly-minded men see",
+   "why": "\"wordly\" is a misprint for \"worldly\" in the SWORD module."
+  },
+  {
+   "id": 3987,
+   "old": "must now willing submit",
+   "new": "must now willingly submit",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 4042,
+   "old": "will not be interrupt as",
+   "new": "will not be interrupted as",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 4042,
+   "old": "new in order hearts",
+   "new": "new in our hearts",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  },
+  {
+   "id": 4046,
+   "old": "shuts out form heaven",
+   "new": "shuts out from heaven",
+   "why": "A misprint in the SWORD module; as in the independent copy."
+  }
+ ]
+}

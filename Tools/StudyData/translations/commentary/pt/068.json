@@ -114,7 +114,7 @@
   {
    "kind": "section",
    "id": 3019,
-   "sha256": "7e2c61e2370149ef23336015976e50cd938f64c1898c55531da1cde7044e0aa1",
+   "sha256": "e4f17d204f3770ccf3f093e033d3e60b5a978635b77fe9d4bb8902824969fd13",
    "title": "Os apóstolos chamados.",
    "text": "A palavra \"apóstolo\" significa mensageiro; eram os mensageiros de Cristo, enviados para proclamar o seu reino. Cristo deu-lhes poder para curar toda enfermidade. Na graça do evangelho há um unguento para cada chaga, um remédio para cada mal. Não há doença espiritual para a qual não haja poder em Cristo para curá-la. Os nomes deles estão registrados, e isso é honra para eles; contudo, tinham mais motivo para se alegrar porque os seus nomes estavam escritos no céu, enquanto os nomes altos e poderosos dos grandes da terra estão sepultados no pó.",
    "quotes": [
@@ -125,7 +125,7 @@
    ],
    "flags": [
     "Source typo: \"a slave for every sore\" is clearly \"a salve for every sore\"; translated as \"um unguento\".",
-    "Source typo: \"There names are recorded\" read as \"Their names\"."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

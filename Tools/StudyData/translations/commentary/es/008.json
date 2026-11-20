@@ -350,13 +350,18 @@
   {
    "kind": "section",
    "id": 239,
-   "sha256": "ef80d02e4e01ab59b2cf287a6659640196ee2296ca424c68058012f3919854f0",
+   "sha256": "8b074e714322c0bdaf709d6928959bddda4ab4c64108931aad15e94f0e365f96",
    "title": "Los huesos de José, llevados con los israelitas. Llegan a Etam.",
-   "text": "Había dos caminos de Egipto a Canaán. Uno era de solo unos pocos días de viaje; el otro daba mucho más rodeo, a través del desierto, y ese fue el camino por el que Dios quiso guiar a su pueblo Israel. Los egipcios habían de ser ahogados en el mar Rojo; los israelitas habían de ser humillados y probados en el desierto. El camino de Dios es el camino recto, aunque parezca un rodeo. Si pensamos que no guía a su pueblo por el camino más corto, podemos estar seguros de que lo guía por el mejor, y así se verá cuando lleguemos al final de nuestro viaje. Los filisteos eran enemigos poderosos; era necesario que los israelitas fueran preparados para las guerras de Canaán pasando por las dificultades del desierto. Así Dios proporciona las pruebas de su pueblo a sus fuerzas, 1 Co 10:13. Subieron en buen orden. Subieron de cinco en fondo, según algunos; en cinco escuadrones, según otros, lo cual parece más bien a su fe y esperanza de que Dios los llevaría a Canaán, en espera de lo cual llevaron consigo estos huesos mientras estaban en el desierto.",
-   "quotes": [],
+   "text": "Había dos caminos de Egipto a Canaán. Uno era de solo unos pocos días de viaje; el otro daba mucho más rodeo, a través del desierto, y ese fue el camino por el que Dios quiso guiar a su pueblo Israel. Los egipcios habían de ser ahogados en el mar Rojo; los israelitas habían de ser humillados y probados en el desierto. El camino de Dios es el camino recto, aunque parezca un rodeo. Si pensamos que no guía a su pueblo por el camino más corto, podemos estar seguros de que lo guía por el mejor, y así se verá cuando lleguemos al final de nuestro viaje. Los filisteos eran enemigos poderosos; era necesario que los israelitas fueran preparados para las guerras de Canaán pasando por las dificultades del desierto. Así Dios proporciona las pruebas de su pueblo a sus fuerzas, 1 Co 10:13. Subieron en buen orden. Subieron de cinco en fondo, según algunos; en cinco escuadrones, según otros, que es más bien lo que parece significar. Llevaron consigo los huesos de José. Era un aliento para su fe y esperanza de que Dios los llevaría a Canaán, en espera de lo cual llevaron consigo estos huesos mientras estaban en el desierto.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "los huesos de José"
+    }
+   ],
    "flags": [
-    "source oddity: the last sentence seems to have lost words ('which it seems rather to their faith and hope…', with 'these bones' never introduced; Joseph's bones, Ex 13:19, are only in the title); translated as it stands.",
-    "'five in a rank' is the KJV margin's reading of 'harnessed' (Ex 13:18); the RV1909 has 'armados'."
+    "'five in a rank' is the KJV margin's reading of 'harnessed' (Ex 13:18); the RV1909 has 'armados'.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

@@ -341,12 +341,17 @@
   {
    "kind": "section",
    "id": 239,
-   "sha256": "ef80d02e4e01ab59b2cf287a6659640196ee2296ca424c68058012f3919854f0",
+   "sha256": "8b074e714322c0bdaf709d6928959bddda4ab4c64108931aad15e94f0e365f96",
    "title": "Os ossos de José são levados com os israelitas. Eles chegam a Etã.",
-   "text": "Havia dois caminhos do Egito para Canaã. Um era de apenas alguns dias de viagem; o outro dava uma volta muito maior, pelo deserto, e foi esse o caminho pelo qual Deus escolheu conduzir o seu povo Israel. Os egípcios haviam de ser afogados no mar Vermelho; os israelitas haviam de ser humilhados e provados no deserto. O caminho de Deus é o caminho certo, ainda que pareça um rodeio. Se pensamos que ele não conduz o seu povo pelo caminho mais curto, podemos ter certeza de que o conduz pelo melhor caminho, e assim parecerá quando chegarmos ao fim da nossa jornada. Os filisteus eram inimigos poderosos; era necessário que os israelitas fossem preparados para as guerras de Canaã passando pelas dificuldades do deserto. Assim Deus proporciona as provações do seu povo à sua força, 1 Co 10:13. Eles subiram em boa ordem. Subiram em fileiras de cinco, dizem alguns; em cinco divisões, dizem outros, o que parece antes dizer respeito à sua fé e esperança de que Deus os levaria a Canaã, na expectativa do que levaram consigo estes ossos enquanto estavam no deserto.",
-   "quotes": [],
+   "text": "Havia dois caminhos do Egito para Canaã. Um era de apenas alguns dias de viagem; o outro dava uma volta muito maior, pelo deserto, e foi esse o caminho pelo qual Deus escolheu conduzir o seu povo Israel. Os egípcios haviam de ser afogados no mar Vermelho; os israelitas haviam de ser humilhados e provados no deserto. O caminho de Deus é o caminho certo, ainda que pareça um rodeio. Se pensamos que ele não conduz o seu povo pelo caminho mais curto, podemos ter certeza de que o conduz pelo melhor caminho, e assim parecerá quando chegarmos ao fim da nossa jornada. Os filisteus eram inimigos poderosos; era necessário que os israelitas fossem preparados para as guerras de Canaã passando pelas dificuldades do deserto. Assim Deus proporciona as provações do seu povo à sua força, 1 Co 10:13. Eles subiram em boa ordem. Subiram em fileiras de cinco, dizem alguns; em cinco divisões, dizem outros, que é antes o que parece significar. Levaram consigo os ossos de José. Era um encorajamento à sua fé e esperança de que Deus os levaria a Canaã, na expectativa do que levaram consigo estes ossos enquanto estavam no deserto.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "os ossos de José"
+    }
+   ],
    "flags": [
-    "The last sentence is garbled in the source (\"which it seems rather to their faith and hope\"): words about Joseph's bones seem to be missing; translated as it stands, the referent of \"these bones\" left implicit."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

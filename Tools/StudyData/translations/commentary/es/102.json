@@ -51,7 +51,7 @@
   {
    "kind": "section",
    "id": 4042,
-   "sha256": "81302c9edea8b5cbc9b2487da40325f5dedba2a02ad2d4f9b28e140435dc02b4",
+   "sha256": "bca6991179b4fc85c75ce4bded32800921f570f19eca148b221f6c1ac45f7af8",
    "title": "Un cielo nuevo y una tierra nueva: la nueva Jerusalén, donde Dios habita y destierra de su pueblo toda tristeza.",
    "text": "El cielo nuevo y la tierra nueva no estarán separados el uno de la otra; la tierra de los santos, sus cuerpos glorificados, será celestial. El mundo antiguo, con todas sus angustias y tumultos, habrá pasado. No habrá mar; esto representa acertadamente la libertad de las pasiones en conflicto, de las tentaciones, las angustias, los cambios y las alarmas; de todo lo que pueda dividir o interrumpir la comunión de los santos. Esta nueva Jerusalén es la iglesia de Dios en su estado nuevo y perfecto, la iglesia triunfante. Su bienaventuranza vino enteramente de Dios, y depende de él. La presencia de Dios con su pueblo en el cielo no será interrumpida como lo es en la tierra; él morará con ellos continuamente. Todos los efectos de las angustias pasadas serán quitados. Muchas veces han estado en lágrimas, a causa del pecado, de la aflicción, de las calamidades de la iglesia; pero no quedará ninguna señal ni recuerdo de las tristezas pasadas. Cristo hace nuevas todas las cosas. Si estamos dispuestos y deseosos de que el Redentor lleno de gracia haga nuevas todas las cosas en nuestro corazón y nuestra naturaleza, él hará nuevas todas las cosas en cuanto a nuestra situación, hasta que nos haya llevado a gozar de la felicidad completa. Mira la certeza de la promesa. Dios da sus títulos, Alpha y Omega, el principio y el fin, como prenda de su pleno cumplimiento. Los placeres sensuales y pecaminosos son aguas turbias y envenenadas; y los mejores consuelos terrenales son como la escasa provisión de una cisterna; cuando se los idolatra, se vuelven cisternas rotas, y solo producen aflicción. Pero los gozos que Cristo imparte son como aguas que brotan de una fuente: puras, refrescantes, abundantes y eternas. Las consolaciones santificadoras del Espíritu Santo preparan para la felicidad celestial; son corrientes que fluyen para nosotros en el desierto. Los temerosos no se atrevieron a afrontar las dificultades de la religión; su temor servil procedía de su incredulidad; pero los que fueron tan cobardes que no se atrevieron a tomar la cruz de Cristo fueron, sin embargo, tan temerarios que se lanzaron a una maldad abominable. Las agonías y los terrores de la primera muerte llevarán a los terrores y agonías mucho mayores de la muerte eterna.",
    "quotes": [
@@ -65,8 +65,8 @@
     }
    ],
    "flags": [
-    "source typos: \"their glorified, bodies\" (stray comma), \"will not be interrupt\" (interrupted) and \"in order hearts and nature\" (read as \"in our hearts and nature\").",
-    "\"The fearful\" follows the RV1909's Rev 21:8 \"los temerosos\"."
+    "\"The fearful\" follows the RV1909's Rev 21:8 \"los temerosos\".",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -122,7 +122,7 @@
   {
    "kind": "section",
    "id": 4046,
-   "sha256": "387e371c44234f6faca54df120ccdc79903ce247cf1ba28e49e1fe087b6731c1",
+   "sha256": "b563cae37bf33173849afd567e47ec8980fecc34f3b6ac4a707ba3cb9773910c",
    "title": "La verdad y el cumplimiento cierto de todas las visiones proféticas. El Espíritu Santo y la esposa, la iglesia, invitan y dicen: Ven.",
    "text": "El Señor Jesús habló por medio del ángel, confirmando solemnemente el contenido de este libro, en particular de esta última visión. Él es el Señor Dios fiel y verdadero. También por medio de sus mensajeros: los santos ángeles las mostraron a santos hombres de Dios. Son las cosas que es necesario que sean hechas presto; Cristo vendrá pronto, y pondrá todas las cosas fuera de duda. Y por la integridad de aquel ángel que había sido el intérprete del apóstol. Rehusó aceptar culto religioso de Juan, y lo reprendió por ofrecérselo. Esto presenta otro testimonio contra el culto idólatra a los santos y a los ángeles. Dios llama a cada uno a dar testimonio de las declaraciones aquí hechas. Este libro, así mantenido abierto, tendrá efecto sobre los hombres; los sucios e injustos lo serán más, pero confirmará, fortalecerá y santificará aún más a los que son rectos para con Dios. Nunca pensemos que una fe muerta o desobediente nos salvará, porque el primero y el postrero ha declarado que solo son bienaventurados los que hacen sus mandamientos. Es un libro que excluye del cielo a todos los malvados e injustos, en particular a los que aman y hacen mentira; por tanto, no puede ser él mismo una mentira. No hay lugar ni condición intermedios. Jesús, que es el Espíritu de la profecía, ha dado a sus iglesias esta luz matutina de la profecía, para asegurarles la luz del día perfecto que se acerca. Todo se confirma con una invitación abierta y general a la humanidad, a venir y participar gratuitamente de las promesas y de los privilegios del evangelio. El Espíritu, por la palabra sagrada, y por las convicciones y la influencia en la conciencia del pecador, dice: Ven a Cristo para salvación; y la esposa, o toda la iglesia, en la tierra y en el cielo, dice: Ven y comparte nuestra felicidad. Para que nadie vacile, se añade: El que quiere, o sea, el que está dispuesto, venga y tome del agua de la vida de balde. Que todo el que oye o lee estas palabras desee aceptar en seguida la invitación llena de gracia. Quedan condenados todos los que se atrevan a corromper o cambiar la palabra de Dios, ya sea añadiéndole o quitándole.",
    "quotes": [
@@ -136,10 +136,10 @@
     }
    ],
    "flags": [
-    "source typo: \"shuts out form heaven\" read as \"from heaven\".",
     "unlisted quotation of Rev 22:6 (\"things that must shortly be done\"), given in the RV1909's words \"las cosas que es necesario que sean hechas presto\".",
     "\"those ... who do his commandments\" (KJV Rev 22:14): the RV1909 reads \"los que guardan sus mandamientos\"; Henry's phrase translated (\"hacen\").",
-    "sensitive: \"idolatrous worship of saints and angels\" (Roman Catholic veneration, as in 4036)."
+    "sensitive: \"idolatrous worship of saints and angels\" (Roman Catholic veneration, as in 4036).",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

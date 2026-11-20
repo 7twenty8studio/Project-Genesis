@@ -334,7 +334,7 @@
   {
    "kind": "section",
    "id": 1615,
-   "sha256": "7ddda1430ced04457765ac5cea00ebeb2000779ceeedb6987305e43b84520410",
+   "sha256": "a86a119faebfd2c60e1e00b12847e7c60c234cc2aefbbeef656d10dae83e1f7d",
    "title": "Una queja dolorida por grandes aflicciones.",
    "text": "Toda la palabra de Dios sirve para dirigirnos en la oración; pero aquí, como a menudo en otras partes, el Espíritu Santo ha puesto palabras en nuestra boca. Aquí hay una oración puesta en manos de los afligidos; preséntenla a Dios. Aun los hombres buenos pueden ser casi abrumados por las aflicciones. Es nuestro deber y nuestro interés orar; y es un consuelo para un espíritu afligido desahogarse mediante una humilde exposición de sus penas. Debemos decir: Sea el nombre de Jehová bendito, que da y quita. El salmista se consideraba un hombre moribundo: Mis días son como la sombra.",
    "quotes": [
@@ -348,7 +348,7 @@
     }
    ],
    "flags": [
-    "Source typo 'here, is often elsewhere' read as 'as often elsewhere'; translated 'como a menudo en otras partes'."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

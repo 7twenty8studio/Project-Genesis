@@ -17,7 +17,7 @@
   {
    "kind": "section",
    "id": 1009,
-   "sha256": "224105e41bc69f6b56cf6e50bcb827bb5eee2b968f7e250c7d9c5164f092de72",
+   "sha256": "c236870c3f46d2d576b7bb1ed4632e891c33042387302777ab1dd207d88c1f19",
    "title": "Josafá faz aliança com Acabe.",
    "text": "A mesma brandura de temperamento que leva algumas pessoas piedosas a fazer amizade com os inimigos declarados da religião torna essa amizade muito perigosa para elas. Serão levadas a fechar os olhos e a dar apoio a condutas e conversas contra as quais deveriam protestar com horror. Aonde quer que vá, o homem bom deve levar consigo a sua religião, e não se envergonhar de confessá-la quando está com os que não fazem caso dela. Josafá não deixara em Jerusalém a sua afeição e reverência pela palavra do SENHOR, mas declarou-a e procurou introduzi-la na corte de Acabe. E os profetas de Acabe, para agradar a Josafá, usaram o nome de Jeová; para agradar a Acabe, disseram: Sobe. Mas os falsos profetas não conseguem imitar os verdadeiros a ponto de aquele que tem os sentidos espirituais exercitados não poder discernir o engano. Um só profeta fiel do Senhor valia por todos eles. Os homens mundanos têm sido, em todas as eras, igualmente absurdos nas suas ideias sobre a religião. Querem que o pregador ajuste a sua doutrina à moda dos tempos e ao gosto dos ouvintes, e que ainda acrescente: Assim disse o SENHOR, a palavras que os homens lhe poriam na boca. Estão prontos a clamar contra um homem como grosseiro e tolo, se ele tem escrúpulos de tentar assim garantir os seus próprios interesses e enganar os outros.",
    "quotes": [
@@ -27,9 +27,9 @@
     }
    ],
    "flags": [
-    "The English has \"Wordly men\", a slip for \"Worldly\"; translated \"Os homens mundanos\".",
     "\"Sobe\" is 1 Rs 22:6 and \"Assim disse o SENHOR\" the Bíblia Livre's usual form of \"Thus saith the Lord\" (unlisted).",
-    "The English \"to add ... to words that men would put into their mouths\" mixes singular and plural (the preacher / their mouths); rendered \"lhe poriam na boca\"."
+    "The English \"to add ... to words that men would put into their mouths\" mixes singular and plural (the preacher / their mouths); rendered \"lhe poriam na boca\".",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -250,13 +250,14 @@
   {
    "kind": "section",
    "id": 1027,
-   "sha256": "2150873dd827b5e7adbd122c363c0bd50f6165e53383e3d249c04127e1616c52",
+   "sha256": "9762b885ef4418a1d6a393a0d59da8dd416d2dab608f049dcc5f57a5741de860",
    "title": "A lepra de Naamã.",
    "text": "Embora os sírios fossem idólatras e oprimissem o povo de Deus, o livramento de que Naamã fora o instrumento é aqui atribuído ao Senhor. Tal é a linguagem correta das Escrituras, enquanto os que escrevem a história comum mostram claramente que Deus não está em todos os seus pensamentos. Nenhuma grandeza ou honra pode pôr um homem fora do alcance das mais duras calamidades da vida humana: há muito corpo doente e alquebrado sob roupas ricas e vistosas. Todo homem tem algum \"mas\", alguma coisa que o mancha e o diminui, alguma liga na sua grandeza, algum esfriamento na sua alegria. Esta pequena serva, embora fosse apenas uma menina, sabia dar notícia do famoso profeta que os israelitas tinham entre si. As crianças devem ser instruídas cedo nas obras maravilhosas de Deus, para que, aonde quer que forem, possam falar delas. Como convinha a uma boa serva, ela desejava a saúde e o bem-estar do seu senhor, embora fosse cativa, serva à força; muito mais devem os servos por escolha buscar o bem dos seus senhores. Os servos podem ser bênçãos para as famílias onde estão, contando o que sabem da glória de Deus e da honra dos seus profetas. Naamã não desprezou o que ela lhe disse por causa da sua condição humilde. Bom seria se os homens fossem tão sensíveis ao peso do pecado quanto são à doença do corpo. E, quando buscam as bênçãos que o Senhor envia em resposta às orações do seu povo fiel, verão que nada se pode obter a não ser que venham como mendigos em busca de um dom gratuito, e não como senhores para exigir ou comprar.",
    "flags": [
     "The English has \"our of the reach\", a slip for \"out of\"; translated accordingly.",
     "\"algum 'mas'\" renders Henry's \"some but or other\", playing on KJV 2 Rs 5:1 \"but he was a leper\" (Bíblia Livre: \"mas leproso\"); \"allay\" read as \"alloy\" (liga).",
-    "\"Deus não está em todos os seus pensamentos\" echoes Sl 10:4 (KJV wording; Bíblia Livre: \"Deus não existe em todos as seus pensamentos\"); translated."
+    "\"Deus não está em todos os seus pensamentos\" echoes Sl 10:4 (KJV wording; Bíblia Livre: \"Deus não existe em todos as seus pensamentos\"); translated.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

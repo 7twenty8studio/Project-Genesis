@@ -268,7 +268,7 @@
   {
    "kind": "section",
    "id": 1069,
-   "sha256": "9741fb810c5b7a7cbcc5763e605ba75a47f58d9ddc3d85bedb18dc3bd40847fb",
+   "sha256": "d99fed22cdabcaf2fec1c6c0415f796a0cf318bde0761e825a3aef34cd700084",
    "title": "Las naciones establecidas en la tierra de Israel.",
    "text": "El terror del Todopoderoso produce a veces una sumisión forzada o fingida en hombres no convertidos; como en aquellos que fueron traídos de diferentes países para habitar Israel. Pero tales personas formarán pensamientos indignos de Dios, esperarán agradarle con formas exteriores, y procurarán en vano conciliar su servicio con el amor del mundo y la complacencia de sus concupiscencias. Que aquel temor del Señor, que es el principio de la sabiduría, posea nuestros corazones e influya en nuestra conducta, para que estemos preparados para todo cambio. Los asentamientos mundanos son inciertos; no sabemos adónde podemos ser arrojados antes de morir, y pronto hemos de dejar el mundo; pero el justo escogió la buena parte, la cual no le será quitada.",
    "quotes": [
@@ -278,8 +278,8 @@
     }
    ],
    "flags": [
-    "Source typo 'Wordly' read as 'Worldly' ('mundanos').",
-    "Lc 10:42 applied by Henry to 'the righteous' (María in the verse)."
+    "Lc 10:42 applied by Henry to 'the righteous' (María in the verse).",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -577,9 +577,9 @@
   {
    "kind": "section",
    "id": 1094,
-   "sha256": "15da44f5e424c7b850a8ba3cfd066048f00c0d809b62a1cb7aeeda754066ea7b",
+   "sha256": "428e6c20e4d79e4eb10bec8edea853ca43e1036a6e1a2420aa76880ef38bd072",
    "title": "Genealogías, de Adán a Abraham.",
-   "text": "Este capítulo, y muchos de los que siguen, repiten las genealogías, o listas de padres e hijos de la historia bíblica, y las juntan, con muchas añadidas. Cuando se comparan con otros lugares, se hallan algunas diferencias; sin embargo, no por ello debemos tropezar en la palabra, sino bendecir a Dios porque las cosas necesarias para la salvación son bastante claras. El origen de la nación judía se remonta aquí al primer hombre que Dios creó, y por ello se distingue de los orígenes oscuros, fabulosos y absurdos que se asignan a otras naciones. Pero las naciones están ahora tan mezcladas unas con otras, que ninguna nación, ni la mayor parte de ninguna, desciende enteramente de ninguna de una sola nación, ni la mayor parte de ninguna, desciende enteramente de ninguna de estas fuentes. Solo de esto estamos seguros: que Dios de una sangre ha hecho todo el linaje de los hombres; todos descienden de un solo Adán, de un solo Noé. ¿No tenemos todos un mismo padre? ¿No nos ha criado un mismo Dios? Mal 2:10.",
+   "text": "Este capítulo, y muchos de los que siguen, repiten las genealogías, o listas de padres e hijos de la historia bíblica, y las juntan, con muchas añadidas. Cuando se comparan con otros lugares, se hallan algunas diferencias; sin embargo, no por ello debemos tropezar en la palabra, sino bendecir a Dios porque las cosas necesarias para la salvación son bastante claras. El origen de la nación judía se remonta aquí al primer hombre que Dios creó, y por ello se distingue de los orígenes oscuros, fabulosos y absurdos que se asignan a otras naciones. Pero las naciones están ahora tan mezcladas unas con otras, que ninguna nación, ni la mayor parte de ninguna, desciende enteramente de ninguna de estas fuentes. Solo de esto estamos seguros: que Dios de una sangre ha hecho todo el linaje de los hombres; todos descienden de un solo Adán, de un solo Noé. ¿No tenemos todos un mismo padre? ¿No nos ha criado un mismo Dios? Mal 2:10.",
    "quotes": [
     {
      "n": 0,
@@ -591,8 +591,8 @@
     }
    ],
    "flags": [
-    "Source repeats a garbled run ('from any of one nation, nor the greatest part of any, is descended entirely from any of'); translated as it stands, repetition kept.",
-    "Hch 17:26: the RV1909's 'ha hecho… todo el linaje' for Henry's 'has created… all nations'. Mal 2:10's second question given in the RV1909's words ('¿No nos ha criado un mismo Dios?'), unlisted."
+    "Hch 17:26: the RV1909's 'ha hecho… todo el linaje' for Henry's 'has created… all nations'. Mal 2:10's second question given in the RV1909's words ('¿No nos ha criado un mismo Dios?'), unlisted.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

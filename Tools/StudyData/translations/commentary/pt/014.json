@@ -82,12 +82,12 @@
   {
    "kind": "section",
    "id": 440,
-   "sha256": "a75d810ec0fb2291c3edfe0089adb4bd62be6c099f11a2b02a33782cb26fef90",
+   "sha256": "b0599bdfcef31453c7e333d051fd4e46a91b90206e375e3f0b613f34a21ae099",
    "title": "A rebelião de Corá, Datã e Abirão. Corá disputa o sacerdócio.",
-   "text": "O orgulho e a ambição causam grande quantidade de males tanto nas igrejas quanto nos Estados. Os rebeldes contestam o estabelecimento do sacerdócio em Arão e na sua família. Pouca razão tinham para se gabar da pureza do povo ou do favor de Deus, visto que o povo havia sido contaminado pelo pecado tantas vezes e tão recentemente, e estava agora sob as marcas do desagrado de Deus. Acusam injustamente Moisés e Arão de tomarem honra para si mesmos, quando foram chamados por Deus para ela. Vede aqui: 1. De que espírito são os niveladores, aqueles que resistem às autoridades que Deus pôs sobre eles. 2. Que tratamento recebem os que lhes prestaram serviço. Moisés buscou instrução de Deus. O coração do sábio pondera para responder e pede conselho a Deus. Moisés mostra-lhes os seus privilégios como levitas e os convence do pecado de menosprezar esses privilégios. Ajudar-nos-á a não invejar os que estão acima de nós considerar devidamente quantos há abaixo de nós.",
+   "text": "O orgulho e a ambição causam grande quantidade de males tanto nas igrejas quanto nos Estados. Os rebeldes contestam o estabelecimento do sacerdócio em Arão e na sua família. Pouca razão tinham para se gabar da pureza do povo ou do favor de Deus, visto que o povo havia sido contaminado pelo pecado tantas vezes e tão recentemente, e estava agora sob as marcas do desagrado de Deus. Acusam injustamente Moisés e Arão de tomarem honra para si mesmos, quando foram chamados por Deus para ela. Vede aqui: 1. De que espírito são os niveladores, aqueles que resistem às autoridades que Deus pôs sobre eles. 2. Que tratamento podem esperar até os melhores e mais úteis, até daqueles a quem prestaram serviço. Moisés buscou instrução de Deus. O coração do sábio pondera para responder e pede conselho a Deus. Moisés mostra-lhes os seus privilégios como levitas e os convence do pecado de menosprezar esses privilégios. Ajudar-nos-á a não invejar os que estão acima de nós considerar devidamente quantos há abaixo de nós.",
    "flags": [
-    "Point 2 is garbled in the English (\"What usage they have been serviceable\"); rendered as \"what treatment those who served them receive\"; check against a full edition.",
-    "\"The heart of the wise studies to answer\" echoes Pv 15:28 (KJV \"righteous\"); not listed, translated as Henry's own sentence."
+    "\"The heart of the wise studies to answer\" echoes Pv 15:28 (KJV \"righteous\"); not listed, translated as Henry's own sentence.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -301,7 +301,7 @@
   {
    "kind": "section",
    "id": 457,
-   "sha256": "4024673762812f27273ce943e6a77d49d8982b848f4a3ed20f8cfe70669e2750",
+   "sha256": "cde75c68fb52fe57a78f24154bcb74dd8ae6295dbbbea48e21ea4ab65645ebbb",
    "title": "O povo, murmurando, é castigado com serpentes ardentes. Arrependendo-se, é curado pela serpente de bronze.",
    "text": "Os filhos de Israel estavam cansados por uma longa marcha ao redor da terra de Edom. Falam com descontentamento do que Deus havia feito por eles, e com desconfiança do que ele faria. Com que se agradarão aqueles a quem o maná não agrada? Que o desprezo que alguns lançam sobre a palavra de Deus não nos faça estimá-la menos. Ela é o pão da vida, pão substancioso, e nutrirá para a vida eterna os que pela fé se alimentam dela, ainda que alguém a chame de pão miserável. Vemos o justo juízo que Deus trouxe sobre eles por murmurarem. Enviou entre eles serpentes ardentes, que morderam ou picaram muitos até a morte. É de temer que eles não teriam reconhecido o pecado se não tivessem sentido a dor; mas abrandam-se sob a vara. E Deus fez uma provisão maravilhosa para o seu alívio. Os próprios judeus dizem que não era a vista da serpente de bronze que curava; mas, ao olharem para ela, olhavam para Deus como o Senhor que os sarava. Havia muito evangelho nisto. O nosso Salvador declarou, Jo 3:14, 15, que como Moisés levantou a serpente no deserto, assim deve o Filho do homem ser levantado, para que todo aquele que nele crer não pereça. Comparai a enfermidade deles e a nossa. O pecado morde como serpente e pica como víbora. Comparai a aplicação do remédio deles e do nosso. Eles olharam e viveram, e nós, se crermos, não pereceremos. É pela fé que olhamos para Jesus, Hb 12:2. Todo aquele que olhava, por mais desesperado que fosse o seu caso, ou fraca a sua vista, ou distante o seu lugar, era curado com certeza e por completo. O Senhor pode livrar-nos de perigos e angústias por meios que a razão humana nunca teria imaginado. Oh, se o veneno da antiga serpente, que inflama as paixões dos homens e os faz cometer pecados que terminam na sua destruição eterna, fosse sentido tão vivamente, e o perigo visto tão claramente, como os israelitas sentiam a dor da mordida das serpentes ardentes e temiam a morte que se seguia! Então ninguém fecharia os olhos a Cristo nem se afastaria do seu evangelho. Então um Salvador crucificado seria tão estimado que todas as demais coisas seriam consideradas perda por ele; então, sem demora, e com fervor e simplicidade, todos recorreriam a ele pelo caminho determinado, clamando: Senhor, salva-nos! Estamos sendo destruídos! Nem ninguém abusaria da gratuidade da salvação de Cristo, ao considerar o preço que ela lhe custou.",
    "quotes": [
@@ -321,7 +321,8 @@
    ],
    "flags": [
     "\"light bread\" (Nm 21:5, KJV): the Bíblia Livre has \"pão tão miserável\"; rendered \"pão miserável\".",
-    "Unlisted: \"Senhor, salva-nos! Estamos sendo destruídos!\" is Mt 8:25 in the Bíblia Livre (KJV \"we perish\"); \"bites like a serpent, and stings like an adder\" (Pv 23:32) translated, Henry applies it to sin."
+    "Unlisted: \"Senhor, salva-nos! Estamos sendo destruídos!\" is Mt 8:25 in the Bíblia Livre (KJV \"we perish\"); \"bites like a serpent, and stings like an adder\" (Pv 23:32) translated, Henry applies it to sin.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -429,9 +430,9 @@
   {
    "kind": "section",
    "id": 466,
-   "sha256": "876dea04468c06215bf9682f78b957091b4d13fa52707e4ac2455310c6716f1a",
+   "sha256": "c697148938a59d59284613a3563e6e59e388b7b9c2e6a2c59f471f8a54cda2b2",
    "title": "Balaão, deixando os agouros, profetiza a felicidade de Israel.",
-   "text": "Agora Balaão não falou segundo o seu próprio entendimento, mas a linguagem do Espírito que veio sobre ele. Muitos têm os olhos abertos sem ter o coração aberto; são iluminados, mas não santificados. O conhecimento que incha os homens de orgulho só servirá para iluminar-lhes o caminho para o inferno, para onde muitos vão de olhos abertos. A bênção é quase a mesma das que foram dadas antes. Ele admira em Israel a sua formosura. O justo, sem dúvida, é mais excelente do que o seu próximo. A sua fecundidade e o seu crescimento. A sua honra e a sua elevação. O seu poder e a sua vitória. Ele olha para trás, para o que havia sido feito por eles. O seu poder e a sua vitória. Ele olha para trás, para o que havia sido feito por eles. A sua coragem e a sua segurança. Os justos são confiantes como um leão, não quando atacam os outros, mas quando estão em repouso, porque Deus os faz habitar em segurança. A sua influência sobre os vizinhos. Deus considera o que lhes é feito, seja bem ou mal, como feito a ele mesmo. (Nm 24:10-14)",
+   "text": "Agora Balaão não falou segundo o seu próprio entendimento, mas a linguagem do Espírito que veio sobre ele. Muitos têm os olhos abertos sem ter o coração aberto; são iluminados, mas não santificados. O conhecimento que incha os homens de orgulho só servirá para iluminar-lhes o caminho para o inferno, para onde muitos vão de olhos abertos. A bênção é quase a mesma das que foram dadas antes. Ele admira em Israel a sua formosura. O justo, sem dúvida, é mais excelente do que o seu próximo. A sua fecundidade e o seu crescimento. A sua honra e a sua elevação. O seu poder e a sua vitória. Ele olha para trás, para o que havia sido feito por eles. A sua coragem e a sua segurança. Os justos são confiantes como um leão, não quando atacam os outros, mas quando estão em repouso, porque Deus os faz habitar em segurança. A sua influência sobre os vizinhos. Deus considera o que lhes é feito, seja bem ou mal, como feito a ele mesmo. (Nm 24:10-14)",
    "quotes": [
     {
      "n": 0,
@@ -439,8 +440,8 @@
     }
    ],
    "flags": [
-    "Two sentences (\"Their power and victory. He looks back upon what had been done for them.\") are repeated in the English; kept as in the source.",
-    "\"The righteous... more excellent than his neighbour\" (Pv 12:26, KJV) is unlisted; translated, as the Bíblia Livre reads very differently."
+    "\"The righteous... more excellent than his neighbour\" (Pv 12:26, KJV) is unlisted; translated, as the Bíblia Livre reads very differently.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

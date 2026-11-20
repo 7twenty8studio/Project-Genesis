@@ -33,13 +33,13 @@
   {
    "kind": "section",
    "id": 1705,
-   "sha256": "99bc3ab8fc1e72d2ee58a268012939cc164d887e4f0c627dc48d32d41f30ded6",
+   "sha256": "5c2901a830096b4765823e3667d0f24365430c45f097275f3f7fed54bd202f03",
    "title": "Su afecto por Jerusalén.",
-   "text": "Aquello que amamos, nos gusta pensarlo. Los que se regocijan en Dios hacen, por amor de él, de Jerusalén su gozo. Resolvieron con firmeza mantener este afecto. Cuando sufrimos, deberíamos recordar con tristeza según Dios las misericordias que hemos perdido y los pecados por los cuales las perdimos. Si alguna vez las ventajas temporales rinden una profesión de fe, la peor calamidad le ha sobrevenido. Lejos esté de nosotros vengarnos; lo dejaremos a Aquel que ha dicho: Mía es la venganza. Los que se alegran de las calamidades, especialmente de las calamidades de Jerusalén, no quedarán sin castigo. No podemos orar por el éxito prometido a la iglesia de Dios sin tener en vista la ruina de sus enemigos, aunque no pronunciemos una oración por ella. Pero recordemos que solo a la gracia de Aquel cuya salvación está consumada debemos el tener alguna esperanza de ser llevados a casa, a la Jerusalén celestial.",
+   "text": "Aquello que amamos, nos gusta pensarlo. Los que se regocijan en Dios hacen, por amor de él, de Jerusalén su gozo. Resolvieron con firmeza mantener este afecto. Cuando sufrimos, deberíamos recordar con tristeza según Dios las misericordias que hemos perdido y los pecados por los cuales las perdimos. Si alguna vez las ventajas temporales dejan a quien profesa la fe satisfecho lejos de las ordenanzas de Dios, o avergonzado de su profesión de fe, la peor calamidad le ha sobrevenido. Lejos esté de nosotros vengarnos; lo dejaremos a Aquel que ha dicho: Mía es la venganza. Los que se alegran de las calamidades, especialmente de las calamidades de Jerusalén, no quedarán sin castigo. No podemos orar por el éxito prometido a la iglesia de Dios sin tener en vista la ruina de sus enemigos, aunque no pronunciemos una oración por ella. Pero recordemos que solo a la gracia de Aquel cuya salvación está consumada debemos el tener alguna esperanza de ser llevados a casa, a la Jerusalén celestial.",
    "quotes": [],
    "flags": [
-    "'If temporal advantages ever render a profession, the worst calamity has befallen him' seems garbled (a word lost after 'profession', and 'him' has no antecedent); translated word for word ('rinden una profesión de fe … le ha sobrevenido').",
-    "'Vengeance is mine' is an unlisted quotation of Ro 12:19 (He 10:30); rendered with the RV1909's 'Mía es la venganza'."
+    "'Vengeance is mine' is an unlisted quotation of Ro 12:19 (He 10:30); rendered with the RV1909's 'Mía es la venganza'.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -279,7 +279,7 @@
   {
    "kind": "section",
    "id": 1724,
-   "sha256": "86a819484df6d33966a2808a1e9c1b43c2b42bb0270f46dc1ae91ac396262cbc",
+   "sha256": "933ebf73339f91abf752a8b68f26ba43981a9b4db4cf280c69e5b1128991039c",
    "title": "Se exhorta al pueblo de Dios a alabarle por sus misericordias y su cuidado.",
    "text": "Alabar a Dios es una obra que es su propio salario. Es hermosa; nos conviene como criaturas racionales, y mucho más como personas en pacto con Dios. Él recoge por su gracia a los pecadores desechados, y los llevará a su santa morada. A aquellos a quienes Dios sana con los consuelos de su Espíritu les habla paz, les asegura que sus pecados están perdonados. Y por esto, que otros le alaben también. El conocimiento del hombre pronto se acaba; pero el conocimiento de Dios es una profundidad que nunca puede sondearse. Y mientras él cuenta el número de las estrellas, se digna oír al pecador quebrantado de corazón. Mientras alimenta a las crías de los cuervos, no dejará desamparado a su pueblo que ora. Las nubes parecen sombrías y melancólicas, y sin embargo sin ellas no tendríamos lluvia, ni por tanto fruto. Así las aflicciones parecen negras y desagradables; pero de las nubes de la aflicción vienen lluvias que hacen que el alma dé fruto apacible de justicia. El salmista no se deleita en las cosas en que los pecadores confían y se glorían; pero una consideración seria y apropiada de Dios es, a sus ojos, de muy gran estima. No hemos de estar en duda entre la esperanza y el temor, sino obrar bajo las influencias llenas de gracia de la esperanza y el temor unidos.",
    "quotes": [
@@ -289,8 +289,8 @@
     }
    ],
    "flags": [
-    "The English reads 'a dept that can never be fathomed', a slip for 'depth'; translated 'profundidad'.",
-    "'peaceable fruits of righteousness' echoes He 12:11; rendered with the RV1909's 'fruto apacible de justicia' (singular)."
+    "'peaceable fruits of righteousness' echoes He 12:11; rendered with the RV1909's 'fruto apacible de justicia' (singular).",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

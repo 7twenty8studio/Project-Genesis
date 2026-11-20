@@ -202,9 +202,9 @@
   {
    "kind": "section",
    "id": 1115,
-   "sha256": "12adfff09800a9cd909821f83b685e5209849215c13e7fc95ba22f0414ef6158",
+   "sha256": "4629ba11198619433c758f48948cf9338bdcb28833232e4b1562ebe6cf61d997",
    "title": "O salmo de louvor de Davi.",
-   "text": "Que Deus seja glorificado nos nossos louvores. Que os outros sejam edificados e ensinados, para que os que lhe são estranhos sejam levados a adorá-lo. Que nós mesmos triunfemos e confiemos em Deus. Aos que dão glória ao nome de Deus é permitido gloriar-se nele. Que a aliança eterna seja o grande motivo da nossa alegria o seu povo de outrora, seja lembrado por nós com gratidão a ele. Anunciai de dia em dia sua salvação, a sua salvação prometida por meio de Cristo. Temos motivo para celebrá-la de dia em dia, pois diariamente recebemos o seu benefício, e é um assunto que jamais se pode esgotar. No meio dos louvores, não devemos esquecer de orar pelos servos de Deus em aflição.",
+   "text": "Que Deus seja glorificado nos nossos louvores. Que os outros sejam edificados e ensinados, para que os que lhe são estranhos sejam levados a adorá-lo. Que nós mesmos triunfemos e confiemos em Deus. Aos que dão glória ao nome de Deus é permitido gloriar-se nele. Que a aliança eterna seja o grande motivo da nossa alegria e louvor. Lembrai-vos da sua aliança. Que as misericórdias passadas de Deus para com o seu povo de outrora sejam lembradas por nós com gratidão a ele. Anunciai de dia em dia sua salvação, a sua salvação prometida por meio de Cristo. Temos motivo para celebrá-la de dia em dia, pois diariamente recebemos o seu benefício, e é um assunto que jamais se pode esgotar. No meio dos louvores, não devemos esquecer de orar pelos servos de Deus em aflição.",
    "quotes": [
     {
      "n": 0,
@@ -212,7 +212,7 @@
     }
    ],
    "flags": [
-    "Source garbled: \"Let the everlasting covenant be the great matter of our joy his people of old, be remembered by us with thankfulness to him\" (words seem lost, perhaps about God's dealings with his people of old); translated as it stands, nothing added or dropped."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

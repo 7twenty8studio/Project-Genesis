@@ -5,12 +5,12 @@
   {
    "kind": "section",
    "id": 3595,
-   "sha256": "ecc56c05ea52922b79c6779e86195304709128251e69573e18c82ccb504b10c4",
+   "sha256": "0c652d467272f7c2d4c811b24bf673ee298e2150939ba73ef8b97df7971a359c",
    "title": "Exortações a vários deveres.",
    "text": "O amor que os cristãos professam uns pelos outros deve ser sincero, livre de engano e de cumprimentos vazios e enganosos. Dependendo da graça divina, devem detestar e temer todo o mal, e amar e deleitar-se em tudo o que é bondoso e útil. Não devemos apenas fazer o que é bom, mas apegar-nos a ele. Todo o nosso dever uns para com os outros se resume numa palavra: amor. Isso denota o amor dos pais pelos filhos, que é mais terno e natural do que qualquer outro; espontâneo, sem constrangimento. E o amor a Deus e aos homens, com zelo pelo evangelho, fará o cristão sábio diligente em todos os seus negócios deste mundo e em adquirir maior habilidade. Deus deve ser servido com o espírito, sob as influências do Espírito Santo. Ele é honrado pela nossa esperança e confiança nele, especialmente quando nos alegramos nessa esperança. Ele é servido não só quando trabalhamos para ele, mas quando ficamos quietos em paz, quando ele nos chama a sofrer. A paciência por amor de Deus é verdadeira piedade. Os que se alegram na esperança provavelmente serão pacientes na tribulação. Não devemos ser frios no dever da oração, nem nos cansar dela depressa. Não só deve haver bondade para com os amigos e irmãos, mas os cristãos não devem abrigar ira contra os inimigos. É apenas um arremedo de amor aquele que se contenta com palavras bondosas, enquanto nossos irmãos precisam de socorro real e está em nosso poder supri-los. Estai prontos a acolher os que fazem o bem: conforme houver ocasião, devemos receber bem os estrangeiros. Abençoai, e não amaldiçoeis. Isso significa boa vontade completa; não abençoá-los quando estamos em oração e amaldiçoá-los em outras ocasiões, mas abençoá-los sempre e não amaldiçoar nunca. O verdadeiro amor cristão nos fará tomar parte nas tristezas e alegrias uns dos outros. Esforçai-vos quanto puderdes para concordar nas mesmas verdades espirituais; e, quando não o conseguirdes, concordai ao menos no afeto. Olhai a pompa e a dignidade mundanas com santo desprezo. Não vos importeis com elas; não vos apaixoneis por elas. Conformai-vos com o lugar em que Deus, em sua providência, vos coloca, seja ele qual for. Nada está abaixo de nós, senão o pecado. Jamais encontraremos no coração disposição para condescender com os outros enquanto alimentarmos a presunção a nosso próprio respeito; por isso ela deve ser mortificada.",
    "flags": [
-    "source typo 'wordly' read as 'worldly' (negócios deste mundo).",
-    "unlisted quotation of Rom 12:14: 'Abençoai, e não amaldiçoeis' (Bíblia Livre) for Henry's 'Bless, and curse not'."
+    "unlisted quotation of Rom 12:14: 'Abençoai, e não amaldiçoeis' (Bíblia Livre) for Henry's 'Bless, and curse not'.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -285,7 +285,7 @@
   {
    "kind": "section",
    "id": 3615,
-   "sha256": "cafd5233c20b1ad20b4c0c997e3e586a74214231be55f8de1acd40332c54d05c",
+   "sha256": "919147210a0bb9fc88f253f71f9c902222f6bb35ec5b7669e415d47f73a674a2",
    "text": "Paulo fora criado no saber judaico; mas a pregação simples de um Jesus crucificado foi mais poderosa do que toda a oratória e filosofia do mundo pagão. Esta é a suma e a substância do evangelho. Cristo crucificado é o fundamento de todas as nossas esperanças, a fonte de todas as nossas alegrias. E pela sua morte nós vivemos. A pregação da salvação para pecadores perdidos pelos sofrimentos e pela morte do Filho de Deus, se explicada e fielmente aplicada, parece loucura aos que estão no caminho da destruição. O sensual, o avarento, o orgulhoso e o ambicioso veem igualmente que o evangelho se opõe às suas buscas favoritas. Mas os que recebem o evangelho, e são iluminados pelo Espírito de Deus, veem mais da sabedoria e do poder de Deus na doutrina de Cristo crucificado do que em todas as suas outras obras. Deus deixou grande parte do mundo seguir os ditames da tão gabada razão do homem, e o resultado mostrou que a sabedoria humana é loucura e é incapaz de achar ou reter o conhecimento de Deus como Criador. Agradou-lhe salvar os que creem por meio da loucura da pregação. Por meio da loucura da pregação; não pelo que com justiça se pudesse chamar pregação louca. Mas a coisa pregada era loucura para os homens sábios segundo o mundo. O evangelho sempre foi, e sempre será, loucura para todos os que estão na estrada da destruição. A mensagem de Cristo, transmitida com clareza, sempre foi uma pedra de toque segura pela qual os homens podem saber que estrada estão percorrendo. Mas a desprezada doutrina da salvação pela fé num Salvador crucificado, Deus em natureza humana, que comprou a igreja com o seu próprio sangue, para salvar multidões, sim, todos os que creem, da ignorância, do engano e do vício, tem sido abençoada em todas as épocas. E os instrumentos mais fracos que Deus usa são mais fortes nos seus efeitos do que os mais fortes que os homens podem usar. Não que haja loucura ou fraqueza em Deus, mas o que os homens consideram como tal vence toda a sabedoria e força que eles admiram.",
    "quotes": [
     {
@@ -298,8 +298,8 @@
     }
    ],
    "flags": [
-    "source typo 'wordly-wise' read as 'worldly-wise'.",
-    "Henry's distinction 'the foolishness of preaching … not foolish preaching' kept: 'loucura da pregação' vs 'pregação louca'."
+    "Henry's distinction 'the foolishness of preaching … not foolish preaching' kept: 'loucura da pregação' vs 'pregação louca'.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -389,7 +389,7 @@
   {
    "kind": "section",
    "id": 3622,
-   "sha256": "4f97e7080cecc040adea6732fae6f8cb666bef7939406c14760054f1e5a84731",
+   "sha256": "9048c22f1443871930e7ad3642fe3c9d563eb5b85386e0aca8f7772fbc3efce0",
    "title": "Ele é o único fundamento, e cada um deve atentar para o que edifica sobre ele.",
    "text": "O apóstolo era um sábio construtor; mas a graça de Deus o fez tal. O orgulho espiritual é abominável; é usar os maiores favores de Deus para alimentar a nossa própria vaidade e fazer de nós mesmos ídolos. Mas cada um veja bem; pode haver má construção sobre um bom fundamento. Nada deve ser posto sobre ele senão o que o fundamento suportar e o que for da mesma natureza que ele. Não ousemos juntar uma vida meramente humana ou carnal com uma fé divina, a corrupção do pecado com a profissão do cristianismo. Cristo é uma Rocha dos séculos firme, permanente e inabalável, capaz em todos os sentidos de suportar todo o peso que o próprio Deus ou o pecador possam pôr sobre ele; e em nenhum outro há salvação. Deixai de fora a doutrina da sua expiação, e não há fundamento para as nossas esperanças. Mas, dos que repousam sobre esse fundamento, há duas espécies. Uns sustentam somente a verdade tal como ela está em Jesus, e nada mais pregam. Outros edificam sobre o bom fundamento o que não resistirá à prova, quando vier o dia da provação. Podemos enganar-nos a respeito de nós mesmos e dos outros; mas vem um dia que mostrará as nossas ações na sua verdadeira luz, sem cobertura nem disfarce. Os que difundem a religião verdadeira e pura em todos os seus ramos, e cuja obra permanecerá no grande dia, receberão recompensa. E quão grande! Quão acima do que merecem! Há outros cujas opiniões e doutrinas corruptas, ou vãs invenções e costumes no culto de Deus, serão manifestados, rejeitados e repudiados naquele dia. Isso se refere claramente a um fogo figurado, não a um fogo real; pois que fogo real pode consumir ritos ou doutrinas religiosas? E é para provar as obras de cada um, tanto as de Paulo e Apolo como as dos outros. Consideremos a tendência dos nossos empreendimentos, comparemo-los com a palavra de Deus e julguemo-nos a nós mesmos, para que não sejamos julgados pelo Senhor.",
    "quotes": [
@@ -403,9 +403,9 @@
     }
    ],
    "flags": [
-    "source typo 'day of trail' read as 'day of trial' (dia da provação).",
     "'let every man take heed' (1Cor 3:10): quoted as the Bíblia Livre's 'cada um veja' with 'bem' added after the run ('cada um veja bem').",
-    "'Rock of ages' translated 'Rocha dos séculos' (glossary: Rock -> Rocha); 'wise master-builder' uses the Bíblia Livre's 'sábio construtor'."
+    "'Rock of ages' translated 'Rocha dos séculos' (glossary: Rock -> Rocha); 'wise master-builder' uses the Bíblia Livre's 'sábio construtor'.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   }
  ]

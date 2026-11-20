@@ -54,18 +54,18 @@
   {
    "kind": "section",
    "id": 3920,
-   "sha256": "c2864d3780b61f988edceb754d7511d6b85356ae653da285723d534c1aa22b20",
+   "sha256": "161b7af682324d429d7db3c79b8662d7ef8e02b7c243da0ec44e18fbc7a10ff9",
    "title": "La excelencia de la sabiduría celestial, en oposición a la que es mundana.",
    "text": "Estos versículos muestran la diferencia entre que los hombres pretendan ser sabios y que realmente lo sean. El que piensa bien, o el que habla bien, no es sabio en el sentido de la Escritura si no vive y obra bien. La verdadera sabiduría puede conocerse por la mansedumbre del espíritu y del temperamento. Los que viven en malicia, envidia y contienda viven en confusión, y están expuestos a ser provocados y arrastrados a toda obra perversa. Tal sabiduría no desciende de lo alto, sino que brota de principios terrenales, obra por motivos terrenales y está empeñada en servir a fines terrenales. Los que se envanecen con tal sabiduría, descrita por el apóstol Santiago, está cerca del amor cristiano, descrito por el apóstol Pablo; y ambos están descritos de tal modo que cada hombre puede probar plenamente la realidad de lo que ha alcanzado en ellos. No tiene disfraz ni engaño. No puede avenirse con aquellos manejos que el mundo tiene por sabios, que son astutos y engañosos; sino que es sincera, abierta, firme, uniforme y consecuente consigo misma. Que la pureza, la paz, la mansedumbre, la docilidad y la misericordia mostradas en todas nuestras acciones, y los frutos de justicia abundando en nuestra vida, prueben que Dios nos ha concedido este don excelente.",
    "flags": [
-    "typo read as meant: \"may be know\" (known)",
-    "source garbled: \"Those who are lifted up with such wisdom, described by the apostle James, is near to the Christian love\" (words seem to be missing between \"wisdom\" and \"described\", probably about the heavenly wisdom, which is what \"is near to the Christian love\"); translated as it stands"
+    "source garbled: \"Those who are lifted up with such wisdom, described by the apostle James, is near to the Christian love\" (words seem to be missing between \"wisdom\" and \"described\", probably about the heavenly wisdom, which is what \"is near to the Christian love\"); translated as it stands",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
    "kind": "section",
    "id": 3921,
-   "sha256": "531a0d8629d79b3c9af097c3c21a6d7dde6cc94a55d66176de319431fb6fef20",
+   "sha256": "68e447f63c65da025a1f9f23b7d71821642ace6de77e78e7072f3fa155cf10b2",
    "title": "Aquí hay advertencias contra los afectos corrompidos y el amor a este mundo, que es enemistad contra Dios.",
    "text": "Puesto que todas las guerras y peleas vienen de las corrupciones de nuestro propio corazón, es justo mortificar esas concupiscencias que combaten en los miembros. Las concupiscencias mundanas y carnales son enfermedades que no permiten contentamiento ni satisfacción. Los deseos y afectos pecaminosos detienen la oración y el movimiento de nuestros deseos hacia Dios. Y guardémonos de abusar o hacer mal uso de las misericordias recibidas, por la disposición del corazón cuando nuestras oraciones son concedidas. Cuando los hombres piden a Dios prosperidad, a menudo piden con fines e intenciones torcidos. Si así buscamos las cosas de este mundo, es justo que Dios nos las niegue. Los deseos incrédulos y fríos piden negativas; y podemos estar seguros de que cuando las oraciones son más el lenguaje de las concupiscencias que de las gracias, volverán vacías. He aquí una advertencia terminante a evitar toda amistad culpable con este mundo. La mundanalidad es enemistad contra Dios. Un enemigo puede ser reconciliado, pero la \"enemistad\" nunca puede reconciliarse. Un hombre puede tener gran porción de las cosas de esta vida y, sin embargo, ser guardado en el amor de Dios; pero el que pone su corazón en el mundo, el que se conforma a él antes que perder su amistad, es enemigo de Dios. De modo que cualquiera que resuelva estar a toda costa en términos amistosos con el mundo, tiene que ser enemigo de Dios. ¿Pensaban entonces los judíos, o los profesantes relajados del cristianismo, que la Escritura hablaba en vano contra esta mundanalidad? ¿O produce tal fruto el Espíritu Santo que mora en todos los cristianos, o la nueva naturaleza que él crea? La corrupción natural se muestra en la envidia. El espíritu del mundo nos enseña a acumular o gastar para nosotros mismos, según nuestros propios caprichos; Dios el Espíritu Santo nos enseña a estar dispuestos a hacer bien a todos los que nos rodean, según podamos. La gracia de Dios corregirá y curará el espíritu que tenemos por naturaleza; y donde él da gracia, da otro espíritu que el del mundo. Los soberbios resisten a Dios: en su entendimiento resisten las verdades de Dios; en su voluntad resisten las leyes de Dios; en sus pasiones resisten la providencia de Dios; por tanto, no es de extrañar que Dios resista á los soberbios. ¡Cuán miserable es el estado de los que hacen de Dios su enemigo! Dios dará mayor gracia a los humildes, porque ven su necesidad de ella, oran por ella, son agradecidos por ella, y los tales la tendrán. Someteos pues á Dios, v. (7). Someted vuestro entendimiento a la verdad de Dios; someted vuestra voluntad a la voluntad de su precepto, a la voluntad de su providencia. Someteos a Dios, porque él está pronto a haceros bien. Si cedemos a las tentaciones, el diablo nos seguirá continuamente; pero si nos vestimos de toda la armadura de Dios y le hacemos frente, nos dejará. Sométanse, pues, los pecadores a Dios, y busquen su gracia y su favor, resistiendo al diablo. Todo pecado tiene que ser llorado: aquí, con tristeza según Dios, o en el más allá, en la miseria eterna. Y el Señor no rehusará consolar al que de veras llora por el pecado, ni exaltar al que se humilla delante de él.",
    "quotes": [
@@ -75,9 +75,9 @@
     }
    ],
    "flags": [
-    "typos read as meant: \"Wordly\" (Worldly); a full stop missing after \"granted\"; \"pray for it are thankful\" (comma missing)",
     "unlisted quotations of Stg 4:6 (\"Dios resiste á los soberbios\") and Stg 4:7 (\"Someteos pues á Dios\")",
-    "sensitive: \"Did then the Jews ... think the Scripture spake in vain\" (the Jews named among worldly-minded professors)"
+    "sensitive: \"Did then the Jews ... think the Scripture spake in vain\" (the Jews named among worldly-minded professors)",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

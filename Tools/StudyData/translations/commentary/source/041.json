@@ -503,9 +503,9 @@
    "book": 19,
    "start_verse": 19086008,
    "end_verse": 19086017,
-   "sha256": "a5eb2e988044c9c9c7170bd347454c6652956e2c882d6c8d3691a74cdd0f34ad",
+   "sha256": "410d994709f1b4c1f517d564681973bc32727b791ddbb48ec375c2cb78b4fa44",
    "title": "He renews his requests for help and comfort.",
-   "text": "Our God alone possesses almighty power and infinite love. Christ is the way and the truth. And the believing soul will be more desirous to be taught the way and the truth. And the believing soul will be more desirous to be taught the way and the truth of God, in order to walk therein, than to be delivered out of earthly distress. Those who set not the Lord before them, seek after believers' souls; but the compassion, mercy, and truth of God, will be their refuge and consolation. And those whose parents were the servants of the Lord, may urge this as a plea why he should hear and help them. In considering David's experience, and that of the believer, we must not lose sight of Him, who though he was rich, for our sakes became poor, that we through his poverty might be rich.",
+   "text": "Our God alone possesses almighty power and infinite love. Christ is the way and the truth. And the believing soul will be more desirous to be taught the way and the truth of God, in order to walk therein, than to be delivered out of earthly distress. Those who set not the Lord before them, seek after believers' souls; but the compassion, mercy, and truth of God, will be their refuge and consolation. And those whose parents were the servants of the Lord, may urge this as a plea why he should hear and help them. In considering David's experience, and that of the believer, we must not lose sight of Him, who though he was rich, for our sakes became poor, that we through his poverty might be rich.",
    "quotes": []
   },
   {
@@ -617,6 +617,10 @@
   }
  ],
  "glossary": {
+  "Calvary": {
+   "es": "Calvario",
+   "pt": "Calvário"
+  },
   "Canaan": {
    "es": "Canaán",
    "pt": "Canaã"

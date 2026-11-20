@@ -338,9 +338,9 @@
    "book": 43,
    "start_verse": 43010039,
    "end_verse": 43010042,
-   "sha256": "93fd6f9840103ecd937e80ebe21624cca46d68a12e5af0bffc25568810667913",
+   "sha256": "991490e28bbe957789b1641c50300f58850ff46a3ad7a99ce9129530aa4d322f",
    "title": "He departs from Jerusalem.",
-   "text": "No weapon formed against our Lord Jesus shall prosper. He escaped, not because he was afraid to suffer, but because his hour was not come. And He who knew how to deliver himself, knows how to deliver the godly our of their temptations, and to make a way for them to escape. Persecutors may drive Christ and his gospel our of their own city or country, but they cannot drive him or it out of the world. When we know Christ by faith in our hearts, we find all that the Scripture saith of him is true.",
+   "text": "No weapon formed against our Lord Jesus shall prosper. He escaped, not because he was afraid to suffer, but because his hour was not come. And He who knew how to deliver himself, knows how to deliver the godly out of their temptations, and to make a way for them to escape. Persecutors may drive Christ and his gospel out of their own city or country, but they cannot drive him or it out of the world. When we know Christ by faith in our hearts, we find all that the Scripture saith of him is true.",
    "quotes": []
   },
   {
@@ -602,6 +602,7 @@
    "pt": "Abraão"
   },
   "Adam": {
+   "es": "Adán (person); Adam (place)",
    "pt": "Adão (person); Adã (place)"
   },
   "Bethany": {

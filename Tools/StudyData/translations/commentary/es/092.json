@@ -260,12 +260,12 @@
   {
    "kind": "section",
    "id": 3792,
-   "sha256": "a8350f5d05756b80b43794a8b853b48c671d0c7fc372f843fa3ccb657ec85c1a",
+   "sha256": "28ca94e0bff4452dd8edade221e8a2cde735589ab2de8166bd7fcc05d7ee545e",
    "title": "La fe, el amor y la paciencia de los tesalonicenses son señales evidentes de su elección, que se manifestó en el poder con que el evangelio llegó a ellos.",
    "text": "Como todo bien viene de Dios, así ningún bien pueden esperar los pecadores sino de Dios en Cristo. Y el mejor bien puede esperarse de Dios, como nuestro Padre, por amor de Cristo. Debemos orar, no solo por nosotros mismos, sino también por otros; acordándonos de ellos sin cesar. Dondequiera que hay una fe verdadera, obrará; afectará tanto el corazón como la vida. La fe obra por el amor; se muestra en amor a Dios y en amor a nuestro prójimo. Y dondequiera que hay una esperanza bien fundada de la vida eterna, se manifestará por el ejercicio de la paciencia; y es señal de sinceridad cuando en todo lo que hacemos procuramos mostrarnos aprobados ante Dios. Por esto podemos conocer nuestra elección: si no solo hablamos de las cosas de Dios con nuestros labios, sino que sentimos su poder en nuestros corazones, mortificando nuestras concupiscencias, apartándonos del mundo y elevándonos a las cosas celestiales. A menos que el Espíritu de Dios venga con la palabra de Dios, será para nosotros letra muerta. Así la recibieron ellos, por el poder del Espíritu Santo. Estaban plenamente convencidos de su verdad, de modo que no se dejaban sacudir en su ánimo por objeciones y dudas; y estaban dispuestos a dejarlo todo por Cristo, y a arriesgar sus almas y su condición eterna en la verdad de la revelación del evangelio.",
    "flags": [
-    "Source typo \"with out lips\" read as \"with our lips\" (\"con nuestros labios\").",
-    "\"Faith works by love\" (Gal 5:6): RV1909 \"la fe que obra por la caridad\"; Henry's words translated as \"La fe obra por el amor\"."
+    "\"Faith works by love\" (Gal 5:6): RV1909 \"la fe que obra por la caridad\"; Henry's words translated as \"La fe obra por el amor\".",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -287,13 +287,13 @@
   {
    "kind": "section",
    "id": 3794,
-   "sha256": "3547f0a986c0a8941450b4eb123a1293dae2c2b0d9bf74c864e9633842b7a532",
+   "sha256": "552b6210d981c48451a155ff61d5c1e33e82dd2d45b594a9ea37798d2c588615",
    "title": "El apóstol recuerda a los tesalonicenses su predicación y su conducta.",
    "text": "El apóstol no tenía ningún designio mundano en su predicación. Padecer por una buena causa debe avivar la santa resolución. El evangelio de Cristo encontró al principio mucha oposición; y fue predicado con lucha, con esfuerzo en la predicación y contra la oposición. Y así como el contenido de la exhortación del apóstol era verdadero y puro, la manera de hablar era sin engaño. El evangelio de Cristo tiene por fin mortificar los afectos corruptos, y que los hombres sean puestos bajo el poder de la fe. Este es el gran motivo para la sinceridad: considerar que Dios no solo ve todo lo que hacemos, sino que conoce desde lejos nuestros pensamientos y escudriña el corazón. Y es de este Dios, que prueba nuestros corazones, de quien hemos de recibir nuestra recompensa. Las pruebas de la sinceridad del apóstol fueron que evitó la lisonja y la avaricia. Evitó la ambición y la vanagloria.",
    "flags": [
-    "Source typo \"wordly\" read as \"worldly\" (\"mundano\").",
     "unlisted quotation of 1 Thess 2:4: RV1909 \"prueba nuestros corazones\" used verbatim",
-    "\"contention\" (1 Thess 2:2 KJV \"with much contention\") rendered \"lucha\"; the RV1909 has \"con gran combate\"."
+    "\"contention\" (1 Thess 2:2 KJV \"with much contention\") rendered \"lucha\"; the RV1909 has \"con gran combate\".",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -319,7 +319,7 @@
   {
    "kind": "section",
    "id": 3797,
-   "sha256": "c8f455d625a3cc9691b37bccb43c4bb4e1b748534fc0a147a22f4b01bb23e3ce",
+   "sha256": "39bf0b92d9239e6f8f61658f3aee607780209a9f1e221435143276defe06572e",
    "title": "Su gozo por causa de ellos.",
    "text": "Este mundo no es un lugar donde hayamos de estar siempre, ni por mucho tiempo juntos. En el cielo las almas santas se encontrarán y nunca más se separarán. Y aunque el apóstol no podía ir a verlos todavía, y pensaba que quizá nunca podría ir, sin embargo, nuestro Señor Jesucristo vendrá; nada lo impedirá. Que Dios dé ministros fieles a todos los que le sirven en su espíritu en el evangelio de su Hijo, y los envíe a todos los que están en tinieblas",
    "quotes": [
@@ -329,7 +329,8 @@
     }
    ],
    "flags": [
-    "The English ends without a full stop (\"who are in darkness\"); kept as given."
+    "The English ends without a full stop (\"who are in darkness\"); kept as given.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

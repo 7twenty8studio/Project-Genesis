@@ -203,9 +203,9 @@
    "book": 44,
    "start_verse": 44001015,
    "end_verse": 44001026,
-   "sha256": "b0de7bd97d848b87450efac925daafae0807e1a95deff7ef43ed7815384f055e",
+   "sha256": "77f6e222a10c876149a6ca868df57a46413dae8ccb4b4e833c7e6a1fdde11d32",
    "title": "Matthias chosen in the place of Judas.",
-   "text": "The great thing the apostles were to attest to the world, was, Christ's resurrection; for that was the great proof of his being the Messiah, and the foundation of our hope in him. The apostles were ordained, not to wordly dignity and dominion, but to preach Christ, and the power of his resurrection. An appeal was made to God; \"Thou, Lord, who knowest the hearts of all men,\" which we do not; and better than they know their own. It is fit that God should choose his own servants; and so far as he, by the disposals of his providence, or the gifts of his Spirit, shows whom he was chosen, or what he has chosen for us, we ought to fall in with his will. Let us own his hand in the determining everything which befalls us, especially in those by which any trust may be committed to us.",
+   "text": "The great thing the apostles were to attest to the world, was, Christ's resurrection; for that was the great proof of his being the Messiah, and the foundation of our hope in him. The apostles were ordained, not to worldly dignity and dominion, but to preach Christ, and the power of his resurrection. An appeal was made to God; \"Thou, Lord, who knowest the hearts of all men,\" which we do not; and better than they know their own. It is fit that God should choose his own servants; and so far as he, by the disposals of his providence, or the gifts of his Spirit, shows whom he was chosen, or what he has chosen for us, we ought to fall in with his will. Let us own his hand in the determining everything which befalls us, especially in those by which any trust may be committed to us.",
    "quotes": [
     {
      "n": 0,
@@ -224,9 +224,9 @@
    "book": 44,
    "start_verse": 44002001,
    "end_verse": 44002004,
-   "sha256": "51239da3cc65faae469d317f2fc305313dcd5da536f67586f73f17916f99540b",
+   "sha256": "bd9c64da2c06ad00925ba388dce959c4d01fe79645f36dd793e96bd29c683f95",
    "title": "The descent of the Holy Spirit at the day of Pentecost.",
-   "text": "We cannot forget how often, while their Master was with them there were strifes among the disciples which should be the greatest; but now all these strifes were at an end. They had prayed more together of late. Would we have the Spirit poured out upon us from on high, let us be all of one accord. And notwithstanding differences of sentiments and interests, as there were among those disciples, let us agree to love one another; for where brethren dwell together in unity, there the Lord commands his blessing. A rushing mighty wind came with great force. This was to signify the powerful influences and working of the Spirit of God upon the minds of men, and thereby upon the world. Thus the convictions of the Spirit make way for his comforts; and the rough blasts of that blessed wind, prepare the soul for its soft and gentle gales. There was an appearance of something like flaming fire, lighting on every one of them, according to John Baptist's saying concerning Christ; He shall baptize you with the Holy Ghost, and with fire. The Spirit, like fire, melts the heart, burns up the dross, and kindles pious and devout affections in the soul; in which, as in the fire on the altar, the spiritual sacrifices are offered up. They were all filled with the Holy Ghost, more than before. They were filled with the graces of the Spirit, and more than ever under his sanctifying influences; more weaned from this world, and better acquainted with the other. They were more filled with the comforts of the Spirit, rejoiced more than ever in the love of Christ and the hope of heaven: in it all their griefs and fears were swallowed up. They were filled with the gifts of the Holy Ghost; they had miraculous powers for the furtherance of the gospel. They spake, not from previous though or meditation, but as the Spirit gave them utterance.",
+   "text": "We cannot forget how often, while their Master was with them there were strifes among the disciples which should be the greatest; but now all these strifes were at an end. They had prayed more together of late. Would we have the Spirit poured out upon us from on high, let us be all of one accord. And notwithstanding differences of sentiments and interests, as there were among those disciples, let us agree to love one another; for where brethren dwell together in unity, there the Lord commands his blessing. A rushing mighty wind came with great force. This was to signify the powerful influences and working of the Spirit of God upon the minds of men, and thereby upon the world. Thus the convictions of the Spirit make way for his comforts; and the rough blasts of that blessed wind, prepare the soul for its soft and gentle gales. There was an appearance of something like flaming fire, lighting on every one of them, according to John Baptist's saying concerning Christ; He shall baptize you with the Holy Ghost, and with fire. The Spirit, like fire, melts the heart, burns up the dross, and kindles pious and devout affections in the soul; in which, as in the fire on the altar, the spiritual sacrifices are offered up. They were all filled with the Holy Ghost, more than before. They were filled with the graces of the Spirit, and more than ever under his sanctifying influences; more weaned from this world, and better acquainted with the other. They were more filled with the comforts of the Spirit, rejoiced more than ever in the love of Christ and the hope of heaven: in it all their griefs and fears were swallowed up. They were filled with the gifts of the Holy Ghost; they had miraculous powers for the furtherance of the gospel. They spake, not from previous thought or meditation, but as the Spirit gave them utterance.",
    "quotes": [
     {
      "n": 0,
@@ -704,6 +704,10 @@
   },
   "Judea": {
    "pt": "Judeia"
+  },
+  "Luke": {
+   "es": "Lucas",
+   "pt": "Lucas"
   },
   "Matthias": {
    "es": "Matías",

@@ -36,6 +36,7 @@ import commentary  # noqa: E402
 
 
 def add(path=commentary.WORDSTUDY):
+    commentary.fix_database(path)  # Henry's English as the translations have it (source_fixes.json)
     sections, intros, quotes = [], [], []
     for lang in commentary.LANGUAGES:
         for (kind, eid), (title, text, quotations) in commentary.check(lang, quiet=True).items():

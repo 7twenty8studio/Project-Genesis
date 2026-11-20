@@ -151,6 +151,20 @@ struct WordStudyTests {
         }
     }
 
+    @Test func commentarySourceFixesShip() throws {
+        // Lines the SWORD module lost or printed twice, restored from an
+        // independent copy (Tools/StudyData/translations/commentary/source_fixes.json).
+        let url = try #require(Bundle.main.url(forResource: "WordStudy", withExtension: "sqlite"))
+        let psalmFour = VerseID(book: 19, chapter: 4, verse: 4)
+        let english = try #require(try WordStudyRepository(url: url).commentary(for: psalmFour).first)
+        #expect(english.text.contains("All confidence must be placed on God's free grace"))
+        #expect(!english.text.contains("pan answer"))
+        let spanish = try #require(try WordStudyRepository(url: url, language: "es").commentary(for: psalmFour).first)
+        #expect(spanish.text.contains("libre gracia de Dios"))
+        let portuguese = try #require(try WordStudyRepository(url: url, language: "pt").commentary(for: psalmFour).first)
+        #expect(portuguese.text.contains("livre graça de Deus"))
+    }
+
     @MainActor @Test func commentaryAboutSheetNamesTheEdition() {
         let about = CommentaryAboutSheet.sentences.joined(separator: " ")
         #expect(about.contains("Concise Commentary on the Whole Bible"))

@@ -275,7 +275,9 @@ shares; README.md has the architecture.
   export/check/status`: 102 batches with source shas; numbers and
   references checked, quotations verbatim) by add_commentary_translations.py,
   which build_wordstudy.py also runs. Henry's text is shown complete, never
-  cut; `CommentaryAboutSheet` (About This Commentary) names the edition (a
+  cut; the SWORD module's lost/doubled lines and misprints are fixed only
+  where an independent copy has the text (translations/commentary/
+  source_fixes.json, each with a reason, `commentary.fix_database`); `CommentaryAboutSheet` (About This Commentary) names the edition (a
   later abridgment) and its historical context. Passage-specific editorial
   notes are paused (owner, 19 November 2026): the proposals wait in
   translations/commentary/editorial-proposed.json, and `editorial_notes`

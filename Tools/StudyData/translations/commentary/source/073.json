@@ -439,9 +439,9 @@
    "book": 42,
    "start_verse": 42001057,
    "end_verse": 42001066,
-   "sha256": "80b11643844f77092e39a74f9d8a1b040f070cba534fd2e0d189a33fcd44a355",
+   "sha256": "ce9367d45eec78101dc1cc33c3c9148862870a8dbe5eb8cc40872595cc6e73ac",
    "title": "The birth of John the Baptist.",
-   "text": "In these verses we have an account of the birth of John the Baptist, and the great joy among all the relations of the family. He shall be called Johanan, or \"Gracious,\" because he shall bring in the gospel of Christ, wherein God's grace shines most bright. Zacharias recovered his speech. Unbelief closed his mouth, and believing opened it again: he believers, therefore he speaks. When God opens our lips, our mouths must show forth his praise; and better be without speech, than not use it in praising God. It is said, The hand of the Lord was working with John. God has ways of working on children in their infancy, which we cannot account for. We should observe the dealings of God, and wait the event.",
+   "text": "In these verses we have an account of the birth of John the Baptist, and the great joy among all the relations of the family. He shall be called Johanan, or \"Gracious,\" because he shall bring in the gospel of Christ, wherein God's grace shines most bright. Zacharias recovered his speech. Unbelief closed his mouth, and believing opened it again: he believes, therefore he speaks. When God opens our lips, our mouths must show forth his praise; and better be without speech, than not use it in praising God. It is said, The hand of the Lord was working with John. God has ways of working on children in their infancy, which we cannot account for. We should observe the dealings of God, and wait the event.",
    "quotes": [
     {
      "n": 0,
@@ -737,6 +737,10 @@
   "Joseph": {
    "es": "José (person); Josef (person); Jefone (person)",
    "pt": "José"
+  },
+  "Luke": {
+   "es": "Lucas",
+   "pt": "Lucas"
   },
   "Mary": {
    "es": "María",

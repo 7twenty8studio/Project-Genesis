@@ -716,8 +716,8 @@
    "book": 9,
    "start_verse": 9031008,
    "end_verse": 9031013,
-   "sha256": "462540bc5e989d3513d2cce2f2957c4018a408289558db9426e9ad1bfbed5ad3",
-   "text": "The Scripture makes no mention what became of the souls of Saul and his sons, after they were dead; but of their bodies only: secret things belong not to us. It is of little consequence by what means we die, or what is done with our dead bodies. If our souls are saved, our bodies will be raised incorruptible and glorious; but not to fear His wrath, who is able to destroy both body and soul in hell, is the extreme of folly and wickedness. How useless is the respect of fellow-creatures to those who are suffering the wrath of God! While pompous funerals, grand monuments, and he praises of men, honour the memory of the deceased, the soul may be suffering in the regions of darkness and despair! Let us seek that honour which cometh from God only.",
+   "sha256": "f54477792e1f401d3837df84137abbb5b315cb5f742d953db3df749aeec7be53",
+   "text": "The Scripture makes no mention what became of the souls of Saul and his sons, after they were dead; but of their bodies only: secret things belong not to us. It is of little consequence by what means we die, or what is done with our dead bodies. If our souls are saved, our bodies will be raised incorruptible and glorious; but not to fear His wrath, who is able to destroy both body and soul in hell, is the extreme of folly and wickedness. How useless is the respect of fellow-creatures to those who are suffering the wrath of God! While pompous funerals, grand monuments, and the praises of men, honour the memory of the deceased, the soul may be suffering in the regions of darkness and despair! Let us seek that honour which cometh from God only.",
    "quotes": []
   },
   {
@@ -754,6 +754,7 @@
    "pt": "Adulão"
   },
   "Ahimelech": {
+   "es": "Ahimelec",
    "pt": "Aimeleque"
   },
   "David": {
@@ -761,6 +762,9 @@
   },
   "Doeg": {
    "pt": "Doegue"
+  },
+  "Eli": {
+   "es": "Elí"
   },
   "Eliab": {
    "pt": "Eliabe"

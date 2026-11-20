@@ -35,7 +35,7 @@
   {
    "kind": "section",
    "id": 3246,
-   "sha256": "3c5417690229c93537c155118f1c76bc3264a95d045ea9d4ee470a0d2795c0a1",
+   "sha256": "db70efa126c1a4d6ffca40952db23c26d625564d0f00e80cb03fc060c4ffeb28",
    "title": "Advertencia contra la avaricia; la parábola del rico.",
    "text": "El reino de Cristo es espiritual, y no de este mundo. El cristianismo no se entromete en la política; obliga a todos a obrar con justicia, pero el dominio mundano no se funda en la gracia. No alienta la expectativa de ventajas mundanas por medio de la religión. Las recompensas de los discípulos de Cristo son de otra naturaleza. La avaricia es un pecado contra el cual necesitamos ser advertidos constantemente; porque la felicidad y el consuelo no dependen de la riqueza de este mundo. Las cosas del mundo no satisfarán los deseos de un alma. He aquí una parábola que muestra la necedad de los mundanos carnales mientras viven, y su miseria cuando mueren. El carácter que se pinta es exactamente el de un hombre prudente y mundano, que no tiene ninguna consideración agradecida a la providencia de Dios, ni pensamiento recto alguno sobre la incertidumbre de las cosas humanas, el valor de su alma o la importancia de la eternidad. ¡Cuántos, aun entre los que profesan ser cristianos, señalan caracteres semejantes como modelos que imitar, y como personas apropiadas con quienes establecer lazos! Nos equivocamos si pensamos que los pensamientos están ocultos y que los pensamientos son libres. Cuando vio una gran cosecha en su tierra, en vez de dar gracias a Dios por ella, o de alegrarse de poder hacer más bien, se aflige. ¿Qué haré ahora? El mendigo más pobre del país no habría podido decir palabra más angustiada. Cuanto más tienen los hombres, tanta más perplejidad tienen con ello. Fue necedad suya pensar en no hacer otro uso de su abundancia que complacer la carne y satisfacer los apetitos sensuales, sin pensamiento alguno de hacer bien a otros. Los mundanos carnales son necios; y viene el día en que Dios los llamará por su propio nombre, y ellos mismos se llamarán así. La muerte de tales personas es miserable en sí misma, y terrible para ellos. Vuelven á pedir tu alma. Él no quiere desprenderse de ella; pero Dios la pedirá, pedirá cuenta de ella, la pedirá como alma culpable para ser castigada sin demora. Es la necedad de la mayoría de los hombres atender y perseguir lo que es para el cuerpo y para el tiempo solamente, más que lo que es para el alma y la eternidad.",
    "quotes": [
@@ -45,9 +45,9 @@
     }
    ],
    "flags": [
-    "The English has \"wordly dominion\" (typo for \"worldly\"); translated \"mundano\".",
     "\"the folly of carnal worldling while they live\" (singular noun, plural pronoun); translated as plural \"los mundanos carnales\".",
-    "\"Thy soul shall be required\" is given with the RV1909's \"Vuelven á pedir tu alma\" (Lc 12:20); Henry's following \"God shall require it\" is kept as \"Dios la pedirá\"."
+    "\"Thy soul shall be required\" is given with the RV1909's \"Vuelven á pedir tu alma\" (Lc 12:20); Henry's following \"God shall require it\" is kept as \"Dios la pedirá\".",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -377,11 +377,11 @@
   {
    "kind": "section",
    "id": 3273,
-   "sha256": "4c80a4b58231d9a02344e414c051300bf71f77cb9c8bea7db5a49c34cf6fe766",
+   "sha256": "e1ae88bc17a6a9ef5a412abfd47495a7f289aa8e0cd4f89224d4398f61456129",
    "title": "El príncipe estorbado por sus riquezas.",
    "text": "Muchos tienen en sí mucho de muy digno de alabanza, y sin embargo perecen por falta de una sola cosa; así este príncipe no pudo soportar las condiciones de Cristo, que lo separarían de su hacienda. Muchos que no quieren dejar a Cristo, con todo le dejan. Después de una larga lucha entre sus convicciones y su corrupción, la corrupción se lleva la victoria. Les pesa mucho no poder servir a ambos; pero si hay que dejar a uno, será a su Dios, no su ganancia mundana. Su jactanciosa obediencia resultará pura apariencia exterior; el amor al mundo, en una u otra forma, está en la raíz. Los hombres son propensos a hablar demasiado de lo que han dejado y perdido, de lo que han hecho y sufrido por Cristo, como lo hizo Pedro. Pero más bien deberíamos avergonzarnos de que haya habido pesar o dificultad alguna en hacerlo.",
    "flags": [
-    "The English has \"wordly gain\" (typo for \"worldly\"); translated \"mundana\"."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

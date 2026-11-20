@@ -185,13 +185,16 @@
   {
    "kind": "section",
    "id": 331,
-   "sha256": "dff329945f3e2f3eb3574d99f03f17fe2e6f863489728748f2eb23dba7e9769d",
+   "sha256": "2cdc5a36ab6fdc7fa2213384af69e4af6172883e2b8a116f031a6a5875b3561d",
    "text": "A oferta pacífica do gado.\n\n(1-5)\n\nA oferta pacífica do rebanho.\n\n(6-17)\n\nAs ofertas pacíficas tinham em vista Deus como o doador de todas as coisas boas. Eram divididas entre o altar, o sacerdote e o dono. Chamavam-se ofertas pacíficas porque nelas Deus e o seu povo, por assim dizer, banqueteavam juntos, em sinal de amizade. As ofertas pacíficas eram oferecidas como súplica. Se um homem buscava alguma misericórdia, acrescentava à sua oração por ela uma oferta pacífica. Cristo é a nossa Paz, a nossa Oferta pacífica; pois somente por meio dele podemos obter uma resposta de paz às nossas orações. Ou a oferta pacífica era oferecida como ação de graças por alguma misericórdia recebida. Devemos oferecer continuamente a Deus o sacrifício de louvor, por Cristo, a nossa Paz; e então isto agradará ao SENHOR mais do que o sacrifício de um boi ou de um bezerro.",
    "quotes": [
     {
      "n": 0,
      "text": "isto agradará ao SENHOR mais do que o sacrifício de um boi ou de um bezerro"
     }
+   ],
+   "flags": [
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -290,11 +293,12 @@
   {
    "kind": "section",
    "id": 338,
-   "sha256": "5b890c4e39d12637a5e2b9144850a4a4b395405779316679b8d62736d9895528",
+   "sha256": "b9c8edb728c321629c2b7f669ef32bc66df0455af7e6a4b2cb1cdbbfc9889539",
    "title": "Acerca das transgressões contra o Senhor.",
    "text": "Aqui estão ofertas para expiar as transgressões contra um próximo. Se um homem tomasse para seu próprio uso, sem saber, alguma coisa consagrada a Deus, devia trazer este sacrifício. Devemos ter zelo sobre nós mesmos, pedir perdão pelo pecado e reparar o dano de que apenas suspeitamos ser culpados. A lei de Deus é tão ampla, as ocasiões de pecado neste mundo são tão numerosas, e nós somos tão inclinados ao mal, que precisamos temer sempre e orar sempre, para sermos guardados do pecado. Também devemos olhar adiante a cada passo. O verdadeiro cristão se declara culpado diariamente diante de Deus e busca perdão pelo sangue de Cristo. E a salvação do evangelho é tão gratuita que nem o mais pobre fica excluído, e tão plena que a consciência mais sobrecarregada pode encontrar alívio nela. Contudo, o mal do pecado é exposto de tal maneira que leva todo pecador perdoado a aborrecê-lo e temê-lo.",
    "flags": [
-    "The English repeats a phrase by mistake (\"…guilty of. The law of God is so very broad, the occasions of sin in this guilty of. The law of God is so very broad, the occasions of sin in this world…\"); translated once. The English also says \"against a neighbour\" under a heading about trespasses \"against the Lord\"; kept as written."
+    "The English says \"against a neighbour\" under a heading about trespasses \"against the Lord\"; kept as written.",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

@@ -263,7 +263,7 @@
   {
    "kind": "section",
    "id": 1069,
-   "sha256": "9741fb810c5b7a7cbcc5763e605ba75a47f58d9ddc3d85bedb18dc3bd40847fb",
+   "sha256": "d99fed22cdabcaf2fec1c6c0415f796a0cf318bde0761e825a3aef34cd700084",
    "title": "As nações postas na terra de Israel.",
    "text": "O terror do Todo-Poderoso às vezes produz uma submissão forçada ou fingida nos homens não convertidos, como naqueles trazidos de diferentes países para habitar em Israel. Mas tais pessoas formam pensamentos indignos de Deus, esperam agradá-lo com formas exteriores e procuram em vão conciliar o seu serviço com o amor do mundo e a satisfação das suas concupiscências. Que aquele temor ao SENHOR, que é o princípio da sabedoria, possua o nosso coração e influencie a nossa conduta, para que estejamos prontos para toda mudança. Os estabelecimentos mundanos são incertos; não sabemos para onde podemos ser levados antes de morrer, e em breve teremos de deixar o mundo; mas o justo escolheu a parte boa, a qual não lhe será tirada.",
    "quotes": [
@@ -273,8 +273,8 @@
     }
    ],
    "flags": [
-    "The English has \"Wordly settlements\", a slip for \"Worldly\"; translated \"mundanos\".",
-    "\"temor ao SENHOR, que é o princípio da sabedoria\" is Pv 9:10 in the Bíblia Livre's words (unlisted)."
+    "\"temor ao SENHOR, que é o princípio da sabedoria\" is Pv 9:10 in the Bíblia Livre's words (unlisted).",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -571,9 +571,9 @@
   {
    "kind": "section",
    "id": 1094,
-   "sha256": "15da44f5e424c7b850a8ba3cfd066048f00c0d809b62a1cb7aeeda754066ea7b",
+   "sha256": "428e6c20e4d79e4eb10bec8edea853ca43e1036a6e1a2420aa76880ef38bd072",
    "title": "Genealogias, de Adão a Abraão.",
-   "text": "Este capítulo, e muitos dos que se seguem, repetem as genealogias, ou listas de pais e filhos da história bíblica, e as reúnem, com muitos acréscimos. Comparadas com outros lugares, acham-se algumas diferenças; contudo, não devemos por isso tropeçar na palavra, mas bendizer a Deus porque as coisas necessárias à salvação são bastante claras. A origem da nação judaica é aqui traçada desde o primeiro homem que Deus criou, e assim se distingue das origens obscuras, fabulosas e absurdas atribuídas a outras nações. Mas as nações agora estão todas tão misturadas umas com as outras que nenhuma nação, nem a maior parte de qualquer delas, descende inteiramente de alguma de uma só nação, nem a maior parte de qualquer delas, descende inteiramente de alguma destas fontes. Só disto estamos certos, quanto a Deus: de um sangue ele fez toda nação humana; todas descendem de um só Adão, de um só Noé. Não temos todos um mesmo Pai? Não foi um mesmo Deus que nos criou? Ml 2:10.",
+   "text": "Este capítulo, e muitos dos que se seguem, repetem as genealogias, ou listas de pais e filhos da história bíblica, e as reúnem, com muitos acréscimos. Comparadas com outros lugares, acham-se algumas diferenças; contudo, não devemos por isso tropeçar na palavra, mas bendizer a Deus porque as coisas necessárias à salvação são bastante claras. A origem da nação judaica é aqui traçada desde o primeiro homem que Deus criou, e assim se distingue das origens obscuras, fabulosas e absurdas atribuídas a outras nações. Mas as nações agora estão todas tão misturadas umas com as outras que nenhuma nação, nem a maior parte de qualquer delas, descende inteiramente de alguma destas fontes. Só disto estamos certos, quanto a Deus: de um sangue ele fez toda nação humana; todas descendem de um só Adão, de um só Noé. Não temos todos um mesmo Pai? Não foi um mesmo Deus que nos criou? Ml 2:10.",
    "quotes": [
     {
      "n": 0,
@@ -585,8 +585,8 @@
     }
    ],
    "flags": [
-    "The English repeats itself (\"is descended entirely from any of one nation, nor the greatest part of any, is descended entirely from any of these fountains\"), an editing slip; translated as it stands, repetition included.",
-    "\"quanto a Deus\" was added so At 17:26 in the Bíblia Livre's words (\"de um sangue ele fez\") has its subject; Henry has \"God has created of one blood\"."
+    "\"quanto a Deus\" was added so At 17:26 in the Bíblia Livre's words (\"de um sangue ele fez\") has its subject; Henry has \"God has created of one blood\".",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

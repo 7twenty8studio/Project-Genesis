@@ -381,7 +381,7 @@
   {
    "kind": "section",
    "id": 267,
-   "sha256": "cb6c19c600ea8206517b087101685a29c121f781062abcbdf5dc454b751c8a13",
+   "sha256": "e43206d0ccd3725c54d3501f10e42cbe44cbfccd71c36d4cf4e15afc9f8d2dba",
    "title": "Leyes judiciales.",
    "text": "El pueblo de Dios debe estar siempre dispuesto a mostrar mansedumbre y misericordia, conforme al espíritu de estas leyes. Debemos responder ante Dios, no solo por lo que hacemos con malicia, sino por lo que hacemos con descuido. Por tanto, cuando hemos hecho daño a nuestro prójimo, debemos hacer restitución, aunque la ley no nos obligue. Que estas escrituras lleven nuestras almas a recordar que, si la gracia de Dios en verdad se nos ha manifestado, entonces nos ha enseñado, y nos ha capacitado por su santo poder para conducirnos de tal modo que, renunciando á la impiedad y á los deseos mundanos, vivamos en este siglo templada, y justa, y píamente, Tit 2:12. Y la gracia de Dios nos enseña que, siendo el Señor nuestra porción, hay en él lo suficiente para satisfacer todos los deseos de nuestras almas.",
    "quotes": [
@@ -391,7 +391,7 @@
     }
    ],
    "flags": [
-    "source typo 'wordly lusts' read as 'worldly lusts'; the whole of Henry's 'denying ungodliness…' quoted from the RV1909, whose word order differs."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

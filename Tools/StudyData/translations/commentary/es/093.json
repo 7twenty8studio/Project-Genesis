@@ -208,11 +208,11 @@
   {
    "kind": "section",
    "id": 3817,
-   "sha256": "f77cc3e1955cb3b0b5545d13cd2f5396a552bf55becbb8e88464a9e3357174f2",
+   "sha256": "b770e81ade93cf24aa649f50f365ebd20bb5fd5fcdcd77c629f5db54976c2263",
    "title": "Les ordena apartarse de los que andan desordenadamente, en particular de los perezosos y los entrometidos.",
    "text": "Los que han recibido el evangelio han de vivir conforme al evangelio. Los que podían trabajar y no querían no debían ser mantenidos en la ociosidad. El cristianismo no ha de favorecer la pereza, que consumiría lo que está destinado a alentar a los laboriosos y a sostener a los enfermos y afligidos. La laboriosidad en nuestros oficios como hombres es un deber que exige nuestro llamamiento como cristianos. Pero algunos esperaban ser mantenidos en la ociosidad, y se entregaban a un temple curioso y presuntuoso. Se entrometían en los asuntos de otros, y hacían mucho daño. Es un gran error y un abuso de la religión hacer de ella un manto para la ociosidad o para cualquier otro pecado. El siervo que espera debidamente la venida de su Señor debe estar trabajando como su Señor le ha mandado. Si estamos ociosos, el diablo y un corazón corrupto pronto nos hallarán algo que hacer. La mente del hombre es una cosa activa; si no se emplea en hacer el bien, estará haciendo el mal. Es una unión excelente, pero rara, ser activo en los propios asuntos y, sin embargo, tranquilo en cuanto a los de los demás. Si alguno se negaba a trabajar con quietud, debían señalarlo con censura y apartarse de su compañía, pero debían procurar su bien con amorosas amonestaciones. El Señor está con vosotros mientras vosotros estéis con él. Seguid vuestro camino, y seguid hasta el fin. Nunca debemos abandonar nuestra obra ni cansarnos en ella. Habrá tiempo de sobra para descansar cuando lleguemos al cielo.",
    "flags": [
-    "Source typo \"The Lords is with you\" read as \"The Lord is with you\"."
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
@@ -406,12 +406,12 @@
   {
    "kind": "section",
    "id": 3830,
-   "sha256": "3facec51e979fee6d58d94b4c7f66f28ae31c5ade23b09ceb62d9e73ddf5b42d",
+   "sha256": "a624ebacb58283ae3d2db9c9e0f281324621c1cdd3b8881ec0fe1fe821064c20",
    "text": "La juventud de los hombres no será menospreciada si se guardan de las vanidades y las locuras. Los que enseñan con su doctrina deben enseñar con su vida. Su conversación debe ser edificante; su conducta debe ser santa; deben ser ejemplos de amor a Dios y a todos los hombres buenos, ejemplos de una mente espiritual. Los ministros deben ocuparse en estas cosas como su obra y tarea principal. De este modo su aprovechamiento será manifiesto en todas las cosas, así como a todas las personas; este es el camino para aprovechar en conocimiento y gracia, y también para hacer provecho a otros. La doctrina de un ministro de Cristo debe ser bíblica, clara, evangélica y práctica; bien expuesta, explicada, defendida y aplicada. Pero estos deberes no dejan tiempo para placeres mundanos, visitas frívolas ni conversación ociosa, y muy poco para lo que es mero entretenimiento y solo ornamental. Que todo creyente sea capacitado para que su aprovechamiento sea manifiesto á todos los hombres; procurando experimentar el poder del evangelio en su propia alma, y dar sus frutos en su vida.",
    "flags": [
-    "Source typo \"wordly\" read as \"worldly\" (\"mundanos\").",
     "unlisted quotation of 1 Tim 4:15: RV1909 \"aprovechamiento sea manifiesto á todos\" used, Henry's \"men\" added (\"á todos los hombres\").",
-    "Henry's \"conversation\" (1 Tim 4:12 KJV, conduct) rendered \"conducta\"; \"discourse\" rendered \"conversación\"."
+    "Henry's \"conversation\" (1 Tim 4:12 KJV, conduct) rendered \"conducta\"; \"discourse\" rendered \"conversación\".",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {

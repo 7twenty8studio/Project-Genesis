@@ -68,9 +68,13 @@ Two passages aren't flagged although they're similar to flagged ones:
 
 ### 2. Garbled English, translated as it stands and flagged
 
-- 1403
+Update (20 November 2026): 120 sections whose English had lost, doubled or
+swapped lines or misprints (1403 and 3548 among them) are fixed from an
+independent copy of the Concise Commentary, with their translations
+(source_fixes.json, NOTES.md). The independent copy has the same slip in
+the sections below, so they stay as they are:
+
 - 3392, 3416
-- 3548 (has a repeated sentence)
 - 3559: "upheld by the power of the enemy", almost certainly a slip
 - 3591, 3664, 3665
 - 3697: the Spanish and Portuguese are as incomplete as the English
@@ -110,8 +114,11 @@ itself should be fixed at the source.
 ### 6. Flags
 
 A few translator flags describe wording that has since been fixed:
-- es 3760, 3844, 3856, 3893 and 025 (Betsabé);
+- es 3844, 3856, 3893 and 025 (Betsabé);
 - pt 1447.
+
+In the 120 fixed sections, flags about the old English were replaced by
+"English corrected from an independent copy of Henry (source_fixes.json)".
 
 Flags are review notes, not shown in the app.
 

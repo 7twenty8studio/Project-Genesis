@@ -151,7 +151,7 @@
   {
    "kind": "section",
    "id": 3427,
-   "sha256": "b0de7bd97d848b87450efac925daafae0807e1a95deff7ef43ed7815384f055e",
+   "sha256": "77f6e222a10c876149a6ca868df57a46413dae8ccb4b4e833c7e6a1fdde11d32",
    "title": "Matías elegido en lugar de Judas.",
    "text": "Lo principal que los apóstoles habían de atestiguar al mundo era la resurrección de Cristo; porque esa era la gran prueba de que él era el Mesías, y el fundamento de nuestra esperanza en él. Los apóstoles fueron ordenados, no para dignidad y dominio mundanos, sino para predicar a Cristo y el poder de su resurrección. Se apeló a Dios: \"Tú, Señor, que conoces los corazones de todos\", lo cual nosotros no hacemos; y mejor de lo que ellos conocen los suyos. Es justo que Dios escoja a sus propios siervos; y en la medida en que él, por las disposiciones de su providencia o por los dones de su Espíritu, muestra a quién ha escogido, o qué ha escogido para nosotros, debemos conformarnos a su voluntad. Reconozcamos su mano en la determinación de todo lo que nos sucede, especialmente en aquello por lo cual se nos confía alguna responsabilidad.",
    "quotes": [
@@ -161,14 +161,14 @@
     }
    ],
    "flags": [
-    "source typos \"wordly\" (worldly) and \"whom he was chosen\" (has chosen); translated as meant",
-    "Henry's quotation begins at \"Thou, Lord\" (inside his quotation marks), so the RV1909 run includes \"Tú, Señor\""
+    "Henry's quotation begins at \"Thou, Lord\" (inside his quotation marks), so the RV1909 run includes \"Tú, Señor\"",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
    "kind": "section",
    "id": 3428,
-   "sha256": "51239da3cc65faae469d317f2fc305313dcd5da536f67586f73f17916f99540b",
+   "sha256": "bd9c64da2c06ad00925ba388dce959c4d01fe79645f36dd793e96bd29c683f95",
    "title": "El descenso del Espíritu Santo en el día de Pentecostés.",
    "text": "No podemos olvidar cuán a menudo, mientras su Maestro estaba con ellos, hubo contiendas entre los discípulos sobre cuál sería el mayor; pero ahora todas estas contiendas habían terminado. Últimamente habían orado más juntos. Si queremos que el Espíritu sea derramado sobre nosotros desde lo alto, estemos todos unánimes. Y a pesar de las diferencias de opiniones y de intereses, como las había entre aquellos discípulos, convengamos en amarnos unos a otros; porque donde los hermanos habitan juntos en armonía, allí envía el Señor su bendición. Un viento recio que corría vino con gran fuerza. Esto significaba las poderosas influencias y la obra del Espíritu de Dios sobre la mente de los hombres, y por medio de ello sobre el mundo. Así las convicciones del Espíritu preparan el camino para sus consuelos; y las rudas ráfagas de aquel bendito viento preparan el alma para sus brisas suaves y apacibles. Hubo una apariencia de algo semejante a fuego llameante, que se posó sobre cada uno de ellos, conforme a lo dicho por Juan el Bautista acerca de Cristo: Él os bautizará en Espíritu Santo y en fuego. El Espíritu, como el fuego, derrite el corazón, consume la escoria y enciende afectos piadosos y devotos en el alma; en la cual, como en el fuego del altar, se ofrecen los sacrificios espirituales. Fueron todos llenos del Espíritu Santo, más que antes. Fueron llenos de las gracias del Espíritu, y más que nunca bajo sus influencias santificadoras; más desprendidos de este mundo y mejor familiarizados con el otro. Fueron más llenos de los consuelos del Espíritu, se regocijaron más que nunca en el amor de Cristo y en la esperanza del cielo: en ello fueron absorbidas todas sus penas y temores. Fueron llenos de los dones del Espíritu Santo; tuvieron poderes milagrosos para el avance del evangelio. Hablaron, no por pensamiento o meditación previos, sino como el Espíritu les daba que hablasen.",
    "quotes": [
@@ -187,8 +187,8 @@
    ],
    "flags": [
     "unlisted quotation of Hch 2:2: RV1909 words \"un viento recio que corría\" used for \"A rushing mighty wind\"",
-    "source typo \"previous though\" (thought); translated as \"pensamiento\"",
-    "\"where brethren dwell together in unity, there the Lord commands his blessing\" alludes to Sal 133:1, 3; translated"
+    "\"where brethren dwell together in unity, there the Lord commands his blessing\" alludes to Sal 133:1, 3; translated",
+    "English corrected from an independent copy of Henry (source_fixes.json); translation updated to match."
    ]
   },
   {
