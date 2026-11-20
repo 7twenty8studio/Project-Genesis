@@ -161,12 +161,15 @@ above.
 
 ## Consistency pass (19 November 2026)
 All 4,106 entries pass `commentary.py check` in both languages. Names
-outside quotations now follow the app's glossary: Spanish "Bet-lehem" →
-Belén (8 places), "Gath" → Gat, "Monte Sion" → monte Sión; Portuguese
+outside quotations now follow the app's glossary: Spanish "Gath" → Gat, "Monte Sion" → monte Sión; Portuguese
 "Monte Sion" → monte Sião. Micás (Judges 17) and Miqueas (the prophet)
 are different people and stay apart. Section 2991 quotes 1 Co 15:50
 ("flesh and blood shall not inherit"), not 1 Co 6:9 as listed: both
 languages now use that verse's words.
+
+The full AI review (20 November 2026, ai-review/README.md) put Spanish
+"Bet-lehem" and "Bat-sheba" back where "Belén" and "Betsabé" had crept in:
+they are the names the app's Study data uses.
 
 ### Reference correction: section 2991 (Matthew 5:38-42)
 Henry writes "flesh and blood shall not inherit the kingdom of God". The
