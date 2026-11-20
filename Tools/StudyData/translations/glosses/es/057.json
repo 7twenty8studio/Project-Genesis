@@ -2706,7 +2706,8 @@
    "42020012.3": "un tercero"
   },
   "26ebef9019b34304": {
-   "66020007.3": "se haya cumplido"
+   "66020005.9": "se hayan cumplido",
+   "66020007.3": "se hayan cumplido"
   },
   "0d53d3142703273e": {
    "43008055.17": "a vosotros"
@@ -2719,7 +2720,9 @@
    "40027064.8": "tercer"
   },
   "3f04d527ff0e8b07": {
-   "42012038.10": "tercera"
+   "42012038.10": "tercera",
+   "42018033.9": "tercero",
+   "46015004.10": "tercero"
   },
   "6be18f8e6730ac4c": {
    "42015029.9": "tantos"
@@ -2748,12 +2751,6 @@
   "18f4cf42a7934c60": {
    "66018012.7": "preciosa"
   },
-  "558985e0908c1779": {
-   "66021019.21": "tercera"
-  },
-  "740b556822522f1c": {
-   "66021019.24": "cuarta"
-  },
   "52cf4a317b3d474a": {
    "42024021.18": "[el] tercer"
   },
@@ -2768,6 +2765,173 @@
   },
   "16af861605cf8e3c": {
    "66018022.18": "artesano"
+  },
+  "b4dedef36d93d964": {
+   "40009022.17": "fue sanada"
+  },
+  "4ac3965dbd0338e1": {
+   "40014029.15": "aguas"
+  },
+  "0b99cf7a64613351": {
+   "42008016.11": "[la] pone",
+   "42008016.15": "[la] pone"
+  },
+  "24cd8f8d64eeb614": {
+   "42011036.11": "alguna"
+  },
+  "a9a3f2d2ea5aa681": {
+   "42013014.24": "estos"
+  },
+  "b9881153da8f8bc0": {
+   "42017037.13": "cuerpo [está]"
+  },
+  "3e3b0612852ee8b4": {
+   "42018002.6": "una cierta"
+  },
+  "f70c585bcd44d761": {
+   "42018031.13": "se cumplirán"
+  },
+  "9e817ae2ab5c4e8f": {
+   "42023029.21": "alimentaron"
+  },
+  "0f997fc5aed53e6f": {
+   "43003021.11": "sean manifiestas"
+  },
+  "22ff5e7a8394ead2": {
+   "43009003.13": "se muestren"
+  },
+  "8ffcbca57fbc50f5": {
+   "43019028.9": "han sido cumplidas"
+  },
+  "c8d58591b3952ce3": {
+   "44008036.9": "alguna"
+  },
+  "3d47b367195a11eb": {
+   "44009019.15": "[por] algunos"
+  },
+  "cce51c1501531b9e": {
+   "44009043.10": "un cierto",
+   "44010006.4": "un cierto"
+  },
+  "93e6a12da512e4f8": {
+   "44010048.17": "algunos",
+   "44015036.3": "algunos",
+   "44016012.21": "algunos"
+  },
+  "3ebee4dea7680933": {
+   "44015001.20": "ser salvos",
+   "44015011.10": "ser salvos",
+   "44027031.17": "ser salvos",
+   "53002010.20": "ser salvos",
+   "54002004.5": "ser salvos"
+  },
+  "a2e7ecb400b953ee": {
+   "44018017.9": "[lo] golpeaban"
+  },
+  "afbf2f223c148bb4": {
+   "44025019.3": "ciertas"
+  },
+  "ebbfad0f5d6203e2": {
+   "44025019.13": "un cierto"
+  },
+  "7ccf62bcfe031116": {
+   "44027039.11": "cierta"
+  },
+  "4e64147654a20cd9": {
+   "45003021.7": "ha sido manifestada"
+  },
+  "ce1652a95476ce54": {
+   "45008020.12": "habiéndo[la] sujetado"
+  },
+  "fb8ab856ca2e150b": {
+   "45011014.8": "salvaré"
+  },
+  "1d6a503bda69ace7": {
+   "45012002.28": "perfecta"
+  },
+  "16b7bb1749a09dbe": {
+   "45013001.4": "que están por encima [de ella]"
+  },
+  "88fabc776f1093d8": {
+   "46012028.14": "tercero"
+  },
+  "a29a162236ac14ae": {
+   "46014025.8": "manifiestos",
+   "62003010.3": "manifiestos"
+  },
+  "39349f6b91ac7df1": {
+   "47005010.5": "ser manifestados"
+  },
+  "74ddc1d7af1d0880": {
+   "47012005.3": "tal hombre"
+  },
+  "06894d2f890fadfe": {
+   "49002007.9": "que sobrepasan"
+  },
+  "71cf5bae90c54300": {
+   "49002007.9": "que sobrepasan"
+  },
+  "94f533b444a14f35": {
+   "49004029.12": "alguna",
+   "50004008.22": "alguna"
+  },
+  "c7437983d9236b7e": {
+   "50001013.5": "bien conocidas"
+  },
+  "04e5371a7002921e": {
+   "50002001.8": "algún"
+  },
+  "87ea5e5051c26e1f": {
+   "51001011.13": "perseverancia"
+  },
+  "146d5a210bcd5c18": {
+   "51003018.3": "estad sujetas"
+  },
+  "e3ec815328394332": {
+   "58003017.1": "Con quiénes"
+  },
+  "2774adb0960acdc5": {
+   "58003018.1": "A quiénes"
+  },
+  "c31443479ee12f37": {
+   "58004007.2": "un cierto"
+  },
+  "c4b0a067dc952e63": {
+   "58009008.8": "haber sido manifestado"
+  },
+  "8e76daf14e539619": {
+   "61001013.14": "haciéndo[os] recordar"
+  },
+  "487bcaa0c6a80aec": {
+   "61002017.17": "han sido reservadas",
+   "65001013.18": "han sido reservadas"
+  },
+  "c6ac97a7d3ba4cef": {
+   "62001002.4": "fue manifestada"
+  },
+  "567d5307b569b5d2": {
+   "62001002.22": "fue manifestada"
+  },
+  "9ec429d59b2c414f": {
+   "62002019.20": "sean manifestados"
+  },
+  "7780d40da8acdc7a": {
+   "62004012.19": "perfeccionado"
+  },
+  "8d792dbfb5b3ef78": {
+   "66011009.25": "ser puestos"
+  },
+  "d4d7e9e0e50d3459": {
+   "66011014.10": "tercero"
+  },
+  "10e52495662cfd0f": {
+   "66019020.7": "esta"
+  },
+  "7b355974ad43be0d": {
+   "66020003.21": "se cumplan"
+  },
+  "0d680ac347706f4d": {
+   "42023015.8": "vosotros"
   }
  }
 }

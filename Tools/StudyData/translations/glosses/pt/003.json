@@ -833,7 +833,7 @@
   "5c10c9129a66a56a": "confie",
   "6f2c1aef99352e4c": "tinha crido",
   "2a822655ecbcb534": "confio",
-  "f89659939136cffd": "tem crido?",
+  "f89659939136cffd": "creu?",
   "51c71f3edff39930": "confiou",
   "ad61ee141ea8f5c1": "[estavam] confiando",
   "dc1e3e6c8abe5dc4": "sua ama",
@@ -952,7 +952,7 @@
   "f7d8b238d7c3e26a": "e dissemos",
   "565b294a2f347bfc": "e falou",
   "ff20cac3d73551bf": "digas",
-  "18c67fdbe21f86f7": "tenho dito",
+  "18c67fdbe21f86f7": "disse",
   "a4e03779e748f10a": "dissestes",
   "2168094727f04b8e": "e disse",
   "702e4bda8ccfcc33": "e dissestes",
@@ -1012,7 +1012,7 @@
   "02c01c7ff69942df": "e dirás",
   "d5e4ed5d7e57b06a": "e diz",
   "c42963231bdb6257": "e alguém dirá",
-  "25bfe9d7c4bc3cb9": "e tenho dito",
+  "25bfe9d7c4bc3cb9": "e disse",
   "7e06692983cccb3b": "e disseram",
   "3eb183b607495277": "e tinha dito",
   "cbac6303c9d95d0d": "para que digam",
@@ -1145,16 +1145,16 @@
   "4e295a73c1237bf5": "fale",
   "40da63e28fc48c10": "dissemos",
   "162d6e2578250139": "prometi",
-  "720b1e077b1baed5": "tenho falado",
+  "720b1e077b1baed5": "falei",
   "d4cc5735ec4d99cd": "falei",
   "e220c923b2879955": "direi",
-  "a70e938ab19b6acb": "tenho dito?",
+  "a70e938ab19b6acb": "disse?",
   "bbf13f99fd1780c4": "disseste [fem]",
   "5d2e1fdbac638ba3": "dissestes?",
   "8ae383cb48eaec90": "disseste?",
   "90982a24179c9ea2": "tinhas dito",
   "3bb011134acb3aaa": "falaste",
-  "fcd2a321158dc6c1": "o povo tem dito",
+  "fcd2a321158dc6c1": "o povo disse",
   "5b903af95a3470ed": "o povo disse",
   "0e1f1891404ad26c": "tinham dito",
   "80046e8c4c6379ce": "falaram",
@@ -2045,7 +2045,7 @@
    "11018027.11": "[é] um deus"
   },
   "2ce01047d961ab2d": {
-   "24016020.7": "[são] Deus"
+   "24016020.7": "[são] deuses"
   },
   "30b2f5772a1fe9e5": {
    "39002017.19": "[está] [o] Deus de"
@@ -2113,9 +2113,6 @@
    "21008017.26": "disser",
    "1043007.23": "diria"
   },
-  "ba31e158ad78753e": {
-   "24007010.10": "e dizeis"
-  },
   "62fa99d8cfefd57b": {
    "1034011.11": "disserdes",
    "1034012.8": "disserdes",
@@ -2174,6 +2171,122 @@
   },
   "f6a1cbc5e4dd28ed": {
    "5028059.13": "e duradouras"
+  },
+  "ea36d05fb3746a5d": {
+   "1026007.10": "de dizer"
+  },
+  "6546a4972f69a20b": {
+   "3021011.8": "e por sua mãe"
+  },
+  "6e72e427179d9e2e": {
+   "3023017.11": "serão assados"
+  },
+  "5c65045253b5b58c": {
+   "3026025.7": "e vos ajuntareis"
+  },
+  "743a829a8f4b3d3f": {
+   "4002007.6": "[era] Eliabe"
+  },
+  "9ebed163d321c47d": {
+   "4002010.9": "[era] Elizur"
+  },
+  "8793670e020a47bc": {
+   "4002014.6": "[era] Eliasafe"
+  },
+  "bd6671e05d4207ed": {
+   "4002018.9": "[era] Elisama"
+  },
+  "4cf82ade7a3ba81f": {
+   "4003024.5": "[era] Eliasafe"
+  },
+  "f09e4fe0d49c1090": {
+   "4003030.6": "[era] Elizafã"
+  },
+  "628c3be64b51fd2a": {
+   "4003032.4": "[era] Eleazar"
+  },
+  "8914ebe03260fa05": {
+   "4012015.11": "foi recebida"
+  },
+  "ad61ee141ea8f5c1": {
+   "5001032.4": "[estáveis] confiando"
+  },
+  "768d7b7c99ec5d6a": {
+   "9002035.12": "segura"
+  },
+  "6d2844ce422ca5bf": {
+   "9006010.8": "e as atrelaram"
+  },
+  "c7de32807956428a": {
+   "9013011.19": "[estavam] ajuntando-se"
+  },
+  "4bd30b7191c24ebd": {
+   "9028024.10": "e a assou"
+  },
+  "75bdea9b9634b6be": {
+   "11002019.21": "para [a] mãe de"
+  },
+  "732a48bb4b62d7fd": {
+   "11011005.5": "[a] deusa de",
+   "11011033.6": "[a] deusa de"
+  },
+  "919e122e103abad9": {
+   "13017023.10": "seja estabelecida"
+  },
+  "ce8663ba14be6656": {
+   "14032015.11": "creiais",
+   "33007005.2": "creiais"
+  },
+  "52eba840bb39cb52": {
+   "18003003.6": "[em que] disse"
+  },
+  "8d3bb5ed8b2bbf97": {
+   "18007001.3": "[pertence] à humanidade"
+  },
+  "d87580ed365bbd14": {
+   "19019007.8": "[é] fidedigno"
+  },
+  "75dcfebe583beaed": {
+   "19079010.2": "dirão"
+  },
+  "8a5f2ce7f0b31ae2": {
+   "19085005.2": "te irarás"
+  },
+  "8557629f7eed85de": {
+   "20027006.1": "[são] fidedignas"
+  },
+  "8da8aedd55d95de2": {
+   "23008002.4": "fidedignas"
+  },
+  "603c455d5e9d4709": {
+   "23013004.11": "ajuntando-se"
+  },
+  "989d119885487782": {
+   "23019018.16": "será chamada"
+  },
+  "3bdd0b65e97e360d": {
+   "23033016.10": "[serão] fidedignas"
+  },
+  "5efa661e177c39f5": {
+   "23055003.14": "<as> fidedignas"
+  },
+  "4457d17e8ab89e53": {
+   "23057001.16": "é tirada"
+  },
+  "81e03b8399d47011": {
+   "23060020.7": "será tirada"
+  },
+  "ef91ae452e12d199": {
+   "24015018.16": "são fidedignas"
+  },
+  "fe968b603330782b": {
+   "26025008.6": "disse"
+  },
+  "21ed02c2aa1c8cf9": {
+   "27008026.5": "foi contada"
+  },
+  "35eb1522f0a066e8": {
+   "38012003.15": "e se ajuntarão"
   }
  },
  "checked": [

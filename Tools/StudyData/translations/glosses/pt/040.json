@@ -44,7 +44,7 @@
   "8381d3c12d9db796": "bebe",
   "dacc4d2e40050607": "[estava] bebendo",
   "7b7bed3637d62eff": "bebei",
-  "6a2336c434902a3e": "e tenho bebido",
+  "6a2336c434902a3e": "e bebi",
   "331c0e15daa16eeb": "para que eu beba",
   "9c93dda10ccd2263": "hás de beber",
   "408a3dc6dd3f3869": "[o] beberás",
@@ -52,7 +52,7 @@
   "1e5611e05a751fdb": "bebas",
   "ee369a058af0cf61": "bebas",
   "b9e055b30749e83f": "bebi",
-  "4521ca2c4574647d": "tenho bebido",
+  "4521ca2c4574647d": "bebi",
   "dbe1030f44b0e02d": "bebeste",
   "c87a167c737079a2": "beberam",
   "c0a728c963a69c24": "bebeu",
@@ -104,7 +104,7 @@
   "6b54d2d14cdfd095": "bebais",
   "180342a53efcfc2c": "beba",
   "b6a5a36cfa2a35df": "bebam",
-  "3d1ffcdf0b902543": "temos bebido",
+  "3d1ffcdf0b902543": "bebemos",
   "d053bda47aefec30": "bebestes",
   "bda0a61c03432185": "bebestes",
   "6419996a4ac505be": "bebe",
@@ -329,7 +329,7 @@
   "251637dfbcd9be3f": "Tiglate-",
   "6adab459ddf8f56c": "pileser",
   "1c5f71f7b8cc49d2": "seus benefícios",
-  "0552d7c3f812db1c": "pela [a] hostilidade de",
+  "0552d7c3f812db1c": "pel[a] hostilidade de",
   "7c90bc43a56a91b4": "olmeiro",
   "e13f678c6e4d1a20": "olmeiro[s]",
   "da460a0f6aa90a5a": "em <a> continuidade",
@@ -1657,7 +1657,7 @@
   "a0e0e33479e78f2b": "e para tornar estrito",
   "7087085f747d532d": "e te fortaleceste",
   "a8d5cbc61c6d668f": "fortaleceu-se",
-  "e6a95aa22f4869df": "pela [a] força de",
+  "e6a95aa22f4869df": "pel[a] força de",
   "b0297fd6f83cdcd2": "e a força",
   "965282c96e7bb3ef": "autoridade",
   "0bddb7036d750f7f": "seu poder",
@@ -1816,7 +1816,7 @@
   "c4836e4355c428e8": "<o> nono",
   "9f37143d9197d199": "<a> nona",
   "5e1db9774c9048e5": "o nono",
-  "e39c33c81efc082f": "de o [mês] nono",
+  "e39c33c81efc082f": "do [mês] nono",
   "6836802c7f295505": "<da> nona",
   "56c46f79f8728d7e": "[era] o nono",
   "b9c48a2bffdc936d": "nove",
@@ -2565,6 +2565,153 @@
   },
   "84cf5154bfa5067d": {
    "27002039.8": "terceiro"
+  },
+  "34775f7c7d4b8457": {
+   "1024019.10": "de beber",
+   "1024022.5": "de beber"
+  },
+  "4b0a20aae72fbc47": {
+   "1047018.1": "e foi terminado"
+  },
+  "6256b3a633538b42": {
+   "2026028.2": "<a> do meio",
+   "2036033.4": "<a> do meio"
+  },
+  "399b4bc5e528c93d": {
+   "2028033.14": "[estarão] entre elas"
+  },
+  "ffafa206ae2983f7": {
+   "3023015.12": "completos"
+  },
+  "9f37143d9197d199": {
+   "24039001.2": "<o> nono",
+   "24052004.3": "<o> nono",
+   "26024001.6": "<o> nono",
+   "3025022.11": "<o> nono"
+  },
+  "f7295ed1f7fe66e4": {
+   "3025030.8": "completo"
+  },
+  "fd61f865a3898132": {
+   "4034013.17": "a [as] nove"
+  },
+  "ab35a147d9a6821f": {
+   "5028066.3": "pendurada"
+  },
+  "b02df6d6b0c8aecb": {
+   "5032004.2": "[é] perfeita"
+  },
+  "a62221b03968ac8e": {
+   "19086013.8": "mais baixo",
+   "5032022.8": "mais baixo"
+  },
+  "66df156d0a080d87": {
+   "6007021.24": "[está] debaixo dele"
+  },
+  "c4d811afdd1fd40d": {
+   "6007022.10": "[estava] debaixo dele"
+  },
+  "4f33e328ac127c68": {
+   "9002003.14": "são medidas"
+  },
+  "4f649616f28bbf47": {
+   "10023016.19": "para bebê-la",
+   "10023017.13": "para bebê-la",
+   "13011018.19": "para bebê-la",
+   "13011019.17": "para bebê-la"
+  },
+  "9b295ab851af2331": {
+   "11017012.24": "para mim mesma"
+  },
+  "b175fcb66d1ee3d3": {
+   "11021002.21": "em lugar dela",
+   "11021006.22": "em lugar dela"
+  },
+  "683a39de9d1c1fef": {
+   "12016017.18": "[estavam] debaixo dele"
+  },
+  "6836802c7f295505": {
+   "12017006.2": "<do> nono",
+   "12025001.3": "<do> nono"
+  },
+  "7f73ae52912ef7b6": {
+   "12018013.15": "e as prendeu",
+   "23036001.16": "e as prendeu"
+  },
+  "4adaa4b8691cee8d": {
+   "12020004.6": "<o> do meio"
+  },
+  "0ae4ab6f5da9acab": {
+   "13021006.7": "foi abominada"
+  },
+  "9fbbc1d26935f2f1": {
+   "14008005.9": "<o> de baixo"
+  },
+  "47eff2e722240ed3": {
+   "15004024.12": "dois"
+  },
+  "d6007b42bcaf0f26": {
+   "18026008.7": "debaixo delas"
+  },
+  "4ef9143876673dec": {
+   "18031040.8": "estão acabadas"
+  },
+  "95c7357b45f97326": {
+   "18037016.6": "[um] completo de"
+  },
+  "eb6e0eeb5f04cdad": {
+   "19001003.3": "plantada",
+   "24017008.3": "plantada"
+  },
+  "d3b1977c7f6f9f97": {
+   "20007025.7": "te desvies"
+  },
+  "8dfeea10acf65c9f": {
+   "23005002.7": "em [o] meio dela",
+   "26048008.27": "em [o] meio dela",
+   "26048010.26": "em [o] meio dela",
+   "26048015.17": "em [o] meio dela",
+   "26048021.35": "em [o] meio dela"
+  },
+  "b7dbcc75d3cca683": {
+   "23022009.12": "<o> inferior",
+   "26040018.9": "<o> inferior",
+   "26043014.5": "<o> inferior"
+  },
+  "c1c571dd6e025903": {
+   "23024009.7": "aos [que] a bebem"
+  },
+  "ffe9a774e6758de5": {
+   "24038009.18": "nela"
+  },
+  "d4333ba60390fd49": {
+   "26017006.11": "debaixo dela"
+  },
+  "63f7828fa076bff8": {
+   "26020009.10": "[estavam] no meio delas"
+  },
+  "abfdcb1908244b27": {
+   "26021011.4": "para agarrar [-la]"
+  },
+  "6348db69df497991": {
+   "27002042.14": "quebradiço"
+  },
+  "24cb96d1f4ae0c04": {
+   "27004012.8": "debaixo dela",
+   "27004014.16": "debaixo dela",
+   "27004021.8": "debaixo dela"
+  },
+  "80afa47298e42222": {
+   "27004036.18": "foi estabelecido"
+  },
+  "6df37f9988b9e101": {
+   "27005031.8": "e dois"
+  },
+  "a0e0e33479e78f2b": {
+   "27006007.12": "e para tornar estrita"
+  },
+  "ea769d25a851fda7": {
+   "32004005.13": "debaixo dele"
   }
  }
 }

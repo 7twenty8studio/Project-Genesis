@@ -2706,7 +2706,8 @@
    "42020012.3": "um terceiro"
   },
   "26ebef9019b34304": {
-   "66020007.3": "se tiver cumprido"
+   "66020005.9": "se tenham cumprido",
+   "66020007.3": "se tiverem cumprido"
   },
   "0d53d3142703273e": {
    "43008055.17": "a vós"
@@ -2736,12 +2737,6 @@
   "18f4cf42a7934c60": {
    "66018012.7": "preciosa"
   },
-  "558985e0908c1779": {
-   "66021019.21": "terceira"
-  },
-  "740b556822522f1c": {
-   "66021019.24": "quarta"
-  },
   "52cf4a317b3d474a": {
    "42024021.18": "[o] terceiro"
   },
@@ -2759,6 +2754,174 @@
   },
   "16af861605cf8e3c": {
    "66018022.18": "artífice"
+  },
+  "b4dedef36d93d964": {
+   "40009022.17": "foi curada"
+  },
+  "4ac3965dbd0338e1": {
+   "40014029.15": "águas"
+  },
+  "8103d799bea5290d": {
+   "42004018.22": "a [os] cegos"
+  },
+  "24cd8f8d64eeb614": {
+   "42011036.11": "alguma"
+  },
+  "a9a3f2d2ea5aa681": {
+   "42013014.24": "estes"
+  },
+  "b9881153da8f8bc0": {
+   "42017037.13": "corpo [está]"
+  },
+  "3e3b0612852ee8b4": {
+   "42018002.6": "uma certa"
+  },
+  "f70c585bcd44d761": {
+   "42018031.13": "se cumprirão"
+  },
+  "9e817ae2ab5c4e8f": {
+   "42023029.21": "alimentaram"
+  },
+  "0f997fc5aed53e6f": {
+   "43003021.11": "sejam manifestas"
+  },
+  "22ff5e7a8394ead2": {
+   "43009003.13": "se mostrem"
+  },
+  "8ffcbca57fbc50f5": {
+   "43019028.9": "foram cumpridas"
+  },
+  "c8d58591b3952ce3": {
+   "44008036.9": "alguma"
+  },
+  "3d47b367195a11eb": {
+   "44009019.15": "[por] alguns"
+  },
+  "cce51c1501531b9e": {
+   "44009043.10": "um certo",
+   "44010006.4": "um certo"
+  },
+  "93e6a12da512e4f8": {
+   "44010048.17": "alguns",
+   "44015036.3": "alguns",
+   "44016012.21": "alguns"
+  },
+  "3ebee4dea7680933": {
+   "44015001.20": "ser salvos",
+   "44015011.10": "ser salvos",
+   "44027031.17": "ser salvos",
+   "53002010.20": "ser salvos",
+   "54002004.5": "ser salvos"
+  },
+  "afbf2f223c148bb4": {
+   "44025019.3": "certas"
+  },
+  "ebbfad0f5d6203e2": {
+   "44025019.13": "um certo"
+  },
+  "7ccf62bcfe031116": {
+   "44027039.11": "certa"
+  },
+  "4e64147654a20cd9": {
+   "45003021.7": "foi manifestada"
+  },
+  "ce1652a95476ce54": {
+   "45008020.12": "tendo-[a] sujeitado"
+  },
+  "fb8ab856ca2e150b": {
+   "45011014.8": "salvarei"
+  },
+  "1d6a503bda69ace7": {
+   "45012002.28": "perfeita"
+  },
+  "16b7bb1749a09dbe": {
+   "45013001.4": "que estão acima [dela]"
+  },
+  "88fabc776f1093d8": {
+   "46012028.14": "terceiro"
+  },
+  "a29a162236ac14ae": {
+   "46014025.8": "manifestos",
+   "62003010.3": "manifestos"
+  },
+  "39349f6b91ac7df1": {
+   "47005010.5": "ser manifestados"
+  },
+  "74ddc1d7af1d0880": {
+   "47012005.3": "tal homem"
+  },
+  "06894d2f890fadfe": {
+   "49002007.9": "que excedem"
+  },
+  "71cf5bae90c54300": {
+   "49002007.9": "que excedem"
+  },
+  "94f533b444a14f35": {
+   "49004029.12": "alguma"
+  },
+  "c7437983d9236b7e": {
+   "50001013.5": "bem conhecidas"
+  },
+  "04e5371a7002921e": {
+   "50002001.8": "algum"
+  },
+  "87ea5e5051c26e1f": {
+   "51001011.13": "perseverança"
+  },
+  "146d5a210bcd5c18": {
+   "51003018.3": "sede sujeitas"
+  },
+  "72205d1403e649a0": {
+   "54001010.11": "ao são"
+  },
+  "72385723f43027d9": {
+   "56002008.2": "sã"
+  },
+  "c31443479ee12f37": {
+   "58004007.2": "um certo"
+  },
+  "c4b0a067dc952e63": {
+   "58009008.8": "ter sido manifesto"
+  },
+  "ab2397237903904f": {
+   "59001025.6": "perfeita"
+  },
+  "487bcaa0c6a80aec": {
+   "61002017.17": "foram reservadas",
+   "65001013.18": "foram reservadas"
+  },
+  "c6ac97a7d3ba4cef": {
+   "62001002.4": "foi manifestada"
+  },
+  "567d5307b569b5d2": {
+   "62001002.22": "foi manifestada"
+  },
+  "30c76301351ab80f": {
+   "62002011.24": "cegaram"
+  },
+  "9ec429d59b2c414f": {
+   "62002019.20": "sejam manifestados"
+  },
+  "7780d40da8acdc7a": {
+   "62004012.19": "aperfeiçoado"
+  },
+  "805ca8e5f96171fd": {
+   "62004018.9": "perfeito"
+  },
+  "8d792dbfb5b3ef78": {
+   "66011009.25": "ser postos"
+  },
+  "d4d7e9e0e50d3459": {
+   "66011014.10": "terceiro"
+  },
+  "10e52495662cfd0f": {
+   "66019020.7": "esta"
+  },
+  "7b355974ad43be0d": {
+   "66020003.21": "se cumpram"
+  },
+  "0d680ac347706f4d": {
+   "42023015.8": "vós"
   }
  }
 }

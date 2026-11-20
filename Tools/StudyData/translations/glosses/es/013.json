@@ -2470,10 +2470,11 @@
    "11022003.12": "[estamos] inactivos"
   },
   "2d0f899c28026e0c": {
-   "9029006.32": "[eres] bueno",
-   "9029009.8": "[eres] bueno",
    "19086005.4": "[eres] bueno",
-   "19119068.1": "[eres] bueno"
+   "19119068.1": "[eres] bueno",
+   "20020023.8": "[son] buenas",
+   "9029006.32": "[eres] bueno",
+   "9029009.8": "[eres] bueno"
   },
   "c91daedcad281c4e": {
    "24008015.4": "[hubo] bien",
@@ -2537,31 +2538,41 @@
    "4019018.6": "limpia"
   },
   "e5289b5b0e7392be": {
+   "11008056.17": "<la> buena",
+   "24029010.17": "<la> buena",
    "24033014.9": "<la> buena",
    "5003025.11": "<la> buena",
    "6021045.6": "<la> buena",
    "6023015.7": "<la> buena"
   },
   "dd581dd5ddb736a5": {
+   "29003005.6": "<las> buenas",
    "6023014.20": "<las> buenas"
   },
   "34084070a7458d93": {
+   "10018027.19": "buenas",
+   "19143010.8": "bueno",
+   "6007021.6": "bueno",
    "9024019.8": "bueno"
   },
   "d5ea2e1aa287bbf8": {
+   "10017014.18": "<el> bueno",
    "11008036.13": "<el> bueno",
-   "14006027.13": "<el> bueno"
+   "14006027.13": "<el> bueno",
+   "7009011.9": "<el> bueno"
   },
   "8d9d3638646134e9": {
    "11012007.15": "bondadosas",
    "14010007.13": "bondadosas"
   },
   "2a8757eabb22ccff": {
+   "1030020.7": "buena",
    "11021002.23": "buena",
    "19045001.12": "buena",
    "20004002.3": "buena",
    "20012025.6": "buena",
    "20014014.7": "buena",
+   "21003012.10": "bien",
    "21004009.9": "buena"
   },
   "f3c920a3619594eb": {
@@ -2575,6 +2586,259 @@
   },
   "1614db0fbb53c845": {
    "7016008.10": "habían sido secadas"
+  },
+  "770ef5d7fab65dbd": {
+   "1003005.13": "<de> bien"
+  },
+  "30c8c37ea7c26b4a": {
+   "1007002.14": "[es] limpio"
+  },
+  "6d216f160005afc4": {
+   "1007008.8": "limpio"
+  },
+  "2624d9e3b069f806": {
+   "1015006.3": "y lo contó"
+  },
+  "cd3ba2ff94c1237c": {
+   "10019018.8": "lo bueno",
+   "1016006.10": "lo bueno",
+   "13019013.9": "lo bueno",
+   "13021023.10": "lo bueno",
+   "14014002.3": "lo bueno",
+   "14031020.7": "lo bueno",
+   "7010015.11": "lo bueno",
+   "7019024.12": "lo bueno",
+   "9001023.6": "lo bueno",
+   "9003018.13": "lo bueno",
+   "9011010.10": "lo bueno"
+  },
+  "2f26885a32f3128a": {
+   "1030032.10": "y manchada"
+  },
+  "ad2d6cc491382259": {
+   "1031015.3": "somos consideradas"
+  },
+  "4f960250d8aa18df": {
+   "1041035.6": "<los> buenos",
+   "24024003.11": "<los> buenos",
+   "24024005.7": "<los> buenos"
+  },
+  "1f2db6ef592c2d0f": {
+   "2003001.19": "hacia Horeb"
+  },
+  "3f272fb0298470e0": {
+   "2012022.4": "y [lo] mojaréis"
+  },
+  "20eaf2e5e7f481c8": {
+   "2027017.5": "[estarán] provistas de molduras"
+  },
+  "ecd499759ef9513d": {
+   "2038017.12": "[estaban] provistas de molduras"
+  },
+  "207fb777d30ed50c": {
+   "3011034.16": "será inmunda"
+  },
+  "7851527c63357a21": {
+   "3011036.7": "pura"
+  },
+  "35bad465a85f210a": {
+   "20030012.2": "[es] pura",
+   "3011037.10": "[es] pura"
+  },
+  "0aa0759955a9e3b6": {
+   "3011038.9": "[es] inmunda",
+   "3013015.9": "[es] inmunda"
+  },
+  "bfea211be4d4fc78": {
+   "3014043.15": "haber sido recubierta",
+   "3014048.12": "haber sido recubierta"
+  },
+  "8c93ab4b0d0bb43c": {
+   "3022006.5": "y será inmundo"
+  },
+  "06585811c1c241e6": {
+   "3027010.10": "por bueno"
+  },
+  "bfccbad1ce57a4b8": {
+   "4009013.4": "[era] pura"
+  },
+  "5833ce1cc6e6f9e3": {
+   "4024005.2": "son buenas"
+  },
+  "98849c91c157d30b": {
+   "12020003.12": "y lo bueno",
+   "23038003.13": "y lo bueno",
+   "25003038.6": "y lo bueno",
+   "5006018.3": "y lo bueno"
+  },
+  "a180a0349f27c7d7": {
+   "5009021.13": "moliéndo[lo]"
+  },
+  "ba6016740da8ccf9": {
+   "5013015.9": "destruir totalmente"
+  },
+  "15f0a2d1db6c68b7": {
+   "9012023.13": "el bueno"
+  },
+  "560fa8e5114aa932": {
+   "10017007.6": "[es] bueno",
+   "10017014.6": "[es] bueno"
+  },
+  "18ffcc36cd3c65c4": {
+   "11010021.17": "[era] contada"
+  },
+  "73517928013c897e": {
+   "12002008.9": "y fueron divididas",
+   "12002014.21": "y fueron divididas"
+  },
+  "55ea785ba5348833": {
+   "12002019.10": "[es] buena",
+   "20003014.2": "[es] buena",
+   "20031018.3": "[es] buena",
+   "23041007.12": "[es] buena"
+  },
+  "49f4a4290d02f9f6": {
+   "12008015.5": "y [la] mojó"
+  },
+  "a757af8bf6c0e5c8": {
+   "12019011.11": "destruyéndolas totalmente",
+   "23037011.10": "destruyéndolas totalmente"
+  },
+  "c7a1174f6629c4ef": {
+   "14003005.9": "fino",
+   "14003008.18": "fino"
+  },
+  "9187ebdd56b8218c": {
+   "15008027.9": "hermoso"
+  },
+  "630adce0bfe29b88": {
+   "16003015.14": "y la techó"
+  },
+  "a7c16baa636501d0": {
+   "16006017.12": "[pertenecían] a Tobías"
+  },
+  "891653af80d698f9": {
+   "17008008.9": "y sellad [lo]"
+  },
+  "a6b3d22b464526f0": {
+   "18007014.1": "y me espantarás"
+  },
+  "cf33395e7c2c9b9a": {
+   "18019024.6": "serán grabadas !"
+  },
+  "47abfdb26a79bc69": {
+   "18037021.10": "y las ha purificado"
+  },
+  "134d94a0bdb651d8": {
+   "18038006.4": "fueron hundidas"
+  },
+  "9f532ff1bfc0c163": {
+   "18041029.2": "son consideradas",
+   "23005028.10": "son consideradas"
+  },
+  "52546c8838df7e48": {
+   "19019009.3": "[es] puro"
+  },
+  "ff20e1bf986e0ad9": {
+   "19064006.5": "tramada"
+  },
+  "3d82085cf60715f4": {
+   "19088016.3": "tu ira<s>"
+  },
+  "f31b044d8e5a2ee7": {
+   "19133002.2": "<el> bueno",
+   "24006020.8": "<la> buena"
+  },
+  "fd19bf4e08cd71c4": {
+   "20016033.2": "es arrojada"
+  },
+  "77540ff6beede641": {
+   "20028011.7": "la examina a fondo"
+  },
+  "f59bccc7d3eb7dd3": {
+   "22004012.8": "sellada"
+  },
+  "06c00500034c5d88": {
+   "23030008.9": "inscríbela"
+  },
+  "c500022de72d9457": {
+   "23030031.4": "será quebrantada"
+  },
+  "16711cd7b8567b97": {
+   "23044027.3": "sé secado"
+  },
+  "c8a8caadd41a91af": {
+   "23049017.4": "y [los que] te asolan"
+  },
+  "54c1da93b9e6fd4d": {
+   "23051009.15": "el que despedazó"
+  },
+  "c03dbcae043e6041": {
+   "23051010.4": "el que secó"
+  },
+  "4f4fde6663c8f6c6": {
+   "23060012.10": "quedarán asoladas"
+  },
+  "50e59100752e296d": {
+   "24007030.16": "para contaminarla",
+   "24032034.8": "para contaminarla"
+  },
+  "6607b31f2f991a1d": {
+   "24024002.4": "buenos"
+  },
+  "21451833895d7d17": {
+   "24024003.12": "[son] buenos"
+  },
+  "2abeac2bdf4108d3": {
+   "24032010.3": "y [lo] sellé"
+  },
+  "804d7dbec39cbfe0": {
+   "24032044.6": "y sellarán [lo]"
+  },
+  "c6e1f003d9022ef4": {
+   "24033012.9": "<el> desolado"
+  },
+  "f24e0f3d386f3fd1": {
+   "24042006.2": "bueno"
+  },
+  "9315a03ec0728b6b": {
+   "24048020.4": "ha sido quebrantado",
+   "24048039.2": "ha sido quebrantado"
+  },
+  "55f8c6bf07ae47dc": {
+   "25004001.6": "<el> hermoso"
+  },
+  "458f24d054fd6187": {
+   "26004007.7": "[será ] descubierto"
+  },
+  "4bca7e6f26a4b74f": {
+   "26004014.8": "[ha sido] contaminado"
+  },
+  "4e62a470a4567db0": {
+   "26022003.15": "para volverse inmunda"
+  },
+  "9c14d150c7308456": {
+   "26036031.8": "[eran] buenas"
+  },
+  "de6dee581ac4e4a4": {
+   "26040027.2": "[pertenecía] al atrio",
+   "26042003.9": "[pertenecía] al atrio"
+  },
+  "cdef5e00377c82ac": {
+   "27002015.10": "severo"
+  },
+  "25a8f960d313c3d9": {
+   "27011004.4": "y será dividido"
+  },
+  "1fcc797b52869a65": {
+   "33002010.8": "se ha vuelto inmundo"
+  },
+  "0d7c714e42c31682": {
+   "35002017.7": "los aterrorizará"
+  },
+  "66659e11430e5dde": {
+   "37001004.9": "[está] desolada",
+   "37001009.19": "[está] desolada"
   }
  }
 }

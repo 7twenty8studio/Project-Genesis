@@ -2439,6 +2439,7 @@
   },
   "50141bf708d0b942": {
    "5028003.1": "[serás] bendito",
+   "5028005.1": "[será] bendita",
    "5028006.1": "[serás] bendito"
   },
   "61d691f0be445966": {
@@ -2463,10 +2464,13 @@
    "14003005.3": "<la> grande",
    "16003027.8": "<la> grande",
    "2003003.8": "<la> grande",
+   "24032017.12": "<la> grande",
    "26017003.7": "<la> grande",
    "30006011.7": "<la> grande",
    "32001012.16": "<la> grande",
    "5004006.21": "<la> grande",
+   "5009029.7": "<la> grande",
+   "5011007.8": "<la> grande",
    "5029024.14": "<la> grande",
    "9012016.7": "<la> grande",
    "9019022.8": "<la> grande"
@@ -2481,6 +2485,7 @@
    "16013027.7": "<el> grande",
    "27008008.9": "<el> grande",
    "27008021.6": "<el> grande",
+   "5004036.12": "<el> grande",
    "5005025.7": "<el> grande",
    "5018016.20": "<el> grande",
    "7021005.16": "<el> grande",
@@ -2495,17 +2500,119 @@
   },
   "b70be49c2bc13774": {
    "17005014.9": "alta",
+   "17007009.23": "alta",
    "23002015.4": "alta",
    "24003006.17": "alta"
   },
   "ad51c8deffe1c03a": {
-   "24017002.10": "<los> altos"
+   "24017002.10": "<los> altos",
+   "5028052.8": "<los> altos"
   },
   "a76ca1013a9c36a6": {
    "26043014.15": "<el> grande"
   },
   "26d2e83c4645fa5f": {
    "26017003.8": "<la> grande de"
+  },
+  "01608a1e25d23747": {
+   "1012003.5": "y serán benditos",
+   "1028014.10": "y serán benditos"
+  },
+  "1449c99400ffa63c": {
+   "1027030.5": "de bendecir"
+  },
+  "da07eae813cea77d": {
+   "1031031.10": "arrancarías"
+  },
+  "1d41c02590924f48": {
+   "3021002.9": "y por su hija"
+  },
+  "982d5e5a6a7efacf": {
+   "3027013.3": "lo redimirá"
+  },
+  "853cc43b39663a54": {
+   "4006019.5": "cocido"
+  },
+  "b60f8c45d463fda8": {
+   "4020003.8": "hubiéramos muerto"
+  },
+  "b08fd00708f0d1bb": {
+   "7021006.8": "ha sido cortada"
+  },
+  "90f2652da940df91": {
+   "10001020.5": "anunciéis nuevas"
+  },
+  "586752fcde1dae1c": {
+   "10013036.17": "un grande"
+  },
+  "26f136c50d36ff44": {
+   "14033014.16": "y lo elevó"
+  },
+  "83c76f425ff1e10e": {
+   "17010002.4": "y su poderío"
+  },
+  "97edb4fcc1de8b49": {
+   "18035005.6": "son altas"
+  },
+  "8840d90a65b79dcc": {
+   "19069018.4": "redímelo"
+  },
+  "6a79f9daf4484a91": {
+   "19144012.4": "ya crecidas"
+  },
+  "404d71fcc086561f": {
+   "20004016.7": "y es quitado"
+  },
+  "0185cd4f195967ce": {
+   "23003016.5": "son altivas"
+  },
+  "6302434e909f88ab": {
+   "23048004.5": "y [era] un tendón de"
+  },
+  "cd03054546ee7f01": {
+   "23059003.3": "están contaminadas"
+  },
+  "df3687e6b005592f": {
+   "24006013.4": "el mayor de ellos"
+  },
+  "c07b33750a355cbc": {
+   "24009023.10": "la [persona] valiente"
+  },
+  "b537f417313b39b5": {
+   "24035007.27": "[estáis] peregrinando"
+  },
+  "b88614af8f9c0183": {
+   "24048025.1": "será cortado"
+  },
+  "05823298bbc12050": {
+   "24051058.11": "<las> altas"
+  },
+  "cc71501c9daebdb7": {
+   "26023020.5": "[era la] carne de"
+  },
+  "94d1f31593a096f7": {
+   "26024005.11": "han cocido"
+  },
+  "f656d094ddc584aa": {
+   "27008003.13": "[eran] altos"
+  },
+  "fafc7d5969fe21b0": {
+   "27008003.15": "[era] alto"
+  },
+  "3f162ad100185191": {
+   "27008003.18": "y el [que es] alto"
+  },
+  "33ad48e98480efa2": {
+   "32004010.12": "la habías hecho crecer"
+  },
+  "86b76228ee0c3c7b": {
+   "36003009.7": "purificado"
+  },
+  "aac056ae836e6296": {
+   "36003011.18": "para ser altiva"
+  },
+  "664232066fbc7370": {
+   "39001012.7": "[está] contaminada"
   }
  }
 }

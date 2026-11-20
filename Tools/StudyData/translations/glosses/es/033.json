@@ -231,15 +231,15 @@
   "baa90dbe5128ca9b": "[el] fin de",
   "d46bc13f51e5fdd8": "[el] borde de",
   "c5ceacc3c1293f4a": "[está] en [el] extremo de",
-  "d6077da960902a19": "al [el] fin de",
+  "d6077da960902a19": "a[l] fin de",
   "591b7fc8b7d52ff6": "el fin",
   "247d1f3087b5a69e": "en [el] borde de",
   "3425280cdd2542e8": "sobre [el] borde de",
   "72f5c95d1a74f635": "[el] extremo[s] de",
   "a112771a519e828f": "desde [el] fin",
   "aa17f8e2fbb58530": "[es] desde [el] fin de",
-  "35f60ee963a02e15": "al [el] borde de",
-  "dc4301872c2e7608": "y al [el] fin de",
+  "35f60ee963a02e15": "a[l] borde de",
+  "dc4301872c2e7608": "y a[l] fin de",
   "69fd07520feda21a": "y desde [el] fin de",
   "ad9efca1bce753b5": "y a desde [el] fin de",
   "48439ec9bc3444f0": "[el] límite de",
@@ -2543,7 +2543,149 @@
    "5026006.8": "duro"
   },
   "2ddf5025b36fd75c": {
+   "11012004.10": "<el> duro",
    "23014003.10": "<el> duro"
+  },
+  "cb70769396949f84": {
+   "1008005.11": "fueron vistas"
+  },
+  "1e10b1ea2e1de352": {
+   "2013007.11": "será vista",
+   "2013007.7": "será vista"
+  },
+  "ce23e5c88f879530": {
+   "2018026.8": "<el> difícil"
+  },
+  "d6077da960902a19": {
+   "2026005.9": "a [el] fin de"
+  },
+  "3616a9095ee2a066": {
+   "3014043.11": "haber raspado"
+  },
+  "c9979f7c312b336a": {
+   "3025030.17": "al [que] compró"
+  },
+  "97e19cef164e7632": {
+   "5001042.12": "[estaré] en vuestro medio"
+  },
+  "eb73a97e520e5372": {
+   "5003021.8": "[son] los [que] han visto"
+  },
+  "fc5f3563a0a8b83d": {
+   "5004003.2": "[son] los [que] vieron"
+  },
+  "4063fc7c3e37c8eb": {
+   "11008059.8": "cercanas",
+   "5004007.8": "cercano"
+  },
+  "5ecbdee7a02796ef": {
+   "5004012.12": "[estabais] viendo"
+  },
+  "4e563c27a8d12e43": {
+   "5006008.1": "y las atarás"
+  },
+  "08d54b94078a7faa": {
+   "5028068.12": "verlo"
+  },
+  "3670c6f876cda68a": {
+   "5031027.8": "<la> dura"
+  },
+  "06dc1c0ea077defd": {
+   "5034004.14": "te [la] he hecho ver"
+  },
+  "baa90dbe5128ca9b": {
+   "7006021.5": "[el] extremo de"
+  },
+  "11bed137ed1b5c79": {
+   "9004012.10": "[estaban] rasgadas"
+  },
+  "b355a319738db879": {
+   "9018001.8": "fue ligado"
+  },
+  "8269d1beaa1810a4": {
+   "9026012.13": "[hubo quien] viera"
+  },
+  "f68a5ef5622d9dee": {
+   "10018018.23": "y ha sido llamada"
+  },
+  "7df80e770566cbcc": {
+   "11011012.10": "lo arrancaré"
+  },
+  "83f8ff1af66e4446": {
+   "11011030.7": "y lo rasgó"
+  },
+  "0f16c98de0771f9f": {
+   "12019014.7": "y las leyó"
+  },
+  "0a60b38af1dfec6d": {
+   "14006040.8": "atentos",
+   "14007015.6": "atentos",
+   "19130002.6": "atentos"
+  },
+  "ea6a5e411cc981cd": {
+   "14009011.15": "habían sido vistas"
+  },
+  "bcd02593bab7a0f8": {
+   "14030008.3": "endurezcáis",
+   "19095008.2": "endurezcáis"
+  },
+  "8f7bc54988cfda71": {
+   "16001006.4": "atento",
+   "16001011.6": "atento"
+  },
+  "db18e94224680b5e": {
+   "17006001.14": "leídas en voz alta"
+  },
+  "0e91a1e35742fd7e": {
+   "20003003.5": "átalas"
+  },
+  "0d0e374110feeb1b": {
+   "20025025.2": "fresca"
+  },
+  "ca18d9511587b2fa": {
+   "23027008.6": "<el> feroz"
+  },
+  "58290fb648d5041e": {
+   "23037014.7": "y las leyó"
+  },
+  "aacde145dc6f5bf6": {
+   "23042020.1": "has visto"
+  },
+  "82e6cc3cd07c1638": {
+   "23055006.4": "invocadlo"
+  },
+  "709997580d622693": {
+   "23056007.17": "será llamada"
+  },
+  "0d96388e20321bae": {
+   "24007010.7": "es llamada",
+   "24007011.7": "es llamada",
+   "24007014.4": "es llamada",
+   "24007030.13": "es llamada"
+  },
+  "17404e24a95d66e1": {
+   "24018018.20": "prestemos atención"
+  },
+  "7dd8940e0c63bfbb": {
+   "24032008.28": "compra [lo]"
+  },
+  "8b0f962a78097ebf": {
+   "24036015.5": "y léelo en voz alta"
+  },
+  "673c85973b4a32b7": {
+   "24036021.12": "y lo leyó en voz alta"
+  },
+  "1a0dc87302cc7e3b": {
+   "24036023.7": "lo rasgó"
+  },
+  "c4c532f3de96eff7": {
+   "26019011.13": "y fue vista"
+  },
+  "8e4a35ab2b087a0d": {
+   "26039015.4": "y verá"
+  },
+  "bf8e9cd0d3515d01": {
+   "27007020.5": "[estaban] sobre su cabeza"
   }
  }
 }

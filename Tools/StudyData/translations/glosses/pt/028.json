@@ -465,7 +465,7 @@
   "8397616bb453e17f": "a seu povo",
   "6cc686024fcab83e": "e sobre teu povo",
   "c80f2241f19cbc3f": "Ó povos",
-  "988b87697736cf39": "dos [os] povos de",
+  "988b87697736cf39": "d[os] povos de",
   "70efaa794292d4d9": "para meu povo",
   "49d0dbba4656631a": "a teu povo",
   "54acbd0ebe8f249d": "para seu povo",
@@ -1514,7 +1514,7 @@
   "98ad8dbbc27a07b2": "sua aflição",
   "c7958994121ec5de": "sua aflição",
   "b3aabf0701136862": "mais que aflição",
-  "c8560a5bd19170ed": "da [a] aflição de",
+  "c8560a5bd19170ed": "d[a] aflição de",
   "eb4e9b9d789b0ba5": "sobre [a] aflição de",
   "b84968ca5e04343b": "sobre minha aflição",
   "8139b6b54aeb75f2": "por sua aflição",
@@ -1686,12 +1686,12 @@
   "d201a798eee7805b": "[o] pó de",
   "4aa55b55e137eabb": "o pó",
   "3ae38a9afba1f7ce": "como <o> pó",
-  "91e17deaef63763f": "do [o] pó",
+  "91e17deaef63763f": "d[o] pó",
   "d209aae68b36ea46": "como [o] pó de",
   "27efd94c5775dc09": "no pó",
   "ee319c0891824a45": "ao pó",
   "24a096be82f6da3f": "e pó",
-  "6c60a287f1d2471d": "e do [o] pó",
+  "6c60a287f1d2471d": "e d[o] pó",
   "f102e1023106719d": "seu pó",
   "064040525920533f": "seu pó",
   "9554656a16053f23": "[és] pó",
@@ -1704,7 +1704,7 @@
   "01e81184d9340114": "e teu pó",
   "9a5f18516aa7181c": "e seu pó",
   "7b3bdfd20a6f0252": "e seu pó",
-  "d0fcb6a09c05dd80": "e ao [o] pó de",
+  "d0fcb6a09c05dd80": "e a[o] pó de",
   "8f796d212e0cc093": "e no pó",
   "4ab1c50cd9094264": "e os escombros",
   "5ea993fa7462b667": "[os] pós de",
@@ -1794,7 +1794,7 @@
   "3edee0d4010b57f7": "e madeira<s> de",
   "55b4d116993adcdc": "e árvore[s]",
   "41dab8cbc8e27424": "e [é] uma árvore de",
-  "c8efb9025c850a07": "e da [a] árvore de",
+  "c8efb9025c850a07": "e d[a] árvore de",
   "0982cd4aa33ea282": "madeira<s>",
   "43af70572f1294ec": "árvores de",
   "5f0091ac1bb5e228": "madeira<s> de",
@@ -1809,7 +1809,7 @@
   "08411d1a914148d4": "tua árvore",
   "655096b1e7081bad": "sua árvore[s]",
   "2ccbd68fe233dabe": "entre [a] árvore[s] de",
-  "378cb65d297ea2ef": "da [a] árvore de",
+  "378cb65d297ea2ef": "d[a] árvore de",
   "2194592603986a65": "para <a> uma árvore",
   "b230695e58ce1ca1": "como <a> uma árvore",
   "b90381a6747ae5da": "como <a> árvore",
@@ -1871,7 +1871,7 @@
   "ff3a359b1bbb8cf0": "a [os] ídolos de",
   "632e0312526db6aa": "a <os> ídolos",
   "2a443c68fc8a8e06": "vossos trabalhadores",
-  "a4a96819c6e42ab4": "e da [a] dor de",
+  "a4a96819c6e42ab4": "e d[a] dor de",
   "4e65340563310bb9": "tua dor",
   "d291311b6128bdd6": "com dor",
   "8936c81725b1fbbb": "e por tristeza de",
@@ -1911,8 +1911,8 @@
   "90679f972ea799d0": "com conselho",
   "8521084d570a54e0": "com um plano",
   "4514703d42a715d3": "ao conselho",
-  "8c9e0ba0b94aaabf": "pelo [o] conselho de",
-  "81ba0e525a0ec109": "no [o] conselho de",
+  "8c9e0ba0b94aaabf": "pel[o] conselho de",
+  "81ba0e525a0ec109": "n[o] conselho de",
   "b9436d9c1d04426f": "a meu conselho",
   "c1fe2f4cb284bc75": "a meu conselho",
   "f115bb5c49264277": "com teu conselho",
@@ -2619,6 +2619,7 @@
   },
   "5505e6822de9b377": {
    "23060022.6": "poderosa",
+   "29001006.6": "poderosa",
    "33004007.7": "poderosa",
    "5009014.12": "poderosa",
    "5026005.19": "poderosa"
@@ -2626,6 +2627,119 @@
   "f00fb336540a9e92": {
    "33004003.7": "poderosas",
    "38008022.5": "poderosas"
+  },
+  "c8efb9025c850a07": {
+   "1002017.1": "e de [a] árvore de"
+  },
+  "378cb65d297ea2ef": {
+   "1003022.18": "de [a] árvore de"
+  },
+  "a4a96819c6e42ab4": {
+   "1005029.9": "e de [a] dor de"
+  },
+  "bc1c074e03261f64": {
+   "1009013.4": "na nuvem[-ens]",
+   "1009014.8": "na nuvem[-ens]",
+   "1009016.3": "na nuvem[-ens]"
+  },
+  "c8560a5bd19170ed": {
+   "2003017.4": "de [a] aflição de"
+  },
+  "28c0c3993abddb21": {
+   "2026015.7": "eretas",
+   "2036020.7": "eretas"
+  },
+  "ce822e821d99e1b1": {
+   "3011004.6": "de [os que] fazem subir"
+  },
+  "0d9745fde8d90500": {
+   "3013003.13": "[é] profunda",
+   "3013025.10": "[é] profunda",
+   "3013030.7": "[é] profunda",
+   "3013031.10": "[é] profunda",
+   "3013032.19": "[é] profunda",
+   "3013034.14": "[é] profunda"
+  },
+  "8da80dbd59a22baf": {
+   "3013004.7": "e [é] profunda"
+  },
+  "b24b2778daf92bfe": {
+   "4008002.6": "quando fizeres subir"
+  },
+  "ba7441c76c575e4a": {
+   "7013016.15": "o oferecerás"
+  },
+  "d19f041adf96e661": {
+   "10006022.11": "com elas"
+  },
+  "bda1cd5b06c48dfc": {
+   "10007010.15": "para afligi-lo"
+  },
+  "20a18ac88868a8ad": {
+   "10013012.6": "me humilhes"
+  },
+  "266ffeebeacc253b": {
+   "11009008.4": "altíssima",
+   "14007021.5": "altíssima"
+  },
+  "72d21f0aa0b64e3c": {
+   "11010003.10": "oculta"
+  },
+  "70e108ae7269e7cf": {
+   "12018017.28": "<o> de cima",
+   "23007003.17": "<o> de cima",
+   "23036002.17": "<o> de cima"
+  },
+  "3f6a979e3051bb22": {
+   "13007024.9": "<a> de cima"
+  },
+  "0cfe86fcefd11df6": {
+   "13028021.9": "e [estarão] contigo"
+  },
+  "255772f634c2d4b5": {
+   "14023020.22": "<a> de cima",
+   "16003025.10": "<a> de cima",
+   "24020002.13": "<a> de cima",
+   "26009002.7": "<a> de cima"
+  },
+  "365fc74260196615": {
+   "18011002.4": "será respondida?"
+  },
+  "fc0a970db28d005a": {
+   "19019009.4": "duradouro"
+  },
+  "6b21514894223519": {
+   "19023004.11": "[estás] comigo"
+  },
+  "94ae04d0c1daf275": {
+   "19025002.7": "se regozijem"
+  },
+  "005161b6ca48b034": {
+   "19094003.8": "exultarão"
+  },
+  "9e2161f7f809ed46": {
+   "19102024.4": "me levantes"
+  },
+  "e8db8af12d78e2cd": {
+   "20020005.2": "profunda"
+  },
+  "b0710fa424836540": {
+   "20021030.6": "[há] conselho"
+  },
+  "a9f3af0e8dff70c7": {
+   "22005014.9": "coberta"
+  },
+  "823f166f867092fa": {
+   "23008007.9": "<as> poderosas"
+  },
+  "e536cab35f9c1a0f": {
+   "25003056.4": "ocultes"
+  },
+  "1e05f2db7ba5e63f": {
+   "26017014.9": "para que continue ele"
+  },
+  "30c51f347ad8739a": {
+   "26023032.8": "<o> profundo"
   }
  }
 }

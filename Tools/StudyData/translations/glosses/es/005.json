@@ -1444,8 +1444,8 @@
   "4ea82b06cffaa792": "y has considerado con atención",
   "d59966fa25829dc1": "entre",
   "94ff61b39bb17b98": "y entre",
-  "05ba507921425763": "entre mí",
-  "ea969fdd9261cabd": "y entre ti",
+  "05ba507921425763": "entre yo",
+  "ea969fdd9261cabd": "y entre tú",
   "704859d8ab5e965b": "de entre",
   "68040a4bd0ad4d1b": "y entre vosotros",
   "5441b8155eeda2dc": "entre nosotros",
@@ -1454,27 +1454,27 @@
   "0d5c5ed0a7b0db7a": "y de entre",
   "1b5edf5b88cb3886": "entre nosotros",
   "180ade7e58573f46": "entre ellos",
-  "de63c3779a5c79ff": "entre ti",
+  "de63c3779a5c79ff": "entre tú",
   "c504a4c3fa9e93ba": "entre sí",
   "bd614df375796dd1": "de entre",
   "da9fd70f1716f0ab": "[estaba] entre ellos",
   "7a0b4750915bb59a": "entre vosotros",
   "2ff6a500e46abb31": "[estaba] entre ellos",
   "3b9e6ac0e0f3feca": "[estaban] entre",
-  "a02f658245d79821": "[esté] entre mí",
-  "83a4b1d3bbc39225": "y entre ti",
+  "a02f658245d79821": "[esté] entre yo",
+  "83a4b1d3bbc39225": "y entre tú",
   "c0e60c9668be5ae0": "y entre ellos",
   "66f4ab12973407af": "[estaba] entre",
   "36668dd36b72d9b6": "[estaba] entre él",
   "448faa11ac8b8604": "entre",
   "32503b37b28b2731": "[está] entre",
   "d00e73dbb53d8192": "entre nosotros",
-  "7cd59ae3a56f814b": "[está] entre mí",
-  "7119caf14ec4bd03": "[estará] entre mí",
+  "7cd59ae3a56f814b": "[está] entre yo",
+  "7119caf14ec4bd03": "[estará] entre yo",
   "a53cf9ba9be29c3f": "entre vosotros",
   "be2225dec8b254fb": "y entre él",
   "2b317d008cc9d558": "y [está] entre",
-  "c82d45dff2376abf": "y entre ti",
+  "c82d45dff2376abf": "y entre tú",
   "b954a3bb5122b204": "y entre",
   "6f6ccfcd48e061c4": "entre",
   "afad4074b51329ce": "de entre",
@@ -2045,6 +2045,178 @@
   },
   "f5fbef347c9986aa": {
    "13007028.3": "[eran] Bet-"
+  },
+  "a7882fd54fb90732": {
+   "1002019.13": "y [los] trajo"
+  },
+  "203c9baa4a609790": {
+   "10023016.14": "y [la] trajeron",
+   "1037032.5": "y [la] trajeron"
+  },
+  "b83c3a6cc672e6af": {
+   "3014042.4": "y traerán [las]"
+  },
+  "1ce718d5f86a90dd": {
+   "3017003.3": "de [la] casa de"
+  },
+  "4fd2334701d324e8": {
+   "3023014.11": "traer vosotros"
+  },
+  "d92cd6a9a29596c9": {
+   "3023015.6": "traer vosotros"
+  },
+  "0706be67300477b2": {
+   "3027010.15": "por un animal"
+  },
+  "be2225dec8b254fb": {
+   "6003004.5": "y entre ella"
+  },
+  "df8ea0b9713b3634": {
+   "6003008.9": "cuando vengáis"
+  },
+  "c4c416949e3b774b": {
+   "6003015.1": "y así como vinieron"
+  },
+  "f89f8ba8a80ade5d": {
+   "7007017.9": "[estaré] viniendo"
+  },
+  "202ab2371cd97c18": {
+   "9005001.6": "y la trajeron"
+  },
+  "f6a1837a1322640e": {
+   "9017054.6": "y la trajo"
+  },
+  "01b1e5d19746fd0d": {
+   "9020040.12": "lleva [los]"
+  },
+  "1f5695949bed74c1": {
+   "9025019.7": "[estaré] viniendo"
+  },
+  "f9c00cb67f23fb25": {
+   "10013010.16": "y [las] trajo"
+  },
+  "5c7e5f66387ca5e3": {
+   "11003018.18": "[estábamos] en la casa"
+  },
+  "2646e45fe4941447": {
+   "12003009.16": "y al animal[es]"
+  },
+  "c15b7cd21da60d04": {
+   "12018030.2": "haga confiar",
+   "23036015.2": "haga confiar"
+  },
+  "2abc5d2551f2ec16": {
+   "12022020.17": "[voy a] traer"
+  },
+  "011f161fbf612837": {
+   "13011002.11": "y el [que] traía"
+  },
+  "69f894f5368a90fe": {
+   "13011018.13": "y [la] trajeron"
+  },
+  "baae6cae59e4aeff": {
+   "13011019.14": "la trajeron"
+  },
+  "c76ebfc27f9c26b9": {
+   "13027001.16": "que vienen"
+  },
+  "63e4adbec262105d": {
+   "13027032.6": "entendido"
+  },
+  "6decd25c5fd8b40d": {
+   "14032010.9": "apoyándoos"
+  },
+  "9c757bebea27bb67": {
+   "16013015.8": "y [algunos que] traían"
+  },
+  "533e6cbf0ae12194": {
+   "16013015.19": "y [algunos que] [los] traían"
+  },
+  "f10754a5501045ba": {
+   "18014003.7": "¿traes?"
+  },
+  "846d9783aee22977": {
+   "18022004.3": "¿va?"
+  },
+  "a0fdbe1a6b29a41d": {
+   "19045014.7": "[son] traídas"
+  },
+  "a247708933d46141": {
+   "19053005.12": "[los] has avergonzado"
+  },
+  "4e9b8908252726d2": {
+   "19101002.5": "vendrás"
+  },
+  "83b8017da72acd76": {
+   "19119031.5": "me avergüences"
+  },
+  "62433cb137c3e648": {
+   "20008019.7": "escogida",
+   "20010020.2": "escogida"
+  },
+  "ac1a2ed374e476a0": {
+   "23024003.4": "y ciertamente <ser saqueada>"
+  },
+  "9b077ca269ed2167": {
+   "23024023.3": "y será avergonzado"
+  },
+  "c6710364df694872": {
+   "23046011.11": "lo traeré"
+  },
+  "3044db503759d1d7": {
+   "24008003.1": "y será escogida"
+  },
+  "2ccdf1be9ab2dcf1": {
+   "24008007.12": "viniendo ellos"
+  },
+  "a37ee0921edb42d7": {
+   "24010009.4": "es traída"
+  },
+  "fc327b2106b1ee1e": {
+   "24017021.11": "y [lo] traeréis"
+  },
+  "82b2a1c12825f060": {
+   "24022028.2": "menospreciada"
+  },
+  "12e66a5d58937608": {
+   "24040003.1": "y [lo] ha traído"
+  },
+  "9b8b87d5b5bff4c7": {
+   "26004014.17": "ha entrado"
+  },
+  "f1fc6fb5d9362e28": {
+   "26016006.4": "revolcándote",
+   "26016022.13": "revolcándote"
+  },
+  "4fc9f2f6fd41ffa1": {
+   "26017004.5": "y la trajo"
+  },
+  "bdaaafee5533997f": {
+   "26023044.3": "como va"
+  },
+  "e41421b324c1692f": {
+   "26041009.14": "[pertenecían] a la casa"
+  },
+  "8d1559eef66d4200": {
+   "26044002.18": "ha ido"
+  },
+  "d28ce2925096031a": {
+   "26044007.1": "cuando trajisteis"
+  },
+  "08accb0cdfe2557c": {
+   "26047009.19": "han ido"
+  },
+  "3a4481f9f3b1b2c8": {
+   "27007008.9": "entre ellos"
+  },
+  "73c9ea7340f3b94f": {
+   "29001011.1": "se avergüenzan"
+  },
+  "85bea904fa1d454d": {
+   "37001006.3": "y habéis traído"
+  },
+  "c9790ecc8823f4bb": {
+   "38007003.5": "[pertenecían] a [la] casa de"
   }
  },
  "checked": [

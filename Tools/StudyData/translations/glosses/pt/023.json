@@ -1997,9 +1997,9 @@
   "2c35ed991e2f553f": "e agiu como estranho",
   "a61627799950eaf2": "e desgraça",
   "cdf3caa7d5592b9a": "sua desgraça",
-  "f422d17ba81e033f": "estranheza",
-  "f6732493b0ab175c": "<a> estranheza",
-  "3c6997c95d5eac02": "<a> estranheza de"
+  "f422d17ba81e033f": "estrangeiro",
+  "f6732493b0ab175c": "<o> estrangeiro",
+  "3c6997c95d5eac02": "<o> estrangeiro de"
  },
  "notes": {
   "5b4d7a5b7e702c23": "The English gloss is cut short (\"ering\", for \"offering\"); translated as the infinitive of offering freewill offerings."
@@ -2562,5 +2562,192 @@
   "9cecbc658fbe7270",
   "d72e099816841ce4"
  ],
- "occurrences": {}
+ "occurrences": {
+  "4a861e5914f4f48b": {
+   "1004012.11": "e fugitivo",
+   "1004014.12": "e fugitivo"
+  },
+  "f422d17ba81e033f": {
+   "1017012.15": "terra estrangeira",
+   "1017027.10": "terra estrangeira",
+   "24005019.20": "estrangeirice",
+   "24008019.19": "estrangeirice",
+   "3022025.3": "terra estrangeira"
+  },
+  "9e00a97a9b9ac0c7": {
+   "1032008.8": "e o atacará"
+  },
+  "4219e8e45e95f7a1": {
+   "1037021.7": "o firamos"
+  },
+  "b25b6b4605735e52": {
+   "2007025.5": "ferir"
+  },
+  "c4a9c5262c3b482f": {
+   "2012023.24": "ferir[-vos]"
+  },
+  "c78bce9de7ea12ef": {
+   "2027010.5": "[serão] de bronze",
+   "2027011.12": "[serão] de bronze",
+   "2027017.10": "[serão] de bronze",
+   "2027018.14": "[serão] de bronze",
+   "2027019.11": "[serão] de bronze"
+  },
+  "f6ded39de5787c11": {
+   "4011031.9": "e [as] deixou"
+  },
+  "b2968a5256029ee5": {
+   "4014012.1": "o ferirei"
+  },
+  "69a378c8901685ac": {
+   "4019009.7": "e [as] depositará"
+  },
+  "f011471e6615c6ed": {
+   "19113008.5": "[as] nobres [pessoas] de",
+   "4021018.5": "[os] nobres [homens] de"
+  },
+  "c6e36172231fce1a": {
+   "6003013.2": "quando repousarem"
+  },
+  "75dcdbbe31b2a41d": {
+   "7007013.22": "e a feriu"
+  },
+  "9e4e956609d42f95": {
+   "8002019.10": "[o que] atentou para ti"
+  },
+  "354a6c8e57ccd7f3": {
+   "9008003.10": "e desviaram"
+  },
+  "8f5343d3748928fe": {
+   "9017035.10": "e o feri",
+   "9017035.3": "e o feri"
+  },
+  "c492c8a43486c462": {
+   "10003036.3": "o notaram"
+  },
+  "690fe09fe58c304f": {
+   "10006010.12": "e a desviou",
+   "13013013.10": "e a desviou"
+  },
+  "1ca757a0f2a8735f": {
+   "10023007.2": "[que] tocará"
+  },
+  "095ec35537804cb8": {
+   "12015016.16": "e [a] feriu"
+  },
+  "6040d397593a3a99": {
+   "14004008.4": "e [as] pôs"
+  },
+  "5f62e654fed1d71c": {
+   "14013009.2": "lançastes fora"
+  },
+  "071eef7618442cd5": {
+   "18013025.2": "levada",
+   "23041002.16": "levada"
+  },
+  "26ac54c157b37c3d": {
+   "18024013.6": "dão atenção a"
+  },
+  "b15d3e781eb93108": {
+   "18038032.7": "guiarás? as"
+  },
+  "7b35472dcc02f5e8": {
+   "19001004.8": "a leva"
+  },
+  "43983a5d365bd210": {
+   "19035015.6": "feridas [pessoas]"
+  },
+  "fa1bed34d6d84c5b": {
+   "19036011.8": "me faça vaguear"
+  },
+  "1934cac1b2714197": {
+   "19102011.3": "estendida"
+  },
+  "f7da1d07c4494ae8": {
+   "19135008.1": "que <ele> abateu",
+   "19135010.1": "que <ele> abateu"
+  },
+  "d6798b9c14ad799e": {
+   "20008009.2": "[são] retas"
+  },
+  "e15810cea0a95989": {
+   "20024026.5": "retas"
+  },
+  "445f1c409f18cc34": {
+   "22008012.8": "[pertencem] a [os que] guardam"
+  },
+  "be19a489629d9a56": {
+   "23005002.3": "e a plantou"
+  },
+  "a2584ee2c603175c": {
+   "23006007.1": "e [a] fez tocar"
+  },
+  "1e41dd8ee9bf47b3": {
+   "23009013.5": "o [que] o feriu"
+  },
+  "70c1b08a3d4a64e7": {
+   "23010015.10": "[o] [que] a brande"
+  },
+  "2175cce73412debb": {
+   "23010020.14": "[o] [que] o feriu",
+   "23027007.2": "[o] [que] o feriu"
+  },
+  "c5d60ed1590acd80": {
+   "23013014.3": "acossada"
+  },
+  "6dff8c5142b2fe4e": {
+   "23019007.11": "será levada"
+  },
+  "183a292d5fafb639": {
+   "23025012.6": "[a] fará tocar"
+  },
+  "b4aba7592db23502": {
+   "23033023.1": "estão soltas"
+  },
+  "f4bde136823ab584": {
+   "23050006.3": "a [os que] [as] feriram"
+  },
+  "db3adb2fb899a514": {
+   "24014008.11": "[que] se desviou"
+  },
+  "4c2a7919d27aa66a": {
+   "24021005.5": "estendida"
+  },
+  "593a66e2821d75c9": {
+   "24027011.10": "e a deixarei ficar"
+  },
+  "b9a4cca5bd63b787": {
+   "24031015.15": "ser consolada"
+  },
+  "8f473988a144fe82": {
+   "26001022.9": "estendida"
+  },
+  "616f35ae8e98cbed": {
+   "26005002.12": "[a] ferirás"
+  },
+  "c050253991d852c9": {
+   "26013014.7": "e o farei tocar"
+  },
+  "4b77024276ac6941": {
+   "26016054.8": "quando consolas tu"
+  },
+  "90eebdf9d64ac962": {
+   "26046009.32": "defronte dela"
+  },
+  "a83992521358b5fe": {
+   "27007004.13": "e foi levantada"
+  },
+  "e91071d68c62ed0d": {
+   "33001004.10": "derramada"
+  },
+  "56d0e2c78609496a": {
+   "34003012.7": "serão sacudidas"
+  },
+  "fda07332c90762e0": {
+   "38004002.21": "[pertencem] às lâmpadas"
+  },
+  "158c443525f0609b": {
+   "38005011.9": "e será posto"
+  }
+ }
 }

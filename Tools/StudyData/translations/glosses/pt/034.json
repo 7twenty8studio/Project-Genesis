@@ -302,7 +302,7 @@
   "c244c6de4914687a": "[à] cabeceira de",
   "81b650dbcd75c739": "muitos",
   "4015418a463975de": "grande",
-  "39abbfb298a1b357": "muitos [povos]",
+  "39abbfb298a1b357": "muitas [pessoas]",
   "ee737a0bc41a3bd8": "muitas",
   "176046dcbb2b15a2": "numeroso",
   "ea17ec0136f75681": "muito",
@@ -318,7 +318,7 @@
   "7e68a1726be92fd7": "muitos",
   "dfc499816406e09d": "[são] grandes",
   "cb06b3676e77d964": "grande de",
-  "389839ddef33e043": "e muitos [povos]",
+  "389839ddef33e043": "e muitas [pessoas]",
   "cf32e0fd2e9639bd": "e numeroso",
   "cdffea450cbc6de3": "<os> grandes",
   "1a19a508c83fc97e": "<os> muitos",
@@ -334,7 +334,7 @@
   "5e9ad82fb6a09f99": "[demasiado] abundante",
   "a625a28b8cd8b0ef": "e muitos",
   "fb3d404830a01126": "e grande",
-  "a26e198f15bcc104": "aos muitos [povos]",
+  "a26e198f15bcc104": "às muitas [pessoas]",
   "4f13e058f84cbcde": "para os muitos",
   "d7b91dfab3642f6a": "muitos [ossos]",
   "5ca6253337ab71ce": "muitas [coisas]",
@@ -377,19 +377,19 @@
   "cfee7808d31bde13": "e [a] grandeza de",
   "d01185d6160050df": "e <os> muitos",
   "7fbac3e57dbc9f19": "abundância de",
-  "288004dabf76b4f9": "<entre> muitos [povos]",
+  "288004dabf76b4f9": "<entre> muitas [pessoas]",
   "3634c0095a89ef6e": "para muitos",
-  "390254f2663c04ab": "para muitos [povos]",
-  "cc15d2d2f734eafd": "mais que muitos [povos]",
+  "390254f2663c04ab": "para muitas [pessoas]",
+  "cc15d2d2f734eafd": "mais que muitas [pessoas]",
   "a8f8a686d9c13e21": "por muitos",
   "4636eb2503435b80": "com grandeza de",
-  "2135eb42a6cf961b": "entre os muitos [povos]",
-  "1ffdaa84cf19df52": "por <os> muitos [povos]",
-  "9f768ece08d5ec5a": "sobre os muitos [povos]",
-  "4b449fb0c0b05ea4": "a <os> muitos [povos]",
-  "33aaf5c543433ce0": "<de> os muitos [povos]",
+  "2135eb42a6cf961b": "entre as muitas [pessoas]",
+  "1ffdaa84cf19df52": "por <as> muitas [pessoas]",
+  "9f768ece08d5ec5a": "sobre as muitas [pessoas]",
+  "4b449fb0c0b05ea4": "a <as> muitas [pessoas]",
+  "33aaf5c543433ce0": "<de> as muitas [pessoas]",
   "0b76684e2e04757a": "[sois] os muitos",
-  "97026f7084985fb2": "os muitos [povos]",
+  "97026f7084985fb2": "as muitas [pessoas]",
   "c11b618eb5a25cf3": "o muito",
   "cc1b9966a6c7e287": "[o] chefe de",
   "caaaa002df29b0a0": "e [os] chefes de",
@@ -469,7 +469,7 @@
   "ce9929d9dc5511a3": "eram muitos",
   "98c669736f9818cf": "serão muitos",
   "452ac1e2377d50b1": "é grande",
-  "e1be581d86388b71": "e têm sido muitos",
+  "e1be581d86388b71": "e foram muitos",
   "d4d32e3c284fdd49": "e serão muitos",
   "e878ba1c915a2c79": "e se tornará grande",
   "8fc593d8a7fd45e0": "e se multiplicará",
@@ -604,7 +604,7 @@
   "045d24f40893aaf8": "haviam aumentado",
   "96b1523b7492f7a5": "aumentaram",
   "fb949f055867a478": "eram numerosos",
-  "5bb2754069cf14b3": "tem sido grande",
+  "5bb2754069cf14b3": "foi grande",
   "de43a550529473c6": "e te multiplicarei",
   "d8f4ec7add85270a": "e os multiplicarei",
   "2afec7d051f6e420": "e aumentarás",
@@ -1722,27 +1722,27 @@
   "9e1cb362da8e39ad": "e útero",
   "43b11a0a51349f85": "dois úteros",
   "298c8e472cd99b39": "[o] útero",
-  "bfe1d9b60480b7cc": "tuas compaix<ões>",
-  "e28aff5db56bbe12": "suas compaix<ões>",
-  "34d45537bdd299ed": "compaix<ões>",
-  "5ba5c2b102e4c335": "e compaix<ões>",
-  "97d8994cb7ba214d": "e em compaix<ões>",
-  "454d3adc537a4820": "<as> compaix<ões>",
-  "292fa65c7e4a5f4c": "e [as] compaix<ões> de",
-  "f989224093140aea": "e tuas compaix<ões>",
-  "a799026b8e5aa389": "e suas compaix<ões>",
-  "a3172dcc40a9b842": "e <a> compaix<ões>",
-  "769b6b8898743821": "e conforme tuas compaix<ões>",
-  "09c1464a57d0e32e": "e em tuas compaix<ões>",
-  "3ad0b0c1260604c2": "suas compaix<ões>",
-  "4064424e0cdd115a": "<a> compaix<ões>",
+  "bfe1d9b60480b7cc": "tuas compaixão<ões>",
+  "e28aff5db56bbe12": "suas compaixão<ões>",
+  "34d45537bdd299ed": "compaixão<ões>",
+  "5ba5c2b102e4c335": "e compaixão<ões>",
+  "97d8994cb7ba214d": "e em compaixão<ões>",
+  "454d3adc537a4820": "<as> compaixão<ões>",
+  "292fa65c7e4a5f4c": "e [as] compaixão<ões> de",
+  "f989224093140aea": "e tuas compaixão<ões>",
+  "a799026b8e5aa389": "e suas compaixão<ões>",
+  "a3172dcc40a9b842": "e <a> compaixão<ões>",
+  "769b6b8898743821": "e conforme tuas compaixão<ões>",
+  "09c1464a57d0e32e": "e em tuas compaixão<ões>",
+  "3ad0b0c1260604c2": "suas compaixão<ões>",
+  "4064424e0cdd115a": "<a> compaixão<ões>",
   "5e6ed34189af42d9": "em [objetos de] compaixão",
-  "45ba449db1f34d98": "em compaix<ões>",
-  "4af0fd842a8c24bb": "a compaix<ões>",
-  "798602ac3c70052e": "com compaix<ões>",
-  "f22dc94a3c106ebd": "conforme tuas compaix<ões>",
-  "3712518c69015320": "em tuas compaix<ões>",
-  "c79e56e419dd56ad": "conforme suas compaix<ões>",
+  "45ba449db1f34d98": "em compaixão<ões>",
+  "4af0fd842a8c24bb": "a compaixão<ões>",
+  "798602ac3c70052e": "com compaixão<ões>",
+  "f22dc94a3c106ebd": "conforme tuas compaixão<ões>",
+  "3712518c69015320": "em tuas compaixão<ões>",
+  "c79e56e419dd56ad": "conforme suas compaixão<ões>",
   "589f9dfe87e25846": "Raão",
   "e5f9e378c50406a8": "desde [o] útero",
   "4260ebb23b7c9c0e": "um útero",
@@ -1752,7 +1752,7 @@
   "9b76a2d94403779b": "e seu útero",
   "bca1d4429ee2a2ca": "[o] útero",
   "25cca6dd16407460": "no útero",
-  "76899531cce50abe": "e compaix<ões>",
+  "76899531cce50abe": "e compaixão<ões>",
   "2fa769447080520d": "o abutre egípcio <para>",
   "bbd3359971d003ff": "o abutre egípcio",
   "c066e650773ab22b": "compassivas",
@@ -2492,11 +2492,345 @@
    "5026005.20": "e numerosa"
   },
   "81b650dbcd75c739": {
-   "19093004.3": "muitas"
+   "10022017.6": "muitas",
+   "14032004.20": "muitas",
+   "19018016.6": "muitas",
+   "19029003.11": "muitas",
+   "19032006.12": "muitas",
+   "19037016.6": "muita",
+   "19077019.5": "muitas",
+   "19093004.3": "muitas",
+   "19097001.7": "muitas",
+   "19135010.3": "muitas",
+   "19144007.7": "muitas",
+   "21007029.14": "muitas",
+   "22008007.2": "muitas",
+   "23005009.7": "muitas",
+   "23017013.4": "muitas",
+   "23023003.2": "muitas",
+   "23052015.4": "muitas",
+   "24022008.3": "muitas",
+   "24025014.7": "muitas",
+   "24027007.19": "muitas",
+   "24036032.29": "muitas",
+   "24051013.4": "muitas",
+   "24051055.13": "muitas",
+   "26001024.7": "muitas",
+   "26017005.10": "muitas",
+   "26017008.6": "muitas",
+   "26019010.11": "muitas",
+   "26026003.12": "muitas",
+   "26027003.11": "muitas",
+   "26027015.5": "muitas",
+   "26027026.2": "muitas",
+   "26031005.13": "muitas",
+   "26031007.10": "muitas",
+   "26031015.17": "muitas",
+   "26032013.7": "muitas",
+   "26038023.6": "muitas",
+   "26039027.13": "muitas",
+   "26043002.11": "muitas",
+   "30005012.3": "muitas",
+   "33004002.3": "muitas",
+   "33004011.5": "muitas",
+   "35002008.5": "muitas",
+   "35003015.6": "muitas",
+   "38002011.3": "muitas",
+   "4020011.12": "muitas",
+   "4024007.6": "muitas",
+   "5007001.14": "muitas",
+   "5015006.10": "muitas",
+   "5015006.16": "muitas",
+   "5028012.20": "muitas"
   },
   "176046dcbb2b15a2": {
    "18036028.7": "numerosa",
    "2012038.3": "numerosa"
+  },
+  "6f799f5a9f60fcce": {
+   "1026001.6": "<a> anterior"
+  },
+  "130390398f70f2fb": {
+   "1037024.6": "[estava] vazia"
+  },
+  "57393b9defb717d5": {
+   "1038028.14": "primeiro",
+   "11018025.10": "primeiro",
+   "24016018.2": "primeiro",
+   "4002009.14": "primeiro"
+  },
+  "39abbfb298a1b357": {
+   "16006018.2": "muitos [homens]",
+   "18004003.3": "muitos [homens]",
+   "23008015.3": "muitos [homens]",
+   "39002008.6": "muitos [homens]"
+  },
+  "bd8a767895da6dfd": {
+   "2028020.2": "<a> quarta",
+   "2039013.2": "<a> quarta",
+   "6019017.4": "<a> quarta"
+  },
+  "8cf8a48849cb5720": {
+   "2034001.20": "as anteriores"
+  },
+  "f9711ab71b36b050": {
+   "11006001.13": "<o> quarto",
+   "11006037.2": "<o> quarto",
+   "12018009.3": "<o> quarto",
+   "24025001.11": "<o> quarto",
+   "24028001.10": "<o> quarto",
+   "24036001.3": "<o> quarto",
+   "24045001.19": "<o> quarto",
+   "24046002.20": "<o> quarto",
+   "24051059.19": "<o> quarto",
+   "3019024.2": "<o> quarto",
+   "38006003.6": "<o> quarto"
+  },
+  "ee737a0bc41a3bd8": {
+   "16009030.4": "muitos",
+   "20019021.1": "muitos",
+   "21006003.6": "muitos",
+   "27011040.14": "muitos",
+   "3025051.3": "muitos"
+  },
+  "1c625f5befd33189": {
+   "3026017.12": "[há quem] persegue"
+  },
+  "01ce71f919cb8d05": {
+   "4026056.7": "[os] muitos"
+  },
+  "d050c4acaa1d656d": {
+   "12025027.23": "[a] cabeça de",
+   "24052031.23": "[a] cabeça de",
+   "4031049.7": "[a] cabeça de"
+  },
+  "c11b618eb5a25cf3": {
+   "4035008.8": "os muitos"
+  },
+  "c480740002959991": {
+   "5001013.9": "<em> vossos chefes"
+  },
+  "c3d59930a8c3f99f": {
+   "5010002.10": "<as> anteriores"
+  },
+  "83b34d311d80d51d": {
+   "5015013.7": "vazio",
+   "5016016.25": "vazios"
+  },
+  "4c4b3c9085721773": {
+   "5019021.13": "por pé"
+  },
+  "4fd65899d5a1e990": {
+   "13018008.8": "muito",
+   "14014014.18": "muito",
+   "14017013.2": "muitos",
+   "14025013.22": "muito",
+   "19062002.8": "muito",
+   "19078015.6": "muito",
+   "19089007.5": "muito",
+   "32004011.23": "muito",
+   "5025003.11": "muito"
+  },
+  "088c43b1ffa19aa9": {
+   "5027014.9": "alta"
+  },
+  "b8cbc796ef13c814": {
+   "5028044.8": "<por> [a] cabeça"
+  },
+  "a7fbfd73a51b08e5": {
+   "5032027.11": "foram levantadas"
+  },
+  "c13d6fd87c54968c": {
+   "8001021.4": "e vazia"
+  },
+  "78ee680393583c29": {
+   "8003010.10": "<a> anterior"
+  },
+  "c876fa82c13372ef": {
+   "10001022.14": "vazia",
+   "24014003.13": "vazios",
+   "8003017.11": "vazia"
+  },
+  "0b94c4ee2ccacccf": {
+   "9002001.7": "é exaltado"
+  },
+  "e86e1a206e0de5f9": {
+   "9002003.2": "multipliqueis"
+  },
+  "b0f53f21ac2e10e9": {
+   "12001014.11": "<as> anteriores"
+  },
+  "e5dd48387192e82a": {
+   "12002003.19": "tua cabeça",
+   "12002005.18": "tua cabeça"
+  },
+  "1a19a508c83fc97e": {
+   "12009022.17": "<as> muitas",
+   "26026019.20": "<as> muitas"
+  },
+  "d7fdce1257847d34": {
+   "13024007.3": "<a> primeira",
+   "13025009.3": "<a> primeira",
+   "15003012.11": "<a> primeira",
+   "26040021.11": "<a> primeira"
+  },
+  "55cc57a950039ab1": {
+   "13026021.6": "[as] cabeças de",
+   "13026032.7": "[as] cabeças de",
+   "13027001.4": "[as] cabeças de"
+  },
+  "628d2ad9905803dc": {
+   "14013015.5": "quando deu [o] sinal de batalha"
+  },
+  "7f6ec74f7c25f813": {
+   "14020012.11": "<a> grande",
+   "14020015.20": "<a> grande",
+   "23016014.14": "<a> grande"
+  },
+  "1028c1faafd68918": {
+   "14029003.3": "<o> primeiro",
+   "38006002.2": "<o> primeiro"
+  },
+  "4ff3debf5c86dea5": {
+   "14030017.2": "muitos"
+  },
+  "389839ddef33e043": {
+   "14032023.1": "e muitos [homens]",
+   "39002006.13": "e muitos [homens]"
+  },
+  "76ff97c7c2c6ff11": {
+   "14035013.10": "e [as] trouxeram depressa"
+  },
+  "67563ffa2680e23d": {
+   "16003008.18": "<o> Largo",
+   "16012038.16": "<o> Largo"
+  },
+  "cc15d2d2f734eafd": {
+   "16007002.18": "mais que muitos [homens]"
+  },
+  "4faf47c5c6291e93": {
+   "17001014.18": "primeiro"
+  },
+  "1ffdaa84cf19df52": {
+   "17004003.19": "por <os> muitos [homens]"
+  },
+  "765bb01fea71bc73": {
+   "18005025.3": "[será] numerosa"
+  },
+  "2feac698a025e7a8": {
+   "18022012.9": "são altas"
+  },
+  "e1be581d86388b71": {
+   "18035006.6": "e têm sido muitas"
+  },
+  "32a5c3b760048aa5": {
+   "18038015.5": "levantado"
+  },
+  "c7d52b6be7ec2a9f": {
+   "19012008.4": "quando é exaltada"
+  },
+  "be51aaff99232471": {
+   "19018027.7": "levantados"
+  },
+  "bfe1d9b60480b7cc": {
+   "19040011.5": "tuas compaixão<-ões>",
+   "19079008.8": "tua compaixão<ões>"
+  },
+  "dcff03fbaf462cd6": {
+   "19060007.7": "minha cabeça",
+   "19108008.7": "minha cabeça"
+  },
+  "84e8850045232f16": {
+   "19065009.4": "muito"
+  },
+  "d6b2ef78b4f989b8": {
+   "19075010.5": "serão levantados"
+  },
+  "584f9b8edf03b827": {
+   "19089017.6": "é exaltado"
+  },
+  "6598e56643b58942": {
+   "19089024.5": "será exaltado",
+   "19112009.8": "será exaltado"
+  },
+  "94e83c74aad9390f": {
+   "19119160.1": "[a] cabeça de"
+  },
+  "7d442ce85ca0dc85": {
+   "20006017.2": "altivos"
+  },
+  "ecaffc67acba7e6e": {
+   "20030012.6": "foi lavada"
+  },
+  "635521e6e661e018": {
+   "21005007.6": "muitas"
+  },
+  "5f63b17b6be1622c": {
+   "23007008.2": "[é] [a] cabeça de"
+  },
+  "d01185d6160050df": {
+   "23008007.10": "e <as> muitas"
+  },
+  "f67922570e610c7c": {
+   "23010015.14": "[os que] a levantam"
+  },
+  "1b6231991c1e69e1": {
+   "23013016.2": "serão despedaçadas",
+   "28013016.9": "serão despedaçadas"
+  },
+  "da0e7ccef54e3bbe": {
+   "23017004.9": "será definhada"
+  },
+  "dd945dcf97fd2a5a": {
+   "23029008.8": "e [está] vazio"
+  },
+  "026a03c2340a53d1": {
+   "23040009.13": "levanta [a]"
+  },
+  "2ffb223fa1653928": {
+   "23049011.6": "serão levantadas !"
+  },
+  "0f0518ff25ece2ed": {
+   "23059012.2": "são muitas"
+  },
+  "22662c1e01d7174e": {
+   "23066019.17": "<as> distantes"
+  },
+  "76bd490a9834beb8": {
+   "24025001.19": "<o> primeiro"
+  },
+  "709ff53d1dfa1c11": {
+   "24036028.16": "<o> anterior"
+  },
+  "11f573d03a5ffdeb": {
+   "24051058.7": "<os> largos"
+  },
+  "ead939e241be43b6": {
+   "26006013.14": "alto",
+   "26020028.14": "alto",
+   "26034006.8": "alto"
+  },
+  "8ccd91b0802d7a2b": {
+   "26023032.9": "e <o> largo"
+  },
+  "3f2d54c9360d0bfa": {
+   "26040047.10": "quadrado"
+  },
+  "d8838be44f9265ea": {
+   "26041021.3": "quadrado"
+  },
+  "828327e3e8732a2e": {
+   "26047009.16": "muitos",
+   "26047010.19": "muitos"
+  },
+  "8a93c416da019718": {
+   "33004008.11": "<o> anterior"
+  },
+  "a279d0d49c10dff8": {
+   "34003010.8": "foram despedaçadas"
+  },
+  "b774fc89f1da56a2": {
+   "38014010.17": "<a> primeira"
   }
  }
 }

@@ -45,7 +45,7 @@
   "fbd80d9cfe01cd95": "soplaste",
   "8448d936607e85bd": "sopla",
   "48ada6fcda96507c": "crepúsculo",
-  "eac95cc6b115cfd1": "al <el> crepúsculo",
+  "eac95cc6b115cfd1": "a<l> crepúsculo",
   "867ffce0c502bb94": "en el crepúsculo",
   "f58c00ee53e64784": "[el] crepúsculo de",
   "1d3e973497bdb42d": "su crepúsculo",
@@ -1502,7 +1502,7 @@
   "4422088d2e045a3e": "fin",
   "b5735e8ad1c9df8a": "[es] [el] fin de",
   "0c410d0f0abe9922": "[el] fin de",
-  "927f6c0659fba567": "al [el] fin de",
+  "927f6c0659fba567": "a[l] fin de",
   "c30f7bc0770d17e7": "el fin",
   "4363bf41a4719318": "[llega] hasta [el] fin",
   "7094267b5039ce78": "[llegaba] hasta [el] fin de",
@@ -2678,5 +2678,291 @@
   "29ec337578bf5085",
   "72dd92fb11323146"
  ],
- "occurrences": {}
+ "occurrences": {
+  "e7616a1e9eba1a0f": {
+   "1018007.10": "y [la] dio",
+   "11019021.12": "y [la] dio"
+  },
+  "80bf2027b1709bc2": {
+   "2005016.3": "[está siendo] dada"
+  },
+  "759757073c2e7b2d": {
+   "2005018.6": "será dada"
+  },
+  "2ccc2e8bfe4ab621": {
+   "10021010.14": "fue derramada",
+   "2009033.16": "fue derramada"
+  },
+  "3d9594d098cfe593": {
+   "2022017.5": "darla"
+  },
+  "4678b107260ab74d": {
+   "2025015.6": "serán quitadas"
+  },
+  "d0e5baf9ef3617b1": {
+   "2029012.4": "y [la] pondrás",
+   "2029020.6": "y [la] pondrás",
+   "26043020.3": "y [la] pondrás",
+   "5015017.4": "y [la] pondrás"
+  },
+  "87bf0cc785217415": {
+   "3003004.17": "lo quitará",
+   "3003010.17": "lo quitará",
+   "3003015.17": "lo quitará",
+   "3004009.17": "lo quitará",
+   "3007004.17": "lo quitará"
+  },
+  "332feace53a6acf4": {
+   "26045019.5": "y [la] pondrá",
+   "3004025.6": "y [la] pondrá",
+   "3004030.5": "y [la] pondrá",
+   "3004034.6": "y [la] pondrá"
+  },
+  "87612239cfa0770f": {
+   "3014046.6": "<de> [que] ha cerrado"
+  },
+  "4b689f66d9a4c6f0": {
+   "4035002.13": "alrededor de ellas"
+  },
+  "629d5a46d41776e0": {
+   "5002030.18": "darlo"
+  },
+  "782334f4bc8ec518": {
+   "5005022.23": "y las dio",
+   "5010004.18": "y las dio"
+  },
+  "899f5f1dd9c8a5bb": {
+   "5014021.8": "lo darás"
+  },
+  "65ad1969c18ff978": {
+   "5026013.10": "la he dado"
+  },
+  "eae7a0787235f4e0": {
+   "5028031.14": "[será] dado"
+  },
+  "cc6b1f83b29d5a30": {
+   "6007013.23": "quitéis vosotros"
+  },
+  "60602c47056020f5": {
+   "6008006.4": "hayamos sacado nosotros"
+  },
+  "2e708548c9ed0b31": {
+   "6010012.6": "entregar"
+  },
+  "e0c1a27ca306c05c": {
+   "7001034.9": "le permitió"
+  },
+  "748026bcb94a397d": {
+   "7003022.6": "y se cerró"
+  },
+  "a60826f5d94e3fb9": {
+   "7016012.15": "y las rompió"
+  },
+  "8548fb2e06bce96a": {
+   "7017004.9": "y la dio"
+  },
+  "9dec94fffe391a24": {
+   "8004007.14": "y [la] dio"
+  },
+  "5820a3873a27f965": {
+   "9009008.13": "y [la] daré"
+  },
+  "20390d0f783c6522": {
+   "9011007.4": "y la cortó en pedazos"
+  },
+  "f835bc99b183e078": {
+   "9015028.11": "y lo dará"
+  },
+  "75a6dd7fd4c2e8ac": {
+   "9028017.12": "y lo ha dado"
+  },
+  "92369022cd781aab": {
+   "10007015.6": "[la] quité",
+   "13017013.14": "[la] quité"
+  },
+  "7a865b1140f81abb": {
+   "10012011.13": "y [las] daré"
+  },
+  "2afea5a600b3474a": {
+   "10020003.16": "y las puso"
+  },
+  "32c771ec30a6ac6b": {
+   "11011011.21": "y lo daré",
+   "11011035.5": "y lo daré"
+  },
+  "27698512caf066da": {
+   "11020013.20": "[estoy] a punto de darla"
+  },
+  "783b8940aec5a0c2": {
+   "12011018.7": "y la derribaron"
+  },
+  "7aba8f639e6bdb04": {
+   "12012015.6": "ponían"
+  },
+  "50116961a3fcc736": {
+   "12015020.11": "dar[la]"
+  },
+  "766e6e8dd1648511": {
+   "13010014.5": "y traspasó"
+  },
+  "cd7ed1d0f0c98757": {
+   "13012023.10": "para traspasar"
+  },
+  "4608e7158ee80834": {
+   "13029008.4": "[las] dieron"
+  },
+  "09309f609b296ccd": {
+   "14003016.11": "y [las] puso",
+   "14003016.4": "y [las] puso"
+  },
+  "6355412313203741": {
+   "14006013.6": "y la había puesto"
+  },
+  "a946604ca694db42": {
+   "14007020.16": "y la haré"
+  },
+  "dc563f613ec1657b": {
+   "14035025.14": "y las hicieron"
+  },
+  "f6cc29860e2739a5": {
+   "17003010.7": "y lo dio",
+   "17008002.8": "y lo dio",
+   "24036032.5": "y lo dio"
+  },
+  "4c6df3d960eb3723": {
+   "17003011.5": "[es] dada"
+  },
+  "c9dedbf53dc03f0d": {
+   "17003014.3": "[había] de ser dada",
+   "17008013.3": "[había] de ser dada"
+  },
+  "df49e34b40f81340": {
+   "17004008.6": "había sido dada"
+  },
+  "a5433942963ec295": {
+   "18001022.7": "atribuyó"
+  },
+  "43a4b5f923b1e5e9": {
+   "18008017.4": "están entretejidas"
+  },
+  "88aa5181e8f0662e": {
+   "18027002.3": "[que] ha quitado"
+  },
+  "e297b389ba0e32b6": {
+   "18030012.7": "y han amontonado"
+  },
+  "183f04808ecb16f5": {
+   "19041002.7": "lo des"
+  },
+  "acf964136b1cba01": {
+   "20025020.7": "salitre"
+  },
+  "e3d13f9280790b12": {
+   "21010006.1": "es puesta"
+  },
+  "e46e280e16f8e4de": {
+   "21012007.11": "lo dio"
+  },
+  "463aaaffa11b6fd0": {
+   "22002015.9": "[están] en flor"
+  },
+  "dba7166f4b5812bd": {
+   "22007002.10": "cercado"
+  },
+  "1512e5b69dfc3c8a": {
+   "23005027.15": "ha sido rota"
+  },
+  "f618c2c6b897c9f4": {
+   "23006007.10": "y será quitada"
+  },
+  "b4fcb3aae5595f8e": {
+   "23010027.4": "será quitada"
+  },
+  "6754905184f37efd": {
+   "23022022.9": "[habrá quien] cierre"
+  },
+  "ae492d19c9b07cc9": {
+   "23024022.6": "y serán encerrados"
+  },
+  "c6c13157f264d2ae": {
+   "23033020.20": "serán rotas"
+  },
+  "2184f4ae67127c84": {
+   "24004026.7": "habían sido derribadas"
+  },
+  "e4a8ed0a820c5568": {
+   "24006012.1": "y serán traspasadas"
+  },
+  "b60589bfdb055e0d": {
+   "24007020.9": "[están] a punto de ser derramados"
+  },
+  "3255f02d6097d5d3": {
+   "24010020.5": "han sido quebradas"
+  },
+  "6f96565d7079e537": {
+   "24018014.7": "son arrancadas"
+  },
+  "a5fd4cc7de0f8d62": {
+   "24018015.14": "allanado"
+  },
+  "17431561e2524093": {
+   "24026015.13": "[estáis] a punto de poner"
+  },
+  "84adf117a924a06d": {
+   "24033004.15": "que han sido derribadas"
+  },
+  "9e5c2bff2dcd6c86": {
+   "24042010.13": "[os] arrancaré"
+  },
+  "438eb219668aa048": {
+   "24050032.12": "alrededor de ella"
+  },
+  "9329b8cfc67d2226": {
+   "24052021.12": "la rodea"
+  },
+  "d28b3044088a6469": {
+   "26030008.5": "cuando ponga yo",
+   "26030025.13": "cuando ponga yo"
+  },
+  "a13d4c7654119ccb": {
+   "26032023.2": "han sido puestas"
+  },
+  "de481fc33ef9ddfa": {
+   "26041024.5": "giratorias"
+  },
+  "d0fc8818381dacec": {
+   "26044002.21": "cerrada",
+   "26044002.6": "cerrada",
+   "26046001.11": "cerrada"
+  },
+  "f1260bfd0f14f1f9": {
+   "26046002.24": "será cerrada"
+  },
+  "b41f6371d2e688b1": {
+   "27003028.28": "rindiesen homenaje"
+  },
+  "fd9ef4dad3b47df9": {
+   "27004014.9": "¡despojad!"
+  },
+  "d65a2b870a69894c": {
+   "27004017.20": "lo dará",
+   "27004025.33": "lo dará",
+   "27004032.28": "lo dará"
+  },
+  "1a2742eaff0923b8": {
+   "27008012.2": "será puesto"
+  },
+  "30548bb6953ebf9a": {
+   "27009027.18": "será derramado"
+  },
+  "ce4162ccb7aa2d3e": {
+   "27011004.15": "será arrancado"
+  },
+  "6081456d7c18b79a": {
+   "34001006.10": "es derramado"
+  },
+  "abeb19aad1091ad7": {
+   "34001006.13": "son derribadas"
+  }
+ }
 }

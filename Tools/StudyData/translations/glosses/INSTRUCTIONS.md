@@ -170,6 +170,12 @@ it's listed for qualified review. Don't flag ordinary words.
   `de la | semana`); after the noun Spanish uses the full form (`el año |
   <el> tercero`, `corazón | malo`); `el agua`, `del arca`; fixed phrases
   stay (`de oro`, `de plata`).
+- Pronouns, participles and relatives that point back to a noun agree
+  with the Spanish or Portuguese noun shown, even several words away (the
+  beast, θηρίον, is "la bestia": "de ella"; ἡ βασιλεία is "el reino": "de
+  él"). The neuter "esto / isto" only stands alone; before a noun it is
+  "este / esta". "a menos que" takes the present subjunctive in both
+  languages. Kol "all" agrees with what follows (`todos tus siervos`).
 - Where STEPBible's English contradicts the morphology or the lexicon
   (φαρμακειῶν "sorcerers"), follow the Hebrew or Greek and add a note.
   `Tools/StudyData/translations/glosses/audits/run.sh` applies the first two

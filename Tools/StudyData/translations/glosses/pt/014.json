@@ -1128,7 +1128,7 @@
   "ff75039ecc452ccc": "o sabe",
   "6bf1110af0c0841a": "[é] sabedora",
   "62f8eb034587635f": "[que tem] conhecido",
-  "e7407b3024f2b83c": "[que] tem conhecido",
+  "e7407b3024f2b83c": "[que] conheceu",
   "626afc06bb77fa5d": "Ó [os que] conhecem",
   "91a07f540cfcf2c1": "[que] conhecem",
   "e9c54ccb5c76641e": "[que] conhece",
@@ -2443,6 +2443,156 @@
    "23056003.20": "seca",
    "26017024.19": "seca",
    "26020047.22": "seca"
+  },
+  "7767b85a1f6e262c": {
+   "1004001.2": "conheceu",
+   "2001008.8": "conheceu"
+  },
+  "92014830a9198500": {
+   "1008011.9": "recém-arrancada"
+  },
+  "17526239fb335e23": {
+   "1008011.11": "e soube",
+   "1009024.4": "e soube"
+  },
+  "bb0bdd0846b5948a": {
+   "1034029.6": "seu pequenino[s]"
+  },
+  "6faf9db7152ecefe": {
+   "2005002.12": "conheço"
+  },
+  "fb15fab225efebda": {
+   "3004014.1": "e será dado a conhecer"
+  },
+  "63ecacba50e2b14b": {
+   "4011006.3": "[está] seco"
+  },
+  "f3bccb322399c73a": {
+   "6007022.7": "[estava] escondido"
+  },
+  "a6c715a6974f9e9a": {
+   "6009025.3": "[estamos] em tua mão"
+  },
+  "d30d4fb8b4d21c06": {
+   "7016009.20": "foi conhecida"
+  },
+  "0a998847de11f821": {
+   "10003034.1": "tuas mãos"
+  },
+  "df9a66019b96e73a": {
+   "10007021.9": "para [a] fazer saber"
+  },
+  "ad1c2ada156763c5": {
+   "10022044.9": "conheci",
+   "18029016.6": "conhecia",
+   "19018043.9": "conheci"
+  },
+  "06170cf0043e3a82": {
+   "13011004.7": "[era] Jebus"
+  },
+  "f45d12fbbe1f1929": {
+   "13029013.3": "[estamos] dando graças"
+  },
+  "6690a75164c2feb2": {
+   "14012004.6": "[pertenciam] a Judá"
+  },
+  "06582540c38c433b": {
+   "14022006.22": "Jorão"
+  },
+  "76752705e6aafe6e": {
+   "15006004.14": "seja dada"
+  },
+  "90349221534bdf6e": {
+   "18008016.7": "seu broto[s]"
+  },
+  "786ad5cd84fc5709": {
+   "18013004.3": "[sois] besuntadores de"
+  },
+  "1d010926c60de91c": {
+   "18018010.1": "[está] escondida",
+   "18020026.3": "[estão] escondidas"
+  },
+  "ff75039ecc452ccc": {
+   "18028007.3": "a conhece"
+  },
+  "7d2fcbdbbcfe0f51": {
+   "19031007.8": "conheceste"
+  },
+  "3b1c5dbe9eb7d824": {
+   "19031024.6": "por Yahweh",
+   "19033020.3": "por Yahweh",
+   "20020022.6": "por Yahweh"
+  },
+  "7a7acc75bff84b54": {
+   "19077019.8": "foram conhecidas"
+  },
+  "c354896ccb4d0995": {
+   "19101004.7": "conhecerei"
+  },
+  "af25d85fdb5d675a": {
+   "20019013.6": "contínua",
+   "20027015.2": "contínua"
+  },
+  "a313a8353bbb5425": {
+   "20030018.7": "as conheço"
+  },
+  "d0c202d73c3f66fe": {
+   "23012005.6": "[é] dado a conhecer"
+  },
+  "a5d80de6c7142eb1": {
+   "23043019.7": "a sabeis?"
+  },
+  "28d5ce56cbb7fa63": {
+   "23044005.3": "[pertenço] a Yahweh"
+  },
+  "29af6b81741771ce": {
+   "23048006.12": "as conheceste"
+  },
+  "e136465bd1faa255": {
+   "23055005.4": "conheces"
+  },
+  "54b0c3d501f65a58": {
+   "23059012.12": "as conhecemos"
+  },
+  "e0e1565e4a9a2917": {
+   "24009016.5": "conheceram"
+  },
+  "e37aba2d93155170": {
+   "24009024.7": "e conhece"
+  },
+  "b9c20d81776bafa9": {
+   "24033003.9": "as conheces"
+  },
+  "ec234cd47bdd66e4": {
+   "24043009.5": "e as esconderás"
+  },
+  "9cee8bd665b08f73": {
+   "26037004.10": "<os> secos"
+  },
+  "34579d88cd378b33": {
+   "27005028.4": "e foi dado"
+  },
+  "6a8cd8ad94a10f52": {
+   "27007012.7": "foi dado",
+   "27007027.9": "foi dado"
+  },
+  "c24751c41c150e38": {
+   "27011038.9": "o conheceram"
+  },
+  "c69dc869113b14f0": {
+   "28002020.4": "e conhecerás"
+  },
+  "1d1b2cb1bd0f71cf": {
+   "28009005.3": "para [o] dia de"
+  },
+  "77a9482e33c58e3e": {
+   "28009005.5": "e para [o] dia de"
+  },
+  "e04ade3c552c3270": {
+   "28014009.6": "e que as conheça"
+  },
+  "5a8298e0a1a9e653": {
+   "35003002.12": "[a] farás saber"
   }
  }
 }

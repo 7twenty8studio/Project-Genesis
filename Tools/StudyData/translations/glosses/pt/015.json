@@ -33,7 +33,7 @@
   "8f41e2d734942365": "esperamos",
   "39ef11e09e1bfd7c": "tenho esperado",
   "94ad26a476145c62": "me fizeste esperar",
-  "b85968a348fd92fa": "e têm esperado",
+  "b85968a348fd92fa": "e esperaram",
   "4e401c1a2526cd5e": "e Jaleel",
   "ceb3797e8a8f536b": "de Jaleel",
   "4bff28a96adeb511": "o jaleelita[s]",
@@ -123,7 +123,7 @@
   "4157609c5aee6497": "fizeste bem",
   "1d99c1606ac14f8f": "melhoraram",
   "6ccd749fd6468310": "fez bem",
-  "3cc17398b193a2ff": "tem feito bem",
+  "3cc17398b193a2ff": "fez bem",
   "225ce21142d00db9": "[estavam] alegrando",
   "0e9706924caa3b26": "[estão] fazendo bem",
   "261441ec803615cd": "[estão] fazendo bem de",
@@ -288,13 +288,13 @@
   "96602da6760f185e": "podem !",
   "70919fe1106c1593": "puderam !",
   "5c626f4b9f78b9aa": "alguém poderá",
-  "e95200d083e860db": "tem podido",
+  "e95200d083e860db": "pôde",
   "fdac00b27bd7fdfa": "prevalecerá",
   "34ae22f75b47fa48": "posso",
   "4feef30587accca6": "prevaleci",
   "235f0cc3df191e0d": "pude?",
   "6f35cee239f80996": "prevaleci sobre ele",
-  "4ae141ceb6a34013": "têm podido",
+  "4ae141ceb6a34013": "puderam",
   "40f4d030788296c6": "prevaleceram",
   "e6696f165e05292b": "prevalecerão",
   "25b6056fc503809d": "puderam?",
@@ -474,7 +474,7 @@
   "791cb9d4d9c5899c": "e nasceu",
   "63e247c08d6a69ce": "e gerou",
   "7c0850a6e99b098b": "e gerará",
-  "bcc662b37184b2ac": "e a tem feito produzir",
+  "bcc662b37184b2ac": "e a fez produzir",
   "6fd2882f8ca74e10": "e tornou-se pai",
   "6618cbb0df9710c8": "e darás à luz",
   "6770d8b384eac4c9": "e tiveram filhos",
@@ -2051,6 +2051,138 @@
   },
   "383870a2b5e6ed2c": {
    "24011016.3": "bela de"
+  },
+  "b7754a99e5df8fa0": {
+   "1019008.10": "que eu tire"
+  },
+  "09192db7e2af9ac2": {
+   "1034018.1": "e foram boas"
+  },
+  "9be352892bb31e09": {
+   "1041037.1": "e foi boa",
+   "17001021.1": "e foi boa",
+   "17002004.9": "e foi boa",
+   "17005014.25": "e foi boa"
+  },
+  "1b48ad42d7664df1": {
+   "2029020.23": "<o> direito",
+   "3008023.18": "<o> direito",
+   "3008024.20": "<o> direito",
+   "3014014.19": "<o> direito",
+   "3014016.5": "<o> direito",
+   "3014017.20": "<o> direito",
+   "3014025.22": "<o> direito",
+   "3014027.4": "<o> direito",
+   "3014028.20": "<o> direito"
+  },
+  "f08f42cf5e9ddb71": {
+   "24022003.15": "maltrateis",
+   "3025014.10": "maltrateis"
+  },
+  "ed2f4ee3a11d8a97": {
+   "4035026.2": "alguma vez <sair>"
+  },
+  "a582e1cacd627bee": {
+   "4036003.12": "e será acrescentada"
+  },
+  "5c7f14d8204603ac": {
+   "9021005.14": "quando eu saí"
+  },
+  "99c07def532a55ff": {
+   "11006037.3": "foi fundada"
+  },
+  "353820aaa3eeebfe": {
+   "11007021.9": "<a> sul"
+  },
+  "7202fcf8b717b62b": {
+   "11007024.16": "[eram] fundidas"
+  },
+  "141bc683ef43f939": {
+   "11007030.15": "[estavam] fundidos"
+  },
+  "b5be486d65b60dc0": {
+   "11008010.2": "quando saíram"
+  },
+  "b99c529277a51b02": {
+   "11018033.15": "e derramai[-a]"
+  },
+  "bd1067d844acc44a": {
+   "15003011.20": "foi fundada"
+  },
+  "6e4e77ee3cf9aeda": {
+   "15003012.12": "quando a fundou"
+  },
+  "3a0fae9fa70f66de": {
+   "16001003.17": "foram queimadas",
+   "16002017.13": "foram queimadas"
+  },
+  "ffcbf4b4c4c48c7a": {
+   "16003026.11": "<a> que sobressai",
+   "16003027.9": "<a> que sobressai"
+  },
+  "782ddd99cd5f648d": {
+   "16013018.16": "[estais] aumentando"
+  },
+  "4f8cd7b64e39ee1f": {
+   "18038029.8": "a dá à luz?"
+  },
+  "14d239274fb757c1": {
+   "19041008.3": "[foi] derramada"
+  },
+  "e1c8d8d821c141fb": {
+   "19094010.4": "repreende"
+  },
+  "00e21ca550240c15": {
+   "19094016.7": "se porá de pé"
+  },
+  "afc198c673555624": {
+   "20022010.3": "para que <ela> saia"
+  },
+  "bc2dcab972d45ef4": {
+   "22005015.4": "fundadas"
+  },
+  "82d0234f0d16d11e": {
+   "23014026.3": "que está planejado"
+  },
+  "640166bb0109fd8d": {
+   "23022011.12": "e [o] [que] o planejou"
+  },
+  "c5d94e7fc56a4848": {
+   "23054017.3": "[que] será formada"
+  },
+  "314ecd4a60859105": {
+   "23061011.3": "[que] produz"
+  },
+  "0f27ac7d988a37cf": {
+   "24002015.10": "estão queimadas"
+  },
+  "e04c541ca05a91a4": {
+   "24032040.9": "fazer bem eu"
+  },
+  "2045f38d51dd7590": {
+   "24051030.11": "serão incendiadas"
+  },
+  "cf0452f442bdce68": {
+   "26021016.7": "posto"
+  },
+  "a17affea495fb06a": {
+   "26047008.16": "as [que] foram tiradas"
+  },
+  "ed9f3c8455f063a4": {
+   "27003006.12": "<a> ardente",
+   "27003011.10": "<a> ardente",
+   "27003015.33": "<a> ardente",
+   "27003017.12": "<a> ardente",
+   "27003020.15": "<a> ardente",
+   "27003021.13": "<a> ardente",
+   "27003023.12": "<a> ardente",
+   "27003026.7": "<a> ardente"
+  },
+  "170e1255f0aef64b": {
+   "29003003.10": "por <o> vinho"
+  },
+  "169c843cd473208b": {
+   "35002018.6": "[o que] a formou"
   }
  },
  "checked": [

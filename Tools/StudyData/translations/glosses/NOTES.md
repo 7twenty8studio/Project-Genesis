@@ -121,6 +121,63 @@ This is a reading by AI reviewers, not qualified sign-off: it covers the
 words the audits changed and their neighbours, not every gloss, and the
 1,358 meanings per language awaiting review stay awaiting.
 
+## The verse-by-verse review of every verse (19–20 November 2026)
+
+The owner then asked for everything to be reviewed. Every verse of the
+Bible (31,102, in 132 parts) was read whole in Spanish and in Portuguese,
+word by word with the Hebrew, Aramaic or Greek morphology, by AI reviewer
+agents (Claude, the owner's subscription, no paid API). They found 10,577
+places to correct (8,651 errors, 1,926 doubts):
+
+- Agreement with the Spanish or Portuguese noun, by far the most: a
+  pronoun, participle, relative or adjective that kept the Hebrew or Greek
+  gender ("el reino … de ella", "la casa … lo", the sheep as "los", the
+  beast as "de él", "verdadera" with "testimonio", "la desierto", "En la
+  día siguiente", Portuguese "muitos águas", "o cabeça" for a head).
+- The neuter "esto / isto" before a noun ("copa esto" → "esta copa").
+- Verb person, number and mood against the morphology ("[será]" for "I",
+  a Greek neuter plural's singular verb with a Spanish plural subject,
+  "a menos que" with the indicative or the Portuguese future subjunctive).
+- Pronoun case and form ("entre a sí mismos", a clitic as the subject of
+  an infinitive), doubled words ("los que | que"), "gran" after its noun,
+  "mal" for the adjective, a few meanings ("acerca de" for "about" the
+  ninth hour, "preguntaron" for "begged", saber/conocer for a person).
+
+Doubts were read again before they were applied; two kinds were left out:
+the Portuguese "d'Ele" for STEPBible's capitalised "Him" stays (the
+convention since batch 043), and nothing that would break the structural
+checks (58 corrections that add or move a bracket, such as "uva[s]
+agria[s]", are listed by `verse_fixes.py` and left as they were). 15
+places had changed since the review read them and are left too.
+
+The corrections are `audits/verses.jsonl` (verse, word, language, the
+English, the text found, the correction, error or doubt, why), applied
+place by place by `audits/verse_fixes.py`. Four patterns the reviewers
+were told not to report one by one are applied everywhere by script:
+
+- `kol.py`: Hebrew and Aramaic כָּל "all" agrees with what follows ("toda
+  [la] tierra", "todos tus siervos").
+- `demonstratives.py`: "<the> this / that" after a Hebrew noun agrees
+  with the Spanish or Portuguese noun ("<la> palabra <la> esta").
+- `forms.py`: an article written twice keeps one, still marked as
+  supplied ("del [el] polvo" → "de[l] polvo", "da [a] boca" → "d[a]
+  boca"); Portuguese "em o", "por a", "de estes" contracted ("no",
+  "pela", "destes"); "entre yo / tú"; "lo servirás"; "muchas [personas]";
+  "compasión<es>"; "estrangeiro" for נֵכָר.
+- `pt_perfect.py`: Portuguese "tenho dito" for a finished act becomes the
+  simple past ("disse"); the 36 glosses that are an ongoing state keep the
+  compound form (`pt_perfect.json` lists the 321 changed).
+
+`audits/run.sh` runs all of it after the earlier audits, with
+`verse_fixes.py --final` last so a place the review read whole keeps its
+reading over a pattern audit. Run again on the batches as they are, it
+changes nothing. Both languages pass `glosses.py check` (114,121 each),
+and the 1,358 meanings per language awaiting review stay awaiting.
+
+This is still a reading by AI reviewers, not qualified sign-off: it is
+the most thorough pass so far, but a reviewer who reads Hebrew and Greek
+should still read the uncertain meanings and sample the rest.
+
 ## Known limits (for the reviewer)
 
 - The structural checks don't judge meaning. Passing them says the marks,
@@ -140,8 +197,9 @@ words the audits changed and their neighbours, not every gloss, and the
 - A preposition and its pronoun are two words in the interlinear, so
   Greek μετ' ἐμοῦ reads "con | mí" / "com | mim" (one word would be
   "conmigo" / "comigo").
-- Pronouns that agree with a noun follow the Greek gender ("la" for a
-  feminine Greek word) where the Spanish or Portuguese noun differs.
+- Pronouns that agree with a noun now follow the Spanish or Portuguese
+  noun (the verse-by-verse review); a pronoun whose noun is in another
+  verse may still follow the Hebrew or Greek gender.
 - Choices a reviewer may want to revisit: nephesh "self" as "ser" ("mi
   ser"), H2617 "covenant loyalty" as "lealtad del pacto" / "lealdade da
   aliança", split numbers ("fif- | teen" as "cinco- | diez").

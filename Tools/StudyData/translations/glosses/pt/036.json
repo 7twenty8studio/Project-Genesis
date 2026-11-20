@@ -49,7 +49,7 @@
   "811bf3c6cf84507e": "tua vara",
   "6e779eab25996f78": "para uma vara",
   "17a86b5c94280e90": "com uma vara",
-  "25f673a563ea820b": "pela [a] vara de",
+  "25f673a563ea820b": "pel[a] vara de",
   "87b1086467b6dc07": "com [a] vara de",
   "c26756a561c23f7f": "com [o] cajado de",
   "a16c982e8653b856": "com tua vara",
@@ -86,7 +86,7 @@
   "42bdd7dcc5cd1d4e": "para tuas tribos",
   "dd3540a58509ec26": "entre suas tribos",
   "47c8bb6083c7040b": "de uma tribo",
-  "dd3f29f5c3b8c694": "da [a] tribo de",
+  "dd3f29f5c3b8c694": "d[a] tribo de",
   "4172946221e6eb5e": "a [a] tribo de",
   "6bc32c9dcbb8657c": "a sua tribo",
   "c1fd8c4c02a84549": "na tribo",
@@ -190,7 +190,7 @@
   "41147e8f099ba8fb": "e se saciarão",
   "2ad8310f6ebd3d89": "e [estás] saciando",
   "b8a4e98f3a5bb15d": "e saciando-se",
-  "ebeb97447641abc2": "e nos temos saciado",
+  "ebeb97447641abc2": "e nos saciamos",
   "9c3ea956a83c3a78": "e se saciou",
   "9ddfbbc86632e32a": "para que se saciem",
   "c081e0ef05166fce": "para que se sacie",
@@ -1634,7 +1634,7 @@
   "6b8d8b951766d028": "e serei igual?",
   "cbaa45cf6c7cfdb9": "é semelhante",
   "2f41dfdd25932973": "igualarei",
-  "f3fd04fd9298dc2b": "tenho aquietado",
+  "f3fd04fd9298dc2b": "aquietei",
   "96e6270077aac7fd": "pus",
   "e632ab1383bb6e9d": "aplanou",
   "f08d2bd38b9e3792": "te tornes semelhante",
@@ -2745,7 +2745,188 @@
    "20027007.2": "saciado"
   },
   "91f7e360cc5141b7": {
-   "1030032.8": "ovelha"
+   "1030032.12": "ovelha",
+   "1030032.8": "ovelha",
+   "5018003.13": "ovelha"
+  },
+  "13ba240b80b6f083": {
+   "1014017.6": "voltar ele"
+  },
+  "49509bd2bc02d5fb": {
+   "1020007.13": "devolvendo-[a]"
+  },
+  "f8b29c2d5cdf9656": {
+   "1022008.6": "a ovelha",
+   "2022001.18": "a ovelha"
+  },
+  "b71f5c31209e160f": {
+   "1028011.11": "e [a] pôs"
+  },
+  "bfe5a4edf65132bb": {
+   "2004007.13": "tinha voltado"
+  },
+  "86b1c65ac2ff90bf": {
+   "12020007.7": "e [a] puseram",
+   "2017012.6": "e [a] puseram"
+  },
+  "a5361204f460cafe": {
+   "3006010.20": "e a colocará"
+  },
+  "fd26d68a699be76f": {
+   "12011004.2": "<o> sétimo",
+   "12018009.8": "<o> sétimo",
+   "14023001.2": "<o> sétimo",
+   "16010031.20": "<o> sétimo",
+   "26020001.3": "<o> sétimo",
+   "3023016.4": "<o> sétimo",
+   "3025004.2": "<o> sétimo",
+   "3025020.6": "<o> sétimo",
+   "5015012.12": "<o> sétimo"
+  },
+  "39600f0fc404e67b": {
+   "4021009.5": "e a pôs"
+  },
+  "8d263a00226451b8": {
+   "5009017.8": "e as quebrei"
+  },
+  "7ab910bb34af995f": {
+   "5010002.13": "e as porás"
+  },
+  "03c0c6566759b175": {
+   "5028022.8": "e com <o> crestamento"
+  },
+  "f2b60465d85c85e4": {
+   "5031019.11": "põe-no"
+  },
+  "73a9bf5d40ae4bc2": {
+   "6019040.7": "<a> sétima"
+  },
+  "ff92d85821242068": {
+   "7017003.20": "a devolverei"
+  },
+  "72e8cc027f644487": {
+   "9004018.13": "e foi quebrado"
+  },
+  "62e26dfb51d89076": {
+   "9007012.5": "e [a] pôs",
+   "9009024.6": "e [a] pôs"
+  },
+  "3e1af5555d932d6f": {
+   "9009024.12": "põe[-na]"
+  },
+  "0efb919e11a01157": {
+   "9014027.4": "quando fez prestar juramento"
+  },
+  "0f3b7e8ebb4ba0a3": {
+   "9014034.12": "sua ovelha"
+  },
+  "3ef2ad2fdaae4067": {
+   "9019013.5": "e [os] pôs"
+  },
+  "0da7b416a70596cf": {
+   "9022015.9": "ponha"
+  },
+  "f3873460259bb252": {
+   "10015029.1": "e levou de volta"
+  },
+  "6a2f77c789a83ce4": {
+   "11008037.8": "crestamento"
+  },
+  "08537673bf933e98": {
+   "18010009.8": "me farás voltar?"
+  },
+  "85a8b96d023a1e55": {
+   "18038015.6": "é quebrantado"
+  },
+  "6a932c102157aa00": {
+   "19034020.7": "é quebrantado"
+  },
+  "59b3809dd30879d5": {
+   "19037015.5": "serão quebrados",
+   "19037017.4": "serão quebrados"
+  },
+  "20cd35380f384ef3": {
+   "19051017.4": "quebrado"
+  },
+  "75f42318838d1577": {
+   "19088003.2": "está farto"
+  },
+  "38ff35e368b5be24": {
+   "19139006.4": "está posto no alto"
+  },
+  "8a76b5704784d418": {
+   "20018011.6": "alto",
+   "23030013.10": "alto"
+  },
+  "25fe8174c0f747af": {
+   "23023014.5": "foi devastada",
+   "24010020.2": "foi devastada",
+   "38011003.11": "foi devastada"
+  },
+  "b1b6f92598e11502": {
+   "23030014.1": "e alguém o quebrará"
+  },
+  "3d728a29c550ea51": {
+   "23047006.9": "puseste"
+  },
+  "c681f9fa67b9e591": {
+   "23051010.9": "que <ele> fez"
+  },
+  "5f7e9b03bfa66093": {
+   "23053007.7": "como <o> cordeiro"
+  },
+  "7886d7b65691111a": {
+   "24002013.15": "quebradas"
+  },
+  "322ccbf078dee2e4": {
+   "24004020.10": "foram devastadas",
+   "38011002.8": "foram devastadas"
+  },
+  "72cfd7c175ff6bcd": {
+   "24037020.11": "me faças voltar"
+  },
+  "e5e5b8d94a4ca0e2": {
+   "24048025.5": "será quebrantado"
+  },
+  "e2919e6c03b29c55": {
+   "24051030.13": "serão quebradas"
+  },
+  "001871600933abd7": {
+   "25001019.13": "para que sejam restaurados"
+  },
+  "f9255ce20b4eb9d2": {
+   "26015007.13": "quando puser eu"
+  },
+  "1d93dacefd8d9f82": {
+   "26031012.12": "e foram quebrados"
+  },
+  "3d009cdbc33185b3": {
+   "26038012.5": "para voltar"
+  },
+  "91f2b79fb65b3c66": {
+   "27002048.7": "muitas"
+  },
+  "c6b30b4a09756b94": {
+   "27003022.22": "a chama"
+  },
+  "391dace3cf35593d": {
+   "27007005.21": "muita"
+  },
+  "252d9453657e74f9": {
+   "27008008.7": "foi quebrado"
+  },
+  "62d2c25a71d237b2": {
+   "28002012.13": "e as farei"
+  },
+  "b9dd218df7345dd4": {
+   "30004009.3": "com <o> crestamento",
+   "37002017.3": "com <o> crestamento"
+  },
+  "c31fc95ba3a246f3": {
+   "38011003.5": "foi devastado"
+  },
+  "5e45547a72571547": {
+   "39004006.1": "e fará voltar"
   }
  }
 }

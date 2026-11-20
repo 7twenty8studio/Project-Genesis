@@ -259,7 +259,7 @@
   "ca23166c3b43d3c6": "una trampa de aves",
   "a7cbff12d81ec0fe": "<la> trampa de aves de",
   "46cd66c85badb2d4": "una trampa de",
-  "9c38fbd34bc2446b": "del [el] lazo de",
+  "9c38fbd34bc2446b": "de[l] lazo de",
   "5ae62edeccdae944": "de un lazo de",
   "1384f59bcb0d7172": "el lazo",
   "9398f86e4dd68759": "láminas delgadas",
@@ -296,7 +296,7 @@
   "b2c315d3b2a9e31b": "vuestro pavor",
   "18e2e3369a1f03b6": "y pavor",
   "21cb7dcf44785a74": "pavor de ellos",
-  "528fd75d1c395958": "del [el] pavor de",
+  "528fd75d1c395958": "de[l] pavor de",
   "f3b770813c7da50e": "del pavor de",
   "1d638455951461e0": "y un pavor",
   "5f58b2d0a75bfc5a": "y [el] temor de",
@@ -2468,6 +2468,8 @@
   "c15f71f0965b95e7": {
    "11006036.4": "<el> interior",
    "17004011.18": "<el> interior",
+   "17005001.11": "<el> interior",
+   "26008016.7": "<el> interior",
    "26010003.11": "<el> interior",
    "26044017.17": "<el> interior",
    "26044017.6": "<el> interior",
@@ -2475,6 +2477,147 @@
    "26044027.7": "<el> interior",
    "26045019.18": "<el> interior",
    "26046001.7": "<el> interior"
+  },
+  "607fbc2cf5943c04": {
+   "1013014.6": "separarse"
+  },
+  "a40832b8e8416d69": {
+   "2004003.10": "de delante de ella"
+  },
+  "affe87e75b1116eb": {
+   "3006004.19": "fue encomendada"
+  },
+  "a7c702600ab81f4a": {
+   "3011003.2": "[el que] divide en dos"
+  },
+  "afc9fe97a6a2a326": {
+   "3026015.14": "para romper vosotros"
+  },
+  "05139a0565f77ccf": {
+   "5028025.13": "<a> delante de ellos"
+  },
+  "b36416118888971e": {
+   "5032011.7": "extiende"
+  },
+  "6be499875cccea06": {
+   "7015004.9": "y volvió"
+  },
+  "a199fb3abf390abb": {
+   "7020028.7": "<a> delante de ella"
+  },
+  "fcc12da05004e20c": {
+   "10001026.9": "fue maravilloso"
+  },
+  "2818e719010bc894": {
+   "11007012.13": "<el> interior"
+  },
+  "b73e12a585bccb33": {
+   "12004039.17": "y [las] rebanó"
+  },
+  "6d7ad005f42d865f": {
+   "12008015.7": "y [la] extendió"
+  },
+  "59d177f8f6d17147": {
+   "12019014.11": "y las extendió",
+   "23037014.11": "y las extendió"
+  },
+  "beb9bb235a955d8b": {
+   "14032005.6": "que estaba derribado"
+  },
+  "438423d07049608e": {
+   "15009015.12": "[estamos] <a> delante de ti"
+  },
+  "2e46a31d4144a11a": {
+   "16001003.15": "[ha sido] derribado"
+  },
+  "037fb0260a57c601": {
+   "19139006.1": "[es demasiado] maravilloso"
+  },
+  "b8f24cb4815e9cc1": {
+   "19140008.8": "promuevas"
+  },
+  "3d61e1533e8fdc0e": {
+   "20008033.5": "[la] desatendáis"
+  },
+  "b0bf3900c117bc2d": {
+   "20030018.3": "son [demasiado] maravillosas"
+  },
+  "c0bafbc603e1d5f7": {
+   "23008010.3": "para que sea frustrado"
+  },
+  "27c1153693446ce1": {
+   "23025011.5": "[las] extiende"
+  },
+  "5dcf2ce57106173e": {
+   "24003016.24": "la gente [la] echará de menos"
+  },
+  "f0571a4b7625d840": {
+   "24006006.14": "será visitada"
+  },
+  "a6940b6f101a2e86": {
+   "24010021.14": "ha sido esparcido"
+  },
+  "e1f1e51dd720894d": {
+   "24014021.11": "rompas"
+  },
+  "cf77d5efa10820a7": {
+   "26009002.9": "[está] orientada"
+  },
+  "25f8c5af59e5e21a": {
+   "26016018.9": "<a> delante de ellas",
+   "26016019.10": "<a> delante de ellas"
+  },
+  "bbba380dc53bed8b": {
+   "26019012.9": "fueron arrancadas"
+  },
+  "f1d799734000b7fa": {
+   "26023041.7": "<a> delante de él"
+  },
+  "fb20fd483931a494": {
+   "26034012.8": "separados"
+  },
+  "12bc60439110e1e4": {
+   "26040022.15": "[estaban] <a> delante de ellas",
+   "26040026.5": "[estaban] <a> delante de ellas"
+  },
+  "1e247b847a2f08b7": {
+   "26042011.2": "[estaba] <a> delante de ellas"
+  },
+  "bdad1a06d19e8995": {
+   "27002034.15": "el hierro",
+   "27002035.4": "el hierro",
+   "27002040.9": "el hierro",
+   "27002041.17": "el hierro",
+   "27002041.24": "el hierro",
+   "27002043.3": "el hierro",
+   "27002045.13": "el hierro"
+  },
+  "3eafa7ddeba88e6d": {
+   "27002041.12": "dividido"
+  },
+  "dd853919255c2b7d": {
+   "27003002.7": "y los gobernadores",
+   "27003003.5": "y los gobernadores",
+   "27003027.4": "y los gobernadores",
+   "27006007.8": "y los gobernadores"
+  },
+  "dbce024491d605f7": {
+   "27005024.5": "la palma"
+  },
+  "b32c19b4396afc8a": {
+   "27006028.8": "el persa"
+  },
+  "0137ec802f1defb0": {
+   "29002002.8": "extendida"
+  },
+  "f4ff197a2a36f658": {
+   "35002018.5": "la ha labrado"
+  },
+  "1f9cbc71c7b68686": {
+   "37001009.1": "volvisteis a mirar"
+  },
+  "8633fa244d796db4": {
+   "38011011.1": "y fue roto"
   }
  }
 }

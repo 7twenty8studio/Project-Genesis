@@ -1686,12 +1686,12 @@
   "d201a798eee7805b": "[el] polvo de",
   "4aa55b55e137eabb": "el polvo",
   "3ae38a9afba1f7ce": "como <el> polvo",
-  "91e17deaef63763f": "del [el] polvo",
+  "91e17deaef63763f": "de[l] polvo",
   "d209aae68b36ea46": "como [el] polvo de",
   "27efd94c5775dc09": "en el polvo",
   "ee319c0891824a45": "al polvo",
   "24a096be82f6da3f": "y polvo",
-  "6c60a287f1d2471d": "y del [el] polvo",
+  "6c60a287f1d2471d": "y de[l] polvo",
   "f102e1023106719d": "su polvo",
   "064040525920533f": "su polvo",
   "9554656a16053f23": "[eres] polvo",
@@ -1704,7 +1704,7 @@
   "01e81184d9340114": "y tu polvo",
   "9a5f18516aa7181c": "y su polvo",
   "7b3bdfd20a6f0252": "y su polvo",
-  "d0fcb6a09c05dd80": "y al [el] polvo de",
+  "d0fcb6a09c05dd80": "y a[l] polvo de",
   "8f796d212e0cc093": "y en el polvo",
   "4ab1c50cd9094264": "y los escombros",
   "5ea993fa7462b667": "[los] polvos de",
@@ -1794,7 +1794,7 @@
   "3edee0d4010b57f7": "y madera<s> de",
   "55b4d116993adcdc": "y árbol[es]",
   "41dab8cbc8e27424": "y [es] un árbol de",
-  "c8efb9025c850a07": "y del [el] árbol de",
+  "c8efb9025c850a07": "y de[l] árbol de",
   "0982cd4aa33ea282": "madera<s>",
   "43af70572f1294ec": "árboles de",
   "5f0091ac1bb5e228": "madera<s> de",
@@ -1809,7 +1809,7 @@
   "08411d1a914148d4": "tu árbol",
   "655096b1e7081bad": "su árbol[es]",
   "2ccbd68fe233dabe": "entre [el] árbol[es] de",
-  "378cb65d297ea2ef": "del [el] árbol de",
+  "378cb65d297ea2ef": "de[l] árbol de",
   "2194592603986a65": "para <el> un árbol",
   "b230695e58ce1ca1": "como <el> un árbol",
   "b90381a6747ae5da": "como <el> árbol",
@@ -1871,7 +1871,7 @@
   "ff3a359b1bbb8cf0": "a [los] ídolos de",
   "632e0312526db6aa": "a <los> ídolos",
   "2a443c68fc8a8e06": "vuestros trabajadores",
-  "a4a96819c6e42ab4": "y del [el] dolor de",
+  "a4a96819c6e42ab4": "y de[l] dolor de",
   "4e65340563310bb9": "tu dolor",
   "d291311b6128bdd6": "con dolor",
   "8936c81725b1fbbb": "y por tristeza de",
@@ -2619,6 +2619,7 @@
   },
   "5505e6822de9b377": {
    "23060022.6": "poderosa",
+   "29001006.6": "poderosa",
    "33004007.7": "poderosa",
    "5009014.12": "poderosa",
    "5026005.19": "poderosa"
@@ -2630,6 +2631,106 @@
   "f00fb336540a9e92": {
    "33004003.7": "poderosas",
    "38008022.5": "poderosas"
+  },
+  "c8efb9025c850a07": {
+   "1002017.1": "y de [el] árbol de"
+  },
+  "378cb65d297ea2ef": {
+   "1003022.18": "de [el] árbol de"
+  },
+  "a4a96819c6e42ab4": {
+   "1005029.9": "y de [el] dolor de"
+  },
+  "28c0c3993abddb21": {
+   "2026015.7": "erguidas",
+   "2036020.7": "erguidas"
+  },
+  "b24b2778daf92bfe": {
+   "4008002.6": "cuando hagas subir"
+  },
+  "ba7441c76c575e4a": {
+   "7013016.15": "lo ofrecerás"
+  },
+  "d19f041adf96e661": {
+   "10006022.11": "con ellas"
+  },
+  "bda1cd5b06c48dfc": {
+   "10007010.15": "para afligirlo"
+  },
+  "20a18ac88868a8ad": {
+   "10013012.6": "me humilles"
+  },
+  "266ffeebeacc253b": {
+   "11009008.4": "altísima",
+   "14007021.5": "altísima"
+  },
+  "72d21f0aa0b64e3c": {
+   "11010003.10": "oculta"
+  },
+  "70e108ae7269e7cf": {
+   "12018017.28": "<el> de arriba",
+   "23007003.17": "<el> de arriba",
+   "23036002.17": "<el> de arriba"
+  },
+  "3f6a979e3051bb22": {
+   "13007024.9": "<la> de arriba"
+  },
+  "0cfe86fcefd11df6": {
+   "13028021.9": "y [estarán] contigo"
+  },
+  "255772f634c2d4b5": {
+   "14023020.22": "<la> de arriba",
+   "16003025.10": "<la> de arriba",
+   "24020002.13": "<la> de arriba",
+   "26009002.7": "<la> de arriba"
+  },
+  "ae00ec64294e80cd": {
+   "16013015.10": "y [algunos que] [los] cargaban"
+  },
+  "365fc74260196615": {
+   "18011002.4": "¿será respondida?"
+  },
+  "fc0a970db28d005a": {
+   "19019009.4": "duradero"
+  },
+  "6b21514894223519": {
+   "19023004.11": "[estás] conmigo"
+  },
+  "94ae04d0c1daf275": {
+   "19025002.7": "se regocijen"
+  },
+  "005161b6ca48b034": {
+   "19094003.8": "se regocijarán"
+  },
+  "9e2161f7f809ed46": {
+   "19102024.4": "me alces"
+  },
+  "fe815d7ca8f4bbde": {
+   "19105010.1": "y lo confirmó"
+  },
+  "e8db8af12d78e2cd": {
+   "20020005.2": "profunda"
+  },
+  "b0710fa424836540": {
+   "20021030.6": "[hay] consejo"
+  },
+  "a9f3af0e8dff70c7": {
+   "22005014.9": "cubierta"
+  },
+  "823f166f867092fa": {
+   "23008007.9": "<las> poderosas"
+  },
+  "5b061e444d6c2458": {
+   "23023012.5": "para regocijarte"
+  },
+  "71cc62c89a6e6215": {
+   "23046001.10": "[son] llevadas"
+  },
+  "e536cab35f9c1a0f": {
+   "25003056.4": "ocultes"
+  },
+  "1e05f2db7ba5e63f": {
+   "26017014.9": "para que continúe él"
   }
  }
 }

@@ -2426,7 +2426,6 @@
    "44018006.20": "yo mismo [estoy]"
   },
   "f5223b24feb006cf": {
-   "43008043.6": "mío",
    "43008056.11": "mío",
    "43017013.17": "mío"
   },
@@ -2494,13 +2493,349 @@
    "40012025.14": "sí mismo"
   },
   "380271d2adf3893f": {
-   "42011017.12": "a sí mismo"
+   "41003024.5": "a sí mismo",
+   "42011017.12": "sí mismo"
   },
   "80dd685a4d99036d": {
    "42011017.13": "habiendo sido dividido"
   },
   "96f383c719a03c9b": {
    "43005030.16": "justo"
+  },
+  "f3726f1e4eb4fee9": {
+   "40008009.11": "mí mismo",
+   "57001013.5": "mí mismo"
+  },
+  "ee7ccb89d9398b32": {
+   "40009031.4": "dieron a conocer"
+  },
+  "b078ef6b4b771159": {
+   "40011019.21": "es justificada"
+  },
+  "02c57e80eedf5412": {
+   "40012011.26": "[la] levantará?"
+  },
+  "28f5297bdcdf8f92": {
+   "40012026.9": "sí mismo",
+   "42011018.7": "sí mismo",
+   "42024012.19": "sí mismo",
+   "44028016.19": "sí mismo"
+  },
+  "2a0d22958e097469": {
+   "40012039.15": "será dada",
+   "40016004.10": "será dada"
+  },
+  "1caf235dfd9d0d6b": {
+   "40014011.9": "fue dada",
+   "43001017.6": "fue dada",
+   "48003021.13": "fue dada",
+   "49003008.7": "fue dada",
+   "66006002.15": "fue dada",
+   "66006004.24": "fue dada",
+   "66006008.23": "fue dada",
+   "66009001.17": "fue dada",
+   "66011001.2": "fue dada",
+   "66013005.10": "fue dada",
+   "66013005.2": "fue dada",
+   "66013007.13": "fue dada"
+  },
+  "8ef69c3042a4f3ad": {
+   "40022009.5": "salidas"
+  },
+  "63bcb34a5250f9e0": {
+   "40025003.11": "ellas mismas"
+  },
+  "c4fa20a504d8eacf": {
+   "40027015.4": "acostumbraba"
+  },
+  "0bbc0fdbb3cc9445": {
+   "41004027.4": "se levante"
+  },
+  "49b2d153aaa7222a": {
+   "41009010.6": "sí mismos",
+   "41010026.7": "sí mismos",
+   "41011031.4": "sí mismos",
+   "41012007.6": "sí mismos",
+   "41014004.6": "sí mismos",
+   "42020005.5": "sí mismos",
+   "42020014.8": "sí mismos",
+   "42022023.6": "sí mismos",
+   "43007035.6": "sí mismos",
+   "43012019.6": "sí mismos"
+  },
+  "dd43f72bdd552763": {
+   "41009033.17": "vosotros mismos",
+   "42022017.11": "vosotros mismos",
+   "60004008.6": "vosotros mismos"
+  },
+  "2d9d77567e9093ed": {
+   "41010001.23": "Se había acostumbrado"
+  },
+  "204ace9f90401d63": {
+   "41011001.3": "se acercan"
+  },
+  "69d3d194f21b035e": {
+   "41014027.10": "mí mismo"
+  },
+  "994032cbef59ef66": {
+   "41014027.23": "serán esparcidas"
+  },
+  "74a4607f4e0fb2f8": {
+   "41016003.4": "sí mismas"
+  },
+  "e8b254b90777e918": {
+   "42007035.2": "fue justificada",
+   "59002025.10": "fue justificada"
+  },
+  "0906cccfff355b3b": {
+   "42008024.11": "habiéndose levantado",
+   "42011008.19": "habiéndose levantado"
+  },
+  "b5fa7b71862b6b2b": {
+   "42010016.4": "me"
+  },
+  "bcc390a39ee9c56a": {
+   "42010020.18": "han sido escritos"
+  },
+  "eaf898cf18430051": {
+   "42010035.7": "[los] dio"
+  },
+  "77669b86d788dce5": {
+   "42011021.7": "su propia",
+   "42014033.11": "sus propios",
+   "42015005.7": "sus propios",
+   "45014012.6": "su propia",
+   "46007002.7": "su propia",
+   "46007037.29": "su propia",
+   "46007038.7": "su propia",
+   "48006004.4": "su propia",
+   "49005028.17": "su propia",
+   "49005029.5": "su propia",
+   "49005033.9": "su propia"
+  },
+  "943bab0b54f85329": {
+   "42016004.15": "sus propias",
+   "42016008.28": "su propia",
+   "42019035.9": "sus propias",
+   "42019036.7": "sus propias",
+   "42022066.20": "su propio",
+   "44014014.11": "sus propias",
+   "45016004.7": "su propio",
+   "45016018.13": "su propio",
+   "49005028.8": "sus propias",
+   "50002021.5": "sus propias",
+   "60004019.16": "sus propias",
+   "65001018.13": "sus propias"
+  },
+  "0268c410195cb5cb": {
+   "42016015.8": "a vosotros mismos"
+  },
+  "9a5cc79472a6c0ca": {
+   "42023002.16": "ser dados"
+  },
+  "5200312b0d3e6f72": {
+   "43001033.3": "sabía"
+  },
+  "779e2fdac650359a": {
+   "43004010.7": "supieras"
+  },
+  "8bb15dec5f2c9de7": {
+   "43004015.16": "venga"
+  },
+  "511e3a7d438c5d9a": {
+   "43004034.5": "Mi propio"
+  },
+  "3453509d45df16dd": {
+   "43006018.7": "era agitado"
+  },
+  "3a7f63ce13cfba49": {
+   "43007028.11": "Me"
+  },
+  "55fd28ccd3a75ab5": {
+   "43008012.16": "a Mí mismo",
+   "43010038.5": "a Mí mismo",
+   "43012026.2": "a Mí mismo",
+   "43012026.21": "a Mí mismo",
+   "43012026.5": "a Mí mismo",
+   "46004003.1": "A mí mismo"
+  },
+  "ba1e7ef1f868fcd2": {
+   "43008019.27": "habríais sabido"
+  },
+  "89f60f383db55aef": {
+   "43010029.5": "[las] ha dado"
+  },
+  "4cd2c616155bcb46": {
+   "43012032.10": "Mí mismo",
+   "43014003.14": "Mí mismo"
+  },
+  "323cff38381a687d": {
+   "43016015.6": "mías",
+   "43017010.10": "míos"
+  },
+  "53367dd3f95eb581": {
+   "43016032.13": "y a mí"
+  },
+  "32c689566fdb4f87": {
+   "43019017.3": "Su propia"
+  },
+  "d79285e77d480888": {
+   "44009036.10": "siendo traducida"
+  },
+  "437de2b8aeecbbfe": {
+   "44013039.11": "ser justificados"
+  },
+  "acdcc1876e2205ca": {
+   "44019035.28": "caído del cielo?"
+  },
+  "c1a06a265ba79cee": {
+   "44019040.4": "ser acusados"
+  },
+  "635e98532d0e63a1": {
+   "44027027.6": "siendo llevados de acá para allá"
+  },
+  "653f3783fcc243fe": {
+   "44027040.5": "[las] dejaban"
+  },
+  "4200c026b7f24d62": {
+   "45001021.8": "[lo] glorificaron"
+  },
+  "98f295051dcac28b": {
+   "45001021.15": "pensamientos"
+  },
+  "5ba7e101f79c174a": {
+   "45007012.11": "justo"
+  },
+  "e3f4012bea9ab251": {
+   "45012020.10": "tiene sed"
+  },
+  "0cbffeefafed66ad": {
+   "45015001.13": "a nosotros mismos"
+  },
+  "ce2098c577fbaa9f": {
+   "45015003.6": "a Sí mismo"
+  },
+  "68830cc234a86a93": {
+   "46002013.12": "enseñadas",
+   "46002013.6": "enseñadas"
+  },
+  "076113793e44a06a": {
+   "46005004.13": "mi"
+  },
+  "277e941efbc6e527": {
+   "46006019.22": "de vosotros mismos?"
+  },
+  "a697c74d7447ef34": {
+   "46010029.6": "tu propia"
+  },
+  "0d824d31fb95ff91": {
+   "46012007.3": "es dada",
+   "46012008.7": "es dada"
+  },
+  "92f0a5b99dbcc17a": {
+   "46013005.6": "de sí mismo"
+  },
+  "f135684d6004aa2d": {
+   "46015057.6": "da"
+  },
+  "f80f97765165d407": {
+   "48003022.16": "sea dada",
+   "49006019.6": "sea dada"
+  },
+  "7884dfc02e094396": {
+   "48004015.18": "[los] habéis dado"
+  },
+  "b6d4c080e98b8e63": {
+   "49002008.16": "don"
+  },
+  "9d0d51e1b3b5f0b6": {
+   "49004007.5": "ha sido dada"
+  },
+  "4ba52aec2eb641b3": {
+   "50002012.27": "vuestra propia"
+  },
+  "bf2d04e48720f294": {
+   "52002004.20": "examina"
+  },
+  "43bab7e957d07210": {
+   "52002007.19": "sus propios"
+  },
+  "555a0587f56d66e2": {
+   "52002008.16": "nuestras propias"
+  },
+  "9a9bea1d0721eb43": {
+   "52004008.12": "da"
+  },
+  "dc9a61b75636a213": {
+   "53001007.18": "poderosos"
+  },
+  "71019f9f75938a94": {
+   "53003001.14": "sea glorificada"
+  },
+  "e27bc359e2f2f1ae": {
+   "54006002.13": "[los] sirvan"
+  },
+  "d0020b62da7d4f5b": {
+   "57001012.9": "mi"
+  },
+  "9a90d0ff45bc02d5": {
+   "58008011.20": "conocerán"
+  },
+  "fe379f77739881e9": {
+   "58009018.7": "ha sido inaugurada"
+  },
+  "34a19b54a4b9d0f2": {
+   "59001005.18": "será dada"
+  },
+  "eefa2c892b9d2739": {
+   "59001027.21": "a sí mismo"
+  },
+  "3fc0d5c07b213971": {
+   "60001008.16": "lleno de gloria"
+  },
+  "b8ec5e3cf67aa847": {
+   "60001012.5": "a sí mismos"
+  },
+  "fe87e2de1c2b8223": {
+   "60003012.6": "[los] justos"
+  },
+  "fce2e7b3529f9ac7": {
+   "60003020.21": "fueron salvadas"
+  },
+  "7fc6a84ef03af635": {
+   "65001013.6": "sus propias"
+  },
+  "3066db53bf9c0863": {
+   "66006011.2": "fueron dadas",
+   "66013014.14": "fueron dadas"
+  },
+  "c7f97d88d7973b59": {
+   "66006011.2": "fueron dadas",
+   "66008002.12": "fueron dadas",
+   "66012014.2": "fueron dadas"
+  },
+  "f92e3367b00698c2": {
+   "66008009.19": "fue destruida"
+  },
+  "ab1384143346537f": {
+   "66010004.9": "de sí mismos"
+  },
+  "93f6fbb3fab53195": {
+   "66010007.22": "Sus propios"
+  },
+  "51430ed126ff68d5": {
+   "66011003.11": "doscientos",
+   "66012006.22": "doscientos"
+  },
+  "73fa27c5cf810ac1": {
+   "66015003.27": "Justos"
+  },
+  "f4001929a9f8bf95": {
+   "66016007.16": "justos [son]",
+   "66019002.4": "justos [son]"
+  },
+  "0ac81984de36c13b": {
+   "42001043.13": "mí misma?"
   }
  }
 }

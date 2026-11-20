@@ -2357,10 +2357,10 @@
    "41010012.9": "se casa"
   },
   "f4be210318ee248b": {
-   "40018012.5": "sucede"
-  },
-  "df9ee3e5e0947e88": {
-   "41009050.9": "llega a ser"
+   "40018012.5": "sucede",
+   "40024034.15": "sucedan",
+   "41013030.15": "sucedan",
+   "42021032.14": "sucedan"
   },
   "bc5dec29881811ca": {
    "40006016.5": "seáis",
@@ -2386,6 +2386,7 @@
    "43004054.4": "[la] segunda"
   },
   "f46ed9b2e6297cfb": {
+   "42022050.17": "derecha",
    "43018010.20": "derecha"
   },
   "16e2c97cffbe4967": {
@@ -2407,6 +2408,178 @@
   },
   "aa37e5bc47180451": {
    "54006009.15": "dañinos"
+  },
+  "198ede7699955133": {
+   "40019024.8": "por medio de [el]"
+  },
+  "6acf6ebd31152848": {
+   "40022039.1": "[El] segundo",
+   "41012031.2": "[El] segundo"
+  },
+  "e23beb07c6b5dd61": {
+   "40028011.17": "habiendo sido hechas"
+  },
+  "d85a93cddbbe5b43": {
+   "41006002.34": "son hechos?"
+  },
+  "d7d0608e1c8ca3f1": {
+   "41007019.20": "alimentos"
+  },
+  "ff32af4353e199b8": {
+   "41015033.7": "vinieron"
+  },
+  "827a047a58c54109": {
+   "42009007.7": "siendo hechas",
+   "49005012.4": "siendo hechas"
+  },
+  "6160dc6f830bc85d": {
+   "42013017.20": "eran hechas"
+  },
+  "556382e908b6a38b": {
+   "42018031.16": "escritas"
+  },
+  "2c401680bacc3f93": {
+   "42021022.10": "escritas",
+   "42024044.22": "escritas",
+   "44013029.8": "escritas",
+   "66001003.16": "escritas"
+  },
+  "289df5faefa9b590": {
+   "42022042.19": "sea [hecha]",
+   "44021014.11": "sea [hecha]"
+  },
+  "6c5f20b3a35cd7d9": {
+   "42022042.19": "sea [hecha]",
+   "44021014.11": "sea [hecha]"
+  },
+  "c7bd40553718287f": {
+   "43014029.6": "suceder"
+  },
+  "5380fd02ccf452b9": {
+   "43015025.11": "escrita",
+   "46015054.20": "escrita"
+  },
+  "973b6063fa2a6fc4": {
+   "44004016.10": "una notable"
+  },
+  "97b8588a83a1307a": {
+   "44008013.19": "siendo realizados"
+  },
+  "0a91edb3b0188b9c": {
+   "44014003.23": "ser hechos"
+  },
+  "f70ac6ebef2ff8a2": {
+   "44015018.1": "conocidas"
+  },
+  "548e58bb1f42f11a": {
+   "44020003.5": "habiendo sido hecho"
+  },
+  "1435ed4977235051": {
+   "44020036.6": "rodillas"
+  },
+  "f6df3ad3836ef00a": {
+   "44022029.23": "atado"
+  },
+  "ef19d894de46ca32": {
+   "44028021.8": "cartas"
+  },
+  "8ccedb3d053987da": {
+   "45002015.7": "escrita"
+  },
+  "ede890e2b6a04de0": {
+   "45003014.7": "está llena"
+  },
+  "2964d2717d29715e": {
+   "45007002.8": "ha sido atada",
+   "46007039.2": "ha sido atada"
+  },
+  "f1bc495dc3ac8c4a": {
+   "46003013.9": "[la] declarará"
+  },
+  "36b6090759e18a22": {
+   "46008003.8": "ha sido conocido"
+  },
+  "3a0762b7ca43996b": {
+   "46016014.5": "sean hechas"
+  },
+  "2909fa11872a4ef5": {
+   "46016024.14": "fue escrita"
+  },
+  "c67d2d5e38ea99ee": {
+   "47004018.5": "siendo vistas",
+   "47004018.9": "siendo vistas",
+   "58011003.14": "siendo vistas"
+  },
+  "7765b794c3fca1f8": {
+   "47004018.12": "siendo vistas [son]"
+  },
+  "89ed095e5832474f": {
+   "47004018.17": "siendo vistas"
+  },
+  "a9cef04f99df0388": {
+   "48001014.11": "pueblo"
+  },
+  "84d52b0862aa0d8c": {
+   "48003010.21": "escritas"
+  },
+  "15cc827658b90ce2": {
+   "49003010.2": "sea dada a conocer"
+  },
+  "8332d85205e0117c": {
+   "50004005.4": "sea conocida"
+  },
+  "45e3f1d82b99933e": {
+   "50004006.16": "sean dadas a conocer"
+  },
+  "8982c0cd7af4e948": {
+   "55002009.14": "¡ha sido atada!"
+  },
+  "b5f15e69d2cb33e1": {
+   "56002005.15": "sea denigrada"
+  },
+  "0180650b48bbec2b": {
+   "58010034.15": "sabiendo",
+   "59001003.1": "sabiendo"
+  },
+  "d53a13166195896c": {
+   "58011001.9": "siendo vistas"
+  },
+  "051401884d756a9f": {
+   "58011003.14": "siendo vista"
+  },
+  "dc7596b5d8fb0468": {
+   "58011007.7": "vistas"
+  },
+  "b545b01f75d2c70b": {
+   "58013023.1": "Sabéis"
+  },
+  "ebfe10b9028d44b9": {
+   "59003007.12": "es domada"
+  },
+  "a774255aef1a62ce": {
+   "59003007.14": "ha sido domada"
+  },
+  "c922f94e7ff68b4b": {
+   "59005002.10": "han llegado a ser"
+  },
+  "836f8af4e10b5fb1": {
+   "61002014.12": "ejercitado"
+  },
+  "e1a7ba309755710f": {
+   "66001018.5": "estuve"
+  },
+  "796edd9f0be70106": {
+   "66011014.4": "segundo"
+  },
+  "cfa48ec4419310a3": {
+   "66013008.12": "ha sido escrito"
+  },
+  "1d827d87bfa7c66a": {
+   "66017003.15": "estando llena",
+   "66017004.24": "estando llena"
+  },
+  "8eea91abaa711391": {
+   "66020012.31": "escritas"
   }
  }
 }

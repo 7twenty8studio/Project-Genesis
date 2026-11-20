@@ -175,7 +175,7 @@
   "01ec003ac802046a": "tomará",
   "7fe4830754ad978b": "os tomará",
   "47d028558fd12f0f": "as pessoas tomam?",
-  "384d6fc9cd2fbaea": "têm tomado",
+  "384d6fc9cd2fbaea": "tomaram",
   "c5432b13fd36b221": "tomarão",
   "dd6f14461f7ba7cf": "toma",
   "849d5a56ac4e04d8": "tira",
@@ -2427,5 +2427,98 @@
   "fedfe00a1617d271",
   "ff24a97fb12bfa97"
  ],
- "occurrences": {}
+ "occurrences": {
+  "0f13832e28d0f47d": {
+   "1008009.19": "e a tomou",
+   "7015015.7": "e a tomou"
+  },
+  "ed16706f3ec26510": {
+   "1030015.4": "teu tomar"
+  },
+  "17c2e03af524e7b2": {
+   "1032014.2": "duzentas",
+   "1032014.6": "duzentas"
+  },
+  "c14be928d226db94": {
+   "2022017.2": "absolutamente <recusar>"
+  },
+  "70e0cb2f1de540b8": {
+   "5030012.9": "para que o traga",
+   "5030013.12": "para que o traga"
+  },
+  "cde6ec99e9f86a7f": {
+   "7017002.7": "foi tomada"
+  },
+  "45357bd0803a76da": {
+   "7017002.18": "a tomei"
+  },
+  "56636f301326460a": {
+   "9004011.3": "foi tomada"
+  },
+  "dc4974368381c8ec": {
+   "9004022.6": "foi tomada"
+  },
+  "ebbfd318852eb2ac": {
+   "9021006.21": "foi tirado ele"
+  },
+  "9a5032b767c898ad": {
+   "9021009.20": "toma-[a]"
+  },
+  "96a8a0bcf9085332": {
+   "11007020.13": "duzentas"
+  },
+  "13f339e495374112": {
+   "12013018.4": "e [as] tomou"
+  },
+  "4e092f4035e2f4de": {
+   "12020007.6": "e [a] tomaram"
+  },
+  "25844fbec674ac63": {
+   "13016030.9": "será abalado",
+   "19093001.13": "será abalado",
+   "19096010.9": "será abalado"
+  },
+  "87b82b356a3e9ac1": {
+   "15006017.12": "centenas"
+  },
+  "b04e76ba2a5b8096": {
+   "18003006.3": "que a tome"
+  },
+  "e6713c58bfaa72f4": {
+   "18011015.5": "sem defeito"
+  },
+  "0d5ae411df33086c": {
+   "20011001.1": "balanças de"
+  },
+  "cdd48f6e72dd1a8e": {
+   "20016011.2": "e balanças de"
+  },
+  "0b2337b6efa85607": {
+   "23001022.5": "[foi] misturada"
+  },
+  "55dd629d21f84544": {
+   "23054010.9": "será tirada"
+  },
+  "8fad9ff0aaa6bfbf": {
+   "24002033.1": "como!"
+  },
+  "7d92209608e03c90": {
+   "24006030.2": "rejeitada"
+  },
+  "68ccb82e514be3a8": {
+   "24029022.1": "e será tomada"
+  },
+  "b20e1f244c903fde": {
+   "24036014.21": "toma-o"
+  },
+  "556248ef5338ea23": {
+   "24041008.9": "nos mates"
+  },
+  "b655cb1742b1380f": {
+   "33002004.16": "[a] tira"
+  },
+  "bf0b98b79d556fc0": {
+   "35001006.8": "e <a> impetuosa"
+  }
+ }
 }
