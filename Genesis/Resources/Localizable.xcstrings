@@ -378,7 +378,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld oraciones contestadas"
+            "value": "%lld oraciones respondidas"
           }
         },
         "pt-BR": {
@@ -2100,7 +2100,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Un año después de que una oración fue contestada, un recordatorio para dar gracias."
+            "value": "Un año después de que una oración fue respondida, un recordatorio para dar gracias."
           }
         },
         "pt-BR": {
@@ -2581,7 +2581,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Agrega un comentario"
+            "value": "Añade un comentario"
           }
         },
         "pt-BR": {
@@ -2667,7 +2667,7 @@
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Adicione fotos, gravações de voz e páginas com o Pencil com o Premium."
+            "value": "Adicione fotos, gravações de voz e páginas com o Pencil no Premium."
           }
         }
       }
@@ -3212,7 +3212,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sonidos ambientales en la pantalla de bloqueo"
+            "value": "Sonidos ambientales en la pantalla bloqueada"
           }
         },
         "pt-BR": {
@@ -3471,7 +3471,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aniversarios de oraciones contestadas"
+            "value": "Aniversarios de oraciones respondidas"
           }
         },
         "pt-BR": {
@@ -3519,7 +3519,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Las respuestas llegaron después de un día, más o menos, en promedio."
+            "value": "Las respuestas llegaron después de un día aproximadamente, en promedio."
           }
         },
         "pt-BR": {
@@ -4823,7 +4823,7 @@
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Apresente sua causa"
+            "value": "Apresente sua queixa"
           }
         }
       }
@@ -5540,7 +5540,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Primero elige un nombre para mostrar."
+            "value": "Primero elige un nombre visible."
           }
         },
         "pt-BR": {
@@ -7664,7 +7664,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "El nombre para mostrar debe tener de 1 a 40 caracteres."
+            "value": "El nombre visible debe tener de 1 a 40 caracteres."
           }
         },
         "pt-BR": {
@@ -10435,7 +10435,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Bueno saber"
+            "value": "Conviene saber"
           }
         },
         "pt-BR": {
@@ -10677,7 +10677,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Retos de grupo"
+            "value": "Desafíos de grupo"
           }
         },
         "pt-BR": {
@@ -10725,7 +10725,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Los propietarios de grupos pueden elegir moderadores, aprobar nuevos miembros y revisar lo que se denuncie."
+            "value": "Los propietarios de grupos pueden elegir moderadores, aprobar nuevos miembros y revisar lo que se reporte."
           }
         },
         "pt-BR": {
@@ -12771,7 +12771,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lleva un diario de oración, guarda los versículos que te hablan y recuerda las oraciones contestadas."
+            "value": "Lleva un diario de oración, guarda los versículos que te hablan y recuerda las oraciones respondidas."
           }
         },
         "pt-BR": {
@@ -12787,7 +12787,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lleva un registro privado de lo que estás orando."
+            "value": "Lleva un registro privado de lo que pides en oración."
           }
         },
         "pt-BR": {
@@ -13855,7 +13855,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Escuchar en la pantalla de bloqueo"
+            "value": "Escuchar en la pantalla bloqueada"
           }
         },
         "pt-BR": {
@@ -15373,13 +15373,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ofrenda de la mañana"
+            "value": "Ofrecimiento de la mañana"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Oferta da manhã"
+            "value": "Consagração da manhã"
           }
         }
       }
@@ -17466,7 +17466,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "El día en que una oración fue contestada, un año después, un momento para recordar y dar gracias."
+            "value": "El día en que una oración fue respondida, un año después, un momento para recordar y dar gracias."
           }
         },
         "pt-BR": {
@@ -17483,13 +17483,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Un día como hoy marcaste «%@» y %lld más como contestadas. Tómate un momento para recordar y dar gracias."
+            "value": "Un día como hoy marcaste «%@» y %lld más como respondidas. Tómate un momento para recordar y dar gracias."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Neste dia você marcou \"%@\" e mais %lld como respondidas. Tire um momento para lembrar e dar graças."
+            "value": "Neste dia você marcou “%@” e mais %lld como respondidas. Tire um momento para lembrar e dar graças."
           }
         }
       }
@@ -17500,13 +17500,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Un día como hoy marcaste «%@» como contestada. Tómate un momento para recordar y dar gracias."
+            "value": "Un día como hoy marcaste «%@» como respondida. Tómate un momento para recordar y dar gracias."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Neste dia você marcou \"%@\" como respondida. Tire um momento para lembrar e dar graças."
+            "value": "Neste dia você marcou “%@” como respondida. Tire um momento para lembrar e dar graças."
           }
         }
       }
@@ -18549,7 +18549,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Pausa los sonidos desde la pantalla de bloqueo"
+            "value": "Pausa los sonidos desde la pantalla bloqueada"
           }
         },
         "pt-BR": {
@@ -18678,13 +18678,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Personas, lugares y acontecimientos de Theographic Bible Metadata (CC BY-SA 4.0). Ubicaciones del mapa y su grado de certeza de OpenBible.info (CC BY 4.0). Descripciones del Diccionario Bíblico de Easton (1897), en inglés."
+            "value": "Personas, lugares y acontecimientos de Theographic Bible Metadata (CC BY-SA 4.0). Ubicaciones del mapa y su grado de certeza de OpenBible.info (CC BY 4.0). Descripciones del Diccionario Bíblico de Easton (1897)."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Pessoas, lugares e acontecimentos do Theographic Bible Metadata (CC BY-SA 4.0). Localizações do mapa e o grau de certeza do OpenBible.info (CC BY 4.0). Descrições do Dicionário Bíblico de Easton (1897), em inglês."
+            "value": "Pessoas, lugares e acontecimentos do Theographic Bible Metadata (CC BY-SA 4.0). Localizações do mapa e o grau de certeza do OpenBible.info (CC BY 4.0). Descrições do Dicionário Bíblico de Easton (1897)."
           }
         }
       }
@@ -19339,7 +19339,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Alaba a Dios por quién es él."
+            "value": "Alaba a Dios por quien él es."
           }
         },
         "pt-BR": {
@@ -21831,7 +21831,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Recuerda las oraciones contestadas"
+            "value": "Recuerda las oraciones respondidas"
           }
         },
         "pt-BR": {
@@ -24019,13 +24019,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Comparte peticiones de oración con tu grupo, toca “Oré” y marca las peticiones respondidas."
+            "value": "Comparte peticiones de oración con tu grupo, toca «Oré» y marca las peticiones respondidas."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Compartilhe pedidos de oração com seu grupo, toque em \"Orei\" e marque os pedidos respondidos."
+            "value": "Compartilhe pedidos de oração com seu grupo, toque em “Orei” e marque os pedidos respondidos."
           }
         }
       }
@@ -25586,7 +25586,7 @@
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Raiz verbal"
+            "value": "Tronco verbal"
           }
         }
       }
@@ -26454,13 +26454,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Para llevar"
+            "value": "Lo que me llevo"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Para levar"
+            "value": "O que levo comigo"
           }
         }
       }
@@ -27215,7 +27215,7 @@
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "A %@ é lida por uma voz em português. Para um som muito mais natural, baixe uma voz Melhorada ou Premium em português (Brasil) em Ajustes › Acessibilidade › Conteúdo Falado › Vozes › Português e depois volte aqui."
+            "value": "A %@ é lida por uma voz em português. Para um som muito mais natural, baixe uma voz aprimorada ou Premium em português (Brasil) em Ajustes › Acessibilidade › Conteúdo Falado › Vozes › Português e depois volte aqui."
           }
         }
       }
@@ -27375,7 +27375,7 @@
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "A Bíblia Livre agora vem com o Versely, e a NVI, a Nova Bíblia Viva e outras estão em Bíblias neste aparelho › Obter mais."
+            "value": "A Bíblia Livre agora vem com o Versely, e a NVI, a Nova Bíblia Viva e outras estão em Bíblias neste dispositivo › Obter mais."
           }
         }
       }
@@ -27769,7 +27769,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "El widget mediano del Versículo del día ahora es gratis en la pantalla de inicio, junto al pequeño y al de la pantalla de bloqueo."
+            "value": "El widget mediano del Versículo del día ahora es gratis en la pantalla de inicio, junto al pequeño y al de la pantalla bloqueada."
           }
         },
         "pt-BR": {
@@ -32429,7 +32429,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mientras se lee la Biblia en voz alta, la pantalla de bloqueo y la Dynamic Island muestran el versículo que se está leyendo, con reproducir y pausar."
+            "value": "Mientras se lee la Biblia en voz alta, la pantalla bloqueada y la Dynamic Island muestran el versículo que se está leyendo, con reproducir y pausar."
           }
         },
         "pt-BR": {
@@ -32915,7 +32915,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Con Premium, tu mezcla de sonidos ambientales aparece en la pantalla de bloqueo y en la Dynamic Island, con reproducir, pausar y el temporizador."
+            "value": "Con Premium, tu mezcla de sonidos ambientales aparece en la pantalla bloqueada y en la Dynamic Island, con reproducir, pausar y el temporizador."
           }
         },
         "pt-BR": {
@@ -34249,7 +34249,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tu primera oración contestada"
+            "value": "Tu primera oración respondida"
           }
         },
         "pt-BR": {

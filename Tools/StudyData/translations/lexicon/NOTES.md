@@ -85,3 +85,51 @@ Tertullus, "Joshua 16:19" probably Job), digit misprints the check counts
 "everny", "rabundant", "overgrowhoke"), truncated Strong's derivations
 (H1511, H7789, H8338, H8501, H8567), unclosed parentheses (H7320, G5037).
 Rhegium "in Sicily" as Abbott-Smith has it.
+
+## AI review, 19 November 2026 (not qualified sign-off)
+Fifteen AI reviewers each read every entry of 4 or 5 batches (gloss,
+definition, derivation) in Spanish and in Portuguese against the English,
+all 74 batches, and fixed errors of meaning, grammar and terminology in
+place; a corpus-wide sweep then carried the patterns they found to every
+batch. 516 fixes (292 es, 224 pt; 274 meaning, 131 terminology, 64
+grammar, 30 untranslated, 17 other) are listed with the old and new text
+and the reason in `ai-review/fixes.jsonl`; 59 doubts left unchanged for a
+qualified reviewer are in `ai-review/queries.jsonl`. Every batch still
+passes `lexicon.py check`. No qualified human reviewer has signed off on
+the Spanish or Portuguese.
+
+What came up most:
+- Glosses that rendered a sense from the definition (or a traditional
+  word) instead of the English gloss given: "ring" → moldura, "scroll" →
+  libro/livro, "late fig" → figo temporão (early), "propitiation" →
+  propiciatorio, "unique" → unigénito, "arrow" → dardo.
+- Glosses in the wrong part of speech, degree or voice (a noun made a verb,
+  "strictest" as a comparative, "to be left" as "dejar").
+- False friends in pt: emissão (issue = offspring), sorte (sort), aprisco
+  (fold = doubling), conhecimento (acquaintance = a person), dificilmente
+  (hardly = with difficulty), chifrar (escornar).
+- Number and gender: H0607/H0608 singular/plural swapped, feminine
+  pronouns given masculine forms, "el ἀγορά".
+- STEPBible garbles rendered word for word: "of person(s) pron." (now
+  pron. personal / pron. pessoal; ἐγώ's "I." is yo / eu), "3rd of
+  person(s)", "dupl. accusative" (doble acusativo), "I. con" / "ll con"
+  (l. con, ll. con), "genitive cubic." (subj.), "gen. pun." (de pena).
+- Abbreviations: es "f."/"ff." left in English (s./ss.), "hith." (hit.),
+  "hithpo." (hitpo.), pt "prov." for "prob.", "Áq." for Aq.
+- es "Paroh" (Faraón), "Bet-súa" (Bat-súa), "Junias" (Junia), "Noé" for
+  Noa (H5270).
+
+Conventions left as they are, for the owner or a qualified reviewer:
+- Second person plural: the Hebrew pronoun glosses use vosotros / vós
+  (H0608, H0859D/E); the Greek ὑμεῖς forms, G2075 and the Hebrew suffixes
+  H9031–H9037 use ustedes / vocês (te / você for the singular suffix).
+- English renderings quoted from the AV/RV/EV: es keeps «English» plus the
+  Spanish, as INSTRUCTIONS asks; pt sometimes keeps only the English and
+  sometimes only the Portuguese.
+- LSJ author labels: es translates them ("Heródoto el Historiador"), pt
+  keeps the Latin ("Herodotus Historicus").
+- pt writes some Abbott-Smith short references in Portuguese forms (2Sm,
+  1Rs, Pv, At), with notes; pt mixes "in l." and "em l."; es mixes
+  "Esq./Sóf." with "Æsch./Soph.".
+- pt (and sometimes es) gives one name where Strong's has "X or Y" and the
+  two would be spelled the same in the Bible used.

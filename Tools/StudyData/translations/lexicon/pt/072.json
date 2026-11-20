@@ -32,7 +32,7 @@
    "strongs": "G5441",
    "sha256": "3cc5b3c9d8e7cf7e71e4c4be895a20971c1f8f827af0470afd556f9363713b95",
    "gloss": "guarda",
-   "definition": "φύλαξ, -ακος, ὁ\n(φυλάσσω), [na LXX por שָׁמַר, צוּר ;]\nguarda, carcereiro: Act.5:23 12:6, 19.†"
+   "definition": "φύλαξ, -ακος, ὁ\n(φυλάσσω), [na LXX por שָׁמַר, צוּר ;]\nguarda, guardião: Act.5:23 12:6, 19.†"
   },
   {
    "strongs": "G5442G",
@@ -74,7 +74,7 @@
    "strongs": "G5446",
    "sha256": "59b54cd56b6d595e4647d69530d45685ace4b1b5e620a3ce0df7171affd2e9ea",
    "gloss": "natural",
-   "definition": "φυσικός, -ή, -όν\n(ψύσις),\nnatural\n(a) produzido pela natureza, inato (Xen., Arist., al.);\n(b) conforme a natureza (Arist., Diod., al.): oposto a παρὰ φύσιν, Rom.1:26-27;\n(c.) governado por mero instinto natural (cf. Plut., Mor., 706 A): ζῷα γεγεννημένα φ. (RV, «born mere animals», nascidos meros animais; Mayor, «born creatures of instinct», nascidos criaturas de instinto; ICC, «animals born of mere nature», animais nascidos da mera natureza), 2Pe.2:12,†",
+   "definition": "φυσικός, -ή, -όν\n(ψύσις),\nnatural\n(a) produzido pela natureza, inato (Xen., Arist., al.);\n(b) conforme à natureza (Arist., Diod., al.): oposto a παρὰ φύσιν, Rom.1:26-27;\n(c.) governado por mero instinto natural (cf. Plut., Mor., 706 A): ζῷα γεγεννημένα φ. (RV, «born mere animals», nascidos meros animais; Mayor, «born creatures of instinct», nascidos criaturas de instinto; ICC, «animals born of mere nature», animais nascidos da mera natureza), 2Pe.2:12,†",
    "note": "Source '(with)' is a garbled '(c)' (after (a), (b)): rendered '(c.)'. Source '(of. Plut.' is a misprinted 'cf.': rendered 'cf.'. The English renderings of RV, Mayor and ICC kept in «», each with the Portuguese after. 'ψύσις' (for φύσις) copied as in the source."
   },
   {
@@ -137,13 +137,13 @@
    "strongs": "G5456G",
    "sha256": "930a908cc2cf38ca73ade35a23ccce666fe1b2bb1180f3f69c04126ea272a91a",
    "gloss": "voz/som: voz",
-   "definition": "φωνή, -ῆς, ἡ,\n[na LXX principalmente e muito frequentemente por קוֹל ;]\nvoz;\n(a) prop., de pessoas, Mat.2:18 (LXX), al.; φ. αἴρειν (ἐπαίρειν), Luk.17:13, Act.2:14, al.; φ. μεγάλῃ εἰπεῖν (λέγειν, φωνεῖν, etc.), Luk.8:28, Act.7:57, Rev.5:12, al.; γίνεται (ἔρχεται) φ. ἐκ τ. οὐρανῶν (ἐξ οὐρανοῦ), Mrk.1:11, Luk.3:22, Jhn.12:28, al. (cf. DCG, ii, 810a; Dalman, Words, 204s.); ἀκούειν φωνήν (-ῆς; veja: ἀκούω), Act.9:4, 7 al.; φ. βοῶντος, Mat.3:3, Mrk.1:3, Luk.3:4, Jhn.1:23\" (LXX) ; τ. θεοῦ, Jhn.5:37, Heb.3:7, al. Por meton.,\n(α) de quem fala, βλέπειν τὴν φ., Rev.1:12;\n(β) fala, língua ( Gen.11:1, 4Ma.12:7, al.): 1Co.14:10;\n(b) de coisas inanimadas: Mat.24:31, Jhn.3:8, Act.2:6, Rev.1:15b 9:9 14:2, al. (cf. Tr., Syn., §lxxxix)."
+   "definition": "φωνή, -ῆς, ἡ,\n[na LXX principalmente e muito frequentemente por קוֹל ;]\nvoz;\n(a) prop., de pessoas, Mat.2:18 (LXX), al.; φ. αἴρειν (ἐπαίρειν), Luk.17:13, Act.2:14, al.; φ. μεγάλῃ εἰπεῖν (λέγειν, φωνεῖν, etc.), Luk.8:28, Act.7:57, Rev.5:12, al.; γίνεται (ἔρχεται) φ. ἐκ τ. οὐρανῶν (ἐξ οὐρανοῦ), Mrk.1:11, Luk.3:22, Jhn.12:28, al. (cf. DCG, ii, 810a; Dalman, Words, 204 s.); ἀκούειν φωνήν (-ῆς; veja: ἀκούω), Act.9:4, 7 al.; φ. βοῶντος, Mat.3:3, Mrk.1:3, Luk.3:4, Jhn.1:23\" (LXX) ; τ. θεοῦ, Jhn.5:37, Heb.3:7, al. Por meton.,\n(α) de quem fala, βλέπειν τὴν φ., Rev.1:12;\n(β) fala, língua ( Gen.11:1, 4Ma.12:7, al.): 1Co.14:10;\n(b) de coisas inanimadas: Mat.24:31, Jhn.3:8, Act.2:6, Rev.1:15b 9:9 14:2, al. (cf. Tr., Syn., §lxxxix)."
   },
   {
    "strongs": "G5456H",
    "sha256": "85a613e1238998e4f50d100d9082bf232e5c97022df673e89cebb944f902d185",
    "gloss": "voz/som: ruído",
-   "definition": "φωνή, -ῆς, ἡ,\n[na LXX principalmente e muito frequentemente por קוֹל ;]\nvoz;\n(a) prop., de pessoas, Mat.2:18 (LXX), al.; φ. αἴρειν (ἐπαίρειν), Luk.17:13, Act.2:14, al.; φ. μεγάλῃ εἰπεῖν (λέγειν, φωνεῖν, etc.), Luk.8:28, Act.7:57, Rev.5:12, al.; γίνεται (ἔρχεται) φ. ἐκ τ. οὐρανῶν (ἐξ οὐρανοῦ), Mrk.1:11, Luk.3:22, Jhn.12:28, al. (cf. DCG, ii, 810a; Dalman, Words, 204s.); ἀκούειν φωνήν (-ῆς; veja: ἀκούω), Act.9:4, 7 al.; φ. βοῶντος, Mat.3:3, Mrk.1:3, Luk.3:4, Jhn.1:23\" (LXX) ; τ. θεοῦ, Jhn.5:37, Heb.3:7, al. Por meton.,\n(α) de quem fala, βλέπειν τὴν φ., Rev.1:12;\n(β) fala, língua ( Gen.11:1, 4Ma.12:7, al.): 1Co.14:10;\n(b) de coisas inanimadas: Mat.24:31, Jhn.3:8, Act.2:6, Rev.1:15b 9:9 14:2, al. (cf. Tr., Syn., §lxxxix)."
+   "definition": "φωνή, -ῆς, ἡ,\n[na LXX principalmente e muito frequentemente por קוֹל ;]\nvoz;\n(a) prop., de pessoas, Mat.2:18 (LXX), al.; φ. αἴρειν (ἐπαίρειν), Luk.17:13, Act.2:14, al.; φ. μεγάλῃ εἰπεῖν (λέγειν, φωνεῖν, etc.), Luk.8:28, Act.7:57, Rev.5:12, al.; γίνεται (ἔρχεται) φ. ἐκ τ. οὐρανῶν (ἐξ οὐρανοῦ), Mrk.1:11, Luk.3:22, Jhn.12:28, al. (cf. DCG, ii, 810a; Dalman, Words, 204 s.); ἀκούειν φωνήν (-ῆς; veja: ἀκούω), Act.9:4, 7 al.; φ. βοῶντος, Mat.3:3, Mrk.1:3, Luk.3:4, Jhn.1:23\" (LXX) ; τ. θεοῦ, Jhn.5:37, Heb.3:7, al. Por meton.,\n(α) de quem fala, βλέπειν τὴν φ., Rev.1:12;\n(β) fala, língua ( Gen.11:1, 4Ma.12:7, al.): 1Co.14:10;\n(b) de coisas inanimadas: Mat.24:31, Jhn.3:8, Act.2:6, Rev.1:15b 9:9 14:2, al. (cf. Tr., Syn., §lxxxix)."
   },
   {
    "strongs": "G5457",
@@ -212,7 +212,7 @@
   {
    "strongs": "G5467",
    "sha256": "c6ee69ae65c37db631470f01fe279abaedcbb3f623cb1e91cd5fb99d6018764d",
-   "gloss": "violento",
+   "gloss": "áspero",
    "definition": "χαλεπός, -ή, -όν\n[na LXX: Isa.18:2 (יָרֵא), Wis.3:19, Sir.3:21, al. ;]\ndifícil;\n(a) difícil de fazer ou de lidar, árduo;\n(b) difícil de suportar, penoso, doloroso: καιροί, 2Ti.3:1;\n(c.) de pessoas, difíceis de lidar, ásperas, ferozes, selvagens: Mat.8:28.†",
    "note": "Source '(with)' is a garbled '(c)' (after (a), (b)): rendered '(c.)'."
   },
@@ -304,8 +304,8 @@
   {
    "strongs": "G5482",
    "sha256": "a809b2fe8abcf7bbd7023f2b2e91f19e90a20d0e63c471381378d54bd2192c81",
-   "gloss": "trincheira",
-   "definition": "χάραξ, -ακος, ὁ\n(χαράσσω), [na LXX por סֹלְלָה, מָצוֹר, etc. ;]\n1. estaca pontiaguda\n2. paliçada ou trincheira: Luk.19:43.†"
+   "gloss": "barricada",
+   "definition": "χάραξ, -ακος, ὁ\n(χαράσσω), [na LXX por סֹלְלָה, מָצוֹר, etc. ;]\n1. estaca pontiaguda\n2. paliçada ou baluarte: Luk.19:43.†"
   },
   {
    "strongs": "G5483",
@@ -323,7 +323,7 @@
    "strongs": "G5485",
    "sha256": "93ccc0e9f23541766a77e49a07732ebb867b44648f0e17ed418834788f02fefa",
    "gloss": "graça",
-   "definition": "χάρις, -ιτος, ἡ Abbott-Smith não inclui o artigo aqui., acusativo, χάριν (χάριτα em Act.24:27, Ju 4; veja WH, App., 157),\n[na LXX principalmente por חֵן ;]\n1. objetivamente, aquilo que causa consideração favorável, graciosidade, graça, beleza de forma, amabilidade no falar (cl.; Ecc.10:12, Sir.21:16, al.): Col.4:6; λόγοι τ. χάριτος (genitivo de qualidade), Luk.4:22.\n2. Subjetivamente,\n(a) da parte de quem dá, graça, benignidade, bondade, boa vontade, favor: Luk.2:52, Act.7:10, al.; esp. no NT, do favor divino, graça, com ênfase em sua gratuidade e universalidade: Luk.1:30, Act.14:26, Rom.1:7, 1Co.1:3, al.; oposto a ὀφείλημα, Rom.4:4, 16; a ἔργα, Rom.11:6;\n(b) da parte de quem recebe, senso de favor recebido, agradecimento, gratidão: Rom.6:17 7:25, al.; χ. ἔχειν, ser grato, Luk.17:9, 1Ti.1:12, al.\n3. Objetivamente, do efeito da graça,\n(a) estado de graça: Rom.5:2, 2Ti.2:1, 1Pe.5:12, 2Pe.3:18;\n(b) prova ou dom da graça (cl., um favor): Jhn.1:16, Act.6:8, Rom.1:5, 1Co.3:10, 2Co.9:8, Gal.2:9, Eph.3:2, 1Pe.5:5, 10 al. (Para um tratamento mais completo do uso no NT, veja AR, Eph., 221ss.; DB, ii, 254ss.; DCG, i, 686ss.; Cremer, veja a palavra)."
+   "definition": "χάρις, -ιτος, ἡ Abbott-Smith não inclui o artigo aqui., acusativo, χάριν (χάριτα em Act.24:27, Ju 4; veja WH, App., 157),\n[na LXX principalmente por חֵן ;]\n1. objetivamente, aquilo que causa consideração favorável, graciosidade, graça, beleza de forma, amabilidade no falar (cl.; Ecc.10:12, Sir.21:16, al.): Col.4:6; λόγοι τ. χάριτος (genitivo de qualidade), Luk.4:22.\n2. Subjetivamente,\n(a) da parte de quem dá, graça, benignidade, bondade, boa vontade, favor: Luk.2:52, Act.7:10, al.; esp. no NT, do favor divino, graça, com ênfase em sua gratuidade e universalidade: Luk.1:30, Act.14:26, Rom.1:7, 1Co.1:3, al.; oposto a ὀφείλημα, Rom.4:4, 16; a ἔργα, Rom.11:6;\n(b) da parte de quem recebe, senso de favor recebido, agradecimento, gratidão: Rom.6:17 7:25, al.; χ. ἔχειν, ser grato, Luk.17:9, 1Ti.1:12, al.\n3. Objetivamente, do efeito da graça,\n(a) estado de graça: Rom.5:2, 2Ti.2:1, 1Pe.5:12, 2Pe.3:18;\n(b) prova ou dom da graça (cl., um favor): Jhn.1:16, Act.6:8, Rom.1:5, 1Co.3:10, 2Co.9:8, Gal.2:9, Eph.3:2, 1Pe.5:5, 10 al. (Para um tratamento mais completo do uso no NT, veja AR, Eph., 221 ss.; DB, ii, 254 ss.; DCG, i, 686 ss.; Cremer, veja a palavra)."
   },
   {
    "strongs": "G5486",
@@ -496,7 +496,7 @@
    "strongs": "G5513",
    "sha256": "a96f01e3fcb82d140fcb1b0461e99e6c24b4e5dc3df3c32ec0fdfb770845738d",
    "gloss": "morno",
-   "definition": "χλιαρός, -ά, -όν\n(χλίω, aquecer-se),\nquente, tépido; metaforicamente, de pessoas, morno: Rev.3:16.†"
+   "definition": "χλιαρός, -ά, -όν\n(χλίω, aquecer-se),\nmorno, tépido; metaforicamente, de pessoas, morno: Rev.3:16.†"
   },
   {
    "strongs": "G5514",
