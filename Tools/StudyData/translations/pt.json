@@ -57,7 +57,7 @@
    "name": "Vida de Enos"
   },
   "100": {
-   "name": "Nascimento de Zebulon"
+   "name": "Nascimento de Zebulom"
   },
   "101": {
    "name": "Nascimento de Diná"
@@ -153,7 +153,7 @@
    "name": "Morte de Moisés"
   },
   "13": {
-   "name": "Nascimento de Mahlaleel"
+   "name": "Nascimento de Maalalel"
   },
   "130": {
    "name": "A travessia do Jordão rumo a Canaã"
@@ -168,7 +168,7 @@
    "name": "Morte de Josué"
   },
   "134": {
-   "name": "Opressão por Cushan-rishathaim"
+   "name": "Opressão por Cusã-Risataim"
   },
   "135": {
    "name": "Libertação por Otniel"
@@ -186,7 +186,7 @@
    "name": "Libertação por Baraque e Débora"
   },
   "14": {
-   "name": "Vida de Mahlaleel"
+   "name": "Vida de Maalalel"
   },
   "140": {
    "name": "Opressão por Midiã"
@@ -276,13 +276,13 @@
    "name": "O reino do norte (Israel)"
   },
   "167": {
-   "name": "Reinado de Jeroboam I"
+   "name": "Reinado de Jeroboão I"
   },
   "168": {
-   "name": "Reinado de Abijam"
+   "name": "Reinado de Abião"
   },
   "169": {
-   "name": "Morte de Abijam"
+   "name": "Morte de Abião"
   },
   "17": {
    "name": "Nascimento de Enoque"
@@ -375,13 +375,13 @@
    "name": "Morte de Jeoacaz"
   },
   "197": {
-   "name": "Reinado de Jehoash"
+   "name": "Reinado de Joás"
   },
   "198": {
    "name": "Reinado de Amazias"
   },
   "199": {
-   "name": "Reinado de Jeroboam II"
+   "name": "Reinado de Jeroboão II"
   },
   "2": {
    "name": "A criação de Adão e Eva"
@@ -393,7 +393,7 @@
    "name": "Profecias de Jonas"
   },
   "201": {
-   "name": "Morte de Jehoahash"
+   "name": "Morte de Joás"
   },
   "202": {
    "name": "Profecias de Joel"
@@ -456,7 +456,7 @@
    "name": "Vida de Lameque"
   },
   "220": {
-   "name": "Profecias de Mica"
+   "name": "Profecias de Miqueias"
   },
   "221": {
    "name": "Reinado de Acaz"
@@ -525,7 +525,7 @@
    "name": "Profecias de Daniel"
   },
   "241": {
-   "name": "Reinado de Jeconiah"
+   "name": "Reinado de Jeconias"
   },
   "242": {
    "name": "Reinado de Zedequias"
@@ -720,7 +720,7 @@
    "name": "A queda"
   },
   "30": {
-   "name": "Morte de Mahlaleel"
+   "name": "Morte de Maalalel"
   },
   "300": {
    "name": "Ai de Corazim e Betsaida!"
@@ -1353,7 +1353,7 @@
    "name": "Morte de Sem"
   },
   "85": {
-   "name": "Nascimento de Jacob and Esau"
+   "name": "Nascimento de Jacó e Esaú"
   },
   "86": {
    "name": "Vida de Jacó"
@@ -1410,6 +1410,9 @@
   },
   "100": {
    "name": "Adonicão"
+  },
+  "1000": {
+   "name": "Dequer"
   },
   "1001": {
    "name": "Delaías"
@@ -1498,7 +1501,7 @@
    "name": "Adrameleque"
   },
   "1030": {
-   "name": "Héber (Héber)",
+   "name": "Héber",
    "other": "Héber"
   },
   "1031": {
@@ -1972,6 +1975,15 @@
   "1196": {
    "name": "Epafrodito"
   },
+  "1197": {
+   "name": "Efá"
+  },
+  "1198": {
+   "name": "Efá"
+  },
+  "1199": {
+   "name": "Efá"
+  },
   "12": {
    "name": "Abdom"
   },
@@ -2161,6 +2173,9 @@
   "128": {
    "name": "Aías"
   },
+  "1280": {
+   "name": "Garmita"
+  },
   "1281": {
    "name": "Gatã"
   },
@@ -2272,7 +2287,7 @@
    "name": "Ginetom"
   },
   "1322": {
-   "name": "Girgasite",
+   "name": "Girgaseu",
    "other": "Girgashite"
   },
   "1325": {
@@ -2364,6 +2379,12 @@
   "1353": {
    "name": "Hagite"
   },
+  "1354": {
+   "name": "Catã"
+  },
+  "1355": {
+   "name": "Coz"
+  },
   "1356": {
    "name": "Hacufa"
   },
@@ -2381,6 +2402,9 @@
   },
   "1360": {
    "name": "Hamã"
+  },
+  "1361": {
+   "name": "Hamateu"
   },
   "1362": {
    "name": "Hamedata"
@@ -2487,7 +2511,7 @@
    "name": "Haniel"
   },
   "1402": {
-   "name": "Henoch",
+   "name": "Enoque",
    "other": "Enoque"
   },
   "1403": {
@@ -2755,7 +2779,7 @@
    "name": "Hamate"
   },
   "1492": {
-   "name": "Hemdan",
+   "name": "Hendã",
    "other": "Anrão"
   },
   "1493": {
@@ -2812,6 +2836,9 @@
   },
   "1510": {
    "name": "Hete"
+  },
+  "1511": {
+   "name": "Hizqui"
   },
   "1512": {
    "name": "Ezequias",
@@ -2881,6 +2908,12 @@
   "1533": {
    "name": "Hirão",
    "other": "Hurão"
+  },
+  "1535": {
+   "name": "Ezequias"
+  },
+  "1536": {
+   "name": "Ezequias"
   },
   "1537": {
    "name": "Hobabe"
@@ -3538,7 +3571,7 @@
   },
   "1756": {
    "name": "Judas",
-   "other": "Judá, Judas"
+   "other": "Judá"
   },
   "1757": {
    "name": "Judas (da Galileia)"
@@ -3647,14 +3680,14 @@
    "name": "Quis"
   },
   "1788": {
-   "name": "Kishi",
+   "name": "Quisi",
    "other": "Kushaiah"
   },
   "1789": {
    "name": "Quitim"
   },
   "179": {
-   "name": "Akan",
+   "name": "Acã",
    "other": "Jakan"
   },
   "1790": {
@@ -3784,7 +3817,7 @@
    "name": "Lude"
   },
   "1836": {
-   "name": "Luke",
+   "name": "Lucas",
    "other": "Lucas"
   },
   "1837": {
@@ -4587,7 +4620,7 @@
   },
   "2077": {
    "name": "Miamim",
-   "other": "Miamim, Miamim"
+   "other": "Miamim"
   },
   "2078": {
    "name": "Miclote"
@@ -5384,7 +5417,7 @@
   },
   "2338": {
    "name": "Perez",
-   "other": "Phares, Perez"
+   "other": "Phares"
   },
   "2339": {
    "name": "Parós"
@@ -5446,6 +5479,9 @@
   "2355": {
    "name": "Pua",
    "other": "Phuvah"
+  },
+  "2356": {
+   "name": "Fígelo"
   },
   "2357": {
    "name": "Pildas"
@@ -5550,6 +5586,9 @@
   "239": {
    "name": "Amós"
   },
+  "2390": {
+   "name": "Requém"
+  },
   "2391": {
    "name": "Rão",
    "other": "Arã"
@@ -5595,7 +5634,7 @@
    "name": "Reca"
   },
   "2406": {
-   "name": "Reelaiah",
+   "name": "Reelaías",
    "other": "Raamiah"
   },
   "2407": {
@@ -5912,6 +5951,12 @@
   "2505": {
    "name": "Setur"
   },
+  "2506": {
+   "name": "Saafe"
+  },
+  "2507": {
+   "name": "Saafe"
+  },
   "2508": {
    "name": "Saasgaz"
   },
@@ -6050,6 +6095,9 @@
   "2548": {
    "name": "Sanserai"
   },
+  "2549": {
+   "name": "Safã"
+  },
   "255": {
    "name": "Anã"
   },
@@ -6078,7 +6126,7 @@
    "name": "Sarai"
   },
   "2558": {
-   "name": "Sharar",
+   "name": "Sarar",
    "other": "Sacar"
   },
   "2559": {
@@ -6226,6 +6274,9 @@
   },
   "2601": {
    "name": "Selemias"
+  },
+  "2602": {
+   "name": "Salefe"
   },
   "2603": {
    "name": "Seles"
@@ -6785,7 +6836,7 @@
    "name": "Apaim"
   },
   "2770": {
-   "name": "Sopater",
+   "name": "Sópater",
    "other": "Sosipater"
   },
   "2771": {
@@ -7277,7 +7328,7 @@
    "name": "Zacarias"
   },
   "2972": {
-   "name": "Zacher",
+   "name": "Zequer",
    "other": "Zacarias"
   },
   "2973": {
@@ -7532,7 +7583,7 @@
   },
   "3054": {
    "name": "Zorobabel",
-   "other": "Sheshbazzar, Zorobabel"
+   "other": "Sheshbazzar"
   },
   "3055": {
    "name": "Zeruia"
@@ -7601,6 +7652,9 @@
   "3076": {
    "name": "Zicri"
   },
+  "3077": {
+   "name": "Zedequias"
+  },
   "3078": {
    "name": "Zia"
   },
@@ -7648,7 +7702,7 @@
    "name": "Zifa"
   },
   "3093": {
-   "name": "Zephon",
+   "name": "Zefom",
    "other": "Ziphion"
   },
   "3094": {
@@ -7686,7 +7740,7 @@
    "name": "Zofar"
   },
   "3108": {
-   "name": "Zuph",
+   "name": "Zufe",
    "other": "Zophai"
   },
   "311": {
@@ -7698,6 +7752,9 @@
   },
   "312": {
    "name": "Arfaxade"
+  },
+  "316": {
+   "name": "Arvadeu"
   },
   "317": {
    "name": "Arsa"
@@ -8445,6 +8502,9 @@
   "590": {
    "name": "Baquebacar"
   },
+  "591": {
+   "name": "Baquebuque"
+  },
   "592": {
    "name": "Bacbuquias"
   },
@@ -8456,6 +8516,9 @@
   },
   "595": {
    "name": "Igal"
+  },
+  "596": {
+   "name": "Iques"
   },
   "597": {
    "name": "Inlá",
@@ -8519,6 +8582,9 @@
   },
   "62": {
    "name": "Acbor"
+  },
+  "620": {
+   "name": "Isbaque"
   },
   "621": {
    "name": "Isbi-Benobe"
@@ -8585,7 +8651,7 @@
    "name": "Acbor"
   },
   "640": {
-   "name": "Isuah",
+   "name": "Isvá",
    "other": "Ishuah"
   },
   "641": {
@@ -8845,6 +8911,9 @@
   "722": {
    "name": "Jamim"
   },
+  "723": {
+   "name": "Janleque"
+  },
   "724": {
    "name": "Janai"
   },
@@ -9028,7 +9097,7 @@
    "name": "Jeizquias"
   },
   "782": {
-   "name": "Jarah",
+   "name": "Jará",
    "other": "Jehoadah"
   },
   "783": {
@@ -9129,7 +9198,7 @@
    "name": "Josafá"
   },
   "811": {
-   "name": "Jehoshabeath",
+   "name": "Jeosebate",
    "other": "Jehosheba"
   },
   "812": {
@@ -9245,7 +9314,7 @@
   },
   "853": {
    "name": "Jeremias",
-   "other": "Jeremy, Jeremias"
+   "other": "Jeremy"
   },
   "854": {
    "name": "Jeremias"
@@ -9268,6 +9337,9 @@
   },
   "86": {
    "name": "Adim"
+  },
+  "860": {
+   "name": "Jerias"
   },
   "863": {
    "name": "Jerias"
@@ -9385,6 +9457,9 @@
   "899": {
    "name": "Jesua"
   },
+  "900": {
+   "name": "Issias"
+  },
   "901": {
    "name": "Issias",
    "other": "Jesiah"
@@ -9451,6 +9526,9 @@
   "927": {
    "name": "Quelal"
   },
+  "928": {
+   "name": "Queluí"
+  },
   "929": {
    "name": "Quelube"
   },
@@ -9474,6 +9552,9 @@
   },
   "936": {
    "name": "Quenanias"
+  },
+  "937": {
+   "name": "Querã"
   },
   "938": {
    "name": "Quésede"
@@ -9745,7 +9826,7 @@
    "name": "Asquelom"
   },
   "1030": {
-   "name": "Mar de Chinneroth"
+   "name": "Mar de Quinerete"
   },
   "1031": {
    "name": "Mar do Egito"
@@ -9871,6 +9952,9 @@
   "1072": {
    "name": "Sem"
   },
+  "1073": {
+   "name": "Sefã"
+  },
   "1075": {
    "name": "Seba"
   },
@@ -9879,6 +9963,9 @@
   },
   "1077": {
    "name": "Sior-Libnate"
+  },
+  "1078": {
+   "name": "Sicrom"
   },
   "1079": {
    "name": "Silim"
@@ -10216,7 +10303,7 @@
    "name": "Atália"
   },
   "1200": {
-   "name": "Vale de Beracah"
+   "name": "Vale de Beraca"
   },
   "1201": {
    "name": "Vale de Elá"
@@ -10241,7 +10328,7 @@
    "name": "Vale de Hinnom"
   },
   "1208": {
-   "name": "Vale de Jiphthahel"
+   "name": "Vale de Iftá-El"
   },
   "1209": {
    "name": "Vale de Josafá"
@@ -10262,14 +10349,14 @@
    "name": "Vale de Mizpeh"
   },
   "1214": {
-   "name": "Vale de Rephaim",
+   "name": "Vale de Refaim",
    "other": "vale de Hinom"
   },
   "1215": {
    "name": "Vale do Sal"
   },
   "1216": {
-   "name": "Vale de Shaveh"
+   "name": "Vale de Savé"
   },
   "1217": {
    "name": "Vale de Sitim"
@@ -10284,7 +10371,7 @@
    "name": "Avite"
   },
   "1220": {
-   "name": "Vale de Sorek"
+   "name": "Vale de Soreque"
   },
   "1221": {
    "name": "Vale de Sucote"
@@ -10293,7 +10380,7 @@
    "name": "Vale de Zeboim"
   },
   "1223": {
-   "name": "Vale de Zephathah"
+   "name": "Vale de Zefatá"
   },
   "1224": {
    "name": "Vale de Zerede"
@@ -10346,6 +10433,9 @@
   "1240": {
    "name": "Zanoa"
   },
+  "1241": {
+   "name": "Zafom"
+  },
   "1242": {
    "name": "Sarepta"
   },
@@ -10360,6 +10450,9 @@
   },
   "1248": {
    "name": "Zelza"
+  },
+  "125": {
+   "name": "Aia"
   },
   "1250": {
    "name": "Zenã"
@@ -10423,6 +10516,9 @@
   },
   "1275": {
    "name": "Zorá"
+  },
+  "1276": {
+   "name": "Zufe"
   },
   "1278": {
    "name": "Trogílio"
@@ -10766,6 +10862,9 @@
   "238": {
    "name": "Bete-Tapua"
   },
+  "239": {
+   "name": "Bete-Togarma"
+  },
   "24": {
    "name": "Adar"
   },
@@ -10917,6 +11016,9 @@
   "294": {
    "name": "Quinerete"
   },
+  "295": {
+   "name": "Quinerete"
+  },
   "296": {
    "name": "Quios"
   },
@@ -11048,6 +11150,9 @@
   },
   "34": {
    "name": "Aava"
+  },
+  "340": {
+   "name": "Dofca"
   },
   "342": {
    "name": "Dotã"
@@ -11196,6 +11301,9 @@
   },
   "397": {
    "name": "Tapua"
+  },
+  "398": {
+   "name": "Efá"
   },
   "399": {
    "name": "Efes-Damim"
@@ -11483,6 +11591,9 @@
   "504": {
    "name": "Hadraque"
   },
+  "505": {
+   "name": "Elefe"
+  },
   "506": {
    "name": "Pi-Hairote"
   },
@@ -11687,6 +11798,12 @@
   "585": {
    "name": "Líbano"
   },
+  "586": {
+   "name": "Hucoque"
+  },
+  "587": {
+   "name": "Hucoque"
+  },
   "588": {
    "name": "Hunta"
   },
@@ -11881,6 +11998,9 @@
   "663": {
    "name": "Cades-Barneia"
   },
+  "664": {
+   "name": "Caim"
+  },
   "665": {
    "name": "Camom"
   },
@@ -11895,6 +12015,9 @@
   },
   "669": {
    "name": "Carcor"
+  },
+  "670": {
+   "name": "Carnaim"
   },
   "671": {
    "name": "Cartá"
@@ -11919,6 +12042,9 @@
   },
   "678": {
    "name": "Quedes"
+  },
+  "679": {
+   "name": "Quedes de Naftali"
   },
   "68": {
    "name": "Antioquia (Síria)"
@@ -11961,7 +12087,7 @@
    "name": "Tanque"
   },
   "692": {
-   "name": "Vale de Shaveh",
+   "name": "Vale de Savé",
    "other": "vale do Rei"
   },
   "693": {
@@ -12019,6 +12145,9 @@
   "708": {
    "name": "Coa"
   },
+  "71": {
+   "name": "Afeque"
+  },
   "710": {
    "name": "Labã"
   },
@@ -12049,6 +12178,9 @@
   "719": {
    "name": "Lasarom"
   },
+  "72": {
+   "name": "Afeque"
+  },
   "720": {
    "name": "Líbano"
   },
@@ -12076,6 +12208,9 @@
   "729": {
    "name": "Libna"
   },
+  "73": {
+   "name": "Afeque"
+  },
   "730": {
    "name": "Líbia"
   },
@@ -12099,6 +12234,9 @@
   },
   "739": {
    "name": "Licaônia"
+  },
+  "74": {
+   "name": "Afeca"
   },
   "740": {
    "name": "Lícia"
@@ -12307,6 +12445,12 @@
   "811": {
    "name": "Mispá"
   },
+  "812": {
+   "name": "Mispá"
+  },
+  "813": {
+   "name": "Mispá"
+  },
   "815": {
    "name": "Moabe"
   },
@@ -12381,7 +12525,7 @@
    "name": "Monte Gileade"
   },
   "839": {
-   "name": "Monte Halak"
+   "name": "Monte Halaque"
   },
   "840": {
    "name": "Monte Heres"
@@ -12479,7 +12623,7 @@
    "name": "Naalal"
   },
   "87": {
-   "name": "Areopagus",
+   "name": "Areópago",
    "other": "Areópago"
   },
   "870": {
@@ -12683,6 +12827,9 @@
   "944": {
    "name": "Fenícia"
   },
+  "945": {
+   "name": "Fênix"
+  },
   "946": {
    "name": "Frígia"
   },
@@ -12754,6 +12901,9 @@
   },
   "970": {
    "name": "Racate"
+  },
+  "971": {
+   "name": "Racom"
   },
   "972": {
    "name": "Ramá"
@@ -12829,6 +12979,9 @@
   },
   "994": {
    "name": "Remete"
+  },
+  "995": {
+   "name": "Refaim"
   },
   "996": {
    "name": "Refidim"
