@@ -88,6 +88,9 @@ SOURCE_FIXES = {
     # "WH." is a misread "which" here, not Westcott-Hort.
     ("G0622", "definition"): ('verb, WH. "', 'verb, which "'),
     ("G0629", "definition"): ("extent to WH. the word", "extent to which the word"),
+    ("G1296", "definition"): ("(WH., however, is found", "(which, however, is found"),
+    # "a plural or 929": Strong's has "a plural of 929".
+    ("H0930", "derivation"): ("in form a plural or 929", "in form a plural of 929"),
     # "contradict" typed with a Greek omicron.
     ("G0483", "definition"): ("c\u03bfntradict", "contradict"),
     # Sophocles' Oedipus Tyrannus, not the Old Testament (OT -> AT otherwise).

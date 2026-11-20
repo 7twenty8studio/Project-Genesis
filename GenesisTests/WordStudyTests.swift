@@ -191,6 +191,23 @@ struct WordStudyTests {
         #expect(!eu.definition.contains("pessoa(s)"))
     }
 
+    @Test func lexiconQueriesAnswered() throws {
+        // The AI review's open queries settled where the English is clear
+        // (translations/lexicon/ai-review/queries.jsonl).
+        let url = try #require(Bundle.main.url(forResource: "WordStudy", withExtension: "sqlite"))
+        let english = try WordStudyRepository(url: url)
+        let spanish = try WordStudyRepository(url: url, language: "es")
+        let portuguese = try WordStudyRepository(url: url, language: "pt")
+        // Strong's "a plural of 929", not "or".
+        #expect(try english.entry(strongs: "H0930")?.derivation.contains("a plural of 929") == true)
+        #expect(try spanish.entry(strongs: "H0930")?.derivation.contains("un plural de 929") == true)
+        // Purah is "Phara" in the RV1909 (Judges 7:10), modernized.
+        #expect(try spanish.entry(strongs: "H6513")?.gloss == "Fara")
+        // STEPBible's "bridegroom" for νυμφών, the bride-chamber.
+        #expect(try portuguese.entry(strongs: "G3567")?.gloss == "câmara nupcial")
+        #expect(try portuguese.entry(strongs: "H8279")?.gloss == "estilete")
+    }
+
     @Test func entriesHoldOnlyTheirOwnArticle() throws {
         let url = try #require(Bundle.main.url(forResource: "WordStudy", withExtension: "sqlite"))
         for language in [nil, "es", "pt"] {
