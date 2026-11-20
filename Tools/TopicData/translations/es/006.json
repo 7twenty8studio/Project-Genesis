@@ -108,7 +108,7 @@
    "kind": "entry",
    "id": 5901,
    "sha256": "08056639149579a3bbfad18d117c361c29704f7fb27991b20ffd730af3913035",
-   "text": "El ardid de Joab para lograr el regreso de Absalón"
+   "text": "El ardid de Joab para lograr el regreso de Absalom"
   },
   {
    "kind": "entry",
@@ -1986,7 +1986,8 @@
    "kind": "entry",
    "id": 6148,
    "sha256": "6a7995257c1aac41e34e8b4d19e6c416b8b8e982174363822d4bcb6b95df4989",
-   "text": "Prohibido como alimento"
+   "text": "Prohibida como alimento",
+   "phrase_note": "the topic is feminine, so the participle agrees: prohibida"
   },
   {
    "kind": "entry",
@@ -3948,7 +3949,7 @@
    "kind": "entry",
    "id": 6418,
    "sha256": "afcd9d135c53a7b46960b4d633efe6367dfa1b10d16d96808e72e020d0c0532b",
-   "text": "Por Absalón"
+   "text": "Por Absalom"
   },
   {
    "kind": "entry",
@@ -4926,7 +4927,7 @@
    "kind": "entry",
    "id": 6547,
    "sha256": "191738600660866ed912515b134dc390bf079beb8a15d9243ed0095a78eb117a",
-   "text": "Llamado ELIFALET en"
+   "text": "Llamado ELIFELET en"
   },
   {
    "kind": "entry",
@@ -6103,7 +6104,7 @@
    "kind": "entry",
    "id": 6688,
    "sha256": "0637a62736de5670e6d191cbf75aa1798d8741817d230fc2ee2925a6a20bd8f6",
-   "text": "David, a Absalón y a sus cómplices"
+   "text": "David, a Absalom y a sus cómplices"
   },
   {
    "kind": "entry",
@@ -6253,7 +6254,7 @@
    "kind": "entry",
    "id": 6706,
    "sha256": "0a23ef16325e0cb15b66de81df065d4d20a104a2fac0b31c1020be4107a6eedd",
-   "text": "Una fuente dada milagrosamente a Samsón"
+   "text": "Una fuente dada milagrosamente a Sansón"
   },
   {
    "kind": "topic",
@@ -7089,7 +7090,7 @@
    "kind": "entry",
    "id": 6819,
    "sha256": "4c711ea081fc184ce458e516fcf24814b8517dd60d123c1a8139601ab0fa1dbb",
-   "text": "Absalón muerto en"
+   "text": "Absalom muerto en"
   },
   {
    "kind": "entry",

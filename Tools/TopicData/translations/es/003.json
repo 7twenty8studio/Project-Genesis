@@ -174,7 +174,7 @@
    "kind": "entry",
    "id": 2313,
    "sha256": "45721ff9ee25acf441b6ab0e519782a4acbbbf21e295031a0d9293d57cd34c56",
-   "text": "Absalón"
+   "text": "Absalom"
   },
   {
    "kind": "entry",
@@ -1831,7 +1831,7 @@
    "kind": "entry",
    "id": 2525,
    "sha256": "eb1085f388a62154bd51d8020fefa495fe624685a3387e1d9000f7aebc492e6f",
-   "text": "David: Por Absalón"
+   "text": "David: Por Absalom"
   },
   {
    "kind": "entry",
@@ -4777,7 +4777,8 @@
    "kind": "entry",
    "id": 2891,
    "sha256": "f9ef5d8083651dd0b48d1980264856c849c3a1f15d938632574a5066b79e5d39",
-   "text": "Enviado como juicio"
+   "text": "Enviada como juicio",
+   "phrase_note": "the topic is feminine (ceguera), so the participle agrees: enviada"
   },
   {
    "kind": "entry",
@@ -8683,7 +8684,7 @@
    "kind": "entry",
    "id": 3415,
    "sha256": "c8e9c6b93918aa2f70c32be29dcaa0d13823afbfee52fa6844368dc8167c7e49",
-   "text": "Hacer campaña electoral, caso de, Absalón"
+   "text": "Hacer campaña electoral, caso de, Absalom"
   }
  ]
 }

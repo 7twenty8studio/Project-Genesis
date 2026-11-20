@@ -50,3 +50,6 @@ neighbour's name; `manual.json` › `ids` now pins them (also in Explore):
   es repeats it, pt says it once.
 - pt "dog" (Deut 23:18) as the Bíblia Livre's "prostituto".
 - pt Luke 10:25 quoted with the Bíblia Livre's "para ter para", verbatim.
+
+## AI review (19 Nov 2026)
+- Every topic and heading read again in both languages against the English (an AI review, no human sign-off yet): 178 corrections, pt "igreja" for Christian congregations throughout, Efraim / efraimita in the Spanish, name_note and phrase_note where the glossary or a fixed phrase was wrong. Details and open questions: Tools/StudyData/translations/AI_REVIEW_2026-11-19.md.
