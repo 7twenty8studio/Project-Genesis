@@ -10,6 +10,8 @@ import {
   type OpsItem,
   reportItems,
   type ReportRow,
+  sermonReportRows,
+  type SermonReportRow,
   sentryItem,
   type SentryIssue,
   sortItems,
@@ -60,7 +62,16 @@ async function reports(admin: Admin): Promise<OpsItem[]> {
     .order("created_at", { ascending: false })
     .limit(500);
   if (error) throw error;
-  return reportItems((data ?? []) as ReportRow[]);
+  // Church sermons (VRS-18). Until that migration runs the table isn't there:
+  // leave sermon reports out rather than failing every report.
+  const sermons = await admin
+    .from("church_sermon_reports")
+    .select("sermon_id, reason, created_at, resolved_at, church_sermons(group_id, slug)")
+    .gte("created_at", since)
+    .order("created_at", { ascending: false })
+    .limit(500);
+  const sermonRows = sermons.error ? [] : sermonReportRows((sermons.data ?? []) as SermonReportRow[]);
+  return reportItems([...((data ?? []) as ReportRow[]), ...sermonRows]);
 }
 
 async function sentry(): Promise<OpsItem[] | null> {

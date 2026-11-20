@@ -174,6 +174,29 @@ export function reportItems(rows: ReportRow[]): OpsItem[] {
   return items;
 }
 
+// MARK: Church sermon reports (public.church_sermon_reports, VRS-18)
+
+export interface SermonReportRow {
+  sermon_id: string;
+  reason: string | null;
+  created_at: string;
+  resolved_at: string | null;
+  church_sermons: { group_id: string | null; slug: string | null } | null;
+}
+
+/** As content reports, so they group per sermon; never who reported. */
+export function sermonReportRows(rows: SermonReportRow[]): ReportRow[] {
+  return rows.map((row, index) => ({
+    id: `${row.sermon_id}:${index}`,
+    content_type: "church_sermon",
+    content_id: row.sermon_id,
+    reason: row.reason || null,
+    created_at: row.created_at,
+    resolved_at: row.resolved_at,
+    group_id: row.church_sermons?.group_id ?? null,
+  }));
+}
+
 // MARK: Sentry issues
 
 export interface SentryIssue {

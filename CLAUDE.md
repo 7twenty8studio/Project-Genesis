@@ -669,6 +669,22 @@ shares; README.md has the architecture.
   (`PrayerReminders.follow`, from RootView) and resumes them when on;
   Memorise off writes the widget snapshot with `memorise.isHidden`.
 
+## Church sermons (VRS-18)
+- Free; Versely 1.0.4; server switch `church_sermons` (off) plus
+  `groups.sermons_enabled` per church. A church is a group: owner and
+  moderators publish, members read members-only sermons, anyone with the
+  link reads link sermons. Plan, rules and checkpoints: CHURCH_SERMONS.md.
+- All reads and writes through the migration 20261120000000 functions
+  (`published_sermon`, `save_church_sermon` with the loaded draft version,
+  `publish_church_sermon`…); never write the tables directly. Only KJV, WEB,
+  ASV, RV1909 and Bíblia Livre quotations are published
+  (`genesis_quote_publishable`); others become references only. Tests:
+  supabase/tests/church_sermons/run.sh.
+- The web reads references with supabase/functions/_shared/references.ts
+  (same reading as ReferenceParser.swift; shared cases in
+  fixtures/references.json; book data from BibleBook.swift via
+  Tools/BibleData/export_reference_books.py, rerun when BibleBook changes).
+
 ## Journal extras (Premium)
 - `PremiumFeature.journalExtras`, checked with `EntitlementService.allows` at
   each entry point; core prayers and sermon notes stay free. Free accounts

@@ -13,6 +13,7 @@ import {
   localDay,
   localHour,
   reportItems,
+  sermonReportRows,
   sentryItem,
   sortItems,
   soundsSerious,
@@ -206,4 +207,18 @@ test("App Store Connect tokens are ES256 with the right claims", async () => {
   assert.equal(claims.aud, "appstoreconnect-v1");
   assert.equal(claims.iss, "issuer-1");
   assert.ok(claims.exp - claims.iat <= 20 * 60);
+});
+
+test("church sermon reports group per sermon and never name the reporter", () => {
+  const rows = sermonReportRows([
+    { sermon_id: "s1", reason: "Spam", created_at: "2026-11-22T10:00:00Z", resolved_at: null, church_sermons: { group_id: "g1", slug: "abcdefgh23" } },
+    { sermon_id: "s1", reason: "", created_at: "2026-11-22T11:00:00Z", resolved_at: null, church_sermons: { group_id: "g1", slug: "abcdefgh23" } },
+    { sermon_id: "s1", reason: "Off topic", created_at: "2026-11-22T12:00:00Z", resolved_at: null, church_sermons: { group_id: "g1", slug: "abcdefgh23" } },
+  ]);
+  const [item] = reportItems(rows);
+  assert.equal(item.id, "church_sermon:s1");
+  assert.equal(item.title, "Reported church sermon (3 reports)");
+  assert.equal(item.priority, "urgent");
+  assert.equal(item.meta?.group_id, "g1");
+  assert.equal(item.detail, "• Spam\n• Off topic");
 });
