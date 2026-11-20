@@ -241,9 +241,25 @@ shares; README.md has the architecture.
   slips in the English and `ARTICLE_FIXES` for misplaced articles, both
   written into the English lexicon too by `fix_database`) by add_lexicon_translations.py, which
   build_wordstudy.py also runs. Review notes: translations/lexicon/NOTES.md.
-  The meanings in a verse, grammar and commentary stay English: when the
-  Bible or the app isn't English, the Original header, the word sheet and
-  VerseStudyView say so (`WordStudyRepository.needsEnglishNote`).
+  Matthew Henry's Concise Commentary is in Spanish and Portuguese too:
+  `commentary_translations` / `introduction_translations` (English per
+  section where missing; `isTranslated` shows `translatedCommentaryNote`),
+  his Scripture quotations verbatim from the RV1909 / Bíblia Livre in
+  `commentary_quotations` (italics, `quotationCredit`). Built from
+  Tools/StudyData/translations/commentary (`commentary.py
+  export/check/status`: 102 batches with source shas; numbers and
+  references checked, quotations verbatim) by add_commentary_translations.py,
+  which build_wordstudy.py also runs. Henry's text is shown complete, never
+  cut; `CommentaryAboutSheet` (About This Commentary) names the edition (a
+  later abridgment) and its historical context. Passage-specific editorial
+  notes are paused (owner, 19 November 2026): the proposals wait in
+  translations/commentary/editorial-proposed.json, and `editorial_notes`
+  ships empty (only an `editorial.json` would fill it). Review notes:
+  translations/commentary/NOTES.md.
+  The meanings in a verse and grammar stay English (and the commentary in
+  an English app): when the Bible or the app isn't English, the Original
+  header, the word sheet and VerseStudyView say so
+  (`WordStudyRepository.needsEnglishNote`).
 - Pronunciation (free): `PronounceButton` on `OriginalWordSheet` (word and
   dictionary form) and `LexiconEntryView` says the word with the device's
   Hebrew (he) or Greek (el) voice via `WordPronouncer` (environment; silent

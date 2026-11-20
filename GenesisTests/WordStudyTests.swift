@@ -95,6 +95,69 @@ struct WordStudyTests {
         #expect(try portuguese.entry(strongs: "G2316")?.gloss == "Deus")
     }
 
+    @Test func commentaryReadsInSpanishAndPortuguese() throws {
+        let url = try #require(Bundle.main.url(forResource: "WordStudy", withExtension: "sqlite"))
+        let english = try WordStudyRepository(url: url)
+        let spanish = try WordStudyRepository(url: url, language: "es")
+        let portuguese = try WordStudyRepository(url: url, language: "pt")
+        #expect(english.commentaryLanguage == nil)
+        #expect(spanish.commentaryLanguage == "es")
+        #expect(try WordStudyRepository(url: url, language: "fr").commentaryLanguage == nil)
+
+        let light = VerseID(book: 1, chapter: 1, verse: 3)
+        let henry = try #require(try english.commentary(for: light).first)
+        #expect(henry.title == "The creation of light.")
+        #expect(!henry.isTranslated)
+        #expect(henry.quotations.isEmpty)
+        let luz = try #require(try spanish.commentary(for: light).first)
+        #expect(luz.id == henry.id)
+        #expect(luz.start == henry.start && luz.end == henry.end)
+        #expect(luz.isTranslated)
+        #expect(luz.title != henry.title)
+        // The RV1909's own words, quoted verbatim, in italics.
+        #expect(luz.quotations.contains("dijo Dios: Sea la luz"))
+        #expect(luz.quotationLanguage == "es")
+        let quoted = try #require(luz.paragraphs.first { $0.contains("dijo Dios: Sea la luz") })
+        let marked = luz.attributed(quoted)
+        let range = try #require(marked.range(of: "dijo Dios: Sea la luz"))
+        #expect(marked[range].inlinePresentationIntent == .emphasized)
+        let haja = try #require(try portuguese.commentary(for: light).first)
+        #expect(haja.quotations.contains("disse Deus: Haja luz"))
+        #expect(WordStudyRepository.quotationCredit(language: "pt")?.contains("Bíblia Livre") == true)
+        #expect(WordStudyRepository.quotationCredit(language: "en") == nil)
+
+        // Henry's introductions too, labelled as translated.
+        let john = try #require(try spanish.bookIntroduction(43))
+        #expect(john.isTranslated)
+        #expect(john.text.hasPrefix("El apóstol y evangelista Juan"))
+        #expect(try english.bookIntroduction(43)?.isTranslated == false)
+        #expect(try portuguese.introduction(toBook: 43)?.hasPrefix("O apóstolo e evangelista João") == true)
+
+        // Every section in both languages.
+        let genesisOne = try spanish.commentary(inChapter: ChapterID(book: 1, chapter: 1))
+        #expect(genesisOne.count == 8)
+        #expect(genesisOne.allSatisfy(\.isTranslated))
+    }
+
+    @Test func commentaryShipsWithoutEditorialNotes() throws {
+        // The owner paused passage-specific notes (19 November 2026): the
+        // proposals wait in Tools/StudyData/translations/commentary.
+        let url = try #require(Bundle.main.url(forResource: "WordStudy", withExtension: "sqlite"))
+        for language in [nil, "es", "pt"] {
+            let study = try WordStudyRepository(url: url, language: language)
+            let noah = try study.commentary(inChapter: ChapterID(book: 1, chapter: 9))
+            #expect(!noah.isEmpty)
+            #expect(noah.allSatisfy { $0.editorialNotes.isEmpty })
+        }
+    }
+
+    @MainActor @Test func commentaryAboutSheetNamesTheEdition() {
+        let about = CommentaryAboutSheet.sentences.joined(separator: " ")
+        #expect(about.contains("Concise Commentary on the Whole Bible"))
+        #expect(about.contains("abridgment"))
+        #expect(!about.contains("as he wrote it"))
+    }
+
     /// Mistakes found when every Spanish and Portuguese entry was read
     /// against the English (translations/lexicon/ai-review/fixes.jsonl).
     @Test func lexiconTranslationReviewFixes() throws {

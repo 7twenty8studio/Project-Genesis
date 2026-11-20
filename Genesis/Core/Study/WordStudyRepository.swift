@@ -16,10 +16,11 @@ import SwiftUI
 final class WordStudyRepository: Sendable {
     static let attribution = String(localized: "Hebrew and Greek words, glosses and Greek definitions from STEPBible.org, based on work at Tyndale House Cambridge (CC BY 4.0). Hebrew definitions from Strong's Hebrew Dictionary via the Open Scriptures Hebrew Bible project (CC BY 4.0). Commentary from Matthew Henry's Concise Commentary (public domain).")
 
-    /// The lexicon's glosses, definitions and origins are also in these
-    /// languages (table lexicon_translations, Tools/StudyData/lexicon.py);
-    /// the meanings in a verse, grammar and commentary are English only, so
-    /// screens say so when the Bible or the app is in another language.
+    /// The lexicon's glosses, definitions and origins (lexicon_translations,
+    /// Tools/StudyData/lexicon.py) and Matthew Henry's commentary
+    /// (commentary_translations, Tools/StudyData/commentary.py) are also in
+    /// these languages; the meanings in a verse and the grammar are English
+    /// only, so screens say so when the Bible or the app is in another language.
     static func needsEnglishNote(bibleLanguage: String) -> Bool {
         bibleLanguage != "en" || AppLanguage.code != "en"
     }
@@ -30,17 +31,44 @@ final class WordStudyRepository: Sendable {
     /// Shown under a translated definition.
     static let translatedNote = String(localized: "Definitions translated from Strong's Hebrew Dictionary (1890) and Abbott-Smith's Greek Lexicon (1922). Not Scripture.")
 
+    /// Shown under a translated commentary section or introduction.
+    static let translatedCommentaryNote = String(localized: "Translated from Matthew Henry's Concise Commentary. Not Scripture.")
+
+    /// The credit for the Bible words a translated section quotes (set in
+    /// italics): the Reina-Valera 1909 in Spanish, the Bíblia Livre in
+    /// Portuguese (its CC BY 4.0 Brasil licence asks for the credit).
+    static func quotationCredit(language: String) -> String? {
+        switch language {
+        case "es": String(localized: "Scripture in italics: Reina-Valera 1909 (public domain).")
+        case "pt": String(localized: "Scripture in italics: Bíblia Livre (BLIVRE), © Diego Santos, Mario Sérgio and Marco Teles, February 2018, CC BY 4.0 Brasil.")
+        default: nil
+        }
+    }
+
     private let database: SQLiteDatabase
     /// "es" or "pt" when the database has that language's lexicon; nil for English.
     let language: String?
+    /// "es" or "pt" when the database has Matthew Henry in that language
+    /// (commentary_translations, Tools/StudyData/commentary.py); nil for English.
+    let commentaryLanguage: String?
+    /// The language of Versely's editorial notes on the commentary
+    /// (editorial_notes): "es", "pt" or "en"; nil when the database has none.
+    private let noteLanguage: String?
+    private let hasQuotations: Bool
 
     /// - Parameter language: the app's language code ("en", "es", "pt");
     ///   nil or one without a translated lexicon shows the English.
     init(url: URL, language: String? = nil) throws {
         let database = try SQLiteDatabase(readOnly: url)
-        let hasTranslations = try !database.query("SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'lexicon_translations'", map: { _ in true }).isEmpty
+        func hasTable(_ name: String) throws -> Bool {
+            try !database.query("SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = ?", [.text(name)], map: { _ in true }).isEmpty
+        }
+        let translated = language.flatMap { Self.translatedLanguages.contains($0) ? $0 : nil }
         self.database = database
-        self.language = language.flatMap { Self.translatedLanguages.contains($0) && hasTranslations ? $0 : nil }
+        self.language = try hasTable("lexicon_translations") ? translated : nil
+        self.commentaryLanguage = try hasTable("commentary_translations") ? translated : nil
+        self.noteLanguage = try hasTable("editorial_notes") ? (translated ?? "en") : nil
+        self.hasQuotations = try hasTable("commentary_quotations")
     }
 
     /// The bundled database, or nil if it's missing from the build.
@@ -127,24 +155,72 @@ final class WordStudyRepository: Sendable {
     func commentary(for verse: VerseID) throws -> [CommentaryPassage] {
         // Passages never cross a chapter, so the chapter's start bounds the search.
         let chapterStart = VerseID(book: verse.book, chapter: verse.chapter, verse: 0).rawValue
-        return try database.query(
-            "\(Self.commentaryColumns) WHERE start_verse BETWEEN ? AND ? AND end_verse >= ? ORDER BY start_verse, id",
+        return try withEditorialNotes(database.query(
+            "\(commentaryColumns) WHERE c.start_verse BETWEEN ? AND ? AND c.end_verse >= ? ORDER BY c.start_verse, c.id",
             [.int(chapterStart), .int(verse.rawValue), .int(verse.rawValue)], map: Self.passage
-        )
+        ))
     }
 
     /// Every commentary passage on a chapter, in order.
     func commentary(inChapter chapter: ChapterID) throws -> [CommentaryPassage] {
         let range = chapter.verseRange
-        return try database.query(
-            "\(Self.commentaryColumns) WHERE start_verse BETWEEN ? AND ? ORDER BY start_verse, id",
+        return try withEditorialNotes(database.query(
+            "\(commentaryColumns) WHERE c.start_verse BETWEEN ? AND ? ORDER BY c.start_verse, c.id",
             [.int(range.lowerBound), .int(range.upperBound)], map: Self.passage
-        )
+        ))
     }
 
     /// Henry's introduction to a book (1–66), if he wrote one.
     func introduction(toBook book: Int) throws -> String? {
-        try database.query("SELECT text FROM introductions WHERE book = ? LIMIT 1", [.int(book)]) { $0.text(0) }.first
+        try bookIntroduction(book)?.text
+    }
+
+    /// Henry's introduction to a book, in the app's language where it's
+    /// translated (`isTranslated`: show `translatedCommentaryNote`).
+    func bookIntroduction(_ book: Int) throws -> (text: String, isTranslated: Bool)? {
+        guard let commentaryLanguage else {
+            return try database.query("SELECT text FROM introductions WHERE book = ? LIMIT 1", [.int(book)]) { ($0.text(0), false) }.first
+        }
+        return try database.query(
+            """
+            SELECT COALESCE(tr.text, i.text), tr.book IS NOT NULL FROM introductions i
+            LEFT JOIN introduction_translations tr ON tr.lang = ? AND tr.source = i.source AND tr.book = i.book
+            WHERE i.book = ? LIMIT 1
+            """,
+            [.text(commentaryLanguage), .int(book)]
+        ) { ($0.text(0), $0.int(1) != 0) }.first
+    }
+
+    /// Versely's editorial notes (editorial_notes) and the translation's
+    /// Bible quotations (commentary_quotations), set on their passages.
+    private func withEditorialNotes(_ passages: [CommentaryPassage]) throws -> [CommentaryPassage] {
+        guard !passages.isEmpty else { return passages }
+        let ids = passages.map(\.id)
+        let marks = Array(repeating: "?", count: ids.count).joined(separator: ", ")
+        var passages = passages
+        if let commentaryLanguage, hasQuotations {
+            let quotations = try database.query(
+                "SELECT id, text FROM commentary_quotations WHERE lang = ? AND id IN (\(marks)) ORDER BY id, n",
+                [.text(commentaryLanguage)] + ids.map { .int($0) }
+            ) { (id: $0.int(0), text: $0.text(1)) }
+            for index in passages.indices where passages[index].isTranslated {
+                passages[index].quotations = quotations.filter { $0.id == passages[index].id }.map(\.text)
+                passages[index].quotationLanguage = commentaryLanguage
+            }
+        }
+        guard let noteLanguage else { return passages }
+        let notes = try database.query(
+            "SELECT section, paragraph, text FROM editorial_notes WHERE lang = ? AND section IN (\(marks))",
+            [.text(noteLanguage)] + ids.map { .int($0) }
+        ) { (section: $0.int(0), paragraph: $0.int(1), text: $0.text(2)) }
+        guard !notes.isEmpty else { return passages }
+        return passages.map { passage in
+            var passage = passage
+            for note in notes where note.section == passage.id && passage.source == "mhcc" {
+                passage.editorialNotes[note.paragraph] = note.text
+            }
+            return passage
+        }
     }
 
     // MARK: Rows
@@ -197,7 +273,17 @@ final class WordStudyRepository: Sendable {
             """
     }
 
-    private static let commentaryColumns = "SELECT id, source, start_verse, end_verse, title, text FROM commentary"
+    /// The commentary's columns, with the translation's title and text
+    /// where it has them (and whether it did, last).
+    private var commentaryColumns: String {
+        guard let commentaryLanguage else {
+            return "SELECT c.id, c.source, c.start_verse, c.end_verse, c.title, c.text, 0 FROM commentary c"
+        }
+        return """
+            SELECT c.id, c.source, c.start_verse, c.end_verse, COALESCE(tr.title, c.title), COALESCE(tr.text, c.text), tr.id IS NOT NULL
+            FROM commentary c LEFT JOIN commentary_translations tr ON tr.lang = '\(commentaryLanguage)' AND tr.id = c.id
+            """
+    }
 
     private static func entry(_ row: SQLiteDatabase.Row) -> LexiconEntry {
         LexiconEntry(
@@ -220,7 +306,8 @@ final class WordStudyRepository: Sendable {
             start: VerseID(rawValue: row.int(2)),
             end: VerseID(rawValue: row.int(3)),
             title: row.isNull(4) ? nil : row.text(4),
-            text: row.text(5)
+            text: row.text(5),
+            isTranslated: row.int(6) != 0
         )
     }
 
@@ -324,6 +411,31 @@ struct CommentaryPassage: Identifiable, Hashable, Sendable {
     let title: String?
     /// Paragraphs separated by blank lines.
     let text: String
+    /// The title and text are a translation of Henry's English
+    /// (`WordStudyRepository.translatedCommentaryNote`).
+    var isTranslated = false
+    /// Versely's editorial notes (not Henry's words), by the paragraph
+    /// (from 0) each is shown before, set apart from the commentary.
+    var editorialNotes: [Int: String] = [:]
+    /// In a translation, the Bible's own words it quotes (RV1909 or Bíblia
+    /// Livre, verbatim), shown in italics and credited
+    /// (`WordStudyRepository.quotationCredit`).
+    var quotations: [String] = []
+    /// The language of `quotations` ("es", "pt").
+    var quotationLanguage: String?
+
+    /// A paragraph with the quoted Bible words in italics.
+    func attributed(_ paragraph: String) -> AttributedString {
+        var text = AttributedString(paragraph)
+        for quotation in quotations {
+            var searchStart = text.startIndex
+            while let range = text[searchStart...].range(of: quotation) {
+                text[range].inlinePresentationIntent = .emphasized
+                searchStart = range.upperBound
+            }
+        }
+        return text
+    }
 
     var paragraphs: [String] {
         text.components(separatedBy: "\n\n").filter { !$0.isEmpty }

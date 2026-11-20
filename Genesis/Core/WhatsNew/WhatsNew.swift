@@ -27,7 +27,7 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar, verseWallpapers, widgetBackgrounds, keepsakeWidgets, widgetPhotoFraming, movingSeasonsAndYourBible, newLook, freeWidgets, languageChoice, ambientLockScreen, groupNamesAndRoles, twoPageSpread, originalWithEveryBible, portuguese, studyInSpanishAndPortuguese, wordMeaningsInSpanishAndPortuguese]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar, verseWallpapers, widgetBackgrounds, keepsakeWidgets, widgetPhotoFraming, movingSeasonsAndYourBible, newLook, freeWidgets, languageChoice, ambientLockScreen, groupNamesAndRoles, twoPageSpread, originalWithEveryBible, portuguese, studyInSpanishAndPortuguese, wordMeaningsInSpanishAndPortuguese, commentaryInSpanishAndPortuguese]
 
     static let notifications = WhatsNewAnnouncement(
         id: "notifications-your-way",
@@ -899,6 +899,21 @@ enum WhatsNewCatalog {
                 systemImage: "character.book.closed",
                 title: String(localized: "Word meanings"),
                 detail: String(localized: "In Spanish or Portuguese, tap a Hebrew or Greek word to read its meaning, definition and origin in your language. The Hebrew and Greek stay exactly as written.")
+            ),
+        ],
+        feature: .wordStudy
+    )
+
+    /// Matthew Henry's Concise Commentary in Spanish and Portuguese
+    /// (WordStudy.sqlite commentary_translations).
+    static let commentaryInSpanishAndPortuguese = WhatsNewAnnouncement(
+        id: "commentary-spanish-portuguese",
+        title: String(localized: "Matthew Henry in your language"),
+        items: [
+            WhatsNewItem(
+                systemImage: "text.book.closed",
+                title: String(localized: "Commentary"),
+                detail: String(localized: "In Spanish or Portuguese, Word Study's Commentary tab shows Matthew Henry's Concise Commentary in your language, and the verses he quotes come from your language's Bible.")
             ),
         ],
         feature: .wordStudy
