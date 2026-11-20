@@ -874,7 +874,9 @@ shares; README.md has the architecture.
   translated or edited; data from Study.sqlite and Topics.sqlite stays English.
 - Portuguese Bibles (VRS-3, owner's choice 17 November 2026): the Bíblia
   Livre (BLIVRE, CC BY 4.0 Brasil, eBible.org's USFX through build_bibles.py
-  with `usfx_notes`: footnotes and <rq> left out, psalm titles kept),
+  with `usfx_notes`: footnotes and <rq> left out, psalm titles kept;
+  22 contractions split in eBible's own file, "d este", kept verbatim and
+  reported upstream, Tools/BibleData/blivre, owner 20 November 2026),
   bundled as Genesis/Resources/Bibles/BLIVRE.sqlite (`Translation.bibliaLivre`,
   the package_translation.py build's .sqlite; its catalog row stays for
   older builds), so a Portuguese iPhone starts in it at setup, offline, and
