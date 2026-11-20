@@ -829,7 +829,7 @@
   {
    "strongs": "H7717",
    "sha256": "604498815cea08d4122fb86706fcf385b370021b9b4762dc3719792852b8577a",
-   "gloss": "testemunha",
+   "gloss": "advogado",
    "definition": "uma testemunha",
    "derivation": "de uma raiz não usada que significa testemunhar;"
   },
@@ -1376,8 +1376,9 @@
    "strongs": "H7766",
    "sha256": "925a89ce3b19ea0c8fa97ff3e58656b7c2b0142dfd6cc5a098cbbd9f6d1b847d",
    "gloss": "Suném",
-   "definition": "Suném, um lugar na Pal",
-   "derivation": "provavelmente do mesmo que 7764; quietamente;"
+   "definition": "Suném, um lugar na Palestina",
+   "derivation": "provavelmente do mesmo que 7764; quietamente;",
+   "note": "Source abbreviation 'Pal' written out as 'Palestina'."
   },
   {
    "strongs": "H7767",
@@ -2069,8 +2070,9 @@
    "strongs": "H7856",
    "sha256": "5c9a4264d07bb1def2d09e79c15e5cb89da24d94264c6fdb9b8216c630aef6bf",
    "gloss": "Sitna",
-   "definition": "Sitna, nome de um poço na Pal",
-   "derivation": "o mesmo que 7855;"
+   "definition": "Sitna, nome de um poço na Palestina",
+   "derivation": "o mesmo que 7855;",
+   "note": "Source abbreviation 'Pal' written out as 'Palestina'."
   },
   {
    "strongs": "H7857",
@@ -2789,7 +2791,7 @@
    "strongs": "H7937",
    "sha256": "a2cfa480da69ecd5ff7dcb1c407c4ef1ed8c27848cc841384c31c3611417f8d4",
    "gloss": "embriagar-se",
-   "definition": "ficar embriagado; em sentido restrito, saciar com uma bebida estimulante ou (figuradamente) influência",
+   "definition": "ficar embriagado; em sentido restrito, saciar com uma bebida estimulante ou (figuradamente) influenciar",
    "derivation": "raiz primitiva;"
   },
   {

@@ -197,7 +197,7 @@ final class StudyRepository: Sendable {
         ) {
             Place(
                 summary: Self.placeSummary($0, confidenceColumn: 10),
-                aliases: $0.text(6),
+                aliases: OtherNames.distinct($0.text(6), besides: $0.text(1)),
                 description: $0.text(7),
                 isPrecise: $0.bool(8),
                 firstVerse: $0.optionalInt(9).map(VerseID.init(rawValue:)),

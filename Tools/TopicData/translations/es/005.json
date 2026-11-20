@@ -672,7 +672,7 @@
    "kind": "entry",
    "id": 4910,
    "sha256": "45721ff9ee25acf441b6ab0e519782a4acbbbf21e295031a0d9293d57cd34c56",
-   "text": "Absalón"
+   "text": "Absalom"
   },
   {
    "kind": "entry",
@@ -1074,7 +1074,7 @@
    "kind": "entry",
    "id": 4974,
    "sha256": "d25b00e6ec1f2f01bdeee30fddfa1685793f99e1a713552eb3d4005845d9d42a",
-   "text": "David, al huir de Absalón"
+   "text": "David, al huir de Absalom"
   },
   {
    "kind": "entry",
@@ -2136,7 +2136,7 @@
    "kind": "entry",
    "id": 5109,
    "sha256": "9a074541df7d49b604c07dca7cd0767336446d3c14466dfcad3873c8c6a8e69f",
-   "text": "Simi maldice a David"
+   "text": "Simei maldice a David"
   },
   {
    "kind": "entry",
@@ -2952,7 +2952,8 @@
    "kind": "topic",
    "id": 1331,
    "sha256": "a7c59539d8ae15bf9a22671b048160448f91018aa4aba4dce07c0e405deec881",
-   "text": "Darda"
+   "text": "Dara",
+   "name_note": "Dara (1 Cr 2:6), not Darda (1 R 4:31); app name pinned too"
   },
   {
    "kind": "topic",
@@ -3726,19 +3727,19 @@
    "kind": "entry",
    "id": 5332,
    "sha256": "6153e1cabc282769c1c156a8bf291d4de1dd2bbe9cce296af981f4cf2cae00fe",
-   "text": "El crimen de Amnón, su asesinato por Absalón y la huida de Absalón"
+   "text": "El crimen de Amnón, su asesinato por Absalom y la huida de Absalom"
   },
   {
    "kind": "entry",
    "id": 5333,
    "sha256": "aaaa4dda6ae31ff1c22149bf3b58d0c281207670880ffdbf2bd02900ae45a3d2",
-   "text": "El regreso de Absalón"
+   "text": "El regreso de Absalom"
   },
   {
    "kind": "entry",
    "id": 5334,
    "sha256": "4b2b8413a1ad17d1f8af4d9d232917001a3cf75cdd438ddad23eeee14f1ce79f",
-   "text": "La usurpación de Absalón"
+   "text": "La usurpación de Absalom"
   },
   {
    "kind": "entry",
@@ -3756,7 +3757,7 @@
    "kind": "entry",
    "id": 5337,
    "sha256": "f45ffab495dbe2586bfcf555edee8f1bd6bda3510ba24de68ca907aaec65f152",
-   "text": "Simi lo maldice"
+   "text": "Simei lo maldice"
   },
   {
    "kind": "entry",
@@ -3768,13 +3769,13 @@
    "kind": "entry",
    "id": 5339,
    "sha256": "4e7951ece6105415d327f403af89ea9712fd1da8c5e464564b9c5401773ca9f9",
-   "text": "Derrota y muerte de Absalón"
+   "text": "Derrota y muerte de Absalom"
   },
   {
    "kind": "entry",
    "id": 5340,
    "sha256": "9c48546b2d9549b7d655d0f664b92aacd60072f70eda53959b7fea2cc88838f0",
-   "text": "Lamenta la muerte de Absalón"
+   "text": "Lamenta la muerte de Absalom"
   },
   {
    "kind": "entry",
@@ -3792,7 +3793,7 @@
    "kind": "entry",
    "id": 5343,
    "sha256": "7da0bcb94c7df19a7f4dd8bcec63c731dd3e2f53bb19666ef45ac5d4bcfd9b9f",
-   "text": "Simi implora clemencia"
+   "text": "Simei implora clemencia"
   },
   {
    "kind": "entry",
@@ -4506,7 +4507,7 @@
    "kind": "entry",
    "id": 5453,
    "sha256": "671937d5fbe84833e9147c672b998b0b0fc107c670850b219e798c3fbb66ec65",
-   "text": "Henoch"
+   "text": "Enoc"
   },
   {
    "kind": "entry",
@@ -4776,7 +4777,7 @@
    "kind": "entry",
    "id": 5496,
    "sha256": "5deffd3ecfeda189ef3474d9a80708e359f5b0a887390a1c355b5ed56829409d",
-   "text": "Sepultada bajo una encina cerca de Bet-el"
+   "text": "Sepultada bajo una encina cerca de Betel"
   },
   {
    "kind": "entry",
@@ -5226,7 +5227,7 @@
    "kind": "entry",
    "id": 5565,
    "sha256": "029b3c68916e44dd67f17411ffbdfce7b29f6005048578514aa949dde8102264",
-   "text": "Dalila engaña a Samsón"
+   "text": "Dalila engaña a Sansón"
   },
   {
    "kind": "entry",
@@ -5244,7 +5245,7 @@
    "kind": "entry",
    "id": 5568,
    "sha256": "8aa10b0a48dc945a77d5ad2eeac64f52d2738dae87395c1b530ed0ca32c0c543",
-   "text": "Husai engaña a Absalón"
+   "text": "Husai engaña a Absalom"
   },
   {
    "kind": "entry",
@@ -5256,19 +5257,19 @@
    "kind": "entry",
    "id": 5570,
    "sha256": "afcd9d135c53a7b46960b4d633efe6367dfa1b10d16d96808e72e020d0c0532b",
-   "text": "Por Absalón"
+   "text": "Por Absalom"
   },
   {
    "kind": "entry",
    "id": 5571,
    "sha256": "5e54ea4725bafe2d0fc701cd8d219a165c712e4237843ef88e15b0773b444fd0",
-   "text": "Por Absalón: cuando vengó a su hermana"
+   "text": "Por Absalom: cuando vengó a su hermana"
   },
   {
    "kind": "entry",
    "id": 5572,
    "sha256": "fccc35aad38c3fb38fc733505f1ad176e107e0298b94e9e9ec33a0e1a3444a4e",
-   "text": "Por Absalón: cuando comenzó su conspiración"
+   "text": "Por Absalom: cuando comenzó su conspiración"
   },
   {
    "kind": "entry",
@@ -5364,7 +5365,7 @@
    "kind": "entry",
    "id": 5587,
    "sha256": "671937d5fbe84833e9147c672b998b0b0fc107c670850b219e798c3fbb66ec65",
-   "text": "Henoch"
+   "text": "Enoc"
   },
   {
    "kind": "entry",
@@ -6006,7 +6007,7 @@
    "kind": "entry",
    "id": 5678,
    "sha256": "c358fd9fefc4e21b8e0397cbca1d6e5ad03044ff80725918176714e9456b7930",
-   "text": "La amante de Samsón"
+   "text": "La amante de Sansón"
   },
   {
    "kind": "topic",
@@ -6054,7 +6055,7 @@
    "kind": "entry",
    "id": 5681,
    "sha256": "45721ff9ee25acf441b6ab0e519782a4acbbbf21e295031a0d9293d57cd34c56",
-   "text": "Absalón"
+   "text": "Absalom"
   },
   {
    "kind": "entry",
@@ -6330,7 +6331,7 @@
    "kind": "topic",
    "id": 1387,
    "sha256": "8f40bcc4a549843f0ba175e6e2891bf43c1201daa2ab1b5ec8a0702330724d67",
-   "text": "Diputado"
+   "text": "Procónsul"
   },
   {
    "kind": "entry",
@@ -6396,7 +6397,7 @@
    "kind": "entry",
    "id": 5729,
    "sha256": "c93b61b4798cf3921fe9b519c5106adb19b6cb9d4ce527ef57be2da3ca47bce6",
-   "text": "Los muchachos malvados de Bet-el se burlan de Eliseo"
+   "text": "Los muchachos malvados de Betel se burlan de Eliseo"
   },
   {
    "kind": "entry",
@@ -6612,7 +6613,7 @@
    "kind": "entry",
    "id": 5755,
    "sha256": "3a47cb9da62c9776ed23c6a87af2a227cadd0d58b0996c78939904973cf8c197",
-   "text": "Para casos destacados de, estúdiense: HENOCH, NOÉ, ABRAHAM, MOISÉS, la historia posterior de DAVID, la primera parte de la vida de SALOMÓN, JOSÍAS, ASA, ISAÍAS, ELÍAS, JEREMÍAS, DANIEL, SADRACH, MESACH y ABED-NEGO"
+   "text": "Para casos destacados de, estúdiense: ENOC, NOÉ, ABRAHAM, MOISÉS, la historia posterior de DAVID, la primera parte de la vida de SALOMÓN, JOSÍAS, ASA, ISAÍAS, ELÍAS, JEREMÍAS, DANIEL, SADRAC, MESAC y ABED-NEGO"
   },
   {
    "kind": "entry",
@@ -7231,7 +7232,7 @@
    "kind": "entry",
    "id": 5836,
    "sha256": "f48820929273351eacd46c2d77f565242ac62f20f7e4e6a75ff95e6b4e461a64",
-   "text": "David, al enviar a Husai a la corte de Absalón"
+   "text": "David, al enviar a Husai a la corte de Absalom"
   },
   {
    "kind": "entry",
@@ -7243,7 +7244,7 @@
    "kind": "entry",
    "id": 5838,
    "sha256": "90e464a56cd3c9e990f8668dfee6fbdbf6f5015757212a6fec2ef874aeaa5e41",
-   "text": "Absalón, al ganarse al pueblo"
+   "text": "Absalom, al ganarse al pueblo"
   },
   {
    "kind": "entry",

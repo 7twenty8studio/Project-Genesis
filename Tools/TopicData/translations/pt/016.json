@@ -666,7 +666,7 @@
    "kind": "entry",
    "id": 15590,
    "sha256": "f011caa978761d48269885656d190d4596584e87554f1979c0552fff76154568",
-   "text": "Um servo (grego: diakonos) da congregação em Jerusalém"
+   "text": "Um servo (grego: diakonos) da igreja em Jerusalém"
   },
   {
    "kind": "topic",
@@ -702,7 +702,7 @@
    "kind": "entry",
    "id": 15593,
    "sha256": "6aa4fa83ee55653a0c87b3a55d69adfca750792754ddc1f568261852326c17b2",
-   "text": "Um prosélito de Antioquia e servo (grego: diakonos) da congregação em Jerusalém"
+   "text": "Um prosélito de Antioquia e servo (grego: diakonos) da igreja em Jerusalém"
   },
   {
    "kind": "topic",
@@ -2262,7 +2262,8 @@
    "kind": "topic",
    "id": 3628,
    "sha256": "043f4ed1bea24eb90f192a28ec08f0b6cbc40196a1b0ead57fa26f95673a8df4",
-   "text": "Obede"
+   "text": "Odede",
+   "name_note": "Odede (2 Cr 15:1; 28:9); the glossary gave Obede, another man; app name pinned too"
   },
   {
    "kind": "entry",
@@ -5760,13 +5761,13 @@
    "kind": "entry",
    "id": 16260,
    "sha256": "c1204a5762c20c2914ad9b406adc75c52f6837e6ad5d9928a61b64968924859d",
-   "text": "A congregação em Éfeso"
+   "text": "A igreja em Éfeso"
   },
   {
    "kind": "entry",
    "id": 16261,
    "sha256": "89a8c9cbb24b43308eba1c66d82952872a9d4c7c8acfb4d3f1c30ce8b48b3ed3",
-   "text": "A congregação em Tiatira"
+   "text": "A igreja em Tiatira"
   },
   {
    "kind": "entry",

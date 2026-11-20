@@ -3517,13 +3517,13 @@
    "kind": "entry",
    "id": 5297,
    "sha256": "4fe235406ccdf21e8092a726722f990d34acea7d4479392776cb6aaa5c449d50",
-   "text": "Is-Bosete, filho de Saul, coroado"
+   "text": "Isbosete, filho de Saul, coroado"
   },
   {
    "kind": "entry",
    "id": 5298,
    "sha256": "d3421adf120c9f960f94ba6c8dc8583f727ed57db48d1cf87e662d7eeb1c7e34",
-   "text": "Davi guerreia contra Is-Bosete e o derrota"
+   "text": "Davi guerreia contra Isbosete e o derrota"
   },
   {
    "kind": "entry",
@@ -3535,13 +3535,13 @@
    "kind": "entry",
    "id": 5300,
    "sha256": "3f8795d057eb979050c85e22dbee00331722af4663f29dc660e61fee42972fa2",
-   "text": "Abner se rebela contra Is-Bosete e se junta a Davi, mas é morto por Joabe"
+   "text": "Abner se rebela contra Isbosete e se junta a Davi, mas é morto por Joabe"
   },
   {
    "kind": "entry",
    "id": 5301,
    "sha256": "cb6c53f7b2913d6360929a03ac465ca87d66699269f590a77657818ed088a123",
-   "text": "Pune os assassinos de Is-Bosete"
+   "text": "Pune os assassinos de Isbosete"
   },
   {
    "kind": "entry",
@@ -4249,7 +4249,7 @@
    "kind": "entry",
    "id": 5413,
    "sha256": "a3d4c063a77b03f226d903191c23241416bee551fb494e0aa77ef28c1edc96bd",
-   "text": "O homem posto na sepultura de Eliseu"
+   "text": "O jovem posto na sepultura de Eliseu"
   },
   {
    "kind": "entry",
@@ -4309,7 +4309,7 @@
    "kind": "entry",
    "id": 5423,
    "sha256": "51a8f28c680a4a1372c0ce98d873f051e3ebd9b542857d0d3a516ffe6ec4bcb1",
-   "text": "Queima de incenso feita por eles"
+   "text": "Queima de incenso feita em sua honra"
   },
   {
    "kind": "entry",
@@ -5995,7 +5995,7 @@
    "kind": "entry",
    "id": 5677,
    "sha256": "ca6bc2b16284d1e14fe8da375b93b9a45997a51aa7ff85f1e663ca4c99809e33",
-   "text": "Também chamado DELAÍAS"
+   "text": "Também chamado DALAÍAS"
   },
   {
    "kind": "topic",
@@ -6199,7 +6199,7 @@
    "kind": "entry",
    "id": 5702,
    "sha256": "60b07799304943134314a40628abf85f3db5e6a962b3a788602abf569a406228",
-   "text": "Poder sobre os, dado aos discípulos"
+   "text": "Poder sobre eles, dado aos discípulos"
   },
   {
    "kind": "entry",
@@ -6379,7 +6379,7 @@
    "kind": "entry",
    "id": 5726,
    "sha256": "12cc31c0119449ca530e0c088046b9bef401b8ceb18dd060be3575f3efb29c35",
-   "text": "Os ímpios tidos em, por Deus"
+   "text": "Os ímpios tidos em escárnio por Deus"
   },
   {
    "kind": "entry",
@@ -6805,7 +6805,8 @@
    "kind": "topic",
    "id": 1408,
    "sha256": "66a4c9004e67861a822b81845a9af5eab2ee67d7d1a1fbf7fc621a0d6dfe5e14",
-   "text": "Dribi"
+   "text": "Dibri",
+   "name_note": "Dibri (Lv 24:11); the glossary gave Dribi; app name pinned too"
   },
   {
    "kind": "entry",

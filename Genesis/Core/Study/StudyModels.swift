@@ -44,6 +44,36 @@ struct PersonSummary: Identifiable, Hashable, Sendable {
     /// Other names, e.g. "Saul" for Paul; may be empty.
     let alsoCalled: String
     let verseCount: Int
+
+    init(id: Int, name: String, alsoCalled: String, verseCount: Int) {
+        self.id = id
+        self.name = name
+        self.alsoCalled = OtherNames.distinct(alsoCalled, besides: name)
+        self.verseCount = verseCount
+    }
+}
+
+/// Other names without repeats or the name itself: a translation can spell
+/// two names alike ("Lucas", also called "Lucas"), and then there's nothing
+/// to add.
+enum OtherNames {
+    static func distinct(_ other: String, besides name: String) -> String {
+        guard !other.isEmpty else { return other }
+        let base = name.split(separator: "(", maxSplits: 1).first.map(String.init) ?? name
+        var seen: Set<String> = [fold(base)]
+        var kept: [String] = []
+        for part in other.split(separator: ",") {
+            let trimmed = part.trimmingCharacters(in: .whitespaces)
+            guard !trimmed.isEmpty, seen.insert(fold(trimmed)).inserted else { continue }
+            kept.append(trimmed)
+        }
+        return kept.joined(separator: ", ")
+    }
+
+    private static func fold(_ text: String) -> String {
+        text.trimmingCharacters(in: .whitespaces)
+            .folding(options: [.caseInsensitive, .diacriticInsensitive], locale: nil)
+    }
 }
 
 struct Person: Identifiable, Hashable, Sendable {

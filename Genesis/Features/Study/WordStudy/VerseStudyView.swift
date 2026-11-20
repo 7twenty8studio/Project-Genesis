@@ -53,6 +53,7 @@ struct VerseStudyList: View {
     private var glossLanguage: String {
         GlossLanguage.code(for: glossChoice, bibleLanguage: library.currentTranslation.language)
     }
+    @State private var showsCommentaryAbout = false
 
     private struct Loaded: Sendable {
         let words: [OriginalWord]
@@ -95,11 +96,17 @@ struct VerseStudyList: View {
                 } footer: {
                     VStack(alignment: .leading, spacing: 6) {
                         if GlossLanguage.isTranslated(glossLanguage) {
-                            Text("Commentary and grammar are in English.")
+                            if wordStudy?.commentaryLanguage != nil {
+                                Text("The grammar is in English.")
+                            } else {
+                                Text("Commentary and grammar are in English.")
+                            }
                             Text(OriginalGlosses.translatedNote)
                             Text(OriginalGlosses.attribution)
                         } else if WordStudyRepository.needsEnglishNote(bibleLanguage: library.premiumToolsTranslation.language) {
-                            if wordStudy?.language != nil {
+                            if wordStudy?.commentaryLanguage != nil {
+                                Text("The meanings of words in this verse and their grammar are in English.")
+                            } else if wordStudy?.language != nil {
                                 Text("Commentary and the meanings of words in this verse are in English.")
                             } else {
                                 Text("Definitions and commentary are in English.")
@@ -114,6 +121,7 @@ struct VerseStudyList: View {
         .navigationTitle(PassageReference(verse: verse).description(in: library.premiumToolsTranslation.language))
         .navigationBarTitleDisplayMode(.inline)
         .task(id: "\(verse.rawValue)-\(glossLanguage)") { await load() }
+        .sheet(isPresented: $showsCommentaryAbout) { CommentaryAboutSheet() }
     }
 
     // MARK: Sections
@@ -164,17 +172,36 @@ struct VerseStudyList: View {
             }
             .listRowBackground(palette.surface)
         } else {
+            Section {
+                Button("About This Commentary", systemImage: "info.circle") { showsCommentaryAbout = true }
+                    .foregroundStyle(palette.accent)
+                    .accessibilityIdentifier("wordStudy.commentaryAbout")
+            }
+            .listRowBackground(palette.surface)
             ForEach(passages) { passage in
                 Section {
-                    ForEach(Array(passage.paragraphs.enumerated()), id: \.offset) { _, paragraph in
-                        Text(paragraph)
+                    ForEach(Array(passage.paragraphs.enumerated()), id: \.offset) { index, paragraph in
+                        if let note = passage.editorialNotes[index] {
+                            EditorialNoteView(text: note)
+                        }
+                        Text(passage.attributed(paragraph))
                             .foregroundStyle(palette.text)
                             .accessibilityIdentifier("wordStudy.commentary")
                     }
                 } header: {
                     Text(passage.title ?? passage.reference.description)
                 } footer: {
-                    Text("Matthew Henry, \(passage.reference.description)")
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Matthew Henry, \(passage.reference.description)")
+                        Text("Matthew Henry (1662–1714): a historical commentary, one writer's interpretation, not Scripture.")
+                        if passage.isTranslated {
+                            Text(WordStudyRepository.translatedCommentaryNote)
+                        }
+                        if !passage.quotations.isEmpty, let language = passage.quotationLanguage,
+                           let credit = WordStudyRepository.quotationCredit(language: language) {
+                            Text(credit)
+                        }
+                    }
                 }
                 .listRowBackground(palette.surface)
             }

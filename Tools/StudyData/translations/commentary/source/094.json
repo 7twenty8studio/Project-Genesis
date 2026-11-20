@@ -1,0 +1,620 @@
+{
+ "batch": "094",
+ "entries": [
+  {
+   "kind": "intro",
+   "id": 55,
+   "book": 55,
+   "sha256": "3ca71fbc5e68ba055edab3f0a40f62f7c744439f07f4159b82ca9880cdc0c330",
+   "text": "The first design of this epistle seems to have been, to apprize Timothy of what had occurred during the imprisonment of the apostle, and to request him to come to Rome. But being uncertain whether he should be suffered to live to see him, Paul gives a variety of advices and encouragements, for the faithful discharge of his ministerial duties. As this was a private epistle written to St. Paul's most intimate friend, under the miseries of imprisonment, and in the near prospect of death, it shows the temper and character of the apostle, and contains convincing proofs that he sincerely believed the doctrines he preached.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 3839,
+   "book": 55,
+   "start_verse": 55001001,
+   "end_verse": 55001005,
+   "sha256": "947d0e8335ccd5dde70607e27879528509b45c14e3b862211611e537d08cd7f1",
+   "title": "Paul expresses great affection for Timothy.",
+   "text": "The promise of eternal life to believers in Christ Jesus, is the leading subject of ministers who are employed according to the will of God. The blessings here named, are the best we can ask for our beloved friends, that they may have peace with God the Father and Christ Jesus our Lord. Whatever good we do, God must have the glory. True believers have in every age the same religion as to substance. Their faith is unfeigned; it will stand the trial, and it dwells in them as a living principle. Thus pious women may take encouragement from the success of Lois and Eunice with Timothy, who proved so excellent and useful a minister. Some of the most worthy and valuable ministers the church of Christ has been favoured with, have had to bless God for early religious impressions made upon their minds by the teaching of their mothers or other female relatives.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "God the Father and Christ Jesus our Lord",
+     "verses": [
+      55001002
+     ],
+     "es": "A Timoteo, amado hijo: Gracia, misericordia, y paz de Dios el Padre y de Jesucristo nuestro Señor.",
+     "pt": "a Timóteo, meu amado filho. Graça, misericórdia, e paz, da parte de Deus Pai, e de Cristo Jesus, nosso Senhor."
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3840,
+   "book": 55,
+   "start_verse": 55001006,
+   "end_verse": 55001014,
+   "sha256": "d7a468060903fc23df39ab8b151da6574bd0bf9430183dae56a7744e5c438590",
+   "title": "Exhorts him to improve his spiritual gifts.",
+   "text": "God has not given us the spirit of fear, but the spirit of power, of courage and resolution, to meet difficulties and dangers; the spirit of love to him, which will carry us through opposition. And the spirit of a sound mind, quietness of mind. The Holy Spirit is not the author of a timid or cowardly disposition, or of slavish fears. We are likely to bear afflictions well, when we have strength and power from God to enable us to bear them. As is usual with Paul, when he mentions Christ and his redemption, he enlarges upon them; so full was he of that which is all our salvation, and ought to be all our desire. The call of the gospel is a holy call, making holy. Salvation is of free grace. This is said to be given us before the world began, that is, in the purpose of God from all eternity; in Christ Jesus, for all the gifts that come from God to sinful man, come in and through Christ Jesus alone. And as there is so clear a prospect of eternal happiness by faith in Him, who is the Resurrection and the Life, let us give more diligence in making his salvation sure to our souls. Those who cleave to the gospel, need not be ashamed, the cause will bear them out; but those who oppose it, shall be ashamed. The apostle had trusted his life, his soul, and eternal interests, to the Lord Jesus. No one else could deliver and secure his soul through the trials of life and death. There is a day coming, when our souls will be inquired after. Thou hadst a soul committed to thee; how was it employed? in the service of sin, or in the service of Christ? The hope of the lowest real Christian rests on the same foundation as that of the great apostle. He also has learned the value and the danger of his soul; he also has believed in Christ; and the change wrought in his soul, convinces the believer that the Lord Jesus will keep him to his heavenly kingdom. Paul exhorts Timothy to hold fast the Holy Scriptures, the substance of solid gospel truth in them. It is not enough to assent to the sound words, but we must love them. The Christian doctrine is a trust committed to us; it is of unspeakable value in itself, and will be of unspeakable advantage to us. It is committed to us, to be preserved pure and entire, yet we must not think to keep it by our own strength, but by the power of the Holy Spirit dwelling in us; and it will not be gained by those who trust in their own hearts, and lean to their own understandings. (2Ti 1:15-18)",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "not given us the spirit of fear",
+     "verses": [
+      55001007
+     ],
+     "es": "Porque no nos ha dado Dios el espíritu de temor, sino el de fortaleza, y de amor, y de templanza.",
+     "pt": "Pois Deus não nos deu espírito de medo; mas sim de força, de amor, e de moderação."
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3841,
+   "book": 55,
+   "start_verse": 55001015,
+   "end_verse": 55001018,
+   "sha256": "1adf22ac0d19c248e48abc32785ce18f87a58a70fe00ae670267872f8692f7aa",
+   "title": "Tells of many who basely deserted him; but speaks with affection of Onesiphorus.",
+   "text": "The apostle mentions the constancy of Onesiphorus; he oft refreshed him with his letters, and counsels, and comforts, and was not ashamed of him. A good man will seek to do good. The day of death and judgment is an awful day. And if we would have mercy then, we must seek for it now of the Lord. The best we can ask, for ourselves or our friends, is, that the Lord will grant that we and they may find mercy of the Lord, when called to pass out of time into eternity, and to appear before the judgment seat of Christ.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "may find mercy of the Lord",
+     "verses": [
+      55001018
+     ],
+     "es": "Déle el Señor que halle misericordia cerca del Señor en aquel día. Y cuánto nos ayudó en Efeso, tú lo sabes mejor.",
+     "pt": "O Senhor lhe conceda que naquele dia ele encontre misericórdia diante do Senhor. E tu sabes muito bem como ele me ajudou em Éfeso."
+    },
+    {
+     "n": 1,
+     "english": "appear before the judgment seat of Christ",
+     "verses": [
+      47005010
+     ],
+     "es": "Porque es menester que todos nosotros parezcamos ante el tribunal de Cristo, para que cada uno reciba según lo que hubiere hecho por medio del cuerpo, ora sea bueno ó malo.",
+     "pt": "Pois todos devemos comparecer diante do Tribunal de Cristo, para que cada um receba o pagamento das coisas que fez no corpo, seja bem ou mal."
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3842,
+   "book": 55,
+   "start_verse": 55002001,
+   "end_verse": 55002007,
+   "sha256": "acb936b532cbb32378ceea8b852e8a007b8df284221aebdf59648ff3a48a1652",
+   "title": "The apostle exhorts Timothy to persevere with diligence, like a soldier, a combatant, and a husbandman.",
+   "text": "As our trials increase, we need to grow stronger in that which is good; our faith stronger, our resolution stronger, our love to God and Christ stronger. This is opposed to our being strong in our own strength. All Christians, but especially ministers, must be faithful to their Captain, and resolute in his cause. The great care of a Christian must be to please Christ. We are to strive to get the mastery of our lusts and corruptions, but we cannot expect the prize unless we observe the laws. We must take care that we do good in a right manner, that our good may not be spoken evil of. Some who are active, spend their zeal about outward forms and doubtful disputations. But those who strive lawfully shall be crowned at last. If we would partake the fruits, we must labour; if we would gain the prize, we must run the race. We must do the will of God, before we receive the promises, for which reason we have need of patience. Together with our prayers for others, that the Lord would give them understanding in all things, we must exhort and stir them up to consider what they hear or read.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 3843,
+   "book": 55,
+   "start_verse": 55002008,
+   "end_verse": 55002013,
+   "sha256": "dfb6b011630faab290f1c9277eadf92e494ab6d78d13938aee6ebee6b324bf5b",
+   "title": "Encouraging him by assurances of a happy end of his faithfulness.",
+   "text": "Let suffering saints remember, and look to Jesus, the Author and Finisher of their faith, who for the joy that was set before him, endured the cross, despised the shame, and is now set down at the right hand of the throne of God. We must not think it strange if the best men meet with the worst treatment; but this is cheering, that the word of God is not bound. Here we see the real and true cause of the apostle's suffering trouble in, or for, the sake of the gospel. If we are dead to this world, its pleasures, profits, and honours, we shall be for ever with Christ in a better world. He is faithful to his threatenings, and faithful to his promises. This truth makes sure the unbeliever's condemnation, and the believer's salvation.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "faith, who for the joy that was set before him, endured the cross",
+     "verses": [
+      58012002
+     ],
+     "es": "Puestos los ojos en al autor y consumador de la fe, en Jesús; el cual, habiéndole sido propuesto gozo, sufrió la cruz, menospreciando la vergüenza, y sentóse á la diestra del trono de Dios.",
+     "pt": "olhando para Jesus, Autor e aperfeiçoador da fé. Ele, pela alegria que lhe estava proposta, suportou a cruz, desprezando a humilhação, e assentou-se à direita do trono de Deus."
+    },
+    {
+     "n": 1,
+     "english": "set down at the right hand of the throne of God",
+     "verses": [
+      58012002
+     ],
+     "es": "Puestos los ojos en al autor y consumador de la fe, en Jesús; el cual, habiéndole sido propuesto gozo, sufrió la cruz, menospreciando la vergüenza, y sentóse á la diestra del trono de Dios.",
+     "pt": "olhando para Jesus, Autor e aperfeiçoador da fé. Ele, pela alegria que lhe estava proposta, suportou a cruz, desprezando a humilhação, e assentou-se à direita do trono de Deus."
+    },
+    {
+     "n": 2,
+     "english": "the word of God is not bound",
+     "verses": [
+      55002009
+     ],
+     "es": "En el que sufro trabajo, hasta las prisiones á modo de malhechor; mas la palabra de Dios no está presa.",
+     "pt": "Por esse evangelho sofro aflições, e até prisões, como um criminoso; mas a palavra de Deus não está presa."
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3844,
+   "book": 55,
+   "start_verse": 55002014,
+   "end_verse": 55002021,
+   "sha256": "eaaee704bef1a3babf27d42beaaa1ea1c919317eb37190ee054473059923f8aa",
+   "title": "Warnings to shun vain babblings and dangerous errors.",
+   "text": "Those disposed to strive, commonly strive about matters of small moment. But strifes of words destroy the things of God. The apostle mentions some who erred. They did not deny the resurrection, but they corrupted that true doctrine. Yet nothing can be so foolish or erroneous, but it will overturn the temporary faith of some professors. This foundation has two writings on it. One speaks our comfort. None can overthrow the faith of any whom God hath chosen. The other speaks our duty. Those who would have the comfort of the privilege, must make conscience of the duty Christ gave himself for us, that he might redeem us from all iniquity, Tit 2:14. The church of Christ is like a dwelling: some furniture is of great value; some of smaller value, and put to meaner uses. Some professors of religion are like vessels of wood and earth. When the vessels of dishonour are cast out to be destroyed, the others will be filled with all the fulness of God. We must see to it that we are holy vessels. Every one in the church whom God approves, will be devoted to his Master's service, and thus fitted for his use.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "gave himself for us, that he might redeem us from all iniquity",
+     "verses": [
+      56002014
+     ],
+     "es": "Que se dió á sí mismo por nosotros para redimirnos de toda iniquidad, y limpiar para sí un pueblo propio, celoso de buenas obras.",
+     "pt": "O qual deu a si mesmo por nós, para nos libertar de toda injustiça, e para purificar para si mesmo um povo particular, zeloso de boas obras."
+    },
+    {
+     "n": 1,
+     "english": "be filled with all the fulness of God",
+     "verses": [
+      49003019
+     ],
+     "es": "Y conocer el amor de Cristo, que excede á todo conocimiento, para que seáis llenos de toda la plenitud de Dios.",
+     "pt": "e conhecer o amor de Cristo, que excede o entendimento, para que sejais cheios de toda a plenitude de Deus."
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3845,
+   "book": 55,
+   "start_verse": 55002022,
+   "end_verse": 55002026,
+   "sha256": "2bf38ee9c0e32d0c16187d545a672f568e1004ffed40f4163052ab5da5ca54da",
+   "title": "Charges to flee youthful lusts, and to minister with zeal against error, but with meekness of spirit.",
+   "text": "The more we follow that which is good, the faster and the further we shall flee from that which is evil. The keeping up the communion of saints, will take us from fellowship with unfruitful works of darkness. See how often the apostle cautions against disputes in religion; which surely shows that religion consists more in believing and practising what God requires, than in subtle disputes. Those are unapt to teach, who are apt to strive, and are fierce and froward. Teaching, not persecution, is the Scripture method of dealing with those in error. The same God who gives the discovery of the truth, by his grace brings us to acknowledge it, otherwise our hearts would continue to rebel against it. There is no \"peradventure,\" in respect of God's pardoning those who do repent; but we cannot tell that he will give repentance to those who oppose his will. Sinners are taken in a snare, and in the worst snare, because it is the devil's; they are slaves to him. And if any long for deliverance, let them remember they never can escape, except by repentance, which is the gift of God; and we must ask it of him by earnest, persevering prayer.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 3846,
+   "book": 55,
+   "start_verse": 55003001,
+   "end_verse": 55003009,
+   "sha256": "df8b8eae3ddf0673069c301480395a42774eee06ade81e491c8993a7347c0511",
+   "title": "The apostle foretells the rise of dangerous enemies to the gospel.",
+   "text": "Even in gospel times there would be perilous times; on account of persecution from without, still more on account of corruptions within. Men love to gratify their own lusts, more than to please God and do their duty. When every man is eager for what he can get, and anxious to keep what he has, this makes men dangerous to one another. When men do not fear God, they will not regard man. When children are disobedient to their parents, that makes the times perilous. Men are unholy and without the fear of God, because unthankful for the mercies of God. We abuse God's gifts, if we make them the food and fuel of our lusts. Times are perilous also, when parents are without natural affection to children. And when men have no rule over their own spirits, but despise that which is good and to be honoured. God is to be loved above all; but a carnal mind, full of enmity against him, prefers any thing before him, especially carnal pleasure. A form of godliness is very different from the power; from such as are found to be hypocrites, real Christians must withdraw. Such persons have been found within the outward church, in every place, and at all times. There ever have been artful men, who, by pretences and flatteries, creep into the favour and confidence of those who are too easy of belief, ignorant, and fanciful. All must be ever learning to know the Lord; but these follow every new notion, yet never seek the truth as it is in Jesus. Like the Egyptian magicians, these were men of corrupt minds, prejudiced against the truth, and found to be quite without faith. Yet though the spirit of error may be let loose for a time, Satan can deceive the nations and the churches no further, and no longer, than God will permit.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 3847,
+   "book": 55,
+   "start_verse": 55003010,
+   "end_verse": 55003013,
+   "sha256": "5515bad557769e1b7ce37e0a483e8a1e4c5af330bc1dee6cd7d5a0613330c0cb",
+   "title": "Proposes his own example to Timothy.",
+   "text": "The more fully we know the doctrine of Christ, as taught by the apostles, the more closely we shall cleave to it. When we know the afflictions of believers only in part, they tempt us to decline the cause for which they suffer. A form of godliness, a profession of Christian faith without a godly life, often is allowed to pass, while open profession of the truth as it is in Jesus, and resolute attention to the duties of godliness, stir up the scorn and enmity of the world. As good men, by the grace of God, grow better, so bad men, through the craft of Satan, and the power of their own corruptions, grow worse. The way of sin is down-hill; such go on from bad to worse, deceiving and being deceived. Those who deceive others, deceive themselves, as they will find at last, to their cost. The history of the outward church, awfully shows that the apostle spake this as he was moved by the Holy Ghost.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "worse, deceiving and being deceived",
+     "verses": [
+      55003013
+     ],
+     "es": "Mas los malos hombres y los engañadores, irán de mal en peor, engañando y siendo engañados.",
+     "pt": "Mas os que são maus e enganadores irão de mal a pior, enganando e sendo enganados."
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3848,
+   "book": 55,
+   "start_verse": 55003014,
+   "end_verse": 55003017,
+   "sha256": "1d00a817468aafb1fddc3a19c53c09f6877ce67799908014ae629b9b07b9be41",
+   "title": "And exhorts him to continue in the doctrine he had learned from the Holy Scriptures.",
+   "text": "Those who would learn the things of God, and be assured of them, must know the Holy Scriptures, for they are the Divine revelation. The age of children is the age to learn; and those who would get true learning, must get it out of the Scriptures. They must not lie by us neglected, seldom or never looked into. The Bible is a sure guide to eternal life. The prophets and apostles did not speak from themselves, but delivered what they received of God, 2Pe 1:21. It is profitable for all purposes of the Christian life. It is of use to all, for all need to be taught, corrected, and reproved. There is something in the Scriptures suitable for every case. Oh that we may love our Bibles more, and keep closer to them! then shall we find benefit, and at last gain the happiness therein promised by faith in our Lord Jesus Christ, who is the main subject of both Testaments. We best oppose error by promoting a solid knowledge of the word of truth; and the greatest kindness we can do to children, is to make them early to know the Bible.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 3849,
+   "book": 55,
+   "start_verse": 55004001,
+   "end_verse": 55004005,
+   "sha256": "acaa6100e0b6768eec5ecfa25a9d758611907350fac3acf7f0a7732434f59569",
+   "title": "The apostle solemnly charges Timothy to be diligent, though many will not bear sound doctrine.",
+   "text": "People will turn away from the truth, they will grow weary of the plain gospel of Christ, they will be greedy of fables, and take pleasure in them. People do so when they will not endure that preaching which is searching, plain, and to the purpose. Those who love souls must be ever watchful, must venture and bear all the painful effects of their faithfulness, and take all opportunities of making known the pure gospel.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "when they will not endure",
+     "verses": [
+      55004003
+     ],
+     "es": "Porque vendrá tiempo cuando no sufrirán la sana doctrina; antes, teniendo comezón de oir, se amontonarán maestros conforme á sus concupiscencias,",
+     "pt": "Pois virá tempo em que não suportarão a sã doutrina; em vez disso, terão comichão no ouvido e amontoarão para si instrutores conforme os seus próprios desejos maus;"
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3850,
+   "book": 55,
+   "start_verse": 55004006,
+   "end_verse": 55004008,
+   "sha256": "6d82b448e5b833f8467f404ed095eb8f5713178a23f30d0d386e73ee685fafdb",
+   "title": "Enforces the charge from his own martyrdom, then at hand.",
+   "text": "The blood of the martyrs, though not a sacrifice of atonement, yet was a sacrifice of acknowledgment to the grace of God and his truth. Death to a good man, is his release from the imprisonment of this world, and his departure to the enjoyments of another world. As a Christian, and a minister, Paul had kept the faith, kept the doctrines of the gospel. What comfort will it afford, to be able to speak in this manner toward the end of our days! The crown of believers is a crown of righteousness, purchased by the righteousness of Christ. Believers have it not at present, yet it is sure, for it is laid up for them. The believer, amidst poverty, pain, sickness, and the agonies of death, may rejoice; but if the duties of a man's place and station are neglected, his evidence of interest in Christ will be darkened, and uncertainty and distress may be expected to cloud and harass his last hours.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 3851,
+   "book": 55,
+   "start_verse": 55004009,
+   "end_verse": 55004013,
+   "sha256": "d63fe169f2ba5b9c5945eb148022c6cca90fc7747ebedc55a0727f6015718e7c",
+   "title": "Desires him to come speedily.",
+   "text": "The love of this world, is often the cause of turning back from the truths and ways of Jesus Christ. Paul was guided by Divine inspiration, yet he would have his books. As long as we live, we must still learn. The apostles did not neglect human means, in seeking the necessaries of life, or their own instruction. Let us thank the Divine goodness in having given us so many writings of wise and pious men in all ages; and let us seek that by reading them our profiting may appear to all.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 3852,
+   "book": 55,
+   "start_verse": 55004014,
+   "end_verse": 55004018,
+   "sha256": "4b9f02094cbc02d055b9a560acc0202463ce34e50d8db0735c1474b0b7de2129",
+   "title": "He cautions, and complains of such as had deserted him; and expresses his faith as to his own preservation to the heavenly kingdom.",
+   "text": "There is as much danger from false brethren, as from open enemies. It is dangerous having to do with those who would be enemies to such a man as Paul. The Christians at Rome were forward to meet him, Ac 28, but when there seemed to be a danger of suffering with him, then all forsook him. God might justly be angry with them, but he prays God to forgive them. The apostle was delivered out of the mouth of the lion, that is, of Nero, or some of his judges. If the Lord stands by us, he will strengthen us in difficulties and dangers, and his presence will more than supply every one's absence.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "was delivered out of the mouth of the lion",
+     "verses": [
+      55004017
+     ],
+     "es": "Mas el Señor me ayudó, y me esforzó para que por mí fuese cumplida la predicación, y todos los Gentiles oyesen; y fuí librado de la boca del león.",
+     "pt": "Mas o Senhor me ajudou e me fortaleceu, a fim de que por mim a pregação fosse completamente divulgada, e todos os gentios a ouvissem; e fui livrado da boca do leão."
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3853,
+   "book": 55,
+   "start_verse": 55004019,
+   "end_verse": 55004022,
+   "sha256": "56234e4cb63718a24de8dac67e62b1c5149dd3a520f4c8e865d96eb53b3db16a",
+   "title": "Friendly greetings and his usual blessing.",
+   "text": "We need no more to make us happy, than to have the Lord Jesus Christ with our spirits; for in him all spiritual blessings are summed up. It is the best prayer we can offer for our friends, that the Lord Jesus Christ may be with their spirits, to sanctify and save them, and at last to receive them to himself. Many who believed as Paul, are now before the throne, giving glory to their Lord: may we be followers of them.",
+   "quotes": []
+  },
+  {
+   "kind": "intro",
+   "id": 56,
+   "book": 56,
+   "sha256": "13c8ec7a23803d646ece05eabb67ec5c2136a1f4ab9d68a9fc7eec4b14b37106",
+   "text": "This epistle chiefly contains directions to Titus concerning the elders of the Church, and the manner in which he should give instruction; and the latter part tells him to urge obedience to magistrates, to enforce good works, avoid foolish questions, and shun heresies. The instructions the apostle gave are all plain and simple. The Christian religion was not formed to answer worldly or selfish views, but it is the wisdom of God and the power of God.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 3854,
+   "book": 56,
+   "start_verse": 56001001,
+   "end_verse": 56001004,
+   "sha256": "8e1a974be7460a1a68bef9088e46e0aa2c5e07ae32f558c948d710be79a96017",
+   "title": "The apostle salutes Titus.",
+   "text": "All are the servants of God who are not slaves of sin and Satan. All gospel truth is according to godliness, teaching the fear of God. The intent of the gospel is to raise up hope as well as faith; to take off the mind and heart from the world, and to raise them to heaven and the things above. How excellent then is the gospel, which was the matter of Divine promise so early, and what thanks are due for our privileges! Faith comes by hearing, and hearing by the word of God; and whoso is appointed and called, must preach the word. Grace is the free favour of God, and acceptance with him. Mercy, the fruits of the favour, in the pardon of sin, and freedom from all miseries both here and hereafter. And peace is the effect and fruit of mercy. Peace with God through Christ who is our Peace, and with the creatures and ourselves. Grace is the fountain of all blessings. Mercy, and peace, and all good, spring out of this.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "by hearing, and hearing by the word of God",
+     "verses": [
+      45010017
+     ],
+     "es": "Luego la fe es por el oir; y el oir por la palabra de Dios.",
+     "pt": "Portanto, a fé vem pelo ouvir, e o ouvir pela palavra de Deus."
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3855,
+   "book": 56,
+   "start_verse": 56001005,
+   "end_verse": 56001009,
+   "sha256": "a0372e031e041add2893e26972ab4b1b6452f3dc2ce7e849cce3e3b17d05c4dc",
+   "title": "The qualifications of a faithful pastor.",
+   "text": "The character and qualification of pastors, here called elders and bishops, agree with what the apostle wrote to Timothy. Being such bishops and overseers of the flock, to be examples to them, and God's stewards to take care of the affairs of his household, there is great reason that they should be blameless. What they are not to be, is plainly shown, as well as what they are to be, as servants of Christ, and able ministers of the letter and practice of the gospel. And here are described the spirit and practice becoming such as should be examples of good works.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 3856,
+   "book": 56,
+   "start_verse": 56001010,
+   "end_verse": 56001016,
+   "sha256": "f060673dd3012ac91e3b9a362aef8462bac33912760f5ca101d3b3021eff69c5",
+   "title": "The evil temper and practices of false teachers.",
+   "text": "False teachers are described. Faithful ministers must oppose such in good time, that their folly being made manifest, they may go no further They had a base end in what they did; serving a worldly interest under pretence of religion: for the love of money is the root of all evil. Such should be resisted, and put to shame, by sound doctrine from the Scriptures. Shameful actions, the reproach of heathens, should be far from Christians; falsehood and lying, envious craft and cruelty, brutal and sensual practices, and idleness and sloth, are sins condemned even by the light of nature. But Christian meekness is as far from cowardly passing over sin and error, as from anger and impatience. And though there may be national differences of character, yet the heart of man in every age and place is deceitful and desperately wicked. But the sharpest reproofs must aim at the good of the reproved; and soundness in the faith is most desirable and necessary. To those who are defiled and unbelieving, nothing is pure; they abuse, and turn things lawful and good into sin. Many profess to know God, yet in their lives deny and reject him. See the miserable state of hypocrites, such as have a form of godliness, but are without the power; yet let us not be so ready to fix this charge on others, as careful that it does not apply to ourselves.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the love of money is the root of all evil",
+     "verses": [
+      54006010
+     ],
+     "es": "Porque el amor del dinero es la raíz de todos los males: el cual codiciando algunos, se descaminaron de la fe, y fueron traspasados de muchos dolores.",
+     "pt": "Pois o amor ao dinheiro é raiz de todos os tipos de males. Alguns o cobiçam, e então se desviaram da fé, e perfuraram a si mesmos com muitas dores."
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3857,
+   "book": 56,
+   "start_verse": 56002001,
+   "end_verse": 56002008,
+   "sha256": "338b16f7322ae203fceab401b9efae2be62495554ce46485da44674677d085fe",
+   "title": "The duties which become sound doctrine.",
+   "text": "Old disciples of Christ must behave in every thing agreeably to the Christian doctrine. That the aged men be sober; not thinking that the decays of nature will justify any excess; but seeking comfort from nearer communion with God, not from any undue indulgence. Faith works by, and must be seen in love, of God for himself, and of men for God's sake. Aged persons are apt to be peevish and fretful; therefore need to be on their guard. Though there is not express Scripture for every word, or look, yet there are general rules, according to which all must be ordered. Young women must be sober and discreet; for many expose themselves to fatal temptations by what at first might be only want of discretion. The reason is added, that the word of God may not be blasphemed. Failures in duties greatly reproach Christianity. Young men are apt to be eager and thoughtless, therefore must be earnestly called upon to be sober-minded: there are more young people ruined by pride than by any other sin. Every godly man's endeavour must be to stop the mouths of adversaries. Let thine own conscience answer for thine uprightness. What a glory is it for a Christian, when that mouth which would fain open itself against him, cannot find any evil in him to speak of!",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "doctrine. That the aged men be sober",
+     "verses": [
+      56002001,
+      56002002
+     ],
+     "es": "EMPERO tú, habla lo que conviene á la sana doctrina: Que los viejos sean templados, graves, prudentes, sanos en la fe, en la caridad, en la paciencia.",
+     "pt": "Tu, porém, fala o que convém à sã doutrina; Aos velhos, que sejam sóbrios, respeitáveis, prudentes, sãos na fé, no amor e na paciência."
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3858,
+   "book": 56,
+   "start_verse": 56002009,
+   "end_verse": 56002010,
+   "sha256": "6ff3d1e1e4d31fba2d89629ae517ab8590243a9a8ab2a1fedda3b7581220ad9b",
+   "title": "Believing servants must be obedient.",
+   "text": "Servants must know and do their duty to their earthly masters, with a reference to their heavenly one. In serving an earthly master according to Christ's will, He is served; such shall be rewarded by him. Not giving disrespectful or provoking language; but to take a check or reproof with silence, not making confident or bold replies. When conscious of a fault, to excuse or justify it, doubles it. Never putting to their own use that which is their master's, nor wasting the goods they are trusted with. Showing all good fidelity to improve a master's goods, and promote his thriving. If ye have not been faithful in that which is another man's, who shall give you that which is your own? Lu 16:12. True religion is an honour to the professors of it; and they should adorn it in all things.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "If ye have not been faithful in that which is another man's, who shall give you that which is your own",
+     "verses": [
+      42016012
+     ],
+     "es": "Y si en lo ajeno no fuisteis fieles, ¿quién os dará lo que es vuestro?",
+     "pt": "E se nas coisas dos outros não fostes fiéis, quem vos dará o que é vosso?"
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3859,
+   "book": 56,
+   "start_verse": 56002011,
+   "end_verse": 56002015,
+   "sha256": "823c2f9462dbcd92a6b4768ebb2ef24d472673896e48224178b7122ccc35b1e6",
+   "title": "All is enforced from the holy design of the gospel, which concerns all believers.",
+   "text": "The doctrine of grace and salvation by the gospel, is for all ranks and conditions of men. It teaches to forsake sin; to have no more to do with it. An earthly, sensual conversation suits not a heavenly calling. It teaches to make conscience of that which is good. We must look to God in Christ, as the object of our hope and worship. A gospel conversation must be a godly conversation. See our duty in a very few words; denying ungodliness and worldly lusts, living soberly, righteously, and godly, notwithstanding all snares, temptations, corrupt examples, ill usage, and what remains of sin in the believer's heart, with all their hinderances. It teaches to look for the glories of another world. At, and in, the glorious appearing of Christ, the blessed hope of Christians will be complete: To bring us to holiness and happiness was the end of Christ's death. Jesus Christ, that great God and our Saviour, who saves not only as God, much less as Man alone; but as God-man, two natures in one person. He loved us, and gave himself for us; and what can we do less than love and give up ourselves to him! Redemption from sin and sanctification of the nature go together, and make a peculiar people unto God, free from guilt and condemnation, and purified by the Holy Spirit. All Scripture is profitable. Here is what will furnish for all parts of duty, and the right discharge of them. Let us inquire whether our whole dependence is placed upon that grace which saves the lost, pardons the guilty, and sanctifies the unclean. And the further we are removed from boasting of fancied good works, or trusting in them, so that we glory in Christ alone, the more zealous shall we be to abound in real good works.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "denying ungodliness and worldly lusts",
+     "verses": [
+      56002012
+     ],
+     "es": "Enseñándonos que, renunciando á la impiedad y á los deseos mundanos, vivamos en este siglo templada, y justa, y píamente,",
+     "pt": "Ensinando-nos que, ao renunciarmos à irreverência e aos maus desejos mundanos, vivamos neste tempo presente de maneira sóbria, justa e devota."
+    },
+    {
+     "n": 1,
+     "english": "great God and our Saviour",
+     "verses": [
+      56002013
+     ],
+     "es": "Esperando aquella esperanza bienaventurada, y la manifestación gloriosa del gran Dios y Salvador nuestro Jesucristo,",
+     "pt": "Aguardando a bem-aventurada esperança e o aparecimento da glória do grande Deus e nosso Salvador Jesus Cristo;"
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3860,
+   "book": 56,
+   "start_verse": 56003001,
+   "end_verse": 56003007,
+   "sha256": "7369871720058d3d7126b30656f8ff4351babc2322275156d0c30e36fe18f8ea",
+   "title": "Obedience to magistrates, and becoming behaviour towards all, are enforced from what believers were before conversion, and what they are made, through Christ.",
+   "text": "Spiritual privileges do not make void or weaken, but confirm civil duties. Mere good words and good meanings are not enough without good works. They were not to be quarrelsome, but to show meekness on all occasions, not toward friends only, but to all men, though with wisdom, Jas 3:13. And let this text teach us how wrong it is for a Christian to be churlish to the worst, weakest, and most abject. The servants of sin have many masters, their lusts hurry them different ways; pride commands one thing, covetousness another. Thus they are hateful, deserving to be hated. It is the misery of sinners, that they hate one another; and it is the duty and happiness of saints to love one another. And we are delivered out of our miserable condition, only by the mercy and free grace of God, the merit and sufferings of Christ, and the working of his Spirit. God the Father is God our Saviour. He is the fountain from which the Holy Spirit flows, to teach, regenerate, and save his fallen creatures; and this blessing comes to mankind through Christ. The spring and rise of it, is the kindness and love of God to man. Love and grace have, through the Spirit, great power to change and turn the heart to God. Works must be in the saved, but are not among the causes of their salvation. A new principle of grace and holiness is wrought, which sways, and governs, and makes the man a new creature. Most pretend they would have heaven at last, yet they care not for holiness now; they would have the end without the beginning. Here is the outward sign and seal thereof in baptism, called therefore the washing of regeneration. The work is inward and spiritual; this is outwardly signified and sealed in this ordinance. Slight not this outward sign and seal; yet rest not in the outward washing, but look to the answer of a good conscience, without which the outward washing will avail nothing. The worker therein is the Spirit of God; it is the renewing of the Holy Ghost. Through him we mortify sin, perform duty, walk in God's ways; all the working of the Divine life in us, and the fruits of righteousness without, are through this blessed and holy Spirit. The Spirit and his saving gifts and graces, come through Christ, as a Saviour, whose undertaking and work are to bring to grace and glory. Justification, in the gospel sense, is the free forgiveness of a sinner; accepting him as righteous through the righteousness of Christ received by faith. God, in justifying a sinner in the way of the gospel, is gracious to him, yet just to himself and his law. As forgiveness is through a perfect righteousness, and satisfaction is made to justice by Christ, it cannot be merited by the sinner himself. Eternal life is set before us in the promise; the Spirit works faith in us, and hope of that life; faith and hope bring it near, and fill with joy in expectation of it.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the kindness and love of God",
+     "verses": [
+      56003004
+     ],
+     "es": "Mas cuando se manifestó la bondad de Dios nuestro Salvador, y su amor para con los hombres,",
+     "pt": "Mas quando a bondade e amor de Deus nosso Salvador para a humanidade apareceu,"
+    },
+    {
+     "n": 1,
+     "english": "renewing of the Holy Ghost",
+     "verses": [
+      56003005
+     ],
+     "es": "No por obras de justicia que nosotros habíamos hecho, mas por su misericordia nos salvó, por el lavacro de la regeneración, y de la renovación del Espíritu Santo;",
+     "pt": "Não pelas obras de justiça que nós tivéssemos feito, mas sim segundo sua misericórdia, ele nos salvou pelo banho do novo nascimento, e da renovação do Espírito Santo;"
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3861,
+   "book": 56,
+   "start_verse": 56003008,
+   "end_verse": 56003011,
+   "sha256": "6644d1bfcdd7b9a9269e797bcdcfc0c749632c826a4e81be31fe78d00107d5cc",
+   "title": "Good works to be done, and useless disputes avoided.",
+   "text": "When the grace of God towards mankind has been declared, the necessity of good works is pressed. Those who believe in God, must make it their care to maintain good works, to seek opportunities for doing them, being influenced by love and gratitude. Trifling, foolish questions must be avoided, and subtle distinctions and vain inquiries; nor should people be eager after novelties, but love sound doctrine which tends most to edifying. Though we may now think some sins light and little, if the Lord awaken the conscience, we shall feel even the smallest sin heavy upon our souls.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 3862,
+   "book": 56,
+   "start_verse": 56003012,
+   "end_verse": 56003015,
+   "sha256": "8732184da7c6822adf7002e31ad34de57fa5fa1220402aefa3f079ac2a12f8c8",
+   "title": "Directions and exhortations.",
+   "text": "Christianity is not a fruitless profession; and its professors must be filled with the fruits of righteousness, which are by Jesus Christ, to the glory and praise of God. They must be doing good, as well as keeping away from evil. Let \"ours\" follow some honest labour and employment, to provide for themselves and their families. Christianity obliges all to seek some honest work and calling, and therein to abide with God. The apostle concludes with expressions of kind regard and fervent prayer. Grace be with you all; the love and favour of God, with the fruits and effects thereof, according to need; and the increase and feeling of them more and more in your souls. This is the apostle's wish and prayer, showing his affection to them, and desire for their good, and would be a means of obtaining for them, and bringing down on them, the thing requested. Grace is the chief thing to be wished and prayed for, with respect to ourselves or others; it is \"all good.\"",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "filled with the fruits of righteousness, which are by Jesus Christ",
+     "verses": [
+      50001011
+     ],
+     "es": "Llenos de frutos de justicia, que son por Jesucristo, á gloria y loor de Dios.",
+     "pt": "cheios dos frutos da justiça, que, por meio de Jesus Cristo, são para glória e louvor a Deus."
+    },
+    {
+     "n": 1,
+     "english": "Grace be with you all",
+     "verses": [
+      56003015
+     ],
+     "es": "Todos los que están conmigo te saludan. Saluda á los que nos aman en la fe. La gracia sea con todos vosotros. Amén. A Tito, el cual fué el primer obispo ordenado á la iglesia de los Cretenses, escrita de Nicópolis de Macedonia.",
+     "pt": "Todos os que estão comigo te saúdam. Saúda tu aos que nos amam na fé. A graça seja com todos vós. Amém! A carta a Tito, o primeiro bispo escolhido da igreja dos cretenses, foi escrita de Nicópolis na Macedônia"
+    }
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3863,
+   "book": 57,
+   "start_verse": 57001001,
+   "end_verse": 57001007,
+   "sha256": "a5f0319e21c7a28bf5aae11a34f958f416242b7fc3f48564ef5055ba08b61818",
+   "title": "The apostle's joy and praise for Philemon's steady faith in the Lord Jesus, and love to all the saints.",
+   "text": "Faith in Christ, and love to him, should unite saints more closely than any outward relation can unite the people of the world. Paul in his private prayers was particular in remembering his friends. We must remember Christian friends much and often, as their cases may need, bearing them in our thoughts, and upon our hearts, before our God. Different sentiments and ways in what is not essential, must not make difference of affection, as to the truth. He inquired concerning his friends, as to the truth, growth, and fruitfulness of their graces, their faith in Christ, and love to him, and to all the saints. The good which Philemon did, was matter of joy and comfort to him and others, who therefore desired that he would continue and abound in good fruits, more and more, to God's honour.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 3864,
+   "book": 57,
+   "start_verse": 57001008,
+   "end_verse": 57001014,
+   "sha256": "63ccf6969da2f1e8516e2e0deea191e45994cbfb27d2c29652ad0393c3be4feb",
+   "title": "He recommends Onesimus as one who would make rich amends for the misconduct of which he had been guilty; and on behalf of whom the apostle promises to make up any loss Philemon had sustained.",
+   "text": "It does not lower any one to condescend, and sometimes even to beseech, where, in strictness of right, we might command: the apostle argues from love, rather than authority, in behalf of one converted through his means; and this was Onesimus. In allusion to that name, which signifies \"profitable,\" the apostle allows that in time past he had been unprofitable to Philemon, but hastens to mention the change by which he had become profitable. Unholy persons are unprofitable; they answer not the great end of their being. But what happy changes conversion makes! of evil, good; of unprofitable, useful. Religious servants are treasures in a family. Such will make conscience of their time and trusts, and manage all they can for the best. No prospect of usefulness should lead any to neglect their obligations, or to fail in obedience to superiors. One great evidence of true repentance consists in returning to practise the duties which have been neglected. In his unconverted state, Onesimus had withdrawn, to his master's injury; but now he had seen his sin and repented, he was willing and desirous to return to his duty. Little do men know for what purposes the Lord leaves some to change their situations, or engage in undertakings, perhaps from evil motives. Had not the Lord overruled some of our ungodly projects, we may reflect upon cases, in which our destruction must have been sure.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 3865,
+   "book": 57,
+   "start_verse": 57001015,
+   "end_verse": 57001022,
+   "sha256": "ec1685ba6434571cee46ddf8f610670f0fbb0c1fee2d651aa09056f8a3b4e3db",
+   "text": "When we speak of the nature of any sin or offence against God, the evil of it is not to be lessened; but in a penitent sinner, as God covers it, so must we. Such changed characters often become a blessing to all among whom they reside. Christianity does not do away our duties to others, but directs to the right doing of them. True penitents will be open in owning their faults, as doubtless Onesimus had been to Paul, upon his being awakened and brought to repentance; especially in cases of injury done to others. The communion of saints does not destroy distinction of property. This passage is an instance of that being imputed to one, which is contracted by another; and of one becoming answerable for another, by a voluntary engagement, that he might be freed from the punishment due to his crimes, according to the doctrine that Christ of his own will bore the punishment of our sins, that we might receive the reward of his righteousness. Philemon was Paul's son in the faith, yet he entreated him as a brother. Onesimus was a poor slave, yet Paul besought for him as if seeking some great thing for himself. Christians should do what may give joy to the hearts of one another. From the world they expect trouble; they should find comfort and joy in one another. When any of our mercies are taken away, our trust and hope must be in God. We must diligently use the means, and if no other should be at hand, abound in prayer. Yet, though prayer prevails, it does not merit the things obtained. And if Christians do not meet on earth, still the grace of the Lord Jesus will be with their spirits, and they will soon meet before the throne to join for ever in admiring the riches of redeeming love. The example of Onesimus may encourage the vilest sinners to return to God, but it is shamefully prevented, if any are made bold thereby to persist in evil courses. Are not many taken away in their sins, while others become more hardened? Resist not present convictions, lest they return no more.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 3866,
+   "book": 57,
+   "start_verse": 57001023,
+   "end_verse": 57001025,
+   "sha256": "0ff28d2a1ae3aac4346a1ee2f1af3176c43ef5c94e3a75aea2ec21f31e47c63b",
+   "title": "Salutations and a blessing.",
+   "text": "Never have believers found more enjoyment of God, than when suffering together for him. Grace is the best wish for ourselves and others; with this the apostle begins and ends. All grace is from Christ; he purchased, and he bestows it. What need we more to make us happy, than to have the grace of our Lord Jesus Christ with our spirit? Let us do that now, which we should do at the last breath. Then men are ready to renounce the world, and to prefer the least portion of grace and faith before a kingdom.",
+   "quotes": [
+    {
+     "n": 0,
+     "english": "the grace of our Lord Jesus Christ",
+     "verses": [
+      57001025
+     ],
+     "es": "La gracia de nuestro Señor Jesucristo sea con vuestro espíritu. Amén. A Filemón fué enviada de Roma por Onésimo, siervo.",
+     "pt": "A graça de nosso Senhor Jesus Cirsto seja com vosso espírito. Amém! Escrita em Roma para Filemom, e enviada pelo servo Onésimo"
+    }
+   ]
+  },
+  {
+   "kind": "intro",
+   "id": 58,
+   "book": 58,
+   "sha256": "a679a0a83382c0ade45850d77fabb4bfefd83918c05a7cba1281e50703a22e00",
+   "text": "This epistle shows Christ as the end, foundation, body, and truth of the figures of the law, which of themselves were no virtue for the soul. The great truth set forth in this epistle is that Jesus of Nazareth is the true God. The unconverted Jews used many arguments to draw their converted brethren from the Christian faith. They represented the law of Moses as superior to the Christian dispensation, and spoke against every thing connected with the Saviour. The apostle, therefore, shows the superiority of Jesus of Nazareth, as the Son of God, and the benefits from his sufferings and death as the sacrifice for sin, so that the Christian religion is much more excellent and perfect than that of Moses. And the principal design seems to be, to bring the converted Hebrews forward in the knowledge of the gospel, and thus to establish them in the Christian faith, and to prevent their turning from it, against which they are earnestly warned. But while it contains many things suitable to the Hebrews of early times, it also contains many which can never cease to interest the church of God; for the knowledge of Jesus Christ is the very marrow and kernel of all the Scriptures. The ceremonial law is full of Christ, and all the gospel is full of Christ; the blessed lines of both Testaments meet in Him; and how they both agree and sweetly unite in Jesus Christ, is the chief object of the epistle to the Hebrews to discover.",
+   "quotes": []
+  },
+  {
+   "kind": "section",
+   "id": 3867,
+   "book": 58,
+   "start_verse": 58001001,
+   "end_verse": 58001003,
+   "sha256": "471d20c3f33155096c18e91c442ebf53b3d09ea9302f0d6afad3e6b49121ee25",
+   "title": "The surpassing dignity of the Son of God in his Divine person, and in his creating and mediatorial work.",
+   "text": "God spake to his ancient people at sundry times, through successive generations, and in divers manners, as he thought proper; sometimes by personal directions, sometimes by dreams, sometimes by visions, sometimes by Divine influences on the minds of the prophets. The gospel revelation is excellent above the former; in that it is a revelation which God has made by his Son. In beholding the power, wisdom, and goodness of the Lord Jesus Christ, we behold the power, wisdom, and goodness of the Father, Joh 14:7; the fulness of the Godhead dwells, not typically, or in a figure, but really, in him. When, on the fall of man, the world was breaking to pieces under the wrath and curse of God, the Son of God, undertaking the work of redemption, sustained it by his almighty power and goodness. From the glory of the person and office of Christ, we proceed to the glory of his grace. The glory of His person and nature, gave to his sufferings such merit as was a full satisfaction to the honour of God, who suffered an infinite injury and affront by the sins of men. We never can be thankful enough that God has in so many ways, and with such increasing clearness, spoken to us fallen sinners concerning salvation. That he should by himself cleanse us from our sins is a wonder of love beyond our utmost powers of admiration, gratitude, and praise.",
+   "quotes": []
+  }
+ ],
+ "glossary": {
+  "Jesus": {
+   "es": "Jesús"
+  },
+  "Jesus Christ": {
+   "es": "Jesucristo",
+   "pt": "Jesus Cristo"
+  },
+  "Lois": {
+   "es": "Loida",
+   "pt": "Loide"
+  },
+  "Moses": {
+   "es": "Moisés",
+   "pt": "Moisés"
+  },
+  "Nazareth": {
+   "es": "Nazaret",
+   "pt": "Nazaré"
+  },
+  "Onesimus": {
+   "es": "Onésimo",
+   "pt": "Onésimo"
+  },
+  "Onesiphorus": {
+   "es": "Onesíforo",
+   "pt": "Onesíforo"
+  },
+  "Paul": {
+   "es": "Pablo",
+   "pt": "Paulo"
+  },
+  "Philemon": {
+   "es": "Filemón",
+   "pt": "Filemom"
+  },
+  "Rome": {
+   "es": "Roma",
+   "pt": "Roma"
+  },
+  "Satan": {
+   "es": "Satanás",
+   "pt": "Satanás"
+  },
+  "Titus": {
+   "es": "Tito",
+   "pt": "Tito"
+  }
+ }
+}

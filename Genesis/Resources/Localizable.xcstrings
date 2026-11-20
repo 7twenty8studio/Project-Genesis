@@ -378,7 +378,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "%lld oraciones contestadas"
+            "value": "%lld oraciones respondidas"
           }
         },
         "pt-BR": {
@@ -1421,6 +1421,22 @@
         }
       }
     },
+    "A commentary is one writer's interpretation, not Scripture.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un comentario es la interpretación de un autor, no la Escritura."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Um comentário é a interpretação de um autor, não as Escrituras."
+          }
+        }
+      }
+    },
     "A concise, careful commentary on the whole Bible, verse by verse.": {
       "localizations": {
         "es": {
@@ -2084,7 +2100,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Un año después de que una oración fue contestada, un recordatorio para dar gracias."
+            "value": "Un año después de que una oración fue respondida, un recordatorio para dar gracias."
           }
         },
         "pt-BR": {
@@ -2188,6 +2204,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sobre"
+          }
+        }
+      }
+    },
+    "About This Commentary": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acerca de este comentario"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sobre este comentário"
           }
         }
       }
@@ -2549,7 +2581,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Agrega un comentario"
+            "value": "Añade un comentario"
           }
         },
         "pt-BR": {
@@ -2635,7 +2667,7 @@
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Adicione fotos, gravações de voz e páginas com o Pencil com o Premium."
+            "value": "Adicione fotos, gravações de voz e páginas com o Pencil no Premium."
           }
         }
       }
@@ -3180,7 +3212,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sonidos ambientales en la pantalla de bloqueo"
+            "value": "Sonidos ambientales en la pantalla bloqueada"
           }
         },
         "pt-BR": {
@@ -3439,7 +3471,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aniversarios de oraciones contestadas"
+            "value": "Aniversarios de oraciones respondidas"
           }
         },
         "pt-BR": {
@@ -3487,7 +3519,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Las respuestas llegaron después de un día, más o menos, en promedio."
+            "value": "Las respuestas llegaron después de un día aproximadamente, en promedio."
           }
         },
         "pt-BR": {
@@ -4791,7 +4823,7 @@
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Apresente sua causa"
+            "value": "Apresente sua queixa"
           }
         }
       }
@@ -5508,7 +5540,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Primero elige un nombre para mostrar."
+            "value": "Primero elige un nombre visible."
           }
         },
         "pt-BR": {
@@ -7648,7 +7680,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "El nombre para mostrar debe tener de 1 a 40 caracteres."
+            "value": "El nombre visible debe tener de 1 a 40 caracteres."
           }
         },
         "pt-BR": {
@@ -10419,7 +10451,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Bueno saber"
+            "value": "Conviene saber"
           }
         },
         "pt-BR": {
@@ -10661,7 +10693,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Retos de grupo"
+            "value": "Desafíos de grupo"
           }
         },
         "pt-BR": {
@@ -10709,7 +10741,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Los propietarios de grupos pueden elegir moderadores, aprobar nuevos miembros y revisar lo que se denuncie."
+            "value": "Los propietarios de grupos pueden elegir moderadores, aprobar nuevos miembros y revisar lo que se reporte."
           }
         },
         "pt-BR": {
@@ -11428,6 +11460,22 @@
         }
       }
     },
+    "His Exposition of the Old and New Testaments appeared in the early 1700s, and other ministers completed it from his notes after his death in 1714.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Su Exposición del Antiguo y del Nuevo Testamento apareció a comienzos del siglo XVIII, y otros ministros la completaron a partir de sus notas después de su muerte en 1714."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sua Exposição do Antigo e do Novo Testamento apareceu no início do século XVIII, e outros ministros a completaram a partir de suas notas depois de sua morte, em 1714."
+          }
+        }
+      }
+    },
     "Home": {
       "localizations": {
         "es": {
@@ -11923,6 +11971,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Em espanhol ou português, as pessoas, os lugares, os acontecimentos e os artigos do dicionário do Explorar agora estão no seu idioma, com os nomes como a sua Bíblia os escreve."
+          }
+        }
+      }
+    },
+    "In Spanish or Portuguese, Word Study's Commentary tab shows Matthew Henry's Concise Commentary in your language, and the verses he quotes come from your language's Bible.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En español o portugués, la pestaña Comentario de Estudio de palabras muestra el Comentario conciso de Matthew Henry en tu idioma, y los versículos que cita vienen de la Biblia de tu idioma."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Em espanhol ou português, a aba Comentário do Estudo de palavras mostra o Comentário conciso de Matthew Henry no seu idioma, e os versículos que ele cita vêm da Bíblia do seu idioma."
           }
         }
       }
@@ -12427,6 +12491,22 @@
         }
       }
     },
+    "It reflects the historical context of his time and his own theological views.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Refleja el contexto histórico de su época y sus propias convicciones teológicas."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ele reflete o contexto histórico de sua época e suas próprias convicções teológicas."
+          }
+        }
+      }
+    },
     "It will download when you're online. If you added it on another device, open Versely there so it can finish uploading.": {
       "localizations": {
         "es": {
@@ -12723,7 +12803,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lleva un diario de oración, guarda los versículos que te hablan y recuerda las oraciones contestadas."
+            "value": "Lleva un diario de oración, guarda los versículos que te hablan y recuerda las oraciones respondidas."
           }
         },
         "pt-BR": {
@@ -12739,7 +12819,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lleva un registro privado de lo que estás orando."
+            "value": "Lleva un registro privado de lo que pides en oración."
           }
         },
         "pt-BR": {
@@ -13807,7 +13887,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Escuchar en la pantalla de bloqueo"
+            "value": "Escuchar en la pantalla bloqueada"
           }
         },
         "pt-BR": {
@@ -14427,6 +14507,70 @@
           "stringUnit": {
             "state": "translated",
             "value": "Masculino"
+          }
+        }
+      }
+    },
+    "Matthew Henry (1662–1714)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matthew Henry (1662–1714)"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matthew Henry (1662–1714)"
+          }
+        }
+      }
+    },
+    "Matthew Henry (1662–1714): a historical commentary, one writer's interpretation, not Scripture.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matthew Henry (1662–1714): un comentario histórico, la interpretación de un autor, no Escritura."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matthew Henry (1662–1714): um comentário histórico, a interpretação de um autor, não Escritura."
+          }
+        }
+      }
+    },
+    "Matthew Henry in your language": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matthew Henry en tu idioma"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matthew Henry no seu idioma"
+          }
+        }
+      }
+    },
+    "Matthew Henry was an English Presbyterian minister.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matthew Henry fue un ministro presbiteriano inglés."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Matthew Henry foi um ministro presbiteriano inglês."
           }
         }
       }
@@ -15261,13 +15405,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ofrenda de la mañana"
+            "value": "Ofrecimiento de la mañana"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Oferta da manhã"
+            "value": "Consagração da manhã"
           }
         }
       }
@@ -17354,7 +17498,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "El día en que una oración fue contestada, un año después, un momento para recordar y dar gracias."
+            "value": "El día en que una oración fue respondida, un año después, un momento para recordar y dar gracias."
           }
         },
         "pt-BR": {
@@ -17371,13 +17515,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Un día como hoy marcaste «%@» y %lld más como contestadas. Tómate un momento para recordar y dar gracias."
+            "value": "Un día como hoy marcaste «%@» y %lld más como respondidas. Tómate un momento para recordar y dar gracias."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Neste dia você marcou \"%@\" e mais %lld como respondidas. Tire um momento para lembrar e dar graças."
+            "value": "Neste dia você marcou “%@” e mais %lld como respondidas. Tire um momento para lembrar e dar graças."
           }
         }
       }
@@ -17388,13 +17532,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Un día como hoy marcaste «%@» como contestada. Tómate un momento para recordar y dar gracias."
+            "value": "Un día como hoy marcaste «%@» como respondida. Tómate un momento para recordar y dar gracias."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Neste dia você marcou \"%@\" como respondida. Tire um momento para lembrar e dar graças."
+            "value": "Neste dia você marcou “%@” como respondida. Tire um momento para lembrar e dar graças."
           }
         }
       }
@@ -18437,7 +18581,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Pausa los sonidos desde la pantalla de bloqueo"
+            "value": "Pausa los sonidos desde la pantalla bloqueada"
           }
         },
         "pt-BR": {
@@ -18566,13 +18710,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Personas, lugares y acontecimientos de Theographic Bible Metadata (CC BY-SA 4.0). Ubicaciones del mapa y su grado de certeza de OpenBible.info (CC BY 4.0). Descripciones del Diccionario Bíblico de Easton (1897), en inglés."
+            "value": "Personas, lugares y acontecimientos de Theographic Bible Metadata (CC BY-SA 4.0). Ubicaciones del mapa y su grado de certeza de OpenBible.info (CC BY 4.0). Descripciones del Diccionario Bíblico de Easton (1897)."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Pessoas, lugares e acontecimentos do Theographic Bible Metadata (CC BY-SA 4.0). Localizações do mapa e o grau de certeza do OpenBible.info (CC BY 4.0). Descrições do Dicionário Bíblico de Easton (1897), em inglês."
+            "value": "Pessoas, lugares e acontecimentos do Theographic Bible Metadata (CC BY-SA 4.0). Localizações do mapa e o grau de certeza do OpenBible.info (CC BY 4.0). Descrições do Dicionário Bíblico de Easton (1897)."
           }
         }
       }
@@ -19227,7 +19371,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Alaba a Dios por quién es él."
+            "value": "Alaba a Dios por quien él es."
           }
         },
         "pt-BR": {
@@ -20743,6 +20887,22 @@
         }
       }
     },
+    "Read it alongside the Bible, not in place of it.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Léelo junto a la Biblia, no en su lugar."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leia-o ao lado da Bíblia, não em lugar dela."
+          }
+        }
+      }
+    },
     "Read like an open book": {
       "localizations": {
         "es": {
@@ -21735,7 +21895,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Recuerda las oraciones contestadas"
+            "value": "Recuerda las oraciones respondidas"
           }
         },
         "pt-BR": {
@@ -22771,6 +22931,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Escritura"
+          }
+        }
+      }
+    },
+    "Scripture in italics: Bíblia Livre (BLIVRE), © Diego Santos, Mario Sérgio and Marco Teles, February 2018, CC BY 4.0 Brasil.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escritura en cursiva: Bíblia Livre (BLIVRE), © Diego Santos, Mario Sérgio y Marco Teles, febrero de 2018, CC BY 4.0 Brasil."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escritura em itálico: Bíblia Livre (BLIVRE), © Diego Santos, Mario Sérgio e Marco Teles, fevereiro de 2018, CC BY 4.0 Brasil."
+          }
+        }
+      }
+    },
+    "Scripture in italics: Reina-Valera 1909 (public domain).": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escritura en cursiva: Reina-Valera 1909 (dominio público)."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escritura em itálico: Reina-Valera 1909 (domínio público)."
           }
         }
       }
@@ -23907,13 +24099,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Comparte peticiones de oración con tu grupo, toca “Oré” y marca las peticiones respondidas."
+            "value": "Comparte peticiones de oración con tu grupo, toca «Oré» y marca las peticiones respondidas."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Compartilhe pedidos de oração com seu grupo, toque em \"Orei\" e marque os pedidos respondidos."
+            "value": "Compartilhe pedidos de oração com seu grupo, toque em “Orei” e marque os pedidos respondidos."
           }
         }
       }
@@ -25490,7 +25682,7 @@
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Raiz verbal"
+            "value": "Tronco verbal"
           }
         }
       }
@@ -26358,13 +26550,13 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Para llevar"
+            "value": "Lo que me llevo"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Para levar"
+            "value": "O que levo comigo"
           }
         }
       }
@@ -27119,7 +27311,7 @@
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "A %@ é lida por uma voz em português. Para um som muito mais natural, baixe uma voz Melhorada ou Premium em português (Brasil) em Ajustes › Acessibilidade › Conteúdo Falado › Vozes › Português e depois volte aqui."
+            "value": "A %@ é lida por uma voz em português. Para um som muito mais natural, baixe uma voz aprimorada ou Premium em português (Brasil) em Ajustes › Acessibilidade › Conteúdo Falado › Vozes › Português e depois volte aqui."
           }
         }
       }
@@ -27279,7 +27471,7 @@
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "A Bíblia Livre agora vem com o Versely, e a NVI, a Nova Bíblia Viva e outras estão em Bíblias neste aparelho › Obter mais."
+            "value": "A Bíblia Livre agora vem com o Versely, e a NVI, a Nova Bíblia Viva e outras estão em Bíblias neste dispositivo › Obter mais."
           }
         }
       }
@@ -27668,12 +27860,28 @@
         }
       }
     },
+    "The meanings of words in this verse and their grammar are in English.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los significados de las palabras de este versículo y su gramática están en inglés."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Os significados das palavras deste versículo e sua gramática estão em inglês."
+          }
+        }
+      }
+    },
     "The medium Verse of the Day widget is now free, on the Home Screen next to the small one and the Lock Screen.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "El widget mediano del Versículo del día ahora es gratis en la pantalla de inicio, junto al pequeño y al de la pantalla de bloqueo."
+            "value": "El widget mediano del Versículo del día ahora es gratis en la pantalla de inicio, junto al pequeño y al de la pantalla bloqueada."
           }
         },
         "pt-BR": {
@@ -29564,6 +29772,22 @@
         }
       }
     },
+    "Translated from Matthew Henry's Concise Commentary. Not Scripture.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Traducido del Comentario Conciso de Matthew Henry. No es Escritura."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Traduzido do Comentário Conciso de Matthew Henry. Não é Escritura."
+          }
+        }
+      }
+    },
     "Translation, %@": {
       "localizations": {
         "es": {
@@ -30994,6 +31218,22 @@
         }
       }
     },
+    "Versely uses Matthew Henry's Concise Commentary on the Whole Bible, a later abridgment of that work, and shows this edition complete, with nothing left out.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versely usa el Comentario conciso de toda la Biblia de Matthew Henry, un compendio posterior de esa obra, y muestra esta edición completa, sin omitir nada."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Versely usa o Comentário conciso de toda a Bíblia de Matthew Henry, um resumo posterior dessa obra, e mostra esta edição completa, sem omitir nada."
+          }
+        }
+      }
+    },
     "Versely, Bible Study App": {
       "localizations": {
         "es": {
@@ -32317,7 +32557,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mientras se lee la Biblia en voz alta, la pantalla de bloqueo y la Dynamic Island muestran el versículo que se está leyendo, con reproducir y pausar."
+            "value": "Mientras se lee la Biblia en voz alta, la pantalla bloqueada y la Dynamic Island muestran el versículo que se está leyendo, con reproducir y pausar."
           }
         },
         "pt-BR": {
@@ -32803,7 +33043,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Con Premium, tu mezcla de sonidos ambientales aparece en la pantalla de bloqueo y en la Dynamic Island, con reproducir, pausar y el temporizador."
+            "value": "Con Premium, tu mezcla de sonidos ambientales aparece en la pantalla bloqueada y en la Dynamic Island, con reproducir, pausar y el temporizador."
           }
         },
         "pt-BR": {
@@ -34185,7 +34425,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tu primera oración contestada"
+            "value": "Tu primera oración respondida"
           }
         },
         "pt-BR": {

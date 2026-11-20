@@ -266,8 +266,24 @@ shares; README.md has the architecture.
   TAGNT's Spanish column stay out until their terms are confirmed.
   Uncertain meanings stay awaiting review until a qualified reviewer signs
   them off in reviewed.json (by hand); passing the checks never does.
-  Grammar and commentary stay English: when the Bible or the app isn't
-  English, the Original header, the word sheet and VerseStudyView say so
+  Matthew Henry's Concise Commentary is in Spanish and Portuguese too:
+  `commentary_translations` / `introduction_translations` (English per
+  section where missing; `isTranslated` shows `translatedCommentaryNote`),
+  his Scripture quotations verbatim from the RV1909 / Bíblia Livre in
+  `commentary_quotations` (italics, `quotationCredit`). Built from
+  Tools/StudyData/translations/commentary (`commentary.py
+  export/check/status`: 102 batches with source shas; numbers and
+  references checked, quotations verbatim) by add_commentary_translations.py,
+  which build_wordstudy.py also runs. Henry's text is shown complete, never
+  cut; `CommentaryAboutSheet` (About This Commentary) names the edition (a
+  later abridgment) and its historical context. Passage-specific editorial
+  notes are paused (owner, 19 November 2026): the proposals wait in
+  translations/commentary/editorial-proposed.json, and `editorial_notes`
+  ships empty (only an `editorial.json` would fill it). Review notes:
+  translations/commentary/NOTES.md.
+  Grammar stays English (and the commentary where it has no translation):
+  when the Bible or the app isn't English, the Original header, the word
+  sheet and VerseStudyView say so
   (`WordStudyRepository.needsEnglishNote`).
 - Pronunciation (free): `PronounceButton` on `OriginalWordSheet` (word and
   dictionary form) and `LexiconEntryView` says the word with the device's

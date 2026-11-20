@@ -1,0 +1,394 @@
+{
+ "batch": "001",
+ "lang": "es",
+ "entries": [
+  {
+   "kind": "intro",
+   "id": 1,
+   "sha256": "1fc4af66e2e4af372f092f2e372849b962d982f8934403cb559aa77a4484e726",
+   "text": "Génesis es un nombre tomado del griego, y significa \"el libro de la generación o producción\"; se le llama así con propiedad, porque contiene el relato del origen de todas las cosas. No hay otra historia tan antigua. No hay nada en el libro más antiguo que existe que la contradiga; mientras que muchas cosas registradas por los escritores paganos más antiguos, o que pueden rastrearse en las costumbres de diferentes naciones, confirman lo que se relata en el libro de Génesis.",
+   "quotes": [],
+   "flags": []
+  },
+  {
+   "kind": "section",
+   "id": 1,
+   "sha256": "6813cece35b0fed127b7338fde0d902f569e883ecbd90ebd09c22168abe01137",
+   "title": "Dios crea el cielo y la tierra.",
+   "text": "El primer versículo de la Biblia nos da un relato satisfactorio y útil del origen de la tierra y de los cielos. La fe de los cristianos humildes entiende esto mejor que la imaginación de los hombres más sabios. Por lo que vemos del cielo y de la tierra, aprendemos el poder del gran Creador. Y que nuestra constitución y nuestro lugar como hombres nos recuerden nuestro deber como cristianos: tener siempre el cielo ante nuestros ojos, y la tierra bajo nuestros pies. El Hijo de Dios, uno con el Padre, estaba con él cuando hizo el mundo; más aún, a menudo se nos dice que el mundo fué hecho por él, y que nada fue hecho sin él. ¡Oh, qué altos pensamientos debería haber en nuestra mente acerca de ese gran Dios a quien adoramos, y de ese gran Mediador en cuyo nombre oramos! Y aquí, al principio del sagrado volumen, leemos de ese Espíritu divino, cuya obra en el corazón del hombre se menciona tan a menudo en otras partes de la Biblia. Observemos que al principio no había nada deseable que ver, porque la tierra estaba desordenada y vacía; era confusión y vacío. De igual manera, la obra de la gracia en el alma es una nueva creación: y en un alma sin gracia, que no ha nacido de nuevo, hay desorden, confusión y toda obra mala: está vacía de todo bien, porque está sin Dios; está a oscuras, es la oscuridad misma: esta es nuestra condición por naturaleza, hasta que la gracia todopoderosa obra un cambio en nosotros.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "estaba desordenada y vacía"
+    }
+   ],
+   "flags": [
+    "Henry says 'the world was without form, and void'; rendered 'la tierra estaba desordenada y vacía' to keep the RV1909 words of Gn 1:2 (its subject is la tierra).",
+    "unlisted quotation of Jn 1:10 ('el mundo fué hecho por él', RV1909); 'nothing was made without him' (Jn 1:3) translated, since the RV1909 wording differs."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 2,
+   "sha256": "4ae0b6a5d17e897ca9fdf813539f6b466745dc27463ea2c8d6a2c029074fe4c1",
+   "title": "La creación de la luz.",
+   "text": "Dijo Dios: Sea la luz; lo quiso, y al instante hubo luz. ¡Oh, el poder de la palabra de Dios! Y en la nueva creación, lo primero que se obra en el alma es la luz: el bendito Espíritu obra sobre la voluntad y los afectos iluminando el entendimiento. Los que por el pecado eran tinieblas, por la gracia llegan a ser luz en el Señor. Las tinieblas habrían estado siempre sobre el hombre caído, si el Hijo de Dios no hubiera venido a darnos entendimiento, 1 Jn 5:20. La luz que Dios quiso, la aprobó. Apartó Dios la luz de las tinieblas; pues ¿qué comunión la luz con las tinieblas? En el cielo hay luz perfecta, y ninguna oscuridad; en el infierno, oscuridad total, y ni un destello de luz. El día y la noche son del Señor; usémoslos ambos para su honra, trabajando para él cada día y descansando en él cada noche, meditando en su ley de día y de noche.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "dijo Dios: Sea la luz"
+    },
+    {
+     "n": 1,
+     "text": "apartó Dios la luz de las tinieblas"
+    }
+   ],
+   "flags": [
+    "unlisted quotation of 2 Co 6:14 ('¿qué comunión la luz con las tinieblas?', RV1909, verbless as in that Bible); please verify.",
+    "Ef 5:8 ('darkness ... light in the Lord') and Sal 1:2 ('meditating in his law day and night') are echoed in Henry's own syntax and translated."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 3,
+   "sha256": "bd0e436fdfae0eb03d1d329307c377f2ac17b15c57e58ac9a0d369e2b43d8ae3",
+   "title": "Dios separa la tierra de las aguas, y la hace fructífera.",
+   "text": "La tierra era un vacío, pero por una palabra pronunciada se llenó de las riquezas de Dios, y suyas siguen siendo. Aunque su uso se le permite al hombre, vienen de Dios, y deben usarse para su servicio y su honra. La tierra, a su mandato, produce hierba, plantas y frutos. Dios debe recibir la gloria de todo el beneficio que recibimos de los productos de la tierra. Si por la gracia tenemos parte en Aquel que es la Fuente, podemos regocijarnos en él cuando se sequen los arroyos de las misericordias temporales.",
+   "quotes": [],
+   "flags": []
+  },
+  {
+   "kind": "section",
+   "id": 4,
+   "sha256": "f0510e85218e567a358c3dfade4743a8653e3341383944c00ebea1e3257b2723",
+   "title": "Dios forma el sol, la luna y las estrellas.",
+   "text": "En la obra del cuarto día se da cuenta de la creación del sol, la luna y las estrellas. Todas estas son obras de Dios. De las estrellas se habla tal como aparecen a nuestros ojos, sin decir su número, naturaleza, lugar, tamaño o movimientos; porque las Escrituras fueron escritas, no para satisfacer la curiosidad ni para hacernos astrónomos, sino para llevarnos a Dios y hacernos santos. Las lumbreras del cielo fueron hechas para servirle; lo hacen fielmente, y brillan a su tiempo sin falta. Nosotros estamos puestos como luces en este mundo para servir a Dios; pero ¿cumplimos de igual manera el fin de nuestra creación? No lo cumplimos: nuestra luz no brilla delante de Dios como sus lumbreras brillan delante de nosotros. Gastamos las velas de nuestro Amo, pero no atendemos la obra de nuestro Amo.",
+   "quotes": [],
+   "flags": []
+  },
+  {
+   "kind": "section",
+   "id": 5,
+   "sha256": "1c3c3389e3af99b2c50a348140c8bb1437faf7eff1b5e812ebc3bdc2e47eeb5a",
+   "title": "Creación de los animales.",
+   "text": "Dios mandó que fueran producidos los peces y las aves. Este mandato lo ejecutó él mismo. Los insectos, que son más numerosos que las aves y las bestias, y tan admirables como ellas, parecen haber sido parte de la obra de este día. La sabiduría y el poder del Creador son de admirar tanto en una hormiga como en un elefante. El poder de la providencia de Dios preserva todas las cosas, y la fecundidad es el efecto de su bendición.",
+   "quotes": [],
+   "flags": []
+  },
+  {
+   "kind": "section",
+   "id": 6,
+   "sha256": "cb790b9477597976ef79680d4204c413014c94dc7d73a0cae0c15d51fb760b0d",
+   "title": "El hombre creado a imagen de Dios.",
+   "text": "El hombre fue hecho el último de todas las criaturas: esto fue a la vez una honra y un favor para él. Sin embargo, el hombre fue hecho el mismo día que las bestias; su cuerpo fue hecho de la misma tierra que el de ellas; y mientras está en el cuerpo, habita la misma tierra con ellas. ¡No permita Dios que, por complacer al cuerpo y sus deseos, nos hagamos semejantes a las bestias que perecen! El hombre había de ser una criatura diferente de todas las que se habían hecho hasta entonces. Carne y espíritu, cielo y tierra, debían unirse en él. Dijo Dios: \"Hagamos al hombre.\" El hombre, cuando fue hecho, había de glorificar al Padre, al Hijo y al Espíritu Santo. En ese gran nombre somos bautizados, porque a ese gran nombre debemos nuestro ser. Es el alma del hombre la que lleva especialmente la imagen de Dios. El hombre fue hecho recto, Ec 7:29. Su entendimiento veía las cosas divinas con claridad y verdad; no había errores ni equivocaciones en su conocimiento; su voluntad consentía al instante, y en todas las cosas, a la voluntad de Dios. Sus afectos eran todos ordenados, y no tenía malos apetitos ni pasiones. Sus pensamientos se llevaban y fijaban fácilmente en los mejores temas. Así de santos, así de felices eran nuestros primeros padres al tener sobre sí la imagen de Dios. Pero ¡cuán desfigurada está esta imagen de Dios en el hombre! ¡Que el Señor la renueve en nuestras almas por su gracia!",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "dijo Dios … Hagamos al hombre"
+    }
+   ],
+   "flags": [
+    "'the beasts that perish' (Sal 49:12, 20) is the RV1909's own 'las bestias que perecen'."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 7,
+   "sha256": "4a4598a4ebc5bb8c2c6bebf7a20379245b30c1b6897bda9233d0aa808488741a",
+   "title": "Se señala el alimento.",
+   "text": "Las hierbas y los frutos han de ser el alimento del hombre, incluido el grano y todos los productos de la tierra. Que el pueblo de Dios eche su cuidado sobre él, y no se inquiete por qué ha de comer ni qué ha de beber. El que alimenta a sus aves no dejará morir de hambre a sus pequeños.",
+   "quotes": [],
+   "flags": []
+  },
+  {
+   "kind": "section",
+   "id": 8,
+   "sha256": "2e20bf7f4b3b587183f82691c7c09013519ba769985c197a333a1a2f6001f6f9",
+   "title": "La obra de la creación terminada y aprobada.",
+   "text": "Cuando llegamos a pensar en nuestras obras, encontramos, para vergüenza nuestra, que mucho ha sido muy malo; pero cuando Dios vio su obra, todo era bueno en gran manera. Bueno, porque todo era exactamente como el Creador quería que fuese. Todas sus obras, en todos los lugares de su señorío, le bendicen; y por tanto, bendice, alma mía, á Jehová. Bendigamos a Dios por el evangelio de Cristo, y cuando consideremos su omnipotente poder, huyamos nosotros, pecadores, de la ira que vendrá. Si somos creados de nuevo a la imagen de Dios en santidad, entraremos al fin en los \"cielos nuevos y tierra nueva, en los cuales mora la justicia.\"",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "Todas sus obras, en todos los lugares de su señorío"
+    },
+    {
+     "n": 1,
+     "text": "Bendice, alma mía, á Jehová"
+    }
+   ],
+   "flags": [
+    "unlisted quotation of Mt 3:7 ('la ira que vendrá', RV1909).",
+    "unlisted quotation in Henry's own quotation marks of 2 P 3:13: RV1909 'cielos nuevos y tierra nueva, según sus promesas, en los cuales mora la justicia'; Henry leaves out 'according to his promise', so 'según sus promesas' is left out here too.",
+    "source oddity: 'new--created' (double hyphen) in the English."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 9,
+   "sha256": "addbb4599270bdeefc684035fe35929ac263b5de307c15ffc5011b2207cae1c0",
+   "title": "El primer sábado.",
+   "text": "Después de seis días, Dios cesó de toda obra de creación. En los milagros, él ha dominado la naturaleza, pero nunca ha cambiado su curso establecido ni le ha añadido nada. Dios no reposó como quien está cansado, sino como quien está muy complacido. Notemos el comienzo del reino de la gracia en la santificación, o el guardar santo, del sábado. La observancia solemne de un día de cada siete como día de santo reposo y de santa obra, para honra de Dios, es el deber de todos aquellos a quienes Dios ha dado a conocer sus santos sábados. En ese tiempo no existía ninguno de la raza humana sino nuestros primeros padres. Para ellos se estableció el sábado; y claramente también para todas las generaciones siguientes. El sábado cristiano [es decir, el domingo, el día del Señor], que nosotros guardamos, es un séptimo día, y en él celebramos el reposo de Dios el Hijo, y la consumación de la obra de nuestra redención.",
+   "quotes": [],
+   "flags": []
+  },
+  {
+   "kind": "section",
+   "id": 10,
+   "sha256": "3ac9ce19250d265cfd362d4aba9229d4af79737b35e7c5cc010f2e635fc7c8d8",
+   "title": "Detalles sobre la creación.",
+   "text": "Aquí se da al Creador un nombre, \"Jehová\". Donde la palabra \"SEÑOR\" está impresa en mayúsculas en nuestras Biblias inglesas, en el original es \"Jehová\". Jehová es aquel nombre de Dios que denota que solo él tiene su ser de sí mismo, y que él da el ser a todas las criaturas y cosas. Se toma nota además de las plantas y las hierbas, porque fueron hechas y señaladas para ser alimento del hombre. La tierra no produjo sus frutos por sí misma: esto lo hizo el poder todopoderoso. Así, la gracia en el alma no crece por sí misma en el suelo de la naturaleza, sino que es obra de Dios. La lluvia también es don de Dios; no vino hasta que el Señor Dios la hizo venir. Aunque Dios obra por medios, cuando le place puede hacer su obra sin ellos; y aunque no debemos tentar a Dios descuidando los medios, debemos confiar en Dios, tanto en el uso como en la falta de los medios. De una manera u otra, Dios regará las plantas que él mismo plantó. La gracia divina desciende como el rocío, y riega la iglesia sin ruido. El hombre fue hecho del polvo menudo, como el que hay en la superficie de la tierra. El alma no fue hecha de la tierra, como el cuerpo: lástima, pues, que se apegue a la tierra y piense en lo terrenal. Pronto tendremos que dar cuenta a Dios de cómo hemos empleado estas almas; y si se halla que las hemos perdido, aunque fuera por ganar el mundo, ¡estamos perdidos para siempre! Los necios desprecian su propia alma, al cuidar de su cuerpo antes que de su alma.",
+   "quotes": [],
+   "flags": [
+    "KJV-dependent: Henry explains that 'LORD' in capitals in English Bibles stands for Jehovah; translated as written ('nuestras Biblias inglesas', 'SEÑOR'), but the RV1909 itself prints 'Jehová' there. A reviewer may want a note or a different rendering."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 11,
+   "sha256": "4a9224c0834cc62cbdd8fc5959a20f88ba261a3d01fb1d08980a0413c94c2c47",
+   "title": "La plantación del huerto del Edén.",
+   "text": "El lugar señalado para que Adán habitara no fue un palacio, sino un huerto. Cuanto más nos conformamos con las cosas sencillas, y cuanto menos buscamos cosas que satisfagan el orgullo y el lujo, más nos acercamos a la inocencia. La naturaleza se contenta con poco, y con lo que es más natural; la gracia, con menos; pero la concupiscencia lo ansía todo y con nada se contenta. Ningún deleite puede satisfacer al alma, sino los que Dios mismo ha provisto y señalado para ella. Edén significa deleite y placer. Dondequiera que estuviese, tenía todas las comodidades deseables, sin ninguna incomodidad, aunque ninguna otra casa ni huerto de la tierra fue jamás así. Estaba adornado con todo árbol delicioso á la vista, y enriquecido con todo árbol que daba fruto grato al gusto y bueno para comer. Dios, como Padre tierno, deseó no solo el provecho de Adán, sino también su placer; porque hay placer con la inocencia, más aún, solo hay verdadero placer en la inocencia. Cuando la Providencia nos pone en un lugar de abundancia y placer, debemos servir a Dios con alegría de corazón en los bienes que él nos da. El Edén tenía dos árboles propios de él. 1. Estaba el árbol de vida en medio del huerto. De este el hombre podía comer y vivir. Cristo es ahora para nosotros el Árbol de la vida, Ap 2:7; 22:2; y el Pan de vida, Jn 6:48, 51. 2. Estaba el árbol de ciencia del bien y del mal, llamado así porque había una revelación positiva de la voluntad de Dios acerca de este árbol, de modo que por él el hombre pudiera conocer el bien y el mal moral. ¿Qué es bueno? Es bueno no comer de este árbol. ¿Qué es malo? Es malo comer de este árbol. En estos dos árboles Dios puso delante de Adán el bien y el mal, la bendición y la maldición.",
+   "quotes": [
+    {
+     "n": 0,
+     "mode": "translated",
+     "reason": "matched to Ap 2:7, but here Henry quotes Gn 2:9 ('the tree of life in the midst of the garden'); rendered with the RV1909 of Gn 2:9, 'el árbol de vida en medio del huerto', given as quote 1"
+    },
+    {
+     "n": 1,
+     "text": "el árbol de vida en medio del huerto"
+    },
+    {
+     "n": 2,
+     "text": "Árbol de la vida"
+    },
+    {
+     "n": 3,
+     "text": "el árbol de ciencia del bien y del mal"
+    }
+   ],
+   "flags": [
+    "unlisted quotation of Gn 2:9: 'todo árbol delicioso á la vista, y bueno para comer' (RV1909) worked into Henry's sentence; please verify.",
+    "'the tree of knowledge of good and evil': RV1909 'árbol de ciencia del bien y del mal'; Henry's 'so that by it man might know' rendered 'conocer'."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 12,
+   "sha256": "8c8ad7904b8add6ba81d92ee036b49add83a655fc59fab4e450c2693df88dd87",
+   "title": "El hombre es puesto en él.",
+   "text": "Después que Dios formó a Adán, lo puso en el huerto. Así quedó excluida toda jactancia. Solo el que nos hizo puede hacernos felices; el que es el Formador de nuestros cuerpos y el Padre de nuestros espíritus, y nadie sino él, puede proveer plenamente para la felicidad de ambos. Aun en el paraíso mismo el hombre tenía que trabajar. Ninguno de nosotros fue enviado al mundo para estar ocioso. El que hizo nuestras almas y nuestros cuerpos nos ha dado algo con qué trabajar; y el que nos dio esta tierra por morada nos ha dado algo en qué trabajar. Los hijos y herederos del cielo, mientras están en este mundo, tienen algo que hacer en esta tierra, que debe tener su parte de su tiempo y de sus pensamientos; y si lo hacen con la mirada puesta en Dios, le sirven en ello tan verdaderamente como cuando están de rodillas. Observemos que el oficio del labrador es un oficio antiguo y honroso; era necesario aun en el paraíso. También hay verdadero placer en la tarea a la que Dios nos llama y en la que nos emplea. Adán no habría podido ser feliz si hubiera estado ocioso: sigue siendo ley de Dios que el que no quiere trabajar no tiene derecho a comer, 2 Ts 3:10.",
+   "quotes": [],
+   "flags": []
+  },
+  {
+   "kind": "section",
+   "id": 13,
+   "sha256": "d630ada00537fcd197223cced04756cd4b28567d611032e0bad4d69c40bdfc47",
+   "title": "El mandato de Dios.",
+   "text": "Nunca levantemos nuestra propia voluntad contra la santa voluntad de Dios. No solo se le concedió al hombre libertad para tomar los frutos del paraíso, sino que se le aseguró la vida eterna a condición de su obediencia. Se señaló una prueba de su obediencia. Por la transgresión perdería el favor de su Hacedor y merecería su desagrado, con todos sus terribles efectos; de modo que quedaría expuesto al dolor, la enfermedad y la muerte. Peor aún, perdería la santa imagen de Dios y todo el consuelo de su favor; y sentiría el tormento de las pasiones pecaminosas y el terror de la venganza de su Hacedor, que debía durar para siempre con su alma inmortal. La prohibición de comer del fruto de un árbol en particular era sabiamente adecuada al estado de nuestros primeros padres. En su estado de inocencia, y separados de cualquier otro, ¿qué ocasión o qué tentación tenían de quebrantar alguno de los diez mandamientos? El desenlace prueba que toda la raza humana estaba implicada en la prueba y la caída de nuestros primeros padres. Argumentar contra estas cosas es luchar contra hechos tercos, así como contra la revelación divina; porque el hombre es pecador, y muestra por sus primeros actos, y por su conducta desde entonces, que está pronto a hacer el mal. Está bajo el desagrado divino, expuesto a sufrimientos y a la muerte. Las Escrituras siempre hablan del hombre con este carácter pecaminoso y en este estado miserable; y estas cosas son ciertas de los hombres de todas las épocas y de todas las naciones.",
+   "quotes": [],
+   "flags": []
+  },
+  {
+   "kind": "section",
+   "id": 14,
+   "sha256": "01800b85bb87f4a32d71ece7d0549b9b4424dff6758c032d3bf0dc4592b79aea",
+   "title": "Los animales reciben nombre, La formación de la mujer, La institución divina del matrimonio.",
+   "text": "Se dio al hombre poder sobre las criaturas, y como prueba de ello les puso nombre a todas. Esto muestra también su comprensión de las obras de Dios. Pero aunque era señor de las criaturas, nada en este mundo era ayuda idónea para el hombre. De Dios vienen todos nuestros ayudadores. Si descansamos en Dios, él hará que todo obre para bien. Dios hizo caer un sueño profundo sobre Adán; mientras él no conozca pecado, Dios cuidará de que no sienta dolor. Dios, como Padre de ella, trajo la mujer al hombre, como su otro yo y ayuda idónea para él. La esposa que es hechura de Dios por una gracia especial, y traída por Dios por una providencia especial, es la que probablemente resultará ayuda idónea para el hombre. Veamos cuánta necesidad hay tanto de prudencia como de oración en la elección de esta relación, que es tan cercana y tan duradera. Bien hecho necesita estar lo que se ha de hacer para toda la vida. Nuestros primeros padres no necesitaban ropa para cubrirse del frío o del calor, porque ninguno de los dos podía dañarlos: tampoco la necesitaban como adorno. Así de tranquilo, así de feliz era el hombre en su estado de inocencia. ¡Qué bueno fue Dios con él! ¡De cuántos favores lo colmó! ¡Qué fáciles eran las leyes que le dio! Sin embargo, el hombre, estando en honra, no entendió su propio interés, sino que pronto llegó a ser como las bestias que perecen.",
+   "quotes": [],
+   "flags": [
+    "KJV 'help meet' (Gn 2:18, 20) rendered with the RV1909's 'ayuda idónea'.",
+    "last sentence echoes Sal 49:20 (RV1909 'El hombre en honra que no entiende, Semejante es á las bestias que perecen'); Henry's own syntax translated, 'las bestias que perecen' as in the RV1909."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 15,
+   "sha256": "b0a302ce68d626706f6dcc92aaa8ec9d9c5689cce1d3d5de9696b90d20464e94",
+   "title": "La serpiente engaña a Eva.",
+   "text": "Satanás asaltó a nuestros primeros padres para arrastrarlos al pecado, y la tentación resultó fatal para ellos. El tentador era el diablo, en la forma y semejanza de una serpiente. El plan de Satanás era arrastrar a nuestros primeros padres al pecado, y así separarlos de su Dios. Así el diablo fue homicida desde el principio, y el gran causante de males. La persona tentada fue la mujer: fue astucia de Satanás entrar en conversación con ella cuando estaba sola. Hay muchas tentaciones a las que la soledad da gran ventaja; pero la comunión de los santos contribuye mucho a su fortaleza y seguridad. Satanás sacó ventaja al encontrarla cerca del árbol prohibido. Los que no quieran comer del fruto prohibido no deben acercarse al árbol prohibido. Satanás tentó a Eva para, por medio de ella, tentar a Adán. Es su astucia enviar tentaciones por manos de las que no sospechamos, y por medio de los que más influencia tienen sobre nosotros. Satanás puso en duda si era pecado o no comer de este árbol. No reveló su designio al principio, sino que hizo una pregunta que parecía inocente. Los que quieran estar seguros necesitan guardarse de conversar con el tentador. Citó mal el mandamiento. Habló en tono burlón. El diablo, así como es mentiroso, es también burlador desde el principio; y los burladores son sus hijos. Es astucia de Satanás hablar de la ley divina como incierta o irrazonable, y así arrastrar a la gente al pecado; es nuestra sabiduría mantener una firme creencia en el mandamiento de Dios, y un alto respeto por él. ¿Ha dicho Dios: No mentiréis, ni tomaréis su nombre en vano, ni os embriagaréis, etc.? Sí, estoy seguro de que lo ha dicho, y bien dicho está; y por su gracia me atendré a ello. Fue debilidad de Eva entrar en esta conversación con la serpiente: podría haber percibido por su pregunta que él no tenía buena intención, y por tanto debería haberse apartado. Satanás enseña a los hombres primero a dudar, y luego a negar. Les promete ventaja si comen de este fruto. Procura hacerlos descontentos con su estado presente, como si no fuera tan bueno como podría y debería ser. Ninguna condición traerá contentamiento por sí misma, a menos que la mente sea llevada a él. Los tienta a buscar ascenso, como si fueran aptos para ser dioses. Satanás se arruinó a sí mismo al desear ser semejante al Altísimo; por eso procuró contagiar a nuestros primeros padres con el mismo deseo, para arruinarlos también a ellos. Y todavía el diablo atrae a la gente a su partido, sugiriéndoles pensamientos duros acerca de Dios y falsas esperanzas de ventaja por el pecado. Por tanto, pensemos siempre bien de Dios como el mayor bien, y pensemos mal del pecado como el peor mal: así resistamos al diablo, y él huirá de nosotros.",
+   "quotes": [
+    {
+     "n": 0,
+     "mode": "translated",
+     "reason": "not a quotation of Gn 3:1: Henry puts Satan's question to other commandments ('Has God said, Ye shall not lie...'), which the RV1909's 'No comáis' cannot carry"
+    },
+    {
+     "n": 1,
+     "mode": "translated",
+     "reason": "Henry turns Stg 4:7 into the first person plural ('let us resist the devil, and he will flee from us'); the RV1909's 'resistid al diablo, y de vosotros huirá' would change his exhortation"
+    }
+   ],
+   "flags": []
+  },
+  {
+   "kind": "section",
+   "id": 16,
+   "sha256": "6ed68612f40b4f9a7f018b5b61cd755beaba36512de986ff59dd31984588b3b5",
+   "title": "Adán y Eva transgreden el mandato divino, y caen en el pecado y la miseria.",
+   "text": "Observemos los pasos de la transgresión: no pasos hacia arriba, sino hacia abajo, hacia el abismo. 1. Ella vio. Mucho pecado entra por los ojos. No miremos aquello que corremos peligro de codiciar, Mt 5:28. 2. Ella tomó. Fue su propio acto y hecho. Satanás puede tentar, pero no puede forzar; puede persuadirnos a que nos echemos abajo, pero no puede echarnos abajo, Mt 4:6. 3. Ella comió. Cuando miró, quizá no tenía intención de tomar; o cuando tomó, de comer: pero terminó en eso. Es sabiduría detener los primeros movimientos del pecado, y dejarlo antes de entrometerse con él. 4. Dio también a su marido, que estaba con ella. Los que han hecho mal están dispuestos a arrastrar a otros a hacer lo mismo. 5. Él comió. Al descuidar el árbol de la vida, del cual se le permitía comer, y comer del árbol de la ciencia, que estaba prohibido, Adán mostró claramente desprecio por lo que Dios le había concedido, y deseo de lo que Dios no tuvo a bien darle. Quería tener lo que le placía, y hacer lo que le placía. Su pecado fue, en una palabra, desobediencia, Ro 5:19; desobediencia a un mandamiento claro, fácil y expreso. No tenía dentro una naturaleza corrompida que lo traicionara, sino que tenía libertad de voluntad, en plena fuerza, no debilitada ni menoscabada. Se desvió pronto. Arrastró a toda su descendencia al pecado y a la ruina. ¿Quién puede decir, entonces, que el pecado de Adán tuvo poco daño? Cuando ya era tarde, Adán y Eva vieron la locura de comer el fruto prohibido. Vieron la felicidad de la que cayeron, y la miseria en que habían caído. Vieron a un Dios amoroso provocado, su gracia y su favor perdidos. Veamos aquí qué deshonra y qué perturbación es el pecado; hace daño dondequiera que entra, y destruye todo consuelo. Tarde o temprano traerá vergüenza; o bien la vergüenza del verdadero arrepentimiento, que termina en gloria, o aquella vergüenza y confusión perpetua para la cual resucitarán los impíos en el gran día. Veamos aquí cuál es comúnmente la locura de los que han pecado. Tienen más cuidado de salvar su reputación ante los hombres que de obtener su perdón de Dios. Las excusas que los hombres dan para cubrir y atenuar sus pecados son vanas y frívolas; como los delantales de hojas de higuera, no mejoran en nada el asunto: aun así, todos somos propensos a encubrir nuestras transgresiones como Adán. Antes de pecar, habrían recibido con humilde gozo las visitas misericordiosas de Dios; pero ahora él se había convertido en un terror para ellos. No es de extrañar que se volvieran un terror para sí mismos, y se llenaran de confusión. Esto muestra la falsedad del tentador y los fraudes de sus tentaciones. Satanás prometió que estarían seguros, ¡pero ni siquiera pueden creerse seguros! ¡Adán y Eva eran ahora miserables consoladores el uno para el otro!",
+   "quotes": [],
+   "flags": [
+    "unlisted quotation of Dn 12:2: 'vergüenza y confusión perpetua' (RV1909) for Henry's 'shame and everlasting contempt'; please verify.",
+    "source oddity: 'See her what dishonour' is read as 'See here' ('Veamos aquí').",
+    "'miserable comforters' (Job 16:2) translated; the RV1909 has 'Consoladores molestos'."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 17,
+   "sha256": "e6179a5c179a074b4b96108564faaf550c209c35a4513c1e4f35872f897af11e",
+   "title": "Dios llama a Adán y Eva a responder.",
+   "text": "Observemos la pregunta sobrecogedora: Adán, ¿dónde estás tú? Los que por el pecado se extravían de Dios deberían considerar seriamente dónde están; están lejos de todo bien, en medio de sus enemigos, en esclavitud a Satanás, y en el camino real hacia la ruina total. Esta oveja perdida habría vagado sin fin, si el buen Pastor no la hubiera buscado y no le hubiera dicho que, allí donde andaba extraviada, no podía ser feliz ni estar tranquila. Si los pecadores tan solo consideran dónde están, no descansarán hasta volver a Dios. Es falta y necedad común de los que han hecho mal, cuando se les pregunta por ello, reconocer solo lo que es tan manifiesto que no pueden negarlo. Como Adán, tenemos motivo para temer acercarnos a Dios, si no estamos cubiertos y vestidos con la justicia de Cristo. El pecado se ve más claramente en el espejo del mandamiento; por eso Dios lo puso delante de Adán; y en él deberíamos ver nuestro rostro. Pero en vez de reconocer el pecado en toda su extensión y tomar la vergüenza sobre sí mismos, Adán y Eva excusan el pecado, y echan la vergüenza y la culpa sobre otros. Hay una extraña inclinación en los que son tentados a decir que son tentados por Dios; como si nuestro abuso de los dones de Dios excusara que quebrantemos las leyes de Dios. Los que están dispuestos a tomar el placer y el provecho del pecado son reacios a tomar la culpa y la vergüenza de él. Aprendamos de esto que las tentaciones de Satanás son todas engaños; sus argumentos son todos falsedades; sus atractivos son todos fraudes; cuando hable con buenas palabras, no le creas. Es por el engaño del pecado que se endurece el corazón. Véase Ro 7:11; He 3:13. Pero aunque la astucia de Satanás nos arrastre al pecado, no nos justificará en el pecado. Aunque él es el tentador, nosotros somos los pecadores. Que no disminuya nuestro dolor por el pecado el haber sido engañados para cometerlo; sino que aumente nuestra indignación contra nosotros mismos el habernos dejado engañar por un estafador conocido y un enemigo jurado, que quisiera destruir nuestras almas.",
+   "quotes": [],
+   "flags": [
+    "unlisted quotation of Gn 3:9: '¿Dónde estás tú?' (RV1909), with Henry's vocative 'Adán' kept."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 18,
+   "sha256": "7a016b7ab8be8dbf93f4f9a778d6db9e6a89a455c13b4a3edbe7ae91ef86224e",
+   "title": "La serpiente maldita, La Simiente prometida.",
+   "text": "Dios pronuncia sentencia; y comienza donde comenzó el pecado, con la serpiente. Los instrumentos del diablo deben participar de los castigos del diablo. Bajo la figura de la serpiente, el diablo es sentenciado a ser degradado y maldito de Dios; detestado y aborrecido por toda la humanidad; y también a ser destruido y arruinado al fin por el gran Redentor, lo cual se significa en el quebrantamiento de su cabeza. Se declara la guerra entre la Simiente de la mujer y la simiente de la serpiente. Es fruto de esta enemistad que haya una guerra continua entre la gracia y la corrupción en el corazón del pueblo de Dios. Satanás, por medio de sus corrupciones, los abofetea, los zarandea, y procura devorarlos. El cielo y el infierno nunca pueden reconciliarse, ni la luz y las tinieblas; tampoco pueden Satanás y un alma santificada. Hay también una lucha continua entre los impíos y los piadosos en este mundo. Aquí se hace una promesa misericordiosa de Cristo, como el Libertador del hombre caído del poder de Satanás. Aquí estaba el amanecer del día del evangelio: tan pronto como se dio la herida, se proveyó y se reveló el remedio. Esta misericordiosa revelación de un Salvador vino sin ser pedida y sin ser esperada. Sin una revelación de misericordia que diera alguna esperanza de perdón, el pecador convicto se hundiría en la desesperación y se endurecería. Por la fe en esta promesa, nuestros primeros padres y los patriarcas antes del diluvio fueron justificados y salvados. Se da noticia acerca de Cristo. 1. Su encarnación, o su venida en la carne. Es de gran aliento para los pecadores que su Salvador sea la Simiente de la mujer, hueso de nuestros huesos, He 2:11, 14. 2. Sus sufrimientos y muerte; señalados en que Satanás le hiere el calcañar, es decir, su naturaleza humana. Y los sufrimientos de Cristo continúan en los sufrimientos de los santos por su nombre. El diablo los tienta, los persigue y los mata; y así hiere el calcañar de Cristo, que es afligido en las aflicciones de ellos. Pero mientras el calcañar es herido en la tierra, la Cabeza está en el cielo. 3. Su victoria sobre Satanás por ese medio. Cristo frustró las tentaciones de Satanás y rescató almas de sus manos. Por su muerte dio un golpe fatal al reino del diablo, una herida en la cabeza de esta serpiente que no puede ser sanada. A medida que el evangelio gana terreno, Satanás cae.",
+   "quotes": [],
+   "flags": [
+    "source oddity: 'the drawn of the gospel day' is read as 'dawn' ('el amanecer').",
+    "'Seed' rendered 'Simiente' (RV1909 Gn 3:15 'simiente'), capitalised where Henry means Christ; 'heel' 'calcañar' as in the RV1909."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 19,
+   "sha256": "73f97b77cbbc53b927b00f69a12b48fb06604c670f86f3c658cfe54f05b3d1ae",
+   "title": "El castigo de la humanidad.",
+   "text": "La mujer, por su pecado, es condenada a un estado de dolor y de sujeción; castigos apropiados para aquel pecado en el que había buscado satisfacer el deseo de sus ojos, y de la carne, y su orgullo. El pecado trajo el dolor al mundo; eso hizo del mundo un valle de lágrimas. No es de extrañar que nuestros dolores se multipliquen, cuando nuestros pecados se multiplican así. Él se enseñoreará de ti, no es sino el mandato de Dios: Casadas, estad sujetas á vuestros maridos. Si el hombre no hubiera pecado, siempre habría gobernado con sabiduría y amor; si la mujer no hubiera pecado, siempre habría obedecido con humildad y mansedumbre. Adán echó la culpa a su mujer; pero aunque fue falta de ella persuadirlo a comer el fruto prohibido, fue falta de él escucharla. Así, los frívolos alegatos de los hombres se volverán contra ellos en el día del juicio de Dios. Dios puso señales de desagrado sobre Adán. 1. Su morada es maldita. Dios dio la tierra a los hijos de los hombres para que fuera una morada cómoda; pero ahora es maldita por el pecado del hombre. Sin embargo, Adán mismo no es maldito, como lo fue la serpiente, sino solo la tierra por causa de él. 2. Sus ocupaciones y sus goces se le vuelven amargos. El trabajo es nuestro deber, que debemos cumplir fielmente; es parte de la sentencia del hombre, que la ociosidad desafía con osadía. La incomodidad y el cansancio en el trabajo son nuestro justo castigo, al cual debemos someternos con paciencia, puesto que son menos de lo que merece nuestra iniquidad. El alimento del hombre se le volverá desagradable. Sin embargo, el hombre no es sentenciado a comer polvo como la serpiente, sino solo a comer hierba del campo. 3. Su vida también es breve; considerando cuán llenos de aflicción están sus días, es un favor para él que sean pocos. Sin embargo, como la muerte es temible para la naturaleza, aun cuando la vida es desagradable, ella cierra el castigo. El pecado trajo la muerte al mundo: si Adán no hubiera pecado, no habría muerto. Él cedió a la tentación, pero el Salvador la resistió. ¡Y cuán admirablemente la satisfacción de nuestro Señor Jesús, por su muerte y sufrimientos, respondió a la sentencia dictada contra nuestros primeros padres! ¿Vinieron con el pecado los dolores de parto? Leemos del trabajo del alma de Cristo, Is 53:11; y los dolores de la muerte que lo retuvieron se llaman así, Hch 2:24. ¿Vino la sujeción con el pecado? Cristo fue hecho súbdito á la ley, Gá 4:4. ¿Vino la maldición con el pecado? Cristo fue hecho por nosotros maldición, murió con una muerte maldita, Gá 3:13. ¿Vinieron las espinas con el pecado? Él fue coronado de espinas por nosotros. ¿Vino el sudor con el pecado? Él sudó por nosotros, como grandes gotas de sangre. ¿Vino el dolor con el pecado? Él fue varón de dolores; su alma estuvo, en su agonía, en gran manera triste. ¿Vino la muerte con el pecado? Se hizo obediente hasta la muerte. Así el emplasto es tan ancho como la herida. Bendito sea Dios por su Hijo, nuestro Señor Jesucristo.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "él se enseñoreará de ti"
+    },
+    {
+     "n": 1,
+     "text": "hierba del campo"
+    },
+    {
+     "n": 2,
+     "text": "los dolores de la muerte"
+    },
+    {
+     "n": 3,
+     "text": "hecho súbdito á la ley"
+    },
+    {
+     "n": 4,
+     "text": "hecho por nosotros maldición"
+    }
+   ],
+   "flags": [
+    "unlisted quotation 'Wives, be subject to your own husbands' (Ef 5:22 / Col 3:18 / 1 P 3:1): used the RV1909 of Col 3:18 as I recall it, 'Casadas, estad sujetas á vuestros maridos'; please verify the verse and wording.",
+    "KJV-dependent: Henry links 'travailing pains' to 'the travail of his soul' (Is 53:11); the RV1909 says 'Del trabajo de su alma', so the link to 'dolores de parto' is weaker in Spanish; Hch 2:24 'dolores de la muerte' keeps it.",
+    "'a man of sorrows' (Is 53:3, RV1909 'varón de dolores'), 'great drops of blood' (Lc 22:44) and 'obedient unto death' (Fil 2:8) are echoed in Henry's own syntax, in the RV1909's words where they fit."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 20,
+   "sha256": "3bc82864a9df9bd10d2c2587e4a12f458acc6383da45395e1f9e0455b5e6e877",
+   "title": "La primera vestimenta de la humanidad.",
+   "text": "Dios puso nombre al hombre y lo llamó Adán, que significa tierra roja; Adán puso nombre a la mujer y la llamó Eva, es decir, vida. Adán lleva el nombre del cuerpo que muere; Eva, el del alma viviente. Probablemente Adán tuvo en cuenta la bendición de un Redentor, la Simiente prometida, al llamar a su mujer Eva, o vida; porque Él había de ser la vida de todos los creyentes, y en Él habían de ser benditas todas las familias de la tierra. Veamos también el cuidado de Dios por nuestros primeros padres, a pesar de su pecado. La ropa vino con el pecado. Poco motivo tenemos para enorgullecernos de nuestra ropa, que no es sino la insignia de nuestra vergüenza. Cuando Dios hizo ropa para nuestros primeros padres, la hizo abrigada y fuerte, pero tosca y muy sencilla; no mantos de escarlata, sino túnicas de pieles. Aprendan de esto los que visten pobremente a no quejarse. Teniendo alimento y con qué cubrirse, estén contentos; están tan bien como Adán y Eva. Y aprendan los que visten con elegancia a no hacer del vestirse de ropas su adorno. Las bestias con cuyas pieles fueron vestidos, se supone que fueron sacrificadas, no para alimento del hombre, sino como sacrificio, para prefigurar a Cristo, el gran Sacrificio. Adán y Eva se hicieron delantales de hojas de higuera, una cubierta demasiado estrecha para envolverse en ella, Is 28:20. Tales son todos los trapos de nuestra propia justicia. Pero Dios les hizo túnicas de pieles, amplias, fuertes, duraderas y adecuadas para ellos: tal es la justicia de Cristo; por tanto, vestíos del Señor Jesucristo.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "vestíos del Señor Jesucristo"
+    }
+   ],
+   "flags": [
+    "'coats of skin' (Gn 3:21) rendered with the RV1909's 'túnicas de pieles'."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 21,
+   "sha256": "9019b73111929e0be9d3a062b2cd8ecff1525beca39a9f2499657fa30baa03b8",
+   "title": "Adán y Eva son expulsados del paraíso.",
+   "text": "Dios mandó salir al hombre; le dijo que ya no ocuparía ni disfrutaría aquel huerto: pero el hombre amaba el lugar y no quería dejarlo; por eso Dios lo hizo salir. Esto significaba la exclusión de él, y de toda su raza culpable, de aquella comunión con Dios que era la dicha y la gloria del paraíso. Pero el hombre solo fue enviado a labrar la tierra de la que fue tomado. Fue enviado a un lugar de fatiga, no a un lugar de tormento. Nuestros primeros padres fueron excluidos de los privilegios de su estado de inocencia; sin embargo, no fueron dejados en la desesperación. El camino al árbol de la vida quedó cerrado. Desde entonces fue en vano que él y los suyos esperaran justicia, vida y felicidad por el pacto de obras; porque, quebrantado el mandamiento de ese pacto, su maldición está en pleno vigor: todos estamos perdidos si somos juzgados por ese pacto. Dios reveló esto a Adán, no para llevarlo a la desesperación, sino para avivarlo a buscar vida y felicidad en la Simiente prometida, por quien se nos ha abierto un camino nuevo y vivo al lugar santísimo.",
+   "quotes": [],
+   "flags": []
+  },
+  {
+   "kind": "section",
+   "id": 22,
+   "sha256": "fd44bbdbe975d57917640c589054538180ec84d81d2a83cf40110fac56833311",
+   "title": "El nacimiento, la ocupación y la religión de Caín y Abel.",
+   "text": "Cuando nació Caín, Eva dijo: Adquirido he varón por Jehová. Quizá pensó que este era la simiente prometida. Si fue así, quedó tristemente defraudada. Abel significa vanidad: cuando creyó tener en Caín la simiente prometida, cuyo nombre significa posesión, estaba tan absorta en él que otro hijo era para ella como vanidad. Observemos que cada hijo tenía un oficio. Es voluntad de Dios que cada uno tenga algo que hacer en este mundo. Los padres deben criar a sus hijos para el trabajo. Denles una Biblia y un oficio, decía el buen señor Dod, y Dios sea con ellos. Podemos creer que Dios mandó a Adán, después de la caída, derramar la sangre de animales inocentes, y después de su muerte quemar al fuego parte de sus cuerpos o su totalidad. Así se prefiguraba el castigo que merecen los pecadores, es decir, la muerte del cuerpo y la ira de Dios, de la cual el fuego es un emblema bien conocido, y también los sufrimientos de Cristo. Observemos que el culto religioso a Dios no es una invención nueva. Existió desde el principio; es el buen camino antiguo, Jer 6:16. Las ofrendas de Caín y de Abel fueron diferentes. Caín mostró un corazón orgulloso e incrédulo. Por eso él y su ofrenda fueron rechazados. Abel vino como pecador, y conforme a lo que Dios había señalado, expresando por su sacrificio humildad, sinceridad y obediencia creyente. Así, buscando el beneficio del nuevo pacto de misericordia, por medio de la Simiente prometida, su sacrificio tuvo una señal de que Dios lo aceptaba. Abel ofreció con fe, y Caín no, He 11:4. En todas las épocas ha habido dos clases de adoradores, como Caín y Abel; a saber, los soberbios y endurecidos que desprecian el método de salvación del evangelio, que intentan agradar a Dios por caminos de su propia invención; y los creyentes humildes, que se acercan a él por el camino que él ha revelado. Caín dio rienda suelta a una ira maligna contra Abel. Albergó un espíritu malo de descontento y rebelión contra Dios. Dios nota todas nuestras pasiones y descontentos pecaminosos. No hay una mirada airada, envidiosa o malhumorada que escape a su ojo observador. El Señor razonó con este hombre rebelde; si venía por el camino correcto, sería aceptado. Algunos entienden esto como un indicio de misericordia. \"Si no hicieres bien, el pecado, es decir, la ofrenda por el pecado, está á la puerta, y puedes aprovechar su beneficio.\" La misma palabra significa pecado, y sacrificio por el pecado. \"Aunque no has hecho bien, no desesperes; el remedio está a la mano.\" De Cristo, la gran ofrenda por el pecado, se dice que está á la puerta, Ap 3:20. Y bien merecen perecer en sus pecados los que no quieren ir a la puerta a pedir el beneficio de esta ofrenda por el pecado. Que Dios aceptara la ofrenda de Abel no cambió la primogenitura ni la hizo suya; ¿por qué, pues, había de enojarse tanto Caín? Los ardores y las inquietudes pecaminosos se desvanecen ante una investigación estricta y justa de su causa.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "dijo: Adquirido he varón por Jehová"
+    },
+    {
+     "n": 1,
+     "text": "si no hicieres bien, el pecado … está á la puerta"
+    },
+    {
+     "n": 2,
+     "text": "á la puerta"
+    }
+   ],
+   "flags": [
+    "quote 2: Re 3:20 is 'yo estoy á la puerta' in the RV1909; Henry speaks of Christ in the third person, so only 'á la puerta' is the verse's words.",
+    "'the good old way' (Jer 6:16) translated; the RV1909 has 'las sendas antiguas, cuál sea el buen camino'.",
+    "Mr. Dod (John Dod, Puritan) rendered 'el buen señor Dod'."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 23,
+   "sha256": "6e5187267877934a273dcc131bc162ed3c747e00c52a9999488109d3255d3ce3",
+   "title": "Caín asesina a Abel, La maldición de Caín.",
+   "text": "La malicia en el corazón termina en asesinato por las manos. Caín mató a Abel, su propio hermano, el hijo de su propia madre, a quien debía haber amado; su hermano menor, a quien debía haber protegido; un buen hermano, que nunca le había hecho ningún mal. ¡Qué efectos fatales fueron estos del pecado de nuestros primeros padres, y cómo debieron de llenarse de angustia sus corazones! Observemos el orgullo, la incredulidad y la impenitencia de Caín. Niega el crimen, como si pudiera ocultarlo de Dios. Intenta cubrir un asesinato deliberado con una mentira deliberada. El asesinato es un pecado que clama. La sangre pide sangre, la sangre del asesinado pide la sangre del asesino. ¿Quién conoce la extensión y el peso de una maldición divina, hasta dónde alcanza, cuán hondo penetra? Solo en Cristo son salvados de ella los creyentes y heredan la bendición. Caín fue maldito de la tierra. Halló su castigo allí donde eligió su porción y puso su corazón. Toda criatura es para nosotros lo que Dios hace de ella: un consuelo o una cruz, una bendición o una maldición. La maldad de los impíos trae maldición sobre todo lo que hacen y todo lo que tienen. Caín no se queja de su pecado, sino de su castigo. Muestra gran dureza de corazón preocuparse más por nuestros sufrimientos que por nuestros pecados. Dios tiene fines sabios y santos al prolongar la vida aun de hombres muy impíos. Es vano indagar cuál fue la señal puesta sobre Caín. Sin duda era conocida, tanto como marca de infamia sobre Caín como señal de Dios de que no debían matarlo. Abel, aunque muerto, aún habla. Proclama la atroz culpa del asesinato, y nos advierte que sofoquemos los primeros movimientos de la ira, y nos enseña que los justos deben esperar persecución. También, que hay un estado futuro y una recompensa eterna que se ha de gozar por la fe en Cristo y en su sacrificio expiatorio. Y nos habla de la excelencia de la fe en el sacrificio expiatorio y en la sangre del Cordero de Dios. Caín mató a su hermano, porque sus obras eran malas, y las de su hermano justas, 1 Jn 3:12. A consecuencia de la enemistad puesta entre la Simiente de la mujer y la simiente de la serpiente, estalló la guerra, que se ha librado desde entonces. En esta guerra todos estamos implicados, nadie es neutral; nuestro Capitán ha declarado: El que no es conmigo, contra mí es. Apoyemos con decisión, pero con mansedumbre, la causa de la verdad y de la justicia contra Satanás.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "porque sus obras eran malas, y las de su hermano justas"
+    },
+    {
+     "n": 1,
+     "text": "El que no es conmigo, contra mí es"
+    }
+   ],
+   "flags": [
+    "'Abel, being dead, yet speaketh' (He 11:4) translated; the RV1909 has 'y difunto, aun habla por ella'."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 24,
+   "sha256": "8f0495db6193298c135c1abdb2dabfd7e78529e6d74accc3a02bb131c9f6e97d",
+   "title": "La conducta de Caín, Su familia.",
+   "text": "Caín desechó todo temor de Dios, y no asistió más a las ordenanzas de Dios. Los profesantes hipócritas, que disimulan y juegan con Dios, son justamente dejados a sí mismos para que hagan algo groseramente escandaloso. Así se despojan de aquella apariencia de piedad para la cual han sido un oprobio, y cuya eficacia niegan. Salió Caín de delante de Jehová, y nunca hallamos que volviera a su presencia, para su consuelo. La tierra donde habitó Caín se llamaba la tierra de Nod, que significa 'sacudida' o 'temblor', y así muestra la inquietud y el desasosiego de su propio espíritu, o 'la tierra de un vagabundo': los que se apartan de Dios no pueden hallar descanso en ninguna otra parte. Los que en la tierra esperaban la ciudad celestial eligieron habitar en tabernáculos o tiendas; pero Caín, como quien no hacía caso de aquella ciudad, edificó una en la tierra. Así, todos los que son malditos de Dios buscan su asiento y su satisfacción aquí abajo.",
+   "quotes": [
+    {
+     "n": 0,
+     "text": "salió Caín de delante de Jehová"
+    }
+   ],
+   "flags": [
+    "source oddity: the English has unbalanced quotation marks (shaking,' or trembling,' ... a vagabond:'); written here as balanced single quotes."
+   ]
+  },
+  {
+   "kind": "section",
+   "id": 25,
+   "sha256": "b9eba13eb8ca35b8671c94a115dabd30f839a480812366493086903ede3daf8a",
+   "title": "Lamec y sus mujeres, La habilidad de los descendientes de Caín.",
+   "text": "Uno de la impía raza de Caín es el primero de quien se registra que quebrantó la ley del matrimonio. Hasta entonces, un hombre tenía una sola esposa a la vez; pero Lamec tomó dos. Las cosas del mundo son las únicas en que la gente carnal e impía pone su corazón, y en las que es más hábil y diligente. Así sucedió con esta raza de Caín. Aquí había un padre de pastores y un padre de músicos, pero no un padre de los fieles. Aquí hay uno que enseña acerca del bronce y del hierro, pero ninguno que enseñe el buen conocimiento del Señor: aquí hay invenciones para ser rico, para ser poderoso y para estar alegre; pero nada de Dios, ni de su temor y servicio. Las cosas presentes llenan la cabeza de la mayoría. Lamec tenía enemigos, a quienes había provocado. Hace una comparación entre él y su antepasado Caín, y se halaga pensando que es mucho menos culpable. Parece abusar de la paciencia de Dios al perdonar a Caín, convirtiéndola en un estímulo para esperar que podrá pecar sin castigo.",
+   "quotes": [],
+   "flags": [
+    "'Lamech' written 'Lamec' (modernized from the RV1909's 'Lamech'; not in the glossary)."
+   ]
+  }
+ ]
+}
