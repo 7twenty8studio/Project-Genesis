@@ -356,11 +356,16 @@ def quoted(t):
     """The Bible's words a passing translation quotes (its verbatim answers),
     each run as it stands in the text, for the app to set in italics."""
     out = []
+    flat = " ".join(t.get("text", "").split())
     for a in t.get("quotes", []):
         if a.get("mode") == "translated":
             continue
         for p in re.split(r"\s*(?:…|\.\.\.)\s*", " ".join((a.get("text") or "").split())):
             p = p.strip(" ,.;:!?¡¿")
+            # A quote that opens a sentence starts with a capital in the
+            # text (check_quotes allows it): give the run as it stands there.
+            if p and p not in flat and (p[0].swapcase() + p[1:]) in flat:
+                p = p[0].swapcase() + p[1:]
             if p and p not in out:
                 out.append(p)
     return out

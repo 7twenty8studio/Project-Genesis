@@ -27,11 +27,14 @@ struct OriginalGlossesTests {
         #expect(spanish.map(\.strongs) == english.map(\.strongs))
         #expect(spanish.map(\.englishGloss) == english.map(\.gloss))
         #expect(spanish.first { $0.strongs == "H0430G" }?.gloss == "Dios")
-        #expect(try glosses.translated(english, into: "pt").first { $0.strongs == "H0430G" }?.gloss == "Deus")
+        let portuguese = try glosses.translated(english, into: "pt")
+        #expect(portuguese.first { $0.strongs == "H0430G" }?.gloss == "Deus")
 
         // English, and any other language, keeps STEPBible's glosses.
-        #expect(try glosses.translated(english, into: "fr") == english)
-        #expect(try glosses.translated(english, into: "en") == english)
+        let french = try glosses.translated(english, into: "fr")
+        #expect(french == english)
+        let unchanged = try glosses.translated(english, into: "en")
+        #expect(unchanged == english)
     }
 
     @Test func johnOneOneReadsInSpanish() throws {
@@ -49,26 +52,36 @@ struct OriginalGlossesTests {
     @Test func reviewedExamplesReadRight() throws {
         let url = try #require(Bundle.main.url(forResource: "WordStudy", withExtension: "sqlite"))
         let study = try WordStudyRepository(url: url)
+        // The words are read before each #expect: a throwing call inside
+        // the macro doesn't build with Xcode 27's Swift Testing.
         func words(_ book: Int, _ chapter: Int, _ verse: Int, _ language: String) throws -> [OriginalWord] {
             try study.words(in: VerseID(book: book, chapter: chapter, verse: verse), glossLanguage: language)
         }
         // Matthew 5:29–30: one object pronoun, masculine for the eye, feminine for the hand.
-        #expect(try words(40, 5, 29, "es").first { $0.englishGloss == "do cast [it]" }?.gloss == "echa [lo]")
-        #expect(try words(40, 5, 29, "pt").first { $0.englishGloss == "do cast [it]" }?.gloss == "lança [-o]")
-        #expect(try words(40, 5, 30, "es").first { $0.englishGloss == "do cast [it]" }?.gloss == "echa [la]")
-        #expect(try words(40, 5, 30, "pt").first { $0.englishGloss == "do cast [it]" }?.gloss == "lança [-a]")
+        let eyeSpanish = try words(40, 5, 29, "es")
+        let eyePortuguese = try words(40, 5, 29, "pt")
+        let handSpanish = try words(40, 5, 30, "es")
+        let handPortuguese = try words(40, 5, 30, "pt")
+        #expect(eyeSpanish.first { $0.englishGloss == "do cast [it]" }?.gloss == "echa [lo]")
+        #expect(eyePortuguese.first { $0.englishGloss == "do cast [it]" }?.gloss == "lança [-o]")
+        #expect(handSpanish.first { $0.englishGloss == "do cast [it]" }?.gloss == "echa [la]")
+        #expect(handPortuguese.first { $0.englishGloss == "do cast [it]" }?.gloss == "lança [-a]")
         // Revelation 9:21: φαρμακειῶν is sorceries, and Portuguese reads "a imoralidade".
-        #expect(try words(66, 9, 21, "es").first { $0.strongs == "G5331" }?.gloss == "hechicerías")
-        #expect(try words(66, 9, 21, "pt").first { $0.strongs == "G5331" }?.gloss == "feitiçarias")
+        let sorceriesSpanish = try words(66, 9, 21, "es")
         let portuguese = try words(66, 9, 21, "pt")
+        #expect(sorceriesSpanish.first { $0.strongs == "G5331" }?.gloss == "hechicerías")
+        #expect(portuguese.first { $0.strongs == "G5331" }?.gloss == "feitiçarias")
         let immorality = try #require(portuguese.firstIndex { $0.strongs == "G4202" })
         #expect(portuguese[immorality - 1].gloss == "a")
         // John 13:34 and 15:12: ὑμᾶς is the object, os / vos.
         for (chapter, verse) in [(13, 34), (15, 12)] {
-            #expect(try words(43, chapter, verse, "es").first { $0.morphology == "P-2AP" }?.gloss == "os")
-            #expect(try words(43, chapter, verse, "pt").first { $0.morphology == "P-2AP" }?.gloss == "vos")
+            let johnSpanish = try words(43, chapter, verse, "es")
+            let johnPortuguese = try words(43, chapter, verse, "pt")
+            #expect(johnSpanish.first { $0.morphology == "P-2AP" }?.gloss == "os")
+            #expect(johnPortuguese.first { $0.morphology == "P-2AP" }?.gloss == "vos")
         }
-        #expect(try words(43, 13, 34, "es").first { $0.strongs == "G2537" }?.gloss == "nuevo")
+        let newCommandment = try words(43, 13, 34, "es")
+        #expect(newCommandment.first { $0.strongs == "G2537" }?.gloss == "nuevo")
     }
 }
 
@@ -114,13 +127,16 @@ struct GlossLanguageTests {
         // A repository opened in English (an English app) reading the RV1909.
         let english = try WordStudyRepository(url: url, language: "en")
         let rv1909 = GlossLanguage.code(for: .bible, bibleLanguage: Self.reinaValera)
-        #expect(try english.words(in: genesis, glossLanguage: rv1909).first { $0.strongs == "H0430G" }?.gloss == "Dios")
+        let rv1909Words = try english.words(in: genesis, glossLanguage: rv1909)
+        #expect(rv1909Words.first { $0.strongs == "H0430G" }?.gloss == "Dios")
         // One opened in Spanish (a Spanish app) reading the Bíblia Livre.
         let spanish = try WordStudyRepository(url: url, language: "es")
         let blivre = GlossLanguage.code(for: .bible, bibleLanguage: Translation.bibliaLivre.language)
-        #expect(try spanish.words(in: genesis, glossLanguage: blivre).first { $0.strongs == "H0430G" }?.gloss == "Deus")
+        let blivreWords = try spanish.words(in: genesis, glossLanguage: blivre)
+        #expect(blivreWords.first { $0.strongs == "H0430G" }?.gloss == "Deus")
         // A Spanish app reading the KJV keeps STEPBible's English.
         let kjv = GlossLanguage.code(for: .bible, bibleLanguage: Translation.kjv.language)
-        #expect(try spanish.words(in: genesis, glossLanguage: kjv).allSatisfy { $0.englishGloss == nil })
+        let kjvWords = try spanish.words(in: genesis, glossLanguage: kjv)
+        #expect(kjvWords.allSatisfy { $0.englishGloss == nil })
     }
 }
