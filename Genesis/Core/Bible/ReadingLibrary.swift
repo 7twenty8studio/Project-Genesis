@@ -32,6 +32,22 @@ struct TranslationGroup: Identifiable, Hashable, Sendable {
     var id: String { language }
 }
 
+/// Home's Bibles on This Device: one language at a time, so the card stays
+/// short however many Bibles people download.
+struct BibleShelf: Equatable, Sendable {
+    /// Every language with an installed Bible (the picker), current first.
+    let groups: [TranslationGroup]
+    /// The language shown.
+    let language: String
+    /// The Bibles listed: the one being read first, then the library's order.
+    let shown: [Translation]
+    /// Bibles of this language left for "Show all".
+    let hiddenCount: Int
+
+    /// The picker shows only when there's more than one language.
+    var showsLanguages: Bool { groups.count > 1 }
+}
+
 /// What the guide suggests a Bible for.
 enum ReadingPurpose: CaseIterable, Sendable {
     case study, everyday, classic
@@ -95,6 +111,32 @@ enum ReadingLibrary {
         }.map { language in
             TranslationGroup(language: language, translations: translations.filter { $0.baseLanguage == language })
         }
+    }
+
+    /// How many Bibles Home lists before "Show all".
+    static let shelfLimit = 4
+
+    /// Home's Bibles on This Device for a chosen language (nil, or one with
+    /// no Bible left: the current Bible's). The current Bible leads its
+    /// language; at most `limit` are listed unless `expanded`, and never
+    /// hides just one (a "Show all" for a single Bible is no saving).
+    static func shelf(
+        _ translations: [Translation],
+        current: Translation,
+        language: String?,
+        expanded: Bool,
+        limit: Int = shelfLimit
+    ) -> BibleShelf {
+        let groups = groups(translations, current: current)
+        let chosen = language.map(Translation.baseLanguage(of:))
+        let group = groups.first { $0.language == chosen } ?? groups.first { $0.language == current.baseLanguage } ?? groups.first
+        guard let group else {
+            return BibleShelf(groups: [], language: current.baseLanguage, shown: [], hiddenCount: 0)
+        }
+        let ordered = group.translations.filter { $0 == current } + group.translations.filter { $0 != current }
+        let fits = expanded || ordered.count <= limit + 1
+        let shown = fits ? ordered : Array(ordered.prefix(limit))
+        return BibleShelf(groups: groups, language: group.language, shown: shown, hiddenCount: ordered.count - shown.count)
     }
 
     /// The Bibles for a choice, one section per language: the chosen
