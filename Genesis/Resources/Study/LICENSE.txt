@@ -64,3 +64,19 @@ and spelling-variant columns and its word-order notes (table greek_words); an
 edition's own spelling, where TAGNT gives one, takes the punctuation TAGNT
 prints after the word, and gets a transliteration in TAGNT's style; other
 editions and manuscripts are left out. No English Bible text is included.
+
+Glosses.sqlite (the Original view's word meanings in Spanish and Brazilian
+Portuguese) is adapted from the English glosses ("English translation"
+column) of STEPBible-Data TAHOT and TAGNT: data created by www.STEPBible.org
+based on work at Tyndale House Cambridge, licensed under the Creative
+Commons Attribution 4.0 International License:
+https://creativecommons.org/licenses/by/4.0/
+Source: https://STEPBible.github.io/STEPBible-Data
+(TAGNT's English is based on the Berean Study Bible, whose text has been
+dedicated to the public domain, CC0 1.0, since 30 April 2023.)
+Changes: each English gloss translated into Spanish and Brazilian
+Portuguese by Versely with AI assistance (Tools/StudyData/glosses.py;
+sources and review notes in Tools/StudyData/translations/glosses), one per
+Strong's number, morphology and English gloss, so every gloss stays with
+its Hebrew or Greek word. Not reviewed or endorsed by STEPBible or Tyndale
+House. TAGNT's Spanish column and other translated glosses are not used.

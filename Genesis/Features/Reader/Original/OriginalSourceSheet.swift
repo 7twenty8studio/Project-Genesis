@@ -7,6 +7,8 @@ struct OriginalSourceSheet: View {
     let language: OriginalLanguage
     let greek: OriginalSource.Greek
     let translation: Translation
+    /// The language the word meanings are shown in (`GlossLanguage`).
+    let glossLanguage: String
 
     @Environment(\.palette) private var palette
     @Environment(\.dismiss) private var dismiss
@@ -25,6 +27,10 @@ struct OriginalSourceSheet: View {
                     Section("Source") {
                         Text(credit)
                             .foregroundStyle(palette.text)
+                        if GlossLanguage.isTranslated(glossLanguage) {
+                            Text(OriginalGlosses.attribution)
+                                .foregroundStyle(palette.text)
+                        }
                     }
                     .listRowBackground(palette.surface)
                 }

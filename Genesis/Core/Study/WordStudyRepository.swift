@@ -19,8 +19,9 @@ final class WordStudyRepository: Sendable {
     /// The lexicon's glosses, definitions and origins (lexicon_translations,
     /// Tools/StudyData/lexicon.py) and Matthew Henry's commentary
     /// (commentary_translations, Tools/StudyData/commentary.py) are also in
-    /// these languages; the meanings in a verse and the grammar are English
-    /// only, so screens say so when the Bible or the app is in another language.
+    /// these languages, and the meanings in a verse can be (`GlossLanguage`);
+    /// the grammar is English only, so screens say so when the Bible or the
+    /// app is in another language.
     static func needsEnglishNote(bibleLanguage: String) -> Bool {
         bibleLanguage != "en" || AppLanguage.code != "en"
     }
@@ -80,16 +81,18 @@ final class WordStudyRepository: Sendable {
 
     /// The verse's Hebrew or Greek words, in the original order. A New
     /// Testament verse is read from one Greek edition (`greek`), in its
-    /// words, spelling and order.
-    func words(in verse: VerseID, greek edition: GreekEdition = .textusReceptus) throws -> [OriginalWord] {
-        try words(inVerses: [verse], greek: edition)[verse] ?? []
+    /// words, spelling and order. Glosses are in `glossLanguage` where
+    /// Glosses.sqlite has them (`GlossLanguage.code`), English otherwise.
+    func words(in verse: VerseID, greek edition: GreekEdition = .textusReceptus, glossLanguage: String = "en") throws -> [OriginalWord] {
+        try words(inVerses: [verse], greek: edition, glossLanguage: glossLanguage)[verse] ?? []
     }
 
     /// The words of several verses (KJV numbering) in one query, by verse,
     /// each in the original order, the Greek from one edition. Meant for a
     /// chapter's verses, which lie close together; verses with no words are
-    /// left out.
-    func words(inVerses verses: some Collection<VerseID>, greek edition: GreekEdition = .textusReceptus) throws -> [VerseID: [OriginalWord]] {
+    /// left out. Glosses are in `glossLanguage` where Glosses.sqlite has
+    /// them, English otherwise; the app's language plays no part.
+    func words(inVerses verses: some Collection<VerseID>, greek edition: GreekEdition = .textusReceptus, glossLanguage: String = "en") throws -> [VerseID: [OriginalWord]] {
         guard let low = verses.min(), let high = verses.max() else { return [:] }
         let wanted = Set(verses)
         var rows: [OriginalWord] = []
@@ -105,7 +108,7 @@ final class WordStudyRepository: Sendable {
                 [.int(low.rawValue), .int(high.rawValue), .int(edition.rawValue)]
             ) { Self.greekWord($0, edition: edition) }
         }
-        return Dictionary(grouping: rows.filter { wanted.contains($0.verse) }, by: \.verse)
+        return Dictionary(grouping: withTranslatedGlosses(rows.filter { wanted.contains($0.verse) }, into: glossLanguage), by: \.verse)
     }
 
     /// The word another edition has at the same place as a Greek word, if
@@ -359,8 +362,17 @@ struct OriginalWord: Identifiable, Hashable, Sendable {
     let transliteration: String
     /// STEPBible's extended Strong's number (H0430G, G2316), if tagged.
     let strongs: String?
-    /// English gloss in this context.
-    let gloss: String
+    /// The gloss in this context: STEPBible's English, or its translation
+    /// in the app's language (`OriginalGlosses`).
+    var gloss: String
+    /// STEPBible's English gloss when `gloss` is a translation; nil otherwise.
+    var englishGloss: String? = nil
+    /// The translated gloss is an uncertain meaning still awaiting qualified
+    /// review (`OriginalGlosses.awaitingReviewNote`); views mark it.
+    var awaitsReview = false
+
+    /// The gloss as shown: marked "(?)" while it awaits review.
+    var shownGloss: String { awaitsReview ? "\(gloss) (?)" : gloss }
     /// Morphology code (ETCBC for Hebrew, Robinson style for Greek).
     let morphology: String
     /// The Greek edition the word was read from; nil for Hebrew.

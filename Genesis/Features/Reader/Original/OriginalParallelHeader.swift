@@ -2,7 +2,8 @@ import SwiftUI
 
 /// The top of the Original parallel Bible: what each column holds (the
 /// Hebrew or Greek edition named, with an info sheet about it), the
-/// Interlinear switch, and (New Testament) what the dotted words mean.
+/// Interlinear switch, the word meanings' language, and (New Testament)
+/// what the dotted words mean.
 struct OriginalParallelHeader: View {
     let chapterID: ChapterID
     let translation: Translation
@@ -12,11 +13,15 @@ struct OriginalParallelHeader: View {
     let sideBySide: Bool
     /// Some Greek words on the page aren't in the edition it's compared with.
     let marksEditions: Bool
+    /// The language the word meanings are shown in ("en", "es", "pt").
+    let glossLanguage: String
     @Binding var interlinear: Bool
     @Binding var originalOnly: Bool
+    @Binding var glossChoice: GlossLanguageChoice
 
     @Environment(ReaderSettings.self) private var settings
     @Environment(\.palette) private var palette
+    @Environment(\.wordStudy) private var wordStudy
     @State private var showsSource = false
 
     var body: some View {
@@ -28,6 +33,7 @@ struct OriginalParallelHeader: View {
                 HStack(spacing: 10) {
                     interlinearButton
                     originalOnlyButton
+                    meaningsMenu
                     sourceButton
                 }
                 VStack(alignment: .leading, spacing: 8) {
@@ -35,6 +41,17 @@ struct OriginalParallelHeader: View {
                         interlinearButton
                         originalOnlyButton
                     }
+                    HStack(spacing: 10) {
+                        meaningsMenu
+                        sourceButton
+                    }
+                }
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack(spacing: 10) {
+                        interlinearButton
+                        originalOnlyButton
+                    }
+                    meaningsMenu
                     sourceButton
                 }
             }
@@ -44,8 +61,8 @@ struct OriginalParallelHeader: View {
                     .foregroundStyle(palette.secondaryText)
                     .fixedSize(horizontal: false, vertical: true)
             }
-            if WordStudyRepository.needsEnglishNote(bibleLanguage: translation.language) {
-                Text("Word meanings and grammar are in English.")
+            if GlossLanguage.isTranslated(glossLanguage) || WordStudyRepository.needsEnglishNote(bibleLanguage: translation.language) {
+                Text(GlossLanguage.isTranslated(glossLanguage) ? OriginalGlosses.translatedNote : String(localized: "Word meanings and grammar are in English."))
                     .font(.caption)
                     .foregroundStyle(palette.secondaryText)
                     .fixedSize(horizontal: false, vertical: true)
@@ -54,7 +71,7 @@ struct OriginalParallelHeader: View {
         }
         .padding(.bottom, 6)
         .sheet(isPresented: $showsSource) {
-            OriginalSourceSheet(language: language, greek: greek, translation: translation)
+            OriginalSourceSheet(language: language, greek: greek, translation: translation, glossLanguage: glossLanguage)
         }
     }
 
@@ -124,6 +141,40 @@ struct OriginalParallelHeader: View {
 
     private var originalOnlyTitle: String {
         language == .greek ? String(localized: "Greek Only") : String(localized: "Hebrew Only")
+    }
+
+    /// The word meanings' language: the Bible's, or one the reader picks,
+    /// whatever language the app is in.
+    private var meaningsMenu: some View {
+        Menu {
+            Picker("Word Meanings", selection: $glossChoice) {
+                Text(sameAsBibleTitle).tag(GlossLanguageChoice.bible)
+                Text(verbatim: "English").tag(GlossLanguageChoice.english)
+                Text(verbatim: "Español").tag(GlossLanguageChoice.spanish)
+                Text(verbatim: "Português").tag(GlossLanguageChoice.portuguese)
+            }
+        } label: {
+            Label(meaningsTitle, systemImage: "character.book.closed")
+                .font(.subheadline.weight(.semibold))
+        }
+        .buttonStyle(.bordered)
+        .tint(palette.secondaryText)
+        .accessibilityLabel("Word Meanings")
+        .accessibilityValue(meaningsTitle)
+        .accessibilityIdentifier("original.glossLanguage")
+    }
+
+    /// The menu's title: the language the meanings are in now.
+    private var meaningsTitle: String {
+        switch glossLanguage {
+        case "es": "Español"
+        case "pt": "Português"
+        default: "English"
+        }
+    }
+
+    private var sameAsBibleTitle: String {
+        String(localized: "Same as the Bible (\(translation.abbreviation))")
     }
 
     /// Opens `OriginalSourceSheet`: about the edition and its source.

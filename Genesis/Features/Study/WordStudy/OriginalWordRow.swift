@@ -19,7 +19,7 @@ struct OriginalWordRow: View {
             }
             Spacer(minLength: 8)
             VStack(alignment: .trailing, spacing: 2) {
-                Text(word.gloss)
+                Text(verbatim: word.shownGloss)
                     .font(.subheadline)
                     .foregroundStyle(palette.text)
                     .multilineTextAlignment(.trailing)

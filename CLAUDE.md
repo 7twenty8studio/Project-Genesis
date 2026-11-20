@@ -241,6 +241,31 @@ shares; README.md has the architecture.
   slips in the English and `ARTICLE_FIXES` for misplaced articles, both
   written into the English lexicon too by `fix_database`) by add_lexicon_translations.py, which
   build_wordstudy.py also runs. Review notes: translations/lexicon/NOTES.md.
+  The word-by-word meanings in a verse (STEPBible's TAHOT/TAGNT English
+  glosses, CC BY 4.0) are in Spanish and Portuguese too (VRS-6): the
+  bundled Glosses.sqlite (separate from WordStudy.sqlite; `glosses` keyed
+  by FNV-1a of "strongs␟morph␟gloss", `occurrence_glosses` for a verse
+  that needs another word, `awaiting` for uncertain meanings), read by
+  `OriginalGlosses` through `WordStudyRepository.words(inVerses:)`
+  (`OriginalWord.englishGloss`, `awaitsReview` shows "(?)" and
+  `awaitingReviewNote`; `translatedNote` and `attribution`, the CC BY
+  credit, wherever they show). English where a gloss is missing. The
+  gloss language is the reader's, never the app's (`GlossLanguage`,
+  `GlossLanguageChoice`, "reader.original.glossLanguage"): by default the
+  Bible being read (RV1909 → Spanish, Bíblia Livre/O Livro → Portuguese,
+  others English), or English/Español/Português from the Original header's
+  Word Meanings menu; passed as `glossLanguage:` to `words(in:)`. Built
+  from Tools/StudyData/translations/glosses (`glosses.py
+  export/status/check/context`: 58 batches with source shas; brackets,
+  marks, numbers, question particle ¿ as "acaso"/"porventura", "will"
+  never querer, verse reading required for supplied verbs) by
+  add_gloss_translations.py; sources, pinned STEPBible commit and
+  checksums in SOURCES.md, rules in INSTRUCTIONS.md, notes in NOTES.md.
+  Only translations from sources whose licences allow translation and
+  redistribution (owner, 19 November 2026): Global Bible Tools' es/pt and
+  TAGNT's Spanish column stay out until their terms are confirmed.
+  Uncertain meanings stay awaiting review until a qualified reviewer signs
+  them off in reviewed.json (by hand); passing the checks never does.
   Matthew Henry's Concise Commentary is in Spanish and Portuguese too:
   `commentary_translations` / `introduction_translations` (English per
   section where missing; `isTranslated` shows `translatedCommentaryNote`),
@@ -256,9 +281,9 @@ shares; README.md has the architecture.
   translations/commentary/editorial-proposed.json, and `editorial_notes`
   ships empty (only an `editorial.json` would fill it). Review notes:
   translations/commentary/NOTES.md.
-  The meanings in a verse and grammar stay English (and the commentary in
-  an English app): when the Bible or the app isn't English, the Original
-  header, the word sheet and VerseStudyView say so
+  Grammar stays English (and the commentary where it has no translation):
+  when the Bible or the app isn't English, the Original header, the word
+  sheet and VerseStudyView say so
   (`WordStudyRepository.needsEnglishNote`).
 - Pronunciation (free): `PronounceButton` on `OriginalWordSheet` (word and
   dictionary form) and `LexiconEntryView` says the word with the device's

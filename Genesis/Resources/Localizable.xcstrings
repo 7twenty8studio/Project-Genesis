@@ -6276,6 +6276,22 @@
         }
       }
     },
+    "Commentary and grammar are in English.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El comentario y la gramática están en inglés."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O comentário e a gramática estão em inglês."
+          }
+        }
+      }
+    },
     "Commentary and the meanings of words in this verse are in English.": {
       "localizations": {
         "es": {
@@ -11891,6 +11907,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nas Bíblias que as têm, toque na letrinha ao lado de uma palavra para ler a nota dos tradutores."
+          }
+        }
+      }
+    },
+    "In English": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En inglés"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Em inglês"
           }
         }
       }
@@ -20983,6 +21015,22 @@
         }
       }
     },
+    "Read the Hebrew and Greek in your language": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee el hebreo y el griego en tu idioma"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leia o hebraico e o grego no seu idioma"
+          }
+        }
+      }
+    },
     "Read the classic commentaries beside every verse with Premium.": {
       "localizations": {
         "es": {
@@ -21318,6 +21366,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ajustes de leitura"
+          }
+        }
+      }
+    },
+    "Reading the Reina-Valera or the Bíblia Livre, the Original view shows what each Hebrew and Greek word means in that verse, in Spanish or Portuguese. Pick another language under Word Meanings.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Al leer la Reina-Valera o la Bíblia Livre, la vista Original muestra lo que significa cada palabra hebrea y griega en ese versículo, en español o portugués. Elige otro idioma en Significados."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ao ler a Reina-Valera ou a Bíblia Livre, a visualização Original mostra o que cada palavra hebraica e grega significa naquele versículo, em espanhol ou português. Escolha outro idioma em Significados."
           }
         }
       }
@@ -22544,6 +22608,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Igual ao iPhone"
+          }
+        }
+      }
+    },
+    "Same as the Bible (%@)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Igual que la Biblia (%@)"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Igual à Bíblia (%@)"
           }
         }
       }
@@ -25006,6 +25086,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Spam ou publicidade"
+          }
+        }
+      }
+    },
+    "Spanish and Portuguese word meanings: an AI-assisted translation by Versely of the English glosses in STEPBible's TAHOT and TAGNT, data by Tyndale House Cambridge and STEPBible.org (STEPBible.github.io/STEPBible-Data), CC BY 4.0. Not reviewed or endorsed by STEPBible.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Significados de las palabras en español y portugués: traducción hecha por Versely con ayuda de IA de las glosas en inglés de TAHOT y TAGNT de STEPBible, datos de Tyndale House Cambridge y STEPBible.org (STEPBible.github.io/STEPBible-Data), CC BY 4.0. No revisada ni avalada por STEPBible."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Significados das palavras em espanhol e português: tradução feita pelo Versely com ajuda de IA das glosas em inglês do TAHOT e do TAGNT do STEPBible, dados da Tyndale House Cambridge e do STEPBible.org (STEPBible.github.io/STEPBible-Data), CC BY 4.0. Não revisada nem endossada pelo STEPBible."
           }
         }
       }
@@ -27716,6 +27812,22 @@
         }
       }
     },
+    "The grammar is in English.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La gramática está en inglés."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A gramática está em inglês."
+          }
+        }
+      }
+    },
     "The large verse widget, free": {
       "localizations": {
         "es": {
@@ -28691,6 +28803,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Este grupo está cheio."
+          }
+        }
+      }
+    },
+    "This meaning is uncertain and awaits review by a qualified reviewer.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este significado es incierto y está pendiente de revisión por un revisor cualificado."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este significado é incerto e aguarda revisão por um revisor qualificado."
           }
         }
       }
@@ -32974,6 +33102,22 @@
         }
       }
     },
+    "Word Meanings": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Significados"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Significados"
+          }
+        }
+      }
+    },
     "Word Order": {
       "comment": "Memorize game",
       "localizations": {
@@ -33023,6 +33167,22 @@
         }
       }
     },
+    "Word by word": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Palabra por palabra"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Palavra por palavra"
+          }
+        }
+      }
+    },
     "Word for word": {
       "localizations": {
         "es": {
@@ -33067,6 +33227,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Os significados das palavras e a gramática estão em inglês."
+          }
+        }
+      }
+    },
+    "Word meanings translated from STEPBible's English glosses. Not Scripture.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Significados de las palabras traducidos de las glosas en inglés de STEPBible. No es Escritura."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Significados das palavras traduzidos das glosas em inglês do STEPBible. Não é Escritura."
           }
         }
       }

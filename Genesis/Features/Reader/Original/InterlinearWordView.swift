@@ -17,7 +17,7 @@ struct InterlinearWordView: View {
             Text(word.transliteration)
                 .font(.caption.italic())
                 .foregroundStyle(palette.secondaryText)
-            Text(word.gloss)
+            Text(verbatim: word.shownGloss)
                 .font(.caption)
                 .foregroundStyle(palette.accent)
         }
