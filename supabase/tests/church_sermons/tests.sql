@@ -121,41 +121,79 @@ select ct.refused('guest cannot create', 'anon', format('public.create_church_se
 select ct.refused('church without sermons on: leader cannot create', 'pastor', format('public.create_church_sermon(%L, %L)', ct.g('quiet'), 'x'), 'not_allowed');
 select ct.refused('leader of another church cannot create here', 'other_pastor', format('public.create_church_sermon(%L, %L)', ct.g('grace'), 'x'), 'not_allowed');
 
+-- The draft version the Studio would have loaded.
+create function ct.ver(sermon_var text) returns integer language sql as $$
+  select draft_version from public.church_sermons where id = ct.v(sermon_var)::uuid $$;
+-- save_church_sermon / publish_church_sermon at the current version.
+create function ct.save(who text, sermon_var text, details text, blocks text default null) returns jsonb language sql as $$
+  select ct.run(who, format('public.save_church_sermon(%L, %s, %L, %L)', ct.v(sermon_var), ct.ver(sermon_var), details, blocks)) $$;
+create function ct.publish(who text, sermon_var text) returns jsonb language sql as $$
+  select ct.run(who, format('public.publish_church_sermon(%L, %s)', ct.v(sermon_var), ct.ver(sermon_var))) $$;
+-- Expects saving `blocks` to be refused as invalid_blocks.
+create function ct.bad_blocks(name text, blocks text) returns void language sql as $$
+  select ct.refused(name, 'pastor', format('public.save_church_sermon(%L, %s, null, %L)', ct.v('s1'), ct.ver('s1'), blocks), 'invalid_blocks') $$;
+
 -- Saving -------------------------------------------------------------------------------
 
 select ct.set('blocks', $j$[
   {"id": "h1", "kind": "heading", "text": "The Lord is my shepherd", "level": 1},
   {"id": "p1", "kind": "paragraph", "text": "We are known by name."},
-  {"id": "k1", "kind": "scripture", "ref": {"raw": "John 10:11", "start": 43010011, "end": 43010011, "status": "verified", "label": "KJV", "quote": "I am the good shepherd: the good shepherd giveth his life for the sheep."}},
+  {"id": "k1", "kind": "scripture", "ref": {"raw": "John 10:11", "start": 43010011, "end": 43010011, "status": "verified", "label": "KJV", "quote": "Words the church typed under a KJV label"}},
   {"id": "n1", "kind": "scripture", "ref": {"raw": "John 10:14", "start": 43010014, "end": 43010014, "status": "verified", "label": "NIV", "quote": "Licensed words the church typed"}},
   {"id": "u1", "kind": "scripture", "ref": {"raw": "John 10:27", "start": 43010027, "status": "verified", "quote": "Words with no translation named"}},
-  {"id": "a1", "kind": "scripture", "ref": {"raw": "Jn 10", "start": 43010001, "end": 43010042, "status": "ambiguous"}},
-  {"id": "r1", "kind": "scripture", "ref": {"raw": "Reina-Valera 1909", "start": 19023001, "end": 19023006, "status": "verified", "label": "Reina-Valera 1909", "quote": "Jehová es mi pastor; nada me faltará."}},
-  {"id": "l1", "kind": "list", "items": ["He knows", "He leads"], "ordered": true, "extra": "dropped"},
+  {"id": "a1", "kind": "scripture", "ref": {"raw": "Jn 10", "status": "ambiguous", "label": "KJV", "quote": "Unverified words"}},
+  {"id": "r1", "kind": "scripture", "ref": {"raw": "Salmo 23", "start": 19023001, "end": 19023006, "status": "verified", "label": "Reina-Valera 1909"}},
+  {"id": "l1", "kind": "list", "items": ["He knows", "He leads"], "ordered": true},
   {"id": "q1", "kind": "quote", "text": "A pastor's own words."}
 ]$j$);
 
 select ct.check('pastor saves version 0 -> 1',
-  (ct.run('pastor', format('public.save_church_sermon(%L, 0, %L, %L)', ct.v('s1'),
-    '{"speaker": "Pastor Ana", "series": "Psalms of Trust", "preached_on": "2026-11-22", "time_zone": "America/Chicago"}', ct.v('blocks'))))->>'draft_version' = '1');
+  ct.save('pastor', 's1', '{"speaker": "Pastor Ana", "series": "Psalms of Trust", "preached_on": "2026-11-22", "time_zone": "America/Chicago"}', ct.v('blocks'))->>'draft_version' = '1');
 select ct.refused('stale save is refused, nothing overwritten', 'pastor',
   format('public.save_church_sermon(%L, 0, %L, null)', ct.v('s1'), '{"title": "Overwritten"}'), 'draft_changed');
 select ct.check('title unchanged after the stale save', (select title from public.church_sermons where id = ct.v('s1')::uuid) = 'The Good Shepherd');
-select ct.refused('unknown block kind refused', 'pastor',
-  format('public.save_church_sermon(%L, 1, null, %L)', ct.v('s1'), '[{"id": "x", "kind": "script"}]'), 'invalid_blocks');
-select ct.refused('verified range across books refused', 'pastor',
-  format('public.save_church_sermon(%L, 1, null, %L)', ct.v('s1'), '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "start": 43010011, "end": 44001001, "status": "verified"}}]'), 'invalid_blocks');
-select ct.refused('impossible verse id refused', 'pastor',
-  format('public.save_church_sermon(%L, 1, null, %L)', ct.v('s1'), '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "start": 99001001, "status": "verified"}}]'), 'invalid_blocks');
-select ct.refused('duplicate block ids refused', 'pastor',
-  format('public.save_church_sermon(%L, 1, null, %L)', ct.v('s1'), '[{"id": "x", "kind": "paragraph", "text": ""}, {"id": "x", "kind": "paragraph", "text": ""}]'), 'invalid_blocks');
-select ct.refused('a draft can never be silently cut: too long a paragraph is refused', 'pastor',
-  format('public.save_church_sermon(%L, 1, null, %L)', ct.v('s1'), jsonb_build_array(jsonb_build_object('id', 'x', 'kind', 'paragraph', 'text', repeat('a', 5001)))), 'invalid_blocks');
-select ct.check('draft unchanged after refused saves', (select draft_version from public.church_sermons where id = ct.v('s1')::uuid) = 1);
+select ct.refused('too long a title is refused, never cut', 'pastor',
+  format('public.save_church_sermon(%L, 1, %L, null)', ct.v('s1'), jsonb_build_object('title', repeat('t', 201))), 'invalid_details');
+select ct.refused('unknown detail refused', 'pastor', format('public.save_church_sermon(%L, 1, %L, null)', ct.v('s1'), '{"slug": "x"}'), 'invalid_details');
+select ct.refused('a cover that was never uploaded is refused', 'pastor',
+  format('public.save_church_sermon(%L, 1, %L, null)', ct.v('s1'), jsonb_build_object('cover', gen_random_uuid())), 'invalid_details');
+
+-- Malformed blocks: refused with the reason, never trimmed or stored as null.
+select ct.bad_blocks('not an array', '{"id": "x"}');
+select ct.bad_blocks('block without an id', '[{"kind": "paragraph", "text": "x"}]');
+select ct.bad_blocks('id of the wrong type', '[{"id": 7, "kind": "paragraph", "text": "x"}]');
+select ct.bad_blocks('block without a kind', '[{"id": "x", "text": "x"}]');
+select ct.bad_blocks('unknown kind', '[{"id": "x", "kind": "script"}]');
+select ct.bad_blocks('paragraph without text', '[{"id": "x", "kind": "paragraph"}]');
+select ct.bad_blocks('paragraph with null text', '[{"id": "x", "kind": "paragraph", "text": null}]');
+select ct.bad_blocks('heading without text', '[{"id": "x", "kind": "heading", "level": 2}]');
+select ct.bad_blocks('heading level 7', '[{"id": "x", "kind": "heading", "text": "x", "level": 7}]');
+select ct.bad_blocks('quote without text', '[{"id": "x", "kind": "quote"}]');
+select ct.bad_blocks('list without items', '[{"id": "x", "kind": "list"}]');
+select ct.bad_blocks('list with a null item', '[{"id": "x", "kind": "list", "items": ["a", null]}]');
+select ct.bad_blocks('list ordered not a boolean', '[{"id": "x", "kind": "list", "items": [], "ordered": "yes"}]');
+select ct.bad_blocks('scripture without a reference', '[{"id": "x", "kind": "scripture"}]');
+select ct.bad_blocks('scripture with a null reference', '[{"id": "x", "kind": "scripture", "ref": null}]');
+select ct.bad_blocks('reference without typed text', '[{"id": "x", "kind": "scripture", "ref": {"status": "unlinked"}}]');
+select ct.bad_blocks('reference without status', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x"}}]');
+select ct.bad_blocks('verified reference without verses', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "status": "verified"}}]');
+select ct.bad_blocks('verses on an ambiguous reference', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "status": "ambiguous", "start": 43003016}}]');
+select ct.bad_blocks('John 3:99 does not exist', '[{"id": "x", "kind": "scripture", "ref": {"raw": "John 3:99", "start": 43003099, "status": "verified"}}]');
+select ct.bad_blocks('Psalm 151 does not exist', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "start": 19151001, "status": "verified"}}]');
+select ct.bad_blocks('verse 0 does not exist', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "start": 43003000, "status": "verified"}}]');
+select ct.bad_blocks('a fractional verse id', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "start": 43003016.5, "status": "verified"}}]');
+select ct.bad_blocks('range across books', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "start": 43010011, "end": 44001001, "status": "verified"}}]');
+select ct.bad_blocks('range backwards', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "start": 43003016, "end": 43003010, "status": "verified"}}]');
+select ct.bad_blocks('quotation of the wrong type', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "status": "unlinked", "quote": 5}}]');
+select ct.bad_blocks('unknown field in a block', '[{"id": "x", "kind": "paragraph", "text": "x", "html": "<b>"}]');
+select ct.bad_blocks('unknown field in a reference', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "status": "unlinked", "text": "x"}}]');
+select ct.bad_blocks('duplicate block ids', '[{"id": "x", "kind": "paragraph", "text": ""}, {"id": "x", "kind": "paragraph", "text": ""}]');
+select ct.bad_blocks('too long a paragraph', jsonb_build_array(jsonb_build_object('id', 'x', 'kind', 'paragraph', 'text', repeat('a', 5001)))::text);
+select ct.check('a range to the last verse of a chapter is accepted',
+  public.genesis_valid_verse(43021025) and not public.genesis_valid_verse(43021026) and public.genesis_valid_verse(19119176));
+select ct.check('draft unchanged after the refused saves', ct.ver('s1') = 1);
 select ct.refused('member cannot save', 'member', format('public.save_church_sermon(%L, 1, null, null)', ct.v('s1')), 'not_allowed');
 select ct.refused('other church leader cannot save', 'other_pastor', format('public.save_church_sermon(%L, 1, null, null)', ct.v('s1')), 'not_allowed');
-select ct.check('extra keys are not stored',
-  not ((select draft_blocks from public.church_sermons where id = ct.v('s1')::uuid) @> '[{"extra": "dropped"}]'));
 
 -- Direct table access --------------------------------------------------------------------
 
@@ -167,68 +205,88 @@ select ct.refused_dml('pastor cannot insert directly', 'pastor',
   format('insert into public.church_sermons (group_id, slug) values (%L, %L)', ct.g('grace'), 'abcdefghjk'), 'row-level security');
 select ct.check('pastor cannot update directly',
   ct.dml('pastor', format('update public.church_sermons set title = %L where id = %L', 'Hacked', ct.v('s1'))) = '0');
-select ct.check('nobody reads reports, stats or visits directly',
+select ct.check('nobody reads reports or visits directly',
   (ct.run('pastor', '(select count(*) from public.church_sermon_reports) + (select count(*) from public.church_sermon_visits)'))::text = '"0"');
+select ct.check('verse counts are readable by anyone', (ct.run('anon', '(select count(*) from public.bible_verse_counts)'))::text = '"1189"');
+select ct.check('nobody writes verse counts', ct.dml('pastor', 'update public.bible_verse_counts set verses = 1') = '0');
 
 -- Publishing -----------------------------------------------------------------------------
 
-select ct.sees('draft is not public', 'anon', 'slug1', 'not_found');
+select ct.sees('a draft is not public', 'anon', 'slug1', 'not_found');
 select ct.refused('publish with a stale version refused', 'pastor', format('public.publish_church_sermon(%L, 0)', ct.v('s1')), 'draft_changed');
-select ct.set('pub1', (ct.run('pastor', format('public.publish_church_sermon(%L, 1)', ct.v('s1'))))::text);
-select ct.check('publish withholds the NIV and the unlabelled quotation', (ct.v('pub1')::jsonb)->>'withheld_quotes' = '2', ct.v('pub1')::jsonb);
+select ct.set('pub1', ct.publish('pastor', 's1')::text);
+select ct.check('publish counts the NIV, unlabelled and unverified quotations as withheld', (ct.v('pub1')::jsonb)->>'withheld_quotes' = '3', ct.v('pub1')::jsonb);
 select ct.check('retried publish returns the same revision',
-  (ct.run('pastor', format('public.publish_church_sermon(%L, 1)', ct.v('s1'))))->>'revision' = (ct.v('pub1')::jsonb)->>'revision');
+  ct.publish('pastor', 's1')->>'revision' = (ct.v('pub1')::jsonb)->>'revision');
 select ct.check('one revision only', (select count(*) from public.church_sermon_revisions where sermon_id = ct.v('s1')::uuid) = 1);
 select ct.refused('member cannot publish', 'member', format('public.publish_church_sermon(%L, 1)', ct.v('s1')), 'not_allowed');
 
 select ct.set('view', (ct.sees('guest opens the link', 'anon', 'slug1', 'ok'))::text);
-select ct.check('KJV quotation published as written',
-  (ct.v('view')::jsonb)->'blocks' @> '[{"id": "k1", "ref": {"quote": "I am the good shepherd: the good shepherd giveth his life for the sheep."}}]');
-select ct.check('RV1909 quotation published', (ct.v('view')::jsonb)->'blocks' @> '[{"id": "r1", "ref": {"quote": "Jehová es mi pastor; nada me faltará."}}]');
-select ct.check('NIV words never reach readers',
-  (ct.v('view')::jsonb)->'blocks' @> '[{"id": "n1", "ref": {"quote": null, "quote_withheld": true, "start": 43010014}}]'
-  and position('Licensed words' in ct.v('view')) = 0);
-select ct.check('unlabelled words never reach readers', position('no translation named' in ct.v('view')) = 0);
-select ct.check('the reference stays when words are withheld', (ct.v('view')::jsonb)->'blocks' @> '[{"id": "n1", "ref": {"raw": "John 10:14"}}]');
-select ct.check('an ambiguous reference opens nothing', (ct.v('view')::jsonb)->'blocks' @> '[{"id": "a1", "ref": {"start": null, "end": null, "status": "ambiguous"}}]');
-select ct.check('the view names the church and speaker, never who published',
+select ct.check('no quoted words ever reach readers',
+  position('typed' in ct.v('view')) = 0 and position('Unverified words' in ct.v('view')) = 0
+  and position('no translation named' in ct.v('view')) = 0
+  and not exists (select 1 from jsonb_array_elements((ct.v('view')::jsonb)->'blocks') b where b->'ref' ? 'quote'));
+select ct.check('a KJV quotation is published as the KJV''s code, for readers to show from their own copy',
+  (ct.v('view')::jsonb)->'blocks' @> '[{"id": "k1", "ref": {"translation": "KJV", "quote_withheld": false, "start": 43010011}}]');
+select ct.check('a reference labelled RV1909 names it', (ct.v('view')::jsonb)->'blocks' @> '[{"id": "r1", "ref": {"translation": "RV1909"}}]');
+select ct.check('an NIV quotation is a reference only',
+  (ct.v('view')::jsonb)->'blocks' @> '[{"id": "n1", "ref": {"translation": null, "quote_withheld": true, "start": 43010014, "raw": "John 10:14"}}]');
+select ct.check('an unverified reference names no translation and opens nothing',
+  (ct.v('view')::jsonb)->'blocks' @> '[{"id": "a1", "ref": {"start": null, "end": null, "translation": null, "quote_withheld": true}}]');
+select ct.check('the view names the speaker, never who published',
   (ct.v('view')::jsonb)->>'speaker' = 'Pastor Ana' and not ((ct.v('view')::jsonb) ? 'published_by') and not ((ct.v('view')::jsonb) ? 'created_by'));
-select ct.check('the draft keeps the church''s words for them to see', position('Licensed words' in (select draft_blocks::text from public.church_sermons where id = ct.v('s1')::uuid)) > 0);
+select ct.check('the draft keeps the church''s words for them', position('Licensed words' in (select draft_blocks::text from public.church_sermons where id = ct.v('s1')::uuid)) > 0);
 select ct.check('a guessed slug finds nothing', (ct.run('anon', 'public.published_sermon(''zzzzzzzzzz'')'))->>'status' = 'not_found');
 select ct.check('a malformed slug finds nothing', (ct.run('anon', 'public.published_sermon(''../x'')'))->>'status' = 'not_found');
 
--- Members only ---------------------------------------------------------------------------
+-- Draft saves never reach readers ----------------------------------------------------------------
 
-select ct.check('switch to members only',
-  (ct.run('pastor', format('public.save_church_sermon(%L, 1, %L, null)', ct.v('s1'), '{"audience": "members"}')))->>'draft_version' = '2');
+select ct.save('pastor', 's1', '{"title": "Draft-only title", "speaker": "Someone Else"}', '[{"id": "d", "kind": "paragraph", "text": "Draft-only words"}]');
+select ct.set('view', (ct.sees('after a draft save: still readable', 'anon', 'slug1', 'ok'))::text);
+select ct.check('readers still get the published title, speaker and outline',
+  (ct.v('view')::jsonb)->>'title' = 'The Good Shepherd' and (ct.v('view')::jsonb)->>'speaker' = 'Pastor Ana'
+  and position('Draft-only' in ct.v('view')) = 0);
+select ct.check('leaders see that there are unpublished changes',
+  (ct.run('pastor', format('public.group_sermons(%L)', ct.g('grace'))))->0 ? 'unpublished_changes');
+select ct.save('pastor', 's1', '{"title": "The Good Shepherd", "speaker": "Pastor Ana"}', ct.v('blocks'));
+
+-- Members only, and a draft that would open it ------------------------------------------------------
+
+select ct.save('pastor', 's1', '{"audience": "members"}');
+select ct.sees('setting the draft to members only does not change readers yet', 'anon', 'slug1', 'ok');
+select ct.check('restricting is its own action, at once',
+  (ct.run('pastor', format('public.restrict_church_sermon(%L)', ct.v('s1'))))->>'draft_version' = ct.ver('s1')::text);
 select ct.set('mo', (ct.sees('guest: members only, at once', 'anon', 'slug1', 'members_only'))::text);
 select ct.check('members-only answer says nothing about the sermon', (ct.v('mo')::jsonb) = '{"status": "members_only"}'::jsonb, ct.v('mo')::jsonb);
+select ct.save('pastor', 's1', '{"audience": "link", "title": "Opened in the draft"}');
+select ct.sees('a draft save back to "anyone with the link" does not open it', 'anon', 'slug1', 'members_only');
 select ct.sees('outsider: members only', 'outsider', 'slug1', 'members_only');
 select ct.sees('banned person: members only', 'banned', 'slug1', 'members_only');
-select ct.sees('member reads it', 'member', 'slug1', 'ok');
+select ct.set('view', (ct.sees('member reads it', 'member', 'slug1', 'ok'))::text);
+select ct.check('members still read the published title', (ct.v('view')::jsonb)->>'title' = 'The Good Shepherd');
 select ct.sees('other church leader: members only', 'other_pastor', 'slug1', 'members_only');
--- The former leader leaves (or is removed).
 delete from public.group_members where group_id = ct.g('grace') and user_id = ct.p('former');
 select ct.sees('removed leader: members only', 'former', 'slug1', 'members_only');
-select ct.refused('removed leader cannot edit', 'former', format('public.save_church_sermon(%L, 2, null, null)', ct.v('s1')), 'not_allowed');
+select ct.refused('removed leader cannot edit', 'former', format('public.save_church_sermon(%L, %s, null, null)', ct.v('s1'), ct.ver('s1')), 'not_allowed');
 select ct.check('removed leader no longer reads drafts', (ct.run('former', '(select count(*) from public.church_sermons)'))::text = '"0"');
--- A member is banned after joining.
 insert into public.group_bans (group_id, user_id, display_name) values (ct.g('grace'), ct.p('r2'), 'R2');
 select ct.sees('member banned while still listed: members only', 'r2', 'slug1', 'members_only');
 delete from public.group_bans where group_id = ct.g('grace') and user_id = ct.p('r2');
-
 select ct.refused('members-only list refused for outsiders', 'outsider', format('public.group_sermons(%L)', ct.g('grace')), 'not_allowed');
-select ct.check('members list shows published sermons only', ct.len(ct.run('member', format('public.group_sermons(%L)', ct.g('grace')))) = 1);
+select ct.check('members list shows published sermons only, as published',
+  ct.len(ct.run('member', format('public.group_sermons(%L)', ct.g('grace')))) = 1
+  and ct.run('member', format('public.group_sermons(%L)', ct.g('grace')))->0->>'title' = 'The Good Shepherd');
 select ct.check('leaders list shows drafts too', ct.len(ct.run('pastor', format('public.group_sermons(%L)', ct.g('grace')))) = 2);
-select ct.check('back to anyone with the link',
-  (ct.run('pastor', format('public.save_church_sermon(%L, 2, %L, null)', ct.v('s1'), '{"audience": "link"}')))->>'draft_version' = '3');
+select ct.save('pastor', 's1', '{"title": "The Good Shepherd"}');
+select ct.check('publishing opens it to the link again', ct.publish('pastor', 's1')->>'number' = '2');
+select ct.sees('open to the link after publishing', 'anon', 'slug1', 'ok');
 
 -- Switches -------------------------------------------------------------------------------
 
 update public.groups set sermons_enabled = false where id = ct.g('grace');
 select ct.sees('church switch off: link stops at once', 'anon', 'slug1', 'not_found');
 select ct.sees('church switch off: members too', 'member', 'slug1', 'not_found');
-select ct.refused('church switch off: leader cannot publish', 'pastor', format('public.publish_church_sermon(%L, 3)', ct.v('s1')), 'not_allowed');
+select ct.refused('church switch off: leader cannot publish', 'pastor', format('public.publish_church_sermon(%L, %s)', ct.v('s1'), ct.ver('s1')), 'not_allowed');
 update public.groups set sermons_enabled = true where id = ct.g('grace');
 update public.feature_flags set enabled = false where key = 'church_sermons';
 select ct.sees('global switch off: link stops', 'anon', 'slug1', 'not_found');
@@ -238,46 +296,68 @@ select ct.sees('groups switch off: link stops', 'anon', 'slug1', 'not_found');
 update public.feature_flags set enabled = true where key = 'groups';
 select ct.sees('switches back on: readable', 'anon', 'slug1', 'ok');
 
--- Unpublish and publish again ----------------------------------------------------------------
+-- Unpublish, and a delayed retry ------------------------------------------------------------------
 
+select ct.set('stale', ct.ver('s1')::text);
 select ct.run('pastor', format('public.unpublish_church_sermon(%L)', ct.v('s1')));
 select ct.sees('unpublish stops the link at once', 'anon', 'slug1', 'not_found');
-select ct.check('publishing again makes revision 2 (the draft changed)',
-  (ct.run('pastor', format('public.publish_church_sermon(%L, 3)', ct.v('s1'))))->>'number' = '2');
+select ct.refused('the original publish request, retried late, is refused', 'pastor',
+  format('public.publish_church_sermon(%L, %s)', ct.v('s1'), ct.v('stale')), 'draft_changed');
+select ct.sees('and the link stays closed', 'anon', 'slug1', 'not_found');
+select ct.check('only a fresh publish opens it again', ct.publish('pastor', 's1')->>'repeated' = 'false');
 select ct.sees('published again', 'anon', 'slug1', 'ok');
 
 -- Series navigation ----------------------------------------------------------------------------
 
 select ct.set('s2', (ct.run('pastor', format('public.create_church_sermon(%L, %L)', ct.g('grace'), 'Green Pastures')))->>'id');
-select ct.run('pastor', format('public.save_church_sermon(%L, 0, %L, %L)', ct.v('s2'),
-  '{"series": "Psalms of Trust", "preached_on": "2026-11-29", "audience": "members"}', '[{"id": "p", "kind": "paragraph", "text": "Rest."}]'));
-select ct.run('pastor', format('public.publish_church_sermon(%L, 1)', ct.v('s2')));
+select ct.save('pastor', 's2', '{"series": "Psalms of Trust", "preached_on": "2026-11-29", "audience": "members"}', '[{"id": "p", "kind": "paragraph", "text": "Rest."}]');
+select ct.publish('pastor', 's2');
 select ct.check('guests are not told of a members-only next sermon', (ct.run('anon', format('public.published_sermon(%L)', ct.v('slug1'))))->'next' = 'null'::jsonb);
 select ct.check('members see the next sermon in the series',
   (ct.run('member', format('public.published_sermon(%L)', ct.v('slug1'))))->'next'->>'title' = 'Green Pastures');
 
 -- Covers ---------------------------------------------------------------------------------
 
-select ct.set('cover', (ct.run('pastor', format('public.set_church_sermon_cover(%L, true)', ct.v('s1'))))#>>'{}');
-select ct.check('cover path is <group>/<sermon>.jpg', ct.v('cover') = ct.g('grace')::text || '/' || ct.v('s1') || '.jpg', to_jsonb(ct.v('cover')));
-select ct.refused('publishing a cover without alt text is refused', 'pastor', format('public.publish_church_sermon(%L, 3)', ct.v('s1')), 'needs_cover_alt');
+select ct.set('c1', (ct.run('pastor', format('public.new_church_sermon_cover(%L)', ct.v('s1'))))::text);
+select ct.check('cover path is <group>/<sermon>/<cover>.jpg',
+  (ct.v('c1')::jsonb)->>'path' = ct.g('grace')::text || '/' || ct.v('s1') || '/' || ((ct.v('c1')::jsonb)->>'cover') || '.jpg', ct.v('c1')::jsonb);
+select ct.refused('members cannot ask for a cover path', 'member', format('public.new_church_sermon_cover(%L)', ct.v('s1')), 'not_allowed');
 select ct.check('pastor uploads the cover',
-  ct.dml('pastor', format('insert into storage.objects (bucket_id, name) values (%L, %L)', 'sermon-covers', ct.v('cover'))) = '1');
+  ct.dml('pastor', format('insert into storage.objects (bucket_id, name) values (%L, %L)', 'sermon-covers', (ct.v('c1')::jsonb)->>'path')) = '1');
 select ct.refused_dml('other church leader cannot upload there', 'other_pastor',
-  format('insert into storage.objects (bucket_id, name) values (%L, %L)', 'sermon-covers', ct.g('grace')::text || '/' || gen_random_uuid() || '.jpg'), 'row-level security');
+  format('insert into storage.objects (bucket_id, name) values (%L, %L)', 'sermon-covers', ct.g('grace')::text || '/' || ct.v('s1') || '/' || gen_random_uuid() || '.jpg'), 'row-level security');
 select ct.refused_dml('member cannot upload', 'member',
-  format('insert into storage.objects (bucket_id, name) values (%L, %L)', 'sermon-covers', ct.g('grace')::text || '/' || ct.v('s2') || '.jpg'), 'row-level security');
+  format('insert into storage.objects (bucket_id, name) values (%L, %L)', 'sermon-covers', ct.g('grace')::text || '/' || ct.v('s2') || '/' || gen_random_uuid() || '.jpg'), 'row-level security');
 select ct.refused_dml('no other file names', 'pastor',
-  format('insert into storage.objects (bucket_id, name) values (%L, %L)', 'sermon-covers', ct.g('grace')::text || '/' || ct.v('s1') || '.png'), 'row-level security');
+  format('insert into storage.objects (bucket_id, name) values (%L, %L)', 'sermon-covers', ct.g('grace')::text || '/' || ct.v('s1') || '.jpg'), 'row-level security');
 select ct.check('guests cannot list covers', (ct.run('anon', '(select count(*) from storage.objects where bucket_id = ''sermon-covers'')'))::text = '"0"');
 select ct.check('bucket is private, JPEG only, 1 MB', exists (select 1 from storage.buckets where id = 'sermon-covers'
   and not public and file_size_limit = 1048576 and allowed_mime_types = array['image/jpeg']));
-select ct.run('pastor', format('public.save_church_sermon(%L, 3, %L, null)', ct.v('s1'), '{"cover_alt": "A shepherd at dusk"}'));
-select ct.check('with alt text it publishes', (ct.run('pastor', format('public.publish_church_sermon(%L, 4)', ct.v('s1'))))->>'number' = '3');
-select ct.check('readers get the path and alt text',
-  (ct.run('anon', format('public.published_sermon(%L)', ct.v('slug1'))))->'cover' @> jsonb_build_object('path', ct.v('cover'), 'alt', 'A shepherd at dusk'));
-update storage.objects set created_at = now() - interval '2 days' where name = ct.v('cover');
-select ct.check('a cover in use is not an orphan', not exists (select 1 from public.orphan_sermon_covers() n where n = ct.v('cover')));
+select ct.check('the cover goes on the draft', ct.save('pastor', 's1', jsonb_build_object('cover', (ct.v('c1')::jsonb)->>'cover')::text) ? 'draft_version');
+select ct.check('readers do not see a cover that is only on the draft',
+  (ct.run('anon', format('public.published_sermon(%L)', ct.v('slug1'))))->'cover' = 'null'::jsonb);
+select ct.refused('publishing a cover without alt text is refused', 'pastor', format('public.publish_church_sermon(%L, %s)', ct.v('s1'), ct.ver('s1')), 'needs_cover_alt');
+select ct.check('still no cover for readers after the refused publish',
+  (ct.run('anon', format('public.published_sermon(%L)', ct.v('slug1'))))->'cover' = 'null'::jsonb);
+select ct.save('pastor', 's1', '{"cover_alt": "A shepherd at dusk"}');
+select ct.publish('pastor', 's1');
+select ct.check('published with its alt text',
+  (ct.run('anon', format('public.published_sermon(%L)', ct.v('slug1'))))->'cover' @> jsonb_build_object('path', (ct.v('c1')::jsonb)->>'path', 'alt', 'A shepherd at dusk'));
+-- A new picture on the draft leaves the published one alone.
+select ct.set('c2', (ct.run('pastor', format('public.new_church_sermon_cover(%L)', ct.v('s1'))))::text);
+select ct.dml('pastor', format('insert into storage.objects (bucket_id, name) values (%L, %L)', 'sermon-covers', (ct.v('c2')::jsonb)->>'path'));
+select ct.save('pastor', 's1', jsonb_build_object('cover', (ct.v('c2')::jsonb)->>'cover', 'cover_alt', 'Unpublished alt')::text);
+select ct.check('readers keep the published cover until the next publish',
+  (ct.run('anon', format('public.published_sermon(%L)', ct.v('slug1'))))#>>'{cover,path}' = (ct.v('c1')::jsonb)->>'path');
+select ct.check('the published cover cannot be removed while published',
+  ct.dml('pastor', format('delete from storage.objects where name = %L', (ct.v('c1')::jsonb)->>'path')) = '0')
+from (select set_config('storage.allow_delete_query', 'true', true)) allow_;
+update storage.objects set created_at = now() - interval '2 days' where bucket_id = 'sermon-covers';
+select ct.check('covers in use (draft and published) are not orphans',
+  (select count(*) from public.orphan_sermon_covers() n where n in ((ct.v('c1')::jsonb)->>'path', (ct.v('c2')::jsonb)->>'path')) = 0);
+select ct.publish('pastor', 's1');
+select ct.check('after the next publish the old picture is an orphan',
+  exists (select 1 from public.orphan_sermon_covers() n where n = (ct.v('c1')::jsonb)->>'path'));
 select ct.refused('only the service role lists orphans', 'pastor', '(select count(*) from public.orphan_sermon_covers())', 'permission denied');
 
 -- Reports --------------------------------------------------------------------------------
@@ -294,18 +374,22 @@ select ct.check('moderators see the count and reasons', (ct.v('reports')::jsonb)
 select ct.check('reports never say who reported',
   position(ct.p('r1')::text in ct.v('reports')) = 0 and position(ct.p('r3')::text in ct.v('reports')) = 0);
 select ct.refused('members cannot read reports', 'member', format('public.group_sermon_reports(%L)', ct.g('grace')), 'not_allowed');
-select ct.run('moderator', format('public.review_church_sermon_reports(%L, true)', ct.v('s1')));
-select ct.sees('kept after review: shown again', 'anon', 'slug1', 'ok');
-select ct.check('reports closed', ct.len(ct.run('pastor', format('public.group_sermon_reports(%L)', ct.g('grace')))) = 0);
+select ct.refused('too long a reason is refused', 'member', format('public.report_church_sermon(%L, %L)', ct.v('slug1'), repeat('r', 501)), 'invalid_details');
 
 -- Counts ---------------------------------------------------------------------------------
 
 select ct.set('visitor', encode(digest('visitor-1', 'sha256'), 'hex'));
+select ct.check('a hidden sermon is never counted', ct.run('service', format('public.record_sermon_event(%L, %L, %L)', ct.v('slug1'), 'open', ct.v('visitor'))) = '"false"');
+select ct.run('moderator', format('public.review_church_sermon_reports(%L, true)', ct.v('s1')));
+select ct.sees('kept after review: shown again', 'anon', 'slug1', 'ok');
+select ct.check('reports closed', ct.len(ct.run('pastor', format('public.group_sermon_reports(%L)', ct.g('grace')))) = 0);
 select ct.refused('readers cannot write counts', 'member', format('public.record_sermon_event(%L, %L, %L)', ct.v('slug1'), 'open', ct.v('visitor')), 'permission denied');
 select ct.refused('guests cannot write counts', 'anon', format('public.record_sermon_event(%L, %L, %L)', ct.v('slug1'), 'open', ct.v('visitor')), 'permission denied');
 select ct.check('first open counted', ct.run('service', format('public.record_sermon_event(%L, %L, %L)', ct.v('slug1'), 'open', ct.v('visitor'))) = '"true"');
 select ct.check('same visitor again today not counted', ct.run('service', format('public.record_sermon_event(%L, %L, %L)', ct.v('slug1'), 'open', ct.v('visitor'))) = '"false"');
 select ct.check('a raw address is refused', ct.run('service', format('public.record_sermon_event(%L, %L, %L)', ct.v('slug1'), 'open', '203.0.113.9')) = '"false"');
+select ct.check('a members-only sermon is never counted by the guest counter',
+  ct.run('service', format('public.record_sermon_event(%L, %L, %L)', (select slug from public.church_sermons where id = ct.v('s2')::uuid), 'open', ct.v('visitor'))) = '"false"');
 select ct.check('a draft is never counted', ct.run('service', format('public.record_sermon_event(%L, %L, %L)',
   (select slug from public.church_sermons where title = 'Draft' and group_id = ct.g('grace')), 'open', ct.v('visitor'))) = '"false"');
 do $$
@@ -326,36 +410,40 @@ select ct.refused('members cannot list the church', 'member', format('public.set
 select ct.run('pastor', format('public.set_sermons_listed(%L, true)', ct.g('grace')));
 select ct.set('found', (ct.run('anon', format('public.search_sermon_churches(%L)', 'GRACE  fellowship ' || left(ct.g('grace')::text, 6))))::text);
 select ct.check('listed church found by name, any case', ct.len(ct.v('found')::jsonb) = 1, ct.v('found')::jsonb);
-select ct.check('search shows link sermons, never members-only ones',
-  position('Good Shepherd' in ct.v('found')) > 0 and position('Green Pastures' in ct.v('found')) = 0);
+select ct.check('search shows link sermons as published, never members-only ones or drafts',
+  position('Good Shepherd' in ct.v('found')) > 0 and position('Green Pastures' in ct.v('found')) = 0
+  and position('Draft' in ct.v('found')) = 0);
 select ct.check('too short a search returns nothing', ct.len(ct.run('anon', 'public.search_sermon_churches(''g'')')) = 0);
 
 -- Duplicate, delete, account deletion ---------------------------------------------------------
 
 select ct.set('dup', (ct.run('moderator', format('public.duplicate_church_sermon(%L)', ct.v('s1'))))->>'id');
-select ct.check('duplicate is a new draft with the outline and no date',
+select ct.check('duplicate is a new draft with the outline, no date and no cover',
   exists (select 1 from public.church_sermons d where d.id = ct.v('dup')::uuid and d.status = 'draft' and d.preached_on is null
-          and d.slug <> ct.v('slug1') and d.draft_blocks = (select draft_blocks from public.church_sermons where id = ct.v('s1')::uuid)));
+          and d.cover_id is null and d.slug <> ct.v('slug1')
+          and d.draft_blocks = (select draft_blocks from public.church_sermons where id = ct.v('s1')::uuid)));
+select ct.set('s2slug', (select slug from public.church_sermons where id = ct.v('s2')::uuid));
+select ct.set('s2ver', ct.ver('s2')::text);
 select ct.run('pastor', format('public.delete_church_sermon(%L)', ct.v('s2')));
-select ct.check('deleted sermon is gone for members', (ct.run('member', format('public.published_sermon(%L)',
-  (select slug from public.church_sermons where id = ct.v('s2')::uuid))))->>'status' = 'not_found');
-select ct.refused('deleted sermon cannot be edited', 'pastor', format('public.save_church_sermon(%L, 1, null, null)', ct.v('s2')), 'not_found');
+select ct.sees('deleted sermon is gone for members', 'member', 's2slug', 'not_found');
+select ct.refused('deleted sermon cannot be published again by an old request', 'pastor',
+  format('public.publish_church_sermon(%L, %s)', ct.v('s2'), ct.v('s2ver')), 'not_found');
 delete from auth.users where id = ct.p('moderator');
 select ct.check('a volunteer deletes their account: sermons stay, their name goes',
   exists (select 1 from public.church_sermons where id = ct.v('dup')::uuid and created_by is null));
 
 -- Quotation rule -------------------------------------------------------------------------
 
-select ct.check('publishable: KJV, WEB, ASV, RV1909, Biblia Livre',
-  public.genesis_quote_publishable('KJV') and public.genesis_quote_publishable('King James Version')
-  and public.genesis_quote_publishable('web') and public.genesis_quote_publishable('ASV')
-  and public.genesis_quote_publishable('RV1909') and public.genesis_quote_publishable('Reina-Valera 1909')
-  and public.genesis_quote_publishable('Bíblia Livre') and public.genesis_quote_publishable('BLIVRE'));
+select ct.check('shown from trusted copies: KJV, WEB, ASV, RV1909, Biblia Livre',
+  public.genesis_quote_translation('KJV') = 'KJV' and public.genesis_quote_translation('King James Version') = 'KJV'
+  and public.genesis_quote_translation('web') = 'WEB' and public.genesis_quote_translation('ASV') = 'ASV'
+  and public.genesis_quote_translation('RV1909') = 'RV1909' and public.genesis_quote_translation('Reina-Valera 1909') = 'RV1909'
+  and public.genesis_quote_translation('Bíblia Livre') = 'BLIVRE' and public.genesis_quote_translation('BLIVRE') = 'BLIVRE');
 select ct.check('reference only: NIV, ESV, NKJV, NVI, RVR1960, none',
-  not public.genesis_quote_publishable('NIV') and not public.genesis_quote_publishable('ESV')
-  and not public.genesis_quote_publishable('NKJV') and not public.genesis_quote_publishable('NVI')
-  and not public.genesis_quote_publishable('RVR1960') and not public.genesis_quote_publishable(null)
-  and not public.genesis_quote_publishable(''));
+  public.genesis_quote_translation('NIV') is null and public.genesis_quote_translation('ESV') is null
+  and public.genesis_quote_translation('NKJV') is null and public.genesis_quote_translation('NVI') is null
+  and public.genesis_quote_translation('RVR1960') is null and public.genesis_quote_translation(null) is null
+  and public.genesis_quote_translation('') is null);
 
 -- Result -------------------------------------------------------------------------------
 

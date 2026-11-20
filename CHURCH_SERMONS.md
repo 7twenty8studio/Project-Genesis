@@ -27,36 +27,54 @@ TestFlight without the owner's go-ahead for each.
   the church's own), the group switch, membership, bans and roles, inside
   security definer functions. Nobody writes the tables directly; leaders may
   select their own church's rows (Studio).
-- **Publishing** copies the draft into an immutable revision in one
-  transaction. Saves and publishes carry the draft version the editor
-  loaded: a stale one is refused (`draft_changed`), never overwritten; a
-  retried publish returns the same revision.
-- **Nothing is cut silently**: a block that's too long or malformed is
-  refused with the reason (`invalid_blocks`), and the draft stays as it was.
-- **Quotations**: a scripture block holds the reference the pastor typed,
-  verse ids (KJV numbering) and, optionally, the words they quoted with a
-  translation label. Only KJV, WEB, ASV, Reina-Valera 1909 and Bíblia Livre
-  words are published (`genesis_quote_publishable`); any other or missing
-  label is published as a reference only (`quote_withheld`), and readers see
-  the passage in their own Bible. A licensed translation needs its
-  publisher's written grant, recorded by the owner, before it's added.
+- **Draft and published copy are separate.** Saving changes only the draft
+  (details, outline, cover, audience). Publishing copies all of it into an
+  immutable revision in one transaction, and readers get only that. Opening
+  a sermon to more people takes a publish; closing it takes effect at once
+  through its own action: `restrict_church_sermon` (members only now),
+  unpublish, delete, or a moderator taking it down.
+- **Versions.** Saves and publishes carry the draft version the editor
+  loaded: a stale one is refused (`draft_changed`), never overwritten. A
+  publish retried while the sermon is still published returns the same
+  revision and changes nothing; unpublish, restrict and delete move the
+  version on, so a delayed retry can never open the sermon again.
+- **Nothing is cut silently**: a block or detail that's missing a required
+  field, has the wrong type, an unknown field or too much text is refused
+  with the reason (`invalid_blocks`, `invalid_details`), and the draft stays
+  as it was.
+- **Quotations**: a scripture block holds the reference the pastor typed and
+  verse ids (KJV numbering), checked against every chapter's real verse
+  count (`bible_verse_counts`). Words the pastor typed stay in the draft
+  only; readers never get them. A quotation labelled KJV, WEB, ASV,
+  Reina-Valera 1909 or Bíblia Livre is published as that translation's code
+  (`genesis_quote_translation`), and the app and web show the passage from
+  their own verbatim copy; any other or missing label is a reference only
+  (`quote_withheld`). A licensed translation needs its publisher's written
+  grant, recorded by the owner, before it's added.
 - **Members-only** sermons answer `{"status": "members_only"}` with nothing
   else to anyone who isn't a member. The web must send these with
   `Cache-Control: private, no-store` and never cache them publicly
   (checkpoint 2).
 - **Unpublish, delete, hide** take effect on the next request.
 - **Reports**: any signed-in reader reports once; three people hide the
-  sermon until a moderator reviews it (`group_sermon_reports`,
+  sermon until a moderator reviews it (reports on one sermon are counted one
+  at a time, so simultaneous ones can't miss the threshold) (`group_sermon_reports`,
   `review_church_sermon_reports`); reports never say who reported. They also
   reach the operations dashboard.
 - **Counts** (opens, passages opened, notes saved) are aggregate, written only
-  by the `sermon-events` function: one per visitor per day under a key that
-  changes daily, at most 60 a minute per sermon, link previews ignored.
-- **Covers**: one JPEG per sermon (≤ 1 MB) in the private `sermon-covers`
-  bucket at `<group id>/<sermon id>.jpg`; leaders of that church only.
+  by the `sermon-events` function, and only for sermons a guest can open
+  (published, shown, open to the link): one per visitor per day under a key
+  that changes daily, at most 60 a minute per sermon, link previews ignored.
+- **Covers**: JPEG (≤ 1 MB) in the private `sermon-covers` bucket at
+  `<group id>/<sermon id>/<cover id>.jpg`, a new id per picture
+  (`new_church_sermon_cover`), so the published picture never changes under
+  readers and a draft's picture is never seen before publishing. Leaders of
+  that church only; the published one can't be removed while published.
   Studio re-encodes on the device (no metadata) and asks for alt text (or
-  "decorative") before publishing. Readers get short-lived signed links.
-  `orphan_sermon_covers()` lists files a nightly sweep removes (checkpoint 2).
+  "decorative") before publishing. Readers get covers only through a request
+  that rechecks access each time (checkpoint 2), never a signed URL that
+  could outlive an unpublish. `orphan_sermon_covers()` lists files neither
+  copy uses, for a nightly sweep.
 - **Account deletion**: a volunteer's sermons stay with the church;
   `created_by` / `published_by` become null.
 

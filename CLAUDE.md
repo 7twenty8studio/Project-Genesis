@@ -676,9 +676,13 @@ shares; README.md has the architecture.
   link reads link sermons. Plan, rules and checkpoints: CHURCH_SERMONS.md.
 - All reads and writes through the migration 20261120000000 functions
   (`published_sermon`, `save_church_sermon` with the loaded draft version,
-  `publish_church_sermon`…); never write the tables directly. Only KJV, WEB,
-  ASV, RV1909 and Bíblia Livre quotations are published
-  (`genesis_quote_publishable`); others become references only. Tests:
+  `publish_church_sermon`, `restrict_church_sermon`…); never write the
+  tables directly. Readers get only the published revision (details, cover,
+  audience and outline as published), never the draft. Quoted words are
+  never published: KJV, WEB, ASV, RV1909 and Bíblia Livre quotations go out
+  as the translation's code (`genesis_quote_translation`) for readers to show
+  from their own verbatim copy; others are references only. Verse ids are
+  checked against `bible_verse_counts`. Tests:
   supabase/tests/church_sermons/run.sh.
 - The web reads references with supabase/functions/_shared/references.ts
   (same reading as ReferenceParser.swift; shared cases in

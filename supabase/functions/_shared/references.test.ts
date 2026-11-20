@@ -59,3 +59,10 @@ test("bibleBooks.json matches BibleBook.swift and the KJV", () => {
   const script = fileURLToPath(new URL("../../../Tools/BibleData/export_reference_books.py", import.meta.url));
   execFileSync("python3", [script, "--check"], { stdio: "pipe" });
 });
+
+test("the church sermons migration checks verses against the same counts", async () => {
+  const { readFile } = await import("node:fs/promises");
+  const sql = await readFile(new URL("../../migrations/20261120000000_church_sermons.sql", import.meta.url), "utf8");
+  const rows = [...sql.matchAll(/^\s*\((\d+), array\[([\d,]+)\]\)/gm)].map((m) => [Number(m[1]), m[2].split(",").map(Number)]);
+  assert.deepEqual(rows, books.map((b) => [b.id, b.verses]));
+});

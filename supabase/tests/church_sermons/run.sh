@@ -74,6 +74,18 @@ else
   echo "   FAIL concurrent save: $(cat "$WORK/s1") / $(cat "$WORK/s2")"; exit 1
 fi
 
+# One report open, then two more at the same moment: the third always hides it.
+slug="$(psql -At -c "select slug from public.church_sermons where id = '$sermon'")"
+psql -c "select ct.run('r1', 'public.report_church_sermon(''$slug'', ''one'')')" >/dev/null
+report() {  # $1 = person
+  "$PGBIN/psql" -X -q -At -d "$SUPER_URL" -c "begin; set local request.jwt.claim.sub = '$(psql -At -c "select id from ct.people where name = '$1'")'; set local role authenticated; select pg_sleep(0.2), report_church_sermon('$slug', 'together'); select pg_sleep(0.5); commit;" >/dev/null 2>&1
+}
+report r2 & report r3 &
+wait
+hidden="$(psql -At -c "select hidden_at is not null from public.church_sermons where id = '$sermon'")"
+open_reports="$(psql -At -c "select count(*) from public.church_sermon_reports r join public.church_sermons s on s.id = r.sermon_id where s.id = '$sermon' and r.resolved_at is null")"
+if [ "$hidden" = t ] && [ "$open_reports" = 3 ]; then echo "   PASS concurrent reports: the third hides it"; else echo "   FAIL concurrent reports: hidden=$hidden reports=$open_reports"; exit 1; fi
+
 echo "== Migration again (must change nothing)"
 "$PGBIN/pg_dump" -d "$SUPER_URL" -s -n public -n storage | grep -v restrict > "$WORK/before.sql"
 as_postgres -f "$MIG/$NEW" >/dev/null 2>&1
