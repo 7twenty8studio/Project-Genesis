@@ -270,13 +270,13 @@
    "kind": "entry",
    "id": 16331,
    "sha256": "e0d514aaa3fef0f7c3e81c18662ae7dd5d3ea987b87501f40f1877bec72f7832",
-   "text": "Faz sua segunda viagem pelas congregações"
+   "text": "Faz sua segunda viagem pelas igrejas"
   },
   {
    "kind": "entry",
    "id": 16332,
    "sha256": "dfc69627413405082ff5877cb766e4e4c555d46fa135592dde27ff7a7eea74d6",
-   "text": "Escolhe Silas como companheiro e passa pela Síria e Cilícia, fortalecendo as congregações"
+   "text": "Escolhe Silas como companheiro e passa pela Síria e Cilícia, fortalecendo as igrejas"
   },
   {
    "kind": "entry",
@@ -408,7 +408,7 @@
    "kind": "entry",
    "id": 16354,
    "sha256": "a44d793ee3ad2ff9413fe104d2b9e81d170180fbd6790eecb38e24df89cd8874",
-   "text": "Segue para a Macedônia depois de fortalecer as congregações daquela região; chega à Grécia e permanece três meses; volta pela Macedônia, acompanhado de Sópatro, Aristarco, Segundo, Gaio, Timóteo, Tíquico e Trófimo"
+   "text": "Segue para a Macedônia depois de fortalecer as igrejas daquela região; chega à Grécia e permanece três meses; volta pela Macedônia, acompanhado de Sópatro, Aristarco, Segundo, Gaio, Timóteo, Tíquico e Trófimo"
   },
   {
    "kind": "entry",
@@ -426,7 +426,7 @@
    "kind": "entry",
    "id": 16357,
    "sha256": "87fd7d57c6ae653845f9c3fbd97727b242dff62b75b051e0c88227ba1585ff4b",
-   "text": "Manda chamar os anciãos da congregação de Éfeso; relata-lhes como pregara na Ásia, e suas tentações e aflições, exortando ao arrependimento para com Deus"
+   "text": "Manda chamar os anciãos da igreja de Éfeso; relata-lhes como pregara na Ásia, e suas tentações e aflições, exortando ao arrependimento para com Deus"
   },
   {
    "kind": "entry",
@@ -1848,7 +1848,7 @@
    "kind": "entry",
    "id": 16547,
    "sha256": "74de63462bb2c7be3443acbb0a25c15c939e6bf48f82704920f03d7d968edf80",
-   "text": "Da congregação em Esmirna"
+   "text": "Da igreja em Esmirna"
   },
   {
    "kind": "topic",
@@ -2052,7 +2052,8 @@
    "kind": "entry",
    "id": 16574,
    "sha256": "f9ef5d8083651dd0b48d1980264856c849c3a1f15d938632574a5066b79e5d39",
-   "text": "Enviado como juízo"
+   "text": "Enviada como juízo",
+   "phrase_note": "the topic is feminine, so the participle agrees"
   },
   {
    "kind": "entry",
@@ -2862,7 +2863,7 @@
    "kind": "entry",
    "id": 16690,
    "sha256": "e1be3fa7dea32c7d19e19e9fd0f3618b2d4f0695935afda63c97cf591d27f611",
-   "text": "Paulo visita as congregações na"
+   "text": "Paulo visita as igrejas na"
   },
   {
    "kind": "topic",
@@ -2892,7 +2893,7 @@
    "kind": "entry",
    "id": 16693,
    "sha256": "ae2d42a12b06497a342c5046059b6a6abea2de9bbc68f95347457ffcf313f698",
-   "text": "Uma das sete congregações em"
+   "text": "Uma das sete igrejas em"
   },
   {
    "kind": "topic",
@@ -3372,7 +3373,7 @@
    "kind": "entry",
    "id": 16761,
    "sha256": "218224dab295173fa1c95e66528afa1b75ecf3678a730b10db10333e485f455c",
-   "text": "Uma serva da congregação em Cencreia"
+   "text": "Uma serva da igreja em Cencreia"
   },
   {
    "kind": "topic",
@@ -5226,7 +5227,7 @@
    "kind": "entry",
    "id": 17004,
    "sha256": "6c2258e5ac4fcb0d858bfca817fe158ad0b9f313aef56c1b476e19ece1b34f59",
-   "text": "As congregações"
+   "text": "As igrejas"
   },
   {
    "kind": "entry",
@@ -5244,7 +5245,7 @@
    "kind": "entry",
    "id": 17007,
    "sha256": "fa73e159225449971eeb4268a623ef88740c1b428f5dbb7a76975e338964a21e",
-   "text": "A congregação em Antioquia (da Síria)"
+   "text": "A igreja em Antioquia (da Síria)"
   },
   {
    "kind": "entry",
@@ -5256,7 +5257,7 @@
    "kind": "entry",
    "id": 17009,
    "sha256": "64e6135f9ef318508fdebf4cb0630a30f93e6beead4f591a8a11d15e53d55459",
-   "text": "As congregações da Macedônia e da Acaia"
+   "text": "As igrejas da Macedônia e da Acaia"
   },
   {
    "kind": "entry",
