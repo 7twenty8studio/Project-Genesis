@@ -64,7 +64,7 @@ struct ReadingLibraryTests {
 
         let all = ReadingLibrary.sections(for: ReadingLibrary.allLanguages, installed: Translation.bundled, catalog: [rv, bsb], recordedTranslationIDs: [], preferred: "es")
         #expect(all.map(\.language) == ["es", "en", "pt"])
-        #expect(all.flatMap(\.entries).contains { $0.id == "BLIVRE" })
+        #expect(all.flatMap { $0.entries }.contains { $0.id == "BLIVRE" })
     }
 
     @Test func quickMenusGroupEveryInstalledBible() throws {
@@ -75,7 +75,7 @@ struct ReadingLibraryTests {
         let fromPortuguese = ReadingLibrary.groups(installed, current: .bibliaLivre)
         #expect(fromPortuguese.map(\.language) == ["pt", "en", "es"], "The current Bible's language first")
         #expect(fromPortuguese[0].translations.map(\.id) == ["BLIVRE", "OL"])
-        #expect(fromPortuguese.flatMap(\.translations).count == installed.count, "Nothing left out")
+        #expect(fromPortuguese.flatMap { $0.translations }.count == installed.count, "Nothing left out")
 
         let fromEnglish = ReadingLibrary.groups(installed, current: .kjv)
         #expect(fromEnglish.map(\.language) == ["en", "es", "pt"])

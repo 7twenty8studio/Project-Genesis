@@ -190,7 +190,8 @@ struct TopicTests {
         #expect(try spanish.search("perdon").first?.name == "Perdón", "Accents don't matter")
         #expect(try spanish.search("forgiveness").first?.name == "Perdón", "English names still find the topic")
         let found = try spanish.search("perdón").first?.id
-        let topic = try #require(try spanish.topic(id: try #require(found)))
+        let foundID = try #require(found)
+        let topic = try #require(try spanish.topic(id: foundID))
         #expect(topic.isTranslated)
         let instances = try #require(topic.entries.first { $0.label == "Casos de" })
         #expect(topic.entries.contains { $0.parentID == instances.id && $0.label == "José perdona a sus hermanos" })

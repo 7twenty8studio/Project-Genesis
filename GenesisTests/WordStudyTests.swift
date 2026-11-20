@@ -62,7 +62,9 @@ struct WordStudyTests {
         let fallback = try #require(try study.entry(strongs: "H1254Z"))
         #expect(fallback.strongs.hasPrefix("H1254"))
         #expect(try study.entry(strongs: "not a number") == nil)
-        #expect(try study.occurrences(of: "H1254A") <= study.occurrences(of: "H1254"))
+        let created = try study.occurrences(of: "H1254A")
+        let allForms = try study.occurrences(of: "H1254")
+        #expect(created <= allForms)
     }
 
     @Test func lexiconReadsInSpanishAndPortuguese() throws {
@@ -72,7 +74,8 @@ struct WordStudyTests {
         let portuguese = try WordStudyRepository(url: url, language: "pt")
         #expect(english.language == nil)
         #expect(spanish.language == "es")
-        #expect(try WordStudyRepository(url: url, language: "fr").language == nil)
+        let unsupported = try WordStudyRepository(url: url, language: "fr")
+        #expect(unsupported.language == nil)
 
         let create = try #require(try english.entry(strongs: "H1254A"))
         #expect(create.gloss == "to create")
@@ -115,15 +118,16 @@ struct WordStudyTests {
         #expect(luz.start == henry.start && luz.end == henry.end)
         #expect(luz.isTranslated)
         #expect(luz.title != henry.title)
-        // The RV1909's own words, quoted verbatim, in italics.
-        #expect(luz.quotations.contains("dijo Dios: Sea la luz"))
+        // The RV1909's own words, quoted verbatim, in italics: as they
+        // stand in the text, so a quote opening a sentence has its capital.
+        #expect(luz.quotations.contains("Dijo Dios: Sea la luz"))
         #expect(luz.quotationLanguage == "es")
-        let quoted = try #require(luz.paragraphs.first { $0.contains("dijo Dios: Sea la luz") })
+        let quoted = try #require(luz.paragraphs.first { $0.contains("Dijo Dios: Sea la luz") })
         let marked = luz.attributed(quoted)
-        let range = try #require(marked.range(of: "dijo Dios: Sea la luz"))
+        let range = try #require(marked.range(of: "Dijo Dios: Sea la luz"))
         #expect(marked[range].inlinePresentationIntent == .emphasized)
         let haja = try #require(try portuguese.commentary(for: light).first)
-        #expect(haja.quotations.contains("disse Deus: Haja luz"))
+        #expect(haja.quotations.contains("Disse Deus: Haja luz"))
         #expect(WordStudyRepository.quotationCredit(language: "pt")?.contains("Bíblia Livre") == true)
         #expect(WordStudyRepository.quotationCredit(language: "en") == nil)
 
@@ -139,7 +143,7 @@ struct WordStudyTests {
         // Every section in both languages.
         let genesisOne = try spanish.commentary(inChapter: ChapterID(book: 1, chapter: 1))
         #expect(genesisOne.count == 8)
-        #expect(genesisOne.allSatisfy(\.isTranslated))
+        #expect(genesisOne.allSatisfy { $0.isTranslated })
     }
 
     @Test func commentaryShipsWithoutEditorialNotes() throws {
@@ -194,10 +198,13 @@ struct WordStudyTests {
             #expect(!heaven.definition.hasSuffix("\\"))
             // Forms of σύ carried αὐτός's article; now σύ's.
             let you = try #require(try study.entry(strongs: "G4571"))
-            #expect(you.definition == (try study.entry(strongs: "G4771"))?.definition)
+            // Read first: a try after the start of #expect doesn't build.
+            let su = try study.entry(strongs: "G4771")
+            #expect(you.definition == su?.definition)
             #expect(!you.definition.contains("αὐτός, -ή, -ό"))
             // μόδιος held μοιχαλίς's article: only its gloss is left.
-            #expect(try study.entry(strongs: "G3426")?.definition.isEmpty == true)
+            let modios = try study.entry(strongs: "G3426")
+            #expect(modios?.definition.isEmpty == true)
         }
     }
 
