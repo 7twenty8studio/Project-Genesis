@@ -62,7 +62,9 @@ struct WordStudyTests {
         let fallback = try #require(try study.entry(strongs: "H1254Z"))
         #expect(fallback.strongs.hasPrefix("H1254"))
         #expect(try study.entry(strongs: "not a number") == nil)
-        #expect(try study.occurrences(of: "H1254A") <= study.occurrences(of: "H1254"))
+        let created = try study.occurrences(of: "H1254A")
+        let allForms = try study.occurrences(of: "H1254")
+        #expect(created <= allForms)
     }
 
     @Test func lexiconReadsInSpanishAndPortuguese() throws {
@@ -72,7 +74,8 @@ struct WordStudyTests {
         let portuguese = try WordStudyRepository(url: url, language: "pt")
         #expect(english.language == nil)
         #expect(spanish.language == "es")
-        #expect(try WordStudyRepository(url: url, language: "fr").language == nil)
+        let unsupported = try WordStudyRepository(url: url, language: "fr")
+        #expect(unsupported.language == nil)
 
         let create = try #require(try english.entry(strongs: "H1254A"))
         #expect(create.gloss == "to create")
@@ -194,10 +197,13 @@ struct WordStudyTests {
             #expect(!heaven.definition.hasSuffix("\\"))
             // Forms of σύ carried αὐτός's article; now σύ's.
             let you = try #require(try study.entry(strongs: "G4571"))
-            #expect(you.definition == (try study.entry(strongs: "G4771"))?.definition)
+            // Read first: a try after the start of #expect doesn't build.
+            let su = try study.entry(strongs: "G4771")
+            #expect(you.definition == su?.definition)
             #expect(!you.definition.contains("αὐτός, -ή, -ό"))
             // μόδιος held μοιχαλίς's article: only its gloss is left.
-            #expect(try study.entry(strongs: "G3426")?.definition.isEmpty == true)
+            let modios = try study.entry(strongs: "G3426")
+            #expect(modios?.definition.isEmpty == true)
         }
     }
 
