@@ -108,8 +108,10 @@ the sections below, so they stay as they are:
 ### 5. Bible data
 
 The bundled Bíblia Livre has a split "d este" at John 6:34. The quotation
-in the commentary reads "deste" and is marked translated. The Bible file
-itself should be fixed at the source.
+in the commentary reads "deste" and is marked translated. The owner chose
+(20 November 2026) to keep the Bible verbatim and report it upstream: the
+22 verses with split contractions, the quotations that touch them and the
+steps after a corrected edition are in Tools/BibleData/blivre/README.md.
 
 ### 6. Flags
 
