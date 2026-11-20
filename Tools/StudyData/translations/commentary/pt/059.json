@@ -184,15 +184,13 @@
    "kind": "section",
    "id": 2704,
    "sha256": "664336d9fc525bae110d238ae722f99df09b367512f86fe8e60c69bc21da4c0e",
-   "text": "Jerusalém como uma videira infrutífera.\n\nSe uma videira é frutífera, tem valor. Mas, se não é frutífera, não vale nada e é inútil: é posto no fogo. Assim, o homem é capaz de produzir um fruto precioso, vivendo para Deus; este é o único fim da sua existência; e, se falha nisto, não serve para nada senão para ser destruído. Que cegueira, pois, há naqueles que vivem no total abandono de Deus e da verdadeira religião! Esta comparação é aplicada a Jerusalém. Guardemo-nos de uma profissão infrutífera. Venhamos a Cristo, e procuremos permanecer nele, e ter as suas palavras permanecendo em nós.",
+   "text": "Jerusalém como uma videira infrutífera.\n\nSe uma videira é frutífera, tem valor. Mas, se não é frutífera, não vale nada e é inútil: é lançada ao fogo. Assim, o homem é capaz de produzir um fruto precioso, vivendo para Deus; este é o único fim da sua existência; e, se falha nisto, não serve para nada senão para ser destruído. Que cegueira, pois, há naqueles que vivem no total abandono de Deus e da verdadeira religião! Esta comparação é aplicada a Jerusalém. Guardemo-nos de uma profissão infrutífera. Venhamos a Cristo, e procuremos permanecer nele, e ter as suas palavras permanecendo em nós.",
    "quotes": [
     {
-     "text": "é posto no fogo",
-     "n": 0
+     "n": 0,
+     "mode": "translated",
+     "reason": "Ez 15:4: the Bíblia Livre's masculine 'é posto no fogo' (of the vine's wood) can't follow the feminine 'videira' in Henry's sentence; translated."
     }
-   ],
-   "flags": [
-    "'é posto no fogo' (the Bíblia Livre's masculine, of the vine's wood) kept verbatim after the feminine 'videira'."
    ]
   },
   {
@@ -416,7 +414,7 @@
    "kind": "section",
    "id": 2730,
    "sha256": "d21c9fe10d3a1710a4b928d70d85fdd6e6dda42bdbf6f69c37ba116c069a18e0",
-   "text": "Embora um mesmo acontecimento pareça sobrevir ao justo e ao ímpio, é imensamente diferente. Os que se gloriam em qualquer outra defesa e proteção que não sejam o poder, a providência e a promessa divinos, mais cedo ou mais tarde se envergonharão da sua glória. Os que não querem deixar a Deus o cuidado de tomar vingança por eles podem esperar que ele tome vingança deles. Deve-se observar a equidade dos juízos do Senhor quando ele não só vinga as injúrias naqueles que as fizeram, mas o faz por meio daqueles contra quem foram feitas. Os que guardam um ódio antigo e espreitam a ocasião de manifestá-lo estão entesourando para si mesmos ira para o dia da ira.",
+   "text": "Embora um mesmo acontecimento pareça sobrevir ao justo e ao ímpio, é imensamente diferente. Os que se gloriam em qualquer outra defesa e proteção que não sejam o poder, a providência e a promessa divinos, mais cedo ou mais tarde se envergonharão da sua jactância. Os que não querem deixar a Deus o cuidado de tomar vingança por eles podem esperar que ele tome vingança deles. Deve-se observar a equidade dos juízos do Senhor quando ele não só vinga as injúrias naqueles que as fizeram, mas o faz por meio daqueles contra quem foram feitas. Os que guardam um ódio antigo e espreitam a ocasião de manifestá-lo estão entesourando para si mesmos ira para o dia da ira.",
    "flags": [
     "'Though one event seem to the righteous and wicked': the English is elliptical (Ec 9:2 'one event to the righteous'); read as 'though the same event seems to befall'."
    ]

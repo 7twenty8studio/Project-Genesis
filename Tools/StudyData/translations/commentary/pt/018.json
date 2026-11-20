@@ -289,15 +289,16 @@
    "id": 614,
    "sha256": "f66fee6f54fafbabce0f6708284e563f523bae6cb2fa3c1732311ae78986de36",
    "title": "Deus promete assistir Josué.",
-   "text": "Josué deve fazer da lei de Deus a sua regra. É-lhe ordenado: de dia e de noite meditarás nele, para que o entendesse. Sejam quais forem os negócios deste mundo de que tenhamos de cuidar, não devemos negligenciar a única coisa necessária. Todas as suas ordens ao povo e os seus julgamentos deviam ser segundo a lei de Deus. O próprio Josué devia estar debaixo de comando; nenhuma dignidade ou domínio de homem algum o põe acima da lei de Deus. Ele deve encorajar-se com a promessa e a presença de Deus. Não te desanime o sentimento das tuas próprias fraquezas; Deus é todo-suficiente. Eu te ordenei, te chamei e te comissionei para fazê-lo, e certamente te sustentarei nisso. Quando estamos no caminho do dever, temos razão para ser fortes e muito corajosos. O nosso Senhor Jesus, como Josué aqui, foi sustentado em seus sofrimentos pela consideração da vontade de Deus e do mandamento de seu Pai.",
+   "text": "Josué deve fazer da lei de Deus a sua regra. É-lhe ordenado meditar nela de dia e de noite, para que a entendesse. Sejam quais forem os negócios deste mundo de que tenhamos de cuidar, não devemos negligenciar a única coisa necessária. Todas as suas ordens ao povo e os seus julgamentos deviam ser segundo a lei de Deus. O próprio Josué devia estar debaixo de comando; nenhuma dignidade ou domínio de homem algum o põe acima da lei de Deus. Ele deve encorajar-se com a promessa e a presença de Deus. Não te desanime o sentimento das tuas próprias fraquezas; Deus é todo-suficiente. Eu te ordenei, te chamei e te comissionei para fazê-lo, e certamente te sustentarei nisso. Quando estamos no caminho do dever, temos razão para ser fortes e muito corajosos. O nosso Senhor Jesus, como Josué aqui, foi sustentado em seus sofrimentos pela consideração da vontade de Deus e do mandamento de seu Pai.",
    "quotes": [
     {
      "n": 0,
-     "text": "de dia e de noite meditarás nele"
+     "mode": "translated",
+     "reason": "Henry's \"he is charged to meditate therein\" refers to the law; the Bíblia Livre's \"meditarás nele\" (the book) does not fit the sentence, so it is translated."
     }
    ],
    "flags": [
-    "Henry's \"he is charged to meditate therein\" recast as a direct quotation of Js 1:8 to keep the Bíblia Livre's words."
+    "Js 1:8: the Bíblia Livre has \"de dia e de noite meditarás nele\" (the book of the law); Henry's indirect wording is translated with \"nela\" (the law)."
    ]
   },
   {
