@@ -215,27 +215,34 @@ export function Editor({ lang, initial, church }: { lang: Lang; initial: DraftRo
   async function close(how: "unpublish" | "restrict"): Promise<boolean> {
     if (timer.current) clearTimeout(timer.current);
     timer.current = null;
-    const result = await queue(() => closeSermon(row.id, how)).catch(() => ({ ok: false as const, code: "network" }));
-    if (!result.ok) {
-      setError(t(refusalMessage(result.code)));
+    // The version is taken (or the conflict set) inside the queued task, so
+    // an autosave queued while the request is in flight runs on the version
+    // it returned rather than the one it replaced.
+    const outcome = await queue(async () => {
+      const result = await closeSermon(row.id, how).catch(() => ({ ok: false as const, code: "network" }));
+      if (!result.ok) return { ok: false as const, code: result.code };
+      // What readers get changed either way; show it (and a queued save sends it).
+      const closed = (r: DraftRow): DraftRow =>
+        how === "unpublish"
+          ? { ...r, status: r.status === "published" ? "unpublished" : r.status }
+          : { ...r, audience: "members", live_audience: r.live_audience ? "members" : null };
+      latest.current = closed(latest.current);
+      setRow(closed);
+      const decision = afterClose(result.previous, version.current, conflict.current);
+      if (decision === "conflict") conflict.current = true;
+      else setVersion(result.version, how === "unpublish" ? null : undefined);
+      return { ok: true as const, decision };
+    });
+    if (!outcome.ok) {
+      setError(t(refusalMessage(outcome.code)));
       return false;
     }
-    // What readers get changed either way; show it.
-    const r = latest.current;
-    const next: DraftRow =
-      how === "unpublish"
-        ? { ...r, status: r.status === "published" ? "unpublished" : r.status }
-        : { ...r, audience: "members", live_audience: r.live_audience ? "members" : null };
-    latest.current = next;
-    setRow(next);
-    if (afterClose(result.previous, version.current, conflict.current) === "conflict") {
+    if (outcome.decision === "conflict") {
       // Someone else saved a newer draft: keep the conflict check, never save this copy over it.
-      conflict.current = true;
       setState("conflict");
       setError(t(refusalMessage("draft_changed")));
       return true;
     }
-    setVersion(result.version, how === "unpublish" ? null : undefined);
     if (dirty.current) {
       setState("unsaved");
       void flush();
