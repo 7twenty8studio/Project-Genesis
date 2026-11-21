@@ -337,13 +337,19 @@ struct RemoteSermon: SyncRow, Equatable {
     var body: String
     var passages: [RemotePrayerPassage]
     var isFavourite: Bool
+    /// The church sermon the notes came from (sermons.source_sermon_id,
+    /// migration 20261120000000). Sent only when set, so a push never
+    /// names the column before the migration is in; SyncService pushes
+    /// rows with and without it in separate requests (every row in a
+    /// request has the same keys).
+    var sourceSermonId: UUID?
     var createdAt: Date
     var updatedAt: Date
     var deletedAt: Date?
     var serverUpdatedAt: String?
 
     enum CodingKeys: String, CodingKey {
-        case id, userId, title, preacher, church, preachedAt, series, body, passages, isFavourite
+        case id, userId, title, preacher, church, preachedAt, series, body, passages, isFavourite, sourceSermonId
         case createdAt, updatedAt, deletedAt, serverUpdatedAt
     }
 
@@ -359,6 +365,7 @@ struct RemoteSermon: SyncRow, Equatable {
         body = sermon.body
         passages = sermon.passages.map { RemotePrayerPassage(startVerse: $0.start.rawValue, endVerse: $0.end.rawValue) }
         isFavourite = sermon.isFavourite
+        sourceSermonId = sermon.sourceSermonID
         createdAt = sermon.createdAt
         updatedAt = sermon.updatedAt
     }
@@ -378,6 +385,7 @@ struct RemoteSermon: SyncRow, Equatable {
         body = try container.decodeIfPresent(String.self, forKey: .body) ?? ""
         passages = try container.decodeIfPresent([RemotePrayerPassage].self, forKey: .passages) ?? []
         isFavourite = try container.decodeIfPresent(Bool.self, forKey: .isFavourite) ?? false
+        sourceSermonId = try container.decodeIfPresent(UUID.self, forKey: .sourceSermonId)
         updatedAt = try container.decode(Date.self, forKey: .updatedAt)
         deletedAt = try container.decodeIfPresent(Date.self, forKey: .deletedAt)
         serverUpdatedAt = try container.decodeIfPresent(String.self, forKey: .serverUpdatedAt)
@@ -407,6 +415,7 @@ struct RemoteSermon: SyncRow, Equatable {
         try container.encode(body, forKey: .body)
         try container.encode(passages, forKey: .passages)
         try container.encode(isFavourite, forKey: .isFavourite)
+        try container.encodeIfPresent(sourceSermonId, forKey: .sourceSermonId)
         try container.encode(createdAt, forKey: .createdAt)
         try container.encode(updatedAt, forKey: .updatedAt)
         try container.encodeIfPresent(deletedAt, forKey: .deletedAt)

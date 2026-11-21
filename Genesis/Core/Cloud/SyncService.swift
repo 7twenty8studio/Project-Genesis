@@ -175,7 +175,11 @@ final class SyncService {
         try await push(changed(PlanEnrollment.self, since).map { RemotePlan($0, userID: user.id) }, SyncTable.readingPlans, client, token)
         try await push(changed(Prayer.self, since).map { RemotePrayer($0, userID: user.id) }, SyncTable.prayers, client, token)
         try await push(changed(MemoryVerse.self, since).map { RemoteMemoryVerse($0, userID: user.id) }, SyncTable.memoryVerses, client, token)
-        try await push(changed(Sermon.self, since).map { RemoteSermon($0, userID: user.id) }, SyncTable.sermons, client, token)
+        // Notes from a church sermon carry source_sermon_id; the others never
+        // name it, so each request's rows share the same keys.
+        let sermons = changed(Sermon.self, since).map { RemoteSermon($0, userID: user.id) }
+        try await push(sermons.filter { $0.sourceSermonId == nil }, SyncTable.sermons, client, token)
+        try await push(sermons.filter { $0.sourceSermonId != nil }, SyncTable.sermons, client, token)
         try await push(changed(Attachment.self, since).map { RemoteAttachment($0, userID: user.id) }, SyncTable.attachments, client, token)
         try await pushDeletions(client, token)
 
@@ -512,6 +516,8 @@ final class SyncService {
             sermon.body = row.body
             sermon.passages = row.sermonPassages
             sermon.isFavourite = row.isFavourite
+            // A row from before the column (or a device without it) keeps the link.
+            if let source = row.sourceSermonId { sermon.sourceSermonID = source }
             sermon.createdAt = row.createdAt
             sermon.updatedAt = row.updatedAt
         }

@@ -22,16 +22,32 @@ struct VersificationMap: Sendable {
     /// KJV verses the exceptions hand to other verse numbers, so no verse
     /// with the same number takes them too.
     private let claimed: Set<VerseID>
+    /// The exceptions by the KJV verses they hold.
+    private let byKJV: [VerseID: VerseAlignment]
 
     init(exceptions: [VerseAlignment]) {
         var table: [VerseID: VerseAlignment] = [:]
+        var kjvTable: [VerseID: VerseAlignment] = [:]
         for alignment in exceptions {
             for verse in alignment.verses {
                 table[verse] = alignment
             }
+            for verse in alignment.kjv {
+                kjvTable[verse] = alignment
+            }
         }
         self.exceptions = table
+        byKJV = kjvTable
         claimed = Set(exceptions.flatMap(\.kjv))
+    }
+
+    /// This Bible's own verses holding the KJV's `start...end` (the other
+    /// way from `alignment(of:)`), for passages stored in KJV numbering
+    /// such as a church's sermon references: the first and last verse.
+    func ownRange(forKJV start: VerseID, through end: VerseID) -> (start: VerseID, end: VerseID) {
+        let first = byKJV[start]?.verses.first ?? start
+        let last = byKJV[end]?.verses.last ?? end
+        return (min(first, last), max(first, last))
     }
 
     /// The alignment a verse belongs to.

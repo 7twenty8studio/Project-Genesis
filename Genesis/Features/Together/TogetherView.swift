@@ -50,6 +50,8 @@ struct TogetherView: View {
                     switch route {
                     case let .group(id): GroupDetailView(groupID: id)
                     case let .post(post): CommunityPostDetailView(post: post)
+                    case let .sermon(slug): ChurchSermonScreen(slug: slug)
+                    case .churchSearch: ChurchSearchView()
                     }
                 }
         }

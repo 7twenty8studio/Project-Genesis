@@ -709,6 +709,28 @@ shares; README.md has the architecture.
   the web come only from the five free Bibles' bibles/web/v1 files
   (Tools/BibleData/export_web_chapters.py). Web text in English, Spanish
   and Portuguese in web/src/lib/messages.ts (tested).
+- App (Genesis/Core/ChurchSermons, Genesis/Features/ChurchSermons):
+  `ChurchSermonBackend` (`\.churchSermons`; Supabase, or
+  `InMemoryChurchSermonBackend` in UI tests, mirroring the rules) reads
+  `published_sermon`, `group_sermons` (published, live rows only),
+  `search_sermon_churches`, `report_church_sermon`, covers through
+  sermon-cover (asked each time shown, never saved) and counts through
+  sermon-events. Links: `ChurchSermonLink` (https://versely.7twenty8studio.com/s/<slug>,
+  Associated Domains `applinks:`, and versely://sermon/<slug>) →
+  `AppRouter.openSermon` → a sheet over any tab (`ChurchSermonScreen`,
+  reloaded on each open, sign-in and return to the app). Church groups show
+  `GroupSermonsSection`; Together has Find a Church (`ChurchSearchView`,
+  names only, no location). `PublishedSermonView`: the outline as
+  published, passages in `ChurchPassageSheet` verbatim from the person's
+  Bible (or the quoted free Bible if installed) through
+  `VersificationMap.ownRange(forKJV:through:)`, Copy per section, series,
+  report, and Hide Sermons from a church (`HiddenChurches`, on the device).
+  Notes: Take Notes makes a private `Sermon` with `sourceSermonID`
+  (`ChurchSermonNotes`, details and passages only), synced as
+  sermons.source_sermon_id (sent only when set) and kept after an
+  unpublish. Switch `OptionalFeature.churchSermons` (needs `church_sermons`
+  and `groups`); What's New "church-sermons" behind the flag. Counts are
+  Product Interaction, not linked (privacy manifest, APPLE_SETUP.md).
 
 ## Journal extras (Premium)
 - `PremiumFeature.journalExtras`, checked with `EntitlementService.allows` at
