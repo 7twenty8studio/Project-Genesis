@@ -1,0 +1,153 @@
+// A stand-in for the Versely Supabase project, for the browser checks in
+// check.cjs only (web/e2e/run.sh). It answers like the database's functions
+// for one church (Grace Church), a draft, a link sermon and a members-only
+// sermon; the access rules themselves are tested against Postgres in
+// supabase/tests/church_sermons. Nothing here talks to the network.
+import { createServer } from "node:http";
+import { readFileSync, existsSync } from "node:fs";
+import { randomUUID } from "node:crypto";
+
+const BIBLES = process.env.MOCK_BIBLES ?? "build/web-bibles";
+const GROUP = "11111111-1111-4111-8111-111111111111";
+const DRAFT = "22222222-2222-4222-8222-222222222222";
+const LIVE = "33333333-3333-4333-8333-333333333333";
+const MEMBERS = "55555555-5555-4555-8555-555555555555";
+const covers = new Map(); // path -> Buffer
+const sermons = new Map();
+const base = {
+  group_id: GROUP, speaker: "Pastor Ana", series: "Rest", preached_on: "2026-11-22", time_zone: "America/Chicago",
+  location: "Main campus", language: "en", audience: "link", cover_id: null, cover_alt: "", cover_decorative: false,
+  hidden_at: null, published_revision_id: null, published_at: null, live_audience: null, status: "draft", draft_review: null,
+};
+let failSaves = false;
+let slowClose = 0;
+sermons.set(DRAFT, { ...base, id: DRAFT, slug: "draftdraft", title: "", draft_blocks: [], draft_version: 0, language: process.env.MOCK_LANG ?? "en" });
+const liveBlocks = [
+  { id: "a", kind: "paragraph", text: "Jesus invites the weary to come." },
+  { id: "h1", kind: "heading", text: "Come to me", level: 2 },
+  { id: "s1", kind: "scripture", ref: { raw: "Matthew 11:28-30", start: 40011028, end: 40011030, status: "verified", label: "KJV", quote: "Come unto me" } },
+  { id: "l", kind: "list", items: ["All who labor", "All who are heavy laden"], ordered: true },
+  { id: "h2", kind: "heading", text: "Learn from me", level: 2 },
+  { id: "s2", kind: "scripture", ref: { raw: "Rom 8:28", start: 45008028, end: 45008028, status: "verified", label: "NIV", quote: "And we know" } },
+  { id: "q", kind: "quote", text: "Rest is a gift, not a reward." },
+  { id: "s3", kind: "scripture", ref: { raw: "Psalm 151", start: null, end: null, status: "ambiguous", label: null, quote: null } },
+];
+sermons.set(LIVE, { ...base, id: LIVE, slug: "livelivel1", title: "Rest for the Weary", draft_blocks: liveBlocks, draft_version: 3, status: "published", live_audience: "link", published_at: "2026-11-15T15:00:00Z", published_revision_id: "44444444-4444-4444-8444-444444444444", published_version: 3 });
+sermons.set(MEMBERS, { ...base, id: MEMBERS, slug: "membmemb01", title: "Members Night Secret", audience: "members", draft_blocks: [{ id: "m", kind: "paragraph", text: "Only for members of Grace Church." }], draft_version: 1, status: "published", live_audience: "members", published_at: "2026-11-14T15:00:00Z", published_revision_id: "66666666-6666-4666-8666-666666666666", published_version: 1 });
+
+function publishable(blocks) {
+  const codes = { kjv: "KJV", web: "WEB", asv: "ASV", rv1909: "RV1909", blivre: "BLIVRE" };
+  return blocks.map((b) => {
+    if (b.kind !== "scripture") return b;
+    const { quote, ...ref } = b.ref;
+    const translation = ref.status === "verified" ? codes[(ref.label ?? "").toLowerCase().replace(/[^a-z0-9]/g, "")] ?? null : null;
+    return { ...b, ref: { ...ref, translation, quote_withheld: !!quote && !translation } };
+  });
+}
+function published(s) {
+  return {
+    status: "ok", id: s.id, slug: s.slug, group_id: GROUP, church: "Grace Church", title: s.title, speaker: s.speaker, series: s.series,
+    preached_on: s.preached_on, time_zone: s.time_zone, location: s.location, language: s.language,
+    cover: s.cover_id ? { id: s.cover_id, path: `${GROUP}/${s.id}/${s.cover_id}.jpg`, alt: s.cover_alt, decorative: s.cover_decorative } : null,
+    audience: s.live_audience, revision: 1, published_at: s.published_at, blocks: publishable(s.published_blocks ?? s.draft_blocks),
+    previous: { slug: "prevprev01", title: "Weary and Worn", speaker: "Pastor Ana", series: "Rest", preached_on: "2026-11-15", audience: "link" }, next: null, is_member: false,
+  };
+}
+const fail = (res, message, status = 400) => send(res, status, { code: "P0001", message, details: null });
+function send(res, status, body, type = "application/json") {
+  res.writeHead(status, { "Content-Type": type, "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "*" });
+  res.end(type === "application/json" ? JSON.stringify(body) : body);
+}
+const read = (req) => new Promise((done) => { const chunks = []; req.on("data", (c) => chunks.push(c)); req.on("end", () => done(Buffer.concat(chunks))); });
+const signedIn = (req) => (req.headers.authorization ?? "").includes("leader-token");
+
+createServer(async (req, res) => {
+  const url = new URL(req.url, "http://x");
+  if (req.method === "OPTIONS") return send(res, 204, "", "text/plain");
+  const body = await read(req);
+  const json = () => (body.length ? JSON.parse(body.toString()) : {});
+  const p = url.pathname;
+  if (p.startsWith("/storage/v1/object/public/bibles/")) {
+    const file = `${BIBLES}/${p.slice("/storage/v1/object/public/bibles/".length)}`;
+    return existsSync(file) ? send(res, 200, readFileSync(file), "application/json; charset=utf-8") : send(res, 404, { error: "not found" });
+  }
+  if (p === "/functions/v1/sermon-events") return send(res, 200, { ok: true });
+  if (p.startsWith("/storage/v1/object/sermon-covers/") && req.method === "POST") {
+    if (!signedIn(req)) return send(res, 403, {});
+    covers.set(p.slice("/storage/v1/object/sermon-covers/".length), body);
+    return send(res, 200, { Key: p });
+  }
+  if (p === "/mock/slow-close") { slowClose = Number(url.searchParams.get("ms") ?? 0); return send(res, 200, { slowClose }); }
+  if (p === "/mock/fail-saves") { failSaves = url.searchParams.get("on") === "1"; return send(res, 200, { failSaves }); }
+  if (p === "/mock/touch") { const t = sermons.get(url.searchParams.get("id")); t.title = url.searchParams.get("title"); if (url.searchParams.get("publish")) { t.status = "published"; t.live_audience = t.audience; } t.draft_version++; return send(res, 200, t); }
+  if (p === "/mock/sermon") return send(res, 200, sermons.get(url.searchParams.get("id")) ?? null);
+  if (p.startsWith("/storage/v1/object/authenticated/sermon-covers/")) return send(res, 400, { error: "no client reads covers" });
+  if (p === "/functions/v1/sermon-cover") {
+    const path = url.searchParams.get("name") ?? "";
+    return covers.has(path) ? send(res, 200, covers.get(path), "image/jpeg") : send(res, 400, { error: "not found" });
+  }
+  if (p === "/rest/v1/church_sermons") {
+    if (!signedIn(req)) return send(res, 200, []);
+    const id = (url.searchParams.get("id") ?? "").replace("eq.", "");
+    const s = sermons.get(id);
+    return send(res, 200, s && !s.deleted ? [s] : []);
+  }
+  if (p === "/rest/v1/church_sermon_revisions") return send(res, 200, [{ draft_version: sermons.get(LIVE).published_version }]);
+  if (p.startsWith("/rest/v1/rpc/")) {
+    const fn = p.slice("/rest/v1/rpc/".length);
+    const a = json();
+    if (fn === "published_sermon") {
+      const s = [...sermons.values()].find((x) => x.slug === a.p_slug && x.status === "published" && !x.deleted);
+      if (!s) return send(res, 200, { status: "not_found" });
+      if (s.live_audience === "members" && !signedIn(req)) return send(res, 200, { status: "members_only" });
+      return send(res, 200, published(s));
+    }
+    if (!signedIn(req)) return fail(res, "not_allowed", 400);
+    const s = sermons.get(a.p_sermon);
+    switch (fn) {
+      case "my_sermon_churches":
+        return send(res, 200, [{ id: GROUP, name: "Grace Church", role: "owner", listed: false }]);
+      case "group_sermons":
+        return send(res, 200, [...sermons.values()].filter((x) => !x.deleted).map((x) => ({ ...x, hidden: false, has_cover: !!x.cover_id, unpublished_changes: x.status === "published" && x.published_version !== x.draft_version })));
+      case "group_sermon_reports":
+        return send(res, 200, [{ sermon_id: LIVE, slug: "livelivel1", title: "Rest for the Weary", hidden: false, report_count: 1, reasons: ["Typo in point two"], last_reported_at: "2026-11-20T10:00:00Z" }]);
+      case "create_church_sermon": {
+        const id = randomUUID();
+        sermons.set(id, { ...base, id, slug: Math.random().toString(36).slice(2, 12).padEnd(10, "a"), title: "", draft_blocks: [], draft_version: 0, time_zone: null });
+        return send(res, 200, { id, slug: sermons.get(id).slug, draft_version: 0 });
+      }
+      case "save_church_sermon": {
+        if (!s) return fail(res, "not_found");
+        if (failSaves) return send(res, 503, { message: "unavailable" });
+        if (a.p_expected_version !== s.draft_version) return fail(res, "draft_changed");
+        const d = a.p_details ?? {};
+        for (const [k, v] of Object.entries(d)) if (k === "cover") s.cover_id = v; else if (k === "review") s.draft_review = v; else s[k] = v;
+        if (a.p_blocks) s.draft_blocks = a.p_blocks;
+        s.draft_version += 1;
+        return send(res, 200, { draft_version: s.draft_version });
+      }
+      case "publish_church_sermon": {
+        if (a.p_expected_version !== s.draft_version) return fail(res, "draft_changed");
+        if (!s.title.trim()) return fail(res, "needs_title");
+        const r = s.draft_review;
+        const open = (r?.items ?? []).filter((i) => !r.decisions?.[i.key] && !(i.kind === "note" && !(i.note?.count > 0))
+          && !(i.kind === "reference" && !s.draft_blocks.some((b) => b.id === i.blockId && b.kind === "scripture" && b.ref.status === "ambiguous"))
+          && !(i.kind === "quotation" && !s.draft_blocks.some((b) => b.id === i.blockId && b.kind !== "scripture")));
+        if (open.length) return fail(res, "review_open");
+        s.status = "published"; s.live_audience = s.audience; s.published_at = new Date().toISOString(); s.published_version = s.draft_version; s.published_blocks = s.draft_blocks;
+        const withheld = publishable(s.draft_blocks).filter((b) => b.kind === "scripture" && b.ref.quote_withheld).length;
+        return send(res, 200, { revision: randomUUID(), number: 1, withheld_quotes: withheld, draft_version: s.draft_version, repeated: false });
+      }
+      case "unpublish_church_sermon": if (slowClose) await new Promise((r) => setTimeout(r, slowClose));
+        // falls through to the change
+      case "unpublish_church_sermon_now": s.status = "unpublished"; s.draft_version++; return send(res, 200, { draft_version: s.draft_version, previous_version: s.draft_version - 1 });
+      case "restrict_church_sermon": s.audience = "members"; if (s.live_audience) s.live_audience = "members"; s.draft_version++; return send(res, 200, { draft_version: s.draft_version, previous_version: s.draft_version - 1 });
+      case "delete_church_sermon": s.deleted = true; return send(res, 200, null);
+      case "duplicate_church_sermon": { const id = randomUUID(); sermons.set(id, { ...s, id, slug: "dupdupdup1", status: "draft", draft_version: 0, cover_id: null, preached_on: null }); return send(res, 200, { id, slug: "dupdupdup1", draft_version: 0 }); }
+      case "new_church_sermon_cover": { const cover = randomUUID(); return send(res, 200, { cover, path: `${GROUP}/${s.id}/${cover}.jpg` }); }
+      case "set_sermons_listed": case "review_church_sermon_reports": return send(res, 200, null);
+    }
+    return fail(res, `unknown ${fn}`, 404);
+  }
+  send(res, 404, { error: p });
+}).listen(54329, () => console.log("mock on 54329"));

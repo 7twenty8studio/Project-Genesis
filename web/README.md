@@ -12,6 +12,7 @@ the 7twenty8 site. This version differs from older Next.js: read
     npm test             # Node tests for src/lib (no browser, no network)
     npm run lint
     npm run build
+    ./e2e/run.sh         # browser checks against a stand-in server (e2e/run.sh says how)
 
 | Route | What |
 | --- | --- |
