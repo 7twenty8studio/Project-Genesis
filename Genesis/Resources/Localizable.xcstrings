@@ -4113,6 +4113,38 @@
         }
       }
     },
+    "Automatic (%@)": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automática (%@)"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automática (%@)"
+          }
+        }
+      }
+    },
+    "Automatic follows the Bible you're reading, or a free Bible in its language when that's a YouVersion Bible, which Memorize can't use.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automática sigue la Biblia que estás leyendo, o una Biblia gratuita en su idioma cuando es una Biblia de YouVersion, que Memorizar no puede usar."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automática segue a Bíblia que você está lendo, ou uma Bíblia gratuita no idioma dela quando for uma Bíblia do YouVersion, que Memorizar não pode usar."
+          }
+        }
+      }
+    },
     "Automatic uses the most natural voice on this device. For a much more natural sound, download a Premium voice (Zoe, Ava, Evan or Nathan, for example) in Settings › Accessibility › Spoken Content › Voices › English, then come back here.": {
       "localizations": {
         "es": {
@@ -5515,6 +5547,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Escolha o idioma do Versely"
+          }
+        }
+      }
+    },
+    "Choose a Bible": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elige una Biblia"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escolha uma Bíblia"
           }
         }
       }
@@ -14784,6 +14832,22 @@
         }
       }
     },
+    "Memorize In": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memorizar en"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memorizar em"
+          }
+        }
+      }
+    },
     "Memorize Review": {
       "localizations": {
         "es": {
@@ -14829,6 +14893,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Memorizar juntos"
+          }
+        }
+      }
+    },
+    "Memorize in the Bible you choose": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memoriza en la Biblia que elijas"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memorize na Bíblia que você escolher"
+          }
+        }
+      }
+    },
+    "Memorize now has a Bible menu: keep Automatic to follow the Bible you're reading, or pick the Bible you want to learn your verses in.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memorizar ahora tiene un menú de Biblia: deja Automática para seguir la Biblia que estás leyendo, o elige la Biblia en la que quieres aprender tus versículos."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memorizar agora tem um menu de Bíblia: deixe Automática para seguir a Bíblia que você está lendo, ou escolha a Bíblia em que quer aprender seus versículos."
           }
         }
       }

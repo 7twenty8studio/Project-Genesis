@@ -104,4 +104,17 @@ struct MemoriseTests {
         let shownWithoutSaved = BibleLibrary.memoryTranslation(saved: nil, reading: .web)
         #expect(shownWithoutSaved == .web)
     }
+
+    @Test func memoriseOffersEveryBibleButYouVersionAndLockedOnes() {
+        let niv = Translation(id: "NIV", name: "New International Version", year: "2011", license: "© Biblica, Inc.", summary: "", isYouVersion: true)
+        let premium = Translation(id: "PRM", name: "Premium", year: "", license: "© Publisher", summary: "", requiresPremium: true)
+        let licensed = Translation(id: "TST", name: "Licensed", year: "", license: "© Test", summary: "")
+        let all = [Translation.kjv, Translation.web, niv, premium, licensed, Translation.bibliaLivre]
+        let offered = BibleLibrary.memoriseBibles(among: all) { $0.requiresPremium }
+        let ids = offered.map { $0.id }
+        #expect(ids == ["KJV", "WEB", "TST", "BLIVRE"])
+        let withPremium = BibleLibrary.memoriseBibles(among: all) { _ in false }
+        let premiumIDs = withPremium.map { $0.id }
+        #expect(premiumIDs == ["KJV", "WEB", "PRM", "TST", "BLIVRE"])
+    }
 }
