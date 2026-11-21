@@ -4501,6 +4501,22 @@
         }
       }
     },
+    "Bible": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biblia"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bíblia"
+          }
+        }
+      }
+    },
     "Bible Dictionaries": {
       "comment": "Study resource kind",
       "localizations": {
@@ -5937,6 +5953,23 @@
         }
       }
     },
+    "Church Sermons": {
+      "comment": "Optional feature: outlines churches publish for their sermons",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sermones de la iglesia"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sermões da igreja"
+          }
+        }
+      }
+    },
     "Church and leaders": {
       "localizations": {
         "es": {
@@ -5965,6 +5998,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Grupos da igreja"
+          }
+        }
+      }
+    },
+    "Church name": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nombre de la iglesia"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nome da igreja"
+          }
+        }
+      }
+    },
+    "Church sermons aren't available yet": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los sermones de iglesias aún no están disponibles"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Os sermões de igrejas ainda não estão disponíveis"
           }
         }
       }
@@ -6756,6 +6821,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Copiar"
+          }
+        }
+      }
+    },
+    "Copy Outline": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copiar el bosquejo"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copiar o esboço"
+          }
+        }
+      }
+    },
+    "Copy: %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copiar: %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copiar: %@"
           }
         }
       }
@@ -8705,6 +8802,22 @@
         }
       }
     },
+    "Every passage in your Bible": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada pasaje en tu Biblia"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada passagem na sua Bíblia"
+          }
+        }
+      }
+    },
     "Every place on the Bible map now shows how sure scholars are of where it was. Uncertain sites have a question mark, and you can hide them from the Journeys menu.": {
       "localizations": {
         "es": {
@@ -9270,6 +9383,38 @@
         }
       }
     },
+    "Find a Church": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar una iglesia"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encontrar uma igreja"
+          }
+        }
+      }
+    },
+    "Find a Church’s Sermons": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar los sermones de una iglesia"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Encontrar os sermões de uma igreja"
+          }
+        }
+      }
+    },
     "Find a book": {
       "localizations": {
         "es": {
@@ -9689,6 +9834,22 @@
         }
       }
     },
+    "For church members": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para miembros de la iglesia"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para membros da igreja"
+          }
+        }
+      }
+    },
     "For close study": {
       "localizations": {
         "es": {
@@ -9717,6 +9878,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Para a leitura diária"
+          }
+        }
+      }
+    },
+    "For members of %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para miembros de %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para membros de %@"
           }
         }
       }
@@ -11411,6 +11588,22 @@
         }
       }
     },
+    "Hide": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ocultar"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ocultar"
+          }
+        }
+      }
+    },
     "Hide God's word in your heart": {
       "localizations": {
         "es": {
@@ -11423,6 +11616,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Guarde a palavra de Deus no coração"
+          }
+        }
+      }
+    },
+    "Hide Sermons from %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ocultar los sermones de %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ocultar os sermões de %@"
+          }
+        }
+      }
+    },
+    "Hide sermons from %@?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Ocultar los sermones de %@?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ocultar os sermões de %@?"
           }
         }
       }
@@ -12798,6 +13023,22 @@
         }
       }
     },
+    "Jump to Section": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ir a una sección"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ir para uma seção"
+          }
+        }
+      }
+    },
     "Jussive": {
       "localizations": {
         "es": {
@@ -12922,6 +13163,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "O motivo deve ter menos de 300 caracteres."
+          }
+        }
+      }
+    },
+    "Keep the reason under 500 characters.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El motivo debe tener menos de 500 caracteres."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O motivo deve ter menos de 500 caracteres."
           }
         }
       }
@@ -14800,6 +15057,22 @@
         }
       }
     },
+    "Members only": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solo para miembros"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Só para membros"
+          }
+        }
+      }
+    },
     "Members who allow notifications get one.": {
       "localizations": {
         "es": {
@@ -16640,6 +16913,22 @@
         }
       }
     },
+    "No listed church matches “%@”. Ask your church for its sermon link or QR code.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ninguna iglesia de la lista coincide con «%@». Pide a tu iglesia el enlace o el código QR del sermón."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhuma igreja da lista corresponde a “%@”. Peça à sua igreja o link ou o QR code do sermão."
+          }
+        }
+      }
+    },
     "No matching prayers": {
       "localizations": {
         "es": {
@@ -16908,6 +17197,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ainda não há anotações de sermões"
+          }
+        }
+      }
+    },
+    "No sermons shared by link yet.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aún no hay sermones compartidos por enlace."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ainda não há sermões compartilhados por link."
           }
         }
       }
@@ -17863,6 +18168,22 @@
         }
       }
     },
+    "Open My Notes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir mis notas"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir minhas anotações"
+          }
+        }
+      }
+    },
     "Open Settings": {
       "localizations": {
         "es": {
@@ -17907,6 +18228,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Abrir no leitor"
+          }
+        }
+      }
+    },
+    "Open the outline": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abre el bosquejo"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abra o esboço"
           }
         }
       }
@@ -20219,6 +20556,22 @@
         }
       }
     },
+    "Previous": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anterior"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anterior"
+          }
+        }
+      }
+    },
     "Previous chapter": {
       "localizations": {
         "es": {
@@ -20459,6 +20812,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Domínio público"
+          }
+        }
+      }
+    },
+    "Publish in Church Studio": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Publicar en Church Studio"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Publicar no Church Studio"
           }
         }
       }
@@ -22402,6 +22771,22 @@
         }
       }
     },
+    "Report this sermon?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Reportar este sermón?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Denunciar este sermão?"
+          }
+        }
+      }
+    },
     "Report this?": {
       "localizations": {
         "es": {
@@ -22462,6 +22847,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Denúncias"
+          }
+        }
+      }
+    },
+    "Reports are private and go to the church's moderators.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los reportes son privados y llegan a los moderadores de la iglesia."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "As denúncias são particulares e vão para os moderadores da igreja."
           }
         }
       }
@@ -22998,6 +23399,22 @@
         }
       }
     },
+    "Scan your church's QR code or tap its link to follow the sermon outline in Versely. Its sermons also appear on your church's group page.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escanea el código QR de tu iglesia o toca su enlace para seguir el bosquejo del sermón en Versely. Sus sermones también aparecen en la página del grupo de tu iglesia."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Escaneie o QR code da sua igreja ou toque no link dela para acompanhar o esboço do sermão no Versely. Os sermões também aparecem na página do grupo da sua igreja."
+          }
+        }
+      }
+    },
     "Scholars agree on where this was.": {
       "localizations": {
         "es": {
@@ -23269,6 +23686,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Busque um tema como perdão ou medo para ver as passagens que falam dele."
+          }
+        }
+      }
+    },
+    "Search for your church by its name. Only churches that chose to be listed appear, with the sermons they've shared by link.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Busca tu iglesia por su nombre. Solo aparecen las iglesias que eligieron figurar en la lista, con los sermones que compartieron por enlace."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Procure sua igreja pelo nome. Só aparecem as igrejas que escolheram entrar na lista, com os sermões que compartilharam por link."
           }
         }
       }
@@ -23917,6 +24350,38 @@
         }
       }
     },
+    "Series: %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serie: %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Série: %@"
+          }
+        }
+      }
+    },
+    "Sermon": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sermón"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sermão"
+          }
+        }
+      }
+    },
     "Sermon Notes": {
       "localizations": {
         "es": {
@@ -23978,6 +24443,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sermões"
+          }
+        }
+      }
+    },
+    "Sermons you publish in Church Studio appear here.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los sermones que publiques en Church Studio aparecen aquí."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Os sermões que você publicar no Church Studio aparecem aqui."
           }
         }
       }
@@ -24286,6 +24767,22 @@
         }
       }
     },
+    "Shared by %@. Passages are shown from your Bible on this device.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compartido por %@. Los pasajes se muestran desde tu Biblia en este dispositivo."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compartilhado por %@. As passagens são mostradas da sua Bíblia neste dispositivo."
+          }
+        }
+      }
+    },
     "Shares private information": {
       "localizations": {
         "es": {
@@ -24378,6 +24875,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mostrar cada dia"
+          }
+        }
+      }
+    },
+    "Show Sermons from %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar los sermones de %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar os sermões de %@"
           }
         }
       }
@@ -24478,6 +24991,22 @@
         }
       }
     },
+    "Show them again to read this one.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vuelve a mostrarlos para leer este."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostre-os de novo para ler este."
+          }
+        }
+      }
+    },
     "Shows each word's transliteration and meaning beneath it": {
       "localizations": {
         "es": {
@@ -24506,6 +25035,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mostra só a Bíblia, as anotações e os destaques"
+          }
+        }
+      }
+    },
+    "Shows the passage": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Muestra el pasaje"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostra a passagem"
           }
         }
       }
@@ -24682,6 +25227,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Entre para ter seus destaques, anotações, planos e orações em todos os seus dispositivos."
+          }
+        }
+      }
+    },
+    "Sign in to report a sermon.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inicia sesión para reportar un sermón."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entre para denunciar um sermão."
           }
         }
       }
@@ -26560,6 +27121,38 @@
         }
       }
     },
+    "Take Notes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tomar notas"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fazer anotações"
+          }
+        }
+      }
+    },
+    "Take Notes starts private sermon notes with the passages already added. They stay yours, even if the church takes the outline down.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tomar notas empieza notas privadas del sermón con los pasajes ya añadidos. Siguen siendo tuyas, aunque la iglesia retire el bosquejo."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fazer anotações começa anotações particulares do sermão com as passagens já adicionadas. Elas continuam suas, mesmo que a igreja retire o esboço."
+          }
+        }
+      }
+    },
     "Take Photo": {
       "localizations": {
         "es": {
@@ -26685,6 +27278,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Conversem e fiquem em contato"
+          }
+        }
+      }
+    },
+    "Tap a reference to read it in your own Bible, then carry on where you were.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca una referencia para leerla en tu propia Biblia y luego sigue donde estabas."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toque em uma referência para lê-la na sua própria Bíblia e depois continue de onde parou."
           }
         }
       }
@@ -27151,6 +27760,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Obrigado"
+          }
+        }
+      }
+    },
+    "Thank you. The church's moderators will review it.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gracias. Los moderadores de la iglesia lo revisarán."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Obrigado. Os moderadores da igreja vão analisar."
           }
         }
       }
@@ -27776,6 +28401,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "A comunidade do Versely"
+          }
+        }
+      }
+    },
+    "The church may have unpublished it, or the link may be mistyped.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puede que la iglesia haya dejado de publicarlo, o que el enlace esté mal escrito."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A igreja pode ter despublicado o sermão, ou o link pode estar digitado errado."
           }
         }
       }
@@ -28822,6 +29463,22 @@
         }
       }
     },
+    "This church's sermons aren't available to you.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los sermones de esta iglesia no están disponibles para ti."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Os sermões desta igreja não estão disponíveis para você."
+          }
+        }
+      }
+    },
     "This day is yours": {
       "comment": "Morning offering heading",
       "localizations": {
@@ -28951,6 +29608,22 @@
         }
       }
     },
+    "This part of Versely isn't open yet. Please try again later.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta parte de Versely aún no está abierta. Vuelve a intentarlo más tarde."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esta parte do Versely ainda não está aberta. Tente de novo mais tarde."
+          }
+        }
+      }
+    },
     "This passage is still yours to learn.": {
       "localizations": {
         "es": {
@@ -29043,6 +29716,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "Esta gravação não inclui este capítulo."
+          }
+        }
+      }
+    },
+    "This sermon couldn't load": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo cargar este sermón"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não foi possível carregar este sermão"
+          }
+        }
+      }
+    },
+    "This sermon is for members of its church. Join the church's group in Together with its invite code to read it.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este sermón es para los miembros de su iglesia. Únete al grupo de la iglesia en Juntos con su código de invitación para leerlo."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este sermão é para os membros da igreja. Entre no grupo da igreja em Juntos com o código de convite para lê-lo."
+          }
+        }
+      }
+    },
+    "This sermon is for members of its church. Sign in with the account you use in its group.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este sermón es para los miembros de su iglesia. Inicia sesión con la cuenta que usas en su grupo."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este sermão é para os membros da igreja. Entre com a conta que você usa no grupo."
+          }
+        }
+      }
+    },
+    "This sermon is no longer available.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este sermón ya no está disponible."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este sermão não está mais disponível."
+          }
+        }
+      }
+    },
+    "This sermon isn't available": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este sermón no está disponible"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este sermão não está disponível"
           }
         }
       }
@@ -33970,6 +34723,22 @@
         }
       }
     },
+    "You won't see their sermons in Versely. They aren't told, and you can show them again from one of their links.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No verás sus sermones en Versely. No se les avisa, y puedes volver a mostrarlos desde uno de sus enlaces."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você não verá os sermões dessa igreja no Versely. Ela não é avisada, e você pode mostrá-los de novo a partir de um dos links dela."
+          }
+        }
+      }
+    },
     "You wrote %lld notes and %lld prayers, and marked %lld prayers answered.": {
       "localizations": {
         "es": {
@@ -34174,6 +34943,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você já criou o máximo de grupos que uma pessoa pode liderar."
+          }
+        }
+      }
+    },
+    "You've hidden sermons from %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ocultaste los sermones de %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você ocultou os sermões de %@"
           }
         }
       }
@@ -34515,6 +35300,38 @@
         }
       }
     },
+    "Your church's sermon outline from its link or QR code, with every passage in your Bible and room for your own notes.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "El bosquejo del sermón de tu iglesia desde su enlace o código QR, con cada pasaje en tu Biblia y espacio para tus propias notas."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O esboço do sermão da sua igreja pelo link ou QR code, com cada passagem na sua Bíblia e espaço para as suas anotações."
+          }
+        }
+      }
+    },
+    "Your church's sermons": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los sermones de tu iglesia"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Os sermões da sua igreja"
+          }
+        }
+      }
+    },
     "Your data stays safe in your account either way.": {
       "localizations": {
         "es": {
@@ -34770,6 +35587,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Seu nome aparece com seus pedidos de oração e mensagens. Seu primeiro nome, ou como sua igreja conhece você, funciona bem."
+          }
+        }
+      }
+    },
+    "Your own notes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus propias notas"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suas próprias anotações"
           }
         }
       }

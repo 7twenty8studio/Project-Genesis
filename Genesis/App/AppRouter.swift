@@ -9,6 +9,17 @@ enum AppTab: Hashable {
 enum TogetherRoute: Hashable {
     case group(UUID)
     case post(CommunityPost)
+    /// A church's published sermon, by its link's slug.
+    case sermon(String)
+    /// Find a church's sermons by its name.
+    case churchSearch
+}
+
+/// A church sermon opened from its link (a Universal Link, a QR code or
+/// versely://sermon/<slug>), shown over whatever tab is open.
+struct SermonLinkRoute: Identifiable, Hashable {
+    let slug: String
+    var id: String { slug }
 }
 
 /// Screens pushed on the Explore tab (timeline, maps, people).
@@ -42,6 +53,8 @@ final class AppRouter {
     var showsAccount = false
     /// Search as a full-screen sheet, used on iPhone where Search isn't a tab.
     var showsSearch = false
+    /// A church sermon opened from its link.
+    var sermonLink: SermonLinkRoute?
     @ObservationIgnored let reader: ReaderViewModel
 
     init(reader: ReaderViewModel) {
@@ -50,6 +63,8 @@ final class AppRouter {
 
     func read(_ verse: VerseID) {
         reader.open(verse)
+        // Out of a sermon opened from its link, into the reader.
+        sermonLink = nil
         tab = .read
     }
 
@@ -86,8 +101,19 @@ final class AppRouter {
         homePath = [route]
     }
 
-    /// Handles versely:// links from widgets and notifications.
+    /// A church sermon from its link.
+    func openSermon(slug: String) {
+        sermonLink = SermonLinkRoute(slug: slug)
+    }
+
+    /// Handles versely:// links from widgets and notifications, and a
+    /// church sermon's link (https://versely.7twenty8studio.com/s/<slug>,
+    /// a Universal Link, or versely://sermon/<slug>).
     func handle(_ url: URL) {
+        if let slug = ChurchSermonLink.slug(in: url) {
+            openSermon(slug: slug)
+            return
+        }
         guard url.scheme == GenesisLink.scheme else { return }
         // Sign in with Google's return address belongs to its web sheet.
         if GoogleOAuth.isCallback(url) { return }

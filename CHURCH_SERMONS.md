@@ -10,9 +10,11 @@ before the next one starts:
 
 1. **Foundation and security** (PR #37, merged): database, access rules,
    the quotation rule, covers, reports, counts, the shared reference parser.
-2. **Church Studio and the guest page** (`web/`, versely.7twenty8studio.com;
-   web/README.md).
-3. The iPhone and iPad app.
+2. **Church Studio and the guest page** (PR #42, merged; `web/`,
+   versely.7twenty8studio.com; web/README.md).
+3. **The iPhone and iPad app**: links, sermons in church groups, Find a
+   Church, the outline with passages and private notes (CLAUDE.md ›
+   Church sermons).
 4. Pilot and release checks.
 
 Nothing here is applied to the production database, deployed or sent to
@@ -108,6 +110,8 @@ Tests:
     node --experimental-strip-types --test supabase/functions/*/*.test.ts
     python3 Tools/BibleData/export_reference_books.py --check
     cd web && npm test && npm run lint && npm run build
+    ./Scripts/build.sh                     # app unit tests: GenesisTests/ChurchSermonTests.swift
+    ./Scripts/build.sh --ui                # GenesisUITests/ChurchSermonsUITests.swift (in-memory server)
     python3 Tools/BibleData/export_web_chapters.py --rv1909 <RV1909.sqlite or spa-rv1909.usfx.xml> --out build/web-bibles --check
 
 ## The web (checkpoint 2)
@@ -185,3 +189,6 @@ Tests:
    versely.7twenty8studio.com, and `VERSELY_APPLE_TEAM_ID` (for the
    Universal Links file). `NEXT_PUBLIC_VERSELY_APP_STORE_ID` once Versely
    is listed.
+7. Apple: turn on Associated Domains for com.7twenty8studio.versely
+   (APPLE_SETUP.md › Universal Links for church sermons) before the build
+   that ships it.
