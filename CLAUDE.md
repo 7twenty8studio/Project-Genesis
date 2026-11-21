@@ -430,7 +430,9 @@ shares; README.md has the architecture.
   is due (never as Easy). Levels Seed → Cedar come from mastered passages;
   the practice streak is local (`MemoryProgress`, UserDefaults). `MemoryVerse` (SwiftData,
   synced as `memory_verses`) stores the passage's verse ids, translation and
-  `MemorySchedule` (a gentle SM-2); never the text. Hints are the passage's
+  `MemorySchedule` (a gentle SM-2); never the text. It's shown in
+  `BibleLibrary.memoryTranslation(for:)`: the saved Bible while it's in the
+  reader's language, else the Bible being read (premium tools). Hints are the passage's
   opening words, verbatim (`MemoryHint.opening`), never altered text.
 - The Memorise widget reads `WidgetSnapshot.memorise` (written with the
   entitlement); deep link `versely://memorise`.
