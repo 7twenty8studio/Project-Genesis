@@ -6,6 +6,7 @@
 import { redirect } from "next/navigation";
 import { currentSession } from "@/lib/auth";
 import type { DraftBlock, DraftDetails } from "@/lib/draft";
+import type { DraftReview } from "@/lib/import/review";
 import { RpcError, rpc, uploadCover } from "@/lib/supabase";
 import { UUID } from "@/lib/studio.server";
 
@@ -44,7 +45,7 @@ export async function duplicateSermon(sermon: string): Promise<ActionResult> {
 export async function saveSermon(
   sermon: string,
   version: number,
-  details: Partial<DraftDetails> & { cover?: string | null },
+  details: Partial<DraftDetails> & { cover?: string | null; review?: DraftReview | null },
   blocks: DraftBlock[] | null,
 ): Promise<ActionResult<{ version: number }>> {
   if (!isID(sermon) || !Number.isInteger(version)) return { ok: false, code: "not_found" };

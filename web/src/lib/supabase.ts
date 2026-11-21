@@ -70,19 +70,20 @@ export async function signOut(session: Session): Promise<void> {
 }
 
 /**
- * Downloads a private cover as the person (or guest). Storage's
- * "Sermon covers: readers see" policy rechecks the sermon on every call
- * (20261121000000), so this answers 400/404 the moment it's unpublished,
- * restricted, hidden or switched off.
+ * A private cover for the person (or guest), from the sermon-cover Edge
+ * Function: it asks sermon_cover_access with this token on every call and
+ * only then reads the file, so this answers 404 the moment the sermon is
+ * unpublished, restricted, hidden or switched off. No client can read the
+ * bucket itself, so no signed link to a cover exists (20261121000000).
  */
 export async function downloadCover(path: string, token?: string): Promise<Response> {
-  return fetch(`${config.supabaseUrl}/storage/v1/object/authenticated/sermon-covers/${path}`, {
+  return fetch(`${config.supabaseUrl}/functions/v1/sermon-cover?name=${encodeURIComponent(path)}`, {
     headers: { apikey: config.supabaseAnonKey, Authorization: `Bearer ${token ?? config.supabaseAnonKey}` },
     cache: "no-store",
   });
 }
 
-/** Uploads a cover picture to the path new_church_sermon_cover gave (leaders only, by storage policy). */
+/** Uploads a cover picture to the path new_church_sermon_cover gave (leaders only, by storage's INSERT policy; never upserted, never read back). */
 export async function uploadCover(path: string, jpeg: ArrayBuffer, token: string): Promise<Response> {
   return fetch(`${config.supabaseUrl}/storage/v1/object/sermon-covers/${path}`, {
     method: "POST",

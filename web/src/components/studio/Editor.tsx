@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { closeSermon, deleteSermon, duplicateSermon, publishSermon, saveSermon, uploadSermonCover } from "@/app/studio/actions";
 import { draftProblems, type DraftBlock, type DraftDetails, type DraftRow } from "@/lib/draft";
 import { translator, type Lang } from "@/lib/i18n";
-import type { Decision, ReviewItem } from "@/lib/import/review";
+import type { DraftReview } from "@/lib/import/review";
 import { publishBlockers, refusalMessage } from "@/lib/studio";
 import { DetailsForm } from "./DetailsForm";
 import { OutlineEditor } from "./OutlineEditor";
@@ -13,20 +13,10 @@ import { SharePanel } from "./SharePanel";
 import { StatusBadge } from "./StatusBadge";
 import { Notice } from "./ui";
 
-export type Review = { items: ReviewItem[]; decisions: Record<string, Decision | undefined> };
+export type Review = DraftReview;
 type SaveState = "saved" | "unsaved" | "saving" | "error" | "conflict" | "invalid";
 const TABS = ["outline", "details", "preview", "share"] as const;
 type Tab = (typeof TABS)[number];
-
-const reviewKey = (id: string) => `versely.studio.review.${id}`;
-function loadReview(id: string): Review | null {
-  try {
-    const raw = window.localStorage.getItem(reviewKey(id));
-    return raw ? (JSON.parse(raw) as Review) : null;
-  } catch {
-    return null;
-  }
-}
 
 function detailsOf(row: DraftRow): Partial<DraftDetails> & { cover: string | null } {
   return {
@@ -56,7 +46,10 @@ export function Editor({ lang, initial, church }: { lang: Lang; initial: DraftRo
   const [tab, setTab] = useState<Tab>("outline");
   const [state, setState] = useState<SaveState>("saved");
   const [error, setError] = useState<string | null>(null);
-  const [review, setReviewState] = useState<Review | null>(null);
+  // The import review lives with the draft: it follows the sermon to any computer and the database enforces it at Publish.
+  const [review, setReviewState] = useState<Review | null>(initial.draft_review);
+  const reviewDirty = useRef(false);
+  const latestReview = useRef<Review | null>(initial.draft_review);
 
   const latest = useRef(row);
   useEffect(() => {
@@ -74,12 +67,9 @@ export function Editor({ lang, initial, church }: { lang: Lang; initial: DraftRo
   const chain = useRef<Promise<boolean>>(Promise.resolve(true));
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Browser-only state (this computer's saved review, its time zone) is read
-  // after hydration, so the server's first render and the browser's agree.
-  // eslint-disable-next-line react-hooks/set-state-in-effect
-  useEffect(() => setReviewState(loadReview(initial.id)), [initial.id]);
-
-  // A new sermon takes this computer's time zone; it's saved with the next change.
+  // A new sermon takes this computer's time zone (read after hydration, so
+  // the server's first render and the browser's agree); it's saved with the
+  // next change.
   useEffect(() => {
     if (initial.time_zone !== null) return;
     const zone = guessTimeZone();
@@ -90,19 +80,6 @@ export function Editor({ lang, initial, church }: { lang: Lang; initial: DraftRo
     }
   }, [initial.time_zone]);
 
-  const setReview = useCallback(
-    (next: Review | null) => {
-      setReviewState(next);
-      try {
-        if (next) window.localStorage.setItem(reviewKey(initial.id), JSON.stringify(next));
-        else window.localStorage.removeItem(reviewKey(initial.id));
-      } catch {
-        // The review still works for this visit.
-      }
-    },
-    [initial.id],
-  );
-
   const save = useCallback(async (): Promise<boolean> => {
     if (conflict.current) return false;
     if (!dirty.current) return true;
@@ -111,7 +88,10 @@ export function Editor({ lang, initial, church }: { lang: Lang; initial: DraftRo
     // An outline the database would refuse isn't sent; the details still are.
     const invalid = draftProblems(current.draft_blocks).length > 0;
     setState("saving");
-    const result = await saveSermon(current.id, version.current, detailsOf(current), invalid ? null : current.draft_blocks);
+    const sendReview = reviewDirty.current;
+    reviewDirty.current = false;
+    const details = sendReview ? { ...detailsOf(current), review: latestReview.current } : detailsOf(current);
+    const result = await saveSermon(current.id, version.current, details, invalid ? null : current.draft_blocks);
     if (result.ok) {
       setVersion(result.version);
       if (invalid) {
@@ -124,6 +104,7 @@ export function Editor({ lang, initial, church }: { lang: Lang; initial: DraftRo
       return true;
     }
     dirty.current = true;
+    if (sendReview) reviewDirty.current = true;
     if (result.code === "draft_changed") conflict.current = true;
     setState(result.code === "draft_changed" ? "conflict" : "error");
     setError(t(refusalMessage(result.code)));
@@ -172,6 +153,16 @@ export function Editor({ lang, initial, church }: { lang: Lang; initial: DraftRo
 
   const setBlocks = useCallback((blocks: DraftBlock[]) => change({ draft_blocks: blocks }), [change]);
 
+  const setReview = useCallback(
+    (next: Review | null) => {
+      latestReview.current = next;
+      reviewDirty.current = true;
+      setReviewState(next);
+      change({});
+    },
+    [change],
+  );
+
   async function uploadCover(jpeg: Blob): Promise<boolean> {
     return queue(async () => {
       await save();
@@ -213,20 +204,33 @@ export function Editor({ lang, initial, church }: { lang: Lang; initial: DraftRo
     return { ok: true, withheld: result.withheld };
   }
 
+  /**
+   * Unpublish and Members only never wait on the draft being saved: they
+   * change only what readers get, so they run even when a save failed.
+   * The editor then takes the version they return, and any edit still
+   * unsaved is saved again on top of it (unless the draft changed elsewhere,
+   * which still needs a reload).
+   */
   async function close(how: "unpublish" | "restrict"): Promise<boolean> {
-    const saved = await flush();
-    if (!saved) return false;
-    const result = await queue(() => closeSermon(row.id, how));
+    if (timer.current) clearTimeout(timer.current);
+    timer.current = null;
+    const result = await queue(() => closeSermon(row.id, how)).catch(() => ({ ok: false as const, code: "network" }));
     if (!result.ok) {
       setError(t(refusalMessage(result.code)));
       return false;
     }
     setVersion(result.version, how === "unpublish" ? null : undefined);
-    setRow((r) =>
+    const r = latest.current;
+    const next: DraftRow =
       how === "unpublish"
         ? { ...r, status: r.status === "published" ? "unpublished" : r.status }
-        : { ...r, audience: "members", live_audience: r.live_audience ? "members" : null },
-    );
+        : { ...r, audience: "members", live_audience: r.live_audience ? "members" : null };
+    latest.current = next;
+    setRow(next);
+    if (dirty.current && !conflict.current) {
+      setState("unsaved");
+      void flush();
+    }
     return true;
   }
 
@@ -239,7 +243,6 @@ export function Editor({ lang, initial, church }: { lang: Lang; initial: DraftRo
   async function remove() {
     const result = await deleteSermon(row.id);
     if (!result.ok) return setError(t(refusalMessage(result.code)));
-    setReview(null);
     window.location.assign(`/studio?church=${row.group_id}`);
   }
 

@@ -1,17 +1,19 @@
 "use client";
 
-import { newBlockID, type DraftBlock } from "@/lib/draft";
+import { newBlockID, type DraftBlock, type DraftRow } from "@/lib/draft";
 import type { Translate } from "@/lib/i18n";
 import { outlineWords } from "@/lib/import/completeness";
 import { reviewDone, stillOpen, type Decision, type ReviewItem } from "@/lib/import/review";
 import { placeFor } from "@/lib/studio";
 import type { Review } from "./Editor";
+import { scriptureLine } from "@/lib/import/lines";
+import { convert } from "./OutlineEditor";
 import { Button } from "./ui";
 
-type Props = { t: Translate; review: Review; blocks: DraftBlock[]; onBlocks: (b: DraftBlock[]) => void; onReview: (r: Review | null) => void };
+type Props = { t: Translate; review: Review; blocks: DraftBlock[]; language: DraftRow["language"]; onBlocks: (b: DraftBlock[]) => void; onReview: (r: Review | null) => void };
 
 /** What the import didn't carry over, and what it left out on purpose. Publish waits for an answer to each. */
-export function ReviewList({ t, review, blocks, onBlocks, onReview }: Props) {
+export function ReviewList({ t, review, blocks, language, onBlocks, onReview }: Props) {
   const items = stillOpen(review.items, blocks);
   const decide = (key: string, decision: Decision) => onReview({ ...review, decisions: { ...review.decisions, [key]: decision } });
   const done = reviewDone(items, review.decisions);
@@ -39,6 +41,7 @@ export function ReviewList({ t, review, blocks, onBlocks, onReview }: Props) {
               onBlocks([...blocks.slice(0, at), block, ...blocks.slice(at)]);
               decide(item.key, "kept");
             }}
+            onMakeScripture={(blockId) => onBlocks(blocks.map((b) => (b.id === blockId ? asScripture(b, language) : b)))}
           />
         ))}
       </ul>
@@ -51,7 +54,7 @@ export function ReviewList({ t, review, blocks, onBlocks, onReview }: Props) {
   );
 }
 
-function ReviewRow({ t, item, decision, onDecide, onAddBack }: { t: Translate; item: ReviewItem; decision?: Decision; onDecide: (d: Decision) => void; onAddBack: (words: string[]) => void }) {
+function ReviewRow({ t, item, decision, onDecide, onAddBack, onMakeScripture }: { t: Translate; item: ReviewItem; decision?: Decision; onDecide: (d: Decision) => void; onAddBack: (words: string[]) => void; onMakeScripture: (blockId: string) => void }) {
   const answered = decision ? <span className="text-sm font-medium text-muted">{decision === "kept" ? t("Kept") : decision === "fixed" ? t("Fixed") : t("Left out")}</span> : null;
   if (item.kind === "missing") {
     return (
@@ -70,6 +73,27 @@ function ReviewRow({ t, item, decision, onDecide, onAddBack }: { t: Translate; i
               <Button onClick={() => onAddBack(item.words)}>{t("Add it back")}</Button>
               <Button onClick={() => onDecide("fixed")}>{t("I fixed it")}</Button>
               <Button onClick={() => onDecide("dismissed")}>{t("Leave it out")}</Button>
+            </>
+          )}
+        </div>
+      </li>
+    );
+  }
+  if (item.kind === "quotation") {
+    return (
+      <li className="rounded-2xl bg-surface-2 p-4">
+        <p className="font-medium">{t("This may quote Scripture:")}</p>
+        <p className="mt-1 font-serif">{item.text}</p>
+        <p className="mt-2 text-sm text-muted">
+          {t("Make it a Scripture reference so it opens in a Bible and only approved translations' words are shown. Keep it as written only if these are your own words.")}
+        </p>
+        <div className="mt-3 flex flex-wrap items-center gap-2">
+          {decision ? (
+            answered
+          ) : (
+            <>
+              <Button onClick={() => onMakeScripture(item.blockId)}>{t("Make it a Scripture reference")}</Button>
+              <Button onClick={() => onDecide("kept")}>{t("Keep as written")}</Button>
             </>
           )}
         </div>
@@ -103,4 +127,11 @@ function ReviewRow({ t, item, decision, onDecide, onAddBack }: { t: Translate; i
       {count ? <div className="mt-3 flex flex-wrap gap-2">{decision ? answered : <Button onClick={() => onDecide("kept")}>{t("OK")}</Button>}</div> : null}
     </li>
   );
+}
+
+/** A possible quotation as a Scripture item: read as a verse where it can be, otherwise its first line becomes the reference to fix. */
+function asScripture(block: DraftBlock, language: DraftRow["language"]): DraftBlock {
+  const text = block.kind === "list" ? block.items.join("\n") : block.kind === "scripture" ? "" : block.text;
+  const ref = text ? scriptureLine(text, { language }, true) : null;
+  return ref ? { id: block.id, kind: "scripture", ref } : convert(block, "scripture", language);
 }

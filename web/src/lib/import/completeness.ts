@@ -25,8 +25,11 @@ export function outlineWords(blocks: DraftBlock[]): string[] {
     switch (b.kind) {
       case "list":
         return b.items.flatMap(words);
-      case "scripture":
-        return [...words(b.ref.raw), ...words(b.ref.label ?? ""), ...words(b.ref.quote ?? "")];
+      case "scripture": {
+        // The quotation may have come before its reference ("“…” — John 3:16") or after it: both orders count.
+        const quote = words(b.ref.quote ?? "");
+        return [...quote, ...words(b.ref.raw), ...words(b.ref.label ?? ""), ...quote];
+      }
       default:
         return words(b.text);
     }

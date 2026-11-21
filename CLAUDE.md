@@ -696,8 +696,10 @@ shares; README.md has the architecture.
   Tools/BibleData/export_reference_books.py, rerun when BibleBook changes).
 - Church Studio and the guest page live in web/ (Next.js 16, Vercel root
   web/; web/README.md). Guest pages are never cached (unpublish applies on
-  the next request); covers only through routes that recheck access, never
-  signed links. Imports run in the browser and every one is compared word
+  the next request); covers only through the `sermon-cover` function
+  (`sermon_cover_access` as the caller, every request; no client SELECT
+  policy on the bucket, so no signed links). The import review is saved
+  with the draft (`draft_review`) and enforced by publish_church_sermon. Imports run in the browser and every one is compared word
   for word with its source; Publish waits for the review list. Passages on
   the web come only from the five free Bibles' bibles/web/v1 files
   (Tools/BibleData/export_web_chapters.py). Web text in English, Spanish

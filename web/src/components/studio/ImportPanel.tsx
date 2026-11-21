@@ -37,7 +37,7 @@ export function ImportPanel({ t, language, hasOutline, onImported, onCancel }: P
       setProblem(t("Nothing to import was found."));
       return;
     }
-    onImported(result.blocks, reviewItems(result.source, result.blocks, result.notes), hasOutline ? mode : "replace");
+    onImported(result.blocks, reviewItems(result.source, result.blocks, result.notes, options), hasOutline ? mode : "replace");
   }
 
   async function readFile(file: File) {

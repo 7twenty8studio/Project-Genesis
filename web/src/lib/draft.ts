@@ -2,6 +2,7 @@
 // its details), in the exact shape save_church_sermon checks
 // (genesis_clean_sermon_blocks): unknown fields are refused there, so
 // nothing else is ever sent.
+import type { DraftReview } from "./import/review.ts";
 import type { ReferenceStatus } from "./shared/references.ts";
 
 export interface DraftRef {
@@ -49,6 +50,8 @@ export interface DraftRow extends DraftDetails {
   hidden_at: string | null;
   published_at: string | null;
   published_revision_id: string | null;
+  /** The import review, saved with the draft; Publish is refused while an item is open. */
+  draft_review: DraftReview | null;
 }
 
 /** The same limits the database enforces, checked before saving so people see why. */

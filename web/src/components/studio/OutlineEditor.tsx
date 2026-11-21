@@ -64,7 +64,7 @@ export function OutlineEditor({ lang, t, sermonId, language, blocks, onChange, r
         <Button onClick={() => setImporting(true)}>{t("Paste or import an outline")}</Button>
       )}
 
-      {review ? <ReviewList t={t} review={review} blocks={blocks} onBlocks={onChange} onReview={onReview} /> : null}
+      {review ? <ReviewList t={t} review={review} blocks={blocks} language={language} onBlocks={onChange} onReview={onReview} /> : null}
 
       <ol className="mt-6 space-y-4" aria-label={t("Outline")}>
         {blocks.map((block, i) => {

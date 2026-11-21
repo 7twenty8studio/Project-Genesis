@@ -44,7 +44,7 @@ export const churchSermons = (s: Session, group: string) => rpc<StudioSermon[]>(
 export const churchReports = (s: Session, group: string) => rpc<StudioReport[]>("group_sermon_reports", { p_group: group }, s.accessToken);
 
 const DRAFT_COLUMNS =
-  "id,group_id,slug,title,speaker,series,preached_on,time_zone,location,language,audience,cover_id,cover_alt,cover_decorative,draft_blocks,draft_version,status,live_audience,hidden_at,published_at,published_revision_id";
+  "id,group_id,slug,title,speaker,series,preached_on,time_zone,location,language,audience,cover_id,cover_alt,cover_decorative,draft_blocks,draft_version,status,live_audience,hidden_at,published_at,published_revision_id,draft_review";
 
 /** The draft, if the person may edit it ("Leaders read" policy); null otherwise. */
 export async function loadDraft(s: Session, id: string): Promise<(DraftRow & { published_draft_version: number | null }) | null> {

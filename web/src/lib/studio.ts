@@ -74,6 +74,8 @@ export function refusalMessage(code: string): string {
       return "The cover picture is missing. Choose it again.";
     case "empty_outline":
       return "Add something to the outline before publishing.";
+    case "review_open":
+      return "Finish checking the import before publishing.";
     case "invalid_blocks":
       return "Part of the outline can't be saved. Check the items marked in red.";
     case "invalid_details":

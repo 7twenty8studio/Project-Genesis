@@ -1,9 +1,10 @@
 // GET /s/<slug>/cover: the sermon's published cover, for this visitor only.
 // Access is checked twice on every request and nothing is stored: the
-// sermon must be readable now (published_sermon, as the visitor), and
-// storage's own policy rechecks it (genesis_can_read_cover). No signed link
-// is ever handed out, so an unpublished, restricted, hidden or switched-off
-// sermon's cover stops on the next request.
+// sermon must be readable now (published_sermon, as the visitor), and the
+// sermon-cover function asks sermon_cover_access as the visitor before it
+// reads the file. Nobody can read the bucket directly or sign a link, so an
+// unpublished, restricted, hidden or switched-off sermon's cover stops on
+// the next request.
 import { currentSession } from "@/lib/auth";
 import { lookUpSermon } from "@/lib/sermons.server";
 import { downloadCover } from "@/lib/supabase";

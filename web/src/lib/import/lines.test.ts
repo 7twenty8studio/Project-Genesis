@@ -1,6 +1,8 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { blocksFromLines, linesFromText, scriptureLine } from "./lines.ts";
+import { blocksFromLines, linesFromText, mayQuoteScripture, scriptureLine } from "./lines.ts";
+import { missingRuns, outlineWords, sourceWords } from "./completeness.ts";
+import { reviewDone, reviewItems, stillOpen } from "./review.ts";
 
 const en = { language: "en" } as const;
 
@@ -41,4 +43,70 @@ test("a sentence that mentions a verse stays a paragraph", () => {
 test("Portuguese abbreviations win in a Portuguese outline", () => {
   assert.equal(scriptureLine("Jo 3:16", { language: "pt" })?.start, 43003016);
   assert.equal(scriptureLine("Mc 1:1", { language: "pt" })?.start, 41001001);
+});
+
+// The owner's review (21 Nov 2026): a labelled NIV quotation in a Markdown
+// quote was kept as a plain quote and its words published.
+const quoteOf = (markdown: string) => blocksFromLines(linesFromText(markdown), en);
+
+test("a quote that is a labelled verse goes through the Scripture rules", () => {
+  for (const markdown of [
+    "> John 3:16 (NIV) For God so loved the world",
+    "> John 3:16 NIV For God so loved the world",
+    "> John 3:16 (NIV)\n> For God so loved the world",
+    "> John 3:16\n> For God so loved the world",
+    "> “For God so loved the world” (John 3:16, NIV)",
+    "> For God so loved the world\n> — John 3:16 NIV",
+    "> For God so loved the world (John 3:16 NIV)",
+  ]) {
+    const [block, ...rest] = quoteOf(markdown);
+    assert.equal(rest.length, 0, markdown);
+    assert.equal(block.kind, "scripture", markdown);
+    if (block.kind !== "scripture") continue;
+    assert.equal(block.ref.start, 43003016, markdown);
+    assert.ok(block.ref.quote?.includes("For God so loved the world"), markdown);
+  }
+  const [labelled] = quoteOf("> John 3:16 (NIV) For God so loved the world");
+  assert.equal(labelled.kind === "scripture" && labelled.ref.label, "NIV");
+});
+
+test("lists and headings that quote a verse become Scripture; bare references stay", () => {
+  const blocks = quoteOf("- Rest\n- John 3:16 (NIV) “For God so loved the world”\n- Trust\n\n## “The Lord is my shepherd” — Psalm 23:1 NIV\n\n## Psalm 23\n\n- Romans 8:28");
+  assert.deepEqual(blocks.map((b) => b.kind), ["list", "scripture", "list", "scripture", "heading", "list"]);
+  assert.equal(blocks[1].kind === "scripture" && blocks[1].ref.label, "NIV");
+  assert.equal(blocks[3].kind === "scripture" && blocks[3].ref.start, 19023001);
+  // Every word is still there, whichever side of the reference the quotation was on.
+  const source = "- Rest\n- John 3:16 (NIV) “For God so loved the world”\n- Trust\n\n## “The Lord is my shepherd” — Psalm 23:1 NIV\n\n## Psalm 23\n\n- Romans 8:28";
+  assert.deepEqual(missingRuns(sourceWords(source), outlineWords(blocks)), []);
+});
+
+test("a pastor's own quote stays a quote", () => {
+  for (const markdown of ["> Grace is not a reward.", "> “Faith is taking the first step.” — Martin Luther King Jr."]) {
+    assert.deepEqual(quoteOf(markdown).map((b) => b.kind), ["quote"], markdown);
+  }
+});
+
+test("anything that may quote Scripture but isn't clearly a verse goes on the review list", () => {
+  const may = (block: Parameters<typeof mayQuoteScripture>[0]) => mayQuoteScripture(block, en);
+  assert.ok(may({ id: "a", kind: "quote", text: "As Jesus said in John 3:16, God so loved the world." }));
+  assert.ok(may({ id: "b", kind: "quote", text: "For God so loved the world. (NIV)" }));
+  assert.ok(may({ id: "c", kind: "paragraph", text: "Jesus said “I am the good shepherd” in John 10:11." }));
+  assert.ok(may({ id: "d", kind: "list", items: ["Rest", "In John 10:11 (ESV) he says he is the good shepherd"], ordered: false }));
+  assert.ok(may({ id: "e", kind: "heading", text: "The NIV of John 3:16", level: 2 }));
+  assert.ok(!may({ id: "f", kind: "paragraph", text: "In John 3:16 we read of love." }));
+  assert.ok(!may({ id: "g", kind: "quote", text: "Grace is not a reward." }));
+  assert.ok(!may({ id: "h", kind: "paragraph", text: "“Faith is taking the first step,” he said." }));
+  assert.ok(!may({ id: "i", kind: "scripture", ref: { raw: "John 3:16", start: 43003016, end: 43003016, status: "verified", label: "NIV", quote: "For God" } }));
+});
+
+test("a possible quotation is a review item until it is made Scripture or answered", () => {
+  const source = "> As John 10:11 (ESV) puts it, he is the good shepherd\n\nAmen.";
+  const blocks = blocksFromLines(linesFromText(source), en);
+  const items = reviewItems(source, blocks, [], en).filter((i) => i.kind === "quotation");
+  assert.equal(items.length, 1);
+  assert.equal(stillOpen(items, blocks).length, 1);
+  assert.ok(!reviewDone(stillOpen(items, blocks), {}));
+  assert.ok(reviewDone(stillOpen(items, blocks), { [items[0].key]: "kept" }));
+  const fixed = blocks.map((b) => (b.kind === "quote" ? { id: b.id, kind: "scripture" as const, ref: { raw: "John 10:11", start: 43010011, end: 43010011, status: "verified" as const, label: "ESV", quote: null } } : b));
+  assert.equal(stillOpen(items, fixed).length, 0);
 });

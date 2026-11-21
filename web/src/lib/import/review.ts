@@ -1,18 +1,30 @@
 // The review list after an import (VRS-18): words not carried over, notes
-// about structure, and references to check. Publish stays off until every
-// item is kept, fixed or dismissed.
+// about structure, references to check, and anything that may quote
+// Scripture without being a Scripture item. Publish stays off until every
+// item is kept, fixed or dismissed. The list is saved with the draft
+// (church_sermons.draft_review) and the database refuses to publish while an
+// item is open, by the same rules as reviewDone and stillOpen here
+// (genesis_review_open, 20261121000000).
 import type { DraftBlock } from "../draft.ts";
 import { missingRuns, outlineWords, sourceWords } from "./completeness.ts";
+import { mayQuoteScripture, type ImportOptions } from "./lines.ts";
 import type { ImportNote } from "./result.ts";
 
 export type ReviewItem =
   | { key: string; kind: "missing"; words: string[]; before: string[]; after: string[] }
   | { key: string; kind: "note"; note: ImportNote }
-  | { key: string; kind: "reference"; blockId: string; raw: string };
+  | { key: string; kind: "reference"; blockId: string; raw: string }
+  | { key: string; kind: "quotation"; blockId: string; text: string };
 
 export type Decision = "kept" | "fixed" | "dismissed";
 
-export function reviewItems(source: string, blocks: DraftBlock[], notes: ImportNote[]): ReviewItem[] {
+/** The review as it is saved with the draft (church_sermons.draft_review). */
+export interface DraftReview {
+  items: ReviewItem[];
+  decisions: Record<string, Decision | undefined>;
+}
+
+export function reviewItems(source: string, blocks: DraftBlock[], notes: ImportNote[], options: ImportOptions = { language: "en" }): ReviewItem[] {
   const items: ReviewItem[] = [];
   for (const run of missingRuns(sourceWords(source), outlineWords(blocks))) {
     items.push({ key: `missing:${run.at}`, kind: "missing", words: run.words, before: run.before, after: run.after });
@@ -24,6 +36,10 @@ export function reviewItems(source: string, blocks: DraftBlock[], notes: ImportN
     if (block.kind === "scripture" && block.ref.status === "ambiguous") {
       items.push({ key: `reference:${block.id}`, kind: "reference", blockId: block.id, raw: block.ref.raw });
     }
+    if (mayQuoteScripture(block, options)) {
+      const text = block.kind === "list" ? block.items.join(" · ") : block.kind === "scripture" ? "" : block.text;
+      items.push({ key: `quotation:${block.id}`, kind: "quotation", blockId: block.id, text: text.slice(0, 300) });
+    }
   }
   return items;
 }
@@ -33,11 +49,17 @@ export function reviewDone(items: ReviewItem[], decisions: Record<string, Decisi
   return items.every((item) => (item.kind === "note" && item.note.count === 0) || decisions[item.key] !== undefined);
 }
 
-/** References still ambiguous in the current outline (fixed ones drop out by themselves). */
+/** Items still to check in the current outline: a reference fixed, or a possible quotation made a Scripture item (or removed), drops out by itself. */
 export function stillOpen(items: ReviewItem[], blocks: DraftBlock[]): ReviewItem[] {
   return items.filter((item) => {
-    if (item.kind !== "reference") return true;
-    const block = blocks.find((b) => b.id === item.blockId);
-    return block?.kind === "scripture" && block.ref.status === "ambiguous";
+    if (item.kind === "reference") {
+      const block = blocks.find((b) => b.id === item.blockId);
+      return block?.kind === "scripture" && block.ref.status === "ambiguous";
+    }
+    if (item.kind === "quotation") {
+      const block = blocks.find((b) => b.id === item.blockId);
+      return block !== undefined && block.kind !== "scripture";
+    }
+    return true;
   });
 }

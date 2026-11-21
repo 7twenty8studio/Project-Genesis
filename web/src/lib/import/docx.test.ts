@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { docx, hiddenRun, para } from "./fixtures.ts";
-import { importDocx, textOfPart, withoutHiddenRuns } from "./docx.ts";
+import { docx, documentXml, hiddenRun, para } from "./fixtures.ts";
+import { importDocx, readStyles, textOfPart, withoutHiddenRuns } from "./docx.ts";
 import { linesFromHtml } from "./html.ts";
 import { missingRuns, outlineWords, sourceWords } from "./completeness.ts";
 import { reviewItems } from "./review.ts";
@@ -54,7 +54,7 @@ test("words Mammoth can't carry over (a text box) appear in the review list", as
 });
 
 test("the document's own text skips deleted tracked changes and hidden runs", () => {
-  const xml = `<w:p><w:r><w:t>Kept</w:t></w:r><w:del><w:r><w:delText>gone</w:delText></w:r></w:del>${hiddenRun("hidden")}<w:r><w:tab/><w:t>a&amp;b</w:t></w:r></w:p>`;
+  const xml = documentXml(`<w:p><w:r><w:t>Kept</w:t></w:r><w:del><w:r><w:delText>gone</w:delText></w:r></w:del>${hiddenRun("hidden")}<w:r><w:tab/><w:t>a&amp;b</w:t></w:r></w:p>`);
   assert.deepEqual(textOfPart(xml), { text: "Kept a&b", hidden: 1 });
 });
 
@@ -70,6 +70,90 @@ test("Mammoth's footnote markers are dropped and the notes come last", () => {
 });
 
 test("hidden runs are taken out before Mammoth reads the document", () => {
-  const xml = `<w:p><w:r><w:t>Shown</w:t></w:r>${hiddenRun("hidden")}<w:r><w:rPr><w:vanish w:val="0"/></w:rPr><w:t>not hidden</w:t></w:r></w:p>`;
-  assert.equal(withoutHiddenRuns(xml), `<w:p><w:r><w:t>Shown</w:t></w:r><w:r><w:rPr><w:vanish w:val="0"/></w:rPr><w:t>not hidden</w:t></w:r></w:p>`);
+  const xml = documentXml(`<w:p><w:r><w:t>Shown</w:t></w:r>${hiddenRun("hidden")}<w:r><w:rPr><w:vanish w:val="0"/></w:rPr><w:t>not hidden</w:t></w:r></w:p>`);
+  const out = withoutHiddenRuns(xml);
+  assert.ok(out.includes("Shown") && out.includes("not hidden") && !out.includes(">hidden<"), out);
+});
+
+// Every way Word (or another editor) can write "hidden", including the one
+// the owner's review found: <w:vanish /> with a space.
+const spellings: [string, string][] = [
+  ["an empty element with a space", `<w:r><w:rPr><w:vanish /></w:rPr><w:t>secret</w:t></w:r>`],
+  ["an open and close pair", `<w:r><w:rPr><w:vanish></w:vanish></w:rPr><w:t>secret</w:t></w:r>`],
+  ['w:val="1"', `<w:r><w:rPr><w:vanish w:val="1"/></w:rPr><w:t>secret</w:t></w:r>`],
+  ['w:val="true" after other settings', `<w:r><w:rPr><w:b/><w:i w:val="1"/><w:vanish w:val="true" /><w:sz w:val="24"/></w:rPr><w:t>secret</w:t></w:r>`],
+  ["attributes on the run", `<w:r w:rsidR="00AB12" w:rsidRPr="00CD34"><w:rPr><w:vanish/></w:rPr><w:t xml:space="preserve">secret</w:t></w:r>`],
+  ["inside a hyperlink", `<w:hyperlink r:id="x" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><w:r><w:rPr><w:vanish/></w:rPr><w:t>secret</w:t></w:r></w:hyperlink>`],
+  ["inside an inserted change", `<w:ins w:id="1" w:author="A"><w:r><w:rPr><w:vanish/></w:rPr><w:t>secret</w:t></w:r></w:ins>`],
+  ["across line breaks", `<w:r>\n  <w:rPr>\n    <w:vanish\n    />\n  </w:rPr>\n  <w:t>secret</w:t>\n</w:r>`],
+];
+
+for (const [name, run] of spellings) {
+  test(`hidden text written as ${name} is never imported`, async () => {
+    const result = await importDocx(await docx(`<w:p><w:r><w:t xml:space="preserve">Visible words </w:t></w:r>${run}</w:p>`), en);
+    assert.ok(!outlineWords(result.blocks).includes("secret"), JSON.stringify(result.blocks));
+    assert.ok(!sourceWords(result.source).includes("secret"));
+    assert.deepEqual(result.notes.find((n) => n.kind === "hidden"), { kind: "hidden", count: 1 });
+  });
+}
+
+test("another namespace prefix is read the same way", () => {
+  const xml = `<?xml version="1.0"?><x:document xmlns:x="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><x:body><x:p><x:r><x:t>Shown</x:t></x:r><x:r><x:rPr><x:vanish /></x:rPr><x:t>secret</x:t></x:r></x:p></x:body></x:document>`;
+  assert.deepEqual(textOfPart(xml), { text: "Shown", hidden: 1 });
+  assert.ok(!withoutHiddenRuns(xml).includes("secret"));
+});
+
+const hiddenStyles =
+  `<w:style w:type="character" w:styleId="Aside"><w:name w:val="Aside"/><w:rPr><w:vanish/></w:rPr></w:style>` +
+  `<w:style w:type="character" w:styleId="QuietAside"><w:name w:val="Quiet Aside"/><w:basedOn w:val="Aside"/></w:style>` +
+  `<w:style w:type="character" w:styleId="ShownAside"><w:name w:val="Shown Aside"/><w:basedOn w:val="Aside"/><w:rPr><w:vanish w:val="0"/></w:rPr></w:style>` +
+  `<w:style w:type="paragraph" w:styleId="PastorNote"><w:name w:val="Pastor Note"/><w:rPr><w:vanish/></w:rPr></w:style>` +
+  `<w:style w:type="paragraph" w:styleId="PastorNote2"><w:name w:val="Pastor Note 2"/><w:basedOn w:val="PastorNote"/></w:style>`;
+
+test("hidden by a character style, or a style it is based on", async () => {
+  const result = await importDocx(
+    await docx(
+      `<w:p><w:r><w:t xml:space="preserve">Open </w:t></w:r><w:r><w:rPr><w:rStyle w:val="Aside"/></w:rPr><w:t>secretone</w:t></w:r></w:p>` +
+        `<w:p><w:r><w:rPr><w:rStyle w:val="QuietAside"/></w:rPr><w:t>secrettwo</w:t></w:r><w:r><w:t>after</w:t></w:r></w:p>` +
+        `<w:p><w:r><w:rPr><w:rStyle w:val="ShownAside"/></w:rPr><w:t>shownthree</w:t></w:r></w:p>`,
+      { styles: hiddenStyles },
+    ),
+    en,
+  );
+  const words = outlineWords(result.blocks);
+  assert.ok(!words.includes("secretone") && !words.includes("secrettwo"), JSON.stringify(result.blocks));
+  assert.ok(words.includes("shownthree") && words.includes("after"));
+  assert.deepEqual(result.notes.find((n) => n.kind === "hidden"), { kind: "hidden", count: 2 });
+});
+
+test("hidden by a paragraph style, unless the run says otherwise", async () => {
+  const result = await importDocx(
+    await docx(
+      para("Shown paragraph") +
+        para("secretpara", "PastorNote") +
+        para("secretchild", "PastorNote2") +
+        `<w:p><w:pPr><w:pStyle w:val="PastorNote"/></w:pPr><w:r><w:rPr><w:vanish w:val="false"/></w:rPr><w:t>overridden</w:t></w:r></w:p>`,
+      { styles: hiddenStyles },
+    ),
+    en,
+  );
+  const words = outlineWords(result.blocks);
+  assert.ok(!words.includes("secretpara") && !words.includes("secretchild"), JSON.stringify(result.blocks));
+  assert.ok(words.includes("overridden") && words.includes("Shown"));
+  assert.deepEqual(result.notes.find((n) => n.kind === "hidden"), { kind: "hidden", count: 2 });
+});
+
+test("a document whose default hides runs hides them all but those shown on purpose", () => {
+  const styles = readStyles(`<?xml version="1.0"?><w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:docDefaults><w:rPrDefault><w:rPr><w:vanish/></w:rPr></w:rPrDefault></w:docDefaults></w:styles>`);
+  const xml = documentXml(`<w:p><w:r><w:t>secret</w:t></w:r><w:r><w:rPr><w:vanish w:val="off"/></w:rPr><w:t>Shown</w:t></w:r></w:p>`);
+  assert.deepEqual(textOfPart(xml, styles), { text: "Shown", hidden: 1 });
+});
+
+test("hidden text in a footnote is left out too", async () => {
+  const file = await docx(`<w:p><w:r><w:t>Body</w:t></w:r><w:r><w:footnoteReference w:id="1"/></w:r></w:p>`, {
+    footnotes: `<w:footnote w:id="1"><w:p><w:r><w:t xml:space="preserve">Shown note </w:t></w:r><w:r><w:rPr><w:vanish /></w:rPr><w:t>secretnote</w:t></w:r></w:p></w:footnote>`,
+  });
+  const result = await importDocx(file, en);
+  assert.ok(!outlineWords(result.blocks).includes("secretnote"), JSON.stringify(result.blocks));
+  assert.ok(outlineWords(result.blocks).includes("note"));
 });

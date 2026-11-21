@@ -13,6 +13,7 @@
     "sync": "node scripts/sync-shared.mjs"
   },
   "dependencies": {
+    "@xmldom/xmldom": "^0.8.15",
     "jszip": "^3.10.2",
     "mammoth": "^1.13.0",
     "next": "16.2.1",

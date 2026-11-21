@@ -1,5 +1,6 @@
-// A draft's cover for Studio (leaders only): storage's leader policy decides,
-// with the leader's own session, on every request. Never stored.
+// A draft's cover for Studio (leaders only): the sermon-cover function asks
+// sermon_cover_access with the leader's own session on every request. Never
+// stored.
 import { currentSession } from "@/lib/auth";
 import { downloadCover } from "@/lib/supabase";
 import { loadDraft, UUID } from "@/lib/studio.server";
