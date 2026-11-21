@@ -366,6 +366,16 @@ These are the terms YouVersion agreed with us in writing (email thread
   the Platform is for "truly non-commercial" apps without subscriptions or
   AI features, and other uses need written permission; ask Biblica to
   confirm in writing, and keep Heather's email with these records.
+- **On the web (owner's decision, 21 November 2026):** church sermon
+  pages (versely.7twenty8studio.com/s/…) open passages in the YouVersion
+  Bibles too, with a separate Platform app and key (YVP_WEB_APP_KEY,
+  function `yvp-web-passage`), every footnote, the publisher's link under
+  the passage and at most two chapters at once. The owner chose to turn it
+  on before the publishers confirm web use; their agreements speak of
+  mobile apps, so ask YouVersion, Biblica and Lockman to confirm it in
+  writing. To take one Bible off the web at once:
+  `update public.youversion_bibles set web_allowed = false where id = 'NIV';`
+  (all of them: the `web_youversion` switch off). The app is unaffected.
 - **Questions sent to the publishers (open):**
   - Biblica defines its rights as distribution free of subscriptions:
     confirm in writing that Versely's optional Premium (which never

@@ -716,8 +716,14 @@ shares; README.md has the architecture.
   policy on the bucket, so no signed links). The import review is saved
   with the draft (`draft_review`) and enforced by publish_church_sermon. Imports run in the browser and every one is compared word
   for word with its source; Publish waits for the review list. Passages on
-  the web come only from the five free Bibles' bibles/web/v1 files
-  (Tools/BibleData/export_web_chapters.py). Web text in English, Spanish
+  the web come from the five free Bibles' bibles/web/v1 files
+  (Tools/BibleData/export_web_chapters.py) and, while `web_youversion` is
+  on, the YouVersion Bibles with youversion_bibles.web_allowed (owner, 21
+  November 2026; `youversion_web_bibles()`, text through the
+  `yvp-web-passage` function with secret YVP_WEB_APP_KEY, sharing
+  yvp-bible/platform.ts's pace and cache): every footnote, the publisher's
+  link, at most two chapters, never cached in the browser. A pastor's
+  "NIV" label opens in the NIV (`startingBible`). Web text in English, Spanish
   and Portuguese in web/src/lib/messages.ts (tested).
 - App (Genesis/Core/ChurchSermons, Genesis/Features/ChurchSermons):
   `ChurchSermonBackend` (`\.churchSermons`; Supabase, or

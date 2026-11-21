@@ -5,6 +5,7 @@
 import { cache } from "react";
 import { currentSession } from "./auth.ts";
 import type { SermonLookup } from "./outline.ts";
+import type { YouVersionBible } from "./scripture.ts";
 import { rpc } from "./supabase.ts";
 
 export const SLUG = /^[a-z0-9]{10}$/;
@@ -15,3 +16,13 @@ export const lookUpSermon = cache(async (slug: string): Promise<SermonLookup> =>
   const session = await currentSession();
   return rpc<SermonLookup>("published_sermon", { p_slug: slug }, session?.accessToken);
 });
+
+/** The YouVersion Bibles a sermon page may offer (none while the switch is off, or if the list can't be read). */
+export async function youVersionWebBibles(): Promise<YouVersionBible[]> {
+  try {
+    const list = await rpc<YouVersionBible[]>("youversion_web_bibles", {});
+    return Array.isArray(list) ? list : [];
+  } catch {
+    return [];
+  }
+}

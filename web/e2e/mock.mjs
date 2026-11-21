@@ -55,7 +55,7 @@ function published(s) {
 }
 const fail = (res, message, status = 400) => send(res, status, { code: "P0001", message, details: null });
 function send(res, status, body, type = "application/json") {
-  res.writeHead(status, { "Content-Type": type, "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "*" });
+  res.writeHead(status, { "Content-Type": type, "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "authorization, apikey, content-type, *" });
   res.end(type === "application/json" ? JSON.stringify(body) : body);
 }
 const read = (req) => new Promise((done) => { const chunks = []; req.on("data", (c) => chunks.push(c)); req.on("end", () => done(Buffer.concat(chunks))); });
@@ -72,6 +72,16 @@ createServer(async (req, res) => {
     return existsSync(file) ? send(res, 200, readFileSync(file), "application/json; charset=utf-8") : send(res, 404, { error: "not found" });
   }
   if (p === "/functions/v1/sermon-events") return send(res, 200, { ok: true });
+  // A YouVersion Bible's passage: stand-in words (never a licensed text), one footnote.
+  if (p === "/functions/v1/yvp-web-passage") {
+    const a = json();
+    if (a.bible !== "NIV") return send(res, 404, { error: "This Bible isn't offered on the web." });
+    return send(res, 200, {
+      bible: "NIV", name: "New International Version", language: "en",
+      license: "Stand-in notice line one\nStand-in notice line two", publisherUrl: "https://www.biblica.com",
+      verses: [{ c: 8, v: 28, k: [45008028], t: "Stand-in words for a licensed verse", n: [{ o: 13, t: "Stand-in footnote" }] }],
+    });
+  }
   if (p.startsWith("/storage/v1/object/sermon-covers/") && req.method === "POST") {
     if (!signedIn(req)) return send(res, 403, {});
     covers.set(p.slice("/storage/v1/object/sermon-covers/".length), body);
@@ -103,6 +113,7 @@ createServer(async (req, res) => {
       if (s.live_audience === "members" && !signedIn(req)) return send(res, 200, { status: "members_only" });
       return send(res, 200, published(s));
     }
+    if (fn === "youversion_web_bibles") return send(res, 200, [{ id: "NIV", name: "New International Version", language: "en" }]);
     if (!signedIn(req)) return fail(res, "not_allowed", 400);
     const s = sermons.get(a.p_sermon);
     switch (fn) {

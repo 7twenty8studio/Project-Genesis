@@ -1,6 +1,7 @@
 import { config } from "@/config";
 import { formatDay, type Lang, type Translate } from "@/lib/i18n";
 import { anchorFor, copyText, sections, type Block, type PublishedSermon, type SermonSummary } from "@/lib/outline";
+import type { YouVersionBible } from "@/lib/scripture";
 import { describe } from "@/lib/shared/references";
 import { CopyButton } from "./CopyButton";
 import { ScriptureRef } from "./ScriptureRef";
@@ -16,6 +17,7 @@ export function SermonView({
   t,
   signedIn,
   preview,
+  youversion = [],
 }: {
   sermon: PublishedSermon;
   lang: Lang;
@@ -23,6 +25,8 @@ export function SermonView({
   signedIn: boolean;
   /** Studio's preview of the draft: its own cover address, nothing counted, no links away. */
   preview?: { coverSrc: string | null };
+  /** YouVersion Bibles passages may open in (youversion_web_bibles). */
+  youversion?: YouVersionBible[];
 }) {
   const events = preview ? "" : EVENTS;
   // Inside Studio the page already has its own main landmark.
@@ -100,7 +104,7 @@ export function SermonView({
         {parts.map((section) => (
           <section key={section.id} id={anchorFor(section)} aria-label={section.title ?? undefined} className="mt-8 first:mt-0">
             {section.blocks.map((block) => (
-              <BlockView key={block.id} block={block} sermon={sermon} lang={lang} events={events} />
+              <BlockView key={block.id} block={block} sermon={sermon} lang={lang} events={events} youversion={youversion} />
             ))}
             <div className="mt-3 flex justify-end">
               <CopyButton text={copyText(section.blocks)} label={t("Copy")} done={t("Copied")} sectionName={section.title ?? sermon.title} />
@@ -126,7 +130,7 @@ export function SermonView({
   );
 }
 
-function BlockView({ block, sermon, lang, events }: { block: Block; sermon: PublishedSermon; lang: Lang; events: string }) {
+function BlockView({ block, sermon, lang, events, youversion }: { block: Block; sermon: PublishedSermon; lang: Lang; events: string; youversion: YouVersionBible[] }) {
   switch (block.kind) {
     case "heading": {
       const Tag = block.level === 1 ? "h2" : block.level === 2 ? "h2" : "h3";
@@ -158,6 +162,7 @@ function BlockView({ block, sermon, lang, events }: { block: Block; sermon: Publ
           supabaseUrl={config.supabaseUrl}
           eventEndpoint={events}
           slug={sermon.slug}
+          youversion={youversion}
         />
       );
     }
