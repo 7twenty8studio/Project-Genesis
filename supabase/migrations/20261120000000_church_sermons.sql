@@ -42,6 +42,9 @@
 --     <group id>/<sermon id>/<cover id>.jpg, a new id per picture so the
 --     published one never changes under readers. Served only through a
 --     request that rechecks access (checkpoint 2), never a public link.
+--     Nobody deletes a cover directly: removing one is saving cover: null,
+--     and only the nightly sweep (retire_orphan_sermon_covers) frees files,
+--     under the sermon's row lock, so it and a save or publish never both win.
 --   * Reports: any signed-in reader can report a published sermon; it reaches
 --     the church's moderators (and the ops dashboard). Three reports from
 --     different people hide it until a moderator reviews it.
@@ -261,6 +264,14 @@ create index if not exists church_sermon_visits_day_idx on public.church_sermon_
 -- key: the notes outlive an unpublish or a deleted sermon.
 alter table public.sermons add column if not exists source_sermon_id uuid;
 
+-- Cover files the sweep has freed (or is about to delete). A retired name is
+-- never attached or published again, so a file is never both deleted and in
+-- use. Names hold ids only. No policies: only the functions below read it.
+create table if not exists public.church_sermon_retired_covers (
+  name text primary key,
+  retired_at timestamptz not null default now()
+);
+
 -- Row level security ---------------------------------------------------------------
 
 alter table public.church_sermons enable row level security;
@@ -268,6 +279,7 @@ alter table public.church_sermon_revisions enable row level security;
 alter table public.church_sermon_reports enable row level security;
 alter table public.church_sermon_stats enable row level security;
 alter table public.church_sermon_visits enable row level security;
+alter table public.church_sermon_retired_covers enable row level security;
 
 -- Checks --------------------------------------------------------------------------
 
@@ -473,9 +485,15 @@ begin
            or (r ? 'end' and jsonb_typeof(r->'end') not in ('number', 'null')) then
           raise exception 'invalid_blocks' using errcode = 'P0001', detail = 'verses of ' || bid;
         end if;
-        s := (r->>'start')::numeric::bigint;
-        e := coalesce((r->>'end')::numeric::bigint, s);
-        if (r->>'start')::numeric <> s or not public.genesis_valid_verse(s) or not public.genesis_valid_verse(e)
+        -- Both ends whole verse ids, checked before any conversion (a cast
+        -- would round 43003016.6 to 43003017).
+        if (r->>'start') !~ '^[0-9]{1,10}$'
+           or (jsonb_typeof(r->'end') = 'number' and (r->>'end') !~ '^[0-9]{1,10}$') then
+          raise exception 'invalid_blocks' using errcode = 'P0001', detail = 'verses of ' || bid;
+        end if;
+        s := (r->>'start')::bigint;
+        e := coalesce((r->>'end')::bigint, s);
+        if not public.genesis_valid_verse(s) or not public.genesis_valid_verse(e)
            or e < s or (e / 1000000) <> (s / 1000000) then
           raise exception 'invalid_blocks' using errcode = 'P0001', detail = 'verses of ' || bid;
         end if;
@@ -695,7 +713,11 @@ begin
       new_cover := null;
     elsif (d->>'cover') !~ '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'
           or not exists (select 1 from storage.objects o where o.bucket_id = 'sermon-covers'
-                         and o.name = public.genesis_sermon_cover_path(row_.group_id, row_.id, (d->>'cover')::uuid)) then
+                         and o.name = public.genesis_sermon_cover_path(row_.group_id, row_.id, (d->>'cover')::uuid))
+          or exists (select 1 from public.church_sermon_retired_covers t
+                     where t.name = public.genesis_sermon_cover_path(row_.group_id, row_.id, (d->>'cover')::uuid)) then
+      -- Checked while holding the sermon's row lock, which the sweep takes
+      -- before retiring a cover of this sermon.
       raise exception 'invalid_details' using errcode = 'P0001', detail = 'cover';
     else
       new_cover := (d->>'cover')::uuid;
@@ -756,7 +778,9 @@ begin
       raise exception 'needs_cover_alt' using errcode = 'P0001';
     end if;
     if not exists (select 1 from storage.objects o where o.bucket_id = 'sermon-covers'
-                   and o.name = public.genesis_sermon_cover_path(row_.group_id, row_.id, row_.cover_id)) then
+                   and o.name = public.genesis_sermon_cover_path(row_.group_id, row_.id, row_.cover_id))
+       or exists (select 1 from public.church_sermon_retired_covers t
+                  where t.name = public.genesis_sermon_cover_path(row_.group_id, row_.id, row_.cover_id)) then
       raise exception 'cover_missing' using errcode = 'P0001';
     end if;
   end if;
@@ -1216,10 +1240,11 @@ insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_typ
 values ('sermon-covers', 'sermon-covers', false, 1048576, array['image/jpeg'])
 on conflict (id) do nothing;
 
--- Leaders upload and remove <group id>/<sermon id>/<cover id>.jpg for their
--- church's own sermons (a new cover id each time; files are never replaced).
--- Nobody else reads them directly: readers get covers through a request that
--- rechecks access (checkpoint 2).
+-- Leaders upload <group id>/<sermon id>/<cover id>.jpg for their church's
+-- own sermons (a new cover id each time; files are never replaced or deleted
+-- by people, and a retired name can't be uploaded again). Nobody else reads
+-- them directly: readers get covers through a request that rechecks access
+-- (checkpoint 2).
 create or replace function public.genesis_can_edit_cover(p_name text)
 returns boolean
 language sql
@@ -1233,20 +1258,8 @@ as $$
       where s.group_id::text = split_part(p_name, '/', 1)
         and s.id::text = split_part(p_name, '/', 2)
         and s.deleted_at is null
-        and public.genesis_can_edit_sermons(s.group_id));
-$$;
-
--- A cover the published copy uses can't be removed while it's published.
-create or replace function public.genesis_cover_in_use(p_name text)
-returns boolean
-language sql
-stable
-security definer
-set search_path = ''
-as $$
-  select exists (
-    select 1 from public.church_sermons s join public.church_sermon_revisions r on r.id = s.published_revision_id
-    where s.status = 'published' and s.deleted_at is null and r.details#>>'{cover,path}' = p_name);
+        and public.genesis_can_edit_sermons(s.group_id))
+    and not exists (select 1 from public.church_sermon_retired_covers t where t.name = p_name);
 $$;
 
 do $$
@@ -1255,10 +1268,6 @@ begin
     create policy "Sermon covers: leaders add" on storage.objects for insert to authenticated
       with check (bucket_id = 'sermon-covers' and public.genesis_can_edit_cover(name));
   end if;
-  if not exists (select 1 from pg_policies where schemaname = 'storage' and tablename = 'objects' and policyname = 'Sermon covers: leaders remove') then
-    create policy "Sermon covers: leaders remove" on storage.objects for delete to authenticated
-      using (bucket_id = 'sermon-covers' and public.genesis_can_edit_cover(name) and not public.genesis_cover_in_use(name));
-  end if;
   if not exists (select 1 from pg_policies where schemaname = 'storage' and tablename = 'objects' and policyname = 'Sermon covers: leaders see') then
     create policy "Sermon covers: leaders see" on storage.objects for select to authenticated
       using (bucket_id = 'sermon-covers' and public.genesis_can_edit_cover(name));
@@ -1266,25 +1275,52 @@ begin
 end;
 $$;
 
--- Cover files neither the draft nor the published copy uses (replaced,
--- removed, deleted sermons), for the nightly sweep (service role). Older
--- than a day only, so an upload in progress is never swept.
-create or replace function public.orphan_sermon_covers()
+-- The nightly sweep (service role): retires cover files neither the draft nor
+-- the published copy uses (replaced, removed, unpublished, deleted sermons)
+-- and returns their names for it to delete through the Storage API. Each
+-- candidate is rechecked while holding its sermon's row lock, the lock save
+-- and publish take, so a save attaching the cover or a publish at the same
+-- moment either finishes first (the cover stays) or waits and is refused
+-- (retired). Names already retired whose files remain (a delete that failed)
+-- are returned again. Older than a day only, so an upload in progress is
+-- never swept.
+create or replace function public.retire_orphan_sermon_covers()
 returns setof text
-language sql
-stable
+language plpgsql
+volatile
 security definer
 set search_path = ''
 as $$
-  select o.name from storage.objects o
-  where o.bucket_id = 'sermon-covers'
-    and o.created_at < now() - interval '1 day'
-    and not exists (
-      select 1 from public.church_sermons s
-      left join public.church_sermon_revisions r on r.id = s.published_revision_id
-      where s.deleted_at is null
-        and (public.genesis_sermon_cover_path(s.group_id, s.id, s.cover_id) = o.name
-             or (s.status = 'published' and r.details#>>'{cover,path}' = o.name)));
+declare
+  o record;
+  row_ public.church_sermons;
+  live_path text;
+begin
+  for o in
+    select ob.name, exists (select 1 from public.church_sermon_retired_covers t where t.name = ob.name) as retired
+    from storage.objects ob
+    where ob.bucket_id = 'sermon-covers' and ob.created_at < now() - interval '1 day'
+    order by ob.name
+  loop
+    if not o.retired then
+      row_ := null;
+      if split_part(o.name, '/', 2) ~ '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$' then
+        select * into row_ from public.church_sermons s where s.id = split_part(o.name, '/', 2)::uuid for update;
+      end if;
+      if row_.id is not null and row_.deleted_at is null then
+        continue when row_.cover_id is not null
+          and public.genesis_sermon_cover_path(row_.group_id, row_.id, row_.cover_id) = o.name;
+        if row_.status = 'published' then
+          select r.details#>>'{cover,path}' into live_path
+          from public.church_sermon_revisions r where r.id = row_.published_revision_id;
+          continue when live_path is not distinct from o.name;
+        end if;
+      end if;
+      insert into public.church_sermon_retired_covers (name) values (o.name) on conflict (name) do nothing;
+    end if;
+    return next o.name;
+  end loop;
+end;
 $$;
 
 -- Grants -------------------------------------------------------------------------------
@@ -1302,7 +1338,6 @@ revoke all on function public.genesis_editable_sermon(uuid) from public, anon, a
 revoke all on function public.genesis_check_version(public.church_sermons, integer) from public, anon, authenticated;
 revoke all on function public.genesis_new_sermon_slug() from public, anon, authenticated;
 revoke all on function public.genesis_can_edit_cover(text) from public, anon;
-revoke all on function public.genesis_cover_in_use(text) from public, anon;
 revoke all on function public.create_church_sermon(uuid, text) from public, anon;
 revoke all on function public.save_church_sermon(uuid, integer, jsonb, jsonb) from public, anon;
 revoke all on function public.publish_church_sermon(uuid, integer) from public, anon;
@@ -1317,13 +1352,13 @@ revoke all on function public.report_church_sermon(text, text) from public, anon
 revoke all on function public.group_sermon_reports(uuid) from public, anon;
 revoke all on function public.review_church_sermon_reports(uuid, boolean) from public, anon;
 revoke all on function public.record_sermon_event(text, text, text) from public, anon, authenticated;
-revoke all on function public.orphan_sermon_covers() from public, anon, authenticated;
+revoke all on function public.retire_orphan_sermon_covers() from public, anon, authenticated;
+revoke all on table public.church_sermon_retired_covers from anon, authenticated;
 
 grant execute on function public.genesis_church_sermons_on(uuid) to authenticated;
 grant execute on function public.genesis_can_edit_sermons(uuid) to authenticated;
 grant execute on function public.genesis_can_read_member_sermons(uuid) to authenticated;
 grant execute on function public.genesis_can_edit_cover(text) to authenticated;
-grant execute on function public.genesis_cover_in_use(text) to authenticated;
 grant execute on function public.create_church_sermon(uuid, text) to authenticated;
 grant execute on function public.save_church_sermon(uuid, integer, jsonb, jsonb) to authenticated;
 grant execute on function public.publish_church_sermon(uuid, integer) to authenticated;
@@ -1340,7 +1375,7 @@ grant execute on function public.review_church_sermon_reports(uuid, boolean) to 
 grant execute on function public.published_sermon(text) to anon, authenticated;
 grant execute on function public.search_sermon_churches(text) to anon, authenticated;
 grant execute on function public.record_sermon_event(text, text, text) to service_role;
-grant execute on function public.orphan_sermon_covers() to service_role;
+grant execute on function public.retire_orphan_sermon_covers() to service_role;
 
 comment on table public.church_sermons is
   'Church sermons (VRS-18). Draft columns are the Studio''s; readers get only the published revision (published_sermon / group_sermons). Written through the *_church_sermon functions. Quoted words never reach readers: approved translations publish as a code, others as references only.';

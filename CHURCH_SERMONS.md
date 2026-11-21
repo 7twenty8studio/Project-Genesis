@@ -43,7 +43,7 @@ TestFlight without the owner's go-ahead for each.
   with the reason (`invalid_blocks`, `invalid_details`), and the draft stays
   as it was.
 - **Quotations**: a scripture block holds the reference the pastor typed and
-  verse ids (KJV numbering), checked against every chapter's real verse
+  verse ids (KJV numbering, both ends whole numbers, never rounded), checked against every chapter's real verse
   count (`bible_verse_counts`). Words the pastor typed stay in the draft
   only; readers never get them. A quotation labelled KJV, WEB, ASV,
   Reina-Valera 1909 or Bíblia Livre is published as that translation's code
@@ -69,12 +69,18 @@ TestFlight without the owner's go-ahead for each.
   `<group id>/<sermon id>/<cover id>.jpg`, a new id per picture
   (`new_church_sermon_cover`), so the published picture never changes under
   readers and a draft's picture is never seen before publishing. Leaders of
-  that church only; the published one can't be removed while published.
-  Studio re-encodes on the device (no metadata) and asks for alt text (or
-  "decorative") before publishing. Readers get covers only through a request
-  that rechecks access each time (checkpoint 2), never a signed URL that
-  could outlive an unpublish. `orphan_sermon_covers()` lists files neither
-  copy uses, for a nightly sweep.
+  that church upload; nobody deletes a file directly (removing a cover is
+  saving `cover: null`). Studio re-encodes on the device (no metadata) and
+  asks for alt text (or "decorative") before publishing. Readers get covers
+  only through a request that rechecks access each time (checkpoint 2),
+  never a signed URL that could outlive an unpublish. The nightly sweep
+  (service role) calls `retire_orphan_sermon_covers()`, which rechecks each
+  file older than a day under its sermon's row lock (the lock save and
+  publish take), records the ones neither copy uses in
+  `church_sermon_retired_covers` and returns them for deletion through the
+  Storage API. Save and publish refuse a retired cover and a retired name
+  can't be uploaded again, so a file is never both deleted and in use
+  (two-session checks in run.sh).
 - **Account deletion**: a volunteer's sermons stay with the church;
   `created_by` / `published_by` become null.
 

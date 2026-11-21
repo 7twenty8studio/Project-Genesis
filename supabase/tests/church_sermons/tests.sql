@@ -182,6 +182,13 @@ select ct.bad_blocks('John 3:99 does not exist', '[{"id": "x", "kind": "scriptur
 select ct.bad_blocks('Psalm 151 does not exist', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "start": 19151001, "status": "verified"}}]');
 select ct.bad_blocks('verse 0 does not exist', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "start": 43003000, "status": "verified"}}]');
 select ct.bad_blocks('a fractional verse id', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "start": 43003016.5, "status": "verified"}}]');
+select ct.bad_blocks('a fractional end verse (never rounded to 43003017)', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "start": 43003016, "end": 43003016.6, "status": "verified"}}]');
+select ct.bad_blocks('a whole number written as a decimal', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "start": 43003016, "end": 43003017.0, "status": "verified"}}]');
+select ct.bad_blocks('a negative verse id', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "start": -43003016, "status": "verified"}}]');
+select ct.bad_blocks('a negative end verse', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "start": 43003016, "end": -1, "status": "verified"}}]');
+select ct.bad_blocks('a huge verse id', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "start": 43003016, "end": 430030160000000000000, "status": "verified"}}]');
+select ct.bad_blocks('an end verse past the chapter', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "start": 43003016, "end": 43003037, "status": "verified"}}]');
+select ct.bad_blocks('an end verse as text', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "start": 43003016, "end": "43003017", "status": "verified"}}]');
 select ct.bad_blocks('range across books', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "start": 43010011, "end": 44001001, "status": "verified"}}]');
 select ct.bad_blocks('range backwards', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "start": 43003016, "end": 43003010, "status": "verified"}}]');
 select ct.bad_blocks('quotation of the wrong type', '[{"id": "x", "kind": "scripture", "ref": {"raw": "x", "status": "unlinked", "quote": 5}}]');
@@ -349,16 +356,31 @@ select ct.dml('pastor', format('insert into storage.objects (bucket_id, name) va
 select ct.save('pastor', 's1', jsonb_build_object('cover', (ct.v('c2')::jsonb)->>'cover', 'cover_alt', 'Unpublished alt')::text);
 select ct.check('readers keep the published cover until the next publish',
   (ct.run('anon', format('public.published_sermon(%L)', ct.v('slug1'))))#>>'{cover,path}' = (ct.v('c1')::jsonb)->>'path');
-select ct.check('the published cover cannot be removed while published',
-  ct.dml('pastor', format('delete from storage.objects where name = %L', (ct.v('c1')::jsonb)->>'path')) = '0')
+select ct.check('leaders cannot delete a cover file, published or not',
+  ct.dml('pastor', format('delete from storage.objects where name in (%L, %L)', (ct.v('c1')::jsonb)->>'path', (ct.v('c2')::jsonb)->>'path')) = '0')
 from (select set_config('storage.allow_delete_query', 'true', true)) allow_;
 update storage.objects set created_at = now() - interval '2 days' where bucket_id = 'sermon-covers';
-select ct.check('covers in use (draft and published) are not orphans',
-  (select count(*) from public.orphan_sermon_covers() n where n in ((ct.v('c1')::jsonb)->>'path', (ct.v('c2')::jsonb)->>'path')) = 0);
+select ct.check('covers in use (draft and published) are never retired',
+  (select count(*) from public.retire_orphan_sermon_covers() n where n in ((ct.v('c1')::jsonb)->>'path', (ct.v('c2')::jsonb)->>'path')) = 0
+  and not exists (select 1 from public.church_sermon_retired_covers where name in ((ct.v('c1')::jsonb)->>'path', (ct.v('c2')::jsonb)->>'path')));
 select ct.publish('pastor', 's1');
-select ct.check('after the next publish the old picture is an orphan',
-  exists (select 1 from public.orphan_sermon_covers() n where n = (ct.v('c1')::jsonb)->>'path'));
-select ct.refused('only the service role lists orphans', 'pastor', '(select count(*) from public.orphan_sermon_covers())', 'permission denied');
+select ct.check('after the next publish the old picture is retired',
+  exists (select 1 from public.retire_orphan_sermon_covers() n where n = (ct.v('c1')::jsonb)->>'path'));
+select ct.check('and recorded as retired',
+  exists (select 1 from public.church_sermon_retired_covers where name = (ct.v('c1')::jsonb)->>'path'));
+select ct.check('a retired file not yet deleted is returned again',
+  exists (select 1 from public.retire_orphan_sermon_covers() n where n = (ct.v('c1')::jsonb)->>'path'));
+select ct.refused('a retired cover cannot go back on the draft', 'pastor',
+  format('public.save_church_sermon(%L, %s, %L, null)', ct.v('s1'), ct.ver('s1'), jsonb_build_object('cover', (ct.v('c1')::jsonb)->>'cover')), 'invalid_details');
+-- The sweep deletes the file through the Storage API.
+begin;
+select set_config('storage.allow_delete_query', 'true', true);
+delete from storage.objects where name = (ct.v('c1')::jsonb)->>'path';
+commit;
+select ct.refused_dml('and its name cannot be uploaded again', 'pastor',
+  format('insert into storage.objects (bucket_id, name) values (%L, %L)', 'sermon-covers', (ct.v('c1')::jsonb)->>'path'), 'row-level security');
+select ct.refused('only the service role runs the sweep', 'pastor', '(select count(*) from public.retire_orphan_sermon_covers())', 'permission denied');
+select ct.refused('nobody reads the retired list directly', 'pastor', '(select count(*) from public.church_sermon_retired_covers)', 'permission denied');
 
 -- Reports --------------------------------------------------------------------------------
 
