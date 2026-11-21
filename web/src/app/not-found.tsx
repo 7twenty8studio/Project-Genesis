@@ -1,9 +1,9 @@
-import { headers } from "next/headers";
 import { BrandBar } from "@/components/Brand";
-import { langFromHeader, translator } from "@/lib/i18n";
+import { requestLang } from "@/lib/prefs.server";
+import { translator } from "@/lib/i18n";
 
 export default async function NotFound() {
-  const t = translator(langFromHeader((await headers()).get("accept-language")));
+  const t = translator(await requestLang());
   return (
     <>
       <BrandBar />

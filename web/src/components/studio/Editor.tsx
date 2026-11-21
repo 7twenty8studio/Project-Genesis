@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { closeSermon, deleteSermon, duplicateSermon, publishSermon, saveSermon, uploadSermonCover } from "@/app/studio/actions";
 import { draftProblems, type DraftBlock, type DraftDetails, type DraftRow } from "@/lib/draft";
@@ -15,7 +16,7 @@ import { Notice } from "./ui";
 
 export type Review = DraftReview;
 type SaveState = "saved" | "unsaved" | "saving" | "error" | "conflict" | "invalid";
-const TABS = ["outline", "details", "preview", "share"] as const;
+const TABS = ["outline", "details", "share"] as const;
 type Tab = (typeof TABS)[number];
 
 function detailsOf(row: DraftRow): Partial<DraftDetails> & { cover: string | null } {
@@ -44,6 +45,8 @@ export function Editor({ lang, initial, church }: { lang: Lang; initial: DraftRo
   const t = translator(lang);
   const [row, setRow] = useState<DraftRow>(initial);
   const [tab, setTab] = useState<Tab>("outline");
+  // Phones: Edit or Preview (on a wide screen the preview is always beside the editor).
+  const [view, setView] = useState<"edit" | "preview">("edit");
   const [state, setState] = useState<SaveState>("saved");
   const [error, setError] = useState<string | null>(null);
   // The import review lives with the draft: it follows the sermon to any computer and the database enforces it at Publish.
@@ -266,16 +269,27 @@ export function Editor({ lang, initial, church }: { lang: Lang; initial: DraftRo
   const blockers = publishBlockers(row, review, saving);
   const changedSincePublish = row.status === "published" && (shown.published !== shown.current || state !== "saved");
 
+  const status =
+    state === "saved" ? t("All changes saved") : state === "saving" ? t("Saving…") : state === "unsaved" ? t("Not saved yet") : state === "conflict" ? t("Not saved: changed elsewhere") : state === "invalid" ? t("Outline not saved: fix the items marked in red") : t("Not saved");
+  const label = (name: Tab) => (name === "outline" ? t("Outline") : name === "details" ? t("Details") : t("Publish"));
+
   return (
-    <main className="mx-auto max-w-3xl px-4 pb-24 pt-6 sm:px-6">
-      <p className="text-sm font-medium uppercase tracking-wider text-accent">{church}</p>
-      <div className="mt-1 flex flex-wrap items-center justify-between gap-3">
-        <h1 className="min-w-0 text-3xl font-semibold tracking-tight">{row.title || t("Untitled sermon")}</h1>
-        <StatusBadge sermon={{ status: row.status, live_audience: row.live_audience, hidden: row.hidden_at !== null, unpublished_changes: changedSincePublish }} t={t} />
+    <main className="mx-auto max-w-7xl px-4 pb-24 pt-6 sm:px-6">
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <div className="min-w-0">
+          <Link href={`/studio?church=${row.group_id}`} className="text-sm font-medium uppercase tracking-wider text-accent underline-offset-4 hover:underline">
+            {church}
+          </Link>
+          <h1 className="mt-1 min-w-0 text-3xl font-semibold tracking-tight">{row.title || t("Untitled sermon")}</h1>
+        </div>
+        <div className="flex items-center gap-3">
+          <span className="inline-flex items-center gap-2 text-sm text-muted" role="status" aria-live="polite">
+            <span aria-hidden="true" className={`h-2 w-2 rounded-full ${state === "saved" ? "bg-[#4f7a45]" : state === "saving" || state === "unsaved" ? "bg-copper" : "bg-[#b3412e]"}`} />
+            {status}
+          </span>
+          <StatusBadge sermon={{ status: row.status, live_audience: row.live_audience, hidden: row.hidden_at !== null, unpublished_changes: changedSincePublish }} t={t} />
+        </div>
       </div>
-      <p className="mt-2 text-sm text-muted" role="status" aria-live="polite">
-        {state === "saved" ? t("All changes saved") : state === "saving" ? t("Saving…") : state === "unsaved" ? t("Not saved yet") : state === "conflict" ? t("Not saved: changed elsewhere") : state === "invalid" ? t("Outline not saved: fix the items marked in red") : t("Not saved")}
-      </p>
       {error ? (
         <Notice>
           {error}
@@ -291,40 +305,76 @@ export function Editor({ lang, initial, church }: { lang: Lang; initial: DraftRo
         </Notice>
       ) : null}
 
-      <div role="tablist" aria-label={t("Sermon")} className="mt-6 flex gap-1 overflow-x-auto rounded-full bg-surface-2 p-1" onKeyDown={(e) => arrowTabs(e, tab, setTab)}>
-        {TABS.map((name) => (
+      {/* Phones: one column, Edit or Preview. */}
+      <div className="mt-5 grid grid-cols-2 gap-1 rounded-full bg-surface-2 p-1 lg:hidden">
+        {(["edit", "preview"] as const).map((v) => (
           <button
-            key={name}
-            role="tab"
-            id={`tab-${name}`}
-            aria-selected={tab === name}
-            aria-controls={`panel-${name}`}
-            tabIndex={tab === name ? 0 : -1}
-            onClick={() => setTab(name)}
-            className={`min-h-11 flex-1 whitespace-nowrap rounded-full px-4 font-medium ${tab === name ? "bg-surface text-foreground shadow-sm" : "text-muted hover:text-foreground"}`}
+            key={v}
+            type="button"
+            aria-pressed={view === v}
+            onClick={() => setView(v)}
+            className={`min-h-11 rounded-full px-4 font-medium transition-colors ${view === v ? "bg-surface text-foreground shadow-sm" : "text-muted hover:text-foreground"}`}
           >
-            {name === "outline" ? t("Outline") : name === "details" ? t("Details") : name === "preview" ? t("Preview") : t("Share")}
+            {v === "edit" ? t("Edit") : t("Preview")}
           </button>
         ))}
       </div>
 
-      <div role="tabpanel" id={`panel-${tab}`} aria-labelledby={`tab-${tab}`} className="mt-6">
-        {tab === "outline" ? <OutlineEditor lang={lang} t={t} sermonId={row.id} language={row.language} blocks={row.draft_blocks} onChange={setBlocks} review={review} onReview={setReview} /> : null}
-        {tab === "details" ? <DetailsForm t={t} row={row} onChange={change} onCover={uploadCover} /> : null}
-        {tab === "preview" ? <Preview lang={lang} t={t} row={row} church={church} /> : null}
-        {tab === "share" ? (
-          <SharePanel
-            t={t}
-            row={row}
-            blockers={blockers}
-            changedSincePublish={changedSincePublish}
-            onPublish={publish}
-            onClose={close}
-            onDuplicate={duplicate}
-            onDelete={remove}
-            goTo={(name) => setTab(name)}
-          />
-        ) : null}
+      <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-[11rem_minmax(0,1fr)_380px] lg:items-start">
+        <div className={`${view === "edit" ? "" : "hidden"} lg:sticky lg:top-6 lg:block`}>
+          <div
+            role="tablist"
+            aria-label={t("Sermon")}
+            className="flex gap-1 overflow-x-auto rounded-full bg-surface-2 p-1 lg:flex-col lg:rounded-2xl lg:bg-transparent lg:p-0"
+            onKeyDown={(e) => arrowTabs(e, tab, setTab)}
+          >
+            {TABS.map((name) => (
+              <button
+                key={name}
+                role="tab"
+                id={`tab-${name}`}
+                aria-selected={tab === name}
+                aria-controls={`panel-${name}`}
+                tabIndex={tab === name ? 0 : -1}
+                onClick={() => setTab(name)}
+                className={`min-h-11 flex-1 whitespace-nowrap rounded-full px-4 text-left font-medium transition-colors lg:flex-none lg:rounded-xl ${tab === name ? "bg-surface text-foreground shadow-sm lg:bg-surface-2 lg:shadow-none" : "text-muted hover:text-foreground lg:hover:bg-surface-2/60"}`}
+              >
+                {label(name)}
+              </button>
+            ))}
+          </div>
+          {tab !== "share" ? (
+            <button
+              type="button"
+              onClick={() => setTab("share")}
+              className="mt-4 hidden min-h-11 w-full items-center justify-center rounded-full bg-accent-strong px-4 font-semibold text-on-accent transition-opacity hover:opacity-90 lg:inline-flex"
+            >
+              {row.status === "published" ? t("Publish changes") : t("Ready to publish")}
+            </button>
+          ) : null}
+        </div>
+
+        <div role="tabpanel" id={`panel-${tab}`} aria-labelledby={`tab-${tab}`} className={`${view === "edit" ? "" : "hidden"} min-w-0 lg:block`}>
+          {tab === "outline" ? <OutlineEditor lang={lang} t={t} sermonId={row.id} language={row.language} blocks={row.draft_blocks} onChange={setBlocks} review={review} onReview={setReview} /> : null}
+          {tab === "details" ? <DetailsForm t={t} row={row} onChange={change} onCover={uploadCover} /> : null}
+          {tab === "share" ? (
+            <SharePanel
+              t={t}
+              row={row}
+              blockers={blockers}
+              changedSincePublish={changedSincePublish}
+              onPublish={publish}
+              onClose={close}
+              onDuplicate={duplicate}
+              onDelete={remove}
+              goTo={(name) => setTab(name)}
+            />
+          ) : null}
+        </div>
+
+        <section aria-label={t("Preview")} className={`${view === "preview" ? "" : "hidden"} lg:sticky lg:top-6 lg:block`}>
+          <Preview lang={lang} t={t} row={row} church={church} />
+        </section>
       </div>
     </main>
   );
@@ -333,8 +383,8 @@ export function Editor({ lang, initial, church }: { lang: Lang; initial: DraftRo
 function arrowTabs(e: React.KeyboardEvent, tab: Tab, setTab: (t: Tab) => void) {
   const i = TABS.indexOf(tab);
   let next: number | null = null;
-  if (e.key === "ArrowRight") next = (i + 1) % TABS.length;
-  if (e.key === "ArrowLeft") next = (i - 1 + TABS.length) % TABS.length;
+  if (e.key === "ArrowRight" || e.key === "ArrowDown") next = (i + 1) % TABS.length;
+  if (e.key === "ArrowLeft" || e.key === "ArrowUp") next = (i - 1 + TABS.length) % TABS.length;
   if (e.key === "Home") next = 0;
   if (e.key === "End") next = TABS.length - 1;
   if (next === null) return;

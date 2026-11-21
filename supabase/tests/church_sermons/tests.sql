@@ -77,7 +77,7 @@ begin perform ct.check(name, r->>'status' = status, r); return r; end $$;
 -- People and churches ------------------------------------------------------------------
 
 insert into ct.people (name) values ('pastor'), ('moderator'), ('member'), ('banned'), ('former'), ('outsider'),
-  ('other_pastor'), ('r1'), ('r2'), ('r3');
+  ('other_pastor'), ('r1'), ('r2'), ('r3'), ('starter'), ('named');
 insert into auth.users (id, email) select id, name || '@example.test' from ct.people;
 insert into ct.churches (name) values ('grace'), ('hope'), ('quiet');
 
@@ -598,6 +598,53 @@ select ct.check('reference only: NIV, ESV, NKJV, NVI, RVR1960, none',
   and public.genesis_quote_translation('NKJV') is null and public.genesis_quote_translation('NVI') is null
   and public.genesis_quote_translation('RVR1960') is null and public.genesis_quote_translation(null) is null
   and public.genesis_quote_translation('') is null);
+
+-- Self-serve churches (20261122000000) -----------------------------------------------------
+
+select ct.refused('a guest cannot start a church', 'anon', 'public.create_sermon_church(''Guest Church'', ''Guest'')', 'permission denied');
+select ct.refused('someone with no name in Versely is asked for one', 'starter', 'public.create_sermon_church(''New Life'', null)', 'name_required');
+select ct.set('started', (ct.run('starter', 'public.create_sermon_church(''  New Life Church  '', ''Sam'')'))->>'id');
+select ct.check('anyone signed in starts a church', ct.v('started') is not null);
+select ct.check('it is theirs, sermons on, unlisted, with them as its leader',
+  exists (select 1 from public.groups g join public.group_members m on m.group_id = g.id
+          where g.id = ct.v('started')::uuid and g.name = 'New Life Church' and g.owner_id = ct.p('starter')
+            and g.sermons_enabled and not g.sermons_listed and m.user_id = ct.p('starter') and m.role = 'leader' and m.display_name = 'Sam'));
+select ct.check('their name is saved for the app', exists (select 1 from public.profiles where user_id = ct.p('starter') and display_name = 'Sam'));
+select ct.check('Church Studio offers the new church at once',
+  (ct.run('starter', 'public.my_sermon_churches()')) @> jsonb_build_array(jsonb_build_object('id', ct.v('started'), 'role', 'owner')));
+select ct.check('they can write a sermon in it',
+  (ct.run('starter', format('public.create_church_sermon(%L, %L)', ct.v('started'), 'First')))->>'id' is not null);
+select ct.check('a saved name is kept, whatever the form says',
+  (ct.run('starter', 'public.create_sermon_church(''Second Church'', ''Someone Else'')'))->>'id' is not null
+  and exists (select 1 from public.profiles where user_id = ct.p('starter') and display_name = 'Sam'));
+select ct.refused('an empty church name is refused', 'named', 'public.create_sermon_church(''   '', ''Named'')', 'invalid_group');
+select ct.check('third church in a day', (ct.run('starter', 'public.create_sermon_church(''Third Church'', null)'))->>'id' is not null);
+select ct.refused('a fourth church in a day is refused', 'starter', 'public.create_sermon_church(''Fourth Church'', null)', 'too_many_churches');
+
+select ct.check('the owner sees their group with sermons off',
+  (ct.run('pastor', 'public.my_groups_for_sermons()')) @> jsonb_build_array(jsonb_build_object('id', ct.g('quiet'))));
+select ct.check('a moderator does not see groups they don''t own',
+  not (ct.run('moderator', 'public.my_groups_for_sermons()')) @> jsonb_build_array(jsonb_build_object('id', ct.g('quiet'))));
+select ct.refused('a moderator cannot turn sermons on or off', 'moderator', format('public.set_church_sermons(%L, false)', ct.g('grace')), 'not_allowed');
+select ct.refused('another church''s pastor cannot either', 'other_pastor', format('public.set_church_sermons(%L, true)', ct.g('quiet')), 'not_allowed');
+select ct.refused('nor a guest', 'anon', format('public.set_church_sermons(%L, true)', ct.g('quiet')), 'permission denied');
+select ct.run('pastor', format('public.set_church_sermons(%L, true)', ct.g('quiet')));
+select ct.check('the owner turns sermons on for their group',
+  (select sermons_enabled from public.groups where id = ct.g('quiet'))
+  and (ct.run('pastor', 'public.my_sermon_churches()')) @> jsonb_build_array(jsonb_build_object('id', ct.g('quiet'))));
+select ct.run('pastor', format('public.set_church_sermons(%L, false)', ct.g('quiet')));
+select ct.check('and off again', not (select sermons_enabled from public.groups where id = ct.g('quiet')));
+
+update public.feature_flags set enabled = false where key = 'church_self_serve';
+select ct.refused('self-serve off: no new churches', 'named', 'public.create_sermon_church(''Closed'', ''Named'')', 'not_allowed');
+select ct.refused('self-serve off: no switching', 'pastor', format('public.set_church_sermons(%L, true)', ct.g('quiet')), 'not_allowed');
+select ct.check('self-serve off: nothing listed', ct.run('pastor', 'public.my_groups_for_sermons()') = '[]'::jsonb);
+select ct.check('self-serve off: churches already started keep going',
+  (ct.run('starter', 'public.my_sermon_churches()')) @> jsonb_build_array(jsonb_build_object('id', ct.v('started'))));
+update public.feature_flags set enabled = true where key = 'church_self_serve';
+update public.feature_flags set enabled = false where key = 'church_sermons';
+select ct.refused('church sermons off: no new churches', 'named', 'public.create_sermon_church(''Closed'', ''Named'')', 'not_allowed');
+update public.feature_flags set enabled = true where key = 'church_sermons';
 
 -- Result -------------------------------------------------------------------------------
 

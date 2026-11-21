@@ -18216,6 +18216,22 @@
         }
       }
     },
+    "Open in Church Studio": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir en Church Studio"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abrir no Church Studio"
+          }
+        }
+      }
+    },
     "Open in Reader": {
       "localizations": {
         "es": {
@@ -20812,22 +20828,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Domínio público"
-          }
-        }
-      }
-    },
-    "Publish in Church Studio": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Publicar en Church Studio"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Publicar no Church Studio"
           }
         }
       }

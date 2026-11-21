@@ -19,6 +19,12 @@ enum ChurchSermonLink {
         URL(string: "https://\(host)/s/\(slug)")!
     }
 
+    /// Church Studio on the web, opened on this church (for its owner and
+    /// moderators). Not a Universal Link (only /s/* is), so it opens Safari.
+    static func studio(church: UUID) -> URL {
+        URL(string: "https://\(host)/studio?church=\(church.uuidString.lowercased())")!
+    }
+
     /// The slug a link opens, or nil for any other address.
     static func slug(in url: URL) -> String? {
         let parts = url.pathComponents.filter { $0 != "/" }

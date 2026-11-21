@@ -41,6 +41,12 @@ export const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{1
 
 export const myChurches = (s: Session) => rpc<StudioChurch[]>("my_sermon_churches", {}, s.accessToken);
 export const churchSermons = (s: Session, group: string) => rpc<StudioSermon[]>("group_sermons", { p_group: group }, s.accessToken);
+export const myGroupsForSermons = (s: Session) => rpc<{ id: string; name: string }[]>("my_groups_for_sermons", {}, s.accessToken);
+/** The person's display name in Versely (groups), or null before they've chosen one. */
+export async function myDisplayName(s: Session): Promise<string | null> {
+  const rows = await select<{ display_name: string }[]>(`profiles?select=display_name&user_id=eq.${encodeURIComponent(s.userId)}`, s.accessToken).catch(() => []);
+  return rows[0]?.display_name ?? null;
+}
 export const churchReports = (s: Session, group: string) => rpc<StudioReport[]>("group_sermon_reports", { p_group: group }, s.accessToken);
 
 const DRAFT_COLUMNS =

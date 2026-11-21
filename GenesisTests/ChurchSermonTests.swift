@@ -143,6 +143,13 @@ struct ChurchSermonLinkTests {
         #expect(ChurchSermonLink.url(slug: "abcde12345").absoluteString == "https://versely.7twenty8studio.com/s/abcde12345")
     }
 
+    @Test func leadersOpenTheirChurchInStudio() {
+        let church = UUID(uuidString: "BEBA5C2F-8236-4897-90DC-052E6914069F")!
+        let studio = ChurchSermonLink.studio(church: church).absoluteString
+        #expect(studio == "https://versely.7twenty8studio.com/studio?church=beba5c2f-8236-4897-90dc-052e6914069f")
+        #expect(ChurchSermonLink.slug(in: ChurchSermonLink.studio(church: church)) == nil)
+    }
+
     @Test func ignoresEverythingElse() {
         #expect(ChurchSermonLink.slug(in: URL(string: "https://versely.7twenty8studio.com/studio")!) == nil)
         #expect(ChurchSermonLink.slug(in: URL(string: "https://example.com/s/abcde12345")!) == nil)

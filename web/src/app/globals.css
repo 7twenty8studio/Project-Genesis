@@ -1,33 +1,91 @@
 @import "tailwindcss";
 
-/* Versely's brand (cream, sand, copper, walnut), light and dark. */
-:root {
-  --background: #fbf4ea;
-  --surface: #ffffff;
-  --surface-2: #f6ead8;
-  --foreground: #3b2616;
-  --muted: #6f5a48;
-  --border: #e6d3bc;
-  --accent: #875a38; /* copper, darkened to at least 4.5:1 on every light surface for text */
+/*
+ * Versely's looks (data-theme on <html>, chosen in the header menu, kept in
+ * the vs_theme cookie). Cream is the default; "system" follows the device.
+ * Walnut carries text and buttons (cream on walnut is about 6:1); copper is
+ * for marks and dividers only, since it's too light for small text.
+ */
+:root,
+[data-theme="cream"] {
+  --background: #f9ebd7; /* Versely Cream */
+  --surface: #fff9f0; /* ivory, the editor */
+  --surface-2: #f3dfc4;
+  --foreground: #35220f;
+  --muted: #6a5241;
+  --border: #e2c9a8;
+  --accent: #7a4e2d; /* walnut for text */
   --accent-strong: #7a4e2d; /* walnut */
-  --on-accent: #fffaf3;
+  --on-accent: #f9ebd7;
+  --copper: #b9825a;
   --focus: #7a4e2d;
   --scripture: #2d1d10;
+  --hero: #fff9f0;
+  color-scheme: light;
+}
+
+[data-theme="daylight"] {
+  --background: #ffffff;
+  --surface: #fffbf5;
+  --surface-2: #faefe0;
+  --foreground: #2a1a0d;
+  --muted: #5f4a3b;
+  --border: #eadbc8;
+  --accent: #7a4e2d;
+  --accent-strong: #7a4e2d;
+  --on-accent: #fff9f0;
+  --copper: #b9825a;
+  --focus: #7a4e2d;
+  --scripture: #1f140a;
+  --hero: #fdf6ec;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --background: #30251f; /* cocoa */
+  --surface: #392d25;
+  --surface-2: #43352b;
+  --foreground: #f9ebd7;
+  --muted: #d4bfa8;
+  --border: #574639;
+  --accent: #e0b48d; /* sand */
+  --accent-strong: #e0b48d;
+  --on-accent: #2a1b10;
+  --copper: #c9946b;
+  --focus: #e0b48d;
+  --scripture: #fbf1e4;
+  --hero: #392d25;
+  color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1c140e;
-    --surface: #261b13;
-    --surface-2: #2f2218;
-    --foreground: #f6ead8;
-    --muted: #cdb8a1;
-    --border: #46352a;
-    --accent: #e0b48d; /* sand */
-    --accent-strong: #f1cfae;
+  [data-theme="system"] {
+    --background: #30251f;
+    --surface: #392d25;
+    --surface-2: #43352b;
+    --foreground: #f9ebd7;
+    --muted: #d4bfa8;
+    --border: #574639;
+    --accent: #e0b48d;
+    --accent-strong: #e0b48d;
     --on-accent: #2a1b10;
+    --copper: #c9946b;
     --focus: #e0b48d;
     --scripture: #fbf1e4;
+    --hero: #392d25;
+    color-scheme: dark;
+  }
+}
+
+/* Tailwind's dark: follows the chosen look (and the device's under Match device). */
+@custom-variant dark {
+  &:where([data-theme="dark"], [data-theme="dark"] *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:where([data-theme="system"], [data-theme="system"] *) {
+      @slot;
+    }
   }
 }
 
@@ -42,6 +100,8 @@
   --color-accent-strong: var(--accent-strong);
   --color-on-accent: var(--on-accent);
   --color-scripture: var(--scripture);
+  --color-copper: var(--copper);
+  --color-hero: var(--hero);
   --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-serif-body), ui-serif, Georgia, serif;
 }
@@ -75,4 +135,11 @@ body {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 1rem;
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
 }

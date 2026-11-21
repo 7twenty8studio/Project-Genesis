@@ -106,7 +106,7 @@ async function noSideScroll(page, label) {
     await axe(page, "studio outline + review");
     await page.screenshot({ path: `${OUT}/studio-outline.png`, fullPage: true });
     // Publish must wait for the review.
-    await page.getByRole("tab", { name: "Share" }).click();
+    await page.getByRole("tab", { name: "Publish" }).click();
     const publish = page.getByRole("button", { name: "Publish", exact: true });
     if (!(await publish.isDisabled())) problems.push("publish enabled before title and review");
     await page.getByRole("tab", { name: "Details" }).click();
@@ -127,7 +127,7 @@ async function noSideScroll(page, label) {
       if (!(await keep.count())) break;
       await keep.first().click();
     }
-    await page.getByRole("tab", { name: "Share" }).click();
+    await page.getByRole("tab", { name: "Publish" }).click();
     await page.waitForSelector("text=All changes saved", { timeout: 8000 });
     await page.screenshot({ path: `${OUT}/studio-share-before.png`, fullPage: true });
     if (await publish.isDisabled()) problems.push("publish still disabled after review: " + (await page.locator("section").first().innerText()));
@@ -137,15 +137,15 @@ async function noSideScroll(page, label) {
     }
     await axe(page, "studio share");
     await page.screenshot({ path: `${OUT}/studio-share.png`, fullPage: true });
-    await page.getByRole("tab", { name: "Preview" }).click();
-    await page.waitForTimeout(300);
+    // On a wide screen the phone preview is always beside the editor.
+    if (!(await page.getByRole("region", { name: "Preview" }).isVisible())) problems.push("desktop: the preview isn't beside the editor");
     await axe(page, "studio preview");
-    await page.screenshot({ path: `${OUT}/studio-preview.png`, fullPage: true });
-    // Keyboard on tabs.
-    await page.getByRole("tab", { name: "Preview" }).focus();
-    await page.keyboard.press("ArrowRight");
+    await page.screenshot({ path: `${OUT}/studio-preview.png`, fullPage: false });
+    // Keyboard on the section list (down the sidebar).
+    await page.getByRole("tab", { name: "Details" }).click();
+    await page.keyboard.press("ArrowDown");
     const active = await page.evaluate(() => document.activeElement?.textContent);
-    if (active !== "Share") problems.push(`tab arrows: focus went to ${active}`);
+    if (active !== "Publish") problems.push(`tab arrows: focus went to ${active}`);
     // The published page is readable as a guest.
     const guest = await browser.newPage();
     const slug = (await page.locator("code").first().innerText()).split("/s/")[1];
@@ -160,7 +160,7 @@ async function noSideScroll(page, label) {
     await page.getByRole("tab", { name: "Details" }).click();
     await page.getByLabel("Title").fill("Rest for the Weary, revised");
     await page.waitForSelector("text=Not saved", { timeout: 8000 });
-    await page.getByRole("tab", { name: "Share" }).click();
+    await page.getByRole("tab", { name: "Publish" }).click();
     await page.getByRole("button", { name: "Members only now" }).click();
     await page.waitForSelector("text=Now only church members can read it.", { timeout: 8000 }).catch(() => problems.push("members only waited on the failed save"));
     let live = await (await fetch(MOCK + "/mock/sermon?id=33333333-3333-4333-8333-333333333333")).json();
@@ -191,7 +191,7 @@ async function noSideScroll(page, label) {
     await page.getByLabel("Title").fill("Stale title");
     await page.waitForSelector("text=Not saved", { timeout: 8000 });
     await fetch(MOCK + "/mock/fail-saves?on=0");
-    await page.getByRole("tab", { name: "Share" }).click();
+    await page.getByRole("tab", { name: "Publish" }).click();
     const unpub = page.getByRole("button", { name: "Unpublish" });
     if (await unpub.count()) await unpub.click(); else await page.getByRole("button", { name: "Members only now" }).click();
     await page.waitForSelector("text=changed in another window", { timeout: 8000 }).catch(() => problems.push("stale tab not told the draft changed"));
@@ -203,7 +203,7 @@ async function noSideScroll(page, label) {
     await fetch(MOCK + "/mock/touch?publish=1&id=33333333-3333-4333-8333-333333333333&title=" + encodeURIComponent("Slow start"));
     await page.goto(`${BASE}/studio/33333333-3333-4333-8333-333333333333`, { waitUntil: "networkidle" });
     await fetch(MOCK + "/mock/slow-close?ms=3000");
-    await page.getByRole("tab", { name: "Share" }).click();
+    await page.getByRole("tab", { name: "Publish" }).click();
     await page.getByRole("button", { name: "Unpublish" }).click();
     await page.getByRole("tab", { name: "Details" }).click();
     await page.getByLabel("Title").fill("Typed while unpublishing");
@@ -215,6 +215,66 @@ async function noSideScroll(page, label) {
     if (!/All changes saved/.test(slowState) || live.title !== "Typed while unpublishing" || live.status !== "unpublished") problems.push("slow unpublish: " + slowState + " / " + live.title + " / " + live.status);
     await ctx.close();
   }
+  // The home page and Studio's sign-in: every language, light and dark, phone and desktop.
+  for (const [locale, header] of [["en", "en-US"], ["es", "es-MX"], ["pt", "pt-BR"]]) {
+    for (const scheme of ["light", "dark"]) {
+      for (const width of [390, 1280]) {
+        const ctx = await browser.newContext({ viewport: { width, height: 844 }, colorScheme: scheme, extraHTTPHeaders: { "Accept-Language": header } });
+        const page = await ctx.newPage();
+        for (const path of ["/", "/studio"]) {
+          await page.goto(`${BASE}${path}`);
+          await axe(page, `${path} ${locale}/${scheme}/${width}`);
+          await noSideScroll(page, `${path} ${locale}/${scheme}/${width}`);
+          if (scheme === "light") await page.screenshot({ path: `${OUT}/${path === "/" ? "home" : "signin"}-${locale}-${width}.png`, fullPage: true });
+        }
+        if (await page.getByRole("link", { name: /Apple/ }).count()) problems.push("Apple sign-in shown before it's set up");
+        await ctx.close();
+      }
+    }
+  }
+
+  // Appearance and Language: Cream first; a choice applies at once and is remembered.
+  {
+    const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, colorScheme: "dark", extraHTTPHeaders: { "Accept-Language": "en-US" } });
+    const page = await ctx.newPage();
+    await page.goto(`${BASE}/`);
+    if ((await page.getAttribute("html", "data-theme")) !== "cream") problems.push("first visit isn't Cream (even on a dark device)");
+    await page.getByRole("button", { name: /Appearance and language/ }).click();
+    await axe(page, "appearance menu");
+    await page.screenshot({ path: `${OUT}/prefs-menu.png` });
+    await page.getByLabel("Warm Dark").check();
+    if ((await page.getAttribute("html", "data-theme")) !== "dark") problems.push("Warm Dark didn't apply at once");
+    await page.getByLabel("Español").check();
+    await page.waitForSelector("text=Comparte tu mensaje del domingo", { timeout: 8000 }).catch(() => problems.push("Español didn't apply at once"));
+    await page.goto(`${BASE}/studio`);
+    if ((await page.getAttribute("html", "data-theme")) !== "dark" || (await page.getAttribute("html", "lang")) !== "es") problems.push("choices not remembered on the next page");
+    await axe(page, "studio sign-in, Warm Dark, Español");
+    await page.screenshot({ path: `${OUT}/signin-es-dark.png`, fullPage: true });
+    for (const look of ["daylight", "system"]) {
+      await ctx.addCookies([{ name: "vs_theme", value: look, url: BASE }]);
+      await page.goto(`${BASE}/`);
+      await axe(page, `home ${look}`);
+    }
+    await ctx.close();
+  }
+
+  // Starting a church: the name form, a group from the app, then the new church opens.
+  {
+    const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+    await ctx.addCookies([{ name: "vs_session", value: session, url: BASE }]);
+    const page = await ctx.newPage();
+    await page.goto(`${BASE}/studio?new=1`);
+    await axe(page, "start a church");
+    await noSideScroll(page, "start a church");
+    if (!(await page.getByText("Tuesday Bible Study").count())) problems.push("start a church: the person's own group isn't offered");
+    await page.getByLabel("Church name").fill("Hope Chapel");
+    await page.getByLabel("Your name").fill("Pat");
+    await page.screenshot({ path: `${OUT}/start-church.png`, fullPage: true });
+    await page.getByRole("button", { name: "Start church" }).click();
+    await page.waitForURL(/\/studio\/[0-9a-f-]{36}/, { timeout: 8000 }).catch(() => problems.push("start a church: didn't open its first draft"));
+    await ctx.close();
+  }
+
   // Phone-width Studio editor, not-found and members-only pages.
   {
     const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
@@ -227,6 +287,13 @@ async function noSideScroll(page, label) {
     await page.getByRole("tab", { name: "Details" }).click();
     await noSideScroll(page, "studio details 390px");
     await page.screenshot({ path: `${OUT}/studio-details-phone.png`, fullPage: true });
+    // Phones: Edit / Preview.
+    await page.getByRole("button", { name: "Preview", exact: true }).click();
+    if (!(await page.getByRole("region", { name: "Preview" }).isVisible()) || (await page.getByRole("tab", { name: "Details" }).isVisible())) problems.push("phone: Preview didn't replace the editor");
+    await noSideScroll(page, "studio preview 390px");
+    await page.screenshot({ path: `${OUT}/studio-preview-phone.png`, fullPage: true });
+    await page.getByRole("button", { name: "Edit", exact: true }).click();
+    if (!(await page.getByRole("tab", { name: "Details" }).isVisible())) problems.push("phone: Edit didn't bring the editor back");
     const guest = await browser.newContext({ viewport: { width: 390, height: 844 } });
     const g = await guest.newPage();
     const r = await g.goto(`${BASE}/s/zzzzzzzzzz`);

@@ -35,6 +35,24 @@ export async function createSermon(church: string): Promise<ActionResult> {
   redirect(`/studio/${result.value.id}`);
 }
 
+/** Starts a church owned by the person, with sermons on, and opens its first draft. */
+export async function startChurch(name: string, yourName: string | null): Promise<ActionResult> {
+  if (typeof name !== "string" || name.trim().length === 0 || name.length > 60) return { ok: false, code: "invalid_group" };
+  const you = typeof yourName === "string" && yourName.trim() ? yourName.trim().slice(0, 40) : null;
+  const result = await call<{ id: string }>("create_sermon_church", { p_name: name.trim(), p_your_name: you });
+  if (!result.ok) return result;
+  const draft = await call<{ id: string }>("create_church_sermon", { p_group: result.value.id, p_title: "" });
+  redirect(draft.ok ? `/studio/${draft.value.id}` : `/studio?church=${result.value.id}`);
+}
+
+/** Turns sermons on for a group the person owns, and opens it. */
+export async function turnOnSermons(group: string): Promise<ActionResult> {
+  if (!isID(group)) return { ok: false, code: "not_found" };
+  const result = await call<null>("set_church_sermons", { p_group: group, p_on: true });
+  if (!result.ok) return result;
+  redirect(`/studio?church=${group}`);
+}
+
 export async function duplicateSermon(sermon: string): Promise<ActionResult> {
   if (!isID(sermon)) return { ok: false, code: "not_found" };
   const result = await call<{ id: string }>("duplicate_church_sermon", { p_sermon: sermon });
