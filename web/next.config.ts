@@ -11,6 +11,8 @@ const security = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // Covers reach Studio's upload action re-encoded to at most 1 MB.
+  experimental: { serverActions: { bodySizeLimit: "2mb" } },
   async headers() {
     return [
       { source: "/:path*", headers: security },

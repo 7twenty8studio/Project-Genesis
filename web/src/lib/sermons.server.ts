@@ -3,9 +3,9 @@
 // membership and bans on every request, so an unpublish, a ban or a
 // restriction to members applies to the very next one.
 import { cache } from "react";
-import { currentSession } from "./auth";
-import type { SermonLookup } from "./outline";
-import { rpc } from "./supabase";
+import { currentSession } from "./auth.ts";
+import type { SermonLookup } from "./outline.ts";
+import { rpc } from "./supabase.ts";
 
 export const SLUG = /^[a-z0-9]{10}$/;
 

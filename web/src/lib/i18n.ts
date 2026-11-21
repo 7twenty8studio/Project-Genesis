@@ -2,7 +2,7 @@
 // app's three languages). English is the key; messages.ts holds the rest,
 // and i18n.test.ts fails if any t("…") in the code lacks a translation or
 // a {placeholder}. Never used for Scripture or anything a church wrote.
-import { messages } from "./messages";
+import { messages } from "./messages.ts";
 
 export type Lang = "en" | "es" | "pt";
 

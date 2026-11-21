@@ -8,6 +8,7 @@ import { useEffect } from "react";
  * a day; a failure here never affects the page.
  */
 export function recordSermonEvent(endpoint: string, slug: string, kind: "open" | "passage" | "save") {
+  if (!endpoint) return; // Studio's preview counts nothing.
   try {
     void fetch(endpoint, {
       method: "POST",

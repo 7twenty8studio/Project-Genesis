@@ -694,6 +694,14 @@ shares; README.md has the architecture.
   (same reading as ReferenceParser.swift; shared cases in
   fixtures/references.json; book data from BibleBook.swift via
   Tools/BibleData/export_reference_books.py, rerun when BibleBook changes).
+- Church Studio and the guest page live in web/ (Next.js 16, Vercel root
+  web/; web/README.md). Guest pages are never cached (unpublish applies on
+  the next request); covers only through routes that recheck access, never
+  signed links. Imports run in the browser and every one is compared word
+  for word with its source; Publish waits for the review list. Passages on
+  the web come only from the five free Bibles' bibles/web/v1 files
+  (Tools/BibleData/export_web_chapters.py). Web text in English, Spanish
+  and Portuguese in web/src/lib/messages.ts (tested).
 
 ## Journal extras (Premium)
 - `PremiumFeature.journalExtras`, checked with `EntitlementService.allows` at

@@ -4,6 +4,7 @@ import { useId, useState } from "react";
 import { translator, type Lang } from "@/lib/i18n";
 import type { PublishedRef, TranslationCode } from "@/lib/outline";
 import { defaultBible, loadPassage, ownRange, WEB_BIBLES, type Passage } from "@/lib/scripture";
+import { bookWithNumber, localName } from "@/lib/shared/references";
 import { recordSermonEvent } from "./SermonEvents";
 
 interface Props {
@@ -131,7 +132,7 @@ export function ScriptureRef({ reference, named, outlineLanguage, lang, supabase
                 )}
               </blockquote>
               <figcaption className="mt-3 text-xs leading-relaxed text-muted">
-                {passage.name} {ownRange(passage.verses)}. {passage.license}
+                {localName(bookWithNumber(Math.floor(reference.start! / 1_000_000)), passage.language).name} {ownRange(passage.verses)} · {passage.name}. {passage.license}
               </figcaption>
             </figure>
           ) : null}

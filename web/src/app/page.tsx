@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { headers } from "next/headers";
 import { BrandBar } from "@/components/Brand";
 import { langFromHeader, translator } from "@/lib/i18n";
@@ -15,9 +16,9 @@ export default async function Home() {
         <div className="mt-10 rounded-3xl border border-border bg-surface p-6">
           <h2 className="text-xl font-semibold">{t("Church Studio")}</h2>
           <p className="mt-2 leading-relaxed text-muted">{t("For church owners and moderators: prepare a sermon outline and share it with one link and a QR code.")}</p>
-          <a href="/studio" className="mt-5 inline-flex min-h-12 items-center rounded-full bg-accent-strong px-6 font-medium text-on-accent hover:opacity-90">
+          <Link href="/studio" className="mt-5 inline-flex min-h-12 items-center rounded-full bg-accent-strong px-6 font-medium text-on-accent hover:opacity-90">
             {t("Open Church Studio")}
-          </a>
+          </Link>
         </div>
       </main>
     </>

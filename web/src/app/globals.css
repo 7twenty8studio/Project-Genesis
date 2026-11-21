@@ -8,7 +8,7 @@
   --foreground: #3b2616;
   --muted: #6f5a48;
   --border: #e6d3bc;
-  --accent: #9a6a45; /* copper, darkened to 4.5:1 on cream for text */
+  --accent: #875a38; /* copper, darkened to at least 4.5:1 on every light surface for text */
   --accent-strong: #7a4e2d; /* walnut */
   --on-accent: #fffaf3;
   --focus: #7a4e2d;

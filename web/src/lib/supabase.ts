@@ -3,7 +3,7 @@
 // 7twenty8 site's dashboards do: no SDK. A signed-in person's own access
 // token goes in Authorization, so the database decides what they may do.
 import { config } from "@/config";
-import { sessionFromToken, type Session } from "./session";
+import { sessionFromToken, type Session } from "./session.ts";
 
 export class RpcError extends Error {
   /** The database's own code ("not_allowed", "draft_changed", "invalid_blocks"…) or the HTTP status. */

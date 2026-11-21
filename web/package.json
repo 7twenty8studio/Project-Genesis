@@ -7,9 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --experimental-strip-types --test src/lib/*.test.ts"
+    "test": "node --experimental-strip-types --test src/lib/*.test.ts src/lib/import/*.test.ts",
+    "predev": "node scripts/copy-pdf-worker.mjs",
+    "prebuild": "node scripts/copy-pdf-worker.mjs",
+    "sync": "node scripts/sync-shared.mjs"
   },
   "dependencies": {
+    "jszip": "^3.10.2",
     "mammoth": "^1.13.0",
     "next": "16.2.1",
     "pdfjs-dist": "^6.5.438",
@@ -27,5 +31,6 @@
     "eslint-config-next": "16.2.1",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "type": "module"
 }

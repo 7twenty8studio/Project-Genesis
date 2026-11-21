@@ -10,17 +10,33 @@ import { SignOutButton } from "./SignIn";
 const EVENTS = `${config.supabaseUrl}/functions/v1/sermon-events`;
 
 /** A published sermon for reading: the outline first, every word as the church published it. */
-export function SermonView({ sermon, lang, t, signedIn }: { sermon: PublishedSermon; lang: Lang; t: Translate; signedIn: boolean }) {
+export function SermonView({
+  sermon,
+  lang,
+  t,
+  signedIn,
+  preview,
+}: {
+  sermon: PublishedSermon;
+  lang: Lang;
+  t: Translate;
+  signedIn: boolean;
+  /** Studio's preview of the draft: its own cover address, nothing counted, no links away. */
+  preview?: { coverSrc: string | null };
+}) {
+  const events = preview ? "" : EVENTS;
+  // Inside Studio the page already has its own main landmark.
+  const Main = preview ? "div" : "main";
   const parts = sections(sermon.blocks);
   const headed = parts.filter((s) => s.title);
   const outlineLang = sermon.language === "other" ? undefined : sermon.language === "pt" ? "pt-BR" : sermon.language;
   return (
-    <main className="mx-auto max-w-2xl px-4 pb-24 pt-6 sm:px-6" id="top">
-      <OpenEvent endpoint={EVENTS} slug={sermon.slug} />
-      {sermon.cover ? (
+    <Main className="mx-auto max-w-2xl px-4 pb-24 pt-6 sm:px-6">
+      {preview ? null : <OpenEvent endpoint={EVENTS} slug={sermon.slug} />}
+      {sermon.cover && (!preview || preview.coverSrc) ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={`/s/${sermon.slug}/cover?v=${sermon.cover.id}`}
+          src={preview?.coverSrc ?? `/s/${sermon.slug}/cover?v=${sermon.cover.id}`}
           alt={sermon.cover.decorative ? "" : sermon.cover.alt}
           className="mb-6 aspect-[16/9] w-full rounded-3xl object-cover"
           width={1600}
@@ -60,7 +76,7 @@ export function SermonView({ sermon, lang, t, signedIn }: { sermon: PublishedSer
       {sermon.audience === "members" ? (
         <div className="mt-3 flex items-center gap-3 text-sm text-muted">
           <span>{t("Shared with church members")}</span>
-          {signedIn ? <SignOutButton next={`/s/${sermon.slug}`} t={t} /> : null}
+          {signedIn && !preview ? <SignOutButton next={`/s/${sermon.slug}`} t={t} /> : null}
         </div>
       ) : null}
 
@@ -83,7 +99,7 @@ export function SermonView({ sermon, lang, t, signedIn }: { sermon: PublishedSer
         {parts.map((section) => (
           <section key={section.id} id={anchorFor(section)} aria-label={section.title ?? undefined} className="mt-8 first:mt-0">
             {section.blocks.map((block) => (
-              <BlockView key={block.id} block={block} sermon={sermon} lang={lang} />
+              <BlockView key={block.id} block={block} sermon={sermon} lang={lang} events={events} />
             ))}
             <div className="mt-3 flex justify-end">
               <CopyButton text={copyText(section.blocks)} label={t("Copy")} done={t("Copied")} sectionName={section.title ?? sermon.title} />
@@ -105,11 +121,11 @@ export function SermonView({ sermon, lang, t, signedIn }: { sermon: PublishedSer
           {t("Open in Versely")}
         </a>
       </footer>
-    </main>
+    </Main>
   );
 }
 
-function BlockView({ block, sermon, lang }: { block: Block; sermon: PublishedSermon; lang: Lang }) {
+function BlockView({ block, sermon, lang, events }: { block: Block; sermon: PublishedSermon; lang: Lang; events: string }) {
   switch (block.kind) {
     case "heading": {
       const Tag = block.level === 1 ? "h2" : block.level === 2 ? "h2" : "h3";
@@ -139,7 +155,7 @@ function BlockView({ block, sermon, lang }: { block: Block; sermon: PublishedSer
           outlineLanguage={sermon.language}
           lang={lang}
           supabaseUrl={config.supabaseUrl}
-          eventEndpoint={EVENTS}
+          eventEndpoint={events}
           slug={sermon.slug}
         />
       );

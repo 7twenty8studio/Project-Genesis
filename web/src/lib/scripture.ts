@@ -3,8 +3,8 @@
 // (web/v1/<CODE>/<book>-<chapter>.json, one file per KJV chapter, each verse
 // with the KJV verses it holds). Nothing here changes a word: verses are
 // shown as the files hold them, in the Bible's own numbering.
-import type { TranslationCode } from "./outline";
-import { splitVerseID } from "./shared/references";
+import type { TranslationCode } from "./outline.ts";
+import { splitVerseID } from "./shared/references.ts";
 
 export const WEB_BIBLES: { code: TranslationCode; name: string; language: "en" | "es" | "pt" }[] = [
   { code: "WEB", name: "World English Bible", language: "en" },
@@ -39,6 +39,8 @@ export interface ChapterFile {
 export interface Passage {
   translation: TranslationCode;
   name: string;
+  /** The Bible's language (book names in the credit follow it). */
+  language: string;
   license: string;
   verses: ChapterVerse[];
 }
@@ -103,5 +105,5 @@ export async function loadPassage(supabaseUrl: string, code: TranslationCode, st
       return (await response.json()) as ChapterFile;
     }),
   );
-  return { translation: code, name: files[0].name, license: files[0].license, verses: versesFor(files, start, end) };
+  return { translation: code, name: files[0].name, language: files[0].language, license: files[0].license, verses: versesFor(files, start, end) };
 }
