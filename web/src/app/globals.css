@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/* Versely's brand (cream, sand, copper, walnut), light and dark. */
+:root {
+  --background: #fbf4ea;
+  --surface: #ffffff;
+  --surface-2: #f6ead8;
+  --foreground: #3b2616;
+  --muted: #6f5a48;
+  --border: #e6d3bc;
+  --accent: #875a38; /* copper, darkened to at least 4.5:1 on every light surface for text */
+  --accent-strong: #7a4e2d; /* walnut */
+  --on-accent: #fffaf3;
+  --focus: #7a4e2d;
+  --scripture: #2d1d10;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1c140e;
+    --surface: #261b13;
+    --surface-2: #2f2218;
+    --foreground: #f6ead8;
+    --muted: #cdb8a1;
+    --border: #46352a;
+    --accent: #e0b48d; /* sand */
+    --accent-strong: #f1cfae;
+    --on-accent: #2a1b10;
+    --focus: #e0b48d;
+    --scripture: #fbf1e4;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-on-accent: var(--on-accent);
+  --color-scripture: var(--scripture);
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-serif-body), ui-serif, Georgia, serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 1rem;
+}

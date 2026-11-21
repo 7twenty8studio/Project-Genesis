@@ -8,9 +8,10 @@ everyone. Planned for Versely 1.0.4, behind the `church_sermons` switch.
 Built in four checkpoints, each a pull request the owner reviews and merges
 before the next one starts:
 
-1. **Foundation and security** (this one): database, access rules, the
-   quotation rule, covers, reports, counts, the shared reference parser.
-2. Church Studio and the guest page (`web/`, versely.7twenty8studio.com).
+1. **Foundation and security** (PR #37, merged): database, access rules,
+   the quotation rule, covers, reports, counts, the shared reference parser.
+2. **Church Studio and the guest page** (`web/`, versely.7twenty8studio.com;
+   web/README.md).
 3. The iPhone and iPad app.
 4. Pilot and release checks.
 
@@ -89,7 +90,12 @@ TestFlight without the owner's go-ahead for each.
 | Piece | Where |
 | --- | --- |
 | Migration | supabase/migrations/20261120000000_church_sermons.sql |
+| Web additions: cover access, import review with the draft, Studio's church list | supabase/migrations/20261121000000_church_sermon_web.sql |
+| Covers (the only way out of the bucket) | supabase/functions/sermon-cover |
+| Church Studio and the guest page | web/ (Next.js; web/README.md) |
+| Passages for the web (free Bibles, verse for verse) | Tools/BibleData/export_web_chapters.py |
 | Access tests (local Postgres, no network) | supabase/tests/church_sermons/run.sh |
+| Cover revocation on the real Storage API and Edge Runtime (Docker, local) | supabase/tests/church_sermons/real_storage/run.sh |
 | Reference parser for the web (same reading as the app) | supabase/functions/_shared/references.ts, fixtures/references.json |
 | Book names and verse counts | bibleBooks.json, from Tools/BibleData/export_reference_books.py |
 | Counts | supabase/functions/sermon-events |
@@ -98,13 +104,84 @@ TestFlight without the owner's go-ahead for each.
 Tests:
 
     supabase/tests/church_sermons/run.sh       # Linux: PGBIN=/usr/lib/postgresql/16/bin
+    supabase/tests/church_sermons/real_storage/run.sh   # needs Docker
     node --experimental-strip-types --test supabase/functions/*/*.test.ts
     python3 Tools/BibleData/export_reference_books.py --check
+    cd web && npm test && npm run lint && npm run build
+    python3 Tools/BibleData/export_web_chapters.py --rv1909 <RV1909.sqlite or spa-rv1909.usfx.xml> --out build/web-bibles --check
+
+## The web (checkpoint 2)
+
+- **Guest page** `/s/<slug>`: rendered for every request from
+  `published_sermon`, never cached (no data cache, `force-dynamic`,
+  `no-store`), so unpublishing, members only, a ban, a hidden sermon or the
+  switch turned off applies to the very next request. Members-only sermons
+  show nothing but a sign-in. Never indexed.
+- **Covers** `/s/<slug>/cover`: checks `published_sermon` as the visitor,
+  then asks the `sermon-cover` function with the visitor's own session.
+  No client can read the sermon-covers bucket (no SELECT policy at all, so
+  nobody can create a signed link that would outlive an unpublish or a
+  ban); the function asks `sermon_cover_access` as the caller on every
+  request and only then reads the file with the service role. `private,
+  no-store`. Studio's draft covers (`/studio/<id>/cover`) go the same way
+  ('edit' access: the church's leaders). Leaders upload with the INSERT
+  policy alone. Checked against the real Storage API and Edge Runtime by
+  real_storage/run.sh.
+- **Passages** come from `bibles/web/v1/<CODE>/<book>-<chapter>.json`
+  (KJV, ASV, WEB, RV1909, Bíblia Livre only), keyed by KJV chapter with
+  each verse's own numbering, written by export_web_chapters.py from the
+  app's own databases and alignment tables. Quoted words in an outline are
+  never published (only the translation code for these five).
+- **Unpublish and Members only** never wait on a draft save. They return
+  the version they moved on from (`previous_version`); the editor takes the
+  new version and saves a pending edit only when that was its own version,
+  otherwise it stays in conflict and asks for a reload.
+- **Church Studio** `/studio`: sign in with Apple or Google (Supabase PKCE,
+  httpOnly cookie, refreshed by `proxy.ts`); the churches from
+  `my_sermon_churches`; every write is a Server Action calling the
+  database as the person, against the draft version they loaded.
+- **Import** runs in the browser (the file is never uploaded): paste
+  (Markdown-ish), Word .docx (Mammoth; hidden text taken out first) and
+  text PDFs (pdf.js; a scan is refused with "paste the text or send the
+  editable file"). Every import is compared with its source word for word
+  (`import/completeness.ts`); words not carried over, tables, pictures,
+  footnotes, hidden text, comments, unclear references and anything that
+  may quote Scripture without being a Scripture item go on a review list,
+  and Publish stays off until each is kept, fixed or left out. The review
+  is saved with the draft (`church_sermons.draft_review`, any computer,
+  any leader) and `publish_church_sermon` refuses `review_open` while an
+  item is open. A duplicate keeps the review with its answers; an import
+  added to the end keeps every earlier item beside the new ones. Word files are read as XML: hidden text (`w:vanish`
+  however it's written, from the run, its character or paragraph style,
+  the styles they're based on, or the document default) is never imported.
+  A quotation with its reference goes through the Scripture rules in a
+  paragraph, a quote, a list item or a heading ("John 3:16 (NIV) …",
+  "“…” — John 3:16 NIV"), so a licensed translation's words are never
+  published.
+- **Covers** are re-encoded in the browser (≤ 2000 px, ≤ 1 MB JPEG, no
+  metadata) and checked again on the server.
+- Screens in English, Spanish (tú) and Brazilian Portuguese (você):
+  `web/src/lib/messages.ts`, checked by `i18n.test.ts`.
 
 ## When the owner approves going live (not yet)
 
-1. Run the migration in the SQL Editor (it leaves the switch off).
+1. Run both migrations (20261120000000, then 20261121000000) in the SQL
+   Editor (they leave the switch off).
 2. `supabase functions deploy sermon-events --no-verify-jwt`, with the
-   secret `SERMON_EVENTS_SECRET` (32+ random characters).
+   secret `SERMON_EVENTS_SECRET` (32+ random characters), and
+   `supabase functions deploy sermon-cover --no-verify-jwt` (no secrets of
+   its own; it checks every token through `sermon_cover_access`).
 3. Turn on `groups.sermons_enabled` for each pilot church, then the
    `church_sermons` switch, only after the acceptance checklist passes.
+4. Upload the web passages: `export_web_chapters.py … --out build/web-bibles`
+   (then `--check`), and copy `build/web-bibles/web/v1` to the public
+   `bibles` bucket as `web/v1`.
+5. Sign-in for the web: in Supabase › Authentication › URL Configuration,
+   add `https://versely.7twenty8studio.com/auth/callback` to the redirect
+   URLs. Sign in with Apple on the web needs a Services ID with that
+   domain and Supabase's callback as its return URL (APPLE_SETUP.md);
+   Google needs nothing new.
+6. Vercel: a project with root directory `web/`, the domain
+   versely.7twenty8studio.com, and `VERSELY_APPLE_TEAM_ID` (for the
+   Universal Links file). `NEXT_PUBLIC_VERSELY_APP_STORE_ID` once Versely
+   is listed.
