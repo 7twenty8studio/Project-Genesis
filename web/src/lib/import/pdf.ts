@@ -80,7 +80,11 @@ export function linesFromPdf(all: PdfLine[]): Line[] {
     const newBlock = gap > body * 1.9 || previous?.page !== line.page;
     if (line.size >= body * 1.25 && line.text.length <= 140) {
       flush();
-      out.push({ text: line.text, style: line.size >= body * 1.6 ? "h1" : "h2" });
+      const style = line.size >= body * 1.6 ? "h1" : "h2";
+      const last = out[out.length - 1];
+      // A heading too long for one line goes on in the next, at the same size, right below.
+      if (previous && last?.style === style && Math.abs(previous.size - line.size) < 0.5 && !newBlock && gap < line.size * 1.6) last.text += ` ${line.text}`;
+      else out.push({ text: line.text, style });
     } else if (LIST_MARKER.test(line.text)) {
       flush();
       out.push({ text: line.text.replace(LIST_MARKER, ""), style: /^\s*\(?\d/.test(line.text) ? "number" : "bullet" });

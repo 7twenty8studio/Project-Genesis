@@ -59,3 +59,29 @@ test("a Portuguese text PDF keeps every word, accents and references as written"
   assert.equal(scripture.ref.end, 43004014);
   assert.equal(result.blocks[0].kind, "heading");
 });
+
+test("a Google Docs PDF: ● bullets with a hidden space, and headings that wrap", () => {
+  const page = pageLines(
+    [
+      item("POINT 1 — UNITY IS MORE THAN JUST BEING", 72, 750, 18),
+      item("TOGETHER", 72, 728, 18),
+      item("1 Corinthians 12:25–27", 72, 700),
+      item("Key Notes:", 72, 670),
+      item("●\u200B Physical presence does not equal spiritual unity.", 90, 650),
+      item("●\u200B Attending the same church doesn't automatically", 90, 636),
+      item("create unity.", 108, 622),
+      item("POINT 2 — GRACE", 72, 580, 18),
+      item("Colossians 3:13", 72, 552),
+    ],
+    1,
+  );
+  assert.deepEqual(linesFromPdf(page), [
+    { text: "POINT 1 — UNITY IS MORE THAN JUST BEING TOGETHER", style: "h2" },
+    { text: "1 Corinthians 12:25–27", style: "p" },
+    { text: "Key Notes:", style: "p" },
+    { text: "Physical presence does not equal spiritual unity.", style: "bullet" },
+    { text: "Attending the same church doesn't automatically create unity.", style: "bullet" },
+    { text: "POINT 2 — GRACE", style: "h2" },
+    { text: "Colossians 3:13", style: "p" },
+  ]);
+});
