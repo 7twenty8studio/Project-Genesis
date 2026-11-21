@@ -145,7 +145,7 @@ enum WidgetSnapshotWriter {
         let memory = memoriseShown ? ((try? context.fetch(FetchDescriptor<MemoryVerse>(sortBy: [SortDescriptor(\.dueAt)]))) ?? []) : []
         var memorise = WidgetSnapshot.Memorise(isUnlocked: isPremium, dueDates: [], total: 0, reference: nil, hint: nil, translation: nil, isHidden: memoriseShown ? nil : true)
         if isPremium, memoriseShown, let next = memory.first {
-            let translation = library.premiumToolsTranslation(for: library.translations.first { $0.id == next.translationID } ?? library.currentTranslation)
+            let translation = library.memoryTranslation(for: next)
             let text = ((try? library.repository(for: translation).verses(from: next.start, through: next.end)) ?? []).map(\.plainText).joined(separator: " ")
             memorise = WidgetSnapshot.Memorise(
                 isUnlocked: true,

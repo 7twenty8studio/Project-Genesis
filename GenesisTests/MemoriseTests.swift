@@ -82,4 +82,26 @@ struct MemoriseTests {
             #expect(json.contains("\"\(column)\""), "\(column) matches the migration")
         }
     }
+
+    @Test func passagesFollowTheBibleBeingReadInAnotherLanguage() {
+        // Added while reading the Bíblia Livre, played while reading the KJV.
+        let shown = BibleLibrary.memoryTranslation(saved: .bibliaLivre, reading: .kjv)
+        #expect(shown == .kjv)
+        let reinaValera = Translation(id: "RV1909", name: "Reina-Valera 1909", year: "1909", license: "Dominio público", summary: "", language: "es")
+        let shownInSpanish = BibleLibrary.memoryTranslation(saved: .bibliaLivre, reading: reinaValera)
+        #expect(shownInSpanish == reinaValera)
+    }
+
+    @Test func passagesKeepTheirBibleInTheSameLanguage() {
+        // KJV to WEB doesn't change the words being learned.
+        let shown = BibleLibrary.memoryTranslation(saved: .kjv, reading: .web)
+        #expect(shown == .kjv)
+        // The region doesn't matter: pt-PT and pt are one language.
+        let portugal = Translation(id: "PTPT", name: "Test", year: "", license: "Public domain", summary: "", language: "pt-PT")
+        let shownInPortuguese = BibleLibrary.memoryTranslation(saved: portugal, reading: .bibliaLivre)
+        #expect(shownInPortuguese == portugal)
+        // A Bible no longer on the device: the one being read.
+        let shownWithoutSaved = BibleLibrary.memoryTranslation(saved: nil, reading: .web)
+        #expect(shownWithoutSaved == .web)
+    }
 }

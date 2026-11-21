@@ -203,7 +203,7 @@ struct MemoryReviewView: View {
     }
 
     private func translation(for verse: MemoryVerse) -> Translation {
-        library.premiumToolsTranslation(for: library.translations.first { $0.id == verse.translationID } ?? library.currentTranslation)
+        library.memoryTranslation(for: verse)
     }
 
     /// Verbatim from the Bible database.

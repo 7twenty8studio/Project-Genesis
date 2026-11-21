@@ -187,7 +187,7 @@ struct MemoriseView: View {
     private static let gameLength = 10
 
     private func translation(for verse: MemoryVerse) -> Translation {
-        library.premiumToolsTranslation(for: library.translations.first { $0.id == verse.translationID } ?? library.currentTranslation)
+        library.memoryTranslation(for: verse)
     }
 
     private func add(_ text: String) {
