@@ -3,6 +3,7 @@
 One private page lists everything people report, by priority:
 - in-app Send Feedback;
 - content reports on group posts and prayers;
+- reports on churches' published sermons (public.church_sermon_reports, VRS-18; left out until that migration runs);
 - Sentry crashes and errors;
 - TestFlight screenshots, comments and crashes.
 
