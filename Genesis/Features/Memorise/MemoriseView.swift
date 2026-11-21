@@ -28,6 +28,12 @@ struct MemoriseView: View {
                     }
                 }
 
+                Section {
+                    MemoriseBiblePicker()
+                } footer: {
+                    Text("Automatic follows the Bible you're reading, or a free Bible in its language when that's a YouVersion Bible, which Memorize can't use.")
+                }
+
                 if !verses.isEmpty {
                     Section {
                         ForEach(MemoryGameMode.allCases) { mode in
@@ -80,7 +86,7 @@ struct MemoriseView: View {
                     Section {
                         ForEach(suggestions.prefix(verses.isEmpty ? 8 : 3), id: \.start) { suggestion in
                             Button {
-                                StudyStore(context: modelContext).memorise(from: suggestion.start, through: suggestion.end, translationID: library.premiumToolsTranslation.id)
+                                StudyStore(context: modelContext).memorise(from: suggestion.start, through: suggestion.end, translationID: library.memoriseTranslation.id)
                             } label: {
                                 HStack {
                                     Text(suggestion.reference.description)
@@ -201,11 +207,11 @@ struct MemoriseView: View {
             addError = String(localized: "Choose up to \(MemoriseSuggestions.maximumVerses) verses at a time.")
             return
         }
-        guard (try? library.premiumToolsRepository.verse(start)) != nil else {
+        guard (try? library.repository(for: library.memoriseTranslation).verse(start)) != nil else {
             addError = String(localized: "That verse isn't in this Bible.")
             return
         }
-        StudyStore(context: modelContext).memorise(from: start, through: end, translationID: library.premiumToolsTranslation.id)
+        StudyStore(context: modelContext).memorise(from: start, through: end, translationID: library.memoriseTranslation.id)
     }
 }
 

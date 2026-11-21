@@ -109,6 +109,12 @@ final class BibleLibrary {
         didSet { defaults.set(currentTranslation.id, forKey: Self.translationKey) }
     }
 
+    /// The Bible chosen in Memorize (its Bible menu), or nil for Automatic.
+    /// Only `memoriseBibles` count; see `memoriseTranslation`.
+    var memoriseTranslationID: String? {
+        didSet { defaults.set(memoriseTranslationID, forKey: Self.memoriseTranslationKey) }
+    }
+
     @ObservationIgnored private var repositories: [String: BibleRepository] = [:]
     @ObservationIgnored private var installed: [String: InstalledTranslation]
     @ObservationIgnored private let defaults: UserDefaults
@@ -119,6 +125,7 @@ final class BibleLibrary {
     @ObservationIgnored let crossReferences: CrossReferenceRepository?
 
     private static let translationKey = "library.currentTranslation"
+    private static let memoriseTranslationKey = "memorise.translation"
     /// Bundled databases are edition 1; a catalog row with a higher version replaces them.
     private static let bundledVersion = 1
 
@@ -138,6 +145,7 @@ final class BibleLibrary {
         translations = all
         let savedID = defaults.string(forKey: Self.translationKey)
         currentTranslation = all.first { $0.id == savedID } ?? .kjv
+        memoriseTranslationID = defaults.string(forKey: Self.memoriseTranslationKey)
         crossReferences = bundle.url(forResource: "CrossReferences", withExtension: "sqlite")
             .flatMap { try? CrossReferenceRepository(url: $0) }
         Self.removeLeftovers(in: directory, keeping: installed)

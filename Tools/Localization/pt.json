@@ -2246,5 +2246,11 @@
  "This meaning is uncertain and awaits review by a qualified reviewer.": "Este significado é incerto e aguarda revisão por um revisor qualificado.",
  "Word Meanings": "Significados",
  "Same as the Bible (%@)": "Igual à Bíblia (%@)",
- "%lld on this device": "%lld neste dispositivo"
+ "%lld on this device": "%lld neste dispositivo",
+ "Automatic (%@)": "Automática (%@)",
+ "Memorize In": "Memorizar em",
+ "Automatic follows the Bible you're reading, or a free Bible in its language when that's a YouVersion Bible, which Memorize can't use.": "Automática segue a Bíblia que você está lendo, ou uma Bíblia gratuita no idioma dela quando for uma Bíblia do YouVersion, que Memorizar não pode usar.",
+ "Memorize in the Bible you choose": "Memorize na Bíblia que você escolher",
+ "Choose a Bible": "Escolha uma Bíblia",
+ "Memorize now has a Bible menu: keep Automatic to follow the Bible you're reading, or pick the Bible you want to learn your verses in.": "Memorizar agora tem um menu de Bíblia: deixe Automática para seguir a Bíblia que você está lendo, ou escolha a Bíblia em que quer aprender seus versículos."
 }

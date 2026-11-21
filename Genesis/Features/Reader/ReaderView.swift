@@ -529,7 +529,7 @@ struct ReaderView: View {
         let end = sameChapter.verse - first.verse < MemoriseSuggestions.maximumVerses
             ? sameChapter
             : VerseID(book: first.book, chapter: first.chapter, verse: first.verse + MemoriseSuggestions.maximumVerses - 1)
-        StudyStore(context: modelContext).memorise(from: first, through: end, translationID: reader.library.premiumToolsTranslation(for: reader.translation).id)
+        StudyStore(context: modelContext).memorise(from: first, through: end, translationID: (reader.library.chosenMemoriseTranslation ?? reader.library.premiumToolsTranslation(for: reader.translation)).id)
         reader.clearSelection()
         let message = String(localized: "Added to Memorize")
         withAnimation(Motion.change(reduceMotion: reduceMotion)) { confirmation = message }
