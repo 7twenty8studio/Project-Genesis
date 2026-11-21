@@ -179,6 +179,8 @@ enum GenesisLink {
     static let continueReading = URL(string: "\(scheme)://read")!
     static let sermons = URL(string: "\(scheme)://sermons")!
     static let insights = URL(string: "\(scheme)://insights")!
+    /// A church's published sermon (the guest web page's "Open in Versely").
+    static func sermon(_ slug: String) -> URL { URL(string: "\(scheme)://sermon/\(slug)")! }
     /// The app's Home tab (locked Premium widgets open here; the router has
     /// no Premium route).
     static let home = URL(string: "\(scheme)://home")!

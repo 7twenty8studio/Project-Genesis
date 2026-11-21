@@ -62,6 +62,20 @@ Never paste keys, `.p8` files or passwords in a chat or commit them to git.
    only; see below) → **Save**, then build again. The widgets and both watch
    targets need only **App Groups**.
 
+### Universal Links for church sermons (VRS-18)
+
+A church sermon's link, https://versely.7twenty8studio.com/s/<slug>, opens
+Versely where it's installed. `Config/Genesis.entitlements` asks for
+**Associated Domains** with `applinks:versely.7twenty8studio.com`; automatic
+signing adds the capability to the App ID on the next build. If Xcode
+complains, tick **Associated Domains** for `com.7twenty8studio.versely` at
+developer.apple.com → Identifiers, then build again. The other half is the
+Versely web app's `/.well-known/apple-app-site-association` (web/), which
+needs `VERSELY_APPLE_TEAM_ID` set in Vercel; iOS reads it when the app is
+installed, so install a fresh build after the web app is live to try a link.
+Builds without `Config/Signing.xcconfig` have no entitlements: there the link
+opens Safari, whose page offers versely://sermon/<slug>.
+
 The watch app and widgets need nothing else: they share data through the App
 Group, and the watch app is embedded in the iPhone app.
 
@@ -347,12 +361,13 @@ These answers match the privacy manifest in
 | Contact Info → Email Address | Yes | App Functionality | Account sign-in (email, Apple or Google); optional reply address in Send Feedback |
 | Contact Info → Name | Yes | App Functionality | Display name in groups and the community; the name Google or Apple shares at sign-in (Home's greeting) |
 | User Content → Customer Support | Yes | App Functionality | Send Feedback messages |
-| User Content → Other User Content | Yes | App Functionality | Notes, highlights, prayers, sermons, attachment captions, plans, group posts and nudges |
+| User Content → Other User Content | Yes | App Functionality | Notes, highlights, prayers, sermons, attachment captions, plans, group posts and nudges, and reports of a church's sermon |
 | Sensitive Info → Sensitive Info | Yes | App Functionality | Prayers and journal entries can reveal religious beliefs |
 | Identifiers → User ID | Yes | App Functionality | The account id |
 | Purchases → Purchase History | Yes | App Functionality | The subscription recorded for the account |
 | Diagnostics → Crash Data | **No** | App Functionality, Analytics | Sentry crash reports (no user id) |
 | Diagnostics → Other Diagnostic Data | Yes | App Functionality, Analytics | Error reports; app/iOS version and device sent with feedback |
+| Usage Data → Product Interaction | **No** | Analytics | Church sermons: opening a church's sermon, a passage in it or starting notes adds to that sermon's counts for the church (no account, address or text kept) |
 
 Photos, voice recordings, PDFs and Pencil pages attached to prayers and
 sermons are **not** collected: they're stored in the person's own iCloud,
@@ -360,8 +375,8 @@ which you can't read, so leave Photos or Videos and Audio Data unticked.
 Study Library and Bible downloads send nothing about the person.
 
 Everything else: **not collected** (location, contacts, health, financial
-info, browsing or search history, usage data / product interaction,
-advertising data, other identifiers, performance data). Versely has no
+info, browsing or search history, advertising data, other identifiers,
+performance data; Product Interaction only as above). Versely has no
 analytics or advertising SDK, and Sentry's performance tracing is off. Xcode's
 privacy report (Organizer → the archive → Generate Privacy Report) also shows
 Sentry's own manifest, which lists Performance Data in general terms; Versely

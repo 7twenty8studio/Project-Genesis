@@ -116,7 +116,14 @@ struct GroupTodayView: View {
 
     @Environment(AppRouter.self) private var router
     @Environment(CommunityStore.self) private var community
+    @Environment(FeaturePreferences.self) private var features
+    @Environment(FeatureFlagService.self) private var flags
+    @Environment(HiddenChurches.self) private var hiddenChurches
+    @Environment(\.churchSermons) private var churchSermons
     @Environment(\.palette) private var palette
+    @State private var sermons: [ChurchSermonSummary]?
+
+    private var showsSermons: Bool { features.shows(.churchSermons, flags: flags) }
 
     var body: some View {
         let day = model.today
@@ -141,10 +148,29 @@ struct GroupTodayView: View {
                 if let plan = group.plan, let day, day > 0 {
                     GroupProgressSection(model: model, plan: plan, today: day)
                 }
+                if showsSermons, let sermons, GroupSermonsSection.shows(sermons, role: group.role) {
+                    GroupSermonsSection(group: group, sermons: sermons)
+                }
                 GroupChallengesSection(groupModel: model, group: group)
                 DiscussionSection(model: model, day: (day ?? 0) > 0 ? day : nil)
             }
         }
+        // The church's sermons, again after each pull to refresh.
+        .task(id: SermonsKey(group: group.id, shows: showsSermons, hidden: hiddenChurches.isHidden(group.id), refreshing: model.isLoading)) {
+            guard showsSermons else {
+                sermons = nil
+                return
+            }
+            guard !model.isLoading else { return }
+            sermons = await GroupSermons.load(group.id, backend: churchSermons, hidden: hiddenChurches)
+        }
+    }
+
+    private struct SermonsKey: Hashable {
+        let group: UUID
+        let shows: Bool
+        let hidden: Bool
+        let refreshing: Bool
     }
 
     private func reading(_ planDay: PlanDay, plan: ReadingPlan, day: Int) -> some View {

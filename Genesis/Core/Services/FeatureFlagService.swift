@@ -9,6 +9,8 @@ enum FeatureFlag: String, CaseIterable, Sendable {
     case groups
     /// The public prayer wall and reflections.
     case community
+    /// Churches' published sermon outlines (VRS-18; off until the pilot).
+    case churchSermons = "church_sermons"
 }
 
 /// Reads the server-side switches at launch and whenever the app comes to the

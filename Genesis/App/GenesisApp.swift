@@ -28,6 +28,8 @@ struct GenesisApp: App {
     @State private var studyResources: StudyResourceLibrary
     private let modelContainer: ModelContainer
     private let groupChallenges: any GroupChallengeBackend
+    private let churchSermons: any ChurchSermonBackend
+    @State private var hiddenChurches: HiddenChurches
     private let studyData = StudyRepository.bundled()
     private let wordStudy = WordStudyRepository.bundled()
     private let topics = TopicRepository.bundled()
@@ -135,7 +137,7 @@ struct GenesisApp: App {
         // server: the assistant is on only with -uiTestingAI.
         let flags = FeatureFlagService(
             client: testing.isEnabled ? nil : auth.client,
-            override: testing.isEnabled ? [.studyAssistant: testing.enablesAI, .groups: true, .community: true] : nil
+            override: testing.isEnabled ? [.studyAssistant: testing.enablesAI, .groups: true, .community: true, .churchSermons: true] : nil
         )
         _flags = State(initialValue: flags)
         _whatsNew = State(initialValue: WhatsNewService(isEnabled: !testing.isEnabled || testing.showsWhatsNew))
@@ -193,6 +195,17 @@ struct GenesisApp: App {
         } else {
             groupChallenges = SignedOutGroupChallengeBackend()
         }
+        // Church sermons (VRS-18): in memory in UI tests (the sample group is a
+        // church with sermons). Signed out, the live one reads link sermons
+        // with the anon key.
+        if testing.isEnabled {
+            churchSermons = InMemoryChurchSermonBackend(community: communityBackend)
+        } else if let client = auth.client {
+            churchSermons = SupabaseChurchSermonBackend(client: client, auth: auth)
+        } else {
+            churchSermons = UnavailableChurchSermonBackend()
+        }
+        _hiddenChurches = State(initialValue: HiddenChurches())
         // Finishing a chapter in the reader ticks it in running reading
         // challenges (the in-memory server in UI tests; nothing signed out).
         let challengeAutoTick = ChallengeAutoTick(
@@ -255,6 +268,8 @@ struct GenesisApp: App {
                 .environment(challengeAutoTick)
                 .environment(attachments)
                 .environment(\.groupChallenges, groupChallenges)
+                .environment(\.churchSermons, churchSermons)
+                .environment(hiddenChurches)
                 .environment(\.studyData, studyData)
                 .environment(\.wordStudy, wordStudy)
                 .environment(\.topics, topics)

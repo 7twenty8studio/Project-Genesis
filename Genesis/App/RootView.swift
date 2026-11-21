@@ -357,6 +357,18 @@ struct MainTabView: View {
         .sheet(isPresented: $router.showsSearch) {
             SearchSheet()
         }
+        // A church sermon from its link or QR code, over whatever was open.
+        .sheet(item: $router.sermonLink) { link in
+            NavigationStack {
+                ChurchSermonScreen(slug: link.slug)
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Close", systemImage: "xmark") { router.sermonLink = nil }
+                                .accessibilityIdentifier("churchSermon.close")
+                        }
+                    }
+            }
+        }
         .onChange(of: router.tab) { keepTabAvailable() }
         .onChange(of: features.enabled) { keepTabAvailable() }
         .onChange(of: searchIsTab) { keepTabAvailable() }

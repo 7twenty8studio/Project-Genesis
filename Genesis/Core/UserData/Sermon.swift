@@ -25,6 +25,10 @@ final class Sermon {
     /// Ids only, never the text.
     var passagesRaw: String = ""
     var isFavourite: Bool = false
+    /// The church sermon (VRS-18) these notes were started from, by its id
+    /// (no slug, no copy of the outline): the notes are the person's own and
+    /// stay when the church unpublishes it.
+    var sourceSermonID: UUID? = nil
     var createdAt: Date = Date.now
     var updatedAt: Date = Date.now
 

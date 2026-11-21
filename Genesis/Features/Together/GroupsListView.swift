@@ -5,6 +5,8 @@ struct GroupsListView: View {
     @Environment(CommunityStore.self) private var community
     @Environment(AppRouter.self) private var router
     @Environment(ChallengeAutoTick.self) private var challengeAutoTick
+    @Environment(FeaturePreferences.self) private var features
+    @Environment(FeatureFlagService.self) private var flags
     @Environment(\.palette) private var palette
     @State private var sheet: Sheet?
     /// Start or Join waiting for the community guidelines, asked once first.
@@ -30,6 +32,12 @@ struct GroupsListView: View {
                 Label("Start a Group", systemImage: "plus.circle")
             }
             .accessibilityIdentifier("groups.create")
+            if features.shows(.churchSermons, flags: flags) {
+                NavigationLink(value: TogetherRoute.churchSearch) {
+                    Label("Find a Church\u{2019}s Sermons", systemImage: "magnifyingglass")
+                }
+                .accessibilityIdentifier("groups.findChurch")
+            }
         }
         .listRowBackground(palette.surface)
     }
