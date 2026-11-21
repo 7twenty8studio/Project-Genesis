@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { headers } from "next/headers";
+import { config } from "@/config";
 import { BrandBar, SiteFooter } from "@/components/Brand";
-import { langFromHeader, translator } from "@/lib/i18n";
+import { requestLang } from "@/lib/prefs.server";
+import { translator } from "@/lib/i18n";
 
 const primary =
   "inline-flex min-h-12 items-center justify-center rounded-full bg-accent-strong px-7 text-base font-semibold text-on-accent shadow-sm transition-[opacity,transform] duration-150 ease-out hover:opacity-90 active:scale-[0.98]";
@@ -9,7 +10,7 @@ const secondary =
   "inline-flex min-h-12 items-center justify-center rounded-full border border-border bg-surface/70 px-7 text-base font-medium text-foreground backdrop-blur transition-colors hover:bg-surface";
 
 export default async function Home() {
-  const t = translator(langFromHeader((await headers()).get("accept-language")));
+  const t = translator(await requestLang());
   const steps = [
     { title: t("Bring the outline you already have"), body: t("Paste it, or import a Word file or PDF. Every word is kept, and every Bible reference is found for you.") },
     { title: t("Check it in a minute"), body: t("Studio shows anything it wasn't sure about. Nothing is published until you say so.") },
@@ -17,7 +18,7 @@ export default async function Home() {
   ];
   return (
     <>
-      <div className="bg-[#fdf7ee] dark:bg-[#241a12]">
+      <div className="bg-hero">
         <BrandBar width="max-w-5xl">
           <Link href="/studio" className="text-sm font-medium text-accent underline-offset-4 hover:underline">
             {t("Sign in")}
@@ -25,23 +26,29 @@ export default async function Home() {
         </BrandBar>
       </div>
       <main>
-      <div className="relative overflow-hidden bg-gradient-to-b from-[#fdf7ee] to-background dark:from-[#241a12] dark:to-background">
+      <div className="relative overflow-hidden bg-gradient-to-b from-hero to-background">
         <section aria-labelledby="hero-title" className="relative z-10 mx-auto grid max-w-5xl grid-cols-1 items-center gap-10 px-4 pb-40 pt-12 sm:px-6 md:grid-cols-[1.15fr_1fr] md:pb-48 md:pt-20">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/70 px-3 py-1 text-sm font-medium text-accent">
               {t("Free for churches")}
             </p>
-            <h1 id="hero-title" className="mt-5 text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">{t("Your sermon outline, in every pocket.")}</h1>
+            <h1 id="hero-title" className="mt-5 text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">{t("Share your Sunday message")}</h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
-              {t("Share Sunday's outline with one link. Your church follows along on any phone, and every passage opens in their own Bible.")}
+              {t("Prepare your sermon outline, share a link or QR code, and help your church follow along in their own Bible.")}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href="/studio" className={primary}>
-                {t("Start your church")}
+                {t("Open Church Studio")}
               </Link>
-              <a href="#how" className={secondary}>
-                {t("See how it works")}
-              </a>
+              {config.sampleSermon ? (
+                <Link href={`/s/${config.sampleSermon}`} className={secondary}>
+                  {t("View a sample sermon")}
+                </Link>
+              ) : (
+                <a href="#how" className={secondary}>
+                  {t("See how it works")}
+                </a>
+              )}
             </div>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -31,8 +31,8 @@ struct GroupSermonsSection: View {
                     .buttonStyle(.borderless)
             }
             if group.role == .leader {
-                Link(destination: URL(string: "https://\(ChurchSermonLink.host)/studio")!) {
-                    Label("Publish in Church Studio", systemImage: "safari")
+                Link(destination: ChurchSermonLink.studio(church: group.id)) {
+                    Label("Open in Church Studio", systemImage: "safari")
                 }
                 .font(.footnote)
             }

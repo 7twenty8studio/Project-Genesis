@@ -193,8 +193,10 @@ Tests:
   files are in the `bibles` bucket (web/v1), Google sign-in on the web
   works, and the `church_sermons` switch is on. Sign in with Apple on the
   web waits for a Services ID; its button shows only with
-  `NEXT_PUBLIC_VERSELY_APPLE_WEB=on`. Self-serve churches need migration
-  20261122000000 in production.
+  `NEXT_PUBLIC_VERSELY_APPLE_WEB=on`. Self-serve churches (migration
+  20261122000000, run in production the same day): a pastor signs in,
+  names the church and lands in its first draft. Church Studio has the
+  Versely Cream, Daylight and Warm Dark looks and its own language menu.
 
 ## When the owner approves going live
 

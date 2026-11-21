@@ -45,7 +45,7 @@ export function SermonView({
       ) : null}
       <p className="text-sm font-medium uppercase tracking-wider text-accent">{sermon.church}</p>
       <h1 lang={outlineLang} className="mt-2 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
-        {sermon.title}
+        {sermon.title || (preview ? t("Untitled sermon") : "")}
       </h1>
       <dl className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-muted">
         {sermon.speaker ? (

@@ -702,7 +702,15 @@ shares; README.md has the architecture.
   fixtures/references.json; book data from BibleBook.swift via
   Tools/BibleData/export_reference_books.py, rerun when BibleBook changes).
 - Church Studio and the guest page live in web/ (Next.js 16, Vercel root
-  web/; web/README.md). Guest pages are never cached (unpublish applies on
+  web/; web/README.md). Looks: Versely Cream (default), Daylight, Warm Dark
+  and Match device, and the screen language, both in the header's
+  `PrefsMenu` before sign-in, remembered in cookies `vs_theme` / `vs_lang`
+  (web/src/lib/prefs.ts); the screen language never changes a sermon's
+  language or the reader's Bible. The editor: Outline / Details / Publish
+  beside a phone-width preview (Edit / Preview on phones). The home's
+  "View a sample sermon" shows when NEXT_PUBLIC_VERSELY_SAMPLE_SERMON is a
+  link sermon's slug. The app's church page gives leaders Open in Church
+  Studio (`ChurchSermonLink.studio(church:)`). Guest pages are never cached (unpublish applies on
   the next request); covers only through the `sermon-cover` function
   (`sermon_cover_access` as the caller, every request; no client SELECT
   policy on the bucket, so no signed links). The import review is saved

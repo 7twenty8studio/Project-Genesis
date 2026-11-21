@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { BrandBar, SiteFooter } from "@/components/Brand";
 import { SignInButtons, SignOutButton } from "@/components/SignIn";
 import { ChurchHome } from "@/components/studio/ChurchHome";
 import { StartChurch } from "@/components/studio/StartChurch";
 import { currentSession } from "@/lib/auth";
-import { formatDay, langFromHeader, translator } from "@/lib/i18n";
+import { requestLang } from "@/lib/prefs.server";
+import { formatDay, translator } from "@/lib/i18n";
 import { RpcError } from "@/lib/supabase";
 import { churchReports, churchSermons, myChurches, myDisplayName, myGroupsForSermons, type StudioChurch } from "@/lib/studio.server";
 
@@ -15,14 +15,14 @@ export const metadata: Metadata = { title: "Church Studio · Versely", robots: {
 type Props = { searchParams: Promise<{ church?: string; signin?: string; new?: string }> };
 
 export default async function StudioHome({ searchParams }: Props) {
-  const lang = langFromHeader((await headers()).get("accept-language"));
+  const lang = await requestLang();
   const t = translator(lang);
   const { church: wanted, signin, new: startNew } = await searchParams;
   const session = await currentSession();
 
   if (!session) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-[#fdf7ee] to-background dark:from-[#241a12] dark:to-background">
+      <div className="min-h-screen bg-gradient-to-b from-hero to-background">
         <BrandBar width="max-w-5xl" />
         <main className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 md:py-20">
           <div>
@@ -58,7 +58,7 @@ export default async function StudioHome({ searchParams }: Props) {
   const header = (
     <BrandBar wide>
       <div className="flex items-center gap-3 text-sm">
-        {session.name ? <span className="text-muted">{session.name}</span> : null}
+        {session.name ? <span className="hidden text-muted sm:inline">{session.name}</span> : null}
         <SignOutButton next="/studio" t={t} />
       </div>
     </BrandBar>

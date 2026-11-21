@@ -12,8 +12,8 @@ export function Preview({ lang, t, row, church }: { lang: Lang; t: Translate; ro
   return (
     <div>
       <p className="text-sm text-muted">{t("This is how the page will look on a phone once you publish. Nothing here is public yet.")}</p>
-      <div className="mx-auto mt-4 w-full max-w-[400px] overflow-hidden rounded-[2.5rem] border-8 border-[#2d1d10] bg-background shadow-xl dark:border-[#46352a]">
-        <div className="max-h-[760px] overflow-y-auto" tabIndex={0} aria-label={t("Preview")}>
+      <div className="mx-auto mt-3 w-full max-w-[380px] overflow-hidden rounded-[2.5rem] border-8 border-[#2d1d10] bg-background shadow-xl dark:border-[#1f1712]">
+        <div className="max-h-[min(760px,calc(100vh-9rem))] overflow-y-auto" tabIndex={0} aria-label={t("Preview")}>
           <SermonView sermon={sermon} lang={pageLang} t={translator(pageLang)} signedIn={false} preview={{ coverSrc: row.cover_id ? `/studio/${row.id}/cover?id=${row.cover_id}` : null }} />
         </div>
       </div>

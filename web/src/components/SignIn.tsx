@@ -41,7 +41,7 @@ export function SignOutButton({ next, t }: { next: string; t: Translate }) {
   return (
     <form action="/auth/signout" method="post">
       <input type="hidden" name="next" value={next} />
-      <button type="submit" className="text-sm font-medium text-accent underline-offset-4 hover:underline">
+      <button type="submit" className="whitespace-nowrap text-sm font-medium text-accent underline-offset-4 hover:underline">
         {t("Sign out")}
       </button>
     </form>

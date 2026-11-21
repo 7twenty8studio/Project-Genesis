@@ -17,5 +17,7 @@ export const config = {
   /** App Store id for Safari's Smart App Banner, once Versely is listed. "" leaves it out. */
   appStoreId: process.env.NEXT_PUBLIC_VERSELY_APP_STORE_ID ?? "",
   /** Sign in with Apple on the web needs an Apple Services ID (APPLE_SETUP.md); "on" once it's set up. */
+  /** A published link sermon shown as "View a sample sermon" on the home page; "" hides the button. */
+  sampleSermon: process.env.NEXT_PUBLIC_VERSELY_SAMPLE_SERMON ?? "",
   appleWebSignIn: process.env.NEXT_PUBLIC_VERSELY_APPLE_WEB === "on",
 };
