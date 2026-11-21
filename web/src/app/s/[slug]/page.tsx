@@ -7,7 +7,7 @@ import { SermonView } from "@/components/SermonView";
 import { currentSession } from "@/lib/auth";
 import { isLang, translator } from "@/lib/i18n";
 import { chosenLanguage, requestLang } from "@/lib/prefs.server";
-import { lookUpSermon } from "@/lib/sermons.server";
+import { lookUpSermon, youVersionWebBibles } from "@/lib/sermons.server";
 
 // Rendered for each request, never stored: what a visitor may read can change at any moment.
 export const dynamic = "force-dynamic";
@@ -42,11 +42,11 @@ export default async function SermonPage({ params }: Params) {
   }
   // The page's own words: the language chosen in the menu, else the sermon's when it's one of ours.
   const lang = (await chosenLanguage()) ?? (isLang(sermon.language) ? sermon.language : visitor);
-  const session = sermon.audience === "members" ? await currentSession() : null;
+  const [session, youversion] = await Promise.all([sermon.audience === "members" ? currentSession() : null, youVersionWebBibles()]);
   return (
     <>
       <BrandBar />
-      <SermonView sermon={sermon} lang={lang} t={translator(lang)} signedIn={session !== null} />
+      <SermonView sermon={sermon} lang={lang} t={translator(lang)} signedIn={session !== null} youversion={youversion} />
     </>
   );
 }

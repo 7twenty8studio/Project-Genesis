@@ -44,6 +44,22 @@ async function noSideScroll(page, label) {
     }
   }
 
+  // A YouVersion Bible the pastor named opens in it, with its footnote and the publisher's link.
+  {
+    const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+    const page = await ctx.newPage();
+    await page.goto(`${BASE}/s/livelivel1`);
+    await page.getByRole("button", { name: /Rom 8:28/ }).first().click();
+    await page.waitForSelector("text=Stand-in footnote", { timeout: 8000 }).catch(() => problems.push("YouVersion: NIV passage did not load"));
+    if (!(await page.getByRole("link", { name: "Footnote a" }).count())) problems.push("YouVersion: footnote marker missing");
+    if (!(await page.getByText("Stand-in footnote").count())) problems.push("YouVersion: footnote text missing");
+    if (!(await page.getByRole("link", { name: "biblica.com" }).count())) problems.push("YouVersion: publisher link missing");
+    if (!(await page.locator("optgroup[label='From YouVersion'] option[value='NIV']").count())) problems.push("YouVersion: NIV not in the Bible menu");
+    await axe(page, "guest YouVersion passage");
+    await page.screenshot({ path: `${OUT}/guest-youversion.png`, fullPage: true });
+    await ctx.close();
+  }
+
   // Zoom: 320 px wide is a 1280 px window at 400%; text at 200%.
   {
     const ctx = await browser.newContext({ viewport: { width: 320, height: 640 } });

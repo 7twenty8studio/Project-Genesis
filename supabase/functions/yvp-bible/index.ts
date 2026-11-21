@@ -33,11 +33,11 @@
 // Deploy: supabase functions deploy yvp-bible   (JWT verification on; the
 // app calls it with the anon key or the account's token).
 import { createClient } from "jsr:@supabase/supabase-js@2";
-import { ageSeconds, cachePolicy, chapterCount, isFresh, type ParsedChapter, parseChapter, parseRequest } from "./lib.ts";
+import { chapterCount, type ParsedChapter, parseChapter, parseRequest } from "./lib.ts";
+import { platform, RateLimited } from "./platform.ts";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const APP_KEY = Deno.env.get("YVP_APP_KEY")?.trim() ?? "";
-const API = "https://api.youversion.com/v1";
 // Chapters read at once for one book. Every request to the Platform also
 // takes a token from one pace shared by all readers (public.yvp_take_token:
 // 150 a minute): the Platform blocks bursts for five minutes even far below
@@ -50,6 +50,7 @@ const WAIT_BUDGET_MS = 55_000;
 const admin = createClient(SUPABASE_URL, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!, {
   auth: { persistSession: false },
 });
+const { freshChapters, fetchChapter } = platform(admin, APP_KEY, "yvp-bible");
 
 Deno.serve(async (req) => {
   if (req.method !== "POST") return json({ error: "Use POST." }, 405);
@@ -97,126 +98,6 @@ Deno.serve(async (req) => {
     return json({ error: "Try again later." }, 502);
   }
 });
-
-/** The Platform asked us to wait (HTTP 429). */
-class RateLimited extends Error {
-  constructor(readonly retryAfter: number) {
-    super(`rate limited for ${retryAfter} s`);
-  }
-}
-
-/** The book's chapters still fresh in the shared cache, by chapter number. */
-async function freshChapters(bibleID: number, book: string): Promise<Map<number, { content: string; reference: string; remaining: number }>> {
-  const fresh = new Map<number, { content: string; reference: string; remaining: number }>();
-  const { data, error } = await admin
-    .from("yvp_chapter_cache")
-    .select("passage, content, reference, fetched_at, max_age, age_at_fetch")
-    .eq("bible", bibleID)
-    .like("passage", `${book}.%`);
-  if (error) {
-    // The cache is a saving, never a requirement: read from the Platform.
-    console.warn("yvp-bible cache read", error.message);
-    return fresh;
-  }
-  const now = Date.now();
-  for (const row of data ?? []) {
-    const chapter = Number(String(row.passage).slice(book.length + 1));
-    const entry = { fetchedAt: Date.parse(row.fetched_at), maxAge: row.max_age, ageAtFetch: row.age_at_fetch };
-    if (Number.isInteger(chapter) && isFresh(entry, now)) {
-      // What's left of its lifetime: a reader given this copy keeps it no longer.
-      const remaining = Math.floor(entry.maxAge - entry.ageAtFetch - (now - entry.fetchedAt) / 1000);
-      fresh.set(chapter, { content: row.content, reference: row.reference, remaining });
-    }
-  }
-  return fresh;
-}
-
-/**
- * Waits for a turn to ask the Platform (one token from the shared pace).
- * Throws RateLimited when the turn wouldn't come before `deadline`.
- */
-async function takeTurn(deadline: number): Promise<void> {
-  for (;;) {
-    const { data, error } = await admin.rpc("yvp_take_token");
-    if (error) {
-      // Never let the pace itself stop downloads: go slowly instead.
-      console.warn("yvp-bible pace", error.message);
-      await new Promise((resolve) => setTimeout(resolve, 400));
-      return;
-    }
-    const waitSeconds = Number(data) || 0;
-    if (waitSeconds <= 0) return;
-    const waitMs = Math.ceil(waitSeconds * 1000) + Math.floor(Math.random() * 150);
-    if (Date.now() + waitMs > deadline) throw new RateLimited(Math.max(2, Math.ceil(waitSeconds)));
-    await new Promise((resolve) => setTimeout(resolve, waitMs));
-  }
-}
-
-/** Keeps a chapter response for other readers, if its Cache-Control allows. */
-async function store(bibleID: number, passage: string, response: Response, content: string, reference: string): Promise<void> {
-  const policy = cachePolicy(response.headers.get("cache-control"));
-  if (!policy.store) return;
-  const age = ageSeconds(response.headers.get("age"));
-  if (age >= policy.maxAge) return;
-  const { error } = await admin.from("yvp_chapter_cache").upsert({
-    bible: bibleID, passage, content, reference,
-    fetched_at: new Date().toISOString(), max_age: policy.maxAge, age_at_fetch: age,
-  });
-  if (error) console.warn("yvp-bible cache write", error.message);
-}
-
-/** One chapter, parsed; null when the Bible doesn't have it. */
-async function fetchChapter(bibleID: number, book: string, chapter: number, optional: boolean, lifetimes: Map<number, number>, deadline: number): Promise<ParsedChapter | null> {
-  // Notes too: Biblica's licence requires every footnote to be included.
-  const url = `${API}/bibles/${bibleID}/passages/${book}.${chapter}?format=html&include_headings=true&include_notes=true`;
-  for (let attempt = 0; ; attempt++) {
-    await takeTurn(deadline);
-    let response: Response;
-    try {
-      response = await fetch(url, { headers: { "X-YVP-App-Key": APP_KEY, Accept: "application/json" } });
-    } catch (error) {
-      if (attempt < 3) {
-        await wait(attempt);
-        continue;
-      }
-      throw error;
-    }
-    if (response.status === 404) {
-      await response.body?.cancel();
-      if (optional) return null;
-      throw new Error(`${book} ${chapter} not found`);
-    }
-    if (response.status === 429) {
-      await response.body?.cancel();
-      const retryAfter = Number(response.headers.get("retry-after") ?? "60") || 60;
-      // Every reader waits it out: asking during a block can prolong it.
-      const { error } = await admin.rpc("yvp_block", { p_seconds: Math.ceil(retryAfter) });
-      if (error) console.warn("yvp-bible block", error.message);
-      throw new RateLimited(retryAfter);
-    }
-    if (response.status >= 500 && attempt < 3) {
-      await response.body?.cancel();
-      await wait(attempt);
-      continue;
-    }
-    if (!response.ok) {
-      await response.body?.cancel();
-      throw new Error(`${book} ${chapter}: HTTP ${response.status}`);
-    }
-    const body = await response.json() as { content?: unknown; reference?: unknown };
-    if (typeof body.content !== "string") throw new Error(`${book} ${chapter}: no content`);
-    const reference = typeof body.reference === "string" ? body.reference : "";
-    const policy = cachePolicy(response.headers.get("cache-control"));
-    // No lifetime (or private/no-store): 0, so the app refreshes it next time.
-    lifetimes.set(chapter, policy.store ? policy.maxAge - ageSeconds(response.headers.get("age")) : 0);
-    await store(bibleID, `${book}.${chapter}`, response, body.content, reference);
-    return parseChapter(chapter, body.content, reference);
-  }
-}
-
-function wait(attempt: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, 400 * 2 ** attempt));
-}
 
 /** `items` mapped with at most `limit` running at once, in order. */
 async function mapLimited<T, R>(items: T[], limit: number, work: (item: T) => Promise<R>): Promise<R[]> {

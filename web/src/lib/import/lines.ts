@@ -28,8 +28,11 @@ export interface ImportOptions {
   language: "en" | "es" | "pt" | "other";
 }
 
-/** A list marker the pasted text carries ("- ", "• ", "1. ", "2) ", "a) "), removed from list items. */
-export const LIST_MARKER = /^\s*(?:[-*•–·▪◦]|\(?\d{1,3}[.)]|[a-z][.)])\s+/;
+/**
+ * A list marker the pasted text carries ("- ", "• ", "● ", "1. ", "2) ", "a) "), removed from list items.
+ * Google Docs exports "●" followed by an invisible zero-width space, which is part of the marker.
+ */
+export const LIST_MARKER = /^\s*(?:[-*•–·▪◦●○■□►▸➢✓]|\(?\d{1,3}[.)]|[a-z][.)])[\u200B\uFEFF]*\s+/;
 const NUMBER_MARKER = /^\s*\(?\d{1,3}[.)]\s+/;
 
 /** Lines from pasted plain text or Markdown: blank lines end paragraphs; "#", "-", "1.", ">" mark headings, lists and quotes. */

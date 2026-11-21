@@ -23,6 +23,8 @@ export interface ChapterVerse {
   t: string;
   /** Poetry: lines separated by \n. */
   p?: 1;
+  /** Footnotes (YouVersion Bibles): where each marker goes in `t` (UTF-16 offset) and its text. */
+  n?: { o: number; t: string }[];
 }
 
 export interface ChapterFile {
@@ -37,12 +39,70 @@ export interface ChapterFile {
 }
 
 export interface Passage {
-  translation: TranslationCode;
+  /** A free Bible's code, or a YouVersion Bible's catalog id ("NIV"). */
+  translation: string;
   name: string;
   /** The Bible's language (book names in the credit follow it). */
   language: string;
   license: string;
   verses: ChapterVerse[];
+  /** YouVersion Bibles: the publisher's site, linked under the passage (their agreements ask it). */
+  publisherUrl?: string | null;
+}
+
+/** A YouVersion Bible a sermon page may offer (youversion_web_bibles; text through yvp-web-passage). */
+export interface YouVersionBible {
+  id: string;
+  name: string;
+  language: string;
+}
+
+/**
+ * The Bible a passage opens in: a YouVersion Bible the pastor named ("NIV")
+ * when the page offers it, else defaultBible.
+ */
+export function startingBible(quoted: TranslationCode | null, label: string | null, language: string, youversion: YouVersionBible[]): string {
+  const named = label ? youversion.find((b) => b.id.toLowerCase() === label.trim().toLowerCase()) : undefined;
+  return named ? named.id : defaultBible(quoted, language);
+}
+
+export function isFreeBible(code: string): code is TranslationCode {
+  return WEB_BIBLES.some((b) => b.code === code);
+}
+
+/** Fetches a YouVersion Bible's passage in the browser (never cached; footnotes included). */
+export async function loadYouVersionPassage(supabaseUrl: string, anonKey: string, id: string, start: number, end: number): Promise<Passage> {
+  const response = await fetch(`${supabaseUrl}/functions/v1/yvp-web-passage`, {
+    method: "POST",
+    headers: { apikey: anonKey, Authorization: `Bearer ${anonKey}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ bible: id, start, end }),
+    cache: "no-store",
+  });
+  if (!response.ok) throw new Error(`passage ${response.status}`);
+  const body = (await response.json()) as { bible: string; name: string; language: string; license: string; publisherUrl: string | null; verses: ChapterVerse[] };
+  return { translation: body.bible, name: body.name, language: body.language, license: body.license, verses: body.verses, publisherUrl: body.publisherUrl };
+}
+
+/** A verse's text cut at its footnote markers: text, then the note's index, and so on. */
+export function withMarkers(verse: ChapterVerse): (string | number)[] {
+  if (!verse.n?.length) return [verse.t];
+  const notes = verse.n.map((note, i) => ({ ...note, i })).sort((a, b) => a.o - b.o || a.i - b.i);
+  const out: (string | number)[] = [];
+  let at = 0;
+  for (const note of notes) {
+    const o = Math.min(Math.max(note.o, at), verse.t.length);
+    if (o > at) out.push(verse.t.slice(at, o));
+    out.push(note.i);
+    at = o;
+  }
+  if (at < verse.t.length) out.push(verse.t.slice(at));
+  return out;
+}
+
+/** Footnote letters: a…z, then aa, ab… */
+export function noteLetter(index: number): string {
+  const letters = "abcdefghijklmnopqrstuvwxyz";
+  return index < 26 ? letters[index] : letters[Math.floor(index / 26) - 1] + letters[index % 26];
 }
 
 /** The Bible a passage opens in: the one quoted, else the outline's language's free Bible. */
