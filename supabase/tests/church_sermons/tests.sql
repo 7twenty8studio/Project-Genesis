@@ -305,8 +305,17 @@ select ct.sees('switches back on: readable', 'anon', 'slug1', 'ok');
 
 -- Unpublish, and a delayed retry ------------------------------------------------------------------
 
+select ct.set('closed', ct.run('pastor', format('public.restrict_church_sermon(%L)', ct.v('s1')))::text);
+select ct.check('members only says which version it moved on from',
+  (ct.v('closed')::jsonb->>'previous_version')::integer + 1 = (ct.v('closed')::jsonb->>'draft_version')::integer
+  and (ct.v('closed')::jsonb->>'draft_version')::integer = ct.ver('s1'), ct.v('closed')::jsonb);
+select ct.save('pastor', 's1', '{"audience": "link"}');
+select ct.publish('pastor', 's1');
 select ct.set('stale', ct.ver('s1')::text);
-select ct.run('pastor', format('public.unpublish_church_sermon(%L)', ct.v('s1')));
+select ct.set('closed', ct.run('pastor', format('public.unpublish_church_sermon(%L)', ct.v('s1')))::text);
+select ct.check('unpublish says which version it moved on from',
+  (ct.v('closed')::jsonb->>'previous_version')::integer = ct.v('stale')::integer
+  and (ct.v('closed')::jsonb->>'draft_version')::integer = ct.ver('s1'), ct.v('closed')::jsonb);
 select ct.sees('unpublish stops the link at once', 'anon', 'slug1', 'not_found');
 select ct.refused('the original publish request, retried late, is refused', 'pastor',
   format('public.publish_church_sermon(%L, %s)', ct.v('s1'), ct.v('stale')), 'draft_changed');
@@ -450,6 +459,15 @@ select ct.check('a quotation made a Scripture block and a fixed reference need n
 select ct.check('then it publishes, with the NIV words withheld', (ct.publish('pastor', 'rv')->>'withheld_quotes')::integer = 1);
 select ct.check('the review never reaches readers',
   not (ct.run('member', format('public.published_sermon(%L)', (select slug from public.church_sermons where id = ct.v('rv')::uuid)))) ? 'review');
+-- A duplicate keeps the review: an open item stays open on the copy.
+select ct.set('rv2', (ct.run('pastor', format('public.create_church_sermon(%L, %L)', ct.g('grace'), 'Review copy')))->>'id');
+select ct.save('pastor', 'rv2', jsonb_build_object('review', ct.v('review')::jsonb)::text, '[{"id": "p1", "kind": "paragraph", "text": "Rest."}, {"id": "q1", "kind": "quote", "text": "John 3:16 NIV For God so loved"}]');
+select ct.refused('the original waits for its review', 'pastor', format('public.publish_church_sermon(%L, %s)', ct.v('rv2'), ct.ver('rv2')), 'review_open');
+select ct.set('rv3', (ct.run('pastor', format('public.duplicate_church_sermon(%L)', ct.v('rv2'))))->>'id');
+select ct.check('the duplicate carries the review and its answers',
+  (select draft_review from public.church_sermons where id = ct.v('rv3')::uuid) = (select draft_review from public.church_sermons where id = ct.v('rv2')::uuid));
+select ct.refused('so the duplicate cannot publish past it either', 'pastor', format('public.publish_church_sermon(%L, %s)', ct.v('rv3'), ct.ver('rv3')), 'review_open');
+
 select ct.check('a quotation left out of a Scripture block needs an answer',
   public.genesis_review_open('{"items": [{"key": "quotation:q", "kind": "quotation", "blockId": "q"}], "decisions": {}}',
                              '[{"id": "q", "kind": "list", "items": ["John 3:16 NIV For God"], "ordered": false}]') = 1

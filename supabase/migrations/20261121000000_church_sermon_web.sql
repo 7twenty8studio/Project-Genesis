@@ -288,6 +288,70 @@ begin
 end;
 $$;
 
+-- Unpublish and Members only also say which draft version they moved on
+-- from, so an editor can tell whether its own copy was still the latest
+-- (previous_version = the version it loaded or last saved) before adopting
+-- the new version; otherwise the draft changed elsewhere and the editor must
+-- not save its older copy on top. As in 20261120000000 otherwise.
+create or replace function public.unpublish_church_sermon(p_sermon uuid)
+returns jsonb
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  row_ public.church_sermons;
+begin
+  row_ := public.genesis_editable_sermon(p_sermon);
+  update public.church_sermons set
+    status = case when status = 'published' then 'unpublished' else status end,
+    draft_version = draft_version + 1, updated_at = now()
+  where id = p_sermon;
+  return jsonb_build_object('draft_version', row_.draft_version + 1, 'previous_version', row_.draft_version);
+end;
+$$;
+
+create or replace function public.restrict_church_sermon(p_sermon uuid)
+returns jsonb
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  row_ public.church_sermons;
+begin
+  row_ := public.genesis_editable_sermon(p_sermon);
+  update public.church_sermons set
+    live_audience = case when live_audience is null then null else 'members' end,
+    audience = 'members', draft_version = draft_version + 1, updated_at = now()
+  where id = p_sermon;
+  return jsonb_build_object('draft_version', row_.draft_version + 1, 'previous_version', row_.draft_version);
+end;
+$$;
+
+-- A duplicate keeps the import review (with its answers): an item still
+-- open on the original is still open on the copy, so the copy can't be
+-- published past it. As in 20261120000000 otherwise.
+create or replace function public.duplicate_church_sermon(p_sermon uuid)
+returns jsonb
+language plpgsql
+security definer
+set search_path = ''
+as $$
+declare
+  row_ public.church_sermons;
+  new_id uuid;
+  new_slug text;
+begin
+  row_ := public.genesis_editable_sermon(p_sermon);
+  new_slug := public.genesis_new_sermon_slug();
+  insert into public.church_sermons (group_id, slug, title, speaker, series, time_zone, location, language, audience, draft_blocks, draft_review, created_by)
+  values (row_.group_id, new_slug, row_.title, row_.speaker, row_.series, row_.time_zone, row_.location, row_.language, row_.audience, row_.draft_blocks, row_.draft_review, auth.uid())
+  returning id into new_id;
+  return jsonb_build_object('id', new_id, 'slug', new_slug, 'draft_version', 0);
+end;
+$$;
+
 -- Studio ---------------------------------------------------------------------------
 
 -- The churches the caller can publish for (owner or moderator, both switches

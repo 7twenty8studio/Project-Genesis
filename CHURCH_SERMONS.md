@@ -132,6 +132,10 @@ Tests:
   each verse's own numbering, written by export_web_chapters.py from the
   app's own databases and alignment tables. Quoted words in an outline are
   never published (only the translation code for these five).
+- **Unpublish and Members only** never wait on a draft save. They return
+  the version they moved on from (`previous_version`); the editor takes the
+  new version and saves a pending edit only when that was its own version,
+  otherwise it stays in conflict and asks for a reload.
 - **Church Studio** `/studio`: sign in with Apple or Google (Supabase PKCE,
   httpOnly cookie, refreshed by `proxy.ts`); the churches from
   `my_sermon_churches`; every write is a Server Action calling the
@@ -146,7 +150,8 @@ Tests:
   and Publish stays off until each is kept, fixed or left out. The review
   is saved with the draft (`church_sermons.draft_review`, any computer,
   any leader) and `publish_church_sermon` refuses `review_open` while an
-  item is open. Word files are read as XML: hidden text (`w:vanish`
+  item is open. A duplicate keeps the review with its answers; an import
+  added to the end keeps every earlier item beside the new ones. Word files are read as XML: hidden text (`w:vanish`
   however it's written, from the run, its character or paragraph style,
   the styles they're based on, or the document default) is never imported.
   A quotation with its reference goes through the Scripture rules in a

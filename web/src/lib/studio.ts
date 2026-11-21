@@ -60,6 +60,16 @@ export function publishBlockers(
   return out;
 }
 
+/**
+ * After Unpublish or Members only: the editor may take the new version (and
+ * save any pending edit on it) only if the draft it moved on from is the one
+ * this editor has. Otherwise another window or leader changed the draft, and
+ * saving this editor's older copy on top would overwrite their work.
+ */
+export function afterClose(previous: number, known: number, conflicted: boolean): "adopt" | "conflict" {
+  return !conflicted && previous === known ? "adopt" : "conflict";
+}
+
 // translatable returns
 /** The English message for a database refusal (translated by the caller). */
 export function refusalMessage(code: string): string {

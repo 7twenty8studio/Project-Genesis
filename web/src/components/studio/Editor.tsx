@@ -5,7 +5,7 @@ import { closeSermon, deleteSermon, duplicateSermon, publishSermon, saveSermon, 
 import { draftProblems, type DraftBlock, type DraftDetails, type DraftRow } from "@/lib/draft";
 import { translator, type Lang } from "@/lib/i18n";
 import type { DraftReview } from "@/lib/import/review";
-import { publishBlockers, refusalMessage } from "@/lib/studio";
+import { afterClose, publishBlockers, refusalMessage } from "@/lib/studio";
 import { DetailsForm } from "./DetailsForm";
 import { OutlineEditor } from "./OutlineEditor";
 import { Preview } from "./Preview";
@@ -207,9 +207,10 @@ export function Editor({ lang, initial, church }: { lang: Lang; initial: DraftRo
   /**
    * Unpublish and Members only never wait on the draft being saved: they
    * change only what readers get, so they run even when a save failed.
-   * The editor then takes the version they return, and any edit still
-   * unsaved is saved again on top of it (unless the draft changed elsewhere,
-   * which still needs a reload).
+   * The editor then takes the version they return and saves any pending
+   * edit on it, but only when the version they moved on from is this
+   * editor's own; if the draft changed elsewhere it stays in conflict (and
+   * asks for a reload) rather than save its older copy on top.
    */
   async function close(how: "unpublish" | "restrict"): Promise<boolean> {
     if (timer.current) clearTimeout(timer.current);
@@ -219,7 +220,7 @@ export function Editor({ lang, initial, church }: { lang: Lang; initial: DraftRo
       setError(t(refusalMessage(result.code)));
       return false;
     }
-    setVersion(result.version, how === "unpublish" ? null : undefined);
+    // What readers get changed either way; show it.
     const r = latest.current;
     const next: DraftRow =
       how === "unpublish"
@@ -227,7 +228,15 @@ export function Editor({ lang, initial, church }: { lang: Lang; initial: DraftRo
         : { ...r, audience: "members", live_audience: r.live_audience ? "members" : null };
     latest.current = next;
     setRow(next);
-    if (dirty.current && !conflict.current) {
+    if (afterClose(result.previous, version.current, conflict.current) === "conflict") {
+      // Someone else saved a newer draft: keep the conflict check, never save this copy over it.
+      conflict.current = true;
+      setState("conflict");
+      setError(t(refusalMessage("draft_changed")));
+      return true;
+    }
+    setVersion(result.version, how === "unpublish" ? null : undefined);
+    if (dirty.current) {
       setState("unsaved");
       void flush();
     }

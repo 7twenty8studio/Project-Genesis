@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import type { DraftBlock } from "./draft.ts";
 import { outlineWords } from "./import/completeness.ts";
-import { placeFor, publishableBlocks, publishBlockers } from "./studio.ts";
+import { afterClose, placeFor, publishableBlocks, publishBlockers } from "./studio.ts";
 
 const scripture = (label: string | null, quote: string | null, status: "verified" | "ambiguous" = "verified"): DraftBlock => ({
   id: "s",
@@ -49,4 +49,12 @@ test("covers fit within 2000 px on the long side and never grow", async () => {
   assert.deepEqual(fitWithin(4032, 3024), { width: 2000, height: 1500 });
   assert.deepEqual(fitWithin(1200, 3000), { width: 800, height: 2000 });
   assert.deepEqual(fitWithin(640, 480), { width: 640, height: 480 });
+});
+
+// The owner's review (21 Nov 2026): after Unpublish a stale tab adopted the
+// new version and saved its older title and outline over a newer draft.
+test("after closing, only an editor holding the latest draft takes the new version", () => {
+  assert.equal(afterClose(5, 5, false), "adopt");
+  assert.equal(afterClose(6, 5, false), "conflict"); // another tab saved version 6 first
+  assert.equal(afterClose(5, 5, true), "conflict"); // already told the draft changed
 });

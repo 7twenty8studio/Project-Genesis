@@ -63,3 +63,15 @@ export function stillOpen(items: ReviewItem[], blocks: DraftBlock[]): ReviewItem
     return true;
   });
 }
+
+/**
+ * The review after another import is added to the end of the outline: every
+ * item of the earlier review is kept with its answer (its blocks are still
+ * there), and the new import's items are added under keys of their own
+ * (`tag`), so an earlier answer never covers a new item.
+ */
+export function appendReview(earlier: DraftReview | null, items: ReviewItem[], tag: string): DraftReview | null {
+  const added = items.map((item) => ({ ...item, key: `${tag}:${item.key}` }));
+  const all = [...(earlier?.items ?? []), ...added];
+  return all.length ? { items: all, decisions: { ...(earlier?.decisions ?? {}) } } : null;
+}

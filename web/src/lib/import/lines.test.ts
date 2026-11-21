@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { blocksFromLines, linesFromText, mayQuoteScripture, scriptureLine } from "./lines.ts";
 import { missingRuns, outlineWords, sourceWords } from "./completeness.ts";
-import { reviewDone, reviewItems, stillOpen } from "./review.ts";
+import { appendReview, reviewDone, reviewItems, stillOpen } from "./review.ts";
 
 const en = { language: "en" } as const;
 
@@ -109,4 +109,19 @@ test("a possible quotation is a review item until it is made Scripture or answer
   assert.ok(reviewDone(stillOpen(items, blocks), { [items[0].key]: "kept" }));
   const fixed = blocks.map((b) => (b.kind === "quote" ? { id: b.id, kind: "scripture" as const, ref: { raw: "John 10:11", start: 43010011, end: 43010011, status: "verified" as const, label: "ESV", quote: null } } : b));
   assert.equal(stillOpen(items, fixed).length, 0);
+});
+
+// The owner's review (21 Nov 2026): appending an import replaced the earlier checklist.
+test("adding an import keeps the earlier review items and answers", () => {
+  const first = reviewItems("Grace abounds.", [], [], en);
+  const earlier = { items: [...first, { key: "quotation:q", kind: "quotation" as const, blockId: "q", text: "x" }], decisions: { "note:comments": "kept" as const } };
+  const second = reviewItems("More words.", [], [], en);
+  const merged = appendReview(earlier, second, "i2");
+  assert.ok(merged);
+  assert.deepEqual(merged.items.slice(0, earlier.items.length), earlier.items);
+  assert.deepEqual(merged.decisions, earlier.decisions);
+  assert.ok(merged.items.slice(earlier.items.length).every((i) => i.key.startsWith("i2:")));
+  // An earlier answer never covers a new item with the same name.
+  assert.ok(merged.items.some((i) => i.key === "i2:note:comments") && merged.decisions["i2:note:comments"] === undefined);
+  assert.equal(appendReview(null, [], "i3"), null);
 });

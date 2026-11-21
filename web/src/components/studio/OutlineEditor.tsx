@@ -4,6 +4,7 @@ import { useState } from "react";
 import { draftProblems, newBlockID, quoteTranslation, type DraftBlock, type DraftRow } from "@/lib/draft";
 import type { Lang, Translate } from "@/lib/i18n";
 import { describe, resolve } from "@/lib/shared/references";
+import { appendReview } from "@/lib/import/review";
 import type { Review } from "./Editor";
 import { ImportPanel } from "./ImportPanel";
 import { PassagePicker } from "./PassagePicker";
@@ -55,7 +56,8 @@ export function OutlineEditor({ lang, t, sermonId, language, blocks, onChange, r
           hasOutline={blocks.length > 0}
           onImported={(imported, items, mode) => {
             onChange(mode === "replace" ? imported : [...blocks, ...imported]);
-            onReview(items.length ? { items, decisions: {} } : null);
+            // Replacing starts a new check; adding keeps every earlier item (answered or not) beside the new ones.
+            onReview(mode === "replace" ? (items.length ? { items, decisions: {} } : null) : appendReview(review, items, `i${Date.now().toString(36)}`));
             setImporting(false);
           }}
           onCancel={blocks.length ? () => setImporting(false) : undefined}

@@ -64,11 +64,11 @@ export async function publishSermon(sermon: string, version: number): Promise<Ac
   return result.ok ? { ok: true, number: result.value.number, withheld: result.value.withheld_quotes } : result;
 }
 
-/** Unpublish or members-only: both take effect at once and move the version on. */
-export async function closeSermon(sermon: string, how: "unpublish" | "restrict"): Promise<ActionResult<{ version: number }>> {
+/** Unpublish or members-only: both take effect at once and move the version on (and say which version they moved on from). */
+export async function closeSermon(sermon: string, how: "unpublish" | "restrict"): Promise<ActionResult<{ version: number; previous: number }>> {
   if (!isID(sermon)) return { ok: false, code: "not_found" };
-  const result = await call<{ draft_version: number }>(how === "unpublish" ? "unpublish_church_sermon" : "restrict_church_sermon", { p_sermon: sermon });
-  return result.ok ? { ok: true, version: result.value.draft_version } : result;
+  const result = await call<{ draft_version: number; previous_version: number }>(how === "unpublish" ? "unpublish_church_sermon" : "restrict_church_sermon", { p_sermon: sermon });
+  return result.ok ? { ok: true, version: result.value.draft_version, previous: result.value.previous_version } : result;
 }
 
 export async function deleteSermon(sermon: string): Promise<ActionResult> {
