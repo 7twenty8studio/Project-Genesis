@@ -82,12 +82,13 @@ export function SermonView({
 
       {headed.length >= 2 ? (
         <nav aria-label={t("Jump to a section")} className="mt-8 rounded-2xl bg-surface-2 p-4">
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-muted">{t("Jump to")}</h2>
+          <h2 className="text-xs font-medium uppercase tracking-[0.14em] text-muted">{t("Jump to")}</h2>
           <ol className="mt-2 space-y-1">
             {headed.map((s) => (
               <li key={s.id}>
-                <a href={`#${anchorFor(s)}`} lang={outlineLang} className="inline-block py-1 font-medium text-accent-strong underline-offset-4 hover:underline">
-                  {s.title}
+                <a href={`#${anchorFor(s)}`} lang={outlineLang} className="group inline-flex items-baseline gap-2 py-1 font-semibold text-accent-strong">
+                  <span aria-hidden="true" className="text-copper">↓</span>
+                  <span className="underline decoration-copper decoration-2 underline-offset-[5px] group-hover:decoration-accent-strong">{s.title}</span>
                 </a>
               </li>
             ))}
