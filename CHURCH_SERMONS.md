@@ -23,8 +23,13 @@ TestFlight without the owner's go-ahead for each.
 
 ## Rules the database enforces
 
-- **A church is a group** with `groups.sermons_enabled` (set by the owner in
-  the dashboard for pilot churches). Its owner and moderators (role
+- **A church is a group** with `groups.sermons_enabled`. While the
+  `church_self_serve` switch is on (owner, 21 November 2026, for the proof
+  of concept; migration 20261122000000), anyone signed in to Church Studio
+  starts a church (`create_sermon_church`: a group they own, sermons on,
+  unlisted, at most three a day) or turns sermons on for a group they own
+  (`my_groups_for_sermons`, `set_church_sermons`, owner only). Off, only
+  the dashboard sets it. Its owner and moderators (role
   `leader`) write; members read members-only sermons; anyone with the link
   reads link sermons. Banned and removed people lose access at once.
 - **Every request is checked** against both switches (`church_sermons` and
@@ -182,6 +187,14 @@ Tests:
   including cover revocation and counting. With no extra cost, the
   pilot's end-to-end checks run locally (web/e2e, the simulator with the
   in-memory server) until a hosted test copy is approved.
+
+- Later on 21 November 2026 (owner: "please enable everything"): the web
+  app is live on Vercel at versely.7twenty8studio.com, the 5,945 web Bible
+  files are in the `bibles` bucket (web/v1), Google sign-in on the web
+  works, and the `church_sermons` switch is on. Sign in with Apple on the
+  web waits for a Services ID; its button shows only with
+  `NEXT_PUBLIC_VERSELY_APPLE_WEB=on`. Self-serve churches need migration
+  20261122000000 in production.
 
 ## When the owner approves going live
 

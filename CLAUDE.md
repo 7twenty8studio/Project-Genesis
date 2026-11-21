@@ -681,8 +681,10 @@ shares; README.md has the architecture.
   Memorise off writes the widget snapshot with `memorise.isHidden`.
 
 ## Church sermons (VRS-18)
-- Free; Versely 1.0.5; server switch `church_sermons` (off) plus
-  `groups.sermons_enabled` per church. A church is a group: owner and
+- Free; Versely 1.0.5; server switch `church_sermons` plus
+  `groups.sermons_enabled` per church, which people set themselves in
+  Church Studio while `church_self_serve` is on (`create_sermon_church`,
+  `set_church_sermons`, migration 20261122000000; `StartChurch`). A church is a group: owner and
   moderators publish, members read members-only sermons, anyone with the
   link reads link sermons. Plan, rules and checkpoints: CHURCH_SERMONS.md.
 - All reads and writes through the migration 20261120000000 functions

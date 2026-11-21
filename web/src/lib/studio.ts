@@ -94,6 +94,16 @@ export function refusalMessage(code: string): string {
       return "You can't edit this church's sermons. Only its owner and moderators can, while sermons are on for the church.";
     case "not_found":
       return "This sermon no longer exists.";
+    case "invalid_group":
+      return "Give your church a name of up to 60 characters.";
+    case "name_required":
+      return "Add your name, as your church will see it.";
+    case "objectionable_content":
+      return "Some words aren't allowed. Please choose another name.";
+    case "too_many_churches":
+      return "You've started three churches today. Try again tomorrow.";
+    case "too_many_groups":
+      return "You've reached the limit of 20 groups. Delete one in Versely to start another.";
     case "not_signed_in":
       return "Your sign-in has ended. Sign in again.";
     default:

@@ -86,6 +86,7 @@ createServer(async (req, res) => {
     const path = url.searchParams.get("name") ?? "";
     return covers.has(path) ? send(res, 200, covers.get(path), "image/jpeg") : send(res, 400, { error: "not found" });
   }
+  if (p === "/rest/v1/profiles") return send(res, 200, []);
   if (p === "/rest/v1/church_sermons") {
     if (!signedIn(req)) return send(res, 200, []);
     const id = (url.searchParams.get("id") ?? "").replace("eq.", "");
@@ -146,6 +147,11 @@ createServer(async (req, res) => {
       case "duplicate_church_sermon": { const id = randomUUID(); sermons.set(id, { ...s, id, slug: "dupdupdup1", status: "draft", draft_version: 0, cover_id: null, preached_on: null }); return send(res, 200, { id, slug: "dupdupdup1", draft_version: 0 }); }
       case "new_church_sermon_cover": { const cover = randomUUID(); return send(res, 200, { cover, path: `${GROUP}/${s.id}/${cover}.jpg` }); }
       case "set_sermons_listed": case "review_church_sermon_reports": return send(res, 200, null);
+      case "my_groups_for_sermons": return send(res, 200, [{ id: "00000000-0000-4000-8000-0000000000b1", name: "Tuesday Bible Study" }]);
+      case "create_sermon_church":
+        if (!a.p_your_name) return fail(res, "name_required");
+        return send(res, 200, { id: GROUP, name: a.p_name });
+      case "set_church_sermons": return send(res, 200, null);
     }
     return fail(res, `unknown ${fn}`, 404);
   }

@@ -215,6 +215,41 @@ async function noSideScroll(page, label) {
     if (!/All changes saved/.test(slowState) || live.title !== "Typed while unpublishing" || live.status !== "unpublished") problems.push("slow unpublish: " + slowState + " / " + live.title + " / " + live.status);
     await ctx.close();
   }
+  // The home page and Studio's sign-in: every language, light and dark, phone and desktop.
+  for (const [locale, header] of [["en", "en-US"], ["es", "es-MX"], ["pt", "pt-BR"]]) {
+    for (const scheme of ["light", "dark"]) {
+      for (const width of [390, 1280]) {
+        const ctx = await browser.newContext({ viewport: { width, height: 844 }, colorScheme: scheme, extraHTTPHeaders: { "Accept-Language": header } });
+        const page = await ctx.newPage();
+        for (const path of ["/", "/studio"]) {
+          await page.goto(`${BASE}${path}`);
+          await axe(page, `${path} ${locale}/${scheme}/${width}`);
+          await noSideScroll(page, `${path} ${locale}/${scheme}/${width}`);
+          if (scheme === "light") await page.screenshot({ path: `${OUT}/${path === "/" ? "home" : "signin"}-${locale}-${width}.png`, fullPage: true });
+        }
+        if (await page.getByRole("link", { name: /Apple/ }).count()) problems.push("Apple sign-in shown before it's set up");
+        await ctx.close();
+      }
+    }
+  }
+
+  // Starting a church: the name form, a group from the app, then the new church opens.
+  {
+    const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+    await ctx.addCookies([{ name: "vs_session", value: session, url: BASE }]);
+    const page = await ctx.newPage();
+    await page.goto(`${BASE}/studio?new=1`);
+    await axe(page, "start a church");
+    await noSideScroll(page, "start a church");
+    if (!(await page.getByText("Tuesday Bible Study").count())) problems.push("start a church: the person's own group isn't offered");
+    await page.getByLabel("Church name").fill("Hope Chapel");
+    await page.getByLabel("Your name").fill("Pat");
+    await page.screenshot({ path: `${OUT}/start-church.png`, fullPage: true });
+    await page.getByRole("button", { name: "Start church" }).click();
+    await page.waitForURL(/\/studio\?church=/, { timeout: 8000 }).catch(() => problems.push("start a church: didn't open the new church"));
+    await ctx.close();
+  }
+
   // Phone-width Studio editor, not-found and members-only pages.
   {
     const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
