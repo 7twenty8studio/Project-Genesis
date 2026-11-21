@@ -6002,18 +6002,18 @@
         }
       }
     },
-    "Church name": {
+    "Church or ministry name": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nombre de la iglesia"
+            "value": "Nombre de la iglesia o ministerio"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nome da igreja"
+            "value": "Nome da igreja ou ministério"
           }
         }
       }

@@ -95,13 +95,13 @@ export function refusalMessage(code: string): string {
     case "not_found":
       return "This sermon no longer exists.";
     case "invalid_group":
-      return "Give your church a name of up to 60 characters.";
+      return "Give it a name of up to 60 characters.";
     case "name_required":
-      return "Add your name, as your church will see it.";
+      return "Add your name, as people will see it.";
     case "objectionable_content":
       return "Some words aren't allowed. Please choose another name.";
     case "too_many_churches":
-      return "You've started three churches today. Try again tomorrow.";
+      return "You've started three churches or ministries today. Try again tomorrow.";
     case "too_many_groups":
       return "You've reached the limit of 20 groups. Delete one in Versely to start another.";
     case "not_signed_in":

@@ -283,10 +283,10 @@ async function noSideScroll(page, label) {
     await axe(page, "start a church");
     await noSideScroll(page, "start a church");
     if (!(await page.getByText("Tuesday Bible Study").count())) problems.push("start a church: the person's own group isn't offered");
-    await page.getByLabel("Church name").fill("Hope Chapel");
+    await page.getByLabel("Church or ministry name").fill("Hope Chapel");
     await page.getByLabel("Your name").fill("Pat");
     await page.screenshot({ path: `${OUT}/start-church.png`, fullPage: true });
-    await page.getByRole("button", { name: "Start church" }).click();
+    await page.getByRole("button", { name: "Create" }).click();
     await page.waitForURL(/\/studio\/[0-9a-f-]{36}/, { timeout: 8000 }).catch(() => problems.push("start a church: didn't open its first draft"));
     await ctx.close();
   }

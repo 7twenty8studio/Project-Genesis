@@ -41,11 +41,11 @@ export function StartChurch({ lang, yourName, suggestedName, groups, first }: Pr
           run(() => startChurch(church, yourName ? null : name));
         }}
       >
-        <h2 className="text-2xl font-semibold tracking-tight">{first ? t("Start your church") : t("Your new church")}</h2>
+        <h2 className="text-2xl font-semibold tracking-tight">{first ? t("Start your church or ministry") : t("Your new church or ministry")}</h2>
         <p className="mt-2 leading-relaxed text-muted">
-          {t("Your church is also a group in the Versely app, so members can join it there with its invite code.")}
+          {t("It's also a group in the Versely app, so people can join it there with its invite code.")}
         </p>
-        <Field id="church-name" label={t("Church name")}>
+        <Field id="church-name" label={t("Church or ministry name")} hint={t("Shown under each sermon: a church, a ministry like a youth group, or your own name if you speak on your own.")}>
           <input
             id="church-name"
             className={inputClass}
@@ -58,14 +58,14 @@ export function StartChurch({ lang, yourName, suggestedName, groups, first }: Pr
           />
         </Field>
         {yourName ? null : (
-          <Field id="your-name" label={t("Your name")} hint={t("How your church sees you in Versely. You can change it in the app.")}>
+          <Field id="your-name" label={t("Your name")} hint={t("How people see you in Versely. You can change it in the app.")}>
             <input id="your-name" className={inputClass} value={name} onChange={(e) => setName(e.target.value)} maxLength={40} required autoComplete="name" />
           </Field>
         )}
         {error ? <Notice>{error}</Notice> : null}
         <div className="mt-6">
           <Button primary type="submit" disabled={pending || church.trim().length === 0} className="min-h-12 px-7 text-base">
-            {pending ? t("Starting…") : t("Start church")}
+            {pending ? t("Starting…") : t("Create")}
           </Button>
         </div>
       </form>

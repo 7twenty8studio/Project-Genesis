@@ -58,7 +58,7 @@ export function ChurchHome({ lang, churches, church, sermons, reports }: Props) 
             <h1 className="mt-1 text-3xl font-semibold tracking-tight">{church.name}</h1>
           )}
           <Link href="/studio?new=1" className="mt-2 inline-block text-sm font-medium text-accent underline-offset-4 hover:underline">
-            {t("Start another church")}
+            {t("Start another church or ministry")}
           </Link>
         </div>
         <Button primary disabled={pending} onClick={() => run(() => createSermon(church.id))}>
