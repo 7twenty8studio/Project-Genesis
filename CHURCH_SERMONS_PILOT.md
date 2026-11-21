@@ -120,5 +120,5 @@ On the test copy, in the SQL editor:
 
 When every row passes, write the date and anything that failed into
 CHURCH_SERMONS.md, then ask for the go-ahead to run the production
-migration, deploy the web app and the two functions, and build 1.0.4 for
+migration, deploy the web app and the two functions, and build 1.0.5 for
 TestFlight.

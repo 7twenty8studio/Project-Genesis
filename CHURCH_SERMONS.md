@@ -3,7 +3,7 @@
 Churches publish a sermon outline; members and guests follow along with one
 link (`https://versely.7twenty8studio.com/s/<slug>`) on the web or in the app,
 read each passage in their own Bible and keep private notes. Free for
-everyone. Planned for Versely 1.0.4, behind the `church_sermons` switch.
+everyone. Planned for Versely 1.0.5, behind the `church_sermons` switch.
 
 Built in four checkpoints, each a pull request the owner reviews and merges
 before the next one starts:
@@ -169,7 +169,21 @@ Tests:
 - Screens in English, Spanish (tú) and Brazilian Portuguese (você):
   `web/src/lib/messages.ts`, checked by `i18n.test.ts`.
 
-## When the owner approves going live (not yet)
+## Production status (owner, 21 November 2026)
+
+- Done: both migrations (20261120000000, 20261121000000), the
+  `sermon-events` and `sermon-cover` functions, `SERMON_EVENTS_SECRET`,
+  and Associated Domains on the App ID. The `church_sermons` switch is off
+  and no church has `sermons_enabled`.
+- Versely 1.0.5 goes to TestFlight with the switch off: smoke tests only
+  (the feature stays hidden, everything else works).
+- Still pending: the web app on Vercel (sign-in callback URL, the web
+  Bible files), and the hosted pilot checks (CHURCH_SERMONS_PILOT.md),
+  including cover revocation and counting. With no extra cost, the
+  pilot's end-to-end checks run locally (web/e2e, the simulator with the
+  in-memory server) until a hosted test copy is approved.
+
+## When the owner approves going live
 
 1. Run both migrations (20261120000000, then 20261121000000) in the SQL
    Editor (they leave the switch off).
