@@ -19,6 +19,7 @@ HERE="$(cd "$(dirname "$0")" && pwd)"
 ROOT="$(cd "$HERE/../../.." && pwd)"
 MIG="$ROOT/supabase/migrations"
 NEW="20261120000000_church_sermons.sql"
+LAST="20261121000000_church_sermon_web.sql"  # the newest church sermons migration
 PGBIN="${PGBIN:-/opt/homebrew/opt/postgresql@17/bin}"
 PORT="${PORT:-54330}"
 WORK="$(mktemp -d /tmp/cspg.XXXXXX)"
@@ -41,7 +42,7 @@ psql -c "alter default privileges for role postgres in schema public grant all o
 echo "== Versely migrations up to church sermons (as postgres)"
 n=0
 for f in "$MIG"/*.sql; do
-  [[ "$(basename "$f")" > "$NEW" ]] && continue
+  [[ "$(basename "$f")" > "$LAST" ]] && continue
   sed -E '/create extension if not exists (pg_cron|pg_net)/d' "$f" | as_postgres -f - >/dev/null 2>"$WORK/err" \
     || { echo "FAILED: $(basename "$f")"; cat "$WORK/err"; exit 1; }
   n=$((n + 1))
@@ -127,6 +128,7 @@ else echo "   FAIL publish and sweep: $(cover_state "$c") / $(cat "$WORK/p3")"; 
 echo "== Migration again (must change nothing)"
 "$PGBIN/pg_dump" -d "$SUPER_URL" -s -n public -n storage | grep -v restrict > "$WORK/before.sql"
 as_postgres -f "$MIG/$NEW" >/dev/null 2>&1
+as_postgres -f "$MIG/$LAST" >/dev/null 2>&1
 "$PGBIN/pg_dump" -d "$SUPER_URL" -s -n public -n storage | grep -v restrict > "$WORK/after.sql"
 if diff -q "$WORK/before.sql" "$WORK/after.sql" >/dev/null; then echo "   PASS schema identical"; else diff "$WORK/before.sql" "$WORK/after.sql" | head -20; exit 1; fi
 flags="$(psql -At -c "select enabled from public.feature_flags where key = 'church_sermons'")"

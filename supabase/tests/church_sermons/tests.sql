@@ -337,7 +337,8 @@ select ct.refused_dml('member cannot upload', 'member',
   format('insert into storage.objects (bucket_id, name) values (%L, %L)', 'sermon-covers', ct.g('grace')::text || '/' || ct.v('s2') || '/' || gen_random_uuid() || '.jpg'), 'row-level security');
 select ct.refused_dml('no other file names', 'pastor',
   format('insert into storage.objects (bucket_id, name) values (%L, %L)', 'sermon-covers', ct.g('grace')::text || '/' || ct.v('s1') || '.jpg'), 'row-level security');
-select ct.check('guests cannot list covers', (ct.run('anon', '(select count(*) from storage.objects where bucket_id = ''sermon-covers'')'))::text = '"0"');
+select ct.check('guests cannot see a cover before it is published',
+  (ct.run('anon', format('(select count(*) from storage.objects where bucket_id = %L and name like %L)', 'sermon-covers', ct.g('grace')::text || '/%')))::text = '"0"');
 select ct.check('bucket is private, JPEG only, 1 MB', exists (select 1 from storage.buckets where id = 'sermon-covers'
   and not public and file_size_limit = 1048576 and allowed_mime_types = array['image/jpeg']));
 select ct.check('the cover goes on the draft', ct.save('pastor', 's1', jsonb_build_object('cover', (ct.v('c1')::jsonb)->>'cover')::text) ? 'draft_version');
@@ -350,10 +351,31 @@ select ct.save('pastor', 's1', '{"cover_alt": "A shepherd at dusk"}');
 select ct.publish('pastor', 's1');
 select ct.check('published with its alt text',
   (ct.run('anon', format('public.published_sermon(%L)', ct.v('slug1'))))->'cover' @> jsonb_build_object('path', (ct.v('c1')::jsonb)->>'path', 'alt', 'A shepherd at dusk'));
+-- Readers download the published cover only while they may read the sermon,
+-- rechecked by storage on every request (20261121000000).
+select ct.set('c1sql', format('(select count(*) from storage.objects where bucket_id = %L and name = %L)', 'sermon-covers', (ct.v('c1')::jsonb)->>'path'));
+select ct.check('a guest downloads the cover of a link sermon', (ct.run('anon', ct.v('c1sql')))::text = '"1"');
+select ct.check('so does a signed-in outsider', (ct.run('outsider', ct.v('c1sql')))::text = '"1"');
+select ct.run('pastor', format('public.restrict_church_sermon(%L)', ct.v('s1')));
+select ct.check('restricted to members: the guest''s next request is refused', (ct.run('anon', ct.v('c1sql')))::text = '"0"');
+select ct.check('restricted to members: an outsider is refused', (ct.run('outsider', ct.v('c1sql')))::text = '"0"');
+select ct.check('restricted to members: a banned person is refused', (ct.run('banned', ct.v('c1sql')))::text = '"0"');
+select ct.check('restricted to members: a member still downloads it', (ct.run('member', ct.v('c1sql')))::text = '"1"');
+update public.groups set sermons_enabled = false where id = ct.g('grace');
+select ct.check('church switch off: even a member is refused', (ct.run('member', ct.v('c1sql')))::text = '"0"');
+update public.groups set sermons_enabled = true where id = ct.g('grace');
+select ct.save('pastor', 's1', '{"audience": "link"}');
+select ct.publish('pastor', 's1');
+select ct.check('open to the link again', (ct.run('anon', ct.v('c1sql')))::text = '"1"');
+
 -- A new picture on the draft leaves the published one alone.
 select ct.set('c2', (ct.run('pastor', format('public.new_church_sermon_cover(%L)', ct.v('s1'))))::text);
 select ct.dml('pastor', format('insert into storage.objects (bucket_id, name) values (%L, %L)', 'sermon-covers', (ct.v('c2')::jsonb)->>'path'));
 select ct.save('pastor', 's1', jsonb_build_object('cover', (ct.v('c2')::jsonb)->>'cover', 'cover_alt', 'Unpublished alt')::text);
+select ct.check('nobody but leaders sees a cover that is only on the draft',
+  (ct.run('anon', format('(select count(*) from storage.objects where name = %L)', (ct.v('c2')::jsonb)->>'path')))::text = '"0"'
+  and (ct.run('member', format('(select count(*) from storage.objects where name = %L)', (ct.v('c2')::jsonb)->>'path')))::text = '"0"'
+  and (ct.run('moderator', format('(select count(*) from storage.objects where name = %L)', (ct.v('c2')::jsonb)->>'path')))::text = '"1"');
 select ct.check('readers keep the published cover until the next publish',
   (ct.run('anon', format('public.published_sermon(%L)', ct.v('slug1'))))#>>'{cover,path}' = (ct.v('c1')::jsonb)->>'path');
 select ct.check('leaders cannot delete a cover file, published or not',
@@ -366,6 +388,8 @@ select ct.check('covers in use (draft and published) are never retired',
 select ct.publish('pastor', 's1');
 select ct.check('after the next publish the old picture is retired',
   exists (select 1 from public.retire_orphan_sermon_covers() n where n = (ct.v('c1')::jsonb)->>'path'));
+select ct.check('a replaced cover is no longer served to readers',
+  (ct.run('anon', format('(select count(*) from storage.objects where name = %L)', (ct.v('c1')::jsonb)->>'path')))::text = '"0"');
 select ct.check('and recorded as retired',
   exists (select 1 from public.church_sermon_retired_covers where name = (ct.v('c1')::jsonb)->>'path'));
 select ct.check('a retired file not yet deleted is returned again',
@@ -381,6 +405,20 @@ select ct.refused_dml('and its name cannot be uploaded again', 'pastor',
   format('insert into storage.objects (bucket_id, name) values (%L, %L)', 'sermon-covers', (ct.v('c1')::jsonb)->>'path'), 'row-level security');
 select ct.refused('only the service role runs the sweep', 'pastor', '(select count(*) from public.retire_orphan_sermon_covers())', 'permission denied');
 select ct.refused('nobody reads the retired list directly', 'pastor', '(select count(*) from public.church_sermon_retired_covers)', 'permission denied');
+
+-- Studio's church picker (20261121000000) -----------------------------------------------
+
+select ct.check('the pastor publishes for Grace',
+  (ct.run('pastor', 'public.my_sermon_churches()')) @> jsonb_build_array(jsonb_build_object('id', ct.g('grace'), 'role', 'owner')));
+select ct.check('a moderator publishes for Grace as a moderator',
+  (ct.run('moderator', 'public.my_sermon_churches()')) @> jsonb_build_array(jsonb_build_object('id', ct.g('grace'), 'role', 'moderator')));
+select ct.check('a member has no churches to publish for', ct.run('member', 'public.my_sermon_churches()') = '[]'::jsonb);
+select ct.check('a banned person has none', ct.run('banned', 'public.my_sermon_churches()') = '[]'::jsonb);
+select ct.check('another church''s pastor never sees Grace',
+  not (ct.run('other_pastor', 'public.my_sermon_churches()')) @> jsonb_build_array(jsonb_build_object('id', ct.g('grace'))));
+select ct.check('a church with sermons off is not offered',
+  not (ct.run('pastor', 'public.my_sermon_churches()')) @> jsonb_build_array(jsonb_build_object('id', ct.g('quiet'))));
+select ct.refused('guests cannot ask', 'anon', 'public.my_sermon_churches()', 'permission denied');
 
 -- Reports --------------------------------------------------------------------------------
 
