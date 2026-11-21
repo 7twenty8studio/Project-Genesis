@@ -731,6 +731,10 @@ shares; README.md has the architecture.
   unpublish. Switch `OptionalFeature.churchSermons` (needs `church_sermons`
   and `groups`); What's New "church-sermons" behind the flag. Counts are
   Product Interaction, not linked (privacy manifest, APPLE_SETUP.md).
+- Release checks: CHURCH_SERMONS_PILOT.md maps every acceptance check to its
+  test or hand steps. Browser checks: web/e2e/run.sh (Playwright, axe,
+  stand-in server mock.mjs; keep it passing when the guest page or Studio
+  changes). The Universal Links file defaults to Team ID 4XTR53RY2V.
 
 ## Journal extras (Premium)
 - `PremiumFeature.journalExtras`, checked with `EntitlementService.allows` at

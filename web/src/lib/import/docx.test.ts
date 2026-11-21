@@ -157,3 +157,21 @@ test("hidden text in a footnote is left out too", async () => {
   assert.ok(!outlineWords(result.blocks).includes("secretnote"), JSON.stringify(result.blocks));
   assert.ok(outlineWords(result.blocks).includes("note"));
 });
+
+test("a bilingual Word sermon keeps both languages word for word and links each reference", async () => {
+  const file = await docx(
+    para("Gracia sobre gracia / Grace upon Grace", "Title") +
+      para("Bienvenidos. Welcome, everyone; hoy leemos juntos.") +
+      para("Juan 1:16 (RV1909)") +
+      para("John 1:16 (KJV)") +
+      para("¿Qué significa «gracia»? What does “grace” mean?") +
+      para("Señor, gracias. Lord, thank you.", "Quote"),
+  );
+  const result = await importDocx(file, { language: "es" });
+  assert.deepEqual(missingRuns(sourceWords(result.source), outlineWords(result.blocks)), []);
+  const refs = result.blocks.flatMap((b) => (b.kind === "scripture" ? [b.ref] : []));
+  assert.deepEqual(refs.map((r) => [r.raw, r.start, r.label]), [
+    ["Juan 1:16", 43001016, "RV1909"],
+    ["John 1:16", 43001016, "KJV"],
+  ]);
+});

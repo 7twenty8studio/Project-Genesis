@@ -104,15 +104,20 @@ export async function importPdf(data: ArrayBuffer, options: ImportOptions): Prom
   const pdfjs = await import("pdfjs-dist");
   pdfjs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
   const document = await pdfjs.getDocument({ data: new Uint8Array(data) }).promise;
-  const all: PdfLine[] = [];
+  const pages: PdfText[][] = [];
   for (let n = 1; n <= document.numPages; n++) {
     const page = await document.getPage(n);
     const content = await page.getTextContent();
-    const items: PdfText[] = content.items.flatMap((i) => ("str" in i ? [{ str: i.str, transform: i.transform, height: i.height, width: i.width }] : []));
-    all.push(...pageLines(items, n));
+    pages.push(content.items.flatMap((i) => ("str" in i ? [{ str: i.str, transform: i.transform, height: i.height, width: i.width }] : [])));
   }
+  return importPdfPages(pages, options);
+}
+
+/** The outline from each page's text items; throws ScannedPDF when the pages are pictures. */
+export function importPdfPages(pages: PdfText[][], options: ImportOptions): ImportResult {
+  const all = pages.flatMap((items, index) => pageLines(items, index + 1));
   const letters = all.reduce((sum, l) => sum + (l.text.match(/\p{L}/gu)?.length ?? 0), 0);
-  if (letters < SCANNED_BELOW * document.numPages) throw new ScannedPDF();
+  if (letters < SCANNED_BELOW * Math.max(1, pages.length)) throw new ScannedPDF();
   const source = all.map((l) => l.text).join("\n");
   return { blocks: blocksFromLines(linesFromPdf(all), options), source, notes: [] };
 }

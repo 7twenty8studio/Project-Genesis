@@ -71,7 +71,8 @@ signing adds the capability to the App ID on the next build. If Xcode
 complains, tick **Associated Domains** for `com.7twenty8studio.versely` at
 developer.apple.com → Identifiers, then build again. The other half is the
 Versely web app's `/.well-known/apple-app-site-association` (web/), which
-needs `VERSELY_APPLE_TEAM_ID` set in Vercel; iOS reads it when the app is
+names Team ID 4XTR53RY2V (web/src/config.ts; `VERSELY_APPLE_TEAM_ID` in
+Vercel overrides it); iOS reads it when the app is
 installed, so install a fresh build after the web app is live to try a link.
 Builds without `Config/Signing.xcconfig` have no entitlements: there the link
 opens Safari, whose page offers versely://sermon/<slug>.

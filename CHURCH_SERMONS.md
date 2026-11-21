@@ -15,7 +15,8 @@ before the next one starts:
 3. **The iPhone and iPad app**: links, sermons in church groups, Find a
    Church, the outline with passages and private notes (CLAUDE.md ›
    Church sermons).
-4. Pilot and release checks.
+4. **Pilot and release checks**: CHURCH_SERMONS_PILOT.md (every
+   acceptance check, the test that covers it or the steps to try by hand).
 
 Nothing here is applied to the production database, deployed or sent to
 TestFlight without the owner's go-ahead for each.
@@ -110,6 +111,7 @@ Tests:
     node --experimental-strip-types --test supabase/functions/*/*.test.ts
     python3 Tools/BibleData/export_reference_books.py --check
     cd web && npm test && npm run lint && npm run build
+    cd web && ./e2e/run.sh                # browser checks: accessibility, members only, unpublish, Studio saving (stand-in server)
     ./Scripts/build.sh                     # app unit tests: GenesisTests/ChurchSermonTests.swift
     ./Scripts/build.sh --ui                # GenesisUITests/ChurchSermonsUITests.swift (in-memory server)
     python3 Tools/BibleData/export_web_chapters.py --rv1909 <RV1909.sqlite or spa-rv1909.usfx.xml> --out build/web-bibles --check
@@ -185,10 +187,10 @@ Tests:
    URLs. Sign in with Apple on the web needs a Services ID with that
    domain and Supabase's callback as its return URL (APPLE_SETUP.md);
    Google needs nothing new.
-6. Vercel: a project with root directory `web/`, the domain
-   versely.7twenty8studio.com, and `VERSELY_APPLE_TEAM_ID` (for the
-   Universal Links file). `NEXT_PUBLIC_VERSELY_APP_STORE_ID` once Versely
-   is listed.
-7. Apple: turn on Associated Domains for com.7twenty8studio.versely
-   (APPLE_SETUP.md › Universal Links for church sermons) before the build
-   that ships it.
+6. Vercel: a project with root directory `web/` and the domain
+   versely.7twenty8studio.com. The Universal Links file uses Team ID
+   4XTR53RY2V by default (`VERSELY_APPLE_TEAM_ID` overrides it).
+   `NEXT_PUBLIC_VERSELY_APP_STORE_ID` once Versely is listed.
+7. Apple: Associated Domains is on for com.7twenty8studio.versely (owner,
+   21 November 2026); regenerate provisioning profiles for the build that
+   ships it (Xcode's automatic signing does).

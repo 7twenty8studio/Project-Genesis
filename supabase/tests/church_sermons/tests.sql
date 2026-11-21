@@ -558,6 +558,16 @@ select ct.check('search shows link sermons as published, never members-only ones
   position('Good Shepherd' in ct.v('found')) > 0 and position('Green Pastures' in ct.v('found')) = 0
   and position('Draft' in ct.v('found')) = 0);
 select ct.check('too short a search returns nothing', ct.len(ct.run('anon', 'public.search_sermon_churches(''g'')')) = 0);
+-- Spanish and Portuguese names: any case, accents optional either way.
+update public.groups set name = 'Iglesia Gracia y Paz ' || left(ct.g('hope')::text, 6) where id = ct.g('hope');
+select ct.run('other_pastor', format('public.set_sermons_listed(%L, true)', ct.g('hope')));
+select ct.check('a Spanish name is found in any case', ct.len(ct.run('anon', format('public.search_sermon_churches(%L)', 'IGLESIA gracia y paz ' || left(ct.g('hope')::text, 6)))) = 1);
+update public.groups set name = 'Igreja da Graça à Beira-Rio ' || left(ct.g('hope')::text, 6) where id = ct.g('hope');
+select ct.check('a Portuguese name is found without its accents', ct.len(ct.run('anon', format('public.search_sermon_churches(%L)', 'igreja da graca a beira-rio ' || left(ct.g('hope')::text, 6)))) = 1);
+select ct.check('and with them', ct.len(ct.run('anon', format('public.search_sermon_churches(%L)', 'Igreja da Graça À Beira-Rio ' || left(ct.g('hope')::text, 6)))) = 1);
+select ct.run('other_pastor', format('public.set_sermons_listed(%L, false)', ct.g('hope')));
+select ct.check('an unlisted church is never found, in any language', ct.len(ct.run('anon', format('public.search_sermon_churches(%L)', 'igreja da graca ' || left(ct.g('hope')::text, 6)))) = 0);
+update public.groups set name = 'Hope Church ' || left(ct.g('hope')::text, 6) where id = ct.g('hope');
 
 -- Duplicate, delete, account deletion ---------------------------------------------------------
 

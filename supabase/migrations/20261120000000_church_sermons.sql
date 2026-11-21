@@ -1073,7 +1073,7 @@ security definer
 set search_path = ''
 as $$
 declare
-  q text := regexp_replace(lower(translate(btrim(coalesce(p_query, '')), 'ÁÉÍÓÚÜáéíóúüÑñÇçÃãÕõÂâÊêÔô', 'AEIOUUaeiouuNnCcAaOoAaEeOo')), '\s+', ' ', 'g');
+  q text := regexp_replace(lower(translate(btrim(coalesce(p_query, '')), 'ÁÉÍÓÚÜáéíóúüÑñÇçÃãÕõÂâÊêÔôÀÈÌÒÙàèìòùÄËÏÖäëïö', 'AEIOUUaeiouuNnCcAaOoAaEeOoAEIOUaeiouAEIOaeio')), '\s+', ' ', 'g');
 begin
   if char_length(q) < 2 or char_length(q) > 60 then return '[]'::jsonb; end if;
   return coalesce((
@@ -1091,7 +1091,7 @@ begin
         ), '[]'::jsonb)) as c
       from public.groups g
       where g.deleted_at is null and g.sermons_listed and public.genesis_church_sermons_on(g.id)
-        and position(q in regexp_replace(lower(translate(g.name, 'ÁÉÍÓÚÜáéíóúüÑñÇçÃãÕõÂâÊêÔô', 'AEIOUUaeiouuNnCcAaOoAaEeOo')), '\s+', ' ', 'g')) > 0
+        and position(q in regexp_replace(lower(translate(g.name, 'ÁÉÍÓÚÜáéíóúüÑñÇçÃãÕõÂâÊêÔôÀÈÌÒÙàèìòùÄËÏÖäëïö', 'AEIOUUaeiouuNnCcAaOoAaEeOoAEIOUaeiouAEIOaeio')), '\s+', ' ', 'g')) > 0
       limit 20
     ) found
   ), '[]'::jsonb);
