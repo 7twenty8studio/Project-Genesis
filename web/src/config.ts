@@ -18,6 +18,6 @@ export const config = {
   appStoreId: process.env.NEXT_PUBLIC_VERSELY_APP_STORE_ID ?? "",
   /** Sign in with Apple on the web needs an Apple Services ID (APPLE_SETUP.md); "on" once it's set up. */
   /** A published link sermon shown as "View a sample sermon" on the home page; "" hides the button. */
-  sampleSermon: process.env.NEXT_PUBLIC_VERSELY_SAMPLE_SERMON ?? "",
+  sampleSermon: process.env.NEXT_PUBLIC_VERSELY_SAMPLE_SERMON ?? "6audf2zagi",
   appleWebSignIn: process.env.NEXT_PUBLIC_VERSELY_APPLE_WEB === "on",
 };
