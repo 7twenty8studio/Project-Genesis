@@ -42,7 +42,7 @@ export function DetailsForm({ t, row, onChange, onCover }: Props) {
         <Field id={`${id}-date`} label={t("Date")}>
           <input id={`${id}-date`} type="date" className={inputClass} value={row.preached_on ?? ""} onChange={(e) => onChange({ preached_on: e.target.value || null })} />
         </Field>
-        <Field id={`${id}-series`} label={t("Series (optional)")} hint={t("Sermons in one series link to each other.")}>
+        <Field id={`${id}-series`} label={t("Series (optional)")} hint={t("Sermons in one series link to each other.")} hintBelow>
           <input id={`${id}-series`} aria-describedby={`${id}-series-hint`} className={inputClass} maxLength={120} value={row.series ?? ""} onChange={(e) => onChange({ series: e.target.value || null })} />
         </Field>
       </div>

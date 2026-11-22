@@ -132,6 +132,13 @@ async function noSideScroll(page, label) {
     if (!(await publish.isDisabled())) problems.push("publish enabled before title and review");
     await page.getByRole("tab", { name: "Details" }).click();
     await page.getByLabel("Title").fill("Rest for the Weary");
+    // Date and Series sit side by side with their boxes level (the series hint goes under its box).
+    {
+      const date = await page.getByLabel("Date", { exact: true }).boundingBox();
+      const series = await page.getByLabel("Series (optional)").boundingBox();
+      if (date && series && Math.abs(date.y - series.y) > 1 && Math.abs(date.x - series.x) > 1) problems.push(`date and series boxes not level: ${date.y} vs ${series.y}`);
+      await page.screenshot({ path: `${OUT}/studio-details.png`, fullPage: true });
+    }
     await page.getByRole("tab", { name: "Outline" }).click();
     // The review is saved with the draft: a fresh page (another computer) still has it, and Publish still waits.
     await page.waitForSelector("text=All changes saved", { timeout: 8000 });
