@@ -12,13 +12,19 @@ import { RpcError, rpc } from "@/lib/supabase";
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: "Giveaway host", robots: { index: false, follow: false } };
 
-type Props = { searchParams: Promise<{ signin?: string }> };
+type Props = { searchParams: Promise<{ signin?: string; scene?: string }> };
+const SCENES = ["volunteer", "raffle", "timer"] as const;
 
-/** The projector page: the live draw and the game timer. Only Versely's ops admins (the database checks). */
+/**
+ * The projector page: the live draw and the game timer. Only Versely's ops admins (the database checks).
+ * ?scene=volunteer|raffle|timer shows one part only, without the controls, for a browser source in the
+ * show's OBS scenes (the keys still work from OBS's Interact window; the timer's background is clear).
+ */
 export default async function LaunchHost({ searchParams }: Props) {
   const lang = await requestLang();
   const t = translator(lang);
-  const { signin } = await searchParams;
+  const { signin, scene } = await searchParams;
+  const fixed = SCENES.find((value) => value === scene);
   const session = await currentSession();
 
   let board: Board | null = null;
@@ -31,7 +37,7 @@ export default async function LaunchHost({ searchParams }: Props) {
     }
   }
 
-  if (board) return <HostBoard lang={lang} initial={board} entryLink={`${config.siteUrl}/launch`} />;
+  if (board) return <HostBoard lang={lang} initial={board} entryLink={`${config.siteUrl}/launch`} scene={fixed} />;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-hero to-background">
