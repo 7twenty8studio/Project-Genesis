@@ -8,6 +8,7 @@ import { translator, type Lang } from "@/lib/i18n";
 import { refusalMessage } from "@/lib/studio";
 import { runsChurch, type ChurchPerson, type StudioChurch, type StudioReport, type StudioSermon } from "@/lib/studio.server";
 import { ChurchPeople, roleName } from "./ChurchPeople";
+import { CloseChurch } from "./CloseChurch";
 import { InviteMembers } from "./InviteMembers";
 import { LocationsEditor } from "./LocationsEditor";
 import { Button, Notice } from "./ui";
@@ -213,6 +214,8 @@ export function ChurchHome({ lang, churches, church, sermons, reports, invite, p
           </label>
         </section>
       ) : null}
+
+      {church.role === "owner" ? <CloseChurch key={`close-${church.id}`} lang={lang} church={church.id} name={church.name} /> : null}
 
       {church.role === "preacher" ? (
         <section aria-labelledby="your-role-title" className="mt-8 rounded-3xl border border-border bg-surface p-5">

@@ -182,3 +182,16 @@ export async function changeSermonOwner(sermon: string, person: string): Promise
   const result = await call<null>("change_sermon_owner", { p_sermon: sermon, p_user: person });
   return result.ok ? { ok: true } : result;
 }
+
+/**
+ * Closes the church for everyone (owner only, the app's Close Group:
+ * delete_group). Its sermon pages stop working at once and members lose the
+ * group. The browser must send the church's name as typed, as a check.
+ */
+export async function closeChurch(church: string, typedName: string, name: string): Promise<ActionResult> {
+  if (!isID(church)) return { ok: false, code: "not_found" };
+  if (typeof typedName !== "string" || typedName.trim().toLocaleLowerCase() !== String(name).trim().toLocaleLowerCase()) return { ok: false, code: "name_mismatch" };
+  const result = await call<null>("delete_group", { p_group: church });
+  if (!result.ok) return result;
+  redirect("/studio");
+}

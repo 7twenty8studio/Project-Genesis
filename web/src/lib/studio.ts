@@ -114,6 +114,10 @@ export function refusalMessage(code: string): string {
       return "The owner's role can't change. To step back, hand the church to someone else in the Versely app first.";
     case "not_a_writer":
       return "Hand sermons only to the church's preachers and admins.";
+    case "name_mismatch":
+      return "Type the church's name exactly as it's shown to close it.";
+    case "owner_only":
+      return "Only the church's owner can do that.";
     case "not_signed_in":
       return "Your sign-in has ended. Sign in again.";
     default:

@@ -457,6 +457,20 @@ async function noSideScroll(page, label) {
     await page.getByText("Dan is now Member.").waitFor({ timeout: 8000 }).catch(() => problems.push("roles: Dan wasn't made a member again"));
     await axe(page, "church people");
     await peopleList.screenshot({ path: `${OUT}/church-people.png` });
+    // Closing the church: owner only, the name typed to confirm.
+    {
+      const close = page.getByTestId("close-church");
+      await close.getByRole("button", { name: "Close this church…" }).click();
+      const confirm = close.getByRole("button", { name: "Close church", exact: true });
+      await close.getByLabel("Type Grace Church to confirm").fill("Grace");
+      if (await confirm.isEnabled()) problems.push("close church: enabled before the name was typed");
+      await close.getByLabel("Type Grace Church to confirm").fill("grace church");
+      if (!(await confirm.isEnabled())) problems.push("close church: the typed name wasn't accepted");
+      await axe(page, "close church");
+      await close.screenshot({ path: `${OUT}/close-church.png` });
+      await confirm.click();
+      await page.waitForURL(/\/studio$/, { timeout: 8000 }).catch(() => problems.push("close church: didn't go back to Studio"));
+    }
     // The editor says who started it and lets the owner hand it over.
     await page.goto(`${BASE}/studio/33333333-3333-4333-8333-333333333333`);
     if (!(await page.getByTestId("sermon-who").count())) problems.push("roles: the editor doesn't say who started the sermon");
@@ -473,6 +487,7 @@ async function noSideScroll(page, label) {
     await p.goto(`${BASE}/studio`);
     if (!(await p.getByTestId("your-role").innerText()).includes("Preacher")) problems.push("preacher: role line missing");
     if (await p.getByTestId("church-people").count()) problems.push("preacher: sees People");
+    if (await p.getByTestId("close-church").count()) problems.push("preacher: can close the church");
     if (await p.getByRole("button", { name: "Save locations" }).count()) problems.push("preacher: sees Locations and Times");
     if (await p.getByRole("button", { name: "New Code" }).count()) problems.push("preacher: can make a new invite code");
     if (!(await p.getByTestId("invite-code").count())) problems.push("preacher: can't see the invite code");

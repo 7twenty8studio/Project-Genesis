@@ -780,6 +780,8 @@ shares; README.md has the architecture.
   trigger). Write checks go through `genesis_can_edit_sermon(row)` and
   `genesis_can_write_sermons(group)`; `my_sermon_churches` returns
   owner/admin/preacher.
+  The owner can close the church from Studio too (`CloseChurch`, the
+  church's name typed to confirm; `delete_group`, as the app's Close Group).
 - Release checks: CHURCH_SERMONS_PILOT.md maps every acceptance check to its
   test or hand steps. Browser checks: web/e2e/run.sh (Playwright, axe,
   stand-in server mock.mjs; keep it passing when the guest page or Studio
