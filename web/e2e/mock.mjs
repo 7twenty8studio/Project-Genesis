@@ -176,6 +176,9 @@ createServer(async (req, res) => {
             mine, can_edit: !isPreacher(req) || mine, started_by: started, edited_by: x.edited_by ?? started };
         }));
       }
+      case "delete_group":
+        if (isPreacher(req)) return fail(res, "owner_only");
+        return send(res, 200, null);
       case "church_people":
         if (isPreacher(req)) return fail(res, "not_allowed");
         return send(res, 200, people);
