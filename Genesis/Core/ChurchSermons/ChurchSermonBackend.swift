@@ -15,7 +15,7 @@ protocol ChurchSermonBackend: Sendable {
     func archive(group: UUID) async throws -> [ChurchSermonSummary]
     /// Churches that chose to be listed, by name (two characters or more).
     func searchChurches(_ query: String) async throws -> [SermonChurch]
-    /// Reports a published sermon to its church's moderators (signed in only, once each).
+    /// Reports a published sermon to its church's admins (signed in only, once each).
     func report(slug: String, reason: String) async throws
     /// The cover picture, checked against the reader's access on every request.
     func cover(path: String) async throws -> Data?

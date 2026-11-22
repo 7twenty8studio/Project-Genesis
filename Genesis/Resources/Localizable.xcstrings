@@ -1742,22 +1742,6 @@
         }
       }
     },
-    "A moderator will let you in.": {
-      "localizations": {
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Un moderador te dejará entrar."
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Um moderador vai deixar você entrar."
-          }
-        }
-      }
-    },
     "A modern, readable translation in everyday English.": {
       "localizations": {
         "es": {
@@ -23045,18 +23029,18 @@
         }
       }
     },
-    "Reports are private and go to the church's moderators.": {
+    "Reports are private and go to the church's admins.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Los reportes son privados y llegan a los moderadores de la iglesia."
+            "value": "Los reportes son privados y llegan a los administradores de la iglesia."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "As denúncias são particulares e vão para os moderadores da igreja."
+            "value": "As denúncias são privadas e vão para os administradores da igreja."
           }
         }
       }
@@ -23077,18 +23061,18 @@
         }
       }
     },
-    "Request sent. A moderator will let you in.": {
+    "Request sent. You'll be let in once it's approved.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Solicitud enviada. Un moderador te dejará entrar."
+            "value": "Solicitud enviada. Entrarás en cuanto la aprueben."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Pedido enviado. Um moderador vai deixar você entrar."
+            "value": "Pedido enviado. Você vai entrar assim que ele for aprovado."
           }
         }
       }
@@ -28054,18 +28038,18 @@
         }
       }
     },
-    "Thank you. The church's moderators will review it.": {
+    "Thank you. The church's admins will review it.": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Gracias. Los moderadores de la iglesia lo revisarán."
+            "value": "Gracias. Los administradores de la iglesia lo revisarán."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Obrigado. Os moderadores da igreja vão analisar."
+            "value": "Obrigado. Os administradores da igreja vão analisar."
           }
         }
       }
@@ -29544,6 +29528,22 @@
         }
       }
     },
+    "They'll choose admins and can close the group, and you'll stay on as an admin.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elegirá a los administradores y podrá cerrar el grupo, y tú seguirás como administrador."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Essa pessoa vai escolher os administradores e poderá encerrar o grupo, e você continua como administrador."
+          }
+        }
+      }
+    },
     "They'll choose moderators and can close the group, and you'll stay on as a moderator.": {
       "localizations": {
         "es": {
@@ -30214,6 +30214,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Três das Bíblias em inglês mais lidas, gratuitas para baixar e ler offline."
+          }
+        }
+      }
+    },
+    "Three reports hide something from everyone but its author and the admins until it's reviewed.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tres reportes ocultan algo a todos, salvo a su autor y a los administradores, hasta que se revise."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Três denúncias escondem algo de todos, exceto do autor e dos administradores, até que seja analisado."
           }
         }
       }
@@ -33531,6 +33547,22 @@
         }
       }
     },
+    "When this is on, people with the invite code ask to join and an admin lets them in.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuando está activado, quienes tienen el código de invitación piden unirse y un administrador los deja entrar."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quando isso está ativado, quem tem o código de convite pede para entrar e um administrador libera a entrada."
+          }
+        }
+      }
+    },
     "When verses are ready to review.": {
       "localizations": {
         "es": {
@@ -35121,6 +35153,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Você escreveu %1$lld anotações e %2$lld orações."
+          }
+        }
+      }
+    },
+    "You'll be let in once your request is approved.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entrarás en cuanto aprueben tu solicitud."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você vai entrar assim que seu pedido for aprovado."
           }
         }
       }

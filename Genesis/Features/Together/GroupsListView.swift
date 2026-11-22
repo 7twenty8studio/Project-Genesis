@@ -341,7 +341,7 @@ private struct RequestSentView: View {
                 Text(groupName)
                     .font(.headline)
                     .foregroundStyle(palette.text)
-                Text("Request sent. A moderator will let you in.")
+                Text("Request sent. You'll be let in once it's approved.")
                     .multilineTextAlignment(.center)
                     .foregroundStyle(palette.secondaryText)
                     .accessibilityIdentifier("joinGroup.requested")
