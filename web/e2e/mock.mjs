@@ -44,13 +44,14 @@ function publishable(blocks) {
     return { ...b, ref: { ...ref, translation, quote_withheld: !!quote && !translation } };
   });
 }
+let churchLocations = [];
 function published(s) {
   return {
     status: "ok", id: s.id, slug: s.slug, group_id: GROUP, church: "Grace Church", title: s.title, speaker: s.speaker, series: s.series,
     preached_on: s.preached_on, time_zone: s.time_zone, location: s.location, language: s.language,
     cover: s.cover_id ? { id: s.cover_id, path: `${GROUP}/${s.id}/${s.cover_id}.jpg`, alt: s.cover_alt, decorative: s.cover_decorative } : null,
     audience: s.live_audience, revision: 1, published_at: s.published_at, blocks: publishable(s.published_blocks ?? s.draft_blocks),
-    previous: { slug: "prevprev01", title: "Weary and Worn", speaker: "Pastor Ana", series: "Rest", preached_on: "2026-11-15", audience: "link" }, next: null, is_member: false,
+    previous: { slug: "prevprev01", title: "Weary and Worn", speaker: "Pastor Ana", series: "Rest", preached_on: "2026-11-15", audience: "link" }, next: null, locations: churchLocations, is_member: false,
   };
 }
 const fail = (res, message, status = 400) => send(res, status, { code: "P0001", message, details: null });
@@ -118,7 +119,13 @@ createServer(async (req, res) => {
     const s = sermons.get(a.p_sermon);
     switch (fn) {
       case "my_sermon_churches":
-        return send(res, 200, [{ id: GROUP, name: "Grace Church", role: "owner", listed: false }]);
+        return send(res, 200, [{ id: GROUP, name: "Grace Church", role: "owner", listed: false, locations: churchLocations }]);
+      case "set_church_locations": {
+        const list = (a.p_locations ?? []).map((l) => ({ name: (l.name ?? "").trim(), address: (l.address ?? "").trim(), times: (l.times ?? "").trim() }));
+        if (list.length > 10 || list.some((l) => !l.name || l.name.length > 80 || l.address.length > 200 || l.times.length > 300)) return fail(res, "invalid_locations");
+        churchLocations = list;
+        return send(res, 200, list);
+      }
       case "group_sermons":
         return send(res, 200, [...sermons.values()].filter((x) => !x.deleted).map((x) => ({ ...x, hidden: false, has_cover: !!x.cover_id, unpublished_changes: x.status === "published" && x.published_version !== x.draft_version })));
       case "group_sermon_reports":

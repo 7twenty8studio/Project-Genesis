@@ -23,6 +23,8 @@ actor InMemoryChurchSermonBackend: ChurchSermonBackend {
     private(set) var counts: [String: [ChurchSermonEvent: Int]] = [:]
     /// The church's sermons switch; off is as if none existed.
     private var sermonsOn = true
+    /// Each church's Locations and Times (the church's own text, not app text).
+    private var locations: [UUID: [ChurchLocation]] = [:]
 
     /// The sample group of InMemoryCommunityBackend ("Grace Fellowship"),
     /// a church with sermons that the test person belongs to.
@@ -47,6 +49,9 @@ actor InMemoryChurchSermonBackend: ChurchSermonBackend {
         guard seeded else { return }
         listed[Self.sampleChurchID] = "Grace Fellowship"
         listed[Self.otherChurchID] = "Riverside Church"
+        locations[Self.sampleChurchID] = [
+            ChurchLocation(name: "Main Campus", address: "1 Hill Road, Austin, TX", times: "Sundays 9:00 and 11:00 AM\nWednesdays 7:00 PM"),
+        ]
         let first = Self.sample(
             slug: Self.linkSlug, church: Self.sampleChurchID, churchName: "Grace Fellowship", title: "Rest for the Weary",
             speaker: "Pastor Ruth", series: "Come to Me", day: -7, audience: .link,
@@ -105,6 +110,7 @@ actor InMemoryChurchSermonBackend: ChurchSermonBackend {
 
     func unpublish(_ slug: String) { rows[slug]?.unpublished = true }
     func setSermonsOn(_ on: Bool) { sermonsOn = on }
+    func setLocations(_ places: [ChurchLocation], for church: UUID) { locations[church] = places }
     func count(of event: ChurchSermonEvent, slug: String) -> Int { counts[slug]?[event] ?? 0 }
 
     // MARK: Rules
@@ -150,7 +156,8 @@ actor InMemoryChurchSermonBackend: ChurchSermonBackend {
             preachedOn: s.preachedOn, location: s.location, language: s.language, cover: s.cover, audience: s.audience, blocks: s.blocks,
             previous: index.flatMap { $0 > 0 ? summary(series[$0 - 1]) : nil },
             next: index.flatMap { $0 + 1 < series.count ? summary(series[$0 + 1]) : nil },
-            isMember: member
+            isMember: member,
+            locations: locations[s.groupID] ?? []
         ))
     }
 

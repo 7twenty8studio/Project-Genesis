@@ -198,6 +198,13 @@ Tests:
   names the church and lands in its first draft. Church Studio has the
   Versely Cream, Daylight and Warm Dark looks and its own language menu.
 
+- 22 November 2026 (owner, from a recording of YouVersion's events): the
+  start screen says "church or ministry", so a ministry or someone who
+  speaks on their own fits too. Locations and Times (migration
+  20261124000000, not yet run in production): each church's places and
+  service times on every sermon page, with directions, and a "Join us"
+  invitation at the end.
+
 ## When the owner approves going live
 
 1. Run both migrations (20261120000000, then 20261121000000) in the SQL

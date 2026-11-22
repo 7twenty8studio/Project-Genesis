@@ -745,7 +745,16 @@ shares; README.md has the architecture.
   (`ChurchSermonNotes`, details and passages only), synced as
   sermons.source_sermon_id (sent only when set) and kept after an
   unpublish. Switch `OptionalFeature.churchSermons` (needs `church_sermons`
-  and `groups`); What's New "church-sermons" behind the flag. Counts are
+  and `groups`); What's New "church-sermons" behind the flag.
+  Locations and Times (like YouVersion's events; migration 20261124000000):
+  `groups.sermon_locations` (≤ 10 places: name, address, times one line
+  per gathering), set only through `set_church_locations` (owner and
+  moderators; Studio's church page, `LocationsEditor`), read through
+  `published_sermon` (`locations`, same readers as the sermon). Every
+  sermon page shows a Locations and Times button and the list with
+  directions (Google Maps link on the web, Apple Maps in the app,
+  `ChurchLocation.mapsURL`), and ends with "Join us for <next sermon>"
+  when the series' next one is published, else "Join us" over the list. Counts are
   Product Interaction, not linked (privacy manifest, APPLE_SETUP.md).
 - Release checks: CHURCH_SERMONS_PILOT.md maps every acceptance check to its
   test or hand steps. Browser checks: web/e2e/run.sh (Playwright, axe,

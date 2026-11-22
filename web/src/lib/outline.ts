@@ -54,7 +54,21 @@ export interface PublishedSermon {
   blocks: Block[];
   previous: SermonSummary | null;
   next: SermonSummary | null;
+  /** Where and when the church or ministry meets (20261124000000); older answers have none. */
+  locations?: ChurchLocation[];
   is_member: boolean;
+}
+
+/** One place on a church's Locations and Times: plain text, `times` one line per service. */
+export interface ChurchLocation {
+  name: string;
+  address: string;
+  times: string;
+}
+
+/** A maps search for an address that opens on any phone or computer (Google Maps' universal link; the app uses Apple Maps). */
+export function mapsLink(address: string): string {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 }
 
 export type SermonLookup = PublishedSermon | { status: "members_only" } | { status: "not_found" };

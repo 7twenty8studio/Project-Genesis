@@ -68,7 +68,14 @@ final class ChurchSermonsUITests: GenesisUITestCase {
         Genesis.tapToolbarButton("sermon.done", in: app)
         XCTAssertTrue(Genesis.wait { app.buttons["churchSermon.notes"].label.contains("Open My Notes") }, "The same notes open next time")
 
-        // The series goes on to the members-only sermon.
+        // Locations and Times: where and when the church meets, with directions.
+        let locations = app.buttons["churchSermon.locationsButton"]
+        XCTAssertTrue(locations.waitForExistence(timeout: Genesis.timeout))
+        locations.tap()
+        XCTAssertTrue(app.staticTexts["Wednesdays 7:00 PM"].waitForExistence(timeout: Genesis.timeout), "The church's times show")
+        XCTAssertTrue(app.links["1 Hill Road, Austin, TX"].exists, "The address opens directions")
+
+        // The series goes on to the members-only sermon: "Join us for …".
         let next = app.buttons["churchSermon.next"]
         Genesis.scrollIntoView(next, in: app)
         XCTAssertTrue(next.waitForExistence(timeout: Genesis.timeout))
