@@ -708,6 +708,9 @@ shares; README.md has the architecture.
   (web/src/lib/prefs.ts); the screen language never changes a sermon's
   language or the reader's Bible. The editor: Outline / Details / Publish
   beside a phone-width preview (Edit / Preview on phones). The home's
+  Studio's church page shows the group's invite code (`InviteMembers`:
+  Invite People shares the app's invitation text, Copy code, New Code via
+  `new_invite_code`), read from groups ("Members read" policy). The home's
   "View a sample sermon" shows when NEXT_PUBLIC_VERSELY_SAMPLE_SERMON is a
   link sermon's slug. The app's church page gives leaders Open in Church
   Studio (`ChurchSermonLink.studio(church:)`). Guest pages are never cached (unpublish applies on

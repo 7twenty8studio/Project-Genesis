@@ -49,6 +49,12 @@ export async function myDisplayName(s: Session): Promise<string | null> {
   const rows = await select<{ display_name: string }[]>(`profiles?select=display_name&user_id=eq.${encodeURIComponent(s.userId)}`, s.accessToken).catch(() => []);
   return rows[0]?.display_name ?? null;
 }
+/** The church's group invite code ("Members read" policy on groups; leaders are members). */
+export async function churchInvite(s: Session, group: string): Promise<{ invite_code: string; requires_approval: boolean } | null> {
+  if (!UUID.test(group)) return null;
+  const rows = await select<{ invite_code: string; requires_approval: boolean }[]>(`groups?id=eq.${group}&select=invite_code,requires_approval`, s.accessToken).catch(() => []);
+  return rows[0] ?? null;
+}
 export const churchReports = (s: Session, group: string) => rpc<StudioReport[]>("group_sermon_reports", { p_group: group }, s.accessToken);
 
 const DRAFT_COLUMNS =

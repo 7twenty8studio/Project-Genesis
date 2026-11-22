@@ -106,6 +106,8 @@ export function refusalMessage(code: string): string {
       return "You've started three churches or ministries today. Try again tomorrow.";
     case "too_many_groups":
       return "You've reached the limit of 20 groups. Delete one in Versely to start another.";
+    case "leaders_only":
+      return "Only the church's owner and moderators can make a new code.";
     case "not_signed_in":
       return "Your sign-in has ended. Sign in again.";
     default:

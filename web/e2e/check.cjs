@@ -168,6 +168,19 @@ async function noSideScroll(page, label) {
     const active = await page.evaluate(() => document.activeElement?.textContent);
     if (active !== "Publish") problems.push(`tab arrows: focus went to ${active}`);
     const slug = (await page.locator("code").first().innerText()).split("/s/")[1];
+    // Invite members: the group's code, shared as in the app, and a new one on request.
+    {
+      const home = await page.context().newPage();
+      await home.goto(`${BASE}/studio`);
+      const code = home.getByTestId("invite-code");
+      if ((await code.innerText()) !== "GRACE-12345") problems.push("invite code not shown: " + (await code.innerText()));
+      await home.getByRole("button", { name: "New Code" }).click();
+      await home.getByText("New code made. The old one no longer works.").waitFor({ timeout: 8000 }).catch(() => problems.push("invite: no new code"));
+      if ((await code.innerText()) !== "NEWCO-DE789") problems.push("new invite code not shown: " + (await code.innerText()));
+      await axe(home, "invite members");
+      await home.getByRole("heading", { name: "Invite members" }).locator("xpath=..").screenshot({ path: `${OUT}/invite-members.png` });
+      await home.close();
+    }
     // Locations and Times: a place without a name is refused, then saved and shown on the sermon page.
     {
       const home = await page.context().newPage();
