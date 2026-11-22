@@ -1,4 +1,4 @@
--- Church sermons (20261120000000): who can read and write what, the
+-- Church sermons (20261120000000 and later): who can read and write what, the
 -- quotation rule, switches, reports, counts and covers. Run by run.sh as a
 -- superuser on a throwaway database; each call switches to the role under
 -- test (anon, or authenticated as a named person). Prints a FAIL line for any
@@ -331,6 +331,34 @@ select ct.publish('pastor', 's2');
 select ct.check('guests are not told of a members-only next sermon', (ct.run('anon', format('public.published_sermon(%L)', ct.v('slug1'))))->'next' = 'null'::jsonb);
 select ct.check('members see the next sermon in the series',
   (ct.run('member', format('public.published_sermon(%L)', ct.v('slug1'))))->'next'->>'title' = 'Green Pastures');
+
+-- Locations and Times (20261124000000) ------------------------------------------------------
+
+select ct.check('a church starts with no locations', (ct.run('anon', format('public.published_sermon(%L)', ct.v('slug1'))))->'locations' = '[]'::jsonb);
+select ct.set('loc', (ct.run('pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'),
+  '[{"name": "  Main Campus ", "address": "1 Hill Rd, Austin, TX", "times": "Sundays 9:00 and 11:00 AM\nWednesdays 7:00 PM"}, {"name": "Online"}]')))::text);
+select ct.check('the pastor saves locations, trimmed, empty fields as ""',
+  ct.v('loc')::jsonb = '[{"name": "Main Campus", "address": "1 Hill Rd, Austin, TX", "times": "Sundays 9:00 and 11:00 AM\nWednesdays 7:00 PM"}, {"name": "Online", "address": "", "times": ""}]'::jsonb, ct.v('loc')::jsonb);
+select ct.check('guests see them on a link sermon',
+  (ct.run('anon', format('public.published_sermon(%L)', ct.v('slug1'))))->'locations' = ct.v('loc')::jsonb);
+select ct.check('Church Studio has them',
+  (ct.run('moderator', 'public.my_sermon_churches()')) @> jsonb_build_array(jsonb_build_object('id', ct.g('grace'), 'locations', ct.v('loc')::jsonb)));
+select ct.check('a moderator can change them',
+  ct.len(ct.run('moderator', format('public.set_church_locations(%L, %L)', ct.g('grace'), ct.v('loc')))) = 2);
+select ct.refused('a member cannot', 'member', format('public.set_church_locations(%L, %L)', ct.g('grace'), '[]'), 'not_allowed');
+select ct.refused('another church''s pastor cannot', 'other_pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'), '[]'), 'not_allowed');
+select ct.refused('a guest cannot', 'anon', format('public.set_church_locations(%L, %L)', ct.g('grace'), '[]'), 'permission denied');
+select ct.refused('a place needs a name', 'pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'), '[{"name": "  ", "times": "Sundays"}]'), 'invalid_locations');
+select ct.refused('unknown fields are refused', 'pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'), '[{"name": "A", "phone": "1"}]'), 'invalid_locations');
+select ct.refused('long times are refused, never cut', 'pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'), jsonb_build_array(jsonb_build_object('name', 'A', 'times', repeat('x', 301)))), 'invalid_locations');
+select ct.refused('at most 10 places', 'pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'), (select jsonb_agg(jsonb_build_object('name', 'P' || i)) from generate_series(1, 11) i)), 'invalid_locations');
+select ct.refused('not a list', 'pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'), '{"name": "A"}'), 'invalid_locations');
+select ct.check('refusals leave them as they were',
+  (select sermon_locations from public.groups where id = ct.g('grace')) = ct.v('loc')::jsonb);
+select ct.check('a members-only sermon tells guests nothing about them',
+  not (ct.run('anon', format('public.published_sermon(%L)', (select slug from public.church_sermons where id = ct.v('s2')::uuid)))) ? 'locations');
+select ct.check('members see them there',
+  (ct.run('member', format('public.published_sermon(%L)', (select slug from public.church_sermons where id = ct.v('s2')::uuid))))->'locations' = ct.v('loc')::jsonb);
 
 -- Covers ---------------------------------------------------------------------------------
 

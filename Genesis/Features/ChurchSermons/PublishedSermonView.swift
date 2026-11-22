@@ -4,8 +4,9 @@ import UIKit
 
 /// A church's published sermon outline: the church's words exactly as
 /// published, each verified passage a tap away (a sheet, so the outline
-/// keeps its place), Copy for each section, the series' previous and next,
-/// the cover, the person's own notes, and report or hide.
+/// keeps its place), Copy for each section, the series' previous and an
+/// invitation to the next, the church's Locations and Times, the cover, the
+/// person's own notes, and report or hide.
 struct PublishedSermonView: View {
     let sermon: PublishedSermon
     /// Opens another sermon (the series' previous or next).
@@ -39,12 +40,15 @@ struct PublishedSermonView: View {
         ScrollViewReader { proxy in
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
-                    header
+                    header { scroll(to: Self.locationsID, proxy: proxy) }
                     ForEach(sections) { section in
                         sectionView(section)
                             .id(section.id)
                     }
-                    seriesNavigation
+                    joinNext
+                    locationsSection
+                        .id(Self.locationsID)
+                    previousLink
                     Text("Shared by \(sermon.church). Passages are shown from your Bible on this device.")
                         .font(.footnote)
                         .foregroundStyle(palette.secondaryText)
@@ -97,7 +101,17 @@ struct PublishedSermonView: View {
 
     // MARK: Parts
 
-    private var header: some View {
+    private static let locationsID = "churchSermon.locations"
+
+    private func scroll(to id: String, proxy: ScrollViewProxy) {
+        if reduceMotion {
+            proxy.scrollTo(id, anchor: .top)
+        } else {
+            withAnimation(Motion.easeInOut(0.3)) { proxy.scrollTo(id, anchor: .top) }
+        }
+    }
+
+    private func header(onLocations: @escaping () -> Void) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             if let cover {
                 Color.clear
@@ -145,6 +159,17 @@ struct PublishedSermonView: View {
             .tint(palette.accent)
             .padding(.top, 6)
             .accessibilityIdentifier("churchSermon.notes")
+            if !sermon.locations.isEmpty {
+                Button(action: onLocations) {
+                    Label("Locations and Times", systemImage: "mappin.and.ellipse")
+                        .font(.subheadline.weight(.semibold))
+                        .frame(minHeight: 44)
+                }
+                .buttonStyle(.bordered)
+                .tint(palette.accent)
+                .accessibilityHint("Shows where and when the church meets")
+                .accessibilityIdentifier("churchSermon.locationsButton")
+            }
         }
         .padding(.bottom, 12)
     }
@@ -234,9 +259,85 @@ struct PublishedSermonView: View {
         }
     }
 
+    /// "Join us for …": the next sermon in the series, once it's published.
     @ViewBuilder
-    private var seriesNavigation: some View {
-        if sermon.previous != nil || sermon.next != nil {
+    private var joinNext: some View {
+        if let next = sermon.next {
+            Button {
+                onOpenSermon(next.slug)
+            } label: {
+                HStack(spacing: 12) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Join us for \(next.title)")
+                            .font(.headline)
+                            .multilineTextAlignment(.leading)
+                        if let day = next.preachedDate?.formatted(date: .long, time: .omitted) {
+                            Text(day)
+                                .font(.subheadline)
+                                .opacity(0.9)
+                        }
+                    }
+                    Spacer(minLength: 0)
+                    Image(systemName: "chevron.right")
+                        .accessibilityHidden(true)
+                }
+                .foregroundStyle(palette.background)
+                .padding(16)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(palette.accent, in: .rect(cornerRadius: 16))
+            }
+            .buttonStyle(.plain)
+            .padding(.top, 24)
+            .accessibilityIdentifier("churchSermon.next")
+        }
+    }
+
+    /// Where and when the church meets, with directions in Maps. Headed
+    /// "Join us" when there's no next sermon to invite people to.
+    @ViewBuilder
+    private var locationsSection: some View {
+        if !sermon.locations.isEmpty {
+            VStack(alignment: .leading, spacing: 12) {
+                if sermon.next == nil {
+                    Text("Join us")
+                        .font(.title3.weight(.semibold))
+                        .foregroundStyle(palette.text)
+                }
+                Text("Locations and Times")
+                    .font(sermon.next == nil ? Font.footnote.weight(.semibold) : Font.title3.weight(.semibold))
+                    .textCase(sermon.next == nil ? Text.Case.uppercase : nil)
+                    .foregroundStyle(sermon.next == nil ? palette.secondaryText : palette.text)
+                    .accessibilityAddTraits(.isHeader)
+                ForEach(Array(sermon.locations.enumerated()), id: \.offset) { _, place in
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(place.name)
+                            .font(.body.weight(.semibold))
+                        ForEach(place.timeLines, id: \.self) { line in
+                            Text(line)
+                        }
+                        if let url = place.mapsURL {
+                            Link(destination: url) {
+                                Label(place.address, systemImage: "mappin")
+                                    .multilineTextAlignment(.leading)
+                            }
+                            .tint(palette.accent)
+                            .accessibilityHint("Opens directions in Maps")
+                        }
+                    }
+                    .foregroundStyle(palette.text)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }
+            }
+            .padding(16)
+            .background(palette.surface, in: .rect(cornerRadius: 16))
+            .padding(.top, 24)
+            .accessibilityIdentifier("churchSermon.locations")
+        }
+    }
+
+    @ViewBuilder
+    private var previousLink: some View {
+        if let previous = sermon.previous {
             VStack(alignment: .leading, spacing: 10) {
                 if let series = sermon.series {
                     Text(series)
@@ -244,12 +345,7 @@ struct PublishedSermonView: View {
                         .textCase(.uppercase)
                         .foregroundStyle(palette.secondaryText)
                 }
-                if let previous = sermon.previous {
-                    seriesLink(previous, label: String(localized: "Previous"), systemImage: "chevron.left", id: "churchSermon.previous")
-                }
-                if let next = sermon.next {
-                    seriesLink(next, label: String(localized: "Next"), systemImage: "chevron.right", id: "churchSermon.next")
-                }
+                seriesLink(previous, label: String(localized: "Previous"), systemImage: "chevron.left", id: "churchSermon.previous")
             }
             .padding(.top, 24)
         }
@@ -288,13 +384,7 @@ struct PublishedSermonView: View {
             if titled.count > 1 {
                 Menu {
                     ForEach(titled) { section in
-                        Button(section.title ?? "") {
-                            if reduceMotion {
-                                proxy.scrollTo(section.id, anchor: .top)
-                            } else {
-                                withAnimation(Motion.easeInOut(0.3)) { proxy.scrollTo(section.id, anchor: .top) }
-                            }
-                        }
+                        Button(section.title ?? "") { scroll(to: section.id, proxy: proxy) }
                     }
                 } label: {
                     Label("Jump to Section", systemImage: "list.bullet")

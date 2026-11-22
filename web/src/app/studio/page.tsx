@@ -29,7 +29,7 @@ export default async function StudioHome({ searchParams }: Props) {
             <p className="text-sm font-semibold uppercase tracking-wider text-accent">{t("Church Studio")}</p>
             <h1 className="mt-2 text-4xl font-semibold leading-tight tracking-tight">{t("Share Sunday's outline with your church.")}</h1>
             <p className="mt-4 text-lg leading-relaxed text-muted">
-              {t("Sign in to start your church, or to keep working on your sermons. It's free, and it's the same account you use in the Versely app.")}
+              {t("Sign in to start your church or ministry, or to keep working on your sermons. It's free, and it's the same account you use in the Versely app.")}
             </p>
             {signin === "failed" ? (
               <p role="alert" className="mt-6 rounded-2xl border border-border bg-surface-2 p-4">
@@ -73,9 +73,9 @@ export default async function StudioHome({ searchParams }: Props) {
         <main className="mx-auto max-w-2xl px-4 pb-24 pt-10 sm:px-6">
           <p className="text-sm font-semibold uppercase tracking-wider text-accent">{t("Church Studio")}</p>
           <h1 className="mt-2 text-3xl font-semibold tracking-tight">
-            {first ? (session.name ? t("Welcome, {name}", { name: session.name.split(" ")[0] }) : t("Welcome")) : t("Start another church")}
+            {first ? (session.name ? t("Welcome, {name}", { name: session.name.split(" ")[0] }) : t("Welcome")) : t("Start another church or ministry")}
           </h1>
-          {first ? <p className="mt-3 text-lg leading-relaxed text-muted">{t("Name your church to get started. You can write your first sermon outline right after.")}</p> : null}
+          {first ? <p className="mt-3 text-lg leading-relaxed text-muted">{t("Name your church or ministry to get started. You can write your first sermon outline right after.")}</p> : null}
           <div className="mt-8">
             <StartChurch lang={lang} yourName={yourName} suggestedName={session.name ?? ""} groups={groups} first={first} />
           </div>

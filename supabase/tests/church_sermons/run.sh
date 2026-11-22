@@ -20,7 +20,8 @@ ROOT="$(cd "$HERE/../../.." && pwd)"
 MIG="$ROOT/supabase/migrations"
 NEW="20261120000000_church_sermons.sql"
 WEB="20261121000000_church_sermon_web.sql"
-LAST="20261122000000_church_self_serve.sql"  # the newest church sermons migration
+SELF="20261122000000_church_self_serve.sql"
+LAST="20261124000000_church_locations.sql"  # the newest church sermons migration
 PGBIN="${PGBIN:-/opt/homebrew/opt/postgresql@17/bin}"
 PORT="${PORT:-54330}"
 WORK="$(mktemp -d /tmp/cspg.XXXXXX)"
@@ -130,6 +131,7 @@ echo "== Migration again (must change nothing)"
 "$PGBIN/pg_dump" -d "$SUPER_URL" -s -n public -n storage | grep -v restrict > "$WORK/before.sql"
 as_postgres -f "$MIG/$NEW" >/dev/null 2>&1
 as_postgres -f "$MIG/$WEB" >/dev/null 2>&1
+as_postgres -f "$MIG/$SELF" >/dev/null 2>&1
 as_postgres -f "$MIG/$LAST" >/dev/null 2>&1
 "$PGBIN/pg_dump" -d "$SUPER_URL" -s -n public -n storage | grep -v restrict > "$WORK/after.sql"
 if diff -q "$WORK/before.sql" "$WORK/after.sql" >/dev/null; then echo "   PASS schema identical"; else diff "$WORK/before.sql" "$WORK/after.sql" | head -20; exit 1; fi

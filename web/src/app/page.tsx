@@ -99,8 +99,8 @@ export default async function Home() {
 
         <section className="mx-auto max-w-5xl px-4 py-20 sm:px-6">
           <div className="rounded-[2rem] bg-accent-strong px-6 py-12 text-center text-on-accent sm:px-12">
-            <h2 className="text-3xl font-semibold tracking-tight">{t("Start your church in a minute")}</h2>
-            <p className="mx-auto mt-3 max-w-xl text-lg leading-relaxed opacity-90">{t("Sign in, name your church and write your first outline. It's free.")}</p>
+            <h2 className="text-3xl font-semibold tracking-tight">{t("Start your church or ministry in a minute")}</h2>
+            <p className="mx-auto mt-3 max-w-xl text-lg leading-relaxed opacity-90">{t("Sign in, name your church or ministry and write your first outline. It's free.")}</p>
             <Link
               href="/studio"
               className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-on-accent px-7 text-base font-semibold text-accent-strong transition-opacity hover:opacity-90"

@@ -7,6 +7,7 @@ import { createSermon, reviewReports, setListed } from "@/app/studio/actions";
 import { translator, type Lang } from "@/lib/i18n";
 import { refusalMessage } from "@/lib/studio";
 import type { StudioChurch, StudioReport, StudioSermon } from "@/lib/studio.server";
+import { LocationsEditor } from "./LocationsEditor";
 import { Button, Notice } from "./ui";
 import { StatusBadge } from "./StatusBadge";
 
@@ -58,7 +59,7 @@ export function ChurchHome({ lang, churches, church, sermons, reports }: Props) 
             <h1 className="mt-1 text-3xl font-semibold tracking-tight">{church.name}</h1>
           )}
           <Link href="/studio?new=1" className="mt-2 inline-block text-sm font-medium text-accent underline-offset-4 hover:underline">
-            {t("Start another church")}
+            {t("Start another church or ministry")}
           </Link>
         </div>
         <Button primary disabled={pending} onClick={() => run(() => createSermon(church.id))}>
@@ -127,6 +128,8 @@ export function ChurchHome({ lang, churches, church, sermons, reports }: Props) 
           </ul>
         )}
       </section>
+
+      <LocationsEditor key={church.id} lang={lang} church={church.id} initial={church.locations ?? []} />
 
       <section aria-labelledby="listing" className="mt-8 rounded-3xl border border-border bg-surface p-5">
         <h2 id="listing" className="text-lg font-semibold">

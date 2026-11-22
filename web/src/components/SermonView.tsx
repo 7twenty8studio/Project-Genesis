@@ -1,6 +1,6 @@
 import { config } from "@/config";
 import { formatDay, type Lang, type Translate } from "@/lib/i18n";
-import { anchorFor, copyText, sections, type Block, type PublishedSermon, type SermonSummary } from "@/lib/outline";
+import { anchorFor, copyText, mapsLink, sections, type Block, type ChurchLocation, type PublishedSermon, type SermonSummary } from "@/lib/outline";
 import type { YouVersionBible } from "@/lib/scripture";
 import { describe } from "@/lib/shared/references";
 import { CopyButton } from "./CopyButton";
@@ -34,6 +34,7 @@ export function SermonView({
   const parts = sections(sermon.blocks);
   const headed = parts.filter((s) => s.title);
   const outlineLang = sermon.language === "other" ? undefined : sermon.language === "pt" ? "pt-BR" : sermon.language;
+  const locations = sermon.locations ?? [];
   return (
     <Main className="mx-auto max-w-2xl px-4 pb-24 pt-6 sm:px-6">
       {preview ? null : <OpenEvent endpoint={EVENTS} slug={sermon.slug} />}
@@ -77,6 +78,15 @@ export function SermonView({
           </div>
         ) : null}
       </dl>
+      {locations.length ? (
+        <a
+          href="#locations"
+          className="mt-4 inline-flex min-h-10 items-center gap-2 rounded-full border border-border bg-surface px-4 text-sm font-semibold text-accent-strong hover:bg-surface-2"
+        >
+          <PinIcon />
+          {t("Locations and Times")}
+        </a>
+      ) : null}
       {sermon.audience === "members" ? (
         <div className="mt-3 flex items-center gap-3 text-sm text-muted">
           <span>{t("Shared with church members")}</span>
@@ -113,10 +123,28 @@ export function SermonView({
         ))}
       </article>
 
-      {sermon.previous || sermon.next ? (
-        <nav aria-label={t("More in this series")} className="mt-12 grid gap-3 sm:grid-cols-2">
-          {sermon.previous ? <SeriesLink sermon={sermon.previous} label={t("Previous")} lang={lang} /> : <span />}
-          {sermon.next ? <SeriesLink sermon={sermon.next} label={t("Next")} lang={lang} alignEnd /> : null}
+      {sermon.next ? (
+        <a
+          href={preview ? undefined : `/s/${sermon.next.slug}`}
+          className="mt-12 flex items-center justify-between gap-4 rounded-2xl bg-accent-strong p-5 text-on-accent hover:opacity-95"
+        >
+          <span>
+            <span lang={outlineLang} className="block text-lg font-semibold">
+              {t("Join us for {title}", { title: sermon.next.title })}
+            </span>
+            {sermon.next.preached_on ? <span className="mt-0.5 block text-sm opacity-90">{formatDay(sermon.next.preached_on, lang)}</span> : null}
+          </span>
+          <span aria-hidden="true" className="text-2xl">
+            →
+          </span>
+        </a>
+      ) : null}
+
+      {locations.length ? <Locations locations={locations} invite={!sermon.next} lang={outlineLang} t={t} /> : null}
+
+      {sermon.previous ? (
+        <nav aria-label={t("More in this series")} className="mt-8">
+          <SeriesLink sermon={sermon.previous} label={t("Previous")} lang={lang} />
         </nav>
       ) : null}
 
@@ -169,9 +197,51 @@ function BlockView({ block, sermon, lang, events, youversion }: { block: Block; 
   }
 }
 
-function SeriesLink({ sermon, label, lang, alignEnd }: { sermon: SermonSummary; label: string; lang: Lang; alignEnd?: boolean }) {
+/** Where and when the church meets, with directions; `invite` heads it "Join us" when no next sermon does. */
+function Locations({ locations, invite, lang, t }: { locations: ChurchLocation[]; invite: boolean; lang?: string; t: Translate }) {
   return (
-    <a href={`/s/${sermon.slug}`} className={`block rounded-2xl border border-border bg-surface p-4 hover:bg-surface-2 ${alignEnd ? "sm:text-right" : ""}`}>
+    <section id="locations" aria-labelledby="locations-title" className="mt-12 scroll-mt-6 rounded-2xl border border-border bg-surface p-5">
+      {invite ? <p className="text-lg font-semibold">{t("Join us")}</p> : null}
+      <h2 id="locations-title" className={invite ? "mt-1 text-sm font-medium uppercase tracking-[0.14em] text-muted" : "text-lg font-semibold"}>
+        {t("Locations and Times")}
+      </h2>
+      <ul className="mt-3 divide-y divide-border">
+        {locations.map((place, i) => (
+          <li key={i} lang={lang} className="py-3 first:pt-0 last:pb-0">
+            <p className="font-semibold">{place.name}</p>
+            {place.times ? <p className="mt-1 whitespace-pre-line leading-relaxed">{place.times}</p> : null}
+            {place.address ? (
+              <a
+                href={mapsLink(place.address)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 inline-flex items-start gap-1.5 text-muted underline decoration-copper underline-offset-4 hover:text-foreground"
+              >
+                <PinIcon />
+                <span>
+                  {place.address}
+                  <span className="sr-only"> ({t("directions, opens in a new tab")})</span>
+                </span>
+              </a>
+            ) : null}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+function PinIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 20 20" className="mt-0.5 h-4 w-4 flex-none" fill="currentColor">
+      <path d="M10 1.5a6 6 0 0 0-6 6c0 4.2 5.2 10.2 5.4 10.5a.8.8 0 0 0 1.2 0c.2-.3 5.4-6.3 5.4-10.5a6 6 0 0 0-6-6Zm0 8.3a2.3 2.3 0 1 1 0-4.6 2.3 2.3 0 0 1 0 4.6Z" />
+    </svg>
+  );
+}
+
+function SeriesLink({ sermon, label, lang }: { sermon: SermonSummary; label: string; lang: Lang }) {
+  return (
+    <a href={`/s/${sermon.slug}`} className="block rounded-2xl border border-border bg-surface p-4 hover:bg-surface-2">
       <span className="text-sm text-muted">{label}</span>
       <span className="mt-1 block font-semibold">{sermon.title}</span>
       {sermon.preached_on ? <span className="block text-sm text-muted">{formatDay(sermon.preached_on, lang)}</span> : null}

@@ -6002,18 +6002,18 @@
         }
       }
     },
-    "Church name": {
+    "Church or ministry name": {
       "localizations": {
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nombre de la iglesia"
+            "value": "Nombre de la iglesia o ministerio"
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nome da igreja"
+            "value": "Nome da igreja ou ministério"
           }
         }
       }
@@ -12943,6 +12943,38 @@
         }
       }
     },
+    "Join us": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acompáñanos"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Junte-se a nós"
+          }
+        }
+      }
+    },
+    "Join us for %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acompáñanos en %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Junte-se a nós em %@"
+          }
+        }
+      }
+    },
     "Join with an Invite Code": {
       "localizations": {
         "es": {
@@ -14312,6 +14344,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Carregando"
+          }
+        }
+      }
+    },
+    "Locations and Times": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lugares y horarios"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Locais e horários"
           }
         }
       }
@@ -18260,6 +18308,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Abra o esboço"
+          }
+        }
+      }
+    },
+    "Opens directions in Maps": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abre cómo llegar en Mapas"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abre como chegar no Mapas"
           }
         }
       }
@@ -25067,6 +25131,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mostra o que está tocando"
+          }
+        }
+      }
+    },
+    "Shows where and when the church meets": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Muestra dónde y cuándo se reúne la iglesia"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostra onde e quando a igreja se reúne"
           }
         }
       }

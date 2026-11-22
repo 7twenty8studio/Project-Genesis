@@ -25,7 +25,10 @@ struct ChurchSermonWireTests {
      ],
      "previous":null,
      "next":{"slug":"fghij67890","title":"The Good Shepherd","speaker":"Ana","series":"Come to Me","preached_on":"2026-11-22","audience":"link","published_at":"2026-11-22T15:00:00+00:00"},
-     "is_member":true}
+     "is_member":true,
+     "locations":[{"name":"Main Campus","address":"1 Hill Rd, Austin, TX","times":"Sundays 9:00 and 11:00 AM\\n\\nWednesdays 7:00 PM"},
+                  {"name":"  ","address":"","times":""},
+                  {"name":"Online","address":"","times":""}]}
     """
 
     private func decoded() throws -> PublishedSermon {
@@ -49,6 +52,25 @@ struct ChurchSermonWireTests {
         #expect(sermon.previous == nil)
         // The poll from a later version is skipped; everything else stays.
         #expect(sermon.blocks.map { $0.id } == ["a", "h1", "s", "n", "u", "l"])
+    }
+
+    @Test func readsTheChurchsLocationsAndTimes() throws {
+        let locations = try decoded().locations
+        // A place without a name is left out; the rest keep the church's words.
+        #expect(locations.map(\.name) == ["Main Campus", "Online"])
+        #expect(locations[0].timeLines == ["Sundays 9:00 and 11:00 AM", "Wednesdays 7:00 PM"])
+        #expect(locations[0].mapsURL?.absoluteString == "https://maps.apple.com/?q=1%20Hill%20Rd,%20Austin,%20TX")
+        #expect(locations[1].mapsURL == nil)
+        #expect(locations[1].timeLines.isEmpty)
+    }
+
+    @Test func olderAnswersHaveNoLocations() throws {
+        let json = sermonJSON.replacingOccurrences(of: "\"locations\":", with: "\"unused\":")
+        guard case let .sermon(sermon) = try ChurchSermonWire.lookup(from: Data(json.utf8)) else {
+            Issue.record("Expected a sermon")
+            return
+        }
+        #expect(sermon.locations.isEmpty)
     }
 
     @Test func referencesKeepOnlyFreeQuotationCodes() throws {

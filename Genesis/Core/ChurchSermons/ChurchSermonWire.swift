@@ -1,6 +1,7 @@
 import Foundation
 
-/// The JSON the church sermon functions return (migration 20261120000000),
+/// The JSON the church sermon functions return (migrations 20261120000000
+/// and 20261124000000's locations),
 /// read leniently: a block or field from a later version is skipped rather
 /// than failing the whole sermon.
 enum ChurchSermonWire {
@@ -155,6 +156,17 @@ enum ChurchSermonWire {
         }
     }
 
+    private struct LocationRow: Decodable {
+        let name: String?
+        let address: String?
+        let times: String?
+
+        var location: ChurchLocation? {
+            guard let name = name?.trimmingCharacters(in: .whitespacesAndNewlines), !name.isEmpty else { return nil }
+            return ChurchLocation(name: name, address: address ?? "", times: times ?? "")
+        }
+    }
+
     private struct SermonRow: Decodable {
         let id: UUID
         let slug: String
@@ -172,6 +184,7 @@ enum ChurchSermonWire {
         let previous: Lossy<SummaryRow>?
         let next: Lossy<SummaryRow>?
         let is_member: Bool?
+        let locations: [Lossy<LocationRow>]?
 
         var sermon: PublishedSermon? {
             guard ChurchSermonLink.isSlug(slug) else { return nil }
@@ -186,7 +199,8 @@ enum ChurchSermonWire {
                 audience: ChurchSermonAudience(rawValue: audience ?? "") ?? .members,
                 blocks: (blocks ?? []).compactMap { $0.value?.block },
                 previous: previous?.value?.summary, next: next?.value?.summary,
-                isMember: is_member ?? false
+                isMember: is_member ?? false,
+                locations: (locations ?? []).compactMap { $0.value?.location }
             )
         }
     }

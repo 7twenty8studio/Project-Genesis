@@ -56,7 +56,7 @@ struct ChurchSearchView: View {
         .themedScreen()
         .navigationTitle("Find a Church")
         .navigationBarTitleDisplayMode(.inline)
-        .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: Text("Church name"))
+        .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: Text("Church or ministry name"))
         .task(id: query) { await search() }
     }
 

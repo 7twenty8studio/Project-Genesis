@@ -7,6 +7,7 @@ import { redirect } from "next/navigation";
 import { currentSession } from "@/lib/auth";
 import type { DraftBlock, DraftDetails } from "@/lib/draft";
 import type { DraftReview } from "@/lib/import/review";
+import type { ChurchLocation } from "@/lib/outline";
 import { RpcError, rpc, uploadCover } from "@/lib/supabase";
 import { UUID } from "@/lib/studio.server";
 
@@ -99,6 +100,14 @@ export async function setListed(church: string, listed: boolean): Promise<Action
   if (!isID(church)) return { ok: false, code: "not_found" };
   const result = await call<null>("set_sermons_listed", { p_group: church, p_listed: listed === true });
   return result.ok ? { ok: true } : result;
+}
+
+/** Saves the church's Locations and Times (the whole list); the database cleans and checks it. */
+export async function setLocations(church: string, locations: ChurchLocation[]): Promise<ActionResult<{ locations: ChurchLocation[] }>> {
+  if (!isID(church) || !Array.isArray(locations)) return { ok: false, code: "not_found" };
+  const clean = locations.map((l) => ({ name: String(l?.name ?? ""), address: String(l?.address ?? ""), times: String(l?.times ?? "") }));
+  const result = await call<ChurchLocation[]>("set_church_locations", { p_group: church, p_locations: clean });
+  return result.ok ? { ok: true, locations: result.value } : result;
 }
 
 export async function reviewReports(sermon: string, keep: boolean): Promise<ActionResult> {

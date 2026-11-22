@@ -24,6 +24,9 @@ struct PublishedSermon: Identifiable, Hashable, Sendable {
     let previous: ChurchSermonSummary?
     let next: ChurchSermonSummary?
     let isMember: Bool
+    /// Where and when the church or ministry meets (Locations and Times,
+    /// migration 20261124000000), shown on every one of its sermons.
+    var locations: [ChurchLocation] = []
 
     struct Cover: Hashable, Sendable {
         /// The file's name in the private bucket, read only through the
@@ -45,6 +48,30 @@ struct PublishedSermon: Identifiable, Hashable, Sendable {
             return PrayerPassage(start: range.start, end: range.end)
         }
         .filter { seen.insert($0).inserted }
+    }
+}
+
+/// One place on a church's Locations and Times: the church's own plain
+/// text, `times` one line per gathering.
+struct ChurchLocation: Hashable, Sendable {
+    let name: String
+    let address: String
+    let times: String
+
+    /// One line per gathering, blank lines left out.
+    var timeLines: [String] {
+        times.split(whereSeparator: \.isNewline)
+            .map { $0.trimmingCharacters(in: .whitespaces) }
+            .filter { !$0.isEmpty }
+    }
+
+    /// Directions in Apple Maps, searched by the address; nil without one.
+    var mapsURL: URL? {
+        let address = address.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !address.isEmpty else { return nil }
+        var components = URLComponents(string: "https://maps.apple.com/")
+        components?.queryItems = [URLQueryItem(name: "q", value: address)]
+        return components?.url
     }
 }
 
