@@ -57,7 +57,7 @@ actor InMemoryCommunityBackend: CommunityBackend {
             id: groupID, name: "Grace Fellowship", description: "Wednesday evening study.",
             inviteCode: Self.sampleInviteCode, planID: ReadingPlan.gospelsID, planTitle: nil, planBooks: nil, planDays: nil,
             planStart: Calendar.current.date(byAdding: .day, value: -2, to: .now), role: .member, notifications: true,
-            ownerID: neighbour
+            ownerID: neighbour, isChurch: true
         )
         members[groupID] = [GroupMember(groupID: groupID, userID: neighbour, role: .leader, displayName: "Pastor Ruth", joinedAt: .now.addingTimeInterval(-86_400 * 30))]
         let approvalID = UUID(uuidString: "00000000-0000-0000-0000-00000000A9A1")!
@@ -86,6 +86,11 @@ actor InMemoryCommunityBackend: CommunityBackend {
         if profiles[user] == nil {
             profiles[user] = CommunityProfile(userID: user, displayName: name, communityTermsAcceptedAt: nil)
         }
+    }
+
+    /// Turns sermons on for a group, making it a church. For unit tests.
+    func makeChurch(_ group: UUID) {
+        groups[group]?.isChurch = true
     }
 
     /// Joins with a code and returns the group's id (or the id of the group
@@ -262,6 +267,7 @@ actor InMemoryCommunityBackend: CommunityBackend {
             var mine = group
             mine.role = membership.role
             mine.isOwner = group.ownerID == me
+            mine.isPreacher = membership.isPreacher
             return mine
         }
         .sorted { $0.name < $1.name }
@@ -355,7 +361,40 @@ actor InMemoryCommunityBackend: CommunityBackend {
         guard user != me else { throw CommunityError.message(String(localized: "Make someone else the owner first.")) }
         updateMember(user, in: group) { member in
             member.role = role
+            member.preacher = false
             if role == .leader { member.mutedUntil = nil }
+        }
+    }
+
+    /// set_church_role: the owner sets anyone but themselves; admins make
+    /// members preachers and preachers members; a preacher can step down.
+    func setChurchRole(_ role: ChurchMemberRole, for user: UUID, in group: UUID) async throws {
+        guard groups[group]?.isChurch == true else { throw Self.notAllowed }
+        guard let target = member(user, in: group) else { throw CommunityError.message(String(localized: "They aren't in this group.")) }
+        guard groups[group]?.ownerID != user else { throw CommunityError.message(String(localized: "Make someone else the owner first.")) }
+        let mine = member(me, in: group)
+        let allowed: Bool
+        if isOwner(group) {
+            allowed = true
+        } else if isLeader(group) {
+            allowed = user != me && target.role == .member && role != .admin
+        } else {
+            allowed = user == me && mine?.isPreacher == true && role == .member
+        }
+        guard allowed else { throw Self.notAllowed }
+        updateMember(user, in: group) { member in
+            switch role {
+            case .admin:
+                member.role = .leader
+                member.preacher = false
+                member.mutedUntil = nil
+            case .preacher:
+                member.role = .member
+                member.preacher = true
+            case .member:
+                member.role = .member
+                member.preacher = false
+            }
         }
     }
 
@@ -712,6 +751,7 @@ struct SignedOutCommunityBackend: CommunityBackend {
     func deleteGroup(_ group: UUID) async throws { throw CommunityError.signInRequired }
     func members(of group: UUID) async throws -> [GroupMember] { [] }
     func setRole(_ role: GroupRole, for user: UUID, in group: UUID) async throws { throw CommunityError.signInRequired }
+    func setChurchRole(_ role: ChurchMemberRole, for user: UUID, in group: UUID) async throws { throw CommunityError.signInRequired }
     func removeMember(_ user: UUID, from group: UUID) async throws { throw CommunityError.signInRequired }
     func setNotifications(_ on: Bool, for group: UUID) async throws { throw CommunityError.signInRequired }
     func progress(in group: UUID, day: Int) async throws -> [GroupProgress] { [] }

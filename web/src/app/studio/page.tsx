@@ -7,7 +7,7 @@ import { currentSession } from "@/lib/auth";
 import { requestLang } from "@/lib/prefs.server";
 import { formatDay, translator } from "@/lib/i18n";
 import { RpcError } from "@/lib/supabase";
-import { churchInvite, churchReports, churchSermons, myChurches, myDisplayName, myGroupsForSermons, type StudioChurch } from "@/lib/studio.server";
+import { churchInvite, churchPeople, churchReports, churchSermons, myChurches, myDisplayName, myGroupsForSermons, runsChurch, type StudioChurch } from "@/lib/studio.server";
 
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: "Church Studio · Versely", robots: { index: false, follow: false } };
@@ -80,10 +80,11 @@ export default async function StudioHome({ searchParams }: Props) {
     );
   }
 
-  const [sermons, reports, invite] = await Promise.all([
+  const [sermons, reports, invite, people] = await Promise.all([
     churchSermons(session, church.id),
     churchReports(session, church.id).catch(() => []),
     churchInvite(session, church.id),
+    runsChurch(church) ? churchPeople(session, church.id).catch(() => null) : Promise.resolve(null),
   ]);
   return (
     <>
@@ -95,6 +96,8 @@ export default async function StudioHome({ searchParams }: Props) {
         sermons={sermons.map((s) => ({ ...s, day: s.preached_on ? formatDay(s.preached_on, lang) : null }))}
         reports={reports}
         invite={invite}
+        people={people}
+        userId={session.userId}
       />
     </>
   );

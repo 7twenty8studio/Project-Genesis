@@ -61,7 +61,16 @@ function send(res, status, body, type = "application/json") {
   res.end(type === "application/json" ? JSON.stringify(body) : body);
 }
 const read = (req) => new Promise((done) => { const chunks = []; req.on("data", (c) => chunks.push(c)); req.on("end", () => done(Buffer.concat(chunks))); });
-const signedIn = (req) => (req.headers.authorization ?? "").includes("leader-token");
+const signedIn = (req) => /leader-token|preacher-token/.test(req.headers.authorization ?? "");
+// A preacher (20261126000000): their own sermons, others' published ones read-only, no settings.
+const isPreacher = (req) => (req.headers.authorization ?? "").includes("preacher-token");
+const who = (req) => (isPreacher(req) ? "u2" : "u1");
+let people = [
+  { user_id: "00000000-0000-4000-8000-0000000000a1", name: "Ana", role: "owner", joined_at: "2026-11-01T00:00:00Z", sermons: 3, me: true },
+  { user_id: "00000000-0000-4000-8000-0000000000a2", name: "Ben", role: "admin", joined_at: "2026-11-02T00:00:00Z", sermons: 0, me: false },
+  { user_id: "00000000-0000-4000-8000-0000000000a3", name: "Cara", role: "preacher", joined_at: "2026-11-03T00:00:00Z", sermons: 1, me: false },
+  { user_id: "00000000-0000-4000-8000-0000000000a4", name: "Dan", role: "member", joined_at: "2026-11-04T00:00:00Z", sermons: 0, me: false },
+];
 
 createServer(async (req, res) => {
   const url = new URL(req.url, "http://x");
@@ -112,7 +121,8 @@ createServer(async (req, res) => {
     if (!signedIn(req)) return send(res, 200, []);
     const id = (url.searchParams.get("id") ?? "").replace("eq.", "");
     const s = sermons.get(id);
-    return send(res, 200, s && !s.deleted ? [s] : []);
+    if (s && isPreacher(req) && s.created_by !== "u2") return send(res, 200, []);
+    return send(res, 200, s && !s.deleted ? [{ ...s, created_by: s.created_by === "u2" ? people[2].user_id : people[0].user_id }] : []);
   }
   if (p === "/rest/v1/church_sermon_revisions") return send(res, 200, [{ draft_version: sermons.get(LIVE).published_version }]);
   if (p.startsWith("/rest/v1/rpc/")) {
@@ -127,12 +137,15 @@ createServer(async (req, res) => {
     if (fn === "youversion_web_bibles") return send(res, 200, [{ id: "NIV", name: "New International Version", language: "en" }]);
     if (!signedIn(req)) return fail(res, "not_allowed", 400);
     const s = sermons.get(a.p_sermon);
+    if (isPreacher(req) && ["new_invite_code", "set_church_locations", "set_sermons_listed", "review_church_sermon_reports"].includes(fn)) return fail(res, fn === "new_invite_code" ? "leaders_only" : "not_allowed");
+    if (isPreacher(req) && s && s.created_by !== "u2") return fail(res, "not_allowed");
     switch (fn) {
       case "my_sermon_churches":
+        if (isPreacher(req)) return send(res, 200, [{ id: GROUP, name: "Grace Church", role: "preacher", listed: false, locations: churchLocations }]);
         return send(res, 200, [
           { id: GROUP, name: "Grace Church", role: "owner", listed: false, locations: churchLocations },
           // A second church, so Studio shows its church picker.
-          { id: "00000000-0000-4000-8000-00000000c4a2", name: "Hope Chapel Youth Ministry", role: "moderator", listed: false, locations: [] },
+          { id: "00000000-0000-4000-8000-00000000c4a2", name: "Hope Chapel Youth Ministry", role: "admin", listed: false, locations: [] },
         ]);
       case "new_invite_code":
         inviteCode = "NEWCODE789";
@@ -153,13 +166,35 @@ createServer(async (req, res) => {
         churchLocations = list;
         return send(res, 200, list);
       }
-      case "group_sermons":
-        return send(res, 200, [...sermons.values()].filter((x) => !x.deleted).map((x) => ({ ...x, hidden: false, has_cover: !!x.cover_id, unpublished_changes: x.status === "published" && x.published_version !== x.draft_version })));
+      case "group_sermons": {
+        const me = who(req);
+        const rows = [...sermons.values()].filter((x) => !x.deleted && (!isPreacher(req) || (x.created_by ?? "u1") === me || x.status === "published"));
+        return send(res, 200, rows.map((x) => {
+          const mine = (x.created_by ?? "u1") === me;
+          const started = (x.created_by ?? "u1") === "u2" ? "Cara" : "Ana";
+          return { ...x, hidden: false, has_cover: !!x.cover_id, unpublished_changes: x.status === "published" && x.published_version !== x.draft_version,
+            mine, can_edit: !isPreacher(req) || mine, started_by: started, edited_by: x.edited_by ?? started };
+        }));
+      }
+      case "church_people":
+        if (isPreacher(req)) return fail(res, "not_allowed");
+        return send(res, 200, people);
+      case "set_church_role": {
+        if (isPreacher(req) && !(a.p_user === people[2].user_id && a.p_role === "member")) return fail(res, "not_allowed");
+        people = people.map((x) => (x.user_id === a.p_user ? { ...x, role: a.p_role } : x));
+        return send(res, 200, null);
+      }
+      case "change_sermon_owner":
+        if (isPreacher(req)) return fail(res, "not_allowed");
+        if (!people.some((x) => x.user_id === a.p_user && (x.role === "admin" || x.role === "preacher" || x.role === "owner"))) return fail(res, "not_a_writer");
+        if (s) s.created_by = a.p_user === people[2].user_id ? "u2" : "u1";
+        return send(res, 200, null);
       case "group_sermon_reports":
+        if (isPreacher(req)) return send(res, 200, []);
         return send(res, 200, [{ sermon_id: LIVE, slug: "livelivel1", title: "Rest for the Weary", hidden: false, report_count: 1, reasons: ["Typo in point two"], last_reported_at: "2026-11-20T10:00:00Z" }]);
       case "create_church_sermon": {
         const id = randomUUID();
-        sermons.set(id, { ...base, id, slug: Math.random().toString(36).slice(2, 12).padEnd(10, "a"), title: "", draft_blocks: [], draft_version: 0, time_zone: null });
+        sermons.set(id, { ...base, id, slug: Math.random().toString(36).slice(2, 12).padEnd(10, "a"), title: "", draft_blocks: [], draft_version: 0, time_zone: null, created_by: who(req) });
         return send(res, 200, { id, slug: sermons.get(id).slug, draft_version: 0 });
       }
       case "save_church_sermon": {

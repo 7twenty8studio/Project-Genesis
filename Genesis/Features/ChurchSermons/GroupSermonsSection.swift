@@ -3,7 +3,7 @@ import SwiftUI
 /// A church group's published sermons, newest first, on the group page.
 /// Shown only where the church has sermons on (the server refuses the
 /// list otherwise; `GroupSermons.load` gives nil and the section stays
-/// away). Owners and moderators publish from Church Studio on the web.
+/// away). Owners, admins and preachers publish from Church Studio on the web.
 struct GroupSermonsSection: View {
     let group: GroupSummary
     let sermons: [ChurchSermonSummary]
@@ -30,7 +30,7 @@ struct GroupSermonsSection: View {
                 Button(showsAll ? String(localized: "Show less") : String(localized: "Show all \(sermons.count)")) { showsAll.toggle() }
                     .buttonStyle(.borderless)
             }
-            if group.role == .leader {
+            if Self.writes(group) {
                 Link(destination: ChurchSermonLink.studio(church: group.id)) {
                     Label("Open in Church Studio", systemImage: "safari")
                 }
@@ -43,10 +43,15 @@ struct GroupSermonsSection: View {
     }
 
     /// Whether the section shows: a church's members see it once it has
-    /// a sermon, its owner and moderators straight away.
-    static func shows(_ sermons: [ChurchSermonSummary]?, role: GroupRole) -> Bool {
+    /// a sermon, its owner, admins and preachers straight away.
+    static func shows(_ sermons: [ChurchSermonSummary]?, group: GroupSummary) -> Bool {
         guard let sermons else { return false }
-        return !sermons.isEmpty || role == .leader
+        return !sermons.isEmpty || writes(group)
+    }
+
+    /// The owner, admins and preachers write sermons in Church Studio.
+    static func writes(_ group: GroupSummary) -> Bool {
+        group.role == .leader || group.isPreacher
     }
 }
 

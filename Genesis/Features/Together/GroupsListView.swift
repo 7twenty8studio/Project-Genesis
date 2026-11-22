@@ -126,8 +126,8 @@ private struct GroupRow: View {
                 Text(group.name)
                     .font(.headline)
                     .foregroundStyle(palette.text)
-                if group.isLeader {
-                    Text(group.standing.title)
+                if group.isLeader || group.standing == .preacher {
+                    Text(group.standing.title(inChurch: group.isChurch))
                         .font(.caption2.weight(.semibold))
                         .padding(.horizontal, 6)
                         .padding(.vertical, 2)

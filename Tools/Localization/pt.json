@@ -2317,5 +2317,17 @@
  "Wednesdays": "Quartas-feiras",
  "Thursdays": "Quintas-feiras",
  "Fridays": "Sextas-feiras",
- "Saturdays": "Sábados"
+ "Saturdays": "Sábados",
+ "Admin": "Administrador",
+ "Anyone with the code can ask to join, and an admin lets them in.": "Qualquer pessoa com o código pode pedir para entrar, e um administrador a deixa entrar.",
+ "Make Admin": "Tornar administrador",
+ "Make Preacher": "Tornar pregador",
+ "Remove as Admin": "Remover como administrador",
+ "Remove as Preacher": "Remover como pregador",
+ "Step Down": "Deixar",
+ "Step Down as Preacher": "Deixar de ser pregador",
+ "Step down as preacher?": "Deixar de ser pregador?",
+ "They aren't in this group.": "Essa pessoa não está neste grupo.",
+ "Your longest-standing admin becomes the owner, or your longest-standing member if there are no admins.": "Seu administrador mais antigo passa a ser o dono, ou seu membro mais antigo se não houver administradores.",
+ "Your sermons stay with the church, and its admins can hand them to someone else. You stay a member.": "Seus sermões ficam com a igreja, e os administradores podem passá-los para outra pessoa. Você continua membro."
 }

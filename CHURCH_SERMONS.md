@@ -30,9 +30,14 @@ TestFlight without the owner's go-ahead for each.
   unlisted, at most three a day; Studio then opens the church's page, with
   no sermon made for them) or turns sermons on for a group they own
   (`my_groups_for_sermons`, `set_church_sermons`, owner only). Off, only
-  the dashboard sets it. Its owner and moderators (role
-  `leader`) write; members read members-only sermons; anyone with the link
-  reads link sermons. Banned and removed people lose access at once.
+  the dashboard sets it. Its owner and admins (role `leader`, called
+  moderators outside churches) write every sermon; preachers
+  (`group_members.preacher`, migration 20261126000000) write the sermons
+  they started and see the others published, read-only; members read
+  members-only sermons; anyone with the link reads link sermons. Only the
+  owner chooses admins; owner and admins choose preachers
+  (`set_church_role`); admins hand a sermon to another writer
+  (`change_sermon_owner`). Banned and removed people lose access at once.
 - **Every request is checked** against both switches (`church_sermons` and
   the church's own), the group switch, membership, bans and roles, inside
   security definer functions. Nobody writes the tables directly; leaders may

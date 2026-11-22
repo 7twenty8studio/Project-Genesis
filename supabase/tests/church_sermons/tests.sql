@@ -77,7 +77,8 @@ begin perform ct.check(name, r->>'status' = status, r); return r; end $$;
 -- People and churches ------------------------------------------------------------------
 
 insert into ct.people (name) values ('pastor'), ('moderator'), ('member'), ('banned'), ('former'), ('outsider'),
-  ('other_pastor'), ('r1'), ('r2'), ('r3'), ('starter'), ('named');
+  ('other_pastor'), ('r1'), ('r2'), ('r3'), ('starter'), ('named'),
+  ('preacher'), ('preacher2'), ('admin1'), ('admin2');
 insert into auth.users (id, email) select id, name || '@example.test' from ct.people;
 insert into ct.churches (name) values ('grace'), ('hope'), ('quiet');
 
@@ -545,7 +546,7 @@ select ct.check('members cannot read a draft''s review',
 select ct.check('the pastor publishes for Grace',
   (ct.run('pastor', 'public.my_sermon_churches()')) @> jsonb_build_array(jsonb_build_object('id', ct.g('grace'), 'role', 'owner')));
 select ct.check('a moderator publishes for Grace as a moderator',
-  (ct.run('moderator', 'public.my_sermon_churches()')) @> jsonb_build_array(jsonb_build_object('id', ct.g('grace'), 'role', 'moderator')));
+  (ct.run('moderator', 'public.my_sermon_churches()')) @> jsonb_build_array(jsonb_build_object('id', ct.g('grace'), 'role', 'admin')));
 select ct.check('a member has no churches to publish for', ct.run('member', 'public.my_sermon_churches()') = '[]'::jsonb);
 select ct.check('a banned person has none', ct.run('banned', 'public.my_sermon_churches()') = '[]'::jsonb);
 select ct.check('another church''s pastor never sees Grace',
@@ -695,6 +696,138 @@ update public.feature_flags set enabled = true where key = 'church_self_serve';
 update public.feature_flags set enabled = false where key = 'church_sermons';
 select ct.refused('church sermons off: no new churches', 'named', 'public.create_sermon_church(''Closed'', ''Named'')', 'not_allowed');
 update public.feature_flags set enabled = true where key = 'church_sermons';
+
+-- Roles: Owner, Admin, Preacher, Member (20261126000000) -----------------------------
+
+insert into public.group_members (group_id, user_id, role, display_name) values
+  (ct.g('grace'), ct.p('preacher'), 'member', 'Preacher One'),
+  (ct.g('grace'), ct.p('preacher2'), 'member', 'Preacher Two'),
+  (ct.g('grace'), ct.p('admin2'), 'member', 'Admin Two'),
+  (ct.g('grace'), ct.p('admin1'), 'leader', 'Admin One');
+
+-- Who may set roles.
+select ct.refused('a member cannot make a preacher', 'member', format('public.set_church_role(%L, %L, %L)', ct.g('grace'), ct.p('preacher'), 'preacher'), 'not_allowed');
+select ct.refused('an outsider cannot make a preacher', 'outsider', format('public.set_church_role(%L, %L, %L)', ct.g('grace'), ct.p('preacher'), 'preacher'), 'not_allowed');
+select ct.refused('guests cannot set roles', 'anon', format('public.set_church_role(%L, %L, %L)', ct.g('grace'), ct.p('preacher'), 'preacher'), 'permission denied');
+select ct.refused('no unknown roles', 'pastor', format('public.set_church_role(%L, %L, %L)', ct.g('grace'), ct.p('preacher'), 'bishop'), 'invalid_role');
+select ct.refused('nobody changes the owner''s role', 'pastor', format('public.set_church_role(%L, %L, %L)', ct.g('grace'), ct.p('pastor'), 'member'), 'owner_role_fixed');
+select ct.refused('someone not in the church gets no role', 'pastor', format('public.set_church_role(%L, %L, %L)', ct.g('grace'), ct.p('outsider'), 'preacher'), 'not_found');
+select ct.set('r', ct.run('admin1', format('public.set_church_role(%L, %L, %L)', ct.g('grace'), ct.p('preacher'), 'preacher'))::text);
+select ct.check('an admin makes a member a preacher',
+  not (ct.v('r')::jsonb ? 'error')
+  and (select preacher and role = 'member' from public.group_members where group_id = ct.g('grace') and user_id = ct.p('preacher')), ct.v('r')::jsonb);
+select ct.check('the owner makes a member a preacher',
+  not (ct.run('pastor', format('public.set_church_role(%L, %L, %L)', ct.g('grace'), ct.p('preacher2'), 'preacher')) ? 'error'));
+select ct.refused('an admin cannot make an admin', 'admin1', format('public.set_church_role(%L, %L, %L)', ct.g('grace'), ct.p('admin2'), 'admin'), 'not_allowed');
+select ct.set('r', ct.run('pastor', format('public.set_church_role(%L, %L, %L)', ct.g('grace'), ct.p('admin2'), 'admin'))::text);
+select ct.check('the owner makes an admin',
+  not (ct.v('r')::jsonb ? 'error')
+  and (select role = 'leader' and not preacher from public.group_members where group_id = ct.g('grace') and user_id = ct.p('admin2')), ct.v('r')::jsonb);
+select ct.refused('an admin cannot demote another admin', 'admin1', format('public.set_church_role(%L, %L, %L)', ct.g('grace'), ct.p('admin2'), 'member'), 'not_allowed');
+select ct.refused('a preacher cannot make preachers', 'preacher', format('public.set_church_role(%L, %L, %L)', ct.g('grace'), ct.p('member'), 'preacher'), 'not_allowed');
+select ct.refused('a preacher cannot promote themselves', 'preacher', format('public.set_church_role(%L, %L, %L)', ct.g('grace'), ct.p('preacher'), 'admin'), 'not_allowed');
+
+-- What the church looks like to each.
+select ct.check('a preacher has the church, as preacher',
+  (ct.run('preacher', 'public.my_sermon_churches()')) @> jsonb_build_array(jsonb_build_object('id', ct.g('grace'), 'role', 'preacher')));
+select ct.check('an admin made by the owner has it, as admin',
+  (ct.run('admin2', 'public.my_sermon_churches()')) @> jsonb_build_array(jsonb_build_object('id', ct.g('grace'), 'role', 'admin')));
+select ct.set('people', (ct.run('admin1', format('public.church_people(%L)', ct.g('grace'))))::text);
+select ct.check('admins see the people with their roles, owner first',
+  ct.v('people')::jsonb->0->>'role' = 'owner'
+  and ct.v('people')::jsonb @> jsonb_build_array(jsonb_build_object('name', 'Preacher One', 'role', 'preacher'),
+                                                 jsonb_build_object('name', 'Admin Two', 'role', 'admin'),
+                                                 jsonb_build_object('name', 'Member', 'role', 'member')), ct.v('people')::jsonb);
+select ct.refused('preachers don''t see the people list', 'preacher', format('public.church_people(%L)', ct.g('grace')), 'not_allowed');
+select ct.refused('members don''t see the people list', 'member', format('public.church_people(%L)', ct.g('grace')), 'not_allowed');
+
+-- Preachers write their own sermons.
+select ct.set('ps', (ct.run('preacher', format('public.create_church_sermon(%L, %L)', ct.g('grace'), 'Preacher''s sermon')))->>'id');
+select ct.check('a preacher starts a sermon', ct.v('ps') is not null);
+select ct.check('a preacher saves their own',
+  (ct.save('preacher', 'ps', '{"speaker": "Preacher One"}', '[{"id": "p", "kind": "paragraph", "text": "Grace."}]'))->>'draft_version' is not null);
+select ct.check('the last editor is recorded',
+  (select updated_by = ct.p('preacher') and created_by = ct.p('preacher') from public.church_sermons where id = ct.v('ps')::uuid));
+select ct.check('a preacher publishes their own', (ct.publish('preacher', 'ps'))->>'revision' is not null, ct.publish('preacher', 'ps'));
+select ct.set('ps_slug', (select slug from public.church_sermons where id = ct.v('ps')::uuid));
+select ct.check('a preacher loads their own draft row',
+  (ct.dml('preacher', format('select 1 from public.church_sermons where id = %L', ct.v('ps'))))::text = '1');
+select ct.check('a preacher may change their own sermon''s cover',
+  ct.run('preacher', format('public.genesis_can_edit_cover(%L)', ct.g('grace') || '/' || ct.v('ps') || '/' || gen_random_uuid() || '.jpg')) = '"true"'::jsonb);
+select ct.check('a preacher unpublishes and restricts their own',
+  not (ct.run('preacher', format('public.restrict_church_sermon(%L)', ct.v('ps'))) ? 'error'));
+
+-- ...and nobody else's.
+select ct.refused('a preacher cannot save the pastor''s sermon', 'preacher', format('public.save_church_sermon(%L, %s, %L, null)', ct.v('s1'), ct.ver('s1'), '{"title": "Mine now"}'), 'not_allowed');
+select ct.refused('a preacher cannot publish the pastor''s sermon', 'preacher', format('public.publish_church_sermon(%L, %s)', ct.v('s1'), ct.ver('s1')), 'not_allowed');
+select ct.refused('a preacher cannot delete the pastor''s sermon', 'preacher', format('public.delete_church_sermon(%L)', ct.v('s1')), 'not_allowed');
+select ct.refused('a preacher cannot unpublish the pastor''s sermon', 'preacher', format('public.unpublish_church_sermon(%L)', ct.v('s1')), 'not_allowed');
+select ct.refused('a preacher cannot duplicate the pastor''s sermon', 'preacher', format('public.duplicate_church_sermon(%L)', ct.v('s1')), 'not_allowed');
+select ct.refused('another preacher cannot save it', 'preacher2', format('public.save_church_sermon(%L, %s, %L, null)', ct.v('ps'), ct.ver('ps'), '{"title": "x"}'), 'not_allowed');
+select ct.check('a preacher cannot read another person''s draft row',
+  (ct.dml('preacher2', format('select 1 from public.church_sermons where id = %L', ct.v('ps'))))::text = '0');
+select ct.check('a preacher cannot change another person''s cover',
+  ct.run('preacher2', format('public.genesis_can_edit_cover(%L)', ct.g('grace') || '/' || ct.v('ps') || '/' || gen_random_uuid() || '.jpg')) = '"false"'::jsonb);
+select ct.refused('a preacher cannot change locations', 'preacher', format('public.set_church_locations(%L, %L)', ct.g('grace'), '[]'), 'not_allowed');
+select ct.refused('a preacher cannot list the church', 'preacher', format('public.set_sermons_listed(%L, true)', ct.g('grace')), 'not_allowed');
+select ct.refused('a preacher cannot make a new invite code', 'preacher', format('public.new_invite_code(%L)', ct.g('grace')), 'leaders_only');
+select ct.refused('a preacher cannot turn sermons off', 'preacher', format('public.set_church_sermons(%L, false)', ct.g('grace')), 'not_allowed');
+
+-- Lists: own sermons with their state, others' as published, never others' drafts.
+select ct.set('plist', (ct.run('preacher2', format('public.group_sermons(%L)', ct.g('grace'))))::text);
+select ct.check('another preacher sees no one else''s drafts',
+  not exists (select 1 from jsonb_array_elements(ct.v('plist')::jsonb) e where e->>'status' <> 'published'), ct.v('plist')::jsonb);
+select ct.set('plist1', (ct.run('preacher', format('public.group_sermons(%L)', ct.g('grace'))))::text);
+select ct.check('a preacher sees their own sermon as theirs, with who edited it',
+  ct.v('plist1')::jsonb @> jsonb_build_array(jsonb_build_object('id', ct.v('ps'), 'mine', true, 'can_edit', true, 'started_by', 'Preacher One', 'edited_by', 'Preacher One')),
+  ct.v('plist1')::jsonb);
+select ct.check('a preacher sees others'' published sermons read-only',
+  exists (select 1 from jsonb_array_elements(ct.v('plist1')::jsonb) e where e->>'mine' = 'false' and e->>'can_edit' = 'false')
+  and not exists (select 1 from jsonb_array_elements(ct.v('plist1')::jsonb) e where e->>'mine' = 'false' and e->>'status' <> 'published'),
+  ct.v('plist1')::jsonb);
+select ct.check('admins see the preacher''s sermon with who started it',
+  (ct.run('admin1', format('public.group_sermons(%L)', ct.g('grace')))) @> jsonb_build_array(jsonb_build_object('id', ct.v('ps'), 'started_by', 'Preacher One', 'can_edit', true)));
+
+-- Reports: a preacher sees their own sermons' reports and can't judge them.
+select ct.run('r1', format('public.report_church_sermon(%L, %L)', ct.v('ps_slug'), 'Typo'));
+select ct.set('preports', (ct.run('preacher', format('public.group_sermon_reports(%L)', ct.g('grace'))))::text);
+select ct.check('the preacher sees reports on their sermon only',
+  ct.len(ct.v('preports')::jsonb) = 1 and ct.v('preports')::jsonb->0->>'sermon_id' = ct.v('ps'), ct.v('preports')::jsonb);
+select ct.refused('a preacher cannot keep or take down a reported sermon', 'preacher', format('public.review_church_sermon_reports(%L, true)', ct.v('ps')), 'not_allowed');
+select ct.check('an admin can',
+  not (ct.run('admin1', format('public.review_church_sermon_reports(%L, true)', ct.v('ps'))) ? 'error'));
+
+-- Admins step in: edit any sermon, hand it to someone else.
+select ct.set('r', ct.save('admin1', 'ps', '{"title": "Edited by an admin"}')::text);
+select ct.check('an admin edits a preacher''s sermon',
+  ct.v('r')::jsonb->>'draft_version' is not null
+  and (select updated_by = ct.p('admin1') from public.church_sermons where id = ct.v('ps')::uuid), ct.v('r')::jsonb);
+select ct.refused('a sermon goes only to a preacher or admin', 'admin1', format('public.change_sermon_owner(%L, %L)', ct.v('ps'), ct.p('member')), 'not_a_writer');
+select ct.refused('a preacher cannot hand a sermon over', 'preacher', format('public.change_sermon_owner(%L, %L)', ct.v('ps'), ct.p('preacher2')), 'not_allowed');
+select ct.check('an admin hands it to another preacher',
+  not (ct.run('admin1', format('public.change_sermon_owner(%L, %L)', ct.v('ps'), ct.p('preacher2'))) ? 'error')
+  and (ct.save('preacher2', 'ps', '{"title": "Mine now"}'))->>'draft_version' is not null);
+select ct.refused('the first preacher no longer edits it', 'preacher', format('public.save_church_sermon(%L, %s, %L, null)', ct.v('ps'), ct.ver('ps'), '{"title": "x"}'), 'not_allowed');
+
+-- A muted preacher waits; one who steps down or is removed stops; the sermons stay.
+update public.group_members set muted_until = now() + interval '1 hour' where group_id = ct.g('grace') and user_id = ct.p('preacher2');
+select ct.refused('a muted preacher cannot write', 'preacher2', format('public.create_church_sermon(%L, %L)', ct.g('grace'), 'x'), 'not_allowed');
+update public.group_members set muted_until = null where group_id = ct.g('grace') and user_id = ct.p('preacher2');
+select ct.check('a preacher steps down',
+  not (ct.run('preacher2', format('public.set_church_role(%L, %L, %L)', ct.g('grace'), ct.p('preacher2'), 'member')) ? 'error'));
+select ct.refused('then cannot write', 'preacher2', format('public.save_church_sermon(%L, %s, %L, null)', ct.v('ps'), ct.ver('ps'), '{"title": "x"}'), 'not_allowed');
+select ct.check('the sermon stays with the church', (select deleted_at is null from public.church_sermons where id = ct.v('ps')::uuid));
+select ct.check('an admin removes a preacher',
+  not (ct.run('admin1', format('public.set_church_role(%L, %L, %L)', ct.g('grace'), ct.p('preacher'), 'member')) ? 'error')
+  and ct.run('preacher', 'public.my_sermon_churches()') = '[]'::jsonb);
+select ct.check('making an admin a member again doesn''t bring back an old preacher role',
+  not (ct.run('pastor', format('public.set_church_role(%L, %L, %L)', ct.g('grace'), ct.p('preacher'), 'preacher')) ? 'error')
+  and not (ct.run('pastor', format('public.set_member_role(%L, %L, %L)', ct.g('grace'), ct.p('preacher'), 'leader')) ? 'error')
+  and not (ct.run('pastor', format('public.set_member_role(%L, %L, %L)', ct.g('grace'), ct.p('preacher'), 'member')) ? 'error')
+  and ct.run('preacher', 'public.my_sermon_churches()') = '[]'::jsonb);
+select ct.check('members still read only published copies',
+  ct.len(ct.run('member', format('public.group_sermons(%L)', ct.g('grace')))) > 0
+  and not exists (select 1 from jsonb_array_elements(ct.run('member', format('public.group_sermons(%L)', ct.g('grace')))) e where e ? 'status'));
 
 -- Result -------------------------------------------------------------------------------
 

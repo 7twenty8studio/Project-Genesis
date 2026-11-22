@@ -1,6 +1,7 @@
 "use server";
 // Church Studio's writes (VRS-18). Each one reads the person's own session
-// and calls the database as them; the database checks they lead the church,
+// and calls the database as them; the database checks their role in the church
+// (owner, admin, or the preacher who started the sermon),
 // that both switches are on and that the draft is the version they loaded.
 // Nothing here trusts the browser.
 import { redirect } from "next/navigation";
@@ -57,7 +58,7 @@ export async function turnOnSermons(group: string): Promise<ActionResult> {
   redirect(`/studio?church=${group}`);
 }
 
-/** A new invite code for the church's group (owner and moderators; the old code stops working). */
+/** A new invite code for the church's group (owner and admins; the old code stops working). */
 export async function newInviteCode(church: string): Promise<{ ok: true; code: string } | { ok: false; code: string }> {
   if (!isID(church)) return { ok: false, code: "not_found" };
   const result = await call<string>("new_invite_code", { p_group: church });
@@ -162,4 +163,22 @@ export async function uploadSermonCover(form: FormData): Promise<ActionResult<{ 
   if (!uploaded?.ok) return { ok: false, code: "cover_upload_failed" };
   const saved = await saveSermon(sermon, version, { cover: path.value.cover }, null);
   return saved.ok ? { ok: true, cover: path.value.cover, version: saved.version } : saved;
+}
+
+/**
+ * Sets someone's role in the church: "admin", "preacher" or "member". The
+ * database decides: the owner sets any role, admins make and remove
+ * preachers, and a preacher may step down.
+ */
+export async function setChurchRole(church: string, person: string, role: "admin" | "preacher" | "member"): Promise<ActionResult> {
+  if (!isID(church) || !isID(person) || !["admin", "preacher", "member"].includes(role)) return { ok: false, code: "invalid_role" };
+  const result = await call<null>("set_church_role", { p_group: church, p_user: person, p_role: role });
+  return result.ok ? { ok: true } : result;
+}
+
+/** Hands a sermon to another preacher or admin of its church (owner and admins). */
+export async function changeSermonOwner(sermon: string, person: string): Promise<ActionResult> {
+  if (!isID(sermon) || !isID(person)) return { ok: false, code: "not_found" };
+  const result = await call<null>("change_sermon_owner", { p_sermon: sermon, p_user: person });
+  return result.ok ? { ok: true } : result;
 }

@@ -10,9 +10,24 @@ import { Button, Notice } from "./ui";
 /**
  * The church's group invite code, as on the app's Members tab: members join
  * in Versely (Together › Join with an Invite Code) and then read the
- * church's members-only sermons. Owner and moderators can make a new code.
+ * church's members-only sermons. Owner and admins can make a new code
+ * (`canRenew`); preachers share the current one.
  */
-export function InviteMembers({ lang, church, name, code, requiresApproval }: { lang: Lang; church: string; name: string; code: string; requiresApproval: boolean }) {
+export function InviteMembers({
+  lang,
+  church,
+  name,
+  code,
+  requiresApproval,
+  canRenew = true,
+}: {
+  lang: Lang;
+  church: string;
+  name: string;
+  code: string;
+  requiresApproval: boolean;
+  canRenew?: boolean;
+}) {
   const t = translator(lang);
   const [current, setCurrent] = useState(code);
   const [pending, start] = useTransition();
@@ -70,12 +85,14 @@ export function InviteMembers({ lang, church, name, code, requiresApproval }: { 
         <Button disabled={pending} onClick={() => copy(shown, t("Code copied."))}>
           {t("Copy code")}
         </Button>
-        <Button disabled={pending} onClick={renew}>
-          {pending ? t("Making a new code…") : t("New Code")}
-        </Button>
+        {canRenew ? (
+          <Button disabled={pending} onClick={renew}>
+            {pending ? t("Making a new code…") : t("New Code")}
+          </Button>
+        ) : null}
       </div>
       <p className="mt-3 text-sm text-muted">
-        {requiresApproval ? t("Anyone with the code can ask to join, and a moderator lets them in.") : t("Anyone with the code can join. Make a new code to stop the old one working.")}
+        {requiresApproval ? t("Anyone with the code can ask to join, and an admin lets them in.") : canRenew ? t("Anyone with the code can join. Make a new code to stop the old one working.") : t("Anyone with the code can join.")}
       </p>
       {message ? <Notice tone={message.tone}>{message.text}</Notice> : null}
     </section>

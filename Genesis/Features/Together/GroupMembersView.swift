@@ -16,6 +16,12 @@ struct GroupMembersView: View {
     @State private var removing: GroupMember?
     @State private var banning: GroupMember?
     @State private var newOwner: GroupMember?
+    @State private var confirmingStepDown = false
+
+    /// The signed-in person's own row, while they're one of the church's preachers.
+    private var myPreacherRow: GroupMember? {
+        model.members.first { community.isMine($0.userID) && model.permissions.canStepDown($0) }
+    }
 
     var body: some View {
         List {
@@ -41,6 +47,13 @@ struct GroupMembersView: View {
         }
         .modifier(GroupLeaveAndCloseDialogs(group: group, confirmingLeave: $confirmingLeave, confirmingDelete: $confirmingDelete))
         .modifier(GroupMemberDialogs(model: model, removing: $removing, banning: $banning, newOwner: $newOwner))
+        .confirmationDialog("Step down as preacher?", isPresented: $confirmingStepDown, titleVisibility: .visible) {
+            Button("Step Down", role: .destructive) {
+                if let me = myPreacherRow { Task { await model.setChurchRole(.member, for: me) } }
+            }
+        } message: {
+            Text("Your sermons stay with the church, and its admins can hand them to someone else. You stay a member.")
+        }
     }
 
     /// What a nudge says. The push uses this same sentence (group-notify's
@@ -52,7 +65,11 @@ struct GroupMembersView: View {
 
     private var inviteFooter: String {
         if !group.isLeader { return String(localized: "Share the code with people you'd like to join.") }
-        if group.requiresApproval { return String(localized: "Anyone with the code can ask to join, and a moderator lets them in.") }
+        if group.requiresApproval {
+            return group.isChurch
+                ? String(localized: "Anyone with the code can ask to join, and an admin lets them in.")
+                : String(localized: "Anyone with the code can ask to join, and a moderator lets them in.")
+        }
         return String(localized: "Anyone with the code can join. Make a new code to stop the old one working.")
     }
 
@@ -93,6 +110,10 @@ struct GroupMembersView: View {
             if group.isLeader {
                 Button("Edit Group", systemImage: "pencil") { editing = true }
             }
+            if myPreacherRow != nil {
+                Button("Step Down as Preacher", systemImage: "person.crop.circle.badge.minus") { confirmingStepDown = true }
+                    .accessibilityIdentifier("group.stepDown")
+            }
             Button("Leave Group", systemImage: "rectangle.portrait.and.arrow.right", role: .destructive) { confirmingLeave = true }
                 .accessibilityIdentifier("group.leave")
             if group.isOwner {
@@ -108,7 +129,8 @@ struct GroupMembersView: View {
     }
 }
 
-/// One member: their name, role (Owner, Moderator or Member), whether
+/// One member: their name, role (Owner, Moderator or Member; in a church
+/// Owner, Admin, Preacher or Member), whether
 /// they're muted, and what the signed-in person may do about them.
 private struct GroupMemberRow: View {
     let model: GroupDetailModel
@@ -173,7 +195,7 @@ private struct GroupMemberRow: View {
 
     private var details: some View {
         HStack(spacing: 8) {
-            Text(standing.title)
+            Text(standing.title(inChurch: model.permissions.isChurch))
                 .font(.caption)
                 .foregroundStyle(standing == .member ? palette.secondaryText : palette.accent)
                 .accessibilityIdentifier("member.role")
@@ -188,7 +210,8 @@ private struct GroupMemberRow: View {
 }
 
 /// The menu for one member, offering only what the signed-in person may do:
-/// the owner chooses moderators and can hand the group on; moderators mute,
+/// the owner chooses moderators (a church's admins) and can hand the group
+/// on; a church's owner and admins choose its preachers; moderators mute,
 /// remove and ban members (and the owner can do that to moderators too).
 private struct GroupMemberActions: View {
     let model: GroupDetailModel
@@ -202,7 +225,10 @@ private struct GroupMemberActions: View {
     var body: some View {
         let permissions = model.permissions
         if permissions.canChooseRole(of: member) {
-            roleButtons
+            if permissions.isChurch { churchAdminButtons } else { roleButtons }
+        }
+        if permissions.canChoosePreacher(of: member) {
+            preacherButtons
         }
         if permissions.canModerate(member) {
             moderationButtons
@@ -222,6 +248,27 @@ private struct GroupMemberActions: View {
             Button("Remove as Moderator", systemImage: "star.slash") { Task { await model.setRole(.member, for: member) } }
         }
         Button("Make Owner…", systemImage: "crown") { newOwner = member }
+    }
+
+    /// A church's owner: admins instead of moderators.
+    @ViewBuilder
+    private var churchAdminButtons: some View {
+        if member.role == .member {
+            Button("Make Admin", systemImage: "star") { Task { await model.setChurchRole(.admin, for: member) } }
+        } else {
+            Button("Remove as Admin", systemImage: "star.slash") { Task { await model.setChurchRole(.member, for: member) } }
+        }
+        Button("Make Owner…", systemImage: "crown") { newOwner = member }
+    }
+
+    /// Preachers write and publish the sermons they start in Church Studio.
+    @ViewBuilder
+    private var preacherButtons: some View {
+        if member.isPreacher {
+            Button("Remove as Preacher", systemImage: "text.book.closed") { Task { await model.setChurchRole(.member, for: member) } }
+        } else {
+            Button("Make Preacher", systemImage: "text.book.closed.fill") { Task { await model.setChurchRole(.preacher, for: member) } }
+        }
     }
 
     @ViewBuilder
@@ -252,9 +299,10 @@ private struct GroupLeaveAndCloseDialogs: ViewModifier {
     @Environment(AppRouter.self) private var router
 
     private var leaveMessage: String {
-        group.isOwner
-            ? String(localized: "Your longest-standing moderator becomes the owner, or your longest-standing member if there are no moderators.")
-            : String(localized: "You can join again with the invite code.")
+        guard group.isOwner else { return String(localized: "You can join again with the invite code.") }
+        return group.isChurch
+            ? String(localized: "Your longest-standing admin becomes the owner, or your longest-standing member if there are no admins.")
+            : String(localized: "Your longest-standing moderator becomes the owner, or your longest-standing member if there are no moderators.")
     }
 
     func body(content: Content) -> some View {

@@ -148,7 +148,7 @@ struct GroupTodayView: View {
                 if let plan = group.plan, let day, day > 0 {
                     GroupProgressSection(model: model, plan: plan, today: day)
                 }
-                if showsSermons, let sermons, GroupSermonsSection.shows(sermons, role: group.role) {
+                if showsSermons, let sermons, GroupSermonsSection.shows(sermons, group: group) {
                     GroupSermonsSection(group: group, sermons: sermons)
                 }
                 GroupChallengesSection(groupModel: model, group: group)

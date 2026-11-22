@@ -764,6 +764,22 @@ shares; README.md has the architecture.
   `ChurchLocation.mapsURL`), and ends with "Join us for <next sermon>"
   when the series' next one is published, else "Join us" over the list. Counts are
   Product Interaction, not linked (privacy manifest, APPLE_SETUP.md).
+- Church roles (migration 20261126000000, owner-approved plan): Owner,
+  Admin (a group's moderator, role 'leader', called Admin only in a church,
+  `GroupStanding.title(inChurch:)`), Preacher (`group_members.preacher`, a
+  member who writes, publishes, restricts and deletes the sermons they
+  started, sees the church's other published sermons read-only and the
+  reports on their own, shares the invite code but never renews it, no
+  settings or people) and Member. Only the owner chooses admins, hands the
+  church over or turns sermons off; owner and admins choose preachers; a
+  preacher can step down. Set through `set_church_role` (Studio's People,
+  `church_people`; the app's Members menu, `GroupPermissions.canChoosePreacher`,
+  `setChurchRole`); `set_member_role` clears the flag. Sermons stay with
+  the church; admins hand one over with `change_sermon_owner`; Studio shows
+  Started by / Last edited by (`church_sermons.updated_by`, stamped by a
+  trigger). Write checks go through `genesis_can_edit_sermon(row)` and
+  `genesis_can_write_sermons(group)`; `my_sermon_churches` returns
+  owner/admin/preacher.
 - Release checks: CHURCH_SERMONS_PILOT.md maps every acceptance check to its
   test or hand steps. Browser checks: web/e2e/run.sh (Playwright, axe,
   stand-in server mock.mjs; keep it passing when the guest page or Studio

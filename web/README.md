@@ -18,7 +18,7 @@ the 7twenty8 site. This version differs from older Next.js: read
 | --- | --- |
 | `/s/<slug>` | A published sermon, as the visitor may see it now (never cached) |
 | `/s/<slug>/cover` | Its cover, from the `sermon-cover` function (access rechecked on every request, never a signed link) |
-| `/studio` | Church Studio: sign in, pick a church, its sermons and reports |
+| `/studio` | Church Studio: sign in, pick a church, its sermons and reports; People (roles) and settings for the owner and admins, a preacher's own view |
 | `/studio/<id>` | One sermon: Outline (import, edit), Details, Preview, Share |
 | `/auth/start`, `/auth/callback`, `/auth/signout` | Sign in with Apple or Google (Supabase PKCE) |
 | `/auth/password` | Sign in with the app's email and password, or send the reset email (form post) |

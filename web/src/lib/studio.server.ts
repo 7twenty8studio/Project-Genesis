@@ -1,5 +1,6 @@
 // Church Studio's reads on the server, always as the signed-in person so the
-// database's rules decide (owner or moderator, both switches on, not banned).
+// database's rules decide (owner, admin or preacher, both switches on, not
+// banned; a preacher only for the sermons they started).
 import type { DraftRow } from "./draft.ts";
 import type { ChurchLocation } from "./locations.ts";
 import { rpc, select } from "./supabase.ts";
@@ -8,9 +9,24 @@ import type { Session } from "./session.ts";
 export interface StudioChurch {
   id: string;
   name: string;
-  role: "owner" | "moderator";
+  role: ChurchRole;
   listed: boolean;
   locations?: ChurchLocation[];
+}
+
+/** The caller's role in the church: owner, admin (the group's moderator) or preacher (their own sermons only). */
+export type ChurchRole = "owner" | "admin" | "preacher";
+
+/** Owner and admins run the church; a preacher looks after their own sermons. */
+export const runsChurch = (church: { role: string }) => church.role !== "preacher";
+
+export interface ChurchPerson {
+  user_id: string;
+  name: string;
+  role: "owner" | "admin" | "preacher" | "member";
+  joined_at: string;
+  sermons: number;
+  me: boolean;
 }
 
 export interface StudioSermon {
@@ -25,8 +41,14 @@ export interface StudioSermon {
   live_audience: "link" | "members" | null;
   hidden: boolean;
   published_at: string | null;
-  draft_version: number;
+  draft_version: number | null;
   unpublished_changes: boolean;
+  /** Started by the caller. */
+  mine?: boolean;
+  /** False for another preacher's published sermon (read-only for a preacher). */
+  can_edit?: boolean;
+  started_by?: string | null;
+  edited_by?: string | null;
 }
 
 export interface StudioReport {
@@ -55,15 +77,17 @@ export async function churchInvite(s: Session, group: string): Promise<{ invite_
   const rows = await select<{ invite_code: string; requires_approval: boolean }[]>(`groups?id=eq.${group}&select=invite_code,requires_approval`, s.accessToken).catch(() => []);
   return rows[0] ?? null;
 }
+/** The church's people with their roles (owner and admins only). */
+export const churchPeople = (s: Session, group: string) => rpc<ChurchPerson[]>("church_people", { p_group: group }, s.accessToken);
 export const churchReports = (s: Session, group: string) => rpc<StudioReport[]>("group_sermon_reports", { p_group: group }, s.accessToken);
 
 const DRAFT_COLUMNS =
   "id,group_id,slug,title,speaker,series,preached_on,time_zone,location,language,audience,cover_id,cover_alt,cover_decorative,draft_blocks,draft_version,status,live_audience,hidden_at,published_at,published_revision_id,draft_review";
 
-/** The draft, if the person may edit it ("Leaders read" policy); null otherwise. */
-export async function loadDraft(s: Session, id: string): Promise<(DraftRow & { published_draft_version: number | null }) | null> {
+/** The draft, if the person may edit it ("Leaders read" and "Preachers read their own" policies); null otherwise. */
+export async function loadDraft(s: Session, id: string): Promise<(DraftRow & { published_draft_version: number | null; created_by: string | null }) | null> {
   if (!UUID.test(id)) return null;
-  const rows = await select<DraftRow[]>(`church_sermons?id=eq.${id}&select=${DRAFT_COLUMNS}`, s.accessToken);
+  const rows = await select<(DraftRow & { created_by: string | null })[]>(`church_sermons?id=eq.${id}&select=${DRAFT_COLUMNS},created_by`, s.accessToken);
   const row = rows[0];
   if (!row) return null;
   let published: number | null = null;

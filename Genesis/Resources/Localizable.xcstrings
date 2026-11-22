@@ -2832,6 +2832,23 @@
         }
       }
     },
+    "Admin": {
+      "comment": "Church role: runs the church with its owner (a group's moderator)",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Administrador"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Administrador"
+          }
+        }
+      }
+    },
     "Adoration": {
       "comment": "ACTS prayer heading",
       "localizations": {
@@ -3574,6 +3591,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Qualquer pessoa com o código pode pedir para entrar, e um moderador a deixa entrar."
+          }
+        }
+      }
+    },
+    "Anyone with the code can ask to join, and an admin lets them in.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cualquiera con el código puede pedir unirse, y un administrador lo deja entrar."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qualquer pessoa com o código pode pedir para entrar, e um administrador a deixa entrar."
           }
         }
       }
@@ -14608,6 +14641,22 @@
         }
       }
     },
+    "Make Admin": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hacer administrador"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tornar administrador"
+          }
+        }
+      }
+    },
     "Make Moderator": {
       "localizations": {
         "es": {
@@ -14652,6 +14701,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tornar dono…"
+          }
+        }
+      }
+    },
+    "Make Preacher": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hacer predicador"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tornar pregador"
           }
         }
       }
@@ -20395,6 +20460,7 @@
       }
     },
     "Preacher": {
+      "comment": "Church role: writes and publishes their own sermons",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -22675,6 +22741,22 @@
         }
       }
     },
+    "Remove as Admin": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar como administrador"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remover como administrador"
+          }
+        }
+      }
+    },
     "Remove as Moderator": {
       "localizations": {
         "es": {
@@ -22687,6 +22769,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Remover como moderador"
+          }
+        }
+      }
+    },
+    "Remove as Preacher": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quitar como predicador"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remover como pregador"
           }
         }
       }
@@ -26488,6 +26586,54 @@
         }
       }
     },
+    "Step Down": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dejar de serlo"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deixar"
+          }
+        }
+      }
+    },
+    "Step Down as Preacher": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dejar de ser predicador"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deixar de ser pregador"
+          }
+        }
+      }
+    },
+    "Step down as preacher?": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Dejar de ser predicador?"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deixar de ser pregador?"
+          }
+        }
+      }
+    },
     "Still Praying": {
       "localizations": {
         "es": {
@@ -29362,6 +29508,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Estas Bíblias vêm da plataforma YouVersion. Ainda não é possível ouvi-las, e os widgets e as ferramentas Premium usam com elas uma Bíblia de domínio público."
+          }
+        }
+      }
+    },
+    "They aren't in this group.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esa persona no está en este grupo."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Essa pessoa não está neste grupo."
           }
         }
       }
@@ -35719,6 +35881,22 @@
         }
       }
     },
+    "Your longest-standing admin becomes the owner, or your longest-standing member if there are no admins.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu administrador más antiguo pasa a ser el propietario, o tu miembro más antiguo si no hay administradores."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seu administrador mais antigo passa a ser o dono, ou seu membro mais antigo se não houver administradores."
+          }
+        }
+      }
+    },
     "Your longest-standing moderator becomes the owner, or your longest-standing member if there are no moderators.": {
       "localizations": {
         "es": {
@@ -35924,6 +36102,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Seu tempo de leitura, livros favoritos e um olhar para o seu ano."
+          }
+        }
+      }
+    },
+    "Your sermons stay with the church, and its admins can hand them to someone else. You stay a member.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus sermones se quedan en la iglesia, y sus administradores pueden pasárselos a otra persona. Sigues siendo miembro."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seus sermões ficam com a igreja, e os administradores podem passá-los para outra pessoa. Você continua membro."
           }
         }
       }
