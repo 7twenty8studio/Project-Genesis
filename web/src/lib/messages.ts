@@ -238,6 +238,8 @@ export const messages: Record<string, { es: string; pt: string }> = {
   "Anyone with the code can join. Make a new code to stop the old one working.": { es: "Cualquiera con el código puede unirse. Crea un código nuevo para que el anterior deje de funcionar.", pt: "Qualquer pessoa com o código pode entrar. Crie um código novo para o antigo deixar de funcionar." },
   "Join {name} on Versely to read and pray together. Open Together › Join with an Invite Code and enter {code}.": { es: "Únete a {name} en Versely para leer y orar juntos. Abre Juntos › Unirse con un código de invitación e ingresa {code}.", pt: "Entre no {name} no Versely para ler e orar juntos. Abra Juntos › Entrar com código de convite e digite {code}." },
   "Only the church's owner and moderators can make a new code.": { es: "Solo el propietario y los moderadores de la iglesia pueden crear un código nuevo.", pt: "Só o dono e os moderadores da igreja podem criar um código novo." },
+  "Drag to reorder": { es: "Arrastra para reordenar", pt: "Arraste para reordenar" },
+  "Drag to reorder item {n}": { es: "Arrastra para reordenar el elemento {n}", pt: "Arraste para reordenar o item {n}" },
   "Saved. Every sermon page shows it now.": { es: "Guardado. Ya aparece en cada página de sermón.", pt: "Salvo. Já aparece em todas as páginas de sermão." },
   "Saving…": { es: "Guardando…", pt: "Salvando…" },
   "Scripture reference": { es: "Referencia bíblica", pt: "Referência bíblica" },

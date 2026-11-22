@@ -126,6 +126,21 @@ async function noSideScroll(page, label) {
     await page.waitForSelector("text=Check the import");
     await axe(page, "studio outline + review");
     await page.screenshot({ path: `${OUT}/studio-outline.png`, fullPage: true });
+    // Drag and drop: the first card dragged by its grip below the second, then moved back with its arrow.
+    {
+      const order = () => page.locator("ol[aria-label='Outline'] > li").evaluateAll((cards) => cards.map((c) => c.dataset.block));
+      const before = await order();
+      const grip = await page.locator(`[data-drag-handle='${before[0]}']`).boundingBox();
+      const second = await page.locator(`li[data-block='${before[1]}']`).boundingBox();
+      await page.mouse.move(grip.x + grip.width / 2, grip.y + grip.height / 2);
+      await page.mouse.down();
+      await page.mouse.move(grip.x + grip.width / 2, second.y + second.height - 4, { steps: 12 });
+      await page.mouse.up();
+      const after = await order();
+      if (after[0] !== before[1] || after[1] !== before[0]) problems.push("drag and drop didn't move the card: " + JSON.stringify(after.slice(0, 2)));
+      else await page.locator(`#move-up-${before[0]}`).click();
+      if (JSON.stringify(await order()) !== JSON.stringify(before)) problems.push("the outline didn't go back after Move up");
+    }
     // Publish must wait for the review.
     await page.getByRole("tab", { name: "Publish" }).click();
     const publish = page.getByRole("button", { name: "Publish", exact: true });
