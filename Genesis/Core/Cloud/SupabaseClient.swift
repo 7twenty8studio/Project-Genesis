@@ -153,8 +153,12 @@ final class SupabaseClient: Sendable {
         )
     }
 
+    /// Ends this device's session only (`scope=local`): the default, global,
+    /// would sign the person out everywhere, Church Studio and their other
+    /// devices included, and leave those devices' tokens refused by the
+    /// functions that check the session (group-notify, study-ai…).
     func signOut(_ current: AuthSession) async {
-        var request = makeRequest(path: "auth/v1/logout", query: [], method: "POST", accessToken: current.accessToken)
+        var request = makeRequest(path: "auth/v1/logout", query: [URLQueryItem(name: "scope", value: "local")], method: "POST", accessToken: current.accessToken)
         request.httpBody = Data("{}".utf8)
         _ = try? await session.data(for: request)
     }
