@@ -23,6 +23,8 @@ struct ReaderView: View {
     @Environment(\.accessibilityDifferentiateWithoutColor) private var differentiateWithoutColor
 
     @State private var sheet: ReaderSheet?
+    /// Low Power Mode: Cedar and Leather Bound turn with the plain slide.
+    @State private var lowPower = ProcessInfo.processInfo.isLowPowerModeEnabled
     /// The one-time note on first reading a YouVersion Bible.
     @State private var showsYouVersionNote = false
     @AppStorage("youVersion.noteShown") private var youVersionNoteShown = false
@@ -84,6 +86,9 @@ struct ReaderView: View {
         .statusBarHidden(!reader.showsControls)
         .animation(reduceMotion ? nil : .easeOut(duration: 0.15), value: reader.showsControls)
         .animation(reduceMotion ? nil : Motion.easeOut(0.18), value: reader.isSelecting)
+        .onReceive(NotificationCenter.default.publisher(for: .NSProcessInfoPowerStateDidChange).receive(on: DispatchQueue.main)) { _ in
+            lowPower = ProcessInfo.processInfo.isLowPowerModeEnabled
+        }
         .sheet(item: $sheet) { sheet in
             sheetContent(sheet)
         }
@@ -165,6 +170,18 @@ struct ReaderView: View {
 
                 if layout.style.theme.hasStars {
                     StarlightSkyView(textInsets: starlightTextArea(layout), skyBand: starlightSkyBand(layout), reduceMotion: reduceMotion)
+                }
+
+                // The material themes' surroundings: at the edges, never
+                // over the words; only Hearth, Highlands and Storm move.
+                if let scenery = layout.style.theme.scenery {
+                    ThemeSceneryView(
+                        scenery: scenery,
+                        area: sceneryArea(layout),
+                        animates: preferences.seasonalEffects,
+                        reduceMotion: reduceMotion
+                    )
+                    .id(scenery)
                 }
 
                 if reader.isSelecting {
@@ -275,7 +292,7 @@ struct ReaderView: View {
                 bottomInset: layout.safeArea.bottom + 60
             )
         } else if preferences.readingMode == .page {
-            let turn: PageTurnStyle = reduceMotion ? .slide : preferences.pageTurn
+            let turn = pageTurn(for: layout.style.theme)
             // Two pages like an open book, only with room for both and the
             // side panel closed. Judged on the settled size, like the key below.
             let spread = PageSpread.shows(
@@ -452,6 +469,36 @@ struct ReaderView: View {
     /// when text scrolls through it).
     private func starlightSkyBand(_ layout: ReaderLayout) -> CGFloat {
         textStaysInPlace ? layout.safeArea.top + 6 : 0
+    }
+
+    /// Where a material theme's scenery may go: the margins, and the bands
+    /// above the running head and below the page number while pages hold
+    /// still (none when text scrolls through them).
+    private func sceneryArea(_ layout: ReaderLayout) -> SceneryArea {
+        let insets = starlightTextArea(layout)
+        let spread = preferences.readingMode == .page && PageSpread.shows(
+            enabled: preferences.twoPageSpread,
+            size: settledSurfaceSize ?? layout.size,
+            sidePanelShown: isWide && showsCompanion
+        )
+        return SceneryArea(
+            size: layout.size,
+            top: insets.top,
+            left: insets.left,
+            bottom: insets.bottom,
+            right: insets.right,
+            topBand: textStaysInPlace ? layout.safeArea.top + 6 : 0,
+            footBand: textStaysInPlace ? layout.safeArea.bottom + 6 : 0,
+            spread: spread
+        )
+    }
+
+    /// The page turn: Cedar and Leather Bound turn like paper (the page
+    /// curl); Reduce Motion slides, and so do they in Low Power Mode.
+    private func pageTurn(for theme: ReaderTheme) -> PageTurnStyle {
+        if reduceMotion { return .slide }
+        if theme.scenery?.turnsLikePaper == true { return lowPower ? .slide : .curl }
+        return preferences.pageTurn
     }
 
     /// Premium typefaces and illuminated letters (plain/New York without Premium).

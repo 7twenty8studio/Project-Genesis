@@ -339,6 +339,24 @@ shares; README.md has the architecture.
   is pinned by the theme). Starlight
   without Premium falls back to Night, keeping the choice. UI tests never
   switch unless launched with `-uiTestingNight` (then it's always night).
+- Material themes (Premium via `.premiumThemes`, after Summer in the
+  picker): Hearth, Leather Bound, Cedar, Highlands, Storm on Galilee and
+  Ironstone (`ReaderTheme.scenery`, `ThemeScenery`). `ThemeSceneryView`
+  draws their surroundings over the reader only where `SceneryArea` allows
+  (side margins, the band above the running head and below the page
+  number while pages hold still; never the text): Hearth's glow and
+  embers (`HearthEmbers`), Leather Bound's cover, tooled line, gutter and
+  paper stack, Cedar's wood strips and lamplight (leather and cedar are
+  drawn tiles, `MaterialTiles`), Highlands' pine ridges and mist, Storm's
+  clouds, margin rain, swells and a soft horizon brightening
+  (`StormFlash`, never a bolt), Ironstone's inset tablet with brass
+  corners. Side materials are half the margin (slim on phones, more on
+  iPad); foot decoration folds away under 20 pt. Only Hearth, Highlands
+  and Storm move, through the Touches switch (`seasonalEffects`, "Gentle
+  Motion"), 30 fps, still with Reduce Motion or Low Power Mode. Cedar and
+  Leather Bound turn pages with the interactive Page Curl in paged reading
+  (`ReaderView.pageTurn(for:)`; a slide with Reduce Motion or Low Power
+  Mode); a theme-specific bend and shadow on the curl isn't built.
 - Widgets: every widget is free in its Classic look at every size, so
   nothing added from the gallery turns into a locked card (`WidgetAccess`
   in Genesis/Shared). Premium is what people choose inside a widget: the

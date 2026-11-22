@@ -1469,6 +1469,22 @@
         }
       }
     },
+    "A cream page in an oxblood leather cover, or parchment on a cedar desk by lamplight. Pages turn like paper.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una página color crema en una tapa de cuero granate, o pergamino sobre un escritorio de cedro a la luz de una lámpara. Las páginas pasan como papel."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uma página creme em uma capa de couro bordô, ou pergaminho sobre uma mesa de cedro à luz de uma lamparina. As páginas viram como papel."
+          }
+        }
+      }
+    },
     "A daily goal": {
       "localizations": {
         "es": {
@@ -5215,7 +5231,7 @@
       }
     },
     "Cedar": {
-      "comment": "Memorize level: the highest",
+      "comment": "Reader theme name: cedar wood",
       "localizations": {
         "es": {
           "stringUnit": {
@@ -8512,6 +8528,22 @@
         }
       }
     },
+    "Embers, mist or rain move gently at the edges of the page, never over the words. Paused in Low Power Mode and still when Reduce Motion is on.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las brasas, la niebla o la lluvia se mueven suavemente en los bordes de la página, nunca sobre las palabras. Se pausan en el modo de bajo consumo y se quedan quietas con Reducir movimiento."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brasas, neblina ou chuva se movem suavemente nas bordas da página, nunca sobre as palavras. Ficam pausadas no Modo de Pouca Energia e paradas com Reduzir Movimento."
+          }
+        }
+      }
+    },
     "End Challenge": {
       "localizations": {
         "es": {
@@ -10350,6 +10382,22 @@
         }
       }
     },
+    "Gentle Motion": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Movimiento suave"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Movimento suave"
+          }
+        }
+      }
+    },
     "Gentle reading reminders": {
       "localizations": {
         "es": {
@@ -11427,6 +11475,39 @@
         }
       }
     },
+    "Hearth": {
+      "comment": "Reader theme name: a fireside page",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lumbre"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lareira"
+          }
+        }
+      }
+    },
+    "Hearth, Highlands and Storm on Galilee": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lumbre, Tierras Altas y Tormenta en Galilea"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lareira, Terras Altas e Tempestade na Galileia"
+          }
+        }
+      }
+    },
     "Hebrew": {
       "localizations": {
         "es": {
@@ -11729,6 +11810,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "Oculta a tradução ao lado do original"
+          }
+        }
+      }
+    },
+    "Highlands": {
+      "comment": "Reader theme name: hills and pines",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tierras Altas"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terras Altas"
           }
         }
       }
@@ -12828,6 +12926,23 @@
         }
       }
     },
+    "Ironstone": {
+      "comment": "Reader theme name: a dark stone tablet",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Piedra de Hierro"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pedra de Ferro"
+          }
+        }
+      }
+    },
     "Island": {
       "comment": "Kind of Bible place",
       "localizations": {
@@ -13760,6 +13875,39 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aprendendo"
+          }
+        }
+      }
+    },
+    "Leather Bound": {
+      "comment": "Reader theme name: a leather-covered Bible",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuero"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couro"
+          }
+        }
+      }
+    },
+    "Leather Bound and Cedar": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuero y Cedro"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couro e Cedro"
           }
         }
       }
@@ -21530,6 +21678,22 @@
         }
       }
     },
+    "Read by firelight with embers rising at the edges, among misty pine ridges, or beside a stormy sea with rain in the margins.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee a la luz del fuego con brasas que suben por los bordes, entre colinas de pinos con niebla, o junto a un mar en tormenta con lluvia en los márgenes."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leia à luz do fogo com brasas subindo pelas bordas, entre colinas de pinheiros com neblina, ou junto a um mar em tempestade com chuva nas margens."
+          }
+        }
+      }
+    },
     "Read by night, look deeper": {
       "localizations": {
         "es": {
@@ -22025,6 +22189,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lendo agora"
+          }
+        }
+      }
+    },
+    "Reading page by page, this theme turns pages like paper. With Reduce Motion or in Low Power Mode they slide instead.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Al leer página por página, este tema pasa las páginas como papel. Con Reducir movimiento o en el modo de bajo consumo, se deslizan."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Na leitura página por página, este tema vira as páginas como papel. Com Reduzir Movimento ou no Modo de Pouca Energia, elas deslizam."
           }
         }
       }
@@ -25730,6 +25910,22 @@
         }
       }
     },
+    "Six new reading themes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seis nuevos temas de lectura"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seis novos temas de leitura"
+          }
+        }
+      }
+    },
     "Sketch your sermon notes with Apple Pencil.": {
       "localizations": {
         "es": {
@@ -26839,6 +27035,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "Parar de ouvir"
+          }
+        }
+      }
+    },
+    "Storm on Galilee": {
+      "comment": "Reader theme name: rain over the Sea of Galilee",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tormenta en Galilea"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tempestade na Galileia"
           }
         }
       }
@@ -32835,6 +33048,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Papéis de parede que se movem"
+          }
+        }
+      }
+    },
+    "Warm ivory words on dark stone, set like a tablet with small brass corners. Find them all in the reader's Themes with Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Palabras en marfil cálido sobre piedra oscura, como una tablilla con pequeñas esquinas de latón. Encuéntralos todos en los temas del lector con Premium."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Palavras em marfim quente sobre pedra escura, como uma tábua com pequenos cantos de latão. Encontre todos nos temas do leitor com o Premium."
           }
         }
       }
