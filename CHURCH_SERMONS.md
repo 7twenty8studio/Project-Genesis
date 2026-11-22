@@ -201,9 +201,15 @@ Tests:
 - 22 November 2026 (owner, from a recording of YouVersion's events): the
   start screen says "church or ministry", so a ministry or someone who
   speaks on their own fits too. Locations and Times (migration
-  20261124000000, not yet run in production): each church's places and
-  service times on every sermon page, with directions, and a "Join us"
+  20261124000000, run in production 22 November 2026): each church's places
+  and service times on every sermon page, with directions, and a "Join us"
   invitation at the end.
+- 22 November 2026 (owner): a smaller church picker with a bigger arrow;
+  the address in parts (street on one line; city, state, ZIP and country
+  each in its own field) and times picked from a day or a calendar date
+  and a time menu, with an optional note (migration 20261125000000, not
+  yet run in production). Older one-line addresses and typed times still
+  show.
 
 ## When the owner approves going live
 

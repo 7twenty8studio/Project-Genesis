@@ -7,7 +7,7 @@ import { redirect } from "next/navigation";
 import { currentSession } from "@/lib/auth";
 import type { DraftBlock, DraftDetails } from "@/lib/draft";
 import type { DraftReview } from "@/lib/import/review";
-import type { ChurchLocation } from "@/lib/outline";
+import type { ChurchLocation } from "@/lib/locations";
 import { RpcError, rpc, uploadCover } from "@/lib/supabase";
 import { UUID } from "@/lib/studio.server";
 
@@ -105,7 +105,19 @@ export async function setListed(church: string, listed: boolean): Promise<Action
 /** Saves the church's Locations and Times (the whole list); the database cleans and checks it. */
 export async function setLocations(church: string, locations: ChurchLocation[]): Promise<ActionResult<{ locations: ChurchLocation[] }>> {
   if (!isID(church) || !Array.isArray(locations)) return { ok: false, code: "not_found" };
-  const clean = locations.map((l) => ({ name: String(l?.name ?? ""), address: String(l?.address ?? ""), times: String(l?.times ?? "") }));
+  const text = (v: unknown) => (typeof v === "string" ? v : "");
+  const clean = locations.map((l) => ({
+    name: text(l?.name),
+    street: text(l?.street),
+    city: text(l?.city),
+    region: text(l?.region),
+    postal_code: text(l?.postal_code),
+    country: text(l?.country),
+    times: text(l?.times),
+    gatherings: (Array.isArray(l?.gatherings) ? l.gatherings : []).map((g) =>
+      g?.day ? { day: text(g.day), time: text(g.time), note: text(g.note) } : { date: text(g?.date), time: text(g?.time), note: text(g?.note) },
+    ),
+  }));
   const result = await call<ChurchLocation[]>("set_church_locations", { p_group: church, p_locations: clean });
   return result.ok ? { ok: true, locations: result.value } : result;
 }

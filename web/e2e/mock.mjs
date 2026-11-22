@@ -119,10 +119,24 @@ createServer(async (req, res) => {
     const s = sermons.get(a.p_sermon);
     switch (fn) {
       case "my_sermon_churches":
-        return send(res, 200, [{ id: GROUP, name: "Grace Church", role: "owner", listed: false, locations: churchLocations }]);
+        return send(res, 200, [
+          { id: GROUP, name: "Grace Church", role: "owner", listed: false, locations: churchLocations },
+          // A second church, so Studio shows its church picker.
+          { id: "00000000-0000-4000-8000-00000000c4a2", name: "Hope Chapel Youth Ministry", role: "moderator", listed: false, locations: [] },
+        ]);
       case "set_church_locations": {
-        const list = (a.p_locations ?? []).map((l) => ({ name: (l.name ?? "").trim(), address: (l.address ?? "").trim(), times: (l.times ?? "").trim() }));
-        if (list.length > 10 || list.some((l) => !l.name || l.name.length > 80 || l.address.length > 200 || l.times.length > 300)) return fail(res, "invalid_locations");
+        // Mirrors genesis_clean_church_locations (20261125000000): parts, the one-line address worked out, gatherings.
+        const tx = (v) => (v ?? "").trim();
+        const list = (a.p_locations ?? []).map((l) => {
+          const p = { name: tx(l.name), street: tx(l.street), city: tx(l.city), region: tx(l.region), postal_code: tx(l.postal_code), country: tx(l.country), address: tx(l.address), times: tx(l.times) };
+          const cityLine = [p.city, [p.region, p.postal_code].filter(Boolean).join(" ")].filter(Boolean).join(", ");
+          const parts = [p.street, cityLine, p.country].filter(Boolean);
+          if (parts.length) p.address = parts.join(", ");
+          p.gatherings = (l.gatherings ?? []).map((g) => ({ ...(g.day ? { day: g.day } : { date: g.date }), time: g.time, note: tx(g.note) }));
+          return p;
+        });
+        const badGathering = (g) => !!g.day === !!g.date || !/^([01]\d|2[0-3]):[0-5]\d$/.test(g.time ?? "") || (g.date && !/^\d{4}-\d{2}-\d{2}$/.test(g.date)) || g.note.length > 60;
+        if (list.length > 10 || list.some((l) => !l.name || l.name.length > 80 || l.address.length > 200 || l.times.length > 300 || l.gatherings.length > 20 || l.gatherings.some(badGathering))) return fail(res, "invalid_locations");
         churchLocations = list;
         return send(res, 200, list);
       }

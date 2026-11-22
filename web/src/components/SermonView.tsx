@@ -1,6 +1,7 @@
 import { config } from "@/config";
 import { formatDay, type Lang, type Translate } from "@/lib/i18n";
-import { anchorFor, copyText, mapsLink, sections, type Block, type ChurchLocation, type PublishedSermon, type SermonSummary } from "@/lib/outline";
+import { addressLines, dayNames, localToday, mapsLink, scheduleLines, type ChurchLocation } from "@/lib/locations";
+import { anchorFor, copyText, sections, type Block, type PublishedSermon, type SermonSummary } from "@/lib/outline";
 import type { YouVersionBible } from "@/lib/scripture";
 import { describe } from "@/lib/shared/references";
 import { CopyButton } from "./CopyButton";
@@ -140,7 +141,7 @@ export function SermonView({
         </a>
       ) : null}
 
-      {locations.length ? <Locations locations={locations} invite={!sermon.next} lang={outlineLang} t={t} /> : null}
+      {locations.length ? <Locations locations={locations} invite={!sermon.next} lang={lang} outlineLang={outlineLang} t={t} /> : null}
 
       {sermon.previous ? (
         <nav aria-label={t("More in this series")} className="mt-8">
@@ -198,7 +199,9 @@ function BlockView({ block, sermon, lang, events, youversion }: { block: Block; 
 }
 
 /** Where and when the church meets, with directions; `invite` heads it "Join us" when no next sermon does. */
-function Locations({ locations, invite, lang, t }: { locations: ChurchLocation[]; invite: boolean; lang?: string; t: Translate }) {
+function Locations({ locations, invite, lang, outlineLang, t }: { locations: ChurchLocation[]; invite: boolean; lang: Lang; outlineLang?: string; t: Translate }) {
+  const names = dayNames(t);
+  const today = localToday();
   return (
     <section id="locations" aria-labelledby="locations-title" className="mt-12 scroll-mt-6 rounded-2xl border border-border bg-surface p-5">
       {invite ? <p className="text-lg font-semibold">{t("Join us")}</p> : null}
@@ -206,26 +209,44 @@ function Locations({ locations, invite, lang, t }: { locations: ChurchLocation[]
         {t("Locations and Times")}
       </h2>
       <ul className="mt-3 divide-y divide-border">
-        {locations.map((place, i) => (
-          <li key={i} lang={lang} className="py-3 first:pt-0 last:pb-0">
-            <p className="font-semibold">{place.name}</p>
-            {place.times ? <p className="mt-1 whitespace-pre-line leading-relaxed">{place.times}</p> : null}
-            {place.address ? (
-              <a
-                href={mapsLink(place.address)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-1 inline-flex items-start gap-1.5 text-muted underline decoration-copper underline-offset-4 hover:text-foreground"
-              >
-                <PinIcon />
-                <span>
-                  {place.address}
-                  <span className="sr-only"> ({t("directions, opens in a new tab")})</span>
-                </span>
-              </a>
-            ) : null}
-          </li>
-        ))}
+        {locations.map((place, i) => {
+          const schedule = scheduleLines(place, lang, names, today);
+          const address = addressLines(place);
+          const directions = mapsLink(place);
+          return (
+            <li key={i} className="py-4 first:pt-0 last:pb-0">
+              <p lang={outlineLang} className="font-semibold">
+                {place.name}
+              </p>
+              {schedule.length ? (
+                <ul className="mt-1 space-y-0.5 leading-relaxed">
+                  {schedule.map((line, k) => (
+                    <li key={k}>{line}</li>
+                  ))}
+                </ul>
+              ) : null}
+              {directions ? (
+                <a
+                  href={directions}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  lang={outlineLang}
+                  className="mt-2 inline-flex items-start gap-1.5 text-muted hover:text-foreground"
+                >
+                  <PinIcon />
+                  <span className="underline decoration-copper underline-offset-4">
+                    {address.map((line, k) => (
+                      <span key={k} className="block">
+                        {line}
+                      </span>
+                    ))}
+                    <span className="sr-only"> ({t("directions, opens in a new tab")})</span>
+                  </span>
+                </a>
+              ) : null}
+            </li>
+          );
+        })}
       </ul>
     </section>
   );

@@ -72,8 +72,11 @@ final class ChurchSermonsUITests: GenesisUITestCase {
         let locations = app.buttons["churchSermon.locationsButton"]
         XCTAssertTrue(locations.waitForExistence(timeout: Genesis.timeout))
         locations.tap()
-        XCTAssertTrue(app.staticTexts["Wednesdays 7:00 PM"].waitForExistence(timeout: Genesis.timeout), "The church's times show")
-        XCTAssertTrue(app.links["1 Hill Road, Austin, TX"].exists, "The address opens directions")
+        // Times are formatted for the device (iOS puts a narrow space before "PM").
+        let wednesdays = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH %@", "Wednesdays · 7:00")).firstMatch
+        XCTAssertTrue(wednesdays.waitForExistence(timeout: Genesis.timeout), "The church's times show")
+        XCTAssertTrue(wednesdays.label.hasSuffix("(Bible study)"), "With the church's note")
+        XCTAssertTrue(app.links["1 Hill Road, Austin, TX 78701, United States"].exists, "The address opens directions")
 
         // The series goes on to the members-only sermon: "Join us for …".
         let next = app.buttons["churchSermon.next"]

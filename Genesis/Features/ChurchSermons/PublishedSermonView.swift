@@ -312,15 +312,16 @@ struct PublishedSermonView: View {
                     VStack(alignment: .leading, spacing: 4) {
                         Text(place.name)
                             .font(.body.weight(.semibold))
-                        ForEach(place.timeLines, id: \.self) { line in
+                        ForEach(place.scheduleLines(today: Timestamp.dayString(from: Date())), id: \.self) { line in
                             Text(line)
                         }
                         if let url = place.mapsURL {
                             Link(destination: url) {
-                                Label(place.address, systemImage: "mappin")
+                                Label(place.addressLines.joined(separator: "\n"), systemImage: "mappin")
                                     .multilineTextAlignment(.leading)
                             }
                             .tint(palette.accent)
+                            .accessibilityLabel(place.oneLineAddress)
                             .accessibilityHint("Opens directions in Maps")
                         }
                     }

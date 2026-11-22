@@ -158,12 +158,40 @@ enum ChurchSermonWire {
 
     private struct LocationRow: Decodable {
         let name: String?
+        let street: String?
+        let city: String?
+        let region: String?
+        let postal_code: String?
+        let country: String?
         let address: String?
         let times: String?
+        let gatherings: [Lossy<GatheringRow>]?
 
         var location: ChurchLocation? {
             guard let name = name?.trimmingCharacters(in: .whitespacesAndNewlines), !name.isEmpty else { return nil }
-            return ChurchLocation(name: name, address: address ?? "", times: times ?? "")
+            return ChurchLocation(
+                name: name, street: street ?? "", city: city ?? "", region: region ?? "", postalCode: postal_code ?? "",
+                country: country ?? "", address: address ?? "", times: times ?? "",
+                gatherings: (gatherings ?? []).compactMap { $0.value?.gathering })
+        }
+    }
+
+    /// A weekly day or a date, a time and a note; anything else is left out.
+    private struct GatheringRow: Decodable {
+        let day: String?
+        let date: String?
+        let time: String?
+        let note: String?
+
+        var gathering: ChurchGathering? {
+            guard let time, ChurchGathering.isTime(time) else { return nil }
+            if let day, let weekday = ChurchGathering.Weekday(rawValue: day) {
+                return ChurchGathering(weekday: weekday, time: time, note: note ?? "")
+            }
+            if let date, ChurchGathering.isDate(date) {
+                return ChurchGathering(date: date, time: time, note: note ?? "")
+            }
+            return nil
         }
     }
 

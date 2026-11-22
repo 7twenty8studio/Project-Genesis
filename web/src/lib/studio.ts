@@ -89,7 +89,7 @@ export function refusalMessage(code: string): string {
     case "invalid_blocks":
       return "Part of the outline can't be saved. Check the items marked in red.";
     case "invalid_locations":
-      return "Give each place a name. Names can be up to 80 characters, addresses 200 and times 300, with at most 10 places.";
+      return "Give each place a name and each one-time gathering a date. Check that nothing is too long, with at most 10 places and 20 times each.";
     case "invalid_details":
       return "One of the details is too long or not valid.";
     case "not_allowed":
