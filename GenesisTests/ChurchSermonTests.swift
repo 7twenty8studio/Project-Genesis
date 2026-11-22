@@ -28,7 +28,12 @@ struct ChurchSermonWireTests {
      "is_member":true,
      "locations":[{"name":"Main Campus","address":"1 Hill Rd, Austin, TX","times":"Sundays 9:00 and 11:00 AM\\n\\nWednesdays 7:00 PM"},
                   {"name":"  ","address":"","times":""},
-                  {"name":"Online","address":"","times":""}]}
+                  {"name":"Online","address":"","times":""},
+                  {"name":"Lancaster","street":"2827 Saint Martin Dr.","city":"Lancaster","region":"TX","postal_code":"75146","country":"United States",
+                   "address":"2827 Saint Martin Dr., Lancaster, TX 75146, United States","times":"",
+                   "gatherings":[{"day":"sun","time":"11:00","note":""},{"day":"wed","time":"19:00","note":"Bible study"},{"day":"sun","time":"09:00","note":""},
+                                 {"date":"2026-11-26","time":"18:00","note":"Thanksgiving"},{"date":"2026-11-01","time":"18:00","note":""},
+                                 {"day":"someday","time":"09:00"},{"day":"sun","time":"9am"}]}]}
     """
 
     private func decoded() throws -> PublishedSermon {
@@ -57,11 +62,36 @@ struct ChurchSermonWireTests {
     @Test func readsTheChurchsLocationsAndTimes() throws {
         let locations = try decoded().locations
         // A place without a name is left out; the rest keep the church's words.
-        #expect(locations.map(\.name) == ["Main Campus", "Online"])
+        #expect(locations.map(\.name) == ["Main Campus", "Online", "Lancaster"])
         #expect(locations[0].timeLines == ["Sundays 9:00 and 11:00 AM", "Wednesdays 7:00 PM"])
         #expect(locations[0].mapsURL?.absoluteString == "https://maps.apple.com/?q=1%20Hill%20Rd,%20Austin,%20TX")
         #expect(locations[1].mapsURL == nil)
         #expect(locations[1].timeLines.isEmpty)
+    }
+
+    @Test func readsTheAddressInPartsAndTheGatherings() throws {
+        let place = try decoded().locations[2]
+        #expect(place.addressLines == ["2827 Saint Martin Dr.", "Lancaster, TX 75146", "United States"])
+        let maps = place.mapsURL?.absoluteString ?? ""
+        #expect(maps == "https://maps.apple.com/?q=2827%20Saint%20Martin%20Dr.,%20Lancaster,%20TX%2075146,%20United%20States")
+        // Gatherings that aren't a weekday or a date at a clock time are left out.
+        #expect(place.gatherings.count == 5)
+        // iOS may put a narrow no-break space before "AM".
+        let lines = place.scheduleLines(today: "2026-11-22", locale: Locale(identifier: "en_US"))
+            .map { $0.replacingOccurrences(of: "\u{202F}", with: " ") }
+        #expect(lines == [
+            "Sundays · 9:00 AM, 11:00 AM",
+            "Wednesdays · 7:00 PM (Bible study)",
+            "Thursday, November 26, 2026 · 6:00 PM (Thanksgiving)",
+        ])
+        let later = place.scheduleLines(today: "2026-11-27", locale: Locale(identifier: "en_US"))
+        #expect(later.count == 2)
+    }
+
+    @Test func aOneLineAddressStillShows() {
+        let place = ChurchLocation(name: "Old", address: "1 Hill Rd, Austin", times: "Sundays 10 AM")
+        #expect(place.addressLines == ["1 Hill Rd, Austin"])
+        #expect(place.scheduleLines(today: "2026-11-22") == ["Sundays 10 AM"])
     }
 
     @Test func olderAnswersHaveNoLocations() throws {

@@ -50,7 +50,14 @@ actor InMemoryChurchSermonBackend: ChurchSermonBackend {
         listed[Self.sampleChurchID] = "Grace Fellowship"
         listed[Self.otherChurchID] = "Riverside Church"
         locations[Self.sampleChurchID] = [
-            ChurchLocation(name: "Main Campus", address: "1 Hill Road, Austin, TX", times: "Sundays 9:00 and 11:00 AM\nWednesdays 7:00 PM"),
+            ChurchLocation(
+                name: "Main Campus", street: "1 Hill Road", city: "Austin", region: "TX", postalCode: "78701",
+                country: "United States", address: "1 Hill Road, Austin, TX 78701, United States",
+                gatherings: [
+                    ChurchGathering(weekday: .sun, time: "09:00"),
+                    ChurchGathering(weekday: .sun, time: "11:00"),
+                    ChurchGathering(weekday: .wed, time: "19:00", note: "Bible study"),
+                ]),
         ]
         let first = Self.sample(
             slug: Self.linkSlug, church: Self.sampleChurchID, churchName: "Grace Fellowship", title: "Rest for the Weary",

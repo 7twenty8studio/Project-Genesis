@@ -41,19 +41,33 @@ export function ChurchHome({ lang, churches, church, sermons, reports }: Props) 
         <div>
           <p className="text-sm font-medium uppercase tracking-wider text-accent">{t("Church Studio")}</p>
           {churches.length > 1 ? (
-            <label className="mt-1 block">
+            <label className="mt-2 block">
               <span className="sr-only">{t("Church")}</span>
-              <select
-                className="mt-1 rounded-xl border border-border bg-surface px-3 py-2 text-2xl font-semibold"
-                value={church.id}
-                onChange={(e) => router.push(`/studio?church=${e.target.value}`)}
-              >
-                {churches.map((c) => (
-                  <option key={c.id} value={c.id}>
-                    {c.name}
-                  </option>
-                ))}
-              </select>
+              <span className="relative inline-block max-w-full">
+                <select
+                  className="min-h-12 max-w-full appearance-none truncate rounded-2xl border border-border bg-surface py-2 pl-4 pr-12 text-xl font-semibold hover:bg-surface-2"
+                  value={church.id}
+                  onChange={(e) => router.push(`/studio?church=${e.target.value}`)}
+                >
+                  {churches.map((c) => (
+                    <option key={c.id} value={c.id}>
+                      {c.name}
+                    </option>
+                  ))}
+                </select>
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 20 20"
+                  className="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-accent-strong"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.25"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 7.5l5 5 5-5" />
+                </svg>
+              </span>
             </label>
           ) : (
             <h1 className="mt-1 text-3xl font-semibold tracking-tight">{church.name}</h1>

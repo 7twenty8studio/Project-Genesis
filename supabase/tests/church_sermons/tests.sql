@@ -332,13 +332,13 @@ select ct.check('guests are not told of a members-only next sermon', (ct.run('an
 select ct.check('members see the next sermon in the series',
   (ct.run('member', format('public.published_sermon(%L)', ct.v('slug1'))))->'next'->>'title' = 'Green Pastures');
 
--- Locations and Times (20261124000000) ------------------------------------------------------
+-- Locations and Times (20261124000000, 20261125000000) ------------------------------------------------------
 
 select ct.check('a church starts with no locations', (ct.run('anon', format('public.published_sermon(%L)', ct.v('slug1'))))->'locations' = '[]'::jsonb);
 select ct.set('loc', (ct.run('pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'),
   '[{"name": "  Main Campus ", "address": "1 Hill Rd, Austin, TX", "times": "Sundays 9:00 and 11:00 AM\nWednesdays 7:00 PM"}, {"name": "Online"}]')))::text);
 select ct.check('the pastor saves locations, trimmed, empty fields as ""',
-  ct.v('loc')::jsonb = '[{"name": "Main Campus", "address": "1 Hill Rd, Austin, TX", "times": "Sundays 9:00 and 11:00 AM\nWednesdays 7:00 PM"}, {"name": "Online", "address": "", "times": ""}]'::jsonb, ct.v('loc')::jsonb);
+  ct.v('loc')::jsonb = '[{"name": "Main Campus", "address": "1 Hill Rd, Austin, TX", "times": "Sundays 9:00 and 11:00 AM\nWednesdays 7:00 PM", "street": "", "city": "", "region": "", "postal_code": "", "country": "", "gatherings": []}, {"name": "Online", "address": "", "times": "", "street": "", "city": "", "region": "", "postal_code": "", "country": "", "gatherings": []}]'::jsonb, ct.v('loc')::jsonb);
 select ct.check('guests see them on a link sermon',
   (ct.run('anon', format('public.published_sermon(%L)', ct.v('slug1'))))->'locations' = ct.v('loc')::jsonb);
 select ct.check('Church Studio has them',
@@ -353,6 +353,28 @@ select ct.refused('unknown fields are refused', 'pastor', format('public.set_chu
 select ct.refused('long times are refused, never cut', 'pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'), jsonb_build_array(jsonb_build_object('name', 'A', 'times', repeat('x', 301)))), 'invalid_locations');
 select ct.refused('at most 10 places', 'pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'), (select jsonb_agg(jsonb_build_object('name', 'P' || i)) from generate_series(1, 11) i)), 'invalid_locations');
 select ct.refused('not a list', 'pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'), '{"name": "A"}'), 'invalid_locations');
+-- In parts, with times picked from lists (20261125000000).
+select ct.set('loc2', (ct.run('pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'),
+  '[{"name": "Main Campus", "street": " 2827 Saint Martin Dr. ", "city": "Lancaster", "region": "TX", "postal_code": "75146", "country": "United States", "address": "old", "gatherings": [{"day": "sun", "time": "09:00"}, {"date": "2026-12-24", "time": "18:30", "note": " Candlelight "}]}, {"name": "Online", "city": "Lancaster", "postal_code": "75146"}]')))::text);
+select ct.check('the address on one line is worked out from its parts',
+  (ct.v('loc2')::jsonb)->0->>'address' = '2827 Saint Martin Dr., Lancaster, TX 75146, United States'
+  and (ct.v('loc2')::jsonb)->1->>'address' = 'Lancaster, 75146', ct.v('loc2')::jsonb);
+select ct.check('the parts are kept, trimmed',
+  (ct.v('loc2')::jsonb)->0 @> '{"street": "2827 Saint Martin Dr.", "city": "Lancaster", "region": "TX", "postal_code": "75146", "country": "United States"}', ct.v('loc2')::jsonb);
+select ct.check('gatherings are kept: a weekly day or a date, a time and a note',
+  (ct.v('loc2')::jsonb)->0->'gatherings' = '[{"day": "sun", "time": "09:00", "note": ""}, {"date": "2026-12-24", "time": "18:30", "note": "Candlelight"}]'::jsonb, ct.v('loc2')::jsonb);
+select ct.check('guests see the parts and gatherings',
+  (ct.run('anon', format('public.published_sermon(%L)', ct.v('slug1'))))->'locations' = ct.v('loc2')::jsonb);
+select ct.refused('a gathering needs a day or a date', 'pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'), '[{"name": "A", "gatherings": [{"time": "09:00"}]}]'), 'invalid_locations');
+select ct.refused('not both', 'pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'), '[{"name": "A", "gatherings": [{"day": "sun", "date": "2026-12-24", "time": "09:00"}]}]'), 'invalid_locations');
+select ct.refused('only the seven days', 'pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'), '[{"name": "A", "gatherings": [{"day": "sunday", "time": "09:00"}]}]'), 'invalid_locations');
+select ct.refused('a real date', 'pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'), '[{"name": "A", "gatherings": [{"date": "2026-02-30", "time": "09:00"}]}]'), 'invalid_locations');
+select ct.refused('a clock time', 'pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'), '[{"name": "A", "gatherings": [{"day": "sun", "time": "9am"}]}]'), 'invalid_locations');
+select ct.refused('no other fields on a gathering', 'pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'), '[{"name": "A", "gatherings": [{"day": "sun", "time": "09:00", "zone": "UTC"}]}]'), 'invalid_locations');
+select ct.refused('long notes are refused', 'pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'), jsonb_build_array(jsonb_build_object('name', 'A', 'gatherings', jsonb_build_array(jsonb_build_object('day', 'sun', 'time', '09:00', 'note', repeat('x', 61)))))), 'invalid_locations');
+select ct.refused('at most 20 gatherings', 'pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'), jsonb_build_array(jsonb_build_object('name', 'A', 'gatherings', (select jsonb_agg(jsonb_build_object('day', 'sun', 'time', '09:00')) from generate_series(1, 21))))), 'invalid_locations');
+select ct.refused('long ZIP codes are refused', 'pastor', format('public.set_church_locations(%L, %L)', ct.g('grace'), jsonb_build_array(jsonb_build_object('name', 'A', 'postal_code', repeat('9', 21)))), 'invalid_locations');
+select ct.set('loc', ct.v('loc2'));
 select ct.check('refusals leave them as they were',
   (select sermon_locations from public.groups where id = ct.g('grace')) = ct.v('loc')::jsonb);
 select ct.check('a members-only sermon tells guests nothing about them',

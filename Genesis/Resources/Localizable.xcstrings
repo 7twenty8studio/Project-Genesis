@@ -10075,6 +10075,22 @@
         }
       }
     },
+    "Fridays": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Viernes"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sextas-feiras"
+          }
+        }
+      }
+    },
     "Friends": {
       "localizations": {
         "es": {
@@ -15569,6 +15585,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Linguagem moderna e coloquial, como se fala hoje."
+          }
+        }
+      }
+    },
+    "Mondays": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lunes"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segundas-feiras"
           }
         }
       }
@@ -23239,6 +23271,22 @@
         }
       }
     },
+    "Saturdays": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sábados"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sábados"
+          }
+        }
+      }
+    },
     "Save": {
       "localizations": {
         "es": {
@@ -27039,6 +27087,22 @@
         }
       }
     },
+    "Sundays": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Domingos"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Domingos"
+          }
+        }
+      }
+    },
     "Supplication": {
       "comment": "ACTS prayer heading: asking",
       "localizations": {
@@ -30040,6 +30104,22 @@
         }
       }
     },
+    "Thursdays": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jueves"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quintas-feiras"
+          }
+        }
+      }
+    },
     "Tick each chapter when you've read it.": {
       "localizations": {
         "es": {
@@ -31115,6 +31195,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Estudo bíblico de terça"
+          }
+        }
+      }
+    },
+    "Tuesdays": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Martes"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terças-feiras"
           }
         }
       }
@@ -32514,6 +32610,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Água"
+          }
+        }
+      }
+    },
+    "Wednesdays": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Miércoles"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quartas-feiras"
           }
         }
       }

@@ -25,7 +25,8 @@ struct PublishedSermon: Identifiable, Hashable, Sendable {
     let next: ChurchSermonSummary?
     let isMember: Bool
     /// Where and when the church or ministry meets (Locations and Times,
-    /// migration 20261124000000), shown on every one of its sermons.
+    /// migrations 20261124000000 and 20261125000000), shown on every one of
+    /// its sermons.
     var locations: [ChurchLocation] = []
 
     struct Cover: Hashable, Sendable {
@@ -51,27 +52,147 @@ struct PublishedSermon: Identifiable, Hashable, Sendable {
     }
 }
 
-/// One place on a church's Locations and Times: the church's own plain
-/// text, `times` one line per gathering.
+/// One place on a church's Locations and Times (migrations 20261124000000
+/// and 20261125000000): the address in parts and the gatherings picked in
+/// Church Studio, or plain text typed before there were parts (`address`,
+/// `times`). The same rules as the web's locations.ts.
 struct ChurchLocation: Hashable, Sendable {
     let name: String
-    let address: String
-    let times: String
+    var street = ""
+    var city = ""
+    var region = ""
+    var postalCode = ""
+    var country = ""
+    /// The address on one line (worked out by the database from the parts).
+    var address = ""
+    /// Times typed as text before there were pickers, one line each.
+    var times = ""
+    var gatherings: [ChurchGathering] = []
 
-    /// One line per gathering, blank lines left out.
+    /// Legacy time lines, blank lines left out.
     var timeLines: [String] {
         times.split(whereSeparator: \.isNewline)
             .map { $0.trimmingCharacters(in: .whitespaces) }
             .filter { !$0.isEmpty }
     }
 
+    /// The address as lines: street; "City, ST 75146"; country. Falls back
+    /// to the one-line address.
+    var addressLines: [String] {
+        func trim(_ s: String) -> String { s.trimmingCharacters(in: .whitespacesAndNewlines) }
+        let regionLine = [trim(region), trim(postalCode)].filter { !$0.isEmpty }.joined(separator: " ")
+        let cityLine = [trim(city), regionLine].filter { !$0.isEmpty }.joined(separator: ", ")
+        let lines = [trim(street), cityLine, trim(country)].filter { !$0.isEmpty }
+        if !lines.isEmpty { return lines }
+        return trim(address).isEmpty ? [] : [trim(address)]
+    }
+
+    /// The address on one line, for directions and VoiceOver.
+    var oneLineAddress: String { addressLines.joined(separator: ", ") }
+
     /// Directions in Apple Maps, searched by the address; nil without one.
     var mapsURL: URL? {
-        let address = address.trimmingCharacters(in: .whitespacesAndNewlines)
+        let address = oneLineAddress
         guard !address.isEmpty else { return nil }
         var components = URLComponents(string: "https://maps.apple.com/")
         components?.queryItems = [URLQueryItem(name: "q", value: address)]
         return components?.url
+    }
+
+    /// The schedule as lines, in order: each weekday once with its times
+    /// ("Sundays · 9:00 AM, 11:00 AM (Spanish)"), then dates from `today`
+    /// ("yyyy-MM-dd") on, past ones left out, then any times typed as text.
+    func scheduleLines(today: String, locale: Locale = .current) -> [String] {
+        let valid = gatherings.filter { ChurchGathering.isTime($0.time) }
+        func at(_ g: ChurchGathering) -> String {
+            let time = ChurchGathering.formatTime(g.time, locale: locale)
+            let note = g.note.trimmingCharacters(in: .whitespacesAndNewlines)
+            return note.isEmpty ? time : "\(time) (\(note))"
+        }
+        var lines: [String] = []
+        for day in ChurchGathering.Weekday.allCases {
+            let on = valid.filter { $0.weekday == day }.sorted { $0.time < $1.time }
+            if !on.isEmpty { lines.append("\(day.pluralName) · \(on.map(at).joined(separator: ", "))") }
+        }
+        let dates = Set(valid.compactMap(\.date).filter { $0 >= today }).sorted()
+        for date in dates {
+            let on = valid.filter { $0.date == date }.sorted { $0.time < $1.time }
+            lines.append("\(ChurchGathering.formatDate(date, locale: locale)) · \(on.map(at).joined(separator: ", "))")
+        }
+        return lines + timeLines
+    }
+}
+
+/// One gathering: every week on a day, or once on a date, at a time on the
+/// church's own clock ("HH:mm", no time zone), with a few words of the
+/// church's own.
+struct ChurchGathering: Hashable, Sendable {
+    enum Weekday: String, CaseIterable, Sendable {
+        case sun, mon, tue, wed, thu, fri, sat
+
+        /// "Sundays": the day as a weekly schedule names it.
+        var pluralName: String {
+            switch self {
+            case .sun: String(localized: "Sundays")
+            case .mon: String(localized: "Mondays")
+            case .tue: String(localized: "Tuesdays")
+            case .wed: String(localized: "Wednesdays")
+            case .thu: String(localized: "Thursdays")
+            case .fri: String(localized: "Fridays")
+            case .sat: String(localized: "Saturdays")
+            }
+        }
+    }
+
+    var weekday: Weekday?
+    /// "yyyy-MM-dd" for a one-time gathering.
+    var date: String?
+    var time: String
+    var note = ""
+
+    /// "HH:mm" on a 24-hour clock.
+    static func isTime(_ s: String) -> Bool {
+        let parts = s.split(separator: ":", omittingEmptySubsequences: false)
+        guard parts.count == 2, parts.allSatisfy({ part in part.count == 2 && part.allSatisfy { $0.isASCII && $0.isNumber } }),
+              let hour = Int(parts[0]), let minute = Int(parts[1]) else { return false }
+        return (0...23).contains(hour) && (0...59).contains(minute)
+    }
+
+    /// "yyyy-MM-dd".
+    static func isDate(_ s: String) -> Bool {
+        let parts = s.split(separator: "-", omittingEmptySubsequences: false)
+        guard parts.count == 3, parts.map(\.count) == [4, 2, 2] else { return false }
+        return parts.allSatisfy { part in part.allSatisfy { $0.isASCII && $0.isNumber } }
+    }
+
+    private static let utc = TimeZone(identifier: "UTC") ?? .gmt
+
+    /// "9:00 AM" / "09:00" in the reader's language.
+    static func formatTime(_ time: String, locale: Locale) -> String {
+        let parts = time.split(separator: ":").compactMap { Int($0) }
+        guard isTime(time), parts.count == 2 else { return time }
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = utc
+        guard let date = calendar.date(from: DateComponents(year: 2000, month: 1, day: 1, hour: parts[0], minute: parts[1])) else { return time }
+        let formatter = DateFormatter()
+        formatter.locale = locale
+        formatter.timeZone = utc
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        return formatter.string(from: date)
+    }
+
+    /// "Thursday, November 26, 2026" in the reader's language.
+    static func formatDate(_ day: String, locale: Locale) -> String {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = utc
+        guard let date = Timestamp.day(from: day, calendar: calendar) else { return day }
+        let formatter = DateFormatter()
+        formatter.locale = locale
+        formatter.timeZone = utc
+        formatter.dateStyle = .full
+        formatter.timeStyle = .none
+        return formatter.string(from: date)
     }
 }
 

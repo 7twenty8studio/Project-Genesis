@@ -746,9 +746,14 @@ shares; README.md has the architecture.
   sermons.source_sermon_id (sent only when set) and kept after an
   unpublish. Switch `OptionalFeature.churchSermons` (needs `church_sermons`
   and `groups`); What's New "church-sermons" behind the flag.
-  Locations and Times (like YouVersion's events; migration 20261124000000):
-  `groups.sermon_locations` (≤ 10 places: name, address, times one line
-  per gathering), set only through `set_church_locations` (owner and
+  Locations and Times (like YouVersion's events; migrations 20261124000000
+  and 20261125000000): `groups.sermon_locations` (≤ 10 places: name, the
+  address in parts (street, city, region, postal_code, country; the
+  database works out the one-line `address`), up to 20 `gatherings`, each
+  a weekday or a date with an "HH:MM" time and a note, picked from menus
+  and a calendar in Studio; plain `address`/`times` typed earlier still
+  show), shown as lines in the reader's language (web/src/lib/locations.ts,
+  `ChurchLocation.scheduleLines`; weekly by day, then future dates), set only through `set_church_locations` (owner and
   moderators; Studio's church page, `LocationsEditor`), read through
   `published_sermon` (`locations`, same readers as the sermon). Every
   sermon page shows a Locations and Times button and the list with

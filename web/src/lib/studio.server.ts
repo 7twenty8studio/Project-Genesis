@@ -1,7 +1,7 @@
 // Church Studio's reads on the server, always as the signed-in person so the
 // database's rules decide (owner or moderator, both switches on, not banned).
 import type { DraftRow } from "./draft.ts";
-import type { ChurchLocation } from "./outline.ts";
+import type { ChurchLocation } from "./locations.ts";
 import { rpc, select } from "./supabase.ts";
 import type { Session } from "./session.ts";
 

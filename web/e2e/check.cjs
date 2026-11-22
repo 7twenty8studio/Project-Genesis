@@ -113,6 +113,11 @@ async function noSideScroll(page, label) {
     await page.goto(`${BASE}/studio`);
     await axe(page, `studio home ${locale}`);
     await page.screenshot({ path: `${OUT}/studio-home-${locale}.png`, fullPage: true });
+    if (locale === "en") {
+      const picker = page.locator("header select, main select").first();
+      if ((await picker.inputValue().catch(() => "")) === "") problems.push("church picker not shown with two churches");
+      else await picker.locator("xpath=ancestor::div[1]").screenshot({ path: `${OUT}/church-picker.png` });
+    }
     if (locale !== "en") { await ctx.close(); continue; }
 
     await page.goto(`${BASE}/studio/22222222-2222-4222-8222-222222222222`, { waitUntil: "networkidle" });
@@ -168,11 +173,22 @@ async function noSideScroll(page, label) {
       const home = await page.context().newPage();
       await home.goto(`${BASE}/studio`);
       await home.getByRole("button", { name: "Add a place" }).click();
-      await home.getByLabel("Address", { exact: true }).fill("1 Hill Rd, Austin, TX");
+      await home.getByLabel("Street address").fill("1 Hill Rd");
+      await home.getByLabel("City").fill("Austin");
+      await home.getByLabel("State or province").fill("TX");
+      await home.getByLabel("ZIP or postal code").fill("78701");
+      await home.getByLabel("Country").fill("United States");
+      // The first time: Wednesdays at 7:00 PM, from the lists. Then a second one, once, on a date.
+      await home.locator("#place-0-time-0-when").selectOption("wed");
+      await home.locator("#place-0-time-0-time").selectOption("19:00");
+      await home.getByRole("button", { name: "Add a time" }).click();
+      await home.locator("#place-0-time-1-repeat").selectOption("once");
+      await home.locator("#place-0-time-1-when").fill("2099-12-24");
+      await home.locator("#place-0-time-1-time").selectOption("18:30");
+      await home.locator("#place-0-time-1-note").fill("Candlelight");
       await home.getByRole("button", { name: "Save locations" }).click();
-      await home.getByText("Give each place a name.").waitFor({ timeout: 8000 }).catch(() => problems.push("locations: a place without a name wasn't refused"));
+      await home.getByText("Give each place a name and each one-time gathering a date.").waitFor({ timeout: 8000 }).catch(() => problems.push("locations: a place without a name wasn't refused"));
       await home.getByLabel("Name", { exact: true }).fill("Main Campus");
-      await home.getByLabel("Times", { exact: true }).fill("Sundays 9:00 and 11:00 AM\nWednesdays 7:00 PM");
       await home.getByRole("button", { name: "Save locations" }).click();
       await home.getByText("Saved. Every sermon page shows it now.").waitFor({ timeout: 8000 }).catch(() => problems.push("locations: not saved"));
       await axe(home, "locations editor");
@@ -184,10 +200,12 @@ async function noSideScroll(page, label) {
     await guest.goto(`${BASE}/s/${slug}`);
     if (!(await guest.locator("h1").innerText()).includes("Rest for the Weary")) problems.push("published sermon not readable");
     await guest.getByRole("link", { name: "Locations and Times" }).click();
-    if (!(await guest.locator("#locations").innerText()).includes("Wednesdays 7:00 PM")) problems.push("locations not shown on the sermon page");
+    const shown = await guest.locator("#locations").innerText();
+    for (const want of ["Wednesdays · 7:00 PM", "December 24, 2099 · 6:30 PM (Candlelight)", "1 Hill Rd", "Austin, TX 78701", "United States"])
+      if (!shown.includes(want)) problems.push(`locations: "${want}" not shown on the sermon page`);
     if (!(await guest.locator("#locations").innerText()).includes("Join us")) problems.push("no invitation without a next sermon");
     const directions = await guest.locator("#locations a").first().getAttribute("href");
-    if (!directions?.includes("query=1%20Hill%20Rd")) problems.push("directions link wrong: " + directions);
+    if (!directions?.includes("query=1%20Hill%20Rd%2C%20Austin%2C%20TX%2078701%2C%20United%20States")) problems.push("directions link wrong: " + directions);
     await axe(guest, "sermon with locations");
     await guest.screenshot({ path: `${OUT}/sermon-locations.png`, fullPage: true });
     if ((await guest.content()).includes("Come to me, all you who are weary")) problems.push("NIV quotation leaked to the guest page");
