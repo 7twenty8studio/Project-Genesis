@@ -82,7 +82,7 @@ struct PublishedSermonView: View {
                 Button(reason.title) { Task { await report(reason.value) } }
             }
         } message: {
-            Text("Reports are private and go to the church's moderators.")
+            Text("Reports are private and go to the church's admins.")
         }
         .confirmationDialog("Hide sermons from \(sermon.church)?", isPresented: $confirmingHide, titleVisibility: .visible) {
             Button("Hide", role: .destructive) {
@@ -419,7 +419,7 @@ struct PublishedSermonView: View {
     private func report(_ reason: String) async {
         do {
             try await backend.report(slug: sermon.slug, reason: reason)
-            reportMessage = String(localized: "Thank you. The church's moderators will review it.")
+            reportMessage = String(localized: "Thank you. The church's admins will review it.")
         } catch {
             reportMessage = (error as? LocalizedError)?.errorDescription ?? String(localized: "Something went wrong. Please try again.")
         }

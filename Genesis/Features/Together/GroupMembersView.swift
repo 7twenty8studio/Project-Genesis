@@ -379,7 +379,11 @@ private struct GroupMemberDialogs: ViewModifier {
                     if let member = newOwner { Task { await model.makeOwner(member) } }
                 }
             } message: {
-                Text("They'll choose moderators and can close the group, and you'll stay on as a moderator.")
+                if model.permissions.isChurch {
+                    Text("They'll choose admins and can close the group, and you'll stay on as an admin.")
+                } else {
+                    Text("They'll choose moderators and can close the group, and you'll stay on as a moderator.")
+                }
             }
     }
 }

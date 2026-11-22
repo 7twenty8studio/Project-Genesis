@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Groups you've asked to join, waiting for a moderator, with Withdraw.
+/// Groups you've asked to join, waiting for approval, with Withdraw.
 /// Shows nothing when there are none.
 struct PendingJoinRequestsSection: View {
     @Environment(CommunityStore.self) private var community
@@ -15,7 +15,7 @@ struct PendingJoinRequestsSection: View {
             } header: {
                 Text("Waiting to Join")
             } footer: {
-                Text("A moderator will let you in.")
+                Text("You'll be let in once your request is approved.")
             }
             .listRowBackground(palette.surface)
         }

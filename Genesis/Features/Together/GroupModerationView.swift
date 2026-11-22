@@ -58,7 +58,11 @@ private struct ModerationApprovalSection: View {
                 .accessibilityIdentifier("moderation.approval")
         } footer: {
             VStack(alignment: .leading, spacing: 4) {
-                Text("When this is on, people with the invite code ask to join and a moderator lets them in.")
+                if model.group?.isChurch == true {
+                    Text("When this is on, people with the invite code ask to join and an admin lets them in.")
+                } else {
+                    Text("When this is on, people with the invite code ask to join and a moderator lets them in.")
+                }
                 Text("Turning this off lets in everyone waiting.")
             }
         }
@@ -140,7 +144,11 @@ private struct ModerationReportsSection: View {
         } header: {
             Text("Reports")
         } footer: {
-            Text("Three reports hide something from everyone but its author and the moderators until it's reviewed.")
+            if model.group?.isChurch == true {
+                Text("Three reports hide something from everyone but its author and the admins until it's reviewed.")
+            } else {
+                Text("Three reports hide something from everyone but its author and the moderators until it's reviewed.")
+            }
         }
         .listRowBackground(palette.surface)
     }
