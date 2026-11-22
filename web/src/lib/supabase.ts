@@ -95,8 +95,10 @@ export async function sendPasswordReset(email: string): Promise<boolean> {
   return response?.ok ?? false;
 }
 
+/** Signs out this browser only: the default ("global") would also end the
+ *  person's sessions in the Versely app on their phone. */
 export async function signOut(session: Session): Promise<void> {
-  await fetch(`${config.supabaseUrl}/auth/v1/logout`, { method: "POST", headers: headers(session.accessToken), cache: "no-store" }).catch(() => undefined);
+  await fetch(`${config.supabaseUrl}/auth/v1/logout?scope=local`, { method: "POST", headers: headers(session.accessToken), cache: "no-store" }).catch(() => undefined);
 }
 
 /**
