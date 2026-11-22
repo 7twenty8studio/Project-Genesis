@@ -17,7 +17,8 @@ type Props = {
   onClose: (how: "unpublish" | "restrict") => Promise<boolean>;
   onDuplicate: () => Promise<void>;
   onDelete: () => Promise<void>;
-  goTo: (tab: "outline" | "details") => void;
+  /** Opens the tab and puts the cursor on the field to fix (a `data-fix` name). */
+  goTo: (tab: "outline" | "details", fix?: string) => void;
   /** Owner and admins: who looks after the sermon. */
   ownerSection?: ReactNode;
 };
@@ -53,16 +54,17 @@ export function SharePanel({ t, row, blockers, changedSincePublish, onPublish, o
     }
   }
 
+  // What to do, where it is, and the field Fix this puts the cursor on.
   const blockerText = (b: Blocker) =>
     b === "needs_title"
-      ? { text: t("Give the sermon a title."), tab: "details" as const }
+      ? { text: t("Give the sermon a title."), where: t("Details › Title"), tab: "details" as const, fix: "title" }
       : b === "empty_outline"
-        ? { text: t("Add something to the outline."), tab: "outline" as const }
+        ? { text: t("Add something to the outline."), where: t("Outline"), tab: "outline" as const, fix: "add" }
         : b === "needs_cover_alt"
-          ? { text: t("Describe the cover picture, or mark it as decorative."), tab: "details" as const }
+          ? { text: t("Describe the cover picture, or mark it as decorative."), where: t("Details › Cover"), tab: "details" as const, fix: "cover-alt" }
           : b === "review_open"
-            ? { text: t("Finish checking the import."), tab: "outline" as const }
-            : { text: t("Fix the outline items marked in red."), tab: "outline" as const };
+            ? { text: t("Finish checking the import: keep, fix or remove each item it found."), where: t("Outline › Check the import"), tab: "outline" as const, fix: "review" }
+            : { text: t("Fix the outline items marked in red."), where: t("Outline"), tab: "outline" as const, fix: "invalid" };
 
   return (
     <div>
@@ -77,16 +79,22 @@ export function SharePanel({ t, row, blockers, changedSincePublish, onPublish, o
           </button>
         </p>
         {blocking.length ? (
-          <div className="mt-4">
-            <p className="font-medium">{t("Before publishing:")}</p>
-            <ul className="mt-2 space-y-1">
+          <div id="publish-blockers" data-testid="publish-blockers" className="mt-4 rounded-2xl border-2 border-copper bg-surface-2 p-4">
+            <p className="font-semibold">
+              {blocking.length === 1 ? t("Publish is off until you finish this:") : t("Publish is off until you finish these {count} things:", { count: blocking.length })}
+            </p>
+            <ul className="mt-3 space-y-3">
               {blocking.map((b) => {
-                const { text, tab } = blockerText(b);
+                const { text, where, tab, fix } = blockerText(b);
                 return (
-                  <li key={b}>
-                    <button type="button" className="text-left text-accent underline underline-offset-4" onClick={() => goTo(tab)}>
-                      {text}
-                    </button>
+                  <li key={b} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+                    <span className="min-w-0">
+                      <span className="block font-medium">{text}</span>
+                      <span className="block text-sm text-muted">{where}</span>
+                    </span>
+                    <Button onClick={() => goTo(tab, fix)} className="min-h-10 px-4 text-sm">
+                      {t("Fix this")}
+                    </Button>
                   </li>
                 );
               })}
@@ -96,6 +104,7 @@ export function SharePanel({ t, row, blockers, changedSincePublish, onPublish, o
         <div className="mt-4">
           <Button
             primary
+            aria-describedby={blocking.length ? "publish-blockers" : undefined}
             disabled={busy || blockers.length > 0 || (published && !changedSincePublish)}
             onClick={() =>
               run(async () => {

@@ -172,6 +172,7 @@ export function OutlineEditor({
             <li
               key={block.id}
               data-block={block.id}
+              data-fix={blockProblems.length ? "invalid" : undefined}
               className={`relative rounded-3xl border bg-surface p-4 transition-opacity duration-150 ${blockProblems.length ? "border-[#9b2c1f] dark:border-[#ffb4a6]" : "border-border"} ${drag?.from === i ? "opacity-50" : ""}`}
             >
               {lands(i) ? <DropLine edge="top" /> : null}
@@ -293,7 +294,7 @@ export function OutlineEditor({
       {blocks.length === 0 && !importing ? (
         <p className="mt-6 text-muted">{t("The outline is empty.")}</p>
       ) : null}
-      <div className="mt-6">
+      <div className="mt-6" data-fix="add">
         <AddMenu
           t={t}
           kinds={KINDS}
@@ -303,7 +304,7 @@ export function OutlineEditor({
         />
       </div>
       {problems.some((p) => !p.blockId) ? (
-        <p className="mt-4 font-medium text-[#9b2c1f] dark:text-[#ffb4a6]">
+        <p data-fix="invalid" tabIndex={-1} className="mt-4 font-medium text-[#9b2c1f] dark:text-[#ffb4a6]">
           {t(
             "The outline is longer than Versely can publish (400 items, 200,000 characters).",
           )}

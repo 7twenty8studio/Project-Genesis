@@ -20,7 +20,7 @@ export function ReviewList({ t, review, blocks, language, onBlocks, onReview }: 
   const open = items.filter((i) => !(i.kind === "note" && i.note.count === 0) && !review.decisions[i.key]);
 
   return (
-    <section aria-labelledby="review-title" className="mt-6 rounded-3xl border-2 border-accent bg-surface p-5">
+    <section aria-labelledby="review-title" data-fix="review" tabIndex={-1} className="mt-6 rounded-3xl border-2 border-accent bg-surface p-5">
       <h2 id="review-title" className="text-lg font-semibold">
         {t("Check the import")}
       </h2>
