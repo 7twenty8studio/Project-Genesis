@@ -25,18 +25,21 @@ export function Notice({ children, tone = "alert" }: { children: ReactNode; tone
   );
 }
 
-export function Field({ label, hint, children, id }: { label: string; hint?: string; children: ReactNode; id: string }) {
+/** A labelled field. `hintBelow` puts the hint under the box, so boxes side by side line up. */
+export function Field({ label, hint, hintBelow, children, id }: { label: string; hint?: string; hintBelow?: boolean; children: ReactNode; id: string }) {
+  const hintText = hint ? (
+    <p id={`${id}-hint`} className={`${hintBelow ? "mt-2" : "mt-1"} text-sm text-muted`}>
+      {hint}
+    </p>
+  ) : null;
   return (
     <div className="mt-5">
       <label htmlFor={id} className="block font-medium">
         {label}
       </label>
-      {hint ? (
-        <p id={`${id}-hint`} className="mt-1 text-sm text-muted">
-          {hint}
-        </p>
-      ) : null}
+      {hintBelow ? null : hintText}
       <div className="mt-2">{children}</div>
+      {hintBelow ? hintText : null}
     </div>
   );
 }

@@ -126,12 +126,34 @@ async function noSideScroll(page, label) {
     await page.waitForSelector("text=Check the import");
     await axe(page, "studio outline + review");
     await page.screenshot({ path: `${OUT}/studio-outline.png`, fullPage: true });
+    // Drag and drop: the first card dragged by its grip below the second, then moved back with its arrow.
+    {
+      const order = () => page.locator("ol[aria-label='Outline'] > li").evaluateAll((cards) => cards.map((c) => c.dataset.block));
+      const before = await order();
+      const grip = await page.locator(`[data-drag-handle='${before[0]}']`).boundingBox();
+      const second = await page.locator(`li[data-block='${before[1]}']`).boundingBox();
+      await page.mouse.move(grip.x + grip.width / 2, grip.y + grip.height / 2);
+      await page.mouse.down();
+      await page.mouse.move(grip.x + grip.width / 2, second.y + second.height - 4, { steps: 12 });
+      await page.mouse.up();
+      const after = await order();
+      if (after[0] !== before[1] || after[1] !== before[0]) problems.push("drag and drop didn't move the card: " + JSON.stringify(after.slice(0, 2)));
+      else await page.locator(`#move-up-${before[0]}`).click();
+      if (JSON.stringify(await order()) !== JSON.stringify(before)) problems.push("the outline didn't go back after Move up");
+    }
     // Publish must wait for the review.
     await page.getByRole("tab", { name: "Publish" }).click();
     const publish = page.getByRole("button", { name: "Publish", exact: true });
     if (!(await publish.isDisabled())) problems.push("publish enabled before title and review");
     await page.getByRole("tab", { name: "Details" }).click();
     await page.getByLabel("Title").fill("Rest for the Weary");
+    // Date and Series sit side by side with their boxes level (the series hint goes under its box).
+    {
+      const date = await page.getByLabel("Date", { exact: true }).boundingBox();
+      const series = await page.getByLabel("Series (optional)").boundingBox();
+      if (date && series && Math.abs(date.y - series.y) > 1 && Math.abs(date.x - series.x) > 1) problems.push(`date and series boxes not level: ${date.y} vs ${series.y}`);
+      await page.screenshot({ path: `${OUT}/studio-details.png`, fullPage: true });
+    }
     await page.getByRole("tab", { name: "Outline" }).click();
     // The review is saved with the draft: a fresh page (another computer) still has it, and Publish still waits.
     await page.waitForSelector("text=All changes saved", { timeout: 8000 });
