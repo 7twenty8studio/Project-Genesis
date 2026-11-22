@@ -12,6 +12,7 @@ import { RpcError, rpc } from "@/lib/supabase";
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: "Giveaway host", robots: { index: false, follow: false } };
 
+<<<<<<< HEAD
 type Props = { searchParams: Promise<{ signin?: string; scene?: string }> };
 const SCENES = ["volunteer", "raffle", "timer"] as const;
 
@@ -25,6 +26,15 @@ export default async function LaunchHost({ searchParams }: Props) {
   const t = translator(lang);
   const { signin, scene } = await searchParams;
   const fixed = SCENES.find((value) => value === scene);
+=======
+type Props = { searchParams: Promise<{ signin?: string }> };
+
+/** The projector page: the live draw and the game timer. Only Versely's ops admins (the database checks). */
+export default async function LaunchHost({ searchParams }: Props) {
+  const lang = await requestLang();
+  const t = translator(lang);
+  const { signin } = await searchParams;
+>>>>>>> origin/claude/project-thread-sl5502
   const session = await currentSession();
 
   let board: Board | null = null;
@@ -37,7 +47,11 @@ export default async function LaunchHost({ searchParams }: Props) {
     }
   }
 
+<<<<<<< HEAD
   if (board) return <HostBoard lang={lang} initial={board} entryLink={`${config.siteUrl}/launch`} scene={fixed} />;
+=======
+  if (board) return <HostBoard lang={lang} initial={board} entryLink={`${config.siteUrl}/launch`} />;
+>>>>>>> origin/claude/project-thread-sl5502
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-hero to-background">
