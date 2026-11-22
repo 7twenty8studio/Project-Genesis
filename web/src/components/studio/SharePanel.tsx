@@ -1,7 +1,7 @@
 "use client";
 
 import QRCode from "qrcode";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { config } from "@/config";
 import type { DraftRow } from "@/lib/draft";
 import type { Translate } from "@/lib/i18n";
@@ -18,10 +18,12 @@ type Props = {
   onDuplicate: () => Promise<void>;
   onDelete: () => Promise<void>;
   goTo: (tab: "outline" | "details") => void;
+  /** Owner and admins: who looks after the sermon. */
+  ownerSection?: ReactNode;
 };
 
 /** Publish, the link and its QR code, and the closing actions (each takes effect at once). */
-export function SharePanel({ t, row, blockers, changedSincePublish, onPublish, onClose, onDuplicate, onDelete, goTo }: Props) {
+export function SharePanel({ t, row, blockers, changedSincePublish, onPublish, onClose, onDuplicate, onDelete, goTo, ownerSection }: Props) {
   const link = `${config.siteUrl}/s/${row.slug}`;
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState<string | null>(null);
@@ -147,6 +149,8 @@ export function SharePanel({ t, row, blockers, changedSincePublish, onPublish, o
           </div>
         ) : null}
       </section>
+
+      {ownerSection}
 
       <section aria-labelledby="manage-title" className="mt-6 rounded-3xl border border-border bg-surface p-5">
         <h2 id="manage-title" className="text-lg font-semibold">

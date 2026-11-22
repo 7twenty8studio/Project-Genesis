@@ -442,6 +442,49 @@ async function noSideScroll(page, label) {
     await guest.close();
     await ctx.close();
   }
+  // Roles (owner, admin, preacher, member): the owner's People list, then a preacher's own view and stepping down.
+  {
+    const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+    await ctx.addCookies([{ name: "vs_session", value: session, url: BASE }]);
+    const page = await ctx.newPage();
+    await page.goto(`${BASE}/studio`);
+    if (!(await page.getByTestId("your-role").innerText()).includes("Owner")) problems.push("roles: the owner's role isn't shown");
+    const peopleList = page.getByTestId("church-people");
+    await peopleList.waitFor({ timeout: 8000 }).catch(() => problems.push("roles: no People section for the owner"));
+    await page.getByLabel("Role for Dan").selectOption("preacher");
+    await page.getByText("Dan is now Preacher.").waitFor({ timeout: 8000 }).catch(() => problems.push("roles: Dan wasn't made a preacher"));
+    await page.getByLabel("Role for Dan").selectOption("member");
+    await page.getByText("Dan is now Member.").waitFor({ timeout: 8000 }).catch(() => problems.push("roles: Dan wasn't made a member again"));
+    await axe(page, "church people");
+    await peopleList.screenshot({ path: `${OUT}/church-people.png` });
+    // The editor says who started it and lets the owner hand it over.
+    await page.goto(`${BASE}/studio/33333333-3333-4333-8333-333333333333`);
+    if (!(await page.getByTestId("sermon-who").count())) problems.push("roles: the editor doesn't say who started the sermon");
+    await page.getByRole("tab", { name: "Publish" }).click();
+    const owner = page.getByTestId("sermon-owner");
+    if (!(await owner.count())) problems.push("roles: no hand-over section for the owner");
+    else await owner.screenshot({ path: `${OUT}/sermon-owner.png` });
+    await ctx.close();
+
+    const preacherSession = encodeURIComponent(JSON.stringify({ a: "preacher-token", r: "r", e: Date.now() + 86400000, u: "00000000-0000-4000-8000-0000000000a3", n: "Cara" }));
+    const pctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+    await pctx.addCookies([{ name: "vs_session", value: preacherSession, url: BASE }]);
+    const p = await pctx.newPage();
+    await p.goto(`${BASE}/studio`);
+    if (!(await p.getByTestId("your-role").innerText()).includes("Preacher")) problems.push("preacher: role line missing");
+    if (await p.getByTestId("church-people").count()) problems.push("preacher: sees People");
+    if (await p.getByRole("button", { name: "Save locations" }).count()) problems.push("preacher: sees Locations and Times");
+    if (await p.getByRole("button", { name: "New Code" }).count()) problems.push("preacher: can make a new invite code");
+    if (!(await p.getByTestId("invite-code").count())) problems.push("preacher: can't see the invite code");
+    if (!(await p.getByText("View only").count())) problems.push("preacher: others' published sermons aren't marked View only");
+    await axe(p, "preacher studio");
+    await noSideScroll(p, "preacher studio");
+    await p.screenshot({ path: `${OUT}/studio-preacher.png`, fullPage: true });
+    await p.getByRole("button", { name: "Step down as preacher" }).click();
+    await p.getByRole("button", { name: "Stop being a preacher" }).click();
+    await p.waitForURL(/\/studio$/, { timeout: 8000 }).catch(() => problems.push("preacher: step down didn't go back to Studio"));
+    await pctx.close();
+  }
   await browser.close();
   console.log(problems.length ? "PROBLEMS:\n" + problems.join("\n") : "no problems");
   if (problems.length) process.exitCode = 1;

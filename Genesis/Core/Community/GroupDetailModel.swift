@@ -40,7 +40,7 @@ final class GroupDetailModel {
 
     /// What the signed-in person may do to other members.
     var permissions: GroupPermissions {
-        GroupPermissions(me: store.userID, ownerID: group?.ownerID, myRole: group?.role)
+        GroupPermissions(me: store.userID, ownerID: group?.ownerID, myRole: group?.role, isChurch: group?.isChurch ?? false)
     }
 
     /// When the signed-in person's mute ends, while they're muted.
@@ -299,6 +299,16 @@ final class GroupDetailModel {
     func setRole(_ role: GroupRole, for member: GroupMember) async {
         await run {
             try await backend.setRole(role, for: member.userID, in: groupID)
+            members = try await backend.members(of: groupID)
+        }
+        await store.refresh()
+    }
+
+    /// Makes someone a church's admin, preacher or member (or steps the
+    /// signed-in preacher down).
+    func setChurchRole(_ role: ChurchMemberRole, for member: GroupMember) async {
+        await run {
+            try await backend.setChurchRole(role, for: member.userID, in: groupID)
             members = try await backend.members(of: groupID)
         }
         await store.refresh()

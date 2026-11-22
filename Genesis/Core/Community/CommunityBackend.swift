@@ -30,6 +30,9 @@ protocol CommunityBackend: Sendable {
     func deleteGroup(_ group: UUID) async throws
     func members(of group: UUID) async throws -> [GroupMember]
     func setRole(_ role: GroupRole, for user: UUID, in group: UUID) async throws
+    /// A church role (set_church_role): the owner sets admins, the owner and
+    /// admins set preachers, and a preacher can step down to member.
+    func setChurchRole(_ role: ChurchMemberRole, for user: UUID, in group: UUID) async throws
     func removeMember(_ user: UUID, from group: UUID) async throws
     func setNotifications(_ on: Bool, for group: UUID) async throws
     func progress(in group: UUID, day: Int) async throws -> [GroupProgress]
@@ -235,14 +238,16 @@ final class SupabaseCommunityBackend: CommunityBackend {
                 let deleted_at: String?
                 let owner_id: UUID?
                 let requires_approval: Bool?
+                let sermons_enabled: Bool?
             }
             let role: GroupRole
             let notifications: Bool
+            let preacher: Bool?
             let group: Group?
         }
         let userID = try await me()
         let rows: [Row] = try await get("group_members", [
-            "select": "role,notifications,group:groups(id,name,description,invite_code,plan_id,plan_title,plan_books,plan_days,plan_start,deleted_at,owner_id,requires_approval)",
+            "select": "role,notifications,preacher,group:groups(id,name,description,invite_code,plan_id,plan_title,plan_books,plan_days,plan_start,deleted_at,owner_id,requires_approval,sermons_enabled)",
             "user_id": "eq.\(userID.uuidString.lowercased())",
         ])
         return rows.compactMap { row in
@@ -251,7 +256,8 @@ final class SupabaseCommunityBackend: CommunityBackend {
                 id: group.id, name: group.name, description: group.description, inviteCode: group.invite_code,
                 planID: group.plan_id, planTitle: group.plan_title, planBooks: group.plan_books, planDays: group.plan_days,
                 planStart: group.plan_start.flatMap { Timestamp.day(from: $0) }, role: row.role, notifications: row.notifications,
-                ownerID: group.owner_id, isOwner: group.owner_id == userID, requiresApproval: group.requires_approval ?? false
+                ownerID: group.owner_id, isOwner: group.owner_id == userID, requiresApproval: group.requires_approval ?? false,
+                isChurch: group.sermons_enabled ?? false, isPreacher: row.preacher ?? false
             )
         }
         .sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
@@ -311,7 +317,7 @@ final class SupabaseCommunityBackend: CommunityBackend {
 
     func members(of group: UUID) async throws -> [GroupMember] {
         try await get("group_members", [
-            "select": "group_id,user_id,role,display_name,joined_at,muted_until",
+            "select": "group_id,user_id,role,display_name,joined_at,muted_until,preacher",
             "group_id": "eq.\(group.uuidString.lowercased())",
             "order": "joined_at.asc",
         ])
@@ -319,6 +325,10 @@ final class SupabaseCommunityBackend: CommunityBackend {
 
     func setRole(_ role: GroupRole, for user: UUID, in group: UUID) async throws {
         try await rpc("set_member_role", ["p_group": .string(group.uuidString.lowercased()), "p_user": .string(user.uuidString.lowercased()), "p_role": .string(role.rawValue)])
+    }
+
+    func setChurchRole(_ role: ChurchMemberRole, for user: UUID, in group: UUID) async throws {
+        try await rpc("set_church_role", ["p_group": .string(group.uuidString.lowercased()), "p_user": .string(user.uuidString.lowercased()), "p_role": .string(role.rawValue)])
     }
 
     func removeMember(_ user: UUID, from group: UUID) async throws {

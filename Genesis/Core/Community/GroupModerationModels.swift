@@ -6,18 +6,36 @@ import Foundation
 // Every group has one owner (groups.owner_id). Moderators are members whose
 // role is 'leader' (the owner's role is 'leader' too), so `GroupRole.leader`
 // means "moderator or owner" and is shown as Moderator.
+//
+// In a church (a group with sermons on, 20261126000000_church_preachers.sql)
+// moderators are called Admins, and a member can be a Preacher
+// (group_members.preacher): they write and publish the sermons they start
+// in Church Studio. The owner chooses admins; the owner and admins choose
+// preachers; a preacher can step down (set_church_role).
 
 /// How someone stands in a group, as people see it.
 enum GroupStanding: Sendable, Hashable {
-    case owner, moderator, member
+    case owner, moderator, preacher, member
 
-    var title: String {
+    /// The name of the role; a church calls its moderators Admins.
+    func title(inChurch: Bool) -> String {
         switch self {
         case .owner: String(localized: "Owner", comment: "Group role: the one person who owns a group")
-        case .moderator: String(localized: "Moderator", comment: "Group role: helps run a group")
+        case .moderator:
+            inChurch
+                ? String(localized: "Admin", comment: "Church role: runs the church with its owner (a group's moderator)")
+                : String(localized: "Moderator", comment: "Group role: helps run a group")
+        case .preacher: String(localized: "Preacher", comment: "Church role: writes and publishes their own sermons")
         case .member: String(localized: "Member", comment: "Group role: an ordinary member")
         }
     }
+
+    var title: String { title(inChurch: false) }
+}
+
+/// A role in a church that set_church_role sets.
+enum ChurchMemberRole: String, Sendable, Hashable {
+    case admin, preacher, member
 }
 
 /// What the signed-in person may do to others in a group. Mirrors the
@@ -27,15 +45,18 @@ struct GroupPermissions: Sendable, Hashable {
     let me: UUID?
     let ownerID: UUID?
     let myRole: GroupRole?
+    /// A church (sermons on): Admins and Preachers.
+    let isChurch: Bool
 
-    init(me: UUID?, ownerID: UUID?, myRole: GroupRole?) {
+    init(me: UUID?, ownerID: UUID?, myRole: GroupRole?, isChurch: Bool = false) {
         self.me = me
         self.ownerID = ownerID
         self.myRole = myRole
+        self.isChurch = isChurch
     }
 
     init(group: GroupSummary, me: UUID?) {
-        self.init(me: me, ownerID: group.ownerID, myRole: group.role)
+        self.init(me: me, ownerID: group.ownerID, myRole: group.role, isChurch: group.isChurch)
     }
 
     var isOwner: Bool { me != nil && ownerID == me }
@@ -44,7 +65,21 @@ struct GroupPermissions: Sendable, Hashable {
 
     func standing(of member: GroupMember) -> GroupStanding {
         if let ownerID, member.userID == ownerID { return .owner }
-        return member.role == .leader ? .moderator : .member
+        if member.role == .leader { return .moderator }
+        return isChurch && member.isPreacher ? .preacher : .member
+    }
+
+    /// Make or remove a preacher (a church's owner and admins, for members
+    /// who aren't admins; never themselves, never the owner).
+    func canChoosePreacher(of member: GroupMember) -> Bool {
+        guard isChurch, let me, member.userID != me, isModerator, member.role == .member else { return false }
+        return ownerID != member.userID
+    }
+
+    /// A preacher stepping down to member.
+    func canStepDown(_ member: GroupMember) -> Bool {
+        guard isChurch, let me, member.userID == me else { return false }
+        return member.role == .member && member.isPreacher
     }
 
     /// Mute, remove and ban.

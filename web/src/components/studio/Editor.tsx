@@ -1,5 +1,6 @@
 "use client";
 
+import type { ChurchPerson } from "@/lib/studio.server";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { closeSermon, deleteSermon, duplicateSermon, publishSermon, saveSermon, uploadSermonCover } from "@/app/studio/actions";
@@ -10,6 +11,7 @@ import { afterClose, publishBlockers, refusalMessage } from "@/lib/studio";
 import { DetailsForm } from "./DetailsForm";
 import { OutlineEditor } from "./OutlineEditor";
 import { Preview } from "./Preview";
+import { SermonOwner } from "./SermonOwner";
 import { SharePanel } from "./SharePanel";
 import { StatusBadge } from "./StatusBadge";
 import { Notice } from "./ui";
@@ -41,7 +43,18 @@ function detailsOf(row: DraftRow): Partial<DraftDetails> & { cover: string | nul
  * by themselves a moment after typing stops, always against the version
  * this page loaded, so two editors never overwrite each other.
  */
-export function Editor({ lang, initial, church }: { lang: Lang; initial: DraftRow & { published_draft_version: number | null }; church: string }) {
+export function Editor({
+  lang,
+  initial,
+  church,
+  who,
+}: {
+  lang: Lang;
+  initial: DraftRow & { published_draft_version: number | null };
+  church: string;
+  /** Who started and last edited it, and (owner and admins) the people it can be handed to. */
+  who?: { startedBy: string | null; editedBy: string | null; createdBy: string | null; writers: ChurchPerson[] | null };
+}) {
   const t = translator(lang);
   const [row, setRow] = useState<DraftRow>(initial);
   const [tab, setTab] = useState<Tab>("outline");
@@ -281,6 +294,16 @@ export function Editor({ lang, initial, church }: { lang: Lang; initial: DraftRo
             {church}
           </Link>
           <h1 className="mt-1 min-w-0 text-3xl font-semibold tracking-tight">{row.title || t("Untitled sermon")}</h1>
+          {who && (who.startedBy || who.editedBy) ? (
+            <p className="mt-1 text-sm text-muted" data-testid="sermon-who">
+              {[
+                who.startedBy ? t("Started by {name}", { name: who.startedBy }) : null,
+                who.editedBy ? t("Last edited by {name}", { name: who.editedBy }) : null,
+              ]
+                .filter(Boolean)
+                .join(" · ")}
+            </p>
+          ) : null}
         </div>
         <div className="flex items-center gap-3">
           <span className="inline-flex items-center gap-2 text-sm text-muted" role="status" aria-live="polite">
@@ -368,6 +391,7 @@ export function Editor({ lang, initial, church }: { lang: Lang; initial: DraftRo
               onDuplicate={duplicate}
               onDelete={remove}
               goTo={(name) => setTab(name)}
+              ownerSection={who?.writers ? <SermonOwner t={t} sermon={row.id} createdBy={who.createdBy} writers={who.writers} /> : undefined}
             />
           ) : null}
         </div>

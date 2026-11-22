@@ -44,6 +44,11 @@ struct GroupSummary: Identifiable, Hashable, Sendable {
     var isOwner: Bool = false
     /// New members ask to join and a moderator lets them in.
     var requiresApproval: Bool = false
+    /// A church: sermons are on (groups.sermons_enabled), so moderators are
+    /// called Admins and members can be Preachers.
+    var isChurch: Bool = false
+    /// The signed-in person is one of the church's preachers.
+    var isPreacher: Bool = false
 
     /// A moderator or the owner: edits the group, its invite code and
     /// announcements, and moderates.
@@ -51,7 +56,9 @@ struct GroupSummary: Identifiable, Hashable, Sendable {
 
     /// How the signed-in person stands in the group.
     var standing: GroupStanding {
-        isOwner ? .owner : (role == .leader ? .moderator : .member)
+        if isOwner { return .owner }
+        if role == .leader { return .moderator }
+        return isChurch && isPreacher ? .preacher : .member
     }
 
     /// The group's reading plan, if it has one.
@@ -96,8 +103,11 @@ struct GroupMember: Identifiable, Codable, Hashable, Sendable {
     let joinedAt: Date
     /// Muted members can't post or share prayer requests until then.
     var mutedUntil: Date? = nil
+    /// A church's preacher (group_members.preacher); nil from rows that don't say.
+    var preacher: Bool? = nil
 
     var id: UUID { userID }
+    var isPreacher: Bool { preacher == true }
 
     func isMuted(at date: Date = .now) -> Bool {
         guard let mutedUntil else { return false }
@@ -111,6 +121,7 @@ struct GroupMember: Identifiable, Codable, Hashable, Sendable {
         case displayName = "display_name"
         case joinedAt = "joined_at"
         case mutedUntil = "muted_until"
+        case preacher
     }
 }
 

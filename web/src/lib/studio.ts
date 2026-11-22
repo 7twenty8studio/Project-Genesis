@@ -93,7 +93,7 @@ export function refusalMessage(code: string): string {
     case "invalid_details":
       return "One of the details is too long or not valid.";
     case "not_allowed":
-      return "You can't edit this church's sermons. Only its owner and moderators can, while sermons are on for the church.";
+      return "You can't do that here. A church's owner and admins look after every sermon and setting, and a preacher looks after the sermons they started.";
     case "not_found":
       return "This sermon no longer exists.";
     case "invalid_group":
@@ -107,7 +107,13 @@ export function refusalMessage(code: string): string {
     case "too_many_groups":
       return "You've reached the limit of 20 groups. Delete one in Versely to start another.";
     case "leaders_only":
-      return "Only the church's owner and moderators can make a new code.";
+      return "Only the church's owner and admins can make a new code.";
+    case "invalid_role":
+      return "That role isn't one Church Studio knows. Choose Admin, Preacher or Member.";
+    case "owner_role_fixed":
+      return "The owner's role can't change. To step back, hand the church to someone else in the Versely app first.";
+    case "not_a_writer":
+      return "Hand sermons only to the church's preachers and admins.";
     case "not_signed_in":
       return "Your sign-in has ended. Sign in again.";
     default:
