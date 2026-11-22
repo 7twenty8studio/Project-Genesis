@@ -32,8 +32,8 @@ export function DetailsForm({ t, row, onChange, onCover }: Props) {
 
   return (
     <div>
-      <Field id={`${id}-title`} label={t("Title")}>
-        <input {...text("title", 200)} required aria-required="true" />
+      <Field id={`${id}-title`} label={t("Title")} hint={t("Needed to publish.")}>
+        <input {...text("title", 200)} data-fix="title" aria-describedby={`${id}-title-hint`} required aria-required="true" aria-invalid={row.title.trim() === "" ? true : undefined} />
       </Field>
       <Field id={`${id}-speaker`} label={t("Speaker")}>
         <input {...text("speaker", 120)} autoComplete="name" />
@@ -110,6 +110,7 @@ export function DetailsForm({ t, row, onChange, onCover }: Props) {
             <Field id={`${id}-alt`} label={t("Describe the picture")} hint={t("Read aloud to people who can't see it. For example: “Sunrise over a field of wheat.”")}>
               <textarea
                 id={`${id}-alt`}
+                data-fix="cover-alt"
                 aria-describedby={`${id}-alt-hint`}
                 className={inputClass}
                 rows={2}

@@ -19,6 +19,19 @@ import { Notice } from "./ui";
 export type Review = DraftReview;
 type SaveState = "saved" | "unsaved" | "saving" | "error" | "conflict" | "invalid";
 const TABS = ["outline", "details", "share"] as const;
+
+/** Publish's "Fix this": shows the field (a `data-fix` name), puts the cursor in it and outlines it for a moment. */
+function showFix(name: string) {
+  const target = document.querySelector<HTMLElement>(`[data-fix="${name}"]`);
+  if (!target) return;
+  const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  target.scrollIntoView({ block: "center", behavior: still ? "auto" : "smooth" });
+  const field = target.matches("input, textarea, select, button, [tabindex]") ? target : target.querySelector<HTMLElement>("input, textarea, select, button");
+  field?.focus({ preventScroll: true });
+  const ring = ["ring-4", "ring-copper", "ring-offset-2", "ring-offset-background"];
+  target.classList.add(...ring);
+  window.setTimeout(() => target.classList.remove(...ring), 2400);
+}
 type Tab = (typeof TABS)[number];
 
 function detailsOf(row: DraftRow): Partial<DraftDetails> & { cover: string | null } {
@@ -280,6 +293,8 @@ export function Editor({
 
   const saving = state === "saving" || state === "unsaved";
   const blockers = publishBlockers(row, review, saving);
+  const toFinish = blockers.filter((b) => b !== "saving").length;
+  const toFinishText = toFinish === 1 ? t("1 thing to finish first") : t("{count} things to finish first", { count: toFinish });
   const changedSincePublish = row.status === "published" && (shown.published !== shown.current || state !== "saved");
 
   const status =
@@ -363,6 +378,12 @@ export function Editor({
                 className={`min-h-11 flex-1 whitespace-nowrap rounded-full px-4 text-left font-medium transition-colors lg:flex-none lg:rounded-xl ${tab === name ? "bg-surface text-foreground shadow-sm lg:bg-surface-2 lg:shadow-none" : "text-muted hover:text-foreground lg:hover:bg-surface-2/60"}`}
               >
                 {label(name)}
+                {name === "share" && toFinish ? (
+                  <span className="ml-2 inline-flex min-w-6 items-center justify-center rounded-full bg-copper px-1.5 text-sm font-semibold text-[#2d1d10]">
+                    <span aria-hidden="true">{toFinish}</span>
+                    <span className="sr-only">{toFinishText}</span>
+                  </span>
+                ) : null}
               </button>
             ))}
           </div>
@@ -372,9 +393,10 @@ export function Editor({
               onClick={() => setTab("share")}
               className="mt-4 hidden min-h-11 w-full items-center justify-center rounded-full bg-accent-strong px-4 font-semibold text-on-accent transition-opacity hover:opacity-90 lg:inline-flex"
             >
-              {row.status === "published" ? t("Publish changes") : t("Ready to publish")}
+              {toFinish ? t("Publish") : row.status === "published" ? t("Publish changes") : t("Ready to publish")}
             </button>
           ) : null}
+          {tab !== "share" && toFinish ? <p className="mt-2 hidden text-center text-sm text-muted lg:block">{toFinishText}</p> : null}
         </div>
 
         <div role="tabpanel" id={`panel-${tab}`} aria-labelledby={`tab-${tab}`} className={`${view === "edit" ? "" : "hidden"} min-w-0 lg:block`}>
@@ -390,7 +412,12 @@ export function Editor({
               onClose={close}
               onDuplicate={duplicate}
               onDelete={remove}
-              goTo={(name) => setTab(name)}
+              goTo={(name, field) => {
+                setView("edit");
+                setTab(name);
+                // After the tab has rendered (click updates commit before the next frame).
+                if (field) requestAnimationFrame(() => requestAnimationFrame(() => showFix(field)));
+              }}
               ownerSection={who?.writers ? <SermonOwner t={t} sermon={row.id} createdBy={who.createdBy} writers={who.writers} /> : undefined}
             />
           ) : null}

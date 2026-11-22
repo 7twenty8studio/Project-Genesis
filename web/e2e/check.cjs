@@ -145,6 +145,15 @@ async function noSideScroll(page, label) {
     await page.getByRole("tab", { name: "Publish" }).click();
     const publish = page.getByRole("button", { name: "Publish", exact: true });
     if (!(await publish.isDisabled())) problems.push("publish enabled before title and review");
+    // It says why, and Fix this puts the cursor in the field.
+    const why = page.getByTestId("publish-blockers");
+    if (!/Publish is off until you finish/.test(await why.innerText().catch(() => ""))) problems.push("publish doesn't say why it's off");
+    const titleFix = why.locator("li", { hasText: "Give the sermon a title." }).getByRole("button", { name: "Fix this" });
+    if (await titleFix.count()) {
+      await titleFix.click();
+      await page.waitForTimeout(200);
+      if ((await page.evaluate(() => document.activeElement?.getAttribute("data-fix"))) !== "title") problems.push("Fix this didn't open the title");
+    } else problems.push("no Fix this for the missing title");
     await page.getByRole("tab", { name: "Details" }).click();
     await page.getByLabel("Title").fill("Rest for the Weary");
     // Date and Series sit side by side with their boxes level (the series hint goes under its box).
