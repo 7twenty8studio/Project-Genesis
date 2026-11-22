@@ -7,6 +7,7 @@ import { createSermon, reviewReports, setListed } from "@/app/studio/actions";
 import { translator, type Lang } from "@/lib/i18n";
 import { refusalMessage } from "@/lib/studio";
 import type { StudioChurch, StudioReport, StudioSermon } from "@/lib/studio.server";
+import { InviteMembers } from "./InviteMembers";
 import { LocationsEditor } from "./LocationsEditor";
 import { Button, Notice } from "./ui";
 import { StatusBadge } from "./StatusBadge";
@@ -17,10 +18,11 @@ type Props = {
   church: StudioChurch;
   sermons: (StudioSermon & { day: string | null })[];
   reports: StudioReport[];
+  invite: { invite_code: string; requires_approval: boolean } | null;
 };
 
 /** A church's sermons: drafts and published ones, newest first, with New Sermon. */
-export function ChurchHome({ lang, churches, church, sermons, reports }: Props) {
+export function ChurchHome({ lang, churches, church, sermons, reports, invite }: Props) {
   const t = translator(lang);
   const router = useRouter();
   const [pending, start] = useTransition();
@@ -142,6 +144,10 @@ export function ChurchHome({ lang, churches, church, sermons, reports }: Props) 
           </ul>
         )}
       </section>
+
+      {invite ? (
+        <InviteMembers key={`invite-${church.id}`} lang={lang} church={church.id} name={church.name} code={invite.invite_code} requiresApproval={invite.requires_approval} />
+      ) : null}
 
       <LocationsEditor key={church.id} lang={lang} church={church.id} initial={church.locations ?? []} />
 

@@ -45,6 +45,7 @@ function publishable(blocks) {
   });
 }
 let churchLocations = [];
+let inviteCode = "GRACE12345";
 function published(s) {
   return {
     status: "ok", id: s.id, slug: s.slug, group_id: GROUP, church: "Grace Church", title: s.title, speaker: s.speaker, series: s.series,
@@ -98,6 +99,7 @@ createServer(async (req, res) => {
     return covers.has(path) ? send(res, 200, covers.get(path), "image/jpeg") : send(res, 400, { error: "not found" });
   }
   if (p === "/rest/v1/profiles") return send(res, 200, []);
+  if (p === "/rest/v1/groups") return send(res, 200, signedIn(req) ? [{ invite_code: inviteCode, requires_approval: false }] : []);
   if (p === "/rest/v1/church_sermons") {
     if (!signedIn(req)) return send(res, 200, []);
     const id = (url.searchParams.get("id") ?? "").replace("eq.", "");
@@ -124,6 +126,9 @@ createServer(async (req, res) => {
           // A second church, so Studio shows its church picker.
           { id: "00000000-0000-4000-8000-00000000c4a2", name: "Hope Chapel Youth Ministry", role: "moderator", listed: false, locations: [] },
         ]);
+      case "new_invite_code":
+        inviteCode = "NEWCODE789";
+        return send(res, 200, inviteCode);
       case "set_church_locations": {
         // Mirrors genesis_clean_church_locations (20261125000000): parts, the one-line address worked out, gatherings.
         const tx = (v) => (v ?? "").trim();

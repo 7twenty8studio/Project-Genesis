@@ -57,6 +57,13 @@ export async function turnOnSermons(group: string): Promise<ActionResult> {
   redirect(`/studio?church=${group}`);
 }
 
+/** A new invite code for the church's group (owner and moderators; the old code stops working). */
+export async function newInviteCode(church: string): Promise<{ ok: true; code: string } | { ok: false; code: string }> {
+  if (!isID(church)) return { ok: false, code: "not_found" };
+  const result = await call<string>("new_invite_code", { p_group: church });
+  return result.ok ? { ok: true, code: result.value } : { ok: false, code: result.code };
+}
+
 export async function duplicateSermon(sermon: string): Promise<ActionResult> {
   if (!isID(sermon)) return { ok: false, code: "not_found" };
   const result = await call<{ id: string }>("duplicate_church_sermon", { p_sermon: sermon });
