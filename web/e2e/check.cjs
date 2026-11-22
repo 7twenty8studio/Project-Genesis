@@ -155,6 +155,9 @@ async function noSideScroll(page, label) {
       if ((await page.evaluate(() => document.activeElement?.getAttribute("data-fix"))) !== "title") problems.push("Fix this didn't open the title");
     } else problems.push("no Fix this for the missing title");
     await page.getByRole("tab", { name: "Details" }).click();
+    // The preview's long sermon (its hidden screen-reader text included) never stretches the page past the editor.
+    const extra = await page.evaluate(() => document.documentElement.scrollHeight - (document.querySelector("main").getBoundingClientRect().bottom + scrollY));
+    if (extra > 40) problems.push(`the page runs ${Math.round(extra)}px past the editor on Details`);
     await page.getByLabel("Title").fill("Rest for the Weary");
     // Date and Series sit side by side with their boxes level (the series hint goes under its box).
     {
