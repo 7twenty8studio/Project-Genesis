@@ -315,7 +315,7 @@ async function noSideScroll(page, label) {
     await ctx.close();
   }
 
-  // Starting a church: the name form, a group from the app, then the new church opens.
+  // Starting a church: the name form, a group from the app, then the new church's page opens (no empty draft).
   {
     const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
     await ctx.addCookies([{ name: "vs_session", value: session, url: BASE }]);
@@ -328,7 +328,7 @@ async function noSideScroll(page, label) {
     await page.getByLabel("Your name").fill("Pat");
     await page.screenshot({ path: `${OUT}/start-church.png`, fullPage: true });
     await page.getByRole("button", { name: "Create" }).click();
-    await page.waitForURL(/\/studio\/[0-9a-f-]{36}/, { timeout: 8000 }).catch(() => problems.push("start a church: didn't open its first draft"));
+    await page.waitForURL(/\/studio\?church=[0-9a-f-]{36}/, { timeout: 8000 }).catch(() => problems.push("start a church: didn't open the new church"));
     await ctx.close();
   }
 
