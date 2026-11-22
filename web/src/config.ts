@@ -20,4 +20,6 @@ export const config = {
   /** A published link sermon shown as "View a sample sermon" on the home page; "" hides the button. */
   sampleSermon: process.env.NEXT_PUBLIC_VERSELY_SAMPLE_SERMON ?? "6audf2zagi",
   appleWebSignIn: process.env.NEXT_PUBLIC_VERSELY_APPLE_WEB === "on",
+  /** The launch-day giveaway behind /launch (giveaway_events.slug, 20261127000000). */
+  giveawayEvent: process.env.NEXT_PUBLIC_VERSELY_GIVEAWAY ?? "launch-2026",
 };
