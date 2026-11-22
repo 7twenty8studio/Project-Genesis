@@ -27,7 +27,8 @@ TestFlight without the owner's go-ahead for each.
   `church_self_serve` switch is on (owner, 21 November 2026, for the proof
   of concept; migration 20261122000000), anyone signed in to Church Studio
   starts a church (`create_sermon_church`: a group they own, sermons on,
-  unlisted, at most three a day) or turns sermons on for a group they own
+  unlisted, at most three a day; Studio then opens the church's page, with
+  no sermon made for them) or turns sermons on for a group they own
   (`my_groups_for_sermons`, `set_church_sermons`, owner only). Off, only
   the dashboard sets it. Its owner and moderators (role
   `leader`) write; members read members-only sermons; anyone with the link
