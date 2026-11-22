@@ -143,3 +143,66 @@ html {
     transform: translateY(-4px) scale(0.98);
   }
 }
+
+/* Launch day (/launch): the golden ticket and the projector stage. Fixed
+   brand colours, whatever look is chosen, since they're printed and projected. */
+.golden-ticket {
+  position: relative;
+  color: #3a240f;
+  background: linear-gradient(135deg, #f6dcb4 0%, #e0b48d 38%, #c99466 62%, #f1d2a6 100%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 18px 40px -18px rgba(74, 44, 20, 0.55);
+}
+.golden-ticket::before,
+.golden-ticket::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  margin-top: -14px;
+  border-radius: 9999px;
+  background: var(--ticket-notch, var(--background));
+}
+.golden-ticket::before {
+  left: -14px;
+}
+.golden-ticket::after {
+  right: -14px;
+}
+.golden-ticket .sheen {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(110deg, transparent 35%, rgba(255, 248, 235, 0.55) 50%, transparent 65%);
+  background-size: 250% 100%;
+  animation: ticket-sheen 2.4s cubic-bezier(0.23, 1, 0.32, 1) 0.2s 1 both;
+  pointer-events: none;
+}
+@keyframes ticket-sheen {
+  from {
+    background-position: 120% 0;
+  }
+  to {
+    background-position: -40% 0;
+  }
+}
+
+.stage {
+  --ticket-notch: #3b2515;
+  color: #f9ebd7;
+  background: radial-gradient(120% 90% at 50% 0%, #5c3a20 0%, #3a2413 55%, #23150b 100%);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise-in {
+  animation: rise-in 0.45s cubic-bezier(0.23, 1, 0.32, 1) both;
+}

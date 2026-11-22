@@ -23,6 +23,8 @@ the 7twenty8 site. This version differs from older Next.js: read
 | `/auth/start`, `/auth/callback`, `/auth/signout` | Sign in with Apple or Google (Supabase PKCE) |
 | `/auth/password` | Sign in with the app's email and password, or send the reset email (form post) |
 | `/.well-known/apple-app-site-association` | Universal Links for `/s/*` |
+| `/launch` | Launch day giveaway entry (phones by QR; `?kiosk=1` on the lobby iPad clears itself for the next person) |
+| `/launch/host` | The projector page: live draw of volunteers and the final golden ticket, the game timer, a paper-ticket draw without internet (ops admins only; 20261127000000) |
 
 - No Supabase SDK and no secrets: the public anon key and the person's own
   token (src/config.ts); the database decides everything.

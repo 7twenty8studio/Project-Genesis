@@ -787,6 +787,18 @@ shares; README.md has the architecture.
   stand-in server mock.mjs; keep it passing when the guest page or Studio
   changes). The Universal Links file defaults to Team ID 4XTR53RY2V.
 
+## Launch day giveaway (28 November 2026)
+- web/ `/launch` (entry: first name, email, optional news; a number per
+  email, `giveaway_enter`, no account) and `/launch/host` (projector: draws
+  for volunteers and the final golden ticket picked by `giveaway_draw` in
+  the database, no-shows, open/close entries, the two-player game timer, an
+  offline draw from paper ticket numbers; the winner is shown by first name, and "Find a number" searches entries by name). "Forgot your number?" on /launch shows it again from the same email (`giveaway_find`, also after entries close). Host calls need an ops admin
+  (`genesis_is_ops_admin()`, public.ops_admins). Tables giveaway_events /
+  giveaway_entries / giveaway_draws (migration 20261127000000, RLS on, no
+  policies; emails never leave the database). Entry is free, no purchase or
+  download, never tied to reviews. Tests: supabase/tests/giveaway/run.sh,
+  web/src/lib/giveaway.test.ts.
+
 ## Journal extras (Premium)
 - `PremiumFeature.journalExtras`, checked with `EntitlementService.allows` at
   each entry point; core prayers and sermon notes stay free. Free accounts
