@@ -104,3 +104,13 @@ export function poolFor(board: Board, purpose: Purpose): number[] {
   const drawn = new Set(board.draws.filter((d) => d.purpose === purpose).map((d) => d.number));
   return board.entries.map((e) => e.number).filter((n) => !drawn.has(n));
 }
+
+const fold = (s: string) => s.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().trim();
+
+/** The host's "find a number" box: entries whose first name starts with what was typed (accents aside), or the number itself. */
+export function findEntries(entries: BoardEntry[], query: string, limit = 8): BoardEntry[] {
+  const q = fold(query).replace(/^#/, "");
+  if (!q) return [];
+  if (/^\d+$/.test(q)) return entries.filter((e) => e.number === Number(q)).slice(0, limit);
+  return entries.filter((e) => fold(e.name).split(" ").some((word) => word.startsWith(q)) || fold(e.name).startsWith(q)).slice(0, limit);
+}

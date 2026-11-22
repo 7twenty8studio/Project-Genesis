@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { drawFromRange, looksLikeEmail, poolFor, rollFrames, stopwatch, ticket, tidyEmail, tidyName, type Board } from "./giveaway.ts";
+import { drawFromRange, findEntries, looksLikeEmail, poolFor, rollFrames, stopwatch, ticket, tidyEmail, tidyName, type Board } from "./giveaway.ts";
 
 test("numbers read like the paper tickets", () => {
   assert.equal(ticket(7), "#007");
@@ -56,4 +56,18 @@ test("the timer shows minutes, seconds and tenths", () => {
   assert.equal(stopwatch(0), "0:00.0");
   assert.equal(stopwatch(67_340), "1:07.3");
   assert.equal(stopwatch(-5), "0:00.0");
+});
+
+test("the host finds a forgotten number by first name or number", () => {
+  const entries = [
+    { number: 1, name: "Ana María" },
+    { number: 2, name: "Ben" },
+    { number: 3, name: "Mariana" },
+    { number: 12, name: "José" },
+  ];
+  assert.deepEqual(findEntries(entries, "maria").map((e) => e.number), [1, 3]);
+  assert.deepEqual(findEntries(entries, "jose").map((e) => e.number), [12]);
+  assert.deepEqual(findEntries(entries, "#012").map((e) => e.number), [12]);
+  assert.deepEqual(findEntries(entries, "  "), []);
+  assert.deepEqual(findEntries(entries, "zed"), []);
 });

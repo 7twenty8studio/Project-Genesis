@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { BrandBar } from "@/components/Brand";
 import { EntryForm } from "@/components/launch/EntryForm";
+import { FindNumber } from "@/components/launch/FindNumber";
 import { config } from "@/config";
 import { translator } from "@/lib/i18n";
 import { requestLang } from "@/lib/prefs.server";
@@ -41,6 +42,11 @@ export default async function LaunchEntry({ searchParams }: Props) {
             </p>
           )}
         </div>
+        {status !== null && kiosk !== "1" ? (
+          <div className="mt-6">
+            <FindNumber lang={lang} startOpen={!open} />
+          </div>
+        ) : null}
         <p className="mt-10 text-sm leading-relaxed text-muted">
           {t("Free to enter, one entry per person. No purchase or download needed. You must be in the room when your number is drawn.")}
         </p>

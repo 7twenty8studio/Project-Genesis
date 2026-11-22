@@ -134,6 +134,22 @@ $$;
 revoke all on function public.giveaway_enter(text, text, text, boolean) from public;
 grant execute on function public.giveaway_enter(text, text, text, boolean) to anon, authenticated;
 
+-- "I forgot my number": the same email gives back its number and first name,
+-- even after entries close. Nothing else about the entry is returned.
+create or replace function public.giveaway_find(p_event text, p_email text)
+returns jsonb
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select jsonb_build_object('number', number, 'name', first_name)
+  from public.giveaway_entries
+  where event = p_event and email = lower(btrim(coalesce(p_email, '')));
+$$;
+revoke all on function public.giveaway_find(text, text) from public;
+grant execute on function public.giveaway_find(text, text) to anon, authenticated;
+
 -- The host page: every number with its first name (never the email) and
 -- every draw so far.
 create or replace function public.giveaway_board(p_event text)

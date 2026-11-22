@@ -52,6 +52,9 @@ select gt.check('bad purpose refused', gt.run('owner@example.com', $q$giveaway_d
 select gt.check('no-show marked', gt.run('owner@example.com', $q$giveaway_no_show((select max(id) from public.giveaway_draws))$q$) = 'true');
 select gt.check('owner closes entries', gt.run('owner@example.com', $q$giveaway_set_open('launch-2026', false)$q$) = 'false');
 select gt.check('closed refuses entries', gt.run('anon', $q$giveaway_enter('launch-2026', 'Di', 'di@example.com', false)$q$) like 'ERROR: closed%');
+select gt.check('forgotten number found after closing', gt.run('anon', $q$giveaway_find('launch-2026', ' ANA@example.com ')->>'number'$q$) = '1');
+select gt.check('find gives the first name only', gt.run('anon', $q$giveaway_find('launch-2026', 'ana@example.com')$q$) not like '%@%');
+select gt.check('unknown email finds nothing', coalesce(gt.run('anon', $q$giveaway_find('launch-2026', 'nobody@example.com')$q$), '') in ('', 'null'));
 select gt.check('anon cannot write tables', gt.run('anon', $q$(with x as (insert into public.giveaway_entries (event, number, first_name, email) values ('launch-2026', 50, 'X', 'x@example.com') returning 1) select count(*) from x)$q$) like 'ERROR:%');
 rollback;
 

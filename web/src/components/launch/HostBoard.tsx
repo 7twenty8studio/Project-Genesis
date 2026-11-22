@@ -4,7 +4,7 @@ import QRCode from "qrcode";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { drawNumber, loadBoard, markNoShow, setEntriesOpen } from "@/app/launch/actions";
 import { translator, type Lang } from "@/lib/i18n";
-import { drawFromRange, hostProblem, poolFor, rollFrames, stopwatch, ticket, type Board, type Purpose } from "@/lib/giveaway";
+import { drawFromRange, findEntries, hostProblem, poolFor, rollFrames, stopwatch, ticket, type Board, type Purpose } from "@/lib/giveaway";
 import { Confetti } from "./Confetti";
 
 type Mode = "volunteer" | "raffle" | "timer" | "offline";
@@ -193,6 +193,9 @@ export function HostBoard({ lang, initial, entryLink }: { lang: Lang; initial: B
     setFinished([null, null]);
   }, []);
 
+  const [lookup, setLookup] = useState("");
+  const matches = findEntries(board.entries, lookup);
+
   const best = finished[0] !== null && finished[1] !== null ? (finished[0] <= finished[1] ? 0 : 1) : null;
 
   // Keys, so the co-host can run it from the laptop without aiming.
@@ -252,8 +255,8 @@ export function HostBoard({ lang, initial, entryLink }: { lang: Lang; initial: B
   const winnerLine =
     shown?.landed && shown.name
       ? mode === "raffle"
-        ? t("{name} wins a free year of Versely Premium!", { name: shown.name })
-        : t("{name}, come on up!", { name: shown.name })
+        ? t("Wins a free year of Versely Premium!")
+        : t("Come on up!")
       : null;
 
   return (
@@ -266,7 +269,31 @@ export function HostBoard({ lang, initial, entryLink }: { lang: Lang; initial: B
           {tab("timer", t("Game timer"))}
           {tab("offline", t("Without internet"))}
         </nav>
-        <div className="flex items-center gap-3 text-sm text-[#e0b48d]">
+        <div className="flex flex-wrap items-center gap-3 text-sm text-[#e0b48d]">
+          <div className="relative">
+            <input
+              type="search"
+              value={lookup}
+              onChange={(e) => setLookup(e.target.value)}
+              placeholder={t("Find a number")}
+              aria-label={t("Find a number by first name")}
+              className="w-44 rounded-full border border-[#e0b48d]/40 bg-transparent px-3 py-1.5 text-[#f9ebd7] placeholder:text-[#e0b48d]/70 outline-none focus:border-[#e0b48d]"
+            />
+            {lookup.trim() ? (
+              <ul className="absolute right-0 top-full z-10 mt-2 w-64 rounded-2xl bg-[#2d1d10] p-2 text-left text-base shadow-xl" aria-live="polite">
+                {matches.length ? (
+                  matches.map((entry) => (
+                    <li key={entry.number} className="flex justify-between gap-3 rounded-xl px-3 py-1.5">
+                      <span className="truncate text-[#f9ebd7]">{entry.name}</span>
+                      <span className="tabular-nums">{ticket(entry.number)}</span>
+                    </li>
+                  ))
+                ) : (
+                  <li className="px-3 py-1.5">{t("No one by that name")}</li>
+                )}
+              </ul>
+            ) : null}
+          </div>
           <span data-testid="entry-count">{t("{count} entered", { count: board.entries.length })}</span>
           <button type="button" onClick={toggleOpen} className="rounded-full border border-[#e0b48d]/40 px-3 py-1.5 hover:bg-white/10">
             {board.open ? t("Close entries") : t("Open entries")}
@@ -335,10 +362,21 @@ export function HostBoard({ lang, initial, entryLink }: { lang: Lang; initial: B
               <div className={`golden-ticket w-full max-w-2xl rounded-[2rem] px-10 py-12 ${shown.landed ? "rise-in" : ""}`} aria-live="polite">
                 {shown.landed ? <span className="sheen" aria-hidden="true" /> : null}
                 <p className="text-sm font-semibold uppercase tracking-[0.3em]">{mode === "raffle" ? t("Golden ticket") : t("Number")}</p>
-                <p className="mt-2 text-[9rem] font-semibold leading-none tabular-nums tracking-tight" data-testid="drawn-number">
-                  {ticket(shown.number)}
-                </p>
-                <p className="mt-4 min-h-10 text-3xl font-semibold">{winnerLine}</p>
+                {shown.landed && shown.name ? (
+                  <>
+                    <p className="rise-in mt-3 break-words text-7xl font-semibold leading-none tracking-tight md:text-8xl" data-testid="drawn-name">
+                      {shown.name}
+                    </p>
+                    <p className="mt-4 text-5xl font-semibold tabular-nums tracking-tight" data-testid="drawn-number">
+                      {ticket(shown.number)}
+                    </p>
+                  </>
+                ) : (
+                  <p className="mt-2 text-[9rem] font-semibold leading-none tabular-nums tracking-tight" data-testid="drawn-number">
+                    {ticket(shown.number)}
+                  </p>
+                )}
+                <p className="mt-5 min-h-10 text-3xl font-semibold">{winnerLine}</p>
               </div>
             ) : (
               <div className="flex flex-col items-center gap-6 md:flex-row md:gap-12">

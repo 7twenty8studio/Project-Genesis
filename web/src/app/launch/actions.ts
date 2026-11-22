@@ -31,6 +31,20 @@ export async function enterGiveaway(firstName: string, email: string, wantsNews:
   }
 }
 
+/** "I forgot my number": the number (and first name) entered with this email, or null. Works after entries close. */
+export async function findMyNumber(email: string): Promise<Result<{ number: number; name: string } | null>> {
+  if (typeof email !== "string") return { ok: false, code: "invalid_email" };
+  try {
+    const value = await rpc<{ number: number; name: string } | null>("giveaway_find", {
+      p_event: config.giveawayEvent,
+      p_email: tidyEmail(email).slice(0, 254),
+    });
+    return { ok: true, value: value ?? null };
+  } catch (error) {
+    return failure(error);
+  }
+}
+
 async function asHost<T>(fn: string, args: Record<string, unknown>): Promise<Result<T>> {
   const session = await currentSession();
   if (!session) return { ok: false, code: "not_signed_in" };

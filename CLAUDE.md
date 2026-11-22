@@ -792,7 +792,7 @@ shares; README.md has the architecture.
   email, `giveaway_enter`, no account) and `/launch/host` (projector: draws
   for volunteers and the final golden ticket picked by `giveaway_draw` in
   the database, no-shows, open/close entries, the two-player game timer, an
-  offline draw from paper ticket numbers). Host calls need an ops admin
+  offline draw from paper ticket numbers; the winner is shown by first name, and "Find a number" searches entries by name). "Forgot your number?" on /launch shows it again from the same email (`giveaway_find`, also after entries close). Host calls need an ops admin
   (`genesis_is_ops_admin()`, public.ops_admins). Tables giveaway_events /
   giveaway_entries / giveaway_draws (migration 20261127000000, RLS on, no
   policies; emails never leave the database). Entry is free, no purchase or
