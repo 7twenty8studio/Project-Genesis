@@ -321,9 +321,13 @@ shares; README.md has the architecture.
   band above the running head (`skyBand`, paged reading only), the haze
   fading out before the text (`hazeFade`, no visible edge). 20 fps, 60 only
   while a star shoots; Reduce Motion: gentle fades, no shooting stars).
-  Seasonal touches (`SeasonalEffectView`): autumn leaves, spring petals on
-  a breeze, winter snow at three depths with gusts and corner frost,
-  summer light; Reduce Motion shows the painted still (`paintedMoment`).
+  Seasonal touches (`SeasonalEffectView`): autumn maple, oak and birch
+  leaves, spring petals and whole blossoms on a breeze, winter snow at
+  three depths (dots far away, stellar/fern/plate crystals near) with gusts
+  and corner frost, summer light with dust in the beams and a butterfly
+  every 90 s (`ButterflyFlight`); the shapes are unit paths in
+  Genesis/Shared/SeasonShapes.swift, shared with the drifting widgets
+  (`SeasonShape`); Reduce Motion shows the painted still (`paintedMoment`).
   The morning welcome shows the theme's effect behind it at 70%.
   `ReaderPreferences.nightReading` ("At night, switch to" Off/Night/Starlight,
   and "When": `NightReadingTiming` `.darkMode` (default) or `.hours` with

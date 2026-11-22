@@ -52,7 +52,7 @@ enum WidgetArtShape: String, CaseIterable, Sendable {
 /// them: the verse is always drawn by the widget, verbatim, over the art.
 enum WidgetArt {
     /// Bump to have the app draw the painted art again (after changing it).
-    static let version = 1
+    static let version = 2 // 2: maple/oak/birch leaves, snow crystals, blossoms, summer dust and butterfly
 
     static var folder: URL? {
         FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: WidgetSnapshot.appGroup)?

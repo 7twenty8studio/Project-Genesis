@@ -4195,6 +4195,22 @@
         }
       }
     },
+    "Autumn's falling leaves are now maple, oak and birch leaves, turning over as they drift.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las hojas que caen en Otoño ahora son de arce, roble y abedul, y giran mientras flotan."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "As folhas que caem no Outono agora são de bordo, carvalho e bétula, e giram enquanto flutuam."
+          }
+        }
+      }
+    },
     "Autumn, Winter, Spring and Summer, or Seasons to change with the calendar. Leaves, snow, blossom or summer sunlight drift gently across the page as you read. In Aa › Theme, with Premium.": {
       "localizations": {
         "es": {
@@ -4742,6 +4758,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bloquear %@?"
+          }
+        }
+      }
+    },
+    "Blossoms and summer light": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flores y luz de verano"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flores e luz de verão"
           }
         }
       }
@@ -12329,6 +12361,22 @@
         }
       }
     },
+    "In Winter, the snowflakes closest to you are six-sided crystals that turn slowly as they fall.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En Invierno, los copos más cercanos son cristales de seis puntas que giran despacio al caer."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Inverno, os flocos mais próximos são cristais de seis pontas que giram devagar ao cair."
+          }
+        }
+      }
+    },
     "In Your Memorize List": {
       "localizations": {
         "es": {
@@ -14813,6 +14861,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mapa de %@"
+          }
+        }
+      }
+    },
+    "Maple, oak and birch": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arce, roble y abedul"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bordo, carvalho e bétula"
           }
         }
       }
@@ -22105,6 +22169,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pronto quando você estiver"
+          }
+        }
+      }
+    },
+    "Real snowflakes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copos de nieve de verdad"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flocos de neve de verdade"
           }
         }
       }
@@ -31248,6 +31328,22 @@
         }
       }
     },
+    "Truer seasons": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estaciones más reales"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estações mais reais"
+          }
+        }
+      }
+    },
     "Try": {
       "localizations": {
         "es": {
@@ -33912,6 +34008,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Por quem ou pelo que você está orando?"
+          }
+        }
+      }
+    },
+    "Whole cherry blossoms fall among Spring's petals, and in Summer, specks of dust float in the sunbeams while a butterfly passes now and then.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En Primavera caen flores de cerezo enteras entre los pétalos, y en Verano flotan motas de polvo en los rayos de sol mientras de vez en cuando pasa una mariposa."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Na Primavera caem flores de cerejeira inteiras entre as pétalas, e no Verão partículas de poeira flutuam nos raios de sol enquanto, de vez em quando, passa uma borboleta."
           }
         }
       }
