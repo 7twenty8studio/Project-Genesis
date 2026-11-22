@@ -122,3 +122,12 @@ export const cookieOptions = (maxAge: number) => ({
   path: "/",
   maxAge,
 });
+
+/** What a refused password sign-in tells the person (Supabase's error_code, older servers' message). */
+export function passwordError(status: number, json: Record<string, unknown> | null): "wrong" | "unconfirmed" | "failed" {
+  const code = String(json?.error_code ?? json?.code ?? "");
+  const message = String(json?.msg ?? json?.error_description ?? json?.message ?? "").toLowerCase();
+  if (code === "email_not_confirmed" || message.includes("not confirmed")) return "unconfirmed";
+  if (status === 400 && (code === "invalid_credentials" || code === "invalid_grant" || message.includes("invalid login"))) return "wrong";
+  return "failed";
+}

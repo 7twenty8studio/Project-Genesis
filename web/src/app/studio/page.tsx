@@ -31,14 +31,9 @@ export default async function StudioHome({ searchParams }: Props) {
             <p className="mt-4 text-lg leading-relaxed text-muted">
               {t("Sign in to start your church or ministry, or to keep working on your sermons. It's free, and it's the same account you use in the Versely app.")}
             </p>
-            {signin === "failed" ? (
-              <p role="alert" className="mt-6 rounded-2xl border border-border bg-surface-2 p-4">
-                {t("Sign-in didn't finish. Try again.")}
-              </p>
-            ) : null}
             <div className="mt-8 max-w-sm">
-              <SignInButtons next="/studio" t={t} />
-              <p className="mt-4 text-sm text-muted">{t("New to Versely? Signing in creates your account.")}</p>
+              <SignInButtons next="/studio" t={t} status={signin} />
+              <p className="mt-4 text-sm text-muted">{t("New to Versely? Continue with Google to create your account, or sign up with email in the Versely app.")}</p>
             </div>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}

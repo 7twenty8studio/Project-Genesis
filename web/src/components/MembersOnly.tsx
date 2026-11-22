@@ -3,7 +3,7 @@ import { SignInButtons, SignOutButton } from "./SignIn";
 import { translator, type Lang } from "@/lib/i18n";
 
 /** All a non-member learns about a members-only sermon: that it is one. No title, no church, no outline. */
-export function MembersOnly({ slug, lang, signedIn }: { slug: string; lang: Lang; signedIn: boolean }) {
+export function MembersOnly({ slug, lang, signedIn, signin }: { slug: string; lang: Lang; signedIn: boolean; signin?: string }) {
   const t = translator(lang);
   return (
     <>
@@ -24,8 +24,8 @@ export function MembersOnly({ slug, lang, signedIn }: { slug: string; lang: Lang
             <p className="mt-4 text-lg leading-relaxed text-muted">
               {t("This sermon is for members of the church that shared it. Sign in with the account you use in Versely.")}
             </p>
-            <div className="mt-8">
-              <SignInButtons next={`/s/${slug}`} t={t} />
+            <div className="mt-8 max-w-sm">
+              <SignInButtons next={`/s/${slug}`} t={t} status={signin} />
             </div>
           </>
         )}
