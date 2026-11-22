@@ -55,6 +55,10 @@ final class AppRouter {
     var showsSearch = false
     /// A church sermon opened from its link.
     var sermonLink: SermonLinkRoute?
+    /// A sermon link waiting for what was on screen (What's New, the
+    /// morning welcome, Search) to close, since a sheet can't open over
+    /// another; RootView shows it a moment later.
+    var pendingSermon: SermonLinkRoute?
     @ObservationIgnored let reader: ReaderViewModel
 
     init(reader: ReaderViewModel) {
@@ -103,7 +107,15 @@ final class AppRouter {
 
     /// A church sermon from its link.
     func openSermon(slug: String) {
-        sermonLink = SermonLinkRoute(slug: slug)
+        showsSearch = false
+        pendingSermon = SermonLinkRoute(slug: slug)
+    }
+
+    /// Shows the waiting sermon link (RootView, once the screen is clear).
+    func showPendingSermon() {
+        guard let pending = pendingSermon else { return }
+        pendingSermon = nil
+        sermonLink = pending
     }
 
     /// Handles versely:// links from widgets and notifications, and a
