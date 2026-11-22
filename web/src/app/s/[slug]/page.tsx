@@ -13,6 +13,7 @@ import { lookUpSermon, youVersionWebBibles } from "@/lib/sermons.server";
 export const dynamic = "force-dynamic";
 
 type Params = { params: Promise<{ slug: string }> };
+type PageProps = Params & { searchParams: Promise<{ signin?: string }> };
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
@@ -31,14 +32,15 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   };
 }
 
-export default async function SermonPage({ params }: Params) {
+export default async function SermonPage({ params, searchParams }: PageProps) {
   const { slug } = await params;
   const sermon = await lookUpSermon(slug);
   const visitor = await requestLang();
   if (sermon.status === "not_found") notFound();
   if (sermon.status === "members_only") {
     const session = await currentSession();
-    return <MembersOnly slug={slug} lang={visitor} signedIn={session !== null} />;
+    const { signin } = await searchParams;
+    return <MembersOnly slug={slug} lang={visitor} signedIn={session !== null} signin={signin} />;
   }
   // The page's own words: the language chosen in the menu, else the sermon's when it's one of ours.
   const lang = (await chosenLanguage()) ?? (isLang(sermon.language) ? sermon.language : visitor);

@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { authorizeURL, challengeFor, decodePkce, decodeSession, encodePkce, encodeSession, needsRefresh, safeNext, sessionFromToken } from "./session.ts";
+import { authorizeURL, challengeFor, passwordError, decodePkce, decodeSession, encodePkce, encodeSession, needsRefresh, safeNext, sessionFromToken } from "./session.ts";
 
 test("a session survives the cookie and refuses anything malformed", () => {
   const s = { accessToken: "a.b.c", refreshToken: "r1", expiresAt: 1000, userId: "u1", name: "Ana" };
@@ -45,4 +45,13 @@ test("Supabase's token answer becomes a session with a first name", () => {
   const s = sessionFromToken({ access_token: "a", refresh_token: "r", expires_in: 3600, user: { id: "u", user_metadata: { full_name: "  Maria  da Silva" } } }, 0);
   assert.deepEqual(s, { accessToken: "a", refreshToken: "r", expiresAt: 3_600_000, userId: "u", name: "Maria" });
   assert.equal(sessionFromToken({ access_token: "a" }), null);
+});
+
+test("a refused password sign-in says why", () => {
+  assert.equal(passwordError(400, { error_code: "invalid_credentials", msg: "Invalid login credentials" }), "wrong");
+  assert.equal(passwordError(400, { error: "invalid_grant", error_description: "Invalid login credentials" }), "wrong");
+  assert.equal(passwordError(400, { error_code: "email_not_confirmed" }), "unconfirmed");
+  assert.equal(passwordError(400, { msg: "Email not confirmed" }), "unconfirmed");
+  assert.equal(passwordError(429, { error_code: "over_request_rate_limit" }), "failed");
+  assert.equal(passwordError(500, null), "failed");
 });

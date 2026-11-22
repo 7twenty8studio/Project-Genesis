@@ -144,7 +144,27 @@ export const messages: Record<string, { es: string; pt: string }> = {
   "Name": { es: "Nombre", pt: "Nome" },
   "Name your church or ministry to get started. You can write your first sermon outline right after.": { es: "Ponle nombre a tu iglesia o ministerio para empezar. Justo después podrás escribir el bosquejo de tu primer sermón.", pt: "Dê um nome à sua igreja ou ministério para começar. Logo depois você pode escrever o esboço do seu primeiro sermão." },
   "New sermon": { es: "Nuevo sermón", pt: "Novo sermão" },
-  "New to Versely? Signing in creates your account.": { es: "¿Eres nuevo en Versely? Al iniciar sesión se crea tu cuenta.", pt: "Novo no Versely? Ao entrar, sua conta é criada." },
+  "New to Versely? Continue with Google to create your account, or sign up with email in the Versely app.": {
+    es: "¿Eres nuevo en Versely? Continúa con Google para crear tu cuenta, o regístrate con tu correo en la app Versely.",
+    pt: "Novo no Versely? Continue com o Google para criar sua conta, ou cadastre-se com seu e-mail no app Versely.",
+  },
+  "Email": { es: "Correo electrónico", pt: "E-mail" },
+  "Password": { es: "Contraseña", pt: "Senha" },
+  "Sign in with email": { es: "Iniciar sesión con correo", pt: "Entrar com e-mail" },
+  "Forgot password?": { es: "¿Olvidaste tu contraseña?", pt: "Esqueceu a senha?" },
+  "That email and password don't match a Versely account. Check them and try again.": {
+    es: "Ese correo y esa contraseña no coinciden con ninguna cuenta de Versely. Revísalos e inténtalo de nuevo.",
+    pt: "Esse e-mail e essa senha não correspondem a nenhuma conta do Versely. Confira e tente de novo.",
+  },
+  "Confirm your email first: open the link Versely sent you, then sign in.": {
+    es: "Primero confirma tu correo: abre el enlace que te envió Versely y luego inicia sesión.",
+    pt: "Confirme seu e-mail primeiro: abra o link que o Versely enviou e depois entre.",
+  },
+  "Enter your email and password.": { es: "Escribe tu correo y tu contraseña.", pt: "Digite seu e-mail e sua senha." },
+  "If that email has a Versely account, a link to reset its password is on its way.": {
+    es: "Si ese correo tiene una cuenta de Versely, va en camino un enlace para restablecer su contraseña.",
+    pt: "Se esse e-mail tiver uma conta do Versely, um link para redefinir a senha está a caminho.",
+  },
   "No details yet": { es: "Aún sin detalles", pt: "Ainda sem detalhes" },
   "No places yet.": { es: "Todavía no hay lugares.", pt: "Ainda não há locais." },
   "No sermons yet. Start one, or paste or import an outline you already have.": { es: "Aún no hay sermones. Empieza uno, o pega o importa un bosquejo que ya tengas.", pt: "Ainda não há sermões. Comece um, ou cole ou importe um esboço que você já tem." },

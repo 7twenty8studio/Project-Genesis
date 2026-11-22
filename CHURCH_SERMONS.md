@@ -149,7 +149,10 @@ Tests:
   new version and saves a pending edit only when that was its own version,
   otherwise it stays in conflict and asks for a reload.
 - **Church Studio** `/studio`: sign in with Apple or Google (Supabase PKCE,
-  httpOnly cookie, refreshed by `proxy.ts`); the churches from
+  httpOnly cookie, refreshed by `proxy.ts`) or with the app's email and
+  password (`/auth/password`, a form post: same-origin only; wrong,
+  unconfirmed and Forgot Password answers via `?signin=`; new email
+  accounts are made in the app); the churches from
   `my_sermon_churches`; every write is a Server Action calling the
   database as the person, against the draft version they loaded.
 - **Import** runs in the browser (the file is never uploaded): paste
@@ -229,7 +232,7 @@ Tests:
    add `https://versely.7twenty8studio.com/auth/callback` to the redirect
    URLs. Sign in with Apple on the web needs a Services ID with that
    domain and Supabase's callback as its return URL (APPLE_SETUP.md);
-   Google needs nothing new.
+   Google and email/password need nothing new.
 6. Vercel: a project with root directory `web/` and the domain
    versely.7twenty8studio.com. The Universal Links file uses Team ID
    4XTR53RY2V by default (`VERSELY_APPLE_TEAM_ID` overrides it).

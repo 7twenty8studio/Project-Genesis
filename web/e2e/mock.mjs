@@ -69,6 +69,14 @@ createServer(async (req, res) => {
   const body = await read(req);
   const json = () => (body.length ? JSON.parse(body.toString()) : {});
   const p = url.pathname;
+  // Email and password sign-in: pastor@example.com / right-password is the leader's account.
+  if (p === "/auth/v1/token" && url.searchParams.get("grant_type") === "password") {
+    const { email, password } = json();
+    if (email === "unconfirmed@example.com") return send(res, 400, { code: 400, error_code: "email_not_confirmed", msg: "Email not confirmed" });
+    if (email !== "pastor@example.com" || password !== "right-password") return send(res, 400, { code: 400, error_code: "invalid_credentials", msg: "Invalid login credentials" });
+    return send(res, 200, { access_token: "leader-token", refresh_token: "r", expires_in: 3600, user: { id: "u1", user_metadata: { full_name: "Ana" } } });
+  }
+  if (p === "/auth/v1/recover") return send(res, 200, {});
   if (p.startsWith("/storage/v1/object/public/bibles/")) {
     const file = `${BIBLES}/${p.slice("/storage/v1/object/public/bibles/".length)}`;
     return existsSync(file) ? send(res, 200, readFileSync(file), "application/json; charset=utf-8") : send(res, 404, { error: "not found" });

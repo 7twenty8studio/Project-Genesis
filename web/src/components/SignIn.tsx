@@ -1,15 +1,42 @@
 import { config } from "@/config";
 import type { Translate } from "@/lib/i18n";
 
+/** What the last try said (`?signin=` from /auth/callback or /auth/password). */
+function statusMessage(status: string | undefined, t: Translate): { text: string; alert: boolean } | null {
+  switch (status) {
+    case "failed":
+      return { text: t("Sign-in didn't finish. Try again."), alert: true };
+    case "wrong":
+      return { text: t("That email and password don't match a Versely account. Check them and try again."), alert: true };
+    case "unconfirmed":
+      return { text: t("Confirm your email first: open the link Versely sent you, then sign in."), alert: true };
+    case "missing":
+      return { text: t("Enter your email and password."), alert: true };
+    case "reset":
+      return { text: t("If that email has a Versely account, a link to reset its password is on its way."), alert: false };
+    default:
+      return null;
+  }
+}
+
 /**
  * Sign in with Apple (first, as in the app, once its web Services ID is set
- * up: config.appleWebSignIn) or Google; comes back to `next`. Signing in the
- * first time makes the account, the same one the app uses.
+ * up: config.appleWebSignIn), Google, or the email and password used in the
+ * app; comes back to `next`. Apple or Google the first time makes the
+ * account, the same one the app uses.
  */
-export function SignInButtons({ next, t }: { next: string; t: Translate }) {
+export function SignInButtons({ next, t, status }: { next: string; t: Translate; status?: string }) {
   const href = (provider: string) => `/auth/start?provider=${provider}&next=${encodeURIComponent(next)}`;
+  const message = statusMessage(status, t);
+  const input =
+    "min-h-12 w-full rounded-2xl border border-border bg-surface px-4 text-base text-foreground shadow-sm placeholder:text-muted focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30";
   return (
     <div className="flex flex-col gap-3">
+      {message ? (
+        <p role={message.alert ? "alert" : "status"} data-testid="signin-status" className="rounded-2xl border border-border bg-surface-2 p-4">
+          {message.text}
+        </p>
+      ) : null}
       {config.appleWebSignIn ? (
         <a
           href={href("apple")}
@@ -33,6 +60,37 @@ export function SignInButtons({ next, t }: { next: string; t: Translate }) {
         </svg>
         {t("Continue with Google")}
       </a>
+      <div className="my-1 flex items-center gap-3 text-sm text-muted" aria-hidden="true">
+        <span className="h-px flex-1 bg-border" />
+        {t("or")}
+        <span className="h-px flex-1 bg-border" />
+      </div>
+      <form action="/auth/password" method="post" className="flex flex-col gap-3" data-testid="email-signin">
+        <input type="hidden" name="next" value={next} />
+        <label className="flex flex-col gap-1 text-sm font-medium">
+          {t("Email")}
+          <input type="email" name="email" required autoComplete="email" inputMode="email" maxLength={320} className={input} />
+        </label>
+        <label className="flex flex-col gap-1 text-sm font-medium">
+          {t("Password")}
+          <input type="password" name="password" required autoComplete="current-password" maxLength={200} className={input} />
+        </label>
+        <button
+          type="submit"
+          className="inline-flex min-h-12 items-center justify-center rounded-full bg-accent-strong px-6 text-base font-semibold text-on-accent transition-opacity hover:opacity-90"
+        >
+          {t("Sign in with email")}
+        </button>
+        <button
+          type="submit"
+          name="intent"
+          value="reset"
+          formNoValidate
+          className="self-start text-sm font-medium text-accent underline-offset-4 hover:underline"
+        >
+          {t("Forgot password?")}
+        </button>
+      </form>
     </div>
   );
 }

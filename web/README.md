@@ -21,6 +21,7 @@ the 7twenty8 site. This version differs from older Next.js: read
 | `/studio` | Church Studio: sign in, pick a church, its sermons and reports |
 | `/studio/<id>` | One sermon: Outline (import, edit), Details, Preview, Share |
 | `/auth/start`, `/auth/callback`, `/auth/signout` | Sign in with Apple or Google (Supabase PKCE) |
+| `/auth/password` | Sign in with the app's email and password, or send the reset email (form post) |
 | `/.well-known/apple-app-site-association` | Universal Links for `/s/*` |
 
 - No Supabase SDK and no secrets: the public anon key and the person's own

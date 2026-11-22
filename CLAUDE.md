@@ -701,7 +701,7 @@ shares; README.md has the architecture.
   (same reading as ReferenceParser.swift; shared cases in
   fixtures/references.json; book data from BibleBook.swift via
   Tools/BibleData/export_reference_books.py, rerun when BibleBook changes).
-- Church Studio and the guest page live in web/ (Next.js 16, Vercel root
+- Church Studio and the guest page live in web/ (sign-in: Apple, Google, or the app's email and password through `/auth/password`; Next.js 16, Vercel root
   web/; web/README.md). Looks: Versely Cream (default), Daylight, Warm Dark
   and Match device, and the screen language, both in the header's
   `PrefsMenu` before sign-in, remembered in cookies `vs_theme` / `vs_lang`

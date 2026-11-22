@@ -325,6 +325,49 @@ async function noSideScroll(page, label) {
     }
   }
 
+  // Email and password: the app's account signs in here too; refusals say why; Forgot Password answers the same either way.
+  {
+    const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, extraHTTPHeaders: { "Accept-Language": "en-US" } });
+    const page = await ctx.newPage();
+    const form = () => page.getByTestId("email-signin");
+    const status = async () => (await page.getByTestId("signin-status").count()) ? await page.getByTestId("signin-status").innerText() : "";
+    await page.goto(`${BASE}/studio`);
+    await form().getByLabel("Email").fill("pastor@example.com");
+    await form().getByLabel("Password").fill("wrong-password");
+    await form().getByRole("button", { name: "Sign in with email" }).click();
+    await page.waitForURL(/signin=wrong/);
+    if (!/don't match a Versely account/.test(await status())) problems.push("wrong password: no message");
+    await axe(page, "sign-in, wrong password");
+    await page.screenshot({ path: `${OUT}/signin-email-wrong.png`, fullPage: true });
+    await form().getByLabel("Email").fill("unconfirmed@example.com");
+    await form().getByLabel("Password").fill("whatever");
+    await form().getByRole("button", { name: "Sign in with email" }).click();
+    await page.waitForURL(/signin=unconfirmed/);
+    if (!/Confirm your email/.test(await status())) problems.push("unconfirmed email: no message");
+    await form().getByLabel("Email").fill("someone@example.com");
+    await form().getByRole("button", { name: "Forgot password?" }).click();
+    await page.waitForURL(/signin=reset/);
+    if (!/reset its password/.test(await status())) problems.push("forgot password: no message");
+    await form().getByLabel("Email").fill("pastor@example.com");
+    await form().getByLabel("Password").fill("right-password");
+    await form().getByRole("button", { name: "Sign in with email" }).click();
+    await page.waitForURL((u) => u.pathname === "/studio" && !u.search.includes("signin"));
+    if (!(await page.getByRole("button", { name: "Sign out" }).count())) problems.push("email sign-in didn't open Studio");
+    // A members-only sermon: signing in with email there comes back to it.
+    await ctx.clearCookies();
+    await page.goto(`${BASE}/s/membmemb01`);
+    await form().getByLabel("Email").fill("pastor@example.com");
+    await form().getByLabel("Password").fill("right-password");
+    await form().getByRole("button", { name: "Sign in with email" }).click();
+    await page.waitForURL(/\/s\/membmemb01$/);
+    await page.waitForSelector("text=Members Night Secret", { timeout: 8000 }).catch(() => problems.push("email sign-in on a members-only sermon didn't come back to it"));
+    // Another site's form can't sign anyone in.
+    const forged = await fetch(`${BASE}/auth/password`, { method: "POST", redirect: "manual", headers: { Origin: "https://evil.example", "Content-Type": "application/x-www-form-urlencoded" }, body: "email=pastor%40example.com&password=right-password&next=%2Fstudio" });
+    if ((forged.headers.get("set-cookie") ?? "").includes("vs_session=") || !/signin=failed/.test(forged.headers.get("location") ?? "")) problems.push("a form on another site signed someone in");
+    note("email sign-in: wrong, unconfirmed, reset, signed in, members-only, forged origin checked");
+    await ctx.close();
+  }
+
   // Appearance and Language: Cream first; a choice applies at once and is remembered.
   {
     const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, colorScheme: "dark", extraHTTPHeaders: { "Accept-Language": "en-US" } });

@@ -3,7 +3,7 @@
 // 7twenty8 site's dashboards do: no SDK. A signed-in person's own access
 // token goes in Authorization, so the database decides what they may do.
 import { config } from "@/config";
-import { sessionFromToken, type Session } from "./session.ts";
+import { passwordError, sessionFromToken, type Session } from "./session.ts";
 
 export class RpcError extends Error {
   /** The database's own code ("not_allowed", "draft_changed", "invalid_blocks"…) or the HTTP status. */
@@ -64,6 +64,36 @@ async function token(body: Record<string, string>, grant: "pkce" | "refresh_toke
 
 export const exchangeCode = (code: string, verifier: string) => token({ auth_code: code, code_verifier: verifier }, "pkce");
 export const refreshSession = (session: Session) => token({ refresh_token: session.refreshToken }, "refresh_token");
+
+export type PasswordSignIn = { session: Session } | { error: "wrong" | "unconfirmed" | "failed" };
+
+/** Email and password, the same account as the app's (AuthService.signIn). */
+export async function signInWithPassword(email: string, password: string): Promise<PasswordSignIn> {
+  const response = await fetch(`${config.supabaseUrl}/auth/v1/token?grant_type=password`, {
+    method: "POST",
+    headers: headers(),
+    body: JSON.stringify({ email, password }),
+    cache: "no-store",
+  }).catch(() => null);
+  if (!response) return { error: "failed" };
+  const json = (await response.json().catch(() => null)) as Record<string, unknown> | null;
+  if (response.ok) {
+    const session = json ? sessionFromToken(json) : null;
+    return session ? { session } : { error: "failed" };
+  }
+  return { error: passwordError(response.status, json) };
+}
+
+/** Sends the reset email, as the app's Forgot Password does. */
+export async function sendPasswordReset(email: string): Promise<boolean> {
+  const response = await fetch(`${config.supabaseUrl}/auth/v1/recover`, {
+    method: "POST",
+    headers: headers(),
+    body: JSON.stringify({ email }),
+    cache: "no-store",
+  }).catch(() => null);
+  return response?.ok ?? false;
+}
 
 export async function signOut(session: Session): Promise<void> {
   await fetch(`${config.supabaseUrl}/auth/v1/logout`, { method: "POST", headers: headers(session.accessToken), cache: "no-store" }).catch(() => undefined);
