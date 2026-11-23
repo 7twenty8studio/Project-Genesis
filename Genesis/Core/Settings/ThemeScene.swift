@@ -309,7 +309,7 @@ enum ForestSway {
     /// Bands it's drawn in (thin enough that the bend looks smooth).
     static let bands = 28
     /// The most the top of the picture moves, in points.
-    static let reach: CGFloat = 5
+    static let reach: CGFloat = 3
     static let canopyName = "ThemeSceneForestCanopy"
     static let trunksName = "ThemeSceneForestTrunks"
     static let frontName = "ThemeSceneForestFront"
