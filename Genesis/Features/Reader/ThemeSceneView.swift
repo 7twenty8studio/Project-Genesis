@@ -42,6 +42,9 @@ struct ThemeSceneView: View {
                         ForEach(Array(scene.tiles(in: size, safeBottom: safeBottom).enumerated()), id: \.offset) { _, tile in
                             SceneArtImage(name: name, tile: tile)
                         }
+                        if scene == .ocean {
+                            OceanSky(name: name, size: size)
+                        }
                     }
                 }
             TimelineView(.animation(minimumInterval: 1.0 / 30, paused: !moving)) { timeline in
@@ -77,6 +80,33 @@ private struct SceneArtImage: View {
             .scaleEffect(x: tile.mirrored ? -1 : 1, y: 1)
             .frame(width: tile.frame.width, height: tile.frame.height)
             .offset(x: tile.frame.minX, y: tile.frame.minY)
+    }
+}
+
+/// The Ocean's clouds drawn again, raised (`ThemeScene.oceanSky`) and
+/// fading out in the plain sky below them, so they sit higher than the
+/// water does.
+private struct OceanSky: View {
+    let name: String
+    let size: CGSize
+
+    var body: some View {
+        let sky = ThemeScene.oceanSky(in: size)
+        let art = ThemeScene.ocean.artFrame(in: size, safeBottom: 0)
+        let fadeTop = (art.minY + art.height * ThemeScene.skyFade.lowerBound) / size.height
+        let fadeBottom = (art.minY + art.height * ThemeScene.skyFade.upperBound) / size.height
+        ZStack(alignment: .topLeading) {
+            ForEach(Array(ThemeScene.tiles(of: sky, across: size.width).enumerated()), id: \.offset) { _, tile in
+                SceneArtImage(name: name, tile: tile)
+            }
+        }
+        .frame(width: size.width, height: size.height, alignment: .topLeading)
+        .mask {
+            LinearGradient(stops: [
+                .init(color: .black, location: fadeTop),
+                .init(color: .black.opacity(0), location: fadeBottom),
+            ], startPoint: .top, endPoint: .bottom)
+        }
     }
 }
 

@@ -65,7 +65,9 @@ struct SceneThemeTests {
                 let right = tiles.map { $0.frame.maxX }.max() ?? 0
                 #expect(left <= 0, "\(scene.rawValue) \(size)")
                 #expect(right >= size.width, "\(scene.rawValue) \(size)")
-                #expect(art.minY <= 0, "\(scene.rawValue) \(size)")
+                // The Ocean's top is its raised sky.
+                let top = scene == .ocean ? ThemeScene.oceanSky(in: size).minY : art.minY
+                #expect(top <= 0, "\(scene.rawValue) \(size)")
                 #expect(art.maxY >= size.height, "\(scene.rawValue) \(size)")
             }
         }
@@ -159,6 +161,24 @@ struct SceneThemeTests {
         #expect(forestRoom == 0)
     }
 
+    @Test func oceanCloudsRiseAndSwellsSink() {
+        for size in [Self.phone, Self.iPad, Self.iPadSideways] {
+            let art = ThemeScene.ocean.artFrame(in: size, safeBottom: 20)
+            let sky = ThemeScene.oceanSky(in: size)
+            // The clouds (the picture's top quarter) end higher than before.
+            #expect(sky.minY + sky.height * 0.24 < size.height * 1.18 * 0.24, "\(size)")
+            // The raised sky stays whole until below the lowered picture's
+            // clouds, and has faded out before its water starts.
+            #expect(art.minY + art.height * ThemeScene.skyFade.lowerBound > art.minY + art.height * 0.24, "\(size)")
+            #expect(ThemeScene.skyFade.upperBound < 0.55)
+            #expect(sky.maxY >= art.minY + art.height * ThemeScene.skyFade.upperBound, "\(size)")
+            // Part of the swells is below the screen.
+            let height = (OceanSwells.farRows - OceanSwells.farLead) * OceanSwells.scale(in: size)
+            #expect(OceanSwells.top(in: size) > size.height - height, "\(size)")
+            #expect(OceanSwells.frame(near: true, in: size).maxY > size.height + OceanSwells.rise, "\(size)")
+        }
+    }
+
     @Test func swellsStayLowOnIPad() {
         let height = (OceanSwells.farRows - OceanSwells.farLead) * OceanSwells.scale(in: Self.iPad)
         #expect(height <= Self.iPad.height * 0.26 + 0.5)
@@ -176,7 +196,7 @@ struct SceneThemeTests {
             let far = OceanSwells.offset(near: false, at: time)
             let near = OceanSwells.offset(near: true, at: time)
             highest = max(highest, abs(far.height), abs(near.height))
-            #expect(abs(far.width) <= 7 && abs(near.width) <= 7)
+            #expect(abs(far.width) <= OceanSwells.lean && abs(near.width) <= OceanSwells.lean)
             if abs(far.height - near.height) > 1 { different = true }
         }
         #expect(highest <= OceanSwells.rise + 0.001)
