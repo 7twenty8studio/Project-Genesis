@@ -349,8 +349,10 @@ shares; README.md has the architecture.
   line softened). `ThemeSceneView` draws the scene behind the live text
   (pages are clear: `PaperTexture.pageColor`/`surroundColor`), then a
   soft elliptical shade behind the words (`SceneShade`). Forest fills the
-  height; Ocean is 1.18× from the top, wider screens get mirrored
-  copies. Hearth has no picture (owner, 23 November 2026: a glow from
+  height; Ocean is 1.18× tall, lowered with its swells (30% of them
+  below the screen, `OceanSwells.sink`) while its clouds are drawn again
+  8% higher (`oceanSky`, faded out in the plain sky), so both keep
+  clear of the words; wider screens get mirrored copies. Hearth has no picture (owner, 23 November 2026: a glow from
   the whole foot, not a fire in one spot): `HearthGlow`, drawn amber
   rising from the bottom with two bright patches drifting along it.
   An area wider than tall (iPad sideways, the open Duo, the spread)

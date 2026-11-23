@@ -36,9 +36,11 @@ enum ThemeScene: String, CaseIterable, Sendable {
     /// `safeBottom` the home indicator's band).
     ///
     /// - Forest fills the height, centred.
-    /// - Ocean is a little taller than the screen, from the top, so its
-    ///   far water (and the bright line along it) sits low, under the last
-    ///   lines' shade; the swells are separate layers (`OceanSwells`).
+    /// - Ocean is a little taller than the screen, lowered with the swells
+    ///   (`OceanSwells.sink`), so its far water (and the bright line along
+    ///   it) sits low, under the last lines' shade; the swells are separate
+    ///   layers (`OceanSwells`) and the clouds are drawn again higher up
+    ///   (`oceanSky`), clear of the words.
     /// - Hearth has no picture: the whole area (its glow is `HearthGlow`).
     func artFrame(in size: CGSize, safeBottom: CGFloat) -> CGRect {
         switch self {
@@ -49,11 +51,26 @@ enum ThemeScene: String, CaseIterable, Sendable {
         case .ocean:
             let height = size.height * 1.18
             let width = height * Self.artAspect
-            return CGRect(x: (size.width - width) / 2, y: 0, width: width, height: height)
+            return CGRect(x: (size.width - width) / 2, y: OceanSwells.sink(in: size), width: width, height: height)
         case .hearth:
             return CGRect(origin: .zero, size: size)
         }
     }
+
+    /// The Ocean's sky: the picture again, raised by `cloudLift` of the
+    /// height, shown only down to `skyFade` (in both pictures' plain sky) so
+    /// the clouds sit higher than the water below them.
+    static func oceanSky(in size: CGSize) -> CGRect {
+        let art = ThemeScene.ocean.artFrame(in: size, safeBottom: 0)
+        return CGRect(x: art.minX, y: -size.height * cloudLift, width: art.width, height: art.height)
+    }
+
+    /// How far the Ocean's clouds are raised, as a share of the height.
+    static let cloudLift: CGFloat = 0.08
+    /// Where the raised sky fades out, as shares of the (lowered) picture
+    /// under it: just below that picture's own clouds (which end at about
+    /// 0.24), so they never show through, and before its water.
+    static let skyFade: ClosedRange<CGFloat> = 0.27...0.4
 
     /// The picture and, for Ocean, mirrored copies beside it where it's
     /// narrower than the area. Forest on a wide area uses its wide picture
@@ -169,7 +186,9 @@ enum OceanSwells {
     static let sidePad: CGFloat = 40
     static let bottomPad: CGFloat = 80
     /// The most a layer rises above its resting place, in points.
-    static let rise: CGFloat = 5
+    static let rise: CGFloat = 9
+    /// The share of the swells kept below the foot of the screen.
+    static let sinkShare: CGFloat = 0.3
 
     /// Points per picture pixel: the width of the screen, unless that
     /// makes the swells taller than a quarter of it (an iPad), when they're
@@ -178,9 +197,15 @@ enum OceanSwells {
         min(size.width / contentWidth, size.height * 0.26 / (farRows - farLead))
     }
 
+    /// How far the swells are lowered, part of them below the screen, so
+    /// they keep to the foot, away from the words.
+    static func sink(in size: CGSize) -> CGFloat {
+        (farRows - farLead) * scale(in: size) * sinkShare
+    }
+
     /// Where the swells begin (below the lead-in, which is only colour).
     static func top(in size: CGSize) -> CGFloat {
-        size.height - (farRows - farLead) * scale(in: size)
+        size.height - (farRows - farLead) * scale(in: size) + sink(in: size)
     }
 
     /// A layer's frame at rest, padding included, centred.
@@ -188,7 +213,8 @@ enum OceanSwells {
         let s = scale(in: size)
         let rows = near ? nearRows : farRows
         let width = (contentWidth + sidePad * 2) * s
-        return CGRect(x: (size.width - width) / 2, y: size.height - rows * s, width: width, height: (rows + bottomPad) * s)
+        return CGRect(x: (size.width - width) / 2, y: size.height - rows * s + sink(in: size),
+                      width: width, height: (rows + bottomPad) * s)
     }
 
     /// The width one copy covers (without its padding), for repeating.
@@ -196,18 +222,22 @@ enum OceanSwells {
         contentWidth * scale(in: size)
     }
 
-    /// How far a layer is moved at `time`: up and down within `rise`, and a
-    /// few points sideways; the near layer is quicker and out of step.
+    /// The most a layer moves sideways, in points.
+    static let lean: CGFloat = 14
+
+    /// How far a layer is moved at `time`: up and down within `rise`, and
+    /// sideways within `lean`, as if rolling past; the near layer is
+    /// quicker, goes the other way and is out of step.
     static func offset(near: Bool, at time: Double) -> CGSize {
         let tau = 2 * Double.pi
         if near {
-            let y = 0.62 * sin(tau * time / 5.9 + 1.9) + 0.38 * sin(tau * time / 3.7 + 0.4)
-            let x = -sin(tau * time / 9.4 + 0.7)
-            return CGSize(width: 7 * x, height: Double(rise) * y)
+            let y = 0.62 * sin(tau * time / 4.4 + 1.9) + 0.38 * sin(tau * time / 2.7 + 0.4)
+            let x = -(0.75 * sin(tau * time / 6.8 + 0.7) + 0.25 * sin(tau * time / 3.1 + 1.3))
+            return CGSize(width: Double(lean) * x, height: Double(rise) * y)
         } else {
-            let y = 0.7 * sin(tau * time / 7.3) + 0.3 * sin(tau * time / 4.6 + 2.2)
-            let x = sin(tau * time / 11.2 + 0.3)
-            return CGSize(width: 5 * x, height: Double(rise) * 0.8 * y)
+            let y = 0.7 * sin(tau * time / 5.6) + 0.3 * sin(tau * time / 3.5 + 2.2)
+            let x = 0.75 * sin(tau * time / 8.3 + 0.3) + 0.25 * sin(tau * time / 4.1 + 2.6)
+            return CGSize(width: Double(lean) * 0.75 * x, height: Double(rise) * 0.8 * y)
         }
     }
 }
