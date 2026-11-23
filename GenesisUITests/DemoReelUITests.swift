@@ -417,7 +417,7 @@ enum Demo {
     private static var name = ""
     private static var events: [Event] = []
 
-    static var isRecording: Bool { ProcessInfo.processInfo.environment["GENESIS_DEMO"] == "1" }
+    nonisolated static var isRecording: Bool { ProcessInfo.processInfo.environment["GENESIS_DEMO"] == "1" }
 
     static func start(_ demo: String) {
         name = demo
