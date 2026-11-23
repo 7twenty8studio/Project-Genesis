@@ -13,8 +13,10 @@ const ROOM_KEY = "vs_screen_room";
  * For whoever sets up OBS: the room's share link (and QR) for devices, then
  * every device in the room with its own OBS link and a live preview.
  */
-export function HostPanel({ lang, site, initialRoom }: { lang: Lang; site: string; initialRoom: string | null }) {
+export function HostPanel({ lang, site: fallbackSite, initialRoom }: { lang: Lang; site: string; initialRoom: string | null }) {
   const t = translator(lang);
+  // Links point at the address this page was opened from (a preview deploy, or the venue Mac), else the site's own.
+  const site = typeof window === "undefined" ? fallbackSite : window.location.origin;
   const [room, setRoom] = useState<string | null>(null);
   const [draft, setDraft] = useState("");
   const [seen, setSeen] = useState<Map<string, Seen>>(new Map());

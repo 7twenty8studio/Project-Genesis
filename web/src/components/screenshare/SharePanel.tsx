@@ -40,8 +40,10 @@ function guessName(): string {
  * its screen, or its camera where the browser can't share the screen (iPhone,
  * iPad).
  */
-export function SharePanel({ lang, room, presetDevice, site }: { lang: Lang; room: string; presetDevice: string | null; site: string }) {
+export function SharePanel({ lang, room, presetDevice, site: fallbackSite }: { lang: Lang; room: string; presetDevice: string | null; site: string }) {
   const t = translator(lang);
+  // Links point at the address this page was opened from (a preview deploy, or the venue Mac), else the site's own.
+  const site = typeof window === "undefined" ? fallbackSite : window.location.origin;
   const [device, setDevice] = useState<string | null>(null);
   const [name, setName] = useState("");
   const [screenOK, setScreenOK] = useState(true);
