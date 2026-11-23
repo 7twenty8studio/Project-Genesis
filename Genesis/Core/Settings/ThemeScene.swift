@@ -318,6 +318,13 @@ enum ForestWide {
     static let canopy: CGFloat = 707.0 / 1536.0
     /// How wide the blend between the two copies is (share of the area's width).
     static let blendShare: CGFloat = 0.24
+    /// The picture's trees end and its misty clearing begins this far in
+    /// from either side (share of the picture's width).
+    static let treeShare: CGFloat = 0.28
+    /// How far in from each side of the area the trees reach (share of the
+    /// area's width): only the outer margins, like the tall picture on an
+    /// iPhone, so both pages sit over the mist.
+    static let edgeShare: CGFloat = 0.13
 
     /// Used on any area at least as wide as it is tall.
     static func uses(_ size: CGSize) -> Bool {
@@ -325,21 +332,29 @@ enum ForestWide {
     }
 
     /// The two copies: the picture fills the height (or, wider than the
-    /// picture, the width, kept to the ground), the left copy from the left
-    /// edge, the right copy to the right edge.
+    /// picture, the width, kept to the ground), the left copy pushed out
+    /// past the left edge and the right copy past the right edge, so only
+    /// their outer trees show (`edgeShare`) and the clearing fills the
+    /// middle.
     static func copies(in size: CGSize) -> (left: CGRect, right: CGRect) {
         let height = max(size.height, size.width / aspect)
         let width = height * aspect
         let y = size.height - height
-        return (CGRect(x: 0, y: y, width: width, height: height),
-                CGRect(x: size.width - width, y: y, width: width, height: height))
+        let push = width * treeShare - size.width * edgeShare
+        return (CGRect(x: -push, y: y, width: width, height: height),
+                CGRect(x: size.width - width + push, y: y, width: width, height: height))
     }
 
     /// Where the right copy fades in over the left one: a band in the
     /// middle of the area, where both show the clearing.
     static func blend(in size: CGSize) -> ClosedRange<CGFloat> {
         let half = size.width * blendShare / 2
-        return (size.width / 2 - half)...(size.width / 2 + half)
+        let (left, right) = copies(in: size)
+        // Never into either copy's trees (on very wide areas the clearings
+        // overlap less).
+        let lower = max(size.width / 2 - half, right.minX + right.width * treeShare)
+        let upper = min(size.width / 2 + half, left.maxX - left.width * treeShare)
+        return lower...max(lower, upper)
     }
 }
 
@@ -348,7 +363,7 @@ enum ForestWide {
 /// brighter patches wandering along it, and embers rising from below.
 enum HearthGlow {
     /// How high the glow reaches (share of the area's height).
-    static let height: CGFloat = 0.36
+    static let height: CGFloat = 0.48
     /// The bright part of the glow (share of the height, from the bottom),
     /// kept clear of the text (`ThemeScene.footRoom`).
     static let brightBand: CGFloat = 0.1

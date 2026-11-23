@@ -92,7 +92,7 @@ struct SceneThemeTests {
     @Test func theHearthGlowRisesFromTheWholeFoot() {
         // A glow along the bottom, not a fire in one spot.
         #expect(HearthGlow.height > HearthGlow.brightBand)
-        #expect(HearthGlow.height <= 0.4)
+        #expect(HearthGlow.height <= 0.5)
         #expect(HearthGlow.emberWidth >= 0.8)
         for step in 0..<400 {
             let time = Double(step) / 10
@@ -123,15 +123,19 @@ struct SceneThemeTests {
             // Each copy covers the height, kept to the ground.
             #expect(left.minY <= 0.5 && abs(left.maxY - size.height) < 0.5, "\(size)")
             #expect(abs(left.width / left.height - ForestWide.aspect) < 0.001)
-            // One held to each edge, together covering the width.
-            #expect(abs(left.minX) < 0.5, "\(size)")
-            #expect(abs(right.maxX - size.width) < 0.5, "\(size)")
+            // Together they cover the width.
+            #expect(left.minX <= 0.5 && right.maxX >= size.width - 0.5, "\(size)")
             #expect(left.maxX >= right.minX, "\(size)")
+            // Trees only in the outer margins: the clearing starts there.
+            let leftClearing = left.minX + left.width * ForestWide.treeShare
+            let rightClearing = right.maxX - right.width * ForestWide.treeShare
+            #expect(abs(leftClearing - size.width * ForestWide.edgeShare) < 0.5, "\(size)")
+            #expect(abs(rightClearing - size.width * (1 - ForestWide.edgeShare)) < 0.5, "\(size)")
             // They meet in the middle, where both show the clearing.
             let blend = ForestWide.blend(in: size)
-            #expect(blend.lowerBound >= right.minX - 0.5, "\(size)")
-            #expect(blend.upperBound <= left.maxX + 0.5, "\(size)")
-            #expect(abs((blend.lowerBound + blend.upperBound) / 2 - size.width / 2) < 0.5)
+            #expect(blend.lowerBound >= right.minX + right.width * ForestWide.treeShare - 0.5, "\(size)")
+            #expect(blend.upperBound <= left.maxX - left.width * ForestWide.treeShare + 0.5, "\(size)")
+            #expect(blend.lowerBound < size.width / 2 && blend.upperBound > size.width / 2, "\(size)")
         }
     }
 

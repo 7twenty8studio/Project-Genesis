@@ -355,8 +355,10 @@ shares; README.md has the architecture.
   An area wider than tall (iPad sideways, the open Duo, the spread)
   gets the wide Forest (`ForestWide`, ThemeSceneForestWide*, from
   Originals/forest-wide.png: trees at both edges, a misty clearing),
-  one copy held to each edge and blended in the clearing; never the
-  tall one repeated. `ReaderLayout.sceneFootRoom` ends
+  one copy pushed out past each side so its trees fill only the outer
+  13% (`edgeShare`, like the tall picture on an iPhone) and both pages
+  sit over the mist, blended in the clearing; never the tall one
+  repeated. `ReaderLayout.sceneFootRoom` ends
   pages above the swells and the glow's bright band (none for Forest); scrolling
   text passes behind them (the scene's foot drawn again, feathered).
   Motion: Forest's two mist layers (`ForestMist`) and its boughs swaying
