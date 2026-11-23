@@ -195,6 +195,20 @@ enum ChurchSermonWire {
         }
     }
 
+    /// A blank: its number, hint and whether it's open; the answer only once revealed.
+    private struct BlankRow: Decodable {
+        let n: Int
+        let open: Bool?
+        let hint: String?
+        let answer: String?
+
+        var blank: SermonBlank? {
+            guard (1...999).contains(n) else { return nil }
+            let open = open ?? false
+            return SermonBlank(n: n, open: open, hint: hint.flatMap(SummaryRow.nonEmpty), answer: open ? nil : answer)
+        }
+    }
+
     private struct SermonRow: Decodable {
         let id: UUID
         let slug: String
@@ -213,6 +227,9 @@ enum ChurchSermonWire {
         let next: Lossy<SummaryRow>?
         let is_member: Bool?
         let locations: [Lossy<LocationRow>]?
+        let revision: Int?
+        let answers: String?
+        let blanks: [Lossy<BlankRow>]?
 
         var sermon: PublishedSermon? {
             guard ChurchSermonLink.isSlug(slug) else { return nil }
@@ -228,7 +245,10 @@ enum ChurchSermonWire {
                 blocks: (blocks ?? []).compactMap { $0.value?.block },
                 previous: previous?.value?.summary, next: next?.value?.summary,
                 isMember: is_member ?? false,
-                locations: (locations ?? []).compactMap { $0.value?.location }
+                locations: (locations ?? []).compactMap { $0.value?.location },
+                revision: revision ?? 0,
+                answers: SermonAnswers(rawValue: answers ?? "") ?? .hidden,
+                blanks: (blanks ?? []).compactMap { $0.value?.blank }
             )
         }
     }

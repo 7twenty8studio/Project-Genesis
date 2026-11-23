@@ -319,6 +319,91 @@ async function noSideScroll(page, label) {
     if (!/All changes saved/.test(slowState) || live.title !== "Typed while unpublishing" || live.status !== "unpublished") problems.push("slow unpublish: " + slowState + " / " + live.title + " / " + live.status);
     await ctx.close();
   }
+  // Fill-in-the-blank handouts: no key before reveal (not even in the page source), answers kept in the browser per revision,
+  // Check and Show together after reveal, Practice Again keeps the saved answers; Studio's Make Blank and Reveal Answers.
+  {
+    const HB = "77777777-7777-4777-8777-777777777777";
+    await fetch(MOCK + `/mock/reveal?id=${HB}&on=0`);
+    const source = await (await fetch(`${BASE}/s/handout001`)).text();
+    if (/Seeing|Giver/.test(source)) problems.push("handout: an answer is in the page before reveal");
+    const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+    const page = await ctx.newPage();
+    page.on("pageerror", (e) => problems.push(`handout page error: ${e.message}`));
+    await page.goto(`${BASE}/s/handout001`);
+    const blank1 = page.getByRole("textbox", { name: "Blank 1" });
+    if (!(await blank1.count())) problems.push("handout: blank 1 not shown");
+    if (!(await page.getByRole("textbox", { name: "Blank 3, Your own words" }).count())) problems.push("handout: open blank not shown");
+    if (await page.getByRole("button", { name: "Check Answers" }).count()) problems.push("handout: Check Answers before reveal");
+    if (await page.getByRole("button", { name: "Show Answers" }).count()) problems.push("handout: Show Answers before reveal");
+    await blank1.fill("seeing");
+    await page.getByRole("textbox", { name: "Blank 2" }).fill("Taker");
+    await axe(page, "handout before reveal");
+    await noSideScroll(page, "handout before reveal");
+    await page.screenshot({ path: `${OUT}/handout-hidden.png`, fullPage: true });
+    await page.reload();
+    if ((await page.getByRole("textbox", { name: "Blank 1" }).inputValue()) !== "seeing") problems.push("handout: answer not kept in the browser");
+    await fetch(MOCK + `/mock/reveal?id=${HB}&on=1`);
+    await page.reload();
+    await page.getByRole("button", { name: "Check Answers" }).click();
+    if (!(await page.getByText("✓ Correct").count())) problems.push("handout: a right answer isn't marked correct");
+    if (!(await page.getByText("Not yet").count())) problems.push("handout: a wrong answer isn't marked");
+    await page.getByRole("button", { name: "Show Answers" }).click();
+    if (!(await page.getByText("(Answer: Giver)").count())) problems.push("handout: Show Answers didn't show the key");
+    await axe(page, "handout revealed");
+    await page.screenshot({ path: `${OUT}/handout-revealed.png`, fullPage: true });
+    await page.getByRole("button", { name: "Practice Again" }).click();
+    if ((await page.getByRole("textbox", { name: "Blank 1" }).inputValue()) !== "") problems.push("handout: Practice Again didn't start fresh");
+    await page.getByRole("textbox", { name: "Blank 1" }).fill("x");
+    await page.getByRole("button", { name: "Back to My Answers" }).click();
+    if ((await page.getByRole("textbox", { name: "Blank 1" }).inputValue()) !== "seeing") problems.push("handout: practice changed the saved answers");
+    const kept = await page.evaluate(() => Object.keys(localStorage).filter((k) => k.startsWith("versely.handout.handout001.")));
+    if (kept.join() !== "versely.handout.handout001.1") problems.push("handout: answers not saved per revision: " + kept.join());
+    await ctx.close();
+
+    // Studio: Make Blank on selected words, an imported handout's lines, Publish waiting for answers, Reveal Answers.
+    await fetch(MOCK + `/mock/reveal?id=${HB}&on=0`);
+    const sctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+    await sctx.addCookies([{ name: "vs_session", value: session, url: BASE }]);
+    const sp = await sctx.newPage();
+    sp.on("pageerror", (e) => problems.push(`studio handout page error: ${e.message}`));
+    await sp.goto(`${BASE}/studio/${HB}`, { waitUntil: "networkidle" });
+    if (!(await sp.getByLabel("Answer").first().count())) problems.push("studio handout: blanks not listed");
+    await sp.getByRole("button", { name: "Paste or import an outline" }).click();
+    await sp.getByLabel("Paste text").fill("Gratitude\n\n- Gratitude starts with ______ God the _____\n\n> A quotation with ____ stays as written");
+    const addMode = sp.getByLabel(/Add after/);
+    if (await addMode.count()) await addMode.check();
+    await sp.getByRole("button", { name: "Make the outline" }).click();
+    await sp.waitForTimeout(400);
+    if ((await sp.getByText("Type the answer, or make it an open blank.").count()) < 2) problems.push("studio handout: imported blank lines don't wait for answers");
+    await sp.getByRole("tab", { name: "Publish" }).click();
+    if (!(await sp.getByText("Give every blank its answer, or make it an open blank.").count())) problems.push("studio handout: Publish doesn't say the blanks need answers");
+    await sp.getByRole("button", { name: "Fix this" }).first().click();
+    await sp.waitForTimeout(300);
+    const empty = sp.locator("input[aria-invalid=true]");
+    const n = await empty.count();
+    for (let i = 0; i < n; i++) await empty.first().fill(i === 0 ? "Knowing" : "Sustainer");
+    await sp.waitForTimeout(1800);
+    await sp.getByRole("tab", { name: "Publish" }).click();
+    if (await sp.getByText("Give every blank its answer, or make it an open blank.").count()) problems.push("studio handout: still blocked after giving answers");
+    if (!(await sp.getByTestId("answers-section").count())) problems.push("studio handout: no Answers section");
+    await sp.getByRole("button", { name: "Reveal Answers" }).click();
+    await sp.getByText("Members can check their answers now.").waitFor({ timeout: 5000 }).catch(() => problems.push("studio handout: Reveal Answers didn't take"));
+    await axe(sp, "studio handout publish");
+    await sp.screenshot({ path: `${OUT}/studio-handout.png`, fullPage: true });
+    await sp.locator("section[aria-labelledby=publish-title]").getByRole("button", { name: /^Publish/ }).click();
+    await sp.getByText("Published.", { exact: false }).first().waitFor({ timeout: 5000 }).catch(() => problems.push("studio handout: republish didn't finish"));
+    const view = await (await fetch(`${BASE}/s/handout001`)).text();
+    if (/Knowing|Sustainer/.test(view)) problems.push("studio handout: a republished revision didn't start hidden");
+    // Make Blank on selected words keeps them as the answer.
+    await sp.getByRole("tab", { name: "Outline" }).click();
+    const para = sp.getByRole("textbox", { name: "Paragraph" }).first();
+    await para.fill("Give thanks always");
+    await para.evaluate((el) => el.setSelectionRange(5, 11));
+    await sp.locator("ol[aria-label='Outline'] > li", { has: para }).getByRole("button", { name: "Make Blank" }).click();
+    if ((await para.inputValue()) !== "Give [[thanks]] always") problems.push("studio handout: Make Blank made " + (await para.inputValue()));
+    if ((await sp.locator("ol[aria-label='Outline'] > li", { has: para }).getByLabel("Answer", { exact: true }).inputValue()) !== "thanks") problems.push("studio handout: Make Blank's answer isn't the selected words");
+    await sctx.close();
+  }
   // The home page and Studio's sign-in: every language, light and dark, phone and desktop.
   for (const [locale, header] of [["en", "en-US"], ["es", "es-MX"], ["pt", "pt-BR"]]) {
     for (const scheme of ["light", "dark"]) {

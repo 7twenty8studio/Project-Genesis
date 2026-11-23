@@ -29,6 +29,10 @@ final class Sermon {
     /// (no slug, no copy of the outline): the notes are the person's own and
     /// stay when the church unpublishes it.
     var sourceSermonID: UUID? = nil
+    /// The person's own saved work on the church's fill-in-the-blank
+    /// handout (`SermonHandout`, JSON), one per revision they filled in.
+    /// Private, synced as sermons.handouts (migration 20261128000000).
+    var handoutsRaw: String = ""
     var createdAt: Date = Date.now
     var updatedAt: Date = Date.now
 
@@ -46,6 +50,11 @@ final class Sermon {
     var passages: [PrayerPassage] {
         get { PrayerPassage.decode(passagesRaw) }
         set { passagesRaw = PrayerPassage.encode(newValue) }
+    }
+
+    var handouts: [SermonHandout] {
+        get { SermonHandout.decode(handoutsRaw) }
+        set { handoutsRaw = SermonHandout.encodeKept(newValue) }
     }
 
     var hasContent: Bool {

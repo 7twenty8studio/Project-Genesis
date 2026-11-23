@@ -440,6 +440,8 @@ struct ChurchSermonFeatureTests {
 
     @Test func theAnnouncementWaitsForTheSwitch() {
         #expect(WhatsNewCatalog.churchSermons.flag == .churchSermons)
-        #expect(WhatsNewCatalog.all.last?.id == "church-sermons")
+        #expect(WhatsNewCatalog.all.contains { $0.id == "church-sermons" })
+        #expect(WhatsNewCatalog.sermonHandouts.flag == .churchSermons)
+        #expect(WhatsNewCatalog.all.last?.id == "church-sermon-handouts")
     }
 }

@@ -2,6 +2,7 @@
 // in Node: what readers will get from a draft (the same as
 // genesis_publishable_blocks), why Publish is off, and the words for each
 // database refusal.
+import { blankProblems, numberBlanks } from "./blanks.ts";
 import { draftProblems, quoteTranslation, type DraftBlock, type DraftRow } from "./draft.ts";
 import type { Block, PublishedSermon } from "./outline.ts";
 import { reviewDone, stillOpen, type Decision, type ReviewItem } from "./import/review.ts";
@@ -18,6 +19,8 @@ export function publishableBlocks(blocks: DraftBlock[]): Block[] {
 
 /** The draft as its published page will look (Studio's preview). */
 export function previewSermon(row: DraftRow, church: string): PublishedSermon {
+  // The key shows in the preview (unless there's none) so the pastor can try Check Answers.
+  const numbered = numberBlanks(publishableBlocks(row.draft_blocks));
   return {
     status: "ok",
     id: row.id,
@@ -35,14 +38,16 @@ export function previewSermon(row: DraftRow, church: string): PublishedSermon {
     revision: 0,
     published_at: row.published_at ?? "",
     cover: row.cover_id ? { id: row.cover_id, path: "", alt: row.cover_decorative ? "" : row.cover_alt, decorative: row.cover_decorative } : null,
-    blocks: publishableBlocks(row.draft_blocks),
+    blocks: numbered.blocks,
     previous: null,
     next: null,
     is_member: true,
+    answers: row.answers === "never" ? "never" : "revealed",
+    blanks: numbered.blanks.map((b) => ({ n: b.n, open: b.answer === null, hint: b.hint, ...(row.answers === "never" ? {} : { answer: b.answer }) })),
   };
 }
 
-export type Blocker = "needs_title" | "empty_outline" | "needs_cover_alt" | "review_open" | "invalid_blocks" | "saving";
+export type Blocker = "needs_title" | "empty_outline" | "needs_cover_alt" | "review_open" | "invalid_blocks" | "blanks" | "saving";
 
 /** Everything that keeps Publish off, in the order Studio lists them. */
 export function publishBlockers(
@@ -56,6 +61,7 @@ export function publishBlockers(
   if (row.cover_id && !row.cover_decorative && row.cover_alt.trim() === "") out.push("needs_cover_alt");
   if (review && !reviewDone(stillOpen(review.items, row.draft_blocks), review.decisions)) out.push("review_open");
   if (draftProblems(row.draft_blocks).length) out.push("invalid_blocks");
+  if (blankProblems(row.draft_blocks).length) out.push("blanks");
   if (saving) out.push("saving");
   return out;
 }
@@ -88,6 +94,18 @@ export function refusalMessage(code: string): string {
       return "Finish checking the import before publishing.";
     case "invalid_blocks":
       return "Part of the outline can't be saved. Check the items marked in red.";
+    case "blank_needs_answer":
+      return "Give every blank its answer, or make it an open blank.";
+    case "blank_in_quotation":
+      return "Blanks go in your own words, not in a quotation. Remove the blank from the quotation.";
+    case "blank_too_long":
+      return "An answer can be up to 100 characters and a hint up to 60.";
+    case "too_many_blanks":
+      return "A sermon can have up to 100 blanks.";
+    case "not_published":
+      return "Publish the sermon first, then reveal its answers.";
+    case "answers_not_manual":
+      return "The published sermon doesn't wait for you to reveal its answers. Publish your changes to use this setting.";
     case "invalid_locations":
       return "Give each place a name and each one-time gathering a date. Check that nothing is too long, with at most 10 places and 20 times each.";
     case "invalid_details":

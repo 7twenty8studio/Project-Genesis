@@ -28,6 +28,8 @@ struct PublishedSermonView: View {
     @State private var confirmingHide = false
     @State private var reportMessage: String?
     @State private var cover: UIImage?
+    /// The fill-in-the-blank handout, when the outline has blanks.
+    @State private var handout: HandoutModel?
 
     private struct PassageRoute: Identifiable {
         let range: StudyRange
@@ -45,6 +47,7 @@ struct PublishedSermonView: View {
                         sectionView(section)
                             .id(section.id)
                     }
+                    HandoutBar()
                     joinNext
                     locationsSection
                         .id(Self.locationsID)
@@ -58,7 +61,9 @@ struct PublishedSermonView: View {
                 .padding(.horizontal, 20)
                 .padding(.vertical, 16)
                 .frame(maxWidth: .infinity)
+                .environment(handout)
             }
+            .scrollDismissesKeyboard(.interactively)
             .toolbar { toolbar(sections, proxy: proxy) }
         }
         .themedScreen()
@@ -68,6 +73,7 @@ struct PublishedSermonView: View {
             await backend.count(.open, slug: sermon.slug)
         }
         .task(id: sermon.cover?.path) { await loadCover() }
+        .task(id: "\(sermon.slug)-\(sermon.revision)-\(sermon.answers.rawValue)") { startHandout() }
         .sheet(item: $passage) { route in
             ChurchPassageSheet(range: route.range, quoted: route.quoted) { verse in
                 passage = nil
@@ -200,7 +206,7 @@ struct PublishedSermonView: View {
             HStack {
                 Spacer()
                 Button {
-                    UIPasteboard.general.string = SermonOutline.copyText(section.blocks)
+                    UIPasteboard.general.string = SermonOutline.copyText(section.blocks, blanks: sermon.blanks)
                     copied = section.id
                 } label: {
                     Label(copied == section.id ? "Copied" : "Copy", systemImage: copied == section.id ? "checkmark" : "doc.on.doc")
@@ -208,7 +214,7 @@ struct PublishedSermonView: View {
                 }
                 .buttonStyle(.borderless)
                 .foregroundStyle(palette.secondaryText)
-                .accessibilityLabel(section.title.map { String(localized: "Copy: \($0)") } ?? String(localized: "Copy"))
+                .accessibilityLabel(section.title.map { String(localized: "Copy: \(plain($0))") } ?? String(localized: "Copy"))
                 .accessibilityIdentifier("churchSermon.copy")
             }
         }
@@ -219,16 +225,11 @@ struct PublishedSermonView: View {
     private func blockView(_ block: SermonBlock) -> some View {
         switch block {
         case let .heading(_, text, level):
-            Text(text)
-                .font(.system(level == 1 ? .title : .title2, design: .serif, weight: .semibold))
-                .foregroundStyle(palette.text)
+            HandoutText(text: text, font: .system(level == 1 ? .title : .title2, design: .serif, weight: .semibold))
                 .accessibilityAddTraits(.isHeader)
                 .padding(.top, 8)
         case let .paragraph(_, text):
-            Text(text)
-                .font(.system(.body, design: .serif))
-                .foregroundStyle(palette.text)
-                .fixedSize(horizontal: false, vertical: true)
+            HandoutText(text: text, font: .system(.body, design: .serif))
         case let .quote(_, text):
             Text(text)
                 .font(.system(.body, design: .serif).italic())
@@ -244,10 +245,9 @@ struct PublishedSermonView: View {
                     HStack(alignment: .firstTextBaseline, spacing: 8) {
                         Text(ordered ? "\(index + 1)." : "\u{2022}")
                             .foregroundStyle(palette.secondaryText)
-                        Text(item)
-                            .fixedSize(horizontal: false, vertical: true)
+                            .font(.system(.body, design: .serif))
+                        HandoutText(text: item, font: .system(.body, design: .serif))
                     }
-                    .font(.system(.body, design: .serif))
                     .foregroundStyle(palette.text)
                 }
             }
@@ -385,7 +385,7 @@ struct PublishedSermonView: View {
             if titled.count > 1 {
                 Menu {
                     ForEach(titled) { section in
-                        Button(section.title ?? "") { scroll(to: section.id, proxy: proxy) }
+                        Button(plain(section.title ?? "")) { scroll(to: section.id, proxy: proxy) }
                     }
                 } label: {
                     Label("Jump to Section", systemImage: "list.bullet")
@@ -397,7 +397,7 @@ struct PublishedSermonView: View {
             }
             Menu {
                 Button("Copy Outline", systemImage: "doc.on.doc") {
-                    UIPasteboard.general.string = SermonOutline.copyText(sermon.blocks)
+                    UIPasteboard.general.string = SermonOutline.copyText(sermon.blocks, blanks: sermon.blanks)
                 }
                 Button("Report", systemImage: "flag") { reporting = true }
                 Button("Hide Sermons from \(sermon.church)", systemImage: "hand.raised") { confirmingHide = true }
@@ -408,7 +408,40 @@ struct PublishedSermonView: View {
         }
     }
 
+    /// A heading's words with its blanks as lines (menus, labels).
+    private func plain(_ text: String) -> String {
+        let known = Set(sermon.blanks.map(\.n))
+        return SermonBlanks.filled(text, known: known.contains)
+    }
+
     // MARK: Actions
+
+    /// Opens the handout with the member's saved answers for this revision.
+    /// Answers save privately with their notes as they type (starting the
+    /// notes the first time); once the church reveals the key, it's saved
+    /// with them too, so their work can still be checked after an unpublish.
+    private func startHandout() {
+        guard sermon.hasBlanks else {
+            handout = nil
+            return
+        }
+        let sermon = sermon
+        let context = modelContext
+        let saved = ChurchSermonNotes.savedHandout(for: sermon, in: context)
+        if let saved, sermon.answers == .revealed, !saved.hasKey {
+            ChurchSermonNotes.saveHandout(saved.responses, for: sermon, in: context)
+        }
+        handout = HandoutModel(
+            blanks: sermon.blanks,
+            answers: sermon.answers,
+            responses: HandoutModel.read(saved?.responses ?? [:]),
+            savedKey: saved?.blanks ?? []
+        ) { [backend] responses in
+            let isNew = ChurchSermonNotes.existing(for: sermon.id, in: context) == nil
+            ChurchSermonNotes.saveHandout(HandoutModel.stored(responses), for: sermon, in: context)
+            if isNew { Task { await backend.count(.save, slug: sermon.slug) } }
+        }
+    }
 
     private func openNotes() {
         let isNew = !hasNotes

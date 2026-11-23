@@ -28,6 +28,17 @@ struct PublishedSermon: Identifiable, Hashable, Sendable {
     /// migrations 20261124000000 and 20261125000000), shown on every one of
     /// its sermons.
     var locations: [ChurchLocation] = []
+    /// The published revision (1, 2…): a member's saved answers belong to
+    /// the revision they filled in.
+    var revision: Int = 0
+    /// Fill-in-the-blank handouts (migration 20261128000000): whether the
+    /// key is out for this revision, and each blank in the text's "[[n]]"
+    /// markers (answers only once revealed).
+    var answers: SermonAnswers = .hidden
+    var blanks: [SermonBlank] = []
+
+    /// Whether the outline is a handout with blanks to fill in.
+    var hasBlanks: Bool { !blanks.isEmpty }
 
     struct Cover: Hashable, Sendable {
         /// The file's name in the private bucket, read only through the
@@ -297,13 +308,15 @@ enum SermonOutline {
     /// What Copy puts on the clipboard: the church's words exactly as
     /// published, one block per paragraph; a reference as the pastor typed
     /// it, never verse text.
-    static func copyText(_ blocks: [SermonBlock]) -> String {
-        blocks.map { block -> String in
+    static func copyText(_ blocks: [SermonBlock], blanks: [SermonBlank] = []) -> String {
+        let known = Set(blanks.map(\.n))
+        let words = { (text: String) in SermonBlanks.filled(text, known: known.contains) }
+        return blocks.map { block -> String in
             switch block {
-            case let .heading(_, text, _), let .paragraph(_, text): text
+            case let .heading(_, text, _), let .paragraph(_, text): words(text)
             case let .quote(_, text): "\u{201C}\(text)\u{201D}"
             case let .list(_, items, ordered):
-                items.enumerated().map { ordered ? "\($0.offset + 1). \($0.element)" : "\u{2022} \($0.element)" }.joined(separator: "\n")
+                items.enumerated().map { ordered ? "\($0.offset + 1). \(words($0.element))" : "\u{2022} \(words($0.element))" }.joined(separator: "\n")
             case let .scripture(_, reference):
                 reference.label.map { "\(reference.raw) (\($0))" } ?? reference.raw
             }
