@@ -84,6 +84,8 @@ shares; README.md has the architecture.
 - Launch-day demo films: `./Scripts/record_demos.sh` records DemoReelUITests
   (skipped unless GENESIS_DEMO=1) on an iPhone 18 Pro Max simulator with
   `-uiTestingDemo` (adds the demo sermon `launchday1`); marks in build/Demos/marks.
+  About ten seconds of real use each, set up off camera before `Demo.start`;
+  Themes and Pages are short films joined afterwards.
 
 ## Sync
 - Supabase schema lives in `supabase/migrations`; every table has user_id,

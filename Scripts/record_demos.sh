@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Records the launch-day feature demos (GenesisUITests/DemoReelUITests) on an
-# iPhone 18 Pro Max simulator: one screen recording per feature, with demo data and
+# iPhone 18 Pro Max simulator: about ten seconds of real use per feature (Themes and
+# Pages are a few short films each, joined afterwards), with demo data and
 # a 9:41 status bar. Nothing is tested and nothing leaves the Mac.
 #
 #   ./Scripts/record_demos.sh                 every demo
@@ -18,9 +19,13 @@ MARKS="$PWD/$OUT/marks"
 mkdir -p "$OUT" "$MARKS"
 
 DEMOS=(
-  "01|testDemo01Themes|01-themes"
+  "01|testDemo01aAutumn|01a-autumn"
+  "01|testDemo01bWinter|01b-winter"
+  "01|testDemo01cForest|01c-forest"
+  "01|testDemo01dStarlight|01d-starlight"
   "02|testDemo02Ambient|02-ambient"
-  "03|testDemo03Pages|03-pages"
+  "03|testDemo03aCurl|03a-curl"
+  "03|testDemo03bScroll|03b-scroll"
   "04|testDemo04Highlights|04-highlights"
   "05|testDemo05Timeline|05-timeline"
   "06|testDemo06Map|06-map"
@@ -61,6 +66,9 @@ echo "Building the app and the demo scripts..."
 xcodebuild -project Genesis.xcodeproj -scheme GenesisUITests -destination "id=$SIM_ID" \
   -derivedDataPath "$DERIVED" -skipPackagePluginValidation build-for-testing > "$OUT/build.log" 2>&1 \
   || { grep -E "error:" "$OUT/build.log" | head -20; echo "The build failed. Send $OUT/build.log."; exit 1; }
+
+# A full run starts clean, so no film from an older version of the demos is sent back.
+if [ "$WANT" = "  " ]; then rm -f "$OUT"/*.mp4 "$MARKS"/*; find "$OUT" -maxdepth 1 -name "*.log" ! -name build.log -delete; fi
 
 now() { python3 -c 'import time; print(f"{time.time():.3f}")'; }
 FAILED=""
