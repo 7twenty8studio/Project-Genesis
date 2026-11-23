@@ -180,6 +180,7 @@ struct AmbientMiniBar: View {
             .padding(.horizontal, 16)
             .padding(.vertical, 6)
             .frame(maxWidth: 420)
+            .readerBarButtons()
             .glassEffect(.regular, in: Capsule())
             .padding(.horizontal, 12)
             .accessibilityElement(children: .contain)

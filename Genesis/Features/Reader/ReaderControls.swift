@@ -37,6 +37,9 @@ struct ReaderControls: View {
             row(iconWidth: 28, overflow: true, compact: true, shrinksTitle: true)
         }
         .foregroundStyle(palette.text)
+        // Fixed-size buttons whatever Button Shapes and the text size are,
+        // so the bar never grows over the page's heading.
+        .readerBarButtons()
         .padding(.horizontal, 16)
     }
 
@@ -63,6 +66,7 @@ struct ReaderControls: View {
                     .fixedSize(horizontal: !shrinksTitle, vertical: false)
                     .padding(.horizontal, shrinksTitle ? 2 : 6)
             }
+            .accessibilityShowsLargeContentViewer()
             .accessibilityHint("Choose a book and chapter")
             .accessibilityIdentifier("reader.chapterButton")
             iconButton("chevron.right", label: String(localized: "Next chapter"), width: iconWidth, enabled: reader.chapterID.next != nil) {
@@ -189,6 +193,7 @@ struct ReaderControls: View {
                 .padding(.horizontal, 4)
                 .frame(minWidth: 40, minHeight: 36)
         }
+        .accessibilityShowsLargeContentViewer()
         .accessibilityLabel("Translation, \(reader.translation.name)")
         .accessibilityIdentifier("reader.translation")
     }
@@ -238,6 +243,7 @@ struct ReaderControls: View {
                 .frame(width: width, height: 36)
                 .contentShape(Rectangle())
         }
+        .largeContent("ellipsis.circle", String(localized: "More"))
         .accessibilityLabel("More")
         .accessibilityIdentifier("reader.more")
     }
@@ -250,6 +256,7 @@ struct ReaderControls: View {
                 .contentShape(Rectangle())
         }
         .disabled(!enabled)
+        .largeContent(systemImage, label)
         .accessibilityLabel(label)
     }
 }

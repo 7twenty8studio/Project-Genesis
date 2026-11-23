@@ -114,6 +114,9 @@ struct BibleMapView: View {
                 .accessibilityIdentifier("map.readRoute")
             }
         }
+        // They're glass shapes already: keep Button Shapes from adding
+        // another, bigger one around each.
+        .iconButtons(drawsShape: false)
         .padding(.horizontal, 16)
         .padding(.top, 4)
     }

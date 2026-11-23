@@ -202,6 +202,7 @@ private struct HighlightsList: View {
                             .frame(width: 26, height: 26)
                             .overlay(Circle().strokeBorder(colorFilter == color ? palette.accent : .clear, lineWidth: 2.5))
                     }
+                    .buttonStyle(IconButtonStyle(drawsShape: false))
                     .accessibilityLabel("\(color.title) highlights")
                     .accessibilityAddTraits(colorFilter == color ? .isSelected : [])
                 }
@@ -217,6 +218,7 @@ private struct HighlightsList: View {
                     Image(systemName: "plus")
                         .frame(width: 30, height: 30)
                 }
+                .buttonStyle(IconButtonStyle())
                 .accessibilityLabel("New collection")
             }
             .padding(.horizontal, 20)
