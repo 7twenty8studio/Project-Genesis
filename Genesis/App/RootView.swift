@@ -49,7 +49,8 @@ struct RootView: View {
                 }
             }
         }
-        .whatsNewSheet(isReady: onboardingComplete && scenePhase == .active && !showsWelcome)
+        // A sermon link (QR code) goes first: What's New waits, and closes if it was showing.
+        .whatsNewSheet(isReady: onboardingComplete && scenePhase == .active && !showsWelcome, yields: router.sermonLink != nil || router.pendingSermon != nil)
         // Premium: a quiet welcome the first time Versely opens each day.
         .fullScreenCover(isPresented: $showsWelcome) {
             MorningWelcomeView { showsWelcome = false }
@@ -64,19 +65,22 @@ struct RootView: View {
         .preferredColorScheme(current == .automatic ? nil : (theme.isDark ? .dark : .light))
         // Switch to and from the night theme on time.
         .task(id: settings.preferences.nightReading) { await followNightReading() }
-        .onOpenURL { url in
-            // Sign in with Google's callback isn't a link to open (its web
-            // sheet takes it; this is only in case one ever arrives here).
-            if GoogleOAuth.isCallback(url) { return }
-            if !onboardingComplete {
-                whatsNew.markShippedFeaturesSeen()
-                if !features.hasChosen { features.choose(OptionalFeature.defaults) }
-            }
-            onboardingComplete = true
-            // Opened from a link or widget: go there, not to the welcome.
-            welcome.markShown()
-            showsWelcome = false
-            router.handle(url)
+        // A sermon from its link or QR code: shown once whatever was on
+        // screen has closed (a sheet can't open over another), which also
+        // covers a link that launches Versely.
+        .task(id: router.pendingSermon) {
+            guard router.pendingSermon != nil else { return }
+            try? await Task.sleep(for: .milliseconds(450))
+            guard !Task.isCancelled else { return }
+            router.showPendingSermon()
+        }
+        .onOpenURL { url in openLink(url) }
+        // A sermon's https link (a QR code from the Camera, Safari, Messages)
+        // arrives as a Universal Link, which iOS hands over as a web-browsing
+        // activity rather than always through onOpenURL; take it here too.
+        // Opening the same sermon twice only shows it once.
+        .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
+            if let url = activity.webpageURL { openLink(url) }
         }
         .task {
             followSystemAppearance()
@@ -212,6 +216,22 @@ struct RootView: View {
     /// Night reading "With Dark Mode" follows the system's appearance. The
     /// app's own colour scheme is pinned by the reading theme, and that pin
     /// reaches the scene and its windows, so `colorScheme` can't tell.
+    /// A link from a widget, notification, QR code or another app.
+    private func openLink(_ url: URL) {
+        // Sign in with Google's callback isn't a link to open (its web
+        // sheet takes it; this is only in case one ever arrives here).
+        if GoogleOAuth.isCallback(url) { return }
+        if !onboardingComplete {
+            whatsNew.markShippedFeaturesSeen()
+            if !features.hasChosen { features.choose(OptionalFeature.defaults) }
+        }
+        onboardingComplete = true
+        // Opened from a link or widget: go there, not to the welcome.
+        welcome.markShown()
+        showsWelcome = false
+        router.handle(url)
+    }
+
     private func followSystemAppearance() {
         guard let scene = UIApplication.shared.connectedScenes.compactMap({ $0 as? UIWindowScene }).first else { return }
         Self.readSystemAppearance(scene, into: settings)

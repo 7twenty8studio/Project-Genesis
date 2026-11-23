@@ -13,9 +13,17 @@ enum PaperTexture {
     /// visible pattern.
     private static let starTileSize: CGFloat = 640
 
+    /// What shows around the pages: the theme's colour, or nothing over a
+    /// scene.
+    static func surroundColor(for theme: ReaderTheme) -> UIColor {
+        theme.scene != nil ? .clear : theme.palette.uiBackground
+    }
+
     /// The page colour for a theme: textured paper for Premium themes, the
     /// plain colour otherwise.
     static func pageColor(for theme: ReaderTheme) -> UIColor {
+        // Forest, Ocean and Hearth: clear, over their scene (ThemeSceneView).
+        if theme.scene != nil { return .clear }
         let palette = theme.palette
         guard theme.hasPaperTexture else { return palette.uiBackground }
         if let cached = cache[palette.backgroundHex] { return cached }

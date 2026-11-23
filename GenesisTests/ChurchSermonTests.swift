@@ -217,11 +217,19 @@ struct ChurchSermonLinkTests {
         let defaults = UserDefaults(suiteName: "ChurchSermonLinkTests-\(UUID())")!
         let router = AppRouter(reader: ReaderViewModel(library: BibleLibrary(defaults: defaults), progress: ReadingProgress(defaults: defaults)))
         router.tab = .explore
+        router.showsSearch = true
         router.handle(URL(string: "https://versely.7twenty8studio.com/s/abcde12345")!)
+        // It waits for the screen to clear (Search closes), then RootView shows it.
+        #expect(router.showsSearch == false)
+        #expect(router.sermonLink == nil)
+        #expect(router.pendingSermon?.slug == "abcde12345")
+        router.showPendingSermon()
         #expect(router.sermonLink?.slug == "abcde12345")
+        #expect(router.pendingSermon == nil)
         #expect(router.tab == .explore)
         router.sermonLink = nil
         router.handle(GenesisLink.sermon("fghij67890"))
+        router.showPendingSermon()
         #expect(router.sermonLink?.slug == "fghij67890")
         // Opening a passage in the reader closes the sermon sheet.
         router.read(VerseID(rawValue: 43_003_016))
@@ -440,6 +448,8 @@ struct ChurchSermonFeatureTests {
 
     @Test func theAnnouncementWaitsForTheSwitch() {
         #expect(WhatsNewCatalog.churchSermons.flag == .churchSermons)
-        #expect(WhatsNewCatalog.all.last?.id == "church-sermons")
+        #expect(WhatsNewCatalog.all.contains { $0.id == "church-sermons" })
+        #expect(WhatsNewCatalog.sermonHandouts.flag == .churchSermons)
+        #expect(WhatsNewCatalog.all.last?.id == "church-sermon-handouts")
     }
 }

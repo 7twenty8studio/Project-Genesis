@@ -343,13 +343,17 @@ struct RemoteSermon: SyncRow, Equatable {
     /// rows with and without it in separate requests (every row in a
     /// request has the same keys).
     var sourceSermonId: UUID?
+    /// The person's saved work on church handouts (sermons.handouts,
+    /// migration 20261128000000). Sent only when there is some, in its own
+    /// request (every row in a request has the same keys).
+    var handouts: [SermonHandout]?
     var createdAt: Date
     var updatedAt: Date
     var deletedAt: Date?
     var serverUpdatedAt: String?
 
     enum CodingKeys: String, CodingKey {
-        case id, userId, title, preacher, church, preachedAt, series, body, passages, isFavourite, sourceSermonId
+        case id, userId, title, preacher, church, preachedAt, series, body, passages, isFavourite, sourceSermonId, handouts
         case createdAt, updatedAt, deletedAt, serverUpdatedAt
     }
 
@@ -366,6 +370,9 @@ struct RemoteSermon: SyncRow, Equatable {
         passages = sermon.passages.map { RemotePrayerPassage(startVerse: $0.start.rawValue, endVerse: $0.end.rawValue) }
         isFavourite = sermon.isFavourite
         sourceSermonId = sermon.sourceSermonID
+        let saved = sermon.handouts
+        handouts = saved.isEmpty ? nil : saved
+        handoutsWeight = sermon.handoutsRaw.utf8.count
         createdAt = sermon.createdAt
         updatedAt = sermon.updatedAt
     }
@@ -386,12 +393,17 @@ struct RemoteSermon: SyncRow, Equatable {
         passages = try container.decodeIfPresent([RemotePrayerPassage].self, forKey: .passages) ?? []
         isFavourite = try container.decodeIfPresent(Bool.self, forKey: .isFavourite) ?? false
         sourceSermonId = try container.decodeIfPresent(UUID.self, forKey: .sourceSermonId)
+        // Saved work written by a later version that doesn't read here is left alone.
+        handouts = (try? container.decodeIfPresent([SermonHandout].self, forKey: .handouts)) ?? nil
         updatedAt = try container.decode(Date.self, forKey: .updatedAt)
         deletedAt = try container.decodeIfPresent(Date.self, forKey: .deletedAt)
         serverUpdatedAt = try container.decodeIfPresent(String.self, forKey: .serverUpdatedAt)
     }
 
-    var payloadWeight: Int { body.utf8.count }
+    /// The saved handouts' size, for batching (not encoded).
+    private var handoutsWeight = 0
+
+    var payloadWeight: Int { body.utf8.count + handoutsWeight }
 
     /// The passages to keep locally; anything that isn't a verse id is skipped.
     var sermonPassages: [PrayerPassage] {
@@ -416,6 +428,7 @@ struct RemoteSermon: SyncRow, Equatable {
         try container.encode(passages, forKey: .passages)
         try container.encode(isFavourite, forKey: .isFavourite)
         try container.encodeIfPresent(sourceSermonId, forKey: .sourceSermonId)
+        try container.encodeIfPresent(handouts, forKey: .handouts)
         try container.encode(createdAt, forKey: .createdAt)
         try container.encode(updatedAt, forKey: .updatedAt)
         try container.encodeIfPresent(deletedAt, forKey: .deletedAt)

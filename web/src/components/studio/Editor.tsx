@@ -3,11 +3,12 @@
 import type { ChurchPerson } from "@/lib/studio.server";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { closeSermon, deleteSermon, duplicateSermon, publishSermon, saveSermon, uploadSermonCover } from "@/app/studio/actions";
+import { closeSermon, deleteSermon, duplicateSermon, publishSermon, revealAnswers, saveSermon, uploadSermonCover } from "@/app/studio/actions";
 import { draftProblems, type DraftBlock, type DraftDetails, type DraftRow } from "@/lib/draft";
 import { translator, type Lang } from "@/lib/i18n";
 import type { DraftReview } from "@/lib/import/review";
 import { afterClose, publishBlockers, refusalMessage } from "@/lib/studio";
+import type { AnswersMode } from "@/lib/blanks";
 import { DetailsForm } from "./DetailsForm";
 import { OutlineEditor } from "./OutlineEditor";
 import { Preview } from "./Preview";
@@ -47,6 +48,7 @@ function detailsOf(row: DraftRow): Partial<DraftDetails> & { cover: string | nul
     cover: row.cover_id,
     cover_alt: row.cover_alt,
     cover_decorative: row.cover_decorative,
+    answers: row.answers,
   };
 }
 
@@ -63,7 +65,7 @@ export function Editor({
   who,
 }: {
   lang: Lang;
-  initial: DraftRow & { published_draft_version: number | null };
+  initial: DraftRow & { published_draft_version: number | null; published_answers?: AnswersMode | null };
   church: string;
   /** Who started and last edited it, and (owner and admins) the people it can be handed to. */
   who?: { startedBy: string | null; editedBy: string | null; createdBy: string | null; writers: ChurchPerson[] | null };
@@ -86,6 +88,8 @@ export function Editor({
   }, [row]);
   const version = useRef(initial.draft_version);
   // The same two versions as state, for what the page shows.
+  // The Answers setting of the copy readers have (Reveal Answers is for "After I reveal them").
+  const [publishedAnswers, setPublishedAnswers] = useState<AnswersMode | null>(initial.published_answers ?? null);
   const [shown, setShown] = useState({ current: initial.draft_version, published: initial.status === "published" ? initial.published_draft_version : null });
   const setVersion = useCallback((v: number, published?: number | null) => {
     version.current = v;
@@ -228,7 +232,9 @@ export function Editor({
       return { ok: false };
     }
     setError(null);
-    setRow((r) => ({ ...r, status: "published", live_audience: r.audience, published_at: new Date().toISOString(), hidden_at: null, published_revision_id: "published" }));
+    // A new revision: its answers start hidden.
+    setRow((r) => ({ ...r, status: "published", live_audience: r.audience, published_at: new Date().toISOString(), hidden_at: null, published_revision_id: `published-${result.number}`, answers_revealed_revision_id: null }));
+    setPublishedAnswers(latest.current.answers);
     setVersion(version.current, version.current);
     return { ok: true, withheld: result.withheld };
   }
@@ -276,6 +282,17 @@ export function Editor({
       setState("unsaved");
       void flush();
     }
+    return true;
+  }
+
+  async function reveal(show: boolean): Promise<boolean> {
+    const result = await revealAnswers(row.id, show).catch(() => ({ ok: false as const, code: "network" }));
+    if (!result.ok) {
+      setError(t(refusalMessage(result.code)));
+      return false;
+    }
+    setError(null);
+    setRow((r) => ({ ...r, answers_revealed_revision_id: result.revealed ? r.published_revision_id : null }));
     return true;
   }
 
@@ -418,6 +435,9 @@ export function Editor({
                 // After the tab has rendered (click updates commit before the next frame).
                 if (field) requestAnimationFrame(() => requestAnimationFrame(() => showFix(field)));
               }}
+              onAnswers={(mode: AnswersMode) => change({ answers: mode })}
+              onReveal={reveal}
+              publishedAnswers={publishedAnswers}
               ownerSection={who?.writers ? <SermonOwner t={t} sermon={row.id} createdBy={who.createdBy} writers={who.writers} /> : undefined}
             />
           ) : null}

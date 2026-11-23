@@ -1,10 +1,12 @@
 import { config } from "@/config";
+import { withBlanks } from "@/lib/blanks";
 import { formatDay, type Lang, type Translate } from "@/lib/i18n";
 import { addressLines, dayNames, localToday, mapsLink, scheduleLines, type ChurchLocation } from "@/lib/locations";
 import { anchorFor, copyText, sections, type Block, type PublishedSermon, type SermonSummary } from "@/lib/outline";
 import type { YouVersionBible } from "@/lib/scripture";
 import { describe } from "@/lib/shared/references";
 import { CopyButton } from "./CopyButton";
+import { BlankText, HandoutProvider, type HandoutLabels } from "./Handout";
 import { ScriptureRef } from "./ScriptureRef";
 import { OpenEvent } from "./SermonEvents";
 import { SignOutButton } from "./SignIn";
@@ -36,6 +38,26 @@ export function SermonView({
   const headed = parts.filter((s) => s.title);
   const outlineLang = sermon.language === "other" ? undefined : sermon.language === "pt" ? "pt-BR" : sermon.language;
   const locations = sermon.locations ?? [];
+  const blanks = sermon.blanks ?? [];
+  const known = new Set(blanks.map((b) => b.n));
+  const plain = (text: string) => withBlanks(text, (n) => known.has(n));
+  const labels: HandoutLabels = {
+    blank: t("Blank {n}"),
+    ownWords: t("Your own words"),
+    correct: t("Correct"),
+    notYet: t("Not yet"),
+    answerIs: t("Answer:"),
+    savedHidden: t("Fill in the blanks as you listen. Your answers are saved in this browser, and you can check them once the church shares the answers."),
+    savedRevealed: t("The answers are ready. Your answers are saved in this browser."),
+    savedNever: t("Fill in the blanks as you listen. Your answers are saved in this browser."),
+    practicing: t("Practicing: a fresh try. Your saved answers are kept."),
+    check: t("Check Answers"),
+    showAnswers: t("Show Answers"),
+    hideAnswers: t("Hide Answers"),
+    practice: t("Practice Again"),
+    backToMine: t("Back to My Answers"),
+    title: t("Your handout"),
+  };
   return (
     <Main className="mx-auto max-w-2xl px-4 pb-24 pt-6 sm:px-6">
       {preview ? null : <OpenEvent endpoint={EVENTS} slug={sermon.slug} />}
@@ -103,7 +125,7 @@ export function SermonView({
               <li key={s.id}>
                 <a href={`#${anchorFor(s)}`} lang={outlineLang} className="group inline-flex items-baseline gap-2 py-1 font-semibold text-accent-strong">
                   <span aria-hidden="true" className="text-copper">↓</span>
-                  <span className="underline decoration-copper decoration-2 underline-offset-[5px] group-hover:decoration-accent-strong">{s.title}</span>
+                  <span className="underline decoration-copper decoration-2 underline-offset-[5px] group-hover:decoration-accent-strong">{plain(s.title ?? "")}</span>
                 </a>
               </li>
             ))}
@@ -111,18 +133,20 @@ export function SermonView({
         </nav>
       ) : null}
 
+      <HandoutProvider slug={sermon.slug} revision={sermon.revision} blanks={blanks} answers={sermon.answers ?? "hidden"} preview={!!preview} labels={labels}>
       <article lang={outlineLang} className="mt-8">
         {parts.map((section) => (
-          <section key={section.id} id={anchorFor(section)} aria-label={section.title ?? undefined} className="mt-8 first:mt-0">
+          <section key={section.id} id={anchorFor(section)} aria-label={section.title ? plain(section.title) : undefined} className="mt-8 first:mt-0">
             {section.blocks.map((block) => (
               <BlockView key={block.id} block={block} sermon={sermon} lang={lang} events={events} youversion={youversion} />
             ))}
             <div className="mt-3 flex justify-end">
-              <CopyButton text={copyText(section.blocks)} label={t("Copy")} done={t("Copied")} sectionName={section.title ?? sermon.title} />
+              <CopyButton text={copyText(section.blocks, blanks)} label={t("Copy")} done={t("Copied")} sectionName={section.title ? plain(section.title) : sermon.title} />
             </div>
           </section>
         ))}
       </article>
+      </HandoutProvider>
 
       {sermon.next ? (
         <a
@@ -163,10 +187,18 @@ function BlockView({ block, sermon, lang, events, youversion }: { block: Block; 
   switch (block.kind) {
     case "heading": {
       const Tag = block.level === 1 ? "h2" : block.level === 2 ? "h2" : "h3";
-      return <Tag className={`mt-2 font-semibold tracking-tight ${block.level === 3 ? "text-xl" : "text-2xl"}`}>{block.text}</Tag>;
+      return (
+        <Tag className={`mt-2 font-semibold tracking-tight ${block.level === 3 ? "text-xl" : "text-2xl"}`}>
+          <BlankText text={block.text} />
+        </Tag>
+      );
     }
     case "paragraph":
-      return <p className="my-4 whitespace-pre-line text-[1.0625rem] leading-relaxed">{block.text}</p>;
+      return (
+        <p className="my-4 whitespace-pre-line text-[1.0625rem] leading-relaxed">
+          <BlankText text={block.text} />
+        </p>
+      );
     case "quote":
       return <blockquote className="my-4 whitespace-pre-line border-l-4 border-accent pl-4 text-[1.0625rem] italic leading-relaxed">{block.text}</blockquote>;
     case "list": {
@@ -174,7 +206,9 @@ function BlockView({ block, sermon, lang, events, youversion }: { block: Block; 
       return (
         <List className={`my-4 space-y-2 pl-6 text-[1.0625rem] leading-relaxed ${block.ordered ? "list-decimal" : "list-disc"}`}>
           {block.items.map((item, i) => (
-            <li key={i}>{item}</li>
+            <li key={i}>
+              <BlankText text={item} />
+            </li>
           ))}
         </List>
       );

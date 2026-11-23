@@ -23,7 +23,8 @@ WEB="20261121000000_church_sermon_web.sql"
 SELF="20261122000000_church_self_serve.sql"
 LOC="20261124000000_church_locations.sql"
 PARTS="20261125000000_church_location_parts.sql"
-LAST="20261126000000_church_preachers.sql"  # the newest church sermons migration
+PREACH="20261126000000_church_preachers.sql"
+LAST="20261128000000_sermon_blanks.sql"  # the newest church sermons migration
 PGBIN="${PGBIN:-/opt/homebrew/opt/postgresql@17/bin}"
 PORT="${PORT:-54330}"
 WORK="$(mktemp -d /tmp/cspg.XXXXXX)"
@@ -136,6 +137,7 @@ as_postgres -f "$MIG/$WEB" >/dev/null 2>&1
 as_postgres -f "$MIG/$SELF" >/dev/null 2>&1
 as_postgres -f "$MIG/$LOC" >/dev/null 2>&1
 as_postgres -f "$MIG/$PARTS" >/dev/null 2>&1
+as_postgres -f "$MIG/$PREACH" >/dev/null 2>&1
 as_postgres -f "$MIG/$LAST" >/dev/null 2>&1
 "$PGBIN/pg_dump" -d "$SUPER_URL" -s -n public -n storage | grep -v restrict > "$WORK/after.sql"
 if diff -q "$WORK/before.sql" "$WORK/after.sql" >/dev/null; then echo "   PASS schema identical"; else diff "$WORK/before.sql" "$WORK/after.sql" | head -20; exit 1; fi

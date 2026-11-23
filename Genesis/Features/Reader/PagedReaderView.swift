@@ -29,9 +29,20 @@ struct PagedReaderView: UIViewControllerRepresentable {
     var pageTurnHaptic = false
     var pageTurnVolume = 0.5
     var pageTurnHapticStrength = 0.9
+    /// The scene (Forest, Ocean, Hearth) is moving right now, so a still
+    /// painted for a curl is taken at this moment rather than the composed one.
+    var sceneMoves = false
 
     func makeCoordinator() -> Coordinator {
         Coordinator(viewModel: viewModel)
+    }
+
+    /// The scene pages curl over (Forest, Ocean or Hearth): the pages stay
+    /// clear, showing the live scene, and are painted with its still only
+    /// while a page turns (a curl needs opaque pages). Nil for a slide,
+    /// which always shows the live scene through clear pages.
+    private var curlScene: ThemeScene? {
+        pageTurn == .curl ? layout.style.theme.scene : nil
     }
 
     func makeUIViewController(context: Context) -> ReaderPagesController {
@@ -67,12 +78,25 @@ struct PagedReaderView: UIViewControllerRepresentable {
         }
         controller.dataSource = context.coordinator
         controller.delegate = context.coordinator
-        controller.view.backgroundColor = layout.style.palette.uiBackground
+        if pageTurn == .curl {
+            // A finger down on a curling page over a scene: the still is
+            // painted before any curl can start (see `paintStill`).
+            let touch = UILongPressGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.touchChanged(_:)))
+            touch.minimumPressDuration = 0
+            touch.cancelsTouchesInView = false
+            touch.delaysTouchesBegan = false
+            touch.delaysTouchesEnded = false
+            touch.delegate = context.coordinator
+            controller.view.addGestureRecognizer(touch)
+        }
+        controller.view.backgroundColor = PaperTexture.surroundColor(for: layout.style.theme)
         // A new controller's view starts out the size of the screen. Page
         // curl lays its first page out for that size and doesn't redo it,
         // so a page beside the side panel (narrower than the screen) came
         // up blank. Start it at the size it will be shown at.
         controller.view.frame = CGRect(origin: .zero, size: layout.size)
+        context.coordinator.curlScene = curlScene
+        context.coordinator.sceneMoves = sceneMoves
         context.coordinator.pageController = controller
         // A new controller is often built in the middle of a size change
         // (turning the phone, opening an iPhone Duo: see the `.id` in
@@ -121,7 +145,9 @@ struct PagedReaderView: UIViewControllerRepresentable {
         coordinator.pageTurnHapticStrength = pageTurnHapticStrength
         coordinator.feedback.prepare(in: controller.view, haptic: pageTurnHaptic)
         coordinator.setPageChromeHidden(hidesPageChrome)
-        controller.view.backgroundColor = layout.style.palette.uiBackground
+        controller.view.backgroundColor = PaperTexture.surroundColor(for: layout.style.theme)
+        coordinator.curlScene = curlScene
+        coordinator.sceneMoves = sceneMoves
         coordinator.update(
             layout: layout,
             navigationToken: navigationToken,
@@ -136,7 +162,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
     }
 
     @MainActor
-    final class Coordinator: NSObject, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+    final class Coordinator: NSObject, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIGestureRecognizerDelegate {
         let viewModel: ReaderViewModel
         weak var pageController: UIPageViewController?
         var leftHanded = false
@@ -150,6 +176,137 @@ struct PagedReaderView: UIViewControllerRepresentable {
         /// `ReaderSpreadViewController` that slides.
         var spread = false
         var curlsSpread = false
+        /// Pages that curl over Forest, Ocean or Hearth.
+        var curlScene: ThemeScene? {
+            didSet { if curlScene == nil { paintStill(false) } }
+        }
+        var sceneMoves = false
+        /// While a page curls over a scene: the scene's still, painted on
+        /// each page so the curl turns a whole, opaque page of it. Nil the
+        /// rest of the time, so the pages are clear and the scene moves.
+        private var sceneStill: UIImage?
+        /// The moving scene laid over the still while the scene moves.
+        private var liveScene: AnyView?
+        /// Every page given the still, shown or not (a page UIKit was
+        /// still curling into place when the still came off), so taking
+        /// it off reaches them all and none keeps a stale scene.
+        private let paintedPages = NSHashTable<ReaderPageViewController>.weakObjects()
+        /// A finger is on the pages (from the touch recognizer).
+        private var fingerDown = false
+        private var stillCheckScheduled = false
+
+        /// Paints the scene's still on the pages (a turn is starting), or
+        /// takes it off again (the turn is over). Taken at this moment when
+        /// the scene moves, so the picture doesn't jump.
+        private func paintStill(_ on: Bool, also extra: [UIViewController] = []) {
+            if on {
+                // Already painted (a finger went down, then tapped a margin
+                // to turn): only the turn's new pages need it.
+                if sceneStill == nil {
+                    guard let curlScene, let layout, let pageController else { return }
+                    let size = pageController.view.bounds.size
+                    let pageSize = size.width > 1 && size.height > 1 ? size : layout.size
+                    sceneStill = SceneStill.image(
+                        scene: curlScene, layout: layout, size: pageSize,
+                        time: sceneMoves ? Date().timeIntervalSinceReferenceDate : nil
+                    )
+                    let safeBottom = layout.safeArea.bottom
+                    let textBottom = layout.size.height - layout.textInsets.bottom
+                    liveScene = sceneMoves ? AnyView(
+                        // Sized by the space it's given (the whole reading
+                        // area, see `setLiveScene`), never centred in it.
+                        GeometryReader { proxy in
+                            ThemeSceneView(
+                                scene: curlScene,
+                                size: proxy.size,
+                                safeBottom: safeBottom,
+                                textBottom: textBottom,
+                                animates: true,
+                                reduceMotion: false,
+                                lowPower: false
+                            )
+                        }
+                        .ignoresSafeArea()
+                        // Turns only happen while the app is active.
+                        .environment(\.scenePhase, .active)
+                    ) : nil
+                }
+                guard sceneStill != nil else { return }
+            } else {
+                sceneStill = nil
+                liveScene = nil
+                for page in paintedPages.allObjects {
+                    page.setSceneStill(nil, part: nil)
+                    page.setLiveScene(nil, part: nil)
+                }
+                paintedPages.removeAllObjects()
+                return
+            }
+            let shown = pageController?.viewControllers ?? []
+            for page in (shown + extra).flatMap({ Self.pages(in: $0) }) {
+                paint(page)
+            }
+        }
+
+        /// Gives one page the still (and the moving scene), when a turn is
+        /// under way.
+        private func paint(_ page: ReaderPageViewController) {
+            guard sceneStill != nil else { return }
+            let part: PageSpread.Half? = spread ? (PageSpread.isLeft(page.location.index) ? .left : .right) : nil
+            page.setSceneStill(sceneStill, part: part)
+            page.setLiveScene(liveScene, part: part)
+            paintedPages.add(page)
+        }
+
+        /// A finger on the pages: the still goes on before a curl can start,
+        /// and comes off when the finger lifts without turning a page (a
+        /// turn takes it off when it finishes).
+        @objc func touchChanged(_ recognizer: UIGestureRecognizer) {
+            switch recognizer.state {
+            case .began:
+                fingerDown = true
+                paintStill(true)
+            case .ended, .cancelled, .failed:
+                fingerDown = false
+                // A curl held a while still has to finish once the finger
+                // lifts: trust the turn a little longer.
+                if turnStartedAt != nil { turnStartedAt = Date() }
+                takeStillOffWhenIdle()
+            default:
+                break
+            }
+        }
+
+        /// Before a curl hands UIKit a page: the still goes on first, so
+        /// the new page is opaque however quickly the drag began.
+        private func paintStillForTurn() {
+            guard curlScene != nil else { return }
+            paintStill(true)
+            takeStillOffWhenIdle()
+        }
+
+        /// Takes the still off once nothing is turning and no finger is
+        /// down, looking again a moment later while something still is.
+        /// Quick turns one after another (a new drag before the last
+        /// curl's callback) keep it on, and it can never be left on.
+        private func takeStillOffWhenIdle() {
+            guard sceneStill != nil, !stillCheckScheduled else { return }
+            stillCheckScheduled = true
+            Task { @MainActor [weak self] in
+                try? await Task.sleep(for: .milliseconds(150))
+                guard let self else { return }
+                self.stillCheckScheduled = false
+                if self.fingerDown || self.isTurning || self.isTurningByHand {
+                    self.takeStillOffWhenIdle()
+                } else {
+                    self.paintStill(false)
+                }
+            }
+        }
+
+        func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith other: UIGestureRecognizer) -> Bool {
+            true
+        }
         private var pageChromeHidden = false
 
         func setPageChromeHidden(_ hidden: Bool) {
@@ -289,6 +446,8 @@ struct PagedReaderView: UIViewControllerRepresentable {
 
         private func turnFinished() {
             turnStartedAt = nil
+            if sceneStill == nil, paintedPages.count > 0 { paintStill(false) }
+            takeStillOffWhenIdle()
             flushPendingUpdate()
         }
 
@@ -458,6 +617,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
                 footerAlignment: spread ? (isLeft ? .left : .right) : .center,
                 spineEdge: spread ? (isLeft ? .right : .left) : nil
             )
+            paint(page)
             page.onEvent = { [weak self, weak page] event in self?.handle(event, on: page) }
             page.setChromeHidden(pageChromeHidden, animated: false)
             return page
@@ -469,6 +629,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
             let page = ReaderPageViewController(location: location)
             page.configure(text: NSAttributedString(), layout: layout, header: "", showsHeader: false, footer: "",
                            spineEdge: PageSpread.isLeft(location.index) ? .right : .left)
+            paint(page)
             page.onEvent = { [weak self, weak page] event in self?.handle(event, on: page) }
             page.setChromeHidden(pageChromeHidden, animated: false)
             return page
@@ -535,6 +696,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
                   let shown = Self.location(of: controllers.first) else { return }
             if animated {
                 turnStartedAt = Date()
+                paintStill(true, also: controllers)
                 // No hand may start a turn while this one animates: a drag
                 // begun under an animated turn leaves UIPageViewController
                 // asking for a page it no longer has, and it throws.
@@ -670,6 +832,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
         func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
             guard let current = Self.location(of: viewController),
                   let target = location(before: current) else { return nil }
+            paintStillForTurn()
             // A sliding spread: the whole spread before, from its left page.
             if viewController is ReaderSpreadViewController { return viewControllers(at: target)?.first }
             return page(at: target)
@@ -677,6 +840,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
 
         func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
             guard let current = Self.location(of: viewController) else { return nil }
+            paintStillForTurn()
             // A sliding spread: the spread after its right page.
             if viewController is ReaderSpreadViewController {
                 guard let target = location(after: lastShown(from: current)) else { return nil }
@@ -691,6 +855,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
         func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
             // A page dragged by hand.
             turnStartedAt = Date()
+            if curlScene != nil { paintStill(true, also: pendingViewControllers) }
         }
 
         /// Page curl asks this as the device turns. Keep one page, spine on
@@ -784,6 +949,14 @@ final class ReaderPageViewController: UIViewController {
     private var spineEdge: UIRectEdge?
     private var layout: ReaderLayout?
     private var chromeHidden = false
+    /// The scene's still behind the text, under a curl (see `setSceneStill`).
+    private let sceneLayer = CALayer()
+    /// The moving scene over the still while a page turns and Gentle
+    /// Motion is on, in step with the scene behind the pages, so nothing
+    /// pauses under a held curl (see `setLiveScene`).
+    private let liveSceneBox = UIView()
+    private var liveScene: UIHostingController<AnyView>?
+    private var liveScenePart: PageSpread.Half?
 
     init(location: PageLocation) {
         self.location = location
@@ -819,12 +992,71 @@ final class ReaderPageViewController: UIViewController {
         headerLabel.accessibilityLabel = header.uppercased()
         footerLabel.textAlignment = footerAlignment
         footerLabel.text = footer
+        // Over a scene (Forest, Ocean, Hearth), a soft shadow keeps the
+        // running head and page number clear of the picture.
+        for label in [headerLabel, footerLabel] {
+            let overScene = layout.style.theme.scene != nil
+            label.layer.shadowColor = UIColor.black.cgColor
+            label.layer.shadowOpacity = overScene ? 0.75 : 0
+            label.layer.shadowRadius = overScene ? 3 : 0
+            label.layer.shadowOffset = .zero
+        }
         // Darker toward the spine, gone a little way into the page.
         let shade = layout.style.theme.isDark ? 0.28 : 0.09
         spineShade.colors = [UIColor.black.withAlphaComponent(shade).cgColor, UIColor.black.withAlphaComponent(0).cgColor]
         spineShade.startPoint = CGPoint(x: spineEdge == .left ? 0 : 1, y: 0.5)
         spineShade.endPoint = CGPoint(x: spineEdge == .left ? 1 : 0, y: 0.5)
         spineShade.isHidden = spineEdge == nil
+        view.setNeedsLayout()
+    }
+
+    /// Paints the scene's still behind the page (a curl over Forest, Ocean
+    /// or Hearth): all of it, or in a spread the half this page shows.
+    func setSceneStill(_ image: UIImage?, part: PageSpread.Half?) {
+        loadViewIfNeeded()
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        sceneLayer.contents = image?.cgImage
+        sceneLayer.isHidden = image == nil
+        switch part {
+        case .left: sceneLayer.contentsRect = CGRect(x: 0, y: 0, width: 0.5, height: 1)
+        case .right: sceneLayer.contentsRect = CGRect(x: 0.5, y: 0, width: 0.5, height: 1)
+        case nil: sceneLayer.contentsRect = CGRect(x: 0, y: 0, width: 1, height: 1)
+        }
+        CATransaction.commit()
+    }
+
+    /// Shows the moving scene behind the text (a turn over a scene while
+    /// it moves), or takes it away. It covers the whole reading area,
+    /// shifted so a spread's page shows its own half; it draws from the
+    /// clock like the scene behind the pages, so the two match exactly.
+    func setLiveScene(_ content: AnyView?, part: PageSpread.Half?) {
+        loadViewIfNeeded()
+        liveScenePart = part
+        guard let content else {
+            if let liveScene {
+                liveScene.willMove(toParent: nil)
+                liveScene.view.removeFromSuperview()
+                liveScene.removeFromParent()
+                self.liveScene = nil
+            }
+            liveSceneBox.isHidden = true
+            return
+        }
+        if let liveScene {
+            liveScene.rootView = content
+        } else {
+            let host = UIHostingController(rootView: content)
+            host.view.backgroundColor = .clear
+            host.view.isUserInteractionEnabled = false
+            host.view.accessibilityElementsHidden = true
+            host.safeAreaRegions = []
+            addChild(host)
+            liveSceneBox.addSubview(host.view)
+            host.didMove(toParent: self)
+            liveScene = host
+        }
+        liveSceneBox.isHidden = false
         view.setNeedsLayout()
     }
 
@@ -857,6 +1089,13 @@ final class ReaderPageViewController: UIViewController {
         view.addSubview(footerLabel)
         spineShade.isHidden = true
         view.layer.addSublayer(spineShade)
+        sceneLayer.isHidden = true
+        sceneLayer.contentsGravity = .resize
+        view.layer.insertSublayer(sceneLayer, at: 0)
+        liveSceneBox.isHidden = true
+        liveSceneBox.clipsToBounds = true
+        liveSceneBox.isUserInteractionEnabled = false
+        view.insertSubview(liveSceneBox, belowSubview: textView)
         textView.accessibilityIdentifier = "reader.page"
         headerLabel.accessibilityIdentifier = "reader.header"
         footerLabel.accessibilityIdentifier = "reader.footer"
@@ -879,7 +1118,14 @@ final class ReaderPageViewController: UIViewController {
             x: spineEdge == .left ? 0 : view.bounds.width - shadeWidth, y: 0,
             width: shadeWidth, height: view.bounds.height
         )
+        sceneLayer.frame = view.bounds
         CATransaction.commit()
+        liveSceneBox.frame = view.bounds
+        let width = view.bounds.width
+        liveScene?.view.frame = CGRect(
+            x: liveScenePart == .right ? -width : 0, y: 0,
+            width: liveScenePart == nil ? width : width * 2, height: view.bounds.height
+        )
     }
 }
 

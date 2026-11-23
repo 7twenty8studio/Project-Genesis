@@ -2,6 +2,7 @@
 // its details), in the exact shape save_church_sermon checks
 // (genesis_clean_sermon_blocks): unknown fields are refused there, so
 // nothing else is ever sent.
+import type { AnswersMode } from "./blanks.ts";
 import type { DraftReview } from "./import/review.ts";
 import type { ReferenceStatus } from "./shared/references.ts";
 
@@ -35,6 +36,8 @@ export interface DraftDetails {
   audience: "link" | "members";
   cover_alt: string;
   cover_decorative: boolean;
+  /** When members can check their blanks: after the pastor reveals the key (default), right away, or never. */
+  answers: AnswersMode;
 }
 
 /** A church_sermons row as leaders read it (RLS "Leaders read"). */
@@ -50,6 +53,8 @@ export interface DraftRow extends DraftDetails {
   hidden_at: string | null;
   published_at: string | null;
   published_revision_id: string | null;
+  /** The revision whose key readers have (Reveal Answers); a new revision starts hidden. */
+  answers_revealed_revision_id: string | null;
   /** The import review, saved with the draft; Publish is refused while an item is open. */
   draft_review: DraftReview | null;
 }

@@ -87,6 +87,17 @@ final class ChurchSermonsUITests: GenesisUITestCase {
     }
 
     @MainActor
+    func testALinkOpensTheSermonOverWhatsNew() {
+        // A QR code scanned on a phone that has news to show: the sermon wins.
+        let app = Genesis.launch(extra: ["-uiTestingWhatsNew"])
+        XCTAssertTrue(app.buttons["whatsNew.continue"].waitForExistence(timeout: Genesis.launchTimeout))
+        app.open(URL(string: "versely://sermon/riverlink1")!)
+        let title = app.staticTexts["churchSermon.title"]
+        XCTAssertTrue(title.waitForExistence(timeout: Genesis.timeout), "The sermon opens instead of staying behind What's New")
+        XCTAssertEqual(title.label, "Living Water")
+    }
+
+    @MainActor
     func testALinkOpensTheSermonOverAnyTab() {
         let app = Genesis.launch()
         XCTAssertTrue(app.buttons["home.account"].waitForExistence(timeout: Genesis.launchTimeout))

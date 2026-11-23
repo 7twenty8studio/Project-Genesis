@@ -324,9 +324,14 @@ shares; README.md has the architecture.
   band above the running head (`skyBand`, paged reading only), the haze
   fading out before the text (`hazeFade`, no visible edge). 20 fps, 60 only
   while a star shoots; Reduce Motion: gentle fades, no shooting stars).
-  Seasonal touches (`SeasonalEffectView`): autumn leaves, spring petals on
-  a breeze, winter snow at three depths with gusts and corner frost,
-  summer light; Reduce Motion shows the painted still (`paintedMoment`).
+  Seasonal touches (`SeasonalEffectView`): autumn maple, oak and birch
+  leaves, spring petals and whole blossoms on a breeze, winter snow at
+  three depths (dots far away, stellar/fern/plate crystals near) with gusts
+  and corner frost, summer light with dust in the beams and a butterfly
+  every 90 s (`ButterflyFlight`: a wandering path, beats and glides,
+  its head turned the way it flies); the shapes are unit paths in
+  Genesis/Shared/SeasonShapes.swift, shared with the drifting widgets
+  (`SeasonShape`); Reduce Motion shows the painted still (`paintedMoment`).
   The morning welcome shows the theme's effect behind it at 70%.
   `ReaderPreferences.nightReading` ("At night, switch to" Off/Night/Starlight,
   and "When": `NightReadingTiming` `.darkMode` (default) or `.hours` with
@@ -338,6 +343,53 @@ shares; README.md has the architecture.
   is pinned by the theme). Starlight
   without Premium falls back to Night, keeping the choice. UI tests never
   switch unless launched with `-uiTestingNight` (then it's always night).
+- Scene themes (Premium via `.premiumThemes`, after Summer in the
+  picker): Forest, Ocean and Hearth (`ReaderTheme.scene`, `ThemeScene`,
+  pure geometry and motion). The owner-approved illustrations (generated
+  22 November 2026 in Versely's illustrated style; originals untouched in
+  Tools/Themes/Originals) are built by Tools/Themes/make_scenes.py into
+  ThemeScene* images (Ocean's swells cut out as two layers, its far crest
+  line softened). `ThemeSceneView` draws the scene behind the live text
+  (pages are clear: `PaperTexture.pageColor`/`surroundColor`), then a
+  soft elliptical shade behind the words (`SceneShade`). Forest fills the
+  height; Ocean is 1.18× tall, lowered with its swells (30% of them
+  below the screen, `OceanSwells.sink`) while its clouds are drawn again
+  8% higher (`oceanSky`, faded out in the plain sky), so both keep
+  clear of the words; wider screens get mirrored copies. Hearth has no picture (owner, 23 November 2026: a glow from
+  the whole foot, not a fire in one spot): `HearthGlow`, drawn amber
+  rising from the bottom with two bright patches drifting along it.
+  An area wider than tall (iPad sideways, the open Duo, the spread)
+  gets the wide Forest (`ForestWide`, ThemeSceneForestWide*, from
+  Originals/forest-wide.png: trees at both edges, a misty clearing),
+  one copy pushed out past each side so its trees fill only the outer
+  13% (`edgeShare`, like the tall picture on an iPhone) and both pages
+  sit over the mist, blended in the clearing; never the tall one
+  repeated. `ReaderLayout.sceneFootRoom` ends
+  pages above the swells and the glow's bright band (none for Forest); scrolling
+  text passes behind them (the scene's foot drawn again, feathered).
+  Motion: Forest's two mist layers (`ForestMist`) and its boughs swaying
+  (`ForestSway`: only boughs and needles, the canopy in three layers
+  from make_scenes.py, its bands moving most at the top while the trunks
+  stay still over them; floor repainted 23 November 2026 without roots), Ocean's
+  swells rising and settling out of step (`OceanSwells`), Hearth's embers
+  rising from across the foot at uneven moments, as high as the glow,
+  fading as they climb (under the words),
+  and a slow glow (`HearthSparks`). 30 fps, only while Gentle Motion (`seasonalEffects`)
+  is on, Reduce Motion off, not in Low Power Mode, the app active and
+  the reader on screen; otherwise the still at `ThemeScene.stillTime`.
+  The scene fills the whole reading area (the live size) and moves
+  under clear pages with either page turn. Page Curl needs opaque
+  pages, so only while a page turns (a finger down on the pages, or an
+  animated turn) each page is painted with the scene's still
+  (`SceneStill`, taken at that moment while it moves, its half in a
+  spread; also before the curl asks for its next page) with, while it
+  moves, the live scene over it in step with the one behind
+  (`setLiveScene`), so a held curl never pauses it; taken off only
+  once no finger is down and nothing turns (`paintStill`,
+  `takeStillOffWhenIdle`), so quick turns back and forth never curl a
+  clear page over the text. The running head
+  and page number get a soft shadow. Picker swatches show a still glimpse.
+  Deferred: Cedar and Leather Bound (with their curl), Ocean's rain.
 - Widgets: every widget is free in its Classic look at every size, so
   nothing added from the gallery turns into a locked card (`WidgetAccess`
   in Genesis/Shared). Premium is what people choose inside a widget: the
@@ -785,6 +837,27 @@ shares; README.md has the architecture.
   owner/admin/preacher.
   The owner can close the church from Studio too (`CloseChurch`, the
   church's name typed to confirm; `delete_group`, as the app's Close Group).
+- Fill-in-the-blank handouts (owner's plan, 22 November 2026; migration
+  20261128000000; CHURCH_SERMONS.md › Handouts): Studio's Make Blank writes
+  `[[answer]]`, `[[answer|hint]]` or `[[...]]` (an open blank) into
+  headings, paragraphs and list items only, never quotations or
+  Scripture (imports too: `importBlanks`, "___" becomes a blank waiting
+  for its answer, which blocks Publish). Publish numbers them `[[n]]`
+  and keeps the key in the revision (`church_sermon_revisions.blanks`).
+  `church_sermons.answers`: reveal (default, "After I reveal them"), now
+  or never; a reveal (`reveal_church_sermon_answers`) is for one revision,
+  so a republish starts hidden. `published_sermon` gives `blanks` without
+  answers until revealed (never in page source or payloads), `answers`
+  and `revision`. Check Answers and Show Answers come together, only with
+  the key; Practice Again is a fresh try that never touches saved
+  answers. Saved work is private and per revision: in the app
+  `Sermon.handouts` (`SermonHandout`, synced as sermons.handouts, ≤ 10,
+  with the outline and the key only once revealed, so it opens and checks
+  after an unpublish), on the web only in the browser
+  (`versely.handout.<slug>.<revision>`). Rules once in web/src/lib/blanks.ts
+  and `SermonBlanks` (case, accents, spacing and outer punctuation don't
+  count). App: `HandoutModel`, `HandoutViews`, `SavedHandoutView` (Sermon
+  Notes' Your Handout). Printing is for later.
 - Release checks: CHURCH_SERMONS_PILOT.md maps every acceptance check to its
   test or hand steps. Browser checks: web/e2e/run.sh (Playwright, axe,
   stand-in server mock.mjs; keep it passing when the guest page or Studio

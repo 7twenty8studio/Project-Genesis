@@ -23,6 +23,8 @@ struct ReaderView: View {
     @Environment(\.accessibilityDifferentiateWithoutColor) private var differentiateWithoutColor
 
     @State private var sheet: ReaderSheet?
+    /// Low Power Mode: the scene themes hold still.
+    @State private var lowPower = ProcessInfo.processInfo.isLowPowerModeEnabled
     /// The one-time note on first reading a YouVersion Bible.
     @State private var showsYouVersionNote = false
     @AppStorage("youVersion.noteShown") private var youVersionNoteShown = false
@@ -84,6 +86,9 @@ struct ReaderView: View {
         .statusBarHidden(!reader.showsControls)
         .animation(reduceMotion ? nil : .easeOut(duration: 0.15), value: reader.showsControls)
         .animation(reduceMotion ? nil : Motion.easeOut(0.18), value: reader.isSelecting)
+        .onReceive(NotificationCenter.default.publisher(for: .NSProcessInfoPowerStateDidChange).receive(on: DispatchQueue.main)) { _ in
+            lowPower = ProcessInfo.processInfo.isLowPowerModeEnabled
+        }
         .sheet(item: $sheet) { sheet in
             sheetContent(sheet)
         }
@@ -145,12 +150,26 @@ struct ReaderView: View {
                 margins: preferences.margins
             )
             ZStack {
-                palette.background
+                // Forest, Ocean and Hearth read over their scene, the
+                // others over the theme's colour.
+                if let scene = layout.style.theme.scene {
+                    // The live size: the scene always fills the whole
+                    // reading area, even while the pages' size is settling.
+                    sceneBackdrop(scene, layout: layout, size: proxy.size)
+                } else {
+                    palette.background
+                }
                 if windowSafeArea != nil {
                     textView(layout: layout)
                         .accessibilityAction(named: "Next page") { _ = turnPage(forward: true) }
                         .accessibilityAction(named: "Previous page") { _ = turnPage(forward: false) }
                         .accessibilityAction(named: "Show controls") { reader.showsControls = true }
+                }
+                // Scrolling over Ocean's swells or Hearth's fire, the words
+                // pass behind them (pages simply end above them).
+                if let scene = layout.style.theme.scene, layout.sceneFootRoom > 0, !textStaysInPlace {
+                    sceneBackdrop(scene, layout: layout, size: proxy.size)
+                        .mask { sceneFootMask(layout) }
                 }
 
                 confirmationBanner
@@ -275,7 +294,7 @@ struct ReaderView: View {
                 bottomInset: layout.safeArea.bottom + 60
             )
         } else if preferences.readingMode == .page {
-            let turn: PageTurnStyle = reduceMotion ? .slide : preferences.pageTurn
+            let turn = pageTurn(for: layout.style.theme)
             // Two pages like an open book, only with room for both and the
             // side panel closed. Judged on the settled size, like the key below.
             let spread = PageSpread.shows(
@@ -299,7 +318,8 @@ struct ReaderView: View {
                 pageTurnSound: preferences.pageTurnSound,
                 pageTurnHaptic: preferences.pageTurnHaptic,
                 pageTurnVolume: preferences.pageTurnVolume,
-                pageTurnHapticStrength: preferences.pageTurnHapticStrength
+                pageTurnHapticStrength: preferences.pageTurnHapticStrength,
+                sceneMoves: preferences.seasonalEffects && !reduceMotion && !lowPower
             )
             // The transition style can only be set when the controller is
             // created. Any new size (turning the device, an iPhone Duo
@@ -452,6 +472,41 @@ struct ReaderView: View {
     /// when text scrolls through it).
     private func starlightSkyBand(_ layout: ReaderLayout) -> CGFloat {
         textStaysInPlace ? layout.safeArea.top + 6 : 0
+    }
+
+    /// The scene behind the words in Forest, Ocean and Hearth.
+    private func sceneBackdrop(_ scene: ThemeScene, layout: ReaderLayout, size: CGSize) -> some View {
+        ThemeSceneView(
+            scene: scene,
+            size: size,
+            safeBottom: layout.safeArea.bottom,
+            textBottom: layout.size.height - layout.textInsets.bottom,
+            animates: preferences.seasonalEffects,
+            reduceMotion: reduceMotion,
+            lowPower: lowPower
+        )
+        .id(scene)
+    }
+
+    /// The scene's foot (swells, fire) drawn again over scrolling text,
+    /// feathered in where the page would have ended.
+    private func sceneFootMask(_ layout: ReaderLayout) -> some View {
+        let height = max(1, layout.size.height)
+        let end = (height - layout.textInsets.bottom + 8) / height
+        let start = max(0, end - 40 / height)
+        return LinearGradient(
+            stops: [.init(color: .black.opacity(0), location: start), .init(color: .black, location: min(1, end))],
+            startPoint: .top, endPoint: .bottom
+        )
+    }
+
+    /// The page turn: the chosen one, but a slide with Reduce Motion. Over
+    /// a scene (Forest, Ocean, Hearth) the live scene shows through clear
+    /// pages either way; a curl paints them with the scene's still
+    /// (`SceneStill`) only while a page turns.
+    private func pageTurn(for theme: ReaderTheme) -> PageTurnStyle {
+        if reduceMotion { return .slide }
+        return preferences.pageTurn
     }
 
     /// Premium typefaces and illuminated letters (plain/New York without Premium).

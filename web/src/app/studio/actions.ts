@@ -94,6 +94,13 @@ export async function publishSermon(sermon: string, version: number): Promise<Ac
   return result.ok ? { ok: true, number: result.value.number, withheld: result.value.withheld_quotes } : result;
 }
 
+/** Reveal Answers (or hide them again) for the revision readers have now. */
+export async function revealAnswers(sermon: string, reveal: boolean): Promise<ActionResult<{ revealed: boolean }>> {
+  if (!isID(sermon)) return { ok: false, code: "not_found" };
+  const result = await call<{ revealed: boolean }>("reveal_church_sermon_answers", { p_sermon: sermon, p_reveal: reveal });
+  return result.ok ? { ok: true, revealed: result.value.revealed } : result;
+}
+
 /** Unpublish or members-only: both take effect at once and move the version on (and say which version they moved on from). */
 export async function closeSermon(sermon: string, how: "unpublish" | "restrict"): Promise<ActionResult<{ version: number; previous: number }>> {
   if (!isID(sermon)) return { ok: false, code: "not_found" };
