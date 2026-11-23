@@ -20,6 +20,21 @@ const nextConfig: NextConfig = {
       { source: "/studio/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }, { key: "Cache-Control", value: "private, no-store" }] },
       { source: "/studio", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }, { key: "Cache-Control", value: "private, no-store" }] },
       { source: "/s/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] },
+      // Launch-day screenshare: the share page may use the camera and capture the screen; none of it is indexed.
+      {
+        source: "/screen/:path*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+          { key: "Permissions-Policy", value: "camera=(self), microphone=(), display-capture=(self), geolocation=(), interest-cohort=()" },
+        ],
+      },
+      {
+        source: "/screen",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+          { key: "Permissions-Policy", value: "camera=(self), microphone=(), display-capture=(self), geolocation=(), interest-cohort=()" },
+        ],
+      },
     ];
   },
 };
