@@ -95,6 +95,8 @@ struct WhatsNewView: View {
 /// the sheet away counts as seen too.
 struct WhatsNewPresenter: ViewModifier {
     let isReady: Bool
+    /// Something more urgent (a sermon link) needs the screen: wait, and close if showing.
+    var yields = false
 
     @Environment(WhatsNewService.self) private var whatsNew
     @Environment(FeatureFlagService.self) private var flags
@@ -108,11 +110,15 @@ struct WhatsNewPresenter: ViewModifier {
     func body(content: Content) -> some View {
         content
             .task(id: checkKey) {
-                guard isReady, showing == nil else { return }
+                guard isReady, !yields, showing == nil else { return }
                 try? await Task.sleep(for: .seconds(1))
                 guard !Task.isCancelled else { return }
                 let pending = whatsNew.pending(flags: flags)
                 if !pending.isEmpty { showing = ShownAnnouncements(announcements: pending) }
+            }
+            // Something more urgent (a sermon link) needs the screen.
+            .onChange(of: yields) { _, yields in
+                if yields { showing = nil }
             }
             .sheet(item: $showing) { shown in
                 WhatsNewView(announcements: shown.announcements) { showing = nil }
@@ -122,12 +128,12 @@ struct WhatsNewPresenter: ViewModifier {
 
     /// Re-checks when the app becomes ready or a switch changes.
     private var checkKey: String {
-        "\(isReady)-\(FeatureFlag.allCases.filter { flags.isOn($0) }.map(\.rawValue))-\(whatsNew.seen.count)"
+        "\(isReady)-\(yields)-\(FeatureFlag.allCases.filter { flags.isOn($0) }.map(\.rawValue))-\(whatsNew.seen.count)"
     }
 }
 
 extension View {
-    func whatsNewSheet(isReady: Bool) -> some View {
-        modifier(WhatsNewPresenter(isReady: isReady))
+    func whatsNewSheet(isReady: Bool, yields: Bool = false) -> some View {
+        modifier(WhatsNewPresenter(isReady: isReady, yields: yields))
     }
 }

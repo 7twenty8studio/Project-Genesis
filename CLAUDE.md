@@ -812,6 +812,27 @@ shares; README.md has the architecture.
   owner/admin/preacher.
   The owner can close the church from Studio too (`CloseChurch`, the
   church's name typed to confirm; `delete_group`, as the app's Close Group).
+- Fill-in-the-blank handouts (owner's plan, 22 November 2026; migration
+  20261128000000; CHURCH_SERMONS.md › Handouts): Studio's Make Blank writes
+  `[[answer]]`, `[[answer|hint]]` or `[[...]]` (an open blank) into
+  headings, paragraphs and list items only, never quotations or
+  Scripture (imports too: `importBlanks`, "___" becomes a blank waiting
+  for its answer, which blocks Publish). Publish numbers them `[[n]]`
+  and keeps the key in the revision (`church_sermon_revisions.blanks`).
+  `church_sermons.answers`: reveal (default, "After I reveal them"), now
+  or never; a reveal (`reveal_church_sermon_answers`) is for one revision,
+  so a republish starts hidden. `published_sermon` gives `blanks` without
+  answers until revealed (never in page source or payloads), `answers`
+  and `revision`. Check Answers and Show Answers come together, only with
+  the key; Practice Again is a fresh try that never touches saved
+  answers. Saved work is private and per revision: in the app
+  `Sermon.handouts` (`SermonHandout`, synced as sermons.handouts, ≤ 10,
+  with the outline and the key only once revealed, so it opens and checks
+  after an unpublish), on the web only in the browser
+  (`versely.handout.<slug>.<revision>`). Rules once in web/src/lib/blanks.ts
+  and `SermonBlanks` (case, accents, spacing and outer punctuation don't
+  count). App: `HandoutModel`, `HandoutViews`, `SavedHandoutView` (Sermon
+  Notes' Your Handout). Printing is for later.
 - Release checks: CHURCH_SERMONS_PILOT.md maps every acceptance check to its
   test or hand steps. Browser checks: web/e2e/run.sh (Playwright, axe,
   stand-in server mock.mjs; keep it passing when the guest page or Studio

@@ -714,6 +714,22 @@
         }
       }
     },
+    "%lld of %lld right.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld de %lld correctas."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld de %lld corretas."
+          }
+        }
+      }
+    },
     "%lld of %lld still going": {
       "localizations": {
         "es": {
@@ -3434,6 +3450,22 @@
         }
       }
     },
+    "Answer: %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Respuesta: %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resposta: %@"
+          }
+        }
+      }
+    },
     "Answered": {
       "comment": "PDF export: heading over how a prayer was answered",
       "localizations": {
@@ -4259,6 +4291,22 @@
         }
       }
     },
+    "Back to My Answers": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volver a mis respuestas"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voltar às minhas respostas"
+          }
+        }
+      }
+    },
     "Background": {
       "comment": "Study assistant action: historical background",
       "localizations": {
@@ -4726,6 +4774,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "Canto dos pássaros"
+          }
+        }
+      }
+    },
+    "Blank %lld": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Espacio %lld"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lacuna %lld"
+          }
+        }
+      }
+    },
+    "Blank %lld, your own words": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Espacio %lld, tus propias palabras"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lacuna %lld, suas próprias palavras"
           }
         }
       }
@@ -5520,6 +5600,22 @@
         }
       }
     },
+    "Check Answers": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revisar respuestas"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conferir respostas"
+          }
+        }
+      }
+    },
     "Check the challenge's title, start date and length.": {
       "localizations": {
         "es": {
@@ -5532,6 +5628,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Confira o título, a data de início e a duração do desafio."
+          }
+        }
+      }
+    },
+    "Check your answers": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revisa tus respuestas"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Confira suas respostas"
           }
         }
       }
@@ -6918,6 +7030,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Copiar: %@"
+          }
+        }
+      }
+    },
+    "Correct": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Correcto"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Correto"
           }
         }
       }
@@ -9399,6 +9527,54 @@
         }
       }
     },
+    "Fill in the blanks": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completa los espacios"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preencha as lacunas"
+          }
+        }
+      }
+    },
+    "Fill in the blanks as you listen. Your answers are saved privately with your notes, and you can check them once the church shares the answers.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completa los espacios mientras escuchas. Tus respuestas se guardan en privado con tus notas, y podrás revisarlas cuando la iglesia comparta las respuestas."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preencha as lacunas enquanto ouve. Suas respostas ficam salvas em particular com suas anotações, e você poderá conferi-las quando a igreja compartilhar as respostas."
+          }
+        }
+      }
+    },
+    "Fill in the blanks as you listen. Your answers are saved privately with your notes.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Completa los espacios mientras escuchas. Tus respuestas se guardan en privado con tus notas."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preencha as lacunas enquanto ouve. Suas respostas ficam salvas em particular com suas anotações."
+          }
+        }
+      }
+    },
     "Fill the Gaps": {
       "comment": "Memorize game",
       "localizations": {
@@ -11731,6 +11907,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ocultar"
+          }
+        }
+      }
+    },
+    "Hide Answers": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ocultar respuestas"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ocultar respostas"
           }
         }
       }
@@ -18284,6 +18476,22 @@
         }
       }
     },
+    "Once your church shares the answers, check yours, see the ones you missed, or practice again without losing your own.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuando tu iglesia comparta las respuestas, revisa las tuyas, mira las que te faltaron o practica de nuevo sin perder las tuyas."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quando sua igreja compartilhar as respostas, confira as suas, veja as que você errou ou pratique de novo sem perder as suas."
+          }
+        }
+      }
+    },
     "One chapter today?": {
       "localizations": {
         "es": {
@@ -20107,6 +20315,22 @@
         }
       }
     },
+    "Practice Again": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Practicar de nuevo"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Praticar de novo"
+          }
+        }
+      }
+    },
     "Practice this passage with Memorize's flashcards and games, part of Premium.": {
       "localizations": {
         "es": {
@@ -20135,6 +20359,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pratique hoje para começar uma sequência."
+          }
+        }
+      }
+    },
+    "Practicing: a fresh try. Your saved answers are kept.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Practicando: un intento nuevo. Tus respuestas guardadas se conservan."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Praticando: uma nova tentativa. Suas respostas salvas continuam guardadas."
           }
         }
       }
@@ -23692,6 +23932,38 @@
         }
       }
     },
+    "Saved %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardado el %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvo em %@"
+          }
+        }
+      }
+    },
+    "Saved %@ · Answers saved": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardado el %@ · Respuestas guardadas"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvo em %@ · Respostas salvas"
+          }
+        }
+      }
+    },
     "Saved on this device first, then copied to your private iCloud so it's on your other devices.": {
       "localizations": {
         "es": {
@@ -24819,6 +25091,22 @@
         }
       }
     },
+    "Sermon handouts": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hojas de apuntes del sermón"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Folhas de anotações do sermão"
+          }
+        }
+      }
+    },
     "Sermon title": {
       "localizations": {
         "es": {
@@ -25264,6 +25552,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mostrar"
+          }
+        }
+      }
+    },
+    "Show Answers": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar respuestas"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar respostas"
           }
         }
       }
@@ -28886,6 +29190,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "A comunidade do Versely"
+          }
+        }
+      }
+    },
+    "The answers are ready. Your answers are saved privately with your notes.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las respuestas ya están disponibles. Tus respuestas se guardan en privado con tus notas."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "As respostas já estão disponíveis. Suas respostas ficam salvas em particular com suas anotações."
           }
         }
       }
@@ -33854,6 +34174,22 @@
         }
       }
     },
+    "When your church's outline has blanks, fill them in as you listen. Your answers are saved privately with your sermon notes.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cuando el bosquejo de tu iglesia tenga espacios en blanco, complétalos mientras escuchas. Tus respuestas se guardan en privado con tus notas del sermón."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quando o esboço da sua igreja tiver lacunas, preencha-as enquanto ouve. Suas respostas ficam salvas em particular com suas anotações do sermão."
+          }
+        }
+      }
+    },
     "Where I saw God's goodness": {
       "localizations": {
         "es": {
@@ -35848,6 +36184,22 @@
         }
       }
     },
+    "Your Handout": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tu hoja de apuntes"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sua folha de anotações"
+          }
+        }
+      }
+    },
     "Your Photo": {
       "comment": "Verse image background: the photo already chosen",
       "localizations": {
@@ -35941,6 +36293,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Não foi possível apagar sua conta. Tente de novo."
+          }
+        }
+      }
+    },
+    "Your answers on the church's handout. They're private, and they stay even if the church changes or removes the sermon.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus respuestas en la hoja de apuntes de la iglesia. Son privadas y se conservan aunque la iglesia cambie o retire el sermón."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suas respostas na folha de anotações da igreja. Elas são particulares e continuam guardadas mesmo se a igreja alterar ou remover o sermão."
           }
         }
       }
@@ -36280,6 +36648,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Suas próprias anotações"
+          }
+        }
+      }
+    },
+    "Your own words": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tus propias palabras"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suas próprias palavras"
           }
         }
       }

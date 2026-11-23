@@ -49,7 +49,8 @@ struct RootView: View {
                 }
             }
         }
-        .whatsNewSheet(isReady: onboardingComplete && scenePhase == .active && !showsWelcome)
+        // A sermon link (QR code) goes first: What's New waits, and closes if it was showing.
+        .whatsNewSheet(isReady: onboardingComplete && scenePhase == .active && !showsWelcome, yields: router.sermonLink != nil || router.pendingSermon != nil)
         // Premium: a quiet welcome the first time Versely opens each day.
         .fullScreenCover(isPresented: $showsWelcome) {
             MorningWelcomeView { showsWelcome = false }
@@ -64,6 +65,15 @@ struct RootView: View {
         .preferredColorScheme(current == .automatic ? nil : (theme.isDark ? .dark : .light))
         // Switch to and from the night theme on time.
         .task(id: settings.preferences.nightReading) { await followNightReading() }
+        // A sermon from its link or QR code: shown once whatever was on
+        // screen has closed (a sheet can't open over another), which also
+        // covers a link that launches Versely.
+        .task(id: router.pendingSermon) {
+            guard router.pendingSermon != nil else { return }
+            try? await Task.sleep(for: .milliseconds(450))
+            guard !Task.isCancelled else { return }
+            router.showPendingSermon()
+        }
         .onOpenURL { url in
             // Sign in with Google's callback isn't a link to open (its web
             // sheet takes it; this is only in case one ever arrives here).

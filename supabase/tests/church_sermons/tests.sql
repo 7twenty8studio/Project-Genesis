@@ -829,6 +829,104 @@ select ct.check('members still read only published copies',
   ct.len(ct.run('member', format('public.group_sermons(%L)', ct.g('grace')))) > 0
   and not exists (select 1 from jsonb_array_elements(ct.run('member', format('public.group_sermons(%L)', ct.g('grace')))) e where e ? 'status'));
 
+-- Fill-in-the-blank handouts (20261128000000) ------------------------------------------------
+
+select ct.set('hb', (ct.run('pastor', format('public.create_church_sermon(%L, %L)', ct.g('grace'), 'Gratitude')))->>'id');
+select ct.set('hbslug', (select slug from public.church_sermons where id = ct.v('hb')::uuid));
+select ct.check('a blank still waiting for its answer can be saved',
+  (ct.save('pastor', 'hb', '{"title": "Gratitude"}', $j$[
+    {"id": "h", "kind": "heading", "text": "1. Gratitude starts with [[]] God", "level": 2},
+    {"id": "s", "kind": "scripture", "ref": {"raw": "Luke 17:15", "start": 42017015, "end": null, "status": "verified", "label": "NLT", "quote": "One of them [[Zz]]"}}
+  ]$j$))->>'draft_version' is not null);
+select ct.refused('...but not published', 'pastor', format('public.publish_church_sermon(%L, %s)', ct.v('hb'), ct.ver('hb')), 'blank_needs_answer');
+select ct.save('pastor', 'hb', '{}', $j$[
+  {"id": "h", "kind": "heading", "text": "1. Gratitude starts with [[Zebulunite]] God", "level": 2},
+  {"id": "q", "kind": "quote", "text": "Not here [[Naphtalite]]"}
+]$j$);
+select ct.refused('no blanks in a quotation', 'pastor', format('public.publish_church_sermon(%L, %s)', ct.v('hb'), ct.ver('hb')), 'blank_in_quotation');
+select ct.save('pastor', 'hb', '{}', $j$[{"id": "h", "kind": "heading", "text": "[[a]]", "level": 2}]$j$);
+select ct.check('a 101-character answer is refused at publish',
+  (ct.save('pastor', 'hb', '{}', format('[{"id": "p", "kind": "paragraph", "text": "[[%s]]"}]', repeat('a', 101))))->>'draft_version' is not null
+  and position('blank_too_long' in (ct.publish('pastor', 'hb'))->>'error') > 0);
+select ct.save('pastor', 'hb', '{"answers": "sometimes"}');
+select ct.refused('an unknown Answers setting is refused', 'pastor',
+  format('public.save_church_sermon(%L, %s, %L, null)', ct.v('hb'), ct.ver('hb'), '{"answers": "sometimes"}'), 'invalid_details');
+select ct.save('pastor', 'hb', '{}', $j$[
+  {"id": "h", "kind": "heading", "text": "1. Gratitude starts with [[Zebulunite|Z]] God the [[Issacharite]]", "level": 2},
+  {"id": "s", "kind": "scripture", "ref": {"raw": "Luke 17:15", "start": 42017015, "end": null, "status": "verified", "label": "KJV", "quote": "And one of them"}},
+  {"id": "l", "kind": "list", "items": ["Thanks for [[Gileadite]]", "Your own: [[...|anything]]"], "ordered": true},
+  {"id": "q", "kind": "quote", "text": "Plain [quoted] words"}
+]$j$);
+select ct.set('hbpub', ct.publish('pastor', 'hb')::text);
+select ct.check('publish numbers four blanks', (ct.v('hbpub')::jsonb)->>'blanks' = '4', ct.v('hbpub')::jsonb);
+select ct.check('the revision keeps the key apart from the blocks',
+  (select r.blanks = '[{"n": 1, "hint": "Z", "answer": "Zebulunite"}, {"n": 2, "hint": null, "answer": "Issacharite"},
+                       {"n": 3, "hint": null, "answer": "Gileadite"}, {"n": 4, "hint": "anything", "answer": null}]'::jsonb
+     and position('Zebulunite' in r.blocks::text) = 0 and r.answers = 'reveal'
+   from public.church_sermon_revisions r join public.church_sermons s on s.published_revision_id = r.id where s.id = ct.v('hb')::uuid));
+select ct.set('hbview', (ct.sees('a handout is readable', 'anon', 'hbslug', 'ok'))::text);
+select ct.check('before reveal no answer reaches readers, in any field',
+  position('Zebulunite' in ct.v('hbview')) = 0 and position('Issacharite' in ct.v('hbview')) = 0
+  and position('Gileadite' in ct.v('hbview')) = 0
+  and not exists (select 1 from jsonb_array_elements((ct.v('hbview')::jsonb)->'blanks') b where b ? 'answer')
+  and (ct.v('hbview')::jsonb)->>'answers' = 'hidden', ct.v('hbview')::jsonb);
+select ct.check('readers get numbered markers, hints and which blanks are open',
+  (ct.v('hbview')::jsonb)->'blocks' @> '[{"id": "h", "text": "1. Gratitude starts with [[1]] God the [[2]]"}, {"id": "l", "items": ["Thanks for [[3]]", "Your own: [[4]]"]}]'
+  and (ct.v('hbview')::jsonb)->'blanks' = '[{"n": 1, "open": false, "hint": "Z"}, {"n": 2, "open": false, "hint": null},
+                                            {"n": 3, "open": false, "hint": null}, {"n": 4, "open": true, "hint": "anything"}]'::jsonb
+  and (ct.v('hbview')::jsonb)->'blocks' @> '[{"id": "q", "text": "Plain [quoted] words"}, {"id": "s", "ref": {"translation": "KJV"}}]', ct.v('hbview')::jsonb);
+select ct.check('members don''t get the key before reveal either',
+  position('Zebulunite' in (ct.run('member', format('public.published_sermon(%L)', ct.v('hbslug'))))::text) = 0);
+select ct.refused('a member cannot reveal', 'member', format('public.reveal_church_sermon_answers(%L, true)', ct.v('hb')), 'not_allowed');
+select ct.refused('a guest cannot reveal', 'anon', format('public.reveal_church_sermon_answers(%L, true)', ct.v('hb')), 'permission denied');
+select ct.check('the pastor reveals the key',
+  (ct.run('pastor', format('public.reveal_church_sermon_answers(%L, true)', ct.v('hb'))))->>'revealed' = 'true');
+select ct.set('hbview', (ct.run('anon', format('public.published_sermon(%L)', ct.v('hbslug'))))::text);
+select ct.check('after reveal readers get the key for this revision',
+  (ct.v('hbview')::jsonb)->>'answers' = 'revealed'
+  and (ct.v('hbview')::jsonb)->'blanks' @> '[{"n": 1, "answer": "Zebulunite"}, {"n": 4, "open": true, "answer": null}]', ct.v('hbview')::jsonb);
+select ct.check('revealing doesn''t count as a draft edit',
+  (select draft_version from public.church_sermons where id = ct.v('hb')::uuid) = ct.ver('hb'));
+select ct.save('pastor', 'hb', '{}', $j$[{"id": "h", "kind": "heading", "text": "1. Gratitude starts with [[Asherite]] God", "level": 2}]$j$);
+select ct.check('a draft change doesn''t touch the revealed revision',
+  position('Zebulunite' in (ct.run('anon', format('public.published_sermon(%L)', ct.v('hbslug'))))::text) > 0
+  and position('Asherite' in (ct.run('anon', format('public.published_sermon(%L)', ct.v('hbslug'))))::text) = 0);
+select ct.set('hbpub2', ct.publish('pastor', 'hb')::text);
+select ct.set('hbview', (ct.run('anon', format('public.published_sermon(%L)', ct.v('hbslug'))))::text);
+select ct.check('a republished revision starts hidden again',
+  (ct.v('hbview')::jsonb)->>'answers' = 'hidden' and (ct.v('hbview')::jsonb)->>'revision' = (ct.v('hbpub2')::jsonb)->>'number'
+  and position('Asherite' in ct.v('hbview')) = 0 and position('Zebulunite' in ct.v('hbview')) = 0, ct.v('hbview')::jsonb);
+select ct.check('the pastor can hide a revealed key again',
+  not (ct.run('pastor', format('public.reveal_church_sermon_answers(%L, true)', ct.v('hb'))) ? 'error')
+  and (ct.run('pastor', format('public.reveal_church_sermon_answers(%L, false)', ct.v('hb'))))->>'revealed' = 'false'
+  and (ct.run('anon', format('public.published_sermon(%L)', ct.v('hbslug'))))->>'answers' = 'hidden');
+select ct.save('pastor', 'hb', '{"answers": "now"}');
+select ct.publish('pastor', 'hb');
+select ct.check('"Right away" gives readers the key at once',
+  (ct.run('anon', format('public.published_sermon(%L)', ct.v('hbslug'))))->>'answers' = 'revealed'
+  and position('Asherite' in (ct.run('anon', format('public.published_sermon(%L)', ct.v('hbslug'))))::text) > 0);
+select ct.refused('only "After I reveal them" has a reveal', 'pastor', format('public.reveal_church_sermon_answers(%L, true)', ct.v('hb')), 'answers_not_manual');
+select ct.save('pastor', 'hb', '{"answers": "never"}');
+select ct.publish('pastor', 'hb');
+select ct.check('"Never" sends no key at all',
+  (ct.run('anon', format('public.published_sermon(%L)', ct.v('hbslug'))))->>'answers' = 'never'
+  and position('Asherite' in (ct.run('anon', format('public.published_sermon(%L)', ct.v('hbslug'))))::text) = 0);
+select ct.check('an unpublished sermon has nothing to reveal',
+  not (ct.run('pastor', format('public.unpublish_church_sermon(%L)', ct.v('hb'))) ? 'error')
+  and position('not_published' in (ct.run('pastor', format('public.reveal_church_sermon_answers(%L, true)', ct.v('hb'))))->>'error') > 0);
+select ct.check('sermons published before handouts still read, with no blanks',
+  (ct.run('anon', format('public.published_sermon(%L)', ct.v('slug1'))))->'blanks' = '[]'::jsonb
+  or (ct.run('anon', format('public.published_sermon(%L)', ct.v('slug1'))))->>'status' <> 'ok');
+
+-- A member's saved work, private with their sermon notes.
+select ct.check('a member saves their handout with their notes',
+  ct.dml('member', format($q$insert into public.sermons (id, user_id, title, preached_at, created_at, updated_at, source_sermon_id, handouts)
+    values (gen_random_uuid(), %L, 'Gratitude', now(), now(), now(), %L, '[{"revision": 1, "responses": {"1": "Zebulunite"}}]')$q$,
+    ct.p('member'), ct.v('hb'))) = '1'::jsonb);
+select ct.refused_dml('saved work is a list', 'member', format($q$insert into public.sermons (id, user_id, title, preached_at, created_at, updated_at, handouts)
+    values (gen_random_uuid(), %L, 'x', now(), now(), now(), '{"revision": 1}')$q$, ct.p('member')), 'sermons_handouts_shape');
+select ct.check('nobody else reads it', ct.dml('pastor', 'select * from public.sermons where handouts is not null') = '0'::jsonb);
+
 -- Result -------------------------------------------------------------------------------
 
 select 'FAIL ' || name || coalesce(': ' || detail, '') as failed from ct.results where not ok order by n;

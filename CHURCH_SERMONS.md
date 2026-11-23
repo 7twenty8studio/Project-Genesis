@@ -127,6 +127,35 @@ Tests:
     ./Scripts/build.sh --ui                # GenesisUITests/ChurchSermonsUITests.swift (in-memory server)
     python3 Tools/BibleData/export_web_chapters.py --rv1909 <RV1909.sqlite or spa-rv1909.usfx.xml> --out build/web-bibles --check
 
+## Handouts (fill in the blanks)
+
+Owner's plan, 22 November 2026 (https://claude.ai/artifact/2aKFnhKtgosyXZpXaX4cg7),
+migration 20261128000000_sermon_blanks.sql.
+
+- Draft markup: `[[answer]]`, `[[answer|hint]]`, `[[...]]` (open blank, the
+  member's own words), `[[]]` (waiting for its answer; Publish refuses with
+  `blank_needs_answer`). Headings, paragraphs and list items only; a blank
+  in a quotation or Scripture is refused (`blank_in_quotation`). At most 100
+  blanks, answers 100 characters, hints 60 (`too_many_blanks`,
+  `blank_too_long`).
+- Publish numbers blanks across the sermon, writes `[[n]]` into the
+  published blocks and keeps `[{n, answer, hint}]` in the revision.
+- Answers (`church_sermons.answers`, copied to each revision): `reveal`
+  (default), `now` or `never`. `reveal_church_sermon_answers(sermon, reveal)`
+  (owner, admins, the sermon's preacher) sets
+  `answers_revealed_revision_id` to the published revision, so a republish
+  starts hidden again.
+- Readers (`published_sermon`): `answers` hidden / revealed / never,
+  `revision`, and `blanks` `[{n, open, hint}]` plus `answer` only once
+  revealed. Before that the key is in no response at all.
+- Members: Check Answers and Show Answers only with the key; Practice Again
+  starts a fresh try and keeps the saved answers. Saved work belongs to the
+  revision filled in. App: `sermons.handouts` (private, synced, at most 10,
+  ≤ 1 MB; keeps the outline and, once revealed, the key, so it still opens
+  and checks after an unpublish). Web: this browser only.
+- Tests: tests.sql › Fill-in-the-blank handouts, web/src/lib/blanks.test.ts,
+  web/e2e/check.cjs (handout001), GenesisTests/SermonHandoutTests.swift.
+
 ## The web (checkpoint 2)
 
 - **Guest page** `/s/<slug>`: rendered for every request from

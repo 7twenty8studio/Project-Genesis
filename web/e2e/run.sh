@@ -21,7 +21,7 @@ if [ ! -d "$MOCK_BIBLES/web/v1/KJV" ]; then
 fi
 NEXT_PUBLIC_VERSELY_SUPABASE_URL=http://localhost:54329 NEXT_PUBLIC_VERSELY_SITE_URL=http://localhost:3100 \
   npm run build > build/e2e-build.log 2>&1 || { tail -40 build/e2e-build.log; exit 1; }
-node e2e/mock.mjs > build/e2e-mock.log 2>&1 &
+node --experimental-strip-types --no-warnings e2e/mock.mjs > build/e2e-mock.log 2>&1 &
 MOCK_PID=$!
 npx next start -p 3100 > build/e2e-next.log 2>&1 &
 NEXT_PID=$!
