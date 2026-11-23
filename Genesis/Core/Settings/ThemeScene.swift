@@ -295,6 +295,31 @@ enum ForestMist {
     }
 }
 
+/// The Forest's boughs swaying: the top of the picture (the canopy) is
+/// drawn in thin bands, each moved sideways a little, most at the top and
+/// nothing where the canopy meets the trunks below, so the branches bend
+/// in a slow breeze while the trunks and floor stay planted.
+enum ForestSway {
+    /// The share of the picture's height that sways.
+    static let canopy: CGFloat = 0.46
+    /// Bands it's drawn in (thin enough that the bend looks smooth).
+    static let bands = 28
+    /// The most the top of the picture moves, in points.
+    static let reach: CGFloat = 9
+
+    /// How far the band at `share` of the picture's height (0 at the top)
+    /// is moved at `time`: a slow breeze with gentler gusts on top, fading
+    /// to nothing at the bottom of the canopy.
+    static func offset(atShare share: CGFloat, time: Double) -> CGFloat {
+        guard share < canopy else { return 0 }
+        let weight = pow(1 - max(0, share) / canopy, 1.8)
+        let tau = 2 * Double.pi
+        let lag = Double(share) * 2.2
+        let breeze = 0.65 * sin(tau * time / 6.8 - lag) + 0.35 * sin(tau * time / 3.1 + 1.3 - lag * 1.5)
+        return reach * weight * CGFloat(breeze)
+    }
+}
+
 /// Hearth's embers: small amber sparks leaving the coals at uneven moments,
 /// rising and drifting, fading out before they reach the words.
 enum HearthSparks {

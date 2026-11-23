@@ -353,7 +353,9 @@ shares; README.md has the architecture.
   get mirrored copies (never Hearth). `ReaderLayout.sceneFootRoom` ends
   pages above the swells and the fire's glow (none for Forest); scrolling
   text passes behind them (the scene's foot drawn again, feathered).
-  Motion, one thing each: Forest's two mist layers (`ForestMist`), Ocean's
+  Motion: Forest's two mist layers (`ForestMist`) and its boughs swaying
+  (`ForestSway`: the canopy drawn in 28 bands, most at the top, none at
+  the trunks; floor repainted 23 November 2026 without roots), Ocean's
   swells rising and settling out of step (`OceanSwells`), Hearth's embers
   at uneven moments, fading before the text, and a slow glow
   (`HearthSparks`). 30 fps, only while Gentle Motion (`seasonalEffects`)
@@ -361,8 +363,7 @@ shares; README.md has the architecture.
   the reader on screen; otherwise the still at `ThemeScene.stillTime`.
   Scene themes always slide (no curl over clear pages); the running head
   and page number get a soft shadow. Picker swatches show a still glimpse.
-  Deferred: Cedar and Leather Bound (with their curl), Forest's branch
-  sway, Ocean's rain.
+  Deferred: Cedar and Leather Bound (with their curl), Ocean's rain.
 - Widgets: every widget is free in its Classic look at every size, so
   nothing added from the gallery turns into a locked card (`WidgetAccess`
   in Genesis/Shared). Premium is what people choose inside a widget: the

@@ -145,6 +145,21 @@ struct SceneThemeTests {
         #expect(different, "Out of step")
     }
 
+    @Test func boughsSwayAndTrunksStayPlanted() {
+        var widest: CGFloat = 0
+        for step in 0..<400 {
+            let time = Double(step) / 10
+            let top = ForestSway.offset(atShare: 0, time: time)
+            let canopyFoot = ForestSway.offset(atShare: ForestSway.canopy, time: time)
+            let floor = ForestSway.offset(atShare: 0.9, time: time)
+            widest = max(widest, abs(top))
+            #expect(abs(top) <= ForestSway.reach + 0.001)
+            #expect(canopyFoot == 0)
+            #expect(floor == 0)
+        }
+        #expect(widest > ForestSway.reach * 0.6, "The branches really move")
+    }
+
     @Test func mistWrapsOffScreen() {
         let size = Self.phone
         for layer in ForestMist.layers {

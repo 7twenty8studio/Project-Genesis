@@ -33,8 +33,16 @@ struct ThemeSceneView: View {
             // never changes the scene's own size.
             Color(uiColor: UIColor(hex: scene.fillHex))
                 .overlay(alignment: .topLeading) {
-                    ForEach(Array(scene.tiles(in: size, safeBottom: safeBottom).enumerated()), id: \.offset) { _, tile in
-                        SceneArtImage(name: scene.artName, tile: tile)
+                    if scene == .forest {
+                        // The boughs sway, so the Forest's picture moves too.
+                        TimelineView(.animation(minimumInterval: 1.0 / 30, paused: !moving)) { timeline in
+                            let time = moving ? timeline.date.timeIntervalSinceReferenceDate : ThemeScene.stillTime
+                            SwayingForest(tiles: scene.tiles(in: size, safeBottom: safeBottom), name: scene.artName, time: time)
+                        }
+                    } else {
+                        ForEach(Array(scene.tiles(in: size, safeBottom: safeBottom).enumerated()), id: \.offset) { _, tile in
+                            SceneArtImage(name: scene.artName, tile: tile)
+                        }
                     }
                 }
             TimelineView(.animation(minimumInterval: 1.0 / 30, paused: !moving)) { timeline in
@@ -70,6 +78,45 @@ private struct SceneArtImage: View {
             .scaleEffect(x: tile.mirrored ? -1 : 1, y: 1)
             .frame(width: tile.frame.width, height: tile.frame.height)
             .offset(x: tile.frame.minX, y: tile.frame.minY)
+    }
+}
+
+/// The Forest's picture with its canopy drawn in bands, each moved by
+/// `ForestSway`; below the canopy it's drawn whole and still.
+private struct SwayingForest: View {
+    let tiles: [SceneTile]
+    let name: String
+    let time: Double
+
+    var body: some View {
+        Canvas { context, size in
+            let image = context.resolve(Image(name))
+            for tile in tiles {
+                let frame = tile.frame
+                var art = context
+                if tile.mirrored {
+                    art.translateBy(x: frame.midX, y: 0)
+                    art.scaleBy(x: -1, y: 1)
+                    art.translateBy(x: -frame.midX, y: 0)
+                }
+                // Below the canopy: still.
+                let canopyBottom = frame.minY + frame.height * ForestSway.canopy
+                var still = art
+                still.clip(to: Path(CGRect(x: frame.minX - 20, y: canopyBottom, width: frame.width + 40, height: frame.maxY - canopyBottom)))
+                still.draw(image, in: frame)
+                // The canopy, band by band (a hair of overlap hides seams).
+                let band = frame.height * ForestSway.canopy / CGFloat(ForestSway.bands)
+                for index in 0..<ForestSway.bands {
+                    let top = frame.minY + CGFloat(index) * band
+                    guard top + band > 0, top < size.height else { continue }
+                    let share = (CGFloat(index) + 0.5) / CGFloat(ForestSway.bands) * ForestSway.canopy
+                    let shift = ForestSway.offset(atShare: share, time: time) * (tile.mirrored ? -1 : 1)
+                    var strip = art
+                    strip.clip(to: Path(CGRect(x: frame.minX - 20, y: top, width: frame.width + 40, height: band + 0.5)))
+                    strip.draw(image, in: frame.offsetBy(dx: shift, dy: 0))
+                }
+            }
+        }
     }
 }
 
