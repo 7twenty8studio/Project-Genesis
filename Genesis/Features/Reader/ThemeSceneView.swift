@@ -41,12 +41,11 @@ struct ThemeSceneView: View {
                             let time = moving ? timeline.date.timeIntervalSinceReferenceDate : (frozenTime ?? ThemeScene.stillTime)
                             SwayingForest(size: size, time: time)
                         }
+                    } else if scene == .ocean, let name = scene.artName {
+                        OceanPicture(name: name, size: size)
                     } else if let name = scene.artName {
                         ForEach(Array(scene.tiles(in: size, safeBottom: safeBottom).enumerated()), id: \.offset) { _, tile in
                             SceneArtImage(name: name, tile: tile)
-                        }
-                        if scene == .ocean {
-                            OceanSky(name: name, size: size)
                         }
                     }
                 }
@@ -86,24 +85,23 @@ private struct SceneArtImage: View {
     }
 }
 
-/// The Ocean's clouds drawn again, raised (`ThemeScene.oceanSky`) and
-/// fading out in the plain sky below them, so they sit higher than the
-/// water does.
-private struct OceanSky: View {
+/// The Ocean's picture in one Canvas: the sky first, raised
+/// (`ThemeScene.oceanSky`) so its clouds reach the top of the screen, then
+/// the lowered picture over it, faded in through `skyFade` (in both
+/// pictures' plain sky), so its water sits low and nothing is left bare.
+private struct OceanPicture: View {
     let name: String
     let size: CGSize
 
     var body: some View {
-        // Drawn like the swaying Forest (a Canvas): the raised copies, then
-        // everything from the fade down rubbed out by a gradient.
         Canvas { context, size in
             let sky = ThemeScene.oceanSky(in: size)
             let art = ThemeScene.ocean.artFrame(in: size, safeBottom: 0)
             let fadeTop = art.minY + art.height * ThemeScene.skyFade.lowerBound
             let fadeBottom = art.minY + art.height * ThemeScene.skyFade.upperBound
-            context.drawLayer { layer in
-                let image = layer.resolve(Image(name))
-                for tile in ThemeScene.tiles(of: sky, across: size.width) {
+            let image = context.resolve(Image(name))
+            func drawCopies(of frame: CGRect, in layer: GraphicsContext) {
+                for tile in ThemeScene.tiles(of: frame, across: size.width) {
                     var copy = layer
                     if tile.mirrored {
                         copy.translateBy(x: tile.frame.midX, y: 0)
@@ -112,17 +110,23 @@ private struct OceanSky: View {
                     }
                     copy.draw(image, in: tile.frame)
                 }
+            }
+            drawCopies(of: sky, in: context)
+            context.drawLayer { layer in
+                drawCopies(of: art, in: layer)
+                // Rub out the lowered picture above the fade, and fade it in.
                 var eraser = layer
                 eraser.blendMode = .destinationOut
                 eraser.fill(
-                    Path(CGRect(x: 0, y: fadeTop, width: size.width, height: size.height - fadeTop)),
+                    Path(CGRect(x: 0, y: 0, width: size.width, height: fadeBottom)),
                     with: .linearGradient(
                         Gradient(stops: [
-                            .init(color: .black.opacity(0), location: 0),
-                            .init(color: .black, location: max(0.001, min(1, (fadeBottom - fadeTop) / max(1, size.height - fadeTop)))),
+                            .init(color: .black, location: 0),
+                            .init(color: .black, location: max(0, min(1, fadeTop / max(1, fadeBottom)))),
+                            .init(color: .black.opacity(0), location: 1),
                         ]),
-                        startPoint: CGPoint(x: 0, y: fadeTop),
-                        endPoint: CGPoint(x: 0, y: size.height)
+                        startPoint: .zero,
+                        endPoint: CGPoint(x: 0, y: fadeBottom)
                     )
                 )
             }
