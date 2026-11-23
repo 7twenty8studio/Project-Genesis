@@ -233,21 +233,22 @@ final class DemoReelUITests: GenesisUITestCase {
 
     @MainActor
     func testDemo10Memorize() {
-        let app = Genesis.launch(verse: 43_003_016, extra: premium + ["-uiTestingTheme", "paper"])
-        _ = Genesis.readerText(app).waitForExistence(timeout: Genesis.launchTimeout)
-        // Set up off camera: John 3:16 saved to Memorize.
-        _ = Genesis.selectVerse(app)
-        if app.buttons["selection.memorise"].waitForExistence(timeout: Genesis.timeout) { app.buttons["selection.memorise"].tap() }
-        Demo.pause(1.5)
-        Genesis.showControls(app)
-        Genesis.openTab("Home", in: app)
+        // Starts on Home with nothing saved, opens Memorize and adds John 3:16 from
+        // the suggestions on camera. (Adding it in the reader first and then
+        // switching to Home crashed the app on the iOS 27.2 simulator.)
+        let app = Genesis.launch(extra: premium + ["-uiTestingTheme", "paper"])
         let card = app.buttons["home.memorise"]
-        _ = card.waitForExistence(timeout: Genesis.timeout)
+        _ = card.waitForExistence(timeout: Genesis.launchTimeout)
         Genesis.scrollIntoView(card, in: app)
         card.tap()
-        _ = app.staticTexts["memorise.level"].waitForExistence(timeout: Genesis.timeout)
+        let john316 = app.buttons["memorise.suggestion.43003016"]
+        _ = john316.waitForExistence(timeout: Genesis.timeout)
+        Demo.pause(1)
         Demo.start("memorize")
-        Demo.pause(3)
+        Demo.pause(2)
+        Demo.tap(john316, in: app)
+        _ = app.staticTexts["memorise.level"].waitForExistence(timeout: Genesis.timeout)
+        Demo.pause(2)
         let wordOrder = app.buttons["memorise.game.wordOrder"]
         Genesis.scrollIntoView(wordOrder, in: app)
         Demo.pause(1)
