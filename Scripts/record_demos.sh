@@ -9,7 +9,7 @@
 #   SIMULATOR="iPhone 17 Pro Max" ./Scripts/record_demos.sh
 #
 # Output: build/Demos/<NN-name>.mp4 and build/Demos/marks/*.json (when each
-# demo starts and ends, and where it taps), zipped as build/Demos.zip to send back.
+# demo starts and ends, and where it taps), zipped in parts (build/Demos.zip, Demos.z01…) to send back.
 set -uo pipefail
 cd "$(dirname "$0")/.."
 
@@ -91,9 +91,11 @@ for entry in "${DEMOS[@]}"; do
 done
 
 xcrun simctl status_bar "$SIM_ID" clear
-rm -f "$OUT/../Demos.zip"
-(cd build && zip -qr Demos.zip Demos)
+# Zipped in parts of at most 400 MB, since uploads stop at 480 MB.
+rm -f build/Demos.zip build/Demos.z[0-9][0-9]
+(cd build && zip -qr -s 400m Demos.zip Demos -x "Demos/build.log")
 echo
-echo "Done: $OUT (and build/Demos.zip to send back)."
+echo "Done: $OUT. Send back every part:"
+ls -1 build/Demos.z* | sed 's/^/  /'
 [ -n "$FAILED" ] && echo "These had a problem (their .log files say why):$FAILED"
 exit 0
