@@ -877,6 +877,11 @@ shares; README.md has the architecture.
   download, never tied to reviews. Tests: supabase/tests/giveaway/run.sh,
   web/src/lib/giveaway.test.ts.
 
+- Screenshare for the show (web/ `/screen`, `/screen/obs`, `/screen/host`;
+  web/README.md): WebRTC peer to peer, signalling over a public Supabase
+  Realtime broadcast channel per room (no table); each device its own ID and
+  OBS browser source. iOS can't share its screen from the web (camera only).
+
 ## Journal extras (Premium)
 - `PremiumFeature.journalExtras`, checked with `EntitlementService.allows` at
   each entry point; core prayers and sermon notes stay free. Free accounts

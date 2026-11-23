@@ -35,3 +35,15 @@ the 7twenty8 site. This version differs from older Next.js: read
   scripts/strings.mjs` lists every string; the test checks them.
 - Scripture is never typed here: passages load verbatim from the
   `bibles/web/v1` files (Tools/BibleData/export_web_chapters.py).
+
+## Launch-day screenshare (/screen)
+
+Our own screenshare into OBS, so no App Store mirroring app is needed.
+
+- `/screen/host` (the person running OBS): makes a room (kept in this browser), shows its share link and QR, lists every device in the room with its own OBS link and a live preview.
+- `/screen?room=…` (each device): the device gets its own ID (kept on the device; `&device=stage-laptop` fixes one, so OBS can be set up beforehand), then Share my screen, or Back/Front camera.
+- `/screen/obs?room=…&device=…` (an OBS Browser source, 1920 × 1080): only the picture, clear background until the device shares, back by itself when the device reconnects. Options: `fit=cover`, `bg=black`, `audio=1` (then tick Control audio via OBS), `label=1`.
+
+How it works: WebRTC peer to peer (on the venue's network the picture goes straight from the device to the Mac, nothing is stored); offers, answers and ICE candidates go through a public Supabase Realtime broadcast channel `versely-screen-<room>` (lib/screenshare/room.ts, plain WebSocket, no table, no migration). Anyone who knows the room can join it, so keep the room code to the people on stage. Public STUN only, no TURN: a network with client isolation (some guest Wi-Fi) blocks it; then use a phone hotspot or the venue's staff network.
+
+iPhone and iPad can't share their screen from any web page (no getDisplayMedia in iOS). They can share a camera here; for their screens use the Mac's AirPlay Receiver (Screen Mirroring, then a macOS Screen Capture source in OBS) or a USB cable (the iPhone shows up as a Video Capture Device in OBS).
