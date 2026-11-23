@@ -71,7 +71,7 @@ final class DemoReelUITests: GenesisUITestCase {
             Demo.pause(2.2)
         }
         // Scroll mode.
-        Genesis.showControls(app)
+        Demo.revealControls(app)
         Demo.tap(app.buttons["reader.settings"], in: app)
         let scroll = app.segmentedControls.buttons["Scroll"]
         Genesis.scrollIntoView(scroll, in: app, container: Genesis.settingsList(app))
@@ -197,7 +197,7 @@ final class DemoReelUITests: GenesisUITestCase {
         Demo.start("original")
         Demo.pause(2)
         openParallelMenu(in: app)
-        Demo.tap(app.buttons["reader.parallel.original"], in: app)
+        Demo.tap(menuItem("reader.parallel.original", label: "Original", in: app), in: app)
         Demo.pause(4)
         Demo.tap(app.buttons["original.interlinear"], in: app)
         Demo.pause(3.5)
@@ -219,8 +219,7 @@ final class DemoReelUITests: GenesisUITestCase {
         Demo.start("parallel")
         Demo.pause(2)
         openParallelMenu(in: app)
-        let other = app.buttons["reader.parallel.WEB"].exists ? app.buttons["reader.parallel.WEB"] : app.buttons["reader.parallel.ASV"]
-        Demo.tap(other, in: app)
+        Demo.tap(menuItem("reader.parallel.WEB", label: "WEB", in: app), in: app)
         Demo.pause(4)
         for _ in 0..<2 {
             Demo.drag(app.windows.firstMatch, from: 0.7, to: 0.4, in: app)
@@ -389,6 +388,14 @@ final class DemoReelUITests: GenesisUITestCase {
     }
 
     @MainActor
+    /// A menu item by its identifier, or by the start of its label: on the
+    /// iOS 27.2 simulator a submenu's items lose their identifiers.
+    private func menuItem(_ id: String, label: String, in app: XCUIApplication) -> XCUIElement {
+        let byID = app.buttons[id]
+        if byID.waitForExistence(timeout: 1.5) { return byID }
+        return Genesis.anyElement(startingWith: label, in: app)
+    }
+
     private func openParallelMenu(in app: XCUIApplication) {
         let translation = app.buttons["reader.translation"]
         Demo.tap(translation, in: app)
@@ -463,6 +470,19 @@ enum Demo {
         let (x, y) = point(of: spot, in: app)
         events.append(Event(t: Date().timeIntervalSince1970, kind: "tap", x: x, y: y))
         element.coordinate(withNormalizedOffset: offset).tap()
+    }
+
+    /// Shows the reader's controls. Right after a page curl the first tap on
+    /// the running head can be missed, so it tries the running head again and
+    /// then the page number at the bottom (both toggle the controls).
+    static func revealControls(_ app: XCUIApplication) {
+        let chapter = app.buttons["reader.chapterButton"]
+        for spot in [0.05, 0.04, 0.975, 0.98] {
+            if chapter.exists { return }
+            pause(0.6)
+            Genesis.readerText(app).coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: spot)).tap()
+            if chapter.waitForExistence(timeout: 2) { return }
+        }
     }
 
     /// A quick sideways swipe across the element (a page turn).
