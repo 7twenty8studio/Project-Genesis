@@ -1,8 +1,9 @@
 import SwiftUI
 import WidgetKit
 
-// The seasons' touches, drifting in the verse widget: leaves in autumn, snow
-// in winter, petals in spring, warm motes of light in summer. Widgets can't
+// The seasons' touches, drifting in the verse widget: maple, oak and birch
+// leaves in autumn, snow (crystals up close) in winter, petals and blossoms
+// in spring, warm motes of light in summer. Widgets can't
 // animate continuously, so the widget's timeline has an entry every minute
 // with a seasonal background (`SeasonalDrift.entryDates`), and each entry
 // moves every piece a little further along its path; WidgetKit glides them
@@ -101,7 +102,8 @@ private enum DriftSeason {
             // sizes are diameters, speeds about its falls (9, 16, 28 pt/s).
             [Wheel(count: 36, period: 190, sizes: 1.8...2.6, opacity: 1),
              Wheel(count: 24, period: 107, sizes: 3.6...4.8, opacity: 1),
-             Wheel(count: 10, period: 61, sizes: 7.2...10, opacity: 1)]
+             // The near ones are crystals, big enough to see their arms.
+             Wheel(count: 10, period: 61, sizes: 12...16, opacity: 1)]
         case .spring:
             [Wheel(count: 38, period: 200, sizes: 5...7, opacity: 0.65),
              Wheel(count: 30, period: 140, sizes: 8...11, opacity: 0.9)]
@@ -120,7 +122,7 @@ private enum DriftSeason {
         }
     }
 
-    var spins: Bool { self == .autumn || self == .spring }
+    var spins: Bool { self != .summer }
 
     @ViewBuilder
     func piece(size: CGFloat, tint: Int) -> some View {
@@ -132,35 +134,55 @@ private enum DriftSeason {
                 Color(red: 0.56, green: 0.23, blue: 0.16),
                 Color(red: 0.65, green: 0.48, blue: 0.23),
             ]
-            Image(systemName: "leaf.fill")
-                .resizable()
-                .scaledToFit()
-                .frame(width: size, height: size)
-                .foregroundStyle(colors[tint % colors.count])
-                .shadow(color: .black.opacity(0.12), radius: 1, y: 1)
+            // Maple, oak and birch (`SeasonShapes`), as in the reader.
+            let kind = SeasonShapes.LeafKind.mixed(tint)
+            let color = colors[tint % colors.count]
+            ZStack {
+                SeasonShape(unit: SeasonShapes.leaf(kind), span: 1.1).fill(color)
+                SeasonShape(unit: SeasonShapes.leafVeins(kind), span: 1.1)
+                    .stroke(color.opacity(0.75), lineWidth: max(0.5, size * 0.04))
+            }
+            .frame(width: size, height: size)
+            .shadow(color: .black.opacity(0.12), radius: 1, y: 1)
         case .spring:
             let colors: [Color] = [
                 Color(red: 0.95, green: 0.76, blue: 0.80),
                 Color(red: 0.97, green: 0.86, blue: 0.89),
                 Color(red: 1.0, green: 0.97, blue: 0.96),
             ]
-            Ellipse()
-                .fill(colors[tint % colors.count])
-                .frame(width: size * 0.65, height: size)
+            if tint % 4 == 0 {
+                // One in four is a whole blossom, as in the reader.
+                ZStack {
+                    SeasonShape(unit: SeasonShapes.blossomPetals, span: 2.2).fill(colors[tint % colors.count])
+                    SeasonShape(unit: SeasonShapes.blossomCentre, span: 2.2).fill(Color(red: 0.79, green: 0.49, blue: 0.56))
+                    SeasonShape(unit: SeasonShapes.stamenTips, span: 2.2).fill(Color(red: 0.88, green: 0.70, blue: 0.35))
+                }
+                .frame(width: size * 1.6, height: size * 1.6)
                 .shadow(color: .black.opacity(0.1), radius: 1, y: 0.5)
+            } else {
+                Ellipse()
+                    .fill(colors[tint % colors.count])
+                    .frame(width: size * 0.65, height: size)
+                    .shadow(color: .black.opacity(0.1), radius: 1, y: 0.5)
+            }
         case .winter:
-            // Exactly the reader's flakes: pale blue-grey (#8FA6B8) with a
-            // white centre; the near ones soft, as if out of focus.
+            // The reader's flakes: pale blue-grey (#8FA6B8) with white; the
+            // near ones are crystals (`SeasonShapes`) with a soft halo.
             let blue = Color(red: 0x8F / 255, green: 0xA6 / 255, blue: 0xB8 / 255)
             if size >= 6 {
+                let kind = SeasonShapes.FlakeKind(rawValue: tint % 3) ?? .stellar
+                let arms = SeasonShape(unit: SeasonShapes.flakeArms(kind), span: 2)
                 ZStack {
                     Circle()
-                        .fill(RadialGradient(colors: [blue.opacity(0.55), blue.opacity(0)], center: .center, startRadius: 0, endRadius: size * 0.8))
-                        .frame(width: size * 1.6, height: size * 1.6)
-                    Circle()
-                        .fill(RadialGradient(colors: [.white.opacity(0.9), .white.opacity(0)], center: .center, startRadius: 0, endRadius: size / 2))
-                        .frame(width: size, height: size)
+                        .fill(RadialGradient(colors: [blue.opacity(0.3), blue.opacity(0)], center: .center, startRadius: 0, endRadius: size * 0.65))
+                        .frame(width: size * 1.3, height: size * 1.3)
+                    arms.stroke(blue.opacity(0.75), style: StrokeStyle(lineWidth: max(1, size * 0.08), lineCap: .round))
+                    if let core = SeasonShapes.flakeCore(kind) {
+                        SeasonShape(unit: core, span: 2).fill(blue.opacity(0.75))
+                    }
+                    arms.stroke(.white.opacity(0.95), style: StrokeStyle(lineWidth: max(0.45, size * 0.03), lineCap: .round))
                 }
+                .frame(width: size, height: size)
             } else {
                 ZStack {
                     Circle()

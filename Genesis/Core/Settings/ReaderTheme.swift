@@ -25,6 +25,14 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
     case winter
     case spring
     case summer
+    // Scene themes (Premium), in the picker's order: an illustrated scene
+    // behind the words (`ThemeScene`).
+    /// A misty cedar grove.
+    case forest
+    /// A stormy lake with swells at the foot.
+    case ocean
+    /// A fireside with embers rising from the coals.
+    case hearth
 
     var id: String { rawValue }
 
@@ -46,6 +54,19 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
         case .winter: String(localized: "Winter", comment: "Reader theme name")
         case .spring: String(localized: "Spring", comment: "Reader theme name")
         case .summer: String(localized: "Summer", comment: "Reader theme name")
+        case .forest: String(localized: "Forest", comment: "Reader theme name: a misty cedar grove")
+        case .ocean: String(localized: "Ocean", comment: "Reader theme name: a stormy lake")
+        case .hearth: String(localized: "Hearth", comment: "Reader theme name: a fireside page")
+        }
+    }
+
+    /// The illustrated scene behind the words, for the scene themes.
+    var scene: ThemeScene? {
+        switch self {
+        case .forest: .forest
+        case .ocean: .ocean
+        case .hearth: .hearth
+        default: nil
         }
     }
 
@@ -80,7 +101,7 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
 
     var isDark: Bool {
         switch self {
-        case .slate, .highContrast, .night, .midnight, .starlight: true
+        case .slate, .highContrast, .night, .midnight, .starlight, .forest, .ocean, .hearth: true
         default: false
         }
     }
@@ -90,7 +111,8 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
     /// light, dark, night and high-contrast choice is always available.
     var isPremium: Bool {
         switch self {
-        case .cream, .parchment, .midnight, .starlight, .sage, .seasons, .autumn, .winter, .spring, .summer: true
+        case .cream, .parchment, .midnight, .starlight, .sage, .seasons, .autumn, .winter, .spring, .summer,
+             .forest, .ocean, .hearth: true
         case .automatic, .paper, .sepia, .slate, .highContrast, .night: false
         }
     }
@@ -130,6 +152,16 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
             ThemePalette(background: 0xF6EFEC, surface: 0xEDE2DE, text: 0x2F2A2B, secondaryText: 0x7C7072, accent: 0xA86F7E, separator: 0xE3D5D1)
         case .summer:
             ThemePalette(background: 0xF5EFE1, surface: 0xEBE2CF, text: 0x2C2B25, secondaryText: 0x76725F, accent: 0x4E8481, separator: 0xDDD3BC)
+        // Scene themes: the page colour is the scene's, under its shading.
+        // Text is at least 10:1 and secondary text and accents at least
+        // 4.5:1 on it (SceneThemeTests); the scene's shading keeps the
+        // words on that colour.
+        case .forest:
+            ThemePalette(background: 0x192D27, surface: 0x213A33, text: 0xF1EBDA, secondaryText: 0xB9C2B0, accent: 0xA9BE9A, separator: 0x2C463E)
+        case .ocean:
+            ThemePalette(background: 0x1B2632, surface: 0x223040, text: 0xEAF0F5, secondaryText: 0xA3B2C0, accent: 0x9DB5C7, separator: 0x2E3D4D)
+        case .hearth:
+            ThemePalette(background: 0x211A17, surface: 0x2B231F, text: 0xF2E6D4, secondaryText: 0xB7A28C, accent: 0xD49A6A, separator: 0x3A302A)
         }
     }
 }

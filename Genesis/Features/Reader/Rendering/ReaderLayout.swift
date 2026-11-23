@@ -19,9 +19,15 @@ struct ReaderLayout: Equatable {
         return UIEdgeInsets(
             top: safeArea.top + Self.headHeight,
             left: side + safeArea.left,
-            bottom: safeArea.bottom + Self.footHeight,
+            bottom: safeArea.bottom + Self.footHeight + sceneFootRoom,
             right: side + safeArea.right
         )
+    }
+
+    /// Forest, Ocean and Hearth keep the last lines above their swells and
+    /// fire (`ThemeScene.footRoom`).
+    var sceneFootRoom: CGFloat {
+        style.theme.scene?.footRoom(in: size, safeBottom: safeArea.bottom, footHeight: Self.footHeight) ?? 0
     }
 
     /// The area one page of text may fill.

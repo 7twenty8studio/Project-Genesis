@@ -2063,6 +2063,22 @@
         }
       }
     },
+    "A stormy lake behind the words, its swells rising and settling below the last line.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un lago en tormenta detrás de las palabras, con olas que suben y bajan debajo de la última línea."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Um lago em tempestade atrás das palavras, com ondas que sobem e descem abaixo da última linha."
+          }
+        }
+      }
+    },
     "A thorough Old Testament commentary attentive to the Hebrew text.": {
       "localizations": {
         "es": {
@@ -4227,6 +4243,22 @@
         }
       }
     },
+    "Autumn's falling leaves are now maple, oak and birch leaves, turning over as they drift.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las hojas que caen en Otoño ahora son de arce, roble y abedul, y giran mientras flotan."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "As folhas que caem no Outono agora são de bordo, carvalho e bétula, e giram enquanto flutuam."
+          }
+        }
+      }
+    },
     "Autumn, Winter, Spring and Summer, or Seasons to change with the calendar. Leaves, snow, blossom or summer sunlight drift gently across the page as you read. In Aa › Theme, with Premium.": {
       "localizations": {
         "es": {
@@ -4822,6 +4854,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bloquear %@?"
+          }
+        }
+      }
+    },
+    "Blossoms and summer light": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flores y luz de verano"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flores e luz de verão"
           }
         }
       }
@@ -10139,6 +10187,23 @@
         }
       }
     },
+    "Forest": {
+      "comment": "Reader theme name: a misty cedar grove",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bosque"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Floresta"
+          }
+        }
+      }
+    },
     "Forgot password?": {
       "localizations": {
         "es": {
@@ -10490,6 +10555,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Genitivo"
+          }
+        }
+      }
+    },
+    "Gentle Motion": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Movimiento suave"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Movimento suave"
           }
         }
       }
@@ -11571,6 +11652,23 @@
         }
       }
     },
+    "Hearth": {
+      "comment": "Reader theme name: a fireside page",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lumbre"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lareira"
+          }
+        }
+      }
+    },
     "Hebrew": {
       "localizations": {
         "es": {
@@ -12517,6 +12615,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Em espanhol ou português, toque em uma palavra hebraica ou grega para ler o significado, a definição e a origem no seu idioma. O hebraico e o grego continuam exatamente como foram escritos."
+          }
+        }
+      }
+    },
+    "In Winter, the snowflakes closest to you are six-sided crystals that turn slowly as they fall.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En Invierno, los copos más cercanos son cristales de seis puntas que giran despacio al caer."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Inverno, os flocos mais próximos são cristais de seis pontas que giram devagar ao cair."
           }
         }
       }
@@ -15009,6 +15123,22 @@
         }
       }
     },
+    "Maple, oak and birch": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arce, roble y abedul"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bordo, carvalho e bétula"
+          }
+        }
+      }
+    },
     "Margins": {
       "localizations": {
         "es": {
@@ -15713,6 +15843,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Palavra que falta, escolha abaixo"
+          }
+        }
+      }
+    },
+    "Mist, swells or embers move gently in the picture, never over the words. Paused in Low Power Mode and still when Reduce Motion is on.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La niebla, el oleaje o las brasas se mueven suavemente en la imagen, nunca sobre las palabras. Se pausan en el modo de bajo consumo y se quedan quietos con Reducir movimiento."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neblina, ondas ou brasas se movem suavemente na imagem, nunca sobre as palavras. Ficam pausadas no Modo de Pouca Energia e paradas com Reduzir Movimento."
           }
         }
       }
@@ -18097,6 +18243,23 @@
           "stringUnit": {
             "state": "translated",
             "value": "Observações, perguntas, conexões…"
+          }
+        }
+      }
+    },
+    "Ocean": {
+      "comment": "Reader theme name: a stormy lake",
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Océano"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oceano"
           }
         }
       }
@@ -21722,6 +21885,22 @@
         }
       }
     },
+    "Read by the fire as small embers rise from the coals and fade before they reach the words. Find all three in the reader's Themes with Premium.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee junto al fuego mientras pequeñas brasas suben de las ascuas y se apagan antes de llegar a las palabras. Encuentra los tres en los temas del lector con Premium."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leia junto ao fogo enquanto pequenas brasas sobem das cinzas acesas e se apagam antes de chegar às palavras. Encontre os três nos temas do leitor com o Premium."
+          }
+        }
+      }
+    },
     "Read every day for %lld days": {
       "localizations": {
         "es": {
@@ -21750,6 +21929,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ler em paralelo"
+          }
+        }
+      }
+    },
+    "Read in a misty cedar grove, with mist drifting slowly between the trunks.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lee en un bosque de cedros con niebla que se desliza despacio entre los troncos."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leia em um bosque de cedros com neblina passando devagar entre os troncos."
           }
         }
       }
@@ -22345,6 +22540,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pronto quando você estiver"
+          }
+        }
+      }
+    },
+    "Real snowflakes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copos de nieve de verdad"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flocos de neve de verdade"
           }
         }
       }
@@ -30522,6 +30733,22 @@
         }
       }
     },
+    "Three new scene themes": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tres nuevos temas con paisaje"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Três novos temas com paisagem"
+          }
+        }
+      }
+    },
     "Three of the most read English Bibles, free to download and read offline.": {
       "localizations": {
         "es": {
@@ -31564,6 +31791,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tribo de Zebulom"
+          }
+        }
+      }
+    },
+    "Truer seasons": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estaciones más reales"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estações mais reais"
           }
         }
       }
@@ -34248,6 +34491,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Por quem ou pelo que você está orando?"
+          }
+        }
+      }
+    },
+    "Whole cherry blossoms fall among Spring's petals, and in Summer, specks of dust float in the sunbeams while a butterfly passes now and then.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En Primavera caen flores de cerezo enteras entre los pétalos, y en Verano flotan motas de polvo en los rayos de sol mientras de vez en cuando pasa una mariposa."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Na Primavera caem flores de cerejeira inteiras entre as pétalas, e no Verão partículas de poeira flutuam nos raios de sol enquanto, de vez em quando, passa uma borboleta."
           }
         }
       }
