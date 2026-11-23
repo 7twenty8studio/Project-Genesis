@@ -315,7 +315,7 @@ enum ForestSway {
     /// Bands it's drawn in (thin enough that the bend looks smooth).
     static let bands = 28
     /// The most the top of the picture moves, in points.
-    static let reach: CGFloat = 3
+    static let reach: CGFloat = 5.5
     static let canopyName = "ThemeSceneForestCanopy"
     static let trunksName = "ThemeSceneForestTrunks"
     static let frontName = "ThemeSceneForestFront"
@@ -325,10 +325,10 @@ enum ForestSway {
     /// to nothing at the bottom of the canopy.
     static func offset(atShare share: CGFloat, time: Double) -> CGFloat {
         guard share < canopy else { return 0 }
-        let weight = pow(1 - max(0, share) / canopy, 1.8)
+        let weight = pow(1 - max(0, share) / canopy, 1.5)
         let tau = 2 * Double.pi
         let lag = Double(share) * 2.2
-        let breeze = 0.65 * sin(tau * time / 6.8 - lag) + 0.35 * sin(tau * time / 3.1 + 1.3 - lag * 1.5)
+        let breeze = 0.65 * sin(tau * time / 5.8 - lag) + 0.35 * sin(tau * time / 2.8 + 1.3 - lag * 1.5)
         return reach * weight * CGFloat(breeze)
     }
 }
