@@ -185,6 +185,8 @@ struct PagedReaderView: UIViewControllerRepresentable {
         /// each page so the curl turns a whole, opaque page of it. Nil the
         /// rest of the time, so the pages are clear and the scene moves.
         private var sceneStill: UIImage?
+        /// The moving scene laid over the still while the scene moves.
+        private var liveScene: AnyView?
         /// A finger is on the pages (from the touch recognizer).
         private var fingerDown = false
         private var stillCheckScheduled = false
@@ -199,21 +201,36 @@ struct PagedReaderView: UIViewControllerRepresentable {
                 if sceneStill == nil {
                     guard let curlScene, let layout, let pageController else { return }
                     let size = pageController.view.bounds.size
+                    let pageSize = size.width > 1 && size.height > 1 ? size : layout.size
                     sceneStill = SceneStill.image(
-                        scene: curlScene, layout: layout,
-                        size: size.width > 1 && size.height > 1 ? size : nil,
+                        scene: curlScene, layout: layout, size: pageSize,
                         time: sceneMoves ? Date().timeIntervalSinceReferenceDate : nil
                     )
+                    liveScene = sceneMoves ? AnyView(
+                        ThemeSceneView(
+                            scene: curlScene,
+                            size: pageSize,
+                            safeBottom: layout.safeArea.bottom,
+                            textBottom: layout.size.height - layout.textInsets.bottom,
+                            animates: true,
+                            reduceMotion: false,
+                            lowPower: false
+                        )
+                        // Turns only happen while the app is active.
+                        .environment(\.scenePhase, .active)
+                    ) : nil
                 }
                 guard sceneStill != nil else { return }
             } else {
                 guard sceneStill != nil else { return }
                 sceneStill = nil
+                liveScene = nil
             }
             let shown = pageController?.viewControllers ?? []
             for page in (shown + extra).flatMap({ Self.pages(in: $0) }) {
                 let part: PageSpread.Half? = spread ? (PageSpread.isLeft(page.location.index) ? .left : .right) : nil
                 page.setSceneStill(sceneStill, part: part)
+                page.setLiveScene(liveScene, part: part)
             }
         }
 
@@ -573,6 +590,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
                 spineEdge: spread ? (isLeft ? .right : .left) : nil
             )
             page.setSceneStill(sceneStill, part: spread ? (isLeft ? .left : .right) : nil)
+            page.setLiveScene(liveScene, part: spread ? (isLeft ? .left : .right) : nil)
             page.onEvent = { [weak self, weak page] event in self?.handle(event, on: page) }
             page.setChromeHidden(pageChromeHidden, animated: false)
             return page
@@ -585,6 +603,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
             page.configure(text: NSAttributedString(), layout: layout, header: "", showsHeader: false, footer: "",
                            spineEdge: PageSpread.isLeft(location.index) ? .right : .left)
             page.setSceneStill(sceneStill, part: PageSpread.isLeft(location.index) ? .left : .right)
+            page.setLiveScene(liveScene, part: PageSpread.isLeft(location.index) ? .left : .right)
             page.onEvent = { [weak self, weak page] event in self?.handle(event, on: page) }
             page.setChromeHidden(pageChromeHidden, animated: false)
             return page
@@ -906,6 +925,12 @@ final class ReaderPageViewController: UIViewController {
     private var chromeHidden = false
     /// The scene's still behind the text, under a curl (see `setSceneStill`).
     private let sceneLayer = CALayer()
+    /// The moving scene over the still while a page turns and Gentle
+    /// Motion is on, in step with the scene behind the pages, so nothing
+    /// pauses under a held curl (see `setLiveScene`).
+    private let liveSceneBox = UIView()
+    private var liveScene: UIHostingController<AnyView>?
+    private var liveScenePart: PageSpread.Half?
 
     init(location: PageLocation) {
         self.location = location
@@ -975,6 +1000,40 @@ final class ReaderPageViewController: UIViewController {
         CATransaction.commit()
     }
 
+    /// Shows the moving scene behind the text (a turn over a scene while
+    /// it moves), or takes it away. It covers the whole reading area,
+    /// shifted so a spread's page shows its own half; it draws from the
+    /// clock like the scene behind the pages, so the two match exactly.
+    func setLiveScene(_ content: AnyView?, part: PageSpread.Half?) {
+        loadViewIfNeeded()
+        liveScenePart = part
+        guard let content else {
+            if let liveScene {
+                liveScene.willMove(toParent: nil)
+                liveScene.view.removeFromSuperview()
+                liveScene.removeFromParent()
+                self.liveScene = nil
+            }
+            liveSceneBox.isHidden = true
+            return
+        }
+        if let liveScene {
+            liveScene.rootView = content
+        } else {
+            let host = UIHostingController(rootView: content)
+            host.view.backgroundColor = .clear
+            host.view.isUserInteractionEnabled = false
+            host.view.accessibilityElementsHidden = true
+            host.safeAreaRegions = []
+            addChild(host)
+            liveSceneBox.addSubview(host.view)
+            host.didMove(toParent: self)
+            liveScene = host
+        }
+        liveSceneBox.isHidden = false
+        view.setNeedsLayout()
+    }
+
     /// Hides the running head and footer by making their text clear rather
     /// than hiding the labels, so VoiceOver and the UI tests still find them.
     func setChromeHidden(_ hidden: Bool, animated: Bool) {
@@ -1007,6 +1066,10 @@ final class ReaderPageViewController: UIViewController {
         sceneLayer.isHidden = true
         sceneLayer.contentsGravity = .resize
         view.layer.insertSublayer(sceneLayer, at: 0)
+        liveSceneBox.isHidden = true
+        liveSceneBox.clipsToBounds = true
+        liveSceneBox.isUserInteractionEnabled = false
+        view.insertSubview(liveSceneBox, belowSubview: textView)
         textView.accessibilityIdentifier = "reader.page"
         headerLabel.accessibilityIdentifier = "reader.header"
         footerLabel.accessibilityIdentifier = "reader.footer"
@@ -1031,6 +1094,12 @@ final class ReaderPageViewController: UIViewController {
         )
         sceneLayer.frame = view.bounds
         CATransaction.commit()
+        liveSceneBox.frame = view.bounds
+        let width = view.bounds.width
+        liveScene?.view.frame = CGRect(
+            x: liveScenePart == .right ? -width : 0, y: 0,
+            width: liveScenePart == nil ? width : width * 2, height: view.bounds.height
+        )
     }
 }
 
