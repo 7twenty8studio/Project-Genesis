@@ -379,7 +379,12 @@ shares; README.md has the architecture.
   pages, so only while a page turns (a finger down on the pages, or an
   animated turn) each page is painted with the scene's still
   (`SceneStill`, taken at that moment while it moves, its half in a
-  spread), taken off when the turn ends (`paintStill`). The running head
+  spread; also before the curl asks for its next page) with, while it
+  moves, the live scene over it in step with the one behind
+  (`setLiveScene`), so a held curl never pauses it; taken off only
+  once no finger is down and nothing turns (`paintStill`,
+  `takeStillOffWhenIdle`), so quick turns back and forth never curl a
+  clear page over the text. The running head
   and page number get a soft shadow. Picker swatches show a still glimpse.
   Deferred: Cedar and Leather Bound (with their curl), Ocean's rain.
 - Widgets: every widget is free in its Classic look at every size, so
