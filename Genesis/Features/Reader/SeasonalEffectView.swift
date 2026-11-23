@@ -348,27 +348,31 @@ private enum SummerLight {
             ))
         }
 
-        // Rays: long tapering beams from just beyond the top-right corner.
+        // Rays: thin shafts of light from just beyond the top-right corner,
+        // each a bright core inside two wider, fainter layers so its edges
+        // fall off softly, fading out before they cross the page.
         let source = CGPoint(x: page.width * 1.05, y: -page.height * 0.08)
         let length = scale * 1.5
-        for index in 0..<6 {
+        for (index, shaft) in shafts.enumerated() {
             let i = CGFloat(index)
-            let sway = sin(t * 0.12 + i * 1.7) * 0.025
-            let angle = beamAngle(index) + sway  // pointing down and to the left
-            let spread = 0.024 + 0.016 * (i.truncatingRemainder(dividingBy: 2))
-            let breathe = 0.5 + 0.5 * sin(t * 0.35 + i * 1.3)
-            let end1 = CGPoint(x: source.x + cos(angle - spread) * length, y: source.y + sin(angle - spread) * length)
-            let end2 = CGPoint(x: source.x + cos(angle + spread) * length, y: source.y + sin(angle + spread) * length)
-            var ray = Path()
-            ray.move(to: source)
-            ray.addLine(to: end1)
-            ray.addLine(to: end2)
-            ray.closeSubpath()
-            canvas.fill(ray, with: .linearGradient(
-                Gradient(colors: [SummerLight.ray.opacity(0.32 * breathe + 0.14), SummerLight.ray.opacity(0)]),
-                startPoint: source,
-                endPoint: CGPoint(x: source.x + cos(angle) * length * 0.75, y: source.y + sin(angle) * length * 0.75)
-            ))
+            let sway = sin(t * 0.12 + i * 1.7) * 0.02
+            let angle = shaft.angle + sway  // pointing down and to the left
+            let breathe = 0.5 + 0.5 * sin(t * 0.3 + shaft.phase)
+            let strength = 0.05 + 0.11 * breathe
+            let end = CGPoint(x: source.x + cos(angle) * length * shaft.reach,
+                              y: source.y + sin(angle) * length * shaft.reach)
+            for (widen, share) in rayLayers {
+                let spread = shaft.width * widen
+                var ray = Path()
+                ray.move(to: source)
+                ray.addLine(to: CGPoint(x: source.x + cos(angle - spread) * length, y: source.y + sin(angle - spread) * length))
+                ray.addLine(to: CGPoint(x: source.x + cos(angle + spread) * length, y: source.y + sin(angle + spread) * length))
+                ray.closeSubpath()
+                canvas.fill(ray, with: .linearGradient(
+                    Gradient(colors: [SummerLight.ray.opacity(strength * share), SummerLight.ray.opacity(0)]),
+                    startPoint: source, endPoint: end
+                ))
+            }
         }
 
         drawMotes(in: canvas, size: page, source: source, length: length, time: t)
@@ -379,6 +383,23 @@ private enum SummerLight {
 
     /// The beams' direction (they point down and to the left).
     static func beamAngle(_ index: Int) -> CGFloat { .pi * 0.62 + CGFloat(index) * 0.075 }
+
+    struct Shaft { let angle, width, reach, phase: CGFloat }
+
+    /// Each shaft's layers: how much wider than its core, and how bright.
+    static let rayLayers: [(widen: CGFloat, share: CGFloat)] = [(3.2, 0.22), (1.9, 0.45), (1, 1)]
+
+    /// Nine shafts of uneven width and length across the same fan as the
+    /// dust's beams.
+    static let shafts: [Shaft] = {
+        var random = SeededRandom(seed: 23)
+        return (0..<9).map { index in
+            Shaft(angle: .pi * 0.615 + CGFloat(index) * 0.047 + (random.next() - 0.5) * 0.02,
+                  width: 0.004 + random.next() * 0.008,
+                  reach: 0.5 + random.next() * 0.3,
+                  phase: random.next() * .pi * 2)
+        }
+    }()
 
     struct Mote {
         let beam: Int
