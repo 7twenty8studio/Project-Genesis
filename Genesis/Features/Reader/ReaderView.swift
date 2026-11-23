@@ -318,7 +318,8 @@ struct ReaderView: View {
                 pageTurnSound: preferences.pageTurnSound,
                 pageTurnHaptic: preferences.pageTurnHaptic,
                 pageTurnVolume: preferences.pageTurnVolume,
-                pageTurnHapticStrength: preferences.pageTurnHapticStrength
+                pageTurnHapticStrength: preferences.pageTurnHapticStrength,
+                sceneMoves: preferences.seasonalEffects && !reduceMotion && !lowPower
             )
             // The transition style can only be set when the controller is
             // created. Any new size (turning the device, an iPhone Duo
@@ -500,8 +501,9 @@ struct ReaderView: View {
     }
 
     /// The page turn: the chosen one, but a slide with Reduce Motion. Over
-    /// a scene (Forest, Ocean, Hearth) a curl turns pages painted with the
-    /// scene's still (`SceneStill`); a slide shows the live scene.
+    /// a scene (Forest, Ocean, Hearth) the live scene shows through clear
+    /// pages either way; a curl paints them with the scene's still
+    /// (`SceneStill`) only while a page turns.
     private func pageTurn(for theme: ReaderTheme) -> PageTurnStyle {
         if reduceMotion { return .slide }
         return preferences.pageTurn
