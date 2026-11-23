@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Records the launch-day feature demos (GenesisUITests/DemoReelUITests) on an
-# iPhone Pro simulator: one screen recording per feature, with demo data and
+# iPhone 18 Pro Max simulator: one screen recording per feature, with demo data and
 # a 9:41 status bar. Nothing is tested and nothing leaves the Mac.
 #
 #   ./Scripts/record_demos.sh                 every demo
@@ -38,12 +38,12 @@ command -v xcodegen >/dev/null 2>&1 || { echo "XcodeGen is needed: brew install 
 echo "Generating Genesis.xcodeproj..."
 xcodegen generate --quiet || exit 1
 
-# An iPhone Pro (Max if there is one), the newest iOS.
+# The iPhone 18 Pro Max (or SIMULATOR), else the newest Pro Max or Pro.
 DESTS=$(xcodebuild -project Genesis.xcodeproj -scheme GenesisUITests -showdestinations 2>/dev/null \
   | sed '/Ineligible destinations/,$d' | grep "platform:iOS Simulator" | grep -v placeholder \
   | sed -E 's/.*id:([^,]+),.*OS:([^,]+),.*name:([^}]+[^ }]).*/\1|\2|\3/' | sort -t'|' -k2 -r)
 PICK=""
-[ -n "${SIMULATOR:-}" ] && PICK=$(echo "$DESTS" | grep -m1 "|$SIMULATOR$")
+PICK=$(echo "$DESTS" | grep -m1 "|${SIMULATOR:-iPhone 18 Pro Max}$")
 [ -z "$PICK" ] && PICK=$(echo "$DESTS" | grep -m1 -E "\|iPhone [0-9]+ Pro Max$")
 [ -z "$PICK" ] && PICK=$(echo "$DESTS" | grep -m1 -E "\|iPhone [0-9]+ Pro$")
 [ -z "$PICK" ] && { echo "No iPhone Pro simulator found. Add one in Xcode › Window › Devices and Simulators."; exit 1; }

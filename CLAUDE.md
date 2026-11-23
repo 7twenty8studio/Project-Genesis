@@ -82,7 +82,7 @@ shares; README.md has the architecture.
 - UI tests: `./Scripts/build.sh --ui` / `--ui-full`; failures are extracted from
   .xcresult into build/TestResults/*-failures.txt.
 - Launch-day demo films: `./Scripts/record_demos.sh` records DemoReelUITests
-  (skipped unless GENESIS_DEMO=1) on an iPhone Pro simulator with
+  (skipped unless GENESIS_DEMO=1) on an iPhone 18 Pro Max simulator with
   `-uiTestingDemo` (adds the demo sermon `launchday1`); marks in build/Demos/marks.
 
 ## Sync
