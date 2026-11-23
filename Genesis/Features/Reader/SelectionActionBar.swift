@@ -55,6 +55,8 @@ struct SelectionActionBar: View {
         .padding(.top, 8)
         .padding(.bottom, 10)
         .frame(maxWidth: expanded ? 560 : 900)
+        // Fixed-size buttons whatever Button Shapes is (tiles keep .plain).
+        .iconButtons()
         // The tiles slide inside the bar, never past its rounded edges.
         .clipShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
         .glassEffect(.regular, in: RoundedRectangle(cornerRadius: 28, style: .continuous))
@@ -106,6 +108,7 @@ struct SelectionActionBar: View {
             .frame(width: 40, height: 32, alignment: .leading)
             .contentShape(Rectangle())
         }
+        .buttonStyle(IconButtonStyle(drawsShape: false))
         .accessibilityLabel("More Colors")
         .accessibilityIdentifier("selection.moreColors")
     }
@@ -245,6 +248,7 @@ struct SelectionActionBar: View {
                     }
                 }
         }
+        .buttonStyle(IconButtonStyle(drawsShape: false))
         .accessibilityLabel("Highlight \(color.title)")
         .accessibilityIdentifier("selection.highlight.\(color.rawValue)")
     }

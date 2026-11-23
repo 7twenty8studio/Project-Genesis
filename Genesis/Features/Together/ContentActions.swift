@@ -49,6 +49,7 @@ struct ContentActions: ViewModifier {
                     .frame(width: 32, height: 28)
                     .contentShape(Rectangle())
             }
+            .iconButtons()
             .foregroundStyle(palette.secondaryText)
             .accessibilityLabel("More")
             .accessibilityIdentifier("content.more")

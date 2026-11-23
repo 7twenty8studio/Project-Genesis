@@ -139,27 +139,35 @@ struct HomeView: View {
             }
             .accessibilityElement(children: .combine)
             Spacer()
-            if !searchIsTab { SearchButton() }
-            Button {
-                showsSettings = true
-            } label: {
-                Image(systemName: "gearshape")
-                    .font(.title2)
-                    .foregroundStyle(palette.accent)
-                    .frame(width: 44, height: 44)
+            HStack {
+                if !searchIsTab { SearchButton() }
+                Button {
+                    showsSettings = true
+                } label: {
+                    Image(systemName: "gearshape")
+                        .font(.title2)
+                        .foregroundStyle(palette.accent)
+                        .frame(width: 44, height: 44)
+                }
+                .largeContent("gearshape", String(localized: "Settings"))
+                .accessibilityLabel("Settings")
+                .accessibilityIdentifier("home.settings")
+                Button {
+                    router.showsAccount = true
+                } label: {
+                    Image(systemName: auth.isSignedIn ? "person.crop.circle.fill.badge.checkmark" : "person.crop.circle")
+                        .font(.title2)
+                        .foregroundStyle(palette.accent)
+                        .frame(width: 44, height: 44)
+                }
+                .largeContent("person.crop.circle", String(localized: "Account"))
+                .accessibilityLabel(auth.isSignedIn ? "Account, signed in" : "Account, sign in to sync")
+                .accessibilityIdentifier("home.account")
             }
-            .accessibilityLabel("Settings")
-            .accessibilityIdentifier("home.settings")
-            Button {
-                router.showsAccount = true
-            } label: {
-                Image(systemName: auth.isSignedIn ? "person.crop.circle.fill.badge.checkmark" : "person.crop.circle")
-                    .font(.title2)
-                    .foregroundStyle(palette.accent)
-                    .frame(width: 44, height: 44)
-            }
-            .accessibilityLabel(auth.isSignedIn ? "Account, signed in" : "Account, sign in to sync")
-            .accessibilityIdentifier("home.account")
+            // Fixed 44 pt buttons whatever Button Shapes and the text size
+            // are, so they never crowd the greeting.
+            .iconButtons()
+            .dynamicTypeSize(...DynamicTypeSize.xxLarge)
         }
         .padding(.top, 24)
     }

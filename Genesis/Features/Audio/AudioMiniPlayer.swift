@@ -49,6 +49,8 @@ struct AudioMiniPlayer: View {
         .padding(.horizontal, 16)
         .padding(.vertical, 12)
         .frame(maxWidth: 560)
+        // Fixed-size controls whatever Button Shapes and the text size are.
+        .readerBarButtons()
         .glassEffect(.regular, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
         .padding(.horizontal, 12)
         .sensoryFeedback(.selection, trigger: audio.isPlaying)
@@ -131,6 +133,7 @@ struct AudioMiniPlayer: View {
                 .contentShape(Rectangle())
         }
         .foregroundStyle(palette.text)
+        .largeContent("ellipsis.circle", String(localized: "Listening options"))
         .accessibilityLabel("Listening options")
         .accessibilityIdentifier("audio.options")
     }
@@ -155,6 +158,11 @@ struct AudioMiniPlayer: View {
                 .contentShape(Rectangle())
         }
         .foregroundStyle(palette.text)
+        .accessibilityShowsLargeContentViewer {
+            Image(systemName: systemImage)
+        } label: {
+            Text(label)
+        }
         .accessibilityLabel(label)
         .accessibilityIdentifier(id)
     }

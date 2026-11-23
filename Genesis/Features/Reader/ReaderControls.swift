@@ -243,11 +243,7 @@ struct ReaderControls: View {
                 .frame(width: width, height: 36)
                 .contentShape(Rectangle())
         }
-        .accessibilityShowsLargeContentViewer {
-            Image(systemName: "ellipsis.circle")
-        } label: {
-            Text("More")
-        }
+        .largeContent("ellipsis.circle", String(localized: "More"))
         .accessibilityLabel("More")
         .accessibilityIdentifier("reader.more")
     }
@@ -260,11 +256,7 @@ struct ReaderControls: View {
                 .contentShape(Rectangle())
         }
         .disabled(!enabled)
-        .accessibilityShowsLargeContentViewer {
-            Image(systemName: systemImage)
-        } label: {
-            Text(label)
-        }
+        .largeContent(systemImage, label)
         .accessibilityLabel(label)
     }
 }

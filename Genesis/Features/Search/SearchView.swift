@@ -64,6 +64,9 @@ struct SearchButton: View {
                 .foregroundStyle(palette.accent)
                 .frame(width: 44, height: 44)
         }
+        .buttonStyle(IconButtonStyle())
+        .dynamicTypeSize(...DynamicTypeSize.xxLarge)
+        .largeContent("magnifyingglass", String(localized: "Search"))
         .accessibilityLabel("Search")
         .accessibilityIdentifier("home.search")
     }

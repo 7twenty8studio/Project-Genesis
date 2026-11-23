@@ -118,6 +118,7 @@ private struct ModerationRequestsSection: View {
                         .frame(width: 32, height: 28)
                         .contentShape(Rectangle())
                 }
+                .iconButtons()
                 .accessibilityLabel("More")
             }
             .font(.subheadline)
