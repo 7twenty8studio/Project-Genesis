@@ -354,8 +354,9 @@ shares; README.md has the architecture.
   pages above the swells and the fire's glow (none for Forest); scrolling
   text passes behind them (the scene's foot drawn again, feathered).
   Motion: Forest's two mist layers (`ForestMist`) and its boughs swaying
-  (`ForestSway`: the canopy drawn in 28 bands, most at the top, none at
-  the trunks; floor repainted 23 November 2026 without roots), Ocean's
+  (`ForestSway`: only boughs and needles, the canopy in three layers
+  from make_scenes.py, its bands moving most at the top while the trunks
+  stay still over them; floor repainted 23 November 2026 without roots), Ocean's
   swells rising and settling out of step (`OceanSwells`), Hearth's embers
   at uneven moments, fading before the text, and a slow glow
   (`HearthSparks`). 30 fps, only while Gentle Motion (`seasonalEffects`)

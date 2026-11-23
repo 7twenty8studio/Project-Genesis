@@ -295,17 +295,24 @@ enum ForestMist {
     }
 }
 
-/// The Forest's boughs swaying: the top of the picture (the canopy) is
-/// drawn in thin bands, each moved sideways a little, most at the top and
-/// nothing where the canopy meets the trunks below, so the branches bend
-/// in a slow breeze while the trunks and floor stay planted.
+/// The Forest's boughs swaying. The top of the picture (the canopy) comes
+/// in three layers built by Tools/Themes/make_scenes.py: the canopy with
+/// the trunks painted out, drawn in thin bands that each move sideways a
+/// little (most at the top, nothing where the canopy ends); the trunks,
+/// still, over it; and the dark boughs that cross in front of a trunk,
+/// moving with their band. So only branches and needles sway; the trunks
+/// and the floor stay planted.
 enum ForestSway {
-    /// The share of the picture's height that sways.
-    static let canopy: CGFloat = 0.46
+    /// The share of the picture's height that sways (the layers' height:
+    /// `CANOPY_ROWS` of the picture's 2752 rows).
+    static let canopy: CGFloat = 1266.0 / 2752.0
     /// Bands it's drawn in (thin enough that the bend looks smooth).
     static let bands = 28
     /// The most the top of the picture moves, in points.
-    static let reach: CGFloat = 9
+    static let reach: CGFloat = 5
+    static let canopyName = "ThemeSceneForestCanopy"
+    static let trunksName = "ThemeSceneForestTrunks"
+    static let frontName = "ThemeSceneForestFront"
 
     /// How far the band at `share` of the picture's height (0 at the top)
     /// is moved at `time`: a slow breeze with gentler gusts on top, fading

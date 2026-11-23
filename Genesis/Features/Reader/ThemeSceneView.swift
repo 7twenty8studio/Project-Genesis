@@ -81,8 +81,9 @@ private struct SceneArtImage: View {
     }
 }
 
-/// The Forest's picture with its canopy drawn in bands, each moved by
-/// `ForestSway`; below the canopy it's drawn whole and still.
+/// The Forest's picture with its boughs swaying (`ForestSway`): the whole
+/// picture still, then the canopy without its trunks in moving bands, the
+/// trunks still over it, and the boughs in front of them moving again.
 private struct SwayingForest: View {
     let tiles: [SceneTile]
     let name: String
@@ -91,6 +92,9 @@ private struct SwayingForest: View {
     var body: some View {
         Canvas { context, size in
             let image = context.resolve(Image(name))
+            let canopy = context.resolve(Image(ForestSway.canopyName))
+            let trunks = context.resolve(Image(ForestSway.trunksName))
+            let front = context.resolve(Image(ForestSway.frontName))
             for tile in tiles {
                 let frame = tile.frame
                 var art = context
@@ -99,22 +103,26 @@ private struct SwayingForest: View {
                     art.scaleBy(x: -1, y: 1)
                     art.translateBy(x: -frame.midX, y: 0)
                 }
-                // Below the canopy: still.
-                let canopyBottom = frame.minY + frame.height * ForestSway.canopy
-                var still = art
-                still.clip(to: Path(CGRect(x: frame.minX - 20, y: canopyBottom, width: frame.width + 40, height: frame.maxY - canopyBottom)))
-                still.draw(image, in: frame)
-                // The canopy, band by band (a hair of overlap hides seams).
-                let band = frame.height * ForestSway.canopy / CGFloat(ForestSway.bands)
-                for index in 0..<ForestSway.bands {
-                    let top = frame.minY + CGFloat(index) * band
-                    guard top + band > 0, top < size.height else { continue }
-                    let share = (CGFloat(index) + 0.5) / CGFloat(ForestSway.bands) * ForestSway.canopy
-                    let shift = ForestSway.offset(atShare: share, time: time) * (tile.mirrored ? -1 : 1)
-                    var strip = art
-                    strip.clip(to: Path(CGRect(x: frame.minX - 20, y: top, width: frame.width + 40, height: band + 0.5)))
-                    strip.draw(image, in: frame.offsetBy(dx: shift, dy: 0))
+                art.draw(image, in: frame)
+                let base = art
+                let canopyFrame = CGRect(x: frame.minX, y: frame.minY, width: frame.width, height: frame.height * ForestSway.canopy)
+                guard canopyFrame.maxY > 0 else { continue }
+                // Moving bands (a hair of overlap hides seams).
+                let band = canopyFrame.height / CGFloat(ForestSway.bands)
+                func drawBands(_ layer: GraphicsContext.ResolvedImage) {
+                    for index in 0..<ForestSway.bands {
+                        let top = canopyFrame.minY + CGFloat(index) * band
+                        guard top + band > 0, top < size.height else { continue }
+                        let share = (CGFloat(index) + 0.5) / CGFloat(ForestSway.bands) * ForestSway.canopy
+                        let shift = ForestSway.offset(atShare: share, time: time) * (tile.mirrored ? -1 : 1)
+                        var strip = base
+                        strip.clip(to: Path(CGRect(x: frame.minX - 20, y: top, width: frame.width + 40, height: band + 0.5)))
+                        strip.draw(layer, in: canopyFrame.offsetBy(dx: shift, dy: 0))
+                    }
                 }
+                drawBands(canopy)
+                art.draw(trunks, in: canopyFrame)
+                drawBands(front)
             }
         }
     }
