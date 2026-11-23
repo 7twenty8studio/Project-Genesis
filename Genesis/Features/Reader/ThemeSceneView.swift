@@ -94,22 +94,40 @@ private struct OceanSky: View {
     let size: CGSize
 
     var body: some View {
-        let sky = ThemeScene.oceanSky(in: size)
-        let art = ThemeScene.ocean.artFrame(in: size, safeBottom: 0)
-        let fadeTop = (art.minY + art.height * ThemeScene.skyFade.lowerBound) / size.height
-        let fadeBottom = (art.minY + art.height * ThemeScene.skyFade.upperBound) / size.height
-        ZStack(alignment: .topLeading) {
-            ForEach(Array(ThemeScene.tiles(of: sky, across: size.width).enumerated()), id: \.offset) { _, tile in
-                SceneArtImage(name: name, tile: tile)
+        // Drawn like the swaying Forest (a Canvas): the raised copies, then
+        // everything from the fade down rubbed out by a gradient.
+        Canvas { context, size in
+            let sky = ThemeScene.oceanSky(in: size)
+            let art = ThemeScene.ocean.artFrame(in: size, safeBottom: 0)
+            let fadeTop = art.minY + art.height * ThemeScene.skyFade.lowerBound
+            let fadeBottom = art.minY + art.height * ThemeScene.skyFade.upperBound
+            context.drawLayer { layer in
+                let image = layer.resolve(Image(name))
+                for tile in ThemeScene.tiles(of: sky, across: size.width) {
+                    var copy = layer
+                    if tile.mirrored {
+                        copy.translateBy(x: tile.frame.midX, y: 0)
+                        copy.scaleBy(x: -1, y: 1)
+                        copy.translateBy(x: -tile.frame.midX, y: 0)
+                    }
+                    copy.draw(image, in: tile.frame)
+                }
+                var eraser = layer
+                eraser.blendMode = .destinationOut
+                eraser.fill(
+                    Path(CGRect(x: 0, y: fadeTop, width: size.width, height: size.height - fadeTop)),
+                    with: .linearGradient(
+                        Gradient(stops: [
+                            .init(color: .black.opacity(0), location: 0),
+                            .init(color: .black, location: max(0.001, min(1, (fadeBottom - fadeTop) / max(1, size.height - fadeTop)))),
+                        ]),
+                        startPoint: CGPoint(x: 0, y: fadeTop),
+                        endPoint: CGPoint(x: 0, y: size.height)
+                    )
+                )
             }
         }
-        .frame(width: size.width, height: size.height, alignment: .topLeading)
-        .mask {
-            LinearGradient(stops: [
-                .init(color: .black, location: fadeTop),
-                .init(color: .black.opacity(0), location: fadeBottom),
-            ], startPoint: .top, endPoint: .bottom)
-        }
+        .frame(width: size.width, height: size.height)
     }
 }
 
