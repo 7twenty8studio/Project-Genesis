@@ -387,15 +387,16 @@ final class DemoReelUITests: GenesisUITestCase {
         if segment.waitForExistence(timeout: Genesis.timeout) { segment.tap() }
     }
 
-    @MainActor
     /// A menu item by its identifier, or by the start of its label: on the
     /// iOS 27.2 simulator a submenu's items lose their identifiers.
+    @MainActor
     private func menuItem(_ id: String, label: String, in app: XCUIApplication) -> XCUIElement {
         let byID = app.buttons[id]
         if byID.waitForExistence(timeout: 1.5) { return byID }
         return Genesis.anyElement(startingWith: label, in: app)
     }
 
+    @MainActor
     private func openParallelMenu(in app: XCUIApplication) {
         let translation = app.buttons["reader.translation"]
         Demo.tap(translation, in: app)
