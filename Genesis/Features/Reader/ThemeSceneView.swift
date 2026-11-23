@@ -52,7 +52,7 @@ struct ThemeSceneView: View {
             if scene == .hearth {
                 TimelineView(.animation(minimumInterval: 1.0 / 30, paused: !moving)) { timeline in
                     let time = moving ? timeline.date.timeIntervalSinceReferenceDate : ThemeScene.stillTime
-                    HearthEmberLayer(textBottom: textBottom, time: time)
+                    HearthEmberLayer(time: time)
                 }
             }
         }
@@ -274,16 +274,16 @@ private struct OceanSwellLayer: View {
 }
 
 /// Hearth's sparks, over the shade so they stay bright: rising from all
-/// along the foot of the screen, gone before the text.
+/// along the foot of the screen as high as the glow reaches, fading as
+/// they climb (still under the words).
 private struct HearthEmberLayer: View {
-    let textBottom: CGFloat
     let time: Double
 
     var body: some View {
         Canvas { context, size in
             let source = CGPoint(x: size.width / 2, y: size.height + 4)
             let width = size.width * HearthGlow.emberWidth
-            let ceiling = min(textBottom + 14, size.height - 40)
+            let ceiling = size.height * (1 - HearthGlow.height)
             context.blendMode = .plusLighter
             for (index, spark) in HearthSparks.sparks.enumerated() {
                 guard let state = HearthSparks.state(of: spark, index: index, at: time, source: source, width: width, ceiling: ceiling),

@@ -366,7 +366,8 @@ shares; README.md has the architecture.
   from make_scenes.py, its bands moving most at the top while the trunks
   stay still over them; floor repainted 23 November 2026 without roots), Ocean's
   swells rising and settling out of step (`OceanSwells`), Hearth's embers
-  rising from across the foot at uneven moments, fading before the text,
+  rising from across the foot at uneven moments, as high as the glow,
+  fading as they climb (under the words),
   and a slow glow (`HearthSparks`). 30 fps, only while Gentle Motion (`seasonalEffects`)
   is on, Reduce Motion off, not in Low Power Mode, the app active and
   the reader on screen; otherwise the still at `ThemeScene.stillTime`.
