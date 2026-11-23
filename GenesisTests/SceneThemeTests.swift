@@ -80,22 +80,62 @@ struct SceneThemeTests {
         #expect(!neighbours.isEmpty)
         let allMirrored = neighbours.allSatisfy { $0.mirrored }
         #expect(allMirrored)
-        // Hearth's fire is never repeated.
+        // Hearth has no picture, only its drawn glow.
         let hearth = ThemeScene.hearth.tiles(in: Self.iPadSideways, safeBottom: 20)
-        #expect(hearth.count == 1)
+        #expect(hearth.isEmpty)
+        #expect(ThemeScene.hearth.artName == nil)
         // A phone needs no copies.
         let phoneTiles = ThemeScene.tiles(of: ThemeScene.forest.artFrame(in: Self.phone, safeBottom: 34), across: Self.phone.width)
         #expect(phoneTiles.count == 1)
     }
 
-    @Test func theFireSitsAboveThePageNumber() {
-        for (size, safeBottom) in [(Self.phone, CGFloat(34)), (Self.smallPhone, 0), (Self.iPad, 20)] {
-            let art = ThemeScene.hearth.artFrame(in: size, safeBottom: safeBottom)
-            let stones = art.minY + art.height * ThemeScene.Hearth.stonesBottom
-            // The page number's label starts 28 pt above the safe area.
-            let pageNumberTop = size.height - safeBottom - 28
-            #expect(stones <= pageNumberTop - 4, "\(size): \(stones)")
-            #expect(abs(art.midX - size.width / 2) < 0.5)
+    @Test func theHearthGlowRisesFromTheWholeFoot() {
+        // A glow along the bottom, not a fire in one spot.
+        #expect(HearthGlow.height > HearthGlow.brightBand)
+        #expect(HearthGlow.height <= 0.5)
+        #expect(HearthGlow.emberWidth >= 0.8)
+        for step in 0..<400 {
+            let time = Double(step) / 10
+            let strength = HearthGlow.strength(at: time)
+            #expect(strength >= 0.8 - 0.0001 && strength <= 1.0001)
+            let patches = HearthGlow.patches(at: time)
+            #expect(patches.count == 2)
+            let left = patches[0]
+            let right = patches[1]
+            #expect(left.x > 0.1 && left.x < 0.5, "\(time)")
+            #expect(right.x > 0.5 && right.x < 0.9, "\(time)")
+            #expect(left.strength >= 0.19 && left.strength <= 1.0001)
+            #expect(right.strength >= 0.19 && right.strength <= 1.0001)
+        }
+    }
+
+    @Test func theWideForestKeepsItsTreesAtTheEdges() {
+        let duo = CGSize(width: 951, height: 669)
+        let spread = Self.iPadSideways
+        let wide = CGSize(width: 2400, height: 900)
+        #expect(!ForestWide.uses(Self.phone))
+        #expect(!ForestWide.uses(Self.iPad))
+        for size in [duo, spread, wide] {
+            #expect(ForestWide.uses(size), "\(size)")
+            let copies = ForestWide.copies(in: size)
+            let left = copies.left
+            let right = copies.right
+            // Each copy covers the height, kept to the ground.
+            #expect(left.minY <= 0.5 && abs(left.maxY - size.height) < 0.5, "\(size)")
+            #expect(abs(left.width / left.height - ForestWide.aspect) < 0.001)
+            // Together they cover the width.
+            #expect(left.minX <= 0.5 && right.maxX >= size.width - 0.5, "\(size)")
+            #expect(left.maxX >= right.minX, "\(size)")
+            // Trees only in the outer margins: the clearing starts there.
+            let leftClearing = left.minX + left.width * ForestWide.treeShare
+            let rightClearing = right.maxX - right.width * ForestWide.treeShare
+            #expect(abs(leftClearing - size.width * ForestWide.edgeShare) < 0.5, "\(size)")
+            #expect(abs(rightClearing - size.width * (1 - ForestWide.edgeShare)) < 0.5, "\(size)")
+            // They meet in the middle, where both show the clearing.
+            let blend = ForestWide.blend(in: size)
+            #expect(blend.lowerBound >= right.minX + right.width * ForestWide.treeShare - 0.5, "\(size)")
+            #expect(blend.upperBound <= left.maxX - left.width * ForestWide.treeShare + 0.5, "\(size)")
+            #expect(blend.lowerBound < size.width / 2 && blend.upperBound > size.width / 2, "\(size)")
         }
     }
 
@@ -104,9 +144,8 @@ struct SceneThemeTests {
             let usual = size.height - safeBottom - ReaderLayout.footHeight
 
             let hearthRoom = ThemeScene.hearth.footRoom(in: size, safeBottom: safeBottom, footHeight: ReaderLayout.footHeight)
-            let art = ThemeScene.hearth.artFrame(in: size, safeBottom: safeBottom)
-            let glowTop = art.minY + art.height * ThemeScene.Hearth.glowTop
-            #expect(usual - hearthRoom <= glowTop + 0.5, "Hearth \(size)")
+            let brightTop = size.height * (1 - HearthGlow.brightBand)
+            #expect(usual - hearthRoom <= brightTop + 0.5, "Hearth \(size)")
 
             let oceanRoom = ThemeScene.ocean.footRoom(in: size, safeBottom: safeBottom, footHeight: ReaderLayout.footHeight)
             let swells = OceanSwells.top(in: size) - OceanSwells.rise
