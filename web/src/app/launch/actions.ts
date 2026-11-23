@@ -5,7 +5,7 @@
 // the browser.
 import { config } from "@/config";
 import { currentSession } from "@/lib/auth";
-import { tidyEmail, tidyName, type Board, type Purpose } from "@/lib/giveaway";
+import { tidyEmail, tidyName, type Board, type Live, type Purpose } from "@/lib/giveaway";
 import { RpcError, rpc } from "@/lib/supabase";
 
 export type Result<T> = { ok: true; value: T } | { ok: false; code: string };
@@ -71,4 +71,14 @@ export async function markNoShow(id: number): Promise<Result<boolean>> {
 
 export async function setEntriesOpen(open: boolean): Promise<Result<boolean>> {
   return asHost("giveaway_set_open", { p_event: config.giveawayEvent, p_open: open === true });
+}
+
+export type LiveAction = "clear" | "timer_start" | "timer_stop" | "timer_reset" | "timer_names";
+
+/** One step of what every screen shares (20261129000000): the database times it and answers with the new state and its clock. */
+export async function changeLive(action: LiveAction, lane: number | null = null, together = true, names: string[] | null = null): Promise<Result<Live & { now: number }>> {
+  if (!["clear", "timer_start", "timer_stop", "timer_reset", "timer_names"].includes(action)) return { ok: false, code: "invalid_action" };
+  if (lane !== null && lane !== 0 && lane !== 1) return { ok: false, code: "invalid_lane" };
+  const tidy = Array.isArray(names) ? names.slice(0, 2).map((n) => (typeof n === "string" ? tidyName(n).slice(0, 30) : "")) : null;
+  return asHost("giveaway_live", { p_event: config.giveawayEvent, p_action: action, p_lane: lane, p_together: together === true, p_names: tidy });
 }

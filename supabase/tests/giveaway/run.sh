@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Checks for the launch giveaway (20261127000000) on a throwaway local
+# Checks for the launch giveaway (20261127000000, remote control 20261129000000) on a throwaway local
 # Postgres with Supabase stand-ins. No Docker, no network.
 #
 #   brew install postgresql@17          # once (Linux: PGBIN=/usr/lib/postgresql/16/bin)
@@ -9,7 +9,7 @@ export LC_ALL=C LANG=C
 HERE="$(cd "$(dirname "$0")" && pwd)"
 ROOT="$(cd "$HERE/../../.." && pwd)"
 MIG="$ROOT/supabase/migrations"
-LAST="20261127000000_launch_giveaway.sql"
+LAST="20261129000000_giveaway_remote.sql"
 PGBIN="${PGBIN:-/opt/homebrew/opt/postgresql@17/bin}"
 PORT="${PORT:-54331}"
 WORK="$(mktemp -d /tmp/gwpg.XXXXXX)"

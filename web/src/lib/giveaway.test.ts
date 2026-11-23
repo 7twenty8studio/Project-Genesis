@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { drawFromRange, findEntries, looksLikeEmail, poolFor, rollFrames, stopwatch, ticket, tidyEmail, tidyName, type Board } from "./giveaway.ts";
+import { drawFromRange, drawSince, findEntries, lastDrawId, looksLikeEmail, poolFor, rollFrames, stopwatch, ticket, tidyEmail, tidyName, timerAt, type Board } from "./giveaway.ts";
 
 test("numbers read like the paper tickets", () => {
   assert.equal(ticket(7), "#007");
@@ -70,4 +70,39 @@ test("the host finds a forgotten number by first name or number", () => {
   assert.deepEqual(findEntries(entries, "#012").map((e) => e.number), [12]);
   assert.deepEqual(findEntries(entries, "  "), []);
   assert.deepEqual(findEntries(entries, "zed"), []);
+});
+
+test("a screen rolls only draws made after it opened, the newest first", () => {
+  const board: Board = {
+    name: "x", open: true, entries: [{ number: 1, name: "Ana" }, { number: 2, name: "Ben" }, { number: 3, name: "Cy" }],
+    draws: [
+      { id: 4, number: 1, name: "Ana", purpose: "volunteer", no_show: false },
+      { id: 5, number: 2, name: "Ben", purpose: "raffle", no_show: false },
+    ],
+  };
+  assert.equal(lastDrawId(board, "volunteer"), 4);
+  assert.equal(lastDrawId(board, "raffle"), 5);
+  assert.equal(lastDrawId({ ...board, draws: [] }, "raffle"), 0);
+  assert.equal(drawSince(board, "volunteer", 4), null);
+  const later: Board = { ...board, draws: [...board.draws, { id: 6, number: 2, name: "Ben", purpose: "volunteer", no_show: true }, { id: 7, number: 3, name: "Cy", purpose: "volunteer", no_show: false }] };
+  assert.equal(drawSince(later, "volunteer", 4)?.id, 7, "a no-show and its redraw arrive together: show the redraw");
+  assert.equal(drawSince(later, "raffle", 5), null);
+});
+
+test("the shared timer counts down, runs and stops on the database's clock", () => {
+  assert.deepEqual(timerAt(undefined, 1000), { count: null, elapsed: [0, 0], running: [false, false], done: [false, false] });
+  const timer = { started: [10_000, 10_000], finished: [null, null] };
+  assert.equal(timerAt(timer, 7_000).count, 3);
+  assert.equal(timerAt(timer, 8_500).count, 2);
+  assert.equal(timerAt(timer, 9_999).count, 1);
+  assert.deepEqual(timerAt(timer, 9_000).elapsed, [0, 0]);
+  const running = timerAt(timer, 12_345);
+  assert.equal(running.count, null);
+  assert.deepEqual(running.elapsed, [2_345, 2_345]);
+  assert.deepEqual(running.running, [true, true]);
+  const stopped = timerAt({ started: [10_000, 10_000], finished: [4_200, null] }, 20_000);
+  assert.deepEqual(stopped.elapsed, [4_200, 10_000]);
+  assert.deepEqual(stopped.done, [true, false]);
+  const oneAtATime = timerAt({ started: [10_000, null], finished: [null, null] }, 11_000);
+  assert.deepEqual(oneAtATime.running, [true, false]);
 });
