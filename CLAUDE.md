@@ -880,7 +880,9 @@ shares; README.md has the architecture.
 - Screenshare for the show (web/ `/screen`, `/screen/obs`, `/screen/host`;
   web/README.md): WebRTC peer to peer, signalling over a public Supabase
   Realtime broadcast channel per room (no table); each device its own ID and
-  OBS browser source. iOS can't share its screen from the web (camera only).
+  OBS browser source. iOS can't share its screen from the web (camera only):
+  iPhone screens come from Tools/Mirror (Versely Mirror, ReplayKit + WebRTC,
+  installed from Xcode, never on the App Store).
 
 ## Journal extras (Premium)
 - `PremiumFeature.journalExtras`, checked with `EntitlementService.allows` at

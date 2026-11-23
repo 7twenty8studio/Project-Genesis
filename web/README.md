@@ -46,4 +46,4 @@ Our own screenshare into OBS, so no App Store mirroring app is needed.
 
 How it works: WebRTC peer to peer (on the venue's network the picture goes straight from the device to the Mac, nothing is stored); offers, answers and ICE candidates go through a public Supabase Realtime broadcast channel `versely-screen-<room>` (lib/screenshare/room.ts, plain WebSocket, no table, no migration). Anyone who knows the room can join it, so keep the room code to the people on stage. Public STUN only, no TURN: a network with client isolation (some guest Wi-Fi) blocks it; then use a phone hotspot or the venue's staff network.
 
-iPhone and iPad can't share their screen from any web page (no getDisplayMedia in iOS). They can share a camera here; for their screens use the Mac's AirPlay Receiver (Screen Mirroring, then a macOS Screen Capture source in OBS) or a USB cable (the iPhone shows up as a Video Capture Device in OBS).
+iPhone and iPad can't share their screen from any web page (no getDisplayMedia in iOS); they can share a camera here. For iPhone screens: Tools/Mirror (Versely Mirror, a ReplayKit broadcast extension speaking this same protocol in room Q2TKHV33JG).

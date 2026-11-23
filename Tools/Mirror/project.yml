@@ -1,0 +1,65 @@
+# Versely Mirror: puts an iPhone's screen in OBS, wirelessly, for the launch
+# show (the head-to-head race). Not part of Versely and never on the App
+# Store: install it on the stage iPhones straight from Xcode.
+#   cd Tools/Mirror && xcodegen generate && open VerselyMirror.xcodeproj
+# The .xcodeproj is not committed. README.md has the steps.
+name: VerselyMirror
+
+options:
+  bundleIdPrefix: com.7twenty8studio
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: 4XTR53RY2V
+    CODE_SIGN_STYLE: Automatic
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    TARGETED_DEVICE_FAMILY: "1"
+
+packages:
+  WebRTC:
+    url: https://github.com/stasel/WebRTC
+    exactVersion: "158.0.0"
+
+targets:
+  VerselyMirror:
+    type: application
+    platform: iOS
+    sources:
+      - App
+      - Broadcast/Shared.swift
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.versely.mirror
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Versely Mirror
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+    dependencies:
+      - target: MirrorBroadcast
+      # The extension's WebRTC framework is embedded here, in the app (extensions can't embed frameworks).
+      - package: WebRTC
+
+  MirrorBroadcast:
+    type: app-extension
+    platform: iOS
+    sources: [Broadcast]
+    info:
+      path: Broadcast/Info.plist
+      properties:
+        CFBundleDisplayName: Versely Mirror
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.broadcast-services-upload
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).SampleHandler
+          RPBroadcastProcessMode: RPBroadcastProcessModeSampleBuffer
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.versely.mirror.broadcast
+    dependencies:
+      - package: WebRTC
+        embed: false
