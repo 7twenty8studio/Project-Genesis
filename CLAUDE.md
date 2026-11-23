@@ -81,6 +81,9 @@ shares; README.md has the architecture.
   `MARKETING_VERSION` in project.yml is the version testers see).
 - UI tests: `./Scripts/build.sh --ui` / `--ui-full`; failures are extracted from
   .xcresult into build/TestResults/*-failures.txt.
+- Launch-day demo films: `./Scripts/record_demos.sh` records DemoReelUITests
+  (skipped unless GENESIS_DEMO=1) on an iPhone Pro simulator with
+  `-uiTestingDemo` (adds the demo sermon `launchday1`); marks in build/Demos/marks.
 
 ## Sync
 - Supabase schema lives in `supabase/migrations`; every table has user_id,
