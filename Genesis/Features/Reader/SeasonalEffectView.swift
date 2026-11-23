@@ -428,12 +428,13 @@ private enum SummerLight {
             let distance = length * (0.1 + 0.85 * along) * 0.75
             let center = CGPoint(x: source.x + cos(angle) * distance + sin(t * 0.3 + i) * 8,
                                  y: source.y + sin(angle) * distance + cos(t * 0.25 + i) * 6)
-            let opacity = (0.34 + 0.3 * abs(sin(t * mote.twinkle + mote.phase))) * sin(.pi * along)
-            let glow = mote.radius * 3
+            let opacity = (0.42 + 0.3 * abs(sin(t * mote.twinkle + mote.phase))) * sin(.pi * along)
+            let glow = mote.radius * 2.6
             canvas.fill(Path(ellipseIn: CGRect(x: center.x - glow, y: center.y - glow, width: glow * 2, height: glow * 2)),
                         with: .radialGradient(Gradient(stops: [
                             .init(color: moteCore.opacity(opacity), location: 0),
-                            .init(color: moteHalo.opacity(opacity * 0.6), location: 0.4),
+                            .init(color: moteCore.opacity(opacity * 0.9), location: 0.22),
+                            .init(color: moteHalo.opacity(opacity * 0.55), location: 0.45),
                             .init(color: moteHalo.opacity(0), location: 1),
                         ]), center: center, startRadius: 0, endRadius: glow))
         }
