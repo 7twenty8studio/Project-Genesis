@@ -348,18 +348,24 @@ shares; README.md has the architecture.
   line softened). `ThemeSceneView` draws the scene behind the live text
   (pages are clear: `PaperTexture.pageColor`/`surroundColor`), then a
   soft elliptical shade behind the words (`SceneShade`). Forest fills the
-  height; Ocean is 1.18× from the top; Hearth's fire is smaller, its
-  stones just above the page number, on its own charcoal; wider screens
-  get mirrored copies (never Hearth). `ReaderLayout.sceneFootRoom` ends
-  pages above the swells and the fire's glow (none for Forest); scrolling
+  height; Ocean is 1.18× from the top, wider screens get mirrored
+  copies. Hearth has no picture (owner, 23 November 2026: a glow from
+  the whole foot, not a fire in one spot): `HearthGlow`, drawn amber
+  rising from the bottom with two bright patches drifting along it.
+  An area wider than tall (iPad sideways, the open Duo, the spread)
+  gets the wide Forest (`ForestWide`, ThemeSceneForestWide*, from
+  Originals/forest-wide.png: trees at both edges, a misty clearing),
+  one copy held to each edge and blended in the clearing; never the
+  tall one repeated. `ReaderLayout.sceneFootRoom` ends
+  pages above the swells and the glow's bright band (none for Forest); scrolling
   text passes behind them (the scene's foot drawn again, feathered).
   Motion: Forest's two mist layers (`ForestMist`) and its boughs swaying
   (`ForestSway`: only boughs and needles, the canopy in three layers
   from make_scenes.py, its bands moving most at the top while the trunks
   stay still over them; floor repainted 23 November 2026 without roots), Ocean's
   swells rising and settling out of step (`OceanSwells`), Hearth's embers
-  at uneven moments, fading before the text, and a slow glow
-  (`HearthSparks`). 30 fps, only while Gentle Motion (`seasonalEffects`)
+  rising from across the foot at uneven moments, fading before the text,
+  and a slow glow (`HearthSparks`). 30 fps, only while Gentle Motion (`seasonalEffects`)
   is on, Reduce Motion off, not in Low Power Mode, the app active and
   the reader on screen; otherwise the still at `ThemeScene.stillTime`.
   Scene themes always slide (no curl over clear pages); the running head

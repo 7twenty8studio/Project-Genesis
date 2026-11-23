@@ -1,29 +1,29 @@
 import CoreGraphics
 import Foundation
 
-/// The illustrated scene behind the words in the scene themes (Premium):
-/// Forest, Ocean and Hearth. The pictures are the owner-approved
-/// illustrations (Tools/Themes/make_scenes.py); `ThemeSceneView` draws them
+/// The scene behind the words in the scene themes (Premium): Forest, Ocean
+/// and Hearth. Forest and Ocean are the owner-approved illustrations
+/// (Tools/Themes/make_scenes.py); Hearth is a fire's glow rising from the
+/// foot of the screen, drawn (`HearthGlow`). `ThemeSceneView` draws them
 /// behind the live text with a soft shade where the words sit, and moves one
 /// thing in each: mist in the Forest, swells on the Ocean, embers at the
 /// Hearth. Everything here is pure, so tests and the still agree.
 enum ThemeScene: String, CaseIterable, Sendable {
     case forest, ocean, hearth
 
-    /// The picture in the asset catalog.
-    var artName: String {
+    /// The picture in the asset catalog (Hearth has none: its glow is drawn).
+    var artName: String? {
         switch self {
         case .forest: "ThemeSceneForest"
         case .ocean: "ThemeSceneOcean"
-        case .hearth: "ThemeSceneHearth"
+        case .hearth: nil
         }
     }
 
     /// Every scene picture is 1536 × 2752 px.
     static let artAspect: CGFloat = 1536.0 / 2752.0
 
-    /// The colour around the picture where it doesn't reach: only Hearth's
-    /// fire is drawn smaller than the screen, on the picture's own charcoal.
+    /// The colour under the picture (all of Hearth: warm charcoal).
     var fillHex: UInt32 {
         switch self {
         case .forest: 0x1E3A2E
@@ -39,8 +39,7 @@ enum ThemeScene: String, CaseIterable, Sendable {
     /// - Ocean is a little taller than the screen, from the top, so its
     ///   far water (and the bright line along it) sits low, under the last
     ///   lines' shade; the swells are separate layers (`OceanSwells`).
-    /// - Hearth's fire is smaller, centred, its stones just above the page
-    ///   number, so the glow stays under the words and the counter clear.
+    /// - Hearth has no picture: the whole area (its glow is `HearthGlow`).
     func artFrame(in size: CGSize, safeBottom: CGFloat) -> CGRect {
         switch self {
         case .forest:
@@ -52,20 +51,17 @@ enum ThemeScene: String, CaseIterable, Sendable {
             let width = height * Self.artAspect
             return CGRect(x: (size.width - width) / 2, y: 0, width: width, height: height)
         case .hearth:
-            let height = Hearth.artHeight(for: size)
-            let width = height * Self.artAspect
-            let stonesBottom = size.height - safeBottom - Hearth.counterClearance
-            let bottom = stonesBottom + height * (1 - Hearth.stonesBottom)
-            return CGRect(x: (size.width - width) / 2, y: bottom - height, width: width, height: height)
+            return CGRect(origin: .zero, size: size)
         }
     }
 
-    /// The picture and, for Forest and Ocean, mirrored copies beside it
-    /// where it's narrower than the area (Hearth's fire stands alone on its
-    /// charcoal).
+    /// The picture and, for Ocean, mirrored copies beside it where it's
+    /// narrower than the area. Forest on a wide area uses its wide picture
+    /// instead (`ForestWide`); Hearth has no picture.
     func tiles(in size: CGSize, safeBottom: CGFloat) -> [SceneTile] {
+        guard self != .hearth else { return [] }
         let art = artFrame(in: size, safeBottom: safeBottom)
-        return self == .hearth ? [SceneTile(frame: art, mirrored: false)] : Self.tiles(of: art, across: size.width)
+        return Self.tiles(of: art, across: size.width)
     }
 
     /// The copies of the picture that cover the area: the picture itself,
@@ -98,9 +94,8 @@ enum ThemeScene: String, CaseIterable, Sendable {
             // Above the highest the swells rise, and a little more.
             limit = OceanSwells.top(in: size) - OceanSwells.rise - 6
         case .hearth:
-            // Above the smoke and the top of the glow.
-            let art = artFrame(in: size, safeBottom: safeBottom)
-            limit = art.minY + art.height * Hearth.glowTop
+            // Above the brightest part of the glow.
+            limit = size.height * (1 - HearthGlow.brightBand)
         }
         return max(0, (textBottom - limit).rounded(.up))
     }
@@ -125,25 +120,6 @@ enum ThemeScene: String, CaseIterable, Sendable {
     /// The moment shown when nothing moves (Reduce Motion, Low Power Mode,
     /// Gentle Motion off): a composed still, embers mid-rise.
     static let stillTime: Double = 7.4
-
-    /// Hearth's fire in its picture (shares of the picture's height).
-    enum Hearth {
-        /// The bottom of the stones.
-        static let stonesBottom: CGFloat = 0.93
-        /// The coals, where embers start.
-        static let coals = CGPoint(x: 0.5, y: 0.855)
-        /// How wide the bed of coals is (share of the picture's width).
-        static let coalsWidth: CGFloat = 0.46
-        /// The top of the smoke and of the glow worth keeping clear of text.
-        static let glowTop: CGFloat = 0.64
-        /// Points between the stones and the page number's band.
-        static let counterClearance: CGFloat = 34
-
-        /// The fire is drawn at half the screen's height, at most 460 pt.
-        static func artHeight(for size: CGSize) -> CGFloat {
-            min(size.height * 0.5, 460)
-        }
-    }
 }
 
 /// One copy of a scene's picture.
@@ -327,6 +303,73 @@ enum ForestSway {
     }
 }
 
+/// The Forest on an area wider than tall (iPad held sideways, the open
+/// iPhone Duo, a two-page spread): its own wide picture (trees at both
+/// edges, a misty clearing between) instead of the tall one repeated. Two
+/// copies are drawn, one held to each edge, so the trees stay at the edges
+/// whatever the width, and they meet in the clearing, blended.
+enum ForestWide {
+    static let name = "ThemeSceneForestWide"
+    static let canopyName = "ThemeSceneForestWideCanopy"
+    static let trunksName = "ThemeSceneForestWideTrunks"
+    static let frontName = "ThemeSceneForestWideFront"
+    /// The picture is 2752 × 1536 px; its canopy layers are its top 707 rows.
+    static let aspect: CGFloat = 2752.0 / 1536.0
+    static let canopy: CGFloat = 707.0 / 1536.0
+    /// How wide the blend between the two copies is (share of the area's width).
+    static let blendShare: CGFloat = 0.24
+
+    /// Used on any area at least as wide as it is tall.
+    static func uses(_ size: CGSize) -> Bool {
+        size.height > 0 && size.width >= size.height
+    }
+
+    /// The two copies: the picture fills the height (or, wider than the
+    /// picture, the width, kept to the ground), the left copy from the left
+    /// edge, the right copy to the right edge.
+    static func copies(in size: CGSize) -> (left: CGRect, right: CGRect) {
+        let height = max(size.height, size.width / aspect)
+        let width = height * aspect
+        let y = size.height - height
+        return (CGRect(x: 0, y: y, width: width, height: height),
+                CGRect(x: size.width - width, y: y, width: width, height: height))
+    }
+
+    /// Where the right copy fades in over the left one: a band in the
+    /// middle of the area, where both show the clearing.
+    static func blend(in size: CGSize) -> ClosedRange<CGFloat> {
+        let half = size.width * blendShare / 2
+        return (size.width / 2 - half)...(size.width / 2 + half)
+    }
+}
+
+/// Hearth's fire: no picture, a warm glow rising from the whole foot of the
+/// screen, as if the hearth were just below it, breathing slowly, with
+/// brighter patches wandering along it, and embers rising from below.
+enum HearthGlow {
+    /// How high the glow reaches (share of the area's height).
+    static let height: CGFloat = 0.36
+    /// The bright part of the glow (share of the height, from the bottom),
+    /// kept clear of the text (`ThemeScene.footRoom`).
+    static let brightBand: CGFloat = 0.1
+    /// Share of the width the embers rise from.
+    static let emberWidth: CGFloat = 0.9
+
+    /// The glow's strength at `time` (0.8...1 while it moves).
+    static func strength(at time: Double) -> CGFloat {
+        0.8 + 0.2 * HearthSparks.glow(at: time)
+    }
+
+    /// The two brighter patches along the foot: their centres' x (share of
+    /// the width) and strength (0...1), drifting slowly out of step.
+    static func patches(at time: Double) -> [(x: CGFloat, strength: CGFloat)] {
+        [
+            (CGFloat(0.3 + 0.12 * sin(time * 2 * .pi / 17)), CGFloat(0.6 + 0.4 * sin(time * 2 * .pi / 5.3 + 0.4))),
+            (CGFloat(0.7 + 0.12 * sin(time * 2 * .pi / 23 + 2)), CGFloat(0.6 + 0.4 * sin(time * 2 * .pi / 4.1 + 2.2))),
+        ]
+    }
+}
+
 /// Hearth's embers: small amber sparks leaving the coals at uneven moments,
 /// rising and drifting, fading out before they reach the words.
 enum HearthSparks {
@@ -336,7 +379,7 @@ enum HearthSparks {
 
     static let sparks: [Spark] = {
         var random = SeededRandom(seed: 47)
-        return (0..<14).map { _ in
+        return (0..<22).map { _ in
             Spark(period: 2.6 + random.next() * 2.8, delay: random.next() * 6,
                   sway: 3 + random.next() * 6, swaySpeed: 1.2 + random.next() * 1.6, phase: random.next() * .pi * 2)
         }

@@ -27,7 +27,6 @@ struct ThemeSceneView: View {
     }
 
     var body: some View {
-        let art = scene.artFrame(in: size, safeBottom: safeBottom)
         ZStack(alignment: .topLeading) {
             // The picture can be wider than the screen: an overlay, so it
             // never changes the scene's own size.
@@ -37,23 +36,23 @@ struct ThemeSceneView: View {
                         // The boughs sway, so the Forest's picture moves too.
                         TimelineView(.animation(minimumInterval: 1.0 / 30, paused: !moving)) { timeline in
                             let time = moving ? timeline.date.timeIntervalSinceReferenceDate : ThemeScene.stillTime
-                            SwayingForest(tiles: scene.tiles(in: size, safeBottom: safeBottom), name: scene.artName, time: time)
+                            SwayingForest(size: size, time: time)
                         }
-                    } else {
+                    } else if let name = scene.artName {
                         ForEach(Array(scene.tiles(in: size, safeBottom: safeBottom).enumerated()), id: \.offset) { _, tile in
-                            SceneArtImage(name: scene.artName, tile: tile)
+                            SceneArtImage(name: name, tile: tile)
                         }
                     }
                 }
             TimelineView(.animation(minimumInterval: 1.0 / 30, paused: !moving)) { timeline in
                 let time = moving ? timeline.date.timeIntervalSinceReferenceDate : ThemeScene.stillTime
-                SceneMotionLayer(scene: scene, size: size, art: art, textBottom: textBottom, time: time)
+                SceneMotionLayer(scene: scene, size: size, time: time)
             }
             SceneShadeView(shade: scene.shade)
             if scene == .hearth {
                 TimelineView(.animation(minimumInterval: 1.0 / 30, paused: !moving)) { timeline in
                     let time = moving ? timeline.date.timeIntervalSinceReferenceDate : ThemeScene.stillTime
-                    HearthEmberLayer(art: art, textBottom: textBottom, time: time)
+                    HearthEmberLayer(textBottom: textBottom, time: time)
                 }
             }
         }
@@ -83,58 +82,102 @@ private struct SceneArtImage: View {
 
 /// The Forest's picture with its boughs swaying (`ForestSway`): the whole
 /// picture still, then the canopy without its trunks in moving bands, the
-/// trunks still over it, and the boughs in front of them moving again.
+/// trunks still over it, and the boughs in front of them moving again. On
+/// an area wider than tall, the wide picture held to both edges
+/// (`ForestWide`); otherwise the tall one, mirrored where it repeats.
 private struct SwayingForest: View {
-    let tiles: [SceneTile]
-    let name: String
+    let size: CGSize
     let time: Double
 
     var body: some View {
         Canvas { context, size in
-            let image = context.resolve(Image(name))
-            let canopy = context.resolve(Image(ForestSway.canopyName))
-            let trunks = context.resolve(Image(ForestSway.trunksName))
-            let front = context.resolve(Image(ForestSway.frontName))
-            for tile in tiles {
-                let frame = tile.frame
-                var art = context
-                if tile.mirrored {
-                    art.translateBy(x: frame.midX, y: 0)
-                    art.scaleBy(x: -1, y: 1)
-                    art.translateBy(x: -frame.midX, y: 0)
+            if ForestWide.uses(size) {
+                let layers = ForestLayers(context: context, name: ForestWide.name, canopy: ForestWide.canopyName,
+                                          trunks: ForestWide.trunksName, front: ForestWide.frontName, share: ForestWide.canopy)
+                let copies = ForestWide.copies(in: size)
+                let blend = ForestWide.blend(in: size)
+                layers.draw(in: context, frame: copies.left, mirrored: false, time: time, height: size.height)
+                // The right copy fades in across the clearing in the middle.
+                context.drawLayer { layer in
+                    layers.draw(in: layer, frame: copies.right, mirrored: false, time: time, height: size.height)
+                    layer.blendMode = .destinationIn
+                    layer.fill(
+                        Path(CGRect(origin: .zero, size: size)),
+                        with: .linearGradient(
+                            Gradient(stops: [
+                                .init(color: .black.opacity(0), location: blend.lowerBound / size.width),
+                                .init(color: .black, location: blend.upperBound / size.width),
+                            ]),
+                            startPoint: .zero, endPoint: CGPoint(x: size.width, y: 0)
+                        )
+                    )
                 }
-                art.draw(image, in: frame)
-                let base = art
-                let canopyFrame = CGRect(x: frame.minX, y: frame.minY, width: frame.width, height: frame.height * ForestSway.canopy)
-                guard canopyFrame.maxY > 0 else { continue }
-                // Moving bands (a hair of overlap hides seams).
-                let band = canopyFrame.height / CGFloat(ForestSway.bands)
-                func drawBands(_ layer: GraphicsContext.ResolvedImage) {
-                    for index in 0..<ForestSway.bands {
-                        let top = canopyFrame.minY + CGFloat(index) * band
-                        guard top + band > 0, top < size.height else { continue }
-                        let share = (CGFloat(index) + 0.5) / CGFloat(ForestSway.bands) * ForestSway.canopy
-                        let shift = ForestSway.offset(atShare: share, time: time) * (tile.mirrored ? -1 : 1)
-                        var strip = base
-                        strip.clip(to: Path(CGRect(x: frame.minX - 20, y: top, width: frame.width + 40, height: band + 0.5)))
-                        strip.draw(layer, in: canopyFrame.offsetBy(dx: shift, dy: 0))
-                    }
+            } else {
+                let layers = ForestLayers(context: context, name: "ThemeSceneForest", canopy: ForestSway.canopyName,
+                                          trunks: ForestSway.trunksName, front: ForestSway.frontName, share: ForestSway.canopy)
+                for tile in ThemeScene.forest.tiles(in: size, safeBottom: 0) {
+                    layers.draw(in: context, frame: tile.frame, mirrored: tile.mirrored, time: time, height: size.height)
                 }
-                drawBands(canopy)
-                art.draw(trunks, in: canopyFrame)
-                drawBands(front)
             }
         }
+        .frame(width: size.width, height: size.height)
+    }
+}
+
+/// One forest picture and its three canopy layers, ready to draw.
+private struct ForestLayers {
+    let image: GraphicsContext.ResolvedImage
+    let canopy: GraphicsContext.ResolvedImage
+    let trunks: GraphicsContext.ResolvedImage
+    let front: GraphicsContext.ResolvedImage
+    /// The canopy layers' share of the picture's height.
+    let share: CGFloat
+
+    init(context: GraphicsContext, name: String, canopy: String, trunks: String, front: String, share: CGFloat) {
+        image = context.resolve(Image(name))
+        self.canopy = context.resolve(Image(canopy))
+        self.trunks = context.resolve(Image(trunks))
+        self.front = context.resolve(Image(front))
+        self.share = share
+    }
+
+    /// Draws one copy of the picture at `frame` (mirrored where it repeats)
+    /// with its boughs moved for `time`; `height` is the area's height.
+    func draw(in context: GraphicsContext, frame: CGRect, mirrored: Bool, time: Double, height: CGFloat) {
+        var art = context
+        if mirrored {
+            art.translateBy(x: frame.midX, y: 0)
+            art.scaleBy(x: -1, y: 1)
+            art.translateBy(x: -frame.midX, y: 0)
+        }
+        art.draw(image, in: frame)
+        let canopyFrame = CGRect(x: frame.minX, y: frame.minY, width: frame.width, height: frame.height * share)
+        guard canopyFrame.maxY > 0 else { return }
+        // Moving bands (a hair of overlap hides seams).
+        let band = canopyFrame.height / CGFloat(ForestSway.bands)
+        let base = art
+        func drawBands(_ layer: GraphicsContext.ResolvedImage) {
+            for index in 0..<ForestSway.bands {
+                let top = canopyFrame.minY + CGFloat(index) * band
+                guard top + band > 0, top < height else { continue }
+                let bandShare = (CGFloat(index) + 0.5) / CGFloat(ForestSway.bands) * ForestSway.canopy
+                let shift = ForestSway.offset(atShare: bandShare, time: time) * (mirrored ? -1 : 1)
+                var strip = base
+                strip.clip(to: Path(CGRect(x: frame.minX - 20, y: top, width: frame.width + 40, height: band + 0.5)))
+                strip.draw(layer, in: canopyFrame.offsetBy(dx: shift, dy: 0))
+            }
+        }
+        drawBands(canopy)
+        art.draw(trunks, in: canopyFrame)
+        drawBands(front)
     }
 }
 
 /// What moves under the shade: the Forest's mist, the Ocean's swells and
-/// the glow over Hearth's coals.
+/// Hearth's glow rising from the foot of the screen.
 private struct SceneMotionLayer: View {
     let scene: ThemeScene
     let size: CGSize
-    let art: CGRect
-    let textBottom: CGFloat
     let time: Double
 
     var body: some View {
@@ -168,19 +211,39 @@ private struct SceneMotionLayer: View {
                     OceanSwellLayer(near: true, size: size, time: time)
                 }
         case .hearth:
-            Canvas { context, _ in
-                let coals = CGPoint(x: art.minX + art.width * ThemeScene.Hearth.coals.x, y: art.minY + art.height * ThemeScene.Hearth.coals.y)
-                let radius = art.height * 0.2
-                let strength = 0.07 + 0.06 * HearthSparks.glow(at: time)
-                let ember = Color(red: 1, green: 0.6, blue: 0.3)
-                context.blendMode = .plusLighter
+            Canvas { context, size in
+                // The fire is just below the screen: its glow rises from the
+                // whole foot, breathing, brighter patches wandering along it.
+                let strength = HearthGlow.strength(at: time)
+                let top = size.height * (1 - HearthGlow.height)
+                let amber = Color(red: 0.78, green: 0.45, blue: 0.23)
+                let flame = Color(red: 1, green: 0.66, blue: 0.34)
                 context.fill(
-                    Path(ellipseIn: CGRect(x: coals.x - radius, y: coals.y - radius, width: radius * 2, height: radius * 2)),
-                    with: .radialGradient(
-                        Gradient(colors: [ember.opacity(strength), ember.opacity(0)]),
-                        center: coals, startRadius: 0, endRadius: radius
+                    Path(CGRect(x: 0, y: top, width: size.width, height: size.height - top)),
+                    with: .linearGradient(
+                        Gradient(stops: [
+                            .init(color: amber.opacity(0), location: 0),
+                            .init(color: amber.opacity(0.17 * strength), location: 0.55),
+                            .init(color: amber.opacity(0.5 * strength), location: 1),
+                        ]),
+                        startPoint: CGPoint(x: 0, y: top), endPoint: CGPoint(x: 0, y: size.height)
                     )
                 )
+                context.blendMode = .plusLighter
+                for patch in HearthGlow.patches(at: time) {
+                    let center = CGPoint(x: size.width * patch.x, y: size.height + size.height * 0.03)
+                    let radii = CGSize(width: size.width * 0.42, height: size.height * 0.16)
+                    var glow = context
+                    glow.translateBy(x: center.x, y: center.y)
+                    glow.scaleBy(x: radii.width, y: radii.height)
+                    glow.fill(
+                        Path(ellipseIn: CGRect(x: -1, y: -1, width: 2, height: 2)),
+                        with: .radialGradient(
+                            Gradient(colors: [flame.opacity(0.32 * strength * patch.strength), flame.opacity(0)]),
+                            center: .zero, startRadius: 0, endRadius: 1
+                        )
+                    )
+                }
             }
             .frame(width: size.width, height: size.height)
         }
@@ -210,17 +273,17 @@ private struct OceanSwellLayer: View {
     }
 }
 
-/// Hearth's sparks, over the shade so they stay bright, gone before the text.
+/// Hearth's sparks, over the shade so they stay bright: rising from all
+/// along the foot of the screen, gone before the text.
 private struct HearthEmberLayer: View {
-    let art: CGRect
     let textBottom: CGFloat
     let time: Double
 
     var body: some View {
-        Canvas { context, _ in
-            let source = CGPoint(x: art.minX + art.width * ThemeScene.Hearth.coals.x, y: art.minY + art.height * ThemeScene.Hearth.coals.y)
-            let width = art.width * ThemeScene.Hearth.coalsWidth
-            let ceiling = textBottom + 14
+        Canvas { context, size in
+            let source = CGPoint(x: size.width / 2, y: size.height + 4)
+            let width = size.width * HearthGlow.emberWidth
+            let ceiling = min(textBottom + 14, size.height - 40)
             context.blendMode = .plusLighter
             for (index, spark) in HearthSparks.sparks.enumerated() {
                 guard let state = HearthSparks.state(of: spark, index: index, at: time, source: source, width: width, ceiling: ceiling),

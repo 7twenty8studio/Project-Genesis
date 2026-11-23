@@ -229,13 +229,23 @@ struct ReaderSettingsSheet: View {
                                         : AnyShapeStyle(theme.palette.background))
                                 if let scene = theme.scene {
                                     // A still glimpse of the scene, shaded like the reader.
-                                    Image(scene.artName)
-                                        .resizable()
-                                        .scaledToFill()
-                                        .frame(width: 48, height: 48)
-                                        .overlay(theme.palette.background.opacity(0.45))
-                                        .clipShape(Circle())
-                                        .accessibilityHidden(true)
+                                    Group {
+                                        if let name = scene.artName {
+                                            Image(name)
+                                                .resizable()
+                                                .scaledToFill()
+                                                .overlay(theme.palette.background.opacity(0.45))
+                                        } else {
+                                            // Hearth: its glow rising from the foot.
+                                            LinearGradient(
+                                                colors: [theme.palette.background, Color(red: 0.78, green: 0.45, blue: 0.23).opacity(0.7)],
+                                                startPoint: .center, endPoint: .bottom
+                                            )
+                                        }
+                                    }
+                                    .frame(width: 48, height: 48)
+                                    .clipShape(Circle())
+                                    .accessibilityHidden(true)
                                 }
                                 Text("Aa")
                                     .font(.system(size: 15, weight: .medium, design: .serif))

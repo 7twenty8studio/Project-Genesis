@@ -6,13 +6,20 @@ The originals in Tools/Themes/Originals are the owner-approved illustrations
 mountains as the style reference; prompts in the project files,
 themes/v3/PROMPTS.md). Kept untouched; this script writes:
 
-- ThemeSceneForest, ThemeSceneHearth: the picture as it is (JPEG).
-- ThemeSceneForestCanopy / ThemeSceneForestTrunks / ThemeSceneForestFront:
-  the Forest's canopy (its top `CANOPY_ROWS`) in three layers, so the boughs
-  sway while the trunks stay planted: the canopy with the trunks painted
-  out (it sways), the trunks alone (still, drawn over it) and the dark
-  boughs that cross in front of a trunk (they sway, drawn over the trunks).
-  `ForestSway` in Swift draws them.
+- ThemeSceneForest: the picture as it is (JPEG); ThemeSceneForestWide: the
+  wide forest (forest-wide.png, generated 23 November 2026 from the forest
+  for iPad and the open iPhone Duo: trees at both edges, a misty clearing
+  between), drawn as two halves held to the screen's edges.
+- ThemeSceneForest(Wide)Canopy / …Trunks / …Front: each forest's canopy
+  (its top `canopy` rows) in three layers, so the boughs sway while the
+  trunks stay planted: the canopy with the trunks painted out (it sways),
+  the trunks alone (still, drawn over it) and the dark boughs that cross in
+  front of a trunk (they sway, drawn over the trunks). `ForestSway` in Swift
+  draws them. The portrait forest's trunks are listed by hand (`TRUNKS`);
+  the wide one's are found in the row just below its canopy and followed up
+  as straight lines (`find_trunks`).
+- Hearth has no picture: its glow is drawn by the app (`HearthGlow`).
+  hearth.png stays in Originals, unused.
 - ThemeSceneOcean: the lake with its foreground swells taken out (the water
   under them continues the calm band above, so nothing doubles while they
   move) and the bright crest lines of the far water softened, since they sit
@@ -47,6 +54,9 @@ SIDE_PAD = 40
 # at the canopy's foot (None = the picture's own edge), with each trunk's flat
 # colour. Each row snaps to the drawn edge when there's one within 4 px.
 CANOPY_ROWS = 1266
+WIDE_CANOPY_ROWS = 707
+# The wide forest's trunk colours (dark, green, sage, beige, pale beige).
+WIDE_TRUNK_COLOURS = [(38, 57, 49), (90, 105, 79), (119, 132, 107), (195, 190, 169), (203, 198, 179)]
 TRUNKS = [  # ((left top, left foot), (right top, right foot), colour)
     (None, (66, 70), (31, 52, 43)),
     ((117, 84), (153, 149), (191, 189, 167)),
@@ -91,14 +101,14 @@ def swell_layer(rgb: np.ndarray, top: int, feather: int = 0, lead: int = 0) -> I
     return Image.fromarray(np.dstack([band, alpha]).astype(np.uint8), "RGBA")
 
 
-def trunk_spans(rgb: np.ndarray, left, right, colour) -> list[tuple[int, int]]:
+def trunk_spans(rgb: np.ndarray, rows: int, left, right, colour) -> list[tuple[int, int]]:
     """Each canopy row's span of one trunk: its straight edges, snapped to
     the drawn edge where one is close (a bough hiding it leaves the line)."""
     width = rgb.shape[1]
-    like = np.abs(rgb[:CANOPY_ROWS] - np.array(colour)).sum(axis=2) < TRUNK_TOLERANCE
+    like = np.abs(rgb[:rows] - np.array(colour)).sum(axis=2) < TRUNK_TOLERANCE
     spans = []
-    for y in range(CANOPY_ROWS):
-        t = y / (CANOPY_ROWS - 1)
+    for y in range(rows):
+        t = y / (rows - 1)
         row = like[y]
         if left is None:
             l = 0
@@ -114,22 +124,76 @@ def trunk_spans(rgb: np.ndarray, left, right, colour) -> list[tuple[int, int]]:
             hits = [x for x in range(max(0, r - 4), min(width - 1, r + 5)) if row[x] and not row[x + 1]]
             if len(hits) == 1:
                 r = hits[0]
-        spans.append((l, r))
+        spans.append((l, max(l, r)))
     return spans
 
 
-def forest_layers(image: Image.Image) -> None:
+def find_trunks(rgb: np.ndarray, rows: int, colours) -> list:
+    """Trunks as `TRUNKS` lists them: runs of a trunk colour at least 15 px
+    wide in the row just below the canopy, each edge followed up the canopy
+    (where it's unambiguous) and fitted with a straight line."""
+    height, width = rgb.shape[:2]
+    palette = np.array(colours, dtype=np.float64)
+    ref = min(height - 1, rows + 40)
+    row = rgb[ref]
+    runs, start = [], 0
+    for x in range(1, width + 1):
+        if x == width or np.abs(row[x] - row[x - 1]).sum() > 14:
+            if x - start >= 15:
+                distance = np.abs(palette - row[(start + x) // 2]).sum(axis=1)
+                if distance.min() < 25:
+                    runs.append((start, x - 1, tuple(int(v) for v in palette[distance.argmin()])))
+            start = x
+    trunks = []
+    for l0, r0, colour in runs:
+        like = np.abs(rgb[:ref + 1] - np.array(colour)).sum(axis=2) < TRUNK_TOLERANCE
+        points = {"l": [], "r": []}
+        l, r = l0, r0
+        for y in range(ref, -1, -1):
+            if l0 > 0:
+                hits = [x for x in range(max(1, l - 3), min(width, l + 4)) if like[y, x] and not like[y, x - 1]]
+                if len(hits) == 1:
+                    l = hits[0]
+                    points["l"].append((y, l))
+            if r0 < width - 1:
+                hits = [x for x in range(max(0, r - 3), min(width - 1, r + 4)) if like[y, x] and not like[y, x + 1]]
+                if len(hits) == 1:
+                    r = hits[0]
+                    points["r"].append((y, r))
+
+        def line(found, fallback):
+            if len(found) < 20:
+                return (fallback, fallback)
+            ys, xs = np.array(found, dtype=np.float64).T
+            for _ in range(3):
+                slope, base = np.polyfit(ys, xs, 1)
+                keep = np.abs(xs - (slope * ys + base)) <= 3
+                if keep.sum() < 20:
+                    break
+                ys, xs = ys[keep], xs[keep]
+            slope, base = np.polyfit(ys, xs, 1)
+            return (round(base), round(base + slope * (rows - 1)))
+
+        trunks.append((
+            None if l0 == 0 else line(points["l"], l0),
+            None if r0 >= width - 1 else line(points["r"], r0),
+            colour,
+        ))
+    return trunks
+
+
+def forest_layers(image: Image.Image, name: str, rows: int, trunk_list) -> None:
     rgb = np.asarray(image).astype(np.float64)
-    canopy = rgb[:CANOPY_ROWS].copy()
+    canopy = rgb[:rows].copy()
     width = rgb.shape[1]
-    trunks = np.zeros((CANOPY_ROWS, width, 4))
-    front = np.zeros((CANOPY_ROWS, width, 4))
-    luminance = rgb[:CANOPY_ROWS] @ np.array([0.2126, 0.7152, 0.0722])
-    for left, right, colour in TRUNKS:
+    trunks = np.zeros((rows, width, 4))
+    front = np.zeros((rows, width, 4))
+    luminance = rgb[:rows] @ np.array([0.2126, 0.7152, 0.0722])
+    for left, right, colour in trunk_list:
         colour_array = np.array(colour, dtype=np.float64)
         trunk_luminance = colour_array @ np.array([0.2126, 0.7152, 0.0722])
-        like = np.abs(rgb[:CANOPY_ROWS] - colour_array).sum(axis=2) < TRUNK_TOLERANCE
-        for y, (l, r) in enumerate(trunk_spans(rgb, left, right, colour)):
+        like = np.abs(rgb[:rows] - colour_array).sum(axis=2) < TRUNK_TOLERANCE
+        for y, (l, r) in enumerate(trunk_spans(rgb, rows, left, right, colour)):
             # The trunk, solid: its own pixels, its colour where a bough crosses.
             row = np.where(like[y, l:r + 1, None], rgb[y, l:r + 1], colour_array)
             trunks[y, l:r + 1, :3] = row
@@ -148,17 +212,20 @@ def forest_layers(image: Image.Image) -> None:
             fa, fb = max(0, l - FRONT_MARGIN), min(width, r + 1 + FRONT_MARGIN)
             darker = (luminance[y, fa:fb] < trunk_luminance - 25) & ~like[y, fa:fb]
             front[y, fa:fb][darker] = np.concatenate([rgb[y, fa:fb][darker], np.full((int(darker.sum()), 1), 255.0)], axis=1)
-    imageset("ThemeSceneForestCanopy", "scene-forest-canopy.jpg", Image.fromarray(canopy.round().astype(np.uint8)), quality=84, optimize=True)
-    imageset("ThemeSceneForestTrunks", "scene-forest-trunks.png", Image.fromarray(trunks.round().astype(np.uint8), "RGBA"), optimize=True)
-    imageset("ThemeSceneForestFront", "scene-forest-front.png", Image.fromarray(front.round().astype(np.uint8), "RGBA"), optimize=True)
+    slug = name.lower()
+    imageset(f"ThemeScene{name}Canopy", f"scene-{slug}-canopy.jpg", Image.fromarray(canopy.round().astype(np.uint8)), quality=84, optimize=True)
+    imageset(f"ThemeScene{name}Trunks", f"scene-{slug}-trunks.png", Image.fromarray(trunks.round().astype(np.uint8), "RGBA"), optimize=True)
+    imageset(f"ThemeScene{name}Front", f"scene-{slug}-front.png", Image.fromarray(front.round().astype(np.uint8), "RGBA"), optimize=True)
 
 
 def main() -> None:
-    for name in ("forest", "hearth"):
-        image = Image.open(ORIGINALS / f"{name}.png").convert("RGB")
-        imageset(f"ThemeScene{name.capitalize()}", f"scene-{name}.jpg", image, quality=84, optimize=True)
-        if name == "forest":
-            forest_layers(image)
+    forest = Image.open(ORIGINALS / "forest.png").convert("RGB")
+    imageset("ThemeSceneForest", "scene-forest.jpg", forest, quality=84, optimize=True)
+    forest_layers(forest, "Forest", CANOPY_ROWS, TRUNKS)
+    wide = Image.open(ORIGINALS / "forest-wide.png").convert("RGB")
+    imageset("ThemeSceneForestWide", "scene-forestwide.jpg", wide, quality=84, optimize=True)
+    wide_rgb = np.asarray(wide).astype(np.float64)
+    forest_layers(wide, "ForestWide", WIDE_CANOPY_ROWS, find_trunks(wide_rgb, WIDE_CANOPY_ROWS, WIDE_TRUNK_COLOURS))
 
     ocean = np.asarray(Image.open(ORIGINALS / "ocean.png").convert("RGB")).astype(np.float64)
     height = ocean.shape[0]
