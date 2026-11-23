@@ -3,6 +3,7 @@
 import QRCode from "qrcode";
 import { useEffect, useState, type ReactNode } from "react";
 import { config } from "@/config";
+import { blankTexts, draftBlanks, type AnswersMode } from "@/lib/blanks";
 import type { DraftRow } from "@/lib/draft";
 import type { Translate } from "@/lib/i18n";
 import type { Blocker } from "@/lib/studio";
@@ -21,10 +22,16 @@ type Props = {
   goTo: (tab: "outline" | "details", fix?: string) => void;
   /** Owner and admins: who looks after the sermon. */
   ownerSection?: ReactNode;
+  /** The Answers setting (a draft detail: it applies when published). */
+  onAnswers: (mode: AnswersMode) => void;
+  /** Reveal Answers (or hide them again) for the revision readers have now. */
+  onReveal: (reveal: boolean) => Promise<boolean>;
+  /** The Answers setting of the copy readers have, when known. */
+  publishedAnswers: AnswersMode | null;
 };
 
 /** Publish, the link and its QR code, and the closing actions (each takes effect at once). */
-export function SharePanel({ t, row, blockers, changedSincePublish, onPublish, onClose, onDuplicate, onDelete, goTo, ownerSection }: Props) {
+export function SharePanel({ t, row, blockers, changedSincePublish, onPublish, onClose, onDuplicate, onDelete, goTo, ownerSection, onAnswers, onReveal, publishedAnswers }: Props) {
   const link = `${config.siteUrl}/s/${row.slug}`;
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState<string | null>(null);
@@ -64,7 +71,12 @@ export function SharePanel({ t, row, blockers, changedSincePublish, onPublish, o
           ? { text: t("Describe the cover picture, or mark it as decorative."), where: t("Details › Cover"), tab: "details" as const, fix: "cover-alt" }
           : b === "review_open"
             ? { text: t("Finish checking the import: keep, fix or remove each item it found."), where: t("Outline › Check the import"), tab: "outline" as const, fix: "review" }
-            : { text: t("Fix the outline items marked in red."), where: t("Outline"), tab: "outline" as const, fix: "invalid" };
+            : b === "blanks"
+              ? { text: t("Give every blank its answer, or make it an open blank."), where: t("Outline › Blanks"), tab: "outline" as const, fix: "blanks" }
+              : { text: t("Fix the outline items marked in red."), where: t("Outline"), tab: "outline" as const, fix: "invalid" };
+  const blankCount = row.draft_blocks.flatMap(blankTexts).flatMap(draftBlanks).length;
+  const revealed = !!row.published_revision_id && row.answers_revealed_revision_id === row.published_revision_id;
+  const manual = (publishedAnswers ?? row.answers) === "reveal";
 
   return (
     <div>
@@ -126,6 +138,52 @@ export function SharePanel({ t, row, blockers, changedSincePublish, onPublish, o
         </div>
         {done ? <Notice tone="status">{done}</Notice> : null}
       </section>
+
+      {blankCount || published ? (
+        <section aria-labelledby="answers-title" className="mt-6 rounded-3xl border border-border bg-surface p-5" data-testid="answers-section">
+          <h2 id="answers-title" className="text-lg font-semibold">
+            {t("Fill-in-the-blank answers")}
+          </h2>
+          <p className="mt-1 text-muted">
+            {blankCount === 1
+              ? t("The outline has 1 blank. Members fill it in as they listen, and their answers stay private.")
+              : t("The outline has {count} blanks. Members fill them in as they listen, and their answers stay private.", { count: blankCount })}
+          </p>
+          <fieldset className="mt-3">
+            <legend className="font-medium">{t("When can members check their answers?")}</legend>
+            {(
+              [
+                ["reveal", t("After I reveal them"), t("The answers stay hidden until you choose Reveal Answers. Each time you publish changes, they're hidden again.")],
+                ["now", t("Right away"), t("Members can check their answers as soon as the sermon is published.")],
+                ["never", t("Never"), t("For blanks members fill in with their own words. Nothing is checked.")],
+              ] as const
+            ).map(([mode, label, hint]) => (
+              <label key={mode} className="mt-2 flex items-start gap-3">
+                <input type="radio" name="answers-mode" className="mt-1 size-5" checked={row.answers === mode} onChange={() => onAnswers(mode)} />
+                <span>
+                  <span className="block font-medium">{label}</span>
+                  <span className="block text-sm text-muted">{hint}</span>
+                </span>
+              </label>
+            ))}
+            {published && publishedAnswers !== null && publishedAnswers !== row.answers ? (
+              <p className="mt-2 text-sm text-muted">{t("This applies when you publish your changes.")}</p>
+            ) : null}
+          </fieldset>
+          {published && manual ? (
+            <div className="mt-4 flex flex-wrap items-center gap-3">
+              <Button
+                primary={!revealed}
+                disabled={busy}
+                onClick={() => run(async () => (await onReveal(!revealed)) && setDone(revealed ? t("The answers are hidden again.") : t("The answers are revealed. Members can check their blanks now.")))}
+              >
+                {revealed ? t("Hide Answers") : t("Reveal Answers")}
+              </Button>
+              <span className="text-sm text-muted">{revealed ? t("Members can check their answers now.") : t("The answers are hidden from members.")}</span>
+            </div>
+          ) : null}
+        </section>
+      ) : null}
 
       <section aria-labelledby="link-title" className="mt-6 rounded-3xl border border-border bg-surface p-5">
         <h2 id="link-title" className="text-lg font-semibold">

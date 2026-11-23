@@ -44,6 +44,7 @@ struct SermonEditorView: View {
                 Section("Notes") {
                     SermonNotesEditor(text: $sermon.body, insertion: $insertion, largeText: churchMode && largeText)
                 }
+                SermonHandoutsSection(sermon: sermon)
                 SermonPassagesSection(sermon: sermon, onOpen: openInReader)
                 AttachmentsSection(owner: .sermon, ownerID: sermon.id)
                 SermonDetailsSection(sermon: sermon)

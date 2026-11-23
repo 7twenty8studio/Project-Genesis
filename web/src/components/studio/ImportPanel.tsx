@@ -1,6 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
+import { importBlanks } from "@/lib/blanks";
 import type { DraftBlock, DraftRow } from "@/lib/draft";
 import type { Translate } from "@/lib/i18n";
 import { importText } from "@/lib/import/paste";
@@ -37,7 +38,9 @@ export function ImportPanel({ t, language, hasOutline, onImported, onCancel }: P
       setProblem(t("Nothing to import was found."));
       return;
     }
-    onImported(result.blocks, reviewItems(result.source, result.blocks, result.notes, options), hasOutline ? mode : "replace");
+    // A printed handout's blank lines become blanks waiting for their answers (never in Scripture or quotations).
+    const blocks = importBlanks(result.blocks);
+    onImported(blocks, reviewItems(result.source, blocks, result.notes, options), hasOutline ? mode : "replace");
   }
 
   async function readFile(file: File) {

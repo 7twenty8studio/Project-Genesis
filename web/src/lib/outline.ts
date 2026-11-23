@@ -4,6 +4,8 @@
 // outline: references carry verse ids (KJV numbering) and, for a quotation
 // from a free translation, only its code (KJV, WEB, ASV, RV1909, BLIVRE).
 
+import type { AnswersState, PublishedBlank } from "./blanks.ts";
+import { withBlanks } from "./blanks.ts";
 import type { ChurchLocation } from "./locations.ts";
 
 export type TranslationCode = "KJV" | "WEB" | "ASV" | "RV1909" | "BLIVRE";
@@ -59,6 +61,10 @@ export interface PublishedSermon {
   /** Where and when the church or ministry meets (20261124000000); older answers have none. */
   locations?: ChurchLocation[];
   is_member: boolean;
+  /** Fill-in-the-blank handouts (20261128000000): whether the key is out; older answers have neither. */
+  answers?: AnswersState;
+  /** Each blank in the outline's "[[n]]" markers; `answer` only once revealed for this revision. */
+  blanks?: PublishedBlank[];
 }
 
 export type SermonLookup = PublishedSermon | { status: "members_only" } | { status: "not_found" };
@@ -86,17 +92,19 @@ export function sections(blocks: Block[]): Section[] {
  * one block per paragraph; a reference as the pastor typed it (never verse
  * text, which the reader's own Bible shows).
  */
-export function copyText(blocks: Block[]): string {
+export function copyText(blocks: Block[], blanks: PublishedBlank[] = [], fill?: (n: number) => string): string {
+  const known = new Set(blanks.map((b) => b.n));
+  const words = (text: string) => withBlanks(text, (n) => known.has(n), fill);
   return blocks
     .map((block) => {
       switch (block.kind) {
         case "heading":
         case "paragraph":
-          return block.text;
+          return words(block.text);
         case "quote":
           return `“${block.text}”`;
         case "list":
-          return block.items.map((item, i) => (block.ordered ? `${i + 1}. ${item}` : `• ${item}`)).join("\n");
+          return block.items.map((item, i) => (block.ordered ? `${i + 1}. ${words(item)}` : `• ${words(item)}`)).join("\n");
         case "scripture":
           return block.ref.label ? `${block.ref.raw} (${block.ref.label})` : block.ref.raw;
       }

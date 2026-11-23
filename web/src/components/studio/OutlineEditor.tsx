@@ -12,6 +12,7 @@ import {
   type DraftBlock,
   type DraftRow,
 } from "@/lib/draft";
+import { blankProblems, blankTexts, draftBlanks, makeBlank, setBlank } from "@/lib/blanks";
 import type { Lang, Translate } from "@/lib/i18n";
 import { describe, resolve } from "@/lib/shared/references";
 import { appendReview } from "@/lib/import/review";
@@ -48,6 +49,14 @@ export function OutlineEditor({
 }: Props) {
   const [importing, setImporting] = useState(blocks.length === 0);
   const problems = draftProblems(blocks);
+  const blankIssues = blankProblems(blocks);
+  const firstBlankIssue = blankIssues.find((p) => p.blockId)?.blockId;
+  // Each block's first blank number, as readers will see them (numbered through the outline).
+  const firstBlank: number[] = [];
+  blocks.reduce((n, b) => {
+    firstBlank.push(n);
+    return n + blankTexts(b).flatMap(draftBlanks).length;
+  }, 1);
   const kindName = (k: Kind) =>
     k === "heading"
       ? t("Heading")
@@ -168,12 +177,13 @@ export function OutlineEditor({
       >
         {blocks.map((block, i) => {
           const blockProblems = problems.filter((p) => p.blockId === block.id);
+          const blockBlankIssues = blankIssues.filter((p) => p.blockId === block.id);
           return (
             <li
               key={block.id}
               data-block={block.id}
-              data-fix={blockProblems.length ? "invalid" : undefined}
-              className={`relative rounded-3xl border bg-surface p-4 transition-opacity duration-150 ${blockProblems.length ? "border-[#9b2c1f] dark:border-[#ffb4a6]" : "border-border"} ${drag?.from === i ? "opacity-50" : ""}`}
+              data-fix={blockProblems.length ? "invalid" : firstBlankIssue === block.id ? "blanks" : undefined}
+              className={`relative rounded-3xl border bg-surface p-4 transition-opacity duration-150 ${blockProblems.length || blockBlankIssues.length ? "border-[#9b2c1f] dark:border-[#ffb4a6]" : "border-border"} ${drag?.from === i ? "opacity-50" : ""}`}
             >
               {lands(i) ? <DropLine edge="top" /> : null}
               {i === blocks.length - 1 && lands(blocks.length) ? (
@@ -270,9 +280,10 @@ export function OutlineEditor({
                 block={block}
                 lang={lang}
                 language={language}
+                firstBlank={firstBlank[i]}
                 onChange={(next) => update(block.id, next)}
               />
-              {blockProblems.map((p) => (
+              {[...blockProblems, ...blockBlankIssues].map((p) => (
                 <p
                   key={p.problem}
                   className="mt-2 text-sm font-medium text-[#9b2c1f] dark:text-[#ffb4a6]"
@@ -303,6 +314,9 @@ export function OutlineEditor({
           label={t("Add to the end")}
         />
       </div>
+      {blankIssues.some((p) => p.problem === "too_many_blanks") ? (
+        <p className="mt-4 font-medium text-[#9b2c1f] dark:text-[#ffb4a6]">{t("A sermon can have up to 100 blanks.")}</p>
+      ) : null}
       {problems.some((p) => !p.blockId) ? (
         <p data-fix="invalid" tabIndex={-1} className="mt-4 font-medium text-[#9b2c1f] dark:text-[#ffb4a6]">
           {t(
@@ -321,18 +335,21 @@ function BlockFields({
   block,
   lang,
   language,
+  firstBlank,
   onChange,
 }: {
   t: Translate;
   block: DraftBlock;
   lang: Lang;
   language: DraftRow["language"];
+  firstBlank: number;
   onChange: (b: DraftBlock) => void;
 }) {
   const id = `field-${block.id}`;
   switch (block.kind) {
     case "heading":
       return (
+        <>
         <div className="mt-3 flex flex-col gap-2 sm:flex-row">
           <input
             id={id}
@@ -359,10 +376,13 @@ function BlockFields({
             </select>
           </label>
         </div>
+        <BlankTools t={t} fieldId={id} first={firstBlank} text={block.text} onText={(text) => onChange({ ...block, text })} />
+        </>
       );
     case "paragraph":
     case "quote":
       return (
+        <>
         <textarea
           id={id}
           aria-label={block.kind === "quote" ? t("Quotation") : t("Paragraph")}
@@ -379,6 +399,10 @@ function BlockFields({
           value={block.text}
           onChange={(e) => onChange({ ...block, text: e.target.value })}
         />
+        {block.kind === "paragraph" ? (
+          <BlankTools t={t} fieldId={id} first={firstBlank} text={block.text} onText={(text) => onChange({ ...block, text })} />
+        ) : null}
+        </>
       );
     case "list":
       return (
@@ -414,6 +438,7 @@ function BlockFields({
             />
             {t("Numbered")}
           </label>
+          <BlankTools t={t} fieldId={id} first={firstBlank} text={block.items.join("\n")} onText={(text) => onChange({ ...block, items: text.split("\n") })} />
         </div>
       );
     case "scripture":
@@ -428,6 +453,86 @@ function BlockFields({
         />
       );
   }
+}
+
+/** Make Blank for the selected words, then each blank's answer, hint and whether it's open (the [[…]] markup in the text). */
+function BlankTools({ t, fieldId, first, text, onText }: { t: Translate; fieldId: string; first: number; text: string; onText: (text: string) => void }) {
+  const found = draftBlanks(text);
+  const make = () => {
+    const field = document.getElementById(fieldId) as HTMLInputElement | HTMLTextAreaElement | null;
+    const start = field?.selectionStart ?? text.length;
+    const end = field?.selectionEnd ?? start;
+    const next = makeBlank(text, start, end);
+    onText(next);
+    requestAnimationFrame(() => field?.focus());
+  };
+  return (
+    <div className="mt-2">
+      <button
+        type="button"
+        // Keeps the selection in the text box while the button is pressed.
+        onMouseDown={(e) => e.preventDefault()}
+        onClick={make}
+        className="inline-flex min-h-10 items-center gap-2 rounded-full border border-border px-4 text-sm font-medium hover:bg-surface-2"
+        aria-describedby={`${fieldId}-blank-hint`}
+      >
+        <span aria-hidden="true" className="font-semibold tracking-tight text-copper">
+          __
+        </span>
+        {t("Make Blank")}
+      </button>
+      <span id={`${fieldId}-blank-hint`} className="sr-only">
+        {t("Select the words members should fill in, then choose Make Blank.")}
+      </span>
+      {found.length ? (
+        <ul className="mt-3 space-y-3 rounded-2xl bg-surface-2 p-3" aria-label={t("Blanks")}>
+          {found.map((b, k) => {
+            const n = first + k;
+            const open = b.answer === null;
+            const answerID = `${fieldId}-blank-${k}`;
+            return (
+              <li key={k} className="flex flex-wrap items-end gap-2" data-blank-editor={n}>
+                <span className="w-full text-sm font-semibold">{t("Blank {n}", { n })}</span>
+                <label className="min-w-40 flex-1 text-sm">
+                  <span className="block text-muted">{t("Answer")}</span>
+                  <input
+                    id={answerID}
+                    className={`${inputClass} ${b.answer === "" ? "border-[#9b2c1f] dark:border-[#ffb4a6]" : ""}`}
+                    value={b.answer ?? ""}
+                    disabled={open}
+                    placeholder={open ? t("Members write their own words") : t("The word members fill in")}
+                    aria-invalid={b.answer === "" ? true : undefined}
+                    onChange={(e) => onText(setBlank(text, k, { answer: e.target.value, hint: b.hint }))}
+                  />
+                </label>
+                <label className="w-40 text-sm">
+                  <span className="block text-muted">{t("Hint (optional)")}</span>
+                  <input className={inputClass} value={b.hint ?? ""} onChange={(e) => onText(setBlank(text, k, { answer: b.answer, hint: e.target.value || null }))} />
+                </label>
+                <label className="flex min-h-11 items-center gap-2 text-sm">
+                  <input
+                    type="checkbox"
+                    className="size-5"
+                    checked={open}
+                    onChange={(e) => onText(setBlank(text, k, { answer: e.target.checked ? null : "", hint: b.hint }))}
+                  />
+                  {t("Open blank (no answer)")}
+                </label>
+                <button
+                  type="button"
+                  className="min-h-11 rounded-full px-3 text-sm font-medium text-accent underline-offset-4 hover:underline"
+                  onClick={() => onText(setBlank(text, k, null))}
+                >
+                  {t("Remove blank")}
+                </button>
+                {b.answer === "" ? <p className="w-full text-sm font-medium text-[#9b2c1f] dark:text-[#ffb4a6]">{t("Type the answer, or make it an open blank.")}</p> : null}
+              </li>
+            );
+          })}
+        </ul>
+      ) : null}
+    </div>
+  );
 }
 
 function ScriptureFields({
@@ -750,6 +855,12 @@ function problemText(problem: string): string {
       return "The translation name can be up to 60 characters.";
     case "quote_too_long":
       return "Quoted words can be up to 5,000 characters.";
+    case "blank_needs_answer":
+      return "Give each blank its answer, or make it an open blank.";
+    case "blank_in_quotation":
+      return "Blanks go in your own words, not in a quotation. Change it to a paragraph or remove the [[ ]] marks.";
+    case "blank_too_long":
+      return "An answer can be up to 100 characters and a hint up to 60.";
     default:
       return "This item can't be saved as it is.";
   }
