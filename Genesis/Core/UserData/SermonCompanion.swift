@@ -86,7 +86,7 @@ enum SermonGrouping {
     static func byDate(_ sermons: [SermonFacts], now: Date = .now, calendar: Calendar = .current) -> [Section] {
         let weekStart = calendar.dateInterval(of: .weekOfYear, for: now)?.start ?? calendar.startOfDay(for: now)
         let grouped = Dictionary(grouping: sermons) { sermon -> Section.Kind in
-            if sermon.preachedAt >= weekStart { return .thisWeek }
+            if !(sermon.preachedAt < weekStart) { return .thisWeek }
             let month = calendar.dateInterval(of: .month, for: sermon.preachedAt)?.start ?? calendar.startOfDay(for: sermon.preachedAt)
             return .month(month)
         }

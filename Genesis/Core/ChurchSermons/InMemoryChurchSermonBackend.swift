@@ -39,6 +39,9 @@ actor InMemoryChurchSermonBackend: ChurchSermonBackend {
     static let otherMembersSlug = "rivermemb1"
     /// Another church's link sermon.
     static let otherLinkSlug = "riverlink1"
+    /// The launch-day demo's sermon (only with -uiTestingDemo): the outline
+    /// the demo film writes in Church Studio.
+    static let demoSlug = "launchday1"
 
     /// Translation labels as a pastor types them (not app text).
     private static let kjv = "KJV"
@@ -99,6 +102,34 @@ actor InMemoryChurchSermonBackend: ChurchSermonBackend {
         for (offset, sermon) in [first, second, otherMembers, otherLink].enumerated() {
             rows[sermon.slug] = Row(sermon: sermon, publishedAt: Date.now.addingTimeInterval(Double(offset - 10) * 3_600))
         }
+        if UITestingOptions.current.isDemo {
+            let demo = Self.demoSermon
+            rows[demo.slug] = Row(sermon: demo, publishedAt: .now)
+        }
+    }
+
+    /// Every passage is quoted from the KJV, so it shows verbatim from the bundled Bible.
+    private static var demoSermon: PublishedSermon {
+        func passage(_ id: String, _ raw: String, _ start: Int, _ end: Int?) -> SermonBlock {
+            .scripture(id: id, reference: SermonReference(
+                raw: raw, start: VerseID(rawValue: start), end: end.map(VerseID.init(rawValue:)), status: .verified,
+                label: kjv, translation: kjv, quoteWithheld: false))
+        }
+        return sample(
+            slug: demoSlug, church: sampleChurchID, churchName: "Grace Fellowship", title: "Rest for the Weary",
+            speaker: "Pastor Ruth", series: "Come to Me", day: 0, audience: .link, cover: nil,
+            blocks: [
+                .paragraph(id: "l1", text: "Jesus calls the tired and the burdened to himself."),
+                .heading(id: "l2", text: "Come to me", level: 2),
+                passage("l3", "Matthew 11:28-30", 40_011_028, 40_011_030),
+                .list(id: "l4", items: ["Come as you are", "Take his yoke", "Learn from him"], ordered: false),
+                .heading(id: "l5", text: "He restores my soul", level: 2),
+                passage("l6", "Psalm 23:1-3", 19_023_001, 19_023_003),
+                .quote(id: "l7", text: "Our hearts are restless until they rest in you."),
+                .heading(id: "l8", text: "Go in peace", level: 2),
+                passage("l9", "John 14:27", 43_014_027, nil),
+            ]
+        )
     }
 
     private static func sample(

@@ -12,14 +12,22 @@ import { RpcError, rpc } from "@/lib/supabase";
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: "Giveaway host", robots: { index: false, follow: false } };
 
-type Props = { searchParams: Promise<{ signin?: string }> };
+type Props = { searchParams: Promise<{ signin?: string; scene?: string }> };
+const SCENES = ["volunteer", "raffle", "timer"] as const;
 
-/** The projector page: the live draw and the game timer. Only Versely's ops admins (the database checks). */
+/**
+ * The projector page: the live draw and the game timer. Only Versely's ops admins (the database checks).
+ * ?scene=volunteer|raffle|timer shows one part only, without the controls, for a browser source in the
+ * show's OBS scenes (the keys still work from OBS's Interact window; the timer's background is clear).
+ */
 export default async function LaunchHost({ searchParams }: Props) {
   const lang = await requestLang();
   const t = translator(lang);
-  const { signin } = await searchParams;
+  const { signin, scene } = await searchParams;
+  const fixed = SCENES.find((value) => value === scene);
   const session = await currentSession();
+  // Back to this same view after signing in or out (OBS signs in from the scene's own source).
+  const here = fixed ? `/launch/host?scene=${fixed}` : "/launch/host";
 
   let board: Board | null = null;
   let problem: string | null = null;
@@ -31,11 +39,11 @@ export default async function LaunchHost({ searchParams }: Props) {
     }
   }
 
-  if (board) return <HostBoard lang={lang} initial={board} entryLink={`${config.siteUrl}/launch`} />;
+  if (board) return <HostBoard lang={lang} initial={board} entryLink={`${config.siteUrl}/launch`} scene={fixed} />;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-hero to-background">
-      <BrandBar width="max-w-xl">{session ? <SignOutButton next="/launch/host" t={t} /> : null}</BrandBar>
+      <BrandBar width="max-w-xl">{session ? <SignOutButton next={here} t={t} /> : null}</BrandBar>
       <main className="mx-auto max-w-xl px-4 pb-20 pt-10 sm:px-6">
         <p className="text-sm font-semibold uppercase tracking-wider text-accent">{t("Versely launch day")}</p>
         <h1 className="mt-2 text-3xl font-semibold tracking-tight">{t("Giveaway host")}</h1>
@@ -46,7 +54,7 @@ export default async function LaunchHost({ searchParams }: Props) {
         ) : null}
         {session ? null : (
           <div className="mt-8 max-w-sm">
-            <SignInButtons next="/launch/host" t={t} status={signin} />
+            <SignInButtons next={here} t={t} status={signin} />
           </div>
         )}
       </main>

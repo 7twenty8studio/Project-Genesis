@@ -19,6 +19,7 @@ import Foundation
 ///     -uiTestingMoments               show chapter-complete moments (default: never)
 ///     -uiTestingSignedOut             groups and community as a signed-out guest
 ///     -uiTestingSimple                every optional feature switched off
+///     -uiTestingDemo                  extra sample content for the launch-day demo recordings
 struct UITestingOptions {
     let isEnabled: Bool
     let skipsOnboarding: Bool
@@ -33,6 +34,7 @@ struct UITestingOptions {
     let allowsNightReading: Bool
     let isSignedOut: Bool
     let isSimple: Bool
+    let isDemo: Bool
 
     static let current = UITestingOptions(arguments: ProcessInfo.processInfo.arguments)
 
@@ -54,6 +56,7 @@ struct UITestingOptions {
         allowsNightReading = arguments.contains("-uiTestingNight")
         isSignedOut = arguments.contains("-uiTestingSignedOut")
         isSimple = arguments.contains("-uiTestingSimple")
+        isDemo = arguments.contains("-uiTestingDemo")
     }
 
     /// Wipes saved state. Must run before any store reads UserDefaults.

@@ -81,6 +81,11 @@ shares; README.md has the architecture.
   `MARKETING_VERSION` in project.yml is the version testers see).
 - UI tests: `./Scripts/build.sh --ui` / `--ui-full`; failures are extracted from
   .xcresult into build/TestResults/*-failures.txt.
+- Launch-day demo films: `./Scripts/record_demos.sh` records DemoReelUITests
+  (skipped unless GENESIS_DEMO=1) on an iPhone 18 Pro Max simulator with
+  `-uiTestingDemo` (adds the demo sermon `launchday1`); marks in build/Demos/marks.
+  About ten seconds of real use each, set up off camera before `Demo.start`;
+  Themes and Pages are short films joined afterwards.
 
 ## Sync
 - Supabase schema lives in `supabase/migrations`; every table has user_id,
@@ -865,7 +870,7 @@ shares; README.md has the architecture.
   email, `giveaway_enter`, no account) and `/launch/host` (projector: draws
   for volunteers and the final golden ticket picked by `giveaway_draw` in
   the database, no-shows, open/close entries, the two-player game timer, an
-  offline draw from paper ticket numbers; the winner is shown by first name, and "Find a number" searches entries by name). "Forgot your number?" on /launch shows it again from the same email (`giveaway_find`, also after entries close). Host calls need an ops admin
+  offline draw from paper ticket numbers; the winner is shown by first name, and "Find a number" searches entries by name; `?scene=volunteer|raffle|timer` shows one part without controls for the show's OBS browser sources, keys still working from OBS's Interact window). "Forgot your number?" on /launch shows it again from the same email (`giveaway_find`, also after entries close). Host calls need an ops admin
   (`genesis_is_ops_admin()`, public.ops_admins). Tables giveaway_events /
   giveaway_entries / giveaway_draws (migration 20261127000000, RLS on, no
   policies; emails never leave the database). Entry is free, no purchase or

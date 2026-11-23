@@ -48,7 +48,9 @@ final class MemoryVerse {
         }
     }
 
-    func isDue(on date: Date = .now) -> Bool { dueAt <= date }
+    /// Written with `<` only: the iOS 27.2 simulator crashed in Date's `<=`
+    /// (a null function), so dates are compared with `<` throughout.
+    func isDue(on date: Date = .now) -> Bool { !(date < dueAt) }
 
     var mastery: MemoryMastery { schedule.mastery }
 }

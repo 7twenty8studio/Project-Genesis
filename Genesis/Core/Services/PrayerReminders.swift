@@ -29,7 +29,7 @@ enum PrayerReminders {
     /// Whether a prayer's reminder should be on the schedule.
     static func shouldSchedule(isAnswered: Bool, reminderAt: Date?, repeatsDaily: Bool, paused: Bool, now: Date = .now) -> Bool {
         guard !paused, !isAnswered, let reminderAt else { return false }
-        return repeatsDaily || reminderAt >= now
+        return repeatsDaily || !(reminderAt < now)
     }
 
     /// What to do when the Prayer Journal switch is read: `wasOn` is nil the

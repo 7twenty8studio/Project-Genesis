@@ -23,10 +23,11 @@ const typing = (event: KeyboardEvent) => {
  * paper ticket numbers if the internet is down. Space or Enter does the main
  * thing; N draws again when someone isn't there; 1 and 2 stop the players.
  */
-export function HostBoard({ lang, initial, entryLink }: { lang: Lang; initial: Board; entryLink: string }) {
+export function HostBoard({ lang, initial, entryLink, scene }: { lang: Lang; initial: Board; entryLink: string; scene?: "volunteer" | "raffle" | "timer" }) {
   const t = translator(lang);
   const [board, setBoard] = useState(initial);
-  const [mode, setMode] = useState<Mode>("volunteer");
+  const [mode, setMode] = useState<Mode>(scene ?? "volunteer");
+  const inScene = scene !== undefined;
   const [shown, setShown] = useState<Shown | null>(null);
   const [rolling, setRolling] = useState(false);
   const [problem, setProblem] = useState<string | null>(null);
@@ -260,9 +261,11 @@ export function HostBoard({ lang, initial, entryLink }: { lang: Lang; initial: B
       : null;
 
   return (
-    <div className="stage relative flex min-h-screen flex-col">
+    <div
+      className={`relative flex min-h-screen flex-col ${inScene && mode === "timer" ? "text-[#f9ebd7] [--ticket-notch:#2b1b0e]" : "stage"}`}
+    >
       <Confetti burst={burst} />
-      <header className="flex flex-wrap items-center justify-between gap-3 px-6 pt-5 opacity-60 transition-opacity duration-200 hover:opacity-100 focus-within:opacity-100">
+      <header className={`${inScene ? "hidden" : "flex"} flex-wrap items-center justify-between gap-3 px-6 pt-5 opacity-60 transition-opacity duration-200 hover:opacity-100 focus-within:opacity-100`}>
         <nav className="flex flex-wrap gap-1" aria-label={t("Giveaway")}>
           {tab("volunteer", t("Draw a volunteer"))}
           {tab("raffle", t("Final golden ticket"))}
@@ -306,11 +309,11 @@ export function HostBoard({ lang, initial, entryLink }: { lang: Lang; initial: B
 
       <main className="flex flex-1 flex-col items-center justify-center px-6 pb-10 text-center">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/brand/logo-cream.svg" alt="Versely" width={180} height={45} className="mb-6 h-10 w-auto" />
-        <h1 className="text-5xl font-semibold tracking-tight md:text-6xl">{heading}</h1>
+        <img src="/brand/logo-cream.svg" alt="Versely" width={180} height={45} className={`mb-6 h-10 w-auto ${inScene && mode === "timer" ? "hidden" : ""}`} />
+        <h1 className={`text-5xl font-semibold tracking-tight md:text-6xl ${inScene && mode === "timer" ? "sr-only" : ""}`}>{heading}</h1>
 
         {mode === "timer" ? (
-          <div className="mt-10 w-full max-w-5xl">
+          <div className={`w-full max-w-5xl ${inScene ? "" : "mt-10"}`}>
             {count !== null ? (
               <p key={count} className="rise-in text-[10rem] font-semibold leading-none tabular-nums text-[#e0b48d]" aria-live="assertive">
                 {count}
@@ -322,7 +325,7 @@ export function HostBoard({ lang, initial, entryLink }: { lang: Lang; initial: B
                 const done = finished[lane];
                 const ms = done ?? (begun !== null ? now - begun : 0);
                 return (
-                  <div key={lane} className={`rounded-3xl p-6 ${best === lane ? "golden-ticket rise-in" : "bg-white/5"}`}>
+                  <div key={lane} className={`rounded-3xl p-6 ${best === lane ? "golden-ticket rise-in" : inScene ? "bg-[#2d1d10]/90" : "bg-white/5"}`}>
                     <input
                       value={players[lane]}
                       onChange={(e) => setPlayers((p) => p.map((v, i) => (i === lane ? e.target.value : v)))}
@@ -335,7 +338,7 @@ export function HostBoard({ lang, initial, entryLink }: { lang: Lang; initial: B
                       type="button"
                       onClick={() => stopLane(lane)}
                       disabled={begun === null || done !== null}
-                      className="mt-3 rounded-full border border-current/30 px-5 py-2 text-sm disabled:opacity-30"
+                      className={`mt-3 rounded-full border border-current/30 px-5 py-2 text-sm disabled:opacity-30 ${inScene ? "hidden" : ""}`}
                     >
                       {t("Stop (key {key})", { key: lane + 1 })}
                     </button>
@@ -343,7 +346,7 @@ export function HostBoard({ lang, initial, entryLink }: { lang: Lang; initial: B
                 );
               })}
             </div>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm text-[#e0b48d]">
+            <div className={`mt-8 flex-wrap items-center justify-center gap-3 text-sm text-[#e0b48d] ${inScene ? "hidden" : "flex"}`}>
               <button type="button" onClick={startTimer} className="rounded-full bg-[#f9ebd7] px-6 py-2.5 font-semibold text-[#3a240f]">
                 {t("Start (Space)")}
               </button>
@@ -413,7 +416,7 @@ export function HostBoard({ lang, initial, entryLink }: { lang: Lang; initial: B
               </p>
             ) : null}
 
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3 text-sm">
+            <div className={`mt-10 flex-wrap items-center justify-center gap-3 text-sm ${inScene ? "hidden" : "flex"}`}>
               <button
                 type="button"
                 disabled={rolling}

@@ -68,7 +68,7 @@ struct PrayerExportFilter: Sendable, Equatable {
         let endDay = calendar.startOfDay(for: max(from, through))
         let end = calendar.date(byAdding: .day, value: 1, to: endDay) ?? endDay
         return prayers
-            .filter { $0.hasContent && $0.createdAt >= start && $0.createdAt < end && (category == nil || $0.category == category) }
+            .filter { $0.hasContent && !($0.createdAt < start) && $0.createdAt < end && (category == nil || $0.category == category) }
             .sorted { $0.createdAt < $1.createdAt }
     }
 }
