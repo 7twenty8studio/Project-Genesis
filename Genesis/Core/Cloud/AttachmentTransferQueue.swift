@@ -45,7 +45,7 @@ struct AttachmentTransferQueue: Codable, Equatable, Sendable {
 
     /// Operations to try now, oldest first.
     func due(at now: Date = .now) -> [Operation] {
-        entries.filter { $0.notBefore <= now }.map(\.operation)
+        entries.filter { !(now < $0.notBefore) }.map(\.operation)
     }
 
     /// When the next waiting operation becomes due, if any.

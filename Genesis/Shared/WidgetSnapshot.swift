@@ -59,7 +59,7 @@ struct WidgetSnapshot: Codable, Equatable, Sendable {
         /// older snapshots (decodes as nil).
         var isHidden: Bool? = nil
 
-        func dueCount(on date: Date) -> Int { dueDates.filter { $0 <= date }.count }
+        func dueCount(on date: Date) -> Int { dueDates.filter { !(date < $0) }.count }
     }
 
     /// The person's reader theme, for Premium's theme-matched widgets. The
