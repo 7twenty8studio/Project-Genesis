@@ -82,6 +82,8 @@ export function safeNext(next: string | null | undefined): string {
   if (!next) return "/studio";
   if (/^\/s\/[a-z0-9]{10}$/.test(next)) return next;
   if (/^\/studio(\/[A-Za-z0-9-]{1,40})?$/.test(next)) return next;
+  // The launch-day host screen, whole or one OBS scene of it.
+  if (/^\/launch\/host(\?scene=(volunteer|raffle|timer))?$/.test(next)) return next;
   return "/studio";
 }
 

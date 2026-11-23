@@ -24,6 +24,10 @@ test("PKCE challenge is RFC 7636's", async () => {
 test("sign-in only returns to this site's sermon and Studio pages", () => {
   assert.equal(safeNext("/s/abcdefghij"), "/s/abcdefghij");
   assert.equal(safeNext("/studio"), "/studio");
+  assert.equal(safeNext("/launch/host"), "/launch/host");
+  assert.equal(safeNext("/launch/host?scene=raffle"), "/launch/host?scene=raffle");
+  assert.equal(safeNext("/launch/host?scene=evil"), "/studio");
+  assert.equal(safeNext("/launch/host/../studio"), "/studio");
   assert.equal(safeNext("/studio/0b9a1c8e-1111-2222-3333-444455556666"), "/studio/0b9a1c8e-1111-2222-3333-444455556666");
   for (const bad of ["https://evil.example", "//evil.example", "/s/ABC", "/s/abcdefghij?x=1", "/studio/../admin", "javascript:alert(1)", null, ""]) {
     assert.equal(safeNext(bad), "/studio", String(bad));

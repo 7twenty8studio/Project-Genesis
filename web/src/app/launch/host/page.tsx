@@ -26,6 +26,8 @@ export default async function LaunchHost({ searchParams }: Props) {
   const { signin, scene } = await searchParams;
   const fixed = SCENES.find((value) => value === scene);
   const session = await currentSession();
+  // Back to this same view after signing in or out (OBS signs in from the scene's own source).
+  const here = fixed ? `/launch/host?scene=${fixed}` : "/launch/host";
 
   let board: Board | null = null;
   let problem: string | null = null;
@@ -41,7 +43,7 @@ export default async function LaunchHost({ searchParams }: Props) {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-hero to-background">
-      <BrandBar width="max-w-xl">{session ? <SignOutButton next="/launch/host" t={t} /> : null}</BrandBar>
+      <BrandBar width="max-w-xl">{session ? <SignOutButton next={here} t={t} /> : null}</BrandBar>
       <main className="mx-auto max-w-xl px-4 pb-20 pt-10 sm:px-6">
         <p className="text-sm font-semibold uppercase tracking-wider text-accent">{t("Versely launch day")}</p>
         <h1 className="mt-2 text-3xl font-semibold tracking-tight">{t("Giveaway host")}</h1>
@@ -52,7 +54,7 @@ export default async function LaunchHost({ searchParams }: Props) {
         ) : null}
         {session ? null : (
           <div className="mt-8 max-w-sm">
-            <SignInButtons next="/launch/host" t={t} status={signin} />
+            <SignInButtons next={here} t={t} status={signin} />
           </div>
         )}
       </main>
