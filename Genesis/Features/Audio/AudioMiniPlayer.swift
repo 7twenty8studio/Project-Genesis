@@ -159,9 +159,7 @@ struct AudioMiniPlayer: View {
         }
         .foregroundStyle(palette.text)
         .accessibilityShowsLargeContentViewer {
-            Image(systemName: systemImage)
-        } label: {
-            Text(label)
+            Label(label, systemImage: systemImage)
         }
         .accessibilityLabel(label)
         .accessibilityIdentifier(id)

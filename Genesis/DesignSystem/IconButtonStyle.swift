@@ -64,9 +64,7 @@ extension View {
     /// accessibility text sizes, where its icon stays capped).
     func largeContent(_ systemImage: String, _ label: String) -> some View {
         accessibilityShowsLargeContentViewer {
-            Image(systemName: systemImage)
-        } label: {
-            Text(label)
+            Label(label, systemImage: systemImage)
         }
     }
 }
