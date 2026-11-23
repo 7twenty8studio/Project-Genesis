@@ -348,27 +348,31 @@ private enum SummerLight {
             ))
         }
 
-        // Rays: long tapering beams from just beyond the top-right corner.
+        // Rays: thin shafts of light from just beyond the top-right corner,
+        // each a bright core inside two wider, fainter layers so its edges
+        // fall off softly, fading out before they cross the page.
         let source = CGPoint(x: page.width * 1.05, y: -page.height * 0.08)
         let length = scale * 1.5
-        for index in 0..<6 {
+        for (index, shaft) in shafts.enumerated() {
             let i = CGFloat(index)
-            let sway = sin(t * 0.12 + i * 1.7) * 0.025
-            let angle = beamAngle(index) + sway  // pointing down and to the left
-            let spread = 0.024 + 0.016 * (i.truncatingRemainder(dividingBy: 2))
-            let breathe = 0.5 + 0.5 * sin(t * 0.35 + i * 1.3)
-            let end1 = CGPoint(x: source.x + cos(angle - spread) * length, y: source.y + sin(angle - spread) * length)
-            let end2 = CGPoint(x: source.x + cos(angle + spread) * length, y: source.y + sin(angle + spread) * length)
-            var ray = Path()
-            ray.move(to: source)
-            ray.addLine(to: end1)
-            ray.addLine(to: end2)
-            ray.closeSubpath()
-            canvas.fill(ray, with: .linearGradient(
-                Gradient(colors: [SummerLight.ray.opacity(0.32 * breathe + 0.14), SummerLight.ray.opacity(0)]),
-                startPoint: source,
-                endPoint: CGPoint(x: source.x + cos(angle) * length * 0.75, y: source.y + sin(angle) * length * 0.75)
-            ))
+            let sway = sin(t * 0.12 + i * 1.7) * 0.02
+            let angle = shaft.angle + sway  // pointing down and to the left
+            let breathe = 0.5 + 0.5 * sin(t * 0.3 + shaft.phase)
+            let strength = 0.05 + 0.11 * breathe
+            let end = CGPoint(x: source.x + cos(angle) * length * shaft.reach,
+                              y: source.y + sin(angle) * length * shaft.reach)
+            for (widen, share) in rayLayers {
+                let spread = shaft.width * widen
+                var ray = Path()
+                ray.move(to: source)
+                ray.addLine(to: CGPoint(x: source.x + cos(angle - spread) * length, y: source.y + sin(angle - spread) * length))
+                ray.addLine(to: CGPoint(x: source.x + cos(angle + spread) * length, y: source.y + sin(angle + spread) * length))
+                ray.closeSubpath()
+                canvas.fill(ray, with: .linearGradient(
+                    Gradient(colors: [SummerLight.ray.opacity(strength * share), SummerLight.ray.opacity(0)]),
+                    startPoint: source, endPoint: end
+                ))
+            }
         }
 
         drawMotes(in: canvas, size: page, source: source, length: length, time: t)
@@ -380,20 +384,40 @@ private enum SummerLight {
     /// The beams' direction (they point down and to the left).
     static func beamAngle(_ index: Int) -> CGFloat { .pi * 0.62 + CGFloat(index) * 0.075 }
 
+    struct Shaft { let angle, width, reach, phase: CGFloat }
+
+    /// Each shaft's layers: how much wider than its core, and how bright.
+    static let rayLayers: [(widen: CGFloat, share: CGFloat)] = [(3.2, 0.22), (1.9, 0.45), (1, 1)]
+
+    /// Nine shafts of uneven width and length across the same fan as the
+    /// dust's beams.
+    static let shafts: [Shaft] = {
+        var random = SeededRandom(seed: 23)
+        return (0..<9).map { index in
+            Shaft(angle: .pi * 0.615 + CGFloat(index) * 0.047 + (random.next() - 0.5) * 0.02,
+                  width: 0.004 + random.next() * 0.008,
+                  reach: 0.5 + random.next() * 0.3,
+                  phase: random.next() * .pi * 2)
+        }
+    }()
+
     struct Mote {
         let beam: Int
         let start, speed, jitter, radius, twinkle, phase: CGFloat
     }
 
+    /// 56 specks, larger and warmer than the page so they read on cream as
+    /// well as in the beams' light.
     static let motes: [Mote] = {
         var random = SeededRandom(seed: 5)
-        return (0..<22).map { _ in
-            Mote(beam: Int(random.next() * 6) % 6, start: random.next(), speed: 0.004 + random.next() * 0.006,
-                 jitter: (random.next() - 0.5) * 0.05, radius: 0.7 + random.next() * 1.1,
+        return (0..<56).map { _ in
+            Mote(beam: Int(random.next() * 6) % 6, start: random.next(), speed: 0.004 + random.next() * 0.007,
+                 jitter: (random.next() - 0.5) * 0.08, radius: 1.4 + random.next() * 1.8,
                  twinkle: 0.6 + random.next(), phase: random.next() * .pi * 2)
         }
     }()
-    static let moteCore = SeasonColor.make(0xFFF8E1)
+    static let moteCore = SeasonColor.make(0xFFF3CC)
+    static let moteHalo = SeasonColor.make(0xD38F33)
 
     /// Dust drifting slowly down each beam, fading in and out at its ends.
     static func drawMotes(in canvas: GraphicsContext, size page: CGSize, source: CGPoint, length: CGFloat, time t: CGFloat) {
@@ -401,16 +425,16 @@ private enum SummerLight {
             let i = CGFloat(index)
             let along = (mote.start + t * mote.speed).truncatingRemainder(dividingBy: 1) // 0..<1 along its stretch
             let angle = beamAngle(mote.beam) + mote.jitter
-            let distance = length * (0.15 + 0.75 * along) * 0.75
-            let center = CGPoint(x: source.x + cos(angle) * distance + sin(t * 0.3 + i) * 6,
-                                 y: source.y + sin(angle) * distance + cos(t * 0.25 + i) * 4)
-            let opacity = (0.35 + 0.45 * abs(sin(t * mote.twinkle + mote.phase))) * sin(.pi * along)
-            let glow = mote.radius * 3
+            let distance = length * (0.1 + 0.85 * along) * 0.75
+            let center = CGPoint(x: source.x + cos(angle) * distance + sin(t * 0.3 + i) * 8,
+                                 y: source.y + sin(angle) * distance + cos(t * 0.25 + i) * 6)
+            let opacity = (0.55 + 0.45 * abs(sin(t * mote.twinkle + mote.phase))) * sin(.pi * along)
+            let glow = mote.radius * 3.2
             canvas.fill(Path(ellipseIn: CGRect(x: center.x - glow, y: center.y - glow, width: glow * 2, height: glow * 2)),
                         with: .radialGradient(Gradient(stops: [
                             .init(color: moteCore.opacity(opacity), location: 0),
-                            .init(color: ray.opacity(opacity * 0.55), location: 0.35),
-                            .init(color: ray.opacity(0), location: 1),
+                            .init(color: moteHalo.opacity(opacity * 0.9), location: 0.35),
+                            .init(color: moteHalo.opacity(0), location: 1),
                         ]), center: center, startRadius: 0, endRadius: glow))
         }
     }

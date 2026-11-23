@@ -34,6 +34,14 @@ struct PagedReaderView: UIViewControllerRepresentable {
         Coordinator(viewModel: viewModel)
     }
 
+    /// The scene's still for pages that curl over Forest, Ocean or Hearth
+    /// (a curl needs opaque pages); nil for a slide, which shows the live
+    /// scene through clear pages.
+    private var sceneStill: UIImage? {
+        guard pageTurn == .curl, let scene = layout.style.theme.scene else { return nil }
+        return SceneStill.image(scene: scene, layout: layout)
+    }
+
     func makeUIViewController(context: Context) -> ReaderPagesController {
         var options: [UIPageViewController.OptionsKey: Any] = [:]
         if pageTurn == .curl {
@@ -73,6 +81,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
         // so a page beside the side panel (narrower than the screen) came
         // up blank. Start it at the size it will be shown at.
         controller.view.frame = CGRect(origin: .zero, size: layout.size)
+        context.coordinator.sceneStill = sceneStill
         context.coordinator.pageController = controller
         // A new controller is often built in the middle of a size change
         // (turning the phone, opening an iPhone Duo: see the `.id` in
@@ -91,6 +100,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
             let blanks = (0..<(context.coordinator.curlsSpread ? 2 : 1)).map { _ in
                 let blank = UIViewController()
                 blank.view.backgroundColor = PaperTexture.pageColor(for: layout.style.theme)
+                if let still = sceneStill { blank.view.layer.contents = still.cgImage }
                 return blank
             }
             controller.setViewControllers(blanks, direction: .forward, animated: false)
@@ -122,6 +132,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
         coordinator.feedback.prepare(in: controller.view, haptic: pageTurnHaptic)
         coordinator.setPageChromeHidden(hidesPageChrome)
         controller.view.backgroundColor = PaperTexture.surroundColor(for: layout.style.theme)
+        coordinator.sceneStill = sceneStill
         coordinator.update(
             layout: layout,
             navigationToken: navigationToken,
@@ -150,6 +161,9 @@ struct PagedReaderView: UIViewControllerRepresentable {
         /// `ReaderSpreadViewController` that slides.
         var spread = false
         var curlsSpread = false
+        /// Under a curl over Forest, Ocean or Hearth: the scene's still,
+        /// painted on each page so the curl turns a whole page of it.
+        var sceneStill: UIImage?
         private var pageChromeHidden = false
 
         func setPageChromeHidden(_ hidden: Bool) {
@@ -458,6 +472,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
                 footerAlignment: spread ? (isLeft ? .left : .right) : .center,
                 spineEdge: spread ? (isLeft ? .right : .left) : nil
             )
+            page.setSceneStill(sceneStill, part: spread ? (isLeft ? .left : .right) : nil)
             page.onEvent = { [weak self, weak page] event in self?.handle(event, on: page) }
             page.setChromeHidden(pageChromeHidden, animated: false)
             return page
@@ -469,6 +484,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
             let page = ReaderPageViewController(location: location)
             page.configure(text: NSAttributedString(), layout: layout, header: "", showsHeader: false, footer: "",
                            spineEdge: PageSpread.isLeft(location.index) ? .right : .left)
+            page.setSceneStill(sceneStill, part: PageSpread.isLeft(location.index) ? .left : .right)
             page.onEvent = { [weak self, weak page] event in self?.handle(event, on: page) }
             page.setChromeHidden(pageChromeHidden, animated: false)
             return page
@@ -784,6 +800,8 @@ final class ReaderPageViewController: UIViewController {
     private var spineEdge: UIRectEdge?
     private var layout: ReaderLayout?
     private var chromeHidden = false
+    /// The scene's still behind the text, under a curl (see `setSceneStill`).
+    private let sceneLayer = CALayer()
 
     init(location: PageLocation) {
         self.location = location
@@ -837,6 +855,22 @@ final class ReaderPageViewController: UIViewController {
         view.setNeedsLayout()
     }
 
+    /// Paints the scene's still behind the page (a curl over Forest, Ocean
+    /// or Hearth): all of it, or in a spread the half this page shows.
+    func setSceneStill(_ image: UIImage?, part: PageSpread.Half?) {
+        loadViewIfNeeded()
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        sceneLayer.contents = image?.cgImage
+        sceneLayer.isHidden = image == nil
+        switch part {
+        case .left: sceneLayer.contentsRect = CGRect(x: 0, y: 0, width: 0.5, height: 1)
+        case .right: sceneLayer.contentsRect = CGRect(x: 0.5, y: 0, width: 0.5, height: 1)
+        case nil: sceneLayer.contentsRect = CGRect(x: 0, y: 0, width: 1, height: 1)
+        }
+        CATransaction.commit()
+    }
+
     /// Hides the running head and footer by making their text clear rather
     /// than hiding the labels, so VoiceOver and the UI tests still find them.
     func setChromeHidden(_ hidden: Bool, animated: Bool) {
@@ -866,6 +900,9 @@ final class ReaderPageViewController: UIViewController {
         view.addSubview(footerLabel)
         spineShade.isHidden = true
         view.layer.addSublayer(spineShade)
+        sceneLayer.isHidden = true
+        sceneLayer.contentsGravity = .resize
+        view.layer.insertSublayer(sceneLayer, at: 0)
         textView.accessibilityIdentifier = "reader.page"
         headerLabel.accessibilityIdentifier = "reader.header"
         footerLabel.accessibilityIdentifier = "reader.footer"
@@ -888,6 +925,7 @@ final class ReaderPageViewController: UIViewController {
             x: spineEdge == .left ? 0 : view.bounds.width - shadeWidth, y: 0,
             width: shadeWidth, height: view.bounds.height
         )
+        sceneLayer.frame = view.bounds
         CATransaction.commit()
     }
 }

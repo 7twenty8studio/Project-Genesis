@@ -325,7 +325,8 @@ shares; README.md has the architecture.
   leaves, spring petals and whole blossoms on a breeze, winter snow at
   three depths (dots far away, stellar/fern/plate crystals near) with gusts
   and corner frost, summer light with dust in the beams and a butterfly
-  every 90 s (`ButterflyFlight`); the shapes are unit paths in
+  every 90 s (`ButterflyFlight`: a wandering path, beats and glides,
+  its head turned the way it flies); the shapes are unit paths in
   Genesis/Shared/SeasonShapes.swift, shared with the drifting widgets
   (`SeasonShape`); Reduce Motion shows the painted still (`paintedMoment`).
   The morning welcome shows the theme's effect behind it at 70%.
@@ -371,7 +372,10 @@ shares; README.md has the architecture.
   and a slow glow (`HearthSparks`). 30 fps, only while Gentle Motion (`seasonalEffects`)
   is on, Reduce Motion off, not in Low Power Mode, the app active and
   the reader on screen; otherwise the still at `ThemeScene.stillTime`.
-  Scene themes always slide (no curl over clear pages); the running head
+  The scene fills the whole reading area (the live size). Page Curl
+  works over scenes: each page is painted with the scene's still
+  (`SceneStill`, its half in a spread), since a curl needs opaque pages;
+  Slide shows the live scene through clear pages. The running head
   and page number get a soft shadow. Picker swatches show a still glimpse.
   Deferred: Cedar and Leather Bound (with their curl), Ocean's rain.
 - Widgets: every widget is free in its Classic look at every size, so

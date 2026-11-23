@@ -8,6 +8,9 @@ import UIKit
 /// leaves the right one blank, so every spread is a left page (even index)
 /// and the page after it.
 enum PageSpread {
+    /// Which half of a spread a page shows.
+    enum Half: Sendable { case left, right }
+
     /// The narrowest reading area that shows two pages (each then keeps
     /// about 400 points, a comfortable line).
     static let minimumWidth: CGFloat = 800
