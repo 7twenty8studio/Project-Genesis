@@ -185,6 +185,9 @@ struct PagedReaderView: UIViewControllerRepresentable {
         /// each page so the curl turns a whole, opaque page of it. Nil the
         /// rest of the time, so the pages are clear and the scene moves.
         private var sceneStill: UIImage?
+        /// A finger is on the pages (from the touch recognizer).
+        private var fingerDown = false
+        private var stillCheckScheduled = false
 
         /// Paints the scene's still on the pages (a turn is starting), or
         /// takes it off again (the turn is over). Taken at this moment when
@@ -220,15 +223,40 @@ struct PagedReaderView: UIViewControllerRepresentable {
         @objc func touchChanged(_ recognizer: UIGestureRecognizer) {
             switch recognizer.state {
             case .began:
+                fingerDown = true
                 paintStill(true)
             case .ended, .cancelled, .failed:
-                // Next run loop turn, once the curl's own drag has ended.
-                Task { @MainActor [weak self] in
-                    guard let self, !self.isTurning, !self.isTurningByHand else { return }
-                    self.paintStill(false)
-                }
+                fingerDown = false
+                takeStillOffWhenIdle()
             default:
                 break
+            }
+        }
+
+        /// Before a curl hands UIKit a page: the still goes on first, so
+        /// the new page is opaque however quickly the drag began.
+        private func paintStillForTurn() {
+            guard curlScene != nil else { return }
+            paintStill(true)
+            takeStillOffWhenIdle()
+        }
+
+        /// Takes the still off once nothing is turning and no finger is
+        /// down, looking again a moment later while something still is.
+        /// Quick turns one after another (a new drag before the last
+        /// curl's callback) keep it on, and it can never be left on.
+        private func takeStillOffWhenIdle() {
+            guard sceneStill != nil, !stillCheckScheduled else { return }
+            stillCheckScheduled = true
+            Task { @MainActor [weak self] in
+                try? await Task.sleep(for: .milliseconds(150))
+                guard let self else { return }
+                self.stillCheckScheduled = false
+                if self.fingerDown || self.isTurning || self.isTurningByHand {
+                    self.takeStillOffWhenIdle()
+                } else {
+                    self.paintStill(false)
+                }
             }
         }
 
@@ -374,7 +402,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
 
         private func turnFinished() {
             turnStartedAt = nil
-            paintStill(false)
+            takeStillOffWhenIdle()
             flushPendingUpdate()
         }
 
@@ -759,6 +787,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
         func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
             guard let current = Self.location(of: viewController),
                   let target = location(before: current) else { return nil }
+            paintStillForTurn()
             // A sliding spread: the whole spread before, from its left page.
             if viewController is ReaderSpreadViewController { return viewControllers(at: target)?.first }
             return page(at: target)
@@ -766,6 +795,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
 
         func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
             guard let current = Self.location(of: viewController) else { return nil }
+            paintStillForTurn()
             // A sliding spread: the spread after its right page.
             if viewController is ReaderSpreadViewController {
                 guard let target = location(after: lastShown(from: current)) else { return nil }
@@ -780,6 +810,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
         func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
             // A page dragged by hand.
             turnStartedAt = Date()
+            if curlScene != nil { paintStill(true, also: pendingViewControllers) }
         }
 
         /// Page curl asks this as the device turns. Keep one page, spine on
