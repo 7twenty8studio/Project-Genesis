@@ -325,7 +325,8 @@ shares; README.md has the architecture.
   leaves, spring petals and whole blossoms on a breeze, winter snow at
   three depths (dots far away, stellar/fern/plate crystals near) with gusts
   and corner frost, summer light with dust in the beams and a butterfly
-  every 90 s (`ButterflyFlight`); the shapes are unit paths in
+  every 90 s (`ButterflyFlight`: a wandering path, beats and glides,
+  its head turned the way it flies); the shapes are unit paths in
   Genesis/Shared/SeasonShapes.swift, shared with the drifting widgets
   (`SeasonShape`); Reduce Motion shows the painted still (`paintedMoment`).
   The morning welcome shows the theme's effect behind it at 70%.

@@ -309,9 +309,12 @@ struct SeasonShape: Shape {
     }
 }
 
-/// Summer's butterfly: now and then it crosses the page from left to right,
-/// rising a little and bobbing, wings beating. Pure, so the reader, verse
-/// images and tests agree on where it is.
+/// Summer's butterfly: now and then it crosses the page from left to right
+/// the way a real one flies: an unsteady, wandering path (now and then
+/// doubling back), a little lift with every wingbeat, bursts of flapping
+/// between short glides on open wings, and its head always turned the way
+/// it's going. Pure, so the reader, verse images and tests agree on where
+/// it is.
 enum ButterflyFlight {
     /// Seconds between crossings, and how long a crossing takes.
     static let period: CGFloat = 90
@@ -319,6 +322,8 @@ enum ButterflyFlight {
 
     struct State: Equatable {
         let position: CGPoint
+        /// The drawing's rotation: its head (drawn pointing up) turned
+        /// toward where it's flying, banking a little into turns.
         let angle: CGFloat
         /// 0.35...1, how open the wings are (they beat by narrowing).
         let wingOpen: CGFloat
@@ -328,12 +333,50 @@ enum ButterflyFlight {
     static func state(at time: CGFloat, page: CGSize) -> State? {
         let phase = time.truncatingRemainder(dividingBy: period)
         guard phase >= 0, phase < crossing else { return nil }
+        let flap = flapping(at: phase)
+        // Each downstroke lifts it a little; it sinks between them.
+        let beat = sin(phase * beatSpeed)
+        var position = course(at: phase, page: page)
+        position.y -= 2.5 * flap * beat
+        return State(position: position, angle: heading(at: phase, page: page),
+                     wingOpen: 1 - 0.65 * flap * abs(beat))
+    }
+
+    /// Wingbeats per second × 2π (abs(sin) beats twice a turn).
+    static let beatSpeed: CGFloat = 7
+
+    /// 0...1: flapping hard, or 0 while it glides on open wings.
+    static func flapping(at phase: CGFloat) -> CGFloat {
+        let glide = sin(phase * 0.9 + 1.3) * 0.6 + sin(phase * 2.3) * 0.4
+        // Glides when `glide` is high, easing in and out.
+        let x = min(max((glide - 0.35) / 0.3, 0), 1)
+        return 1 - x * x * (3 - 2 * x)
+    }
+
+    /// The smooth course (without the beat's bob): across and a little up
+    /// the page, wandering on top, the wander fading at both ends so it
+    /// always enters and leaves off the page.
+    static func course(at phase: CGFloat, page: CGSize) -> CGPoint {
         let progress = phase / crossing
-        return State(
-            position: CGPoint(x: -20 + (page.width + 40) * progress,
-                              y: page.height * (0.7 - 0.25 * progress) + 18 * sin(phase * 0.9)),
-            angle: -0.35 + 0.15 * sin(phase * 0.7),
-            wingOpen: 0.35 + 0.65 * abs(cos(phase * 5))
-        )
+        let envelope = sin(.pi * min(max(progress, 0), 1))
+        let span = min(page.width, page.height)
+        let wanderX = span * (0.09 * sin(phase * 0.55 + 0.4) + 0.05 * sin(phase * 1.35 + 2.1))
+        let wanderY = span * (0.07 * sin(phase * 0.8 + 1) + 0.035 * sin(phase * 1.9 + 0.3))
+        return CGPoint(x: -20 + (page.width + 40) * progress + envelope * wanderX,
+                       y: page.height * (0.7 - 0.25 * progress) + envelope * wanderY)
+    }
+
+    /// The direction it's flying (from the course a moment either side),
+    /// turned so the drawing's head leads, plus a slight bank into turns.
+    static func heading(at phase: CGFloat, page: CGSize) -> CGFloat {
+        let step: CGFloat = 0.12
+        let before = course(at: phase - step, page: page)
+        let now = course(at: phase, page: page)
+        let after = course(at: phase + step, page: page)
+        let incoming = atan2(now.y - before.y, now.x - before.x)
+        let outgoing = atan2(after.y - now.y, after.x - now.x)
+        let direction = atan2(after.y - before.y, after.x - before.x)
+        let turn = SeasonShapes.angleBetween(outgoing, incoming)
+        return direction + .pi / 2 + max(-0.3, min(0.3, turn * 2))
     }
 }
