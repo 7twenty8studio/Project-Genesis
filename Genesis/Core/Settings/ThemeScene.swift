@@ -186,7 +186,7 @@ enum OceanSwells {
     static let sidePad: CGFloat = 40
     static let bottomPad: CGFloat = 80
     /// The most a layer rises above its resting place, in points.
-    static let rise: CGFloat = 9
+    static let rise: CGFloat = 5
     /// The share of the swells kept below the foot of the screen.
     static let sinkShare: CGFloat = 0.3
 
@@ -223,21 +223,21 @@ enum OceanSwells {
     }
 
     /// The most a layer moves sideways, in points.
-    static let lean: CGFloat = 14
+    static let lean: CGFloat = 7
 
     /// How far a layer is moved at `time`: up and down within `rise`, and
-    /// sideways within `lean`, as if rolling past; the near layer is
-    /// quicker, goes the other way and is out of step.
+    /// a few points sideways within `lean`; the near layer is quicker and
+    /// out of step.
     static func offset(near: Bool, at time: Double) -> CGSize {
         let tau = 2 * Double.pi
         if near {
-            let y = 0.62 * sin(tau * time / 4.4 + 1.9) + 0.38 * sin(tau * time / 2.7 + 0.4)
-            let x = -(0.75 * sin(tau * time / 6.8 + 0.7) + 0.25 * sin(tau * time / 3.1 + 1.3))
+            let y = 0.62 * sin(tau * time / 5.9 + 1.9) + 0.38 * sin(tau * time / 3.7 + 0.4)
+            let x = -sin(tau * time / 9.4 + 0.7)
             return CGSize(width: Double(lean) * x, height: Double(rise) * y)
         } else {
-            let y = 0.7 * sin(tau * time / 5.6) + 0.3 * sin(tau * time / 3.5 + 2.2)
-            let x = 0.75 * sin(tau * time / 8.3 + 0.3) + 0.25 * sin(tau * time / 4.1 + 2.6)
-            return CGSize(width: Double(lean) * 0.75 * x, height: Double(rise) * 0.8 * y)
+            let y = 0.7 * sin(tau * time / 7.3) + 0.3 * sin(tau * time / 4.6 + 2.2)
+            let x = sin(tau * time / 11.2 + 0.3)
+            return CGSize(width: Double(lean) * 0.7 * x, height: Double(rise) * 0.8 * y)
         }
     }
 }
@@ -315,7 +315,7 @@ enum ForestSway {
     /// Bands it's drawn in (thin enough that the bend looks smooth).
     static let bands = 28
     /// The most the top of the picture moves, in points.
-    static let reach: CGFloat = 5.5
+    static let reach: CGFloat = 3
     static let canopyName = "ThemeSceneForestCanopy"
     static let trunksName = "ThemeSceneForestTrunks"
     static let frontName = "ThemeSceneForestFront"
@@ -325,10 +325,10 @@ enum ForestSway {
     /// to nothing at the bottom of the canopy.
     static func offset(atShare share: CGFloat, time: Double) -> CGFloat {
         guard share < canopy else { return 0 }
-        let weight = pow(1 - max(0, share) / canopy, 1.5)
+        let weight = pow(1 - max(0, share) / canopy, 1.8)
         let tau = 2 * Double.pi
         let lag = Double(share) * 2.2
-        let breeze = 0.65 * sin(tau * time / 5.8 - lag) + 0.35 * sin(tau * time / 2.8 + 1.3 - lag * 1.5)
+        let breeze = 0.65 * sin(tau * time / 6.8 - lag) + 0.35 * sin(tau * time / 3.1 + 1.3 - lag * 1.5)
         return reach * weight * CGFloat(breeze)
     }
 }

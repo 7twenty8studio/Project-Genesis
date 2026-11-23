@@ -18,6 +18,9 @@ struct ThemeSceneView: View {
     var animates: Bool
     var reduceMotion: Bool
     var lowPower: Bool
+    /// The moment drawn when it isn't moving (a still taken mid-motion for
+    /// a page curl); the composed `ThemeScene.stillTime` otherwise.
+    var frozenTime: Double? = nil
 
     @Environment(\.scenePhase) private var scenePhase
     @State private var visible = false
@@ -35,7 +38,7 @@ struct ThemeSceneView: View {
                     if scene == .forest {
                         // The boughs sway, so the Forest's picture moves too.
                         TimelineView(.animation(minimumInterval: 1.0 / 30, paused: !moving)) { timeline in
-                            let time = moving ? timeline.date.timeIntervalSinceReferenceDate : ThemeScene.stillTime
+                            let time = moving ? timeline.date.timeIntervalSinceReferenceDate : (frozenTime ?? ThemeScene.stillTime)
                             SwayingForest(size: size, time: time)
                         }
                     } else if let name = scene.artName {
@@ -48,13 +51,13 @@ struct ThemeSceneView: View {
                     }
                 }
             TimelineView(.animation(minimumInterval: 1.0 / 30, paused: !moving)) { timeline in
-                let time = moving ? timeline.date.timeIntervalSinceReferenceDate : ThemeScene.stillTime
+                let time = moving ? timeline.date.timeIntervalSinceReferenceDate : (frozenTime ?? ThemeScene.stillTime)
                 SceneMotionLayer(scene: scene, size: size, time: time)
             }
             SceneShadeView(shade: scene.shade)
             if scene == .hearth {
                 TimelineView(.animation(minimumInterval: 1.0 / 30, paused: !moving)) { timeline in
-                    let time = moving ? timeline.date.timeIntervalSinceReferenceDate : ThemeScene.stillTime
+                    let time = moving ? timeline.date.timeIntervalSinceReferenceDate : (frozenTime ?? ThemeScene.stillTime)
                     HearthEmberLayer(time: time)
                 }
             }
@@ -361,20 +364,23 @@ private struct SceneShadeView: View {
     }
 }
 
-/// The scene as a still picture (at `ThemeScene.stillTime`, with its shade),
-/// for pages that curl: a curl needs opaque pages, so each page carries its
+/// The scene as a still picture (with its shade), for pages that curl: a
+/// curl needs opaque pages, so while a page turns each page carries its
 /// part of the scene instead of showing the live one through clear paper.
-/// Drawn once per scene and size.
+/// Taken at the moment the turn starts while the scene moves; otherwise at
+/// `ThemeScene.stillTime`, drawn once per scene and size.
 @MainActor
 enum SceneStill {
     private static var cached: (key: String, image: UIImage)?
 
-    static func image(scene: ThemeScene, layout: ReaderLayout) -> UIImage? {
-        let size = layout.size
+    /// The still for `size` (the reading area by default), at `time` if
+    /// given (not cached), else at `ThemeScene.stillTime`.
+    static func image(scene: ThemeScene, layout: ReaderLayout, size: CGSize? = nil, time: Double? = nil) -> UIImage? {
+        let size = size ?? layout.size
         guard size.width > 1, size.height > 1 else { return nil }
-        let textBottom = size.height - layout.textInsets.bottom
+        let textBottom = layout.size.height - layout.textInsets.bottom
         let key = "\(scene.rawValue)-\(Int(size.width))x\(Int(size.height))-\(Int(textBottom))"
-        if let cached, cached.key == key { return cached.image }
+        if time == nil, let cached, cached.key == key { return cached.image }
         let renderer = ImageRenderer(content: ThemeSceneView(
             scene: scene,
             size: size,
@@ -382,11 +388,12 @@ enum SceneStill {
             textBottom: textBottom,
             animates: false,
             reduceMotion: true,
-            lowPower: true
+            lowPower: true,
+            frozenTime: time
         ))
         renderer.scale = UITraitCollection.current.displayScale
         guard let image = renderer.uiImage else { return nil }
-        cached = (key, image)
+        if time == nil { cached = (key, image) }
         return image
     }
 }

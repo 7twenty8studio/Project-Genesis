@@ -374,10 +374,12 @@ shares; README.md has the architecture.
   and a slow glow (`HearthSparks`). 30 fps, only while Gentle Motion (`seasonalEffects`)
   is on, Reduce Motion off, not in Low Power Mode, the app active and
   the reader on screen; otherwise the still at `ThemeScene.stillTime`.
-  The scene fills the whole reading area (the live size). Page Curl
-  works over scenes: each page is painted with the scene's still
-  (`SceneStill`, its half in a spread), since a curl needs opaque pages;
-  Slide shows the live scene through clear pages. The running head
+  The scene fills the whole reading area (the live size) and moves
+  under clear pages with either page turn. Page Curl needs opaque
+  pages, so only while a page turns (a finger down on the pages, or an
+  animated turn) each page is painted with the scene's still
+  (`SceneStill`, taken at that moment while it moves, its half in a
+  spread), taken off when the turn ends (`paintStill`). The running head
   and page number get a soft shadow. Picker swatches show a still glimpse.
   Deferred: Cedar and Leather Bound (with their curl), Ocean's rain.
 - Widgets: every widget is free in its Classic look at every size, so
