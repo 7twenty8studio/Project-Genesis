@@ -312,6 +312,7 @@ struct SelectionReferenceBar: View {
         .padding(.leading, 14)
         .padding(.trailing, 4)
         .padding(.vertical, 2)
+        .readerBarButtons()
         .glassEffect(.regular, in: Capsule())
     }
 }
