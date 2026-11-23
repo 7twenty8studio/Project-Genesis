@@ -67,7 +67,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
         }
         controller.dataSource = context.coordinator
         controller.delegate = context.coordinator
-        controller.view.backgroundColor = layout.style.palette.uiBackground
+        controller.view.backgroundColor = PaperTexture.surroundColor(for: layout.style.theme)
         // A new controller's view starts out the size of the screen. Page
         // curl lays its first page out for that size and doesn't redo it,
         // so a page beside the side panel (narrower than the screen) came
@@ -121,7 +121,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
         coordinator.pageTurnHapticStrength = pageTurnHapticStrength
         coordinator.feedback.prepare(in: controller.view, haptic: pageTurnHaptic)
         coordinator.setPageChromeHidden(hidesPageChrome)
-        controller.view.backgroundColor = layout.style.palette.uiBackground
+        controller.view.backgroundColor = PaperTexture.surroundColor(for: layout.style.theme)
         coordinator.update(
             layout: layout,
             navigationToken: navigationToken,
@@ -819,6 +819,15 @@ final class ReaderPageViewController: UIViewController {
         headerLabel.accessibilityLabel = header.uppercased()
         footerLabel.textAlignment = footerAlignment
         footerLabel.text = footer
+        // Over a scene (Forest, Ocean, Hearth), a soft shadow keeps the
+        // running head and page number clear of the picture.
+        for label in [headerLabel, footerLabel] {
+            let overScene = layout.style.theme.scene != nil
+            label.layer.shadowColor = UIColor.black.cgColor
+            label.layer.shadowOpacity = overScene ? 0.75 : 0
+            label.layer.shadowRadius = overScene ? 3 : 0
+            label.layer.shadowOffset = .zero
+        }
         // Darker toward the spine, gone a little way into the page.
         let shade = layout.style.theme.isDark ? 0.28 : 0.09
         spineShade.colors = [UIColor.black.withAlphaComponent(shade).cgColor, UIColor.black.withAlphaComponent(0).cgColor]

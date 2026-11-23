@@ -321,9 +321,13 @@ shares; README.md has the architecture.
   band above the running head (`skyBand`, paged reading only), the haze
   fading out before the text (`hazeFade`, no visible edge). 20 fps, 60 only
   while a star shoots; Reduce Motion: gentle fades, no shooting stars).
-  Seasonal touches (`SeasonalEffectView`): autumn leaves, spring petals on
-  a breeze, winter snow at three depths with gusts and corner frost,
-  summer light; Reduce Motion shows the painted still (`paintedMoment`).
+  Seasonal touches (`SeasonalEffectView`): autumn maple, oak and birch
+  leaves, spring petals and whole blossoms on a breeze, winter snow at
+  three depths (dots far away, stellar/fern/plate crystals near) with gusts
+  and corner frost, summer light with dust in the beams and a butterfly
+  every 90 s (`ButterflyFlight`); the shapes are unit paths in
+  Genesis/Shared/SeasonShapes.swift, shared with the drifting widgets
+  (`SeasonShape`); Reduce Motion shows the painted still (`paintedMoment`).
   The morning welcome shows the theme's effect behind it at 70%.
   `ReaderPreferences.nightReading` ("At night, switch to" Off/Night/Starlight,
   and "When": `NightReadingTiming` `.darkMode` (default) or `.hours` with
@@ -335,6 +339,32 @@ shares; README.md has the architecture.
   is pinned by the theme). Starlight
   without Premium falls back to Night, keeping the choice. UI tests never
   switch unless launched with `-uiTestingNight` (then it's always night).
+- Scene themes (Premium via `.premiumThemes`, after Summer in the
+  picker): Forest, Ocean and Hearth (`ReaderTheme.scene`, `ThemeScene`,
+  pure geometry and motion). The owner-approved illustrations (generated
+  22 November 2026 in Versely's illustrated style; originals untouched in
+  Tools/Themes/Originals) are built by Tools/Themes/make_scenes.py into
+  ThemeScene* images (Ocean's swells cut out as two layers, its far crest
+  line softened). `ThemeSceneView` draws the scene behind the live text
+  (pages are clear: `PaperTexture.pageColor`/`surroundColor`), then a
+  soft elliptical shade behind the words (`SceneShade`). Forest fills the
+  height; Ocean is 1.18× from the top; Hearth's fire is smaller, its
+  stones just above the page number, on its own charcoal; wider screens
+  get mirrored copies (never Hearth). `ReaderLayout.sceneFootRoom` ends
+  pages above the swells and the fire's glow (none for Forest); scrolling
+  text passes behind them (the scene's foot drawn again, feathered).
+  Motion: Forest's two mist layers (`ForestMist`) and its boughs swaying
+  (`ForestSway`: only boughs and needles, the canopy in three layers
+  from make_scenes.py, its bands moving most at the top while the trunks
+  stay still over them; floor repainted 23 November 2026 without roots), Ocean's
+  swells rising and settling out of step (`OceanSwells`), Hearth's embers
+  at uneven moments, fading before the text, and a slow glow
+  (`HearthSparks`). 30 fps, only while Gentle Motion (`seasonalEffects`)
+  is on, Reduce Motion off, not in Low Power Mode, the app active and
+  the reader on screen; otherwise the still at `ThemeScene.stillTime`.
+  Scene themes always slide (no curl over clear pages); the running head
+  and page number get a soft shadow. Picker swatches show a still glimpse.
+  Deferred: Cedar and Leather Bound (with their curl), Ocean's rain.
 - Widgets: every widget is free in its Classic look at every size, so
   nothing added from the gallery turns into a locked card (`WidgetAccess`
   in Genesis/Shared). Premium is what people choose inside a widget: the

@@ -1,10 +1,12 @@
 import SwiftUI
 
 /// The season drifting gently across the page while reading with a seasonal
-/// theme, each with its own kind of motion: autumn leaves tumbling down,
-/// spring petals riding a breeze over patches of warm light, winter snow
-/// falling at three depths with a gust now and then and frost in the
-/// corners, or summer sunlight (slow rays and warm colour washes). Sparse
+/// theme, each with its own kind of motion: maple, oak and birch leaves
+/// tumbling down, spring petals and blossoms riding a breeze over patches of
+/// warm light, winter snow (real crystals up close) falling at three depths
+/// with a gust now and then and frost in the corners, or summer sunlight
+/// (slow rays, warm colour washes, dust in the beams and a passing
+/// butterfly). Shapes live in `SeasonShapes`. Sparse
 /// and translucent so the text stays easy to read. It never takes a tap, is
 /// hidden from VoiceOver and holds still in Low Power Mode; with Reduce
 /// Motion (or for verse images) it's one painted still moment.
@@ -67,21 +69,22 @@ private enum SeasonPainter {
     }
 }
 
-/// Seven leaves at a time, falling 14–26 points a second, swaying and
-/// turning over as they go.
+/// Seven leaves at a time (maple, oak and birch, `SeasonShapes`), falling
+/// 14–26 points a second, swaying and turning over as they go.
 private enum AutumnLeaves {
     struct Leaf {
         let x, offset, speed, sway, swaySpeed, phase, size, spin: CGFloat
         let tone: Int
+        let kind: SeasonShapes.LeafKind
     }
 
     static let leaves: [Leaf] = {
         var random = SeededRandom(seed: 14)
-        return (0..<7).map { _ in
+        return (0..<7).map { index in
             Leaf(x: random.next(), offset: random.next(), speed: 14 + random.next() * 12,
                  sway: 18 + random.next() * 22, swaySpeed: 0.35 + random.next() * 0.35,
                  phase: random.next() * .pi * 2, size: random.next(), spin: (random.next() - 0.5) * 1.2,
-                 tone: Int(random.next() * 3) % 3)
+                 tone: Int(random.next() * 3) % 3, kind: .mixed(index))
         }
     }()
     static let colors: [Color] = [0xB4693A, 0xC99541, 0x9C4F2E].map(SeasonColor.make)
@@ -96,40 +99,32 @@ private enum AutumnLeaves {
             context.rotate(by: .radians(Double(leaf.phase + t * leaf.spin)))
             // Tumbling: the leaf turns over as it falls.
             context.scaleBy(x: max(0.2, abs(cos(t * leaf.swaySpeed * 1.3 + leaf.phase))), y: 1)
-            let length = 14 + leaf.size * 10
-            context.fill(shape(length: length), with: .color(colors[leaf.tone].opacity(0.45)))
-            var vein = Path()
-            vein.move(to: CGPoint(x: 0, y: -length / 2))
-            vein.addLine(to: CGPoint(x: 0, y: length / 2 + 3))
-            context.stroke(vein, with: .color(colors[leaf.tone].opacity(0.6)), lineWidth: 0.8)
+            // Large enough for a maple's points and an oak's lobes to show.
+            let length = 20 + leaf.size * 14
+            context.fill(SeasonShapes.leaf(leaf.kind).scaled(length), with: .color(colors[leaf.tone].opacity(0.45)))
+            context.stroke(SeasonShapes.leafVeins(leaf.kind).scaled(length), with: .color(colors[leaf.tone].opacity(0.6)), lineWidth: 0.8)
         }
-    }
-
-    static func shape(length: CGFloat) -> Path {
-        var path = Path()
-        let half = length / 2
-        path.move(to: CGPoint(x: 0, y: -half))
-        path.addQuadCurve(to: CGPoint(x: 0, y: half), control: CGPoint(x: length * 0.55, y: -half * 0.1))
-        path.addQuadCurve(to: CGPoint(x: 0, y: -half), control: CGPoint(x: -length * 0.55, y: half * 0.1))
-        return path
     }
 }
 
 /// Twelve blossom petals drifting down and to the right on one shared
 /// breeze that swells and settles over 50 seconds, each fluttering and
-/// flipping on its own, over two slow patches of warm light.
+/// flipping on its own, over two slow patches of warm light. One in four
+/// is a whole cherry blossom.
 private enum SpringPetals {
     struct Petal {
         let x, offset, fall, drift, flutter, flutterSpeed, phase, spin, size: CGFloat
         let tone: Int
+        let isBlossom: Bool
     }
 
     static let petals: [Petal] = {
         var random = SeededRandom(seed: 8)
-        return (0..<12).map { _ in
+        return (0..<12).map { index in
             Petal(x: random.next(), offset: random.next(), fall: 12 + random.next() * 8, drift: 6 + random.next() * 6,
                   flutter: 8 + random.next() * 14, flutterSpeed: 0.5 + random.next() * 0.6, phase: random.next() * .pi * 2,
-                  spin: (random.next() - 0.5) * 1.4, size: 6.5 + random.next() * 4, tone: Int(random.next() * 3) % 3)
+                  spin: (random.next() - 0.5) * 1.4, size: 6.5 + random.next() * 4, tone: Int(random.next() * 3) % 3,
+                  isBlossom: index % 4 == 0)
         }
     }()
     static let colors: [Color] = [0xE2A9B5, 0xEDC4CB, 0xD493A2].map(SeasonColor.make)
@@ -158,50 +153,60 @@ private enum SpringPetals {
             var context = canvas
             context.translateBy(x: x, y: y)
             context.rotate(by: .radians(Double(petal.phase + t * petal.spin)))
-            // Flipping on both axes reads lighter than a leaf's tumble.
-            context.scaleBy(x: max(0.2, abs(cos(t * petal.flutterSpeed * 1.4 + petal.phase))),
-                            y: 0.65 + 0.35 * sin(t * petal.flutterSpeed + petal.phase * 2))
-            context.fill(shape(size: petal.size), with: .color(colors[petal.tone].opacity(0.55)))
+            if petal.isBlossom {
+                // A whole flower turns over less far, so it keeps its shape.
+                context.scaleBy(x: max(0.45, abs(cos(t * petal.flutterSpeed * 1.4 + petal.phase))), y: 1)
+                drawBlossom(in: context, radius: petal.size * 1.9, tone: petal.tone)
+            } else {
+                // Flipping on both axes reads lighter than a leaf's tumble.
+                context.scaleBy(x: max(0.2, abs(cos(t * petal.flutterSpeed * 1.4 + petal.phase))),
+                                y: 0.65 + 0.35 * sin(t * petal.flutterSpeed + petal.phase * 2))
+                context.fill(SeasonShapes.petal.scaled(petal.size), with: .color(colors[petal.tone].opacity(0.55)))
+            }
         }
     }
 
-    /// A blossom petal with a small notch at its tip.
-    static func shape(size h: CGFloat) -> Path {
-        let w = h * 0.62
-        var path = Path()
-        path.move(to: CGPoint(x: 0, y: h))
-        path.addQuadCurve(to: CGPoint(x: w * 0.4, y: -h), control: CGPoint(x: w, y: 0))
-        path.addLine(to: CGPoint(x: 0, y: -h * 0.68))
-        path.addLine(to: CGPoint(x: -w * 0.4, y: -h))
-        path.addQuadCurve(to: CGPoint(x: 0, y: h), control: CGPoint(x: -w, y: 0))
-        return path
+    static let heart = SeasonColor.make(0xC97D8E)
+    static let pollen = SeasonColor.make(0xE0B25A)
+
+    /// Five petals, a deep pink heart and a ring of stamens.
+    static func drawBlossom(in context: GraphicsContext, radius r: CGFloat, tone: Int) {
+        context.fill(SeasonShapes.blossomPetals.scaled(r), with: .color(colors[tone].opacity(0.6)))
+        context.fill(SeasonShapes.blossomCentre.scaled(r), with: .color(heart.opacity(0.6)))
+        context.stroke(SeasonShapes.stamens.scaled(r), with: .color(heart.opacity(0.6)), lineWidth: max(0.4, r * 0.04))
+        context.fill(SeasonShapes.stamenTips.scaled(r), with: .color(pollen.opacity(0.6)))
     }
 }
 
 /// Snow at three depths, so the page has distance: small slow flakes far
-/// away, middle ones, and a few large soft ones close by. Every 25 seconds a
-/// gentle 4-second gust leans it all sideways, the near flakes most. A still
-/// frost pattern sits in the four corners.
+/// away (dots, too small to show a shape), six-armed crystals in the middle,
+/// and a few large ones close by, stellar, fern and plate crystals
+/// (`SeasonShapes`) turning slowly as they fall. Every 25 seconds a gentle
+/// 4-second gust leans it all sideways, the near flakes most. A still frost
+/// pattern sits in the four corners.
 private enum WinterSnow {
     struct Flake {
-        let x, offset, radius, fall, sway, swaySpeed, phase, gust, opacity: CGFloat
+        let x, offset, radius, fall, sway, swaySpeed, phase, gust, opacity, turn: CGFloat
         let isNear: Bool
+        /// Nil: a far-away dot.
+        let kind: SeasonShapes.FlakeKind?
     }
 
     static let flakes: [Flake] = {
         var random = SeededRandom(seed: 21)
-        let depths: [(count: Int, radius: ClosedRange<CGFloat>, fall: ClosedRange<CGFloat>, opacity: CGFloat, gust: CGFloat, sway: CGFloat, near: Bool)] = [
-            (18, 0.9...1.3, 7...11, 0.6, 0.35, 6, false),
-            (12, 1.8...2.4, 13...19, 0.72, 0.65, 12, false),
-            (5, 3.6...5, 24...32, 0.55, 1, 20, true),
+        let depths: [(count: Int, radius: ClosedRange<CGFloat>, fall: ClosedRange<CGFloat>, opacity: CGFloat, gust: CGFloat, sway: CGFloat, near: Bool, kinds: [SeasonShapes.FlakeKind])] = [
+            (18, 0.9...1.3, 7...11, 0.6, 0.35, 6, false, []),
+            (12, 3...4.2, 13...19, 0.9, 0.65, 12, false, [.stellar, .plate]),
+            (5, 7...10, 24...32, 0.8, 1, 20, true, [.fern, .plate, .stellar]),
         ]
         return depths.flatMap { depth in
-            (0..<depth.count).map { _ in
+            (0..<depth.count).map { index in
                 Flake(x: random.next(), offset: random.next(),
                       radius: depth.radius.lowerBound + random.next() * (depth.radius.upperBound - depth.radius.lowerBound),
                       fall: depth.fall.lowerBound + random.next() * (depth.fall.upperBound - depth.fall.lowerBound),
                       sway: depth.sway, swaySpeed: 0.3 + random.next() * 0.4, phase: random.next() * .pi * 2,
-                      gust: depth.gust, opacity: depth.opacity, isNear: depth.near)
+                      gust: depth.gust, opacity: depth.opacity, turn: index.isMultiple(of: 2) ? 0.15 : -0.15,
+                      isNear: depth.near, kind: depth.kinds.isEmpty ? nil : depth.kinds[index % depth.kinds.count])
             }
         }
     }()
@@ -220,24 +225,40 @@ private enum WinterSnow {
     static func draw(in canvas: GraphicsContext, size page: CGSize, time t: CGFloat) {
         let gust = gustOffset(t)
         for flake in flakes {
-            let travelY = page.height + 20
-            let y = SeasonPainter.wrap(flake.offset * travelY + t * flake.fall, travelY) - 10
-            let travelX = page.width + 20
-            let x = SeasonPainter.wrap(flake.x * travelX + gust * flake.gust + flake.sway * sin(t * flake.swaySpeed + flake.phase), travelX) - 10
+            // Room past the edges for the near crystals and their halos.
+            let travelY = page.height + 40
+            let y = SeasonPainter.wrap(flake.offset * travelY + t * flake.fall, travelY) - 20
+            let travelX = page.width + 40
+            let x = SeasonPainter.wrap(flake.x * travelX + gust * flake.gust + flake.sway * sin(t * flake.swaySpeed + flake.phase), travelX) - 20
             let center = CGPoint(x: x, y: y)
-            if flake.isNear {
-                // Close to the eye: soft, like slightly out of focus.
-                let outer = flake.radius * 1.6
-                canvas.fill(circle(center, outer), with: .radialGradient(
-                    Gradient(colors: [blue.opacity(flake.opacity), blue.opacity(0)]), center: center, startRadius: 0, endRadius: outer))
-                canvas.fill(circle(center, flake.radius), with: .radialGradient(
-                    Gradient(colors: [Color.white.opacity(0.9), Color.white.opacity(0)]), center: center, startRadius: 0, endRadius: flake.radius))
+            if let kind = flake.kind {
+                var context = canvas
+                context.translateBy(x: x, y: y)
+                context.rotate(by: .radians(Double(flake.phase + t * flake.turn)))
+                if flake.isNear {
+                    // Close to the eye: a soft halo, as if slightly out of focus.
+                    let halo = flake.radius * 1.3
+                    context.fill(circle(.zero, halo), with: .radialGradient(
+                        Gradient(colors: [blue.opacity(0.25), blue.opacity(0)]), center: .zero, startRadius: 0, endRadius: halo))
+                }
+                drawCrystal(kind, radius: flake.radius, opacity: flake.opacity, in: context)
             } else {
                 // Pale blue-grey with a white centre, so it shows on the pale paper.
                 canvas.fill(circle(center, flake.radius), with: .color(blue.opacity(flake.opacity)))
                 canvas.fill(circle(center, flake.radius / 2), with: .color(.white.opacity(0.85)))
             }
         }
+    }
+
+    /// A crystal in blue-grey with a white line down every arm, so it shows
+    /// on the pale paper.
+    static func drawCrystal(_ kind: SeasonShapes.FlakeKind, radius r: CGFloat, opacity: CGFloat, in context: GraphicsContext) {
+        let arms = SeasonShapes.flakeArms(kind).scaled(r)
+        let core = SeasonShapes.flakeCore(kind)?.scaled(r)
+        context.stroke(arms, with: .color(blue.opacity(opacity * 0.75)), style: StrokeStyle(lineWidth: max(1.1, r * 0.16), lineCap: .round))
+        if let core { context.fill(core, with: .color(blue.opacity(opacity * 0.75))) }
+        context.stroke(arms, with: .color(.white.opacity(0.95 * opacity)), style: StrokeStyle(lineWidth: max(0.45, r * 0.06), lineCap: .round))
+        if let core { context.stroke(core, with: .color(.white.opacity(0.95 * opacity)), lineWidth: max(0.45, r * 0.06)) }
     }
 
     /// Fine frost in each corner: a soft white glow and a few branching
@@ -287,7 +308,8 @@ private enum WinterSnow {
 
 /// Summer: soft rays of sunlight slanting in from the top corner, slowly
 /// breathing and swaying, over warm washes of colour that drift like light
-/// through leaves.
+/// through leaves; specks of dust float and twinkle in the beams, and now
+/// and then a butterfly crosses the page (`ButterflyFlight`).
 private enum SummerLight {
     struct Wash {
         let x: CGFloat, y: CGFloat, radius: CGFloat
@@ -332,7 +354,7 @@ private enum SummerLight {
         for index in 0..<6 {
             let i = CGFloat(index)
             let sway = sin(t * 0.12 + i * 1.7) * 0.025
-            let angle = CGFloat.pi * 0.62 + i * 0.075 + sway  // pointing down and to the left
+            let angle = beamAngle(index) + sway  // pointing down and to the left
             let spread = 0.024 + 0.016 * (i.truncatingRemainder(dividingBy: 2))
             let breathe = 0.5 + 0.5 * sin(t * 0.35 + i * 1.3)
             let end1 = CGPoint(x: source.x + cos(angle - spread) * length, y: source.y + sin(angle - spread) * length)
@@ -348,9 +370,76 @@ private enum SummerLight {
                 endPoint: CGPoint(x: source.x + cos(angle) * length * 0.75, y: source.y + sin(angle) * length * 0.75)
             ))
         }
+
+        drawMotes(in: canvas, size: page, source: source, length: length, time: t)
+        drawButterfly(in: canvas, size: page, time: t)
     }
 
     static let ray = SeasonColor.make(0xF0C25E)
+
+    /// The beams' direction (they point down and to the left).
+    static func beamAngle(_ index: Int) -> CGFloat { .pi * 0.62 + CGFloat(index) * 0.075 }
+
+    struct Mote {
+        let beam: Int
+        let start, speed, jitter, radius, twinkle, phase: CGFloat
+    }
+
+    static let motes: [Mote] = {
+        var random = SeededRandom(seed: 5)
+        return (0..<22).map { _ in
+            Mote(beam: Int(random.next() * 6) % 6, start: random.next(), speed: 0.004 + random.next() * 0.006,
+                 jitter: (random.next() - 0.5) * 0.05, radius: 0.7 + random.next() * 1.1,
+                 twinkle: 0.6 + random.next(), phase: random.next() * .pi * 2)
+        }
+    }()
+    static let moteCore = SeasonColor.make(0xFFF8E1)
+
+    /// Dust drifting slowly down each beam, fading in and out at its ends.
+    static func drawMotes(in canvas: GraphicsContext, size page: CGSize, source: CGPoint, length: CGFloat, time t: CGFloat) {
+        for (index, mote) in motes.enumerated() {
+            let i = CGFloat(index)
+            let along = (mote.start + t * mote.speed).truncatingRemainder(dividingBy: 1) // 0..<1 along its stretch
+            let angle = beamAngle(mote.beam) + mote.jitter
+            let distance = length * (0.15 + 0.75 * along) * 0.75
+            let center = CGPoint(x: source.x + cos(angle) * distance + sin(t * 0.3 + i) * 6,
+                                 y: source.y + sin(angle) * distance + cos(t * 0.25 + i) * 4)
+            let opacity = (0.35 + 0.45 * abs(sin(t * mote.twinkle + mote.phase))) * sin(.pi * along)
+            let glow = mote.radius * 3
+            canvas.fill(Path(ellipseIn: CGRect(x: center.x - glow, y: center.y - glow, width: glow * 2, height: glow * 2)),
+                        with: .radialGradient(Gradient(stops: [
+                            .init(color: moteCore.opacity(opacity), location: 0),
+                            .init(color: ray.opacity(opacity * 0.55), location: 0.35),
+                            .init(color: ray.opacity(0), location: 1),
+                        ]), center: center, startRadius: 0, endRadius: glow))
+        }
+    }
+
+    static let wingUpper = SeasonColor.make(0xD99A4E)
+    static let wingLower = SeasonColor.make(0xC9813C)
+    static let wingSpot = SeasonColor.make(0xFFF5E1)
+    static let butterflyBody = SeasonColor.make(0x6B4A2E)
+
+    /// A small butterfly in warm amber, wings beating by narrowing.
+    static func drawButterfly(in canvas: GraphicsContext, size page: CGSize, time t: CGFloat) {
+        guard let flight = ButterflyFlight.state(at: t, page: page) else { return }
+        let size: CGFloat = 11
+        var context = canvas
+        context.opacity *= 0.6
+        context.translateBy(x: flight.position.x, y: flight.position.y)
+        context.rotate(by: .radians(Double(flight.angle)))
+        for side: CGFloat in [1, -1] {
+            var wing = context
+            wing.scaleBy(x: side * flight.wingOpen, y: 1)
+            wing.fill(SeasonShapes.butterflyUpperWing.scaled(size), with: .color(wingUpper))
+            wing.fill(SeasonShapes.butterflyLowerWing.scaled(size), with: .color(wingLower))
+            let spot = CGPoint(x: size * 0.6, y: -size * 0.45)
+            let r = size * 0.09
+            wing.fill(Path(ellipseIn: CGRect(x: spot.x - r, y: spot.y - r, width: r * 2, height: r * 2)), with: .color(wingSpot.opacity(0.8)))
+        }
+        context.fill(SeasonShapes.butterflyBody.scaled(size), with: .color(butterflyBody))
+        context.stroke(SeasonShapes.butterflyAntennae.scaled(size), with: .color(butterflyBody), lineWidth: max(0.4, size * 0.03))
+    }
 }
 
 private enum SeasonColor {
