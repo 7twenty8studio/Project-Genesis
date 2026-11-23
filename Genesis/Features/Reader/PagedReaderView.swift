@@ -187,6 +187,10 @@ struct PagedReaderView: UIViewControllerRepresentable {
         private var sceneStill: UIImage?
         /// The moving scene laid over the still while the scene moves.
         private var liveScene: AnyView?
+        /// Every page given the still, shown or not (a page UIKit was
+        /// still curling into place when the still came off), so taking
+        /// it off reaches them all and none keeps a stale scene.
+        private let paintedPages = NSHashTable<ReaderPageViewController>.weakObjects()
         /// A finger is on the pages (from the touch recognizer).
         private var fingerDown = false
         private var stillCheckScheduled = false
@@ -206,32 +210,52 @@ struct PagedReaderView: UIViewControllerRepresentable {
                         scene: curlScene, layout: layout, size: pageSize,
                         time: sceneMoves ? Date().timeIntervalSinceReferenceDate : nil
                     )
+                    let safeBottom = layout.safeArea.bottom
+                    let textBottom = layout.size.height - layout.textInsets.bottom
                     liveScene = sceneMoves ? AnyView(
-                        ThemeSceneView(
-                            scene: curlScene,
-                            size: pageSize,
-                            safeBottom: layout.safeArea.bottom,
-                            textBottom: layout.size.height - layout.textInsets.bottom,
-                            animates: true,
-                            reduceMotion: false,
-                            lowPower: false
-                        )
+                        // Sized by the space it's given (the whole reading
+                        // area, see `setLiveScene`), never centred in it.
+                        GeometryReader { proxy in
+                            ThemeSceneView(
+                                scene: curlScene,
+                                size: proxy.size,
+                                safeBottom: safeBottom,
+                                textBottom: textBottom,
+                                animates: true,
+                                reduceMotion: false,
+                                lowPower: false
+                            )
+                        }
+                        .ignoresSafeArea()
                         // Turns only happen while the app is active.
                         .environment(\.scenePhase, .active)
                     ) : nil
                 }
                 guard sceneStill != nil else { return }
             } else {
-                guard sceneStill != nil else { return }
                 sceneStill = nil
                 liveScene = nil
+                for page in paintedPages.allObjects {
+                    page.setSceneStill(nil, part: nil)
+                    page.setLiveScene(nil, part: nil)
+                }
+                paintedPages.removeAllObjects()
+                return
             }
             let shown = pageController?.viewControllers ?? []
             for page in (shown + extra).flatMap({ Self.pages(in: $0) }) {
-                let part: PageSpread.Half? = spread ? (PageSpread.isLeft(page.location.index) ? .left : .right) : nil
-                page.setSceneStill(sceneStill, part: part)
-                page.setLiveScene(liveScene, part: part)
+                paint(page)
             }
+        }
+
+        /// Gives one page the still (and the moving scene), when a turn is
+        /// under way.
+        private func paint(_ page: ReaderPageViewController) {
+            guard sceneStill != nil else { return }
+            let part: PageSpread.Half? = spread ? (PageSpread.isLeft(page.location.index) ? .left : .right) : nil
+            page.setSceneStill(sceneStill, part: part)
+            page.setLiveScene(liveScene, part: part)
+            paintedPages.add(page)
         }
 
         /// A finger on the pages: the still goes on before a curl can start,
@@ -244,6 +268,9 @@ struct PagedReaderView: UIViewControllerRepresentable {
                 paintStill(true)
             case .ended, .cancelled, .failed:
                 fingerDown = false
+                // A curl held a while still has to finish once the finger
+                // lifts: trust the turn a little longer.
+                if turnStartedAt != nil { turnStartedAt = Date() }
                 takeStillOffWhenIdle()
             default:
                 break
@@ -419,6 +446,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
 
         private func turnFinished() {
             turnStartedAt = nil
+            if sceneStill == nil, paintedPages.count > 0 { paintStill(false) }
             takeStillOffWhenIdle()
             flushPendingUpdate()
         }
@@ -589,8 +617,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
                 footerAlignment: spread ? (isLeft ? .left : .right) : .center,
                 spineEdge: spread ? (isLeft ? .right : .left) : nil
             )
-            page.setSceneStill(sceneStill, part: spread ? (isLeft ? .left : .right) : nil)
-            page.setLiveScene(liveScene, part: spread ? (isLeft ? .left : .right) : nil)
+            paint(page)
             page.onEvent = { [weak self, weak page] event in self?.handle(event, on: page) }
             page.setChromeHidden(pageChromeHidden, animated: false)
             return page
@@ -602,8 +629,7 @@ struct PagedReaderView: UIViewControllerRepresentable {
             let page = ReaderPageViewController(location: location)
             page.configure(text: NSAttributedString(), layout: layout, header: "", showsHeader: false, footer: "",
                            spineEdge: PageSpread.isLeft(location.index) ? .right : .left)
-            page.setSceneStill(sceneStill, part: PageSpread.isLeft(location.index) ? .left : .right)
-            page.setLiveScene(liveScene, part: PageSpread.isLeft(location.index) ? .left : .right)
+            paint(page)
             page.onEvent = { [weak self, weak page] event in self?.handle(event, on: page) }
             page.setChromeHidden(pageChromeHidden, animated: false)
             return page
