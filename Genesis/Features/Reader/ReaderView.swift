@@ -153,7 +153,9 @@ struct ReaderView: View {
                 // Forest, Ocean and Hearth read over their scene, the
                 // others over the theme's colour.
                 if let scene = layout.style.theme.scene {
-                    sceneBackdrop(scene, layout: layout)
+                    // The live size: the scene always fills the whole
+                    // reading area, even while the pages' size is settling.
+                    sceneBackdrop(scene, layout: layout, size: proxy.size)
                 } else {
                     palette.background
                 }
@@ -166,7 +168,7 @@ struct ReaderView: View {
                 // Scrolling over Ocean's swells or Hearth's fire, the words
                 // pass behind them (pages simply end above them).
                 if let scene = layout.style.theme.scene, layout.sceneFootRoom > 0, !textStaysInPlace {
-                    sceneBackdrop(scene, layout: layout)
+                    sceneBackdrop(scene, layout: layout, size: proxy.size)
                         .mask { sceneFootMask(layout) }
                 }
 
@@ -472,10 +474,10 @@ struct ReaderView: View {
     }
 
     /// The scene behind the words in Forest, Ocean and Hearth.
-    private func sceneBackdrop(_ scene: ThemeScene, layout: ReaderLayout) -> some View {
+    private func sceneBackdrop(_ scene: ThemeScene, layout: ReaderLayout, size: CGSize) -> some View {
         ThemeSceneView(
             scene: scene,
-            size: layout.size,
+            size: size,
             safeBottom: layout.safeArea.bottom,
             textBottom: layout.size.height - layout.textInsets.bottom,
             animates: preferences.seasonalEffects,
@@ -497,11 +499,11 @@ struct ReaderView: View {
         )
     }
 
-    /// The page turn: the chosen one, but a slide with Reduce Motion and
-    /// over a scene (Forest, Ocean, Hearth), where the pages are clear and
-    /// a curl would show the words without their paper.
+    /// The page turn: the chosen one, but a slide with Reduce Motion. Over
+    /// a scene (Forest, Ocean, Hearth) a curl turns pages painted with the
+    /// scene's still (`SceneStill`); a slide shows the live scene.
     private func pageTurn(for theme: ReaderTheme) -> PageTurnStyle {
-        if reduceMotion || theme.scene != nil { return .slide }
+        if reduceMotion { return .slide }
         return preferences.pageTurn
     }
 

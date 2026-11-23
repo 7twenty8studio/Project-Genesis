@@ -330,3 +330,33 @@ private struct SceneShadeView: View {
         }
     }
 }
+
+/// The scene as a still picture (at `ThemeScene.stillTime`, with its shade),
+/// for pages that curl: a curl needs opaque pages, so each page carries its
+/// part of the scene instead of showing the live one through clear paper.
+/// Drawn once per scene and size.
+@MainActor
+enum SceneStill {
+    private static var cached: (key: String, image: UIImage)?
+
+    static func image(scene: ThemeScene, layout: ReaderLayout) -> UIImage? {
+        let size = layout.size
+        guard size.width > 1, size.height > 1 else { return nil }
+        let textBottom = size.height - layout.textInsets.bottom
+        let key = "\(scene.rawValue)-\(Int(size.width))x\(Int(size.height))-\(Int(textBottom))"
+        if let cached, cached.key == key { return cached.image }
+        let renderer = ImageRenderer(content: ThemeSceneView(
+            scene: scene,
+            size: size,
+            safeBottom: layout.safeArea.bottom,
+            textBottom: textBottom,
+            animates: false,
+            reduceMotion: true,
+            lowPower: true
+        ))
+        renderer.scale = UITraitCollection.current.displayScale
+        guard let image = renderer.uiImage else { return nil }
+        cached = (key, image)
+        return image
+    }
+}
