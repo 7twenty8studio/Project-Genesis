@@ -5,7 +5,12 @@
 
 export type BoardEntry = { number: number; name: string };
 export type BoardDraw = { id: number; number: number; name: string; purpose: Purpose; no_show: boolean };
-export type Board = { name: string; open: boolean; entries: BoardEntry[]; draws: BoardDraw[] };
+/** The race timer as the database keeps it (20261129000000): each lane's go time (epoch ms) and its result (ms). */
+export type LiveTimer = { started: (number | null)[]; finished: (number | null)[] };
+/** What every screen shares: the last "clear" (epoch ms), the timer and the players' names. */
+export type Live = { cleared?: number; timer?: LiveTimer; names?: string[] };
+/** `live` and `now` (the database's clock, epoch ms) come from 20261129000000. */
+export type Board = { name: string; open: boolean; entries: BoardEntry[]; draws: BoardDraw[]; live?: Live; now?: number };
 export type Purpose = "volunteer" | "raffle";
 
 /** "#007": entry numbers are shown with three digits, as on the paper tickets. */
@@ -113,4 +118,32 @@ export function findEntries(entries: BoardEntry[], query: string, limit = 8): Bo
   if (!q) return [];
   if (/^\d+$/.test(q)) return entries.filter((e) => e.number === Number(q)).slice(0, limit);
   return entries.filter((e) => fold(e.name).split(" ").some((word) => word.startsWith(q)) || fold(e.name).startsWith(q)).slice(0, limit);
+}
+
+/** The newest draw id for `purpose` (0 when none), so a screen only rolls draws made after it opened. */
+export function lastDrawId(board: Board, purpose: Purpose): number {
+  return board.draws.reduce((id, d) => (d.purpose === purpose && d.id > id ? d.id : id), 0);
+}
+
+/** A draw for `purpose` newer than `after`, made on another screen (the newest, if several), or null. */
+export function drawSince(board: Board, purpose: Purpose, after: number): BoardDraw | null {
+  let found: BoardDraw | null = null;
+  for (const d of board.draws) if (d.purpose === purpose && d.id > after && (!found || d.id > found.id)) found = d;
+  return found;
+}
+
+/**
+ * The shared timer on this screen at the database's time `serverNow`:
+ * the 3-2-1 still to show (or null), and each lane's time so far (or its
+ * result once stopped). A lane that hasn't started reads 0.
+ */
+export function timerAt(timer: LiveTimer | undefined, serverNow: number): { count: number | null; elapsed: number[]; running: boolean[]; done: boolean[] } {
+  const started = [0, 1].map((i) => timer?.started?.[i] ?? null);
+  const finished = [0, 1].map((i) => timer?.finished?.[i] ?? null);
+  const waiting = started.filter((go): go is number => go !== null && go > serverNow);
+  const count = waiting.length ? Math.min(3, Math.max(1, Math.ceil((Math.min(...waiting) - serverNow) / 1000))) : null;
+  const elapsed = [0, 1].map((i) => finished[i] ?? (started[i] !== null && started[i]! <= serverNow ? serverNow - started[i]! : 0));
+  const running = [0, 1].map((i) => finished[i] === null && started[i] !== null && started[i]! <= serverNow);
+  const done = [0, 1].map((i) => finished[i] !== null);
+  return { count, elapsed, running, done };
 }

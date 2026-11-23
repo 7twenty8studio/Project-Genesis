@@ -87,6 +87,36 @@ let people = [
   { user_id: "00000000-0000-4000-8000-0000000000a4", name: "Dan", role: "member", joined_at: "2026-11-04T00:00:00Z", sermons: 0, me: false },
 ];
 
+const gw = { entries: [{ number: 1, name: "Ana" }, { number: 2, name: "Ben" }, { number: 3, name: "Cy" }], draws: [], live: {}, open: true };
+function giveaway(res, fn, a) {
+  const now = Date.now();
+  switch (fn) {
+    case "giveaway_board": return send(res, 200, { name: "Versely launch day", open: gw.open, entries: gw.entries, draws: gw.draws, live: gw.live, now });
+    case "giveaway_draw": {
+      const taken = new Set(gw.draws.filter((d) => d.purpose === a.p_purpose).map((d) => d.number));
+      const left = gw.entries.filter((e) => !taken.has(e.number));
+      if (!left.length) return fail(res, "nobody_left");
+      const e = left[Math.floor(Math.random() * left.length)];
+      const d = { id: gw.draws.length + 1, number: e.number, name: e.name, purpose: a.p_purpose, no_show: false };
+      gw.draws.push(d);
+      return send(res, 200, { id: d.id, number: d.number, name: d.name, purpose: d.purpose });
+    }
+    case "giveaway_no_show": { const d = gw.draws.find((x) => x.id === a.p_draw); if (d) d.no_show = true; return send(res, 200, !!d); }
+    case "giveaway_set_open": gw.open = !!a.p_open; return send(res, 200, gw.open);
+    case "giveaway_live": {
+      const t = gw.live.timer ?? { started: [null, null], finished: [null, null] };
+      if (a.p_action === "clear") gw.live.cleared = now;
+      else if (a.p_action === "timer_names") gw.live.names = a.p_names;
+      else if (a.p_action === "timer_start") { for (const i of [0, 1]) if (t.started[i] === null && t.finished[i] === null) { t.started[i] = now + 3000; if (!a.p_together) break; } }
+      else if (a.p_action === "timer_stop") { const i = a.p_lane; if (t.started[i] !== null && t.started[i] <= now && t.finished[i] === null) t.finished[i] = now - t.started[i]; }
+      else if (a.p_action === "timer_reset") { t.started = [null, null]; t.finished = [null, null]; }
+      if (a.p_action.startsWith("timer_") && a.p_action !== "timer_names") gw.live.timer = t;
+      return send(res, 200, { ...gw.live, now });
+    }
+    default: return fail(res, "not_found");
+  }
+}
+
 createServer(async (req, res) => {
   const url = new URL(req.url, "http://x");
   if (req.method === "OPTIONS") return send(res, 204, "", "text/plain");
@@ -156,6 +186,8 @@ createServer(async (req, res) => {
     }
     if (fn === "youversion_web_bibles") return send(res, 200, [{ id: "NIV", name: "New International Version", language: "en" }]);
     if (!signedIn(req)) return fail(res, "not_allowed", 400);
+    // The launch giveaway (20261127000000, 20261129000000): three entries, draws and the shared timer.
+    if (fn.startsWith("giveaway_")) return giveaway(res, fn, a);
     const s = sermons.get(a.p_sermon);
     if (isPreacher(req) && ["new_invite_code", "set_church_locations", "set_sermons_listed", "review_church_sermon_reports"].includes(fn)) return fail(res, fn === "new_invite_code" ? "leaders_only" : "not_allowed");
     if (isPreacher(req) && s && s.created_by !== "u2") return fail(res, "not_allowed");

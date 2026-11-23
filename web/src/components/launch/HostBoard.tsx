@@ -2,9 +2,9 @@
 
 import QRCode from "qrcode";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { drawNumber, loadBoard, markNoShow, setEntriesOpen } from "@/app/launch/actions";
+import { changeLive, drawNumber, loadBoard, markNoShow, setEntriesOpen, type LiveAction } from "@/app/launch/actions";
 import { translator, type Lang } from "@/lib/i18n";
-import { drawFromRange, findEntries, hostProblem, poolFor, rollFrames, stopwatch, ticket, type Board, type Purpose } from "@/lib/giveaway";
+import { drawFromRange, drawSince, findEntries, hostProblem, lastDrawId, poolFor, rollFrames, stopwatch, ticket, timerAt, type Board, type Live, type Purpose } from "@/lib/giveaway";
 import { Confetti } from "./Confetti";
 
 type Mode = "volunteer" | "raffle" | "timer" | "offline";
@@ -22,6 +22,11 @@ const typing = (event: KeyboardEvent) => {
  * ticket (the database picks the number), the game timer, and a draw from
  * paper ticket numbers if the internet is down. Space or Enter does the main
  * thing; N draws again when someone isn't there; 1 and 2 stop the players.
+ *
+ * Every screen follows the others (20261129000000): a draw made anywhere
+ * rolls here too, Clear empties every draw screen, and the timer lives in
+ * the database. So the host can run it all from an iPad while the
+ * projector's OBS scenes (?scene=...) follow within a second.
  */
 export function HostBoard({ lang, initial, entryLink, scene }: { lang: Lang; initial: Board; entryLink: string; scene?: "volunteer" | "raffle" | "timer" }) {
   const t = translator(lang);
@@ -42,13 +47,31 @@ export function HostBoard({ lang, initial, entryLink, scene }: { lang: Lang; ini
       .catch(() => setQr(null));
   }, [entryLink]);
 
-  // New entries keep arriving until the draw.
+  // The database's clock minus this screen's: the largest sample wins, since a
+  // slow answer can only make it look smaller.
+  const offset = useRef<number | null>(null);
+  const sampleClock = (serverNow: number | undefined) => {
+    if (typeof serverNow !== "number") return;
+    const sample = serverNow - Date.now();
+    if (offset.current === null || sample > offset.current) offset.current = sample;
+  };
+  const serverNow = () => Date.now() + (offset.current ?? 0);
+
+  // What this screen has already shown, so only newer draws and clears play here.
+  const seen = useRef({ volunteer: lastDrawId(initial, "volunteer"), raffle: lastDrawId(initial, "raffle"), cleared: initial.live?.cleared ?? 0 });
+  const [live, setLive] = useState<Live>(initial.live ?? {});
+
+  // New entries, and what the other screens did, about once a second.
   const refresh = useCallback(async () => {
     const result = await loadBoard();
-    if (result.ok) setBoard(result.value);
+    if (result.ok) {
+      sampleClock(result.value.now);
+      setBoard(result.value);
+      if (result.value.live) setLive(result.value.live);
+    }
   }, []);
   useEffect(() => {
-    const id = window.setInterval(refresh, 5000);
+    const id = window.setInterval(refresh, 1000);
     return () => window.clearInterval(id);
   }, [refresh]);
 
@@ -84,6 +107,31 @@ export function HostBoard({ lang, initial, entryLink, scene }: { lang: Lang; ini
     }
   }, []);
 
+  // A draw or a clear made on another screen.
+  useEffect(() => {
+    if (rolling) return;
+    const cleared = board.live?.cleared ?? 0;
+    if (cleared > seen.current.cleared) {
+      seen.current.cleared = cleared;
+      clearTimers();
+      setShown(null);
+    }
+    if (mode !== "volunteer" && mode !== "raffle") return;
+    const next = drawSince(board, mode, seen.current[mode]);
+    if (!next) return;
+    seen.current[mode] = next.id;
+    roll([...poolFor(board, mode), next.number], { id: next.id, number: next.number, name: next.name, landed: true });
+  }, [board, mode, rolling, roll]);
+
+  /** Clear on every draw screen. */
+  const clearShown = useCallback(async () => {
+    clearTimers();
+    setRolling(false);
+    setShown(null);
+    const result = await changeLive("clear");
+    if (result.ok && typeof result.value.cleared === "number") seen.current.cleared = Math.max(seen.current.cleared, result.value.cleared);
+  }, []);
+
   const draw = useCallback(
     async (purpose: Purpose) => {
       if (rolling) return;
@@ -94,6 +142,7 @@ export function HostBoard({ lang, initial, entryLink, scene }: { lang: Lang; ini
         setProblem(t(hostProblem(result.code)));
         return;
       }
+      seen.current[purpose] = Math.max(seen.current[purpose], result.value.id);
       roll(pool.length ? pool : [result.value.number], { id: result.value.id, number: result.value.number, name: result.value.name, landed: true });
       void refresh();
     },
@@ -140,64 +189,59 @@ export function HostBoard({ lang, initial, entryLink, scene }: { lang: Lang; ini
     roll(pool, { id: null, number, name: null, landed: true });
   }, [rolling, lastTicket, offlineDrawn, roll, t]);
 
-  // The game timer: two players, head to head or one at a time.
-  const [players, setPlayers] = useState([t("Player 1"), t("Player 2")]);
-  const [together, setTogether] = useState(true);
-  const [count, setCount] = useState<number | null>(null);
-  const [startedAt, setStartedAt] = useState<(number | null)[]>([null, null]);
-  const [finished, setFinished] = useState<(number | null)[]>([null, null]);
-  const [now, setNow] = useState(0);
+  // The game timer: two players, head to head or one at a time. Its state is
+  // the database's (giveaway_live), so the iPad and the projector agree.
+  const [players, setPlayers] = useState(() => [initial.live?.names?.[0] || t("Player 1"), initial.live?.names?.[1] || t("Player 2")]);
+  // Names typed on another screen (not while typing one here).
+  const typingName = useRef(false);
   useEffect(() => {
-    if (!startedAt.some((s, i) => s !== null && finished[i] === null)) return;
+    if (typingName.current || !live.names) return;
+    setPlayers((p) => p.map((v, i) => live.names?.[i] || v));
+  }, [live.names]);
+  const [together, setTogether] = useState(true);
+  const [now, setNow] = useState(initial.now ?? 0); // the database's time, moved on each frame while it matters
+  const clock = timerAt(live.timer, now);
+  const { count } = clock;
+  const ticking = count !== null || clock.running.some(Boolean);
+  useEffect(() => {
     let frame = 0;
     const tick = () => {
-      setNow(performance.now());
-      frame = requestAnimationFrame(tick);
+      setNow(serverNow());
+      if (ticking) frame = requestAnimationFrame(tick);
     };
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [startedAt, finished]);
+  }, [ticking, live]);
 
-  const startTimer = useCallback(() => {
-    if (count !== null) return;
-    const lanes = together ? [0, 1].filter((i) => finished[i] === null && startedAt[i] === null) : [[0, 1].find((i) => finished[i] === null && startedAt[i] === null)].filter((i): i is number => i !== undefined);
-    if (!lanes.length) return;
-    clearTimers();
-    setCount(3);
-    timers.current.push(window.setTimeout(() => setCount(2), 1000));
-    timers.current.push(window.setTimeout(() => setCount(1), 2000));
-    timers.current.push(
-      window.setTimeout(() => {
-        const at = performance.now();
-        setCount(null);
-        setNow(at);
-        setStartedAt((s) => s.map((v, i) => (lanes.includes(i) ? at : v)));
-      }, 3000),
-    );
-  }, [count, together, finished, startedAt]);
-
-  const stopLane = useCallback(
-    (lane: number) => {
-      const begun = startedAt[lane];
-      if (begun === null || finished[lane] !== null) return;
-      const time = performance.now() - begun;
-      setFinished((f) => f.map((v, i) => (i === lane ? time : v)));
-      if (finished[1 - lane] !== null) setBurst((b) => b + 1);
+  const timerStep = useCallback(
+    async (action: LiveAction, lane: number | null = null) => {
+      const result = await changeLive(action, lane, together, action === "timer_names" ? players : null);
+      if (!result.ok) {
+        setProblem(t(hostProblem(result.code)));
+        return;
+      }
+      setProblem(null);
+      sampleClock(result.value.now);
+      setLive({ cleared: result.value.cleared, timer: result.value.timer, names: result.value.names });
     },
-    [startedAt, finished],
+    [together, players, t],
   );
+  const startTimer = useCallback(() => void timerStep("timer_start"), [timerStep]);
+  const stopLane = useCallback((lane: number) => void timerStep("timer_stop", lane), [timerStep]);
+  const resetTimer = useCallback(() => void timerStep("timer_reset"), [timerStep]);
 
-  const resetTimer = useCallback(() => {
-    clearTimers();
-    setCount(null);
-    setStartedAt([null, null]);
-    setFinished([null, null]);
-  }, []);
+  // Confetti once both players have finished, on every screen.
+  const bothDone = clock.done[0] && clock.done[1];
+  const celebrated = useRef(bothDone);
+  useEffect(() => {
+    if (bothDone && !celebrated.current) setBurst((b) => b + 1);
+    celebrated.current = bothDone;
+  }, [bothDone]);
 
   const [lookup, setLookup] = useState("");
   const matches = findEntries(board.entries, lookup);
 
-  const best = finished[0] !== null && finished[1] !== null ? (finished[0] <= finished[1] ? 0 : 1) : null;
+  const best = bothDone ? (clock.elapsed[0] <= clock.elapsed[1] ? 0 : 1) : null;
 
   // Keys, so the co-host can run it from the laptop without aiming.
   useEffect(() => {
@@ -214,12 +258,13 @@ export function HostBoard({ lang, initial, entryLink, scene }: { lang: Lang; ini
       else if (key === "2" && mode === "timer") stopLane(1);
       else if (key === "r") {
         if (mode === "timer") resetTimer();
-        else setShown(null);
+        else if (mode === "offline") setShown(null);
+        else void clearShown();
       }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [mode, draw, notHere, offlineDraw, startTimer, stopLane, resetTimer]);
+  }, [mode, draw, notHere, offlineDraw, startTimer, stopLane, resetTimer, clearShown]);
 
   const switchMode = (next: Mode) => {
     clearTimers();
@@ -321,14 +366,17 @@ export function HostBoard({ lang, initial, entryLink, scene }: { lang: Lang; ini
             ) : null}
             <div className={`grid grid-cols-2 gap-6 ${count !== null ? "hidden" : ""}`}>
               {[0, 1].map((lane) => {
-                const begun = startedAt[lane];
-                const done = finished[lane];
-                const ms = done ?? (begun !== null ? now - begun : 0);
+                const ms = clock.elapsed[lane];
                 return (
                   <div key={lane} className={`rounded-3xl p-6 ${best === lane ? "golden-ticket rise-in" : inScene ? "bg-[#2d1d10]/90" : "bg-white/5"}`}>
                     <input
                       value={players[lane]}
                       onChange={(e) => setPlayers((p) => p.map((v, i) => (i === lane ? e.target.value : v)))}
+                      onFocus={() => (typingName.current = true)}
+                      onBlur={() => {
+                        typingName.current = false;
+                        void timerStep("timer_names");
+                      }}
                       aria-label={t("Player name")}
                       className="w-full bg-transparent text-center text-2xl font-semibold outline-none"
                     />
@@ -337,7 +385,7 @@ export function HostBoard({ lang, initial, entryLink, scene }: { lang: Lang; ini
                     <button
                       type="button"
                       onClick={() => stopLane(lane)}
-                      disabled={begun === null || done !== null}
+                      disabled={!clock.running[lane]}
                       className={`mt-3 rounded-full border border-current/30 px-5 py-2 text-sm disabled:opacity-30 ${inScene ? "hidden" : ""}`}
                     >
                       {t("Stop (key {key})", { key: lane + 1 })}
@@ -431,7 +479,7 @@ export function HostBoard({ lang, initial, entryLink, scene }: { lang: Lang; ini
                 </button>
               ) : null}
               {shown ? (
-                <button type="button" onClick={() => setShown(null)} className="rounded-full border border-[#e0b48d]/40 px-5 py-3 text-[#e0b48d]">
+                <button type="button" onClick={() => (mode === "offline" ? setShown(null) : void clearShown())} className="rounded-full border border-[#e0b48d]/40 px-5 py-3 text-[#e0b48d]">
                   {t("Clear (R)")}
                 </button>
               ) : null}
