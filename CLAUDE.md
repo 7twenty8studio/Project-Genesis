@@ -339,24 +339,30 @@ shares; README.md has the architecture.
   is pinned by the theme). Starlight
   without Premium falls back to Night, keeping the choice. UI tests never
   switch unless launched with `-uiTestingNight` (then it's always night).
-- Material themes (Premium via `.premiumThemes`, after Summer in the
-  picker): Hearth, Leather Bound, Cedar, Highlands, Storm on Galilee and
-  Ironstone (`ReaderTheme.scenery`, `ThemeScenery`). `ThemeSceneryView`
-  draws their surroundings over the reader only where `SceneryArea` allows
-  (side margins, the band above the running head and below the page
-  number while pages hold still; never the text): Hearth's glow and
-  embers (`HearthEmbers`), Leather Bound's cover, tooled line, gutter and
-  paper stack, Cedar's wood strips and lamplight (leather and cedar are
-  drawn tiles, `MaterialTiles`), Highlands' pine ridges and mist, Storm's
-  clouds, margin rain, swells and a soft horizon brightening
-  (`StormFlash`, never a bolt), Ironstone's inset tablet with brass
-  corners. Side materials are half the margin (slim on phones, more on
-  iPad); foot decoration folds away under 20 pt. Only Hearth, Highlands
-  and Storm move, through the Touches switch (`seasonalEffects`, "Gentle
-  Motion"), 30 fps, still with Reduce Motion or Low Power Mode. Cedar and
-  Leather Bound turn pages with the interactive Page Curl in paged reading
-  (`ReaderView.pageTurn(for:)`; a slide with Reduce Motion or Low Power
-  Mode); a theme-specific bend and shadow on the curl isn't built.
+- Scene themes (Premium via `.premiumThemes`, after Summer in the
+  picker): Forest, Ocean and Hearth (`ReaderTheme.scene`, `ThemeScene`,
+  pure geometry and motion). The owner-approved illustrations (generated
+  22 November 2026 in Versely's illustrated style; originals untouched in
+  Tools/Themes/Originals) are built by Tools/Themes/make_scenes.py into
+  ThemeScene* images (Ocean's swells cut out as two layers, its far crest
+  line softened). `ThemeSceneView` draws the scene behind the live text
+  (pages are clear: `PaperTexture.pageColor`/`surroundColor`), then a
+  soft elliptical shade behind the words (`SceneShade`). Forest fills the
+  height; Ocean is 1.18× from the top; Hearth's fire is smaller, its
+  stones just above the page number, on its own charcoal; wider screens
+  get mirrored copies (never Hearth). `ReaderLayout.sceneFootRoom` ends
+  pages above the swells and the fire's glow (none for Forest); scrolling
+  text passes behind them (the scene's foot drawn again, feathered).
+  Motion, one thing each: Forest's two mist layers (`ForestMist`), Ocean's
+  swells rising and settling out of step (`OceanSwells`), Hearth's embers
+  at uneven moments, fading before the text, and a slow glow
+  (`HearthSparks`). 30 fps, only while Gentle Motion (`seasonalEffects`)
+  is on, Reduce Motion off, not in Low Power Mode, the app active and
+  the reader on screen; otherwise the still at `ThemeScene.stillTime`.
+  Scene themes always slide (no curl over clear pages); the running head
+  and page number get a soft shadow. Picker swatches show a still glimpse.
+  Deferred: Cedar and Leather Bound (with their curl), Forest's branch
+  sway, Ocean's rain.
 - Widgets: every widget is free in its Classic look at every size, so
   nothing added from the gallery turns into a locked card (`WidgetAccess`
   in Genesis/Shared). Premium is what people choose inside a widget: the

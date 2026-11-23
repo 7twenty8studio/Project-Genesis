@@ -23,7 +23,7 @@ struct ReaderView: View {
     @Environment(\.accessibilityDifferentiateWithoutColor) private var differentiateWithoutColor
 
     @State private var sheet: ReaderSheet?
-    /// Low Power Mode: Cedar and Leather Bound turn with the plain slide.
+    /// Low Power Mode: the scene themes hold still.
     @State private var lowPower = ProcessInfo.processInfo.isLowPowerModeEnabled
     /// The one-time note on first reading a YouVersion Bible.
     @State private var showsYouVersionNote = false
@@ -150,12 +150,24 @@ struct ReaderView: View {
                 margins: preferences.margins
             )
             ZStack {
-                palette.background
+                // Forest, Ocean and Hearth read over their scene, the
+                // others over the theme's colour.
+                if let scene = layout.style.theme.scene {
+                    sceneBackdrop(scene, layout: layout)
+                } else {
+                    palette.background
+                }
                 if windowSafeArea != nil {
                     textView(layout: layout)
                         .accessibilityAction(named: "Next page") { _ = turnPage(forward: true) }
                         .accessibilityAction(named: "Previous page") { _ = turnPage(forward: false) }
                         .accessibilityAction(named: "Show controls") { reader.showsControls = true }
+                }
+                // Scrolling over Ocean's swells or Hearth's fire, the words
+                // pass behind them (pages simply end above them).
+                if let scene = layout.style.theme.scene, layout.sceneFootRoom > 0, !textStaysInPlace {
+                    sceneBackdrop(scene, layout: layout)
+                        .mask { sceneFootMask(layout) }
                 }
 
                 confirmationBanner
@@ -170,18 +182,6 @@ struct ReaderView: View {
 
                 if layout.style.theme.hasStars {
                     StarlightSkyView(textInsets: starlightTextArea(layout), skyBand: starlightSkyBand(layout), reduceMotion: reduceMotion)
-                }
-
-                // The material themes' surroundings: at the edges, never
-                // over the words; only Hearth, Highlands and Storm move.
-                if let scenery = layout.style.theme.scenery {
-                    ThemeSceneryView(
-                        scenery: scenery,
-                        area: sceneryArea(layout),
-                        animates: preferences.seasonalEffects,
-                        reduceMotion: reduceMotion
-                    )
-                    .id(scenery)
                 }
 
                 if reader.isSelecting {
@@ -471,33 +471,37 @@ struct ReaderView: View {
         textStaysInPlace ? layout.safeArea.top + 6 : 0
     }
 
-    /// Where a material theme's scenery may go: the margins, and the bands
-    /// above the running head and below the page number while pages hold
-    /// still (none when text scrolls through them).
-    private func sceneryArea(_ layout: ReaderLayout) -> SceneryArea {
-        let insets = starlightTextArea(layout)
-        let spread = preferences.readingMode == .page && PageSpread.shows(
-            enabled: preferences.twoPageSpread,
-            size: settledSurfaceSize ?? layout.size,
-            sidePanelShown: isWide && showsCompanion
-        )
-        return SceneryArea(
+    /// The scene behind the words in Forest, Ocean and Hearth.
+    private func sceneBackdrop(_ scene: ThemeScene, layout: ReaderLayout) -> some View {
+        ThemeSceneView(
+            scene: scene,
             size: layout.size,
-            top: insets.top,
-            left: insets.left,
-            bottom: insets.bottom,
-            right: insets.right,
-            topBand: textStaysInPlace ? layout.safeArea.top + 6 : 0,
-            footBand: textStaysInPlace ? layout.safeArea.bottom + 6 : 0,
-            spread: spread
+            safeBottom: layout.safeArea.bottom,
+            textBottom: layout.size.height - layout.textInsets.bottom,
+            animates: preferences.seasonalEffects,
+            reduceMotion: reduceMotion,
+            lowPower: lowPower
+        )
+        .id(scene)
+    }
+
+    /// The scene's foot (swells, fire) drawn again over scrolling text,
+    /// feathered in where the page would have ended.
+    private func sceneFootMask(_ layout: ReaderLayout) -> some View {
+        let height = max(1, layout.size.height)
+        let end = (height - layout.textInsets.bottom + 8) / height
+        let start = max(0, end - 40 / height)
+        return LinearGradient(
+            stops: [.init(color: .black.opacity(0), location: start), .init(color: .black, location: min(1, end))],
+            startPoint: .top, endPoint: .bottom
         )
     }
 
-    /// The page turn: Cedar and Leather Bound turn like paper (the page
-    /// curl); Reduce Motion slides, and so do they in Low Power Mode.
+    /// The page turn: the chosen one, but a slide with Reduce Motion and
+    /// over a scene (Forest, Ocean, Hearth), where the pages are clear and
+    /// a curl would show the words without their paper.
     private func pageTurn(for theme: ReaderTheme) -> PageTurnStyle {
-        if reduceMotion { return .slide }
-        if theme.scenery?.turnsLikePaper == true { return lowPower ? .slide : .curl }
+        if reduceMotion || theme.scene != nil { return .slide }
         return preferences.pageTurn
     }
 

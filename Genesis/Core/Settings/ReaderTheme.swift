@@ -25,20 +25,14 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
     case winter
     case spring
     case summer
-    // Six material themes (Premium), in the picker's order; what surrounds
-    // their page is `ThemeScenery`.
-    /// A warm charcoal page with a fire's glow and a few embers.
+    // Scene themes (Premium), in the picker's order: an illustrated scene
+    // behind the words (`ThemeScene`).
+    /// A misty cedar grove.
+    case forest
+    /// A stormy lake with swells at the foot.
+    case ocean
+    /// A fireside with embers rising from the coals.
     case hearth
-    /// A cream page in an oxblood leather cover with a tooled gold line.
-    case leatherBound
-    /// Parchment between cedar-wood margins, in lamplight.
-    case cedar
-    /// Stone-grey paper over pine ridges and drifting mist.
-    case highlands
-    /// A slate-navy page with rain at the edges and swells at the foot.
-    case galileeStorm
-    /// Dark stone like an inset tablet, with small brass corners.
-    case ironstone
 
     var id: String { rawValue }
 
@@ -60,24 +54,18 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
         case .winter: String(localized: "Winter", comment: "Reader theme name")
         case .spring: String(localized: "Spring", comment: "Reader theme name")
         case .summer: String(localized: "Summer", comment: "Reader theme name")
+        case .forest: String(localized: "Forest", comment: "Reader theme name: a misty cedar grove")
+        case .ocean: String(localized: "Ocean", comment: "Reader theme name: a stormy lake")
         case .hearth: String(localized: "Hearth", comment: "Reader theme name: a fireside page")
-        case .leatherBound: String(localized: "Leather Bound", comment: "Reader theme name: a leather-covered Bible")
-        case .cedar: String(localized: "Cedar", comment: "Reader theme name: cedar wood")
-        case .highlands: String(localized: "Highlands", comment: "Reader theme name: hills and pines")
-        case .galileeStorm: String(localized: "Storm on Galilee", comment: "Reader theme name: rain over the Sea of Galilee")
-        case .ironstone: String(localized: "Ironstone", comment: "Reader theme name: a dark stone tablet")
         }
     }
 
-    /// The material and weather around the page for the six material themes.
-    var scenery: ThemeScenery? {
+    /// The illustrated scene behind the words, for the scene themes.
+    var scene: ThemeScene? {
         switch self {
+        case .forest: .forest
+        case .ocean: .ocean
         case .hearth: .hearth
-        case .leatherBound: .leatherBound
-        case .cedar: .cedar
-        case .highlands: .highlands
-        case .galileeStorm: .galileeStorm
-        case .ironstone: .ironstone
         default: nil
         }
     }
@@ -113,7 +101,7 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
 
     var isDark: Bool {
         switch self {
-        case .slate, .highContrast, .night, .midnight, .starlight, .hearth, .galileeStorm, .ironstone: true
+        case .slate, .highContrast, .night, .midnight, .starlight, .forest, .ocean, .hearth: true
         default: false
         }
     }
@@ -124,7 +112,7 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
     var isPremium: Bool {
         switch self {
         case .cream, .parchment, .midnight, .starlight, .sage, .seasons, .autumn, .winter, .spring, .summer,
-             .hearth, .leatherBound, .cedar, .highlands, .galileeStorm, .ironstone: true
+             .forest, .ocean, .hearth: true
         case .automatic, .paper, .sepia, .slate, .highContrast, .night: false
         }
     }
@@ -164,20 +152,16 @@ enum ReaderTheme: String, Codable, CaseIterable, Identifiable, Sendable {
             ThemePalette(background: 0xF6EFEC, surface: 0xEDE2DE, text: 0x2F2A2B, secondaryText: 0x7C7072, accent: 0xA86F7E, separator: 0xE3D5D1)
         case .summer:
             ThemePalette(background: 0xF5EFE1, surface: 0xEBE2CF, text: 0x2C2B25, secondaryText: 0x76725F, accent: 0x4E8481, separator: 0xDDD3BC)
-        // Material themes. Text is at least 10:1 and secondary text and
-        // accents at least 4.5:1 on the page (MaterialThemeTests).
+        // Scene themes: the page colour is the scene's, under its shading.
+        // Text is at least 10:1 and secondary text and accents at least
+        // 4.5:1 on it (SceneThemeTests); the scene's shading keeps the
+        // words on that colour.
+        case .forest:
+            ThemePalette(background: 0x192D27, surface: 0x213A33, text: 0xF1EBDA, secondaryText: 0xB9C2B0, accent: 0xA9BE9A, separator: 0x2C463E)
+        case .ocean:
+            ThemePalette(background: 0x1B2632, surface: 0x223040, text: 0xEAF0F5, secondaryText: 0xA3B2C0, accent: 0x9DB5C7, separator: 0x2E3D4D)
         case .hearth:
-            ThemePalette(background: 0x211A17, surface: 0x2B231F, text: 0xEFE2CF, secondaryText: 0xA89786, accent: 0xC48A5E, separator: 0x3A302A)
-        case .leatherBound:
-            ThemePalette(background: 0xF9EBD7, surface: 0xEFDDC4, text: 0x30251F, secondaryText: 0x7A6656, accent: 0x7A3229, separator: 0xE0CCB0)
-        case .cedar:
-            ThemePalette(background: 0xF9EBD7, surface: 0xEFDDC4, text: 0x33251D, secondaryText: 0x7D6553, accent: 0x795239, separator: 0xE2CDB0)
-        case .highlands:
-            ThemePalette(background: 0xE5E8E1, surface: 0xD9DED5, text: 0x29342F, secondaryText: 0x5A665F, accent: 0x51695C, separator: 0xCBD2C7)
-        case .galileeStorm:
-            ThemePalette(background: 0x1B2632, surface: 0x223040, text: 0xE3EAF0, secondaryText: 0x93A2B0, accent: 0x8FA8BA, separator: 0x2E3D4D)
-        case .ironstone:
-            ThemePalette(background: 0x272A2B, surface: 0x313536, text: 0xE6DFD0, secondaryText: 0x9A958B, accent: 0xB79B63, separator: 0x3C4142)
+            ThemePalette(background: 0x211A17, surface: 0x2B231F, text: 0xF2E6D4, secondaryText: 0xB7A28C, accent: 0xD49A6A, separator: 0x3A302A)
         }
     }
 }

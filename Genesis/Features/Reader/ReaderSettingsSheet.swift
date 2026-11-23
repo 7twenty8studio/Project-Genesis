@@ -34,8 +34,8 @@ struct ReaderSettingsSheet: View {
                             Toggle("Seasonal Touches", isOn: $settings.preferences.seasonalEffects)
                                 .tint(palette.accent)
                                 .accessibilityIdentifier("settings.seasonalEffects")
-                        } else if settings.preferences.theme.scenery?.moves == true {
-                            // The same switch: the material themes that move follow it.
+                        } else if settings.preferences.theme.scene != nil {
+                            // The same switch: the scene themes' motion follows it.
                             Toggle("Gentle Motion", isOn: $settings.preferences.seasonalEffects)
                                 .tint(palette.accent)
                                 .accessibilityIdentifier("settings.seasonalEffects")
@@ -43,10 +43,8 @@ struct ReaderSettingsSheet: View {
                     } footer: {
                         if settings.preferences.theme.season != nil {
                             Text("Leaves, snow, blossom or summer sunlight drift gently across the page while you read. Paused in Low Power Mode and not shown when Reduce Motion is on.")
-                        } else if settings.preferences.theme.scenery?.moves == true {
-                            Text("Embers, mist or rain move gently at the edges of the page, never over the words. Paused in Low Power Mode and still when Reduce Motion is on.")
-                        } else if settings.preferences.theme.scenery?.turnsLikePaper == true {
-                            Text("Reading page by page, this theme turns pages like paper. With Reduce Motion or in Low Power Mode they slide instead.")
+                        } else if settings.preferences.theme.scene != nil {
+                            Text("Mist, swells or embers move gently in the picture, never over the words. Paused in Low Power Mode and still when Reduce Motion is on.")
                         }
                     }
 
@@ -161,7 +159,7 @@ struct ReaderSettingsSheet: View {
         }
     }
 
-    /// A small mark on seasonal, Starlight's and the material themes' swatches.
+    /// A small mark on seasonal, Starlight's and the scene themes' swatches.
     private static func seasonSymbol(_ theme: ReaderTheme) -> String? {
         switch theme {
         case .seasons: "calendar"
@@ -170,12 +168,9 @@ struct ReaderSettingsSheet: View {
         case .spring: "camera.macro"
         case .summer: "sun.max.fill"
         case .starlight: "sparkles"
+        case .forest: "tree.fill"
+        case .ocean: "water.waves"
         case .hearth: "flame.fill"
-        case .leatherBound: "book.closed.fill"
-        case .cedar: "tree.fill"
-        case .highlands: "mountain.2.fill"
-        case .galileeStorm: "cloud.rain.fill"
-        case .ironstone: "seal.fill"
         default: nil
         }
     }
@@ -232,6 +227,16 @@ struct ReaderSettingsSheet: View {
                                     .fill(theme == .automatic
                                         ? AnyShapeStyle(LinearGradient(colors: [ReaderTheme.paper.palette.background, ReaderTheme.slate.palette.background], startPoint: .topLeading, endPoint: .bottomTrailing))
                                         : AnyShapeStyle(theme.palette.background))
+                                if let scene = theme.scene {
+                                    // A still glimpse of the scene, shaded like the reader.
+                                    Image(scene.artName)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 48, height: 48)
+                                        .overlay(theme.palette.background.opacity(0.45))
+                                        .clipShape(Circle())
+                                        .accessibilityHidden(true)
+                                }
                                 Text("Aa")
                                     .font(.system(size: 15, weight: .medium, design: .serif))
                                     .foregroundStyle(theme == .automatic ? ReaderTheme.paper.palette.text : theme.palette.text)

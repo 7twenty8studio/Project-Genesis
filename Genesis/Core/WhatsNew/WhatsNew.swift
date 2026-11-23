@@ -27,7 +27,7 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar, verseWallpapers, widgetBackgrounds, keepsakeWidgets, widgetPhotoFraming, movingSeasonsAndYourBible, newLook, freeWidgets, languageChoice, ambientLockScreen, groupNamesAndRoles, twoPageSpread, originalWithEveryBible, portuguese, studyInSpanishAndPortuguese, wordMeaningsInSpanishAndPortuguese, interlinearInSpanishAndPortuguese, commentaryInSpanishAndPortuguese, memoriseBibleChoice, churchSermons, truerSeasons, materialThemes]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar, verseWallpapers, widgetBackgrounds, keepsakeWidgets, widgetPhotoFraming, movingSeasonsAndYourBible, newLook, freeWidgets, languageChoice, ambientLockScreen, groupNamesAndRoles, twoPageSpread, originalWithEveryBible, portuguese, studyInSpanishAndPortuguese, wordMeaningsInSpanishAndPortuguese, interlinearInSpanishAndPortuguese, commentaryInSpanishAndPortuguese, memoriseBibleChoice, churchSermons, truerSeasons, sceneThemes]
 
     static let truerSeasons = WhatsNewAnnouncement(
         id: "seasons-leaves-snowflakes-blossoms",
@@ -51,24 +51,24 @@ enum WhatsNewCatalog {
         ]
     )
 
-    static let materialThemes = WhatsNewAnnouncement(
-        id: "material-themes",
-        title: String(localized: "Six new reading themes"),
+    static let sceneThemes = WhatsNewAnnouncement(
+        id: "scene-themes",
+        title: String(localized: "Three new scene themes"),
         items: [
             WhatsNewItem(
+                systemImage: "tree",
+                title: String(localized: "Forest", comment: "Reader theme name: a misty cedar grove"),
+                detail: String(localized: "Read in a misty cedar grove, with mist drifting slowly between the trunks.")
+            ),
+            WhatsNewItem(
+                systemImage: "water.waves",
+                title: String(localized: "Ocean", comment: "Reader theme name: a stormy lake"),
+                detail: String(localized: "A stormy lake behind the words, its swells rising and settling below the last line.")
+            ),
+            WhatsNewItem(
                 systemImage: "flame",
-                title: String(localized: "Hearth, Highlands and Storm on Galilee"),
-                detail: String(localized: "Read by firelight with embers rising at the edges, among misty pine ridges, or beside a stormy sea with rain in the margins.")
-            ),
-            WhatsNewItem(
-                systemImage: "book.closed",
-                title: String(localized: "Leather Bound and Cedar"),
-                detail: String(localized: "A cream page in an oxblood leather cover, or parchment on a cedar desk by lamplight. Pages turn like paper.")
-            ),
-            WhatsNewItem(
-                systemImage: "square.dashed",
-                title: String(localized: "Ironstone"),
-                detail: String(localized: "Warm ivory words on dark stone, set like a tablet with small brass corners. Find them all in the reader's Themes with Premium.")
+                title: String(localized: "Hearth", comment: "Reader theme name: a fireside page"),
+                detail: String(localized: "Read by the fire as small embers rise from the coals and fade before they reach the words. Find all three in the reader's Themes with Premium.")
             ),
         ]
     )
