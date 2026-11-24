@@ -54,3 +54,8 @@ one-time purchase; the unlock is a non-consumable.
   subscription, $0. "Try Mirror OBS free for 7 days. Never charges you."
 - Unlock Mirror OBS (com.7twenty8studio.mirrorobs.unlock), non-consumable,
   $4.99 (Tier 5). "Unlock Mirror OBS for good. One-time purchase."
+
+**Images:** Store/store.html is the source for the app icon, the five
+iPhone 6.9" screenshots (1320 × 2868) and a 2400 × 1200 header; render with
+`node Store/render.cjs <output folder>` (Playwright, Inter font). The
+rendered files are in the project files under mirror-obs/store.

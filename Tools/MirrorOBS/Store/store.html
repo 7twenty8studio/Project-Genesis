@@ -1,0 +1,179 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>
+:root{--ink:#1a1714;--ink2:#25201b;--copper:#b08d64;--sand:#c8a882;--cream:#faf8f5;--live:#c72924;--gray:#8a8178}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,sans-serif;-webkit-font-smoothing:antialiased;background:#000}
+.shot{width:440px;height:956px;position:relative;overflow:hidden;background:radial-gradient(120% 70% at 50% 0%,#3a2f25 0%,#1a1714 55%,#141110 100%);color:#fff}
+.cap{position:absolute;top:58px;left:0;right:0;text-align:center;padding:0 30px}
+.cap h1{font-family:"Inter Display",Inter;font-weight:800;font-size:40px;line-height:1.05;letter-spacing:-.8px}
+.cap h1 em{font-style:normal;color:var(--sand)}
+.cap p{margin-top:14px;font-size:17px;line-height:1.35;color:#d9cbb9;font-weight:500}
+/* device */
+.phone{position:absolute;left:50%;transform:translateX(-50%);width:336px;height:730px;border-radius:58px;background:#0b0a09;padding:10px;box-shadow:0 0 0 2px #4a3f35,0 0 0 4px #15120f,0 40px 80px rgba(0,0,0,.6)}
+.screen{width:316px;height:710px;border-radius:48px;overflow:hidden;position:relative;background:#f2f2f7}
+.app{width:402px;height:904px;transform:scale(.786);transform-origin:0 0;position:absolute;left:0;top:0;background:#f2f2f7;color:#111;font-size:17px}
+.island{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:124px;height:36px;border-radius:20px;background:#000;z-index:5}
+.sb{height:54px;display:flex;justify-content:space-between;align-items:center;padding:6px 32px 0 40px;font-weight:600;font-size:17px}
+.sb .pill{background:var(--live);color:#fff;border-radius:14px;padding:3px 10px;font-size:15px}
+.sb .ic{display:flex;gap:6px;align-items:center}
+.bars{display:flex;gap:2px;align-items:flex-end}.bars i{display:block;width:3.5px;background:#111;border-radius:1px}
+.bat{width:26px;height:12.5px;border:1.5px solid #999;border-radius:4px;padding:1.5px}.bat b{display:block;height:100%;width:80%;background:#111;border-radius:1.5px}
+.nav{display:flex;justify-content:flex-end;padding:4px 20px 0}.nav span{width:28px;height:28px;border-radius:50%;border:2px solid var(--copper);color:var(--copper);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:16px}
+.title{font-size:34px;font-weight:700;padding:2px 20px 12px;letter-spacing:-.4px}
+.body{padding:0 16px;display:flex;flex-direction:column;gap:16px}
+.card{background:#fff;border-radius:20px;padding:18px}
+.lbl{font-size:12px;font-weight:600;letter-spacing:1.3px;color:var(--copper);margin-bottom:10px}
+.row{display:flex;align-items:center;gap:10px}
+.dot{width:12px;height:12px;border-radius:50%}
+.h{font-weight:600;font-size:17px}
+.sub{font-size:15px;color:#6b6b70;line-height:1.35;margin-top:10px}
+.foot{font-size:13px;color:#6b6b70;line-height:1.35;margin-top:8px}
+.btn{margin-top:14px;height:60px;border-radius:30px;display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;font-weight:600;font-size:20px}
+.btn.s{height:48px;border-radius:14px;font-size:17px;margin-top:12px}
+.field{border:1px solid #d6d6db;border-radius:8px;padding:8px 10px;font-family:"JetBrains Mono",monospace;font-size:20px;display:flex;justify-content:space-between;align-items:center}
+.mono{font-family:"JetBrains Mono",monospace}
+.links{display:flex;gap:18px;color:var(--copper);font-size:13px;margin-top:12px}
+/* generic windows */
+.win{position:absolute;border-radius:14px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 0 1px #3d342b}
+.wbar{height:26px;background:#2a2622;display:flex;align-items:center;gap:6px;padding:0 10px}
+.wbar i{width:9px;height:9px;border-radius:50%;background:#5a524a;display:block}
+.wbar .u{margin-left:10px;flex:1;height:15px;border-radius:5px;background:#1c1916;color:#a89a8a;font-size:8.5px;display:flex;align-items:center;padding:0 7px}
+/* sample content shown on the mirrored phone */
+.game{position:absolute;inset:0;background:linear-gradient(160deg,#3c6e8f 0%,#6fb1a0 45%,#f3c97a 100%)}
+.game .sun{position:absolute;width:70px;height:70px;border-radius:50%;background:#ffe3a3;top:16%;left:58%;box-shadow:0 0 40px #ffe3a3}
+.game .hill{position:absolute;bottom:-10%;width:140%;left:-20%;height:45%;border-radius:50% 50% 0 0;background:#2f5d4f}
+.game .hill2{position:absolute;bottom:-16%;width:120%;left:10%;height:36%;border-radius:50% 50% 0 0;background:#1f4338}
+.game .score{position:absolute;top:9%;left:8%;color:#fff;font-weight:800;font-size:22px;text-shadow:0 2px 6px rgba(0,0,0,.3)}
+.game .play{position:absolute;bottom:14%;left:50%;transform:translateX(-50%);background:#fff;color:#1f4338;font-weight:800;border-radius:30px;padding:10px 26px;font-size:16px}
+.tag{display:inline-flex;align-items:center;gap:5px;background:var(--live);color:#fff;font-weight:700;font-size:10px;border-radius:9px;padding:2px 8px;letter-spacing:.5px}
+</style></head><body>
+
+<!-- 1: live -->
+<div class="shot" id="s1">
+ <div class="cap"><h1>Your iPhone,<br><em>live in OBS</em></h1><p>The whole screen, over Wi-Fi.<br>No cable, no capture card.</p></div>
+ <div class="phone" style="top:262px"><div class="screen"><div class="island"></div><div class="app">
+  <div class="sb"><span class="pill">9:41</span><span class="ic"><span class="bars"><i style="height:5px"></i><i style="height:8px"></i><i style="height:11px"></i><i style="height:14px"></i></span><span class="bat"><b></b></span></span></div>
+  <div class="nav"><span>?</span></div><div class="title">Mirror OBS</div>
+  <div class="body">
+   <div class="card"><div class="row"><span class="dot" style="background:var(--live)"></span><span class="h">Live in OBS</span></div>
+    <div class="sub">1 screen is showing this iPhone. Switch to any app: it stays live.</div>
+    <div class="btn" style="background:var(--ink)">&#9632;&nbsp; Stop Broadcast</div></div>
+   <div class="card"><div class="lbl">ROOM</div><div class="field"><span>4HKR9RPRS6</span><span style="color:var(--copper);font-size:18px">&#10697;</span></div><div class="foot">A new room takes effect the next time you start a broadcast.</div></div>
+   <div class="card"><div class="lbl">THIS IPHONE</div><div class="mono" style="font-size:32px;font-weight:600">iphone-9519</div><div class="foot">Its ID in OBS. It stays the same until the app is deleted.</div>
+    <div class="field" style="font-family:Inter;font-size:17px;margin-top:12px">Stage iPhone</div></div>
+  </div></div></div></div>
+</div>
+
+<!-- 2: start -->
+<div class="shot" id="s2">
+ <div class="cap"><h1>Type a room code.<br><em>Tap Start.</em></h1><p>That's the whole setup.<br>Mirror OBS remembers your room.</p></div>
+ <div class="phone" style="top:262px"><div class="screen"><div class="island"></div><div class="app">
+  <div class="sb"><span>9:41</span><span class="ic"><span class="bars"><i style="height:5px"></i><i style="height:8px"></i><i style="height:11px"></i><i style="height:14px"></i></span><span class="bat"><b></b></span></span></div>
+  <div class="nav"><span>?</span></div><div class="title">Mirror OBS</div>
+  <div class="body">
+   <div class="card"><div class="row"><span class="dot" style="background:#aaa"></span><span class="h">Not broadcasting</span></div>
+    <div class="sub">Tap Start Broadcast, then Start Broadcast again in the sheet. Then open the app you want to show.</div>
+    <div class="btn" style="background:var(--live)">&#9673;&nbsp; Start Broadcast</div></div>
+   <div class="card"><div class="lbl">FREE TRIAL</div><div style="font-size:15px;color:#6b6b70;line-height:1.35">Your free trial ends in 7 days. Unlock any time to keep broadcasting.</div>
+    <div class="btn s" style="background:var(--ink)">Unlock for $4.99</div></div>
+   <div class="card"><div class="lbl">ROOM</div><div class="field"><span>4HKR9RPRS6</span><span style="color:var(--copper);font-size:18px">&#10697;</span></div><div class="foot">Mirror OBS remembers this room. Change it any time.</div></div>
+  </div></div></div></div>
+</div>
+
+<!-- 3: in OBS -->
+<div class="shot" id="s3">
+ <div class="cap"><h1>In OBS<br><em>in seconds</em></h1><p>Add one link as a Browser source.<br>It fills an iPhone-shaped box edge to edge.</p></div>
+ <div class="win" style="left:22px;top:250px;width:396px;height:300px">
+  <div class="wbar"><i></i><i></i><i></i></div>
+  <div style="background:#1e1b18;height:274px;padding:10px;display:flex;flex-direction:column;gap:8px">
+   <div style="flex:1;border-radius:6px;background:linear-gradient(135deg,#2b2420,#463629);position:relative;overflow:hidden">
+    <div style="position:absolute;left:14px;top:14px;color:#f1e4d3;font-weight:800;font-size:17px;font-family:'Inter Display'">Live demo</div>
+    <div style="position:absolute;left:14px;top:38px;color:#c8a882;font-size:10px">Sunday stream · Scene 2</div>
+    <div style="position:absolute;right:30px;top:12px;width:92px;height:196px;border-radius:16px;overflow:hidden;box-shadow:0 0 0 3px #0b0a09"><div class="game"><div class="sun" style="width:30px;height:30px"></div><div class="hill"></div><div class="hill2"></div><div class="score" style="font-size:11px">1,240</div><div class="play" style="font-size:8px;padding:4px 10px">PLAY</div></div></div>
+    <div style="position:absolute;left:14px;bottom:12px"><span class="tag">&#9679; LIVE</span></div>
+   </div>
+   <div style="height:58px;display:flex;gap:8px">
+    <div style="flex:1;background:#2a2622;border-radius:6px;padding:7px;color:#cfc3b5;font-size:9px;line-height:1.7"><b style="color:#fff">Sources</b><br>&#9673; iPhone (browser source)<br>&#9675; Background</div>
+    <div style="flex:1;background:#2a2622;border-radius:6px;padding:7px;color:#cfc3b5;font-size:8px;line-height:1.5"><b style="color:#fff;font-size:9px">Browser source</b><br><span class="mono" style="font-size:7px;color:#c8a882">…/obs-sharing/obs?room=4HKR9RPRS6&amp;device=iphone-9519</span><br>500 × 1080</div>
+   </div>
+  </div>
+ </div>
+ <div class="phone" style="top:585px;width:200px;height:434px;border-radius:36px;padding:7px"><div class="screen" style="width:186px;height:420px;border-radius:30px"><div class="game"><div class="sun"></div><div class="hill"></div><div class="hill2"></div><div class="score">1,240</div><div class="play">PLAY</div></div><div class="island" style="width:58px;height:18px;top:7px"></div><div style="position:absolute;top:8px;left:12px;z-index:6"><span class="tag" style="font-size:8px;padding:1px 6px">9:41</span></div></div></div>
+</div>
+
+<!-- 4: host page -->
+<div class="shot" id="s4">
+ <div class="cap"><h1>Every iPhone,<br><em>one room</em></h1><p>Each phone gets its own link.<br>The host page and OBS dock show them all.</p></div>
+ <div class="win" style="left:22px;top:300px;width:396px;height:560px;background:var(--cream)">
+  <div class="wbar"><i></i><i></i><i></i><span class="u">7twenty8studio.com/services/obs-sharing</span></div>
+  <div style="padding:18px;color:#1a1714">
+   <div style="font-size:9px;letter-spacing:1.4px;color:#8a7a68;font-weight:600">OBS SHARING</div>
+   <div style="font-family:'Inter Display';font-weight:800;font-size:24px;margin-top:4px">Room 4HKR9RPRS6</div>
+   <div style="font-size:11px;color:#6b6054;margin-top:4px">3 devices in this room</div>
+   <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px">
+    <div style="background:#fff;border-radius:12px;padding:10px;border:1px solid #ece4da">
+     <div style="height:180px;border-radius:12px;overflow:hidden;position:relative;width:84px;margin:0 auto"><div class="game"><div class="sun" style="width:28px;height:28px"></div><div class="hill"></div><div class="hill2"></div><div class="score" style="font-size:10px">1,240</div></div></div>
+     <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px"><div><div style="font-weight:700;font-size:11px">Stage iPhone</div><div class="mono" style="font-size:9px;color:#8a7a68">iphone-9519</div></div><span class="tag">LIVE</span></div></div>
+    <div style="background:#fff;border-radius:12px;padding:10px;border:1px solid #ece4da">
+     <div style="height:180px;border-radius:12px;overflow:hidden;position:relative;width:84px;margin:0 auto;background:linear-gradient(180deg,#f7efe4,#e7d6bf)"><div style="position:absolute;top:22px;left:10px;right:10px;font-weight:800;font-size:11px;color:#3a2f25">Welcome</div><div style="position:absolute;top:44px;left:10px;right:10px;height:46px;border-radius:8px;background:#b08d64"></div><div style="position:absolute;top:98px;left:10px;right:22px;height:6px;border-radius:3px;background:#c9b59c"></div><div style="position:absolute;top:110px;left:10px;right:32px;height:6px;border-radius:3px;background:#c9b59c"></div><div style="position:absolute;bottom:18px;left:14px;right:14px;height:22px;border-radius:11px;background:#1a1714"></div></div>
+     <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px"><div><div style="font-weight:700;font-size:11px">Player 2</div><div class="mono" style="font-size:9px;color:#8a7a68">iphone-4F2A</div></div><span class="tag" style="background:#3f7d4e">READY</span></div></div>
+    <div style="background:#fff;border-radius:12px;padding:10px;border:1px solid #ece4da;grid-column:span 2;display:flex;gap:10px;align-items:center">
+     <div style="width:120px;height:68px;border-radius:8px;background:linear-gradient(135deg,#2d3a4a,#506a86);position:relative"><div style="position:absolute;left:10px;top:12px;right:30px;height:8px;border-radius:4px;background:#cfdbe8"></div><div style="position:absolute;left:10px;top:26px;right:50px;height:6px;border-radius:3px;background:#9fb3c8"></div></div>
+     <div style="flex:1"><div style="font-weight:700;font-size:11px">Presenter laptop</div><div class="mono" style="font-size:9px;color:#8a7a68">laptop-71CE</div></div><span class="tag" style="background:#3f7d4e">READY</span></div>
+   </div>
+   <div style="margin-top:14px;background:#1a1714;color:#fff;border-radius:22px;height:38px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px">Copy OBS Dock Link</div>
+  </div>
+ </div>
+</div>
+
+<!-- 5: pricing -->
+<div class="shot" id="s5">
+ <div class="cap"><h1>7 days free.<br><em>Then $4.99, once.</em></h1><p>No subscription, no account, no ads.<br>Your screen is never recorded or stored.</p></div>
+ <div class="phone" style="top:262px"><div class="screen"><div class="island"></div><div class="app">
+  <div class="sb"><span>9:41</span><span class="ic"><span class="bars"><i style="height:5px"></i><i style="height:8px"></i><i style="height:11px"></i><i style="height:14px"></i></span><span class="bat"><b></b></span></span></div>
+  <div class="nav"><span>?</span></div><div class="title">Mirror OBS</div>
+  <div class="body">
+   <div class="card"><div class="row"><span class="dot" style="background:#aaa"></span><span class="h">Not broadcasting</span></div>
+    <div class="sub">Start your free trial below to broadcast.</div>
+    <div class="btn" style="background:var(--live);opacity:.45">&#9673;&nbsp; Start Broadcast</div></div>
+   <div class="card"><div class="lbl">MIRROR OBS</div><div style="font-size:15px;color:#6b6b70;line-height:1.35">Try everything free for 7 days, then unlock it once for good.</div>
+    <div class="btn s" style="background:var(--ink)">Start 7-Day Free Trial</div>
+    <div class="btn s" style="background:var(--copper)">Unlock for $4.99</div>
+    <div class="links" style="font-size:14px"><span>Restore Purchases</span><span>Redeem Code</span></div>
+    <div class="foot">The trial is free and never charges you. Mirror OBS is a one-time purchase, with no subscription.</div>
+    <div class="links"><span>Terms of Use</span><span>Privacy Policy</span></div></div>
+  </div></div></div></div>
+</div>
+
+<!-- icon -->
+<div id="icon" style="width:1024px;height:1024px;position:relative;background:radial-gradient(90% 90% at 30% 20%,#3b3027 0%,#1d1915 60%,#141110 100%);overflow:hidden">
+ <svg width="1024" height="1024" viewBox="0 0 1024 1024" style="position:absolute;inset:0">
+  <defs><linearGradient id="cu" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e2c49c"/><stop offset="1" stop-color="#a8804f"/></linearGradient>
+  <linearGradient id="scr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3c6e8f"/><stop offset=".55" stop-color="#6fb1a0"/><stop offset="1" stop-color="#f3c97a"/></linearGradient></defs>
+  <rect x="236" y="196" width="330" height="632" rx="72" fill="url(#cu)"/>
+  <rect x="262" y="222" width="278" height="580" rx="50" fill="url(#scr)"/>
+  <rect x="360" y="244" width="82" height="26" rx="13" fill="#141110"/>
+  <circle cx="300" cy="258" r="13" fill="#e0342e"/>
+  <g fill="none" stroke="url(#cu)" stroke-width="34" stroke-linecap="round">
+   <path d="M650 430 A110 110 0 0 1 650 594"/><path d="M712 364 A200 200 0 0 1 712 660"/><path d="M774 298 A290 290 0 0 1 774 726"/></g>
+ </svg>
+</div>
+
+<!-- header 2400x1200 rendered at 1200x600 x2 -->
+<div id="header" style="width:1200px;height:600px;position:relative;overflow:hidden;background:radial-gradient(80% 120% at 75% 30%,#3a2f25 0%,#1a1714 55%,#141110 100%);color:#fff">
+ <div style="position:absolute;left:80px;top:150px;width:560px">
+  <div style="display:flex;align-items:center;gap:16px"><img src="../icon-1024.png" style="width:72px;height:72px;border-radius:17px"><div style="font-family:'Inter Display';font-weight:800;font-size:40px;letter-spacing:-.6px">Mirror OBS</div></div>
+  <div style="font-family:'Inter Display';font-weight:800;font-size:54px;line-height:1.04;letter-spacing:-1px;margin-top:30px">Your iPhone's screen,<br><span style="color:var(--sand)">live in OBS.</span></div>
+  <div style="font-size:20px;color:#d9cbb9;margin-top:20px;font-weight:500">Over Wi-Fi. No cable, no capture card, no account.</div>
+  <div style="display:inline-block;margin-top:26px;border:1.5px solid var(--copper);color:var(--sand);border-radius:24px;padding:9px 20px;font-weight:600;font-size:16px">7 days free · then $4.99, once</div>
+ </div>
+ <div class="win" style="left:690px;top:110px;width:440px;height:290px">
+  <div class="wbar"><i></i><i></i><i></i></div>
+  <div style="background:#1e1b18;height:264px;padding:10px"><div style="height:100%;border-radius:6px;background:linear-gradient(135deg,#2b2420,#463629);position:relative;overflow:hidden">
+   <div style="position:absolute;left:16px;top:16px;color:#f1e4d3;font-weight:800;font-size:18px;font-family:'Inter Display';display:flex;align-items:center;gap:10px">Live demo <span class="tag">&#9679; LIVE</span></div>
+   <div style="position:absolute;right:40px;top:14px;width:104px;height:216px;border-radius:18px;overflow:hidden;box-shadow:0 0 0 3px #0b0a09"><div class="game"><div class="sun" style="width:34px;height:34px"></div><div class="hill"></div><div class="hill2"></div><div class="score" style="font-size:12px">1,240</div></div></div>
+  </div></div>
+ </div>
+ <div class="phone" style="left:auto;right:330px;transform:none;top:250px;width:170px;height:368px;border-radius:30px;padding:6px"><div class="screen" style="width:158px;height:356px;border-radius:25px"><div class="game"><div class="sun" style="width:44px;height:44px"></div><div class="hill"></div><div class="hill2"></div><div class="score" style="font-size:15px">1,240</div><div class="play" style="font-size:11px;padding:6px 16px">PLAY</div></div><div class="island" style="width:50px;height:15px;top:6px"></div></div></div>
+</div>
+</body></html>
