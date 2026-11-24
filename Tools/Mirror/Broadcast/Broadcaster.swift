@@ -21,6 +21,10 @@ final class Broadcaster {
     private var previews: Set<String> = []
     private var announce: DispatchSourceTimer?
     private var adaptedTo: (Int32, Int32)?
+    private var joined = false
+
+    /// Every 2 s while broadcasting: whether the room is reached, and how many viewers (OBS, previews) get the screen.
+    var onStatus: ((_ connected: Bool, _ viewers: Int) -> Void)?
 
     /// Broadcast extensions get about 50 MB: one encoder per viewer, so at most two at once.
     /// OBS always gets in (a preview gives way to it); a preview never pushes anyone out.
@@ -39,7 +43,10 @@ final class Broadcaster {
         track = factory.videoTrack(with: source, trackId: "screen")
         room = RealtimeRoom(room: code, queue: queue)
         room.onSignal = { [weak self] in self?.handle($0) }
-        room.onJoined = { [weak self] in self?.sayHere() }
+        room.onJoined = { [weak self] in
+            self?.joined = true
+            self?.sayHere()
+        }
     }
 
     func start() {
@@ -101,6 +108,7 @@ final class Broadcaster {
 
     private func sayHere() {
         room.send(["t": "here", "device": device, "name": name, "kind": "screen", "live": true])
+        onStatus?(joined, calls.count)
     }
 
     private func handle(_ signal: [String: Any]) {

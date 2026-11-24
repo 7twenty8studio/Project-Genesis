@@ -1,16 +1,23 @@
 import Foundation
 import UIKit
 
-/// What the app and the broadcast extension agree on without sharing storage
-/// (no App Group needed): the room, and this iPhone's ID, which both work out
-/// the same way from the vendor id iOS gives every app of one developer.
+/// What the app and the broadcast extension share through their App Group:
+/// the room (set in the app), this iPhone's name, and the extension's status.
+/// The iPhone's ID comes from the vendor id iOS gives every app of one
+/// developer, so it's the same in both without storing it.
 enum Mirror {
-    /// The show's room in OBS Sharing (host page: 7twenty8studio.com/services/obs-sharing?room=Q2TKHV33JG).
-    static let room = "Q2TKHV33JG"
+    static let appGroup = "group.com.7twenty8studio.mirror"
+    static let broadcastExtension = "com.7twenty8studio.versely.mirror.broadcast"
+    /// The launch show's room, used until another is set.
+    static let defaultRoom = "Q2TKHV33JG"
+    static let site = "https://www.7twenty8studio.com/services/obs-sharing"
 
-    /// Versely's public Supabase project (the same public values the app and website use).
+    /// The public Supabase project OBS Sharing signals through (public values, the same the website uses).
     static let supabaseURL = "https://ulbpwygzwchsnvdeeife.supabase.co"
     static let anonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVsYnB3eWd6d2Noc252ZGVlaWZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA2MjY3MjAsImV4cCI6MjEwNjIwMjcyMH0.LieY3BPC1MHQZ8qzO06oulde048Pv5x9GsVVPYrUMUE"
+
+    /// Shared with the extension; the app's own defaults if the App Group isn't there (unsigned builds).
+    static var store: UserDefaults { UserDefaults(suiteName: appGroup) ?? .standard }
 
     /// Four letters and digits, the same in the app and its extension, kept until the app is deleted.
     static var deviceID: String {
@@ -19,8 +26,51 @@ enum Mirror {
         return "iphone-" + String(hex.prefix(4)).uppercased()
     }
 
-    /// The OBS browser source for this iPhone.
-    static var obsLink: String {
-        "https://www.7twenty8studio.com/services/obs-sharing/obs?room=\(room)&device=\(deviceID)"
+    /// A room code as the website accepts it: 3 to 40 letters, digits, dashes or underscores.
+    static func cleanRoom(_ value: String) -> String? {
+        let code = value.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard (3...40).contains(code.count),
+              code.unicodeScalars.allSatisfy({ CharacterSet.alphanumerics.contains($0) && $0.isASCII || $0 == "-" || $0 == "_" })
+        else { return nil }
+        return code
+    }
+
+    static var room: String {
+        get { store.string(forKey: "room").flatMap(cleanRoom) ?? defaultRoom }
+        set { store.set(cleanRoom(newValue) ?? defaultRoom, forKey: "room") }
+    }
+
+    /// The name the host page and the OBS dock show next to the ID.
+    static var name: String {
+        get {
+            let saved = store.string(forKey: "name")?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            return saved.isEmpty ? "iPhone \(deviceID.suffix(4))" : String(saved.prefix(40))
+        }
+        set { store.set(newValue, forKey: "name") }
+    }
+
+    /// The OBS browser source for this iPhone (filling an iPhone-shaped source edge to edge).
+    static func obsLink(room: String) -> String { "\(site)/obs?room=\(room)&device=\(deviceID)&fit=cover" }
+    static func hostLink(room: String) -> String { "\(site)?room=\(room)" }
+    static func dockLink(room: String) -> String { "\(site)/dock?room=\(room)" }
+
+    // MARK: Status, written by the extension every 2 s while it broadcasts
+
+    struct Status {
+        var connected: Bool
+        var viewers: Int
+    }
+
+    static func writeStatus(connected: Bool, viewers: Int) {
+        store.set(["connected": connected, "viewers": viewers, "at": Date().timeIntervalSince1970], forKey: "status")
+    }
+
+    static func clearStatus() { store.removeObject(forKey: "status") }
+
+    /// Nil when no broadcast has reported in the last 6 s.
+    static func readStatus(now: Date = Date()) -> Status? {
+        guard let s = store.dictionary(forKey: "status"), let at = s["at"] as? Double,
+              now.timeIntervalSince1970 - at < 6 else { return nil }
+        return Status(connected: s["connected"] as? Bool ?? false, viewers: s["viewers"] as? Int ?? 0)
     }
 }

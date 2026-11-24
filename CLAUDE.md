@@ -881,7 +881,7 @@ shares; README.md has the architecture.
   OBS Sharing, repo 7twenty8-studio-web, src/lib/obs-sharing; host page,
   OBS dock, share and OBS source pages), WebRTC peer to peer over a public
   Supabase Realtime broadcast channel `obs-share-<room>` (no table). iPhone
-  screens come from Tools/Mirror (Versely Mirror, ReplayKit + WebRTC,
+  screens come from Tools/Mirror (7Twenty8 Mirror, ReplayKit + WebRTC,
   installed from Xcode, never on the App Store), speaking that protocol.
 
 ## Journal extras (Premium)
