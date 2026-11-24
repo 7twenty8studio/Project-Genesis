@@ -54,6 +54,8 @@ final class EntitlementService {
 
     private static let cacheKey = "premium.lastKnown"
     private static let grantKey = "premium.grant"
+    /// When the saved grant ends (seconds since 1970); absent for a permanent grant.
+    private static let grantEndsKey = "premium.grantEnds"
     private static let testKey = "premium.testSwitch"
     private static let serverSyncKey = "premium.serverSync"
 
@@ -65,6 +67,11 @@ final class EntitlementService {
         hasGrant = defaults.bool(forKey: Self.grantKey)
         isPremium = false
         if override != nil { hasLoaded = true }
+        if hasGrant, defaults.object(forKey: Self.grantEndsKey) != nil {
+            // A grant with an end date ends then, even before the next check reaches the server.
+            let end = Date(timeIntervalSince1970: defaults.double(forKey: Self.grantEndsKey))
+            if end > .now { grantExpiresAt = end } else { hasGrant = false }
+        }
         recompute()
     }
 
@@ -114,7 +121,10 @@ final class EntitlementService {
             let end = row.expires_at.flatMap(Self.parseDate)
             setGrant(active: end.map { $0 > .now } ?? true, until: end)
         } catch {
-            // Offline or the table isn't there yet: keep what we knew.
+            // Offline or the table isn't there yet: keep what we knew, unless its end date has passed.
+            if hasGrant, let end = grantExpiresAt, end <= .now {
+                setGrant(active: false, until: nil)
+            }
         }
     }
 
@@ -122,6 +132,11 @@ final class EntitlementService {
         hasGrant = active
         grantExpiresAt = active ? until : nil
         defaults.set(active, forKey: Self.grantKey)
+        if active, let until {
+            defaults.set(until.timeIntervalSince1970, forKey: Self.grantEndsKey)
+        } else {
+            defaults.removeObject(forKey: Self.grantEndsKey)
+        }
         recompute()
     }
 
