@@ -2,8 +2,9 @@ import CoreMedia
 import ReplayKit
 import WebRTC
 
-/// Sends the screen to whoever asks: the OBS source (and the host page's
-/// preview). Speaks the website's protocol (web/src/lib/screenshare/protocol.ts):
+/// Sends the screen to whoever asks: the OBS source (and the host page's or
+/// OBS dock's preview). Speaks 7twenty8studio.com's OBS Sharing protocol
+/// (7twenty8-studio-web, src/lib/obs-sharing/protocol.ts):
 /// announces "here" every 2 s; a viewer sends "want"; we offer; it answers;
 /// ICE candidates both ways. All state lives on `queue`.
 final class Broadcaster {
@@ -17,10 +18,12 @@ final class Broadcaster {
     private let track: RTCVideoTrack
     private var calls: [String: Call] = [:]
     private var order: [String] = []
+    private var previews: Set<String> = []
     private var announce: DispatchSourceTimer?
     private var adaptedTo: (Int32, Int32)?
 
     /// Broadcast extensions get about 50 MB: one encoder per viewer, so at most two at once.
+    /// OBS always gets in (a preview gives way to it); a preview never pushes anyone out.
     private let maxViewers = 2
 
     init(room code: String, device: String, name: String) {
@@ -106,7 +109,7 @@ final class Broadcaster {
         let callID = signal["call"] as? String
         switch kind {
         case "want":
-            if let viewer, let callID { offer(to: viewer, call: callID) }
+            if let viewer, let callID { offer(to: viewer, call: callID, preview: signal["role"] as? String == "preview") }
         case "answer":
             guard let viewer, let call = calls[viewer], call.id == callID, let sdp = signal["sdp"] as? String else { return }
             call.accept(answer: sdp)
@@ -126,11 +129,17 @@ final class Broadcaster {
     private func hangUp(_ viewer: String) {
         calls.removeValue(forKey: viewer)?.close()
         order.removeAll { $0 == viewer }
+        previews.remove(viewer)
     }
 
-    private func offer(to viewer: String, call id: String) {
+    private func offer(to viewer: String, call id: String, preview: Bool) {
         hangUp(viewer)
-        while calls.count >= maxViewers, let oldest = order.first { hangUp(oldest) }
+        while calls.count >= maxViewers {
+            if preview { return }
+            // Make room for OBS: a preview goes first, then the oldest OBS source.
+            guard let out = order.first(where: previews.contains) ?? order.first else { break }
+            hangUp(out)
+        }
         let call = Call(id: id, viewer: viewer, queue: queue)
         call.onCandidate = { [weak self] candidate in
             guard let self else { return }
@@ -145,6 +154,7 @@ final class Broadcaster {
         guard call.open(factory: factory, track: track) else { return }
         calls[viewer] = call
         order.append(viewer)
+        if preview { previews.insert(viewer) }
         call.makeOffer { [weak self] sdp in
             guard let self, self.calls[viewer] === call else { return }
             self.room.send(["t": "offer", "device": self.device, "viewer": viewer, "call": id, "sdp": sdp])

@@ -3,8 +3,8 @@ import WebRTC
 
 /// The broadcast extension: iOS hands it every frame of the screen while the
 /// broadcast runs (in any app); it sends them to OBS with WebRTC, the same way
-/// the website's /screen page does, so OBS shows this iPhone through
-/// /screen/obs?room=…&device=…
+/// OBS Sharing's web pages do, so OBS shows this iPhone through
+/// /services/obs-sharing/obs?room=…&device=… on 7twenty8studio.com
 final class SampleHandler: RPBroadcastSampleHandler {
     private var broadcaster: Broadcaster?
 
