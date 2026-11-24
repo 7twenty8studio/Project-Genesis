@@ -194,9 +194,9 @@ private enum DriftSeason {
             [Flyer(kind: .shootingStar, radius: 950, period: 12, angle: .pi / 2 - 0.5, target: UnitPoint(x: 0.5, y: 0.3)),
              Flyer(kind: .shootingStar, radius: 1150, period: 17, angle: .pi / 2 - 0.35, target: UnitPoint(x: 0.7, y: 0.18))]
         case .summer:
-            // Low across the widget, left to right, about 16 seconds a
-            // crossing, every two and a half minutes (the reader's is 90 s).
-            [Flyer(kind: .butterfly, radius: 600, period: 150, angle: -.pi / 2, target: UnitPoint(x: 0.5, y: 0.78))]
+            // Low across the widget, left to right, dipping a little at
+            // each side: about 12 seconds a crossing, every 75 seconds.
+            [Flyer(kind: .butterfly, radius: 420, period: 75, angle: -.pi / 2, target: UnitPoint(x: 0.5, y: 0.7))]
         case .autumn, .winter, .spring, .hearth:
             []
         }
@@ -480,7 +480,7 @@ private struct FlyerView: View {
             WidgetButterfly()
                 .counterClockHandRotation(period: 1.4)
                 .offset(y: -3)
-                .frame(width: 34, height: 34)
+                .frame(width: 38, height: 38)
                 .clockHandRotation(period: 1.4)
         }
     }
@@ -503,8 +503,8 @@ private struct WidgetButterfly: View {
             SeasonShape(unit: SeasonShapes.butterflyBody, span: 2).fill(bodyColor)
             SeasonShape(unit: SeasonShapes.butterflyAntennae, span: 2).stroke(bodyColor, lineWidth: 0.5)
         }
-        .frame(width: 22, height: 22)
-        .opacity(0.85)
+        .frame(width: 26, height: 26)
+        .opacity(0.95)
     }
 }
 
