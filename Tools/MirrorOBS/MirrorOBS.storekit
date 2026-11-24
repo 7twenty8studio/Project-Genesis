@@ -1,0 +1,48 @@
+{
+  "identifier" : "6F0C2A1E",
+  "nonRenewingSubscriptions" : [
+    {
+      "displayPrice" : "0.0",
+      "familyShareable" : false,
+      "internalID" : "6F0C2A1F",
+      "localizations" : [
+        {
+          "description" : "Try Mirror OBS free for 7 days. Never charges you.",
+          "displayName" : "7-Day Free Trial",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.7twenty8studio.mirrorobs.trial7",
+      "referenceName" : "7-Day Free Trial",
+      "type" : "NonRenewingSubscription"
+    }
+  ],
+  "products" : [
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : true,
+      "internalID" : "6F0C2A20",
+      "localizations" : [
+        {
+          "description" : "Unlock Mirror OBS for good. One-time purchase.",
+          "displayName" : "Unlock Mirror OBS",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.7twenty8studio.mirrorobs.unlock",
+      "referenceName" : "Unlock Mirror OBS",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6F0C2A21",
+    "_developerTeamID" : "4XTR53RY2V",
+    "_locale" : "en_US",
+    "_storefront" : "USA"
+  },
+  "subscriptionGroups" : [ ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}
