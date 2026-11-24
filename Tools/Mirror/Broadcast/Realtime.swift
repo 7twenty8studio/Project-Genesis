@@ -1,7 +1,7 @@
 import Foundation
 
 /// One room's channel on Supabase Realtime (public broadcast, nothing stored),
-/// over a plain WebSocket, as the website's lib/screenshare/room.ts does.
+/// over a plain WebSocket, as OBS Sharing's lib/obs-sharing/room.ts does.
 /// Reconnects by itself. Everything runs on `queue`.
 final class RealtimeRoom: NSObject, URLSessionWebSocketDelegate {
     var onSignal: (([String: Any]) -> Void)?

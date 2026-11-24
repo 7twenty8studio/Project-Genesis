@@ -1,7 +1,8 @@
-# Versely Mirror: puts an iPhone's screen in OBS, wirelessly, for the launch
-# show (the head-to-head race). Not part of Versely and never on the App
-# Store: install it on the stage iPhones straight from Xcode.
+# 7Twenty8 Mirror: puts an iPhone's screen in OBS, wirelessly, through OBS
+# Sharing on 7twenty8studio.com (used for the Versely launch show's race).
+# Never on the App Store: install it on the iPhones straight from Xcode.
 #   cd Tools/Mirror && xcodegen generate && open VerselyMirror.xcodeproj
+# (Target and bundle ids keep their first names so installed phones keep their IDs.)
 # The .xcodeproj is not committed. README.md has the steps.
 name: VerselyMirror
 
@@ -36,10 +37,16 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.versely.mirror
         GENERATE_INFOPLIST_FILE: YES
-        INFOPLIST_KEY_CFBundleDisplayName: Versely Mirror
+        INFOPLIST_KEY_CFBundleDisplayName: Mirror
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
         INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+    entitlements:
+      path: App/Mirror.entitlements
+      properties:
+        com.apple.security.application-groups: [group.com.7twenty8studio.mirror]
     dependencies:
       - target: MirrorBroadcast
       # The extension's WebRTC framework is embedded here, in the app (extensions can't embed frameworks).
@@ -52,11 +59,15 @@ targets:
     info:
       path: Broadcast/Info.plist
       properties:
-        CFBundleDisplayName: Versely Mirror
+        CFBundleDisplayName: 7Twenty8 Mirror
         NSExtension:
           NSExtensionPointIdentifier: com.apple.broadcast-services-upload
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).SampleHandler
           RPBroadcastProcessMode: RPBroadcastProcessModeSampleBuffer
+    entitlements:
+      path: Broadcast/Broadcast.entitlements
+      properties:
+        com.apple.security.application-groups: [group.com.7twenty8studio.mirror]
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.7twenty8studio.versely.mirror.broadcast

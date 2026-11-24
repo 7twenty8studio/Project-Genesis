@@ -9,8 +9,10 @@ final class SampleHandler: RPBroadcastSampleHandler {
     private var broadcaster: Broadcaster?
 
     override func broadcastStarted(withSetupInfo setupInfo: [String: NSObject]?) {
-        let broadcaster = Broadcaster(room: Mirror.room, device: Mirror.deviceID, name: "iPhone \(Mirror.deviceID.suffix(4))")
+        let broadcaster = Broadcaster(room: Mirror.room, device: Mirror.deviceID, name: Mirror.name)
+        broadcaster.onStatus = { connected, viewers in Mirror.writeStatus(connected: connected, viewers: viewers) }
         self.broadcaster = broadcaster
+        Mirror.writeStatus(connected: false, viewers: 0)
         broadcaster.start()
     }
 
@@ -20,6 +22,7 @@ final class SampleHandler: RPBroadcastSampleHandler {
     override func broadcastFinished() {
         broadcaster?.stop()
         broadcaster = nil
+        Mirror.clearStatus()
     }
 
     override func processSampleBuffer(_ sampleBuffer: CMSampleBuffer, with sampleBufferType: RPSampleBufferType) {
