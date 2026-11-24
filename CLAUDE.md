@@ -447,14 +447,18 @@ shares; README.md has the architecture.
   (a postcard: cream stock, a stamp and postmark, ruled eyebrow, italic
   citation) is drawn by the widget itself (`VintageBackground`).
   The seasonal backgrounds drift (`SeasonalMotionLayer`,
-  GenesisWidgets/SeasonalMotion.swift): widgets can't animate continuously
-  (the iOS 26 SDK has no `_clockHandRotationEffect`), so with a seasonal
-  background the verse widget's timeline has an entry every minute for an
-  hour (`SeasonalDrift.entryDates`, then it reloads) and each moves the
-  pieces 4 s further along huge wheels centred above-left (a drift down and
-  left, flutter and spin), gliding over 2 s; positions come from whole
-  minutes (`SeasonalDrift.time`) so they carry on across reloads. Behind
-  the words in the content, edge-masked; nothing with Reduce Motion.
+  GenesisWidgets/SeasonalMotion.swift) on huge wheels centred above-left
+  (a drift down and left, flutter and spin), turned continuously by
+  WidgetKit's private `_ClockHandRotationEffect` (`ClockHandMotion`, built
+  at runtime from its Codable form as ClockHandKit does; owner's decision,
+  24 November 2026, knowing App Review may object: `isEnabled` is the
+  switch). Where it isn't available (and in the app's previews) the
+  timeline has an entry every minute for an hour (`SeasonalDrift.entryDates`)
+  and each moves the pieces 4 s further, gliding over 2 s; then only pieces
+  near the widget are drawn (`DriftCull`) with light leaves
+  (`SeasonShapes.lightLeaf`) and no per-piece shadow, or WidgetKit's render
+  budget gives the grey placeholder. Behind the words in the content,
+  edge-masked; nothing with Reduce Motion.
   Keepsakes (Premium; `WidgetArtStyle.isKeepsake`, GenesisWidgets/KeepsakeWidgets.swift):
   Instant Photo, Pressed Flowers, Film Strip, Typewriter, Library Card and
   Calendar Page, after the owner's light Canva mockups (linen, cream cards,

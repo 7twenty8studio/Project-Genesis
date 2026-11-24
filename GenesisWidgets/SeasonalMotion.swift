@@ -55,7 +55,22 @@ struct SeasonalMotionLayer: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
-        if !reduceMotion, let season = DriftSeason(style) {
+        if !reduceMotion, let season = DriftSeason(style), ClockHandMotion.isAvailable {
+            // Turning all the time, like the Clock widget's hands.
+            GeometryReader { proxy in
+                let size = proxy.size
+                ZStack(alignment: .topLeading) {
+                    ForEach(season.wheels.indices, id: \.self) { index in
+                        ClockWheelView(wheel: season.wheels[index], season: season, size: size, seed: UInt64(index + 1) * 7919)
+                    }
+                }
+                .frame(width: size.width, height: size.height, alignment: .topLeading)
+                .clipped()
+                .mask(EdgeMask())
+            }
+            .allowsHitTesting(false)
+            .accessibilityHidden(true)
+        } else if !reduceMotion, let season = DriftSeason(style) {
             GeometryReader { proxy in
                 let size = proxy.size
                 let time = SeasonalDrift.time(at: date)
@@ -225,24 +240,11 @@ private struct WheelView: View {
     let time: TimeInterval
 
     var body: some View {
-        // The centre sits above and left of the widget; the wheel reaches
-        // from just past its nearest corner to beyond its farthest.
-        let center = CGPoint(x: -0.1 * size.width, y: -0.35 * size.height)
-        let near = hypot(center.x, center.y) * 0.9
-        let far = hypot(size.width - center.x, size.height - center.y) * 1.05
+        let layout = WheelLayout(wheel: wheel, size: size, seed: seed)
+        let center = layout.center
+        let pieces = layout.pieces
         // Turning clockwise: across the widget, down and to the left.
         let turn = (time / wheel.period).truncatingRemainder(dividingBy: 1) * 2 * .pi
-        var random = DriftRandom(seed: seed)
-        let pieces = (0..<wheel.count).map { _ in
-            Piece(
-                angle: random.next() * 2 * .pi,
-                radius: near + (far - near) * CGFloat(random.next()),
-                size: wheel.sizes.lowerBound + (wheel.sizes.upperBound - wheel.sizes.lowerBound) * CGFloat(random.next()),
-                spin: 20 + random.next() * 20,
-                flutter: random.next(),
-                tint: Int(random.next() * 8)
-            )
-        }
         // Only the pieces on or near the widget: those just outside are kept
         // so they glide in, rather than appearing, on the next step.
         let step = SeasonalDrift.secondsPerStep / wheel.period * 2 * .pi
@@ -263,6 +265,163 @@ private struct WheelView: View {
             }
         }
         .frame(width: size.width, height: size.height, alignment: .topLeading)
+    }
+}
+
+/// A wheel's centre, reach and pieces: the same every time for a seed, so
+/// both ways of turning it (and every entry) agree.
+private struct WheelLayout {
+    let center: CGPoint
+    let far: CGFloat
+    let pieces: [Piece]
+
+    init(wheel: DriftSeason.Wheel, size: CGSize, seed: UInt64) {
+        // The centre sits above and left of the widget; the wheel reaches
+        // from just past its nearest corner to beyond its farthest.
+        let center = CGPoint(x: -0.1 * size.width, y: -0.35 * size.height)
+        let near = hypot(center.x, center.y) * 0.9
+        let far = hypot(size.width - center.x, size.height - center.y) * 1.05
+        var random = DriftRandom(seed: seed)
+        self.center = center
+        self.far = far
+        self.pieces = (0..<wheel.count).map { _ in
+            Piece(
+                angle: random.next() * 2 * .pi,
+                radius: near + (far - near) * CGFloat(random.next()),
+                size: wheel.sizes.lowerBound + (wheel.sizes.upperBound - wheel.sizes.lowerBound) * CGFloat(random.next()),
+                spin: 20 + random.next() * 20,
+                flutter: random.next(),
+                tint: Int(random.next() * 8)
+            )
+        }
+    }
+}
+
+// MARK: - Turning with the clock
+
+/// A whole wheel, drawn once and turned by the clock effect: one turn every
+/// `wheel.period` seconds, as fast as the reader's drift. Each piece spins
+/// and flutters the same way.
+private struct ClockWheelView: View {
+    let wheel: DriftSeason.Wheel
+    let season: DriftSeason
+    let size: CGSize
+    let seed: UInt64
+
+    var body: some View {
+        let layout = WheelLayout(wheel: wheel, size: size, seed: seed)
+        let side = layout.far * 2
+        ZStack(alignment: .topLeading) {
+            ForEach(layout.pieces.indices, id: \.self) { index in
+                let piece = layout.pieces[index]
+                ClockPieceView(piece: piece, season: season)
+                    .opacity(wheel.opacity)
+                    .position(x: layout.far + cos(piece.angle) * piece.radius, y: layout.far + sin(piece.angle) * piece.radius)
+            }
+        }
+        .frame(width: side, height: side, alignment: .topLeading)
+        // Clockwise about its centre: across the widget, down and to the left.
+        .clockHandRotation(period: wheel.period)
+        // The square's centre on the wheel's centre, above and left.
+        .position(layout.center)
+    }
+}
+
+private struct ClockPieceView: View {
+    let piece: Piece
+    let season: DriftSeason
+
+    var body: some View {
+        if let flutter = season.flutter {
+            let period = flutter.period.lowerBound + (flutter.period.upperBound - flutter.period.lowerBound) * piece.flutter
+            let box = piece.size * 2 + flutter.radius * 2
+            // Off centre in a box that turns: round its small flutter circle.
+            spinning
+                .offset(y: -flutter.radius)
+                .frame(width: box, height: box)
+                .clockHandRotation(period: period)
+        } else {
+            spinning
+        }
+    }
+
+    @ViewBuilder
+    private var spinning: some View {
+        if season.spins {
+            season.piece(size: piece.size, tint: piece.tint)
+                .clockHandRotation(period: piece.spin)
+        } else {
+            season.piece(size: piece.size, tint: piece.tint)
+        }
+    }
+}
+
+/// WidgetKit's own clock-hand rotation (`_ClockHandRotationEffect`, what the
+/// Clock widget's hands use): turning continuously with the system clock,
+/// drawn by iOS, with no timeline entries. It's private API, used on the
+/// owner's decision (24 November 2026) knowing App Review may object or an
+/// iOS update may stop it: `isEnabled` turns it off, and wherever it isn't
+/// available the widget falls back to the minute steps. Since Xcode 26.1
+/// the underscored modifier does nothing for other apps, so it's built at
+/// runtime from its Codable form, as ClockHandKit does (github.com/giljihun/
+/// ClockHandKit, MIT License, Copyright (c) 2026 GIL).
+enum ClockHandMotion {
+    /// The switch: false goes back to the minute steps everywhere.
+    static let isEnabled = true
+
+    /// Only in the widget extension (the app's Widget Styles previews keep
+    /// the still), and only when WidgetKit still has the effect.
+    static let isAvailable: Bool = {
+        guard isEnabled, Bundle.main.bundlePath.hasSuffix(".appex") else { return false }
+        return effect(period: 60) != nil
+    }()
+
+    /// The effect for a period, or nil if WidgetKit no longer offers it.
+    static func effect(period: TimeInterval) -> (any ViewModifier)? {
+        guard let type = _typeByName("9WidgetKit24_ClockHandRotationEffectV"),
+              let decodable = type as? any Decodable.Type,
+              let json = try? JSONEncoder().encode(ClockHandPayload(period: period)),
+              let decoded = try? JSONDecoder().decode(decodable, from: json)
+        else { return nil }
+        return decoded as? any ViewModifier
+    }
+}
+
+/// `_ClockHandRotationEffect`'s Codable form. WidgetKit in the 27 releases
+/// requires `honorIdealizedDate`; earlier ones ignore it.
+private struct ClockHandPayload: Encodable {
+    let period: TimeInterval
+
+    private enum CodingKeys: String, CodingKey {
+        case period, timeZone, anchor, honorIdealizedDate
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(period, forKey: .period)
+        try container.encode(TimeZone.current, forKey: .timeZone)
+        // The real time, not the gallery's idealised one.
+        try container.encode(false, forKey: .honorIdealizedDate)
+        var anchor = container.nestedUnkeyedContainer(forKey: .anchor)
+        try anchor.encode(0.5)
+        try anchor.encode(0.5)
+    }
+}
+
+private extension View {
+    /// Turns the view about its centre once every `period` seconds, or
+    /// leaves it still where the effect isn't available.
+    @ViewBuilder
+    func clockHandRotation(period: TimeInterval) -> some View {
+        if ClockHandMotion.isAvailable, let effect = ClockHandMotion.effect(period: period) {
+            applying(effect)
+        } else {
+            self
+        }
+    }
+
+    func applying<M: ViewModifier>(_ effect: M) -> AnyView {
+        AnyView(modifier(effect))
     }
 }
 

@@ -110,8 +110,9 @@ struct VerseProvider: AppIntentTimelineProvider {
         let source = configuration.option.source
         let background = configuration.background.style(in: snapshot)
         var dates = VerseWidgetSchedule.entryDates(rotates: source.rotates, from: .now)
-        // Seasonal backgrounds drift on: a step every minute for an hour.
-        if SeasonalDrift.moves(background) {
+        // Seasonal backgrounds drift on: turned all the time by the clock
+        // effect, or else a step every minute for an hour.
+        if SeasonalDrift.moves(background) && !ClockHandMotion.isAvailable {
             dates = SeasonalDrift.entryDates(adding: dates, from: .now)
         }
         return Timeline(entries: dates.map { VerseEntry(date: $0, snapshot: snapshot, source: source, background: background) }, policy: .atEnd)
