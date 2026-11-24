@@ -5,7 +5,7 @@ import UIKit
 /// (no App Group needed): the room, and this iPhone's ID, which both work out
 /// the same way from the vendor id iOS gives every app of one developer.
 enum Mirror {
-    /// The show's room on /screen (the host page: /screen/host?room=Q2TKHV33JG).
+    /// The show's room in OBS Sharing (host page: 7twenty8studio.com/services/obs-sharing?room=Q2TKHV33JG).
     static let room = "Q2TKHV33JG"
 
     /// Versely's public Supabase project (the same public values the app and website use).
@@ -21,6 +21,6 @@ enum Mirror {
 
     /// The OBS browser source for this iPhone.
     static var obsLink: String {
-        "https://versely.7twenty8studio.com/screen/obs?room=\(room)&device=\(deviceID)"
+        "https://www.7twenty8studio.com/services/obs-sharing/obs?room=\(room)&device=\(deviceID)"
     }
 }

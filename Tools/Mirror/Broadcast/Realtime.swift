@@ -18,7 +18,7 @@ final class RealtimeRoom: NSObject, URLSessionWebSocketDelegate {
 
     init(room: String, queue: DispatchQueue) {
         self.queue = queue
-        self.topic = "realtime:versely-screen-\(room)"
+        self.topic = "realtime:obs-share-\(room)"
         super.init()
         session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
     }

@@ -2,8 +2,8 @@
 
 Puts an iPhone's screen in OBS over Wi-Fi, with no third-party mirroring app.
 A tiny app with an iOS screen broadcast extension (ReplayKit) that sends the
-screen with WebRTC to the website's OBS page, `/screen/obs` (web/README.md ›
-Launch-day screenshare). Not part of Versely, never on the App Store:
+screen with WebRTC to OBS Sharing on 7twenty8studio.com (Services › OBS
+Sharing, repo 7twenty8-studio-web, src/lib/obs-sharing). Not part of Versely, never on the App Store:
 installed on the stage iPhones from Xcode. Free provisioning lasts 7 days;
 with the paid team (4XTR53RY2V) a year.
 
@@ -20,8 +20,12 @@ Plug the iPhone in, pick it at the top of Xcode, scheme VerselyMirror, Run
 
 1. On the Mac, OBS: one Browser source per phone, 1920 × 1080, URL from the
    app's "Copy OBS link" or from the host page
-   (https://versely.7twenty8studio.com/screen/host?room=Q2TKHV33JG), which
-   lists every phone that's broadcasting with its OBS link and a preview.
+   (https://www.7twenty8studio.com/services/obs-sharing?room=Q2TKHV33JG), which
+   lists every phone that's broadcasting with its OBS link and a preview. The
+   compact list for OBS itself (Docks › Custom Browser Docks):
+   https://www.7twenty8studio.com/services/obs-sharing/dock?room=Q2TKHV33JG
+   Previews give way to OBS: a phone sends to two viewers at most, and OBS
+   always gets one of them.
 2. On the phone: open Versely Mirror, tap the round button, Start Broadcast,
    then open Versely. The phone shows a red pill while it's live.
 3. Stop from the red pill (or Control Center).
