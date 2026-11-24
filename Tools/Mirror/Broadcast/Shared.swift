@@ -8,8 +8,6 @@ import UIKit
 enum Mirror {
     static let appGroup = "group.com.7twenty8studio.mirror"
     static let broadcastExtension = "com.7twenty8studio.versely.mirror.broadcast"
-    /// The launch show's room, used until another is set.
-    static let defaultRoom = "Q2TKHV33JG"
     static let site = "https://www.7twenty8studio.com/services/obs-sharing"
 
     /// The public Supabase project OBS Sharing signals through (public values, the same the website uses).
@@ -35,9 +33,10 @@ enum Mirror {
         return code
     }
 
-    static var room: String {
-        get { store.string(forKey: "room").flatMap(cleanRoom) ?? defaultRoom }
-        set { store.set(cleanRoom(newValue) ?? defaultRoom, forKey: "room") }
+    /// The room this iPhone joins: empty until the person types one, then remembered.
+    static var room: String? {
+        get { store.string(forKey: "room").flatMap(cleanRoom) }
+        set { store.set(newValue.flatMap(cleanRoom), forKey: "room") }
     }
 
     /// The name the host page and the OBS dock show next to the ID.

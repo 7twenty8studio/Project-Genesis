@@ -30,8 +30,9 @@ App Groups on both targets.
 
 The app opens with a three-step guide (the ? button shows it again):
 
-1. **Room:** type the code from OBS Sharing's host page (the launch show's
-   room Q2TKHV33JG is the default) and tap Use This Room.
+1. **Room:** empty at first. Type the code from OBS Sharing's host page
+   (the launch show's is Q2TKHV33JG) and tap Use This Room; Mirror
+   remembers it. Start Broadcast waits for a room.
 2. **Start Broadcast:** the big red button opens iOS's broadcast sheet on
    this app; tap Start Broadcast there. The status card says Connecting,
    Broadcasting (in the room, waiting for OBS) or Live in OBS. Switch to any

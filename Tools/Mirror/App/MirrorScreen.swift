@@ -8,7 +8,7 @@ struct MirrorScreen: View {
     @State private var showGuide = false
     @State private var launcher = BroadcastLauncher()
     @State private var status: Mirror.Status?
-    @State private var roomDraft = Mirror.room
+    @State private var roomDraft = Mirror.room ?? ""
     @State private var room = Mirror.room
     @State private var name = Mirror.name
     @State private var copied: String?
@@ -21,8 +21,8 @@ struct MirrorScreen: View {
             ScrollView {
                 VStack(spacing: 16) {
                     statusCard
-                    phoneCard
                     roomCard
+                    phoneCard
                     obsCard
                 }
                 .padding(16)
@@ -77,6 +77,7 @@ struct MirrorScreen: View {
             .buttonStyle(.borderedProminent)
             .tint(status == nil ? Studio.live : Studio.ink)
             .clipShape(Capsule())
+            .disabled(room == nil && status == nil)
         }
         .padding(18)
         .background(RoundedRectangle(cornerRadius: 20, style: .continuous).fill(Color(.secondarySystemGroupedBackground)))
@@ -96,12 +97,14 @@ struct MirrorScreen: View {
 
     private var statusDetail: String {
         guard let status else {
+            if room == nil { return "Type your room code below first. Whoever runs OBS gets it from the OBS Sharing page." }
             return "Tap Start Broadcast, then Start Broadcast again in the sheet. Then open the app you want to show."
         }
         if status.viewers > 0 {
             return status.viewers == 1 ? "1 screen is showing this iPhone. Switch to any app: it stays live." : "\(status.viewers) screens are showing this iPhone (OBS and a preview)."
         }
-        return status.connected ? "In room \(room). Waiting for OBS to show this iPhone." : "Reaching room \(room). Check this iPhone is online."
+        let code = room ?? ""
+        return status.connected ? "In room \(code). Waiting for OBS to show this iPhone." : "Reaching room \(code). Check this iPhone is online."
     }
 
     // MARK: This iPhone
@@ -145,32 +148,27 @@ struct MirrorScreen: View {
                 } label: { Image(systemName: "doc.on.clipboard") }
                     .accessibilityLabel("Paste")
             }
-            if roomDraft != room {
+            if roomDraft != (room ?? "") {
                 HStack {
                     Button("Use This Room", action: saveRoom)
                         .buttonStyle(.borderedProminent)
                         .tint(Studio.ink)
                         .disabled(!roomValid)
-                    Button("Cancel") { roomDraft = room }
+                    if room != nil {
+                        Button("Cancel") { roomDraft = room ?? "" }
+                    }
                 }
-                if !roomValid {
+                if !roomValid && !roomDraft.isEmpty {
                     Text("3 to 40 letters, numbers or dashes.")
                         .font(.footnote)
                         .foregroundStyle(Studio.live)
                 }
             } else {
-                Text(status == nil
-                     ? "Get the code from whoever runs OBS (the host page shows it)."
-                     : "A new room takes effect the next time you start a broadcast.")
+                Text(room == nil
+                     ? "Get the code from whoever runs OBS (the OBS Sharing page shows it). Mirror remembers it."
+                     : status == nil ? "Mirror remembers this room. Change it any time." : "A new room takes effect the next time you start a broadcast.")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
-            }
-            if room != Mirror.defaultRoom && roomDraft == room {
-                Button("Back to the Launch Show Room") {
-                    roomDraft = Mirror.defaultRoom
-                    saveRoom()
-                }
-                .font(.footnote)
             }
         }
     }
@@ -185,7 +183,13 @@ struct MirrorScreen: View {
 
     // MARK: OBS
 
-    private var obsCard: some View {
+    @ViewBuilder private var obsCard: some View {
+        if let room {
+            obsLinks(room: room)
+        }
+    }
+
+    private func obsLinks(room: String) -> some View {
         Card(title: "OBS") {
             Text("Add a Browser source in OBS with this link, 500 × 1080, so the screen fills it edge to edge.")
                 .font(.footnote)
