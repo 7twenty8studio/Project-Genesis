@@ -15,6 +15,14 @@ import WidgetKit
 // and they come round again for ever. Each piece also flutters and spins.
 // Kept to the edges (a soft mask) so the words stay clear; nothing with
 // Reduce Motion (the painted still stays).
+//
+// Light on purpose: WidgetKit renders every entry of the hour ahead of time
+// within a small memory and time budget, and a widget over it shows only its
+// grey placeholder (autumn's 68 detailed leaves, each with its own shadow,
+// went over it). So only the pieces on or near the widget are drawn
+// (`DriftCull`: most of each wheel is off it), leaf outlines are light
+// (`SeasonShapes.lightLeaf`), and nothing has its own shadow or blur (one
+// shadow for the whole layer instead).
 
 enum SeasonalDrift {
     /// Seconds of the reader's drift that one minute of the widget moves on.
@@ -57,6 +65,9 @@ struct SeasonalMotionLayer: View {
                     }
                 }
                 .frame(width: size.width, height: size.height, alignment: .topLeading)
+                // One soft shadow for the whole layer, never one per piece.
+                .compositingGroup()
+                .shadow(color: .black.opacity(DriftSeason(style)?.casts == true ? 0.12 : 0), radius: 1, y: 1)
                 // Each minute's step glides in (widgets allow up to two seconds).
                 .animation(.easeInOut(duration: 2), value: date)
                 .clipped()
@@ -113,6 +124,9 @@ private enum DriftSeason {
         }
     }
 
+    /// Leaves and petals cast a faint shadow (the whole layer's, once).
+    var casts: Bool { self == .autumn || self == .spring }
+
     /// Flutter on a small circle (radius, seconds per loop), none for snow and light.
     var flutter: (radius: CGFloat, period: ClosedRange<Double>)? {
         switch self {
@@ -138,12 +152,11 @@ private enum DriftSeason {
             let kind = SeasonShapes.LeafKind.mixed(tint)
             let color = colors[tint % colors.count]
             ZStack {
-                SeasonShape(unit: SeasonShapes.leaf(kind), span: 1.1).fill(color)
+                SeasonShape(unit: SeasonShapes.lightLeaf(kind), span: 1.1).fill(color)
                 SeasonShape(unit: SeasonShapes.leafVeins(kind), span: 1.1)
                     .stroke(color.opacity(0.75), lineWidth: max(0.5, size * 0.04))
             }
             .frame(width: size, height: size)
-            .shadow(color: .black.opacity(0.12), radius: 1, y: 1)
         case .spring:
             let colors: [Color] = [
                 Color(red: 0.95, green: 0.76, blue: 0.80),
@@ -158,12 +171,10 @@ private enum DriftSeason {
                     SeasonShape(unit: SeasonShapes.stamenTips, span: 2.2).fill(Color(red: 0.88, green: 0.70, blue: 0.35))
                 }
                 .frame(width: size * 1.6, height: size * 1.6)
-                .shadow(color: .black.opacity(0.1), radius: 1, y: 0.5)
             } else {
                 Ellipse()
                     .fill(colors[tint % colors.count])
                     .frame(width: size * 0.65, height: size)
-                    .shadow(color: .black.opacity(0.1), radius: 1, y: 0.5)
             }
         case .winter:
             // The reader's flakes: pale blue-grey (#8FA6B8) with white; the
@@ -194,10 +205,11 @@ private enum DriftSeason {
                 }
             }
         case .summer:
+            // A soft mote: a gradient rather than a blur (one less pass each).
+            let warm = Color(red: 0.98, green: 0.85, blue: 0.55)
             Circle()
-                .fill(Color(red: 0.98, green: 0.85, blue: 0.55))
-                .frame(width: size, height: size)
-                .blur(radius: size * 0.3)
+                .fill(RadialGradient(colors: [warm, warm.opacity(0.5), warm.opacity(0)], center: .center, startRadius: 0, endRadius: size * 0.8))
+                .frame(width: size * 1.6, height: size * 1.6)
         }
     }
 }
@@ -231,16 +243,23 @@ private struct WheelView: View {
                 tint: Int(random.next() * 8)
             )
         }
+        // Only the pieces on or near the widget: those just outside are kept
+        // so they glide in, rather than appearing, on the next step.
+        let step = SeasonalDrift.secondsPerStep / wheel.period * 2 * .pi
+        let shown = pieces.indices.compactMap { index -> (index: Int, point: CGPoint)? in
+            let piece = pieces[index]
+            let angle = piece.angle + turn
+            let point = CGPoint(x: center.x + cos(angle) * piece.radius, y: center.y + sin(angle) * piece.radius)
+            let margin = DriftCull.margin(radius: piece.radius, step: step, pieceSize: piece.size * 1.6)
+            return DriftCull.isNear(point, size: size, margin: margin) ? (index, point) : nil
+        }
         return ZStack(alignment: .topLeading) {
-            ForEach(pieces.indices, id: \.self) { index in
-                let piece = pieces[index]
-                let angle = piece.angle + turn
-                PieceView(piece: piece, season: season, time: time)
+            // Identified by the piece, not its place in the list, so each one
+            // glides from where it was.
+            ForEach(shown, id: \.index) { item in
+                PieceView(piece: pieces[item.index], season: season, time: time)
                     .opacity(wheel.opacity)
-                    .position(
-                        x: center.x + cos(angle) * piece.radius,
-                        y: center.y + sin(angle) * piece.radius
-                    )
+                    .position(item.point)
             }
         }
         .frame(width: size.width, height: size.height, alignment: .topLeading)
@@ -280,6 +299,20 @@ private struct PieceView: View {
 }
 
 // MARK: - Helpers
+
+/// Which pieces are worth drawing: those within a step's travel of the
+/// widget (plus the flutter and their own size). Pure, so it's tested.
+enum DriftCull {
+    /// How far outside the widget a piece is still drawn.
+    static func margin(radius: CGFloat, step: Double, pieceSize: CGFloat) -> CGFloat {
+        radius * CGFloat(step) + pieceSize + 8
+    }
+
+    static func isNear(_ point: CGPoint, size: CGSize, margin: CGFloat) -> Bool {
+        point.x >= -margin && point.x <= size.width + margin
+            && point.y >= -margin && point.y <= size.height + margin
+    }
+}
 
 /// Clear in the middle, where the words are; the seasons show at the edges.
 private struct EdgeMask: View {
