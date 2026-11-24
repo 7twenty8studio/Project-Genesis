@@ -86,7 +86,10 @@ sandbox anyway.
 6. Review notes: explain that it needs a computer with OBS (or any browser)
    at https://www.7twenty8studio.com/services/obs-sharing , give a room code
    to try, and say a screen recording of it working is attached.
-7. Archive: Product › Archive in Xcode, Distribute › App Store Connect.
+7. Upload to TestFlight: `./Scripts/testflight.sh` (archive and upload with
+   Xcode's signed-in account; build number = date and time, version =
+   MARKETING_VERSION in project.yml, 1.0.0). `--no-upload` only checks
+   signing. Errors land in build-errors.txt.
 
 Listing text (description, keywords, promotional text) is in
 APP_STORE.md.
