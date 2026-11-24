@@ -3,7 +3,8 @@ import WidgetKit
 
 // The seasons' touches, drifting in the verse widget: maple, oak and birch
 // leaves in autumn, snow (crystals up close) in winter, petals and blossoms
-// in spring, warm motes of light in summer. Widgets can't
+// in spring, warm motes of light (and the butterfly) in summer, turning
+// stars (and shooting stars) at night. Widgets can't
 // animate continuously, so the widget's timeline has an entry every minute
 // with a seasonal background (`SeasonalDrift.entryDates`), and each entry
 // moves every piece a little further along its path; WidgetKit glides them
@@ -63,6 +64,9 @@ struct SeasonalMotionLayer: View {
                     ForEach(season.wheels.indices, id: \.self) { index in
                         ClockWheelView(wheel: season.wheels[index], season: season, size: size, seed: UInt64(index + 1) * 7919)
                     }
+                    ForEach(season.flyers.indices, id: \.self) { index in
+                        FlyerView(flyer: season.flyers[index], size: size)
+                    }
                 }
                 .frame(width: size.width, height: size.height, alignment: .topLeading)
                 .clipped()
@@ -97,7 +101,7 @@ struct SeasonalMotionLayer: View {
 // MARK: - Seasons
 
 private enum DriftSeason {
-    case autumn, winter, spring, summer
+    case autumn, winter, spring, summer, night
 
     init?(_ style: WidgetArtStyle) {
         switch style {
@@ -105,6 +109,7 @@ private enum DriftSeason {
         case .winter: self = .winter
         case .spring: self = .spring
         case .summer: self = .summer
+        case .night: self = .night
         default: return nil
         }
     }
@@ -136,6 +141,10 @@ private enum DriftSeason {
         case .summer:
             [Wheel(count: 40, period: 260, sizes: 3...6, opacity: 0.6),
              Wheel(count: 22, period: 190, sizes: 6...10, opacity: 0.45)]
+        case .night:
+            // The sky turning slowly; the brighter ones glint.
+            [Wheel(count: 44, period: 900, sizes: 1.2...2, opacity: 0.8),
+             Wheel(count: 16, period: 700, sizes: 4...6, opacity: 0.95)]
         }
     }
 
@@ -147,11 +156,34 @@ private enum DriftSeason {
         switch self {
         case .autumn: (5, 15...25)
         case .spring: (4, 12...20)
-        case .winter, .summer: nil
+        case .winter, .summer, .night: nil
         }
     }
 
     var spins: Bool { self != .summer }
+
+    /// Seconds per turn of a piece's own spin, from its 20–40: the night's
+    /// glints turn fast, so the stars seem to twinkle.
+    func spinPeriod(_ spin: TimeInterval) -> TimeInterval {
+        self == .night ? spin * 0.15 : spin
+    }
+
+    /// What crosses the widget now and then (only while it turns with the
+    /// clock): shooting stars at night, the butterfly in summer.
+    var flyers: [Flyer] {
+        switch self {
+        case .night:
+            // About 500 pt a second, one every 12 or 17 seconds.
+            [Flyer(kind: .shootingStar, radius: 950, period: 12, angle: .pi / 2 - 0.5, target: UnitPoint(x: 0.5, y: 0.3)),
+             Flyer(kind: .shootingStar, radius: 1150, period: 17, angle: .pi / 2 - 0.35, target: UnitPoint(x: 0.7, y: 0.18))]
+        case .summer:
+            // Low across the widget, left to right, about 16 seconds a
+            // crossing, every two and a half minutes (the reader's is 90 s).
+            [Flyer(kind: .butterfly, radius: 600, period: 150, angle: -.pi / 2, target: UnitPoint(x: 0.5, y: 0.78))]
+        case .autumn, .winter, .spring:
+            []
+        }
+    }
 
     @ViewBuilder
     func piece(size: CGFloat, tint: Int) -> some View {
@@ -218,6 +250,27 @@ private enum DriftSeason {
                         .fill(.white.opacity(0.85))
                         .frame(width: size / 2, height: size / 2)
                 }
+            }
+        case .night:
+            // Starlight's colours: blue-white, white and warm.
+            let tints: [Color] = [
+                Color(red: 0xCD / 255, green: 0xDA / 255, blue: 0xFF / 255),
+                Color(red: 0xF4 / 255, green: 0xF1 / 255, blue: 0xE8 / 255),
+                Color(red: 0xFF / 255, green: 0xE4 / 255, blue: 0xBA / 255),
+            ]
+            let color = tints[tint % tints.count]
+            if size >= 3 {
+                // A bright star: a core and a four-pointed glint that turns.
+                ZStack {
+                    Capsule().fill(color.opacity(0.7)).frame(width: 0.7, height: size * 2)
+                    Capsule().fill(color.opacity(0.7)).frame(width: size * 2, height: 0.7)
+                    Circle()
+                        .fill(RadialGradient(colors: [color, color.opacity(0.35), color.opacity(0)], center: .center, startRadius: 0, endRadius: size * 0.5))
+                        .frame(width: size, height: size)
+                }
+                .frame(width: size * 2, height: size * 2)
+            } else {
+                Circle().fill(color).frame(width: size, height: size)
             }
         case .summer:
             // A soft mote: a gradient rather than a blur (one less pass each).
@@ -349,10 +402,83 @@ private struct ClockPieceView: View {
     private var spinning: some View {
         if season.spins {
             season.piece(size: piece.size, tint: piece.tint)
-                .clockHandRotation(period: piece.spin)
+                .clockHandRotation(period: season.spinPeriod(piece.spin))
         } else {
             season.piece(size: piece.size, tint: piece.tint)
         }
+    }
+}
+
+/// Something that crosses the widget once a turn: it rides a wheel so big
+/// that only a short arc of it passes over the widget, through `target`
+/// (a point in the widget) at `angle` on the wheel, heading clockwise.
+private struct Flyer {
+    enum Kind { case shootingStar, butterfly }
+
+    let kind: Kind
+    let radius: CGFloat
+    let period: TimeInterval
+    let angle: Double
+    let target: UnitPoint
+}
+
+private struct FlyerView: View {
+    let flyer: Flyer
+    let size: CGSize
+
+    var body: some View {
+        let r = flyer.radius
+        let point = CGPoint(x: flyer.target.x * size.width, y: flyer.target.y * size.height)
+        let center = CGPoint(x: point.x - r * cos(flyer.angle), y: point.y - r * sin(flyer.angle))
+        ZStack(alignment: .topLeading) {
+            item
+                // Drawn heading up; turned to head along the wheel, clockwise.
+                .rotationEffect(.radians(flyer.angle + .pi))
+                .position(x: r + r * cos(flyer.angle), y: r + r * sin(flyer.angle))
+        }
+        .frame(width: r * 2, height: r * 2, alignment: .topLeading)
+        .clockHandRotation(period: flyer.period)
+        .position(center)
+    }
+
+    @ViewBuilder
+    private var item: some View {
+        switch flyer.kind {
+        case .shootingStar:
+            // A bright head and a tail fading behind it.
+            Capsule()
+                .fill(LinearGradient(colors: [Color(red: 1, green: 0.97, blue: 0.88), Color(red: 0.98, green: 0.95, blue: 0.82).opacity(0)], startPoint: .top, endPoint: .bottom))
+                .frame(width: 1.6, height: 46)
+        case .butterfly:
+            // Bobbing on a small circle as it goes, always facing ahead.
+            WidgetButterfly()
+                .counterClockHandRotation(period: 1.4)
+                .offset(y: -3)
+                .frame(width: 34, height: 34)
+                .clockHandRotation(period: 1.4)
+        }
+    }
+}
+
+/// Summer's butterfly, as in the reader: warm amber, wings open.
+private struct WidgetButterfly: View {
+    var body: some View {
+        let upper = Color(red: 0xD9 / 255, green: 0x9A / 255, blue: 0x4E / 255)
+        let lower = Color(red: 0xC9 / 255, green: 0x81 / 255, blue: 0x3C / 255)
+        let bodyColor = Color(red: 0x6B / 255, green: 0x4A / 255, blue: 0x2E / 255)
+        ZStack {
+            ForEach([CGFloat(1), -1], id: \.self) { side in
+                ZStack {
+                    SeasonShape(unit: SeasonShapes.butterflyUpperWing, span: 2).fill(upper)
+                    SeasonShape(unit: SeasonShapes.butterflyLowerWing, span: 2).fill(lower)
+                }
+                .scaleEffect(x: side, y: 1)
+            }
+            SeasonShape(unit: SeasonShapes.butterflyBody, span: 2).fill(bodyColor)
+            SeasonShape(unit: SeasonShapes.butterflyAntennae, span: 2).stroke(bodyColor, lineWidth: 0.5)
+        }
+        .frame(width: 22, height: 22)
+        .opacity(0.85)
     }
 }
 
@@ -420,6 +546,13 @@ private extension View {
         }
     }
 
+    /// The same, turning the other way: mirrored, turned, mirrored back.
+    func counterClockHandRotation(period: TimeInterval) -> some View {
+        scaleEffect(x: -1, y: 1)
+            .clockHandRotation(period: period)
+            .scaleEffect(x: -1, y: 1)
+    }
+
     func applying<M: ViewModifier>(_ effect: M) -> AnyView {
         AnyView(modifier(effect))
     }
@@ -444,7 +577,7 @@ private struct PieceView: View {
     var body: some View {
         season.piece(size: piece.size, tint: piece.tint)
             // Never wrapped, so each glide turns the same way.
-            .rotationEffect(.radians(season.spins ? time / piece.spin * 2 * .pi : 0))
+            .rotationEffect(.radians(season.spins ? time / season.spinPeriod(piece.spin) * 2 * .pi : 0))
             .offset(flutterOffset)
     }
 
