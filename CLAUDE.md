@@ -133,8 +133,12 @@ shares; README.md has the architecture.
 
 ## Premium sources, feedback and accounts
 - `EntitlementService.isPremium` = App Store subscription, or a grant in
-  public.premium_grants (the owner adds rows; `refreshGrant` on launch,
-  foreground and sign-in; study-ai honours grants too), or in DEBUG builds
+  public.premium_grants (the owner adds rows, now from Studio OS's Apps view
+  › Versely Premium grants: by an existing account's email, 1/3/6 months,
+  a year or permanent, and removes them; repo 7twenty8-studio-web,
+  supabase/pm/009_premium_grants.sql; `refreshGrant` on launch,
+  foreground and sign-in, and a saved end date ends it offline too;
+  study-ai honours grants too), or in DEBUG builds
   only Settings › Developer › Test as Premium. UI tests' override wins.
 - The server knows Premium through public.premium_entitlements (one row per
   account; key = original transaction id, or "<original>:family:<user>" for

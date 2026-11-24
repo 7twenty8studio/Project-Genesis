@@ -26,6 +26,34 @@ struct OctoberUpdateTests {
         #expect(!entitlements.isPremium)
     }
 
+    @Test func aSavedGrantEndsOnItsDateWithoutTheServer() throws {
+        let defaults = try #require(UserDefaults(suiteName: "entitlements-\(UUID())"))
+        defaults.set(true, forKey: "premium.grant")
+        defaults.set(Date.now.addingTimeInterval(-60).timeIntervalSince1970, forKey: "premium.grantEnds")
+        let ended = EntitlementService(defaults: defaults)
+        #expect(!ended.hasGrant)
+        #expect(!ended.isPremium)
+    }
+
+    @Test func aSavedGrantStillRunningKeepsPremiumOffline() throws {
+        let defaults = try #require(UserDefaults(suiteName: "entitlements-\(UUID())"))
+        let end = Date.now.addingTimeInterval(86_400)
+        defaults.set(true, forKey: "premium.grant")
+        defaults.set(end.timeIntervalSince1970, forKey: "premium.grantEnds")
+        let running = EntitlementService(defaults: defaults)
+        let shownEnd = try #require(running.grantExpiresAt)
+        #expect(running.isPremium)
+        #expect(abs(shownEnd.timeIntervalSince(end)) < 1)
+    }
+
+    @Test func aPermanentSavedGrantKeepsPremium() throws {
+        let defaults = try #require(UserDefaults(suiteName: "entitlements-\(UUID())"))
+        defaults.set(true, forKey: "premium.grant")
+        let forever = EntitlementService(defaults: defaults)
+        #expect(forever.isPremium)
+        #expect(forever.grantExpiresAt == nil)
+    }
+
     @Test func referencesCanUseTheBiblesLanguage() {
         let mark5 = ChapterID(book: 41, chapter: 5)
         #expect(mark5.description(in: "en") == "Mark 5")
