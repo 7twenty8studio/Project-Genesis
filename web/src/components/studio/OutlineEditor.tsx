@@ -9,6 +9,8 @@ import {
   draftProblems,
   newBlockID,
   quoteTranslation,
+  sermonBible,
+  withBibleForAll,
   type DraftBlock,
   type DraftRow,
 } from "@/lib/draft";
@@ -124,8 +126,11 @@ export function OutlineEditor({
     at !== drag.from + 1 &&
     drag.over === at;
 
+  const bibleForAll = sermonBible(blocks);
+  const hasPassages = blocks.some((b) => b.kind === "scripture");
   const insert = (at: number, kind: Kind) => {
-    const block = emptyBlock(kind);
+    // A new passage names the sermon's Bible, when every passage already names the same one.
+    const block = emptyBlock(kind, bibleForAll === "mixed" ? null : bibleForAll);
     onChange([...blocks.slice(0, at), block, ...blocks.slice(at)]);
     requestAnimationFrame(() =>
       document.getElementById(`field-${block.id}`)?.focus(),
@@ -167,6 +172,15 @@ export function OutlineEditor({
           language={language}
           onBlocks={onChange}
           onReview={onReview}
+        />
+      ) : null}
+
+      {hasPassages ? (
+        <SermonBibleField
+          key={bibleForAll ?? ""}
+          t={t}
+          current={bibleForAll}
+          onApply={(label) => onChange(withBibleForAll(blocks, label))}
         />
       ) : null}
 
@@ -667,6 +681,56 @@ function ScriptureFields({
   );
 }
 
+/** One Bible for every passage in the outline; a single passage can still name another below. */
+function SermonBibleField({
+  t,
+  current,
+  onApply,
+}: {
+  t: Translate;
+  current: string | "mixed" | null;
+  onApply: (label: string | null) => void;
+}) {
+  const [value, setValue] = useState(current === "mixed" ? "" : (current ?? ""));
+  const clean = value.trim();
+  const applied =
+    current !== "mixed" && (current ?? "").toLowerCase() === clean.toLowerCase();
+  return (
+    <form
+      className="mt-6 rounded-3xl border border-border bg-surface p-4"
+      onSubmit={(e) => {
+        e.preventDefault();
+        if (!applied) onApply(clean || null);
+      }}
+    >
+      <label htmlFor="sermon-bible" className="block text-sm font-medium">
+        {t("Bible for every passage")}
+      </label>
+      <div className="mt-1 flex flex-wrap items-center gap-2">
+        <input
+          id="sermon-bible"
+          aria-describedby="sermon-bible-note"
+          className={`${inputClass} max-w-[12rem]`}
+          placeholder={t("e.g. NIV")}
+          maxLength={60}
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+        <Button type="submit" disabled={applied}>
+          {t("Use for every passage")}
+        </Button>
+      </div>
+      <p id="sermon-bible-note" className="mt-1 text-sm text-muted" aria-live="polite">
+        {current === "mixed"
+          ? t("Passages name different Bibles. Using one here changes them all; you can still change one passage below.")
+          : current
+            ? t("Every passage names the {name}. Readers can switch Bible once for the whole sermon.", { name: current })
+            : t("Name the Bible you preach from once, and every passage uses it.")}
+      </p>
+    </form>
+  );
+}
+
 function AddMenu({
   t,
   kinds,
@@ -767,7 +831,7 @@ function IconButton({
   );
 }
 
-export function emptyBlock(kind: Kind): DraftBlock {
+export function emptyBlock(kind: Kind, label: string | null = null): DraftBlock {
   const id = newBlockID();
   switch (kind) {
     case "heading":
@@ -783,7 +847,7 @@ export function emptyBlock(kind: Kind): DraftBlock {
           start: null,
           end: null,
           status: "unlinked",
-          label: null,
+          label,
           quote: null,
         },
       };

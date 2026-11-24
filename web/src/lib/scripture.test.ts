@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { chaptersFor, defaultBible, noteLetter, ownRange, startingBible, versesFor, withMarkers, type ChapterFile } from "./scripture.ts";
+import { chaptersFor, defaultBible, labelNames, noteLetter, ownRange, shownBible, startingBible, versesFor, withMarkers, type ChapterFile } from "./scripture.ts";
 
 const file = (chapter: number, verses: ChapterFile["verses"]): ChapterFile => ({
   format: 1, translation: "RV1909", name: "Reina-Valera 1909", language: "es", license: "Dominio público", book: 4, chapter, verses,
@@ -53,4 +53,23 @@ test("footnote markers go where the notes say, the words untouched", () => {
   assert.equal(noteLetter(0), "a");
   assert.equal(noteLetter(25), "z");
   assert.equal(noteLetter(26), "aa");
+});
+
+test("the reader's Bible applies to every passage on the page, when the page offers it", () => {
+  const yv = [{ id: "NIV", name: "New International Version", language: "en" }];
+  // No choice yet: each passage opens in the Bible the pastor named.
+  assert.equal(shownBible(null, "WEB", "WEB", "en", yv), "WEB");
+  assert.equal(shownBible(null, null, "NIV", "en", yv), "NIV");
+  // A choice wins for every passage, whatever its label.
+  assert.equal(shownBible("NIV", "WEB", "WEB", "en", yv), "NIV");
+  assert.equal(shownBible("KJV", null, "NIV", "en", yv), "KJV");
+  // A choice the page doesn't offer (Studio's preview has no YouVersion Bibles) is ignored.
+  assert.equal(shownBible("NIV", "WEB", "WEB", "en", []), "WEB");
+});
+
+test("the card names the sermon's Bible only when it isn't the one shown", () => {
+  assert.equal(labelNames("WEB", "WEB"), true);
+  assert.equal(labelNames(" web ", "WEB"), true);
+  assert.equal(labelNames("WEB", "NIV"), false);
+  assert.equal(labelNames(null, "NIV"), false);
 });

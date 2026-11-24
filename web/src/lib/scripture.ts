@@ -66,6 +66,20 @@ export function startingBible(quoted: TranslationCode | null, label: string | nu
   return named ? named.id : defaultBible(quoted, language);
 }
 
+/**
+ * The Bible a passage shows: the reader's choice for the whole page when the
+ * page offers it, else the one it opens in (startingBible).
+ */
+export function shownBible(choice: string | null, quoted: TranslationCode | null, label: string | null, language: string, youversion: YouVersionBible[]): string {
+  if (choice && (isFreeBible(choice) || youversion.some((b) => b.id === choice))) return choice;
+  return startingBible(quoted, label, language, youversion);
+}
+
+/** True when the pastor's label names the Bible shown ("web" and "WEB" alike), so the card doesn't name it twice. */
+export function labelNames(label: string | null, code: string): boolean {
+  return !!label && label.trim().toLowerCase() === code.toLowerCase();
+}
+
 export function isFreeBible(code: string): code is TranslationCode {
   return WEB_BIBLES.some((b) => b.code === code);
 }

@@ -5,6 +5,7 @@ import { addressLines, dayNames, localToday, mapsLink, scheduleLines, type Churc
 import { anchorFor, copyText, sections, type Block, type PublishedSermon, type SermonSummary } from "@/lib/outline";
 import type { YouVersionBible } from "@/lib/scripture";
 import { describe } from "@/lib/shared/references";
+import { BibleChoiceProvider } from "./BibleChoice";
 import { CopyButton } from "./CopyButton";
 import { BlankText, HandoutProvider, type HandoutLabels } from "./Handout";
 import { ScriptureRef } from "./ScriptureRef";
@@ -59,6 +60,7 @@ export function SermonView({
     title: t("Your handout"),
   };
   return (
+    <BibleChoiceProvider>
     <Main className="mx-auto max-w-2xl px-4 pb-24 pt-6 sm:px-6">
       {preview ? null : <OpenEvent endpoint={EVENTS} slug={sermon.slug} />}
       {sermon.cover && (!preview || preview.coverSrc) ? (
@@ -180,6 +182,7 @@ export function SermonView({
         </a>
       </footer>
     </Main>
+    </BibleChoiceProvider>
   );
 }
 

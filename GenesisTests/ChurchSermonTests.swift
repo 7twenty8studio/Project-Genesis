@@ -453,3 +453,33 @@ struct ChurchSermonFeatureTests {
         #expect(WhatsNewCatalog.all.last?.id == "church-sermon-handouts")
     }
 }
+
+/// One Bible for every passage of a church sermon (owner, 24 November 2026).
+struct ChurchPassageBibleTests {
+    private let installed: Set<String> = ["KJV", "WEB", "RV1909"]
+
+    @Test func passagesOfferThePersonsBibleTheChoiceAndTheQuotedOne() {
+        let options = ChurchPassageBible.options(current: "KJV", chosen: "RV1909", quoted: "WEB") { installed.contains($0) }
+        #expect(options == ["KJV", "RV1909", "WEB"])
+        let once = ChurchPassageBible.options(current: "KJV", chosen: "WEB", quoted: "WEB") { installed.contains($0) }
+        #expect(once == ["KJV", "WEB"])
+        let missing = ChurchPassageBible.options(current: "KJV", chosen: "ASV", quoted: "NIV") { installed.contains($0) }
+        #expect(missing == ["KJV"])
+    }
+
+    @Test func theSermonsChoiceOpensEveryPassage() {
+        let first = ChurchPassageBible.options(current: "KJV", chosen: "WEB", quoted: "WEB") { installed.contains($0) }
+        let second = ChurchPassageBible.options(current: "KJV", chosen: "WEB", quoted: nil) { installed.contains($0) }
+        #expect(ChurchPassageBible.shown(options: first, chosen: "WEB") == "WEB")
+        #expect(ChurchPassageBible.shown(options: second, chosen: "WEB") == "WEB")
+        #expect(ChurchPassageBible.shown(options: second, chosen: nil) == "KJV")
+        #expect(ChurchPassageBible.shown(options: second, chosen: "ASV") == "KJV")
+    }
+
+    @Test func thePastorsLabelIsNamedOnlyWhenItIsAnotherBible() {
+        #expect(ChurchPassageBible.labelNames("kjv ", id: "KJV"))
+        #expect(!ChurchPassageBible.labelNames("NIV", id: "KJV"))
+        #expect(!ChurchPassageBible.labelNames(nil, id: "KJV"))
+        #expect(!ChurchPassageBible.labelNames("  ", id: "KJV"))
+    }
+}
