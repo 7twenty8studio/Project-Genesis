@@ -57,6 +57,16 @@ async function noSideScroll(page, label) {
     if (!(await page.locator("optgroup[label='From YouVersion'] option[value='NIV']").count())) problems.push("YouVersion: NIV not in the Bible menu");
     await axe(page, "guest YouVersion passage");
     await page.screenshot({ path: `${OUT}/guest-youversion.png`, fullPage: true });
+    // One Bible for the whole sermon: picking it on one passage opens every passage in it, and each card names the Bible it shows.
+    await page.getByRole("button", { name: /Matthew/ }).first().click();
+    await page.locator("select").first().selectOption("WEB");
+    await page.waitForFunction(() => [...document.querySelectorAll("select")].every((s) => s.value === "WEB"), null, { timeout: 8000 }).catch(() => problems.push("one Bible: not every passage's menu follows the choice"));
+    await page.waitForSelector("text=/World English Bible\\. Public domain/", { timeout: 8000 }).catch(() => problems.push("one Bible: the WEB passage did not load"));
+    if (await page.getByText("Stand-in footnote").count()) problems.push("one Bible: the NIV passage stayed after choosing the WEB");
+    const heads = await page.locator("button[aria-expanded]").filter({ hasText: /Matthew|Rom/ }).allInnerTexts();
+    if (!heads.length || heads.some((h) => !h.includes("· WEB"))) problems.push(`one Bible: a card doesn't name the WEB (${heads.join(" | ")})`);
+    if (!(await page.getByText("Sermon's Bible: NIV").count())) problems.push("one Bible: the sermon's own Bible (NIV) isn't named");
+    await page.screenshot({ path: `${OUT}/guest-one-bible.png`, fullPage: true });
     await ctx.close();
   }
 

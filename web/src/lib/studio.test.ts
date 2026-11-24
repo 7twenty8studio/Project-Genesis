@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import type { DraftBlock } from "./draft.ts";
+import { sermonBible, withBibleForAll, type DraftBlock } from "./draft.ts";
 import { outlineWords } from "./import/completeness.ts";
 import { afterClose, placeFor, publishableBlocks, publishBlockers } from "./studio.ts";
 
@@ -57,4 +57,22 @@ test("after closing, only an editor holding the latest draft takes the new versi
   assert.equal(afterClose(5, 5, false), "adopt");
   assert.equal(afterClose(6, 5, false), "conflict"); // another tab saved version 6 first
   assert.equal(afterClose(5, 5, true), "conflict"); // already told the draft changed
+});
+
+test("one Bible for every passage: read and set on the whole outline", () => {
+  const ref = (label: string | null) => ({ raw: "John 3:16", start: 43003016, end: null, status: "verified" as const, label, quote: null });
+  const blocks: DraftBlock[] = [
+    { id: "a", kind: "scripture", ref: ref("WEB") },
+    { id: "b", kind: "paragraph", text: "Rest" },
+    { id: "c", kind: "scripture", ref: ref("niv") },
+  ];
+  assert.equal(sermonBible(blocks), "mixed");
+  assert.equal(sermonBible([blocks[1]]), null);
+  const all = withBibleForAll(blocks, " NIV ");
+  assert.equal(sermonBible(all), "NIV");
+  assert.deepEqual(all[1], blocks[1]);
+  assert.equal(all[0].kind === "scripture" && all[0].ref.raw, "John 3:16");
+  assert.equal(sermonBible(withBibleForAll(blocks, "")), null);
+  // A passage without a Bible while others name one is mixed, so the setting never claims a Bible it doesn't apply to.
+  assert.equal(sermonBible([blocks[0], { id: "d", kind: "scripture", ref: ref(null) }]), "mixed");
 });

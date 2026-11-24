@@ -8995,6 +8995,22 @@
         }
       }
     },
+    "Every passage in this sermon opens in this Bible.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos los pasajes de este sermón se abren en esta Biblia."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todas as passagens deste sermão abrem nesta Bíblia."
+          }
+        }
+      }
+    },
     "Every passage in your Bible": {
       "localizations": {
         "es": {
@@ -25119,6 +25135,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Título do sermão"
+          }
+        }
+      }
+    },
+    "Sermon's Bible: %@": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biblia del sermón: %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bíblia do sermão: %@"
           }
         }
       }

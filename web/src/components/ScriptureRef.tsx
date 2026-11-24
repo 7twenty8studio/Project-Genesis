@@ -1,11 +1,12 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { translator, type Lang, type Translate } from "@/lib/i18n";
 import type { PublishedRef } from "@/lib/outline";
 import { config } from "@/config";
-import { isFreeBible, loadPassage, loadYouVersionPassage, noteLetter, ownRange, startingBible, WEB_BIBLES, withMarkers, type Passage, type YouVersionBible } from "@/lib/scripture";
+import { isFreeBible, labelNames, loadPassage, loadYouVersionPassage, noteLetter, ownRange, shownBible, WEB_BIBLES, withMarkers, type Passage, type YouVersionBible } from "@/lib/scripture";
 import { bookWithNumber, localName } from "@/lib/shared/references";
+import { useBibleChoice } from "./BibleChoice";
 import { recordSermonEvent } from "./SermonEvents";
 
 interface Props {
@@ -25,19 +26,30 @@ interface Props {
  * A Scripture reference in the outline. A verified one opens a preview of the
  * passage, verbatim from one of Versely's free Bibles (the one quoted, else
  * the outline language's), without leaving the outline; the reader can
- * switch Bible or open it in their own Bible in Versely. Others stay as the
- * pastor wrote them.
+ * switch Bible (one choice for every passage on the page, `BibleChoice`) or
+ * open it in their own Bible in Versely. The card names the Bible shown, and
+ * the one the pastor named when that's another. Others stay as the pastor
+ * wrote them.
  */
 export function ScriptureRef({ reference, named, outlineLanguage, lang, supabaseUrl, eventEndpoint, slug, youversion = [] }: Props) {
   const t = translator(lang);
   const panel = useId();
   const [open, setOpen] = useState(false);
-  const [bible, setBible] = useState<string>(startingBible(reference.translation, reference.label, outlineLanguage, youversion));
+  const { choice, choose: chooseForPage } = useBibleChoice();
+  const bible = shownBible(choice, reference.translation, reference.label, outlineLanguage, youversion);
   const [passage, setPassage] = useState<Passage | null>(null);
   const [state, setState] = useState<"idle" | "loading" | "failed">("idle");
+  // Only the latest request may show its passage (a quick change of Bible can answer out of order).
+  const request = useRef(0);
 
   const verified = reference.status === "verified" && reference.start !== null;
   const label = reference.label ? ` · ${reference.label}` : "";
+
+  // An open passage follows the page's Bible: picked here or on any other passage.
+  useEffect(() => {
+    if (open && verified && passage?.translation !== bible) void load(bible);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, bible]);
 
   if (!verified) {
     return (
@@ -49,29 +61,24 @@ export function ScriptureRef({ reference, named, outlineLanguage, lang, supabase
   }
 
   async function load(code: string) {
+    const mine = ++request.current;
     setState("loading");
     try {
       const start = reference.start!;
       const end = reference.end ?? start;
-      setPassage(isFreeBible(code) ? await loadPassage(supabaseUrl, code, start, end) : await loadYouVersionPassage(supabaseUrl, config.supabaseAnonKey, code, start, end));
+      const loaded = isFreeBible(code) ? await loadPassage(supabaseUrl, code, start, end) : await loadYouVersionPassage(supabaseUrl, config.supabaseAnonKey, code, start, end);
+      if (mine !== request.current) return;
+      setPassage(loaded);
       setState("idle");
     } catch {
-      setState("failed");
+      if (mine === request.current) setState("failed");
     }
   }
 
   function toggle() {
     const next = !open;
     setOpen(next);
-    if (next && (!passage || passage.translation !== bible)) {
-      void load(bible);
-      recordSermonEvent(eventEndpoint, slug, "passage");
-    }
-  }
-
-  function choose(code: string) {
-    setBible(code);
-    void load(code);
+    if (next) recordSermonEvent(eventEndpoint, slug, "passage");
   }
 
   return (
@@ -85,8 +92,11 @@ export function ScriptureRef({ reference, named, outlineLanguage, lang, supabase
       >
         <span>
           <span className="font-semibold text-accent-strong">{reference.raw}</span>
-          {reference.label ? <span className="text-muted">{label}</span> : null}
+          <span className="text-muted"> · {bible}</span>
           {named && named !== reference.raw ? <span className="block text-sm text-muted">{named}</span> : null}
+          {reference.label && !labelNames(reference.label, bible) ? (
+            <span className="block text-sm text-muted">{t("Sermon's Bible: {name}", { name: reference.label })}</span>
+          ) : null}
         </span>
         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={`shrink-0 text-muted transition-transform duration-200 ${open ? "rotate-180" : ""}`}>
           <path d="m6 9 6 6 6-6" />
@@ -100,7 +110,7 @@ export function ScriptureRef({ reference, named, outlineLanguage, lang, supabase
               {t("Bible")}
               <select
                 value={bible}
-                onChange={(e) => choose(e.target.value)}
+                onChange={(e) => chooseForPage(e.target.value)}
                 className="min-h-10 max-w-[16rem] rounded-lg border border-border bg-surface px-2 text-foreground"
               >
                 {youversion.length ? (
@@ -130,6 +140,7 @@ export function ScriptureRef({ reference, named, outlineLanguage, lang, supabase
               </select>
             </label>
           </div>
+          <p className="mt-1 text-xs text-muted">{t("Every passage in this sermon opens in this Bible.")}</p>
           <div aria-live="polite">
             {state === "loading" ? <p className="mt-3 text-sm text-muted">{t("Loading the passage…")}</p> : null}
             {state === "failed" ? (

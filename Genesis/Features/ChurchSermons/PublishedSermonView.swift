@@ -22,6 +22,8 @@ struct PublishedSermonView: View {
     @Environment(\.palette) private var palette
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var passage: PassageRoute?
+    /// The Bible picked for every passage of this sermon (`ChurchPassageBible`).
+    @State private var passageBible: String?
     @State private var notes: Sermon?
     @State private var copied: String?
     @State private var reporting = false
@@ -34,6 +36,7 @@ struct PublishedSermonView: View {
     private struct PassageRoute: Identifiable {
         let range: StudyRange
         let quoted: String?
+        let label: String?
         var id: String { "\(range.start.rawValue)-\(range.end.rawValue)-\(quoted ?? "")" }
     }
 
@@ -75,7 +78,7 @@ struct PublishedSermonView: View {
         .task(id: sermon.cover?.path) { await loadCover() }
         .task(id: "\(sermon.slug)-\(sermon.revision)-\(sermon.answers.rawValue)") { startHandout() }
         .sheet(item: $passage) { route in
-            ChurchPassageSheet(range: route.range, quoted: route.quoted) { verse in
+            ChurchPassageSheet(range: route.range, quoted: route.quoted, label: route.label, choice: $passageBible) { verse in
                 passage = nil
                 router.read(verse)
             }
@@ -252,8 +255,8 @@ struct PublishedSermonView: View {
                 }
             }
         case let .scripture(_, reference):
-            ChurchSermonReferenceRow(reference: reference, language: library.currentTranslation.language) { range in
-                passage = PassageRoute(range: range, quoted: reference.translation)
+            ChurchSermonReferenceRow(reference: reference, language: library.currentTranslation.language, shown: library.churchPassageBible(chosen: passageBible)) { range in
+                passage = PassageRoute(range: range, quoted: reference.translation, label: reference.label)
                 Task { await backend.count(.passage, slug: sermon.slug) }
             }
         }
@@ -476,6 +479,9 @@ struct ChurchSermonReferenceRow: View {
     let reference: SermonReference
     /// The language to name the passage in (the person's Bible's).
     let language: String
+    /// The Bible the passage opens in ("KJV"); the pastor's label is named
+    /// too when it's another.
+    let shown: String
     let onOpen: (StudyRange) -> Void
 
     @Environment(\.palette) private var palette
@@ -483,6 +489,8 @@ struct ChurchSermonReferenceRow: View {
     var body: some View {
         let label = reference.label.map { " \u{00B7} \($0)" } ?? ""
         if let range = reference.range {
+            let bibleTag = " \u{00B7} \(shown)"
+            let otherLabel = reference.label.flatMap { ChurchPassageBible.labelNames($0, id: shown) ? nil : $0 }
             Button {
                 onOpen(range)
             } label: {
@@ -491,10 +499,15 @@ struct ChurchSermonReferenceRow: View {
                         .foregroundStyle(palette.accent)
                         .accessibilityHidden(true)
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("\(Text(reference.raw).foregroundStyle(palette.accent).fontWeight(.semibold))\(Text(label).foregroundStyle(palette.secondaryText))")
+                        Text("\(Text(reference.raw).foregroundStyle(palette.accent).fontWeight(.semibold))\(Text(bibleTag).foregroundStyle(palette.secondaryText))")
                         let named = range.description(in: language)
                         if named != reference.raw {
                             Text(named)
+                                .font(.footnote)
+                                .foregroundStyle(palette.secondaryText)
+                        }
+                        if let otherLabel {
+                            Text("Sermon's Bible: \(otherLabel)")
                                 .font(.footnote)
                                 .foregroundStyle(palette.secondaryText)
                         }

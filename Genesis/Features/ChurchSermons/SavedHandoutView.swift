@@ -15,6 +15,8 @@ struct SavedHandoutView: View {
     @Environment(BibleLibrary.self) private var library
     @State private var model: HandoutModel?
     @State private var passage: StudyRange?
+    /// The Bible picked for every passage of this handout.
+    @State private var passageBible: String?
 
     var body: some View {
         ScrollView {
@@ -47,7 +49,7 @@ struct SavedHandoutView: View {
         .navigationBarTitleDisplayMode(.inline)
         .task(id: handout.id) { start() }
         .sheet(item: Binding(get: { passage.map(PassageItem.init) }, set: { passage = $0?.range })) { item in
-            ChurchPassageSheet(range: item.range, quoted: nil) { verse in
+            ChurchPassageSheet(range: item.range, quoted: nil, choice: $passageBible) { verse in
                 passage = nil
                 router.read(verse)
             }
@@ -87,7 +89,7 @@ struct SavedHandoutView: View {
                 }
             }
         case let .scripture(_, reference):
-            ChurchSermonReferenceRow(reference: reference, language: library.currentTranslation.language) { range in
+            ChurchSermonReferenceRow(reference: reference, language: library.currentTranslation.language, shown: library.churchPassageBible(chosen: passageBible)) { range in
                 passage = range
             }
         }

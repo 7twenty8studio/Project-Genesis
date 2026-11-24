@@ -117,3 +117,18 @@ export function quoteTranslation(label: string | null): "KJV" | "WEB" | "ASV" | 
   };
   return map[key] ?? null;
 }
+
+/** The Bible every passage names, when they all name the same one ("NIV" and "niv" alike); "mixed" when they differ, null when none names one. */
+export function sermonBible(blocks: DraftBlock[]): string | "mixed" | null {
+  const labels = blocks.flatMap((b) => (b.kind === "scripture" ? [b.ref.label?.trim() || null] : []));
+  const named = labels.filter((l): l is string => l !== null);
+  if (named.length === 0) return null;
+  const same = named.every((l) => l.toLowerCase() === named[0].toLowerCase());
+  return same && named.length === labels.length ? named[0] : "mixed";
+}
+
+/** Names one Bible on every passage at once (null clears them); nothing else changes. */
+export function withBibleForAll(blocks: DraftBlock[], label: string | null): DraftBlock[] {
+  const clean = label?.trim() || null;
+  return blocks.map((b) => (b.kind === "scripture" ? { ...b, ref: { ...b.ref, label: clean } } : b));
+}
