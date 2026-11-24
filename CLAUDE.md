@@ -434,7 +434,9 @@ shares; README.md has the architecture.
 - Verse widget backgrounds (`VerseWidgetIntent.background`: "Chosen in
   Versely", `.app`, the default, follows Widget Styles; the others mirror
   `WidgetArtStyle` for one widget's own look; Classic is free; Paper,
-  the seasons, Night and Your Photo are Premium, Classic with a Premium tag otherwise).
+  the seasons, Night, the scenes (Forest, Ocean, Hearth: the reader's
+  `ThemeSceneView` still, drawn by `WidgetArtCanvas`; light ink) and Your
+  Photo are Premium, Classic with a Premium tag otherwise).
   The app draws the painted ones once into the App Group
   (`WidgetArtWriter.drawIfNeeded` from RootView's widget refresh, a
   moment after launch and one picture at a time so it never freezes the
@@ -448,7 +450,9 @@ shares; README.md has the architecture.
   citation) is drawn by the widget itself (`VintageBackground`).
   The seasonal backgrounds drift (`SeasonalMotionLayer`,
   GenesisWidgets/SeasonalMotion.swift) on huge wheels centred above-left
-  (a drift down and left, flutter and spin), turned continuously by
+  (a drift down and left, flutter and spin; Night's stars turn with glints
+  and two shooting stars, Summer has the butterfly, Hearth's embers rise
+  on a wheel turning the other way), turned continuously by
   WidgetKit's private `_ClockHandRotationEffect` (`ClockHandMotion`, built
   at runtime from its Codable form as ClockHandKit does; owner's decision,
   24 November 2026, knowing App Review may object: `isEnabled` is the

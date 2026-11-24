@@ -70,7 +70,7 @@ struct SeasonalMotionLayer: View {
                 }
                 .frame(width: size.width, height: size.height, alignment: .topLeading)
                 .clipped()
-                .mask(EdgeMask())
+                .mask(DriftMask(season: season))
             }
             .allowsHitTesting(false)
             .accessibilityHidden(true)
@@ -90,7 +90,7 @@ struct SeasonalMotionLayer: View {
                 // Each minute's step glides in (widgets allow up to two seconds).
                 .animation(.easeInOut(duration: 2), value: date)
                 .clipped()
-                .mask(EdgeMask())
+                .mask(DriftMask(season: season))
             }
             .allowsHitTesting(false)
             .accessibilityHidden(true)
@@ -101,7 +101,7 @@ struct SeasonalMotionLayer: View {
 // MARK: - Seasons
 
 private enum DriftSeason {
-    case autumn, winter, spring, summer, night
+    case autumn, winter, spring, summer, night, hearth
 
     init?(_ style: WidgetArtStyle) {
         switch style {
@@ -110,6 +110,7 @@ private enum DriftSeason {
         case .spring: self = .spring
         case .summer: self = .summer
         case .night: self = .night
+        case .hearth: self = .hearth
         default: return nil
         }
     }
@@ -121,6 +122,13 @@ private enum DriftSeason {
         let period: TimeInterval
         let sizes: ClosedRange<CGFloat>
         let opacity: Double
+        /// Where it turns about, in shares of the widget (above and left
+        /// unless set), and how far its pieces reach, in widget widths
+        /// (corner to corner unless set).
+        var center: UnitPoint? = nil
+        var reach: ClosedRange<CGFloat>? = nil
+        /// Embers rise: their wheel turns the other way.
+        var counterClockwise = false
     }
 
     var wheels: [Wheel] {
@@ -145,6 +153,15 @@ private enum DriftSeason {
             // The sky turning slowly; the brighter ones glint.
             [Wheel(count: 44, period: 900, sizes: 1.2...2, opacity: 0.8),
              Wheel(count: 16, period: 700, sizes: 4...6, opacity: 0.95)]
+        case .hearth:
+            // Embers rising from the foot: a wheel turning the other way
+            // about a point off the left, so its right side climbs (and
+            // leans a little right). Only a slice of it crosses the widget,
+            // hence so many (each is a tiny glow).
+            [Wheel(count: 110, period: 240, sizes: 1.5...2.6, opacity: 0.9,
+                   center: UnitPoint(x: -0.6, y: 0.95), reach: 0.62...1.55, counterClockwise: true),
+             Wheel(count: 50, period: 170, sizes: 2.6...3.8, opacity: 0.75,
+                   center: UnitPoint(x: -0.6, y: 0.95), reach: 0.62...1.55, counterClockwise: true)]
         }
     }
 
@@ -156,11 +173,11 @@ private enum DriftSeason {
         switch self {
         case .autumn: (5, 15...25)
         case .spring: (4, 12...20)
-        case .winter, .summer, .night: nil
+        case .winter, .summer, .night, .hearth: nil
         }
     }
 
-    var spins: Bool { self != .summer }
+    var spins: Bool { self != .summer && self != .hearth }
 
     /// Seconds per turn of a piece's own spin, from its 20–40: the night's
     /// glints turn fast, so the stars seem to twinkle.
@@ -180,7 +197,7 @@ private enum DriftSeason {
             // Low across the widget, left to right, about 16 seconds a
             // crossing, every two and a half minutes (the reader's is 90 s).
             [Flyer(kind: .butterfly, radius: 600, period: 150, angle: -.pi / 2, target: UnitPoint(x: 0.5, y: 0.78))]
-        case .autumn, .winter, .spring:
+        case .autumn, .winter, .spring, .hearth:
             []
         }
     }
@@ -272,6 +289,12 @@ private enum DriftSeason {
             } else {
                 Circle().fill(color).frame(width: size, height: size)
             }
+        case .hearth:
+            // A glowing ember, as at the reader's Hearth.
+            let ember = Color(red: 1, green: 0.62, blue: 0.28)
+            Circle()
+                .fill(RadialGradient(colors: [Color(red: 1, green: 0.86, blue: 0.6), ember.opacity(0.7), ember.opacity(0)], center: .center, startRadius: 0, endRadius: size))
+                .frame(width: size * 2, height: size * 2)
         case .summer:
             // A soft mote: a gradient rather than a blur (one less pass each).
             let warm = Color(red: 0.98, green: 0.85, blue: 0.55)
@@ -297,7 +320,7 @@ private struct WheelView: View {
         let center = layout.center
         let pieces = layout.pieces
         // Turning clockwise: across the widget, down and to the left.
-        let turn = (time / wheel.period).truncatingRemainder(dividingBy: 1) * 2 * .pi
+        let turn = (time / wheel.period).truncatingRemainder(dividingBy: 1) * 2 * .pi * (wheel.counterClockwise ? -1 : 1)
         // Only the pieces on or near the widget: those just outside are kept
         // so they glide in, rather than appearing, on the next step.
         let step = SeasonalDrift.secondsPerStep / wheel.period * 2 * .pi
@@ -329,11 +352,13 @@ private struct WheelLayout {
     let pieces: [Piece]
 
     init(wheel: DriftSeason.Wheel, size: CGSize, seed: UInt64) {
-        // The centre sits above and left of the widget; the wheel reaches
-        // from just past its nearest corner to beyond its farthest.
-        let center = CGPoint(x: -0.1 * size.width, y: -0.35 * size.height)
-        let near = hypot(center.x, center.y) * 0.9
-        let far = hypot(size.width - center.x, size.height - center.y) * 1.05
+        // The centre sits above and left of the widget unless the wheel
+        // says otherwise; the wheel reaches from just past its nearest
+        // corner to beyond its farthest.
+        let unit = wheel.center ?? UnitPoint(x: -0.1, y: -0.35)
+        let center = CGPoint(x: unit.x * size.width, y: unit.y * size.height)
+        let near = wheel.reach.map { $0.lowerBound * size.width } ?? hypot(center.x, center.y) * 0.9
+        let far = wheel.reach.map { $0.upperBound * size.width } ?? hypot(size.width - center.x, size.height - center.y) * 1.05
         var random = DriftRandom(seed: seed)
         self.center = center
         self.far = far
@@ -373,8 +398,9 @@ private struct ClockWheelView: View {
             }
         }
         .frame(width: side, height: side, alignment: .topLeading)
-        // Clockwise about its centre: across the widget, down and to the left.
-        .clockHandRotation(period: wheel.period)
+        // Clockwise about its centre (across the widget, down and to the
+        // left), or the other way for rising embers.
+        .wheelRotation(period: wheel.period, counterClockwise: wheel.counterClockwise)
         // The square's centre on the wheel's centre, above and left.
         .position(layout.center)
     }
@@ -546,6 +572,15 @@ private extension View {
         }
     }
 
+    @ViewBuilder
+    func wheelRotation(period: TimeInterval, counterClockwise: Bool) -> some View {
+        if counterClockwise {
+            counterClockHandRotation(period: period)
+        } else {
+            clockHandRotation(period: period)
+        }
+    }
+
     /// The same, turning the other way: mirrored, turned, mirrored back.
     func counterClockHandRotation(period: TimeInterval) -> some View {
         scaleEffect(x: -1, y: 1)
@@ -603,6 +638,24 @@ enum DriftCull {
     static func isNear(_ point: CGPoint, size: CGSize, margin: CGFloat) -> Bool {
         point.x >= -margin && point.x <= size.width + margin
             && point.y >= -margin && point.y <= size.height + margin
+    }
+}
+
+/// Where the pieces show: the edges, or for embers the lower part (they
+/// fade as they climb, as at the reader's Hearth).
+private struct DriftMask: View {
+    let season: DriftSeason
+
+    var body: some View {
+        if season == .hearth {
+            LinearGradient(stops: [
+                .init(color: .black.opacity(0), location: 0.05),
+                .init(color: .black.opacity(0.55), location: 0.5),
+                .init(color: .black, location: 1),
+            ], startPoint: .top, endPoint: .bottom)
+        } else {
+            EdgeMask()
+        }
     }
 }
 

@@ -152,14 +152,31 @@ enum WidgetArtWriter {
 
 /// One painted background at full size: the theme's textured paper and,
 /// for a season, its leaves, petals, snow or light as a still, kept to the
-/// edges so the words in the middle stay clear.
+/// edges so the words in the middle stay clear; or a scene theme's picture
+/// (Forest, Ocean, Hearth) as the reader shows it still.
 struct WidgetArtCanvas: View {
     let style: WidgetArtStyle
     let size: CGSize
 
     var body: some View {
+        if let scene = ThemeScene(rawValue: style.rawValue) {
+            // The reader's scene, still, with its shade where the words go:
+            // laid out at the widget's size in points, drawn at 3×.
+            let points = CGSize(width: size.width / 3, height: size.height / 3)
+            ThemeSceneView(scene: scene, size: points, safeBottom: 0, textBottom: points.height,
+                           animates: false, reduceMotion: true, lowPower: true)
+                .frame(width: points.width, height: points.height)
+                .scaleEffect(3)
+                .frame(width: size.width, height: size.height)
+                .clipped()
+        } else {
+            paintedPaper
+        }
+    }
+
+    private var paintedPaper: some View {
         let imageStyle = VerseImageStyle(rawValue: style.rawValue) ?? .paper
-        ZStack {
+        return ZStack {
             Image(uiImage: PaperTexture.tile(for: imageStyle.theme(reading: .paper)))
                 .resizable(resizingMode: .tile)
             if let season = imageStyle.season {

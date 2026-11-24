@@ -39,6 +39,7 @@ enum VerseWidgetBackground: String, AppEnum, CaseIterable {
     case app
     case classic, paper, autumn, winter, spring, summer, night, photo, vintage
     case instantPhoto, pressedFlowers, filmStrip, typewriter, libraryCard, calendarPage
+    case forest, ocean, hearth
 
     static let typeDisplayRepresentation = TypeDisplayRepresentation(name: "Background")
 
@@ -50,6 +51,9 @@ enum VerseWidgetBackground: String, AppEnum, CaseIterable {
         .winter: DisplayRepresentation(title: "Winter"),
         .spring: DisplayRepresentation(title: "Spring"),
         .summer: DisplayRepresentation(title: "Summer"),
+        .forest: DisplayRepresentation(title: "Forest"),
+        .ocean: DisplayRepresentation(title: "Ocean"),
+        .hearth: DisplayRepresentation(title: "Hearth"),
         .night: DisplayRepresentation(title: "Night"),
         .photo: DisplayRepresentation(title: "Your Photo"),
         .vintage: DisplayRepresentation(title: "Vintage"),
