@@ -47,6 +47,10 @@ targets:
         INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
         # Portrait only, so it opts out of iPad multitasking (App Store Connect asks for every orientation otherwise).
         INFOPLIST_KEY_UIRequiresFullScreen: YES
+        # The WebRTC framework links camera and microphone code, so Apple asks
+        # for both texts even though Mirror OBS never uses either.
+        INFOPLIST_KEY_NSCameraUsageDescription: "Mirror OBS doesn't use the camera. It only sends your screen while you broadcast."
+        INFOPLIST_KEY_NSMicrophoneUsageDescription: "Mirror OBS doesn't use the microphone. It only sends your screen while you broadcast."
         INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
     entitlements:
       path: App/MirrorOBS.entitlements
@@ -70,6 +74,9 @@ targets:
       path: Broadcast/Info.plist
       properties:
         CFBundleDisplayName: Mirror OBS
+        # Same version and build as the app (App Store Connect checks they match).
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         NSExtension:
           NSExtensionPointIdentifier: com.apple.broadcast-services-upload
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).SampleHandler
