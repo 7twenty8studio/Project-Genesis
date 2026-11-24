@@ -195,8 +195,9 @@ private enum DriftSeason {
              Flyer(kind: .shootingStar, radius: 1150, period: 17, angle: .pi / 2 - 0.35, target: UnitPoint(x: 0.7, y: 0.18))]
         case .summer:
             // Low across the widget, left to right, dipping a little at
-            // each side: about 12 seconds a crossing, every 75 seconds.
-            [Flyer(kind: .butterfly, radius: 420, period: 75, angle: -.pi / 2, target: UnitPoint(x: 0.5, y: 0.7))]
+            // each side: about 12 seconds a crossing. Five round the wheel,
+            // so one sets off every 15 seconds (owner, 24 November 2026).
+            [Flyer(kind: .butterfly, radius: 420, period: 75, angle: -.pi / 2, target: UnitPoint(x: 0.5, y: 0.7), count: 5)]
         case .autumn, .winter, .spring, .hearth:
             []
         }
@@ -446,6 +447,8 @@ private struct Flyer {
     let period: TimeInterval
     let angle: Double
     let target: UnitPoint
+    /// How many ride the wheel, evenly spaced (one every period / count).
+    var count = 1
 }
 
 private struct FlyerView: View {
@@ -457,10 +460,13 @@ private struct FlyerView: View {
         let point = CGPoint(x: flyer.target.x * size.width, y: flyer.target.y * size.height)
         let center = CGPoint(x: point.x - r * cos(flyer.angle), y: point.y - r * sin(flyer.angle))
         ZStack(alignment: .topLeading) {
-            item
-                // Drawn heading up; turned to head along the wheel, clockwise.
-                .rotationEffect(.radians(flyer.angle + .pi))
-                .position(x: r + r * cos(flyer.angle), y: r + r * sin(flyer.angle))
+            ForEach(0..<flyer.count, id: \.self) { index in
+                let angle = flyer.angle + Double(index) * 2 * .pi / Double(flyer.count)
+                item
+                    // Drawn heading up; turned to head along the wheel, clockwise.
+                    .rotationEffect(.radians(angle + .pi))
+                    .position(x: r + r * cos(angle), y: r + r * sin(angle))
+            }
         }
         .frame(width: r * 2, height: r * 2, alignment: .topLeading)
         .clockHandRotation(period: flyer.period)
