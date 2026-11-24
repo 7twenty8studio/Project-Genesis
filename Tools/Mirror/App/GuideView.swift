@@ -7,7 +7,7 @@ struct GuideView: View {
 
     private let pages: [(symbol: String, title: String, text: String)] = [
         ("number.square", "1. Join the room",
-         "Whoever runs OBS opens OBS Sharing on 7twenty8studio.com and gets a room code. Type it under Room. The launch show's room is already filled in."),
+         "Whoever runs OBS opens OBS Sharing on 7twenty8studio.com and gets a room code. Type it under Room. Mirror remembers it for next time."),
         ("record.circle", "2. Start Broadcast",
          "Tap Start Broadcast, then Start Broadcast again in the sheet iOS shows. After 3 seconds everything on this screen goes to OBS, in any app. A red pill at the top means it's live."),
         ("rectangle.on.rectangle", "3. Show it in OBS",

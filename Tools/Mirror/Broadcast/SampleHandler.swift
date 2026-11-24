@@ -9,7 +9,12 @@ final class SampleHandler: RPBroadcastSampleHandler {
     private var broadcaster: Broadcaster?
 
     override func broadcastStarted(withSetupInfo setupInfo: [String: NSObject]?) {
-        let broadcaster = Broadcaster(room: Mirror.room, device: Mirror.deviceID, name: Mirror.name)
+        guard let room = Mirror.room else {
+            let reason = "Open Mirror and type your room code first."
+            finishBroadcastWithError(NSError(domain: "Mirror", code: 1, userInfo: [NSLocalizedDescriptionKey: reason]))
+            return
+        }
+        let broadcaster = Broadcaster(room: room, device: Mirror.deviceID, name: Mirror.name)
         broadcaster.onStatus = { connected, viewers in Mirror.writeStatus(connected: connected, viewers: viewers) }
         self.broadcaster = broadcaster
         Mirror.writeStatus(connected: false, viewers: 0)
