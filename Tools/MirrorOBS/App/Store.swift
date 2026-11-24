@@ -3,9 +3,10 @@ import Observation
 import StoreKit
 
 /// What Mirror OBS sells, through StoreKit only:
-/// - the 7-day free trial, a $0 non-renewing subscription (Apple's way to
-///   offer a trial before a one-time purchase, guideline 3.1.1): it starts
-///   when it's "bought", and the 7 days are counted from that purchase;
+/// - the 7-day free trial, a free non-consumable named "7-Day Trial"
+///   (Apple's way to offer a trial before a one-time unlock, guideline
+///   3.1.1): it starts when it's "bought", and the 7 days are counted from
+///   that purchase;
 /// - the unlock, a one-time $4.99 purchase (non-consumable), for good.
 /// Free copies for the owner or friends are Apple offer codes for the unlock
 /// (App Store Connect › the unlock › Offer Codes), redeemed in the app or
@@ -13,7 +14,7 @@ import StoreKit
 /// Whatever StoreKit says is copied to the App Group for the extension.
 @MainActor @Observable
 final class Store {
-    static let trialID = "com.7twenty8studio.mirrorobs.trial7"
+    static let trialID = "com.7twenty8studio.mirrorobs.trial"
     static let unlockID = "com.7twenty8studio.mirrorobs.unlock"
     static let trialLength: TimeInterval = 7 * 24 * 60 * 60
 

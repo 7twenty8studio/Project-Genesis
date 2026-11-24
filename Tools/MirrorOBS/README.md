@@ -36,9 +36,10 @@ The screen broadcast itself only works on a real iPhone.
 
 ## How the trial and unlock work (Store.swift)
 
-- `com.7twenty8studio.mirrorobs.trial7`: a $0 **non-renewing
-  subscription** called "7-Day Free Trial". This is Apple's way to offer a
-  free trial before a one-time purchase (guideline 3.1.1). The 7 days are
+- `com.7twenty8studio.mirrorobs.trial`: a free **non-consumable** called
+  "7-Day Trial". This is Apple's way to offer a free trial before a
+  one-time unlock (guideline 3.1.1: a Non-Consumable at the free price,
+  named after the trial's length). The 7 days are
   counted from its purchase date, on every device of that Apple Account,
   and it can't be started again (it stays in the account's history).
 - `com.7twenty8studio.mirrorobs.unlock`: a $4.99 **non-consumable**,
@@ -76,8 +77,7 @@ sandbox anyway.
 2. New app: name "Mirror OBS", primary language English (U.S.), bundle id
    com.7twenty8studio.mirrorobs, SKU MIRROROBS1, category Photo & Video
    (secondary: Utilities). Price: free.
-3. In-App Purchases: the non-renewing subscription and the non-consumable
-   above, with the exact product ids, a review screenshot of the trial card,
+3. In-App Purchases: the two non-consumables above, with the exact product ids, a review screenshot of the trial card,
    and review notes. Add both to the first version's submission.
 4. App Privacy: Data Not Collected. Privacy Policy URL:
    https://www.7twenty8studio.com/services/obs-sharing/mirror/privacy .
