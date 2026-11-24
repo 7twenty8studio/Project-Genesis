@@ -462,10 +462,12 @@ private struct FlyerView: View {
         ZStack(alignment: .topLeading) {
             ForEach(0..<flyer.count, id: \.self) { index in
                 let angle = flyer.angle + Double(index) * 2 * .pi / Double(flyer.count)
-                item
+                // Butterflies cross at different heights, one after another.
+                let reach = r + lane(index)
+                item(index)
                     // Drawn heading up; turned to head along the wheel, clockwise.
                     .rotationEffect(.radians(angle + .pi))
-                    .position(x: r + r * cos(angle), y: r + r * sin(angle))
+                    .position(x: r + reach * cos(angle), y: r + reach * sin(angle))
             }
         }
         .frame(width: r * 2, height: r * 2, alignment: .topLeading)
@@ -473,8 +475,14 @@ private struct FlyerView: View {
         .position(center)
     }
 
+    private func lane(_ index: Int) -> CGFloat {
+        guard flyer.kind == .butterfly else { return 0 }
+        let lanes: [CGFloat] = [0, -20, 14, -8, 22]
+        return lanes[index % lanes.count]
+    }
+
     @ViewBuilder
-    private var item: some View {
+    private func item(_ index: Int) -> some View {
         switch flyer.kind {
         case .shootingStar:
             // A bright head and a tail fading behind it.
@@ -482,18 +490,31 @@ private struct FlyerView: View {
                 .fill(LinearGradient(colors: [Color(red: 1, green: 0.97, blue: 0.88), Color(red: 0.98, green: 0.95, blue: 0.82).opacity(0)], startPoint: .top, endPoint: .bottom))
                 .frame(width: 1.6, height: 46)
         case .butterfly:
-            // Bobbing on a small circle as it goes, always facing ahead.
-            WidgetButterfly()
-                .counterClockHandRotation(period: 1.4)
+            // A wandering path: a quick bob one way on top of a slower,
+            // wider loop the other way (each butterfly at its own pace),
+            // so it rises, dips and drifts rather than gliding on a rail.
+            // Both circles are undone inside, so it keeps facing ahead.
+            let i = Double(index)
+            let bob = 1.3 + 0.17 * i
+            let loop = 4.6 + 0.9 * i
+            WidgetButterfly(flap: 0.85 + 0.06 * i)
+                .counterClockHandRotation(period: bob)
                 .offset(y: -3)
                 .frame(width: 38, height: 38)
-                .clockHandRotation(period: 1.4)
+                .clockHandRotation(period: bob)
+                .clockHandRotation(period: loop)
+                .offset(y: -9)
+                .frame(width: 60, height: 60)
+                .counterClockHandRotation(period: loop)
         }
     }
 }
 
-/// Summer's butterfly, as in the reader: warm amber, wings open.
+/// Summer's butterfly, as in the reader: warm amber, its wings beating.
 private struct WidgetButterfly: View {
+    /// Seconds per turn of the beat's clock (two wingbeats a turn).
+    let flap: TimeInterval
+
     var body: some View {
         let upper = Color(red: 0xD9 / 255, green: 0x9A / 255, blue: 0x4E / 255)
         let lower = Color(red: 0xC9 / 255, green: 0x81 / 255, blue: 0x3C / 255)
@@ -504,6 +525,7 @@ private struct WidgetButterfly: View {
                     SeasonShape(unit: SeasonShapes.butterflyUpperWing, span: 2).fill(upper)
                     SeasonShape(unit: SeasonShapes.butterflyLowerWing, span: 2).fill(lower)
                 }
+                .wingBeat(period: flap)
                 .scaleEffect(x: side, y: 1)
             }
             SeasonShape(unit: SeasonShapes.butterflyBody, span: 2).fill(bodyColor)
@@ -592,6 +614,22 @@ private extension View {
         scaleEffect(x: -1, y: 1)
             .clockHandRotation(period: period)
             .scaleEffect(x: -1, y: 1)
+    }
+
+    /// A wingbeat from two clock turns: turned back, squeezed sideways,
+    /// turned forward again. The squeeze's axis goes round, so the wing
+    /// narrows and widens twice a turn, its tip lifting as it narrows
+    /// (mirrored for the other wing, so both rise together), like wings
+    /// seen from just above. Still where the effect isn't available.
+    @ViewBuilder
+    func wingBeat(period: TimeInterval) -> some View {
+        if ClockHandMotion.isAvailable {
+            counterClockHandRotation(period: period)
+                .scaleEffect(x: 0.45, y: 1)
+                .clockHandRotation(period: period)
+        } else {
+            self
+        }
     }
 
     func applying<M: ViewModifier>(_ effect: M) -> AnyView {

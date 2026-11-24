@@ -451,7 +451,7 @@ shares; README.md has the architecture.
   The seasonal backgrounds drift (`SeasonalMotionLayer`,
   GenesisWidgets/SeasonalMotion.swift) on huge wheels centred above-left
   (a drift down and left, flutter and spin; Night's stars turn with glints
-  and two shooting stars, Summer has the butterfly, Hearth's embers rise
+  and two shooting stars, Summer has five butterflies crossing on wandering paths with beating wings (`wingBeat`: two clock turns around a squeeze), Hearth's embers rise
   on a wheel turning the other way), turned continuously by
   WidgetKit's private `_ClockHandRotationEffect` (`ClockHandMotion`, built
   at runtime from its Codable form as ClockHandKit does; owner's decision,
