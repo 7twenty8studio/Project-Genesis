@@ -18,10 +18,11 @@ enum WidgetStylePreference {
 
 extension WidgetArtStyle {
     /// The order Widget Styles shows them in: the free one, the plain
-    /// papers, the seasons, the keepsakes, then the person's own photo.
+    /// papers, the seasons, the scenes, the keepsakes, then the person's own photo.
     static let galleryOrder: [WidgetArtStyle] = [
         .classic, .paper, .vintage, .night,
         .spring, .summer, .autumn, .winter,
+        .forest, .ocean, .hearth,
         .instantPhoto, .pressedFlowers, .filmStrip, .typewriter, .libraryCard, .calendarPage,
         .photo,
     ]
@@ -44,6 +45,9 @@ extension WidgetArtStyle {
         case .libraryCard: String(localized: "Library Card")
         case .calendarPage: String(localized: "Calendar Page")
         case .photo: String(localized: "Your Photo")
+        case .forest: String(localized: "Forest")
+        case .ocean: String(localized: "Ocean")
+        case .hearth: String(localized: "Hearth")
         }
     }
 }

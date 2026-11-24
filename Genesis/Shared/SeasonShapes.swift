@@ -25,6 +25,17 @@ enum SeasonShapes {
         }
     }
 
+    /// The same leaves with far fewer points, for the verse widget: its
+    /// leaves are 8–17 pt, and every point of every leaf in every timeline
+    /// entry goes into WidgetKit's archive, which has a tight budget.
+    static func lightLeaf(_ kind: LeafKind) -> Path {
+        switch kind {
+        case .maple: lightMaple
+        case .oak: lightOak
+        case .birch: lightBirch
+        }
+    }
+
     static func leafVeins(_ kind: LeafKind) -> Path {
         switch kind {
         case .maple: mapleVeins
@@ -40,9 +51,11 @@ enum SeasonShapes {
     ]
     private static let mapleCentre: CGFloat = 0.08
 
-    static let maple: Path = {
+    static let maple = mapleOutline(steps: 240)
+    static let lightMaple = mapleOutline(steps: 90)
+
+    private static func mapleOutline(steps: Int) -> Path {
         var path = Path()
-        let steps = 240
         for i in 0...steps {
             let theta = -CGFloat.pi + 2 * .pi * CGFloat(i) / CGFloat(steps) // 0 points up
             var r: CGFloat = 0.12
@@ -60,7 +73,7 @@ enum SeasonShapes {
         }
         path.closeSubpath()
         return path
-    }()
+    }
 
     static let mapleVeins: Path = {
         var path = Path()
@@ -91,12 +104,13 @@ enum SeasonShapes {
 
     static let oak = outline(oakHalfWidth)
     static let birch = outline(birchHalfWidth)
+    static let lightOak = outline(oakHalfWidth, steps: 24)
+    static let lightBirch = outline(birchHalfWidth, steps: 32)
     static let oakVeins = veins(oakHalfWidth, pairs: 4)
     static let birchVeins = veins(birchHalfWidth, pairs: 6)
 
     /// A symmetrical leaf from its half-width at each point along it (0 tip, 1 base).
-    private static func outline(_ halfWidth: (CGFloat) -> CGFloat) -> Path {
-        let steps = 80
+    private static func outline(_ halfWidth: (CGFloat) -> CGFloat, steps: Int = 80) -> Path {
         let side = (0...steps).map { i -> CGPoint in
             let s = CGFloat(i) / CGFloat(steps)
             return CGPoint(x: halfWidth(s), y: s - 0.5)

@@ -497,6 +497,22 @@
         }
       }
     },
+    "Forest": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bosque"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Floresta"
+          }
+        }
+      }
+    },
     "From Your Reading": {
       "localizations": {
         "es": {
@@ -574,6 +590,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Direção"
+          }
+        }
+      }
+    },
+    "Hearth": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lumbre"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lareira"
           }
         }
       }
@@ -848,6 +880,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nenhum lembrete"
+          }
+        }
+      }
+    },
+    "Ocean": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Océano"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oceano"
           }
         }
       }

@@ -27,7 +27,7 @@ struct WhatsNewAnnouncement: Identifiable, Hashable, Sendable {
 
 enum WhatsNewCatalog {
     /// Oldest first; the sheet shows the newest first.
-    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar, verseWallpapers, widgetBackgrounds, keepsakeWidgets, widgetPhotoFraming, movingSeasonsAndYourBible, newLook, freeWidgets, languageChoice, ambientLockScreen, groupNamesAndRoles, twoPageSpread, originalWithEveryBible, portuguese, studyInSpanishAndPortuguese, wordMeaningsInSpanishAndPortuguese, interlinearInSpanishAndPortuguese, commentaryInSpanishAndPortuguese, memoriseBibleChoice, churchSermons, truerSeasons, sceneThemes, sermonHandouts]
+    static let all: [WhatsNewAnnouncement] = [studyAssistant, audioBible, churchGroups, community, yourWay, spanish, seasons, mapCertainty, readAndShare, ambientSounds, memorise, premiumWidgets, octoberUpdate, groupProgress, readingLibrary, freeSyncAndWelcome, studyAndJournal, deluxeEdition, groupChallenges, nightAndOriginalWord, prayerJournalAndSwitches, sermonCompanion, verseWidgetOptions, journalExtras, readAlongOriginal, studyLibrary, hearOriginalWords, notifications, goalsAndStreaks, moreBibles, livelierSkies, tapToSelect, footnotes, backgroundDownloads, slimSelectionBar, verseWallpapers, widgetBackgrounds, keepsakeWidgets, widgetPhotoFraming, movingSeasonsAndYourBible, newLook, freeWidgets, languageChoice, ambientLockScreen, groupNamesAndRoles, twoPageSpread, originalWithEveryBible, portuguese, studyInSpanishAndPortuguese, wordMeaningsInSpanishAndPortuguese, interlinearInSpanishAndPortuguese, commentaryInSpanishAndPortuguese, memoriseBibleChoice, churchSermons, truerSeasons, sceneThemes, livingWidgets, sermonHandouts]
 
     static let truerSeasons = WhatsNewAnnouncement(
         id: "seasons-leaves-snowflakes-blossoms",
@@ -47,6 +47,23 @@ enum WhatsNewCatalog {
                 systemImage: "sun.max",
                 title: String(localized: "Blossoms and summer light"),
                 detail: String(localized: "Whole cherry blossoms fall among Spring's petals, and in Summer, specks of dust float in the sunbeams while a butterfly passes now and then.")
+            ),
+        ]
+    )
+
+    static let livingWidgets = WhatsNewAnnouncement(
+        id: "living-widgets",
+        title: String(localized: "Widgets that keep moving"),
+        items: [
+            WhatsNewItem(
+                systemImage: "leaf",
+                title: String(localized: "Seasons that never pause"),
+                detail: String(localized: "Leaves, snow, petals and summer light now drift across the verse widget without stopping, with a butterfly in summer and shooting stars on the Night background.")
+            ),
+            WhatsNewItem(
+                systemImage: "flame",
+                title: String(localized: "Forest, Ocean and Hearth"),
+                detail: String(localized: "The scene themes are widget backgrounds too, with embers rising at the Hearth. Choose one in Settings › Widget Styles or by editing the widget.")
             ),
         ]
     )

@@ -10220,6 +10220,22 @@
         }
       }
     },
+    "Forest, Ocean and Hearth": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bosque, Océano y Lumbre"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Floresta, Oceano e Lareira"
+          }
+        }
+      }
+    },
     "Forgot password?": {
       "localizations": {
         "es": {
@@ -14130,6 +14146,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Folhas, neve, flores ou a luz do verão passam suavemente pela página enquanto você lê. Pausa no Modo de Pouca Energia e não aparece quando Reduzir Movimento está ativado."
+          }
+        }
+      }
+    },
+    "Leaves, snow, petals and summer light now drift across the verse widget without stopping, with a butterfly in summer and shooting stars on the Night background.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las hojas, la nieve, los pétalos y la luz del verano ahora flotan sin parar por el widget del versículo, con una mariposa en verano y estrellas fugaces en el fondo Noche."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Folhas, neve, pétalas e a luz do verão agora flutuam sem parar pelo widget do versículo, com uma borboleta no verão e estrelas cadentes no fundo Noite."
           }
         }
       }
@@ -24545,6 +24577,22 @@
         }
       }
     },
+    "Seasons that never pause": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estaciones que nunca se detienen"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estações que nunca param"
+          }
+        }
+      }
+    },
     "Seasons, a postcard or your photo": {
       "localizations": {
         "es": {
@@ -29674,6 +29722,22 @@
         }
       }
     },
+    "The scene themes are widget backgrounds too, with embers rising at the Hearth. Choose one in Settings › Widget Styles or by editing the widget.": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los temas de escena también son fondos de widget, con brasas que suben en Lumbre. Elige uno en Ajustes › Estilos de widgets o al editar el widget."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Os temas de cena também são fundos de widget, com brasas subindo na Lareira. Escolha um em Ajustes › Estilos de widget ou ao editar o widget."
+          }
+        }
+      }
+    },
     "The seasons, drifting": {
       "localizations": {
         "es": {
@@ -34652,6 +34716,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "Os widgets mostram a Bíblia que você está lendo, seja qual for, em todos os estilos."
+          }
+        }
+      }
+    },
+    "Widgets that keep moving": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Widgets que no dejan de moverse"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Widgets que não param de se mover"
           }
         }
       }

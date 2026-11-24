@@ -249,6 +249,12 @@ enum WidgetArtInk {
             (Color(light: 0x2E2A26, dark: 0x2E2A26), Color(light: 0x6F675C, dark: 0x6F675C), Color(light: 0x9B2C2C, dark: 0x9B2C2C))
         case .instantPhoto, .pressedFlowers, .filmStrip, .typewriter, .libraryCard, .calendarPage:
             (Color(light: 0x5D5B55, dark: 0x5D5B55), Color(light: 0x80825B, dark: 0x80825B), Color(light: 0x80825B, dark: 0x80825B))
+        case .forest:
+            (Color(light: 0xF1EBDA, dark: 0xF1EBDA), Color(light: 0xB9C2B0, dark: 0xB9C2B0), Color(light: 0xA9BE9A, dark: 0xA9BE9A))
+        case .ocean:
+            (Color(light: 0xEAF0F5, dark: 0xEAF0F5), Color(light: 0xA3B2C0, dark: 0xA3B2C0), Color(light: 0x9DB5C7, dark: 0x9DB5C7))
+        case .hearth:
+            (Color(light: 0xF2E6D4, dark: 0xF2E6D4), Color(light: 0xB7A28C, dark: 0xB7A28C), Color(light: 0xD49A6A, dark: 0xD49A6A))
         case .paper, .classic:
             (Color(light: 0x2B2A27, dark: 0x2B2A27), Color(light: 0x7D776B, dark: 0x7D776B), Color(light: 0xA8844E, dark: 0xA8844E))
         }

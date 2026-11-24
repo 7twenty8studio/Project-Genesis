@@ -39,6 +39,7 @@ enum VerseWidgetBackground: String, AppEnum, CaseIterable {
     case app
     case classic, paper, autumn, winter, spring, summer, night, photo, vintage
     case instantPhoto, pressedFlowers, filmStrip, typewriter, libraryCard, calendarPage
+    case forest, ocean, hearth
 
     static let typeDisplayRepresentation = TypeDisplayRepresentation(name: "Background")
 
@@ -50,6 +51,9 @@ enum VerseWidgetBackground: String, AppEnum, CaseIterable {
         .winter: DisplayRepresentation(title: "Winter"),
         .spring: DisplayRepresentation(title: "Spring"),
         .summer: DisplayRepresentation(title: "Summer"),
+        .forest: DisplayRepresentation(title: "Forest"),
+        .ocean: DisplayRepresentation(title: "Ocean"),
+        .hearth: DisplayRepresentation(title: "Hearth"),
         .night: DisplayRepresentation(title: "Night"),
         .photo: DisplayRepresentation(title: "Your Photo"),
         .vintage: DisplayRepresentation(title: "Vintage"),
@@ -110,8 +114,9 @@ struct VerseProvider: AppIntentTimelineProvider {
         let source = configuration.option.source
         let background = configuration.background.style(in: snapshot)
         var dates = VerseWidgetSchedule.entryDates(rotates: source.rotates, from: .now)
-        // Seasonal backgrounds drift on: a step every minute for an hour.
-        if SeasonalDrift.moves(background) {
+        // Seasonal backgrounds drift on: turned all the time by the clock
+        // effect, or else a step every minute for an hour.
+        if SeasonalDrift.moves(background) && !ClockHandMotion.isAvailable {
             dates = SeasonalDrift.entryDates(adding: dates, from: .now)
         }
         return Timeline(entries: dates.map { VerseEntry(date: $0, snapshot: snapshot, source: source, background: background) }, policy: .atEnd)

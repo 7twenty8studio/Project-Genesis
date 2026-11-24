@@ -15,6 +15,9 @@ enum WidgetArtStyle: String, CaseIterable, Codable, Sendable {
     case instantPhoto, pressedFlowers, filmStrip, typewriter, libraryCard, calendarPage
     /// A photo the person chose in Versely (Settings › Widget Photo).
     case photo
+    /// The reader's scene themes, as stills drawn by the app (Hearth's
+    /// embers rise in the widget).
+    case forest, ocean, hearth
 
     var needsPremium: Bool { self != .classic }
 
@@ -26,10 +29,12 @@ enum WidgetArtStyle: String, CaseIterable, Codable, Sendable {
     }
 
     /// Words go in light ink on these (dark art or a shaded photo).
-    var isDark: Bool { self == .night || self == .photo }
+    var isDark: Bool { self == .night || self == .photo || isScene }
+
+    var isScene: Bool { self == .forest || self == .ocean || self == .hearth }
 
     /// The painted backgrounds the app draws for the widget.
-    static let painted: [WidgetArtStyle] = [.paper, .autumn, .winter, .spring, .summer, .night]
+    static let painted: [WidgetArtStyle] = [.paper, .autumn, .winter, .spring, .summer, .night, .forest, .ocean, .hearth]
 }
 
 /// The widget's three Home Screen shapes, each with its own picture so the

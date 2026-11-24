@@ -96,3 +96,37 @@ struct SeasonShapesTests {
         #expect(glides)
     }
 }
+
+@Suite("Widget leaves and drift")
+struct WidgetDriftTests {
+    @Test func lightLeavesMatchTheReadersLeaves() {
+        for kind in SeasonShapes.LeafKind.allCases {
+            let full = SeasonShapes.leaf(kind).boundingRect
+            let light = SeasonShapes.lightLeaf(kind).boundingRect
+            let close = abs(full.width - light.width) < 0.05 && abs(full.height - light.height) < 0.05
+            #expect(close, "\(kind): \(light) vs \(full)")
+        }
+    }
+
+    @Test func piecesOnTheWidgetAreDrawn() {
+        let size = CGSize(width: 360, height: 170)
+        let inside = DriftCull.isNear(CGPoint(x: 100, y: 80), size: size, margin: 20)
+        #expect(inside)
+    }
+
+    @Test func piecesAStepAwayAreDrawnSoTheyGlideIn() {
+        let size = CGSize(width: 360, height: 170)
+        // A piece 400 pt from the wheel's centre moves 4/150 of a turn a step.
+        let margin = DriftCull.margin(radius: 400, step: 4.0 / 150 * 2 * .pi, pieceSize: 17)
+        let travel: CGFloat = 400 * 4 / 150 * 2 * .pi
+        let justOutside = DriftCull.isNear(CGPoint(x: -travel, y: 80), size: size, margin: margin)
+        #expect(margin > travel)
+        #expect(justOutside)
+    }
+
+    @Test func piecesFarAwayAreLeftOut() {
+        let size = CGSize(width: 360, height: 170)
+        let far = DriftCull.isNear(CGPoint(x: 900, y: -500), size: size, margin: 80)
+        #expect(!far)
+    }
+}
