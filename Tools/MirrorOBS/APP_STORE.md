@@ -45,13 +45,13 @@ web page that OBS Studio shows as a browser source. To try it without OBS:
 open https://www.7twenty8studio.com/services/obs-sharing on a computer,
 note the room code it shows, type it in the app under Room, tap Start
 Broadcast, then Start Broadcast in the system sheet. The iPhone appears on
-the web page within a few seconds. The 7-Day Free Trial is a $0
-non-renewing subscription, the way Apple suggests for a trial before a
-one-time purchase; the unlock is a non-consumable.
+the web page within a few seconds. The 7-Day Trial is a free
+non-consumable, as guideline 3.1.1 describes for a trial before a one-time
+unlock; the unlock is a non-consumable.
 
 **In-app purchases:**
-- 7-Day Free Trial (com.7twenty8studio.mirrorobs.trial7), non-renewing
-  subscription, $0. "Try Mirror OBS free for 7 days. Never charges you."
+- 7-Day Trial (com.7twenty8studio.mirrorobs.trial), non-consumable,
+  Free. "Try Mirror OBS free for 7 days. Never charges you."
 - Unlock Mirror OBS (com.7twenty8studio.mirrorobs.unlock), non-consumable,
   $4.99 (Tier 5). "Unlock Mirror OBS for good. One-time purchase."
 

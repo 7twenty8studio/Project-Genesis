@@ -897,8 +897,8 @@ shares; README.md has the architecture.
   installed from Xcode, never on the App Store), speaking that protocol.
   Its App Store copy is Tools/MirrorOBS ("Mirror OBS", bundle ids
   com.7twenty8studio.mirrorobs(.broadcast), App Group
-  group.com.7twenty8studio.mirrorobs): a 7-day free trial ($0 non-renewing
-  IAP `…trial7`) then a one-time $4.99 unlock (`…unlock`), StoreKit 2 in
+  group.com.7twenty8studio.mirrorobs): a 7-day free trial (a free non-consumable
+  IAP `…trial`, "7-Day Trial", 3.1.1) then a one-time $4.99 unlock (`…unlock`), StoreKit 2 in
   Store.swift, access copied to the App Group for the extension; free copies
   only through Apple offer codes (no own codes, 3.1.1). Pages: OBS Sharing ›
   mirror and mirror/privacy. Listing and steps: its README and APP_STORE.md.
