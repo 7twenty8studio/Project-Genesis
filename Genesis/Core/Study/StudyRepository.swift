@@ -243,6 +243,7 @@ final class StudyRepository: Sendable {
     // MARK: Routes
 
     func routes() throws -> [Route] {
+        let hasRoutePaths = try !database.query("SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'route_path'", map: { _ in true }).isEmpty
         let headers = try database.query("SELECT r.id, \(pick("t", "name", "r.title")), \(pick("t", "other", "r.passage")), r.first_verse FROM routes r\(join("route", as: "t", id: "r.id")) ORDER BY r.sort") {
             ($0.text(0), $0.text(1), $0.text(2), VerseID(rawValue: $0.int(3)))
         }
@@ -251,7 +252,11 @@ final class StudyRepository: Sendable {
                 "SELECT p.id, \(pick("tq", "name", "p.name")), p.kind, p.latitude, p.longitude, p.verse_count, p.confidence FROM route_stops s JOIN places p ON p.id = s.place_id\(join("place", as: "tq", id: "p.id")) WHERE s.route_id = ? ORDER BY s.position",
                 [.text(id)], map: { Self.placeSummary($0) }
             )
-            return Route(id: id, title: title, passage: passage, firstVerse: first, stops: stops)
+            let path = hasRoutePaths ? try database.query(
+                "SELECT latitude, longitude FROM route_path WHERE route_id = ? ORDER BY position",
+                [.text(id)], map: { RoutePoint(latitude: $0.double(0), longitude: $0.double(1)) }
+            ) : []
+            return Route(id: id, title: title, passage: passage, firstVerse: first, stops: stops, path: path)
         }
     }
 

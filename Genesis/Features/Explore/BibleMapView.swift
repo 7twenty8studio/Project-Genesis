@@ -28,7 +28,7 @@ struct BibleMapView: View {
     var body: some View {
         Map(position: $position, selection: $selection) {
             if let route {
-                MapPolyline(coordinates: route.stops.compactMap(\.coordinate))
+                MapPolyline(coordinates: route.line)
                     .stroke(palette.accent, style: StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round, dash: [8, 5]))
                 ForEach(Array(route.stops.enumerated()), id: \.offset) { index, stop in
                     if let coordinate = stop.coordinate {
@@ -163,6 +163,15 @@ struct BibleMapView: View {
         }.value
         places = loaded.0
         routes = loaded.1
+    }
+}
+
+extension Route {
+    /// The way drawn between the stops: its path where the database has one.
+    var line: [CLLocationCoordinate2D] {
+        path.isEmpty
+            ? stops.compactMap(\.coordinate)
+            : path.map { CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude) }
     }
 }
 
