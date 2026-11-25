@@ -206,3 +206,94 @@ html {
 .rise-in {
   animation: rise-in 0.45s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
+
+/* The final golden ticket's 5-4-3-2-1: each number lands with a pop while a
+   gold ring drains around it over the second, and the glow beats with it. */
+.raffle-countdown {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(26rem, 70vh);
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  animation: count-glow 1s ease-out infinite;
+}
+.raffle-countdown svg {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-90deg);
+}
+.raffle-countdown .track {
+  fill: none;
+  stroke: rgba(224, 180, 141, 0.18);
+  stroke-width: 5;
+}
+.raffle-countdown .ring {
+  fill: none;
+  stroke: #e9b97c;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 339.3;
+  animation: count-ring 1s linear both;
+}
+.raffle-countdown .number {
+  font-size: min(15rem, 40vh);
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: #f6d9a8;
+  text-shadow: 0 0 40px rgba(233, 185, 124, 0.45);
+  animation: count-pop 0.3s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+@keyframes count-ring {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 339.3; }
+}
+@keyframes count-pop {
+  from { opacity: 0; transform: scale(1.3); filter: blur(3px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+@keyframes count-glow {
+  0% { box-shadow: 0 0 0 0 rgba(233, 185, 124, 0.35); }
+  100% { box-shadow: 0 0 0 2.5rem rgba(233, 185, 124, 0); }
+}
+
+/* The final golden ticket's shuffle: a tilted deck behind, each entrant's
+   ticket thrown in from alternating sides while the roll slows down. */
+.raffle-shuffle {
+  position: relative;
+  display: grid;
+}
+.raffle-shuffle > * {
+  grid-area: 1 / 1;
+}
+.raffle-shuffle .deck {
+  opacity: 0.55;
+  animation: deck-jiggle 0.35s ease-in-out infinite alternate;
+}
+.raffle-shuffle .deck-back {
+  transform: rotate(-6deg) translateY(10px);
+  opacity: 0.35;
+}
+.raffle-shuffle .deck-mid {
+  transform: rotate(4deg) translateY(4px);
+  animation-delay: -0.17s;
+}
+.raffle-shuffle .card {
+  animation: shuffle-in-right 0.22s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+.raffle-shuffle .card.from-left {
+  animation-name: shuffle-in-left;
+}
+@keyframes shuffle-in-right {
+  from { transform: translateX(28%) rotate(9deg) scale(0.94); opacity: 0.2; }
+  to { transform: none; opacity: 1; }
+}
+@keyframes shuffle-in-left {
+  from { transform: translateX(-28%) rotate(-9deg) scale(0.94); opacity: 0.2; }
+  to { transform: none; opacity: 1; }
+}
+@keyframes deck-jiggle {
+  from { translate: -6px 0; }
+  to { translate: 6px 0; }
+}
