@@ -125,6 +125,37 @@ struct StudyDataTests {
         #expect(first.stops.first?.name == "Antioch (Syria)")
     }
 
+    @Test func exodusFollowsTheTraditionalRoute() throws {
+        let exodus = try #require(try repository().routes().first { $0.id == "exodus" })
+        let names = exodus.stops.map(\.name)
+        #expect(names.first == "Rameses")
+        #expect(names.last == "Abel-shittim")
+        for stop in ["Succoth", "Pi-hahiroth", "Marah", "Elim", "Mount Sinai", "Kadesh-barnea", "Mount Hor", "Mount Nebo"] {
+            #expect(names.contains(stop))
+        }
+        // The Succoth of Exodus 12:37 is in Egypt, not Jacob's by the Jordan.
+        let succoth = try #require(exodus.stops.first { $0.name == "Succoth" })
+        let longitude = try #require(succoth.longitude)
+        #expect(longitude < 33)
+        // Around Edom (Numbers 21:4): the line goes east of Mount Hor.
+        let hor = try #require(exodus.stops.first { $0.name == "Mount Hor" })
+        let horLongitude = try #require(hor.longitude)
+        let east = exodus.path.filter { $0.longitude > horLongitude + 0.4 }
+        #expect(!east.isEmpty)
+    }
+
+    @Test func routePathsRunThroughEveryStop() throws {
+        for route in try repository().routes() {
+            #expect(route.path.count >= route.stops.count)
+            let path = Set(route.path)
+            for stop in route.stops {
+                let latitude = try #require(stop.latitude)
+                let longitude = try #require(stop.longitude)
+                #expect(path.contains(RoutePoint(latitude: latitude, longitude: longitude)))
+            }
+        }
+    }
+
     @Test func chapterContext() throws {
         let study = try repository()
         let acts13 = ChapterID(book: 44, chapter: 13)

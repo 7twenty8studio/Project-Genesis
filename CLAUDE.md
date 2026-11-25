@@ -189,6 +189,13 @@ shares; README.md has the architecture.
   `MorningWelcome` keeps the settings (Settings › Morning Welcome) and the
   once-a-day rule; RootView presents it and skips it when opened from a link.
   UI tests only see it with `-uiTestingWelcome`.
+- Map journeys (Paul's three journeys, the voyage to Rome, the Exodus):
+  `ROUTES` in Tools/StudyData/build_study.py (`--routes` rewrites them in the
+  bundled Study.sqlite; Tools/StudyData/test_routes.py). Stops are places
+  (markers); a (lat, lon) pair between them is a point the line passes
+  without a marker (route_path, `Route.path`), only where a straight line
+  would contradict the text (under Cyprus, around Edom). The Exodus is the
+  traditional southern route, labelled as one; Succoth is pinned to Egypt's.
 - Explore: the timeline, people and places are free; family trees
   (`PremiumTeaser`), the Map tab and the reader's Context panel need
   `.historicalContent`.

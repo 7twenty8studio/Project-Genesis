@@ -240,6 +240,16 @@ struct Route: Identifiable, Hashable, Sendable {
     let passage: String
     let firstVerse: VerseID
     let stops: [PlaceSummary]
+    /// The line drawn on the map: the stops and the points between them
+    /// where the way went around (by sea under Cyprus, around Edom). Empty in
+    /// a database without route_path; then the line joins the stops.
+    var path: [RoutePoint] = []
+}
+
+/// A point a route's line passes through, without a marker.
+struct RoutePoint: Hashable, Sendable {
+    let latitude: Double
+    let longitude: Double
 }
 
 /// How many times a book mentions someone or somewhere.

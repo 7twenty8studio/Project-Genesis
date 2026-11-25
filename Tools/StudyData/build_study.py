@@ -23,6 +23,7 @@ Usage:
     python3 Tools/StudyData/build_study.py /tmp/theographic /tmp/openbible
 
     python3 Tools/StudyData/build_study.py --place-names   # PLACE_NAMES only
+    python3 Tools/StudyData/build_study.py --routes        # ROUTES only
 """
 import collections
 import json
@@ -254,28 +255,121 @@ def rows(directory: str, name: str):
 # Map routes (PRD: Paul's missionary journeys, Exodus route). Stops are place
 # names resolved against the dataset; the build fails if one is missing.
 # Names follow the KJV spellings used by the dataset (Coos = Cos, Melita =
-# Malta). Paul's routes follow Acts; the Exodus route is one traditional (southern)
-# reconstruction and is labelled as such in the app.
+# Malta). A name the dataset gives two places is pinned to one in
+# ROUTE_PLACES, by its slug ("Succoth (Egypt)": the Succoth of Exodus 12:37,
+# not Jacob's Succoth by the Jordan).
+#
+# A (latitude, longitude) pair between stops is a point the line passes
+# without a marker, where a straight line would contradict the text: under
+# the lee of Cyprus and south of Crete (Acts 27:4-8), south of Cyprus (Acts
+# 21:3), by sea along the coast rather than over land (Acts 14:26, 18:18-22),
+# by land through Macedonia to Greece and back (Acts 20:1-3),
+# and "by the way of the Red sea, to compass the land of Edom" (Numbers 21:4,
+# Deuteronomy 2:8), east of Edom and Moab (Numbers 21:11-13).
+#
+# Paul's routes follow Acts. Where Acts names a region rather than towns
+# (Syria and Cilicia, Acts 15:41; Galatia and Phrygia, 16:6 and 18:23), the
+# towns are the ones Bible atlases usually draw: Tarsus, Derbe, Lystra,
+# Iconium and Pisidian Antioch.
+#
+# The Exodus route is the traditional (southern) reconstruction found in most
+# Bible atlases, and is labelled as such in the app: Rameses (Qantir), the
+# sea crossed near the head of the Gulf of Suez, Mount Sinai at Jebel Musa,
+# Hazeroth at Ain Hudra, Kadesh-barnea at Ain el-Qudeirat, Mount Hor at Jebel
+# Harun, then south to Ezion-geber and around Edom to the plains of Moab
+# (Numbers 33:5-49). Debated alternatives (a northern crossing by Lake
+# Sirbonis, a central route, Sinai in Arabia at Jebel al-Lawz, Kadesh at
+# Petra) aren't drawn.
+ROUTE_PLACES = {
+    "Succoth (Egypt)": "succoth_1114",
+}
 ROUTES = [
     ("paul-1", "Paul's First Journey", "Acts 13–14", 44013004,
      ["Antioch (Syria)", "Seleucia", "Salamis", "Paphos", "Perga", "Antioch (Pisidia)",
       "Iconium", "Lystra", "Derbe", "Lystra", "Iconium", "Antioch (Pisidia)", "Perga",
-      "Attalia", "Antioch (Syria)"]),
+      "Attalia",
+      (36.45, 31.20), (35.95, 32.80), (36.15, 34.20), (36.40, 35.50), (36.11, 35.93),
+      "Antioch (Syria)"]),
     ("paul-2", "Paul's Second Journey", "Acts 15:36–18:22", 44015036,
-     ["Antioch (Syria)", "Derbe", "Lystra", "Troas", "Neapolis", "Philippi", "Amphipolis",
-      "Apollonia", "Thessalonica", "Berea", "Athens", "Corinth", "Cenchreae", "Ephesus",
+     ["Antioch (Syria)", "Tarsus", "Derbe", "Lystra", "Iconium", "Antioch (Pisidia)", "Troas",
+      "Samothrace", "Neapolis", "Philippi", "Amphipolis", "Apollonia", "Thessalonica", "Berea",
+      "Athens", "Corinth", "Cenchreae",
+      (37.55, 24.05),
+      "Ephesus",
+      (37.65, 27.05), (36.80, 27.45), (36.30, 28.40),
       "Caesarea", "Jerusalem", "Antioch (Syria)"]),
     ("paul-3", "Paul's Third Journey", "Acts 18:23–21:17", 44018023,
-     ["Antioch (Syria)", "Ephesus", "Troas", "Philippi", "Corinth", "Philippi", "Troas",
-      "Assos", "Mitylene", "Miletus", "Coos", "Rhodes", "Patara", "Tyre", "Ptolemais",
-      "Caesarea", "Jerusalem"]),
+     ["Antioch (Syria)", "Tarsus", "Derbe", "Lystra", "Iconium", "Antioch (Pisidia)", "Ephesus",
+      "Troas", "Philippi",
+      (40.63, 22.93), (39.64, 22.42), (38.32, 23.32),
+      "Corinth",
+      (38.32, 23.32), (39.64, 22.42), (40.63, 22.93),
+      "Philippi", "Troas", "Assos", "Mitylene", "Chios",
+      "Samos", "Trogyllium", "Miletus", "Coos", "Rhodes", "Patara",
+      (34.35, 32.50),
+      "Tyre", "Ptolemais", "Caesarea", "Jerusalem"]),
     ("paul-rome", "Paul's Journey to Rome", "Acts 27–28", 44027001,
-     ["Caesarea", "Sidon", "Myra", "Fair Havens", "Melita", "Syracuse", "Rhegium",
-      "Puteoli", "Rome"]),
+     ["Caesarea", "Sidon",
+      (35.30, 35.10), (35.95, 34.40), (35.85, 33.30), (35.95, 32.30), (36.05, 30.45),
+      "Myra",
+      (36.10, 29.60), (36.35, 28.90), (36.52, 28.30), (36.62, 27.80),
+      "Cnidus", "Salmone",
+      (34.92, 26.15), (34.90, 25.50),
+      "Fair Havens", "Clauda", "Melita", "Syracuse", "Rhegium", "Puteoli",
+      "Appii Forum", "Three Taverns", "Rome"]),
     ("exodus", "The Exodus (a traditional route)", "Exodus 12 – Numbers 33", 2012037,
-     ["Rameses", "Succoth", "Etham", "Pi-hahiroth", "Marah", "Elim", "Sin",
-      "Rephidim", "Mount Sinai", "Kadesh-barnea", "Mount Hor", "Moab"]),
+     ["Rameses", "Succoth (Egypt)", "Etham", "Pi-hahiroth", "Marah", "Elim", "Sin",
+      "Rephidim", "Mount Sinai", "Hazeroth", "Kadesh-barnea", "Mount Hor", "Ezion-geber", "Elath",
+      (29.80, 35.32), (30.30, 35.80), (30.70, 36.00),
+      "Zered",
+      (31.25, 36.00),
+      "Arnon", "Dibon-gad", "Mount Nebo", "Abel-shittim"]),
 ]
+
+
+def write_routes(db, names_to_place: dict, slugs: dict, coordinates: dict) -> list:
+    """Fills routes, route_stops and route_path (the line drawn: stops and the
+    points between them). Returns the stops it couldn't find."""
+    db.execute("CREATE TABLE IF NOT EXISTS route_path (route_id TEXT NOT NULL, position INTEGER NOT NULL, latitude REAL NOT NULL, longitude REAL NOT NULL, PRIMARY KEY (route_id, position)) WITHOUT ROWID")
+    for table in ("routes", "route_stops", "route_path"):
+        db.execute(f"DELETE FROM {table}")
+    missing = []
+    for sort, (route_id, title, passage, first, stops) in enumerate(ROUTES):
+        db.execute("INSERT INTO routes VALUES (?, ?, ?, ?, ?)", (route_id, sort, title, passage, first))
+        stop_position = 0
+        for position, stop in enumerate(stops):
+            if isinstance(stop, tuple):
+                point = stop
+            else:
+                place = slugs.get(ROUTE_PLACES[stop]) if stop in ROUTE_PLACES else resolve_place(stop, names_to_place)
+                if place is None or coordinates.get(place) is None:
+                    missing.append(f"{title}: {stop}")
+                    continue
+                db.execute("INSERT INTO route_stops VALUES (?, ?, ?)", (route_id, stop_position, place))
+                stop_position += 1
+                point = coordinates[place]
+            db.execute("INSERT INTO route_path VALUES (?, ?, ?, ?)", (route_id, position, point[0], point[1]))
+    return missing
+
+
+def write_routes_in(path: str) -> list:
+    """Rewrites the routes in an existing Study.sqlite from its own places."""
+    db = sqlite3.connect(path)
+    names_to_place, slugs, coordinates = {}, {}, {}
+    for pid, slug, name, lat, lon, count in db.execute(
+            "SELECT id, slug, name, latitude, longitude, verse_count FROM places ORDER BY id"):
+        slugs[slug] = pid
+        if lat is None or lon is None:
+            continue
+        coordinates[pid] = (lat, lon)
+        best = names_to_place.get(name.lower())
+        if best is None or count > best[1]:
+            names_to_place[name.lower()] = (pid, count)
+    missing = write_routes(db, names_to_place, slugs, coordinates)
+    if not missing:
+        db.commit()
+    db.close()
+    return missing
 
 
 def build(source: str, openbible: str) -> None:
@@ -309,6 +403,7 @@ def build(source: str, openbible: str) -> None:
         CREATE TABLE event_places (event_id INTEGER NOT NULL, place_id INTEGER NOT NULL, PRIMARY KEY (event_id, place_id)) WITHOUT ROWID;
         CREATE TABLE routes (id TEXT PRIMARY KEY, sort INTEGER NOT NULL, title TEXT NOT NULL, passage TEXT NOT NULL, first_verse INTEGER NOT NULL);
         CREATE TABLE route_stops (route_id TEXT NOT NULL, position INTEGER NOT NULL, place_id INTEGER NOT NULL, PRIMARY KEY (route_id, position)) WITHOUT ROWID;
+        CREATE TABLE route_path (route_id TEXT NOT NULL, position INTEGER NOT NULL, latitude REAL NOT NULL, longitude REAL NOT NULL, PRIMARY KEY (route_id, position)) WITHOUT ROWID;
         """
     )
     for sort, (era_id, title, summary, osis, chapter) in enumerate(ERAS):
@@ -341,6 +436,7 @@ def build(source: str, openbible: str) -> None:
     places = list(rows(source, "Places.csv"))
     place_ids = {p["placeLookup"]: int(p["placeID"]) for p in places}
     names_to_place = {}
+    place_coordinates = {}
     for p in places:
         pid = int(p["placeID"])
         lat = number(p["openBibleLat"]) or number(p["latitude"])
@@ -354,6 +450,8 @@ def build(source: str, openbible: str) -> None:
              clean_text(p["dictText"]), len(vs), vs[0] if vs else None, confidence(p)),
         )
         db.executemany("INSERT INTO place_verses VALUES (?, ?)", [(pid, v) for v in vs])
+        if lat is not None and lon is not None:
+            place_coordinates[pid] = (lat, lon)
         # Prefer the best-attested, mapped place when names repeat.
         key = name.lower()
         best = names_to_place.get(key)
@@ -379,15 +477,7 @@ def build(source: str, openbible: str) -> None:
                        [(eid, place_ids[s]) for s in slugs(e["locations"]) if s in place_ids])
 
     # Routes
-    missing = []
-    for sort, (route_id, title, passage, first, stops) in enumerate(ROUTES):
-        db.execute("INSERT INTO routes VALUES (?, ?, ?, ?, ?)", (route_id, sort, title, passage, first))
-        for position, stop in enumerate(stops):
-            place = resolve_place(stop, names_to_place)
-            if place is None:
-                missing.append(f"{title}: {stop}")
-                continue
-            db.execute("INSERT INTO route_stops VALUES (?, ?, ?)", (route_id, position, place))
+    missing = write_routes(db, names_to_place, place_ids, place_coordinates)
     if missing:
         db.close()
         os.remove(OUTPUT)
@@ -428,6 +518,13 @@ if __name__ == "__main__":
         # Only the full place names, in the bundled database (no rebuild).
         with sqlite3.connect(OUTPUT) as database:
             print(f"{apply_place_names(database)} place names updated in {OUTPUT}")
+        sys.exit(0)
+    if sys.argv[1:] == ["--routes"]:
+        # Only the map routes, in the bundled database (no rebuild).
+        missing = write_routes_in(OUTPUT)
+        if missing:
+            sys.exit("Route stops not found in the bundled database:\n  " + "\n  ".join(missing))
+        print(f"{len(ROUTES)} routes written to {OUTPUT}")
         sys.exit(0)
     if len(sys.argv) != 3:
         sys.exit(__doc__)
