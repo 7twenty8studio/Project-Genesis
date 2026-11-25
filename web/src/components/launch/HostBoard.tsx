@@ -80,6 +80,12 @@ export function HostBoard({ lang, initial, entryLink, scene }: { lang: Lang; ini
     timers.current = [];
   };
 
+  // The final golden ticket counts down 5, 4, 3, 2, 1 before the roll starts.
+  const [countdown, setCountdown] = useState<number | null>(null);
+  // Each shuffled ticket of the roll, so every one slides in afresh from alternating sides.
+  const [step, setStep] = useState(0);
+  const COUNT_FROM = 5;
+
   /** Rolls through `pool` and lands on the winner. */
   const roll = useCallback((pool: number[], winner: Shown) => {
     clearTimers();
@@ -97,6 +103,7 @@ export function HostBoard({ lang, initial, entryLink, scene }: { lang: Lang; ini
       timers.current.push(
         window.setTimeout(() => {
           setShown(last ? { ...winner, landed: true } : { id: null, number, name: null, landed: false });
+          setStep((n) => n + 1);
           if (last) {
             setRolling(false);
             setBurst((b) => b + 1);
@@ -107,6 +114,27 @@ export function HostBoard({ lang, initial, entryLink, scene }: { lang: Lang; ini
     }
   }, []);
 
+  /** The roll, after a countdown for the final golden ticket (on every screen that shows the draw). */
+  const reveal = useCallback(
+    (purpose: Purpose, pool: number[], winner: Shown) => {
+      if (purpose !== "raffle") return roll(pool, winner);
+      clearTimers();
+      setShown(null);
+      setRolling(true);
+      setCountdown(COUNT_FROM);
+      for (let n = COUNT_FROM - 1; n >= 1; n--) {
+        timers.current.push(window.setTimeout(() => setCountdown(n), (COUNT_FROM - n) * 1000));
+      }
+      timers.current.push(
+        window.setTimeout(() => {
+          setCountdown(null);
+          roll(pool, winner);
+        }, COUNT_FROM * 1000),
+      );
+    },
+    [roll],
+  );
+
   // A draw or a clear made on another screen.
   useEffect(() => {
     if (rolling) return;
@@ -114,18 +142,21 @@ export function HostBoard({ lang, initial, entryLink, scene }: { lang: Lang; ini
     if (cleared > seen.current.cleared) {
       seen.current.cleared = cleared;
       clearTimers();
+      setCountdown(null);
+      setRolling(false);
       setShown(null);
     }
     if (mode !== "volunteer" && mode !== "raffle") return;
     const next = drawSince(board, mode, seen.current[mode]);
     if (!next) return;
     seen.current[mode] = next.id;
-    roll([...poolFor(board, mode), next.number], { id: next.id, number: next.number, name: next.name, landed: true });
-  }, [board, mode, rolling, roll]);
+    reveal(mode, [...poolFor(board, mode), next.number], { id: next.id, number: next.number, name: next.name, landed: true });
+  }, [board, mode, rolling, reveal]);
 
   /** Clear on every draw screen. */
   const clearShown = useCallback(async () => {
     clearTimers();
+    setCountdown(null);
     setRolling(false);
     setShown(null);
     const result = await changeLive("clear");
@@ -143,10 +174,10 @@ export function HostBoard({ lang, initial, entryLink, scene }: { lang: Lang; ini
         return;
       }
       seen.current[purpose] = Math.max(seen.current[purpose], result.value.id);
-      roll(pool.length ? pool : [result.value.number], { id: result.value.id, number: result.value.number, name: result.value.name, landed: true });
+      reveal(purpose, pool.length ? pool : [result.value.number], { id: result.value.id, number: result.value.number, name: result.value.name, landed: true });
       void refresh();
     },
-    [board, rolling, roll, refresh, t],
+    [board, rolling, reveal, refresh, t],
   );
 
   const notHere = useCallback(async () => {
@@ -268,6 +299,7 @@ export function HostBoard({ lang, initial, entryLink, scene }: { lang: Lang; ini
 
   const switchMode = (next: Mode) => {
     clearTimers();
+    setCountdown(null);
     setRolling(false);
     setShown(null);
     setProblem(null);
@@ -409,7 +441,30 @@ export function HostBoard({ lang, initial, entryLink, scene }: { lang: Lang; ini
           </div>
         ) : (
           <div className="mt-10 flex w-full max-w-4xl flex-col items-center">
-            {shown ? (
+            {countdown !== null ? (
+              <div className="raffle-countdown" aria-live="assertive" data-testid="raffle-countdown">
+                <svg viewBox="0 0 120 120" aria-hidden="true">
+                  <circle cx="60" cy="60" r="54" className="track" />
+                  <circle key={countdown} cx="60" cy="60" r="54" className="ring" />
+                </svg>
+                <span key={`n${countdown}`} className="number">
+                  {countdown}
+                </span>
+              </div>
+            ) : shown && !shown.landed && mode === "raffle" ? (
+              // The shuffle: entrants' tickets fly off a tilted deck one after another, slowing down until the winner lands.
+              <div className="raffle-shuffle w-full max-w-2xl" aria-hidden="true" data-testid="raffle-shuffle">
+                <span className="deck deck-back golden-ticket rounded-[2rem]" />
+                <span className="deck deck-mid golden-ticket rounded-[2rem]" />
+                <div key={step} className={`golden-ticket card rounded-[2rem] px-10 py-12 ${step % 2 ? "from-left" : "from-right"}`}>
+                  <p className="text-sm font-semibold uppercase tracking-[0.3em]">{t("Golden ticket")}</p>
+                  <p className="mt-3 truncate text-6xl font-semibold leading-none tracking-tight md:text-7xl">
+                    {board.entries.find((e) => e.number === shown.number)?.name ?? "\u00a0"}
+                  </p>
+                  <p className="mt-4 text-5xl font-semibold tabular-nums tracking-tight">{ticket(shown.number)}</p>
+                </div>
+              </div>
+            ) : shown ? (
               <div className={`golden-ticket w-full max-w-2xl rounded-[2rem] px-10 py-12 ${shown.landed ? "rise-in" : ""}`} aria-live="polite">
                 {shown.landed ? <span className="sheen" aria-hidden="true" /> : null}
                 <p className="text-sm font-semibold uppercase tracking-[0.3em]">{mode === "raffle" ? t("Golden ticket") : t("Number")}</p>
