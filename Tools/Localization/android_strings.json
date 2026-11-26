@@ -1,0 +1,16 @@
+{
+  "about": "Android string resources: resource name -> the English text, exactly as iOS writes it. build_android_strings.py takes the Spanish and Portuguese from es.json and pt.json, so both apps say the same words.",
+  "strings": {
+    "app_name": "Versely",
+    "tab_read": "Read",
+    "books": "Books",
+    "old_testament": "Old Testament",
+    "new_testament": "New Testament",
+    "choose_book_and_chapter": "Choose a book and chapter",
+    "choose_translation": "Choose a translation",
+    "chapter_number": "Chapter %lld",
+    "previous_chapter": "Previous chapter",
+    "next_chapter": "Next chapter",
+    "close": "Close"
+  }
+}

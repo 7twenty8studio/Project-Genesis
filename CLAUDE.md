@@ -1179,6 +1179,30 @@ shares; README.md has the architecture.
 - Don't put `.accessibilityIdentifier` on a container whose children have
   their own identifiers (SwiftUI passes it down and replaces theirs).
 
+## Android
+- Versely for Android lives in `android/` (Kotlin, Jetpack Compose, Gradle;
+  plan in docs/ANDROID_PLAN.md, one release with full parity, Play around
+  13 August 2027). Unlike Swift, it builds and tests in the Linux container:
+  `cd android && ./gradlew :core:domain:test :app:assembleDebug` (JDK 21,
+  Android SDK platform 37.2 in `local.properties`). Every rule above applies
+  to it too.
+- Modules: `app`, `core:domain` (pure Kotlin rules, JVM tests), `core:bible`
+  (the bundled Bibles, read-only, bundled SQLite driver), `core:design`
+  (Versely's colours and type). Kotlin types keep the Swift names; package
+  `com.genesis.*`; application id `com.seventwenty8studio.versely`
+  (proposed, waiting for the owner's yes; it can't change after the first
+  upload).
+- Shared, never copied: the Bible files are `core:bible`'s assets straight
+  from Genesis/Resources/Bibles; book names, aliases and verse counts come
+  from supabase/functions/_shared/bibleBooks.json; reference cases from
+  fixtures/references.json (one reading on iPhone, Android and the web).
+  When a rule changes on iOS, add a shared fixture and run it on Android.
+- Strings: add the resource name and its English (as iOS writes it) to
+  Tools/Localization/android_strings.json, its Spanish and Portuguese to
+  es.json / pt.json as usual, then run
+  `python3 Tools/Localization/build_android_strings.py`; never edit
+  res/values*/strings.xml by hand.
+
 ## Conventions
 - MVVM, composition, one responsibility per type, small view files.
 - SwiftUI first; UIKit only for the TextKit reader text and page curl.
