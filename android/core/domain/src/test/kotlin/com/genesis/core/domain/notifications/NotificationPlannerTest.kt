@@ -99,4 +99,46 @@ class NotificationPlannerTest {
         assertEquals(today.atTime(11, 0), NotificationPlanner.prayerReminder(false, today.minusDays(3).atTime(11, 0), true, now))
         assertNull(NotificationPlanner.prayerReminder(true, today.atTime(12, 0), false, now))
     }
+
+    @Test
+    fun almostThereWhenTodaysGoalIsPartlyDone() {
+        val goal = com.genesis.core.domain.goals.ReadingGoal.THREE_CHAPTERS.progress(1, 0)
+        val planned = NotificationPlanner.plan(input(ReminderKind.DAILY_READING).copy(readingDays = setOf(today), goalToday = goal))
+        assertEquals(ReminderMessage.AlmostThere(goal!!), planned.first().message)
+        assertEquals(today, planned.first().fireAt.toLocalDate())
+        val met = com.genesis.core.domain.goals.ReadingGoal.ONE_CHAPTER.progress(1, 0)
+        assertTrue(NotificationPlanner.plan(input(ReminderKind.DAILY_READING).copy(readingDays = setOf(today), goalToday = met)).none { it.fireAt.toLocalDate() == today })
+    }
+
+    @Test
+    fun memoriseOnlyWhenSomethingIsDue() {
+        val due = listOf(today.plusDays(2).atTime(9, 0), today.plusDays(2).atTime(15, 0))
+        val planned = NotificationPlanner.plan(input(ReminderKind.MEMORISE).copy(memoryDueDates = due))
+        // Day 2 at noon: one due; day 3 on: both.
+        assertEquals(ReminderMessage.MemoriseDue(1), planned.first().message)
+        assertEquals(today.plusDays(2).atTime(12, 0), planned.first().fireAt)
+        assertEquals(ReminderMessage.MemoriseDue(2), planned[1].message)
+        assertEquals(5, planned.size)
+        assertEquals("versely://memorise", planned.first().link)
+    }
+
+    @Test
+    fun sermonsAndRecapOnSundaysOnly() {
+        val planned = NotificationPlanner.plan(input(ReminderKind.SERMONS, ReminderKind.WEEKLY_RECAP))
+        assertEquals(2, planned.size)
+        assertTrue(planned.all { it.fireAt.dayOfWeek == java.time.DayOfWeek.SUNDAY })
+        assertEquals(LocalDate.of(2026, 11, 29).atTime(8, 30), planned[0].fireAt)
+        assertEquals("versely://sermons", planned[0].link)
+        assertEquals(ReminderMessage.WeeklyRecap, planned[1].message)
+        assertEquals("versely://insights", planned[1].link)
+    }
+
+    @Test
+    fun streakShieldKeepsTodaysStreakMessage() {
+        val days = setOf(today.minusDays(1), today.minusDays(3), today.minusDays(4))
+        val shielded = NotificationPlanner.plan(input(ReminderKind.DAILY_READING).copy(readingDays = days, streakShields = true))
+        assertEquals(ReminderMessage.Streak(3), shielded.first().message)
+        val plain = NotificationPlanner.plan(input(ReminderKind.DAILY_READING).copy(readingDays = days))
+        assertEquals(ReminderMessage.TwoDaysInARow, plain.first().message)
+    }
 }

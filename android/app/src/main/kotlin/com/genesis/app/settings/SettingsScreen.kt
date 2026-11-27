@@ -54,6 +54,7 @@ fun SettingsScreen(
     onAccount: () -> Unit,
     onReading: () -> Unit,
     onNotifications: () -> Unit,
+    onGoals: () -> Unit,
     onDone: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -86,6 +87,8 @@ fun SettingsScreen(
                 Row_(stringResource(R.string.reading), onClick = onReading, trailing = "›")
                 HorizontalDivider(Modifier.padding(start = 16.dp), color = colors.separator)
                 Row_(stringResource(R.string.notifications), onClick = onNotifications, trailing = "›")
+                HorizontalDivider(Modifier.padding(start = 16.dp), color = colors.separator)
+                Row_(stringResource(R.string.goals_and_streaks), onClick = onGoals, trailing = "›")
             }
 
             Header(stringResource(R.string.listening))
@@ -144,7 +147,7 @@ fun SettingsScreen(
 }
 
 @Composable
-private fun SettingSwitch(title: String, checked: Boolean, onChange: (Boolean) -> Unit) {
+internal fun SettingSwitch(title: String, checked: Boolean, onChange: (Boolean) -> Unit) {
     val colors = LocalReaderColors.current
     Row(
         Modifier.fillMaxWidth().toggleable(value = checked, role = Role.Switch, onValueChange = onChange).padding(horizontal = 16.dp, vertical = 8.dp),

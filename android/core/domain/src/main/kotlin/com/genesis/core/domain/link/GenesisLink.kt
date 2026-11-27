@@ -27,6 +27,12 @@ sealed interface GenesisLink {
     /** versely://memorise: Memorize Scripture (the Memorize widget). */
     data object Memorise : GenesisLink
 
+    /** versely://sermons: Sermon Notes. */
+    data object Sermons : GenesisLink
+
+    /** versely://insights: Insights (the weekly recap). */
+    data object Insights : GenesisLink
+
     /** versely://group/<id>: one of the person's groups (the Group Progress widget). */
     data class Group(val id: String) : GenesisLink
 
@@ -44,6 +50,8 @@ sealed interface GenesisLink {
         const val PLANS = "$SCHEME://plans"
         const val PRAYER = "$SCHEME://prayer"
         const val MEMORISE = "$SCHEME://memorise"
+        const val SERMONS = "$SCHEME://sermons"
+        const val INSIGHTS = "$SCHEME://insights"
 
         fun read(verse: VerseId): String = "$SCHEME://read/${verse.rawValue}"
 
@@ -63,6 +71,8 @@ sealed interface GenesisLink {
                 "plans" -> Plans
                 "prayer" -> Prayer
                 "memorise" -> Memorise
+                "sermons" -> Sermons
+                "insights" -> Insights
                 "group" -> parts.getOrNull(1)?.takeIf { it.isNotBlank() }?.let { Group(it.lowercase()) }
                 else -> null
             }

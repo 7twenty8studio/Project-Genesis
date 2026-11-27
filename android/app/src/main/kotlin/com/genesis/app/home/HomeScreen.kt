@@ -31,6 +31,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.res.stringResource
@@ -99,6 +100,7 @@ fun HomeScreen(
     onSermons: () -> Unit = {},
     record: ReadingRecord,
     onInsights: () -> Unit,
+    onGoals: () -> Unit = {},
     modifier: Modifier = Modifier,
 ) {
     val colors = LocalReaderColors.current
@@ -288,6 +290,9 @@ fun HomeScreen(
             Text("\u203A", style = MaterialTheme.typography.titleLarge, color = colors.secondaryText)
         }
 
+        // A milestone just reached, once.
+        com.genesis.app.goals.MilestoneBanner()
+
         // Progress, with Insights beside it.
         if (state.hasStartedReading) {
             Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -301,10 +306,11 @@ fun HomeScreen(
                     TextButton(onClick = onInsights) { Text(stringResource(R.string.insights), color = colors.accent) }
                 }
                 Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    ProgressStat(NotificationPlanner.streak(record.readingDays, today), stringResource(R.string.day_streak), Modifier.weight(1f))
+                    ProgressStat((LocalContext.current.applicationContext as com.genesis.app.VerselyApplication).progress.streak(today, record.readingDays), stringResource(R.string.day_streak), Modifier.weight(1f))
                     ProgressStat(record.chaptersRead.size, stringResource(R.string.chapters_read), Modifier.weight(1f))
                     ProgressStat(ReadingStats.booksCompleted(record.chaptersRead), stringResource(R.string.books_finished), Modifier.weight(1f))
                 }
+                com.genesis.app.goals.GoalHomeCard(onOpen = onGoals)
             }
         }
 

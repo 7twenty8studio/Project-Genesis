@@ -1,6 +1,8 @@
 package com.genesis.core.domain.notifications
 
 import com.genesis.core.domain.bible.VerseId
+import com.genesis.core.domain.goals.GoalProgress
+import com.genesis.core.domain.goals.ReadingStreak
 import com.genesis.core.domain.link.GenesisLink
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -9,14 +11,18 @@ import java.time.LocalTime
 /**
  * The kinds of notification Versely sends, each with its own switch in
  * Settings › Notifications, as ReminderKind on iOS (same raw values, so the
- * saved keys read the same). Memorize, Sunday sermon notes, the weekly
- * recap and the group kinds join as their features arrive on Android.
+ * saved keys read the same). Groups and nudges are pushed from the server.
  */
 enum class ReminderKind(val rawValue: String, val hasTime: Boolean, val isOnByDefault: Boolean, val defaultMinutes: Int) {
     VERSE_OF_THE_DAY("verseOfTheDay", true, false, 7 * 60),
     DAILY_READING("dailyReading", true, false, 20 * 60),
     READING_PLAN("readingPlan", true, false, 8 * 60),
+    MEMORISE("memorise", true, false, 12 * 60),
     PRAYER("prayer", false, true, 0),
+    SERMONS("sermons", true, false, 8 * 60 + 30),
+    WEEKLY_RECAP("weeklyRecap", true, false, 18 * 60),
+    GROUPS("groups", false, true, 0),
+    NUDGES("nudges", false, true, 0),
     PRAYER_ANNIVERSARY("prayerAnniversary", true, true, 9 * 60),
 }
 
@@ -33,6 +39,12 @@ data class NotificationInput(
     val dailyVerses: Map<LocalDate, VerseText> = emptyMap(),
     /** Days with reading. */
     val readingDays: Set<LocalDate> = emptySet(),
+    /** Streak shields on (Goals & Streaks): one missed day a week keeps the streak. */
+    val streakShields: Boolean = false,
+    /** Today's progress toward the daily goal, if one is set. */
+    val goalToday: GoalProgress? = null,
+    /** When each memorized passage is next due. */
+    val memoryDueDates: List<LocalDateTime> = emptyList(),
     /** The active plan's title, and each coming day's unfinished reading. */
     val planTitle: String? = null,
     val planReadings: Map<LocalDate, String> = emptyMap(),
@@ -52,6 +64,11 @@ sealed interface ReminderMessage {
     data class Invitation(val index: Int) : ReminderMessage
     data class PlanReading(val planTitle: String, val reading: String) : ReminderMessage
     data class Anniversary(val years: Int, val title: String, val more: Int) : ReminderMessage
+    /** Read today, but the daily goal isn't met yet. */
+    data class AlmostThere(val progress: GoalProgress) : ReminderMessage
+    data class MemoriseDue(val count: Int) : ReminderMessage
+    data object SermonNotes : ReminderMessage
+    data object WeeklyRecap : ReminderMessage
 }
 
 data class PlannedNotification(
@@ -80,6 +97,7 @@ object NotificationPlanner {
         val planned = mutableListOf<PlannedNotification>()
         for (offset in 0 until HORIZON_DAYS) {
             val day = today.plusDays(offset.toLong())
+            val isSunday = day.dayOfWeek == java.time.DayOfWeek.SUNDAY
             for (kind in ReminderKind.entries) {
                 if (!kind.hasTime || kind !in input.settings.enabled) continue
                 val fire = day.atTime(LocalTime.MIN).plusMinutes(input.settings.minutes(kind).toLong())
@@ -94,9 +112,31 @@ object NotificationPlanner {
                         link = GenesisLink.read(verse.verse)
                     }
                     ReminderKind.DAILY_READING -> {
-                        if (day in input.readingDays) continue
-                        message = readingMessage(offset, day, input)
+                        if (day in input.readingDays) {
+                            // Already read: no nudge, unless today's goal is partly done.
+                            val goal = input.goalToday
+                            if (offset != 0 || goal == null || goal.isMet || goal.done <= 0) continue
+                            message = ReminderMessage.AlmostThere(goal)
+                        } else {
+                            message = readingMessage(offset, day, input)
+                        }
                         link = GenesisLink.CONTINUE_READING
+                    }
+                    ReminderKind.MEMORISE -> {
+                        val due = input.memoryDueDates.count { !it.isAfter(fire) }
+                        if (due == 0) continue
+                        message = ReminderMessage.MemoriseDue(due)
+                        link = GenesisLink.MEMORISE
+                    }
+                    ReminderKind.SERMONS -> {
+                        if (!isSunday) continue
+                        message = ReminderMessage.SermonNotes
+                        link = GenesisLink.SERMONS
+                    }
+                    ReminderKind.WEEKLY_RECAP -> {
+                        if (!isSunday) continue
+                        message = ReminderMessage.WeeklyRecap
+                        link = GenesisLink.INSIGHTS
                     }
                     ReminderKind.READING_PLAN -> {
                         val title = input.planTitle ?: continue
@@ -108,7 +148,7 @@ object NotificationPlanner {
                         message = anniversary(day, input.answeredPrayers) ?: continue
                         link = GenesisLink.PRAYER
                     }
-                    ReminderKind.PRAYER -> continue
+                    ReminderKind.PRAYER, ReminderKind.GROUPS, ReminderKind.NUDGES -> continue
                 }
                 planned += PlannedNotification(id, kind, fire, message, link)
             }
@@ -119,7 +159,7 @@ object NotificationPlanner {
     /** Today's can mention the streak or a return after a break; later days rotate gentle invitations. */
     fun readingMessage(dayOffset: Int, day: LocalDate, input: NotificationInput): ReminderMessage {
         if (dayOffset == 0) {
-            val streak = streak(input.readingDays, day)
+            val streak = ReadingStreak.walk(input.readingDays, day, input.streakShields).length
             if (streak >= 2) return ReminderMessage.Streak(streak)
             if (streak == 1) return ReminderMessage.TwoDaysInARow
             val last = input.readingDays.maxOrNull()

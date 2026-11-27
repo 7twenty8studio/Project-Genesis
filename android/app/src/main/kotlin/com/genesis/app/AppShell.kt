@@ -84,6 +84,7 @@ fun AppShell(
     var readingSettings by rememberSaveable { mutableStateOf(false) }
     var notificationsOpen by rememberSaveable { mutableStateOf(false) }
     var insightsOpen by rememberSaveable { mutableStateOf(false) }
+    var goalsOpen by rememberSaveable { mutableStateOf(false) }
     val readingRecord by app.progress.record.collectAsStateWithLifecycle()
     var accountOpen by rememberSaveable { mutableStateOf(false) }
     // Reading plans over the tabs: the list, or one plan (its id).
@@ -149,6 +150,15 @@ fun AppShell(
                 plansOpen = false
                 journalOpen = false
                 memoriseOpen = true
+            }
+            GenesisLink.Sermons -> {
+                settingsOpen = false
+                sermonsNew = false
+                sermonsOpen = true
+            }
+            GenesisLink.Insights -> {
+                settingsOpen = false
+                insightsOpen = true
             }
             is GenesisLink.Sermon -> {
                 settingsOpen = false
@@ -324,6 +334,15 @@ fun AppShell(
         return
     }
 
+    if (goalsOpen) {
+        BackHandler { goalsOpen = false }
+        com.genesis.app.goals.GoalsScreen(
+            onDone = { goalsOpen = false },
+            modifier = Modifier.fillMaxSize().navigationBarsPadding(),
+        )
+        return
+    }
+
     if (notificationsOpen) {
         NotificationSettingsScreen(
             onDone = { notificationsOpen = false },
@@ -350,6 +369,7 @@ fun AppShell(
             onAccount = { accountOpen = true },
             onReading = { readingSettings = true },
             onNotifications = { notificationsOpen = true },
+            onGoals = { goalsOpen = true },
             onDone = { settingsOpen = false },
             modifier = Modifier.fillMaxSize().navigationBarsPadding(),
         )
@@ -415,6 +435,7 @@ fun AppShell(
                 },
                 record = readingRecord,
                 onInsights = { insightsOpen = true },
+                onGoals = { goalsOpen = true },
                 modifier = content,
             )
             AppTab.READ -> androidx.compose.foundation.layout.Box(content) {

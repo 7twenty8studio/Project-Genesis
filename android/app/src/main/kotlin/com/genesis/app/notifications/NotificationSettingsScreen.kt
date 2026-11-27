@@ -109,7 +109,15 @@ fun NotificationSettingsScreen(onDone: () -> Unit, modifier: Modifier = Modifier
 
             if (state.allowsNotifications) {
                 Section(stringResource(R.string.every_day), listOf(ReminderKind.VERSE_OF_THE_DAY, ReminderKind.DAILY_READING), state, permission) { editing = it }
-                Section(stringResource(R.string.your_bible_life), listOf(ReminderKind.READING_PLAN, ReminderKind.PRAYER, ReminderKind.PRAYER_ANNIVERSARY), state, permission) { editing = it }
+                Section(stringResource(R.string.your_bible_life), listOfNotNull(
+                    ReminderKind.READING_PLAN,
+                    // Memorize is Premium: its reminders come with it.
+                    ReminderKind.MEMORISE.takeIf { com.genesis.app.settings.Entitlements.isPremium },
+                    ReminderKind.PRAYER,
+                    ReminderKind.PRAYER_ANNIVERSARY,
+                    ReminderKind.SERMONS,
+                    ReminderKind.WEEKLY_RECAP,
+                ), state, permission) { editing = it }
             }
             Spacer(Modifier.size(32.dp))
         }
@@ -146,7 +154,8 @@ private fun Section(
             }
             if (kind.hasTime && state.isOn(kind)) {
                 HorizontalDivider(Modifier.padding(start = 16.dp), color = colors.separator)
-                TimeRow(state.minutes(kind)) { onTime(kind) }
+                val sunday = kind == ReminderKind.SERMONS || kind == ReminderKind.WEEKLY_RECAP
+                TimeRow(state.minutes(kind), label = stringResource(if (sunday) R.string.sunday_at else R.string.time)) { onTime(kind) }
             }
             if (index < kinds.lastIndex) HorizontalDivider(Modifier.padding(start = 16.dp), color = colors.separator)
         }

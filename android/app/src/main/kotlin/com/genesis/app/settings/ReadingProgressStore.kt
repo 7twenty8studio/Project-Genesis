@@ -2,6 +2,7 @@ package com.genesis.app.settings
 
 import android.content.Context
 import com.genesis.core.domain.bible.VerseId
+import com.genesis.core.domain.goals.ReadingStreak
 import com.genesis.core.domain.insights.ReadingStats
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -98,6 +99,23 @@ class ReadingProgressStore(context: Context) {
         }
         return seen.toList()
     }
+
+    /** Streak shields on (the person's choice in Goals & Streaks); every streak follows it. */
+    @Volatile var streakShieldsActive: Boolean = true
+
+    /** Days in a row ending today (or yesterday, before today's reading), with shields when on. */
+    fun streak(today: LocalDate = LocalDate.now(), days: Set<LocalDate> = readingDays): Int =
+        ReadingStreak.walk(days, today, streakShieldsActive).length
+
+    /** Whether a shield is ready to cover a missed day this week. */
+    fun streakShieldReady(today: LocalDate = LocalDate.now()): Boolean =
+        ReadingStreak.shieldReady(ReadingStreak.walk(readingDays, today, streakShieldsActive).lastShield, today)
+
+    /** Chapters opened on that day. */
+    fun chaptersRead(on: LocalDate = LocalDate.now()): Int = chaptersByDay.count { it.startsWith("$on:") }
+
+    /** Seconds in the reader on that day. */
+    fun secondsRead(on: LocalDate = LocalDate.now()): Int = _record.value.readingSeconds[on] ?: 0
 
     /** Adds a session in the reader, ending today (capped at 45 minutes, as iOS). */
     fun addReadingTime(durationSeconds: Long) {

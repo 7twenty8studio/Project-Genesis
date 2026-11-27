@@ -80,7 +80,7 @@ fun InsightsScreen(language: String, onDone: () -> Unit, modifier: Modifier = Mo
             verticalArrangement = Arrangement.spacedBy(28.dp),
         ) {
             val stats = buildList {
-                add(Stat("${NotificationPlanner.streak(record.readingDays, today)}", stringResource(R.string.day_streak)))
+                add(Stat("${(LocalContext.current.applicationContext as com.genesis.app.VerselyApplication).progress.streak(today, record.readingDays)}", stringResource(R.string.day_streak)))
                 add(Stat(stringResource(R.string.count_of_total, record.chaptersRead.size, ReadingStats.totalChapters), stringResource(R.string.chapters_read)))
                 add(Stat(stringResource(R.string.count_of_total, ReadingStats.booksCompleted(record.chaptersRead), 66), stringResource(R.string.books_finished)))
                 if (premium) {

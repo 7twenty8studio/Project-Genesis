@@ -129,7 +129,18 @@ object ReminderScheduler {
         }
 
         if (ReminderKind.DAILY_READING in settings.enabled) {
-            input = input.copy(readingDays = app.progress.readingDays)
+            // The streak follows the shields; the reminder follows the daily goal.
+            val goal = app.goals.state.value
+            input = input.copy(
+                readingDays = app.progress.readingDays,
+                streakShields = goal.usesStreakShields,
+                goalToday = goal.goal.progress(app.progress.chaptersRead(today), app.progress.secondsRead(today)),
+            )
+        }
+
+        // Memorize is Premium.
+        if (ReminderKind.MEMORISE in settings.enabled && com.genesis.app.settings.Entitlements.isPremium) {
+            input = input.copy(memoryDueDates = app.userData.memory.all.value.map { LocalDateTime.ofInstant(Instant.ofEpochMilli(it.schedule.dueAt), zone) })
         }
 
         if (ReminderKind.PRAYER_ANNIVERSARY in settings.enabled) {
@@ -171,6 +182,14 @@ object ReminderScheduler {
             getString(titles[message.index]) to getString(bodies[message.index])
         }
         is ReminderMessage.PlanReading -> message.planTitle to getString(R.string.todays_reading_body, message.reading)
+        is ReminderMessage.AlmostThere -> getString(R.string.almost_there) to when {
+            message.progress.goal.unit == com.genesis.core.domain.goals.ReadingGoal.Unit.MINUTES -> getString(R.string.goal_nudge_minutes, message.progress.remaining)
+            message.progress.remaining == 1 -> getString(R.string.goal_nudge_one_chapter)
+            else -> getString(R.string.goal_nudge_chapters, message.progress.remaining)
+        }
+        is ReminderMessage.MemoriseDue -> getString(R.string.time_to_review) to if (message.count == 1) getString(R.string.review_one) else getString(R.string.review_many, message.count)
+        ReminderMessage.SermonNotes -> getString(R.string.sermon_notes) to getString(R.string.sermon_notes_reminder)
+        ReminderMessage.WeeklyRecap -> getString(R.string.your_week_in_scripture) to getString(R.string.weekly_recap_body)
         is ReminderMessage.Anniversary -> {
             val title = if (message.years == 1) getString(R.string.a_year_ago_today) else getString(R.string.years_ago_today, message.years)
             val body = if (message.more == 0) getString(R.string.anniversary_body, message.title) else getString(R.string.anniversary_body_more, message.title, message.more)
@@ -191,7 +210,12 @@ object ReminderScheduler {
             ReminderKind.VERSE_OF_THE_DAY -> R.string.verse_of_the_day
             ReminderKind.DAILY_READING -> R.string.reminder_daily_reading
             ReminderKind.READING_PLAN -> R.string.reminder_reading_plan
+            ReminderKind.MEMORISE -> R.string.reminder_memorise
             ReminderKind.PRAYER -> R.string.reminder_prayer
+            ReminderKind.SERMONS -> R.string.reminder_sermons
+            ReminderKind.WEEKLY_RECAP -> R.string.reminder_recap
+            ReminderKind.GROUPS -> R.string.reminder_groups
+            ReminderKind.NUDGES -> R.string.reminder_nudges
             ReminderKind.PRAYER_ANNIVERSARY -> R.string.reminder_anniversary
         }
 
@@ -200,7 +224,12 @@ object ReminderScheduler {
             ReminderKind.VERSE_OF_THE_DAY -> R.string.reminder_verse_detail
             ReminderKind.DAILY_READING -> R.string.reminder_reading_detail
             ReminderKind.READING_PLAN -> R.string.reminder_plan_detail
+            ReminderKind.MEMORISE -> R.string.reminder_memorise_detail
             ReminderKind.PRAYER -> R.string.reminder_prayer_detail
+            ReminderKind.SERMONS -> R.string.reminder_sermons_detail
+            ReminderKind.WEEKLY_RECAP -> R.string.reminder_recap_detail
+            ReminderKind.GROUPS -> R.string.reminder_groups_detail
+            ReminderKind.NUDGES -> R.string.reminder_nudges_detail
             ReminderKind.PRAYER_ANNIVERSARY -> R.string.reminder_anniversary_detail
         }
 

@@ -109,7 +109,7 @@ internal data class WidgetData(
                     }
                     WidgetData(
                         continueReading = reading,
-                        streakDays = NotificationPlanner.streak(record.readingDays, today),
+                        streakDays = app.progress.streak(today, record.readingDays),
                         chaptersRead = record.chaptersRead.size,
                         plan = plan,
                         activePrayers = prayers.size,
@@ -120,7 +120,7 @@ internal data class WidgetData(
                     )
                 }
             }.onFailure { Log.e(TAG, "Couldn't read the widget data", it) }.getOrNull()
-                ?: WidgetData(null, NotificationPlanner.streak(record.readingDays, today), record.chaptersRead.size, null, prayers.size, null, null, premium, "en")
+                ?: WidgetData(null, app.progress.streak(today, record.readingDays), record.chaptersRead.size, null, prayers.size, null, null, premium, "en")
         }
 
         /** The next time a prayer's reminder goes off: a daily one today or tomorrow at its time, a single one only if it's still ahead. */

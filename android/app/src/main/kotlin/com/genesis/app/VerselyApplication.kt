@@ -34,7 +34,8 @@ class VerselyApplication : Application() {
 
     /** Opened off the main thread the first time (it reads the person's highlights). */
     val userData: UserDatabase by lazy { UserDatabase.open(this) }
-    val progress: ReadingProgressStore by lazy { ReadingProgressStore(this) }
+    val progress: ReadingProgressStore by lazy { ReadingProgressStore(this).also { it.streakShieldsActive = goals.state.value.usesStreakShields } }
+    val goals: com.genesis.app.goals.GoalPreferences by lazy { com.genesis.app.goals.GoalPreferences(this) }
 
     /** The process's own scope, for work that outlives a screen (sign-in). */
     val scope = MainScope()
@@ -106,7 +107,9 @@ class VerselyApplication : Application() {
         scope.launch { bibles.refreshCatalog() }
         scope.launch {
             val data = withContext(Dispatchers.IO) { userData }
-            combine(notifications.state, data.prayers.all, data.plans.all) { _, _, _ -> }
+            combine(notifications.state, data.prayers.all, data.plans.all, data.memory.all, goals.state) { _, _, _, _, goal ->
+                progress.streakShieldsActive = goal.usesStreakShields
+            }
                 .debounce(1_500)
                 .collect { ReminderScheduler.refresh(this@VerselyApplication) }
         }
