@@ -318,6 +318,10 @@ fun ReaderScreen(
             val playing = listening?.playing
             val marks = remember(state.highlights, state.selection, notedVerses, playing) { VerseMarks(state.highlights, state.selection, notedVerses, playing) }
             val scripture = scriptureStyle(preferences, Entitlements.isPremium)
+            // Forest, Ocean and Hearth: the scene behind clear pages.
+            val scene = com.genesis.core.domain.theme.ThemeScene.of(preferences.theme)
+                ?.takeIf { state.chapter != null && !state.showsOriginal }
+            if (scene != null) key(scene) { com.genesis.app.reader.backdrop.ThemeSceneView(scene, animates = preferences.seasonalEffects) }
             when {
                 state.showsOriginal && viewModel != null -> OriginalParallelScreen(
                     viewModel = viewModel,
@@ -341,6 +345,7 @@ fun ReaderScreen(
                         onPreviousChapter = onPreviousAtEnd,
                         onVerseTap = selection.onVerseTap,
                         onNoteTap = selection.onNoteTap,
+                        scene = scene,
                     )
                 }
                 state.chapter != null -> ChapterText(state.chapter, scripture, marks, state.focus, playing, selection.onVerseTap, selection.onNoteTap)

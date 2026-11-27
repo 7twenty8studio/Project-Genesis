@@ -53,6 +53,8 @@ internal fun PagedChapter(
     onPreviousChapter: () -> Unit,
     onVerseTap: (com.genesis.core.domain.bible.VerseId) -> Unit,
     onNoteTap: (String) -> Unit = {},
+    /** Forest, Ocean or Hearth behind the pages: clear pages, and room kept above its swells or glow. */
+    scene: com.genesis.core.domain.theme.ThemeScene? = null,
 ) {
     val colors = LocalReaderColors.current
     val measurer = rememberTextMeasurer()
@@ -63,8 +65,9 @@ internal fun PagedChapter(
         val horizontal = 28.dp
         val head = 28.dp
         val foot = 28.dp
+        val footRoom = scene?.let { com.genesis.app.reader.backdrop.sceneFootRoom(it, maxWidth.value, maxHeight.value, foot.value).dp } ?: 0.dp
         val widthPx = with(density) { (maxWidth - horizontal * 2).roundToPx() }.coerceAtLeast(1)
-        val heightPx = with(density) { (maxHeight - head - foot).toPx() }.coerceAtLeast(1f)
+        val heightPx = with(density) { (maxHeight - head - foot - footRoom).toPx() }.coerceAtLeast(1f)
 
         val pages = remember(text, style, widthPx, heightPx, density, direction) {
             val layout = measurer.measure(text, style, constraints = Constraints(maxWidth = widthPx), density = density, layoutDirection = direction)
@@ -102,7 +105,7 @@ internal fun PagedChapter(
         }
 
         HorizontalPager(state = pager, modifier = Modifier.fillMaxSize(), key = { it }) { index ->
-            Box(Modifier.fillMaxSize().background(colors.background)) {
+            Box(Modifier.fillMaxSize().background(if (scene != null) androidx.compose.ui.graphics.Color.Transparent else colors.background)) {
                 val page = pages.getOrNull(index - 1) ?: return@Box
                 Column(Modifier.fillMaxSize().padding(horizontal = horizontal)) {
                     Text(
@@ -113,6 +116,7 @@ internal fun PagedChapter(
                         modifier = Modifier.fillMaxWidth().height(head).padding(top = 6.dp),
                     )
                     VerseText(page, style = style, color = colors.text, onVerseTap = onVerseTap, onNoteTap = onNoteTap, modifier = Modifier.weight(1f).fillMaxWidth())
+                    if (footRoom > 0.dp) androidx.compose.foundation.layout.Spacer(Modifier.height(footRoom))
                     Box(Modifier.fillMaxWidth().height(foot), contentAlignment = Alignment.Center) {
                         Text("$index", style = MaterialTheme.typography.bodyMedium.copy(fontSize = 12.sp), color = colors.secondaryText)
                     }
