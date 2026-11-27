@@ -1754,6 +1754,9 @@
     "clear_page_message": "Your handwriting on this page will be removed.",
     "handwriting": "Handwriting",
     "page_on_iphone": "This note has a handwritten page from an iPhone or iPad. Open the note there once in the latest Versely to bring the page here.",
-    "page_too_large": "This page is too large to sync, so it stays on this device."
+    "page_too_large": "This page is too large to sync, so it stays on this device.",
+    "start_each_day_with_verse": "Start each day with a verse",
+    "notification_invite_message": "Get the verse of the day each morning, and a gentle reminder in the evening if you haven't read yet. Change times or turn them off anytime in Settings › Notifications.",
+    "turn_on": "Turn On"
   }
 }

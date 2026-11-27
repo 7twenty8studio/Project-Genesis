@@ -1754,4 +1754,7 @@
     <string name="handwriting">Escritura a mano</string>
     <string name="page_on_iphone">Esta nota tiene una página escrita a mano en un iPhone o iPad. Abre la nota allí una vez con la versión más reciente de Versely para traer la página aquí.</string>
     <string name="page_too_large">Esta página es demasiado grande para sincronizarse, así que se queda en este dispositivo.</string>
+    <string name="start_each_day_with_verse">Empieza cada día con un versículo</string>
+    <string name="notification_invite_message">Recibe el versículo del día cada mañana y un recordatorio amable por la tarde si aún no has leído. Cambia las horas o desactívalos cuando quieras en Ajustes › Notificaciones.</string>
+    <string name="turn_on">Activar</string>
 </resources>

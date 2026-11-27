@@ -1755,4 +1755,7 @@
     <string name="handwriting">Handwriting</string>
     <string name="page_on_iphone">This note has a handwritten page from an iPhone or iPad. Open the note there once in the latest Versely to bring the page here.</string>
     <string name="page_too_large">This page is too large to sync, so it stays on this device.</string>
+    <string name="start_each_day_with_verse">Start each day with a verse</string>
+    <string name="notification_invite_message">Get the verse of the day each morning, and a gentle reminder in the evening if you haven\'t read yet. Change times or turn them off anytime in Settings › Notifications.</string>
+    <string name="turn_on">Turn On</string>
 </resources>
