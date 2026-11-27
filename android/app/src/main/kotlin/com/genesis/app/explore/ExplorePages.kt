@@ -264,7 +264,7 @@ private fun VerseMentions(verses: List<VerseId>, context: ExploreContext, limit:
         shown.forEach { verse ->
             Column(Modifier.fillMaxWidth().clickable { context.onRead(verse) }.padding(vertical = 10.dp), verticalArrangement = Arrangement.spacedBy(3.dp)) {
                 Text(ReferenceParser.describe(verse.rawValue, language = context.bibleLanguage), style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold, color = colors.accent)
-                texts[verse]?.plainText?.let { Text(it, fontFamily = family, style = MaterialTheme.typography.bodyMedium, color = colors.text, maxLines = 2, overflow = TextOverflow.Ellipsis) }
+                texts[verse]?.displayText?.let { Text(it, fontFamily = family, style = MaterialTheme.typography.bodyMedium, color = colors.text, maxLines = 2, overflow = TextOverflow.Ellipsis) }
             }
             HorizontalDivider(color = colors.separator)
         }

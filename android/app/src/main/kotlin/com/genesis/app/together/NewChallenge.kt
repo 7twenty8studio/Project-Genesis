@@ -105,7 +105,7 @@ internal fun NewChallengeDialog(bible: JournalBible, bibleId: String, onCreate: 
         value = passage?.let { (_, from, to) ->
             val ids = (from.verse..to.verse).map { VerseId(from.book, from.chapter, it) }
             val verses = bible.verses(ids)
-            ids.mapNotNull { verses[it]?.plainText }.joinToString(" ").ifBlank { null }
+            ids.mapNotNull { verses[it]?.displayText }.joinToString(" ").ifBlank { null }
         }
     }
     val suggested = when (kind) {

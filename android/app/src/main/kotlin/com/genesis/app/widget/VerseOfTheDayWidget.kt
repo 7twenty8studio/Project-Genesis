@@ -113,7 +113,7 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
                     val shown = if (own) translation else null
                     return WidgetVerse(
                         link = GenesisLink.read(item.start),
-                        text = verses.joinToString(" ") { it.plainText },
+                        text = verses.joinToString(" ") { it.displayText },
                         citation = item.reference.description(shown?.language ?: "en") + " · " + (shown?.abbreviation ?: "KJV"),
                         title = source,
                         premiumTag = locked,
@@ -128,7 +128,7 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
                         ReadingVersePicker.pick(chapters, day, { key -> runCatching { repository.chapter(ChapterId(key / 1_000, key % 1_000)).verses }.getOrDefault(emptyList()) }, { it.plainText })?.let { verse ->
                             WidgetVerse(
                                 link = GenesisLink.read(verse.id),
-                                text = verse.plainText,
+                                text = verse.displayText,
                                 citation = ReferenceParser.describe(verse.id.rawValue, language = translation.language) + " · " + translation.abbreviation,
                                 title = source,
                             )
@@ -138,7 +138,7 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
                 }
                 picked ?: run {
                     val verse = DailyVerse.verse(now.toLocalDate(), zone)
-                    val text = repository.verses(listOf(verse))[verse]?.plainText ?: return@use null
+                    val text = repository.verses(listOf(verse))[verse]?.displayText ?: return@use null
                     WidgetVerse(
                         link = GenesisLink.read(verse),
                         text = text,

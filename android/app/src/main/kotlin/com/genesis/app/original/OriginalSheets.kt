@@ -284,7 +284,7 @@ internal fun ColumnScope.LexiconContent(strongs: String, viewModel: ReaderViewMo
             for (verse in current.verses) {
                 Column(verticalArrangement = Arrangement.spacedBy(2.dp), modifier = Modifier.padding(vertical = 4.dp)) {
                     Text(ReferenceParser.describe(verse.id.rawValue, verse.id.rawValue, current.language), style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.SemiBold, color = colors.accent)
-                    Text(verse.plainText, style = MaterialTheme.typography.bodyMedium.copy(fontFamily = FontFamily.Serif), color = colors.text)
+                    Text(verse.displayText, style = MaterialTheme.typography.bodyMedium.copy(fontFamily = FontFamily.Serif), color = colors.text)
                 }
             }
         }

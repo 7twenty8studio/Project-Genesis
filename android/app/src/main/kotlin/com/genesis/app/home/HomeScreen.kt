@@ -160,7 +160,7 @@ fun HomeScreen(
             )
             texts[position]?.let {
                 Text(
-                    it.plainText,
+                    it.displayText,
                     fontFamily = scriptureFamily(),
                     fontSize = 16.sp,
                     color = colors.secondaryText,
@@ -191,7 +191,7 @@ fun HomeScreen(
                     .padding(24.dp),
                 verticalArrangement = Arrangement.spacedBy(14.dp),
             ) {
-                Text(texts[daily]?.plainText ?: "", fontFamily = scriptureFamily(), fontSize = 21.sp, lineHeight = 30.sp, color = colors.text)
+                Text(texts[daily]?.displayText ?: "", fontFamily = scriptureFamily(), fontSize = 21.sp, lineHeight = 30.sp, color = colors.text)
                 val abbreviation = state.chapter?.translation?.abbreviation ?: state.bible.id
                 Text(
                     "${ReferenceParser.describe(daily.rawValue, language = language)} · $abbreviation",
@@ -322,7 +322,7 @@ fun HomeScreen(
                     items(recentHighlights, key = { it.key.rawValue }) { (verse, color) ->
                         VerseSnippet(
                             reference = ReferenceParser.describe(verse.rawValue, language = language),
-                            text = texts[verse]?.plainText ?: "",
+                            text = texts[verse]?.displayText ?: "",
                             highlight = color,
                             maxLines = 4,
                             modifier = Modifier.width(240.dp).clip18().clickable { onRead(verse) }.card(colors.surface),

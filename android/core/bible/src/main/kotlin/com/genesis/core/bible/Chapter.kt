@@ -22,6 +22,9 @@ data class Verse(
 
     /** One line, for copying, sharing and search results (as `plainText` on iOS). */
     val plainText: String get() = text.replace('\n', ' ')
+
+    /** The one line, ready to show beside other text (a Hebrew letter kept from turning it around: ScriptureDirection). */
+    val displayText: String get() = com.genesis.core.domain.bible.ScriptureDirection.display(plainText)
 }
 
 /** A section heading from the translation, shown before a verse. */

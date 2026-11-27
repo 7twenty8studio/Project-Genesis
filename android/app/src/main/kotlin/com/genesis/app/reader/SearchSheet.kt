@@ -186,7 +186,7 @@ private fun VerseResult(verse: Verse, terms: List<String>, language: String, scr
             color = colors.accent,
         )
         Text(
-            marked(verse.plainText, terms, colors),
+            marked(verse.displayText, terms, colors),
             style = scripture.copy(fontSize = 17.sp, lineHeight = 24.sp),
             color = colors.text,
             modifier = Modifier.padding(top = 4.dp),

@@ -116,7 +116,7 @@ object ReminderScheduler {
                     val translation = repository.translation
                     input = input.copy(
                         dailyVerses = ids.mapNotNull { (day, id) ->
-                            val text = verses[id]?.plainText ?: return@mapNotNull null
+                            val text = verses[id]?.displayText ?: return@mapNotNull null
                             day to NotificationInput.VerseText(
                                 reference = ReferenceParser.describe(id.rawValue, language = translation.language) + " (" + translation.abbreviation + ")",
                                 text = text,

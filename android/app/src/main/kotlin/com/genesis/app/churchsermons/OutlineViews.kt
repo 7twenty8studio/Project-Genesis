@@ -299,7 +299,7 @@ internal fun ChurchPassageSheet(
                 shown.verses.forEach { verse ->
                     Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
                         Text(ReferenceParser.describe(verse.id.rawValue, verse.id.rawValue, shown.language), style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.SemiBold, color = colors.accent)
-                        Text(verse.plainText, fontFamily = family, fontSize = 17.sp, lineHeight = 25.sp, color = colors.text)
+                        Text(verse.displayText, fontFamily = family, fontSize = 17.sp, lineHeight = 25.sp, color = colors.text)
                     }
                 }
                 Text(shown.name, style = MaterialTheme.typography.bodySmall, color = colors.secondaryText)

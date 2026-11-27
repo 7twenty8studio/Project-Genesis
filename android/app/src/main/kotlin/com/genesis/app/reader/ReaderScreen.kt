@@ -487,7 +487,14 @@ private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMark
                     color = colors.text,
                     modifier = Modifier.padding(top = 12.dp, bottom = 6.dp).semantics { heading() },
                 )
-                is Block.Prose -> VerseParagraph(block.verses, scripture, marks, onVerseTap, onNoteTap)
+                is Block.Prose -> VerseParagraph(
+                    block.verses,
+                    // Left to right even where a verse opens with a Hebrew letter (Psalm 119 in the KJV).
+                    scripture.copy(textDirection = if (com.genesis.core.domain.bible.ScriptureDirection.isRightToLeft(chapter.translation.language)) androidx.compose.ui.text.style.TextDirection.Rtl else androidx.compose.ui.text.style.TextDirection.Ltr),
+                    marks,
+                    onVerseTap,
+                    onNoteTap,
+                )
             }
         }
         if (chapter.translation.showsLicenseUnderChapters) {

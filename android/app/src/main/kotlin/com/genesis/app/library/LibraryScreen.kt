@@ -109,7 +109,7 @@ fun LibraryScreen(
                     VerseList(highlights.map { it.key }) { verse ->
                         VerseSnippet(
                             ReferenceParser.describe(verse.rawValue, language = language),
-                            texts[verse]?.plainText ?: "",
+                            texts[verse]?.displayText ?: "",
                             highlight = state.highlights[verse],
                             modifier = Modifier.fillMaxWidth().clickable { onRead(verse) }.padding(horizontal = 20.dp, vertical = 14.dp),
                         )
@@ -141,7 +141,7 @@ fun LibraryScreen(
                     VerseList(bookmarks) { verse ->
                         VerseSnippet(
                             ReferenceParser.describe(verse.rawValue, language = language),
-                            texts[verse]?.plainText ?: "",
+                            texts[verse]?.displayText ?: "",
                             maxLines = 2,
                             modifier = Modifier.fillMaxWidth().clickable { onRead(verse) }.padding(horizontal = 20.dp, vertical = 14.dp),
                         )

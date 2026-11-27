@@ -47,7 +47,7 @@ internal suspend fun ReaderViewModel.originalChapter(context: Context, chapter: 
         val translation = bible.translation
         val map = OriginalVersification.parallelMap(translation.id)
         val greek = OriginalSource.parallelGreek(translation.id)
-        val verses = bible.chapter(chapter).verses.map { ParallelVerse(it.id, it.plainText) }
+        val verses = bible.chapter(chapter).verses.map { ParallelVerse(it.id, it.displayText) }
         val gloss = glossLanguage(translation)
         val needed = OriginalParallel.kjvVerses(verses.map { it.id }, map)
         val words = wordStudy.words(needed, greek.edition, gloss)

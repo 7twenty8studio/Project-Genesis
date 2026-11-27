@@ -350,7 +350,7 @@ private fun MemoriseSections(challenge: GroupChallenge, summary: ChallengeSummar
         if (start == null || end == null || start.book != end.book || start.chapter != end.chapter) return@produceState
         val ids = (start.verse..end.verse).map { VerseId(start.book, start.chapter, it) }
         val verses = bible.verses(ids)
-        value = ids.mapNotNull { verses[it]?.plainText }.joinToString(" ").ifBlank { null }
+        value = ids.mapNotNull { verses[it]?.displayText }.joinToString(" ").ifBlank { null }
     }
     Section(header = stringResource(R.string.the_passage)) {
         if (start != null && end != null) {

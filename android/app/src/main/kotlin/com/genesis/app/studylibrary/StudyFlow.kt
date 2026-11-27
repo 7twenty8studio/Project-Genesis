@@ -328,7 +328,7 @@ private fun ColumnScope.VerseResourcesPage(verse: VerseId, library: StudyResourc
     val current = remember(installed, chosen, premium) { library.commentary(premium) }
     // Packs number verses as the KJV does.
     val target = translation?.let { OriginalVersification.map(it.id)?.alignment(verse)?.kjv?.firstOrNull() } ?: verse
-    val text by produceState("", verse, state.bible) { value = viewModel.withBible { it.verses(listOf(verse))[verse]?.plainText }.orEmpty() }
+    val text by produceState("", verse, state.bible) { value = viewModel.withBible { it.verses(listOf(verse))[verse]?.displayText }.orEmpty() }
     val notes by produceState<List<PackResult>?>(null, target, notePacks.map { it.id }) {
         value = withContext(Dispatchers.IO) {
             notePacks.mapNotNull { item ->
@@ -561,7 +561,7 @@ private fun StudyPassageSheet(range: StudyRange, viewModel: ReaderViewModel, onO
                 else -> for (verse in loaded) {
                     Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
                         Text(ReferenceParser.describe(verse.id.rawValue, verse.id.rawValue, language), style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.SemiBold, color = colors.accent)
-                        Text(verse.plainText, style = MaterialTheme.typography.bodyLarge.copy(fontFamily = FontFamily.Serif), color = colors.text)
+                        Text(verse.displayText, style = MaterialTheme.typography.bodyLarge.copy(fontFamily = FontFamily.Serif), color = colors.text)
                     }
                 }
             }

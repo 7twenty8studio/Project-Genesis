@@ -6,7 +6,9 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.BaselineShift
+import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.text.style.TextIndent
+import com.genesis.core.domain.bible.ScriptureDirection
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.em
 import com.genesis.core.bible.Chapter
@@ -136,7 +138,9 @@ private fun AnnotatedString.Builder.appendChapter(chapter: Chapter, colors: Read
             }
             is Block.Prose -> {
                 val indent = if (block.verses.firstOrNull()?.isPoetry == true) 1.2.em else 0.em
-                withStyle(ParagraphStyle(textIndent = TextIndent(firstLine = indent, restLine = indent))) {
+                // Left to right even where a verse opens with a Hebrew letter (Psalm 119 in the KJV).
+                val direction = if (ScriptureDirection.isRightToLeft(chapter.translation.language)) TextDirection.Rtl else TextDirection.Ltr
+                withStyle(ParagraphStyle(textIndent = TextIndent(firstLine = indent, restLine = indent), textDirection = direction)) {
                     appendVerses(block.verses, colors, marks)
                 }
             }

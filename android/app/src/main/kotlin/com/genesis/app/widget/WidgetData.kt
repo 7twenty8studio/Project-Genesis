@@ -76,7 +76,7 @@ internal data class WidgetData(
                         Reading(
                             verse = verse,
                             reference = "${book.name(language)} ${verse.chapter}",
-                            snippet = repository.verses(listOf(verse))[verse]?.plainText,
+                            snippet = repository.verses(listOf(verse))[verse]?.displayText,
                             bookProgress = read.toDouble() / book.chapterCount.coerceAtLeast(1),
                         )
                     }
