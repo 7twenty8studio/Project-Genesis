@@ -173,7 +173,7 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
         day: WidgetVerse?,
         look: WidgetLook,
         photo: android.graphics.Bitmap? = null,
-        frames: Map<com.genesis.core.domain.widgets.WidgetArtShape, List<android.graphics.Bitmap>?> = emptyMap(),
+        frames: Map<com.genesis.core.domain.widgets.WidgetArtShape, List<android.net.Uri>?> = emptyMap(),
     ) {
         val size = LocalSize.current
         val shape = com.genesis.core.domain.widgets.WidgetArtShape.of(size.width.value, size.height.value)
@@ -195,7 +195,7 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
         day: WidgetVerse?,
         look: WidgetLook,
         photo: android.graphics.Bitmap?,
-        @Suppress("UNUSED_PARAMETER") none: Map<com.genesis.core.domain.widgets.WidgetArtShape, List<android.graphics.Bitmap>?>,
+        @Suppress("UNUSED_PARAMETER") none: Map<com.genesis.core.domain.widgets.WidgetArtShape, List<android.net.Uri>?>,
         clear: Boolean,
     ) {
         val size = LocalSize.current

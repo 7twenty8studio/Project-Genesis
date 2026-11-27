@@ -2,9 +2,9 @@ package com.genesis.app.widget
 
 import android.content.Context
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.graphics.Paint
+import android.net.Uri
 import android.provider.Settings
 import android.util.Log
 import android.widget.RemoteViews
@@ -49,7 +49,7 @@ object WidgetFrames {
     private fun sceneOf(style: WidgetArtStyle) = ThemeScene.entries.firstOrNull { it.name == style.name }
     private fun seasonOf(style: WidgetArtStyle) = VerseImageStyle.entries.firstOrNull { it.rawValue == style.rawValue }?.season
 
-    private fun folder(context: Context) = File(WidgetArt.folder(context), "frames")
+    fun folder(context: Context) = File(WidgetArt.folder(context), "frames")
 
     private fun file(context: Context, style: WidgetArtStyle, shape: WidgetArtShape, index: Int) =
         File(folder(context), "v$VERSION-${style.rawValue}-${shape.rawValue}-$index.jpg")
@@ -62,21 +62,24 @@ object WidgetFrames {
         return scale > 0f
     }
 
-    /** A style's frames for a shape, if they're drawn (opaque, so 2 bytes a pixel). */
-    fun load(context: Context, style: WidgetArtStyle, shape: WidgetArtShape): List<Bitmap>? {
+    /**
+     * A style's frames for a shape, if they're drawn: links the launcher opens
+     * itself (WidgetFrameProvider), since ten pictures sent inside the update
+     * are more than Android lets a widget update carry.
+     */
+    fun load(context: Context, style: WidgetArtStyle, shape: WidgetArtShape): List<Uri>? {
         val files = (0 until COUNT).map { file(context, style, shape, it) }
         if (!files.all { it.exists() }) return null
-        val options = BitmapFactory.Options().apply { inPreferredConfig = Bitmap.Config.RGB_565 }
-        return files.map { BitmapFactory.decodeFile(it.path, options) ?: return null }
+        return files.map { Uri.parse("content://${context.packageName}.widgetframes/${it.name}") }
     }
 
     /** The launcher's flipper holding the frames, for AndroidRemoteViews. */
-    fun flipper(context: Context, frames: List<Bitmap>): RemoteViews {
+    fun flipper(context: Context, frames: List<Uri>): RemoteViews {
         val flipper = RemoteViews(context.packageName, R.layout.widget_flipper)
         flipper.removeAllViews(R.id.widget_flipper)
         for (frame in frames) {
             val view = RemoteViews(context.packageName, R.layout.widget_frame)
-            view.setImageViewBitmap(R.id.widget_frame, frame)
+            view.setImageViewUri(R.id.widget_frame, frame)
             flipper.addView(R.id.widget_flipper, view)
         }
         return flipper

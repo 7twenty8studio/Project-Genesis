@@ -205,7 +205,12 @@
                 <action android:name="android.intent.action.TIMEZONE_CHANGED" />
             </intent-filter>
         </receiver>
-            <!-- Verse images shared with other apps (FileProvider, cache only). -->
+        <!-- The verse widget's moving frames, read by the launcher (painted art only). -->
+        <provider
+            android:name="com.genesis.app.widget.WidgetFrameProvider"
+            android:authorities="${applicationId}.widgetframes"
+            android:exported="true" />
+        <!-- Verse images shared with other apps (FileProvider, cache only). -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.files"
