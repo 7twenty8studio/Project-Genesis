@@ -155,6 +155,11 @@ class BibleRepository private constructor(private val connection: SQLiteConnecti
         }
     }
 
+    /** How many verses the file holds (a whole Bible has over 30,000). */
+    fun verseCount(): Int = synchronized(lock) {
+        connection.prepare("SELECT count(*) FROM verses").use { if (it.step()) it.getLong(0).toInt() else 0 }
+    }
+
     override fun close() = synchronized(lock) { connection.close() }
 
     companion object {
@@ -168,6 +173,13 @@ class BibleRepository private constructor(private val connection: SQLiteConnecti
         /** Opens a bundled Bible, copying it out of the app's assets the first time. */
         fun open(context: Context, bible: BundledBible): BibleRepository =
             open(BundledFiles.file(context, bible.asset))
+
+        /** Opens a Bible on this phone, bundled or downloaded. */
+        fun open(context: Context, bible: InstalledBible): BibleRepository = when {
+            bible.bundled != null -> open(context, bible.bundled)
+            bible.file != null -> open(bible.file)
+            else -> error("${bible.id} has no file")
+        }
     }
 }
 

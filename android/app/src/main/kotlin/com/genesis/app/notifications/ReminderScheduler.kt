@@ -108,8 +108,7 @@ object ReminderScheduler {
         var input = NotificationInput(now = now, settings = settings)
 
         if (ReminderKind.VERSE_OF_THE_DAY in settings.enabled) {
-            val bible = app.readerSettings.currentBible?.let { id -> BundledBible.entries.firstOrNull { it.id == id } }
-                ?: BundledBible.default(Locale.getDefault().language)
+            val bible = app.currentBible
             runCatching {
                 BibleRepository.open(app, bible).use { repository ->
                     val ids = days.associateWith { DailyVerse.verse(it, zone) }

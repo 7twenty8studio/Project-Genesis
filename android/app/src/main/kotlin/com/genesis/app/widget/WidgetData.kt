@@ -56,8 +56,7 @@ internal data class WidgetData(
 
         suspend fun load(context: Context, now: Long = System.currentTimeMillis()): WidgetData = withContext(Dispatchers.IO) {
             val app = context.applicationContext as VerselyApplication
-            val bible = app.readerSettings.currentBible?.let { id -> BundledBible.entries.firstOrNull { it.id == id } }
-                ?: BundledBible.default(Locale.getDefault().language)
+            val bible = app.currentBible
             val zone = ZoneId.systemDefault()
             val today = LocalDate.now(zone)
             val record = app.progress.record.value

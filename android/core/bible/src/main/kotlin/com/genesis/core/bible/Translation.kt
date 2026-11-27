@@ -31,3 +31,17 @@ enum class BundledBible(val id: String, val asset: String) {
         fun default(language: String): BundledBible = if (language.startsWith("pt")) BLIVRE else KJV
     }
 }
+
+/**
+ * A Bible on this phone, as the app opens it: bundled in the app, or a file
+ * downloaded into its Bibles folder. Compared by id, so it keys caches.
+ */
+data class InstalledBible(
+    val id: String,
+    val bundled: BundledBible? = null,
+    val file: java.io.File? = null,
+) {
+    companion object {
+        fun of(bundled: BundledBible) = InstalledBible(bundled.id, bundled = bundled)
+    }
+}

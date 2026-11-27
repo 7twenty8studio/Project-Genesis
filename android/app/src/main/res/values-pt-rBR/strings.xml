@@ -1219,4 +1219,17 @@
     <string name="gentle_motion">Movimento suave</string>
     <string name="seasonal_touches_footer">Folhas, neve, flores ou a luz do verão passam suavemente pela página enquanto você lê. Pausa no Modo de Pouca Energia e não aparece quando Reduzir Movimento está ativado.</string>
     <string name="gentle_motion_footer">Neblina, ondas ou brasas se movem suavemente na imagem, nunca sobre as palavras. Ficam pausadas no Modo de Pouca Energia e paradas com Reduzir Movimento.</string>
+    <string name="bibles">Bíblias</string>
+    <string name="bibles_free_offline">Todas estas Bíblias são gratuitas e funcionam offline quando estão no seu dispositivo.</string>
+    <string name="most_read_first">As mais lidas aparecem primeiro.</string>
+    <string name="connect_to_see_more_bibles">Conecte-se à internet para ver mais Bíblias.</string>
+    <string name="bibles_rights_footer">Todas as Bíblias desta lista são de domínio público ou usadas com permissão da editora.</string>
+    <string name="remove_bible_message">Seus destaques e anotações continuam. Você pode baixá-la de novo quando quiser.</string>
+    <string name="all_languages">Todos os idiomas</string>
+    <string name="reading_now">Lendo agora</string>
+    <string name="offline_download_bibles">Você está offline. Conecte-se à internet para baixar Bíblias.</string>
+    <string name="not_a_bible">Esse arquivo não é uma Bíblia que o Versely consiga ler.</string>
+    <string name="bible_needs_premium">Esta Bíblia vem com o Premium. Se você é assinante, tente Restaurar compras nos Ajustes.</string>
+    <string name="bibles_busy">Muitas pessoas estão baixando Bíblias agora. Tente de novo em alguns minutos; o que já foi baixado fica guardado.</string>
+    <string name="more_bibles">Mais Bíblias…</string>
 </resources>

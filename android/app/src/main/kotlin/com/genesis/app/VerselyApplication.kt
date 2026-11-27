@@ -26,6 +26,12 @@ class VerselyApplication : Application() {
 
     val readerSettings: ReaderSettingsStore by lazy { ReaderSettingsStore(this) }
 
+    /** The Bibles on this phone and those offered for download. */
+    val bibles: com.genesis.app.bibles.BibleLibrary by lazy { com.genesis.app.bibles.BibleLibrary(this, account.client) }
+
+    /** The Bible the person reads (the default when theirs is gone). */
+    val currentBible: com.genesis.core.bible.InstalledBible get() = bibles.current(readerSettings.currentBible)
+
     /** Opened off the main thread the first time (it reads the person's highlights). */
     val userData: UserDatabase by lazy { UserDatabase.open(this) }
     val progress: ReadingProgressStore by lazy { ReadingProgressStore(this) }
@@ -96,6 +102,8 @@ class VerselyApplication : Application() {
     fun followReminders() {
         if (remindersFollowed) return
         remindersFollowed = true
+        // The Bible catalog: removes downloads that left it, updates old editions on Wi-Fi.
+        scope.launch { bibles.refreshCatalog() }
         scope.launch {
             val data = withContext(Dispatchers.IO) { userData }
             combine(notifications.state, data.prayers.all, data.plans.all) { _, _, _ -> }

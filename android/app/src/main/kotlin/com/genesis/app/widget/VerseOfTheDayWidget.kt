@@ -96,8 +96,7 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
      */
     private suspend fun load(context: Context, chosen: VerseWidgetSource): WidgetVerse? = withContext(Dispatchers.IO) {
         val app = context.applicationContext as VerselyApplication
-        val bible = app.readerSettings.currentBible?.let { id -> BundledBible.entries.firstOrNull { it.id == id } }
-            ?: BundledBible.default(Locale.getDefault().language)
+        val bible = app.currentBible
         val zone = ZoneId.systemDefault()
         val now = LocalDateTime.now(zone)
         val locked = chosen.needsPremium && !Entitlements.isPremium
@@ -108,7 +107,7 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
                 val translation = repository.translation
                 fun passage(item: CategoryPassage): WidgetVerse? {
                     val own = WidgetVerses.usesOwnBible(item, translation.id)
-                    val found = if (own) repository.verses(item.verseIds) else BibleRepository.open(context, BundledBible.KJV).use { it.verses(item.verseIds) }
+                    val found = if (own) repository.verses(item.verseIds) else BibleRepository.open(context, com.genesis.core.bible.BundledBible.KJV).use { it.verses(item.verseIds) }
                     val verses = item.verseIds.mapNotNull { found[it] }
                     if (verses.size != item.verseIds.size) return null
                     val shown = if (own) translation else null

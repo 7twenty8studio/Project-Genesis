@@ -1219,6 +1219,19 @@
     "seasonal_touches": "Seasonal Touches",
     "gentle_motion": "Gentle Motion",
     "seasonal_touches_footer": "Leaves, snow, blossom or summer sunlight drift gently across the page while you read. Paused in Low Power Mode and not shown when Reduce Motion is on.",
-    "gentle_motion_footer": "Mist, swells or embers move gently in the picture, never over the words. Paused in Low Power Mode and still when Reduce Motion is on."
+    "gentle_motion_footer": "Mist, swells or embers move gently in the picture, never over the words. Paused in Low Power Mode and still when Reduce Motion is on.",
+    "bibles": "Bibles",
+    "bibles_free_offline": "Every Bible here is free, and works offline once it's on your device.",
+    "most_read_first": "The most read are listed first.",
+    "connect_to_see_more_bibles": "Connect to the internet to see more Bibles.",
+    "bibles_rights_footer": "Every Bible here is public domain or used with its publisher's permission.",
+    "remove_bible_message": "Your highlights and notes stay. You can download it again any time.",
+    "all_languages": "All Languages",
+    "reading_now": "Reading now",
+    "offline_download_bibles": "You're offline. Connect to the internet to download Bibles.",
+    "not_a_bible": "That file isn't a Bible Versely can read.",
+    "bible_needs_premium": "This Bible comes with Premium. If you subscribe, try Restore Purchases in Settings.",
+    "bibles_busy": "Lots of people are downloading Bibles right now. Please try again in a few minutes; what's already downloaded is kept.",
+    "more_bibles": "More Bibles…"
   }
 }

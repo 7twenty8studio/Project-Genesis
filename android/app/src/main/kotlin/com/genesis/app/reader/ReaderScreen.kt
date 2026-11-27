@@ -74,6 +74,7 @@ import com.genesis.app.audio.ListeningState
 fun ReaderRoute(
     onChangeSettings: ((ReaderPreferences) -> ReaderPreferences) -> Unit,
     onSearchClick: () -> Unit,
+    onMoreBibles: () -> Unit = {},
     viewModel: ReaderViewModel = viewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -102,6 +103,7 @@ fun ReaderRoute(
             playing = listening.verse.takeIf { following && listening.chapter == state.chapterId },
         ),
         onSearchClick = onSearchClick,
+        onMoreBibles = onMoreBibles,
         onChangeSettings = onChangeSettings,
         onOpen = viewModel::open,
         onChooseBible = viewModel::choose,
@@ -174,7 +176,8 @@ fun ReaderScreen(
     onSearchClick: () -> Unit = {},
     onChangeSettings: ((ReaderPreferences) -> ReaderPreferences) -> Unit,
     onOpen: (com.genesis.core.domain.bible.ChapterId) -> Unit,
-    onChooseBible: (com.genesis.core.bible.BundledBible) -> Unit,
+    onChooseBible: (com.genesis.core.bible.InstalledBible) -> Unit,
+    onMoreBibles: () -> Unit = {},
     onNext: () -> Unit,
     onPrevious: () -> Unit,
     onPreviousAtEnd: () -> Unit = onPrevious,
@@ -246,7 +249,8 @@ fun ReaderScreen(
                             Text(state.chapter?.translation?.abbreviation ?: state.bible.id, color = colors.accent)
                         }
                         DropdownMenu(expanded = bibleMenu, onDismissRequest = { bibleMenu = false }) {
-                            for ((bible, translation) in state.translations) {
+                            val byLanguage = state.translations.sortedWith(compareBy({ it.second.language.substringBefore('-') != (state.chapter?.translation?.language ?: "en").substringBefore('-') }, { it.second.language }))
+                            for ((bible, translation) in byLanguage) {
                                 DropdownMenuItem(
                                     text = { Text("${translation.abbreviation} · ${translation.name}") },
                                     onClick = {
@@ -255,6 +259,13 @@ fun ReaderScreen(
                                     },
                                 )
                             }
+                            DropdownMenuItem(
+                                text = { Text(stringResource(R.string.more_bibles), color = colors.accent) },
+                                onClick = {
+                                    bibleMenu = false
+                                    onMoreBibles()
+                                },
+                            )
                             if (viewModel != null) {
                                 androidx.compose.material3.HorizontalDivider(color = colors.separator)
                                 DropdownMenuItem(

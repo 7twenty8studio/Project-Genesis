@@ -83,8 +83,8 @@ private enum class Step { HERO, PAGES, TRANSLATION }
  */
 @Composable
 fun OnboardingFlow(
-    translations: List<Pair<BundledBible, Translation>>,
-    onBegin: (BundledBible, ChapterId) -> Unit,
+    translations: List<Pair<com.genesis.core.bible.InstalledBible, Translation>>,
+    onBegin: (com.genesis.core.bible.InstalledBible, ChapterId) -> Unit,
 ) {
     var step by rememberSaveable { mutableStateOf(Step.HERO) }
     BackHandler(enabled = step != Step.HERO) { step = Step.entries[step.ordinal - 1] }
@@ -234,8 +234,8 @@ private fun WelcomePages(onContinue: () -> Unit) {
 /** Choose a Bible (those in the phone's language first) and begin with Genesis or John. */
 @Composable
 private fun ChooseTranslation(
-    translations: List<Pair<BundledBible, Translation>>,
-    onBegin: (BundledBible, ChapterId) -> Unit,
+    translations: List<Pair<com.genesis.core.bible.InstalledBible, Translation>>,
+    onBegin: (com.genesis.core.bible.InstalledBible, ChapterId) -> Unit,
 ) {
     val colors = LocalReaderColors.current
     val language = Locale.getDefault().language
@@ -246,7 +246,7 @@ private fun ChooseTranslation(
             selection = (ordered.firstOrNull { it.second.language.startsWith(language) } ?: ordered.first()).first.id
         }
     }
-    val chosen = ordered.firstOrNull { it.first.id == selection }?.first ?: BundledBible.default(language)
+    val chosen = ordered.firstOrNull { it.first.id == selection }?.first ?: com.genesis.core.bible.InstalledBible.of(BundledBible.default(language))
 
     Column(
         Modifier
@@ -293,7 +293,7 @@ private fun ChooseTranslation(
                             Spacer(Modifier.width(8.dp))
                             Text(translation.abbreviation, style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold, color = colors.accent)
                         }
-                        bible.summary?.let { Text(stringResource(it), style = MaterialTheme.typography.bodyMedium, color = colors.secondaryText) }
+                        bible.bundled?.summary?.let { Text(stringResource(it), style = MaterialTheme.typography.bodyMedium, color = colors.secondaryText) }
                     }
                 }
             }

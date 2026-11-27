@@ -59,6 +59,7 @@ fun LibraryScreen(
     onSearch: () -> Unit,
     onSermons: () -> Unit = {},
     onStudyLibrary: () -> Unit = {},
+    onBibles: () -> Unit = {},
     modifier: Modifier = Modifier,
 ) {
     val colors = LocalReaderColors.current
@@ -71,6 +72,7 @@ fun LibraryScreen(
                 color = colors.text,
                 modifier = Modifier.weight(1f).semantics { heading() },
             )
+            TextButton(onClick = onBibles) { Text(stringResource(R.string.bibles), color = colors.accent) }
             TextButton(onClick = onStudyLibrary) { Text(stringResource(R.string.study_library), color = colors.accent) }
             TextButton(onClick = onSermons) { Text(stringResource(R.string.sermons), color = colors.accent) }
             val search = stringResource(R.string.search)

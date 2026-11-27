@@ -21,7 +21,6 @@ import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
 import com.genesis.app.R
 import com.genesis.core.bible.BibleRepository
-import com.genesis.core.bible.BundledBible
 import com.genesis.core.bible.Chapter
 import com.genesis.core.domain.audio.Narration
 import com.genesis.core.domain.audio.NarrationItem
@@ -55,7 +54,7 @@ sealed interface SleepTimer {
 
 data class ListeningState(
     val status: ListeningStatus = ListeningStatus.IDLE,
-    val bible: BundledBible? = null,
+    val bible: com.genesis.core.bible.InstalledBible? = null,
     val chapter: ChapterId? = null,
     /** The verse being read, or null during the chapter's title. */
     val verse: VerseId? = null,
@@ -107,7 +106,7 @@ class Listening(private val context: Context, val settings: ListeningSettings) {
     private var loadJob: Job? = null
     private var sleepJob: Job? = null
     private var pausedByInterruption = false
-    private val repositories = mutableMapOf<BundledBible, BibleRepository>()
+    private val repositories = mutableMapOf<com.genesis.core.bible.InstalledBible, BibleRepository>()
 
     private val audioManager = context.getSystemService(AudioManager::class.java)
     private val attributes = AudioAttributes.Builder()
@@ -131,7 +130,7 @@ class Listening(private val context: Context, val settings: ListeningSettings) {
     // MARK: Playing
 
     /** Starts reading a chapter of [bible], from a verse or the start. */
-    fun play(bible: BundledBible, chapter: ChapterId, from: VerseId? = null) {
+    fun play(bible: com.genesis.core.bible.InstalledBible, chapter: ChapterId, from: VerseId? = null) {
         connectSession()
         stopSpeaking()
         loadJob?.cancel()
@@ -415,7 +414,7 @@ class Listening(private val context: Context, val settings: ListeningSettings) {
         controller = MediaController.Builder(context, token).buildAsync()
     }
 
-    private fun repository(bible: BundledBible): BibleRepository = synchronized(repositories) {
+    private fun repository(bible: com.genesis.core.bible.InstalledBible): BibleRepository = synchronized(repositories) {
         repositories.getOrPut(bible) { BibleRepository.open(context, bible) }
     }
 

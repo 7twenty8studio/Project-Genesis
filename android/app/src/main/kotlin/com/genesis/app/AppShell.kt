@@ -94,6 +94,7 @@ fun AppShell(
     var memoriseOpen by rememberSaveable { mutableStateOf(false) }
     var sermonsOpen by rememberSaveable { mutableStateOf(false) }
     var studyLibraryOpen by rememberSaveable { mutableStateOf(false) }
+    var biblesOpen by rememberSaveable { mutableStateOf(false) }
     var groupToOpen by rememberSaveable { mutableStateOf<String?>(null) }
     var sermonsNew by rememberSaveable { mutableStateOf(false) }
     // A church sermon over any tab (its link's slug), and notes opened from it.
@@ -240,6 +241,16 @@ fun AppShell(
 
     churchSermon?.let { slug ->
         ChurchSermonScreen(slug, churchContext, onDone = { churchSermon = null }, modifier = Modifier.fillMaxSize().navigationBarsPadding())
+        return
+    }
+
+    if (biblesOpen) {
+        com.genesis.app.bibles.BiblesScreen(
+            currentBible = state.bible.id,
+            onRead = { bible -> biblesOpen = false; reader.choose(bible); tab = AppTab.READ },
+            onDone = { biblesOpen = false },
+            modifier = Modifier.fillMaxSize(),
+        )
         return
     }
 
@@ -407,7 +418,7 @@ fun AppShell(
                 modifier = content,
             )
             AppTab.READ -> androidx.compose.foundation.layout.Box(content) {
-                ReaderRoute(onChangeSettings = onChangeSettings, onSearchClick = { searching = true }, viewModel = reader)
+                ReaderRoute(onChangeSettings = onChangeSettings, onSearchClick = { searching = true }, onMoreBibles = { biblesOpen = true }, viewModel = reader)
             }
             AppTab.LIBRARY -> LibraryScreen(
                 state = state,
@@ -423,6 +434,7 @@ fun AppShell(
                     sermonsOpen = true
                 },
                 onStudyLibrary = { studyLibraryOpen = true },
+                onBibles = { biblesOpen = true },
                 modifier = content,
             )
             AppTab.EXPLORE -> {

@@ -8,6 +8,7 @@ import com.genesis.core.bible.BibleRepository
 import com.genesis.core.bible.BibleSearch
 import com.genesis.core.bible.SearchResults
 import com.genesis.core.bible.BundledBible
+import com.genesis.core.bible.InstalledBible
 import com.genesis.core.bible.Chapter
 import com.genesis.core.bible.CrossReference
 import com.genesis.core.bible.CrossReferenceRepository
@@ -38,9 +39,9 @@ import java.util.UUID
 /** What the reader shows. One immutable state; events go up, state comes down. */
 data class ReaderUiState(
     val chapterId: ChapterId = ChapterId.john1,
-    val bible: BundledBible = BundledBible.KJV,
+    val bible: InstalledBible = InstalledBible.of(BundledBible.KJV),
     val chapter: Chapter? = null,
-    val translations: List<Pair<BundledBible, Translation>> = emptyList(),
+    val translations: List<Pair<InstalledBible, Translation>> = emptyList(),
     /** True when the chapter couldn't be read; the reader says so instead of closing. */
     val failed: Boolean = false,
     /** Paged reading opens a chapter on its last page when going back into it. */
@@ -119,7 +120,7 @@ data class SearchUiState(
 )
 
 class ReaderViewModel(application: Application) : AndroidViewModel(application) {
-    private val repositories = mutableMapOf<BundledBible, BibleRepository>()
+    private val repositories = mutableMapOf<InstalledBible, BibleRepository>()
     private var crossReferenceOpened = false
     private val crossReferenceRepository by lazy {
         crossReferenceOpened = true
@@ -129,8 +130,7 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
 
     private val _state = MutableStateFlow(
         ReaderUiState(
-            bible = app.readerSettings.currentBible?.let { id -> BundledBible.entries.firstOrNull { it.id == id } }
-                ?: BundledBible.default(Locale.getDefault().language),
+            bible = app.currentBible,
             chapterId = app.progress.position.value?.chapterId ?: ChapterId.john1,
         ),
     )
@@ -156,16 +156,28 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
             val notes = withContext(Dispatchers.IO) { app.userData.notes }
             notes.all.collect { all -> _state.update { it.copy(notes = all) } }
         }
+        // Every Bible on the phone, again whenever one is downloaded or removed.
         viewModelScope.launch {
-            val translations = withContext(Dispatchers.IO) {
-                BundledBible.entries.mapNotNull { bible ->
-                    runCatching { bible to repository(bible).translation }
-                        .onFailure { Log.e(TAG, "Couldn't open ${bible.asset}", it) }
-                        .getOrNull()
+            var first = true
+            app.bibles.downloads.collect { downloads ->
+                val translations = withContext(Dispatchers.IO) {
+                    app.bibles.installed(downloads).mapNotNull { bible ->
+                        runCatching { bible to repository(bible).translation }
+                            .onFailure { Log.e(TAG, "Couldn't open ${bible.id}", it) }
+                            .getOrNull()
+                    }
                 }
+                // Repositories of removed Bibles are closed.
+                synchronized(repositories) {
+                    val kept = translations.map { it.first }.toSet()
+                    repositories.keys.filter { it !in kept }.forEach { repositories.remove(it)?.close() }
+                }
+                val reading = state.value.bible
+                val stillHere = translations.any { it.first == reading }
+                _state.update { it.copy(translations = translations, bible = if (stillHere) reading else app.bibles.default()) }
+                if (first || !stillHere) load()
+                first = false
             }
-            _state.update { it.copy(translations = translations) }
-            load()
         }
     }
 
@@ -203,7 +215,7 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
 
-    fun choose(bible: BundledBible) {
+    fun choose(bible: InstalledBible) {
         app.readerSettings.currentBible = bible.id
         viewModelScope.launch { VerseOfTheDayWidget.refresh(getApplication()) }
         _state.update { it.copy(bible = bible) }
@@ -296,7 +308,7 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
     }
 
     /** Setup's last step: the chosen Bible, opened at the chosen chapter. */
-    fun begin(bible: BundledBible, chapter: ChapterId) {
+    fun begin(bible: InstalledBible, chapter: ChapterId) {
         app.readerSettings.currentBible = bible.id
         viewModelScope.launch { VerseOfTheDayWidget.refresh(getApplication()) }
         _state.update { it.copy(bible = bible, chapterId = chapter, openAtEnd = false, selection = emptySet(), focus = null) }
@@ -330,8 +342,8 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
         val reading = state.value.bible
         return withContext(Dispatchers.IO) {
             runCatching {
-                val saved = BundledBible.entries.firstOrNull { it.id == savedBibleId }
-                fun base(bible: BundledBible) = repository(bible).translation.language.substringBefore('-')
+                val saved = app.bibles.resolve(savedBibleId)
+                fun base(bible: InstalledBible) = repository(bible).translation.language.substringBefore('-')
                 val chosen = if (saved != null && base(saved) == base(reading)) saved else reading
                 var bible = chosen
                 var verses = repository(chosen).passage(from, through)
@@ -354,7 +366,7 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
      * verbatim, through that Bible's verse map; a chapter's worth at most.
      */
     suspend fun churchPassage(bibleId: String, start: VerseId, end: VerseId): ChurchPassage? {
-        val bible = BundledBible.entries.firstOrNull { it.id == bibleId } ?: return null
+        val bible = app.bibles.resolve(bibleId) ?: return null
         return withContext(Dispatchers.IO) {
             runCatching {
                 val repository = repository(bible)
@@ -428,7 +440,7 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
     internal suspend fun <T> withBible(block: (BibleRepository) -> T): T? {
         val bible = state.value.bible
         return withContext(Dispatchers.IO) {
-            runCatching { block(repository(bible)) }.onFailure { Log.e(TAG, "Couldn't read ${bible.asset}", it) }.getOrNull()
+            runCatching { block(repository(bible)) }.onFailure { Log.e(TAG, "Couldn't read ${bible.id}", it) }.getOrNull()
         }
     }
 
@@ -437,7 +449,7 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
         viewModelScope.launch {
             val chapter = withContext(Dispatchers.IO) {
                 runCatching { repository(bible).chapter(id) }
-                    .onFailure { Log.e(TAG, "Couldn't read $id from ${bible.asset}", it) }
+                    .onFailure { Log.e(TAG, "Couldn't read $id from ${bible.id}", it) }
                     .getOrNull()
             }
             _state.update {
@@ -447,7 +459,7 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
 
-    private fun repository(bible: BundledBible): BibleRepository = synchronized(repositories) {
+    private fun repository(bible: InstalledBible): BibleRepository = synchronized(repositories) {
         repositories.getOrPut(bible) { BibleRepository.open(getApplication(), bible) }
     }
 
