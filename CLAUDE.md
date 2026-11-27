@@ -311,7 +311,13 @@ shares; README.md has the architecture.
   cantillation, Greek monotonic); the word shown stays verbatim.
   `PronunciationNote` says it's modern pronunciation, or how to add a voice.
 - Handwritten pages (free): `Note.drawing` (PencilKit data, external storage),
-  synced as base64 in notes.drawing (≤ 2 MB; larger stays on the device).
+  synced as base64 in notes.drawing (≤ 2 MB; larger stays on the device),
+  and as Versely Ink in notes.ink (docs/HANDWRITING_FORMAT.md; JSON shared
+  with Android, `VerselyInk` pure, `NoteInk` to and from PencilKit,
+  fixtures/ink.json tested on both). iOS reads `drawing` first, else `ink`.
+  Migration 20261129000000 ran 27 November 2026, so `VerselyInk.syncs`
+  and Android's `InkFormat.SYNCS` are on; `NoteInkBackfill` pushes every
+  page once per device.
   Journal entries offer `JournalPrompts`.
 - Reading touches: `ReaderPreferences.largeInitial` (restyles, never changes,
   the first letter; verse 1's number is dropped), `pageTurnSound`
@@ -1178,6 +1184,40 @@ shares; README.md has the architecture.
   change a page controller's spine in place.
 - Don't put `.accessibilityIdentifier` on a container whose children have
   their own identifiers (SwiftUI passes it down and replaces theirs).
+
+## Android
+- Versely for Android lives in `android/` (Kotlin, Jetpack Compose, Gradle;
+  plan in docs/ANDROID_PLAN.md, one release with full parity, Play around
+  13 August 2027). Unlike Swift, it builds and tests in the Linux container:
+  `cd android && ./gradlew :core:domain:test :app:assembleDebug` (JDK 21,
+  Android SDK platform 37.2 in `local.properties`). Every rule above applies
+  to it too.
+- Modules: `app`, `core:domain` (pure Kotlin rules, JVM tests), `core:bible`
+  (the bundled Bibles, read-only, bundled SQLite driver), `core:design`
+  (Versely's colours and type). Kotlin types keep the Swift names; package
+  `com.genesis.*`; application id `com.seventwenty8studio.versely`
+  (proposed, waiting for the owner's yes; it can't change after the first
+  upload).
+- Shared, never copied: the Bible files are `core:bible`'s assets straight
+  from Genesis/Resources/Bibles; book names, aliases and verse counts come
+  from supabase/functions/_shared/bibleBooks.json; reference cases from
+  fixtures/references.json (one reading on iPhone, Android and the web).
+  When a rule changes on iOS, add a shared fixture and run it on Android.
+- Journal attachments on Android: files on the device, copied (when the
+  person turns it on) to their own Google Drive's hidden app folder
+  (`AttachmentTransfers`, `DriveClient`, scope drive.appdata; owner's
+  choice, 27 November 2026), rows synced with storage_path "gdrive:<file>";
+  iPhone files stay in iCloud and show a note. Setup:
+  android/GOOGLE_DRIVE_SETUP.md.
+- Handwritten pages on Android (`HandwritingPage`, Text / Handwriting in
+  the note editor): Versely Ink drawn directly; pen, pencil, marker,
+  eraser (also a pen's eraser end or button), pressure from a stylus,
+  Only Draw with a Pen. A page only in PencilKit's data shows a note.
+- Strings: add the resource name and its English (as iOS writes it) to
+  Tools/Localization/android_strings.json, its Spanish and Portuguese to
+  es.json / pt.json as usual, then run
+  `python3 Tools/Localization/build_android_strings.py`; never edit
+  res/values*/strings.xml by hand.
 
 ## Conventions
 - MVVM, composition, one responsibility per type, small view files.

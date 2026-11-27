@@ -1,5 +1,10 @@
 # Versely for Android: plan
 
+> **Current plan (26 November 2026):** [Versely for Android: updated plan](https://claude.ai/artifact/4wFP38jBvuadv5EMvXxAUo).
+> One release with full parity, work started 26 November, Google Play around
+> 13 August 2027. The code is in `android/` (see android/README.md). The
+> sections below are the first draft, kept for reference.
+
 This is the plan for the Android rewrite (PRD Phase 4, "Android planning").
 Android is a native rewrite, not a port: the iOS app stays SwiftUI, and the
 Android app is Kotlin with Jetpack Compose. Both share the Supabase backend,

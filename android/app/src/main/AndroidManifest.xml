@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Accounts and sync (Supabase). Reading never needs the network. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Voice recordings on prayers and sermon notes, asked for only when the person records. -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
+    <!-- Reminders: local notifications, scheduled on the phone (no server), put back after a restart. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- Rings on the minute when the person allows "Alarms & reminders"; inexact otherwise. -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
+    <!-- Listening carries on with the screen off, with controls on the lock screen. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+
+    <!-- The phone's text-to-speech engine, which reads chapters aloud. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".VerselyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:localeConfig="@xml/locales_config"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Versely">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- versely:// links (widgets and notifications), the same addresses as iOS. -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="versely" />
+            </intent-filter>
+            <!-- A church sermon's one link opens here (App Links; assetlinks.json on the site verifies it). -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" android:host="versely.7twenty8studio.com" android:pathPrefix="/s/" />
+            </intent-filter>
+        </activity>
+
+        <!-- Sentry starts from CrashReporter, only when the build has a DSN. -->
+        <meta-data android:name="io.sentry.auto-init" android:value="false" />
+
+        <!-- A Bible download keeps going after the person leaves Versely. -->
+        <service
+            android:name=".bibles.BibleDownloadService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
+        <!-- What's playing (the chapter read aloud and ambient sounds) keeps going with the screen off, in one player (Media3). -->
+        <service
+            android:name=".audio.ListeningService"
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaSessionService" />
+            </intent-filter>
+        </service>
+
+        <!-- The live wallpaper: the Lock Screen verse image with the season drifting over it. -->
+        <service
+            android:name=".share.VerseWallpaperService"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" />
+            </intent-filter>
+            <meta-data android:name="android.service.wallpaper" android:resource="@xml/verse_wallpaper" />
+        </service>
+
+        <activity
+            android:name=".widget.VerseWidgetConfigureActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:taskAffinity=""
+            android:theme="@style/Theme.Versely">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".widget.VerseOfTheDayReceiver"
+            android:exported="false"
+            android:label="@string/verse_of_the_day">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/verse_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.ContinueReadingReceiver"
+            android:exported="false"
+            android:label="@string/continue_reading">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/continue_reading_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.ReadingProgressReceiver"
+            android:exported="false"
+            android:label="@string/reading_progress">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/reading_progress_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.StreakReceiver"
+            android:exported="false"
+            android:label="@string/challenge_streak">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/streak_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.PrayerReminderReceiver"
+            android:exported="false"
+            android:label="@string/prayer_reminder">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/prayer_reminder_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.TodaysReadingReceiver"
+            android:exported="false"
+            android:label="@string/todays_reading">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/todays_reading_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.MemoriseReceiver"
+            android:exported="false"
+            android:label="@string/memorise">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/memorise_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.GroupProgressReceiver"
+            android:exported="false"
+            android:label="@string/group_progress">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/group_progress_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".notifications.ReminderReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <!-- The verse widget's moving frames, read by the launcher (painted art only). -->
+        <provider
+            android:name="com.genesis.app.widget.WidgetFrameProvider"
+            android:authorities="${applicationId}.widgetframes"
+            android:exported="true" />
+        <!-- Verse images shared with other apps (FileProvider, cache only). -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.files"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+</manifest>

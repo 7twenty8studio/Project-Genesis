@@ -1,0 +1,620 @@
+package com.genesis.app.reader
+
+import android.app.Application
+import android.util.Log
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.viewModelScope
+import com.genesis.core.bible.BibleRepository
+import com.genesis.core.bible.BibleSearch
+import com.genesis.core.bible.SearchResults
+import com.genesis.core.bible.BundledBible
+import com.genesis.core.bible.InstalledBible
+import com.genesis.core.bible.Chapter
+import com.genesis.core.bible.CrossReference
+import com.genesis.core.bible.CrossReferenceRepository
+import com.genesis.core.bible.Translation
+import com.genesis.core.bible.Verse
+import com.genesis.app.VerselyApplication
+import com.genesis.app.widget.VerseOfTheDayWidget
+import com.genesis.core.domain.bible.ChapterId
+import com.genesis.core.domain.bible.ReferenceParser
+import com.genesis.core.domain.bible.VerseId
+import com.genesis.core.domain.study.Bookmarks
+import com.genesis.core.domain.study.HighlightColor
+import com.genesis.core.domain.study.Note
+import com.genesis.core.domain.study.NoteAnchor
+import com.genesis.core.domain.study.ShareText
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.util.Locale
+import java.util.UUID
+
+/** What the reader shows. One immutable state; events go up, state comes down. */
+data class ReaderUiState(
+    val chapterId: ChapterId = ChapterId.john1,
+    val bible: InstalledBible = InstalledBible.of(BundledBible.KJV),
+    val chapter: Chapter? = null,
+    val translations: List<Pair<InstalledBible, Translation>> = emptyList(),
+    /** True when the chapter couldn't be read; the reader says so instead of closing. */
+    val failed: Boolean = false,
+    /** Paged reading opens a chapter on its last page when going back into it. */
+    val openAtEnd: Boolean = false,
+    /** The verses the person has tapped, for highlighting, copying and sharing. */
+    val selection: Set<VerseId> = emptySet(),
+    /** The reader's controls and the tab bar (a tap on the page shows or hides them, as iOS). */
+    val showsControls: Boolean = true,
+    /** The study panel beside the text on a wide screen: the person's choice (open until they close it), and what it shows. */
+    val companionChoice: Boolean? = null,
+    val companionMode: CompanionMode = CompanionMode.NOTES,
+    /** Every highlight, by verse. */
+    val highlights: Map<VerseId, HighlightColor> = emptyMap(),
+    /** Every bookmarked verse (one per chapter). */
+    val bookmarks: Set<VerseId> = emptySet(),
+    /** Every note, newest first. */
+    val notes: List<Note> = emptyList(),
+    /** The note open in the editor, if any. */
+    val editingNote: Note? = null,
+    /** The open note's handwritten page as loaded, and as it is now (null until it's read). */
+    val editingPage: PageDraft? = null,
+    /** A verse to bring into view (from search), once per request. */
+    val focus: ReaderFocus? = null,
+    /** The last verse read in the reader, or null before the first chapter. */
+    val position: VerseId? = null,
+    /** The cross references sheet, while it's open. */
+    val crossReferences: CrossReferencesUiState? = null,
+    /** Original (Hebrew & Greek) is shown beside the Bible being read. */
+    val showsOriginal: Boolean = false,
+    /** A second Bible read beside the current one, verse by verse (remembered). */
+    val parallelBible: InstalledBible? = null,
+    /** The verse whose word study is open, if any. */
+    val wordStudyVerse: VerseId? = null,
+    /** The verse whose study notes and commentary are open (the selection bar's Study). */
+    val studyVerse: VerseId? = null,
+) {
+    val hasStartedReading: Boolean get() = position != null
+
+    val isChapterBookmarked: Boolean get() = Bookmarks.isBookmarked(bookmarks, chapterId)
+
+    /** The study panel (on a wide screen): the person's choice, else closed while the two-page spread is on, as iOS. */
+    fun companionShown(twoPageSpread: Boolean): Boolean = companionChoice ?: !twoPageSpread
+
+    /** Notes on this chapter's verses, by the verse their mark follows. */
+    val notedVerses: Map<VerseId, String>
+        get() = notes.mapNotNull { note -> note.markedVerse?.takeIf { it.chapterId == chapterId }?.let { it to note.id } }.toMap()
+
+    /** The note the selection bar's Note opens, if one ends on a selected verse. */
+    val selectionNote: Note? get() = Note.forSelection(notes, selection)
+
+    /** The selected verses as text to copy or share, verbatim with the reference. */
+    val shareText: String
+        get() {
+            val chapter = chapter ?: return ""
+            val verses = chapter.verses.filter { it.id in selection }.map { it.id to it.plainText }
+            return ShareText.of(verses, chapter.translation.abbreviation, chapter.translation.language)
+        }
+
+    /** The selected verses for a verse image, verbatim, with the reference and the Bible's name. */
+    val selectionCard: com.genesis.core.domain.share.VerseCard?
+        get() {
+            val chapter = chapter ?: return null
+            val text = chapter.verses.filter { it.id in selection }.joinToString(" ") { it.plainText }.ifBlank { return null }
+            return com.genesis.core.domain.share.VerseCard(text, selectionReference, chapter.translation.name)
+        }
+
+    /** The selection's reference, as the selection bar shows it. */
+    val selectionReference: String
+        get() {
+            val sorted = selection.sortedBy { it.rawValue }.ifEmpty { return "" }
+            return ReferenceParser.describe(sorted.first().rawValue, sorted.last().rawValue, chapter?.translation?.language ?: "en")
+        }
+}
+
+/** A verse the reader brings into view; a new token asks again for the same verse. */
+data class ReaderFocus(val verse: VerseId, val token: Long = System.nanoTime())
+
+/** A verse's related passages, strongest links first, each shown verbatim from the Bible being read. */
+data class CrossReferencesUiState(
+    val verse: VerseId,
+    val language: String = "en",
+    val sourceText: String = "",
+    val items: List<CrossReferenceItem> = emptyList(),
+    val loading: Boolean = true,
+)
+
+/** One related passage: its first three verses, with "…" when it runs on (as iOS). */
+data class CrossReferenceItem(val reference: CrossReference, val title: String, val text: String)
+
+/** What the search sheet shows. */
+data class SearchUiState(
+    val text: String = "",
+    val results: SearchResults = SearchResults(),
+    val translationAbbreviation: String = "",
+    val language: String = "en",
+)
+
+class ReaderViewModel(application: Application) : AndroidViewModel(application) {
+    private val repositories = mutableMapOf<InstalledBible, BibleRepository>()
+    private var crossReferenceOpened = false
+    private val crossReferenceRepository by lazy {
+        crossReferenceOpened = true
+        CrossReferenceRepository.open(getApplication())
+    }
+    private val app = application as VerselyApplication
+
+    private val _state = MutableStateFlow(
+        ReaderUiState(
+            bible = app.currentBible,
+            chapterId = app.progress.position.value?.chapterId ?: ChapterId.john1,
+        ),
+    )
+    val state: StateFlow<ReaderUiState> = _state.asStateFlow()
+
+    private val _search = MutableStateFlow(SearchUiState())
+    val search: StateFlow<SearchUiState> = _search.asStateFlow()
+    private var searchJob: Job? = null
+
+    init {
+        viewModelScope.launch {
+            val highlights = withContext(Dispatchers.IO) { app.userData.highlights }
+            highlights.all.collect { all -> _state.update { it.copy(highlights = all) } }
+        }
+        viewModelScope.launch {
+            app.progress.position.collect { position -> _state.update { it.copy(position = position) } }
+        }
+        viewModelScope.launch {
+            val bookmarks = withContext(Dispatchers.IO) { app.userData.bookmarks }
+            bookmarks.all.collect { all -> _state.update { it.copy(bookmarks = all) } }
+        }
+        viewModelScope.launch {
+            val notes = withContext(Dispatchers.IO) { app.userData.notes }
+            notes.all.collect { all -> _state.update { it.copy(notes = all) } }
+        }
+        // Every Bible on the phone, again whenever one is downloaded or removed.
+        viewModelScope.launch {
+            var first = true
+            app.bibles.downloads.collect { downloads ->
+                val translations = withContext(Dispatchers.IO) {
+                    app.bibles.installed(downloads).mapNotNull { bible ->
+                        runCatching { bible to repository(bible).translation }
+                            .onFailure { Log.e(TAG, "Couldn't open ${bible.id}", it) }
+                            .getOrNull()
+                    }
+                }
+                // Repositories of removed Bibles are closed.
+                synchronized(repositories) {
+                    val kept = translations.map { it.first }.toSet()
+                    repositories.keys.filter { it !in kept }.forEach { repositories.remove(it)?.close() }
+                }
+                val reading = state.value.bible
+                val stillHere = translations.any { it.first == reading }
+                // The Bible (or the Original) read in parallel, as last left (reader.parallel, as on iOS).
+                val savedParallel = parallelDefaults.getString(PARALLEL_KEY, null)
+                _state.update { current ->
+                    val bible = if (stillHere) reading else app.bibles.default()
+                    current.copy(
+                        translations = translations,
+                        bible = bible,
+                        parallelBible = translations.firstOrNull { it.first.id == savedParallel && it.first != bible }?.first,
+                        showsOriginal = if (first) savedParallel == ORIGINAL_PARALLEL else current.showsOriginal,
+                    )
+                }
+                if (first || !stillHere) load()
+                first = false
+            }
+        }
+    }
+
+    fun open(chapterId: ChapterId, atEnd: Boolean = false) {
+        _state.update { it.copy(chapterId = chapterId, openAtEnd = atEnd, selection = emptySet(), focus = null) }
+        load()
+    }
+
+    /** Opens a verse's chapter with the verse in view (search results, references). */
+    fun openVerse(verse: VerseId) {
+        val sameChapter = state.value.chapterId == verse.chapterId
+        _state.update { it.copy(chapterId = verse.chapterId, openAtEnd = false, selection = emptySet(), focus = ReaderFocus(verse)) }
+        if (!sameChapter) load()
+    }
+
+    /** Searches the Bible being read as the person types, after a short pause. */
+    fun search(text: String) {
+        _search.update { it.copy(text = text) }
+        searchJob?.cancel()
+        val bible = state.value.bible
+        searchJob = viewModelScope.launch {
+            if (text.isBlank()) {
+                _search.update { it.copy(results = SearchResults()) }
+                return@launch
+            }
+            // A brief pause so fast typists don't search on every keystroke.
+            delay(90)
+            val found = withContext(Dispatchers.IO) {
+                runCatching {
+                    val repository = repository(bible)
+                    Triple(BibleSearch.run(text, repository), repository.translation.abbreviation, repository.translation.language)
+                }.onFailure { Log.e(TAG, "Search failed", it) }.getOrNull()
+            } ?: return@launch
+            _search.update { it.copy(results = found.first, translationAbbreviation = found.second, language = found.third) }
+        }
+    }
+
+    fun choose(bible: InstalledBible) {
+        app.readerSettings.currentBible = bible.id
+        viewModelScope.launch { VerseOfTheDayWidget.refresh(getApplication()) }
+        _state.update { it.copy(bible = bible) }
+        load()
+        if (_search.value.text.isNotBlank()) search(_search.value.text)
+    }
+
+    fun next() = state.value.chapterId.next?.let { open(it) }
+    fun previous(atEnd: Boolean = false) = state.value.chapterId.previous?.let { open(it, atEnd) }
+
+    /** A tap on a verse selects it, or lets it go if it was selected. */
+    fun toggle(verse: VerseId) = _state.update {
+        it.copy(selection = if (verse in it.selection) it.selection - verse else it.selection + verse)
+    }
+
+    fun clearSelection() = _state.update { it.copy(selection = emptySet()) }
+
+    fun toggleControls() = _state.update { it.copy(showsControls = !it.showsControls) }
+
+    fun toggleCompanion(shown: Boolean) = _state.update { it.copy(companionChoice = !shown) }
+
+    fun setCompanionMode(mode: CompanionMode) = _state.update { it.copy(companionMode = mode) }
+
+    /** A note on the whole chapter (the study panel's Note on John 15). */
+    fun newChapterNote() = _state.update {
+        it.copy(editingPage = null, editingNote = Note(id = UUID.randomUUID().toString(), kind = com.genesis.core.domain.study.NoteKind.STUDY, anchor = com.genesis.core.domain.study.NoteAnchor.Chapter(it.chapterId)))
+    }
+
+    fun highlight(color: HighlightColor) {
+        val verses = state.value.selection
+        if (verses.isEmpty()) return
+        app.readerSettings.used(color)
+        viewModelScope.launch(Dispatchers.IO) { app.userData.highlights.set(verses, color) }
+        clearSelection()
+    }
+
+    fun removeHighlight() {
+        val verses = state.value.selection
+        viewModelScope.launch(Dispatchers.IO) { app.userData.highlights.remove(verses) }
+        clearSelection()
+    }
+
+    /** Bookmarks the first selected verse, or takes the chapter's bookmark away. */
+    fun toggleBookmark() {
+        val verse = state.value.selection.minOrNull() ?: state.value.chapterId.firstVerse
+        viewModelScope.launch(Dispatchers.IO) { app.userData.bookmarks.toggle(verse) }
+        clearSelection()
+    }
+
+    /**
+     * Adds the selection to Memorize (Premium), as memoriseSelection on iOS:
+     * one chapter, at most 15 verses, in the Bible being read.
+     */
+    fun memoriseSelection() {
+        val selection = state.value.selection.sorted()
+        val first = selection.firstOrNull() ?: return
+        val last = selection.last().takeIf { it.chapterId == first.chapterId } ?: first
+        val max = com.genesis.core.domain.memorise.MemoriseSuggestions.MAXIMUM_VERSES
+        val end = if (last.verse - first.verse < max) last else VerseId(first.book, first.chapter, first.verse + max - 1)
+        val bible = premiumToolsBible().id
+        viewModelScope.launch(Dispatchers.IO) { app.userData.memory.memorise(first, end, bible) }
+        clearSelection()
+    }
+
+    /** Opens the selection's note, or a new one on the selected verses. */
+    fun openNoteForSelection() {
+        val current = state.value
+        val sorted = current.selection.sorted().ifEmpty { return }
+        val note = current.selectionNote
+            ?: Note(id = UUID.randomUUID().toString(), anchor = NoteAnchor.Verses(sorted.first(), sorted.last()))
+        _state.update { it.copy(editingNote = note, editingPage = null, selection = emptySet()) }
+    }
+
+    /** The mark after a verse opens its note. */
+    fun openNote(id: String) {
+        val note = state.value.notes.firstOrNull { it.id == id } ?: return
+        _state.update { it.copy(editingNote = note, editingPage = null) }
+    }
+
+    /** Keeps the editor's copy current; the note is saved when the editor closes. */
+    fun editNote(change: (Note) -> Note) = _state.update { it.copy(editingNote = it.editingNote?.let(change)) }
+
+    /** Reads the open note's page (off the main thread: pages can be large). */
+    fun loadPage() {
+        val note = state.value.editingNote ?: return
+        if (state.value.editingPage != null) return
+        viewModelScope.launch(Dispatchers.IO) {
+            val text = app.userData.notes.page(note.id)
+            val page = com.genesis.core.domain.study.InkFormat.decode(text) ?: com.genesis.core.domain.study.InkPage()
+            _state.update { if (it.editingNote?.id == note.id) it.copy(editingPage = PageDraft(page, page)) else it }
+        }
+    }
+
+    fun editPage(page: com.genesis.core.domain.study.InkPage) = _state.update { current ->
+        val draft = current.editingPage ?: return@update current
+        current.copy(editingPage = draft.copy(page = page), editingNote = current.editingNote?.copy(hasPage = !page.isEmpty))
+    }
+
+    /** Saves what was written (an untouched new note leaves nothing behind). */
+    fun closeNote() {
+        val note = state.value.editingNote ?: return
+        val draft = state.value.editingPage
+        _state.update { it.copy(editingNote = null, editingPage = null) }
+        val saved = state.value.notes.firstOrNull { it.id == note.id }
+        val pageChanged = draft != null && draft.page != draft.original
+        viewModelScope.launch(Dispatchers.IO) {
+            when {
+                saved == null && note.isEmpty -> return@launch
+                saved == note && !pageChanged -> return@launch
+                saved != note || saved == null -> app.userData.notes.save(note)
+            }
+            if (pageChanged) app.userData.notes.savePage(note.id, com.genesis.core.domain.study.InkFormat.encode(draft!!.page))
+        }
+    }
+
+    fun deleteNote() {
+        val note = state.value.editingNote ?: return
+        _state.update { it.copy(editingNote = null, editingPage = null) }
+        viewModelScope.launch(Dispatchers.IO) { app.userData.notes.delete(note.id) }
+    }
+
+    /** Setup's last step: the chosen Bible, opened at the chosen chapter. */
+    fun begin(bible: InstalledBible, chapter: ChapterId) {
+        app.readerSettings.currentBible = bible.id
+        viewModelScope.launch { VerseOfTheDayWidget.refresh(getApplication()) }
+        _state.update { it.copy(bible = bible, chapterId = chapter, openAtEnd = false, selection = emptySet(), focus = null) }
+        load()
+    }
+
+    /** The reader is showing the chapter: remember the place (as ReadingProgress on iOS). */
+    fun recordPosition() {
+        val current = state.value
+        if (current.chapter?.id != current.chapterId) return
+        val focus = current.focus?.verse?.takeIf { it.chapterId == current.chapterId }
+        app.progress.record(focus ?: current.chapterId.firstVerse)
+    }
+
+    /** The Bible Premium tools read now (a free one beside a YouVersion Bible). */
+    fun premiumToolsBible(): InstalledBible = app.bibles.premiumToolsBible(state.value.bible)
+
+    /** Its name, for telling people before they use it. */
+    fun premiumToolsBibleName(): String {
+        val bible = premiumToolsBible()
+        return state.value.translations.firstOrNull { it.first == bible }?.second?.name ?: bible.id
+    }
+
+    /** Fetches the chapter again if it's a YouVersion chapter past its lifetime, and shows it if it changed. */
+    fun refreshIfStale() {
+        val current = state.value
+        if (!current.bible.sealed || current.chapter == null) return
+        viewModelScope.launch {
+            if (app.bibles.refreshIfStale(current.bible, current.chapterId.book, current.chapterId.chapter) && state.value.chapterId == current.chapterId) load()
+        }
+    }
+
+    /** Verses of the Bible being read, verbatim, for Home's and Library's lists. */
+    /** Verses from another installed Bible (the morning welcome's, Premium tools'), with its abbreviation and language. */
+    suspend fun versesIn(bible: InstalledBible, ids: Collection<VerseId>): Triple<Map<VerseId, Verse>, String, String>? =
+        withContext(Dispatchers.IO) {
+            runCatching {
+                val repository = repository(bible)
+                Triple(repository.verses(ids), repository.translation.abbreviation, repository.translation.language)
+            }.onFailure { Log.e(TAG, "Couldn't read verses", it) }.getOrNull()
+        }
+
+    /**
+     * Verses for a journal PDF (Premium): from the Bible Premium tools use, so
+     * a YouVersion Bible's text never goes into one; with the credit a
+     * licensed Bible asks for.
+     */
+    suspend fun exportSource(ids: Collection<VerseId>): com.genesis.app.journal.JournalExport.Source? {
+        val bible = premiumToolsBible()
+        return withContext(Dispatchers.IO) {
+            runCatching {
+                val repository = repository(bible)
+                val translation = repository.translation
+                com.genesis.app.journal.JournalExport.Source(
+                    repository.verses(ids),
+                    translation.abbreviation,
+                    translation.language,
+                    translation.license.takeIf { translation.showsLicenseUnderChapters },
+                )
+            }.onFailure { Log.e(TAG, "Couldn't read verses", it) }.getOrNull()
+        }
+    }
+
+    suspend fun verses(ids: Collection<VerseId>): Map<VerseId, Verse> {
+        val bible = state.value.bible
+        return withContext(Dispatchers.IO) {
+            runCatching { repository(bible).verses(ids) }.onFailure { Log.e(TAG, "Couldn't read verses", it) }.getOrDefault(emptyMap())
+        }
+    }
+
+    /**
+     * A Memorize passage's verses, verbatim, as BibleLibrary.memoryTranslation
+     * on iOS: the Bible being read, except that a passage keeps the Bible it
+     * was added in while that one is in the same language; the saved Bible
+     * when the one being read doesn't have it. `nearby`: two verses either
+     * side too, only as decoy words for Fill the Gaps.
+     */
+    suspend fun memoryPassage(savedBibleId: String, from: VerseId, through: VerseId, nearby: Boolean = false): MemoryPassage? {
+        // Never a YouVersion Bible: Memorize is a Premium tool.
+        val reading = premiumToolsBible()
+        return withContext(Dispatchers.IO) {
+            runCatching {
+                val saved = app.bibles.resolve(savedBibleId)?.let { app.bibles.premiumToolsBible(it) }
+                fun base(bible: InstalledBible) = repository(bible).translation.language.substringBefore('-')
+                val chosen = if (saved != null && base(saved) == base(reading)) saved else reading
+                var bible = chosen
+                var verses = repository(chosen).passage(from, through)
+                if (verses.isEmpty() && saved != null && saved != chosen) {
+                    bible = saved
+                    verses = repository(saved).passage(from, through)
+                }
+                if (verses.isEmpty()) return@runCatching null
+                val repository = repository(bible)
+                val around = if (nearby) {
+                    repository.passage(VerseId(from.rawValue - 2), VerseId(from.rawValue - 1)) + repository.passage(VerseId(through.rawValue + 1), VerseId(through.rawValue + 2))
+                } else emptyList()
+                MemoryPassage(bible.id, repository.translation.abbreviation, repository.translation.language, verses.map { it.plainText }, around.map { it.plainText })
+            }.onFailure { Log.e(TAG, "Couldn't read a Memorize passage", it) }.getOrNull()
+        }
+    }
+
+    /**
+     * A church sermon's passage (KJV numbering) in one Bible on this phone,
+     * verbatim, through that Bible's verse map; a chapter's worth at most.
+     */
+    suspend fun churchPassage(bibleId: String, start: VerseId, end: VerseId): ChurchPassage? {
+        val bible = app.bibles.resolve(bibleId) ?: return null
+        return withContext(Dispatchers.IO) {
+            runCatching {
+                val repository = repository(bible)
+                val (first, last) = com.genesis.core.domain.bible.OriginalVersification.parallelMap(bible.id).ownRange(start, end)
+                ChurchPassage(bible.id, repository.translation.name, repository.translation.abbreviation, repository.translation.language, repository.passage(first, last, limit = 60))
+            }.onFailure { Log.e(TAG, "Couldn't read a sermon passage", it) }.getOrNull()
+        }
+    }
+
+    /** True when the Bible being read has this verse (Memorize's Add Verse). */
+    suspend fun hasVerse(verse: VerseId): Boolean {
+        val bible = state.value.bible
+        return withContext(Dispatchers.IO) { runCatching { repository(bible).verses(listOf(verse)).isNotEmpty() }.getOrDefault(false) }
+    }
+
+    /** Related passages for the first selected verse (the selection bar's Related). */
+    fun openCrossReferences(forVerse: VerseId? = null) {
+        val verse = forVerse ?: state.value.selection.minByOrNull { it.rawValue } ?: return
+        val bible = state.value.bible
+        // On a wide screen they show in the study panel (CompanionPanel's Related).
+        _state.update { it.copy(crossReferences = CrossReferencesUiState(verse), companionMode = CompanionMode.RELATED) }
+        viewModelScope.launch {
+            val loaded = withContext(Dispatchers.IO) {
+                runCatching {
+                    val repository = repository(bible)
+                    val language = repository.translation.language
+                    val items = crossReferenceRepository.references(verse).map { reference ->
+                        val passage = repository.passage(reference.target, reference.targetEnd, limit = 4)
+                        val text = passage.take(3).joinToString(" ") { it.plainText } + if (passage.size > 3) " \u2026" else ""
+                        CrossReferenceItem(reference, reference.description(language), text)
+                    }.filter { it.text.isNotEmpty() }
+                    val source = repository.verses(listOf(verse))[verse]?.plainText.orEmpty()
+                    CrossReferencesUiState(verse, language, source, items, loading = false)
+                }.onFailure { Log.e(TAG, "Couldn't read cross references for $verse", it) }.getOrNull()
+            }
+            _state.update { current ->
+                if (current.crossReferences?.verse != verse) current
+                else current.copy(crossReferences = loaded ?: current.crossReferences.copy(loading = false))
+            }
+        }
+    }
+
+    fun closeCrossReferences() = _state.update { it.copy(crossReferences = null) }
+
+    /** Opens a related passage in the reader. */
+    fun openCrossReference(verse: VerseId) {
+        _state.update { it.copy(crossReferences = null) }
+        openVerse(verse)
+    }
+
+    /** Starts a note that isn't on a passage (Library's New Note). */
+    fun newNote() = _state.update { it.copy(editingPage = null, editingNote = Note(id = UUID.randomUUID().toString())) }
+
+    /** Shows or leaves the Original (Hebrew & Greek) beside the Bible being read. */
+    fun setOriginal(on: Boolean) {
+        parallelDefaults.edit().apply { if (on) putString(PARALLEL_KEY, ORIGINAL_PARALLEL) else remove(PARALLEL_KEY) }.apply()
+        _state.update { it.copy(showsOriginal = on, parallelBible = null, selection = emptySet()) }
+    }
+
+    /** Reads a second Bible beside the current one, or stops (null). */
+    fun readInParallel(bible: InstalledBible?) {
+        parallelDefaults.edit().apply { if (bible != null) putString(PARALLEL_KEY, bible.id) else remove(PARALLEL_KEY) }.apply()
+        _state.update { it.copy(parallelBible = bible, showsOriginal = false, selection = emptySet()) }
+    }
+
+    /** A chapter of the Bible read in parallel, or null if it doesn't have it. */
+    suspend fun parallelChapter(bible: InstalledBible, id: ChapterId): com.genesis.core.bible.Chapter? = withContext(Dispatchers.IO) {
+        runCatching { repository(bible).chapter(id) }.onFailure { Log.e(TAG, "Couldn't read ${bible.id}", it) }.getOrNull()
+    }
+
+    private val parallelDefaults by lazy { getApplication<android.app.Application>().getSharedPreferences("reader", android.content.Context.MODE_PRIVATE) }
+
+    /** Opens word study for the first selected verse. */
+    fun openWordStudy() = _state.update { state ->
+        state.copy(wordStudyVerse = state.selection.minByOrNull { it.rawValue }, selection = emptySet())
+    }
+
+    fun closeWordStudy() = _state.update { it.copy(wordStudyVerse = null) }
+
+    /** Opens the Study Library's notes and commentary for the first selected verse. */
+    fun openStudy() = _state.update { state ->
+        state.copy(studyVerse = state.selection.minByOrNull { it.rawValue }, selection = emptySet())
+    }
+
+    fun closeStudy() = _state.update { it.copy(studyVerse = null) }
+
+    /** Runs [block] with the Bible being read, off the main thread; null if it fails. */
+    internal suspend fun <T> withBible(block: (BibleRepository) -> T): T? {
+        val bible = state.value.bible
+        return withContext(Dispatchers.IO) {
+            runCatching { block(repository(bible)) }.onFailure { Log.e(TAG, "Couldn't read ${bible.id}", it) }.getOrNull()
+        }
+    }
+
+    private fun load() {
+        val (id, bible) = state.value.let { it.chapterId to it.bible }
+        viewModelScope.launch {
+            val chapter = withContext(Dispatchers.IO) {
+                runCatching { repository(bible).chapter(id) }
+                    .onFailure { Log.e(TAG, "Couldn't read $id from ${bible.id}", it) }
+                    .getOrNull()
+            }
+            _state.update {
+                if (it.chapterId == id && it.bible == bible) it.copy(chapter = chapter, failed = chapter == null) else it
+            }
+
+        }
+    }
+
+    private fun repository(bible: InstalledBible): BibleRepository = synchronized(repositories) {
+        repositories.getOrPut(bible) { BibleRepository.open(getApplication(), bible) }
+    }
+
+    private companion object {
+        const val TAG = "Reader"
+        const val PARALLEL_KEY = "reader.parallel"
+        const val ORIGINAL_PARALLEL = "original"
+    }
+
+    override fun onCleared() {
+        synchronized(repositories) { repositories.values.forEach { it.close() } }
+        if (crossReferenceOpened) crossReferenceRepository.close()
+    }
+}
+
+/** A church sermon's passage as shown, verbatim from one Bible. */
+data class ChurchPassage(val bibleId: String, val name: String, val abbreviation: String, val language: String, val verses: List<Verse>)
+
+/** A Memorize passage as shown: each verse's text verbatim, and the Bible it comes from. */
+data class MemoryPassage(
+    val bibleId: String,
+    val abbreviation: String,
+    val language: String,
+    val verses: List<String>,
+    val nearby: List<String> = emptyList(),
+) {
+    /** The whole passage, the verses joined with a space (as iOS). */
+    val text: String get() = verses.joinToString(" ")
+}
+
+/** A note's handwritten page while its editor is open: as loaded, and as it is now. */
+data class PageDraft(val original: com.genesis.core.domain.study.InkPage, val page: com.genesis.core.domain.study.InkPage)

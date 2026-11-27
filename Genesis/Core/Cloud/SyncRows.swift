@@ -111,6 +111,9 @@ struct RemoteNote: SyncRow, Equatable {
     var theme: String?
     /// The handwritten page as base64 (JSON's usual encoding for `Data`).
     var drawing: String?
+    /// The same page as Versely Ink (docs/HANDWRITING_FORMAT.md), which
+    /// Android reads and writes. iOS reads `drawing` first.
+    var ink: String?
     var createdAt: Date
     var updatedAt: Date
     var deletedAt: Date?
@@ -118,9 +121,12 @@ struct RemoteNote: SyncRow, Equatable {
     /// False when the drawing is too large to sync: the push then leaves the
     /// `drawing` key out, so the server keeps what it had. Not sent.
     var sendsDrawing = true
+    /// True when `ink` goes up (an explicit null clears the server's copy):
+    /// only once notes.ink exists (`VerselyInk.syncs`) and the page fits. Not sent.
+    var sendsInk = false
 
     enum CodingKeys: String, CodingKey {
-        case id, userId, title, body, kind, anchorType, startVerse, endVerse, book, chapter, theme, drawing
+        case id, userId, title, body, kind, anchorType, startVerse, endVerse, book, chapter, theme, drawing, ink
         case createdAt, updatedAt, deletedAt, serverUpdatedAt
     }
 
@@ -139,6 +145,11 @@ struct RemoteNote: SyncRow, Equatable {
         let drawingData = note.drawing
         sendsDrawing = NoteDrawing.fitsSync(drawingData)
         drawing = sendsDrawing ? drawingData?.base64EncodedString() : nil
+        if VerselyInk.syncs && sendsDrawing {
+            let pageInk = NoteInk.ink(fromDrawing: drawingData)
+            sendsInk = VerselyInk.fitsSync(pageInk)
+            ink = sendsInk ? pageInk : nil
+        }
         createdAt = note.createdAt
         updatedAt = note.updatedAt
     }
@@ -149,7 +160,7 @@ struct RemoteNote: SyncRow, Equatable {
     }
 
     var payloadWeight: Int {
-        (drawing?.utf8.count ?? 0) + body.utf8.count
+        (drawing?.utf8.count ?? 0) + (ink?.utf8.count ?? 0) + body.utf8.count
     }
 
     // Written by hand so `drawing` goes up as an explicit null when a drawing
@@ -170,6 +181,9 @@ struct RemoteNote: SyncRow, Equatable {
         try container.encodeIfPresent(theme, forKey: .theme)
         if sendsDrawing {
             try container.encode(drawing, forKey: .drawing)
+        }
+        if sendsInk {
+            try container.encode(ink, forKey: .ink)
         }
         try container.encode(createdAt, forKey: .createdAt)
         try container.encode(updatedAt, forKey: .updatedAt)

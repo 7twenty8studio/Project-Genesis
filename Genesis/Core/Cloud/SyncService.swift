@@ -171,7 +171,7 @@ final class SyncService {
         try await push(changed(HighlightCollection.self, since).map { RemoteCollection($0, userID: user.id) }, SyncTable.highlightCollections, client, token)
         try await push(changed(Highlight.self, since).map { RemoteHighlight($0, userID: user.id) }, SyncTable.highlights, client, token)
         try await push(changed(Bookmark.self, since).map { RemoteBookmark($0, userID: user.id) }, SyncTable.bookmarks, client, token)
-        try await pushNotes(changed(Note.self, since).map { RemoteNote($0, userID: user.id) }, client, token)
+        try await pushNotes(notesToPush(since, user).map { RemoteNote($0, userID: user.id) }, client, token)
         try await push(changed(PlanEnrollment.self, since).map { RemotePlan($0, userID: user.id) }, SyncTable.readingPlans, client, token)
         try await push(changed(Prayer.self, since).map { RemotePrayer($0, userID: user.id) }, SyncTable.prayers, client, token)
         try await push(changed(MemoryVerse.self, since).map { RemoteMemoryVerse($0, userID: user.id) }, SyncTable.memoryVerses, client, token)
@@ -186,6 +186,7 @@ final class SyncService {
         try await pushDeletions(client, token)
 
         defaults.set(pushStartedAt, forKey: key("lastPushedAt", user.id))
+        if VerselyInk.syncs { defaults.set(true, forKey: key(NoteInkBackfill.key, user.id)) }
         // Files go up once their rows are on the server; failures retry later
         // without failing the sync.
         await attachmentTransfers?.run(context: context)
@@ -233,8 +234,20 @@ final class SyncService {
         for row in oversized {
             Self.log.notice("Note \(row.id.uuidString, privacy: .public): handwritten page is too large to sync; it stays on this device.")
         }
-        try await push(rows.filter(\.sendsDrawing), SyncTable.notes, client, token)
+        // Rows with and without the ink key go in separate requests too.
+        let fitting = rows.filter(\.sendsDrawing)
+        try await push(fitting.filter(\.sendsInk), SyncTable.notes, client, token)
+        try await push(fitting.filter { !$0.sendsInk }, SyncTable.notes, client, token)
         try await push(oversized, SyncTable.notes, client, token)
+    }
+
+    /// Notes edited since the last push and, once pages sync as Versely Ink,
+    /// every note with a page the first time (`NoteInkBackfill`), so Android
+    /// sees pages written before. Their edit times are left as they are.
+    private func notesToPush(_ since: Date, _ user: AuthUser) -> [Note] {
+        let all = (try? context.fetch(FetchDescriptor<Note>())) ?? []
+        let backfill = NoteInkBackfill.isDue(syncs: VerselyInk.syncs, done: defaults.bool(forKey: key(NoteInkBackfill.key, user.id)))
+        return all.filter { $0.updatedAt > since || (backfill && $0.drawing != nil) }
     }
 
     private func pushDeletions(_ client: SupabaseClient, _ token: String) async throws {
@@ -401,8 +414,9 @@ final class SyncService {
             // A drawing too large to sync never reached the server: the
             // server's copy (none, or an older smaller page echoed back after
             // this device pushed the note's text) mustn't replace it. Only a
-            // drawing made later on another device does.
-            let remoteDrawing = row.drawingData
+            // drawing made later on another device does. A page written on
+            // Android comes only as Versely Ink.
+            let remoteDrawing = row.drawingData ?? NoteInk.drawingData(fromInk: row.ink)
             if NoteDrawing.fitsSync(note.drawing) {
                 note.drawing = remoteDrawing
             } else if remoteDrawing != nil, row.updatedAt.timeIntervalSince(note.updatedAt) > 0.001 {

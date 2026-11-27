@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Files Versely hands to other apps (verse images to share or set as wallpaper, journal PDFs, attached PDFs and the camera's photo). -->
+<paths>
+    <cache-path name="images" path="images/" />
+    <cache-path name="exports" path="exports/" />
+    <cache-path name="camera" path="camera/" />
+    <!-- Attached PDFs opened in the person's PDF viewer. -->
+    <files-path name="attachments" path="Attachments/" />
+</paths>

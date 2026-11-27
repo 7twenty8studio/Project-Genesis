@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The launch window is cream, like the iOS launch screen; Compose draws everything after. -->
+    <style name="Theme.Versely" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/cream</item>
+    </style>
+    <color name="cream">#F9EBD7</color>
+</resources>

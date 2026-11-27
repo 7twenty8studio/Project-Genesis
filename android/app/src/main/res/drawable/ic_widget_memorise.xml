@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A bookmark ribbon over lines of text, for Memorize. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+    <path android:fillColor="#FF9A6640"
+        android:pathData="M4,5L14,5L14,7L4,7ZM4,10L12,10L12,12L4,12ZM4,15L10,15L10,17L4,17ZM15,3L21,3L21,20L18,17.5L15,20Z" />
+</vector>
