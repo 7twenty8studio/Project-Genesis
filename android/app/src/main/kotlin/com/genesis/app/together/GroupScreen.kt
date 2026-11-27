@@ -75,6 +75,7 @@ import com.genesis.core.cloud.community.ChallengeProgress
 import com.genesis.app.prayer.JournalBible
 import com.genesis.core.domain.bible.ChapterId
 import androidx.activity.compose.BackHandler
+import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.foundation.lazy.LazyListScope
 import com.genesis.core.cloud.community.GroupSummary
 import com.genesis.core.design.LocalReaderColors
@@ -105,6 +106,7 @@ internal data class GroupContent(
  * people in it. Blocked people's posts and anything reported here are left
  * out; the database still decides who may post, remove or announce.
  */
+@OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
 @Composable
 fun GroupScreen(groupId: String, bible: JournalBible, bibleId: String, onBack: () -> Unit, onRead: (ChapterId) -> Unit, modifier: Modifier = Modifier) {
     val app = LocalContext.current.applicationContext as VerselyApplication
@@ -227,7 +229,20 @@ fun GroupScreen(groupId: String, bible: JournalBible, bibleId: String, onBack: (
 
     Column(modifier.fillMaxSize().background(colors.background).statusBarsPadding().imePadding()) {
         Row(Modifier.padding(start = 4.dp, end = 4.dp, top = 8.dp), verticalAlignment = Alignment.CenterVertically) {
-            TextButton(onClick = onBack) { Text("‹ " + stringResource(R.string.tab_together), color = colors.accent) }
+            // Inside a challenge or a plan day the button goes back one step, to the group.
+            val inside = openChallenge != null || finishedChallenges || openDay != null || allDays
+            TextButton(onClick = {
+                when {
+                    openChallenge != null -> openChallenge = null
+                    finishedChallenges -> finishedChallenges = false
+                    openDay != null -> openDay = null
+                    allDays -> allDays = false
+                    else -> onBack()
+                }
+            }) {
+                val label = if (inside && group != null) group.name else stringResource(R.string.tab_together)
+                Text("‹ $label", color = colors.accent, maxLines = 1, overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis, modifier = Modifier.widthIn(max = 220.dp))
+            }
             Spacer(Modifier.weight(1f))
             if (group?.isLeader == true) {
                 TextButton(onClick = { moderating = true }) {
@@ -264,6 +279,21 @@ fun GroupScreen(groupId: String, bible: JournalBible, bibleId: String, onBack: (
             Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) { CircularProgressIndicator(color = colors.accent) }
             return@Column
         }
+        var refreshing by remember { mutableStateOf(false) }
+        PullToRefreshBox(
+            isRefreshing = refreshing,
+            onRefresh = {
+                scope.launch {
+                    refreshing = true
+                    store.refreshGroups()
+                    reload()
+                    reloadChallenges()
+                    reloadModeration()
+                    refreshing = false
+                }
+            },
+            modifier = Modifier.weight(1f),
+        ) { Column(Modifier.fillMaxSize()) {
         val canRemove = { user: String -> store.isMine(user) || group.isLeader }
         fun menu(kind: ContentKind, id: String, user: String, name: String): @Composable () -> Unit = {
             ContentMenu(
@@ -368,6 +398,7 @@ fun GroupScreen(groupId: String, bible: JournalBible, bibleId: String, onBack: (
                 reload()
             })
         }
+        } }
     }
 
     if (leaving && group != null) {

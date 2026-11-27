@@ -72,6 +72,7 @@ fun AppShell(
     val search by reader.search.collectAsStateWithLifecycle()
     val colors = LocalReaderColors.current
     var tab by rememberSaveable { mutableStateOf(AppTab.HOME) }
+    val tabStates = androidx.compose.runtime.saveable.rememberSaveableStateHolder()
     var shelf by rememberSaveable { mutableStateOf(LibraryShelf.HIGHLIGHTS) }
     var searching by rememberSaveable { mutableStateOf(false) }
     var settingsOpen by rememberSaveable { mutableStateOf(false) }
@@ -246,7 +247,8 @@ fun AppShell(
         },
     ) { padding ->
         val content = Modifier.fillMaxSize().padding(padding).consumeWindowInsets(padding)
-        when (tab) {
+        // Each tab keeps where it was (an open group, an Explore page) while another tab is shown.
+        tabStates.SaveableStateProvider(tab.name) { when (tab) {
             AppTab.HOME -> HomeScreen(
                 state = state,
                 verses = reader::verses,
@@ -308,7 +310,7 @@ fun AppShell(
                 ),
                 bibleId = state.bible.id,
                 onSignIn = { accountOpen = true }, onRead = { read(it.firstVerse) }, modifier = content)
-        }
+        } }
     }
 
     if (searching) {

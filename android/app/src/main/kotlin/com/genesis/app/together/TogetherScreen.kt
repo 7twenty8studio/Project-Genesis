@@ -32,6 +32,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
@@ -62,6 +63,7 @@ import kotlinx.coroutines.launch
  * here needs an account and a display name, and starting or joining a group
  * asks once for the community guidelines.
  */
+@OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
 @Composable
 fun TogetherScreen(bible: com.genesis.app.prayer.JournalBible, bibleId: String, onSignIn: () -> Unit, onRead: (com.genesis.core.domain.bible.ChapterId) -> Unit, modifier: Modifier = Modifier) {
     val app = LocalContext.current.applicationContext as VerselyApplication
@@ -98,7 +100,14 @@ fun TogetherScreen(bible: com.genesis.app.prayer.JournalBible, bibleId: String, 
                 current = state.profile?.displayName.orEmpty(),
                 onDone = if (editingName) ({ editingName = false }) else null,
             )
-            else -> GroupsList(state, onOpen = { openGroup = it })
+            else -> {
+                val scope = rememberCoroutineScope()
+                var refreshing by remember { mutableStateOf(false) }
+                PullToRefreshBox(
+                    isRefreshing = refreshing,
+                    onRefresh = { scope.launch { refreshing = true; store.refreshGroups(); refreshing = false } },
+                ) { GroupsList(state, onOpen = { openGroup = it }) }
+            }
         }
     }
 }

@@ -26,6 +26,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -117,11 +118,17 @@ fun ExploreScreen(
 
     val top = stack.lastOrNull()?.let(ExploreRoute::of)
     if (top != null && study != null) {
-        Box(modifier.background(colors.background)) {
-            when (top) {
-                is ExploreRoute.Event -> EventPage(top.id, context)
-                is ExploreRoute.PersonPage -> PersonPage(top.id, context)
-                is ExploreRoute.PlacePage -> PlacePage(top.id, context)
+        Column(modifier.background(colors.background)) {
+            // A visible way back as well as the system's back gesture: one page at a time.
+            TextButton(onClick = { stack = stack.dropLast(1) }, modifier = Modifier.padding(start = 4.dp, top = 8.dp)) {
+                Text("‹ " + stringResource(if (stack.size > 1) R.string.back else R.string.tab_explore), color = colors.accent)
+            }
+            Box(Modifier.weight(1f)) {
+                when (top) {
+                    is ExploreRoute.Event -> EventPage(top.id, context)
+                    is ExploreRoute.PersonPage -> PersonPage(top.id, context)
+                    is ExploreRoute.PlacePage -> PlacePage(top.id, context)
+                }
             }
         }
         return

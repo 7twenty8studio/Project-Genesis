@@ -740,6 +740,7 @@
     "error_not_started": "This challenge hasn't started yet.",
     "error_invalid_item": "That can't be ticked yet.",
     "challenge_prayed_today": "Prayed today",
-    "challenge_i_prayed_today": "I prayed today"
+    "challenge_i_prayed_today": "I prayed today",
+    "back": "Back"
   }
 }
