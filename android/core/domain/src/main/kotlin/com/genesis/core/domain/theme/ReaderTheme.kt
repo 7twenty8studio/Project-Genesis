@@ -29,6 +29,22 @@ enum class ReaderTheme {
     val isPremium: Boolean
         get() = this !in setOf(AUTOMATIC, PAPER, SEPIA, SLATE, HIGH_CONTRAST, NIGHT)
 
+    /** The season a theme shows (Seasons resolved first), for its leaves, snow, blossom or sunlight. */
+    val season: Season?
+        get() = when (this) {
+            AUTUMN -> Season.AUTUMN
+            WINTER -> Season.WINTER
+            SPRING -> Season.SPRING
+            SUMMER -> Season.SUMMER
+            else -> null
+        }
+
+    /** Forest, Ocean and Hearth: a picture behind the words. */
+    val isScene: Boolean get() = this == FOREST || this == OCEAN || this == HEARTH
+
+    /** Starlight's moving night sky. */
+    val hasStars: Boolean get() = this == STARLIGHT
+
     /** Auto follows the system's dark mode; Seasons follows the time of year. */
     fun resolved(systemIsDark: Boolean, date: LocalDate = LocalDate.now(), region: String? = null): ReaderTheme = when (this) {
         AUTOMATIC -> if (systemIsDark) SLATE else PAPER

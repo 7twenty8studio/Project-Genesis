@@ -22,6 +22,8 @@ data class ReaderPreferences(
     val font: ReaderFont = ReaderFont.NEW_YORK,
     val fontSize: Double = 19.0,
     val lineSpacing: Double = 1.45,
+    /** Gentle Motion / Seasonal Touches: the seasons' leaves and snow and the scenes' motion (on by default, as iOS). */
+    val seasonalEffects: Boolean = true,
 ) {
     /** The same settings with every number inside its range. */
     fun clamped(): ReaderPreferences = copy(
@@ -33,7 +35,7 @@ data class ReaderPreferences(
     fun smaller() = copy(fontSize = (fontSize - 1).coerceIn(FONT_SIZE_RANGE))
     fun larger() = copy(fontSize = (fontSize + 1).coerceIn(FONT_SIZE_RANGE))
 
-    fun encoded(): String = json.encodeToString(Stored.serializer(), Stored(theme.name, font.id, fontSize, lineSpacing, readingMode.id))
+    fun encoded(): String = json.encodeToString(Stored.serializer(), Stored(theme.name, font.id, fontSize, lineSpacing, readingMode.id, seasonalEffects))
 
     @Serializable
     private data class Stored(
@@ -42,6 +44,7 @@ data class ReaderPreferences(
         val fontSize: Double? = null,
         val lineSpacing: Double? = null,
         val readingMode: String? = null,
+        val seasonalEffects: Boolean? = null,
     )
 
     companion object {
@@ -60,6 +63,7 @@ data class ReaderPreferences(
                 font = ReaderFont.withId(stored.font) ?: defaults.font,
                 fontSize = stored.fontSize ?: defaults.fontSize,
                 lineSpacing = stored.lineSpacing ?: defaults.lineSpacing,
+                seasonalEffects = stored.seasonalEffects ?: defaults.seasonalEffects,
             ).clamped()
         }
     }

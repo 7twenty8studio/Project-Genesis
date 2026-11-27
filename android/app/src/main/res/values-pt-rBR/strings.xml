@@ -1215,4 +1215,8 @@
     <string name="widget_group_empty">Abra no Versely um grupo com plano de leitura para ver o progresso dele aqui.</string>
     <string name="read_today_label">leram hoje</string>
     <string name="read_today_count">%1$d de %2$d leram hoje</string>
+    <string name="seasonal_touches">Toques das estações</string>
+    <string name="gentle_motion">Movimento suave</string>
+    <string name="seasonal_touches_footer">Folhas, neve, flores ou a luz do verão passam suavemente pela página enquanto você lê. Pausa no Modo de Pouca Energia e não aparece quando Reduzir Movimento está ativado.</string>
+    <string name="gentle_motion_footer">Neblina, ondas ou brasas se movem suavemente na imagem, nunca sobre as palavras. Ficam pausadas no Modo de Pouca Energia e paradas com Reduzir Movimento.</string>
 </resources>

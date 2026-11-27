@@ -1215,6 +1215,10 @@
     "widget_group_description": "Your group's reading plan: who has read today and how far everyone has come.",
     "widget_group_empty": "Open a group with a reading plan in Versely to see its progress here.",
     "read_today_label": "read today",
-    "read_today_count": "%lld of %lld read today"
+    "read_today_count": "%lld of %lld read today",
+    "seasonal_touches": "Seasonal Touches",
+    "gentle_motion": "Gentle Motion",
+    "seasonal_touches_footer": "Leaves, snow, blossom or summer sunlight drift gently across the page while you read. Paused in Low Power Mode and not shown when Reduce Motion is on.",
+    "gentle_motion_footer": "Mist, swells or embers move gently in the picture, never over the words. Paused in Low Power Mode and still when Reduce Motion is on."
   }
 }

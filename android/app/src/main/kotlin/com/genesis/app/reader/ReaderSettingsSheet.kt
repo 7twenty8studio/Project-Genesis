@@ -100,6 +100,28 @@ internal fun ReaderSettingsSheet(
                 }
             }
 
+            val shown = preferences.theme.resolved(androidx.compose.foundation.isSystemInDarkTheme())
+            if (shown.season != null || shown.isScene) {
+                val season = shown.season != null
+                Row(
+                    Modifier.fillMaxWidth().padding(horizontal = 24.dp).padding(top = 14.dp),
+                    verticalAlignment = androidx.compose.ui.Alignment.CenterVertically,
+                ) {
+                    Text(stringResource(if (season) R.string.seasonal_touches else R.string.gentle_motion), color = colors.text, modifier = Modifier.weight(1f))
+                    androidx.compose.material3.Switch(
+                        checked = preferences.seasonalEffects,
+                        onCheckedChange = { on -> onChange { it.copy(seasonalEffects = on) } },
+                        colors = androidx.compose.material3.SwitchDefaults.colors(checkedTrackColor = colors.accent),
+                    )
+                }
+                Text(
+                    stringResource(if (season) R.string.seasonal_touches_footer else R.string.gentle_motion_footer),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = colors.secondaryText,
+                    modifier = Modifier.padding(horizontal = 24.dp, vertical = 4.dp),
+                )
+            }
+
             SectionTitle(R.string.layout)
             SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth().padding(horizontal = 24.dp)) {
                 ReadingMode.entries.forEachIndexed { index, mode ->

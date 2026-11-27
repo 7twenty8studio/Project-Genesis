@@ -350,6 +350,16 @@ fun ReaderScreen(
                     modifier = Modifier.padding(24.dp),
                 )
             }
+            // Starlight's sky lies over the page, in the margins and the band at the top only.
+            val shownTheme = preferences.theme.resolved(androidx.compose.foundation.isSystemInDarkTheme())
+            if (shownTheme.hasStars && state.chapter != null && !state.showsOriginal) {
+                val paged = preferences.readingMode == ReadingMode.PAGE
+                com.genesis.app.reader.backdrop.StarlightSky(
+                    textInsets = if (paged) com.genesis.app.reader.backdrop.TextInsets(28.dp, 28.dp, 28.dp, 28.dp)
+                    else com.genesis.app.reader.backdrop.TextInsets(24.dp, 0.dp, 24.dp, 0.dp),
+                    skyBand = if (paged) 28.dp else 0.dp,
+                )
+            }
         }
     }
 

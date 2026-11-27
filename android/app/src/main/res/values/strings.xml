@@ -1216,4 +1216,8 @@
     <string name="widget_group_empty">Open a group with a reading plan in Versely to see its progress here.</string>
     <string name="read_today_label">read today</string>
     <string name="read_today_count">%1$d of %2$d read today</string>
+    <string name="seasonal_touches">Seasonal Touches</string>
+    <string name="gentle_motion">Gentle Motion</string>
+    <string name="seasonal_touches_footer">Leaves, snow, blossom or summer sunlight drift gently across the page while you read. Paused in Low Power Mode and not shown when Reduce Motion is on.</string>
+    <string name="gentle_motion_footer">Mist, swells or embers move gently in the picture, never over the words. Paused in Low Power Mode and still when Reduce Motion is on.</string>
 </resources>
