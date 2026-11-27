@@ -1,0 +1,36 @@
+{
+  "comment": "Versely Ink cases shared by iOS (NoteInkTests.swift) and Android (InkTest.kt). See docs/HANDWRITING_FORMAT.md.",
+  "page": {
+    "format": "versely-ink",
+    "version": 1,
+    "width": 768,
+    "strokes": [
+      { "ink": "pen", "color": "1C1C1EFF", "points": [[10, 20, 3, 1], [10, 20, 3, 1], [10, 20, 3, 1], [40, 20, 4, 1], [70, 50, 3.5, 0.9], [70, 50, 3.5, 0.9], [70, 50, 3.5, 0.9]] },
+      { "ink": "marker", "color": "FFD60A80", "points": [[100, 200, 20, 1]] },
+      { "ink": "quill", "color": "#3366CC", "points": [[5, 5], [6, 6]] }
+    ]
+  },
+  "expect": {
+    "strokes": 3,
+    "inks": ["pen", "marker", "pen"],
+    "colors": ["1C1C1EFF", "FFD60A80", "3366CCFF"],
+    "points": [7, 1, 2],
+    "defaultSize": 2,
+    "bottom": 210
+  },
+  "spline": {
+    "comment": "Uniform cubic B-spline: the segment between control points 1 and 2 at t, from control points 0 to 3.",
+    "controls": [[0, 0, 1, 1], [10, 0, 2, 1], [20, 10, 3, 1], [30, 10, 4, 1]],
+    "at": [
+      { "t": 0, "point": [10, 1.6667, 2, 1] },
+      { "t": 0.5, "point": [15, 5, 2.5, 1] },
+      { "t": 1, "point": [20, 8.3333, 3, 1] }
+    ]
+  },
+  "rejected": [
+    "",
+    "not json",
+    "{\"format\":\"something-else\",\"version\":1,\"strokes\":[]}",
+    "{\"format\":\"versely-ink\",\"version\":2,\"strokes\":[]}"
+  ]
+}
