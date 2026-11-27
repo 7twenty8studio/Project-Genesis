@@ -64,4 +64,18 @@
     <string name="color_purple">Morado</string>
     <string name="color_pink">Rosa</string>
     <string name="color_orange">Naranja</string>
+    <string name="bookmark">Marcador</string>
+    <string name="remove_bookmark">Quitar marcador</string>
+    <string name="note">Nota</string>
+    <string name="note_on">Nota sobre %s</string>
+    <string name="note_title">Título</string>
+    <string name="done">OK</string>
+    <string name="delete">Eliminar</string>
+    <string name="delete_this_note">¿Eliminar esta nota?</string>
+    <string name="cancel">Cancelar</string>
+    <string name="note_kind_study">Estudio</string>
+    <string name="note_kind_journal">Diario</string>
+    <string name="note_placeholder_text">Escribe una nota…</string>
+    <string name="note_placeholder_study">Observaciones, preguntas, conexiones…</string>
+    <string name="note_placeholder_journal">¿Qué hay en tu corazón hoy?</string>
 </resources>

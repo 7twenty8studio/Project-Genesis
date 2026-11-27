@@ -65,4 +65,18 @@
     <string name="color_purple">Purple</string>
     <string name="color_pink">Pink</string>
     <string name="color_orange">Orange</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="remove_bookmark">Remove Bookmark</string>
+    <string name="note">Note</string>
+    <string name="note_on">Note on %s</string>
+    <string name="note_title">Title</string>
+    <string name="done">Done</string>
+    <string name="delete">Delete</string>
+    <string name="delete_this_note">Delete this note?</string>
+    <string name="cancel">Cancel</string>
+    <string name="note_kind_study">Study</string>
+    <string name="note_kind_journal">Journal</string>
+    <string name="note_placeholder_text">Write a note…</string>
+    <string name="note_placeholder_study">Observations, questions, connections…</string>
+    <string name="note_placeholder_journal">What\'s on your heart today?</string>
 </resources>

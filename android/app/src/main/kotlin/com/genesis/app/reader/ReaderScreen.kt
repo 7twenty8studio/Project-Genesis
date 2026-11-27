@@ -1,6 +1,11 @@
 package com.genesis.app.reader
 
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.size
+import androidx.compose.material3.IconButton
+import androidx.compose.ui.graphics.Path
+import com.genesis.core.domain.study.Note
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -71,9 +76,24 @@ fun ReaderRoute(
             onHighlight = viewModel::highlight,
             onRemoveHighlight = viewModel::removeHighlight,
             onDone = viewModel::clearSelection,
+            onBookmark = viewModel::toggleBookmark,
+            onNote = viewModel::openNoteForSelection,
+            onNoteTap = viewModel::openNote,
+        ),
+        notes = NoteActions(
+            onChange = viewModel::editNote,
+            onClose = viewModel::closeNote,
+            onDelete = viewModel::deleteNote,
         ),
     )
 }
+
+/** What the note editor does. */
+data class NoteActions(
+    val onChange: ((Note) -> Note) -> Unit = {},
+    val onClose: () -> Unit = {},
+    val onDelete: () -> Unit = {},
+)
 
 /** What the reader does with tapped verses. */
 data class SelectionActions(
@@ -81,6 +101,9 @@ data class SelectionActions(
     val onHighlight: (HighlightColor) -> Unit = {},
     val onRemoveHighlight: () -> Unit = {},
     val onDone: () -> Unit = {},
+    val onBookmark: () -> Unit = {},
+    val onNote: () -> Unit = {},
+    val onNoteTap: (String) -> Unit = {},
 )
 
 /**
@@ -100,6 +123,7 @@ fun ReaderScreen(
     onPrevious: () -> Unit,
     onPreviousAtEnd: () -> Unit = onPrevious,
     selection: SelectionActions = SelectionActions(),
+    notes: NoteActions = NoteActions(),
 ) {
     var picking by rememberSaveable { mutableStateOf(false) }
     var bibleMenu by remember { mutableStateOf(false) }
@@ -129,6 +153,13 @@ fun ReaderScreen(
                     }
                 },
                 actions = {
+                    if (state.isChapterBookmarked) {
+                        val removeBookmark = stringResource(R.string.remove_bookmark)
+                        IconButton(
+                            onClick = selection.onBookmark,
+                            modifier = Modifier.semantics { contentDescription = removeBookmark },
+                        ) { Ribbon(colors.accent) }
+                    }
                     Box {
                         val chooseTranslation = stringResource(R.string.choose_translation)
                         TextButton(
@@ -160,8 +191,11 @@ fun ReaderScreen(
                     shareText = state.shareText,
                     colorsInOrder = (recent + HighlightColor.entries).distinct(),
                     anyHighlighted = state.selection.any { it in state.highlights },
+                    isBookmarked = state.isChapterBookmarked,
                     onHighlight = selection.onHighlight,
                     onRemoveHighlight = selection.onRemoveHighlight,
+                    onBookmark = selection.onBookmark,
+                    onNote = selection.onNote,
                     onDone = selection.onDone,
                 )
             } else BottomAppBar(containerColor = colors.background) {
@@ -179,7 +213,8 @@ fun ReaderScreen(
     ) { padding ->
         Box(Modifier.fillMaxSize().padding(padding), contentAlignment = Alignment.TopCenter) {
             val preferences = LocalReaderPreferences.current
-            val marks = remember(state.highlights, state.selection) { VerseMarks(state.highlights, state.selection) }
+            val notedVerses = state.notedVerses
+            val marks = remember(state.highlights, state.selection, notedVerses) { VerseMarks(state.highlights, state.selection, notedVerses) }
             val scripture = scriptureStyle(preferences, Entitlements.isPremium)
             when {
                 state.chapter != null && preferences.readingMode == ReadingMode.PAGE -> key(state.chapter.id, state.chapter.translation.id) {
@@ -193,9 +228,10 @@ fun ReaderScreen(
                         onNextChapter = onNext,
                         onPreviousChapter = onPreviousAtEnd,
                         onVerseTap = selection.onVerseTap,
+                        onNoteTap = selection.onNoteTap,
                     )
                 }
-                state.chapter != null -> ChapterText(state.chapter, scripture, marks, selection.onVerseTap)
+                state.chapter != null -> ChapterText(state.chapter, scripture, marks, selection.onVerseTap, selection.onNoteTap)
                 state.failed -> Text(
                     stringResource(R.string.chapter_load_failed),
                     color = colors.secondaryText,
@@ -213,6 +249,16 @@ fun ReaderScreen(
         )
     }
 
+    state.editingNote?.let { note ->
+        NoteEditorSheet(
+            note = note,
+            language = language,
+            onChange = notes.onChange,
+            onClose = notes.onClose,
+            onDelete = notes.onDelete,
+        )
+    }
+
     if (picking) {
         BookPicker(
             language = language,
@@ -227,7 +273,7 @@ fun ReaderScreen(
 }
 
 @Composable
-private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMarks, onVerseTap: (VerseId) -> Unit) {
+private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMarks, onVerseTap: (VerseId) -> Unit, onNoteTap: (String) -> Unit) {
     val colors = LocalReaderColors.current
     val listState = rememberLazyListState()
     LaunchedEffect(chapter.id, chapter.translation.id) { listState.scrollToItem(0) }
@@ -255,7 +301,7 @@ private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMark
                     color = colors.text,
                     modifier = Modifier.padding(top = 12.dp, bottom = 6.dp).semantics { heading() },
                 )
-                is Block.Prose -> VerseParagraph(block.verses, scripture, marks, onVerseTap)
+                is Block.Prose -> VerseParagraph(block.verses, scripture, marks, onVerseTap, onNoteTap)
             }
         }
         if (chapter.translation.showsLicenseUnderChapters) {
@@ -268,5 +314,21 @@ private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMark
                 )
             }
         }
+    }
+}
+
+/** The bookmark ribbon shown while the chapter is bookmarked. */
+@Composable
+private fun Ribbon(color: androidx.compose.ui.graphics.Color) {
+    Canvas(Modifier.size(width = 14.dp, height = 20.dp)) {
+        val path = Path().apply {
+            moveTo(0f, 0f)
+            lineTo(size.width, 0f)
+            lineTo(size.width, size.height)
+            lineTo(size.width / 2, size.height * 0.72f)
+            lineTo(0f, size.height)
+            close()
+        }
+        drawPath(path, color)
     }
 }

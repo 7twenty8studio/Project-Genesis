@@ -64,4 +64,18 @@
     <string name="color_purple">Roxo</string>
     <string name="color_pink">Rosa</string>
     <string name="color_orange">Laranja</string>
+    <string name="bookmark">Marcador</string>
+    <string name="remove_bookmark">Remover marcador</string>
+    <string name="note">Anotação</string>
+    <string name="note_on">Anotação sobre %s</string>
+    <string name="note_title">Título</string>
+    <string name="done">OK</string>
+    <string name="delete">Apagar</string>
+    <string name="delete_this_note">Apagar esta anotação?</string>
+    <string name="cancel">Cancelar</string>
+    <string name="note_kind_study">Estudo</string>
+    <string name="note_kind_journal">Diário</string>
+    <string name="note_placeholder_text">Escreva uma anotação…</string>
+    <string name="note_placeholder_study">Observações, perguntas, conexões…</string>
+    <string name="note_placeholder_journal">O que está no seu coração hoje?</string>
 </resources>

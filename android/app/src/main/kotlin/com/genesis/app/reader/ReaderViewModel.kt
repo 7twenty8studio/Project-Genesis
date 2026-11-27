@@ -12,7 +12,10 @@ import com.genesis.app.VerselyApplication
 import com.genesis.core.domain.bible.ChapterId
 import com.genesis.core.domain.bible.ReferenceParser
 import com.genesis.core.domain.bible.VerseId
+import com.genesis.core.domain.study.Bookmarks
 import com.genesis.core.domain.study.HighlightColor
+import com.genesis.core.domain.study.Note
+import com.genesis.core.domain.study.NoteAnchor
 import com.genesis.core.domain.study.ShareText
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -22,6 +25,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.Locale
+import java.util.UUID
 
 /** What the reader shows. One immutable state; events go up, state comes down. */
 data class ReaderUiState(
@@ -37,7 +41,22 @@ data class ReaderUiState(
     val selection: Set<VerseId> = emptySet(),
     /** Every highlight, by verse. */
     val highlights: Map<VerseId, HighlightColor> = emptyMap(),
+    /** Every bookmarked verse (one per chapter). */
+    val bookmarks: Set<VerseId> = emptySet(),
+    /** Every note, newest first. */
+    val notes: List<Note> = emptyList(),
+    /** The note open in the editor, if any. */
+    val editingNote: Note? = null,
 ) {
+    val isChapterBookmarked: Boolean get() = Bookmarks.isBookmarked(bookmarks, chapterId)
+
+    /** Notes on this chapter's verses, by the verse their mark follows. */
+    val notedVerses: Map<VerseId, String>
+        get() = notes.mapNotNull { note -> note.markedVerse?.takeIf { it.chapterId == chapterId }?.let { it to note.id } }.toMap()
+
+    /** The note the selection bar's Note opens, if one ends on a selected verse. */
+    val selectionNote: Note? get() = Note.forSelection(notes, selection)
+
     /** The selected verses as text to copy or share, verbatim with the reference. */
     val shareText: String
         get() {
@@ -65,6 +84,14 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
         viewModelScope.launch {
             val highlights = withContext(Dispatchers.IO) { app.userData.highlights }
             highlights.all.collect { all -> _state.update { it.copy(highlights = all) } }
+        }
+        viewModelScope.launch {
+            val bookmarks = withContext(Dispatchers.IO) { app.userData.bookmarks }
+            bookmarks.all.collect { all -> _state.update { it.copy(bookmarks = all) } }
+        }
+        viewModelScope.launch {
+            val notes = withContext(Dispatchers.IO) { app.userData.notes }
+            notes.all.collect { all -> _state.update { it.copy(notes = all) } }
         }
         viewModelScope.launch {
             val translations = withContext(Dispatchers.IO) {
@@ -111,6 +138,51 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
         val verses = state.value.selection
         viewModelScope.launch(Dispatchers.IO) { app.userData.highlights.remove(verses) }
         clearSelection()
+    }
+
+    /** Bookmarks the first selected verse, or takes the chapter's bookmark away. */
+    fun toggleBookmark() {
+        val verse = state.value.selection.minOrNull() ?: state.value.chapterId.firstVerse
+        viewModelScope.launch(Dispatchers.IO) { app.userData.bookmarks.toggle(verse) }
+        clearSelection()
+    }
+
+    /** Opens the selection's note, or a new one on the selected verses. */
+    fun openNoteForSelection() {
+        val current = state.value
+        val sorted = current.selection.sorted().ifEmpty { return }
+        val note = current.selectionNote
+            ?: Note(id = UUID.randomUUID().toString(), anchor = NoteAnchor.Verses(sorted.first(), sorted.last()))
+        _state.update { it.copy(editingNote = note, selection = emptySet()) }
+    }
+
+    /** The mark after a verse opens its note. */
+    fun openNote(id: String) {
+        val note = state.value.notes.firstOrNull { it.id == id } ?: return
+        _state.update { it.copy(editingNote = note) }
+    }
+
+    /** Keeps the editor's copy current; the note is saved when the editor closes. */
+    fun editNote(change: (Note) -> Note) = _state.update { it.copy(editingNote = it.editingNote?.let(change)) }
+
+    /** Saves what was written (an untouched new note leaves nothing behind). */
+    fun closeNote() {
+        val note = state.value.editingNote ?: return
+        _state.update { it.copy(editingNote = null) }
+        val saved = state.value.notes.firstOrNull { it.id == note.id }
+        viewModelScope.launch(Dispatchers.IO) {
+            when {
+                saved == null && note.isEmpty -> Unit
+                saved == note -> Unit
+                else -> app.userData.notes.save(note)
+            }
+        }
+    }
+
+    fun deleteNote() {
+        val note = state.value.editingNote ?: return
+        _state.update { it.copy(editingNote = null) }
+        viewModelScope.launch(Dispatchers.IO) { app.userData.notes.delete(note.id) }
     }
 
     private fun load() {

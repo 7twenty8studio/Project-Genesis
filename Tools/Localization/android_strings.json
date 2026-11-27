@@ -64,6 +64,20 @@
     "color_green": "Green",
     "color_purple": "Purple",
     "color_pink": "Pink",
-    "color_orange": "Orange"
+    "color_orange": "Orange",
+    "bookmark": "Bookmark",
+    "remove_bookmark": "Remove Bookmark",
+    "note": "Note",
+    "note_on": "Note on %@",
+    "note_title": "Title",
+    "done": "Done",
+    "delete": "Delete",
+    "delete_this_note": "Delete this note?",
+    "cancel": "Cancel",
+    "note_kind_study": "Study",
+    "note_kind_journal": "Journal",
+    "note_placeholder_text": "Write a note…",
+    "note_placeholder_study": "Observations, questions, connections…",
+    "note_placeholder_journal": "What's on your heart today?"
   }
 }

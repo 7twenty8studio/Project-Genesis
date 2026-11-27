@@ -12,7 +12,7 @@ import com.genesis.core.domain.bible.VerseId
 
 /** One paragraph or poetry block of the scrolling reader. */
 @Composable
-internal fun VerseParagraph(verses: List<Verse>, style: TextStyle, marks: VerseMarks, onVerseTap: (VerseId) -> Unit) {
+internal fun VerseParagraph(verses: List<Verse>, style: TextStyle, marks: VerseMarks, onVerseTap: (VerseId) -> Unit, onNoteTap: (String) -> Unit = {}) {
     val colors = LocalReaderColors.current
     val poetry = verses.firstOrNull()?.isPoetry == true
     VerseText(
@@ -20,6 +20,7 @@ internal fun VerseParagraph(verses: List<Verse>, style: TextStyle, marks: VerseM
         style = style,
         color = colors.text,
         onVerseTap = onVerseTap,
+        onNoteTap = onNoteTap,
         modifier = Modifier.padding(bottom = 12.dp, start = if (poetry) 16.dp else 0.dp),
     )
 }

@@ -7,6 +7,8 @@ import androidx.annotation.StringRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -44,8 +46,8 @@ import kotlinx.coroutines.launch
 /**
  * The bar that replaces the chapter buttons while verses are selected, as
  * SelectionActionBar on iOS: the reference and ×, then the colours (the
- * three most recent first), Remove when a selected verse is highlighted,
- * Copy and Share. Notes, bookmarks and the rest join as they arrive.
+ * three most recent first), Note, Bookmark, Remove when a selected verse is
+ * highlighted, Copy and Share.
  */
 @Composable
 internal fun SelectionBar(
@@ -53,8 +55,11 @@ internal fun SelectionBar(
     shareText: String,
     colorsInOrder: List<HighlightColor>,
     anyHighlighted: Boolean,
+    isBookmarked: Boolean,
     onHighlight: (HighlightColor) -> Unit,
     onRemoveHighlight: () -> Unit,
+    onBookmark: () -> Unit,
+    onNote: () -> Unit,
     onDone: () -> Unit,
 ) {
     val colors = LocalReaderColors.current
@@ -92,7 +97,9 @@ internal fun SelectionBar(
                 )
             }
         }
-        Row(Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 4.dp)) {
+        Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(horizontal = 8.dp, vertical = 4.dp)) {
+            Action(R.string.note, onNote)
+            Action(if (isBookmarked) R.string.remove_bookmark else R.string.bookmark, onBookmark)
             if (anyHighlighted) Action(R.string.remove_highlight, onRemoveHighlight)
             Action(R.string.copy) {
                 scope.launch { clipboard.setClipEntry(ClipEntry(ClipData.newPlainText(reference, shareText))) }

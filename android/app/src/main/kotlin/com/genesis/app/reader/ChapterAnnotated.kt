@@ -33,13 +33,25 @@ internal fun AnnotatedString.Builder.appendVerses(verses: List<Verse>, colors: R
         append("\u00A0")
         withStyle(marks.style(verse.id, colors)) { append(verse.text) }
         pop()
+        marks.notes[verse.id]?.let { noteId ->
+            // The note's mark: apart from the verse, never part of its words.
+            append("\u2009")
+            pushStringAnnotation(tag = NOTE_TAG, annotation = noteId)
+            withStyle(SpanStyle(color = colors.accent, fontSize = 0.75.em)) { append(NOTE_MARK) }
+            pop()
+        }
     }
 }
+
+internal const val NOTE_TAG = "note"
+private const val NOTE_MARK = "\u270E"
 
 /** The highlights and the selection, drawn as styles over the verbatim words. */
 internal data class VerseMarks(
     val highlights: Map<VerseId, HighlightColor> = emptyMap(),
     val selection: Set<VerseId> = emptySet(),
+    /** Verses followed by a note's mark, with the note's id. */
+    val notes: Map<VerseId, String> = emptyMap(),
 ) {
     fun style(verse: VerseId, colors: ReaderColors): SpanStyle {
         val highlight = highlights[verse]

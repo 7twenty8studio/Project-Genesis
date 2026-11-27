@@ -18,7 +18,7 @@ import com.genesis.core.domain.bible.VerseId
 /**
  * Scripture text that knows which verse a tap lands on (the verse id each
  * verse carries as an annotation), as ReaderTap on iOS: a tap on a verse
- * selects it, and a long press does too.
+ * selects it, and a long press does too; a tap on a note's mark opens it.
  */
 @Composable
 internal fun VerseText(
@@ -27,14 +27,23 @@ internal fun VerseText(
     color: Color,
     onVerseTap: (VerseId) -> Unit,
     modifier: Modifier = Modifier,
+    onNoteTap: (String) -> Unit = {},
 ) {
     var layout by remember { mutableStateOf<TextLayoutResult?>(null) }
-    fun verseAt(position: androidx.compose.ui.geometry.Offset): VerseId? {
+    fun offsetAt(position: androidx.compose.ui.geometry.Offset): Int? {
         val result = layout ?: return null
         val line = result.getLineForVerticalPosition(position.y)
         if (position.x < result.getLineLeft(line) - 8 || position.x > result.getLineRight(line) + 8) return null
-        val offset = result.getOffsetForPosition(position)
+        return result.getOffsetForPosition(position)
+    }
+    fun verseAt(position: androidx.compose.ui.geometry.Offset): VerseId? {
+        val offset = offsetAt(position) ?: return null
         return text.getStringAnnotations(VERSE_TAG, offset, offset + 1).firstOrNull()?.item?.toIntOrNull()?.let(::VerseId)
+    }
+    /** A note's mark is small, so a tap just beside it counts too. */
+    fun noteAt(position: androidx.compose.ui.geometry.Offset): String? {
+        val offset = offsetAt(position) ?: return null
+        return text.getStringAnnotations(NOTE_TAG, (offset - 1).coerceAtLeast(0), offset + 1).firstOrNull()?.item
     }
     Text(
         text,
@@ -43,7 +52,7 @@ internal fun VerseText(
         onTextLayout = { layout = it },
         modifier = modifier.pointerInput(text) {
             detectTapGestures(
-                onTap = { position -> verseAt(position)?.let(onVerseTap) },
+                onTap = { position -> noteAt(position)?.let(onNoteTap) ?: verseAt(position)?.let(onVerseTap) },
                 onLongPress = { position -> verseAt(position)?.let(onVerseTap) },
             )
         },
