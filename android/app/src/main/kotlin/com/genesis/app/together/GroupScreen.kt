@@ -70,22 +70,31 @@ import com.genesis.core.cloud.community.GroupAnnouncement
 import com.genesis.core.cloud.community.GroupMember
 import com.genesis.core.cloud.community.GroupPost
 import com.genesis.core.cloud.community.GroupPrayer
-import com.genesis.core.cloud.community.GroupStanding
+import com.genesis.core.cloud.community.MemberProgress
+import com.genesis.core.domain.bible.ChapterId
+import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.lazy.LazyListScope
 import com.genesis.core.cloud.community.GroupSummary
 import com.genesis.core.design.LocalReaderColors
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-private enum class GroupTab { DISCUSSION, PRAYER, NEWS, MEMBERS }
+private enum class GroupTab { TODAY, PRAYER, NEWS, MEMBERS }
 
 /** What a group shows, loaded together (GroupDetailModel on iOS). */
-private data class GroupContent(
+internal data class GroupContent(
     val posts: List<GroupPost> = emptyList(),
     val prayers: List<GroupPrayer> = emptyList(),
     val prayed: Set<String> = emptySet(),
     val announcements: List<GroupAnnouncement> = emptyList(),
     val members: List<GroupMember> = emptyList(),
+    /** Who has read each plan day (today's, and any day opened). */
+    val readers: Map<Int, Set<String>> = emptyMap(),
+    /** Each member's progress through the plan, by user id. */
+    val progress: Map<String, MemberProgress> = emptyMap(),
+    /** The days I've marked read. */
+    val myDays: Set<Int> = emptySet(),
     val loaded: Boolean = false,
 )
 
@@ -95,14 +104,14 @@ private data class GroupContent(
  * out; the database still decides who may post, remove or announce.
  */
 @Composable
-fun GroupScreen(groupId: String, onBack: () -> Unit, modifier: Modifier = Modifier) {
+fun GroupScreen(groupId: String, onBack: () -> Unit, onRead: (ChapterId) -> Unit, modifier: Modifier = Modifier) {
     val app = LocalContext.current.applicationContext as VerselyApplication
     val store = app.community
     val state by store.state.collectAsStateWithLifecycle()
     val colors = LocalReaderColors.current
     val scope = rememberCoroutineScope()
     val group = state.groups.firstOrNull { it.id == groupId }
-    var tab by rememberSaveable { mutableStateOf(GroupTab.DISCUSSION) }
+    var tab by rememberSaveable { mutableStateOf(GroupTab.TODAY) }
     var content by remember { mutableStateOf(GroupContent()) }
     var hidden by remember { mutableStateOf(setOf<String>()) }
     var loadError by remember { mutableStateOf<CommunityError?>(null) }
@@ -110,13 +119,21 @@ fun GroupScreen(groupId: String, onBack: () -> Unit, modifier: Modifier = Modifi
     var closing by remember { mutableStateOf(false) }
     var moderating by rememberSaveable { mutableStateOf(false) }
     var moderation by remember { mutableStateOf(ModerationContent()) }
+    var editing by remember { mutableStateOf(false) }
+    var allDays by rememberSaveable { mutableStateOf(false) }
+    var openDay by rememberSaveable { mutableStateOf<Int?>(null) }
 
     suspend fun reload() {
         val api = store.api ?: return
         try {
+            val today = group?.planDay()
             content = withContext(Dispatchers.IO) {
                 val prayers = api.prayers(groupId)
+                val hasPlan = group?.plan != null
                 GroupContent(
+                    readers = if (today != null && today > 0) content.readers + (today to api.readers(groupId, today)) else content.readers,
+                    progress = if (hasPlan) api.progressSummary(groupId).associateBy { it.userId.lowercase() } else emptyMap(),
+                    myDays = if (hasPlan) api.myReadDays(groupId) else emptySet(),
                     posts = api.posts(groupId),
                     prayers = prayers,
                     prayed = api.myPrayerMarks(prayers.map { it.id }),
@@ -144,6 +161,31 @@ fun GroupScreen(groupId: String, onBack: () -> Unit, modifier: Modifier = Modifi
 
     fun shows(user: String, id: String) = user.lowercase() !in state.blocked && id !in hidden
 
+    /** Marks a plan day read (or not), showing it at once and putting it back if saving fails. */
+    fun setRead(done: Boolean, day: Int) {
+        val me = state.userId ?: return
+        val before = content
+        val readers = (content.readers[day] ?: if (day in content.myDays) setOf(me) else emptySet()).let { if (done) it + me else it - me }
+        val changed = done != (day in content.myDays)
+        val old = content.progress[me] ?: MemberProgress(me, 0, 0)
+        content = content.copy(
+            readers = content.readers + (day to readers),
+            myDays = if (done) content.myDays + day else content.myDays - day,
+            progress = if (!changed) content.progress else content.progress + (me to old.copy(
+                daysDone = maxOf(0, old.daysDone + if (done) 1 else -1),
+                lastDay = if (done) maxOf(old.lastDay, day) else old.lastDay,
+            )),
+        )
+        scope.launch { if (!store.perform { it.setDayDone(done, day, groupId) }) content = before }
+    }
+    fun loadReaders(day: Int) {
+        scope.launch {
+            val api = store.api ?: return@launch
+            runCatching { withContext(Dispatchers.IO) { api.readers(groupId, day) } }.onSuccess { content = content.copy(readers = content.readers + (day to it)) }
+        }
+    }
+    BackHandler(enabled = openDay != null || allDays) { if (openDay != null) openDay = null else allDays = false }
+
     Column(modifier.fillMaxSize().background(colors.background).statusBarsPadding().imePadding()) {
         Row(Modifier.padding(start = 4.dp, end = 4.dp, top = 8.dp), verticalAlignment = Alignment.CenterVertically) {
             TextButton(onClick = onBack) { Text("‹ " + stringResource(R.string.tab_together), color = colors.accent) }
@@ -154,7 +196,7 @@ fun GroupScreen(groupId: String, onBack: () -> Unit, modifier: Modifier = Modifi
                     Text(stringResource(R.string.moderation) + if (count > 0) " ($count)" else "", color = colors.accent)
                 }
             }
-            if (group != null) GroupMenu(isOwner = group.isOwner, onLeave = { leaving = true }, onClose = { closing = true })
+            if (group != null) GroupMenu(isLeader = group.isLeader, isOwner = group.isOwner, onEdit = { editing = true }, onLeave = { leaving = true }, onClose = { closing = true })
         }
         if (group == null) {
             EmptyJournal(R.string.not_available, R.string.not_in_group)
@@ -171,7 +213,7 @@ fun GroupScreen(groupId: String, onBack: () -> Unit, modifier: Modifier = Modifi
         }
         Box(Modifier.padding(horizontal = 16.dp, vertical = 10.dp)) {
             Segmented(
-                options = listOf(stringResource(R.string.discussion), stringResource(R.string.prayer_tab), stringResource(R.string.news), stringResource(R.string.members)),
+                options = listOf(stringResource(R.string.group_today), stringResource(R.string.prayer_tab), stringResource(R.string.news), stringResource(R.string.members)),
                 selected = tab.ordinal,
                 onSelect = { tab = GroupTab.entries[it] },
             )
@@ -195,12 +237,42 @@ fun GroupScreen(groupId: String, onBack: () -> Unit, modifier: Modifier = Modifi
                 onHidden = { hidden = hidden + id },
             )
         }
+        val plan = group.plan
+        val today = group.planDay()
+        fun posts(day: Int?) = content.posts.filter { it.day == day && shows(it.userId, it.id) }
+        val postMenu = { post: GroupPost -> menu(ContentKind.GROUP_POST, post.id, post.userId, post.displayName) }
+        fun send(day: Int?): suspend (String) -> Boolean = { body -> store.perform { it.addPost(body, day, groupId) }.also { if (it) reload() } }
+        val visibleMembers = content.members.filter { it.userId.lowercase() !in state.blocked }
+        val day = openDay
+        if (plan != null && day != null) {
+            LaunchedEffect(day) { loadReaders(day) }
+            PlanDayView(group, plan, day, today ?: 0, content, visibleMembers, store::isMine, posts(day), postMenu, onRead, ::setRead, send(day))
+            return@Column
+        }
+        if (plan != null && allDays) {
+            PlanDaysView(group, plan, today ?: 0, content, countFor = { posts(it).size }, onOpen = { openDay = it })
+            return@Column
+        }
         when (tab) {
-            GroupTab.DISCUSSION -> Discussion(
-                posts = content.posts.filter { shows(it.userId, it.id) },
-                menu = { menu(ContentKind.GROUP_POST, it.id, it.userId, it.displayName) },
-                onSend = { body -> store.perform { it.addPost(body, null, groupId) }.also { if (it) reload() } },
-            )
+            GroupTab.TODAY -> {
+                val discussionDay = today?.takeIf { it > 0 }
+                Discussion(
+                    posts = posts(discussionDay),
+                    menu = postMenu,
+                    title = if (discussionDay != null) R.string.todays_discussion else null,
+                    empty = if (discussionDay != null) R.string.stood_out_today else R.string.start_conversation,
+                    placeholder = if (discussionDay != null) R.string.thought_today else R.string.write_message,
+                    onSend = send(discussionDay),
+                    header = {
+                        if (plan != null && today != null) item {
+                            TodayCard(group, plan, today, content, visibleMembers.size, onRead, onSetRead = { setRead(it, today) })
+                        }
+                        if (plan != null && today != null && today > 0) item {
+                            ProgressCard(plan, today, content, visibleMembers, store::isMine, onAllDays = { allDays = true })
+                        }
+                    },
+                )
+            }
             GroupTab.PRAYER -> Prayers(
                 prayers = content.prayers.filter { shows(it.userId, it.id) },
                 prayed = content.prayed,
@@ -238,6 +310,9 @@ fun GroupScreen(groupId: String, onBack: () -> Unit, modifier: Modifier = Modifi
             onDismiss = { leaving = false },
         )
     }
+    if (editing && group != null) {
+        GroupForm(existing = group, onSaved = { editing = false; scope.launch { reload() } }, onCancel = { editing = false; store.clearError() })
+    }
     if (closing && group != null) {
         Confirm(
             title = stringResource(R.string.close_name_question, group.name),
@@ -250,7 +325,7 @@ fun GroupScreen(groupId: String, onBack: () -> Unit, modifier: Modifier = Modifi
 }
 
 @Composable
-private fun GroupMenu(isOwner: Boolean, onLeave: () -> Unit, onClose: () -> Unit) {
+private fun GroupMenu(isLeader: Boolean, isOwner: Boolean, onEdit: () -> Unit, onLeave: () -> Unit, onClose: () -> Unit) {
     val colors = LocalReaderColors.current
     var open by remember { mutableStateOf(false) }
     Box {
@@ -261,6 +336,7 @@ private fun GroupMenu(isOwner: Boolean, onLeave: () -> Unit, onClose: () -> Unit
             }
         }
         DropdownMenu(expanded = open, onDismissRequest = { open = false }) {
+            if (isLeader) DropdownMenuItem(text = { Text(stringResource(R.string.edit_group)) }, onClick = { open = false; onEdit() })
             DropdownMenuItem(text = { Text(stringResource(R.string.leave_group)) }, onClick = { open = false; onLeave() })
             if (isOwner) DropdownMenuItem(text = { Text(stringResource(R.string.close_group)) }, onClick = { open = false; onClose() })
         }
@@ -269,7 +345,7 @@ private fun GroupMenu(isOwner: Boolean, onLeave: () -> Unit, onClose: () -> Unit
 
 /** A post, prayer or announcement: who, when, the words, and its menu. */
 @Composable
-private fun Entry(name: String, time: String, menu: @Composable () -> Unit, content: @Composable () -> Unit) {
+internal fun Entry(name: String, time: String, menu: @Composable () -> Unit, content: @Composable () -> Unit) {
     val colors = LocalReaderColors.current
     Column(Modifier.fillMaxWidth().background(colors.surface, RoundedCornerShape(14.dp)).padding(start = 14.dp, top = 10.dp, bottom = 12.dp, end = 4.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -283,7 +359,7 @@ private fun Entry(name: String, time: String, menu: @Composable () -> Unit, cont
 
 /** A text field with a send button, kept under the list. */
 @Composable
-private fun Composer(placeholder: Int, action: Int, onSend: suspend (String) -> Boolean) {
+internal fun Composer(placeholder: Int, action: Int, onSend: suspend (String) -> Boolean) {
     val colors = LocalReaderColors.current
     val scope = rememberCoroutineScope()
     var text by rememberSaveable { mutableStateOf("") }
@@ -312,13 +388,24 @@ private fun Composer(placeholder: Int, action: Int, onSend: suspend (String) -> 
 }
 
 @Composable
-private fun Discussion(posts: List<GroupPost>, menu: (GroupPost) -> @Composable () -> Unit, onSend: suspend (String) -> Boolean) {
+internal fun Discussion(
+    posts: List<GroupPost>,
+    menu: (GroupPost) -> @Composable () -> Unit,
+    title: Int?,
+    empty: Int,
+    placeholder: Int,
+    onSend: suspend (String) -> Boolean,
+    header: LazyListScope.() -> Unit = {},
+) {
     val colors = LocalReaderColors.current
     val list = rememberLazyListState()
-    LaunchedEffect(posts.size) { if (posts.isNotEmpty()) list.scrollToItem(posts.lastIndex) }
     Column(Modifier.fillMaxSize()) {
         LazyColumn(Modifier.weight(1f).fillMaxWidth(), state = list, contentPadding = androidx.compose.foundation.layout.PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-            if (posts.isEmpty()) item { EmptyJournal(R.string.discussion, R.string.start_conversation) }
+            header()
+            title?.let { item { Text(stringResource(it).uppercase(), style = MaterialTheme.typography.labelMedium, color = colors.secondaryText, modifier = Modifier.padding(start = 4.dp, top = 8.dp)) } }
+            if (posts.isEmpty()) item {
+                Text(stringResource(empty), style = MaterialTheme.typography.bodyLarge, color = colors.secondaryText, modifier = Modifier.padding(horizontal = 4.dp, vertical = 12.dp))
+            }
             items(posts, key = { it.id }) { post ->
                 Entry(post.displayName, relativeTime(post.createdAt), menu(post)) {
                     Text(post.body, style = MaterialTheme.typography.bodyLarge, color = colors.text)
@@ -326,7 +413,7 @@ private fun Discussion(posts: List<GroupPost>, menu: (GroupPost) -> @Composable 
             }
         }
         HorizontalDivider(color = colors.separator)
-        Composer(R.string.write_message, R.string.send, onSend)
+        Composer(placeholder, R.string.send, onSend)
     }
 }
 

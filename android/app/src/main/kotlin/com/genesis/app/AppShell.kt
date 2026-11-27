@@ -299,7 +299,7 @@ fun AppShell(
                     modifier = content,
                 )
             }
-            AppTab.TOGETHER -> TogetherScreen(onSignIn = { accountOpen = true }, modifier = content)
+            AppTab.TOGETHER -> TogetherScreen(onSignIn = { accountOpen = true }, onRead = { read(it.firstVerse) }, modifier = content)
         }
     }
 

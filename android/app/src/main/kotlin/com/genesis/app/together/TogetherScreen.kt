@@ -63,7 +63,7 @@ import kotlinx.coroutines.launch
  * asks once for the community guidelines.
  */
 @Composable
-fun TogetherScreen(onSignIn: () -> Unit, modifier: Modifier = Modifier) {
+fun TogetherScreen(onSignIn: () -> Unit, onRead: (com.genesis.core.domain.bible.ChapterId) -> Unit, modifier: Modifier = Modifier) {
     val app = LocalContext.current.applicationContext as VerselyApplication
     val store = app.community
     val state by store.state.collectAsStateWithLifecycle()
@@ -75,7 +75,7 @@ fun TogetherScreen(onSignIn: () -> Unit, modifier: Modifier = Modifier) {
 
     openGroup?.let { id ->
         BackHandler { openGroup = null }
-        GroupScreen(groupId = id, onBack = { openGroup = null }, modifier = modifier)
+        GroupScreen(groupId = id, onBack = { openGroup = null }, onRead = onRead, modifier = modifier)
         return
     }
 
@@ -207,8 +207,9 @@ private fun GroupsList(state: TogetherState, onOpen: (String) -> Unit) {
             },
             onCancel = { sheet = null; app.community.clearError() },
         )
-        GroupSheet.CREATE -> CreateDialog(
-            onCreated = { id ->
+        GroupSheet.CREATE -> GroupForm(
+            existing = null,
+            onSaved = { id ->
                 sheet = null
                 onOpen(id)
             },
@@ -242,7 +243,7 @@ private fun GroupRow(group: GroupSummary, modifier: Modifier) {
                 )
             }
         }
-        val detail = group.planTitle ?: group.description
+        val detail = group.plan?.let { groupPlanTitle(group, it) } ?: group.description
         if (detail.isNotBlank()) Text(detail, style = MaterialTheme.typography.bodyMedium, color = colors.secondaryText, maxLines = 2, overflow = TextOverflow.Ellipsis)
     }
 }
@@ -316,34 +317,6 @@ private fun JoinDialog(onJoined: (com.genesis.core.cloud.community.GroupJoinOutc
                 onClick = { scope.launch { app.community.requestToJoin(InviteCode.clean(code))?.let(onJoined) } },
                 enabled = InviteCode.isPlausible(code) && !state.isWorking,
             ) { Text(stringResource(R.string.join), color = colors.accent, fontWeight = FontWeight.SemiBold) }
-        },
-        dismissButton = { TextButton(onClick = onCancel) { Text(stringResource(R.string.cancel), color = colors.secondaryText) } },
-    )
-}
-
-@Composable
-private fun CreateDialog(onCreated: (String) -> Unit, onCancel: () -> Unit) {
-    val app = LocalContext.current.applicationContext as VerselyApplication
-    val state by app.community.state.collectAsStateWithLifecycle()
-    val colors = LocalReaderColors.current
-    val scope = rememberCoroutineScope()
-    var name by rememberSaveable { mutableStateOf("") }
-    var purpose by rememberSaveable { mutableStateOf("") }
-    AlertDialog(
-        onDismissRequest = onCancel,
-        title = { Text(stringResource(R.string.start_group)) },
-        text = {
-            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                OutlinedTextField(value = name, onValueChange = { name = it.take(60) }, placeholder = { Text(stringResource(R.string.group_name)) }, singleLine = true, colors = fieldColors())
-                OutlinedTextField(value = purpose, onValueChange = { purpose = it.take(300) }, placeholder = { Text(stringResource(R.string.group_purpose)) }, minLines = 2, colors = fieldColors())
-                state.error?.let { Text(stringResource(it.text()), style = MaterialTheme.typography.bodySmall, color = colors.accent) }
-            }
-        },
-        confirmButton = {
-            TextButton(
-                onClick = { scope.launch { app.community.createGroup(name, purpose)?.let(onCreated) } },
-                enabled = name.isNotBlank() && !state.isWorking,
-            ) { Text(stringResource(R.string.create), color = colors.accent, fontWeight = FontWeight.SemiBold) }
         },
         dismissButton = { TextButton(onClick = onCancel) { Text(stringResource(R.string.cancel), color = colors.secondaryText) } },
     )

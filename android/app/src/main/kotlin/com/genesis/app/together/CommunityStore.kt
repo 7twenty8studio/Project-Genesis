@@ -6,6 +6,7 @@ import com.genesis.core.cloud.community.CommunityError
 import com.genesis.core.cloud.community.CommunityProfile
 import com.genesis.core.cloud.community.ContentKind
 import com.genesis.core.cloud.community.GroupJoinOutcome
+import com.genesis.core.cloud.community.GroupPlanChoice
 import com.genesis.core.cloud.community.GroupSummary
 import com.genesis.core.cloud.community.ReportReason
 import kotlinx.coroutines.CoroutineScope
@@ -102,11 +103,17 @@ class CommunityStore(private val account: AccountService, private val scope: Cor
         return true
     }
 
-    suspend fun createGroup(name: String, description: String): String? {
+    suspend fun createGroup(name: String, description: String, plan: GroupPlanChoice?): String? {
         var id: String? = null
-        if (!perform { id = it.createGroup(name, description) }) return null
+        if (!perform { id = it.createGroup(name, description, plan) }) return null
         refreshGroups()
         return id
+    }
+
+    suspend fun updateGroup(id: String, name: String, description: String, plan: GroupPlanChoice?): Boolean {
+        if (!perform { it.updateGroup(id, name, description, plan) }) return false
+        refreshGroups()
+        return true
     }
 
     suspend fun requestToJoin(code: String): GroupJoinOutcome? {
