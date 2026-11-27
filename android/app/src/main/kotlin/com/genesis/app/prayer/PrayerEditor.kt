@@ -107,6 +107,11 @@ internal fun PrayerEditor(
 
             Passages(draft, bible, onAttach = { draft = draft.attaching(it) }, onDetach = { draft = draft.detaching(it) })
 
+            if (!draft.isAnswered) {
+                Spacer(Modifier.size(24.dp))
+                PrayerReminder(draft) { draft = it }
+            }
+
             if (draft.isAnswered) Header(stringResource(R.string.answered)) else Spacer(Modifier.size(24.dp))
             Group {
                 if (draft.isAnswered) {

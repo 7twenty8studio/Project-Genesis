@@ -33,6 +33,7 @@ class MainActivity : ComponentActivity() {
         if (savedInstanceState == null) receive(intent)
         // The widget catches up on a new day, the Bible or the language when the app opens.
         lifecycleScope.launch { VerseOfTheDayWidget.refresh(applicationContext) }
+        (application as VerselyApplication).followReminders()
         setContent {
             val preferences by settings.preferences.collectAsStateWithLifecycle()
             val recentColors = settings.recentColors.collectAsStateWithLifecycle()
@@ -57,6 +58,14 @@ class MainActivity : ComponentActivity() {
             kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) { app.userData }
             app.sync.schedule()
         }
+        // A new day, or a change in Android's notification settings.
+        (application as VerselyApplication).refreshReminders()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        // Reading today drops today's reading reminder.
+        (application as VerselyApplication).refreshReminders()
     }
 
     override fun onNewIntent(intent: Intent) {

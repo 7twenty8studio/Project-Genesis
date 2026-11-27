@@ -5,6 +5,7 @@ import com.genesis.core.domain.bible.VerseId
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import java.time.LocalDate
 
 /**
  * Where the person is reading, as ReadingProgress on iOS ("progress.position"):
@@ -20,14 +21,29 @@ class ReadingProgressStore(context: Context) {
     /** The last verse read, or null before the first chapter is opened. */
     val position: StateFlow<VerseId?> = _position.asStateFlow()
 
+    /**
+     * Days with reading ("progress.readingDays", "yyyy-MM-dd", as iOS), for
+     * the daily reading reminder: reading today drops today's nudge.
+     */
+    val readingDays: Set<LocalDate>
+        get() = defaults.getStringSet(DAYS, emptySet()).orEmpty().mapNotNull { runCatching { LocalDate.parse(it) }.getOrNull() }.toSet()
+
     fun record(verse: VerseId) {
-        if (_position.value == verse) return
+        val today = LocalDate.now().toString()
+        val days = defaults.getStringSet(DAYS, emptySet()).orEmpty()
+        val newDay = today !in days
+        if (_position.value == verse && !newDay) return
         _position.value = verse
-        defaults.edit().putInt(POSITION, verse.rawValue).putLong(LAST_READ, System.currentTimeMillis()).apply()
+        defaults.edit().apply {
+            putInt(POSITION, verse.rawValue)
+            putLong(LAST_READ, System.currentTimeMillis())
+            if (newDay) putStringSet(DAYS, days + today)
+        }.apply()
     }
 
     private companion object {
         const val POSITION = "progress.position"
         const val LAST_READ = "progress.lastReadAt"
+        const val DAYS = "progress.readingDays"
     }
 }

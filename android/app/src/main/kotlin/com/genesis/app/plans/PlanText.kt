@@ -42,7 +42,7 @@ internal fun customSummary(books: List<Int>, days: Int): String {
     return stringResource(R.string.custom_plan_summary, names, chapters, days)
 }
 
-private fun builtInTitle(id: String): Int? = when (id) {
+internal fun builtInTitle(id: String): Int? = when (id) {
     ReadingPlan.ONE_YEAR -> R.string.plan_one_year
     ReadingPlan.NEW_TESTAMENT_90 -> R.string.plan_nt90
     ReadingPlan.CHRONOLOGICAL -> R.string.plan_chronological

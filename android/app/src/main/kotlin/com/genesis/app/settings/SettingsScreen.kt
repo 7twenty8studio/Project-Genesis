@@ -39,8 +39,8 @@ import com.genesis.app.R
 import com.genesis.core.design.LocalReaderColors
 
 /**
- * Settings, as on iOS: Account, Reading (the reader's look), Language, and
- * About Versely with the version. Notifications, Features and the rest
+ * Settings, as on iOS: Account, Reading (the reader's look), Notifications,
+ * Language, and About Versely with the version. Features and the rest
  * join as their features arrive.
  */
 @Composable
@@ -48,6 +48,7 @@ fun SettingsScreen(
     accountTitle: String?,
     onAccount: () -> Unit,
     onReading: () -> Unit,
+    onNotifications: () -> Unit,
     onDone: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -78,6 +79,8 @@ fun SettingsScreen(
             Spacer(Modifier.size(20.dp))
             Group {
                 Row_(stringResource(R.string.reading), onClick = onReading, trailing = "›")
+                HorizontalDivider(Modifier.padding(start = 16.dp), color = colors.separator)
+                Row_(stringResource(R.string.notifications), onClick = onNotifications, trailing = "›")
             }
 
             Header(stringResource(R.string.language))

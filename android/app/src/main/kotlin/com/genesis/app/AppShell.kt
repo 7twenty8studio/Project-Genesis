@@ -36,6 +36,7 @@ import com.genesis.app.reader.ReaderViewModel
 import com.genesis.app.reader.SearchSheet
 import com.genesis.app.reader.ReaderSettingsSheet
 import com.genesis.app.settings.SettingsScreen
+import com.genesis.app.notifications.NotificationSettingsScreen
 import androidx.compose.foundation.layout.navigationBarsPadding
 import com.genesis.app.settings.Entitlements
 import com.genesis.app.settings.LocalReaderPreferences
@@ -69,6 +70,7 @@ fun AppShell(
     var searching by rememberSaveable { mutableStateOf(false) }
     var settingsOpen by rememberSaveable { mutableStateOf(false) }
     var readingSettings by rememberSaveable { mutableStateOf(false) }
+    var notificationsOpen by rememberSaveable { mutableStateOf(false) }
     var accountOpen by rememberSaveable { mutableStateOf(false) }
     // Reading plans over the tabs: the list, or one plan (its id).
     var plansOpen by rememberSaveable { mutableStateOf(false) }
@@ -98,6 +100,17 @@ fun AppShell(
             GenesisLink.Home -> {
                 settingsOpen = false
                 tab = AppTab.HOME
+            }
+            GenesisLink.Plans -> {
+                settingsOpen = false
+                journalOpen = false
+                planToOpen = null
+                plansOpen = true
+            }
+            GenesisLink.Prayer -> {
+                settingsOpen = false
+                plansOpen = false
+                journalOpen = true
             }
             null -> return@LaunchedEffect
         }
@@ -153,6 +166,14 @@ fun AppShell(
         return
     }
 
+    if (notificationsOpen) {
+        NotificationSettingsScreen(
+            onDone = { notificationsOpen = false },
+            modifier = Modifier.fillMaxSize().navigationBarsPadding(),
+        )
+        return
+    }
+
     if (accountOpen) {
         AccountScreen(
             account = app.account,
@@ -170,6 +191,7 @@ fun AppShell(
             accountTitle = account.user?.let { it.email ?: it.name },
             onAccount = { accountOpen = true },
             onReading = { readingSettings = true },
+            onNotifications = { notificationsOpen = true },
             onDone = { settingsOpen = false },
             modifier = Modifier.fillMaxSize().navigationBarsPadding(),
         )
